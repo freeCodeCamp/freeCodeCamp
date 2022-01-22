@@ -1,6 +1,6 @@
 ---
 id: 5900f4e41000cf542c50fff5
-title: 'Problem 375: Minimum of subsequences'
+title: '問題 375: 最小の部分列'
 challengeType: 5
 forumTopicId: 302037
 dashedName: problem-375-minimum-of-subsequences
@@ -8,19 +8,19 @@ dashedName: problem-375-minimum-of-subsequences
 
 # --description--
 
-Let $S_n$ be an integer sequence produced with the following pseudo-random number generator:
+以下に述べる疑似乱数生成器で作成した整数の数列を $S_n$ とします。
 
 $$\begin{align} S_0 & = 290\\,797 \\\\ S_{n + 1} & = {S_n}^2\bmod 50\\,515\\,093 \end{align}$$
 
-Let $A(i, j)$ be the minimum of the numbers $S_i, S_{i + 1}, \ldots, S_j$ for $i ≤ j$. Let $M(N) = \sum A(i, j)$ for $1 ≤ i ≤ j ≤ N$.
+$i ≤ j$ に対する数 $S_i, S_{i + 1}, \ldots, S_j$ のうちの最小数を $A(i, j)$ とします。 $1 ≤ i ≤ j ≤ N$ のとき、$M(N) = \sum A(i, j)$ とします。
 
-We can verify that $M(10) = 432\\,256\\,955$ and $M(10\\,000) = 3\\,264\\,567\\,774\\,119$.
+$M(10) = 432\\,256\\,955$, $M(10\\,000) = 3\\,264\\,567\\,774\\,774\\,119$ となることを確認できます。
 
-Find $M(2\\,000\\,000\\,000)$.
+$M(2\\,000\\,000\\,000)$ を求めなさい。
 
 # --hints--
 
-`minimumOfSubsequences()` should return `7435327983715286000`.
+`minimumOfSubsequences()` は `7435327983715286000` を返す必要があります。
 
 ```js
 assert.strictEqual(minimumOfSubsequences(), 7435327983715286000);

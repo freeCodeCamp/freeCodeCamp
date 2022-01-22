@@ -28,7 +28,7 @@ dashedName: breadth-first-search
 
 隣接行列グラフ (二次元配列) とノードラベルの根 (開始ノード) をパラメータとして取る関数、`bfs()` を記述してください。 ノードラベルは単に `0` から `n - 1` の間の整数値です (`n` はグラフ内のノードの総数)。
 
-Your function will output a JavaScript object key-value pairs with the node and its distance from the root. そのノードに到達できなかった場合、そのノードは `Infinity` の距離を持つ必要があります。
+この関数は、JavaScript オブジェクトのキーと値のペア (ノードと、根からそのノードまでの距離) を出力します。 そのノードに到達できなかった場合、そのノードは `Infinity` の距離を持つ必要があります。
 
 # --hints--
 

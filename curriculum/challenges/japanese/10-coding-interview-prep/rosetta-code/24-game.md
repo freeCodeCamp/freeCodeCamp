@@ -8,23 +8,23 @@ dashedName: 24-game
 
 # --description--
 
-The [24 Game](https://en.wikipedia.org/wiki/24_Game) tests a person's mental arithmetic.
+[24 Game](https://en.wikipedia.org/wiki/24_Game) では、人の暗算能力をテストします。
 
-The aim of the game is to arrange four numbers in a way that when evaluated, the result is 24
+ゲームの目的は、算出結果が24になるように4つの数字を配置することです。
 
 # --instructions--
 
-Implement a function that takes a string of four digits as its argument, with each digit from 1 to 9 (inclusive) with repetitions allowed, and returns an arithmetic expression that evaluates to the number 24. If no such solution exists, return "no solution exists".
+4桁の文字列を引数とする関数を作成します。 各桁は、1 から 9 までの数字で、繰り返しも可能です。この関数は、算出結果が数値 24 になる算術式を返します。 そのような解が存在しない場合は、「解が存在しません」を返します。
 
-**Rules:**
+**ルール:**
 <ul>
-  <li> Only the following operators/functions are allowed: multiplication, division, addition, subtraction. </li>
-  <li> Division should use floating point or rational arithmetic, etc, to preserve remainders. </li>
-  <li> Forming multiple digit numbers from the supplied digits is disallowed. (So an answer of 12+12 when given 1, 2, 2, and 1 is wrong). </li>
-  <li> The order of the digits when given does not have to be preserved. </li>
+  <li> 以下の演算子/関数のみが使用できます: 乗算、除算、加算、減算。 </li>
+  <li> 除算では、余りを保持するために浮動小数点や有理数演算などを使用します。 </li>
+  <li> 与えられた数字から複数の桁数を作成することはできません。 (つまり、1、2、2、1が与えられた場合、12+12という答えは間違っています)。 </li>
+  <li> 与えられた数字の順序は保持する必要がありません。 </li>
 </ul>
 
-| Example input             | Example output            |
+| 入力例                       | 出力例                       |
 | ------------------------- | ------------------------- |
 | <code>solve24("4878");</code> | <code>(7-8/8)\*4</code> |
 | <code>solve24("1234");</code> | <code>3\*1\*4\*2</code> |
@@ -33,31 +33,31 @@ Implement a function that takes a string of four digits as its argument, with ea
 
 # --hints--
 
-`solve24` should be a function.
+`solve24` という関数です。
 
 ```js
 assert(typeof solve24 === 'function');
 ```
 
-`solve24("4878")` should return `(7-8/8)*4` or `4*(7-8/8)`
+`solve24("4878")` は `(7-8/8)*4` または `4*(7-8/8)` を返します。
 
 ```js
 assert(include(answers[0], removeParentheses(solve24(testCases[0]))));
 ```
 
-`solve24("1234")` should return any arrangement of `1*2*3*4`
+`solve24("1234")` は任意の配列で `1*2*3*4` を返します。
 
 ```js
 assert(include(answers[1], removeParentheses(solve24(testCases[1]))));
 ```
 
-`solve24("6789")` should return `(6*8)/(9-7)` or `(8*6)/(9-7)`
+`solve24("6789")` は `(6*8)/(9-7)` または `(8*6)/(9-7)` を返します。
 
 ```js
 assert(include(answers[2], removeParentheses(solve24(testCases[2]))));
 ```
 
-`solve24("1127")` should return a permutation of `(1+7)*(1+2)`
+`solve24("1127")` は `(1+7)*(1+2)` の順列を返します。
 
 ```js
 assert(include(answers[3], removeParentheses(solve24(testCases[3]))));

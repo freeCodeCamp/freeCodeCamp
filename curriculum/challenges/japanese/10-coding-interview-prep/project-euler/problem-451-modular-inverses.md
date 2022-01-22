@@ -1,6 +1,6 @@
 ---
 id: 5900f5311000cf542c510042
-title: 'Problem 451: Modular inverses'
+title: '問題 451: モジュラ逆数'
 challengeType: 5
 forumTopicId: 302124
 dashedName: problem-451-modular-inverses
@@ -8,25 +8,25 @@ dashedName: problem-451-modular-inverses
 
 # --description--
 
-Consider the number 15.
+数 15 について考えます。
 
-There are eight positive numbers less than 15 which are coprime to 15: 1, 2, 4, 7, 8, 11, 13, 14.
+15 と互いに素である 15 未満の正の数は 1, 2, 4, 7, 8, 11, 13, 14 の 8 つです。
 
-The modular inverses of these numbers modulo 15 are: 1, 8, 4, 13, 2, 11, 7, 14 because
+それらの数の 15 を法とするモジュラ逆数は、1, 8, 4, 13, 2, 11, 7, 14 です。理由は次のとおりです。
 
 $$\begin{align} & 1  \times 1\bmod 15 = 1 \\\\ & 2  \times 8  = 16\bmod 15 = 1 \\\\ & 4  \times 4  = 16\bmod 15 = 1 \\\\ & 7  \times 13 = 91\bmod 15 = 1 \\\\ & 11 \times 11 = 121\bmod 15 = 1 \\\\ & 14 \times 14 = 196\bmod 15 = 1 \end{align}$$
 
-Let $I(n)$ be the largest positive number $m$ smaller than $n - 1$ such that the modular inverse of $m$ modulo $n$ equals $m$ itself.
+$m$ の $n$ を法とするモジュラ逆数が $m$ 自体に等しくなるような、$n - 1$ 未満の最大の正の数 $m$ を $I(n)$ とします。
 
-So $I(15) = 11$.
+したがって、$I(15) = 11$ です。
 
-Also $I(100) = 51$ and $I(7) = 1$.
+また、$I(100) = 51$ および $I(7) = 1$ です。
 
-Find $\sum I(n)$ for $3 ≤ n ≤ 2 \times {10}^7$
+$3 ≤ n ≤ 2 \times {10}^7$のとき、$\sum I(n)$ を求めなさい。
 
 # --hints--
 
-`modularInverses()` should return `153651073760956`.
+`modularInverses()` は `153651073760956` を返す必要があります。
 
 ```js
 assert.strictEqual(modularInverses(), 153651073760956);

@@ -18,7 +18,7 @@ dashedName: map-data-across-the-globe
 
 **ユーザーストーリー:** 隕石のデータポイントにマウスポインターを合わせることで、追加のデータを取得することができます。
 
-**ヒント:** 構築するために使用できるデータセットはこちらです: <https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/meteorite-strike-data.json>
+**ヒント:** アプリを構築するために使用できるデータセットはこちらです: <https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/meteorite-strike-data.json>
 
 完了したら、CodePen のプロジェクトへのリンクを入れて、「このチャレンジを完了しました」ボタンをクリックしてください。
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f4b01000cf542c50ffc2
-title: 'Problem 323: Bitwise-OR operations on random integers'
+title: '問題 323: 乱数整数のビット論理和演算'
 challengeType: 5
 forumTopicId: 301980
 dashedName: problem-323-bitwise-or-operations-on-random-integers
@@ -8,22 +8,22 @@ dashedName: problem-323-bitwise-or-operations-on-random-integers
 
 # --description--
 
-Let $y_0, y_1, y_2, \ldots$ be a sequence of random unsigned 32 bit integers
+$y_0, y_1, y_2, \ldots$ を、符号なしの 32 ビット整数の数列とします
 
-(i.e. $0 ≤ y_i &lt; 2^{32}$, every value equally likely).
+(つまり、$0 ≤ y_i &lt; 2^{32}$ であり、すべての値が等しく現れ得ます)。
 
-For the sequence $x_i$ the following recursion is given:
+数列 $x_i$ について、次の反復が与えられます。
 
-- $x_0 = 0$ and
-- $x_i = x_{i - 1} \mathbf{|} y_{i - 1}$, for $i > 0$. ($\mathbf{|}$ is the bitwise-OR operator)
+- $x_0 = 0$ かつ
+- $x_i = x_{i - 1} \mathbf{|} y_{i - 1}$ ($i > 0$) ($\mathbf{|}$ はビット論理和演算子)
 
-It can be seen that eventually there will be an index $N$ such that $x_i = 2^{32} - 1$ (a bit-pattern of all ones) for all $i ≥ N$.
+すべての $i ≥ N$ について、$x_i = 2^{32} - 1$ (すべてが 1 であるビットパターン) となるような添え字 $N$ が最終的に存在することが分かります。
 
-Find the expected value of $N$. Give your answer rounded to 10 digits after the decimal point.
+$N$ の期待値を求めなさい。 回答は、四捨五入して小数第 10 位まで示すこと。
 
 # --hints--
 
-`bitwiseOrOnRandomIntegers()` should return `6.3551758451`.
+`bitwiseOrOnRandomIntegers()` は `6.3551758451` を返す必要があります。
 
 ```js
 assert.strictEqual(bitwiseOrOnRandomIntegers(), 6.3551758451);

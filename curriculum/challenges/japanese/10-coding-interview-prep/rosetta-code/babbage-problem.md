@@ -1,6 +1,6 @@
 ---
 id: 594db4d0dedb4c06a2a4cefd
-title: Babbage problem
+title: バベッジの問題
 challengeType: 5
 forumTopicId: 302229
 dashedName: babbage-problem
@@ -8,30 +8,30 @@ dashedName: babbage-problem
 
 # --description--
 
-[Charles Babbage](https://en.wikipedia.org/wiki/Charles_Babbage "wp: Charles_Babbage"), looking ahead to the sorts of problems his Analytical Engine would be able to solve, gave this example:
+[チャールズ・バベッジ](https://en.wikipedia.org/wiki/Charles_Babbage "wp: Charles_Babbage")は、解析機関が解決できる問題の種類に目を向け、次の例を挙げました。
 
 <blockquote>
-  What is the smallest positive integer whose square ends in the digits 269,696?
+  2乗の末尾が269,696になる最小の正の整数は何ですか?
   <footer style='margin-left: 2em;'>Babbage, letter to Lord Bowden, 1837; see Hollingdale and Tootill, <i>Electronic Computers</i>, second edition, 1970, p. 125.</footer>
 </blockquote>
 
-He thought the answer might be 99,736, whose square is 9,947,269,696; but he couldn't be certain.
+答えは99,736で、その2乗は9,947,269,696であると考えましたが、確信はありませんでした。
 
-The task is to find out if Babbage had the right answer.
+バベッジの答えが正しかったかどうかを調べましょう。
 
 # --instructions--
 
-Implement a function to return the lowest integer that satisfies the Babbage problem. If Babbage was right, return Babbage's number.
+バベッジの問題の答えとなる最小の整数を返す関数を作成します。 バベッジが正しかった場合は、バベッジが答えた数値を返します。
 
 # --hints--
 
-`babbage` should be a function.
+`babbage` という関数です。
 
 ```js
 assert(typeof babbage === 'function');
 ```
 
-`babbage(99736, 269696)` should not return 99736 (there is a smaller answer).
+`babbage(99736, 269696)` は 99736 を返さないはずです(もっと小さな答えがあります)。
 
 ```js
 assert.equal(babbage(babbageAns, endDigits), answer);

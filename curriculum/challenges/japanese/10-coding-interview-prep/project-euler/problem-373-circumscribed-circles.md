@@ -1,6 +1,6 @@
 ---
 id: 5900f4e11000cf542c50fff4
-title: 'Problem 373: Circumscribed Circles'
+title: '問題 373: 外接円'
 challengeType: 5
 forumTopicId: 302035
 dashedName: problem-373-circumscribed-circles
@@ -8,17 +8,17 @@ dashedName: problem-373-circumscribed-circles
 
 # --description--
 
-Every triangle has a circumscribed circle that goes through the three vertices. Consider all integer sided triangles for which the radius of the circumscribed circle is integral as well.
+あらゆる三角形において、3 つの頂点を通る外接円を描くことができます。 辺の長さが整数で、外接円の半径も整数であるすべての三角形について考えます。
 
-Let $S(n)$ be the sum of the radii of the circumscribed circles of all such triangles for which the radius does not exceed $n$.
+そのような三角形のうち、半径が $n$ を超えないすべての三角形の外接円の半径の和を $S(n)$ とします。
 
-$S(100) = 4\\,950$ and $S(1\\,200) = 1\\,653\\,605$.
+$S(100) = 4\\,950$, $S(1\\,200) = 1\\,653\\,605$ です。
 
-Find $S({10}^7)$.
+$S({10}^7)$ を求めなさい。
 
 # --hints--
 
-`circumscribedCircles()` should return `727227472448913`.
+`circumscribedCircles()` は `727227472448913` を返す必要があります。
 
 ```js
 assert.strictEqual(circumscribedCircles(), 727227472448913);

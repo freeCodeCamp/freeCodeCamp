@@ -1,6 +1,6 @@
 ---
 id: 5900f46c1000cf542c50ff7e
-title: 'Problem 256: Tatami-Free Rooms'
+title: '問題 256: 畳を敷けない部屋'
 challengeType: 5
 forumTopicId: 301904
 dashedName: problem-256-tatami-free-rooms
@@ -8,29 +8,29 @@ dashedName: problem-256-tatami-free-rooms
 
 # --description--
 
-Tatami are rectangular mats, used to completely cover the floor of a room, without overlap.
+畳のような長方形のマットを、部屋の床の上に互いに重ねることなく敷き詰める場合を考えます。
 
-Assuming that the only type of available tatami has dimensions 1×2, there are obviously some limitations for the shape and size of the rooms that can be covered.
+サイズが 1 × 2 の畳しかないと仮定すると、当然、その畳で敷き詰めることのできる部屋の形やサイズには制限があります。
 
-For this problem, we consider only rectangular rooms with integer dimensions $a$, $b$ and even size $s = a \times b$. We use the term 'size' to denote the floor surface area of the room, and — without loss of generality — we add the condition $a ≤ b$.
+この問題では、整数寸法 $a$ と $b$、および偶数サイズ $s = a \times b$ を持つ長方形の部屋のみを考えます。 ここで、「サイズ」は部屋の床面積を表します。また、一般性を失うことなく、$a ≤ b$ という条件を加えます。
 
-There is one rule to follow when laying out tatami: there must be no points where corners of four different mats meet. For example, consider the two arrangements below for a 4×4 room:
+畳を敷くときは 1 つのルールがあります。4 枚の畳の角が 1 ヵ所に集まってはいけないのです。 例えば、4 × 4 の部屋を次の 2 通りで敷くことを考えます。
 
-<img class="img-responsive center-block" alt="two arragements of mats in 4x4 room" src="https://cdn.freecodecamp.org/curriculum/project-euler/tatami-free-rooms.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="4x4 の部屋に畳を敷く場合の 2 通りの配置" src="https://cdn.freecodecamp.org/curriculum/project-euler/tatami-free-rooms.gif" style="background-color: white; padding: 10px;" />
 
-The arrangement on the left is acceptable, whereas the one on the right is not: a red "<strong><span style="color: red;">X</span></strong>" in the middle, marks the point where four tatami meet.
+左側の配置は問題ありませんが、右側の配置はルールに反しています。中央の赤い印 "<strong><span style="color: red;">X</span></strong>" は、4 枚の畳の角が集まっている個所を示しています。
 
-Because of this rule, certain even-sized rooms cannot be covered with tatami: we call them tatami-free rooms. Further, we define $T(s)$ as the number of tatami-free rooms of size $s$.
+このルールにより、ある偶数サイズの部屋は畳を敷き詰めることができません。そのような部屋を「畳を敷けない部屋」と呼ぶことにします。 さらに、サイズが $s$ である「畳を敷けない部屋」の数を $T(s)$ とします。
 
-The smallest tatami-free room has size $s = 70$ and dimensions 7×10. All the other rooms of size $s = 70$ can be covered with tatami; they are: 1×70, 2×35 and 5×14. Hence, $T(70) = 1$.
+最小の「畳を敷けない部屋」はサイズが $s = 70$、寸法が 7ｘ10 です。 サイズ $s = 70$ である他のすべての部屋 (1×70, 2×35, 5×14) には畳を敷き詰めることができます。 したがって、$T(70) = 1$ です。
 
-Similarly, we can verify that $T(1320) = 5$ because there are exactly 5 tatami-free rooms of size $s = 1320$: 20×66, 22×60, 24×55, 30×44 and 33×40. In fact, $s = 1320$ is the smallest room-size $s$ for which $T(s) = 5$.
+同様に、サイズが $s = 1320$ である「畳を敷けない部屋」はちょうど 5 つあるので (20×66, 22×60, 24×55, 30×44, 33x40)、$T(1320) = 5$ であることを確認できます。 実は $s = 1320$ は、$T(s) = 5$ である最小の部屋のサイズ $s$ です。
 
-Find the smallest room-size $s$ for which $T(s) = 200$.
+$T(s) = 200$ である最小の部屋のサイズ $s$ を求めなさい。
 
 # --hints--
 
-`tatamiFreeRooms()` should return `85765680`.
+`tatamiFreeRooms()` は `85765680` を返す必要があります。
 
 ```js
 assert.strictEqual(tatamiFreeRooms(), 85765680);

@@ -1,6 +1,6 @@
 ---
 id: 5900f52a1000cf542c51003b
-title: 'Problem 444: The Roundtable Lottery'
+title: '問題 444: 円卓宝くじ'
 challengeType: 5
 forumTopicId: 302116
 dashedName: problem-444-the-roundtable-lottery
@@ -8,34 +8,34 @@ dashedName: problem-444-the-roundtable-lottery
 
 # --description--
 
-A group of $p$ people decide to sit down at a round table and play a lottery-ticket trading game. Each person starts off with a randomly-assigned, unscratched lottery ticket. Each ticket, when scratched, reveals a whole-pound prize ranging anywhere from £1 to £$p$, with no two tickets alike. The goal of the game is for each person to maximize his ticket winnings upon leaving the game.
+$p$ 人のグループで円卓に座り、宝くじのトレーディングゲームを行うことにしました。 最初に、まだスクラッチが削られていない宝くじが、1 人に 1 枚ずつ無作為に割り当てられます。 それぞれのくじのスクラッチを削ると 1 ポンドから $p$ ポンドまでの賞金 (1 ポンド単位) が書いてあり、金額はすべて異なります。 ゲームの目的は、各自が自分のくじの賞金を最大にしてゲームから退場することです。
 
-An arbitrary person is chosen to be the first player. Going around the table, each player has only one of two options:
+任意の人が最初のプレイヤーに選ばれます。 円卓の席の順に、各プレイヤーは 2 つの選択肢のうち 1 つを選択します。
 
-1.  The player can scratch his ticket and reveal its worth to everyone at the table.
-2.  The player can trade his unscratched ticket for a previous player's scratched ticket, and then leave the game with that ticket. The previous player then scratches his newly-acquired ticket and reveals its worth to everyone at the table.
+1.  くじを削り、プレイヤー全員にくじの賞金額を伝える。
+2.  まだ削られていない自分のくじを前のプレイヤーの削られたくじと交換し、そのくじを受け取ってゲームから退場する。 前のプレイヤーは新たに割り当てられたくじを削り、プレイヤー全員にくじの賞金額を伝える。
 
-The game ends once all tickets have been scratched. All players still remaining at the table must leave with their currently-held tickets.
+すべてのくじが削られたときにゲームが終了します。 円卓に残ったすべてのプレイヤーは、その時点で持っているくじを持って退場しなければなりません。
 
-Assume that each player uses the optimal strategy for maximizing the expected value of his ticket winnings.
+各プレイヤーが、自分のくじの賞金額の期待値を最大化するための最適な戦略を使用すると仮定します。
 
-Let $E(p)$ represent the expected number of players left at the table when the game ends in a game consisting of $p$ players (e.g. $E(111) = 5.2912$ when rounded to 5 significant digits).
+$p$ 人のプレイヤーで行うゲームが終了するときに円卓に残っているプレイヤーの期待人数を、$E(p)$ で表します (例: 有効数字 5 桁に四捨五入すると $E(111) = 5.2912$)。
 
-Let $S_1(N) = \displaystyle\sum_{p = 1}^N E(p)$.
+$S_1(N) = \displaystyle\sum_{p = 1}^N E(p)$ とします。
 
-Let $S_k(N) = \displaystyle\sum_{p = 1}^N S_{k - 1}(p)$ for $k > 1$.
+$k > 1$ のとき、$S_k(N) = \displaystyle\sum_{p = 1}^N S_{k - 1}(p)$ とします。
 
-Find $S_{20}({10}^{14})$ and write the answer as a string in scientific notation rounded to 10 significant digits. Use a lowercase `e` to separate mantissa and exponent. For example, the answer for $S_3(100)$ would be `5.983679014e5`.
+$S_{20}({10}^{14})$ を求め、有効数字 10 桁に四捨五入された科学的記数法の文字列で答えなさい。 小文字 `e` で仮数部と指数部を区切ること。 例えば、$S_3(100)$ の回答は `5.983679014e5` になります。
 
 # --hints--
 
-`roundtableLottery()` should return a string.
+`roundtableLottery()` は文字列を返す必要があります。
 
 ```js
 assert(typeof roundtableLottery() === 'string');
 ```
 
-`roundtableLottery()` should return the string `1.200856722e263`.
+`roundtableLottery()` は文字列 `1.200856722e263` を返す必要があります。
 
 ```js
 assert.strictEqual(roundtableLottery(), '1.200856722e263');

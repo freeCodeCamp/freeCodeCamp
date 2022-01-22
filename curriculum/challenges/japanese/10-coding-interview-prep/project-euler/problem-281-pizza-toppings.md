@@ -1,6 +1,6 @@
 ---
 id: 5900f4861000cf542c50ff98
-title: 'Problem 281: Pizza Toppings'
+title: '問題 281: ピザのトッピング'
 challengeType: 5
 forumTopicId: 301932
 dashedName: problem-281-pizza-toppings
@@ -8,19 +8,19 @@ dashedName: problem-281-pizza-toppings
 
 # --description--
 
-You are given a pizza (perfect circle) that has been cut into $m·n$ equal pieces and you want to have exactly one topping on each slice.
+ピザ (完全な円) を $m·n$ 枚のスライスに等分し、各スライスにちょうど 1 つずつトッピングを載せます。
 
-Let $f(m,n)$ denote the number of ways you can have toppings on the pizza with $m$ different toppings ($m ≥ 2$), using each topping on exactly $n$ slices ($n ≥ 1$). Reflections are considered distinct, rotations are not.
+ちょうど $n$ 枚のスライス ($n ≥ 1$) にそれぞれのトッピングを使って、$m$ 種類のトッピング ($m ≥ 2$) でピザにトッピングを載せる方法が何通りあるかを、$f(m,n)$ で表します。 反転させたものは相異なるとみなされますが、回転させたものは同一とみなされます。
 
-Thus, for instance, $f(2,1) = 1$, $f(2,2) = f(3,1) = 2$ and $f(3,2) = 16$. $f(3,2)$ is shown below:
+例えば、$f(2,1) = 1$, $f(2,2) = f(3,1) = 2$, $f(3,2) = 16$ です。 $f(3,2)$ を下に示します。
 
-<img class="img-responsive center-block" alt="animation with 16 ways to have 3 different toppings on 2 slices each" src="https://cdn.freecodecamp.org/curriculum/project-euler/pizza-toppings.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="3 種類のトッピングを各 2 枚のスライスに載せる 16 通りの方法を示すアニメーション" src="https://cdn.freecodecamp.org/curriculum/project-euler/pizza-toppings.gif" style="background-color: white; padding: 10px;" />
 
-Find the sum of all $f(m,n)$ such that $f(m,n) ≤ {10}^{15}$.
+$f(m,n) ≤ {10}^{15}$ となる $f(m,n)$ の総和を求めなさい。
 
 # --hints--
 
-`pizzaToppings()` should return `1485776387445623`.
+`pizzaToppings()` は `1485776387445623` を返す必要があります。
 
 ```js
 assert.strictEqual(pizzaToppings(), 1485776387445623);

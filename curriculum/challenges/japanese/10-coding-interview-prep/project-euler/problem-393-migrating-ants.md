@@ -1,6 +1,6 @@
 ---
 id: 5900f4f61000cf542c510008
-title: 'Problem 393: Migrating ants'
+title: '問題 393: アリの移動'
 challengeType: 5
 forumTopicId: 302058
 dashedName: problem-393-migrating-ants
@@ -8,19 +8,19 @@ dashedName: problem-393-migrating-ants
 
 # --description--
 
-An $n × n$ grid of squares contains $n^2$ ants, one ant per square.
+正方形のマスが並ぶ $n × n$ の格子上に、$n^2$ 匹のアリが 1 マスに 1 匹ずついます。
 
-All ants decide to move simultaneously to an adjacent square (usually 4 possibilities, except for ants on the edge of the grid or at the corners).
+すべてのアリが、隣接するマスに同時に移動するとします (格子の端や角にいるアリを除き、通常は移動方向の選択肢が 4 つあります)。
 
-We define $f(n)$ to be the number of ways this can happen without any ants ending on the same square and without any two ants crossing the same edge between two squares.
+複数のアリが同じマスに移動することがなく、かつ、2 つのマスの間の境界線を 2 匹のアリが通ることもないような移動方法の数を、$f(n)$ と定義します。
 
-You are given that $f(4) = 88$.
+$f(4) = 88$ が与えられます。
 
-Find $f(10)$.
+$f(10)$ を求めなさい。
 
 # --hints--
 
-`migratingAnts()` should return `112398351350823100`.
+`migratingAnts()` は `112398351350823100` を返す必要があります。
 
 ```js
 assert.strictEqual(migratingAnts(), 112398351350823100);

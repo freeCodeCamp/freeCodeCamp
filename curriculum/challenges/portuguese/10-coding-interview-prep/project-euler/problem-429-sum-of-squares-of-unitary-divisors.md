@@ -14,7 +14,7 @@ Os divisores unitários de $4! = 24$ são 1, 3, 8 e 24.
 
 A soma de seus quadrados é $12 + 32 + 82 + 242 = 650$.
 
-Considere $S(n)$ como representando a soma dos quadrados dos divisores unitários de $n$. Portanto, $S(4!) = 650$.
+Considere $S(n)$ como representando a soma dos quadrados dos divisores unitários de $n$. Assim, $S(4!) = 650$.
 
 Encontre $S(100.000.000!)$ modulo $1.000.000.009$.
 

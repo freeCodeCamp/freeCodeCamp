@@ -1,6 +1,6 @@
 ---
 id: 5900f4de1000cf542c50fff1
-title: 'Problem 370: Geometric triangles'
+title: '問題 370: 幾何三角形'
 challengeType: 5
 forumTopicId: 302032
 dashedName: problem-370-geometric-triangles
@@ -8,17 +8,17 @@ dashedName: problem-370-geometric-triangles
 
 # --description--
 
-Let us define a geometric triangle as an integer sided triangle with sides $a ≤ b ≤ c$ so that its sides form a geometric progression, i.e. $b^2 = a \times c$.
+辺 $a ≤ b ≤ c$ を持つ整数辺三角形で、その辺が幾何数列を形成するもの、すなわち $b^2 = a \times c$ であるものを、幾何三角形と定義します。
 
-An example of such a geometric triangle is the triangle with sides $a = 144$, $b = 156$ and $c = 169$.
+このような幾何三角形の例は、長さ $a = 144$, $b = 156$, $c = 169$ の 3 辺を持つ三角形です。
 
-There are $861\\,805$ geometric triangles with $\text{perimeter} ≤ {10}^6$.
+$\text{周長} ≤ {10}^6$ を満たす幾何三角形は $861\\,805$ 個あります。
 
-How many geometric triangles exist with $\text{perimeter} ≤ 2.5 \times {10}^{13}$?
+$\text{周長} ≤ 2.5 \times {10}^{13}$ を満たす幾何三角形はいくつありますか。
 
 # --hints--
 
-`geometricTriangles()` should return `41791929448408`.
+`geometricTriangles()` は `41791929448408` を返す必要があります。
 
 ```js
 assert.strictEqual(geometricTriangles(), 41791929448408);

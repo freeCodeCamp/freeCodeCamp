@@ -1,6 +1,6 @@
 ---
 id: 5900f5061000cf542c510017
-title: 'Problem 409: Nim Extreme'
+title: '問題 409: 極端なニム (石取りゲーム)'
 challengeType: 5
 forumTopicId: 302077
 dashedName: problem-409-nim-extreme
@@ -8,21 +8,21 @@ dashedName: problem-409-nim-extreme
 
 # --description--
 
-Let $n$ be a positive integer. Consider nim positions where:
+$n$ を正の整数とします。 次のような二ム (石取りゲーム) の配置について考えます。
 
-- There are $n$ non-empty piles.
-- Each pile has size less than $2^n$.
-- No two piles have the same size.
+- 空でない山が $n$ 個ある。
+- それぞれの山のサイズは $2^n$ 未満である。
+- 同じサイズの山はない。
 
-Let $W(n)$ be the number of winning nim positions satisfying the above conditions (a position is winning if the first player has a winning strategy).
+上の条件を満たすような、二ムの勝利ポジション (先手が必勝戦略を持つようなポジション) の数を $W(n)$ とします 。
 
-For example, $W(1) = 1$, $W(2) = 6$, $W(3) = 168$, $W(5) = 19\\,764\\,360$ and $W(100)\bmod 1\\,000\\,000\\,007 = 384\\,777\\,056$.
+例えば、$W(1) = 1$, $W(2) = 6$, $W(3) = 168$, $W(5) = 19\\,764\\,360$, $W(100)\bmod 1\\,000\\,000\\,007 = 384\\,777\\,056$ です。
 
-Find $W(10\\,000\\,000)\bmod 1\\,000\\,000\\,007$.
+$W(10\\,000\\,000)\bmod 1\\,000\\,000\\,007$ を求めなさい。
 
 # --hints--
 
-`nimExtreme()` should return `253223948`.
+`nimExtreme()` は `253223948` を返す必要があります。
 
 ```js
 assert.strictEqual(nimExtreme(), 253223948);

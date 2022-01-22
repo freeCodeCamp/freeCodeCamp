@@ -12,7 +12,7 @@ dashedName: build-a-technical-documentation-page
 
 以下の[ユーザーストーリー](https://en.wikipedia.org/wiki/User_story)を満たし、すべてのテストがパスするようにしてください。 あなた独自のスタイルを与えてください。
 
-このプロジェクトを完了するために、HTML、JavaScript、CSS を使用することができます。 これまでのレッスンでカバーされた純粋な CSS の練習をするため、純粋な CSS の使用を推奨します。 Bootstrap や SASS を使用しても構いません。 このプロジェクトで追加のテクノロジー (jQuery、React、Angular、Vue など) を使用することは推奨されません。使用する場合は自己責任で使用してください。 React のようなさまざまな技術スタックで作業する機会は他のプロジェクトで得られます。 私達は、このプロジェクトの推奨技術スタックを使用している場合の問題報告は全て受け入れ、修正するように努めます。 ハッピーコーディング！
+このプロジェクトを完了するために、HTML、JavaScript、CSS を使用することができます。 これまでのレッスンでカバーされた純粋な CSS の練習をするため、純粋な CSS の使用を推奨します。 Bootstrap や SASS を使用しても構いません。 このプロジェクトで追加のテクノロジー (jQuery、React、Angular、Vue など) を使用することは推奨されません。使用する場合は自己責任で使用してください。 React のようなさまざまな技術スタックで作業する機会は他のプロジェクトで得られます。 このプロジェクトで推奨される一連のテクノロジーを使用している場合の不具合報告については、freeCodeCamp にて報告を受け入れ、修正するよう努めます。 ハッピーコーディング！
 
 **ユーザーストーリー #1:** `id="main-doc"` を持ち、ページのメインコンテンツ (テクニカルドキュメント) を含む `main` 要素があります。
 
@@ -38,15 +38,15 @@ dashedName: build-a-technical-documentation-page
 
 **ユーザーストーリー #12:** `nav-link` クラスの各要素には、各 `section` 内の `header` テキストに対応するテキストが含まれていなければなりません (例えば、もし "Hello world" セクション / ヘッダーがあるならば、ナビゲーションバーには "Hello world" テキストを含む要素が必要です) 。
 
-**User Story #13:** When I click on a navbar element, the page should navigate to the corresponding section of the `main-doc` element (e.g. If I click on a `nav-link` element that contains the text "Hello world", the page navigates to a `section` element that has that id and contains the corresponding `header`.
+**ユーザーストーリー #13:** ナビゲーションバーの要素をクリックしたとき、ページは `main-doc` 要素の対応するセクションに移動しなければなりません (例えば、"Hello world" テキストを含む `nav-link` 要素をクリックしたならば、その id を持ち、対応する `header` を含む `section` 要素に移動しなければなりません)。
 
-**User Story #14:** On regular sized devices (laptops, desktops), the element with `id="navbar"` should be shown on the left side of the screen and should always be visible to the user.
+**ユーザーストーリー #14:** 通常サイズのデバイス上 (ラップトップ、デスクトップ) では、`id="navbar"` を持つ要素は画面の左側に表示され、常にユーザーから見える状態にしなければなりません。
 
-**User Story #15:** My Technical Documentation page should use at least one media query.
+**ユーザーストーリー #15:** 私のテクニカルドキュメントページは、少なくとも 1 つのメディアクエリを使う必要があります。
 
-You can build your project by <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>using this CodePen template</a> and clicking `Save` to create your own pen. Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+<a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>この CodePen テンプレートを使用して</a>あなたのプロジェクトを構築することができます。`Save` をクリックすると、あなた用の pen を作成することができます。 または、この CDN リンクを使用して任意の環境でテストを実行できます: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
-Once you're done, submit the URL to your working project with all its tests passing.
+完了したら、すべてのテストがパスする状態の作業プロジェクトの URL を送信します。
 
 # --solutions--
 

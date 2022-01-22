@@ -1,6 +1,6 @@
 ---
 id: 59669d08d75b60482359409f
-title: Date format
+title: 日付形式
 challengeType: 5
 forumTopicId: 302243
 dashedName: date-format
@@ -8,15 +8,15 @@ dashedName: date-format
 
 # --description--
 
-Return an array with two date strings of the current date with the following specifications:
+次の仕様で、現在の日付の日付文字列を2つ持つ配列を返します。
 
-- The first string's date order should be the year number, month number, and day number separated by dashes (`-`).
-- The first string's year should be four digits in length.
-- The first string's month and day should not contain any leading zeros.
-- The second string's weekday and month names should not be abbreviated.
-- The second string's day should not contain any leading zeros.
+- 最初の文字列の日付は、年、月、日の順にダッシュで区切られます(`-`)。
+- 最初の文字列の年は、4桁です。
+- 最初の文字列の月と日は、先頭にゼロを含めません。
+- 2番目の文字列の曜日と月は、省略表記にしません。
+- 2番目の文字列の日付は、先頭にゼロを含めません。
 
-Example outputs:
+出力例:
 
 ```js
 ['2007-11-23', 'Friday, November 23, 2007']
@@ -25,25 +25,25 @@ Example outputs:
 
 # --hints--
 
-`getDateFormats` should be a function.
+`getDateFormats` という関数です。
 
 ```js
 assert(typeof getDateFormats === 'function');
 ```
 
-`getDateFormats` should return an object.
+`getDateFormats` はオブジェクトを返します。
 
 ```js
 assert(typeof getDateFormats() === 'object');
 ```
 
-`getDateFormats` should return an array with 2 elements.
+`getDateFormats` は2つの要素を持つ配列を返します。
 
 ```js
 assert(getDateFormats().length === 2);
 ```
 
-`getDateFormats` should return the correct date in the right format
+`getDateFormats` は正しい形式で正確な日付を返します。
 
 ```js
 assert.deepEqual(getDateFormats(), dates, equalsMessage);

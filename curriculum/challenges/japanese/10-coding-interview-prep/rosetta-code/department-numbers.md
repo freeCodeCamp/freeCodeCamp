@@ -1,6 +1,6 @@
 ---
 id: 59f40b17e79dbf1ab720ed7a
-title: Department Numbers
+title: 部署番号
 challengeType: 5
 forumTopicId: 302249
 dashedName: department-numbers
@@ -8,23 +8,23 @@ dashedName: department-numbers
 
 # --description--
 
-There is a highly organized city that has decided to assign a number to each of their departments:
+高度に組織化された都市が、各部署に番号を割り当てることにしました。
 
 <ul>
-  <li>Police department</li>
-  <li>Sanitation department</li>
-  <li>Fire department</li>
+  <li>警察局</li>
+  <li>公衆衛生局</li>
+  <li>消防局</li>
 </ul>
 
-Each department can have a number between 1 and 7 (inclusive).
+各部署は1から7までの数字を持つことができます。
 
-The three department numbers are to be unique (different from each other) and must add up to the number 12.
+3つの部署番号は (互いに異なる) 一意の数字で、足して12にする必要があります。
 
-The Chief of the Police doesn't like odd numbers and wants to have an even number for his department.
+警察長官は、奇数が好きではないので、部署に偶数番号が欲しいと考えています。
 
 # --instructions--
 
-Write a program which outputs all valid combinations as an array.
+すべての有効な組み合わせを配列として出力するプログラムを作成します。
 
 ```js
 [2, 3, 7] [2, 4, 6] [2, 6, 4]
@@ -36,25 +36,25 @@ Write a program which outputs all valid combinations as an array.
 
 # --hints--
 
-`combinations` should be a function.
+`combinations` という関数です。
 
 ```js
 assert(typeof combinations === 'function');
 ```
 
-`combinations([1, 2, 3], 6)` should return an Array.
+`combinations([1, 2, 3], 6)` は配列を返します。
 
 ```js
 assert(Array.isArray(combinations([1, 2, 3], 6)));
 ```
 
-`combinations([1, 2, 3, 4, 5, 6, 7], 12)` should return an array of length 14.
+`combinations([1, 2, 3, 4, 5, 6, 7], 12)` は14の配列を返します。
 
 ```js
 assert(combinations(nums, total).length === len);
 ```
 
-`combinations([1, 2, 3, 4, 5, 6, 7], 12)` should return all valid combinations.
+`combinations([1, 2, 3, 4, 5, 6, 7], 12)` はすべての有効な組み合わせを返します。
 
 ```js
 assert.deepEqual(combinations(nums, total), result);

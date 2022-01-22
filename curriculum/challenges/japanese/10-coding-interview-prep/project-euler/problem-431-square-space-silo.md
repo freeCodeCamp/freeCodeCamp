@@ -1,6 +1,6 @@
 ---
 id: 5900f51b1000cf542c51002e
-title: 'Problem 431: Square Space Silo'
+title: '問題 431: 空間が平方数であるサイロ'
 challengeType: 5
 forumTopicId: 302102
 dashedName: problem-431-square-space-silo
@@ -8,21 +8,21 @@ dashedName: problem-431-square-space-silo
 
 # --description--
 
-Fred the farmer arranges to have a new storage silo installed on his farm and having an obsession for all things square he is absolutely devastated when he discovers that it is circular. Quentin, the representative from the company that installed the silo, explains that they only manufacture cylindrical silos, but he points out that it is resting on a square base. Fred is not amused and insists that it is removed from his property.
+農場主のフレッドは、農場にサイロを新設するための手配をしました。彼は四角い物への執着が強く、丸い物を見つけるとひどく落ち込みます。 サイロを新設した会社の代表者クエンティンは、円柱状のサイロしか製造していないと説明しましたが、ただしサイロは四角い土台の上に載っていると指摘しました。 それでもフレッドは不快感を抱き、サイロを農場から撤去するよう求めました。
 
-Quick thinking Quentin explains that when granular materials are delivered from above a conical slope is formed and the natural angle made with the horizontal is called the angle of repose. For example if the angle of repose, $\alpha = 30°$, and grain is delivered at the centre of the silo then a perfect cone will form towards the top of the cylinder. In the case of this silo, which has a diameter of 6m, the amount of space wasted would be approximately 32.648388556 m<sup>3</sup>. However, if grain is delivered at a point on the top which has a horizontal distance of $x$ metres from the centre then a cone with a strangely curved and sloping base is formed. He shows Fred a picture.
+クエンティンは機転を利かせて次のことを説明しました。サイロの上から粒状のものが投入されるとき、円錐状の斜面ができ、その際に斜面と水平な線によって自然にできる角度は安息角と呼ばれます。 例えば、安息角が $\alpha = 30°$ で、サイロの中央に穀物を投入する場合、円柱の最上部に向けて完全な円錐が形作られます。 直径 6 m のこのサイロの場合、無駄になる空間の体積は約 32.648388556 m<sup>3</sup> です。 一方で、最上面の中心から水平に $x$ メートル離れた点から穀物を投入すると、円錐の底面は奇妙に曲がり傾斜します。 クエンティンはフレッドに図を見せました。
 
-<img class="img-responsive center-block" alt="image presenting forming of the perfect cone towards the top of the cylinder" src="https://cdn.freecodecamp.org/curriculum/project-euler/square-space-silo.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="円柱の最上部に向けて完全な円錐が作られることを示す図" src="https://cdn.freecodecamp.org/curriculum/project-euler/square-space-silo.png" style="background-color: white; padding: 10px;" />
 
-We shall let the amount of space wasted in cubic metres be given by $V(x)$. If $x = 1.114\\,785\\,284$, which happens to have three squared decimal places, then the amount of space wasted, $V(1.114\\,785\\,284) \approx 36$. Given the range of possible solutions to this problem there is exactly one other option: $V(2.511\\,167\\,869) \approx 49$. It would be like knowing that the square is king of the silo, sitting in splendid glory on top of your grain.
+無駄になる空間の体積 (単位: 立方メートル) を $V(x)$ で表します。 $x = 1.114\\,785\\,284$ の場合 (偶然にも、小数点以下の桁数が 3 の 平方数すなわち 9)、無駄になる空間の体積は $V(1.114\\,785\\,284) \approx 36$ となります。 この問題に対して考えられる解の範囲内に、他の選択肢がちょうど 1 つあります。それは、$V(2.511\\,167\\,869) \approx 49$ です。 これで、(平方数と四角形の両方を意味する) "square" がサイロの主になり、輝く栄誉の中で穀物の山の頂に座しているかのようになります。
 
-Fred's eyes light up with delight at this elegant resolution, but on closer inspection of Quentin's drawings and calculations his happiness turns to despondency once more. Fred points out to Quentin that it's the radius of the silo that is 6 metres, not the diameter, and the angle of repose for his grain is 40­°. However, if Quentin can find a set of solutions for this particular silo then he will be more than happy to keep it.
+この的確な解決法にフレッドの表情が喜びで輝きました。しかしクエンティンの図と計算を詳しく調べてみると、喜びが再び落胆に変わりました。 フレッドは、 6 m はサイロの直径ではなく半径であり、さらに穀物の安息角は 40 度であるとクエンティンに指摘しました。 しかし、クエンティンが今回のサイロに対する解決策一式を見つけられれば、フレッドは喜んでサイロをこのまま保有するはずです。
 
-If Quick thinking Quentin is to satisfy frustratingly fussy Fred the farmer's appetite for all things square then determine the values of $x$ for all possible square space wastage options and calculate $\sum x$ correct to 9 decimal places.
+機転の利くクエンティンが、苛立たしいほど気難しい農場主フレッドの四角い物への欲求を満たそうとする場合について、無駄な空間が平方数となるすべての可能な選択肢に対する $x$ の値を決定し、$\sum x$ を小数第 9 位まで求めなさい。
 
 # --hints--
 
-`squareSpaceSilo()` should return `23.386029052`.
+`squareSpaceSilo()` は `23.386029052` を返す必要があります。
 
 ```js
 assert.strictEqual(squareSpaceSilo(), 23.386029052);

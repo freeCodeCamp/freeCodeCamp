@@ -1,6 +1,6 @@
 ---
 id: 5900f4fc1000cf542c51000e
-title: 'Problem 399: Squarefree Fibonacci Numbers'
+title: '問題 399: 無平方フィボナッチ数'
 challengeType: 5
 forumTopicId: 302064
 dashedName: problem-399-squarefree-fibonacci-numbers
@@ -8,33 +8,33 @@ dashedName: problem-399-squarefree-fibonacci-numbers
 
 # --description--
 
-The first 15 fibonacci numbers are:
+以下は最初の 15 個のフィボナッチ数です。
 
-$$1,1,2,3,5,8,13,21,34,55,89,144,233,377,610.$$
+$$1,1,2,3,5,8,13,21,34,55,89,144,233,377,610$$
 
-It can be seen that 8 and 144 are not squarefree: 8 is divisible by 4 and 144 is divisible by 4 and by 9.
+8 は 4 で割り切れ、144 は 4 と 9 で割り切れるので、8 と 144 は無平方ではないことがわかります。
 
-So the first 13 squarefree fibonacci numbers are:
+したがって、最初の 13 個の無平方フィボナッチ数は次のようになります。
 
-$$1,1,2,3,5,13,21,34,55,89,233,377 \text{ and } 610.$$
+$$1,1,2,3,5,13,21,34,55,89,233,377, 610$$
 
-The $200$th squarefree fibonacci number is: 971183874599339129547649988289594072811608739584170445. The last sixteen digits of this number are: 1608739584170445 and in scientific notation this number can be written as `9.7e53`.
+下に示す数は $200$ 番目の無平方フィボナッチ数です。971183874599339129547649988289594072811608739584170445 この数の下位 16 桁は 1608739584170445 であり、科学的記数法ではこれを `9.7e53` と表すことができます。
 
-Find the $100\\,000\\,000$th squarefree fibonacci number. Give as your answer as a string with its last sixteen digits followed by a comma followed by the number in scientific notation (rounded to one digit after the decimal point). For the $200$th squarefree number the answer would have been: `1608739584170445,9.7e53`
+$100\\,000\\,000$ 番目の無平方フィボナッチ数を求めなさい。 回答は、下位 16 桁の後にカンマが続き、その後にその数を科学的記数法で表したもの (小数第 1 位に四捨五入) が続く文字列にすること。 $200$ 番目の無平方フィボナッチの場合、回答は `1608739584170445,9.7e53` という形になります。
 
-**Note:** For this problem, assume that for every prime $p$, the first fibonacci number divisible by $p$ is not divisible by $p^2$ (this is part of Wall's conjecture). This has been verified for primes $≤ 3 \times {10}^{15}$, but has not been proven in general.
+** 注: ** この問題では、すべての素数 $p$ について、$p$ で割り切れる最初のフィボナッチ数は $p^2$ では割り切れないものと仮定します (これは、ウォール予想の一部です)。 この仮定は、素数 $≤ 3 \times {10}^{15}$ に対して確認されていますが、一般的には証明されていません。
 
-If it happens that the conjecture is false, then the accepted answer to this problem isn't guaranteed to be the $100\\,000\\,000$th squarefree fibonacci number, rather it represents only a lower bound for that number.
+上述の予想が誤りである場合、この問題の想定回答は $100\\,000\\,000$ 番目の無平方フィボナッチ数であると保証されず、正しくは、そのような数の下界のみを表すものとなります。
 
 # --hints--
 
-`squarefreeFibonacciNumbers()` should return a string.
+`squarefreeFibonacciNumbers()` は文字列を返す必要があります。
 
 ```js
 assert(typeof squarefreeFibonacciNumbers() === 'string');
 ```
 
-`squarefreeFibonacciNumbers()` should return the string `1508395636674243,6.5e27330467`.
+`squarefreeFibonacciNumbers()` は文字列 `1508395636674243,6.5e27330467` を返す必要があります。
 
 ```js
 assert.strictEqual(squarefreeFibonacciNumbers(), '1508395636674243,6.5e27330467');

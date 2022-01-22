@@ -1,6 +1,6 @@
 ---
 id: 5900f50b1000cf542c51001d
-title: 'Problem 414: Kaprekar constant'
+title: '問題 414: カプレカ定数'
 challengeType: 5
 forumTopicId: 302083
 dashedName: problem-414-kaprekar-constant
@@ -8,36 +8,36 @@ dashedName: problem-414-kaprekar-constant
 
 # --description--
 
-6174 is a remarkable number; if we sort its digits in increasing order and subtract that number from the number you get when you sort the digits in decreasing order, we get $7641 - 1467 = 6174$.
+6174 は驚くべき数です。その各位を降順に並べ替えた数から昇順に並べ替えた数を引くと、$7641 - 1467 = 6174$ となるのです。
 
-Even more remarkable is that if we start from any 4 digit number and repeat this process of sorting and subtracting, we'll eventually end up with 6174 or immediately with 0 if all digits are equal.
+さらに驚くべきことに、いずれの 4 桁の数から始めても、並べ替えと減算を繰り返すと最終的に 6174 になるか、または、すべての桁の数字が同じである場合は即座に 0 になります。
 
-This also works with numbers that have less than 4 digits if we pad the number with leading zeroes until we have 4 digits.
+4 桁より少ない桁の数についても、4 桁になるまで先行ゼロを付けることで上と同様のことが起こります。
 
-E.g. let's start with the number 0837:
+例えば、 数 0837 から始めると次のようになります。
 
 $$\begin{align} & 8730 - 0378 = 8352 \\\\ & 8532 - 2358 = 6174 \end{align}$$
 
-6174 is called the Kaprekar constant. The process of sorting and subtracting and repeating this until either 0 or the Kaprekar constant is reached is called the Kaprekar routine.
+6174 はカプレカ定数と呼ばれます。 0 かカプレカ定数になるまでこのように並べ替えと減算を繰り返すプロセスは、カプレカ操作と呼ばれます。
 
-We can consider the Kaprekar routine for other bases and number of digits. Unfortunately, it is not guaranteed a Kaprekar constant exists in all cases; either the routine can end up in a cycle for some input numbers or the constant the routine arrives at can be different for different input numbers. However, it can be shown that for 5 digits and a base $b = 6t + 3 ≠ 9$, a Kaprekar constant exists.
+基数や桁数が異なる数に対するカプレカ操作を考えることができます。 残念ながら、すべてのケースに必ずカプレカ定数があるわけではありません。一部の入力値が最終的に循環に入るか、または入力値ごとに定数が異なるかのいずれかが起こります。 しかし、5 桁かつ基数が $b = 6t + 3 ≠ 9$ の場合にカプレカ定数が存在することが分かっています。
 
-E.g. base 15: ${(10, 4, 14, 9, 5)}\_{15}$ base 21: $(14, 6, 20, 13, 7)_{21}$
+例えば、 基数が 15 のとき: ${(10, 4, 14, 9, 5)}\_{15}$、基数が 21 のとき: $(14, 6, 20, 13, 7)_{21}$ です。
 
-Define $C_b$ to be the Kaprekar constant in base $b$ for 5 digits. Define the function $sb(i)$ to be:
+5 桁かつ基数が $b$ の場合のカプレカ定数を $C_b$ と定義します。 また、関数 $sb(i)$ を次のように定義します。
 
-- 0 if $i = C_b$ or if $i$ written in base $b$ consists of 5 identical digits
-- the number of iterations it takes the Kaprekar routine in base $b$ to arrive at $C_b$, otherwise
+- $i = C_b$ のとき、または、$i$ が $b$ を基数とし 5 つの同じ数字からなるときは、値は 0 である。
+- それ以外のときの値は、$C_b$ に到達するまでに基数 $b$ でカプレカ操作を繰り返す必要のある回数である。
 
-Note that we can define $sb(i)$ for all integers $i &lt; b^5$. If $i$ written in base $b$ takes less than 5 digits, the number is padded with leading zero digits until we have 5 digits before applying the Kaprekar routine.
+なお、すべての整数 $i &lt; b^5$ に対して $sb(i)$ を定義することができます。 $b$ を基数として表される $i$ が 5 桁未満の数である場合、カプレカ操作を行う前にその数が 5 桁になるまで先行ゼロを付けます。
 
-Define $S(b)$ as the sum of $sb(i)$ for $0 &lt; i &lt; b^5$. E.g. $S(15) = 5\\,274\\,369$ $S(111) = 400\\,668\\,930\\,299$
+$0 &lt; i &lt; b^5$ のとき、$sb(i)$ の和を $S(b)$ と定義します。 例: $S(15) = 5\\,274\\,369$ $S(111) = 400\\,668\\,930\\,299$
 
-Find the sum of $S(6k + 3)$ for $2 ≤ k ≤ 300$. Give the last 18 digits as your answer.
+$2 ≤ k ≤ 300$ のとき、$S(6k + 3)$ の和を求めなさい。 回答は、下位 18 桁とすること。
 
 # --hints--
 
-`kaprekarConstant()` should return `552506775824935500`.
+`kaprekarConstant()` は `552506775824935500` を返す必要があります。
 
 ```js
 assert.strictEqual(kaprekarConstant(), 552506775824935500);

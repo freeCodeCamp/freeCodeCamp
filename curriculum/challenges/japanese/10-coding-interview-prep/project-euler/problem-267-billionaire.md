@@ -1,6 +1,6 @@
 ---
 id: 5900f4771000cf542c50ff8a
-title: 'Problem 267: Billionaire'
+title: 'Problem 267: 億万長者'
 challengeType: 5
 forumTopicId: 301916
 dashedName: problem-267-billionaire
@@ -8,21 +8,21 @@ dashedName: problem-267-billionaire
 
 # --description--
 
-You are given a unique investment opportunity.
+一風変わった投資機会が与えられます。
 
-Starting with £1 of capital, you can choose a fixed proportion, $f$, of your capital to bet on a fair coin toss repeatedly for 1000 tosses.
+1 ポンドの資金で始め、1000 回の公正なコイントスに対して繰り返し賭ける資金の固定比率 $f$ を選択します。
 
-Your return is double your bet for heads and you lose your bet for tails.
+表が出たら賭け金の倍額を稼ぎ、裏が出たら賭け金を失います。
 
-For example, if $f = \frac{1}{4}$, for the first toss you bet £0.25, and if heads comes up you win £0.5 and so then have £1.5. You then bet £0.375 and if the second toss is tails, you have £1.125.
+例えば、$f = \frac{1}{4}$の場合、最初のコイントスで 0.25 ポンドを賭け、表が出たら 0.5 ポンドを獲得するので、資金は 1.5 ポンドになります。 その後、0.375 ポンドを賭け、2 回目のトスが裏であれば資金は 1.125 ポンドになります。
 
-Choosing $f$ to maximize your chances of having at least £1,000,000,000 after 1,000 flips, what is the chance that you become a billionaire?
+1,000 回後に資金が少なくとも 1,000,000,000 ポンドになっている確率が最大になるような $f$ を選んだ場合に、資金が 1,000,000,000 ポンドになっている確率を求めなさい。
 
-All computations are assumed to be exact (no rounding), but give your answer rounded to 12 digits behind the decimal point in the form 0.abcdefghijkl.
+計算はすべて (四捨五入なしで) 厳密に行われることが想定されています。ただし回答は、四捨五入して小数第 12 位まで求め、0.abcdefghijkl の形式にすること。
 
 # --hints--
 
-`billionaire()` should return `0.999992836187`.
+`billionaire()` は `0.999992836187` を返す必要があります。
 
 ```js
 assert.strictEqual(billionaire(), 0.999992836187);

@@ -1,6 +1,6 @@
 ---
 id: 5900f54a1000cf542c51005c
-title: 'Problem 477: Number Sequence Game'
+title: '問題 477: 数列ゲーム'
 challengeType: 5
 forumTopicId: 302154
 dashedName: problem-477-number-sequence-game
@@ -8,35 +8,35 @@ dashedName: problem-477-number-sequence-game
 
 # --description--
 
-The number sequence game starts with a sequence $S$ of $N$ numbers written on a line.
+数列ゲームは、一列に書かれた $N$ 個の数からなる数列 $S$ で始まります。
 
-Two players alternate turns. At his turn, a player must select and remove either the first or the last number remaining in the sequence.
+2 人のプレイヤーが交互にプレイします。 プレイヤーは自分のターンで、数列に残っている最初の数または最後の数を選択し、取り除きます。
 
-The player score is the sum of all the numbers he has taken. Each player attempts to maximize his own sum.
+取った数の和がそのプレイヤーのスコアになります。 各プレイヤーは自分の数の和を最大にしようとします。
 
-If $N = 4$ and $S = \\{1, 2, 10, 3\\}$, then each player maximizes his score as follows:
+$N = 4$ かつ $S = \\{1, 2, 10, 3\\}$ の場合、各プレイヤーは次のようにスコアを最大化します。
 
-- Player 1: removes the first number (1)
-- Player 2: removes the last number from the remaining sequence (3)
-- Player 1: removes the last number from the remaining sequence (10)
-- Player 2: removes the remaining number (2)
+- プレイヤー 1: 最初の数 (1) を取り除く
+- プレイヤー 2: 残りの数列から最後の数 (3) を取り除く
+- プレイヤー 1: 残りの数列から最後の数 (10) を取り除く
+- プレイヤー 2: 残りの数 (2) を取り除く
 
-Player 1 score is $1 + 10 = 11$.
+プレイヤー 1 のスコアは $1 + 10 = 11$ です。
 
-Let $F(N)$ be the score of player 1 if both players follow the optimal strategy for the sequence $S = \\{s_1, s_2, \ldots, s_N\\}$ defined as:
+次のように定義される数列 $S = \\{s_1, s_2, \ldots, s_N\\}$ の最適な戦略に両プレイヤーが従った場合の、プレイヤー 1 のスコアを $F(N)$ とします。
 
 - $s_1 = 0$
-- $s_{i + 1} = ({s_i}^2 + 45)$ modulo $1\\,000\\,000\\,007$
+- $s_{i + 1} = ({s_i}^2 + 45)$ mod $1\\,000\\,000\\,007$
 
-The sequence begins with $S = \\{0, 45, 2\\,070, 4\\,284\\,945, 753\\,524\\,550, 478\\,107\\,844, 894\\,218\\,625, \ldots\\}$.
+数列は $S = \\{0, 45, 2\\,070, 4\\,284\\,945, 753\\,524\\,550, 478\\,844, 894\\,218\\,625, \ldots\\}$ で始まります。
 
-You are given $F(2) = 45$, $F(4) = 4\\,284\\,990$, $F(100) = 26\\,365\\,463\\,243$, $F(104) = 2\\,495\\,838\\,522\\,951$.
+$F(2) = 45$, $F= 4\\,284\\,990$, $F(100) = 26\\,365\\,463\\,243$, $F(104) = 2\\,495\\,838\\,522\\,951$ が与えられます。
 
-Find $F({10}^8)$.
+$F({10}^8)$ を求めなさい。
 
 # --hints--
 
-`numberSequenceGame()` should return `25044905874565164`.
+`numberSequenceGame()` は `25044905874565164` を返す必要があります。
 
 ```js
 assert.strictEqual(numberSequenceGame(), 25044905874565164);

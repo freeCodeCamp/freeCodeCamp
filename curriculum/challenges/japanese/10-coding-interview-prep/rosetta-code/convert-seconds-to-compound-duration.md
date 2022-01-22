@@ -1,6 +1,6 @@
 ---
 id: 596fd036dc1ab896c5db98b1
-title: Convert seconds to compound duration
+title: 秒を複合表示に変換
 challengeType: 5
 forumTopicId: 302236
 dashedName: convert-seconds-to-compound-duration
@@ -8,69 +8,69 @@ dashedName: convert-seconds-to-compound-duration
 
 # --description--
 
-Implement a function which:
+以下の関数を作成します。
 
 <ul>
-  <li>takes a positive integer representing a duration in seconds as input (e.g., <code>100</code>), and</li>
-  <li>returns a string which shows the same duration decomposed into weeks, days, hours, minutes, and seconds as detailed below (e.g., <code>1 min, 40 sec</code>).</li>
+  <li>継続期間を秒単位で表す正の整数を入力します (例えば <code>100</code>)。</li>
+  <li>以下の詳細のように、週、日、時、分、秒に分解された同じ期間を示す文字列を返します (例えば <code>1 min, 40 sec</code>)。</li>
 </ul>
 
-Demonstrate that it passes the following three test-cases:
+次の3つのテストケースで正しく変換されることを示します。
 
-<div style='font-size:115%; font-weight: bold;'>Test Cases</div>
+<div style='font-size:115%; font-weight: bold;'>テストケース</div>
 
-| Input number | Output number             |
-| ------------ | ------------------------- |
-| 7259         | <code>2 hr, 59 sec</code> |
-| 86400        | <code>1 d</code> |
-| 6000000      | <code>9 wk, 6 d, 10 hr, 40 min</code> |
+| 入力した数字  | 出力された数字                   |
+| ------- | ------------------------- |
+| 7259    | <code>2 hr, 59 sec</code> |
+| 86400   | <code>1 d</code> |
+| 6000000 | <code>9 wk, 6 d, 10 hr, 40 min</code> |
 
-<div style="font-size:115%; font-weight: bold;">Details</div>
+<div style="font-size:115%; font-weight: bold;">詳細</div>
 <ul>
   <li>
-    The following five units should be used:
+    以下の5つの単位を使用する必要があります。
 
-| Unit   | Suffix used in Output | Conversion            |
+| 単位  | アウトプットで使用される接尾辞 | 換算           |
 | ------ | --------------------- | --------------------- |
-| week   |!!crwdBlockTags_18_sgaTkcolBdwrc!!       | 1 week = 7 days       |
-| day    |!!crwdBlockTags_19_sgaTkcolBdwrc!!        | 1 day = 24 hours      |
-| hour   |!!crwdBlockTags_20_sgaTkcolBdwrc!!       | 1 hour = 60 minutes   |
-| minute |!!crwdBlockTags_21_sgaTkcolBdwrc!!      | 1 minute = 60 seconds |
+| 週  |!!crwdBlockTags_18_sgaTkcolBdwrc!!       | 1 週間 = 7 日       |
+| day    |!!crwdBlockTags_19_sgaTkcolBdwrc!!        | 1 日 = 24 時間    |
+| hour   |!!crwdBlockTags_20_sgaTkcolBdwrc!!       | 1 時間 = 60 分   |
+| minute |!!crwdBlockTags_21_sgaTkcolBdwrc!!      | 1 分 = 60 秒 |
 | second |!!crwdBlockTags_22_sgaTkcolBdwrc!!      | ---                   |
 
   </li>
   <li>
-    However, <strong>only</strong> include quantities with non-zero values in the output (e.g., return <code>1 d</code> and not <code>0 wk, 1 d, 0 hr, 0 min, 0 sec</code>).
+    ただし、ゼロではない値 <strong>のみ</strong> が出力されます(例えば <code>0 wk, 1 d, 0 hr, 0 min, 0 sec</code>ではなく、<code>1 d</code>を返します)。
   </li>
   <li>
-    Give larger units precedence over smaller ones as much as possible (e.g., return <code>2 min, 10 sec</code> and not <code>1 min, 70 sec</code> or <code>130 sec</code>).
+    可能な限り小さな単位よりも大きな単位を優先します (例えば <code>1 min, 70 sec</code> または <code>130 sec</code> ではなく、<code>2 min, 10 sec</code> を返します)。
   </li>
   <li>
-    Mimic the formatting shown in the test-cases (quantities sorted from largest unit to smallest and separated by comma+space; value and unit of each quantity separated by space).
+    テストケースに表示される書式設定（数量が最大単位から最小単位の順でソートされ、カンマ+スペースで区切られ、各数量の値と単位がスペースで区切られる）にします。
   </li>
 </ul>
 
 # --hints--
 
-`convertSeconds` should be a function.
+`convertSeconds` という関数です。
 
 ```js
 assert(typeof convertSeconds === 'function');
 ```
 
-`convertSeconds(7259)` should return `2 hr, 59 sec`.
+`convertSeconds(7259)` は `2 hr, 59 sec` を返します。
 
 ```js
 assert.equal(convertSeconds(testCases[0]), results[0]);
 ```
 
-`convertSeconds(86400)` should return `1 d`.
+`convertSeconds(86400)` は `1 d` をを返します。
 
 ```js
 assert.equal(convertSeconds(testCases[1]), results[1]);
 ```
 
-`convertSeconds(6000000)` should return `9 wk, 6 d, 10 hr, 40 min`.
+`convertSeconds(6000000)` は `9 wk, 6 d, 10 hr, 40 min` を返します。
 
 ```js
 assert.equal(convertSeconds(testCases[2]), results[2]);

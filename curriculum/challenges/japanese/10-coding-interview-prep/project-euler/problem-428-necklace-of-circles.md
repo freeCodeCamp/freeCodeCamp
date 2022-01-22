@@ -1,6 +1,6 @@
 ---
 id: 5900f5191000cf542c51002b
-title: 'Problem 428: Necklace of Circles'
+title: '問題 428: 円のネックレス'
 challengeType: 5
 forumTopicId: 302098
 dashedName: problem-428-necklace-of-circles
@@ -8,32 +8,32 @@ dashedName: problem-428-necklace-of-circles
 
 # --description--
 
-Let $a$, $b$ and $c$ be positive numbers.
+$a$, $b$, $c$ を正の数とします。
 
-Let $W$, $X$, $Y$, $Z$ be four collinear points where $|WX| = a$, $|XY| = b$, $|YZ| = c$ and $|WZ| = a + b + c$.
+$|WX| = a$, $|XY| = b$, $|YZ| = c$, $|WZ| = a + b + c$ となる同一直線上の 4 点 を $W$, $X$, $Y$, $Z$ とします。
 
-Let $C_{\text{in}}$ be the circle having the diameter $XY$.
+直径が $XY$ である円を $C_{\text{in}}$ とします。
 
-Let $C_{\text{out}}$ be the circle having the diameter $WZ$.
+直径が $WZ$ である円を $C_{\text{out}}$ とします。
 
-The triplet ($a$, $b$, $c$) is called a *necklace triplet* if you can place $k ≥ 3$ distinct circles $C_1, C_2, \ldots, C_k$ such that:
+$k (≥ 3)$ 個の相異なる円 $C_1, C_2, \ldots, C_k$ を、以下の条件をすべて満たすように配置できる場合、三つ組数 ($a$, $b$, $c$) は*ネックレス三つ組数*と呼ばれます。
 
-- $C_i$ has no common interior points with any $C_j$ for $1 ≤ i$, $j ≤ k$ and $i ≠ j$,
-- $C_i$ is tangent to both $C_{\text{in}}$ and $C_{\text{out}}$ for $1 ≤ i ≤ k$,
-- $C_i$ is tangent to $C_{i + 1}$ for $1 ≤ i &lt; k$, and
-- $C_k$ is tangent to $C_1$.
+- $C_i$ は、$1 ≤ i$, $j ≤ k$ かつ $i ≠ j$ のとき、いずれの $C_j$ とも内点を共有しない。
+- $C_i$ は、$1 ≤ i ≤ k$ のとき、$C_{\text{in}}$ および $C_{\text{out}}$ の両方に接している。
+- $C_i$ は、$1 ≤ i &lt; k$ のとき、$C_{i + 1}$ に接している。
+- $C_k$ は $C_1$ に接している。
 
-For example, (5, 5, 5) and (4, 3, 21) are necklace triplets, while it can be shown that (2, 2, 5) is not.
+例えば、(5, 5, 5) と (4, 3, 21) はネックレス三つ組数です。しかし、(2, 2, 5) はそうではないことが分かっています。
 
-<img class="img-responsive center-block" alt="a visual representation of a necklace triplet" src="https://cdn.freecodecamp.org/curriculum/project-euler/necklace-of-circles.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="ネックレス三つ組数の視覚的表現" src="https://cdn.freecodecamp.org/curriculum/project-euler/necklace-of-circles.png" style="background-color: white; padding: 10px;" />
 
-Let $T(n)$ be the number of necklace triplets $(a, b, c)$ such that $a$, $b$ and $c$ are positive integers, and $b ≤ n$. For example, $T(1) = 9$, $T(20) = 732$ and $T(3\\,000) = 438\\,106$.
+$a$, $b$, $c$ が正の整数で、かつ $b ≤ n$ のときのネックレス三つ組数の個数を $T(n)$ とします。 例えば、$T(1) = 9$, $T(20) = 732$, $T(3\\,000) = 438\\,106$ です。
 
-Find $T(1\\,000\\,000\\,000)$.
+$T(1\\,000\\,000\\,000)$ を求めなさい。
 
 # --hints--
 
-`necklace(1000000000)` should return `747215561862`.
+`necklace(1000000000)` は `747215561862` を返す必要があります。
 
 ```js
 assert.strictEqual(necklace(1000000000), 747215561862);

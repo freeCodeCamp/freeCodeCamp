@@ -1,6 +1,6 @@
 ---
 id: 5900f5331000cf542c510045
-title: 'Problem 454: Diophantine reciprocals III'
+title: '問題 454: ディオファントス逆数 (3)'
 challengeType: 5
 forumTopicId: 302127
 dashedName: problem-454-diophantine-reciprocals-iii
@@ -8,19 +8,19 @@ dashedName: problem-454-diophantine-reciprocals-iii
 
 # --description--
 
-In the following equation $x$, $y$, and $n$ are positive integers.
+次の式の $x$, $y$, $n$ は正の整数です。
 
 $$\frac{1}{x} + \frac{1}{y} = \frac{1}{n}$$
 
-For a limit $L$ we define $F(L)$ as the number of solutions which satisfy $x &lt; y ≤ L$.
+上限が $L$ のとき、$x &lt; y ≤ L$ を満たす解の個数を $F(L)$ とします。
 
-We can verify that $F(15) = 4$ and $F(1000) = 1069$.
+$F(15) = 4$, $F(1000) = 1069$ であることを確認できます。
 
-Find $F({10}^{12})$.
+$F({10}^{12})$ を求めなさい。
 
 # --hints--
 
-`diophantineReciprocalsThree()` should return `5435004633092`.
+`diophantineReciprocalsThree()` は `5435004633092` を返す必要があります。
 
 ```js
 assert.strictEqual(diophantineReciprocalsThree(), 5435004633092);

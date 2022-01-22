@@ -1,6 +1,6 @@
 ---
 id: 5900f4da1000cf542c50ffed
-title: 'Problem 366: Stone Game III'
+title: '問題 366: 石取りゲーム (3)'
 challengeType: 5
 forumTopicId: 302027
 dashedName: problem-366-stone-game-iii
@@ -8,41 +8,41 @@ dashedName: problem-366-stone-game-iii
 
 # --description--
 
-Two players, Anton and Bernhard, are playing the following game.
+アントンとベルンハルトという名前の 2 人のプレイヤーが、次のようなゲームをしています。
 
-There is one pile of $n$ stones.
+$n$ 個の石を積み上げた山が 1 つあります。
 
-The first player may remove any positive number of stones, but not the whole pile.
+先手は、任意の正の整数分の石を取れますが、山全体を取ることはできません。
 
-Thereafter, each player may remove at most twice the number of stones his opponent took on the previous move.
+その後、各プレイヤーは、対戦相手が直前に取った数の 2 倍までの数の石を取ります。
 
-The player who removes the last stone wins.
+最後の石を取ったプレイヤーが勝者です。
 
-E.g. $n = 5$
+例: $n = 5$ とします。
 
-If the first player takes anything more than one stone the next player will be able to take all remaining stones.
+先手が 2 個以上の石を取った場合、後手は残りのすべての石を取ることができます。
 
-If the first player takes one stone, leaving four, his opponent will take also one stone, leaving three stones.
+先手が石を 1 個取り 4 個残した場合、後手も石を 1 個取ると 3 個残ります。
 
-The first player cannot take all three because he may take at most $2 \times 1 = 2$ stones. So let's say he also takes one stone, leaving 2.
+先手は多くとも $2 \times 1 = 2$ 個の石しか取れないので、3 個すべてを取ることはできません。 したがって、また石を 1 個取ると仮定します。残りは 2 個になります。
 
-The second player can take the two remaining stones and wins.
+後手は、残っている 2 個の石を取れば勝つことができます。
 
-So 5 is a losing position for the first player.
+したがって、石が 5 個ある山は先手にとって敗北ポジション (必ず負ける状況) です。
 
-For some winning positions there is more than one possible move for the first player.
+いくつかの勝利ポジションでは、先手が取り得る手は複数あります。
 
-E.g. when $n = 17$ the first player can remove one or four stones.
+例: $n = 17$ の場合、先手は 1 個または 4 個の石を取ることができます。
 
-Let $M(n)$ be the maximum number of stones the first player can take from a winning position at his first turn and $M(n) = 0$ for any other position.
+先手が最初のターンで勝利ポジションから取れる石の最大数を $M(n)$ とし、他のすべてのポジションでは $M(n) = 0$ とします。
 
-$\sum M(n)$ for $n ≤ 100$ is 728.
+$n ≤ 100$ のとき、$\sum M(n)$ = 728 です。
 
-Find $\sum M(n)$ for $n ≤ {10}^{18}$. Give your answer modulo ${10}^8$.
+$n ≤ {10}^{18}$ のとき、$\sum M(n)$ を求めなさい。 mod ${10}^8$ で答えること。
 
 # --hints--
 
-`stoneGameThree()` should return `88351299`.
+`stoneGameThree()` は `88351299` を返す必要があります。
 
 ```js
 assert.strictEqual(stoneGameThree(), 88351299);

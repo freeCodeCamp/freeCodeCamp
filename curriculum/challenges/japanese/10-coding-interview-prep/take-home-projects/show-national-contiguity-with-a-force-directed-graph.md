@@ -16,7 +16,7 @@ dashedName: show-national-contiguity-with-a-force-directed-graph
 
 **ユーザーストーリー:** それぞれの国旗がその国のノード上に見えます。
 
-**ヒント:** 構築するために使用できるデータセットはこちらです: <https://raw.githubusercontent.com/DealPete/forceDirected/master/countries.json>
+**ヒント:** アプリを構築するために使用できるデータセットはこちらです: <https://raw.githubusercontent.com/DealPete/forceDirected/master/countries.json>
 
 **ヒント:** <https://www.flag-sprites.com> において国旗のスプライトシートを作成できます。
 

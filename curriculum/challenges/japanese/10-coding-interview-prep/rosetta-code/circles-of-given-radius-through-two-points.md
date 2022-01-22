@@ -1,6 +1,6 @@
 ---
 id: 5951815dd895584b06884620
-title: Circles of given radius through two points
+title: 2点を通る指定半径の円
 challengeType: 5
 forumTopicId: 302231
 dashedName: circles-of-given-radius-through-two-points
@@ -8,30 +8,30 @@ dashedName: circles-of-given-radius-through-two-points
 
 # --description--
 
-Given two points on a plane and a radius, usually two circles of given radius can be drawn through the points.
+平面上の2点と半径が指定されると、指定半径の円が2点を通って2つ描かれます。
 
-**Exceptions:**
+**例外:**
 
 <ul>
-  <li>A radius of zero should be treated as never describing circles (except in the case where the points are coincident).</li>
-  <li>If the points are coincident then an infinite number of circles with the point on their circumference can be drawn, unless the radius is equal to zero as well which then collapses the circles to a point.</li>
-  <li>If the points form a diameter then return a single circle.</li>
-  <li>If the points are too far apart then no circles can be drawn.</li>
+  <li>半径が0である場合は、2点が完全に一致する場合を除き、円は描かれません。</li>
+  <li>2点が完全に一致している場合、円周上にその点が存在する円を無数描くことができます。 ただし、半径もゼロである場合、円が点となります。</li>
+  <li>2点が直径を形成する場合は、1つの円を返します。</li>
+  <li>2点があまりにも離れている場合、円を描くことができません。</li>
 </ul>
 
 # --instructions--
 
-Implement a function that takes two points and a radius and returns the two circles through those points. For each resulting circle, provide the coordinates for the center of each circle rounded to four decimal digits. Return each coordinate as an array, and coordinates as an array of arrays.
+2点と半径を受け取り、2点を通る二つの円を返す関数を作成します。 得られる各円の中心座標を小数点第4位に丸めます。 各座標を配列として、座標を配列の配列として返します。
 
-**For edge cases, return the following:**
+**エッジケースの場合、以下を返します。**
 
 <ul>
-  <li>If points are on the diameter, return one point. If the radius is also zero however, return <code>"Radius Zero"</code>.</li>
-  <li>If points are coincident, return <code>"Coincident point. Infinite solutions"</code>.</li>
-  <li>If points are farther apart than the diameter, return <code>"No intersection. Points further apart than circle diameter"</code>.</li>
+  <li>2点が直径上にある場合は、1 点を返します。 ただし、半径もゼロの場合は、<code>"Radius Zero"</code> を返します。</li>
+  <li>2点が完全に一致する場合は、 <code>"Coincident point. Infinite solutions" </code> を返します。</li>
+  <li>2点が直径よりも離れている場合は、<code>"No intersection. Points further apart than circle diameter" </code>を返します。</li>
 </ul>
 
-**Sample inputs:**
+**入力例**
 
 <pre>      p1                p2           r
 0.1234, 0.9876    0.8765, 0.2345    2.0
@@ -43,37 +43,37 @@ Implement a function that takes two points and a radius and returns the two circ
 
 # --hints--
 
-`getCircles` should be a function.
+`getCircles` という関数です。
 
 ```js
 assert(typeof getCircles === 'function');
 ```
 
-`getCircles([0.1234, 0.9876], [0.8765, 0.2345], 2.0)` should return `[[1.8631, 1.9742], [-0.8632, -0.7521]]`.
+`getCircles([0.1234, 0.9876], [0.8765, 0.2345], 2.0)` は `[[1.8631, 1.9742], [-0.8632, -0.7521]]` を返します。
 
 ```js
 assert.deepEqual(getCircles(...testCases[0]), answers[0]);
 ```
 
-`getCircles([0.0000, 2.0000], [0.0000, 0.0000], 1.0)` should return `[0, 1]`
+`getCircles([0.0000, 2.0000], [0.0000, 0.0000], 1.0)` は `[0, 1]` を返します。
 
 ```js
 assert.deepEqual(getCircles(...testCases[1]), answers[1]);
 ```
 
-`getCircles([0.1234, 0.9876], [0.1234, 0.9876], 2.0)` should return `Coincident point. Infinite solutions`
+`getCircles([0.1234, 0.9876], [0.1234, 0.9876], 2.0)` は `Coincident point. Infinite solutions `を返します。
 
 ```js
 assert.deepEqual(getCircles(...testCases[2]), answers[2]);
 ```
 
-`getCircles([0.1234, 0.9876], [0.8765, 0.2345], 0.5)` should return `No intersection. Points further apart than circle diameter`
+`getCircles([0.1234, 0.9876], [0.8765, 0.2345], 0.5)` は、`No intersection. Points further apart than circle diameter ` を返します。
 
 ```js
 assert.deepEqual(getCircles(...testCases[3]), answers[3]);
 ```
 
-`getCircles([0.1234, 0.9876], [0.1234, 0.9876], 0.0)` should return `Radius Zero`
+`getCircles([0.1234, 0.9876], [0.1234, 0.9876], 0.0)` は`Radius Zero` を返します。
 
 ```js
 assert.deepEqual(getCircles(...testCases[4]), answers[4]);

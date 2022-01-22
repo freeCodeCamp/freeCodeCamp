@@ -1,6 +1,6 @@
 ---
 id: 5900f47b1000cf542c50ff8d
-title: 'Problem 271: Modular Cubes, part 1'
+title: '問題 272: モジュラー立方数 (1)'
 challengeType: 5
 forumTopicId: 301921
 dashedName: problem-271-modular-cubes-part-1
@@ -8,15 +8,15 @@ dashedName: problem-271-modular-cubes-part-1
 
 # --description--
 
-For a positive number $n$, define $S(n)$ as the sum of the integers $x$, for which $1 < x < n$ and $x^3 \equiv 1\bmod n$.
+正の整数 $n$ について、$1 < x < n$ かつ $x^3 \equiv 1\bmod n$ であるような整数 $x$ の和を $S(n)$ とします。
 
-When $n = 91$, there are 8 possible values for $x$, namely: 9, 16, 22, 29, 53, 74, 79, 81. Thus, $S(91) = 9 + 16 + 22 + 29 + 53 + 74 + 79 + 81 = 363$.
+$n = 91$ のとき、考えられる $x$ の値は 9, 16, 22, 29, 53, 74, 79, 81 の 8 つです。 したがって、$S(91) = 9 + 16 + 22 + 29 + 53 + 74 + 79 + 81 = 363$ です。
 
-Find $S(13\\,082\\,761\\,331\\,670\\,030)$.
+$S(13\\,082\\,761\\,331\\,670\\,030)$ を求めなさい。
 
 # --hints--
 
-`modularCubesOne()` should return `4617456485273130000`.
+`modularCubesOne()` は `4617456485273130000` を返す必要があります。
 
 ```js
 assert.strictEqual(modularCubesOne(), 4617456485273130000);

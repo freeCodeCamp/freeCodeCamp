@@ -1,6 +1,6 @@
 ---
 id: 5900f4b31000cf542c50ffc6
-title: 'Problem 327: Rooms of Doom'
+title: '問題 327: 運命の部屋'
 challengeType: 5
 forumTopicId: 301984
 dashedName: problem-327-rooms-of-doom
@@ -8,35 +8,35 @@ dashedName: problem-327-rooms-of-doom
 
 # --description--
 
-A series of three rooms are connected to each other by automatic doors.
+連続する 3 つの部屋が自動ドアでつながっています。
 
-<img class="img-responsive center-block" alt="series of three rooms, connected to each other by automatic doors" src="https://cdn.freecodecamp.org/curriculum/project-euler/rooms-of-doom.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="自動ドアでつながった連続する 3 部屋" src="https://cdn.freecodecamp.org/curriculum/project-euler/rooms-of-doom.gif" style="background-color: white; padding: 10px;" />
 
-Each door is operated by a security card. Once you enter a room, the door automatically closes, and that security card cannot be used again. A machine will dispense an unlimited number of cards at the start, but each room (including the starting room) contains scanners. If they detect that you are holding more than three security cards or if they detect an unattended security card on the floor, then all the doors will become permanently locked. However, each room contains a box where you may safely store any number of security cards for use at a later stage.
+各ドアを開けるにはセキュリティカードを使います。 部屋に入るとドアが自動的に閉まり、そのセキュリティカードは二度と使えません。 開始時、カード発行機から何枚でもカードを入手できますが、各部屋 (開始点となる部屋を含む) には検出器が設置されています。 あなたが 3 枚以上のセキュリティカードを持っていることや、セキュリティカードが床に放置されていることが検出されると、すべてのドアが永久にロックされます。 ただし、各部屋には箱があり、後で使うための任意の枚数のセキュリティカードをその箱に安全に保管できます。
 
-If you simply tried to travel through the rooms one at a time then as you entered room 3 you would have used all three cards and would be trapped in that room forever!
+単に部屋を一度に通り抜けようとすると、3 つ目の部屋に入った時には 3 枚のカードを使い切っているので、永久にその部屋に閉じ込められます！
 
-However, if you make use of the storage boxes, then escape is possible. For example, you could enter room 1 using your first card, place one card in the storage box, and use your third card to exit the room back to the start. Then after collecting three more cards from the dispensing machine you could use one to enter room 1 and collect the card you placed in the box a moment ago. You now have three cards again and will be able to travel through the remaining three doors. This method allows you to travel through all three rooms using six security cards in total.
+しかし、保管箱を使えば 脱出できる可能性があります。 例えば、1 枚目のカードを使って 1 つ目の部屋に入り、保管箱にカードを 1 枚入れ、3 枚目のカードを使って開始地点に戻ります。 その後、さらに 3 枚のカードを発行機から入手し、1 枚を使って 1 つ目の部屋に入り、先ほど箱に入れたカードを取り出します。 再び 3 枚のカードを持っているので、残りの 3 つのドアを通過することができます。 この方法なら、計 6 枚のセキュリティカードを使って 3 つの部屋を通り抜けられます。
 
-It is possible to travel through six rooms using a total of 123 security cards while carrying a maximum of 3 cards.
+一度に最大 3 枚のカードを持ち、計 123 枚のセキュリティカードを使って 6 つの部屋を通り抜けることができます。
 
-Let $C$ be the maximum number of cards which can be carried at any time.
+どの時点であれ一度に持つことができるカードの最大枚数を、$C$ とします。
 
-Let $R$ be the number of rooms to travel through.
+通り抜ける部屋の数を $R$ とします。
 
-Let $M(C, R)$ be the minimum number of cards required from the dispensing machine to travel through $R$ rooms carrying up to a maximum of $C$ cards at any time.
+どの時点であれ一度に最大 $C$ 枚のカードを持ち、$R$ 個の部屋を通り抜けるために発行機から入手する必要のあるカードの最小枚数を $M(C, R)$ とします。
 
-For example, $M(3, 6) = 123$ and $M(4, 6) = 23$.
+例えば、$M(3, 6) = 123$, $M(4, 6) = 23$ です。
 
-And, $\sum M(C, 6) = 146$ for $3 ≤ C ≤ 4$.
+また、$3 ≤ C ≤ 4$ のとき、$\sum M(C, 6) = 146$ です。
 
-You are given that $\sum M(C, 10) = 10382$ for $3 ≤ C ≤ 10$.
+$3 ≤ C ≤ 10$ のとき、$\sum M(C, 10) = 10382$ が与えられます。
 
-Find $\sum M(C, 30)$ for $3 ≤ C ≤ 40$.
+$3 ≤ C ≤ 40$ のとき、$\sum M(C, 30)$ を求めなさい。
 
 # --hints--
 
-`roomsOfDoom()` should return `34315549139516`.
+`roomsOfDoom()` は `34315549139516` を返す必要があります。
 
 ```js
 assert.strictEqual(roomsOfDoom(), 34315549139516);

@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339acf
-title: Ackermann function
+title: アッカーマン関数
 challengeType: 5
 forumTopicId: 302223
 dashedName: ackermann-function
@@ -8,45 +8,45 @@ dashedName: ackermann-function
 
 # --description--
 
-The Ackermann function is a classic example of a recursive function, notable especially because it is not a primitive recursive function. It grows very quickly in value, as does the size of its call tree.
+アッカーマン関数は、再帰関数の典型的な例です。原始再帰関数ではないため、特に注目に値します。 コールツリーの大きさと同様に、値が爆発的に増加します。
 
-The Ackermann function is usually defined as follows:
+アッカーマン関数は通常、以下のように定義されます。
 
 $A(m, n) = \\begin{cases} n+1 & \\mbox{if } m = 0 \\\\ A(m-1, 1) & \\mbox{if } m > 0 \\mbox{ and } n = 0 \\\\ A(m-1, A(m, n-1)) & \\mbox{if } m > 0 \\mbox{ and } n > 0. \\end{cases}$
 
-Its arguments are never negative and it always terminates.
+引数が負になることはなく、必ず完了します。
 
 # --instructions--
 
-Write a function which returns the value of $A(m, n)$. Arbitrary precision is preferred (since the function grows so quickly), but not required.
+$A(m, n)$ の値を返す関数を書きます。 (関数の数値が爆発的に増加するため)任意精度が好まれますが、必然性はありません。
 
 # --hints--
 
-`ack` should be a function.
+`ack` という関数です。
 
 ```js
 assert(typeof ack === 'function');
 ```
 
-`ack(0, 0)` should return 1.
+`ack(0, 0)` は1を返します。
 
 ```js
 assert(ack(0, 0) === 1);
 ```
 
-`ack(1, 1)` should return 3.
+`ack(1, 1)` は3を返します。
 
 ```js
 assert(ack(1, 1) === 3);
 ```
 
-`ack(2, 5)` should return 13.
+`ack(2, 5)` は13を返します。
 
 ```js
 assert(ack(2, 5) === 13);
 ```
 
-`ack(3, 3)` should return 61.
+`ack(3, 3)` は61を返します。
 
 ```js
 assert(ack(3, 3) === 61);

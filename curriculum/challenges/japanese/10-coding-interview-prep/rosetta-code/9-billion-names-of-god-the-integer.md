@@ -1,6 +1,6 @@
 ---
 id: 5949b579404977fbaefcd736
-title: 9 billion names of God the integer
+title: 90億の神の御名 整数
 challengeType: 5
 forumTopicId: 302219
 dashedName: 9-billion-names-of-god-the-integer
@@ -8,77 +8,77 @@ dashedName: 9-billion-names-of-god-the-integer
 
 # --description--
 
-This task is a variation of the [short story by Arthur C. Clarke](https://en.wikipedia.org/wiki/The Nine Billion Names of God#Plot_summary "wp: The Nine Billion Names of God#Plot_summary").
+このタスクは、[アーサー・C・クラークの短編](https://en.wikipedia.org/wiki/The Nine Billion Names of God#Plot_summary "wp: The Nine Billion Names of God#Plot_summary")のバリエーションです。
 
-(Solvers should be aware of the consequences of completing this task.)
+(ソルバーは、このタスクの完了結果を認識している必要があります。)
 
-In detail, to specify what is meant by a "name":
+「名前」が意味するものを詳細に示します。
 
 <ul>
-  <li>The integer 1 has 1 name "1".</li>
-  <li>The integer 2 has 2 names "1+1" and "2".</li>
-  <li>The integer 3 has 3 names "1+1+1", "2+1",  and "3".</li>
-  <li>The integer 4 has 5 names "1+1+1+1", "2+1+1", "2+2", "3+1", "4".</li>
-  <li>The integer 5 has 7 names "1+1+1+1+1", "2+1+1+1", "2+2+1", "3+1+1", "3+2", "4+1", "5".</li>
+  <li>整数1には、「1」という名前があります。</li>
+  <li>整数2には、「1+1」と「2」という2つの名前があります。</li>
+  <li>整数3には、「1+1+ 1」と「2+1」と「3」という3つの名前があります。</li>
+  <li>整数4には、「1+1+1+1」と「2+1」と「2+2」と「3+1」と「4」という5つの名前があります。</li>
+  <li>整数 5 には、「1+1+1+1+1」と「2+1+1+ 1」と「2+2+1」と「3+1+1」と「3+2」と「4+1」と「5」という7つの名前があります。</li>
 </ul>
 
-This can be visualized in the following form:
+これは以下の形式で表すことができます。
 
 <pre>          1
-        1   1
-      1   1   1
-    1   2   1   1
-  1   2   2   1   1
-1   3   3   2   1   1
+        1 1
+      1 1 1
+    1 2 1 1
+  1 2 1 1 1
+1 3 3 2 1 1
 </pre>
 
-Where row $n$ corresponds to integer $n$, and each column $C$ in row $m$ from left to right corresponds to the number of names beginning with $C$.
+$n$ 行は、整数 $n$に相当し、左から右への $m$行内の$C$の各列は、$C$で始まる名前の数に相当します。
 
-Optionally note that the sum of the $n$-th row $P(n)$ is the integer partition function.
+また、$n$番目の $P(n)$ 行の合計は、整数パーティション関数であることに注意してください。
 
 # --instructions--
 
-Implement a function that returns the sum of the $n$-th row.
+$n$番目の行の合計を返す関数を作成します。
 
 # --hints--
 
-`numberOfNames` should be function.
+`numberOfNames` という関数です。
 
 ```js
 assert(typeof numberOfNames === 'function');
 ```
 
-`numberOfNames(5)` should equal 7.
+`numberOfNames(5)` は7に等しいです。
 
 ```js
 assert.equal(numberOfNames(5), 7);
 ```
 
-`numberOfNames(12)` should equal 77.
+`numberOfNames(12)` は77に等しいです。
 
 ```js
 assert.equal(numberOfNames(12), 77);
 ```
 
-`numberOfNames(18)` should equal 385.
+`numberOfNames(18)` は385に等しいです。
 
 ```js
 assert.equal(numberOfNames(18), 385);
 ```
 
-`numberOfNames(23)` should equal 1255.
+`numberOfNames(23)` は1255に等しいです。
 
 ```js
 assert.equal(numberOfNames(23), 1255);
 ```
 
-`numberOfNames(42)` should equal 53174.
+`numberOfNames(42)` は53174に等しいです。
 
 ```js
 assert.equal(numberOfNames(42), 53174);
 ```
 
-`numberOfNames(123)` should equal 2552338241.
+`numberOfNames(123)` は2552338241に等しいです。
 
 ```js
 assert.equal(numberOfNames(123), 2552338241);

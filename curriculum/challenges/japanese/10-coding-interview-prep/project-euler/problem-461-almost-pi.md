@@ -1,6 +1,6 @@
 ---
 id: 5900f53a1000cf542c51004c
-title: 'Problem 461: Almost Pi'
+title: '問題 461: ほぼ Pi'
 challengeType: 5
 forumTopicId: 302136
 dashedName: problem-461-almost-pi
@@ -8,43 +8,43 @@ dashedName: problem-461-almost-pi
 
 # --description--
 
-Let `f(k, n)` = $e^\frac{k}{n} - 1$, for all non-negative integers `k`.
+すべての非負整数 `k` に対して `f(k, n)` = $e^\frac{k}{n} - 1$ と定義します。
 
-Remarkably, `f(6, 200) + f(75, 200) + f(89, 200) + f(226, 200)` = 3.1415926… ≈ π.
+驚くべきことに、`f(6, 200) + f(75, 200) + f(89, 200) + f(226, 200)` = 3.1415926… ≈ π となります。
 
-In fact, it is the best approximation of π of the form `f(a, 200) + f(b, 200) + f(c, 200) + f(d, 200)`.
+実際、これは式 `f(a, 200) + f(b, 200) + f(c, 200) + f(d, 200)` の π の最良近似です。
 
-Let `almostPi(n)` = a<sup>2</sup> + b<sup>2</sup> + c<sup>2</sup> + d<sup>2</sup> for a, b, c, d that minimize the error: $\lvert f(a,n) + f(b,n) + f(c,n) + f(d,n) - \Pi\rvert$
+誤差 $\lvert f(a,n) + f(b,n) + f(c,n) + f(d,n) - \Pi\rvert$ が最小となる a, b, c, d に対して、`almostPi(n)` = a<sup>2</sup> + b<sup>2</sup> + c<sup>2</sup> + d<sup>2</sup> と定義します。
 
-You are given `almostPi(200)` = 6<sup>2</sup> + 75<sup>2</sup> + 89<sup>2</sup> + 226<sup>2</sup> = 64658.
+`almostPi(200)` = 6<sup>2</sup> + 75<sup>2</sup> + 89<sup>2</sup> + 226<sup>2</sup> = 64658 が与えられます。
 
 # --hints--
 
-`almostPi` should be a function.
+`almostPi` は関数でなければなりません。
 
 ```js
 assert(typeof almostPi === 'function')
 ```
 
-`almostPi` should return a number.
+`almostPi` は数値を返す必要があります。
 
 ```js
 assert.strictEqual(typeof almostPi(10), 'number');
 ```
 
-`almostPi(29)` should return `1208`.
+`almostPi(29)` は `1208` を返す必要があります。
 
 ```js
 assert.strictEqual(almostPi(29), 1208);
 ```
 
-`almostPi(50)` should return `4152`.
+`almostPi(50)` は `4152` を返す必要があります。
 
 ```js
 assert.strictEqual(almostPi(50), 4152);
 ```
 
-`almostPi(200)` should return `64658`.
+`almostPi(200)` は `64658` を返す必要があります。
 
 ```js
 assert.strictEqual(almostPi(200), 64658);

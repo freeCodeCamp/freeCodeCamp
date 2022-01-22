@@ -1,6 +1,6 @@
 ---
 id: 5900f5231000cf542c510035
-title: 'Problem 439: Sum of sum of divisors'
+title: '問題 439: 約数の和の和'
 challengeType: 5
 forumTopicId: 302110
 dashedName: problem-439-sum-of-sum-of-divisors
@@ -8,19 +8,19 @@ dashedName: problem-439-sum-of-sum-of-divisors
 
 # --description--
 
-Let $d(k)$ be the sum of all divisors of $k$.
+$k$ の約数の総和を $d(k)$ とします。
 
-We define the function $S(N) = \sum_{i = 1}^N \sum_{j = 1}^N d(i \times j)$.
+関数 $S(N) = \sum_{i = 1}^N \sum_{j = 1}^N d(i \times j)$ を定義します。
 
-For example, $S(3) = d(1) + d(2) + d(3) + d(2) + d(4) + d(6) + d(3) + d(6) + d(9) = 59$.
+例えば、$S(3) = d(1) + d(2) + d(3) + d(2) + d(4) + d(6) + d(3) + d(6) + d(9) = 59$ です。
 
-You are given that $S({10}^3) = 563\\,576\\,517\\,282$ and $S({10}^5)\bmod {10}^9 = 215\\,766\\,508$.
+$S({10}^3) = 563\\,576\\,517\\,282$ and $S({10}^5)\bmod {10}^9 = 215\\,766\\,508$ が与えられます。
 
-Find $S({10}^{11})\bmod {10}^9$.
+$S({10}^{11})\bmod {10}^9$ を求めなさい。
 
 # --hints--
 
-`sumOfSumOfDivisors()` should return `968697378`.
+`sumOfSumOfDivisors()` は `968697378` を返す必要があります。
 
 ```js
 assert.strictEqual(sumOfSumOfDivisors(), 968697378);

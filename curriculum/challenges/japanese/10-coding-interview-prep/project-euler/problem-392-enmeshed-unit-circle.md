@@ -1,6 +1,6 @@
 ---
 id: 5900f4f41000cf542c510007
-title: 'Problem 392: Enmeshed unit circle'
+title: '問題 392: 網にかかった単位円'
 challengeType: 5
 forumTopicId: 302057
 dashedName: problem-392-enmeshed-unit-circle
@@ -8,31 +8,31 @@ dashedName: problem-392-enmeshed-unit-circle
 
 # --description--
 
-A rectilinear grid is an orthogonal grid where the spacing between the gridlines does not have to be equidistant.
+直線格子とは、格子線が必ずしも等間隔でない直交格子です。
 
-An example of such grid is logarithmic graph paper.
+そのような格子の例として、対数方眼紙が挙げられます。
 
-Consider rectilinear grids in the Cartesian coordinate system with the following properties:
+ここでは、以下のプロパティを備えたデカルト座標系の直線格子について考えます。
 
-- The gridlines are parallel to the axes of the Cartesian coordinate system.
-- There are $N + 2$ vertical and $N + 2$ horizontal gridlines. Hence there are $(N + 1) \times (N + 1)$ rectangular cells.
-- The equations of the two outer vertical gridlines are $x = -1$ and $x = 1$.
-- The equations of the two outer horizontal gridlines are $y = -1$ and $y = 1$.
-- The grid cells are colored red if they overlap with the unit circle, black otherwise.
+- 格子線がデカルト座標系の軸と平行である。
+- $N + 2$ 本の垂直格子線と $N + 2$ 本の水平格子線が引かれている。 したがって、長方形のマスが $(N + 1) \times (N + 1)$ 個存在する。
+- 外側の 2 本の垂直格子線の式が $x = -1$ と $x = 1$ である。
+- 外側の 2 本の水平格子線の式が $y = -1$ と $y = 1$ である。
+- 格子のマスは、単位円と重なると赤色になり、それ以外の場合は黒色になる。
 
-For this problem we would like you to find the positions of the remaining $N$ inner horizontal and $N$ inner vertical gridlines so that the area occupied by the red cells is minimized.
+この問題では、赤色のマスの面積を最小にするには、残りの $N$ 本の内側の水平格子線と $N$ 本の内側の垂直格子線をどこに引けばよいかを求めます。
 
-E.g. here is a picture of the solution for $N = 10$:
+例: 下図は $N = 10$ のときの解を示しています。
 
-<img class="img-responsive center-block" alt="solution for N = 10" src="https://cdn.freecodecamp.org/curriculum/project-euler/enmeshed-unit-circle.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="N = 10 のときの解" src="https://cdn.freecodecamp.org/curriculum/project-euler/enmeshed-unit-circle.png" style="background-color: white; padding: 10px;" />
 
-The area occupied by the red cells for $N = 10$ rounded to 10 digits behind the decimal point is 3.3469640797.
+$N = 10$ のときに赤色のマスが占める面積を、四捨五入して小数第 10 位まで示すと 3.3469640797 になります。
 
-Find the positions for $N = 400$. Give as your answer the area occupied by the red cells rounded to 10 digits behind the decimal point.
+$N = 400$ のときの位置を求めなさい。 赤色のマスが占める面積を、四捨五入して小数第 10 位まで示すこと。
 
 # --hints--
 
-`enmeshedUnitCircle()` should return `3.1486734435`.
+`enmeshedUnitCircle()` は `3.1486734435` を返す必要があります。
 
 ```js
 assert.strictEqual(enmeshedUnitCircle(), 3.1486734435);

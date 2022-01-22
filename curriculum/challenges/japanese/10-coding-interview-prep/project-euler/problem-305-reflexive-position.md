@@ -1,6 +1,6 @@
 ---
 id: 5900f49d1000cf542c50ffb0
-title: 'Problem 305: Reflexive Position'
+title: '問題 305: 再帰位置'
 challengeType: 5
 forumTopicId: 301959
 dashedName: problem-305-reflexive-position
@@ -8,19 +8,19 @@ dashedName: problem-305-reflexive-position
 
 # --description--
 
-Let's call $S$ the (infinite) string that is made by concatenating the consecutive positive integers (starting from 1) written down in base 10.
+10 進数表記の (1から始まる) 連続する正の整数を連結した (無限の) 文字列を、$S$ とします。
 
-Thus, $S = 1234567891011121314151617181920212223242\ldots$
+したがって、$S = 1234567891011121314151617181920212223242\ldots$ です。
 
-It's easy to see that any number will show up an infinite number of times in $S$.
+一見して分かるとおり、$S$ にはどの数字も無限に現れます。
 
-Let's call $f(n)$ the starting position of the $n^{\text{th}}$ occurrence of $n$ in $S$. For example, $f(1) = 1$, $f(5) = 81$, $f(12) = 271$ and $f(7780) = 111\\,111\\,365$.
+$S$ 内で $n$ が $n$ 回目に現れた開始位置を、$f(n)$ と定義します。 例えば、$f(1) = 1$, $f(5) = 81$, $f(12) = 271$, $f(7780) = 111\\,111\\,365$ です。
 
-Find $\sum f(3^k) for 1 ≤ k ≤ 13$.
+$1 ≤ k ≤ 13$ のとき、$\sum f(3^k) を求めなさい。
 
 # --hints--
 
-`reflexivePosition()` should return `18174995535140`.
+`reflexivePosition()` は `18174995535140` を返す必要があります。
 
 ```js
 assert.strictEqual(reflexivePosition(), 18174995535140);
