@@ -124,19 +124,18 @@ Translating our contributing documentation is a similar flow to translating our 
 
 ## Translate the LearnToCode RPG
 
-The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated strings:
+The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated strings: (See [Ren'Py Doc on Text](https://www.renpy.org/doc/html/text.html))
 
-- The sentences to be translated are always between `""`. These are dialogues or UI strings.
-- In case of `new "..."` Do not translate `new`.
-- Prefixes like `player`, `annika`, `layla`, `marco` (or variants like `player @ happy`) should not be translated.
+- The sentences to be translated are always between `""`. These are dialogues or UI strings. The keywords that come before or after the dialogue are game engine control keywords and will be explained in details in subsequent rules. Please note that this first rule governs all subsequent rules listed.
+- In case of `new "..."` Do not translate the `new` keyword.
+- Prefixes like `player`, `annika`, `layla`, `marco` (or variants like `player happy`, `player @ happy`) should not be translated. These are control keywords to correctly display the character sprite in the game.
 - Postfixes like `nointeract` should not be translated.
 - Do not translate things between `[]` and `{}`. These are variable interpolations and text tags.
+- Do not translate the `nointeract` keyword at the end of the sentence.
 
 ### Examples
 
 ---
-
-https://github.com/freeCodeCamp/LearnToCodeRPG/blob/351f26074b441d056ab9d6e1381e8be1e9ede8b1/game/tl/traditional_chinese/script.rpy#L61
 
 #### Before translation
 
@@ -155,8 +154,6 @@ https://github.com/freeCodeCamp/LearnToCodeRPG/blob/351f26074b441d056ab9d6e1381e
 Note: The `[]` and `{}` tags should be left intact.
 
 ---
-
-https://github.com/freeCodeCamp/LearnToCodeRPG/blob/351f26074b441d056ab9d6e1381e8be1e9ede8b1/game/tl/traditional_chinese/screens.rpy#L15
 
 #### Before translation
 
@@ -191,6 +188,22 @@ layla @ neutral "哈哈，[player_name]，你真有趣。我相信你一定会�
 ```
 
 Note: `layla @ neutral` and `[player_name]` are left unchanged.
+
+---
+
+###### Before translation
+
+```renpy
+# player "Maybe this is all a dream?" nointeract
+player "Maybe this is all a dream?" nointeract
+```
+
+###### After translation
+
+```renpy
+# player "Maybe this is all a dream?" nointeract
+player "也许这都是一场梦？" nointeract
+```
 
 ## Rate Translations
 
