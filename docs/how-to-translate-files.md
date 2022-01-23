@@ -130,8 +130,9 @@ The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated str
 - In case of `new "..."` Do not translate the `new` keyword.
 - Prefixes like `player`, `annika`, `layla`, `marco` (or variants like `player happy`, `player @ happy`) should not be translated. These are control keywords to correctly display the character sprite in the game.
 - Postfixes like `nointeract` should not be translated.
-- Do not translate things between `[]` and `{}`. These are variable interpolations and text tags.
+- Do not translate things between `[]` and `{}`. These are variable interpolations and text tags. These must remain halfwidth parentheses `[]` and `{}` instead of their fullwidth counterparts `【】` and `「」`
 - Do not translate the `nointeract` keyword at the end of the sentence.
+- If we try to use fullwidth parentheses `（）`, a QA warning will show. To avoid the QA warning, use halfwidth parentheses `()`
 
 ### Examples
 
@@ -191,18 +192,59 @@ Note: `layla @ neutral` and `[player_name]` are left unchanged.
 
 ---
 
-###### Before translation
+#### Before translation
 
 ```renpy
 # player "Maybe this is all a dream?" nointeract
 player "Maybe this is all a dream?" nointeract
 ```
 
-###### After translation
+#### After translation
 
 ```renpy
 # player "Maybe this is all a dream?" nointeract
 player "也许这都是一场梦？" nointeract
+```
+
+---
+
+### A Note on How Crowdin Segments a Sentence
+
+Pay attention to how Crowdin segments a line of dialogue wrapped between opening and closing quotes `""`. When we are translating the dialogue, we need to make sure to retain the opening and closing quotes, even if the quotes appear in different segments.
+
+This is the line to be translated:
+
+```renpy
+player @ surprised "{b}Full-stack{/b}... What is that? I better take notes so I can learn more about it."
+```
+
+Crowdin segments it into three parts like below:
+
+<img width="836" alt="Screen Shot 2022-01-23 at 10 36 43" src="https://user-images.githubusercontent.com/35674052/150693962-d3b091e5-2432-44d0-9d24-195ea7d7aeda.png">
+
+```renpy
+# original
+player @ surprised "{b}Full-stack{/b}
+# translated, keeping the opening quotes `"`
+player @ surprised "{b}全栈{/b}
+```
+
+<img width="750" alt="Screen Shot 2022-01-23 at 10 36 49" src="https://user-images.githubusercontent.com/35674052/150693965-15411504-791a-4db3-8b14-bc9177be6375.png">
+
+```renpy
+# original
+What is that?
+# translated, no quotes on either side
+这是什么？
+```
+
+<img width="857" alt="Screen Shot 2022-01-23 at 10 36 54" src="https://user-images.githubusercontent.com/35674052/150693969-062e3268-580f-4ad2-97db-cab6240b6095.png">
+
+```renpy
+# original
+I better take notes so I can learn more about it."
+# translated, keeping the closing quotes `"`
+我最好做笔记，这样我可以学习更多东西。"
 ```
 
 ## Rate Translations
