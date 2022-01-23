@@ -18,6 +18,7 @@ import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import IsNewRespCert from '../../../utils/is-new-responsive-web-design-cert';
 import Challenges from './challenges';
+import '../intro.css';
 
 const { curriculumLocale } = envData;
 
@@ -93,7 +94,7 @@ export class Block extends Component<BlockProps> {
   }
 
   renderProgressBar(): JSX.Element {
-    return <ProgressBar now={25} label={`${25}%`} />;
+    return <ProgressBar now={25} />;
   }
 
   render(): JSX.Element {
@@ -258,12 +259,13 @@ export class Block extends Component<BlockProps> {
                 {this.renderCheckMark(
                   completedCount === challengesWithCompleted.length
                 )}
-                <h3>{blockTitle}</h3>
+                <h3 className='block-grid-title'>{blockTitle}</h3>
                 <Caret />
               </div>
               {!isExpanded && (
                 <div className='progress-wrapper'>
                   {this.renderProgressBar()}
+                  <span>50%</span>
                 </div>
               )}
             </a>

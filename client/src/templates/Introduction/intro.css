@@ -49,6 +49,12 @@
   overflow-wrap: break-word;
 }
 
+.block-grid-title {
+  font-size: 1.17rem;
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
 .block-title-translation-cta {
   white-space: nowrap;
   padding: 0.2em 0.5em;
@@ -206,8 +212,13 @@ button.map-title {
   stroke: var(--color-quaternary);
 }
 
-.open > .map-title > svg:first-child {
+.open > .map-title > svg:first-child,
+.block-grid .map-title > svg:last-child {
   transform: rotate(90deg);
+}
+
+.block-grid.open .map-title > svg:last-child {
+  transform: rotate(270deg);
 }
 
 .map-challenges-ul {
@@ -339,15 +350,6 @@ button.map-title {
   flex-direction: column;
 }
 
-.progress-wrapper {
-  width: 100%;
-}
-
-.block .progress {
-  height: 10px;
-  width: 100%;
-}
-
 .block-grid .block-header {
   display: flex;
   align-items: center;
@@ -383,11 +385,37 @@ button.map-title {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
   width: 100%;
 }
 
-/* .title-wrapper svg {
-  width: 25px;
-  padding: 5px;
-} */
+.block-grid .map-title > svg:last-child {
+  margin-left: auto;
+}
+
+.progress-wrapper {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.progress-wrapper span {
+  color: var(--quaternary-color);
+}
+
+.block-grid .map-title > svg {
+  margin: 10px;
+}
+
+.block-grid .progress {
+  height: 15px;
+  background-color: var(--secondary-background);
+  margin: 0 10px;
+  width: 80%;
+  border-radius: 0;
+}
+
+.progress-bar {
+  background-color: var(--blue-mid);
+}
