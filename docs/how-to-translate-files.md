@@ -124,7 +124,7 @@ Translating our contributing documentation is a similar flow to translating our 
 
 ## Translate the LearnToCode RPG
 
-The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated strings: (See [Ren'Py Doc on Text](https://www.renpy.org/doc/html/text.html))
+The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated strings: (See [Ren'Py Text documentation](https://www.renpy.org/doc/html/text.html))
 
 - The sentences to be translated are always between `""`. These are dialogues or UI strings. The keywords that come before or after the dialogue are game engine control keywords and will be explained in details in subsequent rules. Please note that this first rule governs all subsequent rules listed.
 - In case of `new "..."` Do not translate the `new` keyword.
