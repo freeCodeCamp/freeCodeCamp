@@ -38,13 +38,13 @@ assert(code.match(/<\/title>/i));
 Your `<title>` element should be nested in your `<head>` element.
 
 ```js
-assert(code.match(/<head>\s*<title>.*<\/title>\s*<\/head>/i));
+assert(code.match(/<head>\s*<title>.*<\/title>\s*<\/head>/si));
 ```
 
 Your `<title>` element should have the text `Camper Cafe Menu`. You may need to check your spelling.
 
 ```js
-assert(code.match(/<title>camper\scafe\smenu<\/title>/i));
+assert.match(document.querySelector('title')?.innerText, /camper cafe menu/i);
 ```
 
 # --seed--
