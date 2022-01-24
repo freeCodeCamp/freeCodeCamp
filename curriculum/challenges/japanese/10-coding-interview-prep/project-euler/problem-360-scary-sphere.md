@@ -1,6 +1,6 @@
 ---
 id: 5900f4d41000cf542c50ffe7
-title: 'Problem 360: Scary Sphere'
+title: '問題 360: 恐ろしい球体'
 challengeType: 5
 forumTopicId: 302021
 dashedName: problem-360-scary-sphere
@@ -8,21 +8,21 @@ dashedName: problem-360-scary-sphere
 
 # --description--
 
-Given two points ($x_1$, $y_1$, $z_1$) and ($x_2$, $y_2$, $z_2$) in three dimensional space, the Manhattan distance between those points is defined as $|x_1 - x_2| + |y_1 - y_2| + |z_1 - z_2|$.
+三次元空間に ($x_1$, $y_1$, $z_1$) と ($x_2$, $y_2$, $z_2$) の 2 つの点が与えられるとき、この 2 点間のマンハッタン距離は $|x_1 - x_2| + |y_1 - y_2| + |z_1 - z_2|$ と定義されます。
 
-Let $C(r)$ be a sphere with radius $r$ and center in the origin $O(0, 0, 0)$.
+$C(r)$ を、半径が $r$、中心が原点 $O(0, 0, 0)$ の球とします。
 
-Let $I(r)$ be the set of all points with integer coordinates on the surface of $C(r)$.
+$I(r)$ を、$C(r)$ の表面に整数座標を持つすべての点の集合とします。
 
-Let $S(r)$ be the sum of the Manhattan distances of all elements of $I(r)$ to the origin $O$.
+$S(r)$ を、$I(r)$ のすべての要素から原点 $O$ までのマンハッタン距離の和とします。
 
-E.g. $S(45)=34518$.
+例: $S(45)=34518$
 
-Find $S({10}^{10})$.
+$S({10}^{10})$ を求めなさい。
 
 # --hints--
 
-`scarySphere()` should return `878825614395267100`.
+`scarySphere()` は `878825614395267100` を返す必要があります。
 
 ```js
 assert.strictEqual(scarySphere(), 878825614395267100);

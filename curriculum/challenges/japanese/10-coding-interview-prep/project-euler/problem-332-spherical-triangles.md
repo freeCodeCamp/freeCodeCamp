@@ -1,6 +1,6 @@
 ---
 id: 5900f4b91000cf542c50ffcb
-title: 'Problem 332: Spherical triangles'
+title: '問題 332: 球面三角形'
 challengeType: 5
 forumTopicId: 301990
 dashedName: problem-332-spherical-triangles
@@ -8,25 +8,25 @@ dashedName: problem-332-spherical-triangles
 
 # --description--
 
-A spherical triangle is a figure formed on the surface of a sphere by three great circular arcs intersecting pairwise in three vertices.
+球面三角形は、3 つの頂点で 2 本ずつ交差する 3 本の大円弧によって球面上に作られる図形です。
 
-<img class="img-responsive center-block" alt="spherical triangle formed on the surface of a sphere" src="https://cdn.freecodecamp.org/curriculum/project-euler/spherical-triangles.jpg" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="球面に形成された球面三角形" src="https://cdn.freecodecamp.org/curriculum/project-euler/spherical-triangles.jpg" style="background-color: white; padding: 10px;" />
 
-Let $C(r)$ be the sphere with the centre (0,0,0) and radius $r$.
+中心 (0,0,0) と半径 $r$ を持つ球を $C(r)$ とします。
 
-Let $Z(r)$ be the set of points on the surface of $C(r)$ with integer coordinates.
+整数座標を持つ $C(r)$ の球面上にある点の集合を $Z(r)$ とします。
 
-Let $T(r)$ be the set of spherical triangles with vertices in $Z(r)$. Degenerate spherical triangles, formed by three points on the same great arc, are <u>not</u> included in $T(r)$.
+頂点 $Z(r)$ を持つ球面三角形の集合を $T(r)$ とします。 縮退した球面三角形 (同一の大円弧上の 3 点で形成されるもの) は $T(r)$ に含まれ<u>ません</u>。
 
-Let $A(r)$ be the area of the smallest spherical triangle in $T(r)$.
+$T(r)$ の中で最も小さい球面三角形について、その面積を $A(r)$ とします。
 
-For example $A(14)$ is 3.294040 rounded to six decimal places.
+例えば、$A(14)$ を四捨五入して小数第 6 位まで求めると 3.294040 です。
 
-Find $\displaystyle \sum_{r = 1}^{50} A(r)$. Give your answer rounded to six decimal places.
+$\displaystyle \sum_{r = 1}^{50} A(r)$ を求めなさい。 回答は、四捨五入して小数第 6 位まで示すこと。
 
 # --hints--
 
-`sphericalTriangles()` should return `2717.751525`.
+`sphericalTriangles()` は `2717.751525` を返す必要があります。
 
 ```js
 assert.strictEqual(sphericalTriangles(), 2717.751525);

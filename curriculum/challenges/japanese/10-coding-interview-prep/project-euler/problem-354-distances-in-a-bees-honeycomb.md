@@ -1,6 +1,6 @@
 ---
 id: 5900f4cf1000cf542c50ffe1
-title: 'Problem 354: Distances in a bee''s honeycomb'
+title: '問題 354: 蜂の巣の中における距離'
 challengeType: 5
 forumTopicId: 302014
 dashedName: problem-354-distances-in-a-bees-honeycomb
@@ -8,19 +8,19 @@ dashedName: problem-354-distances-in-a-bees-honeycomb
 
 # --description--
 
-Consider a honey bee's honeycomb where each cell is a perfect regular hexagon with side length 1.
+それぞれの部屋が辺長１の完全な正六角形であるような蜂の巣について考えます。
 
-<img class="img-responsive center-block" alt="honeycomb with hexagon sides of length 1" src="https://cdn.freecodecamp.org/curriculum/project-euler/distances-in-a-bees-honeycomb.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="辺長 1 の六角形の部屋がある蜂の巣" src="https://cdn.freecodecamp.org/curriculum/project-euler/distances-in-a-bees-honeycomb.png" style="background-color: white; padding: 10px;" />
 
-One particular cell is occupied by the queen bee. For a positive real number $L$, let $B(L)$ count the cells with distance $L$ from the queen bee cell (all distances are measured from centre to centre); you may assume that the honeycomb is large enough to accommodate for any distance we wish to consider.
+ある特定の部屋は女王蜂が占有しています。 正の実数 $L$ を用いて、女王蜂の部屋から $L$ の距離にある部屋 $B(L)$ を数えます (常に、ある部屋の中心から別の部屋の中心までを測ります)。蜂の巣の大きさは、ここで考えるあらゆる距離に対して十分な大きさであると仮定します。
 
-For example, $B(\sqrt{3}) = 6$, $B(\sqrt{21}) = 12$ and $B(111\\,111\\,111) = 54$.
+例: $B(\sqrt{3}) = 6$, $B(\sqrt{21}) = 12$, $B(111\\,111\\,111) = 54$
 
-Find the number of $L ≤ 5 \times {10}^{11}$ such that $B(L) = 450$.
+$B(L) = 450$ となるような $L ≤ 5 \times {10}^{11}$ の数を求めなさい。
 
 # --hints--
 
-`distancesInHoneycomb()` should return `58065134`.
+`distancesInHoneycomb()` は `58065134` を返す必要があります。
 
 ```js
 assert.strictEqual(distancesInHoneycomb(), 58065134);

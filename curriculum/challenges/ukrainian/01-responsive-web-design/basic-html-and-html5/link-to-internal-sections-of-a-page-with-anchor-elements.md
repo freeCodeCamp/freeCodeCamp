@@ -25,7 +25,7 @@ dashedName: link-to-internal-sections-of-a-page-with-anchor-elements
 
 # --instructions--
 
-Змініть зовнішнє посилання на внутрішнє, змінивши атрибут `href` на `"#footer"` і текст з `cat photos` на `Jump to Bottom`.
+Змініть зовнішнє посилання на внутрішнє, змінивши атрибут `href` на `#footer` і текст з `cat photos` на `Jump to Bottom`.
 
 Видаліть атрибут `target="_blank"` із тегу прив'язки, бо це призведе до відкриття прив'язаного документа у новій вкладці вікна.
 

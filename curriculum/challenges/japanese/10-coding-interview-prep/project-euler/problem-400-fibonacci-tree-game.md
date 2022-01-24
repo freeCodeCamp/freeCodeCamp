@@ -1,6 +1,6 @@
 ---
 id: 5900f4fe1000cf542c510010
-title: 'Problem 400: Fibonacci tree game'
+title: '問題 400: フィボナッチ木ゲーム'
 challengeType: 5
 forumTopicId: 302067
 dashedName: problem-400-fibonacci-tree-game
@@ -8,27 +8,27 @@ dashedName: problem-400-fibonacci-tree-game
 
 # --description--
 
-A Fibonacci tree is a binary tree recursively defined as:
+フィボナッチ木とは、次のように再帰的に定義される二分木です。
 
-- $T(0)$ is the empty tree.
-- $T(1)$ is the binary tree with only one node.
-- $T(k)$ consists of a root node that has $T(k - 1)$ and $T(k - 2)$ as children.
+- $T(0)$ は空木である。
+- $T(1)$ は 1 つのノードのみを持つ二分木である。
+- $T(k)$ は、$T(k - 1)$, $T(k - 2)$ を子ノードとして持つ根ノードからなる。
 
-On such a tree two players play a take-away game. On each turn a player selects a node and removes that node along with the subtree rooted at that node. The player who is forced to take the root node of the entire tree loses.
+このような木構造上で 2 人のプレイヤーが削除ゲームをします。 各ターンでプレイヤーがノードを選び、そのノードと、それを根とする部分木を削除します。 木全体の根ノードを取らざるを得なくなったプレイヤーが負けです。
 
-Here are the winning moves of the first player on the first turn for $T(k)$ from $k = 1$ to $k = 6$.
+$k = 1$ から $k = 6$ までの $T(k)$ において、最初のターンで先手必勝となる手は次のとおりです。
 
-<img class="img-responsive center-block" alt="winning moves of first player, on the first turn for k = 1 to k = 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/fibonacci-tree-game.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="k = 1 から k = 6 の木における、最初のターンでの先手必勝の手" src="https://cdn.freecodecamp.org/curriculum/project-euler/fibonacci-tree-game.png" style="background-color: white; padding: 10px;" />
 
-Let $f(k)$ be the number of winning moves of the first player (i.e. the moves for which the second player has no winning strategy) on the first turn of the game when this game is played on $T(k)$.
+$T(k)$ の木構造でゲームをするとき、最初のターンにおける先手必勝の手 (すなわち、後手がどのような戦略でも勝てなくなるような手) の数を $f(k)$ とします。
 
-For example, $f(5) = 1$ and $f(10) = 17$.
+例えば、$f(5) = 1$, $f(10) = 17$ です。
 
-Find $f(10000)$. Give the last 18 digits of your answer.
+$f(10000)$ を求めなさい。 回答は、下位 18 桁とすること。
 
 # --hints--
 
-`fibonacciTreeGame()` should return `438505383468410600`.
+`fibonacciTreeGame()` は `438505383468410600` を返す必要があります。
 
 ```js
 assert.strictEqual(fibonacciTreeGame(), 438505383468410600);

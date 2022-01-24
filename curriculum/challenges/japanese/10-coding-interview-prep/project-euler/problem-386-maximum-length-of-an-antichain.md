@@ -1,6 +1,6 @@
 ---
 id: 5900f4ef1000cf542c510001
-title: 'Problem 386: Maximum length of an antichain'
+title: '問題 386: 反鎖の最大長'
 challengeType: 5
 forumTopicId: 302050
 dashedName: problem-386-maximum-length-of-an-antichain
@@ -8,23 +8,23 @@ dashedName: problem-386-maximum-length-of-an-antichain
 
 # --description--
 
-Let $n$ be an integer and $S(n)$ be the set of factors of $n$.
+$n$ を整数、 $S(n)$ を $n$ の約数の集合とします。
 
-A subset $A$ of $S(n)$ is called an antichain of $S(n)$ if $A$ contains only one element or if none of the elements of $A$ divides any of the other elements of $A$.
+$A$ に要素が 1 つのみ含まれるか、または、$A$ のいずれの要素も $A$ の他の要素によって割り切れない場合、$S(n)$ の部分集合 $A$ は $S(n)$ の反鎖と呼ばれます。
 
-For example: $S(30) = \\{1, 2, 3, 5, 6, 10, 15, 30\\}$
+例: $S(30) = \\{1, 2, 3, 5, 6, 10, 15, 30\\}$
 
-$\\{2, 5, 6\\}$ is not an antichain of $S(30)$.
+$\\{2, 5, 6\\}$ は $S(30)$ の反鎖ではありません。
 
-$\\{2, 3, 5\\}$ is an antichain of $S(30)$.
+しかし $\\{2, 3, 5\\}$ は $S(30)$ の反鎖です。
 
-Let $N(n)$ be the maximum length of an antichain of $S(n)$.
+$N(n)$ を $S(n)$ の反鎖の最大長とします。
 
-Find $\sum N(n)$ for $1 ≤ n ≤ {10}^8$
+$1 ≤ n ≤ {10}^8$ のとき、$\sum N(n)$ を求めなさい。
 
 # --hints--
 
-`maximumLengthOfAntichain()` should return `528755790`.
+`maximumLengthOfAntichain()` は `528755790` を返す必要があります。
 
 ```js
 assert.strictEqual(maximumLengthOfAntichain(), 528755790);

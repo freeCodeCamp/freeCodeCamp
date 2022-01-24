@@ -1,6 +1,6 @@
 ---
 id: 5900f4ed1000cf542c50ffff
-title: 'Problem 383: Divisibility comparison between factorials'
+title: '問題 383: 階乗間の被整除性比較'
 challengeType: 5
 forumTopicId: 302047
 dashedName: problem-383-divisibility-comparison-between-factorials
@@ -8,19 +8,19 @@ dashedName: problem-383-divisibility-comparison-between-factorials
 
 # --description--
 
-Let $f_5(n)$ be the largest integer $x$ for which $5^x$ divides $n$.
+$5^x$ が $n$ を割り切るような最大の整数 $x$ を $f_5(n)$ とします。
 
-For example, $f_5(625\\,000) = 7$.
+例えば、$f_5(625\\,000) = 7$ となります。
 
-Let $T_5(n)$ be the number of integers $i$ which satisfy $f_5((2 \times i - 1)!) &lt; 2 \times f_5(i!)$ and $1 ≤ i ≤ n$.
+次の条件を満たす整数 $i$ の個数を $T_5(n)$ とします: $f_5((2 \times i - 1)!) &lt; 2 \times f_5(i!)$ かつ $1 ≤ i ≤ n$
 
-It can be verified that $T_5({10}^3) = 68$ and $T_5({10}^9) = 2\\,408\\,210$.
+$T_5({10}^3) = 68$, $T_5({10}^9) = 2\\,408\\,210$ であることを確認できます。
 
-Find $T_5({10}^{18})$.
+$T_5({10}^{18})$ を求めなさい。
 
 # --hints--
 
-`factorialDivisibilityComparison()` should return `22173624649806`.
+`factorialDivisibilityComparison()` は `22173624649806` を返す必要があります。
 
 ```js
 assert.strictEqual(factorialDivisibilityComparison(), 22173624649806);

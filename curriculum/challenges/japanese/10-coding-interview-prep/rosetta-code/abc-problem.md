@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339acc
-title: ABC Problem
+title: ABC問題
 challengeType: 5
 forumTopicId: 302220
 dashedName: abc-problem
@@ -8,7 +8,7 @@ dashedName: abc-problem
 
 # --description--
 
-You are given a collection of ABC blocks (e.g., childhood alphabet blocks). There are 20 blocks with two letters on each block. A complete alphabet is guaranteed amongst all sides of the blocks. The sample collection of blocks:
+ABCブロック一式が与えられます (例えば、子供用のアルファベットブロック)。 20個のブロックがあり、各ブロックに2文字入っています。 ブロックの全側面を見れば、すべてのアルファベットが必ずあります。 ブロックのサンプル一式:
 
 <pre>(B O)
 (X K)
@@ -34,60 +34,60 @@ You are given a collection of ABC blocks (e.g., childhood alphabet blocks). Ther
 
 # --instructions--
 
-Implement a function that takes a string (word) and determines whether the word can be spelled with the given collection of blocks.
+文字列(単語)を取って、与えられたブロック一式で単語が作れるかを判定する関数を作成します。
 
-Some rules to keep in mind:
+留意すべきルール:
 
 <ul>
-  <li>Once a letter on a block is used, that block cannot be used again.</li>
-  <li>The function should be case-insensitive.</li>
+  <li>ブロック上の文字を使用すると、そのブロックは再度使用することはできません。</li>
+  <li>関数は大文字小文字を区別しません。</li>
 </ul>
 
 # --hints--
 
-`canMakeWord` should be a function.
+`canMakeWord` という関数です。
 
 ```js
 assert(typeof canMakeWord === 'function');
 ```
 
-`canMakeWord` should return a boolean.
+`canMakeWord` はブール値を返します。
 
 ```js
 assert(typeof canMakeWord('hi') === 'boolean');
 ```
 
-`canMakeWord("bark")` should return true.
+`canMakeWord("bark")`は真を返します。
 
 ```js
 assert(canMakeWord(words[0]));
 ```
 
-`canMakeWord("BooK")` should return false.
+`canMakeWord("BooK")`は偽を返します。
 
 ```js
 assert(!canMakeWord(words[1]));
 ```
 
-`canMakeWord("TReAT")` should return true.
+`canMakeWord("TReAT")`は真を返します。
 
 ```js
 assert(canMakeWord(words[2]));
 ```
 
-`canMakeWord("COMMON")` should return false.
+`canMakeWord("COMMON")`は偽を返します。
 
 ```js
 assert(!canMakeWord(words[3]));
 ```
 
-`canMakeWord("squAD")` should return true.
+`canMakeWord("squAD")`は真を返します。
 
 ```js
 assert(canMakeWord(words[4]));
 ```
 
-`canMakeWord("conFUSE")` should return true.
+`canMakeWord("conFUSE")`は真を返します。
 
 ```js
 assert(canMakeWord(words[5]));

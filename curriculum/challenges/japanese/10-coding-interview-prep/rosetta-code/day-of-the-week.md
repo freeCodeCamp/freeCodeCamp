@@ -1,6 +1,6 @@
 ---
 id: 5966f99c45e8976909a85575
-title: Day of the week
+title: 曜日
 challengeType: 5
 forumTopicId: 302245
 dashedName: day-of-the-week
@@ -8,33 +8,33 @@ dashedName: day-of-the-week
 
 # --description--
 
-A company decides that whenever Xmas falls on a Sunday they will give their workers all extra paid holidays so that, together with any public holidays, workers will not have to work the following week (between the 25th of December and the first of January).
+ある会社は、クリスマスが日曜日と重なる場合、従業員に追加の有給休暇を与えることにしました。それにより、従業員は祝日と合わせて次の週 (12月25日から1月1日まで) 働く必要がなくなります。
 
 # --instructions--
 
-Write a function that takes a start year and an end year and return an array of all the years where the 25th of December will be a Sunday.
+開始年と終了年が入力されると、12月25日が日曜日と重なる年の配列を返す関数を作成します。
 
 # --hints--
 
-`findXmasSunday` should be a function.
+`findXmasSunday` という関数です。
 
 ```js
 assert(typeof findXmasSunday === 'function');
 ```
 
-`findXmasSunday(2000, 2100)` should return an array.
+`findXmasSunday(2000, 2100)` は配列を返します。
 
 ```js
 assert(typeof findXmasSunday(2000, 2100) === 'object');
 ```
 
-`findXmasSunday(1970, 2017)` should return `[1977, 1983, 1988, 1994, 2005, 2011, 2016]`
+`findXmasSunday(1970, 2017)` は `[1977, 1983, 1988, 1994, 2005, 2011, 2016]` を返します。
 
 ```js
 assert.deepEqual(findXmasSunday(1970, 2017), firstSolution);
 ```
 
-`findXmasSunday(2008, 2121)` should return `[2011, 2016, 2022, 2033, 2039, 2044, 2050, 2061, 2067, 2072, 2078, 2089, 2095, 2101, 2107, 2112, 2118]`
+`findXmasSunday(2008, 2121)` は `[2011, 2016, 2022, 2033, 2039, 2044, 2050, 2061, 2067, 2072, 2078, 2089, 2095, 2101, 2107, 2112, 2118]` を返します。
 
 ```js
 assert.deepEqual(findXmasSunday(2008, 2121), secondSolution);

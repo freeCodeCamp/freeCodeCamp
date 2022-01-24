@@ -1,6 +1,6 @@
 ---
 id: 5900f4d91000cf542c50ffea
-title: 'Problem 364: Comfortable distance'
+title: '問題 364: 快適な距離'
 challengeType: 5
 forumTopicId: 302025
 dashedName: problem-364-comfortable-distance
@@ -8,23 +8,23 @@ dashedName: problem-364-comfortable-distance
 
 # --description--
 
-There are $N$ seats in a row. $N$ people come after each other to fill the seats according to the following rules:
+$N$ 個の席が連続して並んでいます。 ここに $N$ 人が次々とやって来て、次のルールに従って席を埋めていきます。
 
-1. If there is any seat whose adjacent seat(s) are not occupied take such a seat.
-2. If there is no such seat and there is any seat for which only one adjacent seat is occupied take such a seat.
-3. Otherwise take one of the remaining available seats.
+1. 隣席がいずれも空いている席があれば、その席を取ります。
+2. 1 のような席がなく、隣席が 1 つのみ埋まっている席があれば、その席を取ります。
+3. 1, 2 以外の場合は、残っている空席のいずれかを取ります。
 
-Let $T(N)$ be the number of possibilities that $N$ seats are occupied by $N$ people with the given rules. The following figure shows $T(4) = 8$.
+与えられたルールに従い $N$ 人が $N$ 個の席を取る方法の数を、$T(N)$ とします。 次の図は $T(4) = 8$ を示しています。
 
-<img class="img-responsive center-block" alt="eight ways for N seats to be occupied by N people" src="https://cdn.freecodecamp.org/curriculum/project-euler/comfortable-distance.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="N 人で N 個の席を取る 8 通りの方法" src="https://cdn.freecodecamp.org/curriculum/project-euler/comfortable-distance.gif" style="background-color: white; padding: 10px;" />
 
-We can verify that $T(10) = 61\\,632$ and $T(1\\,000)\bmod 100\\,000\\,007 = 47\\,255\\,094$.
+$T(10) = 61\\,632$, $T(1\\,000)\bmod 100\\,007 = 47\\,255\\,094$ であることを確認できます。
 
-Find $T(1\\,000\\,000)\bmod 100\\,000\\,007$.
+$T(1\\,000\\,000)\bmod 100\\,000\\,007$ を求めなさい。
 
 # --hints--
 
-`comfortableDistance()` should return `44855254`.
+`comfortableDistance()` は `44855254` を返す必要があります。
 
 ```js
 assert.strictEqual(comfortableDistance(), 44855254);

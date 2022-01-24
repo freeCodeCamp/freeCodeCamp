@@ -1,6 +1,6 @@
 ---
 id: 5900f53c1000cf542c51004e
-title: 'Problem 463: A weird recurrence relation'
+title: '問題 463: 風変わりな漸化式'
 challengeType: 5
 forumTopicId: 302138
 dashedName: problem-463-a-weird-recurrence-relation
@@ -8,19 +8,19 @@ dashedName: problem-463-a-weird-recurrence-relation
 
 # --description--
 
-The function $f$ is defined for all positive integers as follows:
+すべての正の整数に対して関数 $f$ が次のように定義されます。
 
 $$\begin{align} & f(1) = 1 \\\\ & f(3) = 3 \\\\ & f(2n) = f(n) \\\\ & f(4n + 1) = 2f(2n + 1) - f(n) \\\\ & f(4n + 3) = 3f(2n + 1) - 2f(n) \end{align}$$
 
-The function $S(n)$ is defined as $\sum_{i=1}^{n} f(i)$.
+関数 $S(n)$ は $\sum_{i=1}^{n} f(i)$ と定義されます。
 
-$S(8) = 22$ and $S(100) = 3604$.
+$S(8) = 22$, $S(100) = 3604$ です。
 
-Find $S(3^{37})$. Give the last 9 digits of your answer.
+$S(3^{37})$ を求めなさい。 回答は、下位 9 桁とすること。
 
 # --hints--
 
-`weirdRecurrenceRelation()` should return `808981553`.
+`weirdRecurrenceRelation()` は `808981553` を返す必要があります。
 
 ```js
 assert.strictEqual(weirdRecurrenceRelation(), 808981553);

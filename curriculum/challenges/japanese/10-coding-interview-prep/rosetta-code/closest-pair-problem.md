@@ -1,6 +1,6 @@
 ---
 id: 5951a53863c8a34f02bf1bdc
-title: Closest-pair problem
+title: 最近点対の問題
 challengeType: 5
 forumTopicId: 302232
 dashedName: closest-pair-problem
@@ -8,9 +8,9 @@ dashedName: closest-pair-problem
 
 # --description--
 
-Provide a function to find the closest two points among a set of given points in two dimensions.
+2次元の任意の点の集合の中から最も近い2点を見つける関数を提供します。
 
-The straightforward solution is a $O(n^2)$ algorithm (which we can call *brute-force algorithm*); the pseudo-code (using indexes) could be simply:
+簡単な解決策は、(*brute-force algorithm*と呼ばれる)$O(n^2)$ アルゴリズムを使用することです。疑似コード(インデックス使用)は単純に以下のようになります。
 
 <pre><strong>bruteForceClosestPair</strong> of P(1), P(2), ... P(N)
 <strong>if</strong> N &#x3C; 2 <strong>then</strong>
@@ -30,7 +30,7 @@ The straightforward solution is a $O(n^2)$ algorithm (which we can call *brute-f
 <strong>endif</strong>
 </pre>
 
-A better algorithm is based on the recursive divide and conquer approach, which is $O(n\log n)$ a pseudo-code could be:
+より好ましいアルゴリズムは、$O(n\log n)$の再帰的な分割統治法に基づいており、疑似コードは以下のようになります。
 
 <pre><strong>closestPair</strong> of (xP, yP)
   where xP is P(1) .. P(N) sorted by x coordinate, and
@@ -65,9 +65,9 @@ A better algorithm is based on the recursive divide and conquer approach, which 
 <strong>endif</strong>
 </pre>
 
-For the input, expect the argument to be an array of `Point` objects with `x` and `y` members set to numbers. Return an object containing the key:value pairs for `distance` and `pair` (the pair of two closest points).
+入力には、引数を `x` と `y` メンバーが数字に設定されている `Point` オブジェクトの配列であると想定します。 `distance` と `pair` の key:value ペア (最も近い2点のペア) を含むオブジェクトを返します。
 
-For example `getClosestPair` with input array `points`:
+例えば、入力配列 `points` を持つ `getClosestPair` の場合
 
 ```js
 const points = [
@@ -77,7 +77,7 @@ const points = [
 ];
 ```
 
-Would return:
+次のものを返します。
 
 ```js
 {
@@ -95,24 +95,24 @@ Would return:
 }
 ```
 
-**Note:** Sort the `pair` array by their `x` values in incrementing order.
+**注記: ** `pair` 配列を `x` の値で昇順に並べ替えます。
 
 
 # --hints--
 
-`getClosestPair` should be a function.
+`getClosestPair` という関数です。
 
 ```js
 assert(typeof getClosestPair === 'function');
 ```
 
-`getClosestPair(points1).distance` should be `0.0894096443343775`.
+`getClosestPair(points1).distance` は `0.0894096443343775` になります。
 
 ```js
 assert.equal(getClosestPair(points1).distance, answer1.distance);
 ```
 
-`getClosestPair(points1).pair` should be `[ { x: 7.46489, y: 4.6268 }, { x: 7.46911, y: 4.71611 } ]`.
+`getClosestPair(points1).pair` は `[ { x: 7.46489, y: 4.6268 }, { x: 7.46911, y: 4.71611 } ]` になります。
 
 ```js
 assert.deepEqual(
@@ -121,13 +121,13 @@ assert.deepEqual(
 );
 ```
 
-`getClosestPair(points2).distance` should be `65.06919393998976`.
+`getClosestPair(points2).distance` は `65.06919393998976` になります。
 
 ```js
 assert.equal(getClosestPair(points2).distance, answer2.distance);
 ```
 
-`getClosestPair(points2).pair` should be `[ { x: 37134, y: 1963 }, { x: 37181, y: 2008 } ]`.
+`getClosestPair(points2).pair` は `[ { x: 37134, y: 1963 }, { x: 37181, y: 2008 } ]` になります。
 
 ```js
 assert.deepEqual(
@@ -136,13 +136,13 @@ assert.deepEqual(
 );
 ```
 
-`getClosestPair(points3).distance` should be `6754.625082119658`.
+`getClosestPair(points3).distance` は `6754.625082119658` になります。
 
 ```js
 assert.equal(getClosestPair(points3).distance, answer3.distance);
 ```
 
-`getClosestPair(points3).pair` should be `[ { x: 46817, y: 64975 }, { x: 48953, y: 58567 } ]`.
+`getClosestPair(points3).pair` は `[ { x: 46817, y: 64975 }, { x: 48953, y: 58567 } ]` になります。
 
 ```js
 assert.deepEqual(

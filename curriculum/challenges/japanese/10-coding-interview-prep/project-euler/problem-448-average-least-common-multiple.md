@@ -1,6 +1,6 @@
 ---
 id: 5900f52c1000cf542c51003f
-title: 'Problem 448: Average least common multiple'
+title: '問題 448: 平均最小公倍数'
 challengeType: 5
 forumTopicId: 302120
 dashedName: problem-448-average-least-common-multiple
@@ -8,21 +8,21 @@ dashedName: problem-448-average-least-common-multiple
 
 # --description--
 
-The function $lcm(a, b)$ denotes the least common multiple of $a$ and $b$.
+関数 $lcm(a, b)$ は $a$ と $b$ の最小公倍数を表します。
 
-Let $A(n)$ be the average of the values of $lcm(n, i)$ for $1 ≤ i ≤ n$.
+$1 ≤ i ≤ n$ のとき、$lcm(n, i)$ の値の平均を $A(n)$ とします。
 
-E.g: $A(2) = \frac{2 + 2}{2} = 2$ and $A(10) = \frac{10 + 10 + 30 + 20 + 10 + 30 + 70 + 40 + 90 + 10}{10} = 32$.
+例: $A(2) = \frac{2 + 2}{2} = 2$ および $A(10) = \frac{10 + 30 + 20 + 30 + 70 + 40 + 90 + 10}{10} = 32$
 
-Let $S(n) = \sum A(k)$ for $1 ≤ k ≤ n$.
+$1 ≤ k ≤ n$ のとき、$S(n) = \sum A(k)$ とします。
 
-$S(100) = 122\\,726$.
+$S(100) = 122\\,726$
 
-Find $S(99\\,999\\,999\\,019)\bmod 999\\,999\\,017$.
+$S(99\\,999\\,999\\,019)\bmod 999\\,999\\,017$ を求めなさい。
 
 # --hints--
 
-`averageLCM()` should return `106467648`.
+`averageLCM()` は `106467648` を返す必要があります。
 
 ```js
 assert.strictEqual(averageLCM(), 106467648);

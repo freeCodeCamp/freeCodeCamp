@@ -14,13 +14,13 @@ dashedName: build-a-wikipedia-viewer
 
 **ユーザーストーリー:** Wikipedia の項目を検索ボックスで検索し、その結果として Wikipedia の項目を参照することができます。
 
-**ユーザーストーリー:** ボタンをクリックすることでランダムに Wikipedia の項目を表示できます。
+**ユーザーストーリー:** ボタンをクリックすることで、ランダムに Wikipedia の項目を表示できます。
 
 ヒント #1: ランダムに Wikipedia の記事を取得するために使用できる URL はこちらです: `https://en.wikipedia.org/wiki/Special:Random`
 
 ヒント #2: Wikipedia の API の使用に関する項目はこちらです: `https://www.mediawiki.org/wiki/API:Main_page`
 
-ヒント #3: この [リンク](https://en.wikipedia.org/wiki/Special:ApiSandbox#action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=jsonfm) を使用して Wikipedia の API を実験してください。
+ヒント #3: この[リンク](https://en.wikipedia.org/wiki/Special:ApiSandbox#action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=jsonfm)を使用して Wikipedia の API を実験してください。
 
 完了したら、CodePen のプロジェクトへのリンクを入れて、「このチャレンジを完了しました」ボタンをクリックしてください。
 

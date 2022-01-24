@@ -1,6 +1,6 @@
 ---
 id: 5900f3fc1000cf542c50ff0e
-title: '三角形のトリチェリ点を調べ上げる'
+title: '問題 143: 三角形のトリチェリ点を調べ上げる'
 challengeType: 5
 forumTopicId: 301772
 dashedName: problem-143-investigating-the-torricelli-point-of-a-triangle

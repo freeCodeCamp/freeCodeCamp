@@ -1,6 +1,6 @@
 ---
 id: 5900f52c1000cf542c51003d
-title: 'Problem 446: Retractions B'
+title: '問題 446: レトラクション B'
 challengeType: 5
 forumTopicId: 302118
 dashedName: problem-446-retractions-b
@@ -8,23 +8,23 @@ dashedName: problem-446-retractions-b
 
 # --description--
 
-For every integer $n > 1$, the family of functions $f_{n, a, b}$ is defined by:
+$n > 1$ のすべての整数について、関数族 $f_{n, a, b}$ を次のように定義します。
 
-$f_{n, a, b}(x) ≡ ax + b\bmod n$ for $a, b, x$ integer and $0 \lt a \lt n$, $0 \le b \lt n$, $0 \le x \lt n$.
+整数 $a, b, x$ および $0 \lt a \lt n$, $0 \le b \lt n$, $0 \le x \lt n$ について、$f_{n, a, b}(x) ≡ ax + b\bmod n$
 
-We will call $f_{n, a, b}$ a retraction if $f_{n, a, b}(f_{n, a, b}(x)) \equiv f_{n, a, b}(x)\bmod n$ for every $0 \le x \lt n$.
+$0 \le x \lt n$ のすべてにおいて、$f_{n, a, b}(f_{n, a, b}(x)) \equiv f_{n, a, b}(x)\bmod n$ のとき、$f_{n, a, b}$ をレトラクションと呼ぶことにします。
 
-Let $R(n)$ be the number of retractions for $n$.
+$n$ のレトラクションの個数を $R(n)$ とします。
 
-$F(N) = \displaystyle\sum_{n = 1}^N R(n^4 + 4)$.
+$F(N) = \displaystyle\sum_{n = 1}^N R(n^4 + 4)$
 
-$F(1024) = 77\\,532\\,377\\,300\\,600$.
+$F(1024) = 77\\,532\\,377\\,300\\,600$
 
-Find $F({10}^7)$. Give your answer modulo $1\\,000\\,000\\,007$.
+$F({10}^7)$ を求めなさい。 mod $1\\,000\\,000\\,007$ で答えること。
 
 # --hints--
 
-`retractionsB()` should return `907803852`.
+`retractionsB()` は `907803852` を返す必要があります。
 
 ```js
 assert.strictEqual(retractionsB(), 907803852);

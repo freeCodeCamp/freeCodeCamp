@@ -1,6 +1,6 @@
 ---
 id: 5900f4aa1000cf542c50ffbc
-title: 'Problem 317: Firecracker'
+title: '問題 317: 爆竹'
 challengeType: 5
 forumTopicId: 301973
 dashedName: problem-317-firecracker
@@ -8,15 +8,15 @@ dashedName: problem-317-firecracker
 
 # --description--
 
-A firecracker explodes at a height of 100 m above level ground. It breaks into a large number of very small fragments, which move in every direction; all of them have the same initial velocity of 20 $\frac{\text{m}}{\text{s}}$.
+ある爆竹は地上 100 m の高さで爆発します。 爆発すると、無数の微小な破片に分かれてあらゆる方向に飛び散ります。いずれの破片も初速は 20 $\frac{\text{m}}{\text{s}}$ です。
 
-We assume that the fragments move without air resistance, in a uniform gravitational field with $g=9.81 \frac{\text{m}}{\text{s}^2}$.
+$g=9.81 \frac{\text{m}}{\text{s}^2}$ の一様な重力場で、破片が空気抵抗を受けずに動くと仮定します。
 
-Find the volume (in $\text{m}^3$) of the region through which the fragments move before reaching the ground. Give your answer rounded to four decimal places.
+破片が地面に到達する前に移動する領域の体積 ($\text{m}^3$) を求めなさい。 回答は、四捨五入して小数第 4 位まで示すこと。
 
 # --hints--
 
-`firecracker()` should return `1856532.8455`.
+`firecracker()` は `1856532.8455` を返す必要があります。
 
 ```js
 assert.strictEqual(firecracker(), 1856532.8455);

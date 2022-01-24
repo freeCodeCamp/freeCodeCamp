@@ -8,69 +8,69 @@ dashedName: cusip
 
 # --description--
 
-A **CUSIP** is a nine-character alphanumeric code that identifies a North American financial security for the purposes of facilitating clearing and settlement of trades. The CUSIP was adopted as an American National Standard under Accredited Standards X9.6.
+**CUSIP** は、取引の清算と決済を容易にする目的で、北米の有価証券を識別する9文字の英数字コードです。 CUSIPは、Accredited Standards X9.6に基づき、米国国家標準協会として採用されました。
 
 # --instructions--
 
-Write a function that takes a string as a parameter and checks if the string is valid CUSIP.
+文字列をパラメータとして取り、文字列が有効なCUSIPであるかどうかをチェックする関数を作成します。
 
 # --hints--
 
-`isCusip` should be a function.
+`isCusip` という関数です。
 
 ```js
 assert(typeof isCusip == 'function');
 ```
 
-`isCusip("037833100")` should return a boolean.
+`isCusip("037833100")` はブール値を返します。
 
 ```js
 assert(typeof isCusip('037833100') == 'boolean');
 ```
 
-`isCusip("037833100")` should return `true`.
+`isCusip("037833100")` は `true` を返します。
 
 ```js
 assert.equal(isCusip('037833100'), true);
 ```
 
-`isCusip("17275R102")` should return `true`.
+`isCusip("17275R102")` は `true` を返します。
 
 ```js
 assert.equal(isCusip('17275R102'), true);
 ```
 
-`isCusip("38259P50a")` should return `false`.
+`isCusip("38259P50a")` は `false` を返します。
 
 ```js
 assert.equal(isCusip('38259P50a'), false);
 ```
 
-`isCusip("38259P508")` should return `true`.
+`isCusip("38259P508")` は `true` を返します。
 
 ```js
 assert.equal(isCusip('38259P508'), true);
 ```
 
-`isCusip("38259P50#")` should return `false`.
+`isCusip("38259P50#")` は `false` を返します。
 
 ```js
 assert.equal(isCusip('38259P50#'), false);
 ```
 
-`isCusip("68389X105")` should return `true`.
+`isCusip("68389X105")` は `true` を返します。
 
 ```js
 assert.equal(isCusip('68389X105'), true);
 ```
 
-`isCusip("68389X106")` should return `false`.
+`isCusip("68389X106")` は `false` を返します。
 
 ```js
 assert.equal(isCusip('68389X106'), false);
 ```
 
-`isCusip("5949181")` should return `false`.
+`isCusip("5949181")` は `false` を返します。
 
 ```js
 assert.equal(isCusip('5949181'), false);

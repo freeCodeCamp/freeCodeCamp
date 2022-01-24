@@ -1,6 +1,6 @@
 ---
 id: 5900f53b1000cf542c51004d
-title: 'Problem 462: Permutation of 3-smooth numbers'
+title: '問題 462: 3-smooth 数の順列'
 challengeType: 5
 forumTopicId: 302137
 dashedName: problem-462-permutation-of-3-smooth-numbers
@@ -8,31 +8,31 @@ dashedName: problem-462-permutation-of-3-smooth-numbers
 
 # --description--
 
-A 3-smooth number is an integer which has no prime factor larger than 3. For an integer $N$, we define $S(N)$ as the set of 3-smooth numbers less than or equal to $N$. For example, $S(20) = \\{1, 2, 3, 4, 6, 8, 9, 12, 16, 18\\}$.
+3-smooth 数とは、3 より大きい素因数を持たない整数のことです。 整数 $N$ に対して、$N$ 以下の 3-smooth 数の集合を $S(N)$ とします。 例えば、$S(20) = \\{1, 2, 3, 4, 6, 8, 9, 12, 16, 18\\}$ です。
 
-We define $F(N)$ as the number of permutations of $S(N)$ in which each element comes after all of its proper divisors.
+各要素のすべての真の約数の後にその要素が現れるような $S(N)$ の順列の個数を、$F(N)$ とします。
 
-This is one of the possible permutations for $N = 20$.
+$N = 20$ に対して考えられる順列の一例を下に示します。
 
--   1, 2, 4, 3, 9, 8, 16, 6, 18, 12.
+-   1, 2, 4, 3, 9, 8, 16, 6, 18, 12
 
-This is not a valid permutation because 12 comes before its divisor 6.
+下の例は、12 が約数 6 の前に現れるので有効な順列ではありません。
 
--   1, 2, 4, 3, 9, 8, 12, 16, 6, 18.
+-   1, 2, 4, 3, 9, 8, 12, 16, 6, 18
 
-We can verify that $F(6) = 5$, $F(8) = 9$, $F(20) = 450$ and $F(1000) ≈ 8.8521816557e\\,21$.
+$F(6) = 5$, $F(8) = 9$, $F(20) = 450$, $F(1000) ≈ 8.8521816557e\\21$ であることを確認できます。
 
-Find $F({10}^{18})$. Give as your answer as a string in its scientific notation rounded to ten digits after the decimal point. When giving your answer, use a lowercase `e` to separate mantissa and exponent. E.g. if the answer is $112\\,233\\,445\\,566\\,778\\,899$ then the answer format would be `1.1223344557e17`.
+$F({10}^{18})$ を求めなさい。 回答は、科学的記数法による文字列を四捨五入して小数第 10 位まで示すこと。 回答は、小文字 `e` で仮数部と指数部を区切って書くこと。 例えば、 答えが $112\\,233\\,445\\,566\\,778\\,899$ の場合、`1.1223344557e17` の形式にします。
 
 # --hints--
 
-`permutationOf3SmoothNumbers()` should return a string.
+`permutationOf3SmoothNumbers()` は文字列を返す必要があります。
 
 ```js
 assert.strictEqual(typeof permutationOf3SmoothNumbers() === 'string');
 ```
 
-`permutationOf3SmoothNumbers()` should return the string `5.5350769703e1512`.
+`permutationOf3SmoothNumbers()` は文字列 `5.5350769703e1512` を返す必要があります。
 
 ```js
 assert.strictEqual(permutationOf3SmoothNumbers(), '5.5350769703e1512');

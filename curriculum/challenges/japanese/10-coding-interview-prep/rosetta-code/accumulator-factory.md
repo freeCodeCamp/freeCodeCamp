@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ace
-title: Accumulator factory
+title: アキュムレータ・ファクトリ
 challengeType: 5
 forumTopicId: 302222
 dashedName: accumulator-factory
@@ -8,41 +8,41 @@ dashedName: accumulator-factory
 
 # --description--
 
-A problem posed by [Paul Graham](https://en.wikipedia.org/wiki/Paul_Graham_(programmer)) is that of creating a function that takes a single (numeric) argument and which returns another function that is an accumulator. The returned accumulator function in turn also takes a single numeric argument, and returns the sum of all the numeric values passed in so far to that accumulator (including the initial value passed when the accumulator was created).
+[ポール・グレアム](https://en.wikipedia.org/wiki/Paul_Graham_(programmer)) は、1 つの数値引数を取り、アキュムレータである別の関数を返す関数を作成する問題を考え出しました。 返されたアキュムレータ関数は、1つの数値引数を取り、これまでにアキュムレータに渡されたすべての数値の合計 (アキュムレータが作成されたときに渡された初期値を含む) を返します。
 
 # --instructions--
 
-Create a function that takes a number $n$ and generates accumulator functions that return the sum of every number ever passed to them.
+数 $n$ を取って、渡されたすべての数値の合計を返すアキュムレータ関数を生成する関数を作成します。
 
-**Rules:**
+**ルール:**
 
-Do not use global variables.
+グローバル変数を使用しないでください。
 
-**Hint:**
+**ヒント:**
 
-Closures save outer state.
+クロージャは外的な状態を保存します。
 
 # --hints--
 
-`accumulator` should be a function.
+`accumulator` という関数です。
 
 ```js
 assert(typeof accumulator === 'function');
 ```
 
-`accumulator(0)` should return a function.
+`accumulator(0)` は関数を返します。
 
 ```js
 assert(typeof accumulator(0) === 'function');
 ```
 
-`accumulator(0)(2)` should return a number.
+`accumulator(0)(2)` は数字を返します。
 
 ```js
 assert(typeof accumulator(0)(2) === 'number');
 ```
 
-Passing in the values 3, -4, 1.5, and 5 should return 5.5.
+3、-4、1.5、5の値が渡されると、5.5を返します。
 
 ```js
 assert(testFn(5) === 5.5);

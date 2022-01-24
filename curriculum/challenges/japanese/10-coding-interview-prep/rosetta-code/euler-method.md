@@ -1,6 +1,6 @@
 ---
 id: 59880443fb36441083c6c20e
-title: Euler method
+title: オイラー法
 challengeType: 5
 forumTopicId: 302258
 dashedName: euler-method
@@ -8,63 +8,63 @@ dashedName: euler-method
 
 # --description--
 
-Euler's method numerically approximates solutions of first-order ordinary differential equations (ODEs) with a given initial value. It is an explicit method for solving initial value problems (IVPs), as described in [this article](https://www.freecodecamp.org/news/eulers-method-explained-with-examples/ "news: Euler's Method Explained with Examples").
+オイラー法は、所定の初期値を持つ1階の常微分方程式 (ODE) の解における近似値を求めます。 [記事](https://www.freecodecamp.org/news/eulers-method-explained-with-examples/ "news: Euler's Method Explained with Examples") で論説されているように、初期値の問題(IVP)を解くための明示的な方法です。
 
-The ODE has to be provided in the following form:
+ODEは以下の形式で書きます。
 
 <ul style='list-style: none;'>
   <li><big>$\frac{dy(t)}{dt} = f(t,y(t))$</big></li>
 </ul>
 
-with an initial value
+下記が初期値です。
 
 <ul style='list-style: none;'>
   <li><big>$y(t_0) = y_0$</big></li>
 </ul>
 
-To get a numeric solution, we replace the derivative on the LHS with a finite difference approximation:
+数値解を得るために、LHS上の導関数を有限差分近似に置き換えます。
 
 <ul style='list-style: none;'>
   <li><big>$\frac{dy(t)}{dt}  \approx \frac{y(t+h)-y(t)}{h}$</big></li>
 </ul>
 
-then solve for $y(t+h)$:
+次に $y(t+h)$ の値を求めます。
 
 <ul style='list-style: none;'>
   <li><big>$y(t+h) \approx y(t) + h \, \frac{dy(t)}{dt}$</big></li>
 </ul>
 
-which is the same as
+これは以下と同じです。
 
 <ul style='list-style: none;'>
   <li><big>$y(t+h) \approx y(t) + h \, f(t,y(t))$</big></li>
 </ul>
 
-The iterative solution rule is then:
+反復解法ルールは次のとおりです。
 
 <ul style='list-style: none;'>
   <li><big>$y_{n+1} = y_n + h \, f(t_n, y_n)$</big></li>
 </ul>
 
-where $h$ is the step size, the most relevant parameter for accuracy of the solution. A smaller step size increases accuracy but also the computation cost, so it has always has to be hand-picked according to the problem at hand.
+$h$ はステップサイズで、解の精度に関連する最も重要なパラメータです。 ステップサイズが小さいほど精度は向上しますが、計算コストも高くなるため、目の前の問題に応じて常に手作業で処理する必要があります。
 
-**Example: Newton's Cooling Law**
+**例: ニュートンの冷却の法則**
 
-Newton's cooling law describes how an object of initial temperature $T(t_0) = T_0$ cools down in an environment of temperature $T_R$:
+ニュートンの冷却の法則は、温度$T_R$下において、初期温度$T(t_0) = T_0$ のオブジェクトが冷却される様子を表した法則です。
 
 <ul style='list-style: none;'>
   <li><big>$\frac{dT(t)}{dt} = -k \, \Delta T$</big></li>
 </ul>
 
-or
+または
 
 <ul style='list-style: none;'>
   <li><big>$\frac{dT(t)}{dt} = -k \, (T(t) - T_R)$</big></li>
 </ul>
 
-It says that the cooling rate $\\frac{dT(t)}{dt}$ of the object is proportional to the current temperature difference $\\Delta T = (T(t) - T_R)$ to the surrounding environment.
+オブジェクトの冷却率 $\\frac{dT(t)}{dt}$ は、周囲環境に対する現在の温度差 $\\Delta T = (T) - T_R)$ に比例するとされています。
 
-The analytical solution, which we will compare to the numerical approximation, is
+数値近似との比較として、解析解は以下のとおりです。
 
 <ul style='list-style: none;'>
   <li><big>$T(t) = T_R + (T_0 - T_R) \; e^{-k t}$</big></li>
@@ -72,54 +72,54 @@ The analytical solution, which we will compare to the numerical approximation, i
 
 # --instructions--
 
-Implement a routine of Euler's method and then use it to solve the given example of Newton's cooling law for three different step sizes of:
+オイラー方のルーチンを実装して、以下の3つの異なるステップサイズのニュートンの冷却の法則の例題を解きます。
 
 <ul>
   <li><code>2 s</code></li>
-  <li><code>5 s</code> and</li>
+  <li><code>5 s</code></li>
   <li><code>10 s</code></li>
 </ul>
 
-and compare with the analytical solution.
+次に、解析解と比較します。
 
-**Initial values:**
+**初期値：**
 
 <ul>
-  <li>initial temperature <big>$T_0$</big> shall be <code>100 °C</code></li>
-  <li>room temperature <big>$T_R$</big> shall be <code>20 °C</code></li>
-  <li>cooling constant <big>$k$</big> shall be <code>0.07</code></li>
-  <li>time interval to calculate shall be from <code>0 s</code> to <code>100 s</code></li>
+  <li>初期温度 <big>$T_0$</big> は <code>100 °C</code> です</li>
+  <li>室温 <big>$T_R$</big> は <code>20 °C</code> です</li>
+  <li>冷却定数 <big>$k$</big> は <code>0.07</code>です</li>
+  <li>計算する時間間隔は、 <code>0 s</code> から <code>100 s</code>です</li>
 </ul>
 
-First parameter to the function is initial time, second parameter is initial temperature, third parameter is elapsed time and fourth parameter is step size.
+関数の最初のパラメータは初期時間、2番目のパラメータは初期温度、3番目のパラメータは経過時間、4番目のパラメータはステップサイズです。
 
 # --hints--
 
-`eulersMethod` should be a function.
+`eulersMethod` という関数です。
 
 ```js
 assert(typeof eulersMethod === 'function');
 ```
 
-`eulersMethod(0, 100, 100, 2)` should return a number.
+`eulersMethod(0, 100, 100, 2)` は数字を返します。
 
 ```js
 assert(typeof eulersMethod(0, 100, 100, 2) === 'number');
 ```
 
-`eulersMethod(0, 100, 100, 2)` should return 20.0424631833732.
+`eulersMethod(0, 100, 100, 2)` は 20.0424631833732 を返します。
 
 ```js
 assert.equal(eulersMethod(0, 100, 100, 2), 20.0424631833732);
 ```
 
-`eulersMethod(0, 100, 100, 5)` should return 20.01449963666907.
+`eulersMethod(0, 100, 100, 5)` は 20.01449963666907 を返します。
 
 ```js
 assert.equal(eulersMethod(0, 100, 100, 5), 20.01449963666907);
 ```
 
-`eulersMethod(0, 100, 100, 10)` should return 20.000472392.
+`eulersMethod(0, 100, 100, 10)` は 20.000472392 を返します。
 
 ```js
 assert.equal(eulersMethod(0, 100, 100, 10), 20.000472392);

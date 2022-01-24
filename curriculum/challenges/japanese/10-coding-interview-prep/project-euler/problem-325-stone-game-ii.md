@@ -1,6 +1,6 @@
 ---
 id: 5900f4b11000cf542c50ffc4
-title: 'Problem 325: Stone Game II'
+title: '問題 325: 石取りゲーム (2)'
 challengeType: 5
 forumTopicId: 301982
 dashedName: problem-325-stone-game-ii
@@ -8,23 +8,23 @@ dashedName: problem-325-stone-game-ii
 
 # --description--
 
-A game is played with two piles of stones and two players. On each player's turn, the player may remove a number of stones from the larger pile. The number of stones removes must be a positive multiple of the number of stones in the smaller pile.
+石を積み上げた 2 つの山と 2 人のプレイヤーでゲームをします。 各プレイヤーは自分のターンで、大きい山から石をいくつか取ります。 取る石の数は、小さい山にある石の数の正の倍数でなければなりません。
 
-E.g., let the ordered pair (6,14) describe a configuration with 6 stones in the smaller pile and 14 stones in the larger pile, then the first player can remove 6 or 12 stones from the larger pile.
+例えば、小さい山に 6 個、大きい山に 14 個の石がある構成を順序対 (6,14) で表すと、先手は大きい山から 6 個または 12 個の石を取ることができます。
 
-The player taking all the stones from a pile wins the game.
+1 つの山からすべての石を取ったプレイヤーの勝ちです。
 
-A winning configuration is one where the first player can force a win. For example, (1,5), (2,6) and (3,12) are winning configurations because the first player can immediately remove all stones in the second pile.
+勝利構成とは、先手が必ず勝てる構成です。 例えば、(1,5), (2,6), (3,12) は、先手が即座に 2 つ目の山からすべての石を取れるので、勝利構成です。
 
-A losing configuration is one where the second player can force a win, no matter what the first player does. For example, (2,3) and (3,4) are losing configurations: any legal move leaves a winning configuration for the second player.
+敗北構成とは、先手が何をしようと後手が必ず勝てる構成です。 例えば、(2,3) と (3,4) は敗北構成です。ルールに従う限り、何をしても後手の勝利構成になります。
 
-Define $S(N)$ as the sum of ($x_i + y_i$) for all losing configurations ($x_i$, $y_i$), $0 &lt; x_i &lt; y_i ≤ N$. We can verify that $S(10) = 211$ and $S({10}^4) = 230\\,312\\,207\\,313$.
+$0 &lt; x_i &lt; y_i N$ のとき、すべての敗北構成 ($x_i$, $y_i$) に対する ($x_i + y_i$) の和を、$S(N)$ とします。 $S(10) = 211$, $S({10}^4) = 230\\,312\\,207\\,313$ であることを確認できます。
 
-Find $S({10}^{16})\bmod 7^{10}$.
+$S({10}^{16})\bmod 7^{10}$ を求めなさい。
 
 # --hints--
 
-`stoneGameTwo()` should return `54672965`.
+`stoneGameTwo()` は `54672965` を返す必要があります。
 
 ```js
 assert.strictEqual(stoneGameTwo(), 54672965);

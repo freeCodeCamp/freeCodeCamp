@@ -16,7 +16,7 @@ dashedName: use-the-twitch-json-api
 
 **ユーザーストーリー:** ステータス出力をクリックすると、freeCodeCamp の Twitch.tv チャンネルに直接移動することができます。
 
-**ユーザーストーリー:** Twitch ユーザーが現在ストリーミング中である場合、何をストリーミングしているかについての詳細を見ることができます。
+**ユーザーストーリー:** ストリーミング中の Twitch ユーザーがストリーミングしているものについて、詳細を見ることができます。
 
 **ヒント:** Twitch.tv の JSON API について関連するドキュメントはこちらです: <https://dev.twitch.tv/docs/api/reference/#get-streams>
 

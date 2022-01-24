@@ -1,6 +1,6 @@
 ---
 id: 5958469238c0d8d2632f46db
-title: Combinations
+title: 組み合わせ
 challengeType: 5
 forumTopicId: 302233
 dashedName: combinations
@@ -8,11 +8,11 @@ dashedName: combinations
 
 # --description--
 
-Given non-negative integers `m` and `n`, generate all size `m` combinations of the integers from `0` (zero) to `n-1` in sorted order (each combination is sorted and the entire table is sorted).
+負でない整数 `m` と `n` が与えられると、`0` (ゼロ) から `n-1` までの整数におけるすべての `m` の組み合わせをソート順に生成します (各組合せとテーブル全体を並べ替えます)。
 
-**Example:**
+**例:**
 
-`3` comb `5` is:
+`3` と `5` の組み合わせは以下の通りです。
 
 <pre>0 1 2
 0 1 3
@@ -28,19 +28,19 @@ Given non-negative integers `m` and `n`, generate all size `m` combinations of t
 
 # --hints--
 
-`combinations` should be a function.
+`combinations` という関数です。
 
 ```js
 assert(typeof combinations === 'function');
 ```
 
-`combinations(3, 5)` should return `[[0, 1, 2], [0, 1, 3], [0, 1, 4], [0, 2, 3], [0, 2, 4], [0, 3, 4], [1, 2, 3], [1, 2, 4], [1, 3, 4], [2, 3, 4]]`.
+`combinations(3, 5)` は `[[0, 1, 2], [0, 1, 3], [0, 1, 4], [0, 2, 3], [0, 2, 4], [0, 3, 4], [1, 2, 3], [1, 2, 4], [1, 3, 4], [2, 3, 4]]` を返します。
 
 ```js
 assert.deepEqual(combinations(testInput1[0], testInput1[1]), testOutput1);
 ```
 
-`combinations(4, 6)` should return `[[0,1,2,3], [0,1,2,4], [0,1,2,5], [0,1,3,4], [0,1,3,5], [0,1,4,5], [0,2,3,4], [0,2,3,5], [0,2,4,5], [0,3,4,5], [1,2,3,4], [1,2,3,5], [1,2,4,5], [1,3,4,5], [2,3,4,5]]`
+`combinations(4, 6)` は `[[0,1,2,3], [0,1,2,4], [0,1,2,5], [0,1,3,4], [0,1,3,5], [0,1,4,5], [0,2,3,4], [0,2,3,5], [0,2,4,5], [0,3,4,5], [1,2,3,4], [1,2,3,5], [1,2,4,5], [1,3,4,5], [2,3,4,5]]` を返します。
 
 ```js
 assert.deepEqual(combinations(testInput2[0], testInput2[1]), testOutput2);

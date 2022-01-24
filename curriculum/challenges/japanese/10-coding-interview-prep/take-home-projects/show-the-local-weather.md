@@ -14,13 +14,13 @@ dashedName: show-the-local-weather
 
 **ルール #2:** 以下の[ユーザーストーリー](https://en.wikipedia.org/wiki/User_story)を実装してください。 必要に応じて、どのようなライブラリあるいは API を使用してもかまいません。 あなたの独自のスタイルにしましょう。
 
-**ユーザーストーリー:** 現在の場所の天気を見ることができます。
+**ユーザーストーリー:** 現在地の天気を見ることができます。
 
 **ユーザーストーリー:** 天気によって決まるアイコンあるいは背景画像 (雪山、暑い砂漠など) を見ることができます。
 
 **ユーザーストーリー:** ボタンを押して華氏と摂氏の間を切り替えることができます。
 
-**注:** 今や多くのインターネットブラウザは、HTML5 Geolocation 経由でユーザのロケールを取得するために、HTTP セキュア (`https://`) 接続を必要とするようになりました。 このため、HTML5 Geolocation を使用してユーザーの場所を取得し、それから天気情報の取得に HTTP セキュア接続を使用する freeCodeCamp Weather API <https://weather-proxy.freecodecamp.rocks/> を使用することをお勧めします。 また、必ず `https://` 経由で [CodePen.io](https://codepen.io) に接続してください。
+**注:** 多くのインターネットブラウザーは現在、HTML5 Geolocation 経由でユーザーのロケールを取得するために、HTTP セキュア (`https://`) 接続を必要とするようになっています。 このため、HTML5 Geolocation を使用してユーザーの場所を取得し、それから HTTP セキュア接続を使用して天気情報を取得する freeCodeCamp の Weather API <https://weather-proxy.freecodecamp.rocks/> を使用することをお勧めします。 また、必ず `https://` 経由で [CodePen.io](https://codepen.io) に接続してください。
 
 完了したら、CodePen のプロジェクトへのリンクを入れて、「このチャレンジを完了しました」ボタンをクリックしてください。
 

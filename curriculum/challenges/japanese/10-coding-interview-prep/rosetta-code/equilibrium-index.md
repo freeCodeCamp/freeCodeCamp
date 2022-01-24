@@ -1,6 +1,6 @@
 ---
 id: 5987fd532b954e0f21b5d3f6
-title: Equilibrium index
+title: 平衡インデックス
 challengeType: 5
 forumTopicId: 302255
 dashedName: equilibrium-index
@@ -8,9 +8,9 @@ dashedName: equilibrium-index
 
 # --description--
 
-An equilibrium index of a sequence is an index into the sequence such that the sum of elements at lower indices is equal to the sum of elements at higher indices.
+数列の平衡インデックスは、下位インデックスの要素の合計が上位インデックスの要素の合計と等しくなるような数列へのインデックスです。
 
-For example, in a sequence $A$:
+下記は数列 $A$ の例です。
 
 <ul style='list-style: none;'>
   <li><big>$A_0 = -7$</big></li>
@@ -22,67 +22,67 @@ For example, in a sequence $A$:
   <li><big>$A_6 =  0$</big></li>
 </ul>
 
-`3` is an equilibrium index, because:
+`3` は以下の理由で平衡インデックスです。
 
 <ul style='list-style: none;'>
   <li><big>$A_0 + A_1 + A_2 = A_4 + A_5 + A_6$</big></li>
 </ul>
 
-`6` is also an equilibrium index, because:
+`6` も以下の理由で平衡インデックスです。
 
 <ul style='list-style: none;'>
   <li><big>$A_0 + A_1 + A_2 + A_3 + A_4 + A_5 = 0$</big></li>
 </ul>
 
-(sum of zero elements is zero)
+(要素ゼロの合計はゼロです。)
 
-`7` is not an equilibrium index, because it is not a valid index of sequence $A$.
+`7` は、数列 $A$ の有効なインデックスではないため、平衡インデックスではありません。
 
 # --instructions--
 
-Write a function that, given a sequence, returns its equilibrium indices (if any).
+与えられた数列で、平衡インデックスがあれば返す関数を作成します。
 
-Assume that the sequence may be very long.
+非常に長い数式の可能性もあります。
 
 # --hints--
 
-`equilibrium` should be a function.
+`equilibrium` という関数です。
 
 ```js
 assert(typeof equilibrium === 'function');
 ```
 
-`equilibrium([-7, 1, 5, 2, -4, 3, 0])` should return `[3,6]`.
+`equilibrium([-7, 1, 5, 2, -4, 3, 0])` は `[3,6]` を返します。
 
 ```js
 assert.deepEqual(equilibrium(equilibriumTests[0]), ans[0]);
 ```
 
-`equilibrium([2, 4, 6])` should return `[]`.
+`equilibrium([2, 4, 6])` は `[]` を返します。
 
 ```js
 assert.deepEqual(equilibrium(equilibriumTests[1]), ans[1]);
 ```
 
-`equilibrium([2, 9, 2])` should return `[1]`.
+`equilibrium([2, 9, 2])` は `[1]` を返します。
 
 ```js
 assert.deepEqual(equilibrium(equilibriumTests[2]), ans[2]);
 ```
 
-`equilibrium([1, -1, 1, -1, 1, -1, 1])` should return `[0,1,2,3,4,5,6]`.
+`equilibrium([1, -1, 1, -1, 1, -1, 1])` は `[0,1,2,3,4,5,6]` を返します。
 
 ```js
 assert.deepEqual(equilibrium(equilibriumTests[3]), ans[3]);
 ```
 
-`equilibrium([1])` should return `[0]`.
+`equilibrium([1])` は `[0]` を返します。
 
 ```js
 assert.deepEqual(equilibrium(equilibriumTests[4]), ans[4]);
 ```
 
-`equilibrium([])` should return `[]`.
+`equilibrium([])` は `[]` を返します。
 
 ```js
 assert.deepEqual(equilibrium(equilibriumTests[5]), ans[5]);

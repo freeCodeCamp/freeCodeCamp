@@ -1,6 +1,6 @@
 ---
 id: 596e414344c3b2872167f0fe
-title: Comma quibbling
+title: コンマキブリング
 challengeType: 5
 forumTopicId: 302234
 dashedName: comma-quibbling
@@ -8,63 +8,63 @@ dashedName: comma-quibbling
 
 # --description--
 
-Comma quibbling is a task originally set by Eric Lippert in his [blog](https://blogs.msdn.com/b/ericlippert/archive/2009/04/15/comma-quibbling.aspx).
+カンマキブリング はもともとエリック・リッパートが彼の [ブログ](https://blogs.msdn.com/b/ericlippert/archive/2009/04/15/comma-quibbling.aspx) で提示したタスクです。
 
 # --instructions--
 
-Write a function to generate a string output which is the concatenation of input words from a list/sequence where:
+リスト/シーケンスからの入力単語の連結である文字列を出力する関数を作成します。
 
 <ol>
-  <li>An input of no words produces the output string of just the two brace characters (<code>"{}"</code>)</li>
-  <li>An input of just one word, e.g. <code>["ABC"]</code>, produces the output string of the word inside the two braces, e.g. <code>"{ABC}"</code></li>
-  <li>An input of two words, e.g. <code>["ABC", "DEF"]</code>, produces the output string of the two words inside the two braces with the words separated by the string <code>" and "</code>, e.g. <code>"{ABC and DEF}"</code></li>
-  <li>An input of three or more words, e.g. <code>["ABC", "DEF", "G", "H"]</code>, produces the output string of all but the last word separated by <code>", "</code> with the last word separated by <code>" and "</code> and all within braces; e.g. <code>"{ABC, DEF, G and H}"</code></li>
+  <li>単語を入力しなかった場合、2つの中括弧文字 (<code>"{}"</code>) だけの出力文字列が生成されます。</li>
+  <li>1単語、例えば <code>["ABC"]</code>、だけを入力した場合、<code>"{ABC}"</code> のように、2つの中括弧の中にその単語が出力文字列として生成されます。</li>
+  <li>2つの単語、例えば <code>["ABC", "DEF"]</code>、を入力した場合、<code>"{ABC and DEF}"</code> のように、文字列 <code>" and "</code> に区切られた2つの単語が、2つの中括弧の中に出力文字列として生成されます。</li>
+  <li>3つ以上の単語、 例えば <code>["ABC", "DEF", "G", "H"]</code> を入力した場合、<code>"{ABC, DEF, G and H}"</code> のように、最後の単語以外のすべての単語は、<code>", "</code> で区切られ、最後の単語は <code>" and "</code> で区切られ、すべての単語が中括弧の中に出力文字列として生成されます。</li>
 </ol>
 
-Test your function with the following series of inputs showing your output here on this page:
+次の一連の入力によりこのページに出力表示して、関数をテストします。
 
 <ul>
-  <li>[] # (No input words).</li>
+  <li>[] # (入力単語なし)</li>
   <li>["ABC"]</li>
   <li>["ABC", "DEF"]</li>
   <li>["ABC", "DEF", "G", "H"]</li>
 </ul>
 
-**Note:** Assume words are non-empty strings of uppercase characters for this task.
+**注記:** このタスクで、単語は大文字の空でない文字列です。
 
 # --hints--
 
-`quibble` should be a function.
+`quibble` という関数です。
 
 ```js
 assert(typeof quibble === 'function');
 ```
 
-`quibble(["ABC"])` should return a string.
+`quibble(["ABC"])` は文字列を返します。
 
 ```js
 assert(typeof quibble(['ABC']) === 'string');
 ```
 
-`quibble([])` should return "{}".
+`quibble([])` は "{}"を返します。
 
 ```js
 assert.equal(quibble(testCases[0]), results[0]);
 ```
 
-`quibble(["ABC"])` should return "{ABC}".
+`quibble(["ABC"])` は "{ABC}"を返します。
 
 ```js
 assert.equal(quibble(testCases[1]), results[1]);
 ```
 
-`quibble(["ABC", "DEF"])` should return "{ABC and DEF}".
+`quibble(["ABC", "DEF"])` は "{ABC and DEF}"を返します。
 
 ```js
 assert.equal(quibble(testCases[2]), results[2]);
 ```
 
-`quibble(["ABC", "DEF", "G", "H"])` should return "{ABC,DEF,G and H}".
+`quibble(["ABC", "DEF", "G", "H"])` は "{ABC,DEF,G and H}"を返します。
 
 ```js
 assert.equal(quibble(testCases[3]), results[3]);

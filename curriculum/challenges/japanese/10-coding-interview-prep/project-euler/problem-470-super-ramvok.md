@@ -1,6 +1,6 @@
 ---
 id: 5900f5431000cf542c510055
-title: 'Problem 470: Super Ramvok'
+title: '問題 470: スーパー Ramvok'
 challengeType: 5
 forumTopicId: 302146
 dashedName: problem-470-super-ramvok
@@ -8,23 +8,23 @@ dashedName: problem-470-super-ramvok
 
 # --description--
 
-Consider a single game of Ramvok:
+Ramvok というゲームを 1 回プレイすることについて考えます。
 
-Let $t$ represent the maximum number of turns the game lasts. If $t = 0$, then the game ends immediately. Otherwise, on each turn $i$, the player rolls a die. After rolling, if $i &lt; t$ the player can either stop the game and receive a prize equal to the value of the current roll, or discard the roll and try again next turn. If $i = t$, then the roll cannot be discarded and the prize must be accepted. Before the game begins, $t$ is chosen by the player, who must then pay an up-front cost $ct$ for some constant $c$. For $c = 0$, $t$ can be chosen to be infinite (with an up-front cost of 0). Let $R(d, c)$ be the expected profit (i.e. net gain) that the player receives from a single game of optimally-played Ramvok, given a fair $d$-sided die and cost constant $c$. For example, $R(4, 0.2) = 2.65$. Assume that the player has sufficient funds for paying any/all up-front costs.
+ゲームが続いている間のターンの最大数を $t$ とします。 $t = 0$ の場合、ゲームはすぐに終了します。 それ以外の場合、各ターン $i$ でプレイヤーがサイコロを振ります。 サイコロを振った後、$i &lt; t$ の場合は、そのプレイヤーはゲームをやめてサイコロの目と同額の賞金を受け取るか、または、出目を捨てて次のターンで再挑戦することができます。 $i = t$の場合、出目を捨てることはできず、賞金を受け入れなければなりません。 ゲーム開始前、プレイヤーは $t$ を選び、そのプレイヤーはある定数 $c$ に対して前金 $ct$ を支払う必要があります。 $c = 0$ の場合、(前金なしで) $t$ を無制限にすることを選択できます 。 偏りのない $d$ 面のサイコロとコスト定数 $c$ が与えられるとき、Ramvok のゲームを最適に 1 回プレイすることでプレイヤーが受け取る期待利益 (純利益) を $R(d, c)$ とします。 例えば、$R(4, 0.2) = 2.65$ です。 プレイヤーが前金をいくらでも支払えるほどの資金を持っていると仮定します。
 
-Now consider a game of Super Ramvok:
+次に、スーパー Ramvok を 1 回プレイすることについて考えます。
 
-In Super Ramvok, the game of Ramvok is played repeatedly, but with a slight modification. After each game, the die is altered. The alteration process is as follows: The die is rolled once, and if the resulting face has its pips visible, then that face is altered to be blank instead. If the face is already blank, then it is changed back to its original value. After the alteration is made, another game of Ramvok can begin (and during such a game, at each turn, the die is rolled until a face with a value on it appears). The player knows which faces are blank and which are not at all times. The game of Super Ramvok ends once all faces of the die are blank.
+スーパー Ramvokでも Ramvok のゲームが繰り返し行われますが、ルールが少し異なります。 各ゲームの後、サイコロが変更されるのです。 変更のプロセスは次のとおりです。サイコロが 1 回振られ、上になった面に目があれば、その面は目のない面に変えられます。 上になった面がすでに空白の場合は、元の目の値に戻されます。 変更が行われた後、Ramvok ゲームの次の 1 回をスタートできます (そのような 1 回のゲーム中に、各ターンで、目のある面が出るまでサイコロを振ります)。 プレイヤーは、どの面が空白で、どの面が空白でないかを常に知っています。 スーパー Ramvok のゲームは、サイコロのすべての面が空白になると終了です。
 
-Let $S(d, c)$ be the expected profit that the player receives from an optimally-played game of Super Ramvok, given a fair $d$-sided die to start (with all sides visible), and cost constant $c$. For example, $S(6, 1) = 208.3$.
+偏りのない $d$ 面のサイコロ (開始時はすべての面に目がある) とコスト定数 $c$ が与えられるとき、スーパー Ramvok を最適に 1 回プレイすることでプレイヤーが受け取る期待利益を $S(d, c)$ とします。 例えば、$S(6, 1) = 208.3$ です。
 
-Let $F(n) = \sum_{4 ≤ d ≤ n} \sum_{0 ≤ c ≤ n} S(d, c)$.
+$F(n) = \sum_{4 ≤ d ≤ n} \sum_{0 ≤ c ≤ n} S(d, c)$ と定義します。
 
-Calculate $F(20)$, rounded to the nearest integer.
+$F(20)$ を計算し、最も近い整数に四捨五入して答えなさい。
 
 # --hints--
 
-`superRamvok()` should return `147668794`.
+`superRamvok()` は `147668794` を返す必要があります。
 
 ```js
 assert.strictEqual(superRamvok(), 147668794);

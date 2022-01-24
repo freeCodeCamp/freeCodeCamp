@@ -1,6 +1,6 @@
 ---
 id: 5900f5021000cf542c510015
-title: 'Problem 406: Guessing Game'
+title: '問題 406: 推測ゲーム'
 challengeType: 5
 forumTopicId: 302074
 dashedName: problem-406-guessing-game
@@ -8,39 +8,39 @@ dashedName: problem-406-guessing-game
 
 # --description--
 
-We are trying to find a hidden number selected from the set of integers {1, 2, ..., $n$} by asking questions. Each number (question) we ask, we get one of three possible answers:
+整数の集合 {1, 2, ..., $n$} から選ばれた秘密の数を、質問をすることで当てます。 それぞれの数 (質問) で得られる回答は、次の 3 つのいずれかです。
 
-- "Your guess is lower than the hidden number" (and you incur a cost of a), or
-- "Your guess is higher than the hidden number" (and you incur a cost of b), or
-- "Yes, that's it!" (and the game ends).
+- 「あなたの推測は秘密の数よりも小さい」(a のコストが発生する)
+- 「あなたの推測は秘密の数よりも大きい」(b のコストが発生する)
+- 「当たり！」 (ゲーム終了)
 
-Given the value of $n$, $a$, and $b$, an optimal strategy minimizes the total cost <u>for the worst possible case</u>.
+値 $n$, $a$, $b$ が与えられているとき、最適な戦略に従えば、<u>起こり得る最悪のケース</u>の総コストが最小化します。
 
-For example, if $n = 5$, $a = 2$, and $b = 3$, then we may begin by asking "<strong>2</strong>" as our first question.
+例えば、$n = 5$, $a = 2$, $b = 3$ の場合、最初に秘密の数が "<strong>2</strong>" であるかどうかを尋ねます。
 
-If we are told that 2 is higher than the hidden number (for a cost of $b = 3$), then we are sure that "<strong>1</strong>" is the hidden number (for a total cost of <strong><span style="color: blue;">3</span></strong>).
+2 が秘密の数よりも大きいと告げられた場合 (コストは $b = 3$)、秘密の数が "<strong>1</strong>" であることが分かります (総コストは <strong><span style="color: blue;">3</span></strong>)。
 
-If we are told that 2 is lower than the hidden number (for a cost of $a = 2$), then our next question will be "<strong>4</strong>".
+2 が秘密の数よりも小さいと告げられた場合 (コストは $a = 2$)、次の質問は "<strong>4</strong>" です。
 
-If we are told that 4 is higher than the hidden number (for a cost of $b = 3$), then we are sure that "<strong>3</strong>" is the hidden number (for a total cost of $2 + 3 = \color{blue}{\mathbf{5}}$).
+4 が秘密の数よりも大きいと告げられた場合 (コストは $b = 3$)、秘密の数が "<strong>3</strong>" であることが分かります (総コストは $2 + 3 = \color{blue}{\mathbf{5}}$)。
 
-If we are told that 4 is lower than the hidden number (for a cost of $a = 2$), then we are sure that "<strong>5</strong>" is the hidden number (for a total cost of $2 + 2 = \color{blue}{\mathbf{4}}$).
+4 が秘密の数よりも小さいと告げられた場合 (コスト $a = 2$)、秘密の数が "<strong>5</strong>" であることが分かります (総コストは $2 + 2 = \color{blue}{\mathbf{4}}$)。
 
-Thus, the worst-case cost achieved by this strategy is <strong><span style="color: red">5</span></strong>. It can also be shown that this is the lowest worst-case cost that can be achieved. So, in fact, we have just described an optimal strategy for the given values of $n$, $a$, and $b$.
+したがって、この戦略によって達成される、最悪ケースのコストは <strong><span style="color: red">5</span></strong> です。 また、達成可能な最悪ケースのコストの中でこれが最も低いコストであることも分かっています。 つまり、与えられた値 $n$, $a$, $b$ に対してこれが最適な戦略です。
 
-Let $C(n, a, b)$ be the worst-case cost achieved by an optimal strategy for the given values of $n$, $a$, and $b$.
+与えられた値 $n$, $a$, $b$ に対する最適な戦略によって達成される、最悪ケースのコストを $C(n, a, b)$ とします。
 
-Here are a few examples:
+いくつかの例を次に示します。
 
 $$\begin{align} & C(5, 2, 3) = 5 \\\\ & C(500, \sqrt{2}, \sqrt{3}) = 13.220\\,731\\,97\ldots \\\\ & C(20\\,000, 5, 7) = 82 \\\\ & C(2\\,000\\,000, √5, √7) = 49.637\\,559\\,55\ldots \\\\ \end{align}$$
 
-Let $F_k$ be the Fibonacci numbers: $F_k = F_{k - 1} + F_{k - 2}$ with base cases $F_1 = F_2 = 1$.
+$F_1 = F_2 = 1$ を初期条件とするフィボナッチ数 $F_k = F_{k - 1} + F_{k - 2}$ を $F_k$ と定義します。
 
-Find $\displaystyle\sum_{k = 1}^{30} C({10}^{12}, \sqrt{k}, \sqrt{F_k})$, and give your answer rounded to 8 decimal places behind the decimal point.
+$\displaystyle\sum_{k = 1}^{30} C({10}^{12}, \sqrt{k}, \sqrt{F_k})$ を求め、四捨五入して小数第 8 位まで示しなさい。
 
 # --hints--
 
-`guessingGame()` should return `36813.12757207`.
+`guessingGame()` は `36813.12757207` を返す必要があります。
 
 ```js
 assert.strictEqual(guessingGame(), 36813.12757207);

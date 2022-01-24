@@ -1,6 +1,6 @@
 ---
 id: 5900f4cd1000cf542c50ffdf
-title: 'Problem 352: Blood tests'
+title: '問題 352: 血液検査'
 challengeType: 5
 forumTopicId: 302012
 dashedName: problem-352-blood-tests
@@ -8,43 +8,43 @@ dashedName: problem-352-blood-tests
 
 # --description--
 
-Each one of the 25 sheep in a flock must be tested for a rare virus, known to affect 2% of the sheep population.
+25 頭の羊の群れがいます。これらの一頭ずつに、珍しいウイルスの検査をする必要があります。このウイルスは、羊全体の 2% に感染することが知られています。
 
-An accurate and extremely sensitive PCR test exists for blood samples, producing a clear positive / negative result, but it is very time-consuming and expensive.
+血液サンプルを検査するための正確な超高感度 PCR 検査があり、これを使えば陽性 / 陰性の結果が明確に得られますが、多大な時間と費用がかかります。
 
-Because of the high cost, the vet-in-charge suggests that instead of performing 25 separate tests, the following procedure can be used instead:
+コストが高いので、担当の獣医は 25 頭を別々に検査するのではなく次の手順を使用することを提案しています。
 
-The sheep are split into 5 groups of 5 sheep in each group. For each group, the 5 samples are mixed together and a single test is performed. Then,
+羊を 5 頭ずつ 5 つのグループに分けます。 グループごとに 5 つのサンプルを混合し、1 回のみ検査します。 次に、以下を行います。
 
-- If the result is negative, all the sheep in that group are deemed to be virus-free.
-- If the result is positive, 5 additional tests will be performed (a separate test for each animal) to determine the affected individual(s).
+- 結果が陰性の場合、そのグループのすべての羊がウイルスに感染していないとみなされます。
+- 結果が陽性の場合、検査をさらに 5 回 (それぞれの羊に 1 回ずつ) を実施して、感染した個体を特定します。
 
-Since the probability of infection for any specific animal is only 0.02, the first test (on the pooled samples) for each group will be:
+特定の個体への感染率はわずか 0.02 なので、各グループでの (プールしておいたサンプルを使った) 最初の検査は次のようになります。
 
-- Negative (and no more tests needed) with probability ${0.98}^5 = 0.9039207968$.
-- Positive (5 additional tests needed) with probability $1 - 0.9039207968 = 0.0960792032$.
+- 陰性 (これ以上の検査は不要) の確率: ${0.98}^5 = 0.9039207968$
+- 陽性 (5 回の追加検査が必要) の確率: $1 - 0.9039207968 = 0.0960792032$
 
-Thus, the expected number of tests for each group is $1 + 0.0960792032 × 5 = 1.480396016$.
+したがって、グループごとの検査の期待回数は $1 + 0.0960792032 × 5 = 1.480396016$ です。
 
-Consequently, all 5 groups can be screened using an average of only $1.480396016 × 5 = \mathbf{7.40198008}$ tests, which represents a huge saving of more than 70%!
+その結果、 5 つの全グループに対する検査回数は平均 $1.480396016 × 5 = \mathbf{7.40198008}$ 回となり、70% 以上の大幅な節約となります！
 
-Although the scheme we have just described seems to be very efficient, it can still be improved considerably (always assuming that the test is sufficiently sensitive and no adverse effects are caused by mixing different samples). E.g.:
+上の計画は非常に効率的に見えますが、さらに大幅に改善することができます (検査の感度が十分に高く、異なるサンプルを混合することによる悪影響が生じないと常に仮定すれば)。 次に例を示します。
 
-- We may start by running a test on a mixture of all the 25 samples. It can be verified that in about 60.35% of the cases this test will be negative, thus no more tests will be needed. Further testing will only be required for the remaining 39.65% of the cases.
-- If we know that at least one animal in a group of 5 is infected and the first 4 individual tests come out negative, there is no need to run a test on the fifth animal (we know that it must be infected).
-- We can try a different number of groups / different number of animals in each group, adjusting those numbers at each level so that the total expected number of tests will be minimised.
+- まず、25 個のサンプルすべてを混合したものを検査します。 この検査の約 60.35% のケースでは、結果が陰性となり追加検査は必要ありません。 追加検査が必要となるのは、残りの 39.65% のケースのみです。
+- 5 頭のグループのうちの少なとも 1 頭の感染が判明しており、最初の 4 頭の個別検査の結果が陰性であれば、5 頭目の検査は必要はありません (間違いなく感染しているからです)。
+- グループの数や各グループ内の頭数を変えて試すことができます。段階ごとにそれらの数を調整して、期待検査総数を最小限に抑えます。
 
-To simplify the very wide range of possibilities, there is one restriction we place when devising the most cost-efficient testing scheme: whenever we start with a mixed sample, all the sheep contributing to that sample must be fully screened (i.e. a verdict of infected / virus-free must be reached for all of them) before we start examining any other animals.
+非常に幅広い可能性を単純化するため、最も費用対効果の高い検査計画を立てる際の制約を設けます。それは、最初に混合サンプルを使う際は必ず、そのサンプルの元となった羊を完全にスクリーニング (すなわち、サンプルの元となったすべての羊についてウイルス感染の有無を判定) してから、他の羊を検査することです。
 
-For the current example, it turns out that the most cost-efficient testing scheme (we'll call it the optimal strategy) requires an average of just <strong>4.155452</strong> tests!
+今回の例では、最も費用対効果の高い検査計画 (これを最適戦略と呼ぶことにします) での平均検査回数はわずか <strong>4.155452</strong> 回です！
 
-Using the optimal strategy, let $T(s, p)$ represent the average number of tests needed to screen a flock of $s$ sheep for a virus having probability $p$ to be present in any individual. Thus, rounded to six decimal places, $T(25, 0.02) = 4.155452$ and $T(25, 0.10) = 12.702124$.
+任意の個体に $p$ の確率で感染するウイルスに関して、最適戦略を使用して $s$ 頭の羊の群れをスクリーニングするのに必要な平均検査回数を $T(s, p)$ とします。 したがって、四捨五入して小数第 6 位まで求めると $T(25, 0.02) = 4.155452$, $T(25, 0.10) = 12.702124$ となります。
 
-Find $\sum T(10\\,000, p)$ for $p = 0.01, 0.02, 0.03, \ldots 0.50$. Give your answer rounded to six decimal places.
+$p = 0.01, 0.02, 0.03, \ldots 0.50$ のとき、$\sum T(10\\,000, p)$ を求めなさい。 回答は、四捨五入して小数第 6 位まで示すこと。
 
 # --hints--
 
-`bloodTests()` should return `378563.260589`.
+`bloodTests()` は `378563.260589` を返す必要があります。
 
 ```js
 assert.strictEqual(bloodTests(), 378563.260589);

@@ -1,6 +1,6 @@
 ---
 id: 598ee8b91b410510ae82efef
-title: Extensible prime generator
+title: 拡張可能な素数ジェネレータ
 challengeType: 5
 forumTopicId: 302262
 dashedName: extensible-prime-generator
@@ -8,28 +8,28 @@ dashedName: extensible-prime-generator
 
 # --description--
 
-Write a generator of prime numbers, in order, that will automatically adjust to accommodate the generation of any reasonably high prime.
+かなり高い素数の生成に対応するために自動的に調整する素数ジェネレータを作成します。
 
-The generator should be able to:
+ジェネレータで次のことが可能です。
 
 <ul>
-  <li>Show the first <code>n</code> prime numbers</li>
-  <li>Show the prime numbers in a range</li>
-  <li>Show the number of primes in a range</li>
-  <li>Show the <code>n<sup>th</sup></code> prime number</li>
+  <li>最初の <code>n</code> 個の素数を表示する</li>
+  <li>範囲内に素数を表示する</li>
+  <li>範囲内の素数の数を表示する</li>
+  <li><code>n<sup>th</sup></code> の素数を表示する</li>
 </ul>
 
-The function should have two parameters. The first will receive `n` or the range as an array. The second will receive a boolean, that specifies if the function returns the prime numbers as an array or a single number(the number of primes in the range or the <code>n<sup>th</sup></code> prime). According to the parameters the function should return an array.
+関数は二つのパラメーターを使用します。 1つ目は、`n`、つまり配列としての範囲です。 2 つ目は、ブール値です。 ブール値は、関数が素数を配列として返すか、単一の数値 として返すかを指定します (範囲内の素数、または <code>n<sup>th</sup></code> 素数)。 パラメーターに基づき、関数は配列を返します。
 
 # --hints--
 
-`primeGenerator` should be a function.
+`primeGenerator` という関数です。
 
 ```js
 assert(typeof primeGenerator === 'function');
 ```
 
-`primeGenerator(20, true)` should return `[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]`.
+`primeGenerator(20, true)` は `[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]` を返します。
 
 ```js
 assert.deepEqual(primeGenerator(20, true), [
@@ -56,7 +56,7 @@ assert.deepEqual(primeGenerator(20, true), [
 ]);
 ```
 
-`primeGenerator([100, 150], true)` should return `[101, 103, 107, 109, 113, 127, 131, 137, 139, 149]`.
+`primeGenerator([100, 150], true)` は `[101, 103, 107, 109, 113, 127, 131, 137, 139, 149]` を返します。
 
 ```js
 assert.deepEqual(primeGenerator([100, 150], true), [
@@ -73,13 +73,13 @@ assert.deepEqual(primeGenerator([100, 150], true), [
 ]);
 ```
 
-`primeGenerator([7700, 8000], false)` should return `30`.
+`primeGenerator([7700, 8000], false)` は `30` を返します。
 
 ```js
 assert.equal(primeGenerator([7700, 8000], false), 30);
 ```
 
-`primeGenerator(10000, false)` should return `104729`.
+`primeGenerator(10000, false)` は `104729` を返します。
 
 ```js
 assert.equal(primeGenerator(10000, false), 104729);

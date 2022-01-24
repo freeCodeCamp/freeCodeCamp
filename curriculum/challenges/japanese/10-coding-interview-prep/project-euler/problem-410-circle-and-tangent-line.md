@@ -1,6 +1,6 @@
 ---
 id: 5900f5071000cf542c510018
-title: 'Problem 410: Circle and tangent line'
+title: '問題 410: 円と接線'
 challengeType: 5
 forumTopicId: 302079
 dashedName: problem-410-circle-and-tangent-line
@@ -8,19 +8,19 @@ dashedName: problem-410-circle-and-tangent-line
 
 # --description--
 
-Let $C$ be the circle with radius $r$, $x^2 + y^2 = r^2$. We choose two points $P(a, b)$ and $Q(-a, c)$ so that the line passing through $P$ and $Q$ is tangent to $C$.
+半径 $r$, $x^2 + y^2 = r^2$ の円を $C$ とします。 2 つの点 $P(a, b)$, $Q(-a, c)$ を通過する線が $C$ の接線となるように、$P$, $Q$ を選びます。
 
-For example, the quadruplet $(r, a, b, c) = (2, 6, 2, -7)$ satisfies this property.
+例えば、四つ組数 $(r, a, b, c) = (2, 6, 2, -7)$ はこの性質を満たしています。
 
-Let $F(R, X)$ be the number of the integer quadruplets $(r, a, b, c)$ with this property, and with $0 &lt; r ≤ R$ and $0 &lt; a ≤ X$.
+$0 &lt; r ≤ R$, $0 &lt; a ≤ X$ のとき、この性質を持つ四つ組整数 $(r, a, b, c)$ の個数を $F(R, X)$ とします。
 
-We can verify that $F(1, 5) = 10$, $F(2, 10) = 52$ and $F(10, 100) = 3384$.
+$F(1, 5) = 10$, $F(2, 10) = 52$, $F(10, 100) = 3384$ であることを確認できます。
 
-Find $F({10}^8, {10}^9) + F({10}^9, {10}^8)$.
+$F({10}^8, {10}^9) + F({10}^9, {10}^8)$ を求めなさい。
 
 # --hints--
 
-`circleAndTangentLine()` should return `799999783589946600`.
+`circleAndTangentLine()` は `799999783589946600` を返す必要があります 。
 
 ```js
 assert.strictEqual(circleAndTangentLine(), 799999783589946600);

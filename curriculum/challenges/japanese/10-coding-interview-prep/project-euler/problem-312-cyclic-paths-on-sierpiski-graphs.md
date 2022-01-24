@@ -1,6 +1,6 @@
 ---
 id: 5900f4a51000cf542c50ffb7
-title: 'Problem 312: Cyclic paths on Sierpiński graphs'
+title: '問題 312: シェルピンスキーグラフ上の循環路'
 challengeType: 5
 forumTopicId: 301968
 dashedName: problem-312-cyclic-paths-on-sierpiski-graphs
@@ -8,24 +8,24 @@ dashedName: problem-312-cyclic-paths-on-sierpiski-graphs
 
 # --description--
 
-- A Sierpiński graph of order-1 ($S_1$) is an equilateral triangle.
-- $S_{n + 1}$ is obtained from $S_n$ by positioning three copies of $S_n$ so that every pair of copies has one common corner.
+- 位数 1 のシェルピンスキーグラフ ($S_1$) は正三角形です。
+- $S_{n + 1}$ は $S_n$ から作られます。3 つの $S_n$ を、それぞれの対が角の 1 つの頂点を共有するように配置したものです。
 
-<img class="img-responsive center-block" alt="Sierpinski graphs of order-1 to order-5" src="https://cdn.freecodecamp.org/curriculum/project-euler/cyclic-paths-on-sierpinski-graphs-1.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="位数1 から 位数 5 のシェルピンスキーグラフ" src="https://cdn.freecodecamp.org/curriculum/project-euler/cyclic-paths-on-sierpinski-graphs-1.gif" style="background-color: white; padding: 10px;" />
 
-Let $C(n)$ be the number of cycles that pass exactly once through all the vertices of $S_n$. For example, $C(3) = 8$ because eight such cycles can be drawn on $S_3$, as shown below:
+$S_n$ のすべての頂点をちょうど 1 回ずつ通る循環路の数を、$C(n)$ とします。 例えば、下図のとおり、$S_3$ にそのような循環路を 8 つ描くことができるので、$C(3) = 8$ です。
 
-<img class="img-responsive center-block" alt="eight cycles that pass exactly once through all vertices of S_3" src="https://cdn.freecodecamp.org/curriculum/project-euler/cyclic-paths-on-sierpinski-graphs-2.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="S_3 の全頂点を通る 8 つの循環路" src="https://cdn.freecodecamp.org/curriculum/project-euler/cyclic-paths-on-sierpinski-graphs-2.gif" style="background-color: white; padding: 10px;" />
 
-It can also be verified that:
+次のことも確認できます。
 
 $$\begin{align} & C(1) = C(2) = 1 \\\\ & C(5) = 71\\,328\\,803\\,586\\,048 \\\\ & C(10 000)\bmod {10}^8 = 37\\,652\\,224 \\\\ & C(10 000)\bmod {13}^8 = 617\\,720\\,485 \\\\ \end{align}$$
 
-Find $C(C(C(10\\,000)))\bmod {13}^8$.
+$C(C(C(10\\,000)))\bmod {13}^8$ を求めなさい。
 
 # --hints--
 
-`pathsOnSierpinskiGraphs()` should return `324681947`.
+`pathsOnSierpinskiGraphs()` は `324681947` を返す必要があります。
 
 ```js
 assert.strictEqual(pathsOnSierpinskiGraphs(), 324681947);
