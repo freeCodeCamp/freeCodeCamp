@@ -9,6 +9,7 @@ import { SuperBlocks } from '../../../../../config/certification-settings';
 import envData from '../../../../../config/env.json';
 import { isAuditedCert } from '../../../../../utils/is-audited';
 import Caret from '../../../assets/icons/caret';
+import DropDown from '../../../assets/icons/dropdown';
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
 import { Link, Spacer } from '../../../components/helpers';
@@ -238,12 +239,8 @@ export class Block extends Component<BlockProps> {
         </ScrollableAnchor>
       </>
     );
-    const blockrenderer = () => {
-      if (isProjectBlock) return ProjectBlock;
-      return isNewResponsiveWebDesign ? AltBlock : Block;
-    };
 
-    const AltBlock = (
+    const GridBlock = (
       <>
         {' '}
         <ScrollableAnchor id={blockDashedName}>
@@ -260,7 +257,7 @@ export class Block extends Component<BlockProps> {
                   completedCount === challengesWithCompleted.length
                 )}
                 <h3 className='block-grid-title'>{blockTitle}</h3>
-                <Caret />
+                <DropDown />
               </div>
               {!isExpanded && (
                 <div className='progress-wrapper'>
@@ -283,6 +280,55 @@ export class Block extends Component<BlockProps> {
         </ScrollableAnchor>
       </>
     );
+    const GridProjectBlock = (
+      <>
+        <ScrollableAnchor id={blockDashedName}>
+          <div className='block block-grid grid-project-block'>
+            <a
+              className='block-header'
+              onClick={() => {
+                this.handleBlockClick();
+              }}
+              href={`#${blockDashedName}`}
+            >
+              <div className='tags-wrapper'>
+                <span className='cert-tag'>Certification Project</span>
+                <Link
+                  className='cert-tag'
+                  to={t('links:help-translate-link-url')}
+                >
+                  {t('misc.translation-pending')}
+                </Link>
+              </div>
+              <div className='title-wrapper map-title'>
+                {this.renderCheckMark(
+                  completedCount === challengesWithCompleted.length
+                )}
+                <h3 className='block-grid-title'>{blockTitle}</h3>
+              </div>
+
+              {/* {!isAuditedCert(curriculumLocale, superBlock) && (
+                <div className='block-cta-wrapper'>
+                  <Link
+                    className='block-title-translation-cta'
+                    to={t('links:help-translate-link-url')}
+                  >
+                    {t('misc.translation-pending')}
+                  </Link>
+                </div>
+              )} */}
+            </a>
+            {this.renderBlockIntros(blockIntroArr)}
+          </div>
+        </ScrollableAnchor>
+      </>
+    );
+
+    const blockrenderer = () => {
+      if (isProjectBlock)
+        return isNewResponsiveWebDesign ? GridProjectBlock : ProjectBlock;
+      return isNewResponsiveWebDesign ? GridBlock : Block;
+    };
 
     return (
       <>
@@ -292,9 +338,6 @@ export class Block extends Component<BlockProps> {
     );
   }
 }
-
-// space if project block and new cert
-// blockDashedName !== 'project-euler'
 
 Block.displayName = 'Block';
 

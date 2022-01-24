@@ -340,7 +340,8 @@ button.map-title {
   width: fit-content;
   font-size: 1rem;
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
+  margin-right: 5px;
   padding: 4px 10px;
   color: var(--highlight-color);
   background-color: var(--highlight-background);
@@ -418,4 +419,9 @@ button.map-title {
 
 .progress-bar {
   background-color: var(--blue-mid);
+}
+
+.tags-wrapper {
+  display: flex;
+  width: 100%;
 }
