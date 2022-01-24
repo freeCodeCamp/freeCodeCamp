@@ -33,10 +33,7 @@ assert(styles.color === 'purple');
 The `styles` variable should have a `fontSize` property set to a value of `40`.
 
 ```js
-assert(
-  styles.fontSize === 40 ||
-  styles.fontSize === '40'
-);
+assert(styles.fontSize == 40);
 ```
 
 The `styles` variable should have a `border` property set to a value of `2px solid purple`.
