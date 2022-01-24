@@ -25,7 +25,7 @@
     "delete-step": "cross-env CALLING_DIR=$INIT_CWD node ../tools/challenge-helper-scripts/delete-step",
     "lint": "gulp lint",
     "reorder-steps": "cross-env CALLING_DIR=$INIT_CWD node ../tools/challenge-helper-scripts/reorder-steps",
-    "test": "mocha --delay --exit  --reporter progress --bail",
+    "test": "mocha --delay --exit --reporter progress --bail",
     "test:full-output": "cross-env FULL_OUTPUT=true mocha --delay --reporter progress"
   },
   "devDependencies": {
