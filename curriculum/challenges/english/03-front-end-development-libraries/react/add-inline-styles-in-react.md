@@ -61,8 +61,7 @@ assert(
     const mockedComponent = Enzyme.shallow(React.createElement(Colorful));
     return (
       mockedComponent.props().style.color === 'purple' &&
-      (mockedComponent.props().style.fontSize === 40 ||
-        mockedComponent.props().style.fontSize === '40') &&
+      mockedComponent.props().style.fontSize == 40 &&
       mockedComponent.props().style.border === '2px solid purple'
     );
   })()
