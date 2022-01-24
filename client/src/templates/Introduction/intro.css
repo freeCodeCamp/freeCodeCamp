@@ -31,6 +31,13 @@
   background-color: var(--primary-background);
 }
 
+a.cert-tag:hover,
+a.cert-tag:focus,
+a.cert-tag:active {
+  color: var(--highlight-background);
+  background-color: var(--highlight-color);
+}
+
 .block-link {
   cursor: pointer;
 }
@@ -50,7 +57,7 @@
 }
 
 .block-grid-title {
-  font-size: 1.17rem;
+  font-size: 1.2rem;
   margin: 0;
   overflow-wrap: break-word;
 }
@@ -212,13 +219,16 @@ button.map-title {
   stroke: var(--color-quaternary);
 }
 
-.open > .map-title > svg:first-child,
-.block-grid .map-title > svg:last-child {
+.open > .map-title > svg:first-child {
   transform: rotate(90deg);
 }
 
+.block-grid .map-title > svg:last-child {
+  transform: rotate(180deg);
+}
+
 .block-grid.open .map-title > svg:last-child {
-  transform: rotate(270deg);
+  transform: rotate(0deg);
 }
 
 .map-challenges-ul {
@@ -347,24 +357,25 @@ button.map-title {
   background-color: var(--highlight-background);
 }
 
+.block-grid {
+  border-bottom: 3px solid var(--secondary-background);
+}
+
 .block-grid .block-header {
   flex-direction: column;
 }
 
 .block-grid .block-header {
   display: flex;
-  align-items: center;
-  /* padding: 18px 0; */
   background: transparent;
   border: none;
   text-align: left;
   width: 100%;
   padding: 0;
-}
-.block-grid .block-header {
   cursor: pointer;
   padding: 18px 15px;
 }
+
 .block-grid .block-header:hover {
   color: var(--tertiary-color);
   background-color: var(--tertiary-background);
@@ -376,10 +387,15 @@ button.map-title {
 
 .block-ui .block-grid .block-description {
   border: none;
+  padding: 0 10px 10px;
 }
 
-.block-grid {
-  border-bottom: 3px solid var(--secondary-background);
+.block-grid .map-title > svg:last-child {
+  margin-left: auto;
+}
+
+.block-grid .map-title > svg {
+  margin: 10px;
 }
 
 .title-wrapper {
@@ -389,24 +405,17 @@ button.map-title {
   width: 100%;
 }
 
-.block-grid .map-title > svg:last-child {
-  margin-left: auto;
-}
-
-.progress-wrapper {
+.block-grid .progress-wrapper {
   width: 100%;
   text-align: left;
   display: flex;
   align-items: center;
   margin-top: 18px;
+  margin-bottom: 14px;
 }
 
-.progress-wrapper span {
+.block-grid .progress-wrapper span {
   color: var(--quaternary-color);
-}
-
-.block-grid .map-title > svg {
-  margin: 10px;
 }
 
 .block-grid .progress {
@@ -417,11 +426,16 @@ button.map-title {
   border-radius: 0;
 }
 
-.progress-bar {
+.block-grid .progress-bar {
   background-color: var(--blue-mid);
 }
 
 .tags-wrapper {
   display: flex;
   width: 100%;
+  padding: 10px 10px 0px 10px;
+}
+
+.grid-project-block {
+  margin-bottom: 50px;
 }
