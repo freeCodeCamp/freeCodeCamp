@@ -95,10 +95,12 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
                     contents
                     head
                     tail
+                    history
                   }
                   solutions {
                     contents
                     ext
+                    history
                   }
                   superBlock
                   superOrder

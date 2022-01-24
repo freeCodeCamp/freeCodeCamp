@@ -43,7 +43,6 @@ const testEvaluator =
 const { getLines } = require('../../utils/get-lines');
 const { isAuditedCert } = require('../../utils/is-audited');
 
-const { sortChallengeFiles } = require('../../utils/sort-challengefiles');
 const {
   getChallengesForLang,
   getMetaForBlock,
@@ -533,9 +532,7 @@ ${inspect(commentMap)}
           // TODO: the no-solution filtering is a little convoluted:
           const noSolution = new RegExp('// solution required');
 
-          const solutionsAsArrays = solutions.map(sortChallengeFiles);
-
-          const filteredSolutions = solutionsAsArrays.filter(solution => {
+          const filteredSolutions = solutions.filter(solution => {
             return !isEmpty(
               solution.filter(
                 challengeFile => !noSolution.test(challengeFile.contents)
