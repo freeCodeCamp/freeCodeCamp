@@ -128,7 +128,7 @@
     "@types/react": "17.0.38",
     "@types/react-dom": "17.0.11",
     "@types/react-helmet": "6.1.5",
-    "@types/react-instantsearch-dom": "6.12.1",
+    "@types/react-instantsearch-dom": "6.12.2",
     "@types/react-monaco-editor": "0.16.0",
     "@types/react-redux": "7.1.20",
     "@types/react-responsive": "8.0.4",
