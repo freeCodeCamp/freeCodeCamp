@@ -9,7 +9,7 @@ dashedName: step-35
 
 The colors and shapes of your painting are too sharp to pass as a Rothko.
 
-Use the `filter` property with the value `blur(2px)` in the `.canvas` element.
+Use the `filter` property to `blur` the painting by `2px` in the `.canvas` element.
 
 # --hints--
 

@@ -1,5 +1,4 @@
 const path = require('path');
-const { createPoly } = require('../../../utils/polyvinyl');
 const { dasherize } = require('../../../utils/slugs');
 const { sortChallengeFiles } = require('../../../utils/sort-challengefiles');
 const { challengeTypes, viewTypes } = require('../challenge-types');
@@ -115,12 +114,10 @@ function getProjectPreviewConfig(challenge, allChallengeEdges) {
   const lastChallengeFiles = sortChallengeFiles(
     lastChallenge.challengeFiles ?? []
   );
-  const projectPreviewChallengeFiles = lastChallengeFiles.map((file, id) =>
-    createPoly({
-      ...file,
-      contents: solutionToLastChallenge[id]?.contents ?? file.contents
-    })
-  );
+  const projectPreviewChallengeFiles = lastChallengeFiles.map((file, id) => ({
+    ...file,
+    contents: solutionToLastChallenge[id]?.contents ?? file.contents
+  }));
 
   return {
     showProjectPreview:

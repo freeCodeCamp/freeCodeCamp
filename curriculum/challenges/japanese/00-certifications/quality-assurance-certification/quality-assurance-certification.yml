@@ -1,0 +1,23 @@
+---
+id: 5e611829481575a52dc59c0e
+title: 品質保証認定証
+certification: quality-assurance
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: 587d8249367417b2b2512c41
+    title: メートル法とヤード・ポンド法の換算機
+  - 
+    id: 587d8249367417b2b2512c42
+    title: 課題トラッカー
+  - 
+    id: 587d824a367417b2b2512c43
+    title: 個人図書館
+  - 
+    id: 5e601bf95ac9d0ecd8b94afd
+    title: 数独ソルバー
+  - 
+    id: 5e601c0d5ac9d0ecd8b94afe
+    title: アメリカ英語とイギリス英語の変換機
+
