@@ -10,7 +10,7 @@ import debugFactory from 'debug';
 import dedent from 'dedent';
 import _ from 'lodash';
 import moment from 'moment';
-import generate from 'nanoid/generate';
+import { customAlphabet } from 'nanoid';
 import { Observable } from 'rx';
 import uuid from 'uuid/v4';
 import { isEmail } from 'validator';
@@ -43,6 +43,7 @@ const log = debugFactory('fcc:models:user');
 const BROWNIEPOINTS_TIMEOUT = [1, 'hour'];
 const nanoidCharSet =
   '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const nanoid = customAlphabet(nanoidCharSet, 21);
 
 const createEmailError = redirectTo =>
   wrapHandledError(new Error('email format is invalid'), {
@@ -148,7 +149,7 @@ function populateRequiredFields(user) {
   }
 
   if (!user.unsubscribeId) {
-    user.unsubscribeId = generate(nanoidCharSet, 20);
+    user.unsubscribeId = nanoid();
   }
   return;
 }
