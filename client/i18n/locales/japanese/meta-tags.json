@@ -1,7 +1,7 @@
 {
-  "title": "Learn to Code — For Free — Coding Courses for Busy People",
-  "description": "Learn to Code — For Free",
-  "social-description": "Learn to Code — For Free",
+  "title": "プログラミングを無料で学ぶ: 多忙な人々のためのプログラミング講座",
+  "description": "プログラミングを無料で学ぶ",
+  "social-description": "プログラミングを無料で学ぶ",
   "keywords": [
     "python",
     "javascript",
@@ -26,7 +26,16 @@
     "end",
     "learn",
     "tutorial",
-    "programming"
+    "programming",
+    "フリーコードキャンプ",
+    "ウェブサイト",
+    "ウェブ開発",
+    "無料",
+    "フロントエンド",
+    "バックエンド",
+    "チュートリアル",
+    "プログラミング",
+    "学習"
   ],
   "youre-unsubscribed": "You have been unsubscribed"
 }
