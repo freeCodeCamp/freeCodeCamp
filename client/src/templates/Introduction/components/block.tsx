@@ -294,36 +294,32 @@ export class Block extends Component<BlockProps> {
     );
 
     const GridProjectBlock = (
-      <>
-        <ScrollableAnchor id={blockDashedName}>
-          <div className='block block-grid grid-project-block'>
-            <a
-              className='block-header'
-              onClick={() => {
-                this.handleBlockClick();
-              }}
-              href={`#${blockDashedName}`}
-            >
-              <div className='tags-wrapper'>
-                <span className='cert-tag'>Certification Project</span>
-                {!isAuditedCert(curriculumLocale, superBlock) && (
-                  <Link
-                    className='cert-tag'
-                    to={t('links:help-translate-link-url')}
-                  >
-                    {t('misc.translation-pending')}
-                  </Link>
-                )}
-              </div>
-              <div className='title-wrapper map-title'>
-                {this.renderCheckMark(isBlockCompleted)}
-                <h3 className='block-grid-title'>{blockTitle}</h3>
-              </div>
-              {this.renderBlockIntros(blockIntroArr)}
-            </a>
+      <div className='block block-grid grid-project-block'>
+        <a
+          className='block-header'
+          onClick={() => {
+            this.handleBlockClick();
+          }}
+          href={challengesWithCompleted[0].fields.slug}
+        >
+          <div className='tags-wrapper'>
+            <span className='cert-tag'>{t('misc.certification-project')}</span>
+            {!isAuditedCert(curriculumLocale, superBlock) && (
+              <Link
+                className='cert-tag'
+                to={t('links:help-translate-link-url')}
+              >
+                {t('misc.translation-pending')}
+              </Link>
+            )}
           </div>
-        </ScrollableAnchor>
-      </>
+          <div className='title-wrapper map-title'>
+            {this.renderCheckMark(isBlockCompleted)}
+            <h3 className='block-grid-title'>{blockTitle}</h3>
+          </div>
+          {this.renderBlockIntros(blockIntroArr)}
+        </a>
+      </div>
     );
 
     const blockrenderer = () => {
