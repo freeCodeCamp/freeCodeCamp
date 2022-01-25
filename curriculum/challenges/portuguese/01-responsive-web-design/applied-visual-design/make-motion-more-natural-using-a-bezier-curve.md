@@ -23,7 +23,7 @@ Observe que o valor de y2 é maior que 1. Embora a curva cúbica de Bézier seja
 
 # --instructions--
 
-Altere o valor da propriedade `animation-timing-function` do elemento com o id de `green` para uma função `cubic-bezier` com os valores de x1, y1, x2, e y2 definidos respectivamente para 0,311, 0,441, 0,444, 1,649.
+Altere o valor da propriedade `animation-timing-function` do elemento com o id de `green` para uma função `cubic-bezier` com os valores de x1, y1, x2, e y2 definidos respectivamente para 0.311, 0.441, 0.444, 1.649.
 
 # --hints--
 

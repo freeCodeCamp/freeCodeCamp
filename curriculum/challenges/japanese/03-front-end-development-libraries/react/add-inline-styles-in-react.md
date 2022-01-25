@@ -33,7 +33,7 @@ assert(styles.color === 'purple');
 `styles` 変数の `fontSize` プロパティの値を `40` に設定します。
 
 ```js
-assert(styles.fontSize === 40);
+assert(styles.fontSize == 40);
 ```
 
 `styles` 変数の `border` プロパティの値を `2px solid purple` に設定します。
@@ -61,7 +61,7 @@ assert(
     const mockedComponent = Enzyme.shallow(React.createElement(Colorful));
     return (
       mockedComponent.props().style.color === 'purple' &&
-      mockedComponent.props().style.fontSize === 40 &&
+      mockedComponent.props().style.fontSize == 40 &&
       mockedComponent.props().style.border === '2px solid purple'
     );
   })()
