@@ -11,15 +11,12 @@ describe('dasherize', () => {
   it('converts spaces to dashes', () => {
     expect(dasherize('the space  between')).toBe('the-space--between');
   });
-
   it('converts dots to dashes', () => {
     expect(dasherize('the..dots.. between')).toBe('the--dots---between');
   });
-
   it('trims off surrounding whitespace', () => {
     expect(dasherize('  the space  between    ')).toBe('the-space--between');
   });
-
   it('removes everything except letters, numbers and -', () => {
     expect(dasherize('1a!"£$%^*()_+=-.b2')).toBe('1a--b2');
   });
