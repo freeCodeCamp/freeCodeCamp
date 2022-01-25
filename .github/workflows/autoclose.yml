@@ -14,6 +14,11 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
+            const patches = [
+              "@@ -63,7 +63,6 @@ $RECYCLE.BIN/\n # Icon must end with two \\r\n Icon\n \n-\n # Thumbnails\n ._*\n "
+              "@@ -63,7 +63,6 @@ $RECYCLE.BIN/\n # Icon must end with two \\r\n Icon\n \n-\n # Thumbnails\n ._*\n \n@@ -165,7 +164,6 @@ config/curriculum.json\n config/i18n/all-langs.js\n config/certification-settings.js\n \n-\n ### vim ###\n # Swap\n [._]*.s[a-v][a-z]",
+              "@@ -165,7 +165,6 @@ config/curriculum.json\n config/i18n/all-langs.js\n config/certification-settings.js\n \n-\n ### vim ###\n # Swap\n [._]*.s[a-v][a-z]"
+            ];
             const files = await github.rest.pulls.listFiles({
               owner: context.payload.repository.owner.login,
               repo: context.payload.repository.name,
@@ -22,8 +27,7 @@ jobs:
             if (
               files.data.length === 1 &&
               files.data[0].filename === ".gitignore" &&
-              files.data[0].patch ===
-                "@@ -63,7 +63,6 @@ $RECYCLE.BIN/\n # Icon must end with two \\r\n Icon\n \n-\n # Thumbnails\n ._*\n "
+              patches.includes(files.data[0].patch)
             ) {
               core.setFailed("Invalid PR detected.");
               github.rest.issues.createComment({
