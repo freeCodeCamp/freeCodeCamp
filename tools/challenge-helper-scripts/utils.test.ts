@@ -1,7 +1,7 @@
-const fs = require('fs');
-const ObjectID = require('bson-objectid');
-const glob = require('glob');
-const mock = require('mock-fs');
+import fs from 'fs';
+import ObjectID from 'bson-objectid';
+import glob from 'glob';
+import mock from 'mock-fs';
 
 // NOTE:
 // Use `console.log()` before mocking the filesystem or use
@@ -9,7 +9,7 @@ const mock = require('mock-fs');
 // `require`.
 
 jest.mock('bson-objectid', () => {
-  return jest.fn(() => mockChallengeId);
+  return jest.fn(() => ({ toString: () => mockChallengeId }));
 });
 
 jest.mock('./helpers/get-step-template', () => {
@@ -33,9 +33,9 @@ jest.mock('./helpers/get-project-path', () => {
 jest.mock('gray-matter', () => {
   return {
     read: jest.fn(() => ({
-      data: { id: mockChallengeId },
-      stringify: jest.fn(() => 'Lorem ipsum...')
-    }))
+      data: { id: mockChallengeId }
+    })),
+    stringify: jest.fn(() => 'Lorem ipsum...')
   };
 });
 
@@ -49,8 +49,8 @@ jest.mock(
 );
 
 const mockChallengeId = '60d35cf3fe32df2ce8e31b03';
-const { getStepTemplate } = require('./helpers/get-step-template');
-const { createStepFile, reorderSteps } = require('./utils');
+import { getStepTemplate } from './helpers/get-step-template';
+import { createStepFile, reorderSteps } from './utils';
 
 describe('Challenge utils helper scripts', () => {
   describe('createStepFile util', () => {
@@ -67,7 +67,7 @@ describe('Challenge utils helper scripts', () => {
         stepNum: 3
       });
 
-      expect(step).toEqual(mockChallengeId);
+      expect(step.toString()).toEqual(mockChallengeId);
       expect(ObjectID).toHaveBeenCalledTimes(1);
 
       // Internal tasks
@@ -82,8 +82,6 @@ describe('Challenge utils helper scripts', () => {
         `project/step-002.md`,
         `project/step-003.md`
       ]);
-
-      mock.restore();
     });
   });
 
@@ -132,8 +130,9 @@ describe('Challenge utils helper scripts', () => {
 }`;
 
       expect(result).toEqual(expectedResult);
-
-      mock.restore();
     });
+  });
+  afterEach(() => {
+    mock.restore();
   });
 });

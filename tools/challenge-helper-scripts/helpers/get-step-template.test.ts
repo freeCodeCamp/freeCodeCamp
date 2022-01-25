@@ -1,4 +1,5 @@
-const { getStepTemplate } = require('./get-step-template');
+import ObjectID from 'bson-objectid';
+import { getStepTemplate } from './get-step-template';
 
 // Note: evaluates at highlevel the process, but seedHeads and seedTails could
 // be tested if more specifics are needed.
@@ -34,7 +35,7 @@ Test 1
 \`\`\`\n`;
 
     const props = {
-      challengeId: '60d4ebe4801158d1abe1b18f',
+      challengeId: new ObjectID('60d4ebe4801158d1abe1b18f'),
       challengeSeeds: {
         indexhtml: {
           contents: '',

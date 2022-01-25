@@ -33,7 +33,7 @@ jobs:
       - name: Lint Source Files
         run: |
           npm ci
-          npm run ensure-env
+          npm run create:config
           npm run build:curriculum
           npm run lint
 
@@ -66,7 +66,7 @@ jobs:
       - name: Install Dependencies
         run: |
           npm ci
-          npm run ensure-env
+          npm run create:config
           npm run build:curriculum
 
       - name: Run Tests
@@ -102,7 +102,7 @@ jobs:
       - name: Install Dependencies
         run: |
           npm ci
-          npm run ensure-env
+          npm run create:config
           npm run build:curriculum
 
       - name: Run Tests
@@ -142,7 +142,7 @@ jobs:
           CLIENT_LOCALE: ${{ matrix.locale }}
         run: |
           npm ci
-          npm run ensure-env
+          npm run create:config
           npm run build:curriculum
 
       - name: Run Tests

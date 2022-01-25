@@ -1,19 +1,7 @@
-const { getProjectMetaPath } = require('./get-project-meta-path');
+import { getProjectMetaPath } from './get-project-meta-path';
 
 describe('getProjectMetaPath helper', () => {
   it('should throw if args are invalid', () => {
-    expect(() => {
-      getProjectMetaPath();
-    }).toThrow();
-
-    expect(() => {
-      getProjectMetaPath('test-curriculum', {});
-    }).toThrow();
-
-    expect(() => {
-      getProjectMetaPath([], []);
-    }).toThrow();
-
     expect(() => {
       getProjectMetaPath('', '');
     }).toThrow();

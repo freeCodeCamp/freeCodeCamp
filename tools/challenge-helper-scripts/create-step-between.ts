@@ -1,10 +1,10 @@
-const { getArgValues } = require('./helpers/get-arg-values');
-const { getExistingStepNums } = require('./helpers/get-existing-step-nums');
-const { getProjectPath } = require('./helpers/get-project-path');
-const { padWithLeadingZeros } = require('./helpers/pad-with-leading-zeros');
-const { createStepFile, getChallengeSeeds, reorderSteps } = require('./utils');
+import { getArgValues } from './helpers/get-arg-values';
+import { getExistingStepNums } from './helpers/get-existing-step-nums';
+import { getProjectPath } from './helpers/get-project-path';
+import { padWithLeadingZeros } from './helpers/pad-with-leading-zeros';
+import { createStepFile, getChallengeSeeds, reorderSteps } from './utils';
 
-const allStepsExist = (steps, stepsToFind) =>
+const allStepsExist = (steps: number[], stepsToFind: number[]) =>
   stepsToFind.every(num => steps.includes(num));
 
 const projectPath = getProjectPath();
