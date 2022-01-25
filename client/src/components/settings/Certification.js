@@ -312,6 +312,7 @@ export class CertificationSettings extends Component {
               block={true}
               bsStyle='primary'
               href={certLocation}
+              data-cy={`btn-for-${certSlug}`}
               onClick={createClickHandler(certSlug)}
             >
               {isCert ? t('buttons.show-cert') : t('buttons.claim-cert')}
