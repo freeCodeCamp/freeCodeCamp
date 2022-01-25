@@ -1,4 +1,4 @@
-const { getProjectPath } = require('./get-project-path');
+import { getProjectPath } from './get-project-path';
 
 describe('getProjectPath helper', () => {
   it('should return the calling dir path', () => {

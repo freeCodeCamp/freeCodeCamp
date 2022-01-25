@@ -44,6 +44,25 @@ describe('Responsive Web Design Superblock', () => {
       cy.exec('npm run seed');
       cy.login();
       cy.toggleAll();
+    });
+
+    it('should be possible to view certifications from the settings page', () => {
+      submitFrontEndSolutions();
+      cy.visit(`/learn/${projects.superBlock}/`);
+      cy.contains('Go to settings to claim your certification').click();
+      cy.location().should(loc => {
+        expect(loc.pathname).to.eq(`/settings`);
+      });
+      cy.get('[data-cy=btn-for-responsive-web-design]').click();
+      cy.contains('Show Certification').click();
+      cy.location().should(loc => {
+        expect(loc.pathname).to.eq(
+          `/certification/developmentuser/${projects.superBlock}`
+        );
+      });
+    });
+
+    function submitFrontEndSolutions() {
       const { superBlock, block, challenges } = projects;
       challenges.forEach(({ slug, solution }) => {
         const url = `/learn/${superBlock}/${block}/${slug}`;
@@ -64,23 +83,7 @@ describe('Responsive Web Design Superblock', () => {
         cy.location().should(loc => {
           expect(loc.pathname).to.not.eq(url);
         });
-        cy.visit('/settings');
-        cy.get(
-          `[href="/certification/developmentuser/${projects.superBlock}"]`
-        ).click();
-        cy.visit(`/learn/${projects.superBlock}/`);
       });
-    });
-    it('should be possible to view certifications from the superBlock page', () => {
-      cy.location().should(loc => {
-        expect(loc.pathname).to.eq(`/learn/${projects.superBlock}/`);
-      });
-      cy.contains('Show Certification').click();
-      cy.location().should(loc => {
-        expect(loc.pathname).to.eq(
-          `/certification/developmentuser/${projects.superBlock}`
-        );
-      });
-    });
+    }
   });
 });

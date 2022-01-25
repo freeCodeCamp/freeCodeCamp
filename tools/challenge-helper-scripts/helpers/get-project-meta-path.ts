@@ -1,7 +1,10 @@
-const path = require('path');
+import path from 'path';
 
 // Returns the path of the meta file associated to arguments provided.
-const getProjectMetaPath = (curriculumPath, projectName) => {
+const getProjectMetaPath = (
+  curriculumPath: string,
+  projectName: string
+): string => {
   if (typeof curriculumPath !== 'string' || typeof projectName !== 'string') {
     throw `${curriculumPath} and ${projectName} should be of type string`;
   }
@@ -19,4 +22,4 @@ const getProjectMetaPath = (curriculumPath, projectName) => {
   );
 };
 
-exports.getProjectMetaPath = getProjectMetaPath;
+export { getProjectMetaPath };

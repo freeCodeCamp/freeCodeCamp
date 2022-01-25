@@ -1,5 +1,5 @@
-const mock = require('mock-fs');
-const { getExistingStepNums } = require('./get-existing-step-nums');
+import mock from 'mock-fs';
+import { getExistingStepNums } from './get-existing-step-nums';
 
 // NOTE:
 // Use `console.log()` before mocking the filesystem or use
@@ -63,12 +63,12 @@ describe('getExistingStepNums helper', () => {
 
     const folder = `${process.cwd()}/mock-project/`;
     const steps = getExistingStepNums(folder);
-    const expected = [];
+    const expected: number[] = [];
 
     expect(steps).toEqual(expected);
   });
 
-  afterAll(() => {
+  afterEach(() => {
     mock.restore();
   });
 });

@@ -1,14 +1,15 @@
-const { insertErms } = require('./insert-erms');
+import ObjectID from 'bson-objectid';
+import { insertErms } from './insert-erms';
 
 // Builds a block
-function getCodeBlock(label, content) {
+function getCodeBlock(label: string, content?: string) {
   return `\`\`\`${label}
 ${typeof content !== 'undefined' ? content : ''}
 \`\`\`\n`;
 }
 
 // Builds a section
-function getSeedSection(content, label) {
+function getSeedSection(content: string, label: string) {
   return content
     ? `
 
@@ -18,15 +19,30 @@ ${content}`
     : '';
 }
 
+type StepOptions = {
+  challengeId: ObjectID;
+  challengeSeeds: Record<string, ChallengeSeed>;
+  stepBetween: boolean;
+  stepNum: number;
+};
+
+export interface ChallengeSeed {
+  contents: string;
+  ext: string;
+  editableRegionBoundaries: number[];
+  head?: string;
+  tail?: string;
+}
+
 // Build the base markdown for a step
 function getStepTemplate({
   challengeId,
   challengeSeeds,
   stepBetween,
   stepNum
-}) {
+}: StepOptions): string {
   const seedTexts = Object.values(challengeSeeds)
-    .map(({ contents, ext, editableRegionBoundaries }) => {
+    .map(({ contents, ext, editableRegionBoundaries }: ChallengeSeed) => {
       let fullContents = contents;
       if (editableRegionBoundaries.length >= 2) {
         fullContents = insertErms(contents, editableRegionBoundaries);
@@ -36,13 +52,13 @@ function getStepTemplate({
     .join('\n');
 
   const seedHeads = Object.values(challengeSeeds)
-    .filter(({ head }) => head)
-    .map(({ ext, head }) => getCodeBlock(ext, head))
+    .filter(({ head }: ChallengeSeed) => head)
+    .map(({ ext, head }: ChallengeSeed) => getCodeBlock(ext, head))
     .join('\n');
 
   const seedTails = Object.values(challengeSeeds)
-    .filter(({ tail }) => tail)
-    .map(({ ext, tail }) => getCodeBlock(ext, tail))
+    .filter(({ tail }: ChallengeSeed) => tail)
+    .map(({ ext, tail }: ChallengeSeed) => getCodeBlock(ext, tail))
     .join('\n');
 
   const descStepNum = stepBetween ? stepNum + 1 : stepNum;
@@ -57,7 +73,7 @@ function getStepTemplate({
 
   return (
     `---
-id: ${challengeId}
+id: ${challengeId.toString()}
 title: Step ${stepNum}
 challengeType: 0
 dashedName: step-${stepNum}
@@ -79,4 +95,4 @@ ${getCodeBlock('js')}
   );
 }
 
-exports.getStepTemplate = getStepTemplate;
+export { getStepTemplate };

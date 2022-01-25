@@ -180,10 +180,12 @@ function getBabelOptions({ preview = false, protect = true }) {
 }
 
 const sassWorker = createWorker(sassCompile);
-async function transformSASS(element) {
+async function transformSASS(contentDocument) {
   // we only teach scss syntax, not sass. Also the compiler does not seem to be
   // able to deal with sass.
-  const styleTags = element.querySelectorAll('style[type~="text/scss"]');
+  const styleTags = contentDocument.querySelectorAll(
+    'style[type~="text/scss"]'
+  );
   await Promise.all(
     [].map.call(styleTags, async style => {
       style.type = 'text/css';
@@ -192,10 +194,10 @@ async function transformSASS(element) {
   );
 }
 
-async function transformScript(element) {
+async function transformScript(contentDocument) {
   await loadBabel();
   await loadPresetEnv();
-  const scriptTags = element.querySelectorAll('script');
+  const scriptTags = contentDocument.querySelectorAll('script');
   scriptTags.forEach(script => {
     script.innerHTML = tryTransform(babelTransformCode(babelOptionsJS))(
       script.innerHTML
@@ -203,59 +205,86 @@ async function transformScript(element) {
   });
 }
 
-const transformHtml = async function (file) {
-  const div = document.createElement('div');
-  div.innerHTML = file.contents;
-  await Promise.all([transformSASS(div), transformScript(div)]);
-  return transformContents(() => div.innerHTML, file);
-};
-
 // Find if the base html refers to the css or js files and record if they do. If
 // the link or script exists we remove those elements since those files don't
 // exist on the site, only in the editor
-const transformIncludes = async function (fileP) {
+const addImportedFiles = async function (fileP) {
   const file = await fileP;
-  const div = document.createElement('div');
-  div.innerHTML = file.contents;
-  const link =
-    div.querySelector('link[href="styles.css"]') ??
-    div.querySelector('link[href="./styles.css"]');
-  const script =
-    div.querySelector('script[src="script.js"]') ??
-    div.querySelector('script[src="./script.js"]');
-  const importedFiles = [];
-  if (link) {
-    importedFiles.push('styles.css');
-    link.remove();
-  }
-  if (script) {
-    importedFiles.push('script.js');
-    script.remove();
-  }
+  const transform = frame => {
+    const documentElement = frame.contentDocument.documentElement;
+    const link =
+      documentElement.querySelector('link[href="styles.css"]') ??
+      documentElement.querySelector('link[href="./styles.css"]');
+    const script =
+      documentElement.querySelector('script[src="script.js"]') ??
+      documentElement.querySelector('script[src="./script.js"]');
+    const importedFiles = [];
+    if (link) {
+      importedFiles.push('styles.css');
+      link.remove();
+    }
+    if (script) {
+      importedFiles.push('script.js');
+      script.remove();
+    }
+    return {
+      contents: documentElement.innerHTML,
+      importedFiles
+    };
+  };
+
+  const { importedFiles, contents } = await transformWithFrame(
+    transform,
+    file.contents
+  );
 
   return flow(
     partial(setImportedFiles, importedFiles),
-    partial(transformContents, () => div.innerHTML)
+    partial(transformContents, () => contents)
   )(file);
 };
 
-export const composeHTML = cond([
-  [
-    testHTML,
-    flow(
-      partial(transformHeadTailAndContents, source => {
-        const div = document.createElement('div');
-        div.innerHTML = source;
-        return div.innerHTML;
-      }),
-      partial(compileHeadTail, '')
-    )
-  ],
+const transformWithFrame = async function (transform, contents) {
+  // we use iframe here since file.contents is destined to be be inserted into
+  // the root of an iframe.
+  const frame = document.createElement('iframe');
+  frame.style = 'display: none';
+  let out = { contents };
+  try {
+    // the frame needs to be inserted into the document to create the html
+    // element
+    document.body.appendChild(frame);
+    // replace the root element with user code
+    frame.contentDocument.documentElement.innerHTML = contents;
+    // grab the contents now, in case the transformation fails
+    out = { contents: frame.contentDocument.documentElement.innerHTML };
+    out = await transform(frame);
+  } finally {
+    document.body.removeChild(frame);
+  }
+  return out;
+};
+
+const transformHtml = async function (file) {
+  const transform = async frame => {
+    await Promise.all([
+      transformSASS(frame.contentDocument),
+      transformScript(frame.contentDocument)
+    ]);
+    return { contents: frame.contentDocument.documentElement.innerHTML };
+  };
+
+  const { contents } = await transformWithFrame(transform, file.contents);
+  return transformContents(() => contents, file);
+};
+
+const composeHTML = cond([
+  [testHTML, partial(compileHeadTail, '')],
   [stubTrue, identity]
 ]);
 
-export const htmlTransformer = cond([
-  [testHTML, flow(transformHtml, transformIncludes)],
+const htmlTransformer = cond([
+  [testHTML, flow(transformHtml, addImportedFiles)],
   [stubTrue, identity]
 ]);
 

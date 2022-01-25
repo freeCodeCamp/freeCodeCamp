@@ -12,26 +12,25 @@ const globalConfigPath = path.resolve(__dirname, '../../../config');
 const { FREECODECAMP_NODE_ENV } = process.env;
 
 function checkClientLocale() {
+  if (!process.env.CLIENT_LOCALE) throw Error('CLIENT_LOCALE is not set');
   if (!availableLangs.client.includes(process.env.CLIENT_LOCALE)) {
-    /* eslint-disable @typescript-eslint/restrict-template-expressions */
     throw Error(`
 
       CLIENT_LOCALE, ${process.env.CLIENT_LOCALE}, is not an available language in config/i18n/all-langs.ts
 
       `);
-    /* eslint-enable @typescript-eslint/restrict-template-expressions */
   }
 }
 
 function checkCurriculumLocale() {
+  if (!process.env.CURRICULUM_LOCALE)
+    throw Error('CURRICULUM_LOCALE is not set');
   if (!availableLangs.curriculum.includes(process.env.CURRICULUM_LOCALE)) {
-    /* eslint-disable @typescript-eslint/restrict-template-expressions */
     throw Error(`
 
       CURRICULUM_LOCALE, ${process.env.CURRICULUM_LOCALE}, is not an available language in config/i18n/all-langs.ts
 
       `);
-    /* eslint-enable @typescript-eslint/restrict-template-expressions */
   }
 }
 

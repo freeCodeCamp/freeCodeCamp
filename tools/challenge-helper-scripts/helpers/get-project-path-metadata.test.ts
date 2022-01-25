@@ -1,3 +1,6 @@
+import { readFileSync } from 'fs';
+import { getMetaData } from './get-project-path-metadata';
+
 jest.mock('fs', () => {
   return {
     readFileSync: jest.fn()
@@ -5,11 +8,11 @@ jest.mock('fs', () => {
 });
 
 const mockPath = '/mock/path';
-const { readFileSync } = require('fs');
-const { getMetaData } = require('./get-project-path-metadata');
 
 describe('getMetaData helper', () => {
   it('should process requested file', () => {
+    // @ts-expect-error - readFileSync is mocked
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     readFileSync.mockImplementation(() => '{"name": "Test Project"}');
 
     const expected = {
@@ -20,6 +23,8 @@ describe('getMetaData helper', () => {
   });
 
   it('should throw if file is not found', () => {
+    // @ts-expect-error - readFileSync is mocked
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     readFileSync.mockImplementation(() => {
       throw new Error();
     });

@@ -43,7 +43,7 @@ tasks:
       npm run seed &&
       mongo --eval "db.fsyncLock(); db.fsyncUnlock()"
     command: >
-      npm run ensure-env &&
+      npm run create:config &&
       npm run build:curriculum &&
       gp await-port 27017 &&
       npm run develop:server
