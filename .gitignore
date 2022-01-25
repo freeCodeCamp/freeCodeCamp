@@ -165,7 +165,6 @@ config/curriculum.json
 config/i18n/all-langs.js
 config/certification-settings.js
 
-
 ### vim ###
 # Swap
 [._]*.s[a-v][a-z]
