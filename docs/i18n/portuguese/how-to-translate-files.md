@@ -117,32 +117,157 @@ Traduzir nossa documentação de contribuição é similar a traduzir nossos arq
 
 > [!NOTE] Nossa documentação de contribuição utiliza o `docsify`. Nós temos uma análise especial para caixas de mensagem como essa. Caso veja strings iniciadas com `[!NOTE]`, `[!WARNING]`, ou `[!TIP]`, essas palavras NÃO devem ser traduzidas.
 
-## Avaliar traduções
+## Translate the LearnToCode RPG
 
-O Crowdin permite que você avalie propostas de tradução existentes. Se você tentar salvar uma tradução, você pode ver uma mensagem indicando que você não pode salvar a duplicata de uma tradução - isso significa que outro contribuinte já propôs uma tradução idêntica. Se você concorda com aquela tradução, clique em `+` para "aprová-la".
+The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated strings: (See [Ren'Py Text documentation](https://www.renpy.org/doc/html/text.html))
 
-Se você perceber uma tradução que não possui a mesma clareza da string original, clique em `-` para "desaprová-la".
+- The sentences to be translated are always between `""`. These are dialogues or UI strings. The keywords that come before or after the dialogue are game engine control keywords and will be explained in details in subsequent rules. Please note that this first rule governs all subsequent rules listed.
+- In case of `new "..."` Do not translate the `new` keyword.
+- Prefixes like `player`, `annika`, `layla`, `marco` (or variants like `player happy`, `player @ happy`) should not be translated. These are control keywords to correctly display the character sprite in the game.
+- Postfixes like `nointeract` should not be translated.
+- Do not translate things between `[]` and `{}`. These are variable interpolations and text tags. These must remain halfwidth parentheses `[]` and `{}` instead of their fullwidth counterparts `【】` and `「」`
+- Do not translate the `nointeract` keyword at the end of the sentence.
+- If we try to use fullwidth parentheses `（）`, a QA warning will show. To avoid the QA warning, use halfwidth parentheses `()`
 
-O Crowdin usa esses votos para pontuar cada proposta de tradução de cada string, o que ajuda o time de revisão a determinar qual tradução é a melhor para cada string.
+### Examples
 
-## Verificações de qualidade
+---
 
-Nós disponibilizamos algumas verificações de qualidade para assegurar que as traduções estejam precisas - isso ajuda nossos revisores a analisarem as traduções propostas.
+#### Before translation
 
-Quando você tenta salvar uma tradução, talvez veja uma mensagem de aviso aparecer a respeito da sua tradução proposta.
+```renpy
+# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
+"[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."  <--- this is the line that needs to be translated. see translation below
+```
 
-![Imagem - Mensagem de aviso](https://contribute.freecodecamp.org/images/crowdin/qa-message.png)
+#### After translation
 
-Essa mensagem aparece quando o sistema QA (Verificação de Qualidade) do Crowdin identificou algum erro em potencial na tradução proposta. Nesse exemplo, nós modificamos o texto da tag `<code>` e o sistema viu isto.
+```renpy
+# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
+"[player_name]？好巧，我们的VIP队友{a=[vip_profile_url]}[player_name]{/a}会很高兴的。"
+```
+
+Note: The `[]` and `{}` tags should be left intact.
+
+---
+
+#### Before translation
+
+```renpy
+old "{icon=icon-fast-forward} Skip"
+new "{icon=icon-fast-forward} Skip" <-- translate this line, see below
+```
+
+#### After translation
+
+```renpy
+old "{icon=icon-fast-forward} Skip"
+new "{icon=icon-fast-forward} 跳过"
+```
+
+Note: Again, the `new` prefix and the `{icon=icon-fast-forward}` tag should be left intact.
+
+---
+
+#### Before translation
+
+```renpy
+# layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy your work as a developer."
+layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy your work as a developer."
+```
+
+#### After translation
+
+```renpy
+# layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy your work as a developer."
+layla @ neutral "哈哈，[player_name]，你真有趣。我相信你一定会喜欢你的开发者工作的。"
+```
+
+Note: `layla @ neutral` and `[player_name]` are left unchanged.
+
+---
+
+#### Before translation
+
+```renpy
+# player "Maybe this is all a dream?" nointeract
+player "Maybe this is all a dream?" nointeract
+```
+
+#### After translation
+
+```renpy
+# player "Maybe this is all a dream?" nointeract
+player "也许这都是一场梦？" nointeract
+```
+
+---
+
+### A Note on How Crowdin Segments a Sentence
+
+Pay attention to how Crowdin segments a line of dialogue wrapped between opening and closing quotes `""`. When we are translating the dialogue, we need to make sure to retain the opening and closing quotes, even if the quotes appear in different segments.
+
+This is the line to be translated:
+
+```renpy
+player @ surprised "{b}Full-stack{/b}... What is that? I better take notes so I can learn more about it."
+```
+
+Crowdin segments it into three parts like below:
+
+<img width="836" alt="Screen Shot 2022-01-23 at 10 36 43" src="https://user-images.githubusercontent.com/35674052/150693962-d3b091e5-2432-44d0-9d24-195ea7d7aeda.png" />
+
+```renpy
+# original
+player @ surprised "{b}Full-stack{/b}
+# translated, keeping the opening quotes `"`
+player @ surprised "{b}全栈{/b}
+```
+
+<img width="750" alt="Screen Shot 2022-01-23 at 10 36 49" src="https://user-images.githubusercontent.com/35674052/150693965-15411504-791a-4db3-8b14-bc9177be6375.png" />
+
+```renpy
+# original
+What is that?
+# translated, no quotes on either side
+这是什么？
+```
+
+<img width="857" alt="Screen Shot 2022-01-23 at 10 36 54" src="https://user-images.githubusercontent.com/35674052/150693969-062e3268-580f-4ad2-97db-cab6240b6095.png" />
+
+```renpy
+# original
+I better take notes so I can learn more about it."
+# translated, keeping the closing quotes `"`
+我最好做笔记，这样我可以学习更多东西。"
+```
+
+## Rate Translations
+
+Crowdin allows you to rate the existing proposed translations. If you attempt to save a translation, you may see a message indicating that you cannot save a duplicate translation - this means another contributor has proposed that identical translation. If you agree with that translation, click the `+` button to "upvote" the translation.
+
+If you see a translation that is inaccurate or does not provide the same clarity as the original string, click the `-` button to "downvote" the translation.
+
+Crowdin uses these votes to give a score to each proposed translation for a string, which helps the proofreading team determine which translation is the best fit for each string.
+
+## Quality Assurance Checks
+
+We have enabled some quality assurance steps that will verify a translation is as accurate as possible - this helps our proofreaders review proposed translations.
+
+When you attempt to save a translation, you may see a warning message appear with a notification regarding your proposed translation.
+
+![Image - QA Warning Message](https://contribute.freecodecamp.org/images/crowdin/qa-message.png)
+
+This message appears when Crowdin's QA system has identified a potential error in the proposed translation. In this example, we have modified the text of a `<code>` tag and Crowdin has caught that.
 
 > [!WARNING] Você tem a opção de salvar uma tradução apesar dos erros. Se fizer isso, clicando em "Save Anyway", você também deve marcar um revisor ou gerenciador do projeto e explicar o motivo do aviso ter sido ignorado nesse caso.
 
-## Boas práticas na tradução
+## Translation Best Practices
 
-Siga essas diretrizes para se certificar de que nossas traduções estão o mais precisas possível:
+Follow these guidelines to ensure our translations are as accurate as possible:
 
-- Não traduza o conteúdo dentro de tags `<code>`. Essas tags indicam que o texto está formatado para o código e deve ser deixado em inglês.
-- Não adicione conteúdo extra. Se você acha que um desafio necessita de mudanças no texto e conteúdo adicional, você deve propor as mudanças através de uma issue no GitHub ou um pull request que modifique o arquivo em inglês.
-- Não mude a ordem do conteúdo.
+- Do not translate the content within `<code>` tags. These tags indicate text that is found in code and should be left in English.
+- Do not add additional content. If you feel a challenge requires changes in the text content or additional information, you should propose the changes through a GitHub issue or a pull request that modifies the English file.
+- Do not change the order of content.
 
-Se você tiver alguma dúvida, sinta-se à vontade para entrar em contato conosco através da [sala de chat dos tradutores](https://chat.freecodecamp.org/channel/contributors) e nós ficaremos felizes em te ajudar.
+If you have any questions, feel free to reach out to us in our [contributors chat room](https://chat.freecodecamp.org/channel/contributors) and we will be happy to assist you.
