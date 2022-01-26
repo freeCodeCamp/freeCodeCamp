@@ -5,7 +5,8 @@
     "client/src/**/*",
     "client/utils/**/*",
     "tools/challenge-helper-scripts/**/*.ts",
-    "tools/scripts/**/*.ts"
+    "tools/scripts/**/*.ts",
+    "utils/**/*.ts"
   ],
   "extends": "./tsconfig-base.json"
 }
