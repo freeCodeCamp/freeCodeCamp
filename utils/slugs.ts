@@ -1,4 +1,4 @@
-exports.dasherize = function dasherize(name) {
+const dasherize = function dasherize(name: string): string {
   return ('' + name)
     .toLowerCase()
     .trim()
@@ -6,11 +6,11 @@ exports.dasherize = function dasherize(name) {
     .replace(/[^a-z\d\-.]/g, '');
 };
 
-exports.nameify = function nameify(str) {
+const nameify = function nameify(str: string): string {
   return ('' + str).replace(/[^a-z\d\s]/gi, '');
 };
 
-exports.unDasherize = function unDasherize(name) {
+const unDasherize = function unDasherize(name: string): string {
   return (
     ('' + name)
       // replace dash with space
@@ -19,4 +19,10 @@ exports.unDasherize = function unDasherize(name) {
       .replace(/[^a-z\d\s]/gi, '')
       .trim()
   );
+};
+
+export default {
+  dasherize,
+  nameify,
+  unDasherize
 };

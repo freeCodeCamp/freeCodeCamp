@@ -1,4 +1,4 @@
-const slugs = require('./slugs');
+import slugs from './slugs';
 
 describe('dasherize', () => {
   const { dasherize } = slugs;
