@@ -39,7 +39,7 @@ assert(
 );
 ```
 
-`isBinarySearchTree()` should return false when checked with a tree that is not a binary search tree.
+`isBinarySearchTree()` は、二分探索木でない木を調べたときに false を返す必要があります。
 
 ```js
 assert(
