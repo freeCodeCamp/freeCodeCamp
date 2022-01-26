@@ -19,7 +19,7 @@ You should give the first `fieldset` an adaquate `name` attribute. _Hint: I woul
 assert.notEmpty(document.querySelectorAll('fieldset')?.[0]?.name);
 ```
 
-You should give the second `fieldset` an adaquate `name` attribute. _Hint: I would use `html-question-two`_
+You should give the second `fieldset` an adequate `name` attribute. _Hint: I would use `html-question-two`_
 
 ```js
 assert.notEmpty(document.querySelectorAll('fieldset')?.[1]?.name);

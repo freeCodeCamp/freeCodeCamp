@@ -14,7 +14,7 @@ Give the `.ground` element a `background` with a linear gradient angled 90 degre
 You should give `.ground` a `background` of `linear-gradient(90deg, rgb(88, 175, 236), rgb(182, 255, 255))`.
 
 ```js
-assert.include(['linear-gradient(90deg,rgb(88,175,236),rgb(182,255,255))', 'rgba(0,0,0,0)linear-gradient(45deg,rgb(118,201,255),rgb(247,255,222))repeatscroll0%0%'], new __helpers.CSSHelp(document).getStyle('.ground')?.getPropVal('background', true));
+assert.include(['linear-gradient(90deg,rgb(88,175,236),rgb(182,255,255))', 'rgba(0,0,0,0)linear-gradient(90deg,rgb(88,175,236),rgb(182,255,255))repeatscroll0%0%'], new __helpers.CSSHelp(document).getStyle('.ground')?.getPropVal('background', true));
 ```
 
 # --seed--
@@ -24,7 +24,7 @@ assert.include(['linear-gradient(90deg,rgb(88,175,236),rgb(182,255,255))', 'rgba
 ```html
 <!DOCTYPE html>
 <html>
-  
+
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" href="./styles.css" />
