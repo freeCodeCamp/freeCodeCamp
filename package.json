@@ -116,7 +116,7 @@
     "@types/eslint": "7.29.0",
     "@types/estree": "0.0.50",
     "@types/faker": "5.5.9",
-    "@types/inquirer": "8.1.3",
+    "@types/inquirer": "8.2.0",
     "@types/jest": "27.4.0",
     "@types/jquery": "3.5.13",
     "@types/loadable__component": "5.13.4",
