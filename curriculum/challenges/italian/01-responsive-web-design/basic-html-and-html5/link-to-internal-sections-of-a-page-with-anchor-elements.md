@@ -25,7 +25,7 @@ Quando gli utenti cliccheranno sul link `Contacts`, saranno portati alla sezione
 
 # --instructions--
 
-Cambia il tuo link esterno in un link interno cambiando l'attributo `href` in `"#footer"` e il testo da `cat photos` a `Jump to Bottom`.
+Cambia il tuo link esterno in un link interno modificando l'attributo `href` in `#footer` e il testo da `cat photos` a `Jump to Bottom`.
 
 Rimuovi l'attributo `target="_blank"` dal tag di ancoraggio perché questo farebbe aprire il documento collegato in una nuova scheda del browser.
 

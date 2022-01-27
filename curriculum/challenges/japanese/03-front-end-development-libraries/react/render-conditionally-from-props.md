@@ -8,7 +8,7 @@ dashedName: render-conditionally-from-props
 
 # --description--
 
-ここまで、いつ、何をレンダーするのかを条件で決める方法として、`if/else`、`&&`、および三項演算子 (` 条件 ? True の場合の式 : False の場合の式`) を使用する方法を紹介しました。 しかし、まだ説明していない重要なトピックが一つあります。それは、これらの概念はそのいずれかまたはすべてを、React の別の強力な機能である props と組み合わせることができる、ということです。 props を使用してコードを条件付きでレンダーすることは、React の開発者にとってはごく一般的な作業です。つまり、与えられた prop の値を利用することで、何を表示するかを自動的に決めることができます。
+So far, you've seen how to use `if/else`, `&&`, and the ternary operator (`condition ? expressionIfTrue : expressionIfFalse`) to make conditional decisions about what to render and when. However, there's one important topic left to discuss that lets you combine any or all of these concepts with another powerful React feature: props. Using props to conditionally render code is very common with React developers — that is, they use the value of a given prop to automatically make decisions about what to render.
 
 このチャレンジでは、props に基づいてレンダー処理を決定する子コンポーネントを設定します。 また、三項演算子も使用しますが、前のチャレンジで説明した他のいくつかの概念が、このチャレンジでも同じように役立つかもしれません。
 
