@@ -67,11 +67,11 @@
     "go-to-settings": "設定へ移動して認定証を取得"
   },
   "landing": {
-    "big-heading-1": "無料でプログラミングを学ぶ。",
-    "big-heading-2": "プロジェクトを作成する。",
+    "big-heading-1": "プログラミングを無料で学ぶ。",
+    "big-heading-2": "プロジェクトを完成させる。",
     "big-heading-3": "認定証を取得する。",
     "h2-heading": "2014 年以来、40,000 人以上の freeCodeCamp.org 卒業生が、以下を含むテック企業で仕事を得ています。",
-    "hero-img-description": "韓国のローカル勉強会での freeCodeCamp の学生。",
+    "hero-img-description": "韓国のローカル勉強会での freeCodeCamp 受講者",
     "as-seen-in": "下記で取り上げられました",
     "testimonials": {
       "heading": "freeCodeCamp に対する卒業生の声",
