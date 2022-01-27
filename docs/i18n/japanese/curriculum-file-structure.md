@@ -1,10 +1,10 @@
-# Curriculum File Structure
+# カリキュラムファイルの構造
 
-Our core instructional content is located within the conveniently named `curriculum` directory. This page will break down how these files are organized.
+名前が付けられた `curriculum` ディレクトリ内に、コア教育コンテンツがあります。 このページでは、それらのファイルがどのように整理されているのかを説明します。
 
-## Terminology
+## 用語
 
-There are a few terms we use when discussing our curriculum content.
+カリキュラム内容を説明する際に使用する用語がいくつかあります。
 
 - `certification` : When referring to a certification in this instance, it is talking about the actual certificate that users claim. Which is separate from the name of the superBlock.
 - `superBlock` : A superblock is the top level collection of challenges. Each superblock corresponds to a certification in the curriculum (i.e. Responsive Web Design).
