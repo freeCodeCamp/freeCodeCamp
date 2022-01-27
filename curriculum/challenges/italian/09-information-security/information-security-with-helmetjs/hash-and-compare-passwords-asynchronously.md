@@ -20,7 +20,7 @@ bcrypt.hash(myPlaintextPassword, saltRounds, (err, hash) => {
 
 # --instructions--
 
-Aggiungi questa funzione di hashing al tuo server (abbiamo già definito le variabili usate nella funzione da usare) e scrivila sulla console per visualizzarla! A questo punto normalmente salveresti l'hash (la password crittografata) nel tuo database.
+Aggiungi questa funzione di hashing al tuo server (abbiamo già definito le variabili usate nella funzione da usare) e registrala nella console per visualizzarla! A questo punto normalmente salveresti l'hash (la password crittografata) nel tuo database.
 
 Adesso, quando hai bisogno di capire se un nuovo ingresso ha gli stessi dati della password crittografata, potrai utilizzare la funzione di confronto.
 
@@ -30,7 +30,7 @@ bcrypt.compare(myPlaintextPassword, hash, (err, res) => {
 });
 ```
 
-Aggiungilo alla tua funzione di crittografia esistente (dal momento che devi aspettare che l'hash venga completato prima di chiamare la funzione di confronto) dopo aver scritto l'hash e il log 'res' completati sulla console all'interno del confronto. Dovresti vedere nella console una passwrd crittografata, poi viene stampato 'true'! Se cambi 'myPlaintextPassword' nella funzione di confronto con 'someOtherPlaintextPassword' allora dovrebbe restituire false.
+Aggiungilo alla tua funzione di hash esistente (dal momento che devi attendere che l'hash venga completato prima di chiamare la funzione di confronto) dopo aver registrato l'hash e il log 'res' completati nella console durante il confronto. Dovresti vedere nella console una passwrd crittografata, poi viene stampato 'true'! Se cambi 'myPlaintextPassword' nella funzione di confronto con 'someOtherPlaintextPassword' allora dovrebbe restituire false.
 
 ```js
 bcrypt.hash('passw0rd!', 13, (err, hash) => {
