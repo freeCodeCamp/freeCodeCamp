@@ -1,88 +1,88 @@
-> **Note:** This is an **optional** step and is required only when working with email workflows
+> **注記:** これは **オプション** ステップであり、メールワークフローを使用する場合にのみ必要です。
 
-- [Introduction](#introduction)
-- [Installing MailHog](#installing-mailhog)
-- [Using MailHog](#using-mailhog)
-- [Useful Links](#useful-links)
+- [はじめに](#introduction)
+- [MailHog のインストール](#installing-mailhog)
+- [MailHog の使用](#using-mailhog)
+- [有用なリンク](#useful-links)
 
-## Introduction
+## はじめに
 
-Some email workflows, like updating a user's email, requires the back-end api-server to send outgoing emails. MailHog is an alternative to using an email service provider to send actual email messages. It is a developer tool for email testing that will catch the email messages sent by your freeCodeCamp instance.
+ユーザーのメールを更新するなどの一部のメールワークフローでは、バックエンドの api-server が送信メールを送信します。 MailHog は、実際のメールメッセージを送信する電子メールサービスプロバイダの代わりになります。 これは、freeCodeCamp インスタンスから送信されたメールメッセージをキャッチするメールテスト用の開発ツールです。
 
-## Installing MailHog
+## MailHog のインストール
 
-MailHog can be installed on macOS, Windows and Linux or used via Docker
+MailHog は、macOS、Windows、Linux にインストールすることも、Docker 経由で使用することもできます。
 
-<details><summary>Installing MailHog with Docker</summary>
+<details><summary>Dockerで MailHog をインストールする</summary>
 
-If you have Docker installed then you can use
+インストールされた Docker があれば、それを使用できます。
 
 ```bash
 docker run -d --name mailhog --network host --rm mailhog/mailhog
 ```
 
-to start MailHog in the background and
+上記コマンドによりバックグラウンドで MailHog を起動できます。
 
 ```bash
 docker stop mailhog
 ```
 
-to stop it.
+上記コマンドにより MailHog を停止できます。
 
-When the installation completes, you can start [using MailHog](#using-mailhog).
+インストールが完了すると、[using MailHog](#using-mailhog) を起動できます。
 
 </details>
 
-<details><summary>Installing MailHog on macOS</summary>
+<details><summary>macOS に MailHog をインストールする</summary>
 
-Install MailHog on macOS with [Homebrew](https://brew.sh/):
+[Homebrew](https://brew.sh/) を使用して macOS に MailHog をインストールします。
 
 ```bash
 brew install mailhog
 brew services start mailhog
 ```
 
-The above commands will start a mailhog service in the background.
+上記コマンドにより、バックグラウンドで mailhog サービスを起動します。
 
-When the installation completes, you can start [using MailHog](#using-mailhog).
-
-</details>
-
-<details><summary>Installing MailHog on Windows</summary>
-
-Download the latest version of MailHog from [MailHog's official repository](https://github.com/mailhog/MailHog/releases). Locate and click on the link for your Windows version (32 or 64 bit) and a .exe file will be downloaded to your computer.
-
-When the download completes, click to open the file. A Windows firewall notification may appear, requesting access permission for MailHog. A standard Windows command line prompt will open where MailHog will be running once firewall access is granted.
-
-Close MailHog by closing the command prompt window. To start MailHog again, click on the MailHog executable (.exe) file that was downloaded initially - it is not necessary to download a new MailHog installation file.
-
-Start [using MailHog](#using-mailhog).
+インストールが完了すると、[using MailHog](#using-mailhog) を起動できます。
 
 </details>
 
-<details><summary>Installing MailHog on Linux</summary>
+<details><summary>Windows に MailHog をインストールする</summary>
 
-First, install [Go](https://golang.org).
+[MailHog の公式リポジトリ](https://github.com/mailhog/MailHog/releases) から最新バージョンの MailHog をダウンロードします。 Windows バージョン (32 ビットまたは 64 ビット) のリンクをクリックすると、.exe ファイルがコンピュータにダウンロードされます。
 
-Run the following commands to install GO on Debian-based systems like Ubuntu and Linux Mint.
+ダウンロードが完了したら、クリックしてファイルを開きます。 Windows ファイアウォールの通知が表示され、MailHog のアクセス許可を要求する場合があります。 ファイアウォールへのアクセスが許可されると、標準の Windows コマンドラインプロンプトが開き、MailHog が実行されます。
+
+コマンドプロンプトウィンドウを閉じて、MailHog を閉じます。 MailHog を再度起動するには、最初にダウンロードした MailHog 実行可能ファイル (. xe)  をクリックします。新たにMailHog インストールファイルをダウンロードする必要はありません。
+
+[using MailHog](#using-mailhog) を起動します。
+
+</details>
+
+<details><summary>Linux に MailHog をインストールする</summary>
+
+まず、[GO](https://golang.org) をインストールします。
+
+次のコマンドを実行して、Ubuntu や Linux Mint などの Debian ベースのシステムに GO をインストールします。
 
 ```bash
 sudo apt-get install golang
 ```
 
-Run the following commands to install GO on RPM-based systems like CentOS, Fedora, Red Hat Linux, etc.
+次のコマンドを実行して、CentOS、Fedora、Red Hat Linux などの RPM ベースのシステムに GO をインストールします。
 
 ```bash
 sudo dnf install golang
 ```
 
-Alternatively, run the following commands to install GO.
+代わりに、次のコマンドを実行して GO をインストールすることもできます。
 
 ```bash
 sudo yum install golang
 ```
 
-Now set the path for Go with the following commands.
+次のコマンドで GO のパスを設定します。
 
 ```bash
 echo "export GOPATH=$HOME/go" >> ~/.profile
@@ -90,7 +90,7 @@ echo 'export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin' >> ~/.profile
 source ~/.profile
 ```
 
-Finally, enter the commands below to install and run MailHog.
+最後に、以下のコマンドを入力して MailHog をインストールして実行します。
 
 ```bash
 go get github.com/mailhog/MailHog
@@ -98,26 +98,26 @@ sudo cp /home/$(whoami)/go/bin/MailHog /usr/local/bin/mailhog
 mailhog
 ```
 
-Start [using MailHog](#using-mailhog).
+[using MailHog](#using-mailhog) を起動します。
 
 </details>
 
-## Using MailHog
+## MailHog の使用
 
-Open a new browser tab or window and navigate to [http://localhost:8025](http://localhost:8025) to open your MailHog inbox when the MailHog installation has completed and MailHog is running. The inbox will appear similar to the screenshot below.
+新しいブラウザータブまたはウィンドウを開き、[http://localhost:8025](http://localhost:8025) に移動します。MailHog がインストールされ、実行されたら、受信トレイを開きます。 受信トレイは、下のスクリーンショットと同じように表示されます。
 
-![MailHog Screenshot 1](https://contribute.freecodecamp.org/images/mailhog/1.jpg)
+![MailHog のスクリーンショット 1](https://contribute.freecodecamp.org/images/mailhog/1.jpg)
 
-Emails sent by your freeCodeCamp installation will appear as below
+freeCodeCamp のインストールにより送信されたメールは、以下のように表示されます。
 
-![MailHog Screenshot 2](https://contribute.freecodecamp.org/images/mailhog/2.jpg)
+![MailHog のスクリーンショット 2](https://contribute.freecodecamp.org/images/mailhog/2.jpg)
 
-Two tabs that allow you to view either plain text or source content will be available when you open a given email. Ensure that the plain text tab is selected as below.
+指定のメールを開く際、2 つのタブを使用して、プレーンテキストまたはソースコンテンツのいずれかを表示できます。 プレーンテキストタブが以下のように選択されていることを確認してください。
 
-![MailHog Screenshot 3](https://contribute.freecodecamp.org/images/mailhog/3.jpg)
+![MailHog のスクリーンショット 3](https://contribute.freecodecamp.org/images/mailhog/3.jpg)
 
-All links in the email should be clickable and resolve to their URL.
+電子メール内のすべてのリンクはクリック可能であり、その URL を解決します。
 
-## Useful Links
+## 有用なリンク
 
-- Check out the [MailHog](https://github.com/mailhog/MailHog) repository for further information related to MailHog. Additional information is also available regarding custom MailHog configurations.
+- MailHog に関連する詳細情報については、 [MailHog](https://github.com/mailhog/MailHog) リポジトリを参照してください。 カスタム MailHog 設定に関する追加情報も入手できます。
