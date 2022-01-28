@@ -890,14 +890,14 @@ const Editor = (props: EditorProps): JSX.Element => {
     // if (
     //  isEqual({ ..._editor.getPosition() }, { lineNumber: 1, column: 1 })
     // ) {
+    const [top, bottom] = editableRegionBoundaries;
     editor.setPosition({
-      lineNumber: editableRegionBoundaries[0] + 1,
+      lineNumber: top + 1,
       column: 1
     });
-    editor.revealLinesInCenter(
-      editableRegionBoundaries[0],
-      editableRegionBoundaries[1]
-    );
+
+    // To prevent descriptionWidget from being out of view
+    editor.revealLinesInCenter(top, top === 0 ? 1 : bottom);
     // }
   }
 
