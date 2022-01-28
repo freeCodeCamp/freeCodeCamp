@@ -253,6 +253,9 @@ const Editor = (props: EditorProps): JSX.Element => {
     lightbulb: {
       enabled: false
     },
+    hover: {
+      enabled: false
+    },
     quickSuggestions: false,
     suggestOnTriggerCharacters: false
   };
