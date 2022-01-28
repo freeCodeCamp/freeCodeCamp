@@ -429,9 +429,7 @@ export class CertificationSettings extends Component {
     const { t } = this.props;
     return (
       <ScrollableAnchor id='certification-settings'>
-        {/* it's weird that we repeat the id, but the ScrollableAnchor does not
-        add any elements to the DOM and cannot be used for styling  */}
-        <section id='certification-settings'>
+        <section className='certification-settings'>
           <SectionHeader>{t('settings.headings.certs')}</SectionHeader>
           {certifications.map(certName =>
             this.renderCertifications(certName, projectMap)
