@@ -253,6 +253,9 @@ const Editor = (props: EditorProps): JSX.Element => {
     lightbulb: {
       enabled: false
     },
+    hover: {
+      enabled: false
+    },
     quickSuggestions: false,
     suggestOnTriggerCharacters: false
   };
@@ -345,10 +348,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     const accessibilityMode = storedAccessibilityMode();
     editor.updateOptions({
-      accessibilitySupport: accessibilityMode ? 'on' : 'auto',
-      hover: {
-        enabled: false
-      }
+      accessibilitySupport: accessibilityMode ? 'on' : 'auto'
     });
     // Users who are using screen readers should not have to move focus from
     // the editor to the description every time they open a challenge.
