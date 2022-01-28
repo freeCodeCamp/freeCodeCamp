@@ -22,7 +22,7 @@ dashedName: factorial
   <li><code>4! = 4 * 3 * 2 * 1 = 24</code></li>
 </ul>
 
-**注記:** `0! = 1`
+**Note:** `0! = 1`
 
 # --hints--
 
