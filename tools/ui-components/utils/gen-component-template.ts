@@ -1,5 +1,5 @@
 // component.tsx
-exports.component = name => `
+export const component = (name: string) => `
 import React from 'react';
     
 import { ${name}Props } from './types';
@@ -10,14 +10,14 @@ export const ${name} = ({}: ${name}Props) => {
 `;
 
 // types.ts
-exports.type = name => `
+export const type = (name: string) => `
 export interface ${name}Props {
   className?: string
 }
 `;
 
 // component.test.tsx
-exports.test = name => `
+export const test = (name: string) => `
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -30,7 +30,7 @@ describe('<${name} />', () => {
 `;
 
 // component.stories.tsx
-exports.story = name => `
+export const story = (name: string) => `
 import React from 'react';
 import { Story } from '@storybook/react';
 import { ${name}, ${name}Props } from '.';
@@ -53,7 +53,7 @@ export default story;
 `;
 
 // index.ts
-exports.barrel = (name, kebabCasedName) => `
+export const barrel = (name: string, kebabCasedName: string) => `
 export { ${name} } from './${kebabCasedName}';
 export type { ${name}Props } from './types';
 `;

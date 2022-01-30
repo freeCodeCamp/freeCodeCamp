@@ -61,6 +61,6 @@
     "build": "cross-env NODE_ENV=production rollup -c",
     "dev": "cross-env NODE_ENV=development rollup -c -w",
     "clean": "rimraf dist/*",
-    "gen-component": "node ./utils/gen-component-script"
+    "gen-component": "ts-node ./utils/gen-component-script"
   }
 }

@@ -1,12 +1,6 @@
-const fs = require('fs');
-const path = require('path');
-const {
-  component,
-  story,
-  test,
-  barrel,
-  type
-} = require('./gen-component-template');
+import fs from 'fs';
+import path from 'path';
+import { component, story, test, barrel, type } from './gen-component-template';
 
 // Grab component name from terminal argument
 const [name] = process.argv.slice(2);
@@ -18,7 +12,7 @@ if (!name.match(/^[A-Z]/)) {
   throw new Error('Component name must be in PascalCase.');
 }
 
-const toKebabCase = pascalCasedName =>
+const toKebabCase = (pascalCasedName: string) =>
   pascalCasedName
     .replace(/([A-Z][a-z])/g, '-$1') // Add a hyphen before each capital letter
     .toLowerCase()
@@ -36,7 +30,7 @@ if (fs.existsSync(dir)) {
 // Create the folder
 fs.mkdirSync(dir);
 
-const writeFileErrorHandler = err => {
+const writeFileErrorHandler = (err: Error | null) => {
   if (err) {
     throw err;
   }
