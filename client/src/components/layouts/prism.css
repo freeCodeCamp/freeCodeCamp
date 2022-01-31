@@ -17,3 +17,76 @@ pre[class*='language-'] {
 * {
   text-shadow: none !important;
 }
+
+/* Undo this as we are setting overflow on wrapping figure instead. */
+pre[class*='language-'] {
+  margin: 0 !important;
+  overflow: unset !important;
+}
+
+.copy-text {
+  background: #f5f2f0;
+  display: flex;
+  flex-direction: column;
+  margin: 1em 0;
+  overflow: auto;
+  position: relative;
+}
+
+.copy-text pre {
+  order: 2;
+}
+
+.copy-text .copy-text-button {
+  border: 2px solid var(--secondary-color);
+  border-radius: 0.25em;
+  font-size: 0.8em;
+  height: 1.5rem;
+  left: 0;
+  line-height: 1;
+  order: 1;
+  padding: 0.25em 0.25em 0.35em;
+  position: sticky;
+  width: 3rem;
+}
+
+.copy-text .copy-text-button:focus {
+  background-color: var(--secondary-color);
+  border-color: var(--gray-45);
+  color: var(--secondary-background);
+  outline: none;
+}
+
+.copy-text .copy-text-button:focus:not(:focus-visible) {
+  background-color: var(--quaternary-background);
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.copy-text .copy-text-button:hover {
+  background-color: var(--secondary-color) !important;
+  border-color: var(--secondary-color) !important;
+  color: var(--secondary-background) !important;
+}
+
+.copy-text .copy-text-toast {
+  color: transparent;
+  font-size: 0.8em;
+  line-height: 1;
+  padding: 0.25em 0.5em 0.35em;
+  position: absolute;
+  width: max-content;
+}
+
+.copy-text .copy-text-toast.active {
+  background-color: #fff;
+  border: 2px solid var(--secondary-color);
+  border-radius: 0.5em;
+  color: var(--secondary-color);
+  min-height: 1.5rem;
+  left: 4em;
+  margin-top: -1.5rem;
+  max-width: calc(100% - 3.2rem);
+  order: 2;
+  position: sticky;
+}

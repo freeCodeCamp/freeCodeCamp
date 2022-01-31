@@ -35,8 +35,8 @@
 /* Code blocks */
 .dark-palette pre[class*='language-'] {
   padding: 1em;
-  margin: 0.5em 0;
-  overflow: auto;
+  margin: 0 !important;
+  overflow: unset !important;
 }
 
 /* Without this, the above selector takes precedence and messes up the answer
@@ -145,4 +145,12 @@ padding in night mode */
 
 .dark-palette .token.inserted {
   color: green;
+}
+
+.dark-palette .copy-text {
+  background: var(--primary-background);
+}
+
+.dark-palette .copy-text .copy-text-toast.active {
+  color: var(--secondary-background);
 }
