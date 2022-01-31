@@ -1,19 +1,26 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 
-import colorList from './colors.css';
+import colorList from '../colors.css';
+import { Color, ColorList, PaletteProps } from './types';
 
 // ---------------------------------------------------------- //
 //                      HELPER FUNCTIONS                      //
 // ---------------------------------------------------------- //
-// Transform colorList from an object to an array of objects
-const transformedColorList = Object.keys(colorList).map(colorName => ({
-  label: colorName.replace('--', ''),
-  value: colorList[colorName]
-}));
+/**
+ * Transform colorList from an object to an array of objects
+ * @example
+ * Input: { '--blue10': 'var(--blue10)' }
+ * Output: [{ label: 'blue10', value: 'var(--blue10)' }]
+ */
+const transformedColorList = Object.keys(colorList as ColorList).map(
+  colorName => ({
+    label: colorName.replace('--', ''),
+    value: (colorList as ColorList)[colorName]
+  })
+);
 
 // Get the background and text color values of each palette item
-const getPaletteItemStyle = color => {
+const getPaletteItemStyle = (color: Color) => {
   const itemTextColor = color.label.substring(color.label.length - 2);
 
   return {
@@ -24,13 +31,13 @@ const getPaletteItemStyle = color => {
   };
 };
 
-const getPaletteByColorName = name =>
+const getPaletteByColorName = (name: string) =>
   transformedColorList.filter(color => color.label.includes(name));
 
 // ---------------------------------------------------------- //
 //                         COMPONENTS                         //
 // ---------------------------------------------------------- //
-const Palette = ({ colors }) => {
+const Palette = ({ colors }: PaletteProps) => {
   return (
     <div className='inline-flex flex-col m-4 w-3/12'>
       {colors.map(color => (
@@ -44,15 +51,6 @@ const Palette = ({ colors }) => {
       ))}
     </div>
   );
-};
-
-Palette.propTypes = {
-  colors: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string,
-      value: PropTypes.string
-    })
-  )
 };
 
 export const AllPalettes = () => {
