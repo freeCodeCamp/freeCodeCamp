@@ -36,7 +36,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2012, 1, 29))` should return `"Setting Orange, the 60th day of Chaos in the YOLD 3178. Celebrate St. Tib\'s Day!"`.
+`discordianDate(new Date(2012, 1, 29))` は `"Setting Orange, the 60th day of Chaos in the YOLD 3178. Celebrate St. Tib\'s Day!"` を返します。
 
 ```js
 assert(
@@ -54,7 +54,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2010, 0, 5))` should return `"Setting Orange, the 5th day of Chaos in the YOLD 3176. Celebrate Mungday!"`.
+`discordianDate(new Date(2010, 0, 5))` は `"Setting Orange, the 5th day of Chaos in the YOLD 3176. Celebrate Mungday!"` を返します。
 
 ```js
 assert(
@@ -63,7 +63,7 @@ assert(
 );
 ```
 
-`discordianDate(new Date(2011, 4, 3))` should return `"Pungenday, the 50th day of Discord in the YOLD 3177. Celebrate Discoflux!"`.
+`discordianDate(new Date(2011, 4, 3))` は `"Pungenday, the 50th day of Discord in the YOLD 3177. Celebrate Discoflux!"` を返します。
 
 ```js
 assert(

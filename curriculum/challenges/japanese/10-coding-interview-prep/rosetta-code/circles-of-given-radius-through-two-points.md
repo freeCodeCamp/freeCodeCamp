@@ -27,8 +27,8 @@ dashedName: circles-of-given-radius-through-two-points
 
 <ul>
   <li>2点が直径上にある場合は、1 点を返します。 ただし、半径もゼロの場合は、<code>"Radius Zero"</code> を返します。</li>
-  <li>If points are coincident, return <code>"Coincident point. Infinite solutions"</code>.</li>
-  <li>If points are farther apart than the diameter, return <code>"No intersection. Points further apart than circle diameter"</code>.</li>
+  <li>2点が完全に一致する場合は、<code>"Coincident point. Infinite solutions"</code> を返します。</li>
+  <li>2点が直径よりも離れている場合は、<code>"No intersection. Points further apart than circle diameter"</code> を返します。</li>
 </ul>
 
 **入力例**
@@ -61,13 +61,13 @@ assert.deepEqual(getCircles(...testCases[0]), answers[0]);
 assert.deepEqual(getCircles(...testCases[1]), answers[1]);
 ```
 
-`getCircles([0.1234, 0.9876], [0.1234, 0.9876], 2.0)` should return `Coincident point. Infinite solutions`
+`getCircles([0.1234, 0.9876], [0.1234, 0.9876], 2.0)` は `Coincident point. Infinite solutions` を返します。
 
 ```js
 assert.deepEqual(getCircles(...testCases[2]), answers[2]);
 ```
 
-`getCircles([0.1234, 0.9876], [0.8765, 0.2345], 0.5)` should return `No intersection. Points further apart than circle diameter`
+`getCircles([0.1234, 0.9876], [0.8765, 0.2345], 0.5)` は `No intersection. Points further apart than circle diameter` を返します。
 
 ```js
 assert.deepEqual(getCircles(...testCases[3]), answers[3]);
