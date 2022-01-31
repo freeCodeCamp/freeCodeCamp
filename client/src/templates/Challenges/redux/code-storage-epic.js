@@ -161,6 +161,7 @@ function loadCodeEpic(action$, state$) {
           // Fix the format of the old file
           if (indexjsCode) {
             indexjsCode.fileKey = 'scriptjs';
+            delete indexjsCode.key;
             indexjsCode.history = ['script.js'];
             indexjsCode.name = 'script';
             indexjsCode.path = 'script.js';
