@@ -592,7 +592,7 @@ async (getUserInput) => {
         throw new Error(`${limitRes.status} ${limitRes.statusText}`);
       }
       const filterDateBeforeLimitRes = await fetch(
-        url + `/api/users/${_id}/logs/from=1990-01-02&to=1990-01-04&limit=1`
+        url + `/api/users/${_id}/logs?from=1990-01-02&to=1990-01-04&limit=1`
       );
       if (filterDateBeforeLimitRes.ok) {
         const { log } = await filterDateBeforeLimitRes.json();
