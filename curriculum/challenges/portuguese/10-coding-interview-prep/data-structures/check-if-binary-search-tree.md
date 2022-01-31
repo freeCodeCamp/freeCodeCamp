@@ -39,6 +39,24 @@ assert(
 );
 ```
 
+`isBinarySearchTree()` deve retornar false quando verificado com uma árvore que não seja uma árvore binária de busca.
+
+```js
+assert(
+  (function () {
+    var test = false;
+    if (typeof BinarySearchTree !== 'undefined') {
+      test = new BinarySearchTree();
+    } else {
+      return false;
+    }
+    test.push(1);
+    test.root.left = new Node(1);
+    return isBinarySearchTree(test) == false;
+  })()
+);
+```
+
 # --seed--
 
 ## --after-user-code--
@@ -114,7 +132,7 @@ function isBinarySearchTree(tree) {
     function checkTree(node) {
       if (node.left != null) {
         const left = node.left;
-        if (left.value > node.value) {
+        if (left.value >= node.value) {
           isBST = false;
         } else {
           checkTree(left);

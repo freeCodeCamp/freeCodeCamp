@@ -27,8 +27,8 @@ Implementa uma função que recebe dois pontos e um raio e retorna os dois círc
 
 <ul>
   <li>Se os pontos estão no diâmetro, retorne um ponto. No entanto, se o raio também for zero, retorne <code>"Radius Zero"</code>.</li>
-  <li>Se os pontos forem coincidentes, retorne <code>"Coincident point. Infinite solutions"</code>.</li>
-  <li>Se os pontos estiverem mais distantes do que o diâmetro, retorne <code>"No intersection. Points further apart than circle diameter"</code>.</li>
+  <li>Se os pontos forem coincidentes, retornar <code>"Coincident point. Infinite solutions"</code>.</li>
+  <li>Se os pontos forem mais distantes do que o diâmetro, retornar <code>"No intersection. Points further apart than circle diameter"</code>.</li>
 </ul>
 
 **Exemplo de entradas:**
