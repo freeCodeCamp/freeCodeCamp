@@ -23,9 +23,9 @@
     "news": "https://www.freecodecamp.org/japanese/news/"
   },
   "help": {
-    "HTML-CSS": "HTML-CSS",
-    "JavaScript": "JavaScript",
-    "Python": "Python",
-    "Relational Databases": "Relational Databases"
+    "HTML-CSS": "Japanese/HTML-CSS",
+    "JavaScript": "Japanese/JavaScript",
+    "Python": "Japanese/Python",
+    "Relational Databases": "Japanese/Relational Databases"
   }
 }
