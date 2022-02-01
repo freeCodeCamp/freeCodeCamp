@@ -12,8 +12,13 @@ class CopyElementTextButton {
   #toast: HTMLSpanElement;
   #successMessage: string;
   #failedMessage: string;
-  #toastTime = 3000;
+  // Keep track of all buttons on the page for easier access when we
+  // need to hide them.
   static #buttons: CopyElementTextButton[] = [];
+  // The amount of time the toast message should be shown.
+  #toastTime = 3000;
+  // So we can cancel the timeout early if needed.
+  #toastTimeoutId = -1;
 
   constructor({
     copyTarget,
@@ -97,28 +102,32 @@ class CopyElementTextButton {
     this.#toast.classList.add('active');
     this.#toast.innerHTML = message;
     // Remove message after specified delay
-    setTimeout(
-      (initialTimeStamp, toast) => {
-        const currentTimeStamp = toast.getAttribute('data-ts');
+    this.#toastTimeoutId = window.setTimeout(
+      (initialTimeStamp: string) => {
+        const currentTimeStamp = this.#toast.getAttribute('data-ts');
         if (initialTimeStamp === currentTimeStamp) {
+          // We don't need hideToast to cancel this timeout.
+          this.#toastTimeoutId = -1;
           this.#hideToast();
         }
       },
       this.#toastTime,
-      timeStamp,
-      this.#toast
+      timeStamp
     );
   }
 
   #hideToast() {
+    // Cancel toast timeout if it is still waiting.
+    if (this.#toastTimeoutId > -1) {
+      window.clearTimeout(this.#toastTimeoutId);
+      this.#toastTimeoutId = -1;
+    }
     this.#toast.classList.remove('active');
     this.#toast.innerHTML = '';
   }
 
   static #hideAllToasts(): void {
-    if (CopyElementTextButton.#buttons.length > 1) {
-      CopyElementTextButton.#buttons.forEach(button => button.#hideToast());
-    }
+    CopyElementTextButton.#buttons.forEach(button => button.#hideToast());
   }
 }
 
