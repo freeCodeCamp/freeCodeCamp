@@ -1,5 +1,5 @@
 ---
-id: 60a3e3396c7b40068ad69995
+id: 60a3e3396c7b40068ad69996
 title: Step 44
 challengeType: 0
 dashedName: step-44
@@ -7,24 +7,22 @@ dashedName: step-44
 
 # --description--
 
-Rotate each rectangle to give them more of an imperfect, hand-painted look.
-
-Use the `transform` property on the `.one` selector to `rotate` it counter clockwise by 0.6 degrees.
+Rotate the `.two` element clockwise by 0.4 degrees.
 
 # --hints--
 
-You should set the `transform` property to `rotate(-0.6deg)`.
+You should set the `transform` property to `rotate(0.4deg)`.
 
 ```js
-const hasTransform = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.transform === 'rotate(-0.6deg)');
+const hasTransform = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.transform === 'rotate(0.4deg)');
 assert(hasTransform);
 ```
 
-Your `.one` element should have a `transform` value of `rotate(-0.6deg)`.
+Your `.two` element should have a `transform` value of `rotate(0.4deg)`.
 
 ```js
-const oneTransform = new __helpers.CSSHelp(document).getStyle('.one')?.getPropertyValue('transform');
-assert(oneTransform === 'rotate(-0.6deg)');
+const twoTransform = new __helpers.CSSHelp(document).getStyle('.two')?.getPropertyValue('transform');
+assert(twoTransform === 'rotate(0.4deg)');
 ```
 
 # --seed--
@@ -51,12 +49,10 @@ assert(oneTransform === 'rotate(-0.6deg)');
   width: 425px;
   height: 150px;
   background-color: #efb762;
-  margin: 20px auto 20px;
+  margin: 20px auto;
   box-shadow: 0 0 3px 3px #efb762;
   border-radius: 9px;
---fcc-editable-region--
-
---fcc-editable-region--
+  transform: rotate(-0.6deg);
 }
 
 .two {
@@ -66,6 +62,9 @@ assert(oneTransform === 'rotate(-0.6deg)');
   margin: 0 auto 20px;
   box-shadow: 0 0 3px 3px #8f0401;
   border-radius: 8px 10px;
+--fcc-editable-region--
+
+--fcc-editable-region--
 }
 
 .one, .two {

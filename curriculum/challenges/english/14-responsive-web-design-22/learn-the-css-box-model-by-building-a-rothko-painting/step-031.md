@@ -1,5 +1,5 @@
 ---
-id: 60a3e3396c7b40068ad69988
+id: 60a3e3396c7b40068ad69989
 title: Step 31
 challengeType: 0
 dashedName: step-31
@@ -7,22 +7,22 @@ dashedName: step-31
 
 # --description--
 
-Set the `height` of `.three` to `28%`.
+Change the `background-color` of `.three` to `#b20403`.
 
 # --hints--
 
-You should set the `height` property to `28%`.
+You should set the `background-color` property to `#b20403`.
 
 ```js
-const hasHeight = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.height === '28%');
-assert(hasHeight);
+const hasBackground = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['background-color'] === 'rgb(178, 4, 3)');
+assert(hasBackground);
 ```
 
-Your `.three` element should have a `height` value of `28%`.
+Your `.three` element should have a `background-color` value of `#b20403`.
 
 ```js
-const threeHeight = new __helpers.CSSHelp(document).getStyle('.three')?.getPropertyValue('height');
-assert(threeHeight === '28%');
+const threeBackground = new __helpers.CSSHelp(document).getStyle('.three')?.getPropertyValue('background-color');
+assert(threeBackground === 'rgb(178, 4, 3)');
 ```
 
 # --seed--
@@ -48,7 +48,7 @@ assert(threeHeight === '28%');
   width: 425px;
   height: 150px;
   background-color: #efb762;
-  margin: 20px auto 20px;
+  margin: 20px auto;
 }
 
 .two {
@@ -60,6 +60,7 @@ assert(threeHeight === '28%');
 
 .three {
   width: 91%;
+  height: 28%;
 --fcc-editable-region--
 
 --fcc-editable-region--
