@@ -63,7 +63,8 @@
     "submit-and-go": "Invia e vai alla prossima sfida",
     "go-to-next": "Vai alla prossima sfida",
     "ask-later": "Chiedimelo più tardi",
-    "start-coding": "Start coding!"
+    "start-coding": "Start coding!",
+    "go-to-settings": "Go to settings to claim your certification"
   },
   "landing": {
     "big-heading-1": "Impara a programmare — gratis.",
@@ -358,7 +359,7 @@
     "one-time": "If you'd prefer to make one-time donations, you can support freeCodeCamp's mission whenever you have cash to spare. You can use <0>this link to donate whatever amount feels right through PayPal</0>.",
     "wire-transfer": "You can also send money to freeCodeCamp directly through a wire transfer. If you need our wire details, email Quincy at quincy@freecodecamp.org",
     "does-crypto": "Does freeCodeCamp accept donations in Bitcoin or other cryptocurrencies?",
-    "yes-crypto": "Yes, and we would welcome your cryptocurrency donations. Here are our wallet details:",
+    "yes-cryptocurrency": "Yes. Please email Quincy at quincy@freecodecamp.org and he can send you freeCodeCamp's wallet information. He can also provide you with a donation receipt if you need one for your taxes.",
     "can-check": "Can I mail a physical check?",
     "yes-check": "Yes, we would welcome a check. You can mail it to us at:",
     "how-matching-gift": "How can I set up matching gifts from my employer, or payroll deductions?",

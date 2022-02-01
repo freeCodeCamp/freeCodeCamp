@@ -547,6 +547,7 @@ export const query = graphql`
           head
           tail
           editableRegionBoundaries
+          history
         }
       }
     }

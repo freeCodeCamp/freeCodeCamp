@@ -459,7 +459,7 @@ Provisioning VMs with the Code
 7. Build the server
 
    ```console
-   npm run ensure-env && npm run build:curriculum && npm run build:server
+   npm run create:config && npm run build:curriculum && npm run build:server
    ```
 
 8. Start Instances
@@ -502,7 +502,7 @@ npm ci
 3. Build the server
 
 ```console
-npm run ensure-env && npm run build:curriculum && npm run build:server
+npm run create:config && npm run build:curriculum && npm run build:server
 ```
 
 4. Start Instances

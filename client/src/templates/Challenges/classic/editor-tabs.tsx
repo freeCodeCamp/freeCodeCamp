@@ -48,7 +48,7 @@ class EditorTabs extends Component<EditorTabsProps> {
               onClick={() => toggleVisibleEditor(challengeFile.fileKey)}
               role='tab'
             >
-              {challengeFile.path}
+              {`${challengeFile.name}.${challengeFile.ext}`}
             </button>
           )
         )}

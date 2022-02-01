@@ -25,7 +25,7 @@ NON includere virgolette (singole o doppie) nell'output.
 
 # --hints--
 
-La sequenza di carte 2, 3, 4, 5, 6 dovrebbero restituire `5 Bet`
+La sequenza di carte 2, 3, 4, 5, 6 dovrebbe restituire la stringa `5 Bet`
 
 ```js
 assert(
@@ -61,7 +61,7 @@ assert(
 );
 ```
 
-La sequenza di carte 10, J, Q, K, A dovrebbero restituire la stringa `-5 Hold`
+La sequenza di carte 10, J, Q, K, A dovrebbe restituire la stringa `-5 Hold`
 
 ```js
 assert(
@@ -80,7 +80,7 @@ assert(
 );
 ```
 
-La sequenza di carte 3, 7, Q, 8, A dovrebbero restituire la stringa `-1 Hold`
+La sequenza di carte 3, 7, Q, 8, A dovrebbe restituire la stringa `-1 Hold`
 
 ```js
 assert(
@@ -99,7 +99,7 @@ assert(
 );
 ```
 
-La sequenza di carte 2, J, 9, 2, 7 dovrebbero restituire la stringa `1 Bet`
+La sequenza di carte 2, J, 9, 2, 7 dovrebbe restituire la stringa `1 Bet`
 
 ```js
 assert(
@@ -118,7 +118,7 @@ assert(
 );
 ```
 
-La sequenza di carte 2, 2, 10 dovrebbero restituire la stringa `1 Bet`
+La sequenza di carte 2, 2, 10 dovrebbe restituire la stringa `1 Bet`
 
 ```js
 assert(

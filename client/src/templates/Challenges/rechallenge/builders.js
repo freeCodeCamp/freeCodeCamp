@@ -14,36 +14,21 @@ import {
   transformContents
 } from '../../../../../utils/polyvinyl';
 
-const htmlCatch = '\n<!--fcc-->\n';
-const jsCatch = '\n;/*fcc*/\n';
-const cssCatch = '\n/*fcc*/\n';
-
-const defaultTemplate = ({ source }) => {
-  return `
-  <body id='display-body'>
-    <!-- fcc-start-source -->
-      ${source}
-    <!-- fcc-end-source -->
-  </body>`;
-};
-
 const wrapInScript = partial(
   transformContents,
-  content => `${htmlCatch}<script>${content}${jsCatch}</script>`
+  content => `<script>${content}</script>`
 );
 const wrapInStyle = partial(
   transformContents,
-  content => `${htmlCatch}<style>${content}${cssCatch}</style>`
+  content => `<style>${content}</style>`
 );
 const setExtToHTML = partial(setExt, 'html');
-const padContentWithJsCatch = partial(compileHeadTail, jsCatch);
-const padContentWithCssCatch = partial(compileHeadTail, cssCatch);
-// const padContentWithHTMLCatch = partial(compileHeadTail, htmlCatch);
+const concatHeadTail = partial(compileHeadTail, '');
 
 export const jsToHtml = cond([
   [
     matchesProperty('ext', 'js'),
-    flow(padContentWithJsCatch, wrapInScript, setExtToHTML)
+    flow(concatHeadTail, wrapInScript, setExtToHTML)
   ],
   [stubTrue, identity]
 ]);
@@ -51,7 +36,7 @@ export const jsToHtml = cond([
 export const cssToHtml = cond([
   [
     matchesProperty('ext', 'css'),
-    flow(padContentWithCssCatch, wrapInStyle, setExtToHTML)
+    flow(concatHeadTail, wrapInStyle, setExtToHTML)
   ],
   [stubTrue, identity]
 ]);
@@ -75,7 +60,7 @@ export function concatHtml({
   template,
   challengeFiles = []
 } = {}) {
-  const createBody = template ? _template(template) : defaultTemplate;
+  const embedSource = template ? _template(template) : ({ source }) => source;
   const head = required
     .map(({ link, src }) => {
       if (link && src) {
@@ -96,16 +81,16 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
   const indexHtml = findIndexHtml(challengeFiles);
 
   const source = challengeFiles.reduce((source, challengeFile) => {
-    if (!indexHtml) return source.concat(challengeFile.contents, htmlCatch);
+    if (!indexHtml) return source.concat(challengeFile.contents);
     if (
       indexHtml.importedFiles.includes(challengeFile.history[0]) ||
       wasHtmlFile(challengeFile)
     ) {
-      return source.concat(challengeFile.contents, htmlCatch);
+      return source.concat(challengeFile.contents);
     } else {
       return source;
     }
   }, '');
 
-  return `<head>${head}</head>${createBody({ source })}`;
+  return `<head>${head}</head>${embedSource({ source })}`;
 }

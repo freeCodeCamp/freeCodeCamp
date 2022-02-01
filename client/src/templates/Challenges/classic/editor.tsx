@@ -253,6 +253,9 @@ const Editor = (props: EditorProps): JSX.Element => {
     lightbulb: {
       enabled: false
     },
+    hover: {
+      enabled: false
+    },
     quickSuggestions: false,
     suggestOnTriggerCharacters: false
   };
@@ -409,7 +412,63 @@ const Editor = (props: EditorProps): JSX.Element => {
         });
       }
     });
+    // Introduced as a work around for a bug in JAWS 2022
+    // https://github.com/FreedomScientific/VFO-standards-support/issues/598
+    editor.addAction({
+      id: 'toggle-aria-roledescription',
+      label: 'Toggle aria-roledescription',
+      keybindings: [
+        monaco.KeyMod.CtrlCmd | monaco.KeyMod.Alt | monaco.KeyCode.KEY_J
+      ],
+      run: toggleAriaRoledescription
+    });
     editor.onDidFocusEditorWidget(() => props.setEditorFocusability(true));
+
+    // aria-roledescription is on (true) by default, check if it needs
+    // to be removed.
+    if (!getStoredAriaRoledescription()) {
+      setAriaRoledescription(false);
+    }
+  };
+
+  const toggleAriaRoledescription = () => {
+    const newRoledescription = !getStoredAriaRoledescription();
+    setAriaRoledescription(newRoledescription);
+    ariaAlert(
+      `aria-roledescription has been turned ${
+        newRoledescription ? 'on' : 'off'
+      }`
+    );
+  };
+
+  const setAriaRoledescription = (value: boolean) => {
+    const textareas = document.querySelectorAll('.monaco-editor textarea');
+    textareas.forEach(textarea => {
+      value
+        ? textarea.setAttribute('aria-roledescription', 'editor')
+        : textarea.removeAttribute('aria-roledescription');
+    });
+    store.set('ariaRoledescription', value);
+  };
+
+  const getStoredAriaRoledescription = () =>
+    !!(store.get('ariaRoledescription') ?? true);
+
+  // Borrowed from
+  // freeCodeCamp/node_modules/monaco-editor/esm/vs/base/browser/ui/aria/aria.js
+  // Uses the aria live region provided by monaco.
+  const ariaAlert = (message: string) => {
+    const ariaLive: NodeListOf<HTMLDivElement> =
+      document.querySelectorAll('.monaco-alert');
+    if (ariaLive.length > 0) {
+      const liveText = ariaLive[0];
+      liveText.textContent = message;
+      // Hack used by monaco to force older browsers to announce the update to
+      // the live region.
+      // See https://www.tpgi.com/html5-accessibility-chops-aria-rolealert-browser-support/
+      liveText.style.visibility = 'hidden';
+      liveText.style.visibility = 'visible';
+    }
   };
 
   const descriptionZoneCallback = (
@@ -489,13 +548,8 @@ const Editor = (props: EditorProps): JSX.Element => {
     descContainer.appendChild(desc);
     desc.innerHTML = description;
     highlightAllUnder(desc);
-    // TODO: the solution is probably just to use an overlay that's forced to
-    // follow the decorations.
-    // TODO: this is enough for Firefox, but Chrome needs more before the
-    // user can select text by clicking and dragging.
+
     domNode.style.userSelect = 'text';
-    // The z-index needs increasing as ViewZones default to below the lines.
-    domNode.style.zIndex = '10';
 
     domNode.style.left = `${editor.getLayoutInfo().contentLeft}px`;
     domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
@@ -528,17 +582,11 @@ const Editor = (props: EditorProps): JSX.Element => {
       executeChallenge();
     };
 
-    // TODO: does it?
-    // The z-index needs increasing as ViewZones default to below the lines.
-    outputNode.style.zIndex = '10';
-
     outputNode.style.left = `${editor.getLayoutInfo().contentLeft}px`;
     outputNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
-
     outputNode.style.top = getOutputZoneTop();
 
     dataRef.current.outputNode = outputNode;
-
     return outputNode;
   }
 

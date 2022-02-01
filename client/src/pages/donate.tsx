@@ -12,19 +12,12 @@ import DonateForm from '../components/Donation/donate-form';
 import {
   DonationText,
   DonationOptionsAlertText,
-  DonationSupportText,
-  DonationOptionsText,
   DonationFaqText
 } from '../components/Donation/donation-text-components';
 
 import { Spacer, Loader } from '../components/helpers';
 import CampersImage from '../components/landing/components/campers-image';
-import {
-  signInLoadingSelector,
-  userSelector,
-  executeGA,
-  isAVariantSelector
-} from '../redux';
+import { signInLoadingSelector, userSelector, executeGA } from '../redux';
 
 export interface ExecuteGaArg {
   type: string;
@@ -40,22 +33,15 @@ interface DonatePageProps {
   executeGA: (arg: ExecuteGaArg) => void;
   isDonating?: boolean;
   showLoading: boolean;
-  isAVariant: boolean;
   t: TFunction;
 }
 
 const mapStateToProps = createSelector(
   userSelector,
   signInLoadingSelector,
-  isAVariantSelector,
-  (
-    { isDonating }: { isDonating: boolean },
-    showLoading: boolean,
-    isAVariant: boolean
-  ) => ({
+  ({ isDonating }: { isDonating: boolean }, showLoading: boolean) => ({
     isDonating,
-    showLoading,
-    isAVariant
+    showLoading
   })
 );
 
@@ -67,7 +53,6 @@ function DonatePage({
   executeGA = () => {},
   isDonating = false,
   showLoading,
-  isAVariant,
   t
 }: DonatePageProps) {
   useEffect(() => {
@@ -93,34 +78,6 @@ function DonatePage({
       }
     });
   }
-
-  const donationSupport = (
-    <>
-      <Row className='donate-support'>
-        <Col xs={12}>
-          <hr />
-          <DonationOptionsText />
-          <DonationSupportText />
-        </Col>
-      </Row>
-    </>
-  );
-
-  const donationFaq = (
-    <>
-      <Spacer size={3} />
-      <Row className='donate-support' id='FAQ'>
-        <Col className={'text-center'} xs={12}>
-          <hr />
-          <h2>{t('donate.faq')}</h2>
-          <Spacer />
-        </Col>
-        <Col xs={12}>
-          <DonationFaqText />
-        </Col>
-      </Row>
-    </>
-  );
 
   return showLoading ? (
     <Loader fullScreen={true} />
@@ -155,7 +112,17 @@ function DonatePage({
                   <DonateForm handleProcessing={handleProcessing} />
                 </Col>
               </Row>
-              {isAVariant ? donationSupport : donationFaq}
+              <Spacer size={3} />
+              <Row className='donate-support' id='FAQ'>
+                <Col className={'text-center'} xs={12}>
+                  <hr />
+                  <h2>{t('donate.faq')}</h2>
+                  <Spacer />
+                </Col>
+                <Col xs={12}>
+                  <DonationFaqText />
+                </Col>
+              </Row>
             </Col>
             <Col lg={6}>
               <CampersImage pageName='donate' />

@@ -10,7 +10,7 @@ dashedName: call-out-optional-actions-with-btn-info
 
 Bootstrap viene con varios colores predefinidos para los botones. La clase `btn-info` se utiliza para llamar la atención sobre las acciones opcionales que el usuario puede realizar.
 
-Crea un nuevo botón de Bootstrap debajo de tu botón `Like` con el texto `Info` y añádele las clases de Bootstrap `btn-info` y `btn-block`.
+Crea un nuevo botón de Bootstrap a nivel de bloque debajo de tu botón de `Like` con el texto `Info`, y agrégale la clase de Boostrap `btn-info`.
 
 Ten en cuenta que estos botones todavía necesitan las clases `btn` y `btn-block`.
 

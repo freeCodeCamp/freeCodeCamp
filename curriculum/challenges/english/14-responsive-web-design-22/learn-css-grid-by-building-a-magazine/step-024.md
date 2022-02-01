@@ -205,9 +205,8 @@ assert(document.querySelectorAll('.image-wrapper img')?.[2]?.getAttribute('heigh
             height="400"
           />
           <blockquote class="image-quote"></blockquote>
-          <img />
 --fcc-editable-region--
-
+          <img />
 --fcc-editable-region--
         </aside>
       </section>

@@ -18,7 +18,7 @@ A maioria dos arquivos para tradução da plataforma ficam localizados na pasta 
 
 ```console
   config/i18n
-  └── all-langs.js
+  └── all-langs.ts
   ...
   client/i18n
   ├── configForTests.js
@@ -56,7 +56,7 @@ A maioria dos arquivos para tradução da plataforma ficam localizados na pasta 
   │       └── trending.json
   ├── locales.test.js
   ├── schema-validation.js
-  └── validate-keys.js
+  └── validate-keys.ts
 ```
 
 Alguns desses arquivos estão traduzidos na nossa plataforma de tradução (Crowdin), outros não.

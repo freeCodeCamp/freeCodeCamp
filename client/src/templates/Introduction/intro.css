@@ -67,7 +67,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 25px 15px 10px 0px;
+  padding: 25px 15px 10px 0;
   margin: 0 0 0.6rem;
   flex-grow: 2;
   flex-basis: 0;
@@ -240,7 +240,7 @@ button.map-title {
   flex: 1 1 100px;
 }
 .map-challenge-title-grid a.map-grid-item {
-  margin: 5px 0px;
+  margin: 5px 0;
   justify-content: center;
 }
 
@@ -274,7 +274,7 @@ button.map-title {
   }
 
   .block-cta-wrapper {
-    padding: 25px 15px 10px 15px;
+    padding: 25px 15px 10px;
   }
 
   .course-title,

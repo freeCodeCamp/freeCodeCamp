@@ -337,27 +337,29 @@ ${getFullPath('english')}
   challenge.translationPending =
     lang !== 'english' && !isAuditedCert(lang, superBlock);
   challenge.usesMultifileEditor = !!usesMultifileEditor;
+  if (challenge.challengeFiles) {
+    // The client expects the challengeFiles to be an array of polyvinyls
+    challenge.challengeFiles = challengeFilesToPolys(challenge.challengeFiles);
+  }
+  if (challenge.solutions?.length) {
+    // The test runner needs the solutions to be arrays of polyvinyls so it
+    // can sort them correctly.
+    challenge.solutions = challenge.solutions.map(challengeFilesToPolys);
+  }
 
-  return prepareChallenge(challenge);
+  return challenge;
 }
 
-// gets the challenge ready for sourcing into Gatsby
-function prepareChallenge(challenge) {
-  if (challenge.challengeFiles) {
-    challenge.challengeFiles = challenge.challengeFiles.reduce(
-      (challengeFiles, challengeFile) => {
-        return [
-          ...challengeFiles,
-          {
-            ...createPoly(challengeFile),
-            seed: challengeFile.contents.slice(0)
-          }
-        ];
-      },
-      []
-    );
-  }
-  return challenge;
+function challengeFilesToPolys(files) {
+  return files.reduce((challengeFiles, challengeFile) => {
+    return [
+      ...challengeFiles,
+      {
+        ...createPoly(challengeFile),
+        seed: challengeFile.contents.slice(0)
+      }
+    ];
+  }, []);
 }
 
 async function hasEnglishSource(basePath, translationPath) {

@@ -189,19 +189,7 @@ export const completedChallengesSelector = state =>
 export const completionCountSelector = state => state[MainApp].completionCount;
 export const currentChallengeIdSelector = state =>
   state[MainApp].currentChallengeId;
-export const stepsToClaimSelector = state => {
-  const user = userSelector(state);
-  const currentCerts = certificatesByNameSelector(user.username)(
-    state
-  ).currentCerts;
-  return {
-    currentCerts: currentCerts,
-    isHonest: user?.isHonest,
-    isShowName: user?.profileUI?.showName,
-    isShowCerts: user?.profileUI?.showCerts,
-    isShowProfile: !user?.profileUI?.isLocked
-  };
-};
+
 export const emailSelector = state => userSelector(state).email;
 export const isAVariantSelector = state => {
   const email = emailSelector(state);
@@ -231,6 +219,7 @@ export const shouldRequestDonationSelector = state => {
   const canRequestProgressDonation = state[MainApp].canRequestProgressDonation;
   const isDonating = isDonatingSelector(state);
   const recentlyClaimedBlock = recentlyClaimedBlockSelector(state);
+  const isAVariant = isAVariantSelector(state);
 
   // don't request donation if already donating
   if (isDonating) return false;
@@ -243,9 +232,17 @@ export const shouldRequestDonationSelector = state => {
 
   // donations only appear after the user has completed ten challenges (i.e.
   // not before the 11th challenge has mounted)
-  if (completedChallenges.length < 10) {
-    return false;
+  // the follwoing is an AB test for increasing the completed challenge requirement to 20
+  if (isAVariant) {
+    if (completedChallenges.length < 10) {
+      return false;
+    }
+  } else {
+    if (completedChallenges.length < 20) {
+      return false;
+    }
   }
+
   // this will mean we have completed 3 or more challenges this browser session
   // and enough challenges overall to not be new
   return completionCount >= 3;
@@ -261,6 +258,9 @@ export const userByNameSelector = username => state => {
   // object litteral to prevent components from re-rendering unnecessarily
   return user[username] ?? initialState.user;
 };
+
+export const currentCertsSelector = state =>
+  certificatesByNameSelector(state[MainApp]?.appUsername)(state)?.currentCerts;
 
 export const certificatesByNameSelector = username => state => {
   const {

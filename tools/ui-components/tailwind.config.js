@@ -1,5 +1,10 @@
 module.exports = {
-  purge: ['./src/**/*.html', './src/**/*.js'],
+  content: [
+    './src/**/*.html',
+    './src/**/*.js',
+    './src/**/*.ts',
+    './src/**/*.tsx'
+  ],
   darkMode: 'class',
   theme: {
     colors: {
@@ -47,11 +52,6 @@ module.exports = {
         800: 'var(--red80)',
         900: 'var(--red90)'
       }
-    }
-  },
-  variants: {
-    extend: {
-      opacity: ['hover', 'focus']
     }
   },
   plugins: []

@@ -19,13 +19,13 @@ You should create a `meta` element within the `head` element.
 
 ```js
 // TODO: Once builder is fixed so head info is not in body
-assert.exists(document.querySelector('body > meta'));
+assert.exists(document.querySelector('head > meta'));
 ```
 
 You should give the `meta` tag a `charset` of `UTF-8`.
 
 ```js
-assert.equal(document.querySelector('body > meta')?.getAttribute('charset'), 'UTF-8');
+assert.equal(document.querySelector('head > meta')?.getAttribute('charset'), 'UTF-8');
 ```
 
 # --seed--
