@@ -1,6 +1,6 @@
 import Prism from 'prismjs';
 import React, { useRef, useEffect } from 'react';
-import CopyElementTextButton from './CopyElementTextButton';
+import CopyElementTextButton from './copy-element-text-button';
 
 interface PrismFormattedProps {
   className?: string;
