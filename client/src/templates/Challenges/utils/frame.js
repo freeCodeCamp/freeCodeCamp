@@ -61,9 +61,12 @@ export const runTestInTestFrame = async function (document, test, timeout) {
   ]);
 };
 
-const createFrame = (document, id) => ctx => {
+const createFrame = (document, id, title) => ctx => {
   const frame = document.createElement('iframe');
   frame.id = id;
+  if (typeof title === 'string') {
+    frame.title = title;
+  }
   return {
     ...ctx,
     element: frame
@@ -182,17 +185,38 @@ const writeContentToFrame = ctx => {
 };
 
 export const createMainPreviewFramer = (document, proxyLogger) =>
-  createFramer(document, mainPreviewId, initMainFrame, proxyLogger);
+  createFramer(
+    document,
+    mainPreviewId,
+    initMainFrame,
+    proxyLogger,
+    undefined,
+    'previewer'
+  );
 
 export const createProjectPreviewFramer = document =>
-  createFramer(document, projectPreviewId, initPreviewFrame);
+  createFramer(
+    document,
+    projectPreviewId,
+    initPreviewFrame,
+    undefined,
+    undefined,
+    'project preview'
+  );
 
 export const createTestFramer = (document, proxyLogger, frameReady) =>
   createFramer(document, testId, initTestFrame, proxyLogger, frameReady);
 
-const createFramer = (document, id, init, proxyLogger, frameReady) =>
+const createFramer = (
+  document,
+  id,
+  init,
+  proxyLogger,
+  frameReady,
+  frameTitle
+) =>
   flow(
-    createFrame(document, id),
+    createFrame(document, id, frameTitle),
     mountFrame(document, id),
     buildProxyConsole(proxyLogger),
     writeContentToFrame,
