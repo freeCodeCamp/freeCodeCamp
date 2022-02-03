@@ -7,7 +7,7 @@ isPrivate: true
 tests:
   - 
     id: 5f1a4ef5d5d6b5ab580fc6ae
-    title: Base de Datos de Cuerpos Celestes
+    title: Base de datos de Cuerpos Celestes
   - 
     id: 5f9771307d4d22b9d2b75a94
     title: Base de datos de la Copa del Mundo
