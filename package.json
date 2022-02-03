@@ -101,7 +101,7 @@
     "invariant": "2.2.4"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.16.5",
+    "@babel/eslint-parser": "7.17.0",
     "@babel/plugin-proposal-function-bind": "7.16.7",
     "@babel/preset-env": "7.16.11",
     "@babel/preset-react": "7.16.7",
