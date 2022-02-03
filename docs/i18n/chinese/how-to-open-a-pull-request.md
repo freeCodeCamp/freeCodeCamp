@@ -44,7 +44,7 @@ Some examples of good PRs titles would be:
 
 1. Once the edits have been committed, you will be prompted to create a pull request on your fork's GitHub Page.
 
-   ![Image - Compare pull request prompt on GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
+   ![Image - Compare & pull request prompt on GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
 
 2. By default, all pull requests should be against the freeCodeCamp main repo, `main` branch.
 

@@ -1,138 +1,138 @@
-Follow these guidelines for setting up freeCodeCamp locally on your system. This is highly recommended if you want to contribute regularly.
+これらのガイドラインに従い、ローカルシステム上に freeCodeCamp を設定してください。 定期的に貢献したい場合に、強くお勧めします。
 
-Some of these contribution workflows – like fixing bugs in the codebase or curriculum – need you to run freeCodeCamp locally on your computer.
+コードベースやカリキュラムのバグを修正するなど、コントリビューションワークフローの中には、ローカルコンピュータ上で freeCodeCamp を実行する必要があるものがあります。
 
-> [!TIP] If you are not interested in setting up freeCodeCamp locally, consider using Gitpod, a free online dev environment.
+> [!TIP] freeCodeCamp のローカル設定に興味がない場合は、無料のオンライン開発環境である Gitpod の使用を検討してください。
 > 
-> [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+> [![Gitpod で開く](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 > 
-> (Starts a ready-to-code dev environment for freeCodeCamp in your browser.)
+> (ブラウザで freeCodeCamp のコーディング開発準備ができている環境を起動します。)
 
-### How to prepare your local machine
+### ローカルマシンを準備する方法
 
-Start by installing the prerequisite software for your operating system.
+お使いのオペレーティングシステムの必須ソフトウェアをインストールすることから始めます。
 
-We primarily support development on Linux and Unix-based systems. Our staff and community contributors regularly work with the codebase using tools installed on Ubuntu and macOS.
+私たちは、Linux または Unix ベースのシステムでの開発を主にサポートしています。 スタッフとコミュニティのコントリビューターは、Ubuntu と macOS にインストールされているツールを使用して、定期的にコードベースの作業をしています。
 
-We also support Windows 10 via WSL2, which you can prepare by [reading this guide](how-to-setup-wsl.md).
+また、WSL2 を介した Windows 10 をサポートしており、[ガイド](how-to-setup-wsl.md) を読んで準備することができます。
 
-Some community members also develop on Windows 10 natively with Git for Windows (Git Bash), and other tools installed on Windows. We do not have official support for such a setup at this time, we recommend using WSL2 instead.
+コミュニティメンバーの中には、Git for Windows (Git Bash) や Windows にインストールされている他のツールを使用して、Windows 10でネイティブに開発する人もいます。 We do not have official support for such a setup at this time, we recommend using WSL2 instead.
 
-#### Prerequisites:
+#### 必要条件:
 
-| Prerequisite                                                                                  | Version | Notes                                                                                       |
-| --------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------- |
-| [Node.js](http://nodejs.org)                                                                  | `16.x`  | We use the "Active LTS" version, See [LTS Schedule](https://nodejs.org/en/about/releases/). |
-| npm (comes bundled with Node)                                                                 | `8.x`   | We use the version bundled with Node.js Active LTS.                                         |
-| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `4.0.x` | -                                                                                           |
+| 必要条件                                                                                    | バージョン   | 注記                                                                                       |
+| --------------------------------------------------------------------------------------- | ------- | ---------------------------------------------------------------------------------------- |
+| [Node.js](http://nodejs.org)                                                            | `16.x`  | 「Active LTS」バージョンを使用しています。[LTS スケジュール](https://nodejs.org/en/about/releases/) を参照してください。 |
+| npm (Nodeにバンドル)                                                                         | `8.x`   | Node.js Active LTS にバンドルされたバージョンを使用します。                                                  |
+| [MongoDB コミュニティサーバー](https://docs.mongodb.com/manual/administration/install-community/) | `4.0.x` | -                                                                                        |
 
-> [!ATTENTION] If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See [troubleshooting](#troubleshooting) for details.
+> [!ATTENTION] 異なるバージョンの場合は、推奨バージョンをインストールしてください。 推奨バージョンのインストールに関する問題のみサポートできます。 詳細は [troubleshooting](#troubleshooting) を参照してください。
 
-If Node.js is already installed on your machine, run the following commands to validate the versions:
+Node.js がすでにマシンにインストールされている場合、以下のコマンドを実行してバージョンを検証します。
 
 ```console
 node -v
 npm -v
 ```
 
-> [!TIP] We highly recommend updating to the latest stable releases of the software listed above, also known as Long Term Support (LTS) releases.
+> [!TIP] 長期サポート (LTS) リリースとも呼ばれる、上記の安定版の最新リリースにアップデートすることを強くお勧めします。
 
-Once you have the prerequisites installed, you need to prepare your development environment. This is common for many development workflows, and you will only need to do this once.
+必要条件をインストールしたら、開発環境を準備します。 これは多くの開発ワークフローに共通しており、一度だけこれを行う必要があります。
 
-##### Follow these steps to get your development environment ready:
+##### 以下の手順に従って、開発環境を準備してください。
 
-1. Install [Git](https://git-scm.com/) or your favorite Git client, if you haven't already. Update to the latest version; the version that came bundled with your OS may be outdated.
+1. インストール済みでない場合は、[Git](https://git-scm.com/) またはお気に入りの Git クライアントをインストールしてください。 最新バージョンにアップデートしてください。お使いの OS にバンドルされているバージョンが古い可能性があります。
 
-2. (Optional but recommended) [Set up an SSH Key](https://help.github.com/articles/generating-an-ssh-key/) for GitHub.
+2. (任意ですが推奨) GitHub 用の [SSH キーを設定](https://help.github.com/articles/generating-an-ssh-key/) します。
 
-3. Install a code editor of your choice.
+3. 選択したコードエディタをインストールします。
 
-   We highly recommend using [Visual Studio Code](https://code.visualstudio.com/) or [Atom](https://atom.io/). These are great, free and open source code editors.
+   [Visual Studio Code](https://code.visualstudio.com/) または [Atom](https://atom.io/) の使用を強くお勧めします。 これらは優れた、無料のオープンソースコードエディタです。
 
-4. Set up linting for your code editor.
+4. コードエディターのリンティングを設定します。
 
-   You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything that doesn't conform to [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
+   [エディターでの ESLint 実行](http://eslint.org/docs/user-guide/integrations.html) を入手してください。[freeCodeCamp の JavaScript スタイルガイド](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121) に準拠していないものを強調表示できます。
 
-   > [!TIP] Please do not ignore any linting errors. They are meant to **help** you and to ensure a clean and simple codebase.
+   > [!TIP] リンティングエラーを無視しないでください。 これらは **サポート** し、クリーンでシンプルなコードベースを確保するためのものです。
 
-## Fork the repository on GitHub
+## GitHub でリポジトリをフォークする
 
-[Forking](https://help.github.com/articles/about-forks/) is a step where you get your own copy of freeCodeCamp's main repository (a.k.a _repo_) on GitHub.
+[フォーク](https://help.github.com/articles/about-forks/) とは Github 上に freeCodeCamp メインリポジトリ (別名 _repo_) のコピーを自分用に用意するステップです。
 
-This is essential, as it allows you to work on your own copy of freeCodeCamp on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request (PR).
+これは、GitHub 上の freeCodeCamp のコピーで作業できるようにするために、またリポジトリをダウンロード (クローン) しローカルで作業するために不可欠です。 後で、プルリクエスト (PR) を介して、フォークからメインリポジトリにプルされるように変更をリクエストできます。
 
-> [!TIP] The main repository at `https://github.com/freeCodeCamp/freeCodeCamp` is often referred to as the `upstream` repository.
+> [!TIP] `https://github.com/freeCodeCamp/freeCodeCamp` のメインリポジトリは、よく `upstream` リポジトリと呼ばれます。
 > 
-> Your fork at `https://github.com/YOUR_USER_NAME/freeCodeCamp` is often referred to as the `origin` repository. `YOUR_USER_NAME` would be replaced with your GitHub username.
+> `https://github.com/YOUR_USER_NAME/freeCodeCamp` のフォークは、しばしば `origin` リポジトリと呼ばれます。 `YOUR_USER_NAME` は、GitHub のユーザーネームに置き換えられます。
 
-**Follow these steps to fork the `https://github.com/freeCodeCamp/freeCodeCamp` repository:**
+**以下の手順に従って `https://github.com/freeCodeCamp/freeCodeCamp` リポジトリをフォークします。**
 
-1. Go to the freeCodeCamp repository on GitHub: <https://github.com/freeCodeCamp/freeCodeCamp>
+1. GitHub 上の freeCodeCamp リポジトリに移動します。<https://github.com/freeCodeCamp/freeCodeCamp>
 
-2. Click the "Fork" Button in the upper right-hand corner of the interface ([More Details Here](https://help.github.com/articles/fork-a-repo/))
+2. インターフェースの右上隅にある「フォーク」ボタンをクリックします ([詳細はこちら](https://help.github.com/articles/fork-a-repo/))。
 
-3. After the repository has been forked, you will be taken to your copy of the freeCodeCamp repository at `https://github.com/YOUR_USER_NAME/freeCodeCamp` (`YOUR_USER_NAME` would be replaced with your GitHub user name.)
+3. リポジトリをフォークすると、freeCodeCamp リポジトリのコピーである `https://github.com/YOUR_USER_NAME/freeCodeCamp` に移動することになります (`YOUR_USER_NAME` は GitHub のユーザーネームに置き換えられます)。
 
 <details>
    <summary>
-      How to fork freeCodeCamp on GitHub (screenshot)
+      GitHub で freeCodeCamp をフォークする方法 (スクリーンショット)
    </summary>
 
    <br>
-   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="How to fork freeCodeCamp on GitHub" />
+   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="GitHub で freeCodeCamp をフォークする方法" />
 </details>
 
-## Clone your fork from GitHub
+## GitHub からフォークのクローンを作る
 
-[Cloning](https://help.github.com/articles/cloning-a-repository/) is where you **download** a copy of a repository from a `remote` location that is either owned by you or by someone else. In your case, this remote location is your `fork` of freeCodeCamp's repository that should be available at `https://github.com/YOUR_USER_NAME/freeCodeCamp`. (`YOUR_USER_NAME` would be replaced with your GitHub user name.)
+[クローン作成](https://help.github.com/articles/cloning-a-repository/) とは、自分または他の誰かが所有しているリポジトリのコピーを、`remote` の場所から **ダウンロード** することです。 自分の場合は、この remote の場所は freeCodeCamp のリポジトリの `fork`で、`https://github.com/YOUR_USER_NAME/freeCodeCamp` で入手可能です。 `YOUR_USER_NAME` は、GitHub のユーザーネームに置き換えられます。
 
-> [!WARNING] If you are working on a WSL2 Linux Distro, you might get performance and stability issues by running this project in a folder which is shared between Windows and WSL2 (e.g. `/mnt/c/Users/`). Therefore we recommend to clone this repo into a folder which is mainly used by your WSL2 Linux Distro and not directly shared with Windows (e.g. `~/PROJECTS/`).
+> [!WARNING] WSL2 Linux Distro上で作業している場合、Windows と WSL2 の間で共有されているフォルダ内でこのプロジェクトを動作させることで、性能と安定性の Issue が発生するかもしれません (例えば `/mnt/c/Users/`)。 したがって、このリポジトリを、Windows と直接共有するフォルダではなく、主に自分の WSL2 Linux Distro で使用するフォルダに、クローンを作成することをお勧めします (例: `~/PROJECTS/`)。
 > 
-> See [this GitHub Issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/40632) for further Information about this problem.
+> この問題の詳細については、 [GitHub Issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/40632) を参照してください。
 
-Run these commands on your local machine:
+以下のコマンドをローカルマシンで実行します。
 
-1. Open a Terminal / Command Prompt / Shell in your projects directory
+1. Terminal / Command Prompt / Shell をプロジェクトディレクトリで開きます。
 
-   _i.e.: `/yourprojectsdirectory/`_
+   _例: `/yourprojectsdirectory/`_
 
-2. Clone your fork of freeCodeCamp, replacing `YOUR_USER_NAME` with your GitHub Username
+2. `YOUR_USER_NAME` を GitHub のユーザーネームに置き換えて、freeCodeCamp のフォークのクローンを作成します。
 
    ```console
    git clone --depth=1 https://github.com/YOUR_USER_NAME/freeCodeCamp.git
    ```
 
-This will download the entire freeCodeCamp repository to your projects directory.
+これで、freeCodeCamp リポジトリ全体がプロジェクトディレクトリにダウンロードされます。
 
-Note: `--depth=1` creates a shallow clone of your fork, with only the most recent history/commit.
+注: `--depth=1` は、最新の履歴 / コミットのみでフォークのシャロ―クローンを作成します。
 
-## Set up syncing from parent
+## 親からの同期を設定する
 
-Now that you have downloaded a copy of your fork, you will need to set up an `upstream` remote to the parent repository.
+フォークのコピーをダウンロードしたので、親リポジトリに `upstream` リモートを設定する必要があります。
 
-[As mentioned earlier](#fork-the-repository-on-github), the main repository is referred `upstream` repository. Your fork referred to as the `origin` repository.
+[前述](#fork-the-repository-on-github) のように、メインリポジトリは `upstream` リポジトリと呼ばれています。 自身のフォークは `origin` リポジトリと呼ばれています。
 
-You need a reference from your local clone to the `upstream` repository in addition to the `origin` repository. This is so that you can sync changes from the main repository without the requirement of forking and cloning repeatedly.
+`origin` リポジトリに加えて、ローカルクローンから `upstream` リポジトリへの参照が必要です。 これは、フォークやクローンを繰り返し行うことなく、メインリポジトリからの変更を同期できるようにするためです。
 
-1. Change directory to the new freeCodeCamp directory:
+1. ディレクトリを新しい freeCodeCamp ディレクトリに変更します。
 
    ```console
    cd freeCodeCamp
    ```
 
-2. Add a remote reference to the main freeCodeCamp repository:
+2. メインの freeCodeCamp リポジトリへのリモート参照を追加します。
 
    ```console
    git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git
    ```
 
-3. Ensure the configuration looks correct:
+3. 設定が正しいことを確認します。
 
    ```console
    git remote -v
    ```
 
-   The output should look something like below (replacing `YOUR_USER_NAME` with your GitHub username):
+   出力は以下のようになります (`YOUR_USER_NAME` を GitHub ユーザ名に置き換えます)。
 
    ```console
    origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
@@ -141,33 +141,33 @@ You need a reference from your local clone to the `upstream` repository in addit
    upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (push)
    ```
 
-## Running freeCodeCamp locally
+## freeCodeCamp をローカルで実行する
 
-Now that you have a local copy of freeCodeCamp, you can follow these instructions to run it locally. This will allow you to:
+freeCodeCamp のローカルコピーができたので、これらの指示に従ってローカルで実行することが可能です。 これによって次のことができるようになります。
 
-- Preview edits to pages as they would appear on the learning platform.
-- Work on UI related issues and enhancements.
-- Debug and fix issues with the application servers and client apps.
+- 学習プラットフォーム上に表示されるページへの編集をプレビューする。
+- UI関連の Issue と機能強化に取り組む。
+- アプリケーションサーバーとクライアントアプリの Issue をデバッグして修正する。
 
-If you do run into issues, first perform a web search for your issue and see if it has already been answered. If you cannot find a solution, please search our [GitHub issues](https://github.com/freeCodeCamp/freeCodeCamp/issues) page for a solution and report the issue if it has not yet been reported.
+問題が発生した場合は、まず Web 検索を実行し、すでに解決済みであるかどうかを確認します。 解決策が見つからない場合、[GitHub Issue](https://github.com/freeCodeCamp/freeCodeCamp/issues) ページを検索し、まだ報告されていない Issue を報告してください。
 
-And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our chat server](https://chat.freecodecamp.org/home).
+そして、[フォーラムの「Contributors」カテゴリ](https://forum.freecodecamp.org/c/contributors) または [チャットサーバー](https://chat.freecodecamp.org/home) へいつでもお気軽にお問い合わせください。
 
-> [!TIP] You may skip running freeCodeCamp locally if you are simply editing files. For instance, performing a `rebase`, or resolving `merge` conflicts.
+> [!TIP] ファイルを編集するだけの場合は、freeCodeCamp のローカルでの実行をスキップしてもかまいません。 例えば、`rebase` の実行や、`merge` の競合の解決です。
 > 
-> You can always return to this part of the instructions later. You should **only** skip this step if you do not need to run the apps on your machine.
+> 後からいつでもこちらの手順に戻ることができます。 自分のマシンでアプリを実行する必要がない場合は、このステップ **のみ** スキップしてください。
 > 
-> [Skip to making changes](#making-changes-locally).
+> [変更を加えるへスキップ](#making-changes-locally) します。
 
-### Configuring dependencies
+### 依存関係を設定する
 
-#### Step 1: Set up the environment variable file
+#### ステップ 1: 環境変数ファイルを設定する
 
-The default API keys and environment variables are stored in the file `sample.env`. This file needs to be copied to a new file named `.env` that is accessed dynamically during the installation step.
+デフォルトの API キーと環境変数は、`sample.env` ファイルの中に格納されています。 このファイルは、インストールの段階で動的にアクセスされる `.env` という名前の新しいファイルにコピーする必要があります。
 
 ```console
-# Create a copy of the "sample.env" and name it ".env".
-# Populate it with the necessary API keys and secrets:
+# "sample.env" のコピーを作成し、".env" という名前を付けます。
+# 必要な API キーとシークレットを追加します。
 ```
 
 <!-- tabs:start -->
@@ -186,25 +186,25 @@ copy sample.env .env
 
 <!-- tabs:end -->
 
-The keys in the `.env` file are _not_ required to be changed to run the app locally. You can leave the default values copied over from `sample.env` as-is.
+`.env` ファイル内のキーは、ローカルでアプリを動作させるのであれば、変更する必要は _ありません_。 `sample.env` からコピーされたデフォルト値をそのままにしておくことができます。
 
-> [!TIP] Keep in mind if you want to use services like Auth0 or Algolia, you'll have to acquire your own API keys for those services and edit the entries accordingly in the `.env` file.
+> [!TIP] Auth0 または Algolia のようなサービスを使用する場合は、これらのサービスのために自分の API キーを取得し、`.env` ファイル内で項目を編集する必要があります。
 
-#### Step 2: Install dependencies
+#### ステップ 2: 依存関係をインストールする
 
-This step will install the dependencies required for the application to run:
+このステップで、アプリケーションを動作させるために必要な依存関係をインストールします。
 
 ```console
 npm ci
 ```
 
-#### Step 3: Start MongoDB and seed the database
+#### ステップ 3: MongoDBを起動し、データベースをシードする
 
-Before you can run the application locally, you will need to start the MongoDB service.
+ローカルでアプリケーションを実行できるようにする前に、MongoDB サービスを開始する必要があります。
 
-> [!NOTE] Unless you have MongoDB running in a setup different than the default, the URL stored as the `MONGOHQ_URL` value in the `.env` file should work fine. If you are using a custom configuration, modify this value as needed.
+> [!NOTE] デフォルトと異なった設定で MongoDB を動作させない限りは、`.env` ファイル内に `MONGOHQ_URL` の値として格納された URL はうまく機能するはずです。 カスタム設定を使用している場合は、必要に応じてこの値を変更します。
 
-Start the MongoDB server in a separate terminal:
+別のターミナルで MongoDB サーバーを起動します。
 
   <!-- tabs:start -->
 
@@ -216,7 +216,7 @@ mongod
 
 #### **Windows**
 
-- On Windows, you must specify the full path to the `mongod` binary
+- Windows では、`mongod` バイナリへの完全なパスを指定する必要があります。
 
 ```console
 "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
@@ -224,62 +224,62 @@ mongod
 
   <!-- tabs:end -->
 
-Make sure to replace `3.6` with the version you have installed
+必ず `3.6` をインストールしたバージョンに置き換えてください。
 
-> [!TIP] You can avoid having to start MongoDB every time by installing it as a background service. You can [learn more about it in their documentation for your OS](https://docs.mongodb.com/manual/administration/install-community/)
+> [!TIP] MongoDBをバックグラウンドサービスとしてインストールすることで、毎回起動する必要がなくなります。 [お使いのOSに関するドキュメント](https://docs.mongodb.com/manual/administration/install-community/) で詳細を確認できます。
 
-Next, let's seed the database. In this step, we run the below command that fills the MongoDB server with some initial data sets that are required by services. These include a few schemas, among other things.
+次に、データベースをシードします。 このステップでは、サービスに必要な初期データセットを MongoDB サーバーに入れる以下のコマンドを実行します。 これらはいくつかのスキーマを含みます。
 
 ```console
 npm run seed
 ```
 
-#### Step 4: Start the freeCodeCamp client application and API server
+#### ステップ 4: freeCodeCamp クライアントアプリケーションと API サーバーを起動する
 
-You can now start up the API server and the client applications.
+API サーバーとクライアントアプリケーションを起動できるようになりました。
 
 ```console
 npm run develop
 ```
 
-This single command will fire up all the services, including the API server and the client applications available for you to work on.
+この単一コマンドは、APIサーバーや利用可能なクライアントアプリケーションを含むすべてのサービスを起動します。
 
-> [!NOTE] Once ready, open a web browser and **visit <http://localhost:8000>**. If the app loads, congratulations – you're all set! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
+> [!TIP] 準備が整ったら、Web ブラウザを開いて **<http://localhost:8000>** をご覧ください。 アプリがロードされたとしたら、すべての準備ができているということです。おめでとうございます！ これで、freeCodeCamp の学習プラットフォーム全体のコピーがローカルマシン上で実行されます。
 
-> [!TIP] The API Server serves APIs at `http://localhost:3000`. The Gatsby app serves the client application at `http://localhost:8000`
+> [!TIP] API サーバーは、API を `http://localhost:3000` で提供します。 Gatsby アプリは、クライアントアプリケーションを `http://localhost:8000` で提供します
 
-> If you visit <http://localhost:3000/explorer> you should see the available APIs.
+> <http://localhost:3000/explorer> にアクセスすると、利用可能な API が表示されます。
 
-## Sign in with a local user
+## ローカルユーザーでサインインする
 
-Your local setup automatically populates a local user in the database. Clicking the `Sign In` button will automatically authenticate you into the local application.
+ローカル設定では自動的にデータベース内にローカルユーザーを追加します。 `Sign In` ボタンをクリックすると、ローカルアプリケーションへの認証が自動的に行われます。
 
-However, accessing the user portfolio page is a little tricky. In development, Gatsby takes over serving the client-side pages and hence you will get a `404` page for the user portfolio when working locally.
+ただし、ユーザーポートフォリオページにアクセスするのは少し難しいです。 開発中 Gatsby は、クライアント側のページにサービスを引き継ぎ、ローカルで作業する際に、ユーザーポートフォリオの `404` ページを取得します。
 
-Simply clicking the **"Preview Custom 404 Page"** button will forward you to the correct page.
+**「Preview Custom 404 Page」** ボタンをクリックするだけで、正しいページに移動します。
 
 <details>
    <summary>
-      How to sign in when working locally (screenshot)
+      ローカル作業時のサインイン方法 (スクリーンショット)
    </summary>
 
    <br>
-   <img src="https://user-images.githubusercontent.com/29990697/71541249-f63cdf00-2923-11ea-8a85-cefb6f9c9977.gif" alt="How to sign in when working locally" />
+   <img src="https://user-images.githubusercontent.com/29990697/71541249-f63cdf00-2923-11ea-8a85-cefb6f9c9977.gif" alt="ローカルで作業している時にサインインする方法" />
 </details>
 
-## Making changes locally
+## ローカルで変更を行う
 
-You can now make changes to files and commit your changes to your local clone of your fork.
+ファイルに変更を加え、フォークのローカルクローンに変更を反映できるようになりました。
 
-Follow these steps:
+以下の手順に従ってください。
 
-1. Validate that you are on the `main` branch:
+1. `main` ブランチにいることを確認します。
 
    ```console
    git status
    ```
 
-   You should get an output like this:
+   次のような出力になるはずです。
 
    ```console
    On branch main
@@ -288,59 +288,59 @@ Follow these steps:
    nothing to commit, working directory clean
    ```
 
-   If you are not on main or your working directory is not clean, resolve any outstanding files/commits and checkout `main`:
+   main にいない場合や作業ディレクトリがクリーンでない場合は、未処理のファイル / コミットを処理し、`main`をチェックアウトします。
 
    ```console
    git checkout main
    ```
 
-2. Sync the latest changes from the freeCodeCamp upstream `main` branch to your local main branch:
+2. freeCodeCamp の upstream `main` ブランチからローカルの main ブランチへと最新の変更を同期させます。
 
-   > [!WARNING] If you have any outstanding pull request that you made from the `main` branch of your fork, you will lose them at the end of this step.
+   > [!WARNING] フォークの `main` ブランチから行った未処理のプルリクエストがある場合は、このステップの最後にそれらを失うことになります。
    > 
-   > You should ensure your pull request is merged by a moderator before performing this step. To avoid this scenario, you should **always** work on a branch other than the `main`.
+   > このステップを実行する前に、プルリクエストがモデレータによってマージされていることを確認します。 このシナリオを回避するには、**常に** `main` 以外のブランチで作業する必要があります。
 
-   This step **will sync the latest changes** from the main repository of freeCodeCamp. It is important that you rebase your branch on top of the latest `upstream/main` as often as possible to avoid conflicts later.
+   このステップで、freeCodeCamp の main リポジトリからの **最新の変更を同期** させます。 競合を回避するために、できるだけ頻繁に最新の `upstream/main` の上に、自分のブランチをリベースすることが重要です。
 
-   Update your local copy of the freeCodeCamp upstream repository:
+   freeCodeCamp upstream リポジトリのローカルコピーを更新します。
 
    ```console
    git fetch upstream
    ```
 
-   Hard reset your main branch with the freeCodeCamp main:
+   freeCodeCamp main で main ブランチをハードリセットします。
 
    ```console
    git reset --hard upstream/main
    ```
 
-   Push your main branch to your origin to have a clean history on your fork on GitHub:
+   GitHub 上のフォークにクリーンな履歴を表示するには、main ブランチを origin にプッシュします。
 
    ```console
    git push origin main --force
    ```
 
-   You can validate your current main matches the upstream/main by performing a diff:
+   diff を実行することにより、現在の main が upstream/main と一致することを確認できます。
 
    ```console
    git diff upstream/main
    ```
 
-   The resulting output should be empty.
+   出力結果は空になるはずです。
 
-3. Create a fresh new branch:
+3. 新しいブランチを作成します。
 
-   Working on a separate branch for each issue helps you keep your local work copy clean. You should never work on the `main`. This will soil your copy of freeCodeCamp and you may have to start over with a fresh clone or fork.
+   それぞれの Issue に対して別のブランチで作業することは、ローカル作業のコピーをクリーンに保つのに役立ちます。 `main` では作業しないでください。 これは freeCodeCamp の自分のコピーを汚してしまい、新たなクローンやフォークからやり直さなくてはならない可能性があります。
 
-   Check that you are on `main` as explained previously, and branch off from there:
+   前述したように `main` にいることを確認して、そこからブランチに進んでください。
 
    ```console
    git checkout -b fix/update-guide-for-xyz
    ```
 
-   Your branch name should start with a `fix/`, `feat/`, `docs/`, etc. Avoid using issue numbers in branches. Keep them short, meaningful and unique.
+   ブランチ名は `fix/`、 `feat/`、 `docs/`などで始まる必要があります。 ブランチ内で Issue 番号の使用は避けてください。 短く、意味のあり、固有な名前にします。
 
-   Some examples of good branch names are:
+   適切なブランチ名の例は、次のとおりです。
 
    ```md
    fix/update-challenges-for-react
@@ -350,19 +350,19 @@ Follow these steps:
    translate/add-spanish-basic-html
    ```
 
-4. Edit pages and work on code in your favorite text editor.
+4. ページを編集し、お気に入りのテキストエディタでコードを作成します。
 
-5. Once you are happy with the changes you should optionally run freeCodeCamp locally to preview the changes.
+5. 満足のいく変更が完成したら、必要に応じて freeCodeCamp をローカルで実行して変更をプレビューします。
 
-6. Make sure you fix any errors and check the formatting of your changes.
+6. エラーを修正し、変更のフォーマットを確認してください。
 
-7. Check and confirm the files you are updating:
+7. アップデートするファイルを確認します。
 
    ```console
    git status
    ```
 
-   This should show a list of `unstaged` files that you have edited.
+   編集した `unstaged` のファイルリストが表示されます。
 
    ```console
    On branch feat/documentation
@@ -379,27 +379,27 @@ Follow these steps:
    ...
    ```
 
-8. Stage the changes and make a commit:
+8. 変更をステージし、コミットします。
 
-   In this step, you should only mark files that you have edited or added yourself. You can perform a reset and resolve files that you did not intend to change if needed.
+   このステップでは、自分で編集または追加したファイルのみをマークする必要があります。 必要に応じて、変更するつもりではなかったファイルを、リセットして解決できます。
 
    ```console
    git add path/to/my/changed/file.ext
    ```
 
-   Or you can add all the `unstaged` files to the staging area:
+   `unstaged` のファイルをすべて、ステージングエリアに追加することもできます。
 
    ```console
    git add .
    ```
 
-   Only the files that were moved to the staging area will be added when you make a commit.
+   ステージングエリアに移されたファイルのみが、コミットを行うときに追加されます。
 
    ```console
    git status
    ```
 
-   Output:
+   出力:
 
    ```console
    On branch feat/documentation
@@ -414,24 +414,24 @@ Follow these steps:
        modified:   docs/how-to-work-on-guide-articles.md
    ```
 
-   Now, you can commit your changes with a short message like so:
+   これで、次のような短いメッセージで変更をコミットできます。
 
    ```console
    git commit -m "fix: my short commit message"
    ```
 
-   Some examples:
+   例:
 
    ```md
    fix: update guide article for Java - for loop
    feat: add guide article for alexa skills
    ```
 
-   Optional:
+   オプション:
 
-   We highly recommend making a conventional commit message. This is a good practice that you will see on some of the popular Open Source repositories. As a developer, this encourages you to follow standard practices.
+   慣習的なコミットメッセージを作ることを強くお勧めします。 これは、人気のあるオープンソースリポジトリで見ることができる良い方法です。 開発者として、この標準的な慣行に従うことをお勧めします。
 
-   Some examples of conventional commit messages are:
+   従来のコミットメッセージの例は次のとおりです。
 
    ```md
    fix: update HTML guide article
@@ -440,67 +440,67 @@ Follow these steps:
    docs: update contributing guidelines
    ```
 
-   Keep these short, not more than 50 characters. You can always add additional information in the description of the commit message.
+   50文字未満の短い文にします。 コミットメッセージの説明にいつでも追加の情報を加えることができます。
 
-   This does not take any additional time than an unconventional message like 'update file' or 'add index.md'
+   こうすることで、「updateファイル」や「add index.md」のような型破りなメッセージよりも時間がかかりません。
 
-   You can learn more about why you should use conventional commits [here](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
+   慣習的なコミットを使用すべき理由については、[こちら](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits) をご覧ください。
 
-9. If you realize that you need to edit a file or update the commit message after making a commit you can do so after editing the files with:
+9. コミットを行った後にファイルを編集したりコミットメッセージを更新する必要があることに気づいた場合は、以下のようにファイルを編集できます。
 
    ```console
    git commit --amend
    ```
 
-   This will open up a default text editor like `nano` or `vi` where you can edit the commit message title and add/edit the description.
+   これにより、`nano` や `vi` のようなデフォルトのテキストエディタが開き、コミットメッセージのタイトルを編集したり、説明を追加／編集したりすることができます。
 
-10. Next, you can push your changes to your fork:
+10. 次に、フォークに変更をプッシュできます。
 
     ```console
     git push origin branch/name-here
     ```
 
-## Proposing a Pull Request (PR)
+## プルリクエストを提案する (PR)
 
-After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
+変更をコミットし終えた後に、[プルリクエストを開く方法](how-to-open-a-pull-request.md) をここで確認してください。
 
-## Quick commands reference
+## クイックコマンドリファレンス
 
-A quick reference to the commands that you will need when working locally.
+ローカルで作業する時に必要なコマンドのクイックリファレンスです。
 
-| command                                                        | description                                                                         |
-| -------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `npm ci`                                                       | Installs / re-install all dependencies and bootstraps the different services.       |
-| `npm run seed`                                                 | Parses all the challenge markdown files and inserts them into MongoDB.              |
-| `npm run develop`                                              | Starts the freeCodeCamp API Server and Client Applications.                         |
-| `npm run storybook`                                            | Starts Storybook for component library development.                                 |
-| `npm test`                                                     | Run all JS tests in the system, including client, server, lint and challenge tests. |
-| `npm run test-client`                                          | Run the client test suite.                                                          |
-| `npm run test:curriculum`                                      | Run the curriculum test suite.                                                      |
-| `npm run test:curriculum --block='Basic HTML and HTML5'`       | Test a specific Block.                                                              |
-| `npm run test:curriculum --superblock='responsive-web-design'` | Test a specific SuperBlock.                                                         |
-| `npm run test-curriculum-full-output`                          | Run the curriculum test suite, without bailing after the first error                |
-| `npm run test-server`                                          | Run the server test suite.                                                          |
-| `npm run e2e`                                                  | Run the Cypress end to end tests.                                                   |
-| `npm run clean`                                                | Uninstalls all dependencies and cleans up caches.                                   |
+| コマンド                                                           | 説明                                                    |
+| -------------------------------------------------------------- | ----------------------------------------------------- |
+| `npm ci`                                                       | すべての依存関係をインストール/再インストールし、異なるサービスをブートストラップします。         |
+| `npm run seed`                                                 | すべてのチャレンジのマークダウンファイルを解析し、MongoDB に挿入します。              |
+| `npm run develop`                                              | freeCodeCamp の API サーバーとクライアントアプリケーションを起動します。         |
+| `npm run storybook`                                            | コンポーネントライブラリ開発のためのストーリーブックを起動します。                     |
+| `npm test`                                                     | クライアント、サーバー、lint、チャレンジテストを含むシステム内で、すべての JS テストを実行します。 |
+| `npm run test-client`                                          | クライアントテストスイートを実行します。                                  |
+| `npm run test:curriculum`                                      | カリキュラムテストスイートを実行します。                                  |
+| `npm run test:curriculum --block='Basic HTML and HTML5'`       | 特定のブロックをテストします。                                       |
+| `npm run test:curriculum --superblock='responsive-web-design'` | 特定のスーパーブロックをテストします。                                   |
+| `npm run test-curriculum-full-output`                          | 最初のエラーが発生した後、終了せずにカリキュラムテストスイートを実行します。                |
+| `npm run test-server`                                          | サーバーテストスイートを実行します。                                    |
+| `npm run e2e`                                                  | Cypress エンドツーエンドテストを実行します。                            |
+| `npm run clean`                                                | すべての依存関係をアンインストールして、キャッシュをクリーンアップします。                 |
 
-## Troubleshooting
+## トラブルシューティング
 
-### Issues with installing the recommended prerequisites
+### 推奨される必要条件をインストールする際の問題
 
-We regularly develop on the latest or most popular operating systems like macOS 10.15 or later, Ubuntu 18.04 or later, and Windows 10 (with WSL2).
+通常 macOS 10.15 以降、Ubuntu 18.04 以降、Windows 10 (WSL2) のような、最新または最も一般的なオペレーティングシステムで開発しています。
 
-It is recommended to research your specific issue on resources such as Google, Stack Overflow, and Stack Exchange. There is a good chance that someone has faced the same issue and there is already an answer to your specific query.
+Google、Stack Overflow、Stack Exchange などのリソースに関する特定の問題を調べることをお勧めします。 誰かが同じ問題に直面していて、すでに具体的な質問に対する回答が存在する可能性があります。
 
-If you are on a different OS and/or are still running into issues, see [getting help](#getting-help).
+別の OS をお使いの場合や問題が解決しない場合は、[ヘルプ](#getting-help) を参照してください。
 
 > [!WARNING]
 > 
-> Please avoid creating GitHub issues for prerequisite issues. They are out of the scope of this project.
+> 必要条件の問題のために GitHub issue を作成しないでください。 それらはこのプロジェクトの範囲外です。
 
-### Issues with the UI, Fonts, build errors, etc.
+### UI、フォント、ビルドエラーなどに関する問題
 
-If you face issues with the UI, Fonts or see builds errors a cleanup can be useful:
+UI やフォントに関する問題またはビルドエラーには、クリーンアップが役立ちます。
 
 ```console
 npm run clean
@@ -509,17 +509,17 @@ npm run seed
 npm run develop
 ```
 
-OR
+もしくは
 
-Use the shortcut
+ショートカットを使用することもできます。
 
 ```
 npm run clean-and-develop
 ```
 
-If you continue to face issues with the build, cleaning up the workspace is recommend.
+それでも、ビルドに関する問題が解決しない場合は、ワークスペースのクリーンアップを推奨します。
 
-Use `git clean` in interactive mode:
+対話モードで `git clean` を使用してください。
 
 ```
 git clean -ifdX
@@ -527,20 +527,20 @@ git clean -ifdX
 
 <details>
    <summary>
-      How to clean git untracked files (screenshot)
+      追跡されていない git ファイルをクリーンアップする方法（スクリーンショット）
    </summary>
 
    <br>
-   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="How to clean git untracked files" />
+   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="追跡されていない git ファイルをクリーンアップする方法" />
 </details>
 
-### Issues with API, login, Challenge Submissions, etc.
+### API、ログイン、チャレンジ提出などに関する問題
 
-If you can't sign in, and instead you see a banner with an error message that it will be reported to freeCodeCamp, please double-check that your local port `3000` is not in use by a different program.
+サインインできず、「freeCodeCamp に報告されます」というエラーメッセージが表示される場合、ローカルポート `3000` が別のプログラムで使用されていないことを再確認してください。
 
 <!-- tabs:start -->
 
-#### **macOS/Linux/WSL on Windows - From Terminal:**
+#### **macOS／Linux／Windows 上の WSL - 端末から:**
 
 ```console
 netstat -a | grep "3000"
@@ -548,7 +548,7 @@ netstat -a | grep "3000"
 tcp4    0   0    0.0.0.0:3000           DESKTOP      LISTEN
 ```
 
-#### **On Windows - From Elevated PowerShell:**
+#### **Windows - 管理者権限で起動したパワーシェルから:**
 
 ```powershell
 netstat -ab | Select-String "3000"
@@ -562,14 +562,14 @@ TCP    0.0.0.0:3000           DESKTOP      LISTENING
 
 ### Issues installing dependencies
 
-If you get errors while installing the dependencies, please make sure that you are not in a restricted network or your firewall settings do not prevent you from accessing resources.
+依存関係のインストール中にエラーが発生した場合、ネットワークが制限されていないこと、またはファイアウォール設定でリソースへのアクセスが妨げられていないことを確認してください。
 
-The first time setup can take a while depending on your network bandwidth. Be patient, and if you are still stuck we recommend using GitPod instead of an offline setup.
+最初の設定では、ネットワーク帯域幅に応じて時間がかかることがあります。 それでも設定できない場合は、オフライン設定ではなく GitPod を使用することを推奨します。
 
-> [!NOTE] If you are using Apple Devices with M1 Chip to run the application locally, it is suggested to use Node v14.7 or above. You might run into issues with dependencies like Sharp otherwise.
+> [!NOTE] M1 チップのある Apple Devices を使用してアプリケーションをローカルで実行する場合は、Node v14.7 以上を使用することをお勧めします。 さもなければ、Sharp のような依存関係に関連する問題が発生する可能性があります
 
-## Getting Help
+## ヘルプ
 
-If you are stuck and need help, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/channel/contributors).
+問題がありサポートが必要な場合は、[フォーラムの「Contributors」カテゴリ](https://forum.freecodecamp.org/c/contributors) または [contributors チャットルーム](https://chat.freecodecamp.org/channel/contributors)でお気軽にお尋ねください。
 
-There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. Provide this error message in your problem description so others can more easily identify the issue and help you find a resolution.
+ブラウザのコンソールやBash／ターミナル／コマンドラインで、問題を特定するのに役立つエラーが表示されている可能性があります。 問題の説明にこのエラーメッセージを提供することで、他の人がより簡単に問題を特定し、解決策を見つけることができます。

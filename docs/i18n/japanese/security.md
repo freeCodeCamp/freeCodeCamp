@@ -1,46 +1,46 @@
-# Security Policy
+# セキュリティポリシー
 
-This document outlines our security policy for the codebases, platforms that we operate, and how to report vulnerabilities.
+このドキュメントでは、コードベース、運用プラットフォーム、および脆弱性の報告方法に関するセキュリティポリシーについて概説します。
 
-## Reporting a Vulnerability
+## 脆弱性の報告
 
-If you think you have found a vulnerability, _please report responsibly_. Don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
+脆弱性を発見したと思われる場合は、_責任を持って報告してください_。 セキュリティ問題のために GitHub Issue を作成しないでください。 その代わりに、`security@freecodecamp.org` にメールを送信してください。私たちが直ちに調査します。
 
-Ensure that you are using the **latest**, **stable** and **updated** version of the Operating System and Web Browser available to you on your machine.
+お使いのマシンで使用できるオペレーティングシステムとウェブブラウザの **最新**、**安定**、および **更新** バージョンを使用していることを確認してください。
 
-We appreciate any responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users.
+私たちのプラットフォームおよびユーザーの整合性に影響を与える可能性のある脆弱性について、責任ある開示をお願いします。
 
-Once you report a vulnerability, we will look into it and make sure that it is not a false positive. We will get back to you if we need to clarify any details. You can submit separate reports for each issue you find.
+脆弱性が報告されたら、それを調査し誤検知ではないことを確認します。 詳細を明確にする必要がある場合は、ご連絡いたします。 発見した各問題について個別にレポートを提出することができます。
 
-While we do not offer any bounties or swags at the moment, we'll be happy to list your name in our [Hall of Fame](https://contribute.freecodecamp.org/#/security-hall-of-fame) list, provided the reports are not low-effort.
+現時点ではいかなる報奨金も報酬も提供していませんが、その報告に多大なご尽力をいただいた場合、[殿堂入り](https://contribute.freecodecamp.org/#/security-hall-of-fame) リストにお名前を掲示します。
 
-We consider using tools & online utilities to report issues with SPF & DKIM configs, or SSL Server tests, etc. in the category of ["beg bounties"](https://www.troyhunt.com/beg-bounties/) and are unable to respond to these reports.
+私たちは、[「beg bounties」](https://www.troyhunt.com/beg-bounties/) カテゴリの SPF & DKIM 構成、または SSL サーバーテスト等に関する問題を報告するため、ツール & オンラインユーティリティを使用することを検討します。それらの報告に対して対応することはできません。
 
-## Platforms & Codebases
+## プラットフォーム & コードベース
 
-Here is a list of the platforms and codebases we are accepting reports for:
+報告を受け付けるプラットフォームとコードベースのリストは以下のとおりです。
 
-### Learn Platform
+### 学習プラットフォーム
 
-| Version     | Branch         | Supported | Website active           |
-| ----------- | -------------- | --------- | ------------------------ |
-| production  | `prod-current` | Yes       | `freecodecamp.org/learn` |
-| staging     | `prod-staging` | Yes       | `freecodecamp.dev/learn` |
-| development | `main`         | No        |                          |
+| バージョン  | ブランチ           | サポート | 有効な Web サイト              |
+| ------ | -------------- | ---- | ------------------------ |
+| 生産     | `prod-current` | 有    | `freecodecamp.org/learn` |
+| ステージング | `prod-staging` | 有    | `freecodecamp.dev/learn` |
+| 開発     | `main`         | 無    |                          |
 
-### Publication Platform
+### 公開プラットフォーム
 
-| Version    | Supported | Website active                           |
-| ---------- | --------- | ---------------------------------------- |
-| production | Yes       | `freecodecamp.org/news`                  |
-| localized  | Yes       | `freecodecamp.org/<language>/news` |
+| バージョン  | サポート | 有効な Web サイト                              |
+| ------ | ---- | ---------------------------------------- |
+| 生産     | 有    | `freecodecamp.org/news`                  |
+| ローカライズ | 有    | `freecodecamp.org/<language>/news` |
 
-### Mobile app
+### モバイルアプリ
 
-| Version    | Supported | Website active                                                   |
-| ---------- | --------- | ---------------------------------------------------------------- |
-| production | Yes       | `https://play.google.com/store/apps/details?id=org.freecodecamp` |
+| バージョン | サポート | 有効な Web サイト                                                      |
+| ----- | ---- | ---------------------------------------------------------------- |
+| 生産    | 有    | `https://play.google.com/store/apps/details?id=org.freecodecamp` |
 
-Apart from the above, we are also accepting reports for repositories hosted on GitHub, under the freeCodeCamp organization.
+上記とは別に、freeCodeCamp 組織で、GitHub にホストされているリポジトリの報告も受け付けています。
 
-We self-host some of our platforms using open-source software like Ghost & Discourse. If you are reporting a vulnerability please ensure that it is not a bug in the upstream software.
+Ghost & Discourse のようなオープンソースソフトウェアを使用して、いくつかのプラットフォームをセルフホストします。 脆弱性を報告する場合は、アップストリームソフトウェアのバグではないことを確認してください。
