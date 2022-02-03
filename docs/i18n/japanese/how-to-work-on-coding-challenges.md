@@ -1,52 +1,52 @@
-# How to work on coding challenges
+# コーディングチャレンジに貢献する方法
 
-Our goal is to develop a fun and clear interactive learning experience.
+私たちの目標は、楽しく明確なインタラクティブな学習体験を開発することです。
 
-Designing interactive coding challenges is difficult. It would be much easier to write a lengthy explanation or to create a video tutorial. But for our core curriculum, we're sticking with what works best for most people - a fully interactive, video game-like experience.
+インタラクティブなコーディングチャレンジの設計は難しいです。 長い説明を書いたり、ビデオチュートリアルを作成したりする方がはるかに簡単です。 しかし、私たちのコアカリキュラムは、多くの人にとって最適なものに固執しています。完全にインタラクティブでビデオゲームのような体験です。
 
-We want campers to achieve a flow state. We want them to build momentum and blast through our curriculum with as few snags as possible. We want them to go into the projects with confidence and gain a wide exposure to programming concepts.
+私たちはキャンパーにフロー状態を体験してほしいのです。 勢いをつけて大きな支障なくカリキュラムを突破してほしいと思っています。 自信を持ってプロジェクトに参加し、プログラミングの概念に広く触れてほしいと考えています。
 
-Note that for Version 7.0 of the freeCodeCamp curriculum, we are moving toward [an entirely project-focused model with a lot more repetition](https://www.freecodecamp.org/news/python-curriculum-is-live/).
+freeCodeCamp カリキュラムのバージョン 7.0 では、[多くの繰り返しを伴うプロジェクトに焦点を当てたモデル](https://www.freecodecamp.org/news/python-curriculum-is-live/) に移行していることに注意してください。
 
-Creating these challenges requires immense creativity and attention to detail. There's plenty of help available. You'll have support from a whole team of contributors to whom you can bounce ideas off and demo your challenges.
+これらのチャレンジを生み出すには、大きな創造性と細部へのこだわりが必要です。 たくさんの助けを得ることができます。 アイデアを出し合ったりチャレンジを実演したりできる貢献者チーム全体がサポートしてくれます。
 
-And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/channel/contributors).
+[フォーラムの「Contributors」カテゴリ](https://forum.freecodecamp.org/c/contributors) または [Contributors チャットルーム](https://chat.freecodecamp.org/channel/contributors) でいつでも気軽に質問してください。
 
-With your help, we can design an interactive coding curriculum that will help millions of people learn to code for years to come.
+皆さんのご支援により、今後何百万もの人々がコーディングを学ぶのに役立つインタラクティブなコーディングカリキュラムを設計することができます。
 
-The content for each challenge is stored in its markdown file. This markdown file is later converted to HTML using our tools to create interactive web pages.
+各チャレンジのコンテンツは、マークダウンファイルに保存されます。 このマークダウンファイルは、インタラクティブな Web ページを作成するためのツールを使用して、後で HTML に変換されます。
 
-You can find all of freeCodeCamp.org's curricular content in the [`/curriculum/challenges`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges) directory.
+[`/curriculum/challenges`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges) ディレクトリに、freeCodeCamp.org のカリキュラムコンテンツのすべてがあります。
 
-## Set up the tooling for the curriculum
+## カリキュラムのツールを設定する
 
-Before you work on the curriculum, you would need to set up some tooling to help you test your changes. You can use any option from the below:
+カリキュラムを作成する前に、変更をテストするためのツールを設定する必要があります。 以下から任意のオプションを使用できます。
 
-- You can [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). This is **highly recommended** for regular/repeat contributions. This setup allows you to work and test your changes.
-- Use Gitpod, a free online dev environment. Clicking the button below will start a ready-to-code dev environment for freeCodeCamp in your browser. It only takes a few minutes.
+- [freeCodeCampをローカル設定](how-to-setup-freecodecamp-locally.md) することができます。 これは定期的 / 繰り返しの貢献に **強く推奨** します。 このセットアップで、作業と変更テストができます。
+- 無料のオンライン開発環境であるGitpodを使用します。 下のボタンをクリックすると、ブラウザで freeCodeCamp のコーディング開発準備ができている環境を起動します。 かかる時間はほんの数分です。
 
-  [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+  [![Gitpod で開く](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-- Edit the files on GitHub's interface by clicking the pencil icon for the corresponding file. While this is the quickest way, It is **not recommended**, because you are unable to test your changes on GitHub. If our maintainers conclude that the changes you made need to be tested locally, you would need to follow the methods above instead.
+- GitHub のインターフェースでファイルを編集するには、該当するファイルの鉛筆アイコンをクリックします。 これが最も速い方法ですが、GitHub 上で変更をテストすることができないため、**お勧めできません**。 もしメンテナーが、行った変更をローカルでテストする必要があると結論づけた場合は、上記の方法で行う必要があります。
 
-### How to work on practice projects
+### プラクティスプロジェクトに貢献する方法
 
-The practice projects have some additional tooling to help create new projects and steps. To read more, see [these docs](how-to-work-on-practice-projects.md)
+プラクティスプロジェクトには、新しいプロジェクトやステップの作成に役立つ追加ツールがあります。 詳細については、[これらのドキュメント](how-to-work-on-practice-projects.md) をご参照ください。
 
-## Challenge Template
+## チャレンジテンプレート
 
 ````md
 ---
-id: Unique identifier (alphanumerical, MongoDB_id)
-title: 'Challenge Title'
-challengeType: Integer, defined in `client/utils/challenge-types.js`
-videoUrl: 'url of video explanation'
+id: ユニーク ID (アルファベットと数字の MongoDB_id)
+title: 'チャレンジのタイトル'
+challengeType: `client/utils/challenge-types.js` に定義されている整数
+videoUrl: '説明動画のURL'
 forumTopicId: 12345
 ---
 
 # --description--
 
-Challenge description text, in markdown
+チャレンジの説明 (マークダウンで記入)
 
 ```html
 <div>example code</div>
@@ -54,17 +54,17 @@ Challenge description text, in markdown
 
 # --instructions--
 
-Challenge instruction text, in markdown
+チャレンジの指示内容 (マークダウンで記入)
 
 # --hints--
 
-Tests to run against user code, in pairs of markdown text and code block test code.
+ユーザコードに対して実行するテスト。マークダウンテキストと、テストコードのコードブロックをペアにして記入。
 
 ```js
 Code for test one
 ```
 
-If you want dynamic output based on the user's code, --fcc-expected-- and --fcc-actual-- will be replaced with the expected and actual values of the test's assertion. Take care if you have multiple assertions since the first failing assertion will determine the values of --fcc-expected-- and --fcc-actual--.
+ユーザーのコードに基づいて動的な出力が必要な場合、--fcc-expected-- と --fcc-actual-- は、テストのアサーションの期待値と実際の値に置き換えられます。 最初のアサーションの失敗により --fcc-expected-- と --fcc-actual-- の値が決まるので、複数のアサーションがある場合は注意してください。
 
 ```js
 assert.equal(
@@ -75,25 +75,25 @@ assert.equal(
 
 # --notes--
 
-Extra information for a challenge, in markdown
+チャレンジの追加情報 (マークダウンで記入)
 
 # --seed--
 
 ## --before-user-code--
 
 ```lang
-Code evaluated before the user’s code.
+ユーザーコードの前に評価されるコード。
 ```
 
 ## --after-user-code--
 
 ```lang
-Code evaluated after the user’s code, and just before the tests
+ユーザーコードの後およびテスト直前に評価されるコード。
 ```
 
 ## --seed-contents--
 
-Boilerplate code to render to the editor. This section should only contain code inside backticks, like the following:
+エディターにレンダリングするボイラープレートコード。 このセクションには、以下のようなバックティック内のコードのみを含める必要があります。
 
 ```html
 <body>
@@ -118,67 +118,67 @@ console.log('freeCodeCamp is awesome!');
 
 # --solutions--
 
-Solutions are used for the CI tests to ensure that changes to the hints will still pass as intended
+ソリューションは、ヒントの変更が意図した通りに合格するようにするために CI テストに使用されます。
 
 ```js
-// first solution - the language(s) should match the seed.
+// 最初のソリューション - 言語はシードに一致する必要があります。
 ```
 
 ---
 
 ```js
-// second solution - so if the seed is written in HTML...
+// 2 番目のソリューション - シードが HTML で書かれている場合...
 ```
 
 ---
 
 ```js
-// third solution etc. - Your solutions should be in HTML.
+// 3番目のソリューション等 - ソリューションは HTML でなければなりません。
 ```
 
 # --question--
 
-These fields are currently used for the multiple-choice Python challenges.
+現在、このフィールドは多肢選択式 Python チャレンジ用に使用されています。
 
 ## --text--
 
-The question text goes here.
+質問のテキストをここに記述します。
 
 ## --answers--
 
-Answer 1
+回答 1
 
 ---
 
-Answer 2
+回答 2
 
 ---
 
-More answers
+その他回答
 
 ## --video-solution--
 
-The number for the correct answer goes here.
+正解の番号をここに記述します。
 ````
 
 > [!NOTE]
 >
-> 1. In the above sections, examples of `lang` are:
+> 1. 上記セクションで、`lang` の例は、次のとおりです。
 >
 > - `html` - HTML/CSS
 > - `js` - JavaScript
 > - `jsx` - JSX
 
-## Numbering Challenges
+## チャレンジの採番
 
-Every challenge needs an `id`. If you don't specify one, then MongoDB will create a new random one when it saves the data; however, we don't want it to do that, since we want the challenge ids to be consistent across different environments (staging, production, lots of different developers, etc.).
+すべてのチャレンジには `id` が必要です。 指定されていない場合、MongoDB はデータを保存する際に新しいランダムな id を作成します。しかしながら、チャレンジ id を異なる環境 (ステージング、本番環境、多くの様々な開発者など) において一貫性のあるものにしたいので、ランダムなものは作成したくありません。
 
-To generate a new one in a shell (assuming MongoDB is running separately):
+シェル内で新しい id を生成するには、次のとおり実行します (MongoDB は別途実行されていると仮定)。
 
-1. Run `mongo` command.
-2. Run `ObjectId()` command.
+1. `mongo` コマンドを実行します。
+2. `ObjectId()` コマンドを実行します。
 
-For example:
+例: 
 
 ```bash
 $ mongo
@@ -190,9 +190,9 @@ $ ObjectId()
 ObjectId("5a474d78df58bafeb3535d34")
 ````
 
-The result is a new id, for example `5a474d78df58bafeb3535d34` above.
+その結果、例えば上記の場合 `5a474d78df58bafeb3535d34` という新しい id が得られます。
 
-Once you have your id, put it into the markdown file as the `id` field at the top, e.g.
+id を取得したら、上部の `id` フィールドとしてマークダウンファイルに入れてください。例えば、次のようになります。
 
 ```yml
 ---
@@ -200,129 +200,129 @@ id: 5a474d78df58bafeb3535d34
 title: Challenge Title
 ```
 
-## Naming challenges
+## チャレンジ名の決定
 
-Naming things is hard. We've made it easier by imposing some constraints.
+チャレンジ名を決めるのは難しいです。 しかし、いくつかの制約を課すことで簡単になります。
 
-All challenge titles should be explicit and should follow this pattern:
+すべてのチャレンジタイトルは明示的でなければなりません。そして、以下のパターンに従う必要があります。
 
-\[verb\]\[object clause\]
+\[動詞\]\[目的語 (節)\]
 
-Here are some example challenge names:
+チャレンジ名の例を以下に示します。
 
 - Use Clockwise Notation to Specify the Padding of an Element
 - Condense arrays with .reduce
 - Use Bracket Notation to Find the First Character in a String
 
-## Challenge descriptions/instructions
+## チャレンジの説明／指示
 
-Sentences should be clear and concise with minimal jargon. If used, jargon should be immediately defined in plain English.
+文章は最小限の専門用語で明確かつ簡潔にする必要があります。 専門用語を使用する場合、平易な英語で定義する必要があります。
 
-Keep paragraphs short (around 1-4 sentences). People are more likely to read several short paragraphs than a wall of text.
+段落は短くしてください (1-4 文程度)。 多くの人にとって、長文よりもいくつかの短い段落のほうが読みやすいです。
 
-Challenge text should use the second person ("you") to help to give it a conversational tone. This way the text and instructions seem to speak directly to the camper working through the challenge. Try to avoid using the first person ("I", "we", "let's", and "us").
+チャレンジテキストでは、会話調にするために二人称 ("you") を使用する必要があります。 これにより、チャレンジで作業しているキャンパーは、テキストと指示を通して直接話しかけられているように感じます。 一人称 ("I", "we", "let's", and "us") をできるだけ使用しないようにしてください。
 
-Don't use outbound links. These interrupt the flow. Campers should never have to google anything during these challenges. If there are resources you think campers would benefit from, add them to the challenge's Guide-related article.
+外部のサイトへのリンクは使用しないでください。 フローの妨げとなります。 チャレンジの間、キャンパーが Google で検索を行う必要がないようにしてください。 キャンパーが利益を得ると思うリソースがある場合は、それらをチャレンジガイド関連記事に追加します。
 
-You can add diagrams if necessary.
+必要に応じてダイアグラムを追加できます。
 
-Don't use emojis or emoticons in challenges. freeCodeCamp has a global community, and the cultural meaning of an emoji or emoticon may be different around the world. Also, emojis can render differently on different systems.
+チャレンジに絵文字や顔文字を使用しないでください。 freeCodeCamp は、グローバルコミュニティを持っており、絵文字や顔文字の文化的意味は世界中で異なる場合があります。 また、絵文字は異なるシステムでは異なるレンダリングをします。
 
-Proper nouns should use correct capitalization when possible. Below is a list of words as they should appear in the challenges.
+固有名詞は、極力正しい大文字表記を使用することが適切です。 以下は、チャレンジで表示される単語のリストです。
 
-- JavaScript (capital letters in "J" and "S" and no abbreviations)
+- JavaScript（「J」と「S」が大文字、省略形なし）
 - Node.js
-- Although sometimes inaccurate, non-hyphenated forms of 'back end' and 'front end' should be used, as they are more widely used.
+- 不正確な場合もありますが、より広く使われているため、ハイフンなしの「back end」と「frond end」を使用します。
 
-### The 2-minute rule
+### 2 分ルール
 
-Each challenge should be solvable within 120 seconds by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions/instructions understand the seeded code, write their code and get all the tests to pass.
+各チャレンジは、そこまでのチャレンジを完了した英語のネイティブスピーカーによって 120 秒以内に解決されるべきです。 これには、命令／指示を読み、シードされたコードを理解し、コードを書き、すべてのテストに合格するのにかかる時間が含まれます。
 
-If it takes longer than two minutes to complete the challenge, you have two options:
+チャレンジを完了するのに 2 分以上かかる場合は、2 つの選択肢があります。
 
-- Simplify the challenge, or
-- Split the challenge into two challenges.
+- チャレンジを簡素化する
+- チャレンジを 2 つのチャレンジに分ける
 
-The 2-minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straight-forward.
+2 分ルールにより、命令を簡潔にし、シードコードを明確にし、テストを容易にすることが、チャレンジ設計者に求められます。
 
-We track how long it takes for campers to solve changes and use this information to identify challenges that need to be simplified or split.
+キャンパーが変更を解決するまでにかかる時間を追跡し、その情報を使用して簡略化や分割が必要なチャレンジを特定します。
 
-### Modularity
+### モジュール化
 
-Each challenge should teach exactly one concept, and that concept should be apparent from the challenge's name.
+チャレンジごとに、1 つのコンセプトを教えるべきであり、そのコンセプトはチャレンジ名から明らかであるべきです。
 
-We can reinforce previously covered concepts through repetition and variations - for example, introducing h1 elements in one challenge, then h3 elements a few challenges later.
+繰り返しやバリエーションにより、以前学んだコンセプトを強化することができます。例えば、1 つのチャレンジに h1 要素を導入し、いくつかのチャレンジの後に h3 要素を導入します。
 
-Our goal is to have thousands of 2-minute challenges. These can flow together and reiterate previously-covered concepts.
+私たちの目標は、数千の 2 分間チャレンジを行うことです。 これらは同じフローであり、以前に網羅されたコンセプトを繰り返すことができます。
 
-### Formatting challenge text
+### チャレンジテキストのフォーマット
 
-Here are specific formatting guidelines for challenge text and examples:
+チャレンジテキストと例の具体的なフォーマットガイドラインは次のとおりです。
 
-- Language keywords go in `` \` `` backticks. For example, HTML tag names or CSS property names.
-- References to code parts (i.e. function, method, or variable names) should be wrapped in `` \` `` backticks. See example below:
+- 言語キーワードは `` \` `` のバックティックに入ります。 例えば、HTML タグ名や CSS プロパティ名です。
+- コード部品 (すなわち、関数、メソッド、変数名) への参照は、`` \` `` バックティックで囲みます。 下記の例を参照してください。
 
 ```md
-Use `parseInt` to convert the variable `realNumber` into an integer.
+変数 `realNumber` を整数に変換するには、`parseInt` を使用します。
 ```
 
-- References to file names and path directories (e.g. `package.json`, `src/components`) should be wrapped in `` \` `` backticks.
-- Multi-line code blocks **must be preceded by an empty line**. The next line must start with three backticks followed immediately by one of the [supported languages](https://prismjs.com/#supported-languages). To complete the code block, you must start a new line which only has three backticks and **another empty line**. See example below:
-- Whitespace matters in Markdown, so we recommend that you make it visible in your editor.
+- ファイル名とパスディレクトリへの参照 (例: `package.json`、`src/component`) は `` \` `` バックティックで囲みます。
+- 複数行コードブロック **の前に空行** が必要です。 次の行は、3つのバックティックに続いて [対応言語](https://prismjs.com/#supported-languages) の1つで始まります。 コードブロックを完了するには、3 つのバックティックのみの新しい行と **別の空行** が必要です。 下記の例を参照してください。
+- 空白はマークダウンでも重要ですので、エディターで表示させることをお勧めします。
 
-**Note:** If you are going to use an example code in YAML, use `yaml` instead of `yml` for the language to the right of the backticks.
+**注:** YMAL でコード例を使用する場合、バックティックの右側に言語用の `yml` を使用するのではなく、`yaml` を使用してください。
 
-The following is an example of code:
+以下はコードの例です。
 
 ````md
 ```{language}
 
-[YOUR CODE HERE]
+[ここに、コードを記述してください]
 
 ````
 ````
 
-- Additional information in the form of a note should be surrounded by blank lines, and formatted: `**Note:** Rest of note text...`
-- If multiple notes are needed, then list all of the notes in separate sentences using the format: `**Notes:** First note text. Second note text.`
-- Use single-quotes where applicable
+- 注意書き形式の追加情報は空白行で囲みます。例: `**注:** 注記のテキスト...`
+- 複数の注意書きが必要な場合は、すべての注意書きを別々の文章でリスト化します。例: `**注:** 最初の注記のテキスト。 2 番目の注記のテキスト。`
+- 可能であれば、一重引用符を使用します。
 
-**Note:** The equivalent _Markdown_ should be used in place of _HTML_ tags.
+**注:** 同等の_マークダウン_は、_HTML_タグの代わりに使用します。
 
-## Writing tests
+## テストの記述
 
-Challenges should have the minimum number of tests necessary to verify that a camper understands a concept.
+チャレンジには、キャンパーがコンセプトを理解していることを確認するために最小限のテストが必要です。
 
-Our goal is to communicate the single point that the challenge is trying to teach, and test that they have understood that point.
+私たちの目標は、チャレンジが教えようとしている単一のポイントを伝え、そのポイントを理解していることをテストすることです。
 
-Challenge tests can make use of the Node.js and Chai.js assertion libraries. Also, if needed, user-generated code can be accessed in the `code` variable. In addition, the `__helpers` object exposes several functions that simplify the process of writing tests. The available functions are defined in _client/src/utils/curriculum-helpers.ts_.
+チャレンジテストでは、Node.js と Chai.js アサーションライブラリを使用できます。 また、必要に応じて、`code` 変数からユーザーが生成したコードにアクセスすることもできます。 さらに、 `__helpers` オブジェクトは、テストを記述するプロセスを簡略化するいくつかの関数を公開します。 利用可能な関数は、_client/src/utils/curriculum-helpers.ts_ に定義されています。
 
-## Formatting seed code
+## シードコードの書式設定
 
-Here are specific formatting guidelines for the challenge seed code:
+チャレンジシードコードの具体的なフォーマットガイドラインは、次のとおりです。
 
-- Use two spaces to indent
-- JavaScript statements end with a semicolon
-- Use double quotes where applicable
+- 2つの空白を使用してインデントする
+- JavaScript ステートメントは、セミコロンで終了する
+- 適用できる場合は、二重引用符を使用する
 
-### Seed code comments
+### シードコードコメント
 
-We have a [comment dictionary](/curriculum/dictionaries/english/comments.js) that contains the only comments that can be used within the seed code. The exact case and spacing of the dictionary comment must be used. The comment dictionary should not be expanded without prior discussion with the dev-team.
+[comment dictionary](/curriculum/dictionaries/english/comments.js) は、シードコード内で使用できるコメントのみを含みます。 辞書のコメントに記載されている正確な大文字と小文字の区別および語間を使用します。 コメント辞書は、開発チームとの事前議論なしに増やしてはいけません。
 
-Comments used should have a space between the comment characters and the comment themselves. In general, comments should be used sparingly. Always consider rewriting a challenge's description or instructions if it could avoid using a seed code comment.
+使用するコメントは、コメント文字とコメントそのものの間にスペースを入れる必要があります。 一般的に、コメントは控えめに使用します。 シードコードコメントの使用を避けられるのであれば、チャレンジの説明や指示を書き換えることを常に検討してください。
 
-Example of valid single line JavaScript comment:
+有効な単一行 JavaScript コメントの例は以下のとおりです。
 
 ```js
-// Only change code below this line
+// この行の下のコードのみ変更する
 ````
 
-Example of a valid CSS comment:
+有効な CSS コメントの例は次のとおりです。
 
 ```css
 /* Only change code above this line */
 ```
 
-If a challenge only has a single place where code changes are needed, please use the comments in the following example to instruct the user where changes should be made.
+チャレンジに、コード変更が必要な場所が 1 つしかない場合、以下の例のコメントを使用してユーザーに変更を行うべき場所を指示してください。
 
 ```js
 var a = 3;
@@ -335,7 +335,7 @@ b = 9 + b;
 c = c + 7;
 ```
 
-If a challenge has multiple places where the user is expected to change code (i.e. the React challenges)
+チャレンジに、ユーザがコード変更を行うべき場所が複数存在する場合 (例: React のチャレンジ) は、次のようになります。
 
 ```jsx
 class MyComponent extends React.Component {
@@ -344,9 +344,9 @@ class MyComponent extends React.Component {
     this.state = {
       text: 'Hello'
     };
-    // Change code below this line
+    // この行より下にあるコードを変更してください。
 
-    // Change code above this line
+    // この行より上にあるコードを変更してください。
   }
   handleClick() {
     this.setState({
@@ -366,68 +366,68 @@ class MyComponent extends React.Component {
 }
 ```
 
-### Translation of seed code comments
+### シードコードコメントの翻訳
 
-There are separate comment dictionaries for each language. The [English version of the comment dictionary](/curriculum/dictionaries/english/comments.js) is the basis for the translations found in the corresponding non-English versions of the files. The non-English version of the Chinese comment dictionary would be located at `/curriculum/dictionaries/chinese/comments.js`. Each dictionary consists of an array of objects with a unique `id` property and a `text` property. Only the `text` should be modified to encompass the translation of the corresponding English comment.
+各言語には、個別のコメント辞書があります。 [コメント辞書の英語版](/curriculum/dictionaries/english/comments.js) は、英語以外のバージョンファイルにある翻訳のベースになります。 英語以外のバージョンである中国語のコメント辞書は、`/curriculum/dictionaries/chinese/comments.js`にあります。 それぞれの辞書は一意の `id` プロパティと `text` プロパティを持つオブジェクトの配列で構成されています。 `text` のみ、対応する英語のコメントの翻訳を含むように変更する必要があります。
 
-Some comments may contain a word/phrase that should not be translated. For example, variable names or proper library names like "React" should not be translated. See the comment below as an example. The word `myGlobal` should not be translated.
+一部のコメントには、翻訳してはいけない単語 / フレーズが含まれています。 例えば、変数名や「React」のような固有ライブラリ名は翻訳しません。 例として以下のコメントをご覧ください。 `myGlobal` という単語は翻訳しません。
 
 ```text
-Declare the myGlobal variable below this line
+この行の下に myGlobal 変数を宣言してください。
 ```
 
 > [!NOTE]
 > 
-> We are working on an integration to make it possible to work on i18n for the comment dictionary.
+> コメント辞書の i18n で作業できるようにするために統合に取り組んでいます。
 
-## Hints and Solutions
+## ヒントとソリューション
 
-Each challenge has a `Get a Hint` button, so a user can access any hints/solutions which have been created for the challenge. Curriculum hints/solutions topics are located on [our forum](https://forum.freecodecamp.org/c/guide) under the `Guide` category.
+各チャレンジには `Get a Hing` ボタンがあり、ユーザーはチャレンジ用に作成されたヒント / ソリューションにアクセスできます。 カリキュラムヒント／ソリューショントピックは、`Guide` カテゴリの下の [フォーラム](https://forum.freecodecamp.org/c/guide) にあります。
 
-If you find a problem with an existing challenge's hints/solutions topic, you can make suggestions in the [contributors category](https://forum.freecodecamp.org/c/contributors) on the forum. Moderators and users with trust level 3 will review the comments and decide whether or not to include the changes in the corresponding hint/solutions topic.
+既存のチャレンジのヒント／ソリューショントピックに関わる問題がある場合は、フォーラムの [contributors カテゴリ](https://forum.freecodecamp.org/c/contributors) で提案を行うことができます。 信頼レベル 3 のモデレーターとユーザーは、コメントをレビューし、対応するヒント／ソリューションのトピックに変更を含めるかどうかを決定します。
 
-### Adding new Challenge hints/solutions Topics
+### 新しいチャレンジのヒント / ソリューションの追加
 
-Take the following steps when adding a new challenge hints/solutions related topic.
+新しいチャレンジのヒント／ソリューション関連トピックを追加する場合は、次の手順を実行します。
 
-1. Start by following the same steps for creating a new topic but review the next for creating the title.
-2. The title of the topic should start with `freeCodeCamp Challenge Guide:` concatenated with the actual title of the curriculum challenge. For example, if the challenge is named "`Chunky Monkey`", the topic title would be "`freeCodeCamp Challenge Guide: Chunky Monkey`".
-3. `camperbot` should be the owner of these topics/posts, so you will need to request an admin to change the ownership of the main post to `camperbot`.
-4. Once the new topic is created, a forum topic id is created. It is located at the end of the forum topic URL. This id must be added to the frontmatter of the curriculum challenge file via the normal pull request process for the `Get a Hint` button to link to the topic.
+1. 新しいトピックの作成と同じ手順からスタートします。タイトルを作成するために以下を確認します。
+2. トピックのタイトルは、`freeCodeCamp チャレンジガイド:` にカリキュラムチャレンジの実際のタイトルを連結します。 例えば、チャレンジに「`Chunky Monkey`」という名前が付けられている場合、トピックのタイトルは、「`freeCodeCamp Challenge Guide: Chunky Monkey`」になります。
+3. `camperbot` はトピック / 投稿のオーナーである必要があるので、管理者に、メイン投稿のオーナーを `camperbot` に変更するようにリクエストします。
+4. 新しいトピックを作成すると、フォーラムのトピック id が作成されます。 これは、フォーラムのトピック URL の末尾にあります。 この id は、トピックにリンクするために、`ヒントを入手` ボタン用の標準プルリクエストプロセスを介して、カリキュラムチャレンジファイルのフロントマターに追加する必要があります。
 
-### Guidelines for content of hints and solutions topics
+### ヒントとソリューショントピックの内容に関するガイドライン
 
-When proposing a solution for a curriculum challenge related Guide topic, the full code must be added. This includes all the original seed code plus any changes needed to pass all the challenge tests. The following template should be used when creating new hints/solutions topics:
+カリキュラムチャレンジに関連するガイドトピックのソリューションを提案する場合は、完全なコードを追加する必要があります。 これには、すべての元のシードコードと、すべてのチャレンジテストに合格するために必要な変更が含まれています。 次のテンプレートは、新しいヒント／ソリューションのトピックを作成する際に使用する必要があります。
 
 ````md
-# Challenge Name Goes Here
+# ここにチャレンジ名を記述する
 
 ---
 
-## Problem Explanation
+## 問題説明
 
-This summarizes what needs to be done without just restating the challenge description and/or instructions. This is an optional section
+チャレンジの説明や指示を再記述するのではなく、実行すべきことを要約します。 ここは任意のセクションです。
 
-#### Relevant Links
+#### 関連リンク
 
-- [Link Text](link_url_goes_here)
-- [Link Text](link_url_goes_here)
-
----
-
-## Hints
-
-### Hint 1
-
-Hint goes here
-
-### Hint 2
-
-Hint goes here
+- [リンクテキスト](link_url_goes_here)
+- [リンクテキスト](link_url_goes_here)
 
 ---
 
-## Solutions
+## ヒント
+
+### ヒント 1
+
+ヒントを記述してください
+
+### ヒント 2
+
+ヒントを記述してください
+
+---
+
+## ソリューション
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>
 
@@ -437,30 +437,30 @@ function myFunc() {
 }
 ````
 
-#### Code Explanation
+#### コードの説明
 
-- Code explanation goes here
-- Code explanation goes here
+- コードの説明はこちら
+- コードの説明はこちら
 
-#### Relevant Links
+#### 関連リンク
 
-- [Link Text](link_url_goes_here)
-- [Link Text](link_url_goes_here)
+- [リンクテキスト](link_url_goes_here)
+- [リンクテキスト](link_url_goes_here)
 
 </details>
 ````
 
-## Testing Challenges
+## チャレンジのテスト
 
-Before you [create a pull request](how-to-open-a-pull-request.md) for your changes, you need to validate that the changes you have made do not inadvertently cause problems with the challenge.
+変更のために [プルリクエストを作成する] (how-to-open-a-pull-request.md) 前に、行った変更が誤ってチャレンジに問題を引き起こさないことを確認する必要があります。
 
-1. To test all challenges run the below command from the root directory
+1. すべてのチャレンジをテストするには、ルートディレクトリから以下のコマンドを実行してください。
 
 ````
 npm run test:curriculum
 ```
 
-2. You can also test a block or a superblock of challenges with these commands
+2. 次のコマンドでチャレンジのブロックやスーパーブロックをテストすることもできます。
 
 ```
 npm run test:curriculum --block='Basic HTML and HTML5'
@@ -470,29 +470,29 @@ npm run test:curriculum --block='Basic HTML and HTML5'
 npm run test:curriculum --superblock=responsive-web-design
 ```
 
-You are also able to test one challenge individually by performing the following steps:
+次の手順を実行することで、1 つのチャレンジを個別にテストすることもできます。
 
-1. Switch to the `curriculum` directory:
+1. `カリキュラム` ディレクトリに切り替えてください。
 
    ```
    cd curriculum
    ```
 
-2. Run the following for each challenge file for which you have changed (replacing `challenge-title-goes-here` with the full title of the challenge):
+2. 変更したチャレンジファイルごとに以下を実行します ( `challenge-title-goes-here` を正式なチャレンジのタイトルに置き換えてください)。
 
    ```
    npm run test -- -g challenge-title-goes-here ```
 
-Once you have verified that each challenge you've worked on passes the tests, [please create a pull request](how-to-open-a-pull-request.md).
+各チャレンジがテストに合格したことを確認したら、[プルリクエストを作成](how-to-open-a-pull-request.md) してください。
 
-> [!TIP] You can set the environment variable `LOCALE` in the `.env` to the language of the challenge(s) you need to test.
+> [!TIP] `.env` にある環境変数 `LOCALE` を、テストするチャレンジ言語に設定できます。
 > 
-> The currently accepted values are `english` and `chinese`, with `english` being set by default.
+> 現在受け入れられている値は、`english` と `chinese`で、デフォルトは `english` です。
 
-### Useful Links
+### 役立つリンク
 
-Creating and Editing Challenges:
+チャレンジの作成および編集
 
-1. [Challenge types](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) - what the numeric challenge type values mean (enum).
+1. [チャレンジタイプ](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) - 数値チャレンジ型の値が何を意味するのか (列挙)
 
-2. [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - a video following [Ethan Arrowood](https://twitter.com/ArrowoodTech) as he contributes to the old version of the curriculum.
+2. [FreeCodeCampへの貢献 - ES6 Challenge Tests の作成](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - 古いバージョンのカリキュラムに貢献している [Ethan Arrowood](https://twitter.com/ArrowoodTech) のビデオ

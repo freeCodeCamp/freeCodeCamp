@@ -1,26 +1,26 @@
-# Set up freeCodeCamp on Windows Subsystem for Linux (WSL)
+# Linux 用の Windows サブシステム (WSL) で freeCodeCamp を設定する
 
-> [!NOTE] Before you follow these instructions make sure your system meets the requirements
+> [!NOTE] これらの指示に従う前に、システムが要件を満たしていることを確認してください。
 > 
-> **WSL 2**: Windows 10 64-bit (Version 2004, Build 19041 or higher) - available for all distributions including Windows 10 Home.
+> **WSL2** : Windows 10 64-bit (Version 2004, Build 19041以上) - Windows 10 Home を含むすべてのディストリビューションで利用可能です。
 > 
-> **Docker Desktop for Windows**: See respective requirements for [Windows 10 Pro](https://docs.docker.com/docker-for-windows/install/#system-requirements) and [Windows 10 Home](https://docs.docker.com/docker-for-windows/install-windows-home/#system-requirements)
+> **Docker Desktop for Windows** : [Windows 10 Pro](https://docs.docker.com/docker-for-windows/install/#system-requirements) および [Windows 10 Home](https://docs.docker.com/docker-for-windows/install-windows-home/#system-requirements) の各要件を参照してください。
 
-This guide covers some common steps with the setup of WSL2. Once some of the common issues with WSL2 are addressed, you should be able to follow [this local setup guide](how-to-setup-freecodecamp-locally.md) to work with freeCodeCamp on Windows running a WSL distro like Ubuntu.
+このガイドでは、WSL2 のセットアップに関する一般的な手順について説明します。 WSL2 に関する一般的な問題に対処したら、[ローカルセットアップガイド](how-to-setup-freecodecamp-locally.md) に従い、Ubuntu のように WSL ディストリビューションを実行している Windows 上で freeCodeCamp を起動できるようになります。
 
-## Enable WSL
+## WSLを有効化する
 
-Follow the instructions on the [official documentation](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to install WSL1 and followed by upgrading to WSL2.
+[公式ドキュメント](https://docs.microsoft.com/en-us/windows/wsl/install-win10) の指示に従って、WSL1 をインストールしてから、WSL2 にアップグレードしてください。
 
-## Install Ubuntu
+## Ubuntu をインストールする
 
-1. We recommended using Ubuntu-18.04 or above with WSL2.
+1. WSL2 で Ubuntu-18.04 またはそれ以降を使用することをお勧めします。
 
    > [!NOTE]
    > 
-   > While you may use other non-debian based distros, they all come with their own gotchas and are beyond the scope of this guide.
+   > 他の非debianベースのdistrosを使用することができますが、それぞれの問題点があり、このガイドの範囲を超えています。
 
-2. Update the dependencies for the OS
+2. OS の依存関係を更新します。
 
    ```console
    sudo apt update
@@ -30,9 +30,9 @@ Follow the instructions on the [official documentation](https://docs.microsoft.c
    sudo apt autoremove -y
    ```
 
-## Set up Git
+## Git を設定する
 
-Git comes pre-installed with Ubuntu 18.04, verify your Git version with `git --version`.
+Git は Ubuntu 18.04 でプリインストールされています。Git バージョンを `git --version` で確認してください。
 
 ```output
 ~
@@ -40,45 +40,45 @@ Git comes pre-installed with Ubuntu 18.04, verify your Git version with `git --v
 git version 2.25.1
 ```
 
-(Optional but recommended) You can now proceed to [setting up your ssh keys](https://help.github.com/articles/generating-an-ssh-key) with GitHub.
+(任意ですが推奨) GitHub で [ssh キー設定](https://help.github.com/articles/generating-an-ssh-key) を実行します。
 
-## Installing a Code Editor
+## コードエディタをインストールする
 
-We highly recommend installing [Visual Studio Code](https://code.visualstudio.com) on Windows 10. It has great support for WSL and automatically installs all the necessary extensions on your WSL distro.
+Windows 10 に [Visual Studio Code](https://code.visualstudio.com) をインストールすることを強くお勧めします。 WSLの素晴らしいサポートがあり、自動的にWSL distro に必要な拡張機能をすべてインストールします。
 
-Essentially, you will edit and store your code on Ubuntu-18.04 with VS Code installed on Windows.
+基本的には、Windows にインストールされている VS Code を使用して、Ubuntu-18.04 上でコードを編集して保存します。
 
-If you use [IntelliJ Idea](https://www.jetbrains.com/idea/), you may need to update your Node interpreter and Npm package manager to what is installed on your WSL distro.
+[IntelliJ Idea](https://www.jetbrains.com/idea/) を使用する場合、Node インタプリターと Npm パッケージマネジャーを WSL distro にインストールされているものに更新する必要があるかもしれません。
 
-You can check these settings by going to Settings > Languages & Frameworks > Node.js and NPM.
+その設定は、設定 > 言語 & フレームワーク > Node.js および NPM で確認できます。
 
-## Installing Docker Desktop
+## Docker Desktop をインストールする
 
-**Docker Desktop for Windows** allows you to install and run databases like MongoDB and other services like NGINX and more. This is useful to avoid common pitfalls with installing MongoDB or other services directly on Windows or WSL2.
+**Docker Desktop for Windows** を使用すると、MongoDB のようなデータベースや NGINX などのサービスをインストールして実行できます。 MongoDB やその他のサービスを Windows または WSL2 に直接インストールする際の一般的な落とし穴を避けることができます。
 
-Follow the instructuction on the [official documentation](https://docs.docker.com/docker-for-windows/install) and install Docker Desktop for your Windows distribution.
+[公式ドキュメント](https://docs.docker.com/docker-for-windows/install) の指示に従って、Docker Desktop for Windows をインストールしてください。
 
-There are some minimum hardware requirements for the best experience.
+最高の体験を得るための最低限のハードウェア要件があります。
 
-## Configure Docker Desktop for WSL
+## Docker Desktop for WSL を構成する
 
-Once Docker Desktop is installed, [follow these instructions](https://docs.docker.com/docker-for-windows/wsl) and configure it to use the Ubuntu-18.04 installation as a backend.
+Docker Desktop がインストールされたら、[この手順に従って](https://docs.docker.com/docker-for-windows/wsl) Ubuntu-18.04 をバックエンドとして使用するように設定します。
 
-This makes it so that the containers run on the WSL side instead of running on Windows. You will be able to access the services over `http://localhost` on both Windows and Ubuntu.
+これにより、コンテナは Windows 上ではなく WSL 側で実行されます。 Windows と Ubuntu の両方で `http://localhost` からサービスにアクセスできます。
 
-## Install MongoDB from Docker Hub
+## Docker Hub から MongoDB をインストールする
 
-Once you have configured Docker Desktop to work with WSL2, follow these steps to start a MongoDB service:
+WSL2 で動作するように Docker Desktop を設定したら、次の手順に従って MongoDB サービスを起動します。
 
-1. Launch a new Ubuntu-18.04 terminal
+1. 新しい Ubuntu-18.04 端末を起動します。
 
-2. Pull `MongoDB 4.0.x` from dockerhub
+2. dockerhub から `MongoDB 4.0.x` を取得します。
 
    ```console
    docker pull mongo:4.0
    ```
 
-3. Start the MongoDB service at port `27017`, and configure it to run automatically on system restarts
+3. MongoDB サービスをポート `27017` で起動し、システム再起動時に自動的に実行するように設定します。
 
    ```console
    docker run -it \
@@ -89,13 +89,13 @@ Once you have configured Docker Desktop to work with WSL2, follow these steps to
      -d mongo:4.0
    ```
 
-4. You can now access the service from both Windows or Ubuntu at `mongodb://localhost:27017`.
+4. Windows または Ubuntu から `mongodb://localhost:27017` でサービスにアクセスできるようになりました。
 
-## Installing Node.js and npm
+## Node.js と npm をインストールする
 
-We recommend you install the LTS release for Node.js with a node version manager - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Node バージョンマネジャー - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) を使用して、Node.js 用の LTS リリースをインストールすることを推奨します。
 
-Once installed use these commands to install and use the Node.js version as needed
+インストールしたら、以下のようなコマンドを使って、Node.js バージョンをインストールして使用します。
 
 ```console
 nvm install --lts
@@ -111,23 +111,23 @@ nvm install 14
 nvm use 12
 ```
 
-Node.js comes bundled with `npm`, you can update to the latest versions of `npm` with:
+Node.js には `npm` がバンドルされています。次のコマンドで `npm` の最新バージョンに更新することができます。
 
 ```console
 npm install -g npm@latest
 ```
 
-## Set up freeCodeCamp locally
+## freeCodeCamp をローカルで設定する
 
-Now that you have installed the pre-requisites, follow [our local setup guide](how-to-setup-freecodecamp-locally.md) to clone, install and setup freeCodeCamp locally on your machine.
+前提条件のインストールが完了したら、[ ローカルセットアップガイド](how-to-setup-freecodecamp-locally.md) に従って、マシンに freeCodeCamp をローカルにクローンし、インストールし、セットアップしてください。
 
 > [!WARNING]
 > 
-> Please note, at this time the set up for Cypress tests (and related GUI needs) are a work in progress. You should still be able to work on most of the codebase.
+> 現在、Cypress テストのセットアップ (および関連するGUIのニーズ) 作業が進行中です。 それでも、ほとんどのコードベースで作業できるはずです。
 
-## Useful Links
+## 有用なリンク
 
-- [A WSL2 Dev Setup with Ubuntu 20.04, Node.js, MongoDB, VS Code and Docker](https://devlog.sh/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - an article by Mrugesh Mohapatra (Staff Developer at freeCodeCamp.org)
-- Frequently asked questions on:
+- [Ubuntu 20.04, Node.js, MongoDB, VS Code and Docker を使用した WSL2 Dev セットアップ](https://devlog.sh/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - Mrugesh Mohapatra (freeCodeCamp.org のスタッフ開発者)
+- よくある質問:
   - [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/faq)
   - [Docker Desktop for Windows](https://docs.docker.com/docker-for-windows/faqs)

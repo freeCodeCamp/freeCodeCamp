@@ -1,16 +1,16 @@
-# How to help with video challenges
+# ビデオチャレンジを支援する方法
 
-Video challenges are a new type of challenge in the freeCodeCamp curriculum.
+ビデオチャレンジは、freeCodeCamp カリキュラムの新しいタイプのチャレンジです。
 
-A video challenge is a small section of a full-length video course on a particular topic. A video challenge page embeds a YouTube video. Each challenge page has a single multiple-choice question related to the video. A user must answer the question correctly before moving on to the next video challenge in the course.
+ビデオチャレンジは、特定のトピックに関するノーカットビデオコースの小さなセクションです。 ビデオチャレンジページには、YouTube 動画が埋め込まれています。 各チャレンジページには、動画に関連する多肢選択問題があります。 コース内で次のビデオチャレンジに進む前に、ユーザーは質問に正しく答える必要があります。
 
-The video challenge pages are created by members of the freeCodeCamp team. YouTube videos are also uploaded by members of the freeCodeCamp team. Many of the video challenges do not yet have questions associated with them.
+ビデオチャレンジのページは、freeCodeCamp チームのメンバーによって作成されます。 YouTube 動画は、FreeCodeCamp チームのメンバーによってアップロードもされます。 ビデオチャレンジの多くは、関連する質問がありません。
 
-You can help by creating multiple-choice questions related to video sections and adding the questions to the markdown files for the video challenges.
+ビデオセクションに関連する多肢選択式の質問を作成し、ビデオチャレンジマークダウンファイルに質問を追加することができます。
 
-## Challenge Template
+## チャレンジテンプレート
 
-Below is a template of what the challenge markdown files look like.
+以下はチャレンジマークダウンファイルのテンプレートです。
 
 ````md
 ---
@@ -23,7 +23,7 @@ forumTopicId: 12345
 
 # --description--
 
-Challenge description text, in markdown
+チャレンジの説明 (マークダウンで記入)
 
 ```html
 <div>example code</div>
@@ -31,47 +31,47 @@ Challenge description text, in markdown
 
 # --question--
 
-These fields are currently used for the multiple-choice Python challenges.
+現在、このフィールドは多肢選択式 Python チャレンジが使用しています。
 
 ## --text--
 
-The question text goes here.
+質問のテキストをここに記述します。
 
 ## --answers--
 
-Answer 1
+回答 1
 
 ---
 
-Answer 2
+回答 2
 
 ---
 
-More answers
+その他の回答
 
 ## --video-solution--
 
-The number for the correct answer goes here.
+正解の番号をここに記述します。
 ````
 
-## Creating questions for video challenges
+## ビデオチャレンジに対する質問を作成する
 
-### Access the video challenge markdown files
+### ビデオチャレンジマークダウンファイルにアクセスする
 
-You can find the markdown files for video challenges at the following locations in the curriculum:
+カリキュラム内の以下のロケーションにビデオチャレンジマークダウンファイルがあります。
 
-- [Data Analysis with Python Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/08-data-analysis-with-python/data-analysis-with-python-course)
-- [TensorFlow 2.0 Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/11-machine-learning-with-python/tensorflow)
-- [Numpy Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/08-data-analysis-with-python/numpy)
-- [How Neural Networks Work Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/11-machine-learning-with-python/how-neural-networks-work)
+- [Data Analysis with Python コース](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/08-data-analysis-with-python/data-analysis-with-python-course)
+- [TensorFlow 2.0 コース](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/11-machine-learning-with-python/tensorflow)
+- [Numpy コース](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/08-data-analysis-with-python/numpy)
+- [How Neural Networks Work コース](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/11-machine-learning-with-python/how-neural-networks-work)
 
-Pick a challenge markdown file from the options above.
+上記選択肢からチャレンジマークダウンファイルを選択してください。
 
-### Skim through the video associated with the challenge and create a multiple-choice question
+### チャレンジに関連するビデオに目を通し、多肢選択式の質問を作成してください
 
-First, find the videoId.
+まず、videoId を見つけてください。
 
-For example, in the following code from the header of a video challenge markdown file, the videoId is "nVAaxZ34khk". On GitHub, the information should be laid out in a table format.
+例えば、ビデオチャレンジマークダウンファイルのヘッダーからの以下のコードで、videoIdは「nVAAxZ34khk」です。 GitHub では、情報はテーブル形式で表示されます。
 
 ````
 ---
@@ -80,44 +80,44 @@ videoId: nVAaxZ34khk
 ---
 ```
 
-Next, access the YouTube video with that `videoId`. The URL for the video will be:
-https://www.youtube.com/watch?v=[videoId] (replace `videoId` in the URL with the video's ID - without square brackets)
+次に、その `videoId` で YouTube の動画にアクセスします。 ビデオの URL は次のとおりです。
+https://www.youtube.com/watch?v=[videoId] (URL 中の `videoId` をビデオの ID に置き換えます。角括弧は不要。)
 
-In the example above, the URL is https://www.youtube.com/watch?v=nVAaxZ34khk
+上記例では、URL は https://www.youtube.com/watch?v=nVAaxZ34khk です。
 
-Skim the YouTube video with that videoId and think of a multiple-choice question based on the content of the video.
+その videoId でYouTube ビデオに目を通し、ビデオコンテンツに基づいて多肢選択式の質問を考えてください。
 
-### Add the question to the markdown file
+### マークダウンファイルに質問を追加してください
 
-You can add the question locally or using the GitHub interface. To add the question locally, you need to [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). You can also find the file on GitHub and click the edit button to add the question right in your browser.
+ローカルでまたは GitHub インターフェースを使用して質問を追加することができます。 ローカルで質問を追加するには、「freeCodeCamp をローカルに設定する」(how-to-setup-freecodecamp-locally.md) 必要があります。 GitHub でファイルを見つけて、編集ボタンをクリックして、ブラウザで質問を追加することもできます。
 
-If a question has not yet been added to a particular video challenge, it will have the following default question:
+特定のビデオチャレンジに質問がまだ追加されていない場合は、次のデフォルトの質問があります。
+
 
 ```md
 # --question--
 
 ## --text--
 
-Question text
+質問のテキスト
 
 ## --answers--
 
-Answer 1
+回答 1
 
 ---
 
-Answer 2
-
+回答 2
 ---
 
-More answers
+他の回答
 
 ## --video-solution--
 
 1
 ```
 
-Add/Update the question text under the part that shows:
+下記項目の下に質問テキストを追加／更新してください。
 
 ```
 # --question--
@@ -125,16 +125,16 @@ Add/Update the question text under the part that shows:
 ## --text--
 ```
 
-Add/Update answers (`Answer 1`, `Answer 2`, and so on) under `## --answers--`. Make sure to update the number under `## --video-solution--` with the correct answer number. You can add more possible answers using the same format. The question and answers can be surrounded with quotation marks.
+`## --answers--` の下に回答を追加／更新してください (`Answer 1`、`Answer 2` など)。 `## -video-solution--` の下にある番号を正解の番号に更新してください。 同じ形式で、他の回答も追加できます。 質問と回答は引用符で囲むことができます。
 
-### Question examples
+### 質問の例
 
 ````md
 # --question--
 
-## --text--
+## -text---
 
-What does this JavaScript code log to the console?
+この JavaScript コードは、コンソールに何を記録しますか？
 
 ```js
 console.log('hello world');
@@ -164,7 +164,7 @@ hello world
 
 ## --text--
 
-What will print out after running this code:
+以下のコードを実行すると何が出力されますか？
 
 ```py
 width = 15
@@ -196,8 +196,8 @@ print(height/3)
 
 3 ````
 
-For more examples, you can look at the markdown files for the following video course. All the challenges already have questions: [Python for Everybody Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
+以下のビデオコースのマークダウンファイルで、その他の例も参照できます。 すべてのチャレンジにはすでに質問があります: [Python for Everybody コース](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
 
-## Open a pull request
+## プルリクエストをオープンする
 
-After creating one or more questions, you can commit the changes to a new branch and [open a pull request](how-to-open-a-pull-request.md).
+1 つ以上の質問を作成した後、新しいブランチに変更をコミットすると、[プルリクエストをオープンする](how-to-open-a-pull-request.md) ことができます。

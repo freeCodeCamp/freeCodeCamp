@@ -1,78 +1,78 @@
-# How to Work on Practice Projects
+# プラクティスプロジェクトに貢献する
 
-The `tools/challenge-helper-scripts` folder contains tools to help facilitate the creation and maintenance of the freeCodeCamp project-based curriculum.
+`tools/challenge-helper-scripts` フォルダには、freeCodeCamp プロジェクトベースのカリキュラムの作成とメンテナンスを容易にするためのツールが含まれています。
 
-## Create a new project
+## 新規プロジェクトを作成する
 
-Run `npm run create-project`. This opens up a command line ui that guides you through the process. Once that has finished, there should be a new challenge in the English curriculum that you can use for the first step of the project. For example, if you created a project called `test-project` in the Responsive Web Design certification, it would be in `curriculum/challenges/english/01-responsive-web-design/test-project`.
+`npm run create-project` を実行します。 これにより、プロセスをガイドするコマンドライン UI が開きます。 そうすると、英語のカリキュラムに新しいチャレンジがあるはずですので、プロジェクトの最初のステップに使用できます。 例えば、レスポンシブ Web デザイン認定講座で `test-project` というプロジェクトを作成した場合、`curriculum/challenges/english/01-responsive-web-design/test-project` になります。
 
-If you want to create new steps, the following tools simplify that process.
+新しいステップを作成したい場合は、以下のツールでそのプロセスを簡素化できます。
 
-## create-next-step
+## 次のステップを作成する
 
-A one-off script that will automatically add the next step based on the last step numbered as `step-xxx.md` where `xxx` represents the 3-digit step number of the last step. The challenge seed code will use the previous step's challenge seed code with the editable region markers (ERMs) removed.
+一時スクリプトにより `step-xxx.md` と付番される最後のステップに基づいて、次のステップを自動的に追加します。`xxx` は最後のステップの 3 桁のステップ数を表します。 チャレンジシードコードは、前のステップのチャレンジシードコードを使用します。このシードコードでは編集可能なリージョンマーカー(ERM) が削除されています。
 
-**Note:** This script also runs [reorder-steps](#reorder-steps).
+**注: ** このスクリプトは [ステップの並べ替え](#reorder-steps) も実行します。
 
-### How to run script:
+### スクリプトを実行する方法
 
-1. Change to the directory of the project.
-2. Run the following npm command:
+1. プロジェクトのディレクトリに変更します。
+2. 以下の npm コマンドを実行します。
 
 ```bash
 npm run create-next-step
 ```
 
-## create-empty-steps
+## 空のステップを作成する
 
-A one-off script that automatically adds a specified number of steps at a specific starting step number. The challenge seed code for all steps created will be empty.
+一時スクリプトにより、特定の開始ステップ番号に指定されたステップ数を自動的に追加します。 作成された全ステップのチャレンジシードコードは空になります。
 
-**Note:** This script also runs [reorder-steps](#reorder-steps).
+**注: ** このスクリプトは [ステップの並べ替え](#reorder-steps) も実行します。
 
-### How to run script:
+### スクリプトを実行する方法
 
-1. Change to the directory of the project.
-2. Run the following npm command:
+1. プロジェクトのディレクトリに変更します。
+2. 以下の npm コマンドを実行します。
 
 ```bash
 npm run create-empty-steps start=X num=Y # where X is the starting step number and Y is the number of steps to create.
 ```
 
-## create-step-between
+## 中間ステップを作成する
 
-A one-off script that automatically adds a new step between two existing consecutive steps. The challenge seed code will use the existing starting step's challenge seed code with the editable region markers (ERMs) removed.
+一時スクリプトにより、 2 つの既存の連続したステップの間に自動的に新しいステップを追加します。 チャレンジシードコードは、既存の開始ステップのチャレンジシードコードを使用します。このシードコードでは編集可能なリージョンマーカー(ERM) が削除されています。
 
-**Note:** This script also runs [reorder-steps](#reorder-steps).
+**注: ** このスクリプトは [ステップの並べ替え](#reorder-steps) も実行します。
 
-### How to run script:
+### スクリプトを実行する方法
 
-1. Change to the directory of the project.
-2. Run the following npm command:
+1. プロジェクトのディレクトリに変更します。
+2. 以下の npm コマンドを実行します。
 
 ```bash
 npm run create-step-between start=X # where X is the starting step number
 ```
 
-## delete-step
+## ステップを削除する
 
-A one-off script that deletes an existing step and then reorders the remaining step files in the project's folder as well as updates the `challengeOrder` property array in the project's `meta.json` with the new order of the steps.
+一時スクリプトにより、既存のステップを削除して、プロジェクトフォルダー内の残りのステップファイルを並べ替えるます。また、プロジェクトの `meta.json` 内の `challengeOrder` プロパティ配列を、新しいステップ順序で更新します。
 
-### How to run script
+### スクリプトを実行する方法
 
-1. Change to the directory of the project.
-2. Run the following npm command:
+1. プロジェクトのディレクトリに変更します。
+2. 以下の npm コマンドを実行します。
 
 ```bash
 npm run delete-step num=x # where x is the step number to be deleted.
 ```
 
-## reorder-steps
+## ステップを並べ替える
 
-A one-off script that automatically reorders the step files in a project's markdown files based on the filename. It also updates the `challengeOrder` property array in the project's `meta.json` with the new order of the steps.
+一時スクリプトにより、ファイル名に基づいて、プロジェクトのマークダウンファイル内のステップファイルを自動的に並べ替えます。 また、プロジェクトの `meta.json` 内の `challengeOrder` プロパティ配列を、新しいステップ順序で更新します。
 
-### Working Example
+### 作業例
 
-Let's say you start with the following project structure:
+例えば、次のプロジェクト構造から始めるとします。
 
 ```bash
 step-001.md
@@ -83,9 +83,9 @@ step-005.md
 step-006.md
 ```
 
-At some point you decide you need to delete `step-002.md`, because that step is no longer needed. Also, you decide to break down `step-004.md` into three steps instead of just one.
+ある時点で、ステップが不要になったため `step-002.md` を削除する必要があると判断します。 また、`step-004.md` を 1 つではなく 3 つのステップに分解することにします。
 
-To accomplish this restructure, you would need to delete `step-002.md` and then add a `step-004a.md` and a `step-004b.md`. The new folder structure would look like the following:
+この構造を再構築するには、`step-002.md` を削除し、 `step-004a.md` と `step-004b.md` を追加する必要があります。 新しいフォルダ構造は次のようになります。
 
 ```bash
 step-001.md
@@ -97,9 +97,9 @@ step-005.md
 step-006.md
 ```
 
-You now need the file names to be `step-001.md` through `step-007.md`, because you removed one but gained two more for a net difference of one file. Also, the frontmatter of each file below a deleted step or added step will need to be modified by making the `title` key value match the new step number. For example, after renaming `step-3.md` to `step-2.md`, you would need to change `step-2.md`'s title from `Step 03` to `Step 02`.
+ここで、ファイル名は `step-001.md` から `step-007.md` である必要があります。これは、1 つ削除して、2つ追加したので、正味差は1ファイルだからです。 また、削除されたステップまたは追加されたステップの各ファイルの Frontmatterは、`title` キー値を新しいステップ数と一致させた上で変更する必要があります。 例えば、`step-3.md` を `step-2.md` に変更した後、 `step-2.md` のタイトルを `Step 03` から `Step 02` へ変更する必要があります。
 
-See below for the actual project folder changes needed:
+以下は、実際のプロジェクトフォルダの変更です。
 
 ```bash
 step-001.md
@@ -111,12 +111,12 @@ step-005.md renames to step-006.md and title changes to "Step 6"
 step-006.md renames to step-007.md and title changes to "Step 7"
 ```
 
-Along with the above changes, the `challengeOrder` key in the project's `meta.json` file needs to reflect the new step order. This is needed because each step below a step deletion and/or step addition changes the `title` associated with each of the affected step's challenge `id`.
+上記の変更に伴い、プロジェクトの `meta.json` ファイル内の `challengeOrder` キーは、新しいステップの順序を反映する必要があります。 これは、ステップの削除や追加に伴い、その下にある各ステップが、影響を受けるステップのチャレンジ `id` に関連する `title` を変更するためです。
 
-### How to run script
+### スクリプトを実行する方法
 
-1. Change to the directory of the project.
-2. Run the following npm command:
+1. プロジェクトのディレクトリに変更します。
+2. 以下の npm コマンドを実行します。
 
 ```bash
 npm run reorder-steps

@@ -1,31 +1,31 @@
-# How to work on freeCodeCamp.org's developer news theme
+# freeCodeCamp.org の開発者ニュースのテーマに貢献する方法
 
-The developer news also known as [`/news`](https://www.freecodecamp.org/news) site is powered by [Ghost](https://ghost.org/). We use a custom theme for the look and feel of the site. The source code of the theme is available here: <https://github.com/freeCodeCamp/news-theme>.
+開発者ニュースは [`/news`](https://www.freecodecamp.org/news) サイトとも呼ばれ、[Ghost](https://ghost.org/) によって提供されます。 サイトのルックアンドフィールにカスタムテーマを使用しています。 テーマのソースコードは <https://github.com/freeCodeCamp/news-theme> です。
 
-## The Theme
+## テーマ
 
-Ghost uses a simple templating language called [Handlebars](http://handlebarsjs.com/) for its themes. The theme used on `/news` is based off of the default [casper theme](https://github.com/TryGhost/Casper).
+Ghostは、テーマに [Handlebars](http://handlebarsjs.com/) と呼ばれる単純なテンプレート言語を使用します。 `/news` で使用されるテーマは、デフォルトの [casper テーマ](https://github.com/TryGhost/Casper) に基づいています。
 
-The default theme is commented pretty heavily so that it should be fairly easy to work out what's going on just by reading the code and the comments. Once you feel comfortable with how everything works, Ghost also has a full [theme API documentation](https://themes.ghost.org) which explains every possible Handlebars helper and template.
+デフォルトのテーマには多くのコメントがあるので、コードやコメントを読むだけで何が起こっているのかを簡単に把握できます。 どのように動作するかを理解したら、 [テーマ API ドキュメント](https://themes.ghost.org) で、Handlebars ヘルパーとテンプレートの詳細をお読みください。
 
-**The main files are:**
+**主なファイルは次のとおりです。**
 
-- `default.hbs` - The main template file
-- `index.hbs` - Used for the home page
-- `post.hbs` - Used for individual posts
-- `page.hbs` - Used for individual pages
-- `tag.hbs` - Used for tag archives
-- `author.hbs` - Used for author archives
+- `default.hbs` - メインテンプレートファイル
+- `index.hbs` - ホームページに使用
+- `post.hbs` - 個々の投稿に使用
+- `page.hbs` - 個々のページに使用
+- `tag.hbs` - タグアーカイブに使用
+- `author.hbs` - 著者アーカイブに使用
 
-One really neat trick is that you can also create custom one-off templates just by adding the slug of a page to a template file. For example:
+1つの巧妙なトリックは、テンプレートファイルにページのスラグを追加するだけで、カスタムのワンオフテンプレートを作成することもできることです。 例:
 
-- `page-about.hbs` - Custom template for the `/about/` page
-- `tag-news.hbs` - Custom template for `/tag/news/` archive
-- `author-ali.hbs` - Custom template for `/author/ali/` archive
+- `page-about.hbs` - `/about/` ページのカスタムテンプレート
+- `tag-news.hbs` - `/tag/news/` アーカイブのカスタムテンプレート
+- `author-ali.hbs` - `/author/ali/` アーカイブのカスタムテンプレート
 
-## Development
+## 開発
 
-1. Get Ghost installed locally.
+1. ゴーストをローカルにインストールします。
 
    ```sh
    npm install -g ghost-cli@latest
@@ -38,63 +38,63 @@ One really neat trick is that you can also create custom one-off templates just 
    ghost start
    ```
 
-   > Note: Currently freeCodeCamp uses Ghost version `2.9.0`, so make sure you are using a version higher than that.
+   > 注: freeCodeCampは現在、バージョン `2.9.0` を使用しているため、それ以降のバージョンであることを確認してください。
 
-   Be sure to run `ghost` commands from the `ghost-local-site` directory. Follow additional instructions on [Ghost's official documentation](https://docs.ghost.org) if are not familiar with its interface.
+   `ghost-local-site` ディレクトリから `ghost` コマンドを実行してください。 インターフェースに慣れていない場合は、[Ghost 公式ドキュメント](https://docs.ghost.org) の追加指示に従ってください。
 
-2. Fork and clone the repository in your theme directory (replacing `YOUR_USERNAME` with your GitHub username):
+2. テーマディレクトリにあるリポジトリをフォークしてクローンします ( `YOUR_USERNAME` を GitHub ユーザー名に置き換えてください)。
 
    ```sh
    cd content/themes/
    git clone https://github.com/YOUR_USERNAME/news-theme.git
    ```
 
-3. Make sure you have all the pre-requisites.
+3. 前提条件がすべて揃っていることを確認してください。
 
-   The theme styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node.js](https://nodejs.org/). Make sure that your Node.js version is compatible with `ghost`.
+   テーマのスタイルは Gulp/PostCSS を使用してコンパイルされ、将来の CSS 仕様をポリフィルします。 [Node.js](https://nodejs.org/) が必要です。 Node.js のバージョンが `ghost` と互換性があることを確認してください。
 
-4. Install dependencies and develop the theme
+4. 依存関係をインストールしてテーマを開発します。
 
    ```sh
    npm ci
    npm run develop
    ```
 
-5. Now you can edit `/assets/css/` files, which will be compiled to `/assets/built/` automatically.
+5. これで `/assets/css/` ファイルを編集できるようになりました。これは `/assets/built/` に自動的にコンパイルされます。
 
-6. Access the development site.
+6. 開発サイトにアクセスします。
 
-   a. Enter `http://localhost:2368/ghost/` into your address bar. Continue with the setup prompted on the page (if running ghost for the first time).
+   a. アドレスバーに `http://localhost:2368/ghost/` を入力します。 ページに表示されたセットアップを続行します (ghost の初回実行時)。
 
-   b. _(One-time only, during setup)_ Restart Ghost, on a separate terminal once to ensure the theme is available.
+   b. _(セットアップ時に一度だけ)_ テーマが利用可能であることを確認するために、別の端末で Ghost を再起動します。
 
    ```sh
    cd ghost-local-site
    ghost restart
    ```
 
-   c. _(One-time only, during setup)_ Once you've done this, go to `http://localhost:2368/ghost/#/settings/design` and scroll to the bottom. Make sure you click activate on the `freecodecamp-news-theme`.
+   c. _(セットアップ時に一度だけ)_ これが完了したら、 `http://localhost:2368/ghost/#/settings/design` に行き、一番下までスクロールします。 `freecodecamp-news-theme` をクリックしてアクティブ化します。
 
-7. Zip the final code and make a pull-request
+7. 最終コードを Zip してプルリクエストを作成します。
 
-   The `zip` Gulp task packages the theme files into `dist/<theme-name>.zip`, which we can then upload to the production site.
+   `zip` Gulp タスクは、テーマファイルを `dist/<theme-name>.zip` にパッケージ化し、本番サイトにアップロードできるようにします。
 
-   When you make a PR, please make sure you have run the below script prior to commiting the code and sending a PR.
+   PR を行う場合は、コードをコミットして PR を送信する前に、以下のスクリプトを実行していることを確認してください。
 
    ```sh
    npm run zip
    ```
 
-## Other Reference and resources
+## その他の参照とリソース
 
-### PostCSS Features Used
+### PostCSS 機能の使用
 
-- Autoprefixer - Don't worry about writing browser prefixes of any kind, it's all done automatically with support for the latest 2 major versions of every browser.
-- Variables - Simple pure CSS variables
-- [Color Function](https://github.com/postcss/postcss-color-function)
+- Autoprefixer - あらゆる種類のブラウザのプレフィックスも書く必要がありません。すべてのブラウザにおいて、最新の2つのメジャーバージョンをサポートして自動的に行われます。
+- 変数 - シンプルな純粋な CSS 変数
+- [カラー関数](https://github.com/postcss/postcss-color-function)
 
-### SVG Icons
+### SVG アイコン
 
-The theme uses inline SVG icons, included via Handlebars partials. You can find all icons inside `/partials/icons`. To use an icon just include the name of the relevant file, eg. To include the SVG icon in `/partials/icons/rss.hbs` - use `{{> "icons/rss"}}`.
+このテーマは、Handlebars パーシャルを介して組み込まれたインライン SVG アイコンを使用しています。 すべてのアイコンは `/partials/icons` 内にあります。 アイコンを使用するには、関連ファイルの名前を含めます。例えば、 SVGアイコンを `/partials/icons/rss.hbs` に含めるには、`{{> "icons/rss"}}`を使用します。
 
-You can add your own SVG icons in the same manner.
+独自の SVG アイコンを同じ方法で追加できます。

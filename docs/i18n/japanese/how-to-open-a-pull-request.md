@@ -1,103 +1,103 @@
-# How to open a Pull Request (PR)
+# プルリクエストを開く方法 (PR)
 
-A pull request (PR) enables you to send changes from your fork on GitHub to freeCodeCamp.org's main repository. Once you are done making changes to the code, you can follow these guidelines to open a PR.
+プルリクエスト (PR) を使用すると、GitHubのフォークから freeCodeCamp.org のメインリポジトリに変更を送信できます。 コードを変更したら、以下のガイドラインに従ってPRを開くことができます。
 
-> [!NOTE] Your PR should be in English. See [here](index.md#translations) for how to contribute translations.
+> [!NOTE] PR は英語で書きます。 翻訳に貢献する方法については、[こちら](index.md#translations) をご覧ください。
 
-## Prepare a good PR title
+## 良いPRタイトルを用意する
 
-We recommend using [conventional title and messages](https://www.conventionalcommits.org/) for commits and pull request. The convention has the following format:
+コミットやプルリクエストには、 [規約に沿ったタイトルやメッセージ](https://www.conventionalcommits.org/) を使用することをお勧めします。 規約には以下の形式があります。
 
 > `<type>([optional scope(s)]): <description>`
 > 
-> For example:
+> 例えば、次のようになります。
 > 
 > `fix(learn): tests for the do...while loop challenge`
 
-When opening a Pull Request(PR), you can use the below to determine the type, scope (optional), and description.
+プルリクエスト (PR) をオープンする際、以下を使用して、その種類、スコープ (任意)、説明を決定することができます。
 
-**Type:**
+**種類:**
 
-| Type  | When to select                                                                   |
-|:----- |:-------------------------------------------------------------------------------- |
-| fix   | Changed or updated/improved functionality, tests, the verbiage of a lesson, etc. |
-| feat  | Only if you are adding new functionality, tests, etc.                            |
-| chore | Changes that are not related to code, tests, or verbiage of a lesson.            |
-| docs  | Changes to `/docs` directory or the contributing guidelines, etc.                |
+| 種類    | 選択するタイミング                        |
+|:----- |:-------------------------------- |
+| fix   | 機能、テスト、レッスン等の変更または更新／改善時         |
+| feat  | 新しい機能、テストなどの追加時のみ                |
+| chore | レッスンのコード、テスト、または検証に関連しない変更時      |
+| docs  | `/docs` ディレクトリまたは貢献ガイドラインなどへの変更時 |
 
-**Scope:**
+**スコープ:**
 
-You can select a scope from [this list of labels](https://github.com/freeCodeCamp/freeCodeCamp/labels?q=scope).
+[ラベルリスト](https://github.com/freeCodeCamp/freeCodeCamp/labels?q=scope) からスコープを選択できます。
 
-**Description:**
+**説明:**
 
-Keep it short (less than 30 characters) and simple, you can add more information in the PR description box and comments.
+簡潔に (30文字未満) 記述します。PR の説明欄やコメントに詳細情報を追加できます。
 
-Some examples of good PRs titles would be:
+良い PR のタイトルの例としては、次のようなものがあります。
 
 - `fix(a11y): improved search bar contrast`
 - `feat: add more tests to HTML and CSS challenges`
 - `fix(api,client): prevent CORS errors on form submission`
 - `docs(i18n): Chinese translation of local setup`
 
-## Proposing a Pull Request
+## プルリクエストを提案する
 
-1. Once the edits have been committed, you will be prompted to create a pull request on your fork's GitHub Page.
+1. 編集がコミットされると、フォークの GitHub ページにプルリクエストを作成するように求められます。
 
-   ![Image - Compare pull request prompt on GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
+   ![Image - Compare & pull request prompt on GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
 
-2. By default, all pull requests should be against the freeCodeCamp main repo, `main` branch.
+2. デフォルトで、プルリクエストはすべて freeCodeCamp メインリポジトリ、`main` ブランチに対して行います。
 
-   Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.
+   プルリクエストを上げるときは、Base Fork が freeCodeCamp/freeCodeCamp に設定されていることを確認してください。
 
-   ![Image - Comparing forks when making a pull request](https://contribute.freecodecamp.org/images/github/comparing-forks-for-pull-request.png)
+   ![画像 - プルリクエストを作成する際にフォークを比較する](https://contribute.freecodecamp.org/images/github/comparing-forks-for-pull-request.png)
 
-3. Submit the pull request from your branch to freeCodeCamp's `main` branch.
+3. ブランチから freeCodeCamp の `main` ブランチへ、プルリクエストを送信します。
 
-4. In the body of your PR include a more detailed summary of the changes you made and why.
+4. PR の本文には、行った変更とその理由の詳細情報を記述してください。
 
-   - You will be presented with a pull request template. This is a checklist that you should have followed before opening the pull request.
+   - プルリクエストテンプレートが表示されます。 これはプルリクエストを開く前に行うべきチェックリストです。
 
-   - Fill in the details as you see fit. This information will be reviewed and the reviewers will decide whether or not your pull request is accepted.
+   - 必要に応じて詳細を記入します。 この情報はレビューされ、レビュアーがプルリクエストを受け入れるかどうかを決定します。
 
-   - If the PR is meant to address an existing GitHub Issue then, at the end of your PR's description body, use the keyword _Closes_ with the issue number to [automatically close that issue if the PR is accepted and merged](https://help.github.com/en/articles/closing-issues-using-keywords).
+   - PR が既存の GitHub Issue に対処するものである場合、PR 説明本文の最後に、キーワード _Closes_ と Issue 番号を使用して、[ PR が承認されマージされたら、その Issue が自動的にクローズされるようにします](https://help.github.com/en/articles/closing-issues-using-keywords)。
 
-     > Example: `Closes #123` will close issue 123
+     > 例: `Closes #123` と記入すると、Issue 123 がクローズされます。
 
-5. Indicate if you have tested on a local copy of the site or not.
+5. サイトのローカルコピーでテスト済みかどうかを表示します。
 
-   - This is very important when making changes that are not just edits to text content like documentation or a challenge description. Examples of changes that need local testing include JavaScript, CSS, or HTML which could change the functionality or layout of a page.
+   - これは、ドキュメントやチャレンジの説明のようなテキストコンテンツを編集するだけでなく、変更を加える場合に、非常に重要です。 ローカルテストを必要とする変更の例としては、ページの機能やレイアウトを変更する可能性のある JavaScript、CSS、または HTML などが挙げられます。
 
-   - If your PR affects the behaviour of a page it should be accompanied by corresponding [Cypress integration tests](how-to-add-cypress-tests.md).
+   - PR がページの動作に影響を与える場合は、対応する [Cypress 統合テスト](how-to-add-cypress-tests.md) も追加する必要があります。
 
-## Feedback on pull requests
+## プルリクエストへのフィードバック
 
-> Congratulations! :tada: on making a PR and thanks a lot for taking the time to contribute.
+> おつかれさまでした！ :tada: PR を作成し、時間をかけて貢献してくださったことに心から感謝します。
 
-Our moderators will now take a look and leave you feedback. Please be patient with the fellow moderators and respect their time. All pull requests are reviewed in due course.
+モデレータが内容を見て、フィードバックします。 仲間のモデレータの時間を尊重し、しばらくお待ちください。 すべてのプルリクエストは、いずれレビューされます。
 
-And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/channel/contributors).
+[フォーラムの「Contributors」 カテゴリー](https://forum.freecodecamp.org/c/contributors) もしくは [Contributors チャットルーム](https://chat.freecodecamp.org/channel/contributors) へいつでもお気軽にお問合せください。
 
-> [!TIP] If you are to be contributing more pull requests, we recommend you read the [making changes and syncing](how-to-setup-freecodecamp-locally.md#making-changes-locally) guidelines to avoid having to delete your fork.
+> [!TIP] 他のプルリクエストも提供する場合は、フォークの削除を避けるため、[変更と同期](how-to-setup-freecodecamp-locally.md#making-changes-locally) ガイドラインをご覧になることを推奨します。
 
-## Conflicts on a pull request
+## プルリクエストでの競合
 
-Conflicts can arise because many contributors work on the repository, and changes can break your PR which is pending a review and merge.
+リポジトリ上で多くのコントリビューターが作業し、レビューとマージの保留中であるPRを壊す可能性がある変更が発生することで、競合が起こります。
 
-More often than not you may not require a rebase, because we squash all commits, however, if a rebase is requested, here is what you should do.
+大半の場合、リベースを必要としないかもしれません。すべてのコミットをスカッシュしているからです。しかしながら、リベースが要求された場合、以下を実行する必要があります。
 
-### For usual bug fixes and features
+### 通常のバグ修正と機能について
 
-When you are working on regular bugs and features on our development branch `main`, you are able to do a simple rebase:
+開発ブランチ `main` の通常のバグや機能に取り組んでいる場合は、簡単なリベースを行うことができます。
 
-1. Rebase your local copy:
+1. ローカルコピーをリベースする
 
    ```console
    git checkout <pr-branch>
    git pull --rebase upstream main
    ```
 
-2. Resolve any conflicts and add / edit commits
+2. 競合を解決し、コミットを追加/編集する
 
    ```console
    # Either
@@ -109,17 +109,17 @@ When you are working on regular bugs and features on our development branch `mai
    git commit --amend --no-edit
    ```
 
-3. Push back your changes to the PR
+3. 変更を PR に押し戻す
 
    ```console
    git push --force origin <pr-branch>
    ```
 
-### For upcoming curriculum and features
+### 今後のカリキュラムと機能について
 
-When you are working on features for our upcoming curriculum `next-*` branches, you have to do a cherry pick:
+今後のカリキュラム `next-*` ブランチの機能に取り組んでいる場合は、Cherry Pick を行う必要があります。
 
-1. Make sure your upstream comes in sync with your local:
+1. アップストリームがローカルと同期していることを確認する
 
    ```console
    git checkout main
@@ -128,9 +128,9 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
    git reset --hard upstream/next-python-projects
    ```
 
-2. Take backup
+2. バックアップを取る
 
-   a. Either delete your local branch after taking a backup (if you still have it locally):
+   a. バックアップ後に、ローカルブランチを削除する (ローカルにまだある場合):
 
    ```console
    git checkout <pr-branch-name>
@@ -146,7 +146,7 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
    git branch -D <pr-branch-name>
    ```
 
-   b. Or just a backup of your pr branch (if you do not have it locally):
+   b. または、PR ブランチのバックアップのみを行う (ローカルにない場合):
 
    ```console
    git checkout -b <backup-branch-name> origin/<pr-branch-name>
@@ -155,14 +155,14 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
    #  git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
    ```
 
-3. Start off with a clean slate:
+3. クリーンスレートで始める
 
    ```console
    git checkout -b <pr-branch-name> next-python-projects
    git cherry-pick <commit-hash>
    ```
 
-4. Resolve any conflicts, and cleanup, install run tests
+4. 競合を解決し、クリーンアップし、実行テストをインストールする
 
    ```console
    npm run clean
@@ -176,7 +176,7 @@ When you are working on features for our upcoming curriculum `next-*` branches, 
 
    ```
 
-5. If everything looks good push back to the PR
+5. すべてがうまくいっているようであれば、PRに押し戻す
 
    ```console
    git push --force origin <pr-branch-name>

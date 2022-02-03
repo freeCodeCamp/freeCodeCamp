@@ -1,66 +1,66 @@
-# DevOps Handbook
+# DevOps ハンドブック
 
-This guide will help you understand our infrastructure stack and how we maintain our platforms. While this guide does not have exhaustive details for all operations, it could be used as a reference for your understanding of the systems.
+このガイドは、インフラストラクチャスタックとプラットフォームをどのように維持するかを理解するのに役立ちます。 このガイドで、すべての操作について詳しく説明しているわけではありませんが、システムを理解する上での参考になります。
 
-Let us know, if you have feedback or queries, and we will be happy to clarify.
+ご意見やご質問があれば、どうぞご連絡ください。喜んでご説明いたします。
 
-# Flight Manual - Code deployments
+# フライトマニュアル - コードデプロイ
 
-This repository is continuously built, tested and deployed to **separate sets of infrastructure (Servers, Databases, CDNs, etc.)**.
+このリポジトリは、継続的に構築され、テストされ、**インフラストラクチャの個別のセット (サーバー、データベース、CDNなど)** にデプロイされます。
 
-This involves three steps to be followed in sequence:
+これには3つのステップが含まれます。
 
-1. New changes (both fixes and features) are merged into our primary development branch (`main`) via pull requests.
-2. These changes are run through a series of automated tests.
-3. Once the tests pass we release the changes (or update them if needed) to deployments on our infrastructure.
+1. 新規変更 (修正および機能変更の両方を含む) は、プルリクエストによりプライマリ開発ブランチ (`main`) にマージされます。
+2. これらの変更は、一連の自動テストで実行されます。
+3. テストに合格すると、インフラストラクチャ上でのデプロイメントに対して変更をリリースします(または必要に応じて更新します)。
 
-#### Building the codebase - Mapping Git Branches to Deployments.
+#### コードベースのビルド - Git ブランチのデプロイメントへのマッピング
 
-Typically, [`main`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main) (the default development branch) is merged into the [`prod-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-staging) branch once a day and is released into an isolated infrastructure.
+通常、[`main`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main) (デフォルトの開発ブランチ) は、[`prod-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-staging) ブランチに 1 日 1 回マージされ、分離されたインフラストラクチャにリリースされます。
 
-This is an intermediate release for our developers and volunteer contributors. It is also known as our "staging" or "beta" release.
+これは開発者とボランティアのコントリビューター用の中間リリースです。 「ステージング」または「ベータ」リリースとも呼ばれます。
 
-It is identical to our live production environment at `freeCodeCamp.org`, other than it using a separate set of databases, servers, web-proxies, etc. This isolation lets us test ongoing development and features in a "production" like scenario, without affecting regular users of freeCodeCamp.org's main platforms.
+それは `freeCodeCamp.org` のライブプロダクション環境と同じで、データベース、サーバー、Web プロキシなどの別々のセットを使用しています。 この分離により、freeCodeCamp.org の main プラットフォームの正規ユーザーに影響を与えることなく、「本番」のようなシナリオで継続的な開発と機能をテストすることができます。
 
-Once the developer team [`@freeCodeCamp/dev-team`](https://github.com/orgs/freeCodeCamp/teams/dev-team/members) is happy with the changes on the staging platform, these changes are moved every few days to the [`prod-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-current) branch.
+開発者チーム [`@freeCodeCamp/dev-team`](https://github.com/orgs/freeCodeCamp/teams/dev-team/members) が、ステージングプラットフォームでの変更に満足したら、これらの変更は数日ごとに [`prod-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-current) ブランチに移されます。
 
-This is the final release that moves changes to our production platforms on freeCodeCamp.org.
+これが freeCodeCamp.org で本番プラットフォームに変更を加えた最終リリースです。
 
-#### Testing changes - Integration and User Acceptance Testing.
+#### 変更のテスト - 統合テストとユーザー承認テスト
 
-We employ various levels of integration and acceptance testing to check on the quality of the code. All our tests are done through software like [GitHub Actions CI](https://github.com/freeCodeCamp/freeCodeCamp/actions) and [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp).
+私たちは、コードの品質を確認するために、様々なレベルの統合と受け入れテストを採用しています。 すべてのテストは、[GitHub Actions CI](https://github.com/freeCodeCamp/freeCodeCamp/actions) や [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp) のようなソフトウェアにより実行されます。
 
-We have unit tests for testing our challenge solutions, Server APIs and Client User interfaces. These help us test the integration between different components.
+私たちは、チャレンジソリューション、Server API、クライアントユーザーインターフェースをテストするための単体テストを行っています。 これらは、異なるコンポーネント間の統合をテストするのに役立ちます。
 
-> [!NOTE] We are also in the process of writing end user tests which will help in replicating real world scenarios like updating an email or making a call to the API or third-party services.
+> [!NOTE] また、メールの更新や API やサードパーティサービスへの呼び出しなど、現実世界のシナリオを再現するのに役立つエンドユーザーテストを作成中です。
 
-Together these tests help in preventing issues from repeating themselves and ensure we do not introduce a bug while working on another bug or a feature.
+これらのテストを組み合わせることで、問題が繰り返されるのを防ぎ、別のバグや機能の作業中にバグが発生しないようにします。
 
-#### Deploying Changes - Pushing changes to servers.
+#### 変更のデプロイ - 変更をサーバーにプッシュする
 
-We have configured continuous delivery software to push changes to our development and production servers.
+開発サーバーと本番サーバーに変更をプッシュする継続的デリバリーソフトウェアを設定しています。
 
-Once the changes are pushed to the protected release branches, a build pipeline is automatically triggered for the branch. The build pipelines are responsible for building artifacts and keeping them in a cold storage for later use.
+保護されたリリースブランチに変更がプッシュされると、そのブランチに対してビルドパイプラインが自動的にトリガーされます。 ビルドパイプラインは、アーティファクトを構築し、後で使用するためにコールドストレージに保管する責任があります。
 
-The build pipeline goes on to trigger a corresponding release pipeline if it completes a successful run. The release pipelines are responsible for collecting the build artifacts, moving them to the servers and going live.
+実行が正常に完了すると、ビルドパイプラインは対応するリリースパイプラインをトリガーします。 リリースパイプラインは、ビルドアーティファクトを収集し、それらをサーバーに移動し、稼働させる責任があります。
 
-Status of builds and releases are [available here](#build-test-and-deployment-status).
+ビルドとリリースのステータスは [こちら](#build-test-and-deployment-status) からご確認いただけます。
 
-## Trigger a build, test and deploy
+## ビルドをトリガー・テスト・デプロイする
 
-Currently, only members on the developer team can push to the production branches. The changes to the `production-*` branches can land only via fast-forward merge to the [`upstream`](https://github.com/freeCodeCamp/freeCodeCamp).
+現時点では、開発チームのメンバーのみが本番ブランチにプッシュできます。 `production-*` ブランチへの変更は、[`upstream`](https://github.com/freeCodeCamp/freeCodeCamp) への早送りマージによってのみ可能です。
 
-> [!NOTE] In the upcoming days we would improve this flow to be done via pull-requests, for better access management and transparency.
+> [!NOTE] 今後、アクセス管理と透明性を向上させるために、プルリクエストを介してこのフローを改善します。
 
-### Pushing changes to Staging Applications.
+### ステージングアプリケーションに変更をプッシュする
 
-1. Configure your remotes correctly.
+1. リモートを正しく構成します。
 
    ```sh
    git remote -v
    ```
 
-   **Results:**
+   **結果:**
 
    ```
    origin   git@github.com:raisedadead/freeCodeCamp.git (fetch)
@@ -69,7 +69,7 @@ Currently, only members on the developer team can push to the production branche
    upstream git@github.com:freeCodeCamp/freeCodeCamp.git (push)
    ```
 
-2. Make sure your `main` branch is pristine and in sync with the upstream.
+2. `main` ブランチが初期状態であり、アップストリームと同期していることを確認してください。
 
    ```sh
    git checkout main
@@ -77,24 +77,24 @@ Currently, only members on the developer team can push to the production branche
    git reset --hard upstream/main
    ```
 
-3. Check that the GitHub CI is passing on the `main` branch for upstream.
+3. GitHub CI がアップストリームの `main` ブランチを渡していることを確認してください。
 
-   The [continuous integration](https://github.com/freeCodeCamp/freeCodeCamp/actions) tests should be green and PASSING for the `main` branch. Click the green check mark next to the commit hash when viewing the `main` branch code.
+   [継続的インテグレーション](https://github.com/freeCodeCamp/freeCodeCamp/actions) テストは、`main` ブランチに関して、緑色であり PASSING でなければなりません。 `main` ブランチコードを表示する際、コミットハッシュの横にある緑色のチェックマークをクリックします。
 
-    <details> <summary> Checking status on GitHub Actions (screenshot) </summary>
+    <details> <summary> GitHub Actionsでステータスを確認する (スクリーンショット) </summary>
       <br>
       ![Check build status on GitHub Actions](https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/devops/github-actions.png)
     </details>
 
-   If this is failing you should stop and investigate the errors.
+   これに失敗した場合は、停止してエラーの確認をします。
 
-4. Confirm that you are able to build the repository locally.
+4. リポジトリをローカルにビルドできることを確認します。
 
    ```
    npm run clean-and-develop
    ```
 
-5. Move changes from `main` to `prod-staging` via a fast-forward merge
+5. 早送りマージにより、変更を `main` から `prod-staging` に移行します。
 
    ```
    git checkout prod-staging
@@ -102,7 +102,7 @@ Currently, only members on the developer team can push to the production branche
    git push upstream
    ```
 
-   > [!NOTE] You will not be able to force push and if you have re-written the history in anyway these commands will error out.
+   > [!NOTE] 強制的にプッシュすることはできません。履歴を書き直した場合、これらのコマンドはエラーになります。
    > 
    > If they do, you may have done something incorrectly and you should just start over.
 
