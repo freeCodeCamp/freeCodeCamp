@@ -1,6 +1,6 @@
 ---
 id: 594da033de4190850b893874
-title: Averages/Root mean square
+title: Medie/Valore efficace
 challengeType: 5
 forumTopicId: 302228
 dashedName: averagesroot-mean-square
@@ -8,23 +8,23 @@ dashedName: averagesroot-mean-square
 
 # --description--
 
-Compute the [Root mean square](https://en.wikipedia.org/wiki/Root mean square "wp: Root mean square") of the numbers 1 through 10 inclusive.
+Calcola il [Valore efficace](https://it.wikipedia.org/wiki/Valore_efficace "wp: Valore efficace") dei numeri da 1 a 10 inclusivo.
 
-The *root mean square* is also known by its initials RMS (or rms), and as the **quadratic mean**.
+Il *valore efficace* è anche noto con le iniziali RMS (o rms dall'inglese root mean square), e come **media quadratica**.
 
-The RMS is calculated as the mean of the squares of the numbers, square-rooted:
+Il RMS è calcolato come la radice quadrata della media dei quadrati dei numeri:
 
 $$x\_{\\mathrm{rms}} = \\sqrt {{{x_1}^2 + {x_2}^2 + \\cdots + {x_n}^2} \\over n}. $$
 
 # --hints--
 
-`rms` should be a function.
+`rms` dovrebbe essere una funzione.
 
 ```js
 assert(typeof rms === 'function');
 ```
 
-`rms([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])` should equal `6.2048368229954285`.
+`rms([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])` dovrebbe essere uguale a `6.2048368229954285`.
 
 ```js
 assert.equal(rms(arr1), answer1);

@@ -1,6 +1,6 @@
 ---
 id: 59713bd26bdeb8a594fb9413
-title: Count the coins
+title: Contare le monete
 challengeType: 5
 forumTopicId: 302238
 dashedName: count-the-coins
@@ -8,51 +8,51 @@ dashedName: count-the-coins
 
 # --description--
 
-There are four types of common coins in [US](https://en.wikipedia.org/wiki/United_States) currency:
+Ci sono quattro tipi di monete comuni nella valuta degli [Stati Uniti d'America](https://it.wikipedia.org/wiki/Stati_Uniti_d%27America):
 
 <ul>
-  <li>quarters (25 cents)</li>
-  <li>dimes (10 cents)</li>
-  <li>nickels (5 cents), and</li>
-  <li>pennies (1 cent)</li>
+  <li>quarter (25 centesimi)</li>
+  <li>dime (10 centesimi)</li>
+  <li>nickel (5 centesimi), e</li>
+  <li>penny (1 centesimo)</li>
 </ul>
 
-<p>There are six ways to make change for 15 cents:</p>
+<p>Ci sono sei modi per ottenere 15 centesimi:</p>
 
 <ul>
-  <li>A dime and a nickel</li>
-  <li>A dime and 5 pennies</li>
-  <li>3 nickels</li>
-  <li>2 nickels and 5 pennies</li>
-  <li>A nickel and 10 pennies</li>
-  <li>15 pennies</li>
+  <li>Un dime e un nickel</li>
+  <li>Un dime e 5 penny</li>
+  <li>3 nickel</li>
+  <li>2 nickel e 5 penny</li>
+  <li>Un nickel e 10 penny</li>
+  <li>15 penny</li>
 </ul>
 
 # --instructions--
 
-Implement a function to determine how many ways there are to make change for a given input, `cents`, that represents an amount of US pennies using these common coins.
+Implementa una funzione che determina quanti modi diversi ci sono per ottenere un certo input, `cents`, che rappresenta il numero di centesimi, usando queste monete comuni.
 
 # --hints--
 
-`countCoins` should be a function.
+`countCoins` dovrebbe essere una funzione.
 
 ```js
 assert(typeof countCoins === 'function');
 ```
 
-`countCoins(15)` should return `6`.
+`countCoins(15)` dovrebbe restituire `6`.
 
 ```js
 assert.equal(countCoins(15), 6);
 ```
 
-`countCoins(85)` shouls return `163`.
+`countCoins(85)` dovrebbe restituire `163`.
 
 ```js
 assert.equal(countCoins(85), 163);
 ```
 
-`countCoins(100)` should return `242`.
+`countCoins(100)` dovrebbe restituire `242`.
 
 ```js
 assert.equal(countCoins(100), 242);
