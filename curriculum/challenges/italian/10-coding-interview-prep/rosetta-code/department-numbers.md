@@ -1,6 +1,6 @@
 ---
 id: 59f40b17e79dbf1ab720ed7a
-title: Department Numbers
+title: I numeri dei dipartimenti
 challengeType: 5
 forumTopicId: 302249
 dashedName: department-numbers
@@ -8,23 +8,23 @@ dashedName: department-numbers
 
 # --description--
 
-There is a highly organized city that has decided to assign a number to each of their departments:
+C'è una città altamente organizzata che ha deciso di assegnare un numero a ciascuno dei suoi dipartimenti:
 
 <ul>
-  <li>Police department</li>
-  <li>Sanitation department</li>
-  <li>Fire department</li>
+  <li>Dipartimento di polizia</li>
+  <li>Dipartimento igienico-sanitario</li>
+  <li>Vigili del Fuoco</li>
 </ul>
 
-Each department can have a number between 1 and 7 (inclusive).
+Ogni dipartimento può avere un numero compreso tra 1 e 7 (inclusi).
 
-The three department numbers are to be unique (different from each other) and must add up to the number 12.
+I tre numeri dei dipartimenti devono essere unici (diversi gli uni dagli altri) e sommati devono fare numero 12.
 
-The Chief of the Police doesn't like odd numbers and wants to have an even number for his department.
+Al Capo della Polizia non piacciono numeri dispari e vuole avere un numero pari per il suo dipartimento.
 
 # --instructions--
 
-Write a program which outputs all valid combinations as an array.
+Scrivi un programma che restituisca tutte le combinazioni valide come array.
 
 ```js
 [2, 3, 7] [2, 4, 6] [2, 6, 4]
@@ -36,25 +36,25 @@ Write a program which outputs all valid combinations as an array.
 
 # --hints--
 
-`combinations` should be a function.
+`combinations` dovrebbe essere una funzione.
 
 ```js
 assert(typeof combinations === 'function');
 ```
 
-`combinations([1, 2, 3], 6)` should return an Array.
+`combinations([1, 2, 3], 6)` dovrebbe restituire un array.
 
 ```js
 assert(Array.isArray(combinations([1, 2, 3], 6)));
 ```
 
-`combinations([1, 2, 3, 4, 5, 6, 7], 12)` should return an array of length 14.
+`combinations([1, 2, 3, 4, 5, 6, 7], 12)` dovrebbe restituire un array di lunghezza 14.
 
 ```js
 assert(combinations(nums, total).length === len);
 ```
 
-`combinations([1, 2, 3, 4, 5, 6, 7], 12)` should return all valid combinations.
+`combinations([1, 2, 3, 4, 5, 6, 7], 12)` dovrebbe restituire tutte le combinazioni valide.
 
 ```js
 assert.deepEqual(combinations(nums, total), result);
