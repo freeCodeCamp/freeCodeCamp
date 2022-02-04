@@ -44,7 +44,7 @@ Algunos ejemplos de buenos títulos para PRs serían:
 
 1. Una vez que las ediciones hayan sido confirmadas, se le pedirá que cree un pull request en la página de GitHub de su fork.
 
-   ![Imagen - Comparar solicitud de pull en GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
+   ![Image - Compare & pull request prompt on GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
 
 2. De manera predeterminada, todas las pull requests deben estar en contra de la rama freeCodeCamp main repo, `main`.
 

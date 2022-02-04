@@ -1,54 +1,54 @@
-# How to Proofread Translations
+# 翻訳校正の手順
 
-Our proofreading team is responsible for ensuring that translations accurately reflect the source text. We trust our proofreaders to ensure that we have very high quality translations.
+校正チームは、翻訳文が原文を正確に反映するようにする責任があります。 私たちは、非常に高い品質の翻訳文を提供してくれる校正者を信頼しています。
 
-All our translations are done by hand, by real humans. Proofreading ensures that there is a consistent tone across our all our translated resources like the curriculum.
+翻訳はすべて実際の人間が作業しています。 校正により、カリキュラムなどの翻訳リソース全体で一貫したトーンが保証されます。
 
-To begin proofreading, visit [our translation platform](https://translate.freecodecamp.org) and login. Select "Go to console" in the top navigation bar to switch from the public view to the workspace view.
+校正を始めるには、[翻訳プラットフォーム](https://translate.freecodecamp.org) にアクセスしてログインします。 上部ナビゲーションバーで「コンソールに移動」を選択し、パブリックビューからワークスペースビューに切り替えます。
 
-## Select a File
+## ファイルの選択
 
-You should see the list of projects you have been granted access to. Select the project that you would like to proofread, then select the language.
+アクセスが許可されたプロジェクトの一覧が表示されます。 校正を行うプロジェクトを選択し、言語を選択します。
 
-![Image - Proofreading File Tree](https://contribute.freecodecamp.org/images/crowdin/proof-file-tree.png)
+![画像 - 校正ファイルツリー](https://contribute.freecodecamp.org/images/crowdin/proof-file-tree.png)
 
-You should now see the list of available files. Choose your file by selecting the `Proofread` button on the right of that file, then choosing `Proofreading` from the drop-down menu that appears.
+利用可能なファイルのリストが表示されます。 ファイルを選ぶには、ファイルの右側にある `Proofread` ボタンを押し、表示されるドロップダウンメニューから `Proofread` を選択します。
 
-> [!NOTE] If you are in this workspace view, but want to work on [translating a file](how-to-translate-files.md) instead of proofreading, you may select `Crowdsourcing` from the dropdown menu instead.
+> [!NOTE] このワークスペースビューで、校正ではなく [ファイルの翻訳](how-to-translate-files.md)を行いたい場合は、ドロップダウンメニューから `Crowdsourcing` を選択します。
 
-## Proofread Translations
+## 翻訳文の校正
 
-![Image - Proofreading View](https://contribute.freecodecamp.org/images/crowdin/proofread.png)
+![画像 - 校正ビュー](https://contribute.freecodecamp.org/images/crowdin/proofread.png)
 
 <!--Add proofread/crowdsource button to the image-->
 
-Here you will see the list of strings in the selected file, with their related translations. The translation that is displayed here is the translation that has received the highest score (between upvotes and downvotes) from the translation community.
+ここでは、選択したファイル内の文字列のリストと関連する翻訳文が表示されます。 ここで表示される翻訳は、翻訳コミュニティから (賛成票と反対票の間で) 最高得点を得た翻訳です。
 
-While you can view _all_ proposed translations for a given string, the community scores (determined by the upvotes and downvotes) should be taken into consideration when choosing which translation to approve. The community can review proposed translations and recommend which one is most accurate and clear.
+指定された文字列の _すべての_ 翻訳候補を見ることができます。承認する翻訳文を選択する際に、(賛成票と反対票によって決定される) コミュニティのスコアを考慮します。 コミュニティは翻訳候補をレビューし、最も正確で明確な翻訳を推奨します。
 
-1. This is the original string (in English).
-2. This is the matching translated string. The most popular translation proposal, based on upvotes and downvotes, will be displayed here.
-3. Clicking this checkmark button will approve that translation.
-4. Crowdin will display the status of each string. `Done` means a translation has been approved and will be downloaded on our next Crowdin pull. `Todo` means the string has not been proofread. `Hidden` means the string is locked and _should not be translated_. `Comment` means the string has a related comment.
-5. Translations can be selected with the checkboxes and approved here in one bulk action.
-6. You can view the community proposed translations, their popularity scores, and Crowdin suggested translations here.
-7. This button shows/hides the right-hand side display pane, where you can view translations, comments, translation memory, and glossary terms.
-8. Crowdin displays error messages here from the quality assurance checks. In other words, if something does not seem correct in the translation, Crowdin will notify you. These translations should be approved with care.
+1. 原文の文字列 (英語) を確認します。
+2. 翻訳された文字列を確認します。 賛成票と反対票に基づいて、最も人気のある翻訳案がここに表示されます。
+3. このチェックマークボタンをクリックすると、その翻訳が承認されます。
+4. Crowdin は各文字列のステータスを表示します。 `Done` は翻訳が承認されたことを意味し、次の Crowdin プルにダウンロードされます。 `Todo` は文字列が校正されていないことを意味します。 `Hidden` は文字列がロックされており、_翻訳すべきではない_ことを意味します。 `Comment` は、その文字列に関連するコメントがあることを意味します。
+5. 翻訳文をチェックボックスで選択し、一括して承認することもできます。
+6. コミュニティが提案した翻訳、その人気度のスコア、Crowdin が提案した翻訳をここで参照できます。
+7. このボタンで、右側の表示ペインの表示/非表示を切り替えます。ここでは、翻訳、コメント、翻訳メモリ、および用語集を見ることができます。
+8. 品質保証チェックにエラーがあった際に、ここにメッセージが表示されます。 つまり、翻訳文が正しくないと思われる場合に、Crowdin から通知があります。 これらの翻訳は慎重に承認します。
 
-No additional actions are required once a file has been proofread.
+ファイルが校正されると、追加のアクションは必要ありません。
 
-> [!NOTE] Approving a string in the proofreading view will mark it as complete and it will be downloaded in our next pull from Crowdin to GitHub.
+> [!NOTE] 校正ビューで文字列を承認すると完成とマークされ、Crowdin から GitHub への次のプルでダウンロードされます。
 
-## Becoming a proofreader
+## 校正者になる
 
-If you have any questions, or are interested in becoming a proofreader, feel free to reach out to us in our [contributors chat room](https://chat.freecodecamp.org/channel/contributors). We will typically grant you proofreading access if you have been contributing to freeCodeCamp for a while.
+ご質問がある場合、または校正者になることに興味がある場合は、[コントリビューターチャットルーム](https://chat.freecodecamp.org/channel/contributors) でお気軽にお問い合わせください。 一定期間 freeCodeCamp に貢献している場合は、通常、校正へのアクセスを許可します。
 
-Our staff team and community moderators teams are always looking for kind volunteers like you who help us make high quality translations available to the world.
+スタッフチームとコミュニティモデレータチームは、世界中で高品質の翻訳を利用できるようにするための親切なボランティアを常に探しています。
 
-> [!NOTE] Crowdin will allow you to approve your translations. In general, it is best to allow another proofreader to review your proposed translations as extra safety to ensure there are no errors.
+> [!NOTE] Crowdin では、自身の翻訳を承認することを許可します。 一般的には、エラーがないことを確認するための安全策として、他の校正者が翻訳案を見直すことをお勧めしています。
 
-## Creating a channel on Chat for a world language
+## 世界の言語のチャットでチャンネルを作成する
 
-For the most part we encourage you to use the [contributors chat](https://chat.freecodecamp.org/channel/contributors) room for all correspondence. However if the team of volunteer translators grows for a certain language, we can consider creating additional break-out channel for the language.
+ほとんどの場合、すべての連絡に [コントリビューターチャット](https://chat.freecodecamp.org/channel/contributors) を使用することをお勧めします。 しかし、ある言語のボランティア翻訳者のチームが成長した場合、その言語のブレイクアウトチャンネルを追加することを検討します。
 
-If you are already a proofreader and are interested in having a dedicated channel on our chat servers for a specific language, [fill out this form](https://forms.gle/XU5CyutrYCgDYaVZA).
+すでに校正者であり、特定の言語のためのチャットサーバーに専用チャンネルを持つことに興味がある場合、[このフォーム](https://forms.gle/XU5CyutrYCgDYaVZA) に記入します。
