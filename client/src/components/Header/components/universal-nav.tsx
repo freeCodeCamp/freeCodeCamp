@@ -44,6 +44,7 @@ export const UniversalNav = ({
 
   return (
     <nav
+      aria-label='primary'
       className={'universal-nav' + (displayMenu ? ' expand-nav' : '')}
       id='universal-nav'
     >
