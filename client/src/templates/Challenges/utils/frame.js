@@ -194,14 +194,14 @@ export const createMainPreviewFramer = (document, proxyLogger) =>
     'previewer'
   );
 
-export const createProjectPreviewFramer = document =>
+export const createProjectPreviewFramer = (document, frameTitle) =>
   createFramer(
     document,
     projectPreviewId,
     initPreviewFrame,
     undefined,
     undefined,
-    'project preview'
+    frameTitle
   );
 
 export const createTestFramer = (document, proxyLogger, frameReady) =>
