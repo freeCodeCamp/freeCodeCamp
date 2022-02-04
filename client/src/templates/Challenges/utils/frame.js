@@ -191,7 +191,7 @@ export const createMainPreviewFramer = (document, proxyLogger) =>
     initMainFrame,
     proxyLogger,
     undefined,
-    'previewer'
+    'preview'
   );
 
 export const createProjectPreviewFramer = (document, frameTitle) =>
