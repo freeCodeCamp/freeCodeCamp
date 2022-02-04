@@ -63,7 +63,6 @@ $RECYCLE.BIN/
 # Icon must end with two \r
 Icon
 
-
 # Thumbnails
 ._*
 
@@ -164,7 +163,6 @@ config/client/test-evaluator.json
 config/curriculum.json
 config/i18n/all-langs.js
 config/certification-settings.js
-
 
 ### vim ###
 # Swap
