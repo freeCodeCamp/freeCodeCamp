@@ -4,35 +4,41 @@ exports[`<ChallengeTitle/> renders correctly 1`] = `
 <div
   className="challenge-title-wrap"
 >
-  <div
+  <nav
+    aria-label="breadcrumb"
     className="challenge-title-breadcrumbs"
   >
-    <a
-      className="breadcrumb-left"
-      href="/learn/fake-superblock"
-      state={
-        Object {
-          "breadcrumbBlockClick": "fake-block",
-        }
-      }
-    >
-      <span
-        className="ellipsis"
-      />
-    </a>
-    <div
-      className="breadcrumb-center"
-    />
-    <a
-      className="breadcrumb-right"
-      href="/learn/fake-superblock/#fake-block"
-      state={
-        Object {
-          "breadcrumbBlockClick": "fake-block",
-        }
-      }
-    />
-  </div>
+    <ol>
+      <li
+        className="breadcrumb-left"
+      >
+        <a
+          href="/learn/fake-superblock"
+          state={
+            Object {
+              "breadcrumbBlockClick": "fake-block",
+            }
+          }
+        >
+          <span
+            className="ellipsis"
+          />
+        </a>
+      </li>
+      <li
+        className="breadcrumb-right"
+      >
+        <a
+          href="/learn/fake-superblock/#fake-block"
+          state={
+            Object {
+              "breadcrumbBlockClick": "fake-block",
+            }
+          }
+        />
+      </li>
+    </ol>
+  </nav>
   <div
     className="challenge-title"
   >
