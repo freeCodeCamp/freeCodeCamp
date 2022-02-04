@@ -2,7 +2,7 @@
 
 ページの機能やレイアウトを変更する可能性がある JavaScript、CSS、または HTML を変更する際には、対応する [Cypress](https://docs.cypress.io) 統合テストを追加することが重要です。
 
-Cypress テストもしくは「specs」の書き方については、Cypress の公式 [ドキュメント ](https://docs.cypress.io/guides/getting-started/writing-your-first-test.html) をご覧ください。
+Cypress テストもしくは「specs」の書き方については、Cypress の公式 [ドキュメント](https://docs.cypress.io/guides/getting-started/writing-your-first-test.html) をご覧ください。
 
 ## テストを追加する場所
 
@@ -74,4 +74,4 @@ npm run cypress:install-build-tools
 
 - 端末でプロンプトが表示されたら、言語/エリアでキーボードのレイアウトを選択してください。
 
-これで、[Cypress を実行することができます ](/how-to-add-cypress-tests#_2-run-the-cypress-tests)。
+これで、[Cypress を実行することができます](/how-to-add-cypress-tests#_2-run-the-cypress-tests)。

@@ -266,11 +266,11 @@ title: Challenge Title
 変数 `realNumber` を整数に変換するには、`parseInt` を使用します。
 ```
 
-- ファイル名とパスディレクトリへの参照 (例: `package.json`、`src/component`) は `` \` `` バックティックで囲みます。
+- ファイル名とパスディレクトリへの参照 (例: `package.json`、`src/components`) は `` \` `` バックティックで囲みます。
 - 複数行コードブロック **の前に空行** が必要です。 次の行は、3つのバックティックに続いて [対応言語](https://prismjs.com/#supported-languages) の1つで始まります。 コードブロックを完了するには、3 つのバックティックのみの新しい行と **別の空行** が必要です。 下記の例を参照してください。
 - 空白はマークダウンでも重要ですので、エディターで表示させることをお勧めします。
 
-**注:** YMAL でコード例を使用する場合、バックティックの右側に言語用の `yml` を使用するのではなく、`yaml` を使用してください。
+**注:** YMAL のコード例を使用する場合、バックティックの右側に記載する言語は、 `yml` ではなく `yaml` を使用してください。
 
 以下はコードの例です。
 
@@ -282,11 +282,11 @@ title: Challenge Title
 ````
 ````
 
-- 注意書き形式の追加情報は空白行で囲みます。例: `**注:** 注記のテキスト...`
-- 複数の注意書きが必要な場合は、すべての注意書きを別々の文章でリスト化します。例: `**注:** 最初の注記のテキスト。 2 番目の注記のテキスト。`
+- 注意書き形式の追加情報は空白行で囲みます。例: `**Note:** Rest of note text...`
+- 複数の注意書きが必要な場合は、すべての注意書きを別々の文章でリスト化します。例: `**Notes:** First note text. Second note text.`
 - 可能であれば、一重引用符を使用します。
 
-**注:** 同等の_マークダウン_は、_HTML_タグの代わりに使用します。
+**注:** _HTML_ タグの代わりに同等の _マークダウン_ を使用してください。
 
 ## テストの記述
 
@@ -368,7 +368,7 @@ class MyComponent extends React.Component {
 
 ### シードコードコメントの翻訳
 
-各言語には、個別のコメント辞書があります。 [コメント辞書の英語版](/curriculum/dictionaries/english/comments.js) は、英語以外のバージョンファイルにある翻訳のベースになります。 英語以外のバージョンである中国語のコメント辞書は、`/curriculum/dictionaries/chinese/comments.js`にあります。 それぞれの辞書は一意の `id` プロパティと `text` プロパティを持つオブジェクトの配列で構成されています。 `text` のみ、対応する英語のコメントの翻訳を含むように変更する必要があります。
+各言語には、個別のコメント辞書があります。 [コメント辞書の英語版](/curriculum/dictionaries/english/comments.js) は、英語以外のバージョンファイルにある翻訳のベースになります。 英語以外のバージョン、例えば中国語のコメント辞書は、`/curriculum/dictionaries/chinese/comments.js` にあります。 それぞれの辞書は一意の `id` プロパティと `text` プロパティを持つオブジェクトの配列で構成されています。 `text` のみ、対応する英語のコメントの翻訳を含むように変更する必要があります。
 
 一部のコメントには、翻訳してはいけない単語 / フレーズが含まれています。 例えば、変数名や「React」のような固有ライブラリ名は翻訳しません。 例として以下のコメントをご覧ください。 `myGlobal` という単語は翻訳しません。
 
@@ -378,7 +378,7 @@ class MyComponent extends React.Component {
 
 > [!NOTE]
 > 
-> コメント辞書の i18n で作業できるようにするために統合に取り組んでいます。
+> 現在、コメント辞書の i18n 作業ができるようにするためのインテグレーションに取り組んでいます。
 
 ## ヒントとソリューション
 
@@ -419,11 +419,11 @@ class MyComponent extends React.Component {
 
 ### ヒント 1
 
-ヒントを記述してください
+ヒントを記述
 
 ### ヒント 2
 
-ヒントを記述してください
+ヒントを記述
 
 ---
 
@@ -439,8 +439,8 @@ function myFunc() {
 
 #### コードの説明
 
-- コードの説明はこちら
-- コードの説明はこちら
+- コードの説明を記述
+- コードの説明を記述
 
 #### 関連リンク
 
@@ -452,7 +452,7 @@ function myFunc() {
 
 ## チャレンジのテスト
 
-変更のために [プルリクエストを作成する] (how-to-open-a-pull-request.md) 前に、行った変更が誤ってチャレンジに問題を引き起こさないことを確認する必要があります。
+変更のために [プルリクエストを作成する](how-to-open-a-pull-request.md) 前に、行った変更が誤ってチャレンジに問題を引き起こさないことを確認する必要があります。
 
 1. すべてのチャレンジをテストするには、ルートディレクトリから以下のコマンドを実行してください。
 
@@ -472,7 +472,7 @@ npm run test:curriculum --superblock=responsive-web-design
 
 次の手順を実行することで、1 つのチャレンジを個別にテストすることもできます。
 
-1. `カリキュラム` ディレクトリに切り替えてください。
+1. `curriculum` ディレクトリに切り替えてください。
 
    ```
    cd curriculum
@@ -485,7 +485,7 @@ npm run test:curriculum --superblock=responsive-web-design
 
 各チャレンジがテストに合格したことを確認したら、[プルリクエストを作成](how-to-open-a-pull-request.md) してください。
 
-> [!TIP] `.env` にある環境変数 `LOCALE` を、テストするチャレンジ言語に設定できます。
+> [!TIP] `.env` にある環境変数 `LOCALE` で、テストするチャレンジの言語を設定できます。
 > 
 > 現在受け入れられている値は、`english` と `chinese`で、デフォルトは `english` です。
 
@@ -493,6 +493,6 @@ npm run test:curriculum --superblock=responsive-web-design
 
 チャレンジの作成および編集
 
-1. [チャレンジタイプ](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) - 数値チャレンジ型の値が何を意味するのか (列挙)
+1. [チャレンジタイプ](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) - チャレンジタイプの値の、どの数値が何を意味するか (enum)
 
-2. [FreeCodeCampへの貢献 - ES6 Challenge Tests の作成](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - 古いバージョンのカリキュラムに貢献している [Ethan Arrowood](https://twitter.com/ArrowoodTech) のビデオ
+2. [freeCodeCamp への貢献 - ES6 Challenge Tests の作成](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - 古いバージョンのカリキュラムに貢献している [Ethan Arrowood](https://twitter.com/ArrowoodTech) の動画

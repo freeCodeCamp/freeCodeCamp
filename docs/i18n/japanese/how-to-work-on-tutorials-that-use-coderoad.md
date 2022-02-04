@@ -1,12 +1,12 @@
-このページでは、CodeCamp の freeCodeCamp チュートリアルや、CodeRoad VS Code 拡張機能を使用して完了したプロジェクトに貢献する方法を説明します。
+このページでは、CodeRoad VS Code 拡張機能を使用して作成された freeCodeCamp チュートリアルやプロジェクトに貢献する方法を説明します。
 
 ## チュートリアルの仕組み
 
-CodeRoad を使用している freeCodeCamp チュートリアルは、それぞれ freeCodeCamp GitHub 組織 の下に独自のリポジトリを持っています。 それらはすべて `learn-` から始まります。 例えば、`https://github.com/freeCodeCamp/learn-bash-by-building-aboilerplate/` です。
+CodeRoad を使用している freeCodeCamp チュートリアルは、それぞれ freeCodeCamp GitHub 組織 の下に独自のリポジトリを持っています。 それらはすべて `learn-` から始まります。 例えば、`https://github.com/freeCodeCamp/learn-bash-by-building-a-boilerplate/` です。
 
 各チュートリアルリポジトリには、`main` ブランチと「バージョン」ブランチがあります。例えば、 `v1.0.0` です。
 
-`main` ブランチには、`TUTORIAL.md` と `coderad.yaml` 2 つのメインファイルがあります。 `TUTORIAL.md` には、チュートリアルのすべての手順、ヒント、タイトルなどが含まれています。 `coderoad.yaml` には、どのコマンドを実行するか、どのファイルの変更を監視するか、どのブランチバージョンをステップに使用するかなど CodeRoad に対する指示が含まれています。
+`main` ブランチには、`TUTORIAL.md` と `coderoad.yaml` 2 つのメインファイルがあります。 `TUTORIAL.md` には、チュートリアルのすべての手順、ヒント、タイトルなどが含まれています。 `coderoad.yaml` には、どのコマンドを実行するか、どのファイルの変更を監視するか、どのブランチバージョンをステップに使用するかなど CodeRoad に対する指示が含まれています。
 
 「バージョン」ブランチには、チュートリアルの各ステップにロードされるコミットが含まれています。 このブランチのコミットメッセージは特定のものでなければなりません。 最初のコミットには、メッセージに `INIT` が必要であり、初回レッスン前にロードするファイルがすべて含まれています。
 
