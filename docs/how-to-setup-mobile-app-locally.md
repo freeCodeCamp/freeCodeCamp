@@ -86,7 +86,7 @@ upstream    https://github.com/freeCodeCamp/mobile.git (push)
 
 ## Setting up IDE and Flutter
 
-1. first you will have to install Flutter on your local machine - https://docs.flutter.dev/get-started/install, we currently make use of Flutter `2.5.x`. Follow the instructions carefully.
+1. first you will have to install Flutter on your local machine - https://docs.flutter.dev/get-started/install, we currently make use of Flutter `2.8.x`. Follow the instructions carefully.
 2. Next set up (or install) an IDE to make developing the app a faster experience. - We mainly make use of Visual Studio Code but installing Android Studio is also recommended to have easy access to the AVD-manager. (The manager where you access your installed emulators)
 3. Make sure to install the recommended Flutter plugin if you use VsCode. To do this:
    - Start VsCode
