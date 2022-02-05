@@ -39,7 +39,7 @@ function ChallengeTitle({
       {showBreadCrumbs && <BreadCrumb block={block} superBlock={superBlock} />}
       <div className='challenge-title'>
         <div className='title-text'>
-          <b>{children}</b>
+          <h1>{children}</h1>
           {isCompleted ? (
             <GreenPass
               style={{ height: '15px', width: '15px', marginLeft: '7px' }}

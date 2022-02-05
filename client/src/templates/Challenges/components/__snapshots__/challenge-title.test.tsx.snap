@@ -39,9 +39,9 @@ exports[`<ChallengeTitle/> renders correctly 1`] = `
     <div
       className="title-text"
     >
-      <b>
+      <h1>
         title text
-      </b>
+      </h1>
       <svg
         aria-label="icons.passed"
         height="50"
