@@ -10,11 +10,11 @@
 
 まず、`config/i18n/all-langs.ts` ファイルにアクセスして、利用可能な言語リストに言語を追加し、値を設定します。 ここには 4 つのオブジェクトがあります。
 
-- `availableLangs` : `client` と `curriculum` 両方の配列で、言語のテキスト名を追加します。 これは `.env` ファイルで使用される値です。
-- `auditedCerts` : 言語のテキスト名を _key_ として追加し、`SuperBlocks.{cert}` 変数の配列を _value_ として追加します。 これは、クライアントにどの認定講座の翻訳が完了しているのかを伝えます。
-- `i18nextCodes` : これらは各言語の ISO の言語コードです。 有効にしようとしている言語に適切な ISO コードを追加する必要があります。 言語コードは、各言語に固有のものである必要があります。
-- `langDisplayNames` : これらはナビゲーションメニューの言語セレクターで使用する表示名です。
-- `langcodes` : これらは日付と数字の書式設定に使用する言語コードです。 ISO コードではなく、Unicode CLDR コードである必要があります。
+- `availableLangs`: `client` と `curriculum` 両方の配列で、言語のテキスト名を追加します。 これは `.env` ファイルで使用される値です。
+- `auditedCerts`: 言語のテキスト名を _key_ として追加し、`SuperBlocks.{cert}` 変数の配列を _value_ として追加します。 これは、クライアントにどの認定講座の翻訳が完了しているのかを伝えます。
+- `i18nextCodes`: これらは各言語の ISO の言語コードです。 有効にしようとしている言語に適切な ISO コードを追加する必要があります。 言語コードは、各言語に固有のものである必要があります。
+- `langDisplayNames`: これらはナビゲーションメニューの言語セレクターで使用する表示名です。
+- `langCodes`: これらは日付と数字の書式設定に使用する言語コードです。 ISO コードではなく、Unicode CLDR コードである必要があります。
 
 一例を挙げると、Dothraki という言語を有効にしたい場合、`all-langs.js` の各オブジェクトは次のようになります。
 
@@ -127,7 +127,7 @@ const algoliaIndices = {
 };
 ```
 
-最後に、`.env` ファイルの中で、`CLIENT_LOCALE` と `CURRICUUM_LOCALE` を新しい言語 (`availableLangs` 値を使用) に設定します。
+最後に、`.env` ファイルの中で、`CLIENT_LOCALE` と `CURRICULUM_LOCALE` を新しい言語 (`availableLangs` 値を使用) に設定します。
 
 ```txt
 CLIENT_LOCALE="dothraki"

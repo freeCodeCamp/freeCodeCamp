@@ -44,7 +44,7 @@
 
 1. 編集がコミットされると、フォークの GitHub ページにプルリクエストを作成するように求められます。
 
-   ![Image - Compare & pull request prompt on GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
+   ![画像 - GitHub で比較 & プルリクエストプロンプト](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
 
 2. デフォルトで、プルリクエストはすべて freeCodeCamp メインリポジトリ、`main` ブランチに対して行います。
 
