@@ -48,7 +48,7 @@ YouTube チャンネル用の教育ビデオを作成するために、[YouTube 
 
 貢献可能な作業にどのようなものがあるか把握するため、まずは [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) または [**`first timers only`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) のラベルが付いた Issue を確認してください。
 
-> [!TIP] **`help wanted`** の Issue は誰でも作業が可能であり、作業前に許可を求める必要はありません。 ただし、**`first timers only`** ラベルが付けられた Issue は、初めて freeCodeCamp コードベースに貢献する人用の特別な Issue です。
+> [!TIP] **`help wanted`** の Issue は誰でも作業が可能であり、作業前に許可を求める必要はありません。 ただし、 **`first timers only`** ラベルが付けられた Issue は、初めて freeCodeCamp コードベースに貢献する人用の特別な Issue です。
 
 ### タイプミスを見つけました。 プルリクエストを行う前に Issue を作成すべきですか？
 
@@ -102,4 +102,4 @@ YouTube チャンネル用の教育ビデオを作成するために、[YouTube 
 
 スタック、コードベースのアーキテクチャー、翻訳などについて質問がある場合は、[フォーラム上の](https://forum.freecodecamp.org/g/team) スタッフチームまでお気軽にご連絡ください。
 
-**`dev[at]freecodeamp.org` にて、開発者スタッフにメールでお問い合わせいただけます。 **
+**`dev[at]freecodecamp.org` にて、開発者スタッフにメールでお問い合わせいただけます。 **

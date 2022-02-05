@@ -495,4 +495,4 @@ npm run test:curriculum --superblock=responsive-web-design
 
 1. [チャレンジタイプ](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) - チャレンジタイプの値の、どの数値が何を意味するか (enum)
 
-2. [freeCodeCamp への貢献 - ES6 Challenge Tests の作成](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - 古いバージョンのカリキュラムに貢献している [Ethan Arrowood](https://twitter.com/ArrowoodTech) の動画
+2. [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - 古いバージョンのカリキュラムに貢献している [Ethan Arrowood](https://twitter.com/ArrowoodTech) の動画
