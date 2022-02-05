@@ -16,11 +16,11 @@
 
 また、WSL2 を介した Windows 10 をサポートしており、[ガイド](how-to-setup-wsl.md) を読んで準備することができます。
 
-コミュニティメンバーの中には、Git for Windows (Git Bash) や Windows にインストールされている他のツールを使用して、Windows 10でネイティブに開発する人もいます。 We do not have official support for such a setup at this time, we recommend using WSL2 instead.
+コミュニティメンバーの中には、Git for Windows (Git Bash) や Windows にインストールされている他のツールを使用して、Windows 10でネイティブに開発する人もいます。 現時点では、このようなセットアップに対する公式サポートは行っておらず、WSL2 の使用をお勧めしています。
 
 #### 必要条件:
 
-| 必要条件                                                                                    | バージョン   | 注記                                                                                       |
+| 必要条件                                                                                    | バージョン   | 注                                                                                        |
 | --------------------------------------------------------------------------------------- | ------- | ---------------------------------------------------------------------------------------- |
 | [Node.js](http://nodejs.org)                                                            | `16.x`  | 「Active LTS」バージョンを使用しています。[LTS スケジュール](https://nodejs.org/en/about/releases/) を参照してください。 |
 | npm (Nodeにバンドル)                                                                         | `8.x`   | Node.js Active LTS にバンドルされたバージョンを使用します。                                                  |
@@ -560,7 +560,7 @@ TCP    0.0.0.0:3000           DESKTOP      LISTENING
 
 ---
 
-### Issues installing dependencies
+### 依存関係インストール中の問題
 
 依存関係のインストール中にエラーが発生した場合、ネットワークが制限されていないこと、またはファイアウォール設定でリソースへのアクセスが妨げられていないことを確認してください。
 
