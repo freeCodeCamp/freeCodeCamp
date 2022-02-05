@@ -8,7 +8,7 @@ dashedName: pre-filter-json-to-get-the-data-you-need
 
 # --description--
 
-FreeCodeCamp Cat Photo API から取得した猫の写真をすべてレンダリングしたいわけではない場合、写真をループ処理する前に JSON の事前フィルタリングを行えます。
+freeCodeCamp Cat Photo API から取得した猫の写真をすべてレンダリングしたいわけではない場合、写真をループ処理する前に JSON の事前フィルタリングを行えます。
 
 JSON データが配列に格納されている場合、`filter` メソッドを使用して、`id` キーの値が `1` である猫を除外することができます。
 
