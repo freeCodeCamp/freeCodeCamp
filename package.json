@@ -120,7 +120,7 @@
     "@types/jest": "27.4.0",
     "@types/jquery": "3.5.13",
     "@types/loadable__component": "5.13.4",
-    "@types/lodash-es": "4.17.5",
+    "@types/lodash-es": "4.17.6",
     "@types/node": "16.11.22",
     "@types/prismjs": "1.26.0",
     "@types/psl": "1.1.0",
