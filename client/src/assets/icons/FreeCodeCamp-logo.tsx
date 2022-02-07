@@ -3,7 +3,7 @@ import React from 'react';
 function FreeCodeCampLogo(): JSX.Element {
   return (
     <svg
-      aria-label='freeCodeCamp'
+      aria-label='freeCodeCamp.org'
       height={24}
       version='1.1'
       viewBox='0 0 210 24'
