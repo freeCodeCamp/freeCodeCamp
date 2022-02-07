@@ -47,7 +47,7 @@ forumTopicId: 12345
 
 ---
 
-その他の回答
+他の回答
 
 ## --video-solution--
 
@@ -89,7 +89,7 @@ https://www.youtube.com/watch?v=[videoId] (URL 中の `videoId` をビデオの 
 
 ### マークダウンファイルに質問を追加してください
 
-ローカルでまたは GitHub インターフェースを使用して質問を追加することができます。 ローカルで質問を追加するには、「freeCodeCamp をローカルに設定する」(how-to-setup-freecodecamp-locally.md) 必要があります。 GitHub でファイルを見つけて、編集ボタンをクリックして、ブラウザで質問を追加することもできます。
+ローカルでまたは GitHub インターフェースを使用して質問を追加することができます。 ローカルで質問を追加するには、[freeCodeCamp をローカルに設定する](how-to-setup-freecodecamp-locally.md) 必要があります。 GitHub でファイルを見つけて、編集ボタンをクリックして、ブラウザで質問を追加することもできます。
 
 特定のビデオチャレンジに質問がまだ追加されていない場合は、次のデフォルトの質問があります。
 
@@ -117,7 +117,7 @@ Answer 2
 1
 ```
 
-下記項目の下に質問テキストを追加／更新してください。
+下記項目の下に質問テキストを追加 / 更新してください。
 
 ```
 # --question--
@@ -125,7 +125,7 @@ Answer 2
 ## --text--
 ```
 
-`## --answers--` の下に回答を追加／更新してください (`Answer 1`、`Answer 2` など)。 `## -video-solution--` の下にある番号を正解の番号に更新してください。 同じ形式で、他の回答も追加できます。 質問と回答は引用符で囲むことができます。
+`## --answers--` の下に回答を追加 / 更新してください (`Answer 1`、`Answer 2` など)。 `## -video-solution--` の下にある番号を正解の番号に更新してください。 同じ形式で、他の回答も追加できます。 質問と回答は引用符で囲むことができます。
 
 ### 質問の例
 
@@ -196,7 +196,7 @@ print(height/3)
 
 3 ````
 
-以下のビデオコースのマークダウンファイルで、その他の例も参照できます。 すべてのチャレンジにはすでに質問があります: [Python for Everybody コース](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
+以下のビデオコースのマークダウンファイルで、その他の例も参照できます。 すべてのチャレンジには既に質問があります: [Python for Everybody コース](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
 
 ## プルリクエストをオープンする
 
