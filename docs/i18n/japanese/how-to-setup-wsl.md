@@ -2,9 +2,9 @@
 
 > [!NOTE] これらの指示に従う前に、システムが要件を満たしていることを確認してください。
 > 
-> **WSL2** : Windows 10 64-bit (Version 2004, Build 19041以上) - Windows 10 Home を含むすべてのディストリビューションで利用可能です。
+> **WSL2**: Windows 10 64-bit (Version 2004, Build 19041以上) - Windows 10 Home を含むすべてのディストリビューションで利用可能です。
 > 
-> **Docker Desktop for Windows** : [Windows 10 Pro](https://docs.docker.com/docker-for-windows/install/#system-requirements) および [Windows 10 Home](https://docs.docker.com/docker-for-windows/install-windows-home/#system-requirements) の各要件を参照してください。
+> **Docker Desktop for Windows**: [Windows 10 Pro](https://docs.docker.com/docker-for-windows/install/#system-requirements) および [Windows 10 Home](https://docs.docker.com/docker-for-windows/install-windows-home/#system-requirements) の各要件を参照してください。
 
 このガイドでは、WSL2 のセットアップに関する一般的な手順について説明します。 WSL2 に関する一般的な問題に対処したら、[ローカルセットアップガイド](how-to-setup-freecodecamp-locally.md) に従い、Ubuntu のように WSL ディストリビューションを実行している Windows 上で freeCodeCamp を起動できるようになります。
 
@@ -42,7 +42,7 @@ git version 2.25.1
 
 (任意ですが推奨) GitHub で [ssh キー設定](https://help.github.com/articles/generating-an-ssh-key) を実行します。
 
-## コードエディタをインストールする
+## コードエディターをインストールする
 
 Windows 10 に [Visual Studio Code](https://code.visualstudio.com) をインストールすることを強くお勧めします。 WSLの素晴らしいサポートがあり、自動的にWSL distro に必要な拡張機能をすべてインストールします。
 

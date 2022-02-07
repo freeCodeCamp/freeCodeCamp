@@ -167,7 +167,7 @@
 
 ## 早期アクセスとベータテスト
 
-皆さんがこれらのリリースを **"パブリックベータテスト"** モードでテストし、プラットフォームの今後の機能に早期アクセスできるようにします。 これらの機能 / 変更は、**次の、ベータ、ステージング** などと呼ばれます。
+皆さんがこれらのリリースを **"パブリックベータテスト"** モードでテストし、プラットフォームの今後の機能に早期アクセスできるようにします。 これらの機能 / 変更は、**ネクスト、ベータ、ステージング** などと呼ばれます。
 
 フィードバックや Issue 報告を通じた貢献は、**復元力**、**一貫性** および **安定性** のある `freeCodeCamp.org` 本番プラットフォームを構築するのに役立ちます。
 
@@ -609,7 +609,7 @@ pm2 reload all --update-env && pm2 logs
 
 チャットサーバーは、[Rocket.Chat ドキュメントで推奨されている](https://docs.rocket.chat/installation/docker-containers/high-availability-install) HA 構成で利用可能です。 そのために使用する `docker-compose` ファイルは、[こちらで入手可能](https://github.com/freeCodeCamp/chat-config) です。
 
-Rocket.Chat クラスタの前で、負荷分散型 (Azure ロードバランサー) の冗長 NGINX インスタンスを提供します。 NGINX 設定ファイルは、[こちら入手可能](https://github.com/freeCodeCamp/chat-nginx-config) です。
+Rocket.Chat クラスタの前で、負荷分散型 (Azure ロードバランサー) の冗長 NGINX インスタンスを提供します。 NGINX 設定ファイルは、[こちらで入手可能](https://github.com/freeCodeCamp/chat-nginx-config) です。
 
 ### 最初のインストール
 
@@ -718,7 +718,7 @@ NGINX インスタンスへの設定変更は、GitHub 上でメンテナンス�
    git reset --hard origin/main
    ```
 
-3. 設定 [with Signals](https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/#controlling-nginx) をテストし再度読み込みます。
+3. 設定をテストし、[シグナルを使用して](https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/#controlling-nginx)リロードします。
 
    ```console
    nginx -t
@@ -740,7 +740,7 @@ NGINX インスタンスへの設定変更は、GitHub 上でメンテナンス�
    git reset --hard origin/main
    ```
 
-3. Rocket.Chat の最新 docker 画像をプルダウンします。
+3. Rocket.Chat の最新 docker イメージをプルダウンします。
 
    ```console
    docker-compose pull
@@ -777,13 +777,13 @@ NGINX インスタンスへの設定変更は、GitHub 上でメンテナンス�
    Are you sure you want to continue? [y/N] y
    ```
 
-   使用していないものをすべて削除するには、「はい」(y) を選択しします。 これにより、停止されたコンテナ、コンテナによって使用されていないネットワークとボリューム、および宙ぶらりんイメージとビルドキャッシュを削除します。
+   使用していないものをすべて削除するには、「はい」(y) を選択しします。 これにより、停止されたコンテナ、コンテナによって使用されていないネットワークとボリューム、および宙ぶらりんイメージ (dangling image) とビルドキャッシュを削除します。
 
 ## Contributor ツールでの作業
 
-### デプロイ更新
+### 更新をデプロイする
 
-(Digital Ocean 上でホストされている) VM に ssh を入力します。
+(Digital Ocean 上でホストされている) VM に ssh で接続します。
 
 ```console
 cd tools
@@ -795,7 +795,7 @@ pm2 restart contribute-app
 
 ## VM での Node.js のバージョン更新
 
-現在インストールされているノード & npm バージョンをリストアップします。
+現在インストールされている node と npm のバージョンをリストアップします。
 
 ```console
 nvm -v
@@ -865,7 +865,7 @@ pm2 logs
 
 ## Azure Pipeline エージェントのインストールと更新
 
-https://docs.microsoft.com/ja-JP/azure/devops/pipelines/agents/v2-linux?view=azure-devops を参照し、手順に従ってエージェントを停止、削除、再インストールします。 一般的には、ここに記載されている手順に従います。
+https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops を参照し、手順に従ってエージェントを停止、削除、再インストールします。 一般的には、ここに記載されている手順に従います。
 
 https://dev.azure.com/freeCodeCamp-org/_usersSettings/tokens から入手できる PAT が必要です。
 
@@ -936,7 +936,7 @@ https://dev.azure.com/freeCodeCamp-org/_usersSettings/tokens から入手でき�
 
    `emails.csv` ファイルにメールリストを保存します。
 
-4. 必要なドロップレットの数に応じて、メールを複数のファイルに分割します。 `scp` を使用してローカルにメールリストをプルし、お好みのテキストエディターを使用して複数のファイルに分割するのが最も簡単な方法です。 各ファイルに、`email,unsubscribeId` ヘッダーが必要です。
+4. 必要な droplet の数に応じて、メールを複数のファイルに分割します。 `scp` を使用してローカルにメールリストをプルし、お好みのテキストエディターを使用して複数のファイルに分割するのが最も簡単な方法です。 各ファイルに、`email,unsubscribeId` ヘッダーが必要です。
 
 5. `cd /home/sendgrid-email-blast` で CLI ディレクトリに切り替え、[ドキュメントに従って](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/README.md) ツールを構成します。
 

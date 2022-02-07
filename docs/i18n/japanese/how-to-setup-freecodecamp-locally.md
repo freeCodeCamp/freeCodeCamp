@@ -28,7 +28,7 @@
 
 > [!ATTENTION] 異なるバージョンの場合は、推奨バージョンをインストールしてください。 推奨バージョンのインストールに関する問題のみサポートできます。 詳細は [troubleshooting](#troubleshooting) を参照してください。
 
-Node.js がすでにマシンにインストールされている場合、以下のコマンドを実行してバージョンを検証します。
+Node.js が既にマシンにインストールされている場合、以下のコマンドを実行してバージョンを検証します。
 
 ```console
 node -v
@@ -45,9 +45,9 @@ npm -v
 
 2. (任意ですが推奨) GitHub 用の [SSH キーを設定](https://help.github.com/articles/generating-an-ssh-key/) します。
 
-3. 選択したコードエディタをインストールします。
+3. 選択したコードエディターをインストールします。
 
-   [Visual Studio Code](https://code.visualstudio.com/) または [Atom](https://atom.io/) の使用を強くお勧めします。 これらは優れた、無料のオープンソースコードエディタです。
+   [Visual Studio Code](https://code.visualstudio.com/) または [Atom](https://atom.io/) の使用を強くお勧めします。 これらは優れた、無料のオープンソースコードエディターです。
 
 4. コードエディターのリンティングを設定します。
 
@@ -84,9 +84,9 @@ npm -v
 
 ## GitHub からフォークのクローンを作る
 
-[クローン作成](https://help.github.com/articles/cloning-a-repository/) とは、自分または他の誰かが所有しているリポジトリのコピーを、`remote` の場所から **ダウンロード** することです。 自分の場合は、この remote の場所は freeCodeCamp のリポジトリの `fork`で、`https://github.com/YOUR_USER_NAME/freeCodeCamp` で入手可能です。 `YOUR_USER_NAME` は、GitHub のユーザーネームに置き換えられます。
+[クローン作成](https://help.github.com/articles/cloning-a-repository/) とは、自分または他の誰かが所有しているリポジトリのコピーを、`remote` の場所から **ダウンロード** することです。 自分で所有している場合、この remote の場所は freeCodeCamp リポジトリの `fork`にあり、`https://github.com/YOUR_USER_NAME/freeCodeCamp` で入手可能です。 `YOUR_USER_NAME` は、GitHub のユーザーネームに置き換えられます。
 
-> [!WARNING] WSL2 Linux Distro上で作業している場合、Windows と WSL2 の間で共有されているフォルダ内でこのプロジェクトを動作させることで、性能と安定性の Issue が発生するかもしれません (例えば `/mnt/c/Users/`)。 したがって、このリポジトリを、Windows と直接共有するフォルダではなく、主に自分の WSL2 Linux Distro で使用するフォルダに、クローンを作成することをお勧めします (例: `~/PROJECTS/`)。
+> [!WARNING] WSL2 Linux Distro上で作業している場合、Windows と WSL2 の間で共有されているフォルダ内でこのプロジェクトを動作させることで、性能と安定性の Issue が発生する可能性があります (例えば `/mnt/c/Users/`)。 したがって、このリポジトリを、Windows と直接共有するフォルダではなく、主に自分の WSL2 Linux Distro で使用するフォルダに、クローンを作成することをお勧めします (例: `~/PROJECTS/`)。
 > 
 > この問題の詳細については、 [GitHub Issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/40632) を参照してください。
 
@@ -149,9 +149,9 @@ freeCodeCamp のローカルコピーができたので、これらの指示に�
 - UI関連の Issue と機能強化に取り組む。
 - アプリケーションサーバーとクライアントアプリの Issue をデバッグして修正する。
 
-問題が発生した場合は、まず Web 検索を実行し、すでに解決済みであるかどうかを確認します。 解決策が見つからない場合、[GitHub Issue](https://github.com/freeCodeCamp/freeCodeCamp/issues) ページを検索し、まだ報告されていない Issue を報告してください。
+問題が発生した場合は、まず Web 検索を実行し、既に解決済みであるかどうかを確認します。 解決策が見つからない場合、[GitHub Issue](https://github.com/freeCodeCamp/freeCodeCamp/issues) ページを検索し、まだ報告されていない Issue を報告してください。
 
-そして、[フォーラムの「Contributors」カテゴリ](https://forum.freecodecamp.org/c/contributors) または [チャットサーバー](https://chat.freecodecamp.org/home) へいつでもお気軽にお問い合わせください。
+そして、[フォーラムの 'Contributors' カテゴリ](https://forum.freecodecamp.org/c/contributors) または [チャットサーバー](https://chat.freecodecamp.org/home) へいつでもお気軽にお問い合わせください。
 
 > [!TIP] ファイルを編集するだけの場合は、freeCodeCamp のローカルでの実行をスキップしてもかまいません。 例えば、`rebase` の実行や、`merge` の競合の解決です。
 > 
@@ -242,7 +242,7 @@ API サーバーとクライアントアプリケーションを起動できる�
 npm run develop
 ```
 
-この単一コマンドは、APIサーバーや利用可能なクライアントアプリケーションを含むすべてのサービスを起動します。
+この単一コマンドは、API サーバーや利用可能なクライアントアプリケーションを含むすべてのサービスを起動します。
 
 > [!TIP] 準備が整ったら、Web ブラウザを開いて **<http://localhost:8000>** をご覧ください。 アプリがロードされたとしたら、すべての準備ができているということです。おめでとうございます！ これで、freeCodeCamp の学習プラットフォーム全体のコピーがローカルマシン上で実行されます。
 
@@ -298,7 +298,7 @@ npm run develop
 
    > [!WARNING] フォークの `main` ブランチから行った未処理のプルリクエストがある場合は、このステップの最後にそれらを失うことになります。
    > 
-   > このステップを実行する前に、プルリクエストがモデレータによってマージされていることを確認します。 このシナリオを回避するには、**常に** `main` 以外のブランチで作業する必要があります。
+   > このステップを実行する前に、プルリクエストがモデレーターによってマージされていることを確認します。 このシナリオを回避するには、**常に** `main` 以外のブランチで作業する必要があります。
 
    このステップで、freeCodeCamp の main リポジトリからの **最新の変更を同期** させます。 競合を回避するために、できるだけ頻繁に最新の `upstream/main` の上に、自分のブランチをリベースすることが重要です。
 
@@ -338,7 +338,7 @@ npm run develop
    git checkout -b fix/update-guide-for-xyz
    ```
 
-   ブランチ名は `fix/`、 `feat/`、 `docs/`などで始まる必要があります。 ブランチ内で Issue 番号の使用は避けてください。 短く、意味のあり、固有な名前にします。
+   ブランチ名は `fix/`、 `feat/`、 `docs/`などで始まる必要があります。 ブランチ内で Issue 番号の使用は避けてください。 短く、意味のある、固有な名前にします。
 
    適切なブランチ名の例は、次のとおりです。
 
@@ -350,7 +350,7 @@ npm run develop
    translate/add-spanish-basic-html
    ```
 
-4. ページを編集し、お気に入りのテキストエディタでコードを作成します。
+4. ページを編集し、お気に入りのテキストエディターでコードを作成します。
 
 5. 満足のいく変更が完成したら、必要に応じて freeCodeCamp をローカルで実行して変更をプレビューします。
 
@@ -442,7 +442,7 @@ npm run develop
 
    50文字未満の短い文にします。 コミットメッセージの説明にいつでも追加の情報を加えることができます。
 
-   こうすることで、「updateファイル」や「add index.md」のような型破りなメッセージよりも時間がかかりません。
+   こうすることで、'update file' や 'add index.md' のような型破りなメッセージよりも時間がかかりません。
 
    慣習的なコミットを使用すべき理由については、[こちら](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits) をご覧ください。
 
@@ -452,7 +452,7 @@ npm run develop
    git commit --amend
    ```
 
-   これにより、`nano` や `vi` のようなデフォルトのテキストエディタが開き、コミットメッセージのタイトルを編集したり、説明を追加／編集したりすることができます。
+   これにより、`nano` や `vi` のようなデフォルトのテキストエディターが開き、コミットメッセージのタイトルを編集したり、説明を追加 / 編集したりすることができます。
 
 10. 次に、フォークに変更をプッシュできます。
 
@@ -470,7 +470,7 @@ npm run develop
 
 | コマンド                                                           | 説明                                                    |
 | -------------------------------------------------------------- | ----------------------------------------------------- |
-| `npm ci`                                                       | すべての依存関係をインストール/再インストールし、異なるサービスをブートストラップします。         |
+| `npm ci`                                                       | すべての依存関係をインストール / 再インストールし、異なるサービスをブートストラップします。       |
 | `npm run seed`                                                 | すべてのチャレンジのマークダウンファイルを解析し、MongoDB に挿入します。              |
 | `npm run develop`                                              | freeCodeCamp の API サーバーとクライアントアプリケーションを起動します。         |
 | `npm run storybook`                                            | コンポーネントライブラリ開発のためのストーリーブックを起動します。                     |
@@ -490,7 +490,7 @@ npm run develop
 
 通常 macOS 10.15 以降、Ubuntu 18.04 以降、Windows 10 (WSL2) のような、最新または最も一般的なオペレーティングシステムで開発しています。
 
-Google、Stack Overflow、Stack Exchange などのリソースに関する特定の問題を調べることをお勧めします。 誰かが同じ問題に直面していて、すでに具体的な質問に対する回答が存在する可能性があります。
+Google、Stack Overflow、Stack Exchange などのリソースに関する特定の問題を調べることをお勧めします。 誰かが同じ問題に直面していて、既に具体的な質問に対する回答が存在する可能性があります。
 
 別の OS をお使いの場合や問題が解決しない場合は、[ヘルプ](#getting-help) を参照してください。
 
@@ -527,7 +527,7 @@ git clean -ifdX
 
 <details>
    <summary>
-      追跡されていない git ファイルをクリーンアップする方法（スクリーンショット）
+      追跡されていない git ファイルをクリーンアップする方法 (スクリーンショット)
    </summary>
 
    <br>
@@ -540,7 +540,7 @@ git clean -ifdX
 
 <!-- tabs:start -->
 
-#### **macOS／Linux／Windows 上の WSL - 端末から:**
+#### **macOS / Linux / Windows 上の WSL - 端末から:**
 
 ```console
 netstat -a | grep "3000"
@@ -570,6 +570,6 @@ TCP    0.0.0.0:3000           DESKTOP      LISTENING
 
 ## ヘルプ
 
-問題がありサポートが必要な場合は、[フォーラムの「Contributors」カテゴリ](https://forum.freecodecamp.org/c/contributors) または [contributors チャットルーム](https://chat.freecodecamp.org/channel/contributors)でお気軽にお尋ねください。
+問題がありサポートが必要な場合は、[フォーラムの 'Contributors' カテゴリ](https://forum.freecodecamp.org/c/contributors) または [contributors チャットルーム](https://chat.freecodecamp.org/channel/contributors)でお気軽にお尋ねください。
 
-ブラウザのコンソールやBash／ターミナル／コマンドラインで、問題を特定するのに役立つエラーが表示されている可能性があります。 問題の説明にこのエラーメッセージを提供することで、他の人がより簡単に問題を特定し、解決策を見つけることができます。
+ブラウザのコンソールやBash / ターミナル / コマンドラインで、問題を特定するのに役立つエラーが表示されている可能性があります。 問題の説明にこのエラーメッセージを提供することで、他の人がより簡単に問題を特定し、解決策を見つけることができます。

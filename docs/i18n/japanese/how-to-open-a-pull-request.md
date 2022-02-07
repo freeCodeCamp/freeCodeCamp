@@ -20,7 +20,7 @@
 
 | 種類    | 選択するタイミング                        |
 |:----- |:-------------------------------- |
-| fix   | 機能、テスト、レッスン等の変更または更新／改善時         |
+| fix   | 機能、テスト、レッスン等の変更または更新 / 改善時       |
 | feat  | 新しい機能、テストなどの追加時のみ                |
 | chore | レッスンのコード、テスト、または検証に関連しない変更時      |
 | docs  | `/docs` ディレクトリまたは貢献ガイドラインなどへの変更時 |
@@ -44,7 +44,7 @@
 
 1. 編集がコミットされると、フォークの GitHub ページにプルリクエストを作成するように求められます。
 
-   ![画像 - GitHub で比較 & プルリクエストプロンプト](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
+   ![画像 - GitHub 上の Compare & pull request プロンプト](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
 
 2. デフォルトで、プルリクエストはすべて freeCodeCamp メインリポジトリ、`main` ブランチに対して行います。
 
@@ -74,9 +74,9 @@
 
 > おつかれさまでした！ :tada: PR を作成し、時間をかけて貢献してくださったことに心から感謝します。
 
-モデレータが内容を見て、フィードバックします。 仲間のモデレータの時間を尊重し、しばらくお待ちください。 すべてのプルリクエストは、いずれレビューされます。
+モデレーターが内容を見て、フィードバックします。 仲間のモデレーターの時間を尊重し、しばらくお待ちください。 すべてのプルリクエストは、いずれレビューされます。
 
-[フォーラムの「Contributors」 カテゴリー](https://forum.freecodecamp.org/c/contributors) もしくは [Contributors チャットルーム](https://chat.freecodecamp.org/channel/contributors) へいつでもお気軽にお問合せください。
+[フォーラムの 'Contributors' カテゴリ](https://forum.freecodecamp.org/c/contributors) または [Contributors チャットルーム](https://chat.freecodecamp.org/channel/contributors) へいつでもお気軽にお問合せください。
 
 > [!TIP] 他のプルリクエストも提供する場合は、フォークの削除を避けるため、[変更と同期](how-to-setup-freecodecamp-locally.md#making-changes-locally) ガイドラインをご覧になることを推奨します。
 

@@ -77,7 +77,7 @@ Git の履歴が書き換えられるため、バージョンブランチ間で�
 新しいバージョンを作成するには、次の手順に従います。
 
 - **最新の** バージョンブランチを `git checkout -b vX.X.X upstream/vX.X.X` でチェックアウトします。
-- そこから新しいブランチを作成し、`git checkout -b vX.X.Y` でバージョンをインクリメントします。
+- `git checkout -b vX.X.Y` で、そこから新しいブランチを作成し、バージョンをインクリメントします。
 - バージョンブランチを変更します。 チュートリアルの使い方については、[CodeRoad ドキュメント](https://coderoad.github.io/docs/edit-tutorial) を参照します。
 - `git push -u origin vX.X.Y` で、新しいブランチをフォークにプッシュします。
 - `main` ブランチをチェックアウトします。
@@ -123,7 +123,7 @@ freeCodeCamp リポジトリへの書き込みアクセス権を有しており�
 
 ### 以前のバージョンに戻す方法
 
-- `git checkout -b revert/to-version-X.X.X` を使用して、最新の `main` から新しいブランチを作成します。
+- `git checkout -b revert/to-version-X.X.X` で、最新 `main` の新しいブランチを作成します。
 - このブランチにおいて、元に戻したいバージョン以降のコミットをすべて元に戻します。 例えば、次のようなコミットです。
 
 ```
