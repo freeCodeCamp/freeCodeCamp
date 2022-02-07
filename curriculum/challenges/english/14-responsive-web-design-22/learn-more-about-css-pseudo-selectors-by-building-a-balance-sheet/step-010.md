@@ -1,0 +1,72 @@
+---
+id: 61fd71d596e8f253b9408b39
+title: Step 10
+challengeType: 0
+dashedName: step-10
+---
+
+# --description--
+
+The `tr` element is used to indicate a table row. Add a `tr` element within your `thead` element. In your new `tr` element, add a `td` element, followed by three `th` elements.
+
+The `td` element indicates a data cell, while the `th` element indicates a header cell.
+
+# --hints--
+
+Test 1
+
+```js
+
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>freeCodeCamp Balance Sheet</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+  </head>
+  <body>
+    <main>
+      <section>
+        <h1>
+          <span class="flex">
+            <span>freeCodeCamp</span>
+            <span>Balance Sheet</span>
+          </span>
+        </h1>
+        <div id="years" aria-hidden="true">
+          <span class="year">2019</span>
+          <span class="year">2020</span>
+          <span class="year">2021</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <caption>Assets</caption>
+--fcc-editable-region--
+            <thead>
+            </thead>
+--fcc-editable-region--
+            <tbody>
+            </tbody>
+          </table>
+          <table>
+          </table>
+          <table>
+          </table>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+```
+
+```css
+
+```
