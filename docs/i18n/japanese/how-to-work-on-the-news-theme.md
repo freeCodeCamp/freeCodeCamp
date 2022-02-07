@@ -40,7 +40,7 @@ Ghostは、テーマに [Handlebars](http://handlebarsjs.com/) と呼ばれる�
 
    > 注: freeCodeCampは現在、バージョン `2.9.0` を使用しているため、それ以降のバージョンであることを確認してください。
 
-   `ghost-local-site` ディレクトリから `ghost` コマンドを実行してください。 インターフェースに慣れていない場合は、[Ghost 公式ドキュメント](https://docs.ghost.org) の追加指示に従ってください。
+   `ghost-local-site` ディレクトリから `ghost` コマンドを実行します。 インターフェースに慣れていない場合は、[Ghost 公式ドキュメント](https://docs.ghost.org) の追加指示に従ってください。
 
 2. テーマディレクトリにあるリポジトリをフォークしてクローンします ( `YOUR_USERNAME` を GitHub ユーザー名に置き換えてください)。
 
@@ -49,7 +49,7 @@ Ghostは、テーマに [Handlebars](http://handlebarsjs.com/) と呼ばれる�
    git clone https://github.com/YOUR_USERNAME/news-theme.git
    ```
 
-3. 前提条件がすべて揃っていることを確認してください。
+3. 前提条件がすべて揃っていることを確認します。
 
    テーマのスタイルは Gulp/PostCSS を使用してコンパイルされ、将来の CSS 仕様をポリフィルします。 [Node.js](https://nodejs.org/) が必要です。 Node.js のバージョンが `ghost` と互換性があることを確認してください。
 
