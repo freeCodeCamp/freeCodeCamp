@@ -1,14 +1,10 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 
 function FreeCodeCampLogo(): JSX.Element {
-  const { t } = useTranslation();
-
   return (
     <svg
-      aria-label={t('aria.fcc-logo')}
+      aria-label='freeCodeCamp'
       height={24}
-      role='math'
       version='1.1'
       viewBox='0 0 210 24'
       width={210}
