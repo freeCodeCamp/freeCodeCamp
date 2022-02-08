@@ -13,10 +13,52 @@ Following that, add three `td` elements with the following text (in order): `$54
 
 # --hints--
 
-Test 1
+Your second `tr` should have a `th` element.
 
 ```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[1]?.querySelector('th'));
+```
 
+Your `th` element should have the text `Checking Our primary transactional account.`.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[1]?.querySelector('th')?.innerText === 'Checking Our primary transactional account.');
+```
+
+You should wrap the text `Our primary transactional account.` in a `span` element.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[1]?.querySelector('th > span')?.textContent === 'Our primary transactional account.');
+```
+
+Your `span` element should have the `class` attribute set to `description`.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[1]?.querySelector('th > span')?.classList?.contains('description'));
+```
+
+You should have three `td` elements.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[1]?.querySelectorAll('td').length === 3);
+```
+
+Your first `td` element should have the text `$54`.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[1]?.querySelectorAll('td')?.[0]?.textContent === '$54');
+```
+
+Your second `td` element should have the text `$56`.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[1]?.querySelectorAll('td')?.[1]?.textContent === '$56');
+```
+
+Your third `td` element should have the text `$53`.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[1]?.querySelectorAll('td')?.[2]?.textContent === '$53');
 ```
 
 # --seed--

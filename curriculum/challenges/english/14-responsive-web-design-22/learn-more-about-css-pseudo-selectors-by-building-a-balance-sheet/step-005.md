@@ -11,10 +11,22 @@ Below your `h1` element, create a `div` element. Give it an `id` attribute set t
 
 # --hints--
 
-Test 1
+You should create a new `div` element after your `h1` element.
 
 ```js
+assert(document.querySelector('h1')?.nextElementSibling?.localName === 'div');
+```
 
+Your new `div` element should have an `id` attribute set to `years`.
+
+```js
+assert(document.querySelector('div')?.getAttribute('id') === 'years');
+```
+
+Your new `div` element should have the `aria-hidden` attribute set to `true`.
+
+```js
+assert(document.querySelector('div')?.getAttribute('aria-hidden') === 'true');
 ```
 
 # --seed--

@@ -13,10 +13,28 @@ Add a `thead` and `tbody` to your first `table`, below the `caption` element.
 
 # --hints--
 
-Test 1
+Your first `table` element should have a `thead` element.
 
 ```js
+assert(document.querySelectorAll('table')?.[0]?.querySelector('thead'));
+```
 
+Your first `table` element should have a `tbody` element.
+
+```js
+assert(document.querySelectorAll('table')?.[0]?.querySelector('tbody'));
+```
+
+Your `thead` element should be immediately below your `caption` element.
+
+```js
+assert(document.querySelector('caption')?.nextElementSibling?.localName === 'thead');
+```
+
+Your `tbody` element should be immediately below your `thead` element.
+
+```js
+assert(document.querySelector('thead')?.nextElementSibling?.localName === 'tbody');
 ```
 
 # --seed--

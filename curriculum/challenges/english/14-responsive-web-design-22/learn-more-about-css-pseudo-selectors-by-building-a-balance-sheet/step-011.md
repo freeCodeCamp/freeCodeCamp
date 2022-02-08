@@ -7,16 +7,63 @@ dashedName: step-11
 
 # --description--
 
-Within each of your new `th` elements, nest a `span` element with the `class` set to `sr-only yer`. Give them the following text (in order): `2019`, `2020`, and `2021`.
+Within each of your new `th` elements, nest a `span` element with the `class` set to `sr-only year`. Give them the following text (in order): `2019`, `2020`, and `2021`.
 
 Give your third `th` element the `class` attribute set to `current`.
 
+Leave the `td` element empty. This element exists only to ensure your table has a four-column layout and associate the headers with the correct columns.
+
 # --hints--
 
-Test 1
+Each of your `th` elements should have a `span` element.
 
 ```js
+const ths = [...document.querySelectorAll('th')];
+ths?.forEach(th => {
+  assert(th?.children?.length === 1);
+  assert(th?.children?.[0]?.localName === 'span');
+});
+```
 
+Each of your new `span` elements should have the `class` attribute set to `sr-only year`.
+
+```js
+const ths = [...document.querySelectorAll('th')];
+ths?.forEach(th => {
+  assert(th?.children?.[0]?.classList?.contains('sr-only'));
+  assert(th?.children?.[0]?.classList?.contains('year'));
+});
+```
+
+Your first `span` element should have the text `2019`.
+
+```js
+assert(document.querySelectorAll('th')?.[0]?.children?.[0]?.textContent === '2019');
+```
+
+Your second `span` element should have the text `2020`.
+
+```js
+assert(document.querySelectorAll('th')?.[1]?.children?.[0]?.textContent === '2020');
+```
+
+Your third `span` element should have the text `2021`.
+
+```js
+assert(document.querySelectorAll('th')?.[2]?.children?.[0]?.textContent === '2021');
+```
+
+Your third `th` element should have the `class` set to `current`.
+
+```js
+assert(document.querySelector('table')?.querySelectorAll('th')?.[2]?.classList?.contains('current'));
+```
+
+Your `td` element should be empty.
+
+```js
+assert(document.querySelector('table')?.querySelectorAll('td')?.[0]?.textContent === '');
+assert(document.querySelector('table')?.querySelectorAll('td')?.[0]?.children?.length === 0);
 ```
 
 # --seed--

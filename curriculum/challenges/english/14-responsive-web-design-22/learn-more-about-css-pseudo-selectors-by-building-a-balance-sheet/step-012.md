@@ -11,10 +11,30 @@ Within your `tbody` element, add four `tr` elements. Give the first three a `cla
 
 # --hints--
 
-Test 1
+Your `tbody` element should have four `tr` elements.
 
 ```js
+const children = [...document.querySelector('tbody')?.children];
+assert(children?.length === 4);
+children.forEach(child => assert(child?.localName === 'tr'));
+```
 
+Your first three `tr` elements should have the `class` attribute set to `data`.
+
+```js
+const children = [...document.querySelector('tbody')?.children];
+children.forEach((child, index) => {
+  if (index < 3) {
+    assert(child?.classList?.contains('data'));
+  }
+});
+```
+
+Your fourth `tr` element should have the `class` attribute set to `total`.
+
+```js
+const children = [...document.querySelector('tbody')?.children];
+assert(children?.[3]?.classList?.contains('total'));
 ```
 
 # --seed--

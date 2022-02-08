@@ -13,10 +13,16 @@ Add a `caption` element to your first `table`, and give it the text `Assets`.
 
 # --hints--
 
-Test 1
+Your first `table` element should have a `caption` element.
 
 ```js
+assert(document.querySelector('table')?.children?.[0]?.localName === 'caption');
+```
 
+Your `caption` element should have the text `Assets`.
+
+```js
+assert(document.querySelector('caption')?.textContent === 'Assets');
 ```
 
 # --seed--

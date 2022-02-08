@@ -11,10 +11,16 @@ Within your `body` element, nest a `section` element within a `main` element.
 
 # --hints--
 
-Test 1
+You should have a `main` element within your `body` element.
 
 ```js
+assert(document.querySelector('body')?.children?.[0]?.localName === 'main');
+```
 
+You should have a `section` element within your `main` element.
+
+```js
+assert(document.querySelector('main')?.children?.[0]?.localName === 'section');
 ```
 
 # --seed--

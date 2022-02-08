@@ -11,10 +11,35 @@ Within your `div` element, add three `span` elements. Give each of them a `class
 
 # --hints--
 
-Test 1
+Your `div` element should have three `span` elements.
 
 ```js
+assert(document.querySelector('div')?.children?.length === 3);
+```
 
+Each `span` element should have a `class` attribute set to `year`.
+
+```js
+const spans = [...document.querySelector('div')?.children];
+spans.forEach(span => assert(span?.classList?.contains('year')));
+```
+
+Your first `span` should have the text `2019`.
+
+```js
+assert(document.querySelector('div')?.children?.[0]?.textContent === '2019');
+```
+
+Your second `span` should have the text `2020`.
+
+```js
+assert(document.querySelector('div')?.children?.[1]?.textContent === '2020');
+```
+
+Your third `span` should have the text `2021`.
+
+```js
+assert(document.querySelector('div')?.children?.[2]?.textContent === '2021');
 ```
 
 # --seed--

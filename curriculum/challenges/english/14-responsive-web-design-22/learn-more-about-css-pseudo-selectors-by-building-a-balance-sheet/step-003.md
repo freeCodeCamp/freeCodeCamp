@@ -11,10 +11,16 @@ Within your `section` element, add an `h1` element with a nested `span` element.
 
 # --hints--
 
-Test 1
+Your `section` element should have an `h1` element.
 
 ```js
+assert(document.querySelector('section')?.children?.[0]?.localName === 'h1');
+```
 
+Your `h1` element should have a `span` element.
+
+```js
+assert(document.querySelector('h1')?.children?.[0]?.localName === 'span');
 ```
 
 # --seed--

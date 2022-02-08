@@ -7,16 +7,58 @@ dashedName: step-15
 
 # --description--
 
-In your third `tr` element, add a `th` element with the text `Savings Funds set aside for emergencies`. Wrap that text, except for `Savings `, in a `span` element with the `class` attribute set to `description`.
+In your third `tr` element, add a `th` element with the text `Savings Funds set aside for emergencies.`. Wrap that text, except for `Savings `, in a `span` element with the `class` attribute set to `description`.
 
 Following that, add three `td` elements with the following text (in order): `$500`, `$650`, `$728`. Give the third `td` element a `class` attribute set to `current`.
 
 # --hints--
 
-Test 1
+Your third `tr` should have a `th` element.
 
 ```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[2]?.querySelector('th'));
+```
 
+Your `th` element should have the text `Savings Funds set aside for emergencies.`.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[2]?.querySelector('th')?.innerText === 'Savings Funds set aside for emergencies.');
+```
+
+You should wrap the text `This is the cash we currently have on hand.` in a `span` element.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[2]?.querySelector('th > span')?.textContent === 'Funds set aside for emergencies.');
+```
+
+Your `span` element should have the `class` attribute set to `description`.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[2]?.querySelector('th > span')?.classList?.contains('description'));
+```
+
+You should have three `td` elements.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[2]?.querySelectorAll('td').length === 3);
+```
+
+Your first `td` element should have the text `$500`.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[2]?.querySelectorAll('td')?.[0]?.textContent === '$500');
+```
+
+Your second `td` element should have the text `$650`.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[2]?.querySelectorAll('td')?.[1]?.textContent === '$650');
+```
+
+Your third `td` element should have the text `$728`.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[2]?.querySelectorAll('td')?.[2]?.textContent === '$728');
 ```
 
 # --seed--

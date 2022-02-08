@@ -13,10 +13,30 @@ Within that, add three `table` elements. You will be using CSS to style these in
 
 # --hints--
 
-Test 1
+You should create a new `div` element.
 
 ```js
+assert(document.querySelectorAll('div')?.length === 2);
+```
 
+Your new `div` element should have the `class` set to `table-wrap`.
+
+```js
+assert(document.querySelector('.table-wrap')?.localName === 'div');
+```
+
+Your `.table-wrap` element should come after your existing `div`.
+
+```js
+assert(document.querySelectorAll('div')?.[1]?.classList?.contains('table-wrap'));
+```
+
+Your `.table-wrap` element should have three `table` elements.
+
+```js
+const children = [...document.querySelector('.table-wrap')?.children];
+assert(children?.length === 3);
+children.forEach(child => assert(child?.localName === 'table'));
 ```
 
 # --seed--

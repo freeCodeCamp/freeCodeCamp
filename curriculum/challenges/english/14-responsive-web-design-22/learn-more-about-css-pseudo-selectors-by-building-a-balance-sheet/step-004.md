@@ -13,10 +13,36 @@ Give your existing `span` the `class` attribute set to `flex`, and add two `span
 
 # --hints--
 
-Test 1
+Your existing span element should have the `class` attribute set to `flex`.
 
 ```js
+assert(document.querySelector('h1')?.children?.[0]?.classList?.contains('flex'));
+```
 
+Your existing `span` element should have two new `span` elements within it.
+
+```js
+assert(document.querySelector('.flex')?.children?.[0]?.localName === 'span');
+assert(document.querySelector('.flex')?.children?.[1]?.localName === 'span');
+```
+
+Your new `span` elements should not have a `class` attribute.
+
+```js
+assert(!document.querySelector('.flex')?.children?.[0]?.classList?.length);
+assert(!document.querySelector('.flex')?.children?.[1]?.classList?.length);
+```
+
+Your first new `span` element should have the text `freeCodeCamp`.
+
+```js
+assert(document.querySelector('.flex')?.children?.[0]?.textContent === 'freeCodeCamp');
+```
+
+Your second new `span` element should have the text `Balance Sheet`.
+
+```js
+assert(document.querySelector('.flex')?.children?.[1]?.textContent === 'Balance Sheet');
 ```
 
 # --seed--

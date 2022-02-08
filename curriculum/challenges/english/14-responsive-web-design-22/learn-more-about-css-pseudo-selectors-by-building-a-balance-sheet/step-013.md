@@ -13,10 +13,52 @@ Following that, add three `td` elements with the following text (in order): `$25
 
 # --hints--
 
-Test 1
+Your first `tr` should have a `th` element.
 
 ```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[0]?.querySelector('th'));
+```
 
+Your `th` element should have the text `Cash This is the cash we currently have on hand.`.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[0]?.querySelector('th')?.innerText === 'Cash This is the cash we currently have on hand.');
+```
+
+You should wrap the text `This is the cash we currently have on hand.` in a `span` element.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[0]?.querySelector('th > span')?.textContent === 'This is the cash we currently have on hand.');
+```
+
+Your `span` element should have the `class` attribute set to `description`.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[0]?.querySelector('th > span')?.classList?.contains('description'));
+```
+
+You should have three `td` elements.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[0]?.querySelectorAll('td').length === 3);
+```
+
+Your first `td` element should have the text `$25`.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[0]?.querySelectorAll('td')?.[0]?.textContent === '$25');
+```
+
+Your second `td` element should have the text `$30`.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[0]?.querySelectorAll('td')?.[1]?.textContent === '$30');
+```
+
+Your third `td` element should have the text `$28`.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[0]?.querySelectorAll('td')?.[2]?.textContent === '$28');
 ```
 
 # --seed--

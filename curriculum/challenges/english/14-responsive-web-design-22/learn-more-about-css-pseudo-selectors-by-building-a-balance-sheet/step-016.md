@@ -15,8 +15,52 @@ Following that, add three `td` elements with the following text (in order): `$57
 
 Test 1
 
-```js
+Your fourth `tr` should have a `th` element.
 
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelector('th'));
+```
+
+Your `th` element should have the text `Total Assets`.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelector('th')?.innerText === 'Total Assets');
+```
+
+You should wrap the text `Assets` in a `span` element.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelector('th > span')?.textContent === 'Assets');
+```
+
+Your `span` element should have the `class` attribute set to `sr-only`.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelector('th > span')?.classList?.contains('sr-only'));
+```
+
+You should have three `td` elements.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelectorAll('td').length === 3);
+```
+
+Your first `td` element should have the text `$579`.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelectorAll('td')?.[0]?.textContent === '$579');
+```
+
+Your second `td` element should have the text `$736`.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelectorAll('td')?.[1]?.textContent === '$736');
+```
+
+Your third `td` element should have the text `$809`.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelectorAll('td')?.[2]?.textContent === '$809');
 ```
 
 # --seed--
