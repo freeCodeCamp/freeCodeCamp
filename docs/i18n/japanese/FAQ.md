@@ -102,4 +102,4 @@ YouTube チャンネル用の教育ビデオを作成するために、[YouTube 
 
 スタック、コードベースのアーキテクチャー、翻訳などについて質問がある場合は、[フォーラムの](https://forum.freecodecamp.org/g/team) スタッフチームまでお気軽にご連絡ください。
 
-**`dev[at]freecodecamp.org` にて、開発者スタッフにメールでお問い合わせいただけます。 **
+**`dev[at]freecodecamp.org` にて、開発者スタッフにメールでお問い合わせいただけます。**

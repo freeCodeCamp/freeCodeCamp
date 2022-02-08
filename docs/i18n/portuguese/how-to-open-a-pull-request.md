@@ -33,7 +33,7 @@ Você pode selecionar um escopo a partir [desta lista de etiquetas](https://gith
 
 Escreva pouco (menos de 30 caracteres) e de modo simples. Você pode adicionar mais informações na caixa de descrição do PR e comentários.
 
-Alguns exemplos de bons títulos de PRs seriam:
+Some examples of good PR titles would be:
 
 - `fix(a11y): contraste melhorado da barra de pesquisa`
 - `feat: adicionar mais testes aos desafios de HTML e CSS`
