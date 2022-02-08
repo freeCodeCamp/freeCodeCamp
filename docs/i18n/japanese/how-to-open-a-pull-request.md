@@ -6,7 +6,7 @@
 
 ## 良いPRタイトルを用意する
 
-コミットやプルリクエストには、 [規約に沿ったタイトルやメッセージ](https://www.conventionalcommits.org/) を使用することをお勧めします。 規約には以下の形式があります。
+コミットやプルリクエストには、 [慣習に従ったタイトルやメッセージ](https://www.conventionalcommits.org/) を使用することをお勧めします。 規約には以下の形式があります。
 
 > `<type>([optional scope(s)]): <description>`
 > 
@@ -33,7 +33,7 @@
 
 簡潔に (30文字未満) 記述します。PR の説明欄やコメントに詳細情報を追加できます。
 
-良い PR のタイトルの例としては、次のようなものがあります。
+Some examples of good PR titles would be:
 
 - `fix(a11y): improved search bar contrast`
 - `feat: add more tests to HTML and CSS challenges`
