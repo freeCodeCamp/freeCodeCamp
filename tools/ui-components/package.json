@@ -60,6 +60,7 @@
     "build-storybook": "build-storybook",
     "build": "cross-env NODE_ENV=production rollup -c",
     "dev": "cross-env NODE_ENV=development rollup -c -w",
-    "clean": "rimraf dist/*"
+    "clean": "rimraf dist/*",
+    "gen-component": "ts-node ./utils/gen-component-script"
   }
 }
