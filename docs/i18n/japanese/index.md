@@ -1,6 +1,6 @@
-[freeCodeCamp.org](https://freecodecamp.org) コミュニティは、皆さんような親切な何千人ものボランティアのおかげで成り立っています。 貴重な時間や専門知識を提供してくださる方々を、喜んで歓迎しています。
+[freeCodeCamp.org](https://freecodecamp.org) コミュニティは、皆さんのような親切な何千人ものボランティアのおかげで成り立っています。 貴重な時間や専門知識を提供してくださる方々を、喜んで歓迎しています。
 
-> [!NOTE] 先に進まれる前に、2 分ほどでお読みいただけますので、私たちの [行動規範](https://www.freecodecamp.org/code-of-conduct) をご一読ください。 freeCodeCamp.org に貢献することが誰にとっても安全で包括的な体験になるよう、コミュニティ全体でこの規範を徹底的に実施します。
+> [!NOTE] 先に進まれる前に、私たちの [行動規範](https://www.freecodecamp.org/code-of-conduct) をご一読ください。2 分ほどでお読みいただけます。 freeCodeCamp.org に貢献することが誰にとっても安全でインクルーシブな体験になるよう、コミュニティ全体でこの規範を厳守します。
 
 私たちの [curriculum](#curriculum) の作成、更新、バグの解消を行ったり、freeCodeCamp.org の [学習プラットフォーム](#learning-platform) 内でバグの解消を支援したり、freeCodeCamp.org の世界言語への [翻訳を支援](#translations) したりすることを歓迎します。
 

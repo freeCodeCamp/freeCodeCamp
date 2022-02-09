@@ -208,7 +208,13 @@ export function updateProjectPreview(buildData, document) {
     buildData.challengeType === challengeTypes.html ||
     buildData.challengeType === challengeTypes.multiFileCertProject
   ) {
-    createProjectPreviewFramer(document)(buildData);
+    // Give iframe a title attribute for accessibility using the preview
+    // document's <title>.
+    const titleMatch = buildData?.sources?.index?.match(
+      /<title>(.*?)<\/title>/
+    );
+    const frameTitle = titleMatch ? titleMatch[1] + ' preview' : 'preview';
+    createProjectPreviewFramer(document, frameTitle)(buildData);
   } else {
     throw new Error(
       `Cannot show preview for challenge type ${buildData.challengeType}`

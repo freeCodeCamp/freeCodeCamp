@@ -33,7 +33,7 @@ Puoi selezionare un ambito da [questo elenco di etichette](https://github.com/fr
 
 Scrivila breve (meno di 30 caratteri) e semplice: puoi aggiungere ulteriori informazioni nella casella di descrizione PR e nei commenti.
 
-Alcuni esempi di buoni titoli PR sarebbero:
+Some examples of good PR titles would be:
 
 - `fix(a11y): improved search bar contrast`
 - `feat: add more tests to HTML and CSS challenges`

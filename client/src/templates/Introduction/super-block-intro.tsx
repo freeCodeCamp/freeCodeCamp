@@ -217,7 +217,6 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
                     )}
                     superBlock={superBlock}
                   />
-                  {blockDashedName !== 'project-euler' ? <Spacer /> : null}
                 </Fragment>
               ))}
               {superBlock !== SuperBlocks.CodingInterviewPrep && (
