@@ -13,10 +13,58 @@ Following that, add three `td` elements with the following text (in order): `$55
 
 # --hints--
 
-Test 1
+Your first `tr` should have a `th` element.
 
 ```js
+assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelector('th'));
+```
 
+Your `th` element should have the text `Total Liabilities`.
+
+```js
+assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelector('th')?.innerText === 'Total Liabilities');
+```
+
+You should wrap the text `Liabilities` in a `span` element.
+
+```js
+assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelector('th > span')?.textContent === 'Liabilities');
+```
+
+Your `span` element should have the `class` attribute set to `sr-only`.
+
+```js
+assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelector('th > span')?.classList?.contains('sr-only'));
+```
+
+You should have three `td` elements.
+
+```js
+assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelectorAll('td').length === 3);
+```
+
+Your first `td` element should have the text `$550`.
+
+```js
+assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelectorAll('td')?.[0]?.textContent === '$550');
+```
+
+Your second `td` element should have the text `$750`.
+
+```js
+assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelectorAll('td')?.[1]?.textContent === '$750');
+```
+
+Your third `td` element should have the text `$500`.
+
+```js
+assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelectorAll('td')?.[2]?.textContent === '$500');
+```
+
+Your third `td` element should have the `class` set to `current`.
+
+```js
+assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelectorAll('td')?.[2]?.classList?.contains('current'));
 ```
 
 # --seed--

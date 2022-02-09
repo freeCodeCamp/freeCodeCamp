@@ -11,10 +11,24 @@ Within your `thead`, add a `tr`. Inside that, add a `td` and three `th` elements
 
 # --hints--
 
-Test 1
+Your `thead` element should have a `tr` element.
 
 ```js
+assert(document.querySelectorAll('table')?.[1]?.querySelector('thead')?.children?.[0]?.localName === 'tr');
+```
 
+Your `tr` element should have a `td` element as the first child.
+
+```js
+assert(document.querySelectorAll('table')?.[1]?.querySelector('tr')?.children?.[0]?.localName === 'td');
+```
+
+Your `tr` element should have three `th` elements, after the `td` element.
+
+```js
+assert(document.querySelectorAll('table')?.[1]?.querySelector('tr')?.children?.[1]?.localName === 'th');
+assert(document.querySelectorAll('table')?.[1]?.querySelector('tr')?.children?.[2]?.localName === 'th');
+assert(document.querySelectorAll('table')?.[1]?.querySelector('tr')?.children?.[3]?.localName === 'th');
 ```
 
 # --seed--

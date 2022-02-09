@@ -61,6 +61,12 @@ Your third `td` element should have the text `$728`.
 assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[2]?.querySelectorAll('td')?.[2]?.textContent === '$728');
 ```
 
+Your third `td` element should have the `class` set to `current`.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[2]?.querySelectorAll('td')?.[2]?.classList?.contains('current'));
+```
+
 # --seed--
 
 ## --seed-contents--

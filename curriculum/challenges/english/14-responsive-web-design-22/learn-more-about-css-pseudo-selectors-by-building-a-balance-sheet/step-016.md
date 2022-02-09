@@ -13,8 +13,6 @@ Following that, add three `td` elements with the following text (in order): `$57
 
 # --hints--
 
-Test 1
-
 Your fourth `tr` should have a `th` element.
 
 ```js

@@ -13,8 +13,40 @@ For your third table, add a `caption` with the text `Net Worth`, and set up a ta
 
 Test 1
 
-```js
+Your second `table` element should have a `caption` element.
 
+```js
+assert(document.querySelectorAll('table')?.[2]?.children?.[0]?.localName === 'caption');
+```
+
+Your `caption` element should have the text `Net Worth`.
+
+```js
+assert(document.querySelectorAll('table')?.[2]?.querySelector('caption')?.textContent === 'Net Worth');
+```
+
+Your second `table` element should have a `thead` element.
+
+```js
+assert(document.querySelectorAll('table')?.[2]?.querySelector('thead'));
+```
+
+Your second `table` element should have a `tbody` element.
+
+```js
+assert(document.querySelectorAll('table')?.[2]?.querySelector('tbody'));
+```
+
+Your `thead` element should be immediately below your `caption` element.
+
+```js
+assert(document.querySelectorAll('table')?.[2]?.querySelector('caption')?.nextElementSibling?.localName === 'thead');
+```
+
+Your `tbody` element should be immediately below your `thead` element.
+
+```js
+assert(document.querySelectorAll('table')?.[2]?.querySelector('thead')?.nextElementSibling?.localName === 'tbody');
 ```
 
 # --seed--

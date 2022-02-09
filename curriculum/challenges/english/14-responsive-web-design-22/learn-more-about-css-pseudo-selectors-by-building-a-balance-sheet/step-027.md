@@ -11,14 +11,72 @@ Within the `tbody`, add a `tr` with the `class` set to `total`. In that, add a `
 
 Then add three `td` elements, giving the third a `class` set to `current`, and giving each the following text: `$29`, `$-14`, `$309`.
 
-TODO: THIS ISN'T RIGHT AAAAA
-
 # --hints--
 
-Test 1
+Your `tbody` element should have one `tr` element.
 
 ```js
+assert(document.querySelectorAll('table')?.[2]?.querySelector('tbody')?.querySelectorAll('tr')?.length === 1);
+```
 
+Your `tr` element should have the `class` set to `total`.
+
+```js
+assert(document.querySelectorAll('table')?.[2]?.querySelector('tbody')?.querySelector('tr')?.classList?.contains('total'));
+```
+
+Your `tr` should have a `th` element.
+
+```js
+assert(document.querySelectorAll('table')?.[2]?.querySelector('tbody')?.querySelectorAll('tr')?.[0]?.querySelector('th'));
+```
+
+Your `th` element should have the text `Total Net Worth`.
+
+```js
+assert(document.querySelectorAll('table')?.[2]?.querySelector('tbody')?.querySelectorAll('tr')?.[0]?.querySelector('th')?.innerText === 'Total Net Worth');
+```
+
+You should wrap the text `Net Worth` in a `span` element.
+
+```js
+assert(document.querySelectorAll('table')?.[2]?.querySelector('tbody')?.querySelectorAll('tr')?.[0]?.querySelector('th > span')?.textContent === 'Net Worth');
+```
+
+Your `span` element should have the `class` attribute set to `sr-only`.
+
+```js
+assert(document.querySelectorAll('table')?.[2]?.querySelector('tbody')?.querySelectorAll('tr')?.[0]?.querySelector('th > span')?.classList?.contains('sr-only'));
+```
+
+You should have three `td` elements.
+
+```js
+assert(document.querySelectorAll('table')?.[2]?.querySelector('tbody')?.querySelectorAll('tr')?.[0]?.querySelectorAll('td').length === 3);
+```
+
+Your first `td` element should have the text `$29`.
+
+```js
+assert(document.querySelectorAll('table')?.[2]?.querySelector('tbody')?.querySelectorAll('tr')?.[0]?.querySelectorAll('td')?.[0]?.textContent === '$29');
+```
+
+Your second `td` element should have the text `$-14`.
+
+```js
+assert(document.querySelectorAll('table')?.[2]?.querySelector('tbody')?.querySelectorAll('tr')?.[0]?.querySelectorAll('td')?.[1]?.textContent === '$-14');
+```
+
+Your third `td` element should have the text `$309`.
+
+```js
+assert(document.querySelectorAll('table')?.[2]?.querySelector('tbody')?.querySelectorAll('tr')?.[0]?.querySelectorAll('td')?.[2]?.textContent === '$309');
+```
+
+Your third `td` element should have the `class` set to `current`.
+
+```js
+assert(document.querySelectorAll('table')?.[2]?.querySelector('tbody')?.querySelectorAll('tr')?.[0]?.querySelectorAll('td')?.[2]?.classList?.contains('current'));
 ```
 
 # --seed--

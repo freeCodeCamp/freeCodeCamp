@@ -11,10 +11,40 @@ Time to move on to your second table. Start by giving it a `caption` element set
 
 # --hints--
 
-Test 1
+Your second `table` element should have a `caption` element.
 
 ```js
+assert(document.querySelectorAll('table')?.[1]?.children?.[0]?.localName === 'caption');
+```
 
+Your `caption` element should have the text `Liabilities`.
+
+```js
+assert(document.querySelectorAll('table')?.[1]?.querySelector('caption')?.textContent === 'Liabilities');
+```
+
+Your second `table` element should have a `thead` element.
+
+```js
+assert(document.querySelectorAll('table')?.[1]?.querySelector('thead'));
+```
+
+Your second `table` element should have a `tbody` element.
+
+```js
+assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody'));
+```
+
+Your `thead` element should be immediately below your `caption` element.
+
+```js
+assert(document.querySelectorAll('table')?.[1]?.querySelector('caption')?.nextElementSibling?.localName === 'thead');
+```
+
+Your `tbody` element should be immediately below your `thead` element.
+
+```js
+assert(document.querySelectorAll('table')?.[1]?.querySelector('thead')?.nextElementSibling?.localName === 'tbody');
 ```
 
 # --seed--

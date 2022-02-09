@@ -7,16 +7,64 @@ dashedName: step-22
 
 # --description--
 
-Within the second `tr`, add a `th` element with the text `Expenses Annual anticipated expenses, such as payroll`. Wrap that text, except for `Expenses `, within a `span` element with the `class` set to `description`.
+Within the second `tr`, add a `th` element with the text `Expenses Annual anticipated expenses, such as payroll.`. Wrap that text, except for `Expenses `, within a `span` element with the `class` set to `description`.
 
 Add three `td` elements below that, and give them the following text, in order: `$200`, `$300`, and `$400`. Give the third `td` element a `class` set to `current`.
 
 # --hints--
 
-Test 1
+Your first `tr` should have a `th` element.
 
 ```js
+assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[1]?.querySelector('th'));
+```
 
+Your `th` element should have the text `Expenses Annual anticipated expenses, such as payroll.`.
+
+```js
+assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[1]?.querySelector('th')?.innerText === 'Expenses Annual anticipated expenses, such as payroll.');
+```
+
+You should wrap the text `Annual anticipated expenses, such as payroll.` in a `span` element.
+
+```js
+assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[1]?.querySelector('th > span')?.textContent === 'Annual anticipated expenses, such as payroll.');
+```
+
+Your `span` element should have the `class` attribute set to `description`.
+
+```js
+assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[1]?.querySelector('th > span')?.classList?.contains('description'));
+```
+
+You should have three `td` elements.
+
+```js
+assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[1]?.querySelectorAll('td').length === 3);
+```
+
+Your first `td` element should have the text `$200`.
+
+```js
+assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[1]?.querySelectorAll('td')?.[0]?.textContent === '$200');
+```
+
+Your second `td` element should have the text `$300`.
+
+```js
+assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[1]?.querySelectorAll('td')?.[1]?.textContent === '$300');
+```
+
+Your third `td` element should have the text `$400`.
+
+```js
+assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[1]?.querySelectorAll('td')?.[2]?.textContent === '$400');
+```
+
+Your third `td` element should have the `class` set to `current`.
+
+```js
+assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[1]?.querySelectorAll('td')?.[2]?.classList?.contains('current'));
 ```
 
 # --seed--

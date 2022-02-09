@@ -11,10 +11,48 @@ Give each `th` element a `span` element with the class set to `sr-only` and the 
 
 # --hints--
 
-Test 1
+Each of your `th` elements should have a `span` element.
 
 ```js
+const ths = [...document.querySelectorAll('table')?.[1]?.querySelectorAll('th')];
+ths?.forEach(th => {
+  assert(th?.children?.length === 1);
+  assert(th?.children?.[0]?.localName === 'span');
+});
+```
 
+Each of your new `span` elements should have the `class` attribute set to `sr-only`.
+
+```js
+const ths = [...document.querySelectorAll('table')?.[1]?.querySelectorAll('th')];
+ths?.forEach(th => {
+  assert(th?.children?.[0]?.classList?.contains('sr-only'));
+});
+```
+
+Your first `span` element should have the text `2019`.
+
+```js
+assert(document.querySelectorAll('table')?.[1]?.querySelectorAll('th')?.[0]?.children?.[0]?.textContent === '2019');
+```
+
+Your second `span` element should have the text `2020`.
+
+```js
+assert(document.querySelectorAll('table')?.[1]?.querySelectorAll('th')?.[1]?.children?.[0]?.textContent === '2020');
+```
+
+Your third `span` element should have the text `2021`.
+
+```js
+assert(document.querySelectorAll('table')?.[1]?.querySelectorAll('th')?.[2]?.children?.[0]?.textContent === '2021');
+```
+
+Your `td` element should be empty.
+
+```js
+assert(document.querySelectorAll('table')?.[1]?.querySelectorAll('td')?.[0]?.textContent === '');
+assert(document.querySelectorAll('table')?.[1]?.querySelectorAll('td')?.[0]?.children?.length === 0);
 ```
 
 # --seed--
