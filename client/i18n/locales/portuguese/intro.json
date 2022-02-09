@@ -76,35 +76,35 @@
     "note": "Observação: algumas extensões de navegador, como bloqueadores de anúncios e extensões de modo escuro podem interferir nos testes. Se você tiver problemas, recomendamos desabilitar extensões que modifiquem o conteúdo ou o layout das páginas durante o curso.",
     "blocks": {
       "build-a-tribute-page-project": {
-        "title": "Projeto de criar uma página de homenagem",
+        "title": "Tribute Page",
         "intro": [
           "Este é um dos projetos necessários para obter sua certificação.",
           "Para este projeto, você criará uma página de tributo para alguém de sua escolha, fictício ou real."
         ]
       },
       "build-a-personal-portfolio-webpage-project": {
-        "title": "Projeto de criar uma página de portfólio pessoal",
+        "title": "Personal Portfolio Webpage",
         "intro": [
           "Este é um dos projetos necessários para obter sua certificação.",
           "Para este projeto, você criará sua própria página pessoal de portfólio."
         ]
       },
       "build-a-product-landing-page-project": {
-        "title": "Projeto de criar uma página inicial para um produto",
+        "title": "Product Landing Page",
         "intro": [
           "Este é um dos projetos necessários para obter sua certificação.",
           "Para este projeto, você criará uma página inicial de produto para comercializar um produto de sua escolha."
         ]
       },
       "build-a-survey-form-project": {
-        "title": "Projeto de criar um formulário de pesquisa",
+        "title": "Survey Form",
         "intro": [
           "Este é um dos projetos necessários para obter sua certificação.",
           "Para este projeto, você criará um formulário de pesquisa para coletar dados de seus usuários."
         ]
       },
       "build-a-technical-documentation-page-project": {
-        "title": "Projeto de criar uma página de documentação técnica",
+        "title": "Technical Documentation Page",
         "intro": [
           "Este é um dos projetos necessários para obter sua certificação.",
           "Para este projeto, você criará uma página de documentação técnica para servir como instrução ou referência para um tópico."
