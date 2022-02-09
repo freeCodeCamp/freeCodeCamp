@@ -448,7 +448,7 @@
     "magnifier": "magnifier"
   },
   "aria": {
-    "fcc-curriculum":"freeCodeCamp Curriculum",
+    "fcc-curriculum": "freeCodeCamp Curriculum",
     "answer": "Answer",
     "linkedin": "Link to {{username}}'s LinkedIn",
     "github": "Link to {{username}}'s GitHub",
