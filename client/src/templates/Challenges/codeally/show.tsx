@@ -137,7 +137,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps, ShowCodeAllyState> {
     this.setState({
       showIframe: true
     });
-  }
+  };
 
   handleSubmit = ({
     showCompletionModal
@@ -171,7 +171,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps, ShowCodeAllyState> {
     } else if (showCompletionModal) {
       this.props.openCompletionModal();
     }
-  }
+  };
 
   render() {
     const {
