@@ -256,7 +256,7 @@ brew install azure-cli
 az login
 ```
 
-> **VM 名と P アドレスのリストを取得します。**
+> **Get the list of VM names and IP addresses:**
 
 ```
 az vm list-ip-addresses --output table
