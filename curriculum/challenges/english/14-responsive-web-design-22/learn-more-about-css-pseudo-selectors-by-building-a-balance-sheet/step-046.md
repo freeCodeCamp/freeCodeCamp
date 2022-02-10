@@ -1,5 +1,5 @@
 ---
-id: 62017b6f47454059bf2d3bd1
+id: 62017f47c87be96457c49f46
 title: Step 46
 challengeType: 0
 dashedName: step-46
@@ -7,16 +7,74 @@ dashedName: step-46
 
 # --description--
 
-Before you start diving in to the table itself, your `span` elements are currently bolded. Create a `span:not(.sr-only)` selector and give it a `font-weight` property set to `normal`.
+Rather than having to constantly double-check you are not overwriting your earlier properties, you can use the `!important` keyword to ensure these properties are always applied, regardless of order or specificity.
 
-The `:not()` pseudo-selector is used to target all elements that do not match the selector - in this case, any of your `span` elements that do not have the `.sr-only` class. This ensures that your earlier rules for the `sr-only` class are not overwritten.
+Give each property in your `span[class~="sr-only"]` selector an `!important` keyword. Do not change any of the values.
 
 # --hints--
 
-Test 1
+Your `span[class~="sr-only"]` selector should have the `border` property set to `0 !important`.
 
 ```js
+// log it
+const text = new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.cssText;
+assert(text.includes('border: 0px !important;'));
+```
 
+Your `span[class~="sr-only"]` selector should have the `clip` property set to `rect(1px, 1px, 1px, 1px) !important`.
+
+```js
+const text = new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.cssText;
+assert(text.includes('clip: rect(1px, 1px, 1px, 1px) !important;'));
+```
+
+Your `span[class~="sr-only"]` selector should have the `clip-path` property set to `inset(50%) !important`.
+
+```js
+const text = new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.cssText;
+assert(text.includes('clip-path: inset(50%) !important;'));
+```
+
+Your `span[class~="sr-only"]` selector should have the `-webkit-clip-path` property set to `inset(50%) !important`.
+
+```js
+// this one gets removed apparently
+assert(code.includes('-webkit-clip-path: inset(50%) !important;'));
+```
+
+Your `span[class~="sr-only"]` selector should have the `height` property set to `1px !important`.
+
+```js
+const text = new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.cssText;
+assert(text.includes('height: 1px !important;'));
+```
+
+Your `span[class~="sr-only"]` selector should have the `width` property set to `1px !important`.
+
+```js
+const text = new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.cssText;
+assert(text.includes('width: 1px !important;'));
+```
+
+Your `span[class~="sr-only"]` selector should have the `position` property set to `absolute !important`.
+
+```js
+const text = new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.cssText;
+assert(text.includes('position: absolute !important;'));
+```
+
+Your `span[class~="sr-only"]` selector should have the `padding` property set to `0 !important`.
+
+```js
+const text = new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.cssText;
+assert(text.includes('padding: 0px !important;'));
+```
+
+Your `span[class~="sr-only"]` selector should have the `margin` property set to `-1px !important`.
+
+```js
+const text = new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.cssText;
+assert(text.includes('margin: -1px !important;'));
 ```
 
 # --seed--
@@ -148,7 +206,8 @@ Test 1
 ```
 
 ```css
-.sr-only {
+--fcc-editable-region--
+span[class~="sr-only"] {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);
@@ -159,6 +218,7 @@ Test 1
   padding: 0;
   margin: -1px;
 }
+--fcc-editable-region--
 
 html {
   box-sizing: border-box;
@@ -217,7 +277,7 @@ section {
   padding: 0 0.75rem 1.5rem 0.75rem;
 }
 
---fcc-editable-region--
-
---fcc-editable-region--
+span:not(.sr-only) {
+  font-weight: normal;
+}
 ```

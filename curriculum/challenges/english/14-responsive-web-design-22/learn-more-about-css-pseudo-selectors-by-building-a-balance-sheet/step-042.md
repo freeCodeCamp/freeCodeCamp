@@ -1,5 +1,5 @@
 ---
-id: 620174ed519dd7506c1a4b61
+id: 620175b3710a0951cfa86edf
 title: Step 42
 challengeType: 0
 dashedName: step-42
@@ -7,14 +7,26 @@ dashedName: step-42
 
 # --description--
 
-Now apply some color to your `#years`. Make the text `#fff` and the background `#0a0a23`.
+Ensure your years do not get hidden by setting a `z-index` of `999`. Then, give it a `margin` of `0 -2px`, and a `padding` set to `0.5rem calc(1.25rem + 2px) 0.5rem 0`.
 
 # --hints--
 
-Test 1
+Your `#years` selector should have a `z-index` property set to `999`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#years')?.getPropertyValue('z-index') === '999');
+```
 
+Your `#years` selector should have a `margin` property set to `0 -2px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#years')?.getPropertyValue('margin') === '0px -2px');
+```
+
+Your `#years` selector should have a `padding` property set to `0.5rem calc(1.25rem + 2px) 0.5rem 0`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#years')?.getPropertyValue('padding') === '0.5rem calc(1.25rem + 2px) 0.5rem 0px');
 ```
 
 # --seed--
@@ -146,7 +158,7 @@ Test 1
 ```
 
 ```css
-.sr-only {
+span[class~="sr-only"] {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);
@@ -199,6 +211,8 @@ section {
   justify-content: flex-end;
   position: sticky;
   top: 0;
+  background: #0a0a23;
+  color: #fff;
 }
 --fcc-editable-region--
 ```

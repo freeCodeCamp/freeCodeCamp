@@ -1,5 +1,5 @@
 ---
-id: 620167374bb8b4455cd11125
+id: 620174ed519dd7506c1a4b61
 title: Step 41
 challengeType: 0
 dashedName: step-41
@@ -7,14 +7,20 @@ dashedName: step-41
 
 # --description--
 
-The last part of your table heading is your years. Create a `#years` selector, and enable flexbox. Justify the content to the end of the flex direction, and make the element sticky. Fix it to the top of its container with `top: 0`.
+Now apply some color to your `#years`. Make the text `#fff` and the background `#0a0a23`.
 
 # --hints--
 
-Test 1
+Your `#years` should have a `color` property set to `#fff`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#years')?.getPropertyValue('color') === 'rgb(255, 255, 255)');
+```
 
+Your `#years` should have a `background-color` property set to `#0a0a23`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#years')?.getPropertyValue('background-color') === 'rgb(10, 10, 35)');
 ```
 
 # --seed--
@@ -146,7 +152,7 @@ Test 1
 ```
 
 ```css
-.sr-only {
+span[class~="sr-only"] {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);
@@ -194,6 +200,12 @@ section {
 }
 
 --fcc-editable-region--
+#years {
+  display: flex;
+  justify-content: flex-end;
+  position: sticky;
+  top: 0;
 
+}
 --fcc-editable-region--
 ```

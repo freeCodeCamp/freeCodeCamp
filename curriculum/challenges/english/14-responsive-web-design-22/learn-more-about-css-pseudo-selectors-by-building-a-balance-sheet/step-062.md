@@ -1,5 +1,5 @@
 ---
-id: 6201a20d742f5c89736c8cfb
+id: 6201a42e39bf3b95b6a33bf3
 title: Step 62
 challengeType: 0
 dashedName: step-62
@@ -7,14 +7,44 @@ dashedName: step-62
 
 # --description--
 
-Select the `th` elements within your `tr.data` elements. Align the text to the left, and give them a top padding of `0.3rem` and a left padding of `0.5rem`.
+Create a `tr.data th .description` selector to target the elements with the `class` set to `description` that are within your `th` elements in your `.data` table rows. Give them a block display, make the text italic with a normal weight, and position them with a `padding` set to `1rem 0 0.75rem` and a right margin of `-13.5rem`.
 
 # --hints--
 
-Test 1
+You should have a `tr.data th .description` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('tr.data th .description'));
+```
 
+Your `tr.data th .description` selector should have a `display` property set to `block`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('tr.data th .description')?.getPropertyValue('display') === 'block');
+```
+
+Your `tr.data th .description` selector should have a `font-style` property set to `italic`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('tr.data th .description')?.getPropertyValue('font-style') === 'italic');
+```
+
+Your `tr.data th .description` selector should have a `font-weight` property set to `normal`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('tr.data th .description')?.getPropertyValue('font-weight') === 'normal');
+```
+
+Your `tr.data th .description` selector should have a `padding` property set to `1rem 0 0.75rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('tr.data th .description')?.getPropertyValue('padding') === '1rem 0px 0.75rem');
+```
+
+Your `tr.data th .description` selector should have a `margin-right` property set to `-13.5rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('tr.data th .description')?.getPropertyValue('margin-right') === '-13.5rem');
 ```
 
 # --seed--
@@ -146,7 +176,7 @@ Test 1
 ```
 
 ```css
-.sr-only {
+span[class~="sr-only"] {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
   -webkit-clip-path: inset(50%) !important;
@@ -277,6 +307,12 @@ td.current {
 
 tr.data {
   background-image: linear-gradient(to bottom, #dfdfe2 1.845rem, white 1.845rem);
+}
+
+tr.data th {
+  text-align: left;
+  padding-top: 0.3rem;
+  padding-left: 0.5rem;
 }
 
 --fcc-editable-region--

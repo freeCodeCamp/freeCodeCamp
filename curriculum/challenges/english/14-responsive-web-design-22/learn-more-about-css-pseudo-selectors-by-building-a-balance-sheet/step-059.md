@@ -1,5 +1,5 @@
 ---
-id: 620199c7a7a32c81d4db3410
+id: 6201a1a7af32c287bd6b8183
 title: Step 59
 challengeType: 0
 dashedName: step-59
@@ -7,14 +7,20 @@ dashedName: step-59
 
 # --description--
 
-Give your `tr.total` elements a hover effect that changes the background to `#99c9ff`.
+Select your `td` elements with the `class` value of `current`, and make the font italic.
 
 # --hints--
 
-Test 1
+You should have a `td.current` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('td.current'));
+```
 
+Your `td.current` selector should have the `font-style` property set to `italic`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('td.current')?.getPropertyValue('font-style') === 'italic');
 ```
 
 # --seed--
@@ -146,7 +152,7 @@ Test 1
 ```
 
 ```css
-.sr-only {
+span[class~="sr-only"] {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
   -webkit-clip-path: inset(50%) !important;
@@ -265,6 +271,10 @@ tr.total td {
 
 tr.total td:nth-of-type(3) {
   padding-right: 0.5rem;
+}
+
+tr.total:hover {
+  background-color: #99c9ff;
 }
 
 --fcc-editable-region--

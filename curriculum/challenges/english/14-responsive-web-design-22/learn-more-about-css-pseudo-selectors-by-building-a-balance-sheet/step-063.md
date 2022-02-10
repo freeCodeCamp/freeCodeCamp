@@ -1,5 +1,5 @@
 ---
-id: 6201a42e39bf3b95b6a33bf3
+id: 6201a4adcc6414968b391592
 title: Step 63
 challengeType: 0
 dashedName: step-63
@@ -7,14 +7,14 @@ dashedName: step-63
 
 # --description--
 
-Create a `tr.data th .description` selector to target the elements with the `class` set to `description` that are within your `th` elements in your `.data` table rows. Give them a block display, make the text italic with a normal weight, and position them with a `padding` set to `1rem 0 0.75rem` and a right margin of `-13.5rem`.
+Your `span` elements now all have more specific styling, which means you can remove your `span` rule.
 
 # --hints--
 
-Test 1
+You should not have a `span` selector.
 
 ```js
-
+assert(!(new __helpers.CSSHelp(document).getStyle('span')));
 ```
 
 # --seed--
@@ -146,7 +146,7 @@ Test 1
 ```
 
 ```css
-.sr-only {
+span[class~="sr-only"] {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
   -webkit-clip-path: inset(50%) !important;
@@ -217,9 +217,11 @@ section {
   padding: 0 0.75rem 1.5rem 0.75rem;
 }
 
+--fcc-editable-region--
 span {
   font-weight: normal;
 }
+--fcc-editable-region--
 
 table {
   border-collapse: collapse;
@@ -285,7 +287,11 @@ tr.data th {
   padding-left: 0.5rem;
 }
 
---fcc-editable-region--
-
---fcc-editable-region--
+tr.data th .description {
+  display: block;
+  font-weight: normal;
+  font-style: italic;
+  padding: 1rem 0 0.75rem;
+  margin-right: -13.5rem;
+}
 ```

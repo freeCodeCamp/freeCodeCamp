@@ -11,10 +11,16 @@ Time to style your table. Start by resetting the box model. Create an `html` sel
 
 # --hints--
 
-Test 1
+You should have an `html` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('html'));
+```
 
+Your `html` selector should have a `box-sizing` property set to `border-box`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('html')?.getPropertyValue('box-sizing') === 'border-box');
 ```
 
 # --seed--

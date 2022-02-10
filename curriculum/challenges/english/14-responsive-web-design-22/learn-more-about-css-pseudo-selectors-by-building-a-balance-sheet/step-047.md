@@ -1,5 +1,5 @@
 ---
-id: 62017f47c87be96457c49f46
+id: 62017fa5bbef406580ceb44f
 title: Step 47
 challengeType: 0
 dashedName: step-47
@@ -7,16 +7,26 @@ dashedName: step-47
 
 # --description--
 
-Rather than having to constantly double-check you are not overwriting your earlier properties, you can use the `!important` keyword to ensure these properties are always applied, regardless of order or specificity.
-
-Give each property in your `span[class~="sr-only"]` selector an `!important` keyword.
+Now that you have added the `!important` keyword, you can remove the `:not(.sr-only)` from your `span` selector.
 
 # --hints--
 
-Test 1
+You should not have a `span:not(.sr-only)` selector.
 
 ```js
+assert(!(new __helpers.CSSHelp(document).getStyle('span:not(.sr-only)')));
+```
 
+You should have a `span` selector.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('span'));
+```
+
+You should not change the `font-weight`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('span')?.getPropertyValue('font-weight') === 'normal');
 ```
 
 # --seed--
@@ -148,19 +158,19 @@ Test 1
 ```
 
 ```css
---fcc-editable-region--
-.sr-only {
-  border: 0;
-  clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(50%);
-  -webkit-clip-path: inset(50%);
-  height: 1px;
-  width: 1px;
-  position: absolute;
-  padding: 0;
-  margin: -1px;
+span[class~="sr-only"] {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
 }
---fcc-editable-region--
 
 html {
   box-sizing: border-box;
@@ -219,7 +229,9 @@ section {
   padding: 0 0.75rem 1.5rem 0.75rem;
 }
 
+--fcc-editable-region--
 span:not(.sr-only) {
   font-weight: normal;
 }
+--fcc-editable-region--
 ```

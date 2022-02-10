@@ -1,5 +1,5 @@
 ---
-id: 620179bc0a6a2358c72b90ad
+id: 62017b6f47454059bf2d3bd1
 title: Step 45
 challengeType: 0
 dashedName: step-45
@@ -7,14 +7,22 @@ dashedName: step-45
 
 # --description--
 
-You wrapped your tables in a container with the `table-wrap` class. Create a selector for that class, and give it a `padding` set to `0 0.75rem 1.5rem 0.75rem`.
+Before you start diving in to the table itself, your `span` elements are currently bolded. Create a `span:not(.sr-only)` selector and give it a `font-weight` property set to `normal`.
+
+The `:not()` pseudo-selector is used to target all elements that do not match the selector - in this case, any of your `span` elements that do not have the span[class~="sr-only"] ` class. This ensures that your earlier rules for the `sr-only` class are not overwritten.
 
 # --hints--
 
-Test 1
+You should have a `span:not(.sr-only)` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('span:not(.sr-only)'));
+```
 
+Your `span:not(.sr-only)` selector should have a `font-weight` property set to `normal`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('span:not(.sr-only)')?.getPropertyValue('font-weight') === 'normal');
 ```
 
 # --seed--
@@ -146,7 +154,7 @@ Test 1
 ```
 
 ```css
-.sr-only {
+span[class~="sr-only"] {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);
@@ -209,6 +217,10 @@ section {
   font-weight: bold;
   width: 4.5rem;
   text-align: right;
+}
+
+.table-wrap {
+  padding: 0 0.75rem 1.5rem 0.75rem;
 }
 
 --fcc-editable-region--

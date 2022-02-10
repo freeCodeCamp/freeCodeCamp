@@ -1,5 +1,5 @@
 ---
-id: 620175b3710a0951cfa86edf
+id: 6201782cc420715562f36271
 title: Step 43
 challengeType: 0
 dashedName: step-43
@@ -7,14 +7,34 @@ dashedName: step-43
 
 # --description--
 
-Ensure your years do not get hidden by setting a `z-index`. Then, give it a `margin` of `0 -2px`, and a `padding` set to `0.5rem calc(1.25rem + 2px) 0.5rem 0`.
+Style the text within your `#years` element by creating a `#years span[class]` selector. The `span[class]` syntax will target any `span` element that has a `class` attribute set, regardless of the attribute's value.
+
+Give your new selector a bold font, a width of `4.5rem`, and text aligned to the right.
 
 # --hints--
 
-Test 1
+You should have a `#years span[class]` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#years span[class]'));
+```
 
+Your `#years span[class]` selector should have a `font-weight` property set to `bold`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#years span[class]')?.getPropertyValue('font-weight') === 'bold');
+```
+
+Your `#years span[class]` selector should have a `width` property set to `4.5rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#years span[class]')?.getPropertyValue('width') === '4.5rem');
+```
+
+Your `#years span[class]` selector should have a `text-align` property set to `right`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#years span[class]')?.getPropertyValue('text-align') === 'right');
 ```
 
 # --seed--
@@ -146,7 +166,7 @@ Test 1
 ```
 
 ```css
-.sr-only {
+span[class~="sr-only"] {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);
@@ -193,7 +213,6 @@ section {
   border: 2px solid #d0d0d5;
 }
 
---fcc-editable-region--
 #years {
   display: flex;
   justify-content: flex-end;
@@ -201,6 +220,12 @@ section {
   top: 0;
   background: #0a0a23;
   color: #fff;
+  z-index: 999;
+  padding: 0.5rem calc(1.25rem + 2px) 0.5rem 0;
+  margin: 0 -2px;
 }
+
+--fcc-editable-region--
+
 --fcc-editable-region--
 ```

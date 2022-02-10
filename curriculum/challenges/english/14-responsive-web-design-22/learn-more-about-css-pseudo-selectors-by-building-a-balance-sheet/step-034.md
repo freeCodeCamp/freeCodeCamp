@@ -7,14 +7,26 @@ dashedName: step-34
 
 # --description--
 
-Finally, you need to take these hidden elements out of the document flow. Give the `.sr-only` selector a `position` property set to `absolute`, a `padding` property set to `0`, and a `margin` property set to `-1px`. This will ensure that not only are the no longer visible, but they are not even within the page view.
+Finally, you need to take these hidden elements out of the document flow. Give the span[class~="sr-only"] ` selector a `position` property set to `absolute`, a `padding` property set to `0`, and a `margin` property set to `-1px`. This will ensure that not only are the no longer visible, but they are not even within the page view.
 
 # --hints--
 
-Test 1
+Your span[class~="sr-only"] ` selector should have a `position` property set to `absolute`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle(span[class~="sr-only"] ')?.getPropertyValue('position') === 'absolute');
+```
 
+Your span[class~="sr-only"] ` selector should have a `padding` property set to `0`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle(span[class~="sr-only"] ')?.getPropertyValue('padding') === '0px');
+```
+
+Your span[class~="sr-only"] ` selector should have a `margin` property set to `-1px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle(span[class~="sr-only"] ')?.getPropertyValue('margin') === '-1px');
 ```
 
 # --seed--
@@ -147,7 +159,7 @@ Test 1
 
 ```css
 --fcc-editable-region--
-.sr-only {
+span[class~="sr-only"] {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);

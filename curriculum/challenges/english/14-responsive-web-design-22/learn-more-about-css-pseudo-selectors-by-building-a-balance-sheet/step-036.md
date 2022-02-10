@@ -1,5 +1,5 @@
 ---
-id: 61fdb48a958013a5e57d3d89
+id: 620159cd5431aa34bc6a4c9c
 title: Step 36
 challengeType: 0
 dashedName: step-36
@@ -7,14 +7,32 @@ dashedName: step-36
 
 # --description--
 
-Your title needs to be styled to have the correct visual flow. Start by creating an `h1` selector. Give it a `max-width` property set to `37.25rem`, a `margin` property set to `0 auto`, and a `padding` property set to `1.5rem 1.25rem 1.5rem`.
+Target your flex container with an `h1 .flex` selector. Give it a `display` property set to `flex` to enable the flexbox layout. Then set the `flex-direction` property to `column-reverse` - this will display the nested elements from bottom to top. Finally, set the `gap` property to `1rem` to create some space between the elements.
 
 # --hints--
 
-Test 1
+You should have an `h1 .flex` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('h1 .flex'));
+```
 
+Your `h1 .flex` selector should have a `display` property set to `flex`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('h1 .flex')?.getPropertyValue('display') === 'flex');
+```
+
+Your `h1 .flex` selector should have a `flex-direction` property set to `column-reverse`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('h1 .flex')?.getPropertyValue('flex-direction') === 'column-reverse');
+```
+
+Your `h1 .flex` selector should have a `gap` property set to `1rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('h1 .flex')?.getPropertyValue('gap') === '1rem');
 ```
 
 # --seed--
@@ -146,7 +164,7 @@ Test 1
 ```
 
 ```css
-.sr-only {
+span[class~="sr-only"] {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);
@@ -165,6 +183,12 @@ html {
 body {
   font-family: sans-serif;
   color: #0a0a23;
+}
+
+h1 {
+  max-width: 37.25rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 1.5rem;
 }
 
 --fcc-editable-region--

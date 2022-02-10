@@ -7,16 +7,28 @@ dashedName: step-31
 
 # --description--
 
-The CSS `clip` property is used to define the visible portions of an element. Set the `.sr-only` selector to have a `clip` property of `rect(1px, 1px, 1px, 1px)`.
+The CSS `clip` property is used to define the visible portions of an element. Set the span[class~="sr-only"] ` selector to have a `clip` property of `rect(1px, 1px, 1px, 1px)`.
 
 The `clip-path` property determines the shape the `clip` property should take. Use both the `clip-path` and `-webkit-clip-path` selectors to set the value to `inset(50%)`, forming the clip path into a rectangle within the element.
 
 # --hints--
 
-Test 1
+Your span[class~="sr-only"] ` selector should have a `clip` property set to `rect(1px, 1px, 1px, 1px)`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle(span[class~="sr-only"] ')?.getPropertyValue('clip') === 'rect(1px, 1px, 1px, 1px)');
+```
 
+Your span[class~="sr-only"] ` selector should have a `clip-path` property set to `inset(50%)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle(span[class~="sr-only"] ')?.getPropertyValue('clip-path') === 'inset(50%)');
+```
+
+Your span[class~="sr-only"] ` selector should have a `-webkit-clip-path` property set to `inset(50%)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle(span[class~="sr-only"] ')?.getPropertyValue('-webkit-clip-path') === 'inset(50%)');
 ```
 
 # --seed--
@@ -149,7 +161,7 @@ Test 1
 
 ```css
 --fcc-editable-region--
-.sr-only {
+span[class~="sr-only"] {
   border: 0;
 
 }

@@ -1,5 +1,5 @@
 ---
-id: 6201a1cc668a34888f5b2f52
+id: 6201a20d742f5c89736c8cfb
 title: Step 61
 challengeType: 0
 dashedName: step-61
@@ -7,14 +7,32 @@ dashedName: step-61
 
 # --description--
 
-Within your `tr` elements, select the elements with the `class` set to `data`. Give them a background image of `linear-gradient(to bottom, #dfdfe2 1.845rem, white 1.845rem)`.
+Select the `th` elements within your `tr.data` elements. Align the text to the left, and give them a top padding of `0.3rem` and a left padding of `0.5rem`.
 
 # --hints--
 
-Test 1
+You should have a `tr.data th` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('tr.data th'));
+```
 
+Your `tr.data th` selector should have a `text-align` property set to `left`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('tr.data th')?.getPropertyValue('text-align') === 'left');
+```
+
+Your `tr.data th` selector should have a `padding-top` property set to `0.3rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('tr.data th')?.getPropertyValue('padding-top') === '0.3rem');
+```
+
+Your `tr.data th` selector should have a `padding-left` property set to `0.5rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('tr.data th')?.getPropertyValue('padding-left') === '0.5rem');
 ```
 
 # --seed--
@@ -146,7 +164,7 @@ Test 1
 ```
 
 ```css
-.sr-only {
+span[class~="sr-only"] {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
   -webkit-clip-path: inset(50%) !important;
@@ -273,6 +291,10 @@ tr.total:hover {
 
 td.current {
   font-style: italic;
+}
+
+tr.data {
+  background-image: linear-gradient(to bottom, #dfdfe2 1.845rem, white 1.845rem);
 }
 
 --fcc-editable-region--

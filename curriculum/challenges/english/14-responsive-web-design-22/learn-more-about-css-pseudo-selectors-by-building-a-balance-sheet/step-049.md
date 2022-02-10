@@ -1,5 +1,5 @@
 ---
-id: 62018243f046a368fab8ffb6
+id: 6201830cb0c74b69f1b41635
 title: Step 49
 challengeType: 0
 dashedName: step-49
@@ -7,14 +7,26 @@ dashedName: step-49
 
 # --description--
 
-Create a `table` selector to target your tables. Set the `border-collapse` property to `collapse`, which will allow cell borders to collapse into a single border, instead of a border around each cell. Also set the `border` property to `0` to hide the borders themselves.
+Ensure your table fills its container with a `width` property set to `100%`, then position it relatively and give it a top margin of `3rem`.
 
 # --hints--
 
-Test 1
+Your `table` selector should have a `width` property set to `100%`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('table')?.getPropertyValue('width') === '100%');
+```
 
+Your `table` selector should have a `position` property set to `relative`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('table')?.getPropertyValue('position') === 'relative');
+```
+
+Your `table` selector should have a `margin-top` property set to `3rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('table')?.getPropertyValue('margin-top') === '3rem');
 ```
 
 # --seed--
@@ -146,7 +158,7 @@ Test 1
 ```
 
 ```css
-.sr-only {
+span[class~="sr-only"] {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
   -webkit-clip-path: inset(50%) !important;
@@ -222,6 +234,10 @@ span {
 }
 
 --fcc-editable-region--
+table {
+  border-collapse: collapse;
+  border: 0;
 
+}
 --fcc-editable-region--
 ```

@@ -9,14 +9,21 @@ dashedName: step-30
 
 Before you get too far in to your styling, you should make use of the `sr-only` class. You can use CSS to make elements with this class completely hidden from the visual page, but still be announced by screen readers.
 
-Create a selector to target your `sr-only` class. Give it a `border` property set to `0`.
+The `span[class~="sr-only"]` selector will select any `span` element whose `class` *includes* `sr-only`. Create that selector, and give it a `border` property set to `0`.
 
 # --hints--
 
-Test 1
+You should have an span[class~="sr-only"] ` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle(span[class~="sr-only"] '));
+```
 
+Your span[class~="sr-only"] ` selector should have a `border` property set to `0`.
+
+```js
+console.log(new __helpers.CSSHelp(document).getStyle(span[class~="sr-only"] ')?.getPropertyValue('border'))
+assert(new __helpers.CSSHelp(document).getStyle(span[class~="sr-only"] ')?.getPropertyValue('border') === '0px');
 ```
 
 # --seed--

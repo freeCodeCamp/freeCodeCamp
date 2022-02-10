@@ -1,5 +1,5 @@
 ---
-id: 6201830cb0c74b69f1b41635
+id: 620186f4b6b8356d2def576b
 title: Step 50
 challengeType: 0
 dashedName: step-50
@@ -7,14 +7,32 @@ dashedName: step-50
 
 # --description--
 
-Ensure your table fills its container with a `width` property set to `100%`, then position it relatively and give it a top margin of `3rem`.
+Next you need to style your `caption` elements to look more like headers. Create a `table caption` selector. Set the text to have a color of `#356eaf`, a size of `1.3em`, and a normal weight.
 
 # --hints--
 
-Test 1
+You should have a `table caption` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('table caption'));
+```
 
+Your `table caption` selector should have a `color` property set to `#356eaf`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('table caption')?.getPropertyValue('color') === 'rgb(53, 110, 175)');
+```
+
+Your `table caption` selector should have a `font-size` property set to `1.3em`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('table caption')?.getPropertyValue('font-size') === '1.3em');
+```
+
+Your `table caption` selector should have a `font-weight` property set to `normal`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('table caption')?.getPropertyValue('font-weight') === 'normal');
 ```
 
 # --seed--
@@ -146,7 +164,7 @@ Test 1
 ```
 
 ```css
-.sr-only {
+span[class~="sr-only"] {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
   -webkit-clip-path: inset(50%) !important;
@@ -221,10 +239,15 @@ span {
   font-weight: normal;
 }
 
---fcc-editable-region--
 table {
   border-collapse: collapse;
   border: 0;
+  width: 100%;
+  position: relative;
+  margin-top: 3rem;
 }
+
+--fcc-editable-region--
+
 --fcc-editable-region--
 ```

@@ -1,5 +1,5 @@
 ---
-id: 62019093fe30e278e797d2f6
+id: 620191707bc65579ddd3ce15
 title: Step 55
 challengeType: 0
 dashedName: step-55
@@ -7,14 +7,26 @@ dashedName: step-55
 
 # --description--
 
-The `[attribute="value"]` selector targets any element that has an attribute with a specific value. Create a `tr[class="total"]` selector to target specifically your `th` elements with the `total` class. Give it a bottom border of `4px double #0a0a23` and make the font bold.
+Using the same selector syntax, target the `th` elements within your table rows where the `class` is `total`. Align the text to the left, and give them a padding of `0.5rem 0 0.25rem 0.5rem`.
 
 # --hints--
 
-Test 1
+You should have a `tr[class="total"] th` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('tr[class="total"] th'));
+```
 
+Your `tr[class="total"] th` selector should have a `text-align` property set to `left`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('tr[class="total"] th')?.getPropertyValue('text-align') === 'left');
+```
+
+Your `tr[class="total"] th` selector should have a `padding` property set to `0.5rem 0 0.25rem 0.5rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('tr[class="total"] th')?.getPropertyValue('padding') === '0.5rem 0px 0.25rem 0.5rem');
 ```
 
 # --seed--
@@ -146,7 +158,7 @@ Test 1
 ```
 
 ```css
-.sr-only {
+span[class~="sr-only"] {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
   -webkit-clip-path: inset(50%) !important;
@@ -246,6 +258,11 @@ tbody td {
 
 tbody th {
   width: calc(100% - 12rem);
+}
+
+tr[class="total"] {
+  border-bottom: 4px double #0a0a23;
+  font-weight: bold;
 }
 
 --fcc-editable-region--

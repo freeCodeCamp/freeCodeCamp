@@ -1,5 +1,5 @@
 ---
-id: 620186f4b6b8356d2def576b
+id: 62018ba1aa263770c953be66
 title: Step 51
 challengeType: 0
 dashedName: step-51
@@ -7,14 +7,26 @@ dashedName: step-51
 
 # --description--
 
-Next you need to style your `caption` elements to look more like headers. Create a `table caption` selector. Set the text to have a color of `#356eaf`, a size of `1.3em`, and a normal weight.
+Now give the captions an absolute position, and shift them `-2.25rem` from the top and `0.5rem` from the left.
 
 # --hints--
 
-Test 1
+Your `table caption` selector should have the `position` property set to `absolute`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('table caption')?.getPropertyValue('position') === 'absolute');
+```
 
+Your `table caption` selector should have the `top` property set to `-2.25rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('table caption')?.getPropertyValue('top') === '-2.25rem');
+```
+
+Your `table caption` selector should have the `left` property set to `0.5rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('table caption')?.getPropertyValue('left') === '0.5rem');
 ```
 
 # --seed--
@@ -146,7 +158,7 @@ Test 1
 ```
 
 ```css
-.sr-only {
+span[class~="sr-only"] {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
   -webkit-clip-path: inset(50%) !important;
@@ -230,6 +242,11 @@ table {
 }
 
 --fcc-editable-region--
+table caption {
+  color: #356eaf;
+  font-size: 1.3em;
+  font-weight: normal;
 
+}
 --fcc-editable-region--
 ```

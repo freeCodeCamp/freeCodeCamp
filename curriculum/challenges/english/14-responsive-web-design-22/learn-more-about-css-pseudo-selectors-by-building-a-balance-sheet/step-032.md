@@ -7,14 +7,20 @@ dashedName: step-32
 
 # --description--
 
-Now you need to size these elements down. Give your `.sr-only` selector a `width` and `height` property set to `1px`.
+Now you need to size these elements down. Give your span[class~="sr-only"] ` selector a `width` and `height` property set to `1px`.
 
 # --hints--
 
-Test 1
+Your span[class~="sr-only"] ` selector should have a `width` property set to `1px`.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle(span[class~="sr-only"] ')?.getPropertyValue('width') === '1px');
+```
 
+Your span[class~="sr-only"] ` selector should have a `height` property set to `1px`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle(span[class~="sr-only"] ')?.getPropertyValue('height') === '1px');
 ```
 
 # --seed--
@@ -147,7 +153,7 @@ Test 1
 
 ```css
 --fcc-editable-region--
-.sr-only {
+span[class~="sr-only"] {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);

@@ -1,5 +1,5 @@
 ---
-id: 6201a1a7af32c287bd6b8183
+id: 6201a1cc668a34888f5b2f52
 title: Step 60
 challengeType: 0
 dashedName: step-60
@@ -7,14 +7,20 @@ dashedName: step-60
 
 # --description--
 
-Select your `td` elements with the `class` value of `current`, and make the font italic.
+Within your `tr` elements, select the elements with the `class` set to `data`. Give them a background image of `linear-gradient(to bottom, #dfdfe2 1.845rem, white 1.845rem)`.
 
 # --hints--
 
-Test 1
+You should have a `tr.data` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('tr.data'));
+```
 
+Your `tr.data` selector should have the `background-image` property set to `linear-gradient(to bottom, #dfdfe2 1.845rem, white 1.845rem)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('tr.data')?.getPropertyValue('background-image') === 'linear-gradient(rgb(223, 223, 226) 1.845rem, white 1.845rem)');
 ```
 
 # --seed--
@@ -146,7 +152,7 @@ Test 1
 ```
 
 ```css
-.sr-only {
+span[class~="sr-only"] {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
   -webkit-clip-path: inset(50%) !important;
@@ -269,6 +275,10 @@ tr.total td:nth-of-type(3) {
 
 tr.total:hover {
   background-color: #99c9ff;
+}
+
+td.current {
+  font-style: italic;
 }
 
 --fcc-editable-region--

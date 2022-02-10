@@ -11,10 +11,22 @@ Create a `body` selector and give it a `font-family` property set to `sans-serif
 
 # --hints--
 
-Test 1
+You should have a `body` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('body'));
+```
 
+Your `body` selector should have a `font-family` property set to `sans-serif`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('body')?.getPropertyValue('font-family') === 'sans-serif');
+```
+
+Your `body` selector should have a `color` property set to `#0a0a23`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('body')?.getPropertyValue('color') === 'rgb(10, 10, 35)');
 ```
 
 # --seed--

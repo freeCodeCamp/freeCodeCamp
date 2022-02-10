@@ -1,5 +1,5 @@
 ---
-id: 6201995d9ab88e80f1989dce
+id: 620199c7a7a32c81d4db3410
 title: Step 58
 challengeType: 0
 dashedName: step-58
@@ -7,14 +7,20 @@ dashedName: step-58
 
 # --description--
 
-The `:nth-of-type()` pseudo-selector is used to target specific elements based on their order among siblings of the same type. Use this pseudo-selector to target the third `td` element within your `total` table rows. Give it a right padding of `0.5rem`.
+Give your `tr.total` elements a hover effect that changes the background to `#99c9ff`.
 
 # --hints--
 
-Test 1
+You should have a `tr.total:hover` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('tr.total:hover'));
+```
 
+Your `tr.total:hover` selector should have the `background-color` property set to `#99c9ff`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('tr.total:hover')?.getPropertyValue('background-color') === 'rgb(153, 201, 255)');
 ```
 
 # --seed--
@@ -146,7 +152,7 @@ Test 1
 ```
 
 ```css
-.sr-only {
+span[class~="sr-only"] {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
   -webkit-clip-path: inset(50%) !important;
@@ -261,6 +267,10 @@ tr[class="total"] th {
 tr.total td {
   text-align: right;
   padding: 0 0.25rem;
+}
+
+tr.total td:nth-of-type(3) {
+  padding-right: 0.5rem;
 }
 
 --fcc-editable-region--

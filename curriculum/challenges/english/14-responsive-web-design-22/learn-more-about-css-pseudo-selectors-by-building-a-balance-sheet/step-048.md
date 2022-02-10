@@ -1,5 +1,5 @@
 ---
-id: 62017fa5bbef406580ceb44f
+id: 62018243f046a368fab8ffb6
 title: Step 48
 challengeType: 0
 dashedName: step-48
@@ -7,14 +7,26 @@ dashedName: step-48
 
 # --description--
 
-Now that you have added the `!important` keyword, you can remove the `:not(.sr-only)` from your `span` selector.
+Create a `table` selector to target your tables. Set the `border-collapse` property to `collapse`, which will allow cell borders to collapse into a single border, instead of a border around each cell. Also set the `border` property to `0` to hide the borders themselves.
 
 # --hints--
 
-Test 1
+You should have a `table` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('table'));
+```
 
+Your `table` selector should have a `border-collapse` property set to `collapse`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('table')?.getPropertyValue('border-collapse') === 'collapse');
+```
+
+Your `table` selector should have a `border` property set to `0`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('table')?.getPropertyValue('border') === '0px');
 ```
 
 # --seed--
@@ -146,7 +158,7 @@ Test 1
 ```
 
 ```css
-.sr-only {
+span[class~="sr-only"] {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
   -webkit-clip-path: inset(50%) !important;
@@ -217,9 +229,11 @@ section {
   padding: 0 0.75rem 1.5rem 0.75rem;
 }
 
---fcc-editable-region--
-span:not(.sr-only) {
+span {
   font-weight: normal;
 }
+
+--fcc-editable-region--
+
 --fcc-editable-region--
 ```

@@ -1,5 +1,5 @@
 ---
-id: 6201782cc420715562f36271
+id: 620179bc0a6a2358c72b90ad
 title: Step 44
 challengeType: 0
 dashedName: step-44
@@ -7,16 +7,20 @@ dashedName: step-44
 
 # --description--
 
-Style the text within your `#years` element by creating a `#years span[class]` selector. The `span[class]` syntax will target any `span` element that has a `class` attribute set, regardless of the attribute's value.
-
-Give your new selector a bold font, a width of `4.5rem`, and text aligned to the right.
+You wrapped your tables in a container with the `table-wrap` class. Create a selector for that class, and give it a `padding` set to `0 0.75rem 1.5rem 0.75rem`.
 
 # --hints--
 
-Test 1
+You should have a `.table-wrap` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('.table-wrap'));
+```
 
+Your `.table-wrap` selector should have a `padding` property set to `0 0.75rem 1.5rem 0.75rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.table-wrap')?.getPropertyValue('padding') === '0px 0.75rem 1.5rem');
 ```
 
 # --seed--
@@ -148,7 +152,7 @@ Test 1
 ```
 
 ```css
-.sr-only {
+span[class~="sr-only"] {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);
@@ -205,6 +209,12 @@ section {
   z-index: 999;
   padding: 0.5rem calc(1.25rem + 2px) 0.5rem 0;
   margin: 0 -2px;
+}
+
+#years span[class] {
+  font-weight: bold;
+  width: 4.5rem;
+  text-align: right;
 }
 
 --fcc-editable-region--

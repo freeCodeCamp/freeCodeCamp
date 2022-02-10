@@ -1,5 +1,5 @@
 ---
-id: 62015d8942384c3aed48329e
+id: 620167374bb8b4455cd11125
 title: Step 40
 challengeType: 0
 dashedName: step-40
@@ -7,14 +7,38 @@ dashedName: step-40
 
 # --description--
 
-You wrapped your table in a section element - now you can style that to give your table a border. Create a `section` selector, and give it a `max-width` property set to `40rem` for responsive design. Set the `margin` property to `0 auto` to center it, and set the `border` property to `2px solid #d0d0d5`.
+The last part of your table heading is your years. Create a `#years` selector, and enable flexbox. Justify the content to the end of the flex direction, and make the element sticky. Fix it to the top of its container with `top: 0`.
 
 # --hints--
 
-Test 1
+You should have a `#years` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('#years'));
+```
 
+Your `#years` selector should have a `display` property set to `flex`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#years')?.getPropertyValue('display') === 'flex');
+```
+
+Your `#years` selector should have a `justify-content` property set to `flex-end`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#years')?.getPropertyValue('justify-content') === 'flex-end');
+```
+
+Your `#years` selector should have a `position` property set to `sticky`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#years')?.getPropertyValue('position') === 'sticky');
+```
+
+Your `#years` selector should have a `top` property set to `0`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#years')?.getPropertyValue('top') === '0px');
 ```
 
 # --seed--
@@ -146,7 +170,7 @@ Test 1
 ```
 
 ```css
-.sr-only {
+span[class~="sr-only"] {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);
@@ -185,6 +209,12 @@ h1 .flex span:first-of-type {
 
 h1 .flex span:last-of-type {
   font-size: 1.2em;
+}
+
+section {
+  max-width: 40rem;
+  margin: 0 auto;
+  border: 2px solid #d0d0d5;
 }
 
 --fcc-editable-region--

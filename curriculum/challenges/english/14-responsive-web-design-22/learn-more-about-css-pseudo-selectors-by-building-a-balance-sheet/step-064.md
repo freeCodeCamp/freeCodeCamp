@@ -1,5 +1,5 @@
 ---
-id: 6201a4adcc6414968b391592
+id: 6201a5258af7b398b030bfaf
 title: Step 64
 challengeType: 0
 dashedName: step-64
@@ -7,14 +7,32 @@ dashedName: step-64
 
 # --description--
 
-Your `span` elements now all have more specific styling, which means you can remove your `span` rule.
+Your dollar amounts are currently misaligned. Create a selector to target the `td` elements within your `tr.data` elements. Vertically align the text to the top, horizontally align the text to the right, and set the padding to `0.3rem 0.25rem 0`.
 
 # --hints--
 
-Test 1
+You should have a `tr.data td` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('tr.data td'));
+```
 
+Your `tr.data td` selector should have a `vertical-align` property set to `top`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('tr.data td')?.getPropertyValue('vertical-align') === 'top');
+```
+
+Your `tr.data td` selector should have a `text-align` property set to `right`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('tr.data td')?.getPropertyValue('text-align') === 'right');
+```
+
+Your `tr.data td` selector should have a `padding` property set to `0.3rem 0.25rem 0`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('tr.data td')?.getPropertyValue('padding') === '0.3rem 0.25rem 0px');
 ```
 
 # --seed--
@@ -146,7 +164,7 @@ Test 1
 ```
 
 ```css
-.sr-only {
+span[class~="sr-only"] {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
   -webkit-clip-path: inset(50%) !important;
@@ -216,12 +234,6 @@ section {
 .table-wrap {
   padding: 0 0.75rem 1.5rem 0.75rem;
 }
-
---fcc-editable-region--
-span {
-  font-weight: normal;
-}
---fcc-editable-region--
 
 table {
   border-collapse: collapse;
@@ -294,4 +306,8 @@ tr.data th .description {
   padding: 1rem 0 0.75rem;
   margin-right: -13.5rem;
 }
+
+--fcc-editable-region--
+
+--fcc-editable-region--
 ```

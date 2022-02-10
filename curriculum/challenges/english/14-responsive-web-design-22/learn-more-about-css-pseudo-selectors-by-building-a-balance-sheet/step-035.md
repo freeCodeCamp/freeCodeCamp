@@ -11,10 +11,28 @@ Time to style your table heading. Create an `h1` selector. Give it a `max-width`
 
 # --hints--
 
-Test 1
+You should have an `h1` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('h1'));
+```
 
+Your `h1` selector should have a `max-width` property set to `37.25rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('h1')?.getPropertyValue('max-width') === '37.25rem');
+```
+
+Your `h1` selector should have a `margin` property set to `0 auto`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('h1')?.getPropertyValue('margin') === '0px auto');
+```
+
+Your `h1` selector should have a `padding` property set to `1.5rem 1.25rem 1.5rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('h1')?.getPropertyValue('padding') === '1.5rem 1.25rem');
 ```
 
 # --seed--
@@ -146,7 +164,7 @@ Test 1
 ```
 
 ```css
-.sr-only {
+span[class~="sr-only"] {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);

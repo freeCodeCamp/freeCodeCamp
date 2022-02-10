@@ -1,5 +1,5 @@
 ---
-id: 62018ba1aa263770c953be66
+id: 62018c3e94434a71af1d5eaa
 title: Step 52
 challengeType: 0
 dashedName: step-52
@@ -7,14 +7,32 @@ dashedName: step-52
 
 # --description--
 
-Now give the captions an absolute position, and shift them `-2.25rem` from the top and `0.5rem` from the left.
+Create a selector to target your `td` elements within your table body. Give them a width to fill the viewport, with a minimum and maximum of `4rem`. This approach ensures that the width is fixed, whereas setting `width` specifically would allow the elements to shrink to the container (because we are using flexbox).
 
 # --hints--
 
-Test 1
+You should have a `tbody td` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('tbody td'));
+```
 
+Your `tbody td` selector should have a `width` property set to `100vw`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('tbody td')?.getPropertyValue('width') === '100vw');
+```
+
+Your `tbody td` selector should have a `min-width` property set to `4rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('tbody td')?.getPropertyValue('min-width') === '4rem');
+```
+
+Your `tbody td` selector should have a `max-width` property set to `4rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('tbody td')?.getPropertyValue('max-width') === '4rem');
 ```
 
 # --seed--
@@ -146,7 +164,7 @@ Test 1
 ```
 
 ```css
-.sr-only {
+span[class~="sr-only"] {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
   -webkit-clip-path: inset(50%) !important;
@@ -229,11 +247,16 @@ table {
   margin-top: 3rem;
 }
 
---fcc-editable-region--
 table caption {
   color: #356eaf;
   font-size: 1.3em;
   font-weight: normal;
+  position: absolute;
+  top: -2.25rem;
+  left: 0.5rem;
 }
+
+--fcc-editable-region--
+
 --fcc-editable-region--
 ```

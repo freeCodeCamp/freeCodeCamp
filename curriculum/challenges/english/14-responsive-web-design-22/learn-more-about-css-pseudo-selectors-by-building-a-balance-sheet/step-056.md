@@ -1,5 +1,5 @@
 ---
-id: 620191707bc65579ddd3ce15
+id: 620192a767533a7ad19d96d7
 title: Step 56
 challengeType: 0
 dashedName: step-56
@@ -7,14 +7,28 @@ dashedName: step-56
 
 # --description--
 
-Using the same selector syntax, target the `th` elements within your table rows where the `class` is `total`. Align the text to the left, and give them a padding of `0.5rem 0 0.25rem 0.5rem`.
+The key difference between `tr[class="total"]` and `tr.total` is that the first will select `tr` elements where the *only* class is `total`. The second will select `tr` elements where the class *includes* total.
+
+In your case, `tr.total` will work. You can use this selector to target all `td` elements within your `.total` rows. Align the text to the right, and give them a padding of `0 0.25rem`.
 
 # --hints--
 
-Test 1
+You should have a `tr.total td` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('tr.total td'));
+```
 
+Your `tr.total td` selector should have a `text-align` property set to `right`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('tr.total td')?.getPropertyValue('text-align') === 'right');
+```
+
+Your `tr.total td` selector should have a `padding` property set to `0 0.25rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('tr.total td')?.getPropertyValue('padding') === '0px 0.25rem');
 ```
 
 # --seed--
@@ -146,7 +160,7 @@ Test 1
 ```
 
 ```css
-.sr-only {
+span[class~="sr-only"] {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
   -webkit-clip-path: inset(50%) !important;
@@ -251,6 +265,11 @@ tbody th {
 tr[class="total"] {
   border-bottom: 4px double #0a0a23;
   font-weight: bold;
+}
+
+tr[class="total"] th {
+  text-align: left;
+  padding: 0.5rem 0 0.25rem 0.5rem;
 }
 
 --fcc-editable-region--

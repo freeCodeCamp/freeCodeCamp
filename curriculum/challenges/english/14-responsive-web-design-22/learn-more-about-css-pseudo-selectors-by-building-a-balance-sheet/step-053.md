@@ -1,5 +1,5 @@
 ---
-id: 62018c3e94434a71af1d5eaa
+id: 62018ec29b3ae674f40bef31
 title: Step 53
 challengeType: 0
 dashedName: step-53
@@ -7,14 +7,20 @@ dashedName: step-53
 
 # --description--
 
-Create a selector to target your `td` elements within your table body. Give them a width to fill the viewport, with a minimum and maximum of `4rem`. This approach ensures that the width is fixed, whereas setting `width` specifically would allow the elements to shrink to the container (because we are using flexbox).
+Now target the `th` elements within your table body, and give them a width of the entire container, less `12rem`.
 
 # --hints--
 
-Test 1
+You should have a `tbody th` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('tbody th'));
+```
 
+Your `tbody th` selector should have a `width` property set to `calc(100% - 12rem)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('tbody th')?.getPropertyValue('width') === 'calc(100% - 12rem)');
 ```
 
 # --seed--
@@ -146,7 +152,7 @@ Test 1
 ```
 
 ```css
-.sr-only {
+span[class~="sr-only"] {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
   -webkit-clip-path: inset(50%) !important;
@@ -236,6 +242,12 @@ table caption {
   position: absolute;
   top: -2.25rem;
   left: 0.5rem;
+}
+
+tbody td {
+  width: 100vw;
+  min-width: 4rem;
+  max-width: 4rem;
 }
 
 --fcc-editable-region--

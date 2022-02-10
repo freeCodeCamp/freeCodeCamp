@@ -1,5 +1,5 @@
 ---
-id: 620159cd5431aa34bc6a4c9c
+id: 62015a5da1c95c358f079ebb
 title: Step 37
 challengeType: 0
 dashedName: step-37
@@ -7,14 +7,22 @@ dashedName: step-37
 
 # --description--
 
-Target your flex container with an `h1 .flex` selector. Give it a `display` property set to `flex` to enable the flexbox layout. Then set the `flex-direction` property to `column-reverse` - this will display the nested elements from bottom to top. Finally, set the `gap` property to `1rem` to create some space between the elements.
+The `:first-of-type` pseudo-selector is used to target the first element that matches the selector. Create an `h1 .flex span:first-of-type` selector to target the first `span` element in your `.flex` container. Remember that your `span` elements are reversed, visually, so this will appear to be the second element on the page.
+
+Give your new selector a `font-size` property of `0.7em` to make it look like a sub-heading.
 
 # --hints--
 
-Test 1
+You should have an `h1 .flex span:first-of-type` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('h1 .flex span:first-of-type'));
+```
 
+Your `h1 .flex span:first-of-type` selector should have a `font-size` property set to `0.7em`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('h1 .flex span:first-of-type')?.getPropertyValue('font-size') === '0.7em');
 ```
 
 # --seed--
@@ -146,7 +154,7 @@ Test 1
 ```
 
 ```css
-.sr-only {
+span[class~="sr-only"] {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);
@@ -171,6 +179,12 @@ h1 {
   max-width: 37.25rem;
   margin: 0 auto;
   padding: 1.5rem 1.25rem 1.5rem;
+}
+
+h1 .flex {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 1rem;
 }
 
 --fcc-editable-region--

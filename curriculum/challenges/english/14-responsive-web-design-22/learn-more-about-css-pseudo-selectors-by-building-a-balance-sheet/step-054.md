@@ -1,5 +1,5 @@
 ---
-id: 62018ec29b3ae674f40bef31
+id: 62019093fe30e278e797d2f6
 title: Step 54
 challengeType: 0
 dashedName: step-54
@@ -7,14 +7,26 @@ dashedName: step-54
 
 # --description--
 
-Now target the `th` elements within your table body, and give them a width of the entire container, less `12rem`.
+The `[attribute="value"]` selector targets any element that has an attribute with a specific value. Create a `tr[class="total"]` selector to target specifically your `tr` elements with the `total` class. Give it a bottom border of `4px double #0a0a23` and make the font bold.
 
 # --hints--
 
-Test 1
+You should have a `tr[class="total"]` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('tr[class="total"]'));
+```
 
+Your `tr[class="total"]` selector should have a `border-bottom` property set to `4px double #0a0a23`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('tr[class="total"]')?.getPropertyValue('border-bottom') === '4px double rgb(10, 10, 35)');
+```
+
+Your `tr[class="total"]` selector should have a `font-weight` property set to `bold`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('tr[class="total"]')?.getPropertyValue('font-weight') === 'bold');
 ```
 
 # --seed--
@@ -146,7 +158,7 @@ Test 1
 ```
 
 ```css
-.sr-only {
+span[class~="sr-only"] {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
   -webkit-clip-path: inset(50%) !important;
@@ -242,6 +254,10 @@ tbody td {
   width: 100vw;
   min-width: 4rem;
   max-width: 4rem;
+}
+
+tbody th {
+  width: calc(100% - 12rem);
 }
 
 --fcc-editable-region--

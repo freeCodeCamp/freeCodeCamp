@@ -1,5 +1,5 @@
 ---
-id: 620192a767533a7ad19d96d7
+id: 6201995d9ab88e80f1989dce
 title: Step 57
 challengeType: 0
 dashedName: step-57
@@ -7,16 +7,20 @@ dashedName: step-57
 
 # --description--
 
-The key difference between `tr[class="total"]` and `tr.total` is that the first will select `tr` elements where the *only* class is `total`. The second will select `tr` elements where the class *includes* total.
-
-In your case, `tr.total` will work. You can use this selector to target all `td` elements within your `.total` rows. Align the text to the right, and give them a padding of `0 0.25rem`.
+The `:nth-of-type()` pseudo-selector is used to target specific elements based on their order among siblings of the same type. Use this pseudo-selector to target the third `td` element within your `total` table rows. Give it a right padding of `0.5rem`.
 
 # --hints--
 
-Test 1
+You should have a `tr.total td:nth-of-type(3)` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('tr.total td:nth-of-type(3)'));
+```
 
+Your `tr.total td:nth-of-type(3)` selector should have a `padding-right` property set to `0.5rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('tr.total td:nth-of-type(3)')?.getPropertyValue('padding-right') === '0.5rem');
 ```
 
 # --seed--
@@ -148,7 +152,7 @@ Test 1
 ```
 
 ```css
-.sr-only {
+span[class~="sr-only"] {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
   -webkit-clip-path: inset(50%) !important;
@@ -258,6 +262,11 @@ tr[class="total"] {
 tr[class="total"] th {
   text-align: left;
   padding: 0.5rem 0 0.25rem 0.5rem;
+}
+
+tr.total td {
+  text-align: right;
+  padding: 0 0.25rem;
 }
 
 --fcc-editable-region--

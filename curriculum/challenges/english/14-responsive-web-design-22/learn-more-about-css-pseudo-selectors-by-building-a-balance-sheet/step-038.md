@@ -1,5 +1,5 @@
 ---
-id: 62015a5da1c95c358f079ebb
+id: 62015cd2654a1139321a89d2
 title: Step 38
 challengeType: 0
 dashedName: step-38
@@ -7,16 +7,20 @@ dashedName: step-38
 
 # --description--
 
-The `:first-of-type` pseudo-selector is used to target the first element that matches the selector. Create an `h1 .flex span:first-of-type` selector to target the first `span` element in your `.flex` container. Remember that your `span` elements are reversed, visually, so this will appear to be the second element on the page.
-
-Give your new selector a `font-size` property of `0.7em` to make it look like a sub-heading.
+The `:last-of-type` pseudo-selector does the exact opposite - it targets the last element that matches the selector. Create an `h1 .flex span:last-of-type` selector to target the last `span` in your flex container, and give it a `font-size` property set to `1.2em` to make it look like a header.
 
 # --hints--
 
-Test 1
+You should have an `h1 .flex span:last-of-type` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('h1 .flex span:last-of-type'));
+```
 
+Your `h1 .flex span:last-of-type` selector should have a `font-size` property set to `1.2em`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('h1 .flex span:last-of-type')?.getPropertyValue('font-size') === '1.2em');
 ```
 
 # --seed--
@@ -148,7 +152,7 @@ Test 1
 ```
 
 ```css
-.sr-only {
+span[class~="sr-only"] {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);
@@ -179,6 +183,10 @@ h1 .flex {
   display: flex;
   flex-direction: column-reverse;
   gap: 1rem;
+}
+
+h1 .flex span:first-of-type {
+  font-size: 0.7em;
 }
 
 --fcc-editable-region--

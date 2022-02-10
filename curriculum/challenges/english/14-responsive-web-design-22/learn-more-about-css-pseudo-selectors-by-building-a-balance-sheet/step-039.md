@@ -1,5 +1,5 @@
 ---
-id: 62015cd2654a1139321a89d2
+id: 62015d8942384c3aed48329e
 title: Step 39
 challengeType: 0
 dashedName: step-39
@@ -7,14 +7,32 @@ dashedName: step-39
 
 # --description--
 
-The `:last-of-type` pseudo-selector does the exact opposite - it targets the last element that matches the selector. Create an `h1 .flex span:last-of-type` selector to target the last `span` in your flex container, and give it a `font-size` property set to `1.2em` to make it look like a header.
+You wrapped your table in a section element - now you can style that to give your table a border. Create a `section` selector, and give it a `max-width` property set to `40rem` for responsive design. Set the `margin` property to `0 auto` to center it, and set the `border` property to `2px solid #d0d0d5`.
 
 # --hints--
 
-Test 1
+You should have a `section` selector.
 
 ```js
+assert(new __helpers.CSSHelp(document).getStyle('section'));
+```
 
+Your `section` selector should have a `max-width` property set to `40rem`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('section')?.getPropertyValue('max-width') === '40rem');
+```
+
+Your `section` selector should have a `margin` property set to `0 auto`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('section')?.getPropertyValue('margin') === '0px auto');
+```
+
+Your `section` selector should have a `border` property set to `2px solid #d0d0d5`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('section')?.getPropertyValue('border') === '2px solid rgb(208, 208, 213)');
 ```
 
 # --seed--
@@ -146,7 +164,7 @@ Test 1
 ```
 
 ```css
-.sr-only {
+span[class~="sr-only"] {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);
@@ -181,6 +199,10 @@ h1 .flex {
 
 h1 .flex span:first-of-type {
   font-size: 0.7em;
+}
+
+h1 .flex span:last-of-type {
+  font-size: 1.2em;
 }
 
 --fcc-editable-region--
