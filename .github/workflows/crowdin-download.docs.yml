@@ -5,6 +5,12 @@ on:
     # runs every day at 12:00 noon UTC
     - cron: '0 12 * * *'
 
+env:
+  GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
+  CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_DOCS }}
+  CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
+  CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
+
 jobs:
   i18n-download-docs-translations:
     name: Docs
@@ -19,9 +25,6 @@ jobs:
       - name: Generate Crowdin Config
         uses: freecodecamp/crowdin-action@main
         env:
-          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
-          CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_DOCS }}
           PLUGIN: 'generate-config'
           PROJECT_NAME: 'docs'
 
@@ -54,18 +57,10 @@ jobs:
           # Uncomment below to debug
           # dryrun_action: true
 
-        env:
-          GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_DOCS }}
-          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
-
       # Convert Simplified Chinese to Traditional #
       - name: Convert Chinese
         uses: freecodecamp/crowdin-action@main
         env:
-          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
-          CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
           PLUGIN: 'convert-chinese'
           FILE_PATHS: '["/docs/i18n/chinese/"]'
 
@@ -98,11 +93,6 @@ jobs:
           # Uncomment below to debug
           # dryrun_action: true
 
-        env:
-          GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_DOCS }}
-          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
-
       ##### Download Espanol #####
       - name: Crowdin Espanol Download Translations
         uses: crowdin/github-action@master
@@ -131,11 +121,6 @@ jobs:
 
           # Uncomment below to debug
           # dryrun_action: true
-
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_DOCS }}
-          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
 
       ##### Download Italian #####
       - name: Crowdin Download Italian Translations
@@ -166,11 +151,6 @@ jobs:
           # Uncomment below to debug
           # dryrun_action: true
 
-        env:
-          GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_DOCS }}
-          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
-
       ##### Download Japanese #####
       - name: Crowdin Download Japanese Translations
         uses: crowdin/github-action@master
@@ -200,13 +180,7 @@ jobs:
           # Uncomment below to debug
           # dryrun_action: true
 
-        env:
-          GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_DOCS }}
-          CROWDIN_PERSONAL_TOKEN:
-            ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
-
-            ##### Download Ukrainian #####
+          ##### Download Ukrainian #####
       - name: Crowdin Download Ukrainian Translations
         uses: crowdin/github-action@master
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
@@ -235,13 +209,7 @@ jobs:
           # Uncomment below to debug
           # dryrun_action: true
 
-        env:
-          GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_DOCS }}
-          CROWDIN_PERSONAL_TOKEN:
-            ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
-
-            ##### Download German #####
+          ##### Download German #####
       - name: Crowdin Download German Translations
         uses: crowdin/github-action@master
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
@@ -270,18 +238,10 @@ jobs:
           # Uncomment below to debug
           # dryrun_action: true
 
-        env:
-          GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_DOCS }}
-          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
-
       # Create Commit
       - name: Commit Changes
         uses: freecodecamp/crowdin-action@main
         env:
-          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
-          CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_DOCS }}
           PLUGIN: 'commit-changes'
           GH_USERNAME: 'camperbot'
           GH_EMAIL: ${{ secrets.ACTIONS_CAMPERBOT_EMAIL }}
@@ -294,9 +254,6 @@ jobs:
       - name: Create PR
         uses: freecodecamp/crowdin-action@main
         env:
-          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
-          CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_DOCS }}
           PLUGIN: 'pull-request'
           GH_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
           BRANCH: 'i18n-sync-docs'
