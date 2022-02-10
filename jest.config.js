@@ -6,7 +6,7 @@ module.exports = {
     // Plain CSS - match css files that don't end with
     // '.module.css' https://regex101.com/r/VzwrKH/4
     '^(?!.*\\.module\\.css$).*\\.css$':
-      '<rootDir>/client/src/__mocks__/styleMock.js',
+      '<rootDir>/client/src/__mocks__/styleMock.ts',
     // CSS Modules - match files that end with 'module.css'
     '\\.module\\.css$': 'identity-obj-proxy',
     '^lodash-es$': 'lodash'
