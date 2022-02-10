@@ -11,8 +11,6 @@ For your third table, add a `caption` with the text `Net Worth`, and set up a ta
 
 # --hints--
 
-Test 1
-
 Your second `table` element should have a `caption` element.
 
 ```js
