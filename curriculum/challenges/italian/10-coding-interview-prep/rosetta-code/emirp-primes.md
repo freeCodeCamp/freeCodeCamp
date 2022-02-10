@@ -1,6 +1,6 @@
 ---
 id: 599d0ba974141b0f508b37d5
-title: Emirp primes
+title: Numeri primi emirp
 challengeType: 5
 forumTopicId: 302253
 dashedName: emirp-primes
@@ -8,30 +8,30 @@ dashedName: emirp-primes
 
 # --description--
 
-An emirp (**prime** spelled backwards) are primes that when reversed (in their decimal representation) are a different prime.
+Gli emirp (numero primo in inglese, **prime**, scritto al contrario) sono primi che quando invertiti (nella loro rappresentazione decimale) sono un numero primo diverso.
 
 # --instructions--
 
-Write a function that:
+Scrivi una funzione che:
 
 <ul>
-  <li>Shows the first <code>n</code> emirp numbers.</li>
-  <li>Shows the emirp numbers in a range.</li>
-  <li>Shows the number of emirps in a range.</li>
-  <li>Shows the <code>n<sup>th</sup></code> emirp number.</li>
+  <li>Mostra i primi <code>n</code> numeri emirp.</li>
+  <li>Mostra i numeri emirp in un intervallo.</li>
+  <li>Mostra il numero di emirp presenti in un intervallo.</li>
+  <li>Mostra l'<code>n<sup>mo</sup></code> numero emirp.</li>
 </ul>
 
-The function should accept two parameters. The first will receive `n` or the range as an array. The second will receive a boolean, that specifies if the function returns the emirps as an array or a single number (the number of primes in the range or the <code>n<sup>th</sup></code> prime). According to the parameters the function should return an array or a number.
+La funzione dovrebbe accettare due parametri. Il primo riceverà `n` o l'intervallo sotto forma di array. Il secondo riceverà un booleano, che specifica se la funzione restituisce gli emirp come array o un singolo numero (il numero di primi nell'intervallo o l'<code>n<sup>mo</sup></code> primo). A seconda dei parametri la funzione dovrebbe restituire un array o un numero.
 
 # --hints--
 
-`emirps` should be a function.
+`emirps` dovrebbe essere una funzione.
 
 ```js
 assert(typeof emirps === 'function');
 ```
 
-`emirps(20,true)` should return `[13,17,31,37,71,73,79,97,107,113,149,157,167,179,199,311,337,347,359,389]`
+`emirps(20,true)` dovrebbe restituire `[13,17,31,37,71,73,79,97,107,113,149,157,167,179,199,311,337,347,359,389]`
 
 ```js
 assert.deepEqual(emirps(20, true), [
@@ -58,13 +58,13 @@ assert.deepEqual(emirps(20, true), [
 ]);
 ```
 
-`emirps(1000)` should return `70529`
+`emirps(1000)` dovrebbe restituire `70529`
 
 ```js
 assert.deepEqual(emirps(1000), 70529);
 ```
 
-`emirps([7700,8000],true)` should return `[7717,7757,7817,7841,7867,7879,7901,7927,7949,7951,7963]`
+`emirps([7700,8000],true)` dovrebbe restituire `[7717,7757,7817,7841,7867,7879,7901,7927,7949,7951,7963]`
 
 ```js
 assert.deepEqual(emirps([7700, 8000], true), [
@@ -82,7 +82,7 @@ assert.deepEqual(emirps([7700, 8000], true), [
 ]);
 ```
 
-`emirps([7700,8000],false)` should return `11`
+`emirps([7700,8000],false)` dovrebbe restituire `11`
 
 ```js
 assert.deepEqual(emirps([7700, 8000], false), 11);
