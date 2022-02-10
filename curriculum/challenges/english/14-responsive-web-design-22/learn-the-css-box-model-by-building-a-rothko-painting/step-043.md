@@ -1,5 +1,5 @@
 ---
-id: 60a3e3396c7b40068ad69994
+id: 60a3e3396c7b40068ad69995
 title: Step 43
 challengeType: 0
 dashedName: step-43
@@ -7,24 +7,24 @@ dashedName: step-43
 
 # --description--
 
-The `border-radius` property accepts up to four values to round the top-left, top-right, bottom-right, and bottom-left corners.
+Rotate each rectangle to give them more of an imperfect, hand-painted look.
 
-Round the top-left corner of `.three` by 30 pixels, the top-right by 25 pixels, the bottom-right by 60 pixels, and bottom-left by 12 pixels.
+Use the `transform` property on the `.one` selector to `rotate` it counter clockwise by 0.6 degrees.
 
 # --hints--
 
-You should set the `border-radius` property to `30px 25px 60px 12px`.
+You should set the `transform` property to `rotate(-0.6deg)`.
 
 ```js
-const hasBorderRadius = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['border-radius'] === '30px 25px 60px 12px');
-assert(hasBorderRadius);
+const hasTransform = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.transform === 'rotate(-0.6deg)');
+assert(hasTransform);
 ```
 
-Your `.three` element should have a `border-radius` value of `30px 25px 60px 12px`.
+Your `.one` element should have a `transform` value of `rotate(-0.6deg)`.
 
 ```js
-const threeBorderRadius = new __helpers.CSSHelp(document).getStyle('.three')?.getPropertyValue('border-radius');
-assert(threeBorderRadius === '30px 25px 60px 12px');
+const oneTransform = new __helpers.CSSHelp(document).getStyle('.one')?.getPropertyValue('transform');
+assert(oneTransform === 'rotate(-0.6deg)');
 ```
 
 # --seed--
@@ -51,9 +51,12 @@ assert(threeBorderRadius === '30px 25px 60px 12px');
   width: 425px;
   height: 150px;
   background-color: #efb762;
-  margin: 20px auto 20px;
+  margin: 20px auto;
   box-shadow: 0 0 3px 3px #efb762;
   border-radius: 9px;
+--fcc-editable-region--
+
+--fcc-editable-region--
 }
 
 .two {
@@ -76,9 +79,7 @@ assert(threeBorderRadius === '30px 25px 60px 12px');
   margin: auto;
   filter: blur(2px);
   box-shadow: 0 0 5px 5px #b20403;
---fcc-editable-region--
-
---fcc-editable-region--
+  border-radius: 30px 25px 60px 12px;
 }
 ```
 

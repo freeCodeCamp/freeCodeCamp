@@ -1,5 +1,5 @@
 ---
-id: 60a3e3396c7b40068ad69991
+id: 60a3e3396c7b40068ad69992
 title: Step 40
 challengeType: 0
 dashedName: step-40
@@ -7,22 +7,24 @@ dashedName: step-40
 
 # --description--
 
-Add a `box-shadow` to `.three` with the values `0 0 5px 5px #b20403`.
+The corners of each rectangle are still too sharp.
+
+Round each corner of the `.one` element by 9 pixels, using the `border-radius` property.
 
 # --hints--
 
-You should set the `box-shadow` property to `0 0 5px 5px #b20403`.
+You should set the `border-radius` property to `9px`.
 
 ```js
-const hasBoxShadow = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['box-shadow'] === 'rgb(178, 4, 3) 0px 0px 5px 5px');
-assert(hasBoxShadow);
+const hasBorderRadius = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['border-radius'] === '9px');
+assert(hasBorderRadius);
 ```
 
-Your `.three` element should have a `box-shadow` value of `0 0 5px 5px #b20403`.
+Your `.one` element should have a `border-radius` value of `9px`.
 
 ```js
-const threeShadow = new __helpers.CSSHelp(document).getStyle('.three')?.getPropertyValue('box-shadow');
-assert(threeShadow === 'rgb(178, 4, 3) 0px 0px 5px 5px');
+const oneBorderRadius =new __helpers.CSSHelp(document).getStyle('.one')?.getPropertyValue('border-radius');
+assert(oneBorderRadius === '9px');
 ```
 
 # --seed--
@@ -49,8 +51,11 @@ assert(threeShadow === 'rgb(178, 4, 3) 0px 0px 5px 5px');
   width: 425px;
   height: 150px;
   background-color: #efb762;
-  margin: 20px auto 20px;
+  margin: 20px auto;
   box-shadow: 0 0 3px 3px #efb762;
+--fcc-editable-region--
+
+--fcc-editable-region--
 }
 
 .two {
@@ -71,9 +76,7 @@ assert(threeShadow === 'rgb(178, 4, 3) 0px 0px 5px 5px');
   background-color: #b20403;
   margin: auto;
   filter: blur(2px);
---fcc-editable-region--
-
---fcc-editable-region--
+  box-shadow: 0 0 5px 5px #b20403;
 }
 ```
 
