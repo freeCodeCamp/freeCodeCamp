@@ -2,7 +2,7 @@ module.exports = {
   testPathIgnorePatterns: ['/node_modules/'],
   moduleNameMapper: {
     '\\.(jpg|jpeg|png|svg|woff|woff2)$':
-      '<rootDir>/client/src/__mocks__/fileMock.js',
+      '<rootDir>/client/src/__mocks__/fileMock.ts',
     // Plain CSS - match css files that don't end with
     // '.module.css' https://regex101.com/r/VzwrKH/4
     '^(?!.*\\.module\\.css$).*\\.css$':
