@@ -7,20 +7,20 @@ dashedName: step-32
 
 # --description--
 
-Now you need to size these elements down. Give your span[class~="sr-only"] ` selector a `width` and `height` property set to `1px`.
+Now you need to size these elements down. Give your `span[class~="sr-only"]` selector a `width` and `height` property set to `1px`.
 
 # --hints--
 
-Your span[class~="sr-only"] ` selector should have a `width` property set to `1px`.
+Your `span[class~="sr-only"]` selector should have a `width` property set to `1px`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle(span[class~="sr-only"] ')?.getPropertyValue('width') === '1px');
+assert(new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.getPropertyValue('width') === '1px');
 ```
 
-Your span[class~="sr-only"] ` selector should have a `height` property set to `1px`.
+Your `span[class~="sr-only"]` selector should have a `height` property set to `1px`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle(span[class~="sr-only"] ')?.getPropertyValue('height') === '1px');
+assert(new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.getPropertyValue('height') === '1px');
 ```
 
 # --seed--

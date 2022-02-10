@@ -11,22 +11,22 @@ Finally, you need to take these hidden elements out of the document flow. Give t
 
 # --hints--
 
-Your span[class~="sr-only"] ` selector should have a `position` property set to `absolute`.
+Your `span[class~="sr-only"]` selector should have a `position` property set to `absolute`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle(span[class~="sr-only"] ')?.getPropertyValue('position') === 'absolute');
+assert(new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.getPropertyValue('position') === 'absolute');
 ```
 
-Your span[class~="sr-only"] ` selector should have a `padding` property set to `0`.
+Your `span[class~="sr-only"]` selector should have a `padding` property set to `0`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle(span[class~="sr-only"] ')?.getPropertyValue('padding') === '0px');
+assert(new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.getPropertyValue('padding') === '0px');
 ```
 
-Your span[class~="sr-only"] ` selector should have a `margin` property set to `-1px`.
+Your `span[class~="sr-only"]` selector should have a `margin` property set to `-1px`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle(span[class~="sr-only"] ')?.getPropertyValue('margin') === '-1px');
+assert(new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.getPropertyValue('margin') === '-1px');
 ```
 
 # --seed--

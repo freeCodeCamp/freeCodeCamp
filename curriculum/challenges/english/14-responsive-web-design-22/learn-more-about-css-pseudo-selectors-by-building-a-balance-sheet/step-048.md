@@ -26,7 +26,7 @@ assert(new __helpers.CSSHelp(document).getStyle('table')?.getPropertyValue('bord
 Your `table` selector should have a `border` property set to `0`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('table')?.getPropertyValue('border') === '0px');
+assert(new __helpers.CSSHelp(document).getStyle('table')?.getPropertyValue('border-width') === '0px');
 ```
 
 # --seed--

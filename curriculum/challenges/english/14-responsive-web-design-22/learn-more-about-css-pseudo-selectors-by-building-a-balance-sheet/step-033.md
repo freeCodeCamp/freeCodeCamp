@@ -7,20 +7,20 @@ dashedName: step-33
 
 # --description--
 
-To prevent the text content from overflowing, give your span[class~="sr-only"] ` selector an `overflow` property set to `hidden` and a `white-space` property set to `nowrap`.
+To prevent the text content from overflowing, give your `span[class~="sr-only"]` selector an `overflow` property set to `hidden` and a `white-space` property set to `nowrap`.
 
 # --hints--
 
-Your span[class~="sr-only"] ` selector should have an `overflow` property set to `hidden`.
+Your `span[class~="sr-only"]` selector should have an `overflow` property set to `hidden`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle(span[class~="sr-only"] ')?.getPropertyValue('overflow') === 'hidden');
+assert(new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.getPropertyValue('overflow') === 'hidden');
 ```
 
-Your span[class~="sr-only"] ` selector should have a `white-space` property set to `nowrap`.
+Your `span[class~="sr-only"]` selector should have a `white-space` property set to `nowrap`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle(span[class~="sr-only"] ')?.getPropertyValue('white-space') === 'nowrap');
+assert(new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.getPropertyValue('white-space') === 'nowrap');
 ```
 
 # --seed--

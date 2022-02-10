@@ -13,17 +13,16 @@ The `span[class~="sr-only"]` selector will select any `span` element whose `clas
 
 # --hints--
 
-You should have an span[class~="sr-only"] ` selector.
+You should have an `span[class~="sr-only"]` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle(span[class~="sr-only"] '));
+assert(new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]'));
 ```
 
-Your span[class~="sr-only"] ` selector should have a `border` property set to `0`.
+Your `span[class~="sr-only"]` selector should have a `border` property set to `0`.
 
 ```js
-console.log(new __helpers.CSSHelp(document).getStyle(span[class~="sr-only"] ')?.getPropertyValue('border'))
-assert(new __helpers.CSSHelp(document).getStyle(span[class~="sr-only"] ')?.getPropertyValue('border') === '0px');
+assert(new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.getPropertyValue('border-width') === '0px');
 ```
 
 # --seed--
