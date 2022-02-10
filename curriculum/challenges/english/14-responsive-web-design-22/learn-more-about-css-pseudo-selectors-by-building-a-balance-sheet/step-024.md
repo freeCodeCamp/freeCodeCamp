@@ -43,22 +43,22 @@ You should have three `td` elements.
 assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelectorAll('td').length === 3);
 ```
 
-Your first `td` element should have the text `$550`.
+Your first `td` element should have the text `$750`.
 
 ```js
-assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelectorAll('td')?.[0]?.textContent === '$550');
+assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelectorAll('td')?.[0]?.textContent === '$750');
 ```
 
-Your second `td` element should have the text `$750`.
+Your second `td` element should have the text `$600`.
 
 ```js
-assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelectorAll('td')?.[1]?.textContent === '$750');
+assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelectorAll('td')?.[1]?.textContent === '$600');
 ```
 
-Your third `td` element should have the text `$500`.
+Your third `td` element should have the text `$475`.
 
 ```js
-assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelectorAll('td')?.[2]?.textContent === '$500');
+assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelectorAll('td')?.[2]?.textContent === '$475');
 ```
 
 Your third `td` element should have the `class` set to `current`.

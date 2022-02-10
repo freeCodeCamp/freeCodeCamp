@@ -126,9 +126,9 @@ assert(['0.5rem calc(1.25rem + 2px) 0.5rem 0px', '0.5rem calc(2px + 1.25rem) 0.5
               </tr>
               <tr class="total">
                 <th>Total <span class="sr-only">Liabilities</span></th>
-                <td>$550</td>
                 <td>$750</td>
-                <td class="current">$500</td>
+                <td>$600</td>
+                <td class="current">$475</td>
               </tr>
             </tbody>
           </table>
@@ -145,9 +145,9 @@ assert(['0.5rem calc(1.25rem + 2px) 0.5rem 0px', '0.5rem calc(2px + 1.25rem) 0.5
             <tbody>
               <tr class="total">
                 <th>Total <span class="sr-only">Net Worth</span></th>
-                <td>$29</td>
-                <td>$-14</td>
-                <td class="current">$309</td>
+                <td>$-171</td>
+                <td>$136</td>
+                <td class="current">$334</td>
               </tr>
             </tbody>
           </table>

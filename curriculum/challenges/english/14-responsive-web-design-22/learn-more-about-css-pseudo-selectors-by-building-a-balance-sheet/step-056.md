@@ -127,9 +127,9 @@ assert(new __helpers.CSSHelp(document).getStyle('tr.total td')?.getPropertyValue
               </tr>
               <tr class="total">
                 <th>Total <span class="sr-only">Liabilities</span></th>
-                <td>$550</td>
                 <td>$750</td>
-                <td class="current">$500</td>
+                <td>$600</td>
+                <td class="current">$475</td>
               </tr>
             </tbody>
           </table>
@@ -146,9 +146,9 @@ assert(new __helpers.CSSHelp(document).getStyle('tr.total td')?.getPropertyValue
             <tbody>
               <tr class="total">
                 <th>Total <span class="sr-only">Net Worth</span></th>
-                <td>$29</td>
-                <td>$-14</td>
-                <td class="current">$309</td>
+                <td>$-171</td>
+                <td>$136</td>
+                <td class="current">$334</td>
               </tr>
             </tbody>
           </table>

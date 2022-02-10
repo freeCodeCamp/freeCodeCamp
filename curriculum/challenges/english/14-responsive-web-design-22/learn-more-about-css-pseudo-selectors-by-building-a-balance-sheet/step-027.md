@@ -55,22 +55,22 @@ You should have three `td` elements.
 assert(document.querySelectorAll('table')?.[2]?.querySelector('tbody')?.querySelectorAll('tr')?.[0]?.querySelectorAll('td').length === 3);
 ```
 
-Your first `td` element should have the text `$29`.
+Your first `td` element should have the text `$-171`.
 
 ```js
-assert(document.querySelectorAll('table')?.[2]?.querySelector('tbody')?.querySelectorAll('tr')?.[0]?.querySelectorAll('td')?.[0]?.textContent === '$29');
+assert(document.querySelectorAll('table')?.[2]?.querySelector('tbody')?.querySelectorAll('tr')?.[0]?.querySelectorAll('td')?.[0]?.textContent === '$-171');
 ```
 
-Your second `td` element should have the text `$-14`.
+Your second `td` element should have the text `$136`.
 
 ```js
-assert(document.querySelectorAll('table')?.[2]?.querySelector('tbody')?.querySelectorAll('tr')?.[0]?.querySelectorAll('td')?.[1]?.textContent === '$-14');
+assert(document.querySelectorAll('table')?.[2]?.querySelector('tbody')?.querySelectorAll('tr')?.[0]?.querySelectorAll('td')?.[1]?.textContent === '$136');
 ```
 
-Your third `td` element should have the text `$309`.
+Your third `td` element should have the text `$334`.
 
 ```js
-assert(document.querySelectorAll('table')?.[2]?.querySelector('tbody')?.querySelectorAll('tr')?.[0]?.querySelectorAll('td')?.[2]?.textContent === '$309');
+assert(document.querySelectorAll('table')?.[2]?.querySelector('tbody')?.querySelectorAll('tr')?.[0]?.querySelectorAll('td')?.[2]?.textContent === '$334');
 ```
 
 Your third `td` element should have the `class` set to `current`.
@@ -175,9 +175,9 @@ assert(document.querySelectorAll('table')?.[2]?.querySelector('tbody')?.querySel
               </tr>
               <tr class="total">
                 <th>Total <span class="sr-only">Liabilities</span></th>
-                <td>$550</td>
                 <td>$750</td>
-                <td class="current">$500</td>
+                <td>$600</td>
+                <td class="current">$475</td>
               </tr>
             </tbody>
           </table>

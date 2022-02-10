@@ -171,9 +171,9 @@ assert(document.querySelectorAll('table')?.[2]?.querySelectorAll('td')?.[0]?.chi
               </tr>
               <tr class="total">
                 <th>Total <span class="sr-only">Liabilities</span></th>
-                <td>$550</td>
                 <td>$750</td>
-                <td class="current">$500</td>
+                <td>$600</td>
+                <td class="current">$475</td>
               </tr>
             </tbody>
           </table>
