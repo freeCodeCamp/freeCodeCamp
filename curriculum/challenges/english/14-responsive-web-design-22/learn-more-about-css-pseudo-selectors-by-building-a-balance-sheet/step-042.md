@@ -26,7 +26,8 @@ assert(new __helpers.CSSHelp(document).getStyle('#years')?.getPropertyValue('mar
 Your `#years` selector should have a `padding` property set to `0.5rem calc(1.25rem + 2px) 0.5rem 0`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#years')?.getPropertyValue('padding') === '0.5rem calc(1.25rem + 2px) 0.5rem 0px');
+const padding = new __helpers.CSSHelp(document).getStyle('#years')?.getPropertyValue('padding');
+assert(['0.5rem calc(1.25rem + 2px) 0.5rem 0px', '0.5rem calc(2px + 1.25rem) 0.5rem 0px'].includes(padding));
 ```
 
 # --seed--

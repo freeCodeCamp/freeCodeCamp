@@ -18,7 +18,7 @@ Your `span[class~="sr-only"]` selector should have the `border` property set to 
 ```js
 // log it
 const text = new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.cssText;
-assert(text.includes('border: 0px !important;'));
+assert(text.includes('border: 0px !important;') || text.includes('border: 0px none !important'));
 ```
 
 Your `span[class~="sr-only"]` selector should have the `clip` property set to `rect(1px, 1px, 1px, 1px) !important`.
