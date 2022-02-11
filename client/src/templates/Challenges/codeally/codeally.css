@@ -1,0 +1,15 @@
+.ca-description {
+  font-family: 'Lato', sans-serif;
+}
+
+.ca-btn-padding {
+  padding: 0 15px;
+}
+
+.ca-btn-padding button {
+  font-size: 1.1rem;
+}
+
+.ca-btn-margin {
+  margin-bottom: 5px;
+}
