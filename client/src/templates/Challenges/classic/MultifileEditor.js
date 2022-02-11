@@ -9,7 +9,7 @@ import {
   consoleOutputSelector,
   visibleEditorsSelector
 } from '../redux';
-import { getTargetEditor } from '../utils/getTargetEditor';
+import { getTargetEditor } from '../utils/get-target-editor';
 import './editor.css';
 import Editor from './editor';
 
