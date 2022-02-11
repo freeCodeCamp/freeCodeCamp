@@ -6,9 +6,8 @@ function FreeCodeCampLogo(): JSX.Element {
 
   return (
     <svg
-      aria-label={t('aria.fcc-logo')}
+      aria-label={t('aria.fcc-curriculum')}
       height={24}
-      role='math'
       version='1.1'
       viewBox='0 0 210 24'
       width={210}
