@@ -17,11 +17,6 @@ export default function settingsController(app) {
   api.put('/update-privacy-terms', ifNoUser401, updatePrivacyTerms);
 
   api.post(
-    '/refetch-user-completed-challenges',
-    ifNoUser401,
-    refetchCompletedChallenges
-  );
-  api.post(
     '/update-my-current-challenge',
     ifNoUser401,
     updateMyCurrentChallengeValidators,
@@ -68,13 +63,6 @@ const createStandardHandler = (req, res, next) => err => {
   }
   return res.status(200).json(standardSuccessMessage);
 };
-
-function refetchCompletedChallenges(req, res, next) {
-  const { user } = req;
-  return user
-    .requestCompletedChallenges()
-    .subscribe(completedChallenges => res.json({ completedChallenges }), next);
-}
 
 const updateMyEmailValidators = [
   check('email').isEmail().withMessage('Email format is invalid.')
