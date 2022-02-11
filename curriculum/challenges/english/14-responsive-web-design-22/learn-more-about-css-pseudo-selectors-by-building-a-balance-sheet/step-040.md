@@ -178,6 +178,8 @@ span[class~="sr-only"] {
   height: 1px;
   width: 1px;
   position: absolute;
+  overflow: hidden;
+  white-space: nowrap;
   padding: 0;
   margin: -1px;
 }

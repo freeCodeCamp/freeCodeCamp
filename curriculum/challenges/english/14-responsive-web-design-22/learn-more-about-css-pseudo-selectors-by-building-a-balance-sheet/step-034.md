@@ -166,6 +166,8 @@ span[class~="sr-only"] {
   -webkit-clip-path: inset(50%);
   height: 1px;
   width: 1px;
+  overflow: hidden;
+  white-space: nowrap;
   
 }
 --fcc-editable-region--
