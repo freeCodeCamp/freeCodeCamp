@@ -20,7 +20,6 @@ function DonateCompletion({
   isSignedIn,
   error = null
 }: DonateCompletionProps): JSX.Element {
-  /* eslint-disable no-nested-ternary */
   const { t } = useTranslation();
   const style =
     processing || redirecting ? 'info' : success ? 'success' : 'danger';
