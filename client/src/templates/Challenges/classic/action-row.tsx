@@ -48,7 +48,6 @@ const ActionRow = ({
             onClick={() => togglePane('showConsole')}
           >
             {t('learn.editor-tabs.console')}{' '}
-            <span className='sr-only'>display</span>
           </button>
           {hasNotes && (
             <button
@@ -57,7 +56,6 @@ const ActionRow = ({
               onClick={() => togglePane('showNotes')}
             >
               {t('learn.editor-tabs.notes')}{' '}
-              <span className='sr-only'>display</span>
             </button>
           )}
           <button
@@ -66,7 +64,6 @@ const ActionRow = ({
             onClick={() => togglePane('showPreview')}
           >
             {t('learn.editor-tabs.preview')}{' '}
-            <span className='sr-only'>display</span>
           </button>
         </div>
       </div>
