@@ -51,18 +51,7 @@ export default function bootCertificate(app) {
 
   api.put('/certificate/verify', ifNoUser401, ifNoSuperBlock404, verifyCert);
   api.get('/certificate/showCert/:username/:certSlug', showCert);
-  api.get('/certificate/verify-can-claim-cert', verifyCanClaimCert);
-
   app.use(api);
-}
-
-function verifyCanClaimCert(_req, res) {
-  return res.status(410).json({
-    message: {
-      type: 'info',
-      message: 'Please reload the app, this feature is no longer available.'
-    }
-  });
 }
 
 export function getFallbackFullStackDate(completedChallenges, completedDate) {
