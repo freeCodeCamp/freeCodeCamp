@@ -47,7 +47,7 @@ const ActionRow = ({
             className={showConsole ? 'active-tab' : ''}
             onClick={() => togglePane('showConsole')}
           >
-            {t('learn.editor-tabs.console')}{' '}
+            {t('learn.editor-tabs.console')}
           </button>
           {hasNotes && (
             <button
@@ -55,7 +55,7 @@ const ActionRow = ({
               className={showNotes ? 'active-tab' : ''}
               onClick={() => togglePane('showNotes')}
             >
-              {t('learn.editor-tabs.notes')}{' '}
+              {t('learn.editor-tabs.notes')}
             </button>
           )}
           <button
@@ -63,7 +63,7 @@ const ActionRow = ({
             className={showPreview ? 'active-tab' : ''}
             onClick={() => togglePane('showPreview')}
           >
-            {t('learn.editor-tabs.preview')}{' '}
+            {t('learn.editor-tabs.preview')}
           </button>
         </div>
       </div>
