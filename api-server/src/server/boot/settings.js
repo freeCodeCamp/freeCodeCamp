@@ -4,7 +4,6 @@ import isURL from 'validator/lib/isURL';
 
 import { isValidUsername } from '../../../../utils/validate';
 import { alertTypes } from '../../common/utils/flash.js';
-import { themes } from '../../common/utils/themes.js';
 import { ifNoUser401, createValidatorErrorHandler } from '../utils/middleware';
 
 const log = debug('fcc:boot:settings');
@@ -24,13 +23,6 @@ export default function settingsController(app) {
     updateMyCurrentChallenge
   );
   api.post('/update-my-portfolio', ifNoUser401, updateMyPortfolio);
-  api.post(
-    '/update-my-theme',
-    ifNoUser401,
-    updateMyThemeValidators,
-    createValidatorErrorHandler(alertTypes.danger),
-    updateMyTheme
-  );
   api.put('/update-my-about', ifNoUser401, updateMyAbout);
   api.put(
     '/update-my-email',
@@ -100,25 +92,6 @@ function updateMyCurrentChallenge(req, res, next) {
       return res.status(200).json(currentChallengeId);
     }
   );
-}
-
-const updateMyThemeValidators = [
-  check('theme').isIn(Object.keys(themes)).withMessage('Theme is invalid.')
-];
-
-function updateMyTheme(req, res, next) {
-  const {
-    body: { theme }
-  } = req;
-  if (req.user.theme === theme) {
-    return res.sendFlash(alertTypes.info, 'Theme already set');
-  }
-  return req.user
-    .updateTheme(theme)
-    .then(
-      () => res.sendFlash(alertTypes.info, 'Your theme has been updated!'),
-      next
-    );
 }
 
 function updateMyPortfolio(req, res, next) {
