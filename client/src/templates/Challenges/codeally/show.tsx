@@ -1,7 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable max-len */
-
 // Package Utilities
 import { Grid, Col, Row, Button } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
@@ -266,7 +262,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps, ShowCodeAllyState> {
                   </Trans>
                 </div>
                 <Spacer />
-                {isSignedIn && challengeType === 13 && (
+                {isSignedIn && challengeType === challengeTypes.codeAllyCert && (
                   <>
                     <div className='ca-description'>
                       {t('learn.complete-both-steps')}
@@ -294,7 +290,10 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps, ShowCodeAllyState> {
                 )}
                 <div
                   className={`ca-btn-padding ${
-                    !isSignedIn || challengeType === 12 ? 'ca-btn-margin' : ''
+                    !isSignedIn ||
+                    challengeType === challengeTypes.codeAllyPractice
+                      ? 'ca-btn-margin'
+                      : ''
                   }`}
                 >
                   <Button
@@ -302,7 +301,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps, ShowCodeAllyState> {
                     bsStyle='primary'
                     onClick={this.showIframe}
                   >
-                    {challengeType === 13
+                    {challengeType === challengeTypes.codeAllyCert
                       ? t('buttons.click-start-project')
                       : t('buttons.click-start-course')}
                   </Button>
