@@ -11,7 +11,7 @@ For your third table, add a `caption` with the text `Net Worth`, and set up a ta
 
 # --hints--
 
-Your second `table` element should have a `caption` element.
+Your third `table` element should have a `caption` element.
 
 ```js
 assert(document.querySelectorAll('table')?.[2]?.children?.[0]?.localName === 'caption');
@@ -23,13 +23,13 @@ Your `caption` element should have the text `Net Worth`.
 assert(document.querySelectorAll('table')?.[2]?.querySelector('caption')?.textContent === 'Net Worth');
 ```
 
-Your second `table` element should have a `thead` element.
+Your third `table` element should have a `thead` element.
 
 ```js
 assert(document.querySelectorAll('table')?.[2]?.querySelector('thead'));
 ```
 
-Your second `table` element should have a `tbody` element.
+Your third `table` element should have a `tbody` element.
 
 ```js
 assert(document.querySelectorAll('table')?.[2]?.querySelector('tbody'));

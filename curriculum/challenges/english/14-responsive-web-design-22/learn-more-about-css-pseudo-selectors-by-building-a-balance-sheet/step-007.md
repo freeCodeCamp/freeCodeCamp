@@ -34,7 +34,7 @@ assert(document.querySelectorAll('div')?.[1]?.classList?.contains('table-wrap'))
 Your `.table-wrap` element should have three `table` elements.
 
 ```js
-const children = [...document.querySelector('.table-wrap')?.children];
+const children = [...(document.querySelector('.table-wrap')?.children ?? [])];
 assert(children?.length === 3);
 children.forEach(child => assert(child?.localName === 'table'));
 ```
@@ -65,8 +65,8 @@ children.forEach(child => assert(child?.localName === 'table'));
           <span class="year">2019</span>
           <span class="year">2020</span>
           <span class="year">2021</span>
---fcc-editable-region--
         </div>
+--fcc-editable-region--
 
 --fcc-editable-region--
       </section>

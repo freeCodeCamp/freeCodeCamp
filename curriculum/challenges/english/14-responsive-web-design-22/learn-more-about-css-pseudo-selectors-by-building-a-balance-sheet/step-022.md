@@ -13,7 +13,7 @@ Add three `td` elements below that, and give them the following text, in order: 
 
 # --hints--
 
-Your first `tr` should have a `th` element.
+Your second `tr` should have a `th` element.
 
 ```js
 assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[1]?.querySelector('th'));

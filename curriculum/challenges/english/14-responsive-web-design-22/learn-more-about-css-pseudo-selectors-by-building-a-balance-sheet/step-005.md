@@ -50,8 +50,8 @@ assert(document.querySelector('div')?.getAttribute('aria-hidden') === 'true');
             <span>freeCodeCamp</span>
             <span>Balance Sheet</span>
           </span>
---fcc-editable-region--
         </h1>
+--fcc-editable-region--
 
 --fcc-editable-region--
       </section>
