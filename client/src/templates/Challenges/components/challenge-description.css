@@ -10,9 +10,12 @@
 
 #description p,
 #instructions p,
+#notes p,
 #description ul,
 #instructions ul,
+#notes ul,
 #description ol,
-#instructions ol {
+#instructions ol,
+#notes ol {
   font-family: 'Lato', sans-serif;
 }

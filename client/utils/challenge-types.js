@@ -11,7 +11,8 @@ const quiz = 8;
 const invalid = 9;
 const pythonProject = 10;
 const video = 11;
-const codeally = 12;
+const codeAllyPractice = 12;
+const codeAllyCert = 13;
 const multiFileCertProject = 14;
 
 // individual exports
@@ -34,7 +35,8 @@ exports.challengeTypes = {
   quiz,
   invalid,
   video,
-  codeally,
+  codeAllyPractice,
+  codeAllyCert,
   multiFileCertProject
 };
 
@@ -69,7 +71,8 @@ exports.viewTypes = {
   [quiz]: 'quiz',
   [backend]: 'backend',
   [video]: 'video',
-  [codeally]: 'codeally',
+  [codeAllyPractice]: 'codeAlly',
+  [codeAllyCert]: 'codeAlly',
   [multiFileCertProject]: 'classic'
 };
 
@@ -91,6 +94,7 @@ exports.submitTypes = {
   [backend]: 'backend',
   [modern]: 'tests',
   [video]: 'tests',
+  [codeAllyCert]: 'project.frontEnd',
   [multiFileCertProject]: 'tests'
 };
 

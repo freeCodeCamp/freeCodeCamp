@@ -995,6 +995,25 @@ export default function initializeUser(User) {
     });
   };
 
+  User.prototype.getPartiallyCompletedChallenges$ =
+    function getPartiallyCompletedChallenges$() {
+      if (
+        Array.isArray(this.partiallyCompletedChallenges) &&
+        this.partiallyCompletedChallenges.length
+      ) {
+        return Observable.of(this.partiallyCompletedChallenges);
+      }
+      const id = this.getId();
+      const filter = {
+        where: { id },
+        fields: { partiallyCompletedChallenges: true }
+      };
+      return this.constructor.findOne$(filter).map(user => {
+        this.partiallyCompletedChallenges = user.partiallyCompletedChallenges;
+        return user.partiallyCompletedChallenges;
+      });
+    };
+
   User.getMessages = messages => Promise.resolve(messages);
 
   User.remoteMethod('getMessages', {
