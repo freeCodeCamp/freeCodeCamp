@@ -16,7 +16,7 @@ Inside the `head` element, nest a `meta` element with an attribute named `charse
 You should have a `meta` tag.
 
 ```js
-assert(code.match(/<meta\s.*>/i));
+assert(code.match(/<meta.*?\/?>/is));
 ```
 
 Your `meta` tag should have a `charset` attribute.

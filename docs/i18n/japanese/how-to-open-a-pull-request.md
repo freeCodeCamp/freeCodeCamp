@@ -33,7 +33,7 @@
 
 簡潔に (30文字未満) 記述します。PR の説明欄やコメントに詳細情報を追加できます。
 
-Some examples of good PR titles would be:
+良い PR のタイトルの例としては、次のようなものがあります。
 
 - `fix(a11y): improved search bar contrast`
 - `feat: add more tests to HTML and CSS challenges`

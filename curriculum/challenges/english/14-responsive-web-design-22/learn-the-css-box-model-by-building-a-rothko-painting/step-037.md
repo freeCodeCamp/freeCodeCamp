@@ -1,5 +1,5 @@
 ---
-id: 60a3e3396c7b40068ad6998e
+id: 60a3e3396c7b40068ad6998f
 title: Step 37
 challengeType: 0
 dashedName: step-37
@@ -7,22 +7,24 @@ dashedName: step-37
 
 # --description--
 
-Increase the `blur` of `.three` by 2 pixels.
+The rectangles are too small and their edges don't have the soft quality of a painting.
+
+Increase the area and soften the edges of `.one` by setting its `box-shadow` to `0 0 3px 3px #efb762`.
 
 # --hints--
 
-You should set the `filter` property to `blur(2px)`.
+You should set the `box-shadow` property to `0 0 3px 3px #efb762`.
 
 ```js
-const filterFilter = new __helpers.CSSHelp(document).getCSSRules().filter(x => x.style.filter === 'blur(2px)');
-assert(filterFilter.length === 2);
+const hasBoxShadow = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['box-shadow'] === 'rgb(239, 183, 98) 0px 0px 3px 3px');
+assert(hasBoxShadow);
 ```
 
-Your `.three` element should have a `filter` value of `blur(2px)`.
+Your `.one` element should have a `box-shadow` value of `0 0 3px 3px #efb762`.
 
 ```js
-const threeFilter = new __helpers.CSSHelp(document).getStyle('.three')?.getPropertyValue('filter');
-assert(threeFilter === 'blur(2px)');
+const oneShadow = new __helpers.CSSHelp(document).getStyle('.one')?.getPropertyValue('box-shadow');
+assert(oneShadow === 'rgb(239, 183, 98) 0px 0px 3px 3px');
 ```
 
 # --seed--
@@ -49,7 +51,10 @@ assert(threeFilter === 'blur(2px)');
   width: 425px;
   height: 150px;
   background-color: #efb762;
-  margin: 20px auto 20px;
+  margin: 20px auto;
+--fcc-editable-region--
+
+--fcc-editable-region--
 }
 
 .two {
@@ -68,9 +73,7 @@ assert(threeFilter === 'blur(2px)');
   height: 28%;
   background-color: #b20403;
   margin: auto;
---fcc-editable-region--
-
---fcc-editable-region--
+  filter: blur(2px);
 }
 ```
 

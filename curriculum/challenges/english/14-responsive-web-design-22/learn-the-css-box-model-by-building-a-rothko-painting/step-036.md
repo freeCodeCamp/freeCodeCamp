@@ -1,5 +1,5 @@
 ---
-id: 60a3e3396c7b40068ad6998d
+id: 60a3e3396c7b40068ad6998e
 title: Step 36
 challengeType: 0
 dashedName: step-36
@@ -7,46 +7,22 @@ dashedName: step-36
 
 # --description--
 
-Create a rule that targets both `.one` and `.two` and increase their `blur` effect by 1 pixel.
-
-Here's an example of a rule that increases the `blur` of two elements:
-
-```css
-h1, p {
-  filter: blur(3px);
-}
-```
+Increase the `blur` of `.three` by 2 pixels.
 
 # --hints--
 
-You should have a `.one, .two` selector.
+You should set the `filter` property to `blur(2px)`.
 
 ```js
-const oneTwo = new __helpers.CSSHelp(document).getStyle('.one, .two');
-assert(oneTwo);
+const filterFilter = new __helpers.CSSHelp(document).getCSSRules().filter(x => x.style.filter === 'blur(2px)');
+assert(filterFilter.length === 2);
 ```
 
-You should set the `filter` property to `blur(1px)`.
+Your `.three` element should have a `filter` value of `blur(2px)`.
 
 ```js
-const hasFilter = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.filter === 'blur(1px)');
-assert(hasFilter)
-```
-
-Your `.one` element should have a `filter` value of `blur(1px)`.
-
-```js
-const one = document.querySelector('.one');
-const oneFilter = getComputedStyle(one).filter;
-assert(oneFilter === 'blur(1px)');
-```
-
-Your `.two` element should have a filter value of `blur(1px)`.
-
-```js
-const two = document.querySelector('.two');
-const twoFilter = getComputedStyle(two).filter;
-assert(twoFilter === 'blur(1px)');
+const threeFilter = new __helpers.CSSHelp(document).getStyle('.three')?.getPropertyValue('filter');
+assert(threeFilter === 'blur(2px)');
 ```
 
 # --seed--
@@ -73,7 +49,7 @@ assert(twoFilter === 'blur(1px)');
   width: 425px;
   height: 150px;
   background-color: #efb762;
-  margin: 20px auto 20px;
+  margin: 20px auto;
 }
 
 .two {
@@ -83,15 +59,18 @@ assert(twoFilter === 'blur(1px)');
   margin: 0 auto 20px;
 }
 
---fcc-editable-region--
-
---fcc-editable-region--
+.one, .two {
+  filter: blur(1px);
+}
 
 .three {
   width: 91%;
   height: 28%;
   background-color: #b20403;
   margin: auto;
+--fcc-editable-region--
+
+--fcc-editable-region--
 }
 ```
 

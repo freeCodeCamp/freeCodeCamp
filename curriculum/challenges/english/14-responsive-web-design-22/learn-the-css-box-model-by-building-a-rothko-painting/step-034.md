@@ -1,5 +1,5 @@
 ---
-id: 60a3e3396c7b40068ad6998b
+id: 60a3e3396c7b40068ad6998c
 title: Step 34
 challengeType: 0
 dashedName: step-34
@@ -7,26 +7,24 @@ dashedName: step-34
 
 # --description--
 
-It's helpful to have your margins push in one direction.
+The colors and shapes of your painting are too sharp to pass as a Rothko.
 
-In this case, the bottom margin of the `.one` element pushes `.two` down 20 pixels.
-
-In the `.two` selector, use `margin` shorthand property to set top margin to `0`, horizontal margin to `auto`, and bottom margin to `20px`. This will remove its top margin, horizontally center it, and set its bottom margin to 20 pixels.
+Use the `filter` property to `blur` the painting by `2px` in the `.canvas` element.
 
 # --hints--
 
-You should set the `margin` property to `0 auto 20px`.
+You should set the `filter` property to `blur(2px)`.
 
 ```js
-const hasMargin = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.margin === '0px auto 20px');
-assert(hasMargin);
+const hasFilter = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.filter === 'blur(2px)');
+assert(hasFilter);
 ```
 
-Your `.two` element should have a `margin` value of `0 auto 20px`.
+Your `.canvas` element should have a `filter` value of `blur(2px)`.
 
 ```js
-const twoMargin = new __helpers.CSSHelp(document).getStyle('.two')?.getPropertyValue('margin');
-assert(twoMargin === '0px auto 20px');
+const canvasFilter = new __helpers.CSSHelp(document).getStyle('.canvas')?.getPropertyValue('filter');
+assert(canvasFilter === 'blur(2px)');
 ```
 
 # --seed--
@@ -39,6 +37,9 @@ assert(twoMargin === '0px auto 20px');
   height: 600px;
   background-color: #4d0f00;
   overflow: hidden;
+--fcc-editable-region--
+
+--fcc-editable-region--
 }
 
 .frame {
@@ -52,16 +53,14 @@ assert(twoMargin === '0px auto 20px');
   width: 425px;
   height: 150px;
   background-color: #efb762;
-  margin: 20px auto 20px;
+  margin: 20px auto;
 }
 
 .two {
   width: 475px;
   height: 200px;
   background-color: #8f0401;
---fcc-editable-region--
-  margin: auto;
---fcc-editable-region--
+  margin: 0 auto 20px;
 }
 
 .three {

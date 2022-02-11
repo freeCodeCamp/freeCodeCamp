@@ -186,6 +186,8 @@ export const updateCurrentChallengeId = createAction(
 
 export const completedChallengesSelector = state =>
   userSelector(state).completedChallenges || [];
+export const partiallyCompletedChallengesSelector = state =>
+  userSelector(state).partiallyCompletedChallenges || [];
 export const completionCountSelector = state => state[MainApp].completionCount;
 export const currentChallengeIdSelector = state =>
   state[MainApp].currentChallengeId;
