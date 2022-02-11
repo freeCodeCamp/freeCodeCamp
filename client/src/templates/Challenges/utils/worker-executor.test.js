@@ -54,7 +54,6 @@ it('Worker executor should successfully execute one task', async () => {
   expect(global.Worker).toBeCalledWith('/js/test.js');
 });
 
-// eslint-disable-next-line max-len
 it('Worker executor should successfully execute two tasks in parallel', async () => {
   const terminateHandler = jest.fn();
   mockWorker({ terminate: terminateHandler });
@@ -89,7 +88,6 @@ it('Worker executor should successfully execute two tasks in parallel', async ()
   expect(global.Worker).toBeCalledTimes(2);
 });
 
-// eslint-disable-next-line max-len
 it('Worker executor should successfully execute 3 tasks in parallel and use two workers', async () => {
   mockWorker();
   const testWorker = createWorker('test');
@@ -104,7 +102,6 @@ it('Worker executor should successfully execute 3 tasks in parallel and use two 
   expect(global.Worker).toBeCalledTimes(2);
 });
 
-// eslint-disable-next-line max-len
 it('Worker executor should successfully execute 3 tasks, use 3 workers and terminate each worker', async () => {
   const terminateHandler = jest.fn();
   mockWorker({ terminate: terminateHandler });
@@ -121,7 +118,6 @@ it('Worker executor should successfully execute 3 tasks, use 3 workers and termi
   expect(global.Worker).toBeCalledTimes(3);
 });
 
-// eslint-disable-next-line max-len
 it('Worker executor should successfully execute 3 tasks in parallel and use 3 workers', async () => {
   mockWorker();
   const testWorker = createWorker('test', { maxWorkers: 3 });
@@ -136,7 +132,6 @@ it('Worker executor should successfully execute 3 tasks in parallel and use 3 wo
   expect(global.Worker).toBeCalledTimes(3);
 });
 
-// eslint-disable-next-line max-len
 it('Worker executor should successfully execute 3 tasks and use 1 worker', async () => {
   mockWorker();
   const testWorker = createWorker('test', { maxWorkers: 1 });
