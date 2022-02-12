@@ -33,7 +33,7 @@ assert(new __helpers.CSSHelp(document).getStyle('tr.total td:nth-of-type(3)')?.g
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>freeCodeCamp Balance Sheet</title>
+    <title>AcmeWidgetCorp Balance Sheet</title>
     <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
@@ -41,7 +41,7 @@ assert(new __helpers.CSSHelp(document).getStyle('tr.total td:nth-of-type(3)')?.g
       <section>
         <h1>
           <span class="flex">
-            <span>freeCodeCamp</span>
+            <span>AcmeWidgetCorp</span>
             <span>Balance Sheet</span>
           </span>
         </h1>

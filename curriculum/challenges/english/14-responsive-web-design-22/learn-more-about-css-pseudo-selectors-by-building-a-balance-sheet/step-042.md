@@ -40,7 +40,7 @@ assert(['0.5rem calc(1.25rem + 2px) 0.5rem 0px', '0.5rem calc(2px + 1.25rem) 0.5
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>freeCodeCamp Balance Sheet</title>
+    <title>AcmeWidgetCorp Balance Sheet</title>
     <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
@@ -48,7 +48,7 @@ assert(['0.5rem calc(1.25rem + 2px) 0.5rem 0px', '0.5rem calc(2px + 1.25rem) 0.5
       <section>
         <h1>
           <span class="flex">
-            <span>freeCodeCamp</span>
+            <span>AcmeWidgetCorp</span>
             <span>Balance Sheet</span>
           </span>
         </h1>

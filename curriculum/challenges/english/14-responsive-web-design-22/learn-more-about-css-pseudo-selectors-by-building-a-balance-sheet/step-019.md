@@ -65,7 +65,7 @@ assert(document.querySelectorAll('table')?.[1]?.querySelectorAll('td')?.[0]?.chi
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>freeCodeCamp Balance Sheet</title>
+    <title>AcmeWidgetCorp Balance Sheet</title>
     <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
@@ -73,7 +73,7 @@ assert(document.querySelectorAll('table')?.[1]?.querySelectorAll('td')?.[0]?.chi
       <section>
         <h1>
           <span class="flex">
-            <span>freeCodeCamp</span>
+            <span>AcmeWidgetCorp</span>
             <span>Balance Sheet</span>
           </span>
         </h1>

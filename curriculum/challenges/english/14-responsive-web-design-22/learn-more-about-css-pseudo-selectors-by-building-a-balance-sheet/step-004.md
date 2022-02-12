@@ -7,9 +7,9 @@ dashedName: step-4
 
 # --description--
 
-Screen readers announce HTML elements based on the document flow. We will eventually want the balance sheet to have a heading of "Balance Sheet" and a subheading of "freeCodeCamp". However, this order does not make sense if announced by a screen reader.
+Screen readers announce HTML elements based on the document flow. We will eventually want the balance sheet to have a heading of "Balance Sheet" and a subheading of "AcmeWidgetCorp". However, this order does not make sense if announced by a screen reader.
 
-Give your existing `span` the `class` attribute set to `flex`, and add two `span` elements within it. Give the first the text `freeCodeCamp`. Give the second the text `Balance Sheet`. You will use CSS to reverse the order of the text on the page, but the HTML order will make more sense for a screen reader.
+Give your existing `span` the `class` attribute set to `flex`, and add two `span` elements within it. Give the first the text `AcmeWidgetCorp`. Give the second the text `Balance Sheet`. You will use CSS to reverse the order of the text on the page, but the HTML order will make more sense for a screen reader.
 
 # --hints--
 
@@ -33,10 +33,10 @@ assert(!document.querySelector('.flex')?.children?.[0]?.classList?.length);
 assert(!document.querySelector('.flex')?.children?.[1]?.classList?.length);
 ```
 
-Your first new `span` element should have the text `freeCodeCamp`.
+Your first new `span` element should have the text `AcmeWidgetCorp`.
 
 ```js
-assert(document.querySelector('.flex')?.children?.[0]?.textContent === 'freeCodeCamp');
+assert(document.querySelector('.flex')?.children?.[0]?.textContent === 'AcmeWidgetCorp');
 ```
 
 Your second new `span` element should have the text `Balance Sheet`.
@@ -55,7 +55,7 @@ assert(document.querySelector('.flex')?.children?.[1]?.textContent === 'Balance 
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>freeCodeCamp Balance Sheet</title>
+    <title>AcmeWidgetCorp Balance Sheet</title>
     <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
