@@ -1,4 +1,3 @@
-/* eslint-disable no-undefined */
 import { Button, Form } from '@freecodecamp/react-bootstrap';
 import {
   CardNumberElement,
@@ -133,7 +132,7 @@ const StripeCardForm = ({
   ) => {
     if (stripe) {
       return stripe.confirmCardPayment(clientSecret, {
-        // eslint-disable-next-line camelcase, @typescript-eslint/naming-convention
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         payment_method: paymentMethod
       });
     }

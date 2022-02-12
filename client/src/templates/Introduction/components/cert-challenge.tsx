@@ -54,7 +54,6 @@ const mapStateToProps = (state: unknown) => {
       fetchState: CertChallengeProps['fetchState'],
       isSignedIn
     ) => ({
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       currentCerts,
       fetchState,
       isSignedIn

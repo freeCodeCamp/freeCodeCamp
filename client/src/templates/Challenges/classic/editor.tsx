@@ -536,7 +536,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   function createDescription(editor: editor.IStandaloneCodeEditor) {
     if (dataRef.current.descriptionNode) return dataRef.current.descriptionNode;
     const { description, title } = props;
-    const jawHeading = document.createElement('h3');
+    const jawHeading = document.createElement('h1');
     jawHeading.innerText = title;
     const domNode = document.createElement('div');
     const desc = document.createElement('div');

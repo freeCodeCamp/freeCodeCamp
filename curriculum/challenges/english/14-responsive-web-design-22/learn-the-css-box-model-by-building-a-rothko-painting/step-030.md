@@ -1,5 +1,5 @@
 ---
-id: 60a3e3396c7b40068ad69987
+id: 60a3e3396c7b40068ad69988
 title: Step 30
 challengeType: 0
 dashedName: step-30
@@ -7,31 +7,22 @@ dashedName: step-30
 
 # --description--
 
-You don't always have to use pixels when sizing an element.
-
-Create a new rule, `.three`, and set its `width` to `91%`.
+Set the `height` of `.three` to `28%`.
 
 # --hints--
 
-You should use the `.three` selector.
+You should set the `height` property to `28%`.
 
 ```js
-const hasThree = new __helpers.CSSHelp(document).getStyle('.three');
-assert(hasThree);
+const hasHeight = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.height === '28%');
+assert(hasHeight);
 ```
 
-You should set the `width` property to `91%`.
+Your `.three` element should have a `height` value of `28%`.
 
 ```js
-const hasWidth = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.width === '91%');
-assert(hasWidth);
-```
-
-Your `.three` element should have a `width` value of `91%`.
-
-```js
-const threeWidth = new __helpers.CSSHelp(document).getStyle('.three')?.getPropertyValue('width');
-assert(threeWidth === '91%');
+const threeHeight = new __helpers.CSSHelp(document).getStyle('.three')?.getPropertyValue('height');
+assert(threeHeight === '28%');
 ```
 
 # --seed--
@@ -57,7 +48,7 @@ assert(threeWidth === '91%');
   width: 425px;
   height: 150px;
   background-color: #efb762;
-  margin: 20px auto 20px;
+  margin: 20px auto;
 }
 
 .two {
@@ -67,10 +58,12 @@ assert(threeWidth === '91%');
   margin: auto;
 }
 
+.three {
+  width: 91%;
 --fcc-editable-region--
 
 --fcc-editable-region--
-
+}
 ```
 
 ```html

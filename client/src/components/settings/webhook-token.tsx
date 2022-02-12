@@ -17,7 +17,7 @@ import './webhook-token.css';
 
 type WebhookTokenProps = {
   deleteWebhookToken: () => void;
-  isSuperBlockPage?: boolean;
+  isChallengePage?: boolean;
   postWebhookToken: () => void;
   t: TFunction;
   webhookToken: string | null;
@@ -69,9 +69,9 @@ class WebhookToken extends Component<WebhookTokenProps, WebhookTokenState> {
   };
 
   render() {
-    const { isSuperBlockPage = false, t, webhookToken = null } = this.props;
+    const { isChallengePage = false, t, webhookToken = null } = this.props;
 
-    return isSuperBlockPage ? (
+    return isChallengePage ? (
       <>
         {!webhookToken && (
           <div className='alert alert-info'>

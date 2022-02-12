@@ -23,7 +23,7 @@ myTest();
 console.log(loc);
 ```
 
-`myTest()` 関数の呼び出しでは、コンソールに文字列 `foo` が表示されます。 `console.log(loc)` の行はエラーをスローします。これは、関数の外側では `loc` が定義されていないためです。
+`myTest()` 関数の呼び出しでは、コンソールに文字列 `foo` が表示されます。 The `console.log(loc)` line (outside of the `myTest` function) will throw an error, as `loc` is not defined outside of the function.
 
 # --instructions--
 

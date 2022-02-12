@@ -24,7 +24,7 @@ type FormProps = {
   enableSubmit?: boolean;
   formFields: { name: string; label: string }[];
   hideButton?: boolean;
-  id?: string;
+  id: string;
   initialValues?: Record<string, unknown>;
   options: FormOptions;
   submit: (values: ValidatedValues, ...args: unknown[]) => void;
@@ -49,7 +49,6 @@ function DynamicForm({
     >
       {({ handleSubmit, pristine, error }) => (
         <form
-          // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
           id={`dynamic-${id}`}
           onSubmit={handleSubmit}
           style={{ width: '100%' }}

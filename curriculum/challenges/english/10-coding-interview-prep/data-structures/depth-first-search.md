@@ -49,6 +49,23 @@ assert.sameMembers(
 );
 ```
 
+The input graph `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]` with a start node of `3` should return an array with `3`, `2`, `1`, and `0`.
+
+```js
+assert.sameMembers(
+  (function () {
+    var graph = [
+      [0, 1, 0, 0],
+      [1, 0, 1, 0],
+      [0, 1, 0, 1],
+      [0, 0, 1, 0]
+    ];
+    return dfs(graph, 3);
+  })(),
+  [3, 2, 1, 0]
+);
+```
+
 The input graph `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]` with a start node of `1` should return an array with four elements.
 
 ```js
