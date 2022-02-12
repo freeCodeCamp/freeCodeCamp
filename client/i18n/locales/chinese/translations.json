@@ -64,7 +64,9 @@
     "go-to-next": "访问下一个挑战",
     "ask-later": "稍后问我",
     "start-coding": "开始编码！",
-    "go-to-settings": "Go to settings to claim your certification"
+    "go-to-settings": "Go to settings to claim your certification",
+    "click-start-course": "Click here to start the course",
+    "click-start-project": "Click here to start the project"
   },
   "landing": {
     "big-heading-1": "免费学习编程",
@@ -294,7 +296,13 @@
     },
     "help-translate": "我们仍然在翻译以下证书。",
     "help-translate-link": "帮助我们翻译。",
-    "project-preview-title": "下面是你将构建的项目的预览"
+    "project-preview-title": "下面是你将构建的项目的预览",
+    "github-required": "A <0>GitHub</0> account is required to run the project. You will need to create one if you haven't already.",
+    "step-1": "Step 1: Complete the project",
+    "step-2": "Step 2: Submit your code",
+    "submit-public-url": "When you have completed the project, save all the required files into a public repository and submit the URL to it below.",
+    "complete-both-steps": "Complete both steps below to finish the challenge.",
+    "runs-in-vm": "The project runs in a virtual machine, complete the user stories described in there and get all the tests to pass to finish step 1."
   },
   "donate": {
     "title": "支持我们的非营利组织",
@@ -449,7 +457,7 @@
     "magnifier": "放大镜"
   },
   "aria": {
-    "fcc-logo": "freeCodeCamp 徽标",
+    "fcc-curriculum": "freeCodeCamp Curriculum",
     "answer": "答案",
     "linkedin": "链接到 {{username}} 的 LinkedIn",
     "github": "链接到 {{username}} 的 GitHub",
@@ -512,7 +520,8 @@
     "create-token-err": "尝试创建令牌时出错",
     "delete-token-err": "尝试删除令牌时出错",
     "token-created": "你已成功创建了一个新令牌。",
-    "token-deleted": "你的令牌已被删除。"
+    "token-deleted": "你的令牌已被删除。",
+    "complete-project-first": "You must complete the project first."
   },
   "validation": {
     "max-characters": "字符数最多为 288 个，你还可以输入 {{charsLeft}} 个字符",

@@ -428,7 +428,7 @@
   "relational-databases": {
     "title": "关系型数据库",
     "intro": [
-      "For these courses, you will use real developer tools and software including VS Code, PostgreSQL, and the Linux / Unix command line to complete interactive tutorials and build projects.",
+      "对于这些课程，你将使用真正的开发者工具和软件，包括 VS Code、PostgreSQL 和 Linux / Unix 命令行，来完成交互式教程和构建项目。",
       "These courses start off with basic Bash commands. Using the terminal, you will learn everything from navigating and manipulating a file system, scripting in Bash, all the way to advanced usage.",
       "Next, you will learn how to create and work with relational databases using PostgreSQL, a database management system, and SQL, the language of these databases.",
       "Finally, you will learn Git, the version control system, an essential tool of every developer."
@@ -499,35 +499,35 @@
       "learn-git-by-building-an-sql-reference-object": {
         "title": "Learn Git by Building and SQL Reference Object",
         "intro": [
-          "Git is a version control system that keep track of all the changes you make to your codebase",
+          "Git is a version control system that keeps track of all the changes you make to your codebase.",
           "In this 240 lesson course, you will learn how Git keeps track of your code by creating an object containing commonly used SQL commands."
         ]
       },
       "learn-nano-by-building-a-castle": {
         "title": "Learn Nano by Building a Castle",
         "intro": [
-          "Nano is a program that allow you to edit files right in the terminal.",
+          "Nano is a program that allows you to edit files right in the terminal.",
           "In this 40 lesson course, you will learn how to edit files in the terminal with Nano while building a castle."
         ]
       },
       "learn-relational-databases-by-building-a-mario-database": {
         "title": "Learn Relational Databases by Building a Mario Database",
         "intro": [
-          "Relational Databases organize data into tables that are linked together through relationships.",
+          "Relational databases organize data into tables that are linked together through relationships.",
           "In this 165 lesson course, you will learn the basics of relational databases by creating a PostgreSQL database filled with video game characters."
         ]
       },
       "learn-sql-by-building-a-student-database-part-1": {
         "title": "Learn SQL by Building a Student Database: Part 1",
         "intro": [
-          "SQL, or Structured Query Language, is the language for communicating with Relational Databases.",
+          "SQL, or Structured Query Language, is the language for communicating with relational databases.",
           "In this 140 lesson course, you will create a Bash script that uses SQL to enter information about your computer science students into PostgreSQL."
         ]
       },
       "learn-sql-by-building-a-student-database-part-2": {
         "title": "Learn SQL by Building a Student Database: Part 2",
         "intro": [
-          "SQL Join commands are used to combine information from multiple tables in a Relational Database",
+          "SQL join commands are used to combine information from multiple tables in a relational database",
           "In this 140 lesson course, you will complete your student database while diving deeper into SQL commands."
         ]
       }
@@ -776,8 +776,8 @@
     "browse-other": "浏览我们的其他免费认证\n（我们建议你按顺序学习）",
     "courses": "课程",
     "steps": "步骤",
-    "expand": "Expand courses",
-    "collapse": "Collapse courses",
+    "expand": "Expand course",
+    "collapse": "Collapse course",
     "legacy-header": "Legacy Courses",
     "legacy-desc": "These courses are no longer part of the certification path, but are still available for you to further your learning.",
     "viewing-upcoming-change": "You are looking at a beta page. ",
