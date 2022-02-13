@@ -386,8 +386,4 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
 
 ShowCertification.displayName = 'ShowCertification';
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-)(ShowCertification as any);
+export default connect(mapStateToProps, mapDispatchToProps)(ShowCertification);

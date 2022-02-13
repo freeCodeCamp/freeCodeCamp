@@ -108,12 +108,10 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'freeCodeCamp',
-        /* eslint-disable camelcase */
         short_name: 'fCC',
         start_url: '/',
         theme_color: '#0a0a23',
         background_color: '#fff',
-        /* eslint-enable camelcase */
         display: 'minimal-ui',
         icon: 'src/assets/images/square_puck.png'
       }

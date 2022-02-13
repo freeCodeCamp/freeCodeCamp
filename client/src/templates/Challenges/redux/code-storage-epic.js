@@ -112,8 +112,7 @@ function saveCodeEpic(action$, state$) {
         createFlashMessage({
           type: error ? 'warning' : 'success',
           message: error
-            ? // eslint-disable-next-line max-len
-              "Oops, your code did not save, your browser's local storage may be full."
+            ? "Oops, your code did not save, your browser's local storage may be full."
             : "Saved! Your code was saved to your browser's local storage."
         })
       )

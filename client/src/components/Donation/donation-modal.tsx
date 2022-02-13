@@ -108,7 +108,6 @@ function DonateModal({
   const handleModalHide = () => {
     // If modal is open on a SuperBlock page
     if (isLocationSuperBlock(location)) {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       goToAnchor('claim-cert-block');
     }
   };
