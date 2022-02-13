@@ -7,7 +7,9 @@ dashedName: step-104
 
 # --description--
 
-Finally, calculate the `height` of the `.ground` element to be the height of the viewport minus the height of the `.penguin` element.
+Finally, calculate the `height` of the `.ground` element to be the height of the viewport minus the height of the `.penguin` element using `calc()`.
+
+The `calc()` function lets you perform calculations when specifying CSS property values, for example: `calc(100% - 80px);`
 
 Congratulations! You have completed the Responsive Web Design certification.
 
