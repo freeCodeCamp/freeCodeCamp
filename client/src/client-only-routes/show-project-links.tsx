@@ -32,6 +32,19 @@ const initSolutionState: SolutionState = {
   isOpen: false
 };
 
+export const _getDisplayType = (
+  { solution, githubLink, challengeFiles }: CompletedChallenge,
+  maybeUrl: RegExp
+) => {
+  if (challengeFiles?.length) return 'showJsSolution';
+  if (githubLink) return 'showProjectAndGitHubLinks';
+  if (maybeUrl.test(solution ?? '')) return 'showProjectLink';
+  return 'showJsSolution';
+};
+
+const getDisplayType = (args: CompletedChallenge) =>
+  _getDisplayType(args, maybeUrlRE);
+
 const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
   const [solutionState, setSolutionState] = useState(initSolutionState);
 
@@ -61,8 +74,8 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
         isOpen: true
       });
 
-    if (challengeFiles?.length) {
-      return (
+    const displayComponents = {
+      showJsSolution: (
         <button
           className='project-link-button-override'
           data-cy={`${projectTitle} solution`}
@@ -70,10 +83,8 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
         >
           {t('certification.project.solution')}
         </button>
-      );
-    }
-    if (githubLink) {
-      return (
+      ),
+      showProjectAndGitHubLinks: (
         <>
           <a href={solution ?? ''} rel='noopener noreferrer' target='_blank'>
             {t('certification.project.solution')}
@@ -83,10 +94,8 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
             {t('certification.project.source')}
           </a>
         </>
-      );
-    }
-    if (maybeUrlRE.test(solution ?? '')) {
-      return (
+      ),
+      showProjectLink: (
         <a
           className='btn-invert'
           href={solution ?? ''}
@@ -95,13 +104,10 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
         >
           {t('certification.project.solution')}
         </a>
-      );
-    }
-    return (
-      <button className='project-link-button-override' onClick={onClickHandler}>
-        {t('certification.project.solution')}
-      </button>
-    );
+      )
+    };
+
+    return displayComponents[getDisplayType(completedProject)];
   };
 
   const renderProjectsFor = (certName: string) => {
