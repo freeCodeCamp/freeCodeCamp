@@ -14,35 +14,9 @@ module.exports = function (app) {
   router.get('/u/:email', unsubscribeDeprecated);
   router.get('/unsubscribe/:email', unsubscribeDeprecated);
   router.get('/ue/:unsubscribeId', unsubscribeById);
-  router.get(
-    '/the-fastest-web-page-on-the-internet',
-    theFastestWebPageOnTheInternet
-  );
-  router.get('/unsubscribed/:unsubscribeId', unsubscribedWithId);
-  router.get('/unsubscribed', unsubscribed);
   router.get('/resubscribe/:unsubscribeId', resubscribe);
-  router.get('/nonprofits', nonprofits);
-  router.get('/coding-bootcamp-cost-calculator', bootcampCalculator);
 
   app.use(router);
-
-  function theFastestWebPageOnTheInternet(req, res) {
-    res.render('resources/the-fastest-web-page-on-the-internet', {
-      title: 'This is the fastest web page on the internet'
-    });
-  }
-
-  function bootcampCalculator(req, res) {
-    res.render('resources/calculator', {
-      title: 'Coding Bootcamp Cost Calculator'
-    });
-  }
-
-  function nonprofits(req, res) {
-    res.render('resources/nonprofits', {
-      title: 'Your Nonprofit Can Get Pro Bono Code'
-    });
-  }
 
   function unsubscribeDeprecated(req, res) {
     req.flash(
@@ -93,20 +67,6 @@ module.exports = function (app) {
           );
         })
         .catch(next);
-    });
-  }
-
-  function unsubscribed(req, res) {
-    res.render('resources/unsubscribed', {
-      title: 'You have been unsubscribed'
-    });
-  }
-
-  function unsubscribedWithId(req, res) {
-    const { unsubscribeId } = req.params;
-    return res.render('resources/unsubscribed', {
-      title: 'You have been unsubscribed',
-      unsubscribeId
     });
   }
 

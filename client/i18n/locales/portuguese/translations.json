@@ -64,7 +64,9 @@
     "go-to-next": "Ir para o próximo desafio",
     "ask-later": "Pergunte-me depois",
     "start-coding": "Comece a programar!",
-    "go-to-settings": "Vá para as configurações para solicitar sua certificação"
+    "go-to-settings": "Vá para as configurações para solicitar sua certificação",
+    "click-start-course": "Click here to start the course",
+    "click-start-project": "Click here to start the project"
   },
   "landing": {
     "big-heading-1": "Aprenda a programar — de graça.",
@@ -294,7 +296,13 @@
     },
     "help-translate": "Ainda estamos traduzindo as certificações a seguir.",
     "help-translate-link": "Ajude-nos a traduzir.",
-    "project-preview-title": "Aqui está uma prévia do que você vai criar"
+    "project-preview-title": "Aqui está uma prévia do que você vai criar",
+    "github-required": "A <0>GitHub</0> account is required to run the project. You will need to create one if you haven't already.",
+    "step-1": "Step 1: Complete the project",
+    "step-2": "Step 2: Submit your code",
+    "submit-public-url": "When you have completed the project, save all the required files into a public repository and submit the URL to it below.",
+    "complete-both-steps": "Complete both steps below to finish the challenge.",
+    "runs-in-vm": "The project runs in a virtual machine, complete the user stories described in there and get all the tests to pass to finish step 1."
   },
   "donate": {
     "title": "Dê seu apoio à nossa organização sem fins lucrativos",
@@ -418,7 +426,8 @@
     "email": "E-mail",
     "and": "e",
     "change-theme": "Faça login para mudar o tema.",
-    "translation-pending": "Ajude-nos a traduzir"
+    "translation-pending": "Ajude-nos a traduzir",
+    "certification-project": "Certification Project"
   },
   "icons": {
     "gold-cup": "Taça de ouro",
@@ -448,7 +457,7 @@
     "magnifier": "lupa"
   },
   "aria": {
-    "fcc-logo": "Logotipo do freeCodeCamp",
+    "fcc-curriculum": "freeCodeCamp Curriculum",
     "answer": "Resposta",
     "linkedin": "Link para o LinkedIn de {{username}}",
     "github": "Link para o GitHub de {{username}}",
@@ -511,7 +520,8 @@
     "create-token-err": "Ocorreu um erro ao tentar criar um token",
     "delete-token-err": "Ocorreu um erro ao tentar excluir seu token",
     "token-created": "Você criou com sucesso um novo token.",
-    "token-deleted": "Seu token foi excluído."
+    "token-deleted": "Seu token foi excluído.",
+    "complete-project-first": "You must complete the project first."
   },
   "validation": {
     "max-characters": "Há um limite máximo de 288 caracteres, você tem {{charsLeft}} restante(s)",

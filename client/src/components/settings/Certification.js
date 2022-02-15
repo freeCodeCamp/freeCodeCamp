@@ -11,6 +11,7 @@ import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
 import { createSelector } from 'reselect';
 
+import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 import {
   projectMap,
   legacyProjectMap
@@ -24,6 +25,8 @@ import { FullWidthRow, Spacer } from '../helpers';
 import SectionHeader from './section-header';
 
 import './certification.css';
+
+configureAnchors({ offset: -40, scrollDuration: 0 });
 
 const propTypes = {
   completedChallenges: PropTypes.arrayOf(
@@ -309,6 +312,7 @@ export class CertificationSettings extends Component {
               block={true}
               bsStyle='primary'
               href={certLocation}
+              data-cy={`btn-for-${certSlug}`}
               onClick={createClickHandler(certSlug)}
             >
               {isCert ? t('buttons.show-cert') : t('buttons.claim-cert')}
@@ -424,27 +428,29 @@ export class CertificationSettings extends Component {
 
     const { t } = this.props;
     return (
-      <section id='certification-settings'>
-        <SectionHeader>{t('settings.headings.certs')}</SectionHeader>
-        {certifications.map(certName =>
-          this.renderCertifications(certName, projectMap)
-        )}
-        <SectionHeader>{t('settings.headings.legacy-certs')}</SectionHeader>
-        {this.renderLegacyFullStack()}
-        {legacyCertifications.map(certName =>
-          this.renderCertifications(certName, legacyProjectMap)
-        )}
-        {isOpen ? (
-          <ProjectModal
-            challengeFiles={challengeFiles}
-            handleSolutionModalHide={this.handleSolutionModalHide}
-            isOpen={isOpen}
-            projectTitle={projectTitle}
-            solution={solution}
-            t={t}
-          />
-        ) : null}
-      </section>
+      <ScrollableAnchor id='certification-settings'>
+        <section className='certification-settings'>
+          <SectionHeader>{t('settings.headings.certs')}</SectionHeader>
+          {certifications.map(certName =>
+            this.renderCertifications(certName, projectMap)
+          )}
+          <SectionHeader>{t('settings.headings.legacy-certs')}</SectionHeader>
+          {this.renderLegacyFullStack()}
+          {legacyCertifications.map(certName =>
+            this.renderCertifications(certName, legacyProjectMap)
+          )}
+          {isOpen ? (
+            <ProjectModal
+              challengeFiles={challengeFiles}
+              handleSolutionModalHide={this.handleSolutionModalHide}
+              isOpen={isOpen}
+              projectTitle={projectTitle}
+              solution={solution}
+              t={t}
+            />
+          ) : null}
+        </section>
+      </ScrollableAnchor>
     );
   }
 }

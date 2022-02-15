@@ -117,32 +117,157 @@ Crowdin はドキュメントを翻訳可能な文字列 (通常は文単位) �
 
 > [!NOTE] コントリビューションドキュメントは `docsify` によって提供されており、このようなメッセージボックス用に特別な構文解析機能があります。 `[!NOTE]`、`[!WARNING]` または `[!TIP]` などで始まる文字列を見かけたら、これらの単語は翻訳しないようにしてください。
 
+## LearnToCode RPG の翻訳
+
+LearnToCode RPGはRen'Py上で動作します。Ren'Pyでは翻訳の際に独特の構文が使用されます([Ren'Py Text documentation](https://www.renpy.org/doc/html/text.html) を参照してください)。
+
+- `""`で囲まれた文章が翻訳対象です。 ダイアログまたはUI (ユーザーインターフェース) 文字列です。 ダイアログの前後に表示されるキーワードは、ゲームエンジンを制御するキーワードです。詳細は後続のルールにて説明します。 このルールは、後続で説明する全ルールの基本であり、最も重要です。
+- `new "..."` のように表示される場合、接頭辞 `new` の部分はキーワードなので翻訳しないでください。
+- `player`、`annika`、`layla`、`marco` が先頭にて付く用語 (`player happy` や `player @ happy` などの複合形も含む) は、翻訳しないでください。 これらは、ゲーム内のキャラクターのスプライトを正しく表示し制御するためのキーワードです。
+- `nointeract` のような接尾辞も翻訳しないでください。
+- `[]` と `{}` で囲まれた部分は翻訳しないでください。 これらは補間機能とテキストタグです。 半角の `[]` と `{}` は翻訳文章にも残し、全角の  `【】` や `「」`に置き換えることはしないでください。
+- 文末の `nointeract` キーワードは翻訳しないでください。
+- 全角括弧 `（）`を使用しようとすると、品質保証に関する警告が表示されます。 品質保証に関する警告を避けるためには、半角括弧 `()` を使用してください。
+
+### 例
+
+---
+
+#### 翻訳前
+
+```renpy
+# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
+"[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."  <--- こちらが翻訳を必要とする行です。 以下をご参照ください。
+```
+
+#### 翻訳後
+
+```renpy
+# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
+"[player_name]？好巧，我们的VIP队友{a=[vip_profile_url]}[player_name]{/a}会很高兴的。"
+```
+
+注: `[]` と `{}` タグは半角のまま残す必要があります。
+
+---
+
+#### 翻訳前
+
+```renpy
+old "{icon=icon-fast-forward} Skip"
+new "{icon=icon-fast-forward} Skip" <-- この行を翻訳します。以下をご参照ください。
+```
+
+#### 翻訳後
+
+```renpy
+old "{icon=icon-fast-forward} Skip"
+new "{icon=icon-fast-forward} 跳过"
+```
+
+注: 接頭辞 `new` と `{icon=icon-fast}` タグはそのまま残す必要があります。
+
+---
+
+#### 翻訳前
+
+```renpy
+# layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy your work as a developer."
+layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy your work as a developer."
+```
+
+#### 翻訳後
+
+```renpy
+# layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy your work as a developer."
+layla @ neutral "哈哈，[player_name]，你真有趣。我相信你一定会喜欢你的开发者工作的。"
+```
+
+注: `layla @ neutral` と `[player_name]` はそのまま残します。
+
+---
+
+#### 翻訳前
+
+```renpy
+# player "Maybe this is all a dream?" nointeract
+player "Maybe this is all a dream?" nointeract
+```
+
+#### 翻訳後
+
+```renpy
+# player "Maybe this is all a dream?" nointeract
+player "也许这都是一场梦？" nointeract
+```
+
+---
+
+### Crowdinでは文章をどのように分割するか
+
+Crowdinでは引用符 (`""`) で囲まれたダイアログ行をどのように分割するのでしょうか。 ダイアログを翻訳する際は、引用符の開始・終了が両方存在することを確認する必要があります。引用符が異なるセグメントに表示されたとしてもです
+
+以下は翻訳対象の行です。
+
+```renpy
+player @ surprised "{b}Full-stack{/b}... What is that? I better take notes so I can learn more about it."
+```
+
+Crowdinは以下のように、3つに分割します。
+
+<img width="836" alt="スクリーンショット 2022-01-23 (10 36 43)" src="https://user-images.githubusercontent.com/35674052/150693962-d3b091e5-2432-44d0-9d24-195ea7d7aeda.png" />
+
+```renpy
+# 原文
+player @ surprised "{b}Full-stack{/b}
+# 訳文。引用符の開始側 `"` は付与したまま
+player @ surprised "{b}全栈{/b}
+```
+
+<img width="750" alt="スクリーンショット 2022-01-23 (10 36 49)" src="https://user-images.githubusercontent.com/35674052/150693965-15411504-791a-4db3-8b14-bc9177be6375.png" />
+
+```renpy
+# 原文
+What is that?
+# 訳文。引用符はなし
+这是什么？
+```
+
+<img width="857" alt="スクリーンショット 2022-01-23 (10 36 54)" src="https://user-images.githubusercontent.com/35674052/150693969-062e3268-580f-4ad2-97db-cab6240b6095.png" />
+
+```renpy
+# 原文
+I better take notes so I can learn more about it."
+# 訳文。引用符の終了側 `"` は付与したまま
+我最好做笔记，这样我可以学习更多东西。"
+```
+
 ## 翻訳を評価する
 
-Crowdin では既に提出されている翻訳案を評価することができます。 翻訳内容を保存しようとした際、同じ翻訳は保存できないというメッセージが表示されることがあるかもしれません。これは、他のコントリビューターがすでに全く同じ翻訳を提案していることを意味しています。 その翻訳内容に賛成であれば `+` ボタンをクリックして賛成票を投じてください。
+Crowdin では既存の翻訳を評価することができます。 翻訳内容を保存しようとした際、同じ内容は保存できないとメッセージが出ることがあります。これは他の投稿者が提案した内容と全く同じであることを意味しています。 既存の翻訳に賛成であれば`+`ボタンを押して賛成票を投じてください。
 
-もし、不正確または元の文字列と同程度に明確でない翻訳案を見かけた場合、`-` ボタンをクリックして反対票を投じてください。
+もし、翻訳が不正確または原文の意味が正しく翻訳されていない既存訳を発見した場合は、`-` ボタンをクリックし反対票を投じて下さい。
 
-Crowdin はこれらの投票を元にそれぞれの翻訳案の点数を算出します。これは校正チームがどの翻訳案が最適かを決定するのに役立ちます。
+Crowdinはそれらの投票結果を元に各翻訳案の点数を算出し、校正チームがベストの翻訳文を決定する際に参照します。
 
 ## 品質保証チェック
 
-翻訳内容が可能な限り正確であることを確認するために、幾つかの品質保証のステップを設けています。これにより校正チームが翻訳案をレビューしやすくなります。
+翻訳内容が可能な限り正確であることを確認し、校正チームによる翻訳文レビューに役立てるため、品質保証ステップを設けています。
 
-翻訳内容を保存しようとした際、内容に対する警告文が表示されることがあります。
+翻訳内容を保存しようとする際、翻訳内容に対する警告文が表示されることがあります。
 
-![画像 - 品質保証用警告メッセージ](https://contribute.freecodecamp.org/images/crowdin/qa-message.png)
+![画像 - 品質保証に関する警告メッセージ](https://contribute.freecodecamp.org/images/crowdin/qa-message.png)
 
-このメッセージは、Crowdin の品質保証システムが翻訳案に潜在的なエラーを検出したときに表示されます。 上の例では、`<code>` タグ内のテキストが変更されており、Crowdin がそれを検出しました。
+このメッセージは、Crowdinの品質保証システムが投稿内容に間違いが含まれている可能性があると判断した場合に表示されます。 この例では `<code>` タグ内のテキストが翻訳され、Crowdinがそれを検出しました。
 
 > [!WARNING] エラーが検出されても翻訳内容を保存することは可能です。 「Save Anyway」をクリックして保存できますが、その場合は校正者かプロジェクトマネージャー宛てにコメントし、なぜ品質保証メッセージを無視する必要があったかを説明するようにしてください。
 
 ## 翻訳のベストプラクティス
 
-翻訳内容を可能な限り正確なものとするため、以下のガイドラインに従ってください。
+翻訳をできる限り正確なものとするため、以下のガイドラインに従って下さい。
 
-- `<code>` タグの中身は翻訳しないでください。 これらのタグはコード内のテキストを意味しており、英語のまま残しておかなければなりません。
-- コンテンツを追加しないでください。 もしコーディングチャレンジに対し、テキスト内容の変更や追加の情報が必要だと感じた場合、GitHub issue、または該当の英語ファイルを変更する pull request を通して変更を提案してください。
-- コンテンツの順番を変えないでください。
+- `<code>` タグの中身を翻訳しないでください。 これらのタグはコードの一部であり、英語のまま残しておかなければなりません。
+- コンテンツを追加しないで下さい。 チャレンジを翻訳する際、テキスト内容の変更や追加の情報が必要だと感じた場合は、GitHub Issue を通して提案するか、提案内容を反映した英語のファイルをプルリクエストして下さい。
+- コンテンツの順番を変えないで下さい。
 
-質問があれば、[contributors チャットルーム](https://chat.freecodecamp.org/channel/contributors)にてお気軽にお尋ねください。喜んでサポートいたします。
+質問があれば、[contributors チャットルーム](https://chat.freecodecamp.org/channel/contributors) にてお気軽にお尋ねください。喜んでサポートいたします。

@@ -11,7 +11,7 @@ dashedName: use-tabindex-to-add-keyboard-focus-to-an-element
 
 El atributo HTML `tabindex` tiene tres funciones distintas relacionadas con el foco del teclado de un elemento. Cuando está en una etiqueta, indica que se puede hacer foco en el elemento. El valor (un número entero que es positivo, negativo o cero) determina el comportamiento.
 
-Ciertos elementos, como los vínculos y los controles de formulario, reciben automáticamente el foco del teclado cuando un usuario pestañas a través de una página. Está en el mismo orden en que los elementos vienen en la fuente del lenguaje de marcado de HTML. Esta misma funcionalidad se puede dar a otros elementos, como `div`, `span` y `p`, colocando un atributo `tabindex="0"`. Aquí hay un ejemplo:
+Algunos elementos, como los enlaces y los controles de los formularios, reciben automáticamente el foco del teclado cuando un usuario tabula por una página. Está en el mismo orden en que los elementos vienen en la fuente del lenguaje de marcado de HTML. Esta misma funcionalidad se puede dar a otros elementos, como `div`, `span` y `p`, colocando un atributo `tabindex="0"`. Aquí hay un ejemplo:
 
 ```html
 <div tabindex="0">I need keyboard focus!</div>

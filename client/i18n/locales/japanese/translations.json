@@ -43,7 +43,7 @@
     "check-answer": "解答を確認",
     "get-hint": "ヒントを見る",
     "ask-for-help": "質問する",
-    "create-post": "ヘルプ投稿をフォーラムに作成",
+    "create-post": "フォーラムにヘルプ投稿を作成",
     "cancel": "キャンセル",
     "reset-lesson": "レッスンをリセット",
     "run": "実行",
@@ -51,7 +51,7 @@
     "reset": "リセット",
     "reset-code": "全てのコードをリセット",
     "help": "ヘルプ",
-    "get-help": "ヘルプを見る",
+    "get-help": "助けを求める",
     "watch-video": "動画を見る",
     "resubscribe": "ここをクリックして再購読できます",
     "click-here": "サインインするにはここをクリック",
@@ -64,14 +64,16 @@
     "go-to-next": "次のチャレンジに進む",
     "ask-later": "後で",
     "start-coding": "コーディングを始めましょう！",
-    "go-to-settings": "設定へ移動して認定証を取得"
+    "go-to-settings": "設定へ移動して認定証を取得",
+    "click-start-course": "Click here to start the course",
+    "click-start-project": "Click here to start the project"
   },
   "landing": {
-    "big-heading-1": "無料でプログラミングを学ぶ。",
-    "big-heading-2": "プロジェクトを作成する。",
+    "big-heading-1": "プログラミングを無料で学ぶ。",
+    "big-heading-2": "プロジェクトを完成させる。",
     "big-heading-3": "認定証を取得する。",
     "h2-heading": "2014 年以来、40,000 人以上の freeCodeCamp.org 卒業生が、以下を含むテック企業で仕事を得ています。",
-    "hero-img-description": "韓国のローカル勉強会での freeCodeCamp の学生。",
+    "hero-img-description": "韓国のローカル勉強会での freeCodeCamp 受講者",
     "as-seen-in": "下記で取り上げられました",
     "testimonials": {
       "heading": "freeCodeCamp に対する卒業生の声",
@@ -271,8 +273,8 @@
     "sign-in-save": "サインインして進行状況を保存",
     "download-solution": "回答をダウンロード",
     "percent-complete": "{{percent}}% 完了",
-    "tried-rsa": "もしすでに <0>Read-Search-Ask (読む - 検索する - 尋ねる)</0> メソッドを試したのならば、freeCodeCamp フォーラムで助けを求めることができます。",
-    "rsa": "読み (Read)、検索し (search)、尋ねる (ask)",
+    "tried-rsa": "<0>Read-Search-Ask (読む - 検索する - 質問する)</0> メソッドをもう試したなら、freeCodeCamp フォーラムで助けを求めることができます。",
+    "rsa": "読む (Read)、検索する (Search)、質問する (Ask)",
     "reset": "このレッスンをリセットしますか？",
     "reset-warn": "本当にこのレッスンをリセットしてもよろしいですか？エディターとテストがリセットされます。",
     "reset-warn-2": "この操作は取り消すことが出来ません",
@@ -294,15 +296,21 @@
     },
     "help-translate": "以下の認定講座は現在翻訳中です。",
     "help-translate-link": "翻訳にご協力ください。",
-    "project-preview-title": "あなたが作るもののプレビューはこちらです。"
+    "project-preview-title": "あなたが作るもののプレビューはこちらです。",
+    "github-required": "A <0>GitHub</0> account is required to run the project. You will need to create one if you haven't already.",
+    "step-1": "Step 1: Complete the project",
+    "step-2": "Step 2: Submit your code",
+    "submit-public-url": "When you have completed the project, save all the required files into a public repository and submit the URL to it below.",
+    "complete-both-steps": "Complete both steps below to finish the challenge.",
+    "runs-in-vm": "The project runs in a virtual machine, complete the user stories described in there and get all the tests to pass to finish step 1."
   },
   "donate": {
     "title": "非営利団体を支援する",
     "processing": "いただいたご寄付を処理中です。",
     "redirecting": "リダイレクト中...",
     "thanks": "ご寄付ありがとうございます",
-    "thank-you": "サポーターになっていただき、ありがとうございます。",
-    "thank-you-2": "freeCodeCamp のサポーターになっていただき、ありがとうございます。現在定期的な寄付をいただいております。",
+    "thank-you": "サポーターとなっていただき、ありがとうございます。",
+    "thank-you-2": "freeCodeCamp のサポーターとなっていただき、ありがとうございます。現在定期的なご寄付をいただいております。",
     "additional": "任意の金額を、追加で 1 回ずつご寄付いただくことができるリンクはこちら: <0>{{url}}</0>",
     "help-more": "私たちのさらなる活動をご支援ください",
     "error": "ご寄付の処理に問題が発生しました。",
@@ -355,8 +363,8 @@
     "how-efficient": "freeCodeCamp はどのくらい効率的なのでしょうか？",
     "fcc-budget": "freeCodeCamp の予算は、ほとんどの同規模の非営利団体と比べ非常に少ないです。私たちはプロの資金調達者に参加を依頼していません。代わりに、Quincy が自分自身ですべてを行っています。",
     "help-millions": "しかしながら、私たちは年間わずか数十万ドルの予算で、数百万の人々を支援することができています。",
-    "how-one-time": "どのようにして一回の寄付を行うことができますか？",
-    "one-time": "もし一回のご寄付をお考えでしたら、いつでも経済的なゆとりがある時に freeCodeCamp のミッションをご支援いただくことができます。<0>こちらのリンクから、PayPal を通して任意の金額を寄付することができます。</0>",
+    "how-one-time": "一回ずつ寄付を行うにはどうしたらいいですか？",
+    "one-time": "一回ずつのご寄付をご希望の場合、いつでも経済的なゆとりがある時に、freeCodeCamp のミッションをご支援いただくことができます。<0>こちらのリンクから、PayPal を通して任意の金額を寄付することができます。</0>",
     "wire-transfer": "電信送金で直接 freeCodeCamp へ送金することも可能です。電信送金の詳細が必要な場合、Quincy (quincy@freecodecamp.org) までメールにてご連絡ください。",
     "does-crypto": "freeCodeCamp では Bitcoin などの暗号通貨での寄付を受け付けていますか？",
     "yes-cryptocurrency": "はい。Quincy 宛てに quincy@freecodecamp.org までメールでお問い合わせいただければ、freeCodeCamp のウォレット情報をお知らせいたします。税金の手続きのため寄付金の領収書をご希望の場合も、Quincy にて対応いたします。",
@@ -418,7 +426,8 @@
     "email": "Eメール",
     "and": "および",
     "change-theme": "テーマを変更するにはサインインしてください。",
-    "translation-pending": "翻訳にご協力ください。"
+    "translation-pending": "翻訳にご協力ください。",
+    "certification-project": "認定プロジェクト"
   },
   "icons": {
     "gold-cup": "ゴールドカップ",
@@ -448,7 +457,7 @@
     "magnifier": "虫眼鏡"
   },
   "aria": {
-    "fcc-logo": "freeCodeCamp のロゴ",
+    "fcc-curriculum": "freeCodeCamp のカリキュラム",
     "answer": "回答",
     "linkedin": "{{username}} さんの LinkedIn へのリンク",
     "github": "{{username}} さんの GitHub へのリンク",
@@ -511,7 +520,8 @@
     "create-token-err": "トークンの作成中にエラーが発生しました",
     "delete-token-err": "トークンの削除中にエラーが発生しました",
     "token-created": "無事に新しいトークンを作成しました。",
-    "token-deleted": "トークンが削除されました。"
+    "token-deleted": "トークンが削除されました。",
+    "complete-project-first": "You must complete the project first."
   },
   "validation": {
     "max-characters": "上限は 288 文字です。残り {{charsLeft}} 文字です。",
@@ -634,8 +644,8 @@
     "camper-code": "**現状のあなたのコード**",
     "warning": "警告",
     "too-long-one": "チャレンジの元コードとあなたの解答の両方、またはいずれかが、チャレンジから移植できる最大長を超えています。",
-    "too-long-two": "記述したコードを読み易いフォーマットで表示するにはここで追加の手順が必要です。",
-    "too-long-three": "このリンクを開いた元のチャレンジの、エディター内に表示されているすべてのコードをコピー、貼り付けしてください。",
+    "too-long-two": "記述したコードを読み易いフォーマットで表示するには、ここで追加の手順が必要です。",
+    "too-long-three": "このリンクを開いた元のチャレンジの、エディター内に表示されているすべてのコードをコピーし、貼り付けてください。",
     "add-code-one": "この 2 つの文を、コピーしたコードと置き換えてください。",
     "add-code-two": "上の ``` と下の ``` の行を残しておくことで、",
     "add-code-three": "投稿内でコードが適切にフォーマットされますので、そのようにしてください。"

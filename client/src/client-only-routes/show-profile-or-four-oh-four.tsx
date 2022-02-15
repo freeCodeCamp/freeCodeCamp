@@ -85,15 +85,9 @@ class ShowProfileOrFourOhFour extends Component<ShowProfileOrFourOhFourProps> {
 
     // We have a response from the API, and we have some state in the
     // store for /:maybeUser, we now handover rendering to the Profile component
-    // eslint-disable-next-line
-    // @ts-ignore TODO: sort out whether user.portfolio is an array or obj. lit.
     return <Profile isSessionUser={isSessionUser} user={requestedUser} />;
   }
 }
-
-// eslint-disable-next-line
-// @ts-ignore
-ShowProfileOrFourOhFour.displayName = 'ShowProfileOrFourOhFour';
 
 export default connect(
   makeMapStateToProps,

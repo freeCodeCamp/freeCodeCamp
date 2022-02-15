@@ -4,24 +4,8 @@
     "client/plugins/**/*",
     "client/src/**/*",
     "client/utils/**/*",
-    "tools/challenge-helper-scripts/**/*",
-    "config/certification-settings.ts",
-    "config/i18n/**/*"
+    "tools/challenge-helper-scripts/**/*.ts",
+    "tools/scripts/**/*.ts"
   ],
-  "compilerOptions": {
-    "lib": ["WebWorker", "DOM", "DOM.Iterable"],
-    "target": "es2020",
-    "module": "es2020",
-    "moduleResolution": "node",
-    "allowJs": true,
-    "jsx": "react",
-    "strict": true,
-    "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "noEmit": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "types": ["node", "jest", "@testing-library/jest-dom"]
-  }
+  "extends": "./tsconfig-base.json"
 }

@@ -35,7 +35,7 @@ const schema = Joi.object()
     // TODO: require this only for normal challenges, not certs
     dashedName: Joi.string().regex(slugRE),
     description: Joi.when('challengeType', {
-      is: [challengeTypes.step, challengeTypes.video, challengeTypes.codeally],
+      is: [challengeTypes.step, challengeTypes.video],
       then: Joi.string().allow(''),
       otherwise: Joi.string().required()
     }),
@@ -46,7 +46,7 @@ const schema = Joi.object()
       'JavaScript',
       'HTML-CSS',
       'Python',
-      'Relational Databases'
+      'Backend Development'
     ),
     videoUrl: Joi.string().allow(''),
     forumTopicId: Joi.number(),
@@ -113,7 +113,7 @@ const schema = Joi.object()
     title: Joi.string().required(),
     translationPending: Joi.bool().required(),
     url: Joi.when('challengeType', {
-      is: challengeTypes.codeally,
+      is: [challengeTypes.codeAllyPractice, challengeTypes.codeAllyCert],
       then: Joi.string().required()
     }),
     usesMultifileEditor: Joi.boolean()

@@ -49,7 +49,24 @@ assert.sameMembers(
 );
 ```
 
-`1` を開始ノードとする入力グラフ `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]` は、4 つの要素を持つ配列を返す必要があります。
+The input graph `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]` with a start node of `3` should return an array with `3`, `2`, `1`, and `0`.
+
+```js
+assert.sameMembers(
+  (function () {
+    var graph = [
+      [0, 1, 0, 0],
+      [1, 0, 1, 0],
+      [0, 1, 0, 1],
+      [0, 0, 1, 0]
+    ];
+    return dfs(graph, 3);
+  })(),
+  [3, 2, 1, 0]
+);
+```
+
+The input graph `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]` with a start node of `1` should return an array with four elements.
 
 ```js
 assert(
@@ -65,7 +82,7 @@ assert(
 );
 ```
 
-`3` を開始ノードとする入力グラフ `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]` は、`3` を持つ配列を返す必要があります。
+The input graph `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]` with a start node of `3` should return an array with `3`.
 
 ```js
 assert.sameMembers(
@@ -82,7 +99,7 @@ assert.sameMembers(
 );
 ```
 
-`3` を開始ノードとする入力グラフ `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]` は、1 つの要素を持つ配列を返す必要があります。
+The input graph `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]` with a start node of `3` should return an array with one element.
 
 ```js
 assert(
@@ -98,7 +115,7 @@ assert(
 );
 ```
 
-`3` を開始ノードとする入力グラフ `[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]`は、`2` と `3` を持つ配列を返す必要があります。
+The input graph `[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]` with a start node of `3` should return an array with `2` and `3`.
 
 ```js
 assert.sameMembers(
@@ -115,7 +132,7 @@ assert.sameMembers(
 );
 ```
 
-`3` を開始ノードとする入力グラフ `[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]` は、2 つの要素を持つ配列を返す必要があります。
+The input graph `[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]` with a start node of `3` should return an array with two elements.
 
 ```js
 assert(
@@ -131,7 +148,7 @@ assert(
 );
 ```
 
-`0` を開始ノードとする入力グラフ `[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]` は、`0` と `1` を持つ配列を返す必要があります。
+The input graph `[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]` with a start node of `0` should return an array with `0` and `1`.
 
 ```js
 assert.sameMembers(
@@ -148,7 +165,7 @@ assert.sameMembers(
 );
 ```
 
-`0` を開始ノードとする入力グラフ `[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]` は、2 つの要素を持つ配列を返す必要があります。
+The input graph `[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]` with a start node of `0` should return an array with two elements.
 
 ```js
 assert(

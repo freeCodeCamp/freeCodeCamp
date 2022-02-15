@@ -8,44 +8,44 @@ dashedName: deepcopy
 
 # --description--
 
-Write a function that returns a deep copy of a given object. The copy must not be the same object that was given.
+Scrivi una funzione che restituisce una copia profonda di un dato oggetto. La copia non deve essere lo stesso oggetto che è stato dato.
 
-This task will not test for:
+Questa sfida non testa per:
 
 <ul>
-  <li>Objects with properties that are functions</li>
-  <li>Date objects or object with properties that are Date objects</li>
-  <li>RegEx or object with properties that are RegEx objects</li>
-  <li>Prototype copying</li>
+  <li>Oggetti con proprietà che sono funzioni</li>
+  <li>Oggetti Date o oggetti con proprietà che sono oggetti Date</li>
+  <li>RegEx o oggetti con proprietà che sono RegEx</li>
+  <li>Copiamento del prototype</li>
 </ul>
 
 # --hints--
 
-`deepcopy` should be a function.
+`deepcopy` dovrebbe essere una funzione.
 
 ```js
 assert(typeof deepcopy === 'function');
 ```
 
-`deepcopy({test: "test"})` should return an object.
+`deepcopy({test: "test"})` dovrebbe restituire un oggetto.
 
 ```js
 assert(typeof deepcopy(obj1) === 'object');
 ```
 
-`deepcopy` should not return the same object that was provided.
+`deepcopy` non dovrebbe restituire lo stesso oggetto dato.
 
 ```js
 assert(deepcopy(obj2) != obj2);
 ```
 
-When passed an object containing an array, `deepcopy` should return a deep copy of the object.
+Quando gli viene dato un oggetto contenente un array, `deepcopy` dovrebbe restituire una copia profonda dell'oggetto.
 
 ```js
 assert.deepEqual(deepcopy(obj2), obj2);
 ```
 
-When passed an object containing another object, `deepcopy`  should return a deep copy of the object.
+Quando gli viene dato un oggetto contenente un altro oggetto, `deepcopy` dovrebbe restituire una copia profonda dell'oggetto.
 
 ```js
 assert.deepEqual(deepcopy(obj3), obj3);

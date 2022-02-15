@@ -1,5 +1,5 @@
 ---
-id: 60a3e3396c7b40068ad69992
+id: 60a3e3396c7b40068ad69993
 title: Step 41
 challengeType: 0
 dashedName: step-41
@@ -7,24 +7,22 @@ dashedName: step-41
 
 # --description--
 
-The corners of each rectangle are still too sharp.
-
-Round each corner of the `.one` element by 9 pixels, using the `border-radius` property.
+Use the `border-radius` property on the `.two` selector, to set its top-left and bottom-right radii to `8px`, and top-right and bottom-left radii to `10px`.
 
 # --hints--
 
-You should set the `border-radius` property to `9px`.
+You should set the `border-radius` property to `8px 10px`.
 
 ```js
-const hasBorderRadius = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['border-radius'] === '9px');
+const hasBorderRadius = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['border-radius'] === '8px 10px');
 assert(hasBorderRadius);
 ```
 
-Your `.one` element should have a `border-radius` value of `9px`.
+Your `.two` element should have a `border-radius` value of `8px 10px`.
 
 ```js
-const oneBorderRadius =new __helpers.CSSHelp(document).getStyle('.one')?.getPropertyValue('border-radius');
-assert(oneBorderRadius === '9px');
+const twoBorderRadius = new __helpers.CSSHelp(document).getStyle('.two')?.getPropertyValue('border-radius');
+assert(twoBorderRadius === '8px 10px');
 ```
 
 # --seed--
@@ -51,11 +49,9 @@ assert(oneBorderRadius === '9px');
   width: 425px;
   height: 150px;
   background-color: #efb762;
-  margin: 20px auto 20px;
+  margin: 20px auto;
   box-shadow: 0 0 3px 3px #efb762;
---fcc-editable-region--
-
---fcc-editable-region--
+  border-radius: 9px;
 }
 
 .two {
@@ -64,6 +60,9 @@ assert(oneBorderRadius === '9px');
   background-color: #8f0401;
   margin: 0 auto 20px;
   box-shadow: 0 0 3px 3px #8f0401;
+--fcc-editable-region--
+
+--fcc-editable-region--
 }
 
 .one, .two {

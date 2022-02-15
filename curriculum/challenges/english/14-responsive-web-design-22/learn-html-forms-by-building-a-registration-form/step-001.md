@@ -35,6 +35,12 @@ You should close the `DOCTYPE` declaration with a `>` after the type.
 assert(code.match(/html\s*>/gi));
 ```
 
+Your `DOCTYPE` declaration should be at the beginning of your HTML.
+
+```js
+assert(__helpers.removeHtmlComments(code).match(/^\s*<!DOCTYPE\s+html\s*>/i));
+```
+
 # --seed--
 
 ## --seed-contents--

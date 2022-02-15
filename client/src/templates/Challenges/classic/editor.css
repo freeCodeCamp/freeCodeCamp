@@ -45,6 +45,15 @@
   max-width: 700px;
 }
 
+.description-container h1 {
+  color: var(--secondary-color);
+  font-family: Roboto Mono, monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 0.6rem;
+}
+
 .description-highlighter {
   background-color: var(--secondary-background);
   opacity: 1;

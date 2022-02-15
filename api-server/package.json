@@ -60,7 +60,7 @@
     "moment-timezone": "^0.5.33",
     "mongodb": "^3.6.9",
     "morgan": "^1.10.0",
-    "nanoid": "^1.3.4",
+    "nanoid": "^3.2.0",
     "nodemailer-ses-transport": "^1.5.1",
     "passport": "^0.4.1",
     "passport-auth0": "^1.4.1",

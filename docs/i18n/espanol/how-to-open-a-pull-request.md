@@ -33,7 +33,7 @@ Puede seleccionar un ámbito de [esta lista de etiquetas](https://github.com/fre
 
 Mantenlo corto (menos de 30 caracteres) y sencillo, puedes agregar más información en la caja de descripción del PR y comentarios.
 
-Algunos ejemplos de buenos títulos para PRs serían:
+Some examples of good PR titles would be:
 
 - `fix(a11y): contraste mejorado en la barra de búsqueda`
 - `feat: se agregan más test a los retos de HTML y CSS`
@@ -44,7 +44,7 @@ Algunos ejemplos de buenos títulos para PRs serían:
 
 1. Una vez que las ediciones hayan sido confirmadas, se le pedirá que cree un pull request en la página de GitHub de su fork.
 
-   ![Imagen - Comparar solicitud de pull en GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
+   ![Image - Compare & pull request prompt on GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
 
 2. De manera predeterminada, todas las pull requests deben estar en contra de la rama freeCodeCamp main repo, `main`.
 

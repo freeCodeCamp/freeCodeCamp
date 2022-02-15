@@ -91,6 +91,13 @@
   padding: 0px 3px;
 }
 
+.title-text h1 {
+  font-size: inherit;
+  line-height: 1.42857143;
+  margin: 0;
+  display: inline;
+}
+
 .title-translation-cta {
   display: flex;
   flex-direction: row;

@@ -42,13 +42,13 @@ class EditorTabs extends Component<EditorTabsProps> {
         {sortChallengeFiles(challengeFiles).map(
           (challengeFile: ChallengeFile) => (
             <button
-              aria-selected={visibleEditors[challengeFile.fileKey]}
+              aria-expanded={visibleEditors[challengeFile.fileKey] ?? 'false'}
               className='monaco-editor-tab'
               key={challengeFile.fileKey}
               onClick={() => toggleVisibleEditor(challengeFile.fileKey)}
-              role='tab'
             >
-              {challengeFile.path}
+              {`${challengeFile.name}.${challengeFile.ext}`}{' '}
+              <span className='sr-only'>editor</span>
             </button>
           )
         )}

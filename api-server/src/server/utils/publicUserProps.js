@@ -32,6 +32,7 @@ export const publicUserProps = [
   'linkedin',
   'location',
   'name',
+  'partiallyCompletedChallenges',
   'points',
   'portfolio',
   'profileUI',

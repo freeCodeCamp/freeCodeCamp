@@ -15,13 +15,13 @@ You should create a new `p` element below your element with the `Total Fat` text
 
 ```js
 assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.localName === 'p');
-assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.previousElementSibling?.innerText.match(/Total Fat 8g[\s|\n]+10%/));
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.previousElementSibling?.innerText.match(/Total Fat 8g\s*10%/));
 ```
 
 Your new `p` element should have the text `Saturated Fat 1g 5%`.
 
 ```js
-assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.innerText.match(/Saturated Fat 1g[\s|\n]+5%/));
+assert(document.querySelector('.daily-value.sm-text')?.lastElementChild?.innerText.match(/Saturated Fat 1g\s*5%/));
 ```
 
 Your new `p` element should have a `span` element.
