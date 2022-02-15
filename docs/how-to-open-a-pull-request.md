@@ -34,7 +34,7 @@ You can select a scope from [this list of labels](https://github.com/freeCodeCam
 
 Keep it short (less than 30 characters) and simple, you can add more information in the PR description box and comments.
 
-Some examples of good PRs titles would be:
+Some examples of good PR titles would be:
 
 - `fix(a11y): improved search bar contrast`
 - `feat: add more tests to HTML and CSS challenges`

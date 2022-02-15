@@ -61,9 +61,12 @@ export const runTestInTestFrame = async function (document, test, timeout) {
   ]);
 };
 
-const createFrame = (document, id) => ctx => {
+const createFrame = (document, id, title) => ctx => {
   const frame = document.createElement('iframe');
   frame.id = id;
+  if (typeof title === 'string') {
+    frame.title = title;
+  }
   return {
     ...ctx,
     element: frame
@@ -108,15 +111,13 @@ const initTestFrame = frameReady => ctx => {
   waitForFrame(ctx)
     .then(async () => {
       const { sources, loadEnzyme } = ctx;
-      // default for classic challenges
-      // should not be used for modern
-      const code = {
-        contents: sources.index,
-        editableContents: sources.editableContents
-      };
       // provide the file name and get the original source
       const getUserInput = fileName => toString(sources[fileName]);
-      await ctx.document.__initTestFrame({ code, getUserInput, loadEnzyme });
+      await ctx.document.__initTestFrame({
+        code: sources,
+        getUserInput,
+        loadEnzyme
+      });
       frameReady();
     })
     .catch(handleDocumentNotFound);
@@ -182,17 +183,38 @@ const writeContentToFrame = ctx => {
 };
 
 export const createMainPreviewFramer = (document, proxyLogger) =>
-  createFramer(document, mainPreviewId, initMainFrame, proxyLogger);
+  createFramer(
+    document,
+    mainPreviewId,
+    initMainFrame,
+    proxyLogger,
+    undefined,
+    'preview'
+  );
 
-export const createProjectPreviewFramer = document =>
-  createFramer(document, projectPreviewId, initPreviewFrame);
+export const createProjectPreviewFramer = (document, frameTitle) =>
+  createFramer(
+    document,
+    projectPreviewId,
+    initPreviewFrame,
+    undefined,
+    undefined,
+    frameTitle
+  );
 
 export const createTestFramer = (document, proxyLogger, frameReady) =>
   createFramer(document, testId, initTestFrame, proxyLogger, frameReady);
 
-const createFramer = (document, id, init, proxyLogger, frameReady) =>
+const createFramer = (
+  document,
+  id,
+  init,
+  proxyLogger,
+  frameReady,
+  frameTitle
+) =>
   flow(
-    createFrame(document, id),
+    createFrame(document, id, frameTitle),
     mountFrame(document, id),
     buildProxyConsole(proxyLogger),
     writeContentToFrame,

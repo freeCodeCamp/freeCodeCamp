@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/unbound-method */
 import type { Token } from '@stripe/stripe-js';
 import React, { Component } from 'react';

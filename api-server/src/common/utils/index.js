@@ -20,3 +20,6 @@ export const fixCompletedChallengeItem = obj =>
     'files',
     'isManuallyApproved'
   ]);
+
+export const fixPartiallyCompletedChallengeItem = obj =>
+  pick(obj, ['id', 'completedDate']);

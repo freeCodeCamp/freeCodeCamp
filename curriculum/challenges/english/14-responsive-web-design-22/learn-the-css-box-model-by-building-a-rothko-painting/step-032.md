@@ -1,5 +1,5 @@
 ---
-id: 60a3e3396c7b40068ad69989
+id: 60a3e3396c7b40068ad6998a
 title: Step 32
 challengeType: 0
 dashedName: step-32
@@ -7,22 +7,22 @@ dashedName: step-32
 
 # --description--
 
-Change the `background-color` of `.three` to `#b20403`.
+Center the `.three` element on the canvas by setting its `margin` to `auto`.
 
 # --hints--
 
-You should set the `background-color` property to `#b20403`.
+You should set the `margin` property to `auto`.
 
 ```js
-const hasBackground = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['background-color'] === 'rgb(178, 4, 3)');
-assert(hasBackground);
+const marginFilter = new __helpers.CSSHelp(document).getCSSRules().filter(x => x.style.margin === 'auto');
+assert(marginFilter.length === 2);
 ```
 
-Your `.three` element should have a `background-color` value of `#b20403`.
+Your `.three` element should have a `margin` value of `auto`.
 
 ```js
-const threeBackground = new __helpers.CSSHelp(document).getStyle('.three')?.getPropertyValue('background-color');
-assert(threeBackground === 'rgb(178, 4, 3)');
+const threeMargin = new __helpers.CSSHelp(document).getStyle('.three')?.getPropertyValue('margin');
+assert(threeMargin === 'auto');
 ```
 
 # --seed--
@@ -48,7 +48,7 @@ assert(threeBackground === 'rgb(178, 4, 3)');
   width: 425px;
   height: 150px;
   background-color: #efb762;
-  margin: 20px auto 20px;
+  margin: 20px auto;
 }
 
 .two {
@@ -61,6 +61,7 @@ assert(threeBackground === 'rgb(178, 4, 3)');
 .three {
   width: 91%;
   height: 28%;
+  background-color: #b20403;
 --fcc-editable-region--
 
 --fcc-editable-region--

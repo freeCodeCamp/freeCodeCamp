@@ -70,7 +70,6 @@ export function SidePanel({
     <div
       className='instructions-panel'
       ref={instructionsPanelRef}
-      role='complementary'
       tabIndex={-1}
     >
       {challengeTitle}

@@ -21,11 +21,11 @@ dashedName: link-to-internal-sections-of-a-page-with-anchor-elements
 <h2 id="contacts-header">Contacts</h2>
 ```
 
-当用户点击 `Contacts` 链接，可以访问网页中带有 **Contacts** 标题元素的部分。
+当用户点击 `Contacts` 链接时，他们将被带到带有 **Contacts** 标题元素的网页部分。
 
 # --instructions--
 
-通过修改 `href` 属性值为 `"#footer"`，同时修改文本 `cat photos` 为 `Jump to Bottom`，来更改外部链接为内部链接。
+通过修改 `href` 属性值为 `#footer`，同时修改文本 `cat photos` 为 `Jump to Bottom`，来更改外部链接为内部链接。
 
 从锚点标签中删除 `target="_blank"` 属性，因为这会导致链接文档在新窗口标签中打开。
 

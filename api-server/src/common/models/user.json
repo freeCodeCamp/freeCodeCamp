@@ -236,6 +236,15 @@
       ],
       "default": []
     },
+    "partiallyCompletedChallenges": {
+      "type": [
+        {
+          "completedDate": "number",
+          "id": "string"
+        }
+      ],
+      "default": []
+    },
     "portfolio": {
       "type": "array",
       "default": []

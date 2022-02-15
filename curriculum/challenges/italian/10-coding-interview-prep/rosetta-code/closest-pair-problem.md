@@ -1,6 +1,6 @@
 ---
 id: 5951a53863c8a34f02bf1bdc
-title: Closest-pair problem
+title: Problema della coppia più vicina
 challengeType: 5
 forumTopicId: 302232
 dashedName: closest-pair-problem
@@ -8,11 +8,11 @@ dashedName: closest-pair-problem
 
 # --description--
 
-Provide a function to find the closest two points among a set of given points in two dimensions.
+Crea una funzione che trova i due punti più vicini tra quelli in un set di punti in due dimensioni.
 
-The straightforward solution is a $O(n^2)$ algorithm (which we can call *brute-force algorithm*); the pseudo-code (using indexes) could be simply:
+La soluzione diretta è un algoritmo $O(n^2)$ (che possiamo chiamare *algoritmo a forza bruta* (brute-force)); lo pseudo-codice (usando indici) potrebbe essere semplicemente:
 
-<pre><strong>bruteForceClosestPair</strong> of P(1), P(2), ... P(N)
+<pre><strong>bruteForceClosestPair</strong> di P(1), P(2), ... P(N)
 <strong>if</strong> N &#x3C; 2 <strong>then</strong>
   <strong>return</strong> ∞
 <strong>else</strong>
@@ -30,7 +30,7 @@ The straightforward solution is a $O(n^2)$ algorithm (which we can call *brute-f
 <strong>endif</strong>
 </pre>
 
-A better algorithm is based on the recursive divide and conquer approach, which is $O(n\log n)$ a pseudo-code could be:
+Un algoritmo migliore è basato sull'approccio ricorsivo dividi e conquista, che è $O(n\log n)$, uno pseudocodice potrebbe essere:
 
 <pre><strong>closestPair</strong> of (xP, yP)
   where xP is P(1) .. P(N) sorted by x coordinate, and
@@ -65,9 +65,9 @@ A better algorithm is based on the recursive divide and conquer approach, which 
 <strong>endif</strong>
 </pre>
 
-For the input, expect the argument to be an array of `Point` objects with `x` and `y` members set to numbers. Return an object containing the key:value pairs for `distance` and `pair` (the pair of two closest points).
+Per l'input, aspettati che l'argomento sia un array di oggetti `Point` con i membri `x` e `y` impostati come numeri. Restituisci un oggetto contenete le coppie chiave-valore per `distance` e `pair` (la coppia dei due punti più vicini).
 
-For example `getClosestPair` with input array `points`:
+Per esempio `getClosestPair` con input array `points`:
 
 ```js
 const points = [
@@ -77,7 +77,7 @@ const points = [
 ];
 ```
 
-Would return:
+Restituirebbe:
 
 ```js
 {
@@ -95,24 +95,24 @@ Would return:
 }
 ```
 
-**Note:** Sort the `pair` array by their `x` values in incrementing order.
+**Nota:** Ordina l'array `pair` secondo i valori `x` in ordine crescente.
 
 
 # --hints--
 
-`getClosestPair` should be a function.
+`getClosestPair` dovrebbe essere una funzione.
 
 ```js
 assert(typeof getClosestPair === 'function');
 ```
 
-`getClosestPair(points1).distance` should be `0.0894096443343775`.
+`getClosestPair(points1).distance` dovrebbe essere `0.0894096443343775`.
 
 ```js
 assert.equal(getClosestPair(points1).distance, answer1.distance);
 ```
 
-`getClosestPair(points1).pair` should be `[ { x: 7.46489, y: 4.6268 }, { x: 7.46911, y: 4.71611 } ]`.
+`getClosestPair(points1).pair` dovrebbe essere `[ { x: 7.46489, y: 4.6268 }, { x: 7.46911, y: 4.71611 } ]`.
 
 ```js
 assert.deepEqual(
@@ -121,13 +121,13 @@ assert.deepEqual(
 );
 ```
 
-`getClosestPair(points2).distance` should be `65.06919393998976`.
+`getClosestPair(points2).distance` dovrebbe essere `65.06919393998976`.
 
 ```js
 assert.equal(getClosestPair(points2).distance, answer2.distance);
 ```
 
-`getClosestPair(points2).pair` should be `[ { x: 37134, y: 1963 }, { x: 37181, y: 2008 } ]`.
+`getClosestPair(points2).pair` dovrebbe essere `[ { x: 37134, y: 1963 }, { x: 37181, y: 2008 } ]`.
 
 ```js
 assert.deepEqual(
@@ -136,13 +136,13 @@ assert.deepEqual(
 );
 ```
 
-`getClosestPair(points3).distance` should be `6754.625082119658`.
+`getClosestPair(points3).distance` dovrebbe essere `6754.625082119658`.
 
 ```js
 assert.equal(getClosestPair(points3).distance, answer3.distance);
 ```
 
-`getClosestPair(points3).pair` should be `[ { x: 46817, y: 64975 }, { x: 48953, y: 58567 } ]`.
+`getClosestPair(points3).pair` dovrebbe essere `[ { x: 46817, y: 64975 }, { x: 48953, y: 58567 } ]`.
 
 ```js
 assert.deepEqual(

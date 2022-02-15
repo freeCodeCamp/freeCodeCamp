@@ -64,7 +64,9 @@
     "go-to-next": "Go to next challenge",
     "ask-later": "Ask me later",
     "start-coding": "Start coding!",
-    "go-to-settings": "Go to settings to claim your certification"
+    "go-to-settings": "Go to settings to claim your certification",
+    "click-start-course": "Click here to start the course",
+    "click-start-project": "Click here to start the project"
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
@@ -294,7 +296,13 @@
     },
     "help-translate": "We are still translating the following certifications.",
     "help-translate-link": "Help us translate.",
-    "project-preview-title": "Here's a preview of what you will build"
+    "project-preview-title": "Here's a preview of what you will build",
+    "github-required": "A <0>GitHub</0> account is required to run the project. You will need to create one if you haven't already.",
+    "step-1": "Step 1: Complete the project",
+    "step-2": "Step 2: Submit your code",
+    "submit-public-url": "When you have completed the project, save all the required files into a public repository and submit the URL to it below.",
+    "complete-both-steps": "Complete both steps below to finish the challenge.",
+    "runs-in-vm": "The project runs in a virtual machine, complete the user stories described in there and get all the tests to pass to finish step 1."
   },
   "donate": {
     "title": "Support our nonprofit",
@@ -418,7 +426,8 @@
     "email": "Email",
     "and": "and",
     "change-theme": "Sign in to change theme.",
-    "translation-pending": "Help us translate"
+    "translation-pending": "Help us translate",
+    "certification-project": "Certification Project"
   },
   "icons": {
     "gold-cup": "Gold Cup",
@@ -448,7 +457,7 @@
     "magnifier": "magnifier"
   },
   "aria": {
-    "fcc-logo": "freeCodeCamp Logo",
+    "fcc-curriculum": "freeCodeCamp Curriculum",
     "answer": "Answer",
     "linkedin": "Link to {{username}}'s LinkedIn",
     "github": "Link to {{username}}'s GitHub",
@@ -457,7 +466,9 @@
     "first-page": "Go to first page",
     "previous-page": "Go to previous page",
     "next-page": "Go to next page",
-    "last-page": "Go to last page"
+    "last-page": "Go to last page",
+    "primary-nav": "primary",
+    "breadcrumb-nav": "breadcrumb"
   },
   "flash": {
     "honest-first": "To claim a certification, you must first accept our academic honesty policy",
@@ -511,7 +522,8 @@
     "create-token-err": "An error occurred trying to create a token",
     "delete-token-err": "An error occurred trying to delete your token",
     "token-created": "You have successfully created a new token.",
-    "token-deleted": "Your token has been deleted."
+    "token-deleted": "Your token has been deleted.",
+    "complete-project-first": "You must complete the project first."
   },
   "validation": {
     "max-characters": "There is a maximum limit of 288 characters, you have {{charsLeft}} left",

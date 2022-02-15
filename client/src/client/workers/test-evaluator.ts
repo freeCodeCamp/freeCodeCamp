@@ -63,6 +63,7 @@ interface TestEvaluatorEvent extends MessageEvent {
     code: {
       contents: string;
       editableContents: string;
+      original: { [id: string]: string };
     };
     removeComments: boolean;
     firstTest: unknown;

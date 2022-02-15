@@ -1,130 +1,130 @@
-This page describes how to contribute to the freeCodeCamp tutorials and projects that are completed using the CodeRoad VS Code extension.
+このページでは、CodeRoad VS Code 拡張機能を使用して作成された freeCodeCamp チュートリアルやプロジェクトに貢献する方法を説明します。
 
-## How the tutorials work
+## チュートリアルの仕組み
 
-The freeCodeCamp tutorials that use CodeRoad each have their own repo under the freeCodeCamp GitHub organization. They all start with `learn-`. For example, `https://github.com/freeCodeCamp/learn-bash-by-building-a-boilerplate/`.
+CodeRoad を使用している freeCodeCamp チュートリアルは、それぞれ freeCodeCamp GitHub 組織 の下に独自のリポジトリを持っています。 それらはすべて `learn-` から始まります。 例えば、`https://github.com/freeCodeCamp/learn-bash-by-building-a-boilerplate/` です。
 
-Each tutorial repo has a `main` branch and a "version" branch, e.g. `v1.0.0`.
+各チュートリアルリポジトリには、`main` ブランチと「バージョン」ブランチがあります。例えば、 `v1.0.0` です。
 
-The two main files on the `main` branch are `TUTORIAL.md` and `coderoad.yaml`. `TUTORIAL.md` contains all the instructions, hints, titles, and so on, for the tutorial. `coderoad.yaml` contains instructions for CodeRoad, such as what commands to run and when, what files to watch for changes, and what version branch to use for the steps.
+`main` ブランチには、`TUTORIAL.md` と `coderoad.yaml` 2 つのメインファイルがあります。 `TUTORIAL.md` には、チュートリアルのすべての手順、ヒント、タイトルなどが含まれています。 `coderoad.yaml` には、どのコマンドを実行するか、どのファイルの変更を監視するか、どのブランチバージョンをステップに使用するかなど CodeRoad に対する指示が含まれています。
 
-The "version" branch contains the commits that will be loaded on each step of a tutorial. The commit messages on this branch have to be specific. The first commit needs `INIT` for its message and contains all the files to load before the first lesson.
+「バージョン」ブランチには、チュートリアルの各ステップにロードされるコミットが含まれています。 このブランチのコミットメッセージは特定のものでなければなりません。 最初のコミットには、メッセージに `INIT` が必要であり、初回レッスン前にロードするファイルがすべて含まれています。
 
-Subsequent commit messages have to match the step number in `TUTORIAL.md` from the `main` branch. For example, the commit with the message `10.1` will be loaded when a user goes to step `10.1`.
+後続のコミットメッセージは、`main` ブランチの `TUTORIAL.md` のステップ数と一致する必要があります。 例えば、ユーザーがステップ `10.1` に行くと、メッセージ `10.1` を含むコミットがロードされます。
 
-In order to make changes to commits on a version branch, you would need to rebase and edit the commits you want to change. This will rewrite the Git history, so we cannot accept PRs to these types of branches. Once a version branch is on the freeCodeCamp repo, it should never change.
+バージョンブランチでコミットに変更を加えるには、変更したいコミットをリベースして編集する必要があります。 これにより Git の履歴が書き換えられるので、これらの種類のブランチには PR を受け入れられません。 バージョンブランチが freeCodeCamp リポジトリ上にある場合は、変更しないでください。
 
 > [!WARNING]
 > 
-> Never make or push changes to a version branch that is on one of the freeCodeCamp repos. Always create a new one
+> freeCodeCamp リポジトリにあるバージョンブランチに、変更を加えたりプッシュしたりしないでください。 常に新しいものを作成してください。
 
-## How to contribute
+## 貢献する方法
 
-### Prerequisites
+### 必要条件
 
-Install the [CodeRoad CLI tools](https://www.npmjs.com/package/@coderoad/cli) with `npm install -g @coderoad/cli`.
+[CodeRoad CLI ツール](https://www.npmjs.com/package/@coderoad/cli) を `npm install -g @coderoad/cli` でインストールします。
 
-There have been some issues with the latest version. If `coderoad --version` doesn't work after installing, downgrade to `0.7.0` with `npm install -g @coderoad/cli@0.7.0`.
+最新バージョンにはいくつかの問題があります。 `coderoad --version` がインストール後に動作しない場合は、`npm install -g @coderoad/cli@0.7.0` を使用して `0.7.0` にダウングレードしてください。
 
-### Working on `main`
+### `main` に貢献する
 
-This set of instructions is for PRs that only make minor changes on `main` to **existing lessons**. That mainly consists of typo, grammar, hint, and instructional changes or fixes in the `TUTORIAL.md` file.
+この一連の手順は、`main` で **既存のレッスン** に軽微な変更を加える PR のためのものです。 これは主に `TUTORIAL.md` ファイルのタイプミス、文法、ヒント、指示の変更または修正で構成されています。
 
-For everything else, including adding or deleting lessons, follow the [working on a version branch instructions](#working-on-version-branch). You will not need to create a new version branch for this - you can create a PR following the instructions below.
+レッスンの追加や削除を含むその他すべてについては、[バージョンブランチの手順](#working-on-version-branch) に従ってください。 このために新しいバージョンブランチを作成する必要はありません。以下の手順に従って PR を作成できます。
 
 > [!NOTE]
 > 
-> These changes will use the existing version branch. If they are substantial, feel free to add them to `CHANGELOG.md`. Most of the time, a good commit message should work
+> これらの変更には既存のバージョンブランチを使用します。 相当量のものであれば、自由に `CHANGELOG.md` に追加してください。 ほとんどの場合、良いコミットメッセージで動作するはずです。
 
-You never need to modify the `tutorial.json` file directly. That will be created with the CLI tools.
+`tutorial.json` ファイルを直接変更する必要はありません。 これは、CLI ツールで作成されます。
 
-If you are only making minor changes like fixing a typo or grammatical error, you don't have to test your changes.
+タイプミスや文法上のエラー修正等の軽微な変更の場合は、その変更をテストする必要はありません。
 
-Follow these instructions to make a PR, keeping in mind that instructions usually use the lessons around them for context:
+以下の手順に従って PR を作成します。この手順は、通常、周りのレッスンをコンテキストに使用していることを覚えておいてください。
 
-- Create a copy of the latest version branch with `git branch vX.X.X upstream/vX.X.X` - you do not need to check this branch out, it just needs to exist.
-- Create and checkout a new branch off of `main`
-- Make **and commit** your changes. Reminder: You don't need to change anything in the `tutorial.json` file. You likely only need to make changes to `TUTORIAL.md`
-- Run `coderoad build` to recreate the `tutorial.json` file
-- Commit the changes with `update json` as the message
-- Make a PR
+- `git branch vX.X.X upstream/vX.X.X` を使用して、最新バージョンのブランチのコピーを作成します。このブランチをチェックする必要はありませんが、存在している必要があります。
+- `main` の新しいブランチを作成してチェックアウトします。
+- 変更を行い **コミット** します。 注意: `tutorial.json` ファイルを変更する必要はありません。 `TUTORIAL.md` に変更を加える必要があります。
+- `coderoad build` を実行して、`tutorial.json` ファイルを再作成します。
+- `update json` でメッセージとして変更をコミットします。
+- PR を作成します。
 
-### Testing changes on `main`
+### `main` の変更をテストする
 
-If you want to test your changes to `main` after using the above instructions, follow these instructions:
+上記手順の後、`main` の変更をテストしたい場合は、次の手順に従います。
 
-- Follow the instructions on the [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha) to run a container
-- Start the tutorial using the `tutorial.json` file on the new branch
+- [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha) の手順に従ってコンテナを実行します。
+- 新しいブランチの `tutorial.json` ファイルを使用してチュートリアルを開始します。
 
-### Reviewing PR's to `main`
+### `main` の PR をレビューする
 
-If reviewing a PR that only changes `main` with instructional or grammar issues as described above, the changes in `TUTORIAL.md` should match the changes in `tutorial.json`.
+上述のように、指示もしくは文法問題に関わる `main` のみを変更する PR をレビューする場合、`TUTORIAL.md` の変更は、`tutorial.json` の変更と一致する必要があります。
 
-The `tutorial.json` file should not have changes to commit hashes, or step/level ids. Startup or level commands or file watchers likely should not be changed either. There are exceptions if there's an issue with a step, but they should be treated with more caution.
+`tutorial.json` ファイルには、コミットハッシュやステップ / レベル ID の変更を含めないでください。 起動コマンドや、レベルコマンド、ファイルウォッチャーも変更すべきではありません。 例外はありますが、ステップに問題があれば、注意深く処理する必要があります。
 
-Also, keep in mind that instructions usually use the lessons around them for context, so make sure they make sense.
+通常、周りのレッスンをコンテキストに使用していることを覚えておいてください。指示が理にかなっていることを確認してください。
 
-### Working on version branch
-
-> [!WARNING]
-> 
-> Reminder: Never make or push changes to a version branch that is on one of the freeCodeCamp repos. Always create a new one
-
-There's no easy way to see exactly what changed between version branches since the Git history will be rewritten. Accepting new version branches to use will need to be done with careful consideration and testing.
-
-These instructions are for changing anything on a "version" branch, such as tests, test text, reset files, adding and deleting steps, among other things.
-
-Follow these instructions to create a new version:
-
-- Checkout the **latest** version branch with `git checkout -b vX.X.X upstream/vX.X.X`
-- Create a new branch off of that, incrementing the version, with `git checkout -b vX.X.Y`
-- Make your changes to the version branch. See more info in the [CodeRoad Documentation](https://coderoad.github.io/docs/edit-tutorial) for how to work with tutorials
-- Push the new branch to your fork with `git push -u origin vX.X.Y`
-- Checkout the `main` branch
-- Create a new branch off `main`. e.g. `feat/version-X.X.Y`
-- Change the `uri` in `coderoad.yaml` to your fork of the repo. This is so you and reviewers can test it before pushing it to the freeCodeCamp repo. Change the version to the new branch in the two spots of that file. Add your changes for the new version to `CHANGELOG.md`. Make any other changes you need.
-- Commit your changes with the message `feat: release version X.X.Y - <optional description>`
-- Run `coderoad build` to create a new `tutorial.json` file
-- Add and commit the file
-- Push the changes to your fork
-- Test your changes following the [testing instructions below](#testing-changes-to-a-version-branch). Make any additional changes and commit them as you just did, or, if you are satisfied, follow the rest of the instructions
-- Make a PR to `main` using your new `feat/version-X.X.Y` branch. Give it a title of `version X.X.Y ready for review`. This will not be merged, it is just to let reviewers know that there is a new version ready
-- Leave it here for reviewers
-
-### Testing changes to a version branch
-
-- Follow the instructions on the [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha) to run a container
-- Start the tutorial using the `tutorial.json` file on whatever fork the changes are on. Make sure to use the file on the `feat: version-X.X.Y` branch and not the `main` branch
-
-### Pushing a new version
-
-Before pushing a new version, view the new `feat/version-vX.X.Y` (will be merged to `main`) branch on the user's fork. Make sure there are additions to the `CHANGELOG.md` file that include the new changes, and the version in the two spots of `coderoad.yaml` matches the new version branch.
-
-If you have write access to the freeCodeCamp repo, have verified the `CHANGELOG` and `coderoad.yaml` files, have tested the changes using the instructions above, and want to push a new version of a tutorial:
+### バージョンブランチで作業する
 
 > [!WARNING]
 > 
-> Reminder: Never make or push changes to a version branch that is on one of the freeCodeCamp repos. Always create a new one
+> 注: freeCodeCamp リポジトリにあるバージョンブランチに、変更を加えたりプッシュしたりしないでください。 常に新しいものを作成してください。
 
-- If you don't have a remote to where the new changes exist, create a remote to the user's fork with `git remote add <users_fork>`
-- Delete any **local** branches that share a name with the new branches. Likely named either `vX.X.Y` or `feat/version-X.X.Y`
-- Checkout the new version branch with `git checkout -b vX.X.Y <remote>/vX.X.Y`
-- Push the new version branch to the freeCodeCamp repo with `git push -u upstream/vX.X.Y`. You need to push the new branch before you update `main` with the new `tutorial.json` file
-- Checkout the users branch that will be merged into `main` with `git checkout -b feat/version-X.X.Y <remote>/feat/version-X.X.Y`
-- Change the `uri` in `coderoad.yaml` back to the freeCodeCamp repo
-- Add and commit the changes
-- Run `coderoad build` to create the new `tutorial.json` file
-- Add and commit the file
-- Push the changes to your fork with `git push -u origin/feat/version-X.X.Y`
-- Make a PR to `main` on the freeCodeCamp repo
-- If you are satisfied, merge it or leave it and ask for a review from someone
-- After the PR is merged, open the tutorial by following the instructions on the [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha) to make sure it's loading properly, and that you can get through a few steps
-- Finally, if any PRs for this version exists, close them
+Git の履歴が書き換えられるため、バージョンブランチ間で何が変更されたかを簡単に確認する方法はありません。 新しいバージョンブランチの使用を承諾するには、慎重な検討とテストが必要です。
 
-### How to revert to a previous version
+これらの手順は、テスト、テストテキスト、ファイルのリセット、ステップの追加や削除など、「バージョン」ブランチを変更するためのものです。
 
-- Create a new branch off the latest `main` with `git checkout -b revert/to-version-X.X.X`
-- Revert all commits on this branch up to and including the commit of the version after the one you want to revert to. For example, you may have commits that look like this:
+新しいバージョンを作成するには、次の手順に従います。
+
+- **最新の** バージョンブランチを `git checkout -b vX.X.X upstream/vX.X.X` でチェックアウトします。
+- `git checkout -b vX.X.Y` で、そこから新しいブランチを作成し、バージョンをインクリメントします。
+- バージョンブランチを変更します。 チュートリアルの使い方については、[CodeRoad ドキュメント](https://coderoad.github.io/docs/edit-tutorial) を参照します。
+- `git push -u origin vX.X.Y` で、新しいブランチをフォークにプッシュします。
+- `main` ブランチをチェックアウトします。
+- `main` から新しいブランチを作成します。 例: `feat/version-X.X.Y`
+- `coderoad.yaml` の `uri` をリポジトリのフォークに変更します。 これにより、あなたとレビュアーが freeCodeCamp リポジトリにプッシュする前に、テストできるようになります。 バージョンを、そのファイルの 2 つのスポットにある新しいブランチに変更します。 新しいバージョンの変更を `CHANGELOG.md` に追加します。 その他必要な変更を行います。
+- メッセージ `feat: release version X.X.Y - <optional description>` で、変更をコミットします。
+- `coderoad build` を実行して、新しい `tutorial.json` ファイルを作成します。
+- ファイルを追加してコミットします。
+- フォークに変更をプッシュします。
+- 以下の [テスト手順](#testing-changes-to-a-version-branch) に従って変更をテストします。 追加の変更を行い、先ほどと同様にコミットします。追加の変更がなければ、残りの手順に進みます。
+- 新しい `feat/version-X.X.Y` ブランチを使用して `main` に PR を作成します。 `version X.X.Y ready for review` のタイトルを付けます。 これはマージされません。新しいバージョンが準備ができていることをレビューアーに知らせるためのものです。
+- レビュアーのためにそこに残してください。
+
+### バージョンブランチの変更をテストする
+
+- [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha) の手順に従ってコンテナを実行します。
+- 変更があるフォークの `tutorial.json` ファイルを使用してチュートリアルを開始します。 `main` ブランチ ではなく、`feat: version-X.X.Y` ブランチのファイルを使用します。
+
+### 新しいバージョンをプッシュする
+
+新しいバージョンをプッシュする前に、ユーザーのフォークで新しい `feat/version-vX.X.Y` (`main` にマージされる) ブランチを表示してください。 新規変更を含む `CHANGELOG.md` ファイルに追加があり、`coderoad.yaml` の 2 つのスポットのバージョンが新しいバージョンブランチと一致していることを確認してください。
+
+freeCodeCamp リポジトリへの書き込みアクセス権を有しており、`CHANGELOG` と `coderoad.yaml` ファイルが検証済で、上記手順を使用して変更もテスト済みであり、チュートリアルの新しいバージョンをブッシュしたい場合は、下記を実行してください。
+
+> [!WARNING]
+> 
+> 留意点: freeCodeCamp リポジトリにあるバージョンブランチに変更を加えたりプッシュしたりしないでください。 常に新しいものを作成してください。
+
+- 新しい変更が存在する場所へのリモートがない場合、`git remote add <users_fork>` を使用してユーザーのフォークへのリモートを作成します。
+- 新しいブランチと同じ **local** ブランチ名を削除します。 おそらく、 `vX.X.Y` または `feat/version-X.X.Y` いずれかの名前です。
+- 新しいバージョンブランチを `git checkout -b vX.X.Y <remote>/vX.X.Y` でチェックアウトします。
+- `git push -u upstream/vX.X.Y` で freeCodeCamp リポジトリに新しいバージョンのブランチをプッシュします。 新しい `tutorial.json` ファイルで `main` を更新する前に、新しいブランチをプッシュする必要があります。
+- `git checkout -b feat/version-X.X.Y <remote>/feat/version-X.X.Y` で、`main` にマージされるユーザーブランチをチェックアウトします。
+- `coderoad.yaml` の `uri` を freeCodeCamp リポジトリに戻します。
+- 変更を追加してコミットします。
+- `coderoad build` を実行して、新しい `tutorial.json` ファイルを作成します。
+- ファイルを追加してコミットします。
+- `git push -u origin/feat/version-X.X.Y` でフォークに変更をプッシュします。
+- freeCodeCamp リポジトリで `main` にPRを作成します。
+- 問題がない場合は、それをマージするか残して、レビューを依頼します。
+- PR がマージされた後、[rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha) の指示に従ってチュートリアルを開き、正しく読み込まれていることと、いくつかのステップが実行できることを確認します。
+- 最後に、このバージョンの PR が存在する場合は、それらをクローズします。
+
+### 以前のバージョンに戻す方法
+
+- `git checkout -b revert/to-version-X.X.X` で、最新 `main` の新しいブランチを作成します。
+- このブランチにおいて、元に戻したいバージョン以降のコミットをすべて元に戻します。 例えば、次のようなコミットです。
 
 ```
 fix: typo
@@ -133,6 +133,6 @@ fix: typo
 release: version 1.0.0
 ```
 
-If you want to revert to v1.0.0, revert all the commits from `release: version 1.0.1` and after
+v1.0.0 に戻したい場合は、 `release: version 1.0.1` 以降からすべてのコミットを元に戻します。
 
-- Create a PR. Give it a title of `revert: to version X.X.X`
+- PR を作成します。 `revert: to version X.X.X` のタイトルを付けます。

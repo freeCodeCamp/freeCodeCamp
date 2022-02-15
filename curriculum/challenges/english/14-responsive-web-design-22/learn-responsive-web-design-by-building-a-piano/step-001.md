@@ -47,10 +47,10 @@ Your `html` element should have a closing tag.
 assert(code.match(/<\/html\s*>/));
 ```
 
-Your `html` element should be below the `DOCTYPE` declaration.
+Your `DOCTYPE` declaration should be at the beginning of your HTML.
 
 ```js
-assert(code.match(/(?<!<html\s*>)<!DOCTYPE\s+html\s*>/gi));
+assert(__helpers.removeHtmlComments(code).match(/^\s*<!DOCTYPE\s+html\s*>/i));
 ```
 
 You should have an opening `head` tag.

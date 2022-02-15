@@ -59,22 +59,32 @@
   --purple50: var(--purple50);
   --purple90: var(--purple90);
 
+  --yellow05: var(--yellow05);
   --yellow10: var(--yellow10);
-  --yellow20: var(--yellow20);
+  --yellow40: var(--yellow40);
+  --yellow45: var(--yellow45);
   --yellow50: var(--yellow50);
+  --yellow70: var(--yellow70);
   --yellow90: var(--yellow90);
 
+  --blue05: var(--blue05);
   --blue10: var(--blue10);
-  --blue20: var(--blue20);
   --blue30: var(--blue30);
   --blue50: var(--blue50);
+  --blue70: var(--blue70);
   --blue90: var(--blue90);
 
+  --green05: var(--green05);
   --green10: var(--green10);
+  --green40: var(--green40);
+  --green70: var(--green70);
   --green90: var(--green90);
 
+  --red05: var(--red05);
   --red10: var(--red10);
-  --red20: var(--red20);
+  --red15: var(--red15);
+  --red30: var(--red30);
+  --red70: var(--red70);
   --red80: var(--red80);
   --red90: var(--red90);
 }

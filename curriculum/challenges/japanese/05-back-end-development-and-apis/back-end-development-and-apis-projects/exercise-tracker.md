@@ -568,11 +568,11 @@ async (getUserInput) => {
     const addExerciseTwoRes = await fetch(url + `/api/users/${_id}/exercises`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: `description=${expected.description}&duration=${expected.duration}&date=1990-01-02`
+      body: `description=${expected.description}&duration=${expected.duration}&date=1990-01-03`
     });
     if (addExerciseRes.ok && addExerciseTwoRes.ok) {
       const logRes = await fetch(
-        url + `/api/users/${_id}/logs?from=1989-12-31&to=1990-01-03`
+        url + `/api/users/${_id}/logs?from=1989-12-31&to=1990-01-04`
       );
       if (logRes.ok) {
         const { log } = await logRes.json();
@@ -590,6 +590,16 @@ async (getUserInput) => {
         assert.equal(1, log.length);
       } else {
         throw new Error(`${limitRes.status} ${limitRes.statusText}`);
+      }
+      const filterDateBeforeLimitRes = await fetch(
+        url + `/api/users/${_id}/logs?from=1990-01-02&to=1990-01-04&limit=1`
+      );
+      if (filterDateBeforeLimitRes.ok) {
+        const { log } = await filterDateBeforeLimitRes.json();
+        assert.isArray(log);
+        assert.equal(1, log.length);
+      } else {
+        throw new Error(`${filterDateBeforeLimitRes.status} ${filterDateBeforeLimitRes.statusText}`);
       }
     } else {
       throw new Error(`${res.status} ${res.statusText}`);

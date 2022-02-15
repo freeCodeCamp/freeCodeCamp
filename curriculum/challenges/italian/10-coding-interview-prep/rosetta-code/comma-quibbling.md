@@ -1,6 +1,6 @@
 ---
 id: 596e414344c3b2872167f0fe
-title: Comma quibbling
+title: Cavillare
 challengeType: 5
 forumTopicId: 302234
 dashedName: comma-quibbling
@@ -8,63 +8,63 @@ dashedName: comma-quibbling
 
 # --description--
 
-Comma quibbling is a task originally set by Eric Lippert in his [blog](https://blogs.msdn.com/b/ericlippert/archive/2009/04/15/comma-quibbling.aspx).
+Cavillare è un compito originariamente creato da Eric Lipper sul suo [blog](https://blogs.msdn.com/b/ericlippert/archive/2009/04/15/comma-quibbling.aspx).
 
 # --instructions--
 
-Write a function to generate a string output which is the concatenation of input words from a list/sequence where:
+Scrivi una funzione per generare una stringa output che è la concatenazione di parole di input da una lista/sequenza dove:
 
 <ol>
-  <li>An input of no words produces the output string of just the two brace characters (<code>"{}"</code>)</li>
-  <li>An input of just one word, e.g. <code>["ABC"]</code>, produces the output string of the word inside the two braces, e.g. <code>"{ABC}"</code></li>
-  <li>An input of two words, e.g. <code>["ABC", "DEF"]</code>, produces the output string of the two words inside the two braces with the words separated by the string <code>" and "</code>, e.g. <code>"{ABC and DEF}"</code></li>
-  <li>An input of three or more words, e.g. <code>["ABC", "DEF", "G", "H"]</code>, produces the output string of all but the last word separated by <code>", "</code> with the last word separated by <code>" and "</code> and all within braces; e.g. <code>"{ABC, DEF, G and H}"</code></li>
+  <li>Un input senza parole produce una stringa output con solo due parentesi graffe (<code>"{}"</code>)</li>
+  <li>Un input di una sola parola, per esempio <code>["ABC"]</code> produce una stringa output con la parola dentro due parentesi graffe (<code>"{ABC}"</code>)</li>
+  <li>Un input di due parole, per esempio <code>["ABC", "DEF"]</code> produce una stringa output con due parole dentro le due parentesi graffe con le parole separate dalla stringa <code>" and "</code>, per esempio (<code>"{ABC and DEF}"</code>)</li>
+  <li>Un input di tre o più parole, per esempio <code>["ABC", "DEF", "G", "H"]</code> produce una stringa output con tutte le parole, tranne le ultime due, separate da <code>", "</code>, e con l'ultima parola separata da <code>" and "</code>; per esempio (<code>"{ABC, DEF, G and H}"</code>)</li>
 </ol>
 
-Test your function with the following series of inputs showing your output here on this page:
+Testa la tua funzione con la seguente serie di input mostrando il tuo output qui sulla pagina:
 
 <ul>
-  <li>[] # (No input words).</li>
+  <li>[] # (Nessuna parola di input).</li>
   <li>["ABC"]</li>
   <li>["ABC", "DEF"]</li>
   <li>["ABC", "DEF", "G", "H"]</li>
 </ul>
 
-**Note:** Assume words are non-empty strings of uppercase characters for this task.
+**Nota:** Assumi che le parole siano stringhe non vuote di caratteri maiuscoli per questa sfida.
 
 # --hints--
 
-`quibble` should be a function.
+`quibble` dovrebbe essere una funzione.
 
 ```js
 assert(typeof quibble === 'function');
 ```
 
-`quibble(["ABC"])` should return a string.
+`quibble(["ABC"])` dovrebbe restituire una stringa.
 
 ```js
 assert(typeof quibble(['ABC']) === 'string');
 ```
 
-`quibble([])` should return "{}".
+`quibble([])` dovrebbe restituire "{}".
 
 ```js
 assert.equal(quibble(testCases[0]), results[0]);
 ```
 
-`quibble(["ABC"])` should return "{ABC}".
+`quibble(["ABC"])` dovrebbe restituire "{ABC}".
 
 ```js
 assert.equal(quibble(testCases[1]), results[1]);
 ```
 
-`quibble(["ABC", "DEF"])` should return "{ABC and DEF}".
+`quibble(["ABC", "DEF"])` dovrebbe restituire "{ABC and DEF}".
 
 ```js
 assert.equal(quibble(testCases[2]), results[2]);
 ```
 
-`quibble(["ABC", "DEF", "G", "H"])` should return "{ABC,DEF,G and H}".
+`quibble(["ABC", "DEF", "G", "H"])` dovrebbe restituire "{ABC,DEF,G and H}".
 
 ```js
 assert.equal(quibble(testCases[3]), results[3]);

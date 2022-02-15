@@ -228,7 +228,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   const options: editor.IStandaloneEditorConstructionOptions = {
     fontSize: 18,
-    scrollBeyondLastLine: false,
+    scrollBeyondLastLine: true,
     selectionHighlight: false,
     overviewRulerBorder: false,
     hideCursorInOverviewRuler: true,
@@ -536,7 +536,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   function createDescription(editor: editor.IStandaloneCodeEditor) {
     if (dataRef.current.descriptionNode) return dataRef.current.descriptionNode;
     const { description, title } = props;
-    const jawHeading = document.createElement('h3');
+    const jawHeading = document.createElement('h1');
     jawHeading.innerText = title;
     const domNode = document.createElement('div');
     const desc = document.createElement('div');
@@ -890,14 +890,14 @@ const Editor = (props: EditorProps): JSX.Element => {
     // if (
     //  isEqual({ ..._editor.getPosition() }, { lineNumber: 1, column: 1 })
     // ) {
+    const [top, bottom] = editableRegionBoundaries;
     editor.setPosition({
-      lineNumber: editableRegionBoundaries[0] + 1,
+      lineNumber: top + 1,
       column: 1
     });
-    editor.revealLinesInCenter(
-      editableRegionBoundaries[0],
-      editableRegionBoundaries[1]
-    );
+
+    // To prevent descriptionWidget from being out of view
+    editor.revealLinesInCenter(top, top === 0 ? 1 : bottom);
     // }
   }
 
