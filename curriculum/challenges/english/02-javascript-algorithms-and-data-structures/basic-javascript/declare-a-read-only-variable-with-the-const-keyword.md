@@ -34,7 +34,7 @@ Change the code so that all variables are declared using `let` or `const`. Use `
 `var` should not exist in your code.
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/var/g));
+(getUserInput) => assert(!__helpers.removeJSComments(getUserInput('index')).match(/var/g));
 ```
 
 You should change `fCC` to all uppercase.
@@ -42,7 +42,7 @@ You should change `fCC` to all uppercase.
 ```js
 (getUserInput) => {
   assert(getUserInput('index').match(/(FCC)/));
-  assert(!getUserInput('index').match(/fCC/));
+  assert(!__helpers.removeJSComments(getUserInput('index')).match(/fCC/));
 }
 ```
 

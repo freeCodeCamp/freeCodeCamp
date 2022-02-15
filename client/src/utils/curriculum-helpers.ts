@@ -50,6 +50,7 @@ function isCalledWithNoArgs(
 const curriculumHelpers = {
   removeHtmlComments,
   removeCssComments,
+  removeJSComments,
   removeWhiteSpace,
   isCalledWithNoArgs,
   CSSHelp

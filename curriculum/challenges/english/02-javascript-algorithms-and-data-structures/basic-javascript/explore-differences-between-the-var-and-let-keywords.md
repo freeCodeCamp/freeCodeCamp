@@ -42,7 +42,7 @@ Update the code so it only uses the `let` keyword.
 `var` should not exist in the code.
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/var/g));
+(getUserInput) => assert(!__helpers.removeJSComments(getUserInput('index')).match(/var/g));
 ```
 
 `catName` should be the string `Oliver`.
