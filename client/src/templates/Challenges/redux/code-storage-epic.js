@@ -111,9 +111,7 @@ function saveCodeEpic(action$, state$) {
       of(
         createFlashMessage({
           type: error ? 'warning' : 'success',
-          message: error
-            ? "Oops, your code did not save, your browser's local storage may be full."
-            : "Saved! Your code was saved to your browser's local storage."
+          message: error ? 'flash.code-save-error' : 'flash.code-saved'
         })
       )
     )
