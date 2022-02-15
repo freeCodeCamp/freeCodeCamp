@@ -466,7 +466,9 @@
     "first-page": "Go to first page",
     "previous-page": "Go to previous page",
     "next-page": "Go to next page",
-    "last-page": "Go to last page"
+    "last-page": "Go to last page",
+    "primary-nav": "primary",
+    "breadcrumb-nav": "breadcrumb"
   },
   "flash": {
     "honest-first": "To claim a certification, you must first accept our academic honesty policy",
