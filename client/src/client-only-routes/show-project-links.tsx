@@ -10,7 +10,7 @@ import {
   legacyProjectMap
 } from '../resources/cert-and-project-map';
 
-import { maybeUrlRE } from '../utils';
+import { getSolutionDisplayType } from '../utils/solution-display-type';
 
 interface ShowProjectLinksProps {
   certName: string;
@@ -31,19 +31,6 @@ const initSolutionState: SolutionState = {
   solution: '',
   isOpen: false
 };
-
-export const _getDisplayType = (
-  { solution, githubLink, challengeFiles }: CompletedChallenge,
-  maybeUrl: RegExp
-) => {
-  if (challengeFiles?.length) return 'showJsSolution';
-  if (githubLink) return 'showProjectAndGitHubLinks';
-  if (maybeUrl.test(solution ?? '')) return 'showProjectLink';
-  return 'showJsSolution';
-};
-
-const getDisplayType = (args: CompletedChallenge) =>
-  _getDisplayType(args, maybeUrlRE);
 
 const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
   const [solutionState, setSolutionState] = useState(initSolutionState);
@@ -75,7 +62,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       });
 
     const displayComponents = {
-      showJsSolution: (
+      showFilesSolution: (
         <button
           className='project-link-button-override'
           data-cy={`${projectTitle} solution`}
@@ -104,10 +91,11 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
         >
           {t('certification.project.solution')}
         </a>
-      )
+      ),
+      none: <>{t('certification.project.no-solution')}</>
     };
 
-    return displayComponents[getDisplayType(completedProject)];
+    return displayComponents[getSolutionDisplayType(completedProject)];
   };
 
   const renderProjectsFor = (certName: string) => {
