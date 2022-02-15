@@ -11,7 +11,7 @@ Happy contributing.
 
 ---
 
-## Curriculum
+## 1- Curriculum
 
 Our curriculum is curated by the global freeCodeCamp community. This way, we are able to incorporate expert knowledge from volunteers like you.
 
@@ -19,7 +19,7 @@ You can help expand and improve the curriculum. You can also update project user
 
 **If you're interested in improving our curriculum, here's [how to contribute to the curriculum](how-to-work-on-coding-challenges.md).**
 
-## Translations
+## 2- Translations
 
 We are localizing freeCodeCamp.org to major world languages.
 
@@ -27,7 +27,7 @@ Certifications are already live in some major world languages like [Chinese (中
 
 **If you're interested in translating, here's [how to translate freeCodeCamp's resources](how-to-translate-files.md).**
 
-## Learning Platform
+## 3- Learning Platform
 
 Our learning platform runs on a modern JavaScript stack. It has various components, tools, and libraries. These include Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack, and more.
 
