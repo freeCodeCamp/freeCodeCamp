@@ -16,12 +16,10 @@ import {
   projectMap,
   legacyProjectMap
 } from '../../resources/cert-and-project-map';
-
-import { maybeUrlRE } from '../../utils';
 import { FlashMessages } from '../Flash/redux/flash-messages';
 import ProjectModal from '../SolutionViewer/ProjectModal';
 import { FullWidthRow, Spacer } from '../helpers';
-
+import { getSolutionDisplayType } from '../../utils/solution-display-type';
 import SectionHeader from './section-header';
 
 import './certification.css';
@@ -181,8 +179,9 @@ export class CertificationSettings extends Component {
           isOpen: true
         }
       });
-    if (challengeFiles?.length) {
-      return (
+
+    const displayComponents = {
+      showFilesSolution: (
         <Button
           block={true}
           bsStyle='primary'
@@ -193,10 +192,8 @@ export class CertificationSettings extends Component {
         >
           {t('buttons.show-code')}
         </Button>
-      );
-    }
-    if (githubLink) {
-      return (
+      ),
+      showProjectAndGitHubLinks: (
         <div className='solutions-dropdown'>
           <DropdownButton
             block={true}
@@ -223,10 +220,8 @@ export class CertificationSettings extends Component {
             </MenuItem>
           </DropdownButton>
         </div>
-      );
-    }
-    if (maybeUrlRE.test(solution)) {
-      return (
+      ),
+      showProjectLink: (
         <Button
           block={true}
           bsStyle='primary'
@@ -238,19 +233,10 @@ export class CertificationSettings extends Component {
         >
           {t('buttons.show-solution')}
         </Button>
-      );
-    }
-    return (
-      <Button
-        block={true}
-        bsStyle='primary'
-        className='btn-invert'
-        id={`btn-for-${projectId}`}
-        onClick={onClickHandler}
-      >
-        {t('buttons.show-code')}
-      </Button>
-    );
+      ),
+      none: <>{t('certification.project.no-solution')}</>
+    };
+    return displayComponents[getSolutionDisplayType(completedProject)];
   };
 
   renderCertifications = (certName, projectsMap) => {
