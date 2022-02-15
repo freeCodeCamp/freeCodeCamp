@@ -21,11 +21,11 @@ dashedName: link-to-internal-sections-of-a-page-with-anchor-elements
 <h2 id="contacts-header">Contacts</h2>
 ```
 
-當用戶點擊 `Contacts` 鏈接，可以訪問網頁中帶有 **Contacts** 標題元素的部分。
+當用戶點擊 `Contacts` 鏈接時，他們將被帶到帶有 **Contacts** 標題元素的網頁部分。
 
 # --instructions--
 
-通過修改 `href` 屬性值爲 `"#footer"`，同時修改文本 `cat photos` 爲 `Jump to Bottom`，來更改外部鏈接爲內部鏈接。
+通過修改 `href` 屬性值爲 `#footer`，同時修改文本 `cat photos` 爲 `Jump to Bottom`，來更改外部鏈接爲內部鏈接。
 
 從錨點標籤中刪除 `target="_blank"` 屬性，因爲這會導致鏈接文檔在新窗口標籤中打開。
 

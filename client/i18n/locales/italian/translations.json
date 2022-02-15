@@ -64,7 +64,9 @@
     "go-to-next": "Vai alla prossima sfida",
     "ask-later": "Chiedimelo più tardi",
     "start-coding": "Start coding!",
-    "go-to-settings": "Go to settings to claim your certification"
+    "go-to-settings": "Go to settings to claim your certification",
+    "click-start-course": "Click here to start the course",
+    "click-start-project": "Click here to start the project"
   },
   "landing": {
     "big-heading-1": "Impara a programmare — gratis.",
@@ -294,7 +296,13 @@
     },
     "help-translate": "Stiamo ancora traducendo le seguenti certificazioni.",
     "help-translate-link": "Aiutaci con le traduzioni...",
-    "project-preview-title": "Here's a preview of what you will build"
+    "project-preview-title": "Here's a preview of what you will build",
+    "github-required": "A <0>GitHub</0> account is required to run the project. You will need to create one if you haven't already.",
+    "step-1": "Step 1: Complete the project",
+    "step-2": "Step 2: Submit your code",
+    "submit-public-url": "When you have completed the project, save all the required files into a public repository and submit the URL to it below.",
+    "complete-both-steps": "Complete both steps below to finish the challenge.",
+    "runs-in-vm": "The project runs in a virtual machine, complete the user stories described in there and get all the tests to pass to finish step 1."
   },
   "donate": {
     "title": "Supporta il nostro no profit",
@@ -449,7 +457,7 @@
     "magnifier": "lente d'ingrandimento"
   },
   "aria": {
-    "fcc-logo": "Logo freeCodeCamp",
+    "fcc-curriculum": "freeCodeCamp Curriculum",
     "answer": "Risposta",
     "linkedin": "Link al LinkedIn di {{username}}",
     "github": "Link al GitHub di {{username}}",
@@ -512,7 +520,8 @@
     "create-token-err": "An error occurred trying to create a token",
     "delete-token-err": "An error occurred trying to delete your token",
     "token-created": "You have successfully created a new token.",
-    "token-deleted": "Your token has been deleted."
+    "token-deleted": "Your token has been deleted.",
+    "complete-project-first": "You must complete the project first."
   },
   "validation": {
     "max-characters": "C'è un limite massimo di 288 caratteri, hai {{charsLeft}} rimanenti",

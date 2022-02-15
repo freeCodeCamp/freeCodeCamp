@@ -9,7 +9,7 @@ dashedName: declare-javascript-variables
 
 # --description--
 
-在计算机科学中，<dfn>数据</dfn>就是一切，它对于计算机意义重大。 JavaScript 提供七种不同的<dfn>数据类型</dfn>，它们是 `undefined`（未定义）、`null`（空）、`boolean`（布尔型）、`string`（字符串）、`symbol`、`number`（数字）、`bigint`（可以表示任意大的整数）和 `object`（对象）。
+在计算机科学中，<dfn>数据</dfn>就是一切，它对于计算机意义重大。 JavaScript 提供八种不同的<dfn>数据类型</dfn>，它们是 `undefined`（未定义）、`null`（空）、`boolean`（布尔型）、`string`（字符串）、`symbol`、`number`（数字）、`bigint`（可以表示任意大的整数）和 `object`（对象）。
 
 例如，计算机区分数字，例如 `12`，和由字符组成的字符串 `strings`，例如 `"12"`、`"dog"` 或 `"123 cats"`。 计算机可以对数字执行数学运算，但不能对字符串执行数学运算。
 
