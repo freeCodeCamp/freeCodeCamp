@@ -89,22 +89,22 @@ Your `.cabin:nth-of-type(5)` selector should have a `top` property set to `7%`.
 assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(5)')?.top === '7%');
 ```
 
-You should have a `.cabin:nth-of-type(6)` selector.
+You should have a `.cabin:nth-of-type(6) or .cabin:last-of-type` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(6)'));
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(6)') || new __helpers.CSSHelp(document).getStyle('.cabin:last-of-type'));
 ```
 
-Your `.cabin:nth-of-type(6)` selector should have a `right` property set to `17%`.
+Your `.cabin:nth-of-type(6) or .cabin:last-of-type` selector should have a `right` property set to `17%`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(6)')?.right === '17%');
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(6)')?.right === '17%' || new __helpers.CSSHelp(document).getStyle('.cabin:last-of-type')?.right === '17%');
 ```
 
-Your `.cabin:nth-of-type(6)` selector should have a `top` property set to `7%`.
+Your `.cabin:nth-of-type(6) or .cabin:last-of-type` selector should have a `top` property set to `7%`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(6)')?.top === '7%');
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(6)')?.top === '7%' || new __helpers.CSSHelp(document).getStyle('.cabin:last-of-type')?.top === '7%');
 ```
 
 # --seed--

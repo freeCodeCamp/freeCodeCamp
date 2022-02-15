@@ -11,22 +11,22 @@ Time to position the cabins around the wheel. Select the first `.cabin` element.
 
 # --hints--
 
-You should have a `.cabin:nth-of-type(1)` selector.
+You should have a `.cabin:nth-of-type(1) or .cabin:first-of-type` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(1)'));
+assert(new __helpers.CSSHelp(document).getStyle('.cabin:first-of-type') || new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(1)'));
 ```
 
-Your `.cabin:nth-of-type(1)` selector should have a `right` property set to `-8.5%`.
+Your `.cabin:nth-of-type(1) or .cabin:first-of-type` selector should have a `right` property set to `-8.5%`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(1)')?.right === '-8.5%');
+assert((new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(1)')?.right === '-8.5%') || (new __helpers.CSSHelp(document).getStyle('.cabin:first-of-type')?.right === '-8.5%'));
 ```
 
-Your `.cabin:nth-of-type(1)` selector should have a `top` property set to `50%`.
+Your `.cabin:nth-of-type(1) or .cabin:first-of-type` selector should have a `top` property set to `50%`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(1)')?.top === '50%');
+assert((new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(1)')?.top === '50%') || new __helpers.CSSHelp(document).getStyle('.cabin:first-of-type')?.top === '50%');
 ```
 
 # --seed--
