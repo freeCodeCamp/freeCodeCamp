@@ -1,5 +1,6 @@
 import i18next from 'i18next';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from '../../../components/helpers/index';
 
 import './challenge-title.css';
@@ -10,8 +11,12 @@ interface BreadCrumbProps {
 }
 
 function BreadCrumb({ block, superBlock }: BreadCrumbProps): JSX.Element {
+  const { t } = useTranslation();
   return (
-    <nav className='challenge-title-breadcrumbs' aria-label='breadcrumb'>
+    <nav
+      className='challenge-title-breadcrumbs'
+      aria-label={t('aria.breadcrumb-nav')}
+    >
       <ol>
         <li className='breadcrumb-left'>
           <Link
