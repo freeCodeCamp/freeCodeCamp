@@ -15,7 +15,7 @@ const GaTypes = { event: ga.event, page: ga.pageview, modal: ga.modalview };
 function* callGaType({ payload: { type, data } }) {
   if (
     type === 'event' &&
-    data.category.includes('Donation') &&
+    data.category.toLowerCase().includes('donation') &&
     aBTestConfig.isTesting
   ) {
     const email = yield select(emailSelector);
@@ -25,7 +25,7 @@ function* callGaType({ payload: { type, data } }) {
       let viewType = null;
 
       // set the modal type
-      if (data.action.includes('Modal')) {
+      if (data.action.toLowerCase().includes('modal')) {
         const recentlyClaimedBlock = yield select(recentlyClaimedBlockSelector);
         viewType = recentlyClaimedBlock ? 'block' : 'progress';
       }

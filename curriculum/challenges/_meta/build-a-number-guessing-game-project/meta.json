@@ -1,0 +1,14 @@
+{
+  "name": "Build a Number Guessing Game Project",
+  "isUpcomingChange": true,
+  "order": 13,
+  "time": "30 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "relational-databases",
+  "challengeOrder": [
+    [
+      "602da04c22201c65d2a019f4",
+      "Build a Number Guessing Game"
+    ]
+  ]}

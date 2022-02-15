@@ -8,9 +8,9 @@ freeCodeCamp läuft auf einem modernen JavaScript-Stack. Wenn du daran interessi
 
 ### Kann ich die Ressourcen von freeCodeCamp übersetzen?
 
-Ja - Du kannst zu jeder der über 30 Sprachen beitragen, die wir auf unserer Übersetzungsplattform aktiviert haben.
+Ja - du kannst zu jeder der über 30 Sprachen beitragen, die wir auf unserer Übersetzungsplattform aktiviert haben.
 
-In einigen Sprachen haben wir von Nutzern erstellte Übersetzungen online. Wir haben vor, das freeCodeCamp in mehrere wichtige Weltsprachen zu lokalisieren. Du kannst alles darüber in unserer in unserer [Ankündigung ](https://www.freecodecamp.org/news/world-language-translation-effort) lesen.
+In einigen Sprachen haben wir von Nutzern erstellte Übersetzungen online. Wir haben vor, das freeCodeCamp in mehrere wichtige Weltsprachen zu lokalisieren. Du kannst alles darüber in unserer [Ankündigung ](https://www.freecodecamp.org/news/world-language-translation-effort) lesen.
 
 Wenn du daran interessiert bist, zu Übersetzungen beizutragen, stelle bitte sicher, dass du [diesen Leitfaden](how-to-translate-files.md) zuerst gelesen hast.
 
@@ -28,11 +28,11 @@ Wenn du glaubst, dass du einen Fehler gefunden hast, lies zuerst den ["Hilfe, ic
 
 Wenn du sicher bist, dass es sich um einen neuen Fehler handelt, kannst du einen neuen Issue auf GitHub erstellen. Gib so viele Informationen wie möglich an, damit wir den Fehler reproduzieren können. Wir haben eine vorgefertigte Issue-Vorlage, die dir dabei hilft.
 
-Bitte beachte, dass diese GitHub Issues für Codebasis-bezogene Probleme und Diskussionen gedacht sind - nicht um Hilfe beim Programmieren zu bekommen. Im Zweifelsfall solltest du [Hilfe im Forum suchen](https://forum.freecodecamp.org), bevor du ein GitHub-Problem erstellst.
+Bitte beachte, dass diese GitHub Issues für Codebasis-bezogene Probleme und Diskussionen gedacht sind - nicht um Hilfe beim Programmieren zu bekommen. Im Zweifelsfall solltest du [Hilfe im Forum suchen](https://forum.freecodecamp.org), bevor du ein GitHub Issue erstellst.
 
 ### Wie kann ich ein Sicherheitsproblem melden?
 
-Bitte erstelle keine GitHub-Issues für Sicherheitsprobleme. Schicke stattdessen bitte eine E-Mail an `security@freecodecamp.org` und wir werden uns sofort darum kümmern.
+Bitte erstelle keine GitHub Issues für Sicherheitsprobleme. Schicke stattdessen bitte eine E-Mail an `security@freecodecamp.org` und wir werden uns sofort darum kümmern.
 
 ### Ich bin ein Student. Kann ich für akademische Credits an einem Feature arbeiten?
 
@@ -44,7 +44,7 @@ Wir bitten dich, vorausschauend zu planen und deine Beiträge zum Code in diesem
 
 Die Code-Maintainer [Sortieren](https://en.wikipedia.org/wiki/Software_bug#Bug_management) Issues und Pull Requests nach ihrer Priorität, Schwere und anderen Faktoren. Du kannst [hier](https://github.com/freecodecamp/freecodecamp/labels) ein komplettes Glossar mit ihren Bedeutungen finden.
 
-### Wo fange ich an, wenn ich an einem Thema arbeiten will?
+### Wo fange ich an, wenn ich an einem Issue arbeiten will?
 
 Du solltest über [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) oder [**`first timers only`**](https://github. com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) Issues gehen, um einen schnellen Überblick darüber zu bekommen, was für dich zur Verfügung steht.
 
@@ -78,7 +78,7 @@ In erster Linie möchten wir, dass du ein aktiver Teilnehmer in der Gemeinschaft
 Hier sind einige empfohlene Wege für einige unserer Plattformen:
 
 - Ein **Discord/Chat**-Moderator zu sein, eine aktive Präsenz in unserem Chat zu haben und positiv auf andere einzugehen und gleichzeitig zu lernen und zu üben, wie man mit möglichen Konflikten umgeht, die entstehen können.
-- Ein **Forum**-Moderator zu sein, ähnlich wie ein Chat-Moderator, eine aktive Präsenz zu zeigen und mit anderen Forumspostern in Kontakt zu treten, andere in ihrem Lernprozess zu unterstützen und auf Wunsch auch Feedback zu geben. Sieh dir das [Das Handbuch für Unterforenleiter](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) für weitere Informationen an.
+- Ein **Forum**-Moderator zu sein, ähnlich wie ein Chat-Moderator, eine aktive Präsenz zu zeigen und mit anderen Forumspostern in Kontakt zu treten, andere in ihrem Lernprozess zu unterstützen und auf Wunsch auch Feedback zu geben. Sieh dir das [Das Handbuch für Subforenleiter](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) für weitere Informationen an.
 - Als **GitHub**-Moderator hilfst du bei der Bearbeitung von GitHub-Issues, die aufgeworfen werden und versuchst (idealerweise), Lösungen für diese Issues vorzuschlagen, die dann von anderen (oder von dir selbst) aufgegriffen werden.
 
 Sei insgesamt respektvoll gegenüber anderen. Wir sind Menschen überall auf der Welt. Mit Blick darauf denke auch daran, eine ermutigende oder unterstützende Sprache zu verwenden und achte auf die interkulturelle Kommunikation.
