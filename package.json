@@ -114,7 +114,7 @@
     "@types/enzyme": "3.10.11",
     "@types/enzyme-adapter-react-16": "1.0.6",
     "@types/eslint": "7.29.0",
-    "@types/estree": "0.0.50",
+    "@types/estree": "0.0.51",
     "@types/faker": "5.5.9",
     "@types/inquirer": "8.2.0",
     "@types/jest": "27.4.0",
