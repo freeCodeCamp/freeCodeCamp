@@ -11,6 +11,8 @@ export enum FlashMessages {
   EmailValid = 'flash.email-valid',
   HonestFirst = 'flash.honest-first',
   IncompleteSteps = 'flash.incomplete-steps',
+  LocalCodeSaved = 'flash.local-code-saved',
+  LocalCodeSaveError = 'flash.local-code-save-error',
   NameNeeded = 'flash.name-needed',
   None = '',
   NotEligible = 'flash.not-eligible',
