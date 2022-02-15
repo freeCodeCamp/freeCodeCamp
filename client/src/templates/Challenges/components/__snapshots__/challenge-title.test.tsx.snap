@@ -5,7 +5,7 @@ exports[`<ChallengeTitle/> renders correctly 1`] = `
   className="challenge-title-wrap"
 >
   <nav
-    aria-label="breadcrumb"
+    aria-label="aria.breadcrumb-nav"
     className="challenge-title-breadcrumbs"
   >
     <ol>
