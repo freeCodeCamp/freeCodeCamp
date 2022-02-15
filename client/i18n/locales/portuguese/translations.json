@@ -65,8 +65,8 @@
     "ask-later": "Pergunte-me depois",
     "start-coding": "Comece a programar!",
     "go-to-settings": "Vá para as configurações para solicitar sua certificação",
-    "click-start-course": "Click here to start the course",
-    "click-start-project": "Click here to start the project"
+    "click-start-course": "Clique aqui para iniciar o curso",
+    "click-start-project": "Clique aqui para iniciar o projeto"
   },
   "landing": {
     "big-heading-1": "Aprenda a programar — de graça.",
@@ -297,12 +297,12 @@
     "help-translate": "Ainda estamos traduzindo as certificações a seguir.",
     "help-translate-link": "Ajude-nos a traduzir.",
     "project-preview-title": "Aqui está uma prévia do que você vai criar",
-    "github-required": "A <0>GitHub</0> account is required to run the project. You will need to create one if you haven't already.",
-    "step-1": "Step 1: Complete the project",
-    "step-2": "Step 2: Submit your code",
-    "submit-public-url": "When you have completed the project, save all the required files into a public repository and submit the URL to it below.",
-    "complete-both-steps": "Complete both steps below to finish the challenge.",
-    "runs-in-vm": "The project runs in a virtual machine, complete the user stories described in there and get all the tests to pass to finish step 1."
+    "github-required": "É necessária uma conta do <0>GitHub</0> para executar o projeto. Você precisará criar uma se ainda não o fez.",
+    "step-1": "Etapa 1: Conclua o projeto",
+    "step-2": "Etapa 2: Envie seu código",
+    "submit-public-url": "Quando você tiver concluído o projeto, salve todos os arquivos necessários em um repositório público e envie abaixo o URL que aponta para ele.",
+    "complete-both-steps": "Complete as duas etapas abaixo para terminar o desafio.",
+    "runs-in-vm": "O projeto é executado em uma máquina virtual. Complete as histórias de usuários descritas lá e passe em todos os testes para concluir a etapa 1."
   },
   "donate": {
     "title": "Dê seu apoio à nossa organização sem fins lucrativos",
@@ -427,7 +427,7 @@
     "and": "e",
     "change-theme": "Faça login para mudar o tema.",
     "translation-pending": "Ajude-nos a traduzir",
-    "certification-project": "Certification Project"
+    "certification-project": "Projeto de certificação"
   },
   "icons": {
     "gold-cup": "Taça de ouro",
@@ -457,7 +457,7 @@
     "magnifier": "lupa"
   },
   "aria": {
-    "fcc-curriculum": "freeCodeCamp Curriculum",
+    "fcc-curriculum": "Currículo do freeCodeCamp",
     "answer": "Resposta",
     "linkedin": "Link para o LinkedIn de {{username}}",
     "github": "Link para o GitHub de {{username}}",
@@ -521,7 +521,7 @@
     "delete-token-err": "Ocorreu um erro ao tentar excluir seu token",
     "token-created": "Você criou com sucesso um novo token.",
     "token-deleted": "Seu token foi excluído.",
-    "complete-project-first": "You must complete the project first."
+    "complete-project-first": "Você precisa completar o projeto primeiro."
   },
   "validation": {
     "max-characters": "Há um limite máximo de 288 caracteres, você tem {{charsLeft}} restante(s)",
