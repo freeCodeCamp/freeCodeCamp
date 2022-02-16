@@ -9,6 +9,8 @@ dashedName: step-30
 
 Before you get too far in to your styling, you should make use of the `sr-only` class. You can use CSS to make elements with this class completely hidden from the visual page, but still be announced by screen readers.
 
+The CSS you are about to write is a common set of properties used to ensure elements are completely hidden visually.
+
 The `span[class~="sr-only"]` selector will select any `span` element whose `class` *includes* `sr-only`. Create that selector, and give it a `border` property set to `0`.
 
 # --hints--
