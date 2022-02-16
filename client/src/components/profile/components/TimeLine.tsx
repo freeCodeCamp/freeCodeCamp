@@ -21,7 +21,7 @@ import {
 } from '../../../../../utils';
 import CertificationIcon from '../../../assets/icons/certification-icon';
 import { ChallengeFiles, CompletedChallenge } from '../../../redux/prop-types';
-import { maybeUrlRE } from '../../../utils';
+import { getSolutionDisplayType } from '../../../utils/solution-display-type';
 import { FullWidthRow, Link } from '../../helpers';
 import TimelinePagination from './timeline-pagination';
 
@@ -53,7 +53,6 @@ function TimelineInner({
   idToNameMap,
   sortedTimeline,
   totalPages,
-
   completedMap,
   t,
   username
@@ -96,13 +95,11 @@ function TimelineInner({
   }
 
   function renderViewButton(
-    id: string,
-    challengeFiles: ChallengeFiles,
-    githubLink?: string,
-    solution?: string | null
+    completedChallenge: CompletedChallenge
   ): React.ReactNode {
-    if (challengeFiles?.length) {
-      return (
+    const { id, solution, challengeFiles, githubLink } = completedChallenge;
+    const displayComponents = {
+      showFilesSolution: (
         <Button
           block={true}
           bsStyle='primary'
@@ -112,9 +109,8 @@ function TimelineInner({
         >
           {t('buttons.show-code')}
         </Button>
-      );
-    } else if (githubLink) {
-      return (
+      ),
+      showProjectAndGitHubLinks: (
         <div className='solutions-dropdown'>
           <DropdownButton
             block={true}
@@ -141,9 +137,8 @@ function TimelineInner({
             </MenuItem>
           </DropdownButton>
         </div>
-      );
-    } else if (solution && maybeUrlRE.test(solution)) {
-      return (
+      ),
+      showProjectLink: (
         <Button
           block={true}
           bsStyle='primary'
@@ -155,14 +150,15 @@ function TimelineInner({
         >
           {t('buttons.view')}
         </Button>
-      );
-    } else {
-      return null;
-    }
+      ),
+      none: null
+    };
+
+    return displayComponents[getSolutionDisplayType(completedChallenge)];
   }
 
   function renderCompletion(completed: CompletedChallenge): JSX.Element {
-    const { id, challengeFiles, githubLink, solution } = completed;
+    const { id } = completed;
     const completedDate = new Date(completed.completedDate);
     // @ts-expect-error idToNameMap is not a <string, string> Map...
     const { challengeTitle, challengePath, certPath } = idToNameMap.get(id);
@@ -181,7 +177,7 @@ function TimelineInner({
             <Link to={challengePath as string}>{challengeTitle}</Link>
           )}
         </td>
-        <td>{renderViewButton(id, challengeFiles, githubLink, solution)}</td>
+        <td>{renderViewButton(completed)}</td>
         <td className='text-center'>
           <time dateTime={completedDate.toISOString()}>
             {completedDate.toLocaleString([localeCode, 'en-US'], {
