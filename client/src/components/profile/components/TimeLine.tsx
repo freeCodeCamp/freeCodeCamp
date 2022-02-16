@@ -1,11 +1,5 @@
 /* eslint-disable @typescript-eslint/unbound-method */
-import {
-  Button,
-  Modal,
-  Table,
-  DropdownButton,
-  MenuItem
-} from '@freecodecamp/react-bootstrap';
+import { Button, Modal, Table } from '@freecodecamp/react-bootstrap';
 import Loadable from '@loadable/component';
 import { useStaticQuery, graphql } from 'gatsby';
 import { reverse, sortBy } from 'lodash-es';
@@ -21,8 +15,8 @@ import {
 } from '../../../../../utils';
 import CertificationIcon from '../../../assets/icons/certification-icon';
 import { ChallengeFiles, CompletedChallenge } from '../../../redux/prop-types';
-import { getSolutionDisplayType } from '../../../utils/solution-display-type';
 import { FullWidthRow, Link } from '../../helpers';
+import { SolutionDisplayWidget } from '../../SolutionDisplayWidget';
 import TimelinePagination from './timeline-pagination';
 
 import './timeline.css';
@@ -97,64 +91,14 @@ function TimelineInner({
   function renderViewButton(
     completedChallenge: CompletedChallenge
   ): React.ReactNode {
-    const { id, solution, challengeFiles, githubLink } = completedChallenge;
-    const displayComponents = {
-      showFilesSolution: (
-        <Button
-          block={true}
-          bsStyle='primary'
-          className='btn-invert'
-          id={`btn-for-${id}`}
-          onClick={() => viewSolution(id, solution, challengeFiles)}
-        >
-          {t('buttons.show-code')}
-        </Button>
-      ),
-      showProjectAndGitHubLinks: (
-        <div className='solutions-dropdown'>
-          <DropdownButton
-            block={true}
-            bsStyle='primary'
-            className='btn-invert'
-            id={`dropdown-for-${id}`}
-            title='View'
-          >
-            <MenuItem
-              bsStyle='primary'
-              href={solution}
-              rel='noopener noreferrer'
-              target='_blank'
-            >
-              {t('buttons.frontend')}
-            </MenuItem>
-            <MenuItem
-              bsStyle='primary'
-              href={githubLink}
-              rel='noopener noreferrer'
-              target='_blank'
-            >
-              {t('buttons.backend')}
-            </MenuItem>
-          </DropdownButton>
-        </div>
-      ),
-      showProjectLink: (
-        <Button
-          block={true}
-          bsStyle='primary'
-          className='btn-invert'
-          href={solution}
-          id={`btn-for-${id}`}
-          rel='noopener noreferrer'
-          target='_blank'
-        >
-          {t('buttons.view')}
-        </Button>
-      ),
-      none: null
-    };
-
-    return displayComponents[getSolutionDisplayType(completedChallenge)];
+    const { id, solution, challengeFiles } = completedChallenge;
+    return (
+      <SolutionDisplayWidget
+        completedChallenge={completedChallenge}
+        showFilesSolution={() => viewSolution(id, solution, challengeFiles)}
+        displayContext={'timeline'}
+      ></SolutionDisplayWidget>
+    );
   }
 
   function renderCompletion(completed: CompletedChallenge): JSX.Element {

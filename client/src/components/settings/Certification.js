@@ -1,9 +1,4 @@
-import {
-  Table,
-  Button,
-  DropdownButton,
-  MenuItem
-} from '@freecodecamp/react-bootstrap';
+import { Table, Button } from '@freecodecamp/react-bootstrap';
 import { Link, navigate } from 'gatsby';
 import { find, first } from 'lodash-es';
 import PropTypes from 'prop-types';
@@ -19,7 +14,7 @@ import {
 import { FlashMessages } from '../Flash/redux/flash-messages';
 import ProjectModal from '../SolutionViewer/ProjectModal';
 import { FullWidthRow, Spacer } from '../helpers';
-import { getSolutionDisplayType } from '../../utils/solution-display-type';
+import { SolutionDisplayWidget } from '../SolutionDisplayWidget';
 import SectionHeader from './section-header';
 
 import './certification.css';
@@ -161,7 +156,7 @@ export class CertificationSettings extends Component {
   getUserIsCertMap = () => isCertMapSelector(this.props);
 
   getProjectSolution = (projectId, projectTitle) => {
-    const { completedChallenges, t } = this.props;
+    const { completedChallenges } = this.props;
     const completedProject = find(
       completedChallenges,
       ({ id }) => projectId === id
@@ -169,7 +164,7 @@ export class CertificationSettings extends Component {
     if (!completedProject) {
       return null;
     }
-    const { solution, githubLink, challengeFiles } = completedProject;
+    const { solution, challengeFiles } = completedProject;
     const onClickHandler = () =>
       this.setState({
         solutionViewer: {
@@ -180,63 +175,14 @@ export class CertificationSettings extends Component {
         }
       });
 
-    const displayComponents = {
-      showFilesSolution: (
-        <Button
-          block={true}
-          bsStyle='primary'
-          className='btn-invert'
-          data-cy={projectTitle}
-          id={`btn-for-${projectId}`}
-          onClick={onClickHandler}
-        >
-          {t('buttons.show-code')}
-        </Button>
-      ),
-      showProjectAndGitHubLinks: (
-        <div className='solutions-dropdown'>
-          <DropdownButton
-            block={true}
-            bsStyle='primary'
-            className='btn-invert'
-            id={`dropdown-for-${projectId}`}
-            title='Show Solutions'
-          >
-            <MenuItem
-              bsStyle='primary'
-              href={solution}
-              rel='noopener noreferrer'
-              target='_blank'
-            >
-              {t('buttons.frontend')}
-            </MenuItem>
-            <MenuItem
-              bsStyle='primary'
-              href={githubLink}
-              rel='noopener noreferrer'
-              target='_blank'
-            >
-              {t('buttons.backend')}
-            </MenuItem>
-          </DropdownButton>
-        </div>
-      ),
-      showProjectLink: (
-        <Button
-          block={true}
-          bsStyle='primary'
-          className='btn-invert'
-          href={solution}
-          id={`btn-for-${projectId}`}
-          rel='noopener noreferrer'
-          target='_blank'
-        >
-          {t('buttons.show-solution')}
-        </Button>
-      ),
-      none: <>{t('certification.project.no-solution')}</>
-    };
-    return displayComponents[getSolutionDisplayType(completedProject)];
+    return (
+      <SolutionDisplayWidget
+        completedChallenge={completedProject}
+        projectTitle={projectTitle}
+        showFilesSolution={onClickHandler}
+        displayContext={'settings'}
+      ></SolutionDisplayWidget>
+    );
   };
 
   renderCertifications = (certName, projectsMap) => {
