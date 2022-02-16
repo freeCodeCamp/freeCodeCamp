@@ -466,7 +466,9 @@
     "first-page": "訪問第一頁",
     "previous-page": "訪問上一頁",
     "next-page": "訪問下一頁",
-    "last-page": "訪問最後一頁"
+    "last-page": "訪問最後一頁",
+    "primary-nav": "primary",
+    "breadcrumb-nav": "breadcrumb"
   },
   "flash": {
     "honest-first": "申請認證之前，你必須先接受我們的《學術誠信條例》",

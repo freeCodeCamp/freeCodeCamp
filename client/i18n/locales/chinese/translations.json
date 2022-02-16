@@ -466,7 +466,9 @@
     "first-page": "访问第一页",
     "previous-page": "访问上一页",
     "next-page": "访问下一页",
-    "last-page": "访问最后一页"
+    "last-page": "访问最后一页",
+    "primary-nav": "primary",
+    "breadcrumb-nav": "breadcrumb"
   },
   "flash": {
     "honest-first": "申请认证之前，你必须先接受我们的《学术诚信条例》",
