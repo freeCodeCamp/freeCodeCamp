@@ -21,7 +21,7 @@ export function SolutionDisplayWidget({
   showFilesSolution,
   displayContext
 }: Props) {
-  const { id, solution, githubLink } = completedChallenge;
+  const { solution, githubLink } = completedChallenge;
   const { t } = useTranslation();
 
   const dropdownTitle =
@@ -70,7 +70,6 @@ export function SolutionDisplayWidget({
       bsStyle='primary'
       className='btn-invert'
       data-cy={projectTitle}
-      id={`btn-for-${id}`}
       onClick={showFilesSolution}
     >
       {t('buttons.show-code')}
@@ -82,7 +81,6 @@ export function SolutionDisplayWidget({
         block={true}
         bsStyle='primary'
         className='btn-invert'
-        id={`dropdown-for-${id}`}
         title={dropdownTitle}
       >
         <MenuItem
@@ -110,7 +108,6 @@ export function SolutionDisplayWidget({
       bsStyle='primary'
       className='btn-invert'
       href={solution}
-      id={`btn-for-${id}`}
       rel='noopener noreferrer'
       target='_blank'
     >
