@@ -196,7 +196,7 @@ body {
 h1 {
   max-width: 37.25rem;
   margin: 0 auto;
-  padding: 1.5rem 1.25rem 1.5rem;
+  padding: 1.5rem 1.25rem;
 }
 
 h1 .flex {

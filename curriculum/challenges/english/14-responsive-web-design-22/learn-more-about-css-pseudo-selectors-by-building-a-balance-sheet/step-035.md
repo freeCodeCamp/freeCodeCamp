@@ -7,7 +7,7 @@ dashedName: step-35
 
 # --description--
 
-Time to style your table heading. Create an `h1` selector. Give it a `max-width` property set to `37.25rem`, a `margin` property set to `0 auto`, and a `padding` property set to `1.5rem 1.25rem 1.5rem`.
+Time to style your table heading. Create an `h1` selector. Give it a `max-width` property set to `37.25rem`, a `margin` property set to `0 auto`, and a `padding` property set to `1.5rem 1.25rem`.
 
 # --hints--
 
@@ -29,7 +29,7 @@ Your `h1` selector should have a `margin` property set to `0 auto`.
 assert(new __helpers.CSSHelp(document).getStyle('h1')?.getPropertyValue('margin') === '0px auto');
 ```
 
-Your `h1` selector should have a `padding` property set to `1.5rem 1.25rem 1.5rem`.
+Your `h1` selector should have a `padding` property set to `1.5rem 1.25rem`.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('h1')?.getPropertyValue('padding') === '1.5rem 1.25rem');
