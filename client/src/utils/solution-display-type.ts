@@ -8,8 +8,9 @@ export const getSolutionDisplayType = ({
 }: CompletedChallenge) => {
   if (challengeFiles?.length) return 'showFilesSolution';
   if (!solution) return 'none';
-  if (maybeUrlRE.test(solution) && maybeUrlRE.test(githubLink ?? ''))
-    return 'showProjectAndGitHubLinks';
-  if (maybeUrlRE.test(solution ?? '')) return 'showProjectLink';
-  return 'none';
+  // Some of the user records still have JavaScript project solutions stored as
+  // solution strings
+  if (!maybeUrlRE.test(solution)) return 'showFilesSolution';
+  if (maybeUrlRE.test(githubLink ?? '')) return 'showProjectAndGitHubLinks';
+  return 'showProjectLink';
 };

@@ -1,6 +1,6 @@
 import {
   bothLinks,
-  invalidSolution,
+  legacySolution,
   invalidGithubLink,
   onlyGithubLink,
   onlySolution,
@@ -9,21 +9,21 @@ import {
 import { getSolutionDisplayType } from './solution-display-type';
 
 describe('getSolutionDisplayType', () => {
-  it('should return "none" for missing solutions', () => {
+  it('should handle missing solutions', () => {
     expect(getSolutionDisplayType(onlyGithubLink)).toBe('none');
   });
-  it('should return "none" for invalid solutions', () => {
-    expect(getSolutionDisplayType(invalidSolution)).toBe('none');
+  it('should handle legacy solutions', () => {
+    expect(getSolutionDisplayType(legacySolution)).toBe('showFilesSolution');
   });
-  it('should return "showFilesSolution" for solutions with files', () => {
+  it('should handle solutions with files', () => {
     expect(getSolutionDisplayType(withChallenges)).toBe('showFilesSolution');
   });
-  it('should return "showProjectLink" for solutions with a single valid url', () => {
+  it('should handle solutions with a single valid url', () => {
     expect.assertions(2);
     expect(getSolutionDisplayType(onlySolution)).toBe('showProjectLink');
     expect(getSolutionDisplayType(invalidGithubLink)).toBe('showProjectLink');
   });
-  it('should return "showProjectAndGitHubLinks" for solutions with both links', () => {
+  it('should handle solutions with both links', () => {
     expect(getSolutionDisplayType(bothLinks)).toBe('showProjectAndGitHubLinks');
   });
 });

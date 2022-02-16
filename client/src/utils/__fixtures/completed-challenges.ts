@@ -11,9 +11,9 @@ export const onlySolution = {
   solution: 'https://some-url.com'
 }
 
-export const invalidSolution = {
+export const legacySolution = {
   ...baseChallenge,
-  solution: 'some-url.com'
+  solution: 'var x = 1;'
 }
 
 export const bothLinks = {
