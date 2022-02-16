@@ -15,52 +15,69 @@ export interface HeaderProps {
 }
 export class Header extends React.Component<
   HeaderProps,
-  { displayMenu: boolean }
+  { displayMenu: boolean; displayLanguageMenu: boolean }
 > {
-  menuButtonRef: React.RefObject<any>;
+  menuButtonRef: React.RefObject<HTMLButtonElement>;
   searchBarRef: React.RefObject<any>;
   static displayName: string;
   constructor(props: HeaderProps) {
     super(props);
     this.state = {
-      displayMenu: false
+      displayMenu: false,
+      displayLanguageMenu: false
     };
     this.menuButtonRef = React.createRef();
     this.searchBarRef = React.createRef();
     this.handleClickOutside = this.handleClickOutside.bind(this);
-    this.toggleDisplayMenu = this.toggleDisplayMenu.bind(this);
-  }
-
-  componentDidMount(): void {
-    document.addEventListener('click', this.handleClickOutside);
-  }
-
-  componentWillUnmount(): void {
-    document.removeEventListener('click', this.handleClickOutside);
+    this.showMenu = this.showMenu.bind(this);
+    this.hideMenu = this.hideMenu.bind(this);
+    this.showLanguageMenu = this.showLanguageMenu.bind(this);
+    this.hideLanguageMenu = this.hideLanguageMenu.bind(this);
   }
 
   handleClickOutside(event: globalThis.MouseEvent): void {
+    const eventTarget = event.target as HTMLElement;
     if (
       this.state.displayMenu &&
       this.menuButtonRef.current &&
-      !this.menuButtonRef.current.contains(event.target) &&
+      !this.menuButtonRef.current.contains(eventTarget) &&
       // since the search bar is part of the menu on small screens, clicks on
       // the search bar should not toggle the menu
       this.searchBarRef.current &&
-      !this.searchBarRef.current.contains(event.target) &&
-      !(event.target instanceof HTMLSelectElement)
+      !this.searchBarRef.current.contains(eventTarget) &&
+      // don't count clicks on language button/menu
+      !eventTarget.closest('.nav-lang') &&
+      // don't count clicks on disabled elements
+      !eventTarget.closest('[aria-disabled="true"]')
     ) {
-      this.toggleDisplayMenu();
+      this.hideMenu();
     }
   }
 
-  toggleDisplayMenu(): void {
-    this.setState(({ displayMenu }: { displayMenu: boolean }) => ({
-      displayMenu: !displayMenu
-    }));
+  showMenu(): void {
+    this.setState({ displayMenu: true }, () => {
+      document.addEventListener('click', this.handleClickOutside);
+    });
   }
+
+  hideMenu(): void {
+    this.setState({ displayMenu: false }, () => {
+      document.removeEventListener('click', this.handleClickOutside);
+      this.hideLanguageMenu();
+    });
+  }
+
+  // elementToFocus must be a link in the language menu
+  showLanguageMenu(elementToFocus: HTMLAnchorElement): void {
+    this.setState({ displayLanguageMenu: true }, () => elementToFocus.focus());
+  }
+
+  hideLanguageMenu(): void {
+    this.setState({ displayLanguageMenu: false });
+  }
+
   render(): JSX.Element {
-    const { displayMenu } = this.state;
+    const { displayMenu, displayLanguageMenu } = this.state;
     const { fetchState, user } = this.props;
     return (
       <>
@@ -71,9 +88,13 @@ export class Header extends React.Component<
           <UniversalNav
             displayMenu={displayMenu}
             fetchState={fetchState}
+            displayLanguageMenu={displayLanguageMenu}
+            hideLanguageMenu={this.hideLanguageMenu}
+            hideMenu={this.hideMenu}
             menuButtonRef={this.menuButtonRef}
             searchBarRef={this.searchBarRef}
-            toggleDisplayMenu={this.toggleDisplayMenu}
+            showMenu={this.showMenu}
+            showLanguageMenu={this.showLanguageMenu}
             user={user}
           />
         </header>

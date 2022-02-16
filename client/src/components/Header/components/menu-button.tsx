@@ -1,22 +1,39 @@
 import React, { RefObject } from 'react';
 import { useTranslation } from 'react-i18next';
-import AuthOrProfile from './auth-or-profile';
 
 export interface MenuButtonProps {
   className?: string;
   displayMenu?: boolean;
   innerRef?: RefObject<HTMLButtonElement>;
-  onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
-  user?: Record<string, unknown>;
+  showMenu: () => void;
+  hideMenu: () => void;
 }
 
 const MenuButton = ({
   displayMenu,
   innerRef,
-  onClick,
-  user
+  showMenu,
+  hideMenu
 }: MenuButtonProps): JSX.Element => {
   const { t } = useTranslation();
+
+  const handleBlur = (event: React.FocusEvent<HTMLButtonElement>): void => {
+    if (
+      event.relatedTarget &&
+      !event.relatedTarget.closest('.nav-list') &&
+      displayMenu
+    ) {
+      hideMenu();
+    }
+  };
+
+  const handleClick = (): void => {
+    if (displayMenu) {
+      hideMenu();
+      return;
+    }
+    showMenu();
+  };
 
   return (
     <>
@@ -25,14 +42,13 @@ const MenuButton = ({
         className={
           'toggle-button-nav' + (displayMenu ? ' reverse-toggle-color' : '')
         }
-        onClick={onClick}
+        id='toggle-button-nav'
+        onBlur={handleBlur}
+        onClick={handleClick}
         ref={innerRef}
       >
         {t('buttons.menu')}
       </button>
-      <span className='navatar'>
-        <AuthOrProfile user={user} />
-      </span>
     </>
   );
 };

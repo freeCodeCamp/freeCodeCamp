@@ -12,6 +12,7 @@ import MenuButton from './menu-button';
 import NavLinks from './nav-links';
 import NavLogo from './nav-logo';
 import './universal-nav.css';
+import AuthOrProfile from './auth-or-profile';
 
 const SearchBar = Loadable(() => import('../../search/searchBar/search-bar'));
 const SearchBarOptimized = Loadable(
@@ -20,15 +21,23 @@ const SearchBarOptimized = Loadable(
 
 export interface UniversalNavProps {
   displayMenu?: boolean;
+  displayLanguageMenu?: boolean;
   fetchState?: { pending: boolean };
   menuButtonRef?: Ref<HTMLButtonElement> | undefined;
   searchBarRef?: unknown;
-  toggleDisplayMenu?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  showMenu?: () => void;
+  hideMenu?: () => void;
+  showLanguageMenu?: (elementToFocus: HTMLAnchorElement) => void;
+  hideLanguageMenu?: () => void;
   user?: Record<string, unknown>;
 }
 export const UniversalNav = ({
   displayMenu,
-  toggleDisplayMenu,
+  displayLanguageMenu,
+  showMenu,
+  hideMenu,
+  showLanguageMenu,
+  hideLanguageMenu,
   menuButtonRef,
   searchBarRef,
   user,
@@ -68,21 +77,31 @@ export const UniversalNav = ({
             <SkeletonSprite />
           </div>
         ) : (
-          <MenuButton
-            displayMenu={displayMenu}
-            innerRef={menuButtonRef}
-            onClick={toggleDisplayMenu}
-            user={user}
-          />
+          <>
+            <MenuButton
+              displayMenu={displayMenu}
+              hideMenu={hideMenu}
+              innerRef={menuButtonRef}
+              showMenu={showMenu}
+              user={user}
+            />
+            <NavLinks
+              displayMenu={displayMenu}
+              fetchState={fetchState}
+              displayLanguageMenu={displayLanguageMenu}
+              hideLanguageMenu={hideLanguageMenu}
+              hideMenu={hideMenu}
+              menuButtonRef={menuButtonRef}
+              showLanguageMenu={showLanguageMenu}
+              showMenu={showMenu}
+              user={user}
+            />
+            <div className='navatar'>
+              <AuthOrProfile user={user} />
+            </div>
+          </>
         )}
       </div>
-
-      <NavLinks
-        displayMenu={displayMenu}
-        fetchState={fetchState}
-        toggleDisplayMenu={toggleDisplayMenu}
-        user={user}
-      />
     </nav>
   );
 };
