@@ -10,14 +10,14 @@ import { getSolutionDisplayType } from '../../utils/solution-display-type';
 
 interface Props {
   completedChallenge: CompletedChallenge;
-  projectTitle?: string;
+  dataCy?: string;
   showFilesSolution: () => void;
   displayContext: 'timeline' | 'settings' | 'certification';
 }
 
 export function SolutionDisplayWidget({
   completedChallenge,
-  projectTitle,
+  dataCy,
   showFilesSolution,
   displayContext
 }: Props) {
@@ -34,7 +34,7 @@ export function SolutionDisplayWidget({
   const ShowFilesSolutionForCertification = (
     <button
       className='project-link-button-override'
-      data-cy={`${projectTitle ?? ''} solution`}
+      data-cy={dataCy}
       onClick={showFilesSolution}
     >
       {t('certification.project.solution')}
@@ -69,7 +69,7 @@ export function SolutionDisplayWidget({
       block={true}
       bsStyle='primary'
       className='btn-invert'
-      data-cy={projectTitle}
+      data-cy={dataCy}
       onClick={showFilesSolution}
     >
       {t('buttons.show-code')}

@@ -178,7 +178,7 @@ export class CertificationSettings extends Component {
     return (
       <SolutionDisplayWidget
         completedChallenge={completedProject}
-        projectTitle={projectTitle}
+        dataCy={projectTitle}
         showFilesSolution={onClickHandler}
         displayContext={'settings'}
       ></SolutionDisplayWidget>
