@@ -466,7 +466,9 @@
     "first-page": "Ir para a primeira página",
     "previous-page": "Voltar à página anterior",
     "next-page": "Ir para a próxima página",
-    "last-page": "Ir para a última página"
+    "last-page": "Ir para a última página",
+    "primary-nav": "primary",
+    "breadcrumb-nav": "breadcrumb"
   },
   "flash": {
     "honest-first": "Para solicitar uma certificação, você precisa primeiro aceitar nossa política de honestidade acadêmica",
