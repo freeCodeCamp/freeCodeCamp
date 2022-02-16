@@ -81,6 +81,7 @@ export function SolutionDisplayWidget({
         block={true}
         bsStyle='primary'
         className='btn-invert'
+        id={'drop-down-${dropdownTitle}`}
         title={dropdownTitle}
       >
         <MenuItem
