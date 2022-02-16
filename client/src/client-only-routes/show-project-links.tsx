@@ -10,7 +10,7 @@ import {
   legacyProjectMap
 } from '../resources/cert-and-project-map';
 
-import { getSolutionDisplayType } from '../utils/solution-display-type';
+import { SolutionDisplayWidget } from '../components/SolutionDisplayWidget';
 
 interface ShowProjectLinksProps {
   certName: string;
@@ -52,8 +52,8 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       return null;
     }
 
-    const { solution, githubLink, challengeFiles } = completedProject;
-    const onClickHandler = () =>
+    const { solution, challengeFiles } = completedProject;
+    const showFilesSolution = () =>
       setSolutionState({
         projectTitle,
         challengeFiles,
@@ -61,41 +61,13 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
         isOpen: true
       });
 
-    const displayComponents = {
-      showFilesSolution: (
-        <button
-          className='project-link-button-override'
-          data-cy={`${projectTitle} solution`}
-          onClick={onClickHandler}
-        >
-          {t('certification.project.solution')}
-        </button>
-      ),
-      showProjectAndGitHubLinks: (
-        <>
-          <a href={solution ?? ''} rel='noopener noreferrer' target='_blank'>
-            {t('certification.project.solution')}
-          </a>
-          ,{' '}
-          <a href={githubLink} rel='noopener noreferrer' target='_blank'>
-            {t('certification.project.source')}
-          </a>
-        </>
-      ),
-      showProjectLink: (
-        <a
-          className='btn-invert'
-          href={solution ?? ''}
-          rel='noopener noreferrer'
-          target='_blank'
-        >
-          {t('certification.project.solution')}
-        </a>
-      ),
-      none: <>{t('certification.project.no-solution')}</>
-    };
-
-    return displayComponents[getSolutionDisplayType(completedProject)];
+    return (
+      <SolutionDisplayWidget
+        completedChallenge={completedProject}
+        displayContext='certification'
+        showFilesSolution={showFilesSolution}
+      ></SolutionDisplayWidget>
+    );
   };
 
   const renderProjectsFor = (certName: string) => {

@@ -35,62 +35,101 @@ export function SolutionDisplayWidget({
       <>{t('certification.project.no-solution')}</>
     ) : null;
 
-  const displayComponents = {
-    showFilesSolution: (
-      <Button
-        block={true}
-        bsStyle='primary'
-        className='btn-invert'
-        data-cy={projectTitle}
-        id={`btn-for-${id}`}
-        onClick={showFilesSolution}
-      >
-        {t('buttons.show-code')}
-      </Button>
-    ),
-    showProjectAndGitHubLinks: (
-      <div className='solutions-dropdown'>
-        <DropdownButton
-          block={true}
-          bsStyle='primary'
-          className='btn-invert'
-          id={`dropdown-for-${id}`}
-          title={dropdownTitle}
-        >
-          <MenuItem
-            bsStyle='primary'
-            href={solution}
-            rel='noopener noreferrer'
-            target='_blank'
-          >
-            {t('buttons.frontend')}
-          </MenuItem>
-          <MenuItem
-            bsStyle='primary'
-            href={githubLink}
-            rel='noopener noreferrer'
-            target='_blank'
-          >
-            {t('buttons.backend')}
-          </MenuItem>
-        </DropdownButton>
-      </div>
-    ),
-    showProjectLink: (
-      <Button
-        block={true}
-        bsStyle='primary'
-        className='btn-invert'
-        href={solution}
-        id={`btn-for-${id}`}
-        rel='noopener noreferrer'
-        target='_blank'
-      >
-        {projectLinkText}
-      </Button>
-    ),
-    none: missingSolutionComponent
-  };
+  const displayComponents =
+    displayContext === 'certification'
+      ? {
+          showFilesSolution: (
+            <button
+              className='project-link-button-override'
+              data-cy={`${projectTitle ?? ''} solution`}
+              onClick={showFilesSolution}
+            >
+              {t('certification.project.solution')}
+            </button>
+          ),
+          showProjectAndGitHubLinks: (
+            <>
+              <a
+                href={solution ?? ''}
+                rel='noopener noreferrer'
+                target='_blank'
+              >
+                {t('certification.project.solution')}
+              </a>
+              ,{' '}
+              <a href={githubLink} rel='noopener noreferrer' target='_blank'>
+                {t('certification.project.source')}
+              </a>
+            </>
+          ),
+          showProjectLink: (
+            <a
+              className='btn-invert'
+              href={solution ?? ''}
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              {t('certification.project.solution')}
+            </a>
+          ),
+          none: <>{t('certification.project.no-solution')}</>
+        }
+      : {
+          showFilesSolution: (
+            <Button
+              block={true}
+              bsStyle='primary'
+              className='btn-invert'
+              data-cy={projectTitle}
+              id={`btn-for-${id}`}
+              onClick={showFilesSolution}
+            >
+              {t('buttons.show-code')}
+            </Button>
+          ),
+          showProjectAndGitHubLinks: (
+            <div className='solutions-dropdown'>
+              <DropdownButton
+                block={true}
+                bsStyle='primary'
+                className='btn-invert'
+                id={`dropdown-for-${id}`}
+                title={dropdownTitle}
+              >
+                <MenuItem
+                  bsStyle='primary'
+                  href={solution}
+                  rel='noopener noreferrer'
+                  target='_blank'
+                >
+                  {t('buttons.frontend')}
+                </MenuItem>
+                <MenuItem
+                  bsStyle='primary'
+                  href={githubLink}
+                  rel='noopener noreferrer'
+                  target='_blank'
+                >
+                  {t('buttons.backend')}
+                </MenuItem>
+              </DropdownButton>
+            </div>
+          ),
+          showProjectLink: (
+            <Button
+              block={true}
+              bsStyle='primary'
+              className='btn-invert'
+              href={solution}
+              id={`btn-for-${id}`}
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              {projectLinkText}
+            </Button>
+          ),
+          none: missingSolutionComponent
+        };
 
   return displayComponents[getSolutionDisplayType(completedChallenge)];
 }
