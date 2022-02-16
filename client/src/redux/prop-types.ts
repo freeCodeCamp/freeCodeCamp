@@ -363,7 +363,7 @@ export type ChallengeFile = {
   seed: string;
   contents: string;
   id: string;
-  history: [[string], string];
+  history: string[];
 };
 
 export type ChallengeFiles = ChallengeFile[] | null;

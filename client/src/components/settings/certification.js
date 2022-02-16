@@ -1,9 +1,4 @@
-import {
-  Table,
-  Button,
-  DropdownButton,
-  MenuItem
-} from '@freecodecamp/react-bootstrap';
+import { Table, Button } from '@freecodecamp/react-bootstrap';
 import { Link, navigate } from 'gatsby';
 import { find, first } from 'lodash-es';
 import PropTypes from 'prop-types';
@@ -16,12 +11,10 @@ import {
   projectMap,
   legacyProjectMap
 } from '../../resources/cert-and-project-map';
-
-import { maybeUrlRE } from '../../utils';
 import { FlashMessages } from '../Flash/redux/flash-messages';
 import ProjectModal from '../SolutionViewer/ProjectModal';
 import { FullWidthRow, Spacer } from '../helpers';
-
+import { SolutionDisplayWidget } from '../solution-display-widget';
 import SectionHeader from './section-header';
 
 import './certification.css';
@@ -163,7 +156,7 @@ export class CertificationSettings extends Component {
   getUserIsCertMap = () => isCertMapSelector(this.props);
 
   getProjectSolution = (projectId, projectTitle) => {
-    const { completedChallenges, t } = this.props;
+    const { completedChallenges } = this.props;
     const completedProject = find(
       completedChallenges,
       ({ id }) => projectId === id
@@ -171,7 +164,7 @@ export class CertificationSettings extends Component {
     if (!completedProject) {
       return null;
     }
-    const { solution, githubLink, challengeFiles } = completedProject;
+    const { solution, challengeFiles } = completedProject;
     const onClickHandler = () =>
       this.setState({
         solutionViewer: {
@@ -181,75 +174,14 @@ export class CertificationSettings extends Component {
           isOpen: true
         }
       });
-    if (challengeFiles?.length) {
-      return (
-        <Button
-          block={true}
-          bsStyle='primary'
-          className='btn-invert'
-          data-cy={projectTitle}
-          id={`btn-for-${projectId}`}
-          onClick={onClickHandler}
-        >
-          {t('buttons.show-code')}
-        </Button>
-      );
-    }
-    if (githubLink) {
-      return (
-        <div className='solutions-dropdown'>
-          <DropdownButton
-            block={true}
-            bsStyle='primary'
-            className='btn-invert'
-            id={`dropdown-for-${projectId}`}
-            title='Show Solutions'
-          >
-            <MenuItem
-              bsStyle='primary'
-              href={solution}
-              rel='noopener noreferrer'
-              target='_blank'
-            >
-              {t('buttons.frontend')}
-            </MenuItem>
-            <MenuItem
-              bsStyle='primary'
-              href={githubLink}
-              rel='noopener noreferrer'
-              target='_blank'
-            >
-              {t('buttons.backend')}
-            </MenuItem>
-          </DropdownButton>
-        </div>
-      );
-    }
-    if (maybeUrlRE.test(solution)) {
-      return (
-        <Button
-          block={true}
-          bsStyle='primary'
-          className='btn-invert'
-          href={solution}
-          id={`btn-for-${projectId}`}
-          rel='noopener noreferrer'
-          target='_blank'
-        >
-          {t('buttons.show-solution')}
-        </Button>
-      );
-    }
+
     return (
-      <Button
-        block={true}
-        bsStyle='primary'
-        className='btn-invert'
-        id={`btn-for-${projectId}`}
-        onClick={onClickHandler}
-      >
-        {t('buttons.show-code')}
-      </Button>
+      <SolutionDisplayWidget
+        completedChallenge={completedProject}
+        dataCy={projectTitle}
+        showFilesSolution={onClickHandler}
+        displayContext={'settings'}
+      ></SolutionDisplayWidget>
     );
   };
 

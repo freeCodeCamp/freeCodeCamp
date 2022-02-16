@@ -3,7 +3,7 @@
 import { render, screen } from '@testing-library/react';
 import { useStaticQuery } from 'gatsby';
 import React from 'react';
-import TimeLine from './TimeLine';
+import TimeLine from './time-line';
 
 beforeEach(() => {
   // @ts-ignore
