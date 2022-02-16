@@ -1,6 +1,6 @@
 ---
 id: 595668ca4cfe1af2fb9818d4
-title: Harshad or Niven series
+title: Serie di Harshad o Niven
 challengeType: 5
 forumTopicId: 302281
 dashedName: harshad-or-niven-series
@@ -8,39 +8,39 @@ dashedName: harshad-or-niven-series
 
 # --description--
 
-The Harshad or Niven numbers are positive integers ≥ 1 that are divisible by the sum of their digits.
+I numeri di Harshad o Niven sono numeri interi positivi ≥ 1 che sono divisibili per la somma delle loro cifre.
 
-For example, `42` is a Harshad number as `42` is divisible by `(4 + 2)` without remainder.
+Ad esempio, `42` è un numero di Harshad dato che `42` è divisibile per `(4 + 2)` senza resto.
 
-Assume that the series is defined as the numbers in increasing order.
+Assumiamo che la serie sia definita con i numeri in ordine crescente.
 
 # --instructions--
 
-Implement a function to generate successive members of the Harshad sequence.
+Implementare una funzione per generare elementi successivi della sequenza di Harshad.
 
-Use it to return an array with ten members of the sequence, starting with first Harshad number greater than `n`.
+Usalo per restituire un array con dieci elementi della sequenza, iniziando con il primo numero di Harshad maggiore di `n`.
 
 # --hints--
 
-`isHarshadOrNiven` should be a function.
+`isHarshadOrNiven` dovrebbe essere una funzione.
 
 ```js
 assert(typeof isHarshadOrNiven === 'function');
 ```
 
-`isHarshadOrNiven(10)` should return `[12, 18, 20, 21, 24, 27, 30, 36, 40, 42]`
+`isHarshadOrNiven(10)` dovrebbe restituire `[12, 18, 20, 21, 24, 27, 30, 36, 40, 42]`
 
 ```js
 assert.deepEqual(isHarshadOrNiven(10), [12, 18, 20, 21, 24, 27, 30, 36, 40, 42]);
 ```
 
-`isHarshadOrNiven(400)` should return `[402, 405, 407, 408, 410, 414, 420, 423, 432, 440]`
+`isHarshadOrNiven(400)` dovrebbe restituire `[402, 405, 407, 408, 410, 414, 420, 423, 432, 440]`
 
 ```js
 assert.deepEqual(isHarshadOrNiven(400), [402, 405, 407, 408, 410, 414, 420, 423, 432, 440]);
 ```
 
-`isHarshadOrNiven(1000)` should return `[1002, 1008, 1010, 1011, 1012, 1014, 1015, 1016, 1017, 1020]`
+`isHarshadOrNiven(1000)` dovrebbe restituire `[1002, 1008, 1010, 1011, 1012, 1014, 1015, 1016, 1017, 1020]`
 
 ```js
 assert.deepEqual(isHarshadOrNiven(1000), [1002, 1008, 1010, 1011, 1012, 1014, 1015, 1016, 1017, 1020]);

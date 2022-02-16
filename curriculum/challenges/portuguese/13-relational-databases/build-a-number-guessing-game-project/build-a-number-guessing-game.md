@@ -1,6 +1,6 @@
 ---
 id: 602da04c22201c65d2a019f4
-title: Build a Number Guessing Game
+title: Criar um jogo de adivinhação de números
 challengeType: 13
 helpCategory: Backend Development
 url: https://github.com/freeCodeCamp/learn-number-guessing-game
@@ -9,15 +9,15 @@ dashedName: build-a-number-guessing-game
 
 # --description--
 
-This is one of the required projects to earn your certification. For this project, you will use Bash scripting, PostgreSQL, and Git to create a number guessing game that runs in the terminal and saves user information.
+Este é um dos projetos necessários para obter sua certificação. Para este projeto, você usará scripts de Bash, PostgreSQL e o Git para criar um jogo de sugestões de números que será executado no terminal e que gravará as informações de usuários.
 
 # --instructions--
 
-**Important:** After you pass all the project tests, save a dump of your database into a `number_guessers.sql` file, as well as your whole `number_guessing_game` folder, so you can complete step 2. There will be instructions how to do that within the virtual machine.
+**Importante:** depois de passar em todos os testes do projeto, salve um dump (cópia) do seu banco de dados em um arquivo `number_guessers.sql`, bem como toda a sua pasta `number_guessing_game` para poder concluir a etapa 2. Haverá instruções sobre como fazer isso dentro da máquina virtual.
 
 # --notes--
 
-Required files: `number_guessers.sql`, and the whole `number_guessing_game` folder
+Arquivos necessários: `number_guessers.sql` e toda a pasta `number_guessing_game`
 
 # --hints--
 

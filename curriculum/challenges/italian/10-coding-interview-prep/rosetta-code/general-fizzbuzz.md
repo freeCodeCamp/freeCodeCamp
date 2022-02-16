@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7e78
-title: General FizzBuzz
+title: FizzBuzz generico
 challengeType: 5
 forumTopicId: 302273
 dashedName: general-fizzbuzz
@@ -8,25 +8,25 @@ dashedName: general-fizzbuzz
 
 # --description--
 
-Write a generalized version of [FizzBuzz](https://rosettacode.org/wiki/FizzBuzz) that works for any list of factors, along with their words.
+Scrivi una versione generalizzata di [Fizzbuzz](https://rosettacode.org/wiki/FizzBuzz) che funziona per ogni lista di fattori, assieme alle loro parole.
 
-This is basically a "fizzbuzz" implementation where the rules of the game are supplied to the user. Create a function to implement this. The function should take two parameters.
+Questa è in pratica una implementazione di "fizzbuzz" dove le regole del gioco sono date all'utente. Crea una funzione per implementarlo. La funzione dovrebbe accettare due parametri.
 
-The first will be an array with the FizzBuzz rules. For example: `[ [3, "Fizz"] , [5, "Buzz"] ]`.
+Il primo è un array con le regole di FizzBuzz. Per esempio `[ [3, "Fizz"] , [5, "Buzz"] ]`.
 
-This indicates that `Fizz` should be printed if the number is a multiple of 3 and `Buzz` if it is a multiple of 5. If it is a multiple of both then the strings should be concatenated in the order specified in the array. In this case, `FizzBuzz` if the number is a multiple of 3 and 5.
+Questo indica che `Fizz` dovrebbe essere scritto se il numero è un multiplo di 3 e `Buzz` se è un multiplo di 5. Se è un multiplo di entrambi allora le stringhe dovrebbero essere concatenate nell'ordine specificato nell'array. In questo caso, `FizzBuzz` se il numero è un multiplo di 3 e 5.
 
-The second parameter is the number for which the function should return a string as stated above.
+Il secondo parametro è il numero per cui la funzione dovrebbe restituire una stringa come detto sopra.
 
 # --hints--
 
-`genFizzBuzz` should be a function.
+`genFizzBuzz` dovrebbe essere una funzione.
 
 ```js
 assert(typeof genFizzBuzz == 'function');
 ```
 
-`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 6)` should return a string.
+`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 6)` dovrebbe restituire una stringa.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 6)` should return `"Fizz"`.
+`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 6)` dovrebbe restituire `"Fizz"`.
 
 ```js
 assert.equal(
@@ -55,7 +55,7 @@ assert.equal(
 );
 ```
 
-`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 10)` should return `"Buzz"`.
+`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 10)` dovrebbe restituire `"Buzz"`.
 
 ```js
 assert.equal(
@@ -70,7 +70,7 @@ assert.equal(
 );
 ```
 
-`genFizzBuzz([[3, "Buzz"],[5, "Fizz"]], 12)` should return `"Buzz"`.
+`genFizzBuzz([[3, "Buzz"],[5, "Fizz"]], 12)` dovrebbe restituire `"Buzz"`.
 
 ```js
 assert.equal(
@@ -85,7 +85,7 @@ assert.equal(
 );
 ```
 
-`genFizzBuzz([[3, "Buzz"],[5, "Fizz"]], 13)` should return `"13"`.
+`genFizzBuzz([[3, "Buzz"],[5, "Fizz"]], 13)` dovrebbe restituire `"13"`.
 
 ```js
 assert.equal(
@@ -100,7 +100,7 @@ assert.equal(
 );
 ```
 
-`genFizzBuzz([[3, "Buzz"],[5, "Fizz"]], 15)` should return `"BuzzFizz"`.
+`genFizzBuzz([[3, "Buzz"],[5, "Fizz"]], 15)` dovrebbe restituire `"BuzzFizz"`.
 
 ```js
 assert.equal(
@@ -115,7 +115,7 @@ assert.equal(
 );
 ```
 
-`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 15)` should return `"FizzBuzz"`.
+`genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 15)` dovrebbe restituire `"FizzBuzz"`.
 
 ```js
 assert.equal(
@@ -130,7 +130,7 @@ assert.equal(
 );
 ```
 
-`genFizzBuzz([[3, "Fizz"],[5, "Buzz"],[7, "Baxx"]], 105)` should return `"FizzBuzzBaxx"`.
+`genFizzBuzz([[3, "Fizz"],[5, "Buzz"],[7, "Baxx"]], 105)` dovrebbe restituire `"FizzBuzzBaxx"`.
 
 ```js
 assert.equal(
