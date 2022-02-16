@@ -9,7 +9,7 @@ dashedName: step-27
 
 Within the `tbody`, add a `tr` with the `class` set to `total`. In that, add a `th` with the text `Total Net Worth`, and wrap `Net Worth` in a `span` with the `class` set to `sr-only`.
 
-Then add three `td` elements, giving the third a `class` set to `current`, and giving each the following text: `$29`, `$-14`, `$309`.
+Then add three `td` elements, giving the third a `class` set to `current`, and giving each the following text: `$-171`, `$136`, `$334`.
 
 # --hints--
 

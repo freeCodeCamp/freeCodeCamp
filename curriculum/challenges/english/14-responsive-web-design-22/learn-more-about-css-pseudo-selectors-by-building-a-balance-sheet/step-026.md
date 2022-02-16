@@ -7,7 +7,7 @@ dashedName: step-26
 
 # --description--
 
-Within your `thead`, add a `td` and three `th` elements. Within each of the `th` elements, add a `span` element with the `class` set to `sr-only` and the following text, in order: `2019`, `2020`, and `2021`.
+Within your `thead`, create a `tr` element. In that, add a `td` and three `th` elements. Within each of the `th` elements, add a `span` element with the `class` set to `sr-only` and the following text, in order: `2019`, `2020`, and `2021`.
 
 # --hints--
 

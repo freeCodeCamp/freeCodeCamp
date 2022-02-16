@@ -9,7 +9,7 @@ dashedName: step-24
 
 In your fourth `tr` element, add a `th` element with the text `Total Liabilities`. Wrap the text `Liabilities` in a `span` element with the `class` attribute set to `sr-only`.
 
-Following that, add three `td` elements with the following text (in order): `$550`, `$750`, `$500`. Give the third `td` element a `class` attribute set to `current`.
+Following that, add three `td` elements with the following text (in order): `$750`, `$600`, `$475`. Give the third `td` element a `class` attribute set to `current`.
 
 # --hints--
 
