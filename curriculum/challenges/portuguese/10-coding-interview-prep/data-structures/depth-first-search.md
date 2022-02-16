@@ -49,6 +49,23 @@ assert.sameMembers(
 );
 ```
 
+O grafo de entrada `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]` com o nó inicial `3` deve retornar um array com `3`, `2`, `1` e `0`.
+
+```js
+assert.sameMembers(
+  (function () {
+    var graph = [
+      [0, 1, 0, 0],
+      [1, 0, 1, 0],
+      [0, 1, 0, 1],
+      [0, 0, 1, 0]
+    ];
+    return dfs(graph, 3);
+  })(),
+  [3, 2, 1, 0]
+);
+```
+
 O grafo de entrada `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]` com o nó inicial `1` deve retornar um array com quatro elementos.
 
 ```js

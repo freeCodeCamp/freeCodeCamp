@@ -1,6 +1,6 @@
 ---
 id: 598eef80ba501f1268170e1e
-title: Fibonacci n-step number sequences
+title: Sequenze di numeri di Fibonacci a passi di n
 challengeType: 5
 forumTopicId: 302267
 dashedName: fibonacci-n-step-number-sequences
@@ -8,82 +8,82 @@ dashedName: fibonacci-n-step-number-sequences
 
 # --description--
 
-These number series are an expansion of the ordinary [Fibonacci sequence](https://rosettacode.org/wiki/Fibonacci sequence "Fibonacci sequence") where:
+Queste serie di numeri sono un'espansione della successione ordinaria di [Fibonacci](https://rosettacode.org/wiki/Fibonacci sequence "Fibonacci sequence") dove:
 
 <ol>
-  <li>For $n = 2$ we have the Fibonacci sequence; with initial values $[1, 1]$ and $F_k^2 = F_{k-1}^2 + F_{k-2}^2$</li>
-  <li>For $n = 3$ we have the tribonacci sequence; with initial values $[1, 1, 2]$ and $F_k^3 = F_{k-1}^3 + F_{k-2}^3 + F_{k-3}^3$</li>
-  <li>For $n = 4$ we have the tetranacci sequence; with initial values $[1, 1, 2, 4]$ and $F_k^4 = F_{k-1}^4 + F_{k-2}^4 + F_{k-3}^4 + F_{k-4}^4$...</li>
-  <li>For general $n>2$ we have the Fibonacci $n$-step sequence - $F_k^n$; with initial values of the first $n$ values of the $(n-1)$'th Fibonacci $n$-step sequence $F_k^{n-1}$; and $k$'th value of this $n$'th sequence being $F_k^n = \sum_{i=1}^{(n)} {F_{k-i}^{(n)}}$</li>
+  <li>Per $n = 2$ abbiamo la successione di Fibonacci; con valori iniziali $[1, 1]$ e $F_k^2 = F_{k-1}^2 + F_{k-2}^2$</li>
+  <li>Per $n = 3 $ abbiamo la successione tribonacci; con valori iniziali $[1, 1, 2]$ e $F_k^3 = F_{k-1}^3 + F_{k-2}^3 + F_{k-3}^3$</li>
+  <li>Per $n = 4$ abbiamo la sequenza tetranacci; con valori iniziali $[1, 1, 2, 4]$ e $F_k^4 = F_{k-1}^4 + F_{k-2}^4 + F_{k-3}^4 + F_{k-4}^4$...</li>
+  <li>In generale per $n>2$ abbiamo la sequenza di Fibonacci di passo $n$ - $F_k^n$; con i valori iniziali dei primi $n$ valori della sequenza $(n-1)$'ma di Fibonacci di passo $n$ $F_k^{n-1}$; e il $k$-mo valore di questa $n$-ma sequenza è $F_k^n = \sum_{i=1}^{(n)} {F_{k-i}^{(n)}}$</li>
 </ol>
 
-For small values of $n$, [Greek numeric prefixes](https://en.wikipedia.org/wiki/Number prefix#Greek_series "wp: Number prefix#Greek_series") are sometimes used to individually name each series.
+Per piccoli valori di $n$, [i prefissi numerici greci](https://en.wikipedia.org/wiki/Number prefix#Greek_series "wp: Number prefix#Greek_series") sono talvolta utilizzati per nominare individualmente ogni serie.
 
-Fibonacci $n$-step sequences:
+Sequenze di Fibonacci di passo $n$:
 
-| $n$ | Series name | Values                                                 |
-| --- | ----------- | ------------------------------------------------------ |
-| 2   | fibonacci   | 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 ...         |
-| 3   | tribonacci  | 1 1 2 4 7 13 24 44 81 149 274 504 927 1705 3136 ...    |
-| 4   | tetranacci  | 1 1 2 4 8 15 29 56 108 208 401 773 1490 2872 5536 ...  |
-| 5   | pentanacci  | 1 1 2 4 8 16 31 61 120 236 464 912 1793 3525 6930 ...  |
-| 6   | hexanacci   | 1 1 2 4 8 16 32 63 125 248 492 976 1936 3840 7617 ...  |
-| 7   | heptanacci  | 1 1 2 4 8 16 32 64 127 253 504 1004 2000 3984 7936 ... |
-| 8   | octonacci   | 1 1 2 4 8 16 32 64 128 255 509 1016 2028 4048 8080 ... |
-| 9   | nonanacci   | 1 1 2 4 8 16 32 64 128 256 511 1021 2040 4076 8144 ... |
-| 10  | decanacci   | 1 1 2 4 8 16 32 64 128 256 512 1023 2045 4088 8172 ... |
+| $n$ | Nome delle serie | Valori                                                 |
+| --- | ---------------- | ------------------------------------------------------ |
+| 2   | fibonacci        | 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 ...         |
+| 3   | tribonacci       | 1 1 2 4 7 13 24 44 81 149 274 504 927 1705 3136 ...    |
+| 4   | tetranacci       | 1 1 2 4 8 15 29 56 108 208 401 773 1490 2872 5536 ...  |
+| 5   | pentanacci       | 1 1 2 4 8 16 31 61 120 236 464 912 1793 3525 6930 ...  |
+| 6   | esanacci         | 1 1 2 4 8 16 32 63 125 248 492 976 1936 3840 7617 ...  |
+| 7   | ettanacci        | 1 1 2 4 8 16 32 64 127 253 504 1004 2000 3984 7936 ... |
+| 8   | ottonacci        | 1 1 2 4 8 16 32 64 128 255 509 1016 2028 4048 8080 ... |
+| 9   | nonanacci        | 1 1 2 4 8 16 32 64 128 256 511 1021 2040 4076 8144 ... |
+| 10  | decanacci        | 1 1 2 4 8 16 32 64 128 256 512 1023 2045 4088 8172 ... |
 
-Allied sequences can be generated where the initial values are changed: The [Lucas series](https://en.wikipedia.org/wiki/Lucas number "wp: Lucas number") sums the two preceding values like the fibonacci series for $n=2$ but uses $\[2, 1]$ as its initial values.
+Le successioni affini possono essere generate cambiando i valori iniziali: la serie [Lucas](https://en.wikipedia.org/wiki/Lucas number "wp: Lucas number") somma i due valori precedenti come la serie fibonacci per $n=2$ ma usa $\[2, 1]$ come valori iniziali.
 
 # --instructions--
 
-Write a function to generate Fibonacci $n$-step number sequences and Lucas sequences. The first parameter will be $n$. The second parameter will be the number of elements to be returned. The third parameter will specify whether to output the Fibonacci sequence or the Lucas sequence. If the parameter is `"f"` then return the Fibonacci sequence and if it is `"l"`, then return the Lucas sequence. The sequences must be returned as an array.
+Scrivi una funzione per generare le successioni di Fibonacci di passo $n$ e di Lucas. Il primo parametro sarà $n$. Il secondo parametro sarà il numero di elementi da restituire. Il terzo parametro specificherà se emettere la sequenza Fibonacci o la sequenza Lucas. Se il parametro è `"f"` restituire la successione di Fibonacci e se è `"l"`, restituire la successione di Lucas. Le successioni devono essere restituite come array.
 
 # --hints--
 
-`fib_luc` should be a function.
+`fib_luc` dovrebbe essere una funzione.
 
 ```js
 assert(typeof fib_luc === 'function');
 ```
 
-`fib_luc(2,10,"f")` should return `[1,1,2,3,5,8,13,21,34,55]`.
+`fib_luc(2,10,"f")` dovrebbe restituire `[1,1,2,3,5,8,13,21,34,55]`.
 
 ```js
 assert.deepEqual(fib_luc(2, 10, 'f'), ans[0]);
 ```
 
-`fib_luc(3,15,"f")` should return `[1,1,2,4,7,13,24,44,81,149,274,504,927,1705,3136]`.
+`fib_luc(3,15,"f")` dovrebbe restituire `[1,1,2,4,7,13,24,44,81,149,274,504,927,1705,3136]`.
 
 ```js
 assert.deepEqual(fib_luc(3, 15, 'f'), ans[1]);
 ```
 
-`fib_luc(4,15,"f")` should return `[1,1,2,4,8,15,29,56,108,208,401,773,1490,2872,5536]`.
+`fib_luc(4,15,"f")` dovrebbe restituire `[1,1,2,4,8,15,29,56,108,208,401,773,1490,2872,5536]`.
 
 ```js
 assert.deepEqual(fib_luc(4, 15, 'f'), ans[2]);
 ```
 
-`fib_luc(2,10,"l")` should return `[ 2, 1, 3, 4, 7, 11, 18, 29, 47, 76]`.
+`fib_luc(2,10,"l")` dovrebbe restituire `[ 2, 1, 3, 4, 7, 11, 18, 29, 47, 76]`.
 
 ```js
 assert.deepEqual(fib_luc(2, 10, 'l'), ans[3]);
 ```
 
-`fib_luc(3,15,"l")` should return `[ 2, 1, 3, 6, 10, 19, 35, 64, 118, 217, 399, 734, 1350, 2483, 4567 ]`.
+`fib_luc(3,15,"l")` dovrebbe restituire `[ 2, 1, 3, 6, 10, 19, 35, 64, 118, 217, 399, 734, 1350, 2483, 4567 ]`.
 
 ```js
 assert.deepEqual(fib_luc(3, 15, 'l'), ans[4]);
 ```
 
-`fib_luc(4,15,"l")` should return `[ 2, 1, 3, 6, 12, 22, 43, 83, 160, 308, 594, 1145, 2207, 4254, 8200 ]`.
+`fib_luc(4,15,"l")` dovrebbe restituire `[ 2, 1, 3, 6, 12, 22, 43, 83, 160, 308, 594, 1145, 2207, 4254, 8200 ]`.
 
 ```js
 assert.deepEqual(fib_luc(4, 15, 'l'), ans[5]);
 ```
 
-`fib_luc(5,15,"l")` should return `[ 2, 1, 3, 6, 12, 24, 46, 91, 179, 352, 692, 1360, 2674, 5257, 10335 ]`.
+`fib_luc(5,15,"l")` dovrebbe restituire `[ 2, 1, 3, 6, 12, 24, 46, 91, 179, 352, 692, 1360, 2674, 5257, 10335 ]`.
 
 ```js
 assert.deepEqual(fib_luc(5, 15, 'l'), ans[6]);

@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7e7b
-title: Generator/Exponential
+title: Generatore/Esponenziale
 challengeType: 5
 forumTopicId: 302275
 dashedName: generatorexponential
@@ -8,59 +8,59 @@ dashedName: generatorexponential
 
 # --description--
 
-A generator is an executable entity (like a function or procedure) that contains code that yields a sequence of values, one at a time, so that each time you call the generator, the next value in the sequence is provided.
+Un generatore è un'entità eseguibile (come una funzione o una procedura) che contiene codice che restituisce una sequenza di valori, uno alla volta, in modo che ogni volta che si chiama il generatore, viene fornito il valore successivo della sequenza.
 
-Generators are often built on top of coroutines or objects so that the internal state of the object is handled "naturally".
+I generatori sono spesso costruiti su co-routine o oggetti in modo che lo stato interno dell'oggetto sia gestito "naturalmente".
 
-Generators are often used in situations where a sequence is potentially infinite, and where it is possible to construct the next value of the sequence with only minimal state.
+I generatori sono spesso utilizzati in situazioni in cui una sequenza è potenzialmente infinita, e dove è possibile costruire il valore successivo della sequenza con solo uno stato minimo.
 
 # --instructions--
 
-Write a function that uses generators to generate squares and cubes. Create a new generator that filters all cubes from the generator of squares.
+Scrivi una funzione che utilizza i generatori per generare quadrati e cubi. Crea un nuovo generatore che filtra tutti i cubi dal generatore di quadrati.
 
-The function should return the \\( n^{th} \\) value of the filtered generator.
+La funzione deve restituire il valore \\( n^{simo} \\) del generatore filtrato.
 
-For example for \\(n=7\\), the function should return 81 as the sequence would be 4, 9, 16, 25, 36, 49, 81. Here 64 is filtered out, as it is a cube.
+Per esempio per \\(n=7\\), la funzione dovrebbe restituire 81 perché la sequenza sarebbe 4, 9, 16, 25, 36, 49, 81. Qui 64 è filtrato, dato che è un cubo.
 
 # --hints--
 
-`exponentialGenerator` should be a function.
+`exponentialGenerator` dovrebbe essere una funzione.
 
 ```js
 assert(typeof exponentialGenerator == 'function');
 ```
 
-`exponentialGenerator()` should return a number.
+`exponentialGenerator()` dovrebbe restituire un numero.
 
 ```js
 assert(typeof exponentialGenerator(10) == 'number');
 ```
 
-`exponentialGenerator(10)` should return `144`.
+`exponentialGenerator(10)` dovrebbe restituire `144`.
 
 ```js
 assert.equal(exponentialGenerator(10), 144);
 ```
 
-`exponentialGenerator(12)` should return `196`.
+`exponentialGenerator(12)` dovrebbe restituire `196`.
 
 ```js
 assert.equal(exponentialGenerator(12), 196);
 ```
 
-`exponentialGenerator(14)` should return `256`.
+`exponentialGenerator(14)` dovrebbe restituire `256`.
 
 ```js
 assert.equal(exponentialGenerator(14), 256);
 ```
 
-`exponentialGenerator(20)` should return `484`.
+`exponentialGenerator(20)` dovrebbe restituire `484`.
 
 ```js
 assert.equal(exponentialGenerator(20), 484);
 ```
 
-`exponentialGenerator(25)` should return `784`.
+`exponentialGenerator(25)` dovrebbe restituire `784`.
 
 ```js
 assert.equal(exponentialGenerator(25), 784);
