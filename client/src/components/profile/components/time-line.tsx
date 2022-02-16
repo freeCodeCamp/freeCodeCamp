@@ -16,7 +16,7 @@ import {
 import CertificationIcon from '../../../assets/icons/certification-icon';
 import { ChallengeFiles, CompletedChallenge } from '../../../redux/prop-types';
 import { FullWidthRow, Link } from '../../helpers';
-import { SolutionDisplayWidget } from '../../SolutionDisplayWidget';
+import { SolutionDisplayWidget } from '../../solution-display-widget';
 import TimelinePagination from './timeline-pagination';
 
 import './timeline.css';

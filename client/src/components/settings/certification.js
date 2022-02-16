@@ -14,7 +14,7 @@ import {
 import { FlashMessages } from '../Flash/redux/flash-messages';
 import ProjectModal from '../SolutionViewer/ProjectModal';
 import { FullWidthRow, Spacer } from '../helpers';
-import { SolutionDisplayWidget } from '../SolutionDisplayWidget';
+import { SolutionDisplayWidget } from '../solution-display-widget';
 import SectionHeader from './section-header';
 
 import './certification.css';

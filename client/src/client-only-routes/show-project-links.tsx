@@ -10,7 +10,7 @@ import {
   legacyProjectMap
 } from '../resources/cert-and-project-map';
 
-import { SolutionDisplayWidget } from '../components/SolutionDisplayWidget';
+import { SolutionDisplayWidget } from '../components/solution-display-widget';
 
 interface ShowProjectLinksProps {
   certName: string;
