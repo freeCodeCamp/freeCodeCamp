@@ -28,7 +28,7 @@ assert(new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.getPr
 Your `span[class~="sr-only"]` selector should have a `-webkit-clip-path` property set to `inset(50%)`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.getPropertyValue('-webkit-clip-path') === 'inset(50%)');
+assert(/-webkit-clip-path\s*:\s*inset\(\s*50%\s*\)\s*(;|})/.test(code));
 ```
 
 # --seed--
