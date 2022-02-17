@@ -4,7 +4,7 @@ import '../components/layouts/project-links.css';
 import { Trans, useTranslation } from 'react-i18next';
 import ProjectModal from '../components/SolutionViewer/ProjectModal';
 import { Spacer, Link } from '../components/helpers';
-import { ChallengeFiles, CompletedChallenge, User } from '../redux/prop-types';
+import { CompletedChallenge, User } from '../redux/prop-types';
 import {
   projectMap,
   legacyProjectMap
@@ -20,7 +20,7 @@ interface ShowProjectLinksProps {
 
 type SolutionState = {
   projectTitle: string;
-  challengeFiles: ChallengeFiles;
+  challengeFiles: CompletedChallenge['challengeFiles'];
   solution: CompletedChallenge['solution'];
   isOpen: boolean;
 };
@@ -46,7 +46,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
     const completedProject = find(
       completedChallenges,
       ({ id }) => projectId === id
-    ) as CompletedChallenge;
+    );
 
     if (!completedProject) {
       return null;

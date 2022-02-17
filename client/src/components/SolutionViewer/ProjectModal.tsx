@@ -1,11 +1,11 @@
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { ChallengeFiles } from '../../redux/prop-types';
+import { CompletedChallenge } from '../../redux/prop-types';
 import SolutionViewer from './SolutionViewer';
 
 type ProjectModalProps = {
-  challengeFiles: ChallengeFiles;
+  challengeFiles: CompletedChallenge['challengeFiles'];
   handleSolutionModalHide: () => void;
   isOpen: boolean;
   projectTitle: string;

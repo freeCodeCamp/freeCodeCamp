@@ -14,7 +14,7 @@ import {
   getTitleFromId
 } from '../../../../../utils';
 import CertificationIcon from '../../../assets/icons/certification-icon';
-import { ChallengeFiles, CompletedChallenge } from '../../../redux/prop-types';
+import { CompletedChallenge } from '../../../redux/prop-types';
 import { FullWidthRow, Link } from '../../helpers';
 import { SolutionDisplayWidget } from '../../solution-display-widget';
 import TimelinePagination from './timeline-pagination';
@@ -55,17 +55,18 @@ function TimelineInner({
   const [solutionOpen, setSolutionOpen] = useState(false);
   const [pageNo, setPageNo] = useState(1);
   const [solution, setSolution] = useState<string | null>(null);
-  const [challengeFiles, setChallengeFiles] = useState<ChallengeFiles>(null);
+  const [challengeFiles, setChallengeFiles] =
+    useState<CompletedChallenge['challengeFiles']>(null);
 
   function viewSolution(
     id: string,
-    solution_: string | undefined | null,
-    challengeFiles_: ChallengeFiles
+    solution: string | undefined | null,
+    challengeFiles: CompletedChallenge['challengeFiles']
   ): void {
     setSolutionToView(id);
     setSolutionOpen(true);
-    setSolution(solution_ ?? '');
-    setChallengeFiles(challengeFiles_);
+    setSolution(solution ?? '');
+    setChallengeFiles(challengeFiles);
   }
 
   function closeSolution(): void {
