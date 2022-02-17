@@ -14,13 +14,15 @@ Select the `tr` elements with the `class` set to `data`. Give them a background 
 You should have a `tr.data` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('tr.data'));
+const def = (s) => new __helpers.CSSHelp(document).getStyle(s);
+assert(def('tr.data') || def('tr[class="data"]'));
 ```
 
 Your `tr.data` selector should have the `background-image` property set to `linear-gradient(to bottom, #dfdfe2 1.845rem, white 1.845rem)`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('tr.data')?.getPropertyValue('background-image') === 'linear-gradient(rgb(223, 223, 226) 1.845rem, white 1.845rem)');
+const bg = (s) => new __helpers.CSSHelp(document).getStyle(s)?.getPropertyValue('background-image');
+assert((bg('tr.data') || bg('tr[class="data"]')) === 'linear-gradient(rgb(223, 223, 226) 1.845rem, white 1.845rem)');
 ```
 
 # --seed--

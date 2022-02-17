@@ -14,13 +14,15 @@ Select your `td` elements with the `class` value of `current`, and make the font
 You should have a `td.current` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('td.current'));
+const def = (s) => new __helpers.CSSHelp(document).getStyle(s);
+assert(def('td.current') || def('td[class="current"]'));
 ```
 
 Your `td.current` selector should have the `font-style` property set to `italic`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('td.current')?.getPropertyValue('font-style') === 'italic');
+const font = (s) => new __helpers.CSSHelp(document).getStyle(s)?.getPropertyValue('font-style');
+assert((font('td.current') || font('td[class="current"]')) === 'italic');
 ```
 
 # --seed--
