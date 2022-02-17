@@ -92,19 +92,22 @@ assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(5)')?.top ==
 You should have a `.cabin:nth-of-type(6)` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(6)'));
+const def = (s) => new __helpers.CSSHelp(document).getStyle(s)
+assert(def('.cabin:nth-of-type(6)') || def('.cabin:last-of-type'));
 ```
 
 Your `.cabin:nth-of-type(6)` selector should have a `right` property set to `17%`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(6)')?.right === '17%');
+const right = (s) => new __helpers.CSSHelp(document).getStyle(s)?.right
+assert.equal(right('.cabin:nth-of-type(6)') || right('.cabin:last-of-type'),'17%');
 ```
 
 Your `.cabin:nth-of-type(6)` selector should have a `top` property set to `7%`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(6)')?.top === '7%');
+const top = (s) => new __helpers.CSSHelp(document).getStyle(s)?.top
+assert.equal(top('.cabin:nth-of-type(6)') || top('.cabin:last-of-type'),'7%');
 ```
 
 # --seed--
