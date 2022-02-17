@@ -551,6 +551,7 @@
       "heading-legacy-full-stack": "Como parte desta certificação de full-stack legada, {{user}} completou as seguintes certificações:",
       "heading": "Como parte da certificação, {{user}} concluiu os seguintes projetos e passou em todos os testes:",
       "solution": "solução",
+      "no-solution": "error displaying solution, email support@freeCodeCamp.org to get help.",
       "source": "fonte",
       "footnote": "Se você suspeitar que algum destes projetos viola a <2>política de honestidade acadêmica</2>, <5>reporte isto à nossa equipe</5>.",
       "title": {
