@@ -19,7 +19,7 @@ function SolutionViewer({
           <Panel
             bsStyle='primary'
             className='solution-viewer'
-            key={challengeFile}
+            key={challengeFile.ext}
           >
             <Panel.Heading>{challengeFile.ext.toUpperCase()}</Panel.Heading>
 
@@ -39,16 +39,11 @@ function SolutionViewer({
           </Panel>
         ))
       ) : (
-        <Panel
-          bsStyle='primary'
-          className='solution-viewer'
-          key={solution.slice(0, 10)}
-        >
+        <Panel bsStyle='primary' className='solution-viewer' key='JS'>
           <Panel.Heading>JS</Panel.Heading>
           <Panel.Body>
             <pre>
               <code
-                className='language-markup'
                 dangerouslySetInnerHTML={{
                   __html: Prism.highlight(
                     solution.trim(),
