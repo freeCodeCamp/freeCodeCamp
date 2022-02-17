@@ -27,11 +27,9 @@ const ProjectModal = ({
       onHide={handleSolutionModalHide}
       show={isOpen}
     >
-      <Modal.Header className='this-one?' closeButton={true}>
+      <Modal.Header closeButton={true}>
         <Modal.Title id='solution-viewer-modal-title'>
-          {t('settings.labels.solution-for', {
-            projectTitle: projectTitle
-          })}
+          {t('settings.labels.solution-for', { projectTitle })}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>

@@ -361,11 +361,9 @@ export class CertificationSettings extends Component {
   };
 
   render() {
-    const {
-      solutionViewer: { challengeFiles, solution, isOpen, projectTitle }
-    } = this.state;
-
+    const { solutionViewer } = this.state;
     const { t } = this.props;
+
     return (
       <ScrollableAnchor id='certification-settings'>
         <section className='certification-settings'>
@@ -378,16 +376,12 @@ export class CertificationSettings extends Component {
           {legacyCertifications.map(certName =>
             this.renderCertifications(certName, legacyProjectMap)
           )}
-          {isOpen ? (
+          {solutionViewer.isOpen && (
             <ProjectModal
-              challengeFiles={challengeFiles}
+              {...solutionViewer}
               handleSolutionModalHide={this.handleSolutionModalHide}
-              isOpen={isOpen}
-              projectTitle={projectTitle}
-              solution={solution}
-              t={t}
             />
-          ) : null}
+          )}
         </section>
       </ScrollableAnchor>
     );
