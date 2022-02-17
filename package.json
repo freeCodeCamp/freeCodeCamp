@@ -167,7 +167,7 @@
     "npm-run-all": "4.1.5",
     "ora": "5.4.1",
     "prettier": "2.5.1",
-    "prismjs": "1.26.0",
+    "prismjs": "1.27.0",
     "process": "0.11.10",
     "shx": "0.3.4",
     "start-server-and-test": "1.14.0",
