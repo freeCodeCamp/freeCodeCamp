@@ -1,12 +1,17 @@
 import type { CompletedChallenge } from '../redux/prop-types';
+import { challengeTypes } from '../../utils/challenge-types';
 import { maybeUrlRE } from '.';
 
 export const getSolutionDisplayType = ({
   solution,
   githubLink,
-  challengeFiles
+  challengeFiles,
+  challengeType
 }: CompletedChallenge) => {
-  if (challengeFiles?.length) return 'showFilesSolution';
+  if (challengeFiles?.length)
+    return challengeType === challengeTypes.multiFileCertProject
+      ? 'showMultifileProjectSolution'
+      : 'showFilesSolution';
   if (!solution) return 'none';
   // Some of the user records still have JavaScript project solutions stored as
   // solution strings

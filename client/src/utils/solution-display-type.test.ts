@@ -1,7 +1,8 @@
 import {
   bothLinks,
-  legacySolution,
   invalidGithubLink,
+  legacySolution,
+  multifileSolution,
   onlyGithubLink,
   onlySolution,
   withChallenges
@@ -16,7 +17,11 @@ describe('getSolutionDisplayType', () => {
     expect(getSolutionDisplayType(legacySolution)).toBe('showFilesSolution');
   });
   it('should handle solutions with files', () => {
+    expect.assertions(2);
     expect(getSolutionDisplayType(withChallenges)).toBe('showFilesSolution');
+    expect(getSolutionDisplayType(multifileSolution)).toBe(
+      'showMultifileProjectSolution'
+    );
   });
   it('should handle solutions with a single valid url', () => {
     expect.assertions(2);
