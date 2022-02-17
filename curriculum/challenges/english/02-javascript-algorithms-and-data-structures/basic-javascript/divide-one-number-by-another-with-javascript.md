@@ -16,20 +16,20 @@ JavaScript uses the `/` symbol for division.
 **Example**
 
 ```js
-const myVar = 16 / 2;
+const MY_VAR = 16 / 2;
 ```
 
-`myVar` now has the value `8`.
+`MY_VAR` now has the value `8`.
 # --instructions--
 
-Change the `0` so that the `quotient` is equal to `2`.
+Change the `0` so that the `QUOTIENT` is equal to `2`.
 
 # --hints--
 
-The variable `quotient` should be equal to 2.
+The variable `QUOTIENT` should be equal to 2.
 
 ```js
-assert(quotient === 2);
+assert(QUOTIENT === 2);
 ```
 
 You should use the `/` operator.
@@ -43,17 +43,17 @@ assert(/\d+\s*\/\s*\d+/.test(code));
 ## --after-user-code--
 
 ```js
-(function(z){return 'quotient = '+z;})(quotient);
+(function(z){return 'QUOTIENT = '+z;})(QUOTIENT);
 ```
 
 ## --seed-contents--
 
 ```js
-const quotient = 66 / 0;
+const QUOTIENT = 66 / 0;
 ```
 
 # --solutions--
 
 ```js
-const quotient = 66 / 33;
+const QUOTIENT = 66 / 33;
 ```

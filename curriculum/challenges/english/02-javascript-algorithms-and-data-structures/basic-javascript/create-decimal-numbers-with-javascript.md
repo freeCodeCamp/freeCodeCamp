@@ -15,20 +15,20 @@ We can store decimal numbers in variables too. Decimal numbers are sometimes ref
 
 # --instructions--
 
-Create a variable `myDecimal` and give it a decimal value with a fractional part (e.g. `5.7`).
+Create a variable `MY_DECIMAL` and give it a decimal value with a fractional part (e.g. `5.7`).
 
 # --hints--
 
-`myDecimal` should be a number.
+`MY_DECIMAL` should be a number.
 
 ```js
-assert(typeof myDecimal === 'number');
+assert(typeof MY_DECIMAL === 'number');
 ```
 
-`myDecimal` should have a decimal point
+`MY_DECIMAL` should have a decimal point
 
 ```js
-assert(myDecimal % 1 != 0);
+assert(MY_DECIMAL % 1 != 0);
 ```
 
 # --seed--
@@ -36,13 +36,13 @@ assert(myDecimal % 1 != 0);
 ## --after-user-code--
 
 ```js
-(function(){if(typeof myDecimal !== "undefined"){return myDecimal;}})();
+(function(){if(typeof MY_DECIMAL !== "undefined"){return MY_DECIMAL;}})();
 ```
 
 ## --seed-contents--
 
 ```js
-const ourDecimal = 5.7;
+const OUR_DECIMAL = 5.7;
 
 // Only change code below this line
 
@@ -51,5 +51,5 @@ const ourDecimal = 5.7;
 # --solutions--
 
 ```js
-const myDecimal = 9.9;
+const MY_DECIMAL = 9.9;
 ```

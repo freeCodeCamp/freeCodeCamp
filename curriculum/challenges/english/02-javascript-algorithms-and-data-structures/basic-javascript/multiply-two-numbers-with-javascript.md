@@ -16,21 +16,21 @@ JavaScript uses the `*` symbol for multiplication of two numbers.
 **Example**
 
 ```js
-const myVar = 13 * 13;
+const MY_VAR = 13 * 13;
 ```
 
-`myVar` would have the value `169`.
+`MY_VAR` would have the value `169`.
 
 # --instructions--
 
-Change the `0` so that product will equal `80`.
+Change the `0` so that `PRODUCT` will equal `80`.
 
 # --hints--
 
-The variable `product` should be equal to 80.
+The variable `PRODUCT` should be equal to 80.
 
 ```js
-assert(product === 80);
+assert(PRODUCT === 80);
 ```
 
 You should use the `*` operator.
@@ -44,17 +44,17 @@ assert(/\*/.test(code));
 ## --after-user-code--
 
 ```js
-(function(z){return 'product = '+z;})(product);
+(function(z){return 'PRODUCT = '+z;})(PRODUCT);
 ```
 
 ## --seed-contents--
 
 ```js
-const product = 8 * 0;
+const PRODUCT = 8 * 0;
 ```
 
 # --solutions--
 
 ```js
-const product = 8 * 10;
+const PRODUCT = 8 * 10;
 ```

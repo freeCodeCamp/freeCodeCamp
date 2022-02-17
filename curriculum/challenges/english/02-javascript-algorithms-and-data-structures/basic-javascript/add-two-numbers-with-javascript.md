@@ -18,21 +18,21 @@ JavaScript uses the `+` symbol as an addition operator when placed between two n
 **Example:**
 
 ```js
-const myVar = 5 + 10;
+const MY_VAR = 5 + 10;
 ```
 
-`myVar` now has the value `15`.
+`MY_VAR` now has the value `15`.
 
 # --instructions--
 
-Change the `0` so that sum will equal `20`.
+Change the `0` so that SUM will equal `20`.
 
 # --hints--
 
-`sum` should equal `20`.
+`SUM` should equal `20`.
 
 ```js
-assert(sum === 20);
+assert(SUM === 20);
 ```
 
 You should use the `+` operator.
@@ -46,17 +46,17 @@ assert(/\+/.test(code));
 ## --after-user-code--
 
 ```js
-(function(z){return 'sum = '+z;})(sum);
+(function(z){return 'SUM = '+z;})(SUM);
 ```
 
 ## --seed-contents--
 
 ```js
-const sum = 10 + 0;
+const SUM = 10 + 0;
 ```
 
 # --solutions--
 
 ```js
-const sum = 10 + 10;
+const SUM = 10 + 10;
 ```
