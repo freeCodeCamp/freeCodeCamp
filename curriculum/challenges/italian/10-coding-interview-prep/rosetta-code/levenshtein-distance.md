@@ -1,6 +1,6 @@
 ---
 id: 5e4ce2eaac708cc68c1df260
-title: Levenshtein distance
+title: Distanza di Levenshtein
 challengeType: 5
 forumTopicId: 385264
 dashedName: levenshtein-distance
@@ -8,71 +8,71 @@ dashedName: levenshtein-distance
 
 # --description--
 
-In information theory and computer science, the **Levenshtein distance** is a [metric](https://en.wikipedia.org/wiki/string metric) for measuring the amount of difference between two sequences (i.e. an [edit distance](https://en.wikipedia.org/wiki/edit distance)). The Levenshtein distance between two strings is defined as the minimum number of edits needed to transform one string into the other, with the allowable edit operations being insertion, deletion, or substitution of a single character.
+Nella teoria dell'informazione e nell'informatica, la **distanza di Levenshtein** è una [metrica](https://en.wikipedia.org/wiki/string metric) per misurare la quantità di differenza tra due sequenze (cioè una [edit distance](https://en.wikipedia.org/wiki/edit distance)). La distanza Levenshtein tra due stringhe è definita come il numero minimo di modifiche necessarie per trasformare una stringa nell'altra, dove le operazioni di modifica consentite sono inserimento, cancellazione o sostituzione di un singolo carattere.
 
-Example:
+Esempio:
 
-The Levenshtein distance between "**kitten**" and "**sitting**" is 3, since the following three edits change one into the other, and there isn't a way to do it with fewer than three edits:
+La distanza di Levenshtein tra "**kitten**" e "**sitting**" è 3, dal momento che le seguenti tre modifiche cambiano una nell'altra, e non c'è un modo per farlo con meno di tre modifiche:
 
 <ul>
-  <li><strong>k</strong>itten   <strong>s</strong>itten    (substitution of 'k' with 's')</li>
-  <li>sitt<strong>e</strong>n   sitt<strong>i</strong>n    (substitution of 'e' with 'i')</li>
-  <li>sittin   sittin<strong>g</strong>    (insert 'g' at the end).</li>
+  <li><strong>k</strong>itten   <strong>s</strong>itten   (sostiruzione di 'k' con 's')</li>
+  <li>sitt<strong>e</strong>n   sitt<strong>i</strong>n    (sostituzione di 'e' con 'i')</li>
+  <li>sittin   sittin<strong>g</strong>    (inserisci 'g' alla fine).</li>
 </ul>
 
-*The Levenshtein distance between "**rosettacode**", "**raisethysword**" is **8**.*
+*La distanza Levenshtein tra "**rosettacode**", "**raisethysword**" è **8**.*
 
-*The distance between two strings is same as that when both strings are reversed.*
+*La distanza tra due stringhe è uguale a quella tra le due stringhe scritte al contrario.*
 
 # --instructions--
 
-Write a function that returns the Levenshtein distance between two strings given as parameters.
+Scrivi una funzione che restituisce la distanza di Levenshtein tra due stringhe fornite come parametri.
 
 # --hints--
 
-`levenshtein` should be a function.
+`levenshtein` dovrebbe essere una funzione.
 
 ```js
 assert(typeof levenshtein == 'function');
 ```
 
-`levenshtein("mist", "dist")` should return a number.
+`levenshtein("mist", "dist")` dovrebbe restituire un numero.
 
 ```js
 assert(typeof levenshtein('mist', 'dist') == 'number');
 ```
 
-`levenshtein("mist", "dist")` should return `1`.
+`levenshtein("mist", "dist")` dovrebbe restituire `1`.
 
 ```js
 assert.equal(levenshtein('mist', 'dist'), 1);
 ```
 
-`levenshtein("tier", "tor")` should return `2`.
+`levenshtein("tier", "tor")` dovrebbe restituire `2`.
 
 ```js
 assert.equal(levenshtein('tier', 'tor'), 2);
 ```
 
-`levenshtein("kitten", "sitting")` should return `3`.
+`levenshtein("kitten", "sitting")` dovrebbe restituire `3`.
 
 ```js
 assert.equal(levenshtein('kitten', 'sitting'), 3);
 ```
 
-`levenshtein("stop", "tops")` should return `2`.
+`levenshtein("stop", "tops")` dovrebbe restituire `2`.
 
 ```js
 assert.equal(levenshtein('stop', 'tops'), 2);
 ```
 
-`levenshtein("rosettacode", "raisethysword")` should return `8`.
+`levenshtein("rosettacode", "raisethysword")` dovrebbe restituire `8`.
 
 ```js
 assert.equal(levenshtein('rosettacode', 'raisethysword'), 8);
 ```
 
-`levenshtein("mississippi", "swiss miss")` should return `8`.
+`levenshtein("mississippi", "swiss miss")` dovrebbe restituire `8`.
 
 ```js
 assert.equal(levenshtein('mississippi', 'swiss miss'), 8);
