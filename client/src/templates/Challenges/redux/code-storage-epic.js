@@ -5,6 +5,7 @@ import store from 'store';
 
 import { setContent, isPoly } from '../../../../../utils/polyvinyl';
 import { createFlashMessage } from '../../../components/Flash/redux';
+import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { actionTypes as appTypes } from '../../../redux/action-types';
 
 import { actionTypes } from './action-types';
@@ -112,8 +113,8 @@ function saveCodeEpic(action$, state$) {
         createFlashMessage({
           type: error ? 'warning' : 'success',
           message: error
-            ? "Oops, your code did not save, your browser's local storage may be full."
-            : "Saved! Your code was saved to your browser's local storage."
+            ? FlashMessages.LocalCodeSaveError
+            : FlashMessages.LocalCodeSaved
         })
       )
     )
