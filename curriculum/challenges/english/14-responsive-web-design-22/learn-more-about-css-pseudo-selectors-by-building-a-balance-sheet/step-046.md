@@ -63,6 +63,16 @@ const text = new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?
 assert(text.includes('position: absolute !important;'));
 ```
 
+Your `span[class~="sr-only"]` selector should have the `overflow` property set to `hidden !important`.
+
+const text = new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.cssText;
+assert(text.includes('overflow: hidden !important;'));
+
+Your `span[class~="sr-only"]` selector should have the `white-space` property set to `nowrap !important`.
+
+const text = new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.cssText;
+assert(text.includes('white-space: nowrap !important;'));
+
 Your `span[class~="sr-only"]` selector should have the `padding` property set to `0 !important`.
 
 ```js
