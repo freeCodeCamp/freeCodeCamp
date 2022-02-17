@@ -233,7 +233,6 @@ export const shouldRequestDonationSelector = state => {
 
   // donations only appear after the user has completed ten challenges (i.e.
   // not before the 11th challenge has mounted)
-  // the follwoing is an AB test for increasing the completed challenge requirement to 20
   if (completedChallenges.length < 10) {
     return false;
   }
