@@ -103,7 +103,7 @@ export function buildUserUpdate(
       )
     };
   } else {
-    completedChallenge = omit(_completedChallenge, ['files']);
+    completedChallenge = omit(_completedChallenge, ['files', 'challengeType']);
   }
   let finalChallenge;
   const updateData = {};
@@ -239,17 +239,22 @@ export function modernChallengeCompleted(req, res, next) {
       const completedDate = Date.now();
       const { id, files, challengeType } = req.body;
 
-      const data = {
+      const completedChallenge = {
         id,
         files,
+        challengeType,
         completedDate
       };
 
       if (challengeType === 14) {
-        data.isManuallyApproved = false;
+        completedChallenge.isManuallyApproved = false;
       }
 
-      const { alreadyCompleted, updateData } = buildUserUpdate(user, id, data);
+      const { alreadyCompleted, updateData } = buildUserUpdate(
+        user,
+        id,
+        completedChallenge
+      );
       const points = alreadyCompleted ? user.points : user.points + 1;
       const updatePromise = new Promise((resolve, reject) =>
         user.updateAttributes(updateData, err => {
