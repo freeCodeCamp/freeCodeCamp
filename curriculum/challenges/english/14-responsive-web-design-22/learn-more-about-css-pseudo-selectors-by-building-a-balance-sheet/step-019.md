@@ -124,10 +124,12 @@ assert(document.querySelectorAll('table')?.[1]?.querySelectorAll('td')?.[0]?.chi
           <table>
             <caption>Liabilities</caption>
             <thead>
-              <td></td>
-              <th></th>
-              <th></th>
-              <th></th>
+              <tr>
+                <td></td>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
             </thead>
             <tbody>
             </tbody>

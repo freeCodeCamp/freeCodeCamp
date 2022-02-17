@@ -25,7 +25,7 @@ Your `th` element should have the text `Savings Funds set aside for emergencies.
 assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[2]?.querySelector('th')?.innerText === 'Savings Funds set aside for emergencies.');
 ```
 
-You should wrap the text `This is the cash we currently have on hand.` in a `span` element.
+You should wrap the text `Funds set aside for emergencies.` in a `span` element.
 
 ```js
 assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[2]?.querySelector('th > span')?.textContent === 'Funds set aside for emergencies.');
