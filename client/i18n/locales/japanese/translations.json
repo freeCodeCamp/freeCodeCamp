@@ -551,6 +551,7 @@
       "heading-legacy-full-stack": "このレガシーフルスタック認定講座の一環として、{{user}} は以下の認定講座を修了しました:",
       "heading": "この認定講座の一環として、{{user}} は以下のプロジェクトを構築し、すべての自動テストスイートに合格しました:",
       "solution": "解答",
+      "no-solution": "error displaying solution, email support@freeCodeCamp.org to get help.",
       "source": "ソースコード",
       "footnote": "これらのプロジェクトのいずれかが <2>学問的誠実性ポリシー</2> に違反すると思われる場合、<5>freeCodeCamp チームに報告</5> してください。",
       "title": {
