@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ecb
-title: K-d tree
+title: Albero K-d
 challengeType: 5
 forumTopicId: 302295
 dashedName: k-d-tree
@@ -8,21 +8,21 @@ dashedName: k-d-tree
 
 # --description--
 
-A k-d tree (short for *k*-dimensional tree) is a space-partitioning data structure for organizing points in a k-dimensional space. k-d trees are a useful data structure for several applications, such as searches involving a multidimensional search key (e.g. range searches and nearest neighbor searches). k-d trees are a special case of binary space partitioning trees. k-d trees are not suitable, however, for efficiently finding the nearest neighbor in high dimensional spaces. As a general rule, if the dimensionality is *k*, the number of points in the data, *N*, should be *N* ≫ 2<sup><i>k</i></sup>. Otherwise, when k-d trees are used with high-dimensional data, most of the points in the tree will be evaluated and the efficiency is no better than exhaustive search, and other methods such as approximate nearest-neighbor are used instead.
+Un albero k-d (abbreviazione per *k*-dimensional tree) è una struttura dati di partizionamento spaziale per organizzare i punti in uno spazio k-dimensionale. Gli alberi k-d sono una struttura di dati utile per diverse applicazioni, come le ricerche che comportano una chiave di ricerca multidimensionale (ad esempio ricerche di intervallo e ricerche del vicino più prossimo). Gli alberi k-d sono un caso speciale di alberi binari di partizionamento spaziale. Gli alberi k-d non sono adatti, tuttavia, per trovare in modo efficiente il vicino più prossimo in spazi ad alta dimensione. Come regola generale, se la dimensionalità è *k*, il numero di punti nei dati, *N*, dovrebbe essere *N* ≫ 2<sup><i>k</i></sup>. Altrimenti, quando gli alberi k-d sono utilizzati con dati ad alta dimensione, la maggior parte dei punti dell'albero sarà valutata e l'efficienza non sarà migliore di una ricerca esaustiva, e vengono utilizzati invece altri metodi come quello del vicino più prossimo approssimato.
 
 # --instructions--
 
-Write a function to perform a nearest neighbour search using k-d tree. The function takes two parameters: an array of k-dimensional points, and a single k-dimensional point whose nearest neighbour should be returned by the function. A k-dimensional point will be given as an array of k elements.
+Scrivi una funzione per eseguire una ricerca del vicino più prossimo usando un albero k-d. La funzione accetta due parametri: un array di punti k-dimensionali, e un singolo punto k-dimensionale di cui la funzione dovrebbe restituire il punto più vicino. Un punto k-dimensionale sarà dato come un array di k elementi.
 
 # --hints--
 
-`kdNN` should be a function.
+`kdNN` dovrebbe essere una funzione.
 
 ```js
 assert(typeof kdNN == 'function');
 ```
 
-`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2])` should return an array.
+`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2])` dovrebbe restituire un array.
 
 ```js
 assert(
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2])` should return `[ 8, 1 ]`.
+`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2])` dovrebbe restituire `[ 8, 1 ]`.
 
 ```js
 assert.deepEqual(
@@ -61,7 +61,7 @@ assert.deepEqual(
 );
 ```
 
-`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [7, 1])` should return `[ 8, 1 ]`.
+`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [7, 1])` dovrebbe restituire `[ 8, 1 ]`.
 
 ```js
 assert.deepEqual(
@@ -80,7 +80,7 @@ assert.deepEqual(
 );
 ```
 
-`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [3, 2])` should return `[ 2, 3 ]`.
+`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [3, 2])` dovrebbe restituire `[ 2, 3 ]`.
 
 ```js
 assert.deepEqual(
@@ -99,7 +99,7 @@ assert.deepEqual(
 );
 ```
 
-`kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [1, 2, 3])` should return `[ 1, 2, 5 ]`.
+`kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [1, 2, 3])` dovrebbe restituire `[ 1, 2, 5 ]`.
 
 ```js
 assert.deepEqual(
@@ -118,7 +118,7 @@ assert.deepEqual(
 );
 ```
 
-`kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [4, 5, 6])` should return `[ 4, 6, 7 ]`.
+`kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [4, 5, 6])` dovrebbe restituire `[ 4, 6, 7 ]`.
 
 ```js
 assert.deepEqual(
@@ -137,7 +137,7 @@ assert.deepEqual(
 );
 ```
 
-`kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [8, 8, 8])` should return `[ 7, 8, 9 ]`.
+`kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [8, 8, 8])` dovrebbe restituire `[ 7, 8, 9 ]`.
 
 ```js
 assert.deepEqual(
