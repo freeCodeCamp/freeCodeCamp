@@ -16,9 +16,15 @@ The `calc()` function is a CSS function that allows you to calculate a value bas
 }
 ```
 
-Give your `#years` selector a `margin` of `0 -2px`, and a `padding` set to `0.5rem calc(1.25rem + 2px) 0.5rem 0`.
+Ensure your years do not get hidden by setting a `z-index` of `999`. Then, give it a `margin` of `0 -2px`, and a `padding` set to `0.5rem calc(1.25rem + 2px) 0.5rem 0`.
 
 # --hints--
+
+Your `#years` selector should have a `z-index` property set to `999`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('#years')?.getPropertyValue('z-index') === '999');
+```
 
 Your `#years` selector should have a `margin` property set to `0 -2px`.
 
