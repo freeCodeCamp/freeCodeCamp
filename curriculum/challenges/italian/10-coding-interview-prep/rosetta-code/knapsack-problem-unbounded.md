@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ed4
-title: Knapsack problem/Unbounded
+title: Problema dello Zaino/Non limitato
 challengeType: 5
 forumTopicId: 323655
 dashedName: knapsack-problemunbounded
@@ -8,21 +8,21 @@ dashedName: knapsack-problemunbounded
 
 # --description--
 
-A traveler gets diverted and has to make an unscheduled stop in what turns out to be Shangri-La. Opting to leave, he is allowed to take as much as he likes of the items available there, so long as it will fit in his knapsack, and he can carry it.
+Un viaggiatore viene deviato e deve fare una sosta non programmata in quello che risulta essere Shangri-La. Scegliendo di andarsene, gli è permesso prendere tutto ciò che vuole degli oggetti disponibili lì, fintanto che entrino nel suo zaino e riesca a portarlo.
 
-He knows that he can carry no more than a particular value of maximum weight in total; and that the capacity of his knapsack has a limited volume.
+Sa che non può portare più di un particolare valore di peso massimo totale; e che la capacità del suo zaino ha un volume limitato.
 
-Looking just above the bar codes on the items he finds their weights and volumes. He digs out his recent copy of a financial paper and gets the value of each item.
+Guardando appena sopra i codici a barre sugli articoli trova i loro pesi e volumi. Va a ripescare la sua recente copia di un documento finanziario e ottiene il valore di ogni voce.
 
-He can only take whole units of any item, but there is much more of any item than he could ever carry.
+Può solo prendere unità intere di qualsiasi oggetto, ma c'è molto di più di qualsiasi oggetto che potrebbe mai trasportare.
 
 # --instructions--
 
-Write a function that takes an array of objects, maximum weight, and maximum volume as parameters. Each object has 4 attributes: name, value, weight, and volume. The function should return the maximum value of items the traveller can take with him.
+Scrivi una funzione che richiede una serie di oggetti, il peso massimo e il volume massimo come parametri. Ogni oggetto ha 4 attributi: nome, valore, peso e volume. La funzione dovrebbe restituire il valore massimo degli articoli che il viaggiatore può portare con sé.
 
 # --hints--
 
-`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 25, 0.25)` should return `54500`.
+`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 25, 0.25)` dovrebbe restituire `54500`.
 
 ```js
 assert.equal(
@@ -39,7 +39,7 @@ assert.equal(
 );
 ```
 
-`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 55, 0.25)` should return `88400`.
+`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 55, 0.25)` dovrebbe restituire `88400`.
 
 ```js
 assert.equal(
@@ -56,7 +56,7 @@ assert.equal(
 );
 ```
 
-`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 25, 0.15)` should return `42500`.
+`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 25, 0.15)` dovrebbe restituire `42500`.
 
 ```js
 assert.equal(
@@ -73,7 +73,7 @@ assert.equal(
 );
 ```
 
-`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 35, 0.35)` should return `75900`.
+`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 35, 0.35)` dovrebbe restituire `75900`.
 
 ```js
 assert.equal(
@@ -90,7 +90,7 @@ assert.equal(
 );
 ```
 
-`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 15, 0.25)` should return `43200`.
+`knapsackUnbounded([{ name:"panacea", value:3000, weight:0.3, volume:0.025 }, { name:"ichor", value:1800, weight:0.2, volume:0.015 }, { name:"gold", value:2500, weight:2, volume:0.002 }], 15, 0.25)` dovrebbe restituire `43200`.
 
 ```js
 assert.equal(

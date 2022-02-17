@@ -1,6 +1,6 @@
 ---
 id: 59e09e6d412c5939baa02d16
-title: Execute a Markov algorithm
+title: Eseguire un algoritmo di Markov
 challengeType: 5
 forumTopicId: 302260
 dashedName: execute-a-markov-algorithm
@@ -8,9 +8,9 @@ dashedName: execute-a-markov-algorithm
 
 # --description--
 
-Create an interpreter for a [Markov Algorithm](https://en.wikipedia.org/wiki/Markov algorithm "wp: Markov algorithm").
+Crea un interprete per un [Algoritmo di Markov](https://en.wikipedia.org/wiki/Markov algorithm "wp: Markov algorithm").
 
-Rules have the syntax:
+Le regole hanno questa sintassi:
 
 <pre>[ruleset] ::= (([comment] | [rule]) [newline]+)*
 [comment] ::= # {[any character]}
@@ -18,19 +18,19 @@ Rules have the syntax:
 [whitespace] ::= ([tab] | [space]) [[whitespace]]
 </pre>
 
-There is one rule per line.
+C'è una regola per riga.
 
-If there is a `.` (period) present before the \[replacement], then this is a terminating rule in which case the interpreter must halt execution.
+Se c'è un `.` (punto) prima del \[replacement], allora questa è una regola di termine, in tal caso l'interprete deve fermare l'esecuzione.
 
-A ruleset consists of a sequence of rules, with optional comments.
+Un set di regole consiste in una sequenza di regole, con commenti opzionali.
 
-Rulesets
+Set di regole
 
-Use the following tests on entries:
+Usa i seguenti test sulle voci:
 
-**Ruleset 1:**
+**Set di regole 1:**
 
-<pre># This rules file is extracted from Wikipedia:
+<pre># Questo file di regole è estratto da wikipedia
 # <code>http://en.wikipedia.org/wiki/Markov_Algorithm</code>
 A -> apple
 B -> bag
@@ -40,13 +40,13 @@ the shop -> my brother
 a never used -> .terminating rule
 </pre>
 
-Sample text of `I bought a B of As from T S.` should generate the output `I bought a bag of apples from my brother.`
+Il testo di esempio `I bought a B of As from T S.` dovrebbe generare l'output di `I bought a bag of apples from my brother.`
 
-**Ruleset 2:**
+**Set di regole 2:**
 
-A test of the terminating rule
+Un test della regola di termine
 
-<pre># Slightly modified from the rules on Wikipedia
+<pre># Modificato leggermente dalle regole prese da Wikipedia
 A -> apple
 B -> bag
 S -> .shop
@@ -55,11 +55,11 @@ the shop -> my brother
 a never used -> .terminating rule
 </pre>
 
-Sample text of `I bought a B of As from T S.` should generate `I bought a bag of apples from T shop.`
+Il test di esempio `I bought a B of As from T S.` dovrebbe generare `I bought a bag of apples from T shop.`
 
-**Ruleset 3:**
+**Set di regole 3:**
 
-This tests for correct substitution order and may trap simple regexp based replacement routines if special regexp characters are not escaped.
+Questo verifica il corretto ordine di sostituzione e può contenere semplici routine di sostituzione basate su espressioni regolari se non viene fatto l'escape dei caratteri speciali regexp.
 
 <pre># BNF Syntax testing rules
 A -> apple
@@ -74,23 +74,23 @@ the shop -> my brother
 a never used -> .terminating rule
 </pre>
 
-Sample text of `I bought a B of As W my Bgage from T S.` should generate `I bought a bag of apples with my money from T shop.`
+Il testo di esempio `I bought a B of As W my Bgage from T S.` dovrebbe generare `I bought a bag of apples with my money from T shop.`
 
-**Ruleset 4:**
+**Set di regole 4:**
 
-This tests for correct order of scanning of rules, and may trap replacement routines that scan in the wrong order. It implements a general unary multiplication engine. (Note that the input expression must be placed within underscores in this implementation.)
+Questo verifica il corretto ordine di scansione delle regole, e può contenere routine di sostituzione che scansionano in ordine sbagliato. Implementa un generico motore di moltiplicazione unario. (Si noti che l'espressione di input deve essere inserita all'interno di underscore in questa implementazione.)
 
-<pre>### Unary Multiplication Engine, for testing Markov Algorithm implementations
+<pre>### Macchina di moltiplicazione unitaria, per testare l'implementazione dell'algoritmo di Markov
 ### By Donal Fellows.
-# Unary addition engine
+# Macchina di addizione unitaria
 _+1 -> _1+
 1+1 -> 11+
-# Pass for converting from the splitting of multiplication into ordinary
-# addition
+# Passaggio per convertire dalla separazione della moltiplicazione
+# ad ordinaria addizione
 1! -> !1
 ,! -> !+
 _! -> _
-# Unary multiplication by duplicating left side, right side times
+# Moltiplicazione unaria, duplicando il lato sinistro tante volte quante dice il lato destro
 1*1 -> x,@y
 1x -> xX
 X, -> 1,1
@@ -99,82 +99,82 @@ _x -> _X
 ,x -> ,X
 y1 -> 1y
 y_ -> _
-# Next phase of applying
+# Prossima fase di apllicazione
 1@1 -> x,@y
 1@_ -> @_
 ,@_ -> !_
 ++ -> +
-# Termination cleanup for addition
+# Pulizia dei terminali per l'addizione
 _1 -> 1
 1+_ -> 1
 _+_ ->
 </pre>
 
-Sample text of `_1111*11111_` should generate the output `11111111111111111111`
+Il testo di esempio `_1111*11111_` dovrebbe generare l'output `11111111111111111111`
 
-**Ruleset 5:**
+**Set di regole 5:**
 
-A simple [Turing machine](http://en.wikipedia.org/wiki/Turing_machine "link: http&#x3A;//en.wikipedia.org/wiki/Turing_machine"), implementing a three-state [busy beaver](http://en.wikipedia.org/wiki/Busy_beaver "link: http&#x3A;//en.wikipedia.org/wiki/Busy_beaver").
+Una semplice [macchina di Turing](http://en.wikipedia.org/wiki/Turing_machine "link: http&#x3A;//en.wikipedia.org/wiki/Turing_machine"), che implementa un [alacre castoro](https://it.wikipedia.org/wiki/Alacre_castoro "link: http&#x3A;//it.wikipedia.org/wiki/Alacre_castoro") a tre stati.
 
-The tape consists of `0`s and `1`s, the states are `A`, `B`, `C` and `H` (for `H`alt), and the head position is indicated by writing the state letter before the character where the head is. All parts of the initial tape the machine operates on have to be given in the input.
+Il nastro è costituito da `0` e `1`, gli stati sono `A`, `B`, `C` e `H` (per `H`alt), e la posizione della testa è indicata scrivendo la lettera di stato prima del carattere in cui si trova la testa. Tutte le parti del nastro iniziale su cui la macchina opera devono essere fornite in ingresso.
 
-Besides demonstrating that the Markov algorithm is Turing-complete, it also made me catch a bug in the C++ implementation which wasn't caught by the first four rulesets.
+Oltre a dimostrare che l'algoritmo di Markov è Turing-completo, mi ha anche fatto catturare un bug nell'implementazione C++ che non era stato catturato dalle prime quattro regole.
 
-<pre># Turing machine: three-state busy beaver
+<pre># Macchina di Turing: castoro alacre
 #
-# state A, symbol 0 => write 1, move right, new state B
+# stato A, simbolo 0 => scrive 1, si sposta a destra, nuovo stato B
 A0 -> 1B
-# state A, symbol 1 => write 1, move left, new state C
+# stato A, simbolo 1 => scrive 1, si sposta a sinistra, nuovo stato C
 0A1 -> C01
 1A1 -> C11
-# state B, symbol 0 => write 1, move left, new state A
+# state B, simbolo 0 => scrive 1, si sposta a sinistra, nuovo stato A
 0B0 -> A01
 1B0 -> A11
-# state B, symbol 1 => write 1, move right, new state B
+# stato B, simbolo 1 => scrive 1, si sposta a destra, nuovo stato B
 B1 -> 1B
-# state C, symbol 0 => write 1, move left, new state B
+# stato C, simbolo 0 => scrive 1, si sposta a sinistra, nuovo stato B
 0C0 -> B01
 1C0 -> B11
-# state C, symbol 1 => write 1, move left, halt
+# stato C, simbolo 1 => scrive 1, si sposta a sinistra, si ferma
 0C1 -> H01
 1C1 -> H11
 </pre>
 
-This ruleset should turn `000000A000000` into `00011H1111000`
+Questa regola dovrebbe trasformare `000000A000000` in `00011H1111000`
 
 # --hints--
 
-`markov` should be a function.
+`markov` dovrebbe essere una funzione.
 
 ```js
 assert(typeof markov === 'function');
 ```
 
-`markov(["A -> apple","B -> bag","S -> shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As from T S.")` should return "I bought a bag of apples from my brother.".
+`markov(["A -> apple","B -> bag","S -> shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As from T S.")` dovrebbe restituire "I bought a bag of apples from my brother.".
 
 ```js
 assert.deepEqual(markov(rules[0], tests[0]), outputs[0]);
 ```
 
-`markov(["A -> apple","B -> bag","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As from T S.")` should return "I bought a bag of apples from T shop.".
+`markov(["A -> apple","B -> bag","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As from T S.")` dovrebbe restituire "I bought a bag of apples from T shop.".
 
 ```js
 assert.deepEqual(markov(rules[1], tests[1]), outputs[1]);
 ```
 
-`markov(["A -> apple","WWWW -> with","Bgage -> ->.*","B -> bag","->.* -> money","W -> WW","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As W my Bgage from T S.")` should return "I bought a bag of apples with my money from T shop.".
+`markov(["A -> apple","WWWW -> with","Bgage -> ->.*","B -> bag","->.* -> money","W -> WW","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As W my Bgage from T S.")` dovrebbe restituire "I bought a bag of apples with my money from T shop.".
 
 ```js
 assert.deepEqual(markov(rules[2], tests[2]), outputs[2]);
 ```
 
-`markov(["_+1 -> _1+","1+1 -> 11+","1! -> !1",",! -> !+","_! -> _","1*1 -> x,@y","1x -> xX","X, -> 1,1","X1 -> 1X","_x -> _X",",x -> ,X","y1 -> 1y","y_ -> _","1@1 -> x,@y","1@_ -> @_",",@_ -> !_","++ -> +","_1 -> 1","1+_ -> 1","_+_ -> "],"_1111*11111_")` should return "11111111111111111111".
+`markov(["_+1 -> _1+","1+1 -> 11+","1! -> !1",",! -> !+","_! -> _","1*1 -> x,@y","1x -> xX","X, -> 1,1","X1 -> 1X","_x -> _X",",x -> ,X","y1 -> 1y","y_ -> _","1@1 -> x,@y","1@_ -> @_",",@_ -> !_","++ -> +","_1 -> 1","1+_ -> 1","_+_ -> "],"_1111*11111_")` dovrebbe restituire "11111111111111111111".
 
 ```js
 assert.deepEqual(markov(rules[3], tests[3]), outputs[3]);
 ```
 
-`markov(["A0 -> 1B","0A1 -> C01","1A1 -> C11","0B0 -> A01","1B0 -> A11","B1 -> 1B","0C0 -> B01","1C0 -> B11","0C1 -> H01","1C1 -> H11"],"")` should return "00011H1111000".
+`markov(["A0 -> 1B","0A1 -> C01","1A1 -> C11","0B0 -> A01","1B0 -> A11","B1 -> 1B","0C0 -> B01","1C0 -> B11","0C1 -> H01","1C1 -> H11"],"")` dovrebbe restituire "00011H1111000".
 
 ```js
 assert.deepEqual(markov(rules[4], tests[4]), outputs[4]);

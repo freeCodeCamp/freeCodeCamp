@@ -8,7 +8,7 @@ import { createSelector } from 'reselect';
 import envData from '../../../config/env.json';
 import { createFlashMessage } from '../components/Flash/redux';
 import { Loader, Spacer } from '../components/helpers';
-import Certification from '../components/settings/Certification';
+import Certification from '../components/settings/certification';
 import About from '../components/settings/about';
 import DangerZone from '../components/settings/danger-zone';
 import Email from '../components/settings/email';

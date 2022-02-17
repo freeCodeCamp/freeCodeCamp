@@ -1,6 +1,6 @@
 ---
 id: a97fd23d9b809dac9921074f
-title: 引数は省略可能である
+title: 省略可能な引数
 challengeType: 5
 forumTopicId: 14271
 dashedName: arguments-optional
@@ -8,11 +8,11 @@ dashedName: arguments-optional
 
 # --description--
 
-2 つの引数を合計する関数を作成してください。 1 つの引数のみが与えられた場合は、1 つの引数を想定して合計を返す関数を返してください。
+2 つの引数を合計する関数を作成してください。 1 つの引数のみが与えられた場合は、関数を返してください。その関数は 1 つの引数を取り、合計を返します。
 
 たとえば、`addTogether(2, 3)` は `5`を返し、`addTogether(2)` は関数を返す必要があります。
 
-この返された関数を単一の引数で呼び出すと、合計を返します。
+この返された関数に １ つの引数を与えて呼び出すと、合計を返します。
 
 ```js
 var sumTwoAnd = addTogether(2);
@@ -60,7 +60,7 @@ assert.isUndefined(addTogether(2, '3'));
 assert.isUndefined(addTogether(2)([3]));
 ```
 
-`addTogether("2", 3)` should return `undefined`.
+`addTogether("2", 3)` は `undefined` を返す必要があります。
 
 ```js
 assert.isUndefined(addTogether('2', 3));

@@ -65,8 +65,8 @@
     "ask-later": "後で",
     "start-coding": "コーディングを始めましょう！",
     "go-to-settings": "設定へ移動して認定証を取得",
-    "click-start-course": "Click here to start the course",
-    "click-start-project": "Click here to start the project"
+    "click-start-course": "こちらをクリックしてコースを開始",
+    "click-start-project": "こちらをクリックしてプロジェクトを開始"
   },
   "landing": {
     "big-heading-1": "プログラミングを無料で学ぶ。",
@@ -297,12 +297,12 @@
     "help-translate": "以下の認定講座は現在翻訳中です。",
     "help-translate-link": "翻訳にご協力ください。",
     "project-preview-title": "あなたが作るもののプレビューはこちらです。",
-    "github-required": "A <0>GitHub</0> account is required to run the project. You will need to create one if you haven't already.",
-    "step-1": "Step 1: Complete the project",
-    "step-2": "Step 2: Submit your code",
-    "submit-public-url": "When you have completed the project, save all the required files into a public repository and submit the URL to it below.",
-    "complete-both-steps": "Complete both steps below to finish the challenge.",
-    "runs-in-vm": "The project runs in a virtual machine, complete the user stories described in there and get all the tests to pass to finish step 1."
+    "github-required": "プロジェクトを動作させるには、<0>GitHub</0> アカウントが必要です。まだアカウントをお持ちでなければ、作成する必要があります。",
+    "step-1": "ステップ 1: プロジェクトを完成させる",
+    "step-2": "ステップ 2: コードを提出する",
+    "submit-public-url": "プロジェクトが完成したら、必須のファイルをすべてパブリックリポジトリに保存し、リポジトリの URL を以下に提出してください。",
+    "complete-both-steps": "チャレンジを終えるには、以下 2 つのステップを完了させてください。",
+    "runs-in-vm": "このプロジェクトは仮想マシン内で動作します。ステップ 1 を完了するには、そこで述べられたユーザーストーリーを実装し、すべてのテストに合格してください。"
   },
   "donate": {
     "title": "非営利団体を支援する",
@@ -466,7 +466,9 @@
     "first-page": "最初のページへ移動",
     "previous-page": "前のページへ移動",
     "next-page": "次のページへ移動",
-    "last-page": "最後のページへ移動"
+    "last-page": "最後のページへ移動",
+    "primary-nav": "primary",
+    "breadcrumb-nav": "breadcrumb"
   },
   "flash": {
     "honest-first": "認定証を請求するには、まず学問的誠実性ポリシーに同意する必要があります。",
@@ -521,7 +523,7 @@
     "delete-token-err": "トークンの削除中にエラーが発生しました",
     "token-created": "無事に新しいトークンを作成しました。",
     "token-deleted": "トークンが削除されました。",
-    "complete-project-first": "You must complete the project first."
+    "complete-project-first": "まずプロジェクトを完成させる必要があります。"
   },
   "validation": {
     "max-characters": "上限は 288 文字です。残り {{charsLeft}} 文字です。",
@@ -549,6 +551,7 @@
       "heading-legacy-full-stack": "このレガシーフルスタック認定講座の一環として、{{user}} は以下の認定講座を修了しました:",
       "heading": "この認定講座の一環として、{{user}} は以下のプロジェクトを構築し、すべての自動テストスイートに合格しました:",
       "solution": "解答",
+      "no-solution": "error displaying solution, email support@freeCodeCamp.org to get help.",
       "source": "ソースコード",
       "footnote": "これらのプロジェクトのいずれかが <2>学問的誠実性ポリシー</2> に違反すると思われる場合、<5>freeCodeCamp チームに報告</5> してください。",
       "title": {

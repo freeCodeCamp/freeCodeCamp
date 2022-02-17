@@ -466,7 +466,9 @@
     "first-page": "訪問第一頁",
     "previous-page": "訪問上一頁",
     "next-page": "訪問下一頁",
-    "last-page": "訪問最後一頁"
+    "last-page": "訪問最後一頁",
+    "primary-nav": "primary",
+    "breadcrumb-nav": "breadcrumb"
   },
   "flash": {
     "honest-first": "申請認證之前，你必須先接受我們的《學術誠信條例》",
@@ -549,6 +551,7 @@
       "heading-legacy-full-stack": "作爲舊版全棧認證的一部分，{{user}} 完成了以下認證：",
       "heading": "作爲此認證的一部分，{{user}} 構建了以下項目，並通過所有自動測試：",
       "solution": "解決方案",
+      "no-solution": "error displaying solution, email support@freeCodeCamp.org to get help.",
       "source": "來源",
       "footnote": "如果你懷疑其中任何項目違反了<2>學術誠信條例</2>，請<5>向我們的團隊報告</5>。",
       "title": {

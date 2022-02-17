@@ -466,7 +466,9 @@
     "first-page": "Va alla prima pagina",
     "previous-page": "Va alla pagina precedente",
     "next-page": "Va alla pagina successiva",
-    "last-page": "Va all'ultima pagina"
+    "last-page": "Va all'ultima pagina",
+    "primary-nav": "primary",
+    "breadcrumb-nav": "breadcrumb"
   },
   "flash": {
     "honest-first": "Per richiedere una certificazione, è necessario prima accettare la nostra politica di onestà accademica",
@@ -549,6 +551,7 @@
       "heading-legacy-full-stack": "Come parte di questa vecchia certificazione Full Stack, {{user}} ha completato le seguenti certificazioni:",
       "heading": "Come parte di questa certificazione, {{user}} ha costruito i seguenti progetti e ha superato tutte le suite di test automatizzate per superare:",
       "solution": "soluzione",
+      "no-solution": "error displaying solution, email support@freeCodeCamp.org to get help.",
       "source": "sorgente",
       "footnote": "Se sospetti che uno di questi progetti violi la politica di onestà accademica <2></2>, per favore <5>segnalalo al nostro team</5>.",
       "title": {

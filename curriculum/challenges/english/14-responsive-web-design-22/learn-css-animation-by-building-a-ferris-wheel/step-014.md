@@ -14,19 +14,22 @@ Time to position the cabins around the wheel. Select the first `.cabin` element.
 You should have a `.cabin:nth-of-type(1)` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(1)'));
+const def = (s) => new __helpers.CSSHelp(document).getStyle(s) 
+assert.exists(def('.cabin:first-of-type') || def('.cabin:nth-of-type(1)'));
 ```
 
 Your `.cabin:nth-of-type(1)` selector should have a `right` property set to `-8.5%`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(1)')?.right === '-8.5%');
+const right = (s) => new __helpers.CSSHelp(document).getStyle(s)?.right
+assert.equal(right('.cabin:nth-of-type(1)') || right('.cabin:first-of-type'), '-8.5%');
 ```
 
 Your `.cabin:nth-of-type(1)` selector should have a `top` property set to `50%`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.cabin:nth-of-type(1)')?.top === '50%');
+const top = (s) => new __helpers.CSSHelp(document).getStyle(s)?.top
+assert.equal(top('.cabin:nth-of-type(1)') || top('.cabin:first-of-type'),'50%');
 ```
 
 # --seed--

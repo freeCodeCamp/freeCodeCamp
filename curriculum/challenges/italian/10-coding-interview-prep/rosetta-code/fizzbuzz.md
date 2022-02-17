@@ -8,51 +8,51 @@ dashedName: fizzbuzz
 
 # --description--
 
-Write a program that generates an array of integers from 1 to 100 (inclusive). But:
+Scrivi un programma che genera un array di integrali da 1 a 100 (inclusi). Ma:
 
 <ul>
-    <li>for multiples of 3, add <code>"Fizz"</code> to the array instead of the number</li>
-    <li>for multiples of 5, add <code>"Buzz"</code> to the array instead of the number</li>
-    <li>for multiples of 3 and 5, add <code>"FizzBuzz"</code> to the array instead of the number</li>
+    <li>per multipli di 3, aggiunge <code>"Fizz"</code> all'array invede del numero</li>
+    <li>per multipli di 5, aggiungi <code>"Buzz"</code> all'array invece del numero</li>
+    <li>per multipli di 3 e 5, aggiungi <code>"FizzBuzz"</code> all'array invece del numero</li>
 </ul>
 
 # --instructions--
 
-Your program should return an array containing the results based on the rules above.
+Il tuo programma dovrebbe restituire un array contenete i risultati seguendo le regole scritte sopra.
 
 # --hints--
 
-`fizzBuzz` should be a function.
+`fizzBuzz` dovrebbe essere una funzione.
 
 ```js
 assert(typeof fizzBuzz == 'function');
 ```
 
-`fizzBuzz()` should return an Array.
+`fizzBuzz()` dovrebbe restituire un array.
 
 ```js
 assert(Array.isArray(fizzBuzz()) == true);
 ```
 
-Numbers divisible by only 3 should return `"Fizz"`.
+I numeri divisibili per solo 3 dovrebbero restituire `"Fizz"`.
 
 ```js
 assert.equal(fizzBuzz()[2], 'Fizz');
 ```
 
-Numbers divisible by only 5 should return `"Buzz"`.
+I numeri divisibili per solo 5 dovrebbero restituire `"Buzz"`.
 
 ```js
 assert.equal(fizzBuzz()[99], 'Buzz');
 ```
 
-Numbers divisible by both 3 and 5 should return `"FizzBuzz"`.
+Numeri divisibili per 3 e 5 dovrebbero restituire `"FizzBuzz"`.
 
 ```js
 assert.equal(fizzBuzz()[89], 'FizzBuzz');
 ```
 
-Numbers not divisible by either 3 or 5 should return the number itself.
+I numeri non divisibili per 3 o 5 dovrebbero restituire il numero stesso.
 
 ```js
 assert.equal(fizzBuzz()[12], 13);

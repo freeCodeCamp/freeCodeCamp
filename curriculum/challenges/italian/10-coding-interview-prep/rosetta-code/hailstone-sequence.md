@@ -1,6 +1,6 @@
 ---
 id: 595608ff8bcd7a50bd490181
-title: Hailstone sequence
+title: Numeri di Hailstone
 challengeType: 5
 forumTopicId: 302279
 dashedName: hailstone-sequence
@@ -8,48 +8,48 @@ dashedName: hailstone-sequence
 
 # --description--
 
-The Hailstone sequence of numbers can be generated from a starting positive integer, `n` by:
+I numeri di Hailstone possono essere generati da un numero intero positivo iniziale, `n` in questo modo:
 
-- If `n` is `1` then the sequence ends
-- If `n` is `even` then the next `n` of the sequence `= n/2`
-- If `n` is `odd` then the next `n` of the sequence `= (3 * n) + 1`
+- Se `n` è `1` allora la sequenza termina
+- Se `n` è `pari` allora il successivo `n` della sequenza `= n/2`
+- Se `n` è `dispari` allora il successivo `n` della sequenza `= (3 * n) + 1`
 
-The (unproven) Collatz conjecture is that the hailstone sequence for any starting number always terminates.
+La congettura di Collatz (non dimostrata) è che i numeri di Hailstone per qualsiasi numero iniziale arrivano sempre a 1.
 
-The hailstone sequence is also known as hailstone numbers (because the values are usually subject to multiple descents and ascents like hailstones in a cloud), or as the Collatz sequence.
+I numeri di Hailstone (detti così perché i valori sono di solito soggetti a più discese e salite come la grandine in una nuvola), sono anche noti come sequenza di Collatz.
 
 # --instructions--
 
-1. Create a routine to generate the hailstone sequence for a number
-2. Your function should return an array with the number less than `limit` which has the longest hailstone sequence and that sequence's length. (But don't show the actual sequence!)
+1. Crea una routine per generare la sequenza di Collatz per un numero
+2. La tua funzione dovrebbe restituire un array con il numero sotto `limit` che ha la più lunga sequenza di collatz e la lunghezza della sequenza. (Ma non mostrare la sequenza effettiva!)
 
 # --hints--
 
-`hailstoneSequence` should be a function.
+`hailstoneSequence` dovrebbe essere una funzione.
 
 ```js
 assert(typeof hailstoneSequence === 'function');
 ```
 
-`hailstoneSequence(30)` should return an array.
+`hailstoneSequence(30)` dovrebbe restituire un array.
 
 ```js
 assert(Array.isArray(hailstoneSequence(30)));
 ```
 
-`hailstoneSequence(30)` should return `[27, 112]`.
+`hailstoneSequence(30)` dovrebbe restituire `[27, 112]`.
 
 ```js
 assert.deepEqual(hailstoneSequence(30), [27, 112]);
 ```
 
-`hailstoneSequence(50000)` should return `[35655, 324]`.
+`hailstoneSequence(50000)` dovrebbe restituire `[35655, 324]`.
 
 ```js
 assert.deepEqual(hailstoneSequence(50000), [35655, 324]);
 ```
 
-`hailstoneSequence(100000)` should return `[77031, 351]`.
+`hailstoneSequence(100000)` dovrebbe restituire `[77031, 351]`.
 
 ```js
 assert.deepEqual(hailstoneSequence(100000), [77031, 351]);

@@ -466,7 +466,9 @@
     "first-page": "访问第一页",
     "previous-page": "访问上一页",
     "next-page": "访问下一页",
-    "last-page": "访问最后一页"
+    "last-page": "访问最后一页",
+    "primary-nav": "primary",
+    "breadcrumb-nav": "breadcrumb"
   },
   "flash": {
     "honest-first": "申请认证之前，你必须先接受我们的《学术诚信条例》",
@@ -549,6 +551,7 @@
       "heading-legacy-full-stack": "作为旧版全栈认证的一部分，{{user}} 完成了以下认证：",
       "heading": "作为此认证的一部分，{{user}} 构建了以下项目，并通过所有自动测试：",
       "solution": "解决方案",
+      "no-solution": "error displaying solution, email support@freeCodeCamp.org to get help.",
       "source": "来源",
       "footnote": "如果你怀疑其中任何项目违反了<2>学术诚信条例</2>，请<5>向我们的团队报告</5>。",
       "title": {

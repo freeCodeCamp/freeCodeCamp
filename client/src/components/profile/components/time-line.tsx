@@ -1,11 +1,5 @@
 /* eslint-disable @typescript-eslint/unbound-method */
-import {
-  Button,
-  Modal,
-  Table,
-  DropdownButton,
-  MenuItem
-} from '@freecodecamp/react-bootstrap';
+import { Button, Modal, Table } from '@freecodecamp/react-bootstrap';
 import Loadable from '@loadable/component';
 import { useStaticQuery, graphql } from 'gatsby';
 import { reverse, sortBy } from 'lodash-es';
@@ -21,8 +15,8 @@ import {
 } from '../../../../../utils';
 import CertificationIcon from '../../../assets/icons/certification-icon';
 import { ChallengeFiles, CompletedChallenge } from '../../../redux/prop-types';
-import { maybeUrlRE } from '../../../utils';
 import { FullWidthRow, Link } from '../../helpers';
+import { SolutionDisplayWidget } from '../../solution-display-widget';
 import TimelinePagination from './timeline-pagination';
 
 import './timeline.css';
@@ -53,7 +47,6 @@ function TimelineInner({
   idToNameMap,
   sortedTimeline,
   totalPages,
-
   completedMap,
   t,
   username
@@ -96,73 +89,20 @@ function TimelineInner({
   }
 
   function renderViewButton(
-    id: string,
-    challengeFiles: ChallengeFiles,
-    githubLink?: string,
-    solution?: string | null
+    completedChallenge: CompletedChallenge
   ): React.ReactNode {
-    if (challengeFiles?.length) {
-      return (
-        <Button
-          block={true}
-          bsStyle='primary'
-          className='btn-invert'
-          id={`btn-for-${id}`}
-          onClick={() => viewSolution(id, solution, challengeFiles)}
-        >
-          {t('buttons.show-code')}
-        </Button>
-      );
-    } else if (githubLink) {
-      return (
-        <div className='solutions-dropdown'>
-          <DropdownButton
-            block={true}
-            bsStyle='primary'
-            className='btn-invert'
-            id={`dropdown-for-${id}`}
-            title='View'
-          >
-            <MenuItem
-              bsStyle='primary'
-              href={solution}
-              rel='noopener noreferrer'
-              target='_blank'
-            >
-              {t('buttons.frontend')}
-            </MenuItem>
-            <MenuItem
-              bsStyle='primary'
-              href={githubLink}
-              rel='noopener noreferrer'
-              target='_blank'
-            >
-              {t('buttons.backend')}
-            </MenuItem>
-          </DropdownButton>
-        </div>
-      );
-    } else if (solution && maybeUrlRE.test(solution)) {
-      return (
-        <Button
-          block={true}
-          bsStyle='primary'
-          className='btn-invert'
-          href={solution}
-          id={`btn-for-${id}`}
-          rel='noopener noreferrer'
-          target='_blank'
-        >
-          {t('buttons.view')}
-        </Button>
-      );
-    } else {
-      return null;
-    }
+    const { id, solution, challengeFiles } = completedChallenge;
+    return (
+      <SolutionDisplayWidget
+        completedChallenge={completedChallenge}
+        showFilesSolution={() => viewSolution(id, solution, challengeFiles)}
+        displayContext={'timeline'}
+      ></SolutionDisplayWidget>
+    );
   }
 
   function renderCompletion(completed: CompletedChallenge): JSX.Element {
-    const { id, challengeFiles, githubLink, solution } = completed;
+    const { id } = completed;
     const completedDate = new Date(completed.completedDate);
     // @ts-expect-error idToNameMap is not a <string, string> Map...
     const { challengeTitle, challengePath, certPath } = idToNameMap.get(id);
@@ -181,7 +121,7 @@ function TimelineInner({
             <Link to={challengePath as string}>{challengeTitle}</Link>
           )}
         </td>
-        <td>{renderViewButton(id, challengeFiles, githubLink, solution)}</td>
+        <td>{renderViewButton(completed)}</td>
         <td className='text-center'>
           <time dateTime={completedDate.toISOString()}>
             {completedDate.toLocaleString([localeCode, 'en-US'], {
