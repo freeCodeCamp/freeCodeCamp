@@ -28,10 +28,11 @@ exports.buildMobileCurriculum = function buildMobileCurriculum(json) {
       if (blockGroup.length === 0) continue;
 
       blockNames[superBlocks[i]] = {};
+      blockNames[superBlocks[i]]['blocks'] = {};
 
       for (let j = 0; j < blockGroup.length; j++) {
-        blockNames[superBlocks[i]][blockGroup[j]] = {};
-        blockNames[superBlocks[i]][blockGroup[j]]['challenges'] =
+        blockNames[superBlocks[i]]['blocks'][blockGroup[j]] = {};
+        blockNames[superBlocks[i]]['blocks'][blockGroup[j]]['challenges'] =
           curriculum[superBlocks[i]]['blocks'][blockGroup[j]]['meta'];
       }
     }
