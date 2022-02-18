@@ -47,6 +47,7 @@ const propTypes = {
   isJsAlgoDataStructCert: PropTypes.bool,
   isMachineLearningPyCertV7: PropTypes.bool,
   isQaCertV7: PropTypes.bool,
+  isRelationalDatabaseCertV8: PropTypes.bool,
   isRespWebDesignCert: PropTypes.bool,
   isSciCompPyCertV7: PropTypes.bool,
   t: PropTypes.func.isRequired,
@@ -71,7 +72,8 @@ const isCertSelector = ({
   isRespWebDesignCert,
   isSciCompPyCertV7,
   isDataAnalysisPyCertV7,
-  isMachineLearningPyCertV7
+  isMachineLearningPyCertV7,
+  isRelationalDatabaseCertV8
 }) => ({
   is2018DataVisCert,
   isApisMicroservicesCert,
@@ -87,7 +89,8 @@ const isCertSelector = ({
   isRespWebDesignCert,
   isSciCompPyCertV7,
   isDataAnalysisPyCertV7,
-  isMachineLearningPyCertV7
+  isMachineLearningPyCertV7,
+  isRelationalDatabaseCertV8
 });
 
 const isCertMapSelector = createSelector(
@@ -106,7 +109,8 @@ const isCertMapSelector = createSelector(
     isBackEndCert,
     isSciCompPyCertV7,
     isDataAnalysisPyCertV7,
-    isMachineLearningPyCertV7
+    isMachineLearningPyCertV7,
+    isRelationalDatabaseCertV8
   }) => ({
     'Responsive Web Design': isRespWebDesignCert,
     'JavaScript Algorithms and Data Structures': isJsAlgoDataStructCert,
@@ -118,6 +122,7 @@ const isCertMapSelector = createSelector(
     'Scientific Computing with Python': isSciCompPyCertV7,
     'Data Analysis with Python': isDataAnalysisPyCertV7,
     'Machine Learning with Python': isMachineLearningPyCertV7,
+    'Relational Database': isRelationalDatabaseCertV8,
     'Legacy Front End': isFrontEndCert,
     'Legacy Data Visualization': isDataVisCert,
     'Legacy Back End': isBackEndCert,
@@ -164,7 +169,9 @@ export class CertificationSettings extends Component {
     if (!completedProject) {
       return null;
     }
+
     const { solution, challengeFiles } = completedProject;
+
     const onClickHandler = () =>
       this.setState({
         solutionViewer: {

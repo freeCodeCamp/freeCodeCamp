@@ -425,7 +425,7 @@
       }
     }
   },
-  "relational-databases": {
+  "relational-database": {
     "title": "リレーショナルデータベース",
     "intro": [
       "このコースでは、VS Code、PostgreSQL、そして Linux / Unix コマンドラインを含む本格的な開発者ツールとソフトウェアを使用して、インタラクティブなチュートリアルを完了し、プロジェクトを構築します。",

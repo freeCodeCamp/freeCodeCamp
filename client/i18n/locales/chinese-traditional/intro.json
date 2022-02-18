@@ -425,7 +425,7 @@
       }
     }
   },
-  "relational-databases": {
+  "relational-database": {
     "title": "關係型數據庫",
     "intro": [
       "對於這些課程，你將使用真正的開發者工具和軟件，包括 VS Code、PostgreSQL 和 Linux / Unix 命令行，來完成交互式教程和構建項目。",
