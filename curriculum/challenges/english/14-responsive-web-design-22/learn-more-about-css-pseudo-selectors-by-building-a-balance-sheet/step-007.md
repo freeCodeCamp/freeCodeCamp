@@ -1,5 +1,5 @@
 ---
-id: 6193ded40c51662155758987
+id: 61fd6cc9475a784b7776233e
 title: Step 7
 challengeType: 0
 dashedName: step-7
@@ -7,44 +7,36 @@ dashedName: step-7
 
 # --description--
 
-Below your `#header` element, create an `h2` element with the text `Assets`, followed by a `div` element with the `class` set to `section`.
+Below your existing `div` element, add a new `div` element with a `class` set to `table-wrap`. This will be the container for your tables.
+
+Within that, add three `table` elements. You will be using CSS to style these into a single table, but using separate tables will help screen readers understand the document flow.
 
 # --hints--
 
-You should create a new `h2` element within your `#sheet` element.
+You should create a new `div` element.
 
 ```js
-assert(document.querySelectorAll('#sheet > h2')?.length === 1);
+assert(document.querySelectorAll('div')?.length === 2);
 ```
 
-Your new `h2` element should come after your `#header` element.
+Your new `div` element should have the `class` set to `table-wrap`.
 
 ```js
-assert(document.querySelector('#sheet > h2')?.previousElementSibling?.localName === 'div');
+assert(document.querySelector('.table-wrap')?.localName === 'div');
 ```
 
-Your new `h2` element should have the text `Assets`.
+Your `.table-wrap` element should come after your existing `div`.
 
 ```js
-assert(document.querySelector('#sheet > h2')?.textContent === 'Assets');
+assert(document.querySelectorAll('div')?.[1]?.classList?.contains('table-wrap'));
 ```
 
-You should create a new `div` element within your `#sheet` element.
+Your `.table-wrap` element should have three `table` elements.
 
 ```js
-assert(document.querySelectorAll('#sheet > div')?.length === 2);
-```
-
-Your new `div` element should have a `class` attribute set to `section`.
-
-```js
-assert(document.querySelectorAll('#sheet > div')?.[1]?.classList?.contains('section'));
-```
-
-Your new `div` element should come after your new `h2` element.
-
-```js
-assert(document.querySelector('#sheet > .section')?.previousElementSibling?.localName === 'h2');
+const children = [...(document.querySelector('.table-wrap')?.children ?? [])];
+assert(children?.length === 3);
+children.forEach(child => assert(child?.localName === 'table'));
 ```
 
 # --seed--
@@ -55,27 +47,30 @@ assert(document.querySelector('#sheet > .section')?.previousElementSibling?.loca
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AcmeWidgetCorp Balance Sheet</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
-    <div id="sheet">
-      <div id="header">
-        <h1>Balance Sheet</h1>
-        <h2>AcmeWidgetCorp</h2>
-        <p class="row">
-          <span>2019</span>
-          <span>2020</span>
-          <span class="current">2021</span>
-        </p>
-      </div>
+    <main>
+      <section>
+        <h1>
+          <span class="flex">
+            <span>AcmeWidgetCorp</span>
+            <span>Balance Sheet</span>
+          </span>
+        </h1>
+        <div id="years" aria-hidden="true">
+          <span class="year">2019</span>
+          <span class="year">2020</span>
+          <span class="year">2021</span>
+        </div>
 --fcc-editable-region--
 
 --fcc-editable-region--
-    </div>
-    <footer>Last Updated: December 2021</footer>
+      </section>
+    </main>
   </body>
 </html>
 ```

@@ -1,5 +1,5 @@
 ---
-id: 6193dfd113955a238da1cc05
+id: 61fd719788899952e67692b9
 title: Step 9
 challengeType: 0
 dashedName: step-9
@@ -7,45 +7,34 @@ dashedName: step-9
 
 # --description--
 
-Copy the `.row` and `.notes` elements and paste two more sets, so that your `.section` has three of each.
+The `thead` and `tbody` elements are used to indicate which portion of your table is the header, and which portion contains the primary data or content.
+
+Add a `thead` and `tbody` to your first `table`, below the `caption` element.
 
 # --hints--
 
-You should have three `.row` elements.
+Your first `table` element should have a `thead` element.
 
 ```js
-assert(document.querySelectorAll('.row').length === 4);
+assert(document.querySelectorAll('table')?.[0]?.querySelector('thead'));
 ```
 
-You should have three `.notes` elements.
+Your first `table` element should have a `tbody` element.
 
 ```js
-assert(document.querySelectorAll('.notes').length === 3);
+assert(document.querySelectorAll('table')?.[0]?.querySelector('tbody'));
 ```
 
-Your `.row` elements should all be within your `.section` element.
+Your `thead` element should be immediately below your `caption` element.
 
 ```js
-assert(document.querySelectorAll('.section > .row').length === 3);
+assert(document.querySelector('caption')?.nextElementSibling?.localName === 'thead');
 ```
 
-Your `.notes` elements should all be within your `.section` element.
+Your `tbody` element should be immediately below your `thead` element.
 
 ```js
-assert(document.querySelectorAll('.section > .notes').length === 3);
-```
-
-Your `.row` and `.notes` elements should be in the correct order.
-
-```js
-const children = document.querySelector('.section')?.children;
-assert(children?.length === 6);
-assert(children?.[0]?.classList?.contains('row'));
-assert(children?.[1]?.classList?.contains('notes'));
-assert(children?.[2]?.classList?.contains('row'));
-assert(children?.[3]?.classList?.contains('notes'));
-assert(children?.[4]?.classList?.contains('row'));
-assert(children?.[5]?.classList?.contains('notes'));
+assert(document.querySelector('thead')?.nextElementSibling?.localName === 'tbody');
 ```
 
 # --seed--
@@ -56,31 +45,38 @@ assert(children?.[5]?.classList?.contains('notes'));
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AcmeWidgetCorp Balance Sheet</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
-    <div id="sheet">
-      <div id="header">
-        <h1>Balance Sheet</h1>
-        <h2>AcmeWidgetCorp</h2>
-        <p class="row">
-          <span>2019</span>
-          <span>2020</span>
-          <span class="current">2021</span>
-        </p>
-      </div>
-      <h2>Assets</h2>
+    <main>
+      <section>
+        <h1>
+          <span class="flex">
+            <span>AcmeWidgetCorp</span>
+            <span>Balance Sheet</span>
+          </span>
+        </h1>
+        <div id="years" aria-hidden="true">
+          <span class="year">2019</span>
+          <span class="year">2020</span>
+          <span class="year">2021</span>
+        </div>
+        <div class="table-wrap">
 --fcc-editable-region--
-      <div class="section">
-        <p class="row"></p>
-        <span class="notes"></span>
-      </div>
+          <table>
+            <caption>Assets</caption>
+          </table>
 --fcc-editable-region--
-    </div>
-    <footer>Last Updated: December 2021</footer>
+          <table>
+          </table>
+          <table>
+          </table>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
 ```

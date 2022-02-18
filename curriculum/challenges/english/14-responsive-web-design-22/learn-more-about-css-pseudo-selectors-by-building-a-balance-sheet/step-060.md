@@ -1,94 +1,28 @@
 ---
-id: 62017f47c87be96457c49f46
-title: Step 46
+id: 6201a1cc668a34888f5b2f52
+title: Step 60
 challengeType: 0
-dashedName: step-46
+dashedName: step-60
 ---
 
 # --description--
 
-Rather than having to constantly double-check you are not overwriting your earlier properties, you can use the `!important` keyword to ensure these properties are always applied, regardless of order or specificity.
-
-Give each property in your `span[class~="sr-only"]` selector an `!important` keyword. Do not change any of the values.
+Select the `tr` elements with the `class` set to `data`. Give them a background image of `linear-gradient(to bottom, #dfdfe2 1.845rem, white 1.845rem)`.
 
 # --hints--
 
-Your `span[class~="sr-only"]` selector should have the `border` property set to `0 !important`.
+You should have a `tr.data` selector.
 
 ```js
-// log it
-const text = new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.cssText;
-assert(text.includes('border: 0px !important;') || text.includes('border: 0px none !important'));
+const def = (s) => new __helpers.CSSHelp(document).getStyle(s);
+assert(def('tr.data') || def('tr[class="data"]'));
 ```
 
-Your `span[class~="sr-only"]` selector should have the `clip` property set to `rect(1px, 1px, 1px, 1px) !important`.
+Your `tr.data` selector should have the `background-image` property set to `linear-gradient(to bottom, #dfdfe2 1.845rem, white 1.845rem)`.
 
 ```js
-const text = new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.cssText;
-assert(text.includes('clip: rect(1px, 1px, 1px, 1px) !important;'));
-```
-
-Your `span[class~="sr-only"]` selector should have the `clip-path` property set to `inset(50%) !important`.
-
-```js
-const text = new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.cssText;
-assert(text.includes('clip-path: inset(50%) !important;'));
-```
-
-Your `span[class~="sr-only"]` selector should have the `-webkit-clip-path` property set to `inset(50%) !important`.
-
-```js
-// this one gets removed apparently
-assert(code.includes('-webkit-clip-path: inset(50%) !important;'));
-```
-
-Your `span[class~="sr-only"]` selector should have the `height` property set to `1px !important`.
-
-```js
-const text = new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.cssText;
-assert(text.includes('height: 1px !important;'));
-```
-
-Your `span[class~="sr-only"]` selector should have the `width` property set to `1px !important`.
-
-```js
-const text = new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.cssText;
-assert(text.includes('width: 1px !important;'));
-```
-
-Your `span[class~="sr-only"]` selector should have the `position` property set to `absolute !important`.
-
-```js
-const text = new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.cssText;
-assert(text.includes('position: absolute !important;'));
-```
-
-Your `span[class~="sr-only"]` selector should have the `overflow` property set to `hidden !important`.
-
-```js
-const text = new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.cssText;
-assert(text.includes('overflow: hidden !important;'));
-```
-
-Your `span[class~="sr-only"]` selector should have the `white-space` property set to `nowrap !important`.
-
-```js
-const text = new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.cssText;
-assert(text.includes('white-space: nowrap !important;'));
-```
-
-Your `span[class~="sr-only"]` selector should have the `padding` property set to `0 !important`.
-
-```js
-const text = new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.cssText;
-assert(text.includes('padding: 0px !important;'));
-```
-
-Your `span[class~="sr-only"]` selector should have the `margin` property set to `-1px !important`.
-
-```js
-const text = new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.cssText;
-assert(text.includes('margin: -1px !important;'));
+const bg = (s) => new __helpers.CSSHelp(document).getStyle(s)?.getPropertyValue('background-image');
+assert((bg('tr.data') || bg('tr[class="data"]')) === 'linear-gradient(rgb(223, 223, 226) 1.845rem, white 1.845rem)');
 ```
 
 # --seed--
@@ -220,21 +154,19 @@ assert(text.includes('margin: -1px !important;'));
 ```
 
 ```css
---fcc-editable-region--
 span[class~="sr-only"] {
-  border: 0;
-  clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(50%);
-  -webkit-clip-path: inset(50%);
-  height: 1px;
-  width: 1px;
-  position: absolute;
-  overflow: hidden;
-  white-space: nowrap;
-  padding: 0;
-  margin: -1px;
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  clip-path: inset(50%) !important;
+  -webkit-clip-path: inset(50%) !important;
+  height: 1px !important;
+  width: 1px !important;
+  position: absolute !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  padding: 0 !important;
+  margin: -1px !important;
 }
---fcc-editable-region--
 
 html {
   box-sizing: border-box;
@@ -293,7 +225,65 @@ section {
   padding: 0 0.75rem 1.5rem 0.75rem;
 }
 
-span:not(.sr-only) {
+span {
   font-weight: normal;
 }
+
+table {
+  border-collapse: collapse;
+  border: 0;
+  width: 100%;
+  position: relative;
+  margin-top: 3rem;
+}
+
+table caption {
+  color: #356eaf;
+  font-size: 1.3em;
+  font-weight: normal;
+  position: absolute;
+  top: -2.25rem;
+  left: 0.5rem;
+}
+
+tbody td {
+  width: 100vw;
+  min-width: 4rem;
+  max-width: 4rem;
+}
+
+tbody th {
+  width: calc(100% - 12rem);
+}
+
+tr[class="total"] {
+  border-bottom: 4px double #0a0a23;
+  font-weight: bold;
+}
+
+tr[class="total"] th {
+  text-align: left;
+  padding: 0.5rem 0 0.25rem 0.5rem;
+}
+
+tr.total td {
+  text-align: right;
+  padding: 0 0.25rem;
+}
+
+tr.total td:nth-of-type(3) {
+  padding-right: 0.5rem;
+}
+
+tr.total:hover {
+  background-color: #99c9ff;
+}
+
+td.current {
+  font-style: italic;
+}
+
+--fcc-editable-region--
+
+--fcc-editable-region--
 ```

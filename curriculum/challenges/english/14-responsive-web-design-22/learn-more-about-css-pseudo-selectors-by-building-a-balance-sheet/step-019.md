@@ -1,5 +1,5 @@
 ---
-id: 6193e8957e614d3b8eeb770f
+id: 61fd8fd08af43372f02952d0
 title: Step 19
 challengeType: 0
 dashedName: step-19
@@ -7,43 +7,52 @@ dashedName: step-19
 
 # --description--
 
-In your third `.row` element, give the `span` elements the following text values in order: `Savings`, `$500`, `$650`, and `$728`. Give the following `.notes` element the text `Funds set aside for emergencies.`.
+Give each `th` element a `span` element with the class set to `sr-only` and the following text, in order: `2019`, `2020`, and `2021`.
 
 # --hints--
 
-The first `span` element should have the text `Savings`.
+Each of your `th` elements should have a `span` element.
 
 ```js
-const row = document.querySelectorAll('.section > .row')?.[2];
-assert(row?.querySelectorAll('span')?.[0]?.textContent === 'Savings');
+const ths = [...document.querySelectorAll('table')?.[1]?.querySelectorAll('th')];
+ths?.forEach(th => {
+  assert(th?.children?.length === 1);
+  assert(th?.children?.[0]?.localName === 'span');
+});
 ```
 
-The second `span` element should have the text `$500`.
+Each of your new `span` elements should have the `class` attribute set to `sr-only`.
 
 ```js
-const row = document.querySelectorAll('.section > .row')?.[2];
-assert(row?.querySelectorAll('span')?.[1]?.textContent === '$500');
+const ths = [...document.querySelectorAll('table')?.[1]?.querySelectorAll('th')];
+ths?.forEach(th => {
+  assert(th?.children?.[0]?.classList?.contains('sr-only'));
+});
 ```
 
-The third `span` element should have the text `$650`.
+Your first `span` element should have the text `2019`.
 
 ```js
-const row = document.querySelectorAll('.section > .row')?.[2];
-assert(row?.querySelectorAll('span')?.[2]?.textContent === '$650');
+assert(document.querySelectorAll('table')?.[1]?.querySelectorAll('th')?.[0]?.children?.[0]?.textContent === '2019');
 ```
 
-The fourth `span` element should have the text `$728`.
+Your second `span` element should have the text `2020`.
 
 ```js
-const row = document.querySelectorAll('.section > .row')?.[2];
-assert(row?.querySelectorAll('span')?.[3]?.textContent === '$728');
+assert(document.querySelectorAll('table')?.[1]?.querySelectorAll('th')?.[1]?.children?.[0]?.textContent === '2020');
 ```
 
-Your third `.notes` element should have the text `Funds set aside for emergencies.`.
+Your third `span` element should have the text `2021`.
 
 ```js
-const notes = document.querySelectorAll('.section > .notes')?.[2];
-assert(notes?.textContent === 'Funds set aside for emergencies.');
+assert(document.querySelectorAll('table')?.[1]?.querySelectorAll('th')?.[2]?.children?.[0]?.textContent === '2021');
+```
+
+Your `td` element should be empty.
+
+```js
+assert(document.querySelectorAll('table')?.[1]?.querySelectorAll('td')?.[0]?.textContent === '');
+assert(document.querySelectorAll('table')?.[1]?.querySelectorAll('td')?.[0]?.children?.length === 0);
 ```
 
 # --seed--
@@ -54,95 +63,83 @@ assert(notes?.textContent === 'Funds set aside for emergencies.');
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AcmeWidgetCorp Balance Sheet</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
-    <div id="sheet">
-      <div id="header">
-        <h1>Balance Sheet</h1>
-        <h2>AcmeWidgetCorp</h2>
-        <p class="row">
-          <span>2019</span>
-          <span>2020</span>
-          <span class="current">2021</span>
-        </p>
-      </div>
-      <h2>Assets</h2>
-      <div class="section">
-        <p class="row">
-          <span class="name">Cash</span>
-          <span>$25</span>
-          <span>$30</span>
-          <span class="current">$28</span>
-        </p>
-        <span class="notes">This is the cash we currently have on hand.</span>
-        <p class="row">
-          <span class="name">Checking</span>
-          <span>$54</span>
-          <span>$56</span>
-          <span class="current">$53</span>
-        </p>
-        <span class="notes">Our primary transactional account.</span>
+    <main>
+      <section>
+        <h1>
+          <span class="flex">
+            <span>AcmeWidgetCorp</span>
+            <span>Balance Sheet</span>
+          </span>
+        </h1>
+        <div id="years" aria-hidden="true">
+          <span class="year">2019</span>
+          <span class="year">2020</span>
+          <span class="year">2021</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <caption>Assets</caption>
+            <thead>
+              <tr>
+                <td></td>
+                <th><span class="sr-only year">2019</span></th>
+                <th><span class="sr-only year">2020</span></th>
+                <th class="current"><span class="sr-only year">2021</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="data">
+                <th>Cash <span class="description">This is the cash we currently have on hand.</span></th>
+                <td>$25</td>
+                <td>$30</td>
+                <td class="current">$28</td>
+              </tr>
+              <tr class="data">
+                <th>Checking <span class="description">Our primary transactional account.</span></th>
+                <td>$54</td>
+                <td>$56</td>
+                <td class="current">$53</td>
+              </tr>
+              <tr class="data">
+                <th>Savings <span class="description">Funds set aside for emergencies.</span></th>
+                <td>$500</td>
+                <td>$650</td>
+                <td class="current">$728</td>
+              </tr>
+              <tr class="total">
+                <th>Total <span class="sr-only">Assets</span></th>
+                <td>$579</td>
+                <td>$736</td>
+                <td class="current">$809</td>
+              </tr>
+            </tbody>
+          </table>
 --fcc-editable-region--
-        <p class="row">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-        <span class="notes"></span>
+          <table>
+            <caption>Liabilities</caption>
+            <thead>
+              <tr>
+                <td></td>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
 --fcc-editable-region--
-        <p class="row total">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-      </div>
-      <h2>Liabilities</h2>
-      <div class="section">
-        <p class="row">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-        <span class="notes"></span>
-        <p class="row">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-        <span class="notes"></span>
-        <p class="row">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-        <span class="notes"></span>
-        <p class="row total">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-      </div>
-      <h2>Net Worth</h2>
-      <div class="section">
-        <p class="row total">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-      </div>
-    </div>
-    <footer>Last Updated: December 2021</footer>
+          <table>
+          </table>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
 ```
