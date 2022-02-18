@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const { getChallengesForLang } = require('../../../curriculum/getChallenges');
+const { buildMobileCurriculum } = require('./build-mobile-curriculum');
 
 const globalConfigPath = path.resolve(__dirname, '../../../config');
 
@@ -9,4 +10,7 @@ const globalConfigPath = path.resolve(__dirname, '../../../config');
 // across all languages.
 getChallengesForLang('english')
   .then(JSON.stringify)
-  .then(x => fs.writeFileSync(`${globalConfigPath}/curriculum.json`, x));
+  .then(json => {
+    fs.writeFileSync(`${globalConfigPath}/curriculum.json`, json);
+    buildMobileCurriculum(json);
+  });
