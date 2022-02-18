@@ -21,6 +21,7 @@ export function SolutionDisplayWidget({
   showFilesSolution,
   displayContext
 }: Props) {
+  console.log('completedChallenge', completedChallenge);
   const { id, solution, githubLink } = completedChallenge;
   const { t } = useTranslation();
 
@@ -76,6 +77,28 @@ export function SolutionDisplayWidget({
       {t('buttons.show-code')}
     </Button>
   );
+  const ShowMultifileProjectSolution = (
+    <DropdownButton
+      block={true}
+      bsStyle='primary'
+      className='btn-invert'
+      id={`dropdown-for-${id}`}
+      title={t('buttons.view')}
+    >
+      <MenuItem bsStyle='primary' onClick={showFilesSolution}>
+        {t('buttons.show-code')}
+      </MenuItem>
+      <MenuItem
+        bsStyle='primary'
+        href='https://example.com'
+        rel='noopener noreferrer'
+        target='_blank'
+      >
+        {t('buttons.show-project')}
+      </MenuItem>
+    </DropdownButton>
+  );
+
   const ShowProjectAndGithubLinks = (
     <div className='solutions-dropdown'>
       <DropdownButton
@@ -126,12 +149,14 @@ export function SolutionDisplayWidget({
     displayContext === 'certification'
       ? {
           showFilesSolution: ShowFilesSolutionForCertification,
+          showMultifileProjectSolution: ShowMultifileProjectSolution,
           showProjectAndGitHubLinks: ShowProjectAndGithubLinkForCertification,
           showProjectLink: ShowProjectLinkForCertification,
           none: MissingSolutionComponentForCertification
         }
       : {
           showFilesSolution: ShowFilesSolution,
+          showMultifileProjectSolution: ShowMultifileProjectSolution,
           showProjectAndGitHubLinks: ShowProjectAndGithubLinks,
           showProjectLink: ShowProjectLink,
           none: MissingSolutionComponent
