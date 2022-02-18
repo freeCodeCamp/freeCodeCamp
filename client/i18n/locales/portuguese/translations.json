@@ -523,7 +523,9 @@
     "delete-token-err": "Ocorreu um erro ao tentar excluir seu token",
     "token-created": "Você criou com sucesso um novo token.",
     "token-deleted": "Seu token foi excluído.",
-    "complete-project-first": "Você precisa completar o projeto primeiro."
+    "complete-project-first": "Você precisa completar o projeto primeiro.",
+    "local-code-save-error": "Oops, your code did not save, your browser's local storage may be full.",
+    "local-code-saved": "Saved! Your code was saved to your browser's local storage."
   },
   "validation": {
     "max-characters": "Há um limite máximo de 288 caracteres, você tem {{charsLeft}} restante(s)",

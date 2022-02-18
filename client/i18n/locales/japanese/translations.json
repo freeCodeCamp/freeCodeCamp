@@ -523,7 +523,9 @@
     "delete-token-err": "トークンの削除中にエラーが発生しました",
     "token-created": "無事に新しいトークンを作成しました。",
     "token-deleted": "トークンが削除されました。",
-    "complete-project-first": "まずプロジェクトを完成させる必要があります。"
+    "complete-project-first": "まずプロジェクトを完成させる必要があります。",
+    "local-code-save-error": "Oops, your code did not save, your browser's local storage may be full.",
+    "local-code-saved": "Saved! Your code was saved to your browser's local storage."
   },
   "validation": {
     "max-characters": "上限は 288 文字です。残り {{charsLeft}} 文字です。",
