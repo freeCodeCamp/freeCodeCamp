@@ -18,13 +18,10 @@ describe('Sass Challenge', () => {
   });
 
   it('should render the sass preview', () => {
-    cy.get('.challenge-preview iframe')
-      .its('0.contentDocument')
-      .should('exist');
-    getIframeBody().find('.text-1').should('exist');
-    getIframeBody().find('.text-2').should('exist');
-    getIframeBody().find('.text-3').should('exist');
-    getIframeBody().find('.text-4').should('exist');
-    getIframeBody().find('.text-5').should('exist');
+    getIframeBody().find('.text-1');
+    getIframeBody().find('.text-2');
+    getIframeBody().find('.text-3');
+    getIframeBody().find('.text-4');
+    getIframeBody().find('.text-5');
   });
 });
