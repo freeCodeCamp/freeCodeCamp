@@ -466,7 +466,9 @@
     "first-page": "Go to first page",
     "previous-page": "Go to previous page",
     "next-page": "Go to next page",
-    "last-page": "Go to last page"
+    "last-page": "Go to last page",
+    "primary-nav": "primary",
+    "breadcrumb-nav": "breadcrumb"
   },
   "flash": {
     "honest-first": "To claim a certification, you must first accept our academic honesty policy",
@@ -521,7 +523,9 @@
     "delete-token-err": "An error occurred trying to delete your token",
     "token-created": "You have successfully created a new token.",
     "token-deleted": "Your token has been deleted.",
-    "complete-project-first": "You must complete the project first."
+    "complete-project-first": "You must complete the project first.",
+    "local-code-save-error": "Oops, your code did not save, your browser's local storage may be full.",
+    "local-code-saved": "Saved! Your code was saved to your browser's local storage."
   },
   "validation": {
     "max-characters": "There is a maximum limit of 288 characters, you have {{charsLeft}} left",
@@ -549,6 +553,7 @@
       "heading-legacy-full-stack": "As part of this Legacy Full Stack certification, {{user}} completed the following certifications:",
       "heading": "As part of this certification, {{user}} built the following projects and got all automated test suites to pass:",
       "solution": "solution",
+      "no-solution": "error displaying solution, email support@freeCodeCamp.org to get help.",
       "source": "source",
       "footnote": "If you suspect that any of these projects violate the <2>academic honesty policy</2>, please <5>report this to our team</5>.",
       "title": {

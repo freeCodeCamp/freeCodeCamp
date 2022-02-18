@@ -36,7 +36,7 @@ const {
   sciCompPyV7Id,
   dataAnalysisPyV7Id,
   machineLearningPyV7Id,
-  relationalDatabasesV8Id
+  relationalDatabaseV8Id
 } = certIds;
 
 const log = debug('fcc:certification');
@@ -128,8 +128,8 @@ function createCertTypeIds(allChallenges) {
       machineLearningPyV7Id,
       allChallenges
     ),
-    [certTypes.relationalDatabasesV8]: getCertById(
-      relationalDatabasesV8Id,
+    [certTypes.relationalDatabaseV8]: getCertById(
+      relationalDatabaseV8Id,
       allChallenges
     )
   };
@@ -217,7 +217,8 @@ function getUserIsCertMap(user) {
     isFullStackCert = false,
     isSciCompPyCertV7 = false,
     isDataAnalysisPyCertV7 = false,
-    isMachineLearningPyCertV7 = false
+    isMachineLearningPyCertV7 = false,
+    isRelationalDatabaseCertV8 = false
   } = user;
 
   return {
@@ -235,7 +236,8 @@ function getUserIsCertMap(user) {
     isFullStackCert,
     isSciCompPyCertV7,
     isDataAnalysisPyCertV7,
-    isMachineLearningPyCertV7
+    isMachineLearningPyCertV7,
+    isRelationalDatabaseCertV8
   };
 }
 
@@ -378,6 +380,7 @@ function createShowCert(app) {
       isSciCompPyCertV7: true,
       isDataAnalysisPyCertV7: true,
       isMachineLearningPyCertV7: true,
+      isRelationalDatabaseCertV8: true,
       isHonest: true,
       username: true,
       name: true,

@@ -64,7 +64,9 @@
     "go-to-next": "Ir al próximo desafío",
     "ask-later": "Pregúntame luego",
     "start-coding": "¡Empieza a programar!",
-    "go-to-settings": "Go to settings to claim your certification"
+    "go-to-settings": "Go to settings to claim your certification",
+    "click-start-course": "Click here to start the course",
+    "click-start-project": "Click here to start the project"
   },
   "landing": {
     "big-heading-1": "Aprende a programar gratis.",
@@ -294,7 +296,13 @@
     },
     "help-translate": "Todavía estamos traduciendo las siguientes certificaciones.",
     "help-translate-link": "Ayúdanos a traducir.",
-    "project-preview-title": "Aquí hay una vista previa de lo que construirás"
+    "project-preview-title": "Aquí hay una vista previa de lo que construirás",
+    "github-required": "A <0>GitHub</0> account is required to run the project. You will need to create one if you haven't already.",
+    "step-1": "Step 1: Complete the project",
+    "step-2": "Step 2: Submit your code",
+    "submit-public-url": "When you have completed the project, save all the required files into a public repository and submit the URL to it below.",
+    "complete-both-steps": "Complete both steps below to finish the challenge.",
+    "runs-in-vm": "The project runs in a virtual machine, complete the user stories described in there and get all the tests to pass to finish step 1."
   },
   "donate": {
     "title": "Apoya a nuestra organización sin fines de lucro",
@@ -449,7 +457,7 @@
     "magnifier": "lupa"
   },
   "aria": {
-    "fcc-logo": "Logo de freeCodeCamp",
+    "fcc-curriculum": "freeCodeCamp Curriculum",
     "answer": "Respuesta",
     "linkedin": "Enlace al LinkedIn de {{username}}",
     "github": "Enlace al GitHub de {{username}}",
@@ -458,7 +466,9 @@
     "first-page": "Ir a la primera pagina",
     "previous-page": "Regresar a la pagina anterior",
     "next-page": "Ir a la página siguiente",
-    "last-page": "Ir a la última página"
+    "last-page": "Ir a la última página",
+    "primary-nav": "primary",
+    "breadcrumb-nav": "breadcrumb"
   },
   "flash": {
     "honest-first": "Para reclamar una certificación, primero debes aceptar nuestra política de honestidad académica.",
@@ -512,7 +522,8 @@
     "create-token-err": "Ocurrió un error al intentar crear un token",
     "delete-token-err": "Ocurrió un error al intentar eliminar tu token",
     "token-created": "Has creado con éxito un nuevo token.",
-    "token-deleted": "Tu token ha sido eliminado."
+    "token-deleted": "Tu token ha sido eliminado.",
+    "complete-project-first": "You must complete the project first."
   },
   "validation": {
     "max-characters": "Hay un límite máximo de 288 caracteres, te quedan {{charsLeft}}",
@@ -540,6 +551,7 @@
       "heading-legacy-full-stack": "Como parte de esta certificación Legacy Full Stack, {{user}} completó las siguientes certificaciones:",
       "heading": "Como parte de esta certificación, {{user}} construyó los siguientes proyectos y consiguió que se aprobaran todas las suites automatizadas de pruebas:",
       "solution": "solución",
+      "no-solution": "error displaying solution, email support@freeCodeCamp.org to get help.",
       "source": "fuente",
       "footnote": "Si sospechas que alguno de estos proyectos infringe la <2>política de honestidad académica</2>, por favor <5>repórtalo a nuestro equipo</5>.",
       "title": {

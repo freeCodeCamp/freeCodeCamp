@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ee0
-title: Left factorials
+title: Fattoriale sinistro
 challengeType: 5
 forumTopicId: 302302
 dashedName: left-factorials
@@ -8,7 +8,7 @@ dashedName: left-factorials
 
 # --description--
 
-**Left factorials**, $ !n $, may refer to either *subfactorials* or to *factorial sums*. The same notation can be confusingly seen used for the two different definitions. Sometimes, *subfactorials* (also known as *derangements*) may use any of the notations:
+**Fattoriale sinistro**, $ !n $, può riferisi a *subfattoriali* o a *somme fattoriali*. La stessa notazione confusionalmente può essere vista in uso per le due diverse definizioni. A volte, *subfattoriali* (noti anche come *dismutazioni*) possono usare qualsiasi delle seguenti notazioni:
 
 <ul>
   <li>$!n`$</li>
@@ -16,67 +16,67 @@ dashedName: left-factorials
   <li>$n¡$</li>
 </ul>
 
-(It may not be visually obvious, but the last example uses an upside-down exclamation mark.) This task will be using this formula for **left factorial**:
+(Potrebbe non essere visivamente ovvio, ma l'ultimo esempio usa un punto esclamativo rovesciato.) Questa sfida userà questa formula per il **fattoriale sinistro**:
 
 $ !n = \\sum\_{k=0}^{n-1} k! $
 
-where $!0 = 0$
+dove $!0 = 0$
 
 # --instructions--
 
-Write a function to calculate the left factorial of a given number.
+Scrivi una funzione per calcolare il fattoriale sinistro di un dato numero.
 
 # --hints--
 
-`leftFactorial` should be a function.
+`leftFactorial` dovrebbe essere una funzione.
 
 ```js
 assert(typeof leftFactorial == 'function');
 ```
 
-`leftFactorial(0)` should return a number.
+`leftFactorial(0)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof leftFactorial(0) == 'number');
 ```
 
-`leftFactorial(0)` should return `0`.
+`leftFactorial(0)` dovrebbe restituire `0`.
 
 ```js
 assert.equal(leftFactorial(0), 0);
 ```
 
-`leftFactorial(1)` should return `1`.
+`leftFactorial(1)` dovrebbe restituire `1`.
 
 ```js
 assert.equal(leftFactorial(1), 1);
 ```
 
-`leftFactorial(2)` should return `2`.
+`leftFactorial(2)` dovrebbe restituire `2`.
 
 ```js
 assert.equal(leftFactorial(2), 2);
 ```
 
-`leftFactorial(3)` should return `4`.
+`leftFactorial(3)` dovrebbe restituire `4`.
 
 ```js
 assert.equal(leftFactorial(3), 4);
 ```
 
-`leftFactorial(10)` should return `409114`.
+`leftFactorial(10)` dovrebbe restituire `409114`.
 
 ```js
 assert.equal(leftFactorial(10), 409114);
 ```
 
-`leftFactorial(17)` should return `22324392524314`.
+`leftFactorial(17)` dovrebbe restituire `22324392524314`.
 
 ```js
 assert.equal(leftFactorial(17), 22324392524314);
 ```
 
-`leftFactorial(19)` should return `6780385526348314`.
+`leftFactorial(19)` dovrebbe restituire `6780385526348314`.
 
 ```js
 assert.equal(leftFactorial(19), 6780385526348314);

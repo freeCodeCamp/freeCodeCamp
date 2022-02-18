@@ -1,5 +1,5 @@
 ---
-id: 6193e5d66b67e32e5f0f930e
+id: 61fd7b3fcaa5406257abc5d1
 title: Step 17
 challengeType: 0
 dashedName: step-17
@@ -7,43 +7,44 @@ dashedName: step-17
 
 # --description--
 
-Now you can start filling in the data. In your first `.row` element, give the `span` elements the following text values in order: `Cash`, `$25`, `$30`, and `$28`. Give the following `.notes` element the text `This is the cash we currently have on hand.`.
+Time to move on to your second table. Start by giving it a `caption` element set to `Liabilities`. Then add your `thead` and `tbody`.
 
 # --hints--
 
-The first `span` element should have the text `Cash`.
+Your second `table` element should have a `caption` element.
 
 ```js
-const row = document.querySelectorAll('.section > .row')?.[0];
-assert(row?.querySelectorAll('span')?.[0]?.textContent === 'Cash');
+assert(document.querySelectorAll('table')?.[1]?.children?.[0]?.localName === 'caption');
 ```
 
-The second `span` element should have the text `$25`.
+Your `caption` element should have the text `Liabilities`.
 
 ```js
-const row = document.querySelectorAll('.section > .row')?.[0];
-assert(row?.querySelectorAll('span')?.[1]?.textContent === '$25');
+assert(document.querySelectorAll('table')?.[1]?.querySelector('caption')?.textContent === 'Liabilities');
 ```
 
-The third `span` element should have the text `$30`.
+Your second `table` element should have a `thead` element.
 
 ```js
-const row = document.querySelectorAll('.section > .row')?.[0];
-assert(row?.querySelectorAll('span')?.[2]?.textContent === '$30');
+assert(document.querySelectorAll('table')?.[1]?.querySelector('thead'));
 ```
 
-The fourth `span` element should have the text `$28`.
+Your second `table` element should have a `tbody` element.
 
 ```js
-const row = document.querySelectorAll('.section > .row')?.[0];
-assert(row?.querySelectorAll('span')?.[3]?.textContent === '$28');
+assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody'));
 ```
 
-Your first `.notes` element should have the text `This is the cash we currently have on hand.`.
+Your `thead` element should be immediately below your `caption` element.
 
 ```js
-const notes = document.querySelectorAll('.section > .notes')?.[0];
-assert(notes?.textContent === 'This is the cash we currently have on hand.');
+assert(document.querySelectorAll('table')?.[1]?.querySelector('caption')?.nextElementSibling?.localName === 'thead');
+```
+
+Your `tbody` element should be immediately below your `thead` element.
+
+```js
+assert(document.querySelectorAll('table')?.[1]?.querySelector('thead')?.nextElementSibling?.localName === 'tbody');
 ```
 
 # --seed--
@@ -54,95 +55,72 @@ assert(notes?.textContent === 'This is the cash we currently have on hand.');
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AcmeWidgetCorp Balance Sheet</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
-    <div id="sheet">
-      <div id="header">
-        <h1>Balance Sheet</h1>
-        <h2>AcmeWidgetCorp</h2>
-        <p class="row">
-          <span>2019</span>
-          <span>2020</span>
-          <span class="current">2021</span>
-        </p>
-      </div>
-      <h2>Assets</h2>
-      <div class="section">
+    <main>
+      <section>
+        <h1>
+          <span class="flex">
+            <span>AcmeWidgetCorp</span>
+            <span>Balance Sheet</span>
+          </span>
+        </h1>
+        <div id="years" aria-hidden="true">
+          <span class="year">2019</span>
+          <span class="year">2020</span>
+          <span class="year">2021</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <caption>Assets</caption>
+            <thead>
+              <tr>
+                <td></td>
+                <th><span class="sr-only year">2019</span></th>
+                <th><span class="sr-only year">2020</span></th>
+                <th class="current"><span class="sr-only year">2021</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="data">
+                <th>Cash <span class="description">This is the cash we currently have on hand.</span></th>
+                <td>$25</td>
+                <td>$30</td>
+                <td class="current">$28</td>
+              </tr>
+              <tr class="data">
+                <th>Checking <span class="description">Our primary transactional account.</span></th>
+                <td>$54</td>
+                <td>$56</td>
+                <td class="current">$53</td>
+              </tr>
+              <tr class="data">
+                <th>Savings <span class="description">Funds set aside for emergencies.</span></th>
+                <td>$500</td>
+                <td>$650</td>
+                <td class="current">$728</td>
+              </tr>
+              <tr class="total">
+                <th>Total <span class="sr-only">Assets</span></th>
+                <td>$579</td>
+                <td>$736</td>
+                <td class="current">$809</td>
+              </tr>
+            </tbody>
+          </table>
 --fcc-editable-region--
-        <p class="row">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-        <span class="notes"></span>
+          <table>
+          </table>
 --fcc-editable-region--
-        <p class="row">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-        <span class="notes"></span>
-        <p class="row">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-        <span class="notes"></span>
-        <p class="row total">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-      </div>
-      <h2>Liabilities</h2>
-      <div class="section">
-        <p class="row">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-        <span class="notes"></span>
-        <p class="row">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-        <span class="notes"></span>
-        <p class="row">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-        <span class="notes"></span>
-        <p class="row total">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-      </div>
-      <h2>Net Worth</h2>
-      <div class="section">
-        <p class="row total">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-      </div>
-    </div>
-    <footer>Last Updated: December 2021</footer>
+          <table>
+          </table>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
 ```

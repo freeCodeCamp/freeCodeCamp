@@ -1,11 +1,11 @@
 {
   "name": "Learn Git by Building an SQL Reference Object",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "order": 11,
   "time": "5 hours",
   "template": "",
   "required": [],
-  "superBlock": "relational-databases",
+  "superBlock": "relational-database",
   "challengeOrder": [
     [
       "5fa323cdaf6a73463d590659",

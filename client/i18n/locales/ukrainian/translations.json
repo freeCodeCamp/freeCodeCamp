@@ -64,7 +64,9 @@
     "go-to-next": "Перейти до наступного завдання",
     "ask-later": "Запитати пізніше",
     "start-coding": "Start coding!",
-    "go-to-settings": "Go to settings to claim your certification"
+    "go-to-settings": "Go to settings to claim your certification",
+    "click-start-course": "Click here to start the course",
+    "click-start-project": "Click here to start the project"
   },
   "landing": {
     "big-heading-1": "Вчіться програмувати — це безкоштовно.",
@@ -294,7 +296,13 @@
     },
     "help-translate": "Ми все ще перекладаємо такі сертифікати.",
     "help-translate-link": "Допоможіть нам з перекладом.",
-    "project-preview-title": "Here's a preview of what you will build"
+    "project-preview-title": "Here's a preview of what you will build",
+    "github-required": "A <0>GitHub</0> account is required to run the project. You will need to create one if you haven't already.",
+    "step-1": "Step 1: Complete the project",
+    "step-2": "Step 2: Submit your code",
+    "submit-public-url": "When you have completed the project, save all the required files into a public repository and submit the URL to it below.",
+    "complete-both-steps": "Complete both steps below to finish the challenge.",
+    "runs-in-vm": "The project runs in a virtual machine, complete the user stories described in there and get all the tests to pass to finish step 1."
   },
   "donate": {
     "title": "Підтримати нашу некомерційну організацію",
@@ -449,7 +457,7 @@
     "magnifier": "лупа"
   },
   "aria": {
-    "fcc-logo": "Логотип freeCodeCamp ",
+    "fcc-curriculum": "freeCodeCamp Curriculum",
     "answer": "Відповідь",
     "linkedin": "Посилання на сторінку LinkedIn {{username}}",
     "github": "Посилання на сторінку GitHub {{username}}",
@@ -458,7 +466,9 @@
     "first-page": "Перейти на першу сторінку",
     "previous-page": "Перейти на попередню сторінку",
     "next-page": "Перейти на наступну сторінку",
-    "last-page": "Перейти на останню сторінку"
+    "last-page": "Перейти на останню сторінку",
+    "primary-nav": "primary",
+    "breadcrumb-nav": "breadcrumb"
   },
   "flash": {
     "honest-first": "Щоб отримати сертифікат, ви повинні спочатку прийняти нашу політику академічної доброчесності",
@@ -512,7 +522,8 @@
     "create-token-err": "An error occurred trying to create a token",
     "delete-token-err": "An error occurred trying to delete your token",
     "token-created": "You have successfully created a new token.",
-    "token-deleted": "Your token has been deleted."
+    "token-deleted": "Your token has been deleted.",
+    "complete-project-first": "You must complete the project first."
   },
   "validation": {
     "max-characters": "Максимальний розмір — 288 символів, у вас залишилося {{charsLeft}}",
@@ -540,6 +551,7 @@
       "heading-legacy-full-stack": "В рамках сертифікації програмного забезпечення повного циклу {{user}} отримав такі сертифікати:",
       "heading": "У рамках цієї сертифікації, {{user}} створив такі проекти і успішно пройшов усі автоматизовані тестування:",
       "solution": "рішення",
+      "no-solution": "error displaying solution, email support@freeCodeCamp.org to get help.",
       "source": "джерело",
       "footnote": "Якщо ви підозрюєте, що будь-який з цих проектів порушує <2>політику академічної доброчесності</2>, будь ласка, <5>повідомте про це нашій команді</5>.",
       "title": {

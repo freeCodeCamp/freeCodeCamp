@@ -18,7 +18,7 @@ const fileJoi = Joi.object().keys({
   seed: Joi.string().allow(''),
   contents: Joi.string().allow(''),
   id: Joi.string().allow(''),
-  history: [Joi.array().items(Joi.string().allow('')), Joi.string().allow('')]
+  history: Joi.array().items(Joi.string().allow(''))
 });
 
 const schema = Joi.object()

@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7e80
-title: Gray code
+title: Codice Gray
 challengeType: 5
 forumTopicId: 302276
 dashedName: gray-code
@@ -8,23 +8,23 @@ dashedName: gray-code
 
 # --description--
 
-[Gray code](https://en.wikipedia.org/wiki/Gray code) is a form of binary encoding where transitions between consecutive numbers differ by only one bit.
+[Il codice Gray](https://en.wikipedia.org/wiki/Gray code) è una forma di codifica binaria in cui le transizioni tra numeri consecutivi differiscono di un solo bit.
 
-This is a useful encoding for reducing hardware data hazards with values that change rapidly and/or connect to slower hardware as inputs.
+Si tratta di una codifica utile per ridurre il rischio di perdita di dati hardware con valori che cambiano rapidamente e/o si collegano a un hardware più lento come input.
 
-It is also useful for generating inputs for [Karnaugh maps](https://en.wikipedia.org/wiki/Karnaugh map) in order from left to right or top to bottom.
+È utile anche per generare input per [mappe Karnaugh](https://en.wikipedia.org/wiki/Karnaugh map) in ordine da sinistra a destra o dall'alto al basso.
 
 # --instructions--
 
-Create a function to encode a number to and decode a number from Gray code. The function should will have 2 parameters.
+Crea una funzione per codificare e decodificare un numero in codice Gray. La funzione dovrebbe avere 2 parametri.
 
-The first would be a boolean. The function should encode for true and decode for false. The second parameter would be the number to be encoded/decoded.
+Il primo sarà un booleano. La funzione dovrebbe codificare per true e decodificare per false. Il secondo paramentro sarebbe il numero da codificare/decodificare.
 
-Display the normal binary representations, Gray code representations, and decoded Gray code values for all 5-bit binary numbers (0-31 inclusive, leading 0's not necessary).
+Mostra la rappresentazione binaria normale, la rappresentazione in codice Gray, e i valori in codice Gray decodificati per tutti i numeri binari di dimensione 5-bit (0-31 inclusivo, gli zero davanti al numero non sono necessari).
 
-There are many possible Gray codes. The following encodes what is called "binary reflected Gray code."
+Ci sono molti possibili codici Gray. Il seguente codifica quello che è chiamato "codice Gray riflesso binario".
 
-Encoding (MSB is bit 0, b is binary, g is Gray code):
+Codificare (MSB è bit 0, b è binario, g è codice Gray):
 
 <pre>if b[i-1] = 1
   g[i] = not b[i]
@@ -32,63 +32,63 @@ else
   g[i] = b[i]
 </pre>
 
-Or:
+Oppure:
 
-<pre>g = b xor (b logically right shifted 1 time)
+<pre>g = b xor (b logicamente spostato a destra 1 volta)
 </pre>
 
-Decoding (MSB is bit 0, b is binary, g is Gray code):
+Decodificare (MSB è bit 0, b è binario, g è codice Gray):
 
 <pre>b[0] = g[0]<br>
-for other bits:
+per altri bit:
 b[i] = g[i] xor b[i-1]
 </pre>
 
 # --hints--
 
-`gray` should be a function.
+`gray` dovrebbe essere una funzione.
 
 ```js
 assert(typeof gray == 'function');
 ```
 
-`gray(true,177)` should return a number.
+`gray(true,177)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof gray(true, 177) == 'number');
 ```
 
-`gray(true,177)` should return `233`.
+`gray(true,177)` dovrebbe restituire `233`.
 
 ```js
 assert.equal(gray(true, 177), 233);
 ```
 
-`gray(true,425)` should return `381`.
+`gray(true,425)` dovrebbe restituire `381`.
 
 ```js
 assert.equal(gray(true, 425), 381);
 ```
 
-`gray(true,870)` should return `725`.
+`gray(true,870)` dovrebbe restituire `725`.
 
 ```js
 assert.equal(gray(true, 870), 725);
 ```
 
-`gray(false,233)` should return `177`.
+`gray(false,233)` dovrebbe restituire `177`.
 
 ```js
 assert.equal(gray(false, 233), 177);
 ```
 
-`gray(false,381)` should return `425`.
+`gray(false,381)` dovrebbe restituire `425`.
 
 ```js
 assert.equal(gray(false, 381), 425);
 ```
 
-`gray(false,725)` should return `870`.
+`gray(false,725)` dovrebbe restituire `870`.
 
 ```js
 assert.equal(gray(false, 725), 870);

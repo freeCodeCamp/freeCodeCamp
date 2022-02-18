@@ -394,10 +394,8 @@ function createCoderoadChallengeCompleted(app) {
     if (!userWebhookToken)
       return res.send(`'coderoad-user-token' not found in request headers`);
 
-    const tutorialRepoPath = tutorialId?.split(':')[0];
-    const tutorialSplit = tutorialRepoPath?.split('/');
-    const tutorialOrg = tutorialSplit?.[0];
-    const tutorialRepoName = tutorialSplit?.[1];
+    const tutorialRepo = tutorialId?.split(':')[0];
+    const tutorialOrg = tutorialRepo?.split('/')?.[0];
 
     // this allows any GH account to host the repo in development or staging
     // .org submissions should always be from repos hosted on the fCC GH org
@@ -408,7 +406,7 @@ function createCoderoadChallengeCompleted(app) {
 
     // validate tutorial name is in codeRoadChallenges object
     const challenge = codeRoadChallenges.find(challenge =>
-      challenge.url?.includes(tutorialRepoName)
+      challenge.url?.endsWith(tutorialRepo)
     );
 
     if (!challenge) return res.send('Tutorial name is not valid');

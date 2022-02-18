@@ -1,7 +1,7 @@
 import { SuperBlocks } from '../../../config/certification-settings';
 import envData from '../../../config/env.json';
 
-const { showNewCurriculum, showUpcomingChanges } = envData;
+const { deploymentEnv, showNewCurriculum, showUpcomingChanges } = envData;
 
 const responsiveWebBase =
   '/learn/responsive-web-design/responsive-web-design-projects';
@@ -12,8 +12,7 @@ const jsAlgoBase =
 const feLibsBase =
   '/learn/front-end-development-libraries/front-end-development-libraries-projects';
 const dataVisBase = '/learn/data-visualization/data-visualization-projects';
-const relationalDatabasesBase =
-  '/learn/relational-databases/learn-relational-databases';
+const relationalDatabaseBase = '/learn/relational-database';
 const apiMicroBase =
   '/learn/back-end-development-and-apis/back-end-development-and-apis-projects';
 const qaBase = '/learn/quality-assurance/quality-assurance-projects';
@@ -458,39 +457,39 @@ const certMap = [
   },
   {
     id: '606243f50267e718b1e755f4',
-    title: 'Relational Databases',
-    certSlug: SuperBlocks.RelationalDb,
-    flag: 'isRelationalDatabasesCert',
+    title: 'Relational Database',
+    certSlug: 'relational-database-v8',
+    flag: 'isRelationalDatabaseCertV8',
     projects: [
       {
         id: '5f1a4ef5d5d6b5ab580fc6ae',
         title: 'Celestial Bodies Database',
-        link: `${relationalDatabasesBase}/celestial-bodies-database`,
-        superBlock: SuperBlocks.RelationalDb
-      },
-      {
-        id: '5f87ac112ae598023a42df1a',
-        title: 'Salon Appointment Scheduler',
-        link: `${relationalDatabasesBase}/salon-appointment-scheduler`,
-        superBlock: SuperBlocks.RelationalDb
+        link: `${relationalDatabaseBase}/build-a-celestial-bodies-database-project/build-a-celestial-bodies-database`,
+        certSlug: 'relational-database-v8'
       },
       {
         id: '5f9771307d4d22b9d2b75a94',
         title: 'World Cup Database',
-        link: `${relationalDatabasesBase}/world-cup-database`,
-        superBlock: SuperBlocks.RelationalDb
+        link: `${relationalDatabaseBase}/build-a-world-cup-database-project/build-a-world-cup-database`,
+        certSlug: 'relational-database-v8'
+      },
+      {
+        id: '5f87ac112ae598023a42df1a',
+        title: 'Salon Appointment Scheduler',
+        link: `${relationalDatabaseBase}/build-a-salon-appointment-scheduler-project/build-a-salon-appointment-scheduler`,
+        certSlug: 'relational-database-v8'
       },
       {
         id: '602d9ff222201c65d2a019f2',
         title: 'Periodic Table Database',
-        link: `${relationalDatabasesBase}/periodic-table-database`,
-        superBlock: SuperBlocks.RelationalDb
+        link: `${relationalDatabaseBase}/build-a-periodic-table-database-project/build-a-periodic-table-database`,
+        certSlug: 'relational-database-v8'
       },
       {
         id: '602da04c22201c65d2a019f4',
         title: 'Number Guessing Game',
-        link: `${relationalDatabasesBase}/number-guessing-game`,
-        superBlock: SuperBlocks.RelationalDb
+        link: `${relationalDatabaseBase}/build-a-number-guessing-game-project/build-a-number-guessing-game`,
+        certSlug: 'relational-database-v8'
       }
     ]
   },
@@ -746,8 +745,11 @@ certMap.forEach(cert => {
   if (cert.title !== 'Legacy Full Stack') {
     if (cert.title.startsWith('Legacy')) {
       legacyProjectMap[cert.title] = cert.projects;
-      // temporary hiding of RDBMS cert
-      // should do suggestion on line 33 and use front matter to hide it
+    } else if (
+      cert.title.startsWith('Relational') &&
+      deploymentEnv == 'staging'
+    ) {
+      projectMap[cert.title] = cert.projects;
     } else if (!cert.title.startsWith('Relational')) {
       projectMap[cert.title] = cert.projects;
     }

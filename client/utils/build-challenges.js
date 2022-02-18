@@ -10,7 +10,7 @@ const {
   getChallengesDirForLang
 } = require('../../curriculum/getChallenges');
 
-const { curriculumLocale } = envData;
+const { curriculumLocale, deploymentEnv } = envData;
 
 exports.localeChallengesRootDir = getChallengesDirForLang(curriculumLocale);
 
@@ -38,6 +38,12 @@ exports.replaceChallengeNode = () => {
 
 exports.buildChallenges = async function buildChallenges() {
   const curriculum = await getChallengesForLang(curriculumLocale);
+
+  // temp removal of rdbms from production
+  if (deploymentEnv !== 'staging') {
+    delete curriculum['13-relational-databases'];
+  }
+
   const superBlocks = Object.keys(curriculum);
   const blocks = superBlocks
     .map(superBlock => curriculum[superBlock].blocks)

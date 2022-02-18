@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad1
-title: Happy numbers
+title: Numeri felici
 challengeType: 5
 forumTopicId: 302280
 dashedName: happy-numbers
@@ -8,89 +8,89 @@ dashedName: happy-numbers
 
 # --description--
 
-A [happy number](https://en.wikipedia.org/wiki/Happy_number) is defined by the following process:
+Un [numero felice](https://it.wikipedia.org/wiki/Numero_felice) è definito dal seguente processo:
 
-Starting with any positive integer, replace the number by the sum of the squares of its digits, and repeat the process until the number equals `1` (where it will stay), or it loops endlessly in a cycle which does not include `1`. Those numbers for which this process ends in `1` are happy numbers, while those that do not end in `1` are unhappy numbers.
+A partire da un numero intero positivo, sostituisci il numero con la somma dei quadrati delle sue cifre, e ripeti il processo fino a quando il numero è uguale a `1` (dove resterà), o si ripete senza fine in un ciclo che non include `1`. Quei numeri per i quali questo processo termina in `1` sono numeri felici, mentre quelli che non terminano in `1` sono numeri infelici.
 
 # --instructions--
 
-Implement a function that returns true if the number is happy, or false if not.
+Implementa una funzione che restituisce true se il numero è felice, o false se no.
 
 # --hints--
 
-`happy` should be a function.
+`happy` dovrebbe essere una funzione.
 
 ```js
 assert(typeof happy === 'function');
 ```
 
-`happy(1)` should return a boolean.
+`happy(1)` dovrebbe restituire un booleano.
 
 ```js
 assert(typeof happy(1) === 'boolean');
 ```
 
-`happy(1)` should return `true`.
+`happy(1)` dovrebbe restituire `true`.
 
 ```js
 assert(happy(1));
 ```
 
-`happy(2)` should return `false`.
+`happy(2)` dovrebbe restituire `false`.
 
 ```js
 assert(!happy(2));
 ```
 
-`happy(7)` should return `true`.
+`happy(7)` dovrebbe restituire `true`.
 
 ```js
 assert(happy(7));
 ```
 
-`happy(10)` should return `true`.
+`happy(10)` dovrebbe restituire `true`.
 
 ```js
 assert(happy(10));
 ```
 
-`happy(13)` should return `true`.
+`happy(13)` dovrebbe restituire `true`.
 
 ```js
 assert(happy(13));
 ```
 
-`happy(19)` should return `true`.
+`happy(19)` dovrebbe restituire `true`.
 
 ```js
 assert(happy(19));
 ```
 
-`happy(23)` should return `true`.
+`happy(23)` dovrebbe restituire `true`.
 
 ```js
 assert(happy(23));
 ```
 
-`happy(28)` should return `true`.
+`happy(28)` dovrebbe restituire `true`.
 
 ```js
 assert(happy(28));
 ```
 
-`happy(31)` should return `true`.
+`happy(31)` dovrebbe restituire `true`.
 
 ```js
 assert(happy(31));
 ```
 
-`happy(32)` should return `true`.
+`happy(32)` dovrebbe restituire `true`.
 
 ```js
 assert(happy(32));
 ```
 
-`happy(33)` should return `false`.
+`happy(33)` dovrebbe restituire `false`.
 
 ```js
 assert(!happy(33));

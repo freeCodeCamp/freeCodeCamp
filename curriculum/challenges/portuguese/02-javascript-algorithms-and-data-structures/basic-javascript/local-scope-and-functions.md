@@ -23,7 +23,7 @@ myTest();
 console.log(loc);
 ```
 
-A chamada da função `myTest()` vai exibir a string `foo` no console. A linha `console.log(loc)` vai lançar um erro, já que `loc` não foi definido fora da função.
+A chamada da função `myTest()` vai exibir a string `foo` no console. A linha `console.log(loc)` (fora da função `myTest`) vai lançar um erro, já que `loc` não foi definido fora da função.
 
 # --instructions--
 
