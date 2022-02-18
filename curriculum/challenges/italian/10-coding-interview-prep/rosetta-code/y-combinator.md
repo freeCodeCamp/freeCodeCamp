@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad5
-title: Y combinator
+title: Combinatore Y
 challengeType: 5
 forumTopicId: 302345
 dashedName: y-combinator
@@ -8,11 +8,11 @@ dashedName: y-combinator
 
 # --description--
 
-In strict [functional programming](https://en.wikipedia.org/wiki/Functional programming "wp: functional programming") and the [lambda calculus](https://en.wikipedia.org/wiki/lambda calculus "wp: lambda calculus"), functions (lambda expressions) don't have state and are only allowed to refer to arguments of enclosing functions. This rules out the usual definition of a recursive function wherein a function is associated with the state of a variable and this variable's state is used in the body of the function. The [Y combinator](https://mvanier.livejournal.com/2897.html) is itself a stateless function that, when applied to another stateless function, returns a recursive version of the function. The Y combinator is the simplest of the class of such functions, called [fixed-point combinators](https://en.wikipedia.org/wiki/Fixed-point combinator "wp: fixed-point combinator").
+In rigorosa [proframmazione funzionale](https://www.freecodecamp.org/news/the-principles-of-functional-programming/ "news: the principles of functional programming") e [calcolo lambda](https://en.wikipedia.org/wiki/lambda calculus "wp: lambda calculus"), le funzioni (espressioni lambda) non hanno stato e sono autorizzate solo a fare riferimento a argomenti di funzioni di chiusura. Questo esclude la definizione abituale di una funzione ricorsiva in cui una funzione è associata allo stato di una variabile e lo stato di questa variabile è usato nel corpo della funzione. Il combinatore [Y](https://mvanier.livejournal.com/2897.html) è di per sé una funzione apolide che, se applicata ad un'altra funzione senza stato, restituisce una versione ricorsiva della funzione. Il combinatore Y è il più semplice della classe di tali funzioni, chiamati [combinatori a punto fisso](https://en.wikipedia.org/wiki/Fixed-point combinator "wp: fixed-point combinator").
 
 # --instructions--
 
-Define the stateless Y combinator function and use it to compute [factorial](https://en.wikipedia.org/wiki/Factorial "wp: factorial"). The `factorial(N)` function is already given to you. **See also:**
+Definire la funzione di combinatore Y senza stato e usarla per calcolare il [fattoriale](https://en.wikipedia.org/wiki/Factorial "wp: factorial"). La funzione `factorial(N)` ti viene data. **Vedi anche:**
 
 <ul>
   <li><a href="https://vimeo.com/45140590" target="_blank">Jim Weirich: Adventures in Functional Programming</a>.</li>
@@ -20,37 +20,37 @@ Define the stateless Y combinator function and use it to compute [factorial](htt
 
 # --hints--
 
-Y should return a function.
+Y dovrebbe restituire una funzione.
 
 ```js
 assert.equal(typeof Y((f) => (n) => n), 'function');
 ```
 
-factorial(1) should return 1.
+factorial(1) dovrebbe restituire 1.
 
 ```js
 assert.equal(factorial(1), 1);
 ```
 
-factorial(2) should return 2.
+factorial(2) dovrebbe restituire 2.
 
 ```js
 assert.equal(factorial(2), 2);
 ```
 
-factorial(3) should return 6.
+factorial(3) dovrebbe restituire 6.
 
 ```js
 assert.equal(factorial(3), 6);
 ```
 
-factorial(4) should return 24.
+factorial(4) dovrebbe restituire 24.
 
 ```js
 assert.equal(factorial(4), 24);
 ```
 
-factorial(10) should return 3628800.
+factorial(10) dovrebbe restituire 3628800.
 
 ```js
 assert.equal(factorial(10), 3628800);

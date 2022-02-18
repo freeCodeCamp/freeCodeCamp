@@ -1,6 +1,6 @@
 ---
 id: 5e6dd1278e6ca105cde40ea9
-title: Longest common subsequence
+title: Più lunga successione comune
 challengeType: 5
 forumTopicId: 385271
 dashedName: longest-common-subsequence
@@ -8,65 +8,65 @@ dashedName: longest-common-subsequence
 
 # --description--
 
-The **longest common subsequence** (or [**LCS**](http://en.wikipedia.org/wiki/Longest_common_subsequence_problem)) of groups A and B is the longest group of elements from A and B that are common between the two groups and in the same order in each group. For example, the sequences "1234" and "1224533324" have an LCS of "1234":
+La **sottosequenza comune più lunga** (o [**LCS**](http://en.wikipedia.org/wiki/Longest_common_subsequence_problem)) dei gruppi A e B è il gruppo più lungo di elementi provenienti da A e B che sono comuni tra i due gruppi e nello stesso ordine in ogni gruppo. Per esempio, le sequenze "1234" e "1224533324" hanno un LCS di "1234":
 
 ***1234***
 
 ***12***245***3***332***4***
 
-For a string example, consider the sequences "thisisatest" and "testing123testing". An LCS would be "tsitest":
+Per un esempio di stringa, considera le sequenze "thisisatest" e "testing123testing". Un LCS sarebbe "tsitest":
 
 ***t***hi***si***sa***test***
 
 ***t***e***s***t***i***ng123***test***ing.
 
-Your code only needs to deal with strings.
+Il tuo codice deve riguardare solo le stringhe.
 
-For more information on this problem please see [Wikipedia](https://en.wikipedia.org/wiki/Longest_common_subsequence_problem).
+Per ulteriori informazioni su questo problema consulta [Wikipedia](https://en.wikipedia.org/wiki/Longest_common_subsequence_problem).
 
 # --instructions--
 
-Write a case-sensitive function that returns the LCS of two strings. You don't need to show multiple LCS's.
+Scrivi una funzione sensibile alle maiuscole/minuscole che restituisce l'LCS di due stringhe. Non è necessario mostrare più LCS.
 
 # --hints--
 
-`lcs` should be a function.
+`lcs` dovrebbe essere una funzione.
 
 ```js
 assert(typeof lcs == 'function');
 ```
 
-`lcs("thisisatest", "testing123testing")` should return a string.
+`lcs("thisisatest", "testing123testing")` dovrebbe restituire una stringa.
 
 ```js
 assert(typeof lcs('thisisatest', 'testing123testing') == 'string');
 ```
 
-`lcs("thisisatest", "testing123testing")` should return `"tsitest"`.
+`lcs("thisisatest", "testing123testing")` dovrebbe restituire `"tsitest"`.
 
 ```js
 assert.equal(lcs('thisisatest', 'testing123testing'), 'tsitest');
 ```
 
-`lcs("ABCDGH", "AEDFHR")` should return `"ADH"`.
+`lcs("ABCDGH", "AEDFHR")` dovrebbe restituire `"ADH"`.
 
 ```js
 assert.equal(lcs('ABCDGH', 'AEDFHR'), 'ADH');
 ```
 
-`lcs("AGGTAB", "GXTXAYB")` should return `"GTAB"`.
+`lcs("AGGTAB", "GXTXAYB")` dovrebbe restituire `"GTAB"`.
 
 ```js
 assert.equal(lcs('AGGTAB', 'GXTXAYB'), 'GTAB');
 ```
 
-`lcs("BDACDB", "BDCB")` should return `"BDCB"`.
+`lcs("BDACDB", "BDCB")` dovrebbe restituire `"BDCB"`.
 
 ```js
 assert.equal(lcs('BDACDB', 'BDCB'), 'BDCB');
 ```
 
-`lcs("ABAZDC", "BACBAD")` should return `"ABAD"`.
+`lcs("ABAZDC", "BACBAD")` dovrebbe restituire `"ABAD"`.
 
 ```js
 assert.equal(lcs('ABAZDC', 'BACBAD'), 'ABAD');

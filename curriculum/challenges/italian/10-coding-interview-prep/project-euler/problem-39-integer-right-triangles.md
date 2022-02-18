@@ -1,6 +1,6 @@
 ---
 id: 5900f3931000cf542c50fea6
-title: 'Problem 39: Integer right triangles'
+title: 'Problema 39: triangoli rettangoli interi'
 challengeType: 5
 forumTopicId: 302054
 dashedName: problem-39-integer-right-triangles
@@ -8,39 +8,39 @@ dashedName: problem-39-integer-right-triangles
 
 # --description--
 
-If `p` is the perimeter of a right angle triangle with integral length sides, {a,b,c}, there are exactly three solutions for p = 120.
+Se `p` è il perimetro di un triangolo rettangolo con lunghezza dei lati di numeri interi, {a,b,c}, ci sono esattamente tre soluzioni per p = 120.
 
 {20,48,52}, {24,45,51}, {30,40,50}
 
-For which value of `p` ≤ `n`, is the number of solutions maximized?
+Per quale valore di `p` ≤ `n` il numero delle soluzioni viene massimizzato?
 
 # --hints--
 
-`intRightTriangles(500)` should return a number.
+`intRightTriangles(500)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof intRightTriangles(500) === 'number');
 ```
 
-`intRightTriangles(500)` should return 420.
+`intRightTriangles(500)` dovrebbe restituire 420.
 
 ```js
 assert(intRightTriangles(500) == 420);
 ```
 
-`intRightTriangles(800)` should return 720.
+`intRightTriangles(800)` dovrebbe restituire 720.
 
 ```js
 assert(intRightTriangles(800) == 720);
 ```
 
-`intRightTriangles(900)` should return 840.
+`intRightTriangles(900)` dovrebbe restituire 840.
 
 ```js
 assert(intRightTriangles(900) == 840);
 ```
 
-`intRightTriangles(1000)` should return 840.
+`intRightTriangles(1000)` dovrebbe restituire 840.
 
 ```js
 assert(intRightTriangles(1000) == 840);

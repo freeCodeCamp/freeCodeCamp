@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc803f
-title: Sum digits of an integer
+title: Somma delle cifre di un intero
 challengeType: 5
 forumTopicId: 302331
 dashedName: sum-digits-of-an-integer
@@ -8,7 +8,7 @@ dashedName: sum-digits-of-an-integer
 
 # --description--
 
-Write a function that takes a string as a parameter. This string represents a number that can be in any base (less than 37) and return the sum of its digits.
+Scrivi una funzione che prende una stringa come parametro. Questa stringa rappresenta un numero che può essere in qualsiasi base (inferiore a 37) e restituisce la somma delle sue cifre.
 
 <ul>
   <li><b>1</b><sub>10</sub> sums to <b>1</b></li>
@@ -19,49 +19,49 @@ Write a function that takes a string as a parameter. This string represents a nu
 
 # --hints--
 
-`sumDigits` should be a function.
+`sumDigits` dovrebbe essere una funzione.
 
 ```js
 assert(typeof sumDigits == 'function');
 ```
 
-`sumDigits("1")` should return a number.
+`sumDigits("1")` dovrebbe restituire un numero.
 
 ```js
 assert(typeof sumDigits('1') == 'number');
 ```
 
-`sumDigits("1")` should return `1`.
+`sumDigits("1")` dovrebbe restituire `1`.
 
 ```js
 assert.equal(sumDigits('1'), 1);
 ```
 
-`sumDigits("12345")` should return `15`.
+`sumDigits("12345")` dovrebbe restituire `15`.
 
 ```js
 assert.equal(sumDigits('12345'), 15);
 ```
 
-`sumDigits("254")` should return `11`.
+`sumDigits("254")` dovrebbe restituire `11`.
 
 ```js
 assert.equal(sumDigits('254'), 11);
 ```
 
-`sumDigits("fe")` should return `29`.
+`sumDigits("fe")` dovrebbe restituire `29`.
 
 ```js
 assert.equal(sumDigits('fe'), 29);
 ```
 
-`sumDigits("f0e")` should return `29`.
+`sumDigits("f0e")` dovrebbe restituire `29`.
 
 ```js
 assert.equal(sumDigits('f0e'), 29);
 ```
 
-`sumDigits("999ABCXYZ")` should return `162`.
+`sumDigits("999ABCXYZ")` dovrebbe restituire `162`.
 
 ```js
 assert.equal(sumDigits('999ABCXYZ'), 162);

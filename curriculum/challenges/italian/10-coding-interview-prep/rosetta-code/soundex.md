@@ -8,86 +8,86 @@ dashedName: soundex
 
 # --description--
 
-Soundex is an algorithm for creating indices for words based on their pronunciation. The goal is for homophones to be encoded to the same representation so that they can be matched despite minor differences in spelling (from [the WP article](https://en.wikipedia.org/wiki/soundex)). There is a major issue in many of the implementations concerning the separation of two consonants that have the same soundex code! According to the [official Rules](https://www.archives.gov/research/census/soundex.html). So check for instance if **Ashcraft** is coded to **A-261**.
+Soundex è un algoritmo per creare indici per le parole basato sulla loro pronuncia. L'obbiettivo è avere gli omofoni codificati alla stessa rappresentazione così che possano essere combaciati nonostante piccole differenze di ortografia (dall'[articolo di Wikipedia](https://en.wikipedia.org/wiki/soundex)). C'è un problema importante in molte delle implementazioni riguardanti la separazione di due consonanti che hanno lo stesso codice soundex! In accordo con le [regole ufficiali](https://www.archives.gov/research/census/soundex.html). Quindi controlla se per esempio **Ashcraft** è codificato a **A-261**.
 
 <ul>
-  <li>If a vowel (A, E, I, O, U) separates two consonants that have the same soundex code, the consonant to the right of the vowel is coded. Tymczak is coded as T-522 (T, 5 for the M, 2 for the C, Z ignored (see "Side-by-Side" rule above), 2 for the K). Since the vowel "A" separates the Z and K, the K is coded.</li>
-  <li>If "H" or "W" separate two consonants that have the same soundex code, the consonant to the right of the vowel is not coded. Example: Ashcraft is coded A-261 (A, 2 for the S, C ignored, 6 for the R, 1 for the F). It is not coded A-226.</li>
+  <li>Se una vocale (A, E, I, O, U) separata due consonanti che hanno lo stesso codice soundex, la consonante a destra della vocale è codificata. Tymczak è codificato come T-522 (T, 5 per M, 2 per C, Z ignorata (vedi regola "Fianco-a-fianco" qua sopra), 2 per K). Visto che la "A" separa la Z e la K, la K è codificata.</li>
+  <li>Se "H" o "W" separano due consonanti che hanno lo stesso codice soundex, la consonante alla destra della vocale non è codificata. Per esempio: Ashcraft è codificato come A-261 (A, 2 per S, C ignorata, 6 per R, 1 per F). Non è codificata come A-226.</li>
 </ul>
 
 # --instructions--
 
-Write a function that takes a string as a parameter and returns the encoded string.
+Scrivi una funzione che prende una stringa come parametro e restituisce la stringa codificata.
 
 # --hints--
 
-`soundex` should be a function.
+`soundex` dovrebbe essere una funzione.
 
 ```js
 assert(typeof soundex == 'function');
 ```
 
-`soundex("Soundex")` should return a string.
+`soundex("Soundex")` dovrebbe restituire una stringa.
 
 ```js
 assert(typeof soundex('Soundex') == 'string');
 ```
 
-`soundex("Soundex")` should return `"S532"`.
+`soundex("Soundex")` dovrebbe restituire `"S532"`.
 
 ```js
 assert.equal(soundex('Soundex'), 'S532');
 ```
 
-`soundex("Example")` should return `"E251"`.
+`soundex("Example")` dovrebbe restituire `"E251"`.
 
 ```js
 assert.equal(soundex('Example'), 'E251');
 ```
 
-`soundex("Sownteks")` should return `"S532"`.
+`soundex("Sownteks")` dovrebbe restituire `"S532"`.
 
 ```js
 assert.equal(soundex('Sownteks'), 'S532');
 ```
 
-`soundex("Ekzampul")` should return `"E251"`.
+`soundex("Ekzampul")` dovrebbe restituire `"E251"`.
 
 ```js
 assert.equal(soundex('Ekzampul'), 'E251');
 ```
 
-`soundex("Euler")` should return `"E460"`.
+`soundex("Euler")` dovrebbe restituire `"E460"`.
 
 ```js
 assert.equal(soundex('Euler'), 'E460');
 ```
 
-`soundex("Gauss")` should return `"G200"`.
+`soundex("Gauss")` dovrebbe restituire `"G200"`.
 
 ```js
 assert.equal(soundex('Gauss'), 'G200');
 ```
 
-`soundex("Hilbert")` should return `"H416"`.
+`soundex("Hilbert")` dovrebbe restituire `"H416"`.
 
 ```js
 assert.equal(soundex('Hilbert'), 'H416');
 ```
 
-`soundex("Knuth")` should return `"K530"`.
+`soundex("Knuth")` dovrebbe restituire `"K530"`.
 
 ```js
 assert.equal(soundex('Knuth'), 'K530');
 ```
 
-`soundex("Lloyd")` should return `"L300"`.
+`soundex("Lloyd")` dovrebbe restituire `"L300"`.
 
 ```js
 assert.equal(soundex('Lloyd'), 'L300');
 ```
 
-`soundex("Lukasiewicz")` should return `"L222"`.
+`soundex("Lukasiewicz")` dovrebbe restituire `"L222"`.
 
 ```js
 assert.equal(soundex('Lukasiewicz'), 'L222');

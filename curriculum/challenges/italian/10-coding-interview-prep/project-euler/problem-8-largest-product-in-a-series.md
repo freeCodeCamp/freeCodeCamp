@@ -1,6 +1,6 @@
 ---
 id: 5900f3741000cf542c50fe87
-title: 'Problem 8: Largest product in a series'
+title: 'Problema 8: Prodotto più grande in una serie'
 challengeType: 5
 forumTopicId: 302193
 dashedName: problem-8-largest-product-in-a-series
@@ -8,7 +8,7 @@ dashedName: problem-8-largest-product-in-a-series
 
 # --description--
 
-The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832.
+Le quattro cifre adiacenti del numero a 1000 cifre che hanno il prodotto più grande sono 9 × 9 × 8 × 9 = 5832.
 
 <div style='text-align: center;'>73167176531330624919225119674426574742355349194934</div>
 <div style='text-align: center;'>96983520312774506326239578318016984801869478851843</div>
@@ -31,23 +31,23 @@ The four adjacent digits in the 1000-digit number that have the greatest product
 <div style='text-align: center;'>05886116467109405077541002256983155200055935729725</div>
 <div style='text-align: center;'>71636269561882670428252483600823257530420752963450</div>
 
-Find the `n` adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
+Trova le `n` cifre adiacenti nel numero a 1000 cifre che hanno il prodotto più grande. Qual è il valore di questo prodotto?
 
 # --hints--
 
-`largestProductinaSeries(4)` should return a number.
+`largestProductinaSeries(4)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof largestProductinaSeries(4) === 'number');
 ```
 
-`largestProductinaSeries(4)` should return 5832.
+`largestProductinaSeries(4)` dovrebbe restituire 5832.
 
 ```js
 assert.strictEqual(largestProductinaSeries(4), 5832);
 ```
 
-`largestProductinaSeries(13)` should return 23514624000.
+`largestProductinaSeries(13)` dovrebbe restituire 23514624000.
 
 ```js
 assert.strictEqual(largestProductinaSeries(13), 23514624000);
