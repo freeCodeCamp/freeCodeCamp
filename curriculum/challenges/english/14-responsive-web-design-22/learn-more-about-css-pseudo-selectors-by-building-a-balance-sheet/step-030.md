@@ -7,7 +7,7 @@ dashedName: step-30
 
 # --description--
 
-Before you get too far in to your styling, you should make use of the `sr-only` class. You can use CSS to make elements with this class completely hidden from the visual page, but still be announced by screen readers.
+Before you get too far into your styling, you should make use of the `sr-only` class. You can use CSS to make elements with this class completely hidden from the visual page, but still be announced by screen readers.
 
 The CSS you are about to write is a common set of properties used to ensure elements are completely hidden visually.
 
