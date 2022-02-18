@@ -211,8 +211,7 @@ async function transformScript(documentElement) {
 // exist on the site, only in the editor
 const addImportedFiles = async function (fileP) {
   const file = await fileP;
-  const transform = frame => {
-    const documentElement = frame;
+  const transform = documentElement => {
     const link =
       documentElement.querySelector('link[href="styles.css"]') ??
       documentElement.querySelector('link[href="./styles.css"]');
@@ -259,6 +258,10 @@ const transformWithFrame = async function (transform, contents) {
     frame.contentDocument.documentElement.innerHTML = contents;
     // grab the contents now, in case the transformation fails
     out = { contents: frame.contentDocument.documentElement.innerHTML };
+    // it's important to pass around the documentElement and NOT the frame
+    // itself. It appears that the frame's documentElement can get replaced by a
+    // blank documentElement without the contents. This seems only to happen on
+    // Firefox.
     out = await transform(frame.contentDocument.documentElement);
   } finally {
     document.body.removeChild(frame);
