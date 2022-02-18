@@ -15,6 +15,7 @@ const getIframeBody = () => {
 describe('Sass Challenge', () => {
   before(() => {
     cy.visit(location);
+    cy.wait(5000);
   });
 
   it('should render the sass preview', () => {
