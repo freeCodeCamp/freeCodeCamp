@@ -523,7 +523,9 @@
     "delete-token-err": "嘗試刪除令牌時出錯",
     "token-created": "你已成功創建了一個新令牌。",
     "token-deleted": "你的令牌已被刪除。",
-    "complete-project-first": "You must complete the project first."
+    "complete-project-first": "You must complete the project first.",
+    "local-code-save-error": "Oops, your code did not save, your browser's local storage may be full.",
+    "local-code-saved": "Saved! Your code was saved to your browser's local storage."
   },
   "validation": {
     "max-characters": "字符數最多爲 288 個，你還可以輸入 {{charsLeft}} 個字符",
