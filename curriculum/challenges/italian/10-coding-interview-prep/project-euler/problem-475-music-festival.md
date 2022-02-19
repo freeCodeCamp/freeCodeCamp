@@ -1,6 +1,6 @@
 ---
 id: 5900f5481000cf542c51005a
-title: 'Problem 475: Music festival'
+title: 'Problema 475: Festival musicale'
 challengeType: 5
 forumTopicId: 302152
 dashedName: problem-475-music-festival
@@ -8,22 +8,24 @@ dashedName: problem-475-music-festival
 
 # --description--
 
-12n musicians participate at a music festival. On the first day, they form 3n quartets and practice all day.
+$12n$ musicisti partecipano a un festival musicale. Il primo giorno, formano $3n$ quartetti e provano tutto il giorno.
 
-It is a disaster. At the end of the day, all musicians decide they will never again agree to play with any member of their quartet.
+È una catastrofe. Alla fine della giornata, tutti i musicisti decidono di non accettare mai più di suonare con nessun membro del loro quartetto.
 
-On the second day, they form 4n trios, each musician avoiding his previous quartet partners.
+Il secondo giorno, formano $4n$ trio, evitando che ogni musicista stia con i suoi partner del quartetto precedente.
 
-Let f(12n) be the number of ways to organize the trios amongst the 12n musicians. You are given f(12) = 576 and f(24) mod 1 000 000 007 = 509089824.
+Sia $f(12n)$ il numero di modi per organizzare i trio tra i $12n$ musicisti.
 
-Find f(600) mod 1 000 000 007.
+Ti viene dato $f(12) = 576$ e $f(24)\bmod 1\\,000\\,000\\,007 = 509\\,089\\,824$.
+
+Trova $f(600)\bmod 1\\,000\\,000\\,007$.
 
 # --hints--
 
-`euler475()` should return 75780067.
+`musicFestival()` dovrebbe restituire `75780067`.
 
 ```js
-assert.strictEqual(euler475(), 75780067);
+assert.strictEqual(musicFestival(), 75780067);
 ```
 
 # --seed--
@@ -31,12 +33,12 @@ assert.strictEqual(euler475(), 75780067);
 ## --seed-contents--
 
 ```js
-function euler475() {
+function musicFestival() {
 
   return true;
 }
 
-euler475();
+musicFestival();
 ```
 
 # --solutions--

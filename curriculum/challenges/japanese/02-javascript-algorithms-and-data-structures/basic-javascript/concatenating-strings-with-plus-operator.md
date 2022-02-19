@@ -25,7 +25,7 @@ JavaScript では、`+` 演算子を `String` の値に対して使用する場�
 const ourStr = "I come first. " + "I come second.";
 ```
 
-文字列 `I come first. ` `I come second.` がコンソールに表示されます。
+コンソールに、文字列 `I come first. I come second.` が表示されます。
 # --instructions--
 
 `+` 演算子を使用して、文字列 `This is the start.` と `This is the end.` から `myStr` を作成してください。 2 つの文字列の間に空白を必ず含めるようにしてください。

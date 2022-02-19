@@ -1,6 +1,6 @@
 ---
 id: 5900f3c51000cf542c50fed7
-title: 'Problem 89: Roman numerals'
+title: 'Problema 89: numeri romani'
 challengeType: 5
 forumTopicId: 302204
 dashedName: problem-89-roman-numerals
@@ -8,20 +8,20 @@ dashedName: problem-89-roman-numerals
 
 # --description--
 
-For a number written in Roman numerals to be considered valid there are basic rules which must be followed. Even though the rules allow some numbers to be expressed in more than one way there is always a *best* way of writing a particular number.
+Perché un numero scritto in numeri romani sia considerato valido ci sono delle regole di base che devono essere seguite. Anche se le regole permettono ad alcuni numeri di essere espressi in più di un modo c'è sempre un modo *migliore* per scrivere un certo numero.
 
-- Numerals must be arranged in descending order of size.
-- M, C, and X cannot be equaled or exceeded by smaller denominations.
-- D, L, and V can each only appear once.
+- I numeri devono essere sistemati in ordine decrescente di dimensione.
+- M, C e X non possono essere uguagliati o ecceduti da denominazioni più piccole.
+- D, L e V possono apparire solo una volta.
 
-In addition to the three rules given above, if subtractive combinations are used then the following four rules must be followed.
+In aggiunta a queste tre regole date sopra, se combinazioni sottrattive sono usate, allora bisogna seguire le seguenti quattro regole.
 
-- Only one I, X, and C can be used as the leading numeral in part of a subtractive pair.
-- I can only be placed before V and X.
-- X can only be placed before L and C.
-- C can only be placed before D and M.
+- Solo un I, X o C può essere usato come numero iniziale in una coppia sottrattiva.
+- I può essere usato solo prima di V e X.
+- X può essere usato solo prima di L e C.
+- C può essere usato solo prima di D e M.
 
-For example, it would appear that there are at least six ways of writing the number sixteen:
+Per esempio, sembra che ci sono almeno sei modi per scrivere il numero sedici:
 
 <div style="margin-left: 4em; font-family: 'courier new', monospace;">
   IIIIIIIIIIIIIIII<br>
@@ -32,29 +32,29 @@ For example, it would appear that there are at least six ways of writing the num
   XVI<br><br>
 </div>
 
-However, according to the rules only XIIIIII and XVI are valid, and the last example is considered to be the most efficient, as it uses the least number of numerals.
+Invece, in accordo alle regole, solo XIIIIII e XVI sono validi, e l'ultimo esempio è considerato il più efficiente, visto che usa il minor numero di simboli.
 
-The array, `roman`, will contain numbers written with valid, but not necessarily minimal, Roman numerals.
+L'array, `roman`, conterrà numeri romani scritti in maniera valida ma non necessariamente minimale.
 
-Find the number of characters saved by writing each of these in their minimal form.
+Trova il numero di caratteri salvati scrivendo ognuno di questi nella loro forma minimale.
 
-**Note:** You can assume that all the Roman numerals in the array contain no more than four consecutive identical units.
+**Nota:** Puoi assumere che tutti i numeri contenuti nell'array non abbiamo più di quattro simboli consecutivi identici.
 
 # --hints--
 
-`romanNumerals(testNumerals1)` should return a number.
+`romanNumerals(testNumerals1)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof romanNumerals(_testNumerals1) === 'number');
 ```
 
-`romanNumerals(testNumerals1)` should return `19`.
+`romanNumerals(testNumerals1)` dovrebbe restituire `19`.
 
 ```js
 assert.strictEqual(romanNumerals(_testNumerals1), 19);
 ```
 
-`romanNumerals(testNumerals2)` should return `743`.
+`romanNumerals(testNumerals2)` dovrebbe restituire `743`.
 
 ```js
 assert.strictEqual(romanNumerals(_testNumerals2), 743);
