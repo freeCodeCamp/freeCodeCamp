@@ -70,7 +70,7 @@
     "rx": "^4.1.0",
     "stripe": "^8.184.0",
     "uuid": "^3.4.0",
-    "validator": "^13.6.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.7",
