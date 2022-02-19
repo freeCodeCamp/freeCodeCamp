@@ -1,6 +1,6 @@
 ---
 id: 5f1a4ef5d5d6b5ab580fc6ae
-title: Build a Celestial Bodies Database
+title: 天体データベースを構築する
 challengeType: 13
 helpCategory: Backend Development
 url: https://github.com/freeCodeCamp/learn-celestial-bodies-database

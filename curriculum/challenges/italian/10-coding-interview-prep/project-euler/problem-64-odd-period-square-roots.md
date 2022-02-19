@@ -1,6 +1,6 @@
 ---
 id: 5900f3ac1000cf542c50febf
-title: 'Problem 64: Odd period square roots'
+title: 'Problema 64: radici quadrate con periodo dispari'
 challengeType: 5
 forumTopicId: 302176
 dashedName: problem-64-odd-period-square-roots
@@ -8,19 +8,19 @@ dashedName: problem-64-odd-period-square-roots
 
 # --description--
 
-All square roots are periodic when written as continued fractions and can be written in the form:
+Tutte le radici quadrate sono periodiche quando sono scritte come frazioni continue e possono essere scritte nella forma:
 
 $\\displaystyle \\quad \\quad \\sqrt{N}=a_0+\\frac 1 {a_1+\\frac 1 {a_2+ \\frac 1 {a3+ \\dots}}}$
 
-For example, let us consider $\\sqrt{23}:$:
+Per esempio, considera $\\sqrt{23}$:
 
 $\\quad \\quad \\sqrt{23}=4+\\sqrt{23}-4=4+\\frac 1 {\\frac 1 {\\sqrt{23}-4}}=4+\\frac 1 {1+\\frac{\\sqrt{23}-3}7}$
 
-If we continue we would get the following expansion:
+Se continuiamo otterremmo questa espansione:
 
 $\\displaystyle \\quad \\quad \\sqrt{23}=4+\\frac 1 {1+\\frac 1 {3+ \\frac 1 {1+\\frac 1 {8+ \\dots}}}}$
 
-The process can be summarized as follows:
+Il processo può essere riassunto come seque:
 
 $\\quad \\quad a_0=4, \\frac 1 {\\sqrt{23}-4}=\\frac {\\sqrt{23}+4} 7=1+\\frac {\\sqrt{23}-3} 7$
 
@@ -38,61 +38,61 @@ $\\quad \\quad a_6=3, \\frac 2 {\\sqrt{23}-3}=\\frac {2(\\sqrt{23}+3)} {14}=1+\\
 
 $\\quad \\quad a_7=1, \\frac 7 {\\sqrt{23}-4}=\\frac {7(\\sqrt{23}+4)} {7}=8+\\sqrt{23}-4$
 
-It can be seen that the sequence is repeating. For conciseness, we use the notation $\\sqrt{23}=\[4;(1,3,1,8)]$, to indicate that the block (1,3,1,8) repeats indefinitely.
+Si può vedere che la sequenza si ripete. Per brevità usiamo la notazione $\\sqrt{23}=\[4;(1,3,1,8)]$, tper indicare che il blocco (1,3,1,8) ripete indefinitamente.
 
-The first ten continued fraction representations of (irrational) square roots are:
+Le prime dieci rappresentazioni come frazioni continuate delle radici quadrate (irrazionali) sono:
 
-$\\quad \\quad \\sqrt{2}=\[1;(2)]$, period = 1
+$\\quad \\quad \\sqrt{2}=\[1;(2)]$, periodo = 1
 
-$\\quad \\quad \\sqrt{3}=\[1;(1,2)]$, period = 2
+$\\quad \\quad \\sqrt{3}=\[1;(1,2)]$, periodo = 2
 
-$\\quad \\quad \\sqrt{5}=\[2;(4)]$, period = 1
+$\\quad \\quad \\sqrt{5}=\[2;(4)]$, periodo = 1
 
-$\\quad \\quad \\sqrt{6}=\[2;(2,4)]$, period = 2
+$\\quad \\quad \\sqrt{6}=\[2;(2,4)]$, periodo = 2
 
-$\\quad \\quad \\sqrt{7}=\[2;(1,1,1,4)]$, period = 4
+$\\quad \\quad \\sqrt{7}=\[2;(1,1,1,4)]$, periodo = 4
 
-$\\quad \\quad \\sqrt{8}=\[2;(1,4)]$, period = 2
+$\\quad \\quad \\sqrt{8}=\[2;(1,4)]$, periodo = 2
 
-$\\quad \\quad \\sqrt{10}=\[3;(6)]$, period = 1
+$\\quad \\quad \\sqrt{10}=\[3;(6)]$, periodo = 1
 
-$\\quad \\quad \\sqrt{11}=\[3;(3,6)]$, period = 2
+$\\quad \\quad \\sqrt{11}=\[3;(3,6)]$, periodo = 2
 
-$\\quad \\quad \\sqrt{12}=\[3;(2,6)]$, period = 2
+$\\quad \\quad \\sqrt{12}=\[3;(2,6)]$, periodo = 2
 
-$\\quad \\quad \\sqrt{13}=\[3;(1,1,1,1,6)]$, period = 5
+$\\quad \\quad \\sqrt{13}=\[3;(1,1,1,1,6)]$, periodo = 5
 
-Exactly four continued fractions, for $N \\le 13$, have an odd period.
+Esattamente quattro frazioni continuate per $N \\le 13$, hanno un periodo dispari.
 
-How many continued fractions for $N \\le n$ have an odd period?
+Quante frazioni continuate hanno un periodo dispari per $N \\le n$?
 
 # --hints--
 
-`oddPeriodSqrts(13)` should return a number.
+`oddPeriodSqrts(13)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof oddPeriodSqrts(13) === 'number');
 ```
 
-`oddPeriodSqrts(500)` should return `83`.
+`oddPeriodSqrts(500)` dovrebbe restituire `83`.
 
 ```js
 assert.strictEqual(oddPeriodSqrts(500), 83);
 ```
 
-`oddPeriodSqrts(1000)` should return `152`.
+`oddPeriodSqrts(1000)` dovrebbe restituire `152`.
 
 ```js
 assert.strictEqual(oddPeriodSqrts(1000), 152);
 ```
 
-`oddPeriodSqrts(5000)` should return `690`.
+`oddPeriodSqrts(5000)` dovrebbe restituire `690`.
 
 ```js
 assert.strictEqual(oddPeriodSqrts(5000), 690);
 ```
 
-`oddPeriodSqrts(10000)` should return `1322`.
+`oddPeriodSqrts(10000)` dovrebbe restituire `1322`.
 
 ```js
 assert.strictEqual(oddPeriodSqrts(10000), 1322);
