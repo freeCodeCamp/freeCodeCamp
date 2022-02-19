@@ -2,7 +2,7 @@
 
 プルリクエスト (PR) を使用すると、GitHubのフォークから freeCodeCamp.org のメインリポジトリに変更を送信できます。 コードを変更したら、以下のガイドラインに従ってPRを開くことができます。
 
-> [!NOTE] PR は英語で書きます。 翻訳に貢献する方法については、[こちら](index.md#translations) をご覧ください。
+> [!NOTE] PR は英語で書きます。 翻訳に貢献する方法については、[こちら](index.md#翻訳) をご覧ください。
 
 ## 良いPRタイトルを用意する
 
@@ -78,7 +78,7 @@
 
 [フォーラムの 'Contributors' カテゴリ](https://forum.freecodecamp.org/c/contributors) または [Contributors チャットルーム](https://chat.freecodecamp.org/channel/contributors) へいつでもお気軽にお問合せください。
 
-> [!TIP] 他のプルリクエストも提供する場合は、フォークの削除を避けるため、[変更と同期](how-to-setup-freecodecamp-locally.md#making-changes-locally) ガイドラインをご覧になることを推奨します。
+> [!TIP] 他のプルリクエストも提供する場合は、フォークの削除を避けるため、[変更と同期](how-to-setup-freecodecamp-locally.md#ローカルで変更を行う) のガイドラインをご覧になることを推奨します。
 
 ## プルリクエストでの競合
 

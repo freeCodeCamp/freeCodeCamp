@@ -18,7 +18,7 @@ freeCodeCamp は包括的なコミュニティであり、それを維持する�
 
 私たちにはコミュニティ全体を支配する単一の行動規範があります。 ルールは少ないほど、覚えやすいものです。 [こちら](https://code-of-conduct.freecodecamp.org) にあるルールを読み、記憶に留めておいてください。
 
-> [!NOTE] GitHub、コミュニティフォーラム 、チャットサーバーのチームに、皆さんをモデレーターとして追加します。 モデレートしたいプラットフォームにアクセスできない場合は、[スタッフまでご連絡ください](FAQ.md#additional-assistance)。
+> [!NOTE] GitHub、コミュニティフォーラム 、チャットサーバーのチームに、皆さんをモデレーターとして追加します。 モデレートしたいプラットフォームにアクセスできない場合は、[スタッフまでご連絡ください](FAQ.md#その他の支援)。
 
 ## GitHub をモデレートする
 
@@ -39,7 +39,7 @@ main の [`freeCodeCamp/freeCodeCamp`](https://github.com/freeCodeCamp/freeCodeC
 
 `"help wanted"` と `"first timers only"` のラベルに特に注意してください。 これらは、プルリクエストを行う潜在的なコントリビューターが入る可能性があるスレッドに追加されます。
 
-`"first timer only"` ラベルは些細な問題 (例: タイプミスの修正) に適用され、追加情報が必要となります。 この [返信テンプレート](moderator-handbook.md#first-timer-only-issues) をトリアージに使用できます。
+`"first timer only"` ラベルは些細な問題 (例: タイプミスの修正) に適用され、追加情報が必要となります。 この [返信テンプレート](moderator-handbook.md#初回者用の-issue) をトリアージに使用できます。
 
 #### 古く、期限切れで、不活発な Issue とプルリクエストをクローズする
 
@@ -49,7 +49,7 @@ main の [`freeCodeCamp/freeCodeCamp`](https://github.com/freeCodeCamp/freeCodeC
 
 - コントリビューターから支援もしくは時間の追加要求があった場合、それに対する回答を返し、該当する Issue または PR を後日改めて確認することができます。 いずれの場合でも、モデレーターは、未解決の PR を解決するために最善の判断を下す必要があります。
 
-> [!TIP] Issue をトリアージする際には、この標準の [返信テンプレート](moderator-handbook.md#reply-templates) リストを使用することをお勧めします。
+> [!TIP] Issue をトリアージする際には、この標準の [返信テンプレート](moderator-handbook.md#返信テンプレート) リストを使用することをお勧めします。
 
 ### プルリクエストをモデレートする
 
@@ -63,7 +63,7 @@ main の [`freeCodeCamp/freeCodeCamp`](https://github.com/freeCodeCamp/freeCodeC
 
    GitHub で確認し、マージするかどうかを決定することもできます。 しかし、これについては少し注意する必要があります。 なぜなら、freeCodeCamp カリキュラムを通して何百万人もの方がこのテキストを見るからです。 テキストは、プルリクエストにより、冗長になることなく明確になっていますか？ 編集内容は、過度に知識をひけらかすものではなく、関連性の高いものになっていますか？ 可能な限り明確かつ短文のチャレンジにすることが目標であることを忘れないでください。 曖昧であってはなりません。 コントリビューターが、チャレンジにリソースへのリンクを追加しようとする場合もあります。
 
-   無効なプルリクエストをクローズして、この [返信テンプレート](moderator-handbook.md#closing-invalid-pull-requests) で送信します。
+   無効なプルリクエストをクローズして、この [返信テンプレート](moderator-handbook.md#無効なプルリクエストをクローズする-1) で返信します。
 
    正しく変更されたら、必ず「LGTM」コメントで承認を残してください。 プルリクエストがモデレーターまたは開発チームから少なくとも 2 つの承認 (あなたを含む) を得たら、マージすることができます。
 
@@ -75,7 +75,7 @@ main の [`freeCodeCamp/freeCodeCamp`](https://github.com/freeCodeCamp/freeCodeC
 
    コントリビューターの中には、衒学的で厄介なケースも網羅するために、追加テストを含めようとする人もいるかもしれません。 チャレンジがあまり複雑にならないように注意しなければなりません。 チャレンジとそのテストは可能な限りシンプルで直感的なものにします。 アルゴリズムチャレンジとインタビュー準備セクションは別として、学習者は約 2 分以内に各チャレンジを解決する必要があります。
 
-   無効なプルリクエストをクローズして、この [返信テンプレート](moderator-handbook.md#closing-invalid-pull-requests) で送信します。
+   無効なプルリクエストをクローズして、この [返信テンプレート](moderator-handbook.md#無効なプルリクエストをクローズする-1) で返信します。
 
    正しく変更されたら、必ず「LGTM」コメントで承認を残してください。 プルリクエストがモデレーターまたは開発チームから少なくとも 2 つの承認 (あなたを含む) を得たら、マージすることができます。
 
@@ -142,7 +142,7 @@ main の [`freeCodeCamp/freeCodeCamp`](https://github.com/freeCodeCamp/freeCodeC
 
 コントリビューターが Web サイトへのリンクを追加しようとしたり、彼らが作成したライブラリを含めようとしたり、彼ら以外の誰にも役に立たない自由な編集をしようとする状況もあります。
 
-無効なプルリクエストをクローズして、これらの [返信テンプレート](moderator-handbook.md#closing-invalid-pull-requests) で送信します。
+無効なプルリクエストをクローズして、これらの [返信テンプレート](moderator-handbook.md#無効なプルリクエストをクローズする-1) で返信します。
 
 #### GitHub モデレーターに関するその他のガイドライン
 
@@ -191,11 +191,11 @@ freeCodeCamp のリポジトリへの書き込み権限はありますが、**fr
 **ユーザーの freeCodeCamp アカウントも削除するには、`support[at]freecodecamp.org` にメールしてください。**
 
 ```markdown
-件名: 13 歳未満のユーザーは、利用規約によりフォーラムを利用できません
+件名: 13 歳未満のユーザーは、利用規約によりフォーラムをご利用いただけません
 
-あなたが 13 歳未満のユーザーの方であるということが判明しました。 [freeCodeCamp 利用規約](https://www.freecodecamp.org/news/terms-of-service) では、サイトまたはフォーラムを利用するには 13 歳以上である必要があります。 そのため、あなたの freeCodeCamp アカウントとフォーラムアカウントの両方を削除させていただきます。 この制限は米国の法律に準拠したものです。
+あなたが 13 歳未満のユーザーであると判明いたしました。 [freeCodeCamp 利用規約](https://www.freecodecamp.org/news/terms-of-service) では、サイトまたはフォーラムを利用するには 13 歳以上である必要があります。 そのため、誠に恐れ入りますが、あなたの freeCodeCamp アカウントとフォーラムアカウントの両方を削除させていただくこととなりました。 この制限は米国の法律に準拠したものです。
 
-13 歳以上になってからご参加いただけるのをお待ちしています。
+13 歳以上になられてから、またご参加いただけることをお待ちしております。
 
 ご理解のほどよろしくお願いいたします。
 ```
@@ -356,13 +356,13 @@ http://www.suicide.org/international-suicide-hotlines.html
 
 以下は、プルリクエストをレビューしたり、問題やプルリクエストをトリアージしたりする際に使用できる標準的な返信テンプレートです。
 
-> GitHub のビルトインの [**Saved replies**](https://github.com/settings/replies/) 機能を使用して自分で作成するか、以下の機能を使用することができます。
+> GitHub のビルトインの [**Saved replies**](https://github.com/settings/replies/) 機能を使用して自分で作成するか、以下のテンプレートを使用することができます。
 
 ### お礼
 
 ```markdown
-このページに貢献していただきありがとうございます！ 👍
-喜んでこれらの変更を承認いたします。今後の貢献に期待しています。 🎉
+Thank you for your contribution to the page! 👍
+We are happy to accept these changes and look forward to future contributions. 🎉
 ```
 
 ### お礼と祝福
@@ -370,24 +370,24 @@ http://www.suicide.org/international-suicide-hotlines.html
 > 新規コントリビューターへの感謝と励まし
 
 ```markdown
-@username さん、こんにちは。 最初のプルリクエスト (PR) おめでとうございます！ 🎉
+Hi @username. Congrats on your first pull request (PR)! 🎉
 
-このページに貢献していただきありがとうございます！ 👍
-喜んでこれらの変更を承認いたします。今後の貢献に期待しています。 📝
+Thank you for your contribution to the page! 👍
+We are happy to accept these changes and look forward to future contributions. 📝
 ```
 
 ### ビルドエラー
 
 ```markdown
-@username さん、こんにちは。
+Hey @username
 
-変更をマージしたいのですが、CI ビルドでエラーが発生しています。 ⚠️
+We would love to be able to merge your changes but it looks like there is an error with the CI build. ⚠️
 
-この問題が解決すれば、PR を確認してマージすることができます。 😊
+Once you resolve these issues, we will be able to review your PR and merge it. 😊
 
 ---
 
-CI ビルドをローカルで実行する手順については、[貢献ガイドライン](how-to-work-on-coding-challenges.md#testing-challenges) をご参照ください。 ✅
+Feel free to reference the [contributing guidelines](how-to-work-on-coding-challenges.md#testing-challenges) for instructions on running the CI build locally. ✅
 ```
 
 ### フォークの同期
@@ -395,13 +395,13 @@ CI ビルドをローカルで実行する手順については、[貢献ガイ�
 > PR が、最新の `main` ブランチで更新されていない場合
 
 ````markdown
-@username さん、こんにちは。
+Hey @username
 
-変更をマージしたいのですが、ブランチが最新ではないようです。 ⚠️
+We would love to be able to merge your changes, but it looks like the branch is not up to date. ⚠️
 
-このエラーを解決するには、 `freeCodeCamp/freeCodeCamp` リポジトリの `main` ブランチから最新の変更を同期する必要があります。
+To resolve this error, you will have to sync the latest changes from the `main` branch of the `freeCodeCamp/freeCodeCamp` repo.
 
-コマンドラインを使用すると、次の 3 つの簡単な手順でこれを実行できます。
+Using the command line, you can do this in three easy steps:
 
 ```bash
 git remote add upstream git://github.com/freeCodeCamp/freeCodeCamp.git
@@ -411,31 +411,31 @@ git fetch upstream
 git pull upstream main
 ````
 
-GUI を使用している場合は、単純に `Add a new remote...` を使用するとともに、上記の `git://github.com/freeCodeCamp/freeCodeCamp.git` のリンクを使用してください。
+If you're using a GUI, you can simply `Add a new remote...` and use the link `git://github.com/freeCodeCamp/freeCodeCamp.git` from above.
 
-フォークを同期してビルドに合格すると、PR をレビューしてマージすることができます。 😊
+Once you sync your fork and pass the build, we will be able to review your PR and merge it. 😊
 
 ---
 
-アップストリームリポジトリでフォークを最新状態に保つ方法については、GitHub 上の [フォークの同期](https://help.github.com/articles/syncing-a-fork/) 記事を参照してください。 🔄
+Feel free to reference the [Syncing a Fork](https://help.github.com/articles/syncing-a-fork/) article on GitHub for more insight on how to keep your fork up-to-date with the upstream repository. 🔄
 ````
 
 ### マージ競合
 
-> PR に解決すべきマージ競合がある場合
+> PR に解決すべきマージ競合がある場合¹
 
 ```markdown
-@username さん、こんにちは。
+Hey @username
 
-変更をマージしたいのですが、マージが競合しているようです。 ⚠️
+We would love to be able to merge your changes, but it looks like you have some merge conflicts. ⚠️
 
-この問題が解決すれば、PR を確認してマージすることができます。 😊
+Once you resolve these conflicts, we will be able to review your PR and merge it. 😊
 
 ---
 
-マージ競合プロセスに慣れていない場合は、GitHub のガイド の [「Resolving a merge conflict」] をご覧ください　(https://help.github.com/articles/resolving-a-merge-conflict-on-github/)。 🔍
+If you're not familiar with the merge conflict process, feel free to look over GitHub's guide on ["Resolving a merge conflict"](https://help.github.com/articles/resolving-a-merge-conflict-on-github/). 🔍️
 
-また、GitHub で PR を作成する際に、変更に関する簡単な説明を記述することをお勧めします。 📝
+Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
 ````
 
 ¹ 新規コントリビューターにマージ競合が発生した場合、メンテナーがその競合を解決します。
@@ -445,17 +445,17 @@ GUI を使用している場合は、単純に `Add a new remote...` を使用�
 > PR が反復または重複している場合
 
 ```markdown
-@username さん
+Hey @username
 
-この PR は、既存の PR <#number> と同様の変更を行っているようです。 そのため、重複としてこの PR をクローズします。
+This PR seems to make similar changes as the existing PR <#number>. As such, we are going to close this as duplicate.
 
-この PR を拡張するために追加変更したい場合は、自由にコミットをプッシュし、この PR を再オープンするようリクエストしてください。
+If you feel you have additional changes to expand upon this PR, please feel free to push your commits and request this PR be reopened.
 
-よろしくお願いいたします！ 😊
+Thanks again! 😊
 
 ---
 
-ご質問がありましたら、[フォーラムの 'Contributors' カテゴリ](https://forum.freecodecamp.org/c/contributors) または [contributors チャットルーム] (https://chat.freecodecamp.org/channel/contributors) までお気軽にお問合せください。
+If you have any questions, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/channel/contributors).
 ```
 
 ### 無効なプルリクエストをクローズする
@@ -463,23 +463,23 @@ GUI を使用している場合は、単純に `Add a new remote...` を使用�
 > PR が無効な場合
 
 ```markdown
-@username さん、こんにちは。
+Hey @username
 
-プルリクエストをオープンしていただきありがとうございました。
+Thank you for opening this pull request.
 
-プルリクエストをレビューしました結果、マージしないことを決定しましたのでお知らせいたします。 今後、またプルリクエストを作成していただけることを期待しております。
+This is a standard message notifying you that we've reviewed your pull request and have decided not to merge it. We would welcome future pull requests from you.
 
-ご理解のほどよろしくお願いいたします。
+Thank you and happy coding.
 ```
 
 > PR が外部リソースへのリンクを追加している場合
 
 ```markdown
-プルリクエストを作成していただきありがとうございました。
+Thank you for your pull request.
 
-しかしながら、このプルリクエストをクローズさせていただきます。 [フォーラムトピック](https://forum.freecodecamp.org/new-topic?category=Contributors&title=&body=**What%20is%20your%20hint%20or%20solution%20suggestion%3F**%0A%0A%0A%0A%0A**Challenge%3A**%0A%0A%0A**Link%20to%20the%20challenge%3A**) に投稿されているチャレンジの該当ガイドを追加するためのリンクおよびその他詳細を提案してください。
+We are closing this pull request. Please suggest links and other details to add the challenge's corresponding guide post through [a forum topic](https://forum.freecodecamp.org/new-topic?category=Contributors&title=&body=**What%20is%20your%20hint%20or%20solution%20suggestion%3F**%0A%0A%0A%0A%0A**Challenge%3A**%0A%0A%0A**Link%20to%20the%20challenge%3A**) instead.
 
-この Issue をクローズすることが誤りであると思われる場合は、再オープンをリクエストして説明を追加してください。 ご理解のほどよろしくお願いいたします。
+If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you, and happy coding.
 ```
 
 ### 無効な Issue をクローズする
@@ -487,33 +487,33 @@ GUI を使用している場合は、単純に `Add a new remote...` を使用�
 > Issue がキャンパーのコードに関連する場合
 
 ```markdown
-この問題を報告していただきありがとうございます。
+Thank you for reporting this issue.
 
-しかしながら、これは支援リクエストであるように思われますのでお知らせいたします。 ここで支援を求めるのではなく、freeCodeCamp のチャレンジにある **"Get Help"** ボタンをクリックして **"Ask for help"** オプションを選択してください。フォーラムの右側に質問を作成することができます。 フォーラムのボランティアが通常数時間以内に質問に対して回答し、コードもしくはチャレンジテストに問題があるかどうかを判断します。
+This is a standard message notifying you that this issue seems to be a request for help. Instead of asking for help here, please click the **"Get Help"** button on the challenge on freeCodeCamp and choose the **"Ask for help"** option, which will help you create a question in the right part of the forum. Volunteers on the forum usually respond to questions within a few hours and can help determine if there is an issue with your code or the challenge's tests.
 
-フォーラムメンバーによりコードに問題がないと判断された場合は、この問題を再オープンするようにリクエストすることができます。
+If the forum members determine there is nothing wrong with your code, you can request this issue to be reopened.
 
-ご理解のほどよろしくお願いいたします。
+Thank you and happy coding.
 ```
 
 > Issue が以前の Issue と重複している場合
 
 ```markdown
-問題を報告していただきありがとうございます。
+Thank you for reporting this issue.
 
-この問題は、#XXXXX と非常によく似ているので、重複としてクローズすることをお知らせいたします。
+This is a standard message notifying you that this issue appears to be very similar to issue #XXXXX, so we are closing it as a duplicate.
 
-この問題をクローズすることが誤りであると思われる場合は、再オープンをリクエストし説明を追加してください。 ご理解のほどよろしくお願いいたします。
+If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
 > Issue がステージングで修正された場合
 
 ```markdown
-この問題を報告していただきありがとうございます。
+Thank you for reporting this issue.
 
-言及された問題は本番環境に存在していますが、ステージングで既に修正されていますのでお知らせいいたします。 これは、次回ステージングブランチを本番環境にプッシュする際に、この問題を修正する必要があることを意味します。 そのため、この問題はクローズいたします。
+This is a standard message notifying you that the problem you mentioned here is present in production, but that it has already been fixed in staging. This means that the next time we push our staging branch to production, this problem should be fixed. Because of this, we're closing this issue.
 
-この問題をクローズすることが誤りであると思われる場合は、再オープンをリクエストし説明を追加してください。 ご理解のほどよろしくお願いいたします。
+If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
 ### 初回者用の Issue
@@ -521,19 +521,19 @@ GUI を使用している場合は、単純に `Add a new remote...` を使用�
 > Issue が新規コードコントリビューターの対象となる場合
 
 ```markdown
-この問題をオープンしていただきありがとうございます。
+Thanks for opening this issue.
 
-これは、このリポジトリへの「新規」コードコントリビューターによって修正できるようです。 修正するために調べるべきファイルは次のとおりです:
+This looks like something that can be fixed by "first time" code contributors to this repository. Here are the files that you should be looking at to work on a fix:
 
-ファイルのリスト:
+List of files:
 
 1. ...
 2. ...
 3. ...
 
-[貢献に関するガイドライン](https://contribute.freecodecamp.org/#/) を必ずお読みください。私たちは、ガイドの指示に従ってコントリビューターに優先順位を付けます。 [チャットルーム](https://chat.freecodecamp.org/channel/contributors) もしくは [フォーラム](https://forum.freecodecamp.org/c/contributors/3) に参加してください。貢献するのに支援が必要な場合、モデレーターがガイドいたします。
+Please make sure you read [our guidelines for contributing](https://contribute.freecodecamp.org/#/), we prioritize contributors following the instructions in our guides. Join us in [our chat room](https://chat.freecodecamp.org/channel/contributors) or [the forum](https://forum.freecodecamp.org/c/contributors/3) if you need help contributing, our moderators will guide you through this.
 
-複数のプルリクエストを受け取ることもあります。 私たちは通常、最も質の高い貢献を受け入れ、その後に最初の貢献を受け入れます。
+Sometimes we may get more than one pull request. We typically accept the most quality contribution followed by the one that is made first.
 
-貢献をお楽しみください。
+Happy contributing.
 ```
