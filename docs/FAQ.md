@@ -102,7 +102,7 @@ moderators' team. Open source work is voluntary work and our time is limited.
 We acknowledge that this is probably true in your case as well. So we emphasize
 being **consistent** rather than engaging in the community 24/7.
 
-Take a look at our [Moderator Handbook](https://contribute.freecodecamp.org/#/moderator-handbook)
+Take a look at our [Moderator Handbook](moderator-handbook.md)
 for a more exhaustive list of other responsibilities and expectations we have
 of our moderators.
 
