@@ -21,23 +21,21 @@ FAV_PET = "Dogs";
 
 再代入を必要としない変数に名前を付けるときは、常に `const` キーワードを使用してください。 そうすれば、定数でなければならない変数に誤って再代入しようとするのを防ぐのに役立ちます。
 
-一般に、定数に名前を付けるときは、すべて英大文字を使用し、単語をアンダースコアで区切ります。
-
-**注:** 開発者は一般に、イミュータブル (変更不可) の値には英大文字の変数識別子を使用し、ミュータブル (変更可能) の値 (オブジェクトや配列) には英小文字またはキャメルケースを使用します。 このあとのチャレンジで、オブジェクトと配列について学び、ミュータブルの値とイミュータブルの値について詳しく説明します。 また以降のチャレンジでは、英大文字、英小文字、またはキャメルケースのさまざまな変数識別子を使用します。
+**Note:** It is common for developers to use uppercase variable identifiers for immutable values and lowercase or camelCase for mutable values (objects and arrays). You will learn more about objects, arrays, and immutable and mutable values in later challenges. Also in later challenges, you will see examples of uppercase, lowercase, or camelCase variable identifiers.
 
 # --instructions--
 
-コードを変更して、すべての変数を `let` または `const` を使用して宣言してください。 変更を必要とする変数には `let` を使用し、定数にする必要がある変数には `const` を使用してください。 また、`const` で宣言した変数の名前について、すべて英大文字にするという一般的な慣習に従うように変更してください。
+Change the code so that all variables are declared using `let` or `const`. Use `let` when you want the variable to change, and `const` when you want the variable to remain constant. Also, rename variables declared with `const` to conform to common practices.
 
 # --hints--
 
-`var` がコード内に存在しない必要があります。
+`var` should not exist in your code.
 
 ```js
 (getUserInput) => assert(!getUserInput('index').match(/var/g));
 ```
 
-`fCC` をすべて英大文字に変更する必要があります。
+You should change `fCC` to all uppercase.
 
 ```js
 (getUserInput) => {
@@ -46,20 +44,20 @@ FAV_PET = "Dogs";
 }
 ```
 
-`FCC` は `const` で宣言された定数変数である必要があります。
+`FCC` should be a constant variable declared with `const`.
 
 ```js
 assert.equal(FCC, 'freeCodeCamp');
 assert.match(code, /const\s+FCC/);
 ```
 
-`fact` は `let` を使用して宣言する必要があります。
+`fact` should be declared with `let`.
 
 ```js
 (getUserInput) => assert(getUserInput('index').match(/(let fact)/g));
 ```
 
-`console.log` を、`FCC` と `fact` 変数を出力するように変更する必要があります。
+`console.log` should be changed to print the `FCC` and `fact` variables.
 
 ```js
 (getUserInput) =>

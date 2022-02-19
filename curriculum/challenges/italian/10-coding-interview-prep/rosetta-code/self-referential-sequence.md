@@ -1,6 +1,6 @@
 ---
 id: 5eb3e4a21f462f409d656c73
-title: Self-referential sequence
+title: Sequenza autoreferenziale
 challengeType: 5
 forumTopicId: 385317
 dashedName: self-referential-sequence
@@ -8,41 +8,41 @@ dashedName: self-referential-sequence
 
 # --description--
 
-There are several ways to generate a self-referential sequence. One very common one (the [Look-and-say sequence](https://rosettacode.org/wiki/Look-and-say sequence)) is to start with a positive integer, then generate the next term by concatenating enumerated groups of adjacent alike digits:
+Ci sono diversi modi per generare una sequenza autoreferenziale. Uno molto comune (la sequenza [Look-and-say](https://rosettacode.org/wiki/Look-and-say sequence)) è iniziare con un numero intero positivo, quindi generare il termine successivo concatenando gruppi enumerati di cifre simili adiacenti:
 
 <pre>0, 10, 1110, 3110, 132110, 1113122110, 311311222110 ...</pre>
 
-The terms generated grow in length geometrically and never converge.
+I termini generati crescono geometricamente in lunghezza e non convergono mai.
 
-Another way to generate a self-referential sequence is to summarize the previous term.
+Un altro modo per generare una sequenza auto-referenziale è quello di riassumere il termine precedente.
 
-Count how many of each alike digit there is, then concatenate the sum and digit for each of the sorted enumerated digits. Note that the first five terms are the same as for the previous sequence.
+Conta quante di ogni cifra simile ci sono, quindi concatena la somma e la cifra per ciascuna delle cifre enumerate ordinate. Nota che i primi cinque termini sono gli stessi della sequenza precedente.
 
 <pre>0, 10, 1110, 3110, 132110, 13123110, 23124110 ...</pre>
 
-Sort the digits largest to smallest. Do not include counts of digits that do not appear in the previous term.
+Ordina le cifre da più grandi a più piccole. Non includere i conteggi di cifre che non appaiono nel termine precedente.
 
-Depending on the seed value, series generated this way always either converge to a stable value or to a short cyclical pattern. (For our purposes, converge means that an element matches a previously seen element.) The sequence shown, with a seed value of 0, converges to a stable value of 1433223110 after 11 iterations. The seed value that converges most quickly is 22. It goes stable after the first element. (The next element is 22, which has been seen before.)
+A seconda del valore del seme, le serie generate in questo modo convergono sempre a un valore stabile o a un breve modello periodico. (Per i nostri scopi, convergere significa che un elemento corrisponde a un elemento visto precedentemente.) La sequenza mostrata, con un valore di seme di 0, converge ad un valore stabile di 1433223110 dopo 11 iterazioni. Il valore del seme che converge più rapidamente è 22. Diventa stabile dopo il primo elemento. (L'elemento successivo è 22, che è stato visto prima.)
 
 # --instructions--
 
-Write a function that takes the seed value as parameter, generates a self referential sequence until it converges, and returns it as an array.
+Scrivi una funzione che prende il valore del seme come parametro, genera una sequenza autoreferenziale fino a quando non converge, e la restituisce sotto forma di array.
 
 # --hints--
 
-`selfReferential` should be a function.
+`selfReferential` dovrebbe essere una funzione.
 
 ```js
 assert(typeof selfReferential === 'function');
 ```
 
-`selfReferential(40)` should return a array.
+`selfReferential(40)` dovrebbe restituire un array.
 
 ```js
 assert(Array.isArray(selfReferential(40)));
 ```
 
-`selfReferential(40)` should return `["40", "1410", "142110", "14123110", "1413124110", "2413125110", "151413224110", "152413225110", "251413324110", "152423224110", "152413423110"]`.
+`selfReferential(40)` dovrebbe restituire `["40", "1410", "142110", "14123110", "1413124110", "2413125110", "151413224110", "152413225110", "251413324110", "152423224110", "152413423110"]`.
 
 ```js
 assert.deepEqual(selfReferential(40), [
@@ -60,7 +60,7 @@ assert.deepEqual(selfReferential(40), [
 ]);
 ```
 
-`selfReferential(132110)` should return `["132110", "13123110", "23124110", "1413223110", "1423224110", "2413323110", "1433223110"]`.
+`selfReferential(132110)` dovrebbe restituire `["132110", "13123110", "23124110", "1413223110", "1423224110", "2413323110", "1433223110"]`.
 
 ```js
 assert.deepEqual(selfReferential(132110), [
@@ -74,7 +74,7 @@ assert.deepEqual(selfReferential(132110), [
 ]);
 ```
 
-`selfReferential(132211)` should return `["132211", "132231", "232221", "134211", "14131231", "14231241", "24132231", "14233221"]`.
+`selfReferential(132211)` dovrebbe restituire `["132211", "132231", "232221", "134211", "14131231", "14231241", "24132231", "14233221"]`.
 
 ```js
 assert.deepEqual(selfReferential(132211), [
@@ -89,7 +89,7 @@ assert.deepEqual(selfReferential(132211), [
 ]);
 ```
 
-`selfReferential(1413223110)` should return `["1413223110", "1423224110", "2413323110", "1433223110"]`.
+`selfReferential(1413223110)` dovrebbe restituire `["1413223110", "1423224110", "2413323110", "1433223110"]`.
 
 ```js
 assert.deepEqual(selfReferential(1413223110), [
@@ -100,7 +100,7 @@ assert.deepEqual(selfReferential(1413223110), [
 ]);
 ```
 
-`selfReferential(251413126110)` should return `["251413126110", "16151413225110", "16251413226110", "26151413325110", "16251423225110", "16251413424110", "16153413225110"]`.
+`selfReferential(251413126110)` dovrebbe restituire `["251413126110", "16151413225110", "16251413226110", "26151413325110", "16251423225110", "16251413424110", "16153413225110"]`.
 
 ```js
 assert.deepEqual(selfReferential(251413126110), [

@@ -1,6 +1,6 @@
 ---
 id: 5e94a54cc7b022105bf0fd2c
-title: Word frequency
+title: Frequenza delle parole
 challengeType: 5
 forumTopicId: 393913
 dashedName: word-frequency
@@ -8,68 +8,68 @@ dashedName: word-frequency
 
 # --description--
 
-Given a text string and an integer n, return the n most common words in the file (and the number of their occurrences) in decreasing frequency.
+Data una stringa di testo e un intero n, restituire le n parole più comuni nel file (e il numero delle loro occorrenze) in ordine di frequenza decrescente.
 
 # --instructions--
 
-Write a function to count the occurrences of each word and return the n most commons words along with the number of their occurences in decreasing frequency.
+Scrivere una funzione per contare le occorrenze di ogni parola e restituire le n parole più comuni insieme al numero delle loro occorrenze in ordine di frequenza decrescente.
 
-The function should return a 2D array with each of the elements in the following form: `[word, freq]`. `word` should be the lowercase version of the word and `freq` the number denoting the count.
+La funzione dovrebbe restituire un array 2D con ciascuno degli elementi nella seguente forma: `[word, freq]`. `word` dovrebbe essere la versione minuscola della parola e `freq` il numero che indica il conteggio.
 
-The function should return an empty array, if no string is provided.
+La funzione dovrebbe restituire un array vuoto, se non viene fornita alcuna stringa.
 
-The function should be case insensitive, for example, the strings "Hello" and "hello" should be treated the same.
+La funzione dovrebbe ignorare maiuscole e minuscole, per esempio, le stringe "Hello" e "hello" devono essere trattate allo stesso modo.
 
-You can treat words that have special characters such as underscores, dashes, apostrophes, commas, etc., as distinct words.
+Puoi le parole che hanno caratteri speciali come sottolineature, trattini, apostrofi, virgole, ecc., come parole distinte.
 
-For example, given the string "Hello hello goodbye", your function should return `[['hello', 2], ['goodbye', 1]]`.
+Per esempio, data la stringa "Hello hello goodbye", la tua funzione dovrebbe restituire `[['hello', 2], ['goodbye', 1]]`.
 
 # --hints--
 
-`wordFrequency` should be a function.
+`wordFrequency` dovrebbe essere una funzione.
 
 ```js
 assert(typeof wordFrequency == 'function');
 ```
 
-`wordFrequency` should return an array.
+`wordFrequency` dovrebbe restituire un array.
 
 ```js
 assert(Array.isArray(wordFrequency('test')));
 ```
 
-`wordFrequency("Hello hello world", 2)` should return `[['hello', 2], ['world', 1]]`
+`wordFrequency("Hello hello world", 2)` dovrebbe restituire `[['hello', 2], ['world', 1]]`
 
 ```js
 assert.deepEqual(wordFrequency(example_1, 2), example_1_solution);
 ```
 
-`wordFrequency("The quick brown fox jumped over the lazy dog", 1)` should return `[['the', 2]]`
+`wordFrequency("The quick brown fox jumped over the lazy dog", 1)` dovrebbe restituire `[['the', 2]]`
 
 ```js
 assert.deepEqual(wordFrequency(example_2, 1), example_2_solution);
 ```
 
-`wordFrequency("Opensource opensource open-source open source", 1)` should return `[['opensource', 2]]`
+`wordFrequency("Opensource opensource open-source open source", 1)` dovrebbe restituire `[['opensource', 2]]`
 
 ```js
 assert.deepEqual(wordFrequency(example_3, 1), example_3_solution);
 ```
 
-`wordFrequency("Apple App apply aPP aPPlE", 3)` should return `[['app', 2], ['apple', 2], ['apply', 1]]` or `[['apple', 2], ['app', 2], ['apply', 1]]`
+`wordFrequency("Apple App apply aPP aPPlE", 3)` dovrebbe restituire `[['app', 2], ['apple', 2], ['apply', 1]]` oppure `[['apple', 2], ['app', 2], ['apply', 1]]`
 
 ```js
 const arr = JSON.stringify(wordFrequency(example_4, 3));
 assert(arr === example_4_solution_a || arr === example_4_solution_b);
 ```
 
-`wordFrequency("c d a d c a b d d c", 4)` should return `[['d', 4], ['c', 3], ['a', 2], ['b', 1]]`
+`wordFrequency("c d a d c a b d d c", 4)` dovrebbe restituire `[['d', 4], ['c', 3], ['a', 2], ['b', 1]]`
 
 ```js
 assert.deepEqual(wordFrequency(example_5, 4), example_5_solution);
 ```
 
-`wordFrequency("", 5)` should return `[]`
+`wordFrequency("", 5)` dovrebbe restituire `[]`
 
 ```js
 assert.deepEqual(wordFrequency(example_6, 5), example_6_solution);

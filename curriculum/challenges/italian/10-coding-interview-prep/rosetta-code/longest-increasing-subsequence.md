@@ -1,6 +1,6 @@
 ---
 id: 5e6dd139859c290b6ab80292
-title: Longest increasing subsequence
+title: Più lunga sottosequenza crescente
 challengeType: 5
 forumTopicId: 385272
 dashedName: longest-increasing-subsequence
@@ -8,57 +8,57 @@ dashedName: longest-increasing-subsequence
 
 # --description--
 
-The longest increasing subsequence problem is to find a subsequence of a given sequence in which the subsequence's elements are in sorted order, lowest to highest, and in which the subsequence is as long as possible. An example:
+Il problema di della più lunga sottosequenza crescente è quello di trovare una sottosequenza di una data sequenza in cui gli elementi successivi sono in ordine, dal più basso al più alto, e in cui la sottosequenza è la più lunga possibile. Un esempio:
 
-For the following array:
+Per il seguente array:
 
 $\\{3, 10, 2, 1, 20\\}$
 
-Longest increasing sequence is:
+La sequenza crescente più lunga è:
 
 $\\{3, 10, 20\\}$
 
-For more information on this problem please see [Wikipedia](https://en.wikipedia.org/wiki/Longest increasing subsequence).
+Per ulteriori informazioni su questo problema consulta [Wikipedia](https://en.wikipedia.org/wiki/Longest increasing subsequence).
 
 # --instructions--
 
-Write a function that takes an array of numbers as a parameter and returns the longest increasing subsequence.
+Scrivere una funzione che prende un array di numeri come parametro e restituisce la più lunga sottosequenza crescente.
 
-It is guaranteed that every array will have a longest increasing subsequence.
+È garantito che ogni array avrà una sottosequenza crescente più lunga.
 
 # --hints--
 
-`findSequence` should be a function.
+`findSequence` dovrebbe essere una funzione.
 
 ```js
 assert(typeof findSequence == 'function');
 ```
 
-`findSequence([3, 10, 2, 1, 20])` should return a array.
+`findSequence([3, 10, 2, 1, 20])` dovrebbe restituire un array.
 
 ```js
 assert(Array.isArray(findSequence([3, 10, 2, 1, 20])));
 ```
 
-`findSequence([3, 10, 2, 1, 20])` should return `[3, 10, 20]`.
+`findSequence([3, 10, 2, 1, 20])` dovrebbe restituire `[3, 10, 20]`.
 
 ```js
 assert.deepEqual(findSequence([3, 10, 2, 1, 20]), [3, 10, 20]);
 ```
 
-`findSequence([2, 7, 3, 5, 8])` should return `[2, 3, 5, 8]`.
+`findSequence([2, 7, 3, 5, 8])` dovrebbe restituire `[2, 3, 5, 8]`.
 
 ```js
 assert.deepEqual(findSequence([2, 7, 3, 5, 8]), [2, 3, 5, 8]);
 ```
 
-`findSequence([2, 6, 4, 5, 1])` should return `[2, 4, 5]`.
+`findSequence([2, 6, 4, 5, 1])` dovrebbe restituire `[2, 4, 5]`.
 
 ```js
 assert.deepEqual(findSequence([2, 6, 4, 5, 1]), [2, 4, 5]);
 ```
 
-`findSequence([10, 22, 9, 33, 21, 50, 60, 80])` should return `[10, 22, 33, 50, 60, 80]`.
+`findSequence([10, 22, 9, 33, 21, 50, 60, 80])` dovrebbe restituire `[10, 22, 33, 50, 60, 80]`.
 
 ```js
 assert.deepEqual(findSequence([10, 22, 9, 33, 21, 50, 60, 80]), [
@@ -71,7 +71,7 @@ assert.deepEqual(findSequence([10, 22, 9, 33, 21, 50, 60, 80]), [
 ]);
 ```
 
-`findSequence([0, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15])` should return `[0, 2, 6, 9, 11, 15`.
+`findSequence([0, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15])` dovrebbe restituire `[0, 2, 6, 9, 11, 15`.
 
 ```js
 assert.deepEqual(

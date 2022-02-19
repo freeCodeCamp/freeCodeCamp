@@ -1,6 +1,6 @@
 ---
 id: 5e4ce2bbac708cc68c1df25f
-title: Letter frequency
+title: Frequenza delle lettere
 challengeType: 5
 forumTopicId: 385263
 dashedName: letter-frequency
@@ -8,33 +8,33 @@ dashedName: letter-frequency
 
 # --description--
 
-Given a string, calculate the frequency of each character.
+Data una stringa, calcolare la frequenza di ogni carattere.
 
-All characters should be counted. This includes lower and upper case letters, digits, whitespace, special characters, or any other distinct characters.
+Tutti i caratteri devono essere contati. Questo include lettere maiuscole e minuscole, cifre, spazi bianchi, caratteri speciali o qualsiasi altro carattere distinto.
 
 # --instructions--
 
-Write a function to count the occurrences of each character in a given string.
+Scrivi una funzione per contare le occorrenze di ogni carattere in una determinata stringa.
 
-The function should return a 2D array with each of the elements in the following form: `['char', freq]`. The character should be a string with a length of 1, and frequency is a number denoting the count.
+La funzione dovrebbe restituire un array 2D con ciascuno degli elementi nella seguente forma: `['char', freq]`. Il carattere deve essere una stringa con una lunghezza di 1, e la frequenza è un numero che indica il conteggio.
 
-For example, given the string "ab", your function should return `[['a', 1], ['b', 1]]`.
+Per esempio, data la stringa "ab", la tua funzione dovrebbe restituire `[['a', 1], ['b', 1]]`.
 
 # --hints--
 
-`letterFrequency` should be a function.
+`letterFrequency` dovrebbe essere una funzione.
 
 ```js
 assert(typeof letterFrequency == 'function');
 ```
 
-`letterFrequency("Not all that Mrs. Bennet, however")` should return an array.
+`letterFrequency("Not all that Mrs. Bennet, however")` dovrebbe restituire un array.
 
 ```js
 assert(Array.isArray(letterFrequency('Not all that Mrs. Bennet, however')));
 ```
 
-`letterFrequency("Not all that Mrs. Bennet, however")` should return `[[" ", 5], [",", 1], [".", 1], ["B", 1], ["M", 1], ["N", 1], ["a", 2], ["e", 4], ["h", 2], ["l", 2], ["n", 2], ["o", 2], ["r", 2], ["s", 1], ["t", 4], ["v", 1], ["w", 1]]`.
+`letterFrequency("Not all that Mrs. Bennet, however")` dovrebbe restituire `[[" ", 5], [",", 1], [".", 1], ["B", 1], ["M", 1], ["N", 1], ["a", 2], ["e", 4], ["h", 2], ["l", 2], ["n", 2], ["o", 2], ["r", 2], ["s", 1], ["t", 4], ["v", 1], ["w", 1]]`.
 
 ```js
 assert.deepEqual(letterFrequency('Not all that Mrs. Bennet, however'), [
@@ -58,7 +58,7 @@ assert.deepEqual(letterFrequency('Not all that Mrs. Bennet, however'), [
 ]);
 ```
 
-`letterFrequency("daughters, could ask on the ")` should return `[[" ", 5],[",", 1],["a", 2],["c", 1],["d", 2],["e", 2],["g", 1],["h", 2],["k", 1],["l", 1],["n", 1],["o", 2],["r", 1],["s", 2],["t", 2],["u", 2]]`.
+`letterFrequency("daughters, could ask on the ")` dovrebbe restituire `[[" ", 5],[",", 1],["a", 2],["c", 1],["d", 2],["e", 2],["g", 1],["h", 2],["k", 1],["l", 1],["n", 1],["o", 2],["r", 1],["s", 2],["t", 2],["u", 2]]`.
 
 ```js
 assert.deepEqual(letterFrequency('daughters, could ask on the '), [
@@ -81,7 +81,7 @@ assert.deepEqual(letterFrequency('daughters, could ask on the '), [
 ]);
 ```
 
-`letterFrequency("husband any satisfactory description")` should return `[[" ", 3], ["a", 4], ["b", 1], ["c", 2], ["d", 2], ["e", 1], ["f", 1], ["h", 1], ["i", 3], ["n", 3], ["o", 2], ["p", 1], ["r", 2], ["s", 4], ["t", 3], ["u", 1], ["y", 2]]`.
+`letterFrequency("husband any satisfactory description")` dovrebbe restituire `[[" ", 3], ["a", 4], ["b", 1], ["c", 2], ["d", 2], ["e", 1], ["f", 1], ["h", 1], ["i", 3], ["n", 3], ["o", 2], ["p", 1], ["r", 2], ["s", 4], ["t", 3], ["u", 1], ["y", 2]]`.
 
 ```js
 assert.deepEqual(letterFrequency('husband any satisfactory description'), [
@@ -105,7 +105,7 @@ assert.deepEqual(letterFrequency('husband any satisfactory description'), [
 ]);
 ```
 
-`letterFrequency("in various ways--with barefaced")` should return `[[" ", 3], ["-", 2], ["a", 4], ["b", 1], ["c", 1], ["d", 1], ["e", 2], ["f", 1], ["h", 1], ["i", 3], ["n", 1], ["o", 1], ["r", 2], ["s", 2], ["t", 1], ["u", 1], ["v", 1], ["w", 2], ["y", 1]]`.
+`letterFrequency("in various ways--with barefaced")` dovrebbe restituire `[[" ", 3], ["-", 2], ["a", 4], ["b", 1], ["c", 1], ["d", 1], ["e", 2], ["f", 1], ["h", 1], ["i", 3], ["n", 1], ["o", 1], ["r", 2], ["s", 2], ["t", 1], ["u", 1], ["v", 1], ["w", 2], ["y", 1]]`.
 
 ```js
 assert.deepEqual(letterFrequency('in various ways--with barefaced'), [
@@ -131,7 +131,7 @@ assert.deepEqual(letterFrequency('in various ways--with barefaced'), [
 ]);
 ```
 
-`letterFrequency("distant surmises; but he eluded")` should return `[[" ", 4], [";", 1], ["a", 1], ["b", 1], ["d", 3], ["e", 4], ["h", 1], ["i", 2], ["l", 1], ["m", 1], ["n", 1], ["r", 1], ["s", 4], ["t", 3], ["u", 3]]`.
+`letterFrequency("distant surmises; but he eluded")` dovrebbe restituire `[[" ", 4], [";", 1], ["a", 1], ["b", 1], ["d", 3], ["e", 4], ["h", 1], ["i", 2], ["l", 1], ["m", 1], ["n", 1], ["r", 1], ["s", 4], ["t", 3], ["u", 3]]`.
 
 ```js
 assert.deepEqual(letterFrequency('distant surmises; but he eluded'), [
@@ -153,7 +153,7 @@ assert.deepEqual(letterFrequency('distant surmises; but he eluded'), [
 ]);
 ```
 
-`letterFrequency("last obliged to accept the second-hand,")` should return `[[" ", 5], [",", 1], ["-", 1], ["a", 3], ["b", 1], ["c", 3], ["d", 3], ["e", 4], ["g", 1], ["h", 2], ["i", 1], ["l", 2], ["n", 2], ["o", 3], ["p", 1], ["s", 2], ["t", 4]]`.
+`letterFrequency("last obliged to accept the second-hand,")` dovrebbe restituire `[[" ", 5], [",", 1], ["-", 1], ["a", 3], ["b", 1], ["c", 3], ["d", 3], ["e", 4], ["g", 1], ["h", 2], ["i", 1], ["l", 2], ["n", 2], ["o", 3], ["p", 1], ["s", 2], ["t", 4]]`.
 
 ```js
 assert.deepEqual(letterFrequency('last obliged to accept the second-hand,'), [

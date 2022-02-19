@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8014
-title: Sort stability
+title: Stabilità dell'ordinamento
 challengeType: 5
 forumTopicId: 302308
 dashedName: sort-stability
@@ -8,9 +8,9 @@ dashedName: sort-stability
 
 # --description--
 
-When sorting records in a table by a particular column or field, a [stable sort](https://en.wikipedia.org/wiki/Stable_sort#Stability) will always retain the relative order of records that have the same key.
+Quando si ordinano i record in una tabella per una particolare colonna o campo, un [ordinamento stabile](https://en.wikipedia.org/wiki/Stable_sort#Stability) manterrà sempre l'ordine relativo dei record che hanno la stessa chiave.
 
-For example, in this table of countries and cities, a stable sort on the **second** column, the cities, would keep the US Birmingham above the UK Birmingham. (Although an unstable sort *might*, in this case, place the US Birmingham above the UK Birmingham, a stable sort routine would *guarantee* it).
+Ad esempio, in questa tabella di paesi e città, un ordinamento stabile sulla **seconda** colonna, le città, manterrebbe US Birmingham sopra UK Birmingham. (Anche se un ordinamento instabile *potrebbe*, in questo caso, posizionare US Birmingham sopra UK Birmingham, un ordinamento stabile lo *garantirebbe* esso).
 
 <pre>UK  London
 US  New York
@@ -18,21 +18,21 @@ US  Birmingham
 UK  Birmingham
 </pre>
 
-Similarly, stable sorting on just the first column would generate "UK London" as the first item and "US Birmingham" as the last item (since the order of the elements having the same first word – "UK" or "US" – would be maintained).
+Allo stesso modo, l'ordinamento stabile fatto solo sulla prima colonna genererebbe "UK London" come primo elemento e "US Birmingham" come ultimo elemento (perché l'ordine degli elementi con la stessa prima parola – "UK" o "US" – sarebbe mantenuto).
 
 # --instructions--
 
-Write a function that takes a 2D array as a parameter. Each element has 2 elements similar to the above example. The function should sort the array as mentioned previously and return the sorted array.
+Scrivi una funzione che richiede un array bidimensionale come parametro. Ogni elemento ha 2 elementi simili all'esempio precedente. La funzione dovrebbe ordinare l'array come menzionato precedentemente e restituire l'array ordinato.
 
 # --hints--
 
-`stableSort` should be a function.
+`stableSort` dovrebbe essere una funzione.
 
 ```js
 assert(typeof stableSort == 'function');
 ```
 
-`stableSort([["UK", "London"], ["US", "New York"], ["US", "Birmingham"], ["UK", "Birmingham"]])` should return an array.
+`stableSort([["UK", "London"], ["US", "New York"], ["US", "Birmingham"], ["UK", "Birmingham"]])` dovrebbe restituire un array.
 
 ```js
 assert(
@@ -47,7 +47,7 @@ assert(
 );
 ```
 
-`stableSort([["UK", "London"], ["US", "New York"], ["US", "Birmingham"], ["UK", "Birmingham"]])` should return `[["US", "Birmingham"], ["UK", "Birmingham"], ["UK", "London"], ["US", "New York"]]`.
+`stableSort([["UK", "London"], ["US", "New York"], ["US", "Birmingham"], ["UK", "Birmingham"]])` dovrebbe restituire `[["US", "Birmingham"], ["UK", "Birmingham"], ["UK", "London"], ["US", "New York"]]`.
 
 ```js
 assert.deepEqual(
@@ -66,7 +66,7 @@ assert.deepEqual(
 );
 ```
 
-`stableSort([[2, 2], [1, 2], [1, 4], [1, 5]])` should return `[[2, 2], [1, 2], [1, 4], [1, 5]]`.
+`stableSort([[2, 2], [1, 2], [1, 4], [1, 5]])` dovrebbe restituire `[[2, 2], [1, 2], [1, 4], [1, 5]]`.
 
 ```js
 assert.deepEqual(
@@ -85,7 +85,7 @@ assert.deepEqual(
 );
 ```
 
-`stableSort([[11, 55], [12, 45], [11, 45], [32, 45]])` should return `[[12, 45], [11, 45], [32, 45], [11, 55]]`.
+`stableSort([[11, 55], [12, 45], [11, 45], [32, 45]])` dovrebbe restituire `[[12, 45], [11, 45], [32, 45], [11, 55]]`.
 
 ```js
 assert.deepEqual(
@@ -104,7 +104,7 @@ assert.deepEqual(
 );
 ```
 
-`stableSort([[10, 22], [1, 2], [1, 4], [1, 5], [10, 9]])` should return `[[1, 2], [1, 4], [1, 5], [10, 9], [10, 22]]`.
+`stableSort([[10, 22], [1, 2], [1, 4], [1, 5], [10, 9]])` dovrebbe restituire `[[1, 2], [1, 4], [1, 5], [10, 9], [10, 22]]`.
 
 ```js
 assert.deepEqual(
@@ -125,7 +125,7 @@ assert.deepEqual(
 );
 ```
 
-`stableSort([[55, 54], [12, 22], [31, 43], [31, 54], [10, 49]])` should return `[[12, 22], [31, 43], [10, 49], [55, 54], [31, 54]]`.
+`stableSort([[55, 54], [12, 22], [31, 43], [31, 54], [10, 49]])` dovrebbe restituire `[[12, 22], [31, 43], [10, 49], [55, 54], [31, 54]]`.
 
 ```js
 assert.deepEqual(
