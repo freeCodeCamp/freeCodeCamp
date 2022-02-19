@@ -14,13 +14,13 @@ freeCodeCamp は、モダンな JavaScript スタック上で動作します。 
 
 翻訳への貢献にご興味がありましたら、まず [ガイド](how-to-translate-files.md) をお読みください。
 
-### freeCodeCamp の YouTube チャンネルに記事や動画を投稿することはできますか？
+### freeCodeCamp ニュースの記事や、freeCodeCamp YouTube チャンネルの動画に貢献することはできますか？
 
-はい。公開ブログや YouTube チャンネルに貢献することができます。
+はい。ニュースブログや YouTube チャンネルに貢献することができます。
 
-freeCodeCamp ニュースの記事を書くことにご興味がありましたら、[公開ガイド](https://www.freecodecamp.org/news/how-to-write-for-freecodecamp/) をご覧ください。 より力強い、より効果的な記事を書くために、[スタイルガイド](https://www.freecodecamp.org/news/developer-news-style-guide/) をお読みください。
+freeCodeCamp ニュースの記事を書くことにご興味がありましたら、[執筆ガイド](https://www.freecodecamp.org/news/how-to-write-for-freecodecamp/) をご覧ください。 より力強い、より効果的な記事を書くために、[スタイルガイド](https://www.freecodecamp.org/news/developer-news-style-guide/) をお読みください。
 
-YouTube チャンネル用の教育ビデオを作成するために、[YouTube チャンネルガイド](https://www.freecodecamp.org/news/how-to-contribute-to-the-freecodecamp-community-youtube-channel-b86bce4c865/) をお読みください。
+YouTube チャンネル用の動画講座を作成するには、[YouTube チャンネルガイド](https://www.freecodecamp.org/news/how-to-contribute-to-the-freecodecamp-community-youtube-channel-b86bce4c865/) をお読みください。
 
 ### 新しいバグはどのように報告すればいいですか？
 

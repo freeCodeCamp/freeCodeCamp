@@ -15,7 +15,7 @@ MailHog は、macOS、Windows、Linux にインストールすることも、Doc
 
 <details><summary>Dockerで MailHog をインストールする</summary>
 
-インストールされた Docker があれば、それを使用できます。
+Docker がインストールされていれば、次のコマンドが使用できます。
 
 ```bash
 docker run -d --name mailhog --network host --rm mailhog/mailhog
@@ -29,7 +29,7 @@ docker stop mailhog
 
 上記コマンドにより MailHog を停止できます。
 
-インストールが完了すると、[using MailHog](#using-mailhog) を起動できます。
+インストールが完了すると、[MailHog の使用](#mailhog-の使用) を開始できます。
 
 </details>
 
@@ -44,7 +44,7 @@ brew services start mailhog
 
 上記コマンドにより、バックグラウンドで mailhog サービスを起動します。
 
-インストールが完了すると、[using MailHog](#using-mailhog) を起動できます。
+インストールが完了すると、[MailHog の使用](#mailhog-の使用) を開始できます。
 
 </details>
 
@@ -54,9 +54,9 @@ brew services start mailhog
 
 ダウンロードが完了したら、クリックしてファイルを開きます。 Windows ファイアウォールの通知が表示され、MailHog のアクセス許可を要求する場合があります。 ファイアウォールへのアクセスが許可されると、標準の Windows コマンドラインプロンプトが開き、MailHog が実行されます。
 
-コマンドプロンプトウィンドウを閉じて、MailHog を閉じます。 MailHog を再度起動するには、最初にダウンロードした MailHog 実行可能ファイル (. xe)  をクリックします。新たにMailHog インストールファイルをダウンロードする必要はありません。
+コマンドプロンプトウィンドウを閉じて、MailHog を閉じます。 MailHog を再度起動するには、最初にダウンロードした MailHog 実行可能ファイル (.exe)  をクリックします。新たに MailHog インストールファイルをダウンロードする必要はありません。
 
-[using MailHog](#using-mailhog) を起動します。
+[MailHog の使用](#mailhog-の使用) を開始します。
 
 </details>
 
@@ -98,7 +98,7 @@ sudo cp /home/$(whoami)/go/bin/MailHog /usr/local/bin/mailhog
 mailhog
 ```
 
-[using MailHog](#using-mailhog) を起動します。
+[MailHog の使用](#mailhog-の使用) を開始します。
 
 </details>
 
