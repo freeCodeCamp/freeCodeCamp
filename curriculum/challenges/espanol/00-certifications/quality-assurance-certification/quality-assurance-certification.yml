@@ -7,17 +7,17 @@ isPrivate: true
 tests:
   - 
     id: 587d8249367417b2b2512c41
-    title: Convertidor Métrico-Imperial
+    title: Convertidor de métricas imperiales
   - 
     id: 587d8249367417b2b2512c42
-    title: Rastreador de Problemas
+    title: Seguidor de incidentes
   - 
     id: 587d824a367417b2b2512c43
-    title: Librería Personal
+    title: Biblioteca personal
   - 
     id: 5e601bf95ac9d0ecd8b94afd
-    title: Resolvedor de Sudoku
+    title: Solucionador de Sudoku
   - 
     id: 5e601c0d5ac9d0ecd8b94afe
-    title: Traductor de Inglés Americano - Británico
+    title: Traductor británico americano
 

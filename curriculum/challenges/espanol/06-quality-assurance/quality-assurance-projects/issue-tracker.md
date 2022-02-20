@@ -11,10 +11,10 @@ dashedName: issue-tracker
 Construye una aplicación full stack de JavaScript que sea funcionalmente similar a esta: <https://issue-tracker.freecodecamp.rocks/>. Trabajar en este proyecto implicará escribir tu código utilizando uno de los siguientes métodos:
 
 -   Clona [este repositorio de GitHub](https://github.com/freeCodeCamp/boilerplate-project-issuetracker/) y completa tu proyecto localmente.
--   Usa [este proyecto inicial de Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-issuetracker) para completar tu proyecto.
--   Usa un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio GitHub.
+-   Usa [nuestro proyecto inicial de Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-issuetracker) para completar tu proyecto.
+-   Usa un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio de GitHub.
 
-Cuando hayas terminado, asegúrate de que una demostración de trabajo de tu proyecto esté alojado en algún lugar público. Luego, envía la URL en el campo `Solution Link`. Opcionalmente, también envía un enlace al código fuente de tu proyecto en el campo `GitHub Link`.
+Cuando hayas terminado, asegúrate de que una demostración funcional de tu proyecto esté alojado en algún lugar público. Luego, envía la URL en el campo `Solution Link`. Opcionalmente, también envía un enlace al código fuente de tu proyecto en el campo `GitHub Link`.
 
 # --instructions--
 
