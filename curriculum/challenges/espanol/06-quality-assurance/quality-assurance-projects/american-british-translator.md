@@ -12,9 +12,9 @@ Construye una aplicación full stack de JavaScript que sea funcionalmente simila
 
 -   Clona [este repositorio de GitHub](https://github.com/freeCodeCamp/boilerplate-project-american-british-english-translator/) y completa tu proyecto localmente.
 -   Usa [nuestro proyecto inicial de Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-american-british-english-translator) para completar tu proyecto.
--   Usa un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio GitHub.
+-   Usa un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio de GitHub.
 
-Cuando hayas terminado, asegúrate de que un demo funcional de tu proyecto esté alojado en algún lugar público. Luego, ingresa la URL en el campo `Solution Link`. Opcionalmente, también ingresa un enlace al código fuente de tu proyecto en el campo `GitHub Link`.
+Cuando hayas terminado, asegúrate de que una demostración funcional de tu proyecto esté alojado en algún lugar público. Luego, envía la URL en el campo `Solution Link`. Opcionalmente, también envía un enlace al código fuente de tu proyecto en el campo `GitHub Link`.
 
 # --instructions--
 
