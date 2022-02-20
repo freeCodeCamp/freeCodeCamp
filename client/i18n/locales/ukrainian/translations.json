@@ -523,7 +523,9 @@
     "delete-token-err": "An error occurred trying to delete your token",
     "token-created": "You have successfully created a new token.",
     "token-deleted": "Your token has been deleted.",
-    "complete-project-first": "You must complete the project first."
+    "complete-project-first": "You must complete the project first.",
+    "local-code-save-error": "Oops, your code did not save, your browser's local storage may be full.",
+    "local-code-saved": "Saved! Your code was saved to your browser's local storage."
   },
   "validation": {
     "max-characters": "Максимальний розмір — 288 символів, у вас залишилося {{charsLeft}}",

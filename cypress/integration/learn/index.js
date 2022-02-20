@@ -11,6 +11,7 @@ const superBlockNames = [
   'JavaScript Algorithms and Data Structures Certification',
   'Front End Development Libraries Certification',
   'Data Visualization Certification',
+  'Relational Database Certification',
   'Back End Development and APIs Certification',
   'Quality Assurance Certification',
   'Scientific Computing with Python Certification',
@@ -42,7 +43,7 @@ describe('Learn Landing page (not logged in)', () => {
       const superBlocks = document.querySelectorAll(
         `${selectors.challengeMap} > li > a`
       );
-      expect(superBlocks).to.have.length(12);
+      expect(superBlocks).to.have.length(13);
 
       superBlocks.forEach((superBlock, idx) => {
         expect(superBlock.innerText).to.have.string(superBlockNames[idx]);

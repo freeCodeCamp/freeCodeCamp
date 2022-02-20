@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad7
-title: Zhang-Suen thinning algorithm
+title: L'algoritmo di semplificazione di Zhang-Suen
 challengeType: 5
 forumTopicId: 302347
 dashedName: zhang-suen-thinning-algorithm
@@ -8,7 +8,7 @@ dashedName: zhang-suen-thinning-algorithm
 
 # --description--
 
-This is an algorithm used to thin a black and white i.e. one bit per pixel images. For example, with an input image of:
+Questo è un algoritmo usato per comprimere immagini in bianco e nero, cioè con un bit per ogni pixel. Ad esempio, fornendo la seguente immagine:
 
 ```js
 const testImage1 = [
@@ -25,7 +25,7 @@ const testImage1 = [
 ];
 ```
 
-It produces the thinned output:
+Produce il seguente output semplificato:
 
 ```js
 [ '                               ',
@@ -40,76 +40,76 @@ It produces the thinned output:
   '                               ' ];
 ```
 
-## Algorithm
+## Algoritmo
 
-Assume black pixels are one and white pixels zero, and that the input image is a rectangular N by M array of ones and zeroes. The algorithm operates on all black pixels P1 that can have eight neighbours. The neighbours are, in order, arranged as:
+Supponiamo che i pixel neri siano 1 e i pixel bianchi 0, e che l'immagine in ingresso sia una matrice rettangolare N x M di 1 e 0. L'algoritmo opera su tutti i pixel P1 neri che possono avere otto vicini. I vicini sono, in ordine, disposti come:
 
 $$\begin{array}{|c|c|c|} \\hline P9 & P2              & P3\\\\ \\hline P8 & \boldsymbol{P1} & P4\\\\ \\hline P7 & P6              & P5\\\\ \\hline \end{array}$$
 
-Obviously the boundary pixels of the image cannot have the full eight neighbours.
+Ovviamente i pixel ai margini dell'immagine non possono avere gli otto vicini.
 
-- Define $A(P1)$ = the number of transitions from white to black, ($0 \to 1$) in the sequence P2, P3, P4, P5, P6, P7, P8, P9, P2. (Note the extra P2 at the end - it is circular).
-- Define $B(P1)$ = the number of black pixel neighbours of P1. ($= \\sum(P2 \ldots P9)$)
+- Definire $A(P1)$ = il numero di transizioni da bianco a nero, ($0 \to 1$) nella sequenza P2, P3, P4, P5, P6, P7, P8, P9, P2. (Si noti il P2 extra alla fine - è circolare).
+- Sia $B(P1)$ = il numero di pixel neri vicini a P1. ($= \\sum(P2 \ldots P9)$)
 
 **Step 1:**
 
-All pixels are tested and pixels satisfying all the following conditions (simultaneously) are just noted at this stage.
+Tutti i pixel sono testati e i pixel che soddisfano tutte le condizioni seguenti (contemporaneamente) sono solo annotati in questa fase.
 
-1. The pixel is black and has eight neighbours
+1. Il pixel è nero e ha otto vicini
 2. $2 \le B(P1) \le 6$
 3. $A(P1) = 1$
-4. At least one of $P2$, $P4$ and $P6$ is white
-5. At least one of $P4$, $P6$ and $P8$ is white
+4. Almeno uno tra $P2$, $P4$ e $P6$ è bianco
+5. Almeno uno tra $P4$, $P6$ e $P8$ è bianco
 
-After iterating over the image and collecting all the pixels satisfying all step 1 conditions, all these condition satisfying pixels are set to white.
+Dopo aver iterato sull'immagine e aver raccolto tutti i pixel che soddisfano tutte le condizioni del passaggio 1, tutti questi pixel sono impostati su bianco.
 
 **Step 2:**
 
-All pixels are again tested and pixels satisfying all the following conditions are just noted at this stage.
+Tutti i pixel sono di nuovo testati e i pixel che soddisfano tutte le condizioni seguenti sono solo annotati in questa fase.
 
-1. The pixel is black and has eight neighbours
+1. Il pixel è nero e ha otto vicini
 2. $2 \le B(P1) \le 6$
 3. $A(P1) = 1$
-4. At least one of $P2$, $P4$ and $P8$ is white
-5. At least one of $P2$, $P6$ and $P8$ is white
+4. Almeno uno tra $P2$, $P4$ e $P8$ è bianco
+5. Almeno uno tra $P2$, $P6$ e $P8$ è bianco
 
-After iterating over the image and collecting all the pixels satisfying all step 2 conditions, all these condition satisfying pixels are again set to white.
+Dopo aver iterato sull'intera immagine e aver raccolto tutti i pixel che soddisfano tutte le condizioni del passaggio 2, tutti questi pixel sono di nuovo impostati su bianco.
 
-**Iteration:**
+**Iterazione:**
 
-If any pixels were set in this round of either step 1 or step 2 then all steps are repeated until no image pixels are so changed.
+Se un pixel è stato impostato in questa iterazione al passo 1 o 2, tutti i passi vengono ripetuti fino a quando nessun pixel dell'immagine non viene così modificato.
 
 # --instructions--
 
-Write a routine to perform Zhang-Suen thinning on the provided `image`, an array of strings, where each string represents single line of the image. In the string, `#` represents black pixel, and whitespace represents white pixel. Function should return thinned image, using the same representation.
+Scrivi una routine per eseguire la compressione di Zhang-Suen sull'immagine `image` fornita, un insieme di stringhe, in cui ogni stringa rappresenta una singola riga dell'immagine. Nella stringa, `#` rappresenta i pixel neri e lo spazio vuoto quelli bianchi. La funzione dovrebbe restituire l'immagine assottigliata, usando la stessa rappresentazione.
 
 # --hints--
 
-`thinImage` should be a function.
+`thinImage` dovrebbe essere una funzione.
 
 ```js
 assert.equal(typeof thinImage, 'function');
 ```
 
-`thinImage` should return an array.
+`thinImage` dovrebbe restituire un array.
 
 ```js
 assert(Array.isArray(thinImage(_testImage1)));
 ```
 
-`thinImage` should return an array of strings.
+`thinImage` dovrebbe restituire un array di stringhe.
 
 ```js
 assert.equal(typeof thinImage(_testImage1)[0], 'string');
 ```
 
-`thinImage(testImage1)` should return a thinned image as in the example.
+`thinImage(testImage1)` dovrebbe restituire un'immagine assottigliata come nell'esempio.
 
 ```js
 assert.deepEqual(thinImage(_testImage1), expected1);
 ```
 
-`thinImage(testImage2)` should return a thinned image.
+`thinImage(testImage2)` dovrebbe restituire un'immagine assottigliata.
 
 ```js
 assert.deepEqual(thinImage(_testImage2), expected2);

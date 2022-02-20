@@ -1,6 +1,6 @@
 ---
 id: 5900f3b71000cf542c50feca
-title: 'Problem 75: Singular integer right triangles'
+title: 'Problema 75: terne pitagoriche singolari'
 challengeType: 5
 forumTopicId: 302188
 dashedName: problem-75-singular-integer-right-triangles
@@ -8,7 +8,7 @@ dashedName: problem-75-singular-integer-right-triangles
 
 # --description--
 
-It turns out that 12 cm is the smallest length of wire that can be bent to form an integer sided right angle triangle in exactly one way, but there are many more examples.
+La lunghezza più corta di un filo per formare con esso un triangolo rettangoloto con lati di lunghezza intera in un unico modo è 12 cm, ma ci sono molti altri esempi.
 
 <div style='margin-left: 4em;'>
   <strong>12 cm:</strong> (3,4,5)<br>
@@ -19,41 +19,41 @@ It turns out that 12 cm is the smallest length of wire that can be bent to form 
   <strong>48 cm:</strong> (12,16,20)<br><br>
 </div>
 
-In contrast, some lengths of wire, like 20 cm, cannot be bent to form an integer sided right angle triangle, and other lengths allow more than one solution to be found; for example, using 120 cm it is possible to form exactly three different integer sided right angle triangles.
+Al contrario, alcune lunghezze di filo, come 20 cm, non possono essere piegate per formare un triengolo rettangolo con i lati di lunghezza intera, e altre lunghezze permettono più di una soluzione; per esempio usando 120 cm è possibile formare esattamente tre diversi angoli rettangoli con i lati aventi lunghezze intere.
 
 <div style='margin-left: 4em;'>
   <strong>120 cm:</strong> (30,40,50), (20,48,52), (24,45,51)<br><br>
 </div>
 
-Given that L is the length of the wire, for how many values of L ≤ `n` can exactly one, integer sided right angle, triangle be formed?
+Dato che L è la lunghezza del filo, per quanti valori di L ≤ `n` si può avere esattamente un triangolo rettangolo con i lati aventi lunghezze intere?
 
 # --hints--
 
-`singularIntRightTriangles(48)` should return a number.
+`singularIntRightTriangles(48)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof singularIntRightTriangles(48) === 'number');
 ```
 
-`singularIntRightTriangles(48)` should return `6`.
+`singularIntRightTriangles(48)` dovrebbe restituire `6`.
 
 ```js
 assert.strictEqual(singularIntRightTriangles(48), 6);
 ```
 
-`singularIntRightTriangles(700000)` should return `75783`.
+`singularIntRightTriangles(700000)` dovrebbe restituire `75783`.
 
 ```js
 assert.strictEqual(singularIntRightTriangles(700000), 75783);
 ```
 
-`singularIntRightTriangles(1000000)` should return `107876`.
+`singularIntRightTriangles(1000000)` dovrebbe restituire `107876`.
 
 ```js
 assert.strictEqual(singularIntRightTriangles(1000000), 107876);
 ```
 
-`singularIntRightTriangles(1500000)` should return `161667`.
+`singularIntRightTriangles(1500000)` dovrebbe restituire `161667`.
 
 ```js
 assert.strictEqual(singularIntRightTriangles(1500000), 161667);

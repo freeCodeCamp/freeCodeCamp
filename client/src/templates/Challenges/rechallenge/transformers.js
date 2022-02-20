@@ -180,12 +180,13 @@ function getBabelOptions({ preview = false, protect = true }) {
 }
 
 const sassWorker = createWorker(sassCompile);
-async function transformSASS(contentDocument) {
+async function transformSASS(documentElement) {
   // we only teach scss syntax, not sass. Also the compiler does not seem to be
   // able to deal with sass.
-  const styleTags = contentDocument.querySelectorAll(
+  const styleTags = documentElement.querySelectorAll(
     'style[type~="text/scss"]'
   );
+
   await Promise.all(
     [].map.call(styleTags, async style => {
       style.type = 'text/css';
@@ -194,10 +195,10 @@ async function transformSASS(contentDocument) {
   );
 }
 
-async function transformScript(contentDocument) {
+async function transformScript(documentElement) {
   await loadBabel();
   await loadPresetEnv();
-  const scriptTags = contentDocument.querySelectorAll('script');
+  const scriptTags = documentElement.querySelectorAll('script');
   scriptTags.forEach(script => {
     script.innerHTML = tryTransform(babelTransformCode(babelOptionsJS))(
       script.innerHTML
@@ -210,8 +211,7 @@ async function transformScript(contentDocument) {
 // exist on the site, only in the editor
 const addImportedFiles = async function (fileP) {
   const file = await fileP;
-  const transform = frame => {
-    const documentElement = frame.contentDocument.documentElement;
+  const transform = documentElement => {
     const link =
       documentElement.querySelector('link[href="styles.css"]') ??
       documentElement.querySelector('link[href="./styles.css"]');
@@ -258,7 +258,11 @@ const transformWithFrame = async function (transform, contents) {
     frame.contentDocument.documentElement.innerHTML = contents;
     // grab the contents now, in case the transformation fails
     out = { contents: frame.contentDocument.documentElement.innerHTML };
-    out = await transform(frame);
+    // it's important to pass around the documentElement and NOT the frame
+    // itself. It appears that the frame's documentElement can get replaced by a
+    // blank documentElement without the contents. This seems only to happen on
+    // Firefox.
+    out = await transform(frame.contentDocument.documentElement);
   } finally {
     document.body.removeChild(frame);
   }
@@ -266,12 +270,12 @@ const transformWithFrame = async function (transform, contents) {
 };
 
 const transformHtml = async function (file) {
-  const transform = async frame => {
+  const transform = async documentElement => {
     await Promise.all([
-      transformSASS(frame.contentDocument),
-      transformScript(frame.contentDocument)
+      transformSASS(documentElement),
+      transformScript(documentElement)
     ]);
-    return { contents: frame.contentDocument.documentElement.innerHTML };
+    return { contents: documentElement.innerHTML };
   };
 
   const { contents } = await transformWithFrame(transform, file.contents);

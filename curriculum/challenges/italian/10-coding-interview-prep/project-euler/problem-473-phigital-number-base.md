@@ -1,6 +1,6 @@
 ---
 id: 5900f5461000cf542c510058
-title: 'Problem 473: Phigital number base'
+title: 'Problema 473: Base numerica pi-greco'
 challengeType: 5
 forumTopicId: 302150
 dashedName: problem-473-phigital-number-base
@@ -8,30 +8,32 @@ dashedName: problem-473-phigital-number-base
 
 # --description--
 
-Let $\\varphi$ be the golden ratio: $\\varphi=\\frac{1+\\sqrt{5}}{2}.$
+Sia $\varphi$ il rapporto aureo: $\varphi = \frac{1+\sqrt{5}}{2}.$
 
-Remarkably it is possible to write every positive integer as a sum of powers of $\\varphi$ even if we require that every power of $\\varphi$ is used at most once in this sum.
+Degno di nota, è possibile scrivere ogni numero intero positivo come somma delle potenze di $\varphi$ anche con il limite che ogni potenza di $\varphi$ possa essere usata al massimo una volta nella somma.
 
-Even then this representation is not unique.
+Anche in questo caso la rappresentazione non è unica.
 
-We can make it unique by requiring that no powers with consecutive exponents are used and that the representation is finite.
+Possiamo renderla unica richiedendo che nessuna potenza con esponenti consecutivi sia usata e che la rappresentazione sia finita.
 
-E.g:
+Ad es:
 
-$2=\\varphi+\\varphi^{-2}$ and $3=\\varphi^{2}+\\varphi^{-2}$
+$2 = \varphi + \varphi^{-2}$ e $3 = \varphi^{2} + \varphi^{-2}$
 
-To represent this sum of powers of $\\varphi$ we use a string of 0's and 1's with a point to indicate where the negative exponents start. We call this the representation in the phigital numberbase. So $1=1*{\\varphi}$, $2=10.01*{\\varphi}$, $3=100.01*{\\varphi}$ and $14=100100.001001*{\\varphi}$. The strings representing 1, 2 and 14 in the phigital number base are palindromic, while the string representing 3 is not. (the phigital point is not the middle character).
+Per rappresentare la somma delle potenze di $\varphi$ usiamo una stringa di 0 e 1 con un punto per indicare dove gli esponenti negativi iniziano. Chiamiamo questa rappresentazione in base pi-greco.
 
-The sum of the positive integers not exceeding 1000 whose phigital representation is palindromic is 4345.
+Quindi $1 = 1_{\varphi}$, $2 = 10.01_{\varphi}$, $3 = 100.01_{\varphi}$ e $14 = 100100.001001_{\varphi}$. Le stringhe rappresentanti 1, 2 e 14 nella base pi-greco sono palindromiche, mentre la stringa rappresentante 3 non lo è. (il punto non è il carattere centrale).
 
-Find the sum of the positive integers not exceeding $10^{10}$ whose phigital representation is palindromic.
+La somma dei numeri interi che non eccedono 1000 la cui rappresentazione in base pi-greco è palindromica è 4345.
+
+Trova la somma dei numeri interi positivi non eccedenti $10^{10}$ la cui rappresentazione in base pi-greco è palindromica.
 
 # --hints--
 
-`euler473()` should return 35856681704365.
+`phigitalNumberBase()` dovrebbe restituire `35856681704365`.
 
 ```js
-assert.strictEqual(euler473(), 35856681704365);
+assert.strictEqual(phigitalNumberBase(), 35856681704365);
 ```
 
 # --seed--
@@ -39,12 +41,12 @@ assert.strictEqual(euler473(), 35856681704365);
 ## --seed-contents--
 
 ```js
-function euler473() {
+function phigitalNumberBase() {
 
   return true;
 }
 
-euler473();
+phigitalNumberBase();
 ```
 
 # --solutions--

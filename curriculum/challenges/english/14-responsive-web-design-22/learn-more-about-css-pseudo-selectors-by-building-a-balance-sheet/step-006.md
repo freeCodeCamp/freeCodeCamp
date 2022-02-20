@@ -1,5 +1,5 @@
 ---
-id: 6193de63d0fcab1f0b4112a0
+id: 61fd6b7c83dbf54a08cf0498
 title: Step 6
 challengeType: 0
 dashedName: step-6
@@ -7,26 +7,39 @@ dashedName: step-6
 
 # --description--
 
-Give the first `span` element the text `2019`, the second the text `2020`, and the third the text `2021`. Also give the third `span` a `class` set to `current`.
+Within your `div` element, add three `span` elements. Give each of them a `class` attribute set to `year`, and add the following text (in order): `2019`, `2020`, and `2021`.
 
 # --hints--
 
-Your first `span` element should have the text `2019`.
+Your `div` element should have three `span` elements.
 
 ```js
-assert(document.querySelectorAll('#header > .row > span')?.[0]?.textContent === '2019');
+assert(document.querySelector('div')?.children?.length === 3);
 ```
 
-Your second `span` element should have the text `2020`.
+Each `span` element should have a `class` attribute set to `year`.
 
 ```js
-assert(document.querySelectorAll('#header > .row > span')?.[1]?.textContent === '2020');
+const spans = [...document.querySelector('div')?.children];
+spans.forEach(span => assert(span?.classList?.contains('year')));
 ```
 
-Your third `span` element should have the text `2021`.
+Your first `span` should have the text `2019`.
 
 ```js
-assert(document.querySelectorAll('#header > .row > span')?.[2]?.textContent === '2021');
+assert(document.querySelector('div')?.children?.[0]?.textContent === '2019');
+```
+
+Your second `span` should have the text `2020`.
+
+```js
+assert(document.querySelector('div')?.children?.[1]?.textContent === '2020');
+```
+
+Your third `span` should have the text `2021`.
+
+```js
+assert(document.querySelector('div')?.children?.[2]?.textContent === '2021');
 ```
 
 # --seed--
@@ -37,26 +50,26 @@ assert(document.querySelectorAll('#header > .row > span')?.[2]?.textContent === 
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AcmeWidgetCorp Balance Sheet</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
-    <div id="sheet">
-      <div id="header">
+    <main>
+      <section>
+        <h1>
+          <span class="flex">
+            <span>AcmeWidgetCorp</span>
+            <span>Balance Sheet</span>
+          </span>
+        </h1>
 --fcc-editable-region--
-        <h1>Balance Sheet</h1>
-        <h2>AcmeWidgetCorp</h2>
-        <p class="row">
-          <span></span>
-          <span></span>
-          <span></span>
-        </p>
+        <div id="years" aria-hidden="true">
+        </div>
 --fcc-editable-region--
-      </div>
-    </div>
-    <footer>Last Updated: December 2021</footer>
+      </section>
+    </main>
   </body>
 </html>
 ```

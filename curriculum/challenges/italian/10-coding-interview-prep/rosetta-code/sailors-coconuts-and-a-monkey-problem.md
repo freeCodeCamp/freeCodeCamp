@@ -1,6 +1,6 @@
 ---
 id: 59da22823d04c95919d46269
-title: 'Sailors, coconuts and a monkey problem'
+title: 'Problema dei marinai, scimmie e noci di cocco'
 challengeType: 5
 forumTopicId: 302304
 dashedName: sailors-coconuts-and-a-monkey-problem
@@ -8,38 +8,38 @@ dashedName: sailors-coconuts-and-a-monkey-problem
 
 # --description--
 
-Five sailors are shipwrecked on an island and collect a large pile of coconuts during the day. That night the first sailor wakes up and decides to take his first share early so tries to divide the pile of coconuts equally into five piles but finds that there is one coconut left over, so he tosses it to a monkey and then hides "his" one of the five equally sized piles of coconuts and pushes the other four piles together to form a single visible pile of coconuts again and goes to bed. To cut a long story short, each of the sailors in turn gets up once during the night and performs the same actions of dividing the coconut pile into five, finding that one coconut is left over and giving that single remainder coconut to the monkey. In the morning (after the surreptitious and separate action of each of the five sailors during the night), the remaining coconuts are divided into five equal piles for each of the sailors, whereupon it is found that the pile of coconuts divides equally amongst the sailors with no remainder. (Nothing for the monkey in the morning.)
+Cinque marinai sono naufragati su un'isola e raccolgono un grande mucchio di noci di cocco durante il giorno. Quella notte il primo marinaio si sveglia e decide di prendere la sua prima parte presto, così cerca di dividere il mucchio di noci di cocco ugualmente in cinque pile, ma scopre che c'è un cocco rimasto, così lo lancia ad una scimmia e poi nasconde la "sua" pila di cocco, di pari dimensione, e spinge le altre quattro insieme per formare nuovamente un unico mucchio visibile di noci di cocco e va a letto. Per farla breve, ciascuno dei marinai a sua volta si alza una volta durante la notte ed esegue le stesse azioni di divisione del mucchio di cocco in cinque, scopre che un cocco è rimasto e da quel singolo cocco alla scimmia. Al mattino (dopo l'azione surrettizia e separata di ciascuno dei cinque marinai durante la notte), le noci di cocco restanti sono suddivise in cinque pile uguali per ciascuno dei marinai, dopodiché si scopre che il mucchio di noci di cocco si divide ugualmente tra i marinai senza resto. (Niente per la scimmia al mattino.)
 
 # --instructions--
 
-Create a function that returns the minimum possible size of the initial pile of coconuts collected during the day for `N` sailors. **Note:** Of course the tale is told in a world where the collection of any amount of coconuts in a day and multiple divisions of the pile, etc. can occur in time fitting the story line, so as not to affect the mathematics. **C.f:**
+Crea una funzione che restituisca la dimensione minima possibile del mucchio iniziale di noci di cocco raccolto durante il giorno per `N` marinai. **Nota:** Naturalmente la storia è raccontata in un mondo in cui la raccolta di qualsiasi quantità di noci di cocco in un giorno e divisioni multiple del mucchio, ecc. possono verificarsi nel tempo della storia, in modo da non influenzare la matematica. **Confronta:**
 
 <ul>
   <li><a href="https://www.youtube.com/watch?v=U9qU20VmvaU" target="_blank"> Monkeys and Coconuts - Numberphile</a> (Video) Analytical solution.</li>
-  <li><a href="https://oeis.org/A002021" target="_blank">A002021 Pile of coconuts problem</a> The On-Line Encyclopedia of Integer Sequences. (Although some of its references may use the alternate form of the tale).</li>
+  <li><a href="https://oeis.org/A002021" target="_blank">A002021 Problema del mucchio di noci di cocco</a> L'Enciclopedia online delle sequenze di numeri interi. (Anche se alcuni dei suoi riferimenti possono utilizzare la forma alternativa del racconto).</li>
 </ul>
 
 # --hints--
 
-`splitCoconuts` should be a function.
+`splitCoconuts` dovrebbe essere una funzione.
 
 ```js
 assert(typeof splitCoconuts === 'function');
 ```
 
-`splitCoconuts(5)` should return 3121.
+`splitCoconuts(5)` dovrebbe restituire 3121.
 
 ```js
 assert(splitCoconuts(5) === 3121);
 ```
 
-`splitCoconuts(6)` should return 233275.
+`splitCoconuts(6)` dovrebbe restituire 233275.
 
 ```js
 assert(splitCoconuts(6) === 233275);
 ```
 
-`splitCoconuts(7)` should return 823537.
+`splitCoconuts(7)` dovrebbe restituire 823537.
 
 ```js
 assert(splitCoconuts(7) === 823537);

@@ -11,7 +11,7 @@
   - [プルリクエストをオープンする](how-to-open-a-pull-request.md)
   - [コーディングチャレンジに貢献する](how-to-work-on-coding-challenges.md)
   - [プラクティスプロジェクトに貢献する](how-to-work-on-practice-projects.md)
-  - [CodeRoad でチュートリアルに貢献する](how-to-work-on-tutorials-that-use-coderoad.md)
+  - [CodeRoad のチュートリアルに貢献する](how-to-work-on-tutorials-that-use-coderoad.md)
   - [ローカライズされたクライアント Web アプリに貢献する](how-to-work-on-localized-client-webapp.md)
   - [Cypress テストに貢献する](how-to-add-cypress-tests.md)
   - [ビデオチャレンジに貢献する](how-to-help-with-video-challenges.md)

@@ -115,16 +115,21 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps, ShowCodeAllyState> {
 
   componentDidMount(): void {
     const {
-      updateChallengeMeta,
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: { challengeType, title }
+          challenge: { challengeType, helpCategory, title }
         }
       },
-      pageContext: { challengeMeta }
+      pageContext: { challengeMeta },
+      updateChallengeMeta
     } = this.props;
-    updateChallengeMeta({ ...challengeMeta, title, challengeType });
+    updateChallengeMeta({
+      ...challengeMeta,
+      title,
+      challengeType,
+      helpCategory
+    });
     challengeMounted(challengeMeta.id);
     this._container?.focus();
   }

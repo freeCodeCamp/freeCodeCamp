@@ -23,7 +23,7 @@ myTest();
 console.log(loc);
 ```
 
-La chiamata alla funzione `myTest()` mostrerà la stringa `foo` nella console. La linea `console.log(loc)` genererà un errore, perché `loc` non è definita al di fuori della funzione.
+La chiamata alla funzione `myTest()` mostrerà la stringa `foo` nella console. La riga `console.log(loc)` (al di fuori della funzione `myTest`) lancerà un errore visto che `loc` non è definito al di fuori della funzione.
 
 # --instructions--
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f3c61000cf542c50fed9
-title: 'Problem 90: Cube digit pairs'
+title: 'Problema 90: coppie di cubi con le cifre'
 challengeType: 5
 forumTopicId: 302207
 dashedName: problem-90-cube-digit-pairs
@@ -8,38 +8,38 @@ dashedName: problem-90-cube-digit-pairs
 
 # --description--
 
-Each of the six faces on a cube has a different digit (0 to 9) written on it; the same is done to a second cube. By placing the two cubes side-by-side in different positions we can form a variety of 2-digit numbers.
+Ognuno delle sei facce di un cubo ha scritta una diversa cifra (da 0 a 9); la stessa cosa è fatta con un diverso cubo. Mettendo i due cubi fianco a fianco in diverse posizioni possiamo formare una varietà di numeri a 2 cifre.
 
-For example, the square number 64 could be formed:
+Per esempio, possiamo formare il numero quadrato 64:
 
-<img class="img-responsive center-block" alt="two cubes, one with the number 6 and the other with number 4" src="https://cdn-media-1.freecodecamp.org/project-euler/cube-digit-pairs.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="due cubi, uno con il numero 6 e uno con il numero 4" src="https://cdn-media-1.freecodecamp.org/project-euler/cube-digit-pairs.png" style="background-color: white; padding: 10px;" />
 
-In fact, by carefully choosing the digits on both cubes it is possible to display all of the square numbers below one-hundred: 01, 04, 09, 16, 25, 36, 49, 64, and 81.
+Infatti, scegliendo con attenzione le cifre sui due cubi, possiamo mostrare tutti i numeri quadrati al di sotto di 100: 01, 04, 09, 16, 25, 36, 49, 64, 81.
 
-For example, one way this can be achieved is by placing {0, 5, 6, 7, 8, 9} on one cube and {1, 2, 3, 4, 8, 9} on the other cube.
+Per esempio, un modo in cui questo si può ottenere è scrivendo {0, 5, 6, 7, 8, 9} su un cubo e {1, 2, 3, 4, 8, 9} sull'altro cubo.
 
-However, for this problem we shall allow the 6 or 9 to be turned upside-down so that an arrangement like {0, 5, 6, 7, 8, 9} and {1, 2, 3, 4, 6, 7} allows for all nine square numbers to be displayed; otherwise it would be impossible to obtain 09.
+Invece, per questo problema è possibile mettere il 6 o il 9 sottosopra così che un arrangiamento come {0, 5, 6, 7, 8, 9} e {1, 2, 3, 4, 6, 7} permette la formazione di tutti e nove i numeri quadrati, altrimenti sarebbe impossibile ottenere 09.
 
-In determining a distinct arrangement we are interested in the digits on each cube, not the order.
+Nel determinare un arrangiamento distingo siamo interessati alle cifre su ogni cubo, non al loro ordine.
 
 <div style="margin-left: 4em;">
-  {1, 2, 3, 4, 5, 6} is equivalent to {3, 6, 4, 1, 2, 5}<br>
-  {1, 2, 3, 4, 5, 6} is distinct from {1, 2, 3, 4, 5, 9}
+  {1, 2, 3, 4, 5, 6} è equivalente a {3, 6, 4, 1, 2, 5}<br>
+  {1, 2, 3, 4, 5, 6} è diverso da {1, 2, 3, 4, 5, 9}
 </div>
 
-But because we are allowing 6 and 9 to be reversed, the two distinct sets in the last example both represent the extended set {1, 2, 3, 4, 5, 6, 9} for the purpose of forming 2-digit numbers.
+Ma visto che permettiamo al 6 e al 9 di essere capovolti, i due set distinti nell'ultimo esempio rappresentano entrambi il set esteso {1, 2, 3, 4, 5, 6, 9} per lo scopo di formare numeri a due cifre.
 
-How many distinct arrangements of the two cubes allow for all of the square numbers to be displayed?
+Quanti arrangiamenti diversi dei due cubi permettono di formare tutti i numeri quadrati?
 
 # --hints--
 
-`cubeDigitPairs()` should return a number.
+`cubeDigitPairs()` dovrebbe restituire un numero.
 
 ```js
 assert(typeof cubeDigitPairs() === 'number');
 ```
 
-`cubeDigitPairs()` should return 1217.
+`cubeDigitPairs()` dovrebbe restituire 1217.
 
 ```js
 assert.strictEqual(cubeDigitPairs(), 1217);

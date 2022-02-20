@@ -467,7 +467,7 @@
     "previous-page": "Voltar à página anterior",
     "next-page": "Ir para a próxima página",
     "last-page": "Ir para a última página",
-    "primary-nav": "primary",
+    "primary-nav": "primário",
     "breadcrumb-nav": "breadcrumb"
   },
   "flash": {
@@ -523,7 +523,9 @@
     "delete-token-err": "Ocorreu um erro ao tentar excluir seu token",
     "token-created": "Você criou com sucesso um novo token.",
     "token-deleted": "Seu token foi excluído.",
-    "complete-project-first": "Você precisa completar o projeto primeiro."
+    "complete-project-first": "Você precisa completar o projeto primeiro.",
+    "local-code-save-error": "Opa, seu código não salvou, o armazenamento local do seu navegador pode estar cheio.",
+    "local-code-saved": "Salvo! Seu código foi salvo no armazenamento local do seu navegador."
   },
   "validation": {
     "max-characters": "Há um limite máximo de 288 caracteres, você tem {{charsLeft}} restante(s)",
@@ -551,7 +553,7 @@
       "heading-legacy-full-stack": "Como parte desta certificação de full-stack legada, {{user}} completou as seguintes certificações:",
       "heading": "Como parte da certificação, {{user}} concluiu os seguintes projetos e passou em todos os testes:",
       "solution": "solução",
-      "no-solution": "error displaying solution, email support@freeCodeCamp.org to get help.",
+      "no-solution": "erro exibindo a solução, envie um e-mail para support@freeCodeCamp.org para obter ajuda.",
       "source": "fonte",
       "footnote": "Se você suspeitar que algum destes projetos viola a <2>política de honestidade acadêmica</2>, <5>reporte isto à nossa equipe</5>.",
       "title": {

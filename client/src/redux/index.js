@@ -281,7 +281,7 @@ export const certificatesByNameSelector = username => state => {
     isSciCompPyCertV7,
     isDataAnalysisPyCertV7,
     isMachineLearningPyCertV7,
-    isRelationalDatabasesCertV8
+    isRelationalDatabaseCertV8
   } = userByNameSelector(username)(state);
   return {
     hasModernCert:
@@ -296,7 +296,7 @@ export const certificatesByNameSelector = username => state => {
       isSciCompPyCertV7 ||
       isDataAnalysisPyCertV7 ||
       isMachineLearningPyCertV7 ||
-      isRelationalDatabasesCertV8,
+      isRelationalDatabaseCertV8,
     hasLegacyCert:
       isFrontEndCert || isBackEndCert || isDataVisCert || isInfosecQaCert,
     isFullStackCert,
@@ -352,9 +352,9 @@ export const certificatesByNameSelector = username => state => {
         certSlug: 'machine-learning-with-python-v7'
       },
       {
-        show: isRelationalDatabasesCertV8,
-        title: 'Relational Databases Certification',
-        certSlug: 'relational-databases-v8'
+        show: isRelationalDatabaseCertV8,
+        title: 'Relational Database Certification',
+        certSlug: 'relational-database-v8'
       }
     ],
     legacyCerts: [

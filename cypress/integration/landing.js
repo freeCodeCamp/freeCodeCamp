@@ -58,7 +58,7 @@ describe('Landing page', () => {
   });
 
   it('Has links to all the certifications', function () {
-    cy.get(selectors.certifications).children().its('length').should('eq', 11);
+    cy.get(selectors.certifications).children().its('length').should('eq', 12);
     cy.wrap(certifications).each(cert => {
       cy.get(selectors.certifications).contains(cert);
     });

@@ -1,11 +1,11 @@
 {
   "name": "Build a Periodic Table Database Project",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "order": 12,
   "time": "30 hours",
   "template": "",
   "required": [],
-  "superBlock": "relational-databases",
+  "superBlock": "relational-database",
   "challengeOrder": [
     [
       "602d9ff222201c65d2a019f2",

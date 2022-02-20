@@ -1,5 +1,5 @@
 ---
-id: 6193e2baa04690265435e25f
+id: 61fd71d596e8f253b9408b39
 title: Step 10
 challengeType: 0
 dashedName: step-10
@@ -7,27 +7,30 @@ dashedName: step-10
 
 # --description--
 
-Below the final `.notes` element, create a `p` element with a `class` of `row` and `total`.
+The `tr` element is used to indicate a table row. Add a `tr` element within your `thead` element. In your new `tr` element, add a `td` element, followed by three `th` elements.
+
+The `td` element indicates a data cell, while the `th` element indicates a header cell.
 
 # --hints--
 
-You should create a new `p` element within your `.section` element.
+Your `thead` element should have a `tr` element.
 
 ```js
-assert(document.querySelectorAll('.section > p')?.length === 4);
+assert(document.querySelector('thead')?.children?.[0]?.localName === 'tr');
 ```
 
-Your new `p` element should have a `class` attribute set to `row total`.
+Your `tr` element should have a `td` element as the first child.
 
 ```js
-assert(document.querySelectorAll('.section > p')?.[3]?.classList?.contains('row'));
-assert(document.querySelectorAll('.section > p')?.[3]?.classList?.contains('total'));
+assert(document.querySelector('tr')?.children?.[0]?.localName === 'td');
 ```
 
-Your new `p` element should be the last element in the `.section` element.
+Your `tr` element should have three `th` elements, after the `td` element.
 
 ```js
-assert(document.querySelectorAll('.section > p')?.[3]?.nextElementSibling === null);
+assert(document.querySelector('tr')?.children?.[1]?.localName === 'th');
+assert(document.querySelector('tr')?.children?.[2]?.localName === 'th');
+assert(document.querySelector('tr')?.children?.[3]?.localName === 'th');
 ```
 
 # --seed--
@@ -38,35 +41,42 @@ assert(document.querySelectorAll('.section > p')?.[3]?.nextElementSibling === nu
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AcmeWidgetCorp Balance Sheet</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
-    <div id="sheet">
-      <div id="header">
-        <h1>Balance Sheet</h1>
-        <h2>AcmeWidgetCorp</h2>
-        <p class="row">
-          <span>2019</span>
-          <span>2020</span>
-          <span class="current">2021</span>
-        </p>
-      </div>
-      <h2>Assets</h2>
+    <main>
+      <section>
+        <h1>
+          <span class="flex">
+            <span>AcmeWidgetCorp</span>
+            <span>Balance Sheet</span>
+          </span>
+        </h1>
+        <div id="years" aria-hidden="true">
+          <span class="year">2019</span>
+          <span class="year">2020</span>
+          <span class="year">2021</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <caption>Assets</caption>
 --fcc-editable-region--
-      <div class="section">
-        <p class="row"></p>
-        <span class="notes"></span>
-        <p class="row"></p>
-        <span class="notes"></span>
-        <p class="row"></p>
-        <span class="notes"></span>
-      </div>
+            <thead>
+            </thead>
 --fcc-editable-region--
-    </div>
-    <footer>Last Updated: December 2021</footer>
+            <tbody>
+            </tbody>
+          </table>
+          <table>
+          </table>
+          <table>
+          </table>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
 ```

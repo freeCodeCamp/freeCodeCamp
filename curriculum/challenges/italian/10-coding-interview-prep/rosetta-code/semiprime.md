@@ -1,6 +1,6 @@
 ---
 id: 5eb3e4aa847216613aa81983
-title: Semiprime
+title: Semiprimi
 challengeType: 5
 forumTopicId: 385318
 dashedName: semiprime
@@ -8,83 +8,83 @@ dashedName: semiprime
 
 # --description--
 
-Semiprime numbers are natural numbers that are products of exactly two (possibly equal) [prime numbers](https://rosettacode.org/wiki/prime_number).
+I numeri semiprimi sono numeri naturali che sono il prodotto di esattamente due [numeri primi](https://rosettacode.org/wiki/prime_number) (anche uguali).
 
 <pre>1679  =  23 x 73</pre>
 
 # --instructions--
 
-Write a function that returns true if a number is semiprime, or false if it is not.
+Scrivi una funzione che restituisce vero se un numero è semiprimo, o falso se non lo è.
 
 # --hints--
 
-`isSemiPrime` should be a function.
+`isSemiPrime` dovrebbe essere una funzione.
 
 ```js
 assert(typeof isSemiPrime === 'function');
 ```
 
-`isSemiPrime(100)` should return a boolean.
+`isSemiPrime(100)` dovrebbe restituire un booleano.
 
 ```js
 assert(typeof isSemiPrime(100) === 'boolean');
 ```
 
-`isSemiPrime(100)` should return `false`.
+`isSemiPrime(100)` dovrebbe restituire `false`.
 
 ```js
 assert.equal(isSemiPrime(100), false);
 ```
 
-`isSemiPrime(504)` should return `false`.
+`isSemiPrime(504)` dovrebbe restituire `false`.
 
 ```js
 assert.equal(isSemiPrime(504), false);
 ```
 
-`isSemiPrime(4)` should return `true`.
+`isSemiPrime(4)` dovrebbe restituire `true`.
 
 ```js
 assert.equal(isSemiPrime(4), true);
 ```
 
-`isSemiPrime(46)` should return `true`.
+`isSemiPrime(46)` dovrebbe restituire `true`.
 
 ```js
 assert.equal(isSemiPrime(46), true);
 ```
 
-`isSemiPrime(13)` should return `false`.
+`isSemiPrime(13)` dovrebbe restituire `false`.
 
 ```js
 assert.equal(isSemiPrime(13), false);
 ```
 
-`isSemiPrime(74)` should return `true`.
+`isSemiPrime(74)` dovrebbe restituire `true`.
 
 ```js
 assert.equal(isSemiPrime(74), true);
 ```
 
-`isSemiPrime(1679)` should return `true`.
+`isSemiPrime(1679)` dovrebbe restituire `true`.
 
 ```js
 assert.equal(isSemiPrime(1679), true);
 ```
 
-`isSemiPrime(2)` should return `false`.
+`isSemiPrime(2)` dovrebbe restituire `false`.
 
 ```js
 assert.equal(isSemiPrime(2), false);
 ```
 
-`isSemiPrime(95)` should return `true`.
+`isSemiPrime(95)` dovrebbe restituire `true`.
 
 ```js
 assert.equal(isSemiPrime(95), true);
 ```
 
-`isSemiPrime(124)` should return `false`.
+`isSemiPrime(124)` dovrebbe restituire `false`.
 
 ```js
 assert.equal(isSemiPrime(124), false);

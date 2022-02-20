@@ -25,6 +25,7 @@ export const publicUserProps = [
   'isQaCertV7',
   'isInfosecCertV7',
   'isJsAlgoDataStructCert',
+  'isRelationalDatabaseCertV8',
   'isRespWebDesignCert',
   'isSciCompPyCertV7',
   'isDataAnalysisPyCertV7',

@@ -2,7 +2,7 @@
 
 ## 一般的な JavaScript
 
-ほとんどの場合、[リンター](how-to-setup-freecodecamp-locally.md#follow-these-steps-to-get-your-development-environment-ready) は、コードベースの好ましいプラクティスに反するフォーマットを警告します。
+ほとんどの場合、[リンター](how-to-setup-freecodecamp-locally.md#以下の手順に従って、開発環境を準備してください。) は、コードベースの好ましいプラクティスに反するフォーマットを警告します。
 
 クラスベースのコンポーネントよりも関数コンポーネントの使用を推奨します。
 
