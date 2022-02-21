@@ -72,7 +72,7 @@ Some examples of good PR titles would be:
 
 ## Feedback on pull requests
 
-> Congratulations! :tada: on making a PR and thanks a lot for taking the time to contribute.
+> :tada: Congratulations on making a PR and thanks a lot for taking the time to contribute.
 
 Our moderators will now take a look and leave you feedback. Please be patient with the fellow moderators and respect their time. All pull requests are reviewed in due course.
 
