@@ -18,6 +18,10 @@ exports.buildMobileCurriculum = function buildMobileCurriculum(json) {
 
     const superBlocks = Object.keys(curriculum);
 
+    const superBlockObj = { superblocks: superBlocks.slice(1) };
+
+    writeToFile('availableSuperblocks', superBlockObj);
+
     let blockNames = {};
 
     for (let i = 0; i < superBlocks.length; i++) {
@@ -35,20 +39,16 @@ exports.buildMobileCurriculum = function buildMobileCurriculum(json) {
         blockNames[superBlocks[i]]['blocks'][blockGroup[j]]['challenges'] =
           curriculum[superBlocks[i]]['blocks'][blockGroup[j]]['meta'];
       }
+
+      writeToFile(superBlocks[i], blockNames);
+      blockNames = {};
     }
+  }
 
-    // remove certification object
-
-    for (var i in blockNames) {
-      delete blockNames[i];
-      break;
-    }
-
-    const parsedJson = { superblocks: blockNames };
-
+  function writeToFile(superblock, json) {
     fs.writeFileSync(
-      `${mobileStaticPath}/mobile/curriculum-mobile.json`,
-      JSON.stringify(parsedJson)
+      `${mobileStaticPath}/mobile/${superblock}.json`,
+      JSON.stringify(json)
     );
   }
 };
