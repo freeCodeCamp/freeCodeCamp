@@ -30,7 +30,7 @@ import Notes from '../components/notes';
 import Output from '../components/output';
 import Preview from '../components/preview';
 import ProjectPreviewModal, {
-  PreviewConfig
+  ChallengeData
 } from '../components/project-preview-modal';
 import SidePanel from '../components/side-panel';
 import VideoModal from '../components/video-modal';
@@ -97,7 +97,10 @@ interface ShowClassicProps {
   output: string[];
   pageContext: {
     challengeMeta: ChallengeMeta;
-    projectPreview: PreviewConfig & { showProjectPreview: boolean };
+    projectPreview: {
+      challengeData: ChallengeData;
+      showProjectPreview: boolean;
+    };
   };
   t: TFunction;
   tests: Test[];
@@ -429,7 +432,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       executeChallenge,
       pageContext: {
         challengeMeta: { nextChallengePath, prevChallengePath },
-        projectPreview
+        projectPreview: { challengeData, showProjectPreview }
       },
       challengeFiles,
       t
@@ -493,7 +496,10 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           <HelpModal />
           <VideoModal videoUrl={this.getVideoUrl()} />
           <ResetModal />
-          <ProjectPreviewModal previewConfig={projectPreview} />
+          <ProjectPreviewModal
+            challengeData={challengeData}
+            showProjectPreview={showProjectPreview}
+          />
         </LearnLayout>
       </Hotkeys>
     );

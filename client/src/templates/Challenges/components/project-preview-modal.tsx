@@ -15,17 +15,23 @@ import Preview from './preview';
 
 import './project-preview-modal.css';
 
-export interface PreviewConfig {
+export interface ChallengeData {
   challengeType: number;
   challengeFiles: CompletedChallenge['challengeFiles'];
+}
+
+interface ProjectPreviewMountedPayload {
+  challengeData: ChallengeData;
+  showProjectPreview: boolean;
 }
 
 interface Props {
   closeModal: (arg: string) => void;
   isOpen: boolean;
-  projectPreviewMounted: (previewConfig: PreviewConfig) => void;
-  previewConfig: PreviewConfig;
+  projectPreviewMounted: (payload: ProjectPreviewMountedPayload) => void;
+  challengeData: ChallengeData;
   setEditorFocusability: (focusability: boolean) => void;
+  showProjectPreview: boolean;
 }
 
 const mapStateToProps = (state: unknown) => ({
@@ -41,8 +47,9 @@ function ProjectPreviewModal({
   closeModal,
   isOpen,
   projectPreviewMounted,
-  previewConfig,
-  setEditorFocusability
+  challengeData,
+  setEditorFocusability,
+  showProjectPreview
 }: Props): JSX.Element {
   const { t } = useTranslation();
   useEffect(() => {
@@ -73,7 +80,7 @@ function ProjectPreviewModal({
         <Preview
           previewId={projectPreviewId as string}
           previewMounted={() => {
-            projectPreviewMounted(previewConfig);
+            projectPreviewMounted({ challengeData, showProjectPreview });
           }}
         />
       </Modal.Body>
