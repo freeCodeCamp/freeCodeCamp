@@ -11,6 +11,8 @@ dashedName: stand-in-line
 
 In Computer Science a <dfn>queue</dfn> is an abstract <dfn>Data Structure</dfn> where items are kept in order. New items can be added at the back of the queue and old items are taken off from the front of the queue.
 
+# --instructions--
+
 Write a function `nextInLine` which takes an array (`arr`) and a number (`item`) as arguments.
 
 Add the number to the end of the array, then remove the first element of the array.
