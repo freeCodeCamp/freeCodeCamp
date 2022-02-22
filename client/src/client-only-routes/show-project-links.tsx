@@ -22,14 +22,14 @@ type SolutionState = {
   projectTitle: string;
   challengeFiles: CompletedChallenge['challengeFiles'];
   solution: CompletedChallenge['solution'];
-  isOpen: boolean;
+  showCode: boolean;
 };
 
 const initSolutionState: SolutionState = {
   projectTitle: '',
   challengeFiles: null,
   solution: '',
-  isOpen: false
+  showCode: false
 };
 
 const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
@@ -58,7 +58,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
         projectTitle,
         challengeFiles,
         solution,
-        isOpen: true
+        showCode: true
       });
 
     return (
@@ -121,7 +121,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
     name,
     user: { username }
   } = props;
-  const { challengeFiles, isOpen, projectTitle, solution } = solutionState;
+  const { challengeFiles, showCode, solution, projectTitle } = solutionState;
   return (
     <div>
       {t(
@@ -133,11 +133,11 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       <Spacer />
       <ul>{renderProjectsFor(certName)}</ul>
       <Spacer />
-      {isOpen ? (
+      {showCode ? (
         <ProjectModal
           challengeFiles={challengeFiles}
           handleSolutionModalHide={handleSolutionModalHide}
-          isOpen={isOpen}
+          isOpen={showCode}
           projectTitle={projectTitle}
           // 'solution' is theoretically never 'null', if it a JsAlgoData cert
           // which is the only time we use the modal
