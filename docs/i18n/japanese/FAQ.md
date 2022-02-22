@@ -85,7 +85,7 @@ YouTube チャンネル用の動画講座を作成するには、[YouTube チャ
 
 **一定期間、着実に** 上記を実行し、仲間のモデレーターがあなたを推薦した場合に、スタッフから連絡が来て、モデレーターチームに加わることができます。 オープンソース作業はボランティアであり、私たちの時間は限られています。 皆様も、おそらく同じだと思います。 したがって、24 時間年中無休でコミュニティに参加するのではなく、**着実に** 取り組んでいただきたいです。
 
-モデレーターの責任と期待の包括的リストについては、[モデレーターハンドブック](https://contribute.freecodecamp.org/#/moderator-handbook) をご覧ください。
+Take a look at our [Moderator Handbook](moderator-handbook.md) for a more exhaustive list of other responsibilities and expectations we have of our moderators.
 
 ### このドキュメントに記載されていない問題で困っています。
 

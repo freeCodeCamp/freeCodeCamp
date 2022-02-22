@@ -85,7 +85,7 @@ Sei insgesamt respektvoll gegenüber anderen. Wir sind Menschen überall auf der
 
 Wenn du das oben genannte **eine Weile lang konsequent praktizierst** und unsere anderen Moderatoren dich empfehlen, wird ein Mitarbeiter auf dich zukommen und dich in das Moderatorenteam aufnehmen. Open-Source-Arbeit ist freiwillige Arbeit und unsere Zeit ist begrenzt. Wir erkennen an, dass dies wahrscheinlich auch in deiner Situation der Fall ist. Deshalb betonen wir **konsequent** zu sein, anstatt sich rund um die Uhr (24/7) in der Community zu engagieren.
 
-In unserem [Moderatorenhandbuch](https://contribute.freecodecamp.org/#/moderator-handbook) findest du eine ausführliche Liste mit weiteren Aufgaben und Erwartungen, die wir an unsere Moderatoren haben.
+Take a look at our [Moderator Handbook](moderator-handbook.md) for a more exhaustive list of other responsibilities and expectations we have of our moderators.
 
 ### Ich komme mit etwas nicht weiter, das in dieser Dokumentation nicht enthalten ist.
 
