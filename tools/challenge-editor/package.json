@@ -1,0 +1,16 @@
+{
+  "name": "@freecodecamp/challenge-editor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm-run-all -p start:*",
+    "start:api": "cd api && npm start",
+    "start:client": "cd client && npm start"
+  },
+  "author": "",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
