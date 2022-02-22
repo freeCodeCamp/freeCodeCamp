@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 
-import type { ChallengeFile, Required } from '../../../redux/prop-types';
+import type { CompletedChallenge } from '../../../redux/prop-types';
 import {
   closeModal,
   setEditorFocusability,
@@ -16,10 +16,8 @@ import Preview from './preview';
 import './project-preview-modal.css';
 
 export interface PreviewConfig {
-  challengeType: boolean;
-  challengeFiles: ChallengeFile[];
-  required: Required;
-  template: string;
+  challengeType: number;
+  challengeFiles: CompletedChallenge['challengeFiles'];
 }
 
 interface Props {
@@ -39,7 +37,7 @@ const mapDispatchToProps = {
   projectPreviewMounted
 };
 
-export function ProjectPreviewModal({
+function ProjectPreviewModal({
   closeModal,
   isOpen,
   projectPreviewMounted,

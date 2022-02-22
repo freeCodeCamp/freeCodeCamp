@@ -367,7 +367,6 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       }
     } = this.props;
     const { description, title } = this.getChallenge();
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return (
       challengeFiles && (
         <MultifileEditor
