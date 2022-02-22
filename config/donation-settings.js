@@ -94,7 +94,7 @@ const patreonDefaultPledgeAmount = 500;
 
 const aBTestConfig = {
   isTesting: true,
-  type: 'increaceChallengesCompleted'
+  type: 'badgeProgressModalCopy'
 };
 
 module.exports = {
