@@ -12,7 +12,7 @@
 
 脆弱性が報告されたら、それを調査し誤検知ではないことを確認します。 詳細を明確にする必要がある場合は、ご連絡いたします。 発見した各問題について個別にレポートを提出することができます。
 
-現時点ではいかなる報奨金も報酬も提供していませんが、その報告に多大なご尽力をいただいた場合、[殿堂入り](https://contribute.freecodecamp.org/#/security-hall-of-fame) リストにお名前を掲示します。
+While we do not offer any bounties or swags at the moment, we'll be happy to list your name in our [Hall of Fame](security-hall-of-fame.md) list, provided the reports are not low-effort.
 
 私たちは、[「beg bounties」](https://www.troyhunt.com/beg-bounties/) カテゴリの SPF & DKIM 構成、または SSL サーバーテスト等に関する問題を報告するため、ツール & オンラインユーティリティを使用することを検討します。それらの報告に対して対応することはできません。
 

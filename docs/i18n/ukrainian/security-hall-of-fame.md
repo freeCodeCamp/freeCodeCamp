@@ -1,6 +1,6 @@
 # Responsible Disclosure - Hall of Fame
 
-We appreciate any responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users. If you are interested in contributing to the security of our platform, please read our [security policy outlined here](https://contribute.freecodecamp.org/#/security).
+We appreciate any responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users. If you are interested in contributing to the security of our platform, please read our [security policy outlined here](security.md).
 
 While we do not offer any bounties or swags at the moment, we are grateful to these awesome people for helping us keep the platform safe for everyone:
 
