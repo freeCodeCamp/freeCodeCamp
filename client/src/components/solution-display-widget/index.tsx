@@ -23,7 +23,6 @@ export function SolutionDisplayWidget({
   showProjectPreview,
   displayContext
 }: Props) {
-  console.log('completedChallenge', completedChallenge);
   const { id, solution, githubLink } = completedChallenge;
   const { t } = useTranslation();
 

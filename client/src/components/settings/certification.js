@@ -5,8 +5,13 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
 import { createSelector } from 'reselect';
-
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
+import { connect } from 'react-redux';
+
+import { regeneratePathAndHistory } from '../../../../utils/polyvinyl';
+import { challengeTypes } from '../../../utils/challenge-types';
+import ProjectPreviewModal from '../../templates/Challenges/components/project-preview-modal';
+import { openModal } from '../../templates/Challenges/redux';
 import {
   projectMap,
   legacyProjectMap
@@ -50,9 +55,14 @@ const propTypes = {
   isRelationalDatabaseCertV8: PropTypes.bool,
   isRespWebDesignCert: PropTypes.bool,
   isSciCompPyCertV7: PropTypes.bool,
+  openModal: PropTypes.func,
   t: PropTypes.func.isRequired,
   username: PropTypes.string,
   verifyCert: PropTypes.func.isRequired
+};
+
+const mapDispatchToProps = {
+  openModal
 };
 
 const certifications = Object.keys(projectMap);
@@ -161,7 +171,7 @@ export class CertificationSettings extends Component {
   getUserIsCertMap = () => isCertMapSelector(this.props);
 
   getProjectSolution = (projectId, projectTitle) => {
-    const { completedChallenges } = this.props;
+    const { completedChallenges, openModal } = this.props;
     const completedProject = find(
       completedChallenges,
       ({ id }) => projectId === id
@@ -181,12 +191,25 @@ export class CertificationSettings extends Component {
         }
       });
 
+    const showProjectPreview = () => {
+      this.setState({
+        projectViewer: {
+          previewTitle: projectTitle,
+          challengeData: {
+            challengeFiles: challengeFiles?.map(regeneratePathAndHistory),
+            challengeType: challengeTypes.multiFileCertProject // TODO: stop hardcoding this
+          }
+        }
+      });
+      openModal('projectPreview');
+    };
+
     return (
       <SolutionDisplayWidget
         completedChallenge={completedProject}
         dataCy={projectTitle}
         showFilesSolution={showFilesSolution}
-        showProjectPreview={() => {}} // TODO: implement this
+        showProjectPreview={showProjectPreview}
         displayContext={'settings'}
       ></SolutionDisplayWidget>
     );
@@ -361,7 +384,7 @@ export class CertificationSettings extends Component {
   };
 
   render() {
-    const { solutionViewer } = this.state;
+    const { solutionViewer, projectViewer } = this.state;
     const { t } = this.props;
 
     return (
@@ -376,12 +399,15 @@ export class CertificationSettings extends Component {
           {legacyCertifications.map(certName =>
             this.renderCertifications(certName, legacyProjectMap)
           )}
-          {solutionViewer.isOpen && (
-            <ProjectModal
-              {...solutionViewer}
-              handleSolutionModalHide={this.handleSolutionModalHide}
-            />
-          )}
+          <ProjectModal
+            {...solutionViewer}
+            handleSolutionModalHide={this.handleSolutionModalHide}
+          />
+          <ProjectPreviewModal
+            {...projectViewer}
+            closeText={t('buttons.close')}
+            showProjectPreview={true}
+          />
         </section>
       </ScrollableAnchor>
     );
@@ -391,4 +417,7 @@ export class CertificationSettings extends Component {
 CertificationSettings.displayName = 'CertificationSettings';
 CertificationSettings.propTypes = propTypes;
 
-export default withTranslation()(CertificationSettings);
+export default connect(
+  null,
+  mapDispatchToProps
+)(withTranslation()(CertificationSettings));
