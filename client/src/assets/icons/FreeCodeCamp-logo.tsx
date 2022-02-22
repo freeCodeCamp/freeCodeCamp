@@ -1,22 +1,17 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 
-type FreeCodeCampLogoProps = {
-  ariaLabel: string;
-};
-
-function FreeCodeCampLogo({ ariaLabel }: FreeCodeCampLogoProps): JSX.Element {
-  const { t } = useTranslation();
-
+function FreeCodeCampLogo(
+  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+): JSX.Element {
   return (
     <svg
-      aria-label={t(ariaLabel)}
       height={24}
       version='1.1'
       viewBox='0 0 210 24'
       width={210}
       xmlns='http://www.w3.org/2000/svg'
       xmlnsXlink='http://www.w3.org/1999/xlink'
+      {...props}
     >
       <defs>
         <path

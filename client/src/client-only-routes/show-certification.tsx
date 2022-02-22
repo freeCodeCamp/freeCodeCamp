@@ -322,7 +322,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
         <header>
           <Col md={5} sm={12}>
             <div className='logo'>
-              <FreeCodeCampLogo ariaLabel='aria.fcc-logo' />
+              <FreeCodeCampLogo aria-hidden='true' />
             </div>
           </Col>
           <Col md={7} sm={12}>
