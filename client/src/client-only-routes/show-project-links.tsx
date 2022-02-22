@@ -1,7 +1,8 @@
 import { find, first } from 'lodash-es';
 import React, { useState } from 'react';
-import '../components/layouts/project-links.css';
 import { Trans, useTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
+
 import ProjectModal from '../components/SolutionViewer/ProjectModal';
 import { Spacer, Link } from '../components/helpers';
 import { CompletedChallenge, User } from '../redux/prop-types';
@@ -11,11 +12,19 @@ import {
 } from '../resources/cert-and-project-map';
 
 import { SolutionDisplayWidget } from '../components/solution-display-widget';
+import ProjectPreviewModal, {
+  ChallengeData
+} from '../templates/Challenges/components/project-preview-modal';
+import { challengeTypes } from '../../utils/challenge-types';
+import { openModal } from '../templates/Challenges/redux';
 
+import '../components/layouts/project-links.css';
+import { regeneratePathAndHistory } from '../../../utils/polyvinyl';
 interface ShowProjectLinksProps {
   certName: string;
   name: string;
   user: User;
+  openModal: (arg: string) => void;
 }
 
 type SolutionState = {
@@ -27,9 +36,13 @@ type SolutionState = {
 
 const initSolutionState: SolutionState = {
   projectTitle: '',
-  challengeFiles: null,
+  challengeFiles: [],
   solution: '',
   showCode: false
+};
+
+const mapDispatchToProps = {
+  openModal
 };
 
 const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
@@ -41,7 +54,8 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
 
   const getProjectSolution = (projectId: string, projectTitle: string) => {
     const {
-      user: { completedChallenges }
+      user: { completedChallenges },
+      openModal
     } = props;
     const completedProject = find(
       completedChallenges,
@@ -61,12 +75,23 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
         showCode: true
       });
 
+    const showProjectPreview = () => {
+      setSolutionState({
+        projectTitle,
+        challengeFiles,
+        solution,
+        showCode: false
+      });
+      openModal('projectPreview');
+    };
+
     return (
       <SolutionDisplayWidget
         completedChallenge={completedProject}
         dataCy={`${projectTitle} solution`}
         displayContext='certification'
         showFilesSolution={showFilesSolution}
+        showProjectPreview={showProjectPreview}
       ></SolutionDisplayWidget>
     );
   };
@@ -122,6 +147,13 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
     user: { username }
   } = props;
   const { challengeFiles, showCode, solution, projectTitle } = solutionState;
+  // TODO: stop hardcoding this
+  const challengeData: ChallengeData = {
+    challengeType: challengeTypes.multiFileCertProject,
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+    challengeFiles: challengeFiles?.map(regeneratePathAndHistory) ?? null
+  };
+
   return (
     <div>
       {t(
@@ -133,17 +165,21 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       <Spacer />
       <ul>{renderProjectsFor(certName)}</ul>
       <Spacer />
-      {showCode ? (
-        <ProjectModal
-          challengeFiles={challengeFiles}
-          handleSolutionModalHide={handleSolutionModalHide}
-          isOpen={showCode}
-          projectTitle={projectTitle}
-          // 'solution' is theoretically never 'null', if it a JsAlgoData cert
-          // which is the only time we use the modal
-          solution={solution as undefined | string}
-        />
-      ) : null}
+      <ProjectModal
+        challengeFiles={challengeFiles}
+        handleSolutionModalHide={handleSolutionModalHide}
+        isOpen={showCode}
+        projectTitle={projectTitle}
+        // 'solution' is theoretically never 'null', if it a JsAlgoData cert
+        // which is the only time we use the modal
+        solution={solution as undefined | string}
+      />
+      <ProjectPreviewModal
+        challengeData={challengeData}
+        closeText={t('buttons.close')}
+        previewTitle={projectTitle}
+        showProjectPreview={true}
+      ></ProjectPreviewModal>
       <Trans i18nKey='certification.project.footnote'>
         If you suspect that any of these projects violate the{' '}
         <a
@@ -169,4 +205,4 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
 
 ShowProjectLinks.displayName = 'ShowProjectLinks';
 
-export default ShowProjectLinks;
+export default connect(null, mapDispatchToProps)(ShowProjectLinks);

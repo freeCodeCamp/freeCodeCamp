@@ -498,6 +498,8 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           <ResetModal />
           <ProjectPreviewModal
             challengeData={challengeData}
+            closeText={t('buttons.start-coding')}
+            previewTitle={t('learn.project-preview-title')}
             showProjectPreview={showProjectPreview}
           />
         </LearnLayout>

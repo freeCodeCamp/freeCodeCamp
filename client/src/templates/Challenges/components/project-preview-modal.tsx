@@ -1,6 +1,5 @@
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import React, { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 
 import type { CompletedChallenge } from '../../../redux/prop-types';
@@ -17,7 +16,7 @@ import './project-preview-modal.css';
 
 export interface ChallengeData {
   challengeType: number;
-  challengeFiles: CompletedChallenge['challengeFiles'];
+  challengeFiles: CompletedChallenge['challengeFiles'] | null;
 }
 
 interface ProjectPreviewMountedPayload {
@@ -32,6 +31,8 @@ interface Props {
   challengeData: ChallengeData;
   setEditorFocusability: (focusability: boolean) => void;
   showProjectPreview: boolean;
+  previewTitle: string;
+  closeText: string;
 }
 
 const mapStateToProps = (state: unknown) => ({
@@ -49,9 +50,10 @@ function ProjectPreviewModal({
   projectPreviewMounted,
   challengeData,
   setEditorFocusability,
-  showProjectPreview
+  showProjectPreview,
+  previewTitle,
+  closeText
 }: Props): JSX.Element {
-  const { t } = useTranslation();
   useEffect(() => {
     if (isOpen) setEditorFocusability(false);
   });
@@ -71,17 +73,15 @@ function ProjectPreviewModal({
         className='project-preview-modal-header fcc-modal'
         closeButton={true}
       >
-        <Modal.Title className='text-center'>
-          {t('learn.project-preview-title')}
-        </Modal.Title>
+        <Modal.Title className='text-center'>{previewTitle}</Modal.Title>
       </Modal.Header>
       <Modal.Body className='project-preview-modal-body text-center'>
         {/* remove type assertion once frame.js has been migrated to TS */}
         <Preview
           previewId={projectPreviewId as string}
-          previewMounted={() => {
-            projectPreviewMounted({ challengeData, showProjectPreview });
-          }}
+          previewMounted={() =>
+            projectPreviewMounted({ challengeData, showProjectPreview })
+          }
         />
       </Modal.Body>
       <Modal.Footer>
@@ -94,7 +94,7 @@ function ProjectPreviewModal({
             setEditorFocusability(true);
           }}
         >
-          {t('buttons.start-coding')}
+          {closeText}
         </Button>
       </Modal.Footer>
     </Modal>

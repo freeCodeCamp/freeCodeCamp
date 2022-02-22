@@ -12,6 +12,7 @@ interface Props {
   completedChallenge: CompletedChallenge;
   dataCy?: string;
   showFilesSolution: () => void;
+  showProjectPreview?: () => void;
   displayContext: 'timeline' | 'settings' | 'certification';
 }
 
@@ -19,6 +20,7 @@ export function SolutionDisplayWidget({
   completedChallenge,
   dataCy,
   showFilesSolution,
+  showProjectPreview,
   displayContext
 }: Props) {
   console.log('completedChallenge', completedChallenge);
@@ -88,12 +90,7 @@ export function SolutionDisplayWidget({
       <MenuItem bsStyle='primary' onClick={showFilesSolution}>
         {t('buttons.show-code')}
       </MenuItem>
-      <MenuItem
-        bsStyle='primary'
-        href='https://example.com'
-        rel='noopener noreferrer'
-        target='_blank'
-      >
+      <MenuItem bsStyle='primary' onClick={showProjectPreview}>
         {t('buttons.show-project')}
       </MenuItem>
     </DropdownButton>
