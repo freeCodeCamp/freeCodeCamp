@@ -16,7 +16,7 @@ If the values being compared have different types, they are considered unequal, 
 **Examples**
 
 ```js
-3 ===  3 // true
+3 ===  3  // true
 3 === '3' // false
 ```
 

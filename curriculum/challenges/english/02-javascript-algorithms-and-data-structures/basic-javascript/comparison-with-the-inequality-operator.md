@@ -14,10 +14,10 @@ The inequality operator (`!=`) is the opposite of the equality operator. It mean
 **Examples**
 
 ```js
-1 !=  2 // true
-1 != "1" // false
-1 != '1' // false
-1 != true // false
+1 !=  2    // true
+1 != "1"   // false
+1 != '1'   // false
+1 != true  // false
 0 != false // false
 ```
 

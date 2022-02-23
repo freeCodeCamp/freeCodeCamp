@@ -16,10 +16,10 @@ Like the equality operator, the greater than operator will convert data types of
 **Examples**
 
 ```js
-5   >  3 // true
+5   >  3  // true
 7   > '3' // true
-2   >  3 // false
-'1' >  9 // false
+2   >  3  // false
+'1' >  9  // false
 ```
 
 # --instructions--

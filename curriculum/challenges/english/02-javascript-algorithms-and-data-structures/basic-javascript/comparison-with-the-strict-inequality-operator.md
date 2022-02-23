@@ -14,9 +14,9 @@ The strict inequality operator (`!==`) is the logical opposite of the strict equ
 **Examples**
 
 ```js
-3 !==  3 // false
+3 !==  3  // false
 3 !== '3' // true
-4 !==  3 // true
+4 !==  3  // true
 ```
 
 # --instructions--
