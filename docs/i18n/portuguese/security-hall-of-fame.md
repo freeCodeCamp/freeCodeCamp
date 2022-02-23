@@ -1,6 +1,6 @@
 # Divulgação responsável - Lista dos famosos
 
-Apreciamos qualquer divulgação responsável de vulnerabilidades que possam impactar a integridade de nossas plataformas e usuários. If you are interested in contributing to the security of our platform, please read our [security policy outlined here](security.md).
+Apreciamos qualquer divulgação responsável de vulnerabilidades que possam impactar a integridade de nossas plataformas e usuários. Se você está interessado em contribuir para a segurança de nossa plataforma, leia nossa [política de segurança descrita aqui](security.md).
 
 Embora não possamos oferecer nenhuma recompensa ou troca no momento, agradecemos a essas pessoas incríveis por nos ajudar a manter a plataforma segura para todos:
 
