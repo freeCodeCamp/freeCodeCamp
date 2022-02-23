@@ -29,6 +29,6 @@ describe('getSolutionDisplayType', () => {
     expect(getSolutionDisplayType(invalidGithubLink)).toBe('showProjectLink');
   });
   it('should handle solutions with both links', () => {
-    expect(getSolutionDisplayType(bothLinks)).toBe('showProjectAndGitHubLinks');
+    expect(getSolutionDisplayType(bothLinks)).toBe('showProjectAndGithubLinks');
   });
 });

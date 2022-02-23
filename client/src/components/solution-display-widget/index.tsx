@@ -146,14 +146,14 @@ export function SolutionDisplayWidget({
       ? {
           showFilesSolution: ShowFilesSolutionForCertification,
           showMultifileProjectSolution: ShowMultifileProjectSolution,
-          showProjectAndGitHubLinks: ShowProjectAndGithubLinkForCertification,
+          showProjectAndGithubLinks: ShowProjectAndGithubLinkForCertification,
           showProjectLink: ShowProjectLinkForCertification,
           none: MissingSolutionComponentForCertification
         }
       : {
           showFilesSolution: ShowFilesSolution,
           showMultifileProjectSolution: ShowMultifileProjectSolution,
-          showProjectAndGitHubLinks: ShowProjectAndGithubLinks,
+          showProjectAndGithubLinks: ShowProjectAndGithubLinks,
           showProjectLink: ShowProjectLink,
           none: MissingSolutionComponent
         };
