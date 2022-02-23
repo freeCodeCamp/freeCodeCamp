@@ -1,6 +1,6 @@
 # 責任ある開示 - 殿堂入り
 
-私たちのプラットフォームおよびユーザーの整合性に影響を与える可能性のある脆弱性について、責任ある開示をお願いします。 私たちのプラットフォームのセキュリティに貢献したい方は、[セキュリティポリシー](https://contribute.freecodecamp.org/#/security) をお読みください。
+私たちのプラットフォームおよびユーザーの整合性に影響を与える可能性のある脆弱性について、責任ある開示をお願いします。 If you are interested in contributing to the security of our platform, please read our [security policy outlined here](security.md).
 
 現時点ではいかなる報奨金も報酬も提供していませんが、プラットフォームの安全性を守ってくださる皆さんに心から感謝しています。
 

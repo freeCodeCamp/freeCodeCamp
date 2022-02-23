@@ -72,7 +72,7 @@ Alguns exemplos de bons títulos de PRs seriam:
 
 ## Comentários nos pull requests
 
-> :tada: Congratulations on making a PR and thanks a lot for taking the time to contribute.
+> :tada: Parabéns por fazer um PR e muito obrigado(a) por contribuir.
 
 Nossos moderadores vão dar uma olhada e deixar um comentário para você. Seja paciente com os outros moderadores e respeite o tempo deles. Todos os pull requests são revisados no tempo devido.
 

@@ -12,7 +12,7 @@ Wir freuen uns über jede verantwortungsvolle Offenlegung von Schwachstellen, di
 
 Wenn du eine Schwachstelle meldest, werden wir sie untersuchen und sicherstellen, dass es sich nicht um einen Fehlalarm handelt. Wir werden uns bei dir melden, wenn wir noch Details klären müssen. Du kannst für jedes Problem, das du findest, eine gesonderte Mitteilung machen.
 
-Im Moment bieten wir zwar keine Belohnungen oder Swags an, aber wir nehmen deinen Namen gerne in unsere [Hall of Fame](https://contribute.freecodecamp.org/#/security-hall-of-fame)-Liste auf, vorausgesetzt, die Meldungen betreffen keine geringfügigen Probleme.
+While we do not offer any bounties or swags at the moment, we'll be happy to list your name in our [Hall of Fame](security-hall-of-fame.md) list, provided the reports are not low-effort.
 
 Wir betrachten die Verwendung von Online-Tools und Hilfsprogrammen zur Meldung von Problemen mit SPF- und DKIM-Einstellungen, SSL-Server-Tests usw. als ["beg bounties"](https://www.troyhunt.com/beg-bounties/) und werden auf diese Meldungen nicht reagieren.
 

@@ -85,7 +85,7 @@ No conjunto, seja respeitoso com os outros. Somos seres humanos de todo o mundo.
 
 Se você praticar o que foi dito acima **consistentemente por algum tempo** e se nossos companheiros moderadores recomendarem você, um membro da equipe entrará em contato e fará sua inclusão na equipe de moderadores. O trabalho em código aberto é trabalho voluntário e nosso tempo é limitado. Reconhecemos que isso é provavelmente também é verdade no seu caso. Por isso, enfatizamos a importância de ser **consistente** em vez de se envolver na comunidade em tempo integral.
 
-Dê uma olhada no nosso [Manual do Moderador](https://contribute.freecodecamp.org/#/moderator-handbook) para obter uma lista mais extensa de responsabilidades e expectativas que temos com relação a nossos moderadores.
+Take a look at our [Moderator Handbook](moderator-handbook.md) for a more exhaustive list of other responsibilities and expectations we have of our moderators.
 
 ### Estou com dificuldade em algo que não está incluído na documentação.
 
