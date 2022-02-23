@@ -1,10 +1,10 @@
-/* eslint-disable @typescript-eslint/unbound-method */
 import { Button, Modal, Table } from '@freecodecamp/react-bootstrap';
 import Loadable from '@loadable/component';
 import { useStaticQuery, graphql } from 'gatsby';
 import { reverse, sortBy } from 'lodash-es';
 import React, { useMemo, useState } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
 
 import envData from '../../../../../config/env.json';
 import { langCodes } from '../../../../../config/i18n/all-langs';
@@ -13,8 +13,14 @@ import {
   getPathFromID,
   getTitleFromId
 } from '../../../../../utils';
+import { regeneratePathAndHistory } from '../../../../../utils/polyvinyl';
+import { challengeTypes } from '../../../../utils/challenge-types';
 import CertificationIcon from '../../../assets/icons/certification-icon';
 import { CompletedChallenge } from '../../../redux/prop-types';
+import ProjectPreviewModal, {
+  ChallengeData
+} from '../../../templates/Challenges/components/project-preview-modal';
+import { openModal } from '../../../templates/Challenges/redux';
 import { FullWidthRow, Link } from '../../helpers';
 import { SolutionDisplayWidget } from '../../solution-display-widget';
 import TimelinePagination from './timeline-pagination';
@@ -25,6 +31,10 @@ const SolutionViewer = Loadable(
   () => import('../../SolutionViewer/SolutionViewer')
 );
 
+const mapDispatchToProps = {
+  openModal
+};
+
 const { clientLocale } = envData as { clientLocale: keyof typeof langCodes };
 const localeCode = langCodes[clientLocale];
 
@@ -33,24 +43,32 @@ const ITEMS_PER_PAGE = 15;
 
 interface TimelineProps {
   completedMap: CompletedChallenge[];
+  openModal: (arg: string) => void;
   t: TFunction;
   username: string;
 }
 
 interface TimelineInnerProps extends TimelineProps {
-  idToNameMap: Map<string, string>;
+  idToNameMap: Map<string, NameMap>;
   sortedTimeline: CompletedChallenge[];
   totalPages: number;
 }
 
+interface NameMap {
+  challengeTitle: string;
+  challengePath: string;
+}
+
 function TimelineInner({
+  completedMap,
   idToNameMap,
+  openModal,
   sortedTimeline,
   totalPages,
-  completedMap,
   t,
   username
 }: TimelineInnerProps) {
+  const [projectTitle, setProjectTitle] = useState('');
   const [solutionToView, setSolutionToView] = useState<string | null>(null);
   const [solutionOpen, setSolutionOpen] = useState(false);
   const [pageNo, setPageNo] = useState(1);
@@ -67,6 +85,18 @@ function TimelineInner({
     setSolutionOpen(true);
     setSolution(solution ?? '');
     setChallengeFiles(challengeFiles);
+  }
+
+  function viewProject(
+    id: string,
+    solution: string | undefined | null,
+    challengeFiles: CompletedChallenge['challengeFiles']
+  ): void {
+    setSolutionToView(id);
+    setSolution(solution ?? '');
+    setChallengeFiles(challengeFiles);
+    setProjectTitle(idToNameMap.get(id)?.challengeTitle ?? '');
+    openModal('projectPreview');
   }
 
   function closeSolution(): void {
@@ -97,6 +127,7 @@ function TimelineInner({
       <SolutionDisplayWidget
         completedChallenge={completedChallenge}
         showFilesSolution={() => viewSolution(id, solution, challengeFiles)}
+        showProjectPreview={() => viewProject(id, solution, challengeFiles)}
         displayContext={'timeline'}
       ></SolutionDisplayWidget>
     );
@@ -140,69 +171,83 @@ function TimelineInner({
   const startIndex = (pageNo - 1) * ITEMS_PER_PAGE;
   const endIndex = pageNo * ITEMS_PER_PAGE;
 
+  // TODO: stop hardcoding this
+  const challengeData: ChallengeData = {
+    challengeType: challengeTypes.multiFileCertProject,
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+    challengeFiles: challengeFiles?.map(regeneratePathAndHistory) ?? null
+  };
+
   return (
-    <FullWidthRow>
-      <h2 className='text-center'>{t('profile.timeline')}</h2>
-      {completedMap.length === 0 ? (
-        <p className='text-center'>
-          {t('profile.none-completed')}&nbsp;
-          <Link to='/learn'>{t('profile.get-started')}</Link>
-        </p>
-      ) : (
-        <Table condensed={true} striped={true}>
-          <thead>
-            <tr>
-              <th>{t('profile.challenge')}</th>
-              <th>{t('settings.labels.solution')}</th>
-              <th className='text-center'>{t('profile.completed')}</th>
-            </tr>
-          </thead>
-          <tbody>
-            {sortedTimeline.slice(startIndex, endIndex).map(renderCompletion)}
-          </tbody>
-        </Table>
-      )}
-      {id && (
-        <Modal
-          aria-labelledby='contained-modal-title'
-          onHide={closeSolution}
-          show={solutionOpen}
-        >
-          <Modal.Header closeButton={true}>
-            <Modal.Title id='contained-modal-title'>
-              {`${username}'s Solution to ${
-                // @ts-expect-error Need better TypeDef for this
-                idToNameMap.get(id).challengeTitle as string
-              }`}
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <SolutionViewer
-              challengeFiles={challengeFiles}
-              solution={solution ?? ''}
-            />
-          </Modal.Body>
-          <Modal.Footer>
-            <Button onClick={closeSolution}>{t('buttons.close')}</Button>
-          </Modal.Footer>
-        </Modal>
-      )}
-      {totalPages > 1 && (
-        <TimelinePagination
-          firstPage={firstPage}
-          lastPage={lastPage}
-          nextPage={nextPage}
-          pageNo={pageNo}
-          prevPage={prevPage}
-          totalPages={totalPages}
-        />
-      )}
-    </FullWidthRow>
+    <>
+      <FullWidthRow>
+        <h2 className='text-center'>{t('profile.timeline')}</h2>
+        {completedMap.length === 0 ? (
+          <p className='text-center'>
+            {t('profile.none-completed')}&nbsp;
+            <Link to='/learn'>{t('profile.get-started')}</Link>
+          </p>
+        ) : (
+          <Table condensed={true} striped={true}>
+            <thead>
+              <tr>
+                <th>{t('profile.challenge')}</th>
+                <th>{t('settings.labels.solution')}</th>
+                <th className='text-center'>{t('profile.completed')}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {sortedTimeline.slice(startIndex, endIndex).map(renderCompletion)}
+            </tbody>
+          </Table>
+        )}
+        {id && (
+          <Modal
+            aria-labelledby='contained-modal-title'
+            onHide={closeSolution}
+            show={solutionOpen}
+          >
+            <Modal.Header closeButton={true}>
+              <Modal.Title id='contained-modal-title'>
+                {`${username}'s Solution to ${
+                  idToNameMap.get(id)?.challengeTitle ?? ''
+                }`}
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <SolutionViewer
+                challengeFiles={challengeFiles}
+                solution={solution ?? ''}
+              />
+            </Modal.Body>
+            <Modal.Footer>
+              <Button onClick={closeSolution}>{t('buttons.close')}</Button>
+            </Modal.Footer>
+          </Modal>
+        )}
+        {totalPages > 1 && (
+          <TimelinePagination
+            firstPage={firstPage}
+            lastPage={lastPage}
+            nextPage={nextPage}
+            pageNo={pageNo}
+            prevPage={prevPage}
+            totalPages={totalPages}
+          />
+        )}
+      </FullWidthRow>
+      <ProjectPreviewModal
+        challengeData={challengeData}
+        closeText={t('buttons.close')}
+        previewTitle={projectTitle}
+        showProjectPreview={true}
+      />
+    </>
   );
 }
 
 /* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/restrict-template-expressions, @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call*/
-function useIdToNameMap(): Map<string, string> {
+function useIdToNameMap(): Map<string, NameMap> {
   const {
     allChallengeNode: { edges }
   } = useStaticQuery(graphql`
@@ -274,4 +319,4 @@ const Timeline = (props: TimelineProps): JSX.Element => {
 
 Timeline.displayName = 'Timeline';
 
-export default withTranslation()(Timeline);
+export default connect(null, mapDispatchToProps)(withTranslation()(Timeline));
