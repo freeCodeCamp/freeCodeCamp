@@ -9,7 +9,6 @@ import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 import { connect } from 'react-redux';
 
 import { regeneratePathAndHistory } from '../../../../utils/polyvinyl';
-import { challengeTypes } from '../../../utils/challenge-types';
 import ProjectPreviewModal from '../../templates/Challenges/components/project-preview-modal';
 import { openModal } from '../../templates/Challenges/redux';
 import {
@@ -191,14 +190,21 @@ export class CertificationSettings extends Component {
         }
       });
 
+    const challengeData = completedProject
+      ? {
+          ...completedProject,
+
+          challengeFiles:
+            completedProject?.challengeFiles?.map(regeneratePathAndHistory) ??
+            null
+        }
+      : null;
+
     const showProjectPreview = () => {
       this.setState({
         projectViewer: {
           previewTitle: projectTitle,
-          challengeData: {
-            challengeFiles: challengeFiles?.map(regeneratePathAndHistory),
-            challengeType: challengeTypes.multiFileCertProject // TODO: stop hardcoding this
-          }
+          challengeData
         }
       });
       openModal('projectPreview');
