@@ -179,7 +179,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
         closeText={t('buttons.close')}
         previewTitle={projectTitle}
         showProjectPreview={true}
-      ></ProjectPreviewModal>
+      />
       <Trans i18nKey='certification.project.footnote'>
         If you suspect that any of these projects violate the{' '}
         <a
