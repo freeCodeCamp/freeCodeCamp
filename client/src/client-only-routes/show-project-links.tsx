@@ -12,10 +12,8 @@ import {
 } from '../resources/cert-and-project-map';
 
 import { SolutionDisplayWidget } from '../components/solution-display-widget';
-import ProjectPreviewModal, {
-  ChallengeData
-} from '../templates/Challenges/components/project-preview-modal';
-import { challengeTypes } from '../../utils/challenge-types';
+import ProjectPreviewModal from '../templates/Challenges/components/project-preview-modal';
+
 import { openModal } from '../templates/Challenges/redux';
 
 import '../components/layouts/project-links.css';
@@ -29,15 +27,13 @@ interface ShowProjectLinksProps {
 
 type SolutionState = {
   projectTitle: string;
-  challengeFiles: CompletedChallenge['challengeFiles'];
-  solution: CompletedChallenge['solution'];
+  completedChallenge: CompletedChallenge | null;
   showCode: boolean;
 };
 
 const initSolutionState: SolutionState = {
   projectTitle: '',
-  challengeFiles: [],
-  solution: '',
+  completedChallenge: null,
   showCode: false
 };
 
@@ -66,20 +62,17 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       return null;
     }
 
-    const { solution, challengeFiles } = completedProject;
     const showUserCode = () =>
       setSolutionState({
         projectTitle,
-        challengeFiles,
-        solution,
+        completedChallenge: completedProject,
         showCode: true
       });
 
     const showProjectPreview = () => {
       setSolutionState({
         projectTitle,
-        challengeFiles,
-        solution,
+        completedChallenge: completedProject,
         showCode: false
       });
       openModal('projectPreview');
@@ -146,13 +139,17 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
     name,
     user: { username }
   } = props;
-  const { challengeFiles, showCode, solution, projectTitle } = solutionState;
-  // TODO: stop hardcoding this
-  const challengeData: ChallengeData = {
-    challengeType: challengeTypes.multiFileCertProject,
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-    challengeFiles: challengeFiles?.map(regeneratePathAndHistory) ?? null
-  };
+  const { completedChallenge, showCode, projectTitle } = solutionState;
+
+  const challengeData: CompletedChallenge | null = completedChallenge
+    ? {
+        ...completedChallenge,
+        // // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+        challengeFiles:
+          completedChallenge?.challengeFiles?.map(regeneratePathAndHistory) ??
+          null
+      }
+    : null;
 
   return (
     <div>
@@ -166,13 +163,13 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       <ul>{renderProjectsFor(certName)}</ul>
       <Spacer />
       <ProjectModal
-        challengeFiles={challengeFiles}
+        challengeFiles={completedChallenge?.challengeFiles ?? null}
         handleSolutionModalHide={handleSolutionModalHide}
         isOpen={showCode}
         projectTitle={projectTitle}
         // 'solution' is theoretically never 'null', if it a JsAlgoData cert
         // which is the only time we use the modal
-        solution={solution as undefined | string}
+        solution={completedChallenge?.solution as undefined | string}
       />
       <ProjectPreviewModal
         challengeData={challengeData}

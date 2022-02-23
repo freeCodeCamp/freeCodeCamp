@@ -14,12 +14,9 @@ import {
   getTitleFromId
 } from '../../../../../utils';
 import { regeneratePathAndHistory } from '../../../../../utils/polyvinyl';
-import { challengeTypes } from '../../../../utils/challenge-types';
 import CertificationIcon from '../../../assets/icons/certification-icon';
 import { CompletedChallenge } from '../../../redux/prop-types';
-import ProjectPreviewModal, {
-  ChallengeData
-} from '../../../templates/Challenges/components/project-preview-modal';
+import ProjectPreviewModal from '../../../templates/Challenges/components/project-preview-modal';
 import { openModal } from '../../../templates/Challenges/redux';
 import { FullWidthRow, Link } from '../../helpers';
 import { SolutionDisplayWidget } from '../../solution-display-widget';
@@ -69,41 +66,27 @@ function TimelineInner({
   username
 }: TimelineInnerProps) {
   const [projectTitle, setProjectTitle] = useState('');
-  const [solutionToView, setSolutionToView] = useState<string | null>(null);
   const [solutionOpen, setSolutionOpen] = useState(false);
   const [pageNo, setPageNo] = useState(1);
-  const [solution, setSolution] = useState<string | null>(null);
-  const [challengeFiles, setChallengeFiles] =
-    useState<CompletedChallenge['challengeFiles']>(null);
+  const [completedChallenge, setCompletedChallenge] =
+    useState<CompletedChallenge | null>(null);
 
-  function viewSolution(
-    id: string,
-    solution: string | undefined | null,
-    challengeFiles: CompletedChallenge['challengeFiles']
-  ): void {
-    setSolutionToView(id);
+  function viewSolution(completedChallenge: CompletedChallenge): void {
+    setCompletedChallenge(completedChallenge);
     setSolutionOpen(true);
-    setSolution(solution ?? '');
-    setChallengeFiles(challengeFiles);
   }
 
-  function viewProject(
-    id: string,
-    solution: string | undefined | null,
-    challengeFiles: CompletedChallenge['challengeFiles']
-  ): void {
-    setSolutionToView(id);
-    setSolution(solution ?? '');
-    setChallengeFiles(challengeFiles);
-    setProjectTitle(idToNameMap.get(id)?.challengeTitle ?? '');
+  function viewProject(completedChallenge: CompletedChallenge): void {
+    setCompletedChallenge(completedChallenge);
+    setProjectTitle(
+      idToNameMap.get(completedChallenge.id)?.challengeTitle ?? ''
+    );
     openModal('projectPreview');
   }
 
   function closeSolution(): void {
-    setSolutionToView(null);
     setSolutionOpen(false);
-    setSolution(null);
-    setChallengeFiles(null);
+    setCompletedChallenge(null);
   }
 
   function firstPage(): void {
@@ -122,12 +105,11 @@ function TimelineInner({
   function renderViewButton(
     completedChallenge: CompletedChallenge
   ): React.ReactNode {
-    const { id, solution, challengeFiles } = completedChallenge;
     return (
       <SolutionDisplayWidget
         completedChallenge={completedChallenge}
-        showUserCode={() => viewSolution(id, solution, challengeFiles)}
-        showProjectPreview={() => viewProject(id, solution, challengeFiles)}
+        showUserCode={() => viewSolution(completedChallenge)}
+        showProjectPreview={() => viewProject(completedChallenge)}
         displayContext={'timeline'}
       ></SolutionDisplayWidget>
     );
@@ -167,16 +149,19 @@ function TimelineInner({
     );
   }
 
-  const id = solutionToView;
+  const challengeData: CompletedChallenge | null = completedChallenge
+    ? {
+        ...completedChallenge,
+        // // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+        challengeFiles:
+          completedChallenge?.challengeFiles?.map(regeneratePathAndHistory) ??
+          null
+      }
+    : null;
+
+  const id = challengeData?.id;
   const startIndex = (pageNo - 1) * ITEMS_PER_PAGE;
   const endIndex = pageNo * ITEMS_PER_PAGE;
-
-  // TODO: stop hardcoding this
-  const challengeData: ChallengeData = {
-    challengeType: challengeTypes.multiFileCertProject,
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-    challengeFiles: challengeFiles?.map(regeneratePathAndHistory) ?? null
-  };
 
   return (
     <>
@@ -216,8 +201,8 @@ function TimelineInner({
             </Modal.Header>
             <Modal.Body>
               <SolutionViewer
-                challengeFiles={challengeFiles}
-                solution={solution ?? ''}
+                challengeFiles={challengeData.challengeFiles}
+                solution={challengeData.solution ?? ''}
               />
             </Modal.Body>
             <Modal.Footer>

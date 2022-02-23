@@ -14,13 +14,8 @@ import Preview from './preview';
 
 import './project-preview-modal.css';
 
-export interface ChallengeData {
-  challengeType: number;
-  challengeFiles: CompletedChallenge['challengeFiles'] | null;
-}
-
 interface ProjectPreviewMountedPayload {
-  challengeData: ChallengeData;
+  challengeData: CompletedChallenge | null;
   showProjectPreview: boolean;
 }
 
@@ -28,7 +23,7 @@ interface Props {
   closeModal: (arg: string) => void;
   isOpen: boolean;
   projectPreviewMounted: (payload: ProjectPreviewMountedPayload) => void;
-  challengeData: ChallengeData;
+  challengeData: CompletedChallenge | null;
   setEditorFocusability: (focusability: boolean) => void;
   showProjectPreview: boolean;
   previewTitle: string;

@@ -16,6 +16,7 @@ import {
   ChallengeFiles,
   ChallengeMeta,
   ChallengeNode,
+  CompletedChallenge,
   ResizeProps,
   Test
 } from '../../../redux/prop-types';
@@ -29,9 +30,7 @@ import HelpModal from '../components/help-modal';
 import Notes from '../components/notes';
 import Output from '../components/output';
 import Preview from '../components/preview';
-import ProjectPreviewModal, {
-  ChallengeData
-} from '../components/project-preview-modal';
+import ProjectPreviewModal from '../components/project-preview-modal';
 import SidePanel from '../components/side-panel';
 import VideoModal from '../components/video-modal';
 import {
@@ -98,7 +97,7 @@ interface ShowClassicProps {
   pageContext: {
     challengeMeta: ChallengeMeta;
     projectPreview: {
-      challengeData: ChallengeData;
+      challengeData: CompletedChallenge;
       showProjectPreview: boolean;
     };
   };

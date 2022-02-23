@@ -5,7 +5,7 @@ import { CompletedChallenge } from '../../redux/prop-types';
 import SolutionViewer from './SolutionViewer';
 
 type ProjectModalProps = {
-  challengeFiles: CompletedChallenge['challengeFiles'];
+  challengeFiles: CompletedChallenge['challengeFiles'] | null;
   handleSolutionModalHide: () => void;
   isOpen: boolean;
   projectTitle: string;
