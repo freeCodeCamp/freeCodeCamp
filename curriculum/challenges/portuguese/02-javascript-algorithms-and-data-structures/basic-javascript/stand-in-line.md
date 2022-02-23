@@ -11,6 +11,8 @@ dashedName: stand-in-line
 
 Na Ciência da Computação, uma <dfn>fila</dfn> é uma <dfn>estrutura de dados</dfn> abstrata onde itens são mantidos em ordem. Novos itens podem ser adicionados no final da fila e itens mais antigos são removidos do início da fila.
 
+# --instructions--
+
 Escreva a função `nextInLine`, que recebe um array (`arr`) e um número (`item`) como argumentos.
 
 Adicione o número no final do array e então remova o primeiro elemento do array.

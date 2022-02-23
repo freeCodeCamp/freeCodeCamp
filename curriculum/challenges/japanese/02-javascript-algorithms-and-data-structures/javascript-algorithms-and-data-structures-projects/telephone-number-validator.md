@@ -186,7 +186,7 @@ assert(telephoneCheck('(555)5(55?)-5555') === false);
 assert(telephoneCheck('55 55-55-555-5') === false);
 ```
 
-`telephoneCheck("11 555-555-5555")` should return `false`.
+`telephoneCheck("11 555-555-5555")` は `false` を返す必要があります。
 
 ```js
 assert(telephoneCheck('11 555-555-5555') === false);

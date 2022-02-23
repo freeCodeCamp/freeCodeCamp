@@ -1,6 +1,6 @@
 ---
 id: 5900f5361000cf542c510049
-title: 'Problem 458: Permutations of Project'
+title: 'Problema 458: Permutazioni di Project'
 challengeType: 5
 forumTopicId: 302132
 dashedName: problem-458-permutations-of-project
@@ -8,20 +8,20 @@ dashedName: problem-458-permutations-of-project
 
 # --description--
 
-Consider the alphabet A made out of the letters of the word "project": A={c,e,j,o,p,r,t}.
+Considera l' alfabeto $A$ composto dalle lettere della parola `project`: $A = \\{c, e, j, o, p, r, t\\}$.
 
-Let T(n) be the number of strings of length n consisting of letters from A that do not have a substring that is one of the 5040 permutations of "project".
+Sia $T(n)$ il numero di stringhe di lunghezza $n$ formate da lettere di $A$ che non hanno una sottostringa che è una delle 5040 permutazioni di `project`.
 
-T(7)=77-7!=818503.
+$T(7) = 7^7 - 7! = 818\\,503$.
 
-Find T(1012). Give the last 9 digits of your answer.
+Trova $T({10}^{12})$. Dai le ultime 9 cifre della tua risposta.
 
 # --hints--
 
-`euler458()` should return 423341841.
+`permutationsOfProject()` dovrebbe restituire `423341841`.
 
 ```js
-assert.strictEqual(euler458(), 423341841);
+assert.strictEqual(permutationsOfProject(), 423341841);
 ```
 
 # --seed--
@@ -29,12 +29,12 @@ assert.strictEqual(euler458(), 423341841);
 ## --seed-contents--
 
 ```js
-function euler458() {
+function permutationsOfProject() {
 
   return true;
 }
 
-euler458();
+permutationsOfProject();
 ```
 
 # --solutions--
