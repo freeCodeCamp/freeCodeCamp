@@ -14,14 +14,12 @@ The less than or equal to operator (`<=`) compares the values of two numbers. If
 **Examples**
 
 ```js
-4   <= 5
-'7' <= 7
-5   <= 5
-3   <= 2
-'8' <= 4
+4   <= 5 // true
+'7' <= 7 // true
+5   <= 5 // true
+3   <= 2 // false
+'8' <= 4 // false
 ```
-
-In order, these expressions would evaluate to `true`, `true`, `true`, `false`, and `false`.
 
 # --instructions--
 

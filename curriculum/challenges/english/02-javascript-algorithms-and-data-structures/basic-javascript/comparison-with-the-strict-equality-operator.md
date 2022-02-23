@@ -16,11 +16,9 @@ If the values being compared have different types, they are considered unequal, 
 **Examples**
 
 ```js
-3 ===  3
-3 === '3'
+3 ===  3  // true
+3 === '3' // false
 ```
-
-These conditions would return `true` and `false` respectively.
 
 In the second example, `3` is a `Number` type and `'3'` is a `String` type.
 
