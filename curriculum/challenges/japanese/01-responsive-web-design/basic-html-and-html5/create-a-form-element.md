@@ -13,7 +13,7 @@ dashedName: create-a-form-element
 例:
 
 ```html
-<form action="/url-where-you-want-to-submit-form-data">
+<form action="url-where-you-want-to-submit-form-data">
   <input>
 </form>
 ```

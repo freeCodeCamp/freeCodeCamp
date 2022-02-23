@@ -13,7 +13,7 @@ Puedes construir formularios web que realmente envíen datos a un servidor usand
 Por ejemplo:
 
 ```html
-<form action="/url-where-you-want-to-submit-form-data">
+<form action="url-where-you-want-to-submit-form-data">
   <input>
 </form>
 ```
