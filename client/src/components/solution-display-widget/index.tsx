@@ -11,7 +11,7 @@ import { getSolutionDisplayType } from '../../utils/solution-display-type';
 interface Props {
   completedChallenge: CompletedChallenge;
   dataCy?: string;
-  showFilesSolution: () => void;
+  showUserCode: () => void;
   showProjectPreview?: () => void;
   displayContext: 'timeline' | 'settings' | 'certification';
 }
@@ -19,7 +19,7 @@ interface Props {
 export function SolutionDisplayWidget({
   completedChallenge,
   dataCy,
-  showFilesSolution,
+  showUserCode,
   showProjectPreview,
   displayContext
 }: Props) {
@@ -35,7 +35,7 @@ export function SolutionDisplayWidget({
     <button
       className='project-link-button-override'
       data-cy={dataCy}
-      onClick={showFilesSolution}
+      onClick={showUserCode}
     >
       {t('certification.project.solution')}
     </button>
@@ -64,14 +64,14 @@ export function SolutionDisplayWidget({
   const MissingSolutionComponentForCertification = (
     <>{t('certification.project.no-solution')}</>
   );
-  const ShowFilesSolution = (
+  const ShowUserCode = (
     <Button
       block={true}
       bsStyle='primary'
       className='btn-invert'
       data-cy={dataCy}
       id={`btn-for-${id}`}
-      onClick={showFilesSolution}
+      onClick={showUserCode}
     >
       {t('buttons.show-code')}
     </Button>
@@ -84,7 +84,7 @@ export function SolutionDisplayWidget({
       id={`dropdown-for-${id}`}
       title={t('buttons.view')}
     >
-      <MenuItem bsStyle='primary' onClick={showFilesSolution}>
+      <MenuItem bsStyle='primary' onClick={showUserCode}>
         {t('buttons.show-code')}
       </MenuItem>
       <MenuItem bsStyle='primary' onClick={showProjectPreview}>
@@ -142,14 +142,14 @@ export function SolutionDisplayWidget({
   const displayComponents =
     displayContext === 'certification'
       ? {
-          showFilesSolution: ShowFilesSolutionForCertification,
+          showUserCode: ShowFilesSolutionForCertification,
           showMultifileProjectSolution: ShowMultifileProjectSolution,
           showProjectAndGithubLinks: ShowProjectAndGithubLinkForCertification,
           showProjectLink: ShowProjectLinkForCertification,
           none: MissingSolutionComponentForCertification
         }
       : {
-          showFilesSolution: ShowFilesSolution,
+          showUserCode: ShowUserCode,
           showMultifileProjectSolution: ShowMultifileProjectSolution,
           showProjectAndGithubLinks: ShowProjectAndGithubLinks,
           showProjectLink: ShowProjectLink,

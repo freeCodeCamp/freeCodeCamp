@@ -67,7 +67,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
     }
 
     const { solution, challengeFiles } = completedProject;
-    const showFilesSolution = () =>
+    const showUserCode = () =>
       setSolutionState({
         projectTitle,
         challengeFiles,
@@ -90,7 +90,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
         completedChallenge={completedProject}
         dataCy={`${projectTitle} solution`}
         displayContext='certification'
-        showFilesSolution={showFilesSolution}
+        showUserCode={showUserCode}
         showProjectPreview={showProjectPreview}
       ></SolutionDisplayWidget>
     );

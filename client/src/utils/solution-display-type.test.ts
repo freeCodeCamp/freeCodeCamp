@@ -14,11 +14,11 @@ describe('getSolutionDisplayType', () => {
     expect(getSolutionDisplayType(onlyGithubLink)).toBe('none');
   });
   it('should handle legacy solutions', () => {
-    expect(getSolutionDisplayType(legacySolution)).toBe('showFilesSolution');
+    expect(getSolutionDisplayType(legacySolution)).toBe('showUserCode');
   });
   it('should handle solutions with files', () => {
     expect.assertions(2);
-    expect(getSolutionDisplayType(withChallenges)).toBe('showFilesSolution');
+    expect(getSolutionDisplayType(withChallenges)).toBe('showUserCode');
     expect(getSolutionDisplayType(multifileSolution)).toBe(
       'showMultifileProjectSolution'
     );

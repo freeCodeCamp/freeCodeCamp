@@ -181,7 +181,7 @@ export class CertificationSettings extends Component {
     }
 
     const { solution, challengeFiles } = completedProject;
-    const showFilesSolution = () =>
+    const showUserCode = () =>
       this.setState({
         solutionViewer: {
           projectTitle,
@@ -208,7 +208,7 @@ export class CertificationSettings extends Component {
       <SolutionDisplayWidget
         completedChallenge={completedProject}
         dataCy={projectTitle}
-        showFilesSolution={showFilesSolution}
+        showUserCode={showUserCode}
         showProjectPreview={showProjectPreview}
         displayContext={'settings'}
       ></SolutionDisplayWidget>

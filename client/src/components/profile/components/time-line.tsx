@@ -126,7 +126,7 @@ function TimelineInner({
     return (
       <SolutionDisplayWidget
         completedChallenge={completedChallenge}
-        showFilesSolution={() => viewSolution(id, solution, challengeFiles)}
+        showUserCode={() => viewSolution(id, solution, challengeFiles)}
         showProjectPreview={() => viewProject(id, solution, challengeFiles)}
         displayContext={'timeline'}
       ></SolutionDisplayWidget>
