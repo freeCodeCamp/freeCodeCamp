@@ -72,7 +72,7 @@
 
 ## プルリクエストへのフィードバック
 
-> :tada: Congratulations on making a PR and thanks a lot for taking the time to contribute.
+> :tada: PR の作成おめでとうございます。時間をかけて貢献してくださったことに心から感謝します。
 
 モデレーターが内容を見て、フィードバックします。 仲間のモデレーターの時間を尊重し、しばらくお待ちください。 すべてのプルリクエストは、いずれレビューされます。
 
