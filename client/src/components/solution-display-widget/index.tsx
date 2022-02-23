@@ -26,9 +26,7 @@ export function SolutionDisplayWidget({
   const { id, solution, githubLink } = completedChallenge;
   const { t } = useTranslation();
 
-  const dropdownTitle =
-    displayContext === 'settings' ? 'Show Solutions' : 'View';
-  const projectLinkText =
+  const showOrViewText =
     displayContext === 'settings'
       ? t('buttons.show-solution')
       : t('buttons.view');
@@ -102,7 +100,7 @@ export function SolutionDisplayWidget({
         bsStyle='primary'
         className='btn-invert'
         id={`dropdown-for-${id}`}
-        title={dropdownTitle}
+        title={showOrViewText}
       >
         <MenuItem
           bsStyle='primary'
@@ -133,7 +131,7 @@ export function SolutionDisplayWidget({
       rel='noopener noreferrer'
       target='_blank'
     >
-      {projectLinkText}
+      {showOrViewText}
     </Button>
   );
   const MissingSolutionComponent =
