@@ -103,7 +103,7 @@ export function buildUserUpdate(
       )
     };
   } else {
-    completedChallenge = omit(_completedChallenge, ['files', 'challengeType']);
+    completedChallenge = omit(_completedChallenge, ['files']);
   }
   let finalChallenge;
   const updateData = {};
@@ -242,12 +242,20 @@ export function modernChallengeCompleted(req, res, next) {
       const completedChallenge = {
         id,
         files,
-        challengeType,
         completedDate
       };
 
       if (challengeType === 14) {
         completedChallenge.isManuallyApproved = false;
+      }
+
+      // We only need to know the challenge type if it's a project. If it's a
+      // step or normal challenge we can avoid storing in the database.
+      if (
+        jsCertProjectIds.includes(id) ||
+        multiFileCertProjectIds.includes(id)
+      ) {
+        completedChallenge.challengeType = challengeType;
       }
 
       const { alreadyCompleted, updateData } = buildUserUpdate(
