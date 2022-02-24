@@ -24,6 +24,7 @@ export default function settingsController(app) {
     updateMyCurrentChallenge
   );
   api.post('/update-my-portfolio', ifNoUser401, updateMyPortfolio);
+  api.post('/update-my-theme', gone);
   api.put('/update-my-about', ifNoUser401, updateMyAbout);
   api.put(
     '/update-my-email',
@@ -33,7 +34,6 @@ export default function settingsController(app) {
     updateMyEmail
   );
   api.put('/update-my-profileui', ifNoUser401, updateMyProfileUI);
-  api.post('/update-my-theme', gone);
   api.put('/update-my-username', ifNoUser401, updateMyUsername);
   api.put('/update-user-flag', ifNoUser401, updateUserFlag);
 
