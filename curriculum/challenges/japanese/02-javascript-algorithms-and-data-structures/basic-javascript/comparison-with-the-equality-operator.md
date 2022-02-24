@@ -25,39 +25,37 @@ function equalityTest(myVal) {
 `myVal` が `10` と等しい場合には、等価演算子は `true` を返し、中括弧内のコードが実行されて、関数は `Equal` を返します。 それ以外の場合、関数は `Not Equal` を返します。 JavaScript では、比較する 2 つのデータの<dfn>データ型</dfn>が異なる場合 (たとえば `numbers` と `strings`)、必ず一方の型が他方の型に変換されます。 これを「型強制」と呼びます。 これが行われることで、次のような値の比較が可能になります。
 
 ```js
-1   ==  1
-1   ==  2
-1   == '1'
-"3" ==  3
+1   ==  1  // true
+1   ==  2  // false
+1   == '1' // true
+"3" ==  3  // true
 ```
-
-これらの式は上から順に、`true`、`false`、`true`、`true` と評価されます。
 
 # --instructions--
 
-`val` が `12` と等しい場合に関数が文字列 `Equal` を返すように、指定された行に等価演算子を追加してください。
+Add the equality operator to the indicated line so that the function will return the string `Equal` when `val` is equivalent to `12`.
 
 # --hints--
 
-`testEqual(10)` は文字列 `Not Equal` を返す必要があります。
+`testEqual(10)` should return the string `Not Equal`
 
 ```js
 assert(testEqual(10) === 'Not Equal');
 ```
 
-`testEqual(12)` は文字列 `Equal` を返す必要があります。
+`testEqual(12)` should return the string `Equal`
 
 ```js
 assert(testEqual(12) === 'Equal');
 ```
 
-`testEqual("12")` は文字列 `Equal` を返す必要があります。
+`testEqual("12")` should return the string `Equal`
 
 ```js
 assert(testEqual('12') === 'Equal');
 ```
 
-`==` 演算子を使用してください。
+You should use the `==` operator
 
 ```js
 assert(code.match(/==/g) && !code.match(/===/g));
