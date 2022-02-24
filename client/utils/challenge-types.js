@@ -20,6 +20,7 @@ exports.backend = backend;
 exports.frontEndProject = frontEndProject;
 exports.backEndProject = backEndProject;
 exports.pythonProject = pythonProject;
+exports.codeAllyCert = codeAllyCert;
 
 exports.challengeTypes = {
   html,
