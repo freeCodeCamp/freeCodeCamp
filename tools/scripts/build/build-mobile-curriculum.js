@@ -48,7 +48,7 @@ exports.buildMobileCurriculum = function buildMobileCurriculum(json) {
   function writeToFile(superblock, json) {
     fs.writeFileSync(
       `${mobileStaticPath}/mobile/${superblock}.json`,
-      JSON.stringify(json)
+      JSON.stringify(json, null, 2)
     );
   }
 };
