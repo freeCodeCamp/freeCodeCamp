@@ -117,7 +117,7 @@
     "@types/faker": "5.5.9",
     "@types/inquirer": "8.2.0",
     "@types/jest": "27.4.1",
-    "@types/jquery": "3.5.13",
+    "@types/jquery": "3.5.14",
     "@types/loadable__component": "5.13.4",
     "@types/lodash-es": "4.17.6",
     "@types/node": "16.11.25",
