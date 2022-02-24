@@ -15,6 +15,7 @@ export default function settingsController(app) {
 
   api.put('/update-privacy-terms', ifNoUser401, updatePrivacyTerms);
 
+  api.post('/refetch-user-completed-challenges', gone);
   api.post(
     '/update-my-current-challenge',
     ifNoUser401,
@@ -32,6 +33,7 @@ export default function settingsController(app) {
     updateMyEmail
   );
   api.put('/update-my-profileui', ifNoUser401, updateMyProfileUI);
+  api.post('/update-my-theme', gone);
   api.put('/update-my-username', ifNoUser401, updateMyUsername);
   api.put('/update-user-flag', ifNoUser401, updateUserFlag);
 
@@ -47,6 +49,15 @@ const standardSuccessMessage = {
   type: 'success',
   message: 'flash.updated-preferences'
 };
+
+function gone(_, res) {
+  return res.status(410).json({
+    message: {
+      type: 'info',
+      message: 'Please reload the app, this feature is no longer available.'
+    }
+  });
+}
 
 const createStandardHandler = (req, res, next) => err => {
   if (err) {
