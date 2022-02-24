@@ -5,6 +5,12 @@ on:
     # runs everyday at 11:00 AM UTC
     - cron: '0 11 * * *'
 
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
+  CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
+  CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_DOCS }}
+
 jobs:
   i18n-upload-docs-files:
     name: Docs
@@ -17,9 +23,6 @@ jobs:
       - name: Generate Crowdin Config
         uses: freecodecamp/crowdin-action@main
         env:
-          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
-          CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_DOCS }}
           PLUGIN: 'generate-config'
           PROJECT_NAME: 'docs'
 
@@ -45,8 +48,3 @@ jobs:
 
           # Uncomment below to debug
           # dryrun_action: true
-
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_DOCS }}
-          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}

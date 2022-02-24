@@ -5,6 +5,12 @@ on:
     # runs everyday at 11:30 AM UTC
     - cron: '30 11 * * *'
 
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
+  CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
+  CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
+
 jobs:
   i18n-upload-curriculum-files:
     name: Learn
@@ -17,9 +23,6 @@ jobs:
       - name: Generate Crowdin Config
         uses: freecodecamp/crowdin-action@main
         env:
-          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
-          CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
           PLUGIN: 'generate-config'
           PROJECT_NAME: 'curriculum'
 
@@ -46,34 +49,20 @@ jobs:
           # Uncomment below to debug
           # dryrun_action: true
 
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
-          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
-
       - name: Remove deleted files
         uses: freecodecamp/crowdin-action@main
         env:
-          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
-          CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
           PLUGIN: 'remove-deleted-files'
           FILE_PATHS: '["curriculum/challenges/english", "curriculum/dictionaries/english"]'
 
       - name: Hide Non-Translated Strings
         uses: freecodecamp/crowdin-action@main
         env:
-          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
-          CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
           PLUGIN: 'hide-curriculum-strings'
 
       - name: Hide a String
         uses: freecodecamp/crowdin-action@main
         env:
-          CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
-          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
           PLUGIN: 'hide-string'
           FILE_NAME: 'basic-html-and-html5/nest-an-anchor-element-within-a-paragraph.md'
           STRING_CONTENT: Here's a <a href="https://www.freecodecamp.org" target="_blank" mark="crwd-mark">link to www.freecodecamp.org</a> for you to follow.
@@ -81,9 +70,6 @@ jobs:
       - name: Unhide Title of Use && For a More Concise Conditional
         uses: freecodecamp/crowdin-action@main
         env:
-          CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
-          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
           PLUGIN: 'unhide-string'
           FILE_NAME: 'react/use--for-a-more-concise-conditional.md'
           STRING_CONTENT: 'Use &amp;&amp; for a More Concise Conditional'
