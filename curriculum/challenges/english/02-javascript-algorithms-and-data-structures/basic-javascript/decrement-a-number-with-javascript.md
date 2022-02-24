@@ -39,8 +39,14 @@ assert(myVar === 10);
 
 ```js
 assert(
-  /let\s*myVar\s*=\s*11;\s*\/*.*\s*([-]{2}\s*myVar|myVar\s*[-]{2});/.test(code)
-);
+  !code.match(/myVar\s*=\s*myVar\s*[-]\s*1.*?;?/));
+```
+
+You should not assign `myVar` with `10`.
+
+```js
+assert(
+  !code.match(/myVar\s*=\s*10.*?;?/));
 ```
 
 You should use the `--` operator on `myVar`.
