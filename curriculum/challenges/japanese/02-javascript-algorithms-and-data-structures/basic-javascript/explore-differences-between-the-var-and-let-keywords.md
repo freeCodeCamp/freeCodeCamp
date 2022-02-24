@@ -42,19 +42,19 @@ let camper = "David";
 `var` がコード内に存在しない必要があります。
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/var/g));
+assert.notMatch(code, /var/g);
 ```
 
 `catName` は文字列 `Oliver` である必要があります。
 
 ```js
-assert(catName === 'Oliver');
+assert.equal(catName, 'Oliver');
 ```
 
 `catSound` は文字列 `Meow!` である必要があります。
 
 ```js
-assert(catSound === 'Meow!');
+assert.equal(catSound, 'Meow!');
 ```
 
 # --seed--

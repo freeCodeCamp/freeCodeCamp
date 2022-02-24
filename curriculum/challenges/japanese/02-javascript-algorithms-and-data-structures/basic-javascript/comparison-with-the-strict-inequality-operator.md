@@ -14,44 +14,42 @@ dashedName: comparison-with-the-strict-inequality-operator
 **例**
 
 ```js
-3 !==  3
-3 !== '3'
-4 !==  3
+3 !==  3  // false
+3 !== '3' // true
+4 !==  3  // true
 ```
-
-これらの式は順に `false`、`true`、`true` と評価されます。
 
 # --instructions--
 
-`val` が `17` と厳密に等しくない場合に関数が文字列 `Not Equal` を返すように、`if` ステートメントに厳密不等価演算子を追加してください。
+Add the strict inequality operator to the `if` statement so the function will return the string `Not Equal` when `val` is not strictly equal to `17`
 
 # --hints--
 
-`testStrictNotEqual(17)` は文字列 `Equal` を返す必要があります。
+`testStrictNotEqual(17)` should return the string `Equal`
 
 ```js
 assert(testStrictNotEqual(17) === 'Equal');
 ```
 
-`testStrictNotEqual("17")` は文字列 `Not Equal` を返す必要があります。
+`testStrictNotEqual("17")` should return the string `Not Equal`
 
 ```js
 assert(testStrictNotEqual('17') === 'Not Equal');
 ```
 
-`testStrictNotEqual(12)` は文字列 `Not Equal` を返す必要があります。
+`testStrictNotEqual(12)` should return the string `Not Equal`
 
 ```js
 assert(testStrictNotEqual(12) === 'Not Equal');
 ```
 
-`testStrictNotEqual("bob")` は文字列 `Not Equal` を返す必要があります。
+`testStrictNotEqual("bob")` should return the string `Not Equal`
 
 ```js
 assert(testStrictNotEqual('bob') === 'Not Equal');
 ```
 
-`!==` 演算子を使用してください。
+You should use the `!==` operator
 
 ```js
 assert(code.match(/(val\s*!==\s*\d+)|(\d+\s*!==\s*val)/g).length > 0);

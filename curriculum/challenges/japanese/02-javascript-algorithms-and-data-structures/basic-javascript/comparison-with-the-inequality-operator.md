@@ -14,52 +14,50 @@ dashedName: comparison-with-the-inequality-operator
 **例**
 
 ```js
-1 !=  2
-1 != "1"
-1 != '1'
-1 != true
-0 != false
+1 !=  2    // true
+1 != "1"   // false
+1 != '1'   // false
+1 != true  // false
+0 != false // false
 ```
-
-これらの式は上から順に、`true`、`false`、`false`、`false`、`false` と評価されます。
 
 # --instructions--
 
-`val` が `99` と等しくない場合に関数が文字列 `Not Equal` を返すように、`if` ステートメントに不等価演算子 `!=` を追加してください。
+Add the inequality operator `!=` in the `if` statement so that the function will return the string `Not Equal` when `val` is not equivalent to `99`.
 
 # --hints--
 
-`testNotEqual(99)` は文字列 `Equal` を返す必要があります。
+`testNotEqual(99)` should return the string `Equal`
 
 ```js
 assert(testNotEqual(99) === 'Equal');
 ```
 
-`testNotEqual("99")` は文字列 `Equal` を返す必要があります。
+`testNotEqual("99")` should return the string `Equal`
 
 ```js
 assert(testNotEqual('99') === 'Equal');
 ```
 
-`testNotEqual(12)` は文字列 `Not Equal` を返す必要があります。
+`testNotEqual(12)` should return the string `Not Equal`
 
 ```js
 assert(testNotEqual(12) === 'Not Equal');
 ```
 
-`testNotEqual("12")` は文字列 `Not Equal` を返す必要があります。
+`testNotEqual("12")` should return the string `Not Equal`
 
 ```js
 assert(testNotEqual('12') === 'Not Equal');
 ```
 
-`testNotEqual("bob")` は文字列 `Not Equal` を返す必要があります。
+`testNotEqual("bob")` should return the string `Not Equal`
 
 ```js
 assert(testNotEqual('bob') === 'Not Equal');
 ```
 
-`!=` 演算子を使用してください。
+You should use the `!=` operator
 
 ```js
 assert(code.match(/(?!!==)!=/));

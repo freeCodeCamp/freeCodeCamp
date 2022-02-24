@@ -16,63 +16,61 @@ dashedName: comparison-with-the-greater-than-operator
 **例**
 
 ```js
-5   >  3
-7   > '3'
-2   >  3
-'1' >  9
+5   >  3  // true
+7   > '3' // true
+2   >  3  // false
+'1' >  9  // false
 ```
-
-これらの式は上から順に、`true`、`true`、`false`、`false` と評価されます。
 
 # --instructions--
 
-return ステートメントの意味が正しくなるように、指定された行に大なり演算子を追加してください。
+Add the greater than operator to the indicated lines so that the return statements make sense.
 
 # --hints--
 
-`testGreaterThan(0)` は文字列 `10 or Under` を返す必要があります。
+`testGreaterThan(0)` should return the string `10 or Under`
 
 ```js
 assert(testGreaterThan(0) === '10 or Under');
 ```
 
-`testGreaterThan(10)` は文字列 `10 or Under` を返す必要があります。
+`testGreaterThan(10)` should return the string `10 or Under`
 
 ```js
 assert(testGreaterThan(10) === '10 or Under');
 ```
 
-`testGreaterThan(11)` は文字列 `Over 10` を返す必要があります。
+`testGreaterThan(11)` should return the string `Over 10`
 
 ```js
 assert(testGreaterThan(11) === 'Over 10');
 ```
 
-`testGreaterThan(99)` は文字列 `Over 10` を返す必要があります。
+`testGreaterThan(99)` should return the string `Over 10`
 
 ```js
 assert(testGreaterThan(99) === 'Over 10');
 ```
 
-`testGreaterThan(100)` は文字列 `Over 10` を返す必要があります。
+`testGreaterThan(100)` should return the string `Over 10`
 
 ```js
 assert(testGreaterThan(100) === 'Over 10');
 ```
 
-`testGreaterThan(101)` は文字列 `Over 100` を返す必要があります。
+`testGreaterThan(101)` should return the string `Over 100`
 
 ```js
 assert(testGreaterThan(101) === 'Over 100');
 ```
 
-`testGreaterThan(150)` は文字列 `Over 100` を返す必要があります。
+`testGreaterThan(150)` should return the string `Over 100`
 
 ```js
 assert(testGreaterThan(150) === 'Over 100');
 ```
 
-`>` 演算子を 2 回以上使用してください。
+You should use the `>` operator at least twice
 
 ```js
 assert(code.match(/val\s*>\s*('|")*\d+('|")*/g).length > 1);
