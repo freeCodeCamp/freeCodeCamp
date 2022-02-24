@@ -193,7 +193,6 @@ export class CertificationSettings extends Component {
     const challengeData = completedProject
       ? {
           ...completedProject,
-
           challengeFiles:
             completedProject?.challengeFiles?.map(regeneratePathAndHistory) ??
             null
