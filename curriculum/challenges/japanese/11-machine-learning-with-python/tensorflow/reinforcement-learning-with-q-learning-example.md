@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72da5
-title: 'Q学習による強化学習: 例'
+title: 'Q 学習による強化学習: 例'
 challengeType: 11
 videoId: RBBSNta234s
 bilibiliIds:

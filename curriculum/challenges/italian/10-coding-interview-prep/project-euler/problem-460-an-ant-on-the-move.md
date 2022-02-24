@@ -1,6 +1,6 @@
 ---
 id: 5900f5381000cf542c51004b
-title: 'Problem 460: An ant on the move'
+title: 'Problema 460: Una formica in movimento'
 challengeType: 5
 forumTopicId: 302135
 dashedName: problem-460-an-ant-on-the-move
@@ -8,24 +8,33 @@ dashedName: problem-460-an-ant-on-the-move
 
 # --description--
 
-On the Euclidean plane, an ant travels from point A(0, 1) to point B(d, 1) for an integer d.
+Sul piano euclideo, una formica viaggia dal punto $A(0, 1)$ al punto $B(d, 1)$ per un numero intero $d$.
 
-In each step, the ant at point (x0, y0) chooses one of the lattice points (x1, y1) which satisfy x1 ≥ 0 and y1 ≥ 1 and goes straight to (x1, y1) at a constant velocity v. The value of v depends on y0 and y1 as follows: If y0 = y1, the value of v equals y0. If y0 ≠ y1, the value of v equals (y1 - y0) / (ln(y1) - ln(y0)).
+Ad ogni passo, la formica al punto ($x_0$, $y_0$) sceglie uno dei punti sul reticolo ($x_1$, $y_1$) che soddisfano $x_1 ≥ 0$ e $y_1 ≥ 1$ e va dritta a ($x_1$, $y_1$) ad una velocità costante $v$. Il valore di $v$ dipende da $y_0$ e $y_1$ come segue:
 
-The left image is one of the possible paths for d = 4. First the ant goes from A(0, 1) to P1(1, 3) at velocity (3 - 1) / (ln(3) - ln(1)) ≈ 1.8205. Then the required time is sqrt(5) / 1.8205 ≈ 1.2283. From P1(1, 3) to P2(3, 3) the ant travels at velocity 3 so the required time is 2 / 3 ≈ 0.6667. From P2(3, 3) to B(4, 1) the ant travels at velocity (1 - 3) / (ln(1) - ln(3)) ≈ 1.8205 so the required time is sqrt(5) / 1.8205 ≈ 1.2283. Thus the total required time is 1.2283 + 0.6667 + 1.2283 = 3.1233.
+- Se $y_0 = y_1$, il valore di $v$ è uguale a $y_0$.
+- Se $y_0 ≠ y_1$, il valore di $v$ è pari a $\frac{y_1 - y_0}{\ln y_1 - \ln y_0}$.
 
-The right image is another path. The total required time is calculated as 0.98026 + 1 + 0.98026 = 2.96052. It can be shown that this is the quickest path for d = 4.
+L'immagine a sinistra è uno dei percorsi possibili per $d = 4$. Prima la formica va da $A(0, 1)$ a $P_1(1, 3)$ a una velocità $\frac{3 - 1}{\ln 3 - \ln 1} ≈ 1.8205$. Quindi il tempo richiesto è $\frac{\sqrt{5}}{1.820} ≈ 1.2283$.
 
-Let F(d) be the total required time if the ant chooses the quickest path. For example, F(4) ≈ 2.960516287. We can verify that F(10) ≈ 4.668187834 and F(100) ≈ 9.217221972.
+Da $P_1(1, 3)$ a $P_2(3, 3)$ la formica viaggia a velocità 3 quindi il tempo richiesto è $\frac{2}{3} ≈ 0.6667$. Da $P_2(3, 3)$ a $B(4, 1)$ la formica viaggia a velocità $\frac{1 - 3}{\ln 1 - \ln 3} ≈ 1.8205$ quindi il tempo richiesto è $\frac{\sqrt{5}}{1.8205} ≈ 1.2283$.
 
-Find F(10000). Give your answer rounded to nine decimal places.
+Così il tempo totale richiesto è $1.2283 + 0.6667 + 1.2283 = 3.1233$.
+
+L'immagine a destra è un altro percorso. Il tempo totale richiesto è calcolato come $0.98026 + 1 + 0.98026 = 2.96052$. Può essere dimostrato che questo è il percorso più veloce per $d = 4$.
+
+<img class="img-responsive center-block" alt="due possibili percorsi per d = 4" src="https://cdn.freecodecamp.org/curriculum/project-euler/an-ant-on-the-move.jpg" style="background-color: white; padding: 10px;" />
+
+Sia $F(d)$ il tempo totale richiesto se la formica sceglie il percorso più veloce. Ad esempio, $F(4) ≈ 2.960\\,516\\,287$. Siamo in grado di verificare che $F(10) ≈ 4.668\\,187\\,834$ e $F(100) ≈ 9.217\\,221\\,972$.
+
+Trova $F(10\\,000)$. Dai la risposta arrotondata a nove cifre decimali.
 
 # --hints--
 
-`euler460()` should return 18.420738199.
+`antOnTheMove()` dovrebbe restituire `18.420738199`.
 
 ```js
-assert.strictEqual(euler460(), 18.420738199);
+assert.strictEqual(antOnTheMove(), 18.420738199);
 ```
 
 # --seed--
@@ -33,12 +42,12 @@ assert.strictEqual(euler460(), 18.420738199);
 ## --seed-contents--
 
 ```js
-function euler460() {
+function antOnTheMove() {
 
   return true;
 }
 
-euler460();
+antOnTheMove();
 ```
 
 # --solutions--
