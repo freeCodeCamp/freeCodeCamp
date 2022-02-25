@@ -230,7 +230,7 @@ prompt([
     message: 'Which certification does this belong to?',
     default: SuperBlocks.RespWebDesign,
     type: 'list',
-    choices: SuperBlocks
+    choices: Object.values(SuperBlocks)
   },
   {
     name: 'block',
