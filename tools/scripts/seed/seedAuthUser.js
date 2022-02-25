@@ -153,7 +153,18 @@ MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, (err, client) => {
   const db = client.db('freecodecamp');
   const user = db.collection('user');
 
+  const maybeDropWebhookTokens = async function () {
+    let collectionArr = await db
+      .listCollections({ name: 'WebhookToken' })
+      .toArray();
+
+    if (collectionArr.length > 0) {
+      await db.collection('WebhookToken').drop();
+    }
+  };
+
   if (process.argv[2] === 'certUser') {
+    maybeDropWebhookTokens();
     user.deleteMany(
       {
         _id: {
@@ -179,6 +190,7 @@ MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, (err, client) => {
       }
     );
   } else {
+    maybeDropWebhookTokens();
     user.deleteMany(
       {
         _id: {
