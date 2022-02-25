@@ -16,13 +16,11 @@ Tal como o operador de igualdade, o operador maior que converterá os tipos de d
 **Exemplos**
 
 ```js
-5   >  3
-7   > '3'
-2   >  3
-'1' >  9
+5   >  3  // true
+7   > '3' // true
+2   >  3  // false
+'1' >  9  // false
 ```
-
-Em ordem, essas expressões seriam iguais à `true`, `true`, `false` e `false`.
 
 # --instructions--
 
