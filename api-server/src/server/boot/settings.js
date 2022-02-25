@@ -4,6 +4,7 @@ import isURL from 'validator/lib/isURL';
 
 import { isValidUsername } from '../../../../utils/validate';
 import { alertTypes } from '../../common/utils/flash.js';
+import { deprecatedEndpoint } from '../utils/deprecatedEndpoint';
 import { ifNoUser401, createValidatorErrorHandler } from '../utils/middleware';
 
 const log = debug('fcc:boot:settings');
@@ -15,7 +16,7 @@ export default function settingsController(app) {
 
   api.put('/update-privacy-terms', ifNoUser401, updatePrivacyTerms);
 
-  api.post('/refetch-user-completed-challenges', gone);
+  api.post('/refetch-user-completed-challenges', deprecatedEndpoint);
   api.post(
     '/update-my-current-challenge',
     ifNoUser401,
@@ -24,7 +25,7 @@ export default function settingsController(app) {
     updateMyCurrentChallenge
   );
   api.post('/update-my-portfolio', ifNoUser401, updateMyPortfolio);
-  api.post('/update-my-theme', gone);
+  api.post('/update-my-theme', deprecatedEndpoint);
   api.put('/update-my-about', ifNoUser401, updateMyAbout);
   api.put(
     '/update-my-email',
@@ -49,15 +50,6 @@ const standardSuccessMessage = {
   type: 'success',
   message: 'flash.updated-preferences'
 };
-
-function gone(_, res) {
-  return res.status(410).json({
-    message: {
-      type: 'info',
-      message: 'Please reload the app, this feature is no longer available.'
-    }
-  });
-}
 
 const createStandardHandler = (req, res, next) => err => {
   if (err) {

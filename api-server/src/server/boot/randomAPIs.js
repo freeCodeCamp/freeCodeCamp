@@ -1,25 +1,17 @@
 import { getRedirectParams } from '../utils/redirection';
+import { deprecatedEndpoint } from '../utils/deprecatedEndpoint';
 
 module.exports = function (app) {
   const router = app.loopback.Router();
   const User = app.models.User;
 
-  router.get('/api/github', gone);
+  router.get('/api/github', deprecatedEndpoint);
   router.get('/u/:email', unsubscribeDeprecated);
   router.get('/unsubscribe/:email', unsubscribeDeprecated);
   router.get('/ue/:unsubscribeId', unsubscribeById);
   router.get('/resubscribe/:unsubscribeId', resubscribe);
 
   app.use(router);
-
-  function gone(_, res) {
-    return res.status(410).json({
-      message: {
-        type: 'info',
-        message: 'Please reload the app, this feature is no longer available.'
-      }
-    });
-  }
 
   function unsubscribeDeprecated(req, res) {
     req.flash(
