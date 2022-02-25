@@ -18,7 +18,7 @@ FROM node:16-alpine as depends
 USER node
 WORKDIR /home/node/depends
 COPY --chown=node:node . .
-RUN npm ci --production --workspace=api-server --include-workspace-root --no-progress --ignore-scripts
+RUN npm ci --production --workspace=api-server --no-progress --ignore-scripts
 
 FROM node:16-alpine
 RUN npm i -g pm2@4
