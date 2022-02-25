@@ -13,14 +13,6 @@
       "automerge": true
     },
     {
-      "groupName": "Monaco Editor",
-      "matchPackageNames": [
-        "monaco-editor",
-        "monaco-editor-webpack-plugin",
-        "react-monaco-editor"
-      ]
-    },
-    {
       "matchPackageNames": ["normalize-url"],
       "allowedVersions": "<5.0.0"
     },
