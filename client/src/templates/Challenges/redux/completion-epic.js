@@ -35,9 +35,14 @@ function postChallenge(update, username) {
   const saveChallenge = postUpdate$(update).pipe(
     retry(3),
     switchMap(({ points }) => {
+      // TODO: do this all in ajax.ts
       const payloadWithClientProperties = {
         ...omit(update.payload, ['files']),
-        challengeFiles: update.payload.files ?? null
+        challengeFiles:
+          update.payload.files.map(({ key, ...rest }) => ({
+            ...rest,
+            fileKey: key
+          })) ?? null
       };
       return of(
         submitComplete({
