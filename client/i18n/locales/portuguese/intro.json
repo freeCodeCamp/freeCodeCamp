@@ -497,7 +497,7 @@
         ]
       },
       "learn-git-by-building-an-sql-reference-object": {
-        "title": "Learn Git by Building an SQL Reference Object",
+        "title": "Aprenda Git criando um objeto de referência SQL",
         "intro": [
           "O Git é um sistema de controle de versão que mantém o controle de todas as alterações feitas em sua base de código.",
           "Neste curso de 240 aulas, você aprenderá como o Git mantém o controle do seu código, criando um objeto que contém comandos SQL comumente usados."
