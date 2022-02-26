@@ -31,6 +31,7 @@ Write the following tests in `tests/1_unit-tests.js`:
 - `convertHandler` should correctly read a fractional input.
 - `convertHandler` should correctly read a fractional input with a decimal.
 - `convertHandler` should correctly return an error on a double-fraction (i.e. `3/2/3`).
+- `convertHandler` should correctly return an error for an invalid number input (i.e. `1/0`).
 - `convertHandler` should correctly default to a numerical input of `1` when no numerical input is provided.
 - `convertHandler` should correctly read each valid input unit.
 - `convertHandler` should correctly return an error for an invalid input unit.
@@ -181,10 +182,14 @@ If the number is invalid, returned will be `'invalid number'`.
 ```js
 async getUserInput => {
   try {
-    const data = await $.get(
+    const data1 = await $.get(
       getUserInput('url') + '/api/convert?input=1//2gal'
     );
-    assert(data.error === 'invalid number' || data === 'invalid number');
+    assert(data1.error === 'invalid number' || data1 === 'invalid number');
+    const data2 = await $.get(
+      getUserInput('url') + '/api/convert?input=1/0gal'
+    );
+    assert(data2.error === 'invalid number' || data2 === 'invalid number');
   } catch (xhr) {
     throw new Error(xhr.responseText || xhr.message);
   }
@@ -257,7 +262,7 @@ async getUserInput => {
 };
 ```
 
-All 16 unit tests are complete and passing.
+All 17 unit tests are complete and passing.
 
 ```js
 async getUserInput => {
@@ -267,7 +272,7 @@ async getUserInput => {
     const unitTests = getTests.filter(test => {
       return !!test.context.match(/Unit Tests/gi);
     });
-    assert.isAtLeast(unitTests.length, 16, 'At least 16 tests passed');
+    assert.isAtLeast(unitTests.length, 17, 'At least 17 tests passed');
     unitTests.forEach(test => {
       assert.equal(test.state, 'passed', 'Tests in Passed State');
       assert.isAtLeast(
