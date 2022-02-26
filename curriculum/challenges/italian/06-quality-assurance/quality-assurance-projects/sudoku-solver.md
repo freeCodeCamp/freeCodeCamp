@@ -129,17 +129,21 @@ Se il rompicapo sottoposto a `/api/solve` ha lunghezza maggiore o minore di 81 c
 
 ```js
 async (getUserInput) => {
-  const input =
-    '9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
+  const inputs = [
+    '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6.',
+    '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6...'
+  ];
   const output = 'Expected puzzle to be 81 characters long';
-  const data = await fetch(getUserInput('url') + '/api/solve', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ puzzle: input })
-  });
-  const parsed = await data.json();
-  assert.property(parsed, 'error');
-  assert.equal(parsed.error, output);
+  for (const input of inputs) {
+    const data = await fetch(getUserInput('url') + '/api/solve', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ puzzle: input })
+    });
+    const parsed = await data.json();
+    assert.property(parsed, 'error');
+    assert.equal(parsed.error, output);
+  }
 };
 ```
 
@@ -246,19 +250,23 @@ Se il rompicapo sottoposto a `/api/check` ha lunghezza maggiore o minore di 81 c
 
 ```js
 async (getUserInput) => {
-  const input =
-    '9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
+  const inputs = [
+    '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6.',
+    '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6...'
+  ];
   const coordinate = 'A1';
   const value = '1';
   const output = 'Expected puzzle to be 81 characters long';
-  const data = await fetch(getUserInput('url') + '/api/check', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ puzzle: input, coordinate, value })
-  });
-  const parsed = await data.json();
-  assert.property(parsed, 'error');
-  assert.equal(parsed.error, output);
+  for (const input of inputs) {
+    const data = await fetch(getUserInput('url') + '/api/check', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ puzzle: input, coordinate, value })
+    });
+    const parsed = await data.json();
+    assert.property(parsed, 'error');
+    assert.equal(parsed.error, output);
+  }
 };
 ```
 
@@ -266,17 +274,31 @@ Se all'oggetto sottoposto a `/api/check` manca `puzzle`, `coordinate` o `value`,
 
 ```js
 async (getUserInput) => {
-  const input =
-    '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
-  const output = 'Required field(s) missing';
-  const data = await fetch(getUserInput('url') + '/api/check', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ puzzle: input })
-  });
-  const parsed = await data.json();
-  assert.property(parsed, 'error');
-  assert.equal(parsed.error, output);
+  const inputs = [
+    {
+      puzzle: '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..',
+      value: '1',
+    },
+    {
+      puzzle: '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..',
+      coordinate: 'A1',
+    },
+    {
+      coordinate: 'A1',
+      value: '1'
+    }
+  ];
+  for (const input of inputs) {
+    const output = 'Required field(s) missing';
+    const data = await fetch(getUserInput('url') + '/api/check', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(input)
+    });
+    const parsed = await data.json();
+    assert.property(parsed, 'error');
+    assert.equal(parsed.error, output);
+  }
 };
 ```
 
@@ -287,16 +309,18 @@ async (getUserInput) => {
   const input =
     '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
   const output = 'Invalid coordinate';
-  const coordinate = 'XZ18';
+  const coordinates = ['A0', 'A10', 'J1', 'A', '1', 'XZ18'];
   const value = '7';
-  const data = await fetch(getUserInput('url') + '/api/check', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ puzzle: input, coordinate, value })
-  });
-  const parsed = await data.json();
-  assert.property(parsed, 'error');
-  assert.equal(parsed.error, output);
+  for (const coordinate of coordinates) {
+    const data = await fetch(getUserInput('url') + '/api/check', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ puzzle: input, coordinate, value })
+    });
+    const parsed = await data.json();
+    assert.property(parsed, 'error');
+    assert.equal(parsed.error, output);
+  }
 };
 ```
 
@@ -308,15 +332,17 @@ async (getUserInput) => {
     '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
   const output = 'Invalid value';
   const coordinate = 'A1';
-  const value = 'X';
-  const data = await fetch(getUserInput('url') + '/api/check', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ puzzle: input, coordinate, value })
-  });
-  const parsed = await data.json();
-  assert.property(parsed, 'error');
-  assert.equal(parsed.error, output);
+  const values = ['0', '10', 'A'];
+  for (const value of values) {
+    const data = await fetch(getUserInput('url') + '/api/check', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ puzzle: input, coordinate, value })
+    });
+    const parsed = await data.json();
+    assert.property(parsed, 'error');
+    assert.equal(parsed.error, output);
+  }
 };
 ```
 

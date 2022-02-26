@@ -32,16 +32,14 @@ Change the code so that all variables are declared using `let` or `const`. Use `
 `var` should not exist in your code.
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/var/g));
+assert.notMatch(code, /var/g);
 ```
 
 You should change `fCC` to all uppercase.
 
 ```js
-(getUserInput) => {
-  assert(getUserInput('index').match(/(FCC)/));
-  assert(!getUserInput('index').match(/fCC/));
-}
+assert.match(code, /(FCC)/);
+assert.notMatch(code, /(fCC)/);
 ```
 
 `FCC` should be a constant variable declared with `const`.
@@ -54,14 +52,13 @@ assert.match(code, /const\s+FCC/);
 `fact` should be declared with `let`.
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/(let fact)/g));
+assert.match(code, /(let\s+fact)/g);
 ```
 
 `console.log` should be changed to print the `FCC` and `fact` variables.
 
 ```js
-(getUserInput) =>
-  assert(getUserInput('index').match(/console\.log\(\s*FCC\s*\,\s*fact\s*\)\s*;?/g));
+assert.match(code, /console\.log\(\s*FCC\s*\,\s*fact\s*\)\s*;?/g);
 ```
 
 # --seed--

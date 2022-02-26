@@ -42,19 +42,19 @@ let camper = "David";
 `var` має бути відсутнім у коді.
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/var/g));
+assert.notMatch(code, /var/g);
 ```
 
 `catName` має бути рядком `Oliver`.
 
 ```js
-assert(catName === 'Oliver');
+assert.equal(catName, 'Oliver');
 ```
 
 `catSound` має бути рядком `Meow!`
 
 ```js
-assert(catSound === 'Meow!');
+assert.equal(catSound, 'Meow!');
 ```
 
 # --seed--

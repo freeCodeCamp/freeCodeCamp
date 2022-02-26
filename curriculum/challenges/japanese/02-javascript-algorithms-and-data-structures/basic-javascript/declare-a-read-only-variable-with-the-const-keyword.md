@@ -32,16 +32,14 @@ FAV_PET = "Dogs";
 `var` がコード内に存在しないようにしてください。
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/var/g));
+assert.notMatch(code, /var/g);
 ```
 
 `fCC` をすべて大文字に変更する必要があります。
 
 ```js
-(getUserInput) => {
-  assert(getUserInput('index').match(/(FCC)/));
-  assert(!getUserInput('index').match(/fCC/));
-}
+assert.match(code, /(FCC)/);
+assert.notMatch(code, /(fCC)/);
 ```
 
 `FCC` は `const` で宣言された定数変数である必要があります。
@@ -54,14 +52,13 @@ assert.match(code, /const\s+FCC/);
 `fact` は `let` を使用して宣言する必要があります。
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/(let fact)/g));
+assert.match(code, /(let\s+fact)/g);
 ```
 
 `console.log` を、`FCC` と `fact` 変数が出力されるように変更する必要があります。
 
 ```js
-(getUserInput) =>
-  assert(getUserInput('index').match(/console\.log\(\s*FCC\s*\,\s*fact\s*\)\s*;?/g));
+assert.match(code, /console\.log\(\s*FCC\s*\,\s*fact\s*\)\s*;?/g);
 ```
 
 # --seed--

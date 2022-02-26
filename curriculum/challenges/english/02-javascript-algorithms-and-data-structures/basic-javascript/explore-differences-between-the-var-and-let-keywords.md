@@ -42,19 +42,19 @@ Update the code so it only uses the `let` keyword.
 `var` should not exist in the code.
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/var/g));
+assert.notMatch(code, /var/g);
 ```
 
 `catName` should be the string `Oliver`.
 
 ```js
-assert(catName === 'Oliver');
+assert.equal(catName, 'Oliver');
 ```
 
 `catSound` should be the string `Meow!`
 
 ```js
-assert(catSound === 'Meow!');
+assert.equal(catSound, 'Meow!');
 ```
 
 # --seed--

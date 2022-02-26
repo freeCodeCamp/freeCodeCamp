@@ -14,58 +14,56 @@ dashedName: comparison-with-the-less-than-operator
 **例**
 
 ```js
-2   < 5
-'3' < 7
-5   < 5
-3   < 2
-'8' < 4
+2   < 5 // true
+'3' < 7 // true
+5   < 5 // false
+3   < 2 // false
+'8' < 4 // false
 ```
-
-これらの式は上から順に、`true`、`true`、`false`、`false`、`false` と評価されます。
 
 # --instructions--
 
-return ステートメントの意味が正しくなるように、指定された行に小なり演算子を追加してください。
+Add the less than operator to the indicated lines so that the return statements make sense.
 
 # --hints--
 
-`testLessThan(0)` は文字列 `Under 25` を返す必要があります。
+`testLessThan(0)` should return the string `Under 25`
 
 ```js
 assert(testLessThan(0) === 'Under 25');
 ```
 
-`testLessThan(24)` は文字列 `Under 25` を返す必要があります。
+`testLessThan(24)` should return the string `Under 25`
 
 ```js
 assert(testLessThan(24) === 'Under 25');
 ```
 
-`testLessThan(25)` は文字列 `Under 55` を返す必要があります。
+`testLessThan(25)` should return the string `Under 55`
 
 ```js
 assert(testLessThan(25) === 'Under 55');
 ```
 
-`testLessThan(54)` は文字列 `Under 55` を返す必要があります。
+`testLessThan(54)` should return the string `Under 55`
 
 ```js
 assert(testLessThan(54) === 'Under 55');
 ```
 
-`testLessThan(55)` は文字列 `55 or Over` を返す必要があります。
+`testLessThan(55)` should return the string `55 or Over`
 
 ```js
 assert(testLessThan(55) === '55 or Over');
 ```
 
-`testLessThan(99)` は文字列 `55 or Over` を返す必要があります。
+`testLessThan(99)` should return the string `55 or Over`
 
 ```js
 assert(testLessThan(99) === '55 or Over');
 ```
 
-`<` 演算子を 2 回以上使用してください。
+You should use the `<` operator at least twice
 
 ```js
 assert(code.match(/val\s*<\s*('|")*\d+('|")*/g).length > 1);

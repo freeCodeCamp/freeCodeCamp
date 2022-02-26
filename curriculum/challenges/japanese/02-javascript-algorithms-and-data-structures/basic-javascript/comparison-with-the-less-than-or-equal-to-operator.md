@@ -14,64 +14,62 @@ dashedName: comparison-with-the-less-than-or-equal-to-operator
 **例**
 
 ```js
-4   <= 5
-'7' <= 7
-5   <= 5
-3   <= 2
-'8' <= 4
+4   <= 5 // true
+'7' <= 7 // true
+5   <= 5 // true
+3   <= 2 // false
+'8' <= 4 // false
 ```
-
-これらの式は上から順に、`true`、`true`、`true`、`false`、`false` と評価されます。
 
 # --instructions--
 
-return ステートメントの意味が正しくなるように、指定された行に小なりイコール演算子を追加してください。
+Add the less than or equal to operator to the indicated lines so that the return statements make sense.
 
 # --hints--
 
-`testLessOrEqual(0)` は文字列 `Smaller Than or Equal to 12` を返す必要があります。
+`testLessOrEqual(0)` should return the string `Smaller Than or Equal to 12`
 
 ```js
 assert(testLessOrEqual(0) === 'Smaller Than or Equal to 12');
 ```
 
-`testLessOrEqual(11)` は文字列 `Smaller Than or Equal to 12` を返す必要があります。
+`testLessOrEqual(11)` should return the string `Smaller Than or Equal to 12`
 
 ```js
 assert(testLessOrEqual(11) === 'Smaller Than or Equal to 12');
 ```
 
-`testLessOrEqual(12)` は文字列 `Smaller Than or Equal to 12` を返す必要があります。
+`testLessOrEqual(12)` should return the string `Smaller Than or Equal to 12`
 
 ```js
 assert(testLessOrEqual(12) === 'Smaller Than or Equal to 12');
 ```
 
-`testLessOrEqual(23)` は文字列 `Smaller Than or Equal to 24` を返す必要があります。
+`testLessOrEqual(23)` should return the string `Smaller Than or Equal to 24`
 
 ```js
 assert(testLessOrEqual(23) === 'Smaller Than or Equal to 24');
 ```
 
-`testLessOrEqual(24)` は文字列 `Smaller Than or Equal to 24` を返す必要があります。
+`testLessOrEqual(24)` should return the string `Smaller Than or Equal to 24`
 
 ```js
 assert(testLessOrEqual(24) === 'Smaller Than or Equal to 24');
 ```
 
-`testLessOrEqual(25)` は文字列 `More Than 24` を返す必要があります。
+`testLessOrEqual(25)` should return the string `More Than 24`
 
 ```js
 assert(testLessOrEqual(25) === 'More Than 24');
 ```
 
-`testLessOrEqual(55)` は文字列 `More Than 24` を返す必要があります。
+`testLessOrEqual(55)` should return the string `More Than 24`
 
 ```js
 assert(testLessOrEqual(55) === 'More Than 24');
 ```
 
-`<=` 演算子を 2 回以上使用してください。
+You should use the `<=` operator at least twice
 
 ```js
 assert(code.match(/val\s*<=\s*('|")*\d+('|")*/g).length > 1);

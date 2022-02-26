@@ -1,4 +1,4 @@
-import { inspect } from 'util';
+import { inspect } from 'util/util';
 
 export function format(x) {
   // we're trying to mimic console.log, so we avoid wrapping strings in quotes:
@@ -10,6 +10,10 @@ export function format(x) {
       x.entries(),
       ([k, v]) => `${k} => ${v}`
     ).join(', ')}})`;
+  } else if (typeof x === 'bigint') {
+    return x.toString() + 'n';
+  } else if (typeof x === 'symbol') {
+    return x.toString();
   }
   return inspect(x);
 }

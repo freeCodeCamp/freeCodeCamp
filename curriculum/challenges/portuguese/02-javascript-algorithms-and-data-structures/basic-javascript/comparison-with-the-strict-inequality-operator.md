@@ -14,12 +14,10 @@ O operador de desigualdade estrito (`!==`) é o oposto lógico do operador de ig
 **Exemplos**
 
 ```js
-3 !==  3
-3 !== '3'
-4 !==  3
+3 !==  3  // false
+3 !== '3' // true
+4 !==  3  // true
 ```
-
-Em ordem, essas expressões seriam iguais à `false`, `true` e `true`.
 
 # --instructions--
 
