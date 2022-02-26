@@ -96,7 +96,7 @@ assert($('ul li').filter((_, item) => !$(item).text().trim()).length === 0);
   <ul>
     <li>milk</li>
     <li>mice</li>
-    <li>catnip</li>
+    <li>cat nip</li>
   </ul>
 </main>
 ```

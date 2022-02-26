@@ -92,7 +92,7 @@ assert(labelElem.textContent.replace(/\s/g, '').match(/Loving/i));
         <h2>Cat Lists</h2>
         <h3>Things cats love:</h3>
         <ul>
-          <li>cat nip</li>
+          <li>catnip</li>
           <li>laser pointers</li>
           <li>lasagna</li>
         </ul>

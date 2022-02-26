@@ -99,7 +99,7 @@ assert(
   <button class="btn btn-default">Like</button>
   <p>Things cats love:</p>
   <ul>
-    <li>cat nip</li>
+    <li>catnip</li>
     <li>laser pointers</li>
     <li>lasagna</li>
   </ul>
@@ -162,7 +162,7 @@ assert(
   <button class="btn btn-block btn-default">Like</button>
   <p>Things cats love:</p>
   <ul>
-    <li>cat nip</li>
+    <li>catnip</li>
     <li>laser pointers</li>
     <li>lasagna</li>
   </ul>

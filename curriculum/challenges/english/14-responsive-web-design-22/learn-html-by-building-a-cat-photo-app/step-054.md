@@ -42,7 +42,7 @@ assert($('input[type="checkbox"]')[0].id.match(/^loving$/));
         <h2>Cat Lists</h2>
         <h3>Things cats love:</h3>
         <ul>
-          <li>cat nip</li>
+          <li>catnip</li>
           <li>laser pointers</li>
           <li>lasagna</li>
         </ul>

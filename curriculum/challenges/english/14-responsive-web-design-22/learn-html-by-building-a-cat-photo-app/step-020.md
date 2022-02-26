@@ -16,7 +16,7 @@ Use list item (`li`) elements to create items in a list. Here is an example of l
 </ul>
 ```
 
-Nest three list items within the `ul` element to display three things cats love: `cat nip`, `laser pointers` and `lasagna`.
+Nest three list items within the `ul` element to display three things cats love: `catnip`, `laser pointers` and `lasagna`.
 
 # --hints--
 
@@ -26,14 +26,14 @@ You should have three `li` elements. Each `li` element should have its own openi
 assert($('li').length === 3 && code.match(/<\/li\>/g).length === 3);
 ```
 
-You should have three `li` elements with the text `cat nip`, `laser pointers` and `lasagna` in any order. You have either omitted some text or have a typo.
+You should have three `li` elements with the text `catnip`, `laser pointers` and `lasagna` in any order. You have either omitted some text or have a typo.
 
 ```js
 assert.deepStrictEqual(
   [...document.querySelectorAll('li')]
     .map((item) => item.innerText.toLowerCase())
     .sort((a, b) => a.localeCompare(b)),
-  ['cat nip', 'lasagna', 'laser pointers']
+  ['catnip', 'lasagna', 'laser pointers']
 );
 ```
 

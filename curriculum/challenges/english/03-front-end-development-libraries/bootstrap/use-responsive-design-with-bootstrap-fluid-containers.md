@@ -88,7 +88,7 @@ assert($('.container-fluid').children().length >= 8 && !$('.container-fluid').ha
 
 <p>Things cats love:</p>
 <ul>
-  <li>cat nip</li>
+  <li>catnip</li>
   <li>laser pointers</li>
   <li>lasagna</li>
 </ul>
@@ -147,7 +147,7 @@ assert($('.container-fluid').children().length >= 8 && !$('.container-fluid').ha
 
 <p>Things cats love:</p>
 <ul>
-  <li>cat nip</li>
+  <li>catnip</li>
   <li>laser pointers</li>
   <li>lasagna</li>
 </ul>

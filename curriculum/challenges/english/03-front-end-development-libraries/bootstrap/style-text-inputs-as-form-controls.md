@@ -87,7 +87,7 @@ assert(code.match(/<\/i>/g) && code.match(/<\/i/g).length > 3);
   </div>
   <p>Things cats <span class="text-danger">love:</span></p>
   <ul>
-    <li>cat nip</li>
+    <li>catnip</li>
     <li>laser pointers</li>
     <li>lasagna</li>
   </ul>
@@ -164,7 +164,7 @@ assert(code.match(/<\/i>/g) && code.match(/<\/i/g).length > 3);
   </div>
   <p>Things cats <span class="text-danger">love:</span></p>
   <ul>
-    <li>cat nip</li>
+    <li>catnip</li>
     <li>laser pointers</li>
     <li>lasagna</li>
   </ul>
