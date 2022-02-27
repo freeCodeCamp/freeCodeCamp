@@ -20,10 +20,10 @@ Quantos triângulos há contendo a origem no interior e tendo todos os três vé
 
 # --hints--
 
-`trianglesContainingOrigin()` deve retornar `1725323624056`.
+`trianglesConttainingOrigin()` deve retornar `1725323624056`.
 
 ```js
-assert.strictEqual(trianglesContainingOrigin(), 1725323624056);
+assert.strictEqual(trianglesConttainingOrigin(), 1725323624056);
 ```
 
 # --seed--

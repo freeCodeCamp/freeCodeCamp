@@ -20,10 +20,10 @@ dashedName: problem-184-triangles-containing-the-origin
 
 # --hints--
 
-`trianglesContainingOrigin()` は `1725323624056` を返す必要があります。
+`trianglesConttainingOrigin()` は `1725323624056` を返す必要があります。
 
 ```js
-assert.strictEqual(trianglesContainingOrigin(), 1725323624056);
+assert.strictEqual(trianglesConttainingOrigin(), 1725323624056);
 ```
 
 # --seed--

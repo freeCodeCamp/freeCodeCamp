@@ -20,10 +20,10 @@ How many triangles are there containing the origin in the interior and having al
 
 # --hints--
 
-`trianglesContainingOrigin()` should return `1725323624056`.
+`trianglesConttainingOrigin()` should return `1725323624056`.
 
 ```js
-assert.strictEqual(trianglesContainingOrigin(), 1725323624056);
+assert.strictEqual(trianglesConttainingOrigin(), 1725323624056);
 ```
 
 # --seed--
