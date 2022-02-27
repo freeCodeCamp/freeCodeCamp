@@ -1,6 +1,6 @@
 ---
 id: 5900f3fa1000cf542c50ff0d
-title: 'Problem 142: Perfect Square Collection'
+title: 'Problema 142: Collezione Quadrata Perfetta'
 challengeType: 5
 forumTopicId: 301771
 dashedName: problem-142-perfect-square-collection
@@ -8,14 +8,14 @@ dashedName: problem-142-perfect-square-collection
 
 # --description--
 
-Find the smallest x + y + z with integers x > y > z > 0 such that x + y, x − y, x + z, x − z, y + z, y − z are all perfect squares.
+Trova il più piccolo $x + y + z$ con interi $x > y > z > 0$ in modo che $x + y$, $x − y$, $x + z$, $x − z$, $y + z$, $y − z$ siano tutti quadrati perfetti.
 
 # --hints--
 
-`euler142()` should return 1006193.
+`perfectSquareCollection()` dovrebbe restituire `1006193`.
 
 ```js
-assert.strictEqual(euler142(), 1006193);
+assert.strictEqual(perfectSquareCollection(), 1006193);
 ```
 
 # --seed--
@@ -23,12 +23,12 @@ assert.strictEqual(euler142(), 1006193);
 ## --seed-contents--
 
 ```js
-function euler142() {
+function perfectSquareCollection() {
 
   return true;
 }
 
-euler142();
+perfectSquareCollection();
 ```
 
 # --solutions--

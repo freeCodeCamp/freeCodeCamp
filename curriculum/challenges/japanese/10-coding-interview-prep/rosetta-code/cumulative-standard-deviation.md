@@ -8,7 +8,7 @@ dashedName: cumulative-standard-deviation
 
 # --description--
 
-数値の配列をパラメータとして取り、級数の [標準偏差](https://en.wikipedia.org/wiki/Standard Deviation) を返す関数を作成します。
+数値の配列をパラメータとして取り、級数の [標準偏差](https://en.wikipedia.org/wiki/Standard_deviation) を返す関数を作成します。
 
 # --hints--
 

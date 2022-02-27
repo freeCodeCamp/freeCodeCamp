@@ -1,6 +1,6 @@
 ---
 id: 5900f4031000cf542c50ff16
-title: 'Problem 151: Paper sheets of standard sizes: an expected-value problem'
+title: 'Problema 151: fogli di carta di dimensioni standard: un problema di valore atteso'
 challengeType: 5
 forumTopicId: 301782
 dashedName: problem-151-paper-sheets-of-standard-sizes-an-expected-value-problem
@@ -8,22 +8,28 @@ dashedName: problem-151-paper-sheets-of-standard-sizes-an-expected-value-problem
 
 # --description--
 
-A printing shop runs 16 batches (jobs) every week and each batch requires a sheet of special colour-proofing paper of size A5.
+Un negozio di stampa esegue 16 lotti (lavori) ogni settimana e ogni lotto richiede un foglio di carta speciale per la prova del colore di dimensione A5.
 
-Every Monday morning, the foreman opens a new envelope, containing a large sheet of the special paper with size A1.
+Ogni lunedì mattina, il caposquadra apre una nuova busta, contenente un grande foglio di carta speciale di formato A1.
 
-He proceeds to cut it in half, thus getting two sheets of size A2. Then he cuts one of them in half to get two sheets of size A3 and so on until he obtains the A5-size sheet needed for the first batch of the week.
+Prosegue tagliandolo a metà, ottenendo così due fogli di formato A2. Poi taglia uno di loro a metà per ottenere due fogli di formato A3 e così via fino a quando ottiene il foglio di formato A5 necessario per il primo lotto della settimana.
 
-All the unused sheets are placed back in the envelope.
+Tutti i fogli inutilizzati sono riposizionati nella busta.
 
-At the beginning of each subsequent batch, he takes from the envelope one sheet of paper at random. If it is of size A5, he uses it. If it is larger, he repeats the 'cut-in-half' procedure until he has what he needs and any remaining sheets are always placed back in the envelope. Excluding the first and last batch of the week, find the expected number of times (during each week) that the foreman finds a single sheet of paper in the envelope. Give your answer rounded to six decimal places using the format x.xxxxxx .
+<img class="img-responsive center-block" alt="Foglio formato A1 diviso in: A2, A3, A4 e due fogli A5" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-sheets-of-standard-sizes-an-expected-value-problem.png" style="background-color: white; padding: 10px;" />
+
+All'inizio di ogni lotto successivo, prende un foglio di carta dalla busta a caso. Se è di dimensioni A5, lo usa. Se è più grande, ripete la procedura "taglia a metà" fino a quando non ha quello di cui ha bisogno, e tutti i fogli rimanenti sono sempre riposti nella busta.
+
+Escluso il primo e l’ultimo lotto della settimana, trovare il numero previsto di volte (nel corso di ogni settimana) in cui il caposquadra trova un unico foglio di carta nella busta.
+
+Dare la risposta arrotondata a sei decimali utilizzando il formato `x.xxxxxx`.
 
 # --hints--
 
-`euler151()` should return 0.464399.
+`expectedValueProblem()` dovrebbe restituire `0.464399`.
 
 ```js
-assert.strictEqual(euler151(), 0.464399);
+assert.strictEqual(expectedValueProblem(), 0.464399);
 ```
 
 # --seed--
@@ -31,12 +37,12 @@ assert.strictEqual(euler151(), 0.464399);
 ## --seed-contents--
 
 ```js
-function euler151() {
+function expectedValueProblem() {
 
   return true;
 }
 
-euler151();
+expectedValueProblem();
 ```
 
 # --solutions--

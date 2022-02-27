@@ -1,6 +1,6 @@
 ---
 id: 5900f3fe1000cf542c50ff11
-title: 'Problem 146: Investigating a Prime Pattern'
+title: 'Problema 146: Indagare un modello di numeri primi'
 challengeType: 5
 forumTopicId: 301775
 dashedName: problem-146-investigating-a-prime-pattern
@@ -8,16 +8,16 @@ dashedName: problem-146-investigating-a-prime-pattern
 
 # --description--
 
-The smallest positive integer n for which the numbers n2+1, n2+3, n2+7, n2+9, n2+13, and n2+27 are consecutive primes is 10. The sum of all such integers n below one-million is 1242490.
+Il più piccolo intero positivo $n$ per il quale i numeri $n^2 + 1$, $n^2 + 3$, $n^2 + 7$, $n^2 + 9$, $n^2 + 13$, e $n^2 + 27$ sono primi consecutivi è 10. La somma di tutti questi numeri interi $n$ sotto un milione è 1242490.
 
-What is the sum of all such integers n below 150 million?
+Qual è la somma di tutti questi numeri interi $n$ sotto 150 milioni?
 
 # --hints--
 
-`euler146()` should return 676333270.
+`primePattern()` dovrebbe restituire `676333270`.
 
 ```js
-assert.strictEqual(euler146(), 676333270);
+assert.strictEqual(primePattern(), 676333270);
 ```
 
 # --seed--
@@ -25,12 +25,12 @@ assert.strictEqual(euler146(), 676333270);
 ## --seed-contents--
 
 ```js
-function euler146() {
+function primePattern() {
 
   return true;
 }
 
-euler146();
+primePattern();
 ```
 
 # --solutions--
