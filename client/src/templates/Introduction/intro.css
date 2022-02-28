@@ -19,6 +19,25 @@
   flex-direction: row;
 }
 
+.block-header .block-link {
+  flex-grow: 3;
+  flex-basis: 0;
+  padding: 25px 15px 10px;
+}
+
+.block-link:hover,
+.block-link:focus,
+.block-link:active {
+  background-color: var(--primary-background);
+}
+
+a.cert-tag:hover,
+a.cert-tag:focus,
+a.cert-tag:active {
+  color: var(--highlight-background);
+  background-color: var(--highlight-color);
+}
+
 .big-block-title {
   font-size: 1.5rem;
   overflow-wrap: break-word;
