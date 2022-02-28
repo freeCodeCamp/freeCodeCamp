@@ -35,17 +35,17 @@ describe('format', () => {
     const primitives = [
       'str',
       57,
-      BigInt(10),
       true,
       false,
       null,
       // eslint-disable-next-line no-undefined
-      undefined,
-      Symbol('Sym')
+      undefined
     ];
     expect(format(primitives)).toBe(
-      `[ 'str', 57, 10n, true, false, null, undefined, Symbol(Sym) ]`
+      `[ 'str', 57, true, false, null, undefined ]`
     );
+    expect(format(BigInt(10))).toBe(`10n`);
+    expect(format(Symbol('Sym'))).toBe(`Symbol(Sym)`);
   });
   it(`outputs NaN as 'NaN'`, () => {
     expect(format(NaN)).toBe('NaN');

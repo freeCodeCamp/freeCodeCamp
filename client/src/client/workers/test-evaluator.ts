@@ -25,6 +25,7 @@ const __utils = (() => {
 
   const oldLog = ctx.console.log.bind(ctx.console);
   function proxyLog(...args: string[]) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     logs.push(args.map(arg => __format(arg)).join(' '));
     if (logs.join('\n').length > MAX_LOGS_SIZE) {
       flushLogs();

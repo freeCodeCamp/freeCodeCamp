@@ -1,7 +1,7 @@
 ---
 id: 5900f4231000cf542c50ff34
 title: >-
-  Problem 181: Investigating in how many ways objects of two different colours can be grouped
+  Problema 181: Indagare in quanti modi possono essere raggruppati oggetti di due colori diversi
 challengeType: 5
 forumTopicId: 301817
 dashedName: >-
@@ -10,20 +10,18 @@ dashedName: >-
 
 # --description--
 
-Having three black objects B and one white object W they can be grouped in 7 ways like this:
+Dati tre oggetti neri $B$ e un oggetto bianco $W$, essi possono essere raggruppati in 7 modi:
 
-(BBBW)(B,BBW)(B,B,BW)(B,B,B,W)
+$$(BBBW)\\;(B,BBW)\\;(B,B,BW)\\;(B,B,B,W)\\;(B,BB,W)\\;(BBB,W)\\;(BB,BW)$$
 
-(B,BB,W)(BBB,W)(BB,BW)
-
-In how many ways can sixty black objects B and forty white objects W be thus grouped?
+In quanti modi possono essere raggruppati sessanta oggetti neri $B$ e quaranta oggetti bianchi $W$?
 
 # --hints--
 
-`euler181()` should return 83735848679360670.
+`colorsGrouping()` dovrebbe restituire `83735848679360670`.
 
 ```js
-assert.strictEqual(euler181(), 83735848679360670);
+assert.strictEqual(colorsGrouping(), 83735848679360670);
 ```
 
 # --seed--
@@ -31,12 +29,12 @@ assert.strictEqual(euler181(), 83735848679360670);
 ## --seed-contents--
 
 ```js
-function euler181() {
+function colorsGrouping() {
 
   return true;
 }
 
-euler181();
+colorsGrouping();
 ```
 
 # --solutions--

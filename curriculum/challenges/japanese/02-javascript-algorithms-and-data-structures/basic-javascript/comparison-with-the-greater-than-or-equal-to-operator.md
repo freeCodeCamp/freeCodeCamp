@@ -16,13 +16,11 @@ dashedName: comparison-with-the-greater-than-or-equal-to-operator
 **例**
 
 ```js
-6   >=  6
-7   >= '3'
-2   >=  3
-'7' >=  9
+6   >=  6  // true
+7   >= '3' // true
+2   >=  3  // false
+'7' >=  9  // false
 ```
-
-これらの式は上から順に、`true`、`true`、`false`、`false` と評価されます。
 
 # --instructions--
 

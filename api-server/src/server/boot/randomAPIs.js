@@ -1,16 +1,11 @@
-import request from 'request';
-
-import { gitHubUserAgent } from '../../../../config/misc';
 import { getRedirectParams } from '../utils/redirection';
-
-const githubClient = process.env.GITHUB_ID;
-const githubSecret = process.env.GITHUB_SECRET;
+import { deprecatedEndpoint } from '../utils/deprecatedEndpoint';
 
 module.exports = function (app) {
   const router = app.loopback.Router();
   const User = app.models.User;
 
-  router.get('/api/github', githubCalls);
+  router.get('/api/github', deprecatedEndpoint);
   router.get('/u/:email', unsubscribeDeprecated);
   router.get('/unsubscribe/:email', unsubscribeDeprecated);
   router.get('/ue/:unsubscribeId', unsubscribeById);
@@ -110,56 +105,5 @@ module.exports = function (app) {
         })
         .catch(next);
     });
-  }
-
-  function githubCalls(req, res, next) {
-    var githubHeaders = {
-      headers: {
-        'User-Agent': gitHubUserAgent
-      },
-      port: 80
-    };
-    request(
-      [
-        'https://api.github.com/repos/freecodecamp/',
-        'freecodecamp/pulls?client_id=',
-        githubClient,
-        '&client_secret=',
-        githubSecret
-      ].join(''),
-      githubHeaders,
-      function (err, status1, pulls) {
-        if (err) {
-          return next(err);
-        }
-        pulls = pulls
-          ? Object.keys(JSON.parse(pulls)).length
-          : "Can't connect to github";
-
-        return request(
-          [
-            'https://api.github.com/repos/freecodecamp/',
-            'freecodecamp/issues?client_id=',
-            githubClient,
-            '&client_secret=',
-            githubSecret
-          ].join(''),
-          githubHeaders,
-          function (err, status2, issues) {
-            if (err) {
-              return next(err);
-            }
-            issues =
-              pulls === parseInt(pulls, 10) && issues
-                ? Object.keys(JSON.parse(issues)).length - pulls
-                : "Can't connect to GitHub";
-            return res.json({
-              issues: issues,
-              pulls: pulls
-            });
-          }
-        );
-      }
-    );
   }
 };

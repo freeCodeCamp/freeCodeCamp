@@ -1,6 +1,6 @@
 ---
 id: 5900f4181000cf542c50ff2b
-title: 'Problem 172: Investigating numbers with few repeated digits'
+title: 'Problema 172: Investigare numeri con alcune cifre ripetute'
 challengeType: 5
 forumTopicId: 301807
 dashedName: problem-172-investigating-numbers-with-few-repeated-digits
@@ -8,14 +8,14 @@ dashedName: problem-172-investigating-numbers-with-few-repeated-digits
 
 # --description--
 
-How many 18-digit numbers n (without leading zeros) are there such that no digit occurs more than three times in n?
+Quanti numeri a 18 cifre $n$ (senza contare zeri all'inizio del numero) ci sono cosicché nessuna cifra ripete più di tre volte dentro $n$?
 
 # --hints--
 
-`euler172()` should return 227485267000992000.
+`numbersWithRepeatedDigits()` dovrebbe restituire `227485267000992000`.
 
 ```js
-assert.strictEqual(euler172(), 227485267000992000);
+assert.strictEqual(numbersWithRepeatedDigits(), 227485267000992000);
 ```
 
 # --seed--
@@ -23,12 +23,12 @@ assert.strictEqual(euler172(), 227485267000992000);
 ## --seed-contents--
 
 ```js
-function euler172() {
+function numbersWithRepeatedDigits() {
 
   return true;
 }
 
-euler172();
+numbersWithRepeatedDigits();
 ```
 
 # --solutions--

@@ -1,6 +1,6 @@
 ---
 id: 5900f3fd1000cf542c50ff10
-title: 'Problem 145: How many reversible numbers are there below one-billion?'
+title: 'Problema 145: Quanti numeri reversibili ci sono sotto un miliardo?'
 challengeType: 5
 forumTopicId: 301774
 dashedName: problem-145-how-many-reversible-numbers-are-there-below-one-billion
@@ -8,18 +8,18 @@ dashedName: problem-145-how-many-reversible-numbers-are-there-below-one-billion
 
 # --description--
 
-Some positive integers n have the property that the sum \[ n + reverse(n) ] consists entirely of odd (decimal) digits. For instance, 36 + 63 = 99 and 409 + 904 = 1313. We will call such numbers reversible; so 36, 63, 409, and 904 are reversible. Leading zeroes are not allowed in either n or reverse(n).
+Alcuni numeri interi positivi $n$ hanno la proprietà che la somma [ $n + reverse(n)$ ] consiste interamente di cifre dispari (decimali). Per esempio, $36 + 63 = 99$ e $409 + 904 = 1313$. Chiameremo tali numeri reversibili; quindi 36, 63, 409 e 904 sono reversibili. Gli zero iniziali non sono ammessi in $n$ o $reverse(n)$.
 
-There are 120 reversible numbers below one-thousand.
+Ci sono 120 numeri reversibili sotto il mille.
 
-How many reversible numbers are there below one-billion (109)?
+Quanti numeri reversibili ci sono sotto un miliardo (${10}^9$)?
 
 # --hints--
 
-`euler145()` should return 608720.
+`reversibleNumbers()` dovrebbe restituire `608720`.
 
 ```js
-assert.strictEqual(euler145(), 608720);
+assert.strictEqual(reversibleNumbers(), 608720);
 ```
 
 # --seed--
@@ -27,12 +27,12 @@ assert.strictEqual(euler145(), 608720);
 ## --seed-contents--
 
 ```js
-function euler145() {
+function reversibleNumbers() {
 
   return true;
 }
 
-euler145();
+reversibleNumbers();
 ```
 
 # --solutions--

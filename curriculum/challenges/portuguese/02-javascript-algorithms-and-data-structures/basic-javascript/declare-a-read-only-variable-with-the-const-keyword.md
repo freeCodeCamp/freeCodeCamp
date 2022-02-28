@@ -32,16 +32,14 @@ Altere o código para que todas as variáveis sejam declaradas usando `let` ou `
 `var` não deve existir no código.
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/var/g));
+assert.notMatch(code, /var/g);
 ```
 
 Você deve alterar `fCC` para uma string toda em letras maiúsculas.
 
 ```js
-(getUserInput) => {
-  assert(getUserInput('index').match(/(FCC)/));
-  assert(!getUserInput('index').match(/fCC/));
-}
+assert.match(code, /(FCC)/);
+assert.notMatch(code, /(fCC)/);
 ```
 
 `FCC` deve ser uma variável constante declarada com `const`.
@@ -54,14 +52,13 @@ assert.match(code, /const\s+FCC/);
 A variável `fact` deve ser declarada com `let`.
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/(let fact)/g));
+assert.match(code, /(let\s+fact)/g);
 ```
 
 `console.log` deve ser alterado para imprimir as variáveis `FCC` e `fact`.
 
 ```js
-(getUserInput) =>
-  assert(getUserInput('index').match(/console\.log\(\s*FCC\s*\,\s*fact\s*\)\s*;?/g));
+assert.match(code, /console\.log\(\s*FCC\s*\,\s*fact\s*\)\s*;?/g);
 ```
 
 # --seed--

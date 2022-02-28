@@ -14,12 +14,10 @@ dashedName: comparison-with-the-strict-inequality-operator
 **例**
 
 ```js
-3 !==  3
-3 !== '3'
-4 !==  3
+3 !==  3  // false
+3 !== '3' // true
+4 !==  3  // true
 ```
-
-これらの式は順に `false`、`true`、`true` と評価されます。
 
 # --instructions--
 

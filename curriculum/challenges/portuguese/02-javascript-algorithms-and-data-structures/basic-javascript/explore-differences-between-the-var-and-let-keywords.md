@@ -42,19 +42,19 @@ Atualize o código para que apenas a palavra-chave `let` seja usada.
 A palavra-chave `var` não deve existir no código.
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/var/g));
+assert.notMatch(code, /var/g);
 ```
 
 A variável `catName` deve ser uma string de valor `Oliver`.
 
 ```js
-assert(catName === 'Oliver');
+assert.equal(catName, 'Oliver');
 ```
 
 `catSound` deve ser uma string de valor `Meow!`
 
 ```js
-assert(catSound === 'Meow!');
+assert.equal(catSound, 'Meow!');
 ```
 
 # --seed--
