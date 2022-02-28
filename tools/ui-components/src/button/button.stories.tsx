@@ -1,5 +1,6 @@
 import { Story } from '@storybook/react';
 import React from 'react';
+
 import { Button, ButtonProps } from '.';
 
 const story = {
@@ -11,27 +12,27 @@ const Template: Story<ButtonProps> = args => {
   return <Button {...args} />;
 };
 
-export const Primary = Template.bind({});
-Primary.args = {
-  primary: true,
-  label: 'Button'
+export const Default = Template.bind({});
+Default.args = {
+  children: 'Button'
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Button'
+export const Danger = Template.bind({});
+Danger.args = {
+  variant: 'danger',
+  children: 'Button'
 };
 
 export const Large = Template.bind({});
 Large.args = {
   size: 'large',
-  label: 'Button'
+  children: 'Button'
 };
 
 export const Small = Template.bind({});
 Small.args = {
   size: 'small',
-  label: 'Button'
+  children: 'Button'
 };
 
 export default story;

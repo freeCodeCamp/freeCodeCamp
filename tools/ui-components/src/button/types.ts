@@ -1,9 +1,13 @@
-type ButtonSize = 'small' | 'medium' | 'large';
+import { MouseEventHandler } from 'react';
 
-export interface ButtonProps {
-  primary?: boolean;
+export type ButtonVariant = 'primary' | 'danger';
+
+export type ButtonSize = 'small' | 'medium' | 'large';
+
+export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode;
+  variant?: ButtonVariant;
   size?: ButtonSize;
-  label: string;
-  customKey?: string;
-  onClick: () => void;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
+  type?: 'submit' | 'button';
 }

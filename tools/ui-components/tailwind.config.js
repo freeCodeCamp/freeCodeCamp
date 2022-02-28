@@ -15,10 +15,12 @@ module.exports = {
       'default-foreground-secondary': 'var(--default-foreground-secondary)',
       'default-foreground-tertiary': 'var(--default-foreground-tertiary)',
       'default-foreground-quaternary': 'var(--default-foreground-quaternary)',
+      'default-foreground-danger': 'var(--default-foreground-danger)',
       'default-background-primary': 'var(--default-background-primary)',
       'default-background-secondary': 'var(--default-background-secondary)',
       'default-background-tertiary': 'var(--default-background-tertiary)',
       'default-background-quaternary': 'var(--default-background-quaternary)',
+      'default-background-danger': 'var(--default-background-danger)',
       green: {
         50: 'var(--green05)',
         100: 'var(--green10)',
@@ -52,6 +54,16 @@ module.exports = {
         800: 'var(--red80)',
         900: 'var(--red90)'
       }
+    },
+    borderWidth: {
+      3: '3px'
+    },
+    fontSize: {
+      // https://tailwindcss.com/docs/font-size#providing-a-default-line-height
+      // [fontSize, lineHeight]
+      sm: ['16px', '1.5'],
+      md: ['18px', '1.42857143'],
+      lg: ['24px', '1.3333333']
     }
   },
   plugins: []
