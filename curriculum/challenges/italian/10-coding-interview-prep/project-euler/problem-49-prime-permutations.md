@@ -1,6 +1,6 @@
 ---
 id: 5900f39d1000cf542c50feb0
-title: 'Problem 49: Prime permutations'
+title: 'Problema 49: permutazioni di numeri primi'
 challengeType: 5
 forumTopicId: 302159
 dashedName: problem-49-prime-permutations
@@ -8,21 +8,21 @@ dashedName: problem-49-prime-permutations
 
 # --description--
 
-The arithmetic sequence, 1487, 4817, 8147, in which each of the terms increases by 3330, is unusual in two ways: (i) each of the three terms are prime, and, (ii) each of the 4-digit numbers are permutations of one another.
+La sequenza aritmetica, 1487, 4817, 8147, in cui ognuno dei termini cresce di 3330, è inusuale in due modi: (i) i tre termini sono primi, e, (ii) i tre numeri sono permutazioni.
 
-There are no arithmetic sequences made up of three 1-, 2-, or 3-digit primes, exhibiting this property, but there is one other 4-digit increasing sequence.
+Non ci sono sequenze aritmetiche fatte di numeri primi a 1, 2 o 3 cifre che esibiscono questa proprietà, ma ce ne è un'altra sequenza crescente a 4 cifre.
 
-What 12-digit number do you form by concatenating the three terms in this sequence?
+Quale numero a 12 cifre ottieni concatenando i tre termini di questa sequenza?
 
 # --hints--
 
-`primePermutations()` should return a number.
+`primePermutations()` dovrebbe restituire un numero.
 
 ```js
 assert(typeof primePermutations() === 'number');
 ```
 
-`primePermutations()` should return 296962999629.
+`primePermutations()` dovrebbe restituire 296962999629.
 
 ```js
 assert.strictEqual(primePermutations(), 296962999629);

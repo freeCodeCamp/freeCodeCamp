@@ -1,0 +1,14 @@
+{
+  "name": "Build a Salon Appointment Scheduler Project",
+  "isUpcomingChange": false,
+  "order": 9,
+  "time": "30 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "relational-database",
+  "challengeOrder": [
+    [
+      "5f87ac112ae598023a42df1a",
+      "Build a Salon Appointment Scheduler"
+    ]
+  ]}

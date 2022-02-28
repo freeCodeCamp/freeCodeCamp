@@ -1,5 +1,5 @@
 ---
-id: 6193dc549cb4031bc3a9c4e1
+id: 61fd67a656743144844941cb
 title: Step 4
 challengeType: 0
 dashedName: step-4
@@ -7,38 +7,42 @@ dashedName: step-4
 
 # --description--
 
-In your `#header` element, create an `h1` element with the text `Balance Sheet` and an `h2` element with the text `AcmeWidgetCorp`.
+Screen readers announce HTML elements based on the document flow. We will eventually want the balance sheet to have a heading of "Balance Sheet" and a subheading of "AcmeWidgetCorp". However, this order does not make sense if announced by a screen reader.
+
+Give your existing `span` the `class` attribute set to `flex`, and add two `span` elements within it. Give the first the text `AcmeWidgetCorp`. Give the second the text `Balance Sheet`. You will use CSS to reverse the order of the text on the page, but the HTML order will make more sense for a screen reader.
 
 # --hints--
 
-You should create a new `h1` element within your `#header` element.
+Your existing span element should have the `class` attribute set to `flex`.
 
 ```js
-assert(document.querySelectorAll('#header > h1')?.length === 1);
+assert(document.querySelector('h1')?.children?.[0]?.classList?.contains('flex'));
 ```
 
-Your new `h1` element should have the text `Balance Sheet`.
+Your existing `span` element should have two new `span` elements within it.
 
 ```js
-assert(document.querySelector('#header > h1')?.textContent === 'Balance Sheet');
+assert(document.querySelector('.flex')?.children?.[0]?.localName === 'span');
+assert(document.querySelector('.flex')?.children?.[1]?.localName === 'span');
 ```
 
-You should create a new `h2` element within your `#header` element.
+Your new `span` elements should not have a `class` attribute.
 
 ```js
-assert(document.querySelectorAll('#header > h2')?.length === 1);
+assert(!document.querySelector('.flex')?.children?.[0]?.classList?.length);
+assert(!document.querySelector('.flex')?.children?.[1]?.classList?.length);
 ```
 
-Your new `h2` element should have the text `AcmeWidgetCorp`.
+Your first new `span` element should have the text `AcmeWidgetCorp`.
 
 ```js
-assert(document.querySelector('#header > h2')?.textContent === 'AcmeWidgetCorp');
+assert(document.querySelector('.flex')?.children?.[0]?.textContent === 'AcmeWidgetCorp');
 ```
 
-Your `h1` element should come before your `h2` element.
+Your second new `span` element should have the text `Balance Sheet`.
 
 ```js
-assert(document.querySelector('#header > h1')?.nextElementSibling?.localName === 'h2');
+assert(document.querySelector('.flex')?.children?.[1]?.textContent === 'Balance Sheet');
 ```
 
 # --seed--
@@ -49,19 +53,22 @@ assert(document.querySelector('#header > h1')?.nextElementSibling?.localName ===
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AcmeWidgetCorp Balance Sheet</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
+    <main>
+      <section>
+        <h1>
 --fcc-editable-region--
-    <div id="sheet">
-      <div id="header">
-      </div>
-    </div>
+          <span>
+          </span>
 --fcc-editable-region--
-    <footer>Last Updated: December 2021</footer>
+        </h1>
+      </section>
+    </main>
   </body>
 </html>
 ```

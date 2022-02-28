@@ -16,13 +16,11 @@ Like the equality operator, the greater than or equal to operator will convert d
 **Examples**
 
 ```js
-6   >=  6
-7   >= '3'
-2   >=  3
-'7' >=  9
+6   >=  6  // true
+7   >= '3' // true
+2   >=  3  // false
+'7' >=  9  // false
 ```
-
-In order, these expressions would evaluate to `true`, `true`, `false`, and `false`.
 
 # --instructions--
 

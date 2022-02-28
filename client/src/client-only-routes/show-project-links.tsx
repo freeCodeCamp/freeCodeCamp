@@ -10,7 +10,7 @@ import {
   legacyProjectMap
 } from '../resources/cert-and-project-map';
 
-import { maybeUrlRE } from '../utils';
+import { SolutionDisplayWidget } from '../components/solution-display-widget';
 
 interface ShowProjectLinksProps {
   certName: string;
@@ -52,8 +52,8 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       return null;
     }
 
-    const { solution, githubLink, challengeFiles } = completedProject;
-    const onClickHandler = () =>
+    const { solution, challengeFiles } = completedProject;
+    const showFilesSolution = () =>
       setSolutionState({
         projectTitle,
         challengeFiles,
@@ -61,46 +61,13 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
         isOpen: true
       });
 
-    if (challengeFiles?.length) {
-      return (
-        <button
-          className='project-link-button-override'
-          data-cy={`${projectTitle} solution`}
-          onClick={onClickHandler}
-        >
-          {t('certification.project.solution')}
-        </button>
-      );
-    }
-    if (githubLink) {
-      return (
-        <>
-          <a href={solution ?? ''} rel='noopener noreferrer' target='_blank'>
-            {t('certification.project.solution')}
-          </a>
-          ,{' '}
-          <a href={githubLink} rel='noopener noreferrer' target='_blank'>
-            {t('certification.project.source')}
-          </a>
-        </>
-      );
-    }
-    if (maybeUrlRE.test(solution ?? '')) {
-      return (
-        <a
-          className='btn-invert'
-          href={solution ?? ''}
-          rel='noopener noreferrer'
-          target='_blank'
-        >
-          {t('certification.project.solution')}
-        </a>
-      );
-    }
     return (
-      <button className='project-link-button-override' onClick={onClickHandler}>
-        {t('certification.project.solution')}
-      </button>
+      <SolutionDisplayWidget
+        completedChallenge={completedProject}
+        dataCy={`${projectTitle} solution`}
+        displayContext='certification'
+        showFilesSolution={showFilesSolution}
+      ></SolutionDisplayWidget>
     );
   };
 

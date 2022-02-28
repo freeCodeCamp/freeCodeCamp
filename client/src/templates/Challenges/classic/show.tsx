@@ -135,8 +135,8 @@ const BASE_LAYOUT = {
 // Component
 class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   static displayName: string;
-  containerRef: React.RefObject<unknown>;
-  editorRef: React.RefObject<unknown>;
+  containerRef: React.RefObject<HTMLElement>;
+  editorRef: React.RefObject<HTMLElement>;
   instructionsPanelRef: React.RefObject<HTMLDivElement>;
   resizeProps: ResizeProps;
 
@@ -547,6 +547,7 @@ export const query = graphql`
           head
           tail
           editableRegionBoundaries
+          history
         }
       }
     }

@@ -1,0 +1,22 @@
+---
+id: 561add10cb82ac38a17523bc
+title: バックエンド開発と API 認定証
+certification: back-end-development-and-apis
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: bd7158d8c443edefaeb5bdef
+    title: タイムスタンプ マイクロサービス
+  - 
+    id: bd7158d8c443edefaeb5bdff
+    title: リクエストヘッダーパーサー マイクロサービス
+  - 
+    id: bd7158d8c443edefaeb5bd0e
+    title: URL 短縮マイクロサービス
+  - 
+    id: 5a8b073d06fa14fcfde687aa
+    title: エクササイズ記録アプリ
+  - 
+    id: bd7158d8c443edefaeb5bd0f
+    title: ファイルメタデータ マイクロサービス

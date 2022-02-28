@@ -19,7 +19,7 @@ Most of files for translating the platform are located in the [`client/i18n`](ht
 
 ```console
   config/i18n
-  └── all-langs.js
+  └── all-langs.ts
   ...
   client/i18n
   ├── configForTests.js
@@ -57,7 +57,7 @@ Most of files for translating the platform are located in the [`client/i18n`](ht
   │       └── trending.json
   ├── locales.test.js
   ├── schema-validation.js
-  └── validate-keys.js
+  └── validate-keys.ts
 ```
 
 Some of these files are translated on our translation platform (Crowdin), some are not.

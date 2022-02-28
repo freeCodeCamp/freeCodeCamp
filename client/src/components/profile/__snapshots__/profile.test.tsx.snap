@@ -179,7 +179,7 @@ exports[`<Profile/> renders correctly 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="svg-inline--fa fa-linkedin fa-w-14 fa-2x "
+              class="svg-inline--fa fa-linkedin fa-2x "
               data-icon="linkedin"
               data-prefix="fab"
               focusable="false"
@@ -201,7 +201,7 @@ exports[`<Profile/> renders correctly 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="svg-inline--fa fa-github fa-w-16 fa-2x "
+              class="svg-inline--fa fa-github fa-2x "
               data-icon="github"
               data-prefix="fab"
               focusable="false"
@@ -223,7 +223,7 @@ exports[`<Profile/> renders correctly 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="svg-inline--fa fa-link fa-w-16 fa-2x "
+              class="svg-inline--fa fa-link fa-2x "
               data-icon="link"
               data-prefix="fas"
               focusable="false"
@@ -245,7 +245,7 @@ exports[`<Profile/> renders correctly 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="svg-inline--fa fa-twitter fa-w-16 fa-2x "
+              class="svg-inline--fa fa-twitter fa-2x "
               data-icon="twitter"
               data-prefix="fab"
               focusable="false"

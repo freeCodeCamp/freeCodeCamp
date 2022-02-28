@@ -1,6 +1,6 @@
 ---
 id: 5eb3e497b8d6d7f63c5517ea
-title: Search a list of records
+title: Cerca in una lista di record
 challengeType: 5
 forumTopicId: 385315
 dashedName: search-a-list-of-records
@@ -8,51 +8,51 @@ dashedName: search-a-list-of-records
 
 # --description--
 
-A record consists of attributes that describe an entity. Each attribute has a name and a value. For example, a person can have an attribute `age` with a value of 25. An important operation on a list of records is to find a record with a particular attribute value.
+Un record è costituito da attributi che descrivono un'entità. Ogni attributo ha un nome e un valore. Ad esempio, una persona può avere un attributo `age` con un valore di 25. Un'operazione importante su un elenco di record è quella di trovare un record con un particolare valore di attributo.
 
 # --instructions--
 
-Write a function that takes a string as a parameter. The function should return the index of the item in `list` for which the value of the `name` attribute matches the given string.
+Scrivi una funzione che prende una stringa come parametro. La funzione dovrebbe restituire l'indice dell'elemento nella `list` per cui il valore dell'attributo `name` combacia con la stringa data.
 
 # --hints--
 
-`searchCity` should be a function.
+`searchCity` dovrebbe essere una funzione.
 
 ```js
 assert(typeof searchCity === 'function');
 ```
 
-`searchCity("Dar Es Salaam")` should return a number.
+`searchCity("Dar Es Salaam")` dovrebbe restituire un numero.
 
 ```js
 assert(typeof searchCity('Dar Es Salaam') === 'number');
 ```
 
-`searchCity("Dar Es Salaam")` should return `6`.
+`searchCity("Dar Es Salaam")` dovrebbe restituire `6`.
 
 ```js
 assert.equal(searchCity('Dar Es Salaam'), 6);
 ```
 
-`searchCity("Casablanca")` should return `9`.
+`searchCity("Casablanca")` dovrebbe restituire `9`.
 
 ```js
 assert.equal(searchCity('Casablanca'), 9);
 ```
 
-`searchCity("Cairo")` should return `1`.
+`searchCity("Cairo")` dovrebbe restituire `1`.
 
 ```js
 assert.equal(searchCity('Cairo'), 1);
 ```
 
-`searchCity("Mogadishu")` should return `4`.
+`searchCity("Mogadishu")` dovrebbe restituire `4`.
 
 ```js
 assert.equal(searchCity('Mogadishu'), 4);
 ```
 
-`searchCity("Lagos")` should return `0`.
+`searchCity("Lagos")` dovrebbe restituire `0`.
 
 ```js
 assert.equal(searchCity('Lagos'), 0);

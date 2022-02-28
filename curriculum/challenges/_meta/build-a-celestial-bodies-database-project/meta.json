@@ -1,0 +1,14 @@
+{
+  "name": "Build a Celestial Bodies Database Project",
+  "isUpcomingChange": false,
+  "order": 2,
+  "time": "30 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "relational-database",
+  "challengeOrder": [
+    [
+      "5f1a4ef5d5d6b5ab580fc6ae",
+      "Build a Celestial Bodies Database"
+    ]
+  ]}

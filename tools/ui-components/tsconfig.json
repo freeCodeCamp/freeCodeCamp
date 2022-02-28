@@ -10,5 +10,11 @@
     "strict": true,
     "noEmit": true,
     "typeRoots": ["../../node_modules/@types"]
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs"
+    },
+    "transpileOnly": true
   }
 }

@@ -1,6 +1,6 @@
 ---
 id: 59637c4d89f6786115efd814
-title: Hofstadter Q sequence
+title: Successione Q di Hofstadter
 challengeType: 5
 forumTopicId: 302287
 dashedName: hofstadter-q-sequence
@@ -8,49 +8,49 @@ dashedName: hofstadter-q-sequence
 
 # --description--
 
-The [Hofstadter Q sequence](https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Q_sequence "wp: Hofstadter_sequence#Hofstadter_Q_sequence") is defined as:
+La [successione Q di Hofstadter](https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Q_sequence "wp: Hofstadter_sequence#Hofstadter_Q_sequence") è definita come:
 
 $Q(1)=Q(2)=1, \\\\ Q(n)=Q\\big(n-Q(n-1)\\big)+Q\\big(n-Q(n-2)), \\quad n>2.$
 
-It is defined like the [Fibonacci sequence](https://rosettacode.org/wiki/Fibonacci sequence "Fibonacci sequence"), but whereas the next term in the Fibonacci sequence is the sum of the previous two terms, in the Q sequence the previous two terms tell you how far to go back in the Q sequence to find the two numbers to sum to make the next term of the sequence.
+È definita come la [successione di Fibonacci](https://rosettacode.org/wiki/Fibonacci sequence "Fibonacci sequence"), ma mentre il termine successivo nella successione di Fibonacci è la somma dei due termini precedenti, nella successione Q i due termini precedenti ti dicono fino a che punto tornare nella sequenza Q per trovare i due numeri da sommare per generare il prossimo termine della successione.
 
 # --instructions--
 
-Implement the Hofstadter Q Sequence equation as a function. The function should accept number, `n`, and return an integer.
+Implementa l'equazione della Sequenza Q di Hofstadter come funzione. La funzione dovrebbe accettare un numero, `n`, e restituire un numero intero.
 
 # --hints--
 
-`hofstadterQ` should be a function.
+`hofstadterQ` dovrebbe essere una funzione.
 
 ```js
 assert(typeof hofstadterQ === 'function');
 ```
 
-`hofstadterQ()` should return `integer`
+`hofstadterQ()` dovrebbe restituire `integer`
 
 ```js
 assert(Number.isInteger(hofstadterQ(1000)));
 ```
 
-`hofstadterQ(1000)` should return `502`
+`hofstadterQ(1000)` dovrebbe restituire `502`
 
 ```js
 assert.equal(hofstadterQ(testCase[0]), res[0]);
 ```
 
-`hofstadterQ(1500)` should return `755`
+`hofstadterQ(1500)` dovrebbe restituire `755`
 
 ```js
 assert.equal(hofstadterQ(testCase[1]), res[1]);
 ```
 
-`hofstadterQ(2000)` should return `1005`
+`hofstadterQ(2000)` dovrebbe restituire `1005`
 
 ```js
 assert.equal(hofstadterQ(testCase[2]), res[2]);
 ```
 
-`hofstadterQ(2500)` should return `1261`
+`hofstadterQ(2500)` dovrebbe restituire `1261`
 
 ```js
 assert.equal(hofstadterQ(testCase[3]), res[3]);

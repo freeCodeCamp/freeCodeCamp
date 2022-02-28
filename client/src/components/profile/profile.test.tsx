@@ -70,7 +70,8 @@ const userProps = {
     isRespWebDesignCert: true,
     isSciCompPyCertV7: true,
     isDataAnalysisPyCertV7: true,
-    isMachineLearningPyCertV7: true
+    isMachineLearningPyCertV7: true,
+    isRelationalDatabaseCertV8: true
   },
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   navigate: () => {}

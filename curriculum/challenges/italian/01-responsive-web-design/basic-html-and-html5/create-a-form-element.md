@@ -13,7 +13,7 @@ Puoi creare dei moduli web (form) che inviino effettivamente dei dati a un serve
 Ad esempio:
 
 ```html
-<form action="/url-where-you-want-to-submit-form-data">
+<form action="url-where-you-want-to-submit-form-data">
   <input>
 </form>
 ```

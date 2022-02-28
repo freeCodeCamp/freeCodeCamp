@@ -9,11 +9,13 @@
 <div class='i18n-lang-list'>
 
 - [Chinese](/i18n/chinese/index.md)
+- [Chinese Traditional](/i18n/chinese-traditional/index.md)
 - [English](/index.md)
 - [Español](/i18n/espanol/index.md)
+- [German](/i18n/german/index.md)
+- [Italian](/i18n/italian/index.md)
 - [Japanese](/i18n/japanese/index.md)
 - [Portuguese](/i18n/portuguese/index.md)
-- [Italian](/i18n/italian/index.md)
 - [Ukrainian](/i18n/ukrainian/index.md)
 
 </div>

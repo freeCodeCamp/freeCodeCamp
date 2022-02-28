@@ -33,7 +33,7 @@ assert(styles.color === 'purple');
 La variabile `styles` dovrebbe avere una proprietà `fontSize` impostata su un valore di `40`.
 
 ```js
-assert(styles.fontSize === 40);
+assert(styles.fontSize == 40);
 ```
 
 La variabile `styles` dovrebbe avere una proprietà `border` impostata su un valore di `2px solid purple`.
@@ -61,7 +61,7 @@ assert(
     const mockedComponent = Enzyme.shallow(React.createElement(Colorful));
     return (
       mockedComponent.props().style.color === 'purple' &&
-      mockedComponent.props().style.fontSize === 40 &&
+      mockedComponent.props().style.fontSize == 40 &&
       mockedComponent.props().style.border === '2px solid purple'
     );
   })()

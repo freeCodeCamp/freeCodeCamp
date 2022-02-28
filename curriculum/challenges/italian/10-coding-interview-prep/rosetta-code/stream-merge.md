@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc802a
-title: Stream Merge
+title: Unione di flussi
 challengeType: 5
 forumTopicId: 302326
 dashedName: stream-merge
@@ -8,17 +8,17 @@ dashedName: stream-merge
 
 # --description--
 
-Write a function that takes multiple sorted arrays of items, and returns one array of sorted items.
+Scrivi una funzione che riceve vari array ordinati, e restituisce un unico array di elementi ordinato.
 
 # --hints--
 
-`mergeLists` should be a function.
+`mergeLists` dovrebbe essere una funzione.
 
 ```js
 assert(typeof mergeLists == 'function');
 ```
 
-`mergeLists([[1, 3, 5, 9, 10], [2, 4, 6, 7, 8]])` should return an array.
+`mergeLists([[1, 3, 5, 9, 10], [2, 4, 6, 7, 8]])` dovrebbe restituire un array.
 
 ```js
 assert(
@@ -31,7 +31,7 @@ assert(
 );
 ```
 
-`mergeLists([[1, 3, 5, 9, 10], [2, 4, 6, 7, 8]])` should return `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`.
+`mergeLists([[1, 3, 5, 9, 10], [2, 4, 6, 7, 8]])` dovrebbe restituire `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`.
 
 ```js
 assert.deepEqual(
@@ -43,7 +43,7 @@ assert.deepEqual(
 );
 ```
 
-`mergeLists([[1, 4, 7, 10], [2, 5, 8, 11], [3, 6, 9, 12]])` should return `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]`.
+`mergeLists([[1, 4, 7, 10], [2, 5, 8, 11], [3, 6, 9, 12]])` dovrebbe restituire `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]`.
 
 ```js
 assert.deepEqual(
@@ -56,7 +56,7 @@ assert.deepEqual(
 );
 ```
 
-`mergeLists([[1, 3, 9, 14, 15, 17, 28], [7, 8, 14, 14, 23, 26, 28, 29, 30], [9, 23, 25, 29]])` should return `[1, 3, 7, 8, 9, 9, 14, 14, 14, 15, 17, 23, 23, 25, 26, 28, 28, 29, 29, 30]`.
+`mergeLists([[1, 3, 9, 14, 15, 17, 28], [7, 8, 14, 14, 23, 26, 28, 29, 30], [9, 23, 25, 29]])` dovrebbe restituire `[1, 3, 7, 8, 9, 9, 14, 14, 14, 15, 17, 23, 23, 25, 26, 28, 28, 29, 29, 30]`.
 
 ```js
 assert.deepEqual(
@@ -69,7 +69,7 @@ assert.deepEqual(
 );
 ```
 
-`mergeLists([[3, 14, 15], [2, 17, 18], [], [2, 3, 5, 7]])` should return `[2, 2, 3, 3, 5, 7, 14, 15, 17, 18]`.
+`mergeLists([[3, 14, 15], [2, 17, 18], [], [2, 3, 5, 7]])` dovrebbe restituire `[2, 2, 3, 3, 5, 7, 14, 15, 17, 18]`.
 
 ```js
 assert.deepEqual(mergeLists([[3, 14, 15], [2, 17, 18], [], [2, 3, 5, 7]]), [
@@ -86,7 +86,7 @@ assert.deepEqual(mergeLists([[3, 14, 15], [2, 17, 18], [], [2, 3, 5, 7]]), [
 ]);
 ```
 
-`mergeLists([[1, 19, 1999], [17, 33, 2999, 3000], [8, 500, 3999]])` should return `[1, 8, 17, 19, 33, 500, 1999, 2999, 3000, 3999]`.
+`mergeLists([[1, 19, 1999], [17, 33, 2999, 3000], [8, 500, 3999]])` dovrebbe restituire `[1, 8, 17, 19, 33, 500, 1999, 2999, 3000, 3999]`.
 
 ```js
 assert.deepEqual(

@@ -1,6 +1,6 @@
 ---
 id: 5eb3e4af7d0e7b760b46cedc
-title: Set consolidation
+title: Consolidazione di insiemi
 challengeType: 5
 forumTopicId: 385319
 dashedName: set-consolidation
@@ -8,58 +8,58 @@ dashedName: set-consolidation
 
 # --description--
 
-Given two sets of items then if any item is common to any set then the result of applying *consolidation* to those sets is a set of sets whose contents is:
+Dati due set di elementi, se un elemento è comune in comune tra almeno due set allora il risultato di applicare la *consolidazione* a questi set è un set di set il cui contenuto è:
 
 <ul>
-  <li>The two input sets if no common item exists between the two input sets of items.</li>
-  <li>The single set that is the union of the two input sets if they share a common item.</li>
+  <li>I due set di input se non c'è alcun elemento in comune tra i due set di elementi di input.</li>
+  <li>Il singolo set che è unione dei due set di input se hanno un elemento in comune.</li>
 </ul>
 
-Given N sets of items where N > 2 then the result is the same as repeatedly replacing all combinations of two sets by their consolidation until no further consolidation between set pairs is possible. If N &lt; 2 then consolidation has no strict meaning and the input can be returned.
+Dati N set di elementi done N > 2 allora il risultato è lo stesso di sostituire ripetutamente tutte le combinazioni di due set con la loro consolidazione finché non è più possibile alcuna altra consolidazione tra coppie di set. Se N &lt; 2 allora la consolidazione non ha significatio e l'input può essere restituito.
 
-Here are some examples:
+Ecco alcuni esempi:
 
-**Example 1:**
+**Esempio 1:**
 
-Given the two sets `{A,B}` and `{C,D}` then there is no common element between the sets and the result is the same as the input.
+Dati due set `{A,B}` e `{C,D}` allora non c'è alcun elemento in comune tra i set e il risultato è lo stesso dell'input.
 
-**Example 2:**
+**Esempio 2:**
 
-Given the two sets `{A,B}` and `{B,D}` then there is a common element `B` between the sets and the result is the single set `{B,D,A}`. (Note that order of items in a set is immaterial: `{A,B,D}` is the same as `{B,D,A}` and `{D,A,B}`, etc).
+Dati due set `{A,B}` e `{B,D}` allora c'è un elemento in comune `B` tra i due set e il risultato è il singolo set `{B,D,A}`. (Nota che l'ordine degli elementi in un set è immateriale: `{A,B,D}` è lo stesso di `{B,D,A}` e di `{D,A,B}`, ecc).
 
-**Example 3:**
+**Esempio 3:**
 
-Given the three sets `{A,B}` and `{C,D}` and `{D,B}` then there is no common element between the sets `{A,B}` and `{C,D}` but the sets `{A,B}` and `{D,B}` do share a common element that consolidates to produce the result `{B,D,A}`. On examining this result with the remaining set, `{C,D}`, they share a common element and so consolidate to the final output of the single set `{A,B,C,D}`
+Dati tre set `{A,B}` e `{C,D}` e `{D,B}`, non c'è un elemento in comune tra i set `{A,B}` e `{C,D}` ma i set `{A,B}` e `{D,B}` hanno un elemento in comune che consolida per produrre il risultato `{B,D,A}`. Esamindando questo risultato con il set rimanente, `{C,D}`, hanno un elemento in comune e consolidato a formare l'output finale del singolo set `{A,B,C,D}`
 
-**Example 4:**
+**Esempio 4:**
 
-The consolidation of the five sets:
+Il consolidamento dei cinque gruppi:
 
-`{H,I,K}`, `{A,B}`, `{C,D}`, `{D,B}`, and `{F,G,H}`
+`{H,I,K}`, `{A,B}`, `{C,D}`, `{D,B}`, e `{F,G,H}`
 
-Is the two sets:
+Risulta nei due set:
 
-`{A, C, B, D}`, and `{G, F, I, H, K}`
+`{A, C, B, D}`, e `{G, F, I, H, K}`
 
 # --instructions--
 
-Write a function that takes an array of strings as a parameter. Each string is represents a set with the characters representing the set elements. The function should return a 2D array containing the consolidated sets. Note: Each set should be sorted.
+Scrivi una funzione che prende un array di stringhe come parametro. Ogni stringa rappresenta un set con i caratteri rappresentando gli elementi del set. La funzione dovrebbe restituire un array 2D contenente i set consolidati. Nota: Ogni set deve essere ordinato.
 
 # --hints--
 
-`setConsolidation` should be a function.
+`setConsolidation` dovrebbe essere una funzione.
 
 ```js
 assert(typeof setConsolidation === 'function');
 ```
 
-`setConsolidation(["AB", "CD"])` should return a array.
+`setConsolidation(["AB", "CD"])` dovrebbe restituire un array.
 
 ```js
 assert(Array.isArray(setConsolidation(['AB', 'CD'])));
 ```
 
-`setConsolidation(["AB", "CD"])` should return `[["C", "D"], ["A", "B"]]`.
+`setConsolidation(["AB", "CD"])` dovrebbe restituire `[["C", "D"], ["A", "B"]]`.
 
 ```js
 assert.deepEqual(setConsolidation(['AB', 'CD']), [
@@ -68,19 +68,19 @@ assert.deepEqual(setConsolidation(['AB', 'CD']), [
 ]);
 ```
 
-`setConsolidation(["AB", "BD"])` should return `[["A", "B", "D"]]`.
+`setConsolidation(["AB", "BD"])` dovrebbe restituire `[["A", "B", "D"]]`.
 
 ```js
 assert.deepEqual(setConsolidation(['AB', 'BD']), [['A', 'B', 'D']]);
 ```
 
-`setConsolidation(["AB", "CD", "DB"])` should return `[["A", "B", "C", "D"]]`.
+`setConsolidation(["AB", "CD", "DB"])` dovrebbe restituire `[["A", "B", "C", "D"]]`.
 
 ```js
 assert.deepEqual(setConsolidation(['AB', 'CD', 'DB']), [['A', 'B', 'C', 'D']]);
 ```
 
-`setConsolidation(["HIK", "AB", "CD", "DB", "FGH"])` should return `[["F", "G", "H", "I", "K"], ["A", "B", "C", "D"]]`.
+`setConsolidation(["HIK", "AB", "CD", "DB", "FGH"])` dovrebbe restituire `[["F", "G", "H", "I", "K"], ["A", "B", "C", "D"]]`.
 
 ```js
 assert.deepEqual(setConsolidation(['HIK', 'AB', 'CD', 'DB', 'FGH']), [

@@ -12,15 +12,14 @@ import {
   certTypeTitleMap,
   certTypeIdMap,
   certIds,
-  oldDataVizId,
-  superBlockCertTypeMap
+  oldDataVizId
 } from '../../../../config/certification-settings';
 import { reportError } from '../middlewares/sentry-error-handler.js';
 
+import { deprecatedEndpoint } from '../utils/deprecatedEndpoint';
 import { getChallenges } from '../utils/get-curriculum';
 import { ifNoUser401 } from '../utils/middleware';
 import { observeQuery } from '../utils/rx';
-import { ensureLowerCaseString } from '../../common/models/user';
 
 const {
   legacyFrontEndChallengeId,
@@ -38,7 +37,7 @@ const {
   sciCompPyV7Id,
   dataAnalysisPyV7Id,
   machineLearningPyV7Id,
-  relationalDatabasesV8Id
+  relationalDatabaseV8Id
 } = certIds;
 
 const log = debug('fcc:certification');
@@ -50,12 +49,10 @@ export default function bootCertificate(app) {
   const certTypeIds = createCertTypeIds(getChallenges());
   const showCert = createShowCert(app);
   const verifyCert = createVerifyCert(certTypeIds, app);
-  const verifyCanClaimCert = createVerifyCanClaim(certTypeIds, app);
 
   api.put('/certificate/verify', ifNoUser401, ifNoSuperBlock404, verifyCert);
   api.get('/certificate/showCert/:username/:certSlug', showCert);
-  api.get('/certificate/verify-can-claim-cert', verifyCanClaimCert);
-
+  api.get('/certificate/verify-can-claim-cert', deprecatedEndpoint);
   app.use(api);
 }
 
@@ -122,8 +119,8 @@ function createCertTypeIds(allChallenges) {
       machineLearningPyV7Id,
       allChallenges
     ),
-    [certTypes.relationalDatabasesV8]: getCertById(
-      relationalDatabasesV8Id,
+    [certTypes.relationalDatabaseV8]: getCertById(
+      relationalDatabaseV8Id,
       allChallenges
     )
   };
@@ -211,7 +208,8 @@ function getUserIsCertMap(user) {
     isFullStackCert = false,
     isSciCompPyCertV7 = false,
     isDataAnalysisPyCertV7 = false,
-    isMachineLearningPyCertV7 = false
+    isMachineLearningPyCertV7 = false,
+    isRelationalDatabaseCertV8 = false
   } = user;
 
   return {
@@ -229,7 +227,8 @@ function getUserIsCertMap(user) {
     isFullStackCert,
     isSciCompPyCertV7,
     isDataAnalysisPyCertV7,
-    isMachineLearningPyCertV7
+    isMachineLearningPyCertV7,
+    isRelationalDatabaseCertV8
   };
 }
 
@@ -372,6 +371,7 @@ function createShowCert(app) {
       isSciCompPyCertV7: true,
       isDataAnalysisPyCertV7: true,
       isMachineLearningPyCertV7: true,
+      isRelationalDatabaseCertV8: true,
       isHonest: true,
       username: true,
       name: true,
@@ -506,99 +506,5 @@ function createShowCert(app) {
         ]
       });
     }, next);
-  };
-}
-
-function createVerifyCanClaim(certTypeIds, app) {
-  const { User } = app.models;
-
-  function findUserByUsername$(username, fields) {
-    return observeQuery(User, 'findOne', {
-      where: { username },
-      fields
-    });
-  }
-  return function verifyCert(req, res, next) {
-    const { superBlock, username } = req.query;
-    log(superBlock);
-    let certType = superBlockCertTypeMap[superBlock];
-    log(certType);
-
-    return findUserByUsername$(ensureLowerCaseString(username), {
-      isFrontEndCert: true,
-      isBackEndCert: true,
-      isFullStackCert: true,
-      isRespWebDesignCert: true,
-      isFrontEndLibsCert: true,
-      isJsAlgoDataStructCert: true,
-      isDataVisCert: true,
-      is2018DataVisCert: true,
-      isApisMicroservicesCert: true,
-      isInfosecQaCert: true,
-      isQaCertV7: true,
-      isInfosecCertV7: true,
-      isSciCompPyCertV7: true,
-      isDataAnalysisPyCertV7: true,
-      isMachineLearningPyCertV7: true,
-      username: true,
-      name: true,
-      isHonest: true,
-      completedChallenges: true
-    }).subscribe(user => {
-      if (!user) {
-        return res.status(404).json({
-          message: {
-            type: 'info',
-            message: 'flash.username-not-found',
-            variables: { username }
-          }
-        });
-      }
-
-      if (!certTypeIds[certType]) {
-        return res.status(404).json({
-          message: {
-            type: 'info',
-            // TODO: create a specific 'flash.cert-not-found' message
-            message: 'flash.could-not-find'
-          }
-        });
-      }
-
-      return Observable.of(certTypeIds[certType])
-        .flatMap(challenge => {
-          const certName = certTypeTitleMap[certType];
-          const { tests = [] } = challenge;
-          let result = 'incomplete-requirements';
-          let status = false;
-
-          const { isHonest, completedChallenges } = user;
-          const isProjectsCompleted = canClaim(tests, completedChallenges);
-
-          if (isHonest && isProjectsCompleted) {
-            status = true;
-            result = 'requirements-met';
-          } else if (isProjectsCompleted) {
-            result = 'projects-completed';
-          } else if (isHonest) {
-            result = 'is-honest';
-          }
-          return Observable.just({
-            type: 'success',
-            message: { status, result },
-            variables: { name: certName }
-          });
-        })
-        .subscribe(message => {
-          return res.status(200).json({
-            response: message,
-            isCertMap: getUserIsCertMap(user),
-            // send back the completed challenges
-            // NOTE: we could just send back the latest challenge, but this
-            // ensures the challenges are synced.
-            completedChallenges: user.completedChallenges
-          });
-        }, next);
-    });
   };
 }

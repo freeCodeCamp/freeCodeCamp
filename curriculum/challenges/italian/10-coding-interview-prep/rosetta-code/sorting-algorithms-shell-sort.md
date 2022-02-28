@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8010
-title: Sorting algorithms/Shell sort
+title: Algoritmi di ordinamento/Shell Sort
 challengeType: 5
 forumTopicId: 302317
 dashedName: sorting-algorithmsshell-sort
@@ -8,51 +8,51 @@ dashedName: sorting-algorithmsshell-sort
 
 # --description--
 
-Write a function to sort an array of elements using the [Shell sort](https://en.wikipedia.org/wiki/Shell sort) algorithm, a diminishing increment sort. The function should return the sorted array.
+Scrivi una funzione per ordinare un array di elementi usando l'algoritmo [Shell sort](https://en.wikipedia.org/wiki/Shell sort), un tipo di ordinamento a incremento in diminuzione. La funzione dovrebbe restituire l'array ordinato.
 
-The Shell sort (also known as Shellsort or Shell's method) is named after its inventor, Donald Shell, who published the algorithm in 1959.
+Shell Short (noto anche come metodo di Shellsort o Shell) prende il nome dal suo inventore, Donald Shell, che ha pubblicato l'algoritmo nel 1959.
 
-Shell sort is a sequence of interleaved insertion sorts based on an increment sequence. The increment size is reduced after each pass until the increment size is 1.
+Shell Sort è una sequenza di Insertion Sort intercalati basata su una sequenza di incremento. La dimensione dell'incremento viene ridotta dopo ogni passaggio fino a quando la dimensione dell'incremento è 1.
 
-With an increment size of 1, the sort is a basic insertion sort, but by this time the data is guaranteed to be almost sorted, which is insertion sort's "best case".
+Con un incremento della dimensione di 1, l'ordinamento è un classico Insertion Sort, ma per questo esercizio i dati sono garantiti essere quasi ordinati, che è il "caso migliore" per Insertion Sort.
 
-Any sequence will sort the data as long as it ends in 1, but some work better than others.
+Qualsiasi sequenza ordinerà i dati finché terminerà in 1, ma alcune funzionano meglio di altre.
 
-Empirical studies have shown a geometric increment sequence with a ratio of about 2.2 work well in practice.
+Studi empirici hanno mostrato che una sequenza geometrica di incremento con un rapporto di circa 2.2 funziona bene nella pratica.
 
 # --hints--
 
-`shellSort` should be a function.
+`shellSort` dovrebbe essere una funzione.
 
 ```js
 assert(typeof shellSort == 'function');
 ```
 
-`shellSort([25, 32, 12, 7, 20])` should return an array.
+`shellSort([25, 32, 12, 7, 20])` dovrebbe restituire un array.
 
 ```js
 assert(Array.isArray(shellSort([25, 32, 12, 7, 20])));
 ```
 
-`shellSort([25, 32, 12, 7, 20])` should return `[7, 12, 20, 25, 32]`.
+`shellSort([25, 32, 12, 7, 20])` dovrebbe restituire `[7, 12, 20, 25, 32]`.
 
 ```js
 assert.deepEqual(shellSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
 ```
 
-`shellSort([38, 45, 35, 8, 13])` should return `[8, 13, 35, 38, 45]`.
+`shellSort([38, 45, 35, 8, 13])` dovrebbe restituire `[8, 13, 35, 38, 45]`.
 
 ```js
 assert.deepEqual(shellSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
 ```
 
-`shellSort([43, 36, 20, 34, 24])` should return `[20, 24, 34, 36, 43]`.
+`shellSort([43, 36, 20, 34, 24])` dovrebbe restituire `[20, 24, 34, 36, 43]`.
 
 ```js
 assert.deepEqual(shellSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
 ```
 
-`shellSort([12, 33, 26, 18, 1, 16, 38])` should return `[1, 12, 16, 18, 26, 33, 38]`.
+`shellSort([12, 33, 26, 18, 1, 16, 38])` dovrebbe restituire `[1, 12, 16, 18, 26, 33, 38]`.
 
 ```js
 assert.deepEqual(shellSort([12, 33, 26, 18, 1, 16, 38]), [
@@ -66,7 +66,7 @@ assert.deepEqual(shellSort([12, 33, 26, 18, 1, 16, 38]), [
 ]);
 ```
 
-`shellSort([3, 39, 48, 16, 1, 4, 29])` should return `[1, 3, 4, 16, 29, 39, 48]`.
+`shellSort([3, 39, 48, 16, 1, 4, 29])` dovrebbe restituire `[1, 3, 4, 16, 29, 39, 48]`.
 
 ```js
 assert.deepEqual(shellSort([3, 39, 48, 16, 1, 4, 29]), [

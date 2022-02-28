@@ -17,19 +17,19 @@ You should add a `title` element to the `head`.
 
 ```js
 // TODO: Fix once builder puts head in the right place
-assert.exists(document.querySelector('body > title'));
+assert.exists(document.querySelector('head > title'));
 ```
 
 You should not make the `title` longer than 60 characters.
 
 ```js
-assert.isAtMost(document.querySelector('body > title')?.textContent?.length, 60);
+assert.isAtMost(document.querySelector('head > title')?.textContent?.length, 60);
 ```
 
 Try being more descriptive with your `title` element. _Hint: At least 20 characters_
 
 ```js
-assert.isAtLeast(document.querySelector('body > title')?.textContent?.length, 20);
+assert.isAtLeast(document.querySelector('head > title')?.textContent?.length, 20);
 ```
 
 # --seed--

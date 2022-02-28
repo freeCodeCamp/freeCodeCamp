@@ -95,10 +95,12 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
                     contents
                     head
                     tail
+                    history
                   }
                   solutions {
                     contents
                     ext
+                    history
                   }
                   superBlock
                   superOrder
@@ -227,7 +229,7 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
         path: require.resolve('path-browserify'),
         assert: require.resolve('assert'),
         crypto: require.resolve('crypto-browserify'),
-        util: false,
+        util: require.resolve('util/util'),
         buffer: require.resolve('buffer'),
         stream: require.resolve('stream-browserify'),
         process: require.resolve('process/browser')

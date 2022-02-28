@@ -1,5 +1,5 @@
 ---
-id: 6193d8081ec2531581ea7b98
+id: 61fd5a93fd62bb35968adeab
 title: Step 1
 challengeType: 0
 dashedName: step-1
@@ -7,9 +7,7 @@ dashedName: step-1
 
 # --description--
 
-A balance sheet is used to track the state of an organization's finances. You'll be building a mock balance sheet for AcmeWidgetCorp to explore the use of various CSS selectors.
-
-Begin with your basic HTML boilerplate. Include the `DOCTYPE` declaration, an `html` element, the appropriate `meta` tags, a `head`, `body`, and `title` element, and `link` your stylesheet. Give the `title` element the text `AcmeWidgetCorp Balance Sheet`.
+Set up your HTML with the `DOCTYPE`, `html`, `head`, and `body` elements. Give your `head` element the appropriate `meta` elements for the `charset` and `viewport`, a `title` element with an appropriate title, and a `link` element for your stylesheet.
 
 # --hints--
 
@@ -22,32 +20,32 @@ assert(code.match(/<!DOCTYPE html>/i));
 Your code should have an `html` element.
 
 ```js
-assert(document.querySelectorAll('html')?.length === 1);
+assert.equal(document.querySelectorAll('html')?.length, 1);
 ```
 
 Your code should have a `head` element within the `html` element.
 
 ```js
-assert(document.querySelectorAll('head')?.length === 1);
+assert.equal(document.querySelectorAll('head')?.length, 1);
 ```
 
 Your code should have a `body` element within the `html` element.
 
 ```js
-assert(document.querySelectorAll('body')?.length === 1);
+assert.equal(document.querySelectorAll('body')?.length, 1);
 ```
 
 Your `head` element should come before your `body` element.
 
 ```js
-assert(document.querySelector('body')?.previousElementSibling?.tagName === 'HEAD');
+assert.equal(document.querySelector('body')?.previousElementSibling?.tagName, 'HEAD');
 ```
 
 You should have two `meta` elements.
 
 ```js
 const meta = document.querySelectorAll('meta');
-assert(meta?.length === 2);
+assert.equal(meta?.length, 2);
 ```
 
 One `meta` element should have a `name` set to `viewport`, and `content` set to `width=device-width, initial-scale=1.0`.
@@ -73,18 +71,11 @@ const title = document.querySelector('title');
 assert.exists(title);
 ```
 
-Your project should have a title of `AcmeWidgetCorp Balance Sheet`.
+Your `title` should have some text.
 
 ```js
 const title = document.querySelector('title');
-assert.equal(title?.text?.trim()?.toLowerCase(), 'acmewidgetcorp balance sheet')
-```
-
-Remember, the casing and spelling matter for the title.
-
-```js
-const title = document.querySelector('title');
-assert.equal(title?.text?.trim(), 'AcmeWidgetCorp Balance Sheet');
+assert.isAtLeast(title?.textContent?.length, 1);
 ```
 
 Your code should have a `link` element.
@@ -93,28 +84,28 @@ Your code should have a `link` element.
 assert(/<link/.test(code))
 ```
 
-Your `href` attribute should have the value `./styles.css`.
+Your `link` element should be within your `head` element.
 
 ```js
-assert(/href\s*=\s*('|")(\.\/)?styles\.css\1/.test(code));
+assert(code.match(/<head>[\w\W\s]*<link[\w\W\s]*\/?>[\w\W\s]*<\/head>/i))
 ```
 
-Your `rel` attribute should have the value `stylesheet`.
+Your `link` element should have a `rel` attribute with the value `stylesheet`.
 
 ```js
-assert(/rel\s*=\s*('|")\s*stylesheet\s*\1/.test(code));
+assert.match(code, /<link[\s\S]*?rel=('|"|`)stylesheet\1/)
 ```
 
-Your `type` attribute should have the value `text/css`.
+Your `link` element should have a `type` attribute with the value `text/css`.
 
 ```js
-assert(/type\s*=\s*('|")\s*text\/css\s*\1/.test(code));
+assert.match(code, /<link[\s\S]*?type=('|"|`)text\/css\1/)
 ```
 
-Your `link` element should have `href="./styles.css"`, `rel="stylesheet"`, and `type="text/css"` attributes
+Your `link` element should have an `href` attribute with the value `styles.css`.
 
 ```js
-assert(/<link\s+(href\s*=\s*("|')(\.\/)?styles\.css\2\s*(rel\s*=\s*('|")\s*stylesheet\s*\5\s*type\s*=\s*("|')text\/css\6|type\s*=\s*("|')text\/css\7\s*rel\s*=\s*('|")\s*stylesheet\s*\8)|rel\s*=\s*('|")\s*stylesheet\s*\9\s*(href\s*=\s*("|')(\.\/)?styles\.css\11\s*type\s*=\s*("|')text\/css\13|type\s*=\s*("|')text\/css\14\s*href\s*=\s*("|')(\.\/)?styles\.css\15)|type\s*=\s*("|')text\/css\17\s*(href\s*=\s*("|')(\.\/)?styles\.css\19\s*rel\s*=\s*('|")\s*stylesheet\s*\21|rel\s*=\s*('|")\s*stylesheet\s*\22\s*href\s*=\s*("|')(\.\/)?styles\.css\23))\s*\/?>/.test(code));
+assert.match(code, /<link[\s\S]*?href=('|"|`)(\.\/)?styles\.css\1/)
 ```
 
 # --seed--

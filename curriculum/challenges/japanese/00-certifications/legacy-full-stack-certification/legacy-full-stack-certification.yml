@@ -1,0 +1,25 @@
+---
+id: 561add10cb82ac38a17213bd
+title: レガシーフルスタック認定証
+certification: legacy-full-stack
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: 561add10cb82ac38a17513bc
+    title: レスポンシブウェブデザイン認定証
+  - 
+    id: 561abd10cb81ac38a17513bc
+    title: JavaScript のアルゴリズムとデータ構造認定証
+  - 
+    id: 561acd10cb82ac38a17513bc
+    title: フロントエンドライブラリ認定証
+  - 
+    id: 5a553ca864b52e1d8bceea14
+    title: データ可視化認定証
+  - 
+    id: 561add10cb82ac38a17523bc
+    title: API およびマイクロサービス認定証
+  - 
+    id: 561add10cb82ac38a17213bc
+    title: 従来の情報セキュリティと品質保証認定証

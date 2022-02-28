@@ -26,6 +26,7 @@ export interface InitTestFrameArg {
   code: {
     contents?: string;
     editableContents?: string;
+    original?: { [id: string]: string };
   };
   getUserInput?: (fileName: string) => string;
   loadEnzyme?: () => void;
@@ -33,6 +34,14 @@ export interface InitTestFrameArg {
 
 async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
   const code = (e.code.contents || '').slice();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const __file = (id?: string) => {
+    if (id && e.code.original) {
+      return e.code.original[id];
+    } else {
+      return code;
+    }
+  };
   const editableContents = (e.code.editableContents || '').slice();
   // __testEditable allows test authors to run tests against a transitory dom
   // element built using only the code in the editable region.

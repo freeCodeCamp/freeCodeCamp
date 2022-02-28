@@ -17,11 +17,9 @@ import {
   isSignedInSelector,
   submitComplete,
   updateComplete,
-  updateFailed,
-  usernameSelector
+  updateFailed
 } from '../../../redux';
 
-import { getVerifyCanClaimCert } from '../../../utils/ajax';
 import postUpdate$ from '../utils/postUpdate$';
 import { actionTypes } from './action-types';
 import {
@@ -151,8 +149,7 @@ export default function completionEpic(action$, state$) {
     switchMap(({ type }) => {
       const state = state$.value;
       const meta = challengeMetaSelector(state);
-      const { nextChallengePath, challengeType, superBlock, certification } =
-        meta;
+      const { nextChallengePath, challengeType, superBlock } = meta;
       const closeChallengeModal = of(closeModal('completion'));
 
       let submitter = () => of({ type: 'no-user-signed-in' });
@@ -170,13 +167,7 @@ export default function completionEpic(action$, state$) {
       }
 
       const pathToNavigateTo = async () => {
-        return await findPathToNavigateTo(
-          certification,
-          nextChallengePath,
-          superBlock,
-          state,
-          challengeType
-        );
+        return await findPathToNavigateTo(nextChallengePath, superBlock);
       };
 
       return submitter(type, state).pipe(
@@ -188,38 +179,10 @@ export default function completionEpic(action$, state$) {
   );
 }
 
-async function findPathToNavigateTo(
-  certification,
-  nextChallengePath,
-  superBlock,
-  state,
-  challengeType
-) {
-  let canClaimCert = false;
-  const isProjectSubmission = [
-    challengeTypes.frontEndProject,
-    challengeTypes.backEndProject,
-    challengeTypes.pythonProject
-  ].includes(challengeType);
-  if (isProjectSubmission) {
-    const username = usernameSelector(state);
-    try {
-      const response = await getVerifyCanClaimCert(username, certification);
-      if (response.status === 200) {
-        canClaimCert = response.data?.response?.message === 'can-claim-cert';
-      }
-    } catch (err) {
-      console.error('failed to verify if user can claim certificate', err);
-    }
-  }
-  let pathToNavigateTo;
-
-  if (nextChallengePath.includes(superBlock) && !canClaimCert) {
-    pathToNavigateTo = nextChallengePath;
-  } else if (canClaimCert) {
-    pathToNavigateTo = `/learn/${superBlock}/#claim-cert-block`;
+async function findPathToNavigateTo(nextChallengePath, superBlock) {
+  if (nextChallengePath.includes(superBlock)) {
+    return nextChallengePath;
   } else {
-    pathToNavigateTo = `/learn/${superBlock}/#${superBlock}-projects`;
+    return `/learn/${superBlock}/#${superBlock}-projects`;
   }
-  return pathToNavigateTo;
 }

@@ -1,34 +1,34 @@
-# Codebase Best Practices
+# コードベースのベストプラクティス
 
-## General JavaScript
+## 一般的な JavaScript
 
-In most cases, our [linter](how-to-setup-freecodecamp-locally.md#follow-these-steps-to-get-your-development-environment-ready) will warn of any formatting which goes against this codebase's preferred practice.
+ほとんどの場合、[リンター](how-to-setup-freecodecamp-locally.md#以下の手順に従って、開発環境を準備してください。) は、コードベースの好ましいプラクティスに反するフォーマットを警告します。
 
-It is encouraged to use functional components over class-based components.
+クラスベースのコンポーネントよりも関数コンポーネントの使用を推奨します。
 
-## Specific TypeScript
+## 特定の TypeScript
 
-### Migrating a JavaScript File to TypeScript
+### JavaScript ファイルを TypeScript に移行する
 
-#### Retaining Git File History
+#### Git のファイル履歴を保持する
 
-Sometimes changing the file from `<filename>.js` to `<filename>.ts` (or `.tsx`) causes the original file to be deleted, and a new one created, and other times the filename just changes - in terms of Git. Ideally, we want the file history to be preserved.
+ファイル形式を `<filename>.js` から `<filename>.ts` (もしくは `.tsx`) へ変更すると、元のファイルが削除され新しいファイルが作成される場合があります。それ以外の場合は、Git においてファイル名が変更されます。 ファイルの履歴を保存できるのが理想です。
 
-The best bet at achieving this is to:
+そのための最善策は次のとおりです。
 
-1. Rename the file
-2. Commit with the flag `--no-verify` to prevent Husky from complaining about the lint errors
-3. Refactor to TypeScript for migration, in a separate commit
+1. ファイル名を変更する
+2. フラグ `--no-verify` でコミットして、Husky がリントエラーについて不平を言うことを防ぐ
+3. 別のコミットで、移行のために TypeScript にリファクタリングする
 
-> [!NOTE] Editors like VSCode are still likely to show you the file has been deleted and a new one created. If you use the CLI to `git add .`, then VSCode will show the file as renamed in stage
+> [!NOTE] VScode 等のエディターは、ファイルが削除され新しいファイルが作成されたことを表示する可能性があります。 `git add .` に CLI を使用すると、VSCode はファイル名が変更されたものとしてステージに表示します。
 
-### Naming Conventions
+### 命名規則
 
-#### Interfaces and Types
+#### インターフェースと型
 
-For the most part, it is encouraged to use interface declarations over type declarations.
+ほとんどの場合、型宣言にインターフェース宣言を使用することを推奨します。
 
-React Component Props - suffix with `Props`
+React コンポーネントプロパティ -  サフィックスは `Props`
 
 ```typescript
 interface MyComponentProps {}
@@ -36,7 +36,7 @@ interface MyComponentProps {}
 const MyComponent = (props: MyComponentProps) => {};
 ```
 
-React Stateful Components - suffix with `State`
+React ステートフルコンポーネント - サフィックスは `State`
 
 ```typescript
 interface MyComponentState {}
@@ -44,7 +44,7 @@ interface MyComponentState {}
 class MyComponent extends Component<MyComponentProps, MyComponentState> {}
 ```
 
-Default - object name in PascalCase
+デフォルト - PascalCase 内のオブジェクト名
 
 ```typescript
 interface MyObject {}
@@ -58,7 +58,7 @@ const myObject: MyObject = {};
 
 ## Redux
 
-### Action Definitions
+### Action 定義
 
 ```typescript
 enum AppActionTypes = {
@@ -73,7 +73,7 @@ export const actionFunction = (
 });
 ```
 
-### How to Reduce
+### Reduce の方法
 
 ```typescript
 // Base reducer action without payload
@@ -100,9 +100,9 @@ export const reducer = (
 };
 ```
 
-### How to Dispatch
+### Dispatch の方法
 
-Within a component, import the actions and selectors needed.
+コンポーネント内で、必要なアクションとセレクターをインポートします。
 
 ```tsx
 // Add type definition
@@ -128,7 +128,7 @@ export default connect(null, mapDispatchToProps)(MyComponent);
 <!-- ### Redux Types File -->
 <!-- The types associated with the Redux store state are located in `client/src/redux/types.ts`... -->
 
-## Further Literature
+## その他資料
 
-- [TypeScript Docs](https://www.typescriptlang.org/docs/)
-- [TypeScript with React CheatSheet](https://github.com/typescript-cheatsheets/react#readme)
+- [TypeScript ドキュメント](https://www.typescriptlang.org/docs/)
+- [React CheatSheet 付き TypeScript](https://github.com/typescript-cheatsheets/react#readme)

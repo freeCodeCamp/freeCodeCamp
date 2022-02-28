@@ -32,7 +32,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.left-mountain')?.height,
 You should give `.left-mountain` a `background` of `linear-gradient(rgb(203, 241, 228), rgb(80, 183, 255))`.
 
 ```js
-assert.include(['linear-gradient(rgb(203,241,228),rgb(80,183,255))', 'rgba(0,0,0,0)linear-gradient(45deg,rgb(118,201,255),rgb(247,255,222))repeatscroll0%0%'], new __helpers.CSSHelp(document).getStyle('.left-mountain')?.getPropVal('background', true));
+assert.include(['linear-gradient(rgb(203,241,228),rgb(80,183,255))', 'rgba(0,0,0,0)linear-gradient(rgb(203,241,228),rgb(80,183,255))repeatscroll0%0%'], new __helpers.CSSHelp(document).getStyle('.left-mountain')?.getPropVal('background', true));
 ```
 
 # --seed--
@@ -42,7 +42,7 @@ assert.include(['linear-gradient(rgb(203,241,228),rgb(80,183,255))', 'rgba(0,0,0
 ```html
 <!DOCTYPE html>
 <html>
-  
+
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" href="./styles.css" />

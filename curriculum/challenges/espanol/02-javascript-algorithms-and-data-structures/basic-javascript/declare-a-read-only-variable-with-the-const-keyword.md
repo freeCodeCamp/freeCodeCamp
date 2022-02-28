@@ -21,29 +21,25 @@ La consola mostrará un error debido a la reasignación del valor de `FAV_PET`.
 
 Siempre debes nombrar variables que no quieras reasignar usando la palabra clave `const`. Esto ayuda cuando intentas reasignar accidentalmente una variable que está destinada a permanecer constante.
 
-Una práctica común al nombrar constantes es utilizar todas las letras en mayúsculas, con palabras separadas por un guion bajo.
-
 **Nota:** Es común que los desarrolladores usen identificadores de variables en mayúsculas para valores inmutables y minúsculas o camelCase para valores mutables (objetos y arreglos). Aprenderás más sobre objetos, arreglos y valores inmutables y mutables en desafíos posteriores. También en desafíos posteriores, verás ejemplos de identificadores de variables mayúsculas, minúsculas o camelCase.
 
 # --instructions--
 
-Cambia el código para que todas las variables sean declaradas usando `let` o `const`. Usa `let` cuando quieras que la variable cambie, y `const` cuando quieras que la variable permanezca constante. Además, renombra las variables declaradas con `const` para adaptarse a las prácticas comunes, lo que significa que las constantes deben estar todas en mayúsculas.
+Cambia el código para que todas las variables se declaren con `let` o `const`. Usa `let` cuando quieras que la variable cambie y `const` cuando quieras que la variable permanezca constante. Además, renombra variables declaradas con `const` para adaptarse a las prácticas comunes.
 
 # --hints--
 
 `var` no debe existir en tu código.
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/var/g));
+assert.notMatch(code, /var/g);
 ```
 
-Debes cambiar `fCC` todas a mayúsculas.
+Debes cambiar `fCC` a todas mayúsculas.
 
 ```js
-(getUserInput) => {
-  assert(getUserInput('index').match(/(FCC)/));
-  assert(!getUserInput('index').match(/fCC/));
-}
+assert.match(code, /(FCC)/);
+assert.notMatch(code, /(fCC)/);
 ```
 
 `FCC` debe ser una variable constante declarada con `const`.
@@ -56,14 +52,13 @@ assert.match(code, /const\s+FCC/);
 `fact` debe ser declarada con `let`.
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/(let fact)/g));
+assert.match(code, /(let\s+fact)/g);
 ```
 
 `console.log` debe cambiarse para imprimir las variables `FCC` y `fact`.
 
 ```js
-(getUserInput) =>
-  assert(getUserInput('index').match(/console\.log\(\s*FCC\s*\,\s*fact\s*\)\s*;?/g));
+assert.match(code, /console\.log\(\s*FCC\s*\,\s*fact\s*\)\s*;?/g);
 ```
 
 # --seed--

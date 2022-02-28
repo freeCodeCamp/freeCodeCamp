@@ -1,0 +1,14 @@
+{
+  "name": "Learn Bash and SQL by Building a Bike Rental Shop",
+  "isUpcomingChange": false,
+  "order": 8,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "relational-database",
+  "challengeOrder": [
+    [
+      "5f5b969a05380d2179fe6e18",
+      "Build a Bike Rental Shop"
+    ]
+  ]}

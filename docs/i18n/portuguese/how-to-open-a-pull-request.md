@@ -44,7 +44,7 @@ Alguns exemplos de bons títulos de PRs seriam:
 
 1. Uma vez que as edições tenham sido realizadas, será solicitado que você crie um pull request na página do GitHub do seu fork.
 
-   ![Imagem - Comparar o prompt de pull request no GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
+   ![Imagem - Comparar e solicitar o pull request no GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
 
 2. Por padrão, todos os pull requests devem ser feitos no repositório principal do freeCodeCamp, branch `main`.
 
@@ -72,7 +72,7 @@ Alguns exemplos de bons títulos de PRs seriam:
 
 ## Comentários nos pull requests
 
-> Parabéns! :tada: por fazer um PR e muito obrigado(a) por contribuir.
+> :tada: Parabéns por fazer um PR e muito obrigado(a) por contribuir.
 
 Nossos moderadores vão dar uma olhada e deixar um comentário para você. Seja paciente com os outros moderadores e respeite o tempo deles. Todos os pull requests são revisados no tempo devido.
 

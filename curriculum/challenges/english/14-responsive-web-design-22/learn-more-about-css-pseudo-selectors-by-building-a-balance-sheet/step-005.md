@@ -1,5 +1,5 @@
 ---
-id: 6193de38b3294e1e378f5bc3
+id: 61fd6ab779390f49148773bb
 title: Step 5
 challengeType: 0
 dashedName: step-5
@@ -7,32 +7,26 @@ dashedName: step-5
 
 # --description--
 
-Below your `h2` element, create a `p` element with the `class` set to `row`. In that new element, create three `span` elements.
+Below your `h1` element, create a `div` element. Give it an `id` attribute set to `years`. You want this particular element to be hidden from screen readers, so give it the `aria-hidden` attribute set to `true`.
 
 # --hints--
 
-You should create a new `p` element within your `#header` element.
+You should create a new `div` element after your `h1` element.
 
 ```js
-assert(document.querySelectorAll('#header > p')?.length === 1);
+assert(document.querySelector('h1')?.nextElementSibling?.localName === 'div');
 ```
 
-Your `p` element should come after your `h2` element.
+Your new `div` element should have an `id` attribute set to `years`.
 
 ```js
-assert(document.querySelector('#header > h2')?.nextElementSibling?.localName === 'p');
+assert(document.querySelector('div')?.getAttribute('id') === 'years');
 ```
 
-Your new `p` element should have a `class` attribute set to `row`.
+Your new `div` element should have the `aria-hidden` attribute set to `true`.
 
 ```js
-assert(document.querySelector('#header > p')?.classList?.contains('row'));
-```
-
-Your `.row` element should have 3 `span` elements.
-
-```js
-assert(document.querySelectorAll('#header > .row > span')?.length === 3);
+assert(document.querySelector('div')?.getAttribute('aria-hidden') === 'true');
 ```
 
 # --seed--
@@ -43,21 +37,25 @@ assert(document.querySelectorAll('#header > .row > span')?.length === 3);
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AcmeWidgetCorp Balance Sheet</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
-    <div id="sheet">
+    <main>
+      <section>
+        <h1>
+          <span class="flex">
+            <span>AcmeWidgetCorp</span>
+            <span>Balance Sheet</span>
+          </span>
+        </h1>
 --fcc-editable-region--
-      <div id="header">
-        <h1>Balance Sheet</h1>
-        <h2>AcmeWidgetCorp</h2>
-      </div>
+
 --fcc-editable-region--
-    </div>
-    <footer>Last Updated: December 2021</footer>
+      </section>
+    </main>
   </body>
 </html>
 ```

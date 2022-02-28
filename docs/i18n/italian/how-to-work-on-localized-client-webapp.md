@@ -18,7 +18,7 @@ La maggior parte dei file per tradurre la piattaforma si trovano nella cartella 
 
 ```console
   config/i18n
-  └── all-langs.js
+  └── all-langs.ts
   ...
    client/i18n
   ├── configForTests.js
@@ -40,23 +40,23 @@ La maggior parte dei file per tradurre la piattaforma si trovano nella cartella 
   │   │   ├── translations.json
   │   │   └── trending.json
   ... ...
-  │   ├── english
-  │   │   ├── intro.json
-  │   │   ├── links.json
-  │   │   ├── meta-tags.json
-  │   │   ├── motivation.json
-  │   │   ├── translations.json
-  │   │   └── trending.json
-  │   └── espanol
-  │       ├── intro.json
-  │       ├── links.json
-  │       ├── meta-tags.json
-  │       ├── motivation.json
-  │       ├── translations.json
-  │       └── trending.json
+  │   ├── english
+  │   │   ├── intro.json
+  │   │   ├── links.json
+  │   │   ├── meta-tags.json
+  │   │   ├── motivation.json
+  │   │   ├── translations.json
+  │   │   └── trending.json
+  │   └── espanol
+  │       ├── intro.json
+  │       ├── links.json
+  │       ├── meta-tags.json
+  │       ├── motivation.json
+  │       ├── translations.json
+  │       └── trending.json
   ├── locales.test.js
   ├── schema-validation.js
-  └── validate-keys.js
+  └── validate-keys.ts
 ```
 
 Alcuni di questi file sono tradotti sulla nostra piattaforma di traduzione (Crowdin), altri no.

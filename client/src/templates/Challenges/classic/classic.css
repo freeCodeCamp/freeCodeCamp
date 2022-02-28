@@ -88,7 +88,7 @@ button.monaco-editor-tab:hover {
   border-bottom: 2px solid var(--primary-background);
 }
 
-.monaco-editor-tab[role='tab'][aria-selected='true'] {
+.monaco-editor-tab[aria-expanded='true'] {
   border-color: var(--secondary-color);
   background-color: var(--secondary-color);
   color: var(--secondary-background);

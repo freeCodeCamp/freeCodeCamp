@@ -42,19 +42,19 @@ let camper = "David";
 `var` 不應存在於代碼中。
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/var/g));
+assert.notMatch(code, /var/g);
 ```
 
 `catName` 應該是字符串 `Oliver`。
 
 ```js
-assert(catName === 'Oliver');
+assert.equal(catName, 'Oliver');
 ```
 
 `catSound` 應該是字符串 `Meow!`
 
 ```js
-assert(catSound === 'Meow!');
+assert.equal(catSound, 'Meow!');
 ```
 
 # --seed--

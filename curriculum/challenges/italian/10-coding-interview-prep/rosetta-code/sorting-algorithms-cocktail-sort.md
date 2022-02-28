@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8004
-title: Sorting algorithms/Cocktail sort
+title: Algoritmi di Ordinamento/Cocktail Sort
 challengeType: 5
 forumTopicId: 302312
 dashedName: sorting-algorithmscocktail-sort
@@ -8,7 +8,7 @@ dashedName: sorting-algorithmscocktail-sort
 
 # --description--
 
-The cocktail shaker sort is an improvement on the [Bubble Sort](https://rosettacode.org/wiki/Bubble Sort). The improvement is basically that values "bubble" both directions through the array, because on each iteration the cocktail shaker sort bubble sorts once forwards and once backwards. Pseudocode for the algorithm (from [wikipedia](https://en.wikipedia.org/wiki/Cocktail sort)):
+L'algoritmo cocktail shaker sort è un miglioramento rispetto a [Bubble Sort](https://rosettacode.org/wiki/Bubble Sort). Il miglioramento è fondamentalmente che valuta "bolle" in entrambe le direzioni attraverso l'array, perché ad ogni iterazione il cocktail shaker ordina le bolle una volta avanti e una volta all'indietro. Pseudocodice per l'algoritmo (da [wikipedia](https://en.wikipedia.org/wiki/Cocktail sort)):
 
 <pre><b>function</b> <i>cocktailSort</i>( A : list of sortable items )
   <b>do</b>
@@ -34,41 +34,41 @@ The cocktail shaker sort is an improvement on the [Bubble Sort](https://rosettac
 
 # --instructions--
 
-Write a function that sorts a given array using cocktail sort.
+Scrivi una funzione che ordina un dato array usando cocktail sort.
 
 # --hints--
 
-`cocktailSort` should be a function.
+`cocktailSort` dovrebbe essere una funzione.
 
 ```js
 assert(typeof cocktailSort == 'function');
 ```
 
-`cocktailSort([25, 32, 12, 7, 20])` should return an array.
+`cocktailSort([25, 32, 12, 7, 20])` dovrebbe restituire un array.
 
 ```js
 assert(Array.isArray(cocktailSort([25, 32, 12, 7, 20])));
 ```
 
-`cocktailSort([25, 32, 12, 7, 20])` should return `[7, 12, 20, 25, 32]`.
+`cocktailSort([25, 32, 12, 7, 20])` dovrebbe restituire `[7, 12, 20, 25, 32]`.
 
 ```js
 assert.deepEqual(cocktailSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
 ```
 
-`cocktailSort([38, 45, 35, 8, 13])` should return `[8, 13, 35, 38, 45]`.
+`cocktailSort([38, 45, 35, 8, 13])` dovrebbe restituire `[8, 13, 35, 38, 45]`.
 
 ```js
 assert.deepEqual(cocktailSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
 ```
 
-`cocktailSort([43, 36, 20, 34, 24])` should return `[20, 24, 34, 36, 43]`.
+`cocktailSort([43, 36, 20, 34, 24])` dovrebbe restituire `[20, 24, 34, 36, 43]`.
 
 ```js
 assert.deepEqual(cocktailSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
 ```
 
-`cocktailSort([12, 33, 26, 18, 1, 16, 38])` should return `[1, 12, 16, 18, 26, 33, 38]`.
+`cocktailSort([12, 33, 26, 18, 1, 16, 38])` dovrebbe restituire `[1, 12, 16, 18, 26, 33, 38]`.
 
 ```js
 assert.deepEqual(cocktailSort([12, 33, 26, 18, 1, 16, 38]), [
@@ -82,7 +82,7 @@ assert.deepEqual(cocktailSort([12, 33, 26, 18, 1, 16, 38]), [
 ]);
 ```
 
-`cocktailSort([3, 39, 48, 16, 1, 4, 29])` should return `[1, 3, 4, 16, 29, 39, 48]`.
+`cocktailSort([3, 39, 48, 16, 1, 4, 29])` dovrebbe restituire `[1, 3, 4, 16, 29, 39, 48]`.
 
 ```js
 assert.deepEqual(cocktailSort([3, 39, 48, 16, 1, 4, 29]), [

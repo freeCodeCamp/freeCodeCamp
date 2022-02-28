@@ -14,7 +14,8 @@ import {
   closeDonationModal,
   isDonationModalOpenSelector,
   recentlyClaimedBlockSelector,
-  executeGA
+  executeGA,
+  isAVariantSelector
 } from '../../redux';
 import { isLocationSuperBlock } from '../../utils/path-parsers';
 import { playTone } from '../../utils/tone';
@@ -24,9 +25,11 @@ import DonateForm from './donate-form';
 const mapStateToProps = createSelector(
   isDonationModalOpenSelector,
   recentlyClaimedBlockSelector,
-  (show: boolean, recentlyClaimedBlock: string) => ({
+  isAVariantSelector,
+  (show: boolean, recentlyClaimedBlock: string, isAVariant: boolean) => ({
     show,
-    recentlyClaimedBlock
+    recentlyClaimedBlock,
+    isAVariant
   })
 );
 
@@ -46,6 +49,7 @@ type DonateModalProps = {
   location: WindowLocation | undefined;
   recentlyClaimedBlock: string;
   show: boolean;
+  isAVariant: boolean;
 };
 
 function DonateModal({
@@ -53,7 +57,8 @@ function DonateModal({
   closeDonationModal,
   executeGA,
   location,
-  recentlyClaimedBlock
+  recentlyClaimedBlock,
+  isAVariant
 }: DonateModalProps): JSX.Element {
   const [closeLabel, setCloseLabel] = React.useState(false);
   const { t } = useTranslation();
@@ -108,7 +113,6 @@ function DonateModal({
   const handleModalHide = () => {
     // If modal is open on a SuperBlock page
     if (isLocationSuperBlock(location)) {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       goToAnchor('claim-cert-block');
     }
   };
@@ -130,6 +134,11 @@ function DonateModal({
     </div>
   );
 
+  const renderABtestProgressText = () => {
+    if (isAVariant) return getDonationText();
+    else <b>{t('donate.duration-5')}</b>;
+  };
+
   const progressDonationText = (
     <div className='text-center progress-modal-text'>
       <div className='donation-icon-container'>
@@ -138,7 +147,7 @@ function DonateModal({
       <Row>
         {!closeLabel && (
           <Col sm={10} smOffset={1} xs={12}>
-            {getDonationText()}
+            {renderABtestProgressText()}
           </Col>
         )}
       </Row>

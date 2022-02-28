@@ -1,5 +1,5 @@
 ---
-id: 6193e5946b7ea12d8ce7b1c2
+id: 61fd7a160ed17960e971f28b
 title: Step 16
 challengeType: 0
 dashedName: step-16
@@ -7,27 +7,58 @@ dashedName: step-16
 
 # --description--
 
-Copy one of your `.row total` elements, with its contents, and paste that into your third `.section` element. Do not copy the other elements.
+In your fourth `tr` element, add a `th` element with the text `Total Assets`. Wrap the text `Assets` in a `span` element with the `class` attribute set to `sr-only`.
+
+Following that, add three `td` elements with the following text (in order): `$579`, `$736`, `$809`. Give the third `td` element a `class` attribute set to `current`.
 
 # --hints--
 
-Your third `.section` element should have a `.row total` element.
+Your fourth `tr` should have a `th` element.
 
 ```js
-assert(document.querySelectorAll('.section')?.[2]?.querySelector('.row.total'));
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelector('th'));
 ```
 
-Your new `.row total` element should match the other `.row total` elements.
+Your `th` element should have the text `Total Assets`.
 
 ```js
-assert.deepEqual(document.querySelectorAll('.row.total')?.[0]?.innerHTML, document.querySelectorAll('.row.total')?.[2]?.innerHTML);
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelector('th')?.innerText === 'Total Assets');
 ```
 
-Your third `.section` element should not have any other elements within it.
+You should wrap the text `Assets` in a `span` element.
 
 ```js
-assert(document.querySelectorAll('.section')?.[2]?.querySelector('.row.total')?.previousElementSibling === null);
-assert(document.querySelectorAll('.section')?.[2]?.querySelector('.row.total')?.nextElementSibling === null);
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelector('th > span')?.textContent === 'Assets');
+```
+
+Your `span` element should have the `class` attribute set to `sr-only`.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelector('th > span')?.classList?.contains('sr-only'));
+```
+
+You should have three `td` elements.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelectorAll('td').length === 3);
+```
+
+Your first `td` element should have the text `$579`.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelectorAll('td')?.[0]?.textContent === '$579');
+```
+
+Your second `td` element should have the text `$736`.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelectorAll('td')?.[1]?.textContent === '$736');
+```
+
+Your third `td` element should have the text `$809`.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[3]?.querySelectorAll('td')?.[2]?.textContent === '$809');
 ```
 
 # --seed--
@@ -38,90 +69,68 @@ assert(document.querySelectorAll('.section')?.[2]?.querySelector('.row.total')?.
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AcmeWidgetCorp Balance Sheet</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
-    <div id="sheet">
-      <div id="header">
-        <h1>Balance Sheet</h1>
-        <h2>AcmeWidgetCorp</h2>
-        <p class="row">
-          <span>2019</span>
-          <span>2020</span>
-          <span class="current">2021</span>
-        </p>
-      </div>
-      <h2>Assets</h2>
-      <div class="section">
-        <p class="row">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-        <span class="notes"></span>
-        <p class="row">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-        <span class="notes"></span>
-        <p class="row">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-        <span class="notes"></span>
-        <p class="row total">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-      </div>
-      <h2>Liabilities</h2>
-      <div class="section">
-        <p class="row">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-        <span class="notes"></span>
-        <p class="row">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-        <span class="notes"></span>
-        <p class="row">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-        <span class="notes"></span>
-        <p class="row total">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-      </div>
-      <h2>Net Worth</h2>
+    <main>
+      <section>
+        <h1>
+          <span class="flex">
+            <span>AcmeWidgetCorp</span>
+            <span>Balance Sheet</span>
+          </span>
+        </h1>
+        <div id="years" aria-hidden="true">
+          <span class="year">2019</span>
+          <span class="year">2020</span>
+          <span class="year">2021</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <caption>Assets</caption>
+            <thead>
+              <tr>
+                <td></td>
+                <th><span class="sr-only year">2019</span></th>
+                <th><span class="sr-only year">2020</span></th>
+                <th class="current"><span class="sr-only year">2021</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="data">
+                <th>Cash <span class="description">This is the cash we currently have on hand.</span></th>
+                <td>$25</td>
+                <td>$30</td>
+                <td class="current">$28</td>
+              </tr>
+              <tr class="data">
+                <th>Checking <span class="description">Our primary transactional account.</span></th>
+                <td>$54</td>
+                <td>$56</td>
+                <td class="current">$53</td>
+              </tr>
+              <tr class="data">
+                <th>Savings <span class="description">Funds set aside for emergencies.</span></th>
+                <td>$500</td>
+                <td>$650</td>
+                <td class="current">$728</td>
+              </tr>
 --fcc-editable-region--
-      <div class="section">
-
-      </div>
+              <tr class="total">
+              </tr>
 --fcc-editable-region--
-    </div>
-    <footer>Last Updated: December 2021</footer>
+            </tbody>
+          </table>
+          <table>
+          </table>
+          <table>
+          </table>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
 ```

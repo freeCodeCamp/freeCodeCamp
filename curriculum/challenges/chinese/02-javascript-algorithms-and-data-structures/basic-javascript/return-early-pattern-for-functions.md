@@ -29,7 +29,7 @@ myFun();
 修改函数 `abTest` 当 `a` 或 `b` 小于 `0` 时，函数立即返回一个 `undefined` 并退出。
 
 **提示**  
-记住 [`undefined` 是一个关键字](/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables)，而不是一个字符串。
+记住 [`undefined` 是一个关键字](https://chinese.freecodecamp.org/news/how-to-install-arch-linux/#how-to-install-arch-linux)，而不是一个字符串。
 
 # --hints--
 

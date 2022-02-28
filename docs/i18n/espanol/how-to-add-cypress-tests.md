@@ -44,38 +44,34 @@ Para ejecutar pruebas en las compilaciones de producción, reemplaza `dev` con `
 
 ## Configuración de Cypress-GitPod
 
-### 1. Asegúrate de estar en la _Feature Preview_ (vista previa de funciones) de GitPod _a partir del 01/02/2021_
-
-- Ve hacia [GitPod Docs - Feature Preview](https://www.gitpod.io/docs/feature-preview/) para ver como habilitar la _Feature Preview_
-
-### 2. Asegúrate de que el entorno de desarrollo se esté ejecutando
+### 1. Ensure Development Environment is Running
 
 Si al iniciar el entorno de GitPod no se creó automáticamente el ambiente:
 
-- Inicia la base de datos
+- Start the database
 
 ```console
 mongod
 ```
 
-- Propaga la base de datos
+- Seed the database
 
 ```console
 npm run seed
 ```
 
-- Inicia el servidor de desarrollo y cliente
+- Develop the server and client
 
 ```console
 npm run develop
 ```
 
-### 3. Instala las herramientas de compilación de Cypress
+### 2. Install Cypress Build Tools
 
 ```console
 npm run cypress:install-build-tools
 ```
 
-- Cuando se te solicite en la terminal, selecciona la distribución de tu teclado por idioma / área
+- When prompted in the terminal, select your keyboard layout by language/area
 
 Ahora, [Cypress puede ejecutarse](/how-to-add-cypress-tests#_2-run-the-cypress-tests)

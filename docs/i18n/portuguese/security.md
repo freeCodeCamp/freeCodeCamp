@@ -12,7 +12,7 @@ Apreciamos qualquer divulgação responsável de vulnerabilidades que possa impa
 
 Ao reportar uma vulnerabilidade, vamos analisá-la e garantir que ela não é um falso positivo. Voltaremos a entrar em contato, caso seja necessário esclarecer alguns detalhes. Você pode enviar relatórios separados para cada issue que encontrar.
 
-Embora não possamos oferecer nenhuma recompensa ou troca no momento, ficaremos felizes em listar seu nome em nossa [Lista dos famosos](https://contribute.freecodecamp.org/#/security-hall-of-fame), contanto que os relatórios não sejam de baixo esforço.
+Embora não possamos oferecer nenhuma recompensa ou troca no momento, ficaremos felizes em listar seu nome em nossa [Lista dos famosos](security-hall-of-fame.md), contanto que os relatórios não sejam de baixo esforço.
 
 Consideramos o uso de ferramentas e utilitários on-line para relatar issues com SPF e configurações DKIM, testes de servidor SSL etc. na categoria de ["recompensas por migalhas"](https://www.troyhunt.com/beg-bounties/) e não responderemos a estes relatórios.
 

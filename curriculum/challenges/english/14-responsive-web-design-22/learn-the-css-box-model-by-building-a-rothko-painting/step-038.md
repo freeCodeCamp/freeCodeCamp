@@ -1,5 +1,5 @@
 ---
-id: 60a3e3396c7b40068ad6998f
+id: 60a3e3396c7b40068ad69990
 title: Step 38
 challengeType: 0
 dashedName: step-38
@@ -7,24 +7,22 @@ dashedName: step-38
 
 # --description--
 
-The rectangles are too small and their edges don't have the soft quality of a painting.
-
-Increase the area and soften the edges of `.one` by setting its `box-shadow` to `0 0 3px 3px #efb762`.
+Use the same `box-shadow` declaration for `.two`, but change the color from `#efb762` to `#8f0401`.
 
 # --hints--
 
-You should set the `box-shadow` property to `0 0 3px 3px #efb762`.
+You should set the `box-shadow` property to `0 0 3px 3px #8f0401`.
 
 ```js
-const hasBoxShadow = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['box-shadow'] === 'rgb(239, 183, 98) 0px 0px 3px 3px');
+const hasBoxShadow = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['box-shadow'] === 'rgb(143, 4, 1) 0px 0px 3px 3px');
 assert(hasBoxShadow);
 ```
 
-Your `.one` element should have a `box-shadow` value of `0 0 3px 3px #efb762`.
+Your `.two` element should have a `box-shadow` value of `0 0 3px 3px #8f0401`.
 
 ```js
-const oneShadow = new __helpers.CSSHelp(document).getStyle('.one')?.getPropertyValue('box-shadow');
-assert(oneShadow === 'rgb(239, 183, 98) 0px 0px 3px 3px');
+const twoShadow = new __helpers.CSSHelp(document).getStyle('.two')?.getPropertyValue('box-shadow');
+assert(twoShadow === 'rgb(143, 4, 1) 0px 0px 3px 3px');
 ```
 
 # --seed--
@@ -51,10 +49,8 @@ assert(oneShadow === 'rgb(239, 183, 98) 0px 0px 3px 3px');
   width: 425px;
   height: 150px;
   background-color: #efb762;
-  margin: 20px auto 20px;
---fcc-editable-region--
-
---fcc-editable-region--
+  margin: 20px auto;
+  box-shadow: 0 0 3px 3px #efb762;
 }
 
 .two {
@@ -62,6 +58,9 @@ assert(oneShadow === 'rgb(239, 183, 98) 0px 0px 3px 3px');
   height: 200px;
   background-color: #8f0401;
   margin: 0 auto 20px;
+--fcc-editable-region--
+
+--fcc-editable-region--
 }
 
 .one, .two {

@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
 const React = require('react');
 
 const gatsby = jest.requireActual('gatsby');

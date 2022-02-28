@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7e1e
-title: Dot product
+title: Prodotto scalare
 challengeType: 5
 forumTopicId: 302251
 dashedName: dot-product
@@ -8,47 +8,47 @@ dashedName: dot-product
 
 # --description--
 
-Create a function, to compute the **[dot product](https://en.wikipedia.org/wiki/Dot product)**, also known as the **scalar product** of two vectors.
+Crea una funzione per calcolare il **[prodotto scalare](https://en.wikipedia.org/wiki/Dot product)** di due vettori.
 
 # --hints--
 
-`dotProduct` should be a function.
+`dotProduct` dovrebbe essere una funzione.
 
 ```js
 assert(typeof dotProduct == 'function');
 ```
 
-`dotProduct([1, 3, -5], [4, -2, -1])` should return a number.
+`dotProduct([1, 3, -5], [4, -2, -1])` dovrebbe restituire un numero.
 
 ```js
 assert(typeof dotProduct([1, 3, -5], [4, -2, -1]) == 'number');
 ```
 
-`dotProduct([1, 3, -5], [4, -2, -1])` should return `3`.
+`dotProduct([1, 3, -5], [4, -2, -1])` dovrebbe restituire `3`.
 
 ```js
 assert.equal(dotProduct([1, 3, -5], [4, -2, -1]), 3);
 ```
 
-`dotProduct([1, 2, 3, 4, 5], [6, 7, 8, 9, 10])` should return `130`.
+`dotProduct([1, 2, 3, 4, 5], [6, 7, 8, 9, 10])` dovrebbe restituire `130`.
 
 ```js
 assert.equal(dotProduct([1, 2, 3, 4, 5], [6, 7, 8, 9, 10]), 130);
 ```
 
-`dotProduct([5, 4, 3, 2], [7, 8, 9, 6])` should return `106`.
+`dotProduct([5, 4, 3, 2], [7, 8, 9, 6])` dovrebbe restituire `106`.
 
 ```js
 assert.equal(dotProduct([5, 4, 3, 2], [7, 8, 9, 6]), 106);
 ```
 
-`dotProduct([-5, 4, -3, 2], [-7, -8, 9, -6])` should return `-36`.
+`dotProduct([-5, 4, -3, 2], [-7, -8, 9, -6])` dovrebbe restituire `-36`.
 
 ```js
 assert.equal(dotProduct([-5, 4, -3, 2], [-7, -8, 9, -6]), -36);
 ```
 
-`dotProduct([17, 27, 34, 43, 15], [62, 73, 48, 95, 110])` should return `10392`.
+`dotProduct([17, 27, 34, 43, 15], [62, 73, 48, 95, 110])` dovrebbe restituire `10392`.
 
 ```js
 assert.equal(dotProduct([17, 27, 34, 43, 15], [62, 73, 48, 95, 110]), 10392);

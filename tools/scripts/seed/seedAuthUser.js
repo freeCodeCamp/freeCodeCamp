@@ -59,6 +59,7 @@ const authUser = {
   isSciCompPyCertV7: false,
   isDataAnalysisPyCertV7: false,
   isMachineLearningPyCertV7: false,
+  isRelationalDatabaseCertV8: false,
   completedChallenges: [],
   portfolio: [],
   yearsTopContributor: envVariables.includes('--top-contributor')
@@ -118,6 +119,7 @@ const blankUser = {
   isSciCompPyCertV7: false,
   isDataAnalysisPyCertV7: false,
   isMachineLearningPyCertV7: false,
+  isRelationalDatabaseCertV8: false,
   completedChallenges: [],
   portfolio: [],
   yearsTopContributor: [],

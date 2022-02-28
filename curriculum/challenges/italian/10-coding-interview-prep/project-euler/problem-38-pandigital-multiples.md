@@ -1,6 +1,6 @@
 ---
 id: 5900f3931000cf542c50fea5
-title: 'Problem 38: Pandigital multiples'
+title: 'Problema 38: Multipli pandigitali'
 challengeType: 5
 forumTopicId: 302042
 dashedName: problem-38-pandigital-multiples
@@ -8,31 +8,31 @@ dashedName: problem-38-pandigital-multiples
 
 # --description--
 
-Take the number 192 and multiply it by each of 1, 2, and 3:
+Prendi il numero 192 e moltiplicalo separatemente per 1, 2, e 3:
 
 $$\begin{align} 192 × 1 = 192\\\\ 192 × 2 = 384\\\\ 192 × 3 = 576\\\\ \end{align}$$
 
-By concatenating each product we get the 1 to 9 pandigital, 192384576. We will call 192384576 the concatenated product of 192 and (1, 2, 3).
+Concatenando ogni prodotto otteniamo il pandigitale di cifre da 1 a 9, 192384576. Chiamiamo 192384576 il prodotto concatenato di 192 e (1, 2, 3).
 
-The same can be achieved by starting with 9 and multiplying by 1, 2, 3, 4, and 5, giving the pandigital, 918273645, which is the concatenated product of 9 and (1, 2, 3, 4, 5).
+Lo stesso può essere ottenuto iniziando con 9 e moltiplicandolo con 1, 2, 3, 4, e 5, dando il numero pandigitale 918273645, che è il prodotto concatenato di 9 e (1, 2, 3, 4, 5).
 
-What is the largest 1 to `k` pandigital `k`-digit number that can be formed as the concatenated product of an integer with (1, 2, ..., `n`) where `n` > 1?
+Quale è il pandigitale con cifre da 1 a `k` lungo `k` cifre che può essere formato come prodotto concatenato di un numeri intero (1, 2, ..., `n`) dove `n` > 1?
 
 # --hints--
 
-`pandigitalMultiples(8)` should return a number.
+`pandigitalMultiples(8)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof pandigitalMultiples(8) === 'number');
 ```
 
-`pandigitalMultiples(8)` should return `78156234`.
+`pandigitalMultiples(8)` dovrebbe restituire `78156234`.
 
 ```js
 assert.strictEqual(pandigitalMultiples(8), 78156234);
 ```
 
-`pandigitalMultiples(9)` should return `932718654`.
+`pandigitalMultiples(9)` dovrebbe restituire `932718654`.
 
 ```js
 assert.strictEqual(pandigitalMultiples(9), 932718654);

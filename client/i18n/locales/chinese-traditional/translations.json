@@ -63,7 +63,10 @@
     "submit-and-go": "提交併訪問下一個挑戰",
     "go-to-next": "訪問下一個挑戰",
     "ask-later": "稍後問我",
-    "start-coding": "開始編碼！"
+    "start-coding": "開始編碼！",
+    "go-to-settings": "Go to settings to claim your certification",
+    "click-start-course": "Click here to start the course",
+    "click-start-project": "Click here to start the project"
   },
   "landing": {
     "big-heading-1": "免費學習編程",
@@ -293,7 +296,13 @@
     },
     "help-translate": "我們仍然在翻譯以下證書。",
     "help-translate-link": "幫助我們翻譯。",
-    "project-preview-title": "下面是你將構建的項目的預覽"
+    "project-preview-title": "下面是你將構建的項目的預覽",
+    "github-required": "A <0>GitHub</0> account is required to run the project. You will need to create one if you haven't already.",
+    "step-1": "Step 1: Complete the project",
+    "step-2": "Step 2: Submit your code",
+    "submit-public-url": "When you have completed the project, save all the required files into a public repository and submit the URL to it below.",
+    "complete-both-steps": "Complete both steps below to finish the challenge.",
+    "runs-in-vm": "The project runs in a virtual machine, complete the user stories described in there and get all the tests to pass to finish step 1."
   },
   "donate": {
     "title": "支持我們的非營利組織",
@@ -322,6 +331,7 @@
     "duration-2": "成爲我們非營利組織的每月定期支持者",
     "duration-3": "成爲我們非營利組織的每年定期支持者",
     "duration-4": "成爲我們非營利組織的支持者",
+    "duration-5": "Support our nonprofit and earn a supporter profile badge.",
     "nicely-done": "很棒，你已完成 {{block}}。",
     "credit-card": "信用卡",
     "credit-card-2": "或者使用信用卡捐款：",
@@ -358,7 +368,7 @@
     "one-time": "If you'd prefer to make one-time donations, you can support freeCodeCamp's mission whenever you have cash to spare. You can use <0>this link to donate whatever amount feels right through PayPal</0>.",
     "wire-transfer": "You can also send money to freeCodeCamp directly through a wire transfer. If you need our wire details, email Quincy at quincy@freecodecamp.org",
     "does-crypto": "Does freeCodeCamp accept donations in Bitcoin or other cryptocurrencies?",
-    "yes-crypto": "Yes, and we would welcome your cryptocurrency donations. Here are our wallet details:",
+    "yes-cryptocurrency": "Yes. Please email Quincy at quincy@freecodecamp.org and he can send you freeCodeCamp's wallet information. He can also provide you with a donation receipt if you need one for your taxes.",
     "can-check": "Can I mail a physical check?",
     "yes-check": "Yes, we would welcome a check. You can mail it to us at:",
     "how-matching-gift": "How can I set up matching gifts from my employer, or payroll deductions?",
@@ -417,7 +427,8 @@
     "email": "郵箱",
     "and": "和",
     "change-theme": "登錄以更改主題。",
-    "translation-pending": "幫我們翻譯"
+    "translation-pending": "幫我們翻譯",
+    "certification-project": "Certification Project"
   },
   "icons": {
     "gold-cup": "金獎盃",
@@ -447,7 +458,7 @@
     "magnifier": "放大鏡"
   },
   "aria": {
-    "fcc-logo": "freeCodeCamp 徽標",
+    "fcc-curriculum": "freeCodeCamp Curriculum",
     "answer": "答案",
     "linkedin": "鏈接到 {{username}} 的 LinkedIn",
     "github": "鏈接到 {{username}} 的 GitHub",
@@ -456,7 +467,9 @@
     "first-page": "訪問第一頁",
     "previous-page": "訪問上一頁",
     "next-page": "訪問下一頁",
-    "last-page": "訪問最後一頁"
+    "last-page": "訪問最後一頁",
+    "primary-nav": "primary",
+    "breadcrumb-nav": "breadcrumb"
   },
   "flash": {
     "honest-first": "申請認證之前，你必須先接受我們的《學術誠信條例》",
@@ -510,7 +523,10 @@
     "create-token-err": "嘗試創建令牌時出錯",
     "delete-token-err": "嘗試刪除令牌時出錯",
     "token-created": "你已成功創建了一個新令牌。",
-    "token-deleted": "你的令牌已被刪除。"
+    "token-deleted": "你的令牌已被刪除。",
+    "complete-project-first": "You must complete the project first.",
+    "local-code-save-error": "Oops, your code did not save, your browser's local storage may be full.",
+    "local-code-saved": "Saved! Your code was saved to your browser's local storage."
   },
   "validation": {
     "max-characters": "字符數最多爲 288 個，你還可以輸入 {{charsLeft}} 個字符",
@@ -538,6 +554,7 @@
       "heading-legacy-full-stack": "作爲舊版全棧認證的一部分，{{user}} 完成了以下認證：",
       "heading": "作爲此認證的一部分，{{user}} 構建了以下項目，並通過所有自動測試：",
       "solution": "解決方案",
+      "no-solution": "error displaying solution, email support@freeCodeCamp.org to get help.",
       "source": "來源",
       "footnote": "如果你懷疑其中任何項目違反了<2>學術誠信條例</2>，請<5>向我們的團隊報告</5>。",
       "title": {

@@ -33,7 +33,7 @@ You can select a scope from [this list of labels](https://github.com/freeCodeCam
 
 Keep it short (less than 30 characters) and simple, you can add more information in the PR description box and comments.
 
-Some examples of good PRs titles would be:
+Some examples of good PR titles would be:
 
 - `fix(a11y): improved search bar contrast`
 - `feat: add more tests to HTML and CSS challenges`
@@ -44,7 +44,7 @@ Some examples of good PRs titles would be:
 
 1. Once the edits have been committed, you will be prompted to create a pull request on your fork's GitHub Page.
 
-   ![Image - Compare pull request prompt on GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
+   ![Image - Compare & pull request prompt on GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
 
 2. By default, all pull requests should be against the freeCodeCamp main repo, `main` branch.
 
@@ -72,7 +72,7 @@ Some examples of good PRs titles would be:
 
 ## Feedback on pull requests
 
-> Congratulations! :tada: on making a PR and thanks a lot for taking the time to contribute.
+> :tada: Congratulations on making a PR and thanks a lot for taking the time to contribute.
 
 Our moderators will now take a look and leave you feedback. Please be patient with the fellow moderators and respect their time. All pull requests are reviewed in due course.
 

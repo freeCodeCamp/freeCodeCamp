@@ -1,6 +1,6 @@
 ---
 id: 5900f4111000cf542c50ff24
-title: 'Problem 165: Intersections'
+title: 'Problema 165: intersezioni'
 challengeType: 5
 forumTopicId: 301799
 dashedName: problem-165-intersections
@@ -8,22 +8,36 @@ dashedName: problem-165-intersections
 
 # --description--
 
-A segment is uniquely defined by its two endpoints. By considering two line segments in plane geometry there are three possibilities:
+Un segmento è definito unicamente dai punti terminali. Considerando due segmenti in un piano geometrico ci sono tre possibilità: i due segmenti hanno zero punti, un punto, o infiniti punti in comune.
 
-the segments have zero points, one point, or infinitely many points in common.
+In più quando i due segmenti hanno esattamente un punto in comune potrebbe essere che questo sia un terminale di uno o entrambi i segmenti. Se un punto in comune dei due segmenti non è un punto terminale di nessuno dei due allora è un punto interno di entrambi i segnmenti.
 
-Moreover when two segments have exactly one point in common it might be the case that that common point is an endpoint of either one of the segments or of both. If a common point of two segments is not an endpoint of either of the segments it is an interior point of both segments.
+Sia $T$, un punto in comune di due segmenti $L_1$ e $L_2$, un vero punto d'intersezione se è il solo punto in comune di $L_1$ e $L_2$ ed è un punto interno di entrambi i segmenti.
 
-We will call a common point T of two segments L1 and L2 a true intersection point of L1 and L2 if T is the only common point of L1 and L2 and T is an interior point of both segments.
+Considera i tre segmenti $L_1$, $L_2$, e $L_3$:
 
-Consider the three segments L1, L2, and L3: L1: (27, 44) to (12, 32) L2: (46, 53) to (17, 62) L3: (46, 70) to (22, 40) It can be verified that line segments L2 and L3 have a true intersection point. We note that as the one of the end points of L3: (22,40) lies on L1 this is not considered to be a true point of intersection. L1 and L2 have no common point. So among the three line segments, we find one true intersection point. Now let us do the same for 5000 line segments. To this end, we generate 20000 numbers using the so-called "Blum Blum Shub" pseudo-random number generator. s0 = 290797 sn+1 = sn×sn (modulo 50515093) tn = sn (modulo 500) To create each line segment, we use four consecutive numbers tn. That is, the first line segment is given by: (t1, t2) to (t3, t4) The first four numbers computed according to the above generator should be: 27, 144, 12 and 232. The first segment would thus be (27,144) to (12,232). How many distinct true intersection points are found among the 5000 line segments?
+$$\begin{align} & L_1: (27, 44) \\;\text{to}\\; (12, 32) \\\\ & L_2: (46, 53) \\;\text{to}\\; (17, 62) \\\\ & L_3: (46, 70) \\;\text{to}\\; (22, 40) \\\\ \end{align}$$
+
+Si può verificare che i segmenti $L_2$ e $L_3$ hanno un vero punto di intersezione. Notiamo che essendo uno dei terminali di $L_3$: (22, 40) su $L_1$ questo non è un vero punto d'intersezione. $L_1$ e $L_2$ non hanno un punto in comune. Quindi tra i tre segmenti troviamo un vero punto di intersezione.
+
+Adesso facciamo lo stesso per 5000 segmenti. A questo fine, generiamo 20000 numeri casuali usando il generatore pseudo-casuale di numeri chiamato "Blum Blum Shub".
+
+$$\begin{align} & s_0 = 290797 \\\\ & s_{n + 1} = s_n × s_n (\text{modulo}\\; 50515093) \\\\ & t_n = s_n (\text{modulo}\\; 500) \\\\ \end{align}$$
+
+Per creare ogni segmento, usiamo quattro numeri consecutivi $t_n$. Quindi, il primo segmento è dato da:
+
+da ($_t$1, $t_2$) a ($t_3$, $t_4$)
+
+I primi quattro numeri calcolati con il precedente generatore dovrebbero essere: 27, 144, 12 e 232. Quindi il primo segnmento è da (27, 144) a (12, 232).
+
+Quante intersezioni vere sono trovate tra i 5000 segmenti?
 
 # --hints--
 
-`euler165()` should return 2868868.
+`distinctIntersections()` should return `2868868`.
 
 ```js
-assert.strictEqual(euler165(), 2868868);
+assert.strictEqual(distinctIntersections(), 2868868);
 ```
 
 # --seed--
@@ -31,12 +45,12 @@ assert.strictEqual(euler165(), 2868868);
 ## --seed-contents--
 
 ```js
-function euler165() {
+function distinctIntersections() {
 
   return true;
 }
 
-euler165();
+distinctIntersections();
 ```
 
 # --solutions--

@@ -1,6 +1,6 @@
 ---
 id: 5900f3cc1000cf542c50fedf
-title: 'Problem 96: Su Doku'
+title: 'Problema 96: Su Doku'
 challengeType: 5
 forumTopicId: 302213
 dashedName: problem-96-su-doku
@@ -8,7 +8,7 @@ dashedName: problem-96-su-doku
 
 # --description--
 
-Su Doku (Japanese meaning *number place*) is the name given to a popular puzzle concept. Its origin is unclear, but credit must be attributed to Leonhard Euler who invented a similar, and much more difficult, puzzle idea called Latin Squares. The objective of Su Doku puzzles, however, is to replace the blanks (or zeros) in a 9 by 9 grid in such that each row, column, and 3 by 3 box contains each of the digits 1 to 9. Below is an example of a typical starting puzzle grid and its solution grid.
+Su Doku (in giapponese significa *posto del numero*) è il nome dato a un popolare tipo di puzzle. La sua origine non è chiara, ma il merito deve essere attribuito a Leonhard Euler che ha inventato un'idea di puzzle simile e molto più complicata chiamata Quadrati Latini. L'obiettivo del puzzle Su Doku, tuttavia, è quello di sostituire gli spazi vuoti (o zero) in una griglia 9 per 9 in modo che ogni riga, colonna e casella 3 per 3 contengano ciascuna delle cifre da 1 a 9. Di seguito è riportato un esempio di una tipica griglia puzzle iniziale e la sua griglia di soluzione.
 
 <div style="margin: auto; background-color: white; padding: 10px; width: 80%; text-align: center;">
   <table border="0" cellpadding="0" cellspacing="0" align="center">
@@ -100,27 +100,27 @@ Su Doku (Japanese meaning *number place*) is the name given to a popular puzzle 
   </table>
 </div>
 
-A well constructed Su Doku puzzle has a unique solution and can be solved by logic, although it may be necessary to employ "guess and test" methods in order to eliminate options (there is much contested opinion over this). The complexity of the search determines the difficulty of the puzzle; the example above is considered easy because it can be solved by straight forward direct deduction.
+Un puzzle Su Doku ben costruito ha una soluzione unica e può essere risolto con la logica, anche se può essere necessario utilizzare metodi "tenta e prova" per eliminare le opzioni (ci sono molti pareri discordanti su questo). La complessità della ricerca determina la difficoltà del puzzle; l'esempio di cui sopra è considerato facile perché può essere risolto con deduzione diretta in avanti.
 
-The `puzzlesArr` array contains different Su Doku puzzle strings ranging in difficulty, but all with unique solutions.
+L'array `puzzlesArr` contiene diverse stringhe di puzzle Su Doku che variano in difficoltà, ma tutte con soluzioni uniche.
 
-By solving all puzzles in `puzzlesArr`, find the sum of the 3-digit numbers found in the top left corner of each solution grid; for example, 483 is the 3-digit number found in the top left corner of the solution grid above.
+Risolvendo tutti i puzzle in `puzzlesArr`, trova la somma dei numeri a 3 cifre trovati nell'angolo in alto a sinistra di ogni griglia di soluzione; ad esempio, 483 è il numero a 3 cifre trovato nell'angolo in alto a sinistra della griglia della soluzione sopra.
 
 # --hints--
 
-`suDoku(testPuzzles1)` should return a number.
+`suDoku(testPuzzles1)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof suDoku(_testPuzzles1) === 'number');
 ```
 
-`suDoku(testPuzzles1)` should return `1190`.
+`suDoku(testPuzzles1)` dovrebbe restituire `1190`.
 
 ```js
 assert.strictEqual(suDoku(_testPuzzles1), 1190);
 ```
 
-`suDoku(testPuzzles2)` should return `24702`.
+`suDoku(testPuzzles2)` dovrebbe restituire `24702`.
 
 ```js
 assert.strictEqual(suDoku(_testPuzzles2), 24702);

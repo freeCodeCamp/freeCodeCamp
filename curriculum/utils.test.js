@@ -25,7 +25,7 @@ describe('getSuperOrder', () => {
     expect(getSuperOrder('javascript-algorithms-and-data-structures')).toBe(1);
     expect(getSuperOrder('front-end-development-libraries')).toBe(2);
     expect(getSuperOrder('data-visualization')).toBe(3);
-    expect(getSuperOrder('relational-databases')).toBe(4);
+    expect(getSuperOrder('relational-database')).toBe(4);
     expect(getSuperOrder('back-end-development-and-apis')).toBe(5);
     expect(getSuperOrder('quality-assurance')).toBe(6);
     expect(getSuperOrder('scientific-computing-with-python')).toBe(7);
@@ -54,7 +54,7 @@ describe('getSuperOrder', () => {
       getSuperOrder('data-visualization', { showNewCurriculum: true })
     ).toBe(3);
     expect(
-      getSuperOrder('relational-databases', { showNewCurriculum: true })
+      getSuperOrder('relational-database', { showNewCurriculum: true })
     ).toBe(4);
     expect(
       getSuperOrder('back-end-development-and-apis', {
