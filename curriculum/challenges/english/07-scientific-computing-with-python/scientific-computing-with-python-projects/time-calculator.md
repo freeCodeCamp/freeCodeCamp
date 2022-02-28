@@ -14,8 +14,6 @@ We are still developing the interactive instructional part of the Python curricu
 
 - [Python for Everybody Video Course](https://www.freecodecamp.org/news/python-for-everybody/) (14 hours)
 
-- [Learn Python Video Course](https://www.freecodecamp.org/news/learn-python-video-course/) (10 hours)
-
 # --instructions--
 
 Write a function named `add_time` that takes in two required parameters and one optional parameter:
