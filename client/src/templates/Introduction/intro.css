@@ -19,15 +19,15 @@
   flex-direction: row;
 }
 
-.block-header .block-link {
+.block-header .big-block-title {
   flex-grow: 3;
   flex-basis: 0;
   padding: 25px 15px 10px;
 }
 
-.block-link:hover,
-.block-link:focus,
-.block-link:active {
+.big-block-title:hover,
+.big-block-title:focus,
+.big-block-title:active {
   background-color: var(--primary-background);
 }
 
