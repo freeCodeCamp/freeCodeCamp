@@ -5,18 +5,18 @@ exports.buildMobileCurriculum = function buildMobileCurriculum(json) {
   const mobileStaticPath = path.resolve(__dirname, '../../../client/static');
 
   if (!fs.existsSync(`${mobileStaticPath}/mobile`)) {
-    fs.mkdirSync(`${mobileStaticPath}/mobile`)
-    writeJson(json);
+    fs.mkdirSync(`${mobileStaticPath}/mobile`);
+    writeAndParseCurriculumJson(json);
   } else {
-    writeJson(json);
+    writeAndParseCurriculumJson(json);
   }
 
-  function writeJson(curriculum) {
+  function writeAndParseCurriculumJson(curriculum) {
     curriculum = JSON.parse(curriculum);
 
-    const superBlocksAndCertifications = Object.keys(curriculum);
+    const superBlocks = Object.keys(curriculum).slice(1);
 
-    const superBlockObj = { superblocks: superBlocksAndCertifications.slice(1) };
+    const superBlockObj = { superblocks: superBlocks };
 
     writeToFile('availableSuperblocks', superBlockObj);
 
