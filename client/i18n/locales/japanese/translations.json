@@ -47,7 +47,7 @@
     "cancel": "キャンセル",
     "reset-lesson": "レッスンをリセット",
     "run": "実行",
-    "run-test": "テスト実行",
+    "run-test": "Run the Tests (Ctrl + Enter)",
     "reset": "リセット",
     "reset-code": "全てのコードをリセット",
     "help": "ヘルプ",

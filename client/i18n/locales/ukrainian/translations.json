@@ -47,7 +47,7 @@
     "cancel": "Скасувати",
     "reset-lesson": "Скинути цей урок",
     "run": "Запустити",
-    "run-test": "Запустити тести",
+    "run-test": "Run the Tests (Ctrl + Enter)",
     "reset": "Скинути",
     "reset-code": "Скинути весь код",
     "help": "Допомога",

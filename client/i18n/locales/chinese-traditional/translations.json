@@ -47,7 +47,7 @@
     "cancel": "取消",
     "reset-lesson": "重置課程",
     "run": "運行",
-    "run-test": "運行測試",
+    "run-test": "Run the Tests (Ctrl + Enter)",
     "reset": "重置",
     "reset-code": "重置所有代碼",
     "help": "幫助",

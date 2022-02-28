@@ -47,7 +47,7 @@
     "cancel": "Cancelar",
     "reset-lesson": "Reiniciar esta aula",
     "run": "Executar",
-    "run-test": "Executar os testes",
+    "run-test": "Run the Tests (Ctrl + Enter)",
     "reset": "Redefinir",
     "reset-code": "Redefinir todo o código",
     "help": "Ajuda",
