@@ -1,6 +1,6 @@
 ---
 id: 5900f4571000cf542c50ff6a
-title: 'Problem 235: An Arithmetic Geometric sequence'
+title: 'Problema 235: Sequenza geometrica aritmetica'
 challengeType: 5
 forumTopicId: 301879
 dashedName: problem-235-an-arithmetic-geometric-sequence
@@ -8,20 +8,20 @@ dashedName: problem-235-an-arithmetic-geometric-sequence
 
 # --description--
 
-Given is the arithmetic-geometric sequence u(k) = (900-3k)rk-1.
+Data la sequenza aritmetico-geometrica $u(k) = (900 - 3k)r^{k - 1}$.
 
-Let s(n) = Σk=1...nu(k).
+Sia $s(n) = \sum_{k=1 \ldots n} u(k)$.
 
-Find the value of r for which s(5000) = -600,000,000,000.
+Trova il valore di $r$ per il quale $s(5000) = -600\\,000\\,000\\,000$.
 
-Give your answer rounded to 12 places behind the decimal point.
+Dai la tua risposta arrotondata a 12 cifre dopo il punto decimale.
 
 # --hints--
 
-`euler235()` should return 1.002322108633.
+`arithmeticGeometricSequence()` dovrebbe restituire `1.002322108633`.
 
 ```js
-assert.strictEqual(euler235(), 1.002322108633);
+assert.strictEqual(arithmeticGeometricSequence(), 1.002322108633);
 ```
 
 # --seed--
@@ -29,12 +29,12 @@ assert.strictEqual(euler235(), 1.002322108633);
 ## --seed-contents--
 
 ```js
-function euler235() {
+function arithmeticGeometricSequence() {
 
   return true;
 }
 
-euler235();
+arithmeticGeometricSequence();
 ```
 
 # --solutions--

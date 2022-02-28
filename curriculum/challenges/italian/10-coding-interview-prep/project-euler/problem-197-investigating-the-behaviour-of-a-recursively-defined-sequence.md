@@ -1,6 +1,6 @@
 ---
 id: 5900f4311000cf542c50ff44
-title: 'Problem 197: Investigating the behaviour of a recursively defined sequence'
+title: 'Problema 197: Indagare il comportamento di una sequenza definita ricorsivamente'
 challengeType: 5
 forumTopicId: 301835
 dashedName: problem-197-investigating-the-behaviour-of-a-recursively-defined-sequence
@@ -8,18 +8,16 @@ dashedName: problem-197-investigating-the-behaviour-of-a-recursively-defined-seq
 
 # --description--
 
-Given is the function f(x) = ⌊230.403243784-x2⌋ × 10-9 ( ⌊ ⌋ is the floor-function),
+Data la funzione $f(x) = ⌊{2}^{30. 03243784 - x^2}⌋ × {10}^{-9}$ ( ⌊ ⌋ è la funzione floor), la sequenza $u_n$ è definita da $u_0 = -1$ e $u_{n + 1} = f(u_n)$.
 
-the sequence un is defined by u0 = -1 and un+1 = f(un).
-
-Find un + un+1 for n = 1012. Give your answer with 9 digits after the decimal point.
+Trova $u_n + u_{n + 1}$ per $n = {10}^{12}$. Dai la tua risposta con 9 cifre dopo il punto decimale.
 
 # --hints--
 
-`euler197()` should return 1.710637717.
+`recursivelyDefinedSequence()` dovrebbe restituire `1.710637717`.
 
 ```js
-assert.strictEqual(euler197(), 1.710637717);
+assert.strictEqual(recursivelyDefinedSequence(), 1.710637717);
 ```
 
 # --seed--
@@ -27,12 +25,12 @@ assert.strictEqual(euler197(), 1.710637717);
 ## --seed-contents--
 
 ```js
-function euler197() {
+function recursivelyDefinedSequence() {
 
   return true;
 }
 
-euler197();
+recursivelyDefinedSequence();
 ```
 
 # --solutions--

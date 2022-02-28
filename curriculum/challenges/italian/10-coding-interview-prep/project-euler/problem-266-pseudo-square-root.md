@@ -1,6 +1,6 @@
 ---
 id: 5900f4771000cf542c50ff89
-title: 'Problem 266: Pseudo Square Root'
+title: 'Problema 266: Pseudo radice quadrata'
 challengeType: 5
 forumTopicId: 301915
 dashedName: problem-266-pseudo-square-root
@@ -8,22 +8,22 @@ dashedName: problem-266-pseudo-square-root
 
 # --description--
 
-The divisors of 12 are: 1,2,3,4,6 and 12.
+I divisori di 12 sono: 1,2,3,4,6 e 12.
 
-The largest divisor of 12 that does not exceed the square root of 12 is 3.
+Il massimo divisore di 12 che non supera la radice quadrata di 12 è 3.
 
-We shall call the largest divisor of an integer n that does not exceed the square root of n the pseudo square root (PSR) of n.
+Chiameremo il massimo divisore di un intero $n$ che non supera la radice quadrata di $n$ la pseudo radice quadrata ($PSR$) di $n$.
 
-It can be seen that PSR(3102)=47.
+Si può vedere che $PSR(3102) = 47$.
 
-Let p be the product of the primes below 190. Find PSR(p) mod 1016.
+Sia $p$ il prodotto dei primi sotto 190. Trova $PSR(p)\bmod {10}^{16}$.
 
 # --hints--
 
-`euler266()` should return 1096883702440585.
+`pseudoSquareRoot()` dovrebbe restituire `1096883702440585`.
 
 ```js
-assert.strictEqual(euler266(), 1096883702440585);
+assert.strictEqual(pseudoSquareRoot(), 1096883702440585);
 ```
 
 # --seed--
@@ -31,12 +31,12 @@ assert.strictEqual(euler266(), 1096883702440585);
 ## --seed-contents--
 
 ```js
-function euler266() {
+function pseudoSquareRoot() {
 
   return true;
 }
 
-euler266();
+pseudoSquareRoot();
 ```
 
 # --solutions--

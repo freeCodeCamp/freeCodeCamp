@@ -1,6 +1,6 @@
 ---
 id: 5900f4711000cf542c50ff84
-title: 'Problem 261: Pivotal Square Sums'
+title: 'Problem 261: Somme di quadrati principali'
 challengeType: 5
 forumTopicId: 301910
 dashedName: problem-261-pivotal-square-sums
@@ -8,18 +8,22 @@ dashedName: problem-261-pivotal-square-sums
 
 # --description--
 
-Let us call a positive integer k a square-pivot, if there is a pair of integers m > 0 and n ≥ k, such that the sum of the (m+1) consecutive squares up to k equals the sum of the m consecutive squares from (n+1) on:
+Sia $k$ un numero intero positivo detto square-pivot se c'è una coppia di numeri interi $m > 0$ e $n ≥ k$, cossìcché la somma dei ($m + 1$) quadrati consecutivi fino a $k$ sia guale alla somma dei $m$ quadrati consecutivi a partire da ($n + 1$):
 
-(k-m)2 + ... + k2 = (n+1)2 + ... + (n+m)2.
+$${(k - m)}^2 + \ldots + k^2 = {(n + 1)}^2 + \ldots + {(n + m)}^2$$
 
-Some small square-pivots are 4: 32 + 42 = 52 21: 202 + 212 = 292 24: 212 + 222 + 232 + 242 = 252 + 262 + 272 110: 1082 + 1092 + 1102 = 1332 + 1342Find the sum of all distinct square-pivots ≤ 1010.
+Alcuni piccoli square-pivot sono
+
+$$\begin{align} & \mathbf{4}: 3^2 + \mathbf{4}^2 = 5^2 \\\\ & \mathbf{21}: {20}^2 + \mathbf{21}^2 = {29}^2 \\\\ & \mathbf{24}: {21}^2 + {22}^2 + {23}^2 + \mathbf{24}^2 = {25}^2 + {26}^2 + {27}^2 \\\\ & \mathbf{110}: {108}^2 + {109}^2 + \mathbf{110}^2 = {133}^2 + {134}^2 \\\\ \end{align}$$
+
+Trova la somma dei square pivot distinti $≤ {10}^{10}$.
 
 # --hints--
 
-`euler261()` should return 238890850232021.
+`pivotalSquareSums()` dovrebbe restituire `238890850232021`.
 
 ```js
-assert.strictEqual(euler261(), 238890850232021);
+assert.strictEqual(pivotalSquareSums(), 238890850232021);
 ```
 
 # --seed--
@@ -27,12 +31,12 @@ assert.strictEqual(euler261(), 238890850232021);
 ## --seed-contents--
 
 ```js
-function euler261() {
+function pivotalSquareSums() {
 
   return true;
 }
 
-euler261();
+pivotalSquareSums();
 ```
 
 # --solutions--

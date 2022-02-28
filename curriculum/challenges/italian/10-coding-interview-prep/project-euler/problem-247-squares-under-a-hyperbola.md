@@ -1,6 +1,6 @@
 ---
 id: 5900f4641000cf542c50ff76
-title: 'Problem 247: Squares under a hyperbola'
+title: 'Problema 247: Quadrati sotto un''iperbole'
 challengeType: 5
 forumTopicId: 301894
 dashedName: problem-247-squares-under-a-hyperbola
@@ -8,20 +8,32 @@ dashedName: problem-247-squares-under-a-hyperbola
 
 # --description--
 
-Consider the region constrained by 1 ≤ x and 0 ≤ y ≤ 1/x.
+Considera la regione delimitata da $1 ≤ x$ e $0 ≤ y ≤ \frac{1}{x}$.
 
-Let S1 be the largest square that can fit under the curve. Let S2 be the largest square that fits in the remaining area, and so on. Let the index of Sn be the pair (left, below) indicating the number of squares to the left of Sn and the number of squares below Sn.
+Sia $S_1$ il quadrato più grande che può stare sotto la curva.
 
-The diagram shows some such squares labelled by number. S2 has one square to its left and none below, so the index of S2 is (1,0). It can be seen that the index of S32 is (1,1) as is the index of S50. 50 is the largest n for which the index of Sn is (1,1).
+Sia $S_2$ il quadrato più grande che si adatta all'area rimanente, e così via.
 
-What is the largest n for which the index of Sn is (3,3)?
+Sia l'indice di $S_n$ la coppia (sinistra, sotto) indicante il numero di quadrati a sinistra di $S_n$ e il numero di quadrati sotto $S_n$.
+
+<img class="img-responsive center-block" alt="diagramma con quadrati sotto l'iperbole" src="https://cdn.freecodecamp.org/curriculum/project-euler/squares-under-a-hyperbola.gif" style="background-color: white; padding: 10px;" />
+
+Il diagramma mostra alcuni di questi quadrati etichettati per numero.
+
+$S_2$ ha un quadrato alla sua sinistra e nessuno sotto, quindi l'indice di $S_2$ è (1, 0).
+
+Si può vedere che l'indice di $S_{32}$ è (1,1) perché è l'indice di $S_{50}$.
+
+50 è il più grande $n$ per il quale l'indice di $S_n$ è (1, 1).
+
+Qual è il più grande $n$ per il quale l'indice di $S_n$ è (3, 3)?
 
 # --hints--
 
-`euler247()` should return 782252.
+`squaresUnderAHyperbola()` dovrebbe restituire `782252`.
 
 ```js
-assert.strictEqual(euler247(), 782252);
+assert.strictEqual(squaresUnderAHyperbola(), 782252);
 ```
 
 # --seed--
@@ -29,12 +41,12 @@ assert.strictEqual(euler247(), 782252);
 ## --seed-contents--
 
 ```js
-function euler247() {
+function squaresUnderAHyperbola() {
 
   return true;
 }
 
-euler247();
+squaresUnderAHyperbola();
 ```
 
 # --solutions--

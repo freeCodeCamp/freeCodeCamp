@@ -1,6 +1,6 @@
 ---
 id: 5900f4411000cf542c50ff54
-title: 'Problem 213: Flea Circus'
+title: 'Problema 213: Circo delle Pulci'
 challengeType: 5
 forumTopicId: 301855
 dashedName: problem-213-flea-circus
@@ -8,18 +8,18 @@ dashedName: problem-213-flea-circus
 
 # --description--
 
-A 30×30 grid of squares contains 900 fleas, initially one flea per square.
+Una griglia di 30×30 quadrati contiene 900 pulci, inizialmente una pulce per quadrato.
 
-When a bell is rung, each flea jumps to an adjacent square at random (usually 4 possibilities, except for fleas on the edge of the grid or at the corners).
+Quando una campana viene suonata, ogni pulce salta in un quadrato adiacente a caso (di solito quattro possibilità, a eccezione delle pulci sul bordo della griglia o negli angoli).
 
-What is the expected number of unoccupied squares after 50 rings of the bell? Give your answer rounded to six decimal places.
+Qual è il numero previsto di quadrati non occupati dopo 50 rintocchi della campana? Dai la risposta arrotondata a sei decimali.
 
 # --hints--
 
-`euler213()` should return 330.721154.
+`fleaCircus()` dovrebbe restituire `330.721154`.
 
 ```js
-assert.strictEqual(euler213(), 330.721154);
+assert.strictEqual(fleaCircus(), 330.721154);
 ```
 
 # --seed--
@@ -27,12 +27,12 @@ assert.strictEqual(euler213(), 330.721154);
 ## --seed-contents--
 
 ```js
-function euler213() {
+function fleaCircus() {
 
   return true;
 }
 
-euler213();
+fleaCircus();
 ```
 
 # --solutions--

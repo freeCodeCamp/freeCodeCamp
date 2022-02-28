@@ -8,7 +8,7 @@ dashedName: cumulative-standard-deviation
 
 # --description--
 
-Scrivi una funzione che prende un array di numeri come parametro e restituisce la [deviazione standard](https://en.wikipedia.org/wiki/Standard Deviation) della serie.
+Scrivi una funzione che prende un array di numeri come parametro e restituisce la [deviazione standard](https://it.wikipedia.org/wiki/Scarto_quadratico_medio) della serie.
 
 # --hints--
 
