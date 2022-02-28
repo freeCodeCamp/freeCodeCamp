@@ -1,6 +1,6 @@
 ---
 id: 5900f4231000cf542c50ff35
-title: 'Problem 182: RSA encryption'
+title: 'Problema 182: Crittografia RSA'
 challengeType: 5
 forumTopicId: 301818
 dashedName: problem-182-rsa-encryption
@@ -8,47 +8,47 @@ dashedName: problem-182-rsa-encryption
 
 # --description--
 
-The RSA encryption is based on the following procedure:
+La crittografia RSA si basa sulla seguente procedura:
 
-Generate two distinct primes `p` and `q`. Compute `n=p*q` and `φ=(p-1)(q-1)`. Find an integer `e`, `1 < e < φ`, such that `gcd(e,φ) = 1`
+Genera due primi distinti `p` e `q`. Calcola `n=p*q` e `φ=(p-1)(q-1)`. Trova un numero intero `e`, `1 < e < φ`, in modo che `MCD(e,φ) = 1`
 
-A message in this system is a number in the interval `[0,n-1]`. A text to be encrypted is then somehow converted to messages (numbers in the interval `[0,n-1]`). To encrypt the text, for each message, `m`, c=m<sup>e</sup> mod n is calculated.
+Un messaggio in questo sistema è un numero nell'intervallo `[0,n-1]`. Un testo da cifrare viene quindi convertito in qualche modo in messaggi (numeri nell'intervallo `[0,n-1]`). Per cifrare il testo, per ogni messaggio `m` si calcola c=m<sup>e</sup> mod n.
 
-To decrypt the text, the following procedure is needed: calculate `d` such that `ed=1 mod φ`, then for each encrypted message, `c`, calculate m=c<sup>d</sup> mod n.
+Per decifrare il testo, è necessaria la seguente procedura: calcola `d` in modo che `ed=1 mod φ`, quindi per ogni messaggio cifrato `c`, calcola m=c<sup>d</sup> mod n.
 
-There exist values of `e` and `m` such that m<sup>e</sup> mod n = m. We call messages `m` for which m<sup>e</sup> mod n=m unconcealed messages.
+Esistono valori di `e` e `m` tali che m<sup>e</sup> mod n = m. Chiamiamo i messaggi `m` per i quali m<sup>e</sup> mod n=m messaggi non nascosti.
 
-An issue when choosing `e` is that there should not be too many unconcealed messages. For instance, let `p=19` and `q=37`. Then `n=19*37=703` and `φ=18*36=648`. If we choose `e=181`, then, although `gcd(181,648)=1` it turns out that all possible messages m `(0≤m≤n-1)` are unconcealed when calculating m<sup>e</sup> mod n. For any valid choice of `e` there exist some unconcealed messages. It's important that the number of unconcealed messages is at a minimum.
+Un problema quando si sceglie `e` è che non ci dovrebbero essere troppi messaggi non nascosti. Per esempio, sia `p=19` e `q=37`. Quindi `n=19*37=703` e `φ=18*36=648`. Se scegliamo `e=181`, anche se `MCD(181, 48)=1` risulta che tutti i possibili messaggi m `(0≤m≤n-1)` sono nascosti quando si calcola m<sup>e</sup> mod n. Per qualsiasi scelta valida di `e` esistono alcuni messaggi non nascosti. È importante che il numero di messaggi non nascosti sia il minimo.
 
-For any given `p` and `q`, find the sum of all values of `e`, `1 < e < φ(p,q)` and `gcd(e,φ)=1`, so that the number of unconcealed messages for this value of `e` is at a minimum.
+Per ogni dato `p` e `q`, trova la somma di tutti i valori di `e`, `1 < e < φ(p,q)` e `MCD(e,φ)=1`, in modo che il numero di messaggi non nascosti per questo valore di `e` sia minimo.
 
 # --hints--
 
-`RSAEncryption` should be a function.
+`RSAEncryption` dovrebbe essere una funzione.
 
 ```js
 assert(typeof RSAEncryption === 'function')
 ```
 
-`RSAEncryption` should return a number.
+`RSAEncryption` dovrebbe restituire un numero.
 
 ```js
 assert.strictEqual(typeof RSAEncryption(19, 37), 'number');
 ```
 
-`RSAEncryption(19, 37)` should return `17766`.
+`RSAEncryption(19, 37)` dovrebbe restituire `17766`.
 
 ```js
 assert.strictEqual(RSAEncryption(19, 37), 17766);
 ```
 
-`RSAEncryption(283, 409)` should return `466196580`.
+`RSAEncryption(283, 409)` dovrebbe restituire `466196580`.
 
 ```js
 assert.strictEqual(RSAEncryption(283, 409), 466196580);
 ```
 
-`RSAEncryption(1009, 3643)` should return `399788195976`.
+`RSAEncryption(1009, 3643)` dovrebbe restituire `399788195976`.
 
 ```js
 assert.strictEqual(RSAEncryption(19, 37), 17766);

@@ -1,6 +1,6 @@
 ---
 id: 5900f3ef1000cf542c50ff01
-title: 'Problem 129: Repunit divisibility'
+title: 'Problema 129: divisibilità dei repunit'
 challengeType: 5
 forumTopicId: 301756
 dashedName: problem-129-repunit-divisibility
@@ -8,20 +8,20 @@ dashedName: problem-129-repunit-divisibility
 
 # --description--
 
-A number consisting entirely of ones is called a repunit. We shall define R(k) to be a repunit of length k; for example, R(6) = 111111.
+Un numero costituito interamente da uni è chiamato un repunit (ripetizione di uno). Definiamo $R(k)$ come repunit di lunghezza $k$, per esempio $R(6) = 111111$.
 
-Given that n is a positive integer and GCD(n, 10) = 1, it can be shown that there always exists a value, k, for which R(k) is divisible by n, and let A(n) be the least such value of k; for example, A(7) = 6 and A(41) = 5.
+Dato che $n$ è un numero positivo intero e $MCD(n, 10) = 1$, si può dimostrare che esiste sempre un valore di $k$ per cui $R(k)$ è divisibile per $n$, $A(n)$ è il minimo valore di $k$ per cui ciò è vero; per esempio, $A(7) = 6$ e $A(41) = 5$.
 
-The least value of n for which A(n) first exceeds ten is 17.
+Il valore minimo di $n$ per cui $A(n)$ eccede per la prima volta 10 è 17.
 
-Find the least value of n for which A(n) first exceeds one-million.
+Trova il valore minimo di $n$ per cui $A(n)$ eccede per la prima volta un milione.
 
 # --hints--
 
-`euler129()` should return 1000023.
+`repunitDivisibility()` dovrebbe restituire `1000023`.
 
 ```js
-assert.strictEqual(euler129(), 1000023);
+assert.strictEqual(repunitDivisibility(), 1000023);
 ```
 
 # --seed--
@@ -29,12 +29,12 @@ assert.strictEqual(euler129(), 1000023);
 ## --seed-contents--
 
 ```js
-function euler129() {
+function repunitDivisibility() {
 
   return true;
 }
 
-euler129();
+repunitDivisibility();
 ```
 
 # --solutions--

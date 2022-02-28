@@ -1,6 +1,6 @@
 ---
 id: 5900f3f71000cf542c50ff0a
-title: 'Problem 139: Pythagorean tiles'
+title: 'Problema 139: mattonelle pitagoree'
 challengeType: 5
 forumTopicId: 301767
 dashedName: problem-139-pythagorean-tiles
@@ -8,18 +8,22 @@ dashedName: problem-139-pythagorean-tiles
 
 # --description--
 
-Let (a, b, c) represent the three sides of a right angle triangle with integral length sides. It is possible to place four such triangles together to form a square with length c.
+Siano (a, b, c) i tre lati di un triangolo rettangolo con lunghezze dei lati intere. È possibile unire quattro di questi triangoli insieme a formare un quadrato con lunghezza c.
 
-For example, (3, 4, 5) triangles can be placed together to form a 5 by 5 square with a 1 by 1 hole in the middle and it can be seen that the 5 by 5 square can be tiled with twenty-five 1 by 1 squares.
+Per esempio, triangoli (3, 4, 5) possono essere messi assieme per formare un quadrato 5 x 5 con un buco 1 per 1 nel centro e si può vedere che il quadrato 5 x 5 può essere riempito con venticinque quadrati 1 x 1.
 
-However, if (5, 12, 13) triangles were used then the hole would measure 7 by 7 and these could not be used to tile the 13 by 13 square. Given that the perimeter of the right triangle is less than one-hundred million, how many Pythagorean triangles would allow such a tiling to take place?
+<img class="img-responsive center-block" alt="due quadrato 5 x 5: uno con quattro triangoli 3x4x5 posizionati per creare un buco 1x1 al centro; un secondo con venticinque quadrati 1x1" src="https://cdn.freecodecamp.org/curriculum/project-euler/pythagorean-tiles.png" style="background-color: white; padding: 10px;" />
+
+Invece, usando triangoli (5, 12, 16) il buco al centro misura 7 x 7. Questi quadrati 7 x 7 non potrebbero essere usati per riempire il quadrato 13 x 13.
+
+Sia il perimetro del triangolo rettangolo inferiore a cento milioni, quanti triangoli pitagorici permettono il rivestimento esatto con una mattonella della dimensione del buco centrale?
 
 # --hints--
 
-`euler139()` should return 10057761.
+`pythagoreanTiles()` dovrebbe restituire `10057761`.
 
 ```js
-assert.strictEqual(euler139(), 10057761);
+assert.strictEqual(pythagoreanTiles(), 10057761);
 ```
 
 # --seed--
@@ -27,12 +31,12 @@ assert.strictEqual(euler139(), 10057761);
 ## --seed-contents--
 
 ```js
-function euler139() {
+function pythagoreanTiles() {
 
   return true;
 }
 
-euler139();
+pythagoreanTiles();
 ```
 
 # --solutions--

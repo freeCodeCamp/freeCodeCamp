@@ -1,6 +1,6 @@
 ---
 id: 5900f3ca1000cf542c50fedc
-title: 'Problem 93: Arithmetic expressions'
+title: 'Problema 93: Espressioni aritmetiche'
 challengeType: 5
 forumTopicId: 302210
 dashedName: problem-93-arithmetic-expressions
@@ -8,9 +8,9 @@ dashedName: problem-93-arithmetic-expressions
 
 # --description--
 
-By using each of the digits from the set, {1, 2, 3, 4}, exactly once, and making use of the four arithmetic operations (+, −, \*, /) and brackets/parentheses, it is possible to form different positive integer targets.
+Utilizzando ciascuna delle cifre dall'insieme {1, 2, 3, 4} esattamente una volta, e facendo uso delle quattro operazioni aritmetiche (+, −, \*, /) e parentesi, è possibile formare diversi target interi positivi.
 
-For example,
+Per esempio,
 
 <div style='margin-left: 4em;'>
   8 = (4 * (1 + 3)) / 2<br>
@@ -19,21 +19,21 @@ For example,
   36 = 3 * 4 * (2 + 1)
 </div>
 
-Note that concatenations of the digits, like 12 + 34, are not allowed.
+Nota che le concatenazioni delle cifre, come 12 + 34, non sono permesse.
 
-Using the set, {1, 2, 3, 4}, it is possible to obtain thirty-one different target numbers of which 36 is the maximum, and each of the numbers 1 to 28 can be obtained before encountering the first non-expressible number.
+Utilizzando il set {1, 2, 3, 4} è possibile ottenere trentuno numeri target diversi, di cui 36 è il massimo, e ciascuno dei numeri da 1 a 28 può essere ottenuto prima di incontrare il primo numero non espressibile.
 
-Find the set of four distinct digits, `a` &lt; `b` &lt; `c` &lt; `d`, for which the longest set of consecutive positive integers, 1 to `n`, can be obtained, giving your answer as a string: `abcd`.
+Trova l'insieme di quattro cifre distinte, `a` &lt; `b` &lt; `c` &lt; `d`, per cui può essere ottenuto il set più lungo di numeri interi positivi consecutivi, da 1 a `n`, dando la tua risposta come stringa: `abcd`.
 
 # --hints--
 
-`arithmeticExpressions()` should return a number.
+`arithmeticExpressions()` dovrebbe restituire un numero.
 
 ```js
 assert(typeof arithmeticExpressions() === 'number');
 ```
 
-`arithmeticExpressions()` should return 1258.
+`arithmeticExpressions()` dovrebbe restituire 1258.
 
 ```js
 assert.strictEqual(arithmeticExpressions(), 1258);

@@ -426,109 +426,109 @@
     }
   },
   "relational-database": {
-    "title": "Relational Database",
+    "title": "リレーショナルデータベース",
     "intro": [
-      "For these courses, you will use real developer tools and software including VS Code, PostgreSQL, and the Linux / Unix command line to complete interactive tutorials and build projects.",
-      "These courses start off with basic Bash commands. Using the terminal, you will learn everything from navigating and manipulating a file system, scripting in Bash, all the way to advanced usage.",
-      "Next, you will learn how to create and use a relational database with PostgreSQL, a database management system, and SQL, the language of these databases.",
-      "Finally, you will learn Git, the version control system, an essential tool of every developer."
+      "このコースでは、VS Code、PostgreSQL、そして Linux / Unix コマンドラインを含む本格的な開発者ツールとソフトウェアを使用して、インタラクティブなチュートリアルを完了し、プロジェクトを構築します。",
+      "これらのコースは基本的な Bash コマンドから始まります。ターミナルを使用して、ファイルシステムの移動や操作から、Bash 内でのスクリプト、幅広い高度な使用法まで、すべてを学習します。",
+      "次に、データベース管理システムである PostgreSQL と、これらデータベースの言語である SQL を使用して、リレーショナルデータベースの作成、操作方法を学習します。",
+      "最後に、すべての開発者にとって不可欠なツールである、バージョン管理システムの Git について学習します。"
     ],
     "blocks": {
       "build-a-celestial-bodies-database-project": {
-        "title": "Celestial Bodies Database",
+        "title": "天体データベース",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a database of celestial bodies using PostgreSQL."
+          "これは認定証を獲得するために必須のプロジェクトの 1 つです。",
+          "このプロジェクトでは、PostgreSQL を使用して天体のデータベースを構築します。"
         ]
       },
       "build-a-number-guessing-game-project": {
-        "title": "Number Guessing Game",
+        "title": "数当てゲーム",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will use Bash scripting, PostgreSQL, and Git to create a number guessing game that runs in the terminal and saves user information."
+          "これは認定証を獲得するために必須のプロジェクトの 1 つです。",
+          "このプロジェクトでは、Bash のシェルスクリプト、PostgreSQL、Git を使用して、数当てゲームを作成します。ゲームはターミナル内で動作し、ユーザーの情報を保存できるようにします。"
         ]
       },
       "build-a-periodic-table-database-project": {
-        "title": "Periodic Table Database",
+        "title": "周期表データベース",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will create Bash a script to get information about chemical elements from a periodic table database."
+          "これは認定証を獲得するために必須のプロジェクトの 1 つです。",
+          "このプロジェクトでは、周期表データベースから化学元素の情報を取得する、Bash スクリプトを作成します。"
         ]
       },
       "build-a-salon-appointment-scheduler-project": {
-        "title": "Salon Appointment Scheduler",
+        "title": "サロン予約スケジューラー",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will create an interactive Bash program that uses PostgreSQL to track the customers and appointments for your salon."
+          "これは認定証を獲得するために必須のプロジェクトの 1 つです。",
+          "このプロジェクトでは、PostgreSQL を使用して、サロンの顧客と予約を管理するインタラクティブな Bash プログラムを作成します。"
         ]
       },
       "build-a-world-cup-database-project": {
-        "title": "World Cup Database",
+        "title": "ワールドカップデータベース",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will create a Bash script that enters information from World Cup games into PostgreSQL, then query the database for useful statistics."
+          "これは認定証を獲得するために必須のプロジェクトの 1 つです。",
+          "このプロジェクトでは、PostgreSQL データベースにワールドカップの試合情報を入力し、そこから有用な統計情報を取得する Bash スクリプトを作成します。"
         ]
       },
       "learn-advanced-bash-by-building-a-kitty-ipsum-translator": {
-        "title": "Learn Advanced Bash by Building a Kitty Ipsum Translator",
+        "title": "高度な Bash の学習: Kitty Ipsum 翻訳プログラムを作成する",
         "intro": [
-          "There's more to Bash commands than you might think.",
-          "In this 140 lesson course, you will learn some more complex commands, and the details of how commands work."
+          "Bash コマンドについて学ぶべきことは、想像以上に多くあります。",
+          "この 140 のレッスンから成るコースでは、より複雑なコマンドと、コマンドの仕組みについて学びます。"
         ]
       },
       "learn-bash-and-sql-by-building-a-bike-rental-shop": {
-        "title": "Learn Bash and SQL by Building a Bike Rental Shop",
+        "title": "Bash と SQL の学習: 自転車レンタルショップを構築する",
         "intro": [
-          "In this 210 lesson course, you will build an interactive Bash program that stores rental information for your bike rental shop using PostgreSQL."
+          "この 210 のレッスンから成るコースでは、PostgreSQL を使用して、自転車レンタルショップのレンタル情報を保存するインタラクティブな Bash プログラムを構築します。"
         ]
       },
       "learn-bash-by-building-a-boilerplate": {
-        "title": "Learn Bash by Building a Boilerplate",
+        "title": "Bash の学習: ボイラープレートを構築する",
         "intro": [
-          "The terminal allows you to send text commands to your computer that can manipulate the file system, run programs, automate tasks, and much more.",
-          "In this 170 lesson course, you will learn basic commands by creating a website boilerplate using only the command line."
+          "ターミナルによって、コンピュータへテキストコマンドを送信することで、ファイルシステムの操作、プログラムの実行、タスクの自動化などができます。",
+          "この 170 のレッスンから成るコースでは、コマンドラインのみを使用してウェブサイトのボイラープレートを作成することで、基本のコマンドについて学習します。"
         ]
       },
       "learn-bash-scripting-by-building-five-programs": {
-        "title": "Learn Bash Scripting by Building Five Programs",
+        "title": "Bash スクリプトの学習: 5 つのプログラムを作成する",
         "intro": [
-          "Bash scripts combine terminal commands and logic into programs that can execute or automate tasks, and much more.",
-          "In this 220 lesson course, you will learn more terminal commands and how to use them within Bash scripts by creating five small programs."
+          "Bash スクリプトは、ターミナルコマンドとロジックを組み合わせてプログラムにします。タスクの実行や自動化、その他多くのことができます。",
+          "この 220 のレッスンから成るコースでは、5 つの小規模なプログラムを作成しながら、より多くのターミナルコマンドと、Bash スクリプトでの使い方を学びます。"
         ]
       },
       "learn-git-by-building-an-sql-reference-object": {
-        "title": "Learn Git by Building an SQL Reference Object",
+        "title": "Git の学習: SQL リファレンスのオブジェクトを作成する",
         "intro": [
-          "Git is a version control system that keeps track of all the changes you make to your codebase.",
-          "In this 240 lesson course, you will learn how Git keeps track of your code by creating an object containing commonly used SQL commands."
+          "Git は、コードベースに対する変更の履歴を記録できるバージョン管理システムです。",
+          "この 240 のレッスンから成るコースでは、よく使われる SQL コマンドをデータとして持つオブジェクトを作成しながら、Git がどのようにしてコードの履歴を記録するかを学びます。"
         ]
       },
       "learn-nano-by-building-a-castle": {
-        "title": "Learn Nano by Building a Castle",
+        "title": "Nano の学習: 城の絵を作成する",
         "intro": [
-          "Nano is a program that allows you to edit files right in the terminal.",
-          "In this 40 lesson course, you will learn how to edit files in the terminal with Nano while building a castle."
+          "Nano はターミナル内で直接ファイルを編集できるプログラムです。",
+          "この 40 のレッスンから成るコースでは、城の絵を作りながら、ターミナルでファイルを編集する方法を学びます。"
         ]
       },
       "learn-relational-databases-by-building-a-mario-database": {
-        "title": "Learn Relational Databases by Building a Mario Database",
+        "title": "リレーショナルデータベースの学習: マリオデータベースを作成する",
         "intro": [
-          "A relational database organizes data into tables that are linked together through relationships.",
-          "In this 165 lesson course, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
+          "リレーショナルデータベースは、関係モデルにもとづいて互いに関連付けられたテーブルを用いて、データを整理します。",
+          "この 165 のレッスンから成るコースでは、テレビゲームのキャラクターのデータが入った PostgreSQL データベースを作成することで、リレーショナルデータベースの基礎を学習します。"
         ]
       },
       "learn-sql-by-building-a-student-database-part-1": {
-        "title": "Learn SQL by Building a Student Database: Part 1",
+        "title": "SQL の学習: 学生データベースを作成する (パート 1)",
         "intro": [
-          "SQL, or Structured Query Language, is the language for communicating with a relational database.",
-          "In this 140 lesson course, you will create a Bash script that uses SQL to enter information about your computer science students into PostgreSQL."
+          "SQL または Structured Query Language とは、リレーショナルデータベースとやり取りするための言語です。",
+          "この 140 のレッスンから成るコースでは、SQL を使用してコンピューター科学の学生達の情報を PostgreSQL データベースに入力する、Bash スクリプトを作成します。"
         ]
       },
       "learn-sql-by-building-a-student-database-part-2": {
-        "title": "Learn SQL by Building a Student Database: Part 2",
+        "title": "SQL の学習: 学生データベースを作成する (パート 2)",
         "intro": [
-          "SQL join commands are used to combine information from multiple tables in a relational database",
-          "In this 140 lesson course, you will complete your student database while diving deeper into SQL commands."
+          "SQL の JOIN コマンドは、リレーショナルデータベースにおいて複数のテーブルからの情報を結合するために使用されます。",
+          "この 140 のレッスンから成るコースでは、SQL コマンドをより深く掘り下げながら、学生データベースを完成させます。"
         ]
       }
     }
