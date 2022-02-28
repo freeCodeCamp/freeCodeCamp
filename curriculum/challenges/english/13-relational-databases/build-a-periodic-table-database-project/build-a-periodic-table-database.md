@@ -13,11 +13,11 @@ This is one of the required projects to earn your certification. For this projec
 
 # --instructions--
 
-**Important:** After you pass all the project tests, save a dump of your database into a `elements.sql` file, as well as your whole `periodic_table` folder, so you can complete step 2. There will be instructions how to do that within the virtual machine.
+**Important:** After you pass all the project tests, save a dump of your database into a `periodic_table.sql` file, as well as your `element.sh` file, so you can complete step 2. There will be instructions how to do that within the virtual machine.
 
 # --notes--
 
-Required files: `elements.sql`, and the whole `periodic_table` folder
+Required files: `periodic_table.sql`, `element.sh`
 
 # --hints--
 
