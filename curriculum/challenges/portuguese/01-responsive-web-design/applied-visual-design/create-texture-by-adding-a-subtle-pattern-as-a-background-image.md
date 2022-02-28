@@ -17,7 +17,7 @@ Usando o url `https://cdn-media-1.freecodecamp.org/imgr/MJAkxbh.png`, defina a p
 
 # --hints--
 
-O elemento `body` deve ter a propriedade `background` com a função `url()` apontando para o link forncido anteriormente.
+O elemento `body` deve ter a propriedade `background` com a função `url()` apontando para o link fornecido anteriormente.
 
 ```js
 assert(

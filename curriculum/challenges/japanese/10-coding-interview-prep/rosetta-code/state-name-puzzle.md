@@ -8,7 +8,7 @@ dashedName: state-name-puzzle
 
 # --description--
 
-このタスクは、Mark Nelson 氏 の DDJ コラム「Wordplay (言葉遊び)」と、NPR 週末版の Will Shortz 氏の週ごとのパズルチャレンジの 1 つ[\[1\]](https://www.npr.org/templates/story/story.php?storyId=9264290) にインスパイアされたもので、もとは David Edelheit 氏の発案によるものです。 この課題は、米国の 2 つの州の名前を取り、 それらをすべて一緒にし、文字を並べ替えて、2 つの*別の* 米国の州の名前を作ることでした (4 つの州名すべてが互いに異なるように)。 これらの州名は何でしょうか? この問題は [Unicon Discussion Web](https://tapestry.tucson.az.us/twiki/bin/view/Main/StateNamesPuzzle) で再び出題され、幾つかの解答が解説付きで紹介されています。 いくつかの役立つと思われるテクニックがあります。以下をご参照ください。[Gödel numbering](https://en.wikipedia.org/wiki/Goedel_numbering)、[equivalence relations](https://en.wikipedia.org/wiki/Equivalence_relation)、[equivalence classes](https://en.wikipedia.org/wiki/Equivalence_classes) これらの問題の基本的な評価は、Unicon Discussion Web で議論されました。 架空の新しい州のセットという形式で第 2 の課題も出題されました。
+このタスクは、Mark Nelson 氏 の DDJ コラム「Wordplay (言葉遊び)」と、NPR 週末版の Will Shortz 氏の週ごとのパズルチャレンジの 1 つ[\[1\]](https://www.npr.org/templates/story/story.php?storyId=9264290) にインスパイアされたもので、もとは David Edelheit 氏の発案によるものです。 チャレンジの内容は、アメリカの州の名前を 2 つ選び、すべての文字を混ぜて並べ替え、 *別の* 2 つの州の名前を作成するというものでした。(つまり、4 つの州の名前がすべて異なるようにします。) これらの州名は何でしょうか? この問題は [Unicon Discussion Web](https://tapestry.tucson.az.us/twiki/bin/view/Main/StateNamesPuzzle) で再び出題され、幾つかの解答が解説付きで紹介されています。 いくつかの役立つと思われるテクニックがあります。[Gödel numbering](https://en.wikipedia.org/wiki/Goedel_numbering)、[equivalence relations](https://en.wikipedia.org/wiki/Equivalence_relation)、[equivalence classes](https://en.wikipedia.org/wiki/Equivalence_classes) などを参考にすると良いでしょう。 これらの基本的なメリットは、Unicon Discussion Web で説明されています。 架空の新しい州のセットを使用する形式で、第 2 のチャレンジも出題されています。
 
 # --instructions--
 

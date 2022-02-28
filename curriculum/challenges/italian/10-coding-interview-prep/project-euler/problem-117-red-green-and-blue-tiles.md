@@ -1,6 +1,6 @@
 ---
 id: 5900f3e21000cf542c50fef4
-title: 'Problem 117: Red, green, and blue tiles'
+title: 'Problema 117: Piastrelle rosse, verdi e blu'
 challengeType: 5
 forumTopicId: 301743
 dashedName: problem-117-red-green-and-blue-tiles
@@ -8,17 +8,17 @@ dashedName: problem-117-red-green-and-blue-tiles
 
 # --description--
 
-Using a combination of black square tiles and oblong tiles chosen from: red tiles measuring two units, green tiles measuring three units, and blue tiles measuring four units, it is possible to tile a row measuring five units in length in exactly fifteen different ways.
+Utilizzando una combinazione di piastrelle quadrate nere e piastrelle oblunghe scelte tra: piastrelle rosse che misurano due unità, piastrelle verdi che misurano tre unità, e piastrelle blu che misurano quattro unità, è possibile piastrellare una fila che misura cinque unità di lunghezza in esattamente quindici modi diversi.
 
-<img class="img-responsive center-block" alt="Possible ways of placing red, green and blue oblongs on a row with length of five units" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-and-blue-tiles.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="Possibili modi di posizionare piastrelle oblunghe rosse, verdi e blu su una fila con lunghezza di cinque unità" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-and-blue-tiles.png" style="background-color: white; padding: 10px;" />
 
-How many ways can a row measuring fifty units in length be tiled?
+In quanti modi può essere riempita una fila di cinquanta unità di lunghezza?
 
-**Note**: This is related to Problem 116.
+**Nota:** Questo è correlato al problema 116.
 
 # --hints--
 
-`redGreenBlueTilesTwo()` should return `100808458960497`.
+`redGreenBlueTilesTwo()` dovrebbe restituire `100808458960497`.
 
 ```js
 assert.strictEqual(redGreenBlueTilesTwo(), 100808458960497);

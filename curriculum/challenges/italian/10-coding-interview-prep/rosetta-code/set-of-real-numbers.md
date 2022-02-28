@@ -1,6 +1,6 @@
 ---
 id: 5eb3e4b20aa93c437f9e9717
-title: Set of real numbers
+title: Insieme di numeri reali
 challengeType: 5
 forumTopicId: 385322
 dashedName: set-of-real-numbers
@@ -8,7 +8,7 @@ dashedName: set-of-real-numbers
 
 # --description--
 
-All real numbers form the uncountable set ℝ. Among its subsets, relatively simple are the convex sets, each expressed as a range between two real numbers *a* and *b* where *a* ≤ *b*. There are actually four cases for the meaning of "between", depending on open or closed boundary:
+Tutti i numeri reali formano l'insieme non numerabile R. Tra i suoi sottoinsiemi, relativamente semplici sono gli insiemi convessi, ciascuno espresso come intervallo tra due numeri reali *a* e *b* dove *a* ≤ *b*. Ci sono in realtà quattro casi per il significato di "tra", a seconda che l'intervallo sia aperto o chiuso:
 
 <ul>
   <li>[<i>a</i>, <i>b</i>]: {<i>x</i> | <i>a</i> ≤ <i>x</i> and <i>x</i> ≤ <i>b</i> }</li>
@@ -17,52 +17,52 @@ All real numbers form the uncountable set ℝ. Among its subsets, relatively sim
   <li>(<i>a</i>, <i>b</i>]: {<i>x</i> | <i>a</i> < <i>x</i> and <i>x</i> ≤ <i>b</i> }</li>
 </ul>
 
-Note that if *a* = *b*, of the four only \[*a*, *a*] would be non-empty.
+Nota che se *a* = *b*, dei quattro solo \[*a*, *a*] non sarebbero vuoti.
 
-**Task**
+**Compito**
 
 <ul>
-  <li>Devise a way to represent any set of real numbers, for the definition of "any" in the implementation notes below.</li>
-  <li>Provide methods for these common set operations (<i>x</i> is a real number; <i>A</i> and <i>B</i> are sets):</li>
+  <li>Definisci un modo per rappresentare qualsiasi insieme di numeri reali, per la definizione di "any" nelle note di implementazione qui sotto.</li>
+  <li>Fornisci dei metodi per queste operazioni comuni sugli insiemi (<i>x</i> è un numero reale; <i>A</i> e <i>B</i> sono insiemi):</li>
   <ul>
     <li>
-      <i>x</i> ∈ <i>A</i>: determine if <i>x</i> is an element of <i>A</i><br>
-      example: 1 is in [1, 2), while 2, 3, ... are not.
+      <i>x</i> ∈ <i>A</i>: determinare se <i>x</i> è un elemento di <i>A</i><br>
+      esempio: 1 è in [1, 2), mentre 2, 3, . . – non lo sono.
     </li>
     <li>
-      <i>A</i> ∪ <i>B</i>: union of <i>A</i> and <i>B</i>, i.e. {<i>x</i> | <i>x</i> ∈ <i>A</i> or <i>x</i> ∈ <i>B</i>}<br>
-      example: [0, 2) ∪ (1, 3) = [0, 3); [0, 1) ∪ (2, 3] = well, [0, 1) ∪ (2, 3]
+      <i>A</i> ∪ <i>B</i>: unione di <i>A</i> e <i>B</i>, cioè {<i>x</i> <unk> <i>x</i> <unk> <i>A</i> oppure <i>x</i> <unk> <i>B</i>}<br>
+      esempio: [0, 2) ∪ (1, 3) = [0, 3; [0, 1) ∪ (2, 3] = pozzo, [0, 1) ∪ (2, 3]
     </li>
     <li>
-      <i>A</i> ∩ <i>B</i>: intersection of <i>A</i> and <i>B</i>, i.e. {<i>x</i> | <i>x</i> ∈ <i>A</i> and <i>x</i> ∈ <i>B</i>}<br>
-      example: [0, 2) ∩ (1, 3) = (1, 2); [0, 1) ∩ (2, 3] = empty set
+      <i>A</i> ∩ <i>B</i>: intersezione di <i>A</i> e <i>B</i>, cioè {<i>x</i> | <i>x</i> ∈ <i>A</i> e <i>x</i> ∈ <i>B</i>}<br>
+      esempio: [0, 2) ∩ (1, 3) = (1, 2); [0, 1) ∩ (2, 3] = insieme vuoto
     </li>
     <li>
-      <i>A</i> - <i>B</i>: difference between <i>A</i> and <i>B</i>, also written as <i>A</i> \ <i>B</i>, i.e. {<i>x</i> | <i>x</i> ∈ <i>A</i> and <i>x</i> ∉ <i>B</i>}<br>
-      example: [0, 2) − (1, 3) = [0, 1]
+      <i>A</i> - <i>B</i>: differenza tra <i>A</i> e <i>B</i>, anche scritto come <i>A</i> \ <i>B</i>, cioè {<i>x</i> | <i>x</i> ∈ <i>A</i> e <i>x</i> ∉ <unk> <i>B</i>}<br>
+      esempio: [0, 2) - (1, 3) = [0, 1]
     </li>
   </ul>
 </ul>
 
 # --instructions--
 
-Write a function that takes 2 objects, a string and an array as parameters. The objects represents the set and have attributes: `low`, `high` and `rangeType`.
+Scrivi una funzione che richiede 2 oggetti, una stringa e un array come parametri. Gli oggetti rappresentano l'insieme e hanno attributi: `low`, `high` e `rangeType`.
 
-The `rangeType` can have values 0, 1, 2 and 3 for `CLOSED`, `BOTH_OPEN`, `LEFT_OPEN` and `RIGHT_OPEN`, respectively. The function should implement a set using this information.
+Il `rangeType` può avere valori 0, 1, 2 e 3 per `CLOSED`, `BOTH_OPEN`, `LEFT_OPEN` e `RIGHT_OPEN`, rispettivamente. La funzione dovrebbe implementare un insieme utilizzando queste informazioni.
 
-The string represents the operation to be performed on the sets. It can be: `"union"`, `"intersect"` and `"subtract"` (difference).
+La stringa rappresenta l'operazione da eseguire sugli insiemi. Può essere: `"union"`, `"intersect"` e `"subtract"` (differenza).
 
-After performing the operation, the function should check if the values in the array are present in the resultant set and store a corresponding boolean value to an array. The function should return this array.
+Dopo aver eseguito l'operazione, la funzione dovrebbe controllare se i valori nell'array sono presenti nell'insieme risultante e memorizzare un valore booleano corrispondente a un array. La funzione dovrebbe restituire questo array.
 
 # --hints--
 
-`realSet` should be a function.
+`realSet` dovrebbe essere una funzione.
 
 ```js
 assert(typeof realSet == 'function');
 ```
 
-`realSet({"low":0, "high":1, "rangeType":2}, {"low":0, "high":2, "rangeType":3}, "union", [1, 2, 3])` should return a array.
+`realSet({"low":0, "high":1, "rangeType":2}, {"low":0, "high":2, "rangeType":3}, "union", [1, 2, 3])` dovrebbe restituire un array.
 
 ```js
 assert(
@@ -77,7 +77,7 @@ assert(
 );
 ```
 
-`realSet({"low":0, "high":1, "rangeType":2}, {"low":0, "high":2, "rangeType":3}, "union", [1, 2, 3])` should return `[true, false, false]`.
+`realSet({"low":0, "high":1, "rangeType":2}, {"low":0, "high":2, "rangeType":3}, "union", [1, 2, 3])` dovrebbe restituire `[true, false, false]`.
 
 ```js
 assert.deepEqual(
@@ -91,7 +91,7 @@ assert.deepEqual(
 );
 ```
 
-`realSet({"low":0, "high":2, "rangeType":3}, {"low":1, "high":2, "rangeType":2}, "intersect", [0, 1, 2])` should return `[false, false, false]`.
+`realSet({"low":0, "high":2, "rangeType":3}, {"low":1, "high":2, "rangeType":2}, "intersect", [0, 1, 2])` dovrebbe restituire `[false, false, false]`.
 
 ```js
 assert.deepEqual(
@@ -105,7 +105,7 @@ assert.deepEqual(
 );
 ```
 
-`realSet({"low":0, "high":3, "rangeType":3}, {"low":0, "high":1, "rangeType":1}, "subtract", [0, 1, 2])` should return `[true, true, true]`.
+`realSet({"low":0, "high":3, "rangeType":3}, {"low":0, "high":1, "rangeType":1}, "subtract", [0, 1, 2])` dovrebbe restituire `[true, true, true]`.
 
 ```js
 assert.deepEqual(
@@ -119,7 +119,7 @@ assert.deepEqual(
 );
 ```
 
-`realSet({"low":0, "high":3, "rangeType":3}, {"low":0, "high":1, "rangeType":0}, "subtract", [0, 1, 2])` should return `[false, false, true]`.
+`realSet({"low":0, "high":3, "rangeType":3}, {"low":0, "high":1, "rangeType":0}, "subtract", [0, 1, 2])` dovrebbe restituire `[false, false, true]`.
 
 ```js
 assert.deepEqual(
@@ -133,7 +133,7 @@ assert.deepEqual(
 );
 ```
 
-`realSet({"low":0, "high":33, "rangeType":1}, {"low":30, "high":31, "rangeType":0}, "intersect", [30, 31, 32])` should return `[true, true, false]`.
+`realSet({"low":0, "high":33, "rangeType":1}, {"low":30, "high":31, "rangeType":0}, "intersect", [30, 31, 32])` dovrebbe restituire `[true, true, false]`.
 
 ```js
 assert.deepEqual(

@@ -21,7 +21,7 @@ console.log(typeof {});
 
 コンソールには、文字列 `string`、`number`、`object`、`object` が順番に表示されます。
 
-JavaScript は 6 つのプリミティブな (イミュータブル) データ型として、`Boolean`、`Null`、`Undefined`、`Number`、`String`、および `Symbol` (ES6 で新登場) を認識します。また、ミュータブルアイテムのための型の 1 つである `Object` も認識します。 JavaScript では、配列は厳密にはオブジェクトの一種であることに注意してください。
+JavaScript は 7 つのプリミティブな (イミュータブル) データ型として、`Boolean`、`Null`、`Undefined`、`Number`、`String`、`Symbol` (ES6 で追加)、および `BigInt` (ES2020 で追加) を認識します。また、ミュータブルアイテムのための型の 1 つである `Object` も認識します。 JavaScript では、配列は厳密にはオブジェクトの一種であることに注意してください。
 
 # --instructions--
 

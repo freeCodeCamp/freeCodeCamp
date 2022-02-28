@@ -1,6 +1,6 @@
 ---
 id: 5900f3ff1000cf542c50ff12
-title: 'Problem 147: Rectangles in cross-hatched grids'
+title: 'Problema 147: Rettangoli in griglie a tratteggi incrociati'
 challengeType: 5
 forumTopicId: 301776
 dashedName: problem-147-rectangles-in-cross-hatched-grids
@@ -8,20 +8,24 @@ dashedName: problem-147-rectangles-in-cross-hatched-grids
 
 # --description--
 
-In a 3x2 cross-hatched grid, a total of 37 different rectangles could be situated within that grid as indicated in the sketch.
+In una griglia 3x2 a tratteggi incrociati, un totale di 37 rettangoli diversi potrebbe essere situato all'interno di tale griglia come indicato nel disegno.
 
-There are 5 grids smaller than 3x2, vertical and horizontal dimensions being important, i.e. 1x1, 2x1, 3x1, 1x2 and 2x2. If each of them is cross-hatched, the following number of different rectangles could be situated within those smaller grids: 1x1: 1 2x1: 4 3x1: 8 1x2: 4 2x2: 18
+<img class="img-responsive center-block" alt="modi di posizionare diversi rettangoli all'interno di una griglia 3x2 a tratteggio incrociato" src="https://cdn.freecodecamp.org/curriculum/project-euler/rectangles-in-cross-hatched-grids.png" style="background-color: white; padding: 10px;" />
 
-Adding those to the 37 of the 3x2 grid, a total of 72 different rectangles could be situated within 3x2 and smaller grids.
+Ci sono 5 griglie più piccole di 3x2, le dimensioni verticali e orizzontali sono importanti, cioè 1x1, 2x1, 3x1, 1x2 e 2x2. Se ciascuno di essi è a tratteggio incrociato, il seguente numero di rettangoli diversi potrebbe essere situato all'interno di tali griglie più piccole:
 
-How many different rectangles could be situated within 47x43 and smaller grids?
+$$\begin{array}{|c|c|} \hline 1 \times 1 & 1  \\\\ \hline 2 \times 1 & 4  \\\\ \hline 3 \times 1 & 8  \\\\ \hline 1 \times 2 & 4  \\\\ \hline 2 \times 2 & 18 \\\\ \hline \end{array}$$
+
+Aggiungendo questi ai 37 della griglia 3x2, un totale di 72 diversi rettangoli potrebbe essere situato all'interno della 3x2 e delle griglie più piccole.
+
+Quanti rettangoli diversi potrebbero essere situati entro una griglia 47x43 e griglie più piccole?
 
 # --hints--
 
-`euler147()` should return 846910284.
+`crossHatchedRectangles()` dovrebbe restituire `846910284`.
 
 ```js
-assert.strictEqual(euler147(), 846910284);
+assert.strictEqual(crossHatchedRectangles(), 846910284);
 ```
 
 # --seed--
@@ -29,12 +33,12 @@ assert.strictEqual(euler147(), 846910284);
 ## --seed-contents--
 
 ```js
-function euler147() {
+function crossHatchedRectangles() {
 
   return true;
 }
 
-euler147();
+crossHatchedRectangles();
 ```
 
 # --solutions--

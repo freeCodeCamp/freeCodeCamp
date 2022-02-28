@@ -5,6 +5,7 @@
 // @ts-nocheck
 import Loadable from '@loadable/component';
 import React, { Ref } from 'react';
+import { useTranslation } from 'react-i18next';
 import { isLanding } from '../../../utils/path-parsers';
 import { Link, SkeletonSprite } from '../../helpers';
 import MenuButton from './menu-button';
@@ -34,6 +35,7 @@ export const UniversalNav = ({
   fetchState
 }: UniversalNavProps): JSX.Element => {
   const { pending } = fetchState;
+  const { t } = useTranslation();
 
   const search =
     typeof window !== `undefined` && isLanding(window.location.pathname) ? (
@@ -44,6 +46,7 @@ export const UniversalNav = ({
 
   return (
     <nav
+      aria-label={t('aria.primary-nav')}
       className={'universal-nav' + (displayMenu ? ' expand-nav' : '')}
       id='universal-nav'
     >
@@ -57,7 +60,6 @@ export const UniversalNav = ({
       <div className='universal-nav-middle'>
         <Link id='universal-nav-logo' to='/learn'>
           <NavLogo />
-          <span className='sr-only'>freeCodeCamp.org</span>
         </Link>
       </div>
       <div className='universal-nav-right main-nav'>

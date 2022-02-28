@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/display-name */
 import React from 'react';
 
 const reactI18next = jest.genMockFromModule('react-i18next');

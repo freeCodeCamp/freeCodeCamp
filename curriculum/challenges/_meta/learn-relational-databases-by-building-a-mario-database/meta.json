@@ -1,0 +1,14 @@
+{
+  "name": "Learn Relational Databases by Building a Mario Database",
+  "isUpcomingChange": false,
+  "order": 1,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "relational-database",
+  "challengeOrder": [
+    [
+      "5f2c289f164c29556da632fd",
+      "Build a Mario Database"
+    ]
+  ]}

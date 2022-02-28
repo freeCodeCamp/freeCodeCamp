@@ -1,5 +1,5 @@
 ---
-id: 6193e3a4916fdb281b791892
+id: 61fd7648a7ba2e5882436831
 title: Step 12
 challengeType: 0
 dashedName: step-12
@@ -7,35 +7,34 @@ dashedName: step-12
 
 # --description--
 
-Copy the four `span` elements within your `.row` element, and paste them into your other three `.row` elements within your `.section` element. 
+Within your `tbody` element, add four `tr` elements. Give the first three a `class` attribute set to `data`, and the fourth a `class` attribute set to `total`.
 
 # --hints--
 
-Your second `.row` element should have the four `span` elements.
+Your `tbody` element should have four `tr` elements.
 
 ```js
-const target = document.querySelectorAll('.section > .row')[1];
-assert(target?.querySelectorAll('span')?.length === 4);
-assert(target?.querySelectorAll('span')?.[0]?.classList?.contains('name'));
-assert(target?.querySelectorAll('span')?.[3]?.classList?.contains('current'));
+const children = [...document.querySelector('tbody')?.children];
+assert(children?.length === 4);
+children.forEach(child => assert(child?.localName === 'tr'));
 ```
 
-Your third `.row` element should have the four `span` elements.
+Your first three `tr` elements should have the `class` attribute set to `data`.
 
 ```js
-const target = document.querySelectorAll('.section > .row')[2];
-assert(target?.querySelectorAll('span')?.length === 4);
-assert(target?.querySelectorAll('span')?.[0]?.classList?.contains('name'));
-assert(target?.querySelectorAll('span')?.[3]?.classList?.contains('current'));
+const children = [...document.querySelector('tbody')?.children];
+children.forEach((child, index) => {
+  if (index < 3) {
+    assert(child?.classList?.contains('data'));
+  }
+});
 ```
 
-Your fourth `.row` element (your `.row total` element) should have the four `span` elements.
+Your fourth `tr` element should have the `class` attribute set to `total`.
 
 ```js
-const target = document.querySelectorAll('.section > .row')[3];
-assert(target?.querySelectorAll('span')?.length === 4);
-assert(target?.querySelectorAll('span')?.[0]?.classList?.contains('name'));
-assert(target?.querySelectorAll('span')?.[3]?.classList?.contains('current'));
+const children = [...document.querySelector('tbody')?.children];
+assert(children?.[3]?.classList?.contains('total'));
 ```
 
 # --seed--
@@ -46,41 +45,48 @@ assert(target?.querySelectorAll('span')?.[3]?.classList?.contains('current'));
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AcmeWidgetCorp Balance Sheet</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
-    <div id="sheet">
-      <div id="header">
-        <h1>Balance Sheet</h1>
-        <h2>AcmeWidgetCorp</h2>
-        <p class="row">
-          <span>2019</span>
-          <span>2020</span>
-          <span class="current">2021</span>
-        </p>
-      </div>
-      <h2>Assets</h2>
-      <div class="section">
+    <main>
+      <section>
+        <h1>
+          <span class="flex">
+            <span>AcmeWidgetCorp</span>
+            <span>Balance Sheet</span>
+          </span>
+        </h1>
+        <div id="years" aria-hidden="true">
+          <span class="year">2019</span>
+          <span class="year">2020</span>
+          <span class="year">2021</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <caption>Assets</caption>
+            <thead>
+              <tr>
+                <td></td>
+                <th><span class="sr-only year">2019</span></th>
+                <th><span class="sr-only year">2020</span></th>
+                <th class="current"><span class="sr-only year">2021</span></th>
+              </tr>
+            </thead>
 --fcc-editable-region--
-        <p class="row">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-        <span class="notes"></span>
-        <p class="row"></p>
-        <span class="notes"></span>
-        <p class="row"></p>
-        <span class="notes"></span>
-        <p class="row total"></p>
+            <tbody>
+            </tbody>
 --fcc-editable-region--
-      </div>
-    </div>
-    <footer>Last Updated: December 2021</footer>
+          </table>
+          <table>
+          </table>
+          <table>
+          </table>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
 ```

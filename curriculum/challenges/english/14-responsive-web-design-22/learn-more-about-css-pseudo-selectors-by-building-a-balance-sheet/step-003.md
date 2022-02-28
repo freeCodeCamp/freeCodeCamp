@@ -1,5 +1,5 @@
 ---
-id: 6193dbfec896f21aed7d8114
+id: 61fd66c687e610436494c6f1
 title: Step 3
 challengeType: 0
 dashedName: step-3
@@ -7,20 +7,20 @@ dashedName: step-3
 
 # --description--
 
-Within your `#sheet` element, create a new `div` and give it an `id` set to `header`.
+Within your `section` element, add an `h1` element with a nested `span` element.
 
 # --hints--
 
-You should create a new `div` element within your `#sheet` element.
+Your `section` element should have an `h1` element.
 
 ```js
-assert(document.querySelectorAll('#sheet > div')?.length === 1);
+assert(document.querySelector('section')?.children?.[0]?.localName === 'h1');
 ```
 
-Your new `div` element should have an `id` attribute set to `header`.
+Your `h1` element should have a `span` element.
 
 ```js
-assert(document.querySelector('#sheet > div')?.getAttribute('id') === 'header');
+assert(document.querySelector('h1')?.children?.[0]?.localName === 'span');
 ```
 
 # --seed--
@@ -31,17 +31,18 @@ assert(document.querySelector('#sheet > div')?.getAttribute('id') === 'header');
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AcmeWidgetCorp Balance Sheet</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
+    <main>
 --fcc-editable-region--
-    <div id="sheet">
-    </div>
+      <section>
+      </section>
 --fcc-editable-region--
-    <footer>Last Updated: December 2021</footer>
+    </main>
   </body>
 </html>
 ```

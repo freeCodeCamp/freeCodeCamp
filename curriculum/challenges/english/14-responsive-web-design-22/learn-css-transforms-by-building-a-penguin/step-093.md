@@ -13,7 +13,7 @@ Give the `.arm` elements top -left, -right, and bottom-right corners a radius of
 
 # --hints--
 
-You should give `.arm` a `border-radius` of `30% 30% 120% 30%`.
+You should give `.arm` a `border-radius` of `30% 30% 30% 120%`.
 
 ```js
 assert.equal(new __helpers.CSSHelp(document).getStyle('.arm')?.borderTopLeftRadius, '30%');

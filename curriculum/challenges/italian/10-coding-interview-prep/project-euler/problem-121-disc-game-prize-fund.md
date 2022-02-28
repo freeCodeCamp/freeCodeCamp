@@ -1,6 +1,6 @@
 ---
 id: 5900f3e51000cf542c50fef8
-title: 'Problem 121: Disc game prize fund'
+title: 'Problema 121: fondo premio per il gioco del disco'
 challengeType: 5
 forumTopicId: 301748
 dashedName: problem-121-disc-game-prize-fund
@@ -8,20 +8,20 @@ dashedName: problem-121-disc-game-prize-fund
 
 # --description--
 
-A bag contains one red disc and one blue disc. In a game of chance a player takes a disc at random and its colour is noted. After each turn the disc is returned to the bag, an extra red disc is added, and another disc is taken at random.
+Una sacca contiene un disco rosso e un disco blu. In una partita casuale un giocatore prende un disco a caso e il suo colore viene annotato. Dopo ogni giro il disco viene rimesso nel sacchetto, viene aggiunto un disco rosso in più e un altro disco viene prelevato a caso.
 
-The player pays £1 to play and wins if they have taken more blue discs than red discs at the end of the game.
+Il giocatore paga 1£ per giocare e vince se ha preso più dischi blu rispetto ai dischi rossi alla fine del gioco.
 
-If the game is played for four turns, the probability of a player winning is exactly 11/120, and so the maximum prize fund the banker should allocate for winning in this game would be £10 before they would expect to incur a loss. Note that any payout will be a whole number of pounds and also includes the original £1 paid to play the game, so in the example given the player actually wins £9.
+Se il gioco è giocato per quattro turni, la probabilità di una vittoria di un giocatore è esattamente 11/120, e quindi il fondo premio massimo che il banchiere dovrebbe assegnare per vincere in questo gioco sarebbe 10£ prima che si aspettasse d'incorrere in una perdita. Nota che qualsiasi pagamento sarà un numero intero di sterline e comprende anche l'originale 1£ pagato per giocare il gioco, così nell'esempio dato il giocatore vince effettivamente 9£.
 
-Find the maximum prize fund that should be allocated to a single game in which fifteen turns are played.
+Trova il fondo premio massimo che dovrebbe essere assegnato a una singola partita in cui sono giocati quindici turni.
 
 # --hints--
 
-`euler121()` should return 2269.
+`discGamePrize()` dovrebbe restituire `2269`.
 
 ```js
-assert.strictEqual(euler121(), 2269);
+assert.strictEqual(discGamePrize(), 2269);
 ```
 
 # --seed--
@@ -29,12 +29,12 @@ assert.strictEqual(euler121(), 2269);
 ## --seed-contents--
 
 ```js
-function euler121() {
+function discGamePrize() {
 
   return true;
 }
 
-euler121();
+discGamePrize();
 ```
 
 # --solutions--

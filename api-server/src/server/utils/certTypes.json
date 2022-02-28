@@ -14,5 +14,5 @@
   "dataAnalysisPyV7": "isDataAnalysisPyCertV7",
   "machineLearningPyV7": "isMachineLearningPyCertV7",
   "fullStack": "isFullStackCert",
-  "relationalDatabasesV8": "isRelationalDatabasesV8"
+  "relationalDatabaseV8": "isRelationalDatabaseV8"
 }

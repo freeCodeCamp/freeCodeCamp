@@ -13,21 +13,29 @@
   overflow-wrap: break-word;
 }
 
-.block-title-wrapper {
+.block-header {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
 }
 
-.block-title-wrapper .block-link {
+.block-header .block-link {
   flex-grow: 3;
   flex-basis: 0;
+  padding: 25px 15px 10px;
 }
 
 .block-link:hover,
 .block-link:focus,
 .block-link:active {
   background-color: var(--primary-background);
+}
+
+a.cert-tag:hover,
+a.cert-tag:focus,
+a.cert-tag:active {
+  color: var(--highlight-background);
+  background-color: var(--highlight-color);
 }
 
 .block-link {
@@ -45,6 +53,12 @@
 
 .big-block-title {
   font-size: 1.5rem;
+  overflow-wrap: break-word;
+}
+
+.block-grid-title {
+  font-size: 1.2rem;
+  margin: 0;
   overflow-wrap: break-word;
 }
 
@@ -162,9 +176,6 @@ button.map-title {
   background: var(--primary-background);
 }
 
-.block-ui .block .big-block-title {
-  padding: 25px 15px 10px;
-}
 .block-ui .block .block-description {
   padding: 0 15px 15px;
   border-bottom: 3px solid var(--secondary-background);
@@ -210,6 +221,14 @@ button.map-title {
 
 .open > .map-title > svg:first-child {
   transform: rotate(90deg);
+}
+
+.block-grid .map-title > svg:last-child {
+  transform: rotate(180deg);
+}
+
+.block-grid.open .map-title > svg:last-child {
+  transform: rotate(0deg);
 }
 
 .map-challenges-ul {
@@ -269,7 +288,7 @@ button.map-title {
     font-size: 1.17rem;
   }
 
-  .block-title-wrapper {
+  .block-header {
     flex-direction: column;
   }
 
@@ -324,4 +343,99 @@ button.map-title {
   text-decoration: none;
   text-decoration-style: none;
   color: var(--secondary-color);
+}
+
+.cert-tag {
+  text-align: left;
+  width: fit-content;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  padding: 4px 10px;
+  color: var(--highlight-color);
+  background-color: var(--highlight-background);
+}
+
+.block-grid {
+  border-bottom: 3px solid var(--secondary-background);
+}
+
+.block-grid .block-header {
+  flex-direction: column;
+}
+
+.block-grid .block-header {
+  display: flex;
+  background: transparent;
+  border: none;
+  text-align: left;
+  width: 100%;
+  padding: 0;
+  cursor: pointer;
+  padding: 18px 15px;
+}
+
+.block-grid .block-header:hover {
+  color: var(--tertiary-color);
+  background-color: var(--tertiary-background);
+}
+
+.block-grid .block-header .block-link {
+  flex-direction: row;
+}
+
+.block-ui .block-grid .block-description {
+  border: none;
+  padding: 0 10px 10px;
+}
+
+.block-grid .map-title > svg:last-child {
+  margin-left: auto;
+}
+
+.block-grid .map-title > svg {
+  margin: 10px;
+}
+
+.title-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.block-grid .progress-wrapper {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  margin-top: 18px;
+  margin-bottom: 14px;
+}
+
+.block-grid .progress-wrapper span {
+  color: var(--quaternary-color);
+}
+
+.block-grid .progress {
+  height: 15px;
+  background-color: var(--secondary-background);
+  margin: 0 10px;
+  width: 80%;
+  border-radius: 0;
+}
+
+.block-grid .progress-bar {
+  background-color: var(--blue-mid);
+}
+
+.tags-wrapper {
+  display: flex;
+  width: 100%;
+  padding: 10px 10px 0;
+}
+
+.grid-project-block {
+  margin-bottom: 50px;
 }

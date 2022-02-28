@@ -2,3 +2,4 @@
 import './global.css';
 export { Button } from './button';
 export { Alert } from './alert';
+export { Image } from './image';

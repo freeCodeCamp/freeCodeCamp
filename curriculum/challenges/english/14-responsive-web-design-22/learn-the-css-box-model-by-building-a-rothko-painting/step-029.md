@@ -1,5 +1,5 @@
 ---
-id: 60a3e3396c7b40068ad69986
+id: 60a3e3396c7b40068ad69987
 title: Step 29
 challengeType: 0
 dashedName: step-29
@@ -7,33 +7,31 @@ dashedName: step-29
 
 # --description--
 
-Create a new `div` with a `class` value of `three` right under the `.two` element. This will be your third rectangle.
+You don't always have to use pixels when sizing an element.
+
+Create a new rule, `.three`, and set its `width` to `91%`.
 
 # --hints--
 
-Your existing `.one` and `.two` elements should not be changed.
+You should use the `.three` selector.
 
 ```js
-assert(document.querySelectorAll('.one').length === 1);
-assert(document.querySelectorAll('.two').length === 1);
+const hasThree = new __helpers.CSSHelp(document).getStyle('.three');
+assert(hasThree);
 ```
 
-Your new `div` should be nested in your `.canvas` element.
+You should set the `width` property to `91%`.
 
 ```js
-assert(document.querySelector('.canvas').children[2].tagName === 'DIV');
+const hasWidth = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.width === '91%');
+assert(hasWidth);
 ```
 
-Your new `div` should come after your `.two` element.
+Your `.three` element should have a `width` value of `91%`.
 
 ```js
-assert(document.querySelector('.two').nextElementSibling.tagName === 'DIV');
-```
-
-Your new `div` element should have a `class` with the value `three`.
-
-```js
-assert(document.querySelector('.canvas').children[2].className.split(' ').includes('three'));
+const threeWidth = new __helpers.CSSHelp(document).getStyle('.three')?.getPropertyValue('width');
+assert(threeWidth === '91%');
 ```
 
 # --seed--
@@ -59,7 +57,7 @@ assert(document.querySelector('.canvas').children[2].className.split(' ').includ
   width: 425px;
   height: 150px;
   background-color: #efb762;
-  margin: 20px auto 20px;
+  margin: 20px auto;
 }
 
 .two {
@@ -68,6 +66,11 @@ assert(document.querySelector('.canvas').children[2].className.split(' ').includ
   background-color: #8f0401;
   margin: auto;
 }
+
+--fcc-editable-region--
+
+--fcc-editable-region--
+
 ```
 
 ```html
@@ -83,9 +86,7 @@ assert(document.querySelector('.canvas').children[2].className.split(' ').includ
       <div class="canvas">
         <div class="one"></div>
         <div class="two"></div>
---fcc-editable-region--
-
---fcc-editable-region--
+        <div class="three"></div>
       </div>
     </div>
   </body>

@@ -1,0 +1,22 @@
+---
+id: 606243f50267e718b1e755f4
+title: Certificação de bancos de dados relacionais
+certification: relational-database
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: 5f1a4ef5d5d6b5ab580fc6ae
+    title: Banco de dados de corpos celestiais
+  - 
+    id: 5f9771307d4d22b9d2b75a94
+    title: Banco de dados da Copa do Mundo
+  - 
+    id: 5f87ac112ae598023a42df1a
+    title: Agendador de compromissos do salão de beleza
+  - 
+    id: 602d9ff222201c65d2a019f2
+    title: Banco de dados da tabela periódica
+  - 
+    id: 602da04c22201c65d2a019f4
+    title: Jogo de adivinhação de números

@@ -5,6 +5,12 @@ on:
     # runs every day at 12:30 PM UTC
     - cron: '30 12 * * *'
 
+env:
+  GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
+  CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
+  CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
+  CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
+
 jobs:
   i18n-download-curriculum-translations:
     name: Curriculum
@@ -19,9 +25,6 @@ jobs:
       - name: Generate Crowdin Config
         uses: freecodecamp/crowdin-action@main
         env:
-          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
-          CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
           PLUGIN: 'generate-config'
           PROJECT_NAME: 'curriculum'
 
@@ -54,18 +57,10 @@ jobs:
           # Uncomment below to debug
           # dryrun_action: true
 
-        env:
-          GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
-          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
-
       # Convert Simplified Chinese to Traditional #
       - name: Convert Chinese
         uses: freecodecamp/crowdin-action@main
         env:
-          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
-          CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
           PLUGIN: 'convert-chinese'
           FILE_PATHS: '["/curriculum/challenges/chinese/", "/curriculum/dictionaries/chinese"]'
 
@@ -98,11 +93,6 @@ jobs:
           # Uncomment below to debug
           # dryrun_action: true
 
-        env:
-          GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
-          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
-
       ##### Download Italian #####
       - name: Crowdin Download Italian Translations
         uses: crowdin/github-action@master
@@ -131,11 +121,6 @@ jobs:
 
           # Uncomment below to debug
           # dryrun_action: true
-
-        env:
-          GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
-          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
 
       ##### Download Brazilian Portuguese #####
       - name: Crowdin Download Portuguese (Brazilian) Translations
@@ -166,13 +151,7 @@ jobs:
           # Uncomment below to debug
           # dryrun_action: true
 
-        env:
-          GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
-          CROWDIN_PERSONAL_TOKEN:
-            ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
-
-            ##### Download Ukrainian #####
+          ##### Download Ukrainian #####
       - name: Crowdin Download Ukrainian Translations
         uses: crowdin/github-action@master
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
@@ -200,11 +179,6 @@ jobs:
 
           # Uncomment below to debug
           # dryrun_action: true
-
-        env:
-          GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
-          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
 
       ##### Download Japanese #####
       - name: Crowdin Download Japanese Translations
@@ -235,18 +209,10 @@ jobs:
           # Uncomment below to debug
           # dryrun_action: true
 
-        env:
-          GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
-          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
-
       # Create Commit
       - name: Commit Changes
         uses: freecodecamp/crowdin-action@main
         env:
-          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
-          CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
           PLUGIN: 'commit-changes'
           GH_USERNAME: 'camperbot'
           GH_EMAIL: ${{ secrets.ACTIONS_CAMPERBOT_EMAIL }}
@@ -259,9 +225,6 @@ jobs:
       - name: Create PR
         uses: freecodecamp/crowdin-action@main
         env:
-          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
-          CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
           PLUGIN: 'pull-request'
           GH_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
           BRANCH: 'i18n-sync-curriculum'

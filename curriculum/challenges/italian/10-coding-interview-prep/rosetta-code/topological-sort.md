@@ -1,6 +1,6 @@
 ---
 id: 594fa2746886f41f7d8bf225
-title: Topological sort
+title: Ordinamento topologico
 challengeType: 5
 forumTopicId: 302340
 dashedName: topological-sort
@@ -8,21 +8,21 @@ dashedName: topological-sort
 
 # --description--
 
-Given a mapping between items, and items they depend on, a topological sort orders items so that no item precedes an item it depends upon. There are two popular algorithms for topological sorting: Kahn's (1962) topological sort and depth-first search.
+Data una mappatura tra elementi, e elementi da cui dipendono, un ordine topologico ordina elementi in modo che nessun elemento ne precede uno da cui dipende. Ci sono due algoritmi popolari per l'ordinamento topologico: l'ordinamento topologico di Kahn (1962) e la ricerca depth-first.
 
 # --instructions--
 
-Write a function that will return a list with valid compile order of libraries from their dependencies.
+Scrivi una funzione che restituirà una lista con un valido ordine di compilazione delle librerie dalle loro dipendenze.
 
-- Assume library names are single words.
-- Items mentioned as only dependents have no dependents of their own, but their order of compiling must be given.
-- Any self dependencies should be ignored.
-- Any un-orderable dependencies should be ignored.
+- Supponiamo che i nomi delle librerie siano parole singole.
+- Gli elementi citati solo come persone a carico non hanno dipendenze proprie, ma il loro ordine di compilazione deve essere dato.
+- Qualsiasi autosufficienza dovrebbe essere ignorata.
+- Eventuali dipendenze non ordinabili dovrebbero essere ignorate.
 
-Use the following data as an example:
+Utilizzare i seguenti dati come esempio:
 
 <pre>
-LIBRARY          LIBRARY DEPENDENCIES
+LIBRERIA          DIPENDENZA DELLE LIBRERIE
 =======          ====================
 des_system_lib   std synopsys std_cell_lib des_system_lib dw02 dw01 ramlib ieee
 dw01             ieee dw01 dware gtech
@@ -39,11 +39,11 @@ std_cell_lib     ieee std_cell_lib
 synopsys
 </pre>
 
-The compiling of a library in the VHDL language has the constraint that a library must be compiled after any library it depends on. The above data would be un-orderable if, for example, `dw04` is added to the list of dependencies of `dw01`.
+La compilazione di una libreria nel linguaggio VHDL ha il vincolo che una libreria può essere compilata solo dopo ogni libreria da cui dipende. I dati di cui sopra non sarebbero ordinabili se, ad esempio, `dw04` venisse aggiunto alla lista delle dipendenze di `dw01`.
 
-The input of the function will be a multiline string, each line will consist of the name of the library, followed by its dependencies (if exist).
+L'input della funzione sarà una stringa multilinea, ogni riga consisterà del nome della libreria, seguito dalle sue dipendenze (se esistenti).
 
-For example:
+Ad esempio:
 
 ```js
 const libsSimple =
@@ -53,37 +53,37 @@ const libsSimple =
 
 # --hints--
 
-`topologicalSort` should be a function.
+`topologicalSort` dovrebbe essere una funzione.
 
 ```js
 assert(typeof topologicalSort === 'function');
 ```
 
-`topologicalSort(libsSimple)` should return an array.
+`topologicalSort(libsSimple)` dovrebbe restituire un array.
 
 ```js
 assert(Array.isArray(topologicalSort(libsSimple)));
 ```
 
-`topologicalSort(libsSimple)` should return `['bbb', 'aaa']`.
+`topologicalSort(libsSimple)` dovrebbe restituire `['bbb', 'aaa']`.
 
 ```js
 assert.deepEqual(topologicalSort(libsSimple), ['bbb', 'aaa']);
 ```
 
-`topologicalSort(libsVHDL)` should return `['ieee', 'std_cell_lib', 'gtech', 'dware', 'dw07', 'dw06', 'dw05', 'dw02', 'dw01', 'dw04', 'std', 'ramlib', 'synopsys', 'dw03', 'des_system_lib']`.
+`topologicalSort(libsVHDL)` dovrebbe restituire `['ieee', 'std_cell_lib', 'gtech', 'dware', 'dw07', 'dw06', 'dw05', 'dw02', 'dw01', 'dw04', 'std', 'ramlib', 'synopsys', 'dw03', 'des_system_lib']`.
 
 ```js
 assert.deepEqual(topologicalSort(libsVHDL), ['ieee', 'std_cell_lib', 'gtech', 'dware', 'dw07', 'dw06', 'dw05', 'dw02', 'dw01', 'dw04', 'std', 'ramlib', 'synopsys', 'dw03', 'des_system_lib']);
 ```
 
-`topologicalSort(libsCustom)` should return `['base', 'c', 'd', 'b', 'a']`.
+`topologicalSort(libsCustom)` dovrebbe restituire `['base', 'c', 'd', 'b', 'a']`.
 
 ```js
 assert.deepEqual(topologicalSort(libsCustom), ['base', 'c', 'd', 'b', 'a']);
 ```
 
-`topologicalSort` should ignore unorderable dependencies.
+`topologicalSort` dovrebbe ignorare le dipendenze non ordinabili.
 
 ```js
 assert.deepEqual(topologicalSort(libsUnorderable), ['Base']);

@@ -1,6 +1,6 @@
 ---
 id: 5900f3a81000cf542c50febb
-title: 'Problem 60: Prime pair sets'
+title: 'Problema 60: set di coppie di numeri primi'
 challengeType: 5
 forumTopicId: 302172
 dashedName: problem-60-prime-pair-sets
@@ -8,19 +8,19 @@ dashedName: problem-60-prime-pair-sets
 
 # --description--
 
-The primes 3, 7, 109, and 673, are quite remarkable. By taking any two primes and concatenating them in any order the result will always be prime. For example, taking 7 and 109, both 7109 and 1097 are prime. The sum of these four primes, 792, represents the lowest sum for a set of four primes with this property.
+I primi 3, 7, 109, e 673 sono degni di nota. Prendendo qualsiasi due di questi numeri e concatenandoli in qualsiasi ordine, il risultato sarà sempre un numero primo. Per esempio, prendendo 7 e 109, sia 7109 che 1097 sono primi. La somma di questi quattro numeri primi, 792, rappresenta la somma più piccola per un set di 4 numeri primi con questa proprietà.
 
-Find the lowest sum for a set of five primes for which any two primes concatenate to produce another prime.
+Trova la somma più piccola per un set di cinque numeri primi in cui due numeri qualsiasi concatenati producono un altri numero primo.
 
 # --hints--
 
-`primePairSets()` should return a number.
+`primePairSets()` dovrebbe restituire un numero.
 
 ```js
 assert(typeof primePairSets() === 'number');
 ```
 
-`primePairSets()` should return 26033.
+`primePairSets()` dovrebbe restituire 26033.
 
 ```js
 assert.strictEqual(primePairSets(), 26033);

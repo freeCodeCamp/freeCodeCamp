@@ -675,7 +675,11 @@ async function initializeTestRunner(build, sources, code, loadEnzyme) {
   await page.evaluate(
     async (code, sources, loadEnzyme) => {
       const getUserInput = fileName => sources[fileName];
-      await document.__initTestFrame({ code, getUserInput, loadEnzyme });
+      await document.__initTestFrame({
+        code: sources,
+        getUserInput,
+        loadEnzyme
+      });
     },
     code,
     sources,

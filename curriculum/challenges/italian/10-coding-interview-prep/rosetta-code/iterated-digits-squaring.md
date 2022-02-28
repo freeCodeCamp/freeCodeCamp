@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ec1
-title: Iterated digits squaring
+title: Quadratura di cifre iterata
 challengeType: 5
 forumTopicId: 302291
 dashedName: iterated-digits-squaring
@@ -8,7 +8,7 @@ dashedName: iterated-digits-squaring
 
 # --description--
 
-If you add the square of the digits of a Natural number (an integer bigger than zero), you always end with either 1 or 89:
+Se sommi il quadrato delle cifre di un numero naturale (un numero intero più grande di zero), ottieni sempre o 1 o 89:
 
 <pre>15 -> 26 -> 40 -> 16 -> 37 -> 58 -> 89
 7 -> 49 -> 97 -> 130 -> 10 -> 1
@@ -16,53 +16,53 @@ If you add the square of the digits of a Natural number (an integer bigger than 
 
 # --instructions--
 
-Write a function that takes a number as a parameter and returns 1 or 89 after performing the mentioned process.
+Scrivi una funzione che prende un numero come parametro e restituisce 1 o 89 dopo aver eseguito il processo menzionato.
 
 # --hints--
 
-`iteratedSquare` should be a function.
+`iteratedSquare` dovrebbe essere una funzione.
 
 ```js
 assert(typeof iteratedSquare == 'function');
 ```
 
-`iteratedSquare(4)` should return a number.
+`iteratedSquare(4)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof iteratedSquare(4) == 'number');
 ```
 
-`iteratedSquare(4)` should return `89`.
+`iteratedSquare(4)` dovrebbe restituire `89`.
 
 ```js
 assert.equal(iteratedSquare(4), 89);
 ```
 
-`iteratedSquare(7)` should return `1`.
+`iteratedSquare(7)` dovrebbe restituire `1`.
 
 ```js
 assert.equal(iteratedSquare(7), 1);
 ```
 
-`iteratedSquare(15)` should return `89`.
+`iteratedSquare(15)` dovrebbe restituire `89`.
 
 ```js
 assert.equal(iteratedSquare(15), 89);
 ```
 
-`iteratedSquare(20)` should return `89`.
+`iteratedSquare(20)` dovrebbe restituire `89`.
 
 ```js
 assert.equal(iteratedSquare(20), 89);
 ```
 
-`iteratedSquare(70)` should return `1`.
+`iteratedSquare(70)` dovrebbe restituire `1`.
 
 ```js
 assert.equal(iteratedSquare(70), 1);
 ```
 
-`iteratedSquare(100)` should return `1`.
+`iteratedSquare(100)` dovrebbe restituire `1`.
 
 ```js
 assert.equal(iteratedSquare(100), 1);

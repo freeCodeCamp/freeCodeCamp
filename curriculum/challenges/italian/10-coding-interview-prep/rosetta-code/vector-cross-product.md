@@ -1,6 +1,6 @@
 ---
 id: 594810f028c0303b75339ad2
-title: Vector cross product
+title: Prodotto vettoriale
 challengeType: 5
 forumTopicId: 302342
 dashedName: vector-cross-product
@@ -8,27 +8,27 @@ dashedName: vector-cross-product
 
 # --description--
 
-A vector is defined as having three dimensions as being represented by an ordered collection of three numbers: (X, Y, Z).
+Un vettore è definito come avente tre dimensioni e può essere rappresentato da una raccolta ordinata di tre numeri: (X, Y, Z).
 
 # --instructions--
 
-Write a function that takes two vectors (arrays) as input and computes their cross product. Your function should return `null` on invalid inputs such as vectors of different lengths.
+Scrivi una funzione che prende due vettori (arrays) come input e calcola il loro prodotto vettoriale. La tua funzione dovrebbe restituire `null` su input non validi, come vettori di diverse lunghezze.
 
 # --hints--
 
-`crossProduct` should be a function.
+`crossProduct` dovrebbe essere una funzione.
 
 ```js
 assert.equal(typeof crossProduct, 'function');
 ```
 
-`crossProduct()` should return null.
+`crossProduct()` dovrebbe restituire null.
 
 ```js
 assert.equal(crossProduct(), null);
 ```
 
-`crossProduct([1, 2, 3], [4, 5, 6])` should return `[-3, 6, -3]`.
+`crossProduct([1, 2, 3], [4, 5, 6])` dovrebbe restituire `[-3, 6, -3]`.
 
 ```js
 assert.deepEqual(res12, exp12);

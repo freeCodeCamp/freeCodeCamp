@@ -20,7 +20,7 @@
   "main": "none",
   "scripts": {
     "babel-dev-server": "babel-node --inspect=0.0.0.0 ./src/server/index.js",
-    "build": "babel src --out-dir lib --ignore 'node_modules /**/*','/**/*.test.js' --copy-files --no-copy-ignored",
+    "build": "babel src --out-dir lib --ignore '/**/*.test.js' --copy-files --no-copy-ignored",
     "develop": "cross-env DEBUG=fcc* node src/development-start.js",
     "start": "cross-env DEBUG=fcc* node lib/production-start.js"
   },
@@ -40,7 +40,6 @@
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "csurf": "^1.11.0",
-    "d3": "~3.5.17",
     "date-fns": "^1.30.1",
     "debug": "^2.2.0",
     "dedent": "~0.7.0",

@@ -1,6 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72da4
-title: 'Q学習による強化学習: パート 2'
+title: 'Q 学習による強化学習: パート 2'
 challengeType: 11
 videoId: DX7hJuaUZ7o
 bilibiliIds:

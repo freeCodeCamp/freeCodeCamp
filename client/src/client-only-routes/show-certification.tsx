@@ -322,7 +322,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
         <header>
           <Col md={5} sm={12}>
             <div className='logo'>
-              <FreeCodeCampLogo />
+              <FreeCodeCampLogo aria-hidden='true' />
             </div>
           </Col>
           <Col md={7} sm={12}>
@@ -386,8 +386,4 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
 
 ShowCertification.displayName = 'ShowCertification';
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-)(ShowCertification as any);
+export default connect(mapStateToProps, mapDispatchToProps)(ShowCertification);

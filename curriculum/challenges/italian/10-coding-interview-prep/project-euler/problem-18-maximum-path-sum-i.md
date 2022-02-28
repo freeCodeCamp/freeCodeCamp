@@ -1,6 +1,6 @@
 ---
 id: 5900f37e1000cf542c50fe91
-title: 'Problem 18: Maximum path sum I'
+title: 'Problema 18: Somma massima del percorso I'
 challengeType: 5
 forumTopicId: 301815
 dashedName: problem-18-maximum-path-sum-i
@@ -8,7 +8,7 @@ dashedName: problem-18-maximum-path-sum-i
 
 # --description--
 
-By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.
+Cominciando dalla parte superiore del triangolo sottostante e spostandosi verso i numeri adiacenti sulla riga sottostante, il totale massimo dall'alto al basso è 23.
 
 <span style='display: block; text-align: center;'>
   <strong style='color: red;'>3</strong><br>
@@ -17,9 +17,9 @@ By starting at the top of the triangle below and moving to adjacent numbers on t
   8 5 <strong style='color: red;'>9</strong> 3
 </span>
 
-That is, 3 + 7 + 4 + 9 = 23.
+Cioè, 3 + 7 + 4 + 9 = 23.
 
-Find the maximum total from top to bottom of the triangle below:
+Trova il totale massimo dall'alto al basso del triangolo qui sotto:
 
 75  
 95 64  
@@ -37,23 +37,23 @@ Find the maximum total from top to bottom of the triangle below:
 63 66 04 68 89 53 67 30 73 16 69 87 40 31  
 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23
 
-**NOTE:** As there are only 16384 routes, it is possible to solve this problem by trying every route. However, Problem 67, is the same challenge with a triangle containing one-hundred rows; it cannot be solved by brute force, and requires a clever method! ;o)
+**NOTA:** Poiché ci sono solo 16384 percorsi, è possibile risolvere questo problema provando ogni percorso. Tuttavia, Problema 67, è la stessa sfida con un triangolo contenente cento righe; non può essere risolto a forza bruta, e richiede un metodo intelligente! ;o)
 
 # --hints--
 
-`maximumPathSumI(testTriangle)` should return a number.
+`maximumPathSumI(testTriangle)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof maximumPathSumI(testTriangle) === 'number');
 ```
 
-`maximumPathSumI(testTriangle)` should return 23.
+`maximumPathSumI(testTriangle)` dovrebbe restituire 23.
 
 ```js
 assert.strictEqual(maximumPathSumI(testTriangle), 23);
 ```
 
-`maximumPathSumI(numTriangle)` should return 1074.
+`maximumPathSumI(numTriangle)` dovrebbe restituire 1074.
 
 ```js
 assert.strictEqual(maximumPathSumI(numTriangle), 1074);

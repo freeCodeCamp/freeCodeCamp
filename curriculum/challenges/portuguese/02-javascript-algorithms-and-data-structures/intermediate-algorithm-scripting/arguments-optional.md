@@ -60,6 +60,12 @@ assert.isUndefined(addTogether(2, '3'));
 assert.isUndefined(addTogether(2)([3]));
 ```
 
+`addTogether("2", 3)` deve retornar `undefined`.
+
+```js
+assert.isUndefined(addTogether('2', 3));
+```
+
 # --seed--
 
 ## --seed-contents--

@@ -1,6 +1,6 @@
 ---
 id: 5900f3d61000cf542c50fee8
-title: 'Problem 105: Special subset sums: testing'
+title: 'Problema 105: somme di subset speciali: testing'
 challengeType: 5
 forumTopicId: 301729
 dashedName: problem-105-special-subset-sums-testing
@@ -8,20 +8,20 @@ dashedName: problem-105-special-subset-sums-testing
 
 # --description--
 
-Let $S(A)$ represent the sum of elements in set A of size n. We shall call it a special sum set if for any two non-empty disjoint subsets, B and C, the following properties are true:
+Sia $S(A)$ la somma degli elementi in set A di dimensione n. Lo chiamiamo un set di somma speciale se per ogni due subset non vuoti e distinti, B e C, le seguenti proprietà sono vere:
 
-1. $S(B) ≠ S(C)$; that is, sums of subsets cannot be equal.
-2. If B contains more elements than C then $S(B) > S(C)$.
+1. $S(B) ≠ S(C)$, cioè le somme dei subset non possono essere uguali.
+2. Se B contiene più elementi di C allora $S(B) > S(C)$.
 
-For example, {81, 88, 75, 42, 87, 84, 86, 65} is not a special sum set because 65 + 87 + 88 = 75 + 81 + 84, whereas {157, 150, 164, 119, 79, 159, 161, 139, 158} satisfies both rules for all possible subset pair combinations and $S(A) = 1286$.
+Per esempio, {81, 88, 75, 42, 87, 84, 86, 65} non è un set a somma speciale perché 65 + 87 + 88 = 75 + 81 + 84, mentre 157, 150, 164, 119, 79, 159, 161, 139, 158} soddisfa entrambe le regole per tutte le possibili combinazioni di coppie di subset e $S(A) = 1286$.
 
-Using `sets`, an array with one-hundred sets, containing seven to twelve elements (the two examples given above are the first two sets), identify all the special sum sets, $A_1, A_2, \ldots, A_k$, and find the value of $(A_1) + S(A_2) + \cdots + S(A_k)$.
+Usando `sets`, un array con cento set che contengono tra 7 e 12 elementi (i due esempi dati sopra sono i primi due set), identifica tutti i set a somma speciale, $A_1, A_2, \ldots, A_k$,, e trova il valore di $(A_1) + S(A_2) + \cdots + S(A_k)$.
 
-**Note:** This problem is related to Problem 103 and Problem 106.
+**Nota:** questo problema è legato ai problemi 103 e 106.
 
 # --hints--
 
-`testingSpecialSubsetSums(testSets)` should return `73702`.
+`testingSpecialSubsetSums(testSets)` dovrebbe restituire `73702`.
 
 ```js
 assert.strictEqual(testingSpecialSubsetSums(_testSets), 73702);

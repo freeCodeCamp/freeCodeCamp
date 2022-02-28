@@ -18,6 +18,14 @@ jobs:
       - name: Checkout Source Files
         uses: actions/checkout@v2
 
+      - name: Check number of lockfiles
+        run: |
+          if [ $(find . -name 'package-lock.json' | grep -vc -e 'node_modules') -gt 1 ]
+          then
+            echo 'Error: found too many lockfiles in the repository'
+            exit 1
+          fi
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:

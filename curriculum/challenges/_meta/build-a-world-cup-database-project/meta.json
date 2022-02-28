@@ -1,0 +1,14 @@
+{
+  "name": "Build a World Cup Database Project",
+  "isUpcomingChange": false,
+  "order": 6,
+  "time": "30 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "relational-database",
+  "challengeOrder": [
+    [
+      "5f9771307d4d22b9d2b75a94",
+      "Build a World Cup Database"
+    ]
+  ]}

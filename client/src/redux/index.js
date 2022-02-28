@@ -186,6 +186,8 @@ export const updateCurrentChallengeId = createAction(
 
 export const completedChallengesSelector = state =>
   userSelector(state).completedChallenges || [];
+export const partiallyCompletedChallengesSelector = state =>
+  userSelector(state).partiallyCompletedChallenges || [];
 export const completionCountSelector = state => state[MainApp].completionCount;
 export const currentChallengeIdSelector = state =>
   state[MainApp].currentChallengeId;
@@ -219,7 +221,6 @@ export const shouldRequestDonationSelector = state => {
   const canRequestProgressDonation = state[MainApp].canRequestProgressDonation;
   const isDonating = isDonatingSelector(state);
   const recentlyClaimedBlock = recentlyClaimedBlockSelector(state);
-  const isAVariant = isAVariantSelector(state);
 
   // don't request donation if already donating
   if (isDonating) return false;
@@ -232,15 +233,8 @@ export const shouldRequestDonationSelector = state => {
 
   // donations only appear after the user has completed ten challenges (i.e.
   // not before the 11th challenge has mounted)
-  // the follwoing is an AB test for increasing the completed challenge requirement to 20
-  if (isAVariant) {
-    if (completedChallenges.length < 10) {
-      return false;
-    }
-  } else {
-    if (completedChallenges.length < 20) {
-      return false;
-    }
+  if (completedChallenges.length < 10) {
+    return false;
   }
 
   // this will mean we have completed 3 or more challenges this browser session
@@ -279,7 +273,7 @@ export const certificatesByNameSelector = username => state => {
     isSciCompPyCertV7,
     isDataAnalysisPyCertV7,
     isMachineLearningPyCertV7,
-    isRelationalDatabasesCertV8
+    isRelationalDatabaseCertV8
   } = userByNameSelector(username)(state);
   return {
     hasModernCert:
@@ -294,7 +288,7 @@ export const certificatesByNameSelector = username => state => {
       isSciCompPyCertV7 ||
       isDataAnalysisPyCertV7 ||
       isMachineLearningPyCertV7 ||
-      isRelationalDatabasesCertV8,
+      isRelationalDatabaseCertV8,
     hasLegacyCert:
       isFrontEndCert || isBackEndCert || isDataVisCert || isInfosecQaCert,
     isFullStackCert,
@@ -350,9 +344,9 @@ export const certificatesByNameSelector = username => state => {
         certSlug: 'machine-learning-with-python-v7'
       },
       {
-        show: isRelationalDatabasesCertV8,
-        title: 'Relational Databases Certification',
-        certSlug: 'relational-databases-v8'
+        show: isRelationalDatabaseCertV8,
+        title: 'Relational Database Certification',
+        certSlug: 'relational-database-v8'
       }
     ],
     legacyCerts: [

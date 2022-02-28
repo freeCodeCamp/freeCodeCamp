@@ -16,11 +16,9 @@ dashedName: comparison-with-the-strict-equality-operator
 **例**
 
 ```js
-3 ===  3
-3 === '3'
+3 ===  3  // true
+3 === '3' // false
 ```
-
-これらの条件ではそれぞれ、`true` と `false` を返すことになります。
 
 2 番目の例では、 `3` は `Number` 型で、 `'3'` は `String` 型です。
 
@@ -48,7 +46,7 @@ assert(testStrict(7) === 'Equal');
 assert(testStrict('7') === 'Not Equal');
 ```
 
-`===` 演算子を使用してください。
+`===` 演算子を使用してください
 
 ```js
 assert(code.match(/(val\s*===\s*\d+)|(\d+\s*===\s*val)/g).length > 0);

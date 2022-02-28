@@ -1,6 +1,6 @@
 ---
 id: 5900f4021000cf542c50ff13
-title: 'Problem 149: Searching for a maximum-sum subsequence'
+title: 'Problema 149: Ricerca di una sequenza a somma massima'
 challengeType: 5
 forumTopicId: 301778
 dashedName: problem-149-searching-for-a-maximum-sum-subsequence
@@ -8,28 +8,30 @@ dashedName: problem-149-searching-for-a-maximum-sum-subsequence
 
 # --description--
 
-Looking at the table below, it is easy to verify that the maximum possible sum of adjacent numbers in any direction (horizontal, vertical, diagonal or anti-diagonal) is 16 (= 8 + 7 + 1).
+Guardando la tabella sotto, è facile verificare che la somma massima possibile di numeri adiacenti in qualsiasi direzione (orizzontale, verticale, diagonale o anti-diagonale) è di $16 (= 8 + 7 + 1)$.
 
-−25329−6513273−18−4 8
+$$\begin{array}{|r|r|r|r|} \hline −2 &  5 &  3 & 2 \\\\ \hline 9 & −6 &  5 & 1 \\\\ \hline 3 &  2 &  7 & 3 \\\\ \hline −1 &  8 & −4 & 8 \\\\ \hline \end{array}$$
 
-Now, let us repeat the search, but on a much larger scale:
+Ora ripetiamo la ricerca, ma su una scala molto più grande:
 
-First, generate four million pseudo-random numbers using a specific form of what is known as a "Lagged Fibonacci Generator":
+In primo luogo, generare quattro milioni di numeri pseudo-casuali utilizzando una forma specifica di quello che è noto come "Lagged Fibonacci Generator":
 
-For 1 ≤ k ≤ 55, sk = \[100003 − 200003k + 300007k3] (modulo 1000000) − 500000. For 56 ≤ k ≤ 4000000, sk = \[sk−24 + sk−55 + 1000000] (modulo 1000000) − 500000.
+Per $1 ≤ k ≤ 55$, $s_k = (100003 − 200003k + 300007{k}^3) \\ (modulo\\ 1000000) − 500000$.
 
-Thus, s10 = −393027 and s100 = 86613.
+Per $56 ≤ k ≤ 4000000$, $s_k = (s_{k − 24} + s_{k − 55} + 1000000) \\ (modulo\\ 1000000) − 500000$.
 
-The terms of s are then arranged in a 2000×2000 table, using the first 2000 numbers to fill the first row (sequentially), the next 2000 numbers to fill the second row, and so on.
+Così, $s_{10} = −393027$ e $s_{100} = 86613$.
 
-Finally, find the greatest sum of (any number of) adjacent entries in any direction (horizontal, vertical, diagonal or anti-diagonal).
+I termini di $s$ sono poi disposti in una tabella 2000×2000, usando i primi 2000 numeri per riempire la prima riga (sequenzialmente), i prossimi 2000 numeri per riempire la seconda riga, e così via.
+
+Infine, trova la più grande somma di (qualsiasi numero di) voci adiacenti in qualsiasi direzione (orizzontale, verticale, diagonale o anti-diagonale).
 
 # --hints--
 
-`euler149()` should return 52852124.
+`maximumSubSequence()` dovrebbe restituire `52852124`.
 
 ```js
-assert.strictEqual(euler149(), 52852124);
+assert.strictEqual(maximumSubSequence(), 52852124);
 ```
 
 # --seed--
@@ -37,12 +39,12 @@ assert.strictEqual(euler149(), 52852124);
 ## --seed-contents--
 
 ```js
-function euler149() {
+function maximumSubSequence() {
 
   return true;
 }
 
-euler149();
+maximumSubSequence();
 ```
 
 # --solutions--

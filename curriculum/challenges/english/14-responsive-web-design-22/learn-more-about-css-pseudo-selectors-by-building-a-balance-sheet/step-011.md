@@ -1,5 +1,5 @@
 ---
-id: 6193e2f62a56dc26fd594b77
+id: 61fd75ea7f663457612dba02
 title: Step 11
 challengeType: 0
 dashedName: step-11
@@ -7,26 +7,63 @@ dashedName: step-11
 
 # --description--
 
-Within your first `.row` element, create four `span` elements. Give the first `span` a `class` set to `name`, and the last `span` a `class` set to `current`.
+Within each of your new `th` elements, nest a `span` element with the `class` set to `sr-only year`. Give them the following text (in order): `2019`, `2020`, and `2021`.
+
+Give your third `th` element the `class` attribute set to `current`.
+
+Leave the `td` element empty. This element exists only to ensure your table has a four-column layout and associate the headers with the correct columns.
 
 # --hints--
 
-Your first `.row` element (in your `.section` element) should have four `span` elements.
+Each of your `th` elements should have a `span` element.
 
 ```js
-assert(document.querySelectorAll('.section > .row > span')?.length === 4);
+const ths = [...document.querySelectorAll('th')];
+ths?.forEach(th => {
+  assert(th?.children?.length === 1);
+  assert(th?.children?.[0]?.localName === 'span');
+});
 ```
 
-Your first new `span` element should have a `class` attribute set to `name`.
+Each of your new `span` elements should have the `class` attribute set to `sr-only year`.
 
 ```js
-assert(document.querySelectorAll('.section > .row > span')?.[0]?.classList?.contains('name'));
+const ths = [...document.querySelectorAll('th')];
+ths?.forEach(th => {
+  assert(th?.children?.[0]?.classList?.contains('sr-only'));
+  assert(th?.children?.[0]?.classList?.contains('year'));
+});
 ```
 
-Your last new `span` element should have a `class` attribute set to `current`.
+Your first `span` element should have the text `2019`.
 
 ```js
-assert(document.querySelectorAll('.section > .row > span')?.[3]?.classList?.contains('current'));
+assert(document.querySelectorAll('th')?.[0]?.children?.[0]?.textContent === '2019');
+```
+
+Your second `span` element should have the text `2020`.
+
+```js
+assert(document.querySelectorAll('th')?.[1]?.children?.[0]?.textContent === '2020');
+```
+
+Your third `span` element should have the text `2021`.
+
+```js
+assert(document.querySelectorAll('th')?.[2]?.children?.[0]?.textContent === '2021');
+```
+
+Your third `th` element should have the `class` set to `current`.
+
+```js
+assert(document.querySelector('table')?.querySelectorAll('th')?.[2]?.classList?.contains('current'));
+```
+
+Your `td` element should be empty.
+
+```js
+assert(document.querySelector('table')?.querySelectorAll('td')?.[0]?.textContent === '');
+assert(document.querySelector('table')?.querySelectorAll('td')?.[0]?.children?.length === 0);
 ```
 
 # --seed--
@@ -37,38 +74,48 @@ assert(document.querySelectorAll('.section > .row > span')?.[3]?.classList?.cont
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AcmeWidgetCorp Balance Sheet</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
-    <div id="sheet">
-      <div id="header">
-        <h1>Balance Sheet</h1>
-        <h2>AcmeWidgetCorp</h2>
-        <p class="row">
-          <span>2019</span>
-          <span>2020</span>
-          <span class="current">2021</span>
-        </p>
-      </div>
-      <h2>Assets</h2>
-      <div class="section">
+    <main>
+      <section>
+        <h1>
+          <span class="flex">
+            <span>AcmeWidgetCorp</span>
+            <span>Balance Sheet</span>
+          </span>
+        </h1>
+        <div id="years" aria-hidden="true">
+          <span class="year">2019</span>
+          <span class="year">2020</span>
+          <span class="year">2021</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <caption>Assets</caption>
 --fcc-editable-region--
-        <p class="row">
-
-        </p>
+            <thead>
+              <tr>
+                <td></td>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
 --fcc-editable-region--
-        <span class="notes"></span>
-        <p class="row"></p>
-        <span class="notes"></span>
-        <p class="row"></p>
-        <span class="notes"></span>
-        <p class="row total"></p>
-      </div>
-    </div>
-    <footer>Last Updated: December 2021</footer>
+            <tbody>
+            </tbody>
+          </table>
+          <table>
+          </table>
+          <table>
+          </table>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
 ```

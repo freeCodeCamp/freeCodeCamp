@@ -47,10 +47,12 @@ function buildSourceMap(challengeFiles) {
   const source = challengeFiles.reduce(
     (sources, challengeFile) => {
       sources.index += challengeFile.source || challengeFile.contents;
+      sources.contents = sources.index;
+      sources.original[challengeFile.history[0]] = challengeFile.source;
       sources.editableContents += challengeFile.editableContents || '';
       return sources;
     },
-    { index: '', editableContents: '' }
+    { index: '', editableContents: '', original: {} }
   );
   return source;
 }
@@ -208,7 +210,15 @@ export function updateProjectPreview(buildData, document) {
     buildData.challengeType === challengeTypes.html ||
     buildData.challengeType === challengeTypes.multiFileCertProject
   ) {
-    createProjectPreviewFramer(document)(buildData);
+    // Give iframe a title attribute for accessibility using the preview
+    // document's <title>.
+    const titleMatch = buildData?.sources?.index?.match(
+      /<title>(.*?)<\/title>/
+    );
+    const frameTitle = titleMatch
+      ? titleMatch[1].trim() + ' preview'
+      : 'preview';
+    createProjectPreviewFramer(document, frameTitle)(buildData);
   } else {
     throw new Error(
       `Cannot show preview for challenge type ${buildData.challengeType}`

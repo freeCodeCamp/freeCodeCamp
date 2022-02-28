@@ -1,20 +1,20 @@
-# How to work on localized client webapp
+# ローカライズされたクライアント Web アプリに貢献する方法
 
-The react based client web app that powers our learning platform is built using Gatsby. It is translated into various world languages using [react-i18next](https://react.i18next.com/) and [i18next](https://www.i18next.com/).
+学習プラットフォームを動かす React ベースのクライアント Web アプリは、Gatsby を使用して構築されています。 [react-i18next](https://react.i18next.com/) と [i18next](https://www.i18next.com/) を使用して、様々な世界の言語に翻訳されています。
 
-You can learn more about setting up the client application locally for development by following [our local setup guide here](how-to-setup-freecodecamp-locally.md). By default the application is available only in English.
+開発用クライアントアプリケーションのローカル設定については、こちらの [ローカル設定ガイド](how-to-setup-freecodecamp-locally.md)をご覧ください。 デフォルトでは、アプリケーションは英語でのみ使用できます。
 
-Once you have setup the project locally you should be able to follow this documentation to run the client in the language of your choice from the list of available languages.
+ローカルでプロジェクトを設定したら、利用可能な言語リストから選択した言語でクライアントを実行するために、このドキュメントに従ってください。
 
-This could be helpful when you are working on a feature that specifically targets something that involves localization, and requires you to validate for instance a button's label in a different language.
+これは、ローカライゼーションを含むものを対象にし、例えば別の言語でボタンラベルを検証する必要がある機能に関して作業している場合に役立ちます。
 
-> [!TIP] You do not need to follow this document for translating freeCodeCamp's curriculum or contributing documentation. Read [this guide here](how-to-translate-files.md) instead.
+> [!TIP] freeCodeCamp のカリキュラムやコントリビューションドキュメントを翻訳するために、このドキュメントに従う必要はありません。 代わりに、[このガイド](how-to-translate-files.md) をお読みください。
 
-Let's understand how the i18n frameworks and tooling work.
+i18n フレームワークとツールがどのように機能するかを理解しましょう。
 
-## File Structure
+## ファイル構成
 
-Most of files for translating the platform are located in the [`client/i18n`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n) folder. Each language has a directory within that containing JSON files with the translations.
+プラットフォームを翻訳するために必要なファイルの多くは、[`client/i18n`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n) フォルダに入っています。 各言語には、翻訳付きの JSON ファイルを含むディレクトリがあります。
 
 ```console
   config/i18n
@@ -59,29 +59,29 @@ Most of files for translating the platform are located in the [`client/i18n`](ht
   └── validate-keys.ts
 ```
 
-Some of these files are translated on our translation platform (Crowdin), some are not.
+これらのファイルは翻訳プラットフォーム (Crowdin) で翻訳されていますが、翻訳されていないものもあります。
 
-**Files translated on our translation platform:**
+**翻訳プラットフォーム上で翻訳されたファイル:**
 
-- The `translations.json` file contains the majority of the text that appears on the user interface elements. The keys are used in the codebase to get the correct text for whatever language is set. This file needs to have the exact same keys in all languages.
+- `translations.json` ファイルは、ユーザーインターフェース要素に表示されるテキストの大部分を含んでいます。 キーは、設定されるすべての言語で正しいテキストが取得できるように、コードベースで使用されます。 このファイルでは、すべての言語で同じキーが必要です。
 
-- The `intro.json` file contains the key-value pairs for the introduction text on the certification pages.
+- `intro.json` ファイルには、認定講座ページの紹介テキスト用に、キーと値のペアが含まれています。
 
-  If you want to add/update translations for the keys please [read this guide here](how-to-translate-files.md).
+  キーの翻訳を追加 / 更新したい場合は、[こちらのガイド](how-to-translate-files.md) をご覧ください。
 
-**Files NOT translated on our translations platform:**
+**翻訳プラットフォーム上で翻訳されていないファイル:**
 
-- The `motivation.json` files are not required to have the same quotes, compliments, or array length. Just the same JSON structure.
+- `motivation.json` ファイルは、同じ引用符、賛辞、配列の長さを含む必要はありません。 JSON 構造だけは同じです。
 
-- The `trending.json` file contains the titles and links for the trending news articles in the website's footer.
+- `trending.json` ファイルは、Web サイトのフッターにトレンドニュース記事のタイトルとリンクを含みます。
 
-- The `meta-tags.json` file contains the information for our website's meta tag information.
+- `meta-tags.json` ファイルには、Web サイトのメタタグ情報に関する情報が含まれています。
 
-  Changes to these files are typically done by the staff team. If you see something out of the ordinary we recommend you reach us in the [contributors chat room](https://chat.freecodecamp.org/channel/contributors).
+  これらのファイルの変更は通常、スタッフチームによって行われます。 異常が表示された場合は、[contributors チャットルーム](https://chat.freecodecamp.org/channel/contributors) に連絡することをお勧めします。
 
-## Testing the client app in a world language
+## 世界の言語でクライアントアプリをテストする
 
-You can test the client app in any language available in the [list of languages here](https://github.com/freeCodeCamp/freeCodeCamp/blob/6b4a6a02568b809fc216ea8566ff5df446d1da4e/config/i18n/all-langs.js#L5).
+クライアントアプリは、[言語リスト](https://github.com/freeCodeCamp/freeCodeCamp/blob/6b4a6a02568b809fc216ea8566ff5df446d1da4e/config/i18n/all-langs.js#L5) にある言語でテストできます。
 
 ```js
   const availableLangs = {
@@ -90,19 +90,19 @@ You can test the client app in any language available in the [list of languages 
   };
 ```
 
-If you are testing a new language, create a folder with the language name as the title next to the other languages and copy the JSON files from another language into your new folder.
+新しい言語をテストするには、言語名をタイトルとしたフォルダを他の言語の隣に作成し、JSON ファイルを別の言語から新しいフォルダにコピーします。
 
-Add the language to the `client` array as seen above in the [`config/i18n/all-langs.js`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n/all-langs.js) file.
+上記の [`config/i18n/all-langs.js`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n/all-langs.js) ファイルにあるように、`client` 配列に言語を追加します。
 
-Next, follow the instructions in the comments in the same file to add/update the rest of the variables as needed.
+次に、同じファイルのコメント指示に従って、必要に応じて残りの変数を追加 / 更新します。
 
-Finally, set the `CLIENT_LOCALE` variable in your `.env` file to the locale you want to build and you're ready.
+最後に、`.env` ファイルの `CLIENT_LOCALE` 変数を、ビルドするロケールに設定します。これで準備が整います。
 
-## How to Structure Components
+## コンポーネントの構築方法
 
-If you are working on a feature or a bug for the client web app, say for example adding new UI items on the settings page, you should follow the guidelines below. They will help you prepare the components for localization into all the supported world languages.
+クライアント Web アプリの機能やバグの作業をしていて、例えば、設定ページに新しい UI アイテムを追加する場合は、以下のガイドラインに従ってください。 これらは、サポートされている世界言語へのローカライゼーションで、コンポーネントを準備するのに役立ちます。
 
-### Functional Component
+### 関数コンポーネント
 
 ```js
 import { useTranslation } from 'react-i18next';
@@ -114,7 +114,7 @@ const { t } = useTranslation();
 <p>{t('key')}</p>; // more details below
 ```
 
-### Class Component
+### クラスコンポーネント
 
 ```js
 import { withTranslation } from 'react-i18next';
@@ -132,9 +132,9 @@ export default withTranslation()(Component);
 export default connect(...)(withTranslation()(Component));
 ```
 
-## Translate Using the "t" Function
+## 「t」関数を使って翻訳する
 
-### Basic Translation
+### 基本的な翻訳
 
 ```js
 // in the component:
@@ -149,7 +149,7 @@ export default connect(...)(withTranslation()(Component));
 <p>My paragraph</p>
 ```
 
-### With Dynamic Data
+### 動的データの使用
 
 ```js
 // in the component:
@@ -166,13 +166,13 @@ const username = 'moT';
 <p>Welcome moT</p>
 ```
 
-The above example passes an object to the `t` function with a `username` variable. The variable will be used in the JSON value where `{{username}}` is.
+上の例では、 `username` 変数を使用して `t` 関数にオブジェクトを渡します。 変数は、`{{username}}` の JSON 値で使用されます。
 
-## Translate with the `Trans` Component
+## `Trans` コンポーネントを使用した翻訳
 
-The general rule is to use the "t" function when you can. But there's a `Trans` component for when that isn't enough, usually when you have elements embedded in the text. You can use the `Trans` component with any type of react component.
+一般的なルールは、「t」関数を使うことです。 しかし、それだけでは不十分な場合のための `Trans` コンポーネントがあります。通常、テキストに要素が埋め込まれている場合に使用されます。 どんな型の React コンポーネントでも `Trans` コンポーネントを使用できます。
 
-### Basic Elements Nested
+### ネストされた基本要素
 
 ```js
 // in the component:
@@ -193,11 +193,11 @@ import { Trans } from 'react-i18next'
 <p>Welcome to <strong>freeCodeCamp</strong></p>
 ```
 
-You can place the key inside the component tags like the above example if the text contains "simple" tags with no attributes. `br`, `strong`, `i`, and `p` are the default, but that list can be expanded in the i18n config.
+上記の例のように、テキストが属性のない「単純な」タグを含む場合、キーをコンポーネントタグの中に置くことができます。 `br`、`strong`、`i`、および `p` がデフォルトですが、そのリストは、i18n config で拡張できます。
 
-### Complex Elements Nested
+### ネストされた複雑な要素
 
-Other times, you will want to have certain text inside another element, an anchor tag is a good example:
+別の要素内に特定のテキストを持たせたい場合、アンカータグが良い例です。
 
 ```js
 // in the component:
@@ -216,9 +216,9 @@ Other times, you will want to have certain text inside another element, an ancho
 <p>Check out <a href='https://forum.freecodecamp.org/'>our forum</a></p>
 ```
 
-In the above example, the key is set in the attributes of the `Trans` component. The `<0>` and `</0>` in the JSON represent the first child of the component, in this case, the anchor element. If there were more children, they would just count up from there using the same syntax. You can find the children of a component in the react dev tools by inspecting it. `placeholder` is simply there because the linter complains about empty `<a>` elements.
+上記の例では、キーは `Trans` コンポーネントの属性に設定されています。 JSON の `<0>` と `</0>` はコンポーネントの最初の子要素を表します。 この場合、アンカー要素です。 もっと多くの子要素がある場合、同じ構文を使ってそこから数えるだけです。 React 開発ツールで調べることにより、コンポーネントの子要素を見つけることができます。 `placeholder` は単にそこにあるだけです。なぜなら、リンターが空の `<a>` 要素について不平を言うからです。
 
-### With a Variable
+### 変数の使用
 
 ```js
 // in the component:
@@ -243,25 +243,25 @@ const email = 'team@freecodecamp.org';
 <p>Send us an email at: <a href='mailto:team@freecodecamp.org'>team@freecodecamp.org</a><p>
 ```
 
-In the above example, the key and a variable are set in the attributes of the `Trans` component. `{{ email }}` needs to be somewhere in the `Trans` component as well, it doesn't matter where.
+上記の例では、キーと変数は `Trans` コンポーネントの属性に設定されています。 `{{ email }}` は、`Trans` コンポーネントのどこかにある必要がありますが、どこであっても問題はありません。
 
-## Changing Text
+## テキストの変更
 
-To change text on the client side of things, go to the relevant `.json` file, find the key that is being used in the React component, and change the value to the new text you want. You should search the codebase for that key to make sure it isn't being used elsewhere. Or, if it is, that the changes make sense in all places.
+クライアント側でテキストを変更するには、関連する `.json ` ファイルで、React コンポーネントで使用されているキーを見つけて、値を新しいテキストに変更します。 そのキーが他の場所で使用されていないことを確認するために、コードベースを検索する必要があります。 他の場所で使用されていた場合、そのすべての場所で変更が実行されます。
 
-## Adding Text
+## テキストの追加
 
-If the text you want to add to the client exists in the relevant `.json` file, use the existing key. Otherwise, create a new key.
+クライアントに追加するテキストが、関連する `.json` ファイルに存在する場合は、既存のキーを使用します。 それ以外の場合は、新しいキーを作成します。
 
-The English file is the "source of truth" for all of the `.json` files sharing the same name. If you need to add a new key, add it there. Then, add the key to **all** of the `translations.json` files.
+英語ファイルは、同じ名前を共有する `.json` ファイルすべてにとって、「真実を語る資料」です。 新しいキーを追加する必要がある場合は、そこに追加します。 そして、そのキーを **すべて** の `translations.json` ファイルに追加します。
 
-> [!NOTE] Use English text for all languages if the file is translated through Crowdin. The tests will fail if you don't.
+> [!NOTE] ファイルが Crowdin で翻訳されている場合は、すべての言語に英語のテキストを使用してください。 そうしないと、テストは失敗します。
 
-It would be nice to keep the keys in the same order across all the files as well. Also, try to put all punctuation, spacing, quotes, etc in the JSON files and not in the components or server files.
+すべてのファイルで、キーを同じ順序に保つことをお勧めします。 また、コンポーネントやサーバーファイルではなくJSON ファイルに、すべての句読点、スペース、引用符などを 入れるようにしてください。
 
-> [!NOTE] The underscore (`_`) is a reserved character for keys in the client side files. See [the documentation](https://www.i18next.com/translation-function/plurals) for how they are used.
+> [!NOTE] アンダースコア (`_`) は、クライアント側ファイルのキー用予約文字です。 使用方法については、 [ドキュメント](https://www.i18next.com/translation-function/plurals) を参照してください。
 
-## Helpful Documentation
+## 参考ドキュメント
 
 - [react-i18next docs](https://react.i18next.com/latest/usetranslation-hook)
 - [i18next docs](https://www.i18next.com/translation-function/essentials)

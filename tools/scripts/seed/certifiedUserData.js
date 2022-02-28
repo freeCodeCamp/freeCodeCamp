@@ -34,6 +34,7 @@ module.exports = {
   isSciCompPyCertV7: true,
   isDataAnalysisPyCertV7: true,
   isMachineLearningPyCertV7: true,
+  isRelationalDatabaseCertV8: true,
   completedChallenges: [
     { id: 'bd7123c8c441eddfaeb5bdef', completedDate: 1475094716730, files: [] },
     { id: '5895f70bf9fc0f352b528e64', completedDate: 1537207306322, files: [] },
@@ -4626,6 +4627,82 @@ module.exports = {
     {
       id: '561add10cb82ac38a17213bc',
       completedDate: 1538239301985,
+      challengeType: 7,
+      files: []
+    },
+    {
+      completedDate: 1642566694752,
+      id: '602da04c22201c65d2a019f4',
+      files: []
+    },
+    {
+      completedDate: 1642566450182,
+      id: '602d9ff222201c65d2a019f2',
+      files: []
+    },
+    {
+      completedDate: 1642566442917,
+      id: '5fa323cdaf6a73463d590659',
+      files: []
+    },
+    {
+      completedDate: 1642566429622,
+      id: '5f32db63eb37f7e17323f459',
+      files: []
+    },
+    {
+      completedDate: 1642566416673,
+      id: '5f87ac112ae598023a42df1a',
+      files: []
+    },
+    {
+      completedDate: 1642566406680,
+      id: '5f5b969a05380d2179fe6e18',
+      files: []
+    },
+    {
+      completedDate: 1642566390464,
+      id: '602da0de22201c65d2a019f6',
+      files: []
+    },
+    {
+      completedDate: 1642566369992,
+      id: '5f9771307d4d22b9d2b75a94',
+      files: []
+    },
+    {
+      completedDate: 1642566358706,
+      id: '618590adb0730ca724e37672',
+      files: []
+    },
+    {
+      completedDate: 1642566353635,
+      id: '602da0c222201c65d2a019f5',
+      files: []
+    },
+    {
+      completedDate: 1642566336874,
+      id: '5f5904ac738bc2fa9efecf5a',
+      files: []
+    },
+    {
+      completedDate: 1642566305566,
+      id: '5f1a4ef5d5d6b5ab580fc6ae',
+      files: []
+    },
+    {
+      completedDate: 1642566297762,
+      id: '5f2c289f164c29556da632fd',
+      files: []
+    },
+    {
+      completedDate: 1642566255203,
+      id: '5ea8adfab628f68d805bfc5e',
+      files: []
+    },
+    {
+      completedDate: 1642615978255,
+      id: '606243f50267e718b1e755f4',
       challengeType: 7,
       files: []
     }

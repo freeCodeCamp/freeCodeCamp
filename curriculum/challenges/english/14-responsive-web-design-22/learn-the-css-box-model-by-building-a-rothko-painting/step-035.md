@@ -1,5 +1,5 @@
 ---
-id: 60a3e3396c7b40068ad6998c
+id: 60a3e3396c7b40068ad6998d
 title: Step 35
 challengeType: 0
 dashedName: step-35
@@ -7,24 +7,46 @@ dashedName: step-35
 
 # --description--
 
-The colors and shapes of your painting are too sharp to pass as a Rothko.
+Create a rule that targets both `.one` and `.two` and increase their `blur` effect by 1 pixel.
 
-Use the `filter` property to `blur` the painting by `2px` in the `.canvas` element.
+Here's an example of a rule that increases the `blur` of two elements:
+
+```css
+h1, p {
+  filter: blur(3px);
+}
+```
 
 # --hints--
 
-You should set the `filter` property to `blur(2px)`.
+You should have a `.one, .two` selector.
 
 ```js
-const hasFilter = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.filter === 'blur(2px)');
-assert(hasFilter);
+const oneTwo = new __helpers.CSSHelp(document).getStyle('.one, .two');
+assert(oneTwo);
 ```
 
-Your `.canvas` element should have a `filter` value of `blur(2px)`.
+You should set the `filter` property to `blur(1px)`.
 
 ```js
-const canvasFilter = new __helpers.CSSHelp(document).getStyle('.canvas')?.getPropertyValue('filter');
-assert(canvasFilter === 'blur(2px)');
+const hasFilter = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.filter === 'blur(1px)');
+assert(hasFilter)
+```
+
+Your `.one` element should have a `filter` value of `blur(1px)`.
+
+```js
+const one = document.querySelector('.one');
+const oneFilter = getComputedStyle(one).filter;
+assert(oneFilter === 'blur(1px)');
+```
+
+Your `.two` element should have a filter value of `blur(1px)`.
+
+```js
+const two = document.querySelector('.two');
+const twoFilter = getComputedStyle(two).filter;
+assert(twoFilter === 'blur(1px)');
 ```
 
 # --seed--
@@ -37,9 +59,7 @@ assert(canvasFilter === 'blur(2px)');
   height: 600px;
   background-color: #4d0f00;
   overflow: hidden;
---fcc-editable-region--
-
---fcc-editable-region--
+  filter: blur(2px);
 }
 
 .frame {
@@ -53,7 +73,7 @@ assert(canvasFilter === 'blur(2px)');
   width: 425px;
   height: 150px;
   background-color: #efb762;
-  margin: 20px auto 20px;
+  margin: 20px auto;
 }
 
 .two {
@@ -62,6 +82,10 @@ assert(canvasFilter === 'blur(2px)');
   background-color: #8f0401;
   margin: 0 auto 20px;
 }
+
+--fcc-editable-region--
+
+--fcc-editable-region--
 
 .three {
   width: 91%;

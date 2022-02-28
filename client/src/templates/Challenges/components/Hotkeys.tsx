@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { navigate } from 'gatsby';
 import React from 'react';
 import { HotKeys, GlobalHotKeys } from 'react-hotkeys';
@@ -42,11 +40,10 @@ interface HotkeysProps {
   canFocusEditor: boolean;
   challengeFiles: ChallengeFiles;
   children: React.ReactElement;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  editorRef?: React.Ref<HTMLElement> | any;
+  editorRef?: React.RefObject<HTMLElement>;
   executeChallenge?: (options?: { showCompletionModal: boolean }) => void;
   submitChallenge: () => void;
-  innerRef: React.Ref<HTMLElement> | unknown;
+  innerRef: React.Ref<HTMLElement>;
   instructionsPanelRef?: React.RefObject<HTMLElement>;
   nextChallengePath: string;
   prevChallengePath: string;

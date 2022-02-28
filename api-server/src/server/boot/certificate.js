@@ -16,6 +16,7 @@ import {
 } from '../../../../config/certification-settings';
 import { reportError } from '../middlewares/sentry-error-handler.js';
 
+import { deprecatedEndpoint } from '../utils/deprecatedEndpoint';
 import { getChallenges } from '../utils/get-curriculum';
 import { ifNoUser401 } from '../utils/middleware';
 import { observeQuery } from '../utils/rx';
@@ -36,7 +37,7 @@ const {
   sciCompPyV7Id,
   dataAnalysisPyV7Id,
   machineLearningPyV7Id,
-  relationalDatabasesV8Id
+  relationalDatabaseV8Id
 } = certIds;
 
 const log = debug('fcc:certification');
@@ -51,18 +52,8 @@ export default function bootCertificate(app) {
 
   api.put('/certificate/verify', ifNoUser401, ifNoSuperBlock404, verifyCert);
   api.get('/certificate/showCert/:username/:certSlug', showCert);
-  api.get('/certificate/verify-can-claim-cert', verifyCanClaimCert);
-
+  api.get('/certificate/verify-can-claim-cert', deprecatedEndpoint);
   app.use(api);
-}
-
-function verifyCanClaimCert(_req, res) {
-  return res.status(410).json({
-    message: {
-      type: 'info',
-      message: 'Please reload the app, this feature is no longer available.'
-    }
-  });
 }
 
 export function getFallbackFullStackDate(completedChallenges, completedDate) {
@@ -128,8 +119,8 @@ function createCertTypeIds(allChallenges) {
       machineLearningPyV7Id,
       allChallenges
     ),
-    [certTypes.relationalDatabasesV8]: getCertById(
-      relationalDatabasesV8Id,
+    [certTypes.relationalDatabaseV8]: getCertById(
+      relationalDatabaseV8Id,
       allChallenges
     )
   };
@@ -217,7 +208,8 @@ function getUserIsCertMap(user) {
     isFullStackCert = false,
     isSciCompPyCertV7 = false,
     isDataAnalysisPyCertV7 = false,
-    isMachineLearningPyCertV7 = false
+    isMachineLearningPyCertV7 = false,
+    isRelationalDatabaseCertV8 = false
   } = user;
 
   return {
@@ -235,7 +227,8 @@ function getUserIsCertMap(user) {
     isFullStackCert,
     isSciCompPyCertV7,
     isDataAnalysisPyCertV7,
-    isMachineLearningPyCertV7
+    isMachineLearningPyCertV7,
+    isRelationalDatabaseCertV8
   };
 }
 
@@ -378,6 +371,7 @@ function createShowCert(app) {
       isSciCompPyCertV7: true,
       isDataAnalysisPyCertV7: true,
       isMachineLearningPyCertV7: true,
+      isRelationalDatabaseCertV8: true,
       isHonest: true,
       username: true,
       name: true,

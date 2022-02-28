@@ -80,17 +80,17 @@ O texto de exemplo `I bought a B of As W my Bgage from T S.` deve gerar `I bough
 
 Esta regra testa a ordem correta de varredura das regras e pode capturar rotinas de substituição que fazem a varredura na ordem errada. Ela implementa um mecanismo de multiplicação unária geral. (Observe que a expressão de entrada deve ser colocada dentro dos sublinhados nesta implementação.)
 
-<pre>### Mecanismo de multiplicação unária, para testar implementações do algoritmo de Markov
-### Por Donal Fellows.
+<pre>### Mecanismo de multiplicação unária para testar implementações do Algoritmo de Markov
+### De Donal Fellows.
 # Mecanismo de adição unária
 _+1 -> _1+
 1+1 -> 11+
-# Passada para converter da divisão de multiplicação em simples
-# adição
+# Passe para converter da divisão da multiplicação para uma
+# adição comum
 1! -> !1
 ,! -> !+
 _! -> _
-# Multiplicação unária pela duplicação do lado esquerdo, o lado direito de vezes
+# Multiplicação unária duplicando o lado esquerdo o número de vezes igual ao lado direito
 1*1 -> x,@y
 1x -> xX
 X, -> 1,1

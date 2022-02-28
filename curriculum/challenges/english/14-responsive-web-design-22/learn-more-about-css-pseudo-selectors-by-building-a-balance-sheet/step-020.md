@@ -1,5 +1,5 @@
 ---
-id: 6193e8eba043903cf68598cd
+id: 61fd9126aa72a474301fc49f
 title: Step 20
 challengeType: 0
 dashedName: step-20
@@ -7,36 +7,34 @@ dashedName: step-20
 
 # --description--
 
-In your first `.row total` element, give the `span` elements within the following text, in order: `Total`, `$579`, `$736`, and `$809`.
+Within the `tbody` element, add four `tr` elements. Give the first three the `class` attribute set to `data`, and the fourth the `class` attribute set to `total`.
 
 # --hints--
 
-The first `span` element should have the text `Total`.
+Your `tbody` element should have four `tr` elements.
 
 ```js
-const row = document.querySelectorAll('.section > .row')?.[3];
-assert(row?.querySelectorAll('span')?.[0]?.textContent === 'Total');
+const children = [...document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.children];
+assert(children?.length === 4);
+children.forEach(child => assert(child?.localName === 'tr'));
 ```
 
-The second `span` element should have the text `$579`.
+Your first three `tr` elements should have the `class` attribute set to `data`.
 
 ```js
-const row = document.querySelectorAll('.section > .row')?.[3];
-assert(row?.querySelectorAll('span')?.[1]?.textContent === '$579');
+const children = [...document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.children];
+children.forEach((child, index) => {
+  if (index < 3) {
+    assert(child?.classList?.contains('data'));
+  }
+});
 ```
 
-The third `span` element should have the text `$736`.
+Your fourth `tr` element should have the `class` attribute set to `total`.
 
 ```js
-const row = document.querySelectorAll('.section > .row')?.[3];
-assert(row?.querySelectorAll('span')?.[2]?.textContent === '$736');
-```
-
-The fourth `span` element should have the text `$809`.
-
-```js
-const row = document.querySelectorAll('.section > .row')?.[3];
-assert(row?.querySelectorAll('span')?.[3]?.textContent === '$809');
+const children = [...document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.children];
+assert(children?.[3]?.classList?.contains('total'));
 ```
 
 # --seed--
@@ -47,95 +45,83 @@ assert(row?.querySelectorAll('span')?.[3]?.textContent === '$809');
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AcmeWidgetCorp Balance Sheet</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
-    <div id="sheet">
-      <div id="header">
-        <h1>Balance Sheet</h1>
-        <h2>AcmeWidgetCorp</h2>
-        <p class="row">
-          <span>2019</span>
-          <span>2020</span>
-          <span class="current">2021</span>
-        </p>
-      </div>
-      <h2>Assets</h2>
-      <div class="section">
-        <p class="row">
-          <span class="name">Cash</span>
-          <span>$25</span>
-          <span>$30</span>
-          <span class="current">$28</span>
-        </p>
-        <span class="notes">This is the cash we currently have on hand.</span>
-        <p class="row">
-          <span class="name">Checking</span>
-          <span>$54</span>
-          <span>$56</span>
-          <span class="current">$53</span>
-        </p>
-        <span class="notes">Our primary transactional account.</span>
-        <p class="row">
-          <span class="name">Savings</span>
-          <span>$500</span>
-          <span>$650</span>
-          <span class="current">$728</span>
-        </p>
-        <span class="notes">Funds set aside for emergencies.</span>
+    <main>
+      <section>
+        <h1>
+          <span class="flex">
+            <span>AcmeWidgetCorp</span>
+            <span>Balance Sheet</span>
+          </span>
+        </h1>
+        <div id="years" aria-hidden="true">
+          <span class="year">2019</span>
+          <span class="year">2020</span>
+          <span class="year">2021</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <caption>Assets</caption>
+            <thead>
+              <tr>
+                <td></td>
+                <th><span class="sr-only year">2019</span></th>
+                <th><span class="sr-only year">2020</span></th>
+                <th class="current"><span class="sr-only year">2021</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="data">
+                <th>Cash <span class="description">This is the cash we currently have on hand.</span></th>
+                <td>$25</td>
+                <td>$30</td>
+                <td class="current">$28</td>
+              </tr>
+              <tr class="data">
+                <th>Checking <span class="description">Our primary transactional account.</span></th>
+                <td>$54</td>
+                <td>$56</td>
+                <td class="current">$53</td>
+              </tr>
+              <tr class="data">
+                <th>Savings <span class="description">Funds set aside for emergencies.</span></th>
+                <td>$500</td>
+                <td>$650</td>
+                <td class="current">$728</td>
+              </tr>
+              <tr class="total">
+                <th>Total <span class="sr-only">Assets</span></th>
+                <td>$579</td>
+                <td>$736</td>
+                <td class="current">$809</td>
+              </tr>
+            </tbody>
+          </table>
 --fcc-editable-region--
-        <p class="row total">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
+          <table>
+            <caption>Liabilities</caption>
+            <thead>
+              <tr>
+              <td></td>
+              <th><span class="sr-only">2019</span></th>
+              <th><span class="sr-only">2020</span></th>
+              <th><span class="sr-only">2021</span></th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
 --fcc-editable-region--
-      </div>
-      <h2>Liabilities</h2>
-      <div class="section">
-        <p class="row">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-        <span class="notes"></span>
-        <p class="row">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-        <span class="notes"></span>
-        <p class="row">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-        <span class="notes"></span>
-        <p class="row total">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-      </div>
-      <h2>Net Worth</h2>
-      <div class="section">
-        <p class="row total">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-      </div>
-    </div>
-    <footer>Last Updated: December 2021</footer>
+          <table>
+          </table>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
 ```

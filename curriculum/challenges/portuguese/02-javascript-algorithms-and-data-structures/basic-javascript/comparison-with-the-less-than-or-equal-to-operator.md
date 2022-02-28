@@ -14,14 +14,12 @@ O operador menor ou igual (`<=`) compara os valores de dois números. Se o núme
 **Exemplos**
 
 ```js
-4   <= 5
-'7' <= 7
-5   <= 5
-3   <= 2
-'8' <= 4
+4   <= 5 // true
+'7' <= 7 // true
+5   <= 5 // true
+3   <= 2 // false
+'8' <= 4 // false
 ```
-
-Em ordem, essas expressões seriam iguais à `true`, `true`, `true`, `false` e `false`.
 
 # --instructions--
 
@@ -59,13 +57,13 @@ assert(testLessOrEqual(23) === 'Smaller Than or Equal to 24');
 assert(testLessOrEqual(24) === 'Smaller Than or Equal to 24');
 ```
 
-`testLessOrEqual(25)` deve retornar a string `More than 24`
+`testLessOrEqual(25)` deve retornar a string `More Than 24`
 
 ```js
 assert(testLessOrEqual(25) === 'More Than 24');
 ```
 
-`testLessOrEqual(55)` deve retornar a string `More than 24`
+`testLessOrEqual(55)` deve retornar a string `More Than 24`
 
 ```js
 assert(testLessOrEqual(55) === 'More Than 24');

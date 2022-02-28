@@ -1,0 +1,14 @@
+{
+  "name": "Learn Bash by Building a Boilerplate",
+  "isUpcomingChange": false,
+  "order": 0,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "relational-database",
+  "challengeOrder": [
+    [
+      "5ea8adfab628f68d805bfc5e",
+      "Build a Boilerplate"
+    ]
+  ]}

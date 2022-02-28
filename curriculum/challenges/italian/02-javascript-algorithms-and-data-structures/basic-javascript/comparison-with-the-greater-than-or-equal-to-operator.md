@@ -16,13 +16,11 @@ Come l'operatore di uguaglianza, l'operatore di maggioranza o uguaglianza conver
 **Esempi**
 
 ```js
-6   >=  6
-7   >= '3'
-2   >=  3
-'7' >=  9
+6   >=  6  // true
+7   >= '3' // true
+2   >=  3  // false
+'7' >=  9  // false
 ```
-
-Nell'ordine, queste espressioni saranno valutate `true`, `true`, `false`, e `false`.
 
 # --instructions--
 
@@ -30,13 +28,13 @@ Aggiungi l'operatore di maggioranza o uguaglianza alle linee indicate in modo ch
 
 # --hints--
 
-`testGreaterOrEqual(0)` dovrebbe restituire la stringa `less than10`
+`testGreaterOrEqual(0)` dovrebbe restituire la stringa `Less than 10`
 
 ```js
 assert(testGreaterOrEqual(0) === 'Less than 10');
 ```
 
-`testGreaterOrEqual(9)` dovrebbe restituire la stringa `less than 10`
+`testGreaterOrEqual(9)` dovrebbe restituire la stringa `Less than 10`
 
 ```js
 assert(testGreaterOrEqual(9) === 'Less than 10');

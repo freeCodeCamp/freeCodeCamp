@@ -13,39 +13,69 @@
 }
 
 .challenge-title-breadcrumbs {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
   font-size: 16px;
   border: 1px solid var(--quaternary-background);
-  height: 25px;
   text-align: center;
+}
+
+.challenge-title-breadcrumbs ol {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  margin-bottom: 0;
+  padding-left: 0;
+  width: 100%;
+}
+
+.challenge-title-breadcrumbs ol a {
+  width: 100%;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  padding: 0 3px;
+}
+
+.challenge-title-breadcrumbs ol a:focus {
+  outline: 2px solid var(--secondary-color);
+  background-color: inherit;
+}
+
+.challenge-title-breadcrumbs ol a:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.challenge-title-breadcrumbs ol a:hover {
+  background-color: inherit;
+  text-decoration: underline;
 }
 
 .breadcrumb-left {
   text-decoration: none;
-  min-width: 25px;
+  min-width: 3rem;
   display: inline-block;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-height: 25px;
   white-space: nowrap;
   flex-grow: 1;
   flex-shrink: 2;
   background-color: var(--quaternary-background);
-  padding: 0px 3px;
+  padding: 0 0.57rem 0 0;
+  position: relative;
 }
 
-.breadcrumb-center {
-  width: 0;
-  height: 0;
-  border-top: calc(25px / 2) solid transparent;
-  border-bottom: calc(23px / 2) solid transparent;
-  border-left: calc(23px / 2) solid var(--quaternary-background);
-  flex-grow: 0;
-  flex-shrink: 0;
+.breadcrumb-left:after {
+  background-color: var(--secondary-background);
+  content: '';
+  border-top: calc(1.375rem / 2) solid transparent;
+  border-bottom: calc(1.2rem / 2) solid transparent;
+  border-left: calc(1.1rem / 2) solid var(--quaternary-background);
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
 }
 
 .breadcrumb-right {
@@ -53,27 +83,17 @@
   display: inline-block;
   align-items: center;
   justify-content: center;
-  max-height: 25px;
   min-width: 50px;
   flex-grow: 2;
   flex-shrink: 1;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  padding: 0px 3px;
+  padding: 0;
 }
 
 .breadcrumb-rule {
   margin: 5px -10px;
-}
-
-.breadcrumb-left:hover {
-  text-decoration: underline;
-  background-color: var(--quaternary-background);
-}
-.breadcrumb-right:hover {
-  text-decoration: underline;
-  background-color: var(--secondary-background);
 }
 
 .title-text {
@@ -89,6 +109,13 @@
   flex-grow: 1;
   flex-shrink: 1;
   padding: 0px 3px;
+}
+
+.title-text h1 {
+  font-size: inherit;
+  line-height: 1.42857143;
+  margin: 0;
+  display: inline;
 }
 
 .title-translation-cta {

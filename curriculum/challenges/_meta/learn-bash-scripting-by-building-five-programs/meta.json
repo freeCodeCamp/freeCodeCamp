@@ -1,0 +1,14 @@
+{
+  "name": "Learn Bash Scripting by Building Five Programs",
+  "isUpcomingChange": false,
+  "order": 3,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "relational-database",
+  "challengeOrder": [
+    [
+      "5f5904ac738bc2fa9efecf5a",
+      "Build Five Programs"
+    ]
+  ]}
