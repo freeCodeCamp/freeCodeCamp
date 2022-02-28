@@ -8,6 +8,7 @@ import ObjectID from 'bson-objectid';
 import { SuperBlocks } from '../../config/certification-settings';
 import { blockNameify } from '../../utils/block-nameify';
 import { createStepFile } from './utils';
+import { getSuperBlockSubPath } from './fs-utils';
 
 const helpCategories = ['HTML-CSS', 'JavaScript', 'Python'] as const;
 
@@ -168,12 +169,10 @@ async function createFirstChallenge(
   superBlock: SuperBlocks,
   block: string
 ): Promise<ObjectID> {
-  const superBlockId = (Object.values(SuperBlocks).indexOf(superBlock) + 1)
-    .toString()
-    .padStart(2, '0');
+  const superBlockSubPath = getSuperBlockSubPath(superBlock);
   const newChallengeDir = path.resolve(
     __dirname,
-    `../../curriculum/challenges/english/${superBlockId}-${superBlock}/${block}`
+    `../../curriculum/challenges/english/${superBlockSubPath}/${block}`
   );
   if (!existsSync(newChallengeDir)) {
     await withTrace(fs.mkdir, newChallengeDir);
