@@ -1,6 +1,6 @@
 ---
 id: 5900f3df1000cf542c50fef1
-title: 'Problem 115: Counting block combinations II'
+title: 'Problema 115: Conteggio delle combinazioni di blocchi II'
 challengeType: 5
 forumTopicId: 301741
 dashedName: problem-115-counting-block-combinations-ii
@@ -8,23 +8,23 @@ dashedName: problem-115-counting-block-combinations-ii
 
 # --description--
 
-A row measuring `n` units in length has red blocks with a minimum length of `m` units placed on it, such that any two red blocks (which are allowed to be different lengths) are separated by at least one black square.
+Una fila di `n` unità di lunghezza presenta blocchi rossi con una lunghezza minima di `m` unità poste su di essa, in modo che due blocchi rossi (che possono essere lunghezze diverse) siano separati da almeno un quadrato nero.
 
-Let the fill-count function, $F(m, n)$, represent the number of ways that a row can be filled.
+Lascia che la funzione di conteggio del riempimento, $F(m, n)$, rappresenti il numero di modi in cui una riga può essere riempita.
 
-For example, $F(3, 29) = 673135$ and $F(3, 30) = 1089155$.
+Per esempio, $F(3, 29) = 673135$ e $F(3, 30) = 1089155$.
 
-That is, for m = 3, it can be seen that n = 30 is the smallest value for which the fill-count function first exceeds one million.
+Cioè, per m = 3, si può osservare che n = 30 è il valore più piccolo per il quale la funzione di riempimento supera per la prima volta un milione.
 
-In the same way, for m = 10, it can be verified that $F(10, 56) = 880711$ and $F(10, 57) = 1148904$, so n = 57 is the least value for which the fill-count function first exceeds one million.
+Allo stesso modo, per m = 10, si può verificare che $F(10, 56) = 880711$ e $F(10, 57) = 1148904$, quindi n = 57 è il valore minimo per il quale la funzione di riempimento supera per la prima volta un milione.
 
-For m = 50, find the least value of `n` for which the fill-count function first exceeds one million.
+Per m = 50, trovare il valore minimo di `n` per il quale la funzione di riempimento è superiore a un milione.
 
-**Note:** This is a more difficult version of Problem 114.
+**Nota:** Questa è una versione più difficile del Problema 114.
 
 # --hints--
 
-`countingBlockTwo()` should return `168`.
+`countingBlockTwo()` dovrebbe restituire `168`.
 
 ```js
 assert.strictEqual(countingBlockTwo(), 168);

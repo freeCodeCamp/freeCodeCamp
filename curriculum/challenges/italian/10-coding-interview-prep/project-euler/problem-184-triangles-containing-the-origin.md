@@ -1,6 +1,6 @@
 ---
 id: 5900f4241000cf542c50ff37
-title: 'Problem 184: Triangles containing the origin'
+title: 'Problema 184: Triangoli contenenti l''origine'
 challengeType: 5
 forumTopicId: 301820
 dashedName: problem-184-triangles-containing-the-origin
@@ -8,20 +8,22 @@ dashedName: problem-184-triangles-containing-the-origin
 
 # --description--
 
-Consider the set Ir of points (x,y) with integer coordinates in the interior of the circle with radius r, centered at the origin, i.e. x2 + y2 &lt; r2.
+Considera il set $I_r$ di punti $(x, y)$ con coordinate intere all'interno del cerchio con raggio $r$, centrato all'origine, cioè $x^2 + y^2 &lt; r^2$.
 
-For a radius of 2, I2 contains the nine points (0,0), (1,0), (1,1), (0,1), (-1,1), (-1,0), (-1,-1), (0,-1) and (1,-1). There are eight triangles having all three vertices in I2 which contain the origin in the interior. Two of them are shown below, the others are obtained from these by rotation.
+Per un raggio di 2, $I_2$ contiene i nove punti (0,0), (1,0), (1,1), (0,1), (-1,1), (-1,0), (-1,-1), (0,-1) e (1,-1). Ci sono otto triangoli con tutti e tre i vertici in $I_2$ che contengono l'origine all'interno. Due di loro sono mostrati di seguito, gli altri sono ottenuti da questi per rotazione.
 
-For a radius of 3, there are 360 triangles containing the origin in the interior and having all vertices in I3 and for I5 the number is 10600.
+<img class="img-responsive center-block" alt="cerchio con raggio 2, centrato all'origine, con nove punti contrassegnati e due triangoli - (-1,0), (0,1), (1,-1) e (-1,1), (0,-1), (1,1)" src="https://cdn.freecodecamp.org/curriculum/project-euler/triangles-containing-the-origin.gif" style="background-color: white; padding: 10px;" />
 
-How many triangles are there containing the origin in the interior and having all three vertices in I105?
+Per un raggio di 3, ci sono 360 triangoli contenenti l'origine e aventi tutti i vertici in $I_3$ e per $I_5$ il numero è 10600.
+
+Quanti triangoli contengono l'origine all'interno e hanno tutti e tre i vertici in $I_{105}$?
 
 # --hints--
 
-`euler184()` should return 1725323624056.
+`trianglesContainingOrigin()` dovrebbe restituire `1725323624056`.
 
 ```js
-assert.strictEqual(euler184(), 1725323624056);
+assert.strictEqual(trianglesConttainingOrigin(), 1725323624056);
 ```
 
 # --seed--
@@ -29,12 +31,12 @@ assert.strictEqual(euler184(), 1725323624056);
 ## --seed-contents--
 
 ```js
-function euler184() {
+function trianglesContainingOrigin() {
 
   return true;
 }
 
-euler184();
+trianglesContainingOrigin();
 ```
 
 # --solutions--

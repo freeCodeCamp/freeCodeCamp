@@ -1,6 +1,6 @@
 ---
 id: 5900f3f51000cf542c50ff07
-title: 'Problem 136: Singleton difference'
+title: 'Problema 136: Differenza singola'
 challengeType: 5
 forumTopicId: 301764
 dashedName: problem-136-singleton-difference
@@ -8,20 +8,20 @@ dashedName: problem-136-singleton-difference
 
 # --description--
 
-The positive integers, x, y, and z, are consecutive terms of an arithmetic progression. Given that n is a positive integer, the equation, x2 − y2 − z2 = n, has exactly one solution when n = 20:
+Gli interi positivi, $x$, $y$e $z$, sono termini consecutivi di una progressione aritmetica. Dato che $n$ è un numero intero positivo, l'equazione, $x^2 − y^2 − z^2 = n$, ha esattamente una soluzione quando $n = 20$:
 
-132 − 102 − 72 = 20
+$$13^2 − 10^2 − 7^2 = 20$$
 
-In fact there are twenty-five values of n below one hundred for which the equation has a unique solution.
+Infatti, ci sono venticinque valori di $n$ sotto il cento per i quali l'equazione ha una soluzione unica.
 
-How many values of n less than fifty million have exactly one solution?
+Quanti valori di $n$ minori di cinquanta milioni hanno esattamente una soluzione?
 
 # --hints--
 
-`euler136()` should return 2544559.
+`singletonDifference()` dovrebbe restituire `2544559`.
 
 ```js
-assert.strictEqual(euler136(), 2544559);
+assert.strictEqual(singletonDifference(), 2544559);
 ```
 
 # --seed--
@@ -29,12 +29,12 @@ assert.strictEqual(euler136(), 2544559);
 ## --seed-contents--
 
 ```js
-function euler136() {
+function singletonDifference() {
 
   return true;
 }
 
-euler136();
+singletonDifference();
 ```
 
 # --solutions--

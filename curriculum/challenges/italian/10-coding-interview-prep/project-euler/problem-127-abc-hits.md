@@ -1,6 +1,6 @@
 ---
 id: 5900f3ec1000cf542c50fefe
-title: 'Problem 127: abc-hits'
+title: 'Problema 127: abc-hit'
 challengeType: 5
 forumTopicId: 301754
 dashedName: problem-127-abc-hits
@@ -8,38 +8,32 @@ dashedName: problem-127-abc-hits
 
 # --description--
 
-The radical of n, rad(n), is the product of distinct prime factors of n. For example, 504 = 23 × 32 × 7, so rad(504) = 2 × 3 × 7 = 42.
+Il radicale di $n$, $rad(n)$, è il prodotto dei fattori primi distinti di $n$. Per esempio, $504 = 2^3 × 3^2 × 7$, quindi $rad(504) = 2 × 3 × 7 = 42$.
 
-We shall define the triplet of positive integers (a, b, c) to be an abc-hit if:
+Definiamo la tripletta di numeri interi positivi (a, b, c) come un abc-hit se:
 
-GCD(a, b) = GCD(a, c) = GCD(b, c) = 1
+1. $MCD(a, b) = MCD(a, c) = MCD(b, c) = 1$
+2. $a &lt; b$
+3. $a + b = c$
+4. $rad(abc) &lt; c$
 
-a &lt; b
+Per esempio, (5, 27, 32) è un abc-hit poiché:
 
-a + b = c
+1. $MCD(5, 27) = MCD(5, 32) = MCD(27, 32) = 1$
+2. $5 &lt; 27$
+3. $5 + 27 = 32$
+4. $rad(4320) = 30 &lt; 32$
 
-rad(abc) &lt; c
+Gli abc-hit sono piuttosto rari e ce ne sono solo trentuno per $c &lt; 1000$, con $\sum{c} = 12523$.
 
-For example, (5, 27, 32) is an abc-hit, because:
-
-GCD(5, 27) = GCD(5, 32) = GCD(27, 32) = 1
-
-5 &lt; 27
-
-5 + 27 = 32
-
-rad(4320) = 30 &lt; 32
-
-It turns out that abc-hits are quite rare and there are only thirty-one abc-hits for c &lt; 1000, with ∑c = 12523.
-
-Find ∑c for c &lt; 120000.
+Trova $\sum{c}$ per $c &lt; 120000$.
 
 # --hints--
 
-`euler127()` should return 18407904.
+`abcHits()` dovrebbe restituire `18407904`.
 
 ```js
-assert.strictEqual(euler127(), 18407904);
+assert.strictEqual(abcHits(), 18407904);
 ```
 
 # --seed--
@@ -47,12 +41,12 @@ assert.strictEqual(euler127(), 18407904);
 ## --seed-contents--
 
 ```js
-function euler127() {
+function abcHits() {
 
   return true;
 }
 
-euler127();
+abcHits();
 ```
 
 # --solutions--

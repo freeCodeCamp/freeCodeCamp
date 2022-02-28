@@ -1,6 +1,6 @@
 ---
 id: 602da04c22201c65d2a019f4
-title: Build a Number Guessing Game
+title: 数当てゲームを構築する
 challengeType: 13
 helpCategory: Backend Development
 url: https://github.com/freeCodeCamp/learn-number-guessing-game
@@ -9,15 +9,15 @@ dashedName: build-a-number-guessing-game
 
 # --description--
 
-This is one of the required projects to earn your certification. For this project, you will use Bash scripting, PostgreSQL, and Git to create a number guessing game that runs in the terminal and saves user information.
+これは認定証を獲得するために必須のプロジェクトの 1 つです。 このプロジェクトでは、Bash のシェルスクリプト、PostgreSQL、Git を使用して、ターミナル内で動作してユーザーの情報を保存する、数当てゲームを作成します。
 
 # --instructions--
 
-**Important:** After you pass all the project tests, save a dump of your database into a `number_guessers.sql` file, as well as your whole `number_guessing_game` folder, so you can complete step 2. There will be instructions how to do that within the virtual machine.
+**重要:** プロジェクトのテストすべてに合格した後に、データベースのダンプを `number_guessers.sql` ファイルに保存し、あわせて `number_guessing_game` フォルダー全体も保存することで、ステップ 2 を完了できます。 仮想マシン内にその方法についての説明があります。
 
 # --notes--
 
-Required files: `number_guessers.sql`, and the whole `number_guessing_game` folder
+必須のファイル: `number_guessers.sql` と、 `number_guessing_game` フォルダー
 
 # --hints--
 
