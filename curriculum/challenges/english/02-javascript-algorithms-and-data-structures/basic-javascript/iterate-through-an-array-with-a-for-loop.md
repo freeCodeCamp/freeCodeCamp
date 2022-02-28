@@ -39,10 +39,11 @@ assert(code.match(/(var|let|const)\s*?total\s*=\s*0.*?;?/));
 assert(total === 20);
 ```
 
-You should use a `for` loop to iterate through `myArr`.
+You should use a `for` loop to iterate through `myArr` with the `length` property.
 
 ```js
-assert(/for\s*\(/g.test(code) && /myArr\s*\[/g.test(code));
+assert(/for\s*\(/g.test(code) && __helpers.removeWhiteSpace(code).match(/myArr.length/gm) 
+&& __helpers.removeWhiteSpace(code).match(/myArr[[]/gm));
 ```
 
 You should not attempt to directly assign the value 20 to `total`.
