@@ -1,6 +1,6 @@
 ---
 id: 5900f4691000cf542c50ff7b
-title: 'Problem 252: Convex Holes'
+title: 'Problema 252: Fori convessi'
 challengeType: 5
 forumTopicId: 301900
 dashedName: problem-252-convex-holes
@@ -8,24 +8,26 @@ dashedName: problem-252-convex-holes
 
 # --description--
 
-Given a set of points on a plane, we define a convex hole to be a convex polygon having as vertices any of the given points and not containing any of the given points in its interior (in addition to the vertices, other given points may lie on the perimeter of the polygon).
+Dato un insieme di punti su un piano, definiamo un foro convesso come un poligono convesso avente come vertici uno dei punti indicati e non contenente nessuno dei punti indicati al suo interno (oltre ai vertici, altri punti indicati possono trovarsi sul perimetro del poligono).
 
-As an example, the image below shows a set of twenty points and a few such convex holes. The convex hole shown as a red heptagon has an area equal to 1049694.5 square units, which is the highest possible area for a convex hole on the given set of points.
+Ad esempio, l'immagine sottostante mostra una serie di venti punti e alcuni di questi fori convessi. Il foro convesso mostrato come un ettagono rosso ha una superficie pari a 1049694.5 unità quadrate, che è la maggiore area possibile per un foro convesso sull'insieme di punti dato.
 
-For our example, we used the first 20 points (T2k−1, T2k), for k = 1,2,…,20, produced with the pseudo-random number generator:
+<img class="img-responsive center-block" alt="insieme di venti punti e fori convessi sul piano" src="https://cdn.freecodecamp.org/curriculum/project-euler/convex-holes.gif" style="background-color: white; padding: 10px;" />
 
-S0 = 290797 Sn+1 = Sn2 mod 50515093 Tn = ( Sn mod 2000 ) − 1000
+Per il nostro esempio, abbiamo usato i primi 20 punti ($T_{2k − 1}$, $T_{2k}$), per $k = 1, 2, \ldots, 20$, prodotto con il generatore di numeri pseudo-casuali:
 
-i.e. (527, 144), (−488, 732), (−454, −947), …
+$$\begin{align} S_0 & = 290\\,797 \\\\ S_{n+1} & = {S_n}^2 \\; \text{mod} \\; 50\\,515\\,093 \\\\ T_n & = (S_n \\; \text{mod} \\; 2000) − 1000 \end{align}$$
 
-What is the maximum area for a convex hole on the set containing the first 500 points in the pseudo-random sequence? Specify your answer including one digit after the decimal point.
+cioè (527, 144), (−488, 732), (−454, −947), …
+
+Qual è l'area massima per un foro convesso sul set contenente i primi 500 punti nella sequenza pseudo-casuale? Specifica la tua risposta includendo una cifra dopo il punto decimale.
 
 # --hints--
 
-`euler252()` should return 104924.
+`convexHoles()` dovrebbe restituire `104924`.
 
 ```js
-assert.strictEqual(euler252(), 104924);
+assert.strictEqual(convexHoles(), 104924);
 ```
 
 # --seed--
@@ -33,12 +35,12 @@ assert.strictEqual(euler252(), 104924);
 ## --seed-contents--
 
 ```js
-function euler252() {
+function convexHoles() {
 
   return true;
 }
 
-euler252();
+convexHoles();
 ```
 
 # --solutions--

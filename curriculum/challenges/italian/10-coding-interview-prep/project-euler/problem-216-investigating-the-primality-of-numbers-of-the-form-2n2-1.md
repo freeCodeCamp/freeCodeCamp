@@ -1,6 +1,6 @@
 ---
 id: 5900f4451000cf542c50ff57
-title: 'Problem 216: Investigating the primality of numbers of the form 2n2-1'
+title: 'Problema 216: Indagare la primalità dei numeri nella forma 2n2-1'
 challengeType: 5
 forumTopicId: 301858
 dashedName: problem-216-investigating-the-primality-of-numbers-of-the-form-2n2-1
@@ -8,22 +8,22 @@ dashedName: problem-216-investigating-the-primality-of-numbers-of-the-form-2n2-1
 
 # --description--
 
-Consider numbers t(n) of the form t(n) = 2n2-1 with n > 1.
+Considera i numeri $t(n)$ nella forma $t(n) = 2n^2 - 1$ con $n > 1$.
 
-The first such numbers are 7, 17, 31, 49, 71, 97, 127 and 161.
+I primi di questi numeri sono 7, 17, 31, 49, 71, 97, 127 e 161.
 
-It turns out that only 49 = 7\*7 and 161 = 7\*23 are not prime.
+Si scopre che solo $49 = 7 \tvolte 7$ e $161 = 7 \tvolte 23$ non sono primi.
 
-For n ≤ 10000 there are 2202 numbers t(n) that are prime.
+Per $n ≤ 10000$ ci sono 2202 numeri $t(n)$ che sono primi.
 
-How many numbers t(n) are prime for n ≤ 50,000,000 ?
+Quanti numeri $t(n)$ sono primi per $n ≤ 50\\,000\\,000$?
 
 # --hints--
 
-`euler216()` should return 5437849.
+`primalityOfNumbers()` dovrebbe restituire `5437849`.
 
 ```js
-assert.strictEqual(euler216(), 5437849);
+assert.strictEqual(primalityOfNumbers(), 5437849);
 ```
 
 # --seed--
@@ -31,12 +31,12 @@ assert.strictEqual(euler216(), 5437849);
 ## --seed-contents--
 
 ```js
-function euler216() {
+function primalityOfNumbers() {
 
   return true;
 }
 
-euler216();
+primalityOfNumbers();
 ```
 
 # --solutions--

@@ -1,6 +1,6 @@
 ---
 id: 5900f4291000cf542c50ff3c
-title: 'Problem 189: Tri-colouring a triangular grid'
+title: 'Problema 189: Tri-colorare una griglia triangolare'
 challengeType: 5
 forumTopicId: 301825
 dashedName: problem-189-tri-colouring-a-triangular-grid
@@ -8,22 +8,26 @@ dashedName: problem-189-tri-colouring-a-triangular-grid
 
 # --description--
 
-Consider the following configuration of 64 triangles:
+Considera la seguente configurazione di 64 triangoli:
 
-We wish to colour the interior of each triangle with one of three colours: red, green or blue, so that no two neighbouring triangles have the same colour. Such a colouring shall be called valid. Here, two triangles are said to be neighbouring if they share an edge. Note: if they only share a vertex, then they are not neighbours.
+<img class="img-responsive center-block" alt="64 triangoli disposti in modo da creare un triangolo più grande con lunghezza del lato di 8 triangoli" src="https://cdn.freecodecamp.org/curriculum/project-euler/tri-colouring-a-triangular-grid-1.gif" style="background-color: white; padding: 10px;" />
 
-For example, here is a valid colouring of the above grid:
+Desideriamo colorare l'interno di ogni triangolo con uno dei tre colori: rosso, verde o blu, in modo che due triangoli vicini non abbiano lo stesso colore. Tale colorazione è denominata valida. Definiamo vicini due triangoli che condividono un bordo. Nota: se condividono solo un vertice, allora non sono vicini.
 
-A colouring C' which is obtained from a colouring C by rotation or reflection is considered distinct from C unless the two are identical.
+Per esempio, ecco una colorazione valida della griglia di cui sopra:
 
-How many distinct valid colourings are there for the above configuration?
+<img class="img-responsive center-block" alt="griglia colorata di 64 triangoli" src="https://cdn.freecodecamp.org/curriculum/project-euler/tri-colouring-a-triangular-grid-2.gif" style="background-color: white; padding: 10px;" />
+
+Una colorazione C' ottenuta da una colorazione C per rotazione o riflessione è considerata distinta da C a meno che le due non siano identiche.
+
+Quante distinte colorazioni valide esistono per la configurazione di cui sopra?
 
 # --hints--
 
-`euler189()` should return 10834893628237824.
+`triangularGridColoring()` dovrebbe restituire `10834893628237824`.
 
 ```js
-assert.strictEqual(euler189(), 10834893628237824);
+assert.strictEqual(triangularGridColoring(), 10834893628237824);
 ```
 
 # --seed--
@@ -31,12 +35,12 @@ assert.strictEqual(euler189(), 10834893628237824);
 ## --seed-contents--
 
 ```js
-function euler189() {
+function triangularGridColoring() {
 
   return true;
 }
 
-euler189();
+triangularGridColoring();
 ```
 
 # --solutions--
