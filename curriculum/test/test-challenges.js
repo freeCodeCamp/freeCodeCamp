@@ -43,7 +43,6 @@ const testEvaluator =
 const { getLines } = require('../../utils/get-lines');
 const { isAuditedCert } = require('../../utils/is-audited');
 
-const { sortChallengeFiles } = require('../../utils/sort-challengefiles');
 const {
   getChallengesForLang,
   getMetaForBlock,
@@ -73,6 +72,14 @@ const { flatten, isEmpty, cloneDeep, isEqual } = lodash;
 
 // rethrow unhandled rejections to make sure the tests exit with -1
 process.on('unhandledRejection', err => handleRejection(err));
+// If an uncaught exception gets here, then mocha is in an unexpected state. All
+// we can do is log the exception and exit with a non-zero code.
+process.on('uncaughtException', err => {
+  console.error('Uncaught exception:', err.message);
+  console.error(err.stack);
+  // eslint-disable-next-line no-process-exit
+  process.exit(1);
+});
 
 const handleRejection = err => {
   // setting the error code because node does not (yet) exit with a non-zero
@@ -525,9 +532,7 @@ ${inspect(commentMap)}
           // TODO: the no-solution filtering is a little convoluted:
           const noSolution = new RegExp('// solution required');
 
-          const solutionsAsArrays = solutions.map(sortChallengeFiles);
-
-          const filteredSolutions = solutionsAsArrays.filter(solution => {
+          const filteredSolutions = solutions.filter(solution => {
             return !isEmpty(
               solution.filter(
                 challengeFile => !noSolution.test(challengeFile.contents)
@@ -670,7 +675,11 @@ async function initializeTestRunner(build, sources, code, loadEnzyme) {
   await page.evaluate(
     async (code, sources, loadEnzyme) => {
       const getUserInput = fileName => sources[fileName];
-      await document.__initTestFrame({ code, getUserInput, loadEnzyme });
+      await document.__initTestFrame({
+        code: sources,
+        getUserInput,
+        loadEnzyme
+      });
     },
     code,
     sources,

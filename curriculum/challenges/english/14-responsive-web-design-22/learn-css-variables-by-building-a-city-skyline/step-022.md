@@ -7,7 +7,7 @@ dashedName: step-22
 
 # --description--
 
-Create a new variable by the other one called `--building-color2` and give it a value of `#66cc99`. Then set it as the `background-color` of `.bb2`.
+Create a new variable below the other one called `--building-color2` and give it a value of `#66cc99`. Then set it as the `background-color` of `.bb2`.
 
 # --hints--
 

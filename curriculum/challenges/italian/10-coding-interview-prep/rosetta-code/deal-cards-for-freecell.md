@@ -1,6 +1,6 @@
 ---
 id: 59694356a6e7011f7f1c5f4e
-title: Deal cards for FreeCell
+title: Dai le carte per FreeCell
 challengeType: 5
 forumTopicId: 302246
 dashedName: deal-cards-for-freecell
@@ -8,11 +8,11 @@ dashedName: deal-cards-for-freecell
 
 # --description--
 
-*FreeCell* is the solitaire card game that Paul Alfille introduced to the PLATO system in 1978. Jim Horne, at Microsoft, changed the name to FreeCell and reimplemented the game for [DOS](https://rosettacode.org/wiki/DOS "DOS"), then [Windows](https://rosettacode.org/wiki/Windows "Windows"). This version introduced 32000 numbered deals.
+*FreeCell* è il gioco di carte solitario che Paul Alfille ha introdotto nel sistema PLATO nel 1978. Jim Horne, in Microsoft, ha cambiato il nome del gioco a FreeCell e lo ha reimplementato per [DOS](https://rosettacode.org/wiki/DOS "DOS"), e poi per [Windows](https://rosettacode.org/wiki/Windows "Windows"). Questa versione ha introdotto 32000 mani numerate.
 
-As the game became popular, Jim Horne disclosed the algorithm, and other implementations of FreeCell began to reproduce the Microsoft deals. These deals are numbered from 1 to 32000. Newer versions from Microsoft have 1 million deals, numbered from 1 to 1000000; some implementations allow numbers outside that range.
+Come il gioco è diventato più popolare, Jim Horne ha rivelato l'algoritmo, e altre implementazioni di FreeCell hanno iniziato a riprodutte le mani di Microsoft. Queste mani sono numerate da 1 a 32000. Versioni più nuove da Microsoft hanno 1 milione di mani, numerate da 1 a 1000000; alcune implementazioni permettono numeri al di fuori di quel range.
 
-The algorithm uses this [linear congruential generator](https://rosettacode.org/wiki/linear congruential generator "linear congruential generator") from Microsoft C:
+L'algoritmo usa questo [generatore congruenziale lineare](https://rosettacode.org/wiki/linear congruential generator "linear congruential generator") da Microsoft C:
 
 <ul>
   <li>$state_{n + 1} \equiv 214013 \times state_n + 2531011 \pmod{2^{31}}$</li>
@@ -20,24 +20,24 @@ The algorithm uses this [linear congruential generator](https://rosettacode.org/
   <li>$rand_n$ is in range 0 to 32767.</li>
 </ul>
 
-The algorithm follows:
+L'algoritmo segue:
 
 <ol>
-  <li>Seed the RNG with the number of the deal.
-  </li><li>Create an <a href='https://rosettacode.org/wiki/array' title='array' target='_blank'>array</a> of 52 cards: Ace of Clubs, Ace of Diamonds, Ace of Hearts, Ace of Spades, 2 of Clubs, 2 of Diamonds, and so on through the ranks: Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King. The array indexes are 0 to 51, with Ace of Clubs at 0, and King of Spades at 51.</li>
-  <li>Until the array is empty:</li>
-  <li>Choose a random card at index ≡ next random number (mod array length).</li>
+  <li>Fai il seed del RNG con il numero della mano.
+  </li><li>Crea un <a href='https://rosettacode.org/wiki/array' title='array' target='_blank'>array</a> di 52 carte: asso di fiori, asso di denari, asso di cuori, asso di picche, 2 di fiori, 2 di denari e così via attraverso i semi: asso, 2, 3, 4, 5, 6, 7, 8, 9, 10, Fante, Regina, Re. Gli indici dell'array sono da 0 a 51, con l'asso di fiori a 0, e Re di picche a 51.</li>
+  <li>Fino a quando l'array non è vuoto:</li>
+  <li>Scegli una carta casuale dall'indice ≡ prossimo numero casuale (modulo lunghezza dell'array).</li>
     <ul>
-      <li>Swap this random card with the last card of the array.</li>
-      <li>Remove this random card from the array. (Array length goes down by 1.)</li>
-      <li>Deal this random card.</li>
+      <li>Scambia questa carta casuale con l'ultima carta dell'array.</li>
+      <li>Rimuovi questa carta casuale dall'array. (La lunghezza dell'array scende di 1.)</li>
+      <li>Distribuisci questa carta casuale.</li>
     </ul>
-  <li>Deal all 52 cards, face up, across 8 columns. The first 8 cards go in 8 columns, the next 8 cards go on the first 8 cards, and so on.</li>
+  <li>Distribuisci tutte le 52 carte, a faccia in su, su 8 colonne. Le prime 8 carte vanno in 8 colonne, le sucessive 8 carte vanno sulle prime 8 carte, e così via.</li>
 </ol>
 
-**Example:**
+**Per esempio:**
 
-**Order to deal cards**
+**Ordine in cui dare le carte**
 
 <pre> 1  2  3  4  5  6  7  8
  9 10 11 12 13 14 15 16
@@ -47,7 +47,7 @@ The algorithm follows:
 41 42 43 44 45 46 47 48
 49 50 51 52</pre>
 
-**Game #1**
+**Gioco #1**
 
 ```js
 [
@@ -61,7 +61,7 @@ The algorithm follows:
 ]
 ```
 
-**Game #617**
+**Gioco #617**
 
 ```js
 [
@@ -77,37 +77,37 @@ The algorithm follows:
 
 # --instructions--
 
-Write a function to take a deal number and deal cards in the same order as this algorithm. The function must return a two dimensional array representing the FreeCell board.
+Scrivi una funzione che prende un numero di mano e distribuisce le carte nello stesso ordine di questo algoritmo. La funzione deve restituire un array bidimensionale rappresentante il tavolo di FreeCell.
 
-Deals can also be checked against [FreeCell solutions to 1000000 games](https://freecellgamesolutions.com/). (Summon a video solution, and it displays the initial deal.)
+Le mani possono anche essere confrontante con [le soluzioni di FreeCell per 1000000 di partite](https://freecellgamesolutions.com/). (Guarda la soluzione video, e mostra la mano iniziale.)
 
 # --hints--
 
-`dealFreeCell` should be a function.
+`dealFreeCell` dovrebbe essere una funzione.
 
 ```js
 assert(typeof dealFreeCell === 'function');
 ```
 
-`dealFreeCell(seed)` should return an object.
+`dealFreeCell(seed)` dovrebbe restituire un oggetto.
 
 ```js
 assert(typeof dealFreeCell(1) === 'object');
 ```
 
-`dealFreeCell(seed)` should return an array of length 7.
+`dealFreeCell(seed)` dovrebbe restituire un array di lunghezza 7.
 
 ```js
 assert(dealFreeCell(1).length === 7);
 ```
 
-`dealFreeCell(1)` should return an array identical to example "Game #1"
+`dealFreeCell(1)` dovrebbe restituire un array identico all'esempio "Game #1"
 
 ```js
 assert.deepEqual(dealFreeCell(1), game1);
 ```
 
-`dealFreeCell(617)` should return an array identical to example "Game #617"
+`dealFreeCell(617)` dovrebbe restituire un array identico all'esempio "Game #617"
 
 ```js
 assert.deepEqual(dealFreeCell(617), game617);

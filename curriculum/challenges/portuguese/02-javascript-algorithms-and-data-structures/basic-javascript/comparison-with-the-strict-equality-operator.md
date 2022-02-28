@@ -16,11 +16,9 @@ Se os valores que são comparados tiverem valores diferentes, são considerados 
 **Exemplos**
 
 ```js
-3 ===  3
-3 === '3'
+3 ===  3  // true
+3 === '3' // false
 ```
-
-Essas condições retornariam `true` e `false`, respectivamente.
 
 No segundo exemplo, `3` é um tipo de `Number` e `'3'` é um tipo `String`.
 

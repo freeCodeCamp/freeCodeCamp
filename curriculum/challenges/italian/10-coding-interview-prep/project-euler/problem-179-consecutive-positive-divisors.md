@@ -1,6 +1,6 @@
 ---
 id: 5900f41f1000cf542c50ff32
-title: 'Problem 179: Consecutive positive divisors'
+title: 'Problema 179: divisori consecutivi positivi'
 challengeType: 5
 forumTopicId: 301814
 dashedName: problem-179-consecutive-positive-divisors
@@ -8,14 +8,14 @@ dashedName: problem-179-consecutive-positive-divisors
 
 # --description--
 
-Find the number of integers 1 &lt; n &lt; 107, for which n and n + 1 have the same number of positive divisors. For example, 14 has the positive divisors 1, 2, 7, 14 while 15 has 1, 3, 5, 15.
+Trova il numero di interi $1 &lt; n &lt; {10}^7$, per cui $n$ e $n + 1$ hanno lo stesso numero di divisori positivi. Per esempio, 14 ha i divisori positivi 1, 2, 7, 14, mentre 15 ha 1, 3, 5, 15.
 
 # --hints--
 
-`euler179()` should return 986262.
+`consecutivePositiveDivisors()` dovrebbe restituire `986262`.
 
 ```js
-assert.strictEqual(euler179(), 986262);
+assert.strictEqual(consecutivePositiveDivisors(), 986262);
 ```
 
 # --seed--
@@ -23,12 +23,12 @@ assert.strictEqual(euler179(), 986262);
 ## --seed-contents--
 
 ```js
-function euler179() {
+function consecutivePositiveDivisors() {
 
   return true;
 }
 
-euler179();
+consecutivePositiveDivisors();
 ```
 
 # --solutions--

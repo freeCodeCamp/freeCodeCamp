@@ -1,0 +1,37 @@
+---
+id: 561add10cb82ac39a17513bc
+title: レガシーデータ可視化認定証
+certification: legacy-data-visualization
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: bd7157d8c242eddfaeb5bd13
+    title: マークダウンプレビューアを作成する
+  - 
+    id: bd7156d8c242eddfaeb5bd13
+    title: Camper Leaderboard を作成する
+  - 
+    id: bd7155d8c242eddfaeb5bd13
+    title: レシピボックスを作成する
+  - 
+    id: bd7154d8c242eddfaeb5bd13
+    title: ライフゲームを作成する
+  - 
+    id: bd7153d8c242eddfaeb5bd13
+    title: ダンジョン探索ローグライクゲームを作成する
+  - 
+    id: bd7168d8c242eddfaeb5bd13
+    title: 棒グラフでデータを可視化する
+  - 
+    id: bd7178d8c242eddfaeb5bd13
+    title: 散布図でデータを可視化する
+  - 
+    id: bd7188d8c242eddfaeb5bd13
+    title: ヒートマップでデータを可視化する
+  - 
+    id: bd7198d8c242eddfaeb5bd13
+    title: 力学モデルによるグラフで国の隣接関係を表示する
+  - 
+    id: bd7108d8c242eddfaeb5bd13
+    title: 世界地図にデータをマッピングする

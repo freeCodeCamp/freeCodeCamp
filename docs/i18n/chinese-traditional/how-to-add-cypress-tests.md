@@ -44,11 +44,7 @@ To run tests against production builds, replace `dev` with `prd` below.
 
 ## Cypress-GitPod Setup
 
-### 1. Ensure you are on the _Feature Preview_ of GitPod _as of 01/02/2021_
-
-- Go to [GitPod Docs - Feature Preview](https://www.gitpod.io/docs/feature-preview/) to see how to enable _Feature Preview_
-
-### 2. Ensure Development Environment is Running
+### 1. Ensure Development Environment is Running
 
 If starting the GitPod environment did not automatically develop the environment:
 
@@ -70,7 +66,7 @@ npm run seed
 npm run develop
 ```
 
-### 3. Install Cypress Build Tools
+### 2. Install Cypress Build Tools
 
 ```console
 npm run cypress:install-build-tools

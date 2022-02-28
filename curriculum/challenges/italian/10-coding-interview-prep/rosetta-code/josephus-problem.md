@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ec5
-title: Josephus problem
+title: Problema di Josephus
 challengeType: 5
 forumTopicId: 302294
 dashedName: josephus-problem
@@ -8,65 +8,65 @@ dashedName: josephus-problem
 
 # --description--
 
-[Josephus problem](https://en.wikipedia.org/wiki/Josephus problem) is a math puzzle with a grim description: $n$ prisoners are standing on a circle, sequentially numbered from $0$ to $n-1$.
+[Il problema di Josephus](https://en.wikipedia.org/wiki/Josephus problem) è un puzzle matematico con una descrizione truce: $n$ prigionieri sono in piedi su un cerchio, numerato in sequenza da $0$ a $n-1$.
 
-An executioner walks along the circle, starting from prisoner $0$, removing every $k$-th prisoner and killing him.
+Un boia cammina lungo il cerchio, iniziando dal prigioniero $0$, rimuovendo ogni $k$-mo prigioniero e uccidendolo.
 
-As the process goes on, the circle becomes smaller and smaller, until only one prisoner remains, who is then freed.
+Mentre il processo continua, il cerchio diventa più piccolo, fino a quando rimane solo un prigioniero, che poi viene liberato.
 
-For example, if there are $n=5$ prisoners and $k=2$, the order the prisoners are killed in (let's call it the "killing sequence") will be 1, 3, 0, and 4, and the survivor will be #2.
+Ad esempio, se ci sono $n=5$ prigionieri e $k=2$, l'ordine in cui i prigionieri vengono uccisi (chiamiamolo la "sequenza di uccisione") sarà 1, 3, 0 e 4, e il sopravvissuto sarà il numero 2.
 
-Given any $n, k > 0$, find out which prisoner will be the final survivor.
+Dato qualsiasi $n, k > 0$, scopri quale prigioniero sarà il sopravvissuto finale.
 
-In one such incident, there were 41 prisoners and every 3<sup>rd</sup> prisoner was being killed ($k=3$).
+In una di queste situazioni, ci furono 41 prigionieri e ogni 3<sup>°</sup> prigioniero fu ucciso ($k= 3 $).
 
-Among them was a clever chap name Josephus who worked out the problem, stood at the surviving position, and lived on to tell the tale.
+Tra di loro c'era una persona intelligente di nome Josephus che elaborò il problema, si trovava in posizione di sopravvivenza, e ha vissuto per raccontare la storia.
 
-Which number was he?
+A che numero corrisponde lui?
 
 # --instructions--
 
-Write a function that takes the initial number of prisoners and 'k' as parameter and returns the number of the prisoner that survives.
+Scrvi una funzione che prende il numero iniziale dei prigionieri e 'k' come parametro e ritorna il numero del prigioniero che è sopravvissuto.
 
 # --hints--
 
-`josephus` should be a function.
+`josephus` dovrebbe essere una funzione.
 
 ```js
 assert(typeof josephus == 'function');
 ```
 
-`josephus(30,3)` should return a number.
+`josephus(30,3)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof josephus(30, 3) == 'number');
 ```
 
-`josephus(30,3)` should return `28`.
+`josephus(30,3)` dovrebbe restituire `28`.
 
 ```js
 assert.equal(josephus(30, 3), 28);
 ```
 
-`josephus(30,5)` should return `2`.
+`josephus(30,5)` dovrebbe restituire `2`.
 
 ```js
 assert.equal(josephus(30, 5), 2);
 ```
 
-`josephus(20,2)` should return `8`.
+`josephus(20,2)` dovrebbe restituire `8`.
 
 ```js
 assert.equal(josephus(20, 2), 8);
 ```
 
-`josephus(17,6)` should return `1`.
+`josephus(17,6)` dovrebbe restituire `1`.
 
 ```js
 assert.equal(josephus(17, 6), 1);
 ```
 
-`josephus(29,4)` should return `1`.
+`josephus(29,4)` dovrebbe restituire `1`.
 
 ```js
 assert.equal(josephus(29, 4), 1);

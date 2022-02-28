@@ -1,6 +1,6 @@
 ---
 id: 5900f3761000cf542c50fe89
-title: 'Problem 10: Summation of primes'
+title: 'Problema 10: Somma dei numeri primi'
 challengeType: 5
 forumTopicId: 301723
 dashedName: problem-10-summation-of-primes
@@ -8,37 +8,37 @@ dashedName: problem-10-summation-of-primes
 
 # --description--
 
-The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+La somma dei numeri primi sotto 10 è 2 + 3 + 5 + 7 = 17.
 
-Find the sum of all the primes below `n`.
+Trova la somma di tutti i numeri primi sotto `n`.
 
 # --hints--
 
-`primeSummation(17)` should return a number.
+`primeSummation(17)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof primeSummation(17) === 'number');
 ```
 
-`primeSummation(17)` should return 41.
+`primeSummation(17)` dovrebbe restituire 41.
 
 ```js
 assert.strictEqual(primeSummation(17), 41);
 ```
 
-`primeSummation(2001)` should return 277050.
+`primeSummation(2001)` dovrebbe ritornare 277050.
 
 ```js
 assert.strictEqual(primeSummation(2001), 277050);
 ```
 
-`primeSummation(140759)` should return 873608362.
+`primeSummation(140759)` dovrebbe restituire 873608362.
 
 ```js
 assert.strictEqual(primeSummation(140759), 873608362);
 ```
 
-`primeSummation(2000000)` should return 142913828922.
+`primeSummation(2000000)` dovrebbe restituire 142913828922.
 
 ```js
 assert.strictEqual(primeSummation(2000000), 142913828922);

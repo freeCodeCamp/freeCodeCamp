@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8000
-title: Sort disjoint sublist
+title: Ordina sottoliste disgiunte
 challengeType: 5
 forumTopicId: 302307
 dashedName: sort-disjoint-sublist
@@ -8,9 +8,9 @@ dashedName: sort-disjoint-sublist
 
 # --description--
 
-Given a list of values and a set of integer indices into that value list, the task is to sort the values at the given indices, but preserving the values at indices outside the set of those to be sorted.
+Dato un elenco di valori e un insieme di indici interi in tale lista di valori, l'attività è quella di ordinare i valori negli indici indicati, ma mantenendo i valori in indici al di fuori dell'insieme di quelli da ordinare.
 
-Make your function work with the following list of values and set of indices:
+Fai funzionare la tua funzione con il seguente elenco di valori e set di indici:
 
 <code>values: [7, <b>6</b>, 5, 4, 3, 2, <b>1</b>, <b>0</b>]</code>
 
@@ -18,25 +18,25 @@ Make your function work with the following list of values and set of indices:
 indices(0-based): {6, 1, 7}
 ```
 
-Where the correct result would be:
+Dove il risultato corretto sarà:
 
 <code>[7, <b>0</b>, 5, 4, 3, 2, <b>1</b>, <b>6</b>]</code>.
 
 # --hints--
 
-`sortDisjoint` should be a function.
+`sortDisjoint` dovrebbe essere una funzione.
 
 ```js
 assert(typeof sortDisjoint == 'function');
 ```
 
-`sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [6, 1, 7])` should return an array.
+`sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [6, 1, 7])` dovrebbe restituire un array.
 
 ```js
 assert(Array.isArray(sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [6, 1, 7])));
 ```
 
-`sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [6, 1, 7])` should return `[7, 0, 5, 4, 3, 2, 1, 6]`.
+`sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [6, 1, 7])` dovrebbe restituire `[7, 0, 5, 4, 3, 2, 1, 6]`.
 
 ```js
 assert.deepEqual(sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [6, 1, 7]), [
@@ -51,7 +51,7 @@ assert.deepEqual(sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [6, 1, 7]), [
 ]);
 ```
 
-`sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [1, 2, 5, 6])` should return `[7, 1, 2, 4, 3, 5, 6, 0]`.
+`sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [1, 2, 5, 6])` dovrebbe restituire `[7, 1, 2, 4, 3, 5, 6, 0]`.
 
 ```js
 assert.deepEqual(sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [1, 2, 5, 6]), [
@@ -66,7 +66,7 @@ assert.deepEqual(sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [1, 2, 5, 6]), [
 ]);
 ```
 
-`sortDisjoint([8, 7, 6, 5, 4, 3, 2, 1], [6, 1, 7])` should return `[8, 1, 6, 5, 4, 3, 2, 7]`.
+`sortDisjoint([8, 7, 6, 5, 4, 3, 2, 1], [6, 1, 7])` dovrebbe restituire `[8, 1, 6, 5, 4, 3, 2, 7]`.
 
 ```js
 assert.deepEqual(sortDisjoint([8, 7, 6, 5, 4, 3, 2, 1], [6, 1, 7]), [
@@ -81,7 +81,7 @@ assert.deepEqual(sortDisjoint([8, 7, 6, 5, 4, 3, 2, 1], [6, 1, 7]), [
 ]);
 ```
 
-`sortDisjoint([8, 7, 6, 5, 4, 3, 2, 1], [1, 3, 5, 6])` should return `[8, 2, 6, 3, 4, 5, 7, 1]`.
+`sortDisjoint([8, 7, 6, 5, 4, 3, 2, 1], [1, 3, 5, 6])` dovrebbe restituire `[8, 2, 6, 3, 4, 5, 7, 1]`.
 
 ```js
 assert.deepEqual(sortDisjoint([8, 7, 6, 5, 4, 3, 2, 1], [1, 3, 5, 6]), [
@@ -96,7 +96,7 @@ assert.deepEqual(sortDisjoint([8, 7, 6, 5, 4, 3, 2, 1], [1, 3, 5, 6]), [
 ]);
 ```
 
-`sortDisjoint([6, 1, 7, 1, 3, 5, 6], [6, 1, 5, 4])` should return `[6, 1, 7, 1, 3, 5, 6]`.
+`sortDisjoint([6, 1, 7, 1, 3, 5, 6], [6, 1, 5, 4])` dovrebbe restituire `[6, 1, 7, 1, 3, 5, 6]`.
 
 ```js
 assert.deepEqual(sortDisjoint([6, 1, 7, 1, 3, 5, 6], [6, 1, 5, 4]), [

@@ -1,5 +1,5 @@
 ---
-id: 6193e5280857e72be1efc99d
+id: 61fd77f7ad2aeb5ae34d07d6
 title: Step 14
 challengeType: 0
 dashedName: step-14
@@ -7,48 +7,64 @@ dashedName: step-14
 
 # --description--
 
-Copy the entire contents of your first `.section` element and paste them into your second `.section` element.
+In your second `tr` element, add a `th` element with the text `Checking Our primary transactional account.`. Wrap that text, except for `Checking `, in a `span` element with the `class` attribute set to `description`.
+
+Following that, add three `td` elements with the following text (in order): `$54`, `$56`, `$53`. Give the third `td` element a `class` attribute set to `current`.
 
 # --hints--
 
-Your second `.section` element should have four `p` elements.
+Your second `tr` should have a `th` element.
 
 ```js
-assert(document.querySelectorAll('.section')?.[1]?.querySelectorAll('p')?.length === 4);
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[1]?.querySelector('th'));
 ```
 
-Your second `.section` element should have three `p` elements with the class set to `row`.
+Your `th` element should have the text `Checking Our primary transactional account.`.
 
 ```js
-const ps = Array.from(document.querySelectorAll('.section')?.[1]?.querySelectorAll('p'));
-assert(ps?.filter?.(p => p?.classList?.contains('row') && !p?.classList?.contains('total'))?.length === 3);
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[1]?.querySelector('th')?.innerText === 'Checking Our primary transactional account.');
 ```
 
-Your second `.section` element should have a `p` element with the class `row` and `total`.
+You should wrap the text `Our primary transactional account.` in a `span` element.
 
 ```js
-assert(document.querySelectorAll('.section')?.[1]?.querySelectorAll('p.row.total')?.length === 1);
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[1]?.querySelector('th > span')?.textContent === 'Our primary transactional account.');
 ```
 
-Your `.row` elements should each have four `span` elements.
+Your `span` element should have the `class` attribute set to `description`.
 
 ```js
-const rows = Array.from(document.querySelectorAll('.section')?.[1]?.querySelectorAll('p.row'));
-assert(rows?.every?.(row => row?.querySelectorAll('span')?.length === 4));
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[1]?.querySelector('th > span')?.classList?.contains('description'));
 ```
 
-Within each `.row` element, your first `span` element should have the class set to `name`.
+You should have three `td` elements.
 
 ```js
-const rows = Array.from(document.querySelectorAll('.section')?.[1]?.querySelectorAll('p.row'));
-assert(rows?.every?.(row => row?.querySelectorAll('span')?.[0]?.classList?.contains('name')));
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[1]?.querySelectorAll('td').length === 3);
 ```
 
-Within each `.row` element, your last `span` element should have the class set to `current`.
+Your first `td` element should have the text `$54`.
 
 ```js
-const rows = Array.from(document.querySelectorAll('.section')?.[1]?.querySelectorAll('p.row'));
-assert(rows?.every?.(row => row?.querySelectorAll('span')?.[3]?.classList?.contains('current')));
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[1]?.querySelectorAll('td')?.[0]?.textContent === '$54');
+```
+
+Your second `td` element should have the text `$56`.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[1]?.querySelectorAll('td')?.[1]?.textContent === '$56');
+```
+
+Your third `td` element should have the text `$53`.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[1]?.querySelectorAll('td')?.[2]?.textContent === '$53');
+```
+
+Your third `td` element should have the `class` set to `current`.
+
+```js
+assert(document.querySelector('tbody')?.querySelectorAll('tr')?.[1]?.querySelectorAll('td')?.[2]?.classList?.contains('current'));
 ```
 
 # --seed--
@@ -59,60 +75,60 @@ assert(rows?.every?.(row => row?.querySelectorAll('span')?.[3]?.classList?.conta
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AcmeWidgetCorp Balance Sheet</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
-    <div id="sheet">
-      <div id="header">
-        <h1>Balance Sheet</h1>
-        <h2>AcmeWidgetCorp</h2>
-        <p class="row">
-          <span>2019</span>
-          <span>2020</span>
-          <span class="current">2021</span>
-        </p>
-      </div>
-      <h2>Assets</h2>
-      <div class="section">
-        <p class="row">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-        <span class="notes"></span>
-        <p class="row">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-        <span class="notes"></span>
-        <p class="row">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-        <span class="notes"></span>
-        <p class="row total">
-          <span class="name"></span>
-          <span></span>
-          <span></span>
-          <span class="current"></span>
-        </p>
-      </div>
-      <h2>Liabilities</h2>
+    <main>
+      <section>
+        <h1>
+          <span class="flex">
+            <span>AcmeWidgetCorp</span>
+            <span>Balance Sheet</span>
+          </span>
+        </h1>
+        <div id="years" aria-hidden="true">
+          <span class="year">2019</span>
+          <span class="year">2020</span>
+          <span class="year">2021</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <caption>Assets</caption>
+            <thead>
+              <tr>
+                <td></td>
+                <th><span class="sr-only year">2019</span></th>
+                <th><span class="sr-only year">2020</span></th>
+                <th class="current"><span class="sr-only year">2021</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="data">
+                <th>Cash <span class="description">This is the cash we currently have on hand.</span></th>
+                <td>$25</td>
+                <td>$30</td>
+                <td class="current">$28</td>
+              </tr>
 --fcc-editable-region--
-      <div class="section">
-
-      </div>
+              <tr class="data">
+              </tr>
 --fcc-editable-region--
-    </div>
-    <footer>Last Updated: December 2021</footer>
+              <tr class="data">
+              </tr>
+              <tr class="total">
+              </tr>
+            </tbody>
+          </table>
+          <table>
+          </table>
+          <table>
+          </table>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
 ```

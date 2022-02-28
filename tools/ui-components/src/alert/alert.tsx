@@ -32,22 +32,17 @@ export function Alert({
   const variantClass = variantClasses[variant];
 
   const classes = [
-    'relative p-4 mb-6 border border-transparent break-words',
+    'flex items-start p-4 mb-6 border border-transparent break-words',
     variantClass,
-    isDismissable ? 'pr-10' : '',
     className
   ].join(' ');
 
   return (
     <div className={classes} role='alert'>
+      <div className='grow'>{children}</div>
       {isDismissable && (
-        <CloseButton
-          className='absolute right-4'
-          label={dismissLabel}
-          onClick={onDismiss}
-        />
+        <CloseButton label={dismissLabel} onClick={onDismiss} />
       )}
-      {children}
     </div>
   );
 }

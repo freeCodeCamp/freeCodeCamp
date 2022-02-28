@@ -1,5 +1,5 @@
 ---
-id: 6193f85ab1de4356da678090
+id: 61fdaea3999cb19d76ce717b
 title: Step 32
 challengeType: 0
 dashedName: step-32
@@ -7,26 +7,20 @@ dashedName: step-32
 
 # --description--
 
-Now you need to align the text content of your sheet so that it appears in columns. Start with a `.row` selector to target all of your elements that have the balance values in them. Give this selector a `display` property set to `flex`, and a `justify-content` property set to `flex-end`.
+Now you need to size these elements down. Give your `span[class~="sr-only"]` selector a `width` and `height` property set to `1px`.
 
 # --hints--
 
-You should have a new `.row` selector.
+Your `span[class~="sr-only"]` selector should have a `width` property set to `1px`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.row'));
+assert(new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.getPropertyValue('width') === '1px');
 ```
 
-Your `.row` selector should have a `display` property set to `flex`.
+Your `span[class~="sr-only"]` selector should have a `height` property set to `1px`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.row')?.display === 'flex');
-```
-
-Your `.row` selector should have a `justify-content` property set to `flex-end`.
-
-```js
-assert(new __helpers.CSSHelp(document).getStyle('.row')?.justifyContent === 'flex-end');
+assert(new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.getPropertyValue('height') === '1px');
 ```
 
 # --seed--
@@ -37,117 +31,143 @@ assert(new __helpers.CSSHelp(document).getStyle('.row')?.justifyContent === 'fle
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AcmeWidgetCorp Balance Sheet</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
-    <div id="sheet">
-      <div id="header">
-        <h1>Balance Sheet</h1>
-        <h2>AcmeWidgetCorp</h2>
-        <p class="row">
-          <span>2019</span>
-          <span>2020</span>
-          <span class="current">2021</span>
-        </p>
-      </div>
-      <h2>Assets</h2>
-      <div class="section">
-        <p class="row">
-          <span class="name">Cash</span>
-          <span>$25</span>
-          <span>$30</span>
-          <span class="current">$28</span>
-        </p>
-        <span class="notes">This is the cash we currently have on hand.</span>
-        <p class="row">
-          <span class="name">Checking</span>
-          <span>$54</span>
-          <span>$56</span>
-          <span class="current">$53</span>
-        </p>
-        <span class="notes">Our primary transactional account.</span>
-        <p class="row">
-          <span class="name">Savings</span>
-          <span>$500</span>
-          <span>$650</span>
-          <span class="current">$728</span>
-        </p>
-        <span class="notes">Funds set aside for emergencies.</span>
-        <p class="row total">
-          <span class="name">Total</span>
-          <span>$579</span>
-          <span>$736</span>
-          <span class="current">$809</span>
-        </p>
-      </div>
-      <h2>Liabilities</h2>
-      <div class="section">
-        <p class="row">
-          <span class="name">Loans</span>
-          <span>$500</span>
-          <span>$250</span>
-          <span class="current">$0</span>
-        </p>
-        <span class="notes">The outstanding balance on our startup loan.</span>
-        <p class="row">
-          <span class="name">Expenses</span>
-          <span>$200</span>
-          <span>$300</span>
-          <span class="current">$400</span>
-        </p>
-        <span class="notes">Annual anticipated expenses, such as payroll.</span>
-        <p class="row">
-          <span class="name">Credit</span>
-          <span>$50</span>
-          <span>$50</span>
-          <span class="current">$75</span>
-        </p>
-        <span class="notes">The running balance on our line of credit.</span>
-        <p class="row total">
-          <span class="name">Total</span>
-          <span>$750</span>
-          <span>$600</span>
-          <span class="current">$475</span>
-        </p>
-      </div>
-      <h2>Net Worth</h2>
-      <div class="section">
-        <p class="row total">
-          <span class="name">Total</span>
-          <span>-$171</span>
-          <span>$136</span>
-          <span class="current">$334</span>
-        </p>
-      </div>
-    </div>
-    <footer>Last Updated: December 2021</footer>
+    <main>
+      <section>
+        <h1>
+          <span class="flex">
+            <span>AcmeWidgetCorp</span>
+            <span>Balance Sheet</span>
+          </span>
+        </h1>
+        <div id="years" aria-hidden="true">
+          <span class="year">2019</span>
+          <span class="year">2020</span>
+          <span class="year">2021</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <caption>Assets</caption>
+            <thead>
+              <tr>
+                <td></td>
+                <th><span class="sr-only year">2019</span></th>
+                <th><span class="sr-only year">2020</span></th>
+                <th class="current"><span class="sr-only year">2021</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="data">
+                <th>Cash <span class="description">This is the cash we currently have on hand.</span></th>
+                <td>$25</td>
+                <td>$30</td>
+                <td class="current">$28</td>
+              </tr>
+              <tr class="data">
+                <th>Checking <span class="description">Our primary transactional account.</span></th>
+                <td>$54</td>
+                <td>$56</td>
+                <td class="current">$53</td>
+              </tr>
+              <tr class="data">
+                <th>Savings <span class="description">Funds set aside for emergencies.</span></th>
+                <td>$500</td>
+                <td>$650</td>
+                <td class="current">$728</td>
+              </tr>
+              <tr class="total">
+                <th>Total <span class="sr-only">Assets</span></th>
+                <td>$579</td>
+                <td>$736</td>
+                <td class="current">$809</td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <caption>Liabilities</caption>
+            <thead>
+              <tr>
+              <td></td>
+              <th><span class="sr-only">2019</span></th>
+              <th><span class="sr-only">2020</span></th>
+              <th><span class="sr-only">2021</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="data">
+                <th>Loans <span class="description">The outstanding balance on our startup loan.</span></th>
+                <td>$500</td>
+                <td>$250</td>
+                <td class="current">$0</td>
+              </tr>
+              <tr class="data">
+                <th>Expenses <span class="description">Annual anticipated expenses, such as payroll.</span></th>
+                <td>$200</td>
+                <td>$300</td>
+                <td class="current">$400</td>
+              </tr>
+              <tr class="data">
+                <th>Credit <span class="description">The outstanding balance on our credit card.</span></th>
+                <td>$50</td>
+                <td>$50</td>
+                <td class="current">$75</td>
+              </tr>
+              <tr class="total">
+                <th>Total <span class="sr-only">Liabilities</span></th>
+                <td>$750</td>
+                <td>$600</td>
+                <td class="current">$475</td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <caption>Net Worth</caption>
+            <thead>
+              <tr>
+              <td></td>
+              <th><span class="sr-only">2019</span></th>
+              <th><span class="sr-only">2020</span></th>
+              <th><span class="sr-only">2021</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="total">
+                <th>Total <span class="sr-only">Net Worth</span></th>
+                <td>$-171</td>
+                <td>$136</td>
+                <td class="current">$334</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
 ```
 
 ```css
+--fcc-editable-region--
+span[class~="sr-only"] {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  -webkit-clip-path: inset(50%);
+
+}
+--fcc-editable-region--
+
+html {
+  box-sizing: border-box;
+}
+
 body {
-  text-align: center;
-  font-family: Tahoma;
+  font-family: sans-serif;
   color: #0a0a23;
 }
-
-#sheet {
-  text-align: left;
-  max-width: 500px;
-  margin: auto;
-  padding: 10px;
-  border: 2px solid #d0d0d5;
-}
-
-#header h2 {
-  font-size: 1.3em;
-}
-
---fcc-editable-region--
-
---fcc-editable-region--
 ```

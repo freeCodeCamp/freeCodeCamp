@@ -7,19 +7,19 @@ dashedName: step-28
 
 # --description--
 
-Give each `fieldset` an adaquate `name` attribute. Then, give both unordered lists a `class` of `answers-list`.
+Give each `fieldset` an adequate `name` attribute. Then, give both unordered lists a `class` of `answers-list`.
 
 Finally, use the `legend` to caption the content of the `fieldset` by placing a true/false question as the text content.
 
 # --hints--
 
-You should give the first `fieldset` an adaquate `name` attribute. _Hint: I would use `html-question-one`_
+You should give the first `fieldset` an adequate `name` attribute. _Hint: I would use `html-question-one`_
 
 ```js
 assert.notEmpty(document.querySelectorAll('fieldset')?.[0]?.name);
 ```
 
-You should give the second `fieldset` an adaquate `name` attribute. _Hint: I would use `html-question-two`_
+You should give the second `fieldset` an adequate `name` attribute. _Hint: I would use `html-question-two`_
 
 ```js
 assert.notEmpty(document.querySelectorAll('fieldset')?.[1]?.name);

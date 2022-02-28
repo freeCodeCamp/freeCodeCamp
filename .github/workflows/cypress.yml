@@ -113,7 +113,7 @@ jobs:
       - name: Install and Build
         run: |
           npm ci
-          npm run ensure-env
+          npm run create:config
           npm run build:curriculum
           npm run build:server
 

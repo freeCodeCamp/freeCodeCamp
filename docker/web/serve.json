@@ -1,0 +1,60 @@
+{
+  "directoryListing": false,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/certification/**",
+      "destination": "/certification/index.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/challenges/:superblock?/:block?/:challenge?",
+      "destination": "/learn/:superblock?/:block?/:challenge?"
+    },
+    {
+      "source": "/learn/apis-and-microservices/apis-and-microservices-projects",
+      "destination": "/learn/back-end-development-and-apis/back-end-development-and-apis-projects"
+    },
+    {
+      "source": "/learn/apis-and-microservices/apis-and-microservices-projects/:challenge",
+      "destination": "/learn/back-end-development-and-apis/back-end-development-and-apis-projects/:challenge"
+    },
+    {
+      "source": "/learn/apis-and-microservices/:block?/:challenge?",
+      "destination": "/learn/back-end-development-and-apis/:block?/:challenge?"
+    },
+    {
+      "source": "/certification/:username/apis-and-microservices",
+      "destination": "/certification/:username/back-end-development-and-apis"
+    },
+    {
+      "source": "/learn/front-end-libraries/front-end-libraries-projects",
+      "destination": "/learn/front-end-development-libraries/front-end-development-libraries-projects"
+    },
+    {
+      "source": "/learn/front-end-libraries/front-end-libraries-projects/:challenge",
+      "destination": "/learn/front-end-development-libraries/front-end-development-libraries-projects/:challenge"
+    },
+    {
+      "source": "/learn/front-end-libraries/:block?/:challenge?",
+      "destination": "/learn/front-end-development-libraries/:block?/:challenge?"
+    },
+    {
+      "source": "/certification/:username/front-end-libraries",
+      "destination": "/certification/:username/front-end-development-libraries"
+    },
+    {
+      "source": "/learn/javascript-algorithms-and-data-structures/es6/explore-differences-between-the-var-and-let-keywords",
+      "destination": "/learn/javascript-algorithms-and-data-structures/basic-javascript/explore-differences-between-the-var-and-let-keywords"
+    },
+    {
+      "source": "/learn/javascript-algorithms-and-data-structures/es6/declare-a-read-only-variable-with-the-const-keyword",
+      "destination": "/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-a-read-only-variable-with-the-const-keyword"
+    },
+    {
+      "source": "/learn/responsive-web-design/applied-visual-design/adjust-the-size-of-a-header-versus-a-paragraph-tag",
+      "destination": "/learn/responsive-web-design/applied-visual-design/adjust-the-size-of-a-heading-element-versus-a-paragraph-element"
+    }
+  ]
+}

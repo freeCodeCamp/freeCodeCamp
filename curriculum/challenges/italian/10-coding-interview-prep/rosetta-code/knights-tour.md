@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7ed5
-title: Knight's tour
+title: Tour del cavallo
 challengeType: 5
 forumTopicId: 302297
 dashedName: knights-tour
@@ -8,51 +8,51 @@ dashedName: knights-tour
 
 # --description--
 
-[Knight's Tour](https://en.wikipedia.org/wiki/Knight%27s_tour) Problem: You have an empty `w` \* `h` chessboard, but for a single knight on some square. The knight must perform a sequence of legal moves that result in the knight visiting every square on the chessboard exactly once. Note that it is *not* a requirement that the tour be "closed"; that is, the knight need not end within a single move of its start position.
+[Problema del Tour del Cavallo](https://en.wikipedia.org/wiki/Knight%27s_tour): Hai una scacchiera vuota `w` \* `h`, tranne che per un singolo cavallo su una qualche casella. Il cavallo deve eseguire una sequenza di mosse permesse che lo portano a visitare ogni casella sulla scacchiera esattamente una sola volta. Nota che *non è* un requisito che il tour sia "chiuso", cioè il cavallo non deve terminare a distanza di una mossa dalla sua posizione di partenza.
 
 # --instructions--
 
-Write a function that takes `w` and `h` as parameters and returns the number of initial positions from where it is possible to achieve the task stated above.
+Scrivi una funzione che richiede `w` e `h` come parametri e restituisce il numero di posizioni iniziali da dove è possibile completare quanto richiesto sopra.
 
 # --hints--
 
-`knightTour` should be a function.
+`knightTour` dovrebbe essere una funzione.
 
 ```js
 assert(typeof knightTour == 'function');
 ```
 
-`knightTour(6, 6)` should return a number.
+`knightTour(6, 6)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof knightTour(6, 6) == 'number');
 ```
 
-`knightTour(6, 6)` should return `36`.
+`knightTour(6, 6)` dovrebbe tornare `36`.
 
 ```js
 assert.equal(knightTour(6, 6), 36);
 ```
 
-`knightTour(5, 6)` should return `30`.
+`knightTour(5, 6)` dovrebbe tornare `30`.
 
 ```js
 assert.equal(knightTour(5, 6), 30);
 ```
 
-`knightTour(4, 6)` should return `12`.
+`knightTour(4, 6)` dovrebbe tornare `12`.
 
 ```js
 assert.equal(knightTour(4, 6), 12);
 ```
 
-`knightTour(7, 3)` should return `10`.
+`knightTour(7, 3)` dovrebbe tornare `10`.
 
 ```js
 assert.equal(knightTour(7, 3), 10);
 ```
 
-`knightTour(8, 6)` should return `48`.
+`knightTour(8, 6)` dovrebbe tornare `48`.
 
 ```js
 assert.equal(knightTour(8, 6), 48);

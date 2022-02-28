@@ -1,6 +1,6 @@
 ---
 id: 5900f54a1000cf542c51005c
-title: 'Problem 477: Number Sequence Game'
+title: 'Problema 477: Gioco della sequenza dei numeri'
 challengeType: 5
 forumTopicId: 302154
 dashedName: problem-477-number-sequence-game
@@ -8,42 +8,38 @@ dashedName: problem-477-number-sequence-game
 
 # --description--
 
-The number sequence game starts with a sequence S of N numbers written on a line.
+Il gioco della sequenza di numeri inizia con una sequenza $S$ di $N$ numeri scritti su una riga.
 
-Two players alternate turns. At his turn, a player must select and remove either the first or the last number remaining in the sequence.
+Due giocatori alternano il turno. Al proprio turno, un giocatore deve scegliere e rimuovere il primo o l'ultimo numero rimasto nella sequenza.
 
-The player score is the sum of all the numbers he has taken. Each player attempts to maximize his own sum.
+Il punteggio del giocatore è la somma di tutti i numeri che ha cancellato. Ogni giocatore prova a massimizzare la propria somma.
 
-If N = 4 and S = {1, 2, 10, 3}, then each player maximizes his score as follows:
+Se $N = 4$ e $S = \\{1, 2, 10, 3\\}$, allora ogni giocatore massimizza il proprio punteggio come segue:
 
-Player 1: removes the first number (1)
+- Giocatore 1: rimuove il primo numero (1)
+- Giocatore 2: rimuove l'ultimo numero dalla sequenza rimasta (3)
+- Giocatore 1: rimuove l'ultimo numero dalla sequenza rimasta (10)
+- Giocatore 2: rimuove il numero rimasto (2)
 
-Player 2: removes the last number from the remaining sequence (3)
+Il punteggio del giocatore 1 è $1 + 10 = 11$.
 
-Player 1: removes the last number from the remaining sequence (10)
+Sia $F(N)$ il punteggio del giocatore 1 se entrambi i giocatori seguono la strategia ottimale per la sequenza $S = \\{s_1, s_2, \ldots, s_N\\}$ definita come:
 
-Player 2: removes the remaining number (2)
+- $s_1 = 0$
+- $s_{i + 1} = ({s_i}^2 + 45)$ modulo $1\\,000\\,000\\,007$
 
-Player 1 score is 1 + 10 = 11.
+La sequenza inizia con $S = \\{0, 45, 2\\,070, 4\\,284\\,945, 753\\,524\\,550, 478\\,107\\,844, 894\\,218\\,625, \ldots\\}$.
 
-Let F(N) be the score of player 1 if both players follow the optimal strategy for the sequence S = {s1, s2, ..., sN} defined as:
+Ti è dato $F(2) = 45$, $F(4) = 4\\,284\\,990$, $F(100) = 26\\,365\\,463\\,243$, $F(104) = 2\\,495\\,838\\,522\\,951$.
 
-s1 = 0
-
-si+1 = (si2 + 45) modulo 1 000 000 007
-
-The sequence begins with S = {0, 45, 2070, 4284945, 753524550, 478107844, 894218625, ...}.
-
-You are given F(2) = 45, F(4) = 4284990, F(100) = 26365463243, F(104) = 2495838522951.
-
-Find F(108).
+Trova $F({10}^8)$.
 
 # --hints--
 
-`euler477()` should return 25044905874565164.
+`numberSequenceGame()` dovrebbe restituire `25044905874565164`.
 
 ```js
-assert.strictEqual(euler477(), 25044905874565164);
+assert.strictEqual(numberSequenceGame(), 25044905874565164);
 ```
 
 # --seed--
@@ -51,12 +47,12 @@ assert.strictEqual(euler477(), 25044905874565164);
 ## --seed-contents--
 
 ```js
-function euler477() {
+function numberSequenceGame() {
 
   return true;
 }
 
-euler477();
+numberSequenceGame();
 ```
 
 # --solutions--

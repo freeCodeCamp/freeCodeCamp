@@ -38,34 +38,30 @@ const ActionRow = ({
       </div>
       <div className='tabs-row'>
         <EditorTabs />
-        <button
-          className='restart-step-tab'
-          onClick={resetChallenge}
-          role='tab'
-        >
+        <button className='restart-step-tab' onClick={resetChallenge}>
           {t('learn.editor-tabs.restart-step')}
         </button>
         <div className='panel-display-tabs'>
           <button
+            aria-expanded={showConsole ? 'true' : 'false'}
             className={showConsole ? 'active-tab' : ''}
             onClick={() => togglePane('showConsole')}
-            role='tab'
           >
             {t('learn.editor-tabs.console')}
           </button>
           {hasNotes && (
             <button
+              aria-expanded={showNotes ? 'true' : 'false'}
               className={showNotes ? 'active-tab' : ''}
               onClick={() => togglePane('showNotes')}
-              role='tab'
             >
               {t('learn.editor-tabs.notes')}
             </button>
           )}
           <button
+            aria-expanded={showPreview ? 'true' : 'false'}
             className={showPreview ? 'active-tab' : ''}
             onClick={() => togglePane('showPreview')}
-            role='tab'
           >
             {t('learn.editor-tabs.preview')}
           </button>

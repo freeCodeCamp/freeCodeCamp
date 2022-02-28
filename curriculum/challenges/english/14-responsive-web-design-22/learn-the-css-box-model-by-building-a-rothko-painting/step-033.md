@@ -1,5 +1,5 @@
 ---
-id: 60a3e3396c7b40068ad6998a
+id: 60a3e3396c7b40068ad6998b
 title: Step 33
 challengeType: 0
 dashedName: step-33
@@ -7,22 +7,26 @@ dashedName: step-33
 
 # --description--
 
-Center the `.three` element on the canvas by setting its `margin` to `auto`.
+It's helpful to have your margins push in one direction.
+
+In this case, the bottom margin of the `.one` element pushes `.two` down 20 pixels.
+
+In the `.two` selector, use `margin` shorthand property to set top margin to `0`, horizontal margin to `auto`, and bottom margin to `20px`. This will remove its top margin, horizontally center it, and set its bottom margin to 20 pixels.
 
 # --hints--
 
-You should set the `margin` property to `auto`.
+You should set the `margin` property to `0 auto 20px`.
 
 ```js
-const marginFilter = new __helpers.CSSHelp(document).getCSSRules().filter(x => x.style.margin === 'auto');
-assert(marginFilter.length === 2);
+const hasMargin = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style.margin === '0px auto 20px');
+assert(hasMargin);
 ```
 
-Your `.three` element should have a `margin` value of `auto`.
+Your `.two` element should have a `margin` value of `0 auto 20px`.
 
 ```js
-const threeMargin = new __helpers.CSSHelp(document).getStyle('.three')?.getPropertyValue('margin');
-assert(threeMargin === 'auto');
+const twoMargin = new __helpers.CSSHelp(document).getStyle('.two')?.getPropertyValue('margin');
+assert(twoMargin === '0px auto 20px');
 ```
 
 # --seed--
@@ -48,23 +52,23 @@ assert(threeMargin === 'auto');
   width: 425px;
   height: 150px;
   background-color: #efb762;
-  margin: 20px auto 20px;
+  margin: 20px auto;
 }
 
 .two {
   width: 475px;
   height: 200px;
   background-color: #8f0401;
+--fcc-editable-region--
   margin: auto;
+--fcc-editable-region--
 }
 
 .three {
   width: 91%;
   height: 28%;
   background-color: #b20403;
---fcc-editable-region--
-
---fcc-editable-region--
+  margin: auto;
 }
 ```
 

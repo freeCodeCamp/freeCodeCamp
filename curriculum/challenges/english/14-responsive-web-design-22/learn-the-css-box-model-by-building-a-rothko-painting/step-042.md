@@ -1,5 +1,5 @@
 ---
-id: 60a3e3396c7b40068ad69993
+id: 60a3e3396c7b40068ad69994
 title: Step 42
 challengeType: 0
 dashedName: step-42
@@ -7,22 +7,24 @@ dashedName: step-42
 
 # --description--
 
-Set the `border-radius` of `.two` to `8px 10px`. This will round its top-left and bottom-right corners by 8 pixels, and top-right and bottom-left corners by 10 pixels.
+The `border-radius` property accepts up to four values to round the top-left, top-right, bottom-right, and bottom-left corners.
+
+Round the top-left corner of `.three` by 30 pixels, the top-right by 25 pixels, the bottom-right by 60 pixels, and bottom-left by 12 pixels.
 
 # --hints--
 
-You should set the `border-radius` property to `8px 10px`.
+You should set the `border-radius` property to `30px 25px 60px 12px`.
 
 ```js
-const hasBorderRadius = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['border-radius'] === '8px 10px');
+const hasBorderRadius = new __helpers.CSSHelp(document).getCSSRules().some(x => x.style['border-radius'] === '30px 25px 60px 12px');
 assert(hasBorderRadius);
 ```
 
-Your `.two` element should have a `border-radius` value of `8px 10px`.
+Your `.three` element should have a `border-radius` value of `30px 25px 60px 12px`.
 
 ```js
-const twoBorderRadius = new __helpers.CSSHelp(document).getStyle('.two')?.getPropertyValue('border-radius');
-assert(twoBorderRadius === '8px 10px');
+const threeBorderRadius = new __helpers.CSSHelp(document).getStyle('.three')?.getPropertyValue('border-radius');
+assert(threeBorderRadius === '30px 25px 60px 12px');
 ```
 
 # --seed--
@@ -49,7 +51,7 @@ assert(twoBorderRadius === '8px 10px');
   width: 425px;
   height: 150px;
   background-color: #efb762;
-  margin: 20px auto 20px;
+  margin: 20px auto;
   box-shadow: 0 0 3px 3px #efb762;
   border-radius: 9px;
 }
@@ -60,9 +62,7 @@ assert(twoBorderRadius === '8px 10px');
   background-color: #8f0401;
   margin: 0 auto 20px;
   box-shadow: 0 0 3px 3px #8f0401;
---fcc-editable-region--
-
---fcc-editable-region--
+  border-radius: 8px 10px;
 }
 
 .one, .two {
@@ -76,6 +76,9 @@ assert(twoBorderRadius === '8px 10px');
   margin: auto;
   filter: blur(2px);
   box-shadow: 0 0 5px 5px #b20403;
+--fcc-editable-region--
+
+--fcc-editable-region--
 }
 ```
 

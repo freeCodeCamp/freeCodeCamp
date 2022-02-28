@@ -1,6 +1,6 @@
 ---
 id: 5900f4141000cf542c50ff26
-title: 'Problem 167: Investigating Ulam sequences'
+title: 'Problema 167: Indagare le sequenze di Ulam'
 challengeType: 5
 forumTopicId: 301801
 dashedName: problem-167-investigating-ulam-sequences
@@ -8,24 +8,22 @@ dashedName: problem-167-investigating-ulam-sequences
 
 # --description--
 
-For two positive integers a and b, the Ulam sequence U(a,b) is defined by U(a,b)1 = a, U(a,b)2 = b and for k > 2,
+Per due interi positivi $a$ e $b$, la successione di Ulam $U(a,b)$ è definita da ${U{(a,b)}\_1} = a$, ${U{(a,b)}\_2} = b$ e per $k > 2$, ${U{(a,b)}\_k}$ è il più piccolo numero intero maggiore di ${U{(a,b)}\_{(k-1)}}$ che può essere scritto esattamente in un modo come la somma di due membri precedenti distinti di $U(a,b)$.
 
-U(a,b)k is the smallest integer greater than U(a,b)(k-1) which can be written in exactly one way as the sum of two distinct previous members of U(a,b).
+Ad esempio, la successione $U(1,2)$ inizia con
 
-For example, the sequence U(1,2) begins with
+$$1, 2, 3 = 1 + 2, 4 = 1 + 3, 6 = 2 + 4, 8 = 2 + 6, 11 = 3 + 8$$
 
-1, 2, 3 = 1 + 2, 4 = 1 + 3, 6 = 2 + 4, 8 = 2 + 6, 11 = 3 + 8;
+5 non appartiene ad esso perché $5 = 1 + 4 = 2 + 3$ ha due rappresentazioni come la somma di due membri precedenti, così come $7 = 1 + 6 = 3 + 4$.
 
-5 does not belong to it because 5 = 1 + 4 = 2 + 3 has two representations as the sum of two previous members, likewise 7 = 1 + 6 = 3 + 4.
-
-Find ∑U(2,2n+1)k for 2 ≤ n ≤10, where k = 1011.
+Trova $\sum {U(2, 2n + 1)_k}$ per $2 ≤ n ≤ 10$, dove $k = {10}^{11}$.
 
 # --hints--
 
-`euler167()` should return 3916160068885.
+`ulamSequences()` dovrebbe restituire `3916160068885`.
 
 ```js
-assert.strictEqual(euler167(), 3916160068885);
+assert.strictEqual(ulamSequences(), 3916160068885);
 ```
 
 # --seed--
@@ -33,12 +31,12 @@ assert.strictEqual(euler167(), 3916160068885);
 ## --seed-contents--
 
 ```js
-function euler167() {
+function ulamSequences() {
 
   return true;
 }
 
-euler167();
+ulamSequences();
 ```
 
 # --solutions--

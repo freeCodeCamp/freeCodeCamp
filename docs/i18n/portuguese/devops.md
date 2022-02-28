@@ -459,7 +459,7 @@ Provisionando MVs com o código
 7. Compile o servidor
 
    ```console
-   npm run ensure-env && npm run build:curriculum && npm run build:server
+   npm run create:config && npm run build:curriculum && npm run build:server
    ```
 
 8. Inicie instâncias
@@ -502,7 +502,7 @@ npm ci
 3. Compile o servidor
 
 ```console
-npm run ensure-env && npm run build:curriculum && npm run build:server
+npm run create:config && npm run build:curriculum && npm run build:server
 ```
 
 4. Inicie instâncias

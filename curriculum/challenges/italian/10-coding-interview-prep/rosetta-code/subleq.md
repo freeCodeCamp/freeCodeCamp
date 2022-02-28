@@ -8,50 +8,34 @@ dashedName: subleq
 
 # --description--
 
-[Subleq](https://rosettacode.org/wiki/eso:Subleq) is an example of a [One-Instruction Set Computer (OISC)](https://en.wikipedia.org/wiki/One_instruction_set_computer).
+[Subleq](https://rosettacode.org/wiki/eso:Subleq) è un esempio di un [Computer One-Instruction Set (OISC)](https://en.wikipedia.org/wiki/One_instruction_set_computer).
 
-It is named after its only instruction, which is **SU**btract and **B**ranch if **L**ess than or **EQ**ual
+Esso prende il nome dalla sua unica istruzione, che è **SU**btract e **B**ranch se **L**ess than or **EQ**ual to zero (sottrai e dirama se minore o uguale a zero).
 
-to zero.
+Il tuo compito è quello di creare un interprete che emula una macchina del genere.
 
-Your task is to create an interpreter which emulates such a machine.
+La memoria della macchina è costituita da una serie di numeri interi con segno. Qualsiasi dimensione ragionevole di parola va bene, ma la memoria deve essere in grado di contenere numeri negativi e positivi.
 
-The machine's memory consists of an array of signed integers. Any reasonable word size is fine, but the memory must be
-
-able to hold negative as well as positive numbers.
-
-Execution begins with the instruction pointer aimed at the first word, which is address 0. It proceeds as follows:
+L'esecuzione inizia con il puntatore di istruzioni rivolto alla prima parola, che è l'indirizzo 0. Essa procede come segue:
 
 <ol>
-  <li>Let A, B, and C be the value stored in the three consecutive words in memory starting at the instruction pointer.</li>
-  <li>Advance the instruction pointer 3 words to point at the address after the one containing C.</li>
-  <li>If A is -1, then a character is read from standard input and its code point stored in the address given by B. C
-    is unused.</li>
-  <li>If B is -1, then the number contained in the address given by A is interpreted as a code point and the
-    corresponding character output. C is again unused.</li>
-  <li>Otherwise, both A and B are treated as the addresses of memory locations. The number contained in the address
-    given by A is subtracted from the number at the address given by B (and the result stored back in address B). If
-    the result is zero or negative, the value C becomes the new instruction pointer.</li>
-  <li>If the instruction pointer becomes negative, execution halts.</li>
+  <li>Sia A, B e C il valore memorizzato nelle tre parole consecutive in memoria a partire dal puntatore di istruzioni.</li>
+  <li>Fai avanzare il puntatore di tre parole in modo da puntare all'indirizzo successivo a quello contenente C.</li>
+  <li>Se A è -1, viene letto un carattere dallo standard input e il suo codice punto memorizzato nell'indirizzo indicato da B. C è inutilizzato.</li>
+  <li>Se B è -1, allora il numero contenuto nell'indirizzo dato da A è interpretato come un punto di codice e viene fatto l'output del carattere corrispondente. C è di nuovo inutilizzato.</li>
+  <li>Altrimenti, sia A che B sono trattati come gli indirizzi di luoghi di memoria. Il numero contenuto nell’indirizzo indicato da A viene sottratto dal numero all’indirizzo indicato da B (e il risultato memorizzato nell’indirizzo B). Se il risultato è zero o negativo, il valore C diventa il nuovo puntatore di istruzione.</li>
+  <li>Se il puntatore di istruzioni diventa negativo, l'esecuzione si ferma.</li>
 </ol>
 
-Other negative addresses besides -1 may be treated as equivalent to -1, or generate an error, as you see fit.
+Altri indirizzi negativi oltre a -1 possono essere trattati come equivalenti a -1, o generare un errore, come si ritiene opportuno.
 
-Your solution should accept a program to execute on the machine, separately from the input fed to the program itself.
+La tua soluzione dovrebbe accettare un programma da eseguire sulla macchina, separatamente dall'input fornito al programma stesso.
 
-This program should be in raw subleq "machine code" - whitespace-separated decimal numbers, with no symbolic names or
-
-other assembly-level extensions, to be loaded into memory starting at address 0. Show the output of your solution when
-
-fed this "Hello, world!" program. (Note that the example assumes ASCII or a superset of it, such as any of the Latin-N
-
-character sets or Unicode. You may translate it into another character set if your implementation is on a
-
-non-ASCiI-compatible environment.)
+Questo programma dovrebbe essere "linguaggio macchina" subleq grezzo - numeri decimali separati da spazi, senza nomi simbolici o altre estensioni a livello di assembly, da caricare in memoria a partire dall'indirizzo 0. Mostra l'output della tua soluzione quando alimentato con questo programma "Hello, world!". (Nota che l'esempio assume ASCII o un superset di esso, come uno dei set di caratteri Latin-N o Unicode. Puoi tradurlo in un altro set di caratteri se la tua implementazione è in un ambiente non compatibile con ASCII.)
 
 <pre>15 17 -1 17 -1 -1 16 1 -1 16 3 -1 15 15 0 0 -1 72 101 108 108 111 44 32 119 111 114 108 100 33 10 0</pre>
 
-Which corresponds to something like this in a hypothetical assembler language:
+Che corrisponde a qualcosa di simile in un ipotetico linguaggio assembler:
 
 <pre>start:
     zero, message, -1
@@ -66,19 +50,17 @@ message: "Hello, world!\n\0"
 
 # --instructions--
 
-Write a function that takes an array of integers as a parameter. This represents the memory elements. The function
-
-should interpret the sequence and return the output string. For this task, assume that there is no standard input.
+Scrivi una funzione che richiede un array di interi come parametro. Questo rappresenta gli elementi di memoria. La funzione deve interpretare la sequenza e restituire la stringa di output. Per questo compito, supponiamo che non ci sia uno standard input.
 
 # --hints--
 
-`Subleq` should be a function.
+`Subleq` dovrebbe essere una funzione.
 
 ```js
 assert(typeof Subleq == 'function');
 ```
 
-`Subleq([15, 17, -1, 17, -1, -1, 16, 1, -1, 16, 3, -1, 15, 15, 0, 0, -1, 72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33, 0])` should return a string.
+`Subleq([15, 17, -1, 17, -1, -1, 16, 1, -1, 16, 3, -1, 15, 15, 0, 0, -1, 72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33, 0])` dovrebbe restituire una stringa.
 
 ```js
 assert(
@@ -118,7 +100,7 @@ assert(
 );
 ```
 
-`Subleq([15, 17, -1, 17, -1, -1, 16, 1, -1, 16, 3, -1, 15, 15, 0, 0, -1, 72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33, 0])` should return `"Hello, world!"`.
+`Subleq([15, 17, -1, 17, -1, -1, 16, 1, -1, 16, 3, -1, 15, 15, 0, 0, -1, 72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33, 0])` dovrebbe restituire `"Hello, world!"`.
 
 ```js
 assert.equal(

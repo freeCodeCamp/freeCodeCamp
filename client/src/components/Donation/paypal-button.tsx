@@ -1,7 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable camelcase */
-
 import React, { Component, Ref } from 'react';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -91,7 +87,6 @@ export class PaypalButton extends Component<
 
   static getDerivedStateFromProps(props: PaypalButtonProps): PaypalButtonState {
     const { donationAmount, donationDuration } = props;
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const configurationObj: {
       amount: number;
       duration: string;

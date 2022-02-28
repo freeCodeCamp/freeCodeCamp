@@ -9,7 +9,7 @@ dashedName: step-20
 
 Use margins to position the `.one` element on the canvas.
 
-Add the shorthand `margin: 20px auto;` to set the top and bottom margins to 20 pixels, and center it horizontally.
+Add the shorthand `margin` property with a vertical margin of `20px` and a horizontal margin of `auto`.
 
 # --hints--
 

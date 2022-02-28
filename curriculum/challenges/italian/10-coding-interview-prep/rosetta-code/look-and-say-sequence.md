@@ -1,6 +1,6 @@
 ---
 id: 5e6dd14797f5ce267c2f19d0
-title: Look-and-say sequence
+title: Successione Look-and-say
 challengeType: 5
 forumTopicId: 385277
 dashedName: look-and-say-sequence
@@ -8,64 +8,64 @@ dashedName: look-and-say-sequence
 
 # --description--
 
-The [Look and say sequence](https://en.wikipedia.org/wiki/Look and say sequence) is a recursively defined sequence of numbers.
+La successione [Look and say](https://en.wikipedia.org/wiki/Look and say sequence) è una sequenza di numeri definita ricorsivamente.
 
-Sequence Definition
+Definizione della successione
 
-<ul><li>Take a decimal number</li>
-<li><span>Look</span> at the number, visually grouping consecutive runs of the same digit.</li>
-<li><span>Say</span> the number, from left to right, group by group; as how many of that digit there are - followed by the digit grouped.</li></ul><span> This becomes the next number of the sequence.</span>
+<ul><li>Prendi un numero decimale</li>
+<li><span>Guarda</span> (look) il numero, raggruppando visivamente le successioni consecutive della stessa cifra.</li>
+<li><span>Leggi</span> (say) il numero, da sinistra a destra, gruppo per gruppo; quante ripetizioni di quella cifra ci sono - seguita dalla cifra raggruppata.</li></ul><span> Questo diventa il numero successivo della successione.</span>
 
-An example:
+Un esempio:
 
-<ul><li>Starting with the number 1, you have <span>one</span> 1 which produces 11</li>
-<li>Starting with 11, you have <span>two</span> 1's. I.E.: 21</li>
-<li>Starting with 21, you have <span>one</span> 2, then <span>one</span> 1. I.E.: (12)(11) which becomes 1211</li>
-<li>Starting with 1211, you have <span>one</span> 1, <span>one</span> 2, then <span>two</span> 1's. I.E.: (11)(12)(21) which becomes 111221</li></ul>
+<ul><li>A partire dal numero 1, hai <span>un</span> 1 che produce 11</li>
+<li>A partire da 11, hai <span>due</span> 1. Cioè: 21</li>
+<li>A partire da 21, hai <span>un</span> 2, poi <span>un</span> 1. Cioè: (12)(11) che diventa 1211</li>
+<li>A partire da 1211, hai <span>un</span> 1, <span>un</span> 2, poi <span>due</span> 1. Cioè: (11)(12)(21) che diventa 111221</li></ul>
 
 # --instructions--
 
-Write a function that accepts a string as a parameter, processes it, and returns the resultant string.
+Scrivi una funzione che accetta una stringa come parametro, la elabora e restituisce la stringa risultante.
 
 # --hints--
 
-`lookAndSay` should be a function.
+`lookAndSay` dovrebbe essere una funzione.
 
 ```js
 assert(typeof lookAndSay == 'function');
 ```
 
-`lookAndSay("1")` should return a string.
+`lookAndSay("1")` dovrebbe restituire una stringa.
 
 ```js
 assert(typeof lookAndSay('1') == 'string');
 ```
 
-`lookAndSay("1")` should return `"11"`.
+`lookAndSay("1")` dovrebbe restituire `"11"`.
 
 ```js
 assert.equal(lookAndSay('1'), '11');
 ```
 
-`lookAndSay("11")` should return `"21"`.
+`lookAndSay("11")` dovrebbe restituire `"21"`.
 
 ```js
 assert.equal(lookAndSay('11'), '21');
 ```
 
-`lookAndSay("21")` should return `"1211"`.
+`lookAndSay("21")` dovrebbe restituire `"1211"`.
 
 ```js
 assert.equal(lookAndSay('21'), '1211');
 ```
 
-`lookAndSay("1211")` should return `"111221"`.
+`lookAndSay("1211")` dovrebbe restituire `"111221"`.
 
 ```js
 assert.equal(lookAndSay('1211'), '111221');
 ```
 
-`lookAndSay("3542")` should return `"13151412"`.
+`lookAndSay("3542")` dovrebbe restituire `"13151412"`.
 
 ```js
 assert.equal(lookAndSay('3542'), '13151412');

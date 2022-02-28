@@ -1,6 +1,6 @@
 ---
 id: 59622f89e4e137560018a40e
-title: Hofstadter Figure-Figure sequences
+title: Sequenze figura-figura di Hofstadter
 challengeType: 5
 forumTopicId: 302286
 dashedName: hofstadter-figure-figure-sequences
@@ -8,31 +8,31 @@ dashedName: hofstadter-figure-figure-sequences
 
 # --description--
 
-These two sequences of positive integers are defined as:
+Queste due sequnze di numeri interi positivi sono definite come:
 
 $R(1)=1\\ ;\\ S(1)=2 \\\\R(n)=R(n-1)+S(n-1), \\quad n>1.$
 
-The sequence $S(n)$ is further defined as the sequence of positive integers not present in $R(n)$.
+La sequenza $S(n)$ è ulteriormente definita come la sequenza di numeri interi positivi non presenti in $R(n)$.
 
-Sequence $R$ starts:
+La sequenza $R$ inizia in questo modo:
 
 <pre>1, 3, 7, 12, 18, ...</pre>
 
-Sequence $S$ starts:
+La sequenza $S$ inizia in questo modo:
 
 <pre>2, 4, 5, 6, 8, ...</pre>
 
 # --instructions--
 
-Create two functions named `ffr` and `ffs` that when given `n` return `R(n)` or `S(n)` respectively. (Note that R(1) = 1 and S(1) = 2 to avoid off-by-one errors).
+Crea due funzioni chiamate `ffr` e `ffs` che quando dato `n` restituiscono rispettivamente `R(n)` o `S(n)`. (Nota che R(1) = 1 e S(1) = 2 per evitare errori off-by-one).
 
-No maximum value for `n` should be assumed.
+Non deve essere ipotizzato un valore massimo di `n`.
 
-**References**
+**Riferimenti**
 
 <ul>
   <li>
-    Sloane's <a href='https://oeis.org/A005228' target='_blank'>A005228</a> and <a href='https://oeis.org/A030124' target='_blank'>A030124</a>.
+    <a href='https://oeis.org/A005228' target='_blank'>A005228</a> e <a href='https://oeis.org/A030124' target='_blank'>A030124</a> di Sloane.
   </li>
   <li>
     Wikipedia: <a href='https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Figure-Figure_sequences' title='wp: Hofstadter_sequence#Hofstadter_Figure-Figure_sequences' target='_blank'>Hofstadter Figure-Figure sequences</a>.
@@ -41,73 +41,73 @@ No maximum value for `n` should be assumed.
 
 # --hints--
 
-`ffr` should be a function.
+`ffr` dovrebbe essere una funzione.
 
 ```js
 assert(typeof ffr === 'function');
 ```
 
-`ffs` should be a function.
+`ffs` dovrebbe essere una funzione.
 
 ```js
 assert(typeof ffs === 'function');
 ```
 
-`ffr` should return integer.
+`ffr` dovrebbe restituire un numero intero.
 
 ```js
 assert(Number.isInteger(ffr(1)));
 ```
 
-`ffs` should return integer.
+`ffs` dovrebbe restituire un numero intero.
 
 ```js
 assert(Number.isInteger(ffs(1)));
 ```
 
-`ffr(10)` should return `69`
+`ffr(10)` dovrebbe restituire `69`
 
 ```js
 assert.equal(ffr(ffrParamRes[0][0]), ffrParamRes[0][1]);
 ```
 
-`ffr(50)` should return `1509`
+`ffr(50)` dovrebbe restituire `1509`
 
 ```js
 assert.equal(ffr(ffrParamRes[1][0]), ffrParamRes[1][1]);
 ```
 
-`ffr(100)` should return `5764`
+`ffr(100)` dovrebbe restituire `5764`
 
 ```js
 assert.equal(ffr(ffrParamRes[2][0]), ffrParamRes[2][1]);
 ```
 
-`ffr(1000)` should return `526334`
+`ffr(1000)` dovrebbe restituire `526334`
 
 ```js
 assert.equal(ffr(ffrParamRes[3][0]), ffrParamRes[3][1]);
 ```
 
-`ffs(10)` should return `14`
+`ffs(10)` dovrebbe restituire `14`
 
 ```js
 assert.equal(ffs(ffsParamRes[0][0]), ffsParamRes[0][1]);
 ```
 
-`ffs(50)` should return `59`
+`ffs(50)` dovrebbe restituire `59`
 
 ```js
 assert.equal(ffs(ffsParamRes[1][0]), ffsParamRes[1][1]);
 ```
 
-`ffs(100)` should return `112`
+`ffs(100)` dovrebbe restituire `112`
 
 ```js
 assert.equal(ffs(ffsParamRes[2][0]), ffsParamRes[2][1]);
 ```
 
-`ffs(1000)` should return `1041`
+`ffs(1000)` dovrebbe restituire `1041`
 
 ```js
 assert.equal(ffs(ffsParamRes[3][0]), ffsParamRes[3][1]);

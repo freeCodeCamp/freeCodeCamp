@@ -14,12 +14,10 @@ L'operatore di disuguaglianza stretta (`!==`) è l'opposto logico dell'operatore
 **Esempi**
 
 ```js
-3 !==  3
-3 !== '3'
-4 !==  3
+3 !==  3  // false
+3 !== '3' // true
+4 !==  3  // true
 ```
-
-Nell'ordine, queste espressioni restituiscono `false`,`true` e `true`.
 
 # --instructions--
 

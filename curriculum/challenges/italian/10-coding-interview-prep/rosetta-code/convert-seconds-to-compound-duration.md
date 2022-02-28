@@ -1,6 +1,6 @@
 ---
 id: 596fd036dc1ab896c5db98b1
-title: Convert seconds to compound duration
+title: Convertire secondi in durata composta
 challengeType: 5
 forumTopicId: 302236
 dashedName: convert-seconds-to-compound-duration
@@ -8,69 +8,69 @@ dashedName: convert-seconds-to-compound-duration
 
 # --description--
 
-Implement a function which:
+Implementa una funzione che:
 
 <ul>
-  <li>takes a positive integer representing a duration in seconds as input (e.g., <code>100</code>), and</li>
-  <li>returns a string which shows the same duration decomposed into weeks, days, hours, minutes, and seconds as detailed below (e.g., <code>1 min, 40 sec</code>).</li>
+  <li>accetta un numero intero positivo che rappresenta una durata in secondi come input (ad esempio, <code>100</code>), e</li>
+  <li>restituisce una stringa che mostra la stessa durata decomposta in settimane, giorni, ore, minuti e secondi come dettagliato sotto (per esempio, <code>1 min, 40 sec</code>).</li>
 </ul>
 
-Demonstrate that it passes the following three test-cases:
+Dimostra che passi i seguenti tre casi:
 
-<div style='font-size:115%; font-weight: bold;'>Test Cases</div>
+<div style='font-size:115%; font-weight: bold;'>Test</div>
 
-| Input number | Output number             |
-| ------------ | ------------------------- |
-| 7259         | <code>2 hr, 59 sec</code> |
-| 86400        | <code>1 d</code> |
-| 6000000      | <code>9 wk, 6 d, 10 hr, 40 min</code> |
+| Numero di input | Numero di output          |
+| --------------- | ------------------------- |
+| 7259            | <code>2 hr, 59 sec</code> |
+| 86400           | <code>1 d</code> |
+| 6000000         | <code>9 wk, 6 d, 10 hr, 40 min</code> |
 
-<div style="font-size:115%; font-weight: bold;">Details</div>
+<div style="font-size:115%; font-weight: bold;">Dettagli</div>
 <ul>
   <li>
-    The following five units should be used:
+    Le seguenti cinque unita dovrebbero essere usate:
 
-| Unit   | Suffix used in Output | Conversion            |
+| Unità   | Suffisso usato in output | Conversione            |
 | ------ | --------------------- | --------------------- |
-| week   |!!crwdBlockTags_18_sgaTkcolBdwrc!!       | 1 week = 7 days       |
-| day    |!!crwdBlockTags_19_sgaTkcolBdwrc!!        | 1 day = 24 hours      |
-| hour   |!!crwdBlockTags_20_sgaTkcolBdwrc!!       | 1 hour = 60 minutes   |
-| minute |!!crwdBlockTags_21_sgaTkcolBdwrc!!      | 1 minute = 60 seconds |
+| settimana   |!!crwdBlockTags_18_sgaTkcolBdwrc!!       | 1 settimana = 7 giorni       |
+| giorno    |!!crwdBlockTags_19_sgaTkcolBdwrc!!        | 1 giorno = 24 ore      |
+| ora   |!!crwdBlockTags_20_sgaTkcolBdwrc!!       | 1 ora = 60 minuti   |
+| minuti |!!crwdBlockTags_21_sgaTkcolBdwrc!!      | 1 minuto = 60 secondi |
 | second |!!crwdBlockTags_22_sgaTkcolBdwrc!!      | ---                   |
 
   </li>
   <li>
-    However, <strong>only</strong> include quantities with non-zero values in the output (e.g., return <code>1 d</code> and not <code>0 wk, 1 d, 0 hr, 0 min, 0 sec</code>).
+    Però, includi <strong>solo</strong> quantità con valori non-zero nell'output (per esempio restituisce<code>1 d</code> e non <code>0 wk, 1 d, 0 hr, 0 min, 0 sec</code>).
   </li>
   <li>
-    Give larger units precedence over smaller ones as much as possible (e.g., return <code>2 min, 10 sec</code> and not <code>1 min, 70 sec</code> or <code>130 sec</code>).
+    Dai la precedenza alle unità più grandi il più possibile (per esempio, restituisci <code>2 min, 10 sec</code> e non <code>1 min, 70 sec</code> o <code>130 sec</code>).
   </li>
   <li>
-    Mimic the formatting shown in the test-cases (quantities sorted from largest unit to smallest and separated by comma+space; value and unit of each quantity separated by space).
+    Mimica il formato mostrato nell'esempio (quantità in ordine dalla più grande alla più piccola e separate da virgola e spazio, valore e unità di ogni quantità separate da uno spazio).
   </li>
 </ul>
 
 # --hints--
 
-`convertSeconds` should be a function.
+`convertSeconds` dovrebbe essere una funzione.
 
 ```js
 assert(typeof convertSeconds === 'function');
 ```
 
-`convertSeconds(7259)` should return `2 hr, 59 sec`.
+`convertSeconds(7259)` dovrebbe restituire `2 hr, 59 sec`.
 
 ```js
 assert.equal(convertSeconds(testCases[0]), results[0]);
 ```
 
-`convertSeconds(86400)` should return `1 d`.
+`convertSeconds(86400)` dovrebbe restituire `1 d`.
 
 ```js
 assert.equal(convertSeconds(testCases[1]), results[1]);
 ```
 
-`convertSeconds(6000000)` should return `9 wk, 6 d, 10 hr, 40 min`.
+`convertSeconds(6000000)` dovrebbe restituire `9 wk, 6 d, 10 hr, 40 min`.
 
 ```js
 assert.equal(convertSeconds(testCases[2]), results[2]);

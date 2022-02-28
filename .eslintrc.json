@@ -43,8 +43,8 @@
       "parserOptions": {
         "project": [
           "./tsconfig.json",
-          "./tools/ui-components/tsconfig.json",
-          "./tools/tsconfig.json"
+          "./config/tsconfig.json",
+          "./tools/ui-components/tsconfig.json"
         ]
       },
       "extends": [

@@ -1,6 +1,6 @@
 ---
 id: 5900f3901000cf542c50fea3
-title: 'Problem 36: Double-base palindromes'
+title: 'Problema 36: palindromi in doppia base'
 challengeType: 5
 forumTopicId: 302020
 dashedName: problem-36-double-base-palindromes
@@ -8,39 +8,39 @@ dashedName: problem-36-double-base-palindromes
 
 # --description--
 
-The decimal number, 585 = 1001001001<sub>2</sub> (binary), is palindromic in both bases.
+Il numero decimale 585 = 1001001001<sub>2</sub> (binary) è un palindromo in entrambe le basi.
 
-Find the sum of all numbers, less than `n`, whereas 1000 ≤ `n` ≤ 1000000, which are palindromic in base 10 and base 2.
+Trova la somma di tutti i numeri, meno di `n`, dove 1000 ≤ `n` ≤ 1000000, che sono palindromi in base 10 e in base 2.
 
-(Please note that the palindromic number, in either base, may not include leading zeros.)
+(Si noti che il numero palindromico, in entrambe le basi, non può includere zeri iniziali.)
 
 # --hints--
 
-`doubleBasePalindromes(1000)` should return a number.
+`doubleBasePalindromes(1000)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof doubleBasePalindromes(1000) === 'number');
 ```
 
-`doubleBasePalindromes(1000)` should return 1772.
+`doubleBasePalindromes(1000)` dovrebbe restituire 1772.
 
 ```js
 assert(doubleBasePalindromes(1000) == 1772);
 ```
 
-`doubleBasePalindromes(50000)` should return 105795.
+`doubleBasePalindromes(50000)` dovrebbe restituire 105795.
 
 ```js
 assert(doubleBasePalindromes(50000) == 105795);
 ```
 
-`doubleBasePalindromes(500000)` should return 286602.
+`doubleBasePalindromes(500000)` dovrebbe restituire 286602.
 
 ```js
 assert(doubleBasePalindromes(500000) == 286602);
 ```
 
-`doubleBasePalindromes(1000000)` should return 872187.
+`doubleBasePalindromes(1000000)` dovrebbe restituire 872187.
 
 ```js
 assert(doubleBasePalindromes(1000000) == 872187);

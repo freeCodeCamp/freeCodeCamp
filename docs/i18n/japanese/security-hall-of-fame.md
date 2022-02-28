@@ -1,10 +1,10 @@
-# Responsible Disclosure - Hall of Fame
+# 責任ある開示 - 殿堂入り
 
-We appreciate any responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users. If you are interested in contributing to the security of our platform, please read our [security policy outlined here](https://contribute.freecodecamp.org/#/security).
+私たちのプラットフォームおよびユーザーの整合性に影響を与える可能性のある脆弱性について、責任ある開示をお願いします。 私たちのプラットフォームのセキュリティに貢献したい方は、[セキュリティポリシー](security.md) をお読みください。
 
-While we do not offer any bounties or swags at the moment, we are grateful to these awesome people for helping us keep the platform safe for everyone:
+現時点ではいかなる報奨金も報酬も提供していませんが、プラットフォームの安全性を守ってくださる皆さんに心から感謝しています。
 
-- Mehul Mohan from [codedamn](https://codedamn.com) ([@mehulmpt](https://twitter.com/mehulmpt)) - [Vulnerability Fix](https://github.com/freeCodeCamp/freeCodeCamp/blob/bb5a9e815313f1f7c91338e171bfe5acb8f3e346/client/src/components/Flash/index.js)
-- Peter Samir https://www.linkedin.com/in/peter-samir/
+- Mehul Mohan ([codedamn](https://codedamn.com) 所属) ([@mehulmpt](https://twitter.com/mehulmpt)) - [脆弱性修正](https://github.com/freeCodeCamp/freeCodeCamp/blob/bb5a9e815313f1f7c91338e171bfe5acb8f3e346/client/src/components/Flash/index.js)
+- Peter Samir (https://www.linkedin.com/in/peter-samir/)
 
-  > ### Thank you for your contributions :pray:
+  > ### ご尽力いただきありがとうございます :pray:

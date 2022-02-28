@@ -1,6 +1,6 @@
 ---
 id: 598eea87e5cf4b116c3ff81a
-title: Factors of a Mersenne number
+title: I fattori di un numero di Mersenne
 challengeType: 5
 forumTopicId: 302264
 dashedName: factors-of-a-mersenne-number
@@ -8,25 +8,25 @@ dashedName: factors-of-a-mersenne-number
 
 # --description--
 
-A Mersenne number is a number in the form of <code>2<sup>P</sup>-1</code>.
+Un numero di Mersenne è un numero nella forma di <code>2<sup>P</sup>-1</code>.
 
-If `P` is prime, the Mersenne number may be a Mersenne prime. (If `P` is not prime, the Mersenne number is also not prime.)
+Se `P` è primo, il numero di Mersenne può essere un primo di Mersenne. (Se `P` non è primo, anche il numero di Mersenne non è primo.)
 
-In the search for Mersenne prime numbers it is advantageous to eliminate exponents by finding a small factor before starting a, potentially lengthy, [Lucas-Lehmer test](https://rosettacode.org/wiki/Lucas-Lehmer test "Lucas-Lehmer test").
+Nella ricerca di numeri primari di Mersenne è vantaggioso eliminare gli esponenti trovando un piccolo fattore prima di iniziare un potenzialmente lungo [test di Lucas-Lehmer](https://rosettacode.org/wiki/Lucas-Lehmer test "Lucas-Lehmer test").
 
-There are very efficient algorithms for determining if a number divides <code>2<sup>P</sup>-1</code> (or equivalently, if <code>2<sup>P</sup> mod (the number) = 1</code>).
+Ci sono algoritmi molto efficienti per determinare se un numero divide <code>2<sup>P</sup>-1</code> (o equivalentemente, se <code>2<sup>P</sup> mod (il numero) = 1</code>).
 
-Some languages already have built-in implementations of this exponent-and-mod operation (called modPow or similar).
+Alcuni linguaggi hanno già implementazioni integrate di questa operazione esponente-e-modulo (chiamata modPow o simile).
 
-The following is how to implement this modPow yourself:
+Ecco come puoi implementare questo modPow:
 
-For example, let's compute <code>2<sup>23</sup> mod 47</code>.
+Ad esempio, calcoliamo <code>2<sup>23</sup> mod 47</code>.
 
-Convert the exponent 23 to binary, you get 10111. Starting with <code><tt>square</tt> = 1</code>, repeatedly square it.
+Converti l'esponente 23 in binario, ottenendo 10111. A partire da <code><tt>square</tt> = 1</code>, fai ripetutamente il quadrato.
 
-Remove the top bit of the exponent, and if it's 1 multiply `square` by the base of the exponentiation (2), then compute <code><tt>square</tt> modulo 47</code>.
+Rimuovi il bit superiore dell'esponente, e se è 1 moltiplica `square` per la base dell'esponenziazione (2), poi calcola <code><tt>square</tt> modulo 47</code>.
 
-Use the result of the modulo from the last step as the initial value of `square` in the next step:
+Usa il risultato del modulo dall'ultimo passo come valore iniziale dello `square` nella fase successiva:
 
 <pre>Remove   Optional
 square        top bit  multiply by 2  mod 47
@@ -38,51 +38,51 @@ square        top bit  multiply by 2  mod 47
 27*27 = 729   1        729*2 = 1458      1
 </pre>
 
-Since <code>2<sup>23</sup> mod 47 = 1</code>, 47 is a factor of <code>2<sup>P</sup>-1</code>.
+Dal momento che <code>2<sup>23</sup> mod 47 = 1</code>, 47 è un fattore di <code>2<sup>P</sup>-1</code>.
 
-(To see this, subtract 1 from both sides: <code>2<sup>23</sup>-1 = 0 mod 47</code>.)
+(Per vedere questo, sottrai 1 da entrambi i lati: <code>2<sup>23</sup>-1 = 0 mod 47</code>.)
 
-Since we've shown that 47 is a factor, <code>2<sup>23</sup>-1</code> is not prime.
+Dal momento che abbiamo dimostrato che 47 è un fattore, <code>2<sup>23</sup>-1</code> non è primo.
 
-Further properties of Mersenne numbers allow us to refine the process even more.
+Ulteriori proprietà dei numeri di Mersenne ci permettono di affinare il processo ancora di più.
 
-Any factor `q` of <code>2<sup>P</sup>-1</code> must be of the form `2kP+1`, `k` being a positive integer or zero. Furthermore, `q` must be `1` or `7 mod 8`.
+Qualsiasi fattore `q` di <code>2<sup>P</sup>-1</code> deve essere modulo `2kP+1`, essendo `k` un numero intero positivo o uguale a zero. Inoltre, `q` deve essere `1` o `7 mod 8`.
 
-Finally any potential factor `q` must be [prime](https://rosettacode.org/wiki/Primality by Trial Division "Primality by Trial Division").
+Infine qualsiasi fattore potenziale `q` deve essere [primo](https://rosettacode.org/wiki/Primality by Trial Division "Primality by Trial Division").
 
-As in other trial division algorithms, the algorithm stops when `2kP+1 > sqrt(N)`.These primarily tests only work on Mersenne numbers where `P` is prime. For example, <code>M<sub>4</sub>=15</code> yields no factors using these techniques, but factors into 3 and 5, neither of which fit `2kP+1`.
+Come in altri algoritmi di divisione di prova, l'algoritmo si ferma quando `2kP+1 > sqrt(N)`. Questi test funzionano principalmente solo su numeri Mersenne dove `P` è primo. Ad esempio, <code>M<sub>4</sub>=15</code> non produce fattori che utilizzano queste tecniche, ma fattori in 3 e 5, nessuno dei quali nella forma `2kP+1`.
 
 # --instructions--
 
-Using the above method find a factor of <code>2<sup>p</sup>-1</code>.
+Utilizzando il metodo sopra descritto trovare un fattore di <code>2<sup>p</sup>-1</code>.
 
 # --hints--
 
-`check_mersenne` should be a function.
+`check_mersenne` dovrebbe essere una funzione.
 
 ```js
 assert(typeof check_mersenne === 'function');
 ```
 
-`check_mersenne(3)` should return a string.
+`check_mersenne(3)` dovrebbe restituire una stringa.
 
 ```js
 assert(typeof check_mersenne(3) == 'string');
 ```
 
-`check_mersenne(3)` should return the string `M3 = 2^3-1 is prime`.
+`check_mersenne(3)` dovrebbe restituire la stringa `M3 = 2^3-1 is prime`.
 
 ```js
 assert.equal(check_mersenne(3), 'M3 = 2^3-1 is prime');
 ```
 
-`check_mersenne(23)` should return the string `M23 = 2^23-1 is composite with factor 47`.
+`check_mersenne(23)` dovrebbe restituire la stringa `M23 = 2^23-1 is composite with factor 47`.
 
 ```js
 assert.equal(check_mersenne(23), 'M23 = 2^23-1 is composite with factor 47');
 ```
 
-`check_mersenne(929)` should return the string `M929 = 2^929-1 is composite with factor 13007`.
+`check_mersenne(929)` dovrebbe restituire la stringa `M929 = 2^929-1 is composite with factor 13007`.
 
 ```js
 assert.equal(

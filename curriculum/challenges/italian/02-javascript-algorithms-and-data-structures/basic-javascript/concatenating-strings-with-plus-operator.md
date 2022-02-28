@@ -25,7 +25,7 @@ Esempio:
 const ourStr = "I come first. " + "I come second.";
 ```
 
-La stringa `I come first. I come second.` sarebbe visualizzata nella console.
+La stringa `I come first. I come second.` sarà mostrata nella console.
 # --instructions--
 
 Costruisci `myStr` dalle stringhe `This is the start.` e `This is the end.` usando l'operatore `+`. Assicurati di includere uno spazio tra le due stringhe.

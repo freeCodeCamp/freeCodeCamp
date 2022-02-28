@@ -1,48 +1,17 @@
-import request from 'request';
-
-import { gitHubUserAgent } from '../../../../config/misc';
 import { getRedirectParams } from '../utils/redirection';
-
-const githubClient = process.env.GITHUB_ID;
-const githubSecret = process.env.GITHUB_SECRET;
+import { deprecatedEndpoint } from '../utils/deprecatedEndpoint';
 
 module.exports = function (app) {
   const router = app.loopback.Router();
   const User = app.models.User;
 
-  router.get('/api/github', githubCalls);
+  router.get('/api/github', deprecatedEndpoint);
   router.get('/u/:email', unsubscribeDeprecated);
   router.get('/unsubscribe/:email', unsubscribeDeprecated);
   router.get('/ue/:unsubscribeId', unsubscribeById);
-  router.get(
-    '/the-fastest-web-page-on-the-internet',
-    theFastestWebPageOnTheInternet
-  );
-  router.get('/unsubscribed/:unsubscribeId', unsubscribedWithId);
-  router.get('/unsubscribed', unsubscribed);
   router.get('/resubscribe/:unsubscribeId', resubscribe);
-  router.get('/nonprofits', nonprofits);
-  router.get('/coding-bootcamp-cost-calculator', bootcampCalculator);
 
   app.use(router);
-
-  function theFastestWebPageOnTheInternet(req, res) {
-    res.render('resources/the-fastest-web-page-on-the-internet', {
-      title: 'This is the fastest web page on the internet'
-    });
-  }
-
-  function bootcampCalculator(req, res) {
-    res.render('resources/calculator', {
-      title: 'Coding Bootcamp Cost Calculator'
-    });
-  }
-
-  function nonprofits(req, res) {
-    res.render('resources/nonprofits', {
-      title: 'Your Nonprofit Can Get Pro Bono Code'
-    });
-  }
 
   function unsubscribeDeprecated(req, res) {
     req.flash(
@@ -96,20 +65,6 @@ module.exports = function (app) {
     });
   }
 
-  function unsubscribed(req, res) {
-    res.render('resources/unsubscribed', {
-      title: 'You have been unsubscribed'
-    });
-  }
-
-  function unsubscribedWithId(req, res) {
-    const { unsubscribeId } = req.params;
-    return res.render('resources/unsubscribed', {
-      title: 'You have been unsubscribed',
-      unsubscribeId
-    });
-  }
-
   function resubscribe(req, res, next) {
     const { unsubscribeId } = req.params;
     const { origin } = getRedirectParams(req);
@@ -150,56 +105,5 @@ module.exports = function (app) {
         })
         .catch(next);
     });
-  }
-
-  function githubCalls(req, res, next) {
-    var githubHeaders = {
-      headers: {
-        'User-Agent': gitHubUserAgent
-      },
-      port: 80
-    };
-    request(
-      [
-        'https://api.github.com/repos/freecodecamp/',
-        'freecodecamp/pulls?client_id=',
-        githubClient,
-        '&client_secret=',
-        githubSecret
-      ].join(''),
-      githubHeaders,
-      function (err, status1, pulls) {
-        if (err) {
-          return next(err);
-        }
-        pulls = pulls
-          ? Object.keys(JSON.parse(pulls)).length
-          : "Can't connect to github";
-
-        return request(
-          [
-            'https://api.github.com/repos/freecodecamp/',
-            'freecodecamp/issues?client_id=',
-            githubClient,
-            '&client_secret=',
-            githubSecret
-          ].join(''),
-          githubHeaders,
-          function (err, status2, issues) {
-            if (err) {
-              return next(err);
-            }
-            issues =
-              pulls === parseInt(pulls, 10) && issues
-                ? Object.keys(JSON.parse(issues)).length - pulls
-                : "Can't connect to GitHub";
-            return res.json({
-              issues: issues,
-              pulls: pulls
-            });
-          }
-        );
-      }
-    );
   }
 };

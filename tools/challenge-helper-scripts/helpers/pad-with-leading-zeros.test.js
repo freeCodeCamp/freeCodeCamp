@@ -13,20 +13,6 @@ describe('padWithLeadingZeros helper', () => {
     expect(padWithLeadingZeros('111')).toEqual('111');
   });
 
-  it('should throw on invalid values', () => {
-    const items = ['undefined', null, []];
-
-    items.forEach(item =>
-      expect(() => {
-        if (item !== 'undefined') {
-          padWithLeadingZeros(item);
-        } else {
-          padWithLeadingZeros();
-        }
-      }).toThrow()
-    );
-  });
-
   it('should throw on valid values that are longer that 3 characters', () => {
     expect(() => {
       padWithLeadingZeros('19850809');

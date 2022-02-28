@@ -1,0 +1,14 @@
+{
+  "name": "Learn Advanced Bash by Building a Kitty Ipsum Translator",
+  "isUpcomingChange": false,
+  "order": 7,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "relational-database",
+  "challengeOrder": [
+    [
+      "602da0de22201c65d2a019f6",
+      "Build a Kitty Ipsum Translator"
+    ]
+  ]}

@@ -31,6 +31,7 @@ export const UserPropType = PropTypes.shape({
   isQaCertV7: PropTypes.bool,
   isInfosecCertV7: PropTypes.bool,
   isJsAlgoDataStructCert: PropTypes.bool,
+  isRelationalDatabaseCertV8: PropTypes.bool,
   isRespWebDesignCert: PropTypes.bool,
   isSciCompPyCertV7: PropTypes.bool,
   isDataAnalysisPyCertV7: PropTypes.bool,
@@ -302,6 +303,7 @@ export type ClaimedCertifications = {
   isQaCertV7: boolean;
   isInfosecCertV7: boolean;
   isJsAlgoDataStructCert: boolean;
+  isRelationalDatabaseCertV8: boolean;
   isRespWebDesignCert: boolean;
   isSciCompPyCertV7: boolean;
   isDataAnalysisPyCertV7: boolean;
@@ -357,14 +359,13 @@ export type ChallengeFile = {
   name: string;
   editableRegionBoundaries: number[];
   usesMultifileEditor: boolean;
-  path: string;
   error: null | string;
   head: string;
   tail: string;
   seed: string;
   contents: string;
   id: string;
-  history: [[string], string];
+  history: string[];
 };
 
 export type ChallengeFiles = ChallengeFile[] | null;

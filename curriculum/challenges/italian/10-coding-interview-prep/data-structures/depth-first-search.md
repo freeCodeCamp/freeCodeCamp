@@ -49,7 +49,24 @@ assert.sameMembers(
 );
 ```
 
-Il grafo di input `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]` con un nodo di partenza di `1` dovrebbe restituire un array con quattro elementi.
+Il grafo di input `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]` con un nodo iniziale di `3` dovrebbe restituire un array con `3`, `2`, `1`, e `0`.
+
+```js
+assert.sameMembers(
+  (function () {
+    var graph = [
+      [0, 1, 0, 0],
+      [1, 0, 1, 0],
+      [0, 1, 0, 1],
+      [0, 0, 1, 0]
+    ];
+    return dfs(graph, 3);
+  })(),
+  [3, 2, 1, 0]
+);
+```
+
+Il grafo di input `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]` con un nodo iniziale di `1` dovrebbe restiture un array con quattro elementi.
 
 ```js
 assert(
@@ -65,7 +82,7 @@ assert(
 );
 ```
 
-Il grafo di input `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]` con un nodo di partenza di `3` dovrebbe restituire un array con `3`.
+Il grafo di input `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]` con un nodo iniziale di `3` dovrebbe restituire un array con `3`.
 
 ```js
 assert.sameMembers(

@@ -1,0 +1,23 @@
+---
+id: 5e46fc95ac417301a38fb935
+title: Python による機械学習認定証
+certification: machine-learning-with-python
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: 5e46f8d6ac417301a38fb92d
+    title: じゃんけん
+  - 
+    id: 5e46f8dcac417301a38fb92e
+    title: 猫と犬の画像分類プログラム
+  - 
+    id: 5e46f8e3ac417301a38fb92f
+    title: KNN を使用した書籍推薦エンジン
+  - 
+    id: 5e46f8edac417301a38fb930
+    title: 線形回帰による医療費の計算プログラム
+  - 
+    id: 5e46f8edac417301a38fb931
+    title: ニューラルネットワークによる SMS テキスト分類プログラム
+

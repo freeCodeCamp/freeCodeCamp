@@ -2,10 +2,9 @@ import { isEmpty } from 'lodash-es';
 import { createAction, handleActions } from 'redux-actions';
 
 import { getLines } from '../../../../../utils/get-lines';
-import { createPoly } from '../../../../../utils/polyvinyl';
 import { challengeTypes } from '../../../../utils/challenge-types';
 import { completedChallengesSelector } from '../../../redux';
-import { getTargetEditor } from '../utils/getTargetEditor';
+import { getTargetEditor } from '../utils/get-target-editor';
 import { actionTypes, ns } from './action-types';
 import codeLockEpic from './code-lock-epic';
 import codeStorageEpic from './code-storage-epic';
@@ -58,12 +57,11 @@ export const sagas = [
   ...createCurrentChallengeSaga(actionTypes)
 ];
 
-// TODO: can createPoly handle editable region, rather than separating it?
 export const createFiles = createAction(
   actionTypes.createFiles,
   challengeFiles =>
     challengeFiles.map(challengeFile => ({
-      ...createPoly(challengeFile),
+      ...challengeFile,
       seed: challengeFile.contents.slice(),
       editableContents: getLines(
         challengeFile.contents,
