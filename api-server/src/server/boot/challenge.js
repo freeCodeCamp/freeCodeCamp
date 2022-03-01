@@ -150,7 +150,6 @@ export function buildUserUpdate(
 
   let newSavedChallenges = savedChallenges;
 
-  // if savable challenge, update record in db on submit
   if (savableChallenges.includes(challengeId)) {
     let challengeToSave = {
       id: challengeId,
@@ -172,16 +171,25 @@ export function buildUserUpdate(
       [challengeToSave, ...savedChallenges.map(fixCompletedChallengeItem)],
       'id'
     );
+
+    // if saveableChallenge, update saved array when submitting
+    updateData.$set = {
+      completedChallenges: uniqBy(
+        [finalChallenge, ...completedChallenges.map(fixCompletedChallengeItem)],
+        'id'
+      ),
+      savedChallenges: newSavedChallenges
+    };
+  } else {
+    updateData.$set = {
+      completedChallenges: uniqBy(
+        [finalChallenge, ...completedChallenges.map(fixCompletedChallengeItem)],
+        'id'
+      )
+    };
   }
 
-  updateData.$set = {
-    completedChallenges: uniqBy(
-      [finalChallenge, ...completedChallenges.map(fixCompletedChallengeItem)],
-      'id'
-    ),
-    savedChallenges: newSavedChallenges
-  };
-
+  // remove from particallyCompleted on submit
   updateData.$pull = {
     partiallyCompletedChallenges: { id: challengeId }
   };
