@@ -1,6 +1,6 @@
 ---
 id: 5900f44b1000cf542c50ff5d
-title: 'Problem 222: Sphere Packing'
+title: 'Problema 222: Imballaggio di una sfera'
 challengeType: 5
 forumTopicId: 301865
 dashedName: problem-222-sphere-packing
@@ -8,16 +8,16 @@ dashedName: problem-222-sphere-packing
 
 # --description--
 
-What is the length of the shortest pipe, of internal radius 50mm, that can fully contain 21 balls of radii 30mm, 31mm, ..., 50mm?
+Qual è la lunghezza del tubo più corto, di raggio interno 50mm, che può contenere completamente 21 sfere di raggio 30mm, 31mm, ..., 50mm?
 
-Give your answer in micrometres (10-6 m) rounded to the nearest integer.
+Dai la tua risposta in micrometri (${10}^{-6}$ m) arrotondata al numero intero più vicino.
 
 # --hints--
 
-`euler222()` should return 1590933.
+`spherePacking()` dovrebbe restituire `1590933`.
 
 ```js
-assert.strictEqual(euler222(), 1590933);
+assert.strictEqual(spherePacking(), 1590933);
 ```
 
 # --seed--
@@ -25,12 +25,12 @@ assert.strictEqual(euler222(), 1590933);
 ## --seed-contents--
 
 ```js
-function euler222() {
+function spherePacking() {
 
   return true;
 }
 
-euler222();
+spherePacking();
 ```
 
 # --solutions--

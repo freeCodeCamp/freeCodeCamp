@@ -22,7 +22,7 @@
 
 私たちは freeCodeCamp.org を世界中の主要言語へローカライズしています。
 
-認定講座は、[中国語 (中文)](https://chinese.freecodecamp.org/learn)、[スペイン語 (Español)](https://www.freecodecamp.org/espanol/learn/)、[イタリア語 (Italiano)](https://www.freecodecamp.org/espanol/learn/)、[ポルトガル語 (Português)](https://www.freecodecamp.org/espanol/learn/) のような世界の主要言語で、既に動作しています。 [お知らせ](https://www.freecodecamp.org/news/world-language-translation-effort) を読んで、仲間と共に楽しんでください。
+Certifications are already live in some major world languages like [Chinese (中文)](https://chinese.freecodecamp.org/learn), [Spanish (Español)](https://www.freecodecamp.org/espanol/learn), [Italian (Italiano)](https://www.freecodecamp.org/italian/learn), [Portuguese (Português)](https://www.freecodecamp.org/portuguese/learn). [お知らせ](https://www.freecodecamp.org/news/world-language-translation-effort) を読んで、仲間と共に楽しんでください。
 
 **翻訳にご興味があれば、[freeCodeCamp リソースを翻訳する方法](how-to-translate-files.md) をご覧ください。**
 

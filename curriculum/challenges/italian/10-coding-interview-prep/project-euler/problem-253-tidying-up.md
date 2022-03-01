@@ -1,6 +1,6 @@
 ---
 id: 5900f4691000cf542c50ff7c
-title: 'Problem 253: Tidying up'
+title: 'Problema 253: Mettere in ordine'
 challengeType: 5
 forumTopicId: 301901
 dashedName: problem-253-tidying-up
@@ -8,28 +8,45 @@ dashedName: problem-253-tidying-up
 
 # --description--
 
-A small child has a “number caterpillar” consisting of forty jigsaw pieces, each with one number on it, which, when connected together in a line, reveal the numbers 1 to 40 in order.
+Un bambino piccolo ha un "bruco numeroso" composto da quaranta pezzi, ciascuno con un numero su di esso, che, quando collegati insieme in una linea, rivelano i numeri da 1 a 40 in ordine.
 
-Every night, the child's father has to pick up the pieces of the caterpillar that have been scattered across the play room. He picks up the pieces at random and places them in the correct order. As the caterpillar is built up in this way, it forms distinct segments that gradually merge together. The number of segments starts at zero (no pieces placed), generally increases up to about eleven or twelve, then tends to drop again before finishing at a single segment (all pieces placed).
+Ogni notte, il padre del bambino deve raccogliere i pezzi del bruco che sono stati sparsi attraverso la stanza dei giochi. Raccoglie i pezzi a caso e li posiziona nell'ordine corretto.
 
-For example:
+Mentre il bruco viene costruito in questo modo, si formano segmenti distinti che gradualmente si fondono insieme. Il numero di segmenti inizia con zero (nessun pezzo posizionato), generalmente aumenta fino a circa undici o dodici, poi tende a scendere di nuovo prima di finire in un singolo segmento (tutti i pezzi posizionati).
 
-Piece Placed Segments So Far121422936434554354……
+Per esempio:
 
-Let M be the maximum number of segments encountered during a random tidy-up of the caterpillar. For a caterpillar of ten pieces, the number of possibilities for each M is
+| Pezzo Posizionato | Segmenti Fino ad Ora |
+| ----------------- | -------------------- |
+| 12                | 1                    |
+| 4                 | 2                    |
+| 29                | 3                    |
+| 6                 | 4                    |
+| 34                | 5                    |
+| 5                 | 4                    |
+| 35                | 4                    |
+| …                 | …                    |
 
-M Possibilities1512 2250912 31815264 41418112 5144000
+Sia $M$ il numero massimo di segmenti incontrati durante un riordino casuale del bruco. Per un bruco di dieci pezzi, il numero di possibilità per ogni $M$ è
 
-so the most likely value of M is 3 and the average value is 385643⁄113400 = 3.400732, rounded to six decimal places.
+| M | Possibilità |
+| - | ----------- |
+| 1 | 512         |
+| 2 | 250912      |
+| 3 | 1815264     |
+| 4 | 1418112     |
+| 5 | 144000      |
 
-The most likely value of M for a forty-piece caterpillar is 11; but what is the average value of M? Give your answer rounded to six decimal places.
+quindi il valore più probabile di $M$ è 3 e il valore medio è $\frac{385\\,643}{113\\,400} = 3.400732$, arrotondato a sei decimali.
+
+Il valore più probabile di $M$ per un bruco a quaranta pezzi è 11; ma qual è il valore medio di $M$? Dai la risposta arrotondata a sei decimali.
 
 # --hints--
 
-`euler253()` should return 11.492847.
+`tidyingUp()` dovrebbe restituire `11.492847`.
 
 ```js
-assert.strictEqual(euler253(), 11.492847);
+assert.strictEqual(tidyingUp(), 11.492847);
 ```
 
 # --seed--
@@ -37,12 +54,12 @@ assert.strictEqual(euler253(), 11.492847);
 ## --seed-contents--
 
 ```js
-function euler253() {
+function tidyingUp() {
 
   return true;
 }
 
-euler253();
+tidyingUp();
 ```
 
 # --solutions--

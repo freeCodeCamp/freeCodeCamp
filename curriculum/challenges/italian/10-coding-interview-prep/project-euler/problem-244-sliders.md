@@ -1,6 +1,6 @@
 ---
 id: 5900f4601000cf542c50ff72
-title: 'Problem 244: Sliders'
+title: 'Problema 244: Sliders'
 challengeType: 5
 forumTopicId: 301891
 dashedName: problem-244-sliders
@@ -8,30 +8,32 @@ dashedName: problem-244-sliders
 
 # --description--
 
-You probably know the game Fifteen Puzzle. Here, instead of numbered tiles, we have seven red tiles and eight blue tiles.
+Probabilmente conosci il gioco Fifteen Puzzle. Qui, invece di piastrelle numerate, abbiamo sette piastrelle rosse e otto piastrelle blu.
 
-A move is denoted by the uppercase initial of the direction (Left, Right, Up, Down) in which the tile is slid, e.g. starting from configuration (S), by the sequence LULUR we reach the configuration (E):
+Una mossa è indicata dall'iniziale maiuscolo della direzione (sinistra, destra, alto, giù) in cui la piastrella è fatta scorrere, ad esempio partendo dalla configurazione ($S$), dalla sequenza $LULUR$ raggiungiamo la configurazione ($E$):
 
-(S), (E)
+($S$) <img class="img-responsive" alt="configuration S" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliders-1.gif" style="display: inline-block; background-color: white; padding: 10px;" />, ($E$) <img class="img-responsive" alt="configurazione E" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliders-2.gif" style="display: inline-block; background-color: white; padding: 10px;" />
 
-For each path, its checksum is calculated by (pseudocode):
+Per ogni percorso, il suo checksum è calcolato con (pseudocodice):
 
-checksum = 0 checksum = (checksum × 243 + m1) mod 100 000 007 checksum = (checksum × 243 + m2) mod 100 000 007 … checksum = (checksum × 243 + mn) mod 100 000 007 where mk is the ASCII value of the kth letter in the move sequence and the ASCII values for the moves are:
+$$\begin{align} & \text{checksum} = 0 \\\\ & \text{checksum} = (\text{checksum} × 243 + m_1) \\; \text{mod} \\; 100\\,000\\,007 \\\\ & \text{checksum} = (\text{checksum} × 243 + m_2) \\; \text{mod} \\; 100\\,000\\,007 \\\\ & \ldots \\\\ & \text{checksum} = (\text{checksum} × 243 + m_n) \\; \text{mod} \\; 100\\,000\\,007 \end{align}$$
 
-L76R82U85D68
+dove $m_k$ è il valore ASCII della $k^{\text{th}}$-ma lettera nella sequenza di movimento e i valori ASCII per le mosse sono:
 
-For the sequence LULUR given above, the checksum would be 19761398. Now, starting from configuration (S), find all shortest ways to reach configuration (T).
+$$\begin{array}{|c|c|} \hline L & 76 \\\\ \hline R & 82 \\\\ \hline U & 85 \\\\ \hline D & 68 \\\\ \hline \end{array}$$
 
-(S), (T)
+Per la sequenza $LULUR$ riportata sopra, il checksum sarebbe 19761398. Ora, partendo dalla configurazione ($S$), trova tutti i modi più brevi per raggiungere la configurazione ($T$).
 
-What is the sum of all checksums for the paths having the minimal length?
+($S$) <img class="img-responsive center-block" alt="configuration S" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliders-3.gif" style="display: inline-block; background-color: white; padding: 10px;" />, ($T$) <img class="img-responsive center-block" alt="configurazione T" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliders-4.gif" style="display: inline-block; background-color: white; padding: 10px;" />
+
+Qual è la somma di tutti i checksum per i percorsi che hanno la lunghezza minima?
 
 # --hints--
 
-`euler244()` should return 96356848.
+`sliders()` dovrebbe restituire `96356848`.
 
 ```js
-assert.strictEqual(euler244(), 96356848);
+assert.strictEqual(sliders(), 96356848);
 ```
 
 # --seed--
@@ -39,12 +41,12 @@ assert.strictEqual(euler244(), 96356848);
 ## --seed-contents--
 
 ```js
-function euler244() {
+function sliders() {
 
   return true;
 }
 
-euler244();
+sliders();
 ```
 
 # --solutions--

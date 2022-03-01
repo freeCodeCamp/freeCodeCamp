@@ -1,6 +1,6 @@
 ---
 id: 5900f44f1000cf542c50ff61
-title: 'Problem 227: The Chase'
+title: 'Problema 227: L''Inseguimento'
 challengeType: 5
 forumTopicId: 301870
 dashedName: problem-227-the-chase
@@ -8,18 +8,26 @@ dashedName: problem-227-the-chase
 
 # --description--
 
-"The Chase" is a game played with two dice and an even number of players.
+"L'inseguimento" è un gioco giocato con due dadi e un numero pari di giocatori.
 
-The players sit around a table; the game begins with two opposite players having one die each. On each turn, the two players with a die roll it. If a player rolls a 1, he passes the die to his neighbour on the left; if he rolls a 6, he passes the die to his neighbour on the right; otherwise, he keeps the die for the next turn. The game ends when one player has both dice after they have been rolled and passed; that player has then lost.
+I giocatori si siedono intorno a un tavolo; il gioco inizia con due giocatori opposti che hanno un dado ciascuno. Ad ogni turno, i due giocatori con un dado lo lanciano.
 
-In a game with 100 players, what is the expected number of turns the game lasts? Give your answer rounded to ten significant digits.
+Se il giocatore lancia un 1, passa il dado al suo vicino a sinistra.
+
+Se il giocatore lancia un 6, passa il dado al suo vicino sulla destra.
+
+Altrimenti, mantiene il dado per il prossimo turno.
+
+Il gioco termina quando un giocatore ha entrambi i dadi dopo che sono stati rotolati e passati; quel giocatore ha perso.
+
+In una partita con 100 giocatori, qual è il numero previsto di turni del gioco? Dai la tua risposta arrotondata a dieci cifre significative.
 
 # --hints--
 
-`euler227()` should return 3780.618622.
+`theChase()` dovrebbe restituire `3780.618622`.
 
 ```js
-assert.strictEqual(euler227(), 3780.618622);
+assert.strictEqual(theChase(), 3780.618622);
 ```
 
 # --seed--
@@ -27,12 +35,12 @@ assert.strictEqual(euler227(), 3780.618622);
 ## --seed-contents--
 
 ```js
-function euler227() {
+function theChase() {
 
   return true;
 }
 
-euler227();
+theChase();
 ```
 
 # --solutions--

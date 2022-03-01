@@ -1,6 +1,6 @@
 ---
 id: 5900f48a1000cf542c50ff9c
-title: 'Problem 285: Pythagorean odds'
+title: 'Problema 285: disparità pitagoriche'
 challengeType: 5
 forumTopicId: 301936
 dashedName: problem-285-pythagorean-odds
@@ -8,22 +8,22 @@ dashedName: problem-285-pythagorean-odds
 
 # --description--
 
-Albert chooses a positive integer k, then two real numbers a, b are randomly chosen in the interval \[0,1] with uniform distribution.
+Albert sceglie un numero intero positivo $k$, quindi due numeri reali $a$, $b$ sono scelti casualmente nell'intervallo [0,1] con distribuzione uniforme.
 
-The square root of the sum (k·a+1)2 + (k·b+1)2 is then computed and rounded to the nearest integer. If the result is equal to k, he scores k points; otherwise he scores nothing.
+La radice quadrata della somma ${(ka + 1)}^2 + {(kb + 1)}^2$ viene quindi calcolata e arrotondata alla cifra intera più vicina. Se il risultato è uguale a $k$, ottiene $k$ punti; altrimenti non ottiene nulla.
 
-For example, if k = 6, a = 0.2 and b = 0.85, then (k·a+1)2 + (k·b+1)2 = 42.05. The square root of 42.05 is 6.484... and when rounded to the nearest integer, it becomes 6. This is equal to k, so he scores 6 points.
+Per esempio, se $k = 6$, $a = 0.2$ e $b = 0.85$, poi ${(ka + 1)}^2 + {(kb + 1)}^2 = 42.05$. La radice quadrata di 42.05 è 6.484... che arrotondata al numero intero più vicino, diventa 6. Questo è uguale a $k$, quindi ottiene 6 punti.
 
-It can be shown that if he plays 10 turns with k = 1, k = 2, ..., k = 10, the expected value of his total score, rounded to five decimal places, is 10.20914.
+Si può dimostrare che se gioca 10 turni con $k = 1, k = 2, \ldots, k = 10$, il valore previsto del suo punteggio totale, arrotondato al quinto decimale, è 10.20914.
 
-If he plays 105 turns with k = 1, k = 2, k = 3, ..., k = 105, what is the expected value of his total score, rounded to five decimal places?
+Se gioca ${10}^5$ turni con $k = 1, k = 2, k = 3, \ldots, k = {10}^5$, qual è il valore previsto del suo punteggio totale, arrotondato al quinto decimale?
 
 # --hints--
 
-`euler285()` should return 157055.80999.
+`pythagoreanOdds()` dovrebbe restituire `157055.80999`.
 
 ```js
-assert.strictEqual(euler285(), 157055.80999);
+assert.strictEqual(pythagoreanOdds(), 157055.80999);
 ```
 
 # --seed--
@@ -31,12 +31,12 @@ assert.strictEqual(euler285(), 157055.80999);
 ## --seed-contents--
 
 ```js
-function euler285() {
+function pythagoreanOdds() {
 
   return true;
 }
 
-euler285();
+pythagoreanOdds();
 ```
 
 # --solutions--

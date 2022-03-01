@@ -1,6 +1,6 @@
 ---
 id: 5900f4b11000cf542c50ffc4
-title: 'Problem 325: Stone Game II'
+title: 'Problema 325: Gioco delle pietre II'
 challengeType: 5
 forumTopicId: 301982
 dashedName: problem-325-stone-game-ii
@@ -8,26 +8,26 @@ dashedName: problem-325-stone-game-ii
 
 # --description--
 
-A game is played with two piles of stones and two players. At her turn, a player removes a number of stones from the larger pile. The number of stones she removes must be a positive multiple of the number of stones in the smaller pile.
+Un gioco si gioca con due mucchi di pietre e due giocatori. Al turno di ogni giocatore, il giocatore può rimuovere un certo numero di pietre dal mucchio più grande. Il numero di pietre che rimuove deve essere un multiplo positivo del numero di pietre nel mucchio più piccolo.
 
-E.g., let the ordered pair(6,14) describe a configuration with 6 stones in the smaller pile and 14 stones in the larger pile, then the first player can remove 6 or 12 stones from the larger pile.
+Ad esempio, la coppia ordinata (6,14) descrive una configurazione con 6 pietre nel mucchio più piccolo e 14 pietre nel mucchio più grande, quindi il primo giocatore può rimuovere 6 o 12 pietre dal mucchio più grande.
 
-The player taking all the stones from a pile wins the game.
+Il giocatore che prende tutte le pietre da un mucchio vince la partita.
 
-A winning configuration is one where the first player can force a win. For example, (1,5), (2,6) and (3,12) are winning configurations because the first player can immediately remove all stones in the second pile.
+Una configurazione vincente è quella in cui il primo giocatore può forzare una vittoria. Ad esempio, (1,5), (2,6) e (3,12) sono configurazioni vincenti perché il primo giocatore può rimuovere immediatamente tutte le pietre nel secondo mucchio.
 
-A losing configuration is one where the second player can force a win, no matter what the first player does. For example, (2,3) and (3,4) are losing configurations: any legal move leaves a winning configuration for the second player.
+Una configurazione perdente è quella in cui il secondo giocatore può forzare una vittoria, indipendentemente da ciò che fa il primo giocatore. Ad esempio, (2,3) e (3,4) sono configurazioni perdenti: qualsiasi mossa lecita lascia una configurazione vincente per il secondo giocatore.
 
-Define S(N) as the sum of (xi+yi) for all losing configurations (xi,yi), 0 &lt; xi &lt; yi ≤ N. We can verify that S(10) = 211 and S(104) = 230312207313.
+Definiamo $S(N)$ come somma di ($x_i + y_i$) per tutte le configurazioni perdenti ($x_i$, $y_i$), $0 &lt; x_i &lt; y_i ≤ N$. Possiamo verificare che $S(10) = 211$ e $S({10}^4) = 230\\,312\\,207\\,313$.
 
-Find S(1016) mod 710.
+Trova $S({10}^{16})\bmod 7^{10}$.
 
 # --hints--
 
-`euler325()` should return 54672965.
+`stoneGameTwo()` dovrebbe restituire `54672965`.
 
 ```js
-assert.strictEqual(euler325(), 54672965);
+assert.strictEqual(stoneGameTwo(), 54672965);
 ```
 
 # --seed--
@@ -35,12 +35,12 @@ assert.strictEqual(euler325(), 54672965);
 ## --seed-contents--
 
 ```js
-function euler325() {
+function stoneGameTwo() {
 
   return true;
 }
 
-euler325();
+stoneGameTwo();
 ```
 
 # --solutions--

@@ -1,6 +1,6 @@
 ---
 id: 5900f48f1000cf542c50ffa1
-title: 'Problem 290: Digital Signature'
+title: 'Problema 290: Firma Digitale'
 challengeType: 5
 forumTopicId: 301942
 dashedName: problem-290-digital-signature
@@ -8,14 +8,14 @@ dashedName: problem-290-digital-signature
 
 # --description--
 
-How many integers 0 ≤ n &lt; 1018 have the property that the sum of the digits of n equals the sum of digits of 137n?
+Quanti interi $0 ≤ n &lt; {10}^{18}$ hanno la proprietà che la somma delle cifre di $n$ è uguale alla somma delle cifre di $137n$?
 
 # --hints--
 
-`euler290()` should return 20444710234716470.
+`digitalSignature()` dovrebbe restituire `20444710234716470`.
 
 ```js
-assert.strictEqual(euler290(), 20444710234716470);
+assert.strictEqual(digitalSignature(), 20444710234716470);
 ```
 
 # --seed--
@@ -23,12 +23,12 @@ assert.strictEqual(euler290(), 20444710234716470);
 ## --seed-contents--
 
 ```js
-function euler290() {
+function digitalSignature() {
 
   return true;
 }
 
-euler290();
+digitalSignature();
 ```
 
 # --solutions--

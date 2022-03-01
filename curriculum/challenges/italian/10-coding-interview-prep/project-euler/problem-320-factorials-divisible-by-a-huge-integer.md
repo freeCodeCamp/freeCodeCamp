@@ -1,6 +1,6 @@
 ---
 id: 5900f4ae1000cf542c50ffbf
-title: 'Problem 320: Factorials divisible by a huge integer'
+title: 'Problema 320: Fattoriali divisibili da un numero intero enorme'
 challengeType: 5
 forumTopicId: 301977
 dashedName: problem-320-factorials-divisible-by-a-huge-integer
@@ -8,20 +8,20 @@ dashedName: problem-320-factorials-divisible-by-a-huge-integer
 
 # --description--
 
-Let N(i) be the smallest integer n such that n! is divisible by (i!)1234567890
+Sia $N(i)$ sia il più piccolo numero intero $n$ tale che $n!$ sia divisibile per $(i!)^{1234567890}$
 
-Let S(u)=∑N(i) for 10 ≤ i ≤ u.
+Sia $S(u) = \sum N(i)$ per $10 ≤ i ≤ u$.
 
-S(1000)=614538266565663.
+$S(1000)=614\\,538\\,266\\,565\\,663$.
 
-Find S(1 000 000) mod 1018.
+Trova $S(1\\,000\\,000)\bmod {10}^{18}$.
 
 # --hints--
 
-`euler320()` should return 278157919195482660.
+`divisibleByHugeInteger()` dovrebbe restituire `278157919195482660`.
 
 ```js
-assert.strictEqual(euler320(), 278157919195482660);
+assert.strictEqual(divisibleByHugeInteger(), 278157919195482660);
 ```
 
 # --seed--
@@ -29,12 +29,12 @@ assert.strictEqual(euler320(), 278157919195482660);
 ## --seed-contents--
 
 ```js
-function euler320() {
+function divisibleByHugeInteger() {
 
   return true;
 }
 
-euler320();
+divisibleByHugeInteger();
 ```
 
 # --solutions--

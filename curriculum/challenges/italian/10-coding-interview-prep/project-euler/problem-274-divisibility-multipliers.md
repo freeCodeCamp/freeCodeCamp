@@ -1,6 +1,6 @@
 ---
 id: 5900f47f1000cf542c50ff91
-title: 'Problem 274: Divisibility Multipliers'
+title: 'Problema 274: Moltiplicatori di divisibilità'
 challengeType: 5
 forumTopicId: 301924
 dashedName: problem-274-divisibility-multipliers
@@ -8,26 +8,28 @@ dashedName: problem-274-divisibility-multipliers
 
 # --description--
 
-For each integer p > 1 coprime to 10 there is a positive divisibility multiplier m &lt; p which preserves divisibility by p for the following function on any positive integer, n:
+Per ogni intero $p > 1$ coprimo a 10 c'è un moltiplicatore di divisibilità positivo $m &lt; p$ che preserva la divisibilità per $p$ per la seguente funzione su qualsiasi intero positivo, $n$:
 
-f(n) = (all but the last digit of n) + (the last digit of n) \* m
+$f(n) = (\text{all but the last digit of} \\; n) + (\text{the last digit of} \\; n) \times m$
 
-That is, if m is the divisibility multiplier for p, then f(n) is divisible by p if and only if n is divisible by p.
+Cioè, se $m$ è il moltiplicatore di divisibilità per $p$, poi $f(n)$ è divisibile per $p$ se e solo se $n$ è divisibile per $p$.
 
-(When n is much larger than p, f(n) will be less than n and repeated application of f provides a multiplicative divisibility test for p.)
+(Quando $n$ è molto più grande di $p$, $f(n)$ sarà inferiore a $n$ e l'applicazione ripetuta di $f$ fornisce un test di divisibilità moltiplicativa per $p$.)
 
-For example, the divisibility multiplier for 113 is 34.
+Ad esempio, il moltiplicatore di divisibilità per 113 è 34.
 
-f(76275) = 7627 + 5 *34 = 7797 : 76275 and 7797 are both divisible by 113f(12345) = 1234 + 5* 34 = 1404 : 12345 and 1404 are both not divisible by 113
+$f(76275) = 7627 + 5 \times 34 = 7797$: 76275 e 7797 sono entrambi divisibili per 113
 
-The sum of the divisibility multipliers for the primes that are coprime to 10 and less than 1000 is 39517. What is the sum of the divisibility multipliers for the primes that are coprime to 10 and less than 107?
+$f(12345) = 1234 + 5 \times 34 = 1404$: 12345 e 1404 non sono entrambi divisibili per 113
+
+La somma dei moltiplicatori di divisibilità per i primi che sono coprimi a 10 e minori di 1000 è 39517. Qual è la somma dei moltiplicatori di divisibilità per i primi che sono coprimi a 10 e minori di ${10}^7$?
 
 # --hints--
 
-`euler274()` should return 1601912348822.
+`divisibilityMultipliers()` dovrebbe restituire `1601912348822`.
 
 ```js
-assert.strictEqual(euler274(), 1601912348822);
+assert.strictEqual(divisibilityMultipliers(), 1601912348822);
 ```
 
 # --seed--
@@ -35,12 +37,12 @@ assert.strictEqual(euler274(), 1601912348822);
 ## --seed-contents--
 
 ```js
-function euler274() {
+function divisibilityMultipliers() {
 
   return true;
 }
 
-euler274();
+divisibilityMultipliers();
 ```
 
 # --solutions--
