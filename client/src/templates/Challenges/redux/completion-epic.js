@@ -36,7 +36,7 @@ import {
 function postChallenge(update, username) {
   const saveChallenge = postUpdate$(update).pipe(
     retry(3),
-    switchMap(({ points, savedChallenges = undefined }) => {
+    switchMap(({ points, savedChallenges }) => {
       // TODO: do this all in ajax.ts
       const payloadWithClientProperties = {
         ...omit(update.payload, ['files'])

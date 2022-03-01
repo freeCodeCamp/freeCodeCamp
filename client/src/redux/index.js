@@ -646,7 +646,7 @@ export const reducer = handleActions(
       }
     }),
     [actionTypes.submitComplete]: (state, { payload }) => {
-      const { submittedChallenge, savedChallenges = undefined } = payload;
+      const { submittedChallenge, savedChallenges } = payload;
       let submittedchallenges = [
         { ...submittedChallenge, completedDate: Date.now() }
       ];
