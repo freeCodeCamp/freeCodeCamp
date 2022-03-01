@@ -1,6 +1,6 @@
 ---
 id: 5900f4a71000cf542c50ffb9
-title: 'Problem 314: The Mouse on the Moon'
+title: 'Problema 314: Il topo sulla Luna'
 challengeType: 5
 forumTopicId: 301970
 dashedName: problem-314-the-mouse-on-the-moon
@@ -8,22 +8,26 @@ dashedName: problem-314-the-mouse-on-the-moon
 
 # --description--
 
-The moon has been opened up, and land can be obtained for free, but there is a catch. You have to build a wall around the land that you stake out, and building a wall on the moon is expensive. Every country has been allotted a 500 m by 500 m square area, but they will possess only that area which they wall in. 251001 posts have been placed in a rectangular grid with 1 meter spacing. The wall must be a closed series of straight lines, each line running from post to post.
+La luna è stata aperta e il terreno può essere ottenuto gratuitamente, ma c'è un problema. È necessario costruire un muro intorno al terreno che vuoi delimitare, e costruire un muro sulla luna è costoso. Ad ogni Paese è stata assegnata una superficie quadrata di 500 m per 500 m, ma disporrà solo della zona delimitata dal muro. 251001 paletti sono stati collocati in una griglia rettangolare con una spaziatura di 1 metro. La parete deve essere una serie chiusa di linee rette, ogni linea che corre da paletto a paletto.
 
-The bigger countries of course have built a 2000 m wall enclosing the entire 250 000 m2 area. The Duchy of Grand Fenwick, has a tighter budget, and has asked you (their Royal Programmer) to compute what shape would get best maximum enclosed-area/wall-length ratio.
+I paesi più grandi hanno ovviamente costruito un muro di 2000 m che racchiude l'intera area di 250 000 $\text{m}^2$. Il Ducato di Grand Fenwick, ha un budget più ristretto, e ti ha chiesto (in quanto loro Programmatore Reale) di calcolare quale forma otterrebbe il massimo rapporto $\frac{\text{area-racchiusa}}{\text{lunghezza-muro}}$.
 
-You have done some preliminary calculations on a sheet of paper. For a 2000 meter wall enclosing the 250 000 m2 area the enclosed-area/wall-length ratio is 125. Although not allowed , but to get an idea if this is anything better: if you place a circle inside the square area touching the four sides the area will be equal to π*2502 m2 and the perimeter will be π*500 m, so the enclosed-area/wall-length ratio will also be 125.
+Hai fatto alcuni calcoli preliminari su un foglio di carta. Per un muro di 2000 metri che racchiude l'area di 250 000 $\text{m}^2$ il rapporto $\frac{\text{area-racchiusa}}{\text{lunghezza-muro}}$ è 125.
 
-However, if you cut off from the square four triangles with sides 75 m, 75 m and 75√2 m the total area becomes 238750 m2 and the perimeter becomes 1400+300√2 m. So this gives an enclosed-area/wall-length ratio of 130.87, which is significantly better.
+Anche se non è consentito, ma per avere un'idea se questo è qualcosa di meglio: se piazzi un cerchio all'interno dell'area quadrata che tocca i quattro lati l'area sarà uguale a $π \times {250}^2 \text{m}^2$ e il perimetro sarà $π \times 500 \text{m}$, per cui il rapporto $\frac{\text{area-racchiusa}}{\text{lunghezza-muro}}$ sarà comunque 125.
 
-Find the maximum enclosed-area/wall-length ratio. Give your answer rounded to 8 places behind the decimal point in the form abc.defghijk.
+Tuttavia, se si tagliano dal quadrato quattro triangoli con lati 75 m, 75 m e $75\sqrt{2}$ m l'area totale diventa 238750 $\text{m}^2$ e il perimetro diventa $1400 + 300\sqrt{2}$ m. Quindi questo dà un rapporto $\frac{\text{enclosed-area}}{\text{wall-length}}$ di 130.87, che è significativamente migliore.
+
+<img class="img-responsive center-block" alt="immagine che mostra la differenza nell'area racchiusa tra cerchio e quadrato con il taglio di quattro triangoli" src="https://cdn.freecodecamp.org/curriculum/project-euler/the-mouse-on-the-moon.gif" style="background-color: white; padding: 10px;" />
+
+Trova il massimo rapporto $\frac{\text{area-racchiusa}}{\text{lunghezza-muro}}$. Dai la tua risposta arrotondata a 8 posti dopo il punto decimale nella forma abc.defghijk.
 
 # --hints--
 
-`euler314()` should return 132.52756426.
+`theMouseOnTheMoon()` dovrebbe restituire `132.52756426`.
 
 ```js
-assert.strictEqual(euler314(), 132.52756426);
+assert.strictEqual(theMouseOnTheMoon(), 132.52756426);
 ```
 
 # --seed--
@@ -31,12 +35,12 @@ assert.strictEqual(euler314(), 132.52756426);
 ## --seed-contents--
 
 ```js
-function euler314() {
+function theMouseOnTheMoon() {
 
   return true;
 }
 
-euler314();
+theMouseOnTheMoon();
 ```
 
 # --solutions--

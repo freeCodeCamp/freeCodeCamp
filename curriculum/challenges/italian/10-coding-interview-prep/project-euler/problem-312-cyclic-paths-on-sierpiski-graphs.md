@@ -1,6 +1,6 @@
 ---
 id: 5900f4a51000cf542c50ffb7
-title: 'Problem 312: Cyclic paths on Sierpiński graphs'
+title: 'Problema 312: Percorsi ciclici sui grafi di Sierpiński'
 challengeType: 5
 forumTopicId: 301968
 dashedName: problem-312-cyclic-paths-on-sierpiski-graphs
@@ -8,22 +8,27 @@ dashedName: problem-312-cyclic-paths-on-sierpiski-graphs
 
 # --description--
 
-\- A Sierpiński graph of order-1 (S1) is an equilateral triangle.
+- Un grafico di Sierpiński di ordine 1 ($S_1$) è un triangolo equilatero.
+- $S_{n + 1}$ è ottenuto da $S_n$ posizionando tre copie di $S_n$ in modo che ogni coppia di copie abbia un angolo comune.
 
-\- Sn+1 is obtained from Sn by positioning three copies of Sn so that every pair of copies has one common corner.
+<img class="img-responsive center-block" alt="Grafi di Sierpinski dell’ordine da 1 a 5" src="https://cdn.freecodecamp.org/curriculum/project-euler/cyclic-paths-on-sierpinski-graphs-1.gif" style="background-color: white; padding: 10px;" />
 
-Let C(n) be the number of cycles that pass exactly once through all the vertices of Sn. For example, C(3) = 8 because eight such cycles can be drawn on S3, as shown below:
+Sia $C(n)$ il numero di cicli che passano esattamente una volta attraverso tutti i vertici di $S_n$. Ad esempio, $C(3) = 8$ perché otto di questi cicli possono essere disegnati su $S_3$, come mostrato di seguito:
 
-It can also be verified that : C(1) = C(2) = 1 C(5) = 71328803586048 C(10 000) mod 108 = 37652224 C(10 000) mod 138 = 617720485
+<img class="img-responsive center-block" alt="otto cicli che passano esattamente una volta attraverso tutti i vertici di S_3" src="https://cdn.freecodecamp.org/curriculum/project-euler/cyclic-paths-on-sierpinski-graphs-2.gif" style="background-color: white; padding: 10px;" />
 
-Find C(C(C(10 000))) mod 138.
+Si può anche verificare che:
+
+$$\begin{align} & C(1) = C(2) = 1 \\\\ & C(5) = 71\\,328\\,803\\,586\\,048 \\\\ & C(10 000)\bmod {10}^8 = 37\\,652\\,224 \\\\ & C(10 000)\bmod {13}^8 = 617\\,720\\,485 \\\\ \end{align}$$
+
+Trova $C(C(C(C(10\\,000)))\bmod {13}^8$.
 
 # --hints--
 
-`euler312()` should return 324681947.
+`pathsOnSierpinskiGraphs()` dovrebbe restituire `324681947`.
 
 ```js
-assert.strictEqual(euler312(), 324681947);
+assert.strictEqual(pathsOnSierpinskiGraphs(), 324681947);
 ```
 
 # --seed--
@@ -31,12 +36,12 @@ assert.strictEqual(euler312(), 324681947);
 ## --seed-contents--
 
 ```js
-function euler312() {
+function pathsOnSierpinskiGraphs() {
 
   return true;
 }
 
-euler312();
+pathsOnSierpinskiGraphs();
 ```
 
 # --solutions--
