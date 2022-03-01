@@ -37,13 +37,16 @@ function postChallenge(update, username) {
     switchMap(({ points }) => {
       // TODO: do this all in ajax.ts
       const payloadWithClientProperties = {
-        ...omit(update.payload, ['files']),
-        challengeFiles:
-          update.payload.files.map(({ key, ...rest }) => ({
+        ...omit(update.payload, ['files'])
+      };
+      if (update.payload.files) {
+        payloadWithClientProperties.challengeFiles = update.payload.files.map(
+          ({ key, ...rest }) => ({
             ...rest,
             fileKey: key
-          })) ?? null
-      };
+          })
+        );
+      }
       return of(
         submitComplete({
           username,
