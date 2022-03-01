@@ -1,6 +1,6 @@
 ---
 id: 5900f4891000cf542c50ff9b
-title: 'Problem 284: Steady Squares'
+title: 'Problema 284: Quadrati stazionari'
 challengeType: 5
 forumTopicId: 301935
 dashedName: problem-284-steady-squares
@@ -8,20 +8,26 @@ dashedName: problem-284-steady-squares
 
 # --description--
 
-The 3-digit number 376 in the decimal numbering system is an example of numbers with the special property that its square ends with the same digits: 3762 = 141376. Let's call a number with this property a steady square.
+Il numero 376 a 3 cifre nel sistema di numerazione decimale è un esempio di numeri con la proprietà speciale che il suo quadrato termina con le stesse cifre: ${376}^2 = 141376$. Chiamiamo un numero con questa proprietà un quadrato stazionario.
 
-Steady squares can also be observed in other numbering systems. In the base 14 numbering system, the 3-digit number c37 is also a steady square: c372 = aa0c37, and the sum of its digits is c+3+7=18 in the same numbering system. The letters a, b, c and d are used for the 10, 11, 12 and 13 digits respectively, in a manner similar to the hexadecimal numbering system.
+I quadrati stabili possono essere osservati anche in altri sistemi di numerazione. Nel sistema di numerazione base 14, il numero a 3 cifre $c37$ è anche un quadrato costante: $c37^2 = aa0c37$, e la somma delle sue cifre è $c+3+7=18$ nello stesso sistema di numerazione. Le lettere $a$, $b$, $c$ e $d$ sono usate rispettivamente per le cifre 10, 11, 12 e 13, in modo simile al sistema di numerazione esadecimale.
 
-For 1 ≤ n ≤ 9, the sum of the digits of all the n-digit steady squares in the base 14 numbering system is 2d8 (582 decimal). Steady squares with leading 0's are not allowed.
+Per $1 ≤ n ≤ 9$, la somma delle cifre di tutti i quadrati stazionari a cifra $n$ nel sistema di numerazione base 14 è $2d8$ (582 decimali). I quadrati stabili con 0 iniziali non sono permessi.
 
-Find the sum of the digits of all the n-digit steady squares in the base 14 numbering system for 1 ≤ n ≤ 10000 (decimal) and give your answer in the base 14 system using lower case letters where necessary.
+Trova la somma delle cifre di tutti i quadrati stazionari di $n$ nel sistema di numerazione della base 14 per $1 ≤ n ≤ 10000$ (decimale) e dai la tua risposta come una stringa nel sistema base 14 utilizzando lettere minuscole se necessario.
 
 # --hints--
 
-`euler284()` should return 5a411d7b.
+`steadySquares()` dovrebbe restituire una stringa.
 
 ```js
-assert.strictEqual(euler284(), '5a411d7b');
+assert(typeof steadySquares() === 'string');
+```
+
+`steadySquares()` dovrebbe restituire la stringa `5a411d7b`.
+
+```js
+assert.strictEqual(steadySquares(), '5a411d7b');
 ```
 
 # --seed--
@@ -29,12 +35,12 @@ assert.strictEqual(euler284(), '5a411d7b');
 ## --seed-contents--
 
 ```js
-function euler284() {
+function steadySquares() {
 
   return true;
 }
 
-euler284();
+steadySquares();
 ```
 
 # --solutions--

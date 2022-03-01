@@ -1,6 +1,6 @@
 ---
 id: 5900f4811000cf542c50ff94
-title: 'Problem 277: A Modified Collatz sequence'
+title: 'Problema 277: Una sequenza di Collatz modificata'
 challengeType: 5
 forumTopicId: 301927
 dashedName: problem-277-a-modified-collatz-sequence
@@ -8,28 +8,32 @@ dashedName: problem-277-a-modified-collatz-sequence
 
 # --description--
 
-A modified Collatz sequence of integers is obtained from a starting value a1 in the following way:
+Una sequenza di numeri interi modificata è ottenuta da un valore iniziale $a_1$ nel seguente modo:
 
-an+1 = an/3 if an is divisible by 3. We shall denote this as a large downward step, "D".
+$a_{n + 1} = \frac{a_n}{3}$ se $a_n$ è divisibile per 3. Lo indicheremo come un passo grande verso il basso, "D".
 
-an+1 = (4an + 2)/3 if an divided by 3 gives a remainder of 1. We shall denote this as an upward step, "U".
+$a_{n + 1} = \frac{4a_n + 2}{3}$ se $a_n$ diviso per 3 dà un resto di 1. Lo indicheremo come un passo verso l'alto, "U".
 
-an+1 = (2an - 1)/3 if an divided by 3 gives a remainder of 2. We shall denote this as a small downward step, "d".
+$a_{n + 1} = \frac{2a_n - 1}{3}$ se $a_n$ diviso per 3 dà un resto di 2. Lo indicheremo come un piccolo passo verso il basso, "d".
 
-The sequence terminates when some an = 1.
+La sequenza termina quando qualche $a_n = 1$.
 
-Given any integer, we can list out the sequence of steps. For instance if a1=231, then the sequence {an}={231,77,51,17,11,7,10,14,9,3,1} corresponds to the steps "DdDddUUdDD".
+Dato qualsiasi numero intero, possiamo elencare la sequenza dei passaggi. Per esempio se $a_1 = 231$, allora la sequenza \\{a_n\\} = \\{231, 77, 51, 17, 11, 7, 10, 14, 9, 3, 1\\}$ corrisponde ai passi "DdDddUUdDD".
 
-Of course, there are other sequences that begin with that same sequence "DdDddUUdDD....". For instance, if a1=1004064, then the sequence is DdDddUUdDDDdUDUUUdDdUUDDDUdDD. In fact, 1004064 is the smallest possible a1 > 106 that begins with the sequence DdDddUUdDD.
+Naturalmente, ci sono altre sequenze che iniziano con quella stessa sequenza "DdDddUUdDD...".
 
-What is the smallest a1 > 1015 that begins with the sequence "UDDDUdddDDUDDddDdDddDDUDDdUUDd"?
+Per esempio, se $a_1 = 1004064$, allora la sequenza è DdDddUUdDDDdUDUUUdDdUUDDDUdDD.
+
+Infatti, 1004064 è il più piccolo possibile $a_1 > {10}^6$ che inizia con la sequenza DdDddUUdDD.
+
+Qual è il più piccolo $a_1 > {10}^{15}$ che inizia con la sequenza "UDDDUdddDDUDDddDdDddDDUDDdUUDd"?
 
 # --hints--
 
-`euler277()` should return 1125977393124310.
+`modifiedCollatzSequence()` dovrebbe restituire `1125977393124310`.
 
 ```js
-assert.strictEqual(euler277(), 1125977393124310);
+assert.strictEqual(modifiedCollatzSequence(), 1125977393124310);
 ```
 
 # --seed--
@@ -37,12 +41,12 @@ assert.strictEqual(euler277(), 1125977393124310);
 ## --seed-contents--
 
 ```js
-function euler277() {
+function modifiedCollatzSequence() {
 
   return true;
 }
 
-euler277();
+modifiedCollatzSequence();
 ```
 
 # --solutions--

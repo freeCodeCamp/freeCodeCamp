@@ -1,6 +1,6 @@
 ---
 id: 5900f4af1000cf542c50ffc1
-title: 'Problem 322: Binomial coefficients divisible by 10'
+title: 'Problema 322: Coefficienti binomiali divisibili per 10'
 challengeType: 5
 forumTopicId: 301979
 dashedName: problem-322-binomial-coefficients-divisible-by-10
@@ -8,18 +8,18 @@ dashedName: problem-322-binomial-coefficients-divisible-by-10
 
 # --description--
 
-Let T(m, n) be the number of the binomial coefficients iCn that are divisible by 10 for n ≤ i &lt; m(i, m and n are positive integers).
+Sia $T(m, n)$ il numero dei coefficienti binomiali ${}^iC_n$ che sono divisibili per 10 per $n ≤ i &lt; m$ ($i$, $m$ e $n$ sono interi positivi).
 
-You are given that T(109, 107-10) = 989697000.
+Ti viene dato che $T({10}^9, {10}^7 - 10) = 989\\,697\\,000$.
 
-Find T(1018, 1012-10).
+Trova $T({10}^{18}, {10}^{12} - 10)$.
 
 # --hints--
 
-`euler322()` should return 999998760323314000.
+`binomialCoefficientsDivisibleBy10()` dovrebbe restituire `999998760323314000`.
 
 ```js
-assert.strictEqual(euler322(), 999998760323314000);
+assert.strictEqual(binomialCoefficientsDivisibleBy10(), 999998760323314000);
 ```
 
 # --seed--
@@ -27,12 +27,12 @@ assert.strictEqual(euler322(), 999998760323314000);
 ## --seed-contents--
 
 ```js
-function euler322() {
+function binomialCoefficientsDivisibleBy10() {
 
   return true;
 }
 
-euler322();
+binomialCoefficientsDivisibleBy10();
 ```
 
 # --solutions--

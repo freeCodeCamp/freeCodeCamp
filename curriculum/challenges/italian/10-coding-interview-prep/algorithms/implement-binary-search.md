@@ -80,6 +80,11 @@ assert.deepEqual(binarySearch(_testArray, 11), [13, 5, 10, 11])
 assert.deepEqual(binarySearch(_testArray, 13), [13]);
 ```
 
+`binarySearch(testArray, 70)` dovrebbe restituire `[13, 19, 22, 49, 70]`.
+
+```js
+assert.deepEqual(binarySearch(_testArray, 70), [13, 19, 22, 49, 70]);
+```
 
 # --seed--
 

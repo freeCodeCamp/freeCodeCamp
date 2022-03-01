@@ -23,7 +23,7 @@ Quanti triangoli contengono l'origine all'interno e hanno tutti e tre i vertici 
 `trianglesContainingOrigin()` dovrebbe restituire `1725323624056`.
 
 ```js
-assert.strictEqual(trianglesConttainingOrigin(), 1725323624056);
+assert.strictEqual(trianglesContainingOrigin(), 1725323624056);
 ```
 
 # --seed--

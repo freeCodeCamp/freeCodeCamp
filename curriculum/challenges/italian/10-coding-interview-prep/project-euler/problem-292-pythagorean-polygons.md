@@ -1,6 +1,6 @@
 ---
 id: 5900f4911000cf542c50ffa3
-title: 'Problem 292: Pythagorean Polygons'
+title: 'Problema 292: Poligoni Pitagorici'
 challengeType: 5
 forumTopicId: 301944
 dashedName: problem-292-pythagorean-polygons
@@ -8,24 +8,27 @@ dashedName: problem-292-pythagorean-polygons
 
 # --description--
 
-We shall define a pythagorean polygon to be a convex polygon with the following properties:there are at least three vertices,
+Definiremo un poligono pitagorico come poligono convesso con le seguenti proprietà:
 
-no three vertices are aligned,
+- ci sono almeno tre vertici,
+- non ci sono tre vertici allineati,
+- ogni vertice ha coordinate intere,
+- ogni lato ha lunghezza intera.
 
-each vertex has integer coordinates,
+Per un dato numero intero $n$, definire $P(n)$ come il numero di poligoni pitagorici distinti per i quali il perimetro è $≤ n$.
 
-each edge has integer length.For a given integer n, define P(n) as the number of distinct pythagorean polygons for which the perimeter is ≤ n.
+I poligoni pitagorici dovrebbero essere considerati distinti purché nessuno sia la traduzione di un altro.
 
-Pythagorean polygons should be considered distinct as long as none is a translation of another.
+Ti viene dato che $P(4) = 1$, $P(30) = 3655$ e $P(60) = 891045$.
 
-You are given that P(4) = 1, P(30) = 3655 and P(60) = 891045. Find P(120).
+Trova $P(120)$.
 
 # --hints--
 
-`euler292()` should return 3600060866.
+`pythagoreanPolygons()` dovrebbe restituire `3600060866`.
 
 ```js
-assert.strictEqual(euler292(), 3600060866);
+assert.strictEqual(pythagoreanPolygons(), 3600060866);
 ```
 
 # --seed--
@@ -33,12 +36,12 @@ assert.strictEqual(euler292(), 3600060866);
 ## --seed-contents--
 
 ```js
-function euler292() {
+function pythagoreanPolygons() {
 
   return true;
 }
 
-euler292();
+pythagoreanPolygons();
 ```
 
 # --solutions--

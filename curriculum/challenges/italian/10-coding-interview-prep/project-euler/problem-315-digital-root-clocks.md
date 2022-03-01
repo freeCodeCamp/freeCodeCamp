@@ -1,6 +1,6 @@
 ---
 id: 5900f4a71000cf542c50ffba
-title: 'Problem 315: Digital root clocks'
+title: 'Problema 315: orologi a radici digitali'
 challengeType: 5
 forumTopicId: 301971
 dashedName: problem-315-digital-root-clocks
@@ -8,34 +8,48 @@ dashedName: problem-315-digital-root-clocks
 
 # --description--
 
-Sam and Max are asked to transform two digital clocks into two "digital root" clocks.
+<img class="img-responsive center-block" alt="animazione degli orologi di Sam e Max che calcolano le radici digitali a partire da 137" src="https://cdn.freecodecamp.org/curriculum/project-euler/digital-root-clocks.gif" style="background-color: white; padding: 10px;" />
 
-A digital root clock is a digital clock that calculates digital roots step by step.
+Sam e Max sono incaricati di trasformare due orologi digitali in due orologi "radici digitali".
 
-When a clock is fed a number, it will show it and then it will start the calculation, showing all the intermediate values until it gets to the result. For example, if the clock is fed the number 137, it will show: "137" → "11" → "2" and then it will go black, waiting for the next number.
+Un orologio a radici digitali è un orologio digitale che calcola le radici digitali passo passo.
 
-Every digital number consists of some light segments: three horizontal (top, middle, bottom) and four vertical (top-left, top-right, bottom-left, bottom-right). Number "1" is made of vertical top-right and bottom-right, number "4" is made by middle horizontal and vertical top-left, top-right and bottom-right. Number "8" lights them all.
+Quando a un orologio viene dato un numero, lo mostra e poi inizia il calcolo, mostrando tutti i valori intermedi fino a che non arriva al risultato. Per esempio, se l'orologio riceve il numero 137, mostrerà: `137` → `11` → `2` e poi tornerà nero, aspettando il prossimo numero.
 
-The clocks consume energy only when segments are turned on/off. To turn on a "2" will cost 5 transitions, while a "7" will cost only 4 transitions.
+Ogni numero digitale è costituito da alcuni segmenti luminosi: tre orizzontali (alto, centrale, inferiore) e quattro verticali (alto-sinistra, in alto-destra, in basso-sinistra, in basso-destra). Il numero `1` è fatto dalla linea verticale in alto a destra e dalla linea verticale in basso a destra; il numero `4` è fatto dalla riga orizzontale in mezzo, dalla riga verticale in alto a sinistra, dalla riga verticale in alto a destra e dalla riga verticale in basso a destra. Il numero `8` illumina tutti i trattini.
 
-Sam and Max built two different clocks.
+L'orologio consuma energia solo quando i segmenti vengono accesi o spenti. Accendere un `2` costa 5 transizioni, mentre accendere un `7` ne costa solo 4.
 
-Sam's clock is fed e.g. number 137: the clock shows "137", then the panel is turned off, then the next number ("11") is turned on, then the panel is turned off again and finally the last number ("2") is turned on and, after some time, off. For the example, with number 137, Sam's clock requires:"137" : (2 + 5 + 4) × 2 = 22 transitions ("137" on/off). "11" : (2 + 2) × 2 = 8 transitions ("11" on/off). "2" : (5) × 2 = 10 transitions ("2" on/off).
+Sam e Max hanno costruito due orologi diversi.
 
-For a grand total of 40 transitions.
+Quando l'orologio di Sam riceve un numero, ad esempio il numero 137: l'orologio mostra `137`, poi lo schermo si spegne, poi il numero seguente si accende (`11`), poi lo schermo si spegne di nuovo e infine è mostrato l'ultimo numero (`2`) e infine lo schermo torna nero dopo un certo tempo.
 
-Max's clock works differently. Instead of turning off the whole panel, it is smart enough to turn off only those segments that won't be needed for the next number. For number 137, Max's clock requires:"137" : 2 + 5 + 4 = 11 transitions ("137" on) 7 transitions (to turn off the segments that are not needed for number "11"). "11" : 0 transitions (number "11" is already turned on correctly) 3 transitions (to turn off the first "1" and the bottom part of the second "1"; the top part is common with number "2"). "2" : 4 transitions (to turn on the remaining segments in order to get a "2") 5 transitions (to turn off number "2").
+Per esempio, con il numero 137, l'orologio di Sam richiede:
 
-For a grand total of 30 transitions.
+- `137`: $(2 + 5 + 4) × 2 = 22$ transizioni (`137` on/off).
+- `11`: $(2 + 2) × 2 = 8$ transizioni (`11` on/off).
+- `2`: $(5) × 2 = 10 $ transizioni (`2` on/off).
 
-Of course, Max's clock consumes less power than Sam's one. The two clocks are fed all the prime numbers between A = 107 and B = 2×107. Find the difference between the total number of transitions needed by Sam's clock and that needed by Max's one.
+Per un totale di 40 transizioni.
+
+L'orologio di Max funziona in modo diverso. Invece di spegnere l'intero pannello, è abbastanza intelligente da spegnere solo quei segmenti che non saranno necessari per il numero successivo.
+
+Per il numero 137, l'orologio di Max richiede:
+
+- `137` : $2 + 5 + 4 = 11$ transizioni (`137` su), $7$ transizioni (per disattivare i segmenti che non sono necessari per il numero `11`).
+- `11` : $0$ transizioni (il numero `11` è già acceso correttamente), $3$ transizioni (per disattivare il primo `1` e la parte inferiore del secondo `1`; la parte superiore è comune con il numero `2`).
+- `2` : $4$ transizioni (per attivare i segmenti rimanenti al fine di ottenere un `2`), $5$ transizioni (per disattivare il numero `2`).
+
+Per un totale di 30 transizioni.
+
+Naturalmente, l'orologio di Max consuma meno energia di quello di Sam. Ai due orologi vengono dati tutti i numeri primi tra $A = {10}^7$ e $B = 2 × {10}^7$. Trova la differenza tra il numero totale di transizioni necessarie per l'orologio di Sam e quello di Max.
 
 # --hints--
 
-`euler315()` should return 13625242.
+`digitalRootClocks()` dovrebbe restituire `13625242`.
 
 ```js
-assert.strictEqual(euler315(), 13625242);
+assert.strictEqual(digitalRootClocks(), 13625242);
 ```
 
 # --seed--
@@ -43,12 +57,12 @@ assert.strictEqual(euler315(), 13625242);
 ## --seed-contents--
 
 ```js
-function euler315() {
+function digitalRootClocks() {
 
   return true;
 }
 
-euler315();
+digitalRootClocks();
 ```
 
 # --solutions--

@@ -1,6 +1,6 @@
 ---
 id: 5900f4a01000cf542c50ffb2
-title: 'Problem 307: Chip Defects'
+title: 'Problema 307: Chip difettosi'
 challengeType: 5
 forumTopicId: 301961
 dashedName: problem-307-chip-defects
@@ -8,18 +8,18 @@ dashedName: problem-307-chip-defects
 
 # --description--
 
-k defects are randomly distributed amongst n integrated-circuit chips produced by a factory (any number of defects may be found on a chip and each defect is independent of the other defects).
+$k$ difetti sono distribuiti casualmente tra $n$ chip a circuito integrato prodotti da una fabbrica (qualsiasi numero di difetti può essere trovato su un chip e ogni difetto è indipendente dagli altri difetti).
 
-Let p(k,n) represent the probability that there is a chip with at least 3 defects. For instance p(3,7) ≈ 0.0204081633.
+Sia $p(k,n)$ la probabilità che ci sia un chip con almeno 3 difetti. Ad esempio $p(3,7) ≈ 0.0204081633$.
 
-Find p(20 000, 1 000 000) and give your answer rounded to 10 decimal places in the form 0.abcdefghij
+Trova $p(20\\,000, 1\\,000\\,000)$ e dai la tua risposta arrotondata a 10 decimali nella forma 0.abcdefghij
 
 # --hints--
 
-`euler307()` should return 0.7311720251.
+`chipDefects()` dovrebbe restituire `0.7311720251`.
 
 ```js
-assert.strictEqual(euler307(), 0.7311720251);
+assert.strictEqual(chipDefects(), 0.7311720251);
 ```
 
 # --seed--
@@ -27,12 +27,12 @@ assert.strictEqual(euler307(), 0.7311720251);
 ## --seed-contents--
 
 ```js
-function euler307() {
+function chipDefects() {
 
   return true;
 }
 
-euler307();
+chipDefects();
 ```
 
 # --solutions--

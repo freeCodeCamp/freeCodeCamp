@@ -1,6 +1,6 @@
 ---
 id: 5900f4a21000cf542c50ffb5
-title: 'Problem 310: Nim Square'
+title: 'Problema 310: Nim Quadrato'
 challengeType: 5
 forumTopicId: 301966
 dashedName: problem-310-nim-square
@@ -8,22 +8,22 @@ dashedName: problem-310-nim-square
 
 # --description--
 
-Alice and Bob play the game Nim Square.
+Alice e Bob giocano al gioco Nim Quadrato.
 
-Nim Square is just like ordinary three-heap normal play Nim, but the players may only remove a square number of stones from a heap.
+Nim Quadrato è proprio come il normale gioco delle tre torri di Nim, ma i giocatori possono solo rimuovere un numero quadrato di pietre da una pila.
 
-The number of stones in the three heaps is represented by the ordered triple (a,b,c).
+Il numero di pietre nei tre cumuli è rappresentato dal triplo ordinato ($a$, $b$, $c$).
 
-If 0≤a≤b≤c≤29 then the number of losing positions for the next player is 1160.
+Se $0 ≤ a ≤ b ≤ c ≤ 29$ allora il numero di posizioni perdenti per il giocatore successivo è 1160.
 
-Find the number of losing positions for the next player if 0≤a≤b≤c≤100 000.
+Trova il numero di posizioni perdenti per il giocatore successivo se $0 ≤ a ≤ b ≤ c ≤ 100\\,000$.
 
 # --hints--
 
-`euler310()` should return 2586528661783.
+`nimSquare()` dovrebbe restituire `2586528661783`.
 
 ```js
-assert.strictEqual(euler310(), 2586528661783);
+assert.strictEqual(nimSquare(), 2586528661783);
 ```
 
 # --seed--
@@ -31,12 +31,12 @@ assert.strictEqual(euler310(), 2586528661783);
 ## --seed-contents--
 
 ```js
-function euler310() {
+function nimSquare() {
 
   return true;
 }
 
-euler310();
+nimSquare();
 ```
 
 # --solutions--
