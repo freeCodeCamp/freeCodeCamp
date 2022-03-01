@@ -20,26 +20,26 @@ exports.buildMobileCurriculum = function buildMobileCurriculum(json) {
 
     writeToFile('availableSuperblocks', superBlockObj);
 
-    let blockNames = {};
+    let blocks = {};
 
     for (let i = 0; i < superBlocks.length; i++) {
-      // blockGroup = object parent without key-name
+      // blockNames = object parent without key-name
 
-      const blockGroup = Object.keys(curriculum[superBlocks[i]].blocks);
+      const blockNames = Object.keys(curriculum[superBlocks[i]].blocks);
 
-      if (blockGroup.length === 0) continue;
+      if (blockNames.length === 0) continue;
 
-      blockNames[superBlocks[i]] = {};
-      blockNames[superBlocks[i]]['blocks'] = {};
+      blocks[superBlocks[i]] = {};
+      blocks[superBlocks[i]]['blocks'] = {};
 
-      for (let j = 0; j < blockGroup.length; j++) {
-        blockNames[superBlocks[i]]['blocks'][blockGroup[j]] = {};
-        blockNames[superBlocks[i]]['blocks'][blockGroup[j]]['challenges'] =
-          curriculum[superBlocks[i]]['blocks'][blockGroup[j]]['meta'];
+      for (let j = 0; j < blockNames.length; j++) {
+        blocks[superBlocks[i]]['blocks'][blockNames[j]] = {};
+        blocks[superBlocks[i]]['blocks'][blockNames[j]]['challenges'] =
+          curriculum[superBlocks[i]]['blocks'][blockNames[j]]['meta'];
       }
 
-      writeToFile(superBlocks[i], blockNames);
-      blockNames = {};
+      writeToFile(superBlocks[i], blocks);
+      blocks = {};
     }
   }
 
