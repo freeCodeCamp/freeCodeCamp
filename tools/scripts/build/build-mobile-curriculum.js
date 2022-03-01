@@ -14,32 +14,30 @@ exports.buildMobileCurriculum = function buildMobileCurriculum(json) {
   function writeAndParseCurriculumJson(curriculum) {
     curriculum = JSON.parse(curriculum);
 
-    const superBlocks = Object.keys(curriculum).slice(1);
+    const superBlockKeys = Object.keys(curriculum).slice(1);
 
-    const superBlockObj = { superblocks: superBlocks };
+    const superBlockObj = { superblocks: superBlockKeys };
 
     writeToFile('availableSuperblocks', superBlockObj);
 
-    let blocks = {};
+    let superBlocks = {};
 
-    for (let i = 0; i < superBlocks.length; i++) {
-      // blockNames = object parent without key-name
-
-      const blockNames = Object.keys(curriculum[superBlocks[i]].blocks);
+    for (let i = 0; i < superBlockKeys.length; i++) {
+      const blockNames = Object.keys(curriculum[superBlockKeys[i]].blocks);
 
       if (blockNames.length === 0) continue;
 
-      blocks[superBlocks[i]] = {};
-      blocks[superBlocks[i]]['blocks'] = {};
+      superBlocks[superBlockKeys[i]] = {};
+      superBlocks[superBlockKeys[i]]['blocks'] = {};
 
       for (let j = 0; j < blockNames.length; j++) {
-        blocks[superBlocks[i]]['blocks'][blockNames[j]] = {};
-        blocks[superBlocks[i]]['blocks'][blockNames[j]]['challenges'] =
-          curriculum[superBlocks[i]]['blocks'][blockNames[j]]['meta'];
+        superBlocks[superBlockKeys[i]]['blocks'][blockNames[j]] = {};
+        superBlocks[superBlockKeys[i]]['blocks'][blockNames[j]]['challenges'] =
+          curriculum[superBlockKeys[i]]['blocks'][blockNames[j]]['meta'];
       }
 
-      writeToFile(superBlocks[i], blocks);
-      blocks = {};
+      writeToFile(superBlockKeys[i], superBlocks);
+      superBlocks = {};
     }
   }
 
