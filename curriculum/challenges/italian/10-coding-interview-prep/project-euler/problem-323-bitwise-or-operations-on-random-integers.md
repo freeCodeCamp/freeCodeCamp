@@ -1,6 +1,6 @@
 ---
 id: 5900f4b01000cf542c50ffc2
-title: 'Problem 323: Bitwise-OR operations on random integers'
+title: 'Problema 323: Operazioni sui bit di interi casuali'
 challengeType: 5
 forumTopicId: 301980
 dashedName: problem-323-bitwise-or-operations-on-random-integers
@@ -8,24 +8,25 @@ dashedName: problem-323-bitwise-or-operations-on-random-integers
 
 # --description--
 
-Let y0, y1, y2,... be a sequence of random unsigned 32 bit integers
+Sia $y_0, y_1, y_2, \ldots$ una sequenza di numeri interi casuali a 32 bit senza segno
 
-(i.e. 0 ≤ yi &lt; 232, every value equally likely).
+(cioè $0 ≤ y_i &lt; 2^{32}$, con ogni valore ugualmente probabile).
 
-For the sequence xi the following recursion is given:x0 = 0 and
+Per la sequenza $x_i$ viene fornita la seguente ricorsione:
 
-xi = xi-1| yi-1, for i > 0. ( | is the bitwise-OR operator)
+- $x_0 = 0$ e
+- $x_i = x_{i - 1} \mathbf{|} y_{i - 1}$, per $i > 0$. ($\mathbf{|}$ è l'operatore bitwise-OR)
 
-It can be seen that eventually there will be an index N such that xi = 232 -1 (a bit-pattern of all ones) for all i ≥ N.
+Si può vedere che alla fine ci sarà un indice $N$ tale che $x_i = 2^{32} - 1$ (un bit-pattern di solo uno) per tutti $i ≥ N$.
 
-Find the expected value of N. Give your answer rounded to 10 digits after the decimal point.
+Trova il valore atteso di $N$. Dare la risposta arrotondata a 10 cifre dopo il punto decimale.
 
 # --hints--
 
-`euler323()` should return 6.3551758451.
+`bitwiseOrOnRandomIntegers()` dovrebbe restituire `6.3551758451`.
 
 ```js
-assert.strictEqual(euler323(), 6.3551758451);
+assert.strictEqual(bitwiseOrOnRandomIntegers(), 6.3551758451);
 ```
 
 # --seed--
@@ -33,12 +34,12 @@ assert.strictEqual(euler323(), 6.3551758451);
 ## --seed-contents--
 
 ```js
-function euler323() {
+function bitwiseOrOnRandomIntegers() {
 
   return true;
 }
 
-euler323();
+bitwiseOrOnRandomIntegers();
 ```
 
 # --solutions--
