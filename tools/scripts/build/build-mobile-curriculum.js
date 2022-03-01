@@ -12,8 +12,6 @@ exports.buildMobileCurriculum = function buildMobileCurriculum(json) {
   }
 
   function writeAndParseCurriculumJson(curriculum) {
-    curriculum = JSON.parse(curriculum);
-
     const superBlockKeys = Object.keys(curriculum).filter(
       key => key !== '00-certifications'
     );
