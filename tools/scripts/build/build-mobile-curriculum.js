@@ -4,12 +4,8 @@ const path = require('path');
 exports.buildMobileCurriculum = function buildMobileCurriculum(json) {
   const mobileStaticPath = path.resolve(__dirname, '../../../client/static');
 
-  if (!fs.existsSync(`${mobileStaticPath}/mobile`)) {
-    fs.mkdirSync(`${mobileStaticPath}/mobile`);
-    writeAndParseCurriculumJson(json);
-  } else {
-    writeAndParseCurriculumJson(json);
-  }
+  fs.mkdirSync(`${mobileStaticPath}/mobile`, { recursive: true });
+  writeAndParseCurriculumJson(json);
 
   function writeAndParseCurriculumJson(curriculum) {
     const superBlockKeys = Object.keys(curriculum).filter(
