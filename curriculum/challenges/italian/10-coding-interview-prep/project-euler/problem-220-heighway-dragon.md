@@ -1,6 +1,6 @@
 ---
 id: 5900f4481000cf542c50ff5b
-title: 'Problem 220: Heighway Dragon'
+title: 'Problema 220: Heighway Dragon'
 challengeType: 5
 forumTopicId: 301863
 dashedName: problem-220-heighway-dragon
@@ -8,24 +8,33 @@ dashedName: problem-220-heighway-dragon
 
 # --description--
 
-Let D0 be the two-letter string "Fa". For n≥1, derive Dn from Dn-1 by the string-rewriting rules:
+Sia $D_0$ la stringa con due lettere "Fa". Per $n ≥ 1$, deriva $D_n$ da $D_{n - 1}$ usando le regole per riscrivere le stringhe:
 
-"a" → "aRbFR" "b" → "LFaLb"
+- "a" → "aRbFR"
+- "b" → "LFaLb"
 
-Thus, D0 = "Fa", D1 = "FaRbFR", D2 = "FaRbFRRLFaLbFR", and so on.
+Così, $D_0$ = "Fa", $D_1$ = "FaRbFR", $D_2$ = "FaRbFRRLFaLbFR", e così via.
 
-These strings can be interpreted as instructions to a computer graphics program, with "F" meaning "draw forward one unit", "L" meaning "turn left 90 degrees", "R" meaning "turn right 90 degrees", and "a" and "b" being ignored. The initial position of the computer cursor is (0,0), pointing up towards (0,1).
+Queste stringhe possono essere interpretate come istruzioni da un programma di grafica del computer, con "F" che significa "disegna in avanti di una unità", "L" significa "gira a sinistra di 90 gradi", "R" significa "gira a destra di 90 gradi", e "a" e "b" che vengono ignorati. La posizione iniziale del cursore del computer è (0,0), puntando in alto verso (0,1).
 
-Then Dn is an exotic drawing known as the Heighway Dragon of order n. For example, D10 is shown below; counting each "F" as one step, the highlighted spot at (18,16) is the position reached after 500 steps.
+Allora $D_n$ è un disegno esotico conosciuto col nome di Heighway Dragon di ordine $n$. Per esempio, $D_{10}$ è mostrato qua sotto; contando ogni "F" come uno step, il punto evidenziato a (18,16) è la posizione raggiunta dopo 500 step.
 
-What is the position of the cursor after 1012 steps in D50 ? Give your answer in the form x,y with no spaces.
+<img class="img-responsive center-block" alt="disegno del Heighway Dragon dopo 500 step" src="https://cdn.freecodecamp.org/curriculum/project-euler/heighway-dragon.gif" style="background-color: white; padding: 10px;" />
+
+Qual è la posizione del cursore dopo ${10}^{12}$ passi in $D_{50}$? Dai la tua risposta come una stringa nella forma `x,y` senza spazi.
 
 # --hints--
 
-`euler220()` should return 139776, 963904.
+`heighwayDragon()` dovrebbe restituire una stringa.
 
 ```js
-assert.strictEqual(euler220(), 139776, 963904);
+assert(typeof heighwayDragon() === 'string');
+```
+
+`heighwayDragon()` dovrebbe restituire la stringa `139776,963904`.
+
+```js
+assert.strictEqual(heighwayDragon(), '139776,963904');
 ```
 
 # --seed--
@@ -33,12 +42,12 @@ assert.strictEqual(euler220(), 139776, 963904);
 ## --seed-contents--
 
 ```js
-function euler220() {
+function heighwayDragon() {
 
   return true;
 }
 
-euler220();
+heighwayDragon();
 ```
 
 # --solutions--

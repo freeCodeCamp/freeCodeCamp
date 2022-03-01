@@ -1,6 +1,6 @@
 ---
 id: 5900f47e1000cf542c50ff90
-title: 'Problem 273: Sum of Squares'
+title: 'Problema 273: Somma di quadrati'
 challengeType: 5
 forumTopicId: 301923
 dashedName: problem-273-sum-of-squares
@@ -8,16 +8,24 @@ dashedName: problem-273-sum-of-squares
 
 # --description--
 
-Consider equations of the form: a2 + b2 = N, 0 ≤ a ≤ b, a, b and N integer.
+Considera le equazioni nella forma: $a^2 + b^2 = N$, $0 ≤ a ≤ b$, $a$, $b$ e $N$ interi.
 
-For N=65 there are two solutions: a=1, b=8 and a=4, b=7. We call S(N) the sum of the values of a of all solutions of a2 + b2 = N, 0 ≤ a ≤ b, a, b and N integer. Thus S(65) = 1 + 4 = 5. Find ∑S(N), for all squarefree N only divisible by primes of the form 4k+1 with 4k+1 &lt; 150.
+Per $N = 65$ ci sono due soluzioni:
+
+$a = 1, b = 8$ e $a = 4, b = 7$.
+
+Chiamiamo $S(N)$ la somma dei valori di $a$ di tutte le soluzioni di $a^2 + b^2 = N$, $0 ≤ a ≤ b$, $a$, $b$ e $N$ interi.
+
+Quindi $S(65) = 1 + 4 = 5$.
+
+Trova $\sum S(N)$, per tutti i numeri privi di quadrati $N$ divisibili solo per i numeri primi di tipo $4k + 1$ con $4k + 1 &lt; 150$.
 
 # --hints--
 
-`euler273()` should return 2032447591196869000.
+`sumOfSquares()` dovrebbe restituire `2032447591196869000`.
 
 ```js
-assert.strictEqual(euler273(), 2032447591196869000);
+assert.strictEqual(sumOfSquares(), 2032447591196869000);
 ```
 
 # --seed--
@@ -25,12 +33,12 @@ assert.strictEqual(euler273(), 2032447591196869000);
 ## --seed-contents--
 
 ```js
-function euler273() {
+function sumOfSquares() {
 
   return true;
 }
 
-euler273();
+sumOfSquares();
 ```
 
 # --solutions--

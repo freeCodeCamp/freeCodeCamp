@@ -1,6 +1,6 @@
 ---
 id: 5900f46b1000cf542c50ff7d
-title: 'Problem 254: Sums of Digit Factorials'
+title: 'Problema 254: Somme dei fattoriali delle cifre'
 challengeType: 5
 forumTopicId: 301902
 dashedName: problem-254-sums-of-digit-factorials
@@ -8,24 +8,24 @@ dashedName: problem-254-sums-of-digit-factorials
 
 # --description--
 
-Define f(n) as the sum of the factorials of the digits of n. For example, f(342) = 3! + 4! + 2! = 32.
+Sia $f(n)$ la somma dei fattoriali delle cifre di $n$. Per esempio, $f(342) = 3! + 4! + 2! = 32$.
 
-Define sf(n) as the sum of the digits of f(n). So sf(342) = 3 + 2 = 5.
+Definisci $sf(n)$ come la somma delle cifre di $f(n)$. Quindi $sf(342) = 3 + 2 = 5$.
 
-Define g(i) to be the smallest positive integer n such that sf(n) = i. Though sf(342) is 5, sf(25) is also 5, and it can be verified that g(5) is 25.
+Definisci $g(i)$ in modo che sia il più piccolo numero intero positivo $n$ tale che $sf(n) = i$. Anche se $sf(342)$ è 5, $sf(25)$ è anch'esso 5, e si può verificare che $g(5)$ è 25.
 
-Define sg(i) as the sum of the digits of g(i). So sg(5) = 2 + 5 = 7.
+Definisci $sg(i)$ come la somma delle cifre di $g(i)$. Quindi $sg(5) = 2 + 5 = 7$.
 
-Further, it can be verified that g(20) is 267 and ∑ sg(i) for 1 ≤ i ≤ 20 is 156.
+Inoltre, può essere verificato che $g(20)$ è 267 e $\sum sg(i)$ per $1 ≤ i ≤ 20$ è 156.
 
-What is ∑ sg(i) for 1 ≤ i ≤ 150?
+Che cosa è $\sum sg(i)$ per $1 ≤ i ≤ 150$?
 
 # --hints--
 
-`euler254()` should return 8184523820510.
+`sumsOfDigitFactorials()` dovrebbe restituire `8184523820510`.
 
 ```js
-assert.strictEqual(euler254(), 8184523820510);
+assert.strictEqual(sumsOfDigitFactorials(), 8184523820510);
 ```
 
 # --seed--
@@ -33,12 +33,12 @@ assert.strictEqual(euler254(), 8184523820510);
 ## --seed-contents--
 
 ```js
-function euler254() {
+function sumsOfDigitFactorials() {
 
   return true;
 }
 
-euler254();
+sumsOfDigitFactorials();
 ```
 
 # --solutions--

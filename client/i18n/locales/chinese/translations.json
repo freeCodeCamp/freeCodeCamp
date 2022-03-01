@@ -47,7 +47,7 @@
     "cancel": "取消",
     "reset-lesson": "重置课程",
     "run": "运行",
-    "run-test": "运行测试",
+    "run-test": "Run the Tests (Ctrl + Enter)",
     "reset": "重置",
     "reset-code": "重置所有代码",
     "help": "帮助",

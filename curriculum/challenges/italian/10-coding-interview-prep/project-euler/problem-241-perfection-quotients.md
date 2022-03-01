@@ -1,6 +1,6 @@
 ---
 id: 5900f45d1000cf542c50ff70
-title: 'Problem 241: Perfection Quotients'
+title: 'Problema 241: Perfezione dei quozienti'
 challengeType: 5
 forumTopicId: 301888
 dashedName: problem-241-perfection-quotients
@@ -8,18 +8,20 @@ dashedName: problem-241-perfection-quotients
 
 # --description--
 
-For a positive integer n, let σ(n) be the sum of all divisors of n, so e.g. σ(6) = 1 + 2 + 3 + 6 = 12.
+Per un numero intero positivo $n$, sia $σ(n)$ la somma di tutti i divisori di $n$, per esempio $σ(6) = 1 + 2 + 3 + 6 = 12$.
 
-A perfect number, as you probably know, is a number with σ(n) = 2n.
+Un numero perfetto, come forse già sai, è un numero per cui $σ(n) = 2n$.
 
-Let us define the perfection quotient of a positive integer asp(n)= σ(n)n . Find the sum of all positive integers n ≤ 1018 for which p(n) has the form k + 1⁄2, where k is an integer.
+Definiamo il quoziente perfetto di iun numero intero positivo come $p(n) = \frac{σ(n)}{n}$.
+
+Trova la somma di tutti i numeri interi positivi $n ≤ {10}^{18}$ per cui $p(n)$ ha la forma $k + \frac{1}{2}$, dove $k$ è un numero intero.
 
 # --hints--
 
-`euler241()` should return 482316491800641150.
+`perfectionQuotients()` dovrebbe restituire `482316491800641150`.
 
 ```js
-assert.strictEqual(euler241(), 482316491800641150);
+assert.strictEqual(perfectionQuotients(), 482316491800641150);
 ```
 
 # --seed--
@@ -27,12 +29,12 @@ assert.strictEqual(euler241(), 482316491800641150);
 ## --seed-contents--
 
 ```js
-function euler241() {
+function perfectionQuotients() {
 
   return true;
 }
 
-euler241();
+perfectionQuotients();
 ```
 
 # --solutions--
