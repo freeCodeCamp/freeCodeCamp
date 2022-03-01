@@ -112,7 +112,7 @@ export function buildUserUpdate(
   ) {
     completedChallenge = {
       ..._completedChallenge,
-      files: files.map(file =>
+      files: files?.map(file =>
         pick(file, ['contents', 'key', 'index', 'name', 'path', 'ext'])
       )
     };
@@ -155,7 +155,7 @@ export function buildUserUpdate(
     let challengeToSave = {
       id: challengeId,
       lastSavedDate: completedDate,
-      files: files.map(file =>
+      files: files?.map(file =>
         pick(file, [
           'contents',
           'key',
