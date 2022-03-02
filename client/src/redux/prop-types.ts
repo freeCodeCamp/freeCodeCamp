@@ -53,9 +53,7 @@ export const UserPropType = PropTypes.shape({
   savedChallenges: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
-      challengeFiles: PropTypes.array,
-      editableRegionBoundaries: PropTypes.array,
-      history: PropTypes.array
+      challengeFiles: PropTypes.array
     })
   ),
   sendQuincyEmail: PropTypes.bool,
