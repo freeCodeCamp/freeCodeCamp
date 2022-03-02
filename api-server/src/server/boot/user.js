@@ -6,7 +6,8 @@ import { Observable } from 'rx';
 
 import {
   fixCompletedChallengeItem,
-  fixPartiallyCompletedChallengeItem
+  fixPartiallyCompletedChallengeItem,
+  fixSavedChallengeItem
 } from '../../common/utils';
 import { removeCookies } from '../utils/getSetAccessToken';
 import { ifNoUser401, ifNoUserRedirectHome } from '../utils/middleware';
@@ -152,7 +153,7 @@ function createReadSessionUser(app) {
               partiallyCompletedChallenges: partiallyCompletedChallenges.map(
                 fixPartiallyCompletedChallengeItem
               ),
-              savedChallenges: savedChallenges.map(fixCompletedChallengeItem)
+              savedChallenges: savedChallenges.map(fixSavedChallengeItem)
             },
             sessionMeta: { activeDonations }
           })

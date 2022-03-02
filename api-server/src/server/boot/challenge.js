@@ -18,7 +18,8 @@ import { jwtSecret } from '../../../../config/secrets';
 import { environment, deploymentEnv } from '../../../../config/env.json';
 import {
   fixCompletedChallengeItem,
-  fixPartiallyCompletedChallengeItem
+  fixPartiallyCompletedChallengeItem,
+  fixSavedChallengeItem
 } from '../../common/utils';
 import { getChallenges } from '../utils/get-curriculum';
 import { ifNoUserSend } from '../utils/middleware';
@@ -98,6 +99,29 @@ const savableChallenges = getChallenges()
   .filter(challenge => challenge.challengeType === 14)
   .map(challenge => challenge.id);
 
+function buildNewSavedChallenges({
+  user,
+  challengeId,
+  completedDate = Date.now(),
+  files
+}) {
+  const { savedChallenges } = user;
+  const challengeToSave = {
+    id: challengeId,
+    lastSavedDate: completedDate,
+    files: files?.map(file =>
+      pick(file, ['contents', 'key', 'name', 'ext', 'history'])
+    )
+  };
+
+  const newSavedChallenges = uniqBy(
+    [challengeToSave, ...savedChallenges.map(fixSavedChallengeItem)],
+    'id'
+  );
+
+  return newSavedChallenges;
+}
+
 export function buildUserUpdate(
   user,
   challengeId,
@@ -121,11 +145,7 @@ export function buildUserUpdate(
   }
   let finalChallenge;
   const updateData = {};
-  const {
-    timezone: userTimezone,
-    completedChallenges = [],
-    savedChallenges = []
-  } = user;
+  const { timezone: userTimezone, completedChallenges = [] } = user;
 
   const oldChallenge = find(
     completedChallenges,
@@ -148,31 +168,17 @@ export function buildUserUpdate(
     };
   }
 
-  let newSavedChallenges = savedChallenges;
+  let newSavedChallenges;
 
   if (savableChallenges.includes(challengeId)) {
-    let challengeToSave = {
-      id: challengeId,
-      lastSavedDate: completedDate,
-      files: files?.map(file =>
-        pick(file, [
-          'contents',
-          'key',
-          'index',
-          'name',
-          'path',
-          'ext',
-          'history'
-        ])
-      )
-    };
+    newSavedChallenges = buildNewSavedChallenges({
+      user,
+      challengeId,
+      completedDate,
+      files
+    });
 
-    newSavedChallenges = uniqBy(
-      [challengeToSave, ...savedChallenges.map(fixCompletedChallengeItem)],
-      'id'
-    );
-
-    // if saveableChallenge, update saved array when submitting
+    // if savableChallenge, update saved array when submitting
     updateData.$set = {
       completedChallenges: uniqBy(
         [finalChallenge, ...completedChallenges.map(fixCompletedChallengeItem)],
@@ -300,6 +306,7 @@ export function modernChallengeCompleted(req, res, next) {
         completedDate
       };
 
+      // if multifile cert project
       if (challengeType === 14) {
         completedChallenge.isManuallyApproved = false;
       }
@@ -318,6 +325,7 @@ export function modernChallengeCompleted(req, res, next) {
         id,
         data
       );
+
       const points = alreadyCompleted ? user.points : user.points + 1;
       const updatePromise = new Promise((resolve, reject) =>
         user.updateAttributes(updateData, err => {
@@ -444,25 +452,18 @@ function backendChallengeCompleted(req, res, next) {
 
 function saveChallenge(req, res, next) {
   const user = req.user;
-  const { id, files = [] } = req.body;
+  const { id: challengeId, files = [] } = req.body;
 
-  if (!savableChallenges.includes(id)) {
+  if (!savableChallenges.includes(challengeId)) {
     return res.status(403).send('That challenge type is not savable');
   }
 
-  let challengeToSave = {
-    id,
-    lastSavedDate: Date.now(),
-    files: files.map(file =>
-      pick(file, ['contents', 'key', 'index', 'name', 'path', 'ext', 'history'])
-    )
-  };
-
-  const { savedChallenges = [] } = user;
-  const newSavedChallenges = uniqBy(
-    [challengeToSave, ...savedChallenges.map(fixCompletedChallengeItem)],
-    'id'
-  );
+  const newSavedChallenges = buildNewSavedChallenges({
+    user,
+    challengeId,
+    completedDate: Date.now(),
+    files
+  });
 
   return user
     .getSavedChallenges$()
