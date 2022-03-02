@@ -34,7 +34,8 @@
     "import/named": 2,
     "import/no-named-as-default": 0,
     "import/no-named-as-default-member": 0,
-    "import/order": 2
+    "import/order": 2,
+    "import/no-cycle": [2, { "maxDepth": 2 }]
   },
   "overrides": [
     {
