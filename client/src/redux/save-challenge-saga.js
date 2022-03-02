@@ -7,7 +7,12 @@ import {
 import { createFlashMessage } from '../components/Flash/redux';
 import { challengeTypes } from '../../utils/challenge-types';
 import { FlashMessages } from '../components/Flash/redux/flash-messages';
-import { uniformizeChallengeSize } from '../utils/uniformize-challenge-size';
+import {
+  uniformizeRequestBody,
+  getStringSizeInBytes,
+  bodySizeFits,
+  getFlashMessage
+} from '../utils/challenge-request-helpers';
 import { saveChallengeComplete } from './';
 
 export function* saveChallengeSaga() {
@@ -16,25 +21,14 @@ export function* saveChallengeSaga() {
 
   // only allow saving of multiFileCertProject's
   if (challengeType === challengeTypes.multiFileCertProject) {
-    // body-parser has a size limit for req.body
-    // this makes a uniform object to check the size of for saving and submitting challenges
-    const body = uniformizeChallengeSize({ id, challengeFiles, challengeType });
-    const bodySizeInBytes = new Blob([JSON.stringify(body)]).size;
+    const body = uniformizeRequestBody({ id, challengeFiles, challengeType });
+    const bodySizeInBytes = getStringSizeInBytes(body);
 
-    // body-parser's default size limit
-    const MAX_SIZE = 102400;
-
-    // if it's too big, don't send the request
-    if (bodySizeInBytes > MAX_SIZE) {
-      yield put(
-        createFlashMessage({
-          type: 'danger',
-          message: 'flash.challenge-save-too-big',
-          variables: {
-            'max-size': MAX_SIZE,
-            'user-size': bodySizeInBytes
-          }
-        })
+    if (!bodySizeFits(bodySizeInBytes)) {
+      return yield put(
+        createFlashMessage(
+          getFlashMessage('flash.challenge-save-too-big', bodySizeInBytes)
+        )
       );
     } else {
       try {
