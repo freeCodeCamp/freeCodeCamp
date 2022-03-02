@@ -1,6 +1,6 @@
 ---
 id: 5900f4e01000cf542c50fff2
-title: 'Problem 371: Licence plates'
+title: 'Problema 371: Targhe'
 challengeType: 5
 forumTopicId: 302033
 dashedName: problem-371-licence-plates
@@ -8,24 +8,24 @@ dashedName: problem-371-licence-plates
 
 # --description--
 
-Oregon licence plates consist of three letters followed by a three digit number (each digit can be from \[0..9]).
+Le targhe dell'Oregon sono composte da tre lettere seguite da un numero a tre cifre (ciascuna cifra può essere in [0...9]).
 
-While driving to work Seth plays the following game:
+Mentre guida per andare a lavoro Seth gioca il seguente gioco:
 
-Whenever the numbers of two licence plates seen on his trip add to 1000 that's a win.
+Ogni volta che i numeri di due targhe visti nel suo viaggio si sommano a 1000, vince.
 
-E.g. MIC-012 and HAN-988 is a win and RYU-500 and SET-500 too. (as long as he sees them in the same trip).
+Ad es. `MIC-012` e `HAN-988` è una vittoria e `RYU-500` e `SET-500` anche. (finché li vede nello stesso viaggio).
 
-Find the expected number of plates he needs to see for a win. Give your answer rounded to 8 decimal places behind the decimal point.
+Trova il numero previsto di targhe che ha bisogno di vedere per una vittoria. Dai la tua risposta approssimata a 8 cifre dopo il punto decimale.
 
-Note: We assume that each licence plate seen is equally likely to have any three digit number on it.
+**Nota:** Assumiamo che ogni targa vista ha la stessa probabilità di avere un qualsiasi numero di tre cifre su di essa.
 
 # --hints--
 
-`euler371()` should return 40.66368097.
+`licensePlates()` dovrebbe restituire `40.66368097`.
 
 ```js
-assert.strictEqual(euler371(), 40.66368097);
+assert.strictEqual(licensePlates(), 40.66368097);
 ```
 
 # --seed--
@@ -33,12 +33,12 @@ assert.strictEqual(euler371(), 40.66368097);
 ## --seed-contents--
 
 ```js
-function euler371() {
+function licensePlates() {
 
   return true;
 }
 
-euler371();
+licensePlates();
 ```
 
 # --solutions--

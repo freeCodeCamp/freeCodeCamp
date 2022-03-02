@@ -1,6 +1,6 @@
 ---
 id: 5900f4da1000cf542c50ffed
-title: 'Problem 366: Stone Game III'
+title: 'Problema 366: Gioco delle pietre III'
 challengeType: 5
 forumTopicId: 302027
 dashedName: problem-366-stone-game-iii
@@ -8,30 +8,44 @@ dashedName: problem-366-stone-game-iii
 
 # --description--
 
-Two players, Anton and Bernhard, are playing the following game.
+Due giocatori, Anton e Bernhard, stanno giocando il seguente gioco.
 
-There is one pile of n stones.
+C'è una pila di $n$ pietre.
 
-The first player may remove any positive number of stones, but not the whole pile.
+Il primo giocatore può rimuovere qualsiasi numero positivo di pietre, ma non l'intera pila.
 
-Thereafter, each player may remove at most twice the number of stones his opponent took on the previous move.
+Successivamente, ogni giocatore può rimuovere al massimo il doppio del numero di pietre che il suo avversario ha preso nella mossa precedente.
 
-The player who removes the last stone wins.
+Il giocatore che rimuove l'ultima pietra vince.
 
-E.g. n=5 If the first player takes anything more than one stone the next player will be able to take all remaining stones. If the first player takes one stone, leaving four, his opponent will take also one stone, leaving three stones. The first player cannot take all three because he may take at most 2x1=2 stones. So let's say he takes also one stone, leaving 2. The second player can take the two remaining stones and wins. So 5 is a losing position for the first player. For some winning positions there is more than one possible move for the first player. E.g. when n=17 the first player can remove one or four stones.
+Ad es. $n = 5$
 
-Let M(n) be the maximum number of stones the first player can take from a winning position at his first turn and M(n)=0 for any other position.
+Se il primo giocatore prende più di una pietra il giocatore successivo sarà in grado di prendere tutte le pietre rimaste.
 
-∑M(n) for n≤100 is 728.
+Se il primo giocatore prende una pietra, lasciandone quattro, anche il suo avversario prenderà una pietra, lasciando tre pietre.
 
-Find ∑M(n) for n≤1018. Give your answer modulo 108.
+Il primo giocatore non può prenderle tutte e tre perché può prendere al massimo $2 \times 1 = 2$ pietre. Quindi diciamo che anche lui prende una pietra, lasciandone 2.
+
+Il secondo giocatore può prendere le due pietre rimanenti e vince.
+
+Quindi 5 è una posizione perdente per il primo giocatore.
+
+Per alcune posizioni vincenti c'è più di una possibile mossa per il primo giocatore.
+
+Ad es. quando $n = 17$ il primo giocatore può rimuovere una o quattro pietre.
+
+Sia $M(n)$ il numero massimo di pietre che il primo giocatore può prendere da una posizione vincente al suo primo turno e $M(n) = 0$ per qualsiasi altra posizione.
+
+$\sum M(n)$ per $n ≤ 100$ è 728.
+
+Trova $\sum M(n)$ per $n ≤ {10}^{18}$. Dai la tua risposta nel formato ${10}^8$.
 
 # --hints--
 
-`euler366()` should return 88351299.
+`stoneGameThree()` dovrebbe restituire `88351299`.
 
 ```js
-assert.strictEqual(euler366(), 88351299);
+assert.strictEqual(stoneGameThree(), 88351299);
 ```
 
 # --seed--
@@ -39,12 +53,12 @@ assert.strictEqual(euler366(), 88351299);
 ## --seed-contents--
 
 ```js
-function euler366() {
+function stoneGameThree() {
 
   return true;
 }
 
-euler366();
+stoneGameThree();
 ```
 
 # --solutions--

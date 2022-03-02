@@ -1,6 +1,6 @@
 ---
 id: 5900f4b71000cf542c50ffca
-title: 'Problem 331: Cross flips'
+title: 'Problema 331: Ribaltamenti a croce'
 challengeType: 5
 forumTopicId: 301989
 dashedName: problem-331-cross-flips
@@ -8,26 +8,28 @@ dashedName: problem-331-cross-flips
 
 # --description--
 
-N×N disks are placed on a square game board. Each disk has a black side and white side.
+N×N dischi sono posizionati su un tabellone da gioco quadrato. Ogni disco ha un lato nero e un lato bianco.
 
-At each turn, you may choose a disk and flip all the disks in the same row and the same column as this disk: thus 2×N-1 disks are flipped. The game ends when all disks show their white side. The following example shows a game on a 5×5 board.
+Ad ogni turno, si può scegliere un disco e capovolgere tutti i dischi nella stessa riga e la stessa colonna di questo disco: così $2 × N - 1$ dischi vengono capovolti. Il gioco termina quando tutti i dischi mostrano il loro lato bianco. L'esempio seguente mostra una partita su una griglia 5×5.
 
-It can be proven that 3 is the minimal number of turns to finish this game.
+<img class="img-responsive center-block" alt="animazione che mostra il gioco sulla scheda 5x5" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-flips.gif" style="background-color: white; padding: 10px;" />
 
-The bottom left disk on the N×N board has coordinates (0,0); the bottom right disk has coordinates (N-1,0) and the top left disk has coordinates (0,N-1).
+Si può dimostrare che 3 è il numero minimo di turni per finire questo gioco.
 
-Let CN be the following configuration of a board with N×N disks: A disk at (x,y) satisfying , shows its black side; otherwise, it shows its white side. C5 is shown above.
+Il disco in basso a sinistra sulla scheda $N×N$ ha coordinate (0, 0); il disco in basso a destra ha coordinate ($N - 1$,$0$) e il disco in alto a sinistra ha coordinate ($0$,$N - 1$).
 
-Let T(N) be the minimal number of turns to finish a game starting from configuration CN or 0 if configuration CN is unsolvable. We have shown that T(5)=3. You are also given that T(10)=29 and T(1 000)=395253.
+Sia $C_N$ la seguente configurazione di una scheda con $N × N$ dischi: Un disco a ($x$, $y$) soddisfacente $N - 1 \le \sqrt{x^2 + y^2} \lt N$, mostra il suo lato nero; altrimenti, mostra il suo lato bianco. $C_5$ è mostrato sopra.
 
-Find .
+Sia $T(N)$ il numero minimo di turni per completare una partita che parte dalla configurazione $C_N$ o 0 se la configurazione $C_N$ è irrisolvibile. Abbiamo mostrato che $T(5) = 3$. Ti viene anche dato che $T(10) = 29$ e $T(1\\,000) = 395\\,253$.
+
+Trova $\displaystyle \sum_{i = 3}^{31} T(2^i - i)$.
 
 # --hints--
 
-`euler331()` should return 467178235146843500.
+`crossFlips()` dovrebbe restituire `467178235146843500`.
 
 ```js
-assert.strictEqual(euler331(), 467178235146843500);
+assert.strictEqual(crossFlips(), 467178235146843500);
 ```
 
 # --seed--
@@ -35,12 +37,12 @@ assert.strictEqual(euler331(), 467178235146843500);
 ## --seed-contents--
 
 ```js
-function euler331() {
+function crossFlips() {
 
   return true;
 }
 
-euler331();
+crossFlips();
 ```
 
 # --solutions--

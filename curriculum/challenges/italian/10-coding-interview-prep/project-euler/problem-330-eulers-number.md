@@ -1,6 +1,6 @@
 ---
 id: 5900f4b71000cf542c50ffc9
-title: 'Problem 330: Euler''s Number'
+title: 'Problema 330: Numero di Eulero'
 challengeType: 5
 forumTopicId: 301988
 dashedName: problem-330-eulers-number
@@ -8,30 +8,28 @@ dashedName: problem-330-eulers-number
 
 # --description--
 
-An infinite sequence of real numbers a(n) is defined for all integers n as follows:
+Una sequenza infinita di numeri reali $a(n)$ è definita per tutti gli interi $n$ come segue:
 
-<!-- TODO Use MathJax and re-write from projecteuler.net -->
+$$ a(n) = \begin{cases} 1                                                       & n < 0 \\\\ \displaystyle \sum_{i = 1}^{\infty} \frac{a(n - 1)}{i!} & n \ge 0 \end{cases} $$
 
-For example,a(0) = 11! + 12! + 13! + ... = e − 1 a(1) = e − 11! + 12! + 13! + ... = 2e − 3 a(2) = 2e − 31! + e − 12! + 13! + ... = 72 e − 6
+Per esempio,
 
-with e = 2.7182818... being Euler's constant.
+$$\begin{align} & a(0) = \frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \ldots = e − 1 \\\\ & a(1) = \frac{e − 1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \ldots = 2e − 3 \\\\ & a(2) = \frac{2e − 3}{1!} + \frac{e − 1}{2!} + \frac{1}{3!} + \ldots = \frac{7}{2} e − 6 \end{align}$$
 
-It can be shown that a(n) is of the form
+dove $e = 2.7182818\ldots$ è costante di Euler.
 
-A(n) e + B(n)n! for integers A(n) and B(n).
+Può essere dimostrato che $a(n)$ è della forma $\displaystyle\frac{A(n)e + B(n)}{n!}$ per i numeri interi $A(n)$ e $B(n)$.
 
-For example a(10) =
+Per esempio $\displaystyle a(10) = \frac{328161643e − 652694486}{10!}$.
 
-328161643 e − 65269448610!.
-
-Find A(109) + B(109) and give your answer mod 77 777 777.
+Trova $A({10}^9)$ + $B({10}^9)$ e dai la tua risposta $\bmod 77\\,777\\,777$.
 
 # --hints--
 
-`euler330()` should return 15955822.
+`eulersNumber()` dovrebbe restituire `15955822`.
 
 ```js
-assert.strictEqual(euler330(), 15955822);
+assert.strictEqual(eulersNumber(), 15955822);
 ```
 
 # --seed--
@@ -39,12 +37,12 @@ assert.strictEqual(euler330(), 15955822);
 ## --seed-contents--
 
 ```js
-function euler330() {
+function eulersNumber() {
 
   return true;
 }
 
-euler330();
+eulersNumber();
 ```
 
 # --solutions--
