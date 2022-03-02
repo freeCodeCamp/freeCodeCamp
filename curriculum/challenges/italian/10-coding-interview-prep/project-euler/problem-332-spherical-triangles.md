@@ -1,6 +1,6 @@
 ---
 id: 5900f4b91000cf542c50ffcb
-title: 'Problem 332: Spherical triangles'
+title: 'Problema 332: Triangoli sferici'
 challengeType: 5
 forumTopicId: 301990
 dashedName: problem-332-spherical-triangles
@@ -8,20 +8,28 @@ dashedName: problem-332-spherical-triangles
 
 # --description--
 
-A spherical triangle is a figure formed on the surface of a sphere by three great circular arcs intersecting pairwise in three vertices.
+Un triangolo sferico è una figura formata sulla superficie di una sfera da tre grandi archi circolari che intersecano a coppia in tre vertici.
 
-Let C(r) be the sphere with the centre (0,0,0) and radius r. Let Z(r) be the set of points on the surface of C(r) with integer coordinates. Let T(r) be the set of spherical triangles with vertices in Z(r). Degenerate spherical triangles, formed by three points on the same great arc, are not included in T(r). Let A(r) be the area of the smallest spherical triangle in T(r).
+<img class="img-responsive center-block" alt="triangolo sferico formato sulla superficie di una sfera" src="https://cdn.freecodecamp.org/curriculum/project-euler/spherical-triangles.jpg" style="background-color: white; padding: 10px;" />
 
-For example A(14) is 3.294040 rounded to six decimal places.
+Sia $C(r)$ la sfera di centro (0,0,0) e raggio $r$.
 
-Find A(r). Give your answer rounded to six decimal places.
+Sia $Z(r)$ il set di punti sulla superficie di $C(r)$ con coordinate intere.
+
+Sia $T(r)$ il set di triangoli sferici con vertici in $Z(r)$. Triangoli sferici degeneri, formati da tre punti sullo stesso grande arco, <u>non</u> sono inclusi in $T(r)$.
+
+Sia $A(r)$ l'area del più piccolo triangolo sferico in $T(r)$.
+
+Per esempio, $A(14)$ è 3.294040 arrotondato a sei decimali.
+
+Trova $\displaystyle \sum_{r = 1}^{50} A(r)$. Dai la risposta arrotondata a sei decimali.
 
 # --hints--
 
-`euler332()` should return 2717.751525.
+`sphericalTriangles()` dovrebbe restituire `2717.751525`.
 
 ```js
-assert.strictEqual(euler332(), 2717.751525);
+assert.strictEqual(sphericalTriangles(), 2717.751525);
 ```
 
 # --seed--
@@ -29,12 +37,12 @@ assert.strictEqual(euler332(), 2717.751525);
 ## --seed-contents--
 
 ```js
-function euler332() {
+function sphericalTriangles() {
 
   return true;
 }
 
-euler332();
+sphericalTriangles();
 ```
 
 # --solutions--

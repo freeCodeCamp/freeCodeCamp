@@ -1,6 +1,6 @@
 ---
 id: 5900f4d11000cf542c50ffe4
-title: 'Problem 357: Prime generating integers'
+title: 'Problema 357: Numeri interi generatori di numeri primi'
 challengeType: 5
 forumTopicId: 302017
 dashedName: problem-357-prime-generating-integers
@@ -8,18 +8,18 @@ dashedName: problem-357-prime-generating-integers
 
 # --description--
 
-Consider the divisors of 30: 1,2,3,5,6,10,15,30.
+Considera i divisori di 30: 1, 2, 3, 5, 6, 10, 15, 30.
 
-It can be seen that for every divisor d of 30, d+30/d is prime.
+Si può vedere che per ogni divisore $d$ di 30, $d + \frac{30}{d}$ è primo.
 
-Find the sum of all positive integers n not exceeding 100 000 000such that for every divisor d of n, d+n/d is prime.
+Trova la somma di tutti gli interi positivi $n$ non superiore a $100\\,000\\, 00$ tale che per ogni divisore $d$ di $n$, $d + \frac{n}{d}$ è primo.
 
 # --hints--
 
-`euler357()` should return 1739023853137.
+`primeGeneratingIntegers()` dovrebbe restituire `1739023853137`.
 
 ```js
-assert.strictEqual(euler357(), 1739023853137);
+assert.strictEqual(primeGeneratingIntegers(), 1739023853137);
 ```
 
 # --seed--
@@ -27,12 +27,12 @@ assert.strictEqual(euler357(), 1739023853137);
 ## --seed-contents--
 
 ```js
-function euler357() {
+function primeGeneratingIntegers() {
 
   return true;
 }
 
-euler357();
+primeGeneratingIntegers();
 ```
 
 # --solutions--

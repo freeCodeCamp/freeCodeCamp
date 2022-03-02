@@ -1,6 +1,6 @@
 ---
 id: 5900f4cd1000cf542c50ffdf
-title: 'Problem 352: Blood tests'
+title: 'Problema 352: Analisi del sangue'
 challengeType: 5
 forumTopicId: 302012
 dashedName: problem-352-blood-tests
@@ -8,32 +8,46 @@ dashedName: problem-352-blood-tests
 
 # --description--
 
-Each one of the 25 sheep in a flock must be tested for a rare virus, known to affect 2% of the sheep population.
+Ognuna delle 25 pecore di un gregge deve essere sottoposta a test per individuare un virus raro, noto per colpire il 2% della popolazione ovina.
 
-An accurate and extremely sensitive PCR test exists for blood samples, producing a clear positive / negative result, but it is very time-consuming and expensive.
+Un test PCR accurato ed estremamente sensibile esiste per i campioni di sangue, producendo un risultato positivo/negativo netto, ma è molto lungo e costoso.
 
-Because of the high cost, the vet-in-charge suggests that instead of performing 25 separate tests, the following procedure can be used instead: The sheep are split into 5 groups of 5 sheep in each group. For each group, the 5 samples are mixed together and a single test is performed. Then, If the result is negative, all the sheep in that group are deemed to be virus-free. If the result is positive, 5 additional tests will be performed (a separate test for each animal) to determine the affected individual(s).
+A causa del costo elevato, il veterinario suggerisce che invece di eseguire 25 test separati, si può ricorrere alla seguente procedura:
 
-Since the probability of infection for any specific animal is only 0.02, the first test (on the pooled samples) for each group will be: Negative (and no more tests needed) with probability 0.985 = 0.9039207968. Positive (5 additional tests needed) with probability 1 - 0.9039207968 = 0.0960792032.
+Le pecore sono suddivise in 5 gruppi di 5 pecore in ognuno. Per ciascun gruppo, i 5 campioni sono mescolati insieme e si effettua una singola prova. Poi,
 
-Thus, the expected number of tests for each group is 1 + 0.0960792032 × 5 = 1.480396016. Consequently, all 5 groups can be screened using an average of only 1.480396016 × 5 = 7.40198008 tests, which represents a huge saving of more than 70% !
+- Se il risultato è negativo, tutte le pecore di quel gruppo sono considerate prive di virus.
+- Se il risultato è positivo, saranno effettuati 5 test supplementari (una prova separata per ciascun animale) per determinare l'individuo/i interessato/i.
 
-Although the scheme we have just described seems to be very efficient, it can still be improved considerably (always assuming that the test is sufficiently sensitive and that there are no adverse effects caused by mixing different samples). E.g.: We may start by running a test on a mixture of all the 25 samples. It can be verified that in about 60.35% of the cases this test will be negative, thus no more tests will be needed. Further testing will only be required for the remaining 39.65% of the cases. If we know that at least one animal in a group of 5 is infected and the first 4 individual tests come out negative, there is no need to run a test on the fifth animal (we know that it must be infected). We can try a different number of groups / different number of animals in each group, adjusting those numbers at each level so that the total expected number of tests will be minimised.
+Poiché la probabilità di infezione per un animale specifico è solo di 0,02, il primo test (sui campioni aggregati) per ciascun gruppo sarà:
 
-To simplify the very wide range of possibilities, there is one restriction we place when devising the most cost-efficient testing scheme: whenever we start with a mixed sample, all the sheep contributing to that sample must be fully screened (i.e. a verdict of infected / virus-free must be reached for all of them) before we start examining any other animals.
+- Negativo (e nessun altro test necessario) con probabilità ${0.98}^5 = 0.9039207968$.
+- Positivo (5 ulteriori test necessari) con probabilità $1 - 0.9039207968 = 0.0960792032$.
 
-For the current example, it turns out that the most cost-efficient testing scheme (we'll call it the optimal strategy) requires an average of just 4.155452 tests!
+Così, il numero previsto di test per ogni gruppo è di $1 + 0.0960792032 × 5 = 1.480396016$.
 
-Using the optimal strategy, let T(s,p) represent the average number of tests needed to screen a flock of s sheep for a virus having probability p to be present in any individual. Thus, rounded to six decimal places, T(25, 0.02) = 4.155452 and T(25, 0.10) = 12.702124.
+Di conseguenza, tutti i 5 gruppi possono essere controllati utilizzando una media di soli $1.480396016 × 5 = \mathbf{7.40198008}$ test, che rappresenta un enorme risparmio di oltre il 70%!
 
-Find ΣT(10000, p) for p=0.01, 0.02, 0.03, ... 0.50. Give your answer rounded to six decimal places.
+Anche se lo schema che abbiamo appena descritto sembra essere molto efficiente, può ancora essere migliorato notevolmente (sempre supponendo che il test sia sufficientemente sensibile e che nessun effetto negativo sia causato dalla miscelazione di campioni diversi). Ad es.:
+
+- Possiamo iniziare eseguendo una prova su una miscela di tutti i 25 campioni. Si può verificare che in circa il 60,35% dei casi questo test sarà negativo, quindi non saranno necessari altri test. Saranno necessari ulteriori test solo per il restante 39,65% dei casi.
+- Se sappiamo che almeno un animale in un gruppo di 5 è infetto e i primi 4 test individuali risultano negativi, non è necessario eseguire un test sul quinto animale (sappiamo che deve essere infetto).
+- Possiamo provare un numero diverso di gruppi / numero diverso di animali in ogni gruppo, adeguare tali numeri a ciascun livello in modo da ridurre al minimo il numero totale previsto di prove.
+
+Per semplificare la vasta gamma di possibilità, esiste una restrizione che poniamo quando progettiamo il sistema di test più efficiente in termini di costi: ogni volta che iniziamo con un campione misto, tutti gli ovini che contribuiscono a tale campione devono essere sottoposti a screening completo (cioè prima di iniziare ad esaminare qualsiasi altro animale deve essere raggiunto un verdetto di infezione / non infezione per tutti loro.
+
+Per l'esempio attuale, risulta che lo schema di test più efficiente in termini di costi (lo chiameremo la strategia ottimale) richiede una media di appena <strong>4.155452</strong> test!
+
+Utilizzando la strategia ottimale, lascia che $T(s, p)$ rappresenti il numero medio di test necessari per testare un gregge di $s$ pecore per un virus che ha probabilità $p$ di essere presente in qualsiasi individuo. Così, arrotondato a sei decimali, $T(25, 0.02) = 4.155452$ e $T(25, 0.10) = 12.702124$.
+
+Trova $\sum T(10\\,000, p)$ per $p = 0.01, 0.02, 0.03, \ldots 0.50$. Dai la risposta arrotondata a sei decimali.
 
 # --hints--
 
-`euler352()` should return 378563.260589.
+`bloodTests()` dovrebbe restituire `378563.260589`.
 
 ```js
-assert.strictEqual(euler352(), 378563.260589);
+assert.strictEqual(bloodTests(), 378563.260589);
 ```
 
 # --seed--
@@ -41,12 +55,12 @@ assert.strictEqual(euler352(), 378563.260589);
 ## --seed-contents--
 
 ```js
-function euler352() {
+function bloodTests() {
 
   return true;
 }
 
-euler352();
+bloodTests();
 ```
 
 # --solutions--
