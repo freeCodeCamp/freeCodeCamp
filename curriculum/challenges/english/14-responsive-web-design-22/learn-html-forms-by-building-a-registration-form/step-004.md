@@ -56,7 +56,7 @@ assert.equal(heads?.length, 1);
 Your `link` element should be a self-closing element.
 
 ```js
-assert(code.match(/<link[\w\W\s]+\/>/i));
+assert(code.match(/<link[\w\W\s]*\/>/i));
 ```
 
 Your `link` element should be within your `head` element.
@@ -68,19 +68,19 @@ assert(code.match(/<head>[\w\W\s]*<link[\w\W\s]*\/>[\w\W\s]*<\/head>/i))
 Your `link` element should have a `rel` attribute with the value `stylesheet`.
 
 ```js
-assert.match(code, /<link[\s\S]*?rel=('|"|`)stylesheet\1/)
+assert(__helpers.removeWhiteSpace(code).match(/<.*?link.*.*?rel=('|"|`)stylesheet('|"|`).*\/>/))
 ```
 
 Your `link` element should have a `type` attribute with the value `text/css`.
 
 ```js
-assert.match(code, /<link[\s\S]*?type=('|"|`)text\/css\1/)
+assert(__helpers.removeWhiteSpace(code).match(/<.*?link.*.*?type=('|"|`)text\/css('|"|`).*\/>/))
 ```
 
 Your `link` element should have an `href` attribute with the value `styles.css`.
 
 ```js
-assert.match(code, /<link[\s\S]*?href=('|"|`)(\.\/)?styles\.css\1/)
+assert(__helpers.removeWhiteSpace(code).match(/<.*?link.*.*?href=('|"|`)styles[.]css('|"|`).*\/>/))
 ```
 
 # --seed--
