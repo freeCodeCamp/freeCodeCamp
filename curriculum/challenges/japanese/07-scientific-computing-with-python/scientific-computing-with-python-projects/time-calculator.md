@@ -10,27 +10,21 @@ dashedName: time-calculator
 
 このプロジェクトは [Replit スターターコード](https://replit.com/github/freeCodeCamp/boilerplate-time-calculator)を使用して作業を行います。
 
-Python カリキュラムの対話式教育コンテンツを引き続き開発中です。 現在、下記の freeCodeCamp.org YouTube チャンネルで、このプロジェクトの完了に必要なすべての知識について説明する動画をいくつか公開しています。
-
-- [「みんなで Python」ビデオコース](https://www.freecodecamp.org/news/python-for-everybody/) (14 時間)
-
-- [「Python を学ぶ」ビデオコース](https://www.freecodecamp.org/news/learn-python-video-course/) (10 時間)
-
 # --instructions--
 
-下記に示す 2 つの必須パラメーターと 1 つのオプションパラメーターを受け取る関数 `add_time` を記述してください。
+Write a function named `add_time` that takes in two required parameters and one optional parameter:
 
-- 12 時制形式の開始時刻 (末尾に AM または PM)
-- 時数と分数で示される経過時間
-- (オプション) 開始の曜日 (大文字小文字の記述は自由)
+- a start time in the 12-hour clock format (ending in AM or PM)
+- a duration time that indicates the number of hours and minutes
+- (optional) a starting day of the week, case insensitive
 
-関数は、経過時間を開始時刻に追加し、その結果を返す必要があります。
+The function should add the duration time to the start time and return the result.
 
-結果が翌日になる場合は、時刻の後に `(next day)` (翌日) を表示する必要があります。 結果が翌日以降になる場合は、時刻の後に `(n days later)` (n 日後) を表示する必要があります。ここで "n" は何日後かを示します。
+If the result will be the next day, it should show `(next day)` after the time. If the result will be more than one day later, it should show `(n days later)` after the time, where "n" is the number of days later.
 
-関数にオプションの開始曜日パラメーターが与えられた場合は、結果の曜日を出力に表示する必要があります。 出力する曜日は、時刻の後、「n 日後」の前に表示する必要があります。
+If the function is given the optional starting day of the week parameter, then the output should display the day of the week of the result. The day of the week in the output should appear after the time and before the number of days later.
 
-関数が扱うさまざまなケースの例を次に示します。 結果のスペースと句読点の表示に特に注意を払ってください。
+Below are some examples of different cases the function should handle. Pay close attention to the spacing and punctuation of the results.
 
 ```py
 add_time("3:00 PM", "3:10")
@@ -52,23 +46,23 @@ add_time("6:30 PM", "205:12")
 # Returns: 7:42 AM (9 days later)
 ```
 
-Python ライブラリをインポートしないでください。 開始時刻は有効な時刻であると仮定します。 経過時間の分数は 60 未満の整数になりますが、時数は任意の整数になります。
+Do not import any Python libraries. Assume that the start times are valid times. The minutes in the duration time will be a whole number less than 60, but the hour can be any whole number.
 
 ## 開発
 
-`time_calculator.py` でコードを記述してください。 開発には `main.py` を使用して `time_calculator()` 関数をテストすることができます。 「実行」ボタンをクリックすると `main.py` が実行されます。
+Write your code in `time_calculator.py`. For development, you can use `main.py` to test your `time_calculator()` function. Click the "run" button and `main.py` will run.
 
 ## テスト
 
-このプロジェクトの単体テストは `test_module.py` にあります。 すでに `test_module.py` から `main.py` にテストをインポートしてあります。 「実行」ボタンを押すと自動的にテストが実行されます。
+The unit tests for this project are in `test_module.py`. We imported the tests from `test_module.py` to `main.py` for your convenience. The tests will run automatically whenever you hit the "run" button.
 
 ## 提出
 
-プロジェクトの URL をコピーし、freeCodeCamp に提出してください。
+Copy your project's URL and submit it to freeCodeCamp.
 
 # --hints--
 
-正確に時間を追加し、すべてのテストに合格する必要があります。
+It should correctly add times and pass all tests.
 
 ```js
 
