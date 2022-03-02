@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FormEvent } from 'react';
 import { Form } from 'react-final-form';
 
 import {
@@ -50,7 +50,7 @@ function DynamicForm({
       {({ handleSubmit, pristine, error }) => (
         <form
           id={`dynamic-${id}`}
-          onSubmit={handleSubmit}
+          onSubmit={handleSubmit as (e: FormEvent) => void}
           style={{ width: '100%' }}
         >
           <FormFields formFields={formFields} options={options} />
