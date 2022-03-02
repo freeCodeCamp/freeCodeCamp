@@ -24,7 +24,7 @@ Einige Community-Mitglieder entwickeln auch unter Windows 10 mit Git für Window
 | --------------------------------------------------------------------------------------------- | ------- | ---------------------------------------------------------------------------------------------------- |
 | [Node.js](http://nodejs.org)                                                                  | `16.x`  | Wir verwenden die "Active LTS"-Version, siehe [LTS Schedule](https://nodejs.org/en/about/releases/). |
 | npm (wird mit Node mitgeliefert)                                                              | `8.x`   | Wir verwenden die Version, die mit Node.js Active LTS ausgeliefert wird.                             |
-| [MongoDB Community-Server](https://docs.mongodb.com/manual/administration/install-community/) | `4.0.x` | -                                                                                                    |
+| [MongoDB Community-Server](https://docs.mongodb.com/manual/administration/install-community/) | `4.2.x` | -                                                                                                    |
 
 > [!ATTENTION] Wenn du eine andere Version hast, installiere bitte die empfohlene Version. Wir können nur Installationsprobleme für empfohlene Versionen unterstützen. Siehe [Problembehebung](#troubleshooting) für Details.
 
