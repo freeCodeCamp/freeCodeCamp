@@ -53,7 +53,7 @@
     "@stripe/react-stripe-js": "1.7.0",
     "@stripe/stripe-js": "1.24.0",
     "@types/react-scrollable-anchor": "0.6.1",
-    "algoliasearch": "4.12.1",
+    "algoliasearch": "4.12.2",
     "assert": "2.0.0",
     "babel-plugin-preval": "5.1.0",
     "babel-plugin-prismjs": "2.1.0",
