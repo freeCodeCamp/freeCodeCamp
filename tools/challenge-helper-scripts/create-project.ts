@@ -22,7 +22,7 @@ type SuperBlockInfo = {
 
 type IntroJson = Record<SuperBlocks, SuperBlockInfo>;
 
-type Meta = {
+export type Meta = {
   name: string;
   isUpcomingChange: boolean;
   dashedName: string;
@@ -210,8 +210,7 @@ async function createFirstChallenge(
   return createStepFile({
     projectPath: newChallengeDir + '/',
     stepNum: 1,
-    challengeSeeds,
-    stepBetween: false
+    challengeSeeds
   });
 }
 

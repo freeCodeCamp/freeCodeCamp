@@ -21,10 +21,10 @@
     "build": "ts-node --project ../tsconfig.json ../tools/scripts/build/build-curriculum",
     "create-empty-steps": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/create-empty-steps",
     "create-next-step": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/create-next-step",
-    "create-step-between": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/create-step-between",
+    "insert-step": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/insert-step",
     "delete-step": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/delete-step",
     "lint": "ts-node --project ../tsconfig.json lint-localized",
-    "reorder-steps": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/reorder-steps",
+    "update-step-titles": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/update-step-titles",
     "test": "mocha --delay --exit --reporter progress --bail",
     "test:full-output": "cross-env FULL_OUTPUT=true mocha --delay --reporter progress"
   },

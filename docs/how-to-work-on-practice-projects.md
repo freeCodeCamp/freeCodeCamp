@@ -10,9 +10,7 @@ If you want to create new steps, the following tools simplify that process.
 
 ## create-next-step
 
-A one-off script that will automatically add the next step based on the last step numbered as `step-xxx.md` where `xxx` represents the 3-digit step number of the last step. The challenge seed code will use the previous step's challenge seed code with the editable region markers (ERMs) removed.
-
-**Note:** This script also runs [reorder-steps](#reorder-steps).
+A one-off script that will automatically add the next step based on the last step in the project. The challenge seed code will use the previous step's challenge seed code with the editable region markers (ERMs) removed.
 
 ### How to run script:
 
@@ -25,9 +23,7 @@ npm run create-next-step
 
 ## create-empty-steps
 
-A one-off script that automatically adds a specified number of steps at a specific starting step number. The challenge seed code for all steps created will be empty.
-
-**Note:** This script also runs [reorder-steps](#reorder-steps).
+A one-off script that automatically adds a specified number of steps. The challenge seed code for all steps created will be empty.
 
 ### How to run script:
 
@@ -35,14 +31,14 @@ A one-off script that automatically adds a specified number of steps at a specif
 2. Run the following npm command:
 
 ```bash
-npm run create-empty-steps start=X num=Y # where X is the starting step number and Y is the number of steps to create.
+npm run create-empty-steps X # where X is the number of steps to create.
 ```
 
-## create-step-between
+## insert-step
 
-A one-off script that automatically adds a new step between two existing consecutive steps. The challenge seed code will use the existing starting step's challenge seed code with the editable region markers (ERMs) removed.
+A one-off script that automatically adds a new step at a specified position, incrementing all subsequent steps (both their titles and in their meta.json). The challenge seed code will use the previous step's challenge seed code with the editable region markers (ERMs) removed.
 
-**Note:** This script also runs [reorder-steps](#reorder-steps).
+**Note:** This script also runs [update-step-titles](#update-step-titles).
 
 ### How to run script:
 
@@ -50,12 +46,14 @@ A one-off script that automatically adds a new step between two existing consecu
 2. Run the following npm command:
 
 ```bash
-npm run create-step-between start=X # where X is the starting step number
+npm run insert-step X # where X is the position to insert the new step.
 ```
 
 ## delete-step
 
-A one-off script that deletes an existing step and then reorders the remaining step files in the project's folder as well as updates the `challengeOrder` property array in the project's `meta.json` with the new order of the steps.
+A one-off script that deletes an existing step, decrementing all subsequent steps (both their titles and in their meta.json)
+
+**Note:** This script also runs [update-step-titles](#update-step-titles).
 
 ### How to run script
 
@@ -63,55 +61,12 @@ A one-off script that deletes an existing step and then reorders the remaining s
 2. Run the following npm command:
 
 ```bash
-npm run delete-step num=x # where x is the step number to be deleted.
+npm run delete-step X # where X is the step number to be deleted.
 ```
 
-## reorder-steps
+## update-step-titles
 
-A one-off script that automatically reorders the step files in a project's markdown files based on the filename. It also updates the `challengeOrder` property array in the project's `meta.json` with the new order of the steps.
-
-### Working Example
-
-Let's say you start with the following project structure:
-
-```bash
-step-001.md
-step-002.md
-step-003.md
-step-004.md
-step-005.md
-step-006.md
-```
-
-At some point you decide you need to delete `step-002.md`, because that step is no longer needed. Also, you decide to break down `step-004.md` into three steps instead of just one.
-
-To accomplish this restructure, you would need to delete `step-002.md` and then add a `step-004a.md` and a `step-004b.md`. The new folder structure would look like the following:
-
-```bash
-step-001.md
-step-003.md
-step-004.md
-step-004a.md
-step-004b.md
-step-005.md
-step-006.md
-```
-
-You now need the file names to be `step-001.md` through `step-007.md`, because you removed one but gained two more for a net difference of one file. Also, the frontmatter of each file below a deleted step or added step will need to be modified by making the `title` key value match the new step number. For example, after renaming `step-3.md` to `step-2.md`, you would need to change `step-2.md`'s title from `Step 03` to `Step 02`.
-
-See below for the actual project folder changes needed:
-
-```bash
-step-001.md
-step-003.md renamed to step-002.md and title changes to "Step 2"
-step-004.md renames to step-003.md and title changes to "Step 3"
-step-004a.md renames to step-004.md and title changes to "Step 4"
-step-004b.md renames to step-005.md and title changes to "Step 5"
-step-005.md renames to step-006.md and title changes to "Step 6"
-step-006.md renames to step-007.md and title changes to "Step 7"
-```
-
-Along with the above changes, the `challengeOrder` key in the project's `meta.json` file needs to reflect the new step order. This is needed because each step below a step deletion and/or step addition changes the `title` associated with each of the affected step's challenge `id`.
+A one-off script that automatically updates the frontmatter in a project's markdown files so that they are consistent with the project's meta.json. It ensures that each step's title (and dashedName) match the meta's challengeOrder.
 
 ### How to run script
 
@@ -119,5 +74,5 @@ Along with the above changes, the `challengeOrder` key in the project's `meta.js
 2. Run the following npm command:
 
 ```bash
-npm run reorder-steps
+npm run update-step-titles
 ```
