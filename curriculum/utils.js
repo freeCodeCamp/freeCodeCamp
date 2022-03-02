@@ -25,19 +25,19 @@ const superBlockToOrder = {
   'javascript-algorithms-and-data-structures': 1,
   'front-end-development-libraries': 2,
   'data-visualization': 3,
-  'relational-database': 4,
-  'back-end-development-and-apis': 5,
-  'quality-assurance': 6,
-  'scientific-computing-with-python': 7,
-  'data-analysis-with-python': 8,
-  'information-security': 9,
-  'machine-learning-with-python': 10,
-  'coding-interview-prep': 11
+  'back-end-development-and-apis': 4,
+  'quality-assurance': 5,
+  'scientific-computing-with-python': 6,
+  'data-analysis-with-python': 7,
+  'information-security': 8,
+  'machine-learning-with-python': 9,
+  'coding-interview-prep': 10,
+  'relational-database': 12
 };
 
 const superBlockToNewOrder = {
   ...superBlockToOrder,
-  '2022/responsive-web-design': 12
+  '2022/responsive-web-design': 11
 };
 
 function getSuperOrder(
