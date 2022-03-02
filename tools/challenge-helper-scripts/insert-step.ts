@@ -1,6 +1,6 @@
-import { deleteStep } from './commands';
 import { getArgValue } from './helpers/get-arg-value';
+import { insertStep } from './commands';
 import { validateMetaData } from './helpers/project-metadata';
 
 validateMetaData();
-deleteStep(getArgValue(process.argv));
+insertStep(getArgValue(process.argv));
