@@ -47,10 +47,12 @@ function buildSourceMap(challengeFiles) {
   const source = challengeFiles.reduce(
     (sources, challengeFile) => {
       sources.index += challengeFile.source || challengeFile.contents;
+      sources.contents = sources.index;
+      sources.original[challengeFile.history[0]] = challengeFile.source;
       sources.editableContents += challengeFile.editableContents || '';
       return sources;
     },
-    { index: '', editableContents: '' }
+    { index: '', editableContents: '', original: {} }
   );
   return source;
 }
@@ -72,7 +74,8 @@ const buildFunctions = {
   [challengeTypes.modern]: buildDOMChallenge,
   [challengeTypes.backend]: buildBackendChallenge,
   [challengeTypes.backEndProject]: buildBackendChallenge,
-  [challengeTypes.pythonProject]: buildBackendChallenge
+  [challengeTypes.pythonProject]: buildBackendChallenge,
+  [challengeTypes.multiFileCertProject]: buildDOMChallenge
 };
 
 export function canBuildChallenge(challengeData) {
@@ -93,7 +96,8 @@ const testRunners = {
   [challengeTypes.js]: getJSTestRunner,
   [challengeTypes.html]: getDOMTestRunner,
   [challengeTypes.backend]: getDOMTestRunner,
-  [challengeTypes.pythonProject]: getDOMTestRunner
+  [challengeTypes.pythonProject]: getDOMTestRunner,
+  [challengeTypes.multiFileCertProject]: getDOMTestRunner
 };
 export function getTestRunner(buildData, runnerConfig, document) {
   const { challengeType } = buildData;
@@ -130,12 +134,13 @@ async function getDOMTestRunner(buildData, { proxyLogger }, document) {
     runTestInTestFrame(document, testString, testTimeout);
 }
 
-export function buildDOMChallenge({
-  challengeFiles,
-  required = [],
-  template = ''
-}) {
-  const finalRequires = [...required, ...frameRunner];
+export function buildDOMChallenge(
+  { challengeFiles, required = [], template = '' },
+  { usesTestRunner } = { usesTestRunner: false }
+) {
+  const finalRequires = [...required];
+  if (usesTestRunner) finalRequires.push(...frameRunner);
+
   const loadEnzyme = challengeFiles.some(
     challengeFile => challengeFile.ext === 'jsx'
   );
@@ -146,7 +151,11 @@ export function buildDOMChallenge({
     .then(checkFilesErrors)
     .then(challengeFiles => ({
       challengeType: challengeTypes.html,
-      build: concatHtml({ required: finalRequires, template, challengeFiles }),
+      build: concatHtml({
+        required: finalRequires,
+        template,
+        challengeFiles
+      }),
       sources: buildSourceMap(challengeFiles),
       loadEnzyme
     }));
@@ -184,7 +193,10 @@ export function buildBackendChallenge({ url }) {
 }
 
 export function updatePreview(buildData, document, proxyLogger) {
-  if (buildData.challengeType === challengeTypes.html) {
+  if (
+    buildData.challengeType === challengeTypes.html ||
+    buildData.challengeType === challengeTypes.multiFileCertProject
+  ) {
     createMainPreviewFramer(document, proxyLogger)(buildData);
   } else {
     throw new Error(
@@ -194,8 +206,19 @@ export function updatePreview(buildData, document, proxyLogger) {
 }
 
 export function updateProjectPreview(buildData, document) {
-  if (buildData.challengeType === challengeTypes.html) {
-    createProjectPreviewFramer(document)(buildData);
+  if (
+    buildData.challengeType === challengeTypes.html ||
+    buildData.challengeType === challengeTypes.multiFileCertProject
+  ) {
+    // Give iframe a title attribute for accessibility using the preview
+    // document's <title>.
+    const titleMatch = buildData?.sources?.index?.match(
+      /<title>(.*?)<\/title>/
+    );
+    const frameTitle = titleMatch
+      ? titleMatch[1].trim() + ' preview'
+      : 'preview';
+    createProjectPreviewFramer(document, frameTitle)(buildData);
   } else {
     throw new Error(
       `Cannot show preview for challenge type ${buildData.challengeType}`
@@ -206,7 +229,8 @@ export function updateProjectPreview(buildData, document) {
 export function challengeHasPreview({ challengeType }) {
   return (
     challengeType === challengeTypes.html ||
-    challengeType === challengeTypes.modern
+    challengeType === challengeTypes.modern ||
+    challengeType === challengeTypes.multiFileCertProject
   );
 }
 

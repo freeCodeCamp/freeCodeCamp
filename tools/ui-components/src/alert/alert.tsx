@@ -1,5 +1,4 @@
 import React from 'react';
-import { CloseButton } from '../close-button';
 
 type AlertVariant = 'success' | 'info' | 'warning' | 'danger';
 
@@ -7,8 +6,6 @@ export interface AlertProps {
   children: React.ReactNode;
   className?: string;
   variant: AlertVariant;
-  dismissLabel?: string;
-  onDismiss?: () => void;
 }
 
 const variantClasses: Record<AlertVariant, string> = {
@@ -19,34 +16,25 @@ const variantClasses: Record<AlertVariant, string> = {
 };
 
 /**
- * Basic UI component that provides contextual feedback
+ * `Alert` is used to display a short, important message that does not interrupt the user's workflow.
+ *
+ * `Alert` is not dismissable.
  */
 export function Alert({
   children,
   className,
-  variant,
-  dismissLabel = 'Close',
-  onDismiss
+  variant
 }: AlertProps): JSX.Element {
-  const isDismissable = !!onDismiss;
   const variantClass = variantClasses[variant];
 
   const classes = [
-    'relative p-4 mb-6 border border-transparent break-words',
+    'p-4 mb-6 border border-transparent break-words',
     variantClass,
-    isDismissable ? 'pr-10' : '',
     className
   ].join(' ');
 
   return (
     <div className={classes} role='alert'>
-      {isDismissable && (
-        <CloseButton
-          className='absolute right-4'
-          label={dismissLabel}
-          onClick={onDismiss}
-        />
-      )}
       {children}
     </div>
   );

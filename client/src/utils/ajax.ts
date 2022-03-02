@@ -1,10 +1,8 @@
 import cookies from 'browser-cookies';
 import envData from '../../../config/env.json';
-import { FlashMessageArg } from '../components/Flash/redux';
 
 import type {
   ChallengeFile,
-  ClaimedCertifications,
   CompletedChallenge,
   User
 } from '../redux/prop-types';
@@ -25,6 +23,8 @@ function getCSRFToken() {
   return token ?? '';
 }
 
+// TODO: Might want to handle flash messages as close to the request as possible
+// to make use of the Response object (message, status, etc)
 async function get<T>(path: string): Promise<T> {
   return fetch(`${base}${path}`, defaultOptions).then<T>(res => res.json());
 }
@@ -158,31 +158,6 @@ export function getShowCert(username: string, certSlug: string): Promise<Cert> {
 
 export function getUsernameExists(username: string): Promise<boolean> {
   return get(`/api/users/exists?username=${username}`);
-}
-
-export interface GetVerifyCanClaimCert {
-  response: {
-    type: string;
-    message: {
-      status: boolean;
-      result: string;
-    };
-    variables: {
-      name: string;
-    };
-  };
-  isCertMap: ClaimedCertifications;
-  completedChallenges: CompletedChallenge[];
-  message?: FlashMessageArg;
-}
-
-export function getVerifyCanClaimCert(
-  username: string,
-  superBlock: string
-): Promise<GetVerifyCanClaimCert> {
-  return get(
-    `/certificate/verify-can-claim-cert?username=${username}&superBlock=${superBlock}`
-  );
 }
 
 /** POST **/

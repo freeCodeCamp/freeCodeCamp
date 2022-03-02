@@ -69,12 +69,30 @@ We typically do not assign issues to anyone other than long-time contributors. I
    - Hai seguito la checklist delle pull request?
    - Hai dato alla tua pull request un titolo significativo?
 
+### I am interested in being a moderator at freeCodeCamp. Where should I start?
+
+Our community moderators are our heroes. Their voluntary contributions make freeCodeCamp a safe and welcoming community.
+
+First and foremost, we would need you to be an active participant in the community, and live by our [code of conduct](https://www.freecodecamp.org/news/code-of-conduct/) (not just enforce it).
+
+Here are some recommended paths for some of our platforms:
+
+- To be a **Discord/Chat** moderator, have an active presence in our chat and have positive engagements with others, while also learning and practicing how to deal with potential conflicts that may arise.
+- To be a **Forum** moderator, similar to a chat moderator, have an active presence and engage with other forum posters, supporting others in their learning journey, and even given feedback when asked. Take a look at [The Subforum Leader Handbook](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) for more information.
+- To be a **GitHub** moderator, help process GitHub issues that are brought up to see if they are valid and (ideally) try to propose solutions for these issues to be picked up by others (or yourself).
+
+Altogether, be respectful to others. We are humans all around the world. With that in mind, please also consider using encouraging or supportive language and be mindful of cross-cultural communication.
+
+If you practice the above **consistently for a while** and our fellow moderator members recommend you, a staff member will reach out and onboard you to the moderators' team. Open source work is voluntary work and our time is limited. We acknowledge that this is probably true in your case as well. So we emphasize being **consistent** rather than engaging in the community 24/7.
+
+Take a look at our [Moderator Handbook](moderator-handbook.md) for a more exhaustive list of other responsibilities and expectations we have of our moderators.
+
 ### I am stuck on something that is not included in this documentation.
 
 **Feel free to ask for help in:**
 
-- La categoria `Contributors` del [forum della nostra community](https://forum.freecodecamp.org/c/contributors).
-- Il canale `#Contributors` sul nostro [chat server](https://chat.freecodecamp.org/channel/contributors).
+- The `Contributors` category of [our community forum](https://forum.freecodecamp.org/c/contributors).
+- The `#Contributors` channel on [our chat server](https://chat.freecodecamp.org/channel/contributors).
 
 We are excited to help you contribute to any of the topics that you would like to work on. If you ask us questions on the related issue threads, we will be glad to clarify. Be sure to search for your question before posting a new one.
 

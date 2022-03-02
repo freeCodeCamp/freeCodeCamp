@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8002
-title: Sorting algorithms/Bogosort
+title: Algoritmi di ordinamento/Bogosort
 challengeType: 5
 forumTopicId: 302311
 dashedName: sorting-algorithmsbogosort
@@ -8,17 +8,17 @@ dashedName: sorting-algorithmsbogosort
 
 # --description--
 
-[Bogosort](https://en.wikipedia.org/wiki/Bogosort) a list of numbers.
+[Bogosort](https://en.wikipedia.org/wiki/Bogosort) un elenco di numeri.
 
-Bogosort simply shuffles a collection randomly until it is sorted.
+Bogosort mescola semplicemente una raccolta in modo casuale fino a quando non viene ordinata.
 
-"Bogosort" is a perversely inefficient algorithm only used as an in-joke.
+"Bogosort" è un algoritmo perversamente inefficiente usato solo come presa in giro.
 
-Its average run-time is O(n!) because the chance that any given shuffle of a set will end up in sorted order is about one in *n* factorial, and the worst case is infinite since there's no guarantee that a random shuffling will ever produce a sorted sequence.
+La sua durata media è O(n!) perché la possibilità che qualsiasi mescolamento di un set finisca con un set ordinato è di circa uno su *n* fattoriale, e il caso peggiore è infinito dal momento che non c'è garanzia che un mescolamento casuale mai produrrà una sequenza ordinata.
 
-Its best case is O(n) since a single pass through the elements may suffice to order them.
+Il suo caso migliore è O(n) poiché un singolo passaggio attraverso gli elementi può essere sufficiente per ordinarli.
 
-Pseudocode:
+Pseudocodice:
 
 <pre><b>while not</b> InOrder(list) <b>do</b>
   Shuffle(list)
@@ -27,37 +27,37 @@ Pseudocode:
 
 # --hints--
 
-`bogosort` should be a function.
+`bogosort` dovrebbe essere una funzione.
 
 ```js
 assert(typeof bogosort == 'function');
 ```
 
-`bogosort([25, 32, 12, 7, 20])` should return an array.
+`bogosort([25, 32, 12, 7, 20])` dovrebbe restituire un array.
 
 ```js
 assert(Array.isArray(bogosort([25, 32, 12, 7, 20])));
 ```
 
-`bogosort([25, 32, 12, 7, 20])` should return `[7, 12, 20, 25, 32]`.
+`bogosort([25, 32, 12, 7, 20])` dovrebbe restituire `[7, 12, 20, 25, 32]`.
 
 ```js
 assert.deepEqual(bogosort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
 ```
 
-`bogosort([38, 45, 35, 8, 13])` should return `[8, 13, 35, 38, 45]`.
+`bogosort([38, 45, 35, 8, 13])` dovrebbe restituire `[8, 13, 35, 38, 45]`.
 
 ```js
 assert.deepEqual(bogosort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
 ```
 
-`bogosort([43, 36, 20, 34, 24])` should return `[20, 24, 34, 36, 43]`.
+`bogosort([43, 36, 20, 34, 24])` dovrebbe restituire `[20, 24, 34, 36, 43]`.
 
 ```js
 assert.deepEqual(bogosort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
 ```
 
-`bogosort([12, 33, 26, 18, 1, 16, 38])` should return `[1, 12, 16, 18, 26, 33, 38]`.
+`bogosort([12, 33, 26, 18, 1, 16, 38])` dovrebbe restituire `[1, 12, 16, 18, 26, 33, 38]`.
 
 ```js
 assert.deepEqual(bogosort([12, 33, 26, 18, 1, 16, 38]), [
@@ -71,7 +71,7 @@ assert.deepEqual(bogosort([12, 33, 26, 18, 1, 16, 38]), [
 ]);
 ```
 
-`bogosort([3, 39, 48, 16, 1, 4, 29])` should return `[1, 3, 4, 16, 29, 39, 48]`.
+`bogosort([3, 39, 48, 16, 1, 4, 29])` dovrebbe restituire `[1, 3, 4, 16, 29, 39, 48]`.
 
 ```js
 assert.deepEqual(bogosort([3, 39, 48, 16, 1, 4, 29]), [

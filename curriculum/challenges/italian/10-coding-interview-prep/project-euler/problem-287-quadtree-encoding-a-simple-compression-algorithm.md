@@ -1,6 +1,6 @@
 ---
 id: 5900f48b1000cf542c50ff9e
-title: 'Problem 287: Quadtree encoding (a simple compression algorithm)'
+title: 'Problema 287: Codifica Quadtree (un semplice algoritmo di compressione)'
 challengeType: 5
 forumTopicId: 301938
 dashedName: problem-287-quadtree-encoding-a-simple-compression-algorithm
@@ -8,30 +8,35 @@ dashedName: problem-287-quadtree-encoding-a-simple-compression-algorithm
 
 # --description--
 
-The quadtree encoding allows us to describe a 2N×2N black and white image as a sequence of bits (0 and 1). Those sequences are to be read from left to right like this:
+La codifica Quadtree ci permette di descrivere un'immagine $2^N×2^N$ in bianco e nero come sequenza di bit (0 e 1). Queste sequenze devono essere lette da sinistra a destra in questo modo:
 
-the first bit deals with the complete 2N×2N region;
+- il primo bit si occupa dell'intera regione $2^N×2^N$;
+- "0" indica una suddivisione:
+  - la regione attuale $2^n×2^n$ è divisa in 4 sottoregioni di dimensione $2^{n - 1}×2^{n - 1}$,
+  - i bit successivi contengono la descrizione delle sottoregioni in alto a sinistra, in alto a destra, in basso a sinistra e in basso a destra - in quell'ordine;
+- "10" indica che la regione corrente contiene solo pixel neri;
+- "11" indica che la regione corrente contiene solo pixel bianchi.
 
-"0" denotes a split:
+Considera la seguente immagine 4×4 (i segni colorati indicano i luoghi in cui può verificarsi una divisione):
 
-the current 2n×2n region is divided into 4 sub-regions of dimension 2n-1×2n-1,
+<img class="img-responsive center-block" alt="Immagine 4x4 con segni colorati che indicano il luogo in cui può verificarsi la divisione" src="https://cdn.freecodecamp.org/curriculum/project-euler/quadtree-encoding-a-simple-compression-algorithm.gif" style="background-color: white; padding: 10px;" />
 
-the next bits contains the description of the top left, top right, bottom left and bottom right sub-regions - in that order;
+Questa immagine può essere descritta da diverse sequenze, ad esempio: "<strong><span style="color: red">0</span></strong><strong><span style="color: blue">0</span></strong>10101010<strong><span style="color: green">0</span></strong>1011111011<strong><span style="color: orange">0</span></strong>10101010", di lunghezza 30, o "<strong><span style="color: red">0</span></strong>10<strong><span style="color: green">0</span></strong>101111101110", di lunghezza 16, che è la sequenza minima per questa immagine.
 
-"10" indicates that the current region contains only black pixels;
+Per un numero intero positivo $N$, definisci $D_N$ come l'immagine $2^N×2^N$ con il seguente schema di colorazione:
 
-"11" indicates that the current region contains only white pixels.Consider the following 4×4 image (colored marks denote places where a split can occur):
+- il pixel con le coordinate $x = 0$, $y = 0$ corrisponde al pixel in basso a sinistra,
+- se ${(x - 2^{N - 1})}^2 + {(y - 2^{N - 1})}^2 ≤ 2^{2N - 2}$ allora il pixel è nero,
+- altrimenti il pixel è bianco.
 
-This image can be described by several sequences, for example : "001010101001011111011010101010", of length 30, or "0100101111101110", of length 16, which is the minimal sequence for this image.
-
-For a positive integer N, define DN as the 2N×2N image with the following coloring scheme: the pixel with coordinates x = 0, y = 0 corresponds to the bottom left pixel, if (x - 2N-1)2 + (y - 2N-1)2 ≤ 22N-2 then the pixel is black, otherwise the pixel is white.What is the length of the minimal sequence describing D24 ?
+Qual è la lunghezza della sequenza minima che descrive $D_{24}$?
 
 # --hints--
 
-`euler287()` should return 313135496.
+`quadtreeEncoding()` dovrebbe restituire `313135496`.
 
 ```js
-assert.strictEqual(euler287(), 313135496);
+assert.strictEqual(quadtreeEncoding(), 313135496);
 ```
 
 # --seed--
@@ -39,12 +44,12 @@ assert.strictEqual(euler287(), 313135496);
 ## --seed-contents--
 
 ```js
-function euler287() {
+function quadtreeEncoding() {
 
   return true;
 }
 
-euler287();
+quadtreeEncoding();
 ```
 
 # --solutions--

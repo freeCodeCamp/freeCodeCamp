@@ -1,6 +1,6 @@
 ---
 id: 5900f5371000cf542c51004a
-title: 'Problem 459: Flipping game'
+title: 'Problema 459: gioco flipping'
 challengeType: 5
 forumTopicId: 302133
 dashedName: problem-459-flipping-game
@@ -8,28 +8,38 @@ dashedName: problem-459-flipping-game
 
 # --description--
 
-The flipping game is a two player game played on a N by N square board.
+Il gioco di flipping è un gioco di due giocatori giocato su un tavolo quadrato $N$ per $N$.
 
-Each square contains a disk with one side white and one side black.
+Ogni quadrato contiene un disco con un lato bianco e un lato nero.
 
-The game starts with all disks showing their white side.
+Il gioco inizia con tutti i dischi che mostrano il loro lato bianco.
 
-A turn consists of flipping all disks in a rectangle with the following properties: the upper right corner of the rectangle contains a white disk the rectangle width is a perfect square (1, 4, 9, 16, ...) the rectangle height is a triangular number (1, 3, 6, 10, ...)
+Un turno consiste nel capovolgere tutti i dischi in un rettangolo con le seguenti proprietà:
 
-Players alternate turns. A player wins by turning the grid all black.
+- l'angolo in alto a destra del rettangolo contiene un disco bianco
+- la larghezza del rettangolo è un quadrato perfetto (1, 4, 9, 16, ...)
+- l'altezza del rettangolo è un numero triangolare (1, 3, 6, 10, ...)
 
-Let W(N) be the number of winning moves for the first player on a N by N board with all disks white, assuming perfect play. W(1) = 1, W(2) = 0, W(5) = 8 and W(102) = 31395.
+<img class="img-responsive center-block" alt="capovolgendo tutti i dischi in un rettangolo 4x3 su una tabella 5x5" src="https://cdn.freecodecamp.org/curriculum/project-euler/flipping-game-1.png" style="background-color: white; padding: 10px;" />
 
-For N=5, the first player's eight winning first moves are:
+I giocatori si alternano nei turni. Un giocatore vince girando la griglia in modo che sia tutta nera.
 
-Find W(106).
+Sia $W(N)$ il numero di mosse vincenti per il primo giocatore su una scacchiera $N$ x $N$ con tutti i dischi bianchi, supponendo un gioco perfetto.
+
+$W(1) = 1$, $W(2) = 0$, $W(5) = 8$ and $W({10}^2) = 31\\,395$.
+
+Per $N = 5$, le prime otto mosse vincenti del giocatore sono:
+
+<img class="img-responsive center-block" alt="le otto prime mosse vincenti per N = 5" src="https://cdn.freecodecamp.org/curriculum/project-euler/flipping-game-2.png" style="background-color: white; padding: 10px;" />
+
+Trova $W({10}^6)$.
 
 # --hints--
 
-`euler459()` should return 3996390106631.
+`flippingGame()` dovrebbe restituire `3996390106631`.
 
 ```js
-assert.strictEqual(euler459(), 3996390106631);
+assert.strictEqual(flippingGame(), 3996390106631);
 ```
 
 # --seed--
@@ -37,12 +47,12 @@ assert.strictEqual(euler459(), 3996390106631);
 ## --seed-contents--
 
 ```js
-function euler459() {
+function flippingGame() {
 
   return true;
 }
 
-euler459();
+flippingGame();
 ```
 
 # --solutions--

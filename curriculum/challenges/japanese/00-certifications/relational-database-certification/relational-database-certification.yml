@@ -1,0 +1,22 @@
+---
+id: 606243f50267e718b1e755f4
+title: リレーショナルデータベース認定証
+certification: relational-database
+challengeType: 7
+isPrivate: true
+tests:
+  - 
+    id: 5f1a4ef5d5d6b5ab580fc6ae
+    title: 天体データベース
+  - 
+    id: 5f9771307d4d22b9d2b75a94
+    title: ワールドカップデータベース
+  - 
+    id: 5f87ac112ae598023a42df1a
+    title: サロン予約スケジューラー
+  - 
+    id: 602d9ff222201c65d2a019f2
+    title: 周期表データベース
+  - 
+    id: 602da04c22201c65d2a019f4
+    title: 数当てゲーム

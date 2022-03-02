@@ -1,6 +1,6 @@
 ---
 id: 587d781b367417b2b2512abd
-title: 调整标题与段落的大小
+title: 调整标题元素与段落元素的大小
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bRPTz'
 forumTopicId: 301037
@@ -9,15 +9,15 @@ dashedName: adjust-the-size-of-a-heading-element-versus-a-paragraph-element
 
 # --description--
 
-标题标签的字体大小（从 `h1` 到 `h6`）一般应该大于段落标签的字体大小。 这使用户更容易在视觉上了解页面上所有内容的布局和重要程度。 你可以使用 `font-size` 属性来设置元素内文字的大小。
+标题元素（`h1` 到 `h6`）的字体大小通常应大于段落标签的字体大小。 这使用户更容易直观地了解页面上所有内容的布局和重要性级别。 你可以使用 `font-size` 属性来调整元素中文本的大小。
 
 # --instructions--
 
-把 `h4` 标签的 `font-size` 的属性值改成 27px，让标题更醒目。
+要使标题明显大于段落，请将 `h4` 元素的 `font-size` 更改为 27 像素。
 
 # --hints--
 
-应给 `h4` 元素添加一个 `font-size` 属性并将属性值设置为 27px。
+你的代码应该将 `font-size` 属性添加到设置为 27 像素的 `h4` 元素。
 
 ```js
 assert($('h4').css('font-size') == '27px');
@@ -116,3 +116,4 @@ assert($('h4').css('font-size') == '27px');
   </div>
 </div>
 ```
+

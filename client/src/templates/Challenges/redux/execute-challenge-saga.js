@@ -86,7 +86,8 @@ export function* executeChallengeSaga({ payload }) {
     const protect = isLoopProtected(challengeMeta);
     const buildData = yield buildChallengeData(challengeData, {
       preview: false,
-      protect
+      protect,
+      usesTestRunner: true
     });
     const document = yield getContext('document');
     const testRunner = yield call(
@@ -224,10 +225,10 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
       }
     }
   } catch (err) {
-    if (err === 'timeout') {
+    if (err[0] === 'timeout') {
       // TODO: translate the error
       // eslint-disable-next-line no-ex-assign
-      err = `The code you have written is taking longer than the ${previewTimeout}ms our challenges allow. You may have created an infinite loop or need to write a more efficient algorithm`;
+      err[0] = `The code you have written is taking longer than the ${previewTimeout}ms our challenges allow. You may have created an infinite loop or need to write a more efficient algorithm`;
     }
     console.log(err);
     yield put(updateConsole(escape(err)));

@@ -4,7 +4,10 @@ import { body } from 'express-validator';
 import { pick } from 'lodash';
 import { Observable } from 'rx';
 
-import { fixCompletedChallengeItem } from '../../common/utils';
+import {
+  fixCompletedChallengeItem,
+  fixPartiallyCompletedChallengeItem
+} from '../../common/utils';
 import { removeCookies } from '../utils/getSetAccessToken';
 import { ifNoUser401, ifNoUserRedirectHome } from '../utils/middleware';
 import {
@@ -99,11 +102,18 @@ function createReadSessionUser(app) {
       queryUser &&
       Observable.forkJoin(
         queryUser.getCompletedChallenges$(),
+        queryUser.getPartiallyCompletedChallenges$(),
         queryUser.getPoints$(),
         Donation.getCurrentActiveDonationCount$(),
-        (completedChallenges, progressTimestamps, activeDonations) => ({
+        (
+          completedChallenges,
+          partiallyCompletedChallenges,
+          progressTimestamps,
+          activeDonations
+        ) => ({
           activeDonations,
           completedChallenges,
+          partiallyCompletedChallenges,
           progress: getProgress(progressTimestamps, queryUser.timezone)
         })
       );
@@ -111,16 +121,26 @@ function createReadSessionUser(app) {
       () => !queryUser,
       Observable.of({ user: {}, result: '' }),
       Observable.defer(() => source)
-        .map(({ activeDonations, completedChallenges, progress }) => ({
-          user: {
-            ...queryUser.toJSON(),
-            ...progress,
-            completedChallenges: completedChallenges.map(
-              fixCompletedChallengeItem
-            )
-          },
-          sessionMeta: { activeDonations }
-        }))
+        .map(
+          ({
+            activeDonations,
+            completedChallenges,
+            partiallyCompletedChallenges,
+            progress
+          }) => ({
+            user: {
+              ...queryUser.toJSON(),
+              ...progress,
+              completedChallenges: completedChallenges.map(
+                fixCompletedChallengeItem
+              ),
+              partiallyCompletedChallenges: partiallyCompletedChallenges.map(
+                fixPartiallyCompletedChallengeItem
+              )
+            },
+            sessionMeta: { activeDonations }
+          })
+        )
         .map(({ user, sessionMeta }) => ({
           user: {
             [user.username]: {
@@ -230,6 +250,7 @@ function postResetProgress(req, res, next) {
       isSciCompPyCertV7: false,
       isDataAnalysisPyCertV7: false,
       isMachineLearningPyCertV7: false,
+      isRelationalDatabaseCertV8: false,
       completedChallenges: []
     },
     function (err) {

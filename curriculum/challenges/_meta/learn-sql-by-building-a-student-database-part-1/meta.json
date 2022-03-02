@@ -1,0 +1,14 @@
+{
+  "name": "Learn SQL by Building a Student Database: Part 1",
+  "isUpcomingChange": false,
+  "order": 4,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "relational-database",
+  "challengeOrder": [
+    [
+      "602da0c222201c65d2a019f5",
+      "Build a Student Database: Part 1"
+    ]
+  ]}

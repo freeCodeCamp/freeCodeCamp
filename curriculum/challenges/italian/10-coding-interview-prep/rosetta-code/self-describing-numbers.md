@@ -1,6 +1,6 @@
 ---
 id: 5eaf48389ee512d4d103684b
-title: Self Describing Numbers
+title: Numeri autodescrittivi
 challengeType: 5
 forumTopicId: 385289
 dashedName: self-describing-numbers
@@ -8,52 +8,52 @@ dashedName: self-describing-numbers
 
 # --description--
 
-There are several so-called "self describing" or ["self-descriptive"](https://en.wikipedia.org/wiki/Self-descriptive_number) integers.
+Ci sono diversi cosiddetti interi "auto-descriventi" o ["auto-descrittivi"](https://en.wikipedia.org/wiki/Self-descriptive_number) interi.
 
-An integer is said to be "self-describing" if it has the property that, when digit positions are labeled 0 to N-1, the digit in each position is equal to the number of times that digit appears in the number.
+Si dice che un intero è "auto-descritto" se ha la proprietà che, quando le posizioni di cifra sono etichettate da 0 a N-1, la cifra in ogni posizione è uguale al numero di volte che la cifra appare nel numero.
 
-For example, **2020** is a four-digit self describing number:
+Ad esempio, **2020** è un numero auto-descrittivo a quattro cifre:
 
 <ul>
-    <li> position 0 has value 2 and there are two 0s in the number; </li>
-    <li> position 1 has value 0 and there are no 1s in the number; </li>
-    <li> position 2 has value 2 and there are two 2s; </li>
-    <li> position 3 has value 0 and there are zero 3s; </li>
+    <li> la posizione 0 ha il valore 2 e nel numero ci sono due zeri; </li>
+    <li> la posizione 1 ha valore 0 e non ci sono uno nel numero; </li>
+    <li> la posizione 2 ha valore 2 e ci sono due due; </li>
+    <li> la posizione 3 ha valore 0 e ci sono zero tre; </li>
 </ul>
 
-Self-describing numbers &lt; 100,000,000 are: 1210, 2020, 21200, 3211000, 42101000.
+Numeri auto-descriventi &lt; 100.000.000 sono: 1210, 2020, 21200, 3211000, 42101000.
 
 # --instructions--
 
-Write a function that takes a positive integer as a parameter. If it is self-describing return true. Otherwise, return false.
+Scrivi una funzione che richiede un intero positivo come parametro. Se è auto-descrittivo restituire vero. Altrimenti, restituisci falso.
 
 # --hints--
 
-`isSelfDescribing` should be a function.
+`isSelfDescribing` dovrebbe essere una funzione.
 
 ```js
 assert(typeof isSelfDescribing == 'function');
 ```
 
-`isSelfDescribing()` should return a boolean.
+`isSelfDescribing()` dovrebbe restituire un booleano.
 
 ```js
 assert(typeof isSelfDescribing(2020) == 'boolean');
 ```
 
-`isSelfDescribing(2020)` should return `true`.
+`isSelfDescribing(2020)` dovrebbe restituire `true`.
 
 ```js
 assert.equal(isSelfDescribing(2020), true);
 ```
 
-`isSelfDescribing(3021)` should return `false`.
+`isSelfDescribing(3021)` dovrebbe restituire `false`.
 
 ```js
 assert.equal(isSelfDescribing(3021), false);
 ```
 
-`isSelfDescribing(3211000)` should return `true`.
+`isSelfDescribing(3211000)` dovrebbe restituire `true`.
 
 ```js
 assert.equal(isSelfDescribing(3211000), true);

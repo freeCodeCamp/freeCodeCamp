@@ -16,7 +16,8 @@ export const availableLangs = {
     'chinese-traditional',
     'italian',
     'portuguese',
-    'ukrainian'
+    'ukrainian',
+    'japanese'
   ],
   curriculum: [
     'english',
@@ -25,7 +26,8 @@ export const availableLangs = {
     'chinese-traditional',
     'italian',
     'portuguese',
-    'ukrainian'
+    'ukrainian',
+    'japanese'
   ]
 };
 
@@ -109,6 +111,20 @@ export const auditedCerts = {
     SuperBlocks.MachineLearningPy,
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.RelationalDb
+  ],
+  japanese: [
+    SuperBlocks.RespWebDesign,
+    SuperBlocks.JsAlgoDataStruct,
+    SuperBlocks.FrontEndDevLibs,
+    SuperBlocks.DataVis,
+    SuperBlocks.BackEndDevApis,
+    SuperBlocks.QualityAssurance,
+    SuperBlocks.SciCompPy,
+    SuperBlocks.DataAnalysisPy,
+    SuperBlocks.InfoSec,
+    SuperBlocks.MachineLearningPy,
+    SuperBlocks.CodingInterviewPrep,
+    SuperBlocks.RelationalDb
   ]
 };
 
@@ -127,7 +143,8 @@ export const i18nextCodes = {
   'chinese-traditional': 'zh-Hant',
   italian: 'it',
   portuguese: 'pt-BR',
-  ukrainian: 'uk'
+  ukrainian: 'uk',
+  japanese: 'ja'
 };
 
 // These are for the language selector dropdown menu in the footer
@@ -138,7 +155,8 @@ export const langDisplayNames = {
   'chinese-traditional': '中文（繁體字）',
   italian: 'Italiano',
   portuguese: 'Português',
-  ukrainian: 'Українська'
+  ukrainian: 'Українська',
+  japanese: '日本語'
 };
 
 /* These are for formatting dates and numbers. Used with JS .toLocaleString().
@@ -152,5 +170,6 @@ export const langCodes = {
   'chinese-traditional': 'zh-Hant',
   italian: 'it',
   portuguese: 'pt-BR',
-  ukrainian: 'uk'
+  ukrainian: 'uk',
+  japanese: 'ja'
 };

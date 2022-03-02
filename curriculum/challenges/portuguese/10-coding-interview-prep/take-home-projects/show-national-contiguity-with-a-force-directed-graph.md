@@ -10,11 +10,11 @@ dashedName: show-national-contiguity-with-a-force-directed-graph
 
 **Objetivo:** criar uma aplicação no [CodePen.io](https://codepen.io) que tenha função semelhante a esta: <https://codepen.io/freeCodeCamp/full/xVopBo>.
 
-Atenda às seguintes [especificações de usuário](https://en.wikipedia.org/wiki/User_story). Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
+Atenda às seguintes [histórias de usuário](https://en.wikipedia.org/wiki/User_story). Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
 
-**Especificação de usuário:** eu posso ver um gráfico orientado por força que mostra quais países compartilham fronteiras.
+**História de usuário:** eu posso ver um gráfico orientado por força que mostra quais países compartilham fronteiras.
 
-**Especificação de usuário:** posso ver a bandeira de cada país em seu nó.
+**História de usuário:** posso ver a bandeira de cada país em seu nó.
 
 **Dica:** aqui está um conjunto de dados que você pode usar para criar essa aplicação: <https://raw.githubusercontent.com/DealPete/forceDirected/master/countries.json>
 

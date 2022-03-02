@@ -1,6 +1,6 @@
 ---
 id: 5900f4861000cf542c50ff98
-title: 'Problem 281: Pizza Toppings'
+title: 'Problema 281: Topping per Pizza'
 challengeType: 5
 forumTopicId: 301932
 dashedName: problem-281-pizza-toppings
@@ -8,20 +8,22 @@ dashedName: problem-281-pizza-toppings
 
 # --description--
 
-You are given a pizza (perfect circle) that has been cut into m·n equal pieces and you want to have exactly one topping on each slice.
+Ti viene data una pizza (cerchio perfetto) che è stata tagliata in $m·n$ pezzi uguali e si desidera avere esattamente un condimento su ogni fetta.
 
-Let f(m,n) denote the number of ways you can have toppings on the pizza with m different toppings (m ≥ 2), using each topping on exactly n slices (n ≥ 1). Reflections are considered distinct, rotations are not.
+Sia $f(m, n)$ il numero di modi in cui puoi avere condimenti sulla pizza con $m$ condimenti diversi ($m ≥ 2$), usando ogni topping su esattamente $n$ fette ($n ≥ 1$). Le riflessioni sono considerate distinte, le rotazioni non lo sono.
 
-Thus, for instance, f(2,1) = 1, f(2,2) = f(3,1) = 2 and f(3,2) = 16. f(3,2) is shown below:
+Così, per esempio, $f(2,1) = 1$, $f(2,2) = f(3,1) = 2$ e $f(3,2) = 16$. $f(3,2)$ è mostrato sotto:
 
-Find the sum of all f(m,n) such that f(m,n) ≤ 1015.
+<img class="img-responsive center-block" alt="animazione con 16 modi per avere 3 condimenti diversi su 2 fette ciascuno" src="https://cdn.freecodecamp.org/curriculum/project-euler/pizza-toppings.gif" style="background-color: white; padding: 10px;" />
+
+Trova la somma di tutte le $f(m,n)$ in modo tale che $f(m,n) ≤ {10}^{15}$.
 
 # --hints--
 
-`euler281()` should return 1485776387445623.
+`pizzaToppings()` dovrebbe restituire `1485776387445623`.
 
 ```js
-assert.strictEqual(euler281(), 1485776387445623);
+assert.strictEqual(pizzaToppings(), 1485776387445623);
 ```
 
 # --seed--
@@ -29,12 +31,12 @@ assert.strictEqual(euler281(), 1485776387445623);
 ## --seed-contents--
 
 ```js
-function euler281() {
+function pizzaToppings() {
 
   return true;
 }
 
-euler281();
+pizzaToppings();
 ```
 
 # --solutions--

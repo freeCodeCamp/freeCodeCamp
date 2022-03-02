@@ -25,7 +25,7 @@ Cuando los usuarios hagan clic en el enlace `Contacts`, serán llevados a la sec
 
 # --instructions--
 
-Cambia tu enlace externo a un enlace interno cambiando el atributo `href` a `"#footer"` y el texto de `cat photos` a `Jump to Bottom`.
+Cambia tu enlace externo a un enlace interno cambiando el atributo `href` a `#footer` y el texto de `cat photos` a `Jump to Bottom`.
 
 Elimina el atributo `target="_blank"` de la etiqueta anchor ya que esto provoca que el documento enlazado se abra en una nueva pestaña.
 

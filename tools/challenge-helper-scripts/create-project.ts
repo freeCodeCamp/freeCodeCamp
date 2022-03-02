@@ -4,9 +4,10 @@ import path from 'path';
 import { prompt } from 'inquirer';
 import { format } from 'prettier';
 
+import ObjectID from 'bson-objectid';
 import { SuperBlocks } from '../../config/certification-settings';
 import { blockNameify } from '../../utils/block-nameify';
-import { createStepFile } from './utils.js';
+import { createStepFile } from './utils';
 
 const helpCategories = ['HTML-CSS', 'JavaScript', 'Python'] as const;
 
@@ -21,7 +22,7 @@ type SuperBlockInfo = {
 
 type IntroJson = Record<SuperBlocks, SuperBlockInfo>;
 
-type Meta = {
+export type Meta = {
   name: string;
   isUpcomingChange: boolean;
   dashedName: string;
@@ -135,7 +136,7 @@ async function createMetaJson(
   block: string,
   title: string,
   order: number,
-  challengeId: string
+  challengeId: ObjectID
 ) {
   const metaDir = path.resolve(__dirname, '../../curriculum/challenges/_meta');
   const newMeta = await parseJson<Meta>('./base-meta.json');
@@ -144,7 +145,7 @@ async function createMetaJson(
   newMeta.order = order;
   newMeta.superOrder = Object.values(SuperBlocks).indexOf(superBlock) + 1;
   newMeta.superBlock = superBlock;
-  newMeta.challengeOrder = [[challengeId, 'Step 1']];
+  newMeta.challengeOrder = [[challengeId.toString(), 'Step 1']];
   const newMetaDir = path.resolve(metaDir, block);
   if (!existsSync(newMetaDir)) {
     await fs.mkdir(newMetaDir);
@@ -185,7 +186,7 @@ This is a test for the new project-based curriculum.
 async function createFirstChallenge(
   superBlock: SuperBlocks,
   block: string
-): Promise<string> {
+): Promise<ObjectID> {
   const superBlockId = (Object.values(SuperBlocks).indexOf(superBlock) + 1)
     .toString()
     .padStart(2, '0');
@@ -209,8 +210,7 @@ async function createFirstChallenge(
   return createStepFile({
     projectPath: newChallengeDir + '/',
     stepNum: 1,
-    challengeSeeds,
-    stepBetween: false
+    challengeSeeds
   });
 }
 

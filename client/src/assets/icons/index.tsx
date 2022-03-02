@@ -14,6 +14,7 @@ import ResponsiveDesign from './responsive-design';
 import Shield from './shield';
 
 const iconMap = {
+  [SuperBlocks.RespWebDesignNew]: ResponsiveDesign,
   [SuperBlocks.RespWebDesign]: ResponsiveDesign,
   [SuperBlocks.JsAlgoDataStruct]: JavaScriptIcon,
   [SuperBlocks.FrontEndDevLibs]: ReactIcon,

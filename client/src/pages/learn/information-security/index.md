@@ -1,6 +1,7 @@
 ---
 title: Information Security
 superBlock: information-security
+certification: information-security
 ---
 
 ## Introduction to Information Security

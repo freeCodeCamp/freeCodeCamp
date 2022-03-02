@@ -1,8 +1,7 @@
 const path = require('path');
-const { createPoly } = require('../../../utils/polyvinyl');
 const { dasherize } = require('../../../utils/slugs');
 const { sortChallengeFiles } = require('../../../utils/sort-challengefiles');
-const { viewTypes } = require('../challenge-types');
+const { challengeTypes, viewTypes } = require('../challenge-types');
 
 const backend = path.resolve(
   __dirname,
@@ -16,7 +15,7 @@ const frontend = path.resolve(
   __dirname,
   '../../src/templates/Challenges/projects/frontend/Show.tsx'
 );
-const codeally = path.resolve(
+const codeAlly = path.resolve(
   __dirname,
   '../../src/templates/Challenges/codeally/show.tsx'
 );
@@ -39,7 +38,7 @@ const views = {
   modern: classic,
   frontend,
   video,
-  codeally
+  codeAlly
   // quiz: Quiz
 };
 
@@ -60,6 +59,7 @@ function getTemplateComponent(challengeType) {
 exports.createChallengePages = function (createPage) {
   return function ({ node: { challenge } }, index, allChallengeEdges) {
     const {
+      certification,
       superBlock,
       block,
       fields: { slug },
@@ -76,6 +76,7 @@ exports.createChallengePages = function (createPage) {
       component: getTemplateComponent(challengeType),
       context: {
         challengeMeta: {
+          certification,
           superBlock,
           block,
           template,
@@ -100,7 +101,8 @@ exports.createChallengePages = function (createPage) {
 };
 
 function getProjectPreviewConfig(challenge, allChallengeEdges) {
-  const { block, challengeOrder, usesMultifileEditor } = challenge;
+  const { block, challengeOrder, challengeType, usesMultifileEditor } =
+    challenge;
 
   const challengesInBlock = allChallengeEdges
     .filter(({ node: { challenge } }) => challenge.block === block)
@@ -112,15 +114,16 @@ function getProjectPreviewConfig(challenge, allChallengeEdges) {
   const lastChallengeFiles = sortChallengeFiles(
     lastChallenge.challengeFiles ?? []
   );
-  const projectPreviewChallengeFiles = lastChallengeFiles.map((file, id) =>
-    createPoly({
-      ...file,
-      contents: solutionToLastChallenge[id]?.contents ?? file.contents
-    })
-  );
+  const projectPreviewChallengeFiles = lastChallengeFiles.map((file, id) => ({
+    ...file,
+    contents: solutionToLastChallenge[id]?.contents ?? file.contents
+  }));
 
   return {
-    showProjectPreview: challengeOrder === 0 && usesMultifileEditor,
+    showProjectPreview:
+      challengeOrder === 0 &&
+      usesMultifileEditor &&
+      challengeType !== challengeTypes.multiFileCertProject,
     challengeData: {
       challengeType: lastChallenge.challengeType,
       challengeFiles: projectPreviewChallengeFiles,
@@ -152,13 +155,23 @@ exports.createSuperBlockIntroPages = function (createPage) {
   return function (edge) {
     const {
       fields: { slug },
-      frontmatter: { superBlock }
+      frontmatter: { superBlock, certification }
     } = edge.node;
+
+    if (!certification) {
+      throw Error(
+        `superBlockIntro page, '${superBlock}' must have certification in frontmatter`
+      );
+    }
+
+    // TODO: throw if it encounters an unknown certification. Also, handle
+    // coding-interview-prep. it's not a certification, but it is a superBlock.
 
     createPage({
       path: slug,
       component: superBlockIntro,
       context: {
+        certification,
         superBlock,
         slug
       }

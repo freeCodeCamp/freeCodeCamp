@@ -1,6 +1,6 @@
 ---
 id: 597f1e7fbc206f0e9ba95dc4
-title: Factors of an integer
+title: Fattori di un numero intero
 challengeType: 5
 forumTopicId: 302265
 dashedName: factors-of-an-integer
@@ -8,13 +8,13 @@ dashedName: factors-of-an-integer
 
 # --description--
 
-Write a function that returns the factors of a positive integer as an array.
+Scrivi una funzione che restituisce i fattori di un numero intero positivo come array.
 
-These factors are the positive integers by which the number being factored can be divided to yield a positive integer result.
+Questi fattori sono i numeri interi positivi per i quali il numero da considerare può essere diviso per ottenere un risultato intero positivo.
 
 # --hints--
 
-`factors` should be a function.
+`factors` dovrebbe essere una funzione.
 
 ```js
 assert(typeof factors === 'function');

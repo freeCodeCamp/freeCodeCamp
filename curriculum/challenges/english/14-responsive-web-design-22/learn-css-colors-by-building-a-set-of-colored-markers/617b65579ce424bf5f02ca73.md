@@ -1,0 +1,84 @@
+---
+id: 617b65579ce424bf5f02ca73
+title: Step 21
+challengeType: 0
+dashedName: step-21
+---
+
+# --description--
+
+Earlier you learned that the RGB color model is additive. This means that colors begin as black, and change as different levels of red, green, and blue are introduced.
+
+An easy way to see this is with the CSS `rgb` function.
+
+Create a new CSS rule that targets the class `container` and set its `background-color` to black with `rgb(0, 0, 0)`.
+
+# --hints--
+
+You should use a class selector to target the class `container`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.container'));
+```
+
+Your `.container` CSS rule should have a `background-color` property set to `rgb(0, 0, 0)`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.container')?.backgroundColor === 'rgb(0, 0, 0)');
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Color Markers</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <h1>CSS Color Markers</h1>
+    <div class="container">
+      <div class="marker one">
+      </div>
+      <div class="marker two">
+      </div>
+      <div class="marker three">
+      </div>
+    </div>
+  </body>
+</html>
+```
+
+```css
+h1 {
+  text-align: center;
+}
+
+--fcc-editable-region--
+
+--fcc-editable-region--
+
+.marker {
+  width: 200px;
+  height: 25px;
+  margin: 10px auto;
+}
+
+.one {
+  background-color: red;
+}
+
+.two {
+  background-color: green;
+}
+
+.three {
+  background-color: blue;
+}
+
+```

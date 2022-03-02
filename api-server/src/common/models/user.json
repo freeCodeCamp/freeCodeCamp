@@ -200,6 +200,11 @@
       "description": "Camper is machine learning with Python certified",
       "default": false
     },
+    "isRelationalDatabaseCertV8": {
+      "type": "boolean",
+      "description": "Camper is relational database certified",
+      "default": false
+    },
     "completedChallenges": {
       "type": [
         {
@@ -208,6 +213,7 @@
           "solution": "string",
           "githubLink": "string",
           "challengeType": "number",
+          "isManuallyApproved": "boolean",
           "files": {
             "type": [
               {
@@ -231,6 +237,15 @@
             ],
             "default": []
           }
+        }
+      ],
+      "default": []
+    },
+    "partiallyCompletedChallenges": {
+      "type": [
+        {
+          "completedDate": "number",
+          "id": "string"
         }
       ],
       "default": []

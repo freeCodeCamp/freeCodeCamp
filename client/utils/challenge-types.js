@@ -11,7 +11,9 @@ const quiz = 8;
 const invalid = 9;
 const pythonProject = 10;
 const video = 11;
-const codeally = 12;
+const codeAllyPractice = 12;
+const codeAllyCert = 13;
+const multiFileCertProject = 14;
 
 // individual exports
 exports.backend = backend;
@@ -33,7 +35,21 @@ exports.challengeTypes = {
   quiz,
   invalid,
   video,
-  codeally
+  codeAllyPractice,
+  codeAllyCert,
+  multiFileCertProject
+};
+
+// (Oliver) I don't think we need this for codeally projects, so they're ignored
+// here
+exports.isProject = challengeType => {
+  if (typeof challengeType !== 'number')
+    throw Error('challengeType must be a number');
+  return (
+    challengeType === frontEndProject ||
+    challengeType === backEndProject ||
+    challengeType === pythonProject
+  );
 };
 
 // turn challengeType to file ext
@@ -55,7 +71,9 @@ exports.viewTypes = {
   [quiz]: 'quiz',
   [backend]: 'backend',
   [video]: 'video',
-  [codeally]: 'codeally'
+  [codeAllyPractice]: 'codeAlly',
+  [codeAllyCert]: 'codeAlly',
+  [multiFileCertProject]: 'classic'
 };
 
 // determine the type of submit function to use for the challenge on completion
@@ -75,7 +93,9 @@ exports.submitTypes = {
   [quiz]: 'quiz',
   [backend]: 'backend',
   [modern]: 'tests',
-  [video]: 'tests'
+  [video]: 'tests',
+  [codeAllyCert]: 'project.frontEnd',
+  [multiFileCertProject]: 'tests'
 };
 
 // determine which help forum questions should be posted to

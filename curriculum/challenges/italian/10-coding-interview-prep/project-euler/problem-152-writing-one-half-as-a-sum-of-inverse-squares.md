@@ -1,6 +1,6 @@
 ---
 id: 5900f4041000cf542c50ff17
-title: 'Problem 152: Writing one half as a sum of inverse squares'
+title: 'Problema 152: Scrittura di un mezzo come somma di quadrati inversi'
 challengeType: 5
 forumTopicId: 301783
 dashedName: problem-152-writing-one-half-as-a-sum-of-inverse-squares
@@ -8,18 +8,22 @@ dashedName: problem-152-writing-one-half-as-a-sum-of-inverse-squares
 
 # --description--
 
-There are several ways to write the number 1/2 as a sum of inverse squares using distinct integers.
+Ci sono diversi modi per scrivere il numero $\frac{1}{2}$ come somma di quadrati inversi utilizzando numeri interi distinti.
 
-For instance, the numbers {2,3,4,5,7,12,15,20,28,35} can be used:
+Per esempio, possono essere utilizzati i numeri {2,3,4,5,7,12,15,20,28,35}:
 
-In fact, only using integers between 2 and 45 inclusive, there are exactly three ways to do it, the remaining two being: {2,3,4,6,7,9,10,20,28,35,36,45} and {2,3,4,6,7,9,12,15,28,30,35,36,45}. How many ways are there to write the number 1/2 as a sum of inverse squares using distinct integers between 2 and 80 inclusive?
+$$\frac{1}{2} = \frac{1}{2^2} + \frac{1}{3^2} + \frac{1}{4^2} + \frac{1}{5^2} + \frac{1}{7^2} + \frac{1}{{12}^2} + \frac{1}{{15}^2} + \frac{1}{{20}^2} + \frac{1}{{28}^2} + \frac{1}{{35}^2}$$
+
+Infatti, utilizzando solo interi compresi tra 2 e 45 inclusi, ci sono esattamente tre modi per farlo, i restanti due essendo: {2,3,4,6,7,9,10,20,28,35,36,45} e {2,3,4,6,7,9,12,15,28,30,35,36,45}.
+
+Quanti modi ci sono per scrivere il numero $\frac{1}{2}$ come somma di quadrati inversi utilizzando numeri interi distinti tra 2 e 80 inclusi?
 
 # --hints--
 
-`euler152()` should return 301.
+`sumInverseSquares()` dovrebbe restituire `301`.
 
 ```js
-assert.strictEqual(euler152(), 301);
+assert.strictEqual(sumInverseSquares(), 301);
 ```
 
 # --seed--
@@ -27,12 +31,12 @@ assert.strictEqual(euler152(), 301);
 ## --seed-contents--
 
 ```js
-function euler152() {
+function sumInverseSquares() {
 
   return true;
 }
 
-euler152();
+sumInverseSquares();
 ```
 
 # --solutions--

@@ -1,6 +1,6 @@
 ---
 id: 5900f44b1000cf542c50ff5e
-title: 'Problem 223: Almost right-angled triangles I'
+title: 'Problema 223: Triangoli quasi rettangoli I'
 challengeType: 5
 forumTopicId: 301866
 dashedName: problem-223-almost-right-angled-triangles-i
@@ -8,16 +8,16 @@ dashedName: problem-223-almost-right-angled-triangles-i
 
 # --description--
 
-Let us call an integer sided triangle with sides a ≤ b ≤ c barely acute if the sides satisfy a2 + b2 = c2 + 1.
+Chiamiamo un triangolo con lati interi $a ≤ b ≤ c$ appena acuto se i lati soddisfano $a^2 + b^2 = c^2 + 1$.
 
-How many barely acute triangles are there with perimeter ≤ 25,000,000?
+Quanti triangoli appena acuti ci sono con perimetro $≤ 25\\,000\\,000$?
 
 # --hints--
 
-`euler223()` should return 61614848.
+`almostRightAngledTrianglesOne()` dovrebbe restituire `61614848`.
 
 ```js
-assert.strictEqual(euler223(), 61614848);
+assert.strictEqual(almostRightAngledTrianglesOne(), 61614848);
 ```
 
 # --seed--
@@ -25,12 +25,12 @@ assert.strictEqual(euler223(), 61614848);
 ## --seed-contents--
 
 ```js
-function euler223() {
+function almostRightAngledTrianglesOne() {
 
   return true;
 }
 
-euler223();
+almostRightAngledTrianglesOne();
 ```
 
 # --solutions--

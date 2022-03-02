@@ -1,0 +1,119 @@
+---
+id: 615f575b50b91e72af079480
+title: Step 33
+challengeType: 0
+dashedName: step-33
+---
+
+# --description--
+
+Create a new `.calories-info h1` selector setting the top and bottom margin to `-5px`, and the left and right margin to `-2px`.
+
+# --hints--
+
+You should have a new `.calories-info h1` selector.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.calories-info h1'));
+```
+
+Your new `.calories-info h1` selector should have a `margin` property set to `-5px -2px`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.calories-info h1')?.marginTop, '-5px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.calories-info h1')?.marginBottom, '-5px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.calories-info h1')?.marginLeft, '-2px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.calories-info h1')?.marginRight, '-2px');
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Nutrition Label</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="label">
+      <header>
+        <h1 class="bold">Nutrition Facts</h1>
+        <div class="divider"></div>
+        <p>8 servings per container</p>
+        <p class="bold">Serving size <span class="right">2/3 cup (55g)</span></p>
+      </header>
+      <div class="divider lg"></div>
+      <div class="calories-info">
+        <p class="bold sm-text">Amount per serving</p>
+        <h1>Calories <span class="right">230</span></h1>
+      </div>
+    </div>
+  </body>
+</html>
+```
+
+```css
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.label {
+  border: 2px solid black;
+  width: 270px;
+  margin: 20px auto;
+  padding: 0 7px;
+}
+
+header h1 {
+  text-align: center;
+  margin: -4px 0;
+  letter-spacing: 0.15px
+}
+
+p {
+  margin: 0;
+}
+
+.divider {
+  border-bottom: 1px solid #888989;
+  margin: 2px 0;
+}
+
+.bold {
+  font-weight: 800;
+}
+
+.right {
+  float: right;
+}
+
+.lg {
+  height: 10px;
+}
+
+.lg, .md {
+  background-color: black;
+  border: 0;
+}
+
+.sm-text {
+  font-size: 0.85rem;
+}
+
+--fcc-editable-region--
+
+--fcc-editable-region--
+```

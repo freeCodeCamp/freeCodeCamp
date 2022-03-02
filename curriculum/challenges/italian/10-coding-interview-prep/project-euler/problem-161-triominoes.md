@@ -1,6 +1,6 @@
 ---
 id: 5900f40d1000cf542c50ff20
-title: 'Problem 161: Triominoes'
+title: 'Problema 161: Triomini'
 challengeType: 5
 forumTopicId: 301795
 dashedName: problem-161-triominoes
@@ -8,22 +8,28 @@ dashedName: problem-161-triominoes
 
 # --description--
 
-A triomino is a shape consisting of three squares joined via the edges.
+Un triomino è una figura che consiste di tre quadrati uniti per i lati.
 
-There are two basic forms:
+Ci sono due forme base:
 
-If all possible orientations are taken into account there are six:
+<img class="img-responsive center-block" alt="le due forme base dei triomini" src="https://cdn.freecodecamp.org/curriculum/project-euler/triominoes-1.gif" style="background-color: white; padding: 10px;" />
 
-Any n by m grid for which nxm is divisible by 3 can be tiled with triominoes. If we consider tilings that can be obtained by reflection or rotation from another tiling as different there are 41 ways a 2 by 9 grid can be tiled with triominoes:
+Se consideriamo tutte le possibili orientazioni allora ce ne sono sei:
 
-In how many ways can a 9 by 12 grid be tiled in this way by triominoes?
+<img class="img-responsive center-block" alt="le forme dei triomini includendo l'orientazione" src="https://cdn.freecodecamp.org/curriculum/project-euler/triominoes-2.gif" style="background-color: white; padding: 10px;" />
+
+Ogni griglia n per m in cui nxm è divisibile per 3 può essere riempita di triomini. Se consideriamo il riempimento che può essere ottenuto come riflessione o rotazione di un altro riempimento come diverso allora ci sono 41 modi diversi per riempire una griglia 2 per 9 con dei triomini:
+
+<img class="img-responsive center-block" alt="una animazione mostrante i 41 modi per riempire una griglia 9x2 con i triomini" src="https://cdn.freecodecamp.org/curriculum/project-euler/triominoes-3.gif" style="background-color: white; padding: 10px;" />
+
+In quanti modi diversi può essere riempita in questo modo una griglia 9 per 12 con i troimini?
 
 # --hints--
 
-`euler161()` should return 20574308184277972.
+`triominoes()` dovrebbe restituire `20574308184277972`.
 
 ```js
-assert.strictEqual(euler161(), 20574308184277972);
+assert.strictEqual(triominoes(), 20574308184277972);
 ```
 
 # --seed--
@@ -31,12 +37,12 @@ assert.strictEqual(euler161(), 20574308184277972);
 ## --seed-contents--
 
 ```js
-function euler161() {
+function triominoes() {
 
   return true;
 }
 
-euler161();
+triominoes();
 ```
 
 # --solutions--

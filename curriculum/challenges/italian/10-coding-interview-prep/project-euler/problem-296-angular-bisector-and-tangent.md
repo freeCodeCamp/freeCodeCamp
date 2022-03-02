@@ -1,6 +1,6 @@
 ---
 id: 5900f4941000cf542c50ffa7
-title: 'Problem 296: Angular Bisector and Tangent'
+title: 'Problema 296: Bisettrice angolare e tangente'
 challengeType: 5
 forumTopicId: 301948
 dashedName: problem-296-angular-bisector-and-tangent
@@ -8,18 +8,20 @@ dashedName: problem-296-angular-bisector-and-tangent
 
 # --description--
 
-Given is an integer sided triangle ABC with BC ≤ AC ≤ AB.k is the angular bisector of angle ACB.m is the tangent at C to the circumscribed circle of ABC.n is a line parallel to m through B.
+Dato un triangolo intero $ABC$ con $BC ≤ AC ≤ AB$. $k$ è la bisettrice angolare dell'angolo $ACB$. $m$ è la tangente a $C$ nel cerchio circoscritto di $ABC$. $n$ è una linea parallela a $m$ attraverso $B$.
 
-The intersection of n and k is called E.
+L'intersezione di $n$ e $k$ viene chiamata $E$.
 
-How many triangles ABC with a perimeter not exceeding 100 000 exist such that BE has integral length?
+<img class="img-responsive center-block" alt="triangolo ABC, con k - il bisettore angolare dell'angolo ACB, m - tangente nel punto C, n - linea parallela a m attraverso B, e punto E - intersezione di k e n" src="https://cdn.freecodecamp.org/curriculum/project-euler/angular-bisector-and-tangent.gif" style="background-color: white; padding: 10px;" />
+
+Quanti triangoli $ABC$ con un perimetro non superiore a $100\\,000$ esistono tali che $BE$ ha lunghezza intera?
 
 # --hints--
 
-`euler296()` should return 1137208419.
+`angularBisectorAndTangent()` dovrebbe restituire `1137208419`.
 
 ```js
-assert.strictEqual(euler296(), 1137208419);
+assert.strictEqual(angularBisectorAndTangent(), 1137208419);
 ```
 
 # --seed--
@@ -27,12 +29,12 @@ assert.strictEqual(euler296(), 1137208419);
 ## --seed-contents--
 
 ```js
-function euler296() {
+function angularBisectorAndTangent() {
 
   return true;
 }
 
-euler296();
+angularBisectorAndTangent();
 ```
 
 # --solutions--

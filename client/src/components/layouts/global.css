@@ -307,11 +307,32 @@ fieldset[disabled] .btn-primary.focus {
   margin-left: 5px;
 }
 
-.link-btn:hover,
-.link-btn.btn-lg:hover svg {
+.link-btn:active {
+  background-color: var(--quaternary-background);
+}
+
+.link-btn:focus,
+.link-btn.btn-lg:focus svg {
   fill: var(--quaternary-background);
   background-color: var(--secondary-color);
+  border-color: var(--gray-45);
   color: var(--secondary-background);
+}
+
+.link-btn:focus:not(:focus-visible),
+.link-btn.btn-lg:focus:not(:focus-visible) svg {
+  background-color: var(--quaternary-background);
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+  fill: var(--primary-color);
+}
+
+.link-btn:hover,
+.link-btn.btn-lg:hover svg {
+  fill: var(--quaternary-background) !important;
+  background-color: var(--secondary-color) !important;
+  border-color: var(--secondary-color) !important;
+  color: var(--secondary-background) !important;
 }
 
 .link-btn.btn-lg svg,
@@ -595,24 +616,12 @@ blockquote .small {
   border-color: #31708f;
 }
 .alert .btn:hover,
-.alert .btn:focus {
+.alert .btn:focus,
+.alert a:hover,
+.alert a:hover {
   background-color: #31708f;
   color: #d9edf7;
   border-color: #31708f;
-}
-
-.annual-donation-alert {
-  background: linear-gradient(
-      -10deg,
-      rgba(217, 237, 247, 1) 35%,
-      rgba(237, 202, 216, 0) 75%,
-      rgb(255 215 224) 100%
-    ),
-    radial-gradient(
-      circle,
-      rgba(255, 202, 225, 1) 0%,
-      rgba(218, 234, 252, 1) 100%
-    );
 }
 
 /* gatsby 404 */

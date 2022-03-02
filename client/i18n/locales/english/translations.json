@@ -47,7 +47,7 @@
     "cancel": "Cancel",
     "reset-lesson": "Reset this lesson",
     "run": "Run",
-    "run-test": "Run the Tests",
+    "run-test": "Run the Tests (Ctrl + Enter)",
     "reset": "Reset",
     "reset-code": "Reset All Code",
     "help": "Help",
@@ -63,7 +63,10 @@
     "submit-and-go": "Submit and go to next challenge",
     "go-to-next": "Go to next challenge",
     "ask-later": "Ask me later",
-    "start-coding": "Start coding!"
+    "start-coding": "Start coding!",
+    "go-to-settings": "Go to settings to claim your certification",
+    "click-start-course": "Click here to start the course",
+    "click-start-project": "Click here to start the project"
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
@@ -293,10 +296,13 @@
     },
     "help-translate": "We are still translating the following certifications.",
     "help-translate-link": "Help us translate.",
-    "season-greetings": "Season's Greetings to you and your family.",
-    "season-greetings-fcc": "Season's Greetings from the freeCodeCamp community 🎉",
-    "if-getting-value": "If you're getting a lot out of freeCodeCamp, now is a great time to donate to support our nonprofit's mission.",
-    "project-preview-title": "Here's a preview of what you will build"
+    "project-preview-title": "Here's a preview of what you will build",
+    "github-required": "A <0>GitHub</0> account is required to run the project. You will need to create one if you haven't already.",
+    "step-1": "Step 1: Complete the project",
+    "step-2": "Step 2: Submit your code",
+    "submit-public-url": "When you have completed the project, save all the required files into a public repository and submit the URL to it below.",
+    "complete-both-steps": "Complete both steps below to finish the challenge.",
+    "runs-in-vm": "The project runs in a virtual machine, complete the user stories described in there and get all the tests to pass to finish step 1."
   },
   "donate": {
     "title": "Support our nonprofit",
@@ -325,6 +331,7 @@
     "duration-2": "Become a monthly supporter of our nonprofit.",
     "duration-3": "Become an annual supporter of our nonprofit",
     "duration-4": "Become a supporter of our nonprofit",
+    "duration-5": "Support our nonprofit and earn a supporter profile badge.",
     "nicely-done": "Nicely done. You just completed {{block}}.",
     "credit-card": "Credit Card",
     "credit-card-2": "Or donate with a credit card:",
@@ -347,7 +354,42 @@
     "try-again": "Please try again.",
     "card-number": "Your Card Number:",
     "expiration": "Expiration Date:",
-    "only-you": "Only you can see this message. Congratulations on earning this certification. It’s no easy task. Running freeCodeCamp isn’t easy either. Nor is it cheap. Help us help you and many other people around the world. Make a tax-deductible supporting donation to our nonprofit today."
+    "faq": "Frequently asked questions",
+    "only-you": "Only you can see this message. Congratulations on earning this certification. It's no easy task. Running freeCodeCamp isn't easy either. Nor is it cheap. Help us help you and many other people around the world. Make a tax-deductible supporting donation to our nonprofit today.",
+    "get-help": "How can I get help with my donations?",
+    "how-transparent": "How transparent is freeCodeCamp.org?",
+    "very-transparent": "Very. We have a Platinum transparency rating from GuideStar.org.",
+    "download-irs": "You can <0>download our IRS Determination Letter here</0>.",
+    "download-990": "You can <0>download our most recent 990 (annual tax report) here</0>.",
+    "how-efficient": "How efficient is freeCodeCamp?",
+    "fcc-budget": "freeCodeCamp's budget is much smaller than most comparable nonprofits. We haven't brought in professional fundraisers. Instead, Quincy does everything himself.",
+    "help-millions": "However, on a budget of only a few hundred thousand dollars per year, we have been able to help millions of people.",
+    "how-one-time":"How can I make a one-time donation?",
+    "one-time": "If you'd prefer to make one-time donations, you can support freeCodeCamp's mission whenever you have cash to spare. You can use <0>this link to donate whatever amount feels right through PayPal</0>.",
+    "wire-transfer": "You can also send money to freeCodeCamp directly through a wire transfer. If you need our wire details, email Quincy at quincy@freecodecamp.org",
+    "does-crypto": "Does freeCodeCamp accept donations in Bitcoin or other cryptocurrencies?",
+    "yes-cryptocurrency": "Yes. Please email Quincy at quincy@freecodecamp.org and he can send you freeCodeCamp's wallet information. He can also provide you with a donation receipt if you need one for your taxes.",
+    "can-check": "Can I mail a physical check?",
+    "yes-check": "Yes, we would welcome a check. You can mail it to us at:",
+    "how-matching-gift": "How can I set up matching gifts from my employer, or payroll deductions?",
+    "employers-vary": "This varies from employer to employer, and our nonprofit is already listed in many of the big donation-matching databases.",
+    "some-volunteer": "Some people are able to volunteer for freeCodeCamp and their employer matches by donating a fixed amount per hour they volunteer. Other employers will match any donations the donors make up to a certain amount",
+    "help-matching-gift": "If you need help with this, please email Quincy directly: quincy@freecodecamp.org",
+    "how-endowment": "How can I set up an Endowment Gift to freeCodeCamp.org?",
+    "endowment": "This would be a huge help. Since this is a more manual process, Quincy can help walk you through it personally. Please email him directly at quincy@freecodecamp.org.",
+    "how-legacy": "How can I set up a Legacy gift to freeCodeCamp.org?",
+    "we-honored": "We would be honored to put such a gift to good use helping people around the world learn to code. Depending on where you live, this may also be tax exempt.",
+    "legacy-gift-message": "I give, devise, and bequeath [the sum of _____ USD (or other currency) OR _____ percent of the rest and residue of my estate] to freeCodeCamp.org (Free Code Camp, Inc. tax identification number 82-0779546), a charitable corporation organized under the laws of the State of Delaware, United States, currently located at 3905 Hedgcoxe Rd, PO Box 250352, Plano, Texas, 75025 United States, to be used for its general charitable purposes at its discretion.",
+    "thank-wikimedia": "We would like to thank the Wikimedia Foundation for providing this formal language for us to use.",
+    "legacy-gift-questions": "If you have any questions about this process, please email Quincy at quincy@freecodecamp.org.",
+    "how-stock": "How can I donate stock to freeCodeCamp.org?",
+    "welcome-stock": "We would welcome your stock donations. Please email Quincy directly and he can help you with this, and share our nonprofit's brokerage account details: quincy@freecodecamp.org.",
+    "how-receipt": "Can I get a donation receipt so that I can deduct my donation from my taxes?",
+    "just-forward": "Absolutely. Just forward the receipt from your transaction to donors@freecodecamp.org, tell us you'd like a receipt and any special instructions you may have, and we'll reply with a receipt for you.",
+    "how-update": "I set up a monthly donation, but I need to update or pause the monthly recurrence. How can I do this?",
+    "take-care-of-this": "Just forward one of your monthly donation receipts to donors@freecodecamp.org and tell us what you'd like us to do. We'll take care of this for you and send you confirmation.",
+    "anything-else": "Is there anything else I can learn about donating to freeCodeCamp.org?",
+    "other-support": "If there is some other way you'd like to support our nonprofit and its mission that isn't listed here, or if you have any questions at all, please email Quincy at quincy@freecodecamp.org."
   },
   "report": {
     "sign-in": "You need to be signed in to report a user",
@@ -385,7 +427,8 @@
     "email": "Email",
     "and": "and",
     "change-theme": "Sign in to change theme.",
-    "translation-pending": "Help us translate"
+    "translation-pending": "Help us translate",
+    "certification-project": "Certification Project"
   },
   "icons": {
     "gold-cup": "Gold Cup",
@@ -415,7 +458,7 @@
     "magnifier": "magnifier"
   },
   "aria": {
-    "fcc-logo": "freeCodeCamp Logo",
+    "fcc-curriculum": "freeCodeCamp Curriculum",
     "answer": "Answer",
     "linkedin": "Link to {{username}}'s LinkedIn",
     "github": "Link to {{username}}'s GitHub",
@@ -424,7 +467,9 @@
     "first-page": "Go to first page",
     "previous-page": "Go to previous page",
     "next-page": "Go to next page",
-    "last-page": "Go to last page"
+    "last-page": "Go to last page",
+    "primary-nav": "primary",
+    "breadcrumb-nav": "breadcrumb"
   },
   "flash": {
     "honest-first": "To claim a certification, you must first accept our academic honesty policy",
@@ -478,7 +523,10 @@
     "create-token-err": "An error occurred trying to create a token",
     "delete-token-err": "An error occurred trying to delete your token",
     "token-created": "You have successfully created a new token.",
-    "token-deleted": "Your token has been deleted."
+    "token-deleted": "Your token has been deleted.",
+    "complete-project-first": "You must complete the project first.",
+    "local-code-save-error": "Oops, your code did not save, your browser's local storage may be full.",
+    "local-code-saved": "Saved! Your code was saved to your browser's local storage."
   },
   "validation": {
     "max-characters": "There is a maximum limit of 288 characters, you have {{charsLeft}} left",
@@ -506,6 +554,7 @@
       "heading-legacy-full-stack": "As part of this Legacy Full Stack certification, {{user}} completed the following certifications:",
       "heading": "As part of this certification, {{user}} built the following projects and got all automated test suites to pass:",
       "solution": "solution",
+      "no-solution": "error displaying solution, email support@freeCodeCamp.org to get help.",
       "source": "source",
       "footnote": "If you suspect that any of these projects violate the <2>academic honesty policy</2>, please <5>report this to our team</5>.",
       "title": {

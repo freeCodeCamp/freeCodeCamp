@@ -1,6 +1,6 @@
 ---
 id: 5900f40f1000cf542c50ff22
-title: 'Problem 163: Cross-hatched triangles'
+title: 'Problema 163: Triangoli incrociati'
 challengeType: 5
 forumTopicId: 301797
 dashedName: problem-163-cross-hatched-triangles
@@ -8,16 +8,26 @@ dashedName: problem-163-cross-hatched-triangles
 
 # --description--
 
-Consider an equilateral triangle in which straight lines are drawn from each vertex to the middle of the opposite side, such as in the size 1 triangle in the sketch below.
+Considera un triangolo equilatero in cui delle linee sono disegnate da ogni vertice alla metà del lato opposto, come nel triangolo di dimensione 1 nel disegno qua sotto.
 
-Sixteen triangles of either different shape or size or orientation or location can now be observed in that triangle. Using size 1 triangles as building blocks, larger triangles can be formed, such as the size 2 triangle in the above sketch. One-hundred and four triangles of either different shape or size or orientation or location can now be observed in that size 2 triangle. It can be observed that the size 2 triangle contains 4 size 1 triangle building blocks. A size 3 triangle would contain 9 size 1 triangle building blocks and a size n triangle would thus contain n2 size 1 triangle building blocks. If we denote T(n) as the number of triangles present in a triangle of size n, then T(1) = 16 T(2) = 104 Find T(36).
+<img class="img-responsive center-block" alt="triangoli di dimensione 1 e di dimensione 2" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-hatched-triangles.gif" style="background-color: white; padding: 10px;" />
+
+Si possono vedere sedici triangoli di diversa forma o orientazione o posizione dentro quel triangolo. Usando i triangoli di dimensione 1 come unità base, si possono formare triangoli più grandi come il triangolo di dimensione due nel disegno sopra. Nel triangolo di dimensione due si possono osservare centoquattro triangolo di diversa dimensione o forma od orientazione o posizione.
+
+Si può vedere che il triangolo di dimensione 2 contiene 4 triangoli di dimensione 1 come unità base. Un triangolo di dimensione tre conterrebbe 9 unità triangolo di dimensione 1, quindi un triangolo di dimensione $n$ conterrebbe $n^2$ triangoli di dimensione 1.
+
+Sia $T(n)$ il numero di triangoli presenti in un triangolo di dimensione $n$, allora
+
+$$\begin{align} & T(1) = 16 \\\\ & T(2) = 104 \end{align}$$
+
+Trova $T(36)$.
 
 # --hints--
 
-`euler163()` should return 343047.
+`crossHatchedTriangles()` dovrebbe restituire `343047`.
 
 ```js
-assert.strictEqual(euler163(), 343047);
+assert.strictEqual(crossHatchedTriangles(), 343047);
 ```
 
 # --seed--
@@ -25,12 +35,12 @@ assert.strictEqual(euler163(), 343047);
 ## --seed-contents--
 
 ```js
-function euler163() {
+function crossHatchedTriangles() {
 
   return true;
 }
 
-euler163();
+crossHatchedTriangles();
 ```
 
 # --solutions--

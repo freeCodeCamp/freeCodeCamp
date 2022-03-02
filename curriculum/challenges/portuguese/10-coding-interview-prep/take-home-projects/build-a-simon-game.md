@@ -10,23 +10,23 @@ dashedName: build-a-simon-game
 
 **Objetivo:** criar uma aplicação no [CodePen.io](https://codepen.io) que tenha função semelhante a esta: [https://codepen.io/freeCodeCamp/full/obYBjE](https://codepen.io/freeCodeCamp/full/obYBjE).
 
-Atenda às [especificações de usuário abaixo](https://en.wikipedia.org/wiki/User_story). Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
+Atenda às [histórias de usuário](https://pt.wikipedia.org/wiki/Hist%C3%B3ria_de_usu%C3%A1rio) abaixo. Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
 
-**Especificação de usuário:** sou confrontado com uma série aleatória de pressionamentos de botões.
+**História de usuário:** sou confrontado com uma série aleatória de pressionamentos de botões.
 
-**Especificação de usuário:** cada vez que eu inserir uma série de pressionamentos de botões corretamente, vejo a mesma série de pressionamentos de botões, mas com um passo adicional.
+**História de usuário:** cada vez que eu inserir uma série de pressionamentos de botões corretamente, vejo a mesma série de pressionamentos de botões, mas com um passo adicional.
 
-**Especificação de usuário:** eu ouço um som que corresponde a cada botão quando a série de pressionamento de botões é reproduzida e quando eu pessoalmente aperto um botão.
+**História de usuário:** eu ouço um som que corresponde a cada botão quando a série de pressionamento de botões é reproduzida e quando eu pessoalmente aperto um botão.
 
-**Especificação de usuário:** se eu pressionar um botão errado, eu sou notificado de que fiz isso. Essa série de pressionamentos de botões começa novamente para me lembrar do padrão para que eu possa tentar novamente.
+**História de usuário:** se eu pressionar um botão errado, eu sou notificado de que fiz isso. Essa série de pressionamentos de botões começa novamente para me lembrar do padrão para que eu possa tentar novamente.
 
-**Especificação de usuário:** eu posso ver quantos passos há na série atual de pressionamentos de botões.
+**História de usuário:** eu posso ver quantos passos há na série atual de pressionamentos de botões.
 
-**Especificação de usuário:** se eu quiser reiniciar, posso apertar um botão para fazer isso. O jogo voltará a uma única etapa.
+**História de usuário:** se eu quiser reiniciar, posso apertar um botão para fazer isso. O jogo voltará a uma única etapa.
 
-**Especificação de usuário:** posso jogar em modo restrito, onde, se eu apertar um botão errado, o jogo me notifica que eu fiz isso e o jogo reinicia com uma nova série aleatória de pressionamento de botões.
+**História de usuário:** posso jogar em modo restrito, onde, se eu apertar um botão errado, o jogo me notifica que eu fiz isso e o jogo reinicia com uma nova série aleatória de pressionamento de botões.
 
-**Especificação de usuário:** posso vencer o jogo obtendo uma série de 20 etapas corretas. Eu fui notificado da minha vitória e, então, o jogo recomeça.
+**História de usuário:** posso vencer o jogo obtendo uma série de 20 etapas corretas. Eu fui notificado da minha vitória e, então, o jogo recomeça.
 
 **Dica:** aqui estão os mp3s que você pode usar para cada botão: `https://s3.amazonaws.com/freecodecamp/simonSound1.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound2.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound3.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound4.mp3`.
 

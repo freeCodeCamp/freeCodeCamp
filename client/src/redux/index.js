@@ -5,6 +5,7 @@ import store from 'store';
 import { SuperBlocks } from '../../../config/certification-settings';
 import { actionTypes as challengeTypes } from '../templates/Challenges/redux/action-types';
 import { CURRENT_CHALLENGE_KEY } from '../templates/Challenges/redux/current-challenge-saga';
+import { emailToABVariant } from '../utils/A-B-tester';
 import { createAcceptTermsSaga } from './accept-terms-saga';
 import { actionTypes } from './action-types';
 import { createAppMountSaga } from './app-mount-saga';
@@ -185,23 +186,20 @@ export const updateCurrentChallengeId = createAction(
 
 export const completedChallengesSelector = state =>
   userSelector(state).completedChallenges || [];
+export const partiallyCompletedChallengesSelector = state =>
+  userSelector(state).partiallyCompletedChallenges || [];
 export const completionCountSelector = state => state[MainApp].completionCount;
 export const currentChallengeIdSelector = state =>
   state[MainApp].currentChallengeId;
-export const stepsToClaimSelector = state => {
-  const user = userSelector(state);
-  const currentCerts = certificatesByNameSelector(user.username)(
-    state
-  ).currentCerts;
-  return {
-    currentCerts: currentCerts,
-    isHonest: user?.isHonest,
-    isShowName: user?.profileUI?.showName,
-    isShowCerts: user?.profileUI?.showCerts,
-    isShowProfile: !user?.profileUI?.isLocked
-  };
-};
+
 export const emailSelector = state => userSelector(state).email;
+export const isAVariantSelector = state => {
+  const email = emailSelector(state);
+  // if the user is not signed in and the user info is not available.
+  // always return A the control variant
+  if (!email) return true;
+  return emailToABVariant(email).isAVariant;
+};
 export const isDonatingSelector = state => userSelector(state).isDonating;
 export const isOnlineSelector = state => state[MainApp].isOnline;
 export const isServerOnlineSelector = state => state[MainApp].isServerOnline;
@@ -238,6 +236,7 @@ export const shouldRequestDonationSelector = state => {
   if (completedChallenges.length < 10) {
     return false;
   }
+
   // this will mean we have completed 3 or more challenges this browser session
   // and enough challenges overall to not be new
   return completionCount >= 3;
@@ -253,6 +252,9 @@ export const userByNameSelector = username => state => {
   // object litteral to prevent components from re-rendering unnecessarily
   return user[username] ?? initialState.user;
 };
+
+export const currentCertsSelector = state =>
+  certificatesByNameSelector(state[MainApp]?.appUsername)(state)?.currentCerts;
 
 export const certificatesByNameSelector = username => state => {
   const {
@@ -271,7 +273,7 @@ export const certificatesByNameSelector = username => state => {
     isSciCompPyCertV7,
     isDataAnalysisPyCertV7,
     isMachineLearningPyCertV7,
-    isRelationalDatabasesCertV8
+    isRelationalDatabaseCertV8
   } = userByNameSelector(username)(state);
   return {
     hasModernCert:
@@ -286,7 +288,7 @@ export const certificatesByNameSelector = username => state => {
       isSciCompPyCertV7 ||
       isDataAnalysisPyCertV7 ||
       isMachineLearningPyCertV7 ||
-      isRelationalDatabasesCertV8,
+      isRelationalDatabaseCertV8,
     hasLegacyCert:
       isFrontEndCert || isBackEndCert || isDataVisCert || isInfosecQaCert,
     isFullStackCert,
@@ -342,9 +344,9 @@ export const certificatesByNameSelector = username => state => {
         certSlug: 'machine-learning-with-python-v7'
       },
       {
-        show: isRelationalDatabasesCertV8,
-        title: 'Relational Databases Certification',
-        certSlug: 'relational-databases-v8'
+        show: isRelationalDatabaseCertV8,
+        title: 'Relational Database Certification',
+        certSlug: 'relational-database-v8'
       }
     ],
     legacyCerts: [
@@ -680,23 +682,6 @@ export const reducer = handleActions(
       ...state,
       currentChallengeId: payload
     }),
-    [settingsTypes.updateLegacyCertComplete]: (state, { payload }) => {
-      const { appUsername } = state;
-      return {
-        ...state,
-        completionCount: state.completionCount + 1,
-        user: {
-          ...state.user,
-          [appUsername]: {
-            ...state.user[appUsername],
-            completedChallenges: uniqBy(
-              [...state.user[appUsername].completedChallenges, payload],
-              'id'
-            )
-          }
-        }
-      };
-    },
     [settingsTypes.submitNewUsernameComplete]: (state, { payload }) =>
       payload
         ? {

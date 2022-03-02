@@ -18,6 +18,14 @@ jobs:
       - name: Checkout Source Files
         uses: actions/checkout@v2
 
+      - name: Check number of lockfiles
+        run: |
+          if [ $(find . -name 'package-lock.json' | grep -vc -e 'node_modules') -gt 1 ]
+          then
+            echo 'Error: found too many lockfiles in the repository'
+            exit 1
+          fi
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
@@ -25,12 +33,15 @@ jobs:
           cache: 'npm'
 
       - name: Set Environment variables
-        run: cp sample.env .env
+        run: |
+          cp sample.env .env
+          echo 'SHOW_NEW_CURRICULUM=true' >> .env
+          cat .env
 
       - name: Lint Source Files
         run: |
           npm ci
-          npm run ensure-env
+          npm run create:config
           npm run build:curriculum
           npm run lint
 
@@ -55,12 +66,15 @@ jobs:
           cache: npm
 
       - name: Set Environment variables
-        run: cp sample.env .env
+        run: |
+          cp sample.env .env
+          echo 'SHOW_NEW_CURRICULUM=true' >> .env
+          cat .env
 
       - name: Install Dependencies
         run: |
           npm ci
-          npm run ensure-env
+          npm run create:config
           npm run build:curriculum
 
       - name: Run Tests
@@ -90,11 +104,13 @@ jobs:
         run: |
           cp sample.env .env
           echo 'SHOW_UPCOMING_CHANGES=true' >> .env
+          echo 'SHOW_NEW_CURRICULUM=true' >> .env
+          cat .env
 
       - name: Install Dependencies
         run: |
           npm ci
-          npm run ensure-env
+          npm run create:config
           npm run build:curriculum
 
       - name: Run Tests
@@ -122,7 +138,11 @@ jobs:
           cache: npm
 
       - name: Set Environment variables
-        run: cp sample.env .env
+        run: |
+          cp sample.env .env
+          echo 'SHOW_UPCOMING_CHANGES=true' >> .env
+          echo 'SHOW_NEW_CURRICULUM=true' >> .env
+          cat .env
 
       - name: Install Dependencies
         env:
@@ -130,7 +150,7 @@ jobs:
           CLIENT_LOCALE: ${{ matrix.locale }}
         run: |
           npm ci
-          npm run ensure-env
+          npm run create:config
           npm run build:curriculum
 
       - name: Run Tests

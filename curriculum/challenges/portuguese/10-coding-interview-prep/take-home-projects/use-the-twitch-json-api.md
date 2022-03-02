@@ -10,13 +10,13 @@ dashedName: use-the-twitch-json-api
 
 **Objetivo:** criar uma aplicação no [CodePen.io](https://codepen.io) que tenha função semelhante a esta: <https://codepen.io/freeCodeCamp/full/Myvqmo/>.
 
-Atenda às [especificações de usuário abaixo](https://en.wikipedia.org/wiki/User_story). Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
+Atenda às [histórias de usuário](https://pt.wikipedia.org/wiki/Hist%C3%B3ria_de_usu%C3%A1rio) abaixo. Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
 
-**Especificação de usuário:** posso ver se o freeCodeCamp está atualmente transmitindo no Twitch.tv.
+**História de usuário:** posso ver se o freeCodeCamp está atualmente transmitindo no Twitch.tv.
 
-**Especificação de usuário:** posso clicar na saída de status e ser enviado diretamente para o canal do Twitch.tv do freeCodeCamp.
+**História de usuário:** posso clicar na saída de status e ser enviado diretamente para o canal do Twitch.tv do freeCodeCamp.
 
-**Especificação de usuário:** se um usuário do Twitch estiver transmitindo atualmente, posso ver detalhes adicionais sobre o que ele está transmitindo.
+**História de usuário:** se um usuário do Twitch estiver transmitindo atualmente, posso ver detalhes adicionais sobre o que ele está transmitindo.
 
 **Dica:** a documentação relevante sobre a API de JSON do Twitch.tv está aqui: <https://dev.twitch.tv/docs/api/reference/#get-streams>.
 

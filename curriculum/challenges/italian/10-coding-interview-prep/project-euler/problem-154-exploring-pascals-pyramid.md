@@ -1,6 +1,6 @@
 ---
 id: 5900f4071000cf542c50ff19
-title: 'Problem 154: Exploring Pascal''s pyramid'
+title: 'Problema 154: Esplorare la piramide di Pascal'
 challengeType: 5
 forumTopicId: 301785
 dashedName: problem-154-exploring-pascals-pyramid
@@ -8,16 +8,22 @@ dashedName: problem-154-exploring-pascals-pyramid
 
 # --description--
 
-A triangular pyramid is constructed using spherical balls so that each ball rests on exactly three balls of the next lower level.
+Una piramide triangolare è costruita utilizzando palline sferiche in modo che ogni sfera poggi esattamente su tre palline del livello inferiore.
 
-Then, we calculate the number of paths leading from the apex to each position: A path starts at the apex and progresses downwards to any of the three spheres directly below the current position. Consequently, the number of paths to reach a certain position is the sum of the numbers immediately above it (depending on the position, there are up to three numbers above it). The result is Pascal's pyramid and the numbers at each level n are the coefficients of the trinomial expansion (x + y + z)n. How many coefficients in the expansion of (x + y + z)200000 are multiples of 1012?
+<img class="img-responsive center-block" alt="piramide triangolare costruita con palline sferiche a quattro livelli" src="https://cdn.freecodecamp.org/curriculum/project-euler/exploring-pascals-pyramid.png" style="background-color: white; padding: 10px;" />
+
+Poi calcoliamo il numero di percorsi che conducono dall'apice a ogni posizione: un percorso inizia all'apice e procede verso il basso in una qualsiasi delle tre sfere direttamente al di sotto della posizione attuale. Di conseguenza, il numero di percorsi per raggiungere una certa posizione è la somma dei numeri immediatamente sopra di esso (a seconda della posizione, ci sono fino a tre numeri sopra di esso).
+
+Il risultato è la piramide di Pascal, e i numeri a ogni livello n sono i coefficienti dell'espansione trinomiale ${(x + y + z)}^n$.
+
+Quanti coefficienti nell'espansione di ${(x + y + z)}^{200000}$ sono multipli di ${10}^{12}$?
 
 # --hints--
 
-`euler154()` should return 479742450.
+`pascalsPyramid()` dovrebbe restituire `479742450`.
 
 ```js
-assert.strictEqual(euler154(), 479742450);
+assert.strictEqual(pascalsPyramid(), 479742450);
 ```
 
 # --seed--
@@ -25,12 +31,12 @@ assert.strictEqual(euler154(), 479742450);
 ## --seed-contents--
 
 ```js
-function euler154() {
+function pascalsPyramid() {
 
   return true;
 }
 
-euler154();
+pascalsPyramid();
 ```
 
 # --solutions--

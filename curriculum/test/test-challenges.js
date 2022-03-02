@@ -43,7 +43,6 @@ const testEvaluator =
 const { getLines } = require('../../utils/get-lines');
 const { isAuditedCert } = require('../../utils/is-audited');
 
-const { sortChallengeFiles } = require('../../utils/sort-challengefiles');
 const {
   getChallengesForLang,
   getMetaForBlock,
@@ -73,6 +72,14 @@ const { flatten, isEmpty, cloneDeep, isEqual } = lodash;
 
 // rethrow unhandled rejections to make sure the tests exit with -1
 process.on('unhandledRejection', err => handleRejection(err));
+// If an uncaught exception gets here, then mocha is in an unexpected state. All
+// we can do is log the exception and exit with a non-zero code.
+process.on('uncaughtException', err => {
+  console.error('Uncaught exception:', err.message);
+  console.error(err.stack);
+  // eslint-disable-next-line no-process-exit
+  process.exit(1);
+});
 
 const handleRejection = err => {
   // setting the error code because node does not (yet) exit with a non-zero
@@ -161,8 +168,10 @@ async function setup() {
   // as they appear in the list of challenges
   const blocks = challenges.map(({ block }) => block);
   const superBlocks = challenges.map(({ superBlock }) => superBlock);
-  const targetBlockStrings = [...new Set(blocks)];
-  const targetSuperBlockStrings = [...new Set(superBlocks)];
+  const targetBlockStrings = [...new Set(blocks.filter(el => Boolean(el)))];
+  const targetSuperBlockStrings = [
+    ...new Set(superBlocks.filter(el => Boolean(el)))
+  ];
 
   // the next few statements will filter challenges based on command variables
   if (process.env.npm_config_superblock) {
@@ -274,10 +283,17 @@ function populateTestsForLang({ lang, challenges, meta }) {
         return;
       }
       it(`${superBlock} should have the same order in every meta`, function () {
-        const firstOrder = getSuperOrder(filteredMeta[0].superBlock);
+        const firstOrder = getSuperOrder(filteredMeta[0].superBlock, {
+          showNewCurriculum: process.env.SHOW_NEW_CURRICULUM
+        });
         assert.isNumber(firstOrder);
         assert.isTrue(
-          filteredMeta.every(el => getSuperOrder(el.superBlock) === firstOrder),
+          filteredMeta.every(
+            el =>
+              getSuperOrder(el.superBlock, {
+                showNewCurriculum: process.env.SHOW_NEW_CURRICULUM
+              }) === firstOrder
+          ),
           'The superOrder properties are mismatched.'
         );
       });
@@ -490,33 +506,33 @@ ${inspect(commentMap)}
             // This is expected to happen in the project based curriculum.
 
             const nextChallenge = challenges[id + 1];
-            // TODO: can this be dried out, ideally by removing the redux
-            // handler?
+
             if (nextChallenge) {
               const solutionFiles = cloneDeep(nextChallenge.challengeFiles);
-              solutionFiles.forEach(challengeFile => {
-                challengeFile.editableContents = getLines(
-                  challengeFile.contents,
-                  challenge.challengeFiles.find(
-                    x =>
-                      x.ext === challengeFile.ext &&
-                      x.name === challengeFile.name
-                  ).editableRegionBoundaries
-                );
-              });
-              solutions = [solutionFiles];
+              const solutionFilesWithEditableContents = solutionFiles.map(
+                file => ({
+                  ...file,
+                  editableContents: getLines(
+                    file.contents,
+                    file.editableRegionBoundaries
+                  )
+                })
+              );
+              // Since there is only one seed, there can only be one solution,
+              // but the tests assume solutions is an array.
+              solutions = [solutionFilesWithEditableContents];
               solutionFromNext = true;
             } else {
-              throw Error('solution omitted');
+              throw Error(
+                `solution omitted for ${challenge.superBlock} ${challenge.block} ${challenge.title}`
+              );
             }
           }
 
           // TODO: the no-solution filtering is a little convoluted:
           const noSolution = new RegExp('// solution required');
 
-          const solutionsAsArrays = solutions.map(sortChallengeFiles);
-
-          const filteredSolutions = solutionsAsArrays.filter(solution => {
+          const filteredSolutions = solutions.filter(solution => {
             return !isEmpty(
               solution.filter(
                 challengeFile => !noSolution.test(challengeFile.contents)
@@ -560,21 +576,20 @@ async function createTestRunner(
   solutionFromNext
 ) {
   const { required = [], template, removeComments } = challenge;
-  // we should avoid modifying challenge, as it gets reused:
-  const challengeFiles = cloneDeep(challenge.challengeFiles);
-  solutionFiles.forEach(solutionFile => {
-    const challengeFile = challengeFiles.find(
-      x => x.ext === solutionFile.ext && x.name === solutionFile.name
-    );
-    challengeFile.contents = solutionFile.contents;
-    challengeFile.editableContents = solutionFile.editableContents;
-  });
 
-  const { build, sources, loadEnzyme } = await buildChallenge({
-    challengeFiles,
-    required,
-    template
-  });
+  const challengeFiles = replaceChallengeFilesContentsWithSolutions(
+    challenge.challengeFiles,
+    solutionFiles
+  );
+
+  const { build, sources, loadEnzyme } = await buildChallenge(
+    {
+      challengeFiles,
+      required,
+      template
+    },
+    { usesTestRunner: true }
+  );
 
   const code = {
     contents: sources.index,
@@ -606,6 +621,25 @@ async function createTestRunner(
       throw err;
     }
   };
+}
+
+function replaceChallengeFilesContentsWithSolutions(
+  challengeFiles,
+  solutionFiles
+) {
+  return challengeFiles.map(file => {
+    const matchingSolutionFile = solutionFiles.find(
+      ({ ext, name }) => ext === file.ext && file.name === name
+    );
+    if (!matchingSolutionFile) {
+      throw Error(`No matching solution file found`);
+    }
+    return {
+      ...file,
+      contents: matchingSolutionFile.contents,
+      editableContents: matchingSolutionFile.editableContents
+    };
+  });
 }
 
 async function getContextEvaluator(build, sources, code, loadEnzyme) {
@@ -641,7 +675,11 @@ async function initializeTestRunner(build, sources, code, loadEnzyme) {
   await page.evaluate(
     async (code, sources, loadEnzyme) => {
       const getUserInput = fileName => sources[fileName];
-      await document.__initTestFrame({ code, getUserInput, loadEnzyme });
+      await document.__initTestFrame({
+        code: sources,
+        getUserInput,
+        loadEnzyme
+      });
     },
     code,
     sources,

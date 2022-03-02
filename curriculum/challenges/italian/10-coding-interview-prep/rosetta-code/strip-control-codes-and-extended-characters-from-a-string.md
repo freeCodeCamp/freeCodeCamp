@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8036
-title: Strip control codes and extended characters from a string
+title: Rimozione di codici di controllo e caratteri estesi da una stringa
 challengeType: 5
 forumTopicId: 302327
 dashedName: strip-control-codes-and-extended-characters-from-a-string
@@ -8,47 +8,47 @@ dashedName: strip-control-codes-and-extended-characters-from-a-string
 
 # --description--
 
-The task is to strip control codes and extended characters from a string. The solution should demonstrate how to achieve each of the following results: A string with control codes and extended characters stripped. In ASCII, the control codes have decimal codes 0 through to 31 and 127. On an ASCII based system, if the control codes are stripped, the resultant string would have all of its characters within the range of 32 to 126 decimal on the ASCII table. On a non-ASCII based system, we consider characters that do not have a corresponding glyph on the ASCII table (within the ASCII range of 32 to 126 decimal) to be an extended character for the purpose of this task.
+Il compito è quello di rimuovere i codici di controllo e i caratteri estesi da una stringa. La soluzione dovrebbe dimostrare come ottenere ciascuno dei seguenti risultati: una stringa con codici di controllo e caratteri estesi rimossi. Nell'ASCII, i codici di controllo hanno codici decimali da 0 a 31 e 127. Su un sistema basato su ASCII, se i codici di controllo sono rimossi, la stringa risultante avrebbe tutti i suoi caratteri nell'intervallo da 32 a 126 decimale nella tabella ASCII. Su un sistema non basato su ASCII, consideriamo i caratteri che non hanno un glifo corrispondente nella tabella ASCII (entro l'intervallo ASCII da 32 a 126 decimale) un carattere esteso ai fini di questo compito.
 
 # --hints--
 
-`strip` should be a function.
+`strip` dovrebbe essere una funzione.
 
 ```js
 assert(typeof strip == 'function');
 ```
 
-`strip("abc")` should return a string.
+`strip("abc")` dovrebbe restituire una stringa.
 
 ```js
 assert(typeof strip('abc') == 'string');
 ```
 
-`strip("\ba\x00b\n\rc\fd\xc3")` should return `"abcd"`.
+`strip("\ba\x00b\n\rc\fd\xc3")` dovrebbe restituire `"abcd"`.
 
 ```js
 assert.equal(strip('\ba\x00b\n\rc\fd\xc3'), 'abcd');
 ```
 
-`strip("\u0000\n abc\u00E9def\u007F")` should return `" abcdef"`.
+`strip("\u0000\n abc\u00E9def\u007F")` dovrebbe restituire `" abcdef"`.
 
 ```js
 assert.equal(strip('\u0000\n abc\u00E9def\u007F'), ' abcdef');
 ```
 
-`strip("a\n\tb\u2102d\u2147f")` should return `"abdf"`.
+`strip("a\n\tb\u2102d\u2147f")` dovrebbe restituire `"abdf"`.
 
 ```js
 assert.equal(strip('a\n\tb\u2102d\u2147f'), 'abdf');
 ```
 
-`strip("Français.")` should return `"Franais."`.
+`strip("Français.")` dovrebbe restituire `"Franais."`.
 
 ```js
 assert.equal(strip('Français.'), 'Franais.');
 ```
 
-`strip("123\tabc\u0007DEF\u007F+-*/€æŧðłþ")` should return `"123abcDEF+-*/"`.
+`strip("123\tabc\u0007DEF\u007F+-*/€æŧðłþ")` dovrebbe restituire `"123abcDEF+-*/"`.
 
 ```js
 assert.equal(strip('123\tabc\u0007DEF\u007F+-*/€æŧðłþ'), '123abcDEF+-*/');

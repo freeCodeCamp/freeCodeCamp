@@ -10,13 +10,13 @@ dashedName: build-a-tic-tac-toe-game
 
 **Objetivo:** criar uma aplicação no [CodePen.io](https://codepen.io) que tenha função semelhante a esta: <https://codepen.io/freeCodeCamp/full/KzXQgy/>.
 
-Atenda às [especificações de usuário abaixo](https://en.wikipedia.org/wiki/User_story). Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
+Atenda às [histórias de usuário](https://pt.wikipedia.org/wiki/Hist%C3%B3ria_de_usu%C3%A1rio) abaixo. Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
 
-**Especificação de usuário:** eu posso jogar um jogo da velha com o computador.
+**História de usuário:** eu posso jogar um jogo da velha com o computador.
 
-**Especificação de usuário:** meu jogo vai ser reiniciado assim que estiver concluído, então eu poderei jogar de novo.
+**História de usuário:** meu jogo vai ser reiniciado assim que estiver concluído, então eu poderei jogar de novo.
 
-**Especificação de usuário:** eu posso escolher se eu quero jogar como X ou O.
+**História de usuário:** eu posso escolher se eu quero jogar como X ou O.
 
 Quando terminar, inclua um link para o seu projeto no CodePen e clique no botão "Eu completei esse desafio".
 

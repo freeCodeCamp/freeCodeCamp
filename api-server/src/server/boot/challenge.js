@@ -13,7 +13,10 @@ import isNumeric from 'validator/lib/isNumeric';
 import isURL from 'validator/lib/isURL';
 
 import { environment, deploymentEnv } from '../../../../config/env.json';
-import { fixCompletedChallengeItem } from '../../common/utils';
+import {
+  fixCompletedChallengeItem,
+  fixPartiallyCompletedChallengeItem
+} from '../../common/utils';
 import { getChallenges } from '../utils/get-curriculum';
 import { ifNoUserSend } from '../utils/middleware';
 import {
@@ -69,13 +72,17 @@ export default async function bootChallenge(app, done) {
   done();
 }
 
-const jsProjects = [
+const jsCertProjectIds = [
   'aaa48de84e1ecc7c742e1124',
   'a7f4d8f2483413a6ce226cac',
   '56533eb9ac21ba0edf2244e2',
   'aff0395860f5d3034dc0bfc9',
   'aa2e6f85cab2ab736c9a9b24'
 ];
+
+const multiFileCertProjectIds = getChallenges()
+  .filter(challenge => challenge.challengeType === 14)
+  .map(challenge => challenge.id);
 
 export function buildUserUpdate(
   user,
@@ -85,7 +92,10 @@ export function buildUserUpdate(
 ) {
   const { files, completedDate = Date.now() } = _completedChallenge;
   let completedChallenge = {};
-  if (jsProjects.includes(challengeId)) {
+  if (
+    jsCertProjectIds.includes(challengeId) ||
+    multiFileCertProjectIds.includes(challengeId)
+  ) {
     completedChallenge = {
       ..._completedChallenge,
       files: files.map(file =>
@@ -125,6 +135,10 @@ export function buildUserUpdate(
       [finalChallenge, ...completedChallenges.map(fixCompletedChallengeItem)],
       'id'
     )
+  };
+
+  updateData.$pull = {
+    partiallyCompletedChallenges: { id: challengeId }
   };
 
   if (
@@ -223,14 +237,19 @@ export function modernChallengeCompleted(req, res, next) {
     .getCompletedChallenges$()
     .flatMap(() => {
       const completedDate = Date.now();
-      const { id, files } = req.body;
+      const { id, files, challengeType } = req.body;
 
-      const { alreadyCompleted, updateData } = buildUserUpdate(user, id, {
+      const data = {
         id,
         files,
         completedDate
-      });
+      };
 
+      if (challengeType === 14) {
+        data.isManuallyApproved = false;
+      }
+
+      const { alreadyCompleted, updateData } = buildUserUpdate(user, id, data);
       const points = alreadyCompleted ? user.points : user.points + 1;
       const updatePromise = new Promise((resolve, reject) =>
         user.updateAttributes(updateData, err => {
@@ -269,6 +288,27 @@ function projectCompleted(req, res, next) {
       message:
         'You have not provided the valid links for us to inspect your work.'
     });
+  }
+
+  // CodeRoad cert project
+  if (completedChallenge.challengeType === 13) {
+    const { partiallyCompletedChallenges = [], completedChallenges = [] } =
+      user;
+
+    const isPartiallyCompleted = partiallyCompletedChallenges.some(
+      challenge => challenge.id === completedChallenge.id
+    );
+
+    const isCompleted = completedChallenges.some(
+      challenge => challenge.id === completedChallenge.id
+    );
+
+    if (!isPartiallyCompleted && !isCompleted) {
+      return res.status(403).json({
+        type: 'error',
+        message: 'You have to complete the project before you can submit a URL.'
+      });
+    }
   }
 
   return user
@@ -333,6 +373,10 @@ function backendChallengeCompleted(req, res, next) {
     .subscribe(() => {}, next);
 }
 
+const codeRoadChallenges = getChallenges().filter(
+  ({ challengeType }) => challengeType === 12 || challengeType === 13
+);
+
 function createCoderoadChallengeCompleted(app) {
   /* Example request coming from CodeRoad:
    * req.body: { tutorialId: 'freeCodeCamp/learn-bash-by-building-a-boilerplate:v1.0.0' }
@@ -350,10 +394,8 @@ function createCoderoadChallengeCompleted(app) {
     if (!userWebhookToken)
       return res.send(`'coderoad-user-token' not found in request headers`);
 
-    const tutorialRepoPath = tutorialId?.split(':')[0];
-    const tutorialSplit = tutorialRepoPath?.split('/');
-    const tutorialOrg = tutorialSplit?.[0];
-    const tutorialRepoName = tutorialSplit?.[1];
+    const tutorialRepo = tutorialId?.split(':')[0];
+    const tutorialOrg = tutorialRepo?.split('/')?.[0];
 
     // this allows any GH account to host the repo in development or staging
     // .org submissions should always be from repos hosted on the fCC GH org
@@ -362,18 +404,14 @@ function createCoderoadChallengeCompleted(app) {
         return res.send('Tutorial not hosted on freeCodeCamp GitHub account');
     }
 
-    const codeRoadChallenges = getChallenges().filter(
-      challenge => challenge.challengeType === 12
-    );
-
     // validate tutorial name is in codeRoadChallenges object
-    const tutorialInfo = codeRoadChallenges.find(tutorial =>
-      tutorial.url?.includes(tutorialRepoName)
+    const challenge = codeRoadChallenges.find(challenge =>
+      challenge.url?.endsWith(tutorialRepo)
     );
 
-    if (!tutorialInfo) return res.send('Tutorial name is not valid');
+    if (!challenge) return res.send('Tutorial name is not valid');
 
-    const tutorialMongoId = tutorialInfo?.id;
+    const { id: challengeId, challengeType } = challenge;
 
     try {
       // check if webhook token is in database
@@ -394,12 +432,43 @@ function createCoderoadChallengeCompleted(app) {
 
       // submit challenge
       const completedDate = Date.now();
+      const { completedChallenges = [], partiallyCompletedChallenges = [] } =
+        user;
 
-      const userUpdateInfo = buildUserUpdate(user, tutorialMongoId, {
-        id: tutorialMongoId,
-        completedDate
-      });
+      let userUpdateInfo = {};
 
+      const isCompleted = completedChallenges.some(
+        challenge => challenge.id === challengeId
+      );
+
+      // if CodeRoad cert project and not in completedChallenges,
+      // add to partiallyCompletedChallenges
+      if (challengeType === 13 && !isCompleted) {
+        const finalChallenge = {
+          id: challengeId,
+          completedDate
+        };
+
+        userUpdateInfo.updateData = {};
+        userUpdateInfo.updateData.$set = {
+          partiallyCompletedChallenges: uniqBy(
+            [
+              finalChallenge,
+              ...partiallyCompletedChallenges.map(
+                fixPartiallyCompletedChallengeItem
+              )
+            ],
+            'id'
+          )
+        };
+
+        // else, add to or update completedChallenges
+      } else {
+        userUpdateInfo = buildUserUpdate(user, challengeId, {
+          id: challengeId,
+          completedDate
+        });
+      }
       const updatedUser = await user.updateAttributes(
         userUpdateInfo?.updateData
       );

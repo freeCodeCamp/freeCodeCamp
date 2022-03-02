@@ -63,103 +63,155 @@
           "Hora de colocar suas novas habilidades aprendidas para funcionar. Ao trabalhar nestes projetos, você terá a oportunidade de aplicar todas as competências, princípios e conceitos que você aprendeu até agora: HTML, CSS, Visual Design, Acessibilidade e muito mais.",
           "Conclua os cinco projetos de programação web abaixo para ganhar a sua Certificação de Design responsivo para a web."
         ]
+      }
+    }
+  },
+  "2022/responsive-web-design": {
+    "title": "Design responsivo para a web (Beta)",
+    "intro": [
+      "Nessa certificação de Design responsivo para a web, você aprenderá as linguagens que os desenvolvedores usam para construir sites: HTML (Linguagem de Marcação de Hipertexto) para o conteúdo e CSS (Folha de Estilo em Cascata) para o design.",
+      "Primeiro, você vai construir um aplicativo de fotos de gato para aprender o básico de HTML e CSS. Mais tarde, você aprenderá técnicas modernas como variáveis CSS construindo um pinguim, e melhores práticas de acessibilidade criando um formulário web.",
+      "Finalmente, você vai aprender a fazer páginas web que respondem a diferentes tamanhos de telas construindo um card do Twitter com Flexbox, e um layout complexo de blog com o CSS Grid."
+    ],
+    "note": "Observação: algumas extensões de navegador, como bloqueadores de anúncios e extensões de modo escuro podem interferir nos testes. Se você tiver problemas, recomendamos desabilitar extensões que modifiquem o conteúdo ou o layout das páginas durante o curso.",
+    "blocks": {
+      "build-a-tribute-page-project": {
+        "title": "Página de tributo",
+        "intro": [
+          "Este é um dos projetos necessários para obter sua certificação.",
+          "Para este projeto, você criará uma página de tributo para alguém de sua escolha, fictício ou real."
+        ]
+      },
+      "build-a-personal-portfolio-webpage-project": {
+        "title": "Página de portfólio pessoal",
+        "intro": [
+          "Este é um dos projetos necessários para obter sua certificação.",
+          "Para este projeto, você criará sua própria página pessoal de portfólio."
+        ]
+      },
+      "build-a-product-landing-page-project": {
+        "title": "Página inicial para um produto",
+        "intro": [
+          "Este é um dos projetos necessários para obter sua certificação.",
+          "Para este projeto, você criará uma página inicial de produto para comercializar um produto de sua escolha."
+        ]
+      },
+      "build-a-survey-form-project": {
+        "title": "Formulário de pesquisa",
+        "intro": [
+          "Este é um dos projetos necessários para obter sua certificação.",
+          "Para este projeto, você criará um formulário de pesquisa para coletar dados de seus usuários."
+        ]
+      },
+      "build-a-technical-documentation-page-project": {
+        "title": "Página de documentação técnica",
+        "intro": [
+          "Este é um dos projetos necessários para obter sua certificação.",
+          "Para este projeto, você criará uma página de documentação técnica para servir como instrução ou referência para um tópico."
+        ]
       },
       "learn-html-by-building-a-cat-photo-app": {
         "title": "Aprenda HTML criando um aplicativo de fotos de gatos",
         "intro": [
-          "",
-          ""
+          "Tags HTML dão a uma página web sua estrutura. Você pode usar tags HTML para adicionar fotos, botões e outros elementos à sua página da web.",
+          "Neste curso, você vai aprender as tags HTML mais comuns criando o seu próprio aplicativo de fotos de gatos."
         ]
       },
       "learn-basic-css-by-building-a-cafe-menu": {
         "title": "Aprenda CSS básico criando um menu de restaurante",
         "intro": [
-          "",
-          ""
+          "O CSS informa ao navegador como exibir sua página da web. Você pode usar o CSS para definir cor, fonte, tamanho e outros aspectos dos elementos HTML.",
+          "Neste curso, você aprenderá CSS criando uma página de menu para uma página da web para um café."
         ]
       },
       "learn-the-css-box-model-by-building-a-rothko-painting": {
         "title": "Aprenda o box model do CSS criando uma pintura de Rothko",
         "intro": [
-          "Mark Rothko era conhecido por seu estilo abstrato de pintura. As pinturas de Rothko geralmente retratavam regiões retangulares coloridas em tamanhos variados.",
-          "Nesta lição, você usará o CSS para criar sua própria pintura no estilo de Rothko. Você usará muitas das habilidades que você já está praticando, bem como novas ferramentas do CSS como o desfoque (blur) e a transformação (transform)."
+          "Cada elemento HTML é uma caixa própria, com seu próprio espaçamento e borda. A isso chamamos de Modelo de Caixa, ou Box Model.",
+          "Nesse curso, você usará o CSS e o Box Model para criar suas próprias obras de arte retangulares ao estilo de Rothko."
         ]
       },
       "learn-css-variables-by-building-a-city-skyline": {
         "title": "Aprenda variáveis em CSS criando o horizonte em uma cidade",
         "intro": [
-          "",
-          ""
+          "As variáveis CSS ajudam você a organizar seus estilos e a reutilizá-los.",
+          "Neste curso, você vai construir um céu na cidade. Você vai aprender como configurar variáveis CSS para que você possa reutilizá-las quando quiser."
         ]
       },
       "learn-html-forms-by-building-a-registration-form": {
         "title": "Aprenda formulários em HTML criando um formulário de registro",
         "intro": [
-          "",
-          ""
+          "Você pode usar formulários HTML para coletar informações de pessoas que visitam sua página da web.",
+          "Neste curso, você aprenderá formulários HTML construindo uma página de cadastro. Você aprenderá como controlar quais tipos de dados as pessoas podem digitar em seu formulário e algumas novas ferramentas CSS para estilizar sua página."
         ]
       },
       "learn-accessibility-by-building-a-quiz": {
         "title": "Aprenda acessibilidade criando um questionário",
         "intro": [
-          "",
-          ""
+          "A acessibilidade facilita a utilização da sua página da web para todos – mesmo para as pessoas com deficiência.",
+          "Neste curso, você vai criar um questionário na página. Você aprenderá ferramentas de acessibilidade, como atalhos de teclado, atributos ARIA e melhores práticas."
         ]
       },
       "learn-intermediate-css-by-building-a-picasso-painting": {
         "title": "Aprenda CSS intermediário criando uma pintura de Picasso",
         "intro": [
-          "Pablo Picasso era conhecido pelo seu estilo de pintura, o Cubismo, um estilo reconhecido por representações de objetos divididos e remontados a partir de múltiplas perspectivas. As pinturas de Picasso costumam ser altamente abstratas e instigantes.",
-          "Neste curso, você usará o CSS para criar sua própria pintura no estilo de Picasso. Você aprenderá sobre os ícones SVG do FontAwesome, posicionamento em CSS e reforçará as habilidades que você já aprendeu."
+          "Neste curso, você vai aprender algumas técnicas de CSS intermediárias programando sua própria página de uma pintura de Picasso. Você vai aprender sobre ícones SVG, posicionamento em CSS e revisar outras habilidades CSS que você aprendeu."
         ]
       },
       "learn-responsive-web-design-by-building-a-piano": {
         "title": "Aprenda design responsivo para a web criando um piano",
         "intro": [
-          "",
-          ""
+          "O design responsivo diz à sua página da web como ela deve ficar em telas de tamanho diferente.",
+          "Neste curso, você vai usar o Design Responsivo e o CSS para codificar um piano. Você também vai aprender mais sobre consultas de mídia e pseudosseletores."
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
         "title": "Aprenda CSS Flexbox criando uma galeria de fotos",
         "intro": [
-          "",
-          ""
+          "O Flexbox ajuda você a projetar sua página da web para que fique bem em qualquer tamanho de tela.",
+          "Neste curso, você vai usar o Flexbox para construir uma página da galeria de fotos responsiva."
         ]
       },
       "learn-css-grid-by-building-a-magazine": {
         "title": "Aprenda sobre CSS Grid criando uma revista",
         "intro": [
-          "",
-          ""
+          "O CSS Grid dá a você o controle sobre as linhas e colunas do seu design de página da web.",
+          "Neste curso, você vai construir um artigo de revista. Você aprenderá a usar o CSS Grid, incluindo conceitos como linhas e colunas de grade."
         ]
       },
       "learn-typography-by-building-a-nutrition-label": {
         "title": "Aprenda tipografia criando um rótulo nutricional",
         "intro": [
-          "",
-          ""
+          "A tipografia é a arte de estilizar seu texto para ser facilmente legível e adequado ao seu propósito.",
+          "Neste curso, você usará a tipografia para construir uma página da web de rótulo nutricional. Você aprenderá como estilizar texto, ajustar a altura da linha e posicionar seu texto usando CSS."
         ]
       },
       "learn-css-transforms-by-building-a-penguin": {
         "title": "Aprenda transformações em CSS criando um pinguim",
         "intro": [
-          "",
-          ""
+          "Você pode transformar elementos HTML para criar projetos atraentes que chamam a atenção do seu leitor. Você pode usar transformações para girar elementos, dimensionar e muito mais.",
+          "Neste curso, você criará um pinguim. Você usará transformações em CSS para posicionar e redimensionar as partes do seu pinguim, criar um plano de fundo e animar o seu trabalho."
         ]
       },
       "learn-css-animation-by-building-a-ferris-wheel": {
         "title": "Aprenda animação em CSS construindo uma roda gigante",
         "intro": [
-          "",
-          ""
+          "Você pode usar a animação em CSS para chamar a atenção para seções específicas da sua página e torná-la mais envolvente.",
+          "Neste curso, você vai construir uma roda-gigante. Você vai aprender como usar o CSS para animar elementos, transformá-los e ajustar sua velocidade."
         ]
       },
       "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": {
         "title": "Saiba mais sobre os pseudosseletores em CSS criando uma folha de saldo",
         "intro": [
-          "",
-          ""
+          "Você pode usar pseudosseletores em CSS para alterar elementos HTML específicos.",
+          "Neste curso, você criará uma folha de balanço usando pseudosseletores. Você aprenderá como alterar o estilo de um elemento ao passar o mouse sobre ele e acionar outros eventos em sua página da web."
+        ]
+      },
+      "learn-css-colors-by-building-a-set-of-colored-markers": {
+        "title": "Aprenda cores em CSS criando um conjunto de marcadores coloridos",
+        "intro": [
+          "Selecionar as cores corretas para sua página da web pode melhorar muito o apelo estético para os seus leitores.",
+          "Neste curso, você criará um conjunto de marcadores coloridos. Você aprenderá maneiras diferentes de definir valores de cores e como combinar cores uma com a outra."
         ]
       }
     }
@@ -373,18 +425,110 @@
       }
     }
   },
-  "relational-databases": {
+  "relational-database": {
     "title": "Bancos de dados relacionais",
     "intro": [
-      "Para estes cursos, você usará ferramentas e software reais de desenvolvedor, incluindo o VS Code, PostgreSQL e a linha de comando do Linux/Unix para completar tutoriais interativos e criar projetos."
+      "Para estes cursos, você usará ferramentas e software reais de desenvolvedor, incluindo o VS Code, PostgreSQL e a linha de comando do Linux/Unix para completar tutoriais interativos e criar projetos.",
+      "Estes cursos começam com comandos básicos do Bash. Usando o terminal, você aprenderá tudo, de navegar e manipular um sistema de arquivos e fazer scripts no Bash, até usos mais avançados.",
+      "Depois, você aprenderá a criar e trabalhar com bancos de dados relacionados usando o PostgreSQL, um sistema de gerenciamento de banco de dados, e o SQL, a linguagem destes bancos de dados.",
+      "Por fim, você aprenderá o Git, o sistema de controle de versão, uma ferramenta essencial de cada desenvolvedor."
     ],
     "blocks": {
-      "learn-relational-databases": {
-        "title": "Aprenda bancos de dados relacionais",
+      "build-a-celestial-bodies-database-project": {
+        "title": "Banco de dados de corpos celestiais",
         "intro": [
-          "Estes cursos começam com comandos básicos do Bash. Usando o terminal, você aprenderá tudo, de navegar e manipular um sistema de arquivos e fazer scripts no Bash, até usos mais avançados.",
-          "Depois, você aprenderá a criar e trabalhar com bancos de dados relacionados usando o PostgreSQL, um sistema de gerenciamento de banco de dados, e o SQL, a linguagem destes bancos de dados.",
-          "Por fim, você aprenderá o Git, um sistema de controle de versão, e o GitHub, um serviço de hospedagem e repositório de código - duas ferramentas essenciais para todo o desenvolvedor."
+          "Este é um dos projetos necessários para obter sua certificação.",
+          "Para este projeto, você vai construir um banco de dados de corpos celestiais usando PostgreSQL."
+        ]
+      },
+      "build-a-number-guessing-game-project": {
+        "title": "Jogo de adivinhação de números",
+        "intro": [
+          "Este é um dos projetos necessários para obter sua certificação.",
+          "Para este projeto, você usará scripts de Bash, PostgreSQL e o Git para criar um jogo de sugestões de números que será executado no terminal e que gravará as informações de usuários."
+        ]
+      },
+      "build-a-periodic-table-database-project": {
+        "title": "Banco de dados da tabela periódica",
+        "intro": [
+          "Este é um dos projetos necessários para obter sua certificação.",
+          "Para este projeto, você criará um script no Bash para obter informações sobre elementos químicos de um banco de dados de tabela periódica."
+        ]
+      },
+      "build-a-salon-appointment-scheduler-project": {
+        "title": "Agendador de compromissos do salão de beleza",
+        "intro": [
+          "Este é um dos projetos necessários para obter sua certificação.",
+          "Para este projeto, você criará um programa de bash interativo que utiliza PostgreSQL para acompanhar os clientes e horários marcados em seu salão."
+        ]
+      },
+      "build-a-world-cup-database-project": {
+        "title": "Banco de dados da Copa do Mundo",
+        "intro": [
+          "Este é um dos projetos necessários para obter sua certificação.",
+          "Para este projeto, você criará um script do Bash que insere informações de jogos da Copa do Mundo no PostgreSQL. Depois, você vai consultar o banco de dados para obter estatísticas úteis."
+        ]
+      },
+      "learn-advanced-bash-by-building-a-kitty-ipsum-translator": {
+        "title": "Aprenda Bash avançado construindo um tradutor de Kitty Ipsum",
+        "intro": [
+          "Há mais comandos do Bash do que você imagina.",
+          "Neste curso de 140 aulas, você aprenderá alguns comandos mais complexos e detalhes de como funcionam os comandos."
+        ]
+      },
+      "learn-bash-and-sql-by-building-a-bike-rental-shop": {
+        "title": "Aprenda Bash e SQL criando uma loja de aluguel de bicicletas",
+        "intro": [
+          "Neste curso intermediário, você vai construir um programa de Bash interativo que armazena informações de aluguel para sua loja de aluguel de bicicletas utilizando PostgreSQL."
+        ]
+      },
+      "learn-bash-by-building-a-boilerplate": {
+        "title": "Aprenda Bash criando um boilerplate",
+        "intro": [
+          "O terminal permite que você envie comandos de texto para o seu computador que podem manipular o sistema de arquivos, executar programas, automatizar tarefas e muito mais.",
+          "Neste curso de 170 aulas, você aprenderá comandos básicos criando o boilerplate de um site usando apenas a linha de comando."
+        ]
+      },
+      "learn-bash-scripting-by-building-five-programs": {
+        "title": "Aprenda Bash Scripting desenvolvendo cinco programas",
+        "intro": [
+          "Os scripts do Bash combinam comandos de terminal e lógica em programas que podem executar ou automatizar tarefas e muito mais.",
+          "Neste curso de 220 aulas, você aprenderá mais comandos do terminal e como usá-los dentro de scripts do Bash, criando cinco programas pequenos."
+        ]
+      },
+      "learn-git-by-building-an-sql-reference-object": {
+        "title": "Aprenda Git criando um objeto de referência SQL",
+        "intro": [
+          "O Git é um sistema de controle de versão que mantém o controle de todas as alterações feitas em sua base de código.",
+          "Neste curso de 240 aulas, você aprenderá como o Git mantém o controle do seu código, criando um objeto que contém comandos SQL comumente usados."
+        ]
+      },
+      "learn-nano-by-building-a-castle": {
+        "title": "Aprenda Nano criando um castelo",
+        "intro": [
+          "O Nano é um programa que permite editar arquivos diretamente no terminal.",
+          "Neste curso de 40 aulas, você aprenderá a editar arquivos no terminal com o nano e construirá um castelo."
+        ]
+      },
+      "learn-relational-databases-by-building-a-mario-database": {
+        "title": "Aprenda bancos de dados relacionais criando um banco de dados sobre Mario",
+        "intro": [
+          "Um banco de dados relacional organiza dados em tabelas que são ligadas entre si através de relações.",
+          "Neste curso de 165 aulas, você aprenderá o essencial sobre bancos de dados relacionais, criando um banco de dados PostgreSQL com vários personagens de videogame."
+        ]
+      },
+      "learn-sql-by-building-a-student-database-part-1": {
+        "title": "Aprenda SQL criando um banco de dados de alunos: Parte 1",
+        "intro": [
+          "O SQL, ou linguagem de consulta estruturada, é a linguagem de comunicação com um banco de dados relacional.",
+          "Neste curso de 140 aulas, você criará um script do Bash que utiliza SQL para inserir informações sobre seus alunos de ciência da computação no PostgreSQL."
+        ]
+      },
+      "learn-sql-by-building-a-student-database-part-2": {
+        "title": "Aprenda SQL criando um banco de dados de alunos: Parte 2",
+        "intro": [
+          "Comandos join do SQL são usados para combinar informações de várias tabelas em um banco de dados relacional",
+          "Neste curso de 140 aulas, você completará seu banco de dados de alunos, mergulhando mais fundo nos comandos SQL."
         ]
       }
     }
@@ -632,7 +776,11 @@
     "browse-other": "Navegue por nossas outras certificações gratuitas\n(recomendamos fazer isto em sequência)",
     "courses": "Cursos",
     "steps": "Passos",
-    "expand": "Expandir",
-    "collapse": "Recolher"
+    "expand": "Expandir o curso",
+    "collapse": "Recolher o curso",
+    "legacy-header": "Cursos anteriores",
+    "legacy-desc": "Estes cursos não fazem mais parte do caminho de certificação, mas ainda estão disponíveis para você continuar aprendendo.",
+    "viewing-upcoming-change": "Você está vendo uma página em estágio beta. ",
+    "go-back-to-learn": "Voltar à versão estável do currículo."
   }
 }

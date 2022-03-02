@@ -1,6 +1,7 @@
 ---
 id: 561add10cb82ac39a17513bc
 title: Застаріла сертифікація візуалізації даних
+certification: legacy-data-visualization
 challengeType: 7
 isPrivate: true
 tests:

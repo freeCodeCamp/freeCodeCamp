@@ -11,15 +11,15 @@ import { createSelector } from 'reselect';
 import DonateForm from '../components/Donation/donate-form';
 import {
   DonationText,
-  DonationSupportText,
-  DonationOptionsText,
-  DonationOptionsAlertText
+  DonationOptionsAlertText,
+  DonationFaqText
 } from '../components/Donation/donation-text-components';
+
 import { Spacer, Loader } from '../components/helpers';
 import CampersImage from '../components/landing/components/campers-image';
 import { signInLoadingSelector, userSelector, executeGA } from '../redux';
 
-interface ExecuteGaArg {
+export interface ExecuteGaArg {
   type: string;
   data: {
     category: string;
@@ -112,11 +112,15 @@ function DonatePage({
                   <DonateForm handleProcessing={handleProcessing} />
                 </Col>
               </Row>
-              <Row className='donate-support'>
-                <Col xs={12}>
+              <Spacer size={3} />
+              <Row className='donate-support' id='FAQ'>
+                <Col className={'text-center'} xs={12}>
                   <hr />
-                  <DonationOptionsText />
-                  <DonationSupportText />
+                  <h2>{t('donate.faq')}</h2>
+                  <Spacer />
+                </Col>
+                <Col xs={12}>
+                  <DonationFaqText />
                 </Col>
               </Row>
             </Col>

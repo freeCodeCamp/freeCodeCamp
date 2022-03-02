@@ -1,6 +1,3 @@
-#description {
-  background: var(--secondary-background);
-}
 .monaco-editor .margin-view-overlays .line-numbers,
 .monaco-editor .margin-view-overlays .myLineDecoration + .line-numbers {
   color: var(--primary-color);
@@ -48,6 +45,32 @@
   max-width: 700px;
 }
 
+.description-container h1 {
+  color: var(--secondary-color);
+  font-family: Roboto Mono, monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 0.6rem;
+}
+
+.description-highlighter {
+  background-color: var(--secondary-background);
+  opacity: 1;
+  animation-name: example;
+  animation-duration: 2s;
+  animation-delay: 0.5s;
+}
+
+@keyframes example {
+  from {
+    background-color: var(--highlight-background);
+  }
+  to {
+    background-color: var(--secondary-background);
+  }
+}
+
 #description p:last-child {
   margin: 0px;
 }
@@ -71,4 +94,9 @@
 .editable-region {
   background-color: var(--primary-background);
   z-index: -1;
+}
+
+/* Unless we increase the z-index the help widget gets obscured by the jaws */
+.accessibilityHelpWidget {
+  z-index: 1;
 }

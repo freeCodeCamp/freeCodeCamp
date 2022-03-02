@@ -15,7 +15,6 @@ import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/Login';
 import Map from '../../components/Map';
 import { Spacer } from '../../components/helpers';
-import WebhookToken from '../../components/settings/webhook-token';
 import {
   currentChallengeIdSelector,
   userFetchStateSelector,
@@ -27,6 +26,7 @@ import {
 import { MarkdownRemark, AllChallengeNode, User } from '../../redux/prop-types';
 import Block from './components/block';
 import CertChallenge from './components/cert-challenge';
+import LegacyLinks from './components/legacy-links';
 import SuperBlockIntro from './components/super-block-intro';
 import { resetExpansion, toggleBlock } from './redux';
 
@@ -162,7 +162,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
   const {
     data: {
       markdownRemark: {
-        frontmatter: { superBlock, title }
+        frontmatter: { superBlock, title, certification }
       },
       allChallengeNode: { edges }
     },
@@ -176,6 +176,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
   const blockDashedNames = uniq(
     nodesForSuperBlock.map(({ challenge: { block } }) => block)
   );
+
   const i18nSuperBlock = t(`intro:${superBlock}.title`);
   const i18nTitle =
     superBlock === SuperBlocks.CodingInterviewPrep
@@ -183,6 +184,8 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
       : t(`intro:misc-text.certification`, {
           cert: i18nSuperBlock
         });
+
+  const defaultCurriculumNames = blockDashedNames;
 
   return (
     <>
@@ -193,17 +196,15 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
         <Row className='super-block-intro-page'>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
             <Spacer size={2} />
+            <LegacyLinks superBlock={superBlock} />
             <SuperBlockIntro superBlock={superBlock} />
-            {superBlock === 'relational-databases' && isSignedIn && (
-              <WebhookToken isSuperBlockPage={true} />
-            )}
             <Spacer size={2} />
             <h2 className='text-center big-subheading'>
               {t(`intro:misc-text.courses`)}
             </h2>
             <Spacer />
             <div className='block-ui'>
-              {blockDashedNames.map(blockDashedName => (
+              {defaultCurriculumNames.map(blockDashedName => (
                 <Fragment key={blockDashedName}>
                   <Block
                     blockDashedName={blockDashedName}
@@ -212,12 +213,12 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
                     )}
                     superBlock={superBlock}
                   />
-                  {blockDashedName !== 'project-euler' ? <Spacer /> : null}
                 </Fragment>
               ))}
               {superBlock !== SuperBlocks.CodingInterviewPrep && (
                 <div>
                   <CertChallenge
+                    certification={certification}
                     superBlock={superBlock}
                     title={title}
                     user={user}
@@ -260,6 +261,7 @@ export const query = graphql`
   query SuperBlockIntroPageBySlug($slug: String!, $superBlock: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
+        certification
         superBlock
         title
       }

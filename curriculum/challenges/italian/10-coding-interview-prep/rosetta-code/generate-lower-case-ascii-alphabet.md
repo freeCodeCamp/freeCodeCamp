@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc7e7a
-title: Generate lower case ASCII alphabet
+title: Genera l'alfabeto ASCII minuscolo
 challengeType: 5
 forumTopicId: 302274
 dashedName: generate-lower-case-ascii-alphabet
@@ -8,47 +8,47 @@ dashedName: generate-lower-case-ascii-alphabet
 
 # --description--
 
-Write a function to generate an array of lower case ASCII characters for a given range. For example, given the range `['a', 'd']`, the function should return `['a', 'b', 'c', 'd']`.
+Scrivi una funzione per generare un array di caratteri ASCII minuscoli per un dato range. Ad esempio, dato l'intervallo `['a', 'd']`, la funzione dovrebbe restituire `['a', 'b', 'c', 'd']`.
 
 # --hints--
 
-`lascii` should be a function.
+`lascii` dovrebbe essere una funzione.
 
 ```js
 assert(typeof lascii == 'function');
 ```
 
-`lascii("a","d")` should return an array.
+`lascii("a","d")` dovrebbe restituire un array.
 
 ```js
 assert(Array.isArray(lascii('a', 'd')));
 ```
 
-`lascii('a','d')` should return `[ 'a', 'b', 'c', 'd' ]`.
+`lascii('a','d')` dovrebbe restituire `[ 'a', 'b', 'c', 'd' ]`.
 
 ```js
 assert.deepEqual(lascii('a', 'd'), results[0]);
 ```
 
-`lascii('c','i')` should return `[ 'c', 'd', 'e', 'f', 'g', 'h', 'i' ]`.
+`lascii('c','i')` dovrebbe restituire `[ 'c', 'd', 'e', 'f', 'g', 'h', 'i' ]`.
 
 ```js
 assert.deepEqual(lascii('c', 'i'), results[1]);
 ```
 
-`lascii('m','q')` should return `[ 'm', 'n', 'o', 'p', 'q' ]`.
+`lascii('m','q')` dovrebbe restituire `[ 'm', 'n', 'o', 'p', 'q' ]`.
 
 ```js
 assert.deepEqual(lascii('m', 'q'), results[2]);
 ```
 
-`lascii('k','n')` should return `[ 'k', 'l', 'm', 'n' ]`.
+`lascii('k','n')` dovrebbe restituire `[ 'k', 'l', 'm', 'n' ]`.
 
 ```js
 assert.deepEqual(lascii('k', 'n'), results[3]);
 ```
 
-`lascii('t','z')` should return `[ 't', 'u', 'v', 'w', 'x', 'y', 'z' ]`.
+`lascii('t','z')` dovrebbe restituire `[ 't', 'u', 'v', 'w', 'x', 'y', 'z' ]`.
 
 ```js
 assert.deepEqual(lascii('t', 'z'), results[4]);

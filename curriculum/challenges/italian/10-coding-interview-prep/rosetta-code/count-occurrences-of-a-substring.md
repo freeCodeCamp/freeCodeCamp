@@ -1,6 +1,6 @@
 ---
 id: 596fda99c69f779975a1b67d
-title: Count occurrences of a substring
+title: Contare le occorrenze di una sottostringa
 challengeType: 5
 forumTopicId: 302237
 dashedName: count-occurrences-of-a-substring
@@ -8,42 +8,42 @@ dashedName: count-occurrences-of-a-substring
 
 # --description--
 
-Create a function, or show a built-in function, to count the number of non-overlapping occurrences of a substring inside a string.
+Crea una funzione, o mostra una funzione integrata, per contare il numero di occorrenze non sovrapposte di una sottostringa all'interno di una stringa.
 
-The function should take two arguments:
+La funzione dovrebbe prendere due argomenti:
 
 <ul>
-  <li>the first argument being the string to search, and</li>
-  <li>the second a substring to be searched for.</li>
+  <li>il primo argomento è la stringa da esaminare, e</li>
+  <li>il secondo la sotto-stringa da trovare.</li>
 </ul>
 
-It should return an integer count.
+Dovrebbe restituire un numero intero.
 
-The matching should yield the highest number of non-overlapping matches.
+La ricerca dovrebbe produrre il maggior numero di sottostringhe non sovrapposte.
 
-In general, this essentially means matching from left-to-right or right-to-left.
+In generale, questo significa essenzialmente cercare da sinistra a destra o da destra a sinistra.
 
 # --hints--
 
-`countSubstring` should be a function.
+`countSubstring` dovrebbe essere una funzione.
 
 ```js
 assert(typeof countSubstring === 'function');
 ```
 
-`countSubstring("the three truths", "th")` should return `3`.
+`countSubstring("the three truths", "th")` dovrebbe restituire `3`.
 
 ```js
 assert.equal(countSubstring(testCases[0], searchString[0]), results[0]);
 ```
 
-`countSubstring("ababababab", "abab")` should return `2`.
+`countSubstring("ababababab", "abab")` dovrebbe restituire `2`.
 
 ```js
 assert.equal(countSubstring(testCases[1], searchString[1]), results[1]);
 ```
 
-`countSubstring("abaabba*bbaba*bbab", "a*b")` should return `2`.
+`countSubstring("abaabba*bbaba*bbab", "a*b")` dovrebbe restituire `2`.
 
 ```js
 assert.equal(countSubstring(testCases[2], searchString[2]), results[2]);

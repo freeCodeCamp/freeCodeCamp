@@ -527,3 +527,13 @@ a.patreon-button:hover {
 .separator:not(:empty)::after {
   margin-left: 0.25em;
 }
+
+.faq-item div {
+  width: 100%;
+  padding: 10px 15px;
+}
+
+.faq-item blockquote {
+  font-size: 1em;
+  border-left-color: var(--quaternary-background);
+}

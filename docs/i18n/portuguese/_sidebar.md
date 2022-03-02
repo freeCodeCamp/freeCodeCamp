@@ -1,6 +1,7 @@
 - **Primeiros passos**
   - [Introdução](index.md "Contribua para a comunidade do freeCodeCamp.org")
   - [Perguntas frequentes](FAQ.md)
+  - [Relatando uma vulnerabilidade](security.md)
 - **Contribuição de tradução**
   - [Ajude na tradução de recursos](how-to-translate-files.md)
   - [Ajude na revisão de traduções](how-to-proofread-files.md)

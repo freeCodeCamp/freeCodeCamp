@@ -1,6 +1,6 @@
 ---
 id: 587d824e367417b2b2512c56
-title: Test if a Value is of a Specific Data Structure Type
+title: Prueba si un valor es de un tipo de estructura de datos específica
 challengeType: 2
 forumTopicId: 301601
 dashedName: test-if-a-value-is-of-a-specific-data-structure-type
@@ -8,17 +8,17 @@ dashedName: test-if-a-value-is-of-a-specific-data-structure-type
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Como recordatorio, este proyecto está siendo construido con base en el siguiente proyecto inicial [Repl.it](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonado desde [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-`#typeOf` asserts that value's type is the given string, as determined by `Object.prototype.toString`.
+`#typeOf` verifica que el tipo de dato es string, como lo determina `Object.prototype.toString`.
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#17` in the `Objects` suite, change each `assert` to either `assert.typeOf` or `assert.notTypeOf` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+Dentro de `tests/1_unit-tests.js` bajo la prueba etiquetada `#17` en `Objects` suite, cambia cada `assert` a `assert.typeOf` o `assert.notTypeOf` para pasar la prueba (debe evaluarse como `true`). No modifiques los argumentos pasados ​​a los verificadores.
 
 # --hints--
 
-All tests should pass.
+Todas las pruebas deben pasar.
 
 ```js
 (getUserInput) =>
@@ -32,7 +32,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `typeOf` vs. `notTypeOf`.
+Debe elegir el método correcto para la primera aserción - `typeOf` vs `notTypeOf`.
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ You should choose the correct method for the first assertion - `typeOf` vs. `not
   );
 ```
 
-You should choose the correct method for the second assertion - `typeOf` vs. `notTypeOf`.
+Debe elegir el método correcto para la segunda aserción - `typeOf` vs `notTypeOf`.
 
 ```js
 (getUserInput) =>
@@ -68,7 +68,7 @@ You should choose the correct method for the second assertion - `typeOf` vs. `no
   );
 ```
 
-You should choose the correct method for the third assertion - `typeOf` vs. `notTypeOf`.
+Debe elegir el método correcto para la tercera aserción - `typeOf` vs `notTypeOf`.
 
 ```js
 (getUserInput) =>
@@ -86,7 +86,7 @@ You should choose the correct method for the third assertion - `typeOf` vs. `not
   );
 ```
 
-You should choose the correct method for the fourth assertion - `typeOf` vs. `notTypeOf`.
+Debe elegir el método correcto para la cuarta aserción - `typeOf` vs `notTypeOf`.
 
 ```js
 (getUserInput) =>
@@ -104,7 +104,7 @@ You should choose the correct method for the fourth assertion - `typeOf` vs. `no
   );
 ```
 
-You should choose the correct method for the fifth assertion - `typeOf` vs. `notTypeOf`.
+Debe elegir el método correcto para la quinta aserción - `typeOf` vs `notTypeOf`.
 
 ```js
 (getUserInput) =>

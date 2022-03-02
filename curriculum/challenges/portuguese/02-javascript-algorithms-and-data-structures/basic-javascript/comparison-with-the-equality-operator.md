@@ -25,13 +25,11 @@ function equalityTest(myVal) {
 Se `myVal` é igual a `10`, o operador de igualdade retorna `true`, assim o código nas chaves será executado e a função retornará `Equal`. Caso contrário, a função retornará `Not Equal`. Para que o JavaScript possa comparar dois <dfn>tipos de dados</dfn> diferentes (por exemplo, `numbers` e `strings`), deve converter um tipo para outro. Isto é conhecido como coerção de tipo (casting ou type coercion). No entanto, uma vez que a faça, você pode comparar os termos da seguinte forma:
 
 ```js
-1   ==  1
-1   ==  2
-1   == '1'
-"3" ==  3
+1   ==  1  // true
+1   ==  2  // false
+1   == '1' // true
+"3" ==  3  // true
 ```
-
-Em ordem, essas expressões seriam avaliadas como `true`, `false`, `true` e `true`.
 
 # --instructions--
 

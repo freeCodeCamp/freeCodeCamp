@@ -1,6 +1,6 @@
 ---
 id: 587d824b367417b2b2512c4b
-title: Use the Triple Equals to Assert Strict Equality
+title: Usar igualdades triples para comprobar la igualdad estricta
 challengeType: 2
 forumTopicId: 301610
 dashedName: use-the-triple-equals-to-assert-strict-equality
@@ -8,17 +8,17 @@ dashedName: use-the-triple-equals-to-assert-strict-equality
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Como recordatorio, este proyecto está siendo construido con base en el siguiente proyecto inicial [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonado desde [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-`strictEqual()` compares objects using `===`.
+`strictEqual()` compara objetos usando `===`.
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#6` in the `Equality` suite, change each `assert` to either `assert.strictEqual` or `assert.notStrictEqual` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+Dentro de `tests/1_unit-tests.js` bajo la prueba etiquetada `#6` en `Equality` suite, cambia cada `assert` a `assert.strictEqual` o `assert.notStrictEqual`, para que la prueba sea pasada (debe evaluarse como `true`). No modifiques los argumentos pasados ​​a los verificadores.
 
 # --hints--
 
-All tests should pass.
+Todas las pruebas deben pasar.
 
 ```js
 (getUserInput) =>
@@ -32,7 +32,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `strictEqual` vs. `notStrictEqual`.
+Debe elegir el método correcto para la primera comprobación - `strictEqual` vs. `notStrictEqual`.
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ You should choose the correct method for the first assertion - `strictEqual` vs.
   );
 ```
 
-You should choose the correct method for the second assertion - `strictEqual` vs. `notStrictEqual`.
+Debe elegir el método correcto para la segunda aserción - `strictEqual` vs `notStrictEqual`.
 
 ```js
 (getUserInput) =>
@@ -64,7 +64,7 @@ You should choose the correct method for the second assertion - `strictEqual` vs
   );
 ```
 
-You should choose the correct method for the third assertion - `strictEqual` vs. `notStrictEqual`.
+Debe elegir el método correcto para la tercera aserción - `strictEqual` vs `notStrictEqual`.
 
 ```js
 (getUserInput) =>
@@ -82,7 +82,7 @@ You should choose the correct method for the third assertion - `strictEqual` vs.
   );
 ```
 
-You should choose the correct method for the fourth assertion - `strictEqual` vs. `notStrictEqual`.
+Debe elegir el método correcto para la cuarta aserción - `strictEqual` vs `notStrictEqual`.
 
 ```js
 (getUserInput) =>

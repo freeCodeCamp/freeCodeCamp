@@ -1,6 +1,6 @@
 ---
 id: 5900f4c71000cf542c50ffd8
-title: 'Problem 346: Strong Repunits'
+title: 'Problema 346: Repunit Forti'
 challengeType: 5
 forumTopicId: 302005
 dashedName: problem-346-strong-repunits
@@ -8,18 +8,18 @@ dashedName: problem-346-strong-repunits
 
 # --description--
 
-The number 7 is special, because 7 is 111 written in base 2, and 11 written in base 6 (i.e. 710 = 116 = 1112). In other words, 7 is a repunit in at least two bases b > 1.
+Il numero 7 è speciale, perché 7 è 111 scritto in base 2, e 11 scritto in base 6 (cioè $7_{10} = {11}_6 = {111}_2$). In altre parole, 7 è una repunit in almeno due basi $b > 1$.
 
-We shall call a positive integer with this property a strong repunit. It can be verified that there are 8 strong repunits below 50: {1,7,13,15,21,31,40,43}. Furthermore, the sum of all strong repunits below 1000 equals 15864.
+Chiameremo un numero intero positivo con questa proprietà una forte repunit. Si può verificare che ci sono 8 forti repunit sotto 50: {1, 7, 13, 15, 21, 31, 40, 43}. Inoltre, la somma di tutti i repunit forti sotto 1000 è pari a 15864.
 
-Find the sum of all strong repunits below 1012.
+Trova la somma di tutti i repunit forti sotto ${10}^{12}$.
 
 # --hints--
 
-`euler346()` should return 336108797689259260.
+`strongRepunits()` dovrebbe restituire `336108797689259260`.
 
 ```js
-assert.strictEqual(euler346(), 336108797689259260);
+assert.strictEqual(strongRepunits(), 336108797689259260);
 ```
 
 # --seed--
@@ -27,12 +27,12 @@ assert.strictEqual(euler346(), 336108797689259260);
 ## --seed-contents--
 
 ```js
-function euler346() {
+function strongRepunits() {
 
   return true;
 }
 
-euler346();
+strongRepunits();
 ```
 
 # --solutions--

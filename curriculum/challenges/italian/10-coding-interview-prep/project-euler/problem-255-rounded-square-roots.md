@@ -1,6 +1,6 @@
 ---
 id: 5900f46d1000cf542c50ff7f
-title: 'Problem 255: Rounded Square Roots'
+title: 'Problema 255: Radici Quadrate Arrotondate'
 challengeType: 5
 forumTopicId: 301903
 dashedName: problem-255-rounded-square-roots
@@ -8,26 +8,42 @@ dashedName: problem-255-rounded-square-roots
 
 # --description--
 
-We define the rounded-square-root of a positive integer n as the square root of n rounded to the nearest integer.
+Definiamo la radice-quadrata-arrotondata di un intero positivo $n$ come la radice quadrata di $n$ arrotondata al numero intero più vicino.
 
-The following procedure (essentially Heron's method adapted to integer arithmetic) finds the rounded-square-root of n: Let d be the number of digits of the number n. If d is odd, set x0 = 2×10(d-1)⁄2. If d is even, set x0 = 7×10(d-2)⁄2. Repeat:
+La seguente procedura (essenzialmente il metodo di Heron adattato a interi aritmetici) trova la radice-quadrata-arrotondata di $n$:
 
-until xk+1 = xk.
+Sia $d$ il numero di cifre del numero $n$.
 
-As an example, let us find the rounded-square-root of n = 4321.n has 4 digits, so x0 = 7×10(4-2)⁄2 = 70. Since x2 = x1, we stop here. So, after just two iterations, we have found that the rounded-square-root of 4321 is 66 (the actual square root is 65.7343137…).
+Se $d$ è dispari, imposta $x_0 = 2 × {10}^{\frac{d - 1}{2}}$.
 
-The number of iterations required when using this method is surprisingly low. For example, we can find the rounded-square-root of a 5-digit integer (10,000 ≤ n ≤ 99,999) with an average of 3.2102888889 iterations (the average value was rounded to 10 decimal places).
+Se $d$ è pari, imposta $x_0 = 7 × {10}^{\frac{d - 2}{2}}$.
 
-Using the procedure described above, what is the average number of iterations required to find the rounded-square-root of a 14-digit number (1013 ≤ n &lt; 1014)? Give your answer rounded to 10 decimal places.
+Ripeti:
 
-Note: The symbols ⌊x⌋ and ⌈x⌉ represent the floor function and ceiling function respectively.
+$$x_{k + 1} = \left\lfloor\frac{x_k + \left\lceil\frac{n}{x_k}\right\rceil}{2}\right\rfloor$$
+
+fino a $x_{k + 1} = x_k$.
+
+Ad esempio, cerchiamo di trovare la radice-quadrata-arrotondata di $n = 4321$.
+
+$n$ ha 4 cifre, quindi $x_0 = 7 × {10}^{\frac{4-2}{2}} = 70$.
+
+$$x_1 = \left\lfloor\frac{70 + \left\lceil\frac{4321}{70}\right\rceil}{2}\right\rfloor = 66 \\\\ x_2 = \left\lfloor\frac{66 + \left\lceil\frac{4321}{66}\right\rceil}{2}\right\rfloor = 66$$
+
+Dal momento che $x_2 = x_1$, ci fermiamo qui. Così, dopo solo due iterazioni, abbiamo scoperto che la radice-quadrata-arrotondata di 4321 è 66 (la vera radice quadrata è 65.7343137…).
+
+Il numero d'iterazioni richieste quando si utilizza questo metodo è sorprendentemente basso. Ad esempio, possiamo trovare la radice-quadrata-arrotondato di un intero a 5 cifre ($10\\,000 ≤ n ≤ 99\\,999$) con una media di 3.2102888889 iterazioni (il valore medio è stato arrotondato al decimo decimale).
+
+In base alla procedura sopra descritta, qual è il numero medio di iterazioni richieste per trovare la radice-quadrata-arrotondata di un numero a 14 cifre (${10}^{13} ≤ n &lt; {10}^{14}$)? Dai la risposta arrotondata a 10 decimali.
+
+**Nota:** I simboli $⌊x⌋$ e $⌈x⌉$ rappresentano rispettivamente la funzione arrotonda verso il basso e arrotonda verso l'alto.
 
 # --hints--
 
-`euler255()` should return 4.447401118.
+`roundedSquareRoots()` dovrebbe restituire `4.447401118`.
 
 ```js
-assert.strictEqual(euler255(), 4.447401118);
+assert.strictEqual(roundedSquareRoots(), 4.447401118);
 ```
 
 # --seed--
@@ -35,12 +51,12 @@ assert.strictEqual(euler255(), 4.447401118);
 ## --seed-contents--
 
 ```js
-function euler255() {
+function roundedSquareRoots() {
 
   return true;
 }
 
-euler255();
+roundedSquareRoots();
 ```
 
 # --solutions--

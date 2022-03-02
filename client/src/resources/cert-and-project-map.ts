@@ -1,15 +1,18 @@
 import { SuperBlocks } from '../../../config/certification-settings';
+import envData from '../../../config/env.json';
+
+const { deploymentEnv, showNewCurriculum, showUpcomingChanges } = envData;
 
 const responsiveWebBase =
   '/learn/responsive-web-design/responsive-web-design-projects';
+const responsiveWeb22Base = '/learn/2022/responsive-web-design';
 const jsAlgoBase =
   '/learn/javascript-algorithms-and-data-structures/' +
   'javascript-algorithms-and-data-structures-projects';
 const feLibsBase =
   '/learn/front-end-development-libraries/front-end-development-libraries-projects';
 const dataVisBase = '/learn/data-visualization/data-visualization-projects';
-const relationalDatabasesBase =
-  '/learn/relational-databases/learn-relational-databases';
+const relationalDatabaseBase = '/learn/relational-database';
 const apiMicroBase =
   '/learn/back-end-development-and-apis/back-end-development-and-apis-projects';
 const qaBase = '/learn/quality-assurance/quality-assurance-projects';
@@ -295,37 +298,49 @@ const certMap = [
     flag: 'isRespWebDesignCert',
     projects: [
       {
-        id: 'bd7158d8c442eddfaeb5bd18',
-        title: 'Build a Tribute Page',
-        link: `${responsiveWebBase}/build-a-tribute-page`,
-        certSlug: SuperBlocks.RespWebDesign
-      },
-      {
         id: '587d78af367417b2b2512b03',
         title: 'Build a Survey Form',
-        link: `${responsiveWebBase}/build-a-survey-form`,
+        link: getResponsiveWebDesignPath('build-a-survey-form', {
+          showNewCurriculum
+        }),
         certSlug: SuperBlocks.RespWebDesign
       },
       {
-        id: '587d78af367417b2b2512b04',
-        title: 'Build a Product Landing Page',
-        link: `${responsiveWebBase}/build-a-product-landing-page`,
+        id: 'bd7158d8c442eddfaeb5bd18',
+        title: 'Build a Tribute Page',
+        link: getResponsiveWebDesignPath('build-a-tribute-page', {
+          showNewCurriculum
+        }),
         certSlug: SuperBlocks.RespWebDesign
       },
       {
         id: '587d78b0367417b2b2512b05',
         title: 'Build a Technical Documentation Page',
-        link: `${responsiveWebBase}/build-a-technical-documentation-page`,
+        link: getResponsiveWebDesignPath(
+          'build-a-technical-documentation-page',
+          { showNewCurriculum }
+        ),
+        certSlug: SuperBlocks.RespWebDesign
+      },
+      {
+        id: '587d78af367417b2b2512b04',
+        title: 'Build a Product Landing Page',
+        link: getResponsiveWebDesignPath('build-a-product-landing-page', {
+          showNewCurriculum
+        }),
         certSlug: SuperBlocks.RespWebDesign
       },
       {
         id: 'bd7158d8c242eddfaeb5bd13',
         title: 'Build a Personal Portfolio Webpage',
-        link: `${responsiveWebBase}/build-a-personal-portfolio-webpage`,
+        link: getResponsiveWebDesignPath('build-a-personal-portfolio-webpage', {
+          showNewCurriculum
+        }),
         certSlug: SuperBlocks.RespWebDesign
       }
     ]
   },
+
   {
     id: '561abd10cb81ac38a17513bc',
     title: 'JavaScript Algorithms and Data Structures',
@@ -442,39 +457,39 @@ const certMap = [
   },
   {
     id: '606243f50267e718b1e755f4',
-    title: 'Relational Databases',
-    certSlug: SuperBlocks.RelationalDb,
-    flag: 'isRelationalDatabasesCert',
+    title: 'Relational Database',
+    certSlug: 'relational-database-v8',
+    flag: 'isRelationalDatabaseCertV8',
     projects: [
       {
         id: '5f1a4ef5d5d6b5ab580fc6ae',
         title: 'Celestial Bodies Database',
-        link: `${relationalDatabasesBase}/celestial-bodies-database`,
-        superBlock: SuperBlocks.RelationalDb
-      },
-      {
-        id: '5f87ac112ae598023a42df1a',
-        title: 'Salon Appointment Scheduler',
-        link: `${relationalDatabasesBase}/salon-appointment-scheduler`,
-        superBlock: SuperBlocks.RelationalDb
+        link: `${relationalDatabaseBase}/build-a-celestial-bodies-database-project/build-a-celestial-bodies-database`,
+        certSlug: 'relational-database-v8'
       },
       {
         id: '5f9771307d4d22b9d2b75a94',
         title: 'World Cup Database',
-        link: `${relationalDatabasesBase}/world-cup-database`,
-        superBlock: SuperBlocks.RelationalDb
+        link: `${relationalDatabaseBase}/build-a-world-cup-database-project/build-a-world-cup-database`,
+        certSlug: 'relational-database-v8'
+      },
+      {
+        id: '5f87ac112ae598023a42df1a',
+        title: 'Salon Appointment Scheduler',
+        link: `${relationalDatabaseBase}/build-a-salon-appointment-scheduler-project/build-a-salon-appointment-scheduler`,
+        certSlug: 'relational-database-v8'
       },
       {
         id: '602d9ff222201c65d2a019f2',
         title: 'Periodic Table Database',
-        link: `${relationalDatabasesBase}/periodic-table-database`,
-        superBlock: SuperBlocks.RelationalDb
+        link: `${relationalDatabaseBase}/build-a-periodic-table-database-project/build-a-periodic-table-database`,
+        certSlug: 'relational-database-v8'
       },
       {
         id: '602da04c22201c65d2a019f4',
         title: 'Number Guessing Game',
-        link: `${relationalDatabasesBase}/number-guessing-game`,
-        superBlock: SuperBlocks.RelationalDb
+        link: `${relationalDatabaseBase}/build-a-number-guessing-game-project/build-a-number-guessing-game`,
+        certSlug: 'relational-database-v8'
       }
     ]
   },
@@ -709,6 +724,16 @@ const certMap = [
   }
 ] as const;
 
+function getResponsiveWebDesignPath(
+  project: string,
+  { showNewCurriculum }: { showNewCurriculum: boolean }
+) {
+  // TODO: for the hard launch, the conditional should just be `showNewCurriculum`
+  return showNewCurriculum && showUpcomingChanges
+    ? `${responsiveWeb22Base}/${project}-project/${project}`
+    : `${responsiveWebBase}/${project}/`;
+}
+
 const titles = certMap.map(({ title }) => title);
 type Title = typeof titles[number];
 const legacyProjectMap: Partial<Record<Title, unknown>> = {};
@@ -720,8 +745,11 @@ certMap.forEach(cert => {
   if (cert.title !== 'Legacy Full Stack') {
     if (cert.title.startsWith('Legacy')) {
       legacyProjectMap[cert.title] = cert.projects;
-      // temporary hiding of RDBMS cert
-      // should do suggestion on line 33 and use front matter to hide it
+    } else if (
+      cert.title.startsWith('Relational') &&
+      deploymentEnv == 'staging'
+    ) {
+      projectMap[cert.title] = cert.projects;
     } else if (!cert.title.startsWith('Relational')) {
       projectMap[cert.title] = cert.projects;
     }

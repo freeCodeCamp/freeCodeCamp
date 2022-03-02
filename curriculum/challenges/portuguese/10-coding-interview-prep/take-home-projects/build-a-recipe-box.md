@@ -10,19 +10,19 @@ dashedName: build-a-recipe-box
 
 **Objetivo:** criar uma aplicação no [CodePen.io](https://codepen.io) que tenha função semelhante a esta: <https://codepen.io/freeCodeCamp/full/dNVazZ/>.
 
-Atenda às [especificações de usuário abaixo](https://en.wikipedia.org/wiki/User_story). Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
+Atenda às [histórias de usuário](https://pt.wikipedia.org/wiki/Hist%C3%B3ria_de_usu%C3%A1rio) abaixo. Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
 
-**Especificação de usuário:** eu posso criar receitas que têm nomes e ingredientes.
+**História de usuário:** eu posso criar receitas que têm nomes e ingredientes.
 
-**Especificação de usuário:** posso ver uma exibição indexada onde os nomes de todas as receitas são visíveis.
+**História de usuário:** posso ver uma exibição indexada onde os nomes de todas as receitas são visíveis.
 
-**Especificação de usuário:** posso clicar em qualquer uma dessas receitas para visualizá-la.
+**História de usuário:** posso clicar em qualquer uma dessas receitas para visualizá-la.
 
-**Especificação de usuário:** posso editar essas receitas.
+**História de usuário:** posso editar essas receitas.
 
-**Especificação de usuário:** posso excluir essas receitas.
+**História de usuário:** posso excluir essas receitas.
 
-**Especificação de usuário:** todas as novas receitas que eu adiciono são salvas no armazenamento local do meu navegador. Se eu atualizar a página, as receitas ainda estarão lá.
+**História de usuário:** todas as novas receitas que eu adiciono são salvas no armazenamento local do meu navegador. Se eu atualizar a página, as receitas ainda estarão lá.
 
 **Dica:** você deve prefixar suas chaves de armazenamento local no CodePen, ou seja, `_username_recipes`
 

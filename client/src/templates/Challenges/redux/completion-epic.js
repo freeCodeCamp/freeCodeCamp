@@ -17,11 +17,9 @@ import {
   isSignedInSelector,
   submitComplete,
   updateComplete,
-  updateFailed,
-  usernameSelector
+  updateFailed
 } from '../../../redux';
 
-import { getVerifyCanClaimCert } from '../../../utils/ajax';
 import postUpdate$ from '../utils/postUpdate$';
 import { actionTypes } from './action-types';
 import {
@@ -71,10 +69,15 @@ function submitModern(type, state) {
       const challengeFiles = challengeFilesSelector(state);
       const { username } = userSelector(state);
       const challengeInfo = {
-        id
+        id,
+        challengeType
       };
-      // Only send files to server, if it is a JS project
-      if (block === 'javascript-algorithms-and-data-structures-projects') {
+
+      // Only send files to server, if it is a JS project or multiFile cert project
+      if (
+        block === 'javascript-algorithms-and-data-structures-projects' ||
+        challengeType === challengeTypes.multiFileCertProject
+      ) {
         challengeInfo.files = challengeFiles.reduce(
           (acc, { fileKey, ...curr }) => [...acc, { ...curr, key: fileKey }],
           []
@@ -164,12 +167,7 @@ export default function completionEpic(action$, state$) {
       }
 
       const pathToNavigateTo = async () => {
-        return await findPathToNavigateTo(
-          nextChallengePath,
-          superBlock,
-          state,
-          challengeType
-        );
+        return await findPathToNavigateTo(nextChallengePath, superBlock);
       };
 
       return submitter(type, state).pipe(
@@ -181,37 +179,10 @@ export default function completionEpic(action$, state$) {
   );
 }
 
-async function findPathToNavigateTo(
-  nextChallengePath,
-  superBlock,
-  state,
-  challengeType
-) {
-  let canClaimCert = false;
-  const isProjectSubmission = [
-    challengeTypes.frontEndProject,
-    challengeTypes.backEndProject,
-    challengeTypes.pythonProject
-  ].includes(challengeType);
-  if (isProjectSubmission) {
-    const username = usernameSelector(state);
-    try {
-      const response = await getVerifyCanClaimCert(username, superBlock);
-      if (response.status === 200) {
-        canClaimCert = response.data?.response?.message === 'can-claim-cert';
-      }
-    } catch (err) {
-      console.error('failed to verify if user can claim certificate', err);
-    }
-  }
-  let pathToNavigateTo;
-
-  if (nextChallengePath.includes(superBlock) && !canClaimCert) {
-    pathToNavigateTo = nextChallengePath;
-  } else if (canClaimCert) {
-    pathToNavigateTo = `/learn/${superBlock}/#claim-cert-block`;
+async function findPathToNavigateTo(nextChallengePath, superBlock) {
+  if (nextChallengePath.includes(superBlock)) {
+    return nextChallengePath;
   } else {
-    pathToNavigateTo = `/learn/${superBlock}/#${superBlock}-projects`;
+    return `/learn/${superBlock}/#${superBlock}-projects`;
   }
-  return pathToNavigateTo;
 }

@@ -9,7 +9,8 @@ function getCompletedCertCount(user) {
     'isRespWebDesignCert',
     'isSciCompPyCertV7',
     'isDataAnalysisPyCertV7',
-    'isMachineLearningPyCertV7'
+    'isMachineLearningPyCertV7',
+    'isRelationalDatabaseCertV8'
   ].reduce((sum, key) => (user[key] ? sum + 1 : sum), 0);
 }
 

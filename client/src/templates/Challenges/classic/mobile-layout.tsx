@@ -2,11 +2,8 @@ import { TabPane, Tabs } from '@freecodecamp/react-bootstrap';
 import i18next from 'i18next';
 import React, { Component, ReactElement } from 'react';
 
-import envData from '../../../../../config/env.json';
 import ToolPanel from '../components/tool-panel';
 import EditorTabs from './editor-tabs';
-
-const { showUpcomingChanges } = envData;
 
 interface MobileLayoutProps {
   editor: JSX.Element | null;
@@ -70,7 +67,6 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
 
     // Unlike the desktop layout the mobile version does not have an ActionRow,
     // but still needs a way to switch between the different tabs.
-    const projectBasedChallenge = showUpcomingChanges && usesMultifileEditor;
 
     return (
       <>
@@ -93,7 +89,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
             title={i18next.t('learn.editor-tabs.code')}
             {...editorTabPaneProps}
           >
-            {projectBasedChallenge && <EditorTabs />}
+            {usesMultifileEditor && <EditorTabs />}
             {editor}
           </TabPane>
           <TabPane
@@ -103,7 +99,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
           >
             {testOutput}
           </TabPane>
-          {hasNotes && projectBasedChallenge && (
+          {hasNotes && usesMultifileEditor && (
             <TabPane
               eventKey={Tab.Notes}
               title={i18next.t('learn.editor-tabs.notes')}

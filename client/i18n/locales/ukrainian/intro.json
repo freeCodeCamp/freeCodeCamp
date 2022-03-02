@@ -63,103 +63,155 @@
           "Настав час скористатися отриманими навичками на практиці. Під час роботи над проєктами, ви зможете застосувати всі навички, правила і поняття, які ви нещодавно вивчили, такі як: HTML, CSS, Візуальний дизайн, Застосування для людей з обеженими можливостями та інше.",
           "Завершіть 5 проєктів з вебпрограмування, що розташовані нижче, аби отримати свій сертифікат з адаптивного вебдизайну."
         ]
+      }
+    }
+  },
+  "2022/responsive-web-design": {
+    "title": "Responsive Web Design (Beta)",
+    "intro": [
+      "In this Responsive Web Design Certification, you'll learn the languages that developers use to build webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design.",
+      "First, you'll build a cat photo app to learn the basics of HTML and CSS. Later, you'll learn modern techniques like CSS variables by building a penguin, and best practices for accessibility by building a web form.",
+      "Finally, you'll learn how to make webpages that respond to different screen sizes by building a Twitter card with Flexbox, and a complex blog layout with CSS Grid."
+    ],
+    "note": "Note: Some browser extensions, such as ad-blockers and dark mode extensions can interfere with the tests. If you face issues, we recommend disabling extensions that modify the content or layout of pages, while taking the course.",
+    "blocks": {
+      "build-a-tribute-page-project": {
+        "title": "Tribute Page",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build a tribute page for a subject of your choosing, fictional or real."
+        ]
+      },
+      "build-a-personal-portfolio-webpage-project": {
+        "title": "Personal Portfolio Webpage",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build your own personal portfolio page."
+        ]
+      },
+      "build-a-product-landing-page-project": {
+        "title": "Product Landing Page",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build a product landing page to market a product of your choice."
+        ]
+      },
+      "build-a-survey-form-project": {
+        "title": "Survey Form",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build a survey form to collect data from your users."
+        ]
+      },
+      "build-a-technical-documentation-page-project": {
+        "title": "Technical Documentation Page",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build a technical documentation page to serve as instruction or reference for a topic."
+        ]
       },
       "learn-html-by-building-a-cat-photo-app": {
         "title": "Learn HTML by Building a Cat Photo App",
         "intro": [
-          "",
-          ""
+          "HTML tags give a webpage its structure. You can use HTML tags to add photos, buttons, and other elements to your webpage.",
+          "In this course, you'll learn the most common HTML tags by building your own cat photo app."
         ]
       },
       "learn-basic-css-by-building-a-cafe-menu": {
         "title": "Learn Basic CSS by Building a Cafe Menu",
         "intro": [
-          "",
-          ""
+          "CSS tells the browser how to display your webpage. You can use CSS to set the color, font, size, and other aspects of HTML elements.",
+          "In this course, you'll learn CSS by designing a menu page for a cafe webpage."
         ]
       },
       "learn-the-css-box-model-by-building-a-rothko-painting": {
         "title": "Learn the CSS Box Model by Building a Rothko Painting",
         "intro": [
-          "Mark Rothko was known for his abstract style of painting. Rothko paintings commonly depicted rectangular regions of color in varying sizes.",
-          "In this lesson, you will be using CSS to create your own painting in Rothko's style. You will use many of the skills you have already been practicing, as well as new CSS tool such as blur and transform."
+          "Every HTML element is its own box – with its own spacing and a border. This is called the Box Model.",
+          "In this course, you'll use CSS and the Box Model to create your own Rothko-style rectangular art pieces."
         ]
       },
       "learn-css-variables-by-building-a-city-skyline": {
         "title": "Learn CSS Variables by Building a City Skyline",
         "intro": [
-          "",
-          ""
+          "CSS variables help you organize your styles and reuse them.",
+          "In this course, you'll build a city skyline. You'll learn how to configure CSS variables so you can reuse them whenever you want."
         ]
       },
       "learn-html-forms-by-building-a-registration-form": {
         "title": "Learn HTML Forms by Building a Registration Form",
         "intro": [
-          "",
-          ""
+          "You can use HTML forms to collect information from people who visit your webpage.",
+          "In this course, you'll learn HTML forms by building a signup page. You'll learn how to control what types of data people can type into your form, and some new CSS tools for styling your page."
         ]
       },
       "learn-accessibility-by-building-a-quiz": {
         "title": "Learn Accessibility by Building a Quiz",
         "intro": [
-          "",
-          ""
+          "Accessibility is making your webpage easy for all people to use – even people with disabilities.",
+          "In this course, you'll build a quiz webpage. You'll learn accessibility tools such as keyboard shortcuts, ARIA attributes, and design best practices."
         ]
       },
       "learn-intermediate-css-by-building-a-picasso-painting": {
         "title": "Learn Intermediate CSS by Building a Picasso Painting",
         "intro": [
-          "Pablo Picasso was known for his Cubism style of painting, a style recognized by representations of objects broken down and reassembled from multiple perspectives. Picasso's paintings are often highly abstract and thought provoking.",
-          "In this course, you will use CSS to create your own painting in the style of Picasso. You will learn about FontAwesome SVG icons, CSS positioning, and reinforce the skills you have already been learning."
+          "In this course, you'll use learn some intermediate CSS techniques by coding your own Picasso painting webpage. You'll learn about SVG icons, CSS positioning, and review other CSS skills you've learned."
         ]
       },
       "learn-responsive-web-design-by-building-a-piano": {
         "title": "Learn Responsive Web Design by Building a Piano",
         "intro": [
-          "",
-          ""
+          "Responsive Design tells your webpage how it should look on different-sized screens.",
+          "In this course, you'll use CSS and Responsive Design to code a piano. You'll also learn more about media queries and pseudo selectors."
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
         "title": "Learn CSS Flexbox by Building a Photo Gallery",
         "intro": [
-          "",
-          ""
+          "Flexbox helps you design your webpage so that it looks good on any screen size.",
+          "In this course, you'll use Flexbox to build a responsive photo gallery webpage."
         ]
       },
       "learn-css-grid-by-building-a-magazine": {
         "title": "Learn CSS Grid by Building a Magazine",
         "intro": [
-          "",
-          ""
+          "CSS Grid gives you control over the rows and columns of your webpage design.",
+          "In this course, you'll build a magazine article. You'll learn how to use CSS Grid, including concepts like grid rows and grid columns."
         ]
       },
       "learn-typography-by-building-a-nutrition-label": {
         "title": "Learn Typography by Building a Nutrition Label",
         "intro": [
-          "",
-          ""
+          "Typography is the art of styling your text to be easily readable and suit its purpose.",
+          "In this course, you'll use typography to build a nutrition label webpage. You'll learn how to style text, adjust line height, and position your text using CSS."
         ]
       },
       "learn-css-transforms-by-building-a-penguin": {
         "title": "Learn CSS Transforms by Building a Penguin",
         "intro": [
-          "",
-          ""
+          "You can transform HTML elements to create appealing designs that draw your reader's eye. You can use transforms to rotate elements, scale them, and more.",
+          "In this course, you'll build a penguin. You'll use CSS transforms to position and resize the parts of your penguin, create a background, and animate your work."
         ]
       },
       "learn-css-animation-by-building-a-ferris-wheel": {
         "title": "Learn CSS Animation by Building a Ferris Wheel",
         "intro": [
-          "",
-          ""
+          "You can use CSS animation to draw attention to specific sections of your webpage and make it more engaging.",
+          "In this course, you'll build a Ferris wheel. You'll learn how to use CSS to animate elements, transform them, and adjust their speed."
         ]
       },
       "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": {
         "title": "Learn More About CSS Pseudo Selectors By Building A Balance Sheet",
         "intro": [
-          "",
-          ""
+          "You can use CSS pseudo selectors to change specific HTML elements.",
+          "In this course, you'll build a balance sheet using pseudo selectors. You'll learn how to change the style of an element when you hover over it with your mouse, and trigger other events on your webpage."
+        ]
+      },
+      "learn-css-colors-by-building-a-set-of-colored-markers": {
+        "title": "Learn CSS Colors by Building a Set of Colored Markers",
+        "intro": [
+          "Selecting the correct colors for your webpage can greatly improve the aesthetic appeal to your readers.",
+          "In this course, you'll build a set of colored markers. You'll learn different ways to set color values and how to pair colors with each other."
         ]
       }
     }
@@ -373,18 +425,110 @@
       }
     }
   },
-  "relational-databases": {
-    "title": "Реляційна база даних",
+  "relational-database": {
+    "title": "Relational Database",
     "intro": [
-      "Для цих курсів ви будете використовувати реальні інструменти розробника та програмне забезпечення, включаючи VS-код, PostgreSQL, і командний рядок Linux / Unix для завершення інтерактивних уроків і створення проєктів."
+      "For these courses, you will use real developer tools and software including VS Code, PostgreSQL, and the Linux / Unix command line to complete interactive tutorials and build projects.",
+      "These courses start off with basic Bash commands. Using the terminal, you will learn everything from navigating and manipulating a file system, scripting in Bash, all the way to advanced usage.",
+      "Next, you will learn how to create and use a relational database with PostgreSQL, a database management system, and SQL, the language of these databases.",
+      "Finally, you will learn Git, the version control system, an essential tool of every developer."
     ],
     "blocks": {
-      "learn-relational-databases": {
-        "title": "Вивчення реляційної бази даних",
+      "build-a-celestial-bodies-database-project": {
+        "title": "Celestial Bodies Database",
         "intro": [
-          "Ці курси починаються з основних Bash команд. За допомогою терміналу ви навчитеся усього необхідного (від навігації та маніпуляції файловою системою, написання скрипту в Bash до просунутого використання).",
-          "Далі ви навчитеся створювати та працювати з реляційними базами даних використовуючи PostgreSQL (систему керування базами даних) та SQL (мову цих баз даних).",
-          "Нарешті, ви вивчите Git (систему контролю версій) та GitHub (службу зберігання коду) — два найважливіші інструменти для кожного розробника."
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build a database of celestial bodies using PostgreSQL."
+        ]
+      },
+      "build-a-number-guessing-game-project": {
+        "title": "Number Guessing Game",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will use Bash scripting, PostgreSQL, and Git to create a number guessing game that runs in the terminal and saves user information."
+        ]
+      },
+      "build-a-periodic-table-database-project": {
+        "title": "Periodic Table Database",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will create Bash a script to get information about chemical elements from a periodic table database."
+        ]
+      },
+      "build-a-salon-appointment-scheduler-project": {
+        "title": "Salon Appointment Scheduler",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will create an interactive Bash program that uses PostgreSQL to track the customers and appointments for your salon."
+        ]
+      },
+      "build-a-world-cup-database-project": {
+        "title": "World Cup Database",
+        "intro": [
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will create a Bash script that enters information from World Cup games into PostgreSQL, then query the database for useful statistics."
+        ]
+      },
+      "learn-advanced-bash-by-building-a-kitty-ipsum-translator": {
+        "title": "Learn Advanced Bash by Building a Kitty Ipsum Translator",
+        "intro": [
+          "There's more to Bash commands than you might think.",
+          "In this 140 lesson course, you will learn some more complex commands, and the details of how commands work."
+        ]
+      },
+      "learn-bash-and-sql-by-building-a-bike-rental-shop": {
+        "title": "Learn Bash and SQL by Building a Bike Rental Shop",
+        "intro": [
+          "In this 210 lesson course, you will build an interactive Bash program that stores rental information for your bike rental shop using PostgreSQL."
+        ]
+      },
+      "learn-bash-by-building-a-boilerplate": {
+        "title": "Learn Bash by Building a Boilerplate",
+        "intro": [
+          "The terminal allows you to send text commands to your computer that can manipulate the file system, run programs, automate tasks, and much more.",
+          "In this 170 lesson course, you will learn basic commands by creating a website boilerplate using only the command line."
+        ]
+      },
+      "learn-bash-scripting-by-building-five-programs": {
+        "title": "Learn Bash Scripting by Building Five Programs",
+        "intro": [
+          "Bash scripts combine terminal commands and logic into programs that can execute or automate tasks, and much more.",
+          "In this 220 lesson course, you will learn more terminal commands and how to use them within Bash scripts by creating five small programs."
+        ]
+      },
+      "learn-git-by-building-an-sql-reference-object": {
+        "title": "Learn Git by Building an SQL Reference Object",
+        "intro": [
+          "Git is a version control system that keeps track of all the changes you make to your codebase.",
+          "In this 240 lesson course, you will learn how Git keeps track of your code by creating an object containing commonly used SQL commands."
+        ]
+      },
+      "learn-nano-by-building-a-castle": {
+        "title": "Learn Nano by Building a Castle",
+        "intro": [
+          "Nano is a program that allows you to edit files right in the terminal.",
+          "In this 40 lesson course, you will learn how to edit files in the terminal with Nano while building a castle."
+        ]
+      },
+      "learn-relational-databases-by-building-a-mario-database": {
+        "title": "Learn Relational Databases by Building a Mario Database",
+        "intro": [
+          "A relational database organizes data into tables that are linked together through relationships.",
+          "In this 165 lesson course, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
+        ]
+      },
+      "learn-sql-by-building-a-student-database-part-1": {
+        "title": "Learn SQL by Building a Student Database: Part 1",
+        "intro": [
+          "SQL, or Structured Query Language, is the language for communicating with a relational database.",
+          "In this 140 lesson course, you will create a Bash script that uses SQL to enter information about your computer science students into PostgreSQL."
+        ]
+      },
+      "learn-sql-by-building-a-student-database-part-2": {
+        "title": "Learn SQL by Building a Student Database: Part 2",
+        "intro": [
+          "SQL join commands are used to combine information from multiple tables in a relational database",
+          "In this 140 lesson course, you will complete your student database while diving deeper into SQL commands."
         ]
       }
     }
@@ -632,7 +776,11 @@
     "browse-other": "Перегляньте інші безплатні сертифікати\n(ми рекомендуємо робити це послідовно)",
     "courses": "Курси",
     "steps": "Кроки",
-    "expand": "Розгорнути",
-    "collapse": "Згорнути"
+    "expand": "Expand course",
+    "collapse": "Collapse course",
+    "legacy-header": "Legacy Courses",
+    "legacy-desc": "These courses are no longer part of the certification path, but are still available for you to further your learning.",
+    "viewing-upcoming-change": "You are looking at a beta page. ",
+    "go-back-to-learn": "Go back to the stable version of the curriculum."
   }
 }

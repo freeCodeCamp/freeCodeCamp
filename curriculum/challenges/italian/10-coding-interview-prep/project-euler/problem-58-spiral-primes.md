@@ -1,6 +1,6 @@
 ---
 id: 5900f3a61000cf542c50feb9
-title: 'Problem 58: Spiral primes'
+title: 'Problema 58: Primi a spirale'
 challengeType: 5
 forumTopicId: 302169
 dashedName: problem-58-spiral-primes
@@ -8,7 +8,7 @@ dashedName: problem-58-spiral-primes
 
 # --description--
 
-Starting with 1 and spiralling anticlockwise in the following way, a square spiral with side length 7 is formed.
+Partendo da 1 e a spirale antioraria nel modo seguente, si forma una spirale quadrata con lunghezza laterale 7.
 
 <div style='text-align: center;'>
   <strong><span style='color: red;'>37</span></strong> 36 35 34 33 32 <strong><span style='color: red;'>31</span></strong><br>
@@ -20,31 +20,31 @@ Starting with 1 and spiralling anticlockwise in the following way, a square spir
   <strong><span style='color: red;'>43</span></strong> 44 45 46 47 48 49<br>
 </div>
 
-It is interesting to note that the odd squares lie along the bottom right diagonal, but what is more interesting is that 8 out of the 13 numbers lying along both diagonals are prime; that is, a ratio of 8/13 ≈ 62%.
+È interessante notare che i quadrati dispari si trovano lungo la diagonale in basso a destra, ma ciò che è più interessante è che 8 dei 13 numeri che si trovano lungo entrambe le diagonali sono primi, cioè un rapporto di 8/13 ≈ 62%.
 
-If one complete new layer is wrapped around the spiral above, a square spiral with side length 9 will be formed. If this process is continued, what is the side length of the square spiral for which the percent of primes along both diagonals first falls below `percent`?
+Se un nuovo strato completo è avvolto intorno alla spirale sopra, verrà formata una spirale quadrata con lunghezza laterale 9. Se si prosegue con questo processo, qual è la lunghezza laterale della spirale quadrata per la quale la percentuale di primi lungo entrambe le diagonali cade prima al di sotto del `percent`?
 
 # --hints--
 
-`spiralPrimes(50)` should return a number.
+`spiralPrimes(50)` dovrebbe restituire un numero.
 
 ```js
 assert(typeof spiralPrimes(50) === 'number');
 ```
 
-`spiralPrimes(50)` should return `11`.
+`spiralPrimes(50)` dovrebbe restituire `11`.
 
 ```js
 assert.strictEqual(spiralPrimes(50), 11);
 ```
 
-`spiralPrimes(15)` should return `981`.
+`spiralPrimes(15)` dovrebbe restituire `981`.
 
 ```js
 assert.strictEqual(spiralPrimes(15), 981);
 ```
 
-`spiralPrimes(10)` should return `26241`.
+`spiralPrimes(10)` dovrebbe restituire `26241`.
 
 ```js
 assert.strictEqual(spiralPrimes(10), 26241);

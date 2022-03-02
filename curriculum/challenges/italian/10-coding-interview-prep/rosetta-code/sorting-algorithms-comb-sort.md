@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8005
-title: Sorting algorithms/Comb sort
+title: Algoritmi di Ordinamento/Comb Sort
 challengeType: 5
 forumTopicId: 302313
 dashedName: sorting-algorithmscomb-sort
@@ -8,30 +8,30 @@ dashedName: sorting-algorithmscomb-sort
 
 # --description--
 
-Implement a *comb sort*.
+Implementa un *comb sort*.
 
-The **Comb Sort** is a variant of the [Bubble Sort](https://rosettacode.org/wiki/Bubble Sort).
+Il **Comb Sort** è una variante del [Bubble Sort](https://rosettacode.org/wiki/Bubble Sort).
 
-Like the [Shell sort](https://rosettacode.org/wiki/Shell sort), the Comb Sort increases the gap used in comparisons and exchanges.
+Come lo [Shell sort](https://rosettacode.org/wiki/Shell sort), il Comb Sort aumenta lo spazio utilizzato nei confronti e negli scambi.
 
-Dividing the gap by $(1-e^{-\\varphi})^{-1} \\approx 1.247330950103979$ works best, but 1.3 may be more practical.
+Dividere il divario per $(1-e^{-\\varphi})^{-1} \\ca. 1.247330950103979$ funziona meglio, ma 1.3 può essere più pratico.
 
-Some implementations use the insertion sort once the gap is less than a certain amount.
+Alcune implementazioni usano l'insertion sort una volta che il divario è inferiore a una certa quantità.
 
-**Also see**
-
-<ul>
-  <li>the Wikipedia article: <a href='https://en.wikipedia.org/wiki/Comb sort' target='_blank'>Comb sort</a>.</li>
-</ul>
-
-Variants:
+**Vedi anche**
 
 <ul>
-  <li>Combsort11 makes sure the gap ends in (11, 8, 6, 4, 3, 2, 1), which is significantly faster than the other two possible endings.</li>
-  <li>Combsort with different endings changes to a more efficient sort when the data is almost sorted (when the gap is small). Comb sort with a low gap isn't much better than the Bubble Sort.</li>
+  <li>l'articolo Wikipedia: <a href='https://en.wikipedia.org/wiki/Comb sort' target='_blank'>Comb sort</a>.</li>
 </ul>
 
-Pseudocode:
+Varianti:
+
+<ul>
+  <li>Combsort11 assicura che il divario finisca in (11, 8, 6, 4, 3, 2, 1), che è significativamente più veloce delle altre due possibili terminazioni.</li>
+  <li>Combsort con diversi terminali diventa un ordinamento più efficiente quando i dati sono quasi del tutto ordinati (quando il divario è piccolo). Combsort con un gap basso non è molto meglio di Bubble Sort.</li>
+</ul>
+
+Pseudocodice:
 
 <pre><b>function</b> combsort(<b>array</b> input)
   gap := input<b>.size</b> <i>//initialize gap size</i>
@@ -59,41 +59,41 @@ Pseudocode:
 
 # --instructions--
 
-Write a function that sorts a given array using Comb sort.
+Scrivi una funzione che ordina un determinato array usando Combsort.
 
 # --hints--
 
-`combSort` should be a function.
+`combSort` dovrebbe essere una funzione.
 
 ```js
 assert(typeof combSort == 'function');
 ```
 
-`combSort([25, 32, 12, 7, 20])` should return an array.
+`combSort([25, 32, 12, 7, 20])` dovrebbe restituire un array.
 
 ```js
 assert(Array.isArray(combSort([25, 32, 12, 7, 20])));
 ```
 
-`combSort([25, 32, 12, 7, 20])` should return `[7, 12, 20, 25, 32]`.
+`combSort([25, 32, 12, 7, 20])` dovrebbe restituire `[7, 12, 20, 25, 32]`.
 
 ```js
 assert.deepEqual(combSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
 ```
 
-`combSort([38, 45, 35, 8, 13])` should return `[8, 13, 35, 38, 45]`.
+`combSort([38, 45, 35, 8, 13])` dovrebbe restituire `[8, 13, 35, 38, 45]`.
 
 ```js
 assert.deepEqual(combSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
 ```
 
-`combSort([43, 36, 20, 34, 24])` should return `[20, 24, 34, 36, 43]`.
+`combSort([43, 36, 20, 34, 24])` dovrebbe restituire `[20, 24, 34, 36, 43]`.
 
 ```js
 assert.deepEqual(combSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
 ```
 
-`combSort([12, 33, 26, 18, 1, 16, 38])` should return `[1, 12, 16, 18, 26, 33, 38]`.
+`combSort([12, 33, 26, 18, 1, 16, 38])` dovrebbe restituire `[1, 12, 16, 18, 26, 33, 38]`.
 
 ```js
 assert.deepEqual(combSort([12, 33, 26, 18, 1, 16, 38]), [
@@ -107,7 +107,7 @@ assert.deepEqual(combSort([12, 33, 26, 18, 1, 16, 38]), [
 ]);
 ```
 
-`combSort([3, 39, 48, 16, 1, 4, 29])` should return `[1, 3, 4, 16, 29, 39, 48]`.
+`combSort([3, 39, 48, 16, 1, 4, 29])` dovrebbe restituire `[1, 3, 4, 16, 29, 39, 48]`.
 
 ```js
 assert.deepEqual(combSort([3, 39, 48, 16, 1, 4, 29]), [

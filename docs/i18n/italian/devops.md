@@ -256,7 +256,7 @@ brew install azure-cli
 az login
 ```
 
-> **Ottieni una lista dei nomi delle VM e degli indirizzi IP:**
+> **Get the list of VM names and IP addresses:**
 
 ```
 az vm list-ip-addresses --output table
@@ -459,7 +459,7 @@ Fare il provisioning delle VM con il codice
 7. Fai il build del server
 
    ```console
-   npm run ensure-env && npm run build:curriculum && npm run build:server
+   npm run create:config && npm run build:curriculum && npm run build:server
    ```
 
 8. Avvia le istanze
@@ -502,7 +502,7 @@ npm ci
 3. Fai il build del server
 
 ```console
-npm run ensure-env && npm run build:curriculum && npm run build:server
+npm run create:config && npm run build:curriculum && npm run build:server
 ```
 
 4. Avvia le istanze

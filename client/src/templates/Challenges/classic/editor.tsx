@@ -42,7 +42,8 @@ import {
   submitChallenge,
   initTests,
   isResettingSelector,
-  stopResetting
+  stopResetting,
+  isProjectPreviewModalOpenSelector
 } from '../redux';
 
 import './editor.css';
@@ -76,6 +77,8 @@ interface EditorProps {
   tests: Test[];
   theme: Themes;
   title: string;
+  showProjectPreview: boolean;
+  previewOpen: boolean;
   updateFile: (object: {
     fileKey: FileKey;
     editorValue: string;
@@ -104,6 +107,7 @@ const mapStateToProps = createSelector(
   canFocusEditorSelector,
   consoleOutputSelector,
   isDonationModalOpenSelector,
+  isProjectPreviewModalOpenSelector,
   isResettingSelector,
   userSelector,
   challengeTestsSelector,
@@ -111,11 +115,13 @@ const mapStateToProps = createSelector(
     canFocus: boolean,
     output: string[],
     open,
+    previewOpen: boolean,
     isResetting: boolean,
     { theme = Themes.Default }: { theme: Themes },
     tests: [{ text: string; testString: string }]
   ) => ({
     canFocus: open ? false : canFocus,
+    previewOpen,
     isResetting,
     output,
     theme,
@@ -222,7 +228,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   const options: editor.IStandaloneEditorConstructionOptions = {
     fontSize: 18,
-    scrollBeyondLastLine: false,
+    scrollBeyondLastLine: true,
     selectionHighlight: false,
     overviewRulerBorder: false,
     hideCursorInOverviewRuler: true,
@@ -245,6 +251,9 @@ const Editor = (props: EditorProps): JSX.Element => {
     tabSize: 2,
     dragAndDrop: true,
     lightbulb: {
+      enabled: false
+    },
+    hover: {
       enabled: false
     },
     quickSuggestions: false,
@@ -403,7 +412,63 @@ const Editor = (props: EditorProps): JSX.Element => {
         });
       }
     });
+    // Introduced as a work around for a bug in JAWS 2022
+    // https://github.com/FreedomScientific/VFO-standards-support/issues/598
+    editor.addAction({
+      id: 'toggle-aria-roledescription',
+      label: 'Toggle aria-roledescription',
+      keybindings: [
+        monaco.KeyMod.CtrlCmd | monaco.KeyMod.Alt | monaco.KeyCode.KEY_J
+      ],
+      run: toggleAriaRoledescription
+    });
     editor.onDidFocusEditorWidget(() => props.setEditorFocusability(true));
+
+    // aria-roledescription is on (true) by default, check if it needs
+    // to be removed.
+    if (!getStoredAriaRoledescription()) {
+      setAriaRoledescription(false);
+    }
+  };
+
+  const toggleAriaRoledescription = () => {
+    const newRoledescription = !getStoredAriaRoledescription();
+    setAriaRoledescription(newRoledescription);
+    ariaAlert(
+      `aria-roledescription has been turned ${
+        newRoledescription ? 'on' : 'off'
+      }`
+    );
+  };
+
+  const setAriaRoledescription = (value: boolean) => {
+    const textareas = document.querySelectorAll('.monaco-editor textarea');
+    textareas.forEach(textarea => {
+      value
+        ? textarea.setAttribute('aria-roledescription', 'editor')
+        : textarea.removeAttribute('aria-roledescription');
+    });
+    store.set('ariaRoledescription', value);
+  };
+
+  const getStoredAriaRoledescription = () =>
+    !!(store.get('ariaRoledescription') ?? true);
+
+  // Borrowed from
+  // freeCodeCamp/node_modules/monaco-editor/esm/vs/base/browser/ui/aria/aria.js
+  // Uses the aria live region provided by monaco.
+  const ariaAlert = (message: string) => {
+    const ariaLive: NodeListOf<HTMLDivElement> =
+      document.querySelectorAll('.monaco-alert');
+    if (ariaLive.length > 0) {
+      const liveText = ariaLive[0];
+      liveText.textContent = message;
+      // Hack used by monaco to force older browsers to announce the update to
+      // the live region.
+      // See https://www.tpgi.com/html5-accessibility-chops-aria-rolealert-browser-support/
+      liveText.style.visibility = 'hidden';
+      liveText.style.visibility = 'visible';
+    }
   };
 
   const descriptionZoneCallback = (
@@ -471,7 +536,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   function createDescription(editor: editor.IStandaloneCodeEditor) {
     if (dataRef.current.descriptionNode) return dataRef.current.descriptionNode;
     const { description, title } = props;
-    const jawHeading = document.createElement('h3');
+    const jawHeading = document.createElement('h1');
     jawHeading.innerText = title;
     const domNode = document.createElement('div');
     const desc = document.createElement('div');
@@ -483,13 +548,8 @@ const Editor = (props: EditorProps): JSX.Element => {
     descContainer.appendChild(desc);
     desc.innerHTML = description;
     highlightAllUnder(desc);
-    // TODO: the solution is probably just to use an overlay that's forced to
-    // follow the decorations.
-    // TODO: this is enough for Firefox, but Chrome needs more before the
-    // user can select text by clicking and dragging.
+
     domNode.style.userSelect = 'text';
-    // The z-index needs increasing as ViewZones default to below the lines.
-    domNode.style.zIndex = '10';
 
     domNode.style.left = `${editor.getLayoutInfo().contentLeft}px`;
     domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
@@ -522,17 +582,11 @@ const Editor = (props: EditorProps): JSX.Element => {
       executeChallenge();
     };
 
-    // TODO: does it?
-    // The z-index needs increasing as ViewZones default to below the lines.
-    outputNode.style.zIndex = '10';
-
     outputNode.style.left = `${editor.getLayoutInfo().contentLeft}px`;
     outputNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
-
     outputNode.style.top = getOutputZoneTop();
 
     dataRef.current.outputNode = outputNode;
-
     return outputNode;
   }
 
@@ -716,9 +770,9 @@ const Editor = (props: EditorProps): JSX.Element => {
   }
 
   function initializeRegions(editableRegion: number[]) {
-    const { model } = dataRef.current;
+    const { model, editor } = dataRef.current;
     const monaco = monacoRef.current;
-    if (!model || !monaco) return;
+    if (!model || !monaco || !editor) return;
 
     const editableRange = positionsToRange(monaco, model, [
       editableRegion[0] + 1,
@@ -729,6 +783,14 @@ const Editor = (props: EditorProps): JSX.Element => {
       monaco,
       model
     })[0];
+
+    // This isn't strictly necessary, but it makes sure the description zone and
+    // widget are always rendered in the correct place. The reason it's not
+    // strictly necessary is that, somehow, the first (incorrect) position was
+    // never rendered.
+    dataRef.current.descriptionZoneTop = editor.getTopForLineNumber(
+      getLineBeforeEditableRegion() + 1
+    );
   }
 
   function addWidgetsToRegions(editor: editor.IStandaloneCodeEditor) {
@@ -764,8 +826,18 @@ const Editor = (props: EditorProps): JSX.Element => {
         descriptionNode,
         getDescriptionZoneTop
       );
+      // this order (add widget, change zone) is necessary, since the zone
+      // relies on the domnode being in the DOM to calculate its height - that
+      // doesn't happen until the widget is added.
       editor.addOverlayWidget(dataRef.current.descriptionWidget);
       editor.changeViewZones(descriptionZoneCallback);
+      // Now that the description zone is in place, the browser knows its height
+      // and we can use that to calculate the top of the output zone.  If we do
+      // not do this the output zone will be on top of the description zone,
+      // initially.
+      dataRef.current.outputZoneTop = editor.getTopForLineNumber(
+        getLastLineOfEditableRegion() + 1
+      );
     }
     if (!dataRef.current.outputWidget) {
       dataRef.current.outputWidget = createWidget(
@@ -818,14 +890,14 @@ const Editor = (props: EditorProps): JSX.Element => {
     // if (
     //  isEqual({ ..._editor.getPosition() }, { lineNumber: 1, column: 1 })
     // ) {
+    const [top, bottom] = editableRegionBoundaries;
     editor.setPosition({
-      lineNumber: editableRegionBoundaries[0] + 1,
+      lineNumber: top + 1,
       column: 1
     });
-    editor.revealLinesInCenter(
-      editableRegionBoundaries[0],
-      editableRegionBoundaries[1]
-    );
+
+    // To prevent descriptionWidget from being out of view
+    editor.revealLinesInCenter(top, top === 0 ? 1 : bottom);
     // }
   }
 
@@ -895,6 +967,18 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.challengeFiles, props.isResetting]);
+
+  useEffect(() => {
+    const { showProjectPreview, previewOpen } = props;
+    if (!previewOpen && showProjectPreview) {
+      const description = document.getElementsByClassName(
+        'description-container'
+      )?.[0];
+      description?.classList.add('description-highlighter');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.previewOpen]);
+
   useEffect(() => {
     const { output } = props;
     const { model, insideEditDecId } = dataRef.current;

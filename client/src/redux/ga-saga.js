@@ -3,10 +3,10 @@ import { takeEvery, call, all, select } from 'redux-saga/effects';
 import { aBTestConfig } from '../../../config/donation-settings';
 import ga from '../analytics';
 import {
-  isSignedInSelector,
   emailSelector,
   completionCountSelector,
-  completedChallengesSelector
+  completedChallengesSelector,
+  recentlyClaimedBlockSelector
 } from '../redux';
 import { emailToABVariant } from '../utils/A-B-tester';
 
@@ -15,14 +15,21 @@ const GaTypes = { event: ga.event, page: ga.pageview, modal: ga.modalview };
 function* callGaType({ payload: { type, data } }) {
   if (
     type === 'event' &&
-    data.category.includes('Donation') &&
+    data.category.toLowerCase().includes('donation') &&
     aBTestConfig.isTesting
   ) {
-    const isSignedIn = yield select(isSignedInSelector);
-    if (isSignedIn) {
-      const email = yield select(emailSelector);
+    const email = yield select(emailSelector);
+    if (email) {
       const completedChallengeTotal = yield select(completedChallengesSelector);
       const completedChallengeSession = yield select(completionCountSelector);
+      let viewType = null;
+
+      // set the modal type
+      if (data.action.toLowerCase().includes('modal')) {
+        const recentlyClaimedBlock = yield select(recentlyClaimedBlockSelector);
+        viewType = recentlyClaimedBlock ? 'block' : 'progress';
+      }
+
       const customDimensions = {
         // URL;
         dimension1: window.location.href,
@@ -33,7 +40,9 @@ function* callGaType({ payload: { type, data } }) {
         // Test_Type
         dimension4: aBTestConfig.type,
         // Test_Variation
-        dimension5: emailToABVariant(email).isAVariant ? 'A' : 'B'
+        dimension5: emailToABVariant(email).isAVariant ? 'A' : 'B',
+        // View_Type
+        dimension6: viewType
       };
       ga.set(customDimensions);
     }

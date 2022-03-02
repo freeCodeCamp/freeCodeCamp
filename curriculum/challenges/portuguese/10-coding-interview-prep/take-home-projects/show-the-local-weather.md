@@ -12,13 +12,13 @@ dashedName: show-the-local-weather
 
 **Regra nº 1:** não olhe o código do projeto de exemplo. Descubra por conta própria.
 
-**Regra nº 2:** atenda às [especificações de usuário abaixo](https://en.wikipedia.org/wiki/User_story). Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
+**Regra nº 2:** atenda às [histórias de usuário](https://pt.wikipedia.org/wiki/Hist%C3%B3ria_de_usu%C3%A1rio) abaixo. Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
 
-**Especificação de usuário:** posso ver o clima na minha localização atual.
+**História de usuário:** posso ver o clima na minha localização atual.
 
-**Especificação de usuário:** posso ver um ícone diferente ou uma imagem de fundo (por exemplo, montanha de neve, deserto quente) dependendo do tempo.
+**História de usuário:** posso ver um ícone diferente ou uma imagem de fundo (por exemplo, montanha de neve, deserto quente) dependendo do tempo.
 
-**Especificação de usuário:** posso apertar um botão para alternar entre Fahrenheit e Celsius.
+**História de usuário:** posso apertar um botão para alternar entre Fahrenheit e Celsius.
 
 **Observação:** muitos navegadores de internet agora requerem uma conexão HTTP segura (`https://`) para obter a localidade de um usuário através da geolocalização do HTML5. Por esta razão, recomendamos o uso da geolocalização do HTML5 para obter a localização do usuário e, em seguida, usar a API do clima do freeCodeCamp [https://weather-proxy. reecodecamp.rocks/](https://weather-proxy.freecodecamp.rocks/), que usa uma conexão HTTP segura para o clima. Além disso, certifique-se de se conectar ao [CodePen.io](https://codepen.io) via `https://`.
 

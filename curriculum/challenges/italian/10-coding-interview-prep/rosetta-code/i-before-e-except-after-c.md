@@ -47,7 +47,7 @@ assert(typeof IBeforeExceptC('receive') == 'boolean');
 assert.equal(IBeforeExceptC('receive'), true);
 ```
 
-`IBeforeExceptC("receive")` dovrebbe restituire `false`.
+`IBeforeExceptC("science")` dovrebbe restituire `false`.
 
 ```js
 assert.equal(IBeforeExceptC('science'), false);

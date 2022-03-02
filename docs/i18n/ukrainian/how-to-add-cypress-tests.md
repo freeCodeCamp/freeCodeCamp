@@ -44,21 +44,17 @@ To run tests against production builds, replace `dev` with `prd` below.
 
 ## Налаштування Cypress-GitPod
 
-### 1. Ensure you are on the _Feature Preview_ of GitPod _as of 01/02/2021_
-
-- Перейдіть на [GitPod Docs - Feature Preview](https://www.gitpod.io/docs/feature-preview/), щоб подивитись як увімкнути _Feature Preview_
-
-### 2. Переконайтеся, що середовище розробки запущене
+### 1. Ensure Development Environment is Running
 
 If starting the GitPod environment did not automatically develop the environment:
 
-- Запустіть базу даних
+- Start the database
 
 ```console
 mongod
 ```
 
-- Заповніть базу даних
+- Seed the database
 
 ```console
 npm run seed
@@ -70,12 +66,12 @@ npm run seed
 npm run develop
 ```
 
-### 3. Встановіть інструменти збірки Cypress
+### 2. Install Cypress Build Tools
 
 ```console
 npm run cypress:install-build-tools
 ```
 
-- Коли запитається у терміналі, виберіть вашу розкладку клавіатури за мовою/регіоном
+- When prompted in the terminal, select your keyboard layout by language/area
 
 Тепер, [Cypress може бути запущений](/how-to-add-cypress-tests#_2-run-the-cypress-tests)

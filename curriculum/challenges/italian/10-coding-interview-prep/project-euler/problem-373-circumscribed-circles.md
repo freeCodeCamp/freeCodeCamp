@@ -1,6 +1,6 @@
 ---
 id: 5900f4e11000cf542c50fff4
-title: 'Problem 373: Circumscribed Circles'
+title: 'Problema 373: Cerchi circoscritti'
 challengeType: 5
 forumTopicId: 302035
 dashedName: problem-373-circumscribed-circles
@@ -8,22 +8,20 @@ dashedName: problem-373-circumscribed-circles
 
 # --description--
 
-Every triangle has a circumscribed circle that goes through the three vertices.
+Ogni triangolo ha un cerchio circoscritto che attraversa i tre vertici. Considera tutti i triangoli a lati interi per i quali è intero anche il raggio del cerchio circoscritto.
 
-Consider all integer sided triangles for which the radius of the circumscribed circle is integral as well.
+Sia $S(n)$ la somma dei raggi dei cerchi circoscritti di tutti questi triangoli per i quali il raggio non supera $n$.
 
-Let S(n) be the sum of the radii of the circumscribed circles of all such triangles for which the radius does not exceed n.
+$S(100) = 4\\,950$ and $S(1\\,200) = 1\\,653\\,605$.
 
-S(100)=4950 and S(1200)=1653605.
-
-Find S(107).
+Trova $S({10}^7)$.
 
 # --hints--
 
-`euler373()` should return 727227472448913.
+`circumscribedCircles()` dovrebbe restituire `727227472448913`.
 
 ```js
-assert.strictEqual(euler373(), 727227472448913);
+assert.strictEqual(circumscribedCircles(), 727227472448913);
 ```
 
 # --seed--
@@ -31,12 +29,12 @@ assert.strictEqual(euler373(), 727227472448913);
 ## --seed-contents--
 
 ```js
-function euler373() {
+function circumscribedCircles() {
 
   return true;
 }
 
-euler373();
+circumscribedCircles();
 ```
 
 # --solutions--

@@ -33,7 +33,7 @@ Puoi selezionare un ambito da [questo elenco di etichette](https://github.com/fr
 
 Scrivila breve (meno di 30 caratteri) e semplice: puoi aggiungere ulteriori informazioni nella casella di descrizione PR e nei commenti.
 
-Alcuni esempi di buoni titoli PR sarebbero:
+Some examples of good PR titles would be:
 
 - `fix(a11y): improved search bar contrast`
 - `feat: add more tests to HTML and CSS challenges`
@@ -44,7 +44,7 @@ Alcuni esempi di buoni titoli PR sarebbero:
 
 1. Una volta che le modifiche sono state effettuate, ti verrà chiesto di creare una pull request sulla pagina GitHub della tua fork.
 
-   ![Immagine - Confrontare il prompt delle pull request su GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
+   ![Image - Compare & pull request prompt on GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
 
 2. Di default, tutte le pull request dovrebbero essere sul repository principale di freeCodeCamp, nel ramo `main`.
 
@@ -72,7 +72,7 @@ Alcuni esempi di buoni titoli PR sarebbero:
 
 ## Feedback sulle pull request
 
-> Congratulazioni! :tada: per avere fatto una PR e grazie mille per aver speso del tempo per contribuire.
+> :tada: Congratulations on making a PR and thanks a lot for taking the time to contribute.
 
 I nostri moderatori ora daranno un'occhiata e ti lasceranno un feedback. Ti preghiamo di essere paziente con i colleghi moderatori e di rispettare il loro tempo. Tutte le pull request sono riviste a tempo debito.
 

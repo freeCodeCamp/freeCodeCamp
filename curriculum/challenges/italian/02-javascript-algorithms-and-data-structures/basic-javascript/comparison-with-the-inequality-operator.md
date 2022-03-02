@@ -14,18 +14,16 @@ L'operatore di disuguaglianza (`!=`) è l'opposto dell'operatore di uguaglianza.
 **Esempi**
 
 ```js
-1 !=  2
-1 != "1"
-1 != '1'
-1 != true
-0 != false
+1 !=  2    // true
+1 != "1"   // false
+1 != '1'   // false
+1 != true  // false
+0 != false // false
 ```
-
-Nell'ordine, queste espressioni saranno valutate `true`, `false`, `false`, `false` e `false`.
 
 # --instructions--
 
-Aggiungi l'operatore di disuguaglianza `!=` nella condizione dell' `if` in modo che la funzione restituisca la stringa `Not Equal` quando `val` non equivale a `99`.
+Aggiungi l'operatore di disuguaglianza `!=` nella condizione dell'`if` in modo che la funzione restituisca la stringa `Not Equal` quando `val` non è equivalente a `99`.
 
 # --hints--
 

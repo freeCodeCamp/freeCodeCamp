@@ -7,56 +7,63 @@ const story = {
   component: Alert,
   argTypes: {
     children: { control: { type: 'text' } },
-    className: { control: { type: 'text' } },
-    dismissLabel: { control: { type: 'text' } }
+    className: { control: { type: 'text' } }
   }
 };
 
 const Template: Story<AlertProps> = args => <Alert {...args} />;
 
-export const Basic = Template.bind({});
-Basic.args = {
+export const Success = Template.bind({});
+Success.args = {
   children: 'Hello, Alert!',
-  className: '',
-  variant: 'success',
-  dismissLabel: 'Close alert',
-  onDismiss: () => console.log('Close alert!')
+  variant: 'success'
 };
 
-export const LongText = (): JSX.Element => (
-  <Alert variant='success'>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi commodi
-    cumque dicta ducimus eum iure, maiores mollitia, odit porro quas quod rerum
-    soluta sunt tempora unde, vel voluptas voluptates.
-  </Alert>
-);
+export const Info = Template.bind({});
+Info.args = {
+  children: 'Hello, Alert!',
+  variant: 'info'
+};
 
-export const WithHeadingAndParagraphs = (): JSX.Element => (
-  <Alert variant='info'>
-    <h4>
-      <strong>Some Heading Text</strong>
-    </h4>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi
-      commodi cumque dicta ducimus eum iure, maiores mollitia, odit porro quas
-      quod rerum soluta sunt tempora unde, vel voluptas voluptates.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi
-      commodi cumque dicta ducimus eum iure, maiores mollitia, odit porro quas
-      quod rerum soluta sunt tempora unde, vel voluptas voluptates.
-    </p>
-  </Alert>
-);
+export const Warning = Template.bind({});
+Warning.args = {
+  children: 'Hello, Alert!',
+  variant: 'warning'
+};
 
-export const WithCloseButton = (): JSX.Element => (
-  <Alert onDismiss={() => console.log('Alert closed')} variant='success'>
-    Hello, Alert!
-  </Alert>
-);
+export const Danger = Template.bind({});
+Danger.args = {
+  children: 'Hello, Alert!',
+  variant: 'danger'
+};
 
-export const WithoutCloseButton = (): JSX.Element => (
-  <Alert variant='success'>Hello, Alert without close button!</Alert>
-);
+export const LongText = Template.bind({});
+LongText.args = {
+  variant: 'success',
+  children:
+    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi commodi cumque dicta ducimus eum iure, maiores mollitia, odit porro quas quod rerum soluta sunt tempora unde, vel voluptas voluptates.'
+};
+
+export const WithHeadingAndParagraphs = Template.bind({});
+WithHeadingAndParagraphs.args = {
+  variant: 'info',
+  children: (
+    <>
+      <h4>
+        <strong>Some Heading Text</strong>
+      </h4>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi
+        commodi cumque dicta ducimus eum iure, maiores mollitia, odit porro quas
+        quod rerum soluta sunt tempora unde, vel voluptas voluptates.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi
+        commodi cumque dicta ducimus eum iure, maiores mollitia, odit porro quas
+        quod rerum soluta sunt tempora unde, vel voluptas voluptates.
+      </p>
+    </>
+  )
+};
 
 export default story;

@@ -1,0 +1,74 @@
+---
+id: 61696ef7ac756c829f9e4048
+title: Step 7
+challengeType: 0
+dashedName: step-7
+---
+
+# --description--
+
+In this project you'll work with an external CSS file to style the page. We've already created a `styles.css` file for you. But before you can use it, you'll need to link it to the page.
+
+Nest a `link` element within the `head`. Give it a `rel` attribute set to `stylesheet`, a `type` attribute set to `text/css`, and an `href` attribute set to `styles.css`.
+
+# --hints--
+
+Your code should have one `link` element.
+
+```js
+assert(code.match(/<link/i)?.length === 1);
+```
+
+Your `link` element should be a self-closing element.
+
+```js
+assert(code.match(/<\/link>/i) === null);
+```
+
+Your `link` element should be within your `head` element.
+
+```js
+const head = code.match(/<head>(.|\r|\n)*<\/head>/i)?.[0];
+assert(head.match(/<link/i)?.length === 1)
+```
+
+Your `link` element should have a `rel` attribute with the value `stylesheet`.
+
+```js
+assert(code.match(/<link[\s\S]*?rel=('|"|`)stylesheet\1/gi)?.length === 1);
+```
+
+Your `link` element should have a `type` attribute with the value `text/css`.
+
+```js
+assert(code.match(/<link[\s\S]*?type=('|"|`)text\/css\1/gi)?.length === 1);
+```
+
+Your `link` element should have an `href` attribute with the value `styles.css`. Remember, casing matters when you link to an external file.
+
+```js
+assert.match(code, /<link[\s\S]*?href=('|"|`)(\.\/)?styles\.css\1/);
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html>
+  --fcc-editable-region--
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Color Markers</title>
+  </head>
+  --fcc-editable-region--
+  <body>
+    <h1>CSS Color Markers</h1>
+  </body>
+</html>
+```
+
+```css
+```

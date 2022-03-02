@@ -31,6 +31,7 @@ export const UserPropType = PropTypes.shape({
   isQaCertV7: PropTypes.bool,
   isInfosecCertV7: PropTypes.bool,
   isJsAlgoDataStructCert: PropTypes.bool,
+  isRelationalDatabaseCertV8: PropTypes.bool,
   isRespWebDesignCert: PropTypes.bool,
   isSciCompPyCertV7: PropTypes.bool,
   isDataAnalysisPyCertV7: PropTypes.bool,
@@ -86,6 +87,8 @@ export type MarkdownRemark = {
     block: string;
     isBeta: boolean;
     superBlock: SuperBlocks;
+    // TODO: make enum like superBlock
+    certification: string;
     title: typeof certMap[number]['title'];
   };
   headings: [
@@ -127,9 +130,24 @@ export interface VideoLocaleIds {
   portuguese?: string;
 }
 
+export type ChallengeWithCompletedNode = {
+  block: string;
+  challengeType: number;
+  dashedName: string;
+  fields: {
+    slug: string;
+  };
+  id: string;
+  isCompleted: boolean;
+  order: number;
+  superBlock: SuperBlocks;
+  title: string;
+};
+
 export type ChallengeNode = {
   challenge: {
     block: string;
+    certification: string;
     challengeOrder: number;
     challengeType: number;
     dashedName: string;
@@ -285,6 +303,7 @@ export type ClaimedCertifications = {
   isQaCertV7: boolean;
   isInfosecCertV7: boolean;
   isJsAlgoDataStructCert: boolean;
+  isRelationalDatabaseCertV8: boolean;
   isRespWebDesignCert: boolean;
   isSciCompPyCertV7: boolean;
   isDataAnalysisPyCertV7: boolean;
@@ -340,14 +359,13 @@ export type ChallengeFile = {
   name: string;
   editableRegionBoundaries: number[];
   usesMultifileEditor: boolean;
-  path: string;
   error: null | string;
   head: string;
   tail: string;
   seed: string;
   contents: string;
   id: string;
-  history: [[string], string];
+  history: string[];
 };
 
 export type ChallengeFiles = ChallengeFile[] | null;

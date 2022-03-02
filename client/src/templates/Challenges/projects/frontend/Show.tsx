@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
@@ -65,8 +63,7 @@ interface ProjectProps {
 // Component
 class Project extends Component<ProjectProps> {
   static displayName: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  private _container: any;
+  private _container: HTMLElement | null = null;
 
   constructor(props: ProjectProps) {
     super(props);
@@ -90,7 +87,7 @@ class Project extends Component<ProjectProps> {
       helpCategory
     });
     challengeMounted(challengeMeta.id);
-    this._container.focus();
+    this._container?.focus();
   }
 
   componentDidUpdate(prevProps: ProjectProps): void {
@@ -144,6 +141,7 @@ class Project extends Component<ProjectProps> {
             description,
             instructions,
             superBlock,
+            certification,
             block,
             translationPending
           }
@@ -203,6 +201,7 @@ class Project extends Component<ProjectProps> {
               <CompletionModal
                 block={block}
                 blockName={blockName}
+                certification={certification}
                 superBlock={superBlock}
               />
               <HelpModal />
@@ -232,6 +231,7 @@ export const query = graphql`
         challengeType
         helpCategory
         superBlock
+        certification
         block
         translationPending
         fields {

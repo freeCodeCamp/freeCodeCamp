@@ -33,7 +33,8 @@
   "rules": {
     "import/named": 2,
     "import/no-named-as-default": 0,
-    "import/no-named-as-default-member": 0
+    "import/no-named-as-default-member": 0,
+    "import/order": 2
   },
   "overrides": [
     {
@@ -42,8 +43,8 @@
       "parserOptions": {
         "project": [
           "./tsconfig.json",
-          "./tools/ui-components/tsconfig.json",
-          "./tools/tsconfig.json"
+          "./config/tsconfig.json",
+          "./tools/ui-components/tsconfig.json"
         ]
       },
       "extends": [

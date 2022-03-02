@@ -17,5 +17,9 @@ export const fixCompletedChallengeItem = obj =>
     'solution',
     'githubLink',
     'challengeType',
-    'files'
+    'files',
+    'isManuallyApproved'
   ]);
+
+export const fixPartiallyCompletedChallengeItem = obj =>
+  pick(obj, ['id', 'completedDate']);

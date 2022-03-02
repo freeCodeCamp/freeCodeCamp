@@ -1,6 +1,6 @@
 ---
 id: 5900f4c81000cf542c50ffd9
-title: 'Problem 347: Largest integer divisible by two primes'
+title: 'Problema 347: Intero più grande divisibile per due primi'
 challengeType: 5
 forumTopicId: 302006
 dashedName: problem-347-largest-integer-divisible-by-two-primes
@@ -8,24 +8,24 @@ dashedName: problem-347-largest-integer-divisible-by-two-primes
 
 # --description--
 
-The largest integer ≤ 100 that is only divisible by both the primes 2 and 3 is 96, as 96=32\*3=25\*3.
+Il più grande intero $≤ 100$ che è divisibile solo per entrambe i primi 2 e 3 è 96, poiché $96 = 32 \times 3 = 2^5 \times 3$.
 
-For two distinct primes p and q let M(p,q,N) be the largest positive integer ≤N only divisible
+Per due primi distinti $p$ e $q$ sia $M(p, q, N)$ il più grande intero positivo $≤ N$ divisibile solo per $p$ e $q$ e $M(p, q, N)=0$ se tale numero intero positivo non esiste.
 
-by both p and q and M(p,q,N)=0 if such a positive integer does not exist.
+Ad es. $M(2, 3, 100) = 96$.
 
-E.g. M(2,3,100)=96. M(3,5,100)=75 and not 90 because 90 is divisible by 2 ,3 and 5. Also M(2,73,100)=0 because there does not exist a positive integer ≤ 100 that is divisible by both 2 and 73.
+$M(3, 5, 100) = 75$ e non 90 perché 90 è divisibile per 2, 3 e 5. Anche $M(2, 73, 100) = 0$ perché non esiste un numero intero positivo $≤ 100$ che è divisibile sia per 2 che 73.
 
-Let S(N) be the sum of all distinct M(p,q,N). S(100)=2262.
+Sia $S(N)$ la somma di tutti gli $M(p, q, N)$ distinti. $S(100)=2262$.
 
-Find S(10 000 000).
+Trova $S(10\\,000\\,000)$.
 
 # --hints--
 
-`euler347()` should return 11109800204052.
+`integerDivisibleByTwoPrimes()` dovrebbe restituire `11109800204052`.
 
 ```js
-assert.strictEqual(euler347(), 11109800204052);
+assert.strictEqual(integerDivisibleByTwoPrimes(), 11109800204052);
 ```
 
 # --seed--
@@ -33,12 +33,12 @@ assert.strictEqual(euler347(), 11109800204052);
 ## --seed-contents--
 
 ```js
-function euler347() {
+function integerDivisibleByTwoPrimes() {
 
   return true;
 }
 
-euler347();
+integerDivisibleByTwoPrimes();
 ```
 
 # --solutions--

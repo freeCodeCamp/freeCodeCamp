@@ -10,11 +10,11 @@ dashedName: build-a-wikipedia-viewer
 
 **Objetivo:** criar uma aplicação no [CodePen.io](https://codepen.io) que tenha função semelhante a esta: <https://codepen.io/freeCodeCamp/full/wGqEga/>.
 
-Atenda às [especificações de usuário abaixo](https://en.wikipedia.org/wiki/User_story). Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
+Atenda às [histórias de usuário](https://pt.wikipedia.org/wiki/Hist%C3%B3ria_de_usu%C3%A1rio) abaixo. Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
 
-**Especificação de usuário:** eu posso pesquisar postagens na Wikipédia e ver as entradas da Wikipédia resultantes.
+**História de usuário:** eu posso pesquisar postagens na Wikipédia e ver as entradas da Wikipédia resultantes.
 
-**Especificação de usuário:** posso clicar em um botão para ver uma entrada aleatória da Wikipédia.
+**História de usuário:** posso clicar em um botão para ver uma entrada aleatória da Wikipédia.
 
 Dica nº 1: aqui está um URL que você pode usar para obter um artigo aleatório da Wikipédia: `https://en.wikipedia.org/wiki/Special:Random`.
 

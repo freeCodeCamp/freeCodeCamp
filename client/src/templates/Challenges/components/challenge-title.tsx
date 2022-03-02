@@ -10,6 +10,7 @@ interface ChallengeTitleProps {
   block: string;
   children: string;
   isCompleted: boolean;
+  showBreadCrumbs?: boolean;
   superBlock: string;
   translationPending: boolean;
 }
@@ -18,6 +19,7 @@ function ChallengeTitle({
   block,
   children,
   isCompleted,
+  showBreadCrumbs = true,
   superBlock,
   translationPending
 }: ChallengeTitleProps): JSX.Element {
@@ -34,10 +36,10 @@ function ChallengeTitle({
           </Link>
         </>
       )}
-      <BreadCrumb block={block} superBlock={superBlock} />
+      {showBreadCrumbs && <BreadCrumb block={block} superBlock={superBlock} />}
       <div className='challenge-title'>
         <div className='title-text'>
-          <b>{children}</b>
+          <h1>{children}</h1>
           {isCompleted ? (
             <GreenPass
               style={{ height: '15px', width: '15px', marginLeft: '7px' }}

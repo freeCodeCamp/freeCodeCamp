@@ -76,6 +76,7 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
               node {
                 challenge {
                   block
+                  certification
                   challengeType
                   fields {
                     slug
@@ -94,10 +95,12 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
                     contents
                     head
                     tail
+                    history
                   }
                   solutions {
                     contents
                     ext
+                    history
                   }
                   superBlock
                   superOrder
@@ -116,6 +119,7 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
                   component
                 }
                 frontmatter {
+                  certification
                   block
                   superBlock
                   title
@@ -183,6 +187,7 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
             const pageBuilder = createByIdentityMap[nodeIdentity](createPage);
             pageBuilder(edge);
           } catch (e) {
+            console.log(e);
             console.log(`
             ident: ${nodeIdentity} does not belong to a function
 
@@ -224,7 +229,7 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
         path: require.resolve('path-browserify'),
         assert: require.resolve('assert'),
         crypto: require.resolve('crypto-browserify'),
-        util: false,
+        util: require.resolve('util/util'),
         buffer: require.resolve('buffer'),
         stream: require.resolve('stream-browserify'),
         process: require.resolve('process/browser')

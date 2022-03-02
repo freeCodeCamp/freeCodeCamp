@@ -1,9 +1,10 @@
 import debug from 'debug';
 import { check } from 'express-validator';
+import isURL from 'validator/lib/isURL';
 
 import { isValidUsername } from '../../../../utils/validate';
 import { alertTypes } from '../../common/utils/flash.js';
-import { themes } from '../../common/utils/themes.js';
+import { deprecatedEndpoint } from '../utils/deprecatedEndpoint';
 import { ifNoUser401, createValidatorErrorHandler } from '../utils/middleware';
 
 const log = debug('fcc:boot:settings');
@@ -15,11 +16,7 @@ export default function settingsController(app) {
 
   api.put('/update-privacy-terms', ifNoUser401, updatePrivacyTerms);
 
-  api.post(
-    '/refetch-user-completed-challenges',
-    ifNoUser401,
-    refetchCompletedChallenges
-  );
+  api.post('/refetch-user-completed-challenges', deprecatedEndpoint);
   api.post(
     '/update-my-current-challenge',
     ifNoUser401,
@@ -28,13 +25,7 @@ export default function settingsController(app) {
     updateMyCurrentChallenge
   );
   api.post('/update-my-portfolio', ifNoUser401, updateMyPortfolio);
-  api.post(
-    '/update-my-theme',
-    ifNoUser401,
-    updateMyThemeValidators,
-    createValidatorErrorHandler(alertTypes.danger),
-    updateMyTheme
-  );
+  api.post('/update-my-theme', deprecatedEndpoint);
   api.put('/update-my-about', ifNoUser401, updateMyAbout);
   api.put(
     '/update-my-email',
@@ -67,13 +58,6 @@ const createStandardHandler = (req, res, next) => err => {
   }
   return res.status(200).json(standardSuccessMessage);
 };
-
-function refetchCompletedChallenges(req, res, next) {
-  const { user } = req;
-  return user
-    .requestCompletedChallenges()
-    .subscribe(completedChallenges => res.json({ completedChallenges }), next);
-}
 
 const updateMyEmailValidators = [
   check('email').isEmail().withMessage('Email format is invalid.')
@@ -113,25 +97,6 @@ function updateMyCurrentChallenge(req, res, next) {
   );
 }
 
-const updateMyThemeValidators = [
-  check('theme').isIn(Object.keys(themes)).withMessage('Theme is invalid.')
-];
-
-function updateMyTheme(req, res, next) {
-  const {
-    body: { theme }
-  } = req;
-  if (req.user.theme === theme) {
-    return res.sendFlash(alertTypes.info, 'Theme already set');
-  }
-  return req.user
-    .updateTheme(theme)
-    .then(
-      () => res.sendFlash(alertTypes.info, 'Your theme has been updated!'),
-      next
-    );
-}
-
 function updateMyPortfolio(req, res, next) {
   const {
     user,
@@ -164,10 +129,11 @@ function updateMyAbout(req, res, next) {
     body: { name, location, about, picture }
   } = req;
   log(name, location, picture, about);
-  return user.updateAttributes(
-    { name, location, about, picture },
-    createStandardHandler(req, res, next)
-  );
+  // prevent dataurls from being stored
+  const update = isURL(picture, { require_protocol: true })
+    ? { name, location, about, picture }
+    : { name, location, about };
+  return user.updateAttributes(update, createStandardHandler(req, res, next));
 }
 
 function createUpdateMyUsername(app) {

@@ -1,6 +1,6 @@
 ---
 id: 5900f3d71000cf542c50fee9
-title: 'Problem 106: Special subset sums: meta-testing'
+title: 'Problema 106: somme di subset speciali: meta-testing'
 challengeType: 5
 forumTopicId: 301730
 dashedName: problem-106-special-subset-sums-meta-testing
@@ -8,22 +8,22 @@ dashedName: problem-106-special-subset-sums-meta-testing
 
 # --description--
 
-Let $S(A)$ represent the sum of elements in set A of size n. We shall call it a special sum set if for any two non-empty disjoint subsets, B and C, the following properties are true:
+Sia $S(A)$ la somma degli elementi in un set A di dimensione n. Lo chiamiamo un set di somma speciale se per ogni due subset non vuoi e distinti, B e C, le seguenti proprietà sono vere:
 
-1. $S(B) ≠ S(C)$; that is, sums of subsets cannot be equal.
-2. If B contains more elements than C then $S(B) > S(C)$.
+1. $S(B) ≠ S(C)$, cioè le somme dei subset non possono essere uguali.
+2. Se B contiene più elementi di C allora $S(B) > S(C)$.
 
-For this problem we shall assume that a given set contains n strictly increasing elements and it already satisfies the second rule.
+Per questo problema supponiamo che un dato set contiene n elementi in ordine strettamente crescente, e soddisfa la seconda regola.
 
-Surprisingly, out of the 25 possible subset pairs that can be obtained from a set for which n = 4, only 1 of these pairs need to be tested for equality (first rule). Similarly, when n = 7, only 70 out of the 966 subset pairs need to be tested.
+Sorprendentemente, delle 25 possibili coppie di subset che possono essere ottenute da un set per cui n = 4, solo una di queste coppie deve essere testata per uguaglianza (prima regola). Similmente, quando n = 7, solo 70 delle 966 coppie di subset ha bisogno di essere testata.
 
-For n = 12, how many of the 261625 subset pairs that can be obtained need to be tested for equality?
+Per n = 12, quante delle 261625 coppie di subset che possono essere ottenute devono essere testate per uguaglianza?
 
-**Note:** This problem is related to Problem 103 and Problem 105.
+**Nota:** questo problema è legato ai problemi 103 e 105.
 
 # --hints--
 
-`subsetSumsMetaTesting()` should return `21384`.
+`subsetSumsMetaTesting()` dovrebbe restituire `21384`.
 
 ```js
 assert.strictEqual(subsetSumsMetaTesting(), 21384);

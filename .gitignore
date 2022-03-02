@@ -165,9 +165,6 @@ config/curriculum.json
 config/i18n/all-langs.js
 config/certification-settings.js
 
-tools/scripts/build/ensure-env.js
-tools/tsconfig.tsbuildinfo
-tools/scripts/lint/validate-keys.js
 
 ### vim ###
 # Swap
@@ -204,6 +201,7 @@ api-server/lib/*
 curriculum/dist
 curriculum/build
 client/static/_redirects
+client/static/mobile
 
 ### UI Components ###
 tools/ui-components/dist

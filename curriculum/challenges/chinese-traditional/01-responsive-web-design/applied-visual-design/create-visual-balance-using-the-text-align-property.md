@@ -13,7 +13,7 @@ dashedName: create-visual-balance-using-the-text-align-property
 
 web 內容大部分都是文本。 CSS 裏面的 `text-align` 屬性可以控制文本的對齊方式。
 
-`text-align: justify;` 可以讓除最後一行之外的文字兩端對齊，即每行的左右兩端都緊貼行的邊緣。
+`text-align: justify;` 將文本隔開，使每行的寬度相等。
 
 `text-align: center;` 可以讓文本居中對齊。
 

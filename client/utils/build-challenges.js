@@ -6,12 +6,11 @@ const envData = require('../../config/env.json');
 const {
   getChallengesForLang,
   createChallenge,
-  createCertification,
   challengesDir,
   getChallengesDirForLang
 } = require('../../curriculum/getChallenges');
 
-const { curriculumLocale } = envData;
+const { curriculumLocale, deploymentEnv } = envData;
 
 exports.localeChallengesRootDir = getChallengesDirForLang(curriculumLocale);
 
@@ -26,16 +25,25 @@ exports.replaceChallengeNode = () => {
       `../../curriculum/challenges/_meta/${blockName}/meta.json`
     );
     delete require.cache[require.resolve(metaPath)];
-    const isCert = path.extname(filePath) === '.yml';
     const meta = require(metaPath);
-    return isCert
-      ? await createCertification(challengesDir, filePath, curriculumLocale)
-      : await createChallenge(challengesDir, filePath, curriculumLocale, meta);
+    // TODO: reimplement hot-reloading of certifications
+    return await createChallenge(
+      challengesDir,
+      filePath,
+      curriculumLocale,
+      meta
+    );
   };
 };
 
 exports.buildChallenges = async function buildChallenges() {
   const curriculum = await getChallengesForLang(curriculumLocale);
+
+  // temp removal of rdbms from production
+  if (deploymentEnv !== 'staging') {
+    delete curriculum['13-relational-databases'];
+  }
+
   const superBlocks = Object.keys(curriculum);
   const blocks = superBlocks
     .map(superBlock => curriculum[superBlock].blocks)

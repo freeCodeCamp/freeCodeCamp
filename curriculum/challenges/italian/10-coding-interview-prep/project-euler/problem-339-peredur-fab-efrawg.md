@@ -1,6 +1,6 @@
 ---
 id: 5900f4c01000cf542c50ffd2
-title: 'Problem 339: Peredur fab Efrawg'
+title: 'Problema 339: Peredur fab Efrawg'
 challengeType: 5
 forumTopicId: 301997
 dashedName: problem-339-peredur-fab-efrawg
@@ -8,18 +8,20 @@ dashedName: problem-339-peredur-fab-efrawg
 
 # --description--
 
-"And he came towards a valley, through which ran a river; and the borders of the valley were wooded, and on each side of the river were level meadows. And on one side of the river he saw a flock of white sheep, and on the other a flock of black sheep. And whenever one of the white sheep bleated, one of the black sheep would cross over and become white; and when one of the black sheep bleated, one of the white sheep would cross over and become black."en.wikisource.org
+"E venne verso una valle, attraverso la quale correva un fiume; e i confini della valle erano boscosi, e su ogni lato del fiume vi erano prati pianeggianti. Da un lato del fiume vide un gregge di pecore bianche, dall'altro un gregge di pecore nere. E ogni volta che una delle pecore bianche belava, una delle pecore nere attraversava e diventava bianca; e quando una delle pecore nere belava, una delle pecore bianche attraversava e diventava nera." - Peredur Figlio di Evrawc
 
-Initially each flock consists of n sheep. Each sheep (regardless of colour) is equally likely to be the next sheep to bleat. After a sheep has bleated and a sheep from the other flock has crossed over, Peredur may remove a number of white sheep in order to maximize the expected final number of black sheep. Let E(n) be the expected final number of black sheep if Peredur uses an optimal strategy.
+Inizialmente, ogni gregge è costituito da $n$ pecore. Ogni pecora (indipendentemente dal colore) è altrettanto probabile che sia la prossima pecora a belare. Dopo che una pecora ha belato e una pecora dall'altro gregge ha attraversato, Peredur può rimuovere un numero di pecore bianche al fine di massimizzare il numero finale previsto di pecore nere. Sia $E(n)$ il numero aspettato finale di pecore nere se Peredur usa una strategia ottimale.
 
-You are given that E(5) = 6.871346 rounded to 6 places behind the decimal point. Find E(10 000) and give your answer rounded to 6 places behind the decimal point.
+Ti è dato che $E(5) = 6.871346$ arrotondato a 6 cifre decimali.
+
+Trova $E(10\\,000)$ e dai la tua risposta arrotondata a 6 cifre decimali.
 
 # --hints--
 
-`euler339()` should return 19823.542204.
+`peredurFabEfrawg()` dovrebbe restituire `19823.542204`.
 
 ```js
-assert.strictEqual(euler339(), 19823.542204);
+assert.strictEqual(peredurFabEfrawg(), 19823.542204);
 ```
 
 # --seed--
@@ -27,12 +29,12 @@ assert.strictEqual(euler339(), 19823.542204);
 ## --seed-contents--
 
 ```js
-function euler339() {
+function peredurFabEfrawg() {
 
   return true;
 }
 
-euler339();
+peredurFabEfrawg();
 ```
 
 # --solutions--

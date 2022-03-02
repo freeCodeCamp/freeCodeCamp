@@ -9,7 +9,7 @@ dashedName: create-a-more-complex-shape-using-css-and-html
 
 # --description--
 
-世界上最流行的形狀非心形莫屬了，在本挑戰中我們將用純 CSS 創建一個心形。 但是首先你需要了解僞元素 `::before` 和 `::after`。 僞元素可以在所選元素之前或之後添加一些內容。 在下面的代碼中，`::before` 僞元素用來給 class 爲 `heart` 的元素添加一個正方形：
+世界上最流行的形狀非心形莫屬了，在本挑戰中我們將用純 CSS 創建一個心形。 但是首先你需要了解僞元素 `::before` 和 `::after`。 `::before` 創建一個僞元素，它是所選元素的第一個子元素； `::after` 創建一個僞元素，它是所選元素的最後一個子元素。 在下面的代碼中，`::before` 僞元素用來給 class 爲 `heart` 的元素添加一個正方形：
 
 ```css
 .heart::before {
