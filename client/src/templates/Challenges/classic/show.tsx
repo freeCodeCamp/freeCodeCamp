@@ -17,6 +17,7 @@ import {
   ChallengeNode,
   CompletedChallenge,
   ResizeProps,
+  SavedChallengeFiles,
   Test
 } from '../../../redux/prop-types';
 import { isContained } from '../../../utils/is-contained';
@@ -87,7 +88,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 interface ShowClassicProps {
   cancelTests: () => void;
   challengeMounted: (arg0: string) => void;
-  createFiles: (arg0: ChallengeFiles) => void;
+  createFiles: (arg0: ChallengeFiles | SavedChallengeFiles) => void;
   data: { challengeNode: ChallengeNode };
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
   challengeFiles: ChallengeFiles;
