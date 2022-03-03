@@ -31,9 +31,7 @@ describe('Webhook token component', function () {
 
       it('should allow you to create a token', function () {
         cy.contains('Create a new token').click();
-        cy.contains('You have successfully created a new token.').should(
-          'exist'
-        );
+        cy.contains('You have successfully created a new token.');
       });
     });
 
@@ -50,12 +48,10 @@ describe('Webhook token component', function () {
 
       it('should allow you to create and delete a token', function () {
         cy.contains('Create a new token').click();
-        cy.contains('You have successfully created a new token.').should(
-          'exist'
-        );
+        cy.contains('You have successfully created a new token.');
         cy.contains('Delete my token').click();
         cy.contains('Yes please, I would like to delete my token').click();
-        cy.contains('Your token has been delete').should('exist');
+        cy.contains('Your token has been deleted');
       });
     });
   });

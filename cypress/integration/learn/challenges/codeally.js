@@ -12,7 +12,7 @@ describe('CodeAlly cert challenge', function () {
       cy.get('input[name="solution"]')
         .type('https://example.com')
         .type('{enter}');
-      cy.contains('You must complete the project first.').should('exist');
+      cy.contains('You must complete the project first.');
     });
   });
 
