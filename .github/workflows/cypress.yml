@@ -92,7 +92,7 @@ jobs:
       - name: Checkout Source Files
         uses: actions/checkout@v3
 
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
         with:
           name: client-artifact
 
