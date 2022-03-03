@@ -316,7 +316,9 @@ export type CompletedChallenge = {
   githubLink?: string;
   challengeType?: number;
   completedDate: number;
-  challengeFiles: ChallengeFiles;
+  challengeFiles:
+    | Pick<ChallengeFile, 'contents' | 'ext' | 'fileKey' | 'name'>[]
+    | null;
 };
 
 export type Ext = 'js' | 'html' | 'css' | 'jsx';

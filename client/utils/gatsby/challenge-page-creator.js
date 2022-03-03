@@ -126,9 +126,7 @@ function getProjectPreviewConfig(challenge, allChallengeEdges) {
       challengeType !== challengeTypes.multiFileCertProject,
     challengeData: {
       challengeType: lastChallenge.challengeType,
-      challengeFiles: projectPreviewChallengeFiles,
-      required: lastChallenge.required,
-      template: lastChallenge.template
+      challengeFiles: projectPreviewChallengeFiles
     }
   };
 }
