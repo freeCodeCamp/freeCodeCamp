@@ -19,15 +19,15 @@
   flex-direction: row;
 }
 
-.block-header .block-link {
+.block-header .big-block-title {
   flex-grow: 3;
   flex-basis: 0;
   padding: 25px 15px 10px;
 }
 
-.block-link:hover,
-.block-link:focus,
-.block-link:active {
+.big-block-title:hover,
+.big-block-title:focus,
+.big-block-title:active {
   background-color: var(--primary-background);
 }
 
@@ -36,19 +36,6 @@ a.cert-tag:focus,
 a.cert-tag:active {
   color: var(--highlight-background);
   background-color: var(--highlight-color);
-}
-
-.block-link {
-  cursor: pointer;
-}
-
-.block-link:hover .block-link-icon {
-  display: inline-block;
-}
-
-.block-link-icon {
-  display: none;
-  margin-left: 15px;
 }
 
 .big-block-title {
@@ -225,6 +212,7 @@ button.map-title {
 
 .block-grid .map-title > svg:last-child {
   transform: rotate(180deg);
+  margin-left: auto;
 }
 
 .block-grid.open .map-title > svg:last-child {
@@ -363,9 +351,6 @@ button.map-title {
 
 .block-grid .block-header {
   flex-direction: column;
-}
-
-.block-grid .block-header {
   display: flex;
   background: transparent;
   border: none;
@@ -388,10 +373,6 @@ button.map-title {
 .block-ui .block-grid .block-description {
   border: none;
   padding: 0 10px 10px;
-}
-
-.block-grid .map-title > svg:last-child {
-  margin-left: auto;
 }
 
 .block-grid .map-title > svg {
