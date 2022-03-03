@@ -10,14 +10,9 @@ dashedName: arithmetic-formatter
 
 このプロジェクトは [Replit スターターコード](https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter)を使用して作業を行います。
 
-Python カリキュラムの対話式教育コンテンツを引き続き開発中です。 現在、下記の freeCodeCamp.org YouTube チャンネルで、このプロジェクトの完了に必要なすべての知識について説明する動画をいくつか公開しています。
-
-- [「みんなで Python」ビデオコース](https://www.freecodecamp.org/news/python-for-everybody/) (14 時間)
-- [「Python を学ぶ」ビデオコース](https://www.freecodecamp.org/news/learn-python-video-course/) (10 時間)
-
 # --instructions--
 
-小学校の算数では計算問題を解きやすくるために縦書きにすることが多くあります。 たとえば「235 + 52」を次のように記述します。
+Students in primary school often arrange arithmetic problems vertically to make them easier to solve. For example, "235 + 52" becomes:
 
 ```py
   235
@@ -25,17 +20,17 @@ Python カリキュラムの対話式教育コンテンツを引き続き開発�
 -----
 ```
 
-計算問題を表す文字列のリストを受け取り、問題を縦書きに整形して返す関数を作成してください。 この関数はオプションで第 2 引数を受け取る必要があります。 第 2 引数が `True` に設定されている場合は、解答を表示する必要があります。
+Create a function that receives a list of strings that are arithmetic problems and returns the problems arranged vertically and side-by-side. The function should optionally take a second argument. When the second argument is set to `True`, the answers should be displayed.
 
 ## 例
 
-関数呼び出し:
+Function Call:
 
 ```py
 arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])
 ```
 
-出力:
+Output:
 
 ```py
    32      3801      45      123
@@ -43,13 +38,13 @@ arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])
 -----    ------    ----    -----
 ```
 
-関数呼び出し:
+Function Call:
 
 ```py
 arithmetic_arranger(["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"], True)
 ```
 
-出力:
+Output:
 
 ```py
   32         1      9999      523
@@ -60,35 +55,35 @@ arithmetic_arranger(["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"], True)
 
 ## ルール
 
-入力された問題が正しく整形されている場合、この関数は正しい変換結果を返します。それ以外の場合は、**ユーザーにとって意味のあるエラーを記述した****文字列**を返します。
+The function will return the correct conversion if the supplied problems are properly formatted, otherwise, it will **return** a **string** that describes an error that is meaningful to the user.
 
 
-- エラーを返す場合:
-  - 関数に入力した**問題の数が多すぎる**場合。 上限を **5** つとし、それを超える場合は `Error: Too many problems.` (エラー: 問題が多すぎます) を返します。
-  - 関数が受け取ることのできる適切な演算子は**足し算**と**引き算**です。 掛け算と割り算はエラーを返します。 この箇条書きで指示していない他の演算子についてはテストする必要はありません。 次のようなエラーを返します: `Error: Operator must be '+' or '-'.` (エラー: '+' または '-' の演算子を使用してください)。
-  - 数値 (オペランド) にはそれぞれ数字のみを含める必要があります。 数値以外の場合、関数は次のエラーを返します: `Error: Numbers must only contain digits.` (エラー: 数値には数字のみを含める必要があります)。
-  - それぞれのオペランド (演算子の両側の数値) の幅は最大 4 桁です。 それ以外の場合は、次のようなエラー文字列を返します: `Error: Numbers cannot be more than four digits.` (エラー: 数値は 4 桁以内にする必要があります)。
-- ユーザーが問題を正しい形式で入力した場合は、次のルールに従って変換結果を返します。
-  - 演算子と、2 つのオペランドのうち最も長いオペランドとの間に、スペースを 1 つ含めます。演算子は 2 つ目のオペランドと同じ行に表示し、両方のオペランドは入力されたとおりの順序で表示します (1 つ目のオペランドを上側に、2 つ目のオペランドを下側に表示します)。
-  - 数値は右揃えにする必要があります。
-  - それぞれの問題の間に 4 つのスペースが必要です。
-  - それぞれの問題の一番下にダッシュが必要です。 ダッシュは、各問題の全体の長さに沿った長さにする必要があります (上の表示例を参考にしてください)
+- Situations that will return an error:
+  - If there are **too many problems** supplied to the function. The limit is **five**, anything more will return: `Error: Too many problems.`
+  - The appropriate operators the function will accept are **addition** and **subtraction**. Multiplication and division will return an error. Other operators not mentioned in this bullet point will not need to be tested. The error returned will be: `Error: Operator must be '+' or '-'.`
+  - Each number (operand) should only contain digits. Otherwise, the function will return: `Error: Numbers must only contain digits.`
+  - Each operand (aka number on each side of the operator) has a max of four digits in width. Otherwise, the error string returned will be: `Error: Numbers cannot be more than four digits.`
+- If the user supplied the correct format of problems, the conversion you return will follow these rules:
+  - There should be a single space between the operator and the longest of the two operands, the operator will be on the same line as the second operand, both operands will be in the same order as provided (the first will be the top one and the second will be the bottom.
+  - Numbers should be right-aligned.
+  - There should be four spaces between each problem.
+  - There should be dashes at the bottom of each problem. The dashes should run along the entire length of each problem individually. (The example above shows what this should look like.)
 
 ## 開発
 
-`arithmetic_arranger.py` でコードを記述してください。 開発には `main.py` を使用して `arithmetic_arranger()` 関数をテストすることができます。 「実行」ボタンをクリックすると `main.py` が実行されます。
+Write your code in `arithmetic_arranger.py`. For development, you can use `main.py` to test your `arithmetic_arranger()` function. Click the "run" button and `main.py` will run.
 
 ## テスト
 
-このプロジェクトの単体テストは `test_module.py` にあります。 `test_module.py` のテストを `main.py` で実行できるようになっています。 「実行」ボタンを押すと自動的にテストが実行されます。 または、コンソールに `pytest` と入力してテストを実行することもできます。
+The unit tests for this project are in `test_module.py`. We are running the tests from `test_module.py` in `main.py` for your convenience. The tests will run automatically whenever you hit the "run" button. Alternatively you may run the tests by inputting `pytest` in the console.
 
 ## 提出
 
-プロジェクトの URL をコピーし、下記に提出してください。
+Copy your project's URL and submit it below.
 
 # --hints--
 
-計算問題を正しく整形し、すべてのテストに合格する必要があります。
+It should correctly format an arithmetic problem and pass all tests.
 
 ```js
 

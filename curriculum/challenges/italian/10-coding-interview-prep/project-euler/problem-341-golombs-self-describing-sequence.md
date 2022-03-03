@@ -1,6 +1,6 @@
 ---
 id: 5900f4c11000cf542c50ffd3
-title: 'Problem 341: Golomb''s self-describing sequence'
+title: 'Problema 341: Sequenza auto-descrittiva di Golomb'
 challengeType: 5
 forumTopicId: 302000
 dashedName: problem-341-golombs-self-describing-sequence
@@ -8,20 +8,22 @@ dashedName: problem-341-golombs-self-describing-sequence
 
 # --description--
 
-The Golomb's self-describing sequence {G(n)} is the only nondecreasing sequence of natural numbers such that n appears exactly G(n) times in the sequence. The values of G(n) for the first few n are
+La sequenza di auto-descrizione di Golomb ($G(n)$) è l'unica sequenza non decrescente di numeri naturali tali che $n$ appaia esattamente $G(n)$ volte nella sequenza. I valori di $G(n)$ per i primi $n$ sono
 
-n123456789101112131415…G(n)122334445556666…
+$$\begin{array}{c} n    & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & \ldots \\\\ G(n) & 1 & 2 & 2 & 3 & 3 & 4 & 4 & 4 & 5 & 5  &  5 &  6 &  6 &  6 &  6 & \ldots \end{array}$$
 
-You are given that G(103) = 86, G(106) = 6137. You are also given that ΣG(n3) = 153506976 for 1 ≤ n &lt; 103.
+Ti viene dato che $G({10}^3) = 86$, $G({10}^6) = 6137$.
 
-Find ΣG(n3) for 1 ≤ n &lt; 106.
+Ti viene anche dato che $\sum G(n^3) = 153\\,506\\,976$ per $1 ≤ n &lt; {10}^3$.
+
+Trova $\sum G(n^3)$ per $1 ≤ n &lt; {10}^6$.
 
 # --hints--
 
-`euler341()` should return 56098610614277016.
+`golombsSequence()` dovrebbe restituire `56098610614277016`.
 
 ```js
-assert.strictEqual(euler341(), 56098610614277016);
+assert.strictEqual(golombsSequence(), 56098610614277016);
 ```
 
 # --seed--
@@ -29,12 +31,12 @@ assert.strictEqual(euler341(), 56098610614277016);
 ## --seed-contents--
 
 ```js
-function euler341() {
+function golombsSequence() {
 
   return true;
 }
 
-euler341();
+golombsSequence();
 ```
 
 # --solutions--

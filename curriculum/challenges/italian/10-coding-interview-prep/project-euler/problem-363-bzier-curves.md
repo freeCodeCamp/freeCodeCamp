@@ -1,6 +1,6 @@
 ---
 id: 5900f4d91000cf542c50ffeb
-title: 'Problem 363: Bézier Curves'
+title: 'Problema 363: Curve di Bézier'
 challengeType: 5
 forumTopicId: 302024
 dashedName: problem-363-bzier-curves
@@ -8,24 +8,32 @@ dashedName: problem-363-bzier-curves
 
 # --description--
 
-A cubic Bézier curve is defined by four points: P0, P1, P2 and P3.
+Una curva cubica di Bézier è definita da quattro punti: $P_0$, $P_1$, $P_2$ e $P_3$.
 
-The curve is constructed as follows: On the segments P0P1, P1P2 and P2P3 the points Q0,Q1 and Q2 are drawn such that P0Q0 / P0P1 = P1Q1 / P1P2 = P2Q2 / P2P3 = t (t in \[0,1]). On the segments Q0Q1 and Q1Q2 the points R0 and R1 are drawn such that Q0R0 / Q0Q1 = Q1R1 / Q1Q2 = t for the same value of t. On the segment R0R1 the point B is drawn such that R0B / R0R1 = t for the same value of t. The Bézier curve defined by the points P0, P1, P2, P3 is the locus of B as Q0 takes all possible positions on the segment P0P1. (Please note that for all points the value of t is the same.)
+La curva è costruita come segue:
 
-At this (external) web address you will find an applet that allows you to drag the points P0, P1, P2 and P3 to see what the Bézier curve (green curve) defined by those points looks like. You can also drag the point Q0 along the segment P0P1.
+<img class="img-responsive center-block" alt="costruzione della curva di Bézier" src="https://cdn.freecodecamp.org/curriculum/project-euler/bzier-curves.png" style="background-color: white; padding: 10px;" />
 
-From the construction it is clear that the Bézier curve will be tangent to the segments P0P1 in P0 and P2P3 in P3.
+Sui segmenti $P_0P_1$, $P_1P_2$ e $P_2P_3$ i punti $Q_0$,$Q_1$ e $Q_2$ sono disegnati in modo tale che $\frac{P_0Q_0}{P_0P_1} = \frac{P_1Q_1}{P_1P_2} = \frac{P_2Q_2}{P_2P_3} = t$, con $t$ in [0,1].
 
-A cubic Bézier curve with P0=(1,0), P1=(1,v), P2=(v,1) and P3=(0,1) is used to approximate a quarter circle. The value v > 0 is chosen such that the area enclosed by the lines OP0, OP3 and the curve is equal to π/4 (the area of the quarter circle).
+Sui segmenti $Q_0Q_1$ e $Q_1Q_2$ i punti $R_0$ e $R_1$ sono disegnati in modo tale che $\frac{Q_0R_0}{Q_0Q_1} = \frac{Q_1R_1}{Q_1Q_2} = t$ per lo stesso valore di $t$.
 
-By how many percent does the length of the curve differ from the length of the quarter circle? That is, if L is the length of the curve, calculate 100 × L − π/2π/2Give your answer rounded to 10 digits behind the decimal point.
+Sul segmento $R_0R_1$ il punto $B$ è disegnato in modo tale che $\frac{R_0B}{R_0R_1} = t$ per lo stesso valore di $t$.
+
+La curva di Bézier definita dai punti $P_0$, $P_1$, $P_2$, $P_3$ è il luogo di $B$ tale che $Q_0$ prende tutte le posizioni possibili sul segmento $P_0P_1$. (Si noti che per tutti i punti il valore di $t$ è lo stesso.)
+
+Dalla costruzione è chiaro che la curva di Bézier sarà tangente ai segmenti $P_0P_1$ in $P_0$ e $P_2P_3$ in $P_3$.
+
+Una curva cubica di Bézier con $P_0 = (1, 0)$, $P_1 = (1, v)$, $P_2 = (v, 1)$ e $P_3 = (0, 1)$ viene utilizzata per approssimare un quarto di cerchio. Il valore $v > 0$ è scelto in modo tale che l'area racchiusa tra le linee $OP_0$, $OP_3$ e la curva sia pari a $\frac{π}{4}$ (l'area del quarto di circonferenza).
+
+Di quanti punti percentuali la lunghezza della curva differisce dalla lunghezza del quarto di circonferenza? Cioè, se $L$ è la lunghezza della curva, calcolare $100 × \displaystyle\frac{L − \frac{π}{2}}{\frac{π}{2}}$. Dai la tua risposta approssimata a 10 cifre dopo il punto decimale.
 
 # --hints--
 
-`euler363()` should return 0.0000372091.
+`bezierCurves()` dovrebbe restituire `0.0000372091`.
 
 ```js
-assert.strictEqual(euler363(), 0.0000372091);
+assert.strictEqual(bezierCurves(), 0.0000372091);
 ```
 
 # --seed--
@@ -33,12 +41,12 @@ assert.strictEqual(euler363(), 0.0000372091);
 ## --seed-contents--
 
 ```js
-function euler363() {
+function bezierCurves() {
 
   return true;
 }
 
-euler363();
+bezierCurves();
 ```
 
 # --solutions--

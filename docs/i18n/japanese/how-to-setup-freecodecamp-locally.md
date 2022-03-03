@@ -24,7 +24,7 @@
 | --------------------------------------------------------------------------------------- | ------- | ---------------------------------------------------------------------------------------- |
 | [Node.js](http://nodejs.org)                                                            | `16.x`  | 「Active LTS」バージョンを使用しています。[LTS スケジュール](https://nodejs.org/en/about/releases/) を参照してください。 |
 | npm (Nodeにバンドル)                                                                         | `8.x`   | Node.js Active LTS にバンドルされたバージョンを使用します。                                                  |
-| [MongoDB コミュニティサーバー](https://docs.mongodb.com/manual/administration/install-community/) | `4.0.x` | -                                                                                        |
+| [MongoDB コミュニティサーバー](https://docs.mongodb.com/manual/administration/install-community/) | `4.2.x` | -                                                                                        |
 
 > [!ATTENTION] 異なるバージョンの場合は、推奨バージョンをインストールしてください。 推奨バージョンのインストールに関する問題のみサポートできます。 詳細は [トラブルシューティング](#トラブルシューティング) を参照してください。
 

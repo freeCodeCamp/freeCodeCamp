@@ -1,4 +1,4 @@
-import { getProjectPath } from './get-project-path';
+import { getProjectName, getProjectPath } from './get-project-info';
 
 describe('getProjectPath helper', () => {
   it('should return the calling dir path', () => {
@@ -18,5 +18,20 @@ describe('getProjectPath helper', () => {
     const expected = `${process.cwd()}/`;
 
     expect(getProjectPath()).toEqual(expected);
+  });
+});
+
+describe('getProjectName helper', () => {
+  it('should return the last path segment of the calling dir', () => {
+    const mockCallingDir = 'calling/dir';
+    const expected = `dir`;
+
+    // Add mock to test condition
+    process.env.CALLING_DIR = mockCallingDir;
+
+    expect(getProjectName()).toEqual(expected);
+
+    // Remove mock to not affect other tests
+    delete process.env.CALLING_DIR;
   });
 });

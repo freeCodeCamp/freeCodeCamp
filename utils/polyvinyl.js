@@ -97,6 +97,19 @@ function setImportedFiles(importedFiles, poly) {
   return newPoly;
 }
 
+// This is currently only used to add back properties that are not stored in the
+// database.
+function regeneratePathAndHistory(poly) {
+  const newPath = poly.name + '.' + poly.ext;
+  const newPoly = {
+    ...poly,
+    path: newPath,
+    history: [newPath]
+  };
+  checkPoly(newPoly);
+  return newPoly;
+}
+
 // clearHeadTail(poly: PolyVinyl) => PolyVinyl
 function clearHeadTail(poly) {
   checkPoly(poly);
@@ -151,6 +164,7 @@ module.exports = {
   setExt,
   setImportedFiles,
   compileHeadTail,
+  regeneratePathAndHistory,
   transformContents,
   transformHeadTailAndContents
 };
