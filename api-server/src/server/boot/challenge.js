@@ -323,7 +323,7 @@ export function modernChallengeCompleted(req, res, next) {
       const { alreadyCompleted, savedChallenges, updateData } = buildUserUpdate(
         user,
         id,
-        data
+        completedChallenge
       );
 
       const points = alreadyCompleted ? user.points : user.points + 1;
