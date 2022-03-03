@@ -47,7 +47,7 @@ jobs:
           cache: npm
 
       - name: Configure Python 3.x
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v3
         if: ${{ fromJSON(steps.detect-languages.outputs.languages).python }}
         with:
           python-version: '3.x'
