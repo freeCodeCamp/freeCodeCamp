@@ -146,7 +146,7 @@
     "cypress": "7.7.0",
     "docsify-cli": "4.4.3",
     "eslint": "7.32.0",
-    "eslint-config-prettier": "8.4.0",
+    "eslint-config-prettier": "8.5.0",
     "eslint-plugin-import": "2.25.4",
     "eslint-plugin-jest-dom": "3.9.4",
     "eslint-plugin-jsx-a11y": "6.5.1",
