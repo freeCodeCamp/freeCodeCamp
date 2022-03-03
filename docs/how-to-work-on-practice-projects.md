@@ -10,7 +10,7 @@ If you want to create new steps, the following tools simplify that process.
 
 ## create-next-step
 
-A one-off script that will automatically add the next step based on the last step in the project. The challenge seed code will use the previous step's challenge seed code with the editable region markers (ERMs) removed.
+A one-off script that will automatically add the next step based on the last step in the project. The challenge seed code will use the previous step's challenge seed code.
 
 ### How to run script:
 
@@ -24,6 +24,8 @@ npm run create-next-step
 ## create-empty-steps
 
 A one-off script that automatically adds a specified number of steps. The challenge seed code for all steps created will be empty.
+
+**Note:** This script also runs [update-step-titles](#update-step-titles).
 
 ### How to run script:
 
