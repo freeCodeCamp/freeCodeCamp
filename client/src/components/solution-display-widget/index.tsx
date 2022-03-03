@@ -11,22 +11,22 @@ import { getSolutionDisplayType } from '../../utils/solution-display-type';
 interface Props {
   completedChallenge: CompletedChallenge;
   dataCy?: string;
-  showFilesSolution: () => void;
+  showUserCode: () => void;
+  showProjectPreview?: () => void;
   displayContext: 'timeline' | 'settings' | 'certification';
 }
 
 export function SolutionDisplayWidget({
   completedChallenge,
   dataCy,
-  showFilesSolution,
+  showUserCode,
+  showProjectPreview,
   displayContext
 }: Props) {
   const { id, solution, githubLink } = completedChallenge;
   const { t } = useTranslation();
 
-  const dropdownTitle =
-    displayContext === 'settings' ? 'Show Solutions' : 'View';
-  const projectLinkText =
+  const showOrViewText =
     displayContext === 'settings'
       ? t('buttons.show-solution')
       : t('buttons.view');
@@ -35,7 +35,7 @@ export function SolutionDisplayWidget({
     <button
       className='project-link-button-override'
       data-cy={dataCy}
-      onClick={showFilesSolution}
+      onClick={showUserCode}
     >
       {t('certification.project.solution')}
     </button>
@@ -64,18 +64,35 @@ export function SolutionDisplayWidget({
   const MissingSolutionComponentForCertification = (
     <>{t('certification.project.no-solution')}</>
   );
-  const ShowFilesSolution = (
+  const ShowUserCode = (
     <Button
       block={true}
       bsStyle='primary'
       className='btn-invert'
       data-cy={dataCy}
       id={`btn-for-${id}`}
-      onClick={showFilesSolution}
+      onClick={showUserCode}
     >
       {t('buttons.show-code')}
     </Button>
   );
+  const ShowMultifileProjectSolution = (
+    <DropdownButton
+      block={true}
+      bsStyle='primary'
+      className='btn-invert'
+      id={`dropdown-for-${id}`}
+      title={t('buttons.view')}
+    >
+      <MenuItem bsStyle='primary' onClick={showUserCode}>
+        {t('buttons.show-code')}
+      </MenuItem>
+      <MenuItem bsStyle='primary' onClick={showProjectPreview}>
+        {t('buttons.show-project')}
+      </MenuItem>
+    </DropdownButton>
+  );
+
   const ShowProjectAndGithubLinks = (
     <div className='solutions-dropdown'>
       <DropdownButton
@@ -83,7 +100,7 @@ export function SolutionDisplayWidget({
         bsStyle='primary'
         className='btn-invert'
         id={`dropdown-for-${id}`}
-        title={dropdownTitle}
+        title={showOrViewText}
       >
         <MenuItem
           bsStyle='primary'
@@ -114,7 +131,7 @@ export function SolutionDisplayWidget({
       rel='noopener noreferrer'
       target='_blank'
     >
-      {projectLinkText}
+      {showOrViewText}
     </Button>
   );
   const MissingSolutionComponent =
@@ -125,14 +142,16 @@ export function SolutionDisplayWidget({
   const displayComponents =
     displayContext === 'certification'
       ? {
-          showFilesSolution: ShowFilesSolutionForCertification,
-          showProjectAndGitHubLinks: ShowProjectAndGithubLinkForCertification,
+          showUserCode: ShowFilesSolutionForCertification,
+          showMultifileProjectSolution: ShowMultifileProjectSolution,
+          showProjectAndGithubLinks: ShowProjectAndGithubLinkForCertification,
           showProjectLink: ShowProjectLinkForCertification,
           none: MissingSolutionComponentForCertification
         }
       : {
-          showFilesSolution: ShowFilesSolution,
-          showProjectAndGitHubLinks: ShowProjectAndGithubLinks,
+          showUserCode: ShowUserCode,
+          showMultifileProjectSolution: ShowMultifileProjectSolution,
+          showProjectAndGithubLinks: ShowProjectAndGithubLinks,
           showProjectLink: ShowProjectLink,
           none: MissingSolutionComponent
         };
