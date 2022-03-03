@@ -16,10 +16,10 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Checkout client-config
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: freeCodeCamp/client-config
           path: client-config
@@ -90,7 +90,7 @@ jobs:
           echo "CYPRESS_INSTALL_BINARY=7.7.0" >> $GITHUB_ENV
 
       - name: Checkout Source Files
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - uses: actions/download-artifact@v2
         with:
