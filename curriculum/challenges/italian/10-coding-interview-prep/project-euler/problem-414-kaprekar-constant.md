@@ -1,6 +1,6 @@
 ---
 id: 5900f50b1000cf542c51001d
-title: 'Problem 414: Kaprekar constant'
+title: 'Problema 414: Costante di Kaprekar'
 challengeType: 5
 forumTopicId: 302083
 dashedName: problem-414-kaprekar-constant
@@ -8,36 +8,39 @@ dashedName: problem-414-kaprekar-constant
 
 # --description--
 
-6174 is a remarkable number; if we sort its digits in increasing order and subtract that number from the number you get when you sort the digits in decreasing order, we get 7641-1467=6174.
+6174 è un numero notevole; se ordiniamo le sue cifre in ordine crescente e sottraiamo quel numero dal numero che si ottiene quando si ordinano le cifre in ordine decrescente, riceviamo $7641 - 1467 = 6174$.
 
-Even more remarkable is that if we start from any 4 digit number and repeat this process of sorting and subtracting, we'll eventually end up with 6174 or immediately with 0 if all digits are equal.
+Ancora più notevole è che se partiamo da qualsiasi numero a 4 cifre e ripetiamo questo processo di smistamento e sottrazione, finiremo con 6174 o immediatamente con 0 se tutte le cifre sono uguali.
 
-This also works with numbers that have less than 4 digits if we pad the number with leading zeroes until we have 4 digits.
+Questo funziona anche con numeri che hanno meno di 4 cifre se aggiungiamo al numero degli zeri iniziali fino a quando non abbiamo 4 cifre.
 
-E.g. let's start with the number 0837:
+Ad es. iniziamo con il numero 0837:
 
-8730-0378=8352
+$$\begin{align} & 8730 - 0378 = 8352 \\\\ & 8532 - 2358 = 6174 \end{align}$$
 
-8532-2358=6174
+6174 è chiamata costante Kaprekar. Il processo di ordinamento e sottrazione e ripetizione fino a quando non si raggiunge lo 0 o la costante Kaprekar è chiamato la routine di Kaprekar.
 
-6174 is called the Kaprekar constant. The process of sorting and subtracting and repeating this until either 0 or the Kaprekar constant is reached is called the Kaprekar routine.
+Possiamo considerare la routine di Kaprekar per altre basi e numeri di cifre. Purtroppo, non è garantito che una costante di Kaprekar esista in tutti i casi; inoltre la routine può finire in un ciclo per alcuni numeri di ingresso o la costante a cui la routine arriva può essere diversa per numeri di input diversi. Tuttavia, può essere dimostrato che per 5 cifre e una base $b = 6t + 3 ≠ 9$, esiste una costante di Kaprekar.
 
-We can consider the Kaprekar routine for other bases and number of digits. Unfortunately, it is not guaranteed a Kaprekar constant exists in all cases; either the routine can end up in a cycle for some input numbers or the constant the routine arrives at can be different for different input numbers. However, it can be shown that for 5 digits and a base b = 6t+3≠9, a Kaprekar constant exists. E.g. base 15: (10,4,14,9,5)15 base 21: (14,6,20,13,7)21
+Ad es. base 15: ${(10, 4, 14, 9, 5)}\_{15}$ base 21: $(14, 6, 20, 13, 7)_{21}$
 
-Define Cb to be the Kaprekar constant in base b for 5 digits. Define the function sb(i) to be 0 if i = Cb or if i written in base b consists of 5 identical digits the number of iterations it takes the Kaprekar routine in base b to arrive at Cb, otherwise
+Definisci $C_b$ in modo tale che sia la costante di Kaprekar nella base $b$ per 5 cifre. Definisci la funzione $sb(i)$ in modo tale che:
 
-Note that we can define sb(i) for all integers i &lt; b5. If i written in base b takes less than 5 digits, the number is padded with leading zero digits until we have 5 digits before applying the Kaprekar routine.
+- 0 se $i = C_b$ o se $i$ scritto in base $b$ consiste di 5 cifre identiche
+- il numero di iterazioni necessarie alla routine di Kaprekar nella base $b$ per arrivare a $C_b$, altrimenti
 
-Define S(b) as the sum of sb(i) for 0 &lt; i &lt; b5. E.g. S(15) = 5274369 S(111) = 400668930299
+Nota che possiamo definire $sb(i)$ per tutti gli interi $i &lt; b^5$. Se $i$ scritto in base $b$ richiede meno di 5 cifre, il numero è riempito con cifre iniziali zero fino a quando non abbiamo 5 cifre prima di applicare la routine Kaprekar.
 
-Find the sum of S(6k+3) for 2 ≤ k ≤ 300. Give the last 18 digits as your answer.
+Definisci $S(b)$ come la somma di $sb(i)$ per $0 &lt; i &lt; b^5$. Ad es. $S(15) = 5\\,274\\,369$ $S(111) = 400\\,668\\,930\\,299$
+
+Trova la somma di $S(6k + 3)$ per $2 ≤ k ≤ 300$. Dai le ultime 18 cifre come risposta.
 
 # --hints--
 
-`euler414()` should return 552506775824935500.
+`kaprekarConstant()` dovrebbe restituire `552506775824935500`.
 
 ```js
-assert.strictEqual(euler414(), 552506775824935500);
+assert.strictEqual(kaprekarConstant(), 552506775824935500);
 ```
 
 # --seed--
@@ -45,12 +48,12 @@ assert.strictEqual(euler414(), 552506775824935500);
 ## --seed-contents--
 
 ```js
-function euler414() {
+function kaprekarConstant() {
 
   return true;
 }
 
-euler414();
+kaprekarConstant();
 ```
 
 # --solutions--
