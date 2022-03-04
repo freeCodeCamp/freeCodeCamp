@@ -13,11 +13,11 @@ This is one of the required projects to earn your certification. For this projec
 
 # --instructions--
 
-**Important:** After you pass all the project tests, save a dump of your database into a `number_guessers.sql` file, as well as your whole `number_guessing_game` folder, so you can complete step 2. There will be instructions how to do that within the virtual machine.
+**Important:** After you pass all the project tests, save a dump of your database into a `number_guess.sql` file, as well as your whole `number_guess.sh` file, so you can complete step 2. There will be instructions how to do that within the virtual machine.
 
 # --notes--
 
-Required files: `number_guessers.sql`, and the whole `number_guessing_game` folder
+Required files: `number_guess.sql`, `number_guess.sh`
 
 # --hints--
 
