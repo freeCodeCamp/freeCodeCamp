@@ -298,7 +298,7 @@
     "help-translate": "以下の認定講座は現在翻訳中です。",
     "help-translate-link": "翻訳にご協力ください。",
     "project-preview-title": "あなたが作るもののプレビューはこちらです。",
-    "github-required": "プロジェクトを動作させるには、<0>GitHub</0> アカウントが必要です。まだアカウントをお持ちでなければ、作成する必要があります。",
+    "github-required": "<0>Create a GitHub</0> account if you don't have one. You'll need it when you create the virtual Linux server machine. This process may take a few minutes.",
     "step-1": "ステップ 1: プロジェクトを完成させる",
     "step-2": "ステップ 2: コードを提出する",
     "submit-public-url": "プロジェクトが完成したら、必須のファイルをすべてパブリックリポジトリに保存し、リポジトリの URL を以下に提出してください。",
