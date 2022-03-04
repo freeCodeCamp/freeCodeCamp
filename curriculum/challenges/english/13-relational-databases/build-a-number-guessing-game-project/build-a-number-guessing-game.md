@@ -13,7 +13,7 @@ This is one of the required projects to earn your certification. For this projec
 
 # --instructions--
 
-**Important:** After you pass all the project tests, save a dump of your database into a `number_guess.sql` file, as well as your `number_guess.sh` file, so you can complete step 2. There will be instructions how to do that within the virtual machine.
+**Important:** After you pass all the project tests, save a dump of your database into a `number_guess.sql` file, as well as your `number_guess.sh` file, so you can complete step 2. There will be instructions on how to do that within the virtual machine.
 
 # --notes--
 
