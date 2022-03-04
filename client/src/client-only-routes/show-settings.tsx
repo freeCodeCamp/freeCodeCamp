@@ -27,7 +27,7 @@ import {
 import { User } from '../redux/prop-types';
 import { submitNewAbout, updateUserFlag, verifyCert } from '../redux/settings';
 
-const { apiLocation, deploymentEnv } = envData;
+const { apiLocation } = envData;
 
 // TODO: update types for actions
 interface ShowSettingsProps {
@@ -202,8 +202,8 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             username={username}
             verifyCert={verifyCert}
           />
-          {deploymentEnv == 'staging' && <Spacer />}
-          {deploymentEnv == 'staging' && <WebhookToken />}
+          <Spacer />
+          <WebhookToken />
           <Spacer />
           <DangerZone />
         </main>

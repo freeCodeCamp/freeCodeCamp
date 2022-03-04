@@ -74,7 +74,7 @@ class WebhookToken extends Component<WebhookTokenProps, WebhookTokenState> {
     return isChallengePage ? (
       <>
         {!webhookToken && (
-          <div className='alert alert-info'>
+          <div className='alert alert-info' data-cy='webhook-challenge-page'>
             <p>{t('webhook-token.create-p1')}</p>
             <Spacer />
             <Button
@@ -89,7 +89,10 @@ class WebhookToken extends Component<WebhookTokenProps, WebhookTokenState> {
         )}
       </>
     ) : (
-      <div className='webhook-token text-center'>
+      <div
+        className='webhook-token text-center'
+        data-cy='webhook-settings-page'
+      >
         <FullWidthRow>
           <Panel className='webhook-panel'>
             <Panel.Heading>{t('webhook-token.title')}</Panel.Heading>
