@@ -1,6 +1,6 @@
 ---
 id: 5900f5311000cf542c510043
-title: 'Problem 452: Long Products'
+title: 'Problema 452: Prodotti lunghi'
 challengeType: 5
 forumTopicId: 302125
 dashedName: problem-452-long-products
@@ -8,20 +8,20 @@ dashedName: problem-452-long-products
 
 # --description--
 
-Define F(m,n) as the number of n-tuples of positive integers for which the product of the elements doesn't exceed m.
+Definisci $F(m, n)$ come il numero di $n$-uple di numeri interi positivi per cui il prodotto degli elementi non supera $m$.
 
-F(10, 10) = 571.
+$F(10, 10) = 571$.
 
-F(106, 106) mod 1 234 567 891 = 252903833.
+$F({10}^6, {10}^6)\bmod 1\\,234\\,567\\,891 = 252\\,903\\,833$.
 
-Find F(109, 109) mod 1 234 567 891.
+Trova $F({10}^9, {10}^9)\bmod 1\\,234\\,567\\,891$.
 
 # --hints--
 
-`euler452()` should return 345558983.
+`longProducts()` dovrebbe restituire `345558983`.
 
 ```js
-assert.strictEqual(euler452(), 345558983);
+assert.strictEqual(longProducts(), 345558983);
 ```
 
 # --seed--
@@ -29,12 +29,12 @@ assert.strictEqual(euler452(), 345558983);
 ## --seed-contents--
 
 ```js
-function euler452() {
+function longProducts() {
 
   return true;
 }
 
-euler452();
+longProducts();
 ```
 
 # --solutions--

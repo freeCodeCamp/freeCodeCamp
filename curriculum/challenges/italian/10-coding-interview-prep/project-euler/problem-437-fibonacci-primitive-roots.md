@@ -1,6 +1,6 @@
 ---
 id: 5900f5241000cf542c510036
-title: 'Problem 437: Fibonacci primitive roots'
+title: 'Problema 437: le radici primitive di Fibonacci'
 challengeType: 5
 forumTopicId: 302108
 dashedName: problem-437-fibonacci-primitive-roots
@@ -8,40 +8,28 @@ dashedName: problem-437-fibonacci-primitive-roots
 
 # --description--
 
-When we calculate 8n modulo 11 for n=0 to 9 we get: 1, 8, 9, 6, 4, 10, 3, 2, 5, 7.
+Quando calcoliamo $8^n$ modulo 11 per $n = 0$ fino a 9 otteniamo: 1, 8, 9, 6, 4, 10, 3, 2, 5, 7.
 
-As we see all possible values from 1 to 10 occur. So 8 is a primitive root of 11.
+Come possiamo vedere appaiono tutti i valori possibili da 1 a 10. Quindi 8 è una radice primitiva di 11.
 
-But there is more:
+Ma c'è di più:
 
-If we take a closer look we see:
+Se guardiamo più da vicino vediamo:
 
-1+8=9
+$$\begin{align} & 1 + 8 = 9 \\\\ & 8 + 9 = 17 ≡ 6\bmod 11 \\\\ & 9 + 6 = 15 ≡ 4\bmod 11 \\\\ & 6 + 4 = 10 \\\\ & 4 + 10 = 14 ≡ 3\bmod 11 \\\\ & 10 + 3 = 13 ≡ 2\bmod 11 \\\\ & 3 + 2 = 5 \\\\ & 2 + 5 = 7 \\\\ & 5 + 7 = 12 ≡ 1\bmod 11. \end{align}$$
 
-8+9=17≡6 mod 11
+Quindi le potenze di 8 mod 11 sono cicliche con periodo 10, e $8^n + 8^{n + 1} ≡ 8^{n + 2} (\text{mod } 11)$. 8 è chiamata radice primitiva di Fibonacci di 11.
 
-9+6=15≡4 mod 11
+Non tutti i primi hanno una radice primitiva di Fibonacci. Ci sono 323 primi minori di 10000 con una o più radici primitive di Fibonacci e la somma di questi primi è 1480491.
 
-6+4=10
-
-4+10=14≡3 mod 11
-
-10+3=13≡2 mod 11
-
-3+2=5
-
-2+5=7
-
-5+7=12≡1 mod 11.
-
-So the powers of 8 mod 11 are cyclic with period 10, and 8n + 8n+1 ≡ 8n+2 (mod 11). 8 is called a Fibonacci primitive root of 11. Not every prime has a Fibonacci primitive root. There are 323 primes less than 10000 with one or more Fibonacci primitive roots and the sum of these primes is 1480491. Find the sum of the primes less than 100,000,000 with at least one Fibonacci primitive root.
+Trova la somma dei primi minori di $100\\,000\\,000$ con almeno una radice primitiva di Fibonacci.
 
 # --hints--
 
-`euler437()` should return 74204709657207.
+`fibonacciPrimitiveRoots()` dovrebbe restituire `74204709657207`.
 
 ```js
-assert.strictEqual(euler437(), 74204709657207);
+assert.strictEqual(fibonacciPrimitiveRoots(), 74204709657207);
 ```
 
 # --seed--
@@ -49,12 +37,12 @@ assert.strictEqual(euler437(), 74204709657207);
 ## --seed-contents--
 
 ```js
-function euler437() {
+function fibonacciPrimitiveRoots() {
 
   return true;
 }
 
-euler437();
+fibonacciPrimitiveRoots();
 ```
 
 # --solutions--

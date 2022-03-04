@@ -1,6 +1,6 @@
 ---
 id: 5900f5231000cf542c510035
-title: 'Problem 439: Sum of sum of divisors'
+title: 'Problema 439: Somma della somma dei divisori'
 challengeType: 5
 forumTopicId: 302110
 dashedName: problem-439-sum-of-sum-of-divisors
@@ -8,20 +8,22 @@ dashedName: problem-439-sum-of-sum-of-divisors
 
 # --description--
 
-Let d(k) be the sum of all divisors of k.
+Sia $d(k)$ la somma di tutti i divisori di $k$.
 
-We define the function S(N) = ∑1≤i≤N ∑1≤j≤Nd(i·j).
+Definiamo la funzione $S(N) = \sum_{i = 1}^N \sum_{j = 1}^N d(i \times j)$.
 
-For example, S(3) = d(1) + d(2) + d(3) + d(2) + d(4) + d(6) + d(3) + d(6) + d(9) = 59.
+Per esempio, $S(3) = d(1) + d(2) + d(3) + d(2) + d(4) + d(6) + d(3) + d(6) + d(6) + d(9) = 59$.
 
-You are given that S(103) = 563576517282 and S(105) mod 109 = 215766508. Find S(1011) mod 109.
+Ti viene dato che $S({10}^3) = 563\\,576\\,517\\,282$ e $S({10}^5)\bmod {10}^9 = 215\\,766\\,508$.
+
+Trova $S({10}^{11})\bmod {10}^9$.
 
 # --hints--
 
-`euler439()` should return 968697378.
+`sumOfSumOfDivisors()` dovrebbe restituire `968697378`.
 
 ```js
-assert.strictEqual(euler439(), 968697378);
+assert.strictEqual(sumOfSumOfDivisors(), 968697378);
 ```
 
 # --seed--
@@ -29,12 +31,12 @@ assert.strictEqual(euler439(), 968697378);
 ## --seed-contents--
 
 ```js
-function euler439() {
+function sumOfSumOfDivisors() {
 
   return true;
 }
 
-euler439();
+sumOfSumOfDivisors();
 ```
 
 # --solutions--

@@ -1,6 +1,6 @@
 ---
 id: 5900f50c1000cf542c51001e
-title: 'Problem 415: Titanic sets'
+title: 'Problema 415: Set titanici'
 challengeType: 5
 forumTopicId: 302084
 dashedName: problem-415-titanic-sets
@@ -8,22 +8,22 @@ dashedName: problem-415-titanic-sets
 
 # --description--
 
-A set of lattice points S is called a titanic set if there exists a line passing through exactly two points in S.
+Un set di punti del reticolo $S$ è chiamato set titanico se esiste una linea che passa esattamente attraverso due punti in $S$.
 
-An example of a titanic set is S = {(0, 0), (0, 1), (0, 2), (1, 1), (2, 0), (1, 0)}, where the line passing through (0, 1) and (2, 0) does not pass through any other point in S.
+Un esempio di un set titanico è $S = \\{(0, 0), (0, 1), (0, 2), (1, 1), (2, 0), (1, 0)\\}$, dove la linea che passa attraverso (0, 1) e (2, 0) non passa attraverso altri punti in $S$.
 
-On the other hand, the set {(0, 0), (1, 1), (2, 2), (4, 4)} is not a titanic set since the line passing through any two points in the set also passes through the other two.
+D'altra parte, il set {(0, 0), (1, 1), (2, 2), (4, 4)} non è un set titanico poiché la linea che passa attraverso due punti del set passa anche attraverso gli altri due.
 
-For any positive integer N, let T(N) be the number of titanic sets S whose every point (x, y) satisfies 0 ≤ x, y ≤ N. It can be verified that T(1) = 11, T(2) = 494, T(4) = 33554178, T(111) mod 108 = 13500401 and T(105) mod 108 = 63259062.
+Per ciascun numero intero positivo $N$, lascia $T(N)$ essere il numero di serie titaniche $S$ di cui ogni punto ($x$, $y$) soddisfa $0 ≤ x$, $y ≤ N$. Si può verificare che $T(1) = 11$, $T(2) = 494$, $T(4) = 33\\,554\\,178$, $T(111)\bmod {10}^8 = 13\\,500\\,401$ e $T({10}^5)\bmod {10}^8 = 63\\,259\\,062$.
 
-Find T(1011) mod 108.
+Trova $T({10}^{11})\bmod {10}^8$.
 
 # --hints--
 
-`euler415()` should return 55859742.
+`titanicSets()` dovrebbe restituire `55859742`.
 
 ```js
-assert.strictEqual(euler415(), 55859742);
+assert.strictEqual(titanicSets(), 55859742);
 ```
 
 # --seed--
@@ -31,12 +31,12 @@ assert.strictEqual(euler415(), 55859742);
 ## --seed-contents--
 
 ```js
-function euler415() {
+function titanicSets() {
 
   return true;
 }
 
-euler415();
+titanicSets();
 ```
 
 # --solutions--

@@ -10,12 +10,6 @@ dashedName: budget-app
 
 Lavorerari a [questo progetto con il nostro codice d'inizio su Replit](https://replit.com/github/freeCodeCamp/boilerplate-budget-app).
 
-Stiamo ancora sviluppando la parte didattica interattiva del curriculum di Python. Per ora, ecco alcuni video sul canale YouTube di freeCodeCamp.org che ti insegneranno tutto quello che devi sapere per completare questo progetto:
-
-- [Video corso Python for Everybody](https://www.freecodecamp.org/news/python-for-everybody/) (14 ore)
-
-- [Video corso Learn Python](https://www.freecodecamp.org/news/learn-python-video-course/) (10 ore)
-
 # --instructions--
 
 Completa la classe `Category` in `budget.py`. Dovrebbe essere in grado di instanziare oggetti basati su diverse categorie di budget, come *food*, *clothing*, e *entertainment*. Quando gli oggetti sono creati, ricevono come argomento il nome della categoria. La classe dovrebbe avere una classe di istanza chiamata `ledger` che è una lista. La classe dovrebbe anche contenere i seguenti metodi:
@@ -79,15 +73,15 @@ I test unitari per questo progetto sono in `test_module.py`.
 
 ## Sviluppo
 
-Scrivi il tuo codice in `budget.py`. Per lo sviluppo, puoi usare `main.py` per testare la tua funzione `Category`. Usa il bottone "run" e `main.py` eseguirà.
+Scrivi il tuo codice in `budget.py`. Per lo sviluppo, puoi usare `main.py` per testare la tua funzione `Category`. Usa il bottone "run" e `main.py` sarà eseguito.
 
 ## Testare
 
-Abbiamo impotato i test da `test_module.py` in `main.py` per la tua convenienza. I test eseguiranno automaticamente quando usi il bottone "run".
+Abbiamo importato i test da `test_module.py` in `main.py` per tua convenienza. I test saranno eseguiti automaticamente quando usi il bottone "run".
 
 ## Consegnare
 
-Copia l'URL del tuo progetto e consegnalo nell'input wua sotto.
+Copia l'URL del tuo progetto e consegnalo nell'input qua sotto.
 
 # --hints--
 
