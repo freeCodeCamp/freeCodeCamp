@@ -194,7 +194,7 @@ jobs:
           # downloads
           download_translations: true
           download_language: ja
-          skip_untranslated_files: false
+          skip_untranslated_files: true
           export_only_approved: true
 
           push_translations: false
