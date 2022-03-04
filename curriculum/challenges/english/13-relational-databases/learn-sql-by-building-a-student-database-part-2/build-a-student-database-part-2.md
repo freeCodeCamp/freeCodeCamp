@@ -9,7 +9,7 @@ dashedName: build-a-student-database-part-2
 
 # --description--
 
-In this 140-lesson course, you will complete your student database while diving deeper into SQL commands.
+In this 140 lesson course, you will complete your student database while diving deeper into SQL commands.
 
 # --instructions--
 

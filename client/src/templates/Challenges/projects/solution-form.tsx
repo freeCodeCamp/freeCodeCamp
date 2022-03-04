@@ -6,8 +6,7 @@ import {
   backend,
   backEndProject,
   frontEndProject,
-  pythonProject,
-  codeAllyCert
+  pythonProject
 } from '../../../../utils/challenge-types';
 import { Form, ValidatedValues } from '../../../components/formHelpers';
 
@@ -100,12 +99,6 @@ export class SolutionForm extends Component<FormProps> {
           (description?.includes('Colaboratory')
             ? 'https://colab.research.google.com/drive/1i5EmInTWi1RFvFr2_aRXky96YxY6sbWy'
             : 'https://replit.com/@camperbot/hello');
-        break;
-
-      case codeAllyCert:
-        formFields = solutionField;
-        options.isEditorLinkAllowed = true;
-        solutionLink = solutionLink + 'https://your-git-repo.url/files';
         break;
 
       default:

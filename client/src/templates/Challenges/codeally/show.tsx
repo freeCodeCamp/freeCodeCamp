@@ -257,7 +257,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps, ShowCodeAllyState> {
                 <div className='ca-description'>
                   <Trans i18nKey='learn.github-required'>
                     <a
-                      href='https://github.com/join'
+                      href='https://github.com'
                       rel='noopener noreferrer'
                       target='_blank'
                       title={t('learn.github-link')}
