@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Alert } from '@freecodecamp/react-bootstrap';
 import { SuperBlocks } from '../../../../../config/certification-settings';
-import { IsNewRespCert, IsRelationadDbCert } from '../../../utils/is-a-cert';
+import { IsNewRespCert, IsRelationalDbCert } from '../../../utils/is-a-cert';
 import { Link } from '../../../components/helpers';
 
 interface LegacyLinksProps {
@@ -25,7 +25,7 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
         </Alert>
       </>
     );
-  else if (IsRelationadDbCert(superBlock))
+  else if (IsRelationalDbCert(superBlock))
     return (
       <>
         <Alert bsStyle='info'>

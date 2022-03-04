@@ -4,6 +4,6 @@ export function IsNewRespCert(superBlock: string): boolean {
   return superBlock === SuperBlocks.RespWebDesignNew;
 }
 
-export function IsRelationadDbCert(superBlock: string): boolean {
+export function IsRelationalDbCert(superBlock: string): boolean {
   return superBlock === SuperBlocks.RelationalDb;
 }
