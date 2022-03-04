@@ -15,8 +15,7 @@
   - [Arbeite an der lokalisierten Client-Web-App](how-to-work-on-localized-client-webapp.md)
   - [Arbeite an den Cypress Tests](how-to-add-cypress-tests.md)
   - [Arbeite an den Videoaufgaben](how-to-help-with-video-challenges.md)
-  - [Arbeite an dem News Theme](how-to-work-on-the-news-theme.md)
-  - [Arbeite an dem Docs Theme](how-to-work-on-the-docs-theme.md)
+  - [Work on the docs theme](how-to-work-on-the-docs-theme.md)
 - **Zusätzliche Leitfäden**
   - [Übersetzungen lokal testen](how-to-test-translations-locally.md)
   - [Verstehe die Dateistruktur des Studienplans](curriculum-file-structure.md)
