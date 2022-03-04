@@ -157,8 +157,7 @@ function sendCertifiedEmail(
     isInfosecCertV7,
     isSciCompPyCertV7,
     isDataAnalysisPyCertV7,
-    isMachineLearningPyCertV7,
-    isRelationalDatabaseCertV8
+    isMachineLearningPyCertV7
   },
   send$
 ) {
@@ -173,8 +172,7 @@ function sendCertifiedEmail(
     !isInfosecCertV7 ||
     !isSciCompPyCertV7 ||
     !isDataAnalysisPyCertV7 ||
-    !isMachineLearningPyCertV7 ||
-    !isRelationalDatabaseCertV8
+    !isMachineLearningPyCertV7
   ) {
     return Observable.just(false);
   }

@@ -17,8 +17,7 @@ const certifications = [
   'Data Analysis with Python',
   'Information Security',
   'Machine Learning with Python',
-  'Responsive Web Design (Beta)',
-  'Relational Database (Beta)'
+  'Responsive Web Design (Beta)'
 ];
 
 describe('Landing page', () => {

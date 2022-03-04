@@ -25,14 +25,14 @@ describe('getSuperOrder', () => {
     expect(getSuperOrder('javascript-algorithms-and-data-structures')).toBe(1);
     expect(getSuperOrder('front-end-development-libraries')).toBe(2);
     expect(getSuperOrder('data-visualization')).toBe(3);
-    expect(getSuperOrder('back-end-development-and-apis')).toBe(4);
-    expect(getSuperOrder('quality-assurance')).toBe(5);
-    expect(getSuperOrder('scientific-computing-with-python')).toBe(6);
-    expect(getSuperOrder('data-analysis-with-python')).toBe(7);
-    expect(getSuperOrder('information-security')).toBe(8);
-    expect(getSuperOrder('machine-learning-with-python')).toBe(9);
-    expect(getSuperOrder('coding-interview-prep')).toBe(10);
-    expect(getSuperOrder('relational-database')).toBe(12);
+    expect(getSuperOrder('relational-database')).toBe(4);
+    expect(getSuperOrder('back-end-development-and-apis')).toBe(5);
+    expect(getSuperOrder('quality-assurance')).toBe(6);
+    expect(getSuperOrder('scientific-computing-with-python')).toBe(7);
+    expect(getSuperOrder('data-analysis-with-python')).toBe(8);
+    expect(getSuperOrder('information-security')).toBe(9);
+    expect(getSuperOrder('machine-learning-with-python')).toBe(10);
+    expect(getSuperOrder('coding-interview-prep')).toBe(11);
   });
 
   it('returns a different order if passed the option showNewCurriculum: true', () => {
@@ -54,35 +54,35 @@ describe('getSuperOrder', () => {
       getSuperOrder('data-visualization', { showNewCurriculum: true })
     ).toBe(3);
     expect(
+      getSuperOrder('relational-database', { showNewCurriculum: true })
+    ).toBe(4);
+    expect(
       getSuperOrder('back-end-development-and-apis', {
         showNewCurriculum: true
       })
-    ).toBe(4);
+    ).toBe(5);
     expect(
       getSuperOrder('quality-assurance', { showNewCurriculum: true })
-    ).toBe(5);
+    ).toBe(6);
     expect(
       getSuperOrder('scientific-computing-with-python', {
         showNewCurriculum: true
       })
-    ).toBe(6);
-    expect(
-      getSuperOrder('data-analysis-with-python', { showNewCurriculum: true })
     ).toBe(7);
     expect(
-      getSuperOrder('information-security', { showNewCurriculum: true })
+      getSuperOrder('data-analysis-with-python', { showNewCurriculum: true })
     ).toBe(8);
     expect(
-      getSuperOrder('machine-learning-with-python', { showNewCurriculum: true })
+      getSuperOrder('information-security', { showNewCurriculum: true })
     ).toBe(9);
     expect(
-      getSuperOrder('coding-interview-prep', { showNewCurriculum: true })
+      getSuperOrder('machine-learning-with-python', { showNewCurriculum: true })
     ).toBe(10);
     expect(
-      getSuperOrder('2022/responsive-web-design', { showNewCurriculum: true })
+      getSuperOrder('coding-interview-prep', { showNewCurriculum: true })
     ).toBe(11);
     expect(
-      getSuperOrder('relational-database', { showNewCurriculum: true })
+      getSuperOrder('2022/responsive-web-design', { showNewCurriculum: true })
     ).toBe(12);
   });
 });
