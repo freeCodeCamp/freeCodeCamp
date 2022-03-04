@@ -298,7 +298,7 @@
     "help-translate": "我们仍然在翻译以下证书。",
     "help-translate-link": "帮助我们翻译。",
     "project-preview-title": "下面是你将构建的项目的预览",
-    "github-required": "A <0>GitHub</0> account is required to run the project. You will need to create one if you haven't already.",
+    "github-required": "<0>Create a GitHub</0> account if you don't have one. You'll need it when you create the virtual Linux server machine. This process may take a few minutes.",
     "step-1": "Step 1: Complete the project",
     "step-2": "Step 2: Submit your code",
     "submit-public-url": "When you have completed the project, save all the required files into a public repository and submit the URL to it below.",

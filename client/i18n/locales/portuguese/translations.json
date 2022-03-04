@@ -298,7 +298,7 @@
     "help-translate": "Ainda estamos traduzindo as certificações a seguir.",
     "help-translate-link": "Ajude-nos a traduzir.",
     "project-preview-title": "Aqui está uma prévia do que você vai criar",
-    "github-required": "É necessária uma conta do <0>GitHub</0> para executar o projeto. Você precisará criar uma se ainda não o fez.",
+    "github-required": "<0>Create a GitHub</0> account if you don't have one. You'll need it when you create the virtual Linux server machine. This process may take a few minutes.",
     "step-1": "Etapa 1: Conclua o projeto",
     "step-2": "Etapa 2: Envie seu código",
     "submit-public-url": "Quando você tiver concluído o projeto, salve todos os arquivos necessários em um repositório público e envie abaixo o URL que aponta para ele.",

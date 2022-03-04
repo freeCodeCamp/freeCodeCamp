@@ -426,7 +426,7 @@
     }
   },
   "relational-database": {
-    "title": "リレーショナルデータベース",
+    "title": "Relational Database (Beta)",
     "intro": [
       "このコースでは、VS Code、PostgreSQL、そして Linux / Unix コマンドラインを含む本格的な開発者ツールとソフトウェアを使用して、インタラクティブなチュートリアルを完了し、プロジェクトを構築します。",
       "これらのコースは基本的な Bash コマンドから始まります。ターミナルを使用して、ファイルシステムの移動や操作から、Bash 内でのスクリプト、幅広い高度な使用法まで、すべてを学習します。",
@@ -473,62 +473,62 @@
         "title": "高度な Bash の学習: Kitty Ipsum 翻訳プログラムを作成する",
         "intro": [
           "Bash コマンドについて学ぶべきことは、想像以上に多くあります。",
-          "この 140 のレッスンから成るコースでは、より複雑なコマンドと、コマンドの仕組みについて学びます。"
+          "In this 140-lesson course, you will learn some more complex commands, and the details of how commands work."
         ]
       },
       "learn-bash-and-sql-by-building-a-bike-rental-shop": {
         "title": "Bash と SQL の学習: 自転車レンタルショップを構築する",
         "intro": [
-          "この 210 のレッスンから成るコースでは、PostgreSQL を使用して、自転車レンタルショップのレンタル情報を保存するインタラクティブな Bash プログラムを構築します。"
+          "In this 210-lesson course, you will build an interactive Bash program that stores rental information for your bike rental shop using PostgreSQL."
         ]
       },
       "learn-bash-by-building-a-boilerplate": {
         "title": "Bash の学習: ボイラープレートを構築する",
         "intro": [
           "ターミナルによって、コンピュータへテキストコマンドを送信することで、ファイルシステムの操作、プログラムの実行、タスクの自動化などができます。",
-          "この 170 のレッスンから成るコースでは、コマンドラインのみを使用してウェブサイトのボイラープレートを作成することで、基本のコマンドについて学習します。"
+          "In this 170-lesson course, you will learn terminal commands by creating a website boilerplate using only the command line."
         ]
       },
       "learn-bash-scripting-by-building-five-programs": {
         "title": "Bash スクリプトの学習: 5 つのプログラムを作成する",
         "intro": [
           "Bash スクリプトは、ターミナルコマンドとロジックを組み合わせてプログラムにします。タスクの実行や自動化、その他多くのことができます。",
-          "この 220 のレッスンから成るコースでは、5 つの小規模なプログラムを作成しながら、より多くのターミナルコマンドと、Bash スクリプトでの使い方を学びます。"
+          "In this 220-lesson course, you will learn more terminal commands and how to use them within Bash scripts by creating five small programs."
         ]
       },
       "learn-git-by-building-an-sql-reference-object": {
         "title": "Git の学習: SQL リファレンスのオブジェクトを作成する",
         "intro": [
           "Git は、コードベースに対する変更の履歴を記録できるバージョン管理システムです。",
-          "この 240 のレッスンから成るコースでは、よく使われる SQL コマンドをデータとして持つオブジェクトを作成しながら、Git がどのようにしてコードの履歴を記録するかを学びます。"
+          "In this 240-lesson course, you will learn how Git keeps track of your code by creating an object containing commonly used SQL commands."
         ]
       },
       "learn-nano-by-building-a-castle": {
         "title": "Nano の学習: 城の絵を作成する",
         "intro": [
           "Nano はターミナル内で直接ファイルを編集できるプログラムです。",
-          "この 40 のレッスンから成るコースでは、城の絵を作りながら、ターミナルでファイルを編集する方法を学びます。"
+          "In this 40-lesson course, you will learn how to edit files in the terminal with Nano while building a castle."
         ]
       },
       "learn-relational-databases-by-building-a-mario-database": {
         "title": "リレーショナルデータベースの学習: マリオデータベースを作成する",
         "intro": [
           "リレーショナルデータベースは、関係モデルにもとづいて互いに関連付けられたテーブルを用いて、データを整理します。",
-          "この 165 のレッスンから成るコースでは、テレビゲームのキャラクターのデータが入った PostgreSQL データベースを作成することで、リレーショナルデータベースの基礎を学習します。"
+          "In this 165-lesson course, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
         ]
       },
       "learn-sql-by-building-a-student-database-part-1": {
         "title": "SQL の学習: 学生データベースを作成する (パート 1)",
         "intro": [
           "SQL または Structured Query Language とは、リレーショナルデータベースとやり取りするための言語です。",
-          "この 140 のレッスンから成るコースでは、SQL を使用してコンピューター科学の学生達の情報を PostgreSQL データベースに入力する、Bash スクリプトを作成します。"
+          "In this 140-lesson course, you will create a Bash script that uses SQL to enter information about your computer science students into PostgreSQL."
         ]
       },
       "learn-sql-by-building-a-student-database-part-2": {
         "title": "SQL の学習: 学生データベースを作成する (パート 2)",
         "intro": [
           "SQL の JOIN コマンドは、リレーショナルデータベースにおいて複数のテーブルからの情報を結合するために使用されます。",
-          "この 140 のレッスンから成るコースでは、SQL コマンドをより深く掘り下げながら、学生データベースを完成させます。"
+          "In this 140-lesson course, you will complete your student database while diving deeper into SQL commands."
         ]
       }
     }
