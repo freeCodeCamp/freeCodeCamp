@@ -1,6 +1,6 @@
 ---
 id: 5900f4f11000cf542c510003
-title: 'Problem 387: Harshad Numbers'
+title: 'Problema 387: Numeri di Harshad'
 challengeType: 5
 forumTopicId: 302051
 dashedName: problem-387-harshad-numbers
@@ -8,30 +8,34 @@ dashedName: problem-387-harshad-numbers
 
 # --description--
 
-A Harshad or Niven number is a number that is divisible by the sum of its digits.
+Un numero di Harshad o di Niven è un numero che è divisibile dalla somma delle sue cifre.
 
-201 is a Harshad number because it is divisible by 3 (the sum of its digits.)
+201 è un numero di Harshad perché è divisibile per 3 (la somma delle sue cifre).
 
-When we truncate the last digit from 201, we get 20, which is a Harshad number.
+Quando tronchiamo l'ultima cifra dal 201, otteniamo 20, che è un numero Harshad.
 
-When we truncate the last digit from 20, we get 2, which is also a Harshad number.
+Quando tronchiamo l'ultima cifra da 20, otteniamo 2, che è anche un numero Harshad.
 
-Let's call a Harshad number that, while recursively truncating the last digit, always results in a Harshad number a right truncatable Harshad number.
+Sia un numero di Harshard troncabile a destra un numero di Harshard che troncando ricorsivamente l'ultima cifra risulta sempre in un numero di Harshard.
 
-Also: 201/3=67 which is prime. Let's call a Harshad number that, when divided by the sum of its digits, results in a prime a strong Harshad number.
+Inoltre:
 
-Now take the number 2011 which is prime. When we truncate the last digit from it we get 201, a strong Harshad number that is also right truncatable. Let's call such primes strong, right truncatable Harshad primes.
+$\frac{201}{3} = 67$ che è primo.
 
-You are given that the sum of the strong, right truncatable Harshad primes less than 10000 is 90619.
+Sia un numero di Harshard forte un numero che quando diviso dalla somma delle sue cifre restituisce un numero primo.
 
-Find the sum of the strong, right truncatable Harshad primes less than 1014.
+Ora prendi il numero 2011, che è primo. Quando tronchiamo l'ultima cifra da esso otteniamo 201, un forte numero di Harshad che è anche troncabile a destra. Chiamiamo tali numeri primi, numeri primi di Harshad forti troncabili a destra.
+
+Ti è dato che la somma dei numeri primi di Harshad forti troncabili a destra inferiori a 10000 è 90619.
+
+Trova la somma dei numeri primi di Harshad forti troncabili a destra a ${10}^{14}$.
 
 # --hints--
 
-`euler387()` should return 696067597313468.
+`harshadNumbers()` dovrebbe restituire `696067597313468`.
 
 ```js
-assert.strictEqual(euler387(), 696067597313468);
+assert.strictEqual(harshadNumbers(), 696067597313468);
 ```
 
 # --seed--
@@ -39,12 +43,12 @@ assert.strictEqual(euler387(), 696067597313468);
 ## --seed-contents--
 
 ```js
-function euler387() {
+function harshadNumbers() {
 
   return true;
 }
 
-euler387();
+harshadNumbers();
 ```
 
 # --solutions--

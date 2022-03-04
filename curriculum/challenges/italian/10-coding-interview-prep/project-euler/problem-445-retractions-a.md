@@ -1,6 +1,6 @@
 ---
 id: 5900f52a1000cf542c51003c
-title: 'Problem 445: Retractions A'
+title: 'Problema 445: Retrazioni A'
 challengeType: 5
 forumTopicId: 302117
 dashedName: problem-445-retractions-a
@@ -8,20 +8,26 @@ dashedName: problem-445-retractions-a
 
 # --description--
 
-For every integer n>1, the family of functions fn,a,b is defined
+Per ogni intero $n > 1$, la famiglia di funzioni $f_{n, a, b}$ è definita da:
 
-by fn,a,b(x)≡ax+b mod n for a,b,x integer and 0
+$f_{n, a, b}(x) ≡ ax + b\bmod n$ per $a, b, x$ interi e $0 \lt a \lt n$, $0 \le b \lt n$, $0 \le x \lt n$.
 
-You are given that ∑ R(c) for c=C(100 000,k), and 1 ≤ k ≤99 999 ≡628701600 (mod 1 000 000 007). (C(n,k) is the binomial coefficient).
+Chiameremo $f_{n, a, b}$ una retrazione se $f_{n, a, b}(f_{n, a, b}(x)) \equiv f_{n, a, b}(x)\bmod n$ per ogni $0 \le x \lt n$.
 
-Find ∑ R(c) for c=C(10 000 000,k), and 1 ≤k≤ 9 999 999. Give your answer modulo 1 000 000 007.
+Sia $R(n)$ il numero di retrazioni per $n$.
+
+Ti è dato che
+
+$$\sum_{k = 1}^{99\\,999} R(\displaystyle\binom{100\\,000}{k}) \equiv 628\\,701\\,600\bmod 1\\,000\\,000\\,007$$
+
+Trova $$\sum_{k = 1}^{9\\,999\\,999} R(\displaystyle\binom{10\\,000\\,000}{k})$$ Dai la tua risposta modulo $1\\,000\\,000\\,007$.
 
 # --hints--
 
-`euler445()` should return 659104042.
+`retractionsA()` dovrebbe restituire `659104042`.
 
 ```js
-assert.strictEqual(euler445(), 659104042);
+assert.strictEqual(retractionsA(), 659104042);
 ```
 
 # --seed--
@@ -29,12 +35,12 @@ assert.strictEqual(euler445(), 659104042);
 ## --seed-contents--
 
 ```js
-function euler445() {
+function retractionsA() {
 
   return true;
 }
 
-euler445();
+retractionsA();
 ```
 
 # --solutions--

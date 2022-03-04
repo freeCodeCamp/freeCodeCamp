@@ -10,12 +10,6 @@ dashedName: time-calculator
 
 Lavorerari a [questo progetto con il nostro codice d'inizio su Replit](https://replit.com/github/freeCodeCamp/boilerplate-time-calculator).
 
-Stiamo ancora sviluppando la parte didattica interattiva del curriculum di Python. Per ora, ecco alcuni video sul canale YouTube di freeCodeCamp.org che ti insegneranno tutto quello che devi sapere per completare questo progetto:
-
-- [Video corso Python for Everybody](https://www.freecodecamp.org/news/python-for-everybody/) (14 ore)
-
-- [Video corso Learn Python](https://www.freecodecamp.org/news/learn-python-video-course/) (10 ore)
-
 # --instructions--
 
 Scrivi una funzione denominata `add_time` che richieda due parametri obbligatori e uno opzionale:

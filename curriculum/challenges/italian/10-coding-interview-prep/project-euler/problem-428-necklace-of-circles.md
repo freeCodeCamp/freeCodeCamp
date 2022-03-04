@@ -1,6 +1,6 @@
 ---
 id: 5900f5191000cf542c51002b
-title: 'Problem 428: Necklace of Circles'
+title: 'Problema 428: Collana di Cerchi'
 challengeType: 5
 forumTopicId: 302098
 dashedName: problem-428-necklace-of-circles
@@ -8,27 +8,32 @@ dashedName: problem-428-necklace-of-circles
 
 # --description--
 
-Let `a`, `b` and `c` be positive numbers.
+Siano $a$, $b$ e $c$ numeri positivi.
 
-Let W, X, Y, Z be four collinear points where |WX| = `a`, |XY| = `b`, |YZ| = `c` and |WZ| = `a` + `b` + `c`.
+Siano $W$, $X$, $Y$, $Z$ quattro punti collineari dove $|WX| = a$, $|XY| = b$, $|YZ| = c$ and $|WZ| = a + b + c$.
 
-Let C<sub>in</sub> be the circle having the diameter XY.
+Sia $C_{\text{in}}$ il cerchio con diametro $XY$.
 
-Let C<sub>out</sub> be the circle having the diameter WZ.
+Sia $C_{\text{out}}$ il cerchio con diametro $WZ$.
 
-The triplet (`a`, `b`, `c`) is called a *necklace triplet* if you can place `k` ≥ 3 distinct circles C<sub>1</sub>, C<sub>2</sub>, ..., C<sub><var>k</var></sub> such that:
+La tripletta ($a$, $b$, $c$) si chiama tripletta *collana* se puoi posizionare $k ≥ 3$ cerchi distinti $C_1, C_2, \ldots, C_k$ in modo che:
 
-<ul><li>C<sub><var>i</var></sub> has no common interior points with any C<sub><var>j</var></sub> for 1 ≤ <var>i</var>, <var>j</var> ≤ <var>k</var> and <var>i</var> ≠ <var>j</var>,</li><li>C<sub><var>i</var></sub> is tangent to both C<sub>in</sub> and C<sub>out</sub> for 1 ≤ <var>i</var> ≤ <var>k</var>,</li><li>C<sub><var>i</var></sub> is tangent to C<sub><var>i</var>+1</sub> for 1 ≤ <var>i</var> &lt; <var>k</var>, and</li><li>C<sub><var>k</var></sub> is tangent to C<sub>1</sub>.</li></ul>
-For example, (5, 5, 5) and (4, 3, 21) are necklace triplets, while it can be shown that (2, 2, 5) is not.
-<img src="https://projecteuler.net/project/images/p428_necklace.png" alt="a visual representation of a necklace triplet" />
+- $C_i$ non ha punti interni comuni con $C_j$ for $1 ≤ i$, $j ≤ k$ e $i ≠ j$,
+- $C_i$ è tangente sia a $C_{\text{in}}$ che a $C_{\text{out}}$ per $1 ≤ i ≤ k$,
+- $C_i$ è tangente a $C_{i + 1}$ per $1 ≤ i &lt; k$, e
+- $C_k$ è tangente a $C_1$.
 
-Let T(`n`) be the number of necklace triplets (`a`, `b`, `c`) such that `a`, `b` and `c` are positive integers, and `b` ≤ `n`. For example, T(1) = 9, T(20) = 732 and T(3000) = 438106.
+Ad esempio, (5, 5, 5) e (4, 3, 21) sono triplette collineari, mentre si può dimostrare che (2, 2, 5) non lo è.
 
-Find T(1 000 000 000).
+<img class="img-responsive center-block" alt="una rappresentazione visiva di una tripletta collineare" src="https://cdn.freecodecamp.org/curriculum/project-euler/necklace-of-circles.png" style="background-color: white; padding: 10px;" />
+
+Sia $T(n)$ il numero di triplette collineari $(a, b, c)$ tali che $a$ $b$ e $c$ sono numeri interi positivi, e $b ≤ n$. Per esempio, $T(1) = 9$, $T(20) = 732$ e $T(3\\,000) = 438\\,106$.
+
+Trova $T(1\\,000\\,000\\,000)$.
 
 # --hints--
 
-`necklace(1000000000)` should return 747215561862.
+`necklace(1000000000)` dovrebbe restituire `747215561862`.
 
 ```js
 assert.strictEqual(necklace(1000000000), 747215561862);
