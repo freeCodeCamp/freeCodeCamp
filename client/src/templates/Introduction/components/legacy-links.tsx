@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Alert } from '@freecodecamp/react-bootstrap';
 import { SuperBlocks } from '../../../../../config/certification-settings';
-import IsNewRespCert from '../../../utils/is-new-responsive-web-design-cert';
+import { IsNewRespCert, IsRelationadDbCert } from '../../../utils/is-a-cert';
 import { Link } from '../../../components/helpers';
 
 interface LegacyLinksProps {
@@ -11,9 +11,10 @@ interface LegacyLinksProps {
 
 function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
   const { t } = useTranslation();
-  return (
-    <>
-      {IsNewRespCert(superBlock) && (
+
+  if (IsNewRespCert(superBlock))
+    return (
+      <>
         <Alert bsStyle='info'>
           <p>
             {t('intro:misc-text.viewing-upcoming-change')}{' '}
@@ -22,9 +23,26 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
             </Link>
           </p>
         </Alert>
-      )}
-    </>
-  );
+      </>
+    );
+  else if (IsRelationadDbCert(superBlock))
+    return (
+      <>
+        <Alert bsStyle='info'>
+          <p>
+            {t('intro:misc-text.viewing-upcoming-change')}{' '}
+            <Link
+              external={true}
+              sameTab={false}
+              to={`https://www.freecodecamp.org/news/how-to-complete-the-relational-databases-curriculum-on-freecodecamp-and-earn-your-free-certification`}
+            >
+              {t('intro:misc-text.read-database-cert-article')}
+            </Link>
+          </p>
+        </Alert>
+      </>
+    );
+  else return <></>;
 }
 
 export default LegacyLinks;

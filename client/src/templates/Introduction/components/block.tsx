@@ -17,7 +17,7 @@ import { completedChallengesSelector, executeGA } from '../../../redux';
 import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
 import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
-import IsNewRespCert from '../../../utils/is-new-responsive-web-design-cert';
+import { IsNewRespCert } from '../../../utils/is-a-cert';
 import Challenges from './challenges';
 import '../intro.css';
 
