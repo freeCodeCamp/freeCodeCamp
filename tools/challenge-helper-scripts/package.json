@@ -29,7 +29,7 @@
     "gray-matter": "4.0.3",
     "inquirer": "8.2.0",
     "prettier": "2.5.1",
-    "ts-node": "10.6.0",
+    "ts-node": "10.7.0",
     "typescript": "4.6.2"
   }
 }
