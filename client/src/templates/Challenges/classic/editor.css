@@ -41,7 +41,9 @@
 .description-container {
   background-color: var(--secondary-background);
   padding: 10px;
-  border: 2px solid var(--tertiary-background);
+  margin-left: -60px;
+  border: 4px solid var(--tertiary-background);
+  border-left: 60px solid var(--tertiary-background);
   max-width: 700px;
 }
 
