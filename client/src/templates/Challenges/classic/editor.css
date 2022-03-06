@@ -39,7 +39,7 @@
 
 .action-row-container,
 .description-container {
-  background-color: var(--secondary-background);
+  background-color: var(--primary-background);
   padding: 10px;
   margin-left: -60px;
   border: 4px solid var(--tertiary-background);
