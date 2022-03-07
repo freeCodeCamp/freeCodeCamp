@@ -182,7 +182,7 @@ The general platform status for all our applications is available at [`status.fr
 
 ### License
 
-Copyright © 2021 freeCodeCamp.org
+Copyright © 2022 freeCodeCamp.org
 
 The content of this repository is bound by the following licenses:
 
