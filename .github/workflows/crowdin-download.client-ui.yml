@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   schedule:
     # runs every day at 12:15 PM UTC
-    - cron: '15 12 * * *'
+    - cron: '15 12 * * 1-5'
 
 env:
   GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
