@@ -78,6 +78,14 @@ assert(checkObj({ pet: 'kitten', bed: 'sleigh' }, 'gift') === 'Not Found');
 ## --seed-contents--
 
 ```js
+// Setup
+var myObj = {
+  gift: "pony",
+  pet: "kitten",
+  bed: "sleigh",
+  city: "Seattle",
+};
+
 function checkObj(obj, checkProp) {
   // Only change code below this line
   return "Change Me!";
