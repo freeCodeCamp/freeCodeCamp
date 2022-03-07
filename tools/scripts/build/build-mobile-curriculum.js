@@ -3,6 +3,10 @@ const path = require('path');
 
 exports.buildMobileCurriculum = function buildMobileCurriculum(json) {
   const mobileStaticPath = path.resolve(__dirname, '../../../client/static');
+  const blockIntroPath = path.resolve(
+    __dirname,
+    '../../../client/i18n/locales/english/intro.json'
+  );
 
   fs.mkdirSync(`${mobileStaticPath}/mobile`, { recursive: true });
   writeAndParseCurriculumJson(json);
@@ -25,11 +29,30 @@ exports.buildMobileCurriculum = function buildMobileCurriculum(json) {
 
       for (let j = 0; j < blockNames.length; j++) {
         superBlock[superBlockKeys[i]]['blocks'][blockNames[j]] = {};
+
+        superBlock[superBlockKeys[i]]['blocks'][blockNames[j]]['desc'] =
+          getBlockDescription(superBlockKeys[i], blockNames[j]);
+
         superBlock[superBlockKeys[i]]['blocks'][blockNames[j]]['challenges'] =
           curriculum[superBlockKeys[i]]['blocks'][blockNames[j]]['meta'];
       }
 
       writeToFile(superBlockKeys[i], superBlock);
+    }
+  }
+
+  function getBlockDescription(superBlockKey, blockKey) {
+    try {
+      const intros = JSON.parse(fs.readFileSync(blockIntroPath));
+
+      // remove numbers from key
+      superBlockKey = superBlockKey.split('-').slice(1).join('-');
+
+      const introValues = intros[superBlockKey]['blocks'][blockKey]['intro'];
+
+      return introValues.join('');
+    } catch (e) {
+      return '';
     }
   }
 
