@@ -15,7 +15,7 @@
   - [Ajudar na tradução da aplicação web](how-to-work-on-localized-client-webapp.md)
   - [Trabalhar em testes do Cypress](how-to-add-cypress-tests.md)
   - [Trabalhar nos desafios em vídeo](how-to-help-with-video-challenges.md)
-  - [Work on the docs theme](how-to-work-on-the-docs-theme.md)
+  - [Trabalhe no tema de documentação](how-to-work-on-the-docs-theme.md)
 - **Guias adicionais**
   - [Testar traduções localmente](how-to-test-translations-locally.md)
   - [Compreender a estrutura do arquivo do currículo](curriculum-file-structure.md)
