@@ -426,7 +426,7 @@
     }
   },
   "relational-database": {
-    "title": "Relational Database (Beta)",
+    "title": "Banco de dados relacional (Beta)",
     "intro": [
       "Para estes cursos, você usará ferramentas e software reais de desenvolvedor, incluindo o VS Code, PostgreSQL e a linha de comando do Linux/Unix para completar tutoriais interativos e criar projetos.",
       "Estes cursos começam com comandos básicos do Bash. Usando o terminal, você aprenderá tudo, de navegar e manipular um sistema de arquivos e fazer scripts no Bash, até usos mais avançados.",
@@ -473,62 +473,62 @@
         "title": "Aprenda Bash avançado construindo um tradutor de Kitty Ipsum",
         "intro": [
           "Há mais comandos do Bash do que você imagina.",
-          "In this 140-lesson course, you will learn some more complex commands, and the details of how commands work."
+          "Neste curso de 140 aulas, você aprenderá alguns comandos mais complexos e detalhes de como funcionam os comandos."
         ]
       },
       "learn-bash-and-sql-by-building-a-bike-rental-shop": {
         "title": "Aprenda Bash e SQL criando uma loja de aluguel de bicicletas",
         "intro": [
-          "In this 210-lesson course, you will build an interactive Bash program that stores rental information for your bike rental shop using PostgreSQL."
+          "Neste curso de 210 aulas, você vai construir um programa de Bash interativo que armazena informações de aluguel para sua loja de aluguel de bicicletas utilizando PostgreSQL."
         ]
       },
       "learn-bash-by-building-a-boilerplate": {
         "title": "Aprenda Bash criando um boilerplate",
         "intro": [
           "O terminal permite que você envie comandos de texto para o seu computador que podem manipular o sistema de arquivos, executar programas, automatizar tarefas e muito mais.",
-          "In this 170-lesson course, you will learn terminal commands by creating a website boilerplate using only the command line."
+          "Neste curso de 170 aulas, você aprenderá comandos do terminal criando o boilerplate de um site usando apenas a linha de comando."
         ]
       },
       "learn-bash-scripting-by-building-five-programs": {
         "title": "Aprenda Bash Scripting desenvolvendo cinco programas",
         "intro": [
           "Os scripts do Bash combinam comandos de terminal e lógica em programas que podem executar ou automatizar tarefas e muito mais.",
-          "In this 220-lesson course, you will learn more terminal commands and how to use them within Bash scripts by creating five small programs."
+          "Neste curso de 220 aulas, você aprenderá mais comandos do terminal e como usá-los dentro de scripts do Bash, criando cinco programas pequenos."
         ]
       },
       "learn-git-by-building-an-sql-reference-object": {
         "title": "Aprenda Git criando um objeto de referência SQL",
         "intro": [
           "O Git é um sistema de controle de versão que mantém o controle de todas as alterações feitas em sua base de código.",
-          "In this 240-lesson course, you will learn how Git keeps track of your code by creating an object containing commonly used SQL commands."
+          "Neste curso de 240 aulas, você aprenderá como o Git mantém o controle do seu código, criando um objeto que contém comandos SQL comumente usados."
         ]
       },
       "learn-nano-by-building-a-castle": {
         "title": "Aprenda Nano criando um castelo",
         "intro": [
           "O Nano é um programa que permite editar arquivos diretamente no terminal.",
-          "In this 40-lesson course, you will learn how to edit files in the terminal with Nano while building a castle."
+          "Neste curso de 40 aulas, você aprenderá a editar arquivos no terminal com o nano e construirá um castelo."
         ]
       },
       "learn-relational-databases-by-building-a-mario-database": {
         "title": "Aprenda bancos de dados relacionais criando um banco de dados sobre Mario",
         "intro": [
           "Um banco de dados relacional organiza dados em tabelas que são ligadas entre si através de relações.",
-          "In this 165-lesson course, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
+          "Neste curso de 165 aulas, você aprenderá o essencial sobre bancos de dados relacionais, criando um banco de dados PostgreSQL com vários personagens de videogame."
         ]
       },
       "learn-sql-by-building-a-student-database-part-1": {
         "title": "Aprenda SQL criando um banco de dados de alunos: Parte 1",
         "intro": [
           "O SQL, ou linguagem de consulta estruturada, é a linguagem de comunicação com um banco de dados relacional.",
-          "In this 140-lesson course, you will create a Bash script that uses SQL to enter information about your computer science students into PostgreSQL."
+          "Neste curso de 140 aulas, você criará um script do Bash que utiliza SQL para inserir informações sobre seus alunos de ciência da computação no PostgreSQL."
         ]
       },
       "learn-sql-by-building-a-student-database-part-2": {
         "title": "Aprenda SQL criando um banco de dados de alunos: Parte 2",
         "intro": [
           "Comandos join do SQL são usados para combinar informações de várias tabelas em um banco de dados relacional",
-          "In this 140-lesson course, you will complete your student database while diving deeper into SQL commands."
+          "Neste curso de 140 aulas, você completará seu banco de dados de alunos, mergulhando mais fundo nos comandos SQL."
         ]
       }
     }
