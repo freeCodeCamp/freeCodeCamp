@@ -17,7 +17,7 @@ import { completedChallengesSelector, executeGA } from '../../../redux';
 import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
 import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
-import { IsNewRespCert } from '../../../utils/is-a-cert';
+import { isNewRespCert } from '../../../utils/is-a-cert';
 import Challenges from './challenges';
 import '../intro.css';
 
@@ -104,7 +104,7 @@ export class Block extends Component<BlockProps> {
       t
     } = this.props;
 
-    const isNewResponsiveWebDesign = IsNewRespCert(superBlock);
+    const isNewResponsiveWebDesign = isNewRespCert(superBlock);
 
     let completedCount = 0;
     const challengesWithCompleted = challenges.map(({ challenge }) => {
