@@ -22,7 +22,8 @@ import {
   signInLoadingSelector,
   userSelector,
   isSignedInSelector,
-  hardGoTo as navigate
+  hardGoTo as navigate,
+  webhookTokenSelector
 } from '../redux';
 import { User } from '../redux/prop-types';
 import { submitNewAbout, updateUserFlag, verifyCert } from '../redux/settings';
@@ -45,16 +46,24 @@ interface ShowSettingsProps {
   user: User;
   verifyCert: () => void;
   path?: string;
+  webhookToken: string | null;
 }
 
 const mapStateToProps = createSelector(
   signInLoadingSelector,
   userSelector,
   isSignedInSelector,
-  (showLoading: boolean, user: User, isSignedIn) => ({
+  webhookTokenSelector,
+  (
+    showLoading: boolean,
+    user: User,
+    isSignedIn,
+    webhookToken: string | null
+  ) => ({
     showLoading,
     user,
-    isSignedIn
+    isSignedIn,
+    webhookToken
   })
 );
 
@@ -122,7 +131,8 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     updateInternetSettings,
     updatePortfolio,
     updateIsHonest,
-    verifyCert
+    verifyCert,
+    webhookToken
   } = props;
 
   if (showLoading) {
@@ -202,8 +212,12 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             username={username}
             verifyCert={verifyCert}
           />
-          {deploymentEnv == 'staging' && <Spacer />}
-          {deploymentEnv == 'staging' && <WebhookToken />}
+          {webhookToken && (
+            <>
+              <Spacer />
+              <WebhookToken />
+            </>
+          )}
           <Spacer />
           <DangerZone />
         </main>

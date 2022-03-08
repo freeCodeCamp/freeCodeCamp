@@ -9,6 +9,7 @@ import { emailToABVariant } from '../utils/A-B-tester';
 import { createAcceptTermsSaga } from './accept-terms-saga';
 import { actionTypes } from './action-types';
 import { createAppMountSaga } from './app-mount-saga';
+import { createCodeAllySaga } from './codeally-saga';
 import { createDonationSaga } from './donation-saga';
 import failedUpdatesEpic from './failed-updates-epic';
 import { createFetchUserSaga } from './fetch-user-saga';
@@ -52,6 +53,7 @@ const initialState = {
   showCertFetchState: {
     ...defaultFetchState
   },
+  showCodeAlly: false,
   user: {},
   userFetchState: {
     ...defaultFetchState
@@ -73,6 +75,7 @@ export const epics = [hardGoToEpic, failedUpdatesEpic, updateCompleteEpic];
 export const sagas = [
   ...createAcceptTermsSaga(actionTypes),
   ...createAppMountSaga(actionTypes),
+  ...createCodeAllySaga(actionTypes),
   ...createDonationSaga(actionTypes),
   ...createGaSaga(actionTypes),
   ...createFetchUserSaga(actionTypes),
@@ -171,14 +174,15 @@ export const showCert = createAction(actionTypes.showCert);
 export const showCertComplete = createAction(actionTypes.showCertComplete);
 export const showCertError = createAction(actionTypes.showCertError);
 
-export const postWebhookToken = createAction(actionTypes.postWebhookToken);
-export const postWebhookTokenComplete = createAction(
-  actionTypes.postWebhookTokenComplete
-);
+export const updateWebhookToken = createAction(actionTypes.updateWebhookToken);
 export const deleteWebhookToken = createAction(actionTypes.deleteWebhookToken);
 export const deleteWebhookTokenComplete = createAction(
   actionTypes.deleteWebhookTokenComplete
 );
+
+export const hideCodeAlly = createAction(actionTypes.hideCodeAlly);
+export const showCodeAlly = createAction(actionTypes.showCodeAlly);
+export const tryToShowCodeAlly = createAction(actionTypes.tryToShowCodeAlly);
 
 export const updateCurrentChallengeId = createAction(
   actionTypes.updateCurrentChallengeId
@@ -244,6 +248,10 @@ export const shouldRequestDonationSelector = state => {
 
 export const webhookTokenSelector = state => {
   return userSelector(state).webhookToken;
+};
+
+export const showCodeAllySelector = state => {
+  return state[MainApp].showCodeAlly;
 };
 
 export const userByNameSelector = username => state => {
@@ -652,7 +660,7 @@ export const reducer = handleActions(
         }
       };
     },
-    [actionTypes.postWebhookTokenComplete]: (state, { payload }) => {
+    [actionTypes.updateWebhookToken]: (state, { payload }) => {
       const { appUsername } = state;
       return {
         ...state,
@@ -676,6 +684,18 @@ export const reducer = handleActions(
             webhookToken: null
           }
         }
+      };
+    },
+    [actionTypes.hideCodeAlly]: state => {
+      return {
+        ...state,
+        showCodeAlly: false
+      };
+    },
+    [actionTypes.showCodeAlly]: state => {
+      return {
+        ...state,
+        showCodeAlly: true
       };
     },
     [challengeTypes.challengeMounted]: (state, { payload }) => ({

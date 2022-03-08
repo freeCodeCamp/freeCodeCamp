@@ -17,6 +17,7 @@ import {
 } from '../utils/publicUserProps';
 import { getRedirectParams } from '../utils/redirection';
 import { trimTags } from '../utils/validators';
+import { createDeleteWebhookToken } from '../middlewares/delete-webhook-token';
 
 const log = debugFactory('fcc:boot:user');
 const sendNonUserToHome = ifNoUserRedirectHome();
@@ -33,10 +34,18 @@ function bootUser(app) {
   api.get('/account', sendNonUserToHome, getAccount);
   api.get('/account/unlink/:social', sendNonUserToHome, getUnlinkSocial);
   api.get('/user/get-session-user', getSessionUser);
-
-  api.post('/account/delete', ifNoUser401, postDeleteAccount);
-  api.post('/account/reset-progress', ifNoUser401, postResetProgress);
-  api.post('/user/webhook-token', postWebhookToken);
+  api.post(
+    '/account/delete',
+    ifNoUser401,
+    deleteWebhookToken,
+    postDeleteAccount
+  );
+  api.post(
+    '/account/reset-progress',
+    ifNoUser401,
+    deleteWebhookToken,
+    postResetProgress
+  );
   api.post(
     '/user/report-user/',
     ifNoUser401,
@@ -44,7 +53,13 @@ function bootUser(app) {
     postReportUserProfile
   );
 
-  api.delete('/user/webhook-token', deleteWebhookToken);
+  api.post('/user/webhook-token', ifNoUser401, postWebhookToken);
+  api.delete(
+    '/user/webhook-token',
+    ifNoUser401,
+    deleteWebhookToken,
+    deleteWebhookTokenResponse
+  );
 
   app.use(api);
 }
@@ -60,31 +75,19 @@ function createPostWebhookToken(app) {
       await WebhookToken.destroyAll({ userId: req.user.id });
       newToken = await WebhookToken.create({ ttl, userId: req.user.id });
     } catch (e) {
-      return res.status(500).json({
-        type: 'danger',
-        message: 'flash.create-token-err'
-      });
+      return res.status(500).send('Error starting project');
     }
 
-    return res.json(newToken?.id);
+    return res.json({ token: newToken?.id });
   };
 }
 
-function createDeleteWebhookToken(app) {
-  const { WebhookToken } = app.models;
+function deleteWebhookTokenResponse(req, res) {
+  if (!req.webhookTokenDeleted) {
+    return res.status(500).send('Error deleting token');
+  }
 
-  return async function deleteWebhookToken(req, res) {
-    try {
-      await WebhookToken.destroyAll({ userId: req.user.id });
-    } catch (e) {
-      return res.status(500).json({
-        type: 'danger',
-        message: 'flash.delete-token-err'
-      });
-    }
-
-    return res.json(null);
-  };
+  return res.send({ token: null });
 }
 
 function createReadSessionUser(app) {
@@ -263,20 +266,8 @@ function postResetProgress(req, res, next) {
 }
 
 function createPostDeleteAccount(app) {
-  const { User, WebhookToken } = app.models;
+  const { User } = app.models;
   return async function postDeleteAccount(req, res, next) {
-    const {
-      user: { id: userId }
-    } = req;
-
-    try {
-      await WebhookToken.destroyAll({ userId });
-    } catch (err) {
-      log(
-        `An error occurred deleting webhook tokens for user with id ${userId} when they tried to delete their account`
-      );
-    }
-
     return User.destroyById(req.user.id, function (err) {
       if (err) {
         return next(err);

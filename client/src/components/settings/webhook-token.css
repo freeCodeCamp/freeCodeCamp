@@ -2,20 +2,6 @@
   border-color: var(--highlight-background);
 }
 
-.webhook-token-input {
-  display: block;
-  width: 100%;
-  padding: 3px 8px;
-  background-color: var(--primary-background);
-  border-color: var(--highlight-background);
-  border-style: solid;
-  color: var(--highlight-color);
-}
-
-.webhook-token-input:focus {
-  border-color: var(--highlight-color);
-}
-
 .btn-info {
   background-color: var(--highlight-color);
   color: var(--highlight-background);
