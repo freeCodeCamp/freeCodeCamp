@@ -67,151 +67,151 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "Responsive Web Design (Beta)",
+    "title": "Web Design Responsivo (Beta)",
     "intro": [
-      "In this Responsive Web Design Certification, you'll learn the languages that developers use to build webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design.",
-      "First, you'll build a cat photo app to learn the basics of HTML and CSS. Later, you'll learn modern techniques like CSS variables by building a penguin, and best practices for accessibility by building a web form.",
-      "Finally, you'll learn how to make webpages that respond to different screen sizes by building a Twitter card with Flexbox, and a complex blog layout with CSS Grid."
+      "In questo corso certificato di Web Design Responsivo imparerai i linguaggi che gli sviluppatori utilizzano per creare le pagine web. HTML (Hypertext Markup Language) per i contenuti e CSS (Cascading Style Sheets) per il design.",
+      "Innanzitutto, creerai un'app di foto per gatti per imparare le basi dell'HTML e dei CSS. Più avanti, imparerai le moderne tecniche come le variabili CSS disegnando un pinguino, e le migliori pratiche di accessibilità creando un form web.",
+      "Infine imparerai a fare pagine web adattabili a diverse misure di schermo creando una Twitter Card con Flexbox, e un complesso layout per un blog con una griglia CSS."
     ],
-    "note": "Note: Some browser extensions, such as ad-blockers and dark mode extensions can interfere with the tests. If you face issues, we recommend disabling extensions that modify the content or layout of pages, while taking the course.",
+    "note": "Nota: Alcune estensioni del browser, come ad esempio gli ad-blocker e le estensioni per la modalità scura, possono interferire con i test. In caso di problemi, ti consigliamo di disabilitare le estensioni che modificano il contenuto o il layout delle pagine durante il corso.",
     "blocks": {
       "build-a-tribute-page-project": {
-        "title": "Tribute Page",
+        "title": "Pagina Tributo",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a tribute page for a subject of your choosing, fictional or real."
+          "Questo è uno dei progetti necessari per ottenere la tua certificazione.",
+          "Per questo progetto, costruirai una pagina di tributo per un soggetto di tua scelta, immaginario o reale."
         ]
       },
       "build-a-personal-portfolio-webpage-project": {
-        "title": "Personal Portfolio Webpage",
+        "title": "Pagina web portfolio personale",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build your own personal portfolio page."
+          "Questo è uno dei progetti necessari per ottenere la tua certificazione.",
+          "Per questo progetto, costruirai la tua pagina del portfolio personale."
         ]
       },
       "build-a-product-landing-page-project": {
-        "title": "Product Landing Page",
+        "title": "Landing page di un prodotto",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a product landing page to market a product of your choice."
+          "Questo è uno dei progetti necessari per ottenere la tua certificazione.",
+          "Per questo progetto, costruirete una pagina di destinazione del prodotto per commercializzare un prodotto di vostra scelta."
         ]
       },
       "build-a-survey-form-project": {
-        "title": "Survey Form",
+        "title": "Modulo di sondaggio",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a survey form to collect data from your users."
+          "Questo è uno dei progetti necessari per ottenere la tua certificazione.",
+          "Per questo progetto, creerai un modulo di sondaggio per raccogliere dati dai tuoi utenti."
         ]
       },
       "build-a-technical-documentation-page-project": {
-        "title": "Technical Documentation Page",
+        "title": "Pagina di documentazione tecnica",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a technical documentation page to serve as instruction or reference for a topic."
+          "Questo è uno dei progetti necessari per ottenere la tua certificazione.",
+          "Per questo progetto, si costruirà una pagina di documentazione tecnica che servirà come istruzione o riferimento per un argomento."
         ]
       },
       "learn-html-by-building-a-cat-photo-app": {
-        "title": "Learn HTML by Building a Cat Photo App",
+        "title": "Impara l’HTML progettando una app per foto di gatti",
         "intro": [
-          "HTML tags give a webpage its structure. You can use HTML tags to add photos, buttons, and other elements to your webpage.",
-          "In this course, you'll learn the most common HTML tags by building your own cat photo app."
+          "I tag HTML danno a una pagina web la sua struttura. Puoi usare tag HTML per aggiungere foto, pulsanti e altri elementi alla tua pagina web.",
+          "In questo corso, imparerai i tag HTML più comuni costruendo la tua app di foto di gatto."
         ]
       },
       "learn-basic-css-by-building-a-cafe-menu": {
-        "title": "Learn Basic CSS by Building a Cafe Menu",
+        "title": "Impara le basi del CCS realizzando un menù del bar",
         "intro": [
-          "CSS tells the browser how to display your webpage. You can use CSS to set the color, font, size, and other aspects of HTML elements.",
-          "In this course, you'll learn CSS by designing a menu page for a cafe webpage."
+          "CSS dice al browser come visualizzare la tua pagina web. Puoi usare CSS per impostare il colore, il carattere, la dimensione e altri aspetti degli elementi HTML.",
+          "In questo corso, imparerai CSS progettando una pagina del menu per una pagina web di un bar."
         ]
       },
       "learn-the-css-box-model-by-building-a-rothko-painting": {
-        "title": "Learn the CSS Box Model by Building a Rothko Painting",
+        "title": "Impara il modello CSS Box realizzando un dipinto di Rothko",
         "intro": [
-          "Every HTML element is its own box – with its own spacing and a border. This is called the Box Model.",
-          "In this course, you'll use CSS and the Box Model to create your own Rothko-style rectangular art pieces."
+          "Ogni elemento HTML è una propria scatola – con una propria spaziatura e un bordo. Questo si chiama Box Model.",
+          "In questo corso, userai CSS e il Box Model per creare i tuoi pezzi d'arte rettangolari in stile Rothko."
         ]
       },
       "learn-css-variables-by-building-a-city-skyline": {
-        "title": "Learn CSS Variables by Building a City Skyline",
+        "title": "Impara le variabili CSS costruendo lo skyline di una città",
         "intro": [
-          "CSS variables help you organize your styles and reuse them.",
-          "In this course, you'll build a city skyline. You'll learn how to configure CSS variables so you can reuse them whenever you want."
+          "Le variabili CSS ti aiutano a organizzare i tuoi stili e a riutilizzarli.",
+          "In questo corso, costruirai uno skyline della città. Imparerai come configurare le variabili CSS in modo da poterle riutilizzare ogni volta che vuoi."
         ]
       },
       "learn-html-forms-by-building-a-registration-form": {
-        "title": "Learn HTML Forms by Building a Registration Form",
+        "title": "Impara i moduli HTML realizzando un modulo di registrazione",
         "intro": [
-          "You can use HTML forms to collect information from people who visit your webpage.",
-          "In this course, you'll learn HTML forms by building a signup page. You'll learn how to control what types of data people can type into your form, and some new CSS tools for styling your page."
+          "Puoi utilizzare moduli HTML per raccogliere informazioni da persone che visitano la tua pagina web.",
+          "In questo corso, imparerai i moduli HTML costruendo una pagina di registrazione. Imparerai come controllare quali tipi di dati le persone possono digitare nella tua forma e alcuni nuovi strumenti CSS per stilare la tua pagina."
         ]
       },
       "learn-accessibility-by-building-a-quiz": {
-        "title": "Learn Accessibility by Building a Quiz",
+        "title": "Impara l'accessibilità realizzando un Quiz",
         "intro": [
-          "Accessibility is making your webpage easy for all people to use – even people with disabilities.",
-          "In this course, you'll build a quiz webpage. You'll learn accessibility tools such as keyboard shortcuts, ARIA attributes, and design best practices."
+          "L'accessibilità rende la tua pagina web facile da usare per tutte le persone – anche le persone con disabilità.",
+          "In questo corso, costruirete una pagina web di quiz. Imparerete strumenti di accessibilità come shortcut da tastiera, attributi ARIA e progettate le migliori pratiche."
         ]
       },
       "learn-intermediate-css-by-building-a-picasso-painting": {
-        "title": "Learn Intermediate CSS by Building a Picasso Painting",
+        "title": "Impara il CSS intermedio realizzando un dipinto di Picasso",
         "intro": [
-          "In this course, you'll use learn some intermediate CSS techniques by coding your own Picasso painting webpage. You'll learn about SVG icons, CSS positioning, and review other CSS skills you've learned."
+          "In questo corso, userai imparare alcune tecniche CSS intermedie codificando la tua pagina web del dipinto di Picasso. Imparerai le icone SVG, posizionamento CSS e rivederai le altre abilità CSS che hai imparato."
         ]
       },
       "learn-responsive-web-design-by-building-a-piano": {
-        "title": "Learn Responsive Web Design by Building a Piano",
+        "title": "Impara il Design Responsivo creando un pianoforte",
         "intro": [
-          "Responsive Design tells your webpage how it should look on different-sized screens.",
-          "In this course, you'll use CSS and Responsive Design to code a piano. You'll also learn more about media queries and pseudo selectors."
+          "Design responsivo dice alle tue pagine che aspetto devono avere su schermi di diverse dimensioni.",
+          "In questo corso, utilizzerai CSS e Responsive Design per creare un pianoforte. Scopri anche di più sulle query multimediali e sugli pseudo selettori."
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
-        "title": "Learn CSS Flexbox by Building a Photo Gallery",
+        "title": "Impara il Flexbox CSS costruendo una fotogallery",
         "intro": [
-          "Flexbox helps you design your webpage so that it looks good on any screen size.",
-          "In this course, you'll use Flexbox to build a responsive photo gallery webpage."
+          "Flexbox ti aiuta a progettare la tua pagina web in modo che vada bene su qualsiasi dimensione dello schermo.",
+          "In questo corso, utilizzerai Flexbox per creare una pagina web della galleria fotografica reattiva."
         ]
       },
       "learn-css-grid-by-building-a-magazine": {
-        "title": "Learn CSS Grid by Building a Magazine",
+        "title": "Impara la griglia CSS creando una rivista",
         "intro": [
-          "CSS Grid gives you control over the rows and columns of your webpage design.",
-          "In this course, you'll build a magazine article. You'll learn how to use CSS Grid, including concepts like grid rows and grid columns."
+          "La griglia CSS ti dà il controllo sulle righe e le colonne della tua pagina web.",
+          "In questo corso, creerai un articolo della rivista. Imparerai come usare la griglia CSS, inclusi concetti come le righe della griglia e le colonne della griglia."
         ]
       },
       "learn-typography-by-building-a-nutrition-label": {
-        "title": "Learn Typography by Building a Nutrition Label",
+        "title": "Impara la Tipografia costruendo un'etichetta nutrizionale",
         "intro": [
-          "Typography is the art of styling your text to be easily readable and suit its purpose.",
-          "In this course, you'll use typography to build a nutrition label webpage. You'll learn how to style text, adjust line height, and position your text using CSS."
+          "La tipografia è l'arte di stilare il testo per essere facilmente leggibile e soddisfarne lo scopo.",
+          "In questo corso, userai la tipografia per creare una pagina web di etichette nutrizionali. Imparerai come disegnare il testo, regolare l'altezza della linea e posizionare il testo usando il CSS."
         ]
       },
       "learn-css-transforms-by-building-a-penguin": {
-        "title": "Learn CSS Transforms by Building a Penguin",
+        "title": "Impara le trasformazioni CSS costruendo un pinguino",
         "intro": [
-          "You can transform HTML elements to create appealing designs that draw your reader's eye. You can use transforms to rotate elements, scale them, and more.",
-          "In this course, you'll build a penguin. You'll use CSS transforms to position and resize the parts of your penguin, create a background, and animate your work."
+          "Puoi trasformare gli elementi HTML per creare design piacevoli che attirano l'occhio del tuo lettore. Puoi usare trasformazioni per ruotare elementi, cambiargli dimensione, e altro.",
+          "In questo corso, costruirai un pinguino. Userai le trasformazioni CSS per posizionare e ridimensionare le parti del tuo pinguino, creare un background e animare il tuo lavoro."
         ]
       },
       "learn-css-animation-by-building-a-ferris-wheel": {
-        "title": "Learn CSS Animation by Building a Ferris Wheel",
+        "title": "Impara le animazioni CSS costruendo una ruota panoramica",
         "intro": [
-          "You can use CSS animation to draw attention to specific sections of your webpage and make it more engaging.",
-          "In this course, you'll build a Ferris wheel. You'll learn how to use CSS to animate elements, transform them, and adjust their speed."
+          "Puoi usare le animazioni CSS per attirare l'attenzione su specifiche sezioni della tua pagina web e renderle più attraenti.",
+          "In questo corso creerai una ruota panoramica. Imparerai come usare CSS per animare gli elementi, trasformarli e cambiarne la velocità."
         ]
       },
       "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": {
-        "title": "Learn More About CSS Pseudo Selectors By Building A Balance Sheet",
+        "title": "Impara di più sugli pseudo selettori CSS costruendo un foglio di bilancio",
         "intro": [
-          "You can use CSS pseudo selectors to change specific HTML elements.",
-          "In this course, you'll build a balance sheet using pseudo selectors. You'll learn how to change the style of an element when you hover over it with your mouse, and trigger other events on your webpage."
+          "Puoi usare gli pseudo selettori CSS per cambiare specifici elementi HTML.",
+          "In questo corso, costruirai un foglio di bilancio usando gli pseudo selettori. Imparerai come cambiare lo stile di un elemento quando ci passi sopra il mouse, e attivare altri eventi sulla tua pagina."
         ]
       },
       "learn-css-colors-by-building-a-set-of-colored-markers": {
-        "title": "Learn CSS Colors by Building a Set of Colored Markers",
+        "title": "Impara i colori CSS creando un set di evidenziatori colorati",
         "intro": [
-          "Selecting the correct colors for your webpage can greatly improve the aesthetic appeal to your readers.",
-          "In this course, you'll build a set of colored markers. You'll learn different ways to set color values and how to pair colors with each other."
+          "Selezionare il colore corretto per la tua pagina web può migliorare grandemente l'attrazione estetica ai tuoi lettori.",
+          "In questo corso creerai un set di evidenziatori colorati. Imparerari metodi diversi per settare i valori dei colori e come accoppiare i colori assieme."
         ]
       }
     }
@@ -426,109 +426,109 @@
     }
   },
   "relational-database": {
-    "title": "Relational Database (Beta)",
+    "title": "Database Relazionale (Beta)",
     "intro": [
-      "For these courses, you will use real developer tools and software including VS Code, PostgreSQL, and the Linux / Unix command line to complete interactive tutorials and build projects.",
-      "These courses start off with basic Bash commands. Using the terminal, you will learn everything from navigating and manipulating a file system, scripting in Bash, all the way to advanced usage.",
-      "Next, you will learn how to create and use a relational database with PostgreSQL, a database management system, and SQL, the language of these databases.",
-      "Finally, you will learn Git, the version control system, an essential tool of every developer."
+      "Per questi corsi, userai veri strumenti e software da sviluppatori inclusi VSCode, PostgreSQL, e la riga di comando Linux / Unix per completare i tutorial interattivi e creare progetti.",
+      "Questi corsi iniziano con comandi Bash di base. Usando il terminale imparerai tutto da navigare e manipolare il sistema dei file, creare script in bash, tutto quanto fino all'uso avanzato.",
+      "Poi, imparerari come creare e usare un database relazionale con PostgreSQL, un sistema di gestione database, e SQL, il linguaggio di questi database.",
+      "Infine, imparerai Git, il sistema di controllo versione, uno strumento essenziale per ogni sviluppatore."
     ],
     "blocks": {
       "build-a-celestial-bodies-database-project": {
-        "title": "Celestial Bodies Database",
+        "title": "Database Corpi Celesti",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a database of celestial bodies using PostgreSQL."
+          "Questo è uno dei progetti necessari per ottenere la tua certificazione.",
+          "Per questo progetto, costruirai un database di corpi celesti usando PostgreSQL."
         ]
       },
       "build-a-number-guessing-game-project": {
-        "title": "Number Guessing Game",
+        "title": "Gioco di indovinare il numero",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will use Bash scripting, PostgreSQL, and Git to create a number guessing game that runs in the terminal and saves user information."
+          "Questo è uno dei progetti necessari per ottenere la tua certificazione.",
+          "Per questo progetto, userai Bash scripting, PostgreSQL e Git per creare un gioco di indovinare il numero che esegue nel terminale e salva le informazioni dell'utente."
         ]
       },
       "build-a-periodic-table-database-project": {
-        "title": "Periodic Table Database",
+        "title": "Database della Tavola Periodica",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will create Bash a script to get information about chemical elements from a periodic table database."
+          "Questo è uno dei progetti necessari per ottenere la tua certificazione.",
+          "Per questo progetto, creerai uno script Bash per ottenere informazioni sugli elementi chimici da un database della tavola periodica."
         ]
       },
       "build-a-salon-appointment-scheduler-project": {
-        "title": "Salon Appointment Scheduler",
+        "title": "Pianificatore Appuntamento Salone",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will create an interactive Bash program that uses PostgreSQL to track the customers and appointments for your salon."
+          "Questo è uno dei progetti necessari per ottenere la tua certificazione.",
+          "Per questo progetto, creerai un programma Bash interattivo che utilizza PostgreSQL per tenere traccia dei clienti e degli appuntamenti per il tuo salone."
         ]
       },
       "build-a-world-cup-database-project": {
-        "title": "World Cup Database",
+        "title": "Database Coppa Del Mondo",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will create a Bash script that enters information from World Cup games into PostgreSQL, then query the database for useful statistics."
+          "Questo è uno dei progetti necessari per ottenere la tua certificazione.",
+          "Per questo progetto, creerai uno script di Bash che inserisce informazioni da partite della coppa del mondo in PostgresSQL, e poi fare query al database per ottenere statistiche utili."
         ]
       },
       "learn-advanced-bash-by-building-a-kitty-ipsum-translator": {
-        "title": "Learn Advanced Bash by Building a Kitty Ipsum Translator",
+        "title": "Impara Bash avanzato costruendo un traduttore Kitty Ipsum",
         "intro": [
-          "There's more to Bash commands than you might think.",
-          "In this 140-lesson course, you will learn some more complex commands, and the details of how commands work."
+          "C'è più dei comandi Bash di quanto tu possa pensare.",
+          "In questo corso da 140 lezioni, imparerai comandi un po' più complessi e i dettagli di come i comandi lavorano."
         ]
       },
       "learn-bash-and-sql-by-building-a-bike-rental-shop": {
-        "title": "Learn Bash and SQL by Building a Bike Rental Shop",
+        "title": "Impara Bash e SQL costruendo uno shop di noleggio biciclette",
         "intro": [
-          "In this 210-lesson course, you will build an interactive Bash program that stores rental information for your bike rental shop using PostgreSQL."
+          "In questo corso da 210 lezioni, costruirai un programma Bash interattivo che immagazzina informazioni per il tuo negozio di noleggio biciclette che usa PostgresSQL."
         ]
       },
       "learn-bash-by-building-a-boilerplate": {
-        "title": "Learn Bash by Building a Boilerplate",
+        "title": "Impara Bash costruendo un codice Boilerplate",
         "intro": [
-          "The terminal allows you to send text commands to your computer that can manipulate the file system, run programs, automate tasks, and much more.",
-          "In this 170-lesson course, you will learn terminal commands by creating a website boilerplate using only the command line."
+          "Il terminale ti permette di mandare comandi di testo al tuo computer che possono manipolare il sistema dei file, eseguire programmi, automatizzare attività, e molto altro.",
+          "In questo corso da 170 lezioni, imparerai i comandi del terminale creando un boilerplate di un sito web usando solo la riga di comando."
         ]
       },
       "learn-bash-scripting-by-building-five-programs": {
-        "title": "Learn Bash Scripting by Building Five Programs",
+        "title": "Impara lo Scripting Bash costruendo cinque programmi",
         "intro": [
-          "Bash scripts combine terminal commands and logic into programs that can execute or automate tasks, and much more.",
-          "In this 220-lesson course, you will learn more terminal commands and how to use them within Bash scripts by creating five small programs."
+          "Scripting in Bash combina comandi del terminale e logica in programmi che possono eseguire o automatizzare attività e moltro altro.",
+          "In questo corso con 220 lezioni, imparerai più comandi per il terminale e come usarli con script di Bash creando cinque piccoli programmi."
         ]
       },
       "learn-git-by-building-an-sql-reference-object": {
-        "title": "Learn Git by Building an SQL Reference Object",
+        "title": "Impara Git costruendo un oggetto di riferimento SQL",
         "intro": [
-          "Git is a version control system that keeps track of all the changes you make to your codebase.",
-          "In this 240-lesson course, you will learn how Git keeps track of your code by creating an object containing commonly used SQL commands."
+          "Git è un sistema di controllo versione che tiene traccia di tutti i cambiamenti che fai al tuo codice.",
+          "In questo corso da 240 lezioni, imparareai come Git tiene traccia del tuo codice creando un oggetto che contiene comadni SQL comunemente usati."
         ]
       },
       "learn-nano-by-building-a-castle": {
-        "title": "Learn Nano by Building a Castle",
+        "title": "Impara Nano costruendo un castello",
         "intro": [
-          "Nano is a program that allows you to edit files right in the terminal.",
-          "In this 40-lesson course, you will learn how to edit files in the terminal with Nano while building a castle."
+          "Nano è un programma che ti permette di modificare file direttamente dal terminale.",
+          "In questo corso di 40 lezioni, imparerai a modificare i file nel terminale con Nano mentre costruisci un castello."
         ]
       },
       "learn-relational-databases-by-building-a-mario-database": {
-        "title": "Learn Relational Databases by Building a Mario Database",
+        "title": "Impara i database relazionali costruendo un database Mario",
         "intro": [
-          "A relational database organizes data into tables that are linked together through relationships.",
-          "In this 165-lesson course, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
+          "Un database relazionale organizza i dati in tabelle che sono legate assieme tramite delle relazioni.",
+          "In questo corso da 165 lezioni, imparerai le basi di un database relazionale creando un database PostgresSQL pieno di personaggi di videogiochi."
         ]
       },
       "learn-sql-by-building-a-student-database-part-1": {
-        "title": "Learn SQL by Building a Student Database: Part 1",
+        "title": "Apprendi SQL costruendo un database degli studenti: Parte 1",
         "intro": [
-          "SQL, or Structured Query Language, is the language for communicating with a relational database.",
-          "In this 140-lesson course, you will create a Bash script that uses SQL to enter information about your computer science students into PostgreSQL."
+          "SQL, o Structured Query Language (linguaggio strutturato di richieste), è un linguaggio per comunicare con un database relazionale.",
+          "In questo corso di 140 lezioni, creerai uno script Bash che utilizza SQL per inserire informazioni sui tuoi studenti di informatica in PostgreSQL."
         ]
       },
       "learn-sql-by-building-a-student-database-part-2": {
-        "title": "Learn SQL by Building a Student Database: Part 2",
+        "title": "Apprendi SQL costruendo un database degli studenti: Parte 2",
         "intro": [
-          "SQL join commands are used to combine information from multiple tables in a relational database",
-          "In this 140-lesson course, you will complete your student database while diving deeper into SQL commands."
+          "I comandi SQL join sono usati per combinare informazioni da diverse tabelle in un database relazionale",
+          "In questo corso da 140 lezioni, completerai il tuo database degli studenti andando più a fondo nei comandi SQL."
         ]
       }
     }
@@ -776,11 +776,11 @@
     "browse-other": "Sfoglia le altre nostre certificazioni gratuite\n(consigliamo di seguirle in ordine)",
     "courses": "Corsi",
     "steps": "Passaggi",
-    "expand": "Expand course",
-    "collapse": "Collapse course",
-    "legacy-header": "Legacy Courses",
-    "legacy-desc": "These courses are no longer part of the certification path, but are still available for you to further your learning.",
-    "viewing-upcoming-change": "You are looking at a beta page. ",
-    "go-back-to-learn": "Go back to the stable version of the curriculum."
+    "expand": "Espandi corso",
+    "collapse": "Chiudi corso",
+    "legacy-header": "Vecchi corsi",
+    "legacy-desc": "Questi corsi non sono più parte del percorso di certificazioni, ma sono ancora disponibili per avanzare il tuo apprendimento.",
+    "viewing-upcoming-change": "Stai guardando ad una pagina in beta. ",
+    "go-back-to-learn": "Torna alla versione stabile del curriculum."
   }
 }
