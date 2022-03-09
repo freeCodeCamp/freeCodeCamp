@@ -5,7 +5,7 @@ import { Trans } from 'react-i18next';
 const editorRegex =
   /repl\.?it(\.com)?\/(@|join\/)|glitch\.com\/edit\/#!|codesandbox\.io\/s\/|github\.com/;
 const fCCRegex =
-  /codepen\.io\/freecodecamp|freecodecamp\.rocks|github\.com\/freecodecamp/i;
+  /codepen\.io\/freecodecamp|freecodecamp\.rocks|github\.com\/freecodecamp|\.freecodecamp\.org/i;
 const localhostRegex = /localhost:/;
 const httpRegex = /http(?!s|([^s]+?localhost))/;
 
