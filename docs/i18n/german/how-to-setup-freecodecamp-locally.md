@@ -222,9 +222,9 @@ mongod
 "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
 ```
 
-  <!-- tabs:end -->
+Make sure to replace `3.6` with the version you have installed
 
-Ersetze `3.6` durch die Version, die du installiert hast.
+  <!-- tabs:end -->
 
 > [!TIP] Du kannst vermeiden, dass du MongoDB jedes Mal starten musst, indem du es als Hintergrunddienst installierst. Du kannst [mehr darüber in der Dokumentation für dein Betriebssystem erfahren](https://docs.mongodb.com/manual/administration/install-community/)
 
