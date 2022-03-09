@@ -155,7 +155,7 @@
       "learn-intermediate-css-by-building-a-picasso-painting": {
         "title": "CSS 中級の学習: ピカソの絵画を作成する",
         "intro": [
-          "このコースでは、ピカソの絵画のウェブページを自分でコーディングすることで中級の CSS テクニックを学習します。SVG アイコンや、CSS の位置決めについて学習し、学んできた他の CSS スキルを復習します。"
+          "In this course, you'll learn how to use some intermediate CSS techniques by coding your own Picasso painting webpage. You'll learn about SVG icons, CSS positioning, and review other CSS skills you've learned."
         ]
       },
       "learn-responsive-web-design-by-building-a-piano": {
