@@ -10,7 +10,7 @@ Se vuoi creare nuovi passi, i seguenti strumenti semplificano quel processo.
 
 ## create-next-step
 
-A one-off script that will automatically add the next step based on the last step in the project. The challenge seed code will use the previous step's challenge seed code.
+Uno script una tantum che aggiungerà automaticamente il passo successivo in base all'ultimo passo del progetto. Il codice seed della sfida userà il codice seed di quella precedente.
 
 ### Come eseguire lo script:
 
@@ -23,9 +23,9 @@ npm run create-next-step
 
 ## create-empty-steps
 
-A one-off script that automatically adds a specified number of steps. The challenge seed code for all steps created will be empty.
+Uno script eseguito una sola volta che aggiunge automaticamente un determinato numero di step. Il codice seed della sfida per tutti i passi creati sarà vuoto.
 
-**Note:** This script also runs [update-step-titles](#update-step-titles).
+**Nota:** Questo script esegue anche [update-step-titles](#update-step-titles).
 
 ### Come eseguire lo script:
 
@@ -33,14 +33,14 @@ A one-off script that automatically adds a specified number of steps. The challe
 2. Esegui il seguente comando npm:
 
 ```bash
-npm run create-empty-steps X # where X is the number of steps to create.
+npm run create-empty-steps X # dove X è il numero di step da creare.
 ```
 
 ## insert-step
 
-A one-off script that automatically adds a new step at a specified position, incrementing all subsequent steps (both their titles and in their meta.json). The challenge seed code will use the previous step's challenge seed code with the editable region markers (ERMs) removed.
+Uno script una tantum che aggiunge automaticamente un nuovo passo in una posizione specificata, incrementando tutti i passaggi successivi (sia i loro titoli che in meta.json). Il codice seed della sfida userà il codice seed di quella precedente, rimuovendo i marcatori delle regioni editabili (MRE).
 
-**Note:** This script also runs [update-step-titles](#update-step-titles).
+**Nota:** Questo script esegue anche [update-step-titles](#update-step-titles).
 
 ### Come eseguire lo script:
 
@@ -48,14 +48,14 @@ A one-off script that automatically adds a new step at a specified position, inc
 2. Esegui il seguente comando npm:
 
 ```bash
-npm run insert-step X # where X is the position to insert the new step.
+npm run insert-step X # dove X è la posizione in cui inserire il nuovo step.
 ```
 
 ## delete-step
 
-A one-off script that deletes an existing step, decrementing all subsequent steps (both their titles and in their meta.json)
+Uno script una tantum che rimuove uno step esistente, decrementando tutti i passaggi successivi (sia i loro titoli che in meta.json)
 
-**Note:** This script also runs [update-step-titles](#update-step-titles).
+**Nota:** Questo script esegue anche [update-step-titles](#update-step-titles).
 
 ### Come eseguire lo script
 
@@ -63,14 +63,14 @@ A one-off script that deletes an existing step, decrementing all subsequent step
 2. Esegui il seguente comando npm:
 
 ```bash
-npm run delete-step X # where X is the step number to be deleted.
+npm run delete-step num=x # dove x è il numero dello step da eliminare.
 ```
 
 ## update-step-titles
 
-A one-off script that automatically updates the frontmatter in a project's markdown files so that they are consistent with the project's meta.json. It ensures that each step's title (and dashedName) match the meta's challengeOrder.
+Uno script una tantum che aggiorna automaticamente il frontmatter nei file di markdown di un progetto in modo che siano coerenti con il progetto meta.json. Fa in modo che il titolo di ogni passo (e DashedName) corrisponda al challengeOrder in meta.
 
-### How to run script
+### Come eseguire lo script
 
 1. Vai alla directory del progetto.
 2. Esegui il seguente comando npm:
