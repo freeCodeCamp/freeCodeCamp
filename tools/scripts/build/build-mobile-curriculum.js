@@ -16,7 +16,9 @@ exports.buildMobileCurriculum = function buildMobileCurriculum(json) {
       key => key !== '00-certifications'
     );
 
-    writeToFile('availableSuperblocks', { superblocks: superBlockKeys });
+    writeToFile('availableSuperblocks', {
+      superblocks: [superBlockKeys, getSuperBlockNames()]
+    });
 
     for (let i = 0; i < superBlockKeys.length; i++) {
       const superBlock = {};
@@ -53,6 +55,18 @@ exports.buildMobileCurriculum = function buildMobileCurriculum(json) {
       return introValues.join('');
     } catch (e) {
       return '';
+    }
+  }
+
+  function getSuperBlockNames() {
+    try {
+      const superBlocks = JSON.parse(fs.readFileSync(blockIntroPath));
+
+      return Object.keys(superBlocks).map(
+        superBlock => superBlocks[superBlock].title
+      );
+    } catch (e) {
+      return [];
     }
   }
 
