@@ -39,7 +39,7 @@ assert($('h2')[1].innerText.match(/Desserts/i));
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Camper Cafe Menu</title>
+    <title>Cafe Menu</title>
     <link href="styles.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
