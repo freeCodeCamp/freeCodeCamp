@@ -26,7 +26,7 @@ import {
   partiallyCompletedChallengesSelector,
   showCodeAllySelector,
   tryToShowCodeAlly,
-  webhookTokenSelector
+  userTokenSelector
 } from '../../../redux';
 import {
   challengeMounted,
@@ -54,21 +54,21 @@ const mapStateToProps = createSelector(
   isSignedInSelector,
   partiallyCompletedChallengesSelector,
   showCodeAllySelector,
-  webhookTokenSelector,
+  userTokenSelector,
   (
     completedChallenges: CompletedChallenge[],
     isChallengeCompleted: boolean,
     isSignedIn: boolean,
     partiallyCompletedChallenges: CompletedChallenge[],
     showCodeAlly: boolean,
-    webhookToken: string | null
+    userToken: string | null
   ) => ({
     completedChallenges,
     isChallengeCompleted,
     isSignedIn,
     partiallyCompletedChallenges,
     showCodeAlly,
-    webhookToken
+    userToken
   })
 );
 
@@ -105,7 +105,7 @@ interface ShowCodeAllyProps {
   tryToShowCodeAlly: () => void;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   updateSolutionFormValues: () => void;
-  webhookToken: string | null;
+  userToken: string | null;
 }
 
 // Component
@@ -204,11 +204,11 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       t,
       tryToShowCodeAlly,
       updateSolutionFormValues,
-      webhookToken = null
+      userToken = null
     } = this.props;
 
-    const envVariables = webhookToken
-      ? `&envVariables=CODEROAD_WEBHOOK_TOKEN=${webhookToken}`
+    const envVariables = userToken
+      ? `&envVariables=CODEROAD_WEBHOOK_TOKEN=${userToken}`
       : '';
 
     const isPartiallyCompleted = partiallyCompletedChallenges.some(

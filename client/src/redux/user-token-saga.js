@@ -1,8 +1,8 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 import { createFlashMessage } from '../components/Flash/redux';
 import { FlashMessages } from '../components/Flash/redux/flash-messages';
-import { deleteWebhookToken } from '../utils/ajax';
-import { deleteWebhookTokenComplete } from '.';
+import { deleteUserToken } from '../utils/ajax';
+import { deleteUserTokenComplete } from '.';
 
 const message = {
   deleted: {
@@ -15,12 +15,12 @@ const message = {
   }
 };
 
-function* deleteWebhookTokenSaga() {
+function* deleteUserTokenSaga() {
   try {
-    const response = yield call(deleteWebhookToken);
+    const response = yield call(deleteUserToken);
 
     if (response && Object.prototype.hasOwnProperty.call(response, 'token')) {
-      yield put(deleteWebhookTokenComplete());
+      yield put(deleteUserTokenComplete());
       yield put(createFlashMessage(message.deleted));
     } else {
       yield put(createFlashMessage(message.deleteErr));
@@ -30,6 +30,6 @@ function* deleteWebhookTokenSaga() {
   }
 }
 
-export function createWebhookSaga(types) {
-  return [takeEvery(types.deleteWebhookToken, deleteWebhookTokenSaga)];
+export function createUserTokenSaga(types) {
+  return [takeEvery(types.deleteUserToken, deleteUserTokenSaga)];
 }

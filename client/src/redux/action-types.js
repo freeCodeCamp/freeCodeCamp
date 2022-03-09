@@ -24,7 +24,7 @@ export const actionTypes = createTypes(
     'updateCurrentChallengeId',
     'updateFailed',
     'updateDonationFormState',
-    'updateWebhookToken',
+    'updateUserToken',
     ...createAsyncTypes('fetchUser'),
     ...createAsyncTypes('addDonation'),
     ...createAsyncTypes('createStripeSession'),
@@ -34,7 +34,7 @@ export const actionTypes = createTypes(
     ...createAsyncTypes('showCert'),
     ...createAsyncTypes('reportUser'),
     ...createAsyncTypes('postChargeStripeCard'),
-    ...createAsyncTypes('deleteWebhookToken')
+    ...createAsyncTypes('deleteUserToken')
   ],
   ns
 );

@@ -4,37 +4,37 @@ import React, { Component } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 
-import { deleteWebhookToken } from '../../redux';
+import { deleteUserToken } from '../../redux';
 import { ButtonSpacer, FullWidthRow, Spacer } from '../helpers';
 
-import './webhook-token.css';
+import './user-token.css';
 
-type WebhookTokenProps = {
-  deleteWebhookToken: () => void;
+type UserTokenProps = {
+  deleteUserToken: () => void;
   t: TFunction;
 };
 
 const mapDispatchToProps = {
-  deleteWebhookToken
+  deleteUserToken
 };
 
-class WebhookToken extends Component<WebhookTokenProps> {
+class UserToken extends Component<UserTokenProps> {
   static displayName: string;
 
   deleteToken = () => {
-    this.props.deleteWebhookToken();
+    this.props.deleteUserToken();
   };
 
   render() {
     const { t } = this.props;
 
     return (
-      <div className='webhook-token text-center'>
+      <div className='user-token text-center'>
         <FullWidthRow>
-          <Panel className='webhook-panel'>
-            <Panel.Heading>{t('webhook-token.title')}</Panel.Heading>
+          <Panel className='user-panel'>
+            <Panel.Heading>{t('user-token.title')}</Panel.Heading>
             <Spacer />
-            <p>{t('webhook-token.delete-p1')}</p>
+            <p>{t('user-token.delete-p1')}</p>
             <FullWidthRow>
               <ButtonSpacer />
               <Button
@@ -45,7 +45,7 @@ class WebhookToken extends Component<WebhookTokenProps> {
                 onClick={this.deleteToken}
                 type='button'
               >
-                {t('webhook-token.delete')}
+                {t('user-token.delete')}
               </Button>
               <Spacer />
             </FullWidthRow>
@@ -56,9 +56,6 @@ class WebhookToken extends Component<WebhookTokenProps> {
   }
 }
 
-WebhookToken.displayName = 'WebhookToken';
+UserToken.displayName = 'UserToken';
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(withTranslation()(WebhookToken));
+export default connect(null, mapDispatchToProps)(withTranslation()(UserToken));

@@ -1,12 +1,12 @@
 import { call, put, select, takeEvery } from 'redux-saga/effects';
 import { createFlashMessage } from '../components/Flash/redux';
 import { FlashMessages } from '../components/Flash/redux/flash-messages';
-import { postWebhookToken } from '../utils/ajax';
+import { postUserToken } from '../utils/ajax';
 import {
   isSignedInSelector,
   showCodeAlly,
-  updateWebhookToken,
-  webhookTokenSelector
+  updateUserToken,
+  userTokenSelector
 } from './';
 
 const startProjectErrMessage = {
@@ -16,16 +16,16 @@ const startProjectErrMessage = {
 
 function* tryToShowCodeAllySaga() {
   const isSignedIn = yield select(isSignedInSelector);
-  const hasWebhookToken = !!(yield select(webhookTokenSelector));
+  const hasUserToken = !!(yield select(userTokenSelector));
 
-  if (!isSignedIn || hasWebhookToken) {
+  if (!isSignedIn || hasUserToken) {
     yield put(showCodeAlly());
   } else {
     try {
-      const response = yield call(postWebhookToken);
+      const response = yield call(postUserToken);
 
       if (response?.token) {
-        yield put(updateWebhookToken(response.token));
+        yield put(updateUserToken(response.token));
         yield put(showCodeAlly());
       } else {
         yield put(createFlashMessage(startProjectErrMessage));

@@ -17,13 +17,13 @@ import Internet from '../components/settings/internet';
 import Portfolio from '../components/settings/portfolio';
 import Privacy from '../components/settings/privacy';
 import { Themes } from '../components/settings/theme';
-import WebhookToken from '../components/settings/webhook-token';
+import UserToken from '../components/settings/user-token';
 import {
   signInLoadingSelector,
   userSelector,
   isSignedInSelector,
   hardGoTo as navigate,
-  webhookTokenSelector
+  userTokenSelector
 } from '../redux';
 import { User } from '../redux/prop-types';
 import { submitNewAbout, updateUserFlag, verifyCert } from '../redux/settings';
@@ -46,24 +46,19 @@ interface ShowSettingsProps {
   user: User;
   verifyCert: () => void;
   path?: string;
-  webhookToken: string | null;
+  userToken: string | null;
 }
 
 const mapStateToProps = createSelector(
   signInLoadingSelector,
   userSelector,
   isSignedInSelector,
-  webhookTokenSelector,
-  (
-    showLoading: boolean,
-    user: User,
-    isSignedIn,
-    webhookToken: string | null
-  ) => ({
+  userTokenSelector,
+  (showLoading: boolean, user: User, isSignedIn, userToken: string | null) => ({
     showLoading,
     user,
     isSignedIn,
-    webhookToken
+    userToken
   })
 );
 
@@ -132,7 +127,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     updatePortfolio,
     updateIsHonest,
     verifyCert,
-    webhookToken
+    userToken
   } = props;
 
   if (showLoading) {
@@ -212,10 +207,10 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             username={username}
             verifyCert={verifyCert}
           />
-          {webhookToken && (
+          {userToken && (
             <>
               <Spacer />
-              <WebhookToken />
+              <UserToken />
             </>
           )}
           <Spacer />
