@@ -1,7 +1,7 @@
 - **Per iniziare**
   - [Introduzione](index.md "Contribuire alla comunità freeCodeCamp.org")
   - [Domande frequenti](FAQ.md)
-  - [Reporting a Vulnerability](security.md)
+  - [Segnalare una vulnerabilità](security.md)
 - **Contribuire alla traduzione**
   - [Lavorare a tradurre le risorse](how-to-translate-files.md)
   - [Lavorare a correggere le risorse](how-to-proofread-files.md)
@@ -15,7 +15,7 @@
   - [Lavorare sulla app web in locale](how-to-work-on-localized-client-webapp.md)
   - [Lavora sui test Cypress ](how-to-add-cypress-tests.md)
   - [Lavorare sulle sfide video](how-to-help-with-video-challenges.md)
-  - [Work on the docs theme](how-to-work-on-the-docs-theme.md)
+  - [Lavorare sul tema della documentazione](how-to-work-on-the-docs-theme.md)
 - **Guide aggiuntive**
   - [Testare traduzioni in locale](how-to-test-translations-locally.md)
   - [Capire la struttura dei file del curriculum](curriculum-file-structure.md)

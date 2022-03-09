@@ -30,7 +30,7 @@ Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospi
 };
 ```
 
-Una richiesta a `/api/:date?` con una data valida dovrebbe restituire un oggetto JSON con una chiave `unix` che è il tempo Unix in millisecondi della data di input
+Una richiesta a `/api/:date?` con una data valida dovrebbe restituire un oggetto JSON con una chiave `unix` che è un timestamp Unix della data di input in millisecondi (di tipo Number)
 
 ```js
 (getUserInput) =>

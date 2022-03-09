@@ -222,9 +222,9 @@ mongod
 "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
 ```
 
-  <!-- tabs:end -->
+Make sure to replace `3.6` with the version you have installed
 
-必ず `3.6` をインストールしたバージョンに置き換えてください。
+  <!-- tabs:end -->
 
 > [!TIP] MongoDBをバックグラウンドサービスとしてインストールすることで、毎回起動する必要がなくなります。 [お使いのOSに関するドキュメント](https://docs.mongodb.com/manual/administration/install-community/) で詳細を確認できます。
 
