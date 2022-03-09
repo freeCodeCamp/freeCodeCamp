@@ -71,32 +71,34 @@ exports.createChallengePages = function (createPage) {
     // TODO: challengeType === 7 and isPrivate are the same, right? If so, we
     // should remove one of them.
 
-    createPage({
-      path: slug,
-      component: getTemplateComponent(challengeType),
-      context: {
-        challengeMeta: {
-          certification,
-          superBlock,
-          block,
-          template,
-          required,
-          nextChallengePath: getNextChallengePath(
-            challenge,
-            index,
-            allChallengeEdges
-          ),
-          prevChallengePath: getPrevChallengePath(
-            challenge,
-            index,
-            allChallengeEdges
-          ),
-          id
-        },
-        projectPreview: getProjectPreviewConfig(challenge, allChallengeEdges),
-        slug
-      }
-    });
+    for (let i = 0; i < 10; i++) {
+      createPage({
+        path: slug + i,
+        component: getTemplateComponent(challengeType),
+        context: {
+          challengeMeta: {
+            certification,
+            superBlock,
+            block,
+            template,
+            required,
+            nextChallengePath: getNextChallengePath(
+              challenge,
+              index,
+              allChallengeEdges
+            ),
+            prevChallengePath: getPrevChallengePath(
+              challenge,
+              index,
+              allChallengeEdges
+            ),
+            id
+          },
+          projectPreview: getProjectPreviewConfig(challenge, allChallengeEdges),
+          slug
+        }
+      });
+    }
   };
 };
 
