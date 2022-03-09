@@ -40,7 +40,7 @@ assert.equal(document.querySelectorAll('fieldset:nth-child(2) input[type="radio"
 <!DOCTYPE html>
 <html>
   <head>
-    <title>freeCodeCamp Registration Form Project</title>
+    <title>Registration Form</title>
 	  <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
   <body>
