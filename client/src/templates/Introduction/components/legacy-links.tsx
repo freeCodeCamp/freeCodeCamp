@@ -34,7 +34,7 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
             <Link
               external={true}
               sameTab={false}
-              to={`https://www.freecodecamp.org/news/how-to-complete-the-relational-databases-curriculum-on-freecodecamp-and-earn-your-free-certification`}
+              to={`https://forum.freecodecamp.org/t/how-to-troubleshoot-the-web-version-of-the-relational-database-curriculum/500231`}
             >
               {t('intro:misc-text.read-database-cert-article')}
             </Link>
