@@ -1,34 +1,34 @@
 const practiceProjects = [
   {
-    title: 'freeCodeCamp: Accessibility Quiz',
+    title: 'Accessibility Quiz',
     url: '/learn/2022/responsive-web-design/learn-accessibility-by-building-a-quiz/'
   },
   {
-    title: 'Camper Cafe Menu',
+    title: 'Cafe Menu',
     url: '/learn/2022/responsive-web-design/learn-basic-css-by-building-a-cafe-menu/'
   },
   {
-    title: 'Learn CSS Animations by Building a Ferris Wheel',
+    title: 'Ferris Wheel',
     url: '/learn/2022/responsive-web-design/learn-css-animation-by-building-a-ferris-wheel/'
   },
   {
-    title: 'CSS Color Markers',
+    title: 'Colored Markers',
     url: '/learn/2022/responsive-web-design/learn-css-colors-by-building-a-set-of-colored-markers/'
   },
   {
-    title: 'CSS Flexbox Photo Gallery',
+    title: 'Photo Gallery',
     url: '/learn/2022/responsive-web-design/learn-css-flexbox-by-building-a-photo-gallery/'
   },
   {
-    title: 'CSS Grid Magazine',
+    title: 'Magazine',
     url: '/learn/2022/responsive-web-design/learn-css-grid-by-building-a-magazine/'
   },
   {
-    title: 'CSS Penguin',
+    title: 'Penguin',
     url: '/learn/2022/responsive-web-design/learn-css-transforms-by-building-a-penguin/'
   },
   {
-    title: 'freeCodeCamp Skyline Project',
+    title: 'Skyline Project',
     url: '/learn/2022/responsive-web-design/learn-css-variables-by-building-a-city-skyline/'
   },
   {
@@ -36,23 +36,23 @@ const practiceProjects = [
     url: '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/'
   },
   {
-    title: 'freeCodeCamp Registration Form Project',
+    title: 'Registration Form',
     url: '/learn/2022/responsive-web-design/learn-html-forms-by-building-a-registration-form/'
   },
   {
-    title: 'freeCodeCamp Picasso Painting',
+    title: 'Picasso Painting',
     url: '/learn/2022/responsive-web-design/learn-intermediate-css-by-building-a-picasso-painting/'
   },
   {
-    title: 'AcmeWidgetCorp Balance Sheet',
+    title: 'Balance Sheet',
     url: '/learn/2022/responsive-web-design/learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet/'
   },
   {
-    title: 'Responsive Web Design Piano',
+    title: 'Piano',
     url: '/learn/2022/responsive-web-design/learn-responsive-web-design-by-building-a-piano/'
   },
   {
-    title: 'Rothko',
+    title: 'Rothko Painting',
     url: '/learn/2022/responsive-web-design/learn-the-css-box-model-by-building-a-rothko-painting/'
   },
   {
