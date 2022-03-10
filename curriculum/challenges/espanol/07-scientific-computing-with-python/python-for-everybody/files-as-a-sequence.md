@@ -1,38 +1,42 @@
 ---
 id: 5e7b9f080b6c005b0e76f063
-title: Files as a Sequence
+title: Archivos como secuencia
 challengeType: 11
 videoId: cIA0EokbaHE
+bilibiliIds:
+  aid: 974380307
+  bvid: BV1p44y1m7br
+  cid: 376388846
 dashedName: files-as-a-sequence
 ---
 
 # --description--
 
-More resources:
+Más recursos:
 
-\- [Exercise](https://www.youtube.com/watch?v=il1j4wkte2E)
+\- [Ejercicios](https://www.youtube.com/watch?v=il1j4wkte2E)
 
 # --question--
 
 ## --text--
 
-What does the word 'continue' do in the middle of a loop?
+¿Qué hace la palabra "continue" en medio de un bucle?
 
 ## --answers--
 
-Skips to the code directly after the loop.
+Salta directamente al código después del bucle.
 
 ---
 
-Skips to the next line in the code.
+Salta a la siguiente línea en el código.
 
 ---
 
-Skips to the next iteration of the loop.
+Salta a la siguiente iteración del bucle.
 
 ---
 
-Skips the next block of code.
+Salta el próximo bloque de código.
 
 ## --video-solution--
 
