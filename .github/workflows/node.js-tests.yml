@@ -40,6 +40,7 @@ jobs:
 
       - name: Lint Source Files
         run: |
+          echo npm version $(npm -v)
           npm ci
           npm run create:config
           npm run build:curriculum
@@ -73,6 +74,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
+          echo npm version $(npm -v)
           npm ci
           npm run create:config
           npm run build:curriculum
@@ -109,6 +111,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
+          echo npm version $(npm -v)
           npm ci
           npm run create:config
           npm run build:curriculum
@@ -149,6 +152,7 @@ jobs:
           CURRICULUM_LOCALE: ${{ matrix.locale }}
           CLIENT_LOCALE: ${{ matrix.locale }}
         run: |
+          echo npm version $(npm -v)
           npm ci
           npm run create:config
           npm run build:curriculum
