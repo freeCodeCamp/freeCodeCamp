@@ -155,7 +155,7 @@
       "learn-intermediate-css-by-building-a-picasso-painting": {
         "title": "Aprenda CSS intermediário criando uma pintura de Picasso",
         "intro": [
-          "Neste curso, você vai aprender algumas técnicas de CSS intermediárias programando sua própria página de uma pintura de Picasso. Você vai aprender sobre ícones SVG, posicionamento em CSS e revisar outras habilidades CSS que você aprendeu."
+          "In this course, you'll learn how to use some intermediate CSS techniques by coding your own Picasso painting webpage. You'll learn about SVG icons, CSS positioning, and review other CSS skills you've learned."
         ]
       },
       "learn-responsive-web-design-by-building-a-piano": {
@@ -426,7 +426,7 @@
     }
   },
   "relational-database": {
-    "title": "Bancos de dados relacionais",
+    "title": "Banco de dados relacional (Beta)",
     "intro": [
       "Para estes cursos, você usará ferramentas e software reais de desenvolvedor, incluindo o VS Code, PostgreSQL e a linha de comando do Linux/Unix para completar tutoriais interativos e criar projetos.",
       "Estes cursos começam com comandos básicos do Bash. Usando o terminal, você aprenderá tudo, de navegar e manipular um sistema de arquivos e fazer scripts no Bash, até usos mais avançados.",
@@ -479,14 +479,14 @@
       "learn-bash-and-sql-by-building-a-bike-rental-shop": {
         "title": "Aprenda Bash e SQL criando uma loja de aluguel de bicicletas",
         "intro": [
-          "Neste curso intermediário, você vai construir um programa de Bash interativo que armazena informações de aluguel para sua loja de aluguel de bicicletas utilizando PostgreSQL."
+          "Neste curso de 210 aulas, você vai construir um programa de Bash interativo que armazena informações de aluguel para sua loja de aluguel de bicicletas utilizando PostgreSQL."
         ]
       },
       "learn-bash-by-building-a-boilerplate": {
         "title": "Aprenda Bash criando um boilerplate",
         "intro": [
           "O terminal permite que você envie comandos de texto para o seu computador que podem manipular o sistema de arquivos, executar programas, automatizar tarefas e muito mais.",
-          "Neste curso de 170 aulas, você aprenderá comandos básicos criando o boilerplate de um site usando apenas a linha de comando."
+          "Neste curso de 170 aulas, você aprenderá comandos do terminal criando o boilerplate de um site usando apenas a linha de comando."
         ]
       },
       "learn-bash-scripting-by-building-five-programs": {

@@ -1,6 +1,6 @@
 ---
 id: 5900f4cd1000cf542c50ffe0
-title: 'Problem 353: Risky moon'
+title: 'Problema 353: Luna rischiosa'
 challengeType: 5
 forumTopicId: 302013
 dashedName: problem-353-risky-moon
@@ -8,28 +8,30 @@ dashedName: problem-353-risky-moon
 
 # --description--
 
-A moon could be described by the sphere C(r) with centre (0,0,0) and radius r.
+Una luna potrebbe essere descritta dalla sfera $C(r)$ con centro (0, 0, 0) e raggio $r$.
 
-There are stations on the moon at the points on the surface of C(r) with integer coordinates. The station at (0,0,r) is called North Pole station, the station at (0,0,-r) is called South Pole station.
+Ci sono stazioni sulla luna nei punti sulla superficie di $C(r)$ con coordinate intere. La stazione a (0, 0, $r$) si chiama Stazione Polo Nord, la stazione a (0, 0, $-r$) si chiama Stazione Polo Sud.
 
-All stations are connected with each other via the shortest road on the great arc through the stations. A journey between two stations is risky. If d is the length of the road between two stations, (d/(π r))2 is a measure for the risk of the journey (let us call it the risk of the road). If the journey includes more than two stations, the risk of the journey is the sum of risks of the used roads.
+Tutte le stazioni sono collegate tra loro attraverso la strada più breve sul grande arco attraverso le stazioni. Un viaggio tra due stazioni è rischioso. Se $d$ è la lunghezza della strada tra due stazioni, $\{\left(\frac{d}{πr}\right)}^2$ è una misura per il rischio del viaggio (chiamiamolo il rischio della strada). Se il viaggio comprende più di due stazioni, il rischio del viaggio è la somma dei rischi delle strade usate.
 
-A direct journey from the North Pole station to the South Pole station has the length πr and risk 1. The journey from the North Pole station to the South Pole station via (0,r,0) has the same length, but a smaller risk: (½πr/(πr))2+(½πr/(πr))2=0.5.
+Un viaggio diretto dalla stazione Polo Nord alla stazione Polo Sud ha la lunghezza $πr$ e il rischio 1. Il viaggio dalla stazione Polo Nord alla stazione Polo Sud attraverso (0, $r$, 0) ha la stessa lunghezza, ma un rischio minore:
 
-The minimal risk of a journey from the North Pole station to the South Pole station on C(r) is M(r).
+$${\left(\frac{\frac{1}{2}πr}{πr}\right)}^2+{\left(\frac{\frac{1}{2}πr}{πr}\right)}^2 = 0.5$$
 
-You are given that M(7)=0.1784943998 rounded to 10 digits behind the decimal point.
+Il rischio minimo di un viaggio dalla stazione Polo Nord alla stazione Polo Sud su $C(r)$ è $M(r)$.
 
-Find ∑M(2n-1) for 1≤n≤15.
+Ti viene dato che $M(7) = 0.178\\,494\\,399\\,8$ arrotondato a 10 cifre dietro il punto decimale.
 
-Give your answer rounded to 10 digits behind the decimal point in the form a.bcdefghijk.
+Trova $\displaystyle\sum_{n = 1}^{15} M(2^n - 1)$.
+
+Dai la tua risposta arrotondata a 10 cifre dietro il punto decimale nella forma a.bcdefghijk.
 
 # --hints--
 
-`euler353()` should return 1.2759860331.
+`riskyMoon()` dovrebbe restituire `1.2759860331`.
 
 ```js
-assert.strictEqual(euler353(), 1.2759860331);
+assert.strictEqual(riskyMoon(), 1.2759860331);
 ```
 
 # --seed--
@@ -37,12 +39,12 @@ assert.strictEqual(euler353(), 1.2759860331);
 ## --seed-contents--
 
 ```js
-function euler353() {
+function riskyMoon() {
 
   return true;
 }
 
-euler353();
+riskyMoon();
 ```
 
 # --solutions--

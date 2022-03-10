@@ -15,8 +15,7 @@
   - [ローカライズされたクライアント Web アプリに貢献する](how-to-work-on-localized-client-webapp.md)
   - [Cypress テストに貢献する](how-to-add-cypress-tests.md)
   - [ビデオチャレンジに貢献する](how-to-help-with-video-challenges.md)
-  - [ニュースのテーマに貢献する](how-to-work-on-the-news-theme.md)
-  - [ドキュメントのテーマに貢献する](how-to-work-on-the-docs-theme.md)
+  - [Work on the docs theme](how-to-work-on-the-docs-theme.md)
 - **その他のガイド**
   - [翻訳をローカルでテストする](how-to-test-translations-locally.md)
   - [カリキュラムのファイル構造を理解する](curriculum-file-structure.md)

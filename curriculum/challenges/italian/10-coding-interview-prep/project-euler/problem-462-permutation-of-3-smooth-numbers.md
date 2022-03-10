@@ -1,6 +1,6 @@
 ---
 id: 5900f53b1000cf542c51004d
-title: 'Problem 462: Permutation of 3-smooth numbers'
+title: 'Problema 462: Permutazione di numeri 3-lisci'
 challengeType: 5
 forumTopicId: 302137
 dashedName: problem-462-permutation-of-3-smooth-numbers
@@ -8,28 +8,34 @@ dashedName: problem-462-permutation-of-3-smooth-numbers
 
 # --description--
 
-<!-- TODO use MathJax -->
+Un numero 3-liscio è un numero intero che non ha un fattore primo maggiore di 3. Per un intero $N$ definiamo $S(N)$ come il set di 3 numeri lisci minore o uguale a $N$. Ad esempio, $S(20) = \\{1, 2, 3, 4, 6, 8, 9, 12, 16, 18\\}$.
 
-A 3-smooth number is an integer which has no prime factor larger than 3. For an integer N, we define S(N) as the set of 3-smooth numbers less than or equal to N . For example, S(20) = { 1, 2, 3, 4, 6, 8, 9, 12, 16, 18 }.
+Definiamo $F(N)$ come il numero di permutazioni di $S(N)$ in cui ogni elemento viene dopo tutti i propri divisori.
 
-We define F(N) as the number of permutations of S(N) in which each element comes after all of its proper divisors.
-
-This is one of the possible permutations for N = 20.
+Questa è una delle possibili permutazioni per $N = 20$.
 
 -   1, 2, 4, 3, 9, 8, 16, 6, 18, 12.
 
-This is not a valid permutation because 12 comes before its divisor 6.
+Questa non è una permutazione valida perché 12 viene prima del suo divisore 6.
 
 -   1, 2, 4, 3, 9, 8, 12, 16, 6, 18.
 
-We can verify that F(6) = 5, F(8) = 9, F(20) = 450 and F(1000) ≈ 8.8521816557e21. Find F(1018). Give as your answer its scientific notation rounded to ten digits after the decimal point. When giving your answer, use a lowercase e to separate mantissa and exponent. E.g. if the answer is 112,233,445,566,778,899 then the answer format would be 1.1223344557e17.
+Si può verificare che $F(6) = 5$, $F(8) = 9$, $F(20) = 450$ e $F(1000) ≈ 8.8521816557e\\,21$.
+
+Trova $F({10}^{18})$. Dai come risposta una stringa nella sua notazione scientifica arrotondata a dieci cifre dopo il punto decimale. Quando fornisci la tua risposta, usa una `e` minuscola per separare mantissa ed esponente. Ad es. se la risposta è $112\\,233\\,445\\,566\\,778\\,899$ allora il formato della risposta sarebbe `1.1223344557e17`.
 
 # --hints--
 
-`euler462()` should return Infinity.
+`permutationOf3SmoothNumbers()` dovrebbe restituire una stringa.
 
 ```js
-assert.strictEqual(euler462(), Infinity);
+assert.strictEqual(typeof permutationOf3SmoothNumbers() === 'string');
+```
+
+`permutationOf3SmoothNumbers()` dovrebbe restituire la stringa `5.5350769703e1512`.
+
+```js
+assert.strictEqual(permutationOf3SmoothNumbers(), '5.5350769703e1512');
 ```
 
 # --seed--
@@ -37,12 +43,12 @@ assert.strictEqual(euler462(), Infinity);
 ## --seed-contents--
 
 ```js
-function euler462() {
+function permutationOf3SmoothNumbers() {
 
   return true;
 }
 
-euler462();
+permutationOf3SmoothNumbers();
 ```
 
 # --solutions--

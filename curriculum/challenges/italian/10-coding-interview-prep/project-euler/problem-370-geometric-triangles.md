@@ -1,6 +1,6 @@
 ---
 id: 5900f4de1000cf542c50fff1
-title: 'Problem 370: Geometric triangles'
+title: 'Problema 370: Triangoli geometrici'
 challengeType: 5
 forumTopicId: 302032
 dashedName: problem-370-geometric-triangles
@@ -8,20 +8,20 @@ dashedName: problem-370-geometric-triangles
 
 # --description--
 
-Let us define a geometric triangle as an integer sided triangle with sides a ≤ b ≤ c so that its sides form a geometric progression, i.e. b2 = a · c .
+Sia un triangolo geometrico un triangolo con lati interi con lati $a ≤ b ≤ c$ cossìcché i suoi lati formino una progressione geometrica, cioè $b^2 = a \times c$.
 
-An example of such a geometric triangle is the triangle with sides a = 144, b = 156 and c = 169.
+Un esempio di tale triangolo è il triangolo con lati $a = 144$, $b = 156$ e $c = 169$.
 
-There are 861805 geometric triangles with perimeter ≤ 106 .
+Ci sono $861\\,805$ triangoli geometrici con $\text{perimetro} ≤ {10}^6$.
 
-How many geometric triangles exist with perimeter ≤ 2.5·1013 ?
+Quanti triangoli geometrici esistono con $\text{perimetro} ≤ 2.5 \times {10}^{13}$?
 
 # --hints--
 
-`euler370()` should return 41791929448408.
+`geometricTriangles()` dovrebbe restituire `41791929448408`.
 
 ```js
-assert.strictEqual(euler370(), 41791929448408);
+assert.strictEqual(geometricTriangles(), 41791929448408);
 ```
 
 # --seed--
@@ -29,12 +29,12 @@ assert.strictEqual(euler370(), 41791929448408);
 ## --seed-contents--
 
 ```js
-function euler370() {
+function geometricTriangles() {
 
   return true;
 }
 
-euler370();
+geometricTriangles();
 ```
 
 # --solutions--

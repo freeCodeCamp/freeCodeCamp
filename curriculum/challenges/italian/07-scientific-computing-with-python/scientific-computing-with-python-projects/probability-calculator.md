@@ -10,12 +10,6 @@ dashedName: probability-calculator
 
 Lavorerari a [questo progetto con il nostro codice d'inizio su Replit](https://replit.com/github/freeCodeCamp/boilerplate-probability-calculator).
 
-Stiamo ancora sviluppando la parte didattica interattiva del curriculum di Python. Per ora, ecco alcuni video sul canale YouTube di freeCodeCamp.org che ti insegneranno tutto quello che devi sapere per completare questo progetto:
-
-- [Video corso Python for Everybody](https://www.freecodecamp.org/news/python-for-everybody/) (14 ore)
-
-- [Video corso Learn Python](https://www.freecodecamp.org/news/learn-python-video-course/) (10 ore)
-
 # --instructions--
 
 Supponiamo che ci sia un cappello contenente 5 palline blu, 4 palline rosse e 2 palline verdi. Qual è la probabilità che una pescata casuale di 4 palline contenga almeno 1 pallina rossa e 2 palline verdi? Mentre sarebbe possibile calcolare la probabilità utilizzando la matematica avanzata, un modo più facile è quello di scrivere un programma per eseguire un gran numero di esperimenti per stimare una probabilità approssimativa.
@@ -67,11 +61,11 @@ Il codice iniziale include le istruzioni di `import` per i moduli `copy` e `rand
 
 ## Test
 
-I test unitari per questo progetto sono in `test_module.py`. Abbiamo impotato i test da `test_module.py` in `main.py` per la tua convenienza. I test eseguiranno automaticamente quando usi il bottone "run".
+I test unitari per questo progetto sono in `test_module.py`. Abbiamo importato i test da `test_module.py` in `main.py` per tua comodità. I test saranno eseguiti automaticamente quando usi il bottone "run".
 
 ## Invio
 
-Copia l'URL del tuo progetto e consegnalo nell'input qua sotto.
+Copia l'URL del tuo progetto e invialo a freeCodeCamp.
 
 # --hints--
 

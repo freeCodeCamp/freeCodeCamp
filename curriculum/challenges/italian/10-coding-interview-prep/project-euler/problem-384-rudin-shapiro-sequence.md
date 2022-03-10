@@ -1,6 +1,6 @@
 ---
 id: 5900f4ed1000cf542c50fffe
-title: 'Problem 384: Rudin-Shapiro sequence'
+title: 'Problema 384: Sequenza di Rudin-Shapiro'
 challengeType: 5
 forumTopicId: 302048
 dashedName: problem-384-rudin-shapiro-sequence
@@ -8,30 +8,38 @@ dashedName: problem-384-rudin-shapiro-sequence
 
 # --description--
 
-Define the sequence a(n) as the number of adjacent pairs of ones in the binary expansion of n (possibly overlapping).
+Definisci la sequenza $a(n)$ come il numero di coppie adiacenti di uno nell'espansione binaria di $n$ (possibilmente sovrapposte).
 
-E.g.: a(5) = a(1012) = 0, a(6) = a(1102) = 1, a(7) = a(1112) = 2
+Ad esempio: $a(5) = a({101}_2) = 0$, $a(6) = a({110}_2) = 1$, $a(7) = a({111}_2) = 2$
 
-Define the sequence b(n) = (-1)a(n). This sequence is called the Rudin-Shapiro sequence. Also consider the summatory sequence of b(n): .
+Definire la sequenza $b(n) = {(-1)}^{a(n)}$. Questa sequenza è chiamata sequenza di Rudin-Shapiro.
 
-The first couple of values of these sequences are: n 0 1 2 3 4 5 6 7 a(n) 0 0 0 1 0 0 1 2 b(n) 1 1 1 -1 1 1 -1 1 s(n) 1 2 3 2 3 4 3 4
+Considera anche la sequenza sommatoria di $b(n)$: $s(n) = \displaystyle\sum_{i = 0}^{n} b(i)$.
 
-The sequence s(n) has the remarkable property that all elements are positive and every positive integer k occurs exactly k times.
+La prima coppia di valori di queste sequenze sono:
 
-Define g(t,c), with 1 ≤ c ≤ t, as the index in s(n) for which t occurs for the c'th time in s(n). E.g.: g(3,3) = 6, g(4,2) = 7 and g(54321,12345) = 1220847710.
+$$\begin{array}{lr} n    & 0 & 1 & 2 &  3 & 4 & 5 &  6 & 7 \\\\ a(n) & 0 & 0 & 0 &  1 & 0 & 0 &  1 & 2 \\\\ b(n) & 1 & 1 & 1 & -1 & 1 & 1 & -1 & 1 \\\\ s(n) & 1 & 2 & 3 &  2 & 3 & 4 &  3 & 4 \end{array}$$
 
-Let F(n) be the fibonacci sequence defined by: F(0)=F(1)=1 and F(n)=F(n-1)+F(n-2) for n>1.
+La sequenza $s(n)$ ha la notevole proprietà che tutti gli elementi sono positivi e ogni numero intero positivo $k$ si verifica esattamente $k$ volte.
 
-Define GF(t)=g(F(t),F(t-1)).
+Definisci $g(t, c)$, con $1 ≤ c ≤ t$, come l'indice in $s(n)$ per il quale $t$ si verifica per la $c$° volta in $s(n)$.
 
-Find ΣGF(t) for 2≤t≤45.
+Ad esempio: $g(3, 3) = 6$, $g(4, 2) = 7$ and $g(54321, 12345) = 1\\,220\\,847\\,710$.
+
+Sia $F(n)$ la sequenza di fibonacci definita da:
+
+$$\begin{align} & F(0) = F(1) = 1 \text{ and} \\\\ & F(n) = F(n - 1) + F(n - 2) \text{ for } n > 1. \end{align}$$
+
+Definisci $GF(t) = g(F(t), F(t - 1))$.
+
+Trova $\sum GF(t)$ for$ 2 ≤ t ≤ 45$.
 
 # --hints--
 
-`euler384()` should return 3354706415856333000.
+`rudinShapiroSequence()` dovrebbe restituire `3354706415856333000`.
 
 ```js
-assert.strictEqual(euler384(), 3354706415856333000);
+assert.strictEqual(rudinShapiroSequence(), 3354706415856333000);
 ```
 
 # --seed--
@@ -39,12 +47,12 @@ assert.strictEqual(euler384(), 3354706415856333000);
 ## --seed-contents--
 
 ```js
-function euler384() {
+function rudinShapiroSequence() {
 
   return true;
 }
 
-euler384();
+rudinShapiroSequence();
 ```
 
 # --solutions--

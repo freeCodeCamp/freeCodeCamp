@@ -239,17 +239,30 @@ export function modernChallengeCompleted(req, res, next) {
       const completedDate = Date.now();
       const { id, files, challengeType } = req.body;
 
-      const data = {
+      const completedChallenge = {
         id,
         files,
         completedDate
       };
 
       if (challengeType === 14) {
-        data.isManuallyApproved = false;
+        completedChallenge.isManuallyApproved = false;
       }
 
-      const { alreadyCompleted, updateData } = buildUserUpdate(user, id, data);
+      // We only need to know the challenge type if it's a project. If it's a
+      // step or normal challenge we can avoid storing in the database.
+      if (
+        jsCertProjectIds.includes(id) ||
+        multiFileCertProjectIds.includes(id)
+      ) {
+        completedChallenge.challengeType = challengeType;
+      }
+
+      const { alreadyCompleted, updateData } = buildUserUpdate(
+        user,
+        id,
+        completedChallenge
+      );
       const points = alreadyCompleted ? user.points : user.points + 1;
       const updatePromise = new Promise((resolve, reject) =>
         user.updateAttributes(updateData, err => {

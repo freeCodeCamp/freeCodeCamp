@@ -1,6 +1,6 @@
 ---
 id: 5900f4fc1000cf542c51000e
-title: 'Problem 399: Squarefree Fibonacci Numbers'
+title: 'Problema 399: Numeri di Fibonacci senza quadrati'
 challengeType: 5
 forumTopicId: 302064
 dashedName: problem-399-squarefree-fibonacci-numbers
@@ -8,30 +8,36 @@ dashedName: problem-399-squarefree-fibonacci-numbers
 
 # --description--
 
-The first 15 fibonacci numbers are:
+I primi 15 numeri di Fibonacci sono:
 
-1,1,2,3,5,8,13,21,34,55,89,144,233,377,610.
+$$1,1,2,3,5,8,13,21,34,55,89,144,233,377,610.$$
 
-It can be seen that 8 and 144 are not squarefree: 8 is divisible by 4 and 144 is divisible by 4 and by 9.
+Si può notare che 8 e 144 non sono senza quadrati: 8 è divisibile per 4 e 144 è divisibile per 4 e per 9.
 
-So the first 13 squarefree fibonacci numbers are:
+Quindi i primi 13 numeri di fibonacci senza quadrati sono:
 
-1,1,2,3,5,13,21,34,55,89,233,377 and 610.
+$$1,1,2,3,5,13,21,34,55,89,233,377 \text{ e } 610.$$
 
-The 200th squarefree fibonacci number is: 971183874599339129547649988289594072811608739584170445. The last sixteen digits of this number are: 1608739584170445 and in scientific notation this number can be written as 9.7e53.
+Il $200$° numero di fibonacci senza quadrati è: 971183874599339129547649988289594072811608739584170445. Le ultime sedici cifre di questo numero sono: 1608739584170445 e nella notazione scientifica questo numero può essere scritto come `9.7e53`.
 
-Find the 100 000 000th squarefree fibonacci number. Give as your answer its last sixteen digits followed by a comma followed by the number in scientific notation (rounded to one digit after the decimal point). For the 200th squarefree number the answer would have been: 1608739584170445,9.7e53
+Trova il $100\\,000\\,000$-mo numero di fibonacci senza quadrati. Fornisci come risposta una stringa con le sue ultime sedici cifre seguite da una virgola seguita dal numero in notazione scientifica (arrotondato a una cifra dopo il punto decimale). Per il $200$° numero senza quadrati la risposta sarebbe stata: `1608739584170445,9.7e53`
 
-Note: For this problem, assume that for every prime p, the first fibonacci number divisible by p is not divisible by p2 (this is part of Wall's conjecture). This has been verified for primes ≤ 3·1015, but has not been proven in general.
+**Nota:** Per questo problema, assumi che per ogni primo $p$, il primo numero di fibonacci divisibile per $p$ non sia divisibile per $p^2$ (questo fa parte della congettura di Wall). Questo è stato verificato per i numeri primi $≤ 3 \times {10}^{15}$, ma non è stato dimostrato in generale.
 
-If it happens that the conjecture is false, then the accepted answer to this problem isn't guaranteed to be the 100 000 000th squarefree fibonacci number, rather it represents only a lower bound for that number.
+Se succede che la congettura è falsa, allora la risposta accettata a questo problema non è garantita essere il $100\\,000\\,000$-mo numero di Fibonacci senza quadrati, ma piuttosto rappresenta solo un limite inferiore per quel numero.
 
 # --hints--
 
-`euler399()` should return 1508395636674243, 6.5e27330467.
+`squarefreeFibonacciNumbers()` dovrebbe restituire una stringa.
 
 ```js
-assert.strictEqual(euler399(), 1508395636674243, 6.5e27330467);
+assert(typeof squarefreeFibonacciNumbers() === 'string');
+```
+
+`squarefreeFibonacciNumbers()`dovrebbe restituire la stringa `1508395636674243,6.5e27330467`.
+
+```js
+assert.strictEqual(squarefreeFibonacciNumbers(), '1508395636674243,6.5e27330467');
 ```
 
 # --seed--
@@ -39,12 +45,12 @@ assert.strictEqual(euler399(), 1508395636674243, 6.5e27330467);
 ## --seed-contents--
 
 ```js
-function euler399() {
+function squarefreeFibonacciNumbers() {
 
   return true;
 }
 
-euler399();
+squarefreeFibonacciNumbers();
 ```
 
 # --solutions--

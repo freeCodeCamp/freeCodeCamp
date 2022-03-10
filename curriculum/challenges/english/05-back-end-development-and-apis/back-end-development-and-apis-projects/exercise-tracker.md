@@ -24,7 +24,7 @@ Exercise:
 
 ```js
 {
-  username: "fcc_test"
+  username: "fcc_test",
   description: "test",
   duration: 60,
   date: "Mon Jan 01 1990",

@@ -1,6 +1,6 @@
 ---
 id: 5900f53e1000cf542c510051
-title: 'Problem 466: Distinct terms in a multiplication table'
+title: 'Problema 466: termini distinti in una tabella di moltiplicazione'
 challengeType: 5
 forumTopicId: 302141
 dashedName: problem-466-distinct-terms-in-a-multiplication-table
@@ -8,24 +8,26 @@ dashedName: problem-466-distinct-terms-in-a-multiplication-table
 
 # --description--
 
-Let P(m,n) be the number of distinct terms in an m×n multiplication table.
+Sia $P(m,n)$ il numero di termini distinti in una tabella di moltiplicazione $m×n$.
 
-For example, a 3×4 multiplication table looks like this:
+Ad esempio, una tabella di moltiplicazione 3×4 assomiglia a questa:
 
-× 12341 12342 24683 36912
+$$\begin{array}{c} ×          & \mathbf{1} & \mathbf{2} & \mathbf{3} & \mathbf{4}  \\\\ \mathbf{1} & 1          & 2          & 3          & 4  \\\\ \mathbf{2} & 2          & 4          & 6          & 8  \\\\ \mathbf{3} & 3          & 6          & 9          & 12 \end{array}$$
 
-There are 8 distinct terms {1,2,3,4,6,8,9,12}, therefore P(3,4) = 8.
+Ci sono 8 termini distinti {1, 2, 3, 4, 6, 8, 9, 12}, quindi $P(3, 4) = 8$.
 
-You are given that: P(64,64) = 1263, P(12,345) = 1998, and P(32,1015) = 13826382602124302.
+Ti è dato che:
 
-Find P(64,1016).
+$$\begin{align} & P(64, 64) = 1\\,263, \\\\ & P(12, 345) = 1\\,998, \text{ and} \\\\ & P(32, {10}^{15}) = 13\\,826\\,382\\,602\\,124\\,302. \\\\ \end{align}$$
+
+Trova $P(64, {10}^{16})$.
 
 # --hints--
 
-`euler466()` should return 258381958195474750.
+`multiplicationTable()` dovrebbe restituire `258381958195474750`.
 
 ```js
-assert.strictEqual(euler466(), 258381958195474750);
+assert.strictEqual(multiplicationTable(), 258381958195474750);
 ```
 
 # --seed--
@@ -33,12 +35,12 @@ assert.strictEqual(euler466(), 258381958195474750);
 ## --seed-contents--
 
 ```js
-function euler466() {
+function multiplicationTable() {
 
   return true;
 }
 
-euler466();
+multiplicationTable();
 ```
 
 # --solutions--

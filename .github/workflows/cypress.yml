@@ -16,16 +16,16 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Checkout client-config
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: freeCodeCamp/client-config
           path: client-config
 
       - name: Use Node.js 16.x
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 16.x
           cache: 'npm'
@@ -90,9 +90,9 @@ jobs:
           echo "CYPRESS_INSTALL_BINARY=7.7.0" >> $GITHUB_ENV
 
       - name: Checkout Source Files
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
         with:
           name: client-artifact
 
@@ -102,7 +102,7 @@ jobs:
           rm client-artifact.tar
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'

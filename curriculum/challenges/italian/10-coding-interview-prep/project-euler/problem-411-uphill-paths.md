@@ -1,6 +1,6 @@
 ---
 id: 5900f5081000cf542c510019
-title: 'Problem 411: Uphill paths'
+title: 'Problema 411: Percorsi in salita'
 challengeType: 5
 forumTopicId: 302080
 dashedName: problem-411-uphill-paths
@@ -8,22 +8,26 @@ dashedName: problem-411-uphill-paths
 
 # --description--
 
-Let n be a positive integer. Suppose there are stations at the coordinates (x, y) = (2i mod n, 3i mod n) for 0 ≤ i ≤ 2n. We will consider stations with the same coordinates as the same station.
+Sia $n$ un numero intero positivo. Supponiamo che ci siano delle stazioni alle coordinate $(x, y) = (2^i\bmod n, 3^i\bmod n)$ per $0 ≤ i ≤ 2n$. Considereremo le stazioni con le stesse coordinate come una stessa stazione.
 
-We wish to form a path from (0, 0) to (n, n) such that the x and y coordinates never decrease. Let S(n) be the maximum number of stations such a path can pass through.
+Vogliamo formare un percorso da (0, 0) a ($n$, $n$) in modo che le coordinate $x$ e $y$ non diminuiscano mai.
 
-For example, if n = 22, there are 11 distinct stations, and a valid path can pass through at most 5 stations. Therefore, S(22) = 5. The case is illustrated below, with an example of an optimal path:
+Sia $S(n)$ il numero massimo di stazioni che un percorso può attraversare.
 
-It can also be verified that S(123) = 14 and S(10000) = 48.
+Ad esempio, se $n = 22$, ci sono 11 stazioni distinte, e un percorso valido può passare attraverso al massimo 5 stazioni. Pertanto, $S(22) = 5$. Il caso è illustrato di seguito, con un esempio di percorso ottimale:
 
-Find ∑ S(k5) for 1 ≤ k ≤ 30.
+<img class="img-responsive center-block" alt="percorso valido che attraversa 5 stazioni, per n = 22, con 11 stazioni distinte" src="https://cdn.freecodecamp.org/curriculum/project-euler/uphill-paths.png" style="background-color: white; padding: 10px;" />
+
+Può anche essere verificato che $S(123) = 14$ e $S(10\\,000) = 48$.
+
+Trova $\sum S(k^5)$ per $1 ≤ k ≤ 30$.
 
 # --hints--
 
-`euler411()` should return 9936352.
+`uphillPaths()` dovrebbe restituire `9936352`.
 
 ```js
-assert.strictEqual(euler411(), 9936352);
+assert.strictEqual(uphillPaths(), 9936352);
 ```
 
 # --seed--
@@ -31,12 +35,12 @@ assert.strictEqual(euler411(), 9936352);
 ## --seed-contents--
 
 ```js
-function euler411() {
+function uphillPaths() {
 
   return true;
 }
 
-euler411();
+uphillPaths();
 ```
 
 # --solutions--
