@@ -18,7 +18,7 @@ const {
 const { isAuditedCert } = require('../utils/is-audited');
 const { createPoly } = require('../utils/polyvinyl');
 const { dasherize } = require('../utils/slugs');
-const { getSuperOrder } = require('./utils');
+const { getSuperOrder, getSuperBlockFromDir } = require('./utils');
 
 const access = util.promisify(fs.access);
 
@@ -172,7 +172,7 @@ exports.getChallengesForLang = async function getChallengesForLang(lang) {
   );
 };
 
-async function buildBlocks({ basename: blockName }, curriculum, baseDir) {
+async function buildBlocks({ basename: blockName }, curriculum, superBlock) {
   const metaPath = path.resolve(
     __dirname,
     `./challenges/_meta/${blockName}/meta.json`
@@ -190,37 +190,41 @@ async function buildBlocks({ basename: blockName }, curriculum, baseDir) {
     if (!isUpcomingChange || showUpcomingChanges) {
       // add the block to the superBlock
       const blockInfo = { meta: blockMeta, challenges: [] };
-      curriculum[baseDir].blocks[blockName] = blockInfo;
+      curriculum[superBlock].blocks[blockName] = blockInfo;
     }
   } catch (e) {
-    curriculum['00-certifications'].blocks[blockName] = { challenges: [] };
+    if (e.code !== 'MODULE_NOT_FOUND') {
+      throw e;
+    }
+    curriculum['certifications'].blocks[blockName] = { challenges: [] };
   }
 }
 
 async function buildSuperBlocks({ path, fullPath }, curriculum) {
-  const baseDir = getBaseDir(path);
-  curriculum[baseDir] = { blocks: {} };
+  const superBlock = getSuperBlockFromDir(getBaseDir(path));
+  curriculum[superBlock] = { blocks: {} };
 
-  const cb = (file, curriculum) => buildBlocks(file, curriculum, baseDir);
+  const cb = (file, curriculum) => buildBlocks(file, curriculum, superBlock);
   return walk(fullPath, curriculum, { depth: 1, type: 'directories' }, cb);
 }
 
 async function buildChallenges({ path: filePath }, curriculum, lang) {
   // path is relative to getChallengesDirForLang(lang)
   const block = getBlockNameFromPath(filePath);
-  const baseDir = getBaseDir(filePath);
+  const superBlockDir = getBaseDir(filePath);
+  const superBlock = getSuperBlockFromDir(superBlockDir);
   let challengeBlock;
 
   // TODO: this try block and process exit can all go once errors terminate the
   // tests correctly.
   try {
-    challengeBlock = curriculum[baseDir].blocks[block];
+    challengeBlock = curriculum[superBlock].blocks[block];
     if (!challengeBlock) {
       // this should only happen when a isUpcomingChange block is skipped
       return;
     }
   } catch (e) {
-    console.log(`failed to create superBlock from ${baseDir}`);
+    console.log(`failed to create superBlock from ${superBlockDir}`);
     // eslint-disable-next-line no-process-exit
     process.exit(1);
   }
