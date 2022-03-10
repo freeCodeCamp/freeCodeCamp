@@ -28,7 +28,7 @@ import {
 import { User } from '../redux/prop-types';
 import { submitNewAbout, updateUserFlag, verifyCert } from '../redux/settings';
 
-const { apiLocation, deploymentEnv } = envData;
+const { apiLocation } = envData;
 
 // TODO: update types for actions
 interface ShowSettingsProps {
