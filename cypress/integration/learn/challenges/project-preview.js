@@ -28,7 +28,7 @@ const practiceProjects = [
     url: '/learn/2022/responsive-web-design/learn-css-transforms-by-building-a-penguin/'
   },
   {
-    title: 'Skyline Project',
+    title: 'City Skyline',
     url: '/learn/2022/responsive-web-design/learn-css-variables-by-building-a-city-skyline/'
   },
   {
