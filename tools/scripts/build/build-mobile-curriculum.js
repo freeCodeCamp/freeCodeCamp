@@ -47,10 +47,16 @@ exports.buildMobileCurriculum = function buildMobileCurriculum(json) {
     try {
       const intros = JSON.parse(fs.readFileSync(blockIntroPath));
 
-      // remove numbers from key
-      superBlockKey = superBlockKey.split('-').slice(1).join('-');
+      if (superBlockKey == '14-responsive-web-design-22') {
+        superBlockKey = '2022/responsive-web-design';
+      } else if (superBlockKey == '13-relational-databases') {
+        superBlockKey = 'relational-database';
+      }
 
       const introValues = intros[superBlockKey]['blocks'][blockKey]['intro'];
+
+      // remove numbers from key
+      superBlockKey = superBlockKey.split('-').slice(1).join('-');
 
       return introValues.join('');
     } catch (e) {
