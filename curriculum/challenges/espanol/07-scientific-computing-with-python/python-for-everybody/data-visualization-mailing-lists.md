@@ -1,14 +1,18 @@
 ---
 id: 5e7b9f6a0b6c005b0e76f097
-title: 'Data Visualization: Mailing Lists'
+title: 'Visualización de datos: Listas de correos'
 challengeType: 11
 videoId: RYdW660KkaQ
+bilibiliIds:
+  aid: 334465586
+  bvid: BV18w411R7dD
+  cid: 377545473
 dashedName: data-visualization-mailing-lists
 ---
 
 # --description--
 
-More resources:
+Más recursos:
 
 \- [Ejercicio: Geodatos](https://www.youtube.com/watch?v=KfhslNzopxo)
 
@@ -16,19 +20,19 @@ More resources:
 
 \- [Ejercicio: Gmane Spider](https://www.youtube.com/watch?v=H3w4lOFBUOI)
 
-\- [Exercise: Gmane Viz](https://www.youtube.com/watch?v=LRqVPMEXByw)
+\- [Ejercicio: Gmane Viz](https://www.youtube.com/watch?v=LRqVPMEXByw)
 
 \- [Ejercicio: Page Rank](https://www.youtube.com/watch?v=yFRAZBkBDBs)
 
-\- [Exercise: Page Spider](https://www.youtube.com/watch?v=sXedPQ_AnWA)
+\- [Ejercicio: Page Spider](https://www.youtube.com/watch?v=sXedPQ_AnWA)
 
-\- [Exercise: Page Viz](https://www.youtube.com/watch?v=Fm0hpkxsZoo)
+\- [Ejercicio: Page Viz](https://www.youtube.com/watch?v=Fm0hpkxsZoo)
 
 # --question--
 
 ## --text--
 
-Which is a common JavaScript visualization library?
+¿Cuál es una biblioteca de visualización de JavaScript común?
 
 ## --answers--
 
