@@ -21,7 +21,7 @@ exports.buildMobileCurriculum = function buildMobileCurriculum(json) {
 
       superblocks: [
         superBlockKeys.map(key => key.replace(/\//, '-')),
-        getSuperBlockNames()
+        getSuperBlockNames(superBlockKeys)
       ]
     });
 
@@ -49,27 +49,15 @@ exports.buildMobileCurriculum = function buildMobileCurriculum(json) {
   }
 
   function getBlockDescription(superBlockKey, blockKey) {
-    try {
-      const intros = JSON.parse(fs.readFileSync(blockIntroPath));
+    const intros = JSON.parse(fs.readFileSync(blockIntroPath));
 
-      const introValues = intros[superBlockKey]['blocks'][blockKey]['intro'];
-
-      return introValues.join('');
-    } catch (e) {
-      return '';
-    }
+    return intros[superBlockKey]['blocks'][blockKey]['intro'];
   }
 
-  function getSuperBlockNames() {
-    try {
-      const superBlocks = JSON.parse(fs.readFileSync(blockIntroPath));
+  function getSuperBlockNames(superBlockKeys) {
+    const superBlocks = JSON.parse(fs.readFileSync(blockIntroPath));
 
-      return Object.keys(superBlocks).map(
-        superBlock => superBlocks[superBlock].title
-      );
-    } catch (e) {
-      return [];
-    }
+    return superBlockKeys.map(key => superBlocks[key].title);
   }
 
   function writeToFile(fileName, json) {
