@@ -44,7 +44,7 @@ exports.buildMobileCurriculum = function buildMobileCurriculum(json) {
           curriculum[superBlockKeys[i]]['blocks'][blockNames[j]]['meta'];
       }
 
-      writeToFile(superBlockKeys[i], superBlock);
+      writeToFile(superBlockKeys[i].replace(/\//, '-'), superBlock);
     }
   }
 
@@ -61,8 +61,6 @@ exports.buildMobileCurriculum = function buildMobileCurriculum(json) {
   }
 
   function writeToFile(fileName, json) {
-    fileName = fileName.replace(/\//, '-');
-
     const fullPath = `${mobileStaticPath}/mobile/${fileName}.json`;
     fs.mkdirSync(path.dirname(fullPath), { recursive: true });
     fs.writeFileSync(fullPath, JSON.stringify(json, null, 2));
