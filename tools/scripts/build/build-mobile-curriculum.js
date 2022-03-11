@@ -17,7 +17,12 @@ exports.buildMobileCurriculum = function buildMobileCurriculum(json) {
     );
 
     writeToFile('availableSuperblocks', {
-      superblocks: [superBlockKeys, getSuperBlockNames()]
+      // removing "/" as it will create an extra sub-path when accessed via an endpoint
+
+      superblocks: [
+        superBlockKeys.map(key => key.replace(/\//, '-')),
+        getSuperBlockNames()
+      ]
     });
 
     for (let i = 0; i < superBlockKeys.length; i++) {
@@ -47,16 +52,7 @@ exports.buildMobileCurriculum = function buildMobileCurriculum(json) {
     try {
       const intros = JSON.parse(fs.readFileSync(blockIntroPath));
 
-      if (superBlockKey == '14-responsive-web-design-22') {
-        superBlockKey = '2022/responsive-web-design';
-      } else if (superBlockKey == '13-relational-databases') {
-        superBlockKey = 'relational-database';
-      }
-
       const introValues = intros[superBlockKey]['blocks'][blockKey]['intro'];
-
-      // remove numbers from key
-      superBlockKey = superBlockKey.split('-').slice(1).join('-');
 
       return introValues.join('');
     } catch (e) {
