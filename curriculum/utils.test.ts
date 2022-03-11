@@ -1,4 +1,10 @@
-import { getSuperOrder } from './utils';
+// utils are not typed (yet), so we have to disable some checks
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+import fs from 'fs';
+import path from 'path';
+import { SuperBlocks } from '../config/certification-settings';
+import { getSuperOrder, getSuperBlockFromDir } from './utils';
 
 describe('getSuperOrder', () => {
   it('returns a number for valid superblocks', () => {
@@ -84,5 +90,50 @@ describe('getSuperOrder', () => {
     expect(
       getSuperOrder('2022/responsive-web-design', { showNewCurriculum: true })
     ).toBe(12);
+  });
+});
+
+describe('getSuperBlockFromPath', () => {
+  const directories = fs.readdirSync(
+    path.join(__dirname, './challenges/english')
+  );
+
+  it('handles all the directories in ./challenges/english', () => {
+    expect.assertions(14);
+
+    for (const directory of directories) {
+      expect(() => getSuperBlockFromDir(directory)).not.toThrow();
+    }
+  });
+
+  it("returns valid superblocks (or 'certifications') for all valid arguments", () => {
+    expect.assertions(14);
+
+    const superBlockPaths = directories.filter(x => x !== '00-certifications');
+
+    for (const directory of superBlockPaths) {
+      expect(Object.values(SuperBlocks)).toContain(
+        getSuperBlockFromDir(directory)
+      );
+    }
+    expect(getSuperBlockFromDir('00-certifications')).toBe('certifications');
+  });
+
+  it("returns all valid superblocks (and 'certifications')", () => {
+    expect.assertions(1);
+
+    const superBlocks = new Set();
+    for (const directory of directories) {
+      superBlocks.add(getSuperBlockFromDir(directory));
+    }
+
+    // + 1 for 'certifications'
+    expect(superBlocks.size).toBe(Object.values(SuperBlocks).length + 1);
+  });
+
+  it('throws if a directory is unknown', () => {
+    expect.assertions(1);
+
+    expect(() => getSuperBlockFromDir('unknown')).toThrow();
   });
 });

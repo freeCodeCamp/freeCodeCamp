@@ -7,6 +7,7 @@ import {
   call,
   take
 } from 'redux-saga/effects';
+import { fireConfetti } from '../utils/fire-confetti';
 
 import {
   addDonation,
@@ -26,7 +27,8 @@ import {
   postChargeStripeComplete,
   postChargeStripeError,
   postChargeStripeCardComplete,
-  postChargeStripeCardError
+  postChargeStripeCardError,
+  isAVariantSelector
 } from './';
 
 const defaultDonationErrorMessage = `Something is not right. Please contact donors@freecodecamp.org`;
@@ -37,6 +39,12 @@ function* showDonateModalSaga() {
     yield delay(200);
     const recentlyClaimedBlock = yield select(recentlyClaimedBlockSelector);
     yield put(openDonationModal());
+    if (recentlyClaimedBlock) {
+      const isAVariant = yield select(isAVariantSelector);
+      if (isAVariant === false) {
+        fireConfetti();
+      }
+    }
     yield take(appTypes.closeDonationModal);
     if (recentlyClaimedBlock) {
       yield put(preventBlockDonationRequests());
