@@ -222,7 +222,7 @@ mongod
 "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
 ```
 
-Make sure to replace `3.6` with the version you have installed
+Assicurati di sostituire `3.6` con la versione che hai installato
 
   <!-- tabs:end -->
 
