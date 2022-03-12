@@ -341,9 +341,9 @@
       "model": "article",
       "foreignKey": "externalId"
     },
-    "webhookTokens": {
+    "userTokens": {
       "type": "hasMany",
-      "model": "WebhookToken",
+      "model": "UserToken",
       "foreignKey": "userId"
     }
   },

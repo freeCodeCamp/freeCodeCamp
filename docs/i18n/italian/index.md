@@ -22,7 +22,7 @@ Puoi aiutare ad espandere e migliorare il curriculum. Puoi anche aggiornare le u
 
 Stiamo traducendo freeCodeCamp.org nelle maggiori lingue del mondo.
 
-Certifications are already live in some major world languages like [Chinese (中文)](https://chinese.freecodecamp.org/learn), [Spanish (Español)](https://www.freecodecamp.org/espanol/learn), [Italian (Italiano)](https://www.freecodecamp.org/italian/learn), [Portuguese (Português)](https://www.freecodecamp.org/portuguese/learn). Ti raccomandiamo di leggere [questo annuncio](https://www.freecodecamp.org/news/world-language-translation-effort) e di condividerlo con i tuoi amici per coinvolgerli in questa iniziativa.
+Le certificazioni sono già live in alcune lingue principali come [cinese (中文)](https://chinese.freecodecamp.org/learn), [spagnolo (Español)](https://www.freecodecamp.org/espanol/learn), [italiano](https://www.freecodecamp.org/italian/learn), [portoghese (Português)](https://www.freecodecamp.org/portuguese/learn). Ti raccomandiamo di leggere [questo annuncio](https://www.freecodecamp.org/news/world-language-translation-effort) e di condividerlo con i tuoi amici per coinvolgerli in questa iniziativa.
 
 **Se sei interessato a tradurre qui trovi [ come tradurre le risorse di freeCodeCamp](how-to-translate-files.md).**
 

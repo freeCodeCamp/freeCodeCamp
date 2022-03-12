@@ -40,20 +40,20 @@ La maggior parte dei file per tradurre la piattaforma si trovano nella cartella 
   │   │   ├── translations.json
   │   │   └── trending.json
   ... ...
-  │   ├── english
-  │   │   ├── intro.json
-  │   │   ├── links.json
-  │   │   ├── meta-tags.json
-  │   │   ├── motivation.json
-  │   │   ├── translations.json
-  │   │   └── trending.json
-  │   └── espanol
-  │       ├── intro.json
-  │       ├── links.json
-  │       ├── meta-tags.json
-  │       ├── motivation.json
-  │       ├── translations.json
-  │       └── trending.json
+  │   ├── english
+  │   │   ├── intro.json
+  │   │   ├── links.json
+  │   │   ├── meta-tags.json
+  │   │   ├── motivation.json
+  │   │   ├── translations.json
+  │   │   └── trending.json
+  │   └── espanol
+  │       ├── intro.json
+  │       ├── links.json
+  │       ├── meta-tags.json
+  │       ├── motivation.json
+  │       ├── translations.json
+  │       └── trending.json
   ├── locales.test.js
   ├── schema-validation.js
   └── validate-keys.ts

@@ -222,9 +222,9 @@ mongod
 "C:\Arquivos de programa\MongoDB\Server\3.6\bin\mongod"
 ```
 
-  <!-- tabs:end -->
+Make sure to replace `3.6` with the version you have installed
 
-Certifique-se de substituir `3.6` pela versão que você instalou
+  <!-- tabs:end -->
 
 > [!TIP] Você pode evitar ter que executar o MongoDB toda vez instalando-o como um serviço em segundo plano. Você pode [aprender mais sobre isso na documentação para seu OS](https://docs.mongodb.com/manual/administration/install-community/)
 

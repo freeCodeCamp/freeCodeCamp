@@ -117,84 +117,84 @@ Tradurre la documentazione per contribuire è un processo simile alla traduzione
 
 > [!NOTE] La documentazione per contribuire è creata tramite `docsify`, e ci sono regole speciali per riquadri di messaggio come questo. Se vedi una stringa che inizia con `[!NOTE]`, `[!WARNING]`, o `[!TIP]`, queste parole non devono essere tradotte.
 
-## Translate the LearnToCode RPG
+## Tradurre LearnToCode RPG
 
-The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated strings: (See [Ren'Py Text documentation](https://www.renpy.org/doc/html/text.html))
+LearnToCode RPG è creato con Ren'Py, che usa una sintassi speciale per le stringhe tradotte: (Vedi [la documentazione di Ren'Py sul testo](https://www.renpy.org/doc/html/text.html))
 
-- The sentences to be translated are always between `""`. These are dialogues or UI strings. The keywords that come before or after the dialogue are game engine control keywords and will be explained in details in subsequent rules. Please note that this first rule governs all subsequent rules listed.
-- In case of `new "..."` Do not translate the `new` keyword.
-- Prefixes like `player`, `annika`, `layla`, `marco` (or variants like `player happy`, `player @ happy`) should not be translated. These are control keywords to correctly display the character sprite in the game.
-- Postfixes like `nointeract` should not be translated.
-- Do not translate things between `[]` and `{}`. These are variable interpolations and text tags. These must remain halfwidth parentheses `[]` and `{}` instead of their fullwidth counterparts `【】` and `「」`
-- Do not translate the `nointeract` keyword at the end of the sentence.
-- If we try to use fullwidth parentheses `（）`, a QA warning will show. To avoid the QA warning, use halfwidth parentheses `()`
+- Le frasi da tradurre sono sempre tra virgolette `""`. Queste sono dialoghi o stringhe di UI. Le parole chiave che vengono prima o dopo i dialoghi sono parole chiave di controllo del game engine e saranno spiegate in regole seguenti. Nota che questa prima regola governa le seguenti regole elencate.
+- Nel caso di `new "..."`, non tradurre la parola chiave `new`.
+- Prefissi come `player`, `annika`, `layla`, `marco` (o varianti come `player happy`, `player @ happy`) non devono essere tradotti. Questi sono le parole chiave per visualizzare correttamente gli sprite dei personaggi nel gioco.
+- Postfissi come `nointeract` non devono essere tradotti.
+- Non tradurre stringhe tra `[]` e `{}`. Queste sono variabili interpolate e tag di testo. Queste devono rimanere parentesi a mezza larghezza `[]` e `{}` invece delle loro controparti a larghezza intera  `【】` e `「」`
+- Non tradurre la parola chiave `nointeract` alla fine di una frase.
+- Se proviamo a usare parentesi a larghezza intera `（）` ci sarà un avviso QA. Per evitarlo, usa parentesi a mezza larghezza  `()`
 
-### Examples
+### Esempio
 
 ---
 
-#### Before translation
+#### Prima della traduzione
 
 ```renpy
 # "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
-"[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."  <--- this is the line that needs to be translated. see translation below
+"[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."  <--- questa è la riga da tradurre. vedi la traduzione sotto
 ```
 
-#### After translation
+#### Dopo la traduzione
 
 ```renpy
 # "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
 "[player_name]？好巧，我们的VIP队友{a=[vip_profile_url]}[player_name]{/a}会很高兴的。"
 ```
 
-Note: The `[]` and `{}` tags should be left intact.
+Nota: Le tag nelle parentesi `[]` e `{}` devono essere lasciate intatte.
 
 ---
 
-#### Before translation
+#### Prima della traduzione
 
 ```renpy
 old "{icon=icon-fast-forward} Skip"
-new "{icon=icon-fast-forward} Skip" <-- translate this line, see below
+new "{icon=icon-fast-forward} Skip" <-- traduci questa riga, vedi sotto
 ```
 
-#### After translation
+#### Dopo la traduzione
 
 ```renpy
 old "{icon=icon-fast-forward} Skip"
 new "{icon=icon-fast-forward} 跳过"
 ```
 
-Note: Again, the `new` prefix and the `{icon=icon-fast-forward}` tag should be left intact.
+Nota: Di nuovo, il prefisso `new` e il tag `{icon=icon-fast-forward}` devono essere lasciati intatti.
 
 ---
 
-#### Before translation
+#### Prima della traduzione
 
 ```renpy
 # layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy your work as a developer."
 layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy your work as a developer."
 ```
 
-#### After translation
+#### Dopo la traduzione
 
 ```renpy
 # layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy your work as a developer."
 layla @ neutral "哈哈，[player_name]，你真有趣。我相信你一定会喜欢你的开发者工作的。"
 ```
 
-Note: `layla @ neutral` and `[player_name]` are left unchanged.
+Nota: `layla @ neutral` e `[player_name]` non sono cambiati.
 
 ---
 
-#### Before translation
+#### Prima della traduzione
 
 ```renpy
 # player "Maybe this is all a dream?" nointeract
 player "Maybe this is all a dream?" nointeract
 ```
 
-#### After translation
+#### Dopo la traduzione
 
 ```renpy
 # player "Maybe this is all a dream?" nointeract
@@ -203,71 +203,71 @@ player "也许这都是一场梦？" nointeract
 
 ---
 
-### A Note on How Crowdin Segments a Sentence
+### Una nota su come Crowdin segmenta una frase
 
-Pay attention to how Crowdin segments a line of dialogue wrapped between opening and closing quotes `""`. When we are translating the dialogue, we need to make sure to retain the opening and closing quotes, even if the quotes appear in different segments.
+Presta attenzione a come Crowdin segmenta una riga di dialogo avvolta in virgolette `""`. Quando traduciamo il dialogo, dobbiamo essere sicuri di mantenere le virgolette di apertura e chiusura anche se le virgolette appaiono in diversi segmenti.
 
-This is the line to be translated:
+Questa è la riga da tradurre:
 
 ```renpy
 player @ surprised "{b}Full-stack{/b}... What is that? I better take notes so I can learn more about it."
 ```
 
-Crowdin segments it into three parts like below:
+Crowdin la segmenta in tre parti come sotto:
 
 <img width="836" alt="Screen Shot 2022-01-23 at 10 36 43" src="https://user-images.githubusercontent.com/35674052/150693962-d3b091e5-2432-44d0-9d24-195ea7d7aeda.png" />
 
 ```renpy
-# original
+# originale
 player @ surprised "{b}Full-stack{/b}
-# translated, keeping the opening quotes `"`
+# tradotta, mantenendo le virgolette di apertura `"`
 player @ surprised "{b}全栈{/b}
 ```
 
 <img width="750" alt="Screen Shot 2022-01-23 at 10 36 49" src="https://user-images.githubusercontent.com/35674052/150693965-15411504-791a-4db3-8b14-bc9177be6375.png" />
 
 ```renpy
-# original
+# originale
 What is that?
-# translated, no quotes on either side
+# tradotta, nessuna virgoletta
 这是什么？
 ```
 
 <img width="857" alt="Screen Shot 2022-01-23 at 10 36 54" src="https://user-images.githubusercontent.com/35674052/150693969-062e3268-580f-4ad2-97db-cab6240b6095.png" />
 
 ```renpy
-# original
+# originale
 I better take notes so I can learn more about it."
-# translated, keeping the closing quotes `"`
+# tradotta, mantenendo le virgolette di chiusura `"`
 我最好做笔记，这样我可以学习更多东西。"
 ```
 
-## Rate Translations
+## Votare le traduzioni
 
-Crowdin allows you to rate the existing proposed translations. If you attempt to save a translation, you may see a message indicating that you cannot save a duplicate translation - this means another contributor has proposed that identical translation. If you agree with that translation, click the `+` button to "upvote" the translation.
+Crowdin ti permette di votare le proposte di traduzione esistenti. Se provi a salvare una traduzione, potresti vedere un messaggio che indica che non puoi salvare una traduzione duplicata: questo significa che un altro contributore ha proposto una traduzione identica. Se sei d'accordo con quella traduzione, usa il pulsante `+` per darle un voto positivo.
 
-If you see a translation that is inaccurate or does not provide the same clarity as the original string, click the `-` button to "downvote" the translation.
+Se vedi una traduzione che non è accurata o non è chiara come la stringa originale, usa il pulsante `-` per darle un voto negativo.
 
-Crowdin uses these votes to give a score to each proposed translation for a string, which helps the proofreading team determine which translation is the best fit for each string.
+Crowdin usa questi voti per dare un punteggio alle proposte di traduzione per una stringa, e questo aiuta il gruppo di revisione a determinare quale traduzione è la migliore per ogni stringa.
 
-## Quality Assurance Checks
+## Controlli di qualità
 
-We have enabled some quality assurance steps that will verify a translation is as accurate as possible - this helps our proofreaders review proposed translations.
+Abbiamo attivato alcuni step per il controllo di qualità che verificano che una traduzione sia per quanto possibile accurata: questo aiuta il team di revisione a revisionare le traduzioni proposte.
 
-When you attempt to save a translation, you may see a warning message appear with a notification regarding your proposed translation.
+Quando provi a salvare una traduzione, potresti vedere un messaggio di errore apparire relativamente alla tua proposta di traduzione.
 
-![Image - QA Warning Message](https://contribute.freecodecamp.org/images/crowdin/qa-message.png)
+![Immagine - Messaggio di errore del controllo qualità](https://contribute.freecodecamp.org/images/crowdin/qa-message.png)
 
-This message appears when Crowdin's QA system has identified a potential error in the proposed translation. In this example, we have modified the text of a `<code>` tag and Crowdin has caught that.
+Questo messaggio appare quando il sistema QA (Quality Assurance) di Crowdin identifica un potenziale errore nella traduzione proposta. In questo esempio, abbiamo modificato il testo di un tag `<code>` e Crowdin se ne è accorto.
 
 > [!WARNING] Hai la possibilità di salvare una traduzione anche se ci sono degli errori. Se lo fai usando il pulsante "Save Anyway" (Salva comunque), dovresti anche taggare un proofreader o un project managet e spiegare perché il messaggio QA dovrebbe essere ignorato in questo caso.
 
-## Translation Best Practices
+## Buone pratiche per le traduzioni
 
-Follow these guidelines to ensure our translations are as accurate as possible:
+Segui queste linee guida per assicurati che le nostre traduzioni siano il più possibile accurate:
 
-- Do not translate the content within `<code>` tags. These tags indicate text that is found in code and should be left in English.
-- Do not add additional content. If you feel a challenge requires changes in the text content or additional information, you should propose the changes through a GitHub issue or a pull request that modifies the English file.
-- Do not change the order of content.
+- Non tradurre il contenuto dei tag `<code>`. Questi tag indicano testo trovato nel codice e dovrebbero essere lasciati in inglese.
+- Non inserire contenuto aggiuntivo. Se pensi che una sfida richieda delle modifiche nel testo o informazioni aggiuntive dovresti proporre i cambiamenti tramite una issue su GitHub o una pull request che modifica i file inglesi.
+- Non cambiare l'ordine del contenuto.
 
-If you have any questions, feel free to reach out to us in our [contributors chat room](https://chat.freecodecamp.org/channel/contributors) and we will be happy to assist you.
+Se hai domande, scrivi nella [chat room per i contributori](https://chat.freecodecamp.org/channel/contributors) e saremo lieti di assisterti.

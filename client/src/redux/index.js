@@ -9,6 +9,7 @@ import { emailToABVariant } from '../utils/A-B-tester';
 import { createAcceptTermsSaga } from './accept-terms-saga';
 import { actionTypes } from './action-types';
 import { createAppMountSaga } from './app-mount-saga';
+import { createCodeAllySaga } from './codeally-saga';
 import { createDonationSaga } from './donation-saga';
 import failedUpdatesEpic from './failed-updates-epic';
 import { createFetchUserSaga } from './fetch-user-saga';
@@ -20,7 +21,7 @@ import { actionTypes as settingsTypes } from './settings/action-types';
 import { createShowCertSaga } from './show-cert-saga';
 import { createSoundModeSaga } from './sound-mode-saga';
 import updateCompleteEpic from './update-complete-epic';
-import { createWebhookSaga } from './webhook-saga';
+import { createUserTokenSaga } from './user-token-saga';
 
 export const MainApp = 'app';
 
@@ -52,6 +53,7 @@ const initialState = {
   showCertFetchState: {
     ...defaultFetchState
   },
+  showCodeAlly: false,
   user: {},
   userFetchState: {
     ...defaultFetchState
@@ -73,13 +75,14 @@ export const epics = [hardGoToEpic, failedUpdatesEpic, updateCompleteEpic];
 export const sagas = [
   ...createAcceptTermsSaga(actionTypes),
   ...createAppMountSaga(actionTypes),
+  ...createCodeAllySaga(actionTypes),
   ...createDonationSaga(actionTypes),
   ...createGaSaga(actionTypes),
   ...createFetchUserSaga(actionTypes),
   ...createShowCertSaga(actionTypes),
   ...createReportUserSaga(actionTypes),
   ...createSoundModeSaga({ ...actionTypes, ...settingsTypes }),
-  ...createWebhookSaga(actionTypes)
+  ...createUserTokenSaga(actionTypes)
 ];
 
 export const appMount = createAction(actionTypes.appMount);
@@ -171,14 +174,15 @@ export const showCert = createAction(actionTypes.showCert);
 export const showCertComplete = createAction(actionTypes.showCertComplete);
 export const showCertError = createAction(actionTypes.showCertError);
 
-export const postWebhookToken = createAction(actionTypes.postWebhookToken);
-export const postWebhookTokenComplete = createAction(
-  actionTypes.postWebhookTokenComplete
+export const updateUserToken = createAction(actionTypes.updateUserToken);
+export const deleteUserToken = createAction(actionTypes.deleteUserToken);
+export const deleteUserTokenComplete = createAction(
+  actionTypes.deleteUserTokenComplete
 );
-export const deleteWebhookToken = createAction(actionTypes.deleteWebhookToken);
-export const deleteWebhookTokenComplete = createAction(
-  actionTypes.deleteWebhookTokenComplete
-);
+
+export const hideCodeAlly = createAction(actionTypes.hideCodeAlly);
+export const showCodeAlly = createAction(actionTypes.showCodeAlly);
+export const tryToShowCodeAlly = createAction(actionTypes.tryToShowCodeAlly);
 
 export const updateCurrentChallengeId = createAction(
   actionTypes.updateCurrentChallengeId
@@ -242,8 +246,12 @@ export const shouldRequestDonationSelector = state => {
   return completionCount >= 3;
 };
 
-export const webhookTokenSelector = state => {
-  return userSelector(state).webhookToken;
+export const userTokenSelector = state => {
+  return userSelector(state).userToken;
+};
+
+export const showCodeAllySelector = state => {
+  return state[MainApp].showCodeAlly;
 };
 
 export const userByNameSelector = username => state => {
@@ -652,7 +660,7 @@ export const reducer = handleActions(
         }
       };
     },
-    [actionTypes.postWebhookTokenComplete]: (state, { payload }) => {
+    [actionTypes.updateUserToken]: (state, { payload }) => {
       const { appUsername } = state;
       return {
         ...state,
@@ -660,12 +668,12 @@ export const reducer = handleActions(
           ...state.user,
           [appUsername]: {
             ...state.user[appUsername],
-            webhookToken: payload
+            userToken: payload
           }
         }
       };
     },
-    [actionTypes.deleteWebhookTokenComplete]: state => {
+    [actionTypes.deleteUserTokenComplete]: state => {
       const { appUsername } = state;
       return {
         ...state,
@@ -673,9 +681,21 @@ export const reducer = handleActions(
           ...state.user,
           [appUsername]: {
             ...state.user[appUsername],
-            webhookToken: null
+            userToken: null
           }
         }
+      };
+    },
+    [actionTypes.hideCodeAlly]: state => {
+      return {
+        ...state,
+        showCodeAlly: false
+      };
+    },
+    [actionTypes.showCodeAlly]: state => {
+      return {
+        ...state,
+        showCodeAlly: true
       };
     },
     [challengeTypes.challengeMounted]: (state, { payload }) => ({

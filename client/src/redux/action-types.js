@@ -8,19 +8,23 @@ export const actionTypes = createTypes(
     'hardGoTo',
     'allowBlockDonationRequests',
     'closeDonationModal',
+    'hideCodeAlly',
     'preventBlockDonationRequests',
     'preventProgressDonationRequests',
     'openDonationModal',
     'onlineStatusChange',
     'serverStatusChange',
     'resetUserData',
+    'tryToShowCodeAlly',
     'tryToShowDonationModal',
     'executeGA',
+    'showCodeAlly',
     'submitComplete',
     'updateComplete',
     'updateCurrentChallengeId',
     'updateFailed',
     'updateDonationFormState',
+    'updateUserToken',
     ...createAsyncTypes('fetchUser'),
     ...createAsyncTypes('addDonation'),
     ...createAsyncTypes('createStripeSession'),
@@ -30,8 +34,7 @@ export const actionTypes = createTypes(
     ...createAsyncTypes('showCert'),
     ...createAsyncTypes('reportUser'),
     ...createAsyncTypes('postChargeStripeCard'),
-    ...createAsyncTypes('postWebhookToken'),
-    ...createAsyncTypes('deleteWebhookToken')
+    ...createAsyncTypes('deleteUserToken')
   ],
   ns
 );

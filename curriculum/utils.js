@@ -53,4 +53,29 @@ function getSuperOrder(
   return order;
 }
 
+const directoryToSuperblock = {
+  '00-certifications': 'certifications', // treating certifications as a superblock for simplicity
+  '01-responsive-web-design': 'responsive-web-design',
+  '02-javascript-algorithms-and-data-structures':
+    'javascript-algorithms-and-data-structures',
+  '03-front-end-development-libraries': 'front-end-development-libraries',
+  '04-data-visualization': 'data-visualization',
+  '05-back-end-development-and-apis': 'back-end-development-and-apis',
+  '06-quality-assurance': 'quality-assurance',
+  '07-scientific-computing-with-python': 'scientific-computing-with-python',
+  '08-data-analysis-with-python': 'data-analysis-with-python',
+  '09-information-security': 'information-security',
+  '10-coding-interview-prep': 'coding-interview-prep',
+  '11-machine-learning-with-python': 'machine-learning-with-python',
+  '13-relational-databases': 'relational-database',
+  '14-responsive-web-design-22': '2022/responsive-web-design'
+};
+
+function getSuperBlockFromDir(dir) {
+  const superBlock = directoryToSuperblock[dir];
+  if (!superBlock) throw Error(`${dir} does not map to a superblock`);
+  return directoryToSuperblock[dir];
+}
+
 exports.getSuperOrder = getSuperOrder;
+exports.getSuperBlockFromDir = getSuperBlockFromDir;
