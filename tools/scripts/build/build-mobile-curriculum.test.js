@@ -16,7 +16,7 @@ describe('mobile curriculum build', () => {
     }
 
     getChallengesForLang('english').then(result => {
-      callBack(buildMobileCurriculum(result));
+      callBack(result);
     });
   });
 
