@@ -135,7 +135,7 @@
     "@codesee/babel-plugin-instrument": "0.204.0",
     "@codesee/tracker": "0.204.0",
     "@testing-library/jest-dom": "5.16.2",
-    "@testing-library/react": "12.1.3",
+    "@testing-library/react": "12.1.4",
     "autoprefixer": "10.4.2",
     "babel-plugin-transform-imports": "2.0.0",
     "chokidar": "3.5.3",
