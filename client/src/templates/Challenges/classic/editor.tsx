@@ -178,7 +178,8 @@ const defineMonacoThemes = (
     inherit: true,
     // TODO: Use actual color from style-guide
     colors: {
-      'editor.background': options.usesMultifileEditor ? '#eee' : '#fff'
+      'editor.background': options.usesMultifileEditor ? '#eee' : '#fff',
+      'editor.lineHighlightBorder': '#002ead'
     },
     rules: [{ token: 'identifier.js', foreground: darkBlueColor }]
   });
