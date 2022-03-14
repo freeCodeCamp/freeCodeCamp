@@ -68,7 +68,7 @@ export function* executeCancellableChallengeSaga(payload) {
       return yield put(
         createFlashMessage({
           type: 'danger',
-          message: FlashMessages.ChallengeSaveTooBig,
+          message: FlashMessages.ChallengeSubmitTooBig,
           variables: { 'max-size': MAX_BODY_SIZE, 'user-size': bodySizeInBytes }
         })
       );

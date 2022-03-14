@@ -20,6 +20,8 @@ const toneUrls = {
     'https://campfire-mode.freecodecamp.org/cert.mp3',
   [FlashMessages.CertificateMissing]: TRY_AGAIN,
   [FlashMessages.CertsPrivate]: TRY_AGAIN,
+  [FlashMessages.ChallengeSaveTooBig]: TRY_AGAIN,
+  [FlashMessages.ChallengeSubmitTooBig]: TRY_AGAIN,
   [FlashMessages.CodeSaved]: CHAL_COMP,
   [FlashMessages.CodeSaveError]: TRY_AGAIN,
   [FlashMessages.CompleteProjectFirst]: TRY_AGAIN,
