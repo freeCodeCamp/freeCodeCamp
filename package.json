@@ -84,7 +84,7 @@
     "start-ci": "npm-run-all create:* -p start:server serve:client-ci",
     "start:server": "cd ./api-server && npm start",
     "storybook": "cd ./tools/ui-components && npm run storybook",
-    "test": "run-s create:config create::utils build:curriculum build-workers test:*",
+    "test": "run-s create:* build:curriculum build-workers test:*",
     "test:source": "jest",
     "test:curriculum": "cd ./curriculum && npm test",
     "test-curriculum-full-output": "cd ./curriculum && npm run test:full-output",
