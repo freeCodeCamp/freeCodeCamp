@@ -34,7 +34,7 @@ assert.isEmpty(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?
 <!DOCTYPE html>
 <html>
   <head>
-    <title>freeCodeCamp Registration Form Project</title>
+    <title>Registration Form</title>
 	  <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
   <body>
