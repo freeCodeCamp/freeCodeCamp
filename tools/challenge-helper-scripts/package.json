@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@types/mock-fs": "4.13.1",
-    "bson-objectid": "2.0.2",
+    "bson-objectid": "2.0.3",
     "cross-env": "7.0.3",
     "gray-matter": "4.0.3",
     "inquirer": "8.2.1",

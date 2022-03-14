@@ -39,7 +39,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.fontSize, '16px')
 <!DOCTYPE html>
 <html>
   <head>
-    <title>freeCodeCamp Registration Form Project</title>
+    <title>Registration Form</title>
 	  <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
   <body>

@@ -520,10 +520,11 @@
     "provide-username": "Comprueba si has proporcionado un nombre de usuario y un reporte",
     "report-sent": "Se envió un informe al equipo con {{email}} en copia",
     "certificate-missing": "La certificación que intentaste ver no existe",
-    "create-token-err": "Ocurrió un error al intentar crear un token",
-    "delete-token-err": "Ocurrió un error al intentar eliminar tu token",
-    "token-created": "Has creado con éxito un nuevo token.",
-    "token-deleted": "Tu token ha sido eliminado.",
+    "create-token-err": "An error occurred while creating your user token",
+    "delete-token-err": "An error occurred while deleting your user token",
+    "token-created": "You have successfully created a new user token.",
+    "token-deleted": "Your user token has been deleted.",
+    "start-project-err": "Something went wrong trying to start the project. Please try again.",
     "complete-project-first": "You must complete the project first.",
     "local-code-save-error": "Oops, your code did not save, your browser's local storage may be full.",
     "local-code-saved": "Saved! Your code was saved to your browser's local storage."
@@ -656,17 +657,17 @@
     "add-code-two": "Por favor, deja la línea ``` arriba y la línea ``` abajo,",
     "add-code-three": "porque permiten que tu código formatee correctamente en el post."
   },
-  "webhook-token": {
-    "title": "Token de anclaje",
-    "create": "Crea un nuevo token",
-    "create-p1": "Parece que no tiene un token de anclaje. Crea uno para guardar tu proyecto en esta sección",
-    "create-p2": "Crea un nuevo token de anclaje para guardar tu progreso en las secciones del currículo que usa una máquina virtual.",
-    "delete": "Eliminar mi token",
-    "delete-title": "Borra mi token de anclaje",
-    "delete-p1": "Tu token de anclaje inferior es usado para guardar tu progreso en las secciones del currículo que usa una máquina virtual.",
-    "delete-p2": "Si sospechas que tu token está comprometido, puedes borrarlo para que no pueda ser utilizado. El progreso sometido en las lecciones anteriores no se perderá.",
-    "delete-p3": "Necesitas crear un nuevo token para guardar tus futuros progresos en las secciones del currículo que usa esta máquina virtual.",
-    "no-thanks": "No gracias, me prefiero guardar mi token",
-    "yes-please": "Si por favor, deseo borrar mi token"
+  "user-token": {
+    "title": "User Token",
+    "create": "Create a new token",
+    "create-p1": "It looks like you don't have a user token. Create one to save your progress on this section",
+    "create-p2": "Create a user token to save your progress on the curriculum sections that use a virtual machine.",
+    "delete": "Delete my user token",
+    "delete-title": "Delete My User Token",
+    "delete-p1": "Your user token is used to save your progress on curriculum sections that use a virtual machine. If you suspect it has been compromised, you can delete it without losing any progress. A new one will be created automatically the next time you open a project.",
+    "delete-p2": "If you suspect your token has been compromised, you can delete it to make it unusable. Progress on previously submitted lessons will not be lost.",
+    "delete-p3": "You will need to create a new token to save future progress on the curriculum sections that use a virtual machine.",
+    "no-thanks": "No thanks, I would like to keep my token",
+    "yes-please": "Yes please, I would like to delete my token"
   }
 }

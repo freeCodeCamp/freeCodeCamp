@@ -69,7 +69,7 @@ assert(document.querySelector('.text-with-images aside')?.className === 'image-w
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CSS Grid Magazine</title>
+    <title>Magazine</title>
     <link
       href="https://fonts.googleapis.com/css?family=Anton|Baskervville|Raleway&display=swap"
       rel="stylesheet"

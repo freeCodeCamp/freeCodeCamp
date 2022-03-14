@@ -1,8 +1,12 @@
 ---
 id: 5e9a0a8e09c5df3cc3600ed2
-title: What is NumPy
+title: Qué es NumPy
 challengeType: 11
 videoId: 5Nwfs5Ej85Q
+bilibiliIds:
+  aid: 293086867
+  bvid: BV1Tf4y1E7QZ
+  cid: 409024791
 dashedName: what-is-numpy
 ---
 
@@ -10,23 +14,23 @@ dashedName: what-is-numpy
 
 ## --text--
 
-Why are Numpy arrays faster than regular Python lists?
+¿Por qué los arreglos Numpy son más rápidos que las listas de Python?
 
 ## --answers--
 
-Numpy does not perform type checking while iterating through objects.
+¿Por qué los arreglos Numpy son más rápidas que las listas normales de Python.
 
 ---
 
-Numpy uses fixed types.
+Numpy usa tipos fijos.
 
 ---
 
-Numpy uses contiguous memory.
+Numpy usa memoria contigua.
 
 ---
 
-All of the above.
+Todo lo anterior.
 
 ## --video-solution--
 

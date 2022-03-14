@@ -31,7 +31,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('fieldset:not(:last-of-typ
 <!DOCTYPE html>
 <html>
   <head>
-    <title>freeCodeCamp Registration Form Project</title>
+    <title>Registration Form</title>
 	  <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
   <body>
