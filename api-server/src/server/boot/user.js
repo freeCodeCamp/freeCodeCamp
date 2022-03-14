@@ -17,7 +17,10 @@ import {
 } from '../utils/publicUserProps';
 import { getRedirectParams } from '../utils/redirection';
 import { trimTags } from '../utils/validators';
-import { createDeleteUserToken } from '../middlewares/delete-user-token';
+import {
+  createDeleteUserToken,
+  encodeUserToken
+} from '../middlewares/user-token';
 
 const log = debugFactory('fcc:boot:user');
 const sendNonUserToHome = ifNoUserRedirectHome();
@@ -64,16 +67,19 @@ function createPostUserToken(app) {
 
   return async function postUserToken(req, res) {
     const ttl = 900 * 24 * 60 * 60 * 1000;
-    let newToken;
+    let encodedUserToken;
 
     try {
       await UserToken.destroyAll({ userId: req.user.id });
-      newToken = await UserToken.create({ ttl, userId: req.user.id });
+      const newUserToken = await UserToken.create({ ttl, userId: req.user.id });
+
+      if (!newUserToken?.id) throw new Error();
+      encodedUserToken = encodeUserToken(newUserToken.id);
     } catch (e) {
       return res.status(500).send('Error starting project');
     }
 
-    return res.json({ token: newToken?.id });
+    return res.json({ userToken: encodedUserToken });
   };
 }
 
@@ -94,7 +100,14 @@ function createReadSessionUser(app) {
     const userTokenArr = await queryUser.userTokens({
       userId: queryUser.id
     });
+
     const userToken = userTokenArr[0]?.id;
+    let encodedUserToken;
+
+    // only encode if a userToken was found
+    if (userToken) {
+      encodedUserToken = encodeUserToken(userToken);
+    }
 
     const source =
       queryUser &&
@@ -151,7 +164,7 @@ function createReadSessionUser(app) {
               isWebsite: !!user.website,
               ...normaliseUserFields(user),
               joinDate: user.id.getTimestamp(),
-              userToken
+              userToken: encodedUserToken
             }
           },
           sessionMeta,

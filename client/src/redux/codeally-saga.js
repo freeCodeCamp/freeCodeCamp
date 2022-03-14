@@ -24,8 +24,8 @@ function* tryToShowCodeAllySaga() {
     try {
       const response = yield call(postUserToken);
 
-      if (response?.token) {
-        yield put(updateUserToken(response.token));
+      if (response?.userToken) {
+        yield put(updateUserToken(response.userToken));
         yield put(showCodeAlly());
       } else {
         yield put(createFlashMessage(startProjectErrMessage));
