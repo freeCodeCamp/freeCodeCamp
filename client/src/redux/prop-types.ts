@@ -332,7 +332,7 @@ export type SavedChallengeFile = {
   contents: string;
 };
 
-export type SavedChallengeFiles = SavedChallengeFile[] | null;
+export type SavedChallengeFiles = SavedChallengeFile[];
 
 export type CompletedChallenge = {
   id: string;
