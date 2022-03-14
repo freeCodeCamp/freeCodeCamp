@@ -169,12 +169,7 @@ export class Block extends Component<BlockProps> {
         <ScrollableAnchor id={blockDashedName}>
           <div className={`block ${isExpanded ? 'open' : ''}`}>
             <div className='block-header'>
-              <a className='block-link' href={`#${blockDashedName}`}>
-                <h3 className='big-block-title'>
-                  {blockTitle}
-                  <span className='block-link-icon'>#</span>
-                </h3>
-              </a>
+              <h3 className='big-block-title'>{blockTitle}</h3>
               {!isAuditedCert(curriculumLocale, superBlock) && (
                 <div className='block-cta-wrapper'>
                   <Link
@@ -220,12 +215,7 @@ export class Block extends Component<BlockProps> {
         <ScrollableAnchor id={blockDashedName}>
           <div className='block'>
             <div className='block-header'>
-              <a className='block-link' href={`#${blockDashedName}`}>
-                <h3 className='big-block-title'>
-                  {blockTitle}
-                  <span className='block-link-icon'>#</span>
-                </h3>
-              </a>
+              <h3 className='big-block-title'>{blockTitle}</h3>
               {!isAuditedCert(curriculumLocale, superBlock) && (
                 <div className='block-cta-wrapper'>
                   <Link

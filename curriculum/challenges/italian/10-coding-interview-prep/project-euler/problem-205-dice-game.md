@@ -1,6 +1,6 @@
 ---
 id: 5900f4391000cf542c50ff4c
-title: 'Problem 205: Dice Game'
+title: 'Problema 205: Gioco Dei Dadi'
 challengeType: 5
 forumTopicId: 301846
 dashedName: problem-205-dice-game
@@ -8,20 +8,20 @@ dashedName: problem-205-dice-game
 
 # --description--
 
-Peter has nine four-sided (pyramidal) dice, each with faces numbered 1, 2, 3, 4.
+Peter ha nove dadi a quattro facce (piramidali), ciascuno con facce numerate 1, 2, 3, 4.
 
-Colin has six six-sided (cubic) dice, each with faces numbered 1, 2, 3, 4, 5, 6.
+Colin ha sei dadi a sei facce (cubici), ciascuno con facce numerate 1, 2, 3, 4, 5, 6.
 
-Peter and Colin roll their dice and compare totals: the highest total wins. The result is a draw if the totals are equal.
+Peter e Colin rotolano i loro dadi e confrontano i totali: il totale più alto vince. Il risultato è un pareggio se i totali sono uguali.
 
-What is the probability that Pyramidal Pete beats Cubic Colin? Give your answer rounded to seven decimal places in the form 0.abcdefg
+Qual è la probabilità che Pete Piramidale batta Colin Cubico? Dai la risposta arrotondata a sette decimali nella forma 0.abcdefg
 
 # --hints--
 
-`euler205()` should return 0.5731441.
+`diceGame()` dovrebbe restituire `0.5731441`.
 
 ```js
-assert.strictEqual(euler205(), 0.5731441);
+assert.strictEqual(diceGame(), 0.5731441);
 ```
 
 # --seed--
@@ -29,12 +29,12 @@ assert.strictEqual(euler205(), 0.5731441);
 ## --seed-contents--
 
 ```js
-function euler205() {
+function diceGame() {
 
   return true;
 }
 
-euler205();
+diceGame();
 ```
 
 # --solutions--

@@ -10,12 +10,6 @@ dashedName: probability-calculator
 
 You will be [working on this project with our Replit starter code](https://replit.com/github/freeCodeCamp/boilerplate-probability-calculator).
 
-We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
-
-- [Python for Everybody Video Course](https://www.freecodecamp.org/news/python-for-everybody/) (14 hours)
-
-- [Learn Python Video Course](https://www.freecodecamp.org/news/learn-python-video-course/) (10 hours)
-
 # --instructions--
 
 Suppose there is a hat containing 5 blue balls, 4 red balls, and 2 green balls. What is the probability that a random draw of 4 balls will contain at least 1 red ball and 2 green balls? While it would be possible to calculate the probability using advanced mathematics, an easier way is to write a program to perform a large number of experiments to estimate an approximate probability.

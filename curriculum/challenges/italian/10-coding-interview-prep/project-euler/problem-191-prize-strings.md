@@ -1,6 +1,6 @@
 ---
 id: 5900f42b1000cf542c50ff3e
-title: 'Problem 191: Prize Strings'
+title: 'Problema 191: Stringhe Premio'
 challengeType: 5
 forumTopicId: 301829
 dashedName: problem-191-prize-strings
@@ -8,22 +8,28 @@ dashedName: problem-191-prize-strings
 
 # --description--
 
-A particular school offers cash rewards to children with good attendance and punctuality. If they are absent for three consecutive days or late on more than one occasion then they forfeit their prize.
+Una scuola particolare offre premi in denaro ai bambini con una buona frequenza e puntualità. Se sono assenti per tre giorni consecutivi o in ritardo in più di un'occasione, allora perdono il loro premio.
 
-During an n-day period a trinary string is formed for each child consisting of L's (late), O's (on time), and A's (absent).
+Durante un periodo di n-giorni viene formata una stringa ternaria per ogni bambino costituita da L (tardi), O (in orario) e A (assente).
 
-Although there are eighty-one trinary strings for a 4-day period that can be formed, exactly forty-three strings would lead to a prize:
+Anche se ci sono ottantuno stringhe ternarie che possono essere formate per un periodo di 4 giorni, esattamente quarantatre stringhe porterebbero a un premio:
 
-OOOO OOOA OOOL OOAO OOAA OOAL OOLO OOLA OAOO OAOA OAOL OAAO OAAL OALO OALA OLOO OLOA OLAO OLAA AOOO AOOA AOOL AOAO AOAA AOAL AOLO AOLA AAOO AAOA AAOL AALO AALA ALOO ALOA ALAO ALAA LOOO LOOA LOAO LOAA LAOO LAOA LAAO
+```
+OOOO OOOA OOOL OOAO OOAA OOAL OOLO OOLA OAOO OAOA
+OAOL OAAO OAAL OALO OALA OLOO OLOA OLAO OLAA AOOO
+AOOA AOOL AOAO AOAA AOAL AOLO AOLA AAOO AAOA AAOL
+AALO AALA ALOO ALOA ALAO ALAA LOOO LOOA LOAO LOAA
+LAOO LAOA LAAO
+```
 
-How many "prize" strings exist over a 30-day period?
+Quante stringhe "premio" esistono in un periodo di 30 giorni?
 
 # --hints--
 
-`euler191()` should return 1918080160.
+`prizeStrings()` dovrebbe restituire `1918080160`.
 
 ```js
-assert.strictEqual(euler191(), 1918080160);
+assert.strictEqual(prizeStrings(), 1918080160);
 ```
 
 # --seed--
@@ -31,12 +37,12 @@ assert.strictEqual(euler191(), 1918080160);
 ## --seed-contents--
 
 ```js
-function euler191() {
+function prizeStrings() {
 
   return true;
 }
 
-euler191();
+prizeStrings();
 ```
 
 # --solutions--

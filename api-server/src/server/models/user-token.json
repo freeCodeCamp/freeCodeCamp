@@ -1,5 +1,5 @@
 {
-  "name": "WebhookToken",
+  "name": "UserToken",
   "description": "Tokens for submitting curricula through CodeRoad",
   "base": "AccessToken",
   "idInjection": true,

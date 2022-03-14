@@ -1,6 +1,6 @@
 ---
 id: 5900f46e1000cf542c50ff80
-title: 'Problem 257: Angular Bisectors'
+title: 'Problema 257: Bisettrici angolari'
 challengeType: 5
 forumTopicId: 301905
 dashedName: problem-257-angular-bisectors
@@ -8,22 +8,22 @@ dashedName: problem-257-angular-bisectors
 
 # --description--
 
-Given is an integer sided triangle ABC with sides a ≤ b ≤ c.
+Dato un triangolo con lati interi $ABC$ con lati $a ≤ b ≤ c$. ($AB = c$, $BC = a$ and $AC = b$).
 
-(AB = c, BC = a and AC = b).
+Le bisettrici angolari del triangolo intersecano i lati ai punti $E$, $F$ e $G$ (vedi la figura sotto).
 
-The angular bisectors of the triangle intersect the sides at points E, F and G (see picture below).
+<img class="img-responsive center-block" alt="triangolo ABC, con bisettrici angolari intersecanti i lati ai punti E, F e G" src="https://cdn.freecodecamp.org/curriculum/project-euler/angular-bisectors.gif" style="background-color: white; padding: 10px;" />
 
-The segments EF, EG and FG partition the triangle ABC into four smaller triangles: AEG, BFE, CGF and EFG. It can be proven that for each of these four triangles the ratio area(ABC)/area(subtriangle) is rational. However, there exist triangles for which some or all of these ratios are integral.
+I segmenti $EF$, $EG$, e $FG$, sezionano il triangolo $ABC$ in quattro triangoli più piccoli: $AEG$, $BFE$, $CGF$ e $EFG$. Si può provare che per ognuno di questi quattro triangoli il rapporto $\frac{\text{area}(ABC)}{\text{area}(\text{sottotriangolo})}$ è razionale. Eppure, ci sono alcuni triangoli per cui alcuni o tutti di questi rapporti sono numeri interi.
 
-How many triangles ABC with perimeter≤100,000,000 exist so that the ratio area(ABC)/area(AEG) is integral?
+Quanti triangoli $ABC$ con perimetro $≤ 100\\,000\\,000$ esistono in modo tale che il rapporto $\frac{\text{area}(ABC)}{\text{area}(AEG)}$ sia un numero intero?
 
 # --hints--
 
-`euler257()` should return 139012411.
+`angularBisectors()` dovrebbe restituire `139012411`.
 
 ```js
-assert.strictEqual(euler257(), 139012411);
+assert.strictEqual(angularBisectors(), 139012411);
 ```
 
 # --seed--
@@ -31,12 +31,12 @@ assert.strictEqual(euler257(), 139012411);
 ## --seed-contents--
 
 ```js
-function euler257() {
+function angularBisectors() {
 
   return true;
 }
 
-euler257();
+angularBisectors();
 ```
 
 # --solutions--

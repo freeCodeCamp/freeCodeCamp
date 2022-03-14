@@ -1,6 +1,6 @@
 ---
 id: 5900f43a1000cf542c50ff4d
-title: 'Problem 206: Concealed Square'
+title: 'Problema 206: Quadrato Nascosto'
 challengeType: 5
 forumTopicId: 301847
 dashedName: problem-206-concealed-square
@@ -8,14 +8,14 @@ dashedName: problem-206-concealed-square
 
 # --description--
 
-Find the unique positive integer whose square has the form 1_2_3_4_5_6_7_8_9_0, where each “\_” is a single digit.
+Trova l'intero positivo univoco il cui quadrato ha la forma 1_2_3_4_5_6_7_8_9_0, dove ogni "_" è un singolo numero.
 
 # --hints--
 
-`euler206()` should return 1389019170.
+`concealedSquare()` dovrebbe restituire `1389019170`.
 
 ```js
-assert.strictEqual(euler206(), 1389019170);
+assert.strictEqual(concealedSquare(), 1389019170);
 ```
 
 # --seed--
@@ -23,12 +23,12 @@ assert.strictEqual(euler206(), 1389019170);
 ## --seed-contents--
 
 ```js
-function euler206() {
+function concealedSquare() {
 
   return true;
 }
 
-euler206();
+concealedSquare();
 ```
 
 # --solutions--

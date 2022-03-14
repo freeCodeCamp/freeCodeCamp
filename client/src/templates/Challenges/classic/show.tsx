@@ -16,6 +16,7 @@ import {
   ChallengeFiles,
   ChallengeMeta,
   ChallengeNode,
+  CompletedChallenge,
   ResizeProps,
   Test
 } from '../../../redux/prop-types';
@@ -29,9 +30,7 @@ import HelpModal from '../components/help-modal';
 import Notes from '../components/notes';
 import Output from '../components/output';
 import Preview from '../components/preview';
-import ProjectPreviewModal, {
-  PreviewConfig
-} from '../components/project-preview-modal';
+import ProjectPreviewModal from '../components/project-preview-modal';
 import SidePanel from '../components/side-panel';
 import VideoModal from '../components/video-modal';
 import {
@@ -97,7 +96,10 @@ interface ShowClassicProps {
   output: string[];
   pageContext: {
     challengeMeta: ChallengeMeta;
-    projectPreview: PreviewConfig & { showProjectPreview: boolean };
+    projectPreview: {
+      challengeData: CompletedChallenge;
+      showProjectPreview: boolean;
+    };
   };
   t: TFunction;
   tests: Test[];
@@ -367,7 +369,6 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       }
     } = this.props;
     const { description, title } = this.getChallenge();
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return (
       challengeFiles && (
         <MultifileEditor
@@ -430,7 +431,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       executeChallenge,
       pageContext: {
         challengeMeta: { nextChallengePath, prevChallengePath },
-        projectPreview
+        projectPreview: { challengeData, showProjectPreview }
       },
       challengeFiles,
       t
@@ -494,7 +495,12 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           <HelpModal />
           <VideoModal videoUrl={this.getVideoUrl()} />
           <ResetModal />
-          <ProjectPreviewModal previewConfig={projectPreview} />
+          <ProjectPreviewModal
+            challengeData={challengeData}
+            closeText={t('buttons.start-coding')}
+            previewTitle={t('learn.project-preview-title')}
+            showProjectPreview={showProjectPreview}
+          />
         </LearnLayout>
       </Hotkeys>
     );

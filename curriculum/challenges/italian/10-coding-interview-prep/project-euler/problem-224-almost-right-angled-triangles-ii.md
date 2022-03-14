@@ -1,6 +1,6 @@
 ---
 id: 5900f44e1000cf542c50ff5f
-title: 'Problem 224: Almost right-angled triangles II'
+title: 'Problema 224: Triangoli quasi rettangoli II'
 challengeType: 5
 forumTopicId: 301867
 dashedName: problem-224-almost-right-angled-triangles-ii
@@ -8,16 +8,16 @@ dashedName: problem-224-almost-right-angled-triangles-ii
 
 # --description--
 
-Let us call an integer sided triangle with sides a ≤ b ≤ c barely obtuse if the sides satisfy a2 + b2 = c2 - 1.
+Chiamiamo un triangolo con lati interi $a ≤ b ≤ c$ a malapena ottuso se i lati soddisfano $a^2 + b^2 = c^2 - 1$.
 
-How many barely obtuse triangles are there with perimeter ≤ 75,000,000?
+Quanti triangoli appena ottusi ci sono con perimetro $≤ 75\\,000\\,000$?
 
 # --hints--
 
-`euler224()` should return 4137330.
+`almostRightAngledTrianglesTwo()` dovrebbe restituire `4137330`.
 
 ```js
-assert.strictEqual(euler224(), 4137330);
+assert.strictEqual(almostRightAngledTrianglesTwo(), 4137330);
 ```
 
 # --seed--
@@ -25,12 +25,12 @@ assert.strictEqual(euler224(), 4137330);
 ## --seed-contents--
 
 ```js
-function euler224() {
+function almostRightAngledTrianglesTwo() {
 
   return true;
 }
 
-euler224();
+almostRightAngledTrianglesTwo();
 ```
 
 # --solutions--

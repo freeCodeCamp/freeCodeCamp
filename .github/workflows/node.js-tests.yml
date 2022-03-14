@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Check number of lockfiles
         run: |
@@ -27,7 +27,7 @@ jobs:
           fi
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
@@ -40,6 +40,7 @@ jobs:
 
       - name: Lint Source Files
         run: |
+          echo npm version $(npm -v)
           npm ci
           npm run create:config
           npm run build:curriculum
@@ -57,10 +58,10 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: npm
@@ -68,11 +69,11 @@ jobs:
       - name: Set Environment variables
         run: |
           cp sample.env .env
-          echo 'SHOW_NEW_CURRICULUM=true' >> .env
           cat .env
 
       - name: Install Dependencies
         run: |
+          echo npm version $(npm -v)
           npm ci
           npm run create:config
           npm run build:curriculum
@@ -92,10 +93,10 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: npm
@@ -104,11 +105,11 @@ jobs:
         run: |
           cp sample.env .env
           echo 'SHOW_UPCOMING_CHANGES=true' >> .env
-          echo 'SHOW_NEW_CURRICULUM=true' >> .env
           cat .env
 
       - name: Install Dependencies
         run: |
+          echo npm version $(npm -v)
           npm ci
           npm run create:config
           npm run build:curriculum
@@ -129,10 +130,10 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: npm
@@ -141,7 +142,6 @@ jobs:
         run: |
           cp sample.env .env
           echo 'SHOW_UPCOMING_CHANGES=true' >> .env
-          echo 'SHOW_NEW_CURRICULUM=true' >> .env
           cat .env
 
       - name: Install Dependencies
@@ -149,6 +149,7 @@ jobs:
           CURRICULUM_LOCALE: ${{ matrix.locale }}
           CLIENT_LOCALE: ${{ matrix.locale }}
         run: |
+          echo npm version $(npm -v)
           npm ci
           npm run create:config
           npm run build:curriculum

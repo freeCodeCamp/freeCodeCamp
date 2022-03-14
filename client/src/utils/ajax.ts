@@ -203,8 +203,8 @@ export function postResetProgress(): Promise<void> {
   return post('/account/reset-progress', {});
 }
 
-export function postWebhookToken(): Promise<void> {
-  return post('/user/webhook-token', {});
+export function postUserToken(): Promise<void> {
+  return post('/user/user-token', {});
 }
 
 /** PUT **/
@@ -251,6 +251,6 @@ export function putVerifyCert(certSlug: string): Promise<void> {
 }
 
 /** DELETE **/
-export function deleteWebhookToken(): Promise<void> {
-  return deleteRequest('/user/webhook-token', {});
+export function deleteUserToken(): Promise<void> {
+  return deleteRequest('/user/user-token', {});
 }

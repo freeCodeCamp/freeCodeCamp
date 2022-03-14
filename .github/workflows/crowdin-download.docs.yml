@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   schedule:
     # runs every day at 12:00 noon UTC
-    - cron: '0 12 * * *'
+    - cron: '0 12 * * 1-5'
 
 env:
   GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
@@ -18,7 +18,7 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           token: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
 

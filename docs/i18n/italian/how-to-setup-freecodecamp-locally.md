@@ -24,7 +24,7 @@ Alcuni membri della comunità sviluppano anche su Windows 10 nativamente con Git
 | --------------------------------------------------------------------------------------------- | -------- | -------------------------------------------------------------------------------------------- |
 | [Node.js](http://nodejs.org)                                                                  | `16.x`   | Usiamo la versione "Active LTS", Vedi [LTS Schedule](https://nodejs.org/en/about/releases/). |
 | npm (viene fornito in bundle con node)                                                        | `8.x`    | Usiamo la versione in bundle con Node.js Active LTS.                                         |
-| [Server Community MongoDB](https://docs.mongodb.com/manual/administration/install-community/) | `4.0.x`  | -                                                                                            |
+| [Server Community MongoDB](https://docs.mongodb.com/manual/administration/install-community/) | `4.2.x`  | -                                                                                            |
 
 > [!ATTENTION] Se hai una versione diversa, per favore installa la versione raccomandata. Possiamo supportare solo i problemi di installazione per le versioni consigliate. Vedi [risoluzione dei problemi](#troubleshooting) per i dettagli.
 
@@ -222,9 +222,9 @@ mongod
 "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
 ```
 
-  <!-- tabs:end -->
-
 Assicurati di sostituire `3.6` con la versione che hai installato
+
+  <!-- tabs:end -->
 
 > [!TIP] Puoi evitare di dover avviare MongoDB ogni volta se lo installi come servizio in background. Puoi [saperne di più nella loro documentazione per il tuo sistema operativo](https://docs.mongodb.com/manual/administration/install-community/)
 

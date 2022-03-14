@@ -1,6 +1,6 @@
 ---
 id: 5900f5111000cf542c510023
-title: 'Problem 420: 2x2 positive integer matrix'
+title: 'Problema 420: matrice intera 2x2 positiva'
 challengeType: 5
 forumTopicId: 302090
 dashedName: problem-420-2x2-positive-integer-matrix
@@ -8,20 +8,28 @@ dashedName: problem-420-2x2-positive-integer-matrix
 
 # --description--
 
-A positive integer matrix is a matrix whose elements are all positive integers.
+Una matrice intera positiva è una matrice i cui elementi sono tutti interi positivi.
 
-Some positive integer matrices can be expressed as a square of a positive integer matrix in two different ways. Here is an example:
+Alcune matrici intere positive possono essere espresse come un quadrato di una matrice intera positiva in due modi diversi. Ecco un esempio:
 
-We define F(N) as the number of the 2x2 positive integer matrices which have a trace less than N and which can be expressed as a square of a positive integer matrix in two different ways. We can verify that F(50) = 7 and F(1000) = 1019.
+$$$\begin{pmatrix} 40 & 12 \\\\ 48 & 40 \end{pmatrix}=
+{\start{pmatrix}
+  2 & 3 \\\\ 12 & 2 \end{pmatrix}}^2 =
+{\start{pmatrix}
+  6 & 1 \\\\ 4 & 6 \end{pmatrix}}^2$$
 
-Find F(107).
+Definiamo $F(N)$ come il numero delle matrici intere positive 2x2 che hanno una traccia inferiore a N e che possono essere espresse come un quadrato di una matrice intera positiva in due modi diversi.
+
+Possiamo verificare che $F(50) = 7$ e $F(1000) = 1019$.
+
+Trova $F({10}^7)$.
 
 # --hints--
 
-`euler420()` should return 145159332.
+`positiveIntegerMatrix()` dovrebbe restituire `145159332`.
 
 ```js
-assert.strictEqual(euler420(), 145159332);
+assert.strictEqual(positiveIntegerMatrix(), 145159332);
 ```
 
 # --seed--
@@ -29,12 +37,12 @@ assert.strictEqual(euler420(), 145159332);
 ## --seed-contents--
 
 ```js
-function euler420() {
+function positiveIntegerMatrix() {
 
   return true;
 }
 
-euler420();
+positiveIntegerMatrix();
 ```
 
 # --solutions--

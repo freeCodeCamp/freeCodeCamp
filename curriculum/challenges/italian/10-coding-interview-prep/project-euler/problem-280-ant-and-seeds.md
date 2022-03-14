@@ -1,6 +1,6 @@
 ---
 id: 5900f4841000cf542c50ff97
-title: 'Problem 280: Ant and seeds'
+title: 'Problema 280: formica e semi'
 challengeType: 5
 forumTopicId: 301931
 dashedName: problem-280-ant-and-seeds
@@ -8,18 +8,18 @@ dashedName: problem-280-ant-and-seeds
 
 # --description--
 
-A laborious ant walks randomly on a 5x5 grid. The walk starts from the central square. At each step, the ant moves to an adjacent square at random, without leaving the grid; thus there are 2, 3 or 4 possible moves at each step depending on the ant's position.
+Una formica laboriosa cammina casualmente su una griglia 5x5. La passeggiata parte dal quadrato centrale. A ogni passo, la formica si sposta in un quadrato adiacente a caso, senza lasciare la griglia; così ci sono due, tre o quattro possibili mosse A ogni passo a seconda della posizione della formica.
 
-At the start of the walk, a seed is placed on each square of the lower row. When the ant isn't carrying a seed and reaches a square of the lower row containing a seed, it will start to carry the seed. The ant will drop the seed on the first empty square of the upper row it eventually reaches.
+All'inizio della passeggiata, un seme viene posto su ogni quadrato della fila inferiore. Quando la formica non porta un seme e raggiunge un quadrato della fila inferiore contenente un seme, inizierà a portare il seme. La formica lascerà cadere il seme sul primo quadrato vuoto della riga superiore che raggiunge.
 
-What's the expected number of steps until all seeds have been dropped in the top row? Give your answer rounded to 6 decimal places.
+Qual è il numero previsto di passaggi perché tutti i semi siano lasciati cadere nella riga superiore? Dare la risposta arrotondata a 6 decimali.
 
 # --hints--
 
-`euler280()` should return 430.088247.
+`antAndSeeds()` dovrebbe restituire `430.088247`.
 
 ```js
-assert.strictEqual(euler280(), 430.088247);
+assert.strictEqual(antAndSeeds(), 430.088247);
 ```
 
 # --seed--
@@ -27,12 +27,12 @@ assert.strictEqual(euler280(), 430.088247);
 ## --seed-contents--
 
 ```js
-function euler280() {
+function antAndSeeds() {
 
   return true;
 }
 
-euler280();
+antAndSeeds();
 ```
 
 # --solutions--

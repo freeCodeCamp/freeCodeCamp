@@ -256,7 +256,7 @@ brew install azure-cli
 az login
 ```
 
-> **Get the list of VM names and IP addresses:**
+> **Ottieni una lista dei nomi delle VM e degli indirizzi IP:**
 
 ```
 az vm list-ip-addresses --output table
@@ -779,11 +779,11 @@ Le modifiche di configurazione alle nostre istanze NGINX sono mantenute su GitHu
 
    Seleziona yes (y) per rimuovere tutto quello che non è in uso. Questo rimuoverà tutti i contenitori che sono stati arrestati, tutti i network e volumi che non sono utilizzati da almeno un container, e le cache di immagini e build scollegate.
 
-## Work on Contributor Tools
+## Lavorare sugli strumenti dei contributori
 
-### Deploy updates
+### Distribuire gli update
 
-ssh into the VM (hosted on Digital Ocean).
+Fai ssh nella VM (hosted su Digital Ocean).
 
 ```console
 cd tools
@@ -793,9 +793,9 @@ npm run build
 pm2 restart contribute-app
 ```
 
-## Updating Node.js versions on VMs
+## Aggiornare la versione di Node.js sulle VM
 
-List currently installed node & npm versions
+Visualizza le versioni installate di node & npm
 
 ```console
 nvm -v
@@ -805,47 +805,47 @@ npm -v
 nvm ls
 ```
 
-Install the latest Node.js LTS, and reinstall any global packages
+Installa l'ultima versione di Node.js LTC, e reinstalla i pacchetti globali
 
 ```console
 nvm install --lts --reinstall-packages-from=default
 ```
 
-Verify installed packages
+Verifica i pacchetti installati
 
 ```console
 npm ls -g --depth=0
 ```
 
-Alias the `default` Node.js version to the current LTS (pinned to latest major version)
+Dai l'alias di `default` alla versione corrente LTS di Node.js (bloccata all'ultima versione maggiore)
 
 ```console
 nvm alias default 16
 ```
 
-(Optional) Uninstall old versions
+(Facoltativo) Disinstalla vecchie versioni
 
 ```console
 nvm uninstall <version>
 ```
 
-> [!ATTENTION] For client applications, the shell script can't be resurrected between Node.js versions with `pm2 resurrect`. Deploy processes from scratch instead. This should become nicer when we move to a docker based setup.
+> [!ATTENTION] Per applicazioni client, lo script della shell non può essere fatto risorgere tra versioni di Node.js con `pm2 resurrect`. Fai il deploy dei processi da zero. Questo dovrebbe migliorare quando useremo un setup basato su docker.
 > 
-> If using PM2 for processes you would also need to bring up the applications and save the process list for automatic recovery on restarts.
+> Se stai usando PM2 per processi dovresti anche richiamare le applicazione e salvare la lista di processo per un recupero automatico al riavvio.
 
-Get the uninstall instructions/commands with the `unstartup` command and use the output to remove the systemctl services
+Ottieni le istruzioni/comandi di deinstallazione con il comando `unstartup` e usa l'output per rimuovere i servizi systemctl
 
 ```console
 pm2 unstartup
 ```
 
-Get the install instructions/commands with the `startup` command and use the output to add the systemctl services
+Ottieni le istruzioni/comandi di installazione con il comando `startup` e usa l'output per aggiungere i servizi systemctl
 
 ```console
 pm2 startup
 ```
 
-Quick commands for PM2 to list, resurrect saved processes, etc.
+Comandi veloci per PM2 per elencare, far ripartire processi salvati, ecc.
 
 ```console
 pm2 ls
@@ -863,21 +863,21 @@ pm2 save
 pm2 logs
 ```
 
-## Installing and Updating Azure Pipeline Agents
+## Installare e aggiornare Azure Pipeline Agent
 
-See: https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops and follow the instructions to stop, remove and reinstall agents. Broadly you can follow the steps listed here.
+Vedi: https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops e segui le istruzioni per arrestare, rimuovere e reinstallare gli agenti. Approssimativamente puoi seguire gli step elencati qui.
 
-You would need a PAT, that you can grab from here: https://dev.azure.com/freeCodeCamp-org/_usersSettings/tokens
+Avrai bisogno di un PAT, che puoi ottenere da: https://dev.azure.com/freeCodeCamp-org/_usersSettings/tokens
 
-### Installing agents on Deployment targets
+### Installare agenti su target di deployment
 
-Navigate to [Azure Devops](https://dev.azure.com/freeCodeCamp-org) and register the agent from scratch in the requisite [deployment groups](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_machinegroup).
+Vai su [Azure Devops](https://dev.azure.com/freeCodeCamp-org) e registra l'agente dall'inizio nei requisiti [deployment groups](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_machinegroup).
 
-> [!NOTE] You should run the scripts in the home directory, and make sure no other `azagent` directory exists.
+> [!NOTE] Dovresti eseguire gli script nella home directory, e assicurati che nessun'altra directory `azagent` esista.
 
-### Updating agents
+### Aggiornare gli agent
 
-Currently updating agents requires them to be removed and reconfigured. This is required for them to correctly pick up `PATH` values and other system environment variables. We need to do this for instance updating Node.js on our deployment target VMs.
+Attualmente aggiornare gli agent richiede che siano rimossi e riconfigurati. Questo è richiesto perché possano ottenere valori `PATH` e altre variabili d'ambiente di sistema. Dobbiame farlo per aggiornare Node.js sulle VM target di deployment.
 
 1. Naviga e controlla lo status del servizio
 
@@ -911,11 +911,11 @@ Currently updating agents requires them to be removed and reconfigured. This is 
    rm -rf ~/azagent
    ```
 
-Once You have completed the steps above, you can repeat the same steps as installing the agent.
+Una volta completati gli step precedenti potrai ripetere gli stesi passi per installare l'agente.
 
 # Manuale di volo - Email Blast
 
-We use [a CLI tool](https://github.com/freecodecamp/sendgrid-email-blast) to send out the weekly newsletter. To spin this up and begin the process:
+Usiamo uno [strumento CLI](https://github.com/freecodecamp/sendgrid-email-blast) per inviare la nostra newsletter settimanale. Per avviare e iniziare il processo:
 
 1. Entra in DigitalOcean e avvia nuovi droplet sotto il progetto `Sendgrid`. Usa lo snapshot di Ubuntu Sendgrid con la data più recente. Questo viene pre-caricato con lo strumento CLI e lo script per ottenere le email dal database. Con il volume corrente, tre droplet sono sufficienti per mandare le email in un tempo decente.
 
@@ -944,19 +944,19 @@ We use [a CLI tool](https://github.com/freecodecamp/sendgrid-email-blast) to sen
 
 7. Quando il email blast è completato, verifica che nessuna email abbia fallito prima di distruggere i droplet.
 
-# Flight Manual - Adding news instances for new languages
+# Manuale di Volo - Aggiunta di istanze della pubblicazione per nuove lingue
 
-### Theme Changes
+### Modifiche al tema
 
-We use a custom [theme](https://github.com/freeCodeCamp/news-theme) for our news publication. Adding the following changes to the theme enables the addition of new languages.
+Utilizziamo un [tema](https://github.com/freeCodeCamp/news-theme) personalizzato per la nostra pubblicazione. L'aggiunta delle seguenti modifiche al tema consente l'aggiunta di nuove lingue.
 
-1. Include an `else if` statement for the new [ISO language code](https://www.loc.gov/standards/iso639-2/php/code_list.php) in [`setup-locale.js`](https://github.com/freeCodeCamp/news-theme/blob/main/assets/config/setup-locale.js)
-2. Create an initial config folder by duplicating the [`assets/config/en`](https://github.com/freeCodeCamp/news-theme/tree/main/assets/config/en) folder and changing its name to the new language code. (`en` —> `es` for Spanish)
-3. Inside the new language folder, change the variable names in `main.js` and `footer.js` to the relevant language short code (`enMain` —> `esMain` for Spanish)
-4. Duplicate the [`locales/en.json`](https://github.com/freeCodeCamp/news-theme/blob/main/locales/en.json) and rename it to the new language code.
-5. In [`partials/i18n.hbs`](https://github.com/freeCodeCamp/news-theme/blob/main/partials/i18n.hbs), add scripts for the newly created config files.
-6. Add the related language `day.js` script from [cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) to the [freeCodeCamp CDN](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale)
+1. Includere una espressione `else if` per il nuovo [codice ISO della lingua](https://www.loc.gov/standards/iso639-2/php/code_list.php) in [`setup-local.js`](https://github.com/freeCodeCamp/news-theme/blob/main/assets/config/setup-locale.js)
+2. Crea una cartella di configurazione iniziale duplicando la cartella [`assets/config/en`](https://github.com/freeCodeCamp/news-theme/tree/main/assets/config/en) e cambiando il suo nome con il codice della nuova lingua. (`en` —> `es` per Spagnolo)
+3. Dentro la nuova cartella, cambia i nomi delle variabili in `main.js` e `footer.js` con il codice della nuova lingua (`enMain` —> `esMain` per spagnolo)
+4. Duplica [`locals/en.json`](https://github.com/freeCodeCamp/news-theme/blob/main/locales/en.json) e rinominalo con il codice della nuova lingua.
+5. In [`partials/i18n.hbs`](https://github.com/freeCodeCamp/news-theme/blob/main/partials/i18n.hbs), aggiungi gli script per i file config appena creati.
+6. Aggiungi lo script `day.js` della lingua da [cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) a [freecodecamp CDN](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale)
 
-### Ghost Dashboard Changes
+### Modifiche alla dashboard di Ghost
 
-Update the publication assets by going to the Ghost dashboard > settings > general and uploading the publications's [icon](https://github.com/freeCodeCamp/design-style-guide/blob/master/assets/fcc-puck-500-favicon.png), [logo](https://github.com/freeCodeCamp/design-style-guide/blob/master/downloads/fcc_primary_large.png), and [cover](https://github.com/freeCodeCamp/design-style-guide/blob/master/assets/fcc_ghost_publication_cover.png).
+Cambia gli asset della pubblicazione andando alla dashboard di ghost > settings > general e caricando l'[icona](https://github.com/freeCodeCamp/design-style-guide/blob/master/assets/fcc-puck-500-favicon.png), il [logo](https://github.com/freeCodeCamp/design-style-guide/blob/master/downloads/fcc_primary_large.png), e la [copertina](https://github.com/freeCodeCamp/design-style-guide/blob/master/assets/fcc_ghost_publication_cover.png) della pubblicazione.

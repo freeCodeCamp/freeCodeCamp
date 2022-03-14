@@ -1,6 +1,6 @@
 ---
 id: 5900f4621000cf542c50ff74
-title: 'Problem 245: Coresilience'
+title: 'Problema 245: Coresilienza'
 challengeType: 5
 forumTopicId: 301892
 dashedName: problem-245-coresilience
@@ -8,16 +8,24 @@ dashedName: problem-245-coresilience
 
 # --description--
 
-We shall call a fraction that cannot be cancelled down a resilient fraction. Furthermore we shall define the resilience of a denominator, R(d), to be the ratio of its proper fractions that are resilient; for example, R(12) = 4⁄11.
+Chiameremo una frazione che non può essere semplificata una frazione resiliente.
 
-The resilience of a number d > 1 is then φ(d)d − 1 , where φ is Euler's totient function. We further define the coresilience of a number n > 1 as C(n)= n − φ(n)n − 1. The coresilience of a prime p is C(p) = 1p − 1. Find the sum of all composite integers 1 &lt; n ≤ 2×1011, for which C(n) is a unit fraction.
+Inoltre definiremo la resilienza di un denominatore, $R(d)$, come il rapporto delle sue frazioni proprie che sono resilienti; per esempio, $R(12) = \frac{4}{11}$.
+
+La resilienza di un numero $d > 1$ è allora $\frac{φ(d)}{d − 1}$ , dove $φ$ è la funzione toziente di Eulero.
+
+Definiamo inoltre la coresilienza di un numero $n > 1$ come $C(n) = \frac{n − φ(n)}{n − 1}$.
+
+La coresilienza di un primo $p$ è $C(p) = \frac{1}{p − 1}$.
+
+Trova la somma di tutti i numeri interi $1 &lt; n ≤ 2 × {10}^{11}$, per cui $C(n)$ è una frazione unitaria.
 
 # --hints--
 
-`euler245()` should return 288084712410001.
+`coresilience()` dovrebbe restituire `288084712410001`.
 
 ```js
-assert.strictEqual(euler245(), 288084712410001);
+assert.strictEqual(coresilience(), 288084712410001);
 ```
 
 # --seed--
@@ -25,12 +33,12 @@ assert.strictEqual(euler245(), 288084712410001);
 ## --seed-contents--
 
 ```js
-function euler245() {
+function coresilience() {
 
   return true;
 }
 
-euler245();
+coresilience();
 ```
 
 # --solutions--

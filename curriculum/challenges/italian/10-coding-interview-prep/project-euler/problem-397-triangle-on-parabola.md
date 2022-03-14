@@ -1,6 +1,6 @@
 ---
 id: 5900f4f91000cf542c51000c
-title: 'Problem 397: Triangle on parabola'
+title: 'Problema 397: Triangolo su parabola'
 challengeType: 5
 forumTopicId: 302062
 dashedName: problem-397-triangle-on-parabola
@@ -8,18 +8,20 @@ dashedName: problem-397-triangle-on-parabola
 
 # --description--
 
-On the parabola y = x2/k, three points A(a, a2/k), B(b, b2/k) and C(c, c2/k) are chosen.
+Sulla parabola $y = \frac{x^2}{k}$, sono scelti tre punti $A(a, \frac{a^2}{k})$, $B(b, \frac{b^2}{k})$ e $C(c, \frac{c^2}{k})$.
 
-Let F(K, X) be the number of the integer quadruplets (k, a, b, c) such that at least one angle of the triangle ABC is 45-degree, with 1 ≤ k ≤ K and -X ≤ a &lt; b &lt; c ≤ X.
+Sia $F(K, X)$ il numero di quartetti di numeri interi $(k, a, b, c)$ tali che almeno uno degli angoli del triangolo $ABC$ sia di 45°, con $1 ≤ k ≤ K$ e $-X ≤ a &lt; b &lt; c ≤ X$.
 
-For example, F(1, 10) = 41 and F(10, 100) = 12492. Find F(106, 109).
+Per esempio, $F(1, 10) = 41$ e $F(10, 100) = 12\\,492$.
+
+Trova $F({10}^6, {10}^9)$.
 
 # --hints--
 
-`euler397()` should return 141630459461893730.
+`triangleOnParabola()` dovrebbe restituire `141630459461893730`.
 
 ```js
-assert.strictEqual(euler397(), 141630459461893730);
+assert.strictEqual(triangleOnParabola(), 141630459461893730);
 ```
 
 # --seed--
@@ -27,12 +29,12 @@ assert.strictEqual(euler397(), 141630459461893730);
 ## --seed-contents--
 
 ```js
-function euler397() {
+function triangleOnParabola() {
 
   return true;
 }
 
-euler397();
+triangleOnParabola();
 ```
 
 # --solutions--

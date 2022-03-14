@@ -81,7 +81,8 @@ export const auditedCerts = {
     SuperBlocks.SciCompPy,
     SuperBlocks.DataAnalysisPy,
     SuperBlocks.InfoSec,
-    SuperBlocks.MachineLearningPy
+    SuperBlocks.MachineLearningPy,
+    SuperBlocks.CodingInterviewPrep
   ],
   portuguese: [
     SuperBlocks.RespWebDesign,

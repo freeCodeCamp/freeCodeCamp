@@ -1,6 +1,6 @@
 ---
 id: 5900f4fa1000cf542c51000d
-title: 'Problem 398: Cutting rope'
+title: 'Problema 398: tagliare la corda'
 challengeType: 5
 forumTopicId: 302063
 dashedName: problem-398-cutting-rope
@@ -8,18 +8,18 @@ dashedName: problem-398-cutting-rope
 
 # --description--
 
-Inside a rope of length n, n-1 points are placed with distance 1 from each other and from the endpoints. Among these points, we choose m-1 points at random and cut the rope at these points to create m segments.
+Dentro una corda di lunghezza $n$, sono piazzati $n - 1$ punti con distanza 1 gli uni dagli altri e dai terminali. Tra questi punti, scegliamo casualmente $m - 1$ punti e tagliamo la corda a questi punti per creare $m$ segmenti.
 
-Let E(n, m) be the expected length of the second-shortest segment. For example, E(3, 2) = 2 and E(8, 3) = 16/7. Note that if multiple segments have the same shortest length the length of the second-shortest segment is defined as the same as the shortest length.
+Sia $E(n, m)$ il valore di aspettativa della lunghezza del secondo segmento più corto. Per esempio, $E(3, 2) = 2$ e $E(8, 3) = \frac{16}{7}$. Nota che se più di un segmento ha la stessa lunghezza più corta, la lunghezza del secondo segmento più corto è definita come la stessa del segmento più corto.
 
-Find E(107, 100). Give your answer rounded to 5 decimal places behind the decimal point.
+Trova $E({10}^7, 100)$. Dai la tua cifra arrotondata a cinque cifre decimali dopo la virgola.
 
 # --hints--
 
-`euler398()` should return 2010.59096.
+`cuttingRope()` dovrebbe restituire `2010.59096`.
 
 ```js
-assert.strictEqual(euler398(), 2010.59096);
+assert.strictEqual(cuttingRope(), 2010.59096);
 ```
 
 # --seed--
@@ -27,12 +27,12 @@ assert.strictEqual(euler398(), 2010.59096);
 ## --seed-contents--
 
 ```js
-function euler398() {
+function cuttingRope() {
 
   return true;
 }
 
-euler398();
+cuttingRope();
 ```
 
 # --solutions--

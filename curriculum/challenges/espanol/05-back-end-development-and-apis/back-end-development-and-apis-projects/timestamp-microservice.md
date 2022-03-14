@@ -30,7 +30,7 @@ Debes proporcionar tu propio proyecto, no la URL del ejemplo.
 };
 ```
 
-Una solicitud para `/api/:date?` con una fecha válida debe devolver un objeto JSON con una clave `unix` que es una marca de tiempo Unix de la fecha de entrada en milisegundos
+Una petición para `/api/:date?` con una fecha válida debe devolver un objeto JSON con una clave `unix` que es una marca de tiempo Unix de la fecha de entrada en milisegundos (como tipo Número)
 
 ```js
 (getUserInput) =>

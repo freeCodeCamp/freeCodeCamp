@@ -1,37 +1,41 @@
 ---
 id: 5e9a093a74c4063ca6f7c14e
-title: Data Analysis Example B
+title: Análisis de datos ejemplo B
 challengeType: 11
 videoId: 0kJz0q0pvgQ
+bilibiliIds:
+  aid: 505593432
+  bvid: BV1kg411c7M6
+  cid: 409003530
 dashedName: data-analysis-example-b
 ---
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*En lugar de usar notebooks.ai como se muestra en el vídeo, puedes utilizar Google Colab en su lugar.*
 
-More resources:
+Más recursos:
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/FreeCodeCamp-Pandas-Real-Life-Example)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-   [Notebooks en GitHub](https://github.com/ine-rmotr-curriculum/FreeCodeCamp-Pandas-Real-Life-Example)
+-   [Cómo abrir Notebooks desde GitHub usando Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-What does the `loc` method allow you to do?
+¿Qué permite hacer el método `loc`?
 
 ## --answers--
 
-Retrieve a subset of rows and columns by supplying integer-location arguments.
+Recuperar un subconjunto de filas y columnas proporcionando argumentos de ubicación en números enteros.
 
 ---
 
-Access a group of rows and columns by supplying label(s) arguments.
+Acceda a un grupo de filas y columnas proporcionando argumentos de etiqueta(s).
 
 ---
 
-Returns the first `n` rows based on the integer argument supplied.
+Devuelve las primeras filas `n` basadas en el argumento entero proporcionado.
 
 ## --video-solution--
 

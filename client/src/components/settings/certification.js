@@ -5,8 +5,12 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
 import { createSelector } from 'reselect';
-
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
+import { connect } from 'react-redux';
+
+import { regeneratePathAndHistory } from '../../../../utils/polyvinyl';
+import ProjectPreviewModal from '../../templates/Challenges/components/project-preview-modal';
+import { openModal } from '../../templates/Challenges/redux';
 import {
   projectMap,
   legacyProjectMap
@@ -50,9 +54,14 @@ const propTypes = {
   isRelationalDatabaseCertV8: PropTypes.bool,
   isRespWebDesignCert: PropTypes.bool,
   isSciCompPyCertV7: PropTypes.bool,
+  openModal: PropTypes.func,
   t: PropTypes.func.isRequired,
   username: PropTypes.string,
   verifyCert: PropTypes.func.isRequired
+};
+
+const mapDispatchToProps = {
+  openModal
 };
 
 const certifications = Object.keys(projectMap);
@@ -161,7 +170,7 @@ export class CertificationSettings extends Component {
   getUserIsCertMap = () => isCertMapSelector(this.props);
 
   getProjectSolution = (projectId, projectTitle) => {
-    const { completedChallenges } = this.props;
+    const { completedChallenges, openModal } = this.props;
     const completedProject = find(
       completedChallenges,
       ({ id }) => projectId === id
@@ -171,8 +180,7 @@ export class CertificationSettings extends Component {
     }
 
     const { solution, challengeFiles } = completedProject;
-
-    const onClickHandler = () =>
+    const showUserCode = () =>
       this.setState({
         solutionViewer: {
           projectTitle,
@@ -182,11 +190,31 @@ export class CertificationSettings extends Component {
         }
       });
 
+    const challengeData = completedProject
+      ? {
+          ...completedProject,
+          challengeFiles:
+            completedProject?.challengeFiles?.map(regeneratePathAndHistory) ??
+            null
+        }
+      : null;
+
+    const showProjectPreview = () => {
+      this.setState({
+        projectViewer: {
+          previewTitle: projectTitle,
+          challengeData
+        }
+      });
+      openModal('projectPreview');
+    };
+
     return (
       <SolutionDisplayWidget
         completedChallenge={completedProject}
         dataCy={projectTitle}
-        showFilesSolution={onClickHandler}
+        showUserCode={showUserCode}
+        showProjectPreview={showProjectPreview}
         displayContext={'settings'}
       ></SolutionDisplayWidget>
     );
@@ -361,11 +389,9 @@ export class CertificationSettings extends Component {
   };
 
   render() {
-    const {
-      solutionViewer: { challengeFiles, solution, isOpen, projectTitle }
-    } = this.state;
-
+    const { solutionViewer, projectViewer } = this.state;
     const { t } = this.props;
+
     return (
       <ScrollableAnchor id='certification-settings'>
         <section className='certification-settings'>
@@ -378,16 +404,15 @@ export class CertificationSettings extends Component {
           {legacyCertifications.map(certName =>
             this.renderCertifications(certName, legacyProjectMap)
           )}
-          {isOpen ? (
-            <ProjectModal
-              challengeFiles={challengeFiles}
-              handleSolutionModalHide={this.handleSolutionModalHide}
-              isOpen={isOpen}
-              projectTitle={projectTitle}
-              solution={solution}
-              t={t}
-            />
-          ) : null}
+          <ProjectModal
+            {...solutionViewer}
+            handleSolutionModalHide={this.handleSolutionModalHide}
+          />
+          <ProjectPreviewModal
+            {...projectViewer}
+            closeText={t('buttons.close')}
+            showProjectPreview={true}
+          />
         </section>
       </ScrollableAnchor>
     );
@@ -397,4 +422,7 @@ export class CertificationSettings extends Component {
 CertificationSettings.displayName = 'CertificationSettings';
 CertificationSettings.propTypes = propTypes;
 
-export default withTranslation()(CertificationSettings);
+export default connect(
+  null,
+  mapDispatchToProps
+)(withTranslation()(CertificationSettings));

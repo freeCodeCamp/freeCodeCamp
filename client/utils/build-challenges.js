@@ -41,7 +41,7 @@ exports.buildChallenges = async function buildChallenges() {
 
   // temp removal of rdbms from production
   if (deploymentEnv !== 'staging') {
-    delete curriculum['13-relational-databases'];
+    delete curriculum['relational-database'];
   }
 
   const superBlocks = Object.keys(curriculum);

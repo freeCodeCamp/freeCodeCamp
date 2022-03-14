@@ -204,6 +204,7 @@ api-server/lib/*
 curriculum/dist
 curriculum/build
 client/static/_redirects
+client/static/mobile
 
 ### UI Components ###
 tools/ui-components/dist

@@ -1,6 +1,6 @@
 ---
 id: 5900f4d31000cf542c50ffe6
-title: 'Problem 359: Hilbert''s New Hotel'
+title: 'Problema 359: Il nuovo Hotel di Hilbert'
 challengeType: 5
 forumTopicId: 302019
 dashedName: problem-359-hilberts-new-hotel
@@ -8,24 +8,35 @@ dashedName: problem-359-hilberts-new-hotel
 
 # --description--
 
-An infinite number of people (numbered 1, 2, 3, etc.) are lined up to get a room at Hilbert's newest infinite hotel. The hotel contains an infinite number of floors (numbered 1, 2, 3, etc.), and each floor contains an infinite number of rooms (numbered 1, 2, 3, etc.).
+Un numero infinito di persone (numerate 1, 2, 3, ecc.) sono in fila per prendere una stanza al nuovo hotel infinito di Hilbert. L'hotel contienue un numero infinito di piani (numerati 1, 2, 3, ecc) e ogni piano contiene un numero infinito di stanze (numerate 1, 2, 3, ecc.).
 
-Initially the hotel is empty. Hilbert declares a rule on how the nth person is assigned a room: person n gets the first vacant room in the lowest numbered floor satisfying either of the following: the floor is empty the floor is not empty, and if the latest person taking a room in that floor is person m, then m + n is a perfect square
+All'inizio l'hotel è vuoto. Hilbert dichiara una regola su come la $n$-sima persona è assegnata una stanza: persona $n$ riceve la prima stanza vuota al piano col numero più basso che soddisfa una delle seguenti condizioni:
 
-Person 1 gets room 1 in floor 1 since floor 1 is empty. Person 2 does not get room 2 in floor 1 since 1 + 2 = 3 is not a perfect square. Person 2 instead gets room 1 in floor 2 since floor 2 is empty. Person 3 gets room 2 in floor 1 since 1 + 3 = 4 is a perfect square.
+- il piano è vuoto
+- il piano non è vuoto, e se l'ultima persona che ha preso una stanza in quel piano è persona $m$ allora $m + n$ è un quadrato perfetto
 
-Eventually, every person in the line gets a room in the hotel.
+Persona 1 prende stanza 1 in piano 1 visto che piano 1 è vuoto.
 
-Define P(f, r) to be n if person n occupies room r in floor f, and 0 if no person occupies the room. Here are a few examples: P(1, 1) = 1 P(1, 2) = 3 P(2, 1) = 2 P(10, 20) = 440 P(25, 75) = 4863 P(99, 100) = 19454
+Persona 2 non prende stanza 2 nel piano 1 visto che 1 + 2 = 3 non è un quadrato perfetto.
 
-Find the sum of all P(f, r) for all positive f and r such that f × r = 71328803586048 and give the last 8 digits as your answer.
+Persona 2 invece prende stanza 1 nel piano 2 visto che piano 2 è vuoto.
+
+Persona 3 prende stanza 2 sul piano 1 visto che 1 + 3 = 4 è un quadrato perfetto.
+
+Alla fine, ogni persona in fila ottiene una stanza nell'hotel.
+
+Sia $P(f, r)$ $n$ se la persona $n$ occupa stanza $r$ al piano $f$, e 0 se nessuna persona occupa la stanza. Ecco alcuni esempi:
+
+$$\begin{align} & P(1, 1) = 1 \\\\ & P(1, 2) = 3 \\\\ & P(2, 1) = 2 \\\\ & P(10, 20) = 440 \\\\ & P(25, 75) = 4863 \\\\ & P(99, 100) = 19454 \end{align}$$
+
+Trova la somma di tutti i $P(f, r)$ per tutti i positivi $f$ e $r$ in modo tale che $f × r = 71\\,328\\,803\\,586\\,048$ e dai le ultime 8 cifre come risposta.
 
 # --hints--
 
-`euler359()` should return 40632119.
+`hilbertsNewHotel()` dovrebbe restituire `40632119`.
 
 ```js
-assert.strictEqual(euler359(), 40632119);
+assert.strictEqual(hilbertsNewHotel(), 40632119);
 ```
 
 # --seed--
@@ -33,12 +44,12 @@ assert.strictEqual(euler359(), 40632119);
 ## --seed-contents--
 
 ```js
-function euler359() {
+function hilbertsNewHotel() {
 
   return true;
 }
 
-euler359();
+hilbertsNewHotel();
 ```
 
 # --solutions--
