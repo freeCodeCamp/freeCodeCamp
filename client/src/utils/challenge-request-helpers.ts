@@ -45,4 +45,3 @@ export function bodySizeFits(bodySizeInBytes: number) {
   }
   return true;
 }
-
