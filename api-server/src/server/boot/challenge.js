@@ -195,7 +195,7 @@ export function buildUserUpdate(
     };
   }
 
-  // remove from particallyCompleted on submit
+  // remove from partiallyCompleted on submit
   updateData.$pull = {
     partiallyCompletedChallenges: { id: challengeId }
   };
