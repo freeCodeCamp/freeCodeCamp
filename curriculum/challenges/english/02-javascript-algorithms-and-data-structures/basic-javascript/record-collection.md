@@ -37,7 +37,7 @@ After `updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me")`, 
 assert(
   updateRecords(_recordCollection, 5439, 'tracks', 'Take a Chance on Me') &&
   _recordCollection[5439]['tracks'].length === 1 &&
-  _recordCollection[5439]['tracks'].pop() === "Take a Chance on Me"
+  _recordCollection[5439]['tracks'].pop() === 'Take a Chance on Me'
 );
 ```
 
