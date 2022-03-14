@@ -88,7 +88,7 @@ function deleteUserTokenResponse(req, res) {
     return res.status(500).send('Error deleting user token');
   }
 
-  return res.send({ token: null });
+  return res.send({ userToken: null });
 }
 
 function createReadSessionUser(app) {
