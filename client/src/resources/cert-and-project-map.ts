@@ -1,7 +1,7 @@
 import { SuperBlocks } from '../../../config/certification-settings';
 import envData from '../../../config/env.json';
 
-const { deploymentEnv, showNewCurriculum, showUpcomingChanges } = envData;
+const { showNewCurriculum, showUpcomingChanges } = envData;
 
 const responsiveWebBase =
   '/learn/responsive-web-design/responsive-web-design-projects';
@@ -745,12 +745,7 @@ certMap.forEach(cert => {
   if (cert.title !== 'Legacy Full Stack') {
     if (cert.title.startsWith('Legacy')) {
       legacyProjectMap[cert.title] = cert.projects;
-    } else if (
-      cert.title.startsWith('Relational') &&
-      deploymentEnv == 'staging'
-    ) {
-      projectMap[cert.title] = cert.projects;
-    } else if (!cert.title.startsWith('Relational')) {
+    } else {
       projectMap[cert.title] = cert.projects;
     }
   }
