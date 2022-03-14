@@ -1,25 +1,29 @@
 ---
 id: 5e9a093a74c4063ca6f7c159
-title: Pandas Indexing and Conditional Selection
+title: Indexación y Selección Condicional en Pandas
 challengeType: 11
 videoId: '-ZOrgV_aA9A'
+bilibiliIds:
+  aid: 720604139
+  bvid: BV1FQ4y1k7tC
+  cid: 409013650
 dashedName: pandas-indexing-and-conditional-selection
 ---
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*En vez de usar notebooks.ai como aparece en el video, puedes usar Google Colab.*
 
-More resources:
+Más recursos:
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-pandas)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-   [Notas en GitHub](https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-pandas)
+-   [Cómo abrir Notebooks desde GitHub utilizando Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-What will the following code print out?
+¿Qué imprimirá el siguiente código?
 
 ```py
 import pandas as pd
@@ -45,18 +49,18 @@ dtype: int64
 ---
 
 <pre>
-Tom      8
-Ahmad    5
-Beau     6
-dtype: int64
+Tom 8
+Ahmad 5
+Beau 6
+tipo: int64
 </pre>
 
 ---
 
 <pre>
-Tom      8
-Beau     6
-dtype: int64
+Tom 8
+Beau 6
+tipo: int64
 </pre>
 
 ## --video-solution--

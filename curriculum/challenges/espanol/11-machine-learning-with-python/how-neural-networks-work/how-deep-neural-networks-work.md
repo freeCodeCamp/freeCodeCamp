@@ -1,6 +1,6 @@
 ---
 id: 5e9a0e9ef99a403d019610ca
-title: How Deep Neural Networks Work
+title: Cómo Funcionan las Redes Neuronales Profundas
 challengeType: 11
 videoId: zvalnHWGtx4
 dashedName: how-deep-neural-networks-work
@@ -10,19 +10,19 @@ dashedName: how-deep-neural-networks-work
 
 ## --text--
 
-Why is it better to calculate the gradient (slope) directly rather than numerically?
+¿Por qué es mejor calcular la gradiente (pendiente) directamente que numéricamente?
 
 ## --answers--
 
-It is computationally expensive to go back through the entire neural network and adjust the weights for each layer of the neural network.
+Es computacionalmente caro volver a través de toda la red neuronal y ajustar los pesos para cada capa de la red neuronal.
 
 ---
 
-It is more accurate.
+Es más preciso.
 
 ---
 
-There is no difference between the two methods.
+No hay diferencia entre ambos métodos.
 
 ## --video-solution--
 

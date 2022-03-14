@@ -1,8 +1,12 @@
 ---
 id: 5ea9997bbec2e9bc47e94db2
-title: Developing an Nmap Scanner part 2
+title: Desarrollando un escáner de Nmap parte 2
 challengeType: 11
 videoId: a98PscnUsTg
+bilibiliIds:
+  aid: 505526943
+  bvid: BV1Hg411c7oE
+  cid: 409034761
 dashedName: developing-an-nmap-scanner-part-2
 ---
 
@@ -10,7 +14,7 @@ dashedName: developing-an-nmap-scanner-part-2
 
 ## --text--
 
-Which of the following allows you to scan for UDP ports between 21 to 443?
+¿Cuál de las siguientes opciones le permite buscar puertos UDP entre 21 a 443?
 
 ## --answers--
 
