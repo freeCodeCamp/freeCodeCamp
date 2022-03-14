@@ -46,13 +46,3 @@ export function bodySizeFits(bodySizeInBytes: number) {
   return true;
 }
 
-export function getFlashMessage(messageKey = '', bodySizeInBytes = 0) {
-  return {
-    type: 'danger',
-    message: messageKey,
-    variables: {
-      'max-size': MAX_BODY_SIZE,
-      'user-size': bodySizeInBytes
-    }
-  };
-}

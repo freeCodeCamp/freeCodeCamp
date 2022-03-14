@@ -27,11 +27,12 @@ import {
 } from '../utils/build';
 import { challengeTypes } from '../../../../utils/challenge-types';
 import { createFlashMessage } from '../../../components/Flash/redux';
+import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import {
   uniformizeRequestBody,
   getStringSizeInBytes,
   bodySizeFits,
-  getFlashMessage
+  MAX_BODY_SIZE
 } from '../../../utils/challenge-request-helpers';
 import { actionTypes } from './action-types';
 import {
@@ -65,9 +66,11 @@ export function* executeCancellableChallengeSaga(payload) {
 
     if (!bodySizeFits(bodySizeInBytes)) {
       return yield put(
-        createFlashMessage(
-          getFlashMessage('flash.challenge-submit-too-big', bodySizeInBytes)
-        )
+        createFlashMessage({
+          type: 'danger',
+          message: FlashMessages.ChallengeSaveTooBig,
+          variables: { 'max-size': MAX_BODY_SIZE, 'user-size': bodySizeInBytes }
+        })
       );
     }
   }

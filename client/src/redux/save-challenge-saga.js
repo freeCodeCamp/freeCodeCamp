@@ -11,7 +11,7 @@ import {
   uniformizeRequestBody,
   getStringSizeInBytes,
   bodySizeFits,
-  getFlashMessage
+  MAX_BODY_SIZE
 } from '../utils/challenge-request-helpers';
 import { saveChallengeComplete } from './';
 
@@ -26,9 +26,11 @@ export function* saveChallengeSaga() {
 
     if (!bodySizeFits(bodySizeInBytes)) {
       return yield put(
-        createFlashMessage(
-          getFlashMessage('flash.challenge-save-too-big', bodySizeInBytes)
-        )
+        createFlashMessage({
+          type: 'danger',
+          message: FlashMessages.ChallengeSaveTooBig,
+          variables: { 'max-size': MAX_BODY_SIZE, 'user-size': bodySizeInBytes }
+        })
       );
     } else {
       try {
