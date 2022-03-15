@@ -520,10 +520,11 @@
     "provide-username": "检查你是否提供用户名和报告",
     "report-sent": "已通过 {{email}} 向团队发送副本报告",
     "certificate-missing": "你尝试查看的认证不存在",
-    "create-token-err": "尝试创建令牌时出错",
-    "delete-token-err": "尝试删除令牌时出错",
-    "token-created": "你已成功创建了一个新令牌。",
-    "token-deleted": "你的令牌已被删除。",
+    "create-token-err": "An error occurred while creating your user token",
+    "delete-token-err": "An error occurred while deleting your user token",
+    "token-created": "You have successfully created a new user token.",
+    "token-deleted": "Your user token has been deleted.",
+    "start-project-err": "Something went wrong trying to start the project. Please try again.",
     "complete-project-first": "You must complete the project first.",
     "local-code-save-error": "Oops, your code did not save, your browser's local storage may be full.",
     "local-code-saved": "Saved! Your code was saved to your browser's local storage."
@@ -656,17 +657,17 @@
     "add-code-two": "请保留上方的 ``` 行和下方的 ``` 行",
     "add-code-three": "因为它们允许你的代码在帖子中被正确格式化。"
   },
-  "webhook-token": {
-    "title": "Webhook 令牌",
-    "create": "创建一个新令牌",
-    "create-p1": "看起来你没有 webhook 令牌。创建一个令牌来保存你在这个部分的进度",
-    "create-p2": "创建一个 webhook 令牌来保存你使用虚拟机器的课程部分的进度。",
-    "delete": "删除我的令牌",
-    "delete-title": "删除我的 Webhook 令牌",
-    "delete-p1": "你在下面的 webhook 令牌用于在使用虚拟机器的课程部分保存你的进度。",
-    "delete-p2": "如果你怀疑你的令牌已被盗用，你可以删除它，以使它无法使用。以前提交的课程的进度将不会丢失。",
-    "delete-p3": "你将需要创建一个新令牌来保存使用虚拟机器的课程部分的未来进度。",
-    "no-thanks": "不，谢谢，我想保留我的令牌",
-    "yes-please": "是的，请删除我的令牌"
+  "user-token": {
+    "title": "User Token",
+    "create": "Create a new token",
+    "create-p1": "It looks like you don't have a user token. Create one to save your progress on this section",
+    "create-p2": "Create a user token to save your progress on the curriculum sections that use a virtual machine.",
+    "delete": "Delete my user token",
+    "delete-title": "Delete My User Token",
+    "delete-p1": "Your user token is used to save your progress on curriculum sections that use a virtual machine. If you suspect it has been compromised, you can delete it without losing any progress. A new one will be created automatically the next time you open a project.",
+    "delete-p2": "If you suspect your token has been compromised, you can delete it to make it unusable. Progress on previously submitted lessons will not be lost.",
+    "delete-p3": "You will need to create a new token to save future progress on the curriculum sections that use a virtual machine.",
+    "no-thanks": "No thanks, I would like to keep my token",
+    "yes-please": "Yes please, I would like to delete my token"
   }
 }

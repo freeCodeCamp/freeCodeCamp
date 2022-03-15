@@ -12,6 +12,9 @@ import { Observable } from 'rx';
 import isNumeric from 'validator/lib/isNumeric';
 import isURL from 'validator/lib/isURL';
 
+import jwt from 'jsonwebtoken';
+import { jwtSecret } from '../../../../config/secrets';
+
 import { environment, deploymentEnv } from '../../../../config/env.json';
 import {
   fixCompletedChallengeItem,
@@ -399,13 +402,21 @@ function createCoderoadChallengeCompleted(app) {
   const { UserToken, User } = app.models;
 
   return async function coderoadChallengeCompleted(req, res) {
-    const { 'coderoad-user-token': userToken } = req.headers;
+    const { 'coderoad-user-token': encodedUserToken } = req.headers;
     const { tutorialId } = req.body;
 
     if (!tutorialId) return res.send(`'tutorialId' not found in request body`);
 
-    if (!userToken)
+    if (!encodedUserToken)
       return res.send(`'coderoad-user-token' not found in request headers`);
+
+    let userToken;
+
+    try {
+      userToken = jwt.verify(encodedUserToken, jwtSecret)?.userToken;
+    } catch {
+      return res.send(`invalid user token`);
+    }
 
     const tutorialRepo = tutorialId?.split(':')[0];
     const tutorialOrg = tutorialRepo?.split('/')?.[0];

@@ -11,7 +11,7 @@ import { executeGA } from '../../../redux';
 import { SuperBlocks } from '../../../../../config/certification-settings';
 import { ExecuteGaArg } from '../../../pages/donate';
 import { ChallengeWithCompletedNode } from '../../../redux/prop-types';
-import isNewRespCert from '../../../utils/is-new-responsive-web-design-cert';
+import { isNewRespCert } from '../../../utils/is-a-cert';
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators({ executeGA }, dispatch);
