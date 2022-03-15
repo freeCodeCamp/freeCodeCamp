@@ -40,8 +40,5 @@ export function getStringSizeInBytes(str = '') {
 }
 
 export function bodySizeFits(bodySizeInBytes: number) {
-  if (bodySizeInBytes > MAX_BODY_SIZE) {
-    return false;
-  }
-  return true;
+  return bodySizeInBytes <= MAX_BODY_SIZE;
 }
