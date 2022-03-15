@@ -781,6 +781,7 @@
     "legacy-header": "Legacy Courses",
     "legacy-desc": "These courses are no longer part of the certification path, but are still available for you to further your learning.",
     "viewing-upcoming-change": "You are looking at a beta page. ",
-    "go-back-to-learn": "Go back to the stable version of the curriculum."
+    "go-back-to-learn": "Go back to the stable version of the curriculum.",
+    "read-database-cert-article": "Please read this forum post before proceeding."
   }
 }

@@ -781,6 +781,7 @@
     "legacy-header": "Cursos anteriores",
     "legacy-desc": "Estes cursos não fazem mais parte do caminho de certificação, mas ainda estão disponíveis para você continuar aprendendo.",
     "viewing-upcoming-change": "Você está vendo uma página em estágio beta. ",
-    "go-back-to-learn": "Voltar à versão estável do currículo."
+    "go-back-to-learn": "Voltar à versão estável do currículo.",
+    "read-database-cert-article": "Please read this forum post before proceeding."
   }
 }
