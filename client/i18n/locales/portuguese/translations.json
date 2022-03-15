@@ -520,11 +520,11 @@
     "provide-username": "Verifique se você forneceu um nome de usuário e um relatório",
     "report-sent": "Um relatório foi enviado para a equipe com {{email}} em cópia",
     "certificate-missing": "A certificação que você tentou visualizar não existe",
-    "create-token-err": "An error occurred while creating your user token",
-    "delete-token-err": "An error occurred while deleting your user token",
-    "token-created": "You have successfully created a new user token.",
-    "token-deleted": "Your user token has been deleted.",
-    "start-project-err": "Something went wrong trying to start the project. Please try again.",
+    "create-token-err": "Ocorreu um erro ao criar seu token de usuário",
+    "delete-token-err": "Ocorreu um erro ao excluir seu token de usuário",
+    "token-created": "Você criou um novo token de usuário com sucesso.",
+    "token-deleted": "Seu token de usuário foi excluído.",
+    "start-project-err": "Algo deu errado ao tentar iniciar o projeto. Tente novamente.",
     "complete-project-first": "Você precisa completar o projeto primeiro.",
     "local-code-save-error": "Opa, seu código não salvou, o armazenamento local do seu navegador pode estar cheio.",
     "local-code-saved": "Salvo! Seu código foi salvo no armazenamento local do seu navegador."
@@ -658,16 +658,16 @@
     "add-code-three": "pois elas permitirão a formatação adequada de seu código na publicação."
   },
   "user-token": {
-    "title": "User Token",
-    "create": "Create a new token",
-    "create-p1": "It looks like you don't have a user token. Create one to save your progress on this section",
-    "create-p2": "Create a user token to save your progress on the curriculum sections that use a virtual machine.",
-    "delete": "Delete my user token",
-    "delete-title": "Delete My User Token",
-    "delete-p1": "Your user token is used to save your progress on curriculum sections that use a virtual machine. If you suspect it has been compromised, you can delete it without losing any progress. A new one will be created automatically the next time you open a project.",
-    "delete-p2": "If you suspect your token has been compromised, you can delete it to make it unusable. Progress on previously submitted lessons will not be lost.",
-    "delete-p3": "You will need to create a new token to save future progress on the curriculum sections that use a virtual machine.",
-    "no-thanks": "No thanks, I would like to keep my token",
-    "yes-please": "Yes please, I would like to delete my token"
+    "title": "Token de usuário",
+    "create": "Criar um novo token",
+    "create-p1": "Parece que você não tem um token de usuário. Crie um para salvar seu progresso nesta seção",
+    "create-p2": "Crie um token de usuário para salvar seu progresso nas seções de currículo que usam uma máquina virtual.",
+    "delete": "Excluir meu token de usuário",
+    "delete-title": "Excluir meu token de usuário",
+    "delete-p1": "Seu token de usuário serve para salvar seu progresso em seções de currículo que usam uma máquina virtual. Se você suspeitar que o token foi comprometido, poderá excluí-lo sem perder nenhum progresso. Um novo token será criado automaticamente na próxima vez que você abrir um projeto.",
+    "delete-p2": "Se você suspeitar que seu token foi comprometido, você pode excluí-lo para torná-lo inutilizável. O progresso nas aulas enviadas anteriormente não será perdido.",
+    "delete-p3": "Você precisa criar um novo token para salvar seu progresso futuro nas seções de currículo que usam uma máquina virtual.",
+    "no-thanks": "Não, obrigado. Eu gostaria de manter meu token",
+    "yes-please": "Sim, eu gostaria de excluir meu token"
   }
 }
