@@ -16,7 +16,7 @@ import { wrapHandledError } from '../utils/create-handled-error.js';
 import { removeCookies } from '../utils/getSetAccessToken';
 import { ifUserRedirectTo, ifNoUserRedirectHome } from '../utils/middleware';
 import { getRedirectParams } from '../utils/redirection';
-import { createDeleteUserToken } from '../middlewares/delete-user-token';
+import { createDeleteUserToken } from '../middlewares/user-token';
 
 const passwordlessGetValidators = [
   check('email')

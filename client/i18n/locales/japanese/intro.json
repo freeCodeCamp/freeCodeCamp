@@ -781,6 +781,7 @@
     "legacy-header": "レガシーコース",
     "legacy-desc": "現在、これらのコースは認定講座の一部ではありませんが、あなたの学習をより深めるために利用可能です。",
     "viewing-upcoming-change": "ベータ版のページを閲覧中です。 ",
-    "go-back-to-learn": "カリキュラムの安定版へ戻る。"
+    "go-back-to-learn": "カリキュラムの安定版へ戻る。",
+    "read-database-cert-article": "Please read this forum post before proceeding."
   }
 }
