@@ -22,7 +22,7 @@ By considering the terms in the Fibonacci sequence whose values do not exceed `n
 assert(typeof fiboEvenSum(10) === 'number');
 ```
 
-Your function should return an `even` value.
+Your function should return an even value.
 
 ```js
 assert.equal(fiboEvenSum(10) % 2 === 0, true);
