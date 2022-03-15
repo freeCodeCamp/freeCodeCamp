@@ -48,7 +48,7 @@ Finally, add a `print` method which returns an array of all the items that have 
 
 # --hints--
 
-The MaxHeap data structure should exist.
+The `MaxHeap` data structure should exist.
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-MaxHeap should have a method called insert.
+`MaxHeap` should have a method called `insert`.
 
 ```js
 assert(
@@ -78,7 +78,7 @@ assert(
 );
 ```
 
-MaxHeap should have a method called print.
+`MaxHeap` should have a method called `print`.
 
 ```js
 assert(
@@ -94,7 +94,7 @@ assert(
 );
 ```
 
-The insert method should add elements according to the max heap property.
+The `insert` method should add elements according to the max heap property.
 
 ```js
 assert(

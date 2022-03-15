@@ -25,7 +25,7 @@ assert(
 );
 ```
 
-The first Set() should be contained in the second Set
+The first `Set` should be contained in the second `Set`
 
 ```js
 assert(
