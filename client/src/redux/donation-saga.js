@@ -35,7 +35,6 @@ import {
 const defaultDonationErrorMessage = i18next.t('donate.error-2');
 
 function* showDonateModalSaga() {
-  console.log(defaultDonationErrorMessage);
   let shouldRequestDonation = yield select(shouldRequestDonationSelector);
   if (shouldRequestDonation) {
     yield delay(200);
