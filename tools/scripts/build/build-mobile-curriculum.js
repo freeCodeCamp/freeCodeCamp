@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-exports.buildMobileCurriculum = function buildMobileCurriculum(json) {
+exports.buildMobileCurriculum = async function buildMobileCurriculum(json) {
   const mobileStaticPath = path.resolve(__dirname, '../../../client/static');
   const blockIntroPath = path.resolve(
     __dirname,
