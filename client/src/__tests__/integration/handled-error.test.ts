@@ -1,28 +1,28 @@
 import {
   wrapHandledError,
-  unwrapHandledError
+  unwrapHandledError,
+  ErrorData
 } from '../../utils/handled-error';
 
 describe('handled-error integration', () => {
-  const handledA = {
+  const handledA: ErrorData = {
     type: 'info',
     message: 'something helpful',
     redirectTo: '/a-path-we-choose'
   };
-  const handledB = {
+  const handledB: ErrorData = {
     type: 'danger',
     message: 'Oh noes!',
     redirectTo: '/whoops'
   };
-  const handledC = {
+  const handledC: ErrorData = {
     type: 'success',
     message: 'great news!',
     redirectTo: '/awesome'
   };
-  const handledD = {};
+  const handledD: ErrorData = {};
 
   it('can wrap and unwrap handled errors', () => {
-    expect.assertions(4);
     const wrappedA = wrapHandledError(new Error(), handledA);
     const wrappedB = wrapHandledError(new Error(), handledB);
     const wrappedC = wrapHandledError(new Error(), handledC);
