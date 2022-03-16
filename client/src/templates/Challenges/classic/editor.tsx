@@ -179,7 +179,7 @@ const defineMonacoThemes = (
     // TODO: Use actual color from style-guide
     colors: {
       'editor.background': options.usesMultifileEditor ? '#eee' : '#fff',
-      'editor.lineHighlightBorder': '#002ead'
+      'editor.lineHighlightBorder': '#cee8fc'
     },
     rules: [{ token: 'identifier.js', foreground: darkBlueColor }]
   });
