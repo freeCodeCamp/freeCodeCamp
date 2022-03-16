@@ -3,6 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { SuperBlocks } from '../../../../../config/certification-settings';
 import { generateIconComponent } from '../../../assets/icons';
 import { Spacer } from '../../../components/helpers';
+import envData from '../../../../../config/env.json';
+
+const { clientLocale } = envData;
 
 interface SuperBlockIntroProps {
   superBlock: SuperBlocks;
@@ -35,6 +38,11 @@ function SuperBlockIntro(props: SuperBlockIntroProps): JSX.Element {
       {superBlockNoteText && (
         <div className='alert alert-info' style={{ marginTop: '2rem' }}>
           {superBlockNoteText}
+        </div>
+      )}
+      {superBlock === SuperBlocks.RelationalDb && clientLocale != 'english' && (
+        <div className='alert alert-info' style={{ marginTop: '2rem' }}>
+          {t(`intro:misc-text.english-only`)}
         </div>
       )}
     </>
