@@ -178,28 +178,18 @@ async function buildBlocks({ basename: blockName }, curriculum, superBlock) {
     `./challenges/_meta/${blockName}/meta.json`
   );
   let blockMeta;
-  try {
-    if (fs.existsSync(metaPath)) {
-      blockMeta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
 
-      const { isUpcomingChange } = blockMeta;
+  if (fs.existsSync(metaPath)) {
+    blockMeta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
 
-      if (typeof isUpcomingChange !== 'boolean') {
-        throw Error(
-          `meta file at ${metaPath} is missing 'isUpcomingChange', it must be 'true' or 'false'`
-        );
-      }
+    const { isUpcomingChange } = blockMeta;
 
-      if (!isUpcomingChange || showUpcomingChanges) {
-        // add the block to the superBlock
-        const blockInfo = { meta: blockMeta, challenges: [] };
-        curriculum[superBlock].blocks[blockName] = blockInfo;
-      }
+    if (!isUpcomingChange || showUpcomingChanges) {
+      // add the block to the superBlock
+      const blockInfo = { meta: blockMeta, challenges: [] };
+      curriculum[superBlock].blocks[blockName] = blockInfo;
     }
-  } catch (e) {
-    if (e.code !== 'MODULE_NOT_FOUND') {
-      throw e;
-    }
+  } else {
     curriculum['certifications'].blocks[blockName] = { challenges: [] };
   }
 }
