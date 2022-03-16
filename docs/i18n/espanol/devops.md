@@ -256,7 +256,7 @@ brew install azure-cli
 az login
 ```
 
-> **Get the list of VM names and IP addresses:**
+> **Obtener la lista de nombres de las máquinas virtuales y direcciones IP:**
 
 ```
 az vm list-ip-addresses --output table
@@ -779,11 +779,11 @@ Los cambios de configuración a nuestras instancias NGINX se mantienen en GitHub
 
    Selecciona sí (y) para eliminar todo lo que no esté en uso. Esto eliminará todos los contenedores detenidos, todas las redes y volúmenes no utilizados por al menos un contenedor, y todas las imágenes colgantes y cachés de compilación.
 
-## Work on Contributor Tools
+## Trabajar en las herramientas de los colaboradores
 
-### Deploy updates
+### Implementar actualizaciones
 
-ssh into the VM (hosted on Digital Ocean).
+ssh en la máquina virtual (alojada en Digital Ocean).
 
 ```console
 cd tools
@@ -793,9 +793,9 @@ npm run build
 pm2 restart contribute-app
 ```
 
-## Updating Node.js versions on VMs
+## Actualizar la versión de Node.js en máquinas virtuales
 
-List currently installed node & npm versions
+Lista las versiones instaladas de node y npm
 
 ```console
 nvm -v
@@ -805,31 +805,31 @@ npm -v
 nvm ls
 ```
 
-Install the latest Node.js LTS, and reinstall any global packages
+Instala el último Node.js LTS y reinstala cualquier paquete global
 
 ```console
 nvm install --lts --reinstall-packages-from=default
 ```
 
-Verify installed packages
+Verifica los paquetes instalados
 
 ```console
 npm ls -g --depth=0
 ```
 
-Alias the `default` Node.js version to the current LTS (pinned to latest major version)
+Alias la versión `default` de Node.js a la LTS actual (fijada a la última versión mayor)
 
 ```console
 nvm alias default 16
 ```
 
-(Optional) Uninstall old versions
+(Opcional) Desinstalar versiones antiguas
 
 ```console
 nvm uninstall <version>
 ```
 
-> [!ATTENTION] For client applications, the shell script can't be resurrected between Node.js versions with `pm2 resurrect`. Deploy processes from scratch instead. This should become nicer when we move to a docker based setup.
+> [!ATTENTION] Para las aplicaciones cliente, el script de shell no se puede resucitar entre las versiones de Node.js con `pm2 resurrect`. En su lugar, despliega procesos desde cero. This should become nicer when we move to a docker based setup.
 > 
 > If using PM2 for processes you would also need to bring up the applications and save the process list for automatic recovery on restarts.
 

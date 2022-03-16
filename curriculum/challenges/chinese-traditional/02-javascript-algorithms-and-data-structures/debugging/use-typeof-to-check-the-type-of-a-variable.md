@@ -21,7 +21,7 @@ console.log(typeof {});
 
 控制檯將按順序顯示字符串 `string`、`number`、`object` 和 `object`。
 
-JavaScript 有六種原始（不可變）數據類型：`Boolean`、`Null`、`Undefined`、`Number`、`String` 和 `Symbol`（ES6 中新增的），和一種可變的數據類型：`Object`。 注意：在 JavaScript 中，數組在本質上是一種對象。
+JavaScript 有七種原始（不可變）數據類型： `Boolean`，`Null`，`Undefined`，`Number`，`String`，`Symbol` （new with ES6），`BigInt` （new with ES2020）和一種可變數據類型：`Object`。 注意：在 JavaScript 中，數組在本質上是一種對象。
 
 # --instructions--
 
