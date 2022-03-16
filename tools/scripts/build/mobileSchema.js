@@ -1,4 +1,4 @@
-const Joi = require('Joi');
+const Joi = require('joi');
 
 const blockSchema = Joi.object({}).keys({
   desc: Joi.array().min(1),
