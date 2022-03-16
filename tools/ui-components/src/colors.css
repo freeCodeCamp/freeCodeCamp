@@ -95,10 +95,13 @@ div.light {
   --default-foreground-secondary: var(--gray85);
   --default-foreground-tertiary: var(--gray80);
   --default-foreground-quaternary: var(--gray75);
+  --default-foreground-danger: var(--red15);
+
   --default-background-primary: var(--gray00);
   --default-background-secondary: var(--gray05);
   --default-background-tertiary: var(--gray10);
   --default-background-quaternary: var(--gray15);
+  --default-background-danger: var(--red90);
 }
 
 html.dark,
@@ -106,8 +109,11 @@ div.dark {
   --default-foreground-primary: var(--gray00);
   --default-foreground-secondary: var(--gray05);
   --default-foreground-quaternary: var(--gray15);
+  --default-foreground-danger: var(--red90);
+
   --default-background-primary: var(--gray90);
   --default-background-secondary: var(--gray85);
   --default-background-tertiary: var(--gray80);
   --default-background-quaternary: var(--gray75);
+  --default-background-danger: var(--red15);
 }
