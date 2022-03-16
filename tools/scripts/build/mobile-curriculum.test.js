@@ -43,20 +43,27 @@ describe('mobile curriculum build', () => {
   });
 
   test('the files generated should have the correct schema', () => {
-    const fileArray = fs.readdirSync(`${mobileStaticPath}/mobile`);
+    function callBack() {
+      const fileArray = fs.readdirSync(`${mobileStaticPath}/mobile`);
 
-    fileArray
-      .filter(fileInArray => fileInArray !== 'availableSuperblocks.json')
-      .forEach(fileInArray => {
-        const fileContent = fs.readFileSync(
-          `${mobileStaticPath}/mobile/${fileInArray}`
-        );
+      fileArray
+        .filter(fileInArray => fileInArray !== 'availableSuperblocks.json')
+        .forEach(fileInArray => {
+          const fileContent = fs.readFileSync(
+            `${mobileStaticPath}/mobile/${fileInArray}`
+          );
 
-        const result = validateMobileSuperBlock(JSON.parse(fileContent));
+          const result = validateMobileSuperBlock(JSON.parse(fileContent));
 
-        if (result.error) {
-          throw new AssertionError(result.error, `file: ${fileInArray}`);
-        }
-      });
+          if (result.error) {
+            throw new AssertionError(result.error, `file: ${fileInArray}`);
+          }
+        });
+    }
+
+    getChallengesForLang('english').then(result => {
+      buildMobileCurriculum(result);
+      callBack();
+    });
   });
 });
