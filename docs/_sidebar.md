@@ -21,6 +21,7 @@
   - [Understand the curriculum file structure](curriculum-file-structure.md)
   - [Debug outgoing emails locally](how-to-catch-outgoing-emails-locally.md)
   - [Set up freeCodeCamp on Windows (WSL)](how-to-setup-wsl.md)
+  - [User Token Workflow](user-token-workflow.md)
 
 ---
 

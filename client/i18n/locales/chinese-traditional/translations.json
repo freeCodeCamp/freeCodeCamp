@@ -315,6 +315,7 @@
     "additional": "你可以使用這個鏈接 <0>{{url}}</0> 額外進行一次性捐款：",
     "help-more": "幫助我們做更多",
     "error": "你的捐款處理有點問題。",
+    "error-2": "Something is not right. Please contact donors@freecodecamp.org",
     "free-tech": "你的捐款將支持世界各地的人們獲得免費的技術教育。",
     "no-halo": "如果你在你的個人圖片周圍看不到金色光環，請聯繫 donors@freecodecamp.org。",
     "gift-frequency": "選擇捐贈的頻率：",

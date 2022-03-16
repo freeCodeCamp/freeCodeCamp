@@ -315,6 +315,7 @@
     "additional": "Puede hacer una donación adicional única de cualquier monto utilizando este enlace: <0>{{url}}</0>",
     "help-more": "Ayúdanos a hacer más",
     "error": "Algo salió mal con tu donación.",
+    "error-2": "Something is not right. Please contact donors@freecodecamp.org",
     "free-tech": "Tus donaciones apoyarán la educación tecnológica gratuita para personas de todo el mundo.",
     "no-halo": "Si no ves un aro dorado alrededor de tu foto de perfil, contacta a donors@freecodecamp.org.",
     "gift-frequency": "Selecciona la frecuencia de los obsequios:",
