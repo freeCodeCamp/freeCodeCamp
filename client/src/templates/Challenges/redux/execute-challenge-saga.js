@@ -29,7 +29,7 @@ import { challengeTypes } from '../../../../utils/challenge-types';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import {
-  uniformizeRequestBody,
+  standardizeRequestBody,
   getStringSizeInBytes,
   bodySizeFits,
   MAX_BODY_SIZE
@@ -61,7 +61,7 @@ export function* executeCancellableChallengeSaga(payload) {
 
   // if multiFileCertProject, see if body/code size is submittable
   if (challengeType === challengeTypes.multiFileCertProject) {
-    const body = uniformizeRequestBody({ id, challengeFiles, challengeType });
+    const body = standardizeRequestBody({ id, challengeFiles, challengeType });
     const bodySizeInBytes = getStringSizeInBytes(body);
 
     if (!bodySizeFits(bodySizeInBytes)) {

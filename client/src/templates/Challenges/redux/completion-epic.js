@@ -22,7 +22,7 @@ import {
 
 import postUpdate$ from '../utils/postUpdate$';
 import { mapFilesToChallengeFiles } from '../../../utils/ajax';
-import { uniformizeRequestBody } from '../../../utils/challenge-request-helpers';
+import { standardizeRequestBody } from '../../../utils/challenge-request-helpers';
 import { actionTypes } from './action-types';
 import {
   projectFormValuesSelector,
@@ -87,7 +87,7 @@ function submitModern(type, state) {
         block === 'javascript-algorithms-and-data-structures-projects' ||
         challengeType === challengeTypes.multiFileCertProject
       ) {
-        body = uniformizeRequestBody({ id, challengeType, challengeFiles });
+        body = standardizeRequestBody({ id, challengeType, challengeFiles });
       } else {
         body = {
           id,

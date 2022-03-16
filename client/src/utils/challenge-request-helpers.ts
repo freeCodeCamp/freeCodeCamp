@@ -7,17 +7,17 @@ import { ChallengeFiles } from '../redux/prop-types';
 
 export const MAX_BODY_SIZE = 102400;
 
-interface UniformizeRequestBodyArgs {
+interface StandardizeRequestBodyArgs {
   id: string;
   challengeFiles: ChallengeFiles;
   challengeType: number;
 }
 
-export function uniformizeRequestBody({
+export function standardizeRequestBody({
   id,
   challengeFiles = [],
   challengeType
-}: UniformizeRequestBodyArgs) {
+}: StandardizeRequestBodyArgs) {
   return {
     id,
     files: challengeFiles?.map(({ fileKey, contents, ext, name, history }) => {
