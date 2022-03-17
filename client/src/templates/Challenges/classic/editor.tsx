@@ -164,7 +164,8 @@ const defineMonacoThemes = (
     base: 'vs-dark',
     inherit: true,
     colors: {
-      'editor.background': '#2a2a40'
+      'editor.background': '#2a2a40',
+      'editor.lineHighlightBorder': '#0e4470'
     },
     rules: [
       { token: 'delimiter.js', foreground: lightBlueColor },
