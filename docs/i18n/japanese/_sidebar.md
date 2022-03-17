@@ -21,6 +21,7 @@
   - [カリキュラムのファイル構造を理解する](curriculum-file-structure.md)
   - [送信メールをローカルでデバッグする](how-to-catch-outgoing-emails-locally.md)
   - [freeCodeCamp を Windows (WSL) でセットアップする](how-to-setup-wsl.md)
+  - [User Token Workflow](user-token-workflow.md)
 
 ---
 
