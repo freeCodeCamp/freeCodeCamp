@@ -11,7 +11,7 @@ import {
   runTestInTestFrame,
   createMainPreviewFramer,
   createProjectPreviewFramer
-} from './frame';
+} from './frame.ts';
 import createWorker from './worker-executor';
 
 const { filename: runner } = frameRunnerData;
@@ -19,7 +19,7 @@ const { filename: testEvaluator } = testEvaluatorData;
 
 const frameRunner = [
   {
-    src: `/js/${runner}.js`
+    src: `/js/${runner}.ts`
   }
 ];
 
