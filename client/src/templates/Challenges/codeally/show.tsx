@@ -22,8 +22,11 @@ import Hotkeys from '../components/Hotkeys';
 import {
   completedChallengesSelector,
   isSignedInSelector,
+  hideCodeAlly,
   partiallyCompletedChallengesSelector,
-  webhookTokenSelector
+  showCodeAllySelector,
+  tryToShowCodeAlly,
+  userTokenSelector
 } from '../../../redux';
 import {
   challengeMounted,
@@ -40,7 +43,6 @@ import {
 } from '../../../redux/prop-types';
 import ProjectToolPanel from '../projects/tool-panel';
 import SolutionForm from '../projects/solution-form';
-import WebhookToken from '../../../components/settings/webhook-token';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 
 import './codeally.css';
@@ -51,19 +53,22 @@ const mapStateToProps = createSelector(
   isChallengeCompletedSelector,
   isSignedInSelector,
   partiallyCompletedChallengesSelector,
-  webhookTokenSelector,
+  showCodeAllySelector,
+  userTokenSelector,
   (
     completedChallenges: CompletedChallenge[],
     isChallengeCompleted: boolean,
     isSignedIn: boolean,
     partiallyCompletedChallenges: CompletedChallenge[],
-    webhookToken: string | null
+    showCodeAlly: boolean,
+    userToken: string | null
   ) => ({
     completedChallenges,
     isChallengeCompleted,
     isSignedIn,
     partiallyCompletedChallenges,
-    webhookToken
+    showCodeAlly,
+    userToken
   })
 );
 
@@ -72,7 +77,9 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     {
       challengeMounted,
       createFlashMessage,
+      hideCodeAlly,
       openCompletionModal: () => openModal('completion'),
+      tryToShowCodeAlly,
       updateChallengeMeta,
       updateSolutionFormValues
     },
@@ -85,6 +92,7 @@ interface ShowCodeAllyProps {
   completedChallenges: CompletedChallenge[];
   createFlashMessage: typeof createFlashMessage;
   data: { challengeNode: ChallengeNode };
+  hideCodeAlly: () => void;
   isChallengeCompleted: boolean;
   isSignedIn: boolean;
   openCompletionModal: () => void;
@@ -92,26 +100,18 @@ interface ShowCodeAllyProps {
     challengeMeta: ChallengeMeta;
   };
   partiallyCompletedChallenges: CompletedChallenge[];
+  showCodeAlly: boolean;
   t: TFunction;
+  tryToShowCodeAlly: () => void;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   updateSolutionFormValues: () => void;
-  webhookToken: string | null;
-}
-
-interface ShowCodeAllyState {
-  showIframe: boolean;
+  userToken: string | null;
 }
 
 // Component
-class ShowCodeAlly extends Component<ShowCodeAllyProps, ShowCodeAllyState> {
+class ShowCodeAlly extends Component<ShowCodeAllyProps> {
   static displayName: string;
   private _container: HTMLElement | null = null;
-  constructor(props: ShowCodeAllyProps) {
-    super(props);
-    this.state = {
-      showIframe: false
-    };
-  }
 
   componentDidMount(): void {
     const {
@@ -134,11 +134,9 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps, ShowCodeAllyState> {
     this._container?.focus();
   }
 
-  showIframe = () => {
-    this.setState({
-      showIframe: true
-    });
-  };
+  componentWillUnmount() {
+    this.props.hideCodeAlly();
+  }
 
   handleSubmit = ({
     showCompletionModal
@@ -153,6 +151,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps, ShowCodeAllyState> {
           challenge: { id: challengeId }
         }
       },
+      openCompletionModal,
       partiallyCompletedChallenges
     } = this.props;
 
@@ -170,7 +169,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps, ShowCodeAllyState> {
         message: FlashMessages.CompleteProjectFirst
       });
     } else if (showCompletionModal) {
-      this.props.openCompletionModal();
+      openCompletionModal();
     }
   };
 
@@ -201,14 +200,15 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps, ShowCodeAllyState> {
         challengeMeta: { nextChallengePath, prevChallengePath }
       },
       partiallyCompletedChallenges,
+      showCodeAlly,
       t,
+      tryToShowCodeAlly,
       updateSolutionFormValues,
-      webhookToken = null
+      userToken = null
     } = this.props;
-    const { showIframe } = this.state;
 
-    const envVariables = webhookToken
-      ? `&envVariables=CODEROAD_WEBHOOK_TOKEN=${webhookToken}`
+    const envVariables = userToken
+      ? `&envVariables=CODEROAD_WEBHOOK_TOKEN=${userToken}`
       : '';
 
     const isPartiallyCompleted = partiallyCompletedChallenges.some(
@@ -219,7 +219,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps, ShowCodeAllyState> {
       challenge => challenge.id === challengeId
     );
 
-    return showIframe ? (
+    return showCodeAlly ? (
       <LearnLayout>
         <Helmet title={`${blockName}: ${title} | freeCodeCamp.org`} />
         <iframe
@@ -251,7 +251,6 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps, ShowCodeAllyState> {
                   {title}
                 </ChallengeTitle>
                 <Spacer />
-                {isSignedIn && <WebhookToken isChallengePage={true} />}
                 <PrismFormatted text={description} />
                 <Spacer />
                 <div className='ca-description'>
@@ -304,7 +303,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps, ShowCodeAllyState> {
                   <Button
                     block={true}
                     bsStyle='primary'
-                    onClick={this.showIframe}
+                    onClick={tryToShowCodeAlly}
                   >
                     {challengeType === challengeTypes.codeAllyCert
                       ? t('buttons.click-start-project')

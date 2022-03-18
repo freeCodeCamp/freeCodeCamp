@@ -15,8 +15,7 @@
   - [Робота над локалізованим вебзастосунком](how-to-work-on-localized-client-webapp.md)
   - [Робота з Cypress тестами](how-to-add-cypress-tests.md)
   - [Робота над завданнями з відео](how-to-help-with-video-challenges.md)
-  - [Робота над новинами](how-to-work-on-the-news-theme.md)
-  - [Робота з документацією](how-to-work-on-the-docs-theme.md)
+  - [Work on the docs theme](how-to-work-on-the-docs-theme.md)
 - **Додаткові інструкції**
   - [Тестуйте переклади локально](how-to-test-translations-locally.md)
   - [Ознайомлення зі структурою файлів навчальної програми](curriculum-file-structure.md)

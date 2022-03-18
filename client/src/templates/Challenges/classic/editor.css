@@ -41,7 +41,7 @@
 .description-container {
   background-color: var(--secondary-background);
   padding: 10px;
-  border: 2px solid var(--tertiary-background);
+  border: 2px solid var(--quaternary-background);
   max-width: 700px;
 }
 

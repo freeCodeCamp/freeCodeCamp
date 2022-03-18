@@ -1,25 +1,29 @@
 ---
 id: 5e9a093a74c4063ca6f7c15e
-title: Data Cleaning with DataFrames
+title: Limpieza de datos con DataFrames
 challengeType: 11
 videoId: sTMN_pdI6S0
+bilibiliIds:
+  aid: 505597026
+  bvid: BV1Yg411c7bx
+  cid: 409018948
 dashedName: data-cleaning-with-dataframes
 ---
 
 # --description--
 
-*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
+*En lugar de usar notebooks.ai como se muestra en el vídeo, puede utilizar Google Colab en su lugar.*
 
-More resources:
+Más recursos:
 
--   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/data-cleaning-rmotr-freecodecamp)
--   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-   [Notebooks en GitHub](https://github.com/ine-rmotr-curriculum/data-cleaning-rmotr-freecodecamp)
+-   [Cómo abrir Notebooks desde GitHub utilizando Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
 # --question--
 
 ## --text--
 
-What will the following code print out?
+¿Qué imprimirá el siguiente código?
 
 ```py
 import pandas as pd

@@ -164,7 +164,8 @@ const defineMonacoThemes = (
     base: 'vs-dark',
     inherit: true,
     colors: {
-      'editor.background': '#2a2a40'
+      'editor.background': '#2a2a40',
+      'editor.lineHighlightBorder': '#0e4470'
     },
     rules: [
       { token: 'delimiter.js', foreground: lightBlueColor },
@@ -178,7 +179,8 @@ const defineMonacoThemes = (
     inherit: true,
     // TODO: Use actual color from style-guide
     colors: {
-      'editor.background': options.usesMultifileEditor ? '#eee' : '#fff'
+      'editor.background': options.usesMultifileEditor ? '#eee' : '#fff',
+      'editor.lineHighlightBorder': '#cee8fc'
     },
     rules: [{ token: 'identifier.js', foreground: darkBlueColor }]
   });

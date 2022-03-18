@@ -1,6 +1,6 @@
 ---
 id: 5900f51a1000cf542c51002d
-title: 'Problem 430: Range flips'
+title: 'Problema 430: Range flips'
 challengeType: 5
 forumTopicId: 302101
 dashedName: problem-430-range-flips
@@ -8,24 +8,26 @@ dashedName: problem-430-range-flips
 
 # --description--
 
-N disks are placed in a row, indexed 1 to N from left to right.
+$N$ dischi sono piazzati in riga, indicizzati da 1 a $N$ da sinistra a destra.
 
-Each disk has a black side and white side. Initially all disks show their white side.
+Ogni disco ha un lato nero e un lato bianco. All'inizio tutti i dischi mostrano il lato bianco.
 
-At each turn, two, not necessarily distinct, integers A and B between 1 and N (inclusive) are chosen uniformly at random. All disks with an index from A to B (inclusive) are flipped.
+Ad ogni turno, due, non necessariamente distinti, numeri interi $A$ e $B$ tra 1 e $N$ (inclusivo) sono scelti uniformemente a caso. Tutti i dischi con un indice da $A$ e $B$ (Inclusivo) sono rovesciati.
 
-The following example shows the case N = 8. At the first turn A = 5 and B = 2, and at the second turn A = 4 and B = 6.
+Il seguente esempio mostra il caso per $N = 8$. Al primo turno $A = 5$ e $B = 2$, e al secondo turno $A = 4$ e $B = 6$.
 
-Let E(N, M) be the expected number of disks that show their white side after M turns. We can verify that E(3, 1) = 10/9, E(3, 2) = 5/3, E(10, 4) ≈ 5.157 and E(100, 10) ≈ 51.893.
+<img class="img-responsive center-block" alt="esempio per N = 8, con il primo turno A = 5 e B = 2, e il secondo turno A = 4 e B = 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/range-flips.gif" style="background-color: white; padding: 10px;" />
 
-Find E(1010, 4000). Give your answer rounded to 2 decimal places behind the decimal point.
+Sia $E(N, M)$ il valore di aspettativa del numero di dischi che mostrano il loro lato bianco dopo $M$ turni. Possiamo verificare che $E(3, 1) = \frac{10}{9}$, $E(3, 2) = \frac{5}{3}$, $E(10, 4) ≈ 5.157$ e $E(100, 10) ≈ 51.893$.
+
+Trova $E({10}^{10}, 4000)$. Dai la tua risposta approssimata a 2 cifre dopo il punto decimale.
 
 # --hints--
 
-`euler430()` should return 5000624921.38.
+`rangeFlips()` dovrebbe restituire `5000624921.38`.
 
 ```js
-assert.strictEqual(euler430(), 5000624921.38);
+assert.strictEqual(rangeFlips(), 5000624921.38);
 ```
 
 # --seed--
@@ -33,12 +35,12 @@ assert.strictEqual(euler430(), 5000624921.38);
 ## --seed-contents--
 
 ```js
-function euler430() {
+function rangeFlips() {
 
   return true;
 }
 
-euler430();
+rangeFlips();
 ```
 
 # --solutions--

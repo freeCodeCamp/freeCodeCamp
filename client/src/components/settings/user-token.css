@@ -1,19 +1,5 @@
-.webhook-panel {
+.user-panel {
   border-color: var(--highlight-background);
-}
-
-.webhook-token-input {
-  display: block;
-  width: 100%;
-  padding: 3px 8px;
-  background-color: var(--primary-background);
-  border-color: var(--highlight-background);
-  border-style: solid;
-  color: var(--highlight-color);
-}
-
-.webhook-token-input:focus {
-  border-color: var(--highlight-color);
 }
 
 .btn-info {
@@ -29,17 +15,17 @@
   border-color: var(--highlight-background);
 }
 
-.webhook-token .panel-heading {
+.user-token .panel-heading {
   color: var(--highlight-color);
   background-color: var(--highlight-background);
   border-radius: 0;
   border: none;
 }
 
-.webhook-token .panel-info {
+.user-token .panel-info {
   border-color: var(--highlight-background);
 }
 
-.webhook-token p {
+.user-token p {
   color: var(--highlight-color);
 }

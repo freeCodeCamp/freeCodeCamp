@@ -1,6 +1,6 @@
 ---
 id: 5900f5191000cf542c51002c
-title: 'Problem 429: Sum of squares of unitary divisors'
+title: 'Problema 429: Somma dei quadrati di divisori unitari'
 challengeType: 5
 forumTopicId: 302099
 dashedName: problem-429-sum-of-squares-of-unitary-divisors
@@ -8,22 +8,22 @@ dashedName: problem-429-sum-of-squares-of-unitary-divisors
 
 # --description--
 
-A unitary divisor d of a number n is a divisor of n that has the property gcd(d, n/d) = 1.
+Un divisore unitario $d$ di un numero $n$ è un divisore di $n$ che ha la proprietà $gcd(d, \frac{n}{d}) = 1$.
 
-The unitary divisors of 4! = 24 are 1, 3, 8 and 24.
+I divisori unitari di $4! = 24$ sono 1, 3, 8 e 24.
 
-The sum of their squares is 12 + 32 + 82 + 242 = 650.
+La somma dei loro quadrati è $12 + 32 + 82 + 242 = 650$.
 
-Let S(n) represent the sum of the squares of the unitary divisors of n. Thus S(4!)=650.
+Sia $S(n)$ la rappresentazione della somma dei quadrati dei divisori unitari di $n$. Quindi $S(4!) = 650$.
 
-Find S(100 000 000!) modulo 1 000 000 009.
+Trova $S(100\\,000\\,000!)$ modulo $1\\,000\\,000\\,009$.
 
 # --hints--
 
-`euler429()` should return 98792821.
+`sumSquaresOfUnitaryDivisors()` dovrebbe restituire `98792821`.
 
 ```js
-assert.strictEqual(euler429(), 98792821);
+assert.strictEqual(sumSquaresOfUnitaryDivisors(), 98792821);
 ```
 
 # --seed--
@@ -31,12 +31,12 @@ assert.strictEqual(euler429(), 98792821);
 ## --seed-contents--
 
 ```js
-function euler429() {
+function sumSquaresOfUnitaryDivisors() {
 
   return true;
 }
 
-euler429();
+sumSquaresOfUnitaryDivisors();
 ```
 
 # --solutions--

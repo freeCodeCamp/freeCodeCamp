@@ -7,6 +7,8 @@ import {
   call,
   take
 } from 'redux-saga/effects';
+import i18next from 'i18next';
+import { fireConfetti } from '../utils/fire-confetti';
 
 import {
   addDonation,
@@ -26,10 +28,11 @@ import {
   postChargeStripeComplete,
   postChargeStripeError,
   postChargeStripeCardComplete,
-  postChargeStripeCardError
+  postChargeStripeCardError,
+  isAVariantSelector
 } from './';
 
-const defaultDonationErrorMessage = `Something is not right. Please contact donors@freecodecamp.org`;
+const defaultDonationErrorMessage = i18next.t('donate.error-2');
 
 function* showDonateModalSaga() {
   let shouldRequestDonation = yield select(shouldRequestDonationSelector);
@@ -37,6 +40,12 @@ function* showDonateModalSaga() {
     yield delay(200);
     const recentlyClaimedBlock = yield select(recentlyClaimedBlockSelector);
     yield put(openDonationModal());
+    if (recentlyClaimedBlock) {
+      const isAVariant = yield select(isAVariantSelector);
+      if (isAVariant === false) {
+        fireConfetti();
+      }
+    }
     yield take(appTypes.closeDonationModal);
     if (recentlyClaimedBlock) {
       yield put(preventBlockDonationRequests());

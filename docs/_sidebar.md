@@ -15,13 +15,13 @@
   - [Work on localized client web app](how-to-work-on-localized-client-webapp.md)
   - [Work on Cypress tests](how-to-add-cypress-tests.md)
   - [Work on video challenges](how-to-help-with-video-challenges.md)
-  - [Work on the news theme](how-to-work-on-the-news-theme.md)
   - [Work on the docs theme](how-to-work-on-the-docs-theme.md)
 - **Additional Guides**
   - [Test translations locally](how-to-test-translations-locally.md)
   - [Understand the curriculum file structure](curriculum-file-structure.md)
   - [Debug outgoing emails locally](how-to-catch-outgoing-emails-locally.md)
   - [Set up freeCodeCamp on Windows (WSL)](how-to-setup-wsl.md)
+  - [User Token Workflow](user-token-workflow.md)
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f51f1000cf542c510031
-title: 'Problem 434: Rigid graphs'
+title: 'Problema 434: Grafici rigidi'
 challengeType: 5
 forumTopicId: 302105
 dashedName: problem-434-rigid-graphs
@@ -8,28 +8,42 @@ dashedName: problem-434-rigid-graphs
 
 # --description--
 
-Recall that a graph is a collection of vertices and edges connecting the vertices, and that two vertices connected by an edge are called adjacent.
+Ricordiamo che un grafo è una raccolta di nodi e archi che collegano i nodi, e che due nodi collegati da un arco sono chiamati adiacenti.
 
-Graphs can be embedded in Euclidean space by associating each vertex with a point in the Euclidean space.
+I grafi possono essere incorporati nello spazio euclideo associando ogni nodo a un punto nello spazio euclideo.
 
-A flexible graph is an embedding of a graph where it is possible to move one or more vertices continuously so that the distance between at least two nonadjacent vertices is altered while the distances between each pair of adjacent vertices is kept constant.
+Un grafo flessibile è l'incorporamento di un grafo in cui è possibile spostare uno o più nodi in modo continuo in modo che la distanza tra almeno due nodi non adiacenti sia alterata mentre le distanze tra ciascuna coppia di nodi adiacenti sia mantenuta costante.
 
-A rigid graph is an embedding of a graph which is not flexible.
+Un grafo rigido è l'incorporamento di un grafo che non è flessibile.
 
-Informally, a graph is rigid if by replacing the vertices with fully rotating hinges and the edges with rods that are unbending and inelastic, no parts of the graph can be moved independently from the rest of the graph.
+Informalmente, un grafo è rigido se sostituendo i vertici con cerniere completamente rotanti e gli archi con aste che non si piegano e non sono elastiche, nessuna parte del grafo può essere spostata indipendentemente dal resto del grafico.
 
-The grid graphs embedded in the Euclidean plane are not rigid, as the following animation demonstrates: However, one can make them rigid by adding diagonal edges to the cells. For example, for the 2x3 grid graph, there are 19 ways to make the graph rigid: Note that for the purposes of this problem, we do not consider changing the orientation of a diagonal edge or adding both diagonal edges to a cell as a different way of making a grid graph rigid.
+I grafi della griglia incorporati nel piano euclideo non sono rigidi, come dimostra la seguente animazione:
 
-Let R(m,n) be the number of ways to make the m × n grid graph rigid. E.g. R(2,3) = 19 and R(5,5) = 23679901
+<img class="img-responsive center-block" alt="animazione che mostra che i grafi della griglia non sono rigidi nel piano Euclideo" src="https://cdn.freecodecamp.org/curriculum/project-euler/rigid-graphs-1.gif" style="background-color: white; padding: 10px;" />
 
-Define S(N) as ∑R(i,j) for 1 ≤ i, j ≤ N. E.g. S(5) = 25021721. Find S(100), give your answer modulo 1000000033
+Tuttavia, essi possono essere resi rigidi aggiungendo archi diagonali alle celle. Ad esempio, per il grafo della griglia 2x3, ci sono 19 modi per rendere rigido il grafo:
+
+<img class="img-responsive center-block" alt="19 modi per rendere rigido il grafo a griglia 2x3" src="https://cdn.freecodecamp.org/curriculum/project-euler/rigid-graphs-2.png" style="background-color: white; padding: 10px;" />
+
+Nota che ai fini di questo problema, non consideriamo di cambiare l'orientamento di un arco diagonale o di aggiungere entrambi gli archi diagonali a una cella come un modo diverso per rendere rigido un grafo a griglia.
+
+Sia $R(m, n)$ il numero di modi per rendere rigido il grafo della griglia $m × n$.
+
+Ad es. $R(2, 3) = 19$ e $R(5, 5) = 23\\,679\\,901$.
+
+Definire $S(N)$ come $\sum R(i, j)$ per $1 ≤ i$, $j ≤ N$.
+
+Ad es. $S(5) = 25\\,021\\,721$.
+
+Trova $S(100)$, dai la tua risposta nel formato $1\\,000\\,000\\,033$.
 
 # --hints--
 
-`euler434()` should return 863253606.
+`rigidGraphs()` dovrebbe restituire `863253606`.
 
 ```js
-assert.strictEqual(euler434(), 863253606);
+assert.strictEqual(rigidGraphs(), 863253606);
 ```
 
 # --seed--
@@ -37,12 +51,12 @@ assert.strictEqual(euler434(), 863253606);
 ## --seed-contents--
 
 ```js
-function euler434() {
+function rigidGraphs() {
 
   return true;
 }
 
-euler434();
+rigidGraphs();
 ```
 
 # --solutions--

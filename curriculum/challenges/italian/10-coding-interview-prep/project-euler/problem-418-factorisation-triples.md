@@ -1,6 +1,6 @@
 ---
 id: 5900f50f1000cf542c510021
-title: 'Problem 418: Factorisation triples'
+title: 'Problema 418: Triplette di fattorizzazione'
 challengeType: 5
 forumTopicId: 302087
 dashedName: problem-418-factorisation-triples
@@ -8,22 +8,23 @@ dashedName: problem-418-factorisation-triples
 
 # --description--
 
-Let n be a positive integer. An integer triple (a, b, c) is called a factorisation triple of n if: 1 ≤ a ≤ b ≤ c
+Sia $n$ un numero intero positivo. Una tripletta di numeri interi ($a$, $b$, $c$) è chiamata una tripletta di fattorizzazione di $n$ se:
 
-a·b·c = n.
+- $1 ≤ a ≤ b ≤ c$
+- $a \times b \times c = n$.
 
-Define f(n) to be a + b + c for the factorisation triple (a, b, c) of n which minimises c / a. One can show that this triple is unique.
+Definisci $f(n)$ come $a + b + c$ per la tripletta di fattorizzazione ($a$, $b$, $c$) di $n$ che minimizza $\frac{c}{a}$. Si può dimostrare che questa tripletta è unica.
 
-For example, f(165) = 19, f(100100) = 142 and f(20!) = 4034872.
+Per esempio, $f(165) = 19$, $f(100\\,100) = 142$ e $f(20!) = 4\\,034\\,872$.
 
-Find f(43!).
+Trova $f(43!)$.
 
 # --hints--
 
-`euler418()` should return 1177163565297340400.
+`factorisationTriples()` dovrebbe restituire `1177163565297340400`.
 
 ```js
-assert.strictEqual(euler418(), 1177163565297340400);
+assert.strictEqual(factorisationTriples(), 1177163565297340400);
 ```
 
 # --seed--
@@ -31,12 +32,12 @@ assert.strictEqual(euler418(), 1177163565297340400);
 ## --seed-contents--
 
 ```js
-function euler418() {
+function factorisationTriples() {
 
   return true;
 }
 
-euler418();
+factorisationTriples();
 ```
 
 # --solutions--

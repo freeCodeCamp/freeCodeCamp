@@ -8,6 +8,7 @@ import ObjectID from 'bson-objectid';
 import { SuperBlocks } from '../../config/certification-settings';
 import { blockNameify } from '../../utils/block-nameify';
 import { createStepFile } from './utils';
+import { getSuperBlockSubPath } from './fs-utils';
 
 const helpCategories = ['HTML-CSS', 'JavaScript', 'Python'] as const;
 
@@ -54,29 +55,15 @@ async function createProject(
   if (!title) {
     title = blockNameify(block);
   } else if (title !== blockNameify(block)) {
-    updateBlockNames(block, title).catch(reason => {
-      throw reason;
-    });
+    void updateBlockNames(block, title);
   }
-  updateIntroJson(superBlock, block, title).catch(reason => {
-    throw reason;
-  });
-  updateHelpCategoryMap(block, helpCategory).catch(reason => {
-    throw reason;
-  });
+  void updateIntroJson(superBlock, block, title);
+  void updateHelpCategoryMap(block, helpCategory);
 
-  const challengeId = await createFirstChallenge(superBlock, block).catch(
-    reason => {
-      throw reason;
-    }
-  );
-  createMetaJson(superBlock, block, title, order, challengeId).catch(reason => {
-    throw reason;
-  });
+  const challengeId = await createFirstChallenge(superBlock, block);
+  void createMetaJson(superBlock, block, title, order, challengeId);
   // TODO: remove once we stop relying on markdown in the client.
-  createIntroMD(superBlock, block, title).catch(reason => {
-    throw reason;
-  });
+  void createIntroMD(superBlock, block, title);
 }
 
 async function updateIntroJson(
@@ -93,12 +80,11 @@ async function updateIntroJson(
     title,
     intro: ['', '']
   };
-  fs.writeFile(
+  void withTrace(
+    fs.writeFile,
     introJsonPath,
     format(JSON.stringify(newIntro), { parser: 'json' })
-  ).catch(reason => {
-    throw reason;
-  });
+  );
 }
 
 async function updateHelpCategoryMap(block: string, helpCategory: string) {
@@ -108,12 +94,11 @@ async function updateHelpCategoryMap(block: string, helpCategory: string) {
   );
   const helpMap = await parseJson<Record<string, string>>(helpCategoryPath);
   helpMap[block] = helpCategory;
-  fs.writeFile(
+  void withTrace(
+    fs.writeFile,
     helpCategoryPath,
     format(JSON.stringify(helpMap), { parser: 'json' })
-  ).catch(reason => {
-    throw reason;
-  });
+  );
 }
 
 async function updateBlockNames(block: string, title: string) {
@@ -123,12 +108,11 @@ async function updateBlockNames(block: string, title: string) {
   );
   const blockNames = await parseJson<Record<string, string>>(blockNamesPath);
   blockNames[block] = title;
-  fs.writeFile(
+  void withTrace(
+    fs.writeFile,
     blockNamesPath,
     format(JSON.stringify(blockNames), { parser: 'json' })
-  ).catch(reason => {
-    throw reason;
-  });
+  );
 }
 
 async function createMetaJson(
@@ -148,14 +132,14 @@ async function createMetaJson(
   newMeta.challengeOrder = [[challengeId.toString(), 'Step 1']];
   const newMetaDir = path.resolve(metaDir, block);
   if (!existsSync(newMetaDir)) {
-    await fs.mkdir(newMetaDir);
+    await withTrace(fs.mkdir, newMetaDir);
   }
-  fs.writeFile(
+
+  void withTrace(
+    fs.writeFile,
     path.resolve(metaDir, `${block}/meta.json`),
     format(JSON.stringify(newMeta), { parser: 'json' })
-  ).catch(reason => {
-    throw reason;
-  });
+  );
 }
 
 async function createIntroMD(superBlock: string, block: string, title: string) {
@@ -176,26 +160,22 @@ This is a test for the new project-based curriculum.
   );
   const filePath = path.resolve(dirPath, 'index.md');
   if (!existsSync(dirPath)) {
-    await fs.mkdir(dirPath);
+    await withTrace(fs.mkdir, dirPath);
   }
-  fs.writeFile(filePath, introMD, { encoding: 'utf8' }).catch(reason => {
-    throw reason;
-  });
+  void withTrace(fs.writeFile, filePath, introMD, { encoding: 'utf8' });
 }
 
 async function createFirstChallenge(
   superBlock: SuperBlocks,
   block: string
 ): Promise<ObjectID> {
-  const superBlockId = (Object.values(SuperBlocks).indexOf(superBlock) + 1)
-    .toString()
-    .padStart(2, '0');
+  const superBlockSubPath = getSuperBlockSubPath(superBlock);
   const newChallengeDir = path.resolve(
     __dirname,
-    `../../curriculum/challenges/english/${superBlockId}-${superBlock}/${block}`
+    `../../curriculum/challenges/english/${superBlockSubPath}/${block}`
   );
   if (!existsSync(newChallengeDir)) {
-    await fs.mkdir(newChallengeDir);
+    await withTrace(fs.mkdir, newChallengeDir);
   }
   // TODO: would be nice if the extension made sense for the challenge, but, at
   // least until react I think they're all going to be html anyway.
@@ -215,21 +195,32 @@ async function createFirstChallenge(
 }
 
 function parseJson<JsonSchema>(filePath: string) {
-  return fs
-    .readFile(filePath, { encoding: 'utf8' })
-    .then(result => JSON.parse(result) as JsonSchema)
-    .catch(reason => {
-      throw reason;
-    });
+  return withTrace(fs.readFile, filePath, 'utf8').then(
+    // unfortunately, withTrace does not correctly infer that the third argument
+    // is a string, so it uses the (path, options?) overload and we have to cast
+    // result to string.
+    result => JSON.parse(result as string) as JsonSchema
+  );
 }
 
-prompt([
+// fs Promise functions return errors, but no stack trace.  This adds back in
+// the stack trace.
+function withTrace<Args extends unknown[], Result>(
+  fn: (...x: Args) => Promise<Result>,
+  ...args: Args
+): Promise<Result> {
+  return fn(...args).catch((reason: Error) => {
+    throw Error(reason.message);
+  });
+}
+
+void prompt([
   {
     name: 'superBlock',
     message: 'Which certification does this belong to?',
     default: SuperBlocks.RespWebDesign,
     type: 'list',
-    choices: SuperBlocks
+    choices: Object.values(SuperBlocks)
   },
   {
     name: 'block',
@@ -273,12 +264,17 @@ prompt([
   }
 ])
   .then(
-    ({ superBlock, block, title, helpCategory, order }: CreateProjectArgs) =>
-      createProject(superBlock, block, helpCategory, order, title)
+    async ({
+      superBlock,
+      block,
+      title,
+      helpCategory,
+      order
+    }: CreateProjectArgs) =>
+      await createProject(superBlock, block, helpCategory, order, title)
   )
   .then(() =>
     console.log(
       'All set.  Now use npm run clean:client in the root and it should be good to go.'
     )
-  )
-  .catch(console.error);
+  );
