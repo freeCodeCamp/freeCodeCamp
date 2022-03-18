@@ -9,7 +9,7 @@ import {
   isProjectPreviewModalOpenSelector,
   projectPreviewMounted
 } from '../redux';
-import { projectPreviewId } from '../utils/frame';
+import { PROJECT_PREVIEW_ID } from '../utils/frame';
 import Preview from './preview';
 
 import './project-preview-modal.css';
@@ -73,7 +73,7 @@ function ProjectPreviewModal({
       <Modal.Body className='project-preview-modal-body text-center'>
         {/* remove type assertion once frame.ts has been migrated to TS */}
         <Preview
-          previewId={projectPreviewId as string}
+          previewId={PROJECT_PREVIEW_ID}
           previewMounted={() =>
             projectPreviewMounted({ challengeData, showProjectPreview })
           }

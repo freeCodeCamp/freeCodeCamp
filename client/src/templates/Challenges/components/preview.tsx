@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { mainPreviewId } from '../utils/frame';
+import { MAIN_PREVIEW_ID } from '../utils/frame';
 
 import './preview.css';
 
@@ -29,8 +29,7 @@ function Preview({
     setIframeStatus(disableIframe);
   }, [disableIframe]);
 
-  // TODO: remove type assertion once frame.ts has been migrated.
-  const id: string = previewId ?? (mainPreviewId as string);
+  const id: string = previewId ?? MAIN_PREVIEW_ID;
 
   return (
     <div className={`notranslate challenge-preview ${iframeToggle}-iframe`}>
