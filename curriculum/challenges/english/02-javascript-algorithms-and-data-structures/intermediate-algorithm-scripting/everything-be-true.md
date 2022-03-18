@@ -113,7 +113,7 @@ assert.strictEqual(truthCheck(
   "users"), true);
 ```
 
-`truthCheck([{id: 1, data: {url: "https://freecodecamp.org", name: "freeCodeCamp}}, {id: 2, data: {url: "https://coderadio.freecodecamp.org/", name: "CodeRadio"}}, {id: null, data: {}}], "data")` should return `true`.
+`truthCheck([{id: 1, data: {url: "https://freecodecamp.org", name: "freeCodeCamp"}}, {id: 2, data: {url: "https://coderadio.freecodecamp.org/", name: "CodeRadio"}}, {id: null, data: {}}], "data")` should return `true`.
 
 ```js
 assert.strictEqual(truthCheck(
@@ -125,7 +125,7 @@ assert.strictEqual(truthCheck(
   "data"), true);
 ```
 
-`truthCheck([{id: 1, data: {url: "https://freecodecamp.org", name: "freeCodeCamp}}, {id: 2, data: {url: "https://coderadio.freecodecamp.org/", name: "CodeRadio"}}, {id: null, data: {}}], "id")` should return `false`.
+`truthCheck([{id: 1, data: {url: "https://freecodecamp.org", name: "freeCodeCamp"}}, {id: 2, data: {url: "https://coderadio.freecodecamp.org/", name: "CodeRadio"}}, {id: null, data: {}}], "id")` should return `false`.
 
 ```js
 assert.strictEqual(truthCheck(
