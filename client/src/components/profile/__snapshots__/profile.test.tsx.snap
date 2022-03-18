@@ -268,10 +268,10 @@ exports[`<Profile/> renders correctly 1`] = `
         @
         string
       </h2>
-
-
-
-
+      
+      
+      
+      
       <br />
     </div>
     <div
