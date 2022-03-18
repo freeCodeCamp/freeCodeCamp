@@ -21,6 +21,7 @@
   - [Entiende la estructura de archivo del currículo](curriculum-file-structure.md)
   - [Depurar correos salientes localmente ](how-to-catch-outgoing-emails-locally.md)
   - [Configura freeCodeCamp en Windows (WSL)](how-to-setup-wsl.md)
+  - [User Token Workflow](user-token-workflow.md)
 
 ---
 
