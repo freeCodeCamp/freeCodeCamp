@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Controlled as CodeMirror } from 'react-codemirror2-react-17';
+import { Controlled as CodeMirror } from 'react-codemirror2';
 import * as codemirror from 'codemirror';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
@@ -14,7 +14,11 @@ const Editor = () => {
   const [loading, setLoading] = useState(false);
   const [items, setItems] = useState({} as ChallengeContent);
   const [input, setInput] = useState('');
-  const params = useParams();
+  const params = useParams() as {
+    superblock: string;
+    block: string;
+    challenge: string;
+  };
 
   useEffect(() => {
     fetchData();
@@ -35,6 +39,7 @@ const Editor = () => {
         },
         error => {
           setLoading(false);
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
           setError(error);
         }
       );
@@ -71,9 +76,9 @@ const Editor = () => {
         }}
       />
       <SaveChallenge
-        superblock={params.superblock as string}
-        block={params.block as string}
-        challenge={params.challenge as string}
+        superblock={params.superblock}
+        block={params.block}
+        challenge={params.challenge}
         content={input}
       />
       <p>

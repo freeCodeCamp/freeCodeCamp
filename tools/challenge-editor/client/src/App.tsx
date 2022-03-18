@@ -1,8 +1,8 @@
-import React from 'react';
+import * as React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/header/Header';
 import Landing from './components/landing/Landing';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SuperBlock from './components/superblock/SuperBlock';
 import Block from './components/block/Block';
 import Editor from './components/editor/Editor';

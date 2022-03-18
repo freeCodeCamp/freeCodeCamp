@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import React, { useParams } from 'react-router-dom';
 import CreateEmptySteps from '../buttons/CreateEmptySteps';
 import CreateNextStep from '../buttons/CreateNextStep';
 import CreateStepBetween from '../buttons/CreateStepBetween';
@@ -8,7 +8,10 @@ import ReorderSteps from '../buttons/ReorderSteps';
 import './Tools.css';
 
 const Tools = () => {
-  const { block, superblock } = useParams();
+  const { block, superblock } = useParams() as {
+    block: string;
+    superblock: string;
+  };
   return (
     <div>
       <h1>Editing Steps for {block}</h1>
@@ -35,8 +38,8 @@ const Tools = () => {
       <h2>Reorder Steps</h2>
       <p>
         This reorders the existing steps, updating the meta for the block. You
-        should not need to use this one unless you've manually changed the file
-        order.
+        should not need to use this one unless you&apos;ve manually changed the
+        file order.
       </p>
       <ReorderSteps {...{ superblock, block }} />
     </div>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ChallengeData } from '../../../interfaces/ChallengeData';
 import './Block.css';
@@ -7,7 +7,7 @@ const Block = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [items, setItems] = useState([] as ChallengeData[]);
-  const params = useParams();
+  const params = useParams() as { superblock: string; block: string };
 
   useEffect(() => {
     fetchData();
@@ -25,6 +25,7 @@ const Block = () => {
         },
         error => {
           setLoading(false);
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
           setError(error);
         }
       );

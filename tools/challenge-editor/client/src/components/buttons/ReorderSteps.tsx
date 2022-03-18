@@ -1,3 +1,4 @@
+import React from 'react';
 import { BlockRequiredProps } from '../../../interfaces/PropTypes';
 
 const ReorderSteps = ({ superblock, block }: BlockRequiredProps) => {

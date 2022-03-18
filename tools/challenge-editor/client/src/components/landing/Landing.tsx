@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { SuperBlock } from '../../../interfaces/SuperBlock';
 
@@ -22,6 +22,7 @@ const Landing = () => {
         },
         error => {
           setLoading(false);
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
           setError(error);
         }
       );

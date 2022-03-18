@@ -12,6 +12,6 @@ export interface ChallengeRequiredProps {
 }
 
 export interface BlockRequiredProps {
-  superblock?: string;
-  block?: string;
+  superblock: string;
+  block: string;
 }

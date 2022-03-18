@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Block } from '../../../interfaces/Block';
 
@@ -6,7 +6,7 @@ const SuperBlock = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [items, setItems] = useState([] as Block[]);
-  const params = useParams();
+  const params = useParams() as { superblock: string; block: string };
 
   useEffect(() => {
     fetchData();
@@ -24,6 +24,7 @@ const SuperBlock = () => {
         },
         error => {
           setLoading(false);
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
           setError(error);
         }
       );

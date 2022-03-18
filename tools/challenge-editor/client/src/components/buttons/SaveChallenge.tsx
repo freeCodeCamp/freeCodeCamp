@@ -1,3 +1,4 @@
+import React from 'react';
 import { ChallengeContentRequiredProps } from '../../../interfaces/PropTypes';
 
 const SaveChallenge = ({
@@ -8,7 +9,7 @@ const SaveChallenge = ({
 }: ChallengeContentRequiredProps) => {
   const save = () => {
     console.log(content);
-    fetch(`http://localhost:3200/${superblock}/${block}/${challenge}`, {
+    void fetch(`http://localhost:3200/${superblock}/${block}/${challenge}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

@@ -24,6 +24,8 @@
     "client/plugins/fcc-source-challenges",
     "client/plugins/gatsby-remark-node-identity",
     "curriculum",
+    "tools/challenge-editor/api",
+    "tools/challenge-editor/client",
     "tools/challenge-helper-scripts",
     "tools/challenge-parser",
     "tools/crowdin",
