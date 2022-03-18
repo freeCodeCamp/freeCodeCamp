@@ -1,6 +1,6 @@
 ---
 id: 5900f5311000cf542c510042
-title: 'Problem 451: Modular inverses'
+title: 'Problema 451: Inversi modulari'
 challengeType: 5
 forumTopicId: 302124
 dashedName: problem-451-modular-inverses
@@ -8,36 +8,28 @@ dashedName: problem-451-modular-inverses
 
 # --description--
 
-Consider the number 15.
+Considera il numero 15.
 
-There are eight positive numbers less than 15 which are coprime to 15: 1, 2, 4, 7, 8, 11, 13, 14.
+Ci sono 8 numeri positivi sotto il 14 che sono coprimi di 15: 1, 2, 4, 7, 8, 11, 13, 14.
 
-The modular inverses of these numbers modulo 15 are: 1, 8, 4, 13, 2, 11, 7, 14
+I modulari inversi di questi numeri modulo 15 sono: 1, 8, 4, 13, 2, 11, 7, 14 perché
 
-because
+$$\begin{align} & 1  \times 1\bmod 15 = 1 \\\\ & 2  \times 8  = 16\bmod 15 = 1 \\\\ & 4  \times 4  = 16\bmod 15 = 1 \\\\ & 7  \times 13 = 91\bmod 15 = 1 \\\\ & 11 \times 11 = 121\bmod 15 = 1 \\\\ & 14 \times 14 = 196\bmod 15 = 1 \end{align}$$
 
-1\*1 mod 15=1
+Sia $I(n)$ il più grande numero positivo $m$ più piccolo di $n - 1$ tale che l'inverso modulare di $m$ modulo $n$ sia uguale a $m$ stesso.
 
-2\*8=16 mod 15=1
+Quindi $I(15) = 11$.
 
-4\*4=16 mod 15=1
+Anche $I(100) = 51$ e $I(7) = 1$.
 
-7\*13=91 mod 15=1
-
-11\*11=121 mod 15=1
-
-14\*14=196 mod 15=1
-
-Let I(n) be the largest positive number m smaller than n-1 such that the modular inverse of m modulo n equals m itself. So I(15)=11. Also I(100)=51 and I(7)=1.
-
-Find ∑I(n) for 3≤n≤2·107
+Trova $\sum I(n)$ per $3 ≤ n ≤ 2 \times {10}^7$
 
 # --hints--
 
-`euler451()` should return 153651073760956.
+`modularInverses()` dovrebbe restituire `153651073760956`.
 
 ```js
-assert.strictEqual(euler451(), 153651073760956);
+assert.strictEqual(modularInverses(), 153651073760956);
 ```
 
 # --seed--
@@ -45,12 +37,12 @@ assert.strictEqual(euler451(), 153651073760956);
 ## --seed-contents--
 
 ```js
-function euler451() {
+function modularInverses() {
 
   return true;
 }
 
-euler451();
+modularInverses();
 ```
 
 # --solutions--

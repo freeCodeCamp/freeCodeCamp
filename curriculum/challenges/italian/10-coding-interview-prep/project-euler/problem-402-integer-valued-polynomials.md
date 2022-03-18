@@ -1,6 +1,6 @@
 ---
 id: 5900f4ff1000cf542c510011
-title: 'Problem 402: Integer-valued polynomials'
+title: 'Problema 402: Polinomi a valore intero'
 challengeType: 5
 forumTopicId: 302070
 dashedName: problem-402-integer-valued-polynomials
@@ -8,24 +8,27 @@ dashedName: problem-402-integer-valued-polynomials
 
 # --description--
 
-It can be shown that the polynomial n4 + 4n3 + 2n2 + 5n is a multiple of 6 for every integer n. It can also be shown that 6 is the largest integer satisfying this property.
+Si può dimostrare che il polinomio $n^4 + 4n^3 + 2n^2 + 5n$ è un multiplo di 6 per ogni intero $n$. Può anche essere dimostrato che 6 è il numero intero più grande che soddisfa questa proprietà.
 
-Define M(a, b, c) as the maximum m such that n4 + an3 + bn2 + cn is a multiple of m for all integers n. For example, M(4, 2, 5) = 6.
+Definisci $M(a, b, c)$ come il massimo $m$ tale che $n^4 + un^3 + bn^2 + cn$ è un multiplo di $m$ per tutti gli interi $n$. Per esempio, $M(4, 2, 5) = 6$.
 
-Also, define S(N) as the sum of M(a, b, c) for all 0 &lt; a, b, c ≤ N.
+Inoltre, definisci $S(N)$ come la somma di $M(a, b, c)$ per tutti $0 &lt; a, b, c ≤ N$.
 
-We can verify that S(10) = 1972 and S(10000) = 2024258331114.
+Possiamo verificare che $S(10) = 1\\,972$ e $S(10\\,000) = 2\\,024\\,258\\,331\\,114$.
 
-Let Fk be the Fibonacci sequence: F0 = 0, F1 = 1 and Fk = Fk-1 + Fk-2 for k ≥ 2.
+Sia $F_k$ la sequenza di Fibonacci:
 
-Find the last 9 digits of Σ S(Fk) for 2 ≤ k ≤ 1234567890123.
+- $F_0 = 0$, $F_1 = 1$ e
+- $F_k = F_{k - 1} + F_{k - 2}$ per $k ≥ 2$.
+
+Trova le ultime 9 cifre di $\sum S(F_k)$ per $2 ≤ k ≤ 1\\,234\\,567\\,890\\,123$.
 
 # --hints--
 
-`euler402()` should return 356019862.
+`integerValuedPolynomials()` dovrebbe restituire `356019862`.
 
 ```js
-assert.strictEqual(euler402(), 356019862);
+assert.strictEqual(integerValuedPolynomials(), 356019862);
 ```
 
 # --seed--
@@ -33,12 +36,12 @@ assert.strictEqual(euler402(), 356019862);
 ## --seed-contents--
 
 ```js
-function euler402() {
+function integerValuedPolynomials() {
 
   return true;
 }
 
-euler402();
+integerValuedPolynomials();
 ```
 
 # --solutions--

@@ -40,6 +40,7 @@ jobs:
 
       - name: Lint Source Files
         run: |
+          echo npm version $(npm -v)
           npm ci
           npm run create:config
           npm run build:curriculum
@@ -68,11 +69,11 @@ jobs:
       - name: Set Environment variables
         run: |
           cp sample.env .env
-          echo 'SHOW_NEW_CURRICULUM=true' >> .env
           cat .env
 
       - name: Install Dependencies
         run: |
+          echo npm version $(npm -v)
           npm ci
           npm run create:config
           npm run build:curriculum
@@ -104,11 +105,11 @@ jobs:
         run: |
           cp sample.env .env
           echo 'SHOW_UPCOMING_CHANGES=true' >> .env
-          echo 'SHOW_NEW_CURRICULUM=true' >> .env
           cat .env
 
       - name: Install Dependencies
         run: |
+          echo npm version $(npm -v)
           npm ci
           npm run create:config
           npm run build:curriculum
@@ -141,7 +142,6 @@ jobs:
         run: |
           cp sample.env .env
           echo 'SHOW_UPCOMING_CHANGES=true' >> .env
-          echo 'SHOW_NEW_CURRICULUM=true' >> .env
           cat .env
 
       - name: Install Dependencies
@@ -149,6 +149,7 @@ jobs:
           CURRICULUM_LOCALE: ${{ matrix.locale }}
           CLIENT_LOCALE: ${{ matrix.locale }}
         run: |
+          echo npm version $(npm -v)
           npm ci
           npm run create:config
           npm run build:curriculum

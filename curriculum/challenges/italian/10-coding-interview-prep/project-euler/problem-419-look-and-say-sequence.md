@@ -1,6 +1,6 @@
 ---
 id: 5900f5101000cf542c510022
-title: 'Problem 419: Look and say sequence'
+title: 'Problema 419: Guardare e dire la sequenza'
 challengeType: 5
 forumTopicId: 302088
 dashedName: problem-419-look-and-say-sequence
@@ -8,34 +8,41 @@ dashedName: problem-419-look-and-say-sequence
 
 # --description--
 
-The look and say sequence goes 1, 11, 21, 1211, 111221, 312211, 13112221, 1113213211, ...
+La sequenza "look and say" sia 1, 11, 21, 1211, 111221, 312211, 13112221, 1113213211, ...
 
-The sequence starts with 1 and all other members are obtained by describing the previous member in terms of consecutive digits.
+La sequenza inizia con 1 e tutti gli altri membri sono ottenuti descrivendo il membro precedente in termini di cifre consecutive.
 
-It helps to do this out loud:
+Aiuta farlo ad alta voce:
 
-1 is 'one one' → 11
+1 è 'uno uno' $→ 11$
 
-11 is 'two ones' → 21
+11 è 'due uni' $→ 21$
 
-21 is 'one two and one one' → 1211
+21 è 'un due e un uno' $→ 1211$
 
-1211 is 'one one, one two and two ones' → 111221
+1211 è 'un uno, un due e due uni' $→ 111221$
 
-111221 is 'three ones, two twos and one one' → 312211
+111221 è 'tre uni, due due e un uno '$→ 312211$
 
 ...
 
-Define A(n), B(n) and C(n) as the number of ones, twos and threes in the n'th element of the sequence respectively. One can verify that A(40) = 31254, B(40) = 20259 and C(40) = 11625.
+Definire $A(n)$, $B(n)$ e $C(n)$ rispettivamente come il numero di uno, due e tre nell'elemento $n$'esimo della sequenza. Si può verificare che $A(40) = 31\\,254$, $B(40) = 20\\,259$ e $C(40) = 11\\,625$.
 
-Find A(n), B(n) and C(n) for n = 1012. Give your answer modulo 230 and separate your values for A, B and C by a comma. E.g. for n = 40 the answer would be 31254,20259,11625
+Trova $A(n)$, $B(n)$ e $C(n)$ per $n = {10}^{12}$. Dai la tua risposta modulo $2^{30}$ come stringa e separa i tuoi valori per $A$, $B$ e $C$ con una virgola. Ad es. per $n = 40$ la risposta sarebbe `31254,20259,11625`.
 
 # --hints--
 
-`euler419()` should return 998567458, 1046245404, 43363922.
+`lookAndSaySequence()` dovrebbe restituire una stringa.
 
 ```js
-assert.strictEqual(euler419(), 998567458, 1046245404, 43363922);
+assert(typeof lookAndSaySequence() === 'string');
+```
+
+
+`lookAndSaySequence()` dovrebbe restituire la stringa `998567458,1046245404,43363922`.
+
+```js
+assert.strictEqual(lookAndSaySequence(), '998567458,1046245404,43363922');
 ```
 
 # --seed--
@@ -43,12 +50,12 @@ assert.strictEqual(euler419(), 998567458, 1046245404, 43363922);
 ## --seed-contents--
 
 ```js
-function euler419() {
+function lookAndSaySequence() {
 
   return true;
 }
 
-euler419();
+lookAndSaySequence();
 ```
 
 # --solutions--

@@ -103,4 +103,4 @@ Quando rinomini il file di una singola sfida, devi:
 
 ## La proprietà `dashedName`
 
-The `dashedName` property is used to generate the URL path for the superblock, block, or challenge. These should generally match what the `/utils/slugs.js` helper would output for the file name.
+La proprietà `dashedName` è usata per generare il percorso URL del superblocco, del blocco o della sfida. Questi devono in genere combaciare con ciò che l'aiutante `/utils/slugs.js` restituirebbe per il nome del file.

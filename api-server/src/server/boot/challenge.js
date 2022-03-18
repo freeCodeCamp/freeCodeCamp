@@ -12,6 +12,9 @@ import { Observable } from 'rx';
 import isNumeric from 'validator/lib/isNumeric';
 import isURL from 'validator/lib/isURL';
 
+import jwt from 'jsonwebtoken';
+import { jwtSecret } from '../../../../config/secrets';
+
 import { environment, deploymentEnv } from '../../../../config/env.json';
 import {
   fixCompletedChallengeItem,
@@ -396,16 +399,24 @@ function createCoderoadChallengeCompleted(app) {
    * req.headers: { coderoad-user-token: '8kFIlZiwMioY6hqqt...' }
    */
 
-  const { WebhookToken, User } = app.models;
+  const { UserToken, User } = app.models;
 
   return async function coderoadChallengeCompleted(req, res) {
-    const { 'coderoad-user-token': userWebhookToken } = req.headers;
+    const { 'coderoad-user-token': encodedUserToken } = req.headers;
     const { tutorialId } = req.body;
 
     if (!tutorialId) return res.send(`'tutorialId' not found in request body`);
 
-    if (!userWebhookToken)
+    if (!encodedUserToken)
       return res.send(`'coderoad-user-token' not found in request headers`);
+
+    let userToken;
+
+    try {
+      userToken = jwt.verify(encodedUserToken, jwtSecret)?.userToken;
+    } catch {
+      return res.send(`invalid user token`);
+    }
 
     const tutorialRepo = tutorialId?.split(':')[0];
     const tutorialOrg = tutorialRepo?.split('/')?.[0];
@@ -427,21 +438,21 @@ function createCoderoadChallengeCompleted(app) {
     const { id: challengeId, challengeType } = challenge;
 
     try {
-      // check if webhook token is in database
-      const tokenInfo = await WebhookToken.findOne({
-        where: { id: userWebhookToken }
+      // check if user token is in database
+      const tokenInfo = await UserToken.findOne({
+        where: { id: userToken }
       });
 
-      if (!tokenInfo) return res.send('User webhook token not found');
+      if (!tokenInfo) return res.send('User token not found');
 
       const { userId } = tokenInfo;
 
-      // check if user exists for webhook token
+      // check if user exists for user token
       const user = await User.findOne({
         where: { id: userId }
       });
 
-      if (!user) return res.send('User for webhook token not found');
+      if (!user) return res.send('User for user token not found');
 
       // submit challenge
       const completedDate = Date.now();

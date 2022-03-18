@@ -17,6 +17,10 @@ import {
 } from '../utils/publicUserProps';
 import { getRedirectParams } from '../utils/redirection';
 import { trimTags } from '../utils/validators';
+import {
+  createDeleteUserToken,
+  encodeUserToken
+} from '../middlewares/user-token';
 
 const log = debugFactory('fcc:boot:user');
 const sendNonUserToHome = ifNoUserRedirectHome();
@@ -27,16 +31,19 @@ function bootUser(app) {
   const getSessionUser = createReadSessionUser(app);
   const postReportUserProfile = createPostReportUserProfile(app);
   const postDeleteAccount = createPostDeleteAccount(app);
-  const postWebhookToken = createPostWebhookToken(app);
-  const deleteWebhookToken = createDeleteWebhookToken(app);
+  const postUserToken = createPostUserToken(app);
+  const deleteUserToken = createDeleteUserToken(app);
 
   api.get('/account', sendNonUserToHome, getAccount);
   api.get('/account/unlink/:social', sendNonUserToHome, getUnlinkSocial);
   api.get('/user/get-session-user', getSessionUser);
-
-  api.post('/account/delete', ifNoUser401, postDeleteAccount);
-  api.post('/account/reset-progress', ifNoUser401, postResetProgress);
-  api.post('/user/webhook-token', postWebhookToken);
+  api.post('/account/delete', ifNoUser401, deleteUserToken, postDeleteAccount);
+  api.post(
+    '/account/reset-progress',
+    ifNoUser401,
+    deleteUserToken,
+    postResetProgress
+  );
   api.post(
     '/user/report-user/',
     ifNoUser401,
@@ -44,47 +51,44 @@ function bootUser(app) {
     postReportUserProfile
   );
 
-  api.delete('/user/webhook-token', deleteWebhookToken);
+  api.post('/user/user-token', ifNoUser401, postUserToken);
+  api.delete(
+    '/user/user-token',
+    ifNoUser401,
+    deleteUserToken,
+    deleteUserTokenResponse
+  );
 
   app.use(api);
 }
 
-function createPostWebhookToken(app) {
-  const { WebhookToken } = app.models;
+function createPostUserToken(app) {
+  const { UserToken } = app.models;
 
-  return async function postWebhookToken(req, res) {
+  return async function postUserToken(req, res) {
     const ttl = 900 * 24 * 60 * 60 * 1000;
-    let newToken;
+    let encodedUserToken;
 
     try {
-      await WebhookToken.destroyAll({ userId: req.user.id });
-      newToken = await WebhookToken.create({ ttl, userId: req.user.id });
+      await UserToken.destroyAll({ userId: req.user.id });
+      const newUserToken = await UserToken.create({ ttl, userId: req.user.id });
+
+      if (!newUserToken?.id) throw new Error();
+      encodedUserToken = encodeUserToken(newUserToken.id);
     } catch (e) {
-      return res.status(500).json({
-        type: 'danger',
-        message: 'flash.create-token-err'
-      });
+      return res.status(500).send('Error starting project');
     }
 
-    return res.json(newToken?.id);
+    return res.json({ userToken: encodedUserToken });
   };
 }
 
-function createDeleteWebhookToken(app) {
-  const { WebhookToken } = app.models;
+function deleteUserTokenResponse(req, res) {
+  if (!req.userTokenDeleted) {
+    return res.status(500).send('Error deleting user token');
+  }
 
-  return async function deleteWebhookToken(req, res) {
-    try {
-      await WebhookToken.destroyAll({ userId: req.user.id });
-    } catch (e) {
-      return res.status(500).json({
-        type: 'danger',
-        message: 'flash.delete-token-err'
-      });
-    }
-
-    return res.json(null);
-  };
+  return res.send({ userToken: null });
 }
 
 function createReadSessionUser(app) {
@@ -93,10 +97,17 @@ function createReadSessionUser(app) {
   return async function getSessionUser(req, res, next) {
     const queryUser = req.user;
 
-    const webhookTokenArr = await queryUser.webhookTokens({
+    const userTokenArr = await queryUser.userTokens({
       userId: queryUser.id
     });
-    const webhookToken = webhookTokenArr[0]?.id;
+
+    const userToken = userTokenArr[0]?.id;
+    let encodedUserToken;
+
+    // only encode if a userToken was found
+    if (userToken) {
+      encodedUserToken = encodeUserToken(userToken);
+    }
 
     const source =
       queryUser &&
@@ -153,7 +164,7 @@ function createReadSessionUser(app) {
               isWebsite: !!user.website,
               ...normaliseUserFields(user),
               joinDate: user.id.getTimestamp(),
-              webhookToken
+              userToken: encodedUserToken
             }
           },
           sessionMeta,
@@ -263,20 +274,8 @@ function postResetProgress(req, res, next) {
 }
 
 function createPostDeleteAccount(app) {
-  const { User, WebhookToken } = app.models;
+  const { User } = app.models;
   return async function postDeleteAccount(req, res, next) {
-    const {
-      user: { id: userId }
-    } = req;
-
-    try {
-      await WebhookToken.destroyAll({ userId });
-    } catch (err) {
-      log(
-        `An error occurred deleting webhook tokens for user with id ${userId} when they tried to delete their account`
-      );
-    }
-
     return User.destroyById(req.user.id, function (err) {
       if (err) {
         return next(err);

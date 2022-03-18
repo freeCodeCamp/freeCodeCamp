@@ -14,21 +14,21 @@ Comience instalando el software de requisitos previos para su sistema operativo.
 
 Apoyamos principalmente el desarrollo en sistemas basados en Linux y Unix. Nuestro personal y los colaboradores de la comunidad trabajan regularmente con el código base utilizando herramientas instaladas en Ubuntu y macOS.
 
-We also support Windows 10 via WSL2, which you can prepare by [reading this guide](how-to-setup-wsl.md).
+También tenemos compatibilidad con Windows 10 a través de WSL2, que puedes preparar [leyendo esta guía](how-to-setup-wsl.md).
 
 Algunos miembros de la comunidad también desarrollan en Windows 10 nativamente con Git for Windows (Git Bash), y otras herramientas instaladas en Windows. No tenemos soporte oficial para dicha configuración en este momento, así que recomendamos usar WSL2 en su lugar.
 
-#### Prerequisites:
+#### Pre-requisitos:
 
-| Prerrequisito                                                                                         | Versión | Notas                                                                                       |
-| ----------------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------- |
-| [Node.js](http://nodejs.org)                                                                          | `16.x`  | We use the "Active LTS" version, See [LTS Schedule](https://nodejs.org/en/about/releases/). |
-| npm (viene empaquetado con Node)                                                                      | `8.x`   | We use the version bundled with Node.js Active LTS.                                         |
-| [Servidor de la comunidad MongoDB](https://docs.mongodb.com/manual/administration/install-community/) | `4.2.x` | -                                                                                           |
+| Prerrequisito                                                                                         | Versión | Notas                                                                                               |
+| ----------------------------------------------------------------------------------------------------- | ------- | --------------------------------------------------------------------------------------------------- |
+| [Node.js](http://nodejs.org)                                                                          | `16.x`  | Utilizamos la versión "Activos LTS", ejemplo[ LTS Schedule](https://nodejs.org/en/about/releases/). |
+| npm (viene empaquetado con Node)                                                                      | `8.x`   | Utilizamos la versión empaquetada con Node.js Active LTS.                                           |
+| [Servidor de la comunidad MongoDB](https://docs.mongodb.com/manual/administration/install-community/) | `4.2.x` | -                                                                                                   |
 
-> [!ATTENTION] If you have a different version, please install the recommended version. Sólo podemos soportar problemas de instalación para las versiones recomendadas. Ver [resolución de problemas](#troubleshooting) para más detalles.
+> [!ATENCIÓN] Si tienes una versión diferente, por favor instale la versión recomendada. Sólo podemos soportar problemas de instalación para las versiones recomendadas. Ver [resolución de problemas](#troubleshooting) para más detalles.
 
-If Node.js is already installed on your machine, run the following commands to validate the versions:
+Si ya has instalado Node.js en tu máquina, ejecuta los siguientes comando para validar las versiones:
 
 ```console
 node -v
@@ -37,9 +37,9 @@ npm -v
 
 > [!TIP] Recomendamos encarecidamente actualizar a las últimas versiones estables del software mencionado anteriormente, también conocidas como versiones de soporte a largo plazo (LTS).
 
-Once you have the prerequisites installed, you need to prepare your development environment. This is common for many development workflows, and you will only need to do this once.
+Una vez tengas los prerrequisitos instalados, necesitas preparar tu entorno de desarrollo.  Esto es normal en el desarrollo de flujos de trabajo, y sólo tendrás que hacerlo una vez.
 
-##### Follow these steps to get your development environment ready:
+##### Sigue estos pasos para dejar listo tu entorno de desarrollo:
 
 1. Instala [Git](https://git-scm.com/) o tu cliente Git favorito, si aún no lo has hecho. Actualice a la última versión; la versión que viene empaquetada con su sistema operativo puede estar desactualizada.
 
@@ -222,9 +222,9 @@ mongod
 "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
 ```
 
-  <!-- tabs:end -->
-
 Make sure to replace `3.6` with the version you have installed
+
+  <!-- tabs:end -->
 
 > [!TIP] You can avoid having to start MongoDB every time by installing it as a background service. You can [learn more about it in their documentation for your OS](https://docs.mongodb.com/manual/administration/install-community/)
 

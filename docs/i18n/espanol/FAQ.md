@@ -2,41 +2,41 @@
 
 Lee nuestra ["Guía de como contribuir a Open Source"](https://github.com/freeCodeCamp/how-to-contribute-to-open-source). Es una referencia completa para proyectos aptos para principiantes. E incluye muchos consejos de contribución de código abierto.
 
-### What do I need to know to contribute to the codebase?
+### ¿Qué necesito saber para contribuir al código base?
 
-freeCodeCamp runs on a modern JavaScript stack. If you're interested in contributing to our codebase, you will need some familiarity with JavaScript and some of the technologies we use like Node.js, MongoDB, OAuth 2.0, React, Gatsby, and Webpack.
+freeCodeCamp se ejecuta en una moderna plataforma de JavaScript. Si estás interesado en contribuir a nuestra base de código, necesitarás cierta familiaridad con JavaScript y algunas de las tecnologías que usamos como Node.js, MongoDB, OAuth 2.0, React, Gatsby, y Webpack.
 
-### Can I translate freeCodeCamp's resources?
+### ¿Puedo traducir los recursos de freeCodeCamp?
 
-Yes - You can contribute to any of the 30+ languages we have enabled on our translation platform.
+Sí - Puedes contribuir cualquiera de los más de 30 idiomas que hemos habilitado en nuestra plataforma de traducción.
 
-We have user-contributed translations live in some languages. We intend to localize freeCodeCamp into several major world languages. You can read all about this in our [announcement here](https://www.freecodecamp.org/news/world-language-translation-effort).
+Tenemos traducciones hechas por usuarios nativos en algunos idiomas. Tenemos la intención de traducir freeCodeCamp a los principales idiomas del mundo. Puedes leer todo acerca de esto en nuestro [anuncio aquí](https://www.freecodecamp.org/news/world-language-translation-effort).
 
-If you are interested in contributing to translations please makes sure you [read this guide](how-to-translate-files.md) first.
+Si estás interesado en ayudar a traducir, por favor asegúrate de [leer esta guía](how-to-translate-files.md) primero.
 
-### Can I contribute articles to freeCodeCamp News or videos to freeCodeCamp's YouTube channel?
+### Puedo contribuír con artículos a las Noticias de freeCodeCamp o con vídeos al canal de YouTube de freeCodeCamp?
 
-Yes - you can contribute to our publication blog and YouTube channel.
+Sí - puedes contribuir a las publicaciones de nuestro blog y canal de YouTube.
 
-If you're interested in writing articles for freeCodeCamp News, please visit this [publication guide](https://www.freecodecamp.org/news/how-to-write-for-freecodecamp/). In addition, please read our [style guide](https://www.freecodecamp.org/news/developer-news-style-guide/) as this will help you write stronger and more effective articles.
+Si estás interesade en escribir artículos para las Noticias de freeCodeCamp, por favor visita esta [guía de publicaciones](https://www.freecodecamp.org/news/how-to-write-for-freecodecamp/). Además, por favor lea nuestra [guía de estilo](https://www.freecodecamp.org/news/developer-news-style-guide/) ya que esto le ayudará a escribir artículos más fuertes y efectivos.
 
-To help us make educational videos for our YouTube channel, you can follow the [YouTube channel guide here](https://www.freecodecamp.org/news/how-to-contribute-to-the-freecodecamp-community-youtube-channel-b86bce4c865/).
+Para ayudarnos a crear vídeos educacionales para nuestro canal de YouTube, puedes seguir la [guía del canal de YouTube](https://www.freecodecamp.org/news/how-to-contribute-to-the-freecodecamp-community-youtube-channel-b86bce4c865/).
 
-### How can I report a new bug?
+### Cómo puedo reportar un nuevo error?
 
-If you think you've found a bug, first read the ["Help I've Found a Bug"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
+Si crees que has encontrado un error, primero lee el artículo ["Ayuda, he encontrado un bug"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) y sigue sus instrucciones.
 
-If you're confident it's a new bug, go ahead and create a new GitHub issue. Be sure to include as much information as possible so that we can reproduce the bug. We have a pre-defined issue template to help you through this.
+Si estás seguro de que es un error nuevo, crea un tema de GitHub nuevo.  Asegúrate de incluir tanta información como sea posible para que podamos reproducir el error.  Tenemos una plantilla de informe predefinida para ayudarte con esto.
 
-Please note that these GitHub issues are for codebase-related issues and discussions – not for getting help with learning to code. Whenever in doubt, you should [seek assistance on the forum](https://forum.freecodecamp.org) before creating a GitHub issue.
+Ten en cuenta que estos temas de GitHub son para debates y problemas relacionados al código base, no para obtener ayuda para aprender a programar. Whenever in doubt, you should [seek assistance on the forum](https://forum.freecodecamp.org) before creating a GitHub issue.
 
-### How can I report a security issue?
+### ¿Cómo puedo reportar un problema de seguridad?
 
 Please don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
 
-### I am a student. Can I work on a feature for academic credits?
+### Soy estudiante. ¿Puedo trabajar en una característica para los créditos académicos?
 
-Yes. Please note we are unable to commit to any timelines or paperwork that may be a requirement by your college or university. We receive many pull-requests and code contributions from volunteer developers, and we respect their time and efforts. Out of respect for all of our other contributors, we will not give any PR special priority just because it happens to be school-related.
+Sí. Please note we are unable to commit to any timelines or paperwork that may be a requirement by your college or university. We receive many pull-requests and code contributions from volunteer developers, and we respect their time and efforts. Out of respect for all of our other contributors, we will not give any PR special priority just because it happens to be school-related.
 
 We request you to plan ahead and work on code contributions with this in mind.
 
@@ -50,7 +50,7 @@ You should go through [**`help wanted`**](https://github.com/freeCodeCamp/freeCo
 
 > [!TIP] Los temas de **`se busca ayuda`** están en marcha y no es necesario pedir permiso antes de trabajar en ellos. Sin embargo, temas con la etiqueta **`solo principiantes`** son temas especiales que están diseñados para personas que no han contribuido a la base de código de freeCodeCamp antes.
 
-### I found a typo. Should I report an issue before I can make a pull request?
+### Encontré un error tipográfico. Should I report an issue before I can make a pull request?
 
 For typos and other wording changes, you can directly open pull requests without creating an issue first. Please be sure to mention details in the pull request description to help us understand and review your contribution – even if it's just a minor change.
 
@@ -83,7 +83,7 @@ Here are some recommended paths for some of our platforms:
 
 Altogether, be respectful to others. We are humans all around the world. With that in mind, please also consider using encouraging or supportive language and be mindful of cross-cultural communication.
 
-If you practice the above **consistently for a while** and our fellow moderator members recommend you, a staff member will reach out and onboard you to the moderators' team. Open source work is voluntary work and our time is limited. We acknowledge that this is probably true in your case as well. So we emphasize being **consistent** rather than engaging in the community 24/7.
+If you practice the above **consistently for a while** and our fellow moderator members recommend you, a staff member will reach out and onboard you to the moderators' team. El trabajo de código abierto es voluntario, y nuestro tiempo es limitado. We acknowledge that this is probably true in your case as well. So we emphasize being **consistent** rather than engaging in the community 24/7.
 
 Take a look at our [Moderator Handbook](moderator-handbook.md) for a more exhaustive list of other responsibilities and expectations we have of our moderators.
 

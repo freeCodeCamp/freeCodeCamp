@@ -1,8 +1,12 @@
 ---
 id: 5e7b9f160b6c005b0e76f086
-title: 'Objects: A Sample Class'
+title: 'Objetos: Un ejemplo de clase'
 challengeType: 11
 videoId: FiABKEuaSJ8
+bilibiliIds:
+  aid: 589451777
+  bvid: BV1rq4y1X7TG
+  cid: 377523194
 dashedName: objects-a-sample-class
 ---
 
@@ -10,7 +14,7 @@ dashedName: objects-a-sample-class
 
 ## --text--
 
-What will the following program print?:
+¿Qué imprimirá el siguiente programa?:
 
 ```python
 class PartyAnimal:

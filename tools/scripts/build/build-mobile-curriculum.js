@@ -9,7 +9,7 @@ exports.buildMobileCurriculum = function buildMobileCurriculum(json) {
 
   function writeAndParseCurriculumJson(curriculum) {
     const superBlockKeys = Object.keys(curriculum).filter(
-      key => key !== '00-certifications'
+      key => key !== 'certifications'
     );
 
     writeToFile('availableSuperblocks', { superblocks: superBlockKeys });
@@ -34,9 +34,8 @@ exports.buildMobileCurriculum = function buildMobileCurriculum(json) {
   }
 
   function writeToFile(filename, json) {
-    fs.writeFileSync(
-      `${mobileStaticPath}/mobile/${filename}.json`,
-      JSON.stringify(json, null, 2)
-    );
+    const fullPath = `${mobileStaticPath}/mobile/${filename}.json`;
+    fs.mkdirSync(path.dirname(fullPath), { recursive: true });
+    fs.writeFileSync(fullPath, JSON.stringify(json, null, 2));
   }
 };
