@@ -21,6 +21,7 @@
   - [Verstehe die Dateistruktur des Studienplans](curriculum-file-structure.md)
   - [Ausgehende Emails lokal debuggen](how-to-catch-outgoing-emails-locally.md)
   - [freeCodeCamp auf Windows einrichten (WSL)](how-to-setup-wsl.md)
+  - [User Token Workflow](user-token-workflow.md)
 
 ---
 

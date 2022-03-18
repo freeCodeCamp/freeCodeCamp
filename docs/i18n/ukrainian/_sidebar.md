@@ -21,6 +21,7 @@
   - [Ознайомлення зі структурою файлів навчальної програми](curriculum-file-structure.md)
   - [Налагоджуйте вихідні електронні листи локально](how-to-catch-outgoing-emails-locally.md)
   - [Встановіть freeCodeCamp на Windows (WSL)](how-to-setup-wsl.md)
+  - [User Token Workflow](user-token-workflow.md)
 
 ---
 
