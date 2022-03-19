@@ -30,7 +30,7 @@ assert(typeof specialPythagoreanTriplet(24) === 'number');
 assert.strictEqual(specialPythagoreanTriplet(24), 480);
 ```
 
-`specialPythagoreanTriplet(120)` should return 49920, 55080 or 60000
+`specialPythagoreanTriplet(120)` should return 49920, 55080 or 60000.
 
 ```js
 assert([49920, 55080, 60000].includes(specialPythagoreanTriplet(120)));

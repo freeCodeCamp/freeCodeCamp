@@ -27,13 +27,13 @@ Replace the word `black` in our `body` element's background-color with its hex c
 
 # --hints--
 
-Your `body` element should have the background-color of black.
+Your `body` element should have the `background-color` of black.
 
 ```js
 assert($('body').css('background-color') === 'rgb(0, 0, 0)');
 ```
 
-The `hex code` for the color black should be used instead of the word `black`.
+The hex code for the color black should be used instead of the word `black`.
 
 ```js
 assert(
