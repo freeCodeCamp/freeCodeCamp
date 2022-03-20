@@ -45,21 +45,28 @@ const computeClassNames = ({
   return classNames.join(' ');
 };
 
-export const Button = ({
-  variant = 'primary',
-  size = 'medium',
-  type = 'button',
-  onClick,
-  children
-}: ButtonProps) => {
-  const classes = useMemo(
-    () => computeClassNames({ size, variant }),
-    [size, variant]
-  );
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    {
+      variant = 'primary',
+      size = 'medium',
+      type = 'button',
+      onClick,
+      children
+    },
+    ref
+  ) => {
+    const classes = useMemo(
+      () => computeClassNames({ size, variant }),
+      [size, variant]
+    );
 
-  return (
-    <button className={classes} type={type} onClick={onClick}>
-      {children}
-    </button>
-  );
-};
+    return (
+      <button ref={ref} className={classes} type={type} onClick={onClick}>
+        {children}
+      </button>
+    );
+  }
+);
+
+Button.displayName = 'Button';
