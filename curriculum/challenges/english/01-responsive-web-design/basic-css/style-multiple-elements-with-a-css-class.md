@@ -13,7 +13,7 @@ Classes allow you to use the same CSS styles on multiple HTML elements. You can 
 
 # --hints--
 
-Your `h2` element should be red.
+Your `h2` element should be `red`.
 
 ```js
 assert($('h2').css('color') === 'rgb(255, 0, 0)');
@@ -25,13 +25,13 @@ Your `h2` element should have the class `red-text`.
 assert($('h2').hasClass('red-text'));
 ```
 
-Your first `p` element should be red.
+Your first `p` element should be `red`.
 
 ```js
 assert($('p:eq(0)').css('color') === 'rgb(255, 0, 0)');
 ```
 
-Your second and third `p` elements should not be red.
+Your second and third `p` elements should not be `red`.
 
 ```js
 assert(

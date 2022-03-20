@@ -36,7 +36,7 @@ Note that it's important to have both opening and closing curly braces (`{` and 
 
 # --instructions--
 
-Delete your `h2` element's style attribute, and instead create a CSS `style` block. Add the necessary CSS to turn all `h2` elements blue.
+Delete your `h2` element's style attribute, and instead create a CSS `style` block. Add the necessary CSS to turn all `h2` elements `blue`.
 
 # --hints--
 
@@ -52,7 +52,7 @@ You should create a `style` element.
 assert($('style') && $('style').length >= 1);
 ```
 
-Your `h2` element should be blue.
+Your `h2` element should be `blue`.
 
 ```js
 assert($('h2').css('color') === 'rgb(0, 0, 255)');

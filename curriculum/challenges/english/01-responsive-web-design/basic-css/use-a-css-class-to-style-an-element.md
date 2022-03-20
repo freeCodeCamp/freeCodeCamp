@@ -31,7 +31,7 @@ Give your `h2` element the `class` attribute with a value of `red-text`.
 
 # --hints--
 
-Your `h2` element should be red.
+Your `h2` element should be `red`.
 
 ```js
 assert($('h2').css('color') === 'rgb(255, 0, 0)');
