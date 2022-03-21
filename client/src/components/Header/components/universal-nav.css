@@ -343,6 +343,8 @@ button.nav-link[aria-disabled='true'] {
   cursor: pointer;
   max-height: calc(var(--header-height) - 8px);
   margin-right: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .toggle-button-nav:hover {
@@ -418,10 +420,6 @@ button.nav-link[aria-disabled='true'] {
 
 .display-menu::-webkit-scrollbar {
   display: none;
-}
-
-.toggle-button-nav {
-  display: flex;
 }
 
 .reverse-toggle-color {
