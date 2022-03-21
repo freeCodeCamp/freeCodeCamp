@@ -444,6 +444,9 @@ button.nav-link[aria-disabled='true'] {
   max-height: calc(var(--header-height) - 6px);
   padding: 0 8px;
   margin-left: 2px;
+  font-family: 'Roboto Mono', monospace !important;
+  display: flex;
+  align-items: center;
 }
 
 @media (max-width: 980px) {
