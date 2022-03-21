@@ -307,17 +307,6 @@ export class NavLinks extends Component<NavLinksProps, {}> {
             </Link>
           </li>
         )}
-        {!username && (
-          <li key='signin'>
-            <a
-              className='nav-link'
-              href={`${apiLocation}/signin`}
-              onKeyDown={this.handleMenuKeyDown}
-            >
-              {t('buttons.sign-in')}
-            </a>
-          </li>
-        )}
         <li key='learn'>
           <Link
             className='nav-link'
