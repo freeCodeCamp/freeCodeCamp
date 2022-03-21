@@ -18,7 +18,8 @@
   text-decoration: none;
 }
 
-.universal-nav .universal-nav-right a {
+.universal-nav .universal-nav-right a,
+.universal-nav button {
   font-family: 'sans-serif', monospace;
 }
 
