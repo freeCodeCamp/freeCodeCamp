@@ -433,7 +433,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
             </button>
             <ul
               aria-labelledby='nav-lang-button'
-              className='nav-lang-menu'
+              className={'nav-lang-menu' + (username ? ' logged-in' : '')}
               id='nav-lang-menu'
               role='menu'
             >
