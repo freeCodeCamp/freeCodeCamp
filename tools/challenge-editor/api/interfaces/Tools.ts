@@ -14,9 +14,9 @@ type ToolsFunctionWithArgs = (
 ) => Promise<{ stdout: string; stderr: string }>;
 
 export interface ToolsSwitch {
-  'create-next': ToolsFunction;
-  'create-empty': ToolsFunctionWithArgs;
-  'create-between': ToolsFunctionWithArg;
+  'create-next-step': ToolsFunction;
+  'create-empty-steps': ToolsFunctionWithArgs;
+  'insert-step': ToolsFunctionWithArg;
   'delete-step': ToolsFunctionWithArg;
-  reorder: ToolsFunction;
+  'update-step-titles': ToolsFunction;
 }

@@ -8,42 +8,28 @@ import { ToolsSwitch } from '../interfaces/Tools';
 const asyncExec = promisify(exec);
 
 const toolsSwitch: ToolsSwitch = {
-  'create-next': async directory => {
-    const { stdout, stderr } = await asyncExec(
-      `cd ${directory} && npm run create-next-step`
-    );
-    return { stdout, stderr };
+  'create-next-step': async directory => {
+    return await asyncExec(`cd ${directory} && npm run create-next-step`);
   },
-  'create-empty': async (directory, start, end) => {
-    const { stdout, stderr } = await asyncExec(
-      `cd ${directory} && npm run create-empty-steps start=${start} num=${end}`
+  'create-empty-steps': async (directory, num) => {
+    return await asyncExec(
+      `cd ${directory} && npm run create-empty-steps ${num}`
     );
-    return { stdout, stderr };
   },
-  'create-between': async (directory, start) => {
-    const { stdout, stderr } = await asyncExec(
-      `cd ${directory} && npm run create-step-between start=${start}`
-    );
-    return { stdout, stderr };
+  'insert-step': async (directory, num) => {
+    return await asyncExec(`cd ${directory} && npm run insert-step ${num}`);
   },
-  'delete-step': async (directory, start) => {
-    const { stdout, stderr } = await asyncExec(
-      `cd ${directory} && npm run delete-step num=${start}`
-    );
-    return { stdout, stderr };
+  'delete-step': async (directory, num) => {
+    return await asyncExec(`cd ${directory} && npm run delete-step ${num}`);
   },
-  reorder: async directory => {
-    const { stdout, stderr } = await asyncExec(
-      `cd ${directory} && npm run reorder-steps`
-    );
-    return { stdout, stderr };
+  'update-step-titles': async directory => {
+    return await asyncExec(`cd ${directory} && npm run update-step-titles`);
   }
 };
 
 export const toolsRoute = async (req: Request, res: Response) => {
   const { superblock, block, command } = req.params;
   const { start, end } = req.body as Record<string, number>;
-  console.table({ superblock, block, command, start, end });
   const directory = join(
     __dirname,
     '..',
@@ -56,7 +42,6 @@ export const toolsRoute = async (req: Request, res: Response) => {
     superblock,
     block
   );
-  console.log(directory);
 
   if (!(command in toolsSwitch)) {
     res.json({ stdout: '', stderr: 'Command not found' });

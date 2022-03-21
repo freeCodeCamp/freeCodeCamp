@@ -3,8 +3,7 @@ import { saveStep } from '../utils/saveStep';
 
 export const saveRoute = async (req: Request, res: Response) => {
   const { superblock, block, step } = req.params;
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  const content = req.body.content as string;
+  const content = (req.body as { content: string }).content;
 
   await saveStep(superblock, block, step, content);
 

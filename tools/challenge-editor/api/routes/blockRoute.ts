@@ -2,10 +2,9 @@ import { Request, Response } from 'express';
 import { getSteps } from '../utils/getSteps';
 
 export const blockRoute = async (req: Request, res: Response) => {
-  const sup = req.params.superblock;
-  const block = req.params.block;
-
-  const steps = await getSteps(sup, block);
+  const { superblock, block } = req.params;
+  
+  const steps = await getSteps(superblock, block);
 
   res.json(steps);
 };
