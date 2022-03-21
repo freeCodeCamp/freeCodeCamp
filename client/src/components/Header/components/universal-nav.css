@@ -19,7 +19,7 @@
 }
 
 .universal-nav .universal-nav-right a,
-.universal-nav button {
+.universal-nav button.nav-link-header {
   font-family: 'sans-serif', monospace;
 }
 
