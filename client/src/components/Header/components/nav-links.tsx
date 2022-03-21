@@ -340,7 +340,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
             </li>
           </Fragment>
         )}
-        <li key='forum'>
+        <li key='forum' className='nav-line'>
           <Link
             className='nav-link nav-link-flex'
             external={true}
@@ -376,7 +376,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
             <FontAwesomeIcon icon={faExternalLinkAlt} />
           </Link>
         </li>
-        <li {...(!username && { className: 'theme-disabled' })} key='theme'>
+        <li className='nav-line' key='theme'>
           <button
             {...(!username && { 'aria-describedby': 'theme-sign-in' })}
             aria-disabled={!username}
@@ -476,7 +476,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
         </li>
         {username && (
           <Fragment key='signout-frag'>
-            <li key='sign-out'>
+            <li className='nav-line' key='sign-out'>
               <a
                 className='nav-link nav-link-signout'
                 href={`${apiLocation}/signout`}
