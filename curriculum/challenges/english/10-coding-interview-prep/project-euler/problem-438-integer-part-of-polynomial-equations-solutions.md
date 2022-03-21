@@ -19,7 +19,7 @@ In the case of $n = 4$, there are 12 $n$-tuples of integers which satisfy both c
 
 We define $S(t)$ as the sum of the absolute values of the integers in $t$.
 
-For $n = 4$ we can verify that $\sum S(t) = 2087$ for all $n$-tuples t which satisfy both conditions.
+For $n = 4$ we can verify that $\sum S(t) = 2087$ for all $n$-tuples $t$ which satisfy both conditions.
 
 Find $\sum S(t)$ for $n = 7$.
 

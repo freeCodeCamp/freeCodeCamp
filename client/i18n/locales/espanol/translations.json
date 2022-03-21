@@ -8,7 +8,7 @@
     "edit": "Editar",
     "show-code": "Mostrar código",
     "show-solution": "Mostrar solución",
-    "show-project": "Show Project",
+    "show-project": "Mostrar proyecto",
     "frontend": "Front End",
     "backend": "Back End",
     "view": "Ver",
@@ -48,7 +48,7 @@
     "cancel": "Cancelar",
     "reset-lesson": "Restablecer esta lección",
     "run": "Ejecutar",
-    "run-test": "Run the Tests (Ctrl + Enter)",
+    "run-test": "Ejecutar las Pruebas (Ctrl + Entrar)",
     "reset": "Restablecer",
     "reset-code": "Restablecer todo el código",
     "help": "Ayuda",
@@ -65,9 +65,9 @@
     "go-to-next": "Ir al próximo desafío",
     "ask-later": "Pregúntame luego",
     "start-coding": "¡Empieza a programar!",
-    "go-to-settings": "Go to settings to claim your certification",
-    "click-start-course": "Click here to start the course",
-    "click-start-project": "Click here to start the project"
+    "go-to-settings": "Ve a la configuración para reclamar tu certificación",
+    "click-start-course": "Haga clic aquí para iniciar el curso",
+    "click-start-project": "Haga clic aquí para iniciar el proyecto"
   },
   "landing": {
     "big-heading-1": "Aprende a programar gratis.",
@@ -298,12 +298,12 @@
     "help-translate": "Todavía estamos traduciendo las siguientes certificaciones.",
     "help-translate-link": "Ayúdanos a traducir.",
     "project-preview-title": "Aquí hay una vista previa de lo que construirás",
-    "github-required": "<0>Create a GitHub</0> account if you don't have one. You'll need it when you create the virtual Linux server machine. This process may take a few minutes.",
-    "step-1": "Step 1: Complete the project",
-    "step-2": "Step 2: Submit your code",
-    "submit-public-url": "When you have completed the project, save all the required files into a public repository and submit the URL to it below.",
-    "complete-both-steps": "Complete both steps below to finish the challenge.",
-    "runs-in-vm": "The project runs in a virtual machine, complete the user stories described in there and get all the tests to pass to finish step 1."
+    "github-required": "<0>Crea una cuenta en GitHub</0> si no tienes una. Lo necesitará al crear la máquina virtual de servidores Linux, que puede tardar unos minutos.",
+    "step-1": "Paso 1: Completa el proyecto",
+    "step-2": "Paso 2: Envía tu código",
+    "submit-public-url": "Cuando haya completado el proyecto, guarde todos los archivos requeridos en un repositorio público y envíe la URL a continuación.",
+    "complete-both-steps": "Completa los dos pasos a continuación para terminar el desafío.",
+    "runs-in-vm": "El proyecto se ejecuta en una máquina virtual, completa las historias de usuario descritas en ella y consigue que todas las pruebas pasen hasta el paso 1."
   },
   "donate": {
     "title": "Apoya a nuestra organización sin fines de lucro",
@@ -315,6 +315,7 @@
     "additional": "Puede hacer una donación adicional única de cualquier monto utilizando este enlace: <0>{{url}}</0>",
     "help-more": "Ayúdanos a hacer más",
     "error": "Algo salió mal con tu donación.",
+    "error-2": "Algo no está bien. Por favor, contacta con donors@freecodecamp.org",
     "free-tech": "Tus donaciones apoyarán la educación tecnológica gratuita para personas de todo el mundo.",
     "no-halo": "Si no ves un aro dorado alrededor de tu foto de perfil, contacta a donors@freecodecamp.org.",
     "gift-frequency": "Selecciona la frecuencia de los obsequios:",
@@ -368,7 +369,7 @@
     "one-time": "Si prefieres hacer donaciones únicas, puedes apoyar la misión de freeCodeCamp cuando tengas dinero suficiente para hacer una aportación. Puedes usar <0>este enlace para donar cualquier cantidad que te sea cómodo a través de PayPal</0>.",
     "wire-transfer": "También puedes enviar dinero a freeCodeCamp directamente a través de una transferencia bancaria. Si necesitas nuestros datos bancarios, envía un correo electrónico a Quincy@freecodecamp.org",
     "does-crypto": "¿freeCodeCamp acepta donaciones en Bitcoin u otras criptomonedas?",
-    "yes-cryptocurrency": "Yes. Please email Quincy at quincy@freecodecamp.org and he can send you freeCodeCamp's wallet information. He can also provide you with a donation receipt if you need one for your taxes.",
+    "yes-cryptocurrency": "Sí. Por favor envía un correo electrónico a Quincy a quincy@freecodecamp.org y él podrá enviarte la información del monedero de freeCodeCamp. También podrá proporcionarte un recibo de la donación si necesita uno para tus impuestos.",
     "can-check": "¿Puedo enviar un cheque físico?",
     "yes-check": "Sí, bienvenido sea, aceptamos cheque. Puedes enviarlo a:",
     "how-matching-gift": "¿Cómo puedo configurar regalos coincidentes de mi empleador o deducciones de nómina?",
@@ -428,7 +429,7 @@
     "and": "y",
     "change-theme": "Entra para cambiar el tema.",
     "translation-pending": "Ayúdanos a traducir",
-    "certification-project": "Certification Project"
+    "certification-project": "Proyecto de certificación"
   },
   "icons": {
     "gold-cup": "Copa de Oro",
@@ -458,7 +459,7 @@
     "magnifier": "lupa"
   },
   "aria": {
-    "fcc-curriculum": "freeCodeCamp Curriculum",
+    "fcc-curriculum": "currículo de freeCodeCamp",
     "answer": "Respuesta",
     "linkedin": "Enlace al LinkedIn de {{username}}",
     "github": "Enlace al GitHub de {{username}}",
@@ -468,8 +469,8 @@
     "previous-page": "Regresar a la pagina anterior",
     "next-page": "Ir a la página siguiente",
     "last-page": "Ir a la última página",
-    "primary-nav": "primary",
-    "breadcrumb-nav": "breadcrumb"
+    "primary-nav": "primario",
+    "breadcrumb-nav": "migas de pan"
   },
   "flash": {
     "honest-first": "Para reclamar una certificación, primero debes aceptar nuestra política de honestidad académica.",
@@ -520,14 +521,14 @@
     "provide-username": "Comprueba si has proporcionado un nombre de usuario y un reporte",
     "report-sent": "Se envió un informe al equipo con {{email}} en copia",
     "certificate-missing": "La certificación que intentaste ver no existe",
-    "create-token-err": "An error occurred while creating your user token",
-    "delete-token-err": "An error occurred while deleting your user token",
-    "token-created": "You have successfully created a new user token.",
-    "token-deleted": "Your user token has been deleted.",
-    "start-project-err": "Something went wrong trying to start the project. Please try again.",
-    "complete-project-first": "You must complete the project first.",
-    "local-code-save-error": "Oops, your code did not save, your browser's local storage may be full.",
-    "local-code-saved": "Saved! Your code was saved to your browser's local storage."
+    "create-token-err": "Se ha producido un error al crear su token de usuario",
+    "delete-token-err": "Se ha producido un error al eliminar su token de usuario",
+    "token-created": "Ha creado con éxito un nuevo token de usuario.",
+    "token-deleted": "Tu token de usuario ha sido eliminado.",
+    "start-project-err": "Algo salió mal al intentar iniciar el proyecto. Por favor, inténtalo de nuevo.",
+    "complete-project-first": "Primero debes completar el proyecto.",
+    "local-code-save-error": "Vaya, tu código no se guardó, el almacenamiento local del navegador puede estar lleno.",
+    "local-code-saved": "¡Guardado! Tu código ha sido guardado en el almacenamiento local de tu navegador."
   },
   "validation": {
     "max-characters": "Hay un límite máximo de 288 caracteres, te quedan {{charsLeft}}",
@@ -555,7 +556,7 @@
       "heading-legacy-full-stack": "Como parte de esta certificación Legacy Full Stack, {{user}} completó las siguientes certificaciones:",
       "heading": "Como parte de esta certificación, {{user}} construyó los siguientes proyectos y consiguió que se aprobaran todas las suites automatizadas de pruebas:",
       "solution": "solución",
-      "no-solution": "error displaying solution, email support@freeCodeCamp.org to get help.",
+      "no-solution": "error mostrando la solución, envía un correo electrónico a support@freeCodeCamp.org para obtener ayuda.",
       "source": "fuente",
       "footnote": "Si sospechas que alguno de estos proyectos infringe la <2>política de honestidad académica</2>, por favor <5>repórtalo a nuestro equipo</5>.",
       "title": {
@@ -658,16 +659,16 @@
     "add-code-three": "porque permiten que tu código formatee correctamente en el post."
   },
   "user-token": {
-    "title": "User Token",
-    "create": "Create a new token",
-    "create-p1": "It looks like you don't have a user token. Create one to save your progress on this section",
-    "create-p2": "Create a user token to save your progress on the curriculum sections that use a virtual machine.",
-    "delete": "Delete my user token",
-    "delete-title": "Delete My User Token",
-    "delete-p1": "Your user token is used to save your progress on curriculum sections that use a virtual machine. If you suspect it has been compromised, you can delete it without losing any progress. A new one will be created automatically the next time you open a project.",
-    "delete-p2": "If you suspect your token has been compromised, you can delete it to make it unusable. Progress on previously submitted lessons will not be lost.",
-    "delete-p3": "You will need to create a new token to save future progress on the curriculum sections that use a virtual machine.",
-    "no-thanks": "No thanks, I would like to keep my token",
-    "yes-please": "Yes please, I would like to delete my token"
+    "title": "Token de usuario",
+    "create": "Crea un nuevo token",
+    "create-p1": "Parece que no tienes un token de usuario. Crea uno para guardar tu progreso en esta sección",
+    "create-p2": "Cree un token de usuario para guardar su progreso en las secciones de currículum que utilizan una máquina virtual.",
+    "delete": "Eliminar mi token de usuario",
+    "delete-title": "Eliminar mi token de usuario",
+    "delete-p1": "Su token de usuario se utiliza para guardar su progreso en las secciones de currículum que utilizan una máquina virtual. Si sospechas que ha sido comprometida, puedes eliminarlo sin perder ningún progreso. Una nueva se creará automáticamente la próxima vez que abra un proyecto.",
+    "delete-p2": "Si sospechas que tu token ha sido comprometida, puedes eliminarlo para que no sea utilizable. El progreso en las lecciones enviadas anteriormente no se perderá.",
+    "delete-p3": "Necesitará crear un nuevo token para guardar el progreso futuro en las secciones de currículum que utilizan una máquina virtual.",
+    "no-thanks": "No gracias, me gustaría quedarme con mi token",
+    "yes-please": "Si por favor, deseo borrar mi token"
   }
 }

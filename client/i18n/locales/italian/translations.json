@@ -315,6 +315,7 @@
     "additional": "Puoi effettuare una donazione una tantum aggiuntiva di qualsiasi importo utilizzando questo link: <0>{{url}}</0>",
     "help-more": "Aiutaci a fare di più",
     "error": "Qualcosa è andato storto con la tua donazione.",
+    "error-2": "C'è qualcosa che non va. Per favore scrivi a donors@freecodecamp.org",
     "free-tech": "Le tue donazioni sosterranno l'educazione tecnologica gratuita per le persone di tutto il mondo.",
     "no-halo": "Se non vedi un alone d'oro intorno alla foto del tuo profilo, contatta donors@freecodecamp.org.",
     "gift-frequency": "Seleziona la frequenza del dono:",
@@ -520,11 +521,11 @@
     "provide-username": "Spunta la casella se hai fornito un nome utente e un report",
     "report-sent": "Un report è stato inviato al team con {{email}} in copia",
     "certificate-missing": "La certificazione che hai cercato di visualizzare non esiste",
-    "create-token-err": "An error occurred while creating your user token",
-    "delete-token-err": "An error occurred while deleting your user token",
-    "token-created": "You have successfully created a new user token.",
-    "token-deleted": "Your user token has been deleted.",
-    "start-project-err": "Something went wrong trying to start the project. Please try again.",
+    "create-token-err": "Un errore è occorso durante la creazione del tuo token",
+    "delete-token-err": "Un errore è occorso durante la cancellazione del tuo token",
+    "token-created": "Hai creato con successo un nuovo token utente.",
+    "token-deleted": "Il tuo token utente è stato eliminato.",
+    "start-project-err": "Qualcosa è andato storto provando ad avviare il progetto. Per favore prova di nuovo.",
     "complete-project-first": "Devi prima completare il progetto.",
     "local-code-save-error": "Oops, il codice non è stato salvato, il local storage del tuo browser potrebbe essere pieno.",
     "local-code-saved": "Salvato! Il tuo codice è stato salvato nel local storage del tuo browser."
@@ -658,16 +659,16 @@
     "add-code-three": "perché consentono al codice di disporsi correttamente nel post."
   },
   "user-token": {
-    "title": "User Token",
-    "create": "Create a new token",
-    "create-p1": "It looks like you don't have a user token. Create one to save your progress on this section",
-    "create-p2": "Create a user token to save your progress on the curriculum sections that use a virtual machine.",
-    "delete": "Delete my user token",
-    "delete-title": "Delete My User Token",
-    "delete-p1": "Your user token is used to save your progress on curriculum sections that use a virtual machine. If you suspect it has been compromised, you can delete it without losing any progress. A new one will be created automatically the next time you open a project.",
-    "delete-p2": "If you suspect your token has been compromised, you can delete it to make it unusable. Progress on previously submitted lessons will not be lost.",
-    "delete-p3": "You will need to create a new token to save future progress on the curriculum sections that use a virtual machine.",
-    "no-thanks": "No thanks, I would like to keep my token",
-    "yes-please": "Yes please, I would like to delete my token"
+    "title": "Token Utente",
+    "create": "Crea un nuovo token",
+    "create-p1": "Sembra che tu non abbia un token utente. Creane uno per salvare i tuoi progressi in questa sessione",
+    "create-p2": "Crea un token utente per salvare i tuoi progressi nella sezione del curriculum che usa una macchina virtuale.",
+    "delete": "Elimina il mio token utente",
+    "delete-title": "Elimina il mio token utente",
+    "delete-p1": "Il token utente è usato per salvare i tuoi progressi nelle sezioni del curriculum che usano una macchina virtuale. Se sospetti che sia stato compromesso, lo puoi eliminare senza perdere i tuoi progressi. Uno nuovo sarà creato automaticamente la prossima volta che apri un progetto.",
+    "delete-p2": "Se sospetti che il tuo token sia stato compromesso, lo puoi eliminare per renderlo inutile. Il progresso su lezioni completare in precedenza non sarà perso.",
+    "delete-p3": "Avrai bisogno di creare un nuovo token per salvare progressi futuri nelle sezioni del curriculum che usano una macchina virtuale.",
+    "no-thanks": "No grazie, vorrei tenere il mio token",
+    "yes-please": "Sì per favore, vorrei eliminare il mio token"
   }
 }

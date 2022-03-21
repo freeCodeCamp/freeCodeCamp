@@ -315,6 +315,7 @@
     "additional": "任意の金額を、追加で 1 回ずつご寄付いただけるリンクはこちら: <0>{{url}}</0>",
     "help-more": "私たちのさらなる活動をご支援ください",
     "error": "ご寄付の処理に問題が発生しました。",
+    "error-2": "Something is not right. Please contact donors@freecodecamp.org",
     "free-tech": "いただいたご寄付は世界中の人々への無料の技術教育を支援します。",
     "no-halo": "プロフィール画像の周りに金色の枠が表示されない場合は、donors@freecodecamp.org までご連絡ください。",
     "gift-frequency": "ギフトの頻度を選択する:",
