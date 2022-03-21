@@ -1,8 +1,12 @@
+Welcome to freeCodeCamp's `ui-components` library. The components are built mostly from scratch with basic HTML elements and [Tailwind CSS](https://tailwindcss.com/). 
+
 # How to Work on the Component Library
 
-freeCodeCamp has been using Bootstrap components in the UI. However, we are moving away from it and building our own component library, which helps standardize our UX/UI patterns and improve the accessibility. The project is tracked in [this GitHub issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/44668).
+> [!NOTE]
+>
+> freeCodeCamp has been using Bootstrap components in the UI. However, we are moving away from it and building our own component library, which helps standardize our UX/UI patterns and improve accessibility. The project is tracked in [this GitHub issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/44668).
 
-The new library is called `ui-components`. The components are built mostly from scratch with basic HTML elements and [Tailwind CSS](https://tailwindcss.com/). The following steps are recommended when working on a new component:
+The following steps are recommended when working on a new component:
 
 - Research and planning
 - Implement the component
