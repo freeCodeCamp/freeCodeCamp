@@ -30,7 +30,7 @@ Você deve fornecer seu próprio projeto, não o exemplo de URL.
 };
 ```
 
-Uma solicitação a `/api/:date?` com uma data válida deve retornar um objeto JSON com uma chave `unix`, que é um timestamp do Unix da data de entrada em milissegundos
+Uma solicitação a `/api/:date?` com uma data válida deve retornar um objeto JSON com uma chave `unix`, que é um timestamp do Unix da data de entrada em milissegundos (com o tipo Number)
 
 ```js
 (getUserInput) =>

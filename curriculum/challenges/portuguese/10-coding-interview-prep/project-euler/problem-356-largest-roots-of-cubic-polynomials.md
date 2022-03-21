@@ -8,7 +8,7 @@ dashedName: problem-356-largest-roots-of-cubic-polynomials
 
 # --description--
 
-Considere an como a maior raiz real de um polinômio $g(x) = x^3 - 2^n \times x^2 + n$.
+Considere $a_n$ como sendo a maior raiz real de um polinômio $g(x) = x^3 - 2^n \times x^2 + n$.
 
 Por exemplo, $a_2 = 3.86619826\ldots$
 

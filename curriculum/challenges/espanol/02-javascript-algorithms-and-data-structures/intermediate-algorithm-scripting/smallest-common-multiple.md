@@ -1,6 +1,6 @@
 ---
 id: ae9defd7acaf69703ab432ea
-title: Múltiplo común más pequeño
+title: Mínimo común múltiplo
 challengeType: 5
 forumTopicId: 16075
 dashedName: smallest-common-multiple

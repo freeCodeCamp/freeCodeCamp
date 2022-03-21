@@ -10,11 +10,6 @@ dashedName: arithmetic-formatter
 
 Você [trabalhará neste projeto com nosso código inicial do Replit](https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter).
 
-Ainda estamos desenvolvendo a parte instrucional interativa do currículo Python. Por enquanto, aqui estão alguns vídeos no canal do freeCodeCamp.org do YouTube que ensinarão tudo o que você precisa saber para completar este projeto:
-
-- [Curso de Python em vídeo para todos](https://www.freecodecamp.org/news/python-for-everybody/) (14 horas)
-- [Curso Aprenda Python em vídeo](https://www.freecodecamp.org/news/learn-python-video-course/) (10 horas)
-
 # --instructions--
 
 Os alunos da escola primária geralmente organizam problemas aritméticos de modo vertical para facilitar a sua resolução. Por exemplo, "235 + 52" se torna:
@@ -88,7 +83,7 @@ Copie o URL do seu projeto e envie-o abaixo.
 
 # --hints--
 
-O projeto deve formatar corretamente um problema aritmético e passar em todos os testes.
+O programa deve formatar corretamente um problema aritmético e passar em todos os testes.
 
 ```js
 
