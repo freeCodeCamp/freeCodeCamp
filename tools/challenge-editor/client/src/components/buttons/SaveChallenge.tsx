@@ -1,5 +1,6 @@
 import React from 'react';
 import { ChallengeContentRequiredProps } from '../../../interfaces/PropTypes';
+import { handleRequest } from '../../utils/handleRequest';
 
 const SaveChallenge = ({
   superblock,
@@ -7,20 +8,17 @@ const SaveChallenge = ({
   challenge,
   content
 }: ChallengeContentRequiredProps) => {
-  const save = () => {
-    console.log(content);
-    void fetch(`http://localhost:3200/${superblock}/${block}/${challenge}`, {
+  const click = handleRequest(() =>
+    fetch(`http://localhost:3200/${superblock}/${block}/${challenge}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ content })
     })
-      .then(res => res.text())
-      .then(data => alert(data));
-  };
+  );
 
-  return <button onClick={save}>Save Changes</button>;
+  return <button onClick={click}>Save Changes</button>;
 };
 
 export default SaveChallenge;
