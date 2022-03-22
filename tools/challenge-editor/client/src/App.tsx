@@ -9,7 +9,6 @@ import Editor from './components/editor/Editor';
 import Tools from './components/tools/Tools';
 
 const App = () => {
-  console.log(React.version);
   return (
     <div className='app'>
       <Header />
