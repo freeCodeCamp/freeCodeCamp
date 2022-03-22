@@ -27,7 +27,6 @@ const Block = () => {
           setLoading(false);
           setError(error);
         }
-        }
       );
   };
 
