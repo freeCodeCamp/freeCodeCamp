@@ -53,7 +53,7 @@ Each component is different, but in general the components should:
 ### Useful links
 
 - [Tailwind CSS Configuration](https://tailwindcss.com/docs/configuration)
-- [React Bootstrap v0.33 Docs](https://react-bootstrap-v3.netlify.app/)
+- [React Bootstrap v0.33 Docs](https://react-bootstrap-v3.netlify.app)
 - [Bootstrap 3.3.7 stylesheet](https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css)
 - [React Bootstrap current implementation](https://github.com/react-bootstrap/react-bootstrap/tree/master/src)
 - [React Bootstrap current tests](https://github.com/react-bootstrap/react-bootstrap/tree/master/test)
