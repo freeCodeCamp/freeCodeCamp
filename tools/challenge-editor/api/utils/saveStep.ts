@@ -1,5 +1,6 @@
 import { writeFile } from 'fs/promises';
 import { join } from 'path';
+import { CHALLENGE_DIR } from '../configs/paths';
 
 export const saveStep = async (
   sup: string,
@@ -7,18 +8,7 @@ export const saveStep = async (
   step: string,
   content: string
 ) => {
-  const filePath = join(
-    process.cwd(),
-    '..',
-    '..',
-    '..',
-    'curriculum',
-    'challenges',
-    'english',
-    sup,
-    block,
-    step
-  );
+  const filePath = join(CHALLENGE_DIR, sup, block, step);
 
   await writeFile(filePath, content);
 };
