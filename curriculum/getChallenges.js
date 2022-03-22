@@ -178,7 +178,6 @@ async function buildBlocks({ basename: blockName }, curriculum, superBlock) {
     `./challenges/_meta/${blockName}/meta.json`
   );
 
-
   if (fs.existsSync(metaPath)) {
     // try to read the file, if the meta path does not exist it should be a certification.
     // As they do not have meta files.
