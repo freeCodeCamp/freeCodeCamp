@@ -21,8 +21,8 @@ const Tools = () => {
       <CreateNextStep {...{ superblock, block }} />
       <h2>Create Empty Steps</h2>
       <p>
-        This tool creates <code>n</code> number of empty steps at the provided
-        start point.
+        This tool creates <code>n</code> number of empty steps at the end of the
+        project.
       </p>
       <CreateEmptySteps {...{ superblock, block }} />
       <h2>Insert Step</h2>

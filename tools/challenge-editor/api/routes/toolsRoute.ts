@@ -29,7 +29,7 @@ const toolsSwitch: ToolsSwitch = {
 
 export const toolsRoute = async (req: Request, res: Response) => {
   const { superblock, block, command } = req.params;
-  const { start, end } = req.body as Record<string, number>;
+  const { start } = req.body as Record<string, number>;
   const directory = join(
     __dirname,
     '..',
@@ -50,6 +50,6 @@ export const toolsRoute = async (req: Request, res: Response) => {
 
   const parsed = command as keyof ToolsSwitch;
 
-  const { stdout, stderr } = await toolsSwitch[parsed](directory, start, end);
+  const { stdout, stderr } = await toolsSwitch[parsed](directory, start);
   res.json({ stdout, stderr });
 };

@@ -7,15 +7,9 @@ type ToolsFunctionWithArg = (
   start: number
 ) => Promise<{ stdout: string; stderr: string }>;
 
-type ToolsFunctionWithArgs = (
-  directory: string,
-  start: number,
-  end: number
-) => Promise<{ stdout: string; stderr: string }>;
-
 export interface ToolsSwitch {
   'create-next-step': ToolsFunction;
-  'create-empty-steps': ToolsFunctionWithArgs;
+  'create-empty-steps': ToolsFunctionWithArg;
   'insert-step': ToolsFunctionWithArg;
   'delete-step': ToolsFunctionWithArg;
   'update-step-titles': ToolsFunction;
