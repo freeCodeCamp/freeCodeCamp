@@ -16,6 +16,7 @@
   - [Робота з Cypress тестами](how-to-add-cypress-tests.md)
   - [Робота над завданнями з відео](how-to-help-with-video-challenges.md)
   - [Work on the docs theme](how-to-work-on-the-docs-theme.md)
+  - [Work on the component library](how-to-work-on-the-component-library.md)
 - **Додаткові інструкції**
   - [Тестуйте переклади локально](how-to-test-translations-locally.md)
   - [Ознайомлення зі структурою файлів навчальної програми](curriculum-file-structure.md)
