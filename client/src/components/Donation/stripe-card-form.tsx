@@ -171,7 +171,7 @@ const StripeCardForm = ({
         type='submit'
       >
         {isAVariant === false && <SecurityLockIcon />}
-        {t('donate.donate-cta')}
+        {t('buttons.donate')}
       </Button>
     </Form>
   );
