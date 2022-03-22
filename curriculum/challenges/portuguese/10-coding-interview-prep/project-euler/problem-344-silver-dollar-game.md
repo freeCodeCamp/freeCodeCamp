@@ -8,7 +8,7 @@ dashedName: problem-344-silver-dollar-game
 
 # --description--
 
-O jogo de N.G. de Bruijn, conhecido como o jogo do dólar de prata, tem uma variante que pode ser descrita da seguinte forma:
+Uma variante de N.G. de Bruijn, conhecida como o jogo do dólar de prata, pode ser descrita da seguinte forma:
 
 Em uma faixa de quadrados, várias moedas são colocadas, estando, no máximo, uma moeda por quadrado. Apenas uma moeda, chamada de dólar de prata, tem qualquer valor. Dois jogadores se revezam fazendo movimentos. Em cada turno, um jogador deve fazer um movimento regular ou especial.
 

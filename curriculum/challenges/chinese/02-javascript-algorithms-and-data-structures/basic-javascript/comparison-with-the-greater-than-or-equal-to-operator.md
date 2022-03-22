@@ -16,13 +16,11 @@ dashedName: comparison-with-the-greater-than-or-equal-to-operator
 **例如：**
 
 ```js
-6   >=  6
-7   >= '3'
-2   >=  3
-'7' >=  9
+6   >=  6  // true
+7   >= '3' // true
+2   >=  3  // false
+'7' >=  9  // false
 ```
-
-按顺序，这些表达式会返回 `true`、`true`、`false` 和 `false`。
 
 # --instructions--
 
@@ -30,49 +28,49 @@ dashedName: comparison-with-the-greater-than-or-equal-to-operator
 
 # --hints--
 
-`testGreaterOrEqual(0)` 应该返回字符串 `Less than 10`。
+`testGreaterOrEqual(0)` 应该返回字符串 `Less than 10`
 
 ```js
 assert(testGreaterOrEqual(0) === 'Less than 10');
 ```
 
-`testGreaterOrEqual(9)` 应该返回字符串 `Less than 10`。
+`testGreaterOrEqual(9)` 应该返回字符串 `Less than 10`
 
 ```js
 assert(testGreaterOrEqual(9) === 'Less than 10');
 ```
 
-`testGreaterOrEqual(10)` 应该返回字符串 `10 or Over`。
+`testGreaterOrEqual(10)` 应该返回字符串 `10 or Over`
 
 ```js
 assert(testGreaterOrEqual(10) === '10 or Over');
 ```
 
-`testGreaterOrEqual(11)` 应该返回字符串 `10 or Over`。
+`testGreaterOrEqual(11)` 应该返回字符串 `10 or Over`
 
 ```js
 assert(testGreaterOrEqual(11) === '10 or Over');
 ```
 
-`testGreaterOrEqual(19)` 应该返回字符串 `10 or Over`。
+`testGreaterOrEqual(19)` 应该返回字符串 `10 or Over`
 
 ```js
 assert(testGreaterOrEqual(19) === '10 or Over');
 ```
 
-`testGreaterOrEqual(100)` 应该返回字符串 `20 or Over`。
+`testGreaterOrEqual(100)` 应该返回字符串 `20 or Over`
 
 ```js
 assert(testGreaterOrEqual(100) === '20 or Over');
 ```
 
-`testGreaterOrEqual(21)` 应该返回字符串 `20 or Over`。
+`testGreaterOrEqual(21)` 应该返回字符串 `20 or Over`
 
 ```js
 assert(testGreaterOrEqual(21) === '20 or Over');
 ```
 
-应该使用 `>=` 运算符至少两次。
+你应该使用 `>=` 运算符至少两次。
 
 ```js
 assert(code.match(/val\s*>=\s*('|")*\d+('|")*/g).length > 1);

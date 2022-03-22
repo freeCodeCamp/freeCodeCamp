@@ -17,7 +17,7 @@ After creating an area template for your grid container, as shown in the previou
 }
 ```
 
-This lets the grid know that you want the `item1` class to go in the area named `header`. In this case, the item will use the entire top row because that whole row is named as the header area.
+This lets the grid know that you want the `item1` class to go in the area named `header`. In this case, the item will use the entire top row because that whole row is named as the `header` area.
 
 # --instructions--
 

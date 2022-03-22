@@ -8,7 +8,7 @@ dashedName: problem-257-angular-bisectors
 
 # --description--
 
-Given is an integer sided triangle $ABC$ with sides $a ≤ b ≤ c$. ($AB = c$, $BC = a$ and $AC = b$).
+Given is an integer sided triangle $ABC$ with sides $a ≤ b ≤ c$ ($AB = c$, $BC = a$ and $AC = b$).
 
 The angular bisectors of the triangle intersect the sides at points $E$, $F$ and $G$ (see picture below).
 

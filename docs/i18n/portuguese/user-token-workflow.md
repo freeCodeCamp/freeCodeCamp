@@ -1,15 +1,15 @@
-# How the User Token Workflow Works
+# Como funciona o fluxo de trabalho do token do usuário
 
-User tokens are used to identify users to third parties so challenges completed using those services can be saved to a user's account.
+Os tokens de usuário são usados para identificar os usuários para terceiros. Assim, os desafios concluídos usando esses serviços podem ser salvos na conta de um usuário.
 
-## How they are created
+## Como eles são criados
 
-At the moment, the tokens are only used to submit the Relational Database challenges. A token gets created when a signed in user clicks the "Click here to start the course" or "Click here to start the project" buttons to start one of the Relational Database courses or projects.
+No momento, os tokens são usados apenas para enviar os desafios de Bancos de dados relacionais. Um token é criado quando um usuário conectado clica em "Clique aqui para iniciar o curso" ou "Clique aqui para iniciar o projeto" para iniciar um dos cursos ou projetos de Banco de dados relacionais.
 
-## When they get deleted
+## Quando eles forem excluídos ou deletados ou removidos
 
-A user token will be deleted when a user signs out of freeCodeCamp, resets their progress, deletes their account, or manually deletes the token using the widget on the settings page.
+Um token de usuário será excluído quando um usuário sai do freeCodeCamp, redefine seu progresso, exclui a conta ou exclui manualmente o token usando o widget na página de configurações.
 
-## How they work
+## Como eles funcionam
 
-Tokens are stored in a `UserToken` collection in the database. Each record has a unique `_id`, which is the token, and a `user_id` that links to the user's account from the `user` collection. The token is encoded using JWT and sent to the client when it's created. That encoded token is then given to third party services that need it and sent to our API by them when a challenge is completed. When our API gets it, it is decoded so we can identify the user submitting a challenge and save the completed challenge to their `completedChallenges`.
+Os tokens são armazenados em uma coleção chamada `UserToken` no banco de dados. Cada registro tem um `_id` único, que é o token, e um `user_id` que se vincula à conta do usuário da coleção `user`. O token é codificado utilizando JWT e enviado para o cliente quando ele é criado. Esse token codificado é então enviado aos serviços de terceiros que precisam dele e para a nossa API por eles quando um desafio é concluído. Quando nossa API o receber, ele é decodificado para que possamos identificar o usuário que está enviando um desafio e salvar o desafio completo em seus `completedChallenges`.

@@ -71,147 +71,147 @@
     "intro": [
       "En esta certificación de Diseño Web Responsivo, aprenderás los lenguajes que los desarrolladores usan para construir páginas web: HTML (Lenguaje de Marcado de Hipertexto) para el contenido, y CSS (hojas de estilo en cascada) para el diseño.",
       "Primero, crearás una aplicación de fotos de gatos para aprender los conceptos básicos de HTML y CSS. Más adelante, aprenderás técnicas modernas como variables CSS mediante la construcción de un pingüino, y las mejores prácticas para la accesibilidad mediante la construcción de un formulario web.",
-      "Finally, you'll learn how to make webpages that respond to different screen sizes by building a Twitter card with Flexbox, and a complex blog layout with CSS Grid."
+      "Finalmente, aprenderás cómo hacer páginas web que respondan a diferentes tamaños de pantalla construyendo una tarjeta de Twitter con Flexbox, y un diseño complejo de blog con CSS Grid."
     ],
-    "note": "Note: Some browser extensions, such as ad-blockers and dark mode extensions can interfere with the tests. If you face issues, we recommend disabling extensions that modify the content or layout of pages, while taking the course.",
+    "note": "Nota: Algunas extensiones del navegador, como bloqueadores de anuncios o extensiones de modo oscuro pueden interferir con las pruebas. Si tienes algun problema, te recomendamos deshabilitar las extensiones que modifiquen el contenido de la página, mientras tomas el curso.",
     "blocks": {
       "build-a-tribute-page-project": {
-        "title": "Tribute Page",
+        "title": "Página del homenaje",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a tribute page for a subject of your choosing, fictional or real."
+          "Este es uno de los proyectos necesarios para obtener su certificación.",
+          "Para este proyecto, construirás una página de homenaje para un tema de tu elección, ficción o real."
         ]
       },
       "build-a-personal-portfolio-webpage-project": {
-        "title": "Personal Portfolio Webpage",
+        "title": "Página web del Portafolio personal",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build your own personal portfolio page."
+          "Este es uno de los proyectos necesarios para obtener su certificación.",
+          "Para este proyecto, construirá su propia página de portafolio personal."
         ]
       },
       "build-a-product-landing-page-project": {
-        "title": "Product Landing Page",
+        "title": "Landing Page del producto",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a product landing page to market a product of your choice."
+          "Este es uno de los proyectos necesarios para obtener su certificación.",
+          "Para este proyecto, usted construirá una página de inicio de producto para comercializar un producto de su elección."
         ]
       },
       "build-a-survey-form-project": {
-        "title": "Survey Form",
+        "title": "Encuesta",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a survey form to collect data from your users."
+          "Este es uno de los proyectos necesarios para obtener su certificación.",
+          "Para este proyecto, construirá un formulario de encuesta para recopilar datos de sus usuarios."
         ]
       },
       "build-a-technical-documentation-page-project": {
-        "title": "Technical Documentation Page",
+        "title": "Página de documentación técnica",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a technical documentation page to serve as instruction or reference for a topic."
+          "Este es uno de los proyectos requeridos para obtener la certificación.",
+          "En este proyecto, construirás una página de documentación técnica que sirva de instrucción o de referencia para un tema."
         ]
       },
       "learn-html-by-building-a-cat-photo-app": {
-        "title": "Learn HTML by Building a Cat Photo App",
+        "title": "Aprende HTML construyendo una aplicación de fotos de gatos",
         "intro": [
-          "HTML tags give a webpage its structure. You can use HTML tags to add photos, buttons, and other elements to your webpage.",
-          "In this course, you'll learn the most common HTML tags by building your own cat photo app."
+          "Las etiquetas HTML dan a la página su estructura. Puedes usar etiquetas HTML para añadir fotos, botones, y otros elementos en tu página.",
+          "En este curso, aprenderás las etiquetas HTML más comunes por medio de la construcción de tu propia aplicación para fotos de gatos."
         ]
       },
       "learn-basic-css-by-building-a-cafe-menu": {
-        "title": "Learn Basic CSS by Building a Cafe Menu",
+        "title": "Aprende CSS básico construyendo un menú de cafetería",
         "intro": [
-          "CSS tells the browser how to display your webpage. You can use CSS to set the color, font, size, and other aspects of HTML elements.",
-          "In this course, you'll learn CSS by designing a menu page for a cafe webpage."
+          "CSS le dice al navegador cómo presentar tu página web. Puedes usar CSS para definir el color, fuente, tamaño, y otros aspectos de los elementos HTML.",
+          "En este curso, aprenderás CSS diseñando una página para el menú de la página web de un café."
         ]
       },
       "learn-the-css-box-model-by-building-a-rothko-painting": {
-        "title": "Learn the CSS Box Model by Building a Rothko Painting",
+        "title": "Aprende el Modelo de Cajas de CSS construyendo una pintura de Rothko",
         "intro": [
-          "Every HTML element is its own box – with its own spacing and a border. This is called the Box Model.",
-          "In this course, you'll use CSS and the Box Model to create your own Rothko-style rectangular art pieces."
+          "Cada elemento HTML es su propia caja – con su propio espaciado y borde. A esto se le llama Modelo de Caja.",
+          "En este curso, utilizarás CSS y el Modelo de Cajas para crear tus propias piezas de arte rectangulares al estilo de Rothko."
         ]
       },
       "learn-css-variables-by-building-a-city-skyline": {
-        "title": "Learn CSS Variables by Building a City Skyline",
+        "title": "Aprende variables CSS construyendo un horizonte de la ciudad",
         "intro": [
-          "CSS variables help you organize your styles and reuse them.",
-          "In this course, you'll build a city skyline. You'll learn how to configure CSS variables so you can reuse them whenever you want."
+          "Las variables de CSS te ayudan a organizar tus estilos y a reorganizarlos.",
+          "En este curso, construirás un horizonte de ciudad. Aprenderás cómo configurar variables de CSS de forma que puedas reusarlas cuando quieras."
         ]
       },
       "learn-html-forms-by-building-a-registration-form": {
-        "title": "Learn HTML Forms by Building a Registration Form",
+        "title": "Aprende formularios HTML construyendo un formulario de registro",
         "intro": [
-          "You can use HTML forms to collect information from people who visit your webpage.",
-          "In this course, you'll learn HTML forms by building a signup page. You'll learn how to control what types of data people can type into your form, and some new CSS tools for styling your page."
+          "Puedes hacer uso de formularios HTML para recopilar información de las personas que visitan tu página web.",
+          "En este curso, aprenderás formularios de HTML construyendo una página de registro. Aprenderás cómo controlar qué tipo de datos pueden colocarse en tu formulario, y herramientas nuevas de CSS para cambiar el diseño de tu página."
         ]
       },
       "learn-accessibility-by-building-a-quiz": {
-        "title": "Learn Accessibility by Building a Quiz",
+        "title": "Aprende accesibilidad construyendo un cuestionario",
         "intro": [
-          "Accessibility is making your webpage easy for all people to use – even people with disabilities.",
-          "In this course, you'll build a quiz webpage. You'll learn accessibility tools such as keyboard shortcuts, ARIA attributes, and design best practices."
+          "Accesibilidad es hacer que tu página web sea sencilla de usar para todas las personas, incluyendo a aquellas con discapacidades.",
+          "En este curso, construirás una página web de cuestionarios. Aprenderás herramientas de accesibilidad como atajos de teclado, atributos ARIA y mejores prácticas de diseño."
         ]
       },
       "learn-intermediate-css-by-building-a-picasso-painting": {
-        "title": "Learn Intermediate CSS by Building a Picasso Painting",
+        "title": "Aprende CSS intermedio construyendo una Pintura Picasso",
         "intro": [
-          "In this course, you'll learn how to use some intermediate CSS techniques by coding your own Picasso painting webpage. You'll learn about SVG icons, CSS positioning, and review other CSS skills you've learned."
+          "En este curso, aprenderás a usar algunas técnicas intermedias de CSS codificando tu propia página web de pintura de Picasso. Aprenderá sobre los iconos SVG, la posición CSS y revisará otras habilidades CSS que haya aprendido."
         ]
       },
       "learn-responsive-web-design-by-building-a-piano": {
-        "title": "Learn Responsive Web Design by Building a Piano",
+        "title": "Aprende diseño web adaptable construyendo un piano",
         "intro": [
-          "Responsive Design tells your webpage how it should look on different-sized screens.",
-          "In this course, you'll use CSS and Responsive Design to code a piano. You'll also learn more about media queries and pseudo selectors."
+          "El diseño web adaptable dice a tu página como debe verse en pantallas de diferentes tamaños.",
+          "En este curso, usarás CSS y Diseño Responsivo para programar un piano. También aprenderás más sobre las consultas de medios y pseudoselectores."
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
-        "title": "Learn CSS Flexbox by Building a Photo Gallery",
+        "title": "Aprende CSS Flexbox construyendo una galería de fotos",
         "intro": [
-          "Flexbox helps you design your webpage so that it looks good on any screen size.",
-          "In this course, you'll use Flexbox to build a responsive photo gallery webpage."
+          "Flexbox te ayuda a diseñar tu página web para que se vea bien en cualquier tamaño de pantalla.",
+          "En este curso, usarás Flexbox para crear una página web de una galería de fotos receptiva."
         ]
       },
       "learn-css-grid-by-building-a-magazine": {
-        "title": "Learn CSS Grid by Building a Magazine",
+        "title": "Aprende la cuadrícula de CSS construyendo una revista",
         "intro": [
-          "CSS Grid gives you control over the rows and columns of your webpage design.",
-          "In this course, you'll build a magazine article. You'll learn how to use CSS Grid, including concepts like grid rows and grid columns."
+          "CSS Grid le brinda control sobre las filas y columnas del diseño de su página web.",
+          "En este curso, construirás un artículo de revista. Aprenderás como usar CSS Grid, incluidos los conceptos como filas de cuadrícula y columnas de cuadrícula."
         ]
       },
       "learn-typography-by-building-a-nutrition-label": {
-        "title": "Learn Typography by Building a Nutrition Label",
+        "title": "Aprende tipografias compilando una etiqueta nutricional",
         "intro": [
-          "Typography is the art of styling your text to be easily readable and suit its purpose.",
-          "In this course, you'll use typography to build a nutrition label webpage. You'll learn how to style text, adjust line height, and position your text using CSS."
+          "La tipografía es el arte de diseñar tu texto haciéndolo de fácil lectura y adaptado a su propósito.",
+          "En este curso, usarás tipografía para compilar una página web de etiqueta. Aprenderás cómo estilizar el texto, ajustar altura de línea y la posición de tu texto usando CSS."
         ]
       },
       "learn-css-transforms-by-building-a-penguin": {
-        "title": "Learn CSS Transforms by Building a Penguin",
+        "title": "Aprende CSS Transforms construyéndo un pingüino",
         "intro": [
-          "You can transform HTML elements to create appealing designs that draw your reader's eye. You can use transforms to rotate elements, scale them, and more.",
-          "In this course, you'll build a penguin. You'll use CSS transforms to position and resize the parts of your penguin, create a background, and animate your work."
+          "Puedes transformar elementos HTML para crear diseños atractivos que atraigan la atención de tu lector. Puedes utilizar las transformaciones para girar elementos, escalarlos y mucho más.",
+          "En este curso, construirás un pingüino. Utilizarás transformaciones CSS para posicionar y cambiar el tamaño de las partes de tu pingüino, crearás un fondo y animarás tu trabajo."
         ]
       },
       "learn-css-animation-by-building-a-ferris-wheel": {
-        "title": "Learn CSS Animation by Building a Ferris Wheel",
+        "title": "Aprende a animar con CSS construyendo una noria",
         "intro": [
-          "You can use CSS animation to draw attention to specific sections of your webpage and make it more engaging.",
-          "In this course, you'll build a Ferris wheel. You'll learn how to use CSS to animate elements, transform them, and adjust their speed."
+          "Puedes utilizar la animación CSS para llamar la atención sobre secciones específicas de tu página web y hacerla más atractiva.",
+          "En este curso, construirás una noria. Aprenderás a utilizar CSS para animar elementos, transformarlos y ajustar su velocidad."
         ]
       },
       "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": {
-        "title": "Learn More About CSS Pseudo Selectors By Building A Balance Sheet",
+        "title": "Aprenda más sobre los pseudo selectores CSS construyendo un balance financiero",
         "intro": [
-          "You can use CSS pseudo selectors to change specific HTML elements.",
-          "In this course, you'll build a balance sheet using pseudo selectors. You'll learn how to change the style of an element when you hover over it with your mouse, and trigger other events on your webpage."
+          "Puede utilizar pseudoselectores CSS para cambiar elementos HTML específicos.",
+          "En este curso, construirás un balance usando pseudo selectores. Aprenderás a cambiar el estilo de un elemento al pasar el ratón por encima y a activar otros eventos en tu página web."
         ]
       },
       "learn-css-colors-by-building-a-set-of-colored-markers": {
-        "title": "Learn CSS Colors by Building a Set of Colored Markers",
+        "title": "Aprenda los colores de CSS construyendo un conjunto de marcadores de colores",
         "intro": [
-          "Selecting the correct colors for your webpage can greatly improve the aesthetic appeal to your readers.",
-          "In this course, you'll build a set of colored markers. You'll learn different ways to set color values and how to pair colors with each other."
+          "Seleccionar los colores correctos para tu página web puede mejorar enormemente el atractivo estético para tus lectores.",
+          "En este curso, construirás un conjunto de marcadores de color. Aprenderás diferentes maneras de establecer valores de color y cómo combinar colores entre sí."
         ]
       }
     }
@@ -426,109 +426,109 @@
     }
   },
   "relational-database": {
-    "title": "Relational Database (Beta)",
+    "title": "Base de datos Relacionales (Beta)",
     "intro": [
-      "For these courses, you will use real developer tools and software including VS Code, PostgreSQL, and the Linux / Unix command line to complete interactive tutorials and build projects.",
-      "These courses start off with basic Bash commands. Using the terminal, you will learn everything from navigating and manipulating a file system, scripting in Bash, all the way to advanced usage.",
-      "Next, you will learn how to create and use a relational database with PostgreSQL, a database management system, and SQL, the language of these databases.",
-      "Finally, you will learn Git, the version control system, an essential tool of every developer."
+      "Para estos cursos, usarás herramientas reales de desarrollador y software incluyendo código VS, PostgreSQL, y la línea de comandos Linux / Unix para completar tutoriales interactivos y construir proyectos.",
+      "Estos cursos empiezan con comandos básicos de Base. Utilizando la terminal, aprenderá todo, desde navegar y manipular un sistema de archivos, programar en Bash, hasta el uso avanzado.",
+      "A continuación, aprenderá cómo crear y utilizar una base de datos relacional con PostgreSQL, un sistema de gestión de bases de datos, y SQL, el idioma de estas bases de datos.",
+      "Por ultimo, aprenderás Git, el sistema de control de version, una herramienta esencial de cada desarrollador."
     ],
     "blocks": {
       "build-a-celestial-bodies-database-project": {
-        "title": "Celestial Bodies Database",
+        "title": "Base de datos de cuerpos celestes",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a database of celestial bodies using PostgreSQL."
+          "Este es uno de los proyectos necesarios para obtener su certificación.",
+          "Para este proyecto, construirás una base de datos de cuerpos celestes usando PostgreSQL."
         ]
       },
       "build-a-number-guessing-game-project": {
-        "title": "Number Guessing Game",
+        "title": "Juego de adivinanzas de números",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will use Bash scripting, PostgreSQL, and Git to create a number guessing game that runs in the terminal and saves user information."
+          "Este es uno de los proyectos necesarios para obtener su certificación.",
+          "Para este proyecto, usarás el script Bash, PostgreSQL, y Git para crear un juego de adivinación de números que se ejecuta en la terminal y guarda información del usuario."
         ]
       },
       "build-a-periodic-table-database-project": {
-        "title": "Periodic Table Database",
+        "title": "Base de datos de la Tabla Periódica",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will create Bash a script to get information about chemical elements from a periodic table database."
+          "Este es uno de los proyectos necesarios para obtener su certificación.",
+          "Para este proyecto, crearás  Bash un script para obtener información sobre elementos químicos de una base de datos de tabla periódica."
         ]
       },
       "build-a-salon-appointment-scheduler-project": {
-        "title": "Salon Appointment Scheduler",
+        "title": "Planificador de citas de salón",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will create an interactive Bash program that uses PostgreSQL to track the customers and appointments for your salon."
+          "Este es uno de los proyectos necesarios para ganar su certificación.",
+          "Para este proyecto, crearás un programa Bash interactivo que utilice PostgreSQL para rastrear los clientes y citas de su salón."
         ]
       },
       "build-a-world-cup-database-project": {
-        "title": "World Cup Database",
+        "title": "Base de datos de la Copa del Mundo",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will create a Bash script that enters information from World Cup games into PostgreSQL, then query the database for useful statistics."
+          "Este es uno de los proyectos necesarios para obtener su certificación.",
+          "Para este proyecto, crearás un script Bash que ingrese información de los juegos de la Copa del Mundo en PostgreSQL, luego consultarás la base de datos para obtener estadísticas útiles."
         ]
       },
       "learn-advanced-bash-by-building-a-kitty-ipsum-translator": {
-        "title": "Learn Advanced Bash by Building a Kitty Ipsum Translator",
+        "title": "Aprende Bash Avanzado construyendo un traductor de Kitty Ipsum",
         "intro": [
-          "There's more to Bash commands than you might think.",
-          "In this 140-lesson course, you will learn some more complex commands, and the details of how commands work."
+          "Hay más comandos de Bash de lo que se podría pensar.",
+          "En este curso de 140 lecciones, aprenderás algunos comandos más complejos, y los detalles de cómo funcionan los comandos."
         ]
       },
       "learn-bash-and-sql-by-building-a-bike-rental-shop": {
-        "title": "Learn Bash and SQL by Building a Bike Rental Shop",
+        "title": "Aprende Bash y SQL construyendo una tienda de alquiler de bicicletas",
         "intro": [
-          "In this 210-lesson course, you will build an interactive Bash program that stores rental information for your bike rental shop using PostgreSQL."
+          "En este curso de 210 lecciones, construirás un programa interactivo de Bash que almacena información de alquiler para tu tienda de alquiler de bicicletas usando PostgreSQL."
         ]
       },
       "learn-bash-by-building-a-boilerplate": {
-        "title": "Learn Bash by Building a Boilerplate",
+        "title": "Aprende Bash Construyendo una Plantilla",
         "intro": [
-          "The terminal allows you to send text commands to your computer that can manipulate the file system, run programs, automate tasks, and much more.",
-          "In this 170-lesson course, you will learn terminal commands by creating a website boilerplate using only the command line."
+          "La terminal le permite enviar comandos de texto a su computadora que pueden manipular el sistema de archivos, ejecutar programas, automatizar tareas y mucho más.",
+          "En este curso de 170 lecciones, aprenderá los comandos del terminal creando un boilerplate del sitio web usando sólo la línea de comandos."
         ]
       },
       "learn-bash-scripting-by-building-five-programs": {
-        "title": "Learn Bash Scripting by Building Five Programs",
+        "title": "Aprende Bash Scripting construyendo cinco programas",
         "intro": [
-          "Bash scripts combine terminal commands and logic into programs that can execute or automate tasks, and much more.",
-          "In this 220-lesson course, you will learn more terminal commands and how to use them within Bash scripts by creating five small programs."
+          "Los scripts Bash combinan comandos de terminal y lógica en programas que pueden ejecutar o automatizar tareas, y mucho más.",
+          "En este curso de 220 lecciones, aprenderá más comandos de terminal y cómo usarlos dentro de scripts de Bash creando cinco programas pequeños."
         ]
       },
       "learn-git-by-building-an-sql-reference-object": {
-        "title": "Learn Git by Building an SQL Reference Object",
+        "title": "Aprende Git construyendo un objeto de referencia SQL",
         "intro": [
-          "Git is a version control system that keeps track of all the changes you make to your codebase.",
-          "In this 240-lesson course, you will learn how Git keeps track of your code by creating an object containing commonly used SQL commands."
+          "Git es un sistema de control de versiones que mantiene un seguimiento de todos los cambios que realiza en su código base.",
+          "En este curso de 240 lecciones, aprenderá cómo Git realiza un seguimiento de su código creando un objeto que contiene comandos SQL comúnmente utilizados."
         ]
       },
       "learn-nano-by-building-a-castle": {
-        "title": "Learn Nano by Building a Castle",
+        "title": "Aprende Nano construyendo un castillo",
         "intro": [
-          "Nano is a program that allows you to edit files right in the terminal.",
-          "In this 40-lesson course, you will learn how to edit files in the terminal with Nano while building a castle."
+          "Nano es un programa que te permite editar archivos directamente en la terminal.",
+          "En este curso de 40 lecciones, aprenderás cómo editar archivos en la terminal con Nano mientras construyes un castillo."
         ]
       },
       "learn-relational-databases-by-building-a-mario-database": {
-        "title": "Learn Relational Databases by Building a Mario Database",
+        "title": "Aprende bases de datos relacionales construyendo una base de datos Mario",
         "intro": [
-          "A relational database organizes data into tables that are linked together through relationships.",
-          "In this 165-lesson course, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
+          "Una base de datos relacional organiza datos en tablas que están enlazadas a través de relaciones.",
+          "En este curso de 165 lecciones, aprenderá los fundamentos de una base de datos relacional creando una base de datos PostgreSQL llena de caracteres de videojuego."
         ]
       },
       "learn-sql-by-building-a-student-database-part-1": {
-        "title": "Learn SQL by Building a Student Database: Part 1",
+        "title": "Aprender SQL construyendo una base de datos de estudiantes: Parte 1",
         "intro": [
-          "SQL, or Structured Query Language, is the language for communicating with a relational database.",
-          "In this 140-lesson course, you will create a Bash script that uses SQL to enter information about your computer science students into PostgreSQL."
+          "SQL, o Query Language, es el lenguaje para comunicarse con una base de datos relacional.",
+          "En este curso de 140 lecciones, creará un script Bash que utilice SQL para introducir información sobre sus estudiantes de informática en PostgreSQL."
         ]
       },
       "learn-sql-by-building-a-student-database-part-2": {
-        "title": "Learn SQL by Building a Student Database: Part 2",
+        "title": "Aprender SQL construyendo una base de datos de estudiantes: Parte 2",
         "intro": [
-          "SQL join commands are used to combine information from multiple tables in a relational database",
-          "In this 140-lesson course, you will complete your student database while diving deeper into SQL commands."
+          "Los comandos SQL join se utilizan para combinar información de múltiples tablas en una base de datos relacional",
+          "En este curso de 140 lecciones, completará su base de datos de estudiantes mientras se sumerge más en comandos SQL."
         ]
       }
     }
@@ -668,29 +668,29 @@
     "intro": [
       "Con todo lo que hacemos en línea, hay una gran cantidad de información sensible en riesgo: direcciones de correo electrónico, contraseñas, números de teléfono y mucho más.",
       "Con la Certificación de Seguridad de Información, construirás aplicaciones web seguras con HelmetJS para aprender los fundamentos de la protección de la información en línea de la gente.",
-      "You'll also build a TCP client, and an Nmap and port scanner in Python. This will help you learn the basics of penetration testing — an important component of good information security."
+      "También construirás un cliente TCP, y un escáner de puertos y Nmap con Python. Esto te ayudará a aprender los fundamentos de las pruebas de penetración - un componente importante para la buena seguridad de la información."
     ],
     "note": "",
     "blocks": {
       "information-security-with-helmetjs": {
-        "title": "Information Security with HelmetJS",
+        "title": "Seguridad de la Información con HelmetJS",
         "intro": [
-          "This programming course focuses on HelmetJS, a type of middleware for Express-based applications that automatically sets HTTP headers. This way it can prevent sensitive information from unintentionally being passed between the server and client.",
-          "Completing the courses below will help you understand how to protect your website from malicious behavior."
+          "Este curso de programación se enfoca en HelmetJS, un tipo de middleware para aplicaciones basadas en Express que establece automáticamente los encabezados HTTP. De esta forma, se puede prevenir que se pase información sensible entre el servidor y el cliente.",
+          "Completar los siguientes cursos, te ayudará a entender como proteger tu página web de comportamiento malicioso."
         ]
       },
       "python-for-penetration-testing": {
-        "title": "Python for Penetration Testing",
+        "title": "Python para Pruebas de Penetración",
         "intro": [
-          "These video courses teach you penetration testing with Python. Also known as a pen test, penetration testing is a simulated attack against a system to check for vulnerabilities.",
-          "In this course, you'll learn about sockets, create a TCP server and client, build an Nmap scanner, and other tools and techniques that pen testers use daily."
+          "Estos cursos en video te enseñarán pruebas de penetración con Python. También conocidas como pen test, las pruebas de penetración son ataques simulados contra un sistema para revisar vulnerabilidades.",
+          "En este curso aprenderás sobre sockets, a crear un servidor y un cliente TCP, a crear un escáner Nmap, y otras herramientas y técnicas que los probadores de penetración utilizan a diario."
         ]
       },
       "information-security-projects": {
-        "title": "Information Security Projects",
+        "title": "Proyectos de Seguridad de la Información",
         "intro": [
-          "Now it’s time to put your new information security skills to work. These projects will give you a chance to apply the infosec skills, principles, and concepts you've learned.",
-          "When you are done, you will have plenty of information security projects under your belt, along with a certification that you can show off to friends, family, and employers."
+          "Ahora es tiempo de poner a trabajar tus nuevas habilidades en seguridad de la información. Estos proyectos te darán oportunidad de aplicar tus habilidades, principios y conceptos que has aprendido.",
+          "Cuando termines, tendrás muchos proyectos de seguridad de la información en tu currículum, junto con una certificación que podrás mostrar a tus amigos, familiares y empleadores."
         ]
       }
     }
@@ -698,30 +698,30 @@
   "machine-learning-with-python": {
     "title": "Aprendizaje Automático con Python",
     "intro": [
-      "Machine learning has many practical applications that you can use in your projects or on the job.",
-      "In the Machine Learning with Python Certification, you'll use the TensorFlow framework to build several neural networks and explore more advanced techniques like natural language processing and reinforcement learning.",
-      "You'll also dive into neural networks, and learn the principles behind how deep, recurrent, and convolutional neural networks work."
+      "Machine learning tiene muchas aplicaciones prácticas que puedes utilizar en tus proyectos o en tu trabajo.",
+      "En la certificación de Machine Learning con Python, usarás el framework TensorFlow para construir varias redes neuronales y explorar técnicas más avanzadas como: el procesamiento de lenguaje natural y el aprendizaje por refuerzo.",
+      "También te sumergirás en redes neuronales y aprenderás los principios detrás de cómo funcionan las redes neuronales profundas, recurrentes y convolucionales."
     ],
     "note": "",
     "blocks": {
       "tensorflow": {
         "title": "Tensorflow",
         "intro": [
-          "TensorFlow is an open source framework that makes machine learning and neural networking easier to use.",
-          "The following video course was created by Tim Ruscica, also known as “Tech With Tim”. It will help you to understand TensorFlow and some of its powerful capabilities."
+          "TensorFlow es un framework de código abierto que facilita el aprendizaje automático y el uso de redes neuronales.",
+          "El siguiente video curso fue creado por Tim Ruscica, también conocido como “Tech With Tim”. Le ayudará a entender TensorFlow y algunas de sus potentes capacidades."
         ]
       },
       "how-neural-networks-work": {
-        "title": "How Neural Networks Work",
+        "title": "Cómo funcionan las redes neuronales",
         "intro": [
-          "Neural networks are at the core of what we call artificial intelligence today. But historically they've been hard to understand. Especially for beginners in the machine learning field.",
-          "Even if you are completely new to neural networks, these video courses by Brandon Rohrer will get you comfortable with the concepts and the math behind them."
+          "Las redes neuronales están en el centro de lo que hoy llamamos inteligencia artificial. Pero históricamente han sido difíciles de entender, especialmente para los principiantes en el campo de aprendizaje de máquinas.",
+          "Incluso si eres completamente nuevo en las redes neuronales, estos cursos de video de Brandon Rohrer te harán sentir cómodo con los conceptos y las matemáticas detrás de ellos."
         ]
       },
       "machine-learning-with-python-projects": {
-        "title": "Machine Learning with Python Projects",
+        "title": "Aprendizaje automático con proyectos Python",
         "intro": [
-          "Machine learning has many practical applications. By completing these free and challenging coding projects, you will demonstrate that you have a good foundational knowledge of machine learning, and qualify for your Machine Learning with Python certification."
+          "El aprendizaje automático tiene muchas aplicaciones prácticas. Al completar estos proyectos de programación gratuitos y desafiantes, demostrará que tiene un buen conocimiento fundacional de aprendizaje automático, y califica para su certificación de aprendizaje automático con Python."
         ]
       }
     }
@@ -729,30 +729,30 @@
   "coding-interview-prep": {
     "title": "Preparación de Entrevistas de Programación",
     "intro": [
-      "If you're looking for free coding exercises to prepare for your next job interview, we've got you covered.",
-      "This section contains hundreds of coding challenges that test your knowledge of algorithms, data structures, and mathematics. It also has a number of take-home projects you can use to strengthen your skills, or add to your portfolio."
+      "Si está buscando ejercicios gratuitos de programación para prepararse para tu próxima entrevista de trabajo, aquí los tenemos.",
+      "Esta sección contiene cientos de desafíos de programación que prueban su conocimiento de algoritmos, estructuras de datos y matemáticas. También tiene una serie de proyectos para llevarse a casa que puede utilizar para fortalecer sus habilidades, o añadir a su portafolio."
     ],
     "note": "",
     "blocks": {
       "algorithms": {
-        "title": "Algorithms",
+        "title": "Algoritmos",
         "intro": [
-          "These free programming exercises will teach you about some common algorithms that you will likely encounter in real life. They are a great opportunity to improve your logic and programming skills.",
-          "These algorithms are frequently used in job interviews to test a candidate's skills. We'll give you clear and concise explanations of how these different algorithms work so you can implement a solution for each one."
+          "Estos ejercicios de programación gratuita le enseñarán algunos algoritmos comunes que probablemente encontrará en la vida real. Son una gran oportunidad para mejorar su lógica y habilidades de programación.",
+          "Estos algoritmos se utilizan frecuentemente en entrevistas de trabajo para probar las habilidades de un candidato. Le daremos explicaciones claras y concisas de cómo funcionan estos diferentes algoritmos para que pueda implementar una solución para cada uno."
         ]
       },
       "data-structures": {
-        "title": "Data Structures",
+        "title": "Estructuras de datos",
         "intro": [
-          "These free programming courses are meant to help you deal with large and complex data structures that you may not yet be familiar with.",
-          "Working through the courses below, you will learn about each type of data structure, and implement algorithms to reinforce your understanding of them."
+          "Estos cursos de programación gratuita están pensados para ayudarle a manejar estructuras de datos grandes y complejas con las que todavía no esté familiarizado.",
+          "Realizando los cursos siguientes, aprenderás sobre cada tipo de estructura de datos, e implementarás algoritmos para reforzar tu entendimiento de ellos."
         ]
       },
       "take-home-projects": {
-        "title": "Take Home Projects",
+        "title": "Proyectos Domiciliarios",
         "intro": [
-          "Programming interviews have always been stressful. Job applicants are sometimes given a take home project to be completed outside of the interview. These types of interviews usually require a lot of work, but they're a great way for employers to see how you might perform on the job.",
-          "Build the bonus coding projects below for extra practice. Take your time, make them great, and put them on your resume or portfolio to show potential employers."
+          "Las entrevistas de programación siempre han sido estresantes. A los solicitantes de empleo a veces se les da un proyecto para llevarse a casa y completarlo fuera de la entrevista. Este tipo de entrevistas normalmente requieren mucho trabajo, pero son una manera genial para que los empleadores vean como podrías desempeñarte en el trabajo.",
+          "Construye los proyectos extra, para más práctica. Tómate tu tiempo, hazlos geniales, ponlos en tu currículum o portfolio para mostrarlos a tus posibles empleadores."
         ]
       },
       "rosetta-code": {
@@ -765,8 +765,8 @@
       "project-euler": {
         "title": "Project Euler",
         "intro": [
-          "Complete the programming challenges below, from the massive Project Euler archives. These will harden your algorithm and mathematics knowledge.",
-          "These problems range in difficulty and, for many, the experience is inductive chain learning. That is, by solving one problem, it will expose you to a new concept that allows you to undertake a previously inaccessible problem. Can you finish them all?"
+          "Completa los siguientes desafíos de programación de los masivos archivos del Project Euler. Estos fortalecerán tus conocimientos de algoritmos y matemáticas.",
+          "Estos problemas varían en dificultad y para muchos, la experiencia es un proceso en cadena de aprendizaje inductivo. Es decir, al resolver un problema te expondrá a un concepto nuevo que te permita afrontar un problema previamente inaccesible. ¿Puedes terminarlos todos?"
         ]
       }
     }
@@ -775,13 +775,13 @@
     "certification": "Certificación de {{cert}}",
     "browse-other": "Navega por nuestras otras certificaciones gratuitas\n(recomendamos hacerlo en orden)",
     "courses": "Cursos",
-    "steps": "Steps",
-    "expand": "Expand course",
-    "collapse": "Collapse course",
-    "legacy-header": "Legacy Courses",
-    "legacy-desc": "These courses are no longer part of the certification path, but are still available for you to further your learning.",
-    "viewing-upcoming-change": "You are looking at a beta page. ",
-    "go-back-to-learn": "Go back to the stable version of the curriculum.",
-    "read-database-cert-article": "Please read this forum post before proceeding."
+    "steps": "Pasos",
+    "expand": "Expandir cursos",
+    "collapse": "Contraer curso",
+    "legacy-header": "Cursos Antiguos",
+    "legacy-desc": "Estos cursos ya no forman parte de la ruta de certificación, pero todavía están disponibles para tu aprendizaje.",
+    "viewing-upcoming-change": "Estás viendo una página beta. ",
+    "go-back-to-learn": "Volver a la versión estable del currículum.",
+    "read-database-cert-article": "Por favor, lea este post del foro antes de continuar."
   }
 }
