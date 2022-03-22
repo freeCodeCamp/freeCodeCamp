@@ -1,5 +1,5 @@
 const Joi = require('joi');
-1;
+
 Joi.objectId = require('joi-objectid')(Joi);
 
 const { challengeTypes } = require('../../client/utils/challenge-types');
