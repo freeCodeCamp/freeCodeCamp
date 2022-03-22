@@ -177,35 +177,31 @@ async function buildBlocks({ basename: blockName }, curriculum, superBlock) {
     __dirname,
     `./challenges/_meta/${blockName}/meta.json`
   );
+
   let blockMeta;
 
-  fs.readFile(metaPath, 'utf-8', (err, fileContent) => {
-    // checks if file is a cert
+  if (fs.existsSync(metaPath)) {
+    // try to read the file, if the meta path does not exist it should be a certification.
+    // As they do not have meta files.
 
-    if (err && err.code == 'ENOENT') {
-      curriculum['certifications'].blocks[blockName] = { challenges: [] };
-    } else if (err && err.code != 'MODULE_NOT_FOUND') {
-      throw err;
+    blockMeta = JSON.parse(fs.readFileSync(metaPath));
+
+    const { isUpcomingChange } = blockMeta;
+
+    if (typeof isUpcomingChange !== 'boolean') {
+      throw Error(
+        `meta file at ${metaPath} is missing 'isUpcomingChange', it must be 'true' or 'false'`
+      );
     }
 
-    if (fileContent) {
-      blockMeta = JSON.parse(fileContent);
-
-      const { isUpcomingChange } = blockMeta;
-
-      if (typeof isUpcomingChange !== 'boolean') {
-        throw Error(
-          `meta file at ${metaPath} is missing 'isUpcomingChange', it must be 'true' or 'false'`
-        );
-      }
-
-      if (!isUpcomingChange || showUpcomingChanges) {
-        // add the block to the superBlock
-        const blockInfo = { meta: blockMeta, challenges: [] };
-        curriculum[superBlock].blocks[blockName] = blockInfo;
-      }
+    if (!isUpcomingChange || showUpcomingChanges) {
+      // add the block to the superBlock
+      const blockInfo = { meta: blockMeta, challenges: [] };
+      curriculum[superBlock].blocks[blockName] = blockInfo;
     }
-  });
+  } else {
+    curriculum['certifications'].blocks[blockName] = { challenges: [] };
+  }
 }
 
 async function buildSuperBlocks({ path, fullPath }, curriculum) {
