@@ -12,7 +12,7 @@ const CreateEmptySteps = ({ superblock, block }: BlockRequiredProps) => {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ start: num })
+        body: JSON.stringify({ num })
       }
     )
       .then(res => res.json() as Promise<{ stdout: string; stderr: string }>)
