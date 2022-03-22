@@ -9,21 +9,29 @@ import { createSelector } from 'reselect';
 import IntroDescription from '../components/Intro/components/IntroDescription';
 import createRedirect from '../components/create-redirect';
 import { ButtonSpacer, Spacer } from '../components/helpers';
+import envData from '../../../config/env.json';
 
-import { acceptTerms, userSelector } from '../redux';
+import { acceptTerms, userSelector, isSignedInSelector } from '../redux';
+
+const { apiLocation, homeLocation } = envData;
 
 import './email-sign-up.css';
-
 interface AcceptPrivacyTermsProps {
   acceptTerms: (accept: boolean | null) => void;
   acceptedPrivacyTerms: boolean;
+  isSignedIn: boolean;
   t: TFunction;
 }
 
 const mapStateToProps = createSelector(
   userSelector,
-  ({ acceptedPrivacyTerms }: { acceptedPrivacyTerms: boolean }) => ({
-    acceptedPrivacyTerms
+  isSignedInSelector,
+  (
+    { acceptedPrivacyTerms }: { acceptedPrivacyTerms: boolean },
+    isSignedIn: boolean
+  ) => ({
+    acceptedPrivacyTerms,
+    isSignedIn
   })
 );
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -33,10 +41,12 @@ const RedirectToLearn = createRedirect('/learn');
 function AcceptPrivacyTerms({
   acceptTerms,
   acceptedPrivacyTerms,
+  isSignedIn,
   t
 }: AcceptPrivacyTermsProps) {
   const acceptedPrivacyRef = useRef(acceptedPrivacyTerms);
   const acceptTermsRef = useRef(acceptTerms);
+
   useEffect(() => {
     acceptedPrivacyRef.current = acceptedPrivacyTerms;
     acceptTermsRef.current = acceptTerms;
@@ -59,28 +69,11 @@ function AcceptPrivacyTerms({
     acceptTerms(isWeeklyEmailAccepted);
   }
 
-  return acceptedPrivacyTerms ? (
-    <RedirectToLearn />
-  ) : (
-    <>
-      <Helmet>
-        <title>{t('misc.email-signup')} | freeCodeCamp.org</title>
-      </Helmet>
-      <Grid>
+  function renderEmailListOptin(isSignedIn: boolean) {
+    const href = isSignedIn ? `${homeLocation}/learn` : `${apiLocation}/signin`;
+    if (isSignedIn) {
+      return (
         <Row>
-          <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-            <Spacer />
-            <IntroDescription />
-            <hr />
-          </Col>
-        </Row>
-        <Row className='email-sign-up' data-cy='email-sign-up'>
-          <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-            <strong>{t('misc.quincy')}</strong>
-            <Spacer />
-            <p>{t('misc.email-blast')}</p>
-            <Spacer />
-          </Col>
           <Col md={4} mdOffset={2} sm={5} smOffset={1} xs={12}>
             <Button
               block={true}
@@ -105,6 +98,50 @@ function AcceptPrivacyTerms({
             </Button>
             <ButtonSpacer />
           </Col>
+        </Row>
+      );
+    } else {
+      return (
+        <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+          <ButtonSpacer />
+          <Button
+            block={true}
+            bsSize='lg'
+            bsStyle='primary'
+            className='big-cta-btn'
+            href={href}
+          >
+            {t('buttons.sign-up-email-list')}
+          </Button>
+          <ButtonSpacer />
+        </Col>
+      );
+    }
+  }
+
+  return acceptedPrivacyTerms ? (
+    <RedirectToLearn />
+  ) : (
+    <>
+      <Helmet>
+        <title>{t('misc.email-signup')} | freeCodeCamp.org</title>
+      </Helmet>
+      <Grid>
+        <Row>
+          <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+            <Spacer />
+            <IntroDescription />
+            <hr />
+          </Col>
+        </Row>
+        <Row className='email-sign-up' data-cy='email-sign-up'>
+          <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+            <strong>{t('misc.quincy')}</strong>
+            <Spacer />
+            <p>{t('misc.email-blast')}</p>
+            <Spacer />
+          </Col>
+          {renderEmailListOptin(isSignedIn)}
           <Col xs={12}>
             <Spacer />
           </Col>
