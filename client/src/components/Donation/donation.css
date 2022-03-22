@@ -334,6 +334,10 @@ li.disabled > a {
   height: 22px;
 }
 
+.confirm-donation-btn svg.svg-inline--fa.fa-lock {
+  margin-bottom: 2px;
+}
+
 @media screen and (min-width: 355px) {
   .form-payment-methods {
     height: 30px;
