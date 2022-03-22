@@ -4,7 +4,7 @@ import { ChallengeData } from '../../../interfaces/ChallengeData';
 import './Block.css';
 
 const Block = () => {
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<Error | null>(null);
   const [loading, setLoading] = useState(false);
   const [items, setItems] = useState([] as ChallengeData[]);
   const params = useParams() as { superblock: string; block: string };
@@ -23,16 +23,16 @@ const Block = () => {
           setLoading(false);
           setItems(superblocks);
         },
-        error => {
+        (error: Error) => {
           setLoading(false);
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
           setError(error);
+        }
         }
       );
   };
 
   if (error) {
-    return <div>Error: {(error as Error).message}</div>;
+    return <div>Error: {error.message}</div>;
   }
   if (loading) {
     return <div>Loading...</div>;

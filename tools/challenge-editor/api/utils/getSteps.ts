@@ -38,21 +38,22 @@ export const getSteps = async (sup: string, block: string) => {
   const metaData = JSON.parse(await readFile(metaPath, 'utf8')) as PartialMeta;
 
   const files = await readdir(filePath);
-  const fileData: ChallengeData[] = [];
+  const stepFilenames = await readdir(filePath);
+  const stepData = await Promise.all(
+    stepFilenames.map(async filename => {
+      const stepPath = join(filePath, filename);
+      const step = await readFile(stepPath, 'utf8');
+      const frontMatter = matter(step);
 
-  for (const file of files) {
-    const nestedFilePath = join(filePath, file);
-    const nestedFileData = await readFile(nestedFilePath, 'utf8');
-    const frontMatter = matter(nestedFileData);
+      return {
+        name: frontMatter.data.title as string,
+        id: frontMatter.data.id as string,
+        path: filename
+      };
+    })
+  );
 
-    fileData.push({
-      name: frontMatter.data.title as string,
-      id: frontMatter.data.id as string,
-      path: file
-    });
-  }
-
-  return fileData.sort(
+  return stepData.sort(
     (a, b) => getFileOrder(a.id, metaData) - getFileOrder(b.id, metaData)
   );
 };

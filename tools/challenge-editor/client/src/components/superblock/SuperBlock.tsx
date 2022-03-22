@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { Block } from '../../../interfaces/Block';
 
 const SuperBlock = () => {
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<Error | null>(null);
   const [loading, setLoading] = useState(false);
   const [items, setItems] = useState([] as Block[]);
   const params = useParams() as { superblock: string; block: string };
@@ -22,16 +22,15 @@ const SuperBlock = () => {
           setLoading(false);
           setItems(blocks);
         },
-        error => {
+        (error: Error) => {
           setLoading(false);
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
           setError(error);
         }
       );
   };
 
   if (error) {
-    return <div>Error: {(error as Error).message}</div>;
+    return <div>Error: {error.message}</div>;
   }
   if (loading) {
     return <div>Loading...</div>;

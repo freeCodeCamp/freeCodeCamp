@@ -10,9 +10,12 @@ import SaveChallenge from '../buttons/SaveChallenge';
 import './Editor.css';
 
 const Editor = () => {
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<Error | null>(null);
   const [loading, setLoading] = useState(false);
-  const [items, setItems] = useState({} as ChallengeContent);
+  const [items, setItems] = useState({
+    name: '',
+    fileData: ''
+  });
   const [input, setInput] = useState('');
   const params = useParams() as {
     superblock: string;
@@ -37,15 +40,14 @@ const Editor = () => {
           setItems(content);
           setInput(content.fileData);
         },
-        error => {
+        (error: Error) => {
           setLoading(false);
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
           setError(error);
         }
       );
   };
 
-  const changeHandle = (
+  const handleChange = (
     editor: codemirror.Editor,
     data: codemirror.EditorChange,
     value: string
@@ -54,7 +56,7 @@ const Editor = () => {
   };
 
   if (error) {
-    return <div>Error: {(error as Error).message}</div>;
+    return <div>Error: {error.message}</div>;
   }
   if (loading) {
     return <div>Loading...</div>;
@@ -64,7 +66,7 @@ const Editor = () => {
       <h1>{items.name}</h1>
       <CodeMirror
         value={input}
-        onBeforeChange={changeHandle}
+        onBeforeChange={handleChange}
         options={{
           mode: {
             name: 'markdown',

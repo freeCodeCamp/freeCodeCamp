@@ -16,30 +16,30 @@ export const getBlocks = async (sup: string) => {
   );
 
   const files = await readdir(filePath);
-  const blocks: { name: string; path: string }[] = [];
+  const blocks = await Promise.all(
+    files.map(async file => {
+      const metaPath = join(
+        process.cwd(),
+        '..',
+        '..',
+        '..',
+        'curriculum',
+        'challenges',
+        '_meta',
+        file,
+        'meta.json'
+      );
 
-  for (const file of files) {
-    const metaPath = join(
-      process.cwd(),
-      '..',
-      '..',
-      '..',
-      'curriculum',
-      'challenges',
-      '_meta',
-      file,
-      'meta.json'
-    );
+      const metaData = JSON.parse(
+        await readFile(metaPath, 'utf8')
+      ) as PartialMeta;
 
-    const metaData = JSON.parse(
-      await readFile(metaPath, 'utf8')
-    ) as PartialMeta;
-
-    blocks.push({
-      name: metaData.name,
-      path: file
-    });
-  }
+      return {
+        name: metaData.name,
+        path: file
+      };
+    })
+  );
 
   return blocks;
 };

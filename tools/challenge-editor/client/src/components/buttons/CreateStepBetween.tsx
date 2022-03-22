@@ -6,7 +6,7 @@ const CreateStepBetween = ({ superblock, block }: BlockRequiredProps) => {
 
   const click = () => {
     fetch(
-      `http://localhost:3200/${superblock}/${block}/_tools/create-between`,
+      `http://localhost:3200/${superblock}/${block}/_tools/insert-step`,
       {
         method: 'POST',
         headers: {

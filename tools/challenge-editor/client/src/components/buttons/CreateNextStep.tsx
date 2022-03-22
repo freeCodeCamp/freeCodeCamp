@@ -3,7 +3,7 @@ import { BlockRequiredProps } from '../../../interfaces/PropTypes';
 
 const CreateNextStep = ({ superblock, block }: BlockRequiredProps) => {
   const click = () => {
-    fetch(`http://localhost:3200/${superblock}/${block}/_tools/create-next`, {
+    fetch(`http://localhost:3200/${superblock}/${block}/_tools/create-next-step`, {
       method: 'POST'
     })
       .then(res => res.json() as Promise<{ stdout: string; stderr: string }>)
