@@ -306,6 +306,7 @@
     "runs-in-vm": "The project runs in a virtual machine, complete the user stories described in there and get all the tests to pass to finish step 1."
   },
   "donate": {
+    "donate-cta":"Donate",
     "title": "Support our nonprofit",
     "processing": "We are processing your donation.",
     "redirecting": "Redirecting...",
