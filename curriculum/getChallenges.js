@@ -178,13 +178,12 @@ async function buildBlocks({ basename: blockName }, curriculum, superBlock) {
     `./challenges/_meta/${blockName}/meta.json`
   );
 
-  let blockMeta;
 
   if (fs.existsSync(metaPath)) {
     // try to read the file, if the meta path does not exist it should be a certification.
     // As they do not have meta files.
 
-    blockMeta = JSON.parse(fs.readFileSync(metaPath));
+    const blockMeta = JSON.parse(fs.readFileSync(metaPath));
 
     const { isUpcomingChange } = blockMeta;
 
