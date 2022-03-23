@@ -11,7 +11,7 @@ dashedName: change-a-variable-for-a-specific-area
 
 Quando você cria suas variáveis em `:root`, elas ficam disponíveis para uso em toda a página.
 
-Mas nada impede que você redefina os valores dessas variáveis dentro de qualquer outro seletor CSS.
+Mas nada impede que você redefina os valores dessas variáveis dentro de qualquer outro seletor de CSS.
 
 # --instructions--
 
@@ -27,7 +27,7 @@ assert(
 );
 ```
 
-A classe `penguin` não deve conter a propriedade `background-color`
+A classe `penguin` não deve conter a propriedade `background-color`.
 
 ```js
 assert(

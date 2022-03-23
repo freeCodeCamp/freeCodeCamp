@@ -22,7 +22,7 @@ Considerando os números na sequência de Fibonacci cujos valores não excedem `
 assert(typeof fiboEvenSum(10) === 'number');
 ```
 
-A função deve retornar um valor par (`even`).
+A função deve retornar um valor par (even).
 
 ```js
 assert.equal(fiboEvenSum(10) % 2 === 0, true);

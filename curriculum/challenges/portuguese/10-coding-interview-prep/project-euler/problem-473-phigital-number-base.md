@@ -22,7 +22,7 @@ $2 = \varphi + \varphi^{-2}$ e $3 = \varphi^{2} + \varphi^{-2}$
 
 Para representar essa soma de potências de $\varphi$, usamos uma string de 0s e 1s com um ponto para indicar onde começam os expoentes negativos. Chamamos isto de representação na base numérica phigital.
 
-Assim, $1 = 1_{\varphi}$, $2 = 10.01_{\varphi}$, $3 = 100.01_{\varphi}$ e $14 = 100100.001001_{\varphi}$. As strings representando 1, 2 e 14 na base numérica phigital são palindrômicas, enquanto a string representando 3 não é. (o ponto phigital não é o caractere do meio).
+Assim, $1 = 1_{\varphi}$, $2 = 10.01_{\varphi}$, $3 = 100.01_{\varphi}$ e $14 = 100100.001001_{\varphi}$. As strings representando 1, 2 e 14 na base numérica phigital são palindrômicas, enquanto a string representando 3 não é (o ponto phigital não é o caractere do meio).
 
 A soma de números inteiros positivos não excedendo1000 cuja representação phigital é palindrômica é 4345.
 

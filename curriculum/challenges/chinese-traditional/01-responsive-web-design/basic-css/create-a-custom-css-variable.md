@@ -15,7 +15,7 @@ dashedName: create-a-custom-css-variable
 --penguin-skin: gray;
 ```
 
-這樣就會創建一個 `--penguin-skin` 變量，它的值爲 `gray`。 現在，其他元素可通過該變量來使元素變成灰色。
+這樣就會創建一個 `--penguin-skin` 變量，它的值爲 `gray`。 現在你可以在你的 CSS 中的其他地方使用這個變量來改變其他屬性的值爲灰色。
 
 # --instructions--
 

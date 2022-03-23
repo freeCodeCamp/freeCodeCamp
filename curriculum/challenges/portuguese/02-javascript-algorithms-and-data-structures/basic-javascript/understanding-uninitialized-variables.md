@@ -9,7 +9,7 @@ dashedName: understanding-uninitialized-variables
 
 # --description--
 
-Quando as variáveis de JavaScript são declaradas, elas têm um valor inicial de `undefined`. Se você fizer uma operação matemática em uma variável `undefined`, seu resultado será `NaN`, o que significa que <dfn>"Não é um número"</dfn>. Se você concatenar uma string com uma variável `undefined`, você receberá uma string <dfn>literal</dfn> de `undefined`.
+Quando as variáveis de JavaScript são declaradas, elas têm um valor inicial de `undefined`. Se você fizer uma operação matemática em uma variável `undefined`, seu resultado será `NaN`, o que significa que <dfn>"Não é um número"</dfn>. Se você concatenar uma string com uma variável `undefined`, você receberá uma <dfn>string</dfn> com o valor `undefined`.
 
 # --instructions--
 

@@ -17,7 +17,7 @@ Depois de criar um modelo de área para o seu grid container, como mostrado no d
 }
 ```
 
-Isso informa ao grid que você deseja que a classe `item1` vá para a área chamada `header`. Nesse caso, o item usará toda a linha superior porque essa linha inteira foi nomeada como a área do cabeçalho (header).
+Isso informa ao grid que você deseja que a classe `item1` vá para a área chamada `header`. Nesse caso, o item usará toda a linha superior porque essa linha inteira foi nomeada como a área de `header` (cabeçalho).
 
 # --instructions--
 

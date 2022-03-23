@@ -11,7 +11,7 @@ dashedName: change-a-variable-for-a-specific-area
 
 當你在 `:root` 裏創建變量時，這些變量的作用域是整個頁面。
 
-如果在元素裏創建相同的變量，會重寫作用於整個頁面的變量的值。
+然後，你可以通過在一個特定的選擇器中再次設置這些變量來重寫這些變量。
 
 # --instructions--
 
@@ -27,7 +27,7 @@ assert(
 );
 ```
 
-`penguin` class 不應該包含 `background-color` 屬性。
+`penguin` 類不應包含 `background-color` 屬性。
 
 ```js
 assert(

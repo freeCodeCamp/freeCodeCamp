@@ -43,7 +43,7 @@ assert($('p').length === 0);
 assert(code.match(/[^fc]-->/g).length > 1);
 ```
 
-不要更改 `h1` 元素、`h2` 元素、`p` 元素的順序。
+不要更改 `h1`、`h2`、`p` 元素的順序。
 
 ```js
 assert(
