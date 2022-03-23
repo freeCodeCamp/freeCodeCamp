@@ -5,7 +5,20 @@ import { Button, ButtonProps } from '.';
 
 const story = {
   title: 'Example/Button',
-  component: Button
+  component: Button,
+  parameters: {
+    controls: {
+      include: ['children', 'variant', 'size']
+    }
+  },
+  argTypes: {
+    variant: {
+      options: ['primary', 'danger']
+    },
+    size: {
+      options: ['small', 'medium', 'large']
+    }
+  }
 };
 
 const Template: Story<ButtonProps> = args => {
