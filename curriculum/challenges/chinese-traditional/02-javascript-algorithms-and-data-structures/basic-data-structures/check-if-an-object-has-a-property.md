@@ -19,7 +19,7 @@ users.hasOwnProperty('Alan');
 
 # --instructions--
 
-請完善這個函數，如果傳遞給它的對象包含四個名字 `Alan`、`Jeff`、`Sarah` 和 `Ryan`，函數返回 true，否則返回 false。
+請完善這個函數，如果傳遞給它的對象包含四個名字 `Alan`、`Jeff`、`Sarah` 和 `Ryan`，函數返回 `true`，否則返回 `false`。
 
 # --hints--
 

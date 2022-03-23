@@ -18,120 +18,123 @@ JavaScript 中，如果一个值在 Boolean 的上下文中的执行结果为 `t
 
 # --hints--
 
-`truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex")` 应返回 `true`。
+`truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "isBot")` 应该返回 `false`。
 
 ```js
-assert.strictEqual(
-  truthCheck(
-    [
-      { user: 'Tinky-Winky', sex: 'male' },
-      { user: 'Dipsy', sex: 'male' },
-      { user: 'Laa-Laa', sex: 'female' },
-      { user: 'Po', sex: 'female' }
-    ],
-    'sex'
-  ),
-  true
-);
+assert.strictEqual(truthCheck(
+  [
+    { name: "Quincy", role: "Founder", isBot: false },
+    { name: "Naomi", role: "", isBot: false },
+    { name: "Camperbot", role: "Bot", isBot: true }
+  ],
+  "isBot"), false);
 ```
 
-`truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex")` 应返回 `false`。
+`truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "name")` 应该返回 `true`。
 
 ```js
-assert.strictEqual(
-  truthCheck(
-    [
-      { user: 'Tinky-Winky', sex: 'male' },
-      { user: 'Dipsy' },
-      { user: 'Laa-Laa', sex: 'female' },
-      { user: 'Po', sex: 'female' }
-    ],
-    'sex'
-  ),
-  false
-);
+assert.strictEqual(truthCheck(
+  [
+    { name: "Quincy", role: "Founder", isBot: false },
+    { name: "Naomi", role: "", isBot: false },
+    { name: "Camperbot", role: "Bot", isBot: true }
+  ],
+  "name"), true);
 ```
 
-`truthCheck([{"user": "Tinky-Winky", "sex": "male", "age": 0}, {"user": "Dipsy", "sex": "male", "age": 3}, {"user": "Laa-Laa", "sex": "female", "age": 5}, {"user": "Po", "sex": "female", "age": 4}], "age")` 应返回 `false`。
+`truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "role")` 应该返回 `false`。
 
 ```js
-assert.strictEqual(
-  truthCheck(
-    [
-      { user: 'Tinky-Winky', sex: 'male', age: 2 },
-      { user: 'Dipsy', sex: 'male', age: 0 },
-      { user: 'Laa-Laa', sex: 'female', age: 5 },
-      { user: 'Po', sex: 'female', age: 4 }
-    ],
-    'age'
-  ),
-  false
-);
+assert.strictEqual(truthCheck(
+  [
+    { name: "Quincy", role: "Founder", isBot: false },
+    { name: "Naomi", role: "", isBot: false },
+    { name: "Camperbot", role: "Bot", isBot: true }
+  ],
+  "role"), false);
 ```
 
-`truthCheck([{"name": "Pete", "onBoat": true}, {"name": "Repeat", "onBoat": true}, {"name": "FastForward", "onBoat": null}], "onBoat")` 应返回 `false`。
+`truthCheck([{name: "Pikachu", number: 25, caught: 3}, {name: "Togepi", number: 175, caught: 1}], "number")` 应该返回 `true`。
 
 ```js
-assert.strictEqual(
-  truthCheck(
-    [
-      { name: 'Pete', onBoat: true },
-      { name: 'Repeat', onBoat: true },
-      { name: 'FastForward', onBoat: null }
-    ],
-    'onBoat'
-  ),
-  false
-);
+assert.strictEqual(truthCheck(
+  [
+    { name: "Pikachu", number: 25, caught: 3 },
+    { name: "Togepi", number: 175, caught: 1 },
+  ],
+  "number"), true);
 ```
 
-`truthCheck([{"name": "Pete", "onBoat": true}, {"name": "Repeat", "onBoat": true, "alias": "Repete"}, {"name": "FastForward", "onBoat": true}], "onBoat")` 应返回 `true`。
+`truthCheck([{name: "Pikachu", number: 25, caught: 3}, {name: "Togepi", number: 175, caught: 1}, {name: "MissingNo", number: NaN, caught: 0}], "caught")` 应该返回 `false`。
 
 ```js
-assert.strictEqual(
-  truthCheck(
-    [
-      { name: 'Pete', onBoat: true },
-      { name: 'Repeat', onBoat: true, alias: 'Repete' },
-      { name: 'FastForward', onBoat: true }
-    ],
-    'onBoat'
-  ),
-  true
-);
+assert.strictEqual(truthCheck(
+  [
+    { name: "Pikachu", number: 25, caught: 3 },
+    { name: "Togepi", number: 175, caught: 1 },
+    { name: "MissingNo", number: NaN, caught: 0 },
+  ],
+  "caught"), false);
 ```
 
-`truthCheck([{"single": "yes"}], "single")` 应返回 `true`。
+`truthCheck([{name: "Pikachu", number: 25, caught: 3}, {name: "Togepi", number: 175, caught: 1}, {name: "MissingNo", number: NaN, caught: 0}], "number")` 应该返回 `false`。
 
 ```js
-assert.strictEqual(truthCheck([{ single: 'yes' }], 'single'), true);
+assert.strictEqual(truthCheck(
+  [
+    { name: "Pikachu", number: 25, caught: 3 },
+    { name: "Togepi", number: 175, caught: 1 },
+    { name: "MissingNo", number: NaN, caught: 0 },
+  ],
+  "number"), false);
 ```
 
-`truthCheck([{"single": ""}, {"single": "double"}], "single")` 应返回 `false`。
+`truthCheck([{name: "Quincy", username: "QuincyLarson"}, {name: "Naomi", username: "nhcarrigan"}, {name: "Camperbot"}], "username")` 应该返回 `false`。
 
 ```js
-assert.strictEqual(
-  truthCheck([{ single: '' }, { single: 'double' }], 'single'),
-  false
-);
+assert.strictEqual(truthCheck(
+  [
+    { name: "Quincy", username: "QuincyLarson" },
+    { name: "Naomi", username: "nhcarrigan" },
+    { name: "Camperbot" }
+  ],
+  "username"), false);
 ```
 
-`truthCheck([{"single": "double"}, {"single": undefined}], "single")` 应返回 `false`。
+`truthCheck([{name: "freeCodeCamp", users: [{name: "Quincy"}, {name: "Naomi"}]}, {name: "Code Radio", users: [{name: "Camperbot"}]}, {name: "", users: []}], "users")` 应该返回 `true`。
 
 ```js
-assert.strictEqual(
-  truthCheck([{ single: 'double' }, { single: undefined }], 'single'),
-  false
-);
+assert.strictEqual(truthCheck(
+  [
+    { name: "freeCodeCamp", users: [{ name: "Quincy" }, { name: "Naomi" }] },
+    { name: "Code Radio", users: [{ name: "Camperbot" }] },
+    { name: "", users: [] },
+  ],
+  "users"), true);
 ```
 
-`truthCheck([{"single": "double"}, {"single": NaN}], "single")` 应返回 `false`。
+`truthCheck([{id: 1, data: {url: "https://freecodecamp.org", name: "freeCodeCamp"}}, {id: 2, data: {url: "https://coderadio.freecodecamp.org/", name: "CodeRadio"}}, {id: null, data: {}}], "data")` 应该返回 `true`。
 
 ```js
-assert.strictEqual(
-  truthCheck([{ single: 'double' }, { single: NaN }], 'single'),
-  false
-);
+assert.strictEqual(truthCheck(
+  [
+    { id: 1, data: { url: "https://www.freecodecamp.org", name: "freeCodeCamp" } },
+    { id: 2, data: { url: "https://coderadio.freecodecamp.org/", name: "CodeRadio" } },
+    { id: null, data: {} },
+  ],
+  "data"), true);
+```
+
+`truthCheck([{id: 1, data: {url: "https://freecodecamp.org", name: "freeCodeCamp"}}, {id: 2, data: {url: "https://coderadio.freecodecamp.org/", name: "CodeRadio"}}, {id: null, data: {}}], "id")` 应该返回 `false`。
+
+```js
+assert.strictEqual(truthCheck(
+  [
+    { id: 1, data: { url: "https://www.freecodecamp.org", name: "freeCodeCamp" } },
+    { id: 2, data: { url: "https://coderadio.freecodecamp.org/", name: "CodeRadio" } },
+    { id: null, data: {} },
+  ],
+  "id"), false);
 ```
 
 # --seed--
@@ -143,7 +146,7 @@ function truthCheck(collection, pre) {
   return pre;
 }
 
-truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
+truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "isBot");
 ```
 
 # --solutions--

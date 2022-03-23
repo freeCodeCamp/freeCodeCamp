@@ -9,7 +9,7 @@ dashedName: use-the-flex-wrap-property-to-wrap-a-row-or-column
 
 # --description--
 
-CSS flexbox 有一個把 flex 子元素拆分爲多行（或多列）的特性。 默認情況下，flex 容器會調整項目大小，把它們都塞到一起。 對於行來說，所有項目都會在一條直線上。
+CSS flexbox 具有將 flex 容器拆分爲多行（或列）的功能。 默認情況下，flex 容器會調整項目大小，把它們都塞到一起。 對於行來說，所有項目都會在一條直線上。
 
 不過，使用 `flex-wrap` 屬性可以使項目換行展示。 這意味着多出來的子元素會被移到新的行或列。 換行發生的斷點由子元素和容器的大小決定。
 

@@ -77,7 +77,7 @@ assert(
 );
 ```
 
-`h1` 元素的字體顏色應繼承 `body` 元素所設置的綠色。
+`h1` 元素應該繼承 `body` 的 `green` 顏色屬性。
 
 ```js
 assert($('h1').length > 0 && $('h1').css('color') === 'rgb(0, 128, 0)');

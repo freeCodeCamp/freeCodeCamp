@@ -18,7 +18,7 @@ Cada coluna representará uma única aresta. Além disso, cada aresta conectará
 
 <blockquote>    1<br>   ---<br>1 | 1<br>2 | 0<br>3 | 1</blockquote>
 
-Aqui está um exemplo de uma `incidence matrix` (matriz de incidência) com 4 arestas e 4 nós. Lembre-se, as colunas são as arestas e as linhas são os próprios nós.
+Aqui está um exemplo de uma incidence matrix (matriz de incidência) com 4 arestas e 4 nós. Lembre-se, as colunas são as arestas e as linhas são os próprios nós.
 
 <blockquote>    1 2 3 4<br>   --------<br>1 | 0 1 1 1<br>2 | 1 1 0 0<br>3 | 1 0 0 1<br>4 | 0 0 1 0</blockquote>
 

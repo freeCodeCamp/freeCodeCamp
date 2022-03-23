@@ -8,13 +8,60 @@ dashedName: mean-variance-standard-deviation-calculator
 
 # --description--
 
-创建一个函数，这个函数可以使用 Numpy 输出 3 x 3 矩阵的每一行、每一列和所有元素的均值，方差和标准差。
+你将通过使用我们的[Replit 入门代码](https://replit.com/github/freeCodeCamp/boilerplate-mean-variance-standard-deviation-calculator)来完成本项目。
 
-你可以在 [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mean-variance-standard-deviation-calculator) 上查看整个项目的具体描述和初始代码。
+我们仍在开发 Python 课程的交互式教学部分。 目前，你可以在 YouTube 上通过 freeCodeCamp.org 上传的一些视频学习这个项目相关的知识。
 
-点击此链接，fork 这个项目。 当你根据 “README.md” 中的说明完成了项目，请在下方提交你的项目链接。
+- [Python for Everybody 视频课程](https://www.freecodecamp.org/news/python-for-everybody/)（14 小时）
+- [Learn Python 视频课程](https://www.freecodecamp.org/news/learn-python-video-course/)（10 小时）
 
-我们仍在开发 Python 数据分析课程的交互式教学。 现在，您将需要使用其他资源来学习如何通过这一挑战。
+# --instructions--
+
+在 `mean_var_std.py` 中创建一个名为 `calculate()` 的函数，该函数使用 Numpy 输出行、列、和 3 x 3 矩阵中的元素。
+
+函数的输入应该是一个包含 9 个数字的列表。 该函数应将列表转换为 3 x 3 Numpy 数组，然后返回一个字典，其中包含沿两个轴和展平矩阵的均值、方差、标准差、最大值、最小值和总和。
+
+返回的字典应遵循以下格式：
+
+```py
+{
+  'mean': [axis1, axis2, flattened],
+  'variance': [axis1, axis2, flattened],
+  'standard deviation': [axis1, axis2, flattened],
+  'max': [axis1, axis2, flattened],
+  'min': [axis1, axis2, flattened],
+  'sum': [axis1, axis2, flattened]
+}
+```
+
+如果将包含少于 9 个元素的列表传递给函数，它应该引发 `ValueError` 异常并显示消息：“List must contain nine numbers.” 返回的字典中的值应该是列表而不是 Numpy 数组。
+
+例如，`calculate([0,1,2,3,4,5,6,7,8])` 应该返回：
+
+```py
+{
+  'mean': [[3.0, 4.0, 5.0], [1.0, 4.0, 7.0], 4.0],
+  'variance': [[6.0, 6.0, 6.0], [0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 6.666666666666667],
+  'standard deviation': [[2.449489742783178, 2.449489742783178, 2.449489742783178], [0.816496580927726, 0.816496580927726, 0.816496580927726], 2.581988897471611],
+  'max': [[6, 7, 8], [2, 5, 8], 8],
+  'min': [[0, 1, 2], [0, 3, 6], 0],
+  'sum': [[9, 12, 15], [3, 12, 21], 36]
+}
+```
+
+此项目的单元测试在 `test_module.py` 中。
+
+## 开发
+
+对于开发，你可以使用 `main.py` 来测试你的 `calculate()` 函数。 单击“运行”按钮，`main.py` 将运行。
+
+## 测试
+
+为了你的方便，我们将测试从 `test_module.py` 导入到 `main.py`。 只要你点击“运行”按钮，测试就会自动运行。
+
+## 提交
+
+复制项目的 URL 并将其提交给 freeCodeCamp。
 
 # --hints--
 

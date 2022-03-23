@@ -9,7 +9,7 @@ dashedName: adjust-the-hue-of-a-color
 
 # --description--
 
-As cores têm várias características, incluindo tonalidade, saturação e luminosidade. CSS3 introduziu a função `hsl()` como uma forma alternativa de escolher uma cor informando diretamente essas características.
+As cores têm várias características, incluindo tonalidade, saturação e luminosidade. O CSS3 introduziu a função `hsl()` como uma forma alternativa de escolher uma cor informando diretamente essas características.
 
 **Tonalidade** é o que as pessoas geralmente chamam de 'cor'. Se você imaginar um espectro de cores começando com o vermelho à esquerda, passando pelo verde no meio e pelo azul à direita, a tonalidade é qualquer cor que esteja dentro deste espectro. No `hsl()`, a tonalidade é definida usando o conceito de círculo cromático em vez de um espectro, onde o ângulo da cor no círculo é um valor entre 0 e 360.
 
@@ -39,7 +39,7 @@ Você deve usar a função `hsl()` para declarar a cor `cyan` (ciano).
 assert(code.match(/\.cyan\s*?{\s*?background-color\s*:\s*?hsl/gi));
 ```
 
-Você deve usar a função `hsl()` para declarar a cor `blue` (blue).
+Você deve usar a função `hsl()` para declarar a cor `blue` (azul).
 
 ```js
 assert(code.match(/\.blue\s*?{\s*?background-color\s*:\s*?hsl/gi));

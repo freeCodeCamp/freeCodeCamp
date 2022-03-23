@@ -9,7 +9,7 @@ dashedName: adjust-the-hue-of-a-color
 
 # --description--
 
-颜色具有多种特性，包括色相、饱和度和亮度。 CSS3 引入了 `hsl()` 做为颜色的描述方式。
+颜色具有多种特性，包括色相、饱和度和亮度。 CSS3 引入了`hsl()`函数，作为直接说明这些特征来挑选颜色的替代方法。
 
 **色相** 是色彩的基本属性，就是平常所说的颜色名称，如红色、黄色等。 以颜色光谱为例，光谱左边从红色开始，移动到中间的绿色，一直到右边的蓝色，色相值就是沿着这条线的取值。 在 `hsl()` 里面，色相用色环来代替光谱，色相值就是色环里面的颜色对应的从 0 到 360 度的角度值。
 
@@ -27,19 +27,19 @@ dashedName: adjust-the-hue-of-a-color
 
 # --hints--
 
-应使用 `hsl()` 属性来设置颜色为 `green`。
+应使用 `hsl()` 函数来设置颜色为 `green`。
 
 ```js
 assert(code.match(/\.green\s*?{\s*?background-color\s*:\s*?hsl/gi));
 ```
 
-应使用 `hsl()` 属性来设置颜色为 `cyan`。
+应使用 `hsl()` 函数来设置颜色为 `cyan`。
 
 ```js
 assert(code.match(/\.cyan\s*?{\s*?background-color\s*:\s*?hsl/gi));
 ```
 
-应使用 `hsl()` 属性来设置颜色为 `blue`。
+应使用 `hsl()` 函数来设置颜色为 `blue`。
 
 ```js
 assert(code.match(/\.blue\s*?{\s*?background-color\s*:\s*?hsl/gi));
