@@ -28,7 +28,7 @@ app.post('/:superblock/:block/:step', (req, res, next) => {
 });
 
 app.get('/:superblock/:block/:step', (req, res, next) => {
-  stepRoute(req, res).then(next).catch(next);
+  stepRoute(req, res).catch(next);
 });
 
 app.get('/:superblock/:block', (req, res, next) => {
