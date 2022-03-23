@@ -16,7 +16,7 @@
   - [Trabalhar em testes do Cypress](how-to-add-cypress-tests.md)
   - [Trabalhar nos desafios em vídeo](how-to-help-with-video-challenges.md)
   - [Trabalhe no tema de documentação](how-to-work-on-the-docs-theme.md)
-  - [Work on the component library](how-to-work-on-the-component-library.md)
+  - [Trabalhar na biblioteca de componentes](how-to-work-on-the-component-library.md)
 - **Guias adicionais**
   - [Testar traduções localmente](how-to-test-translations-locally.md)
   - [Compreender a estrutura do arquivo do currículo](curriculum-file-structure.md)
