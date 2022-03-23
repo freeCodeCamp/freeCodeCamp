@@ -67,151 +67,151 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "Responsive Web Design (Beta)",
+    "title": "响应式网页设计（Beta版）",
     "intro": [
-      "In this Responsive Web Design Certification, you'll learn the languages that developers use to build webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design.",
-      "First, you'll build a cat photo app to learn the basics of HTML and CSS. Later, you'll learn modern techniques like CSS variables by building a penguin, and best practices for accessibility by building a web form.",
-      "Finally, you'll learn how to make webpages that respond to different screen sizes by building a Twitter card with Flexbox, and a complex blog layout with CSS Grid."
+      "在响应式网页设计的认证课程中，你将学习用于构建网页的语言： HTML（超文本标记语言）用于创建内容，CSS（级联样式表）用于样式设计。",
+      "首先，你将通过编写一个猫咪相册应用，学习 HTML 和 CSS 的基本知识。 然后，通过画企鹅来学习像 CSS 变量这样的现代技术，并通过编写网页表单来学习无障碍的最佳实践。",
+      "最后，你将通过编写一个 Twitter 卡片，学习如何使用 Flexbox 实现能够适应不同屏幕大小的网页 ，以及如何使用 CSS Grid 实现一个复杂的博客布局。"
     ],
-    "note": "Note: Some browser extensions, such as ad-blockers and dark mode extensions can interfere with the tests. If you face issues, we recommend disabling extensions that modify the content or layout of pages, while taking the course.",
+    "note": "注意：某些浏览器扩展程序（例如广告拦截器和深色模式）可能干扰测试。如果遇到问题，我们建议你在学习课程时禁用那些修改网页内容或布局的扩展程序。",
     "blocks": {
       "build-a-tribute-page-project": {
-        "title": "Tribute Page",
+        "title": "致敬页",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a tribute page for a subject of your choosing, fictional or real."
+          "这是你获得认证的必做项目。",
+          "在这个项目中，你将为你所选择的主题编写一个致敬页（无论是虚构的还是真实的）。"
         ]
       },
       "build-a-personal-portfolio-webpage-project": {
-        "title": "Personal Portfolio Webpage",
+        "title": "个人作品集展示页",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build your own personal portfolio page."
+          "这是你获得认证的必做项目。",
+          "在这个项目中，你将制作自己的个人作品集展示页。"
         ]
       },
       "build-a-product-landing-page-project": {
-        "title": "Product Landing Page",
+        "title": "产品登录页",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a product landing page to market a product of your choice."
+          "这是你获得认证的必做项目。",
+          "在这个项目中，你将编写一个产品登录页来推销你选择的产品。"
         ]
       },
       "build-a-survey-form-project": {
-        "title": "Survey Form",
+        "title": "调查表单",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a survey form to collect data from your users."
+          "这是你获得认证的必做项目。",
+          "在这个项目中，你将编写一个用于收集用户数据的调查表单。"
         ]
       },
       "build-a-technical-documentation-page-project": {
-        "title": "Technical Documentation Page",
+        "title": "技术文档页",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a technical documentation page to serve as instruction or reference for a topic."
+          "这是你获得认证的必做项目。",
+          "在这个项目中，你将编写一个技术文档页，作为一个主题的指导或参考。"
         ]
       },
       "learn-html-by-building-a-cat-photo-app": {
-        "title": "Learn HTML by Building a Cat Photo App",
+        "title": "通过编写猫咪相册应用学习 HTML",
         "intro": [
-          "HTML tags give a webpage its structure. You can use HTML tags to add photos, buttons, and other elements to your webpage.",
-          "In this course, you'll learn the most common HTML tags by building your own cat photo app."
+          "HTML 标签赋予了网页结构。你可以使用 HTML 标签添加照片、按钮和其它元素到你的网页。",
+          "在这门课程中，你将通过编写一个猫咪相册应用，学习最常见的 HTML 标签。"
         ]
       },
       "learn-basic-css-by-building-a-cafe-menu": {
-        "title": "Learn Basic CSS by Building a Cafe Menu",
+        "title": "通过编写咖啡店菜单学习基础 CSS",
         "intro": [
-          "CSS tells the browser how to display your webpage. You can use CSS to set the color, font, size, and other aspects of HTML elements.",
-          "In this course, you'll learn CSS by designing a menu page for a cafe webpage."
+          "CSS 负责告诉浏览器如何展示你的网页。你可以使用 CSS 设置 HTML 元素的颜色、字体、大小等属性。",
+          "在这门课程中，你将通过为一个咖啡店网站设计菜单页来学习 CSS。"
         ]
       },
       "learn-the-css-box-model-by-building-a-rothko-painting": {
-        "title": "Learn the CSS Box Model by Building a Rothko Painting",
+        "title": "通过创作罗斯科绘画学习 CSS 盒子模型",
         "intro": [
-          "Every HTML element is its own box – with its own spacing and a border. This is called the Box Model.",
-          "In this course, you'll use CSS and the Box Model to create your own Rothko-style rectangular art pieces."
+          "每个 HTML 元素都是一个盒子，它拥有着自己的间距和边框。这叫作“盒子模型”。",
+          "在这门课程中，你将使用 CSS 和盒子模型，创作属于你自己的罗斯科风格的矩形艺术作品。"
         ]
       },
       "learn-css-variables-by-building-a-city-skyline": {
-        "title": "Learn CSS Variables by Building a City Skyline",
+        "title": "通过建立城市轮廓学习 CSS 变量",
         "intro": [
-          "CSS variables help you organize your styles and reuse them.",
-          "In this course, you'll build a city skyline. You'll learn how to configure CSS variables so you can reuse them whenever you want."
+          "CSS 变量负责帮助组织你的样式和重复使用它们。",
+          "在这门课程中，你将建立一座城市的轮廓。你将学习如何配置 CSS 变量，以便你可以随时重复使用它们。"
         ]
       },
       "learn-html-forms-by-building-a-registration-form": {
-        "title": "Learn HTML Forms by Building a Registration Form",
+        "title": "通过编写注册表单学习 HTML 表单",
         "intro": [
-          "You can use HTML forms to collect information from people who visit your webpage.",
-          "In this course, you'll learn HTML forms by building a signup page. You'll learn how to control what types of data people can type into your form, and some new CSS tools for styling your page."
+          "你可以使用 HTML 表单收集访问网页的用户的信息。",
+          "在这门课程中，你将通过编写一个注册页学习 HTML 表单。你将学习如何控制人们在表单中可以输入的数据类型，以及使用一些新的 CSS 工具装饰你的页面。"
         ]
       },
       "learn-accessibility-by-building-a-quiz": {
-        "title": "Learn Accessibility by Building a Quiz",
+        "title": "通过编写小测验学习无障碍",
         "intro": [
-          "Accessibility is making your webpage easy for all people to use – even people with disabilities.",
-          "In this course, you'll build a quiz webpage. You'll learn accessibility tools such as keyboard shortcuts, ARIA attributes, and design best practices."
+          "无障碍环境正在使你的网页便于所有人使用——甚至是残疾人。",
+          "在这个课程中，你将建立一个测验网页。你将学习诸如键盘快捷键、ARIA 属性和设计最佳实践等无障碍工具。"
         ]
       },
       "learn-intermediate-css-by-building-a-picasso-painting": {
-        "title": "Learn Intermediate CSS by Building a Picasso Painting",
+        "title": "创建一副毕加索绘画来学习中级 CSS",
         "intro": [
-          "In this course, you'll learn how to use some intermediate CSS techniques by coding your own Picasso painting webpage. You'll learn about SVG icons, CSS positioning, and review other CSS skills you've learned."
+          "在本课程中，你将通过代码创建一幅自己的毕加索绘画网页来掌握中级 CSS 技术。课程涉及 SVG 图标、CSS 定位和对已学 CSS 知识的回顾。"
         ]
       },
       "learn-responsive-web-design-by-building-a-piano": {
-        "title": "Learn Responsive Web Design by Building a Piano",
+        "title": "通过创建一架钢琴来学习响应式网页设计",
         "intro": [
-          "Responsive Design tells your webpage how it should look on different-sized screens.",
-          "In this course, you'll use CSS and Responsive Design to code a piano. You'll also learn more about media queries and pseudo selectors."
+          "响应式设计使得你的网页适应不同屏幕尺寸的显示。",
+          "在本课程中，你将围绕一架钢琴编写代码学习 CSS 响应式设计。你将同时学会媒体条件和伪选择器的知识。"
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
-        "title": "Learn CSS Flexbox by Building a Photo Gallery",
+        "title": "通过创建照片集来学习 CSS 弹性盒子",
         "intro": [
-          "Flexbox helps you design your webpage so that it looks good on any screen size.",
-          "In this course, you'll use Flexbox to build a responsive photo gallery webpage."
+          "通过弹性盒子你可以设计适应不同屏幕大小的网页。",
+          "在本课程中，你将使用弹性盒子创建一个响应式的照片集网页。"
         ]
       },
       "learn-css-grid-by-building-a-magazine": {
-        "title": "Learn CSS Grid by Building a Magazine",
+        "title": "通过创建杂志学习 CSS 网格布局",
         "intro": [
-          "CSS Grid gives you control over the rows and columns of your webpage design.",
-          "In this course, you'll build a magazine article. You'll learn how to use CSS Grid, including concepts like grid rows and grid columns."
+          "在网页设计时，CSS 网格布局使你能够控制网页的行、列。",
+          "在这门课程中，你将编写一篇杂志文章。你将学习如何使用 CSS Grid，其中包括了像网格行和网格列这样的概念。"
         ]
       },
       "learn-typography-by-building-a-nutrition-label": {
-        "title": "Learn Typography by Building a Nutrition Label",
+        "title": "通过建立营养标签来学习排版",
         "intro": [
-          "Typography is the art of styling your text to be easily readable and suit its purpose.",
-          "In this course, you'll use typography to build a nutrition label webpage. You'll learn how to style text, adjust line height, and position your text using CSS."
+          "排版是将文本样式设置为易于阅读并适合其目的的艺术。",
+          "在本课程中，你将使用排版来构建营养标签网页。你将学习如何使用 CSS 设置文本样式、调整行高和定位文本。"
         ]
       },
       "learn-css-transforms-by-building-a-penguin": {
-        "title": "Learn CSS Transforms by Building a Penguin",
+        "title": "通过构建企鹅来学习 CSS 变换",
         "intro": [
-          "You can transform HTML elements to create appealing designs that draw your reader's eye. You can use transforms to rotate elements, scale them, and more.",
-          "In this course, you'll build a penguin. You'll use CSS transforms to position and resize the parts of your penguin, create a background, and animate your work."
+          "你可以转换 HTML 元素以创建吸引读者眼球的吸引人的设计。你可以使用变换来旋转元素、缩放它们等等。",
+          "在本课程中，你将构建一只企鹅。你将使用 CSS 变换来定位企鹅的各个部分并调整其大小、创建背景并为你的作品设置动画。"
         ]
       },
       "learn-css-animation-by-building-a-ferris-wheel": {
-        "title": "Learn CSS Animation by Building a Ferris Wheel",
+        "title": "通过构建摩天轮学习 CSS 动画",
         "intro": [
-          "You can use CSS animation to draw attention to specific sections of your webpage and make it more engaging.",
-          "In this course, you'll build a Ferris wheel. You'll learn how to use CSS to animate elements, transform them, and adjust their speed."
+          "你可以使用 CSS 动画将注意力吸引到网页的特定部分并使其更具吸引力。",
+          "在本课程中，你将建造一个摩天轮。你将学习如何使用 CSS 为元素设置动画、转换它们并调整它们的速度。"
         ]
       },
       "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": {
-        "title": "Learn More About CSS Pseudo Selectors By Building A Balance Sheet",
+        "title": "通过构建资产负债表了解有关 CSS 伪选择器的更多信息",
         "intro": [
-          "You can use CSS pseudo selectors to change specific HTML elements.",
-          "In this course, you'll build a balance sheet using pseudo selectors. You'll learn how to change the style of an element when you hover over it with your mouse, and trigger other events on your webpage."
+          "你可以使用 CSS 伪选择器来更改特定的 HTML 元素。",
+          "在本课程中，你将使用伪选择器构建资产负债表。你将学习如何在将鼠标悬停在元素上时更改其样式，并触发网页上的其他事件。"
         ]
       },
       "learn-css-colors-by-building-a-set-of-colored-markers": {
-        "title": "Learn CSS Colors by Building a Set of Colored Markers",
+        "title": "通过构建一组彩色标记来学习 CSS 颜色",
         "intro": [
-          "Selecting the correct colors for your webpage can greatly improve the aesthetic appeal to your readers.",
-          "In this course, you'll build a set of colored markers. You'll learn different ways to set color values and how to pair colors with each other."
+          "为你的网页选择正确的颜色可以大大提高对读者的审美吸引力。",
+          "在本课程中，你将构建一组彩色标记。你将学习设置颜色值的不同方法以及如何将颜色相互配对。"
         ]
       }
     }
@@ -426,109 +426,109 @@
     }
   },
   "relational-database": {
-    "title": "Relational Database (Beta)",
+    "title": "关系数据库（Beta）",
     "intro": [
-      "For these courses, you will use real developer tools and software including VS Code, PostgreSQL, and the Linux / Unix command line to complete interactive tutorials and build projects.",
-      "These courses start off with basic Bash commands. Using the terminal, you will learn everything from navigating and manipulating a file system, scripting in Bash, all the way to advanced usage.",
-      "Next, you will learn how to create and use a relational database with PostgreSQL, a database management system, and SQL, the language of these databases.",
-      "Finally, you will learn Git, the version control system, an essential tool of every developer."
+      "对于这些课程，你将使用真正的开发人员工具和软件，包括 VS Code、PostgreSQL 和 Linux/Unix 命令行来完成交互式教程和构建项目。",
+      "这些课程从基本的 Bash 命令开始。使用终端，你将学习从导航和操作文件系统、在 Bash 中编写脚本到高级用法的所有内容。",
+      "接下来，你将学习如何使用 PostgreSQL（数据库管理系统）和 SQL（这些数据库的语言）创建和使用关系数据库。",
+      "最后，你将学习 Git，版本控制系统，每个开发人员的必备工具。"
     ],
     "blocks": {
       "build-a-celestial-bodies-database-project": {
-        "title": "Celestial Bodies Database",
+        "title": "天体数据库",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a database of celestial bodies using PostgreSQL."
+          "这是你获得认证的必做项目。",
+          "对于这个项目，你将使用 PostgreSQL 构建一个天体数据库。"
         ]
       },
       "build-a-number-guessing-game-project": {
-        "title": "Number Guessing Game",
+        "title": "猜数字游戏",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will use Bash scripting, PostgreSQL, and Git to create a number guessing game that runs in the terminal and saves user information."
+          "这是你获得认证的必做项目。",
+          "对于这个项目，你将使用 Bash 脚本、PostgreSQL 和 Git 创建一个在终端中运行并保存用户信息的猜数游戏。"
         ]
       },
       "build-a-periodic-table-database-project": {
-        "title": "Periodic Table Database",
+        "title": "元素周期表数据库",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will create Bash a script to get information about chemical elements from a periodic table database."
+          "这是你获得认证的必做项目。",
+          "对于此项目，你将创建 Bash 脚本以从元素周期表数据库中获取有关化学元素的信息。"
         ]
       },
       "build-a-salon-appointment-scheduler-project": {
-        "title": "Salon Appointment Scheduler",
+        "title": "沙龙预约安排程序",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will create an interactive Bash program that uses PostgreSQL to track the customers and appointments for your salon."
+          "这是你获得认证的必做项目。",
+          "对于这个项目，你将创建一个交互式 Bash 程序，该程序使用 PostgreSQL 来跟踪你沙龙的客户和约会。"
         ]
       },
       "build-a-world-cup-database-project": {
-        "title": "World Cup Database",
+        "title": "世界杯数据库",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will create a Bash script that enters information from World Cup games into PostgreSQL, then query the database for useful statistics."
+          "这是你获得认证的必做项目。",
+          "对于这个项目，你将创建一个 Bash 脚本，将世界杯赛中的信息存储到 PostgreSQL 中，然后通过查询数据库来获取有用的统计数据。"
         ]
       },
       "learn-advanced-bash-by-building-a-kitty-ipsum-translator": {
-        "title": "Learn Advanced Bash by Building a Kitty Ipsum Translator",
+        "title": "通过构建一个 Kitty Ipsum 翻译器来学习高级 Bash",
         "intro": [
-          "There's more to Bash commands than you might think.",
-          "In this 140-lesson course, you will learn some more complex commands, and the details of how commands work."
+          "Bash 命令比你想象的更多。",
+          "在第 140 课中，你会学习一些更复杂的命令以及命令如何工作的细节。"
         ]
       },
       "learn-bash-and-sql-by-building-a-bike-rental-shop": {
-        "title": "Learn Bash and SQL by Building a Bike Rental Shop",
+        "title": "建造一家自行车出租店来学习 Bash 和 SQL",
         "intro": [
-          "In this 210-lesson course, you will build an interactive Bash program that stores rental information for your bike rental shop using PostgreSQL."
+          "在这套 210 小节的课程中，你将建立一个交互式 Bash 程序，使用 PostgreSQL 存储自行车租赁商店的租赁信息。"
         ]
       },
       "learn-bash-by-building-a-boilerplate": {
-        "title": "Learn Bash by Building a Boilerplate",
+        "title": "通过构建模版学习 Bash",
         "intro": [
-          "The terminal allows you to send text commands to your computer that can manipulate the file system, run programs, automate tasks, and much more.",
-          "In this 170-lesson course, you will learn terminal commands by creating a website boilerplate using only the command line."
+          "终端允许您将文本命令发送到您的计算机，可以操作文件系统、运行程序、自动化任务以及更多。",
+          "在这套 170 小节的课程中，你将通过只使用命令行创建网站模板来学习终端命令。"
         ]
       },
       "learn-bash-scripting-by-building-five-programs": {
-        "title": "Learn Bash Scripting by Building Five Programs",
+        "title": "通过构建五个程序学习 Bash 脚本",
         "intro": [
-          "Bash scripts combine terminal commands and logic into programs that can execute or automate tasks, and much more.",
-          "In this 220-lesson course, you will learn more terminal commands and how to use them within Bash scripts by creating five small programs."
+          "Bash 脚本将终端命令和逻辑合并到程序的可以执行任务或自动化任务等中。",
+          "在第 220 课程中，你将通过创建五个小程序来学习更多终端命令以及如何在 Bash 脚本中使用它们。"
         ]
       },
       "learn-git-by-building-an-sql-reference-object": {
-        "title": "Learn Git by Building an SQL Reference Object",
+        "title": "通过构建 SQL 引用对象来学习 Git",
         "intro": [
-          "Git is a version control system that keeps track of all the changes you make to your codebase.",
-          "In this 240-lesson course, you will learn how Git keeps track of your code by creating an object containing commonly used SQL commands."
+          "Git 是一个版本控制系统，用于跟踪您对代码片段所作的所有更改。",
+          "在第 240 课中，你将通过创建一个包含常用的 SQL 命令的对象来学习 Git 如何跟踪你的代码。"
         ]
       },
       "learn-nano-by-building-a-castle": {
-        "title": "Learn Nano by Building a Castle",
+        "title": "通过建造城堡学习 Nano",
         "intro": [
-          "Nano is a program that allows you to edit files right in the terminal.",
-          "In this 40-lesson course, you will learn how to edit files in the terminal with Nano while building a castle."
+          "Nano 是一个允许你在终端编辑文件的程序。",
+          "在第 40 课中，你将学习如何在构建城堡时编辑终端中的文件。"
         ]
       },
       "learn-relational-databases-by-building-a-mario-database": {
-        "title": "Learn Relational Databases by Building a Mario Database",
+        "title": "通过构建 Mario 数据库来学习关系型数据库",
         "intro": [
-          "A relational database organizes data into tables that are linked together through relationships.",
-          "In this 165-lesson course, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
+          "一个关系数据库将数据保存到通过关系连接起来的表格中。",
+          "在第 165 课中，你将通过创建一个充满视频游戏字符的 PostgreSQL 数据库来学习关系数据库的基础知识。"
         ]
       },
       "learn-sql-by-building-a-student-database-part-1": {
-        "title": "Learn SQL by Building a Student Database: Part 1",
+        "title": "通过构建学生数据库来学习 SQL：第 1 部分",
         "intro": [
-          "SQL, or Structured Query Language, is the language for communicating with a relational database.",
-          "In this 140-lesson course, you will create a Bash script that uses SQL to enter information about your computer science students into PostgreSQL."
+          "SQL 又称结构化查询语言是与关联数据库通信的语言。",
+          "在第 140 课中，你将创建一个 Bash 脚本，使用 SQL 将你的计算机科学学生信息存储到 PostgreSQL 中。"
         ]
       },
       "learn-sql-by-building-a-student-database-part-2": {
-        "title": "Learn SQL by Building a Student Database: Part 2",
+        "title": "通过构建学生数据库来学习 SQL：第 2 部分",
         "intro": [
-          "SQL join commands are used to combine information from multiple tables in a relational database",
-          "In this 140-lesson course, you will complete your student database while diving deeper into SQL commands."
+          "SQL 加入命令用于将关系数据库中多个表格中的信息合并在一起",
+          "在第 140 课课程中，你将会在更深入的 SQL 命令中完成学生数据库。"
         ]
       }
     }
@@ -776,12 +776,13 @@
     "browse-other": "浏览我们的其他免费认证\n（我们建议你按顺序学习）",
     "courses": "课程",
     "steps": "步骤",
-    "expand": "Expand course",
-    "collapse": "Collapse course",
-    "legacy-header": "Legacy Courses",
-    "legacy-desc": "These courses are no longer part of the certification path, but are still available for you to further your learning.",
-    "viewing-upcoming-change": "You are looking at a beta page. ",
-    "go-back-to-learn": "Go back to the stable version of the curriculum.",
-    "read-database-cert-article": "Please read this forum post before proceeding."
+    "expand": "展开课程",
+    "collapse": "收起课程",
+    "legacy-header": "旧版课程",
+    "legacy-desc": "这些课程不再是认证路径的一部分，但仍可供你进一步学习。",
+    "viewing-upcoming-change": "你正在查看Beta页面。 ",
+    "go-back-to-learn": "回到正式版课程",
+    "read-database-cert-article": "请在继续之前阅读这个论坛帖子。",
+    "english-only": "The courses in this section are only available in English. We are only able to translate the titles and introductions at the moment, not the lessons themselves."
   }
 }
