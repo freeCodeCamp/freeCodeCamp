@@ -9,11 +9,9 @@ import { createSelector } from 'reselect';
 import IntroDescription from '../components/Intro/components/IntroDescription';
 import createRedirect from '../components/create-redirect';
 import { ButtonSpacer, Spacer } from '../components/helpers';
-import envData from '../../../config/env.json';
+import { apiLocation } from '../../../config/env.json';
 
 import { acceptTerms, userSelector, isSignedInSelector } from '../redux';
-
-const { apiLocation, homeLocation } = envData;
 
 import './email-sign-up.css';
 interface AcceptPrivacyTermsProps {
@@ -70,7 +68,6 @@ function AcceptPrivacyTerms({
   }
 
   function renderEmailListOptin(isSignedIn: boolean) {
-    const href = isSignedIn ? `${homeLocation}/learn` : `${apiLocation}/signin`;
     if (isSignedIn) {
       return (
         <Row>
@@ -109,7 +106,7 @@ function AcceptPrivacyTerms({
             bsSize='lg'
             bsStyle='primary'
             className='big-cta-btn'
-            href={href}
+            href={`${apiLocation}/signin`}
           >
             {t('buttons.sign-up-email-list')}
           </Button>
