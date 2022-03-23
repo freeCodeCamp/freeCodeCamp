@@ -782,6 +782,7 @@
     "legacy-desc": "Questi corsi non sono più parte del percorso di certificazioni, ma sono ancora disponibili per avanzare il tuo apprendimento.",
     "viewing-upcoming-change": "Stai guardando ad una pagina in beta. ",
     "go-back-to-learn": "Torna alla versione stabile del curriculum.",
-    "read-database-cert-article": "Per favore leggi questo post sul forum prima di procedere."
+    "read-database-cert-article": "Per favore leggi questo post sul forum prima di procedere.",
+    "english-only": "The courses in this section are only available in English. We are only able to translate the titles and introductions at the moment, not the lessons themselves."
   }
 }

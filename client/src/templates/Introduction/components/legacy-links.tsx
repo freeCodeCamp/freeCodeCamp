@@ -4,6 +4,9 @@ import { Alert } from '@freecodecamp/react-bootstrap';
 import { SuperBlocks } from '../../../../../config/certification-settings';
 import { isNewRespCert, isRelationalDbCert } from '../../../utils/is-a-cert';
 import { Link } from '../../../components/helpers';
+import envData from '../../../../../config/env.json';
+
+const { clientLocale } = envData;
 
 interface LegacyLinksProps {
   superBlock: SuperBlocks;
@@ -28,6 +31,11 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
   else if (isRelationalDbCert(superBlock))
     return (
       <>
+        {clientLocale != 'english' && (
+          <Alert bsStyle='info'>
+            <p>{t('intro:misc-text.english-only')}</p>
+          </Alert>
+        )}
         <Alert bsStyle='info'>
           <p>
             {t('intro:misc-text.viewing-upcoming-change')}{' '}

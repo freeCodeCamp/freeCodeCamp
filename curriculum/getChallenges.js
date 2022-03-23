@@ -177,10 +177,15 @@ async function buildBlocks({ basename: blockName }, curriculum, superBlock) {
     __dirname,
     `./challenges/_meta/${blockName}/meta.json`
   );
-  let blockMeta;
-  try {
-    blockMeta = require(metaPath);
+
+  if (fs.existsSync(metaPath)) {
+    // try to read the file, if the meta path does not exist it should be a certification.
+    // As they do not have meta files.
+
+    const blockMeta = JSON.parse(fs.readFileSync(metaPath));
+
     const { isUpcomingChange } = blockMeta;
+
     if (typeof isUpcomingChange !== 'boolean') {
       throw Error(
         `meta file at ${metaPath} is missing 'isUpcomingChange', it must be 'true' or 'false'`
@@ -192,10 +197,7 @@ async function buildBlocks({ basename: blockName }, curriculum, superBlock) {
       const blockInfo = { meta: blockMeta, challenges: [] };
       curriculum[superBlock].blocks[blockName] = blockInfo;
     }
-  } catch (e) {
-    if (e.code !== 'MODULE_NOT_FOUND') {
-      throw e;
-    }
+  } else {
     curriculum['certifications'].blocks[blockName] = { challenges: [] };
   }
 }

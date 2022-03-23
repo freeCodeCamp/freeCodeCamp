@@ -23,7 +23,8 @@ import {
   defaultDonationFormState,
   userSelector,
   postChargeStripe,
-  postChargeStripeCard
+  postChargeStripeCard,
+  isAVariantSelector
 } from '../../redux';
 import Spacer from '../helpers/spacer';
 import { Themes } from '../settings/theme';
@@ -33,6 +34,7 @@ import type { AddDonationData } from './paypal-button';
 import PaypalButton from './paypal-button';
 import StripeCardForm, { HandleAuthentication } from './stripe-card-form';
 import WalletsWrapper from './walletsButton';
+import SecurityLockIcon from './security-lock-icon';
 
 import './donation.css';
 
@@ -78,6 +80,7 @@ type DonateFormProps = {
   ) => string;
   theme: Themes;
   updateDonationFormState: (state: AddDonationData) => unknown;
+  isAVariant: boolean;
 };
 
 const mapStateToProps = createSelector(
@@ -86,19 +89,22 @@ const mapStateToProps = createSelector(
   isDonatingSelector,
   donationFormStateSelector,
   userSelector,
+  isAVariantSelector,
   (
     showLoading: DonateFormProps['showLoading'],
     isSignedIn: DonateFormProps['isSignedIn'],
     isDonating: DonateFormProps['isDonating'],
     donationFormState: DonateFormState,
-    { email, theme }: { email: string; theme: Themes }
+    { email, theme }: { email: string; theme: Themes },
+    isAVariant: boolean
   ) => ({
     isSignedIn,
     isDonating,
     showLoading,
     donationFormState,
     email,
-    theme
+    theme,
+    isAVariant
   })
 );
 
@@ -315,7 +321,8 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
       t,
       isMinimalForm,
       isSignedIn,
-      isDonating
+      isDonating,
+      isAVariant
     } = this.props;
     const priorityTheme = defaultTheme ? defaultTheme : theme;
     const isOneTime = donationDuration === 'onetime';
@@ -328,6 +335,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     return (
       <>
         <b className={isMinimalForm ? 'donation-label-modal' : ''}>
+          {isAVariant === false && <SecurityLockIcon />}
           {this.getDonationButtonLabel()}:
         </b>
         <Spacer />
@@ -366,6 +374,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
                 processing={processing}
                 t={t}
                 theme={priorityTheme}
+                isAVariant={isAVariant}
               />
             </>
           )}

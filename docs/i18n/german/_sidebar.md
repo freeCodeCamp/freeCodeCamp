@@ -16,6 +16,7 @@
   - [Arbeite an den Cypress Tests](how-to-add-cypress-tests.md)
   - [Arbeite an den Videoaufgaben](how-to-help-with-video-challenges.md)
   - [Work on the docs theme](how-to-work-on-the-docs-theme.md)
+  - [Work on the component library](how-to-work-on-the-component-library.md)
 - **Zusätzliche Leitfäden**
   - [Übersetzungen lokal testen](how-to-test-translations-locally.md)
   - [Verstehe die Dateistruktur des Studienplans](curriculum-file-structure.md)
