@@ -6,8 +6,11 @@
 
 // import { InitTestFrameArg } from "../../../client/frame-runner";
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 const { toString, flow } = require('lodash');
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 const { format } = require('../../../utils/format');
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 const initTestFrameArg = require('../../../client/frame-runner');
 
 // we use two different frames to make them all essentially pure functions
@@ -88,8 +91,8 @@ interface Context {
   build: string;
   document: Document;
   element: Element;
-  sources: InitTestFrameArg['code']['sources'];
-  loadEnzyme: InitTestFrameArg['loadEnzyme'];
+  sources: typeof initTestFrameArg['code']['sources'];
+  loadEnzyme: typeof initTestFrameArg['loadEnzyme'];
   window: {
     log: Console['log'];
     console: Console;
@@ -137,7 +140,7 @@ const buildProxyConsole = (proxyLogger: TProxyLogger) => (ctx: Context) => {
   if (proxyLogger && ctx?.window) {
     const oldLog = ctx.window.log.bind(ctx.window.console);
     ctx.window.console.log = function proxyConsole(...args) {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return,@typescript-eslint/no-unsafe-call
       proxyLogger(args.map(arg => format(arg)).join(' '));
       return oldLog(...args);
     };
@@ -150,13 +153,17 @@ type TInitTestFrame = (frameReady: TFrameReady) => (ctx: Context) => Context;
 const initTestFrame = (frameReady: TFrameReady) => (ctx: Context) => {
   waitForFrame(ctx)
     .then(async () => {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       const { sources, loadEnzyme } = ctx;
       // provide the file name and get the original source
       if (sources) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-return,@typescript-eslint/no-unsafe-member-access
         const getUserInput = (fileName: string) => toString(sources[fileName]);
         await ctx.document.__initTestFrame({
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           code: { sources },
           getUserInput,
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           loadEnzyme
         });
         if (frameReady) {
@@ -239,6 +246,7 @@ const createMainPreviewFramer = (
   document: Document,
   proxyLogger: TProxyLogger
 ) =>
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   createFramer(
     document,
     MAIN_PREVIEW_ID,
@@ -248,10 +256,8 @@ const createMainPreviewFramer = (
     'preview'
   );
 
-const createProjectPreviewFramer = (
-  document: Document,
-  frameTitle: string
-) =>
+const createProjectPreviewFramer = (document: Document, frameTitle: string) =>
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   createFramer(
     document,
     PROJECT_PREVIEW_ID,
@@ -266,6 +272,7 @@ export const createTestFramer = (
   proxyLogger: TProxyLogger,
   frameReady: TFrameReady
 ) =>
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   createFramer(
     document,
     TEST_ID,
@@ -283,6 +290,7 @@ const createFramer = (
   frameReady: TFrameReady,
   frameTitle: string
 ) =>
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-return
   flow(
     createFrame(document, id, frameTitle),
     mountFrame(document, id),
@@ -298,4 +306,4 @@ module.exports = {
   runTestInTestFrame,
   createMainPreviewFramer,
   createProjectPreviewFramer
-}
+};

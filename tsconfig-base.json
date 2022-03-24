@@ -22,8 +22,8 @@
       "module": "commonjs",
       "allowJs": true,
       "esModuleInterop": true,
-      "types": ["node", "@types/lodash", "@types/lodash-es"],
+      "types": ["node", "@types/lodash", "@types/lodash-es"]
     },
-    "transpileOnly": true,
+    "transpileOnly": true
   }
 }
