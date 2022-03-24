@@ -1084,7 +1084,7 @@ const Editor = (props: EditorProps): JSX.Element => {
           editorDidMount={editorDidMount}
           editorWillMount={editorWillMount}
           onChange={onChange}
-          options={options}
+          options={{ ...options, folding: !hasEditableRegion() }}
           theme={editorTheme}
         />
       </span>
