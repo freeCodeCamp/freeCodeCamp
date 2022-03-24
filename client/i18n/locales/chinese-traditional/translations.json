@@ -380,7 +380,7 @@
     "endowment": "這將是一個巨大的幫助。由於這是一個更加手動的過程，Quincy 可以幫助你親自完成它。請直接發送電子郵件至 quincy@freecodecamp.org。",
     "how-legacy": "如何爲 freeCodeCamp.org 設置遺產捐贈？",
     "we-honored": "我們將榮幸地將這種禮物用幫助世界各地的人學會編程。 根據你的居住地，這也可能是免稅的。",
-    "legacy-gift-message": "I give, devise, and bequeath [the sum of _____ USD (or other currency) OR _____ percent of the rest and residue of my estate] to freeCodeCamp.org (Free Code Camp, Inc. tax identification number 82-0779546), a charitable corporation organized under the laws of the State of Delaware, United States, currently located at 3905 Hedgcoxe Rd, PO Box 250352, Plano, Texas, 75025 United States, to be used for its general charitable purposes at its discretion.",
+    "legacy-gift-message": "我向 freeCodeCamp.org（Free Code Camp, Inc. 稅號 82-0779546），一家根據美國特拉華州法律組建的慈善公司，目前位於 3905 Hedgcoxe Rd, PO Box 250352, Plano, Texas, 75025 United States，捐贈、設計和遺贈 [_____ 美元（或其他貨幣）或我的財產的其餘部分和剩餘部分的總和的 _____%]，酌情用於其一般慈善目的。",
     "thank-wikimedia": "我們要感謝維基百科基金會爲我們提供這種正式文書。",
     "legacy-gift-questions": "如果你對此過程有任何疑問，請給 Quincy 發送電子郵件到 Quincy@freecodecamp.org。",
     "how-stock": "如何將股票捐贈給 freeCodeCamp.org？",
@@ -469,8 +469,8 @@
     "previous-page": "訪問上一頁",
     "next-page": "訪問下一頁",
     "last-page": "訪問最後一頁",
-    "primary-nav": "primary",
-    "breadcrumb-nav": "breadcrumb"
+    "primary-nav": "主要的",
+    "breadcrumb-nav": "麪包屑導航"
   },
   "flash": {
     "honest-first": "申請認證之前，你必須先接受我們的《學術誠信條例》",
@@ -665,9 +665,9 @@
     "create-p2": "創建一個用戶令牌來保存你在使用虛擬機的課程部分的進度。",
     "delete": "刪除我的用戶令牌",
     "delete-title": "刪除我的用戶令牌",
-    "delete-p1": "Your user token is used to save your progress on curriculum sections that use a virtual machine. If you suspect it has been compromised, you can delete it without losing any progress. A new one will be created automatically the next time you open a project.",
-    "delete-p2": "If you suspect your token has been compromised, you can delete it to make it unusable. Progress on previously submitted lessons will not be lost.",
-    "delete-p3": "You will need to create a new token to save future progress on the curriculum sections that use a virtual machine.",
+    "delete-p1": "您的用戶令牌用於保存使用虛擬機的課程部分的進度。如果您懷疑它已經被破壞，您可以刪除它而不會失去任何進展。下次打開項目時，將自動創建一個新的。",
+    "delete-p2": "如果您懷疑令牌已被破壞，您可以將其刪除以使其不可用。以前提交的課程的進度不會丟失。",
+    "delete-p3": "您需要創建一個新的令牌來保存使用虛擬機的課程部分的未來進度。",
     "no-thanks": "不，謝謝，我想保留我的令牌",
     "yes-please": "是的，我想刪除我的令牌"
   }
