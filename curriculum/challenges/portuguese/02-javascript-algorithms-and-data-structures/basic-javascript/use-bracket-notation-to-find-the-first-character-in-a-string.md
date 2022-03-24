@@ -41,7 +41,7 @@ assert(firstLetterOfLastName === 'L');
 Você deve usar a notação de colchetes.
 
 ```js
-assert(code.match(/firstLetterOfLastName\s*?=\s*?lastName\[.*?\]/));
+assert(code.match(/firstLetterOfLastName\s*=\s*lastName\s*\[\s*\d\s*\]/));
 ```
 
 # --seed--

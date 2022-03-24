@@ -8,13 +8,58 @@ dashedName: demographic-data-analyzer
 
 # --description--
 
-在这个挑战中，你必须使用 Pandas 对人口统计进行分析。 你将获得从 1994 年人口普查数据库中提取的人口统计数据数据集。
+你将通过使用我们的[Replit 入门代码](https://replit.com/github/freeCodeCamp/boilerplate-demographic-data-analyzer)来完成本项目。
 
-你可以[在 Replit 上查看整个项目的具体描述和初始代码](https://replit.com/github/freeCodeCamp/boilerplate-demographic-data-analyzer)。
+我们仍在开发 Python 课程的交互式教学部分。 目前，你可以在 YouTube 上通过 freeCodeCamp.org 上传的一些视频学习这个项目相关的知识。
 
-点击此链接，fork 这个项目。 一旦你根据 “README.md” 中的说明完成项目，请提交你的项目链接到下面。
+- [Python for Everybody 视频课程](https://www.freecodecamp.org/news/python-for-everybody/)（14 小时）
+- [Learn Python 视频课程](https://www.freecodecamp.org/news/learn-python-video-course/)（10 小时）
 
-我们仍在开发 Python 数据分析课程的交互式教学。 现在，你需要使用其他资源来学习如何通过这一挑战。
+# --instructions--
+
+在这个挑战中，你必须使用 Pandas 对人口统计进行分析。 你将获得从 1994 年人口普查数据库中提取的人口统计数据数据集。 以下是数据的示例：
+
+```markdown
+|    |   age | workclass        |   fnlwgt | education   |   education-num | marital-status     | occupation        | relationship   | race   | sex    |   capital-gain |   capital-loss |   hours-per-week | native-country   | salary   |
+|---:|------:|:-----------------|---------:|:------------|----------------:|:-------------------|:------------------|:---------------|:-------|:-------|---------------:|---------------:|-----------------:|:-----------------|:---------|
+|  0 |    39 | State-gov        |    77516 | Bachelors   |              13 | Never-married      | Adm-clerical      | Not-in-family  | White  | Male   |           2174 |              0 |               40 | United-States    | <=50K    |
+|  1 |    50 | Self-emp-not-inc |    83311 | Bachelors   |              13 | Married-civ-spouse | Exec-managerial   | Husband        | White  | Male   |              0 |              0 |               13 | United-States    | <=50K    |
+|  2 |    38 | Private          |   215646 | HS-grad     |               9 | Divorced           | Handlers-cleaners | Not-in-family  | White  | Male   |              0 |              0 |               40 | United-States    | <=50K    |
+|  3 |    53 | Private          |   234721 | 11th        |               7 | Married-civ-spouse | Handlers-cleaners | Husband        | Black  | Male   |              0 |              0 |               40 | United-States    | <=50K    |
+|  4 |    28 | Private          |   338409 | Bachelors   |              13 | Married-civ-spouse | Prof-specialty    | Wife           | Black  | Female |              0 |              0 |               40 | Cuba             | <=50K    |
+```
+
+你必须使用 Pandas 来回答以下问题：
+
+- 这个数据集中每个种族有多少人？ 这应该是一个以种族名称作为索引标签的 Pandas 系列。 （`race` 栏）
+- 男性的平均年龄是多少？
+- 拥有学士学位的人的百分比是多少？
+- 受过高等教育（`Bachelors`, `Masters`, or `Doctorate`）收入超过 50K 的人占多大比例？
+- 没有受过高等教育的人的收入超过 50K 的比例是多少？
+- 一个人每周最少工作多少小时？
+- 每周工作最少小时数的人中有多少人的工资超过 50K？
+- 哪个国家/地区的收入 >50K 的人口比例最高，该比例是多少？
+- 确定印度收入 >50K 的人最受欢迎的职业。
+
+使用文件 `demographic_data_analyzer` 中的启动代码。 更新代码，以便将所有设置为“None”的变量设置为适当的计算或代码。 将所有小数四舍五入到最接近的十分之一。
+
+单元测试是在 `test_module.py` 下为你编写的。
+
+## 开发
+
+对于开发，你可以使用 `main.py` 来测试你的函数。 单击“运行”按钮，`main.py` 将运行。
+
+## 测试
+
+为了你的方便，我们将测试从 `test_module.py` 导入到 `main.py`。 只要你点击“运行”按钮，测试就会自动运行。
+
+## 提交
+
+复制项目的 URL 并将其提交给 freeCodeCamp。
+
+## 数据集源
+
+Dua, D. and Graff, C. (2019). [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml). Irvine, CA: University of California, School of Information and Computer Science.
 
 # --hints--
 

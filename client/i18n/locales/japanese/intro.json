@@ -782,6 +782,7 @@
     "legacy-desc": "現在、これらのコースは認定講座の一部ではありませんが、あなたの学習をより深めるために利用可能です。",
     "viewing-upcoming-change": "ベータ版のページを閲覧中です。 ",
     "go-back-to-learn": "カリキュラムの安定版へ戻る。",
-    "read-database-cert-article": "Please read this forum post before proceeding."
+    "read-database-cert-article": "Please read this forum post before proceeding.",
+    "english-only": "The courses in this section are only available in English. We are only able to translate the titles and introductions at the moment, not the lessons themselves."
   }
 }

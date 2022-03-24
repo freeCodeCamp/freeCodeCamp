@@ -5,13 +5,13 @@ import frameRunnerData from '../../../../../config/client/frame-runner.json';
 import testEvaluatorData from '../../../../../config/client/test-evaluator.json';
 import { challengeTypes } from '../../../../utils/challenge-types';
 import { cssToHtml, jsToHtml, concatHtml } from '../rechallenge/builders.js';
-import { getTransformers } from '../rechallenge/transformers';
+import { getTransformers} from '../rechallenge/transformers';
 import {
   createTestFramer,
   runTestInTestFrame,
   createMainPreviewFramer,
   createProjectPreviewFramer
-} from './frame.ts';
+} from './frame';
 import createWorker from './worker-executor';
 
 const { filename: runner } = frameRunnerData;
@@ -19,7 +19,7 @@ const { filename: testEvaluator } = testEvaluatorData;
 
 const frameRunner = [
   {
-    src: `/ts/${runner}.ts`
+    src: `/js/${runner}.js`
   }
 ];
 

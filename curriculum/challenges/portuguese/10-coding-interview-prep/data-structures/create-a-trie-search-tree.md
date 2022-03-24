@@ -12,11 +12,11 @@ Aqui, vamos sair da busca binária e dar uma olhada em outro tipo de estrutura d
 
 # --instructions--
 
-Vamos criar uma Trie para armazenar palavras. Ele vai aceitar palavras através de um método `add` e armazená-las em uma estrutura de dados de Trie. Ele também permitirá consultar se uma determinada string é uma palavra com um método `isWord`, além de recuperar todas as palavras inseridas na Trie com um método `print`. `isWord` deve retornar um valor booleano e print deve retornar um array com todas essas palavras como valores de string. Para que possamos verificar se esta estrutura de dados foi implementada corretamente, fornecemos uma estrutura `Node` para cada nó da árvore. Cada nó será um objeto com uma propriedade `keys`, que é um objeto Map do JavaScript. Ele guardará as letras individuais, que são as chaves válidas de cada nó. Também criamos uma propriedade `end` nos nós que pode ser definidas como `true` se o nó representar o final de uma palavra.
+Vamos criar uma Trie para armazenar palavras. Ele vai aceitar palavras através de um método `add` e armazená-las em uma estrutura de dados de Trie. Ele também permitirá consultar se uma determinada string é uma palavra com um método `isWord`, além de recuperar todas as palavras inseridas na Trie com um método `print`. `isWord` deve retornar um valor booleano e `print` deve retornar um array com todas essas palavras como valores de string. Para que possamos verificar se esta estrutura de dados foi implementada corretamente, fornecemos uma estrutura `Node` para cada nó da árvore. Cada nó será um objeto com uma propriedade `keys`, que é um objeto Map do JavaScript. Ele guardará as letras individuais, que são as chaves válidas de cada nó. Também criamos uma propriedade `end` nos nós que pode ser definidas como `true` se o nó representar o final de uma palavra.
 
 # --hints--
 
-A Trie deve ter um método add.
+`Trie` deve ter o método `add`.
 
 ```js
 assert(
@@ -32,7 +32,7 @@ assert(
 );
 ```
 
-A Trie deve ter um método print.
+`Trie` deve ter o método `print`.
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-A Trie deve ter um método isWord.
+`Trie` deve ter o método `isWord`.
 
 ```js
 assert(
@@ -64,7 +64,7 @@ assert(
 );
 ```
 
-O método print deve retornar todos os itens adicionados à Trie como strings em um array.
+O método `print` deve retornar todos os itens adicionados à Trie como strings em um array.
 
 ```js
 assert(
@@ -93,7 +93,7 @@ assert(
 );
 ```
 
-O método isWord deve retornar true apenas para palavras adicionadas à Trie e false para todas as outras palavras.
+O método `isWord` deve retornar `true` somente para os itens adicionados à Trie e `false` para itens ausentes.
 
 ```js
 assert(

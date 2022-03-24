@@ -26,7 +26,7 @@ Você é informado de que:
 
 $$\begin{align} C(3, 1) = & \\{(3, 0), (-1, 2), (-1,0), (-1,-2)\\} \\\\ C(2500, 1000) = & \\{(2500, 0), (772, 2376), (772, -2376), (516, 1792), (516, -1792), (500, 0), (68, 504), \\\\ &(68, -504),(-1356, 1088), (-1356, -1088), (-1500, 1000), (-1500, -1000)\\} \end{align}$$
 
-**Observação:** (-625, 0) não é um elemento de $C(2500, 1000)$, pois $\sin(t)$ não é um número racional para os valores correspondentes de t.
+**Observação:** (-625, 0) não é um elemento de $C(2500, 1000)$, pois $\sin(t)$ não é um número racional para os valores correspondentes de $t$.
 
 $S(3, 1) = (|3| + |0|) + (|-1| + |2|) + (|-1| + |0|) + (|-1| + |-2|) = 10$
 

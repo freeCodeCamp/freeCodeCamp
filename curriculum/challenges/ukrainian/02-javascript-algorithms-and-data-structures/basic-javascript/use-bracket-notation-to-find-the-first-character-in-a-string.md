@@ -41,7 +41,7 @@ assert(firstLetterOfLastName === 'L');
 Вам слід використовувати дужкову нотацію.
 
 ```js
-assert(code.match(/firstLetterOfLastName\s*?=\s*?lastName\[.*?\]/));
+assert(code.match(/firstLetterOfLastName\s*=\s*lastName\s*\[\s*\d\s*\]/));
 ```
 
 # --seed--

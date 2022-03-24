@@ -3,6 +3,10 @@ const path = require('path');
 
 exports.buildMobileCurriculum = function buildMobileCurriculum(json) {
   const mobileStaticPath = path.resolve(__dirname, '../../../client/static');
+  const blockIntroPath = path.resolve(
+    __dirname,
+    '../../../client/i18n/locales/english/intro.json'
+  );
 
   fs.mkdirSync(`${mobileStaticPath}/mobile`, { recursive: true });
   writeAndParseCurriculumJson(json);
@@ -12,7 +16,14 @@ exports.buildMobileCurriculum = function buildMobileCurriculum(json) {
       key => key !== 'certifications'
     );
 
-    writeToFile('availableSuperblocks', { superblocks: superBlockKeys });
+    writeToFile('availableSuperblocks', {
+      // removing "/" as it will create an extra sub-path when accessed via an endpoint
+
+      superblocks: [
+        superBlockKeys.map(key => key.replace(/\//, '-')),
+        getSuperBlockNames(superBlockKeys)
+      ]
+    });
 
     for (let i = 0; i < superBlockKeys.length; i++) {
       const superBlock = {};
@@ -25,16 +36,32 @@ exports.buildMobileCurriculum = function buildMobileCurriculum(json) {
 
       for (let j = 0; j < blockNames.length; j++) {
         superBlock[superBlockKeys[i]]['blocks'][blockNames[j]] = {};
+
+        superBlock[superBlockKeys[i]]['blocks'][blockNames[j]]['desc'] =
+          getBlockDescription(superBlockKeys[i], blockNames[j]);
+
         superBlock[superBlockKeys[i]]['blocks'][blockNames[j]]['challenges'] =
           curriculum[superBlockKeys[i]]['blocks'][blockNames[j]]['meta'];
       }
 
-      writeToFile(superBlockKeys[i], superBlock);
+      writeToFile(superBlockKeys[i].replace(/\//, '-'), superBlock);
     }
   }
 
-  function writeToFile(filename, json) {
-    const fullPath = `${mobileStaticPath}/mobile/${filename}.json`;
+  function getBlockDescription(superBlockKey, blockKey) {
+    const intros = JSON.parse(fs.readFileSync(blockIntroPath));
+
+    return intros[superBlockKey]['blocks'][blockKey]['intro'];
+  }
+
+  function getSuperBlockNames(superBlockKeys) {
+    const superBlocks = JSON.parse(fs.readFileSync(blockIntroPath));
+
+    return superBlockKeys.map(key => superBlocks[key].title);
+  }
+
+  function writeToFile(fileName, json) {
+    const fullPath = `${mobileStaticPath}/mobile/${fileName}.json`;
     fs.mkdirSync(path.dirname(fullPath), { recursive: true });
     fs.writeFileSync(fullPath, JSON.stringify(json, null, 2));
   }
