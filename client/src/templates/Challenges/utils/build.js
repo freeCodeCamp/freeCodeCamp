@@ -19,7 +19,7 @@ const { filename: testEvaluator } = testEvaluatorData;
 
 const frameRunner = [
   {
-    src: `/js/${runner}.ts`
+    src: `/ts/${runner}.ts`
   }
 ];
 

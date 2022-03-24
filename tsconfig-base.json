@@ -19,8 +19,11 @@
   // compile the scripts to commonjs (or node will complain about the requires)
   "ts-node": {
     "compilerOptions": {
-      "module": "commonjs"
+      "module": "commonjs",
+      "allowJs": true,
+      "esModuleInterop": true,
+      "types": ["node", "@types/lodash", "@types/lodash-es"],
     },
-    "transpileOnly": true
+    "transpileOnly": true,
   }
 }

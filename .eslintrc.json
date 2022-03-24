@@ -94,7 +94,8 @@
             "selector": "enumMember",
             "format": ["PascalCase"]
           }
-        ]
+        ],
+        "@typescript-eslint/no-var-requires": 0
       }
     },
     {

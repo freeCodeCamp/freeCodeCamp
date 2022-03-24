@@ -1,14 +1,22 @@
-import { toString, flow } from 'lodash-es';
-import { format } from '../../../utils/format';
-import { InitTestFrameArg } from '../../../client/frame-runner';
+// import { toString, flow } from 'lodash-es';
+// import { format } from '../../../utils/format';
+// import { InitTestFrameArg } from '../../../client/frame-runner';
+
+// import { InitTestFrameArg } from "../../../client/frame-runner";
+
+// import { InitTestFrameArg } from "../../../client/frame-runner";
+
+const { toString, flow } = require('lodash');
+const { format } = require('../../../utils/format');
+const initTestFrameArg = require('../../../client/frame-runner');
 
 // we use two different frames to make them all essentially pure functions
 // main iframe is responsible rendering the preview and is where we proxy the
-export const MAIN_PREVIEW_ID = 'fcc-main-frame';
+const MAIN_PREVIEW_ID = 'fcc-main-frame';
 // the test frame is responsible for running the assert tests
 const TEST_ID = 'fcc-test-frame';
 // the project preview frame demos the finished project
-export const PROJECT_PREVIEW_ID = 'fcc-project-preview-frame';
+const PROJECT_PREVIEW_ID = 'fcc-project-preview-frame';
 
 const DOCUMENT_NOT_FOUND_ERROR = 'document not found';
 
@@ -54,7 +62,7 @@ const createHeader = (id = MAIN_PREVIEW_ID): string => `
   </script>
 `;
 
-export const runTestInTestFrame = async function (
+const runTestInTestFrame = async function (
   document: Document,
   test: string,
   timeout: number
@@ -227,7 +235,7 @@ const writeContentToFrame = (ctx: Context) => {
   return ctx;
 };
 
-export const createMainPreviewFramer = (
+const createMainPreviewFramer = (
   document: Document,
   proxyLogger: TProxyLogger
 ) =>
@@ -240,7 +248,7 @@ export const createMainPreviewFramer = (
     'preview'
   );
 
-export const createProjectPreviewFramer = (
+const createProjectPreviewFramer = (
   document: Document,
   frameTitle: string
 ) =>
@@ -282,3 +290,12 @@ const createFramer = (
     writeContentToFrame,
     init(frameReady, proxyLogger)
   );
+
+module.exports = {
+  ['MAIN_PREVIEW_ID']: MAIN_PREVIEW_ID,
+  ['PROJECT_PREVIEW_ID']: 'fcc-project-preview-frame',
+
+  runTestInTestFrame,
+  createMainPreviewFramer,
+  createProjectPreviewFramer
+}

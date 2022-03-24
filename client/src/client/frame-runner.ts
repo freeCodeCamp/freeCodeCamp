@@ -1,4 +1,4 @@
-import '@babel/polyfill';
+import '@babel/polyfill/noConflict';
 import jQuery from 'jquery';
 import curriculumHelpers from '../utils/curriculum-helpers';
 
