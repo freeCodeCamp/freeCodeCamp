@@ -1,46 +1,46 @@
-# Security Policy
+# Política de seguridad
 
-This document outlines our security policy for the codebases, platforms that we operate, and how to report vulnerabilities.
+Este documento describe nuestra política de seguridad para los códigos, plataformas que operamos, y cómo reportar vulnerabilidades.
 
-## Reporting a Vulnerability
+## Informar una vulnerabilidad
 
-If you think you have found a vulnerability, _please report responsibly_. Don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
+Si crees que has encontrado una vulnerabilidad, _informa responsablemente_. No crees temas de GitHub para problemas de seguridad. En su lugar, por favor envía un correo electrónico a `security@freecodecamp.org` y lo estudiaremos inmediatamente.
 
-Ensure that you are using the **latest**, **stable** and **updated** version of the Operating System and Web Browser available to you on your machine.
+Asegúrese de que está usando la **última**, **estable** y **actualizaron** versión del sistema operativo y del navegador Web disponible para usted en su máquina.
 
-We appreciate any responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users.
+Apreciamos cualquier divulgación responsable de vulnerabilidades que puedan afectar la integridad de nuestras plataformas y usuarios.
 
-Once you report a vulnerability, we will look into it and make sure that it is not a false positive. We will get back to you if we need to clarify any details. You can submit separate reports for each issue you find.
+Una vez que informe de una vulnerabilidad, la examinaremos y nos aseguraremos de que no sea un falso positivo. Nos pondremos en contacto con usted si necesitamos aclarar cualquier detalle. Puedes enviar informes separados para cada número que encuentres.
 
-While we do not offer any bounties or swags at the moment, we'll be happy to list your name in our [Hall of Fame](security-hall-of-fame.md) list, provided the reports are not low-effort.
+Aunque no ofrecemos ninguna recompensa o swags en este momento, Estaremos encantados de listar tu nombre en nuestra lista de [Hall of Fame](security-hall-of-fame.md), siempre y cuando los informes no sean de bajo esfuerzo.
 
-We consider using tools & online utilities to report issues with SPF & DKIM configs, or SSL Server tests, etc. in the category of ["beg bounties"](https://www.troyhunt.com/beg-bounties/) and are unable to respond to these reports.
+Consideramos el uso de herramientas y utilidades en línea para informar problemas con configuraciones SPF y DKIM, o pruebas de servidor SSL, etc. en la categoría de ["recompensas"](https://www.troyhunt.com/beg-bounties/) y no pueden responder a estos informes.
 
-## Platforms & Codebases
+## Plataformas y Bases de Código
 
-Here is a list of the platforms and codebases we are accepting reports for:
+Aquí hay una lista de las plataformas y bases de código para las que estamos aceptando informes:
 
-### Learn Platform
+### Plataforma de aprendizaje
 
-| Version     | Branch         | Supported | Website active           |
-| ----------- | -------------- | --------- | ------------------------ |
-| production  | `prod-current` | Yes       | `freecodecamp.org/learn` |
-| staging     | `prod-staging` | Yes       | `freecodecamp.dev/learn` |
-| development | `main`         | No        |                          |
+| Versión    | Rama           | Soportado | Sitio web activo         |
+| ---------- | -------------- | --------- | ------------------------ |
+| producción | `prod-current` | Sí        | `freecodecamp.org/learn` |
+| escenario  | `prod-staging` | Sí        | `freecodecamp.dev/learn` |
+| desarrollo | `principal`    | No        |                          |
 
-### Publication Platform
+### Plataforma de publicación
 
-| Version    | Supported | Website active                           |
+| Versión    | Soportado | Sitio web activo                         |
 | ---------- | --------- | ---------------------------------------- |
-| production | Yes       | `freecodecamp.org/news`                  |
-| localized  | Yes       | `freecodecamp.org/<language>/news` |
+| producción | Sí        | `freecodecamp.org/news`                  |
+| localizado | Sí        | `freecodecamp.org/<language>/news` |
 
-### Mobile app
+### Aplicación Móvil
 
-| Version    | Supported | Website active                                                   |
+| Versión    | Soportado | Sitio web activo                                                 |
 | ---------- | --------- | ---------------------------------------------------------------- |
-| production | Yes       | `https://play.google.com/store/apps/details?id=org.freecodecamp` |
+| producción | Sí        | `https://play.google.com/store/apps/details?id=org.freecodecamp` |
 
-Apart from the above, we are also accepting reports for repositories hosted on GitHub, under the freeCodeCamp organization.
+Aparte de lo anterior, también estamos aceptando informes para repositorios alojados en GitHub, bajo la organización freeCodeCamp.
 
-We self-host some of our platforms using open-source software like Ghost & Discourse. If you are reporting a vulnerability please ensure that it is not a bug in the upstream software.
+Auto-alojamos algunas de nuestras plataformas utilizando software de código abierto como Ghost & Discourse. Si está reportando una vulnerabilidad, asegúrese de que no es un error en el software original.

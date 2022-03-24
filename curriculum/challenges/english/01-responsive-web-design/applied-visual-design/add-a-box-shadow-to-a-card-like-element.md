@@ -11,14 +11,14 @@ dashedName: add-a-box-shadow-to-a-card-like-element
 
 The `box-shadow` property applies one or more shadows to an element.
 
-The `box-shadow` property takes values for
+The `box-shadow` property takes the following values, in order:
 
 <ul>
-  <li><code>offset-x</code> (how far to push the shadow horizontally from the element),</li>
-  <li><code>offset-y</code> (how far to push the shadow vertically from the element),</li>
-  <li><code>blur-radius</code>,</li>
-  <li><code>spread-radius</code> and</li>
-  <li><code>color</code>, in that order.</li>
+  <li><code>offset-x</code> (how far to push the shadow horizontally from the element)</li>
+  <li><code>offset-y</code> (how far to push the shadow vertically from the element)</li>
+  <li><code>blur-radius</code></li>
+  <li><code>spread-radius</code></li>
+  <li><code>color</code></li>
 </ul>
 
 The `blur-radius` and `spread-radius` values are optional.

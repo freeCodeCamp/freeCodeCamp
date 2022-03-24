@@ -1,10 +1,10 @@
-# Responsible Disclosure - Hall of Fame
+# Divulgación responsable - Salón de la Fama
 
-We appreciate any responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users. If you are interested in contributing to the security of our platform, please read our [security policy outlined here](security.md).
+Apreciamos cualquier divulgación responsable de vulnerabilidades que puedan afectar la integridad de nuestras plataformas y usuarios. Si está interesado en contribuir a la seguridad de nuestra plataforma, lea nuestra política de [seguridad descrita aquí](security.md).
 
-While we do not offer any bounties or swags at the moment, we are grateful to these awesome people for helping us keep the platform safe for everyone:
+Si bien no ofrecemos ninguna recompensa o botín en este momento, estamos agradecidos con estas personas increíbles por ayudarnos a mantener la plataforma segura para todos:
 
-- Mehul Mohan from [codedamn](https://codedamn.com) ([@mehulmpt](https://twitter.com/mehulmpt)) - [Vulnerability Fix](https://github.com/freeCodeCamp/freeCodeCamp/blob/bb5a9e815313f1f7c91338e171bfe5acb8f3e346/client/src/components/Flash/index.js)
+- Mehul Mohan de [codedamn](https://codedamn.com) ([@mehulmpt](https://twitter.com/mehulmpt)) - [Vulnerability Fix](https://github.com/freeCodeCamp/freeCodeCamp/blob/bb5a9e815313f1f7c91338e171bfe5acb8f3e346/client/src/components/Flash/index.js)
 - Peter Samir https://www.linkedin.com/in/peter-samir/
 
-  > ### Thank you for your contributions :pray:
+  > ### 🎉¡Gracias por tu contribución a la página :pray:

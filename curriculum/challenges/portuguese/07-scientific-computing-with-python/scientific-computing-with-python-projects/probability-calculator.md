@@ -10,19 +10,13 @@ dashedName: probability-calculator
 
 Você [trabalhará neste projeto com nosso código inicial do Replit](https://replit.com/github/freeCodeCamp/boilerplate-probability-calculator).
 
-Ainda estamos desenvolvendo a parte instrucional interativa do currículo Python. Por enquanto, aqui estão alguns vídeos no canal do freeCodeCamp.org do YouTube que ensinarão tudo o que você precisa saber para completar este projeto:
-
-- [Curso de Python em vídeo para todos](https://www.freecodecamp.org/news/python-for-everybody/) (14 horas)
-
-- [Curso Aprenda Python em vídeo](https://www.freecodecamp.org/news/learn-python-video-course/) (10 horas)
-
 # --instructions--
 
 Suponha que haja um chapéu contendo 5 bolas azuis, 4 bolas vermelhas e 2 bolas verdes. Qual é a probabilidade de um sorteio aleatório de 4 bolas conter pelo menos 1 bola vermelha e 2 bolas verdes? Embora seja possível calcular a probabilidade usando matemática avançada, uma maneira mais fácil é escrever um programa para realizar um grande número de experimentos para estimar uma probabilidade aproximada.
 
 Para este projeto, escreva um programa para determinar a probabilidade aproximada de retirar certas bolas aleatoriamente de um chapéu.
 
-Primeiro, crie uma classe `Hat` (Chapéu) em `prob_calculator.py`. A classe deve ter um número variável de argumentos que especificam o número de bolas de cada cor que estão no chapéu. Por exemplo, um objeto da classe poderia ser criado de qualquer uma dessas maneiras:
+Primeiro, crie uma classe `Hat` em `prob_calculator.py`. A classe deve ter um número variável de argumentos que especificam o número de bolas de cada cor que estão no chapéu. Por exemplo, um objeto da classe poderia ser criado de qualquer uma dessas maneiras:
 
 ```py
 hat1 = Hat(yellow=3, blue=2, green=6)

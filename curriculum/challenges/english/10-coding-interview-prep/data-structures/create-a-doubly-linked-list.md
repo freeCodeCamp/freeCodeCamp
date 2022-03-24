@@ -20,7 +20,7 @@ Be careful to handle any possible edge cases when writing these methods, such as
 
 # --hints--
 
-The DoublyLinkedList data structure should exist.
+The `DoublyLinkedList` data structure should exist.
 
 ```js
 assert(
@@ -34,7 +34,7 @@ assert(
 );
 ```
 
-The DoublyLinkedList should have a method called add.
+The `DoublyLinkedList` should have a method called `add`.
 
 ```js
 assert(
@@ -51,7 +51,7 @@ assert(
 );
 ```
 
-The DoublyLinkedList should have a method called remove.
+The `DoublyLinkedList` should have a method called `remove`.
 
 ```js
 assert(
@@ -68,7 +68,7 @@ assert(
 );
 ```
 
-Removing an item from an empty list should return null.
+Removing an item from an empty list should return `null`.
 
 ```js
 assert(
@@ -82,7 +82,7 @@ assert(
 );
 ```
 
-The add method should add items to the list.
+The `add` method should add items to the list.
 
 ```js
 assert(

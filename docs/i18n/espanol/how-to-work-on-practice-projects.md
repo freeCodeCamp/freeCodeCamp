@@ -1,27 +1,27 @@
-# How to Work on Practice Projects
+# Cómo Trabajar en Proyectos de Práctica
 
-The `tools/challenge-helper-scripts` folder contains tools to help facilitate the creation and maintenance of the freeCodeCamp project-based curriculum.
+La carpeta `tools/challenge-helper-scripts` contiene herramientas para facilitar la creación y mantenimiento del plan de estudio basado en proyectos de FreeCodeCamp.
 
-## Create a new project
+## Crea un nuevo proyecto
 
-Run `npm run create-project`. This opens up a command line ui that guides you through the process. Once that has finished, there should be a new challenge in the English curriculum that you can use for the first step of the project. For example, if you created a project called `test-project` in the Responsive Web Design certification, it would be in `curriculum/challenges/english/01-responsive-web-design/test-project`.
+Ejecuta el comando `npm run create-project`. Esto muestra una consola que te guiará durante el proceso. Una vez terminado, debería haber un nuevo desafío en el plan de estudio de Ingles que puedes utilizar para el primer paso del proyecto. Por ejemplo, si creaste un proyecto llamado `test-project` en la certificación de Diseño Web Responsivo, esté debería estar en `curriculum/challenges/english/01-responsive-web-design/test-project`.
 
-If you want to create new steps, the following tools simplify that process.
+Si deseas crear nuevos pasos, las siguientes herramientas simplifican este proceso.
 
-## create-next-step
+## Crea el siguiente paso
 
 A one-off script that will automatically add the next step based on the last step in the project. The challenge seed code will use the previous step's challenge seed code.
 
-### How to run script:
+### Cómo ejecutar un script:
 
-1. Change to the directory of the project.
-2. Run the following npm command:
+1. Redirígete al directorio del proyecto.
+2. Ejecuta el siguiente comando npm:
 
 ```bash
-npm run create-next-step
+Ejecuta npm crear siguiente paso
 ```
 
-## create-empty-steps
+## Crea pasos vacíos
 
 A one-off script that automatically adds a specified number of steps. The challenge seed code for all steps created will be empty.
 

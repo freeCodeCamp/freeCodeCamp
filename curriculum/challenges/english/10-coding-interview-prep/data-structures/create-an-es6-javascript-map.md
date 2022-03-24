@@ -16,13 +16,13 @@ Define a JavaScript Map object and assign to it a variable called myMap. Add the
 
 # --hints--
 
-The myMap object should exist.
+The `myMap` object should exist.
 
 ```js
 assert(typeof myMap === 'object');
 ```
 
-myMap should contain the key value pair `freeCodeCamp`, `Awesome!`.
+`myMap` should contain the key value pair `freeCodeCamp`, `Awesome!`.
 
 ```js
 assert(myMap.get('freeCodeCamp') === 'Awesome!');

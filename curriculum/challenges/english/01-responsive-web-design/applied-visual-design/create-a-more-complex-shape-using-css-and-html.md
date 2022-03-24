@@ -28,15 +28,15 @@ For the `::before` and `::after` pseudo-elements to function properly, they must
 
 # --instructions--
 
-Transform the element on the screen to a heart. In the `heart::after` selector, change the `background-color` to `pink` and the `border-radius` to 50%.
+Transform the element on the screen to a heart. In the `.heart::after` selector, change the `background-color` to `pink` and the `border-radius` to 50%.
 
 Next, target the element with the class `heart` (just `heart`) and fill in the `transform` property. Use the `rotate()` function with -45 degrees.
 
-Finally, in the `heart::before` selector, set its `content` property to an empty string.
+Finally, in the `.heart::before` selector, set its `content` property to an empty string.
 
 # --hints--
 
-The `background-color` property of the `heart::after` selector should be `pink`.
+The `background-color` property of the `.heart::after` selector should be `pink`.
 
 ```js
 const heartAfter = code.match(/\.heart::after\s*{[\s\S]+?[^\}]}/g)[0];
@@ -45,7 +45,7 @@ assert(
 );
 ```
 
-The `border-radius` of the `heart::after` selector should be 50%.
+The `border-radius` of the `.heart::after` selector should be 50%.
 
 ```js
 assert(code.match(/border-radius\s*?:\s*?50%/gi).length == 2);
@@ -57,7 +57,7 @@ The `transform` property for the `heart` class should use a `rotate()` function 
 assert(code.match(/transform\s*?:\s*?rotate\(\s*?-45deg\s*?\)/gi));
 ```
 
-The `content` of the `heart::before` selector should be an empty string.
+The `content` of the `.heart::before` selector should be an empty string.
 
 ```js
 assert(code.match(/\.heart::before\s*?{\s*?content\s*?:\s*?("|')\1\s*?;/gi));
