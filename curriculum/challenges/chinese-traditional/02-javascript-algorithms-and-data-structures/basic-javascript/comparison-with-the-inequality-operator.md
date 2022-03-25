@@ -14,18 +14,16 @@ dashedName: comparison-with-the-inequality-operator
 **例如**
 
 ```js
-1 !=  2
-1 != "1"
-1 != '1'
-1 != true
-0 != false
+1 !=  2    // true
+1 != "1"   // false
+1 != '1'   // false
+1 != true  // false
+0 != false // false
 ```
-
-按順序，這些表達式會返回 `true`、`false`、`false`、`false` 和 `false`。
 
 # --instructions--
 
-在 `if` 語句中添加不等運算符 `!=` 以便函數在 `val` 不等於 `99` 時返回字符串 `Not Equal`。
+在 `if` 語句中添加不等式運算符 `!=` 以便函數在 `val` 不等於 `99` 時返回字符串 `Not Equal`。
 
 # --hints--
 
@@ -59,7 +57,7 @@ assert(testNotEqual('12') === 'Not Equal');
 assert(testNotEqual('bob') === 'Not Equal');
 ```
 
-你應該使用 `!=` 運算符。
+你應該使用 `!=` 運算符
 
 ```js
 assert(code.match(/(?!!==)!=/));

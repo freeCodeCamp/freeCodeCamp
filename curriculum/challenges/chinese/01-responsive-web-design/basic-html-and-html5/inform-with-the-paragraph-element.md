@@ -9,7 +9,7 @@ dashedName: inform-with-the-paragraph-element
 
 # --description--
 
-`p` 元素是网站上段落文本使用的元素。 `p` 是“paragraph（段落）”的缩写。
+`p` 元素是网站上段落文本的首选元素。 `p` 是“paragraph（段落）”的缩写。
 
 你可以像这样创建一个段落：
 

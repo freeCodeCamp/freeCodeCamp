@@ -31,7 +31,7 @@ Faça um grid com três colunas cujas larguras possuam as seguintes medidas, res
 
 # --hints--
 
-A classe `container` deve ter a propriedade `grid-template-columns` configurada para criar 3 colunas com as seguintes larguras: `1fr, 100px, 2fr`.
+A classe `container` deve ter a propriedade `grid-template-columns` de modo a criar 3 colunas com as seguintes larguras: `1fr`, `100px` e `2fr`.
 
 ```js
 assert(

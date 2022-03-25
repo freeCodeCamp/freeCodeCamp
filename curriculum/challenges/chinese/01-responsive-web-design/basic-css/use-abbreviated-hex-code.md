@@ -29,7 +29,7 @@ dashedName: use-abbreviated-hex-code
 assert($('.red-text').css('color') === 'rgb(255, 0, 0)');
 ```
 
-应使用红色的 `hex code` 缩写形式，不应使用 `#FF0000`。
+应使用红色的缩写十六进制代码，而不是十六进制代码 `#FF0000`。
 
 ```js
 assert(code.match(/\.red-text\s*?{\s*?color\s*:\s*?#F00\s*?;?\s*?}/gi));
@@ -41,7 +41,7 @@ assert(code.match(/\.red-text\s*?{\s*?color\s*:\s*?#F00\s*?;?\s*?}/gi));
 assert($('.green-text').css('color') === 'rgb(0, 255, 0)');
 ```
 
-应使用绿色的 `hex code` 缩写形式，不应使用 `#00FF00`。
+应使用绿色的缩写十六进制代码，而不是十六进制代码 `#00FF00`。
 
 ```js
 assert(code.match(/\.green-text\s*?{\s*?color\s*:\s*?#0F0\s*?;?\s*?}/gi));
@@ -53,7 +53,7 @@ assert(code.match(/\.green-text\s*?{\s*?color\s*:\s*?#0F0\s*?;?\s*?}/gi));
 assert($('.cyan-text').css('color') === 'rgb(0, 255, 255)');
 ```
 
-应使用蓝绿色的 `hex code` 缩写形式，不应使用 `#00FFFF`。
+应使用青色的简写十六进制代码，而不是十六进制代码 `#00FFFF`。
 
 ```js
 assert(code.match(/\.cyan-text\s*?{\s*?color\s*:\s*?#0FF\s*?;?\s*?}/gi));
@@ -65,7 +65,7 @@ assert(code.match(/\.cyan-text\s*?{\s*?color\s*:\s*?#0FF\s*?;?\s*?}/gi));
 assert($('.fuchsia-text').css('color') === 'rgb(255, 0, 255)');
 ```
 
-应使用紫红色的 `hex code` 缩写形式，不应使用 `#FF00FF`。
+应使用紫红色的简写十六进制代码，而不是十六进制代码 `#FF00FF`。
 
 ```js
 assert(code.match(/\.fuchsia-text\s*?{\s*?color\s*:\s*?#F0F\s*?;?\s*?}/gi));

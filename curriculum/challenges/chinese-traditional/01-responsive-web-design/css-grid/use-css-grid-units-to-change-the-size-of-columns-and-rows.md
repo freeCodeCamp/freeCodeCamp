@@ -31,7 +31,7 @@ grid-template-columns: auto 50px 10% 2fr 1fr;
 
 # --hints--
 
-class 爲 `container` 的元素應具有 `grid-template-columns` 屬性且屬性值應爲 `1fr 100px 2fr`。
+`container` 類應該有一個 `grid-template-columns` 屬性，該屬性具有以下寬度的三列：`1fr`、`100px` 和 `2fr`。
 
 ```js
 assert(

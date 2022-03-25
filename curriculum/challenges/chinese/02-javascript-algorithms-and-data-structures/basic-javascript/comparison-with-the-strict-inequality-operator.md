@@ -14,12 +14,10 @@ dashedName: comparison-with-the-strict-inequality-operator
 **示例**
 
 ```js
-3 !==  3
-3 !== '3'
-4 !==  3
+3 !==  3  // false
+3 !== '3' // true
+4 !==  3  // true
 ```
-
-按顺序，这些表达式会返回 `false`、`true`、`true`。
 
 # --instructions--
 
@@ -51,7 +49,7 @@ assert(testStrictNotEqual(12) === 'Not Equal');
 assert(testStrictNotEqual('bob') === 'Not Equal');
 ```
 
-应该使用 `!==` 运算符。
+应该使用 `!==` 运算符
 
 ```js
 assert(code.match(/(val\s*!==\s*\d+)|(\d+\s*!==\s*val)/g).length > 0);

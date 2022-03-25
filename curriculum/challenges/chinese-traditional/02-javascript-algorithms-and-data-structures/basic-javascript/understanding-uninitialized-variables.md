@@ -9,7 +9,7 @@ dashedName: understanding-uninitialized-variables
 
 # --description--
 
-當 JavaScript 中的變量被聲明的時候，程序內部會給它一個初始值 `undefined`。 當你對一個值爲 `undefined` 的變量進行運算操作的時候，算出來的結果將會是 `NaN`，它的意思是 <dfn>"Not a Number"</dfn>。 當你用一個值是 `undefined` 的變量來做字符串拼接操作的時候，它會轉換成字符串（<dfn>string</dfn>）`undefined`。
+當 JavaScript 中的變量被聲明的時候，程序內部會給它一個初始值 `undefined`。 當你對一個值爲 `undefined` 的變量進行運算操作的時候，算出來的結果將會是 `NaN`，它的意思是 <dfn>"Not a Number"</dfn>。 如果你用 `undefined` 變量連接一個字符串，你將得到一個 `undefined` 的 <dfn>字符串</dfn>。
 
 # --instructions--
 

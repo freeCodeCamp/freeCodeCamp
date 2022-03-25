@@ -15,11 +15,11 @@ Você criará um objeto redondo e transparente com uma sombra nítida ligeiramen
 
 Para criar um objeto redondo, a propriedade `border-radius` deve ter um valor de 50%.
 
-Você deve se lembrar de um desafio anterior que a propriedade `box-shadow` recebe valores para o eixo horizontal (`offset-x`), eixo vertical (`offset-y`), `blur-radius`, `spread-radius` e um valor de cor, nessa ordem. Os valores `blur-radius` e `spread-radius` são opcionais.
+Você deve se lembrar de um desafio anterior que a propriedade `box-shadow` recebe valores para o eixo horizontal (`offset-x`), eixo vertical (`offset-y`), `blur-radius`, `spread-radius` e um valor de `color`, nessa ordem. Os valores `blur-radius` e `spread-radius` são opcionais.
 
 # --instructions--
 
-Manipule o elemento quadrado no editor para criar a forma da lua. Primeiro, altere a propriedade `background-color` para `transparent` e, em seguida, defina a propriedade `border-radius` para 50% para fazer a forma circular. Finalmente, altere a propriedade `box-shadow` e defina o `offset-x` para 25px, o `offset-y` para 10px, `blur-radius` para 0, `spread-radius` para 0 e cor para azul (`blue`).
+Manipule o elemento quadrado no editor para criar a forma da lua. Primeiro, altere a propriedade `background-color` para `transparent` e, em seguida, defina a propriedade `border-radius` para 50% para fazer a forma circular. Finalmente, altere a propriedade `box-shadow` e defina o `offset-x` para 25px, o `offset-y` para 10px, `blur-radius` para 0, `spread-radius` para 0 e `color` para azul (`blue`).
 
 # --hints--
 
@@ -35,7 +35,7 @@ A propriedade `border-radius` deve ter o valor de `50%`.
 assert(code.match(/border-radius:\s*?50%;/gi));
 ```
 
-A propriedade `box-shadow` deve receber 25px para o eixo horizontal (`offset-x`), 10px para o eixo vertical (`offset-y`), 0 para `blur-radius`, 0 para `spread-radius` e, finalmente, azul (`blue`) para a cor.
+A propriedade `box-shadow` deve receber 25px para o eixo horizontal (`offset-x`), 10px para o eixo vertical (`offset-y`), 0 para `blur-radius`, 0 para `spread-radius` e, finalmente, azul (`blue`) para `color`.
 
 ```js
 assert(
