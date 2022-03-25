@@ -222,6 +222,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   // use a ref, since it will be updated on every render.
   const testRef = useRef<Test[]>([]);
   testRef.current = props.tests;
+  const containsEditableRegion = props.canFocus;
 
   // TENATIVE PLAN: create a typical order [html/jsx, css, js], put the
   // available files into that order.  i.e. if it's just one file it will
@@ -229,6 +230,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   //  will be [jsx, js].
 
   const options: editor.IStandaloneEditorConstructionOptions = {
+    folding: containsEditableRegion ? false : true,
     fontSize: 18,
     scrollBeyondLastLine: true,
     selectionHighlight: false,
