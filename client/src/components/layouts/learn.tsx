@@ -9,6 +9,7 @@ import {
   isSignedInSelector,
   tryToShowDonationModal
 } from '../../redux';
+import { openModal } from '../../templates/Challenges/redux';
 import DonateModal from '../Donation/donation-modal';
 import createRedirect from '../create-redirect';
 
@@ -39,7 +40,8 @@ const mapStateToProps = createSelector(
 );
 
 const mapDispatchToProps = {
-  tryToShowDonationModal
+  tryToShowDonationModal,
+  openShortcutsModal: () => openModal('shortcuts')
 };
 
 const RedirectEmailSignUp = createRedirect('/email-sign-up');
@@ -49,6 +51,7 @@ type LearnLayoutProps = {
   fetchState: FetchState;
   user: User;
   tryToShowDonationModal: () => void;
+  openShortcutsModal: () => void;
   children?: React.ReactNode;
 };
 
@@ -57,6 +60,7 @@ function LearnLayout({
   fetchState,
   user,
   tryToShowDonationModal,
+  openShortcutsModal,
   children
 }: LearnLayoutProps): JSX.Element {
   useEffect(() => {
@@ -73,6 +77,12 @@ function LearnLayout({
     };
   }, []);
 
+  const keyPressHandler = (e: React.KeyboardEvent): void => {
+    if (e.key === '?') {
+      openShortcutsModal();
+    }
+  };
+
   if (fetchState.pending && !fetchState.complete) {
     return <Loader fullScreen={true} />;
   }
@@ -86,7 +96,10 @@ function LearnLayout({
       <Helmet>
         <meta content='noindex' name='robots' />
       </Helmet>
-      <main id='learn-app-wrapper'>{children}</main>
+      {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
+      <main id='learn-app-wrapper' onKeyPress={keyPressHandler}>
+        {children}
+      </main>
       {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
       /* @ts-ignore  */}
       <DonateModal />
