@@ -15,7 +15,7 @@ São recomendados os seguintes passos ao trabalhar em um novo componente:
 
 ## Pesquisar e planejar
 
-Antes de construir um componente, você precisa pesquisar e documentar como a versão existente se comporta e qual é sua aparência, para garantir que o novo tenha estilos correspondentes e suporte todos os usos atuais. In order to meet the web accessibility requirements, you should also pay attention to the accessibility aspect of the component, see which HTML elements and ARIA attributes are used under the hood.
+Antes de construir um componente, você precisa pesquisar e documentar como a versão existente se comporta e qual é sua aparência, para garantir que o novo tenha estilos correspondentes e suporte todos os usos atuais. Para atender aos requisitos de acessibilidade da web, você também deve prestar atenção ao aspecto de acessibilidade do componente, ver quais elementos HTML e atributos ARIA são usados por baixo dos panos.
 
 Depois de coletar informações suficientes sobre o componente, você pode começar a pensar na interface de propriedades. Idealmente, a interface deveria ser o mais semelhante possível à versão atual, a fim de facilitar a adoção mais tarde. Como estamos usando componentes do Bootstrap, a abordagem mais simples é imitar a [implementação deles](https://github.com/react-bootstrap/react-bootstrap/tree/master/src).
 
@@ -43,11 +43,11 @@ O comando gerará uma nova pasta dentro do diretório `ui-components`, com os se
 | `my-component.tsx`         | É onde implementamos o componente.                                |
 | `types.ts`                 | É onde localizamos a interface e os tipos do componente.          |
 
-Each component is different, but in general a component should:
+Cada componente é diferente, mas, em geral, os componentes devem:
 
 - Dar suporte à ref de encaminhamento
 - Ser estilizados para temas claros e escuros
-- Be styled internally based on their props (the consumers should not need to restyle the component with the `className` prop)
+- Ser estilizados internamente com base em suas propriedades (os consumidores não devem precisar reestilizar o componente com a propriedade `className`)
 - Usar o sistema de estilo integrado do Tailwind ao invés de ter estilos personalizados
 
 ### Links úteis
