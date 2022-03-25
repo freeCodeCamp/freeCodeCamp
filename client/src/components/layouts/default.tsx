@@ -1,4 +1,3 @@
-import fontawesome from '@fortawesome/fontawesome';
 import React, { Component, ReactNode } from 'react';
 import Helmet from 'react-helmet';
 import { TFunction, withTranslation } from 'react-i18next';
@@ -36,8 +35,6 @@ import OfflineWarning from '../OfflineWarning';
 import './fonts.css';
 import './global.css';
 import './variables.css';
-
-fontawesome.config.autoAddCss = false;
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
@@ -198,7 +195,6 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
             rel='preload'
             type='font/woff'
           />
-          <style>{fontawesome.dom.css()}</style>
         </Helmet>
         <div className={`default-layout`}>
           <Header fetchState={fetchState} user={user} />
