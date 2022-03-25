@@ -1,0 +1,33 @@
+.shortcuts-modal-body h4,
+span {
+  margin: 0;
+  padding: 0;
+}
+
+.shortcuts-modal-body h4 {
+  color: #333;
+}
+
+.shortcuts-modal-body span {
+  color: #000;
+  font-weight: bold;
+}
+
+.shortcuts-modal-body ul {
+  list-style-type: none;
+  margin: 0px auto 15px auto;
+  padding: 0px;
+}
+
+.shortcuts-modal-body ul li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 1em;
+}
+
+@media screen and (max-width: 767px) {
+  .help-modal .btn-lg {
+    font-size: 16px;
+  }
+}
