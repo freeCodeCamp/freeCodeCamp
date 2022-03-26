@@ -21,6 +21,13 @@ const computeClassNames = ({
         'text-default-foreground-danger'
       );
       break;
+    case 'info':
+      classNames.push(
+        'border-default-foreground-info',
+        'bg-default-background-info',
+        'text-default-foreground-info'
+      );
+      break;
     // default variant is 'primary'
     default:
       classNames.push(

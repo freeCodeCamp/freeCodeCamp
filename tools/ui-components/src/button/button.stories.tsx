@@ -36,6 +36,12 @@ Danger.args = {
   children: 'Button'
 };
 
+export const Info = Template.bind({});
+Info.args = {
+  variant: 'info',
+  children: 'Button'
+};
+
 export const Large = Template.bind({});
 Large.args = {
   size: 'large',

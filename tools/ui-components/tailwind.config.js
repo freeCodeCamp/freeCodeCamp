@@ -16,11 +16,13 @@ module.exports = {
       'default-foreground-tertiary': 'var(--default-foreground-tertiary)',
       'default-foreground-quaternary': 'var(--default-foreground-quaternary)',
       'default-foreground-danger': 'var(--default-foreground-danger)',
+      'default-foreground-info': 'var(--default-foreground-info)',
       'default-background-primary': 'var(--default-background-primary)',
       'default-background-secondary': 'var(--default-background-secondary)',
       'default-background-tertiary': 'var(--default-background-tertiary)',
       'default-background-quaternary': 'var(--default-background-quaternary)',
       'default-background-danger': 'var(--default-background-danger)',
+      'default-background-info': 'var(--default-background-info)',
       green: {
         50: 'var(--green05)',
         100: 'var(--green10)',
