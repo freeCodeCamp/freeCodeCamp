@@ -667,5 +667,11 @@
     "delete-p3": "You will need to create a new token to save future progress on the curriculum sections that use a virtual machine.",
     "no-thanks": "No thanks, I would like to keep my token",
     "yes-please": "Yes please, I would like to delete my token"
+  },
+  "shortcuts": {
+    "title": "Keyboard shortcuts",
+    "previous-exercise": "Previous Exercise",
+    "next-exercise": "Next Exercise",
+    "close-modal": "Close Modal"
   }
 }
