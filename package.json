@@ -106,7 +106,7 @@
     "@babel/preset-react": "7.16.7",
     "@babel/preset-typescript": "7.16.7",
     "@testing-library/cypress": "7.0.7",
-    "@testing-library/dom": "8.11.3",
+    "@testing-library/dom": "8.11.4",
     "@testing-library/jest-dom": "5.16.2",
     "@testing-library/user-event": "13.5.0",
     "@types/chai": "4.3.0",
