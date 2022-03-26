@@ -5,11 +5,15 @@ function GreenNotCompleted(
   props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
 ): JSX.Element {
   const { t } = useTranslation();
-
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  const suppressSrOnly = props['data-suppress-sronly'];
   return (
     <>
-      <span className='sr-only'>{t('icons.not-passed')}</span>
+      {suppressSrOnly !== 'true' && (
+        <span className='sr-only'>{t('icons.not-passed')}</span>
+      )}
       <svg
+        aria-hidden='true'
         height='50'
         viewBox='0 0 200 200'
         width='50'

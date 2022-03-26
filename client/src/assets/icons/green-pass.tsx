@@ -5,11 +5,14 @@ function GreenPass(
   props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
 ): JSX.Element {
   const { t } = useTranslation();
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  const suppressLabel = props['data-suppress-label'];
 
   return (
     <>
       <svg
-        aria-label={t('icons.passed')}
+        {...(suppressLabel === 'true' && { 'aria-hidden': true })}
+        {...(suppressLabel !== 'true' && { 'aria-label': t('icons.passed') })}
         height='50'
         viewBox='0 0 200 200'
         width='50'

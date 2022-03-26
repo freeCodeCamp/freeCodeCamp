@@ -78,9 +78,9 @@ export class Block extends Component<BlockProps> {
 
   renderCheckMark(isCompleted: boolean): JSX.Element {
     return isCompleted ? (
-      <GreenPass style={mapIconStyle} />
+      <GreenPass data-suppress-label='true' style={mapIconStyle} />
     ) : (
-      <GreenNotCompleted style={mapIconStyle} />
+      <GreenNotCompleted data-suppress-sronly='true' style={mapIconStyle} />
     );
   }
 
@@ -158,7 +158,7 @@ export class Block extends Component<BlockProps> {
     );
 
     const progressBarRender = (
-      <div className='progress-wrapper'>
+      <div aria-hidden='true' className='progress-wrapper'>
         <ProgressBar now={percentageComplated} />
         <span>{`${percentageComplated}%`}</span>
       </div>
@@ -239,39 +239,54 @@ export class Block extends Component<BlockProps> {
       </>
     );
 
+    const courseCompletionStatus = () => {
+      if (completedCount === 0) {
+        return 'not started';
+      }
+      if (completedCount === challengesWithCompleted.length) {
+        return 'completed';
+      }
+      return `${completedCount} of ${challengesWithCompleted.length} steps completed`;
+    };
+
     const GridBlock = (
       <>
         {' '}
         <ScrollableAnchor id={blockDashedName}>
           <div className={`block block-grid ${isExpanded ? 'open' : ''}`}>
-            <a
-              className='block-header'
-              onClick={() => {
-                this.handleBlockClick();
-              }}
-              href={`#${blockDashedName}`}
-            >
-              <div className='tags-wrapper'>
-                {!isAuditedCert(curriculumLocale, superBlock) && (
-                  <Link
-                    className='cert-tag'
-                    to={t('links:help-translate-link-url')}
-                  >
-                    {t('misc.translation-pending')}
-                  </Link>
-                )}
-              </div>
-              <div className='title-wrapper map-title'>
-                {this.renderCheckMark(isBlockCompleted)}
-                <h3 className='block-grid-title'>{blockTitle}</h3>
-                <DropDown />
-              </div>
-              {isExpanded && this.renderBlockIntros(blockIntroArr)}
-              {!isExpanded &&
-                !isBlockCompleted &&
-                completedCount > 0 &&
-                progressBarRender}
-            </a>
+            <h3 className='block-grid-title'>
+              <button
+                aria-expanded={isExpanded ? 'true' : 'false'}
+                className='block-header'
+                onClick={() => {
+                  this.handleBlockClick();
+                }}
+              >
+                <span className='block-header-button-text map-title'>
+                  {this.renderCheckMark(isBlockCompleted)}
+                  <span>
+                    {blockTitle}{' '}
+                    <span className='sr-only'>{courseCompletionStatus()}</span>
+                  </span>
+                  <DropDown />
+                </span>
+                {!isExpanded &&
+                  !isBlockCompleted &&
+                  completedCount > 0 &&
+                  progressBarRender}
+              </button>
+            </h3>
+            <div className='tags-wrapper'>
+              {!isAuditedCert(curriculumLocale, superBlock) && (
+                <Link
+                  className='cert-tag'
+                  to={t('links:help-translate-link-url')}
+                >
+                  {t('misc.translation-pending')}
+                </Link>
+              )}
+            </div>
+            {isExpanded && this.renderBlockIntros(blockIntroArr)}
             {isExpanded && (
               <>
                 <Challenges
