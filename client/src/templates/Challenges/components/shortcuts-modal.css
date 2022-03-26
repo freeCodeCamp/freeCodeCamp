@@ -15,8 +15,8 @@ span {
 
 .shortcuts-modal-body ul {
   list-style-type: none;
-  margin: 0px auto 15px auto;
-  padding: 0px;
+  margin: 0 auto 15px;
+  padding: 0;
 }
 
 .shortcuts-modal-body ul li {
