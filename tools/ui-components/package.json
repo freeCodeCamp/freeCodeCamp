@@ -40,7 +40,7 @@
     "@storybook/builder-webpack5": "6.4.19",
     "@storybook/manager-webpack5": "6.4.19",
     "@storybook/react": "6.4.19",
-    "@testing-library/jest-dom": "5.16.2",
+    "@testing-library/jest-dom": "5.16.3",
     "@testing-library/react": "12.1.4",
     "@types/jest": "27.4.1",
     "autoprefixer": "10.4.4",
