@@ -18,14 +18,18 @@ const computeClassNames = ({
       classNames.push(
         'border-default-foreground-danger',
         'bg-default-background-danger',
-        'text-default-foreground-danger'
+        'text-default-foreground-danger',
+        'hover:bg-default-background-danger-hover',
+        'hover:text-default-foreground-danger-hover'
       );
       break;
     case 'info':
       classNames.push(
         'border-default-foreground-info',
         'bg-default-background-info',
-        'text-default-foreground-info'
+        'text-default-foreground-info',
+        'hover:bg-default-background-info-hover',
+        'hover:text-default-foreground-info-hover'
       );
       break;
     // default variant is 'primary'
@@ -33,7 +37,9 @@ const computeClassNames = ({
       classNames.push(
         'border-default-foreground-secondary',
         'bg-default-background-quaternary',
-        'text-default-foreground-secondary'
+        'text-default-foreground-secondary',
+        'hover:bg-default-background-primary-hover',
+        'hover:text-default-foreground-primary-hover'
       );
   }
 
