@@ -44,7 +44,7 @@
     "@testing-library/react": "12.1.4",
     "@types/jest": "27.4.1",
     "autoprefixer": "10.4.4",
-    "babel-loader": "8.2.3",
+    "babel-loader": "8.2.4",
     "babel-plugin-transform-react-remove-prop-types": "0.4.24",
     "cross-env": "7.0.3",
     "postcss": "8.4.12",
