@@ -68,7 +68,7 @@
     "final-form": "4.20.6",
     "gatsby": "3.14.6",
     "gatsby-cli": "3.14.2",
-    "gatsby-plugin-advanced-sitemap": "2.0.0",
+    "gatsby-plugin-advanced-sitemap": "2.1.0",
     "gatsby-plugin-create-client-paths": "3.14.0",
     "gatsby-plugin-manifest": "3.14.0",
     "gatsby-plugin-postcss": "4.14.0",
