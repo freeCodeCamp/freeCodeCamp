@@ -48,7 +48,7 @@
     "babel-plugin-transform-react-remove-prop-types": "0.4.24",
     "cross-env": "7.0.3",
     "postcss": "8.4.12",
-    "postcss-import": "14.0.2",
+    "postcss-import": "14.1.0",
     "rimraf": "3.0.2",
     "rollup": "2.70.1",
     "rollup-plugin-postcss": "4.0.2",
