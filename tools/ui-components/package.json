@@ -22,7 +22,7 @@
     "@babel/preset-typescript": "7.16.7",
     "react": "16.14.0",
     "react-dom": "16.14.0",
-    "typescript": "4.6.2"
+    "typescript": "4.6.3"
   },
   "devDependencies": {
     "@babel/core": "7.17.8",
@@ -48,7 +48,7 @@
     "babel-plugin-transform-react-remove-prop-types": "0.4.24",
     "cross-env": "7.0.3",
     "postcss": "8.4.12",
-    "postcss-import": "14.0.2",
+    "postcss-import": "14.1.0",
     "rimraf": "3.0.2",
     "rollup": "2.70.1",
     "rollup-plugin-postcss": "4.0.2",
