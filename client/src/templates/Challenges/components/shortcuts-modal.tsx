@@ -52,16 +52,28 @@ export function ShortcutsModal({
       <Modal.Body className='shortcuts-modal-body'>
         <ul>
           <li>
-            <h4>Previous Exercise</h4>
+            <h4>Navigation Mode</h4>
+            <span>ESC</span>
+          </li>
+          <li>
+            <h4>Execute Challenge</h4>
+            <span>CTRL/Command + Enter</span>
+          </li>
+          <li>
+            <h4>Focus Editor</h4>
+            <span>e</span>
+          </li>
+          <li>
+            <h4>Focus Instructions Panel</h4>
+            <span>r</span>
+          </li>
+          <li>
+            <h4>Navigate Previous</h4>
             <span>p</span>
           </li>
           <li>
-            <h4>Next Exercise</h4>
+            <h4>Navigate Next</h4>
             <span>n</span>
-          </li>
-          <li>
-            <h4>Close modal</h4>
-            <span>ESC</span>
           </li>
         </ul>
         <Button
