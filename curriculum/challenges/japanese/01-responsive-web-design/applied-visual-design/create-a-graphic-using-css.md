@@ -15,11 +15,11 @@ dashedName: create-a-graphic-using-css
 
 丸いオブジェクトを作るには、`border-radius` プロパティが 50% に設定される必要があります。
 
-以前のチャレンジで学んだことを覚えているかもしれませんが、`box-shadow` プロパティは `offset-x`, `offset-y`, `blur-radius`, `spread-radius` そして色の値を、この順番で取ります。 `blur-radius` と `spread-radius` の値は省略可能です。
+以前のチャレンジで学んだことを覚えているかもしれませんが、`box-shadow` プロパティは `offset-x`, `offset-y`, `blur-radius`, `spread-radius` そして `color` の値を、この順番で取ります。 `blur-radius` と `spread-radius` の値は省略可能です。
 
 # --instructions--
 
-エディタに表示されている正方形の要素を操作して、月の形を作りましょう。 まず `background-color` を `transparent` に変更し、次に `border-radius` プロパティを 50% に設定し、円の形を作ります。 最後に、`box-shadow` プロパティを変更して `offset-x` を 25px、`offset-y` を 10px、`blur-radius` を 0、`spread-radius` を 0、色を `blue` に設定してください。
+エディタに表示されている正方形の要素を操作して、月の形を作りましょう。 まず `background-color` を `transparent` に変更し、次に `border-radius` プロパティを 50% に設定し、円の形を作ります。 最後に、`box-shadow` プロパティを変更して `offset-x` を 25px、`offset-y` を 10px、`blur-radius` を 0、`spread-radius` を 0、`color` を `blue` に設定してください。
 
 # --hints--
 
@@ -35,7 +35,7 @@ assert(code.match(/background-color:\s*?transparent;/gi));
 assert(code.match(/border-radius:\s*?50%;/gi));
 ```
 
-`box-shadow` プロパティの値は `offset-x` が 25px、`offset-y` が 10px、`blur-radius` が 0、`spread-radius` が 0、最後に色が `blue` に設定されている必要があります。
+`box-shadow` プロパティの値は `offset-x` が 25px、`offset-y` が 10px、`blur-radius` が 0、`spread-radius` が 0、最後に `color` が `blue` に設定されている必要があります。
 
 ```js
 assert(
