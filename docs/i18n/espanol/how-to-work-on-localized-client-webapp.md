@@ -1,20 +1,20 @@
-# How to work on localized client webapp
+# Cómo trabajar en una aplicación web de cliente localizada
 
-The react based client web app that powers our learning platform is built using Gatsby. It is translated into various world languages using [react-i18next](https://react.i18next.com/) and [i18next](https://www.i18next.com/).
+La aplicación web de cliente basada en react que impulsa nuestra plataforma de aprendizaje se construyo utilizando Gatsby. Se traduce a varios idiomas utilizando [react-i18next](https://react.i18next.com/) y [i18next](https://www.i18next.com/).
 
-You can learn more about setting up the client application locally for development by following [our local setup guide here](how-to-setup-freecodecamp-locally.md). By default the application is available only in English.
+Puedes obtener más información sobre cómo configurar la aplicación cliente localmente para su desarrollo siguiendo [nuestra guía de configuración local aquí](how-to-setup-freecodecamp-locally.md). Por defecto, la aplicación solo está disponible en inglés.
 
-Once you have setup the project locally you should be able to follow this documentation to run the client in the language of your choice from the list of available languages.
+Una vez que hayas configurado el proyecto localmente, deberías poder seguir esta documentación para ejecutar el cliente en el idioma de tu elección de la lista de idiomas disponibles.
 
-This could be helpful when you are working on a feature that specifically targets something that involves localization, and requires you to validate for instance a button's label in a different language.
+Esto podría ser útil cuando se está trabajando en una función que se dirige específicamente a algo que implica la localización, y requiere que valides, por ejemplo, la etiqueta de un botón en un idioma diferente.
 
-> [!TIP] You do not need to follow this document for translating freeCodeCamp's curriculum or contributing documentation. Read [this guide here](how-to-translate-files.md) instead.
+> [!TIP] No necesitas seguir este documento para traducir el currículo de  freeCodeCamp  o para contribuir con la documentación. En su lugar, lee  [esta guia](how-to-translate-files.md).
 
-Let's understand how the i18n frameworks and tooling work.
+Veamos cómo funcionan los marcos de trabajo y las herramientas de i18n.
 
-## File Structure
+## Estructura de archivos
 
-Most of files for translating the platform are located in the [`client/i18n`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n) folder. Each language has a directory within that containing JSON files with the translations.
+La mayoría de los archivos para traducir la plataforma se encuentran en la carpeta [`client/i18n`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/client/i18n). Cada idioma tiene una carpeta dentro que contiene archivos JSON con las traducciones.
 
 ```console
   config/i18n
@@ -59,29 +59,29 @@ Most of files for translating the platform are located in the [`client/i18n`](ht
   └── validate-keys.ts
 ```
 
-Some of these files are translated on our translation platform (Crowdin), some are not.
+Algunos de estos archivos son traducidos en nuestra plataforma de traducción (Crowdin), otros no lo son.
 
-**Files translated on our translation platform:**
+**Archivos traducidos en nuestra plataforma de traducción:**
 
-- The `translations.json` file contains the majority of the text that appears on the user interface elements. The keys are used in the codebase to get the correct text for whatever language is set. This file needs to have the exact same keys in all languages.
+- El archivo `translations.json` contiene la mayor parte del texto que aparece en los elementos de la interfaz de usuario. Las claves son usadas en el código base para obtener el texto correcto de cualquier lenguaje que sea seleccionado. Este archivo debe tener exactamente las mismas claves en todos los idiomas.
 
-- The `intro.json` file contains the key-value pairs for the introduction text on the certification pages.
+- El archivo `intro.json` contiene los pares clave-valor para el texto de introducción en las páginas de certificación.
 
-  If you want to add/update translations for the keys please [read this guide here](how-to-translate-files.md).
+  Si quieres añadir/actualizar las traducciones para las claves por favor lee [esta guía aquí.](https://freecodecamp.crowdin.com/how-to-translate-files.md).
 
-**Files NOT translated on our translations platform:**
+**Archivos que NO son traducidos en nuestra plataforma de traducciones:**
 
-- The `motivation.json` files are not required to have the same quotes, compliments, or array length. Just the same JSON structure.
+- Los archivos  `motivation.json` no requieren que tengan las mismas comillas, complementos o tamaños u orden. Simplemente la misma estructura JSON.
 
-- The `trending.json` file contains the titles and links for the trending news articles in the website's footer.
+- El archivo `trending.json` contiene los títulos y enlaces para los artículos noticiosos en tendencia dentro del footer del sitio web.
 
-- The `meta-tags.json` file contains the information for our website's meta tag information.
+- El archivo`meta-tags.json` contiene la información para nuestra informacion de la Meta etiqueta del sitio web.
 
-  Changes to these files are typically done by the staff team. If you see something out of the ordinary we recommend you reach us in the [contributors chat room](https://chat.freecodecamp.org/channel/contributors).
+  Los cambios en estos archivos son usualmente realizados por nuestro personal. Si ves algo raro o fuera de lo normal, deberías comunicarte con nosotros en el [chat de colaboradores](https://chat.freecodecamp.org/channel/contributors).
 
-## Testing the client app in a world language
+## Probando la app cliente en un idioma mundial
 
-You can test the client app in any language available in the [list of languages here](https://github.com/freeCodeCamp/freeCodeCamp/blob/6b4a6a02568b809fc216ea8566ff5df446d1da4e/config/i18n/all-langs.js#L5).
+Puedes probar la app cliente en cualquier lenguaje disponible en la [lista de idiomas aquí](https://github.com/freeCodeCamp/freeCodeCamp/blob/6b4a6a02568b809fc216ea8566ff5df446d1da4e/config/i18n/all-langs.js#L5).
 
 ```js
   const availableLangs = {
