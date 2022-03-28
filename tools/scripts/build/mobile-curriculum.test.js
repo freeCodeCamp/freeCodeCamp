@@ -6,7 +6,7 @@ const envData = require('../../../config/env.json');
 const { buildMobileCurriculum } = require('./build-mobile-curriculum');
 const { mobileSchemaValidator } = require('./mobileSchema');
 
-if (envData.clientLocale == 'english') {
+if (envData.clientLocale == 'english' && !envData.showUpcomingChanges) {
   describe('mobile curriculum build', () => {
     const mobileStaticPath = path.resolve(__dirname, '../../../client/static');
     const blockIntroPath = path.resolve(
