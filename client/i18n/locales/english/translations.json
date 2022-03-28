@@ -529,7 +529,8 @@
     "start-project-err": "Something went wrong trying to start the project. Please try again.",
     "complete-project-first": "You must complete the project first.",
     "local-code-save-error": "Oops, your code did not save, your browser's local storage may be full.",
-    "local-code-saved": "Saved! Your code was saved to your browser's local storage."
+    "local-code-saved": "Saved! Your code was saved to your browser's local storage.",
+    "timeline-private": "{{username}} has chosen to make their timeline private. They will need to make their timeline public in order for others to be able to view their certification."
   },
   "validation": {
     "max-characters": "There is a maximum limit of 288 characters, you have {{charsLeft}} left",

@@ -771,7 +771,7 @@ export default function initializeUser(User) {
           return showCerts
             ? completedChallenges
             : completedChallenges.filter(
-                ({ challengeType }) => challengeType !== 7
+                ({ challengeType }) => challengeType !== 7 // Use enum or whatever for challenge type here.
               );
         } else {
           return [];

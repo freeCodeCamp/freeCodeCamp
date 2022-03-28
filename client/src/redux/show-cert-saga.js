@@ -1,4 +1,3 @@
-import { navigate } from 'gatsby';
 import { put, takeEvery, call } from 'redux-saga/effects';
 
 import { createFlashMessage } from '../components/Flash/redux';
@@ -13,7 +12,8 @@ function* getShowCertSaga({ payload: { username, certSlug } }) {
       for (let i = 0; i < messages.length; i++) {
         yield put(createFlashMessage(messages[i]));
       }
-      yield call(navigate, '/');
+      // eslint-disable-next-line no-restricted-globals
+      history.go(-1);
       return;
     }
     yield put(showCertComplete(response));

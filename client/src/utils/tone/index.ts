@@ -39,6 +39,7 @@ const toneUrls = {
   [FlashMessages.ReportSent]: CHAL_COMP,
   [FlashMessages.SigninSuccess]: CHAL_COMP,
   [FlashMessages.StartProjectErr]: TRY_AGAIN,
+  [FlashMessages.TimelinePrivate]: TRY_AGAIN,
   [FlashMessages.TokenDeleted]: CHAL_COMP,
   [FlashMessages.UpdatedPreferences]: CHAL_COMP,
   [FlashMessages.UsernameNotFound]: TRY_AGAIN,

@@ -24,6 +24,7 @@ export enum FlashMessages {
   ReportSent = 'flash.report-sent',
   SigninSuccess = 'flash.signin-success',
   StartProjectErr = 'flash.start-project-err',
+  TimelinePrivate = 'flash.timeline-private',
   TokenDeleted = 'flash.token-deleted',
   UpdatedPreferences = 'flash.updated-preferences',
   UsernameNotFound = 'flash.username-not-found',
