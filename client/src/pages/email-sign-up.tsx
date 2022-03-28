@@ -8,10 +8,15 @@ import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import IntroDescription from '../components/Intro/components/IntroDescription';
 import createRedirect from '../components/create-redirect';
-import { ButtonSpacer, Spacer } from '../components/helpers';
+import { ButtonSpacer, Spacer, Loader } from '../components/helpers';
 import { apiLocation } from '../../../config/env.json';
 
-import { acceptTerms, userSelector, isSignedInSelector } from '../redux';
+import {
+  acceptTerms,
+  userSelector,
+  isSignedInSelector,
+  signInLoadingSelector
+} from '../redux';
 
 import './email-sign-up.css';
 interface AcceptPrivacyTermsProps {
@@ -19,17 +24,21 @@ interface AcceptPrivacyTermsProps {
   acceptedPrivacyTerms: boolean;
   isSignedIn: boolean;
   t: TFunction;
+  showLoading: boolean;
 }
 
 const mapStateToProps = createSelector(
   userSelector,
   isSignedInSelector,
+  signInLoadingSelector,
   (
     { acceptedPrivacyTerms }: { acceptedPrivacyTerms: boolean },
-    isSignedIn: boolean
+    isSignedIn: boolean,
+    showLoading: boolean
   ) => ({
     acceptedPrivacyTerms,
-    isSignedIn
+    isSignedIn,
+    showLoading
   })
 );
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -40,7 +49,8 @@ function AcceptPrivacyTerms({
   acceptTerms,
   acceptedPrivacyTerms,
   isSignedIn,
-  t
+  t,
+  showLoading
 }: AcceptPrivacyTermsProps) {
   const acceptedPrivacyRef = useRef(acceptedPrivacyTerms);
   const acceptTermsRef = useRef(acceptTerms);
@@ -68,6 +78,9 @@ function AcceptPrivacyTerms({
   }
 
   function renderEmailListOptin(isSignedIn: boolean) {
+    if (showLoading) {
+      return <Loader fullScreen={true} />;
+    }
     if (isSignedIn) {
       return (
         <Row>
