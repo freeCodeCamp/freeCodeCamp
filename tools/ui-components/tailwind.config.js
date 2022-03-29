@@ -64,6 +64,20 @@ module.exports = {
       sm: ['16px', '1.5'],
       md: ['18px', '1.42857143'],
       lg: ['24px', '1.3333333']
+    },
+    extend: {
+      zIndex: {
+        2: '2'
+      },
+      width: {
+        39: '39px'
+      },
+      height: {
+        39: '39px'
+      },
+      lineHeight: {
+        39: '39px'
+      }
     }
   },
   plugins: []
