@@ -451,7 +451,6 @@ function createShowCert(app) {
         });
       }
 
-      console.log('🟢 ', user.profileUI);
       if (!showTimeLine) {
         return res.json({
           messages: [
