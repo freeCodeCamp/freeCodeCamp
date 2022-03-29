@@ -391,7 +391,7 @@ function createShowCert(app) {
           ]
         });
       }
-      const { isLocked, showCerts, showName, showTimeline } = user.profileUI;
+      const { isLocked, showCerts, showName, showTimeLine } = user.profileUI;
 
       if (!user.name) {
         return res.json({
@@ -451,7 +451,8 @@ function createShowCert(app) {
         });
       }
 
-      if (!showTimeline) {
+      console.log('🟢 ', user.profileUI);
+      if (!showTimeLine) {
         return res.json({
           messages: [
             {
