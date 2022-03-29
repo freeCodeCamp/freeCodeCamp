@@ -24,7 +24,7 @@ Se il risultato sarà il giorno successivo, dovrebbe mostrare `(next day)` dopo 
 
 Se alla funzione viene passato il parametro opzionale del giorno di inizio della settimana, l'output dovrebbe visualizzare il giorno della settimana del risultato. Il giorno della settimana in output dovrebbe comparire dopo l'ora e prima del numero di giorni successivi.
 
-Di seguito sono riportati alcuni esempi di casi diversi che la funzione dovrebbe gestire. Presta molta attenzione alla spaziatura e punteggiatura dei risultati.
+Di seguito childo riportati alcuni esempi di casi diversi che la funzione dovrebbe gestire. Presta molta attenzione alla spaziatura e punteggiatura dei risultati.
 
 ```py
 add_time("3:00 PM", "3:10")
@@ -54,7 +54,7 @@ Scrivi il tuo codice in `time_calculator.py`. Per lo sviluppo, puoi usare `main.
 
 ## Test
 
-I test unitari per questo progetto sono in `test_module.py`. Abbiamo importato i test da `test_module.py` in `main.py` per tua convenienza. I test saranno eseguiti automaticamente quando usi il bottone "run".
+I test unitari per questo progetto childo in `test_module.py`. Abbiamo importato i test da `test_module.py` in `main.py` per tua convenienza. I test saranno eseguiti automaticamente quando usi il bottone "run".
 
 ## Invio
 

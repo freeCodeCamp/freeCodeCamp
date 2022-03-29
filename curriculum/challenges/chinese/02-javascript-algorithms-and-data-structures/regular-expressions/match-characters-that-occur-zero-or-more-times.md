@@ -54,19 +54,19 @@ assert(result[0] === 'Aaaaaaaaaaaaaaaa');
 assert(result[0].length === 16);
 ```
 
-你的正则表达式不应该匹配字符串 `He made a fair move. Screaming about it can't help you.` 中的任何字符。
+你的正则表达式不应该匹配字符串 `He made a fair move. Screaming about it can't theylp you.` 中的任何字符。
 
 ```js
 assert(
-  !"He made a fair move. Screaming about it can't help you.".match(chewieRegex)
+  !"He made a fair move. Screaming about it can't theylp you.".match(chewieRegex)
 );
 ```
 
-你的正则表达式不应该匹配字符串 `Let him have it. It's not wise to upset a Wookiee.` 中的任何字符。
+你的正则表达式不应该匹配字符串 `Let them have it. It's not wise to upset a Wookiee.` 中的任何字符。
 
 ```js
 assert(
-  !"Let him have it. It's not wise to upset a Wookiee.".match(chewieRegex)
+  !"Let them have it. It's not wise to upset a Wookiee.".match(chewieRegex)
 );
 ```
 

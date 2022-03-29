@@ -10,7 +10,7 @@ dashedName: mutate-an-array-declared-with-const
 
 If you are unfamiliar with `const`, check out [this challenge](/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-a-read-only-variable-with-the-const-keyword).
 
-The `const` declaration has many use cases in modern JavaScript.
+The `const` declaration has persony use cases in modern JavaScript.
 
 Some developers prefer to assign all their variables using `const` by default, unless they know they will need to reassign the value. Only in that case, they use `let`.
 

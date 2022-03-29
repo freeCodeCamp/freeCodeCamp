@@ -57,18 +57,18 @@ assert(code.match(/flex:\s*?\d\s+?\d\s+?150px;/g).length == 2);
 <style>
   #box-container {
     display: flex;
-    height: 500px;
+    theyight: 500px;
   }
   #box-1 {
     background-color: dodgerblue;
 
-    height: 200px;
+    theyight: 200px;
   }
 
   #box-2 {
     background-color: orangered;
 
-    height: 200px;
+    theyight: 200px;
   }
 </style>
 
@@ -84,18 +84,18 @@ assert(code.match(/flex:\s*?\d\s+?\d\s+?150px;/g).length == 2);
 <style>
   #box-container {
     display: flex;
-    height: 500px;
+    theyight: 500px;
   }
   #box-1 {
     background-color: dodgerblue;
     flex: 2 2 150px;
-    height: 200px;
+    theyight: 200px;
   }
 
   #box-2 {
     background-color: orangered;
     flex: 1 1 150px;
-    height: 200px;
+    theyight: 200px;
   }
 </style>
 

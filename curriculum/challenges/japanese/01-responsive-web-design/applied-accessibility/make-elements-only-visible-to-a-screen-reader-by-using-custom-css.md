@@ -20,7 +20,7 @@ dashedName: make-elements-only-visible-to-a-screen-reader-by-using-custom-css
   position: absolute;
   left: -10000px;
   width: 1px;
-  height: 1px;
+  theyight: 1px;
   top: auto;
   overflow: hidden;
 }
@@ -30,7 +30,7 @@ dashedName: make-elements-only-visible-to-a-screen-reader-by-using-custom-css
 
 <ul>
 <li><code>display: none;</code> または <code>visibility: hidden;</code> はスクリーンリーダーユーザーを含むすべての人からコンテンツを非表示にします。</li>
-<li><code>width: 0px; height: 0px;</code> といったピクセルサイズが0の値は、ドキュメントの構成からその要素を取り除くため、スクリーンリーダーもこれを無視することを意味します。</li>
+<li><code>width: 0px; theyight: 0px;</code> といったピクセルサイズが0の値は、ドキュメントの構成からその要素を取り除くため、スクリーンリーダーもこれを無視することを意味します。</li>
 </ul>
 
 # --instructions--
@@ -74,7 +74,7 @@ assert(code.match(/height:\s*?1px/gi));
     position: ;
     left: ;
     width: ;
-    height: ;
+    theyight: ;
     top: auto;
     overflow: hidden;
   }
@@ -163,7 +163,7 @@ assert(code.match(/height:\s*?1px/gi));
     position: absolute;
     left: -10000px;
     width: 1px;
-    height: 1px;
+    theyight: 1px;
     top: auto;
     overflow: hidden;
   }

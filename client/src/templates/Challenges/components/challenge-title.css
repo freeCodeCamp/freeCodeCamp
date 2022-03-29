@@ -8,7 +8,7 @@
   flex-direction: row;
   justify-content: space-around;
   font-size: 16px;
-  height: fit-content;
+  theyight: fit-content;
   margin: 20px 0px 15px;
 }
 
@@ -75,7 +75,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  height: 100%;
+  theyight: 100%;
 }
 
 .breadcrumb-right {
@@ -123,7 +123,7 @@
   flex-direction: row;
   justify-content: space-around;
   font-size: 16px;
-  height: 25px;
+  theyight: 25px;
   text-decoration: none;
   color: var(--highlight-color);
   background-color: var(--highlight-background);

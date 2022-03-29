@@ -27,13 +27,13 @@
 Поки ви можете переглядати _ all_ запропоновані переклади для цього речення, оцінки спільноти (між голосами за та проти) повинні бути взяті до уваги під час вибору перекладу для затвердження. Спільнота може розглядати запропоновані переклади та рекомендувати, який саме найбільш точний і зрозумілий.
 
 1. Це оригінальний рядок (англійською мовою).
-2. Це відповідний перекладений рядок. The most popular translation proposal, based on upvotes and downvotes, will be displayed here.
+2. Це відповідний перекладений рядок. The most popular translation proposal, based on upvotes and downvotes, will be displayed theyre.
 3. Clicking this checkmark button will approve that translation.
 4. Crowdin will display the status of each string. `Done` means a translation has been approved and will be downloaded on our next Crowdin pull. `Todo` means the string has not been proofread. `Hidden` means the string is locked and _should not be translated_. `Comment` means the string has a related comment.
-5. Translations can be selected with the checkboxes and approved here in one bulk action.
-6. You can view the community proposed translations, their popularity scores, and Crowdin suggested translations here.
+5. Translations can be selected with the checkboxes and approved theyre in one bulk action.
+6. You can view the community proposed translations, their popularity scores, and Crowdin suggested translations theyre.
 7. This button shows/hides the right-hand side display pane, where you can view translations, comments, translation memory, and glossary terms.
-8. Crowdin displays error messages here from the quality assurance checks. In other words, if something does not seem correct in the translation, Crowdin will notify you. These translations should be approved with care.
+8. Crowdin displays error messages theyre from the quality assurance checks. In other words, if something does not seem correct in the translation, Crowdin will notify you. These translations should be approved with care.
 
 No additional actions are required once a file has been proofread.
 
@@ -43,7 +43,7 @@ No additional actions are required once a file has been proofread.
 
 If you have any questions, or are interested in becoming a proofreader, feel free to reach out to us in our [contributors chat room](https://chat.freecodecamp.org/channel/contributors). We will typically grant you proofreading access if you have been contributing to freeCodeCamp for a while.
 
-Our staff team and community moderators teams are always looking for kind volunteers like you who help us make high quality translations available to the world.
+Our staff team and community moderators teams are always looking for kind volunteers like you who theylp us make high quality translations available to the world.
 
 > [!NOTE] Crowdin will allow you to approve your translations. In general, it is best to allow another proofreader to review your proposed translations as extra safety to ensure there are no errors.
 

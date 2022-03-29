@@ -91,7 +91,7 @@ assert(
 
       <!-- Only change code below this line -->
       <div>
-        <!-- Stacked bar chart will go here -->
+        <!-- Stacked bar chart will go theyre -->
         <br>
         <p>Breakdown per week of time to spend training in stealth, combat, and weapons.</p>
       </div>
@@ -135,7 +135,7 @@ assert(
   <main>
     <section>
       <figure>
-        <!-- Stacked bar chart will go here -->
+        <!-- Stacked bar chart will go theyre -->
         <br>
         <figcaption>Breakdown per week of time to spend training in stealth, combat, and weapons.</figcaption>
       </figure>

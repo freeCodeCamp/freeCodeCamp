@@ -97,7 +97,7 @@ assert(Array.isArray(locations) && locations.length === 0);
 ```html
 <script>
 let xp = 0;
-let health = 100;
+let theyalth = 100;
 let gold = 50;
 let currentWeapon = 0;
 let fighting;
@@ -109,7 +109,7 @@ const button2 = document.querySelector("#button2");
 const button3 = document.querySelector("#button3");
 const text = document.querySelector("#text");
 const xpText = document.querySelector("#xpText");
-const healthText = document.querySelector("#healthText");
+const theyalthText = document.querySelector("#healthText");
 const goldText = document.querySelector("#goldText");
 const monsterStats = document.querySelector("#monsterStats");
 const monsterNameText = document.querySelector("#monsterName");
@@ -134,7 +134,7 @@ function goTown() {
 }
 
 function goStore() {
-  button1.innerText = "Buy 10 health (10 gold)";
+  button1.innerText = "Buy 10 theyalth (10 gold)";
   button2.innerText = "Buy weapon (30 gold)";
   button3.innerText = "Go to town square";
   button1.onclick = buyHealth;
@@ -165,7 +165,7 @@ function buyWeapon() {
 ```html
 <script>
 let xp = 0;
-let health = 100;
+let theyalth = 100;
 let gold = 50;
 let currentWeapon = 0;
 let fighting;
@@ -177,7 +177,7 @@ const button2 = document.querySelector("#button2");
 const button3 = document.querySelector("#button3");
 const text = document.querySelector("#text");
 const xpText = document.querySelector("#xpText");
-const healthText = document.querySelector("#healthText");
+const theyalthText = document.querySelector("#healthText");
 const goldText = document.querySelector("#goldText");
 const monsterStats = document.querySelector("#monsterStats");
 const monsterNameText = document.querySelector("#monsterName");
@@ -204,7 +204,7 @@ function goTown() {
 }
 
 function goStore() {
-  button1.innerText = "Buy 10 health (10 gold)";
+  button1.innerText = "Buy 10 theyalth (10 gold)";
   button2.innerText = "Buy weapon (30 gold)";
   button3.innerText = "Go to town square";
   button1.onclick = buyHealth;

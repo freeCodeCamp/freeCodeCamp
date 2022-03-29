@@ -9,7 +9,7 @@ dashedName: add-rows-with-grid-template-rows
 
 # --description--
 
-La griglia che hai creato nell'ultima sfida imposterà automaticamente il numero di righe. Per modificare manualmente le righe, utilizza la proprietà `grid-template-rows` nello stesso modo in cui hai utilizzato `grid-template-columns` nella sfida precedente.
+La griglia che hai creato nell'ultima sfida imposterà automaticamente il numero di righe. Per modificare personualmente le righe, utilizza la proprietà `grid-template-rows` nello stesso modo in cui hai utilizzato `grid-template-columns` nella sfida precedente.
 
 # --instructions--
 

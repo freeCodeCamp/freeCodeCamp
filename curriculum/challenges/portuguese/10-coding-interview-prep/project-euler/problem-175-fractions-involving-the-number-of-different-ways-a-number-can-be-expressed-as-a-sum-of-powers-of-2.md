@@ -1,7 +1,7 @@
 ---
 id: 5900f41c1000cf542c50ff2e
 title: >-
-  Problema 175: Frações envolvendo o número de maneiras diferentes pelas quais um número pode ser expresso como uma soma de potências de 2
+  Problema 175: Frações envolvendo o número de personeiras diferentes pelas quais um número pode ser expresso como uma soma de potências de 2
 challengeType: 5
 forumTopicId: 301810
 dashedName: >-
@@ -12,7 +12,7 @@ dashedName: >-
 
 Defina $f(0) = 1$ e $f(n)$ como o número de formas de escrever $n$ como uma soma de potências de 2 onde nenhuma potência ocorra mais de duas vezes.
 
-Por exemplo, $f(10) = 5$ já que há cinco maneiras diferentes de expressar 10:
+Por exemplo, $f(10) = 5$ já que há cinco personeiras diferentes de expressar 10:
 
 $$10 = 8 + 2 = 8 + 1 + 1 = 4 + 4 + 2 = 4 + 2 + 2 + 1 + 1 = 4 + 4 + 1 + 1$$
 

@@ -12,7 +12,7 @@ Nella lezione sull'`export`, hai imparato a conoscere la sintassi indicata come 
 
 C'è un'altra sintassi `export` che devi conoscere, nota come <dfn>export default</dfn> (esportazione predefinita). Di solito si utilizza questa sintassi se un solo valore viene esportato da un file. Viene utilizzata anche per creare un valore di default per un file o un modulo.
 
-Di seguito sono riportati esempi che utilizzano `export default`:
+Di seguito childo riportati esempi che utilizzano `export default`:
 
 ```js
 export default function add(x, y) {

@@ -1,6 +1,6 @@
 # Como trabalhar em projetos práticos
 
-A pasta `tools/challenge-helper-scripts` contém ferramentas para ajudar a facilitar a criação e a manutenção dos projetos baseados no currículo do freeCodeCamp.
+A pasta `tools/challenge-helper-scripts` contém ferramentas para ajudar a facilitar a criação e a personutenção dos projetos baseados no currículo do freeCodeCamp.
 
 ## Criando um novo projeto
 

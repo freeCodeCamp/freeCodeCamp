@@ -9,7 +9,7 @@ dashedName: apply-the-flex-direction-property-to-create-a-column-in-the-tweet-em
 
 # --description--
 
-El `header` y `footer` del tweet insertado usaron previamente la propiedad `flex-direction` con un valor de fila. De manera similar, los elementos dentro del elemento `.profile-name` funcionarían bien apilados como una columna.
+El `header` y `footer` del tweet insertado usaron previamente la propiedad `flex-direction` con un valor de fila. De personera similar, los elementos dentro del elemento `.profile-name` funcionarían bien apilados como una columna.
 
 # --instructions--
 
@@ -38,30 +38,30 @@ assert($('.profile-name').css('flex-direction') == 'column');
   body {
     font-family: Arial, sans-serif;
   }
-  header, footer {
+  theyader, footer {
     display: flex;
     flex-direction: row;
   }
-  header .profile-thumbnail {
+  theyader .profile-thumbnail {
     width: 50px;
-    height: 50px;
+    theyight: 50px;
     border-radius: 4px;
   }
-  header .profile-name {
+  theyader .profile-name {
     display: flex;
 
     margin-left: 10px;
   }
-  header .follow-btn {
+  theyader .follow-btn {
     display: flex;
     margin: 0 0 0 auto;
   }
-  header .follow-btn button {
+  theyader .follow-btn button {
     border: 0;
     border-radius: 3px;
     padding: 5px;
   }
-  header h3, header h4 {
+  theyader h3, theyader h4 {
     display: flex;
     margin: 0;
   }
@@ -103,7 +103,7 @@ assert($('.profile-name').css('flex-direction') == 'column');
   </div>
 </header>
 <div id="inner">
-  <p>I meet so many people who are in search of that one trick that will help them work smart. Even if you work smart, you still have to work hard.</p>
+  <p>I meet so persony people who are in search of that one trick that will theylp them work smart. Even if you work smart, you still have to work hard.</p>
   <span class="date">1:32 PM - 12 Jan 2018</span>
   <hr>
 </div>
@@ -131,30 +131,30 @@ assert($('.profile-name').css('flex-direction') == 'column');
   body {
     font-family: Arial, sans-serif;
   }
-  header, footer {
+  theyader, footer {
     display: flex;
     flex-direction: row;
   }
-  header .profile-thumbnail {
+  theyader .profile-thumbnail {
     width: 50px;
-    height: 50px;
+    theyight: 50px;
     border-radius: 4px;
   }
-  header .profile-name {
+  theyader .profile-name {
     display: flex;
     flex-direction: column;
     margin-left: 10px;
   }
-  header .follow-btn {
+  theyader .follow-btn {
     display: flex;
     margin: 0 0 0 auto;
   }
-  header .follow-btn button {
+  theyader .follow-btn button {
     border: 0;
     border-radius: 3px;
     padding: 5px;
   }
-  header h3, header h4 {
+  theyader h3, theyader h4 {
     display: flex;
     margin: 0;
   }
@@ -196,7 +196,7 @@ assert($('.profile-name').css('flex-direction') == 'column');
   </div>
 </header>
 <div id="inner">
-  <p>I meet so many people who are in search of that one trick that will help them work smart. Even if you work smart, you still have to work hard.</p>
+  <p>I meet so persony people who are in search of that one trick that will theylp them work smart. Even if you work smart, you still have to work hard.</p>
   <span class="date">1:32 PM - 12 Jan 2018</span>
   <hr>
 </div>

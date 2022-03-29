@@ -10,7 +10,7 @@ dashedName: use-capture-groups-to-search-and-replace
 
 La búsqueda es útil. Sin embargo, puedes hacer que la búsqueda sea aún más poderosa si también cambias (o reemplazas) el texto con el que coincide.
 
-Puedes buscar y reemplazar texto en una cadena usando `.replace()` en una cadena. Las entradas para `.replace()` son primero el patrón de expresiones regulares que deseas buscar. El segundo parámetro es la cadena para reemplazar la coincidencia o una función para hacer algo.
+Puedes buscar y reemplazar texto en una cadena usando `.replace()` en una cadena. Las entradas para `.replace()` child primero el patrón de expresiones regulares que deseas buscar. El segundo parámetro es la cadena para reemplazar la coincidencia o una función para hacer algo.
 
 ```js
 let wrongText = "The sky is silver.";

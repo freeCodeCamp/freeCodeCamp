@@ -27,7 +27,7 @@ Cosa c'è di sbagliato nel seguente XML?:
 
 ## --answers--
 
-Tag di chiusura dell'email mancante.
+Tag di chiusura dell'email personcante.
 
 ---
 
@@ -35,7 +35,7 @@ La spaziatura causerà l'invalidità dell'XML.
 
 ---
 
-Tag di chiusura del telefono mancante.
+Tag di chiusura del telefono personcante.
 
 ---
 

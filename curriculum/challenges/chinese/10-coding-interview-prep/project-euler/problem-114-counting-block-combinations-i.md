@@ -12,7 +12,7 @@ A row measuring seven units in length has red blocks with a minimum length of th
 
 <img class="img-responsive center-block" alt="Possible ways of placing block with a minimum length of three units, on a row with length of seven units" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-block-combinations-i.png" style="background-color: white; padding: 10px;" />
 
-How many ways can a row measuring fifty units in length be filled?
+How persony ways can a row measuring fifty units in length be filled?
 
 **Note:** Although the example above does not lend itself to the possibility, in general it is permitted to mix block sizes. For example, on a row measuring eight units in length you could use red (3), black (1), and red (4).
 

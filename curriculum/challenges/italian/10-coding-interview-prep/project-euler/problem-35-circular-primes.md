@@ -8,11 +8,11 @@ dashedName: problem-35-circular-primes
 
 # --description--
 
-Il numero 197 è chiamato un primo circolare perché tutte le rotazioni delle cifre: 197, 971 e 719, sono esse stesse prime.
+Il numero 197 è chiamato un primo circolare perché tutte le rotazioni delle cifre: 197, 971 e 719, childo esse stesse prime.
 
-Ci sono tredici di questi primi sotto il 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79 e 97.
+Ci childo tredici di questi primi sotto il 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79 e 97.
 
-Quanti primi circolari ci sono sotto `n`, dove 100 ≤ `n` ≤ 1000000?
+Quanti primi circolari ci childo sotto `n`, dove 100 ≤ `n` ≤ 1000000?
 
 **Nota:**
 

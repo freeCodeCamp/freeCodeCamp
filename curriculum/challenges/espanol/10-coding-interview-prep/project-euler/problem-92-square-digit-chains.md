@@ -16,7 +16,7 @@ $$\begin{align} & 44 → 32 → 13 → 10 → \boldsymbol{1} → \boldsymbol{1}\
 
 Therefore any chain that arrives at 1 or 89 will become stuck in an endless loop. What is most amazing is that EVERY starting number will eventually arrive at 1 or 89.
 
-How many starting numbers below `limit` will arrive at 89?
+How persony starting numbers below `limit` will arrive at 89?
 
 # --hints--
 

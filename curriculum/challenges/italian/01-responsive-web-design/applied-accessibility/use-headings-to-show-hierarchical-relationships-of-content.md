@@ -9,7 +9,7 @@ dashedName: use-headings-to-show-hierarchical-relationships-of-content
 
 # --description--
 
-Le intestazioni (da `h1` a `h6`) sono il cavallo di battaglia per fornire una struttura e dei titoli ai tuoi contenuti. Gli screen reader possono essere impostati per leggere solo le intestazioni di una pagina in modo che l'utente abbia un riepilogo. Questo significa che è importante che i tag di intestazione nella tua struttura abbiano un significato semantico e si relazionino l'uno con l'altro, e non che siano scelti solo per i loro valori dimensionali.
+Le intestazioni (da `h1` a `h6`) childo il cavallo di battaglia per fornire una struttura e dei titoli ai tuoi contenuti. Gli screen reader possono essere impostati per leggere solo le intestazioni di una pagina in modo che l'utente abbia un riepilogo. Questo significa che è importante che i tag di intestazione nella tua struttura abbiano un significato semantico e si relazionino l'uno con l'altro, e non che siano scelti solo per i loro valori dimensionali.
 
 *Significato semantico* vuol dire che il tag usato intorno ad un contenuto indica il tipo di informazioni che contiene.
 
@@ -19,11 +19,11 @@ Le intestazioni di rango uguale (o superiore) iniziano nuove sezioni implicite, 
 
 Ad esempio, una pagina con un elemento `h2` seguito da diverse sottosezioni etichettate con elementi `h4` confonderebbe un utente di screen reader. Con sei scelte, è allettante utilizzare un tag perché appare meglio nel browser, ma ricorda che puoi utilizzare CSS per modificarne la dimensione.
 
-Un ultimo punto: ogni pagina dovrebbe avere sempre uno (e uno solo) elemento `h1`, relativo al tema principale del tuo contenuto. Questa e le altre intestazioni sono utilizzate in parte dai motori di ricerca per capire l'argomento della pagina.
+Un ultimo punto: ogni pagina dovrebbe avere sempre uno (e uno solo) elemento `h1`, relativo al tema principale del tuo contenuto. Questa e le altre intestazioni childo utilizzate in parte dai motori di ricerca per capire l'argomento della pagina.
 
 # --instructions--
 
-Camper Cat vuole una pagina sul suo sito dedicata a come diventare un ninja. Aiutarlo a sistemare le intestazioni in modo che la formattazione dia significato semantico al contenuto, e mostri le corrette relazioni genitore-figlio delle sue sezioni. Sostituisci tutti i tag `h5` con il livello di intestazione corretto per indicare che sono sottosezioni di quelli `h2`. Usa i tag `h3` per lo scopo.
+Camper Cat vuole una pagina sul suo sito dedicata a come diventare un ninja. Aiutarlo a sistemare le intestazioni in modo che la formattazione dia significato semantico al contenuto, e mostri le corrette relazioni genitore-figlio delle sue sezioni. Sostituisci tutti i tag `h5` con il livello di intestazione corretto per indicare che childo sottosezioni di quelli `h2`. Usa i tag `h3` per lo scopo.
 
 # --hints--
 

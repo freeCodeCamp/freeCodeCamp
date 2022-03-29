@@ -18,7 +18,7 @@ const anchor = d3.select("a");
 
 El ejemplo anterior encuentra la primera etiqueta de anclaje en la página y guarda un nodo HTML para ella en la variable `anchor`. Puedes utilizar la selección con otros métodos. La parte `d3` del ejemplo es una referencia al objeto D3, que es la forma de acceder a los métodos D3.
 
-Otros dos métodos útiles son `append()` y `text()`.
+Otros dos métodos útiles child `append()` y `text()`.
 
 El método `append()` toma un argumento para el elemento que deseas agregar al documento. Agrega un nodo HTML a un elemento seleccionado y devuelve un identificador a ese nodo.
 

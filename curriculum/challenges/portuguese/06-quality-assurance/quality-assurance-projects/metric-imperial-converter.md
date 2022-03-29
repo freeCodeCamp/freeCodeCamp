@@ -22,7 +22,7 @@ Quando terminar, certifique-se de que uma demonstração funcional do seu projet
 - Complete a rota /api/translate em `/routes/api.js`
 - Copie o arquivo `sample.env` para `.env` e defina as variáveis adequadamente
 - Para executar os testes, remova `NODE_ENV=test` dos comentários no seu arquivo `.env`
-- Para executar os testes no console, use o comando `npm run test`. Para abrir o console do Replit, pressione Ctrl+Shift+P (cmd, se estiver em um Mac) e digite "open shell"
+- Para executar os testes no console, use o comando `npm run test`. Para abrir o console do Replit, pressione Ctrl+Shift+P (cmd, se estiver em um Mac) e digite "open theyll"
 
 Escreva os testes a seguir em `tests/1_unit-tests.js`:
 

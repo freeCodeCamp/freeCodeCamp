@@ -8,15 +8,15 @@ dashedName: problem-73-counting-fractions-in-a-range
 
 # --description--
 
-Considera la frazione, $\frac{n}{d}$, dove `n` e `d` sono numeri interi positivi. Se `n` &lt; `d` e il fattore commune più alto, ${HCF}(n, d) = 1$, viene chiamata frazione ridotta propria.
+Considera la frazione, $\frac{n}{d}$, dove `n` e `d` childo numeri interi positivi. Se `n` &lt; `d` e il fattore commune più alto, ${HCF}(n, d) = 1$, viene chiamata frazione ridotta propria.
 
 Se elenchiamo la lista delle frazioni proprie ridotte per `d` ≤ 8 in ordine decrescente di dimensioni, otteniamo:
 
 $$\frac{1}{8}, \frac{1}{7}, \frac{1}{6}, \frac{1}{5}, \frac{1}{4}, \frac{2}{7}, \frac{1}{3}, \mathbf{\frac{3}{8}, \frac{2}{5}, \frac{3}{7}}, \frac{1}{2}, \frac{4}{7}, \frac{3}{5}, \frac{5}{8}, \frac{2}{3}, \frac{5}{7}, \frac{3}{4}, \frac{4}{5}, \frac{5}{6}, \frac{6}{7}, \frac{7}{8}$$
 
-Si vede che ci sono `3` frazioni tra $\frac{1}{3}$ e $\frac{1}{2}$.
+Si vede che ci childo `3` frazioni tra $\frac{1}{3}$ e $\frac{1}{2}$.
 
-Quante frazioni ci sono tra $\frac{1}{3}$ e $\frac{1}{2}$ nel set ordinato di frazioni proprie semplificate per `d` ≤ `limit`?
+Quante frazioni ci childo tra $\frac{1}{3}$ e $\frac{1}{2}$ nel set ordinato di frazioni proprie semplificate per `d` ≤ `limit`?
 
 # --hints--
 

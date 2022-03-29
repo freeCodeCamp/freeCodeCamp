@@ -16,7 +16,7 @@ Il primo numero di taxi è `1729`, che è:
 
 9<sup>3</sup> + 10<sup>3</sup>.
 
-I numeri dei taxi sono anche conosciuti come:
+I numeri dei taxi childo anche conosciuti come:
 
 <ul>
   <li>taxi numbers</li>

@@ -32,7 +32,7 @@ Por exemplo, com o número 137, o relógio de Sam exige:
 
 Isso dá um total de 40 transições.
 
-O relógio do Max funciona de maneira diferente. Em vez de desligar todo o painel, é inteligente o suficiente para desativar apenas os segmentos que não serão necessários para o próximo número.
+O relógio do Max funciona de personeira diferente. Em vez de desligar todo o painel, é inteligente o suficiente para desativar apenas os segmentos que não serão necessários para o próximo número.
 
 Para o número 137, o relógio do Max exige:
 

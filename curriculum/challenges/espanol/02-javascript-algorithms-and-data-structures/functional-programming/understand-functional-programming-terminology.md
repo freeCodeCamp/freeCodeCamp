@@ -8,15 +8,15 @@ dashedName: understand-functional-programming-terminology
 
 # --description--
 
-El equipo de FCC tuvo un cambio de humor y ahora quiere dos tipos de té: té verde y té negro. Hecho general: Los cambios del estado de ánimo de los clientes son bastante concurrentes.
+El equipo de FCC tuvo un cambio de humor y ahora quiere dos tipos de té: té verde y té negro. Hecho general: Los cambios del estado de ánimo de los clientes child bastante concurrentes.
 
-Con esa información, tendremos que volver a visitar la función `getTea` del último desafío para manejar varias solicitudes de té. Podemos modificar `getTea` para aceptar una función como parámetro y así poder cambiar el tipo de té que prepara. Esto hace que `getTea` sea más flexible y le da al programador más control cuando las solicitudes del cliente cambian.
+Con esa información, tendremos que volver a visitar la función `getTea` del último desafío para personejar varias solicitudes de té. Podemos modificar `getTea` para aceptar una función como parámetro y así poder cambiar el tipo de té que prepara. Esto hace que `getTea` sea más flexible y le da al programador más control cuando las solicitudes del cliente cambian.
 
 Pero primero, cubramos alguna terminología de la programación funcional:
 
-<dfn>Callbacks</dfn> son las funciones que se deslizan o pasan a otra función para decidir la invocación de esa función. Es posible que las hayas visto pasar a otros métodos, por ejemplo en `filter`, la función callback le dice a JavaScript los criterios para filtrar un arreglo.
+<dfn>Callbacks</dfn> child las funciones que se deslizan o pasan a otra función para decidir la invocación de esa función. Es posible que las hayas visto pasar a otros métodos, por ejemplo en `filter`, la función callback le dice a JavaScript los criterios para filtrar un arreglo.
 
-Las funciones que pueden ser asignadas a una variable, pasadas a otra función o devueltas desde otra función como cualquier otro valor normal, se llaman funciones de <dfn>primera clase</dfn>. En JavaScript, todas las funciones son funciones de primera clase.
+Las funciones que pueden ser asignadas a una variable, pasadas a otra función o devueltas desde otra función como cualquier otro valor normal, se llaman funciones de <dfn>primera clase</dfn>. En JavaScript, todas las funciones child funciones de primera clase.
 
 Las funciones que toman una función como argumento o devuelven una función como valor de retorno se llaman <dfn>funciones de orden superior</dfn>.
 
@@ -26,7 +26,7 @@ Cuando las funciones se pasan o se devuelven desde otra función, las funciones 
 
 Prepara 27 tazas de té verde (green tea) y 13 tazas de té negro (black tea) y almacénalas en las variables `tea4GreenTeamFCC` y `tea4BlackTeamFCC`, respectivamente. Ten en cuenta que la función `getTea` ha sido modificada por lo que ahora recibe una función como primer argumento.
 
-Nota: Los datos (el número de tazas de té) son suministrados como el último argumento. Discutiremos más sobre esto en lecciones posteriores.
+Nota: Los datos (el número de tazas de té) child suministrados como el último argumento. Discutiremos más sobre esto en lecciones posteriores.
 
 # --hints--
 

@@ -10,7 +10,7 @@ dashedName: general-fizzbuzz
 
 Scrivi una versione generalizzata di [Fizzbuzz](https://rosettacode.org/wiki/FizzBuzz) che funziona per ogni lista di fattori, assieme alle loro parole.
 
-Questa è in pratica una implementazione di "fizzbuzz" dove le regole del gioco sono date all'utente. Crea una funzione per implementarlo. La funzione dovrebbe accettare due parametri.
+Questa è in pratica una implementazione di "fizzbuzz" dove le regole del gioco childo date all'utente. Crea una funzione per implementarlo. La funzione dovrebbe accettare due parametri.
 
 Il primo è un array con le regole di FizzBuzz. Per esempio `[ [3, "Fizz"] , [5, "Buzz"] ]`.
 

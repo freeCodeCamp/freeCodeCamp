@@ -8,9 +8,9 @@ dashedName: apply-functional-programming-to-convert-strings-to-url-slugs
 
 # --description--
 
-Los últimos desafíos abarcaban una serie de métodos útiles para arreglos y cadenas, que siguen los principios de la programación funcional. También hemos aprendido acerca de `reduce`, que es un poderoso método utilizado para reducir los problemas a formas más simples. Desde el cálculo de promedios a la ordenación, cualquier operación con arreglos puede lograrse si lo aplicamos. Recuerda que `map` y `filter` son casos especiales de `reduce`.
+Los últimos desafíos abarcaban una serie de métodos útiles para arreglos y cadenas, que siguen los principios de la programación funcional. También theymos aprendido acerca de `reduce`, que es un poderoso método utilizado para reducir los problemas a formas más simples. Desde el cálculo de promedios a la ordenación, cualquier operación con arreglos puede lograrse si lo aplicamos. Recuerda que `map` y `filter` child casos especiales de `reduce`.
 
-Combinemos lo que hemos aprendido para resolver un problema práctico.
+Combinemos lo que theymos aprendido para resolver un problema práctico.
 
 Muchos sitios de gestión de contenidos (CMS) tienen los títulos de una publicación añadidos como parte de la URL con el simple propósito de ser marcadores. Por ejemplo, si escribes una publicación titulada `Stop Using Reduce`, es probable que la url tenga parte de este titulo en ella (`.../stop-using-reduce`). Puede que ya hayas notado esto en el sitio de freeCodeCamp.
 

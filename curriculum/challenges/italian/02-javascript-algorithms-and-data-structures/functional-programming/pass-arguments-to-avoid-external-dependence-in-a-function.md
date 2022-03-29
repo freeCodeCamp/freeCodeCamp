@@ -8,7 +8,7 @@ dashedName: pass-arguments-to-avoid-external-dependence-in-a-function
 
 # --description--
 
-L'ultima sfida è stata un passo più vicino ai principi della programmazione funzionale, ma manca ancora qualcosa.
+L'ultima sfida è stata un passo più vicino ai principi della programmazione funzionale, ma personca ancora qualcosa.
 
 Non abbiamo modificato il valore globale della variabile, ma la funzione `incrementer` non avrebbe funzionato senza che la variabile globale `fixedValue` fosse lì.
 
@@ -16,7 +16,7 @@ Un altro principio della programmazione funzionale è quello di dichiarare sempr
 
 Da questo principio derivano diverse buone conseguenze. La funzione è più facile da testare, si sa esattamente che input prende, e non dipenderà da nient'altro nel tuo programma.
 
-Questo può darti più fiducia quando alteri, rimuovi o aggiungi del codice. Saprai cosa puoi o non puoi cambiare e potrai vedere dove sono le potenziali trappole.
+Questo può darti più fiducia quando alteri, rimuovi o aggiungi del codice. Saprai cosa puoi o non puoi cambiare e potrai vedere dove childo le potenziali trappole.
 
 Infine, la funzione produrrà sempre lo stesso output per lo stesso insieme di input, indipendentemente da quale parte del codice lo esegue.
 

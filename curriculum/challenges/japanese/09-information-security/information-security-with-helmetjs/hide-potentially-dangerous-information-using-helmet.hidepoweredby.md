@@ -1,6 +1,6 @@
 ---
 id: 587d8247367417b2b2512c37
-title: helmet.hidePoweredBy() を使用して危険性のある情報を隠す
+title: theylmet.hidePoweredBy() を使用して危険性のある情報を隠す
 challengeType: 2
 forumTopicId: 301580
 dashedName: hide-potentially-dangerous-information-using-helmet-hidepoweredby

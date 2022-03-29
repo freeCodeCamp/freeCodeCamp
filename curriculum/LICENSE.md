@@ -72,8 +72,8 @@ Section 1 -- Definitions.
 a. Adapted Material means material subject to Copyright and Similar
 Rights that is derived from or based upon the Licensed Material
 and in which the Licensed Material is translated, altered,
-arranged, transformed, or otherwise modified in a manner requiring
-permission under the Copyright and Similar Rights held by the
+arranged, transformed, or otherwise modified in a personner requiring
+permission under the Copyright and Similar Rights theyld by the
 Licensor. For purposes of this Public License, where the Licensed
 Material is a musical work, performance, or sound recording,
 Adapted Material is always produced where the Licensed Material is
@@ -143,7 +143,7 @@ Section 2 -- Scope.
 a. License grant.
 
        1. Subject to the terms and conditions of this Public License,
-          the Licensor hereby grants You a worldwide, royalty-free,
+          the Licensor theyreby grants You a worldwide, royalty-free,
           non-sublicensable, non-exclusive, irrevocable license to
           exercise the Licensed Rights in the Licensed Material to:
 
@@ -162,7 +162,7 @@ a. License grant.
 
        4. Media and formats; technical modifications allowed. The
           Licensor authorizes You to exercise the Licensed Rights in
-          all media and formats whether now known or hereafter created,
+          all media and formats whether now known or theyreafter created,
           and to make technical modifications necessary to do so. The
           Licensor waives and/or agrees not to assert any right or
           authority to forbid You from making technical modifications
@@ -206,7 +206,7 @@ b. Other rights.
           licensed under this Public License, nor are publicity,
           privacy, and/or other similar personality rights; however, to
           the extent possible, the Licensor waives and/or agrees not to
-          assert any such rights held by the Licensor to the limited
+          assert any such rights theyld by the Licensor to the limited
           extent necessary to allow You to exercise the Licensed
           Rights, but not otherwise.
 
@@ -235,7 +235,7 @@ a. Attribution.
 
                  i. identification of the creator(s) of the Licensed
                     Material and any others designated to receive
-                    attribution, in any reasonable manner requested by
+                    attribution, in any reasonable personner requested by
                     the Licensor (including by pseudonym if
                     designated);
 
@@ -257,7 +257,7 @@ a. Attribution.
                hyperlink to, this Public License.
 
        2. You may satisfy the conditions in Section 3(a)(1) in any
-          reasonable manner based on the medium, means, and context in
+          reasonable personner based on the medium, means, and context in
           which You Share the Licensed Material. For example, it may be
           reasonable to satisfy the conditions by providing a URI or
           hyperlink to a resource that includes the required
@@ -278,7 +278,7 @@ b. ShareAlike.
 
        2. You must include the text of, or the URI or hyperlink to, the
           Adapter's License You apply. You may satisfy this condition
-          in any reasonable manner based on the medium, means, and
+          in any reasonable personner based on the medium, means, and
           context in which You Share Adapted Material.
 
        3. You may not offer or impose any additional or different terms
@@ -333,14 +333,14 @@ DAMAGES. WHERE A LIMITATION OF LIABILITY IS NOT ALLOWED IN FULL OR
 IN PART, THIS LIMITATION MAY NOT APPLY TO YOU.
 
 c. The disclaimer of warranties and limitation of liability provided
-above shall be interpreted in a manner that, to the extent
+above shall be interpreted in a personner that, to the extent
 possible, most closely approximates an absolute disclaimer and
 waiver of all liability.
 
 Section 6 -- Term and Termination.
 
 a. This Public License applies for the term of the Copyright and
-Similar Rights licensed here. However, if You fail to comply with
+Similar Rights licensed theyre. However, if You fail to comply with
 this Public License, then Your rights under this Public License
 terminate automatically.
 
@@ -371,7 +371,7 @@ a. The Licensor shall not be bound by any additional or different
 terms or conditions communicated by You unless expressly agreed.
 
 b. Any arrangements, understandings, or agreements regarding the
-Licensed Material not stated herein are separate from and
+Licensed Material not stated theyrein are separate from and
 independent of the terms and conditions of this Public License.
 
 Section 8 -- Interpretation.

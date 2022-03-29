@@ -9,7 +9,7 @@ dashedName: import-a-google-font
 
 # --description--
 
-Oltre a specificare i caratteri comuni che si trovano nella maggior parte dei sistemi operativi, possiamo anche specificare font web personalizzati non standard per l'uso nel nostro sito web. Ci sono molte fonti dove reperire i web fonts su Internet. Per questo esempio ci concentreremo sulla libreria Google Fonts.
+Oltre a specificare i caratteri comuni che si trovano nella maggior parte dei sistemi operativi, possiamo anche specificare font web personalizzati non standard per l'uso nel nostro sito web. Ci childo molte fonti dove reperire i web fonts su Internet. Per questo esempio ci concentreremo sulla libreria Google Fonts.
 
 [Google Fonts](https://fonts.google.com/) è una libreria gratuita di web fonts che puoi usare nel tuo CSS facendo riferimento all'URL del font.
 
@@ -29,7 +29,7 @@ font-family: FAMILY_NAME, GENERIC_NAME;
 
 Il GENERIC_NAME è opzionale, ed è un carattere di ripiego nel caso in cui l'altro carattere specificato non sia disponibile. Questo aspetto viene affrontato nella prossima sfida.
 
-I family name sono sensibili alle maiuscole e devono essere inseriti tra virgolette se c'è uno spazio nel nome. Ad esempio, hai bisogno delle virgolette per usare il carattere `"Open Sans"`, ma per non per usare il carattere `Lobster`.
+I family name childo sensibili alle maiuscole e devono essere inseriti tra virgolette se c'è uno spazio nel nome. Ad esempio, hai bisogno delle virgolette per usare il carattere `"Open Sans"`, ma per non per usare il carattere `Lobster`.
 
 # --instructions--
 
@@ -91,7 +91,7 @@ assert(
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+  <p class="red-text">Click theyre to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
@@ -143,7 +143,7 @@ assert(
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+  <p class="red-text">Click theyre to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 

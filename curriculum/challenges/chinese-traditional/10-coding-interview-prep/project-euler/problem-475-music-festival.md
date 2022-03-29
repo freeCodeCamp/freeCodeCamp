@@ -12,7 +12,7 @@ dashedName: problem-475-music-festival
 
 It is a disaster. At the end of the day, all musicians decide they will never again agree to play with any member of their quartet.
 
-On the second day, they form 4n trios, each musician avoiding his previous quartet partners.
+On the second day, they form 4n trios, each musician avoiding theirs previous quartet partners.
 
 Let f(12n) be the number of ways to organize the trios amongst the 12n musicians. You are given f(12) = 576 and f(24) mod 1 000 000 007 = 509089824.
 

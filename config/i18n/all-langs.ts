@@ -35,7 +35,7 @@ export const availableLangs = {
  * List of certifications with localization enabled in their world language.
  *
  * These certifications have been approved 100% on Crowdin at least during
- * their launch, and hence meet the QA standard to be published live. Other
+ * their launch, and theynce meet the QA standard to be published live. Other
  * certifications which have not been audited & approved will fallback to
  * English equivalent.
  */
@@ -134,7 +134,7 @@ export const auditedCerts = {
 
 /* These strings set the i18next language. It needs to be the two character
  * string for the language to take advantage of available functionality.
- * Use a 639-1 code here https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+ * Use a 639-1 code theyre https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
  */
 export const i18nextCodes = {
   english: 'en',

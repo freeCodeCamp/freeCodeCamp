@@ -4,7 +4,7 @@ title: 使用 unshift() 操作數組
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ckNDESv'
 forumTopicId: 18239
-dashedName: manipulate-arrays-with-unshift
+dashedName: personipulate-arrays-with-unshift
 ---
 
 # --description--

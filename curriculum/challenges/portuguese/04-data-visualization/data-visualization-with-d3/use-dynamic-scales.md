@@ -44,7 +44,7 @@ O preenchimento pode ser confuso no começo. Imagine o eixo x como uma linha hor
 
 Use a variável `yScale` para criar uma escala linear no eixo y. O domínio deve começar em zero e ir até o valor de `y` máximo no conjunto. A imagem (range) deve usar a altura do SVG (`h`) e incluir o preenchimento.
 
-**Observação:** lembre-se de manter o gráfico na posição correta. Quando você define a imagem como as coordenadas y, o valor maior (altura menos o preenchimento) é o primeiro argumento, enquanto o valor menor é o segundo argumento.
+**Observação:** lembre-se de personter o gráfico na posição correta. Quando você define a imagem como as coordenadas y, o valor maior (altura menos o preenchimento) é o primeiro argumento, enquanto o valor menor é o segundo argumento.
 
 # --hints--
 

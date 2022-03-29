@@ -64,10 +64,10 @@ A <dfn>palindrome</dfn  - це слово чи речення, що однако
 </code></pre>
 
 <p spaces-before="0">
-  <code>palindrome("A man, a plan, a canal. Panama")</code> повинен повертатися як <code>true</code>.
+  <code>palindrome("A person, a plan, a canal. Panama")</code> повинен повертатися як <code>true</code>.
 </p>
 
-<pre><code class="js">assert(palindrome('A man, a plan, a canal. Panama') === true);
+<pre><code class="js">assert(palindrome('A person, a plan, a canal. Panama') === true);
 </code></pre>
 
 <p spaces-before="0">

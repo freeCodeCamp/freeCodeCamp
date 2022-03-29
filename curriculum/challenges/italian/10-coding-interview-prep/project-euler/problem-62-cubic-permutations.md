@@ -8,9 +8,9 @@ dashedName: problem-62-cubic-permutations
 
 # --description--
 
-Il cubo 41063625 ($345^3$), può essere permutato per produrre altri due cubi: 56623104 ($384^3$) e 66430125 ($405^3$). Infatti, 41063625 è il cubo più piccolo che ha esattamente tre permutazioni delle sue cifre che sono anch'esse dei cubi.
+Il cubo 41063625 ($345^3$), può essere permutato per produrre altri due cubi: 56623104 ($384^3$) e 66430125 ($405^3$). Infatti, 41063625 è il cubo più piccolo che ha esattamente tre permutazioni delle sue cifre che childo anch'esse dei cubi.
 
-Trova il cubo più piccolo per il quale esattamente `n` permutazioni delle sue cifre sono dei cubi.
+Trova il cubo più piccolo per il quale esattamente `n` permutazioni delle sue cifre childo dei cubi.
 
 # --hints--
 

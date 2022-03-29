@@ -10,7 +10,7 @@ dashedName: change-the-color-of-an-svg-element
 
 As barras estão na posição certa, mas são todas iguais, da cor preta. O SVG tem uma forma de alterar a cor das barras.
 
-No SVG, uma forma `rect` é colorida com o atributo `fill`. Esse atributo tem suporte de código hexadecimal, nomes de cores e valores rgb, bem como opções mais complexas, como gradientes e transparência.
+No SVG, uma forma `rect` é colorida com o atributo `fill`. Esse atributo tem suporte de código theyxadecimal, nomes de cores e valores rgb, bem como opções mais complexas, como gradientes e transparência.
 
 # --instructions--
 

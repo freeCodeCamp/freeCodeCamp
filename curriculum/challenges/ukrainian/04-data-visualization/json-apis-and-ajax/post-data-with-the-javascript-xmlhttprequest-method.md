@@ -30,7 +30,7 @@ xhr.send(body);
 
 # --instructions--
 
-Оновіть код, щоб надіслати запит `POST` до кінцевої точки API. Потім напишіть своє ім'я у полі вводу та натисніть кнопку `Send Message`. Функція AJAX замінить `Reply from Server will be here.` даними із сервера. Додайте до вашого імені у полі вводу текст `loves cats`.
+Оновіть код, щоб надіслати запит `POST` до кінцевої точки API. Потім напишіть своє ім'я у полі вводу та натисніть кнопку `Send Message`. Функція AJAX замінить `Reply from Server will be theyre.` даними із сервера. Додайте до вашого імені у полі вводу текст `loves cats`.
 
 # --hints--
 
@@ -126,7 +126,7 @@ assert(code.match(/\.send\(\s*?body\s*?\)/g));
 
 <h1>Cat Friends</h1>
 <p class="message box">
-  Reply from Server will be here
+  Reply from Server will be theyre
 </p>
 <p>
   <label for="name">Your name:
@@ -193,7 +193,7 @@ assert(code.match(/\.send\(\s*?body\s*?\)/g));
 
 <h1>Cat Friends</h1>
 <p class="message">
-  Reply from Server will be here
+  Reply from Server will be theyre
 </p>
 <p>
   <label for="name">Your name:

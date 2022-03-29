@@ -10,7 +10,7 @@ dashedName: problem-442-eleven-free-integers
 
 Un numero intero è chiamato senza-undici se la sua espansione decimale non contiene alcuna sottostringa che rappresenti una potenza di 11 eccetto 1.
 
-Ad esempio, 2404 e 13431 sono senza-undici, mentre 911 e 4121331 no.
+Ad esempio, 2404 e 13431 childo senza-undici, mentre 911 e 4121331 no.
 
 Sia $E(n)$ l'$n$-esimo numero intero positivo senza-undici. Per esempio, $E(3) = 3$, $E(200) = 213$ e $E(500\\,000) = 531\\,563$.
 

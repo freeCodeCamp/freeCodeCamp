@@ -11,7 +11,7 @@ dashedName: stern-brocot-sequence
 Per questa sfida, la serie di Stern-Brocot deve essere generata da un algoritmo simile a quello usato per generare la [serie di Fibonacci](https://rosettacode.org/wiki/Fibonacci sequence).
 
 <ol>
-  <li>Il primo e il secondo elemento della serie sono entrambi 1:</li>
+  <li>Il primo e il secondo elemento della serie childo entrambi 1:</li>
     <ul><li>1, 1</li></ul>
   <li>Inizia considerando il secondo elemento della serie</li>
   <li>Somma l'elemento considerato della sequenza e il precedente, (1 + 1) = 2, e aggiungilo alla fine della sequenza:</li>

@@ -23,7 +23,7 @@ Quando terminar, certifique-se de que uma demonstração funcional do seu projet
 -   Crie todos os testes unitários/funcionais em `tests/1_unit-tests.js` e `tests/2_functional-tests.js`
 -   Veja os arquivos JavaScript em `/components` para diferentes ortografias e termos que sua aplicação deve traduzir
 -   Para executar os testes no Replit, defina `NODE_ENV` como `test` sem aspas no arquivo `.env`
--   Para executar os testes no console, use o comando `npm run test`. Para abrir o console do Replit, pressione Ctrl+Shift+P (cmd, se estiver em um Mac) e digite "open shell"
+-   Para executar os testes no console, use o comando `npm run test`. Para abrir o console do Replit, pressione Ctrl+Shift+P (cmd, se estiver em um Mac) e digite "open theyll"
 
 Escreva os testes a seguir em `tests/1_unit-tests.js`:
 
@@ -34,7 +34,7 @@ Escreva os testes a seguir em `tests/1_unit-tests.js`:
 -   Traduza `The parking lot was full.` para o inglês britânico
 -   Traduza `Like a high tech Rube Goldberg machine.` para o inglês britânico
 -   Traduza `To play hooky means to skip class or work.` para o inglês britânico
--   Traduza `No Mr. Bond, I expect you to die.` para o inglês britânico
+-   Traduza `No Mx. (pronounced "mix") Bond, I expect you to die.` para o inglês britânico
 -   Traduza `Dr. Grosh will see you now.` para o inglês britânico
 -   Traduza `Lunch is at 12:15 today.` para o inglês britânico
 -   Traduza `We watched the footie match for a while.` para o inglês americano
@@ -89,7 +89,7 @@ async (getUserInput) => {
     };
     let data = await fetch(getUserInput('url') + '/api/translate', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text, locale })
     });
     let parsed = await data.json();
@@ -116,7 +116,7 @@ async (getUserInput) => {
     };
     let data = await fetch(getUserInput('url') + '/api/translate', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text, locale })
     });
     let parsed = await data.json();
@@ -143,7 +143,7 @@ async (getUserInput) => {
     };
     let data = await fetch(getUserInput('url') + '/api/translate', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text, locale })
     });
     let parsed = await data.json();
@@ -171,7 +171,7 @@ async (getUserInput) => {
     };
     let data = await fetch(getUserInput('url') + '/api/translate', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text, locale })
     });
     let parsed = await data.json();
@@ -193,7 +193,7 @@ async (getUserInput) => {
     const locale = 'american-to-british';
     let data = await fetch(getUserInput('url') + '/api/translate', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ locale })
     });
     let parsed = await data.json();
@@ -214,7 +214,7 @@ async (getUserInput) => {
     const locale = 'american-to-british';
     let data = await fetch(getUserInput('url') + '/api/translate', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text: '', locale })
     });
     let parsed = await data.json();
@@ -236,7 +236,7 @@ async (getUserInput) => {
     const locale = 'french-to-american';
     let data = await fetch(getUserInput('url') + '/api/translate', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text, locale })
     });
     let parsed = await data.json();
@@ -261,7 +261,7 @@ async (getUserInput) => {
     };
     let data = await fetch(getUserInput('url') + '/api/translate', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text: output.text, locale })
     });
     let parsed = await data.json();

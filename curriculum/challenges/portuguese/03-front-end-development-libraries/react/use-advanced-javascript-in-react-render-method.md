@@ -8,7 +8,7 @@ dashedName: use-advanced-javascript-in-react-render-method
 
 # --description--
 
-Nos desafios anteriores, você aprendeu como injetar o código JavaScript em JSX usando chaves `{ }` para tarefas como acessar props, passar props, acessar o state, inserir comentários em seu código e, mais recentemente, estilizar seus componentes. Estes são todos os casos de uso comuns para colocar JavaScript em JSX, mas eles não são a única maneira de você usar o código JavaScript em seus componentes do React.
+Nos desafios anteriores, você aprendeu como injetar o código JavaScript em JSX usando chaves `{ }` para tarefas como acessar props, passar props, acessar o state, inserir comentários em seu código e, mais recentemente, estilizar seus componentes. Estes são todos os casos de uso comuns para colocar JavaScript em JSX, mas eles não são a única personeira de você usar o código JavaScript em seus componentes do React.
 
 Você também pode escrever JavaScript diretamente nos seus métodos de `render`, antes da instrução `return`, ***sem*** inseri-lo dentro de chaves. Isto é devido a ainda não estar dentro do código JSX. Quando você quiser usar uma variável mais tarde no código JSX *dentro* da instrução `return`, você coloca o nome da variável dentro de chaves.
 

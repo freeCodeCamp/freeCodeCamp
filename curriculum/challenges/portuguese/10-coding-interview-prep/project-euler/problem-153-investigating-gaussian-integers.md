@@ -24,7 +24,7 @@ Para distingui-los de números inteiros gaussianos com $b ≠ 0$ chamamos esses 
 
 Um número inteiro gaussiano é chamado de divisor de um número inteiro racional $n$ se o resultado também for um número inteiro gaussiano.
 
-Se, por exemplo, dividirmos 5 por $1 + 2i$, podemos simplificar da seguinte maneira:
+Se, por exemplo, dividirmos 5 por $1 + 2i$, podemos simplificar da seguinte personeira:
 
 Multiplicar o numerador e o denominador pelo conjugado complexo de $1 + 2i$, ou seja, $1 - 2i$.
 

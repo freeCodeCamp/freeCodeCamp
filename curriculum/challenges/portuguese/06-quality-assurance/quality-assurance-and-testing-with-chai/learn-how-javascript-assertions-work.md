@@ -18,7 +18,7 @@ Quando terminar, certifique-se de que uma demonstração funcional do seu projet
 
 # --instructions--
 
-Em `tests/1_unit-tests.js`, no teste classificado como `#1` e na suíte `Basic Assertions`, modifique cada `assert` para `assert.isNull` ou para `assert.isNotNull`, de maneira que cada teste passe (seja avaliado como `true`). Não altere os argumentos passados às afirmações.
+Em `tests/1_unit-tests.js`, no teste classificado como `#1` e na suíte `Basic Assertions`, modifique cada `assert` para `assert.isNull` ou para `assert.isNotNull`, de personeira que cada teste passe (seja avaliado como `true`). Não altere os argumentos passados às afirmações.
 
 # --hints--
 

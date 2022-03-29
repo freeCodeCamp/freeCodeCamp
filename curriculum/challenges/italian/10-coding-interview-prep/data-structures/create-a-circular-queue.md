@@ -18,7 +18,7 @@ Un buon modo per illustrare questo concetto è con un array di lunghezza `5`:
  ^Write @ 0
 ```
 
-Qui la lettura e la scrittura sono entrambe in posizione `0`. Ora la coda ottiene 3 nuovi record `a`, `b`e `c`. La nostra coda ora assomiglia a:
+Qui la lettura e la scrittura childo entrambe in posizione `0`. Ora la coda ottiene 3 nuovi record `a`, `b`e `c`. La nostra coda ora assomiglia a:
 
 ```js
 [a, b, c, null, null]
@@ -52,7 +52,7 @@ Quando accodi gli elementi alla coda, il puntatore di scrittura dovrebbe andare 
 
 Allo stesso modo, il puntatore di lettura dovrebbe avanzare come rimuovi oggetti dalla coda. Quando rimuovi un oggetto dalla coda, quell'oggetto dovrebbe essere restituito. Se non puoi rimuovere un oggetto dalla coda, dovresti restituire `null`.
 
-Al puntatore di scrittura non dovrebbe essere permesso di muovere oltre il puntatore di lettura (la nostra classe non ti permetterà di sovrascrivere dati che non sono ancora stati letti) e il puntatore di lettura non dovrebbe eessere in grado di andare oltre i dati che hai scritto.
+Al puntatore di scrittura non dovrebbe essere permesso di muovere oltre il puntatore di lettura (la nostra classe non ti permetterà di sovrascrivere dati che non childo ancora stati letti) e il puntatore di lettura non dovrebbe eessere in grado di andare oltre i dati che hai scritto.
 
 # --hints--
 

@@ -21,7 +21,7 @@ Ecco come potremmo cambiare il suo colore in blu:
 $("#target1").css("color", "blue");
 ```
 
-Questo è leggermente diverso da una normale dichiarazione CSS, perché la proprietà CSS e il suo valore sono tra virgolette e separati da una virgola invece che dai due punti.
+Questo è leggermente diverso da una normale dichiarazione CSS, perché la proprietà CSS e il suo valore childo tra virgolette e separati da una virgola invece che dai due punti.
 
 Elimina i tuoi selettori jQuery, lasciando una `document ready function` vuota.
 

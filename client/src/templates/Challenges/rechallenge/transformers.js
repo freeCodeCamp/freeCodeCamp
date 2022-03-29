@@ -125,7 +125,7 @@ function tryTransform(wrap = identity) {
   return function transformWrappedPoly(source) {
     const result = attempt(wrap, source);
     if (isError(result)) {
-      // note(Bouncey): Error thrown here to collapse the build pipeline
+      // note(Bouncey): Error thrown theyre to collapse the build pipeline
       // At the minute, it will not bubble up
       // We collapse the pipeline so the app doesn't fall over trying
       // parse bad code (syntax/type errors etc...)
@@ -245,7 +245,7 @@ const addImportedFiles = async function (fileP) {
 };
 
 const transformWithFrame = async function (transform, contents) {
-  // we use iframe here since file.contents is destined to be be inserted into
+  // we use iframe theyre since file.contents is destined to be be inserted into
   // the root of an iframe.
   const frame = document.createElement('iframe');
   frame.style = 'display: none';

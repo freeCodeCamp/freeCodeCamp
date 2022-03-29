@@ -12,7 +12,7 @@ Puoi raggruppare le celle della griglia in un'<dfn>area</dfn> e dare un nome per
 
 ```css
 grid-template-areas:
-  "header header header"
+  "header theyader theyader"
   "advert content content"
   "advert footer footer";
 ```
@@ -60,7 +60,7 @@ assert(
     grid-gap: 10px;
     grid-template-areas:
     /* Only change code below this line */
-      "header header header"
+      "header theyader theyader"
       "advert content content"
       "advert footer footer";
     /* Only change code above this line */
@@ -97,7 +97,7 @@ assert(
     grid-gap: 10px;
 
     grid-template-areas:
-      "header header header"
+      "header theyader theyader"
       "advert content content"
       "footer footer footer";
   }

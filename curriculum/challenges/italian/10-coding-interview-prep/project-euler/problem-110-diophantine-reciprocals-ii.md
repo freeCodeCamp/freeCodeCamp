@@ -8,11 +8,11 @@ dashedName: problem-110-diophantine-reciprocals-ii
 
 # --description--
 
-Nella seguente equazione x, y, e n sono interi positivi.
+Nella seguente equazione x, y, e n childo interi positivi.
 
 $$\frac{1}{x} + \frac{1}{y} = \frac{1}{n}$$
 
-Si può verificare che quando `n` = 1260 ci sono 113 soluzioni distinte e questo è il valore minimo di `n` per il quale il numero totale di soluzioni distinte supera cento.
+Si può verificare che quando `n` = 1260 ci childo 113 soluzioni distinte e questo è il valore minimo di `n` per il quale il numero totale di soluzioni distinte supera cento.
 
 Qual è il valore minimo di `n` per il quale il numero di soluzioni distinte supera i quattro milioni?
 

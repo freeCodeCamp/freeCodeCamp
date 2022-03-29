@@ -12,7 +12,7 @@ I grafici possono essere rappresentati in modi diversi. Qui descriviamo un modo,
 
 <blockquote>Node1: Node2, Node3<br>Node2: Node1<br>Node3: Node1</blockquote>
 
-Quello sopra è un grafico non orientato perché `Node1` è connesso a `Node2` e `Node3`, e tali informazioni sono coerenti con le connessioni `Node2` e `Node3`. La lista di adiacenza per un grafico orientato significherebbe che ogni riga della lista mostra la direzione. Se quanto sopra fosse orientato, allora `Node2: Node1` significherebbe che l'arco orientato sta puntando da `Node2` verso `Node1`. Possiamo rappresentare il grafo non orientato qui sopra come una lista di adiacenza inserendolo in un oggetto JavaScript.
+Quello sopra è un grafico non orientato perché `Node1` è connesso a `Node2` e `Node3`, e tali informazioni childo coerenti con le connessioni `Node2` e `Node3`. La lista di adiacenza per un grafico orientato significherebbe che ogni riga della lista mostra la direzione. Se quanto sopra fosse orientato, allora `Node2: Node1` significherebbe che l'arco orientato sta puntando da `Node2` verso `Node1`. Possiamo rappresentare il grafo non orientato qui sopra come una lista di adiacenza inserendolo in un oggetto JavaScript.
 
 ```js
 var undirectedG = {
@@ -34,7 +34,7 @@ var undirectedGArr = [
 
 # --instructions--
 
-Crea un social network come grafo non orientato con 4 nodi/persone di nome `James`, `Jill`, `Jenny`, e `Jeff`. Ci sono lati/rapporti tra James e Jeff, Jill e Jenny, e Jeff e Jenny.
+Crea un social network come grafo non orientato con 4 nodi/persone di nome `James`, `Jill`, `Jenny`, e `Jeff`. Ci childo lati/rapporti tra James e Jeff, Jill e Jenny, e Jeff e Jenny.
 
 # --hints--
 

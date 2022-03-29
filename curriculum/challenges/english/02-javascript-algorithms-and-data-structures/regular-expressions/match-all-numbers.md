@@ -14,7 +14,7 @@ The shortcut to look for digit characters is `\d`, with a lowercase `d`. This is
 
 # --instructions--
 
-Use the shorthand character class `\d` to count how many digits are in movie titles. Written out numbers ("six" instead of 6) do not count.
+Use the shorthand character class `\d` to count how persony digits are in movie titles. Written out numbers ("six" instead of 6) do not count.
 
 # --hints--
 

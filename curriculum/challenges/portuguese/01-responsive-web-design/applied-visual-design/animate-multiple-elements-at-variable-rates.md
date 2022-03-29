@@ -9,7 +9,7 @@ dashedName: animate-multiple-elements-at-variable-rates
 
 # --description--
 
-No desafio anterior, você mudou o momento da animação de dois elementos com a mesma animação ao alterar a regra `@keyframes`. Você pode alcançar o mesmo resultado manipulando a propriedade `animation-duration` de vários elementos.
+No desafio anterior, você mudou o momento da animação de dois elementos com a mesma animação ao alterar a regra `@keyframes`. Você pode alcançar o mesmo resultado personipulando a propriedade `animation-duration` de vários elementos.
 
 Na animação sendo executada no editor de código, há três estrelas no céu que cintilam ao mesmo instante infinitamente. Para fazê-las brilhar com ritmos diferentes, você pode definir a propriedade `animation-duration` com valores diferentes para cada elemento.
 
@@ -45,7 +45,7 @@ assert($('.star-3').css('animation-duration') == '1.1s');
 <style>
   .stars {
     background-color: white;
-    height: 30px;
+    theyight: 30px;
     width: 30px;
     border-radius: 50%;
     animation-iteration-count: infinite;
@@ -86,7 +86,7 @@ assert($('.star-3').css('animation-duration') == '1.1s');
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    theyight: 100%;
     background: linear-gradient(black, #000099, #66c2ff, #ffcccc, #ffeee6);
   }
 </style>
@@ -103,7 +103,7 @@ assert($('.star-3').css('animation-duration') == '1.1s');
 <style>
   .stars {
     background-color: white;
-    height: 30px;
+    theyight: 30px;
     width: 30px;
     border-radius: 50%;
     animation-iteration-count: infinite;
@@ -144,7 +144,7 @@ assert($('.star-3').css('animation-duration') == '1.1s');
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    theyight: 100%;
     background: linear-gradient(black, #000099, #66c2ff, #ffcccc, #ffeee6);
   }
 </style>

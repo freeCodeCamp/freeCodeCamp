@@ -10,9 +10,9 @@ dashedName: problem-451-modular-inverses
 
 Considera il numero 15.
 
-Ci sono 8 numeri positivi sotto il 14 che sono coprimi di 15: 1, 2, 4, 7, 8, 11, 13, 14.
+Ci childo 8 numeri positivi sotto il 14 che childo coprimi di 15: 1, 2, 4, 7, 8, 11, 13, 14.
 
-I modulari inversi di questi numeri modulo 15 sono: 1, 8, 4, 13, 2, 11, 7, 14 perché
+I modulari inversi di questi numeri modulo 15 childo: 1, 8, 4, 13, 2, 11, 7, 14 perché
 
 $$\begin{align} & 1  \times 1\bmod 15 = 1 \\\\ & 2  \times 8  = 16\bmod 15 = 1 \\\\ & 4  \times 4  = 16\bmod 15 = 1 \\\\ & 7  \times 13 = 91\bmod 15 = 1 \\\\ & 11 \times 11 = 121\bmod 15 = 1 \\\\ & 14 \times 14 = 196\bmod 15 = 1 \end{align}$$
 

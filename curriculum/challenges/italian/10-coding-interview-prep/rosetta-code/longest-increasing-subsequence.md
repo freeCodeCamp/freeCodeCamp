@@ -8,7 +8,7 @@ dashedName: longest-increasing-subsequence
 
 # --description--
 
-Il problema di della più lunga sottosequenza crescente è quello di trovare una sottosequenza di una data sequenza in cui gli elementi successivi sono in ordine, dal più basso al più alto, e in cui la sottosequenza è la più lunga possibile. Un esempio:
+Il problema di della più lunga sottosequenza crescente è quello di trovare una sottosequenza di una data sequenza in cui gli elementi successivi childo in ordine, dal più basso al più alto, e in cui la sottosequenza è la più lunga possibile. Un esempio:
 
 Per il seguente array:
 

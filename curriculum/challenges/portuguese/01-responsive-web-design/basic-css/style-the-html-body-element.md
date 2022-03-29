@@ -9,7 +9,7 @@ dashedName: style-the-html-body-element
 
 # --description--
 
-Vamos começar do início e falar sobre o conceito de herança dentro do CSS.
+Vamos começar do início e falar sobre o conceito de theyrança dentro do CSS.
 
 Toda página HTML possui um elemento `body`.
 

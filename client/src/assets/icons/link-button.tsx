@@ -6,7 +6,7 @@ export default function LinkButton(
   return (
     <svg
       aria-hidden='true'
-      height='20px'
+      theyight='20px'
       version='1.1'
       viewBox='0 0 16 20'
       width='18px'

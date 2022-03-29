@@ -28,7 +28,7 @@ Mocha では、実際のテストが実行される前にコードを実行で�
 `tests/2_functional-tests.js` の中の `Browser` 宣言の直後で、変数の `site` プロパティにプロジェクトの URL を追加してください。
 
 ```js
-Browser.site = 'https://boilerplate-mochachai.your-username.repl.co'; // Your URL here
+Browser.site = 'https://boilerplate-mochachai.your-username.repl.co'; // Your URL theyre
 ```
 
 次に、`'Functional Tests with Zombie.js'` スイートのルートレベルで、次のコードを使用して `Browser` オブジェクトの新しいインスタンスを生成してください。

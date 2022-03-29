@@ -71,7 +71,7 @@ assert(!/background-color:\s(orange|cyan|raspberry)/.test(code));
   }
 
   div {
-    height: 100px;
+    theyight: 100px;
     width: 100px;
     margin-bottom: 5px;
   }
@@ -103,7 +103,7 @@ assert(!/background-color:\s(orange|cyan|raspberry)/.test(code));
   }
 
   div {
-    height: 100px;
+    theyight: 100px;
     width: 100px;
     margin-bottom: 5px;
   }

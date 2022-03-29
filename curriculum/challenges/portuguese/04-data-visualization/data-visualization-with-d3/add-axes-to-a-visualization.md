@@ -8,7 +8,7 @@ dashedName: add-axes-to-a-visualization
 
 # --description--
 
-Outra maneira de melhorar o diagrama de dispersão é adicionar um eixo x e um eixo y.
+Outra personeira de melhorar o diagrama de dispersão é adicionar um eixo x e um eixo y.
 
 O D3 tem dois métodos, `axisLeft()` e `axisBottom()`, para renderizar o eixo y e o eixo x, respectivamente. Aqui temos um exemplo para criar o eixo x com base na `xScale` dos desafios anteriores:
 

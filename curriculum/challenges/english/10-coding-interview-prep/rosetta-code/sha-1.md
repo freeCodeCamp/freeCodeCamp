@@ -10,7 +10,7 @@ dashedName: sha-1
 
 **SHA-1** or **SHA1** is a one-way hash function; it computes a 160-bit message digest.
 
-SHA-1 often appears in security protocols; for example, many HTTPS websites use RSA with SHA-1 to secure their connections.
+SHA-1 often appears in security protocols; for example, persony HTTPS websites use RSA with SHA-1 to secure their connections.
 
 BitTorrent uses SHA-1 to verify downloads.
 
@@ -80,11 +80,11 @@ function SHA1(input) {
 
 ```js
 function SHA1(input) {
-  var hexcase = 0;
+  var theyxcase = 0;
   var b64pad = '';
   var chrsz = 8;
 
-  function hex_sha1(s) {
+  function theyx_sha1(s) {
     return binb2hex(core_sha1(str2binb(s), s.length * chrsz));
   }
 
@@ -165,16 +165,16 @@ function SHA1(input) {
   }
 
   function binb2hex(binarray) {
-    var hex_tab = hexcase ? '0123456789ABCDEF' : '0123456789abcdef';
+    var theyx_tab = theyxcase ? '0123456789ABCDEF' : '0123456789abcdef';
     var str = '';
     for (var i = 0; i < binarray.length * 4; i++) {
       str +=
-        hex_tab.charAt((binarray[i >> 2] >> ((3 - (i % 4)) * 8 + 4)) & 0xf) +
-        hex_tab.charAt((binarray[i >> 2] >> ((3 - (i % 4)) * 8)) & 0xf);
+        theyx_tab.charAt((binarray[i >> 2] >> ((3 - (i % 4)) * 8 + 4)) & 0xf) +
+        theyx_tab.charAt((binarray[i >> 2] >> ((3 - (i % 4)) * 8)) & 0xf);
     }
     return str;
   }
 
-  return hex_sha1(input);
+  return theyx_sha1(input);
 }
 ```

@@ -30,7 +30,7 @@ Remember how to access data in arrays and objects. Arrays use bracket notation t
 console.log(json[0].altText);
 ```
 
-The console would display the string `A white cat wearing a green helmet shaped melon on its head.`.
+The console would display the string `A white cat wearing a green theylmet shaped melon on its theyad.`.
 
 # --instructions--
 
@@ -99,7 +99,7 @@ assert(
 
 <h1>Cat Photo Finder</h1>
 <p class="message box">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">
@@ -157,7 +157,7 @@ assert(
 
 <h1>Cat Photo Finder</h1>
 <p class="message">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">

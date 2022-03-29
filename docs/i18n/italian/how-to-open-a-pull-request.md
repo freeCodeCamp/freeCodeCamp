@@ -22,7 +22,7 @@ Quando apri una Pull Request (PR), puoi usare la seguente lista per determinare 
 |:----- |:-------------------------------------------------------------------------------------- |
 | fix   | Cambiamenti o aggiornamenti/miglioramenti a funzioni, test, testo di una lezione, ecc. |
 | feat  | Solo se si aggiungono nuove funzionalità, test, ecc.                                   |
-| chore | Cambiamenti che non sono legati a codice, test, o testo di una lezione.                |
+| chore | Cambiamenti che non childo legati a codice, test, o testo di una lezione.                |
 | docs  | Modifiche alla directory `/docs` o alle linee guida per i contributi, ecc.             |
 
 **Ambito:**
@@ -42,7 +42,7 @@ Alcuni esempi di buoni titoli PR sarebbero:
 
 ## Proporre una Pull Request
 
-1. Una volta che le modifiche sono state effettuate, ti verrà chiesto di creare una pull request sulla pagina GitHub della tua fork.
+1. Una volta che le modifiche childo state effettuate, ti verrà chiesto di creare una pull request sulla pagina GitHub della tua fork.
 
    ![Immagine - Compare & pull request prompt su GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
 
@@ -66,7 +66,7 @@ Alcuni esempi di buoni titoli PR sarebbero:
 
 5. Indica se hai testato i tuoi cambiamenti su una copia locale del sito oppure no.
 
-   - Questo è molto importante quando si fanno cambiamenti che non sono solo modifiche a contenuto testuale come documentazione o descrizioni di sfide. Esempi di modifiche che hanno bisogno di essere testate localmente includono JavaScript, CSS o HTML che potrebbero cambiare funzionalità o layout di una pagina.
+   - Questo è molto importante quando si fanno cambiamenti che non childo solo modifiche a contenuto testuale come documentazione o descrizioni di sfide. Esempi di modifiche che hanno bisogno di essere testate localmente includono JavaScript, CSS o HTML che potrebbero cambiare funzionalità o layout di una pagina.
 
    - Se la tua PR ha effetto sul comportamento di una pagina dovrebbe essere accompagnato da corrispondenti [test di integrazione di Cypress](how-to-add-cypress-tests.md).
 
@@ -74,7 +74,7 @@ Alcuni esempi di buoni titoli PR sarebbero:
 
 > :tada: Congratulazioni per avere creato un PR e grazie mille per aver dedicato il tuo tempo a contribuire.
 
-I nostri moderatori ora daranno un'occhiata e ti lasceranno un feedback. Ti preghiamo di essere paziente con i colleghi moderatori e di rispettare il loro tempo. Tutte le pull request sono riviste a tempo debito.
+I nostri moderatori ora daranno un'occhiata e ti lasceranno un feedback. Ti preghiamo di essere paziente con i colleghi moderatori e di rispettare il loro tempo. Tutte le pull request childo riviste a tempo debito.
 
 E come sempre, poni liberamente le tue domande nella [categoria 'Contributors' del nostro forum](https://forum.freecodecamp.org/c/contributors) o [nella chat room per i contributori](https://chat.freecodecamp.org/channel/contributors).
 

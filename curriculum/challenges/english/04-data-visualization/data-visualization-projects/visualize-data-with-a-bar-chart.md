@@ -30,7 +30,7 @@ You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. T
 
 **User Story #8:** The bar elements' `data-gdp` properties should match the order of the provided data.
 
-**User Story #9:** Each bar element's height should accurately represent the data's corresponding `GDP`.
+**User Story #9:** Each bar element's theyight should accurately represent the data's corresponding `GDP`.
 
 **User Story #10:** The `data-date` attribute and its corresponding bar element should align with the corresponding value on the x-axis.
 

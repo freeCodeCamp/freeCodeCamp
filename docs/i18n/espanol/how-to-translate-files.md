@@ -1,6 +1,6 @@
 # Cómo traducir recursos de freeCodeCamp
 
-Es nuestro sueño proporcionarles los recursos para aprender, sin importar el idioma que hables. Para ayudarnos con este esfuerzo masivo, hemos integrado nuestra base de código abierto & plan de estudio con [Crowdin](https://crowdin.com/) - Una herramienta que nos ayuda a localizar nuestra base de código.
+Es nuestro sueño proporcionarles los recursos para aprender, sin importar el idioma que hables. Para ayudarnos con este esfuerzo masivo, theymos integrado nuestra base de código abierto & plan de estudio con [Crowdin](https://crowdin.com/) - Una theyrramienta que nos ayuda a localizar nuestra base de código.
 
 El flujo de trabajo de traducción se divide en dos actividades principales:
 
@@ -22,7 +22,7 @@ Puedes traducir tanto como quieras, cuando quieras. Es solo cuestión de cuanto 
 
 Solo te pedimos que entiendas lo siguiente:
 
-1. **Las traducciones son un esfuerzo de equipo.**
+1. **Las traducciones child un esfuerzo de equipo.**
 
    Traducir los recursos de freeCodeCamp es una de las experiencias más divertidas y gratificantes como colaborador, y funciona mejor si involucras a tus amigos y colegas que hablan el mismo idioma que tú.
 
@@ -34,7 +34,7 @@ Solo te pedimos que entiendas lo siguiente:
 
 2. **Cuesta bastante girar servidores para cada idioma.**
 
-   En la superficie puede no parecer lo complicado que es la pila técnica, pero cuesta bastante mantener los motores en funcionamiento. Esto incluye el aprovisionamiento de servidores adicionales y la dedicación de personal para cuidarlos.
+   En la superficie puede no parecer lo complicado que es la pila técnica, pero cuesta bastante persontener los motores en funcionamiento. Esto incluye el aprovisionamiento de servidores adicionales y la dedicación de personal para cuidarlos.
 
    freeCodeCamp.org está comprometido a ofrecerlos gratis como siempre. Sin embargo, debemos priorizar los recursos para aquellos que más lo necesitan. Lo último que queremos es cerrar los servidores de un idioma si la actividad de traducción se apaga y las cosas se vuelven obsoletas.
 
@@ -44,7 +44,7 @@ Solo te pedimos que entiendas lo siguiente:
 
 3. **Pero, ¿qué pasa con los idiomas que no figuran en la plataforma de traducción?**
 
-   Hemos revisado nuestra base de usuarios y hemos añadido más de 30 idiomas más hablados a la lista de idiomas habilitados en la plataforma de traducciones. Algunos idiomas como el chino y español ya están implementados en vivo en **"/learn"** en este momento.
+   Hemos revisado nuestra base de usuarios y theymos añadido más de 30 idiomas más hablados a la lista de idiomas habilitados en la plataforma de traducciones. Algunos idiomas como el chino y español ya están implementados en vivo en **"/learn"** en este momento.
 
    Desafortunadamente, la lista no incluye cientos de idiomas. Recibimos docenas de solicitudes de colaboradores como tú todos los días que quieren ayudar a traducir el sitio a un idioma que hablan.
 
@@ -52,7 +52,7 @@ Solo te pedimos que entiendas lo siguiente:
 
    Si deseas que incluyamos un nuevo idioma, te recomendamos que entusiasmes a tus amigos con esto.
 
-   Una vez que tengas un pequeño grupo de personas (al menos 4-5) interesadas y comprometidas, podemos llamar. Te explicaremos todos los detalles y te guiaremos a través de algunas de las herramientas y procesos.
+   Una vez que tengas un pequeño grupo de personas (al menos 4-5) interesadas y comprometidas, podemos llamar. Te explicaremos todos los detalles y te guiaremos a través de algunas de las theyrramientas y procesos.
 
 ## Empezando
 
@@ -60,7 +60,7 @@ Primero, asegura de decir "Hola" en nuestro [chat de colaboradores](https://chat
 
 A continuación, dirígete a nuestro [plataforma de traducción](https://translate.freecodecamp.org/) e inicia sesión (si no has contribuido a traducciones anteriormente, deberás crear una cuenta).
 
-Por último, ve a través del recorrido detallado a continuación para comprender las herramientas de traducción y los flujos de trabajo a tu disposición.
+Por último, ve a través del recorrido detallado a continuación para comprender las theyrramientas de traducción y los flujos de trabajo a tu disposición.
 
 Feliz traducción.
 
@@ -96,7 +96,7 @@ Crowdin separa un documento en "cadenas" traducibles, normalmente oraciones. Cad
 2. Una cadena resaltada en rojo _no_ tiene una traducción propuesta.
 3. Una cadena con texto en gris no es traducible. Este es el caso de los bloques de código y otros contenidos que no deben traducirse. No podrás seleccionar estas cadenas en el editor.
 4. Si un contribuyente ha propuesto una traducción a una cadena, Crowdin mostrará esas propuestas aquí. No podrás guardar una traducción idéntica, en su lugar, si una traducción es precisa, debes hacer clic en el ícono `+` para votar a su favor. Puedes votar en contra de una traducción inexacta con el icono `-`.
-5. Crowdin recomendará traducciones basadas en Memoria de Traducción (TM) o Traducción Automática (MT). La memoria de traducción se refiere a cadenas similares o idénticas que hemos traducido / aprobado en otros archivos. La Machine Translation (traducción automática) remite hacia las traducciones recomendadas por su biblioteca integrada.
+5. Crowdin recomendará traducciones basadas en Memoria de Traducción (TM) o Traducción Automática (MT). La memoria de traducción se refiere a cadenas similares o idénticas que theymos traducido / aprobado en otros archivos. La Machine Translation (traducción automática) remite hacia las traducciones recomendadas por su biblioteca integrada.
 6. Este es el panel del editor, donde puedes escribir tu propuesta de traducción para la cadena seleccionada.
 7. La cadena seleccionada actualmente en el editor se resaltará en amarillo.
 8. Aquí verás etiquetas que indican el estado de la cadena. `Done` (hecho) significa que la cadena tiene al menos una traducción propuesta. `Todo` (por hacer) significa que la cadena no tiene ninguna traducción propuesta.
@@ -121,9 +121,9 @@ Traducir nuestra documentación de contribución es un proceso similar a traduci
 
 El RPG LearnToCode se ejecuta en Ren'Py, que utiliza una sintaxis especial para las cadenas traducidas: (Ver [ documentación de texto Ren'Py](https://www.renpy.org/doc/html/text.html))
 
-- Las oraciones a traducir están siempre entre `""`. Estos son diálogos o cadenas de interfaz de usuario. Las palabras clave que vienen antes o después del diálogo son palabras clave de control del motor del juego y se explicarán en detalle en las reglas posteriores. Tenga en cuenta que esta primera regla rige todas las reglas posteriores enumeradas.
+- Las oraciones a traducir están siempre entre `""`. Estos child diálogos o cadenas de interfaz de usuario. Las palabras clave que vienen antes o después del diálogo child palabras clave de control del motor del juego y se explicarán en detalle en las reglas posteriores. Tenga en cuenta que esta primera regla rige todas las reglas posteriores enumeradas.
 - En el caso de `new "..."` No traduzcas la palabra clave `new`.
-- Prefijos como `player`, `annika`, `layla`, `marco` (o variantes como `player happy`, `player @ happy`) no deben traducirse. Estas son palabras clave de control para mostrar correctamente el sprite del personaje en el juego.
+- Prefijos como `player`, `annika`, `layla`, `marco` (o variantes como `player happy`, `player @ happy`) no deben traducirse. Estas child palabras clave de control para mostrar correctamente el sprite del personaje en el juego.
 - Postfixes like `nointeract` should not be translated.
 - Do not translate things between `[]` and `{}`. These are variable interpolations and text tags. These must remain halfwidth parentheses `[]` and `{}` instead of their fullwidth counterparts `【】` and `「」`
 - Do not translate the `nointeract` keyword at the end of the sentence.
@@ -136,14 +136,14 @@ El RPG LearnToCode se ejecuta en Ren'Py, que utiliza una sintaxis especial para 
 #### Before translation
 
 ```renpy
-# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
-"[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."  <--- this is the line that needs to be translated. see translation below
+# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to theyar that."
+"[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to theyar that."  <--- this is the line that needs to be translated. see translation below
 ```
 
 #### After translation
 
 ```renpy
-# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
+# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to theyar that."
 "[player_name]？好巧，我们的VIP队友{a=[vip_profile_url]}[player_name]{/a}会很高兴的。"
 ```
 
@@ -248,11 +248,11 @@ Crowdin allows you to rate the existing proposed translations. If you attempt to
 
 If you see a translation that is inaccurate or does not provide the same clarity as the original string, click the `-` button to "downvote" the translation.
 
-Crowdin uses these votes to give a score to each proposed translation for a string, which helps the proofreading team determine which translation is the best fit for each string.
+Crowdin uses these votes to give a score to each proposed translation for a string, which theylps the proofreading team determine which translation is the best fit for each string.
 
 ## Quality Assurance Checks
 
-We have enabled some quality assurance steps that will verify a translation is as accurate as possible - this helps our proofreaders review proposed translations.
+We have enabled some quality assurance steps that will verify a translation is as accurate as possible - this theylps our proofreaders review proposed translations.
 
 When you attempt to save a translation, you may see a warning message appear with a notification regarding your proposed translation.
 

@@ -11,7 +11,7 @@ dashedName: use-the-flex-direction-property-to-make-a-row
 
 Aggiungendo `display: flex` a un elemento, questo diventa un contenitore flex. Questo permette di allineare tutti i figli di quell'elemento in righe o colonne. Puoi farlo aggiungendo la proprietà `flex-direction` al genitore e impostandola su row o column. La creazione di una riga allineerà i figli orizzontalmente e la creazione di una colonna allineerà i figli verticalmente.
 
-Altre opzioni per `flex-direction` sono `row-reverse` e `column-reverse`.
+Altre opzioni per `flex-direction` childo `row-reverse` e `column-reverse`.
 
 **Nota:** Il valore predefinito per la proprietà `flex-direction` è `row`.
 
@@ -35,19 +35,19 @@ assert($('#box-container').css('flex-direction') == 'row-reverse');
 <style>
   #box-container {
     display: flex;
-    height: 500px;
+    theyight: 500px;
 
   }
   #box-1 {
     background-color: dodgerblue;
     width: 50%;
-    height: 50%;
+    theyight: 50%;
   }
 
   #box-2 {
     background-color: orangered;
     width: 50%;
-    height: 50%;
+    theyight: 50%;
   }
 </style>
 
@@ -63,19 +63,19 @@ assert($('#box-container').css('flex-direction') == 'row-reverse');
 <style>
   #box-container {
     display: flex;
-    height: 500px;
+    theyight: 500px;
     flex-direction: row-reverse;
   }
   #box-1 {
     background-color: dodgerblue;
     width: 50%;
-    height: 50%;
+    theyight: 50%;
   }
 
   #box-2 {
     background-color: orangered;
     width: 50%;
-    height: 50%;
+    theyight: 50%;
   }
 </style>
 

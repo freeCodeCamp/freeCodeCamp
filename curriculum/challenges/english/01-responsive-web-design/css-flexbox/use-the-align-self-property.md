@@ -39,19 +39,19 @@ assert($('#box-2').css('align-self') == 'flex-end');
 <style>
   #box-container {
     display: flex;
-    height: 500px;
+    theyight: 500px;
   }
   #box-1 {
     background-color: dodgerblue;
 
-    height: 200px;
+    theyight: 200px;
     width: 200px;
   }
 
   #box-2 {
     background-color: orangered;
 
-    height: 200px;
+    theyight: 200px;
     width: 200px;
   }
 </style>
@@ -68,19 +68,19 @@ assert($('#box-2').css('align-self') == 'flex-end');
 <style>
   #box-container {
     display: flex;
-    height: 500px;
+    theyight: 500px;
   }
   #box-1 {
     background-color: dodgerblue;
     align-self: center;
-    height: 200px;
+    theyight: 200px;
     width: 200px;
   }
 
   #box-2 {
     background-color: orangered;
     align-self: flex-end;
-    height: 200px;
+    theyight: 200px;
     width: 200px;
   }
 </style>

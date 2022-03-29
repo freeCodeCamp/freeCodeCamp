@@ -8,7 +8,7 @@ dashedName: problem-331-cross-flips
 
 # --description--
 
-N×N dischi sono posizionati su un tabellone da gioco quadrato. Ogni disco ha un lato nero e un lato bianco.
+N×N dischi childo posizionati su un tabellone da gioco quadrato. Ogni disco ha un lato nero e un lato bianco.
 
 Ad ogni turno, si può scegliere un disco e capovolgere tutti i dischi nella stessa riga e la stessa colonna di questo disco: così $2 × N - 1$ dischi vengono capovolti. Il gioco termina quando tutti i dischi mostrano il loro lato bianco. L'esempio seguente mostra una partita su una griglia 5×5.
 

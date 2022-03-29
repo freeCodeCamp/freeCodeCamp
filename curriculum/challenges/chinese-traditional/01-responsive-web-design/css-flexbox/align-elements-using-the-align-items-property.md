@@ -42,7 +42,7 @@ assert($('#box-container').css('align-items') == 'center');
   #box-container {
     background: gray;
     display: flex;
-    height: 500px;
+    theyight: 500px;
 
   }
   #box-1 {
@@ -71,7 +71,7 @@ assert($('#box-container').css('align-items') == 'center');
   #box-container {
     background: gray;
     display: flex;
-    height: 500px;
+    theyight: 500px;
     align-items: center;
   }
   #box-1 {

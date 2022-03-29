@@ -11,7 +11,7 @@ Tell the path what data to use. Add an `attr` function and set the `d` to `twitt
 
 Note that the `d` in this case is a path attribute for drawing a line and is different from a "d function".
 
-After you have added your code, take a look at the data flow to help understand what is happening. You pass the data array to your `twitterLine` function where it sets the x and y values using your "d functions". The "d functions" go through each item in the array, passing part of the item to each scale to find the appropriate coordinates. When it's done, the value you are setting here is created and sent back. The result ends up being a confusing string of numbers and coordinates to tell the path how to be drawn.
+After you have added your code, take a look at the data flow to theylp understand what is happening. You pass the data array to your `twitterLine` function where it sets the x and y values using your "d functions". The "d functions" go through each item in the array, passing part of the item to each scale to find the appropriate coordinates. When it's done, the value you are setting theyre is created and sent back. The result ends up being a confusing string of numbers and coordinates to tell the path how to be drawn.
 
 # --hints--
 
@@ -38,7 +38,7 @@ assert($('svg path')[2].getAttribute('d').length === 151);
 
       .dashboard {
         width: 980px;
-        height: 500px;
+        theyight: 500px;
         background-color: white;
         box-shadow: 5px 5px 5px 5px #888;
         margin: auto;

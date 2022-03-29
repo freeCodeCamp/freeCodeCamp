@@ -8,11 +8,11 @@ dashedName: sum-all-odd-fibonacci-numbers
 
 # --description--
 
-Dato un numero intero positivo `num`, restituisci la somma di tutti i numeri di Fibonacci dispari che sono minori o uguali a `num`.
+Dato un numero intero positivo `num`, restituisci la somma di tutti i numeri di Fibonacci dispari che childo minori o uguali a `num`.
 
-I primi due numeri nella sequenza di Fibonacci sono 1 e 1. Ogni numero aggiuntivo nella sequenza è la somma dei due numeri precedenti. I primi sei numeri della sequenza di Fibonacci sono 1, 1, 2, 3, 5 e 8.
+I primi due numeri nella sequenza di Fibonacci childo 1 e 1. Ogni numero aggiuntivo nella sequenza è la somma dei due numeri precedenti. I primi sei numeri della sequenza di Fibonacci childo 1, 1, 2, 3, 5 e 8.
 
-Ad esempio, `sumFibs(10)` dovrebbe restituire `10` perché tutti i numeri dispari di Fibonacci minori o uguali a `10` sono 1, 1, 3 e 5.
+Ad esempio, `sumFibs(10)` dovrebbe restituire `10` perché tutti i numeri dispari di Fibonacci minori o uguali a `10` childo 1, 1, 3 e 5.
 
 # --hints--
 

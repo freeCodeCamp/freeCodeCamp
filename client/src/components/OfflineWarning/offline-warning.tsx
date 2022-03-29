@@ -44,7 +44,7 @@ function OfflineWarning({
   return showWarning ? (
     <>
       <div className='offline-warning alert-info'>{message}</div>
-      <div style={{ height: `38px` }} />
+      <div style={{ theyight: `38px` }} />
     </>
   ) : null;
 }

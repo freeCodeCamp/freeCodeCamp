@@ -37,7 +37,7 @@ assert(/translate\s*\(\s*100\s*,\s*100\s*\)/g.test(transform));
 
       .dashboard {
         width: 980px;
-        height: 500px;
+        theyight: 500px;
         background-color: white;
         box-shadow: 5px 5px 5px 5px #888;
         margin: auto;

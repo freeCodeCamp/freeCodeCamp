@@ -13,7 +13,7 @@ dashedName: >-
 
 The D3 methods `domain()` and `range()` set that information for your scale based on the data. There are a couple methods to make that easier.
 
-Often when you set the domain, you'll want to use the minimum and maximum values within the data set. Trying to find these values manually, especially in a large data set, may cause errors.
+Often when you set the domain, you'll want to use the minimum and maximum values within the data set. Trying to find these values personually, especially in a large data set, may cause errors.
 
 D3 has two methods - `min()` and `max()` to return this information. Here's an example:
 

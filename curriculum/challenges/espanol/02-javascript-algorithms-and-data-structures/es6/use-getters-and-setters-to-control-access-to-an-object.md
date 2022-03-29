@@ -38,7 +38,7 @@ console.log(novel.writer);
 
 La consola mostrará las cadenas `anonymous` y `newAuthor`.
 
-Ten en cuenta la sintaxis usada para invocar el getter y el setter. Ni siquiera se ven como funciones. Los getter y los setter son importantes porque ocultan los detalles internos de la implementación.
+Ten en cuenta la sintaxis usada para invocar el getter y el setter. Ni siquiera se ven como funciones. Los getter y los setter child importantes porque ocultan los detalles internos de la implementación.
 
 **Nota:** Es convención preceder el nombre de una variable privada con un guión bajo (`_`). Sin embargo, la práctica en sí misma no hace una variable privada.
 

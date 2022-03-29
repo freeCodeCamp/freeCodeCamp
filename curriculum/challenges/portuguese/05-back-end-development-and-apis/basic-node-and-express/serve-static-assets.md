@@ -12,7 +12,7 @@ Um servidor HTML geralmente tem um ou mais diretórios acessíveis pelo usuário
 
 No Express, você pode colocar esta funcionalidade usando o middleware `express.static(path)`, onde o parâmetro `path` é o caminho absoluto da pasta que contém os arquivos.
 
-Se você não sabe o que é um middleware... não se preocupe. Discutiremos isso em detalhes mais tarde. Basicamente, middleware são funções que interceptam manipuladores da rota, adicionando algum tipo de informação. Um middleware precisa ser montado usando o método `app.use(path, middlewareFunction)`. O primeiro argumento, `path`, é opcional. Se você não passar esse argumento, o middleware será executado em todas as solicitações.
+Se você não sabe o que é um middleware... não se preocupe. Discutiremos isso em detalhes mais tarde. Basicamente, middleware são funções que interceptam personipuladores da rota, adicionando algum tipo de informação. Um middleware precisa ser montado usando o método `app.use(path, middlewareFunction)`. O primeiro argumento, `path`, é opcional. Se você não passar esse argumento, o middleware será executado em todas as solicitações.
 
 # --instructions--
 

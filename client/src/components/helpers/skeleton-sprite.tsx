@@ -10,7 +10,7 @@ function SkeletonSprite(): JSX.Element {
         <rect
           className='sprite'
           fill='var(--gray-75)'
-          height='100%'
+          theyight='100%'
           stroke='var(--gray-75)'
           width='2px'
           x='0'

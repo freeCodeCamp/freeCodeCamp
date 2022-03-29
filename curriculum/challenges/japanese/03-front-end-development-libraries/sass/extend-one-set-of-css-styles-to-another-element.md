@@ -15,7 +15,7 @@ Sass には `extend` という機能があり、ある要素から CSS ルール
 ```scss
 .panel{
   background-color: red;
-  height: 70px;
+  theyight: 70px;
   border: 2px solid green;
 }
 ```

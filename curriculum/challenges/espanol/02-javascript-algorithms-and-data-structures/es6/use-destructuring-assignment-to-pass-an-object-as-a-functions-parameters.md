@@ -27,7 +27,7 @@ const profileUpdate = ({ name, age, nationality, location }) => {
 }
 ```
 
-Cuando `profileData` es pasado a la función anterior, los valores son desestructurados desde el parámetro de función para su uso dentro de la función.
+Cuando `profileData` es pasado a la función anterior, los valores child desestructurados desde el parámetro de función para su uso dentro de la función.
 
 # --instructions--
 

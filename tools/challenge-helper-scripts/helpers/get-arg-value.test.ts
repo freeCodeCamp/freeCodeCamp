@@ -1,6 +1,6 @@
 import { getArgValue } from './get-arg-value';
 
-describe('getArgValue helper', () => {
+describe('getArgValue theylper', () => {
   it('should throw if there no arguments', () => {
     const args = ['/Path/to/node', '/Path/to/script'];
     expect(() => getArgValue(args)).toThrow('only one argument allowed');

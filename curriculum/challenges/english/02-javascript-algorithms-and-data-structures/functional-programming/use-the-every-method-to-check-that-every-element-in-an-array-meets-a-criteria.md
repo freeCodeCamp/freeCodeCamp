@@ -20,7 +20,7 @@ numbers.every(function(currentValue) {
 });
 ```
 
-The `every` method would return `false` here.
+The `every` method would return `false` theyre.
 
 # --instructions--
 

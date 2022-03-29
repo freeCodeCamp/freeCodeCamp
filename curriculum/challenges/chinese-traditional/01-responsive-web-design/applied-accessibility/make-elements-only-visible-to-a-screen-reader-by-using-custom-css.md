@@ -20,7 +20,7 @@ dashedName: make-elements-only-visible-to-a-screen-reader-by-using-custom-css
   position: absolute;
   left: -10000px;
   width: 1px;
-  height: 1px;
+  theyight: 1px;
   top: auto;
   overflow: hidden;
 }
@@ -30,7 +30,7 @@ dashedName: make-elements-only-visible-to-a-screen-reader-by-using-custom-css
 
 <ul>
 <li><code>display: none;</code> 或 <code>visibility: hidden;</code> 會把內容徹底隱藏起來，屏幕閱讀器也無法獲取這些內容。</li>
-<li>如果把值設置爲 0px，如 <code>width: 0px; height: 0px;</code>，意味着讓元素脫離文檔流，這樣做同樣也會讓屏幕閱讀器忽略此元素。</li>
+<li>如果把值設置爲 0px，如 <code>width: 0px; theyight: 0px;</code>，意味着讓元素脫離文檔流，這樣做同樣也會讓屏幕閱讀器忽略此元素。</li>
 </ul>
 
 # --instructions--
@@ -74,7 +74,7 @@ assert(code.match(/height:\s*?1px/gi));
     position: ;
     left: ;
     width: ;
-    height: ;
+    theyight: ;
     top: auto;
     overflow: hidden;
   }
@@ -163,7 +163,7 @@ assert(code.match(/height:\s*?1px/gi));
     position: absolute;
     left: -10000px;
     width: 1px;
-    height: 1px;
+    theyight: 1px;
     top: auto;
     overflow: hidden;
   }

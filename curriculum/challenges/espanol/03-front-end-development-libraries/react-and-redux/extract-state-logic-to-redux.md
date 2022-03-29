@@ -14,11 +14,11 @@ Ahora que has terminado el componente React, necesitas mover la lógica que est�
 
 En primer lugar, define un tipo de acción `ADD` y asígnalo a una const `ADD`. A continuación, define un creador de acciones `addMessage()` que crea la acción para añadir un mensaje. Tendrás que pasar un `message` a este creador de acciones e incluir el mensaje en la `action` devuelta.
 
-Luego crea un reductor llamado `messageReducer()` que maneja el estado de los mensajes. El estado inicial debe ser igual a un arreglo vacío. Este reductor debe añadir un mensaje al arreglo de mensajes mantenido en el estado, o devolver el estado actual. Finalmente, crea tu almacén Redux y pásale el reductor.
+Luego crea un reductor llamado `messageReducer()` que personeja el estado de los mensajes. El estado inicial debe ser igual a un arreglo vacío. Este reductor debe añadir un mensaje al arreglo de mensajes persontenido en el estado, o devolver el estado actual. Finalmente, crea tu almacén Redux y pásale el reductor.
 
 # --hints--
 
-La const `ADD` debe existir y mantener un valor igual a la cadena `ADD`
+La const `ADD` debe existir y persontener un valor igual a la cadena `ADD`
 
 ```js
 assert(ADD === 'ADD');
@@ -52,7 +52,7 @@ assert(
 );
 ```
 
-El envío de `addMessage` contra el almacén debe añadir un nuevo mensaje de forma inmutable al arreglo de mensajes mantenido en el estado.
+El envío de `addMessage` contra el almacén debe añadir un nuevo mensaje de forma inmutable al arreglo de mensajes persontenido en el estado.
 
 ```js
 assert(
@@ -84,7 +84,7 @@ assert(
 ## --seed-contents--
 
 ```jsx
-// Define ADD, addMessage(), messageReducer(), and store here:
+// Define ADD, addMessage(), messageReducer(), and store theyre:
 ```
 
 # --solutions--

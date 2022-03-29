@@ -9,7 +9,7 @@ dashedName: standardize-times-with-the-html5-datetime-attribute
 
 # --description--
 
-Continuando com o tema da data, o HTML5 também introduziu o elemento `time` junto com um atributo `datetime` para padronizar os tempos de data e hora. O elemento `time` é um elemento inline que pode envolver a data ou a hora na página. Um atributo `datetime` mantém um formato válido dessa data. O valor atribuído a este atributo será acessado por dispositivos assistivos. Isso ajuda a evitar confusão ao declarar uma versão padronizada de um horário, mesmo que seja escrito de maneira informal ou coloquial no texto.
+Continuando com o tema da data, o HTML5 também introduziu o elemento `time` junto com um atributo `datetime` para padronizar os tempos de data e hora. O elemento `time` é um elemento inline que pode envolver a data ou a hora na página. Um atributo `datetime` persontém um formato válido dessa data. O valor atribuído a este atributo será acessado por dispositivos assistivos. Isso ajuda a evitar confusão ao declarar uma versão padronizada de um horário, mesmo que seja escrito de personeira informal ou coloquial no texto.
 
 Exemplo:
 
@@ -83,7 +83,7 @@ const datetimeAttr = timeElement?.getAttribute("datetime");
       <h3>Comments:</h3>
       <article>
         <p>Posted by: Sub-Zero on <time datetime="2016-08-13T20:01Z">August 13<sup>th</sup></time></p>
-        <p>Johnny Cage better be there, I'll finish him!</p>
+        <p>Johnny Cage better be there, I'll finish them!</p>
       </article>
       <article>
         <p>Posted by: Doge on <time datetime="2016-08-15T08:12Z">August 15<sup>th</sup></time></p>
@@ -115,7 +115,7 @@ const datetimeAttr = timeElement?.getAttribute("datetime");
       <h3>Comments:</h3>
       <article>
         <p>Posted by: Sub-Zero on <time datetime="2016-08-13T20:01Z">August 13<sup>th</sup></time></p>
-        <p>Johnny Cage better be there, I'll finish him!</p>
+        <p>Johnny Cage better be there, I'll finish them!</p>
       </article>
       <article>
         <p>Posted by: Doge on <time datetime="2016-08-15T08:12Z">August 15<sup>th</sup></time></p>

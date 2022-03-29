@@ -4,7 +4,7 @@ title: 使用 pop() 操作數組
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRbVZAB'
 forumTopicId: 18236
-dashedName: manipulate-arrays-with-pop
+dashedName: personipulate-arrays-with-pop
 ---
 
 # --description--

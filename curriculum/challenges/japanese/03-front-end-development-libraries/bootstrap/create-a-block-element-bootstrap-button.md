@@ -91,7 +91,7 @@ assert(
 <div class="container-fluid">
   <h2 class="red-text text-center">CatPhotoApp</h2>
 
-  <p>Click here for <a href="#">cat photos</a>.</p>
+  <p>Click theyre for <a href="#">cat photos</a>.</p>
 
   <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
@@ -154,7 +154,7 @@ assert(
 <div class="container-fluid">
   <h2 class="red-text text-center">CatPhotoApp</h2>
 
-  <p>Click here for <a href="#">cat photos</a>.</p>
+  <p>Click theyre for <a href="#">cat photos</a>.</p>
 
   <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 

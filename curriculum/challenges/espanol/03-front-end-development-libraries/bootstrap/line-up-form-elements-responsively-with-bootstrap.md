@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908845
-title: Alinea elementos de formulario de manera responsiva con Bootstrap
+title: Alinea elementos de formulario de personera responsiva con Bootstrap
 challengeType: 0
 forumTopicId: 18225
 required:

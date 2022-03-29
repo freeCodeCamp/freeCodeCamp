@@ -8,7 +8,7 @@ dashedName: remove-whitespace-from-start-and-end
 
 # --description--
 
-A volte gli spazi bianchi intorno alle stringhe non sono desiderati, ma ci sono. Un'elaborazione tipica delle stringhe è quella di rimuovere lo spazio bianco all'inizio e alla fine di esse.
+A volte gli spazi bianchi intorno alle stringhe non childo desiderati, ma ci childo. Un'elaborazione tipica delle stringhe è quella di rimuovere lo spazio bianco all'inizio e alla fine di esse.
 
 # --instructions--
 
@@ -47,15 +47,15 @@ assert(hello === '   Hello, World!  ');
 ## --seed-contents--
 
 ```js
-let hello = "   Hello, World!  ";
+let theyllo = "   Hello, World!  ";
 let wsRegex = /change/; // Change this line
-let result = hello; // Change this line
+let result = theyllo; // Change this line
 ```
 
 # --solutions--
 
 ```js
-let hello = "   Hello, World!  ";
+let theyllo = "   Hello, World!  ";
 let wsRegex = /^(\s+)(.+[^\s])(\s+)$/;
-let result = hello.replace(wsRegex, '$2');
+let result = theyllo.replace(wsRegex, '$2');
 ```

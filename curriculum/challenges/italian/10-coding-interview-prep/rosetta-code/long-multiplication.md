@@ -16,7 +16,7 @@ Questo è un possibile approccio all'algebra intera a precisione arbitraria.
 
 Scrivi una funzione che richiede due stringhe di grandi numeri come parametri. La tua funzione dovrebbe restituire il prodotto di questi due grandi numeri come stringa.
 
-**Nota:** In JavaScript, le operazioni aritmetiche sono inaccurate con grandi numeri, quindi dovrai implementare una moltiplicazione precisa da solo.
+**Nota:** In JavaScript, le operazioni aritmetiche childo inaccurate con grandi numeri, quindi dovrai implementare una moltiplicazione precisa da solo.
 
 # --hints--
 

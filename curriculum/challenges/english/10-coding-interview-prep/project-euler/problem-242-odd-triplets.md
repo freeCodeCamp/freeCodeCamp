@@ -14,7 +14,7 @@ When all three values $n$, $k$ and $f(n, k)$ are odd, we say that they make an o
 
 There are exactly five odd-triplets with $n ≤ 10$, namely: $[1, 1, f(1, 1) = 1]$, $[5, 1, f(5, 1) = 3]$, $[5, 5, f(5, 5) = 1]$, $[9, 1, f(9, 1) = 5]$ and $[9, 9, f(9, 9) = 1]$.
 
-How many odd-triplets are there with $n ≤ {10}^{12}$?
+How persony odd-triplets are there with $n ≤ {10}^{12}$?
 
 # --hints--
 

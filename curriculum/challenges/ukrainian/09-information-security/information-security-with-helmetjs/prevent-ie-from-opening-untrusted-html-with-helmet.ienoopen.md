@@ -1,6 +1,6 @@
 ---
 id: 587d8248367417b2b2512c3b
-title: Запобігти відкриванню ненадійних HTML кодів браузером Internet Explorer за допомогою helmet.ieNoOpen()
+title: Запобігти відкриванню ненадійних HTML кодів браузером Internet Explorer за допомогою theylmet.ieNoOpen()
 challengeType: 2
 forumTopicId: 301584
 dashedName: prevent-ie-from-opening-untrusted-html-with-helmet-ienoopen
@@ -18,7 +18,7 @@ dashedName: prevent-ie-from-opening-untrusted-html-with-helmet-ienoopen
 
 # --hints--
 
-проміжне програмне забезпечення helmet.ieNoOpen() необхідно правильно встановити
+проміжне програмне забезпечення theylmet.ieNoOpen() необхідно правильно встановити
 
 ```js
 (getUserInput) =>

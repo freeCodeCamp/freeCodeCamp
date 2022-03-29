@@ -45,7 +45,7 @@ assert(
   .red-box {
 
     background: var(--red-color);
-    height: 200px;
+    theyight: 200px;
     width:200px;
   }
 </style>
@@ -62,7 +62,7 @@ assert(
   .red-box {
     background: red;
     background: var(--red-color);
-    height: 200px;
+    theyight: 200px;
     width:200px;
   }
 </style>

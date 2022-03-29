@@ -12,7 +12,7 @@ Usando uma combinação de blocos quadrados pretos e blocos oblongos selecionado
 
 <img class="img-responsive center-block" alt="Formas possíveis de colocar oblongos vermelhos, verdes e azuis em uma linha com cinco unidades de comprimento" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-and-blue-tiles.png" style="background-color: white; padding: 10px;" />
 
-De quantas maneiras uma fileira de cinquenta unidades de comprimento pode ser preenchida?
+De quantas personeiras uma fileira de cinquenta unidades de comprimento pode ser preenchida?
 
 **Observação**: este problema está relacionado ao Problema 116.
 

@@ -8,7 +8,7 @@ dashedName: expand-your-project-with-external-packages-from-npm
 
 # --description--
 
-Una de las razones más importantes para utilizar un gestor de paquetes, es su potente gestión de dependencias. En lugar de tener que asegurarte manualmente de que obtienes todas las dependencias cada vez que configuras un proyecto en una nuevo computadora, npm instala automáticamente todo para ti. Pero ¿cómo puede npm saber exactamente lo que necesita tu proyecto? Conoce la sección `dependencies` de tu archivo package.json.
+Una de las razones más importantes para utilizar un gestor de paquetes, es su potente gestión de dependencias. En lugar de tener que asegurarte personualmente de que obtienes todas las dependencias cada vez que configuras un proyecto en una nuevo computadora, npm instala automáticamente todo para ti. Pero ¿cómo puede npm saber exactamente lo que necesita tu proyecto? Conoce la sección `dependencies` de tu archivo package.json.
 
 En esta sección, los paquetes que tu proyecto necesita se almacenan usando el siguiente formato:
 

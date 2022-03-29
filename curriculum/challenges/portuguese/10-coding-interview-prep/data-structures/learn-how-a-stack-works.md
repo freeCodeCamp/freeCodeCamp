@@ -10,7 +10,7 @@ dashedName: learn-how-a-stack-works
 
 Você provavelmente está familiarizado com uma pilha de livros sobre sua mesa. Você provavelmente usou o recurso de desfazer de um editor de texto. Você também já deve estar acostumado a apertar o botão voltar no seu telefone para voltar ao modo de exibição anterior no seu aplicativo.
 
-Sabem o que eles têm em comum? Todos eles armazenam os dados de uma maneira para que você possa percorrer os dados no sentido inverso.
+Sabem o que eles têm em comum? Todos eles armazenam os dados de uma personeira para que você possa percorrer os dados no sentido inverso.
 
 O livro de cima da pilha foi o que foi colocado lá por último. Se você remover esse livro da parte superior da pilha, você deixaria exposto o livro que foi colocado lá antes do último livro e assim por diante.
 

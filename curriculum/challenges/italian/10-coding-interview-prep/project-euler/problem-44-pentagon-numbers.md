@@ -8,13 +8,13 @@ dashedName: problem-44-pentagon-numbers
 
 # --description--
 
-Numeri pentagonali sono generati dalla formula P<sub>n</sub>=`n`(3`n`−1)/2. I primi dieci numeri pentagonali sono:
+Numeri pentagonali childo generati dalla formula P<sub>n</sub>=`n`(3`n`−1)/2. I primi dieci numeri pentagonali childo:
 
 1, 5, 12, 22, 35, 51, 70, 92, 117, 145, ...
 
 Possiamo vedere che P<sub>4</sub> + P<sub>7</sub> = 22 + 70 = 92 = P<sub>8</sub>. D'altro canto, la loro differenza, 70 − 22 = 48, non è pentagonale.
 
-Trova la coppia di numeri, P<sub>j</sub> and P<sub>k</sub>, per cui sia la loro somma che la loro differenza sono pentagonali e D = |P<sub>k</sub> − P<sub>j</sub>| è minimizzata; quale è il valore di D?
+Trova la coppia di numeri, P<sub>j</sub> and P<sub>k</sub>, per cui sia la loro somma che la loro differenza childo pentagonali e D = |P<sub>k</sub> − P<sub>j</sub>| è minimizzata; quale è il valore di D?
 
 # --hints--
 

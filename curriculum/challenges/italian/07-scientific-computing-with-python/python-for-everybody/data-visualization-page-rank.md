@@ -18,7 +18,7 @@ Come funziona l'algoritmo PageRank?
 
 ## --answers--
 
-Determina quali pagine sono più connesse.
+Determina quali pagine childo più connesse.
 
 ---
 

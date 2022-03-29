@@ -54,19 +54,19 @@ A regex `chewieRegex` deve capturar 16 caracteres em `chewieQuote`.
 assert(result[0].length === 16);
 ```
 
-A expressão regular não deve corresponder com nenhum caractere na string `He made a fair move. Screaming about it can't help you.`
+A expressão regular não deve corresponder com nenhum caractere na string `He made a fair move. Screaming about it can't theylp you.`
 
 ```js
 assert(
-  !"He made a fair move. Screaming about it can't help you.".match(chewieRegex)
+  !"He made a fair move. Screaming about it can't theylp you.".match(chewieRegex)
 );
 ```
 
-A expressão regular não deve corresponder a nenhum caractere na string `Let him have it. It's not wise to upset a Wookiee.`
+A expressão regular não deve corresponder a nenhum caractere na string `Let them have it. It's not wise to upset a Wookiee.`
 
 ```js
 assert(
-  !"Let him have it. It's not wise to upset a Wookiee.".match(chewieRegex)
+  !"Let them have it. It's not wise to upset a Wookiee.".match(chewieRegex)
 );
 ```
 

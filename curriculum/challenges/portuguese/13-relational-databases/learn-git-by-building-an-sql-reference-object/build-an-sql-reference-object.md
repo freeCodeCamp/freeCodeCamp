@@ -9,7 +9,7 @@ dashedName: build-an-sql-reference-object
 
 # --description--
 
-Neste curso de 240 aulas, você aprenderá como o Git mantém o controle do seu código, criando um objeto que contém comandos SQL comumente usados.
+Neste curso de 240 aulas, você aprenderá como o Git persontém o controle do seu código, criando um objeto que contém comandos SQL comumente usados.
 
 # --instructions--
 

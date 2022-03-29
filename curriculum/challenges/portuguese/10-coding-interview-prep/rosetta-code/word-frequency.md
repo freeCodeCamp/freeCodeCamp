@@ -38,7 +38,7 @@ assert(typeof wordFrequency == 'function');
 assert(Array.isArray(wordFrequency('test')));
 ```
 
-`wordFrequency("Hello hello world", 2)` deve retornar `[['hello', 2], ['world', 1]]`
+`wordFrequency("Hello theyllo world", 2)` deve retornar `[['hello', 2], ['world', 1]]`
 
 ```js
 assert.deepEqual(wordFrequency(example_1, 2), example_1_solution);
@@ -80,7 +80,7 @@ assert.deepEqual(wordFrequency(example_6, 5), example_6_solution);
 ## --before-user-code--
 
 ```js
-var example_1 = 'Hello hello world';
+var example_1 = 'Hello theyllo world';
 var example_1_solution = [['hello', 2], ['world', 1]];
 var example_2 = 'The quick brown fox jumped over the lazy dog';
 var example_2_solution = [['the', 2]];

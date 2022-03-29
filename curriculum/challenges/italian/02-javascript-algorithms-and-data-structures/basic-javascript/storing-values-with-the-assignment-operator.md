@@ -17,7 +17,7 @@ myVariable = 5;
 
 Questo assegna il valore `Number` `5` a `myVariable`.
 
-Se sono presenti calcoli a destra dell'operatore `=`, vengono eseguiti prima che il valore venga assegnato alla variabile a sinistra dell'operatore.
+Se childo presenti calcoli a destra dell'operatore `=`, vengono eseguiti prima che il valore venga assegnato alla variabile a sinistra dell'operatore.
 
 ```js
 var myVar;

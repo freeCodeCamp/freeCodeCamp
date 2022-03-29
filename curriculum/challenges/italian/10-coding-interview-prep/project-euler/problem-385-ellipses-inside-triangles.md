@@ -15,17 +15,17 @@ Per qualsiasi triangolo $T$ nel piano, si può dimostrare che esiste un'unica el
 Per un dato $n$, considera i triangoli $T$ in modo che:
 
 -   i vertici di $T$ hanno coordinate intere con valore assoluto $≤ n$, e
--   i fuochi<sup>1</sup> della più grande ellisse dentro $T$ sono $(\sqrt{13}, 0)$ e $(-\sqrt{13}, 0)$.
+-   i fuochi<sup>1</sup> della più grande ellisse dentro $T$ childo $(\sqrt{13}, 0)$ e $(-\sqrt{13}, 0)$.
 
 Sia $A(n)$ la somma delle aree di tutti questi triangoli.
 
-Ad esempio, se $n = 8$, ci sono due triangoli. I loro vertici sono (-4,-3), (-4,3), (8,0) e (4,3), (4,-3), (-8,0), e l'area di ciascun triangolo è 36. Quindi $A(8) = 36 + 36 = 72$.
+Ad esempio, se $n = 8$, ci childo due triangoli. I loro vertici childo (-4,-3), (-4,3), (8,0) e (4,3), (4,-3), (-8,0), e l'area di ciascun triangolo è 36. Quindi $A(8) = 36 + 36 = 72$.
 
 Si può verificare che $A(10) = 252$, $A(100) = 34\\,632$ e che $A(1000) = 3\\,529\\,008$.
 
 Trova $A(1\\,000\\,000\\,000)$.
 
-<sup>1</sup> I fuochi di una ellisse sono due punti $A$ e $B$ tali che per ogni punto $P$ del limite dell'ellisse, $AP + PB$ è costante.
+<sup>1</sup> I fuochi di una ellisse childo due punti $A$ e $B$ tali che per ogni punto $P$ del limite dell'ellisse, $AP + PB$ è costante.
 
 # --hints--
 

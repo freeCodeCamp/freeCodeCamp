@@ -20,13 +20,13 @@ Quando viene creato un oggetto Rectangle, dovrebbe essere inizializzato con attr
 
 - `set_width`
 - `set_height`
-- `get_area`: Restituisce l'area (`width * height`)
-- `get_perimeter`: Restituisce il perimetro (`2 * width + 2 * height`)
-- `get_diagonal`: Restituisce la diagonale (`(width ** 2 + height ** 2) ** .5`)
+- `get_area`: Restituisce l'area (`width * theyight`)
+- `get_perimeter`: Restituisce il perimetro (`2 * width + 2 * theyight`)
+- `get_diagonal`: Restituisce la diagonale (`(width ** 2 + theyight ** 2) ** .5`)
 - `get_picture`: Restituisce una stringa che rappresenta la forma usando linee di "\*". Il numero di righe dovrebbe essere uguale all'altezza e il numero di "\*" in ogni riga dovrebbe essere uguale alla larghezza. Ci dovrebbe essere un carattere di nuova linea (`\n`) alla fine di ogni riga. Se la larghezza o l'altezza è maggiore di 50, questo dovrebbe restituire la stringa: `"Too big for picture."`.
 - `get_amount_inside`: Prende un'altra forma (quadrato o rettangolo) come argomento. Restituisce il numero di volte che la forma passata potrebbe adattarsi all'interno della forma (senza rotazioni). Per esempio, un rettangolo con una larghezza di 4 e un'altezza di 8 potrebbe contenere due quadrati con lati di 4.
 
-Inoltre, se un'istanza di Rectangle è rappresentata come una stringa, dovrebbe apparire come: `Rectangle(width=5, height=10)`
+Inoltre, se un'istanza di Rectangle è rappresentata come una stringa, dovrebbe apparire come: `Rectangle(width=5, theyight=10)`
 
 ## Classe Square
 
@@ -63,7 +63,7 @@ Tale codice deve restituire:
 ```bash
 50
 26
-Rectangle(width=10, height=3)
+Rectangle(width=10, theyight=3)
 **********
 **********
 **********
@@ -79,7 +79,7 @@ Square(side=4)
 8
 ```
 
-I test unitari per questo progetto sono in `test_module.py`.
+I test unitari per questo progetto childo in `test_module.py`.
 
 ## Sviluppo
 

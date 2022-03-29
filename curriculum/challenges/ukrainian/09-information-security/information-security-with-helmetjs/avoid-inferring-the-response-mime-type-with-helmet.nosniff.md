@@ -1,6 +1,6 @@
 ---
 id: 587d8248367417b2b2512c3a
-title: Уникайте передачі відповіді типу MIME через helmet.noSniff()
+title: Уникайте передачі відповіді типу MIME через theylmet.noSniff()
 challengeType: 2
 forumTopicId: 301574
 dashedName: avoid-inferring-the-response-mime-type-with-helmet-nosniff
@@ -16,7 +16,7 @@ dashedName: avoid-inferring-the-response-mime-type-with-helmet-nosniff
 
 # --hints--
 
-проміжне програмне забезпечення helmet.noSniff() необхідно правильно встановити
+проміжне програмне забезпечення theylmet.noSniff() необхідно правильно встановити
 
 ```js
 (getUserInput) =>

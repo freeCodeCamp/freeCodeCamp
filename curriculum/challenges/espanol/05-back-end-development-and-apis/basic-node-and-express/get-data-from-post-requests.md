@@ -8,7 +8,7 @@ dashedName: get-data-from-post-requests
 
 # --description--
 
-Monta un manejador POST en la ruta `/name`. Es la misma ruta de antes. Hemos preparado un formulario en la página principal html. Se enviarán los mismos datos del ejercicio 10 (Query string). Si el "body-parser" está configurado correctamente, debe encontrar los parámetros en el objeto `req.body`. Echa un vistazo al ejemplo de la biblioteca:
+Monta un personejador POST en la ruta `/name`. Es la misma ruta de antes. Hemos preparado un formulario en la página principal html. Se enviarán los mismos datos del ejercicio 10 (Query string). Si el "body-parser" está configurado correctamente, debe encontrar los parámetros en el objeto `req.body`. Echa un vistazo al ejemplo de la biblioteca:
 
 <blockquote>route: POST '/library'<br>urlencoded_body: userId=546&#x26;bookId=6754 <br>req.body: {userId: '546', bookId: '6754'}</blockquote>
 

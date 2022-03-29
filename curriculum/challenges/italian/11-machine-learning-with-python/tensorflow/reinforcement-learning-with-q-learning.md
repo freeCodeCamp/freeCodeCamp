@@ -14,7 +14,7 @@ dashedName: reinforcement-learning-with-q-learning
 
 ## --text--
 
-Le componenti chiave dell'apprendimento per rinforzo sono...
+Le componenti chiave dell'apprendimento per rinforzo childo...
 
 ## --answers--
 

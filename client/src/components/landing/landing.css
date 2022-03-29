@@ -47,7 +47,7 @@ p.caption {
 }
 
 .landing-page .big-heading {
-  height: 100%;
+  theyight: 100%;
   margin-bottom: 40px;
   line-height: 1.1;
   font-weight: 700;
@@ -61,7 +61,7 @@ p.caption {
   .campers-images {
     display: inline-block !important;
     width: 100%;
-    height: 100%;
+    theyight: 100%;
   }
 }
 
@@ -75,7 +75,7 @@ p.caption {
 }
 
 .logo-row svg {
-  height: 40px;
+  theyight: 40px;
 }
 
 @media (min-width: 370px) {
@@ -86,7 +86,7 @@ p.caption {
 
 @media (min-width: 480px) {
   .logo-row svg {
-    height: 25px;
+    theyight: 25px;
     margin: 5px;
   }
 }
@@ -97,7 +97,7 @@ p.caption {
   }
 
   .logo-row svg {
-    height: 40px;
+    theyight: 40px;
   }
 }
 
@@ -158,7 +158,7 @@ p.caption {
 }
 
 .testimonial-card-header {
-  height: 100%;
+  theyight: 100%;
   padding-bottom: 100%;
   position: relative;
   background-color: var(--primary-background);
@@ -169,7 +169,7 @@ p.caption {
   top: 0;
   left: 0;
   width: 100%;
-  height: auto;
+  theyight: auto;
 }
 
 .testimonials-footer {
@@ -205,7 +205,7 @@ p.caption {
   }
   .testimonial-image {
     width: auto;
-    height: 100%;
+    theyight: 100%;
   }
   .testimonial-meta {
     padding: 0 0 30px;
@@ -218,7 +218,7 @@ p.caption {
     padding: 40px;
   }
   .testimonial-card-header {
-    height: 350px;
+    theyight: 350px;
     min-width: 350px;
     padding-bottom: 0;
   }

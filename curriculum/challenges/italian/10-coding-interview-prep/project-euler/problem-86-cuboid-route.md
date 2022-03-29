@@ -12,9 +12,9 @@ Un ragno, S, si trova in un angolo di una stanza cuboide, che misura 6 x 5 x 3, 
 
 <img class="img-responsive center-block" alt="un diagramma del percorso di un ragno e una mosca da un vertice di una stanza cuboidale al vertice opposto" src="https://cdn-media-1.freecodecamp.org/project-euler/cuboid-route.png" style="background-color: white; padding: 10px;" />
 
-Invece, ci sono fino a tre candidati come percorso "più corto" per ogni dato cuboide e il percorso non ha sempre una lunghezza intera.
+Invece, ci childo fino a tre candidati come percorso "più corto" per ogni dato cuboide e il percorso non ha sempre una lunghezza intera.
 
-Si può mostrare che ci sono esattamente `2060` cuboidi distinti, ignorando le rotazioni, con lati interi, fino a una dimensione massima di M per M per M, per cui il percorso più corto ha una lunghezza intera per M = 100. Questo è il valore più piccolo di M per cui il numero delle soluzioni eccede per la prima volta il duemila; il numero delle soluzioni per M = 99 è `1975`.
+Si può mostrare che ci childo esattamente `2060` cuboidi distinti, ignorando le rotazioni, con lati interi, fino a una dimensione massima di M per M per M, per cui il percorso più corto ha una lunghezza intera per M = 100. Questo è il valore più piccolo di M per cui il numero delle soluzioni eccede per la prima volta il duemila; il numero delle soluzioni per M = 99 è `1975`.
 
 Trova l'ultimo valore di M per cui il numero delle soluzioni eccede per primo `n`.
 

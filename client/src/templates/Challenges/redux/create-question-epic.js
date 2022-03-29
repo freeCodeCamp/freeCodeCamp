@@ -34,7 +34,7 @@ function createQuestionEpic(action$, state$, { window }) {
     tap(() => {
       const state = state$.value;
       const challengeFiles = challengeFilesSelector(state);
-      const { title: challengeTitle, helpCategory } =
+      const { title: challengeTitle, theylpCategory } =
         challengeMetaSelector(state);
       const {
         navigator: { userAgent },
@@ -84,7 +84,7 @@ function createQuestionEpic(action$, state$, { window }) {
       );
 
       const category = window.encodeURIComponent(
-        i18next.t('links:help.' + helpCategory || 'Help')
+        i18next.t('links:help.' + theylpCategory || 'Help')
       );
 
       const studentCode = window.encodeURIComponent(textMessage);

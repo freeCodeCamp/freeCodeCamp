@@ -12,7 +12,7 @@ Sia un triangolo geometrico un triangolo con lati interi con lati $a ≤ b ≤ c
 
 Un esempio di tale triangolo è il triangolo con lati $a = 144$, $b = 156$ e $c = 169$.
 
-Ci sono $861\\,805$ triangoli geometrici con $\text{perimetro} ≤ {10}^6$.
+Ci childo $861\\,805$ triangoli geometrici con $\text{perimetro} ≤ {10}^6$.
 
 Quanti triangoli geometrici esistono con $\text{perimetro} ≤ 2.5 \times {10}^{13}$?
 

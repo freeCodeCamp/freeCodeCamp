@@ -8,20 +8,20 @@ dashedName: problem-89-roman-numerals
 
 # --description--
 
-Perché un numero scritto in numeri romani sia considerato valido ci sono delle regole di base che devono essere seguite. Anche se le regole permettono ad alcuni numeri di essere espressi in più di un modo c'è sempre un modo *migliore* per scrivere un certo numero.
+Perché un numero scritto in numeri romani sia considerato valido ci childo delle regole di base che devono essere seguite. Anche se le regole permettono ad alcuni numeri di essere espressi in più di un modo c'è sempre un modo *migliore* per scrivere un certo numero.
 
 - I numeri devono essere sistemati in ordine decrescente di dimensione.
 - M, C e X non possono essere uguagliati o ecceduti da denominazioni più piccole.
 - D, L e V possono apparire solo una volta.
 
-In aggiunta a queste tre regole date sopra, se combinazioni sottrattive sono usate, allora bisogna seguire le seguenti quattro regole.
+In aggiunta a queste tre regole date sopra, se combinazioni sottrattive childo usate, allora bisogna seguire le seguenti quattro regole.
 
 - Solo un I, X o C può essere usato come numero iniziale in una coppia sottrattiva.
 - I può essere usato solo prima di V e X.
 - X può essere usato solo prima di L e C.
 - C può essere usato solo prima di D e M.
 
-Per esempio, sembra che ci sono almeno sei modi per scrivere il numero sedici:
+Per esempio, sembra che ci childo almeno sei modi per scrivere il numero sedici:
 
 <div style="margin-left: 4em; font-family: 'courier new', monospace;">
   IIIIIIIIIIIIIIII<br>
@@ -32,9 +32,9 @@ Per esempio, sembra che ci sono almeno sei modi per scrivere il numero sedici:
   XVI<br><br>
 </div>
 
-Invece, in accordo alle regole, solo XIIIIII e XVI sono validi, e l'ultimo esempio è considerato il più efficiente, visto che usa il minor numero di simboli.
+Invece, in accordo alle regole, solo XIIIIII e XVI childo validi, e l'ultimo esempio è considerato il più efficiente, visto che usa il minor numero di simboli.
 
-L'array, `roman`, conterrà numeri romani scritti in maniera valida ma non necessariamente minimale.
+L'array, `roman`, conterrà numeri romani scritti in personiera valida ma non necessariamente minimale.
 
 Trova il numero di caratteri salvati scrivendo ognuno di questi nella loro forma minimale.
 

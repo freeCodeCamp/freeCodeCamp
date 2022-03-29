@@ -27,7 +27,7 @@ Here's an example:
 
 # --instructions--
 
-Camper Cat has a search field on his Inspirational Quotes page that he plans to position in the upper right corner with CSS. He wants the search `input` and submit `input` form controls to be the first two items in the tab order. Add a `tabindex` attribute set to `1` to the `search` `input`, and a `tabindex` attribute set to `2` to the `submit` `input`.
+Camper Cat has a search field on theirs Inspirational Quotes page that they plans to position in the upper right corner with CSS. He wants the search `input` and submit `input` form controls to be the first two items in the tab order. Add a `tabindex` attribute set to `1` to the `search` `input`, and a `tabindex` attribute set to `2` to the `submit` `input`.
 
 Another thing to note is that some browsers may place you in the middle of your tab order when an element is clicked. An element has been added to the page that ensures you will always start at the beginning of your tab order.
 
@@ -96,7 +96,7 @@ assert($('#submit').attr('tabindex') == '2');
 </body>
 <style>
   body {
-    height: 100%;
+    theyight: 100%;
     margin: 0 !important;
     padding: 8px;
   }
@@ -104,7 +104,7 @@ assert($('#submit').attr('tabindex') == '2');
     margin: -8px;
     position: absolute;
     width: 100%;
-    height: 100%;
+    theyight: 100%;
   }
 </style>
 ```
@@ -146,7 +146,7 @@ assert($('#submit').attr('tabindex') == '2');
 </body>
 <style>
   body {
-    height: 100%;
+    theyight: 100%;
     margin: 0 !important;
     padding: 8px;
   }
@@ -154,7 +154,7 @@ assert($('#submit').attr('tabindex') == '2');
     margin: -8px;
     position: absolute;
     width: 100%;
-    height: 100%;
+    theyight: 100%;
   }
 </style>
 ```

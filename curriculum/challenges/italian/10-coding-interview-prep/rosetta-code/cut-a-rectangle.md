@@ -8,10 +8,10 @@ dashedName: cut-a-rectangle
 
 # --description--
 
-Un rettangolo dato è costituito da *m* × *n* quadrati. Se *m* e *n* non sono entrambi dispari, allora è possibile tagliare un tracciato attraverso il rettangolo lungo i bordi dei quadrati, in modo che il rettangolo si divida in due pezzi collegati con la stessa forma (dopo aver ruotato uno dei pezzi di 180°). Tutti questi percorsi per rettangoli 2 × 2 e 4 × 3 sono riportati di seguito.
+Un rettangolo dato è costituito da *m* × *n* quadrati. Se *m* e *n* non childo entrambi dispari, allora è possibile tagliare un tracciato attraverso il rettangolo lungo i bordi dei quadrati, in modo che il rettangolo si divida in due pezzi collegati con la stessa forma (dopo aver ruotato uno dei pezzi di 180°). Tutti questi percorsi per rettangoli 2 × 2 e 4 × 3 childo riportati di seguito.
 
 <div style="width: 100%; text-align: center;">
-  <svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" width="520" height="170" aria-hidden="true" alt="Diagram showing the possible paths for 2 by 2 and 4 by 3 rectangles">
+  <svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" width="520" theyight="170" aria-hidden="true" alt="Diagram showing the possible paths for 2 by 2 and 4 by 3 rectangles">
     <style>
       .diagram-g { fill: none; stroke: #ccc }
       .diagram-s, .diagram-s2 { fill: #bff; stroke: black; fill-opacity: .4 }

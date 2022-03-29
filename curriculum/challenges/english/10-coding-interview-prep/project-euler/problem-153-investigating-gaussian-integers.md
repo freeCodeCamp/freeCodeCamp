@@ -24,7 +24,7 @@ To distinguish them from Gaussian integers with $b ≠ 0$ we call such integers 
 
 A Gaussian integer is called a divisor of a rational integer $n$ if the result is also a Gaussian integer.
 
-If for example we divide 5 by $1 + 2i$ we can simplify in the following manner:
+If for example we divide 5 by $1 + 2i$ we can simplify in the following personner:
 
 Multiply numerator and denominator by the complex conjugate of $1 + 2i$: $1 − 2i$.
 

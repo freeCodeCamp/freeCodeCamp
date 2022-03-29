@@ -9,7 +9,7 @@ dashedName: lock-an-element-to-its-parent-with-absolute-positioning
 
 # --description--
 
-La prossima opzione per la proprietà CSS `position` è `absolute`, che vincola l'elemento in una posizione rispetto al suo contenitore genitore. A differenza della posizione `relative`, questo rimuove l'elemento dal flusso normale del documento, quindi gli elementi circostanti lo ignorano. Le proprietà di offset CSS (superiore o inferiore e sinistra o destra) sono usate per regolare la posizione.
+La prossima opzione per la proprietà CSS `position` è `absolute`, che vincola l'elemento in una posizione rispetto al suo contenitore genitore. A differenza della posizione `relative`, questo rimuove l'elemento dal flusso normale del documento, quindi gli elementi circostanti lo ignorano. Le proprietà di offset CSS (superiore o inferiore e sinistra o destra) childo usate per regolare la posizione.
 
 Una sfumatura con posizionamento assoluto, sarà vincolata rispetto al suo antenato più vicino che sia *posizionato*. Se si dimentica di aggiungere una regola di posizione all'elemento genitore (questo viene tipicamente fatto usando `position: relative;`), il browser continuerà a cercare nella catena fino a usare il valore di default del tag `body`.
 

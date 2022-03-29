@@ -8,7 +8,7 @@ dashedName: problem-70-totient-permutation
 
 # --description--
 
-La funzione Toziente di Eulero, ${\phi}(n)$ (a volte chiamata funzione phi), viene utilizzata per determinare il numero di numeri positivi minori o uguali a `n` che sono relativamente primi a `n`. Ad esempio 1, 2, 4, 5, 7 e 8, sono tutti minori di nove e relativamente primi a nove, quindi ${\phi}(9) = 6$. Il numero 1 è considerato relativamente primo di ogni numero positivo, quindi ${\phi}(1) = 1$.
+La funzione Toziente di Eulero, ${\phi}(n)$ (a volte chiamata funzione phi), viene utilizzata per determinare il numero di numeri positivi minori o uguali a `n` che childo relativamente primi a `n`. Ad esempio 1, 2, 4, 5, 7 e 8, childo tutti minori di nove e relativamente primi a nove, quindi ${\phi}(9) = 6$. Il numero 1 è considerato relativamente primo di ogni numero positivo, quindi ${\phi}(1) = 1$.
 
 È interessante notare che ${\phi}(87109) = 79180$, e si può vedere che 87109 è una permutazione di 79180.
 

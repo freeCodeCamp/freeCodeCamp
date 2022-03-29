@@ -10,9 +10,9 @@ dashedName: generatorexponential
 
 Un generatore è un'entità eseguibile (come una funzione o una procedura) che contiene codice che restituisce una sequenza di valori, uno alla volta, in modo che ogni volta che si chiama il generatore, viene fornito il valore successivo della sequenza.
 
-I generatori sono spesso costruiti su co-routine o oggetti in modo che lo stato interno dell'oggetto sia gestito "naturalmente".
+I generatori childo spesso costruiti su co-routine o oggetti in modo che lo stato interno dell'oggetto sia gestito "naturalmente".
 
-I generatori sono spesso utilizzati in situazioni in cui una sequenza è potenzialmente infinita, e dove è possibile costruire il valore successivo della sequenza con solo uno stato minimo.
+I generatori childo spesso utilizzati in situazioni in cui una sequenza è potenzialmente infinita, e dove è possibile costruire il valore successivo della sequenza con solo uno stato minimo.
 
 # --instructions--
 

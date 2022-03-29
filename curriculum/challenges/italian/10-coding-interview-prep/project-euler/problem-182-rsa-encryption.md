@@ -18,7 +18,7 @@ Per decifrare il testo, è necessaria la seguente procedura: calcola `d` in modo
 
 Esistono valori di `e` e `m` tali che m<sup>e</sup> mod n = m. Chiamiamo i messaggi `m` per i quali m<sup>e</sup> mod n=m messaggi non nascosti.
 
-Un problema quando si sceglie `e` è che non ci dovrebbero essere troppi messaggi non nascosti. Per esempio, sia `p=19` e `q=37`. Quindi `n=19*37=703` e `φ=18*36=648`. Se scegliamo `e=181`, anche se `MCD(181, 48)=1` risulta che tutti i possibili messaggi m `(0≤m≤n-1)` sono nascosti quando si calcola m<sup>e</sup> mod n. Per qualsiasi scelta valida di `e` esistono alcuni messaggi non nascosti. È importante che il numero di messaggi non nascosti sia il minimo.
+Un problema quando si sceglie `e` è che non ci dovrebbero essere troppi messaggi non nascosti. Per esempio, sia `p=19` e `q=37`. Quindi `n=19*37=703` e `φ=18*36=648`. Se scegliamo `e=181`, anche se `MCD(181, 48)=1` risulta che tutti i possibili messaggi m `(0≤m≤n-1)` childo nascosti quando si calcola m<sup>e</sup> mod n. Per qualsiasi scelta valida di `e` esistono alcuni messaggi non nascosti. È importante che il numero di messaggi non nascosti sia il minimo.
 
 Per ogni dato `p` e `q`, trova la somma di tutti i valori di `e`, `1 < e < φ(p,q)` e `MCD(e,φ)=1`, in modo che il numero di messaggi non nascosti per questo valore di `e` sia minimo.
 

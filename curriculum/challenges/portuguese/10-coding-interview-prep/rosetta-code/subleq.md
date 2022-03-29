@@ -14,7 +14,7 @@ Seu nome vem de sua única instrução, que é **SU**btract and **B**ranch if **
 
 Sua tarefa é criar um interpretador que emule esse tipo de máquina.
 
-A memória da máquina consiste em um array de números inteiros com sinal. Qualquer tamanho razoável de palavra é bom, mas a memória deve ser capaz de manter números negativos e positivos.
+A memória da máquina consiste em um array de números inteiros com sinal. Qualquer tamanho razoável de palavra é bom, mas a memória deve ser capaz de personter números negativos e positivos.
 
 A execução começa com o ponteiro de instrução mirando a primeira palavra, que é o endereço 0. Ela prossegue da seguinte forma:
 

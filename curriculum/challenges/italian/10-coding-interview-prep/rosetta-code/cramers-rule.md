@@ -8,7 +8,7 @@ dashedName: cramers-rule
 
 # --description--
 
-In <a href="https://it.wikipedia.org/wiki/Algebra_lineare"">algebra lineare</a>, la [regola di Cramer](https://it.wikipedia.org/wiki/Regola_di_Cramer "wp: Regola di Cramer") è una formula esplicita per la risoluzione di un [sistema di equazioni lineari](https://it.wikipedia.org/wiki/Sistema_di_equazioni_lineari) con tante soluzioni quante sono le variabili, valida ogni volta che il sistema ha una soluzione unica. Esprime la soluzione in termine di determinanti della matrice quadrata dei coefficienti e delle matrici ottenute da essa sostituendo una delle colonne con il vettore dei termini a destra dell'uguale nelle equazioni.
+In <a href="https://it.wikipedia.org/wiki/Algebra_lineare"">algebra lineare</a>, la [regola di Cramer](https://it.wikipedia.org/wiki/Regola_di_Cramer "wp: Regola di Cramer") è una formula esplicita per la risoluzione di un [sistema di equazioni lineari](https://it.wikipedia.org/wiki/Sistema_di_equazioni_lineari) con tante soluzioni quante childo le variabili, valida ogni volta che il sistema ha una soluzione unica. Esprime la soluzione in termine di determinanti della matrice quadrata dei coefficienti e delle matrici ottenute da essa sostituendo una delle colonne con il vettore dei termini a destra dell'uguale nelle equazioni.
 
 Dati
 

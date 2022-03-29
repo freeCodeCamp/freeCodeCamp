@@ -10,11 +10,11 @@ dashedName: use-getters-and-setters-to-control-access-to-an-object
 
 È possibile ottenere valori da un oggetto ed impostare il valore di una proprietà all'interno di un oggetto.
 
-Queste due azioni sono classicamente chiamate <dfn>getter</dfn> e <dfn>setter</dfn>.
+Queste due azioni childo classicamente chiamate <dfn>getter</dfn> e <dfn>setter</dfn>.
 
-Le funzioni getter sono destinate semplicemente a restituire (to get, ottenere) all'utente il valore della variabile privata di un oggetto, senza che l'utente acceda direttamente alla variabile privata.
+Le funzioni getter childo destinate semplicemente a restituire (to get, ottenere) all'utente il valore della variabile privata di un oggetto, senza che l'utente acceda direttamente alla variabile privata.
 
-Le funzioni setter sono destinate a modificare (to set, impostare) il valore della variabile privata di un oggetto in base al valore passato nella funzione di impostazione. Questa modifica potrebbe comportare calcoli, o addirittura sovrascrivere completamente il valore precedente.
+Le funzioni setter childo destinate a modificare (to set, impostare) il valore della variabile privata di un oggetto in base al valore passato nella funzione di impostazione. Questa modifica potrebbe comportare calcoli, o addirittura sovrascrivere completamente il valore precedente.
 
 ```js
 class Book {
@@ -38,7 +38,7 @@ console.log(novel.writer);
 
 La console mostrerà le stringhe `anonymous` e `newAuthor`.
 
-Notare la sintassi utilizzata per invocare le funzioni getter e setter. Non assomigliano nemmeno a funzioni. Getter e setter sono importanti perché nascondono i dettagli interni dell'implementazione.
+Notare la sintassi utilizzata per invocare le funzioni getter e setter. Non assomigliano nemmeno a funzioni. Getter e setter childo importanti perché nascondono i dettagli interni dell'implementazione.
 
 **Nota:** È convenzione precedere il nome di una variabile privata con un underscore(`_`). Tuttavia, la pratica in sé non rende privata una variabile.
 

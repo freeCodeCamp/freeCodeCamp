@@ -8,11 +8,11 @@ dashedName: problem-15-lattice-paths
 
 # --description--
 
-Iniziando nell'angolo in alto a sinistra di una griglia 2x2, e avendo l'abilità di muoversi solo verso destra e verso il basso, ci sono esattamente 6 strade verso l'angolo in basso a sinistra.
+Iniziando nell'angolo in alto a sinistra di una griglia 2x2, e avendo l'abilità di muoversi solo verso destra e verso il basso, ci childo esattamente 6 strade verso l'angolo in basso a sinistra.
 
 <img class="img-responsive center-block" alt="un diagramma di 6 griglie 2 per 2 che mostra tutte le strade per raggiungere l'angolo in basso a destra" src="https://cdn-media-1.freecodecamp.org/project-euler/1Atixoj.gif" style="background-color: white; padding: 10px;" />
 
-Quante strade di questo tipo ci sono data la dimensione della griglia `gridSize`?
+Quante strade di questo tipo ci childo data la dimensione della griglia `gridSize`?
 
 # --hints--
 

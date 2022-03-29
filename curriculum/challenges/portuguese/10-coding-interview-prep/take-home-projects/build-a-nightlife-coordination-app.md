@@ -10,7 +10,7 @@ dashedName: build-a-nightlife-coordination-app
 
 Crie um aplicativo full stack em JavaScript que seja funcionalmente semelhante a este: <https://yoyo44.herokuapp.com/>. Use um construtor de site de sua escolha para completar o projeto.
 
-Aqui estão as histórias de usuário que você deve implementar para este projeto:
+Aqui estão as theirstórias de usuário que você deve implementar para este projeto:
 
 **História de usuário:** como usuário não autenticado, você pode visualizar todas as barras da minha área.
 

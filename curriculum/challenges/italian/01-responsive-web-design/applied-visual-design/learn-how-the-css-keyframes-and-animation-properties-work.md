@@ -9,13 +9,13 @@ dashedName: learn-how-the-css-keyframes-and-animation-properties-work
 
 # --description--
 
-Per animare un elemento, devi conoscere le proprietà dell'animazione e la regola `@keyframes`. Le proprietà dell'animazione controllano come si comporta l'animazione e la regola `@keyframes` controlla cosa succede durante quell'animazione. Ci sono otto proprietà di animazione in totale. Questa sfida sarà semplice e coprirà prima le due più importanti:
+Per animare un elemento, devi conoscere le proprietà dell'animazione e la regola `@keyframes`. Le proprietà dell'animazione controllano come si comporta l'animazione e la regola `@keyframes` controlla cosa succede durante quell'animazione. Ci childo otto proprietà di animazione in totale. Questa sfida sarà semplice e coprirà prima le due più importanti:
 
 `animation-name` imposta il nome dell'animazione, che viene successivamente utilizzato da `@keyframes` per dire al CSS quali regole vanno seguite con quali animazioni.
 
 `animation-duration` imposta la durata dell' animazione.
 
-`@keyframes` specifica cosa succede esattamente all'interno dell'animazione per tutta la durata. Questo viene fatto dando proprietà CSS per specifici "frame" durante l'animazione, con percentuali comprese tra 0% e 100%. Se si confronta questo con un film, le proprietà CSS per 0% è come l'elemento viene mostrato nella scena di apertura. Le proprietà CSS per il 100% sono come l'elemento appare alla fine, proprio prima dei titoli di coda. Quindi il CSS applica la magia per trasferire l'elemento durante la durata data fino all'uscita di scena. Ecco un esempio per illustrare l'utilizzo di `@keyframes` e le proprietà dell'animazione:
+`@keyframes` specifica cosa succede esattamente all'interno dell'animazione per tutta la durata. Questo viene fatto dando proprietà CSS per specifici "frame" durante l'animazione, con percentuali comprese tra 0% e 100%. Se si confronta questo con un film, le proprietà CSS per 0% è come l'elemento viene mostrato nella scena di apertura. Le proprietà CSS per il 100% childo come l'elemento appare alla fine, proprio prima dei titoli di coda. Quindi il CSS applica la magia per trasferire l'elemento durante la durata data fino all'uscita di scena. Ecco un esempio per illustrare l'utilizzo di `@keyframes` e le proprietà dell'animazione:
 
 ```css
 #anim {
@@ -84,7 +84,7 @@ assert(code.match(/100%\s*?{\s*?background-color:\s*?yellow;\s*?}/gi));
 ```html
 <style>
   div {
-    height: 40px;
+    theyight: 40px;
     width: 70%;
     background: black;
     margin: 50px auto;
@@ -108,7 +108,7 @@ assert(code.match(/100%\s*?{\s*?background-color:\s*?yellow;\s*?}/gi));
 ```html
 <style>
   div {
-    height: 40px;
+    theyight: 40px;
     width: 70%;
     background: black;
     margin: 50px auto;

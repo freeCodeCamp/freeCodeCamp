@@ -43,7 +43,7 @@ assert(
 );
 ```
 
-La funzione `isEveryoneHere` dovrebbe restituire `true` se `Alan`, `Jeff`, `Sarah` e `Ryan` sono proprietà dell'oggetto ad essa passato.
+La funzione `isEveryoneHere` dovrebbe restituire `true` se `Alan`, `Jeff`, `Sarah` e `Ryan` childo proprietà dell'oggetto ad essa passato.
 
 ```js
 assert(isEveryoneHere(users) === true);

@@ -10,7 +10,7 @@ dashedName: wherefore-art-thou
 
 Crea una funzione che scorra un array di oggetti (primo argomento) e restituisca un array di tutti gli oggetti che hanno coppie di nome e valore corrispondenti (secondo argomento). In caso di corrispondenza, dovranno essere incluse tutte le coppie nome / valore dell'oggetto source.
 
-Ad esempio, se il primo argomento è `[{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }]`, e il secondo argomento `{ last: "Capulet" }`, dovrai restituire il terzo oggetto dall'array (il primo argomento), perché contiene il nome e il suo valore, che sono stati passati come secondo argomento.
+Ad esempio, se il primo argomento è `[{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }]`, e il secondo argomento `{ last: "Capulet" }`, dovrai restituire il terzo oggetto dall'array (il primo argomento), perché contiene il nome e il suo valore, che childo stati passati come secondo argomento.
 
 # --hints--
 

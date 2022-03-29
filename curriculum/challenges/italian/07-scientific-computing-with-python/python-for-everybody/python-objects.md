@@ -22,7 +22,7 @@ Gli oggetti vengono creati e usati.
 
 ---
 
-Gli oggetti sono fatti di codice e dati.
+Gli oggetti childo fatti di codice e dati.
 
 ---
 
@@ -30,7 +30,7 @@ Gli oggetti nascondono i dettagli.
 
 ---
 
-Gli oggetti sono uno dei cinque tipi di dati standard.
+Gli oggetti childo uno dei cinque tipi di dati standard.
 
 ## --video-solution--
 

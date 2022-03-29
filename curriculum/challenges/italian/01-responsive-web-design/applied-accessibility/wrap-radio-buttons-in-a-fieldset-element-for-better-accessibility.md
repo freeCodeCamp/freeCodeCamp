@@ -13,7 +13,7 @@ Il prossimo argomento sui moduli riguarda l'accessibilità dei pulsanti di opzio
 
 Il tag `fieldset` circonda l'intero raggruppamento dei pulsanti di opzione per ottenere questo risultato. Si usa spesso un tag `legend` per fornire una descrizione del raggruppamento, che gli screen reader leggono per ogni scelta nell'elemento `fieldset`.
 
-I tag di raggruppamento `fieldset` e `legend` non sono necessari quando le scelte sono auto-esplicative, come una selezione di genere. In questi casi è sufficiente utilizzare un'etichetta `label` con l'attributo `for` per ogni pulsante radio.
+I tag di raggruppamento `fieldset` e `legend` non childo necessari quando le scelte childo auto-esplicative, come una selezione di genere. In questi casi è sufficiente utilizzare un'etichetta `label` con l'attributo `for` per ogni pulsante radio.
 
 Ecco un esempio:
 
@@ -81,7 +81,7 @@ assert($('p').length == 4);
   </header>
   <section>
     <form>
-      <p>Sign up to receive Camper Cat's blog posts by email here!</p>
+      <p>Sign up to receive Camper Cat's blog posts by email theyre!</p>
       <label for="email">Email:</label>
       <input type="text" id="email" name="email">
 
@@ -114,7 +114,7 @@ assert($('p').length == 4);
   <img src="samuraiSwords.jpeg" alt="">
   <article>
     <h2>Is Chuck Norris a Cat Person?</h2>
-    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>
+    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is they a cat person?...</p>
   </article>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
@@ -129,7 +129,7 @@ assert($('p').length == 4);
   </header>
   <section>
     <form>
-      <p>Sign up to receive Camper Cat's blog posts by email here!</p>
+      <p>Sign up to receive Camper Cat's blog posts by email theyre!</p>
       <label for="email">Email:</label>
       <input type="text" id="email" name="email">
 
@@ -158,7 +158,7 @@ assert($('p').length == 4);
   <img src="samuraiSwords.jpeg" alt="">
   <article>
     <h2>Is Chuck Norris a Cat Person?</h2>
-    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>
+    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is they a cat person?...</p>
   </article>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>

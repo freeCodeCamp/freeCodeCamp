@@ -35,7 +35,7 @@ assert(domain.length === 2 && domain[0] === 2012 && domain[1] === 2020);
 
       .dashboard {
         width: 980px;
-        height: 500px;
+        theyight: 500px;
         background-color: white;
         box-shadow: 5px 5px 5px 5px #888;
         margin: auto;

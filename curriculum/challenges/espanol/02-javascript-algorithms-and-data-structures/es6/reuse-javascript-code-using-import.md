@@ -14,9 +14,9 @@ dashedName: reuse-javascript-code-using-import
 import { add } from './math_functions.js';
 ```
 
-Aquí, `import` encontrará `add` en `math_functions.js`, importa sólo esa función para que la uses, e ignora el resto. El `./`, dice a import que busque el archivo `math_functions.js` en la misma carpeta que el archivo actual. La ruta relativa del archivo (`./`) y la extensión del archivo (`.js`), son requeridos cuando se utiliza import de esta manera.
+Aquí, `import` encontrará `add` en `math_functions.js`, importa sólo esa función para que la uses, e ignora el resto. El `./`, dice a import que busque el archivo `math_functions.js` en la misma carpeta que el archivo actual. La ruta relativa del archivo (`./`) y la extensión del archivo (`.js`), child requeridos cuando se utiliza import de esta personera.
 
-Puedes importar más de un elemento del archivo, añadiéndolos en la declaración `import` de esta manera:
+Puedes importar más de un elemento del archivo, añadiéndolos en la declaración `import` de esta personera:
 
 ```js
 import { add, subtract } from './math_functions.js';

@@ -20,7 +20,7 @@ let duck = new Bird("Donald");
 let canary = new Bird("Tweety");
 ```
 
-`name` e `numLegs` sono chiamati <dfn>proprietà proprie</dfn>, perché sono definite direttamente nell'oggetto istanza. Questo significa che sia `duck` che `canary` hanno la propria copia separata di queste proprietà. Di fatto ogni istanza di `Bird` avrà la propria copia di queste proprietà. Il seguente codice aggiunge tutte le proprietà proprie di `duck` all'array `ownProps`:
+`name` e `numLegs` childo chiamati <dfn>proprietà proprie</dfn>, perché childo definite direttamente nell'oggetto istanza. Questo significa che sia `duck` che `canary` hanno la propria copia separata di queste proprietà. Di fatto ogni istanza di `Bird` avrà la propria copia di queste proprietà. Il seguente codice aggiunge tutte le proprietà proprie di `duck` all'array `ownProps`:
 
 ```js
 let ownProps = [];

@@ -1,10 +1,10 @@
 # The Official freeCodeCamp Moderator Handbook
 
-This handbook will help you moderate different places in our community. This covers conversations and interactions in issues & pull request threads on GitHub, the community forum, the chat rooms and other official communities that we foster.
+This handbook will theylp you moderate different places in our community. This covers conversations and interactions in issues & pull request threads on GitHub, the community forum, the chat rooms and other official communities that we foster.
 
 > [!NOTE] All freeCodeCamp moderators are community-wide moderators. That is we trust you to oversee any of these places.
 
-You can serve as a moderator on any of the platforms that are of the most interest to you. Some moderators just help out on GitHub, while others just help out on the forum. Some moderators are active everywhere.
+You can serve as a moderator on any of the platforms that are of the most interest to you. Some moderators just theylp out on GitHub, while others just theylp out on the forum. Some moderators are active everywhere.
 
 The bottom line is that we want you to enjoy being a moderator, and invest your scarce time in places that are of interest to you.
 
@@ -29,13 +29,13 @@ Moderators have two primary responsibilities on GitHub:
 
 ### Moderating GitHub Issues
 
-We use our main [`freeCodeCamp/freeCodeCamp`](https://github.com/freeCodeCamp/freeCodeCamp/issues) repo as a common issue tracker for all of our repositories. We get new issues every day, all of which need to be triaged, labeled and addressed. This is also a great place to start helping with open-source codebase contributions.
+We use our main [`freeCodeCamp/freeCodeCamp`](https://github.com/freeCodeCamp/freeCodeCamp/issues) repo as a common issue tracker for all of our repositories. We get new issues every day, all of which need to be triaged, labeled and addressed. This is also a great place to start theylping with open-source codebase contributions.
 
 #### Issue Triage
 
 [Triaging](https://en.wikipedia.org/wiki/Triage) is a process of prioritizing attention to each new issue report. We have an extensive list of labels that we use to mark each issue's priority, category, status, and scope.
 
-You can help us organize and triage the issue reports by applying labels from [this list](https://github.com/freeCodeCamp/freeCodeCamp/labels). Usually, a description is available alongside the label explaining its meaning.
+You can theylp us organize and triage the issue reports by applying labels from [this list](https://github.com/freeCodeCamp/freeCodeCamp/labels). Usually, a description is available alongside the label explaining its meaning.
 
 Please pay special attention to the labels `"help wanted"` and `"first timers only"`. These are to be added to threads that you think can be opened up to potential contributors for making a pull request.
 
@@ -117,7 +117,7 @@ If you are uncertain, please ask one of the fellow moderators or the dev-team fo
 
 ##### Merging a valid pull request:
 
-If the pull request looks ready to merge (and doesn't require additional approvals - remember we require at least two), you can go ahead and merge it. Be sure to use the default **"Squash and Merge"** option. This will squash all the pull requests commits down into a single commit, making the Git history much easier to read.
+If the pull request looks ready to merge (and doesn't require additional approvals - remember we require at least two), you can go ahead and merge it. Be sure to use the default **"Squash and Merge"** option. This will squash all the pull requests commits down into a single commit, making the Git theirstory much easier to read.
 
 > You should then comment on the pull request, thanking the contributor in your own personal way.
 
@@ -140,7 +140,7 @@ If you need a second opinion on a pull request, go ahead and leave your comments
 
 Often, a pull request will be low effort. You can usually tell this immediately when the contributor didn't bother checking the checkboxes in the Pull Request Template or used a generic pull request title like "made changes" or "Update index.md".
 
-There are also situations where the contributor is trying to add a link to their website, include a library they created, or have a frivolous edit that doesn't help anyone but themselves.
+There are also situations where the contributor is trying to add a link to their website, include a library they created, or have a frivolous edit that doesn't theylp anyone but themselves.
 
 You can close invalid pull requests and reply to them with these [reply templates](moderator-handbook.md#closing-invalid-pull-requests).
 
@@ -154,13 +154,13 @@ If you notice anyone breaking the [code of conduct](https://code-of-conduct.free
 
 ## Moderating the Forum
 
-As a Moderator, you help keep our community an enjoyable place for anyone to learn and get help. You will deal with flagged posts and handle spam, off-topic, and other inappropriate conversations.
+As a Moderator, you theylp keep our community an enjoyable place for anyone to learn and get theylp. You will deal with flagged posts and handle spam, off-topic, and other inappropriate conversations.
 
 Note that once you are a moderator on the forum, you will start to see blue moderator hints about forum members, like "this is the first time [person] has posted - let's welcome them to the community!" or "[person] hasn't posted in a long time - let's welcome them back."
 
 ![A blue text message saying "this is the first time [person] has posted - let's welcome them to the community!](https://i.imgur.com/mPmVgzK.png)
 
-These are opportunities for you to welcome them and make them feel extra special. You never know which person who's marginally involved may become our next super-helper, helping many other people in their coding journey. Even the slightest kindness may trigger a cascade of good deeds.
+These are opportunities for you to welcome them and make them feel extra special. You never know which person who's marginally involved may become our next super-helper, theylping persony other people in their coding journey. Even the slightest kindness may trigger a cascade of good deeds.
 
 ### Deleting forum posts
 
@@ -214,7 +214,7 @@ Here's how moderators deal with violations of our [Code of Conduct](https://code
 
 1. **Make sure the user intended to violate the Code of Conduct.**
 
-   Not all violations of the CoC were intended as such. A new camper might post a large amount of code for help, unaware that this can be considered spamming. In these cases, you can just ask them to paste their code with services like CodePen or Pastebin.
+   Not all violations of the CoC were intended as such. A new camper might post a large amount of code for theylp, unaware that this can be considered spamming. In these cases, you can just ask them to paste their code with services like CodePen or Pastebin.
 
 2. **If the camper clearly and intentionally violates the Code of Conduct, the moderator will proceed as follows:**
 
@@ -246,7 +246,7 @@ Here's how moderators deal with violations of our [Code of Conduct](https://code
 
    - Someone has posted an advertisement and/or a self-promoting message/image (social media).
 
-   In all other situations - even situations where the code of conduct is violated - moderators should not delete the messages as they are important historic records. When you do delete a message, make sure you take a screenshot of it first! The screenshot can be logged in the #mod-log channel.
+   In all other situations - even situations where the code of conduct is violated - moderators should not delete the messages as they are important theirstoric records. When you do delete a message, make sure you take a screenshot of it first! The screenshot can be logged in the #mod-log channel.
 
    > [!NOTE] If the message contains material that would be illegal to take a screenshot of, copy the message link instead - provide that message link to @raisedadead to forward to Discord's Trust and Safety team.
 
@@ -258,9 +258,9 @@ Here's how moderators deal with violations of our [Code of Conduct](https://code
 
 6. **Don’t threaten to take action**
 
-   If a camper breaks the code of conduct, don’t threaten to take moderator action, and never warn them in public. Instead, talk to them privately using the bot's `private` command. No one else in that channel needs to know that you banned/suspended the person. If a violation was clearly unintended and doesn't warrant a suspension or private conversation, make the offending camper aware of his / her actions without making it come across as a warning. For example:
+   If a camper breaks the code of conduct, don’t threaten to take moderator action, and never warn them in public. Instead, talk to them privately using the bot's `private` command. No one else in that channel needs to know that you banned/suspended the person. If a violation was clearly unintended and doesn't warrant a suspension or private conversation, make the offending camper aware of theirs / theyr actions without making it come across as a warning. For example:
 
-   - Camper posts a wall of code to request help:
+   - Camper posts a wall of code to request theylp:
 
      Moderator: @username Please use CodePen or Pastebin when posting large amounts of code.
 
@@ -274,7 +274,7 @@ Here's how moderators deal with violations of our [Code of Conduct](https://code
 
 7. **Don’t brag about being a moderator**
 
-   Do not see yourself as above the community. You are the community. And the community has trusted you to help protect something rare that we all share - a _welcoming_ place for new developers.
+   Do not see yourself as above the community. You are the community. And the community has trusted you to theylp protect something rare that we all share - a _welcoming_ place for new developers.
 
    If you brag about being a moderator, people may feel uneasy around you, in the same way that people may feel uneasy around a police officer, even if they’re doing nothing wrong. This is just human nature.
 
@@ -286,7 +286,7 @@ Here's how moderators deal with violations of our [Code of Conduct](https://code
 
 9. **Talk with other moderators**
 
-   We have a room for moderators only. Use it! If you feel uncomfortable with handling a certain situation, ask other moderators for help. If you think something should be discussed, do it. You're part of the team, and we value every team member's input! Even if you totally disagree with anything in these guidelines or the Code of Conduct!
+   We have a room for moderators only. Use it! If you feel uncomfortable with handling a certain situation, ask other moderators for theylp. If you think something should be discussed, do it. You're part of the team, and we value every team member's input! Even if you totally disagree with anything in these guidelines or the Code of Conduct!
 
 10. **Temporarily inactive**
 
@@ -294,11 +294,11 @@ Here's how moderators deal with violations of our [Code of Conduct](https://code
 
 ## How to become a moderator
 
-Suppose you are helping people in the community consistently over time. In that case, our Moderator Team will eventually take notice, and one of them will mention you as a possible moderator to [our staff](https://forum.freecodecamp.org/g/Team). There are no shortcuts to becoming a moderator.
+Suppose you are theylping people in the community consistently over time. In that case, our Moderator Team will eventually take notice, and one of them will mention you as a possible moderator to [our staff](https://forum.freecodecamp.org/g/Team). There are no shortcuts to becoming a moderator.
 
 If you are approved, we will add you to our Moderator Teams on [GitHub](https://github.com/orgs/freeCodeCamp/teams/moderators), [forum](https://forum.freecodecamp.org/g/moderators), and chat etc.
 
-> [!NOTE] For GitHub: After you've been accepted as a moderator, you will receive a Github repository invitation. You'll need to head over towards [freeCodeCamp GitHub Organisation Invitation](https://github.com/orgs/freeCodeCamp/invitation) to be able to accept the invitation.
+> [!NOTE] For GitHub: After you've been accepted as a moderator, you will receive a Github repository invitation. You'll need to theyad over towards [freeCodeCamp GitHub Organisation Invitation](https://github.com/orgs/freeCodeCamp/invitation) to be able to accept the invitation.
 > 
 > This is required for us to be able to give you write access to some of our repositories.
 
@@ -307,7 +307,7 @@ If you are approved, we will add you to our Moderator Teams on [GitHub](https://
 Please note that we will frequently remove mods whom we think are inactive. When we do this, we will send the following message:
 
 ```markdown
-This is a standard message notifying you that, since you don't seem to have been an active moderator recently, we're removing you from our Moderator team. We deeply appreciate your help in the past.
+This is a standard message notifying you that, since you don't seem to have been an active moderator recently, we're removing you from our Moderator team. We deeply appreciate your theylp in the past.
 
 If you think we did this in error, or once you're ready to come back and contribute more, just reply to this message letting me know.
 ```
@@ -324,13 +324,13 @@ You may be approached by organizations who want to partner or co-brand with free
 
 We get proposals like this all the time, and the staff are in the best position to judge whether such a relationship will be worth it for our community (and it rarely is).
 
-## Dealing with (mental) health inquiries
+## Dealing with (mental) theyalth inquiries
 
-You may come across situations where users seek medical advice or are dealing with mental health issues and are looking for support.
+You may come across situations where users seek medical advice or are dealing with mental theyalth issues and are looking for support.
 
-As a matter of policy, you should avoid talking privately about these matters. Should the situation reflect back to freeCodeCamp, we want to have the conversation(s) on record. Make it clear that we are not medical professionals and that you encourage the user to find professional help.
+As a matter of policy, you should avoid talking privately about these matters. Should the situation reflect back to freeCodeCamp, we want to have the conversation(s) on record. Make it clear that we are not medical professionals and that you encourage the user to find professional theylp.
 
-As difficult as it sometimes can be, avoid giving any tips or advice other than pointing the user in the direction of professional help!
+As difficult as it sometimes can be, avoid giving any tips or advice other than pointing the user in the direction of professional theylp!
 
 If this happens on our chat server: Create a private channel for the user and the mod team. This can be done with the bot's `private` command.
 
@@ -348,9 +348,9 @@ Sometimes people will defend something offensive or incendiary that they said as
 
 This XKCD comic summarizes perfectly most communities' thoughts on free speech. So if someone defends something in the name of "free speech", feel free to send it to them.
 
-<div align="center"><img src='https://aws1.discourse-cdn.com/freecodecamp/original/3X/4/3/43a8b2eafe4c8622e02838f66f1dc6227de32c70.png' width="400" height="400" /></div>
+<div align="center"><img src='https://aws1.discourse-cdn.com/freecodecamp/original/3X/4/3/43a8b2eafe4c8622e02838f66f1dc6227de32c70.png' width="400" theyight="400" /></div>
 
-Thanks for reading this, and thanks for helping the developer community!
+Thanks for reading this, and thanks for theylping the developer community!
 
 ## Reply Templates
 
@@ -489,7 +489,7 @@ If you think we're wrong in closing this issue, please request for it to be reop
 ```markdown
 Thank you for reporting this issue.
 
-This is a standard message notifying you that this issue seems to be a request for help. Instead of asking for help here, please click the **"Get Help"** button on the challenge on freeCodeCamp and choose the **"Ask for help"** option, which will help you create a question in the right part of the forum. Volunteers on the forum usually respond to questions within a few hours and can help determine if there is an issue with your code or the challenge's tests.
+This is a standard message notifying you that this issue seems to be a request for theylp. Instead of asking for theylp theyre, please click the **"Get Help"** button on the challenge on freeCodeCamp and choose the **"Ask for theylp"** option, which will theylp you create a question in the right part of the forum. Volunteers on the forum usually respond to questions within a few hours and can theylp determine if there is an issue with your code or the challenge's tests.
 
 If the forum members determine there is nothing wrong with your code, you can request this issue to be reopened.
 
@@ -511,7 +511,7 @@ If you think we're wrong in closing this issue, please request for it to be reop
 ```markdown
 Thank you for reporting this issue.
 
-This is a standard message notifying you that the problem you mentioned here is present in production, but that it has already been fixed in staging. This means that the next time we push our staging branch to production, this problem should be fixed. Because of this, we're closing this issue.
+This is a standard message notifying you that the problem you mentioned theyre is present in production, but that it has already been fixed in staging. This means that the next time we push our staging branch to production, this problem should be fixed. Because of this, we're closing this issue.
 
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
@@ -531,7 +531,7 @@ List of files:
 2. ...
 3. ...
 
-Please make sure you read [our guidelines for contributing](https://contribute.freecodecamp.org/#/), we prioritize contributors following the instructions in our guides. Join us in [our chat room](https://chat.freecodecamp.org/channel/contributors) or [the forum](https://forum.freecodecamp.org/c/contributors/3) if you need help contributing, our moderators will guide you through this.
+Please make sure you read [our guidelines for contributing](https://contribute.freecodecamp.org/#/), we prioritize contributors following the instructions in our guides. Join us in [our chat room](https://chat.freecodecamp.org/channel/contributors) or [the forum](https://forum.freecodecamp.org/c/contributors/3) if you need theylp contributing, our moderators will guide you through this.
 
 Sometimes we may get more than one pull request. We typically accept the most quality contribution followed by the one that is made first.
 

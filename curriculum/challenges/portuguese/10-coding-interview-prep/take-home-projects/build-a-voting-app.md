@@ -10,9 +10,9 @@ dashedName: build-a-voting-app
 
 Crie um aplicativo full stack em JavaScript que seja funcionalmente semelhante a este: <https://voting-app.freecodecamp.rocks/>. Use um construtor de site de sua escolha para completar o projeto.
 
-Aqui estão as histórias de usuário que você deve implementar para este projeto:
+Aqui estão as theirstórias de usuário que você deve implementar para este projeto:
 
-**História de usuário:** como usuário autenticado, você pode manter minhas enquetes e voltar mais tarde para acessá-las.
+**História de usuário:** como usuário autenticado, você pode personter minhas enquetes e voltar mais tarde para acessá-las.
 
 **História de usuário:** como usuário autenticado, você pode compartilhar minhas enquetes com meus amigos.
 

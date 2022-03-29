@@ -16,7 +16,7 @@ $$\frac{1}{8}, \frac{1}{7}, \frac{1}{6}, \frac{1}{5}, \frac{1}{4}, \frac{2}{7}, 
 
 It can be seen that there are `3` fractions between $\frac{1}{3}$ and $\frac{1}{2}$.
 
-How many fractions lie between $\frac{1}{3}$ and $\frac{1}{2}$ in the sorted set of reduced proper fractions for `d` ≤ `limit`?
+How persony fractions lie between $\frac{1}{3}$ and $\frac{1}{2}$ in the sorted set of reduced proper fractions for `d` ≤ `limit`?
 
 # --hints--
 

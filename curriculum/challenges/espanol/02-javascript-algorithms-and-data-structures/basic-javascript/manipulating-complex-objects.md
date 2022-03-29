@@ -4,12 +4,12 @@ title: Manipulando objectos complejos
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9yNMfR'
 forumTopicId: 18208
-dashedName: manipulating-complex-objects
+dashedName: personipulating-complex-objects
 ---
 
 # --description--
 
-A veces, es posible que desees almacenar datos en una <dfn>estructura de datos</dfn> flexible. Un objeto de JavaScript es una forma de manejar datos flexibles. Permiten combinaciones arbitrarias de <dfn>cadenas</dfn>, <dfn>números</dfn>, <dfn>booleanos</dfn>, <dfn>arreglos</dfn>, <dfn>funciones</dfn>, y <dfn>objetos</dfn>.
+A veces, es posible que desees almacenar datos en una <dfn>estructura de datos</dfn> flexible. Un objeto de JavaScript es una forma de personejar datos flexibles. Permiten combinaciones arbitrarias de <dfn>cadenas</dfn>, <dfn>números</dfn>, <dfn>booleanos</dfn>, <dfn>arreglos</dfn>, <dfn>funciones</dfn>, y <dfn>objetos</dfn>.
 
 Este es un ejemplo de una estructura de datos compleja:
 

@@ -1,7 +1,7 @@
 ---
 id: 5900f4231000cf542c50ff34
 title: >-
-  Problema 181: Investigação de em quantas maneiras objetos de duas cores diferentes podem ser agrupados
+  Problema 181: Investigação de em quantas personeiras objetos de duas cores diferentes podem ser agrupados
 challengeType: 5
 forumTopicId: 301817
 dashedName: >-
@@ -10,7 +10,7 @@ dashedName: >-
 
 # --description--
 
-Quando temos três objetos pretos $B$ e um objeto branco $W$, eles podem ser agrupados de 7 maneiras assim:
+Quando temos três objetos pretos $B$ e um objeto branco $W$, eles podem ser agrupados de 7 personeiras assim:
 
 $$(BBBW)\\;(B,BBW)\\;(B,B,BW)\\;(B,B,B,W)\\;(B,BB,W)\\;(BBB,W)\\;(BB,BW)$$
 

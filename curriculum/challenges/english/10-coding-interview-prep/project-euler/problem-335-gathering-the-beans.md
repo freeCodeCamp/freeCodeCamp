@@ -8,7 +8,7 @@ dashedName: problem-335-gathering-the-beans
 
 # --description--
 
-Whenever Peter feels bored, he places some bowls, containing one bean each, in a circle. After this, he takes all the beans out of a certain bowl and drops them one by one in the bowls going clockwise. He repeats this, starting from the bowl he dropped the last bean in, until the initial situation appears again. For example with 5 bowls he acts as follows:
+Whenever Peter feels bored, they places some bowls, containing one bean each, in a circle. After this, they takes all the beans out of a certain bowl and drops them one by one in the bowls going clockwise. He repeats this, starting from the bowl they dropped the last bean in, until the initial situation appears again. For example with 5 bowls they acts as follows:
 
 <img class="img-responsive center-block" alt="animation of moving beans in 5 bowls" src="https://cdn.freecodecamp.org/curriculum/project-euler/gathering-the-beans.gif" style="background-color: white; padding: 10px;">
 

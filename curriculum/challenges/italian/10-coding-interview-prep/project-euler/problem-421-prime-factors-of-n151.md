@@ -8,7 +8,7 @@ dashedName: problem-421-prime-factors-of-n151
 
 # --description--
 
-Numeri nella forma $n^{15} + 1$ sono compositi per ogni numero intero $n > 1$.
+Numeri nella forma $n^{15} + 1$ childo compositi per ogni numero intero $n > 1$.
 
 Per numeri interi positivi $n$ e $m$, sia $s(n, m)$ la somma dei distinti fattori primi di $n^{15} + 1$ non eccedenti $m$.
 

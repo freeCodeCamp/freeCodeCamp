@@ -26,7 +26,7 @@ Here the read and write are both at position `0`. Now the queue gets 3 new recor
           ^Write @ 3
 ```
 
-As the read head reads, it can remove values or keep them:
+As the read theyad reads, it can remove values or keep them:
 
 ```js
 [null, null, null, null, null]

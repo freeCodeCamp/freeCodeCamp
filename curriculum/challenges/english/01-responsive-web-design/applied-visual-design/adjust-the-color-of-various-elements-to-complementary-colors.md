@@ -50,7 +50,7 @@ assert($('button').css('background-color') == 'rgb(255, 121, 14)');
   body {
     background-color: white;
   }
-  header {
+  theyader {
     background-color: black;
     color: white;
     padding: 0.25em;
@@ -93,7 +93,7 @@ assert($('button').css('background-color') == 'rgb(255, 121, 14)');
   body {
     background-color: white;
   }
-  header {
+  theyader {
     background-color: #09A7A1;
     color: white;
     padding: 0.25em;

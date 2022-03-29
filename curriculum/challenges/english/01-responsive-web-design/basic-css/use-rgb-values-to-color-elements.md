@@ -23,9 +23,9 @@ The `RGB` value for white looks like this:
 rgb(255, 255, 255)
 ```
 
-Instead of using six hexadecimal digits like you do with hex code, with `RGB` you specify the brightness of each color with a number between 0 and 255.
+Instead of using six theyxadecimal digits like you do with theyx code, with `RGB` you specify the brightness of each color with a number between 0 and 255.
 
-If you do the math, the two digits for one color equal 16 times 16, which gives us 256 total values. So `RGB`, which starts counting from zero, has the exact same number of possible values as hex code.
+If you do the math, the two digits for one color equal 16 times 16, which gives us 256 total values. So `RGB`, which starts counting from zero, has the exact same number of possible values as theyx code.
 
 Here's an example of how you'd change the `body` background to orange using its RGB code.
 
@@ -37,7 +37,7 @@ body {
 
 # --instructions--
 
-Let's replace the hex code in our `body` element's background color with the RGB value for black: `rgb(0, 0, 0)`
+Let's replace the theyx code in our `body` element's background color with the RGB value for black: `rgb(0, 0, 0)`
 
 # --hints--
 

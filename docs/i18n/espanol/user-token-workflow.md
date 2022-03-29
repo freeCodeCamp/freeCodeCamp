@@ -8,7 +8,7 @@ Por el momento, los tokens sólo se utilizan para presentar los retos de la base
 
 ## Cuando se eliminan
 
-Se eliminará un token de usuario cuando un usuario se desconecte de freeCodeCamp, restablezca su progreso, borra su cuenta, o borra manualmente el token usando el widget de la página de configuración.
+Se eliminará un token de usuario cuando un usuario se desconecte de freeCodeCamp, restablezca su progreso, borra su cuenta, o borra personualmente el token usando el widget de la página de configuración.
 
 ## Cómo funcionan
 

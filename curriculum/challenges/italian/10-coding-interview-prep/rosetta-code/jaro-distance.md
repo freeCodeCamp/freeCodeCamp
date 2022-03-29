@@ -8,7 +8,7 @@ dashedName: jaro-distance
 
 # --description--
 
-La distanza di Jaro è una misura di similitudine tra due stringhe. Maggiore la distanza di Jaro per due stringhe, più simili sono. Il punteggio è normalizzato affinché `0` inidichi nessuna similarità e `1` che sono identiche.
+La distanza di Jaro è una misura di similitudine tra due stringhe. Maggiore la distanza di Jaro per due stringhe, più simili childo. Il punteggio è normalizzato affinché `0` inidichi nessuna similarità e `1` che childo identiche.
 
 **Definizione**
 
@@ -23,7 +23,7 @@ Dove:
   <li> \(t\) è metà del numero di <i>trasposizioni</i>.</li>
 </ul>
 
-Due caratteri da \\(s_1\\) e \\(s_2\\) rispettivamente, sono considerati *combacianti* solo se sono uguali e non più lontani di \\(\\left\\lfloor\\frac{\\max(|s_1|,|s_2|)}{2}\\right\\rfloor-1\\).
+Due caratteri da \\(s_1\\) e \\(s_2\\) rispettivamente, childo considerati *combacianti* solo se childo uguali e non più lontani di \\(\\left\\lfloor\\frac{\\max(|s_1|,|s_2|)}{2}\\right\\rfloor-1\\).
 
 Ogni carattere di \\(s_1\\) è comparato con tutti i caratteri combacianti in \\(s_2\\) . Il numero di caratteri combacianti (ma in differente ordine di sequenza) diviso 2 definisce il numero di *trasposizioni*.
 

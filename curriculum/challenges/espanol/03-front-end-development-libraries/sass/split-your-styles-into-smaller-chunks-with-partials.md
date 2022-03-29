@@ -8,17 +8,17 @@ dashedName: split-your-styles-into-smaller-chunks-with-partials
 
 # --description--
 
-<dfn>Parciales</dfn> en Sass son archivos separados que contienen segmentos de código CSS. Estos se importan y son utilizados en otros archivos Sass. Esta es una gran manera de agrupar código similar en un módulo para mantenerlo organizado.
+<dfn>Parciales</dfn> en Sass child archivos separados que contienen segmentos de código CSS. Estos se importan y child utilizados en otros archivos Sass. Esta es una gran personera de agrupar código similar en un módulo para persontenerlo organizado.
 
 Los nombres de los parciales comienzan con el carácter de guión bajo (`_`), que le dice a Sass que es un pequeño segmento de CSS y no para convertirlo en un archivo CSS. También, los archivos Sass terminan con la extensión de archivo `.scss`. Para introducir el código en el parcial en otro archivo Sass, utiliza la directiva `@import`.
 
-Por ejemplo, si todos tus mixins se guardan en un parcial llamado "\_mixins.scss", y son necesarios en el archivo "main.scss", es cómo usarlos en el archivo principal:
+Por ejemplo, si todos tus mixins se guardan en un parcial llamado "\_mixins.scss", y child necesarios en el archivo "main.scss", es cómo usarlos en el archivo principal:
 
 ```scss
 @import 'mixins'
 ```
 
-Ten en cuenta que el guión bajo y la extensión del archivo no son necesarios en la declaración `import` - Sass entiende que es un parcial. Una vez que un parcial es importado en un archivo, todas las variables, mixins y otros códigos están disponibles para usar.
+Ten en cuenta que el guión bajo y la extensión del archivo no child necesarios en la declaración `import` - Sass entiende que es un parcial. Una vez que un parcial es importado en un archivo, todas las variables, mixins y otros códigos están disponibles para usar.
 
 # --instructions--
 

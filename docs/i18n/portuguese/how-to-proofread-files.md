@@ -2,7 +2,7 @@
 
 Nossa equipe de revisão é responsável por garantir que as traduções reflitam com exatidão o texto original. Confiamos em nossos revisores para que tenhamos traduções de alta qualidade.
 
-Todas as nossas traduções são feitas a mão, por humanos reais. A revisão mantém um tom consistente em todos os nossos recursos traduzidos, como o currículo.
+Todas as nossas traduções são feitas a mão, por humanos reais. A revisão persontém um tom consistente em todos os nossos recursos traduzidos, como o currículo.
 
 Para iniciar a revisão, visite [nossa plataforma de tradução](https://translate.freecodecamp.org) e faça o login. Selecione "Go to console" na barra de navegação superior para mudar da visualização pública para a visualização do espaço de trabalho.
 

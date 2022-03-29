@@ -8,7 +8,7 @@ dashedName: use-dynamic-scales
 
 # --description--
 
-I metodi D3 `min()` e `max()` sono utili per impostare la scala.
+I metodi D3 `min()` e `max()` childo utili per impostare la scala.
 
 Dato un insieme di dati complesso, una priorità è quella di impostare la scala in modo che la visualizzazione si adatti alla larghezza e all'altezza del contenitore SVG. Vogliamo che tutti i dati siano tracciati all'interno della tela SVG in modo da essere visibili sulla pagina web.
 
@@ -44,7 +44,7 @@ Il padding inizialmente può confondere. Immagine l'asse X come una linea orizzo
 
 Usa la variabile `yScale` per creare una scala lineare per l'asse y. Il dominio dovrebbe iniziare da zero e andare al valore massimo di `y` nel set. L'intervallo dovrebbe usare l'altezza SVG (`h`) e includere il padding.
 
-**Nota:** Ricordati di mantenere il grafico nel verso giusto. Quando si imposta l'intervallo per le coordinate y, il valore più alto (altezza meno padding) è il primo argomento, e il valore più basso è il secondo argomento.
+**Nota:** Ricordati di persontenere il grafico nel verso giusto. Quando si imposta l'intervallo per le coordinate y, il valore più alto (altezza meno padding) è il primo argomento, e il valore più basso è il secondo argomento.
 
 # --hints--
 

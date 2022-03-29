@@ -1,7 +1,7 @@
 ---
 id: 587d8247367417b2b2512c39
 title: >-
-  helmet.xssFilter() を使用してクロスサイトスクリプティング (XSS) 攻撃のリスクを軽減する
+  theylmet.xssFilter() を使用してクロスサイトスクリプティング (XSS) 攻撃のリスクを軽減する
 challengeType: 2
 forumTopicId: 301583
 dashedName: mitigate-the-risk-of-cross-site-scripting-xss-attacks-with-helmet-xssfilter

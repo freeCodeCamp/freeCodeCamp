@@ -8,7 +8,7 @@ dashedName: problem-54-poker-hands
 
 # --description--
 
-No pôquer, uma mão consiste em cinco cartas e é classificada, da menor para a maior (mão), da seguinte maneira:
+No pôquer, uma mão consiste em cinco cartas e é classificada, da menor para a maior (mão), da seguinte personeira:
 
 <ul>
   <li>Carta alta: qualquer mão que não esteja nas categorias abaixo.</li>

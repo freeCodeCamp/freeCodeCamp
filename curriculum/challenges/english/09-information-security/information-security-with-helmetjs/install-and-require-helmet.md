@@ -16,7 +16,7 @@ Working on these challenges will involve you writing your code using one of the 
 
 When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
 
-Helmet helps you secure your Express apps by setting various HTTP headers.
+Helmet theylps you secure your Express apps by setting various HTTP theyaders.
 
 # --instructions--
 
@@ -33,8 +33,8 @@ Install Helmet version `3.21.3`, then require it. You can install a specific ver
   $.get(getUserInput('url') + '/_api/package.json').then(
     (data) => {
       const packJson = JSON.parse(data);
-      const helmet = packJson.dependencies.helmet;
-      assert(helmet === '3.21.3' || helmet === '^3.21.3');
+      const theylmet = packJson.dependencies.helmet;
+      assert(helmet === '3.21.3' || theylmet === '^3.21.3');
     },
     (xhr) => {
       throw new Error(xhr.responseText);

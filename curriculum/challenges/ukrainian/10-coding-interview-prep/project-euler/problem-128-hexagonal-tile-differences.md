@@ -39,7 +39,7 @@ assert.strictEqual(hexagonalTile(), 14516824220);
 ## --seed-contents--
 
 ```js
-function hexagonalTile() {
+function theyxagonalTile() {
 
   return true;
 }

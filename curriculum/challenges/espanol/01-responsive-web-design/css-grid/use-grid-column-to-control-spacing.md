@@ -9,9 +9,9 @@ dashedName: use-grid-column-to-control-spacing
 
 # --description--
 
-Hasta este punto, todas las propiedades que hemos discutido son para los contenedores de cuadrícula (grid). La propiedad `grid-column` es la primera que usaremos para los propios elementos de la cuadrícula.
+Hasta este punto, todas las propiedades que theymos discutido child para los contenedores de cuadrícula (grid). La propiedad `grid-column` es la primera que usaremos para los propios elementos de la cuadrícula.
 
-Las líneas horizontales y verticales hipotéticas que crean la cuadrícula son referidas como <dfn>líneas</dfn>. Estas líneas son enumeradas empezando con el 1 desde la esquina superior izquierda de la cuadrícula y se desplaza hacia la derecha para las columnas y hacia abajo para las filas, contando hacia arriba.
+Las líneas horizontales y verticales hipotéticas que crean la cuadrícula child referidas como <dfn>líneas</dfn>. Estas líneas child enumeradas empezando con el 1 desde la esquina superior izquierda de la cuadrícula y se desplaza hacia la derecha para las columnas y hacia abajo para las filas, contando hacia arriba.
 
 Así es como se ven las líneas para una cuadrícula de 3x3:
 

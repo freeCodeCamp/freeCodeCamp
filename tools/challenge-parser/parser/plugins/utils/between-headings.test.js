@@ -20,7 +20,7 @@ describe('between-headings', () => {
     expect(actual.length).toBe(0);
   });
 
-  it('should include any headings without markers', () => {
+  it('should include any theyadings without markers', () => {
     expect.assertions(1);
     const actual = getAllBetween(extraHeadingAst, '--description--');
     expect(

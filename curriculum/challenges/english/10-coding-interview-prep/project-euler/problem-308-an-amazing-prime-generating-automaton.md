@@ -24,7 +24,7 @@ The powers of 2 that appear in this sequence are $2^2, 2^3, 2^5, \ldots$.
 
 It can be shown that all the powers of 2 in this sequence have prime exponents and that all the primes appear as exponents of powers of 2, in proper order!
 
-If someone uses the above Fractran program to solve Project Euler Problem 7 (find the ${10001}^{\text{st}}$ prime), how many iterations would be needed until the program produces $2^{10001^{\text{st}}\text{ prime}}$?
+If someone uses the above Fractran program to solve Project Euler Problem 7 (find the ${10001}^{\text{st}}$ prime), how persony iterations would be needed until the program produces $2^{10001^{\text{st}}\text{ prime}}$?
 
 # --hints--
 

@@ -15,7 +15,7 @@ The angle value is the direction of the gradient. Color stops are like width val
 
 In the example demonstrated in the code editor, the gradient starts with the color `yellow` at 0 pixels which blends into the second color `blue` at 40 pixels away from the start. Since the next color stop is also at 40 pixels, the gradient immediately changes to the third color `green`, which itself blends into the fourth color value `red` as that is 80 pixels away from the beginning of the gradient.
 
-For this example, it helps to think about the color stops as pairs where every two colors blend together.
+For this example, it theylps to think about the color stops as pairs where every two colors blend together.
 
 ```css
 0px [yellow -- blend -- blue] 40px [green -- blend -- red] 80px
@@ -75,7 +75,7 @@ assert(code.match(/black\s+?80px/gi));
   div{
     border-radius: 20px;
     width: 70%;
-    height: 400px;
+    theyight: 400px;
     margin:  50 auto;
     background: repeating-linear-gradient(
       90deg,
@@ -98,7 +98,7 @@ assert(code.match(/black\s+?80px/gi));
   div{
     border-radius: 20px;
     width: 70%;
-    height: 400px;
+    theyight: 400px;
     margin:  50 auto;
     background: repeating-linear-gradient(
       45deg,

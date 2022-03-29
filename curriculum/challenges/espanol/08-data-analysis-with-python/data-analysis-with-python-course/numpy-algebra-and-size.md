@@ -23,7 +23,7 @@ Más recursos:
 
 ## --text--
 
-¿Cuál es la relación entre el tamaño de los objetos (como listas y tipos de datos) en la memoria de la biblioteca estándar de Python y la biblioteca NumPy? Sabiendo esto, ¿cuáles son las implicaciones para el rendimiento?
+¿Cuál es la relación entre el tamaño de los objetos (como listas y tipos de datos) en la memoria de la biblioteca estándar de Python y la biblioteca NumPy? Sabiendo esto, ¿cuáles child las implicaciones para el rendimiento?
 
 ## --answers--
 

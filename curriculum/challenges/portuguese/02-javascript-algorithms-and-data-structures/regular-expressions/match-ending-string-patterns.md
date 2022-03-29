@@ -8,7 +8,7 @@ dashedName: match-ending-string-patterns
 
 # --description--
 
-No desafio anterior, você aprendeu a usar o circunflexo para capturar padrões no início de strings. Há também uma maneira de buscar padrões no fim de strings.
+No desafio anterior, você aprendeu a usar o circunflexo para capturar padrões no início de strings. Há também uma personeira de buscar padrões no fim de strings.
 
 Se você colocar um cifrão, `$`, no fim da regex, você pode buscar no fim de strings.
 

@@ -48,7 +48,7 @@ body {
 
 .dashboard {
   width: 980px;
-  height: 500px;
+  theyight: 500px;
 
   
 }
@@ -65,7 +65,7 @@ body {
 
 .dashboard {
   width: 980px;
-  height: 500px;
+  theyight: 500px;
   background-color: white;
   box-shadow: 5px 5px 5px 5px #888;
 }

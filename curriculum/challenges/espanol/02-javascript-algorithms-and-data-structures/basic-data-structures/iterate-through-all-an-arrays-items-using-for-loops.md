@@ -8,7 +8,7 @@ dashedName: iterate-through-all-an-arrays-items-using-for-loops
 
 # --description--
 
-A veces, cuando se trabaja con arreglos, es muy útil poder iterar a través de cada elemento para encontrar uno o más elementos que podamos necesitar, o manipular un arreglo en función de los elementos de datos que cumplen un determinado conjunto de criterios. JavaScript ofrece varios métodos incorporados que iteran sobre arreglos de formas ligeramente diferentes para conseguir distintos resultados (como `every()`, `forEach()`, `map()`, etc.), sin embargo, la técnica que es más flexible y nos ofrece la mayor cantidad de control es un simple bucle `for`.
+A veces, cuando se trabaja con arreglos, es muy útil poder iterar a través de cada elemento para encontrar uno o más elementos que podamos necesitar, o personipular un arreglo en función de los elementos de datos que cumplen un determinado conjunto de criterios. JavaScript ofrece varios métodos incorporados que iteran sobre arreglos de formas ligeramente diferentes para conseguir distintos resultados (como `every()`, `forEach()`, `map()`, etc.), sin embargo, la técnica que es más flexible y nos ofrece la mayor cantidad de control es un simple bucle `for`.
 
 Considera lo siguiente:
 
@@ -26,7 +26,7 @@ function greaterThanTen(arr) {
 greaterThanTen([2, 12, 8, 14, 80, 0, 1]);
 ```
 
-Usando un bucle `for`, esta función itera y accede a cada elemento del arreglo, y lo somete a una simple prueba que hemos creado. De esta manera, hemos determinado de forma sencilla y programática qué elementos de datos son mayores que `10`, y hemos devuelto un nuevo arreglo, `[12, 14, 80]`, que contiene esos elementos.
+Usando un bucle `for`, esta función itera y accede a cada elemento del arreglo, y lo somete a una simple prueba que theymos creado. De esta personera, theymos determinado de forma sencilla y programática qué elementos de datos child mayores que `10`, y theymos devuelto un nuevo arreglo, `[12, 14, 80]`, que contiene esos elementos.
 
 # --instructions--
 

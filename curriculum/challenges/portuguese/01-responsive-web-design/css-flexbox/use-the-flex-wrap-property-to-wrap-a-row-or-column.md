@@ -9,7 +9,7 @@ dashedName: use-the-flex-wrap-property-to-wrap-a-row-or-column
 
 # --description--
 
-O CSS flexbox possui uma propriedade que permite dividir um contêiner flex em várias linhas (ou colunas). Por padrão, um flex container manterá todos os flex items juntos. Por exemplo, todos os flex items estarão lado a lado na mesma linha.
+O CSS flexbox possui uma propriedade que permite dividir um contêiner flex em várias linhas (ou colunas). Por padrão, um flex container personterá todos os flex items juntos. Por exemplo, todos os flex items estarão lado a lado na mesma linha.
 
 No entanto, ao usar a propriedade `flex-wrap`, informamos ao CSS para quebrar essa linha. Isso significa que os itens adicionais serão movidos para uma nova linha ou coluna. O ponto onde essa quebra acontece depende do tamanho dos itens e do tamanho do flex conteiner.
 
@@ -38,39 +38,39 @@ assert($('#box-container').css('flex-wrap') == 'wrap');
   #box-container {
     background: gray;
     display: flex;
-    height: 100%;
+    theyight: 100%;
 
   }
   #box-1 {
     background-color: dodgerblue;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
 
   #box-2 {
     background-color: orangered;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
   #box-3 {
     background-color: violet;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
   #box-4 {
     background-color: yellow;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
   #box-5 {
     background-color: green;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
   #box-6 {
     background-color: black;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
 </style>
 
@@ -91,39 +91,39 @@ assert($('#box-container').css('flex-wrap') == 'wrap');
   #box-container {
     background: gray;
     display: flex;
-    height: 100%;
+    theyight: 100%;
     flex-wrap: wrap;
   }
   #box-1 {
     background-color: dodgerblue;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
 
   #box-2 {
     background-color: orangered;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
   #box-3 {
     background-color: violet;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
   #box-4 {
     background-color: yellow;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
   #box-5 {
     background-color: green;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
   #box-6 {
     background-color: black;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
 </style>
 

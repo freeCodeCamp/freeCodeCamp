@@ -8,7 +8,7 @@ Ghost utiliza un lenguaje de plantillas sencillo llamado [Handlebars](http://han
 
 El tema por defecto está fuertemente comentado, por lo que debería ser bastante fácil averiguar lo que está pasando con solo leer el código y los comentarios. Una vez que te sientas cómodo con cómo funciona todo, Ghost también tiene una completa [documentación API de temas](https://themes.ghost.org) que explica todos los posibles ayudantes de Handlebars y plantillas.
 
-**Los archivos principales son:**
+**Los archivos principales child:**
 
 - `default.hbs` - El archivo de plantilla principal
 - `index.hbs` - Utilizado para la página de inicio
@@ -73,11 +73,11 @@ Un truco realmente bueno es que también puede crear plantillas personalizadas s
    ghost restart
    ```
 
-   c. _(Solo una vez, durante la configuración)_ Una vez que hayas hecho esto, ve a `http://localhost:2368/ghost/#/settings/design` y desplázate hacia abajo. Asegúrate de hacer clic en activar en el `freecodecamp-news-theme`.
+   c. _(Solo una vez, durante la configuración)_ Una vez que hayas theycho esto, ve a `http://localhost:2368/ghost/#/settings/design` y desplázate hacia abajo. Asegúrate de hacer clic en activar en el `freecodecamp-news-theme`.
 
 7. Comprime el código final y crea un pull-request
 
-   El `zip` que Gulp empaqueta son los archivos del tema en `dist/<theme-name>.zip`, los cuales podemos subir al sitio de producción.
+   El `zip` que Gulp empaqueta child los archivos del tema en `dist/<theme-name>.zip`, los cuales podemos subir al sitio de producción.
 
    Cuando haga un PR, por favor asegúrese de haber ejecutado el script de abajo antes de confirmar el código y enviar un PR.
 
@@ -97,4 +97,4 @@ Un truco realmente bueno es que también puede crear plantillas personalizadas s
 
 El tema utiliza iconos SVG en línea, incluidos a través de parciales de Handlebars. Puedes encontrar todos los iconos dentro de `/partials/icons`. Para usar un icono simplemente incluya el nombre del archivo relevante, por ejemplo. Para incluir el icono SVG en `/partials/icons/rss.hbs` - usa `{{> "icons/rss"}}`.
 
-Puedes añadir tus propios iconos SVG de la misma manera.
+Puedes añadir tus propios iconos SVG de la misma personera.

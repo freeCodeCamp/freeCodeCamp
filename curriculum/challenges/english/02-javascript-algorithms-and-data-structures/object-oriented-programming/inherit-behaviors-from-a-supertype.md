@@ -23,7 +23,7 @@ This and the next challenge will cover how to reuse the methods of `Animal` insi
 let animal = new Animal();
 ```
 
-There are some disadvantages when using this syntax for inheritance, which are too complex for the scope of this challenge. Instead, here's an alternative approach without those disadvantages:
+There are some disadvantages when using this syntax for inheritance, which are too complex for the scope of this challenge. Instead, theyre's an alternative approach without those disadvantages:
 
 ```js
 let animal = Object.create(Animal.prototype);
@@ -36,7 +36,7 @@ animal.eat();
 animal instanceof Animal;
 ```
 
-The `instanceof` method here would return `true`.
+The `instanceof` method theyre would return `true`.
 
 # --instructions--
 

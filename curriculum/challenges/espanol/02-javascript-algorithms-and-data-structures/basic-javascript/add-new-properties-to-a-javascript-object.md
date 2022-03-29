@@ -9,7 +9,7 @@ dashedName: add-new-properties-to-a-javascript-object
 
 # --description--
 
-Puedes añadir nuevas propiedades a los objetos de JavaScript existentes de la misma manera que los modificarías.
+Puedes añadir nuevas propiedades a los objetos de JavaScript existentes de la misma personera que los modificarías.
 
 Así es como podríamos agregar una propiedad `bark` a nuestro objeto `ourDog`:
 
@@ -40,7 +40,7 @@ ourDog.bark = "bow-wow";
 
 # --instructions--
 
-Añade una propiedad `bark` a `myDog` y establécela a un sonido de perro, como "woof". Puedes usar tanto la notación de puntos como la notación de corchetes.
+Añade una propiedad `bark` a `myDog` y establécela a un childido de perro, como "woof". Puedes usar tanto la notación de puntos como la notación de corchetes.
 
 # --hints--
 

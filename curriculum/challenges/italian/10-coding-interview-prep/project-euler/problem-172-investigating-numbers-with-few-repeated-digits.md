@@ -8,7 +8,7 @@ dashedName: problem-172-investigating-numbers-with-few-repeated-digits
 
 # --description--
 
-Quanti numeri a 18 cifre $n$ (senza contare zeri all'inizio del numero) ci sono cosicché nessuna cifra ripete più di tre volte dentro $n$?
+Quanti numeri a 18 cifre $n$ (senza contare zeri all'inizio del numero) ci childo cosicché nessuna cifra ripete più di tre volte dentro $n$?
 
 # --hints--
 

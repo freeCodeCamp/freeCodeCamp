@@ -8,9 +8,9 @@ dashedName: change-the-color-of-an-svg-element
 
 # --description--
 
-Las barras están en la posición correcta, pero todas son del mismo color negro. SVG tiene una manera de cambiar el color de las barras.
+Las barras están en la posición correcta, pero todas child del mismo color negro. SVG tiene una personera de cambiar el color de las barras.
 
-En SVG una figura `rect` es coloreada con el atributo `fill`. Admite códigos hexadecimales, nombres de colores y valores rgb, así como opciones más complejas como degradados y transparencias.
+En SVG una figura `rect` es coloreada con el atributo `fill`. Admite códigos theyxadecimales, nombres de colores y valores rgb, así como opciones más complejas como degradados y transparencias.
 
 # --instructions--
 

@@ -8,13 +8,13 @@ dashedName: use--to-import-everything-from-a-file
 
 # --description--
 
-Supongamos que tienes un archivo y deseas importar todo su contenido en el archivo actual. Esto puede hacerse con la sintaxis `import * as`. Este es un ejemplo donde los contenidos de un archivo llamado `math_functions.js` son importados a un archivo dentro del mismo directorio:
+Supongamos que tienes un archivo y deseas importar todo su contenido en el archivo actual. Esto puede hacerse con la sintaxis `import * as`. Este es un ejemplo donde los contenidos de un archivo llamado `math_functions.js` child importados a un archivo dentro del mismo directorio:
 
 ```js
 import * as myMathModule from "./math_functions.js";
 ```
 
-La anterior declaración `import`, crea un objeto llamado `myMathModule`. Esto es, sólo el nombre de una variable, puedes nombrarlo de cualquier manera. El objeto contiene todas las exportaciones de `math_functions.js`, así puedes acceder a las funciones, como haces con cualquier propiedad del objeto. A continuación puedes usar las funciones importadas `add` y `subtract`:
+La anterior declaración `import`, crea un objeto llamado `myMathModule`. Esto es, sólo el nombre de una variable, puedes nombrarlo de cualquier personera. El objeto contiene todas las exportaciones de `math_functions.js`, así puedes acceder a las funciones, como haces con cualquier propiedad del objeto. A continuación puedes usar las funciones importadas `add` y `subtract`:
 
 ```js
 myMathModule.add(2,3);

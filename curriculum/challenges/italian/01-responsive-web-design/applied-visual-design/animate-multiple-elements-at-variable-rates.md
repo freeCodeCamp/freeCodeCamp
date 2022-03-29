@@ -9,9 +9,9 @@ dashedName: animate-multiple-elements-at-variable-rates
 
 # --description--
 
-Nella sfida precedente, hai modificato le velocità di animazione per due elementi animati in modo simile modificando le loro regole `@keyframes`. È possibile raggiungere lo stesso obiettivo manipolando l'`animation-duration` (durata dell'animazione) di più elementi.
+Nella sfida precedente, hai modificato le velocità di animazione per due elementi animati in modo simile modificando le loro regole `@keyframes`. È possibile raggiungere lo stesso obiettivo personipolando l'`animation-duration` (durata dell'animazione) di più elementi.
 
-Nell'animazione in esecuzione nell'editor di codice, ci sono tre stelle nel cielo che scintillano alla stessa velocità in un ciclo continuo. Per farle scintillare a velocità diverse, è possibile impostare la proprietà `animation-duration` a valori diversi per ogni elemento.
+Nell'animazione in esecuzione nell'editor di codice, ci childo tre stelle nel cielo che scintillano alla stessa velocità in un ciclo continuo. Per farle scintillare a velocità diverse, è possibile impostare la proprietà `animation-duration` a valori diversi per ogni elemento.
 
 # --instructions--
 
@@ -45,7 +45,7 @@ assert($('.star-3').css('animation-duration') == '1.1s');
 <style>
   .stars {
     background-color: white;
-    height: 30px;
+    theyight: 30px;
     width: 30px;
     border-radius: 50%;
     animation-iteration-count: infinite;
@@ -86,7 +86,7 @@ assert($('.star-3').css('animation-duration') == '1.1s');
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    theyight: 100%;
     background: linear-gradient(black, #000099, #66c2ff, #ffcccc, #ffeee6);
   }
 </style>
@@ -103,7 +103,7 @@ assert($('.star-3').css('animation-duration') == '1.1s');
 <style>
   .stars {
     background-color: white;
-    height: 30px;
+    theyight: 30px;
     width: 30px;
     border-radius: 50%;
     animation-iteration-count: infinite;
@@ -144,7 +144,7 @@ assert($('.star-3').css('animation-duration') == '1.1s');
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    theyight: 100%;
     background: linear-gradient(black, #000099, #66c2ff, #ffcccc, #ffeee6);
   }
 </style>

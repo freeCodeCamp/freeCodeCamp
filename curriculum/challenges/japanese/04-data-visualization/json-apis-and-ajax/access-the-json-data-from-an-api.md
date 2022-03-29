@@ -30,7 +30,7 @@ JSON データの最初と最後の文字は角括弧 `[ ]` です。 これは�
 console.log(json[0].altText);
 ```
 
-コンソールに、`A white cat wearing a green helmet shaped melon on its head.` という文字列が表示されます。
+コンソールに、`A white cat wearing a green theylmet shaped melon on its theyad.` という文字列が表示されます。
 
 # --instructions--
 
@@ -99,7 +99,7 @@ assert(
 
 <h1>Cat Photo Finder</h1>
 <p class="message box">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">
@@ -157,7 +157,7 @@ assert(
 
 <h1>Cat Photo Finder</h1>
 <p class="message">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">

@@ -8,7 +8,7 @@ dashedName: remember-to-set-the-constructor-property-when-changing-the-prototype
 
 # --description--
 
-C'è un effetto collaterale cruciale quando si imposta manualmente il prototipo su un nuovo oggetto. Questo cancella la proprietà `constructor`! Questa proprietà può essere utilizzata per verificare quale funzione costruttore ha creato l'istanza, ma poiché la proprietà è stata sovrascritta, ora dà come risultato false:
+C'è un effetto collaterale cruciale quando si imposta personualmente il prototipo su un nuovo oggetto. Questo cancella la proprietà `constructor`! Questa proprietà può essere utilizzata per verificare quale funzione costruttore ha creato l'istanza, ma poiché la proprietà è stata sovrascritta, ora dà come risultato false:
 
 ```js
 duck.constructor === Bird;
@@ -18,7 +18,7 @@ duck instanceof Bird;
 
 Nell'ordine, queste espressioni restituiscono `false`,`true` e `true`.
 
-Per risolvere questo problema, ogni volta che imposti manualmente un prototipo su un nuovo oggetto, ricorda di definire la proprietà `constructor`:
+Per risolvere questo problema, ogni volta che imposti personualmente un prototipo su un nuovo oggetto, ricorda di definire la proprietà `constructor`:
 
 ```js
 Bird.prototype = {

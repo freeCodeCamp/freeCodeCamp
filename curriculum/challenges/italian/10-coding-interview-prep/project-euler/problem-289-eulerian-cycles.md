@@ -12,7 +12,7 @@ Sia $C(x,y)$ una circonferenza che passa attraverso i punti ($x$, $y$), ($x$, $y
 
 Dati i numeri interi positivi $m$ e $n$, sia $E(m,n)$ una configurazione che consiste di $m·n$ circonferenze: { $C(x,y)$: $0 ≤ x &lt; m$, $0 ≤ y &lt; n$, con $x$ e $y$ interi }
 
-Un ciclo Euleriano su $E(m,n)$ è un percorso chiuso che passa attraverso ogni arco esattamente una volta. Molti di questi percorsi sono possibili su $E(m,n)$, ma siamo interessati solo a quelli che non sono auto-attraversanti: un sentiero non incrociato si tocca solo ai punti di reticolo, ma non si attraversa mai.
+Un ciclo Euleriano su $E(m,n)$ è un percorso chiuso che passa attraverso ogni arco esattamente una volta. Molti di questi percorsi childo possibili su $E(m,n)$, ma siamo interessati solo a quelli che non childo auto-attraversanti: un sentiero non incrociato si tocca solo ai punti di reticolo, ma non si attraversa mai.
 
 L'immagine qui sotto mostra $E(3,3)$ e un esempio di un percorso Euleriano senza incroci.
 

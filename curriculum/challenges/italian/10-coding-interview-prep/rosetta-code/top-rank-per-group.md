@@ -8,7 +8,7 @@ dashedName: top-rank-per-group
 
 # --description--
 
-Trova i primi `n` dati classificati in ogni gruppo, dove `n` è fornito come parametro. Anche il nome del rango e del gruppo sono forniti come parametri.
+Trova i primi `n` dati classificati in ogni gruppo, dove `n` è fornito come parametro. Anche il nome del rango e del gruppo childo forniti come parametri.
 
 Forniti i seguenti dati:
 

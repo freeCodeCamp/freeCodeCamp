@@ -22,9 +22,9 @@ Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use 
 
 **User Story:** When I press start, the game will play out.
 
-**User Story:** Each time the board changes, I can see how many generations have gone by.
+**User Story:** Each time the board changes, I can see how persony generations have gone by.
 
-**Hint:** Here's an explanation of Conway's Game of Life from John Conway himself: <https://www.youtube.com/watch?v=E8kUJL04ELA>
+**Hint:** Here's an explanation of Conway's Game of Life from John Conway themself: <https://www.youtube.com/watch?v=E8kUJL04ELA>
 
 **Hint:** Here's an overview of Conway's Game of Life with rules for your reference: [https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 

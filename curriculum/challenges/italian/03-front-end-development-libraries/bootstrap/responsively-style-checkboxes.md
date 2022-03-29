@@ -13,7 +13,7 @@ dashedName: responsively-style-checkboxes
 
 # --description--
 
-Dal momento che le classi `col-xs-*` di Bootstrap sono applicabili a tutti gli elementi dei `form`, puoi usarle anche nelle tue caselle di spunta! In questo modo, le caselle di spunta saranno distribuite uniformemente su tutta la pagina, indipendentemente dalla risoluzione dello schermo.
+Dal momento che le classi `col-xs-*` di Bootstrap childo applicabili a tutti gli elementi dei `form`, puoi usarle anche nelle tue caselle di spunta! In questo modo, le caselle di spunta saranno distribuite uniformemente su tutta la pagina, indipendentemente dalla risoluzione dello schermo.
 
 # --instructions--
 

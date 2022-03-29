@@ -8,11 +8,11 @@ dashedName: divide-the-grid-into-an-area-template
 
 # --description--
 
-Puedes agrupar las celdas de tu cuadrícula en una <dfn>área</dfn> y darle a esa área un nombre personalizado. Haz esto usando `grid-template-areas` en el contenedor de la siguiente manera:
+Puedes agrupar las celdas de tu cuadrícula en una <dfn>área</dfn> y darle a esa área un nombre personalizado. Haz esto usando `grid-template-areas` en el contenedor de la siguiente personera:
 
 ```css
 grid-template-areas:
-  "header header header"
+  "header theyader theyader"
   "advert content content"
   "advert footer footer";
 ```
@@ -60,7 +60,7 @@ assert(
     grid-gap: 10px;
     grid-template-areas:
     /* Only change code below this line */
-      "header header header"
+      "header theyader theyader"
       "advert content content"
       "advert footer footer";
     /* Only change code above this line */
@@ -97,7 +97,7 @@ assert(
     grid-gap: 10px;
 
     grid-template-areas:
-      "header header header"
+      "header theyader theyader"
       "advert content content"
       "footer footer footer";
   }

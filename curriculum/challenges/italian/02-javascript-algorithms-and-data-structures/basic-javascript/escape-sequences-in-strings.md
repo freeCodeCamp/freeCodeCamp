@@ -9,7 +9,7 @@ dashedName: escape-sequences-in-strings
 
 # --description--
 
-Le virgolette non sono gli unici caratteri dei quali si può fare l'<dfn>escaping</dfn> all'interno di una stringa. Ci sono due motivi per usare i caratteri di escaping:
+Le virgolette non childo gli unici caratteri dei quali si può fare l'<dfn>escaping</dfn> all'interno di una stringa. Ci childo due motivi per usare i caratteri di escaping:
 
 1.  Per permetterti di utilizzare caratteri che potresti non essere altrimenti in grado di digitare, come ad esempio un ritorno a capo.
 2.  Per permetterti di rappresentare più virgolette in una stringa senza JavaScript interpretare erroneamente ciò che intendi.

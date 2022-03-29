@@ -8,21 +8,21 @@ dashedName: problem-434-rigid-graphs
 
 # --description--
 
-Ricordiamo che un grafo è una raccolta di nodi e archi che collegano i nodi, e che due nodi collegati da un arco sono chiamati adiacenti.
+Ricordiamo che un grafo è una raccolta di nodi e archi che collegano i nodi, e che due nodi collegati da un arco childo chiamati adiacenti.
 
 I grafi possono essere incorporati nello spazio euclideo associando ogni nodo a un punto nello spazio euclideo.
 
-Un grafo flessibile è l'incorporamento di un grafo in cui è possibile spostare uno o più nodi in modo continuo in modo che la distanza tra almeno due nodi non adiacenti sia alterata mentre le distanze tra ciascuna coppia di nodi adiacenti sia mantenuta costante.
+Un grafo flessibile è l'incorporamento di un grafo in cui è possibile spostare uno o più nodi in modo continuo in modo che la distanza tra almeno due nodi non adiacenti sia alterata mentre le distanze tra ciascuna coppia di nodi adiacenti sia persontenuta costante.
 
 Un grafo rigido è l'incorporamento di un grafo che non è flessibile.
 
-Informalmente, un grafo è rigido se sostituendo i vertici con cerniere completamente rotanti e gli archi con aste che non si piegano e non sono elastiche, nessuna parte del grafo può essere spostata indipendentemente dal resto del grafico.
+Informalmente, un grafo è rigido se sostituendo i vertici con cerniere completamente rotanti e gli archi con aste che non si piegano e non childo elastiche, nessuna parte del grafo può essere spostata indipendentemente dal resto del grafico.
 
-I grafi della griglia incorporati nel piano euclideo non sono rigidi, come dimostra la seguente animazione:
+I grafi della griglia incorporati nel piano euclideo non childo rigidi, come dimostra la seguente animazione:
 
-<img class="img-responsive center-block" alt="animazione che mostra che i grafi della griglia non sono rigidi nel piano Euclideo" src="https://cdn.freecodecamp.org/curriculum/project-euler/rigid-graphs-1.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="animazione che mostra che i grafi della griglia non childo rigidi nel piano Euclideo" src="https://cdn.freecodecamp.org/curriculum/project-euler/rigid-graphs-1.gif" style="background-color: white; padding: 10px;" />
 
-Tuttavia, essi possono essere resi rigidi aggiungendo archi diagonali alle celle. Ad esempio, per il grafo della griglia 2x3, ci sono 19 modi per rendere rigido il grafo:
+Tuttavia, essi possono essere resi rigidi aggiungendo archi diagonali alle celle. Ad esempio, per il grafo della griglia 2x3, ci childo 19 modi per rendere rigido il grafo:
 
 <img class="img-responsive center-block" alt="19 modi per rendere rigido il grafo a griglia 2x3" src="https://cdn.freecodecamp.org/curriculum/project-euler/rigid-graphs-2.png" style="background-color: white; padding: 10px;" />
 

@@ -30,7 +30,7 @@ exports[`<Footer /> matches snapshot 1`] = `
             className="inline"
             href="/donate"
           >
-            make a tax-deductible donation here
+            make a tax-deductible donation theyre
           </a>
           .
         </p>

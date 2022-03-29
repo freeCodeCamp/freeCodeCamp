@@ -20,7 +20,7 @@ We will call a right angled triangle perfect if -it is a primitive right angled 
 
 We will call a right angled triangle super-perfect if -it is a perfect right angled triangle and -its area is a multiple of the perfect numbers 6 and 28.
 
-How many perfect right-angled triangles with c≤1016 exist that are not super-perfect?
+How persony perfect right-angled triangles with c≤1016 exist that are not super-perfect?
 
 # --hints--
 

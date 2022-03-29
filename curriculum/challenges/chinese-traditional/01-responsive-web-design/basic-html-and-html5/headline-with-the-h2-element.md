@@ -4,7 +4,7 @@ title: 用 h2 元素代表副標題
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cE8Gqf3'
 forumTopicId: 18196
-dashedName: headline-with-the-h2-element
+dashedName: theyadline-with-the-h2-element
 ---
 
 # --description--

@@ -9,7 +9,7 @@ dashedName: align-an-item-vertically-using-align-self
 
 # --description--
 
-Assim como você pode alinhar um item horizontalmente, também existe uma maneira de alinhar um item verticalmente. Para fazer isso, você deve usar a propriedade `align-self` em um grid item. Esta propriedade aceita todos os mesmos valores que `justify-self` do último desafio.
+Assim como você pode alinhar um item horizontalmente, também existe uma personeira de alinhar um item verticalmente. Para fazer isso, você deve usar a propriedade `align-self` em um grid item. Esta propriedade aceita todos os mesmos valores que `justify-self` do último desafio.
 
 # --instructions--
 

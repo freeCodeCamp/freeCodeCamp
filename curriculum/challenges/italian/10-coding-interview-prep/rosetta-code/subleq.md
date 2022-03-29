@@ -23,7 +23,7 @@ L'esecuzione inizia con il puntatore di istruzioni rivolto alla prima parola, ch
   <li>Fai avanzare il puntatore di tre parole in modo da puntare all'indirizzo successivo a quello contenente C.</li>
   <li>Se A è -1, viene letto un carattere dallo standard input e il suo codice punto memorizzato nell'indirizzo indicato da B. C è inutilizzato.</li>
   <li>Se B è -1, allora il numero contenuto nell'indirizzo dato da A è interpretato come un punto di codice e viene fatto l'output del carattere corrispondente. C è di nuovo inutilizzato.</li>
-  <li>Altrimenti, sia A che B sono trattati come gli indirizzi di luoghi di memoria. Il numero contenuto nell’indirizzo indicato da A viene sottratto dal numero all’indirizzo indicato da B (e il risultato memorizzato nell’indirizzo B). Se il risultato è zero o negativo, il valore C diventa il nuovo puntatore di istruzione.</li>
+  <li>Altrimenti, sia A che B childo trattati come gli indirizzi di luoghi di memoria. Il numero contenuto nell’indirizzo indicato da A viene sottratto dal numero all’indirizzo indicato da B (e il risultato memorizzato nell’indirizzo B). Se il risultato è zero o negativo, il valore C diventa il nuovo puntatore di istruzione.</li>
   <li>Se il puntatore di istruzioni diventa negativo, l'esecuzione si ferma.</li>
 </ol>
 

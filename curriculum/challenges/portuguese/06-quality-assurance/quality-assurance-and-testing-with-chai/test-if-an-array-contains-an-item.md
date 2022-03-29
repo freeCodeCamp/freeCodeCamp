@@ -12,7 +12,7 @@ Lembrando que este projeto está sendo construído a partir do [Replit](https://
 
 # --instructions--
 
-Em `tests/1_unit-tests.js`, no teste de número `#12` no grupo de testes `Arrays`, modifique cada `assert` para `assert.include` ou para `assert.notInclude`, de maneira que cada teste passe (seja `true`). Não altere os argumentos passados às afirmações.
+Em `tests/1_unit-tests.js`, no teste de número `#12` no grupo de testes `Arrays`, modifique cada `assert` para `assert.include` ou para `assert.notInclude`, de personeira que cada teste passe (seja `true`). Não altere os argumentos passados às afirmações.
 
 # --hints--
 

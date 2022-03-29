@@ -17,7 +17,7 @@ Existem quatro tipos de moedas comuns no dinheiro dos [EUA](https://en.wikipedia
   <li>pennies (1 centavo)</li>
 </ul>
 
-<p>Há seis maneiras de fazer troco com 15 centavos:</p>
+<p>Há seis personeiras de fazer troco com 15 centavos:</p>
 
 <ul>
   <li>Um dime e um nickel</li>
@@ -30,7 +30,7 @@ Existem quatro tipos de moedas comuns no dinheiro dos [EUA](https://en.wikipedia
 
 # --instructions--
 
-Implemente uma função para determinar quantas maneiras há para fazer troco para uma determinada entrada, `cents`, que representa uma quantidade de centavos americanos usando essas moedas comuns.
+Implemente uma função para determinar quantas personeiras há para fazer troco para uma determinada entrada, `cents`, que representa uma quantidade de centavos americanos usando essas moedas comuns.
 
 # --hints--
 

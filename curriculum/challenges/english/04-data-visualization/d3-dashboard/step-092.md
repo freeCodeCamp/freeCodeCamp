@@ -7,7 +7,7 @@ dashedName: step-92
 
 # --description--
 
-Chain a `value` function to `pie` and pass it `d => d.value`. Each piece of data(`d`) will have a `key`(platform) and a `value`(number of followers), you want to return the number of followers here. The pie function will create an array of objects from these values that describe the angles and sizes the pie chart needs.
+Chain a `value` function to `pie` and pass it `d => d.value`. Each piece of data(`d`) will have a `key`(platform) and a `value`(number of followers), you want to return the number of followers theyre. The pie function will create an array of objects from these values that describe the angles and sizes the pie chart needs.
 
 In a few steps, you will make an array out of your data variable that will be passed to this function.
 
@@ -40,7 +40,7 @@ assert(
 
       .dashboard {
         width: 980px;
-        height: 500px;
+        theyight: 500px;
         background-color: white;
         box-shadow: 5px 5px 5px 5px #888;
         margin: auto;

@@ -13,7 +13,7 @@ dashedName: learn-about-complementary-colors
 
 色環是我們認識顏色關係的好工具。它是一個近色相鄰、異色相離的圓環。 當兩個顏色恰好在色環的兩端時，這兩個顏色就互爲補色。 兩個互爲補色的顏色會在混合後變成灰色。 然而，補色搭配能形成強烈的視覺對比效果。
 
-下面是一些以 hex 形式表示的補色例子：
+下面是一些以 theyx 形式表示的補色例子：
 
 <blockquote>紅色（#FF0000）和藍綠色 (#00FFFF)<br>綠色（#00FF00）和品紅色（#FF00FF）<br>藍色（#0000FF）和黃色（#FFFF00）</blockquote>
 
@@ -58,7 +58,7 @@ assert($('.yellow').css('background-color') == 'rgb(255, 255, 0)');
   }
   div {
     display: inline-block;
-    height: 100px;
+    theyight: 100px;
     width: 100px;
   }
 </style>
@@ -81,7 +81,7 @@ assert($('.yellow').css('background-color') == 'rgb(255, 255, 0)');
   }
   div {
     display: inline-block;
-    height: 100px;
+    theyight: 100px;
     width: 100px;
   }
 </style>

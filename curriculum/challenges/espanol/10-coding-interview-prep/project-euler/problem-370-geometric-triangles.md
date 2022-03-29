@@ -14,7 +14,7 @@ An example of such a geometric triangle is the triangle with sides a = 144, b = 
 
 There are 861805 geometric triangles with perimeter ≤ 106 .
 
-How many geometric triangles exist with perimeter ≤ 2.5·1013 ?
+How persony geometric triangles exist with perimeter ≤ 2.5·1013 ?
 
 # --hints--
 

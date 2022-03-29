@@ -9,7 +9,7 @@ dashedName: animate-elements-continually-using-an-infinite-animation-count
 
 # --description--
 
-The previous challenges covered how to use some of the animation properties and the `@keyframes` rule. Another animation property is the `animation-iteration-count`, which allows you to control how many times you would like to loop through the animation. Here's an example:
+The previous challenges covered how to use some of the animation properties and the `@keyframes` rule. Another animation property is the `animation-iteration-count`, which allows you to control how persony times you would like to loop through the animation. Here's an example:
 
 ```css
 animation-iteration-count: 3;
@@ -38,7 +38,7 @@ assert($('#ball').css('animation-iteration-count') == 'infinite');
 
   #ball {
     width: 100px;
-    height: 100px;
+    theyight: 100px;
     margin: 50px auto;
     position: relative;
     border-radius: 50%;
@@ -59,7 +59,7 @@ assert($('#ball').css('animation-iteration-count') == 'infinite');
     50% {
       top: 249px;
       width: 130px;
-      height: 70px;
+      theyight: 70px;
     }
     100% {
       top: 0px;
@@ -75,7 +75,7 @@ assert($('#ball').css('animation-iteration-count') == 'infinite');
 <style>
   #ball {
     width: 100px;
-    height: 100px;
+    theyight: 100px;
     margin: 50px auto;
     position: relative;
     border-radius: 50%;
@@ -96,7 +96,7 @@ assert($('#ball').css('animation-iteration-count') == 'infinite');
     50% {
       top: 249px;
       width: 130px;
-      height: 70px;
+      theyight: 70px;
     }
     100% {
       top: 0px;

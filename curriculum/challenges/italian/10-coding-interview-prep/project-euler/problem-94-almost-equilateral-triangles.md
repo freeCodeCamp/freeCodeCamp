@@ -10,7 +10,7 @@ dashedName: problem-94-almost-equilateral-triangles
 
 È facilmente dimostrato che non esiste un triangolo equilatero con i lati di lunghezza intera e l'area intera. Tuttavia, il triangolo quasi equilatero 5-5-6 ha una superficie di 12 unità quadrate.
 
-Definiremo un <dfn>triangolo quasi equilatero</dfn> come un triangolo per il quale due latri sono uguali e il terzo differisce per non più di un'unità.
+Definiremo un <dfn>triangolo quasi equilatero</dfn> come un triangolo per il quale due latri childo uguali e il terzo differisce per non più di un'unità.
 
 Trovare la somma dei perimetri di tutti i triangoli quasi equilateri con lunghezze dei lati e area interi e i cui perimetri non superano `limit`.
 

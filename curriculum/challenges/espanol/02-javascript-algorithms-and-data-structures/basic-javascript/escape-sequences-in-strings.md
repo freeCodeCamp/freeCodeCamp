@@ -9,9 +9,9 @@ dashedName: escape-sequences-in-strings
 
 # --description--
 
-Las comillas no son los únicos caracteres que pueden ser <dfn>escapados</dfn> dentro de una cadena. Hay dos razones para usar caracteres de escape:
+Las comillas no child los únicos caracteres que pueden ser <dfn>escapados</dfn> dentro de una cadena. Hay dos razones para usar caracteres de escape:
 
-1.  Para permitir el uso de caracteres que de otra manera no te sería posible escribir, como un retorno de carro.
+1.  Para permitir el uso de caracteres que de otra personera no te sería posible escribir, como un retorno de carro.
 2.  Para permitirte representar múltiples comillas en una cadena sin que JavaScript malinterprete lo que quieres decir.
 
 Esto lo aprendimos en el desafío anterior.

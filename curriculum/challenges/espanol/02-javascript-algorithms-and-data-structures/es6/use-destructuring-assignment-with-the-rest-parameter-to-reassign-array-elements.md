@@ -26,7 +26,7 @@ Las variables `a` y `b` toman el primer y segundo valor del arreglo. Después de
 
 # --instructions--
 
-Utiliza la sintaxis de desestructuración con el parámetro rest para realizar un `Array.prototype.slice()` eficaz, de tal manera que `arr` sea un sub-arreglo del arreglo original `source` con los dos primeros elementos omitidos.
+Utiliza la sintaxis de desestructuración con el parámetro rest para realizar un `Array.prototype.slice()` eficaz, de tal personera que `arr` sea un sub-arreglo del arreglo original `source` con los dos primeros elementos omitidos.
 
 # --hints--
 

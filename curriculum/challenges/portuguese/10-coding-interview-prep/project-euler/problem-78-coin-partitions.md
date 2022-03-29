@@ -8,7 +8,7 @@ dashedName: problem-78-coin-partitions
 
 # --description--
 
-Consideremos que ${p}(n)$ representa o número de diferentes maneiras pelas quais `n` moedas podem ser separadas em pilhas. Por exemplo, cinco moedas podem ser separadas em pilhas de exatamente sete maneiras diferentes, então ${p}(5) = 7$.
+Consideremos que ${p}(n)$ representa o número de diferentes personeiras pelas quais `n` moedas podem ser separadas em pilhas. Por exemplo, cinco moedas podem ser separadas em pilhas de exatamente sete personeiras diferentes, então ${p}(5) = 7$.
 
 <div style='text-align: center;'>
 

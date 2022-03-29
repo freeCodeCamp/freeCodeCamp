@@ -11,7 +11,7 @@ dashedName: wrap-content-in-the-article-element
 
 `article` es otro de los nuevos elementos de HTML5 que añaden significado semántico a su marcado. `article` es un elemento seccionador y se utiliza para envolver contenido independiente y autónomo. La etiqueta funciona bien con entradas de blog, publicaciones en el foro o artículos de noticias.
 
-Determinar si el contenido puede ser independiente suele ser una cuestión de criterio, pero puedes hacer un par de pruebas simples. Pregúntate, si elimino todo el contexto circundante, ¿ese contenido aún tendría sentido? Del mismo modo, para el texto, ¿se mantendría el contenido si estuviera en una fuente RSS?
+Determinar si el contenido puede ser independiente suele ser una cuestión de criterio, pero puedes hacer un par de pruebas simples. Pregúntate, si elimino todo el contexto circundante, ¿ese contenido aún tendría sentido? Del mismo modo, para el texto, ¿se persontendría el contenido si estuviera en una fuente RSS?
 
 Recuerda que las personas que usan tecnologías de asistencia dependen de un lenguaje de marcado organizado y semánticamente significativo para comprender mejor su trabajo.
 
@@ -60,7 +60,7 @@ assert($('div').length == 0);
 
   <article>
     <h2>Is Chuck Norris a Cat Person?</h2>
-    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>
+    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is they a cat person?...</p>
   </article>
 </main>
 ```
@@ -86,7 +86,7 @@ assert($('div').length == 0);
 
   <article>
     <h2>Is Chuck Norris a Cat Person?</h2>
-    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>
+    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is they a cat person?...</p>
   </article>
 </main>
 ```

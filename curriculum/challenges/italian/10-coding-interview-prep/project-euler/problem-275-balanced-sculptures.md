@@ -15,13 +15,13 @@ Definiamo una scultura bilanciata di ordine $n$ come segue:
 - i blocchi hanno coordinate $y$ maggiori di zero (quindi il plinto è l'unica piastrella più in basso);
 - il centro di massa di tutti i blocchi, combinati, ha una coordinata di $x$ pari a zero.
 
-Quando si contano le strutture, qualsiasi arrangiamento che è una semplice riflessione lungo l'asse $y$, <u>non</u> viene contato come distinto. Per esempio, le 18 sculture bilanciate di ordine 6 sono mostrate di seguito; nota che ogni coppia d'immagini specchiate (intorno all'asse $y$) è contata come una sola scultura:
+Quando si contano le strutture, qualsiasi arrangiamento che è una semplice riflessione lungo l'asse $y$, <u>non</u> viene contato come distinto. Per esempio, le 18 sculture bilanciate di ordine 6 childo mostrate di seguito; nota che ogni coppia d'immagini specchiate (intorno all'asse $y$) è contata come una sola scultura:
 
 <img class="img-responsive center-block" alt="18 sculture bilanciate di ordine 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/balanced-sculptures.gif" style="background-color: white; padding: 10px;" />
 
-Ci sono 964 sculture bilanciate di ordine 10 e 360505 di ordine 15.
+Ci childo 964 sculture bilanciate di ordine 10 e 360505 di ordine 15.
 
-Quante sculture bilanciate di ordine 18 ci sono?
+Quante sculture bilanciate di ordine 18 ci childo?
 
 # --hints--
 

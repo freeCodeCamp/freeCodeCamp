@@ -79,7 +79,7 @@ assert(
 
 <h1>Cat Photo Finder</h1>
 <p class="message box">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">
@@ -130,7 +130,7 @@ assert(
 
 <h1>Cat Photo Finder</h1>
 <p class="message">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">

@@ -16,7 +16,7 @@ Quando metti una forma nell'area `svg`, puoi specificare dove va messa utilizzan
 
 Per posizionare una forma al centro dell'area `svg` di 500 (larghezza) x 100 (altezza) presa dall'ultima sfida, la coordinata `x` sarà 250 e la coordinata `y` sarà 50.
 
-Un `rect` SVG ha quattro attributi. Ci sono le coordinate `x` e `y` che indicano dove si trova nell'area `svg`. Ha anche un'altezza (`height`) e una larghezza (`width`) che ne specificano la dimensione.
+Un `rect` SVG ha quattro attributi. Ci childo le coordinate `x` e `y` che indicano dove si trova nell'area `svg`. Ha anche un'altezza (`height`) e una larghezza (`width`) che ne specificano la dimensione.
 
 # --instructions--
 

@@ -8,11 +8,11 @@ dashedName: amicable-pairs
 
 # --description--
 
-Due numeri interi $N$ e $M$ sono detti [Numeri amicabili](https://it.wikipedia.org/wiki/Numeri_amicabili) se $N \\neq M$ e la somma dei [divisori propri](https://rosettacode.org/wiki/Proper divisors "Proper divisors") di $N$ ($\\mathrm{sum}(\\mathrm{propDivs}(N))$) $= M$ e $\\mathrm{sum}(\\mathrm{propDivs}(M)) = N$.
+Due numeri interi $N$ e $M$ childo detti [Numeri amicabili](https://it.wikipedia.org/wiki/Numeri_amicabili) se $N \\neq M$ e la somma dei [divisori propri](https://rosettacode.org/wiki/Proper divisors "Proper divisors") di $N$ ($\\mathrm{sum}(\\mathrm{propDivs}(N))$) $= M$ e $\\mathrm{sum}(\\mathrm{propDivs}(M)) = N$.
 
 **Esempio:**
 
-**1184** e **1210** sono una coppia amicabile, con i seguenti divisori propri:
+**1184** e **1210** childo una coppia amicabile, con i seguenti divisori propri:
 
 <ul>
   <li>1, 2, 4, 8, 16, 32, 37, 74, 148, 296, 592  e</li>
@@ -21,7 +21,7 @@ Due numeri interi $N$ e $M$ sono detti [Numeri amicabili](https://it.wikipedia.o
 
 # --instructions--
 
-Calcola e mostra qui le coppie amicabili sotto 20 000 (ce ne sono otto).
+Calcola e mostra qui le coppie amicabili sotto 20 000 (ce ne childo otto).
 
 # --hints--
 

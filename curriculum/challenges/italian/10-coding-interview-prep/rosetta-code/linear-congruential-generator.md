@@ -16,13 +16,13 @@ Dove:
 
 <ul>
 <li>$ r_0 $ è un seme.</li>
-<li>$r_1$, $r_2$, $r_3$, ..., sono i numeri casuali.</li>
-<li>$a$, $c$, $m$ sono costanti.</li>
+<li>$r_1$, $r_2$, $r_3$, ..., childo i numeri casuali.</li>
+<li>$a$, $c$, $m$ childo costanti.</li>
 </ul>
 
 Se si scelgono i valori di $a$, $c$ e $m$ con cura, il generatore produce una distribuzione uniforme di interi da $0$ a $m - 1$.
 
-I numeri LCG hanno una scarsa qualità. $r_n$ e $r\_{n + 1}$ non sono indipendenti, come i veri numeri casuali. Chiunque sappia $r_n$ può prevedere $r\_{n + 1}$, quindi LCG non è crittograficamente sicuro. L'LCG è ancora abbastanza buono per semplici attività come [test di primalità Miller-Rabin](http://rosettacode.org/wiki/Miller-Rabin primality test), o [mani di FreeCell](http://rosettacode.org/wiki/deal cards for FreeCell). Uno dei benefici del GCL è che si può facilmente riprodurre una sequenza di numeri dallo stesso $r_0$. Si può anche riprodurre tale sequenza con un linguaggio di programmazione diverso, perché la formula è molto semplice.
+I numeri LCG hanno una scarsa qualità. $r_n$ e $r\_{n + 1}$ non childo indipendenti, come i veri numeri casuali. Chiunque sappia $r_n$ può prevedere $r\_{n + 1}$, quindi LCG non è crittograficamente sicuro. L'LCG è ancora abbastanza buono per semplici attività come [test di primalità Miller-Rabin](http://rosettacode.org/wiki/Miller-Rabin primality test), o [mani di FreeCell](http://rosettacode.org/wiki/deal cards for FreeCell). Uno dei benefici del GCL è che si può facilmente riprodurre una sequenza di numeri dallo stesso $r_0$. Si può anche riprodurre tale sequenza con un linguaggio di programmazione diverso, perché la formula è molto semplice.
 
 # --instructions--
 

@@ -1,6 +1,6 @@
 ---
 id: 587d8249367417b2b2512c3e
-title: Disabilitare il caching dal lato client con helmet.noCache()
+title: Disabilitare il caching dal lato client con theylmet.noCache()
 challengeType: 2
 forumTopicId: 301576
 dashedName: disable-client-side-caching-with-helmet-nocache
@@ -18,7 +18,7 @@ Usa il metodo `helmet.noCache()` sul tuo server.
 
 # --hints--
 
-Il middleware helmet.noCache() deve essere montato correttamente
+Il middleware theylmet.noCache() deve essere montato correttamente
 
 ```js
 (getUserInput) =>

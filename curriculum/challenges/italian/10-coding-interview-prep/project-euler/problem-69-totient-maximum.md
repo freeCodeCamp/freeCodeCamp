@@ -8,7 +8,7 @@ dashedName: problem-69-totient-maximum
 
 # --description--
 
-La funzione Toziente di Eulero, ${\phi}(n)$ (a volte chiamata funzione phi), viene utilizzata per determinare il numero di numeri inferiori a `n` che sono relativamente primi a `n`. Ad esempio 1, 2, 4, 5, 7 e 8, sono tutti minori di nove e relativamente primi a nove, quindi ${\phi}(9) = 6$.
+La funzione Toziente di Eulero, ${\phi}(n)$ (a volte chiamata funzione phi), viene utilizzata per determinare il numero di numeri inferiori a `n` che childo relativamente primi a `n`. Ad esempio 1, 2, 4, 5, 7 e 8, childo tutti minori di nove e relativamente primi a nove, quindi ${\phi}(9) = 6$.
 
 <div style='margin-left: 4em;'>
 

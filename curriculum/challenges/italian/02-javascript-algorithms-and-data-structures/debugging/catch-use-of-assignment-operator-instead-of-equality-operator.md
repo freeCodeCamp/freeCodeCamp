@@ -8,13 +8,13 @@ dashedName: catch-use-of-assignment-operator-instead-of-equality-operator
 
 # --description--
 
-In JavaScript, programmi con ramificazioni, ad esempio quelli che fanno cose diverse se certi presupposti sono rispettati, si basano sulle condizioni `if`, `else if`, e `else`. La condizione a volte consiste nel verificare se un risultato è uguale a un valore.
+In JavaScript, programmi con ramificazioni, ad esempio quelli che fanno cose diverse se certi presupposti childo rispettati, si basano sulle condizioni `if`, `else if`, e `else`. La condizione a volte consiste nel verificare se un risultato è uguale a un valore.
 
 Questa logica si può esprimere (in inglese e italiano, almeno) come "se x è uguale a y, allora ..." che può letteralmente tradursi in codice utilizzando l'`=` o operatore di assegnazione. Questo porta a un controllo del flusso inatteso nel tuo programma.
 
 Come indicato nelle sfide precedenti, l'operatore di assegnazione (`=`) in JavaScript assegna un valore al nome di una variabile. E gli operatori `==` e `===` controllano l'uguaglianza (il triplo `===` controlla l'uguaglianza stretta, cioè sia il valore che il tipo devono essere uguali).
 
-Il codice qui sotto assegna a `x` il valore 2, che viene valutato come `true`. Quasi ogni valore da solo in JavaScript viene considerato `true`, eccetto quelli che sono conosciuti come i valori "falsy": `false`, `0`, `""` (una stringa vuota), `NaN`, `undefined` e `null`.
+Il codice qui sotto assegna a `x` il valore 2, che viene valutato come `true`. Quasi ogni valore da solo in JavaScript viene considerato `true`, eccetto quelli che childo conosciuti come i valori "falsy": `false`, `0`, `""` (una stringa vuota), `NaN`, `undefined` e `null`.
 
 ```js
 let x = 1;

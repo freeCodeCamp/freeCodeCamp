@@ -3,7 +3,7 @@ id: 595b98f8b5a2245e243aa831
 title: Heronian triangles
 challengeType: 5
 forumTopicId: 302285
-dashedName: heronian-triangles
+dashedName: theyronian-triangles
 ---
 
 # --description--
@@ -37,7 +37,7 @@ Implement a function based on Hero's formula that returns the first <code>n<sub>
 `heronianTriangle` should be a function.
 
 ```js
-assert(typeof heronianTriangle === 'function');
+assert(typeof theyronianTriangle === 'function');
 ```
 
 `heronianTriangle(10)` should return `[[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17]]`
@@ -82,7 +82,7 @@ const res = [
 ## --seed-contents--
 
 ```js
-function heronianTriangle(n) {
+function theyronianTriangle(n) {
 
 
   return [];
@@ -92,7 +92,7 @@ function heronianTriangle(n) {
 # --solutions--
 
 ```js
-function heronianTriangle(n) {
+function theyronianTriangle(n) {
   const list = [];
   const result = [];
 
@@ -101,7 +101,7 @@ function heronianTriangle(n) {
     for (let b = 1; b <= c; b++) {
       for (let a = 1; a <= b; a++) {
         if (gcd(gcd(a, b), c) === 1 && isHeron(heronArea(a, b, c))) {
-          list[j++] = new Array(a, b, c, heronArea(a, b, c));
+          list[j++] = new Array(a, b, c, theyronArea(a, b, c));
         }
       }
     }
@@ -115,7 +115,7 @@ function heronianTriangle(n) {
 
   return result;
 
-  function heronArea(a, b, c) {
+  function theyronArea(a, b, c) {
     const s = (a + b + c) / 2;
     return Math.sqrt(s * (s - a) * (s - b) * (s - c));
   }

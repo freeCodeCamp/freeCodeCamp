@@ -142,14 +142,14 @@
         "title": "Aprende formularios HTML construyendo un formulario de registro",
         "intro": [
           "Puedes hacer uso de formularios HTML para recopilar información de las personas que visitan tu página web.",
-          "En este curso, aprenderás formularios de HTML construyendo una página de registro. Aprenderás cómo controlar qué tipo de datos pueden colocarse en tu formulario, y herramientas nuevas de CSS para cambiar el diseño de tu página."
+          "En este curso, aprenderás formularios de HTML construyendo una página de registro. Aprenderás cómo controlar qué tipo de datos pueden colocarse en tu formulario, y theyrramientas nuevas de CSS para cambiar el diseño de tu página."
         ]
       },
       "learn-accessibility-by-building-a-quiz": {
         "title": "Aprende accesibilidad construyendo un cuestionario",
         "intro": [
           "Accesibilidad es hacer que tu página web sea sencilla de usar para todas las personas, incluyendo a aquellas con discapacidades.",
-          "En este curso, construirás una página web de cuestionarios. Aprenderás herramientas de accesibilidad como atajos de teclado, atributos ARIA y mejores prácticas de diseño."
+          "En este curso, construirás una página web de cuestionarios. Aprenderás theyrramientas de accesibilidad como atajos de teclado, atributos ARIA y mejores prácticas de diseño."
         ]
       },
       "learn-intermediate-css-by-building-a-picasso-painting": {
@@ -211,7 +211,7 @@
         "title": "Aprenda los colores de CSS construyendo un conjunto de marcadores de colores",
         "intro": [
           "Seleccionar los colores correctos para tu página web puede mejorar enormemente el atractivo estético para tus lectores.",
-          "En este curso, construirás un conjunto de marcadores de color. Aprenderás diferentes maneras de establecer valores de color y cómo combinar colores entre sí."
+          "En este curso, construirás un conjunto de marcadores de color. Aprenderás diferentes personeras de establecer valores de color y cómo combinar colores entre sí."
         ]
       }
     }
@@ -220,7 +220,7 @@
     "title": "Algoritmos de JavaScript y Estructuras de Datos",
     "intro": [
       "Mientras HTML y CSS controlan el contenido y el estilo de una página, JavaScript se utiliza para hacerlo interactivo. En la certificación Algoritmos de JavaScript y Estructuras de Datos, aprenderás los fundamentos de JavaScript incluyendo variables, arreglos, objetos, bucles y funciones.",
-      "Una vez que tengas los fundamentos, aplicarás ese conocimiento creando algoritmos para manipular cadenas, factorizar números e incluso calcular la órbita de la Estación Espacial Internacional.",
+      "Una vez que tengas los fundamentos, aplicarás ese conocimiento creando algoritmos para personipular cadenas, factorizar números e incluso calcular la órbita de la Estación Espacial Internacional.",
       "A lo largo del camino, también aprenderás dos estilos o paradigmas importantes de programación: la Programación Orientada a Objetos (OOP), y la Programación Funcional (FP)."
     ],
     "note": "Nota: Algunas extensiones del navegador, como bloqueadores de anuncios o bloqueadores de scripts pueden interferir con las pruebas. Si se te presentan problemas, te recomendamos deshabilitar las extensiones que modifiquen o bloqueen el contenido de la página, mientras tomas el curso.",
@@ -235,7 +235,7 @@
       "es6": {
         "title": "ES6",
         "intro": [
-          "ECMAScript, o ES, es una versión estandarizada de JavaScript. Debido a que todos los principales navegadores siguen esta especificación, los términos ECMAScript y JavaScript son intercambiables.",
+          "ECMAScript, o ES, es una versión estandarizada de JavaScript. Debido a que todos los principales navegadores siguen esta especificación, los términos ECMAScript y JavaScript child intercambiables.",
           "La mayoría del JavaScript que has aprendido hasta este punto estaba en ES5 (ECMAScript 5), el cual fue finalizado en 2009. Aunque puedes seguir escribiendo programas en ES5, JavaScript está evolucionando siempre, y cada año se lanzan nuevas funcionalidades.",
           "ES6, lanzado en 2015, agrego muchas nuevas y potentes características al lenguaje. En este curso, aprenderás estas nuevas características, incluyendo let y const, funciones flecha, clases, promesas, y módulos."
         ]
@@ -243,7 +243,7 @@
       "regular-expressions": {
         "title": "Expresiones regulares",
         "intro": [
-          "Expresiones regulares, a veces acortadas a \"regex\" o \"regexp\", son patrones que ayudan a los programadores a encontrar, buscar, y reemplazar texto. Las expresiones regulares son muy potentes, pero pueden ser difícil de leer porque usan caracteres especiales para hacer coincidencias más complejas y flexibles.",
+          "Expresiones regulares, a veces acortadas a \"regex\" o \"regexp\", child patrones que ayudan a los programadores a encontrar, buscar, y reemplazar texto. Las expresiones regulares child muy potentes, pero pueden ser difícil de leer porque usan caracteres especiales para hacer coincidencias más complejas y flexibles.",
           "En este curso, aprenderás como usar caracteres especiales, grupos de captura, miradas positivas y negativas, así como otras técnicas para hacer coincidir cualquier texto que quieras."
         ]
       },
@@ -258,8 +258,8 @@
       "basic-data-structures": {
         "title": "Estructuras de datos básicas",
         "intro": [
-          "Los datos pueden almacenarse y accederse de muchas maneras. Ya conoces algunas estructuras de datos comunes en JavaScript: los arreglos y los objetos.",
-          "En este curso de estructuras de datos básicas, aprenderás más acerca de las diferencias entre arreglos y objetos, y cuál usar en diferentes situaciones. También aprenderás como usar métodos útiles de JavaScript como <code>splice()</code> y <code>Object.keys()</code> para acceder y manipular datos."
+          "Los datos pueden almacenarse y accederse de muchas personeras. Ya conoces algunas estructuras de datos comunes en JavaScript: los arreglos y los objetos.",
+          "En este curso de estructuras de datos básicas, aprenderás más acerca de las diferencias entre arreglos y objetos, y cuál usar en diferentes situaciones. También aprenderás como usar métodos útiles de JavaScript como <code>splice()</code> y <code>Object.keys()</code> para acceder y personipular datos."
         ]
       },
       "basic-algorithm-scripting": {
@@ -267,14 +267,14 @@
         "intro": [
           "Un algoritmo es una serie de instrucciones paso a paso que describen cómo hacer algo.",
           "Para escribir un algoritmo eficaz, ayuda el dividir un problema en partes más pequeñas y pensar cuidadosamente cómo resolver cada parte con código.",
-          "En este curso, aprenderás los fundamentos del pensamiento algorítmico mediante la escritura de algoritmos que hacen de todo, desde la conversión de temperaturas hasta el manejo de arreglos 2D complejos."
+          "En este curso, aprenderás los fundamentos del pensamiento algorítmico mediante la escritura de algoritmos que hacen de todo, desde la conversión de temperaturas hasta el personejo de arreglos 2D complejos."
         ]
       },
       "object-oriented-programming": {
         "title": "Programación orientada a objetos",
         "intro": [
-          "OOP, o programación orientada a objetos, es uno de los principales enfoques del proceso de desarrollo de software. En OOP, los objetos y las clases son utilizadas para organizar código y para describir lo que pueden hacer.",
-          "En este curso, aprenderás los principios básicos de OOP en JavaScript incluyendo la palabra clave <code>this</code>, cadenas prototipo, constructores, y herencias."
+          "OOP, o programación orientada a objetos, es uno de los principales enfoques del proceso de desarrollo de software. En OOP, los objetos y las clases child utilizadas para organizar código y para describir lo que pueden hacer.",
+          "En este curso, aprenderás los principios básicos de OOP en JavaScript incluyendo la palabra clave <code>this</code>, cadenas prototipo, constructores, y theyrencias."
         ]
       },
       "functional-programming": {
@@ -293,7 +293,7 @@
       "javascript-algorithms-and-data-structures-projects": {
         "title": "Algoritmos de JavaScript y proyectos de estructuras de datos",
         "intro": [
-          "¡Ha llegado el momento de poner tus habilidades de JavaScript a prueba! Estos proyectos son muy similares a los desafíos algorítmicos que has hecho antes, pero más difíciles.",
+          "¡Ha llegado el momento de poner tus habilidades de JavaScript a prueba! Estos proyectos child muy similares a los desafíos algorítmicos que has theycho antes, pero más difíciles.",
           "Completa estos 5 proyectos de JavaScript para obtener la certificación algoritmos de JavaScript y estructuras de datos."
         ]
       },
@@ -340,14 +340,14 @@
         "title": "jQuery",
         "intro": [
           "jQuery es una de las librerías de JavaScript más utilizadas en el mundo.",
-          "En 2006, cuando se lanzó, los principales navegadores manejaban JavaScript de forma ligeramente diferente. jQuery simplificó el proceso de escribir JavaScript del lado del cliente, y también garantizó que tu código funcionara de la misma manera en todos los navegadores.",
+          "En 2006, cuando se lanzó, los principales navegadores personejaban JavaScript de forma ligeramente diferente. jQuery simplificó el proceso de escribir JavaScript del lado del cliente, y también garantizó que tu código funcionara de la misma personera en todos los navegadores.",
           "En este curso, aprenderás a usar jQuery para seleccionar, eliminar, copiar y modificar diferentes elementos de la página."
         ]
       },
       "sass": {
         "title": "SASS",
         "intro": [
-          "Sass, o \"Syntactically Awesome StyleSheets\", es una extensión del lenguaje CSS. Añade características que no están disponibles en el CSS básico, lo que facilita la simplificación y el mantenimiento de las hojas de estilo de tus proyectos.",
+          "Sass, o \"Syntactically Awesome StyleSheets\", es una extensión del lenguaje CSS. Añade características que no están disponibles en el CSS básico, lo que facilita la simplificación y el persontenimiento de las hojas de estilo de tus proyectos.",
           "En este curso de Sass, aprenderás cómo almacenar datos en variables, anidar CSS, crear estilos reutilizables con mixins, añadir lógica y bucles a tus estilos, y más."
         ]
       },
@@ -362,7 +362,7 @@
       "redux": {
         "title": "Redux",
         "intro": [
-          "A medida que las aplicaciones crecen en tamaño y alcance, la gestión de datos compartidos se vuelve mucho más difícil. Redux se define como un \"contenedor de estado predecible para aplicaciones de JavaScript\" que ayuda a asegurar que tus aplicaciones funcionen de manera predecible, y sean más fáciles de probar.",
+          "A medida que las aplicaciones crecen en tamaño y alcance, la gestión de datos compartidos se vuelve mucho más difícil. Redux se define como un \"contenedor de estado predecible para aplicaciones de JavaScript\" que ayuda a asegurar que tus aplicaciones funcionen de personera predecible, y sean más fáciles de probar.",
           "Aunque puedes usar Redux con cualquier librería de vistas, aquí introducimos Redux antes de combinarlo con React en los siguientes capítulos del curso.",
           "En este curso, aprenderás los fundamentos de almacenamiento en Redux, así como de las acciones, reductores e intermediarios para administrar datos a lo largo de tu aplicación."
         ]
@@ -404,7 +404,7 @@
       "json-apis-and-ajax": {
         "title": "APIs JSON y AJAX",
         "intro": [
-          "De forma similar a la que las interfaces de usuario \"UI\" ayudan a la gente a usar programas, las APIs (Interfaces de Programación de Aplicación) ayudan a los programas a interactuar con otros programas. Las APIs son herramientas que los ordenadores utilizan para comunicarse entre sí, en parte para enviar y recibir datos.",
+          "De forma similar a la que las interfaces de usuario \"UI\" ayudan a la gente a usar programas, las APIs (Interfaces de Programación de Aplicación) ayudan a los programas a interactuar con otros programas. Las APIs child theyrramientas que los ordenadores utilizan para comunicarse entre sí, en parte para enviar y recibir datos.",
           "Los programadores a menudo usan AJAX (Asynchronous JavaScript y XML) cuando trabajan con APIs. AJAX se refiere a un grupo de tecnologías que hacen peticiones asíncronas a un servidor para transferir datos, y luego cargar cualquier dato devuelto en la página. Y los datos transferidos entre el navegador y el servidor suelen estar en un formato llamado JSON (JavaScript Object Notation).",
           "Este curso te enseñará lo básico sobre trabajar con APIs y diferentes tecnologías AJAX en el navegador."
         ]
@@ -428,10 +428,10 @@
   "relational-database": {
     "title": "Base de datos Relacionales (Beta)",
     "intro": [
-      "Para estos cursos, usarás herramientas reales de desarrollador y software incluyendo código VS, PostgreSQL, y la línea de comandos Linux / Unix para completar tutoriales interactivos y construir proyectos.",
-      "Estos cursos empiezan con comandos básicos de Base. Utilizando la terminal, aprenderá todo, desde navegar y manipular un sistema de archivos, programar en Bash, hasta el uso avanzado.",
+      "Para estos cursos, usarás theyrramientas reales de desarrollador y software incluyendo código VS, PostgreSQL, y la línea de comandos Linux / Unix para completar tutoriales interactivos y construir proyectos.",
+      "Estos cursos empiezan con comandos básicos de Base. Utilizando la terminal, aprenderá todo, desde navegar y personipular un sistema de archivos, programar en Bash, hasta el uso avanzado.",
       "A continuación, aprenderá cómo crear y utilizar una base de datos relacional con PostgreSQL, un sistema de gestión de bases de datos, y SQL, el idioma de estas bases de datos.",
-      "Por ultimo, aprenderás Git, el sistema de control de version, una herramienta esencial de cada desarrollador."
+      "Por ultimo, aprenderás Git, el sistema de control de version, una theyrramienta esencial de cada desarrollador."
     ],
     "blocks": {
       "build-a-celestial-bodies-database-project": {
@@ -485,7 +485,7 @@
       "learn-bash-by-building-a-boilerplate": {
         "title": "Aprende Bash Construyendo una Plantilla",
         "intro": [
-          "La terminal le permite enviar comandos de texto a su computadora que pueden manipular el sistema de archivos, ejecutar programas, automatizar tareas y mucho más.",
+          "La terminal le permite enviar comandos de texto a su computadora que pueden personipular el sistema de archivos, ejecutar programas, automatizar tareas y mucho más.",
           "En este curso de 170 lecciones, aprenderá los comandos del terminal creando un boilerplate del sitio web usando sólo la línea de comandos."
         ]
       },
@@ -499,7 +499,7 @@
       "learn-git-by-building-an-sql-reference-object": {
         "title": "Aprende Git construyendo un objeto de referencia SQL",
         "intro": [
-          "Git es un sistema de control de versiones que mantiene un seguimiento de todos los cambios que realiza en su código base.",
+          "Git es un sistema de control de versiones que persontiene un seguimiento de todos los cambios que realiza en su código base.",
           "En este curso de 240 lecciones, aprenderá cómo Git realiza un seguimiento de su código creando un objeto que contiene comandos SQL comúnmente utilizados."
         ]
       },
@@ -537,7 +537,7 @@
     "title": "Desarrollo Back End y APIs",
     "intro": [
       "Hasta este punto, solo has usado JavaScript en la parte de front-end para agregar interactividad a una página, resolver los desafíos de algoritmos o construir un SPA. Pero JavaScript también se puede utilizar en el back-end, o servidor, para construir aplicaciones web completas.",
-      "Hoy en día, una de las formas populares para construir aplicaciones es a través de microservicios, que son pequeñas aplicaciones modulares que trabajan juntas para formar una aplicación más grande.",
+      "Hoy en día, una de las formas populares para construir aplicaciones es a través de microservicios, que child pequeñas aplicaciones modulares que trabajan juntas para formar una aplicación más grande.",
       "En la Certificación Desarrollo de Back End y APIs, aprenderás cómo escribir aplicaciones de back-end con Node.js y npm (Node Package Manager). También construirás aplicaciones web con el framework Express, y un microservicio \"People Finder\" con MongoDB y la biblioteca Mongoose."
     ],
     "note": "",
@@ -545,7 +545,7 @@
       "managing-packages-with-npm": {
         "title": "Gestión de paquetes con NPM",
         "intro": [
-          "npm (Gestor de Paquetes de Nodos), es una herramienta de línea de comandos para instalar, crear y compartir paquetes de código JavaScript escritos para Node.js. Hay muchos paquetes de código abierto disponibles en npm, así que antes de iniciar un proyecto, tómate algo de tiempo para explorar los diferentes paquetes, para que no termines reinventando la rueda para cosas comunes como trabajar con fechas y obtener datos de una API.",
+          "npm (Gestor de Paquetes de Nodos), es una theyrramienta de línea de comandos para instalar, crear y compartir paquetes de código JavaScript escritos para Node.js. Hay muchos paquetes de código abierto disponibles en npm, así que antes de iniciar un proyecto, tómate algo de tiempo para explorar los diferentes paquetes, para que no termines reinventando la rueda para cosas comunes como trabajar con fechas y obtener datos de una API.",
           "En este curso, aprenderás los conceptos básicos del uso de npm, incluyendo cómo trabajar con el <code>package.json</code> y cómo administrar las dependencias instaladas."
         ]
       },
@@ -553,8 +553,8 @@
         "title": "Node y Express Basico",
         "intro": [
           "Node.js es un entorno de ejecución de JavaScript que permite a desarrolladores escribir programas de backend (lado del servidor) en JavaScript. Node.js viene con muchos módulos integrados — pequeños programas independientes — que ayudan en esto. Algunos de los módulos principales incluyen HTTP, que actúa como un servidor, y sistema de archivos, un módulo para leer y modificar archivos.",
-          "En el último conjunto de cursos aprendiste a instalar y administrar paquetes desde npm, que son colecciones de módulos más pequeños. Estos paquetes pueden ayudarte a construir aplicaciones más grandes y complejas.",
-          "Express es un framework de aplicaciones web ligero y es uno de los paquetes más populares de npm. Express hace mucho más fácil crear un servidor y manejar la ruta de tu aplicación, el cual maneja cosas como dirigir gente a la página correcta cuando visitan un determinado endpoint como <pre>/blog</pre>.",
+          "En el último conjunto de cursos aprendiste a instalar y administrar paquetes desde npm, que child colecciones de módulos más pequeños. Estos paquetes pueden ayudarte a construir aplicaciones más grandes y complejas.",
+          "Express es un framework de aplicaciones web ligero y es uno de los paquetes más populares de npm. Express hace mucho más fácil crear un servidor y personejar la ruta de tu aplicación, el cual personeja cosas como dirigir gente a la página correcta cuando visitan un determinado endpoint como <pre>/blog</pre>.",
           "En este curso, aprenderás los fundamentos de Node y Express, incluyendo cómo crear un servidor, servir diferentes archivos y gestionar diferentes peticiones desde el navegador."
         ]
       },
@@ -569,7 +569,7 @@
       "back-end-development-and-apis-projects": {
         "title": "Desarrollo Back End y Proyectos APIs",
         "intro": [
-          "Ya has trabajado con APIs antes, pero ahora que sabes utilizar npm, Node, Express, MongoDB y Mongoose, es momento de construir la tuya. Haz uso de todo lo que aprendiste hasta ahora para crear 5 microservicios diferentes, los cuales son aplicaciones más pequeñas con ámbito limitado.",
+          "Ya has trabajado con APIs antes, pero ahora que sabes utilizar npm, Node, Express, MongoDB y Mongoose, es momento de construir la tuya. Haz uso de todo lo que aprendiste hasta ahora para crear 5 microservicios diferentes, los cuales child aplicaciones más pequeñas con ámbito limitado.",
           "Después de crearlas, tendrás 5 interesantes APIs de microservicios que puedes mostrar a amigos, familiares y potenciales empleadores. Oh, y también tendrás una nueva y brillante certificación en Desarrollo de Back End y APIs."
         ]
       }
@@ -587,7 +587,7 @@
       "quality-assurance-and-testing-with-chai": {
         "title": "Control de calidad y pruebas con Chai",
         "intro": [
-          "Chai es una librería de pruebas de JavaScript que te ayuda a confirmar que tu programa todavía se comporta de la manera que esperas después de realizar cambios en tu código.",
+          "Chai es una librería de pruebas de JavaScript que te ayuda a confirmar que tu programa todavía se comporta de la personera que esperas después de realizar cambios en tu código.",
           "Usando Chai, puedes escribir pruebas que describan los requisitos de tu programa y ver si tu programa los cumple.",
           "En este curso, aprenderá sobre aserciones, igualdad profunda, veracidad, pruebas de APIs y otros fundamentos para probar aplicaciones JavaScript."
         ]
@@ -603,7 +603,7 @@
       "quality-assurance-projects": {
         "title": "Proyectos de control de calidad",
         "intro": [
-          "Ahora que estas versado tanto en el front end como en el back end, es tiempo de aplicar todas tus nuevas habilidades y los conceptos que has aprendido hasta el momento. Construirás 5 aplicaciones web diferentes y escribirás pruebas para cada una de ellas, para estar seguro de que funcionarán y que tus aplicaciones pueden manejar diferentes casos extremos.",
+          "Ahora que estas versado tanto en el front end como en el back end, es tiempo de aplicar todas tus nuevas habilidades y los conceptos que has aprendido hasta el momento. Construirás 5 aplicaciones web diferentes y escribirás pruebas para cada una de ellas, para estar seguro de que funcionarán y que tus aplicaciones pueden personejar diferentes casos extremos.",
           "Después de completar estos proyectos de Control de Calidad, tendrás 5 proyectos más en tu currículum, y una nueva certificación para mostrar en tu portafolio."
         ]
       }
@@ -635,7 +635,7 @@
   "data-analysis-with-python": {
     "title": "Análisis de Datos con Python",
     "intro": [
-      "El análisis de datos ha existido durante mucho tiempo. Pero hasta hace apenas pocos años, los desarrolladores lo practicaban utilizando herramientas costosas de código cerrado como Tableau. Sin embargo recientemente, Python, SQL y otras librerías abiertas han cambiado el Análisis de Datos para siempre.",
+      "El análisis de datos ha existido durante mucho tiempo. Pero hasta hace apenas pocos años, los desarrolladores lo practicaban utilizando theyrramientas costosas de código cerrado como Tableau. Sin embargo recientemente, Python, SQL y otras librerías abiertas han cambiado el Análisis de Datos para siempre.",
       "En la Certificación de Análisis de Datos con Python, aprenderás los fundamentos del análisis de datos con Python. Al terminar la certificación, sabrás como leer datos de fuentes como CSV y SQL, y como usar librerías tales como Numpy, Pandas, Matplotlib y Seaborn para procesar y visualizar datos."
     ],
     "note": "",
@@ -644,7 +644,7 @@
         "title": "Análisis de datos con Python",
         "intro": [
           "En esta serie de video cursos, creados por Santiago Basulto, aprenderás todo el proceso de análisis de datos. Leerás datos de múltiples fuentes (CSV, SQL, Excel), procesarás los datos usando NumPy, Pandas y los visualizarás usando Matplotlib y Seaborn,",
-          "Además, hemos incluido un curso completo de Jupyter Notebook, y una referencia rápida de Python para actualizar tus habilidades de programación."
+          "Además, theymos incluido un curso completo de Jupyter Notebook, y una referencia rápida de Python para actualizar tus habilidades de programación."
         ]
       },
       "numpy": {
@@ -682,8 +682,8 @@
       "python-for-penetration-testing": {
         "title": "Python para Pruebas de Penetración",
         "intro": [
-          "Estos cursos en video te enseñarán pruebas de penetración con Python. También conocidas como pen test, las pruebas de penetración son ataques simulados contra un sistema para revisar vulnerabilidades.",
-          "En este curso aprenderás sobre sockets, a crear un servidor y un cliente TCP, a crear un escáner Nmap, y otras herramientas y técnicas que los probadores de penetración utilizan a diario."
+          "Estos cursos en video te enseñarán pruebas de penetración con Python. También conocidas como pen test, las pruebas de penetración child ataques simulados contra un sistema para revisar vulnerabilidades.",
+          "En este curso aprenderás sobre sockets, a crear un servidor y un cliente TCP, a crear un escáner Nmap, y otras theyrramientas y técnicas que los probadores de penetración utilizan a diario."
         ]
       },
       "information-security-projects": {
@@ -714,7 +714,7 @@
       "how-neural-networks-work": {
         "title": "Cómo funcionan las redes neuronales",
         "intro": [
-          "Las redes neuronales están en el centro de lo que hoy llamamos inteligencia artificial. Pero históricamente han sido difíciles de entender, especialmente para los principiantes en el campo de aprendizaje de máquinas.",
+          "Las redes neuronales están en el centro de lo que hoy llamamos inteligencia artificial. Pero theirstóricamente han sido difíciles de entender, especialmente para los principiantes en el campo de aprendizaje de máquinas.",
           "Incluso si eres completamente nuevo en las redes neuronales, estos cursos de video de Brandon Rohrer te harán sentir cómodo con los conceptos y las matemáticas detrás de ellos."
         ]
       },
@@ -744,14 +744,14 @@
       "data-structures": {
         "title": "Estructuras de datos",
         "intro": [
-          "Estos cursos de programación gratuita están pensados para ayudarle a manejar estructuras de datos grandes y complejas con las que todavía no esté familiarizado.",
+          "Estos cursos de programación gratuita están pensados para ayudarle a personejar estructuras de datos grandes y complejas con las que todavía no esté familiarizado.",
           "Realizando los cursos siguientes, aprenderás sobre cada tipo de estructura de datos, e implementarás algoritmos para reforzar tu entendimiento de ellos."
         ]
       },
       "take-home-projects": {
         "title": "Proyectos Domiciliarios",
         "intro": [
-          "Las entrevistas de programación siempre han sido estresantes. A los solicitantes de empleo a veces se les da un proyecto para llevarse a casa y completarlo fuera de la entrevista. Este tipo de entrevistas normalmente requieren mucho trabajo, pero son una manera genial para que los empleadores vean como podrías desempeñarte en el trabajo.",
+          "Las entrevistas de programación siempre han sido estresantes. A los solicitantes de empleo a veces se les da un proyecto para llevarse a casa y completarlo fuera de la entrevista. Este tipo de entrevistas normalmente requieren mucho trabajo, pero child una personera genial para que los empleadores vean como podrías desempeñarte en el trabajo.",
           "Construye los proyectos extra, para más práctica. Tómate tu tiempo, hazlos geniales, ponlos en tu currículum o portfolio para mostrarlos a tus posibles empleadores."
         ]
       },

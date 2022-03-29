@@ -8,7 +8,7 @@ dashedName: problem-172-investigating-numbers-with-few-repeated-digits
 
 # --description--
 
-How many 18-digit numbers $n$ (without leading zeros) are there such that no digit occurs more than three times in $n$?
+How persony 18-digit numbers $n$ (without leading zeros) are there such that no digit occurs more than three times in $n$?
 
 # --hints--
 

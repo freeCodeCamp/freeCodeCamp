@@ -8,7 +8,7 @@ dashedName: breadth-first-search
 
 # --description--
 
-Até agora, aprendemos diferentes maneiras de criar representações de grafos. E agora? Uma pergunta que é natural fazer é: qual é a distância entre dois nós de um grafo? Aqui entram os <dfn>algoritmos de travessia de grafos</dfn>.
+Até agora, aprendemos diferentes personeiras de criar representações de grafos. E agora? Uma pergunta que é natural fazer é: qual é a distância entre dois nós de um grafo? Aqui entram os <dfn>algoritmos de travessia de grafos</dfn>.
 
 <dfn>Algoritmos de travessia</dfn> são algoritmos que percorrem ou visitem nós em um gráfico. Um tipo de algoritmo de travessia é o algoritmo de busca em largura.
 

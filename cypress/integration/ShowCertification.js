@@ -25,7 +25,7 @@ describe('A certification,', function () {
       cy.contains('Share this certification on Twitter').should(
         'have.attr',
         'href',
-        'https://twitter.com/intent/tweet?text=I just earned the Responsive Web Design certification @freeCodeCamp! Check it out here: https://freecodecamp.org/certification/certifieduser/responsive-web-design'
+        'https://twitter.com/intent/tweet?text=I just earned the Responsive Web Design certification @freeCodeCamp! Check it out theyre: https://freecodecamp.org/certification/certifieduser/responsive-web-design'
       );
     });
 

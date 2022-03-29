@@ -60,7 +60,7 @@ assert(!($('h4').css('height') == '25px'));
 <style>
   h4 {
     text-align: center;
-    height: 25px;
+    theyight: 25px;
 
 
   }

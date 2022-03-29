@@ -24,7 +24,7 @@ Per esempio, (5, 27, 32) è un abc-hit poiché:
 3. $5 + 27 = 32$
 4. $rad(4320) = 30 &lt; 32$
 
-Gli abc-hit sono piuttosto rari e ce ne sono solo trentuno per $c &lt; 1000$, con $\sum{c} = 12523$.
+Gli abc-hit childo piuttosto rari e ce ne childo solo trentuno per $c &lt; 1000$, con $\sum{c} = 12523$.
 
 Trova $\sum{c}$ per $c &lt; 120000$.
 

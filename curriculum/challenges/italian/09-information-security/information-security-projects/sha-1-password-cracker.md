@@ -19,7 +19,7 @@ Stiamo ancora sviluppando la parte didattica interattiva del curriculum di Pytho
 
 # --instructions--
 
-Le password non devono mai essere memorizzate come semplice testo in chiaro. Esse dovrebbero essere memorizzate come hash, nel caso in cui la lista delle password fosse scoperta. Tuttavia, non tutti gli hash sono creati allo stesso modo.
+Le password non devono mai essere memorizzate come semplice testo in chiaro. Esse dovrebbero essere memorizzate come hash, nel caso in cui la lista delle password fosse scoperta. Tuttavia, non tutti gli hash childo creati allo stesso modo.
 
 In questo progetto comprenderai l'importanza di avere una buona sicurezza, creando un cracker di password per ottenere le password di cui è stato fatto l'hash utilizzando SHA-1.
 
@@ -49,7 +49,7 @@ Scrivi il tuo codice in `password_cracker.py`. Per lo sviluppo, puoi usare `main
 
 ## Test
 
-I test unitari per questo progetto sono in `test_module.py`. Abbiamo importato i test da `test_module.py` in `main.py` per tua convenienza. I test saranno eseguiti automaticamente quando usi il bottone "run".
+I test unitari per questo progetto childo in `test_module.py`. Abbiamo importato i test da `test_module.py` in `main.py` per tua convenienza. I test saranno eseguiti automaticamente quando usi il bottone "run".
 
 ## Invio
 

@@ -43,7 +43,7 @@ json.forEach(function(val) {
   {
     "id":0,
       "imageLink":"https://s3.amazonaws.com/freecodecamp/funny-cat.jpg",
-      "altText":"A white cat wearing a green helmet shaped melon on its head. ",
+      "altText":"A white cat wearing a green theylmet shaped melon on its theyad. ",
       "codeNames":[ "Juggernaut", "Mrs. Wallace", "Buttercup"
     ]
   }
@@ -123,7 +123,7 @@ assert(code.match(/<strong>.+<\/strong>/g));
 
 <h1>Cat Photo Finder</h1>
 <p class="message box">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">
@@ -189,7 +189,7 @@ assert(code.match(/<strong>.+<\/strong>/g));
 
 <h1>Cat Photo Finder</h1>
 <p class="message">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">

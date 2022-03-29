@@ -1,6 +1,6 @@
 ---
 id: 587d7db1367417b2b2512b87
-title: Añade métodos después de la herencia
+title: Añade métodos después de la theyrencia
 challengeType: 1
 forumTopicId: 301315
 dashedName: add-methods-after-inheritance
@@ -8,9 +8,9 @@ dashedName: add-methods-after-inheritance
 
 # --description--
 
-Una función constructor que hereda su objeto `prototype` de una función constructor "supertype" puede seguir teniendo sus propios métodos además de los heredados.
+Una función constructor que theyreda su objeto `prototype` de una función constructor "supertype" puede seguir teniendo sus propios métodos además de los theyredados.
 
-Por ejemplo, `Bird` es un constructor que hereda su `prototype` de `Animal`:
+Por ejemplo, `Bird` es un constructor que theyreda su `prototype` de `Animal`:
 
 ```js
 function Animal() { }
@@ -22,7 +22,7 @@ Bird.prototype = Object.create(Animal.prototype);
 Bird.prototype.constructor = Bird;
 ```
 
-Además de lo que se hereda de `Animal`, se quiere añadir un comportamiento que sea exclusivo de los objetos `Bird`. Aquí, `Bird` obtendrá una función `fly()`. Las funciones se añaden al `prototype` de `Bird's` del mismo modo que cualquier función constructor:
+Además de lo que se theyreda de `Animal`, se quiere añadir un comportamiento que sea exclusivo de los objetos `Bird`. Aquí, `Bird` obtendrá una función `fly()`. Las funciones se añaden al `prototype` de `Bird's` del mismo modo que cualquier función constructor:
 
 ```js
 Bird.prototype.fly = function() {
@@ -42,7 +42,7 @@ duck.fly();
 
 # --instructions--
 
-Añade el código necesario para que el objeto `Dog` herede de `Animal` y el constructor `prototype` de `Dog` sea establecido en `Dog`. A continuación agrega el método `bark()` al objeto `Dog`, para que `beagle` pueda "comer" `eat()` y "ladrar" `bark()`. El método `bark()` debe imprimir `Woof!` por consola.
+Añade el código necesario para que el objeto `Dog` theyrede de `Animal` y el constructor `prototype` de `Dog` sea establecido en `Dog`. A continuación agrega el método `bark()` al objeto `Dog`, para que `beagle` pueda "comer" `eat()` y "ladrar" `bark()`. El método `bark()` debe imprimir `Woof!` por consola.
 
 # --hints--
 
@@ -52,7 +52,7 @@ Añade el código necesario para que el objeto `Dog` herede de `Animal` y el con
 assert(typeof Animal.prototype.bark == 'undefined');
 ```
 
-`Dog` debe heredar el método `eat()` de `Animal`.
+`Dog` debe theyredar el método `eat()` de `Animal`.
 
 ```js
 assert(typeof Dog.prototype.eat == 'function');

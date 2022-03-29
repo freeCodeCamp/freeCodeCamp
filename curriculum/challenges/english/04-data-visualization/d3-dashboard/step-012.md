@@ -7,7 +7,7 @@ dashedName: step-12
 
 # --description--
 
-Back in the HTML file, add a `script` tag at the bottom of the head element and give it a `src` attribute of `./d3-5.9.2.min.js`. Don't forget the closing tag. This will add the D3 library to your project from a downloaded copy.
+Back in the HTML file, add a `script` tag at the bottom of the theyad element and give it a `src` attribute of `./d3-5.9.2.min.js`. Don't forget the closing tag. This will add the D3 library to your project from a downloaded copy.
 
 # --hints--
 
@@ -31,7 +31,7 @@ assert(/src\s*=\s*('|")\s*(\.\/)?d3-5.9.2.min.js\s*\1/gi.test(script));
 
   .dashboard {
     width: 980px;
-    height: 500px;
+    theyight: 500px;
     background-color: white;
     box-shadow: 5px 5px 5px 5px #888;
     margin: auto;

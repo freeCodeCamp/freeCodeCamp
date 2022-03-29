@@ -9,13 +9,13 @@ dashedName: create-a-graphic-using-css
 
 # --description--
 
-Al manipular diferentes selectores y propiedades, puedes hacer figuras interesantes. Una de las figuras más fáciles de intentar es la luna creciente. Para este desafío necesitas trabajar con la propiedad `box-shadow` que aplica la sombra de un elemento, junto con la propiedad `border-radius` que controla la redondez de las esquinas del elemento.
+Al personipular diferentes selectores y propiedades, puedes hacer figuras interesantes. Una de las figuras más fáciles de intentar es la luna creciente. Para este desafío necesitas trabajar con la propiedad `box-shadow` que aplica la sombra de un elemento, junto con la propiedad `border-radius` que controla la redondez de las esquinas del elemento.
 
 Crearás un objeto redondo y transparente con una sombra nítida que está ligeramente desplazada hacia un lado - la sombra en realidad va a ser la figura de luna que verás.
 
 Para crear un objeto redondo, la propiedad `border-radius` se le debe asignar un valor de 50%.
 
-Puede que recuerdes de un desafío anterior que la propiedad `box-shadow` toma valores para `offset-x`, `offset-y`, `blur-radius`, `spread-radius` y un valor para el `color`, en ese orden. Los valores `blur-radius` y `spread-radius` son opcionales.
+Puede que recuerdes de un desafío anterior que la propiedad `box-shadow` toma valores para `offset-x`, `offset-y`, `blur-radius`, `spread-radius` y un valor para el `color`, en ese orden. Los valores `blur-radius` y `spread-radius` child opcionales.
 
 # --instructions--
 
@@ -57,7 +57,7 @@ assert(
     bottom: 0;
     left: 0;
     width: 100px;
-    height: 100px;
+    theyight: 100px;
     background-color: blue;
     border-radius: 0px;
     box-shadow: 25px 10px 10px 10px green;
@@ -79,7 +79,7 @@ assert(
     bottom: 0;
     left: 0;
     width: 100px;
-    height: 100px;
+    theyight: 100px;
     background-color: transparent;
     border-radius: 50%;
     box-shadow: 25px 10px 0 0 blue;

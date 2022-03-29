@@ -17,7 +17,7 @@ console.log(simpleArray.length);
 
 La llamada `console.log` muestra `7`.
 
-Todos los arreglos tienen una propiedad de longitud, que como se muestra arriba, se puede acceder muy fácilmente con la sintaxis `Array.length`. A continuación se puede ver una implementación más compleja de un arreglo. Esto se conoce como un <dfn>arreglo multidimensional</dfn>, o un arreglo que contiene otros arreglos. Observa que este arreglo también contiene <dfn>objetos</dfn> JavaScript, que examinaremos muy de cerca en la siguiente sección, pero por ahora, todo lo que necesitas saber es que los arreglos también son capaces de almacenar objetos complejos.
+Todos los arreglos tienen una propiedad de longitud, que como se muestra arriba, se puede acceder muy fácilmente con la sintaxis `Array.length`. A continuación se puede ver una implementación más compleja de un arreglo. Esto se conoce como un <dfn>arreglo multidimensional</dfn>, o un arreglo que contiene otros arreglos. Observa que este arreglo también contiene <dfn>objetos</dfn> JavaScript, que examinaremos muy de cerca en la siguiente sección, pero por ahora, todo lo que necesitas saber es que los arreglos también child capaces de almacenar objetos complejos.
 
 ```js
 let complexArray = [

@@ -13,10 +13,10 @@ Dati due punti su un piano, e un raggio, in genere due cerchi di raggio dato pos
 **Eccezioni:**
 
 <ul>
-  <li>Un raggio di zero deve essere trattato come non descrivente mai cerchi (eccetto nel caso in cui i punti sono coincidenti).</li>
-  <li>Se i punti sono coincidenti allora si può disegnare un numero infinito di cerchi con i punti sulla loro circonferenza; a meno che il raggio non sia pure uguale a zero, il che collassa i cerchi a un punto.</li>
+  <li>Un raggio di zero deve essere trattato come non descrivente mai cerchi (eccetto nel caso in cui i punti childo coincidenti).</li>
+  <li>Se i punti childo coincidenti allora si può disegnare un numero infinito di cerchi con i punti sulla loro circonferenza; a meno che il raggio non sia pure uguale a zero, il che collassa i cerchi a un punto.</li>
   <li>Se i punti formano un diametro allora restituisci un singolo cerchio.</li>
-  <li>Se i punti sono troppo distanti allora nessun cerchio può essere disegnato.</li>
+  <li>Se i punti childo troppo distanti allora nessun cerchio può essere disegnato.</li>
 </ul>
 
 # --instructions--
@@ -26,9 +26,9 @@ Implementa una funzione che accetta due punti e un raggio e restituisce i due ce
 **Per casi limite, restituisci le cose seguenti:**
 
 <ul>
-  <li>Se i punti sono sul diametro, restituisci un punto. Se il raggio è pure zero allora restituisci <code>"Radius Zero"</code>.</li>
-  <li>Se i punti sono coincidenti, restituisci <code>"Coincident point. Infinite solutions"</code>.</li>
-  <li>Se i punti sono più distanti tra loro del diametro, restituisci <code>"No intersection. Points further apart than circle diameter"</code>.</li>
+  <li>Se i punti childo sul diametro, restituisci un punto. Se il raggio è pure zero allora restituisci <code>"Radius Zero"</code>.</li>
+  <li>Se i punti childo coincidenti, restituisci <code>"Coincident point. Infinite solutions"</code>.</li>
+  <li>Se i punti childo più distanti tra loro del diametro, restituisci <code>"No intersection. Points further apart than circle diameter"</code>.</li>
 </ul>
 
 **Esempio di input:**

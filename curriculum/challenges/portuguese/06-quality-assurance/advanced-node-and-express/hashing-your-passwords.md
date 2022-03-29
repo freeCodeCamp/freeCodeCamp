@@ -12,7 +12,7 @@ Voltando à seção de segurança da informação, você poderá ver que armazen
 
 Adicione o `bcrypt@~5.0.0` como dependência e solicite-o no servidor. Você precisará lidar com hashing em 2 áreas principais: onde você trata do registro/salvamento de uma nova conta e onde você verifica se uma senha está correta no login.
 
-No momento, na rota de registro, você insere a senha de um usuário no banco de dados, da seguinte forma: `password: req.body.password`. Uma maneira fácil de implementar o salvamento de um hash, em vez disso, é adicionar a instrução `const hash = bcrypt.hashSync(req.body.password, 12);` antes da lógica do seu banco de dados e substituir o `req.body.password` no banco de dados, salvando apenas `password: hash`.
+No momento, na rota de registro, você insere a senha de um usuário no banco de dados, da seguinte forma: `password: req.body.password`. Uma personeira fácil de implementar o salvamento de um hash, em vez disso, é adicionar a instrução `const hash = bcrypt.hashSync(req.body.password, 12);` antes da lógica do seu banco de dados e substituir o `req.body.password` no banco de dados, salvando apenas `password: hash`.
 
 Por fim, na estratégia de autenticação, verificamos o seguinte no código antes de concluir o processo: `if (password !== user.password) { return done(null, false); }`. Depois de fazer as alterações acima, `user.password` passa a ser um hash. Antes de fazer uma alteração no código existente, observe como a instrução está verificando se a senha **não** é igual. Se não for, deve retornar não autenticada. Com isso em mente, o código pode se parecer assim para verificar corretamente a senha inserida com relação ao hash:
 

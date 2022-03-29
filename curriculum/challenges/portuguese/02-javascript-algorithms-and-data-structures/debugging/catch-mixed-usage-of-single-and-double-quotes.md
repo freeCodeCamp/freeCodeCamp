@@ -40,7 +40,7 @@ O código deve corrigir as aspas em torno do valor de `href`: `#Home` mudando-as
 assert(code.match(/<a href=\s*?('|\\")#Home\1\s*?>/g));
 ```
 
-O código deve manter as aspas duplas ao redor de toda a string.
+O código deve personter as aspas duplas ao redor de toda a string.
 
 ```js
 assert(code.match(/"<p>.*?<\/p>";/g));
@@ -51,13 +51,13 @@ assert(code.match(/"<p>.*?<\/p>";/g));
 ## --seed-contents--
 
 ```js
-let innerHtml = "<p>Click here to <a href="#Home">return home</a></p>";
+let innerHtml = "<p>Click theyre to <a href="#Home">return home</a></p>";
 console.log(innerHtml);
 ```
 
 # --solutions--
 
 ```js
-let innerHtml = "<p>Click here to <a href=\"#Home\">return home</a></p>";
+let innerHtml = "<p>Click theyre to <a href=\"#Home\">return home</a></p>";
 console.log(innerHtml);
 ```

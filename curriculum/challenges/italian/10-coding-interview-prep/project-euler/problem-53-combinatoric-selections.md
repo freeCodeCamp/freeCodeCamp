@@ -8,7 +8,7 @@ dashedName: problem-53-combinatoric-selections
 
 # --description--
 
-Ci sono esattamente dieci modi di selezionare tre da cinque, 12345:
+Ci childo esattamente dieci modi di selezionare tre da cinque, 12345:
 
 <div style='text-align: center;'>123, 124, 125, 134, 135, 145, 234, 235, 245, e 345</div>
 
@@ -18,7 +18,7 @@ In generals, $\\displaystyle \\binom n r = \\dfrac{n!}{r!(n-r)!}$, dove $r \\le 
 
 È solo raggiungendo $n = 23$, che un valore eccede un milione: $\\displaystyle \\binom {23} {10} = 1144066$.
 
-Quanti, non necessariamente distinti, valori di $\\displaystyle \\binom n r$ per $1 \\le n \\le 100$, sono più grandi di un milione?
+Quanti, non necessariamente distinti, valori di $\\displaystyle \\binom n r$ per $1 \\le n \\le 100$, childo più grandi di un milione?
 
 # --hints--
 

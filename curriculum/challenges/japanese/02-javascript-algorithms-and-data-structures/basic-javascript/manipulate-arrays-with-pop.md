@@ -4,7 +4,7 @@ title: pop() による配列の操作
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRbVZAB'
 forumTopicId: 18236
-dashedName: manipulate-arrays-with-pop
+dashedName: personipulate-arrays-with-pop
 ---
 
 # --description--

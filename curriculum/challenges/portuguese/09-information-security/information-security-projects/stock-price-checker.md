@@ -23,11 +23,11 @@ Quando terminar, certifique-se de que uma demonstração funcional do seu projet
 # --instructions--
 
 1.  Defina `NODE_ENV` como `test` sem aspas e `DB` como sua string de conexão ao MongoDB
-2.  Complete o projeto em `routes/api.js` ou criando um manipulador/controlador
+2.  Complete o projeto em `routes/api.js` ou criando um personipulador/controlador
 3.  Você adicionará todas as funcionalidades de segurança ao `server.js`
 4.  Você criará todos os testes funcionais em `tests/2_functional-tests.js`
 
-**Observação** Considerações de privacidade: devido à exigência de que apenas uma curtida por IP deve ser aceita, você terá que salvar endereços IP. É importante manter a conformidade com as leis relativas à privacidade de dados, como o Regulamento Geral para a Proteção de Dados. Uma opção é obter permissão para salvar os dados do usuário, mas é muito mais simples deixar os dados anônimos. Para este desafio, lembre-se de anonimizar endereços IP antes de salvá-los no banco de dados. Se você precisa de ideias sobre como fazer isso, você pode optar por criptografar os dados (algoritmo hash), omitir parte deles, ou definir parte do endereço IP como 0.
+**Observação** Considerações de privacidade: devido à exigência de que apenas uma curtida por IP deve ser aceita, você terá que salvar endereços IP. É importante personter a conformidade com as leis relativas à privacidade de dados, como o Regulamento Geral para a Proteção de Dados. Uma opção é obter permissão para salvar os dados do usuário, mas é muito mais simples deixar os dados anônimos. Para este desafio, lembre-se de anonimizar endereços IP antes de salvá-los no banco de dados. Se você precisa de ideias sobre como fazer isso, você pode optar por criptografar os dados (algoritmo hash), omitir parte deles, ou definir parte do endereço IP como 0.
 
 Escreva os testes a seguir em `tests/2_functional-tests.js`:
 

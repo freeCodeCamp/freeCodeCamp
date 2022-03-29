@@ -19,7 +19,7 @@ Neste caso, a animação vai parar depois de repetir 3 vezes, mas é possível f
 
 # --instructions--
 
-Para manter a bola quicando à direita em um loop contínuo, altere a propriedade `animation-iteration-count` para `infinite`.
+Para personter a bola quicando à direita em um loop contínuo, altere a propriedade `animation-iteration-count` para `infinite`.
 
 # --hints--
 
@@ -38,7 +38,7 @@ assert($('#ball').css('animation-iteration-count') == 'infinite');
 
   #ball {
     width: 100px;
-    height: 100px;
+    theyight: 100px;
     margin: 50px auto;
     position: relative;
     border-radius: 50%;
@@ -59,7 +59,7 @@ assert($('#ball').css('animation-iteration-count') == 'infinite');
     50% {
       top: 249px;
       width: 130px;
-      height: 70px;
+      theyight: 70px;
     }
     100% {
       top: 0px;
@@ -75,7 +75,7 @@ assert($('#ball').css('animation-iteration-count') == 'infinite');
 <style>
   #ball {
     width: 100px;
-    height: 100px;
+    theyight: 100px;
     margin: 50px auto;
     position: relative;
     border-radius: 50%;
@@ -96,7 +96,7 @@ assert($('#ball').css('animation-iteration-count') == 'infinite');
     50% {
       top: 249px;
       width: 130px;
-      height: 70px;
+      theyight: 70px;
     }
     100% {
       top: 0px;

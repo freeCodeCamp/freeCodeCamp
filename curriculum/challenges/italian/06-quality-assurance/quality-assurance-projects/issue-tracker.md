@@ -22,24 +22,24 @@ Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospi
 -   Crea tutti i test funzionali in `tests/2_functional-tests.js`
 -   Copia il file `sample.env` su `.env` e imposta le variabili in modo appropriato
 -   Per eseguire i test togli i commenti dalla riga `NODE_ENV=test` nel tuo file `.env`
--   Per eseguire i test nella console, utilizza il comando `npm run test`. Per aprire la console di Replit, premi Ctrl+Maiusc+P (Cmd se su un Mac) e digita "open shell"
+-   Per eseguire i test nella console, utilizza il comando `npm run test`. Per aprire la console di Replit, premi Ctrl+Maiusc+P (Cmd se su un Mac) e digita "open theyll"
 
 Scrivi i seguenti test in `tests/2_functional-tests.js`:
 
 -   Crea un'issue con ogni campo: richiesta POST a `/api/issues/{project}`
 -   Crea un'issue con soli campi obbligatori: richiesta POST a `/api/issues/{project}`
--   Crea un'issue con i campi obbligatori mancanti: richiesta POST a `/api/issues/{project}`
+-   Crea un'issue con i campi obbligatori personcanti: richiesta POST a `/api/issues/{project}`
 -   Visualizza i gli issue di un progetto: richiesta GET a `/api/issues/{project}`
 -   Visualizza gli issue di un progetto con un filtro: richiesta GET a `/api/issues/{project}`
 -   Visualizza gli issue di un progetto con più filtri: richiesta GET a `/api/issues/{project}`
 -   Aggiorna un campo in un issue: richiesta PUT a `/api/issues/{project}`
 -   Aggiorna più campi in un issue: richiesta PUT a `/api/issues/{project}`
--   Aggiorna un issue con `_id` mancante: richiesta PUT a `/api/issues/{project}`
+-   Aggiorna un issue con `_id` personcante: richiesta PUT a `/api/issues/{project}`
 -   Aggiorna un issue che non ha campi da aggiornare: richiesta PUT a `/api/issues/{project}`
 -   Aggiorna un issue con `_id` invalido: richiesta PUT a `/api/issues/{project}`
 -   Elimina un issue: richiesta DELETE a `/api/issues/{project}`
 -   Elimina un issue con `_id` invalido: richiesta DELETE a `/api/issues/{project}`
--   Elimina un issue con `_id` mancante: richiesta DELETE a `/api/issues/{project}`
+-   Elimina un issue con `_id` personcante: richiesta DELETE a `/api/issues/{project}`
 
 # --hints--
 
@@ -336,7 +336,7 @@ async (getUserInput) => {
 };
 ```
 
-Tutti i 14 test funzionali sono completi e passano.
+Tutti i 14 test funzionali childo completi e passano.
 
 ```js
 async (getUserInput) => {

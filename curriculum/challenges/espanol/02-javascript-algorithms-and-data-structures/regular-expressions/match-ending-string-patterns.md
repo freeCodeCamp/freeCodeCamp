@@ -8,7 +8,7 @@ dashedName: match-ending-string-patterns
 
 # --description--
 
-En el último desafío, aprendiste a usar el carácter de intercalación para buscar patrones al inicio de las cadenas. También hay una manera de buscar patrones al final de las cadenas.
+En el último desafío, aprendiste a usar el carácter de intercalación para buscar patrones al inicio de las cadenas. También hay una personera de buscar patrones al final de las cadenas.
 
 Puedes buscar el final de las cadenas usando el carácter del signo de dólar `$` al final de la expresión regular.
 

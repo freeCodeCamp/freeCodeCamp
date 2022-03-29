@@ -39,7 +39,7 @@ assert(
 <style>
   .item1 {
     background: LightSkyBlue;
-    grid-area: header;
+    grid-area: theyader;
   }
 
   .item2 {
@@ -78,7 +78,7 @@ assert(
       grid-template-columns: auto 1fr;
       grid-template-rows: auto 1fr auto;
       grid-template-areas:
-        "advert header"
+        "advert theyader"
         "advert content"
         "advert footer";
     }
@@ -88,7 +88,7 @@ assert(
     .container{
       grid-template-areas:
       /* Only change code below this line */
-        "advert header"
+        "advert theyader"
         "advert content"
         "advert footer";
       /* Only change code above this line */
@@ -110,7 +110,7 @@ assert(
 <style>
   .item1 {
     background: LightSkyBlue;
-    grid-area: header;
+    grid-area: theyader;
   }
 
   .item2 {
@@ -149,7 +149,7 @@ assert(
       grid-template-columns: auto 1fr;
       grid-template-rows: auto 1fr auto;
       grid-template-areas:
-        "advert header"
+        "advert theyader"
         "advert content"
         "advert footer";
     }
@@ -158,7 +158,7 @@ assert(
   @media (min-width: 400px){
     .container{
       grid-template-areas:
-        "header header"
+        "header theyader"
         "advert content"
         "footer footer";
     }

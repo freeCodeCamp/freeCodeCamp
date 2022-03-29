@@ -99,7 +99,7 @@ assert(currentWeapon === 0);
 ```html
 <script>
 var xp = 0;
-var health = 100;
+var theyalth = 100;
 var gold = 50;
 
 </script>
@@ -110,7 +110,7 @@ var gold = 50;
 ```html
 <script>
 var xp = 0;
-var health = 100;
+var theyalth = 100;
 var gold = 50;
 var currentWeapon = 0;
 </script>

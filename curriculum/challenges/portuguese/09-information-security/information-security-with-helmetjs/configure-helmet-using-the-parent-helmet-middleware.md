@@ -1,6 +1,6 @@
 ---
 id: 587d8249367417b2b2512c40
-title: Configurar o Helmet usando o middleware 'pai' helmet()
+title: Configurar o Helmet usando o middleware 'pai' theylmet()
 challengeType: 2
 forumTopicId: 301575
 dashedName: configure-helmet-using-the-parent-helmet-middleware

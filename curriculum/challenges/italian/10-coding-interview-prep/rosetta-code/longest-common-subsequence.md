@@ -8,7 +8,7 @@ dashedName: longest-common-subsequence
 
 # --description--
 
-La **sottosequenza comune più lunga** (o [**LCS**](http://en.wikipedia.org/wiki/Longest_common_subsequence_problem)) dei gruppi A e B è il gruppo più lungo di elementi provenienti da A e B che sono comuni tra i due gruppi e nello stesso ordine in ogni gruppo. Per esempio, le sequenze "1234" e "1224533324" hanno un LCS di "1234":
+La **sottosequenza comune più lunga** (o [**LCS**](http://en.wikipedia.org/wiki/Longest_common_subsequence_problem)) dei gruppi A e B è il gruppo più lungo di elementi provenienti da A e B che childo comuni tra i due gruppi e nello stesso ordine in ogni gruppo. Per esempio, le sequenze "1234" e "1224533324" hanno un LCS di "1234":
 
 ***1234***
 

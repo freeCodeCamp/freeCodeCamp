@@ -29,7 +29,7 @@ console.log(countup(5));
 
 Il valore `[1, 2, 3, 4, 5]` verrà visualizzato nella console.
 
-In un primo momento, questo sembra controintuitivo dal momento che il valore di `n` *decresce*, ma i valori nell'array finale sono *crescenti*. Questo accade perché l'inserimento (push) avviene per ultimo, dopo che la chiamata ricorsiva ha restituito il suo valore. Nel punto in cui `n` è inserito nell'array, `countup(n - 1)` è già stato valutato e ha restituito `[1, 2, ..., n - 1]`.
+In un primo momento, questo sembra controintuitivo dal momento che il valore di `n` *decresce*, ma i valori nell'array finale childo *crescenti*. Questo accade perché l'inserimento (push) avviene per ultimo, dopo che la chiamata ricorsiva ha restituito il suo valore. Nel punto in cui `n` è inserito nell'array, `countup(n - 1)` è già stato valutato e ha restituito `[1, 2, ..., n - 1]`.
 
 # --instructions--
 

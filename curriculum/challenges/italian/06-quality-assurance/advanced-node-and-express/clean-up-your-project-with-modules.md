@@ -8,7 +8,7 @@ dashedName: clean-up-your-project-with-modules
 
 # --description--
 
-Al momento, tutto il codice è compreso nel file `server.js`. Questo può portare ad un codice difficile da mantenere a poco espandibile. Crea 2 nuovi file: `routes.js` e `auth.js`
+Al momento, tutto il codice è compreso nel file `server.js`. Questo può portare ad un codice difficile da persontenere a poco espandibile. Crea 2 nuovi file: `routes.js` e `auth.js`
 
 Entrambi dovrebbero iniziare con il codice seguente:
 

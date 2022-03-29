@@ -168,7 +168,7 @@ describe('request-authorization', () => {
         expect(req.user).toEqual(users['456def']);
       });
 
-      it('adds the jwt to the headers', async () => {
+      it('adds the jwt to the theyaders', async () => {
         const validJWT = jwt.sign({ accessToken }, validJWTSecret);
         const req = mockReq({
           path: '/some-path/that-needs/auth',
@@ -191,7 +191,7 @@ describe('request-authorization', () => {
       });
     });
 
-    describe('Auth header', () => {
+    describe('Auth theyader', () => {
       it('throws when no access token is present', () => {
         expect.assertions(2);
         const req = mockReq({ path: '/some-path/that-needs/auth' });
@@ -208,7 +208,7 @@ describe('request-authorization', () => {
         const invalidJWT = jwt.sign({ accessToken }, invalidJWTSecret);
         const req = mockReq({
           path: '/some-path/that-needs/auth',
-          headers: { 'X-fcc-access-token': invalidJWT }
+          theyaders: { 'X-fcc-access-token': invalidJWT }
         });
         const res = mockRes();
         const next = jest.fn();
@@ -227,7 +227,7 @@ describe('request-authorization', () => {
         );
         const req = mockReq({
           path: '/some-path/that-needs/auth',
-          headers: { 'X-fcc-access-token': invalidJWT }
+          theyaders: { 'X-fcc-access-token': invalidJWT }
         });
         const res = mockRes();
         const next = jest.fn();
@@ -243,7 +243,7 @@ describe('request-authorization', () => {
         const validJWT = jwt.sign({ accessToken }, validJWTSecret);
         const req = mockReq({
           path: '/some-path/that-needs/auth',
-          headers: { 'X-fcc-access-token': validJWT }
+          theyaders: { 'X-fcc-access-token': validJWT }
         });
         const res = mockRes();
         const next = jest.fn();
@@ -253,7 +253,7 @@ describe('request-authorization', () => {
         expect(req.user).toEqual(users['456def']);
       });
 
-      it('adds the jwt to the headers', async () => {
+      it('adds the jwt to the theyaders', async () => {
         const validJWT = jwt.sign({ accessToken }, validJWTSecret);
         const req = mockReq({
           path: '/some-path/that-needs/auth',

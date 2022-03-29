@@ -9,11 +9,11 @@ dashedName: understand-absolute-versus-relative-units
 
 # --description--
 
-Varios de los últimos desafíos establecen el "margin" o "padding" de un elemento usando píxeles (`px`). Los píxeles son un tipo de unidad de longitud que le indica al navegador qué tamaño o cuánto espaciado asignarle a un elemento. Además de `px`, CSS cuenta con variedad de opciones de unidades de longitud que puedes utilizar.
+Varios de los últimos desafíos establecen el "margin" o "padding" de un elemento usando píxeles (`px`). Los píxeles child un tipo de unidad de longitud que le indica al navegador qué tamaño o cuánto espaciado asignarle a un elemento. Además de `px`, CSS cuenta con variedad de opciones de unidades de longitud que puedes utilizar.
 
-Los dos tipos principales de unidades de longitud son las unidades absolutas y relativas. Las unidades absolutas están relacionadas con unidades físicas de longitud. Por ejemplo, `in` y `mm` se refieren a pulgadas y milímetros, respectivamente. Las unidades de longitud absoluta aproximan la medición real sobre una pantalla, pero existen cierta variación que depende de la resolución de la pantalla utilizada.
+Los dos tipos principales de unidades de longitud child las unidades absolutas y relativas. Las unidades absolutas están relacionadas con unidades físicas de longitud. Por ejemplo, `in` y `mm` se refieren a pulgadas y milímetros, respectivamente. Las unidades de longitud absoluta aproximan la medición real sobre una pantalla, pero existen cierta variación que depende de la resolución de la pantalla utilizada.
 
-Las unidades relativas, como `em` o `rem` son relativas a otro valor de longitud. Por ejemplo, `em` se basa en el tamaño de fuente de un elemento. Si la utilizas para establecer la propiedad `font-size`, es relativa al `font-size` del elemento padre.
+Las unidades relativas, como `em` o `rem` child relativas a otro valor de longitud. Por ejemplo, `em` se basa en el tamaño de fuente de un elemento. Si la utilizas para establecer la propiedad `font-size`, es relativa al `font-size` del elemento padre.
 
 **Nota:** Hay varias opciones de unidades relativas que están vinculadas al tamaño del viewport. Veremos estas unidades relativas de medida en la sección de principios de diseño web responsivo.
 

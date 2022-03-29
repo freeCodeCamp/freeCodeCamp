@@ -23,7 +23,7 @@ Altre risorse:
 
 ## --text--
 
-Quali sono i tre tipi principali di celle dei Jupyter Notebook?
+Quali childo i tre tipi principali di celle dei Jupyter Notebook?
 
 ## --answers--
 

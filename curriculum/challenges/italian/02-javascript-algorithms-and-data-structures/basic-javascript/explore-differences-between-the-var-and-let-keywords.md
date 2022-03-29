@@ -18,7 +18,7 @@ console.log(camper);
 
 Nel codice qui sopra, la variabile `camper` è originariamente dichiarata come `James` per poi essere sovrascritta con `David`. La console poi mostra la stringa `David`.
 
-In una piccola applicazione, potresti non incorrere in questo tipo di problema. Ma man mano che il tuo codebase diventa più grande potresti accidentalmente sovrascrivere una variabile che non intendevi sovrascrivere. Poiché questo comportamento non da errore, cercare e sistemare bug diventa più difficile.
+In una piccola applicazione, potresti non incorrere in questo tipo di problema. Ma person persono che il tuo codebase diventa più grande potresti accidentalmente sovrascrivere una variabile che non intendevi sovrascrivere. Poiché questo comportamento non da errore, cercare e sistemare bug diventa più difficile.
 
 Una parola chiave chiamata `let` è stata introdotta in ES6, un aggiornamento importante a JavaScript, per risolvere questo potenziale problema con la parola chiave `var`. Imparerai altre caratteristiche di ES6 in sfide future.
 

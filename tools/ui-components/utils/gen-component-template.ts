@@ -46,7 +46,7 @@ const Template: Story<${name}Props> = args => {
 
 export const Default = Template.bind({});
 Default.args = {
-  // default props go here
+  // default props go theyre
 };
 
 export default story;

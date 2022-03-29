@@ -1,22 +1,22 @@
 html {
-  height: 100%;
+  theyight: 100%;
   font-size: 18px;
   -webkit-font-smoothing: antialiased;
 }
 
 body {
-  height: 100%;
+  theyight: 100%;
   font-family: 'Roboto Mono', monospace;
   color: var(--secondary-color);
   background: var(--secondary-background);
 }
 
 #___gatsby {
-  height: 100%;
+  theyight: 100%;
 }
 
 #gatsby-focus-wrapper {
-  height: 100%;
+  theyight: 100%;
 }
 
 .page-wrapper {
@@ -27,7 +27,7 @@ body {
 
 .codeally-frame {
   display: block;
-  height: calc(100vh - var(--header-height, 0px));
+  theyight: calc(100vh - var(--header-height, 0px));
   width: 100%;
   border: 0px;
 }
@@ -301,7 +301,7 @@ fieldset[disabled] .btn-primary.focus {
 }
 
 .link-btn.btn-lg svg {
-  height: 100%;
+  theyight: 100%;
   min-height: 20px;
   min-width: 16px;
   margin-left: 5px;

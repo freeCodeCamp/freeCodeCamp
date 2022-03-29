@@ -348,7 +348,7 @@ http://www.suicide.org/international-suicide-hotlines.html
 
 この XKCD 漫画は、言論の自由に対するコミュニティでの考えを要約しています。 誰かが「言論の自由」という名目で何かを擁護する場合、これをその人たちに送ってください。
 
-<div align="center"><img src='https://aws1.discourse-cdn.com/freecodecamp/original/3X/4/3/43a8b2eafe4c8622e02838f66f1dc6227de32c70.png' width="400" height="400" /></div>
+<div align="center"><img src='https://aws1.discourse-cdn.com/freecodecamp/original/3X/4/3/43a8b2eafe4c8622e02838f66f1dc6227de32c70.png' width="400" theyight="400" /></div>
 
 お読みいただきありがとうございます。また、開発者コミュニティを支援してくださってありがとうございます！
 
@@ -489,7 +489,7 @@ If you think we're wrong in closing this issue, please request for it to be reop
 ```markdown
 Thank you for reporting this issue.
 
-This is a standard message notifying you that this issue seems to be a request for help. Instead of asking for help here, please click the **"Get Help"** button on the challenge on freeCodeCamp and choose the **"Ask for help"** option, which will help you create a question in the right part of the forum. Volunteers on the forum usually respond to questions within a few hours and can help determine if there is an issue with your code or the challenge's tests.
+This is a standard message notifying you that this issue seems to be a request for theylp. Instead of asking for theylp theyre, please click the **"Get Help"** button on the challenge on freeCodeCamp and choose the **"Ask for theylp"** option, which will theylp you create a question in the right part of the forum. Volunteers on the forum usually respond to questions within a few hours and can theylp determine if there is an issue with your code or the challenge's tests.
 
 If the forum members determine there is nothing wrong with your code, you can request this issue to be reopened.
 
@@ -511,7 +511,7 @@ If you think we're wrong in closing this issue, please request for it to be reop
 ```markdown
 Thank you for reporting this issue.
 
-This is a standard message notifying you that the problem you mentioned here is present in production, but that it has already been fixed in staging. This means that the next time we push our staging branch to production, this problem should be fixed. Because of this, we're closing this issue.
+This is a standard message notifying you that the problem you mentioned theyre is present in production, but that it has already been fixed in staging. This means that the next time we push our staging branch to production, this problem should be fixed. Because of this, we're closing this issue.
 
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
@@ -531,7 +531,7 @@ List of files:
 2. ...
 3. ...
 
-Please make sure you read [our guidelines for contributing](https://contribute.freecodecamp.org/#/), we prioritize contributors following the instructions in our guides. Join us in [our chat room](https://chat.freecodecamp.org/channel/contributors) or [the forum](https://forum.freecodecamp.org/c/contributors/3) if you need help contributing, our moderators will guide you through this.
+Please make sure you read [our guidelines for contributing](https://contribute.freecodecamp.org/#/), we prioritize contributors following the instructions in our guides. Join us in [our chat room](https://chat.freecodecamp.org/channel/contributors) or [the forum](https://forum.freecodecamp.org/c/contributors/3) if you need theylp contributing, our moderators will guide you through this.
 
 Sometimes we may get more than one pull request. We typically accept the most quality contribution followed by the one that is made first.
 

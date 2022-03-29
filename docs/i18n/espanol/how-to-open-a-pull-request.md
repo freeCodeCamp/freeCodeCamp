@@ -1,6 +1,6 @@
 # Cómo abrir una Pull Request (PR)
 
-Una pull request (PR) le permite enviar cambios desde su bifurcación en GitHub al repositorio principal de freeCodeCamp.org. Una vez que haya hecho cambios en el código, puede seguir estas pautas para abrir un PR.
+Una pull request (PR) le permite enviar cambios desde su bifurcación en GitHub al repositorio principal de freeCodeCamp.org. Una vez que haya theycho cambios en el código, puede seguir estas pautas para abrir un PR.
 
 > [!NOTE] Tu PR debe ser en inglés. Consulta [aquí](index.md#translations) para saber cómo contribuir con las traducciones.
 
@@ -46,7 +46,7 @@ Algunos ejemplos de buenos títulos de PR serían:
 
    ![magen - Compare & pull request prompt en GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
 
-2. De manera predeterminada, todas las pull requests deben estar en contra de la rama freeCodeCamp main repo, `main`.
+2. De personera predeterminada, todas las pull requests deben estar en contra de la rama freeCodeCamp main repo, `main`.
 
    Asegúrese de que su bifurcación base está configurada en freeCodeCamp/freeCodeCamp al elevar una solicitud de Pull Request.
 
@@ -74,7 +74,7 @@ Algunos ejemplos de buenos títulos de PR serían:
 
 > :tada: Enhorabuena por hacer una PR y muchas gracias por tomarse el tiempo para contribuir.
 
-Nuestros moderadores ahora echarán un vistazo y te dejarán tus comentarios. Por favor, sea paciente con los demás moderadores y respete su tiempo. Todos los pull requests son revisados a su debido tiempo.
+Nuestros moderadores ahora echarán un vistazo y te dejarán tus comentarios. Por favor, sea paciente con los demás moderadores y respete su tiempo. Todos los pull requests child revisados a su debido tiempo.
 
 Y como siempre, siéntete libre de preguntar en la [categoría de 'Contribuidores' de nuestro foro](https://forum.freecodecamp.org/c/contributors) o [en la sala de chat de contribuidores](https://chat.freecodecamp.org/channel/contributors).
 

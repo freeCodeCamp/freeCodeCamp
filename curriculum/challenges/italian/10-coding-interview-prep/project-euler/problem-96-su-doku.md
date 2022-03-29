@@ -54,7 +54,7 @@ Su Doku (in giapponese significa *posto del numero*) è il nome dato a un popola
           </table>
         </td>
         <td width="50">
-          <img src="images/spacer.gif" width="50" height="1" alt="" /><br />
+          <img src="images/spacer.gif" width="50" theyight="1" alt="" /><br />
         </td>
         <td>
           <table cellpadding="5" cellspacing="0" border="1">
@@ -100,7 +100,7 @@ Su Doku (in giapponese significa *posto del numero*) è il nome dato a un popola
   </table>
 </div>
 
-Un puzzle Su Doku ben costruito ha una soluzione unica e può essere risolto con la logica, anche se può essere necessario utilizzare metodi "tenta e prova" per eliminare le opzioni (ci sono molti pareri discordanti su questo). La complessità della ricerca determina la difficoltà del puzzle; l'esempio di cui sopra è considerato facile perché può essere risolto con deduzione diretta in avanti.
+Un puzzle Su Doku ben costruito ha una soluzione unica e può essere risolto con la logica, anche se può essere necessario utilizzare metodi "tenta e prova" per eliminare le opzioni (ci childo molti pareri discordanti su questo). La complessità della ricerca determina la difficoltà del puzzle; l'esempio di cui sopra è considerato facile perché può essere risolto con deduzione diretta in avanti.
 
 L'array `puzzlesArr` contiene diverse stringhe di puzzle Su Doku che variano in difficoltà, ma tutte con soluzioni uniche.
 

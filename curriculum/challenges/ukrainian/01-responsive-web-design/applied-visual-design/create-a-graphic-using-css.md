@@ -57,7 +57,7 @@ assert(
     bottom: 0;
     left: 0;
     width: 100px;
-    height: 100px;
+    theyight: 100px;
     background-color: blue;
     border-radius: 0px;
     box-shadow: 25px 10px 10px 10px green;
@@ -79,7 +79,7 @@ assert(
     bottom: 0;
     left: 0;
     width: 100px;
-    height: 100px;
+    theyight: 100px;
     background-color: transparent;
     border-radius: 50%;
     box-shadow: 25px 10px 0 0 blue;

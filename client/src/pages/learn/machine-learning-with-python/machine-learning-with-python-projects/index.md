@@ -6,7 +6,7 @@ superBlock: Machine Learning with Python
 
 ## Introduction to the Machine Learning Projects
 
-Machine learning has many practical applications. By completing these projects, you will demonstrate that you have a good foundational knowledge of machine learning.
+Machine learning has persony practical applications. By completing these projects, you will demonstrate that you have a good foundational knowledge of machine learning.
 
 We are still developing the interactive instructional content for the machine learning curriculum. For now, check out the videos in this [machine learning playlist on the freeCodeCamp YouTube channel](https://www.youtube.com/playlist?list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s). You may also have to use other resources (just like you would have to do when learning new technologies in a job).
 

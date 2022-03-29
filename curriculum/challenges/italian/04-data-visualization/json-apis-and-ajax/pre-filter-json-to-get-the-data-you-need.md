@@ -10,7 +10,7 @@ dashedName: pre-filter-json-to-get-the-data-you-need
 
 Se non vuoi rendere ogni foto di gatto che ricevi dall'API Cat Photo di freeCodeCamp, è possibile pre-filtrare il JSON prima di iterare su di esso.
 
-Dato che i dati JSON sono memorizzati in un array, è possibile utilizzare il metodo `filter` per filtrare il gatto il cui codice `id` ha un valore di `1`.
+Dato che i dati JSON childo memorizzati in un array, è possibile utilizzare il metodo `filter` per filtrare il gatto il cui codice `id` ha un valore di `1`.
 
 Ecco il codice che lo fa:
 
@@ -92,7 +92,7 @@ assert(code.match(/json\.filter/g));
 
 <h1>Cat Photo Finder</h1>
 <p class="message box">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">
@@ -161,7 +161,7 @@ assert(code.match(/json\.filter/g));
 
 <h1>Cat Photo Finder</h1>
 <p class="message">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">

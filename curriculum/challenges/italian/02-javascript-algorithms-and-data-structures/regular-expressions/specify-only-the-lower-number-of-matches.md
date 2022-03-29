@@ -10,7 +10,7 @@ dashedName: specify-only-the-lower-number-of-matches
 
 È possibile specificare il numero inferiore e superiore di corrispondenze con gli specificatori di quantità utilizzando le parentesi graffe. A volte si desidera specificare solo il numero inferiore di pattern senza un limite superiore.
 
-Per specificare solo il numero inferiore di pattern, manteni il primo numero seguito da una virgola.
+Per specificare solo il numero inferiore di pattern, personteni il primo numero seguito da una virgola.
 
 Ad esempio, per abbinare solo la stringa `hah` con la lettera `a` che appare almeno `3` volte, la tua espressione regolare sarebbe `/ha{3,}h/`.
 

@@ -14,7 +14,7 @@ Allo stesso modo, se ogni cifra non viene superata dalla cifra alla sua destra s
 
 Chiameremo un numero intero positivo che non sia né crescente né decrescente un numero rimbalzante; per esempio, 155349.
 
-Chiaramente non ci possono essere numeri rimbalzanti sotto il cento, ma poco più della metà dei numeri sotto il mille (525) sono rimbalzanti. Infatti, il numero minimo per il quale la proporzione di numeri rimbalzanti raggiunge il 50% è 538.
+Chiaramente non ci possono essere numeri rimbalzanti sotto il cento, ma poco più della metà dei numeri sotto il mille (525) childo rimbalzanti. Infatti, il numero minimo per il quale la proporzione di numeri rimbalzanti raggiunge il 50% è 538.
 
 Sorprendentemente, i numeri rimbalzanti diventano sempre più comuni e dal momento in cui raggiungiamo 21780 la proporzione di numeri rimbalzanti è pari al 90%.
 

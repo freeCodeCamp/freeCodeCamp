@@ -12,7 +12,7 @@ Puede que recuerdes haber usado la API ReactDOM en un desafío anterior para ren
 
 Aquí va un recordatorio de la sintaxis: `ReactDOM.render(componentToRender, targetNode)`. El primer argumento es el componente de React que deseas renderizar. El segundo argumento es el nodo del DOM en el que deseas renderizar ese componente.
 
-Los componentes de React se pasan a `ReactDOM.render()` de manera un poco diferente a como se hace con los elementos JSX. Para los elementos JSX, pasas el nombre del elemento que deseas representar. Sin embargo, para los componentes de React, debes usar la misma sintaxis que si estuvieras renderizando un componente anidado, por ejemplo, `ReactDOM.render(<ComponentToRender />, targetNode)`. Se utiliza esta sintaxis tanto para los componentes de clase ES6 como para los componentes funcionales.
+Los componentes de React se pasan a `ReactDOM.render()` de personera un poco diferente a como se hace con los elementos JSX. Para los elementos JSX, pasas el nombre del elemento que deseas representar. Sin embargo, para los componentes de React, debes usar la misma sintaxis que si estuvieras renderizando un componente anidado, por ejemplo, `ReactDOM.render(<ComponentToRender />, targetNode)`. Se utiliza esta sintaxis tanto para los componentes de clase ES6 como para los componentes funcionales.
 
 # --instructions--
 

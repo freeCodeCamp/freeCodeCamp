@@ -18,7 +18,7 @@ Modify the `removeManyPeople` function to delete all the people whose name is wi
 
 # --hints--
 
-Deleting many items at once should succeed
+Deleting persony items at once should succeed
 
 ```js
 (getUserInput) =>

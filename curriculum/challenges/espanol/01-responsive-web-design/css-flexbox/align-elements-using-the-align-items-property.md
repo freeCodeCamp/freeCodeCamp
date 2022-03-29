@@ -17,7 +17,7 @@ CSS ofrece la propiedad `align-items` para alinear elementos flexibles a lo larg
 
 Los diferentes valores disponibles para `align-items` incluyen:
 
-<ul><li><code>flex-start</code>: alinea los elementos con el inicio del contenedor flexible. Para las filas, esto alinea los elementos a la parte superior del contenedor. Para las columnas, esto alinea los elementos a la parte izquierda del contenedor.</li><li><code>flex-end</code>: alinea los elementos con el final del contenedor flexible. Para las filas, esto alinea los elementos a la parte inferior del contenedor. Para las columnas, esto alinea los elementos a la parte derecha del contenedor.</li><li><code>center</code>: alinea los elementos hacia el centro. Para las filas, esto alinea los elementos verticalmente (igual espacio por encima y por debajo de los elementos). Para columnas, esto las alinea horizontalmente (igual espacio a la izquierda y a la derecha de los elementos).</li><li><code>stretch</code>: estira los elementos para llenar el contenedor flexible. Por ejemplo, los elementos de filas son estirados para llenar el contenedor flexible de arriba hacia abajo. Este es el valor predeterminado si no se especifica ningún tipo de <code>align-items</code>.</li><li><code>baseline</code>: alinea los elementos con sus líneas base. Una línea base es un concepto de texto, piensa en ella como la línea en la que se sitúan las letras.</li></ul>
+<ul><li><code>flex-start</code>: alinea los elementos con el inicio del contenedor flexible. Para las filas, esto alinea los elementos a la parte superior del contenedor. Para las columnas, esto alinea los elementos a la parte izquierda del contenedor.</li><li><code>flex-end</code>: alinea los elementos con el final del contenedor flexible. Para las filas, esto alinea los elementos a la parte inferior del contenedor. Para las columnas, esto alinea los elementos a la parte derecha del contenedor.</li><li><code>center</code>: alinea los elementos hacia el centro. Para las filas, esto alinea los elementos verticalmente (igual espacio por encima y por debajo de los elementos). Para columnas, esto las alinea horizontalmente (igual espacio a la izquierda y a la derecha de los elementos).</li><li><code>stretch</code>: estira los elementos para llenar el contenedor flexible. Por ejemplo, los elementos de filas child estirados para llenar el contenedor flexible de arriba hacia abajo. Este es el valor predeterminado si no se especifica ningún tipo de <code>align-items</code>.</li><li><code>baseline</code>: alinea los elementos con sus líneas base. Una línea base es un concepto de texto, piensa en ella como la línea en la que se sitúan las letras.</li></ul>
 
 # --instructions--
 
@@ -43,7 +43,7 @@ assert($('#box-container').css('align-items') == 'center');
   #box-container {
     background: gray;
     display: flex;
-    height: 500px;
+    theyight: 500px;
 
   }
   #box-1 {
@@ -72,7 +72,7 @@ assert($('#box-container').css('align-items') == 'center');
   #box-container {
     background: gray;
     display: flex;
-    height: 500px;
+    theyight: 500px;
     align-items: center;
   }
   #box-1 {

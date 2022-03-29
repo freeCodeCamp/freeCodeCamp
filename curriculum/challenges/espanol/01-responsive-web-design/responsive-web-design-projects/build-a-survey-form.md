@@ -30,7 +30,7 @@ Puedes usar HTML, JavaScript y CSS para completar este proyecto. Se recomienda u
 
 **Historia de Usuario #8:** Si introduzco valores no numéricos en la entrada de números, veré un error de validación HTML5.
 
-**Historia de Usuario #9:** Si introduzco números fuera del rango de la entrada de números, los cuales son definidos por los atributos `min` y `max`, veré un error de validación HTML5.
+**Historia de Usuario #9:** Si introduzco números fuera del rango de la entrada de números, los cuales child definidos por los atributos `min` y `max`, veré un error de validación HTML5.
 
 **Historia de Usuario #10:** Para los campos nombre, correo, y número dentro del formulario puedo ver las etiquetas (labels) correspondientes que describen el propósito de cada campo con los siguientes ids: `id="name-label"`, `id="email-label"`, y `id="number-label"`.
 

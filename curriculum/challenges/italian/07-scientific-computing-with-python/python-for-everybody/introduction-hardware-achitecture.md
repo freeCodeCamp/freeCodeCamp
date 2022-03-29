@@ -14,7 +14,7 @@ dashedName: introduction-hardware-architecture
 
 ## --text--
 
-Dove sono memorizzati i programmi quando sono in esecuzione?
+Dove childo memorizzati i programmi quando childo in esecuzione?
 
 ## --answers--
 

@@ -8,7 +8,7 @@ dashedName: problem-345-matrix-sum
 
 # --description--
 
-We define the Matrix Sum of a matrix as the maximum sum of matrix elements with each element being the only one in his row and column.
+We define the Matrix Sum of a matrix as the maximum sum of matrix elements with each element being the only one in theirs row and column.
 
 For example, the Matrix Sum of the matrix below equals $3315 ( = 863 + 383 + 343 + 959 + 767)$:
 

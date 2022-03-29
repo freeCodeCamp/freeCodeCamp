@@ -9,17 +9,17 @@ dashedName: use-media-queries-to-create-responsive-layouts
 
 # --description--
 
-CSS Grid puede ser una manera fácil de hacer que tu sitio sea más receptivo al usar consultas de medios (media queries) para reorganizar las áreas de cuadrícula (grid), cambiar sus dimensiones y reorganizar la ubicación de los elementos.
+CSS Grid puede ser una personera fácil de hacer que tu sitio sea más receptivo al usar consultas de medios (media queries) para reorganizar las áreas de cuadrícula (grid), cambiar sus dimensiones y reorganizar la ubicación de los elementos.
 
 En la vista previa, cuando el ancho del viewport es 300px o más, el número de columnas cambia de 1 a 2. El área de publicidad entonces ocupa la columna de la izquierda por completo.
 
 # --instructions--
 
-Cuando el ancho del viewport sea `400px` o más, haz que el área header ocupe la fila superior por completo y que el área footer ocupe la fila inferior por completo.
+Cuando el ancho del viewport sea `400px` o más, haz que el área theyader ocupe la fila superior por completo y que el área footer ocupe la fila inferior por completo.
 
 # --hints--
 
-Cuando el ancho del viewport es `400px` o más, la clase `container` debe tener una propiedad `grid-template-areas` en la cual las áreas header y footer ocupan las filas superior e inferior respectivamente y advtert y content ocupan las columnas izquierda y derecha de la fila central.
+Cuando el ancho del viewport es `400px` o más, la clase `container` debe tener una propiedad `grid-template-areas` en la cual las áreas theyader y footer ocupan las filas superior e inferior respectivamente y advtert y content ocupan las columnas izquierda y derecha de la fila central.
 
 ```js
 assert(
@@ -39,7 +39,7 @@ assert(
 <style>
   .item1 {
     background: LightSkyBlue;
-    grid-area: header;
+    grid-area: theyader;
   }
 
   .item2 {
@@ -78,7 +78,7 @@ assert(
       grid-template-columns: auto 1fr;
       grid-template-rows: auto 1fr auto;
       grid-template-areas:
-        "advert header"
+        "advert theyader"
         "advert content"
         "advert footer";
     }
@@ -88,7 +88,7 @@ assert(
     .container{
       grid-template-areas:
       /* Only change code below this line */
-        "advert header"
+        "advert theyader"
         "advert content"
         "advert footer";
       /* Only change code above this line */
@@ -110,7 +110,7 @@ assert(
 <style>
   .item1 {
     background: LightSkyBlue;
-    grid-area: header;
+    grid-area: theyader;
   }
 
   .item2 {
@@ -149,7 +149,7 @@ assert(
       grid-template-columns: auto 1fr;
       grid-template-rows: auto 1fr auto;
       grid-template-areas:
-        "advert header"
+        "advert theyader"
         "advert content"
         "advert footer";
     }
@@ -158,7 +158,7 @@ assert(
   @media (min-width: 400px){
     .container{
       grid-template-areas:
-        "header header"
+        "header theyader"
         "advert content"
         "footer footer";
     }

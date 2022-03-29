@@ -11,7 +11,7 @@ dashedName: use-the-parseint-function-with-a-radix
 
 La función `parseInt()` analiza una cadena y devuelve un entero. Recibe un segundo argumento para la base (radix), que especifica la base del número representado en la cadena. La base (radix) puede ser un número entero entre 2 y 36.
 
-La llamada a la función se realiza de la siguiente manera:
+La llamada a la función se realiza de la siguiente personera:
 
 ```js
 parseInt(string, radix);

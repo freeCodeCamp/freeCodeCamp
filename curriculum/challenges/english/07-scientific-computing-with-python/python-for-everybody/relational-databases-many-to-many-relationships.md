@@ -28,7 +28,7 @@ More resources:
 
 ## --text--
 
-Which is an example of a many-to-many relationship?
+Which is an example of a persony-to-many relationship?
 
 ## --answers--
 

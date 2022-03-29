@@ -25,7 +25,7 @@ dashedName: sudoku-solver
 - 所有路由逻辑都可以进入 `/routes/api.js`
 - 阅读 `/controllers` 中的 `puzzle-strings.js` 文件来了解一些应用程序应该解决的示例谜题
 - 在 `.env` 文件中将 `NODE_ENV` 设置为 `test` （没有引号），运行这个页面的挑战测试。
-- 使用 `npm run test` 命令在 console 中运行测试。 按 Ctrl+Shift+P（在 Mac 上是 Cmd+Shift+P），并输入“open shell”，打开 Replit 控制台。
+- 使用 `npm run test` 命令在 console 中运行测试。 按 Ctrl+Shift+P（在 Mac 上是 Cmd+Shift+P），并输入“open theyll”，打开 Replit 控制台。
 
 在 `tests/1_unit-tests.js` 中写下以下测试：
 
@@ -80,7 +80,7 @@ async (getUserInput) => {
     '769235418851496372432178956174569283395842761628713549283657194516924837947381625';
   const data = await fetch(getUserInput('url') + '/api/solve', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ puzzle: input })
   });
   const parsed = await data.json();
@@ -98,7 +98,7 @@ async (getUserInput) => {
   const output = 'Required field missing';
   const data = await fetch(getUserInput('url') + '/api/solve', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ notpuzzle: input })
   });
   const parsed = await data.json();
@@ -116,7 +116,7 @@ async (getUserInput) => {
   const output = 'Invalid characters in puzzle';
   const data = await fetch(getUserInput('url') + '/api/solve', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ puzzle: input })
   });
   const parsed = await data.json();
@@ -137,7 +137,7 @@ async (getUserInput) => {
   for (const input of inputs) {
     const data = await fetch(getUserInput('url') + '/api/solve', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ puzzle: input })
     });
     const parsed = await data.json();
@@ -156,7 +156,7 @@ async (getUserInput) => {
   const output = 'Puzzle cannot be solved';
   const data = await fetch(getUserInput('url') + '/api/solve', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ puzzle: input })
   });
   const parsed = await data.json();
@@ -175,7 +175,7 @@ async (getUserInput) => {
   const value = '7';
   const data = await fetch(getUserInput('url') + '/api/check', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ puzzle: input, coordinate, value })
   });
   const parsed = await data.json();
@@ -195,7 +195,7 @@ async (getUserInput) => {
   const conflict = ['row', 'column'];
   const data = await fetch(getUserInput('url') + '/api/check', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ puzzle: input, coordinate, value })
   });
   const parsed = await data.json();
@@ -217,7 +217,7 @@ async (getUserInput) => {
   const value = '2';
   const data = await fetch(getUserInput('url') + '/api/check', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ puzzle: input, coordinate, value })
   });
   const parsed = await data.json();
@@ -237,7 +237,7 @@ async (getUserInput) => {
   const output = 'Invalid characters in puzzle';
   const data = await fetch(getUserInput('url') + '/api/check', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ puzzle: input, coordinate, value })
   });
   const parsed = await data.json();
@@ -260,7 +260,7 @@ async (getUserInput) => {
   for (const input of inputs) {
     const data = await fetch(getUserInput('url') + '/api/check', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ puzzle: input, coordinate, value })
     });
     const parsed = await data.json();
@@ -292,7 +292,7 @@ async (getUserInput) => {
     const output = 'Required field(s) missing';
     const data = await fetch(getUserInput('url') + '/api/check', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify(input)
     });
     const parsed = await data.json();
@@ -314,7 +314,7 @@ async (getUserInput) => {
   for (const coordinate of coordinates) {
     const data = await fetch(getUserInput('url') + '/api/check', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ puzzle: input, coordinate, value })
     });
     const parsed = await data.json();
@@ -336,7 +336,7 @@ async (getUserInput) => {
   for (const value of values) {
     const data = await fetch(getUserInput('url') + '/api/check', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ puzzle: input, coordinate, value })
     });
     const parsed = await data.json();

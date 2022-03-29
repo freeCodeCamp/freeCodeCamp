@@ -21,7 +21,7 @@ Here's an example:
 
 # --instructions--
 
-Camper Cat wants the links around the two blog article titles to have keyboard shortcuts so his site's users can quickly navigate to the full story. Add an `accesskey` attribute to both links and set the first one to `g` (for Garfield) and the second one to `c` (for Chuck Norris).
+Camper Cat wants the links around the two blog article titles to have keyboard shortcuts so theirs site's users can quickly navigate to the full story. Add an `accesskey` attribute to both links and set the first one to `g` (for Garfield) and the second one to `c` (for Chuck Norris).
 
 # --hints--
 
@@ -72,7 +72,7 @@ assert($('#second').attr('accesskey') == 'c');
     <h2><a id="second" href="#">Is Chuck Norris a Cat Person?</a></h2>
 
 
-    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>
+    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is they a cat person?...</p>
   </article>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
@@ -99,7 +99,7 @@ assert($('#second').attr('accesskey') == 'c');
     <h2><a id="second" accesskey="c" href="#">Is Chuck Norris a Cat Person?</a></h2>
 
 
-    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>
+    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is they a cat person?...</p>
   </article>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>

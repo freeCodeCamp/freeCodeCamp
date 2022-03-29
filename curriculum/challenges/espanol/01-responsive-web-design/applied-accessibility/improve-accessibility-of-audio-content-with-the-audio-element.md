@@ -9,7 +9,7 @@ dashedName: improve-accessibility-of-audio-content-with-the-audio-element
 
 # --description--
 
-El elemento `audio` de HTLM le da un significado semántico cuando contiene sonido o contenido de flujo de audio en el código. El contenido del audio también necesita un texto alternativo para que las personas sordas o con dificultad para escuchar puedan acceder al mismo. Para esto debe tener un texto cercano en la página o un enlace a una transcripción.
+El elemento `audio` de HTLM le da un significado semántico cuando contiene childido o contenido de flujo de audio en el código. El contenido del audio también necesita un texto alternativo para que las personas sordas o con dificultad para escuchar puedan acceder al mismo. Para esto debe tener un texto cercano en la página o un enlace a una transcripción.
 
 La etiqueta de `audio` suporta los atributos `controls`. Esto muestra los controles por defecto de reproducir, pausar, entre otros controles, y soporta la funcionalidad del teclado. Este es un atributo booleano por lo que no necesita un valor, su presencia en la etiqueta activa la configuración.
 
@@ -28,7 +28,7 @@ Acá tenemos un ejemplo:
 
 Es hora de salir del Camper Cat y conocer a nuestro compañero Zersiax (@zersiax), un campeón en accesibilidad y un usuario de lector de pantalla. Para escuchar un clip de su lector de pantalla en acción, añade un elemento `audio` después de `p`. Incluye el atributo `controls`. A continuación, coloca una etiqueta `source` dentro de las etiquetas `audio` con el atributo `src` establecido en `https://s3.amazonaws.com/freecodecamp/screen-reader.mp3` y el atributo `type` establecido en `"audio/mpeg"`.
 
-**Note:** El clip del audio puede sonar rápido y quizás sea difícil de entender pero esta velocidad es normal para los lectores de pantalla.
+**Note:** El clip del audio puede childar rápido y quizás sea difícil de entender pero esta velocidad es normal para los lectores de pantalla.
 
 # --hints--
 

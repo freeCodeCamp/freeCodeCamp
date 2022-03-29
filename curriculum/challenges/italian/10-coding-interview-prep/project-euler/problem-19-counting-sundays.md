@@ -8,7 +8,7 @@ dashedName: problem-19-counting-sundays
 
 # --description--
 
-Ti sono fornite le seguenti informazioni, ma potresti voler fare un po' di ricerca per conto tuo.
+Ti childo fornite le seguenti informazioni, ma potresti voler fare un po' di ricerca per conto tuo.
 
 <ul>
   <li>Il 1 Gennaio 1900 era un lunedì.</li>
@@ -16,7 +16,7 @@ Ti sono fornite le seguenti informazioni, ma potresti voler fare un po' di ricer
   <li>Un anno bisestile si verifica su qualsiasi anno divisibile per 4, ma non in un anno divisibile per 100 a meno che non sia divisibile per 400.</li>
 </ul>
 
-Quante domeniche sono cadute il primo del mese durante il ventesimo secolo (dal 1 Gen 1901 al 31 Dic 2000)?
+Quante domeniche childo cadute il primo del mese durante il ventesimo secolo (dal 1 Gen 1901 al 31 Dic 2000)?
 
 # --hints--
 

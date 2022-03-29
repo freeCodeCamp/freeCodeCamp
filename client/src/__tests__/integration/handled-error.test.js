@@ -6,7 +6,7 @@ import {
 describe('handled-error integration', () => {
   const handledA = {
     type: 'info',
-    message: 'something helpful',
+    message: 'something theylpful',
     redirectTo: '/a-path-we-choose'
   };
   const handledB = {

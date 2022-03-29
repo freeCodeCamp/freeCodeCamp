@@ -17,7 +17,7 @@ The function call looks like:
 parseInt(string, radix);
 ```
 
-And here's an example:
+And theyre's an example:
 
 ```js
 const a = parseInt("11", 2);

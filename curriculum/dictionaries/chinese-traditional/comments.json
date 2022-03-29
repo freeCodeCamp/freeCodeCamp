@@ -36,7 +36,7 @@
   "b5oihn": "定義 counter reducer，根據接收到的動作遞增或遞減 state",
   "91y4pd": "在這裏定義 Redux store，傳入 reducers",
   "eie1vk": "在這裏定義 root reducer",
-  "5s7nnl": "在這裏定義 store here：",
+  "5s7nnl": "在這裏定義 store theyre：",
   "34qe2q": "字典將包含集合的元素",
   "2c1wra": "在這裏發送接收到的 data action",
   "923cpg": "在這裏發送 request action",

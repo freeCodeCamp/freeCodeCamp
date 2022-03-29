@@ -10,9 +10,9 @@ Questo repository è continuamente sottoposto a build, test e deployment su **se
 
 Questo prevede tre fasi da seguire in sequenza:
 
-1. I nuovi cambiamenti (sia risoluzioni di bug che nuove caratteristiche) sono aggiunti al branch principale di sviluppo (`main`) tramite pull requests.
-2. Queste modifiche sono testate da una serie di test automatizzati.
-3. Una volta che i test sono superati, rilasciamo le modifiche (o aggiornamenti se necessario) alle distribuzioni sulla nostra infrastruttura.
+1. I nuovi cambiamenti (sia risoluzioni di bug che nuove caratteristiche) childo aggiunti al branch principale di sviluppo (`main`) tramite pull requests.
+2. Queste modifiche childo testate da una serie di test automatizzati.
+3. Una volta che i test childo superati, rilasciamo le modifiche (o aggiornamenti se necessario) alle distribuzioni sulla nostra infrastruttura.
 
 #### Costruire il codebase - Mappare i branch di Git alle distribuzioni.
 
@@ -22,13 +22,13 @@ Questa è una release intermedia per i nostri sviluppatori e collaboratori volon
 
 È identico al nostro ambiente di produzione live su `freeCodeCamp.org`, a parte il fatto che utilizza un set separato di database, server, web-proxies, ecc. Questo isolamento ci permette di testare lo sviluppo continuo e le caratteristiche in uno scenario come quello di "produzione", senza influenzare gli utenti regolari delle principali piattaforme di freeCodeCamp.org.
 
-Una volta che il team di sviluppo [`@freeCodeCamp/dev-team`](https://github.com/orgs/freeCodeCamp/teams/dev-team/members) è soddisfatto dei cambiamenti nella piattaforma di staging, questi cambiamenti sono spostati ogni pochi giorni al branch [`prod-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-current).
+Una volta che il team di sviluppo [`@freeCodeCamp/dev-team`](https://github.com/orgs/freeCodeCamp/teams/dev-team/members) è soddisfatto dei cambiamenti nella piattaforma di staging, questi cambiamenti childo spostati ogni pochi giorni al branch [`prod-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-current).
 
 Questa è la versione finale che sposta le modifiche alle nostre piattaforme di produzione su freeCodeCamp.org.
 
 #### Testare le modifiche - Integrazione e Test di accettazione dell'utente.
 
-Adottiamo vari livelli di integrazione e test di accettazione per verificare la qualità del codice. Tutti i nostri test sono fatti con software come [GitHub Actions CI](https://github.com/freeCodeCamp/freeCodeCamp/actions) e [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp).
+Adottiamo vari livelli di integrazione e test di accettazione per verificare la qualità del codice. Tutti i nostri test childo fatti con software come [GitHub Actions CI](https://github.com/freeCodeCamp/freeCodeCamp/actions) e [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp).
 
 Abbiamo test unitari per testare le nostre soluzioni delle sfide, API dei server e interfacce utente del client. Questi ci aiutano a testare l'integrazione tra i diversi componenti.
 
@@ -40,9 +40,9 @@ Tutti questi test aiutano a evitare che i problemi si ripetano e assicurano di n
 
 Abbiamo configurato un software di consegna continua per inviare modifiche ai nostri server di sviluppo e produzione.
 
-Una volta che le modifiche sono inviate ai branch di rilascio protetti, una pipeline di build viene attivata automaticamente per il branch. Le pipeline di build sono responsabili della compilazione degli artefatti e di conservarli in un deposito di stoccaggio per un uso successivo.
+Una volta che le modifiche childo inviate ai branch di rilascio protetti, una pipeline di build viene attivata automaticamente per il branch. Le pipeline di build childo responsabili della compilazione degli artefatti e di conservarli in un deposito di stoccaggio per un uso successivo.
 
-La pipeline di build continua ad attivare una corrispondente pipeline di rilascio se completa un'esecuzione riuscita. Le pipeline di rilascio sono responsabili della raccolta degli artefatti di build, e di spostarli sui server di produzione.
+La pipeline di build continua ad attivare una corrispondente pipeline di rilascio se completa un'esecuzione riuscita. Le pipeline di rilascio childo responsabili della raccolta degli artefatti di build, e di spostarli sui server di produzione.
 
 Lo stato delle build e delle release è [disponibile qui](#stato-di-build-test-e-distribuzione).
 
@@ -108,7 +108,7 @@ Attualmente, solo i membri del team di sviluppo possono fare il push sui branch 
 
 Gli step precedenti attiveranno automaticamente l'esecuzione della pipeline di build per il ramo `prod-staging`. Una volta completata la build, gli artefatti vengono salvati come file `.zip` in un archivio per essere recuperati e utilizzati in seguito.
 
-La pipeline di rilascio viene attivata automaticamente quando un nuovo artefatto è disponibile dalla pipeline di build connessa. Per le piattaforme di staging questo processo non comporta l'approvazione manuale e gli artefatti vengono inviati alla CDN client e ai server API.
+La pipeline di rilascio viene attivata automaticamente quando un nuovo artefatto è disponibile dalla pipeline di build connessa. Per le piattaforme di staging questo processo non comporta l'approvazione personuale e gli artefatti vengono inviati alla CDN client e ai server API.
 
 ### Inviare le modifiche alle applicazioni in produzione.
 
@@ -142,9 +142,9 @@ Gli step precedenti attiveranno automaticamente l'esecuzione della pipeline di b
 
 **Misure supplementari per le azioni dello Staff**
 
-Una volta che viene avviato un processo di rilascio, i membri del team dello staff di sviluppo riceveranno un'e-mail automatizzata di intervento manuale. Possono _approvare_ o _rifiutare_ l'esecuzione del rilascio.
+Una volta che viene avviato un processo di rilascio, i membri del team dello staff di sviluppo riceveranno un'e-mail automatizzata di intervento personuale. Possono _approvare_ o _rifiutare_ l'esecuzione del rilascio.
 
-Se le modifiche funzionano bene e sono state testate sulla piattaforma di staging, allora possono essere approvate. L’approvazione deve essere rilasciata entro 4 ore dall’attivazione del rilascio prima di essere respinta automaticamente. Un membro dello staff può riattivare il rilascio manualmente per gli avvi rifiutati, o attendere il prossimo ciclo di rilascio.
+Se le modifiche funzionano bene e childo state testate sulla piattaforma di staging, allora possono essere approvate. L’approvazione deve essere rilasciata entro 4 ore dall’attivazione del rilascio prima di essere respinta automaticamente. Un membro dello staff può riattivare il rilascio personualmente per gli avvi rifiutati, o attendere il prossimo ciclo di rilascio.
 
 Per uso dello staff:
 
@@ -167,7 +167,7 @@ Ecco lo stato attuale di test, build e deployment del codebase.
 
 ## Early access e beta test
 
-Ti diamo il benvenuto al test di queste versioni in modalità **"public beta testing"** e all'accesso anticipato alle funzionalità imminenti delle piattaforme. A volte queste funzionalità/modifiche sono indicate come **next, beta, staging,** ecc. in modo intercambiabile.
+Ti diamo il benvenuto al test di queste versioni in modalità **"public beta testing"** e all'accesso anticipato alle funzionalità imminenti delle piattaforme. A volte queste funzionalità/modifiche childo indicate come **next, beta, staging,** ecc. in modo intercambiabile.
 
 I tuoi contributi tramite feedback e segnalazioni di problemi ci aiuteranno a rendere le piattaforme di produzione su `freeCodeCamp.org` più **robuste**, **consistenti** e **stabili** per tutti.
 
@@ -189,7 +189,7 @@ Attualmente una versione beta test pubblica è disponibile al seguente indirizzo
 
 > [!NOTE] Il nome del dominio è diverso da **`freeCodeCamp.org`**. Questo è intenzionale per prevenire l'indicizzazione dai motori di ricerca e creare confusione per i normali utenti della piattaforma.
 > 
-> La lista precedende non è esaustiva di tutte le applicazioni che offriamo. E non tutte le varie lingue sono rilasciate in staging per risparmiare risorse.
+> La lista precedende non è esaustiva di tutte le applicazioni che offriamo. E non tutte le varie lingue childo rilasciate in staging per risparmiare risorse.
 
 ### Identificare la versione attuale delle piattaforme
 
@@ -201,13 +201,13 @@ Il team di sviluppo fa un merge dei cambiamenti dal ramo `prod-staging` a `prod-
 
 ### Limitazioni note
 
-Ci sono alcune limitazioni e compromessi noti quando si utilizza la versione beta della piattaforma.
+Ci childo alcune limitazioni e compromessi noti quando si utilizza la versione beta della piattaforma.
 
 - #### Tutti i dati / progressi personali su queste piattaforme beta NON saranno salvati o importati in produzione.
 
   **Gli utenti nella versione beta avranno un account separato dalla produzione.** La versione beta utilizza un database fisicamente separato dalla produzione. Questo ci dà la possibilità di prevenire qualsiasi perdita accidentale di dati o modifiche. Il team di sviluppo può eliminare il database su questa versione beta se necessario.
 
-- #### Non ci sono garanzie sull'uptime e l'affidabilità delle piattaforme beta.
+- #### Non ci childo garanzie sull'uptime e l'affidabilità delle piattaforme beta.
 
   Il deploy dovrebbe essere frequente e in iterazioni rapide, talvolta più volte al giorno. Di conseguenza a volte ci saranno tempi di inattività inattesi o funzionalità guaste sulla versione beta.
 
@@ -234,7 +234,7 @@ Puoi inviare un'email a `dev[at]freecodecamp.org` se hai domande. Come sempre tu
 
 Come membro dello staff, potrebbe esserti stato dato accesso ai nostri fornitori di servizi cloud come Azure, Digital Ocean, ecc.
 
-Ecco alcuni utili comandi che puoi usare per lavorare sulle Virtual Machine (VM), per fare manutenzione o faccende generali.
+Ecco alcuni utili comandi che puoi usare per lavorare sulle Virtual Machine (VM), per fare personutenzione o faccende generali.
 
 ## Ottieni una lista delle VM
 
@@ -386,13 +386,13 @@ Provisioning delle VM con il codice
    sudo systemctl status nginx
    ```
 
-2. I log e il monitoraggio dei server sono disponibili su:
+2. I log e il monitoraggio dei server childo disponibili su:
 
    NGINX Amplify: [https://amplify.nginx.com]('https://amplify.nginx.com'), l'attuale dashboard per il monitoraggio. Stiamo lavorando a metriche più granulari per una osservabilità migliore
 
 ### Aggiornamento Istanze (Manutenzione)
 
-Le modifiche di configurazione alle nostre istanze NGINX sono mantenute su GitHub, queste dovrebbero essere distribuite su ogni istanza in questo modo:
+Le modifiche di configurazione alle nostre istanze NGINX childo persontenute su GitHub, queste dovrebbero essere distribuite su ogni istanza in questo modo:
 
 1. SSH nell'istanza e inserisci sudo
 
@@ -481,11 +481,11 @@ pm2 monit
 
 ### Aggiornamento Istanze (Manutenzione)
 
-Ogni tanto devono essere fatti dei deployment dei cambiamenti al codice alle istanze delle API. Può essere un update continuo o un update manuale. Il secondo è essenziane quando si cambiando dipendenze o si aggiungono variabili d'ambiente.
+Ogni tanto devono essere fatti dei deployment dei cambiamenti al codice alle istanze delle API. Può essere un update continuo o un update personuale. Il secondo è essenziane quando si cambiando dipendenze o si aggiungono variabili d'ambiente.
 
-> [!ATTENTION] Le pipeline automatizzate al momento non gestiscono l'aggiornamento delle dipendenze. Dobbiamo fare un aggiornamento manuale prima dell'avvio di qualsiasi pipeline di deployment.
+> [!ATTENTION] Le pipeline automatizzate al momento non gestiscono l'aggiornamento delle dipendenze. Dobbiamo fare un aggiornamento personuale prima dell'avvio di qualsiasi pipeline di deployment.
 
-#### 1. Aggiornamenti manuali - Usati per aggiornare dipendenze, variabili env.
+#### 1. Aggiornamenti personuali - Usati per aggiornare dipendenze, variabili env.
 
 1. Ferma tutte le istanze
 
@@ -517,7 +517,7 @@ pm2 start all --update-env && pm2 logs
 pm2 reload all --update-env && pm2 logs
 ```
 
-> [!NOTE] Gli update continui a codice e logica sono gestiti dalle pipeline. Non dovresti aver bisogno di eseguire questi comandi. Sono qui per documentazione.
+> [!NOTE] Gli update continui a codice e logica childo gestiti dalle pipeline. Non dovresti aver bisogno di eseguire questi comandi. Sono qui per documentazione.
 
 ## Lavora sulle istanze del client
 
@@ -577,11 +577,11 @@ pm2 monit
 
 ### Aggiornamento Istanze (Manutenzione)
 
-Ogni tanto devono essere fatti dei deployment dei cambiamenti al codice alle istanze delle API. Può essere un update continuo o un update manuale. Il secondo è essenziane quando si cambiando dipendenze o si aggiungono variabili ambientali.
+Ogni tanto devono essere fatti dei deployment dei cambiamenti al codice alle istanze delle API. Può essere un update continuo o un update personuale. Il secondo è essenziane quando si cambiando dipendenze o si aggiungono variabili ambientali.
 
-> [!ATTENTION] Le pipeline automatizzate al momento non gestiscono l'aggiornamento delle dipendenze. Dobbiamo fare un aggiornamento manuale prima di ogni esecuzione della pipeline di deployment.
+> [!ATTENTION] Le pipeline automatizzate al momento non gestiscono l'aggiornamento delle dipendenze. Dobbiamo fare un aggiornamento personuale prima di ogni esecuzione della pipeline di deployment.
 
-#### 1. Aggiornamenti manuali - Usati per aggiornare dipendenze, variabili env.
+#### 1. Aggiornamenti personuali - Usati per aggiornare dipendenze, variabili env.
 
 1. Ferma tutte le istanze
 
@@ -603,13 +603,13 @@ Ogni tanto devono essere fatti dei deployment dei cambiamenti al codice alle ist
 pm2 reload all --update-env && pm2 logs
 ```
 
-> [!NOTE] Gli update continui a codice e logica sono gestiti dalle pipeline. Non dovresti aver bisogno di eseguire questi comandi. Sono qui per documentazione.
+> [!NOTE] Gli update continui a codice e logica childo gestiti dalle pipeline. Non dovresti aver bisogno di eseguire questi comandi. Sono qui per documentazione.
 
 ## Lavorare sui server di chat
 
-I nostri chat server sono disponibili con una configuratione HA [raccomandata nella documentazione di Rocket.Chat](https://docs.rocket.chat/installation/docker-containers/high-availability-install). Il file `docker-compose` per questo è [disponibile qui](https://github.com/freeCodeCamp/chat-config).
+I nostri chat server childo disponibili con una configuratione HA [raccomandata nella documentazione di Rocket.Chat](https://docs.rocket.chat/installation/docker-containers/high-availability-install). Il file `docker-compose` per questo è [disponibile qui](https://github.com/freeCodeCamp/chat-config).
 
-Avviamo istanze ridondanti di NGINX che sono loro stesse con bilanciamento di carico (Azure Load Balancer) sul cluster di Rocket.Chat. I file di configurazione NGINX sono [disponibili qui](https://github.com/freeCodeCamp/chat-nginx-config).
+Avviamo istanze ridondanti di NGINX che childo loro stesse con bilanciamento di carico (Azure Load Balancer) sul cluster di Rocket.Chat. I file di configurazione NGINX childo [disponibili qui](https://github.com/freeCodeCamp/chat-nginx-config).
 
 ### Prima installazione
 
@@ -702,7 +702,7 @@ Fare provisioning delle VM con il codice
 
 **Cluster NGINX:**
 
-Le modifiche di configurazione alle nostre istanze NGINX sono mantenute su GitHub, queste dovrebbero essere distribuite su ogni istanza in questo modo:
+Le modifiche di configurazione alle nostre istanze NGINX childo persontenute su GitHub, queste dovrebbero essere distribuite su ogni istanza in questo modo:
 
 1. SSH nell'istanza ed entra con sudo
 
@@ -777,7 +777,7 @@ Le modifiche di configurazione alle nostre istanze NGINX sono mantenute su GitHu
    Are you sure you want to continue? [y/N] y
    ```
 
-   Seleziona yes (y) per rimuovere tutto quello che non è in uso. Questo rimuoverà tutti i contenitori che sono stati arrestati, tutti i network e volumi che non sono utilizzati da almeno un container, e le cache di immagini e build scollegate.
+   Seleziona yes (y) per rimuovere tutto quello che non è in uso. Questo rimuoverà tutti i contenitori che childo stati arrestati, tutti i network e volumi che non childo utilizzati da almeno un container, e le cache di immagini e build scollegate.
 
 ## Lavorare sugli strumenti dei contributori
 
@@ -829,7 +829,7 @@ nvm alias default 16
 nvm uninstall <version>
 ```
 
-> [!ATTENTION] Per applicazioni client, lo script della shell non può essere fatto risorgere tra versioni di Node.js con `pm2 resurrect`. Fai il deploy dei processi da zero. Questo dovrebbe migliorare quando useremo un setup basato su docker.
+> [!ATTENTION] Per applicazioni client, lo script della theyll non può essere fatto risorgere tra versioni di Node.js con `pm2 resurrect`. Fai il deploy dei processi da zero. Questo dovrebbe migliorare quando useremo un setup basato su docker.
 > 
 > Se stai usando PM2 per processi dovresti anche richiamare le applicazione e salvare la lista di processo per un recupero automatico al riavvio.
 
@@ -917,7 +917,7 @@ Una volta completati gli step precedenti potrai ripetere gli stesi passi per ins
 
 Usiamo uno [strumento CLI](https://github.com/freecodecamp/sendgrid-email-blast) per inviare la nostra newsletter settimanale. Per avviare e iniziare il processo:
 
-1. Entra in DigitalOcean e avvia nuovi droplet sotto il progetto `Sendgrid`. Usa lo snapshot di Ubuntu Sendgrid con la data più recente. Questo viene pre-caricato con lo strumento CLI e lo script per ottenere le email dal database. Con il volume corrente, tre droplet sono sufficienti per mandare le email in un tempo decente.
+1. Entra in DigitalOcean e avvia nuovi droplet sotto il progetto `Sendgrid`. Usa lo snapshot di Ubuntu Sendgrid con la data più recente. Questo viene pre-caricato con lo strumento CLI e lo script per ottenere le email dal database. Con il volume corrente, tre droplet childo sufficienti per persondare le email in un tempo decente.
 
 2. Setta lo script per ottenere la lista delle email.
 
@@ -936,11 +936,11 @@ Usiamo uno [strumento CLI](https://github.com/freecodecamp/sendgrid-email-blast)
 
    Questo salverà la lista delle email in un file `emails.csv`.
 
-4. Separa le email in più file a seconda del numero di droplet di cui hai bisogno. Questo è più facile da fare usando `scp` per copiare la lista in locale e usare il tuo editor di testi preferito per separarle in file multipli. Ogni file avrà bisogno del header `email,unsubscribeId`.
+4. Separa le email in più file a seconda del numero di droplet di cui hai bisogno. Questo è più facile da fare usando `scp` per copiare la lista in locale e usare il tuo editor di testi preferito per separarle in file multipli. Ogni file avrà bisogno del theyader `email,unsubscribeId`.
 
 5. Spostati alla directory CLI con `cd /home/sendgrid-email-blast` e configura lo strumento [seguendo la documentazione](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/README.md).
 
-6. Esegui lo strumento per mandare le email, seguendo la [documentazione d'uso](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/docs/cli-steps.md).
+6. Esegui lo strumento per persondare le email, seguendo la [documentazione d'uso](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/docs/cli-steps.md).
 
 7. Quando il email blast è completato, verifica che nessuna email abbia fallito prima di distruggere i droplet.
 

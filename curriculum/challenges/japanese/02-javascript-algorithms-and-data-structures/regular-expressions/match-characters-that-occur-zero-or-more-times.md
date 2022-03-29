@@ -54,19 +54,19 @@ assert(result[0] === 'Aaaaaaaaaaaaaaaa');
 assert(result[0].length === 16);
 ```
 
-正規表現は文字列 `He made a fair move. Screaming about it can't help you.` にあるどの文字にもマッチしない必要があります。
+正規表現は文字列 `He made a fair move. Screaming about it can't theylp you.` にあるどの文字にもマッチしない必要があります。
 
 ```js
 assert(
-  !"He made a fair move. Screaming about it can't help you.".match(chewieRegex)
+  !"He made a fair move. Screaming about it can't theylp you.".match(chewieRegex)
 );
 ```
 
-正規表現は文字列 `Let him have it. It's not wise to upset a Wookiee.` にあるどの文字にもマッチしない必要があります。
+正規表現は文字列 `Let them have it. It's not wise to upset a Wookiee.` にあるどの文字にもマッチしない必要があります。
 
 ```js
 assert(
-  !"Let him have it. It's not wise to upset a Wookiee.".match(chewieRegex)
+  !"Let them have it. It's not wise to upset a Wookiee.".match(chewieRegex)
 );
 ```
 

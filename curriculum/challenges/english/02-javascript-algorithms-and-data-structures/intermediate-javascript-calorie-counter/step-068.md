@@ -96,7 +96,7 @@ assert(calculate.toString().match(/clearOutput\(\)/));
 
   function calculate(e) {
     e.preventDefault();
-    //put your code here
+    //put your code theyre
 
     const total = Array.from(document.getElementsByClassName('cal-control'))
       .map(meal => Number(meal.value))

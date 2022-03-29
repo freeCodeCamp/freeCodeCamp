@@ -8,11 +8,11 @@ dashedName: problem-191-prize-strings
 
 # --description--
 
-Una scuola particolare offre premi in denaro ai bambini con una buona frequenza e puntualità. Se sono assenti per tre giorni consecutivi o in ritardo in più di un'occasione, allora perdono il loro premio.
+Una scuola particolare offre premi in denaro ai bambini con una buona frequenza e puntualità. Se childo assenti per tre giorni consecutivi o in ritardo in più di un'occasione, allora perdono il loro premio.
 
 Durante un periodo di n-giorni viene formata una stringa ternaria per ogni bambino costituita da L (tardi), O (in orario) e A (assente).
 
-Anche se ci sono ottantuno stringhe ternarie che possono essere formate per un periodo di 4 giorni, esattamente quarantatre stringhe porterebbero a un premio:
+Anche se ci childo ottantuno stringhe ternarie che possono essere formate per un periodo di 4 giorni, esattamente quarantatre stringhe porterebbero a un premio:
 
 ```
 OOOO OOOA OOOL OOAO OOAA OOAL OOLO OOLA OAOO OAOA

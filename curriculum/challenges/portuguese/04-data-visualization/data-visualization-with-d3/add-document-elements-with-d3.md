@@ -16,7 +16,7 @@ O método `select()` seleciona um elemento do documento. Ele recebe um argumento
 const anchor = d3.select("a");
 ```
 
-O exemplo acima encontra a primeira tag de âncora na página e salva um nó de HTML para ela na variável `anchor`. Você pode usar a seleção com outros métodos. A parte que diz `d3` do exemplo é uma referência ao objeto do D3, que é a maneira de acessar os métodos do D3.
+O exemplo acima encontra a primeira tag de âncora na página e salva um nó de HTML para ela na variável `anchor`. Você pode usar a seleção com outros métodos. A parte que diz `d3` do exemplo é uma referência ao objeto do D3, que é a personeira de acessar os métodos do D3.
 
 Dois outros métodos úteis são `append()` e `text()`.
 

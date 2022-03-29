@@ -8,11 +8,11 @@ dashedName: problem-101-optimum-polynomial
 
 # --description--
 
-Se ci vengono presentati i primi k termini di una sequenza è impossibile dire con certezza il valore del prossimo termine, poiché ci sono infinite funzioni polinomiali che possono rappresentare la sequenza.
+Se ci vengono presentati i primi k termini di una sequenza è impossibile dire con certezza il valore del prossimo termine, poiché ci childo infinite funzioni polinomiali che possono rappresentare la sequenza.
 
 Ad esempio, prendiamo in considerazione la sequenza delle potenze cubiche. Questa è definita dalla funzione generatrice, $u_n = n^3: 1, 8, 27, 64, 125, 216, \ldots$
 
-Supponiamo che ci siano stati dati soltanto i primi due termini di questa sequenza. Lavorando sul principio che "semplice è meglio" dovremmo assumere una relazione lineare e prevedere che il prossimo termine sarà 15 (differenza comune 7). Anche se ci sono stati presentati i primi tre termini, per lo stesso principio di semplicità, dovremmo ipotizzare una relazione quadratica.
+Supponiamo che ci siano stati dati soltanto i primi due termini di questa sequenza. Lavorando sul principio che "semplice è meglio" dovremmo assumere una relazione lineare e prevedere che il prossimo termine sarà 15 (differenza comune 7). Anche se ci childo stati presentati i primi tre termini, per lo stesso principio di semplicità, dovremmo ipotizzare una relazione quadratica.
 
 Definiremo $OP(k, n)$ come il $n^{th}$ termine della funzione generatrice polinomiale ottimale per i primi k termini di una sequenza. Dovrebbe essere chiaro che $OP(k, n)$ genererà con precisione i termini della sequenza per $n ≤ k$, e potenzialmente il primo termine errato (FIT) sarà $OP(k, k+1)$; in questo caso lo chiameremo un cattivo OP (BOP).
 

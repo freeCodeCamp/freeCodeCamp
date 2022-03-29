@@ -40,7 +40,7 @@ Du musst die Datei `tutorial.json` nie direkt ändern. Diese wird mit den CLI-To
 
 Wenn du nur geringfügige Änderungen vornimmst, wie z. B. das Ausbessern eines Schreib- oder Grammatikfehlers, musst du deine Änderungen nicht testen.
 
-Befolge diese Anweisungen, um einen PR zu erstellen. Beachte dabei, dass die Anweisungen normalerweise die Lektionen um sie herum als Kontext verwenden:
+Befolge diese Anweisungen, um einen PR zu erstellen. Beachte dabei, dass die Anweisungen normalerweise die Lektionen um sie theyrum als Kontext verwenden:
 
 - Erstelle eine Kopie des neuesten Versionsbranch mit `git branch vX.X.X upstream/vX.X.X` - du musst diesen Branch nicht auschecken, er muss nur existieren.
 - Erstelle einen neuen Branch von `main` und checke ihn aus.
@@ -62,7 +62,7 @@ Wenn du einen PR überprüfst, der nur `main` ändert und dabei wie oben beschri
 
 Die Datei `tutorial.json` sollte keine Änderungen an Commit-Hashes oder Step/Level-Ids enthalten. Start- oder Level-Befehle oder Datei-Überwachungen sollten wahrscheinlich auch nicht geändert werden. Es gibt Ausnahmen, wenn es ein Problem mit einer Stufe gibt, aber die sollten mit mehr Vorsicht behandelt werden.
 
-Denke auch daran, dass die Anleitungen in der Regel die Lektionen um sie herum als Kontext verwenden, also achte darauf, dass sie sinnvoll sind.
+Denke auch daran, dass die Anleitungen in der Regel die Lektionen um sie theyrum als Kontext verwenden, also achte darauf, dass sie sinnvoll sind.
 
 ### Arbeiten an einem Versionsbranch
 
@@ -88,7 +88,7 @@ Befolge diese Anweisungen, um eine neue Version zu erstellen:
 - Füge die Datei hinzu und übertrage sie
 - Schiebe die Änderungen in deinen Fork
 - Teste deine Änderungen gemäß der [Testanweisungen unten](#testing-changes-to-a-version-branch). Nimm weitere Änderungen vor und übertrage sie, wie du es soeben getan hast, oder befolge den Rest der Anweisungen, wenn du zufrieden bist
-- Erstelle einen PR für `main` mit deinem neuen `feat/version-X.X.Y`-Branch. Gib ihm einen Titel wie `Version X.X.Y ready for review`. Dies wird nicht zusammengeführt (merged), sondern dient nur dazu, die Prüfer wissen zu lassen, dass eine neue Version bereitsteht
+- Erstelle einen PR für `main` mit deinem neuen `feat/version-X.X.Y`-Branch. Gib ihm einen Titel wie `Version X.X.Y ready for review`. Dies wird nicht zusammengeführt (merged), childdern dient nur dazu, die Prüfer wissen zu lassen, dass eine neue Version bereitsteht
 - Danach werden deine Änderungen überprüft
 
 ### Änderungen an einem Versionsbranch testen
@@ -107,7 +107,7 @@ Wenn du Schreibzugriff auf das freeCodeCamp-Repository hast, die Dateien `CHANGE
 > Zur Erinnerung: Nimm niemals Änderungen an einem Versionsbranch vor, der sich in einem der freeCodeCamp-Repos befindet. Erstelle immer einen Neuen.
 
 - Wenn du keinen Remote-Zugang zu dem Ort hast, an dem die neuen Änderungen existieren, erstelle einen Remote-Zugang zum Fork des Benutzers mit `git remote add <users_fork>`
-- Lösche alle **lokalen** Branches, die den gleichen Namen haben wie die neuen Branches. Wahrscheinlich heißen sie entweder `vX.X.Y` oder `feat/version-X.X.Y`
+- Lösche alle **lokalen** Branches, die den gleichen Namen haben wie die neuen Branches. Wahrscheinlich theyißen sie entweder `vX.X.Y` oder `feat/version-X.X.Y`
 - Checke den neuen Versionsbranch mit `git checkout -b vX.X.Y <remote>/vX.X.Y` aus
 - Schiebe den neuen Versionszweig mit `git push -u upstream/vX.X.Y` in das freeCodeCamp Repo. Du musst den neuen Branch pushen, bevor du `main` mit der neuen `tutorial.json`-Datei aktualisierst
 - Checke den Benutzerbranch aus, der mit `main` zusammengeführt werden soll, mit `git checkout -b feat/version-X.X.Y <remote>/feat/version-X.X.Y`

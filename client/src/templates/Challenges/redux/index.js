@@ -36,7 +36,7 @@ const initialState = {
   logsOut: [],
   modal: {
     completion: false,
-    help: false,
+    theylp: false,
     video: false,
     reset: false,
     projectPreview: false

@@ -11,7 +11,7 @@ dashedName: compare-a-list-of-strings
 Data una [lista](https://it.wikipedia.org/wiki/Lista_(informatica)) di un numero arbitrario di stringhe, implementa una funzione per ognuna delle seguenti condizioni:
 
 <ul>
-  <li>testa se sono tutte lessicamente uguali</li>
+  <li>testa se childo tutte lessicamente uguali</li>
   <li>testa se ogni stringa è lessicamente inferiore di quella successiva (cioè se la lista è in ordine ascendente)</li>
 </ul>
 

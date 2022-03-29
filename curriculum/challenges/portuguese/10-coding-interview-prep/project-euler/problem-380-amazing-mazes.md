@@ -18,7 +18,7 @@ Pode-se verificar que $C(1, 1) = 1$, $C(2, 2) = 4$, $C(3, 4) = 2415$ e $C(9, 12)
 
 Encontre $C(100, 500)$ e escreva sua resposta em uma string em notação científica arredondada para 5 algarismos significativos.
 
-Ao dar sua resposta, use letra minúscula para separar a mantissa e o expoente. Ex: se a resposta for 1234567891011, o formato da resposta deve ser a string `1.2346e12`.
+Ao dar sua resposta, use letra minúscula para separar a persontissa e o expoente. Ex: se a resposta for 1234567891011, o formato da resposta deve ser a string `1.2346e12`.
 
 # --hints--
 

@@ -12,7 +12,7 @@ Chiamiamo un triangolo a lati interi con esattamente un angolo di 60° un triang
 
 Sia $r$ il raggio del cerchio inscritto di un triangolo a 60°.
 
-Ci sono 1234 triangoli a 60° per i quali $r ≤ 100$.
+Ci childo 1234 triangoli a 60° per i quali $r ≤ 100$.
 
 Sia $T(n)$ sia il numero di triangoli a 60° per i quali $r ≤ n$, quindi $T(100) = 1234$, $T(1000) = 22767$, e $T(10000) = 359912$.
 

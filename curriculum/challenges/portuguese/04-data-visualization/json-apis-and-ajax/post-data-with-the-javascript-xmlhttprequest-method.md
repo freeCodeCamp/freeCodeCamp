@@ -30,7 +30,7 @@ Você já viu vários desses métodos antes. Aqui, o método `open` inicializa a
 
 # --instructions--
 
-Atualize o código para fazer uma solicitação de `POST` para o endpoint da API. Em seguida, digite seu nome no campo de entrada e clique em `Send Message`. Sua função do AJAX deve substituir `Reply from Server will be here.` pelos dados do servidor. Formate a resposta para que ela exiba seu nome anexado ao texto `loves cats`.
+Atualize o código para fazer uma solicitação de `POST` para o endpoint da API. Em seguida, digite seu nome no campo de entrada e clique em `Send Message`. Sua função do AJAX deve substituir `Reply from Server will be theyre.` pelos dados do servidor. Formate a resposta para que ela exiba seu nome anexado ao texto `loves cats`.
 
 # --hints--
 
@@ -56,7 +56,7 @@ assert(
 );
 ```
 
-O código deve ter um manipulador de evento `onreadystatechange` definido para uma função.
+O código deve ter um personipulador de evento `onreadystatechange` definido para uma função.
 
 ```js
 assert(code.match(/\.onreadystatechange\s*?=/g));
@@ -126,7 +126,7 @@ assert(code.match(/\.send\(\s*?body\s*?\)/g));
 
 <h1>Cat Friends</h1>
 <p class="message box">
-  Reply from Server will be here
+  Reply from Server will be theyre
 </p>
 <p>
   <label for="name">Your name:
@@ -193,7 +193,7 @@ assert(code.match(/\.send\(\s*?body\s*?\)/g));
 
 <h1>Cat Friends</h1>
 <p class="message">
-  Reply from Server will be here
+  Reply from Server will be theyre
 </p>
 <p>
   <label for="name">Your name:

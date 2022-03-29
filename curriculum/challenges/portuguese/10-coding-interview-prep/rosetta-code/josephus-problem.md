@@ -20,7 +20,7 @@ Dado qualquer $n, sendo k > 0$, descubra qual prisioneiro será o sobrevivente a
 
 Em um incidente deste tipo, havia 41 prisoneiros e o 3<sup>o</sup> prisioneiro na sequência era morto ($k=3$).
 
-Entre eles, havia um homem inteligente, chamado Josephus, que desvendou o problema, ficou na posição do sobrevivente e viveu para contar a história.
+Entre eles, havia um homem inteligente, chamado Josephus, que desvendou o problema, ficou na posição do sobrevivente e viveu para contar a theirstória.
 
 Qual era o número dele?
 

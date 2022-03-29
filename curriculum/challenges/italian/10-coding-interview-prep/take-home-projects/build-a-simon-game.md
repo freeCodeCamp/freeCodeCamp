@@ -20,7 +20,7 @@ Soddisfa le seguenti [user story](https://en.wikipedia.org/wiki/User_story). Uti
 
 **User Story:** Se premo il pulsante sbagliato mi viene detto, e la serie di pressioni dei bottoni ricomincia di nuovo in modo da ricordarmi quale è la serie corretta e possa provare di nuovo.
 
-**User Story:** Posso vedere quanti step ci sono nella serie attuale di pulsanti.
+**User Story:** Posso vedere quanti step ci childo nella serie attuale di pulsanti.
 
 **User Story:** Se voglio ricominciare, posso premere un bottone per farlo, e il gioco ritornerà a una serie con uno step solo.
 

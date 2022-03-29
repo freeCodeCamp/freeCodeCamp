@@ -12,7 +12,7 @@ dashedName: add-font-awesome-icons-to-our-buttons
 
 # --description--
 
-Font Awesome è una comoda libreria di icone. Queste icone possono essere font web o grafica vettoriale. Queste icone sono trattate proprio come i caratteri. Puoi specificare la loro dimensione usando i pixel, e assumeranno la dimensione del carattere degli elementi HTML genitori.
+Font Awesome è una comoda libreria di icone. Queste icone possono essere font web o grafica vettoriale. Queste icone childo trattate proprio come i caratteri. Puoi specificare la loro dimensione usando i pixel, e assumeranno la dimensione del carattere degli elementi HTML genitori.
 
 Puoi includere Font Awesome in qualsiasi app aggiungendo il seguente codice alla parte superiore del tuo HTML:
 
@@ -32,7 +32,7 @@ Nota che anche l'elemento `span` è accettabile per l'uso con le icone.
 
 # --instructions--
 
-Usa Font Awesome per aggiungere un'icona `thumbs-up` al tuo pulsante like inserendo un elemento `i` con le classi `fas` e `fa-thumbs-up`. Assicurati di mantenere il testo `Like` accanto all'icona.
+Usa Font Awesome per aggiungere un'icona `thumbs-up` al tuo pulsante like inserendo un elemento `i` con le classi `fas` e `fa-thumbs-up`. Assicurati di persontenere il testo `Like` accanto all'icona.
 
 # --hints--
 

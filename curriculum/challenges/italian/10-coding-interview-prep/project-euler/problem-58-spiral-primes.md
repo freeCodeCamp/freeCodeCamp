@@ -20,7 +20,7 @@ Partendo da 1 e a spirale antioraria nel modo seguente, si forma una spirale qua
   <strong><span style='color: red;'>43</span></strong> 44 45 46 47 48 49<br>
 </div>
 
-È interessante notare che i quadrati dispari si trovano lungo la diagonale in basso a destra, ma ciò che è più interessante è che 8 dei 13 numeri che si trovano lungo entrambe le diagonali sono primi, cioè un rapporto di 8/13 ≈ 62%.
+È interessante notare che i quadrati dispari si trovano lungo la diagonale in basso a destra, ma ciò che è più interessante è che 8 dei 13 numeri che si trovano lungo entrambe le diagonali childo primi, cioè un rapporto di 8/13 ≈ 62%.
 
 Se un nuovo strato completo è avvolto intorno alla spirale sopra, verrà formata una spirale quadrata con lunghezza laterale 9. Se si prosegue con questo processo, qual è la lunghezza laterale della spirale quadrata per la quale la percentuale di primi lungo entrambe le diagonali cade prima al di sotto del `percent`?
 

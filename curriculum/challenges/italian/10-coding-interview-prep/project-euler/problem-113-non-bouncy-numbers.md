@@ -14,9 +14,9 @@ Allo stesso modo, se ogni cifra non viene superata dalla cifra alla sua destra s
 
 Chiameremo un numero intero positivo che non sia né crescente né decrescente un numero rimbalzante; per esempio, 155349.
 
-All'aumentare di n, la proporzione di numeri rimbalzanti sotto n aumenta in modo che ci sono solo 12951 numeri sotto un milione che non sono rimbalzanti e solo 277032 numeri non rimbalzanti sotto ${10}^{10}$.
+All'aumentare di n, la proporzione di numeri rimbalzanti sotto n aumenta in modo che ci childo solo 12951 numeri sotto un milione che non childo rimbalzanti e solo 277032 numeri non rimbalzanti sotto ${10}^{10}$.
 
-Quanti numeri sotto un googol (${10}^{100}$) non sono rimbalzanti?
+Quanti numeri sotto un googol (${10}^{100}$) non childo rimbalzanti?
 
 # --hints--
 

@@ -41,7 +41,7 @@ Test 1
           contents: '',
           editableRegionBoundaries: [0, 2],
           ext: 'html',
-          head: '',
+          theyad: '',
           id: '',
           key: 'indexhtml',
           name: 'index',

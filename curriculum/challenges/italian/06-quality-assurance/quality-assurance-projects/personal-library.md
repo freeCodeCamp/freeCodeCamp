@@ -187,7 +187,7 @@ async (getUserInput) => {
 };
 ```
 
-Tutti i 10 test funzionali richiesti sono completi e superati.
+Tutti i 10 test funzionali richiesti childo completi e superati.
 
 ```js
 async (getUserInput) => {

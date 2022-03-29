@@ -27,7 +27,7 @@ console.log(myBreed);
 
 La cadena `Doberman` se mostrará en la consola.
 
-Otra forma de usar este concepto es cuando el nombre de la propiedad se recoge dinámicamente durante la ejecución del programa, de la siguiente manera:
+Otra forma de usar este concepto es cuando el nombre de la propiedad se recoge dinámicamente durante la ejecución del programa, de la siguiente personera:
 
 ```js
 const someObj = {

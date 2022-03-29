@@ -4,12 +4,12 @@ title: Manipula arreglos con pop()
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRbVZAB'
 forumTopicId: 18236
-dashedName: manipulate-arrays-with-pop
+dashedName: personipulate-arrays-with-pop
 ---
 
 # --description--
 
-Otra manera de cambiar los datos en un arreglo es con la función `.pop()`.
+Otra personera de cambiar los datos en un arreglo es con la función `.pop()`.
 
 `.pop()` se utiliza para sacar un valor del final de un arreglo. Podemos almacenar este valor sacado asignándolo a una variable. En otras palabras, `.pop()` elimina el último elemento de un arreglo y devuelve ese elemento.
 

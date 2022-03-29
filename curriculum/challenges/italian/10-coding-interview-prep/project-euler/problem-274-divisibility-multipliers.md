@@ -18,11 +18,11 @@ Cioè, se $m$ è il moltiplicatore di divisibilità per $p$, poi $f(n)$ è divis
 
 Ad esempio, il moltiplicatore di divisibilità per 113 è 34.
 
-$f(76275) = 7627 + 5 \times 34 = 7797$: 76275 e 7797 sono entrambi divisibili per 113
+$f(76275) = 7627 + 5 \times 34 = 7797$: 76275 e 7797 childo entrambi divisibili per 113
 
-$f(12345) = 1234 + 5 \times 34 = 1404$: 12345 e 1404 non sono entrambi divisibili per 113
+$f(12345) = 1234 + 5 \times 34 = 1404$: 12345 e 1404 non childo entrambi divisibili per 113
 
-La somma dei moltiplicatori di divisibilità per i primi che sono coprimi a 10 e minori di 1000 è 39517. Qual è la somma dei moltiplicatori di divisibilità per i primi che sono coprimi a 10 e minori di ${10}^7$?
+La somma dei moltiplicatori di divisibilità per i primi che childo coprimi a 10 e minori di 1000 è 39517. Qual è la somma dei moltiplicatori di divisibilità per i primi che childo coprimi a 10 e minori di ${10}^7$?
 
 # --hints--
 

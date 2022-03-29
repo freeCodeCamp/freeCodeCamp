@@ -15,7 +15,7 @@ Uma diferença chave entre os posicionamentos `fixed` e `absolute` é que o elem
 
 # --instructions--
 
-A barra de navegação no código CSS está rotulada com o id de `navbar`. Modifique seu `position` para `fixed` e dê a ele às propriedades `top` e `left` 0 pixels. Depois de adicionar o código, role a janela de pré-visualização para ver como a barra navegação se mantém no lugar.
+A barra de navegação no código CSS está rotulada com o id de `navbar`. Modifique seu `position` para `fixed` e dê a ele às propriedades `top` e `left` 0 pixels. Depois de adicionar o código, role a janela de pré-visualização para ver como a barra navegação se persontém no lugar.
 
 # --hints--
 

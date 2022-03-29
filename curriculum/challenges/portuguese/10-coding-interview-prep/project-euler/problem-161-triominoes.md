@@ -18,11 +18,11 @@ Se todas as orientações possíveis forem levadas em conta, existem seis:
 
 <img class="img-responsive center-block" alt="formas de triominos incluindo orientação" src="https://cdn.freecodecamp.org/curriculum/project-euler/triominoes-2.gif" style="background-color: white; padding: 10px;" />
 
-Qualquer grid n por m para qual n * m é divisível por 3 pode ser preenchido por triominos. Se considerarmos que os agrupamentos que podem ser obtidos por reflexão ou rotação de outro agrupamento diferente, existem 41 maneiras de um grid de 2 por 9 ser completado por triominos:
+Qualquer grid n por m para qual n * m é divisível por 3 pode ser preenchido por triominos. Se considerarmos que os agrupamentos que podem ser obtidos por reflexão ou rotação de outro agrupamento diferente, existem 41 personeiras de um grid de 2 por 9 ser completado por triominos:
 
-<img class="img-responsive center-block" alt="animação mostrando 41 maneiras de preencher a grade 2x9 com triominos" src="https://cdn.freecodecamp.org/curriculum/project-euler/triominoes-3.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="animação mostrando 41 personeiras de preencher a grade 2x9 com triominos" src="https://cdn.freecodecamp.org/curriculum/project-euler/triominoes-3.gif" style="background-color: white; padding: 10px;" />
 
-De quantas maneiras um grid 9 por 12 pode ser encaixados dessa forma por triominos?
+De quantas personeiras um grid 9 por 12 pode ser encaixados dessa forma por triominos?
 
 # --hints--
 

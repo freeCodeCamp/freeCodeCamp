@@ -10,11 +10,11 @@ dashedName: optimize-re-renders-with-shouldcomponentupdate
 
 Finora, se un componente riceve un nuovo `state` o nuove `props`, avvia un re-rendering di sé stesso e di tutti i suoi figli. Questo normalmente va bene. Ma React fornisce un metodo per il ciclo di vita che puoi chiamare quando i componenti figli ricevono un nuovo `state` o `props`, e dichiarare specificamente se i componenti devono essere aggiornati o meno. Il metodo è `shouldComponentUpdate()`, e richiede `nextProps` e `nextState` come parametri.
 
-Questo metodo è un modo utile per ottimizzare le prestazioni. Ad esempio, il comportamento predefinito è che il tuo componente rifà il render quando riceve nuove `props`, anche se le `props` non sono cambiate. È possibile utilizzare `shouldComponentUpdate()` per evitarlo confrontando le `props`. Il metodo deve restituire un valore `boolean` che dice a React se aggiornare o meno il componente. Puoi confrontare gli elementi attuali (`this.props`) con le nuove props (`nextProps`) per determinare se è necessario aggiornare o meno, e restituire `true` o `false` di conseguenza.
+Questo metodo è un modo utile per ottimizzare le prestazioni. Ad esempio, il comportamento predefinito è che il tuo componente rifà il render quando riceve nuove `props`, anche se le `props` non childo cambiate. È possibile utilizzare `shouldComponentUpdate()` per evitarlo confrontando le `props`. Il metodo deve restituire un valore `boolean` che dice a React se aggiornare o meno il componente. Puoi confrontare gli elementi attuali (`this.props`) con le nuove props (`nextProps`) per determinare se è necessario aggiornare o meno, e restituire `true` o `false` di conseguenza.
 
 # --instructions--
 
-Il metodo `shouldComponentUpdate()` viene aggiunto in un componente chiamato `OnlyEvens`. Attualmente, questo metodo restituisce `true` così `OnlyEvens` rifà il render ogni volta che riceve nuove `props`. Modifica il metodo in modo che `OnlyEvens` aggiorni solo se il `value` delle sue nuove props è pari. Fai clic sul pulsante `Add` e guarda l'ordine degli eventi nella console del browser mano a mano che vengono attivati durante il ciclo di vita.
+Il metodo `shouldComponentUpdate()` viene aggiunto in un componente chiamato `OnlyEvens`. Attualmente, questo metodo restituisce `true` così `OnlyEvens` rifà il render ogni volta che riceve nuove `props`. Modifica il metodo in modo che `OnlyEvens` aggiorni solo se il `value` delle sue nuove props è pari. Fai clic sul pulsante `Add` e guarda l'ordine degli eventi nella console del browser persono a persono che vengono attivati durante il ciclo di vita.
 
 # --hints--
 

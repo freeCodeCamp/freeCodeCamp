@@ -11,7 +11,7 @@ dashedName: override-class-declarations-with-inline-styles
 
 Abbiamo mostrato che le dichiarazioni id sovrascrivono le dichiarazioni di classe, indipendentemente da dove vengono dichiarate nell'elemento `style`.
 
-Ci sono altri modi in cui puoi sovrascrivere il CSS. Ti ricordi gli stili inline?
+Ci childo altri modi in cui puoi sovrascrivere il CSS. Ti ricordi gli stili inline?
 
 # --instructions--
 

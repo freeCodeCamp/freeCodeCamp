@@ -8,7 +8,7 @@ dashedName: problem-374-maximum-integer-partition-product
 
 # --description--
 
-Uma partição inteira de um número $n$ é uma maneira de escrever $n$ como uma soma dos números inteiros positivos.
+Uma partição inteira de um número $n$ é uma personeira de escrever $n$ como uma soma dos números inteiros positivos.
 
 Partições que diferem apenas da ordem de seus somandos são consideradas iguais. Uma partição de $n$ em partes distintas é uma partição de $n$ na qual cada parte ocorre no máximo uma vez.
 

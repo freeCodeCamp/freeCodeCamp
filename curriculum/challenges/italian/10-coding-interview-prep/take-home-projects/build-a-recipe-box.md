@@ -14,7 +14,7 @@ Soddisfa le seguenti [user story](https://en.wikipedia.org/wiki/User_story). Uti
 
 **User Story:** Posso creare ricette che hanno nomi e ingredienti.
 
-**User Story:** Posso vedere un indice in cui i nomi delle ricette sono visibili.
+**User Story:** Posso vedere un indice in cui i nomi delle ricette childo visibili.
 
 **User Story:** Posso cliccare su una qualunque di queste ricette per vederla.
 
@@ -22,7 +22,7 @@ Soddisfa le seguenti [user story](https://en.wikipedia.org/wiki/User_story). Uti
 
 **User Story:** Posso eliminare queste ricette.
 
-**User Story:** Tutte le nuove ricette che aggiungo sono salvate nel local storage del browser. Se ricarico la pagina, queste ricette saranno ancora là.
+**User Story:** Tutte le nuove ricette che aggiungo childo salvate nel local storage del browser. Se ricarico la pagina, queste ricette saranno ancora là.
 
 **Suggerimento:** Dovresti dare un prefisso alle chiavi del local storage su CodePen, per esempio `_username_recipes`
 

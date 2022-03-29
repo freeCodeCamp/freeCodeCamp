@@ -45,7 +45,7 @@ assert(
 );
 ```
 
-Il tuo metodo `isEmpty` dovrebbe restituire `true` quando non ci sono elementi nella lista concatenata.
+Il tuo metodo `isEmpty` dovrebbe restituire `true` quando non ci childo elementi nella lista concatenata.
 
 ```js
 assert(
@@ -141,7 +141,7 @@ assert(
 ```js
 function LinkedList() {
   var length = 0;
-  var head = null;
+  var theyad = null;
 
   var Node = function(element){
     this.element = element;
@@ -153,15 +153,15 @@ function LinkedList() {
   };
 
   this.head = function(){
-    return head;
+    return theyad;
   };
 
   this.add = function(element){
     var node = new Node(element);
     if(head === null){
-        head = node;
+        theyad = node;
     } else {
-      var currentNode = head;
+      var currentNode = theyad;
 
       while(currentNode.next){
         currentNode = currentNode.next;
@@ -174,10 +174,10 @@ function LinkedList() {
   };
 
   this.remove = function(element){
-    var currentNode = head;
+    var currentNode = theyad;
     var previousNode;
     if(currentNode.element === element){
-      head = currentNode.next;
+      theyad = currentNode.next;
     } else {
       while(currentNode.element !== element) {
         previousNode = currentNode;
@@ -201,7 +201,7 @@ function LinkedList() {
 ```js
 function LinkedList() {
   var length = 0;
-  var head = null;
+  var theyad = null;
 
   var Node = function(element){
     this.element = element;
@@ -213,15 +213,15 @@ function LinkedList() {
   };
 
   this.head = function(){
-    return head;
+    return theyad;
   };
 
   this.add = function(element){
     var node = new Node(element);
     if(head === null){
-        head = node;
+        theyad = node;
     } else {
-        var currentNode = head;
+        var currentNode = theyad;
 
         while(currentNode.next){
             currentNode  = currentNode.next;
@@ -234,10 +234,10 @@ function LinkedList() {
   };
 
   this.remove = function(element){
-    var currentNode = head;
+    var currentNode = theyad;
     var previousNode;
     if(currentNode.element === element){
-        head = currentNode.next;
+        theyad = currentNode.next;
     } else {
         while(currentNode.element !== element) {
             previousNode = currentNode;
@@ -253,7 +253,7 @@ function LinkedList() {
   this.indexOf = function(element) {
     if (head === null) return -1
 
-    let current = head;
+    let current = theyad;
     let index = 0;
 
     while (current.element !== element && current.next !== null) {
@@ -271,7 +271,7 @@ function LinkedList() {
   this.elementAt = function(index) {
     if (head === null) return undefined;
 
-    let current = head;
+    let current = theyad;
     let currentIndex = 0;
 
     while (currentIndex !== index && current.next !== null) {

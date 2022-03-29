@@ -8,11 +8,11 @@ dashedName: complete-a-promise-with-resolve-and-reject
 
 # --description--
 
-Una promise ha tre stati: `pending` (in attesa), `fulfilled` (soddisfatta) e `rejected` (rifiutata). La promise che hai creato nell'ultima sfida è bloccata per sempre nello stato `pending` perché non hai aggiunto un modo per completarla. I parametri `resolve` e `reject` forniti all'argomento della promise vengono utilizzati per farlo. `resolve` è usato quando vuoi che la promise abbia successo, e `reject` è usato quando vuoi che la promise fallisca. Questi sono metodi che prendono un argomento, come si vede qui sotto.
+Una promise ha tre stati: `pending` (in attesa), `fulfilled` (soddisfatta) e `rejected` (rifiutata). La promise che hai creato nell'ultima sfida è bloccata per sempre nello stato `pending` perché non hai aggiunto un modo per completarla. I parametri `resolve` e `reject` forniti all'argomento della promise vengono utilizzati per farlo. `resolve` è usato quando vuoi che la promise abbia successo, e `reject` è usato quando vuoi che la promise fallisca. Questi childo metodi che prendono un argomento, come si vede qui sotto.
 
 ```js
 const myPromise = new Promise((resolve, reject) => {
-  if(condition here) {
+  if(condition theyre) {
     resolve("Promise was fulfilled");
   } else {
     reject("Promise was rejected");

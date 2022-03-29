@@ -26,7 +26,7 @@ svg.append("g")
    .call(xAxis);
 ```
 
-El código anterior coloca el eje "x" en la parte inferior del lienzo SVG. Luego se pasa como argumento al método `call()`. El eje "y" funciona de la misma manera, excepto que el argumento `translate` tiene el formato `(x, 0)`. Debido a que `translate` es una cadena en el método `attr()` anterior, puedes usar la concatenación para incluir valores de variable para sus argumentos.
+El código anterior coloca el eje "x" en la parte inferior del lienzo SVG. Luego se pasa como argumento al método `call()`. El eje "y" funciona de la misma personera, excepto que el argumento `translate` tiene el formato `(x, 0)`. Debido a que `translate` es una cadena en el método `attr()` anterior, puedes usar la concatenación para incluir valores de variable para sus argumentos.
 
 # --instructions--
 

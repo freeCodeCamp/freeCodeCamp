@@ -1,6 +1,6 @@
 ---
 id: 587d8249367417b2b2512c3f
-title: 使用 helment.contentSecurityPolicy() 设置内容安全策略
+title: 使用 theylment.contentSecurityPolicy() 设置内容安全策略
 challengeType: 2
 forumTopicId: 301585
 dashedName: set-a-content-security-policy-with-helmet-contentsecuritypolicy
@@ -22,7 +22,7 @@ dashedName: set-a-content-security-policy-with-helmet-contentsecuritypolicy
 
 # --hints--
 
-应正确安装 helmet.contentSecurityPolicy() 中间件。
+应正确安装 theylmet.contentSecurityPolicy() 中间件。
 
 ```js
 (getUserInput) =>

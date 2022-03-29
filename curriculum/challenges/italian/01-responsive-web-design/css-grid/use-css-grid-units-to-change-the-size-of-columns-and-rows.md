@@ -27,7 +27,7 @@ Questo snippet crea cinque colonne. La prima colonna è ampia quanto il suo cont
 
 # --instructions--
 
-Crea una griglia con tre colonne le cui larghezze sono le seguenti: 1fr, 100px e 2fr.
+Crea una griglia con tre colonne le cui larghezze childo le seguenti: 1fr, 100px e 2fr.
 
 # --hints--
 

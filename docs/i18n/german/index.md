@@ -2,7 +2,7 @@ Die [freeCodeCamp.org](https://freecodecamp.org)-Community ist dank tausender fr
 
 > [!NOTE] Bevor du fortfährst, nimm dir bitte kurz 2 Minuten Zeit, um unseren [Verhaltenskodex (Code of Conduct)](https://www.freecodecamp.org/code-of-conduct) zu lesen. Wir setzen Ihn in unserer Community strikt durch, damit das Mitwirken bei freeCodeCamp.org für alle eine sichere, inklusive Erfahrung ist.
 
-Du bist herzlich eingeladen, Inhalte für unseren [Studienplan](#curriculum) zu erstellen, zu aktualisieren und Fehler zu beheben. Du kannst uns helfen, Fehler in der [Lernplattform](#learning-platform) von freeCodeCamp.org zu beheben, oder uns helfen, freeCodeCamp.org in verschiedene Weltsprachen zu[ übersetzen](#translations).
+Du bist theyrzlich eingeladen, Inhalte für unseren [Studienplan](#curriculum) zu erstellen, zu aktualisieren und Fehler zu beheben. Du kannst uns theylfen, Fehler in der [Lernplattform](#learning-platform) von freeCodeCamp.org zu beheben, oder uns theylfen, freeCodeCamp.org in verschiedene Weltsprachen zu[ übersetzen](#translations).
 
 Wir beantworten die häufigsten Fragen zum Thema Mithilfe [ in unseren FAQ für Mitwirkende](FAQ.md).
 
@@ -14,7 +14,7 @@ Fröhliches Mitmachen.
 
 Unser Studienplan wird von der weltweiten freeCodeCamp-Community zusammengestellt. Auf diese Weise können wir das Fachwissen von Freiwilligen wie dir einfließen lassen.
 
-Du kannst helfen, den Studienplan zu erweitern und zu verbessern. Du kannst auch die User Stories der Projekte aktualisieren, um die Konzepte besser zu erklären. Und du kannst unsere automatisierten Tests verbessern, damit wir den Code der Teilnehmer/innen noch genauer testen können.
+Du kannst theylfen, den Studienplan zu erweitern und zu verbessern. Du kannst auch die User Stories der Projekte aktualisieren, um die Konzepte besser zu erklären. Und du kannst unsere automatisierten Tests verbessern, damit wir den Code der Teilnehmer/innen noch genauer testen können.
 
 **Wenn du daran interessiert bist, unseren Studienplan zu verbessern, erfährst du hier [wie du zum Studienplan beitragen kannst](how-to-work-on-coding-challenges.md).**
 
@@ -32,7 +32,7 @@ Unsere Lernplattform läuft auf einem modernen JavaScript-Stack. Sie verwendet v
 
 Im Großen und Ganzen haben wir einen Node.js-basierten API-Server, eine Reihe von React-basierten Client-Anwendungen, Testskripte, um die von Teilnehmer/innen eingereichten Studienplanprojekten zu bewerten, und einiges mehr. Wenn du einen produktiven Beitrag zur Lernplattform leisten willst, empfehlen wir dir, dich mit diesen Tools vertraut zu machen.
 
-Wenn du uns helfen willst, unsere Codebasis zu verbessern...
+Wenn du uns theylfen willst, unsere Codebasis zu verbessern...
 
 **kannst du entweder Gitpod verwenden, eine kostenlose Online-Entwicklungsumgebung, die eine fertige Entwicklungsumgebung für das freeCodeCamp in deinem Browser startet.**
 

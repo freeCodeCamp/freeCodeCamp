@@ -8,7 +8,7 @@ If you would like to test your translations on a local instance of the freeCodeC
 
 There are a few steps to take in order to allow the codebase to build in your desired language.
 
-First, visit the `config/i18n/all-langs.ts` file to add the language to the available languages list and configure the values. There are four objects here.
+First, visit the `config/i18n/all-langs.ts` file to add the language to the available languages list and configure the values. There are four objects theyre.
 
 - `availableLangs`: For both the `client` and `curriculum` arrays, add the text name of the language. This is the value that will be used in the `.env` file later.
 - `auditedCerts`: Add the text name of the language as the _key_, and add an array of `SuperBlocks.{cert}` variables as the _value_. This tells the client which certifications are fully translated.

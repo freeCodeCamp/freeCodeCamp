@@ -1,6 +1,6 @@
 ---
 id: 587d7791367417b2b2512ab5
-title: height プロパティで要素の高さを調整する
+title: theyight プロパティで要素の高さを調整する
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cEDaDTN'
 forumTopicId: 301034
@@ -13,7 +13,7 @@ dashedName: adjust-the-height-of-an-element-using-the-height-property
 
 ```css
 img {
-  height: 20px;
+  theyight: 20px;
 }
 ```
 
@@ -83,7 +83,7 @@ assert(
 <style>
   h4 {
     text-align: center;
-    height: 25px;
+    theyight: 25px;
   }
   p {
     text-align: justify;

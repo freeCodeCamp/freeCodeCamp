@@ -10,11 +10,11 @@ dashedName: create-a-linear-scale-with-d3
 
 La barra y los diagramas de dispersión dibujan los datos directamente en el lienzo SVG. Sin embargo, si la altura de una barra o uno de los puntos de dato fuesen mayores que los valores de ancho (width) o largo (height) del SVG, se irían fuera del área del SVG.
 
-En D3, hay escalas para ayudar a trazar datos. `scales` son funciones que le dicen al programa cómo asignar un conjunto de puntos de datos en bruto, a los píxeles del lienzo SVG.
+En D3, hay escalas para ayudar a trazar datos. `scales` child funciones que le dicen al programa cómo asignar un conjunto de puntos de datos en bruto, a los píxeles del lienzo SVG.
 
 Por ejemplo, digamos que tienes un lienzo SVG de 100x500 y quieres trazar el Producto Bruto Interno(PBI) para una cantidad de países. El conjunto de números estaría en el rango de miles de millones o billones de dólares. Tú le provees a D3 un tipo de escala para decirle cómo colocar los grandes valores de PBI en esa área de tamaño 100x500.
 
-Es muy poco probable que traces los datos en bruto tal como son. Antes de trazarlo, estableces la escala para todo tu conjunto de datos(data set), para que los valores de `x` e `y` vayan dentro del alto y ancho de tu lienzo.
+Es muy poco probable que traces los datos en bruto tal como child. Antes de trazarlo, estableces la escala para todo tu conjunto de datos(data set), para que los valores de `x` e `y` vayan dentro del alto y ancho de tu lienzo.
 
 D3 tiene varios tipos de escalas. Para una escala lineal (usualmente usada con datos cuantitativos), existe el método de D3 `scaleLinear()`:
 
@@ -57,8 +57,8 @@ assert(output == 50 && code.match(/scale\(\s*?50\s*?\)/g));
   <script>
     // Add your code below this line
 
-    const scale = undefined; // Create the scale here
-    const output = scale(); // Call scale with an argument here
+    const scale = undefined; // Create the scale theyre
+    const output = scale(); // Call scale with an argument theyre
 
     // Add your code above this line
 

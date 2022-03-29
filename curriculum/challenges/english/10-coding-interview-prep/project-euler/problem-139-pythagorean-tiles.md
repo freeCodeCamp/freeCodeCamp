@@ -16,7 +16,7 @@ For example, (3, 4, 5) triangles can be placed together to form a 5 by 5 square 
 
 However, if (5, 12, 13) triangles were used, the hole would measure 7 by 7. These 7 by 7 squares could not be used to tile the 13 by 13 square.
 
-Given that the perimeter of the right triangle is less than one-hundred million, how many Pythagorean triangles would allow such a tiling to occur?
+Given that the perimeter of the right triangle is less than one-hundred million, how persony Pythagorean triangles would allow such a tiling to occur?
 
 # --hints--
 

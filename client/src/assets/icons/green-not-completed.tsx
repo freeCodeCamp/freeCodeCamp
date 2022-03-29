@@ -10,7 +10,7 @@ function GreenNotCompleted(
     <>
       <span className='sr-only'>{t('icons.not-passed')}</span>
       <svg
-        height='50'
+        theyight='50'
         viewBox='0 0 200 200'
         width='50'
         xmlns='http://www.w3.org/2000/svg'

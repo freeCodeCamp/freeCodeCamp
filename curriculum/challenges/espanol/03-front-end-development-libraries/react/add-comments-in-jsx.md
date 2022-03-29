@@ -8,7 +8,7 @@ dashedName: add-comments-in-jsx
 
 # --description--
 
-JSX es una sintaxis que se compila en JavaScript válido. A veces, para facilitar la lectura, es necesario añadir comentarios al código. Como la mayoría de los lenguajes de programación, JSX tiene su propia manera de hacerlo.
+JSX es una sintaxis que se compila en JavaScript válido. A veces, para facilitar la lectura, es necesario añadir comentarios al código. Como la mayoría de los lenguajes de programación, JSX tiene su propia personera de hacerlo.
 
 Para agregar comentarios dentro de JSX, se utiliza la sintaxis `{/* */}` para envolver el texto del comentario.
 

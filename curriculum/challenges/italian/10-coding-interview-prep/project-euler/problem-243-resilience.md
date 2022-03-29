@@ -16,7 +16,7 @@ $$\frac{1}{12}, \frac{2}{12}, \frac{3}{12}, \frac{4}{12}, \frac{5}{12}, \frac{6}
 
 Chiameremo una frazione che non può essere semplificata una frazione resiliente.
 
-Inoltre definiremo la resilienza di un denominatore, $R(d)$, come il rapporto delle sue frazioni proprie che sono resilienti; per esempio, $R(12) = \frac{4}{11}$.
+Inoltre definiremo la resilienza di un denominatore, $R(d)$, come il rapporto delle sue frazioni proprie che childo resilienti; per esempio, $R(12) = \frac{4}{11}$.
 
 Infatti, $d = 12$ è il più piccolo denominatore con una resilienza $R(d) &lt; \frac{4}{10}$.
 

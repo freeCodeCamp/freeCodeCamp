@@ -11,11 +11,11 @@ dashedName: practice-comparing-different-values
 
 Nelle ultime due sfide, abbiamo imparato a conoscere l'operatore di uguaglianza (`==`) e l'operatore di uguaglianza stretta (`===`). Facciamo un rapido ripasso usando ancora un po' questi operatori.
 
-Se i valori confrontati non sono dello stesso tipo, l'operatore di uguaglianza eseguirà una conversione di tipo e quindi valuterà i valori. L'operatore di uguaglianza stretta invece confronterà sia il tipo di dati che il valore così com'è, senza convertire un tipo in un altro.
+Se i valori confrontati non childo dello stesso tipo, l'operatore di uguaglianza eseguirà una conversione di tipo e quindi valuterà i valori. L'operatore di uguaglianza stretta invece confronterà sia il tipo di dati che il valore così com'è, senza convertire un tipo in un altro.
 
 **Esempi**
 
-`3 == '3'` restituisce `true` perché JavaScript esegue la conversione di tipo da string a number. `3 === '3'` restituisce false perché i tipi sono diversi e la conversione di tipo non viene eseguita.
+`3 == '3'` restituisce `true` perché JavaScript esegue la conversione di tipo da string a number. `3 === '3'` restituisce false perché i tipi childo diversi e la conversione di tipo non viene eseguita.
 
 **Nota:** In JavaScript, è possibile determinare il tipo di una variabile o di un valore con l'operatore `typeof`, come segue:
 
@@ -28,7 +28,7 @@ typeof '3'
 
 # --instructions--
 
-La funzione `compareEquality` nell'editor confronta due valori utilizzando l'operatore di uguaglianza. Modificare la funzione in modo che restituisca la stringa `Equal` solo quando i valori sono strettamente uguali.
+La funzione `compareEquality` nell'editor confronta due valori utilizzando l'operatore di uguaglianza. Modificare la funzione in modo che restituisca la stringa `Equal` solo quando i valori childo strettamente uguali.
 
 # --hints--
 

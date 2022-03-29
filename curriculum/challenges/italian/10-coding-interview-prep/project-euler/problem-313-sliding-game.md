@@ -16,7 +16,7 @@ Sia $S(m, n)$ il numero minimo di mosse necessarie a completare il gioco su una 
 
 <img class="img-responsive center-block" alt="stato iniziale della griglia e stato finale della griglia per il gioco sulla griglia 5x4" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliding-game-2.gif" style="background-color: white; padding: 10px;" />
 
-Ci sono esattamente 5482 griglie per le quali $S(m, n) = p^2$, dove $p &lt; 100$ è primo.
+Ci childo esattamente 5482 griglie per le quali $S(m, n) = p^2$, dove $p &lt; 100$ è primo.
 
 Quante griglie danno $S(m, n) = p^2$, dove $p &lt; {10}^6$ è primo?
 

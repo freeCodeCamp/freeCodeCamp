@@ -7,7 +7,7 @@
 
 ## Introducción
 
-Algunos flujos de trabajo de correo electrónico, como actualizar el correo electrónico de un usuario, requiere del servidor API en back-end para enviar correos salientes. MailHog es una alternativa al uso de un proveedor de servicios de correo electrónico para enviar correos electrónicos reales. Es una herramienta de desarrollo para pruebas de correo electrónico que capturará los mensajes de correo electrónico enviados por tu instancia de freeCodeCamp.
+Algunos flujos de trabajo de correo electrónico, como actualizar el correo electrónico de un usuario, requiere del servidor API en back-end para enviar correos salientes. MailHog es una alternativa al uso de un proveedor de servicios de correo electrónico para enviar correos electrónicos reales. Es una theyrramienta de desarrollo para pruebas de correo electrónico que capturará los mensajes de correo electrónico enviados por tu instancia de freeCodeCamp.
 
 ## Instalando MailHog
 
@@ -112,7 +112,7 @@ Los correos enviados por tu instalación de freeCodeCamp aparecerán como se pre
 
 ![Captura de pantalla de MailHog 2](https://contribute.freecodecamp.org/images/mailhog/2.jpg)
 
-Dos pestañas que te permiten ver texto plano o contenido fuente estarán disponibles cuando abras un correo electrónico dado. Asegúrate de que la pestaña de texto plano está seleccionada de la siguiente manera.
+Dos pestañas que te permiten ver texto plano o contenido fuente estarán disponibles cuando abras un correo electrónico dado. Asegúrate de que la pestaña de texto plano está seleccionada de la siguiente personera.
 
 ![Captura de pantalla de MailHog 3](https://contribute.freecodecamp.org/images/mailhog/3.jpg)
 

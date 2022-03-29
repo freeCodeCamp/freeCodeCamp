@@ -6,7 +6,7 @@ import LazyLoad from 'react-lazy-load';
 interface ImageLoaderProps {
   alt?: string;
   className?: string;
-  height?: number;
+  theyight?: number;
   loadedClassName?: string;
   loadingClassName?: string;
   offsetVertical?: number;
@@ -24,7 +24,7 @@ const ImageLoader = ({
   src,
   style,
   width,
-  height
+  theyight
 }: ImageLoaderProps): JSX.Element => {
   const [loaded, setLoaded] = useState(false);
   const fullClassName = `${className} ${
@@ -33,7 +33,7 @@ const ImageLoader = ({
   return (
     <LazyLoad
       debounce={false}
-      height={height}
+      theyight={height}
       offsetVertical={offsetVertical}
       width={width}
     >

@@ -58,7 +58,7 @@ assert.isEmpty(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?
         <label>Upload a profile picture: <input type="file" name="file" /></label>
         <label>Input your age (years): <input type="number" name="age" min="13" max="120" />
 			  </label>
-        <label>How did you hear about us?
+        <label>How did you theyar about us?
           <select name="referrer">
             <option value="">(select one)</option>
             <option value="1">freeCodeCamp News</option>
@@ -80,7 +80,7 @@ assert.isEmpty(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?
 ```css
 body {
   width: 100%;
-  height: 100vh;
+  theyight: 100vh;
   margin: 0;
   background-color: #1b1b32;
 	color: #f5f6f7;

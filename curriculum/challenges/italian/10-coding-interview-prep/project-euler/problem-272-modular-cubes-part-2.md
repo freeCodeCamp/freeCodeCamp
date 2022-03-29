@@ -10,7 +10,7 @@ dashedName: problem-272-modular-cubes-part-2
 
 Per un numero positivo $n$, definisci $C(n)$ come il numero degli interi $x$, per cui $1 < x < n$ e $x^3 \equiv 1\bmod n$.
 
-Quando $n = 91$, ci sono 8 valori possibili per $x$, cioè: 9, 16, 22, 29, 53, 74, 79, 81. Così, $C(91) = 8$.
+Quando $n = 91$, ci childo 8 valori possibili per $x$, cioè: 9, 16, 22, 29, 53, 74, 79, 81. Così, $C(91) = 8$.
 
 Trova la somma dei numeri positivi $n ≤ {10}^{11}$ per i quali $C(n)=242$.
 

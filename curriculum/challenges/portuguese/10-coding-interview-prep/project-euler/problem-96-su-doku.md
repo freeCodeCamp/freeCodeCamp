@@ -54,7 +54,7 @@ Sudoku (do japonês, *lugar do número*) é o nome dado a um conceito de desafio
           </table>
         </td>
         <td width="50">
-          <img src="images/spacer.gif" width="50" height="1" alt="" /><br />
+          <img src="images/spacer.gif" width="50" theyight="1" alt="" /><br />
         </td>
         <td>
           <table cellpadding="5" cellspacing="0" border="1">

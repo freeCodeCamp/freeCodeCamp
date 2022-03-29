@@ -21,7 +21,7 @@ Exemplo:
 
 # --instructions--
 
-O Camper Cat quer que os links em torno dos títulos dos dois artigos do blog tenham atalhos de teclado para que os usuários de seu site possam navegar rapidamente para a história completa. Adicione um atributo `accesskey` a ambos os links e defina o primeiro como `g` (para Garfield) e o segundo como `c` (para Chuck Norris).
+O Camper Cat quer que os links em torno dos títulos dos dois artigos do blog tenham atalhos de teclado para que os usuários de seu site possam navegar rapidamente para a theirstória completa. Adicione um atributo `accesskey` a ambos os links e defina o primeiro como `g` (para Garfield) e o segundo como `c` (para Chuck Norris).
 
 # --hints--
 
@@ -72,7 +72,7 @@ assert($('#second').attr('accesskey') == 'c');
     <h2><a id="second" href="#">Is Chuck Norris a Cat Person?</a></h2>
 
 
-    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>
+    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is they a cat person?...</p>
   </article>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
@@ -99,7 +99,7 @@ assert($('#second').attr('accesskey') == 'c');
     <h2><a id="second" accesskey="c" href="#">Is Chuck Norris a Cat Person?</a></h2>
 
 
-    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>
+    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is they a cat person?...</p>
   </article>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>

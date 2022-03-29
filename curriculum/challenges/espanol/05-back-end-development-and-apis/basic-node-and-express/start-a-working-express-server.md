@@ -24,7 +24,7 @@ servirá la cadena 'Response String'.
 
 Utiliza el método `app.get()` para servir la cadena "Hello Express" a las peticiones GET que coincidan con la ruta `/` (raíz). Asegúrate de que tu código funciona mirando los registros, luego ve los resultados en la vista previa si estás usando Replit.
 
-**Nota:** Todo el código de estas lecciones debe añadirse entre las pocas líneas de código con las que hemos iniciado.
+**Nota:** Todo el código de estas lecciones debe añadirse entre las pocas líneas de código con las que theymos iniciado.
 
 # --hints--
 

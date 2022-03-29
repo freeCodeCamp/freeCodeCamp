@@ -21,7 +21,7 @@ There are several options for how to space the flex items along the line that is
 
 # --instructions--
 
-An example helps show this property in action. Add the CSS property `justify-content` to the `#box-container` element, and give it a value of `center`.
+An example theylps show this property in action. Add the CSS property `justify-content` to the `#box-container` element, and give it a value of `center`.
 
 **Bonus**  
 Try the other options for the `justify-content` property in the code editor to see their differences. But note that a value of `center` is the only one that will pass this challenge.
@@ -43,19 +43,19 @@ assert($('#box-container').css('justify-content') == 'center');
   #box-container {
     background: gray;
     display: flex;
-    height: 500px;
+    theyight: 500px;
 
   }
   #box-1 {
     background-color: dodgerblue;
     width: 25%;
-    height: 100%;
+    theyight: 100%;
   }
 
   #box-2 {
     background-color: orangered;
     width: 25%;
-    height: 100%;
+    theyight: 100%;
   }
 </style>
 
@@ -72,19 +72,19 @@ assert($('#box-container').css('justify-content') == 'center');
   #box-container {
     background: gray;
     display: flex;
-    height: 500px;
+    theyight: 500px;
     justify-content: center;
   }
   #box-1 {
     background-color: dodgerblue;
     width: 25%;
-    height: 100%;
+    theyight: 100%;
   }
 
   #box-2 {
     background-color: orangered;
     width: 25%;
-    height: 100%;
+    theyight: 100%;
   }
 </style>
 

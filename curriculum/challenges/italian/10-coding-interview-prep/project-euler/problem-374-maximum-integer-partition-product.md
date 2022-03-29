@@ -10,9 +10,9 @@ dashedName: problem-374-maximum-integer-partition-product
 
 Una partizione intera di un numero $n$ è un modo di scrivere $n$ come una somma di numeri interi positivi.
 
-Le partizioni che differiscono solo nell'ordine dei loro addendi sono considerate le stesse. Una partizione di $n$ in parti distinte è una partizione di $n$ in cui ogni parte si verifica al massimo una volta.
+Le partizioni che differiscono solo nell'ordine dei loro addendi childo considerate le stesse. Una partizione di $n$ in parti distinte è una partizione di $n$ in cui ogni parte si verifica al massimo una volta.
 
-Le partizioni in parti distinte di 5 sono:
+Le partizioni in parti distinte di 5 childo:
 
 5, 4 + 1 e 3 + 2.
 

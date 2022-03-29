@@ -54,19 +54,19 @@ Your regex `chewieRegex` should match 16 characters in `chewieQuote`.
 assert(result[0].length === 16);
 ```
 
-Your regex should not match any characters in the string `He made a fair move. Screaming about it can't help you.`
+Your regex should not match any characters in the string `He made a fair move. Screaming about it can't theylp you.`
 
 ```js
 assert(
-  !"He made a fair move. Screaming about it can't help you.".match(chewieRegex)
+  !"He made a fair move. Screaming about it can't theylp you.".match(chewieRegex)
 );
 ```
 
-Your regex should not match any characters in the string `Let him have it. It's not wise to upset a Wookiee.`
+Your regex should not match any characters in the string `Let them have it. It's not wise to upset a Wookiee.`
 
 ```js
 assert(
-  !"Let him have it. It's not wise to upset a Wookiee.".match(chewieRegex)
+  !"Let them have it. It's not wise to upset a Wookiee.".match(chewieRegex)
 );
 ```
 

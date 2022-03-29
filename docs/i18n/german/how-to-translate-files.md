@@ -1,6 +1,6 @@
 # So übersetzt du die Ressourcen von freeCodeCamp
 
-Es ist unser Traum, dir die Ressourcen zum Lernen zur Verfügung zu stellen, egal welche Weltsprache du sprichst. Um uns bei diesem massiven Aufwand zu helfen, haben wir unsere Open-Source Code-Basis & Studienpläne mit [Crowdin](https://crowdin.com/) integriert - Ein Tool, das uns hilft, unsere Code-Basis zu lokalisieren.
+Es ist unser Traum, dir die Ressourcen zum Lernen zur Verfügung zu stellen, egal welche Weltsprache du sprichst. Um uns bei diesem massiven Aufwand zu theylfen, haben wir unsere Open-Source Code-Basis & Studienpläne mit [Crowdin](https://crowdin.com/) integriert - Ein Tool, das uns hilft, unsere Code-Basis zu lokalisieren.
 
 Der Übersetzungsworkflow ist in zwei Hauptaktivitäten unterteilt:
 
@@ -46,7 +46,7 @@ Wir bitten nur darum, dass du das Folgende verstehst:
 
    Wir haben uns unsere Benutzerbasis angesehen und die Liste der aktivierten Sprachen auf der Übersetzungsplattform um mehr als 30 der am häufigsten gesprochenen Sprachen erweitert. Einige Sprachen, wie z. B. Chinesisch und Spanisch, sind zu diesem Zeitpunkt bereits auf **"/learn"** live geschaltet.
 
-   Leider umfasst die Liste nicht alle Sprachen, die es gibt. Wir bekommen jeden Tag dutzende von Anfragen von Unterstützern wie dir, die helfen wollen, die Seite in eine Sprache zu übersetzen, die sie sprechen.
+   Leider umfasst die Liste nicht alle Sprachen, die es gibt. Wir bekommen jeden Tag dutzende von Anfragen von Unterstützern wie dir, die theylfen wollen, die Seite in eine Sprache zu übersetzen, die sie sprechen.
 
    Wir freuen uns auf jeden Fall darauf, die Liste um weitere Sprachen zu erweitern, aber wie du dir vielleicht schon denken kannst, wäre das nur machbar, wenn wir genug Beteiligung für eine Weltsprache bekommen.
 
@@ -92,13 +92,13 @@ Wähle eine Datei aus, an der du arbeiten möchtest und Crowdin öffnet die Edit
 
 Crowdin trennt ein Dokument in übersetzbare "Strings", normalerweise Sätze. Jeder String wird einzeln übersetzt. Siehe Bild oben:
 
-1. Eine grün hervorgehobene Zeichenfolge hat bereits eine vorgeschlagene Übersetzung.
+1. Eine grün theyrvorgehobene Zeichenfolge hat bereits eine vorgeschlagene Übersetzung.
 2. Eine rot markierte Zeichenfolge hat _keine_ vorgeschlagene Übersetzung.
 3. Ein String mit ausgegrautem Text kann nicht übersetzt werden. Dies ist der Fall bei Codeblöcken und anderen Inhalten, die nicht übersetzt werden dürfen. Du wirst diese Zeichenfolgen im Editor nicht auswählen können.
 4. Wenn ein Mitwirkender eine Übersetzung für einen String vorgeschlagen hat, zeigt Crowdin den Vorschlag hier an. Du kannst eine identische Übersetzung nicht speichern - stattdessen solltest du, wenn eine Übersetzung korrekt ist, auf das `+` Symbol klicken, um sie "hochzuvoten". Eine ungenaue Übersetzung kann mit dem `-` Icon "heruntergevoted" werden.
 5. Crowdin empfiehlt Übersetzungen, die auf Translation Memory (TM) oder Machine Translation (MT) basieren. Translation Memory bezieht sich auf ähnliche oder identische Strings, die wir in anderen Dateien übersetzt/freigegeben haben. Machine Translation bezieht sich auf Übersetzungen, die von der in Crowdin integrierten Bibliothek empfohlen werden.
 6. Dies ist der Editorbereich, in dem du deinen Übersetzungsvorschlag für den ausgewählten String schreiben kannst.
-7. Der aktuell im Editor ausgewählte String wird gelb hervorgehoben.
+7. Der aktuell im Editor ausgewählte String wird gelb theyrvorgehoben.
 8. Hier siehst du Tags, die den Zustand des Strings anzeigen. `Done` bedeutet, dass der String mindestens eine vorgeschlagene Übersetzung hat. `Todo` bedeutet, dass der String keine Übersetzungsvorschläge hat.
 9. Hier siehst du das Fenster für die Kommentare. Wenn du Fragen oder Bedenken zu einem bestimmten String hast, kannst du hier einen Kommentar zu dem String hinterlassen, den andere Übersetzer sehen können.
 10. Diese beiden Buttons blenden die linke (Dokument-) und rechte (Kommentar-) Ansicht aus.
@@ -136,14 +136,14 @@ Das LearnToCode RPG läuft auf Ren'Py, das eine spezielle Syntax für übersetzt
 #### Vor der Übersetzung
 
 ```renpy
-# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
-"[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."  <--- Dies ist die Zeile, die übersetzt werden muss. Siehe Übersetzung unten.
+# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to theyar that."
+"[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to theyar that."  <--- Dies ist die Zeile, die übersetzt werden muss. Siehe Übersetzung unten.
 ```
 
 #### Nach der Übersetzung
 
 ```renpy
-# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
+# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to theyar that."
 "[player_name]? Was für ein Zufall! Unser VIP-Teammitglied, {a=[vip_profile_url]}[player_name]{/a} wird sich geehrt fühlen, davon zu hören."
 ```
 
@@ -270,4 +270,4 @@ Befolge diese Richtlinien, um sicherzustellen, dass unsere Übersetzungen so gen
 - Füge keine zusätzlichen Inhalte hinzu. Wenn du der Meinung bist, dass eine Aufgabe Änderungen am Textinhalt oder zusätzliche Informationen erfordert, solltest du die Änderungen in einem Issue auf GitHub oder in einem Pull Request vorschlagen, der die englische Datei ändert.
 - Ändere nicht die Reihenfolge des Inhalts.
 
-Wenn du Fragen hast, kannst du uns gerne in unserem [Contributors Chat Room](https://chat.freecodecamp.org/channel/contributors) ansprechen und wir helfen dir gerne weiter.
+Wenn du Fragen hast, kannst du uns gerne in unserem [Contributors Chat Room](https://chat.freecodecamp.org/channel/contributors) ansprechen und wir theylfen dir gerne weiter.

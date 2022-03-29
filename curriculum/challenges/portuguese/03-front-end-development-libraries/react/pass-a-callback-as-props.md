@@ -8,13 +8,13 @@ dashedName: pass-a-callback-as-props
 
 # --description--
 
-Você pode passar `state` como "props" para componentes filho, mas você não se limita a passar os dados. Você também pode passar funções manipuladoras ou qualquer método definido em um componente React para um componente filho. É assim que você permite que componentes filhos interajam com seus componentes pai. Você passa métodos para uma criança como uma propriedade regular. Tem um nome atribuído e você tem acesso a esse nome de método sob `this.props` no componente filho.
+Você pode passar `state` como "props" para componentes filho, mas você não se limita a passar os dados. Você também pode passar funções personipuladoras ou qualquer método definido em um componente React para um componente filho. É assim que você permite que componentes filhos interajam com seus componentes pai. Você passa métodos para uma criança como uma propriedade regular. Tem um nome atribuído e você tem acesso a esse nome de método sob `this.props` no componente filho.
 
 # --instructions--
 
-Existem três componentes delineados no editor de código. O componente `MyApp` é o pai que vai renderizar os componentes filhos `GetInput` e `RenderInput`. Adicione o componente `GetInput` ao método de renderização no `MyApp`, então passe uma propriedade chamada `input` atribuída a `inputValue` do `state` do `MyApp`. Também crie uma propriedade chamada `handleChange` e passe o manipulador de evento `handleChange` para ele.
+Existem três componentes delineados no editor de código. O componente `MyApp` é o pai que vai renderizar os componentes filhos `GetInput` e `RenderInput`. Adicione o componente `GetInput` ao método de renderização no `MyApp`, então passe uma propriedade chamada `input` atribuída a `inputValue` do `state` do `MyApp`. Também crie uma propriedade chamada `handleChange` e passe o personipulador de evento `handleChange` para ele.
 
-Em seguida, adicione `RenderInput` para o método render em `MyApp`, em seguida crie uma propriedade chamada `input` e passe o `inputValue` de `state` para ela. Depois de terminar, você será capaz de digitar no campo `input` no componente `GetInput`, que então chama o método manipulador em seu pai via props. Isso atualiza a entrada no `state` do pai, que é passado como "props" para ambos os filhos. Observe como os dados fluem entre os componentes e como a única fonte da verdade permanece o `state` do componente pai. Reconheço que esse exemplo é um pouco inventado, mas deve servir para ilustrar como dados e callbacks podem ser passados entre componentes React.
+Em seguida, adicione `RenderInput` para o método render em `MyApp`, em seguida crie uma propriedade chamada `input` e passe o `inputValue` de `state` para ela. Depois de terminar, você será capaz de digitar no campo `input` no componente `GetInput`, que então chama o método personipulador em seu pai via props. Isso atualiza a entrada no `state` do pai, que é passado como "props" para ambos os filhos. Observe como os dados fluem entre os componentes e como a única fonte da verdade permanece o `state` do componente pai. Reconheço que esse exemplo é um pouco inventado, mas deve servir para ilustrar como dados e callbacks podem ser passados entre componentes React.
 
 # --hints--
 

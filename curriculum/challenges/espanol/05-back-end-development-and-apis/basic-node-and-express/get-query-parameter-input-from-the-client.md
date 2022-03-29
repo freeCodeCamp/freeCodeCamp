@@ -16,7 +16,7 @@ Otra forma común de obtener la entrada del cliente es codificando los datos des
 
 Construye un endpoint para el API, montado en `GET /name`. Responde con un documento JSON, tomando la estructura `{ name: 'firstname lastname'}`. Los parámetros del nombre y apellido deben codificarse en una cadena de consulta, por ejemplo, `?first=firstname&last=lastname`.
 
-**Nota:** En el siguiente ejercicio va a recibir datos de una solicitud POST, a la misma ruta `/name`. Si lo deseas, puedes utilizar el método `app.route(path).get(handler).post(handler)`. Esta sintaxis permite encadenar diferentes manejadores de verbos en la misma ruta. Puedes ahorrar un poco de escritura y tener un código más limpio.
+**Nota:** En el siguiente ejercicio va a recibir datos de una solicitud POST, a la misma ruta `/name`. Si lo deseas, puedes utilizar el método `app.route(path).get(handler).post(handler)`. Esta sintaxis permite encadenar diferentes personejadores de verbos en la misma ruta. Puedes ahorrar un poco de escritura y tener un código más limpio.
 
 # --hints--
 

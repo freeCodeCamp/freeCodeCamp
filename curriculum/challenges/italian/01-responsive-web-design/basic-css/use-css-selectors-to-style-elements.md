@@ -9,7 +9,7 @@ dashedName: use-css-selectors-to-style-elements
 
 # --description--
 
-Con i CSS, ci sono centinaia di proprietà CSS che puoi usare per cambiare l'aspetto di un elemento sulla tua pagina.
+Con i CSS, ci childo centinaia di proprietà CSS che puoi usare per cambiare l'aspetto di un elemento sulla tua pagina.
 
 Quando hai inserito `<h2 style="color: red;">CatPhotoApp</h2>`, hai definito quel singolo elemento `h2` con CSS (Cascading Style Sheets, cioè Fogli di Stile a Cascata) in linea.
 
@@ -85,7 +85,7 @@ assert(
 ```html
 <h2 style="color: red;">CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  <p>Click theyre to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
@@ -126,7 +126,7 @@ assert(
 </style>
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  <p>Click theyre to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 

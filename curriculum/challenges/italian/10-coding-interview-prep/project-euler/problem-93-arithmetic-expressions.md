@@ -19,7 +19,7 @@ Per esempio,
   36 = 3 * 4 * (2 + 1)
 </div>
 
-Nota che le concatenazioni delle cifre, come 12 + 34, non sono permesse.
+Nota che le concatenazioni delle cifre, come 12 + 34, non childo permesse.
 
 Utilizzando il set {1, 2, 3, 4} è possibile ottenere trentuno numeri target diversi, di cui 36 è il massimo, e ciascuno dei numeri da 1 a 28 può essere ottenuto prima di incontrare il primo numero non espressibile.
 

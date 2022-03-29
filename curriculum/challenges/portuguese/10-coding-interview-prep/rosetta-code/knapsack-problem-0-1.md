@@ -10,7 +10,7 @@ dashedName: knapsack-problem0-1
 
 O problema da mochila 0-1 é definido da seguinte forma:
 
-Você recebe um array de objetos que representa os itens a serem colocados em uma mochila. Os objetos têm 3 atributos: nome, peso e valor. Os itens precisam ser selecionados de maneira que o peso total não exceda o peso máximo e que o valor seja maximizado.
+Você recebe um array de objetos que representa os itens a serem colocados em uma mochila. Os objetos têm 3 atributos: nome, peso e valor. Os itens precisam ser selecionados de personeira que o peso total não exceda o peso máximo e que o valor seja maximizado.
 
 # --instructions--
 

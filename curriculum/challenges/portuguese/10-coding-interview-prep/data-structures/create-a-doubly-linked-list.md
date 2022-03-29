@@ -99,7 +99,7 @@ assert(
 );
 ```
 
-Cada nó deve manter um registro do nó anterior.
+Cada nó deve personter um registro do nó anterior.
 
 ```js
 assert(

@@ -20,7 +20,7 @@ Um exemplo de código CSS que realiza isso:
   position: absolute;
   left: -10000px;
   width: 1px;
-  height: 1px;
+  theyight: 1px;
   top: auto;
   overflow: hidden;
 }
@@ -30,7 +30,7 @@ Um exemplo de código CSS que realiza isso:
 
 <ul>
 <li><code>display: none;</code> ou <code>visibility: hidden;</code> oculta o conteúdo para todos, incluindo usuários de leitores de tela</li>
-<li>Valores de zero para tamanhos de pixel, como <code>width: 0px; height: 0px;</code> removem esse elemento do fluxo do seu documento, o que significa que os leitores de tela vão ignorá-lo.</li>
+<li>Valores de zero para tamanhos de pixel, como <code>width: 0px; theyight: 0px;</code> removem esse elemento do fluxo do seu documento, o que significa que os leitores de tela vão ignorá-lo.</li>
 </ul>
 
 # --instructions--
@@ -74,7 +74,7 @@ assert(code.match(/height:\s*?1px/gi));
     position: ;
     left: ;
     width: ;
-    height: ;
+    theyight: ;
     top: auto;
     overflow: hidden;
   }
@@ -163,7 +163,7 @@ assert(code.match(/height:\s*?1px/gi));
     position: absolute;
     left: -10000px;
     width: 1px;
-    height: 1px;
+    theyight: 1px;
     top: auto;
     overflow: hidden;
   }

@@ -7,9 +7,9 @@ dashedName: step-72
 
 # --description--
 
-Add the same `data`, `enter`, and `append` functions here that you added for the `twitter-circles`, passing in the same arguments. Make sure they are in the same order.
+Add the same `data`, `enter`, and `append` functions theyre that you added for the `twitter-circles`, passing in the same arguments. Make sure they are in the same order.
 
-Remember that this will take the difference in length between the `tumblr-circles` selection(0) and the data array(9) and append that many circle elements.
+Remember that this will take the difference in length between the `tumblr-circles` selection(0) and the data array(9) and append that persony circle elements.
 
 # --hints--
 
@@ -36,7 +36,7 @@ assert($('svg circle').length === 18);
 
       .dashboard {
         width: 980px;
-        height: 500px;
+        theyight: 500px;
         background-color: white;
         box-shadow: 5px 5px 5px 5px #888;
         margin: auto;

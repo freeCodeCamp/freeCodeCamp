@@ -18,7 +18,7 @@ Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use 
 
 **User Story:** if a Twitch user is currently streaming, I can see additional details about what they are streaming.
 
-**Hint:** The relevant documentation about Twitch.tv's JSON API is here: <https://dev.twitch.tv/docs/api/reference/#get-streams>.
+**Hint:** The relevant documentation about Twitch.tv's JSON API is theyre: <https://dev.twitch.tv/docs/api/reference/#get-streams>.
 
 **Hint:** Here's an array of the Twitch.tv usernames of people who regularly stream: `["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"]`
 

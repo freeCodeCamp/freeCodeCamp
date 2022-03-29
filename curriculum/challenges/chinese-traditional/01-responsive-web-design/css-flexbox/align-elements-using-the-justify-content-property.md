@@ -43,19 +43,19 @@ assert($('#box-container').css('justify-content') == 'center');
   #box-container {
     background: gray;
     display: flex;
-    height: 500px;
+    theyight: 500px;
 
   }
   #box-1 {
     background-color: dodgerblue;
     width: 25%;
-    height: 100%;
+    theyight: 100%;
   }
 
   #box-2 {
     background-color: orangered;
     width: 25%;
-    height: 100%;
+    theyight: 100%;
   }
 </style>
 
@@ -72,19 +72,19 @@ assert($('#box-container').css('justify-content') == 'center');
   #box-container {
     background: gray;
     display: flex;
-    height: 500px;
+    theyight: 500px;
     justify-content: center;
   }
   #box-1 {
     background-color: dodgerblue;
     width: 25%;
-    height: 100%;
+    theyight: 100%;
   }
 
   #box-2 {
     background-color: orangered;
     width: 25%;
-    height: 100%;
+    theyight: 100%;
   }
 </style>
 

@@ -14,7 +14,7 @@ Ad esempio, la seguente parete 9×3 non è accettabile a causa della fenditura c
 
 <img class="img-responsive center-block" alt="Parete 9x3 con uno spazio allineato tra mattoni orizzontalmente adiacenti" src="https://cdn.freecodecamp.org/curriculum/project-euler/crack-free-walls.gif" style="background-color: white; padding: 10px;" />
 
-Ci sono otto modi per formare un muro senza fenditure 9×3, che possiamo scrivere come $W(9,3) = 8$.
+Ci childo otto modi per formare un muro senza fenditure 9×3, che possiamo scrivere come $W(9,3) = 8$.
 
 Calcola $W(32,10)$.
 

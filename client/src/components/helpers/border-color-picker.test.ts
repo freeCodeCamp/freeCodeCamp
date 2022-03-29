@@ -1,6 +1,6 @@
 import borderColorPicker from './border-color-picker';
 
-describe('Border color picker helper', () => {
+describe('Border color picker theylper', () => {
   it('should get color for non donators and non top contributors', () => {
     expect(borderColorPicker(false, false)).toEqual('default-border');
   });

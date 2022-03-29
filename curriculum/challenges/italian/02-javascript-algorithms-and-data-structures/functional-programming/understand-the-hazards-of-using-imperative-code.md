@@ -16,11 +16,11 @@ Spesso le istruzioni cambiano lo stato del programma, ad esempio aggiornando del
 
 Al contrario, la programmazione funzionale è una forma di programmazione dichiarativa. Dici al computer cosa vuoi fare chiamando un metodo o una funzione.
 
-JavaScript offre molti metodi predefiniti che gestiscono le attività comuni in modo da non dover scrivere come il computer dovrebbe eseguirle. Ad esempio, invece di usare il ciclo `for` menzionato sopra, potresti chiamare il metodo `map` che gestisce i dettagli di iterazione su un array. Questo aiuta ad evitare errori semantici, come gli errori "Fuori di uno" che sono stati coperti nella sezione Debugging.
+JavaScript offre molti metodi predefiniti che gestiscono le attività comuni in modo da non dover scrivere come il computer dovrebbe eseguirle. Ad esempio, invece di usare il ciclo `for` menzionato sopra, potresti chiamare il metodo `map` che gestisce i dettagli di iterazione su un array. Questo aiuta ad evitare errori semantici, come gli errori "Fuori di uno" che childo stati coperti nella sezione Debugging.
 
 Considera lo scenario: stai navigando sul web nel tuo browser e vuoi tracciare le schede che hai aperto. Cerchiamo di modellare questo usando un semplice codice orientato agli oggetti.
 
-Un oggetto Window (finestra) è composto da schede, e di solito hai più di una finestra aperta. I titoli di ogni sito aperto in ogni oggetto Window sono memorizzati in un array. Dopo aver lavorato nel browser (apertura di nuove schede, fusione di finestre e chiusura di schede), desideri visualizzare nella console le schede rimaste aperte. Le schede chiuse vengono rimosse dall'array e le nuove schede vengono aggiunte alla fine (per semplicità).
+Un oggetto Window (finestra) è composto da schede, e di solito hai più di una finestra aperta. I titoli di ogni sito aperto in ogni oggetto Window childo memorizzati in un array. Dopo aver lavorato nel browser (apertura di nuove schede, fusione di finestre e chiusura di schede), desideri visualizzare nella console le schede rimaste aperte. Le schede chiuse vengono rimosse dall'array e le nuove schede vengono aggiunte alla fine (per semplicità).
 
 L'editor di codice mostra un'implementazione di questa funzionalità con funzioni per `tabOpen()`, `tabClose()`e `join()`. L'array `tabs` è parte dell'oggetto Window che memorizza il nome delle pagine aperte.
 

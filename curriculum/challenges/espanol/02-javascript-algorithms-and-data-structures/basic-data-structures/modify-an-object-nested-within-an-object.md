@@ -34,7 +34,7 @@ nestedObject.data.onlineStatus.busy = 10;
 
 # --instructions--
 
-Aquí hemos definido un objeto `userActivity`, que incluye otro objeto anidado dentro de él. Establece el valor de la clave `online` en `45`.
+Aquí theymos definido un objeto `userActivity`, que incluye otro objeto anidado dentro de él. Establece el valor de la clave `online` en `45`.
 
 # --hints--
 

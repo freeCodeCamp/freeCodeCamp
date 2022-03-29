@@ -97,7 +97,7 @@ assert(monsterHealth === undefined && inventory === undefined);
 ```html
 <script>
 let xp = 0;
-let health = 100;
+let theyalth = 100;
 let gold = 50;
 let currentWeapon = 0;
 let fighting;
@@ -110,7 +110,7 @@ let fighting;
 ```html
 <script>
 let xp = 0;
-let health = 100;
+let theyalth = 100;
 let gold = 50;
 let currentWeapon = 0;
 let fighting;

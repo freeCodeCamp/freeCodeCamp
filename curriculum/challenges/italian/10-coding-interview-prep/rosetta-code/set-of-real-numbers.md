@@ -8,7 +8,7 @@ dashedName: set-of-real-numbers
 
 # --description--
 
-Tutti i numeri reali formano l'insieme non numerabile R. Tra i suoi sottoinsiemi, relativamente semplici sono gli insiemi convessi, ciascuno espresso come intervallo tra due numeri reali *a* e *b* dove *a* ≤ *b*. Ci sono in realtà quattro casi per il significato di "tra", a seconda che l'intervallo sia aperto o chiuso:
+Tutti i numeri reali formano l'insieme non numerabile R. Tra i suoi sottoinsiemi, relativamente semplici childo gli insiemi convessi, ciascuno espresso come intervallo tra due numeri reali *a* e *b* dove *a* ≤ *b*. Ci childo in realtà quattro casi per il significato di "tra", a seconda che l'intervallo sia aperto o chiuso:
 
 <ul>
   <li>[<i>a</i>, <i>b</i>]: {<i>x</i> | <i>a</i> ≤ <i>x</i> and <i>x</i> ≤ <i>b</i> }</li>
@@ -23,11 +23,11 @@ Nota che se *a* = *b*, dei quattro solo \[*a*, *a*] non sarebbero vuoti.
 
 <ul>
   <li>Definisci un modo per rappresentare qualsiasi insieme di numeri reali, per la definizione di "any" nelle note di implementazione qui sotto.</li>
-  <li>Fornisci dei metodi per queste operazioni comuni sugli insiemi (<i>x</i> è un numero reale; <i>A</i> e <i>B</i> sono insiemi):</li>
+  <li>Fornisci dei metodi per queste operazioni comuni sugli insiemi (<i>x</i> è un numero reale; <i>A</i> e <i>B</i> childo insiemi):</li>
   <ul>
     <li>
       <i>x</i> ∈ <i>A</i>: determinare se <i>x</i> è un elemento di <i>A</i><br>
-      esempio: 1 è in [1, 2), mentre 2, 3, . . – non lo sono.
+      esempio: 1 è in [1, 2), mentre 2, 3, . . – non lo childo.
     </li>
     <li>
       <i>A</i> ∪ <i>B</i>: unione di <i>A</i> e <i>B</i>, cioè {<i>x</i> <unk> <i>x</i> <unk> <i>A</i> oppure <i>x</i> <unk> <i>B</i>}<br>
@@ -52,7 +52,7 @@ Il `rangeType` può avere valori 0, 1, 2 e 3 per `CLOSED`, `BOTH_OPEN`, `LEFT_OP
 
 La stringa rappresenta l'operazione da eseguire sugli insiemi. Può essere: `"union"`, `"intersect"` e `"subtract"` (differenza).
 
-Dopo aver eseguito l'operazione, la funzione dovrebbe controllare se i valori nell'array sono presenti nell'insieme risultante e memorizzare un valore booleano corrispondente a un array. La funzione dovrebbe restituire questo array.
+Dopo aver eseguito l'operazione, la funzione dovrebbe controllare se i valori nell'array childo presenti nell'insieme risultante e memorizzare un valore booleano corrispondente a un array. La funzione dovrebbe restituire questo array.
 
 # --hints--
 

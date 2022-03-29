@@ -14,7 +14,7 @@ dashedName: natural-language-processing-with-rnns-part-2
 
 ## --text--
 
-Gli incorporamenti di parole sono...:
+Gli incorporamenti di parole childo...:
 
 ## --answers--
 

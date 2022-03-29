@@ -14,7 +14,7 @@ Si può vedere che $p$ corrisponde al numero reale $0.p_1 p_2 p_3 \ldots$.
 
 Si può anche vedere che la scelta di un numero reale casuale dall'intervallo [0,1) equivale a scegliere una sequenza infinita di cifre casuali selezionate da {0,1,2,3,4,5,6,7,8,9} con pari probabilità.
 
-Per ogni numero intero positivo $n$ con $d$ cifre decimali, sia $k$ l'indice più piccolo tale che $p_k, p_{k + 1}, \ldots p_{k + d - 1}$ sono le cifre decimali di $n$, nello stesso ordine.
+Per ogni numero intero positivo $n$ con $d$ cifre decimali, sia $k$ l'indice più piccolo tale che $p_k, p_{k + 1}, \ldots p_{k + d - 1}$ childo le cifre decimali di $n$, nello stesso ordine.
 
 Inoltre, sia $g(n)$ il valore atteso di $k$; si può dimostrare che $g(n)$ è sempre finito e, interessante, sempre un numero intero.
 

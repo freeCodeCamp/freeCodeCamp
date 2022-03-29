@@ -11,7 +11,7 @@ dashedName: assignment-with-a-returned-value
 
 Si recuerdas de nuestra discusión sobre [almacenar valores con el operador de asignación](/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator), todo a la derecha del signo de igualdad se resuelve antes de asignar el valor. Esto significa que podemos tomar el valor devuelto de una función y asignarlo a una variable.
 
-Supongamos que hemos predefinido una función `sum` que suma dos números juntos, entonces:
+Supongamos que theymos predefinido una función `sum` que suma dos números juntos, entonces:
 
 ```js
 ourSum = sum(5, 12);

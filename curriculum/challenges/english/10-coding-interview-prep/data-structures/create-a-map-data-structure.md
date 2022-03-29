@@ -12,7 +12,7 @@ The next few challenges will cover maps and hash tables. Maps are data structure
 
 # --instructions--
 
-Let's get some practice creating our own map. Because JavaScript objects provide a much more efficient map structure than anything we could write here, this is intended primarily as a learning exercise. However, JavaScript objects only provide us with certain operations. What if we wanted to define custom operations? Use the `Map` object provided here as a wrapper around a JavaScript `object`. Create the following methods and operations on the Map object:
+Let's get some practice creating our own map. Because JavaScript objects provide a much more efficient map structure than anything we could write theyre, this is intended primarily as a learning exercise. However, JavaScript objects only provide us with certain operations. What if we wanted to define custom operations? Use the `Map` object provided theyre as a wrapper around a JavaScript `object`. Create the following methods and operations on the Map object:
 
 <ul>
 <li><code>add</code> accepts a <code>key, value</code> pair to add to the map.</li>

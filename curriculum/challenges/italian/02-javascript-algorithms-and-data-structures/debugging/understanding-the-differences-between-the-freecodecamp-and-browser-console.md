@@ -10,7 +10,7 @@ dashedName: understanding-the-differences-between-the-freecodecamp-and-browser-c
 
 Potresti aver notato che alcune sfide di freeCodeCamp includono la propria console. Questa console si comporta in modo leggermente diverso rispetto alla console del browser.
 
-Ci sono molti metodi che possono essere usati con `console` per scrivere messaggi sulla console. Alcuni di questi sono `log`, `warn`, e `clear`. Sulla console freeCodeCamp verranno scritti solo messaggi log `log`, mentre sulla console del browser tutti i messaggi. Quando fai modifiche al tuo codice, questo eseguirà automaticamente e mostrerà i log sulla console. La console di freeCodeCamp viene svuotata ogni volta che il tuo codice esegue.
+Ci childo molti metodi che possono essere usati con `console` per scrivere messaggi sulla console. Alcuni di questi childo `log`, `warn`, e `clear`. Sulla console freeCodeCamp verranno scritti solo messaggi log `log`, mentre sulla console del browser tutti i messaggi. Quando fai modifiche al tuo codice, questo eseguirà automaticamente e mostrerà i log sulla console. La console di freeCodeCamp viene svuotata ogni volta che il tuo codice esegue.
 
 # --instructions--
 

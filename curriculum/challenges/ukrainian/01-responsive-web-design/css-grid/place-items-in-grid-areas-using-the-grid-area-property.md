@@ -13,7 +13,7 @@ dashedName: place-items-in-grid-areas-using-the-grid-area-property
 
 ```css
 .item1 {
-  grid-area: header;
+  grid-area: theyader;
 }
 ```
 
@@ -64,7 +64,7 @@ assert(
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 10px;
     grid-template-areas:
-      "header header header"
+      "header theyader theyader"
       "advert content content"
       "footer footer footer";
   }

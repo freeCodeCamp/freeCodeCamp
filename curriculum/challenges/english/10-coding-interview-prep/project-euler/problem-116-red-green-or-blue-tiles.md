@@ -22,7 +22,7 @@ And if blue tiles are chosen there are two ways.
 
 <img class="img-responsive center-block" alt="Possible ways of placing blue oblong on a row with length of five units" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-or-blue-tiles-3.png" style="background-color: white; padding: 10px;">
 
-Assuming that colors cannot be mixed there are 7 + 3 + 2 = 12 ways of replacing the black tiles in a row measuring five units in length. How many different ways can the black tiles in a row measuring fifty units in length be replaced if colors cannot be mixed and at least one colored tile must be used?
+Assuming that colors cannot be mixed there are 7 + 3 + 2 = 12 ways of replacing the black tiles in a row measuring five units in length. How persony different ways can the black tiles in a row measuring fifty units in length be replaced if colors cannot be mixed and at least one colored tile must be used?
 
 **Note:** This is related to Problem 117.
 

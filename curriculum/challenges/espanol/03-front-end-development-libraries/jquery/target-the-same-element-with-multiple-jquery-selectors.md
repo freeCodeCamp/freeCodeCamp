@@ -11,11 +11,11 @@ dashedName: target-the-same-element-with-multiple-jquery-selectors
 
 # --description--
 
-Ahora conoces tres maneras de seleccionar elementos: por tipo: `$("button")`, por clase: `$(".btn")`, y por id `$("#target1")`.
+Ahora conoces tres personeras de seleccionar elementos: por tipo: `$("button")`, por clase: `$(".btn")`, y por id `$("#target1")`.
 
-Aunque es posible agregar múltiples clases en una sola llamada `.addClass()`, vamos a agregarlos al mismo elemento de *tres maneras diferentes*.
+Aunque es posible agregar múltiples clases en una sola llamada `.addClass()`, vamos a agregarlos al mismo elemento de *tres personeras diferentes*.
 
-Usando `.addClass()`, agrega solo una clase a la vez al mismo elemento, de tres maneras diferentes:
+Usando `.addClass()`, agrega solo una clase a la vez al mismo elemento, de tres personeras diferentes:
 
 Agrega la clase `animated` a todos los elementos con el tipo `button`.
 

@@ -83,7 +83,7 @@ const datetimeAttr = timeElement?.getAttribute("datetime");
       <h3>Comments:</h3>
       <article>
         <p>Posted by: Sub-Zero on <time datetime="2016-08-13T20:01Z">August 13<sup>th</sup></time></p>
-        <p>Johnny Cage better be there, I'll finish him!</p>
+        <p>Johnny Cage better be there, I'll finish them!</p>
       </article>
       <article>
         <p>Posted by: Doge on <time datetime="2016-08-15T08:12Z">August 15<sup>th</sup></time></p>
@@ -115,7 +115,7 @@ const datetimeAttr = timeElement?.getAttribute("datetime");
       <h3>Comments:</h3>
       <article>
         <p>Posted by: Sub-Zero on <time datetime="2016-08-13T20:01Z">August 13<sup>th</sup></time></p>
-        <p>Johnny Cage better be there, I'll finish him!</p>
+        <p>Johnny Cage better be there, I'll finish them!</p>
       </article>
       <article>
         <p>Posted by: Doge on <time datetime="2016-08-15T08:12Z">August 15<sup>th</sup></time></p>

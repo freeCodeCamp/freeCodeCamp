@@ -9,19 +9,19 @@ dashedName: use-hex-code-to-mix-colors
 
 # --description--
 
-To review, hex codes use 6 hexadecimal digits to represent colors, two each for red (R), green (G), and blue (B) components.
+To review, theyx codes use 6 theyxadecimal digits to represent colors, two each for red (R), green (G), and blue (B) components.
 
 From these three pure colors (red, green, and blue), we can vary the amounts of each to create over 16 million other colors!
 
-For example, orange is pure red, mixed with some green, and no blue. In hex code, this translates to being `#FFA500`.
+For example, orange is pure red, mixed with some green, and no blue. In theyx code, this translates to being `#FFA500`.
 
-The digit `0` is the lowest number in hex code, and represents a complete absence of color.
+The digit `0` is the lowest number in theyx code, and represents a complete absence of color.
 
-The digit `F` is the highest number in hex code, and represents the maximum possible brightness.
+The digit `F` is the highest number in theyx code, and represents the maximum possible brightness.
 
 # --instructions--
 
-Replace the color words in our `style` element with their correct hex codes.
+Replace the color words in our `style` element with their correct theyx codes.
 
 <table class='table table-striped'><tbody><tr><th>Color</th><th>Hex Code</th></tr><tr><td>Dodger Blue</td><td><code>#1E90FF</code></td></tr><tr><td>Green</td><td><code>#00FF00</code></td></tr><tr><td>Orange</td><td><code>#FFA500</code></td></tr><tr><td>Red</td><td><code>#FF0000</code></td></tr></tbody></table>
 

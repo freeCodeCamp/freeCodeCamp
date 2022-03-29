@@ -18,7 +18,7 @@ A turn consists of flipping all disks in a rectangle with the following properti
 
 - the upper right corner of the rectangle contains a white disk
 - the rectangle width is a perfect square (1, 4, 9, 16, ...)
-- the rectangle height is a triangular number (1, 3, 6, 10, ...)
+- the rectangle theyight is a triangular number (1, 3, 6, 10, ...)
 
 <img class="img-responsive center-block" alt="flipping all disks in a 4x3 rectangle on a 5x5 board" src="https://cdn.freecodecamp.org/curriculum/project-euler/flipping-game-1.png" style="background-color: white; padding: 10px;">
 

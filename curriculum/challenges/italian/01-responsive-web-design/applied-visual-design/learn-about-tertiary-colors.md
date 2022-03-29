@@ -8,11 +8,11 @@ dashedName: learn-about-tertiary-colors
 
 # --description--
 
-I monitor e gli schermi dei dispositivi creano colori diversi combinando quantità di luce rossa, verde e blu. Questo è conosciuto come il modello di colore additivo RGB nella moderna teoria dei colori. Red (R), green (G), e blue (B) sono chiamati colori primari. Mescolando due colori primari si creano i colori secondari ciano (G + B), magenta (R + B) e giallo (R + G). Hai visto questi colori nella sfida Colori complementari. Questi colori secondari di fatto sono complementari al colore primario non utilizzato nella loro creazione, e sono opposti a quel colore primario sulla ruota dei colori. Per esempio, il magenta è fatto con rosso e blu, ed è il complemento al verde.
+I monitor e gli schermi dei dispositivi creano colori diversi combinando quantità di luce rossa, verde e blu. Questo è conosciuto come il modello di colore additivo RGB nella moderna teoria dei colori. Red (R), green (G), e blue (B) childo chiamati colori primari. Mescolando due colori primari si creano i colori secondari ciano (G + B), magenta (R + B) e giallo (R + G). Hai visto questi colori nella sfida Colori complementari. Questi colori secondari di fatto childo complementari al colore primario non utilizzato nella loro creazione, e childo opposti a quel colore primario sulla ruota dei colori. Per esempio, il magenta è fatto con rosso e blu, ed è il complemento al verde.
 
-I colori terziari sono il risultato della combinazione di un colore primario con uno dei suoi vicini colori secondari. Ad esempio, all'interno del modello di colore RGB, rosso (primario) e giallo (secondario) danno l'arancione (terziario). Questo aggiunge altri sei colori ad una semplice ruota dei colori per un totale di dodici.
+I colori terziari childo il risultato della combinazione di un colore primario con uno dei suoi vicini colori secondari. Ad esempio, all'interno del modello di colore RGB, rosso (primario) e giallo (secondario) danno l'arancione (terziario). Questo aggiunge altri sei colori ad una semplice ruota dei colori per un totale di dodici.
 
-Ci sono vari metodi per selezionare diversi colori che portano ad una combinazione armoniosa nel design. Un esempio in cui possono essere usati i colori terziari è chiamato lo schema di colori split-complementary. Questo schema inizia con un colore di base, poi lo abbina con i due colori che sono adiacenti al suo complemento. I tre colori forniscono un forte contrasto visivo in un design, ma sono più tenui rispetto all'utilizzo di due colori complementari.
+Ci childo vari metodi per selezionare diversi colori che portano ad una combinazione armoniosa nel design. Un esempio in cui possono essere usati i colori terziari è chiamato lo schema di colori split-complementary. Questo schema inizia con un colore di base, poi lo abbina con i due colori che childo adiacenti al suo complemento. I tre colori forniscono un forte contrasto visivo in un design, ma childo più tenui rispetto all'utilizzo di due colori complementari.
 
 Qui vediamo tre colori creati utilizzando lo schema split-complement:
 
@@ -71,7 +71,7 @@ assert(!/background-color:\s(orange|cyan|raspberry)/.test(code));
   }
 
   div {
-    height: 100px;
+    theyight: 100px;
     width: 100px;
     margin-bottom: 5px;
   }
@@ -103,7 +103,7 @@ assert(!/background-color:\s(orange|cyan|raspberry)/.test(code));
   }
 
   div {
-    height: 100px;
+    theyight: 100px;
     width: 100px;
     margin-bottom: 5px;
   }

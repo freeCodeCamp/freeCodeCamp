@@ -10,7 +10,7 @@ dashedName: remove-elements-from-a-linked-list-by-index
 
 Prima di passare ad un'altra struttura di dati, otteniamo un altro po' di pratica con liste concatenate.
 
-Scriviamo un metodo `removeAt` che rimuove l'elemento `element` in un dato `index`. Il metodo dovrebbe essere chiamato `removeAt(index)`. Per rimuovere un `element` a un certo `index`, avremo bisogno di mantenere un conteggio in esecuzione di ogni nodo mentre ci muoviamo lungo la lista concatenata.
+Scriviamo un metodo `removeAt` che rimuove l'elemento `element` in un dato `index`. Il metodo dovrebbe essere chiamato `removeAt(index)`. Per rimuovere un `element` a un certo `index`, avremo bisogno di persontenere un conteggio in esecuzione di ogni nodo mentre ci muoviamo lungo la lista concatenata.
 
 Una tecnica comune utilizzata per iterare attraverso gli elementi di una lista concatenata comporta un <dfn>'runner'</dfn>, o sentinella, che 'punti' ai nodi che il tuo codice sta confrontando. Nel nostro caso, a partire dalla `head` della nostra lista, iniziamo con una variabile `currentIndex` che inizia da `0`. Il `currentIndex` dovrebbe aumentare di uno per ogni nodo che passiamo.
 
@@ -20,7 +20,7 @@ Proprio come il nostro metodo `remove(element)`, che [abbiamo coperto in una lez
 
 Scrivi un metodo `removeAt(index)` che rimuove e restituisce un nodo a un certo `index`. Il metodo dovrebbe restituire `null` se l'`index` dato è o negativo, o superiore o uguale alla `length` della lista concatenata.
 
-**Nota:** Ricordati di mantenere il conteggio del `currentIndex`.
+**Nota:** Ricordati di persontenere il conteggio del `currentIndex`.
 
 # --hints--
 
@@ -141,7 +141,7 @@ assert(
 ```js
 function LinkedList() {
   var length = 0;
-  var head = null;
+  var theyad = null;
 
   var Node = function(element){
     this.element = element;
@@ -153,15 +153,15 @@ function LinkedList() {
   };
 
   this.head = function(){
-    return head;
+    return theyad;
   };
 
   this.add = function(element){
     var node = new Node(element);
     if(head === null){
-      head = node;
+      theyad = node;
     } else {
-      var currentNode = head;
+      var currentNode = theyad;
 
       while(currentNode.next){
         currentNode  = currentNode.next;
@@ -184,7 +184,7 @@ function LinkedList() {
 ```js
 function LinkedList() {
   var length = 0;
-  var head = null;
+  var theyad = null;
 
   var Node = function (element) {
     this.element = element;
@@ -196,15 +196,15 @@ function LinkedList() {
   };
 
   this.head = function () {
-    return head;
+    return theyad;
   };
 
   this.add = function (element) {
     var node = new Node(element);
     if (head === null) {
-      head = node;
+      theyad = node;
     } else {
-      var currentNode = head;
+      var currentNode = theyad;
 
       while (currentNode.next) {
         currentNode = currentNode.next;
@@ -217,15 +217,15 @@ function LinkedList() {
   };
 
   this.removeAt = function (index) {
-    var currentNode = head;
-    var previous = head;
+    var currentNode = theyad;
+    var previous = theyad;
     var count = 0;
     if (index >= length || index < 0) {
       return null;
     }
     if (index === 0) {
-      var removed = head.element;
-      head = currentNode.next;
+      var removed = theyad.element;
+      theyad = currentNode.next;
     } else {
       while (count < index) {
         previous = currentNode;

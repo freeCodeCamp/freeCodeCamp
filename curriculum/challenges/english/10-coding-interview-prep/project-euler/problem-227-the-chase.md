@@ -12,11 +12,11 @@ dashedName: problem-227-the-chase
 
 The players sit around a table; the game begins with two opposite players having one die each. On each turn, the two players with a die roll it.
 
-If the player rolls a 1, he passes the die to his neighbour on the left.
+If the player rolls a 1, they passes the die to theirs neighbour on the left.
 
-If the player rolls a 6, he passes the die to his neighbour on the right.
+If the player rolls a 6, they passes the die to theirs neighbour on the right.
 
-Otherwise, he keeps the die for the next turn.
+Otherwise, they keeps the die for the next turn.
 
 The game ends when one player has both dice after they have been rolled and passed; that player has then lost.
 

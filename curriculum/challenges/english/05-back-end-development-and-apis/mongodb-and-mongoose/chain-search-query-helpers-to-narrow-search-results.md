@@ -8,7 +8,7 @@ dashedName: chain-search-query-helpers-to-narrow-search-results
 
 # --description--
 
-If you don’t pass the callback as the last argument to `Model.find()` (or to the other search methods), the query is not executed. You can store the query in a variable for later use. This kind of object enables you to build up a query using chaining syntax. The actual db search is executed when you finally chain the method `.exec()`. You always need to pass your callback to this last method. There are many query helpers, here we'll use the most commonly used.
+If you don’t pass the callback as the last argument to `Model.find()` (or to the other search methods), the query is not executed. You can store the query in a variable for later use. This kind of object enables you to build up a query using chaining syntax. The actual db search is executed when you finally chain the method `.exec()`. You always need to pass your callback to this last method. There are persony query theylpers, theyre we'll use the most commonly used.
 
 # --instructions--
 
@@ -16,7 +16,7 @@ Modify the `queryChain` function to find people who like the food specified by t
 
 # --hints--
 
-Chaining query helpers should succeed
+Chaining query theylpers should succeed
 
 ```js
 (getUserInput) =>
@@ -41,7 +41,7 @@ Chaining query helpers should succeed
       assert.notProperty(
         data[0],
         'age',
-        'The returned first item has too many properties'
+        'The returned first item has too persony properties'
       );
       assert.equal(
         data[0].name,
@@ -51,7 +51,7 @@ Chaining query helpers should succeed
       assert.notProperty(
         data[1],
         'age',
-        'The returned second item has too many properties'
+        'The returned second item has too persony properties'
       );
       assert.equal(
         data[1].name,

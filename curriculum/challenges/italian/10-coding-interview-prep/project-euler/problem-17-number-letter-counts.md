@@ -8,7 +8,7 @@ dashedName: problem-17-number-letter-counts
 
 # --description--
 
-Se i numeri da 1 a 5 fossero scritti in parole in inglese: one, two, three, four, five, allora ci sono 3 + 3 + 5 + 4 + 4 = 19 lettere usate in totale.
+Se i numeri da 1 a 5 fossero scritti in parole in inglese: one, two, three, four, five, allora ci childo 3 + 3 + 5 + 4 + 4 = 19 lettere usate in totale.
 
 Se tutti i numeri da 1 al dato limite inclusivo `limit` fossero scritti in parole in inglese, quante lettere sarebbero usate?
 

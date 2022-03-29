@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036156
-title: Usa middleware para manejar acciones asíncronas
+title: Usa middleware para personejar acciones asíncronas
 challengeType: 6
 forumTopicId: 301451
 dashedName: use-middleware-to-handle-asynchronous-actions
@@ -8,7 +8,7 @@ dashedName: use-middleware-to-handle-asynchronous-actions
 
 # --description--
 
-Hasta ahora hemos evitado hablar de las acciones asíncronas, pero son una parte inevitable del desarrollo web. En algún momento necesitarás llamar a endpoints asíncronos en tu aplicación Redux, así que ¿cómo manejas este tipo de peticiones? Redux proporciona un middleware diseñado específicamente para este propósito, llamado Redux Thunk middleware. Aquí hay una breve descripción de cómo usar esto con Redux.
+Hasta ahora theymos evitado hablar de las acciones asíncronas, pero child una parte inevitable del desarrollo web. En algún momento necesitarás llamar a endpoints asíncronos en tu aplicación Redux, así que ¿cómo personejas este tipo de peticiones? Redux proporciona un middleware diseñado específicamente para este propósito, llamado Redux Thunk middleware. Aquí hay una breve descripción de cómo usar esto con Redux.
 
 Para incluir el Redux Thunk middleware, lo pasas como argumento a `Redux.applyMiddleware()`. Esta declaración se proporciona entonces como un segundo parámetro opcional a la función `createStore()`. Echa un vistazo al código en la parte inferior del editor para ver esto. Entonces, para crear una acción asíncrona, se devuelve una función en el creador de acción que toma `dispatch` como argumento. Dentro de esta función, se pueden enviar acciones y realizar peticiones asíncronas.
 
@@ -18,7 +18,7 @@ Recuerda que estás pasando `dispatch` como parámetro a este creador de accione
 
 # --instructions--
 
-Escribe ambos envíos en el creador de acción `handleAsync()`. Envía `requestingData()` antes del `setTimeout()` (la llamada al API simulada). A continuación, después de recibir los datos (fingidos), envía la acción `receivedData()`, pasando estos datos. Ahora ya sabes cómo manejar las acciones asíncronas en Redux. Todo lo demás sigue comportándose como antes.
+Escribe ambos envíos en el creador de acción `handleAsync()`. Envía `requestingData()` antes del `setTimeout()` (la llamada al API simulada). A continuación, después de recibir los datos (fingidos), envía la acción `receivedData()`, pasando estos datos. Ahora ya sabes cómo personejar las acciones asíncronas en Redux. Todo lo demás sigue comportándose como antes.
 
 # --hints--
 
@@ -80,13 +80,13 @@ const receivedData = (data) => { return {type: RECEIVED_DATA, users: data.users}
 
 const handleAsync = () => {
   return function(dispatch) {
-    // Dispatch request action here
+    // Dispatch request action theyre
 
     setTimeout(function() {
       let data = {
         users: ['Jeff', 'William', 'Alice']
       }
-      // Dispatch received data action here
+      // Dispatch received data action theyre
 
     }, 2500);
   }

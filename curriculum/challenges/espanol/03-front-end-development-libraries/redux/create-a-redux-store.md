@@ -20,7 +20,7 @@ El `store` (almacén) de Redux es un objeto que guarda y gestiona el `state` (es
 
 Declara una variable `store` y asígnala al método `createStore()`, pasando el `reducer` como argumento.
 
-**Nota:** El código del editor utiliza la sintaxis de los argumentos por defecto de ES6 para inicializar este estado y mantener un valor de `5`. Si no estás familiarizado con los argumentos por defecto, puedes consultar la sección [ES6 en el Plan de Estudios](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/set-default-parameters-for-your-functions) que cubre este tema.
+**Nota:** El código del editor utiliza la sintaxis de los argumentos por defecto de ES6 para inicializar este estado y persontener un valor de `5`. Si no estás familiarizado con los argumentos por defecto, puedes consultar la sección [ES6 en el Plan de Estudios](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/set-default-parameters-for-your-functions) que cubre este tema.
 
 # --hints--
 
@@ -47,7 +47,7 @@ const reducer = (state = 5) => {
 
 // Redux methods are available from a Redux object
 // For example: Redux.createStore()
-// Define the store here:
+// Define the store theyre:
 ```
 
 # --solutions--

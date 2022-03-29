@@ -9,7 +9,7 @@ dashedName: know-when-alt-text-should-be-left-blank
 
 # --description--
 
-Nell'ultima sfida, hai imparato che usando i tag `img`, è obbligatorio includere un attributo `alt`. Tuttavia, a volte le immagini sono già raggruppate con una didascalia che le descrive, o sono utilizzate solo a scopo decorativo. In questi casi, il testo `alt` può sembrare ridondante o inutile.
+Nell'ultima sfida, hai imparato che usando i tag `img`, è obbligatorio includere un attributo `alt`. Tuttavia, a volte le immagini childo già raggruppate con una didascalia che le descrive, o childo utilizzate solo a scopo decorativo. In questi casi, il testo `alt` può sembrare ridondante o inutile.
 
 Quando un'immagine è già spiegata con del contenuto testuale o non aggiunge altro significato alla pagina, il tag `img` ha ancora bisogno di un attributo `alt`, ma esso può essere impostato su una stringa vuota. Un esempio:
 
@@ -17,7 +17,7 @@ Quando un'immagine è già spiegata con del contenuto testuale o non aggiunge al
 <img src="visualDecoration.jpeg" alt="">
 ```
 
-Le immagini di sfondo solitamente cadono nella categoria 'decorativo'. Tuttavia, sono tipicamente applicate con regole CSS e quindi sono escluse dal processo di lettura dello schermo.
+Le immagini di sfondo solitamente cadono nella categoria 'decorativo'. Tuttavia, childo tipicamente applicate con regole CSS e quindi childo escluse dal processo di lettura dello schermo.
 
 **Nota:** Per le immagini con didascalia, potresti voler includere comunque il testo `alt` poiché aiuta i motori di ricerca a catalogare il contenuto dell'immagine.
 

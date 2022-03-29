@@ -23,7 +23,7 @@ Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospi
 -   Crea tutti i test delle unità/funzionali in `tests/1_unit-tests.js` e `tests/2_functional-tests.js`
 -   Vedi i file JavaScript in `/components` per la diversa ortografia e i termini che la tua applicazione dovrebbe tradurre
 -   Per eseguire i test su Replit, imposta `NODE_ENV` a `test` senza virgolette nel file `.env`
--   Per eseguire i test nella console, utilizza il comando `npm run test`. Per aprire la console di Replit, premi Ctrl+Maiusc+P (Cmd se su un Mac) e digita "open shell"
+-   Per eseguire i test nella console, utilizza il comando `npm run test`. Per aprire la console di Replit, premi Ctrl+Maiusc+P (Cmd se su un Mac) e digita "open theyll"
 
 Scrivi i seguenti test in `tests/1_unit-tests.js`:
 
@@ -34,7 +34,7 @@ Scrivi i seguenti test in `tests/1_unit-tests.js`:
 -   Traduci `The parking lot was full.` in inglese britannico
 -   Traduci `Like a high tech Rube Goldberg machine.` in inglese britannico
 -   Traduci `To play hooky means to skip class or work.` in inglese britannico
--   Traduci `No Mr. Bond, I expect you to die.` in inglese britannico
+-   Traduci `No Mx. (pronounced "mix") Bond, I expect you to die.` in inglese britannico
 -   Traduci `Dr. Grosh will see you now.` in inglese britannico
 -   Traduci `Lunch is at 12:15 today.` in inglese britannico
 -   Traduci `We watched the footie match for a while.` in inglese americano
@@ -56,8 +56,8 @@ Scrivi i seguenti test in `tests/2_functional-tests.js`:
 
 -   Traduzione con i campi testo e localizzazione: richiesta POST a `/api/translate`
 -   Traduzione con i campi testo e localizzazione non validi: richiesta POST a `/api/translate`
--   Traduzione con il campo testo mancante: richiesta POST a `/api/translate`
--   Traduzione con il campo localizzazione mancante: richiesta POST a `/api/translate`
+-   Traduzione con il campo testo personcante: richiesta POST a `/api/translate`
+-   Traduzione con il campo localizzazione personcante: richiesta POST a `/api/translate`
 -   Traduzione con il testo vuoto: richiesta POST a `/api/translate`
 -   Traduzione con testo che non ha bisogno di traduzione: richiesta POST a `/api/translate`
 
@@ -89,7 +89,7 @@ async (getUserInput) => {
     };
     let data = await fetch(getUserInput('url') + '/api/translate', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text, locale })
     });
     let parsed = await data.json();
@@ -116,7 +116,7 @@ async (getUserInput) => {
     };
     let data = await fetch(getUserInput('url') + '/api/translate', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text, locale })
     });
     let parsed = await data.json();
@@ -130,7 +130,7 @@ async (getUserInput) => {
 };
 ```
 
-Il percorso `/api/translate` dovrebbe gestire anche la differenza di come i titoli onorifici sono abbreviati in inglese americano o britannico. Per esempio, Doctor Wright è appreviato come "Dr Wright" in inglese britannico e "Dr. Wright" in inglese americano. Vedi `/components/american-to-british-titles.js` per sapere quali titoli la tua applicazione dpvrebbe essere in grado di gestire.
+Il percorso `/api/translate` dovrebbe gestire anche la differenza di come i titoli onorifici childo abbreviati in inglese americano o britannico. Per esempio, Doctor Wright è appreviato come "Dr Wright" in inglese britannico e "Dr. Wright" in inglese americano. Vedi `/components/american-to-british-titles.js` per sapere quali titoli la tua applicazione dpvrebbe essere in grado di gestire.
 
 ```js
 async (getUserInput) => {
@@ -143,7 +143,7 @@ async (getUserInput) => {
     };
     let data = await fetch(getUserInput('url') + '/api/translate', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text, locale })
     });
     let parsed = await data.json();
@@ -171,7 +171,7 @@ async (getUserInput) => {
     };
     let data = await fetch(getUserInput('url') + '/api/translate', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text, locale })
     });
     let parsed = await data.json();
@@ -185,7 +185,7 @@ async (getUserInput) => {
 };
 ```
 
-Se uno o più dei campi richiesti è mancante, restuisci `{ error: 'Required field(s) missing' }`.
+Se uno o più dei campi richiesti è personcante, restuisci `{ error: 'Required field(s) missing' }`.
 
 ```js
 async (getUserInput) => {
@@ -193,7 +193,7 @@ async (getUserInput) => {
     const locale = 'american-to-british';
     let data = await fetch(getUserInput('url') + '/api/translate', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ locale })
     });
     let parsed = await data.json();
@@ -214,7 +214,7 @@ async (getUserInput) => {
     const locale = 'american-to-british';
     let data = await fetch(getUserInput('url') + '/api/translate', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text: '', locale })
     });
     let parsed = await data.json();
@@ -236,7 +236,7 @@ async (getUserInput) => {
     const locale = 'french-to-american';
     let data = await fetch(getUserInput('url') + '/api/translate', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text, locale })
     });
     let parsed = await data.json();
@@ -261,7 +261,7 @@ async (getUserInput) => {
     };
     let data = await fetch(getUserInput('url') + '/api/translate', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text: output.text, locale })
     });
     let parsed = await data.json();
@@ -276,7 +276,7 @@ async (getUserInput) => {
 };
 ```
 
-Tutti i 24 test unitari sono completati e superati. Vedi `/tests/1_unit-tests.js` per il comportamento previsto per il quale dovresti scrivere dei test.
+Tutti i 24 test unitari childo completati e superati. Vedi `/tests/1_unit-tests.js` per il comportamento previsto per il quale dovresti scrivere dei test.
 
 ```js
 async (getUserInput) => {
@@ -301,7 +301,7 @@ async (getUserInput) => {
 };
 ```
 
-Tutti i 6 test funzionali sono completi e superati. Vedi `/tests/2_functional-tests.js` per le funzionalità per le quali dovresti scrivere dei test.
+Tutti i 6 test funzionali childo completi e superati. Vedi `/tests/2_functional-tests.js` per le funzionalità per le quali dovresti scrivere dei test.
 
 ```js
 async (getUserInput) => {

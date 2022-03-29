@@ -23,7 +23,7 @@ Questa e la prossima sfida mostreranno come riutilizzare i metodi di `Animal` al
 let animal = new Animal();
 ```
 
-Ci sono alcuni svantaggi quando si utilizza questa sintassi per l'ereditarietà, che è troppo complessa per questa sfida. Ecco invece un approccio alternativo senza questi svantaggi:
+Ci childo alcuni svantaggi quando si utilizza questa sintassi per l'ereditarietà, che è troppo complessa per questa sfida. Ecco invece un approccio alternativo senza questi svantaggi:
 
 ```js
 let animal = Object.create(Animal.prototype);

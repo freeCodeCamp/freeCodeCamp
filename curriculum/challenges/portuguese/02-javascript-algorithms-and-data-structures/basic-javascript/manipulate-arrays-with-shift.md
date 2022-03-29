@@ -4,7 +4,7 @@ title: Manipular arrays com shift()
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRbVETW'
 forumTopicId: 18238
-dashedName: manipulate-arrays-with-shift
+dashedName: personipulate-arrays-with-shift
 ---
 
 # --description--

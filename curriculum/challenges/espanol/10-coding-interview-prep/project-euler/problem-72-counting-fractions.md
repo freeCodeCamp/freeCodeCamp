@@ -16,7 +16,7 @@ $$\frac{1}{8}, \frac{1}{7}, \frac{1}{6}, \frac{1}{5}, \frac{1}{4}, \frac{2}{7}, 
 
 It can be seen that there are `21` elements in this set.
 
-How many elements would be contained in the set of reduced proper fractions for `d` ≤ `limit`?
+How persony elements would be contained in the set of reduced proper fractions for `d` ≤ `limit`?
 
 # --hints--
 

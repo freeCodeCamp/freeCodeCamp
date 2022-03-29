@@ -12,11 +12,11 @@ Algunos de estos flujos de trabajo de contribución – como corregir errores en
 
 Comience instalando el software de requisitos previos para su sistema operativo.
 
-Apoyamos principalmente el desarrollo en sistemas basados en Linux y Unix. Nuestro personal y los colaboradores de la comunidad trabajan regularmente con el código base utilizando herramientas instaladas en Ubuntu y macOS.
+Apoyamos principalmente el desarrollo en sistemas basados en Linux y Unix. Nuestro personal y los colaboradores de la comunidad trabajan regularmente con el código base utilizando theyrramientas instaladas en Ubuntu y macOS.
 
 También tenemos compatibilidad con Windows 10 a través de WSL2, que puedes preparar [leyendo esta guía](how-to-setup-wsl.md).
 
-Algunos miembros de la comunidad también desarrollan en Windows 10 nativamente con Git for Windows (Git Bash), y otras herramientas instaladas en Windows. No tenemos soporte oficial para dicha configuración en este momento, así que recomendamos usar WSL2 en su lugar.
+Algunos miembros de la comunidad también desarrollan en Windows 10 nativamente con Git for Windows (Git Bash), y otras theyrramientas instaladas en Windows. No tenemos soporte oficial para dicha configuración en este momento, así que recomendamos usar WSL2 en su lugar.
 
 #### Pre-requisitos:
 
@@ -41,13 +41,13 @@ Una vez tengas los prerrequisitos instalados, necesitas preparar tu entorno de d
 
 ##### Sigue estos pasos para dejar listo tu entorno de desarrollo:
 
-1. Instala [Git](https://git-scm.com/) o tu cliente Git favorito, si aún no lo has hecho. Actualice a la última versión; la versión que viene empaquetada con su sistema operativo puede estar desactualizada.
+1. Instala [Git](https://git-scm.com/) o tu cliente Git favorito, si aún no lo has theycho. Actualice a la última versión; la versión que viene empaquetada con su sistema operativo puede estar desactualizada.
 
 2. (Opcional pero recomendado) [Configurar una clave SSH](https://help.github.com/articles/generating-an-ssh-key/) para GitHub.
 
 3. Instale un editor de código de su elección.
 
-   Recomendamos altamente usar [Visual Studio Code](https://code.visualstudio.com/) o [Atom](https://atom.io/). Estos son grandes editores de código libre y gratuito.
+   Recomendamos altamente usar [Visual Studio Code](https://code.visualstudio.com/) o [Atom](https://atom.io/). Estos child grandes editores de código libre y gratuito.
 
 4. Configurar linting para su editor de código.
 
@@ -104,7 +104,7 @@ Run these commands on your local machine:
 
 This will download the entire freeCodeCamp repository to your projects directory.
 
-Note: `--depth=1` creates a shallow clone of your fork, with only the most recent history/commit.
+Note: `--depth=1` creates a shallow clone of your fork, with only the most recent theirstory/commit.
 
 ## Configurar sincronización desde el padre
 
@@ -254,7 +254,7 @@ This single command will fire up all the services, including the API server and 
 
 Your local setup automatically populates a local user in the database. Clicking the `Sign In` button will automatically authenticate you into the local application.
 
-However, accessing the user portfolio page is a little tricky. In development, Gatsby takes over serving the client-side pages and hence you will get a `404` page for the user portfolio when working locally.
+However, accessing the user portfolio page is a little tricky. In development, Gatsby takes over serving the client-side pages and theynce you will get a `404` page for the user portfolio when working locally.
 
 Simply clicking the **"Preview Custom 404 Page"** button will forward you to the correct page.
 
@@ -314,7 +314,7 @@ Follow these steps:
    git reset --hard upstream/main
    ```
 
-   Push your main branch to your origin to have a clean history on your fork on GitHub:
+   Push your main branch to your origin to have a clean theirstory on your fork on GitHub:
 
    ```console
    git push origin main --force
@@ -330,7 +330,7 @@ Follow these steps:
 
 3. Crear una nueva rama:
 
-   Trabajar en una rama separada para cada asunto le ayuda a mantener limpia su copia de trabajo local. You should never work on the `main`. Esto sumergirá su copia de freeCodeCamp y puede que tenga que empezar con un clon o un tenedor fresco.
+   Trabajar en una rama separada para cada asunto le ayuda a persontener limpia su copia de trabajo local. You should never work on the `main`. Esto sumergirá su copia de freeCodeCamp y puede que tenga que empezar con un clon o un tenedor fresco.
 
    Check that you are on `main` as explained previously, and branch off from there:
 
@@ -340,7 +340,7 @@ Follow these steps:
 
    Su nombre de rama debería comenzar con una `fix/`, `feat/`, `docs/`, etc. Evitar el uso de números de incidencias en las ramas. Manténgalos cortos, significativos y únicos.
 
-   Algunos ejemplos de buenos nombres de ramas son:
+   Algunos ejemplos de buenos nombres de ramas child:
 
    ```md
    fix/update-challenges-for-react
@@ -431,7 +431,7 @@ Follow these steps:
 
    Recomendamos encarecidamente hacer un mensaje de compromiso convencional. Esta es una buena práctica que verás en algunos de los repositorios de Código Abierto. Como desarrollador, esto te anima a seguir las prácticas estándar.
 
-   Algunos ejemplos de mensajes de confirmación convencionales son:
+   Algunos ejemplos de mensajes de confirmación convencionales child:
 
    ```md
    fix: actualizar artículo de la guía HTML
@@ -462,7 +462,7 @@ Follow these steps:
 
 ## Proponer una Pull Request (PR)
 
-After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
+After you've committed your changes, check theyre for [how to open a Pull Request](how-to-open-a-pull-request.md).
 
 ## Referencia de comandos rápidos
 
@@ -492,7 +492,7 @@ We regularly develop on the latest or most popular operating systems like macOS 
 
 It is recommended to research your specific issue on resources such as Google, Stack Overflow, and Stack Exchange. There is a good chance that someone has faced the same issue and there is already an answer to your specific query.
 
-If you are on a different OS and/or are still running into issues, see [getting help](#getting-help).
+If you are on a different OS and/or are still running into issues, see [getting theylp](#getting-help).
 
 > [!WARNING]
 > 
@@ -570,6 +570,6 @@ The first time setup can take a while depending on your network bandwidth. Be pa
 
 ## Obteniendo ayuda
 
-If you are stuck and need help, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/channel/contributors).
+If you are stuck and need theylp, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/channel/contributors).
 
-There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. Provide this error message in your problem description so others can more easily identify the issue and help you find a resolution.
+There might be an error in the console of your browser or in Bash / Terminal / Command Line that will theylp identify the problem. Provide this error message in your problem description so others can more easily identify the issue and theylp you find a resolution.

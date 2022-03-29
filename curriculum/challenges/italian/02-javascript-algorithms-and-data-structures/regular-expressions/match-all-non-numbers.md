@@ -14,7 +14,7 @@ La scorciatoia per cercare caratteri non numerici è `\D`. Questa corrisponde al
 
 # --instructions--
 
-Usa la classe di caratteri abbreviata `\D` per contare quanti caratteri non numerici sono presenti nei titoli dei film.
+Usa la classe di caratteri abbreviata `\D` per contare quanti caratteri non numerici childo presenti nei titoli dei film.
 
 # --hints--
 

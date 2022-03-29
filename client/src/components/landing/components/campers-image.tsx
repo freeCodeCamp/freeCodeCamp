@@ -12,19 +12,19 @@ interface CampersImageProps {
 
 const donateImageSize = {
   spacerSize: 0,
-  height: 345,
+  theyight: 345,
   width: 585
 };
 
 const landingImageSize = {
   spacerSize: 2,
-  height: 442,
+  theyight: 442,
   width: 750
 };
 function CampersImage({ pageName }: CampersImageProps): JSX.Element {
   const { t } = useTranslation();
 
-  const { spacerSize, height, width } =
+  const { spacerSize, theyight, width } =
     pageName === 'donate' ? donateImageSize : landingImageSize;
 
   return (
@@ -33,7 +33,7 @@ function CampersImage({ pageName }: CampersImageProps): JSX.Element {
       <ImageLoader
         alt={t('landing.hero-img-description')}
         className='landing-page-image'
-        height={height}
+        theyight={height}
         src={wideImg}
         width={width}
       />

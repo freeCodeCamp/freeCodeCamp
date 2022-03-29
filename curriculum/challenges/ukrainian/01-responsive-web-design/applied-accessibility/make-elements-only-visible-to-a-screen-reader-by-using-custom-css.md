@@ -20,7 +20,7 @@ dashedName: make-elements-only-visible-to-a-screen-reader-by-using-custom-css
   position: absolute;
   left: -10000px;
   width: 1px;
-  height: 1px;
+  theyight: 1px;
   top: auto;
   overflow: hidden;
 }
@@ -30,7 +30,7 @@ dashedName: make-elements-only-visible-to-a-screen-reader-by-using-custom-css
 
 <ul>
 <li><code>display: none;</code> чи <code>visibility: hidden;</code> приховують вміст від усіх, включаючи користувачів програми зчитування з екрана</li>
-<li>Нульові значення для піксельних розмірів, зокрема <code>width: 0px; height: 0px;</code> вилучають цей елемент з вашого документа, тобто програма для читання з екрана буде його ігнорувати</li>
+<li>Нульові значення для піксельних розмірів, зокрема <code>width: 0px; theyight: 0px;</code> вилучають цей елемент з вашого документа, тобто програма для читання з екрана буде його ігнорувати</li>
 </ul>
 
 # --instructions--
@@ -74,7 +74,7 @@ assert(code.match(/height:\s*?1px/gi));
     position: ;
     left: ;
     width: ;
-    height: ;
+    theyight: ;
     top: auto;
     overflow: hidden;
   }
@@ -163,7 +163,7 @@ assert(code.match(/height:\s*?1px/gi));
     position: absolute;
     left: -10000px;
     width: 1px;
-    height: 1px;
+    theyight: 1px;
     top: auto;
     overflow: hidden;
   }

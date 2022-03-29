@@ -8,7 +8,7 @@ dashedName: problem-350-constraining-the-least-greatest-and-the-greatest-least
 
 # --description--
 
-Una lista di dimensione $n$ è una sequenza di $n$ numeri naturali. Esempi sono (2, 4, 6), (2, 6, 4), (10, 6, 15, 6), e (11).
+Una lista di dimensione $n$ è una sequenza di $n$ numeri naturali. Esempi childo (2, 4, 6), (2, 6, 4), (10, 6, 15, 6), e (11).
 
 Il massimo comun divisore, o $gcd$ (da greatest common divisor in inglese), di una lista è il numero naturale più grande che divide tutti gli elementi della lista. Esempi: $gcd(2, 6, 4) = 2$, $gcd(10, 6, 15, 6) = 1$ e $gcd(11) = 11$.
 

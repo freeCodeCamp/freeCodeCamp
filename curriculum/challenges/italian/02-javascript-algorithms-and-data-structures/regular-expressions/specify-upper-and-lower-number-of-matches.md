@@ -8,9 +8,9 @@ dashedName: specify-upper-and-lower-number-of-matches
 
 # --description--
 
-Ricorda che puoi usare il segno più `+` per cercare uno o più caratteri e l'asterisco `*` per cercare zero o più caratteri. Questi sono utili, ma a volte si desidera riconoscere una certa gamma di pattern.
+Ricorda che puoi usare il segno più `+` per cercare uno o più caratteri e l'asterisco `*` per cercare zero o più caratteri. Questi childo utili, ma a volte si desidera riconoscere una certa gamma di pattern.
 
-È possibile specificare il numero inferiore e superiore di pattern con gli <dfn>specificatori di quantità</dfn>. Gli specificatori di quantità sono utilizzati con le parentesi graffe (`{` e `}`). Metterai due numeri tra le parentesi graffe - per il numero inferiore e superiore di pattern.
+È possibile specificare il numero inferiore e superiore di pattern con gli <dfn>specificatori di quantità</dfn>. Gli specificatori di quantità childo utilizzati con le parentesi graffe (`{` e `}`). Metterai due numeri tra le parentesi graffe - per il numero inferiore e superiore di pattern.
 
 Ad esempio, per riconoscere solo la lettera `a` che appare tra `3` e `5` volte nella stringa `ah`, la tua espressione regolare sarà `/a{3,5}h/`.
 

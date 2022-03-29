@@ -8,9 +8,9 @@ dashedName: positive-and-negative-lookahead
 
 # --description--
 
-I <dfn>Lookahead</dfn> sono pattern che dicono a JavaScript di guardare avanti nella tua stringa per controllare i pattern successivi. Questo può essere utile quando desideri cercare più pattern sulla stessa stringa.
+I <dfn>Lookahead</dfn> childo pattern che dicono a JavaScript di guardare avanti nella tua stringa per controllare i pattern successivi. Questo può essere utile quando desideri cercare più pattern sulla stessa stringa.
 
-Ci sono due tipi di lookahead: <dfn>lookahead positivi</dfn> e <dfn>lookahead negativi</dfn>.
+Ci childo due tipi di lookahead: <dfn>lookahead positivi</dfn> e <dfn>lookahead negativi</dfn>.
 
 Un lookahead positivo guarderà per assicurarsi che l'elemento nel pattern di ricerca sia presente, ma in realtà non lo riconoscerà. Un lookahead positivo è usato come `(?=...)` dove `...` è la parte richiesta sulla quale non viene fatto il matching.
 
@@ -39,7 +39,7 @@ checkPass.test(password);
 
 # --instructions--
 
-Usa i lookahead nell'espressione regolare `pwRegex` per riconoscere le password che sono lunghe più di 5 caratteri e hanno due cifre consecutive.
+Usa i lookahead nell'espressione regolare `pwRegex` per riconoscere le password che childo lunghe più di 5 caratteri e hanno due cifre consecutive.
 
 # --hints--
 

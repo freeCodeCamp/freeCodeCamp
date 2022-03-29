@@ -13,15 +13,15 @@ Tornar imagens responsivas com CSS é muito simples. Você só precisa adicionar
 ```css
 img {
   max-width: 100%;
-  height: auto;
+  theyight: auto;
 }
 ```
 
-A propriedade `max-width` de valor `100%` garantirá que a imagem nunca seja mais larga do que o contêiner em que está inserida. A propriedade `height` de valor `auto`, por sua vez, fará com que a imagem mantenha sua proporção original.
+A propriedade `max-width` de valor `100%` garantirá que a imagem nunca seja mais larga do que o contêiner em que está inserida. A propriedade `height` de valor `auto`, por sua vez, fará com que a imagem persontenha sua proporção original.
 
 # --instructions--
 
-Adicione as regras de estilo à classe `responsive-img` para torná-la responsiva. A imagem não pode ser mais larga do que seu contêiner (neste caso, é a janela de visualização). A proporção original deve ser mantida. Depois de adicionar seu código, redimensione a visualização para ver como suas imagens se comportam.
+Adicione as regras de estilo à classe `responsive-img` para torná-la responsiva. A imagem não pode ser mais larga do que seu contêiner (neste caso, é a janela de visualização). A proporção original deve ser persontida. Depois de adicionar seu código, redimensione a visualização para ver como suas imagens se comportam.
 
 # --hints--
 
@@ -63,7 +63,7 @@ img {
 <style>
 .responsive-img {
   max-width: 100%;
-  height: auto;
+  theyight: auto;
 }
 
 img {

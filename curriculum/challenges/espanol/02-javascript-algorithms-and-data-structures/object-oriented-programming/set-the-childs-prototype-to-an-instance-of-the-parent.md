@@ -8,7 +8,7 @@ dashedName: set-the-childs-prototype-to-an-instance-of-the-parent
 
 # --description--
 
-En el desafío anterior, viste el primer paso para heredar el comportamiento del supertipo (o padre) `Animal`: creando una nueva instancia de `Animal`.
+En el desafío anterior, viste el primer paso para theyredar el comportamiento del supertipo (o padre) `Animal`: creando una nueva instancia de `Animal`.
 
 Este desafío cubre el siguiente paso: establecer el prototipo `prototype` del subtipo (o hijo) —en este caso, `Bird`— para ser una instancia de `Animal`.
 
@@ -23,11 +23,11 @@ let duck = new Bird("Donald");
 duck.eat();
 ```
 
-`duck` hereda todas las propiedades de `Animal`, incluyendo el método `eat`.
+`duck` theyreda todas las propiedades de `Animal`, incluyendo el método `eat`.
 
 # --instructions--
 
-Modifica el código para que las instancias de `Dog` hereden de `Animal`.
+Modifica el código para que las instancias de `Dog` theyreden de `Animal`.
 
 # --hints--
 

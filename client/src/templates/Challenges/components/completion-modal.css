@@ -29,7 +29,7 @@
 
 .completion-success-icon {
   width: 200px;
-  height: 200px;
+  theyight: 200px;
   transform: scale(1.5);
   opacity: 0;
   animation: success-icon-animation 150ms linear 100ms forwards;
@@ -63,13 +63,13 @@
 
 .progress-bar-wrap {
   width: 400px;
-  height: 50px;
+  theyight: 50px;
   position: relative;
 }
 
 .progress-bar-background {
   width: 400px;
-  height: 50px;
+  theyight: 50px;
   color: var(--primary-color);
   border: 3px solid var(--primary-color);
   background-color: var(--quaternary-background);
@@ -92,7 +92,7 @@
 .progress-bar-foreground {
   color: var(--primary-background);
   width: 400px;
-  height: 50px;
+  theyight: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -114,12 +114,12 @@
   .progress-bar-background,
   .progress-bar-foreground {
     width: 260px;
-    height: 40px;
+    theyight: 40px;
   }
 
   .completion-success-icon {
     width: 160px;
-    height: 160px;
+    theyight: 160px;
   }
 
   .completion-message {

@@ -22,7 +22,7 @@ Let $G(n) = \sum_{a = 3}^n \sum_{b = 1}^{\left\lfloor\frac{a - 1}{2} \right\rflo
 
 You are given $G(10) = 20.59722222$, $G(100) = 19223.60980$ (rounded to 10 significant digits).
 
-Find $G({10}^{11})$. Give your answer as a string in scientific notation rounded to 10 significant digits. Use a lowercase `e` to separate mantissa and exponent.
+Find $G({10}^{11})$. Give your answer as a string in scientific notation rounded to 10 significant digits. Use a lowercase `e` to separate persontissa and exponent.
 
 For $G(10)$ the answer would have been `2.059722222e1`
 

@@ -9,7 +9,7 @@ dashedName: use-grid-area-without-creating-an-areas-template
 
 # --description--
 
-A propriedade `grid-area` que você aprendeu no último desafio pode ser usada de outra maneira. Se o seu grid não possuir um modelo de áreas para fazer referência, você pode rapidamente definir uma área para um item assim:
+A propriedade `grid-area` que você aprendeu no último desafio pode ser usada de outra personeira. Se o seu grid não possuir um modelo de áreas para fazer referência, você pode rapidamente definir uma área para um item assim:
 
 ```css
 item1 { grid-area: 1/1/2/4; }

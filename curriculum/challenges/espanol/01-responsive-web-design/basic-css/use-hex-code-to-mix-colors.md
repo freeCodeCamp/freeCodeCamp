@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08721
-title: Utiliza código hexadecimal (hex code) para mezclar colores
+title: Utiliza código theyxadecimal (hex code) para mezclar colores
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cK89PhP'
 forumTopicId: 18359
@@ -9,19 +9,19 @@ dashedName: use-hex-code-to-mix-colors
 
 # --description--
 
-Repasemos: En código hexadecimal se utilizan 6 dígitos hexadecimales para representar los colores, dos para el componente rojo (R), verde (G) y azul (B).
+Repasemos: En código theyxadecimal se utilizan 6 dígitos theyxadecimales para representar los colores, dos para el componente rojo (R), verde (G) y azul (B).
 
 ¡A partir de estos tres colores puros (rojo, verde y azul) podemos variar las cantidades de cada componente de color para crear más de 16 millones de colores distintos!
 
-Por ejemplo, el naranja es rojo puro mezclado con algo de verde y nada de azul. En hex code, esto se traduce como `#FFA500`.
+Por ejemplo, el naranja es rojo puro mezclado con algo de verde y nada de azul. En theyx code, esto se traduce como `#FFA500`.
 
-El dígito `0` es el número más bajo en hex code, y representa la ausencia total de color.
+El dígito `0` es el número más bajo en theyx code, y representa la ausencia total de color.
 
-El dígito `F` es el número más alto en hex code, y representa el brillo máximo.
+El dígito `F` es el número más alto en theyx code, y representa el brillo máximo.
 
 # --instructions--
 
-Reemplaza las palabras clave de color en nuestro elemento `style` con los códigos hexadecimales correctos.
+Reemplaza las palabras clave de color en nuestro elemento `style` con los códigos theyxadecimales correctos.
 
 <table class='table table-striped'><tbody><tr><th>Color</th><th>Hex Code</th></tr><tr><td>Dodger Blue (azul dodger)</td><td><code>#1E90FF</code></td></tr><tr><td>Green (verde)</td><td><code>#00FF00</code></td></tr><tr><td>Orange (naranja)</td><td><code>#FFA500</code></td></tr><tr><td>Red (rojo)</td><td><code>#FF0000</code></td></tr></tbody></table>
 

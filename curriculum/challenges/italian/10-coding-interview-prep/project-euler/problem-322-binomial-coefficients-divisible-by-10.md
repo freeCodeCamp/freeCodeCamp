@@ -8,7 +8,7 @@ dashedName: problem-322-binomial-coefficients-divisible-by-10
 
 # --description--
 
-Sia $T(m, n)$ il numero dei coefficienti binomiali ${}^iC_n$ che sono divisibili per 10 per $n ≤ i &lt; m$ ($i$, $m$ e $n$ sono interi positivi).
+Sia $T(m, n)$ il numero dei coefficienti binomiali ${}^iC_n$ che childo divisibili per 10 per $n ≤ i &lt; m$ ($i$, $m$ e $n$ childo interi positivi).
 
 Ti viene dato che $T({10}^9, {10}^7 - 10) = 989\\,697\\,000$.
 

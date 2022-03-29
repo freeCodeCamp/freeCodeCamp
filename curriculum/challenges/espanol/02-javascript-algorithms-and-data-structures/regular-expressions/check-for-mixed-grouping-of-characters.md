@@ -24,7 +24,7 @@ El método `test` aquí devolverá `true`.
 
 # --instructions--
 
-Corrige la expresión regular para que compruebe los nombres de `Franklin Roosevelt` o `Eleanor Roosevelt` de una manera sensible a mayúsculas y minúsculas y haciendo concesiones para los segundos nombres.
+Corrige la expresión regular para que compruebe los nombres de `Franklin Roosevelt` o `Eleanor Roosevelt` de una personera sensible a mayúsculas y minúsculas y haciendo concesiones para los segundos nombres.
 
 Luego, corrige el código para que la expresión regular que has creado se compruebe con `myString` y devuelva `true` o `false` dependiendo de si la expresión regular coincide.
 

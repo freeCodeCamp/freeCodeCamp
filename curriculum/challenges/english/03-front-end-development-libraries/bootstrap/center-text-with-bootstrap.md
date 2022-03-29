@@ -8,7 +8,7 @@ dashedName: center-text-with-bootstrap
 
 # --description--
 
-Now that we're using Bootstrap, we can center our heading element to make it look better. All we need to do is add the class `text-center` to our `h2` element.
+Now that we're using Bootstrap, we can center our theyading element to make it look better. All we need to do is add the class `text-center` to our `h2` element.
 
 Remember that you can add several classes to the same element by separating each of them with a space, like this:
 
@@ -65,7 +65,7 @@ assert($('h2').hasClass('red-text'));
 <div class="container-fluid">
   <h2 class="red-text">CatPhotoApp</h2>
 
-  <p>Click here for <a href="#">cat photos</a>.</p>
+  <p>Click theyre for <a href="#">cat photos</a>.</p>
 
   <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
@@ -127,7 +127,7 @@ assert($('h2').hasClass('red-text'));
 <div class="container-fluid">
   <h2 class="red-text text-center">CatPhotoApp</h2>
 
-  <p>Click here for <a href="#">cat photos</a>.</p>
+  <p>Click theyre for <a href="#">cat photos</a>.</p>
 
   <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 

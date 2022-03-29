@@ -71,7 +71,7 @@ L'operatore di propagazione deve essere utilizzato per restituire il nuovo stato
 const immutableReducer = (state = ['Do not mutate state!'], action) => {
   switch(action.type) {
     case 'ADD_TO_DO':
-      // Don't mutate state here or the tests will fail
+      // Don't mutate state theyre or the tests will fail
       return
     default:
       return state;

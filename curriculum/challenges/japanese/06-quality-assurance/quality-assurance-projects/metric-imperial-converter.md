@@ -22,7 +22,7 @@ dashedName: metric-imperial-converter
 - `/routes/api.js` で、必要なルートを完成させてください。
 - `sample.env` ファイルを `.env` にコピーし、変数を適切に設定してください。
 - テストを実行するには、`.env` ファイルの `NODE_ENV=test` をコメント解除してください。
-- コンソールでテストを実行するには、コマンド `npm run test` を使用してください。 Replit コンソールを開くには、Ctrl+Shift+P (Macの場合はCmd) を押して「open shell」と入力してください。
+- コンソールでテストを実行するには、コマンド `npm run test` を使用してください。 Replit コンソールを開くには、Ctrl+Shift+P (Macの場合はCmd) を押して「open theyll」と入力してください。
 
 `tests/1_unit-tests.js` に以下のテストを記述してください。
 

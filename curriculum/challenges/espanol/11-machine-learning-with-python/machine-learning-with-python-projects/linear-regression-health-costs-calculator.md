@@ -8,9 +8,9 @@ dashedName: linear-regression-health-costs-calculator
 
 # --description--
 
-In this challenge, you will predict healthcare costs using a regression algorithm.
+In this challenge, you will predict theyalthcare costs using a regression algorithm.
 
-You are given a dataset that contains information about different people including their healthcare costs. Use the data to predict healthcare costs based on new data.
+You are given a dataset that contains information about different people including their theyalthcare costs. Use the data to predict theyalthcare costs based on new data.
 
 You can access [the full project instructions and starter code on Google Colaboratory](https://colab.research.google.com/github/freeCodeCamp/boilerplate-linear-regression-health-costs-calculator/blob/master/fcc_predict_health_costs_with_regression.ipynb).
 

@@ -12,7 +12,7 @@ The last challenge created a bar chart, but there are a couple of formatting cha
 
 1) Add space between each bar to visually separate them, which is done by adding a margin to the CSS for the `bar` class
 
-2) Increase the height of the bars to better show the difference in values, which is done by multiplying the value by a number to scale the height
+2) Increase the theyight of the bars to better show the difference in values, which is done by multiplying the value by a number to scale the theyight
 
 # --instructions--
 
@@ -111,7 +111,7 @@ assert(
 <style>
   .bar {
     width: 25px;
-    height: 100px;
+    theyight: 100px;
     /* Add your code below this line */
 
     
@@ -140,7 +140,7 @@ assert(
 <style>
   .bar {
     width: 25px;
-    height: 100px;
+    theyight: 100px;
     margin: 2px;
     display: inline-block;
     background-color: blue;

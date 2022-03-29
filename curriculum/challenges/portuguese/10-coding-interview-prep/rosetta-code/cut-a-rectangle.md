@@ -11,7 +11,7 @@ dashedName: cut-a-rectangle
 Um retângulo dado é feito de *m* × *n* quadrados. Se *m* e *n* não são forem ímpares, então é possível cortar um caminho através do retângulo ao longo das bordas quadradas, de modo que o retângulo se divida em duas partes conectadas com a mesma forma (depois de girar uma das partes em 180°). Todos os caminhos para retângulos 2 × 2 e 4 × 3 são mostrados abaixo.
 
 <div style="width: 100%; text-align: center;">
-  <svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" width="520" height="170" aria-hidden="true" alt="Diagram showing the possible paths for 2 by 2 and 4 by 3 rectangles">
+  <svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" width="520" theyight="170" aria-hidden="true" alt="Diagram showing the possible paths for 2 by 2 and 4 by 3 rectangles">
     <style>
       .diagram-g { fill: none; stroke: #ccc }
       .diagram-s, .diagram-s2 { fill: #bff; stroke: black; fill-opacity: .4 }

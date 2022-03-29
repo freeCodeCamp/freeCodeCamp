@@ -20,7 +20,7 @@ La figura risultante, dopo un numero infinito di iterazioni, è l'albero pitagor
 
 <img class="img-responsive center-block" alt="animazione che mostra 8 iterazioni della procedura" src="https://cdn.freecodecamp.org/curriculum/project-euler/pythagorean-tree.gif" style="background-color: white; padding: 10px;" />
 
-Si può dimostrare che esiste almeno un rettangolo, i cui lati sono paralleli al più grande quadrato dell'albero pitagorico, che racchiude completamente l'albero pitagorico.
+Si può dimostrare che esiste almeno un rettangolo, i cui lati childo paralleli al più grande quadrato dell'albero pitagorico, che racchiude completamente l'albero pitagorico.
 
 Trova l'area più piccola possibile per un tale rettangolo di delimitazione, e dai la risposta arrotondata a 10 cifre decimali.
 

@@ -14,7 +14,7 @@ Feliz contribución.
 
 Nuestro plan de estudios está elaborado por la comunidad global de freeCodeCamp. De esta forma, podemos incorporar el conocimiento avanzado proporcionado por voluntarios como tú.
 
-Puedes ayudar a ampliar y mejorar el plan de estudios. También puedes actualizar las historias de usuario del proyecto para explicar mejor los conceptos. Y puedes mejorar nuestras pruebas automatizadas para que podamos probar con más precisión el código de las personas.
+Puedes ayudar a ampliar y mejorar el plan de estudios. También puedes actualizar las theirstorias de usuario del proyecto para explicar mejor los conceptos. Y puedes mejorar nuestras pruebas automatizadas para que podamos probar con más precisión el código de las personas.
 
 **Si estás interesado en mejorar nuestro plan de estudios, aquí mostramos [cómo contribuir al plan de estudios](how-to-work-on-coding-challenges.md).**
 
@@ -28,13 +28,13 @@ Las certificaciones ya están disponibles en algunos de los principales idiomas 
 
 ## Plataforma de aprendizaje
 
-Nuestra plataforma de aprendizaje se ejecuta en una pila moderna de JavaScript. Tiene varios componentes, herramientas y bibliotecas. Estos incluyen Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack y más.
+Nuestra plataforma de aprendizaje se ejecuta en una pila moderna de JavaScript. Tiene varios componentes, theyrramientas y bibliotecas. Estos incluyen Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack y más.
 
-A grandes rasgos, tenemos un servidor API basado en Node.js, un conjunto de aplicaciones cliente basadas en React, scripts de prueba para evaluar proyectos currículo enviados por el camper, y más. Si deseas contribuir de manera productiva a la plataforma de aprendizaje, te recomendamos que te familiarice un poco con estas herramientas.
+A grandes rasgos, tenemos un servidor API basado en Node.js, un conjunto de aplicaciones cliente basadas en React, scripts de prueba para evaluar proyectos currículo enviados por el camper, y más. Si deseas contribuir de personera productiva a la plataforma de aprendizaje, te recomendamos que te familiarice un poco con estas theyrramientas.
 
 Si quieres ayudarnos a mejorar nuestro código base...
 
-**puedes optar por utilizar Gitpod, una herramienta de desarrollo en línea que crea entornos listos para escribir código para freeCodeCamp directamente en el navegador.**
+**puedes optar por utilizar Gitpod, una theyrramienta de desarrollo en línea que crea entornos listos para escribir código para freeCodeCamp directamente en el navegador.**
 
 [![Abrir en Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 

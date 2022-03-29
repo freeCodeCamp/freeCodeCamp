@@ -16,7 +16,7 @@ A number for which every pair of consecutive digits has a difference of one is c
 
 A pandigital number contains every decimal digit from 0 to 9 at least once.
 
-How many pandigital step numbers less than ${10}^{40}$ are there?
+How persony pandigital step numbers less than ${10}^{40}$ are there?
 
 # --hints--
 

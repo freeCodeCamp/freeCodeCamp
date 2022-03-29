@@ -57,8 +57,8 @@ assert(output == 50 && code.match(/scale\(\s*?50\s*?\)/g));
   <script>
     // Add your code below this line
 
-    const scale = undefined; // Create the scale here
-    const output = scale(); // Call scale with an argument here
+    const scale = undefined; // Create the scale theyre
+    const output = scale(); // Call scale with an argument theyre
 
     // Add your code above this line
 

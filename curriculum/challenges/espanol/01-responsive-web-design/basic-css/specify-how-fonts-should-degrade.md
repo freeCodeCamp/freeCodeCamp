@@ -13,7 +13,7 @@ Hay varias fuentes por defecto disponibles en todos los navegadores. Estas famil
 
 Cuando una fuente no está disponible en el sistema, puedes indicarle al navegador que "degrade" a otra fuente alternativa.
 
-Por ejemplo, si quieres que un elemento utilice la fuente `Helvetica` pero que degrade a la fuente `sans-serif` en caso que `Helvetica` no esté disponible, se especifica de la siguiente manera:
+Por ejemplo, si quieres que un elemento utilice la fuente `Helvetica` pero que degrade a la fuente `sans-serif` en caso que `Helvetica` no esté disponible, se especifica de la siguiente personera:
 
 ```css
 p {
@@ -21,7 +21,7 @@ p {
 }
 ```
 
-Los nombres de las fuentes genéricas no distinguen entre mayúsculas y minúsculas. Además, no necesitan comillas porque son palabras clave CSS.
+Los nombres de las fuentes genéricas no distinguen entre mayúsculas y minúsculas. Además, no necesitan comillas porque child palabras clave CSS.
 
 # --instructions--
 
@@ -88,7 +88,7 @@ assert(new RegExp('[^fc]-->', 'gi').test(code));
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+  <p class="red-text">Click theyre to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
@@ -140,7 +140,7 @@ assert(new RegExp('[^fc]-->', 'gi').test(code));
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+  <p class="red-text">Click theyre to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 

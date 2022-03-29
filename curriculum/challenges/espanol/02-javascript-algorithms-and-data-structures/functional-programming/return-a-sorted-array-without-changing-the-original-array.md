@@ -37,7 +37,7 @@ assert(
 );
 ```
 
-`nonMutatingSort(globalArray)` no debe ser programada manualmente.
+`nonMutatingSort(globalArray)` no debe ser programada personualmente.
 
 ```js
 assert(!nonMutatingSort.toString().match(/\[.*?[23569].*?\]/gs));

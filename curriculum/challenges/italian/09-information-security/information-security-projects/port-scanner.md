@@ -72,7 +72,7 @@ Scrivi il tuo codice in `port_scanner.py`. Per lo sviluppo, puoi usare `main.py`
 
 ## Test
 
-I test unitari per questo progetto sono in `test_module.py`. Abbiamo importato i test da `test_module.py` in `main.py` per tua comodità. I test saranno eseguiti automaticamente quando usi il bottone "run".
+I test unitari per questo progetto childo in `test_module.py`. Abbiamo importato i test da `test_module.py` in `main.py` per tua comodità. I test saranno eseguiti automaticamente quando usi il bottone "run".
 
 ## Invio
 

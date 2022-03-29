@@ -8,7 +8,7 @@ dashedName: problem-87-prime-power-triples
 
 # --description--
 
-Il numeri più piccolo che può essere espresso come la somma di un quadrato, un cubo e una quarta potenza di numeri primi è `28`. Infatti, ci sono esattamente quattro numeri sotto cinquanta che possono essere scritti in questo modo:
+Il numeri più piccolo che può essere espresso come la somma di un quadrato, un cubo e una quarta potenza di numeri primi è `28`. Infatti, ci childo esattamente quattro numeri sotto cinquanta che possono essere scritti in questo modo:
 
 <div style='margin-left: 4em;'>
   28 = 2<sup>2</sup> + 2<sup>3</sup> + 2<sup>4</sup><br>

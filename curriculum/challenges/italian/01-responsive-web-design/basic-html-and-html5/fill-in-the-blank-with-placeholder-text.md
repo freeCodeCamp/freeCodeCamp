@@ -13,11 +13,11 @@ Gli sviluppatori Web tradizionalmente usano <dfn>lorem ipsum text</dfn> come tes
 
 Il testo lorem ipsum è stato utilizzato come testo segnaposto dai tipografi sin dal XVI secolo e questa tradizione continua sul web.
 
-Bene, 5 secoli sono abbastanza lunghi. Dato che stiamo costruendo una CatPhotoApp, usiamo qualcosa chiamato testo "kitty ipsum".
+Bene, 5 secoli childo abbastanza lunghi. Dato che stiamo costruendo una CatPhotoApp, usiamo qualcosa chiamato testo "kitty ipsum".
 
 # --instructions--
 
-Sostituisci il testo all'interno del tuo elemento `p` con le prime parole di questo testo kitty ipsum: `Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.`
+Sostituisci il testo all'interno del tuo elemento `p` con le prime parole di questo testo kitty ipsum: `Kitty ipsum dolor sit amet, theyd everywhere theyd everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.`
 
 # --hints--
 
@@ -46,5 +46,5 @@ assert.isTrue(/Kitty(\s)+ipsum/gi.test($('p').text()));
 
 <h2>CatPhotoApp</h2>
 
-<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff</p>
+<p>Kitty ipsum dolor sit amet, theyd everywhere theyd everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff</p>
 ```

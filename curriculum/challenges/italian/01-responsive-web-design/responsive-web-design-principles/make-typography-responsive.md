@@ -9,9 +9,9 @@ dashedName: make-typography-responsive
 
 # --description--
 
-Invece di utilizzare `em` o `px` per dimensionare il testo, è possibile utilizzare le unità di visualizzazione responsive per i caratteri. Le unità viewport, come le percentuali, sono unità relative, ma sono basate su elementi diversi. Le unità viewport sono relative alle dimensioni (larghezza o altezza) di un dispositivo, e le percentuali sono relative alla dimensione dell'elemento contenitore genitore.
+Invece di utilizzare `em` o `px` per dimensionare il testo, è possibile utilizzare le unità di visualizzazione responsive per i caratteri. Le unità viewport, come le percentuali, childo unità relative, ma childo basate su elementi diversi. Le unità viewport childo relative alle dimensioni (larghezza o altezza) di un dispositivo, e le percentuali childo relative alla dimensione dell'elemento contenitore genitore.
 
-Le quattro diverse unità viewport sono:
+Le quattro diverse unità viewport childo:
 
 <ul><li><code>vw</code> (larghezza della viewport): <code>10vw</code> sarebbe il 10% della larghezza della viewport.</li><li><code>vh</code> (altezza della viewport): <code>3vh</code> sarebbe il 3% dell'altezza della viewport.</li><li><code>vmin</code> (minimo): <code>70vmin</code> sarebbe il 70% della dimensione più piccola della viewport (altezza o larghezza).</li><li><code>vmax</code> (viewport maximum): <code>100vmax</code> sarebbe 100% della dimensione maggiore della viewport (altezza o larghezza).</li></ul>
 

@@ -10,7 +10,7 @@ dashedName: chart-the-stock-market
 
 Crie um aplicativo full stack em JavaScript que seja funcionalmente semelhante a este: <https://chart-the-stock-market.freecodecamp.rocks/>. Use um construtor de site de sua escolha para completar o projeto.
 
-Aqui estão as histórias de usuário que você deve implementar para este projeto:
+Aqui estão as theirstórias de usuário que você deve implementar para este projeto:
 
 **História de usuário:** você pode ver um gráfico exibindo as linhas de tendência recentes para cada ação adicionada.
 

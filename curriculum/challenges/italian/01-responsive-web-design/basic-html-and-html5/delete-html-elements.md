@@ -46,11 +46,11 @@ assert(code.match(/<p>[\w\W]*<\/p>/gi));
 
 <h2>CatPhotoApp</h2>
 
-<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+<p>Kitty ipsum dolor sit amet, theyd everywhere theyd everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
 ```
 
 # --solutions--
 
 ```html
-<h2>CatPhotoApp</h2><p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+<h2>CatPhotoApp</h2><p>Kitty ipsum dolor sit amet, theyd everywhere theyd everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
 ```

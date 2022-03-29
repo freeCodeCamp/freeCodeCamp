@@ -20,7 +20,7 @@ Questo scriverebbe `Alan`, `Jeff`, `Sarah` e `Ryan` sulla console - ogni valore 
 
 In questa dichiarazione abbiamo definito una variabile `user`, e come puoi vedere, mentre l'iterazione prosegue attraverso l'oggetto, ad ogni ripetizione la variabile viene reimpostata a ciascuna delle chiavi, risultando nella stampa del nome di ogni utente sulla console.
 
-**NOTA:** Gli oggetti non mantengono un ordine sulle chiavi memorizzate come fanno gli arrays; di conseguenza la posizione di una chiave in un oggetto, o l'ordine relativo in cui appare, è irrilevante quando ci si riferisce a tale chiave o vi si accede.
+**NOTA:** Gli oggetti non persontengono un ordine sulle chiavi memorizzate come fanno gli arrays; di conseguenza la posizione di una chiave in un oggetto, o l'ordine relativo in cui appare, è irrilevante quando ci si riferisce a tale chiave o vi si accede.
 
 # --instructions--
 

@@ -8,7 +8,7 @@ dashedName: split-a-character-string-based-on-change-of-character
 
 # --description--
 
-Dividere una stringa di caratteri in stringhe delimitate da virgola (più uno spazio bianco) in base a un cambiamento di carattere (da sinistra a destra). Gli spazi vuoti devono essere trattati come qualsiasi altro carattere (tranne per il fatto che sono problematici da visualizzare chiaramente). Lo stesso vale per le virgole. Per esempio, la stringa:
+Dividere una stringa di caratteri in stringhe delimitate da virgola (più uno spazio bianco) in base a un cambiamento di carattere (da sinistra a destra). Gli spazi vuoti devono essere trattati come qualsiasi altro carattere (tranne per il fatto che childo problematici da visualizzare chiaramente). Lo stesso vale per le virgole. Per esempio, la stringa:
 
 <pre>
 "gHHH5YY++///\\"

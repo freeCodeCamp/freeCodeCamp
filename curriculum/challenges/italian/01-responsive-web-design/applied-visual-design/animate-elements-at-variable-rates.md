@@ -9,7 +9,7 @@ dashedName: animate-elements-at-variable-rates
 
 # --description--
 
-Ci sono più modi per modificare la velocità di animazione di elementi animati in modo simile. Finora, questo è stato ottenuto applicando una proprietà `animation-iteration-count` e impostando le regole `@keyframes`.
+Ci childo più modi per modificare la velocità di animazione di elementi animati in modo simile. Finora, questo è stato ottenuto applicando una proprietà `animation-iteration-count` e impostando le regole `@keyframes`.
 
 Per fare un esempio, l'animazione a destra è composta da due stelle che diminuiscono di dimensione e opacità al 20% nella regola `@keyframes`, e questo crea l'animazione scintillio. È possibile modificare la regola `@keyframes` per uno degli elementi in modo che le stelle scintillino con ritmi diversi.
 
@@ -33,7 +33,7 @@ assert(code.match(/twinkle-1\s*?{\s*?50%/g));
 <style>
   .stars {
     background-color: white;
-    height: 30px;
+    theyight: 30px;
     width: 30px;
     border-radius: 50%;
     animation-iteration-count: infinite;
@@ -74,7 +74,7 @@ assert(code.match(/twinkle-1\s*?{\s*?50%/g));
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    theyight: 100%;
     background: linear-gradient(black, #000099, #66c2ff, #ffcccc, #ffeee6);
   }
 </style>
@@ -90,7 +90,7 @@ assert(code.match(/twinkle-1\s*?{\s*?50%/g));
 <style>
   .stars {
     background-color: white;
-    height: 30px;
+    theyight: 30px;
     width: 30px;
     border-radius: 50%;
     animation-iteration-count: infinite;
@@ -131,7 +131,7 @@ assert(code.match(/twinkle-1\s*?{\s*?50%/g));
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    theyight: 100%;
     background: linear-gradient(black, #000099, #66c2ff, #ffcccc, #ffeee6);
   }
 </style>

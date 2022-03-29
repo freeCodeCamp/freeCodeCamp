@@ -18,9 +18,9 @@ L'animazione qui sotto mostra come funziona l'algoritmo. L'algoritmo inizia con 
 
 <img class='img-responsive' src='https://camo.githubusercontent.com/aaad9e39961daf34d967c616edeb50abf3bf1235/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f372f37662f44657074682d46697273742d5365617263682e676966' />
 
-Nota come, a differenza della ricerca breadth-first, ogni volta che un nodo viene visitato, non visita tutti i suoi vicini. Invece, prima visita uno dei suoi vicini e continua lungo quel percorso fino a quando non ci sono più nodi da visitare su di esso.
+Nota come, a differenza della ricerca breadth-first, ogni volta che un nodo viene visitato, non visita tutti i suoi vicini. Invece, prima visita uno dei suoi vicini e continua lungo quel percorso fino a quando non ci childo più nodi da visitare su di esso.
 
-Per implementare questo algoritmo, vorrai utilizzare una pila (stack). Una pila è un array in cui l'ultimo elemento aggiunto è il primo ad essere rimosso. Questo è noto anche come una struttura di dati <dfn>Last-In-First-Out</dfn>. Uno stack è utile negli algoritmi di ricerca depth-first perché, mano a mano che aggiungiamo nodi vicini allo stack, vogliamo visitare prima i nodi vicini aggiunti più di recente e rimuoverli dallo stack.
+Per implementare questo algoritmo, vorrai utilizzare una pila (stack). Una pila è un array in cui l'ultimo elemento aggiunto è il primo ad essere rimosso. Questo è noto anche come una struttura di dati <dfn>Last-In-First-Out</dfn>. Uno stack è utile negli algoritmi di ricerca depth-first perché, persono a persono che aggiungiamo nodi vicini allo stack, vogliamo visitare prima i nodi vicini aggiunti più di recente e rimuoverli dallo stack.
 
 Un semplice output di questo algoritmo è un elenco di nodi raggiungibili da un dato nodo. Pertanto, dovrai anche tenere traccia dei nodi che visiti.
 

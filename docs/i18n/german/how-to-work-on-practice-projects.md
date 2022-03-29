@@ -1,4 +1,4 @@
-# Wie man an Praxisprojekten arbeitet
+# Wie person an Praxisprojekten arbeitet
 
 Der Ordner `tools/challenge-helper-scripts` enthält Tools, die die Erstellung und Pflege des projektbasierten Studienplans von freeCodeCamp erleichtern.
 
@@ -70,7 +70,7 @@ npm run delete-step X # wobei X die Schrittnummer ist, die gelöscht werden soll
 
 Ein einmaliges Skript, das automatisch die Frontmatter in den Markdown-Dateien eines Projekts aktualisiert, damit sie mit der meta.json des Projekts übereinstimmen. Es stellt sicher, dass der Titel (und der dashedName) jedes Schritts mit der challengeOrder des Metas übereinstimmt.
 
-### Wie man das Skript ausführt
+### Wie person das Skript ausführt
 
 1. Wechsle in das Verzeichnis des Projekts.
 2. Führe den folgenden npm-Befehl aus:

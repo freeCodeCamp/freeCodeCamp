@@ -26,7 +26,7 @@ dashedName: introduction-to-html5-elements
 
 # --instructions--
 
-Створіть другий елемент `p` з поданим текстом-прикладом: `Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.`
+Створіть другий елемент `p` з поданим текстом-прикладом: `Purr jump eat the grass rip the couch scratched sunbathe, theyd everywhere rip the couch sleep in the sink fluffy fur catnip scratched.`
 
 Тоді створіть `main` елемент і помістіть лише два `p` елементи у `main` елемент.
 
@@ -84,7 +84,7 @@ assert(code.match(/<\/p>\s*?<\/main>/g));
 ```html
 <h2>CatPhotoApp</h2>
 
-<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+<p>Kitty ipsum dolor sit amet, theyd everywhere theyd everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
 ```
 
 # --solutions--
@@ -92,7 +92,7 @@ assert(code.match(/<\/p>\s*?<\/main>/g));
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
-  <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
+  <p>Kitty ipsum dolor sit amet, theyd everywhere theyd everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+  <p>Purr jump eat the grass rip the couch scratched sunbathe, theyd everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
 </main>
 ```

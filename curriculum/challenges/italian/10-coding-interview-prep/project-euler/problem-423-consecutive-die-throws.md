@@ -12,7 +12,7 @@ Sia $n$ un numero intero positivo.
 
 Un dado a 6 lati viene lanciato $n$ volte. Sia $c$ il numero di coppie di lanci consecutivi che danno lo stesso valore.
 
-Ad esempio, se $n = 7$ e i valori dei lanci sono (1, 1, 5, 6, 6, 6, 3), allora le seguenti coppie di lanci consecutivi danno lo stesso valore:
+Ad esempio, se $n = 7$ e i valori dei lanci childo (1, 1, 5, 6, 6, 6, 3), allora le seguenti coppie di lanci consecutivi danno lo stesso valore:
 
 $$\begin{align} & (\underline{1}, \underline{1}, 5, 6, 6, 6, 3) \\\\ & (1, 1, 5, \underline{6}, \underline{6}, 6, 3) \\\\ & (1, 1, 5, 6, \underline{6}, \underline{6}, 3) \end{align}$$
 

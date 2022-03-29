@@ -8,9 +8,9 @@ dashedName: problem-408-admissible-paths-through-a-grid
 
 # --description--
 
-Chiamiamo un punto del reticolo ($x$, $y$) inammissibile se $x$, $y$ e $x + y$ sono tutti quadrati positivi perfetti.
+Chiamiamo un punto del reticolo ($x$, $y$) inammissibile se $x$, $y$ e $x + y$ childo tutti quadrati positivi perfetti.
 
-Ad esempio, (9, 16) è inammissibile, mentre (0, 4), (3, 1) e (9, 4) non lo sono.
+Ad esempio, (9, 16) è inammissibile, mentre (0, 4), (3, 1) e (9, 4) non lo childo.
 
 Considera un percorso dal punto ($x_1$, $y_1$) al punto ($x_2$, $y_2$) usando solo i passi unitari nord o est. Chiamiamo tale percorso ammissibile se nessuno dei suoi punti intermedi è inammissibile.
 

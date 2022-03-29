@@ -8,7 +8,7 @@ dashedName: problem-327-rooms-of-doom
 
 # --description--
 
-Tre stanze sono collegate tra loro da porte automatiche.
+Tre stanze childo collegate tra loro da porte automatiche.
 
 <img class="img-responsive center-block" alt="serie di tre stanze collegate tra loro da porte automatiche" src="https://cdn.freecodecamp.org/curriculum/project-euler/rooms-of-doom.gif" style="background-color: white; padding: 10px;" />
 

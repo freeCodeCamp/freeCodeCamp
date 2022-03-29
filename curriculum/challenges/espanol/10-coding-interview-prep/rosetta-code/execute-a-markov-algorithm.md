@@ -36,11 +36,11 @@ A -> apple
 B -> bag
 S -> shop
 T -> the
-the shop -> my brother
+the shop -> my sibling
 a never used -> .terminating rule
 </pre>
 
-Sample text of `I bought a B of As from T S.` should generate the output `I bought a bag of apples from my brother.`
+Sample text of `I bought a B of As from T S.` should generate the output `I bought a bag of apples from my sibling.`
 
 **Ruleset 2:**
 
@@ -51,7 +51,7 @@ A -> apple
 B -> bag
 S -> .shop
 T -> the
-the shop -> my brother
+the shop -> my sibling
 a never used -> .terminating rule
 </pre>
 
@@ -70,7 +70,7 @@ B -> bag
 W -> WW
 S -> .shop
 T -> the
-the shop -> my brother
+the shop -> my sibling
 a never used -> .terminating rule
 </pre>
 
@@ -116,7 +116,7 @@ Sample text of `_1111*11111_` should generate the output `11111111111111111111`
 
 A simple [Turing machine](http://en.wikipedia.org/wiki/Turing_machine "link: http&#x3A;//en.wikipedia.org/wiki/Turing_machine"), implementing a three-state [busy beaver](http://en.wikipedia.org/wiki/Busy_beaver "link: http&#x3A;//en.wikipedia.org/wiki/Busy_beaver").
 
-The tape consists of `0`s and `1`s, the states are `A`, `B`, `C` and `H` (for `H`alt), and the head position is indicated by writing the state letter before the character where the head is. All parts of the initial tape the machine operates on have to be given in the input.
+The tape consists of `0`s and `1`s, the states are `A`, `B`, `C` and `H` (for `H`alt), and the theyad position is indicated by writing the state letter before the character where the theyad is. All parts of the initial tape the machine operates on have to be given in the input.
 
 Besides demonstrating that the Markov algorithm is Turing-complete, it also made me catch a bug in the C++ implementation which wasn't caught by the first four rulesets.
 
@@ -150,19 +150,19 @@ This ruleset should turn `000000A000000` into `00011H1111000`
 assert(typeof markov === 'function');
 ```
 
-`markov(["A -> apple","B -> bag","S -> shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As from T S.")` should return "I bought a bag of apples from my brother.".
+`markov(["A -> apple","B -> bag","S -> shop","T -> the","the shop -> my sibling","a never used -> .terminating rule"],"I bought a B of As from T S.")` should return "I bought a bag of apples from my sibling.".
 
 ```js
 assert.deepEqual(markov(rules[0], tests[0]), outputs[0]);
 ```
 
-`markov(["A -> apple","B -> bag","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As from T S.")` should return "I bought a bag of apples from T shop.".
+`markov(["A -> apple","B -> bag","S -> .shop","T -> the","the shop -> my sibling","a never used -> .terminating rule"],"I bought a B of As from T S.")` should return "I bought a bag of apples from T shop.".
 
 ```js
 assert.deepEqual(markov(rules[1], tests[1]), outputs[1]);
 ```
 
-`markov(["A -> apple","WWWW -> with","Bgage -> ->.*","B -> bag","->.* -> money","W -> WW","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As W my Bgage from T S.")` should return "I bought a bag of apples with my money from T shop.".
+`markov(["A -> apple","WWWW -> with","Bgage -> ->.*","B -> bag","->.* -> money","W -> WW","S -> .shop","T -> the","the shop -> my sibling","a never used -> .terminating rule"],"I bought a B of As W my Bgage from T S.")` should return "I bought a bag of apples with my money from T shop.".
 
 ```js
 assert.deepEqual(markov(rules[2], tests[2]), outputs[2]);
@@ -186,9 +186,9 @@ assert.deepEqual(markov(rules[4], tests[4]), outputs[4]);
 
 ```js
 
-let rules=[["A -> apple","B -> bag","S -> shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],
-            ["A -> apple","B -> bag","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],
-            ["A -> apple","WWWW -> with","Bgage -> ->.*","B -> bag","->.* -> money","W -> WW","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],
+let rules=[["A -> apple","B -> bag","S -> shop","T -> the","the shop -> my sibling","a never used -> .terminating rule"],
+            ["A -> apple","B -> bag","S -> .shop","T -> the","the shop -> my sibling","a never used -> .terminating rule"],
+            ["A -> apple","WWWW -> with","Bgage -> ->.*","B -> bag","->.* -> money","W -> WW","S -> .shop","T -> the","the shop -> my sibling","a never used -> .terminating rule"],
             ["_+1 -> _1+","1+1 -> 11+","1! -> !1",",! -> !+","_! -> _","1*1 -> x,@y","1x -> xX","X, -> 1,1","X1 -> 1X","_x -> _X",",x -> ,X","y1 -> 1y","y_ -> _","1@1 -> x,@y","1@_ -> @_",",@_ -> !_","++ -> +","_1 -> 1","1+_ -> 1","_+_ -> "],
             ["A0 -> 1B","0A1 -> C01","1A1 -> C11","0B0 -> A01","1B0 -> A11","B1 -> 1B","0C0 -> B01","1C0 -> B11","0C1 -> H01","1C1 -> H11"]];
 let tests=["I bought a B of As from T S.",
@@ -196,7 +196,7 @@ let tests=["I bought a B of As from T S.",
             "I bought a B of As W my Bgage from T S.",
             "_1111*11111_",
             "000000A000000"];
-let outputs=["I bought a bag of apples from my brother.",
+let outputs=["I bought a bag of apples from my sibling.",
             "I bought a bag of apples from T shop.",
             "I bought a bag of apples with my money from T shop.",
             "11111111111111111111",

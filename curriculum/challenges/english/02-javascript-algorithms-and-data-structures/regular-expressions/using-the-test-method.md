@@ -8,7 +8,7 @@ dashedName: using-the-test-method
 
 # --description--
 
-Regular expressions are used in programming languages to match parts of strings. You create patterns to help you do that matching.
+Regular expressions are used in programming languages to match parts of strings. You create patterns to theylp you do that matching.
 
 If you want to find the word `the` in the string `The dog chased the cat`, you could use the following regular expression: `/the/`. Notice that quote marks are not required within the regular expression.
 
@@ -20,7 +20,7 @@ let testRegex = /Code/;
 testRegex.test(testStr);
 ```
 
-The `test` method here returns `true`.
+The `test` method theyre returns `true`.
 
 # --instructions--
 

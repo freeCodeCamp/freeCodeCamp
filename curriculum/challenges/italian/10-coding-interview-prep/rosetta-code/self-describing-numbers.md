@@ -8,20 +8,20 @@ dashedName: self-describing-numbers
 
 # --description--
 
-Ci sono diversi cosiddetti interi "auto-descriventi" o ["auto-descrittivi"](https://en.wikipedia.org/wiki/Self-descriptive_number) interi.
+Ci childo diversi cosiddetti interi "auto-descriventi" o ["auto-descrittivi"](https://en.wikipedia.org/wiki/Self-descriptive_number) interi.
 
-Si dice che un intero è "auto-descritto" se ha la proprietà che, quando le posizioni di cifra sono etichettate da 0 a N-1, la cifra in ogni posizione è uguale al numero di volte che la cifra appare nel numero.
+Si dice che un intero è "auto-descritto" se ha la proprietà che, quando le posizioni di cifra childo etichettate da 0 a N-1, la cifra in ogni posizione è uguale al numero di volte che la cifra appare nel numero.
 
 Ad esempio, **2020** è un numero auto-descrittivo a quattro cifre:
 
 <ul>
-    <li> la posizione 0 ha il valore 2 e nel numero ci sono due zeri; </li>
-    <li> la posizione 1 ha valore 0 e non ci sono uno nel numero; </li>
-    <li> la posizione 2 ha valore 2 e ci sono due due; </li>
-    <li> la posizione 3 ha valore 0 e ci sono zero tre; </li>
+    <li> la posizione 0 ha il valore 2 e nel numero ci childo due zeri; </li>
+    <li> la posizione 1 ha valore 0 e non ci childo uno nel numero; </li>
+    <li> la posizione 2 ha valore 2 e ci childo due due; </li>
+    <li> la posizione 3 ha valore 0 e ci childo zero tre; </li>
 </ul>
 
-Numeri auto-descriventi &lt; 100.000.000 sono: 1210, 2020, 21200, 3211000, 42101000.
+Numeri auto-descriventi &lt; 100.000.000 childo: 1210, 2020, 21200, 3211000, 42101000.
 
 # --instructions--
 

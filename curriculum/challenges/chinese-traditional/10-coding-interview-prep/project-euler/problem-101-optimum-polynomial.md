@@ -8,7 +8,7 @@ dashedName: problem-101-optimum-polynomial
 
 # --description--
 
-If we are presented with the first k terms of a sequence it is impossible to say with certainty the value of the next term, as there are infinitely many polynomial functions that can model the sequence.
+If we are presented with the first k terms of a sequence it is impossible to say with certainty the value of the next term, as there are infinitely persony polynomial functions that can model the sequence.
 
 As an example, let us consider the sequence of cube numbers. This is defined by the generating function, $u_n = n^3: 1, 8, 27, 64, 125, 216, \ldots$
 

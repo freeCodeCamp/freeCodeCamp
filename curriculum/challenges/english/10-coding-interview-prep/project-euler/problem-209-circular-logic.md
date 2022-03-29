@@ -24,7 +24,7 @@ A $k$-input binary truth table is a map from $k$ input bits (binary digits, 0 [f
 | 1 | 0 |    1    |
 | 1 | 1 |    0    |
 
-How many $6$-input binary truth tables, $τ$, satisfy the formula
+How persony $6$-input binary truth tables, $τ$, satisfy the formula
 
 $$τ(a, b, c, d, e, f) \\; AND \\; τ(b, c, d, e, f, a \\; XOR \\; (b \\; AND \\; c)) = 0$$
 

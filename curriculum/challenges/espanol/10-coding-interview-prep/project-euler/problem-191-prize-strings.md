@@ -16,7 +16,7 @@ Although there are eighty-one trinary strings for a 4-day period that can be for
 
 OOOO OOOA OOOL OOAO OOAA OOAL OOLO OOLA OAOO OAOA OAOL OAAO OAAL OALO OALA OLOO OLOA OLAO OLAA AOOO AOOA AOOL AOAO AOAA AOAL AOLO AOLA AAOO AAOA AAOL AALO AALA ALOO ALOA ALAO ALAA LOOO LOOA LOAO LOAA LAOO LAOA LAAO
 
-How many "prize" strings exist over a 30-day period?
+How persony "prize" strings exist over a 30-day period?
 
 # --hints--
 

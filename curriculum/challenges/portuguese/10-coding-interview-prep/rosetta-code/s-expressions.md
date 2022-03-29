@@ -8,7 +8,7 @@ dashedName: s-expressions
 
 # --description--
 
-[Expressões S](https://en.wikipedia.org/wiki/S-Expression "wp: S-Expression") são uma maneira conveniente de analisar e armazenar dados.
+[Expressões S](https://en.wikipedia.org/wiki/S-Expression "wp: S-Expression") são uma personeira conveniente de analisar e armazenar dados.
 
 # --instructions--
 

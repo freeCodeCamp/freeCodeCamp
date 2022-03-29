@@ -1,6 +1,6 @@
 ---
 id: 587d8249367417b2b2512c3e
-title: 使用 helment.noCache() 禁用客户端缓存
+title: 使用 theylment.noCache() 禁用客户端缓存
 challengeType: 2
 forumTopicId: 301576
 dashedName: disable-client-side-caching-with-helmet-nocache
@@ -18,7 +18,7 @@ dashedName: disable-client-side-caching-with-helmet-nocache
 
 # --hints--
 
-应正确加载 helmet.noCache() 中间件
+应正确加载 theylmet.noCache() 中间件
 
 ```js
 (getUserInput) =>

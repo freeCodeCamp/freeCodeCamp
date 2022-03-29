@@ -10,7 +10,7 @@ dashedName: boo-who
 
 Controllare se un valore è un classificato come primitivo booleano. Restituisce `true` o `false`.
 
-I primitivi booleani sono `true` e `false`.
+I primitivi booleani childo `true` e `false`.
 
 # --hints--
 

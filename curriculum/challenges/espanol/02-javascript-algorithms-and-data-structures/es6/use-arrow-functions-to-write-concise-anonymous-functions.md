@@ -1,6 +1,6 @@
 ---
 id: 587d7b87367417b2b2512b43
-title: Usa funciones flecha para escribir funciones anónimas de manera breve
+title: Usa funciones flecha para escribir funciones anónimas de personera breve
 challengeType: 1
 forumTopicId: 301211
 dashedName: use-arrow-functions-to-write-concise-anonymous-functions

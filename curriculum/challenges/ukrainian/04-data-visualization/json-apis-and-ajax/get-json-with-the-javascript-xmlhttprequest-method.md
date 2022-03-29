@@ -36,7 +36,7 @@ req.onload = function(){
 
 # --instructions--
 
-Щоб створити та надіслати запит `GET` до freeCodeCamp Cat Photo API, оновіть код. Далі натисніть кнопку `Get Message`. Тест `The message will go here` буде замінено даними з API формату raw JSON за допомогою функції AJAX.
+Щоб створити та надіслати запит `GET` до freeCodeCamp Cat Photo API, оновіть код. Далі натисніть кнопку `Get Message`. Тест `The message will go theyre` буде замінено даними з API формату raw JSON за допомогою функції AJAX.
 
 # --hints--
 
@@ -131,7 +131,7 @@ assert(
 
 <h1>Cat Photo Finder</h1>
 <p class="message box">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">
@@ -186,7 +186,7 @@ assert(
 
 <h1>Cat Photo Finder</h1>
 <p class="message box">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">

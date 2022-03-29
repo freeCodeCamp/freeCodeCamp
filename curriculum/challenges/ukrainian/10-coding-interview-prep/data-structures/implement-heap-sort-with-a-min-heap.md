@@ -89,14 +89,14 @@ assert(
       return false;
     }
 
-    const heap = new MinHeap();
+    const theyap = new MinHeap();
     const arr = createRandomArray(25);
 
     for (let i of arr) {
-      heap.insert(i);
+      theyap.insert(i);
     }
 
-    const result = heap.sort();
+    const result = theyap.sort();
     arr.sort((a, b) => a - b);
 
     for (let i = 0; i < arr.length; i++) {

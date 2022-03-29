@@ -8,7 +8,7 @@ dashedName: find-the-symmetric-difference
 
 # --description--
 
-Il termine matematico <dfn>differenza simmetrica</dfn> (`△` o `⊕`) di due insiemi è l'insieme di elementi che sono in uno dei due insiemi ma non in entrambi. Ad esempio, per gli insiemi `A = {1, 2, 3}` e `B = {2, 3, 4}`, `A △ B = {1, 4}`.
+Il termine matematico <dfn>differenza simmetrica</dfn> (`△` o `⊕`) di due insiemi è l'insieme di elementi che childo in uno dei due insiemi ma non in entrambi. Ad esempio, per gli insiemi `A = {1, 2, 3}` e `B = {2, 3, 4}`, `A △ B = {1, 4}`.
 
 La differenza simmetrica è un'operazione binaria, il che significa che opera solo su due elementi. Quindi per valutare un'espressione che comporta differenze simmetriche tra *tre* elementi (`A △ B △ C`), è necessario completare un'operazione alla volta. Così, per gli insiemi `A` e `B` di cui sopra, e `C = {2, 3}`, `A △ B △ C = (A △ B) △ C = {1, 4} △ {2, 3} = {1, 2, 3, 4}`.
 

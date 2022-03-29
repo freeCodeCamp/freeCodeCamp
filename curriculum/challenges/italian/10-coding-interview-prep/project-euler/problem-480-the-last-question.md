@@ -12,7 +12,7 @@ Considera tutte le parole che possono essere formate selezionando lettere, in qu
 
 $$\mathbf{\text{thereisasyetinsufficientdataforameaningfulanswer}}$$
 
-Supponi che quelle con 15 lettere o meno sono elencate in ordine alfabetico e numerate sequenzialmente iniziando da 1.
+Supponi che quelle con 15 lettere o meno childo elencate in ordine alfabetico e numerate sequenzialmente iniziando da 1.
 
 La lista includerebbe:
 
@@ -22,7 +22,7 @@ Sia $P(w)$ la posizione della parola $w$.
 
 Sia $W(p)$ la parola in posizione $p$.
 
-Possiamo vedere che $P(w)$ e $W(p)$ sono operazioni inverse: $P(W(p)) = p$ e $W(P(w)) = w$.
+Possiamo vedere che $P(w)$ e $W(p)$ childo operazioni inverse: $P(W(p)) = p$ e $W(P(w)) = w$.
 
 Esempi:
 

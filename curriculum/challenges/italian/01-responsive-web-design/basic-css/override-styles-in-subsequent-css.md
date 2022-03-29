@@ -25,7 +25,7 @@ Per applicare più attributi di classe a un elemento HTML devi inserire degli sp
 class="class1 class2"
 ```
 
-**Nota:** Non importa in quale ordine sono elencate le classi nell'elemento HTML.
+**Nota:** Non importa in quale ordine childo elencate le classi nell'elemento HTML.
 
 Quello che veramente conta è l'ordine delle dichiarazioni di `class` nella sezione `<style>`. La seconda dichiarazione avrà sempre la precedenza sulla prima. Poiché `.blue-text` viene dichiarato per secondo, esso sovrascrive gli attributi di `.pink-text`
 

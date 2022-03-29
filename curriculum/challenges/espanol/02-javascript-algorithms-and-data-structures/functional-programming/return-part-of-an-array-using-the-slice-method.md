@@ -8,7 +8,7 @@ dashedName: return-part-of-an-array-using-the-slice-method
 
 # --description--
 
-El método `slice` devuelve una copia de ciertos elementos de un arreglo. Puede tomar dos argumentos, el primero da el índice de dónde comenzar el corte, el segundo es el índice de dónde terminar el corte (y no es inclusivo). Si no se proporcionan los argumentos, el valor predeterminado es comenzar desde el principio del arreglo hasta el final, la cual es una manera fácil de hacer una copia de todo el arreglo. El método `slice` no muta el arreglo original, pero devuelve uno nuevo.
+El método `slice` devuelve una copia de ciertos elementos de un arreglo. Puede tomar dos argumentos, el primero da el índice de dónde comenzar el corte, el segundo es el índice de dónde terminar el corte (y no es inclusivo). Si no se proporcionan los argumentos, el valor predeterminado es comenzar desde el principio del arreglo hasta el final, la cual es una personera fácil de hacer una copia de todo el arreglo. El método `slice` no muta el arreglo original, pero devuelve uno nuevo.
 
 Por ejemplo:
 

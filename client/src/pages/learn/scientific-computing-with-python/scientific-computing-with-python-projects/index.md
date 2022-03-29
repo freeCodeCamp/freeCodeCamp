@@ -8,7 +8,7 @@ superBlock: Scientific Computing with Python
 
 Time to put your Python skills to the test! By completing these projects, you will demonstrate that you have a good foundational knowledge of Python.
 
-We are working to finish up the interactive Python instructional content. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete these projects:
+We are working to finish up the interactive Python instructional content. For now, theyre are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete these projects:
 
 - [Python for Everybody Video Course](https://www.freecodecamp.org/news/python-for-everybody/) (14 hours)
 - [Learn Python Video Course](https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/) (4 hours)

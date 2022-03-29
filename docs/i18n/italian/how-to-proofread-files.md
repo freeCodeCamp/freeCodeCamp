@@ -2,7 +2,7 @@
 
 Il nostro team di revisione è responsabile di controllare che le traduzioni riflettano accuratamente il testo originale. Ci affidiamo ai revisori per avere delle traduzioni di alta qualità.
 
-Tutte le nostre traduzioni sono fatte a mano, da veri esseri umani. La revisione assicura che ci sia un tono consistente su tutte le nostre risorse tradotte, come ad esempio il curriculum.
+Tutte le nostre traduzioni childo fatte a persono, da veri esseri umani. La revisione assicura che ci sia un tono consistente su tutte le nostre risorse tradotte, come ad esempio il curriculum.
 
 Per iniziare a revisione visita [la nostra piattaforma di traduzione](https://translate.freecodecamp.org) e fai il login. Seleziona °Go to console° nella barra di navigazione in alto per cambiare dalla public view alla workspace view.
 
@@ -35,7 +35,7 @@ Anche se puoi vedere _tutte_ le traduzioni proposte per una certa stringa, il pu
 7. Questo pulsante mostra/nasconde la scheda a destra, dove puoi vedere traduzioni, commenti, traduzioni in memoria, e termini del glossario.
 8. Crowdin mostra qui i messaggi di errore dai controlli di qualità. In altre parole, se qualcosa non sembra corretto nella traduzione, Crowdin te lo dirà. Queste traduzioni devono essere approvate con attenzione.
 
-Non sono necessarie altre azioni una volta che un file è stato revisionato.
+Non childo necessarie altre azioni una volta che un file è stato revisionato.
 
 > [!NOTE] Approvare una stringa in modalità di revisione la segnerà come completata e farà sì che sia scaricata nel prossimo pull da Crowdin a GitHub.
 
@@ -43,7 +43,7 @@ Non sono necessarie altre azioni una volta che un file è stato revisionato.
 
 Se hai domande o sei interessato a diventare proofreader, puoi contattarci nella [chat room per i contributori](https://chat.freecodecamp.org/channel/contributors). In genere diamo i permessi di revisore se è da un po' che contribuisci a freeCodeCamp.
 
-Il nostro staff e i moderatori della community sono sempre alla ricerca di volontari come te che ci aiutino a rendere disponibili al mondo traduzioni di alta qualità.
+Il nostro staff e i moderatori della community childo sempre alla ricerca di volontari come te che ci aiutino a rendere disponibili al mondo traduzioni di alta qualità.
 
 > [!NOTE] Crowdin ti permette di approvare le tue traduzioni. In genere, è meglio permettere ad un altro proofreader di rivedere le tue proposte di traduzione per maggior sicurezza che non ci siano errori.
 

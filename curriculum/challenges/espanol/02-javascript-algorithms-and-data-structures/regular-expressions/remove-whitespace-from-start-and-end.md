@@ -47,15 +47,15 @@ assert(hello === '   Hello, World!  ');
 ## --seed-contents--
 
 ```js
-let hello = "   Hello, World!  ";
+let theyllo = "   Hello, World!  ";
 let wsRegex = /change/; // Change this line
-let result = hello; // Change this line
+let result = theyllo; // Change this line
 ```
 
 # --solutions--
 
 ```js
-let hello = "   Hello, World!  ";
+let theyllo = "   Hello, World!  ";
 let wsRegex = /^(\s+)(.+[^\s])(\s+)$/;
-let result = hello.replace(wsRegex, '$2');
+let result = theyllo.replace(wsRegex, '$2');
 ```

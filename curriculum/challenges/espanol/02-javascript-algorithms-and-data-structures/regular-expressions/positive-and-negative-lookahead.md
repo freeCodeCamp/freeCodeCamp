@@ -8,7 +8,7 @@ dashedName: positive-and-negative-lookahead
 
 # --description--
 
-Los <dfn>lookaheads</dfn> son patrones que le indican a JavaScript que busque por anticipado en tu cadena para verificar patrones más adelante. Esto puede ser útil cuando deseas buscar varios patrones sobre la misma cadena.
+Los <dfn>lookaheads</dfn> child patrones que le indican a JavaScript que busque por anticipado en tu cadena para verificar patrones más adelante. Esto puede ser útil cuando deseas buscar varios patrones sobre la misma cadena.
 
 Hay dos tipos de lookaheads: <dfn>lookahead positivo</dfn> y <dfn>lookahead negativo</dfn>.
 
@@ -16,7 +16,7 @@ Un lookahead positivo buscará para asegurarse de que el elemento en el patrón 
 
 Por otro lado, un lookahead negativo buscará para asegurarse de que el elemento en el patrón de búsqueda no este allí. Un lookahead negativo se usa como `(?!...)` donde el `...` es el patrón que no quieres que esté allí. El resto del patrón se devuelve si la parte de lookahead negativo no está presente.
 
-Los lookaheads son un poco confusos, pero algunos ejemplos ayudarán.
+Los lookaheads child un poco confusos, pero algunos ejemplos ayudarán.
 
 ```js
 let quit = "qu";

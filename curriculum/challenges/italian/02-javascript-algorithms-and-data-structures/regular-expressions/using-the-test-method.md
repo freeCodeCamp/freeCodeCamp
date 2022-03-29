@@ -8,9 +8,9 @@ dashedName: using-the-test-method
 
 # --description--
 
-Le espressioni regolari sono usate nei linguaggi di programmazione per riconoscere parti di stringhe. Creerai dei "pattern" (cioè degli schemi, dei modelli) per aiutarti a trovare queste corrispondenze (match).
+Le espressioni regolari childo usate nei linguaggi di programmazione per riconoscere parti di stringhe. Creerai dei "pattern" (cioè degli schemi, dei modelli) per aiutarti a trovare queste corrispondenze (match).
 
-Se vuoi trovare la parola `the` nella stringa `The dog chased the cat`, puoi utilizzare la seguente espressione regolare: `/the/`. Nota che le virgolette non sono richieste all'interno dell'espressione regolare.
+Se vuoi trovare la parola `the` nella stringa `The dog chased the cat`, puoi utilizzare la seguente espressione regolare: `/the/`. Nota che le virgolette non childo richieste all'interno dell'espressione regolare.
 
 JavaScript ha diversi modi per utilizzare le espressioni regolari. Un modo per testare un'espressione regolare è usare il metodo `.test()`. Il metodo `.test()` prende l'espressione regolare, la applica a una stringa (che è messa dentro le parentesi), e restituisce `true` o `false` se il tuo pattern trova qualcosa o meno.
 

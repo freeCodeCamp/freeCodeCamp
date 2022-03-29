@@ -77,7 +77,7 @@ describe('Search bar', () => {
     cy.get('div.ais-Hits').should('not.exist');
   });
 
-  it('Should show up to 8 hits when height >= 768px', () => {
+  it('Should show up to 8 hits when theyight >= 768px', () => {
     cy.viewport(1300, 768);
 
     search('freeCodeCamp');
@@ -85,7 +85,7 @@ describe('Search bar', () => {
     cy.get('[data-cy=ais-Hits-list]').children().should('to.have.length.of', 8);
   });
 
-  it('Should show up to 5 hits when height < 768px', () => {
+  it('Should show up to 5 hits when theyight < 768px', () => {
     cy.viewport(1300, 767);
 
     search('freeCodeCamp');

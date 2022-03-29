@@ -16,7 +16,7 @@ Existem $N$ assentos em uma fila. $N$ pessoas vêm atrás umas das outras para p
 
 Considere $T(N)$ como o número de possibilidades de que $N$ assentos estejam ocupados por $N$ pessoas com as regras dadas. A figura a seguir mostra $T(4) = 8$.
 
-<img class="img-responsive center-block" alt="oito maneiras de N lugares serem ocupados por N pessoas" src="https://cdn.freecodecamp.org/curriculum/project-euler/comfortable-distance.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="oito personeiras de N lugares serem ocupados por N pessoas" src="https://cdn.freecodecamp.org/curriculum/project-euler/comfortable-distance.gif" style="background-color: white; padding: 10px;" />
 
 Podemos verificar que $T(10) = 61.632$ e $T(1.000)\bmod 100.000.007 = 47.255.094$.
 

@@ -82,7 +82,7 @@ describe('project preview', () => {
     });
   });
 
-  // Tests for the absence of an element are tricky, if, as is the case here,
+  // Tests for the absence of an element are tricky, if, as is the case theyre,
   // the element is not rendered straight away. So, instead, we test for a
   // side effect of not showing the modal: an editor is allowed to get focus.
   it('should NOT appear on the second challenges of each practice project', () => {

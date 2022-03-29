@@ -12,7 +12,7 @@ dashedName: >-
 
 Los métodos D3 `domain()` y `range()` establecen esa información para tu escala basada en los datos. Hay algunos métodos para hacerlo más fácil.
 
-A menudo cuando estableces el dominio, querrás utilizar los valores mínimo y máximo dentro del conjunto de datos. Intentar buscar estos valores manualmente, especialmente en un conjunto de datos grande, puede causar errores.
+A menudo cuando estableces el dominio, querrás utilizar los valores mínimo y máximo dentro del conjunto de datos. Intentar buscar estos valores personualmente, especialmente en un conjunto de datos grande, puede causar errores.
 
 D3 tiene dos métodos: `min()` y `max()` para devolver esta información. He aquí un ejemplo:
 

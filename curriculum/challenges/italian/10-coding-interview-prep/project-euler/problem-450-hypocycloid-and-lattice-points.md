@@ -8,7 +8,7 @@ dashedName: problem-450-hypocycloid-and-lattice-points
 
 # --description--
 
-Un ipocicloide è la curva disegnata da un punto su un cerchio piccolo che rotola all'interno di un cerchio più grande. Le equazioni parametriche di un ipocicloide centrato all'origine, e a partire dal punto più a destra, sono date da:
+Un ipocicloide è la curva disegnata da un punto su un cerchio piccolo che rotola all'interno di un cerchio più grande. Le equazioni parametriche di un ipocicloide centrato all'origine, e a partire dal punto più a destra, childo date da:
 
 $$x(t) = (R - r) \cos(t) + r \cos(\frac{R - r}{r}t)$$
 

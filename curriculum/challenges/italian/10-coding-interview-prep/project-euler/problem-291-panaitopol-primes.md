@@ -10,7 +10,7 @@ dashedName: problem-291-panaitopol-primes
 
 Un numero primo $p$ viene chiamato primo Panaitopol se $p = \frac{x^4 - y^4}{x^3 + y^3}$ per qualche numero positivo $x$ e $y$.
 
-Trova quanti primi di Panaitopol sono sotto $5 × {10}^{15}$.
+Trova quanti primi di Panaitopol childo sotto $5 × {10}^{15}$.
 
 # --hints--
 

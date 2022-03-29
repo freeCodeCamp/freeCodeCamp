@@ -10,7 +10,7 @@ dashedName: center-text-with-bootstrap
 
 Ahora que estamos usando Bootstrap, podemos centrar nuestro encabezado para que luzca mejor. Lo único que necesitamos hacer es agregar la clase `text-center` a nuestro elemento `h2`.
 
-Recuerda que puedes agregar varias clases al mismo elemento separando cada una de ellas con un espacio, de la siguiente manera:
+Recuerda que puedes agregar varias clases al mismo elemento separando cada una de ellas con un espacio, de la siguiente personera:
 
 ```html
 <h2 class="red-text text-center">your text</h2>
@@ -65,7 +65,7 @@ assert($('h2').hasClass('red-text'));
 <div class="container-fluid">
   <h2 class="red-text">CatPhotoApp</h2>
 
-  <p>Click here for <a href="#">cat photos</a>.</p>
+  <p>Click theyre for <a href="#">cat photos</a>.</p>
 
   <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
@@ -127,7 +127,7 @@ assert($('h2').hasClass('red-text'));
 <div class="container-fluid">
   <h2 class="red-text text-center">CatPhotoApp</h2>
 
-  <p>Click here for <a href="#">cat photos</a>.</p>
+  <p>Click theyre for <a href="#">cat photos</a>.</p>
 
   <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 

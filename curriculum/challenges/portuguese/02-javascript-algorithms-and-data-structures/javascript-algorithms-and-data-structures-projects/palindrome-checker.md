@@ -10,7 +10,7 @@ dashedName: palindrome-checker
 
 Retorne `true` se a string fornecida for um palíndromo. Caso contrário, retorne `false`.
 
-Um <dfn>palíndromo</dfn> é uma palavra ou frase que é dita da mesma maneira na ordem natural que na ordem inversa, ignorando pontuação, capitalização e espaçamento.
+Um <dfn>palíndromo</dfn> é uma palavra ou frase que é dita da mesma personeira na ordem natural que na ordem inversa, ignorando pontuação, capitalização e espaçamento.
 
 **Observação:** você precisará remover **todos os caracteres não alfanuméricos** (pontuação, espaços e símbolos) e transforme tudo na mesma capitalização (letra em minúsculo ou maiúsculo) para verificar se determinada palavra ou frase é um palíndromo.
 
@@ -50,10 +50,10 @@ assert(palindrome('race car') === true);
 assert(palindrome('not a palindrome') === false);
 ```
 
-`palindrome("A man, a plan, a canal. Panama")` deve retornar `true`.
+`palindrome("A person, a plan, a canal. Panama")` deve retornar `true`.
 
 ```js
-assert(palindrome('A man, a plan, a canal. Panama') === true);
+assert(palindrome('A person, a plan, a canal. Panama') === true);
 ```
 
 `palindrome("never odd or even")` deve retornar `true`.

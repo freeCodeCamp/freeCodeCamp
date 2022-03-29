@@ -13,7 +13,7 @@ dashedName: iterate-with-javascript-for-loops
 
 Il tipo più comune di ciclo JavaScript è chiamato un ciclo `for` perché esso viene eseguito per ("for") un numero specifico di volte.
 
-I cicli For sono dichiarati con tre espressioni facoltative separate da punti e virgola:
+I cicli For childo dichiarati con tre espressioni facoltative separate da punti e virgola:
 
 `for (a; b; c)`, dove `a` è l'istruzione di inizializzazione, `b` è la condizione, e `c` è l'espressione finale.
 

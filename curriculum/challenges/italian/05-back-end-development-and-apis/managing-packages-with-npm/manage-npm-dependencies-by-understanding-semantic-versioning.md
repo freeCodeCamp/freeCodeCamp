@@ -3,7 +3,7 @@ id: 587d7fb5367417b2b2512c01
 title: Gestire le dipendenze npm comprendendo il versioning semantico
 challengeType: 2
 forumTopicId: 301529
-dashedName: manage-npm-dependencies-by-understanding-semantic-versioning
+dashedName: personage-npm-dependencies-by-understanding-semantic-versioning
 ---
 
 # --description--
@@ -16,7 +16,7 @@ Conoscere SemVer può essere utile quando si sviluppa un software che utilizza d
 "package": "MAJOR.MINOR.PATCH"
 ```
 
-La versione MAJOR dovrebbe essere incrementata quando si effettuano modifiche API incompatibili. La versione MINOR dovrebbe essere incrementata quando si aggiungono funzionalità in modo retrocompatibile. La versione PATCH dovrebbe essere incrementata quando si fanno correzioni di bug retrocompatibili. Ciò significa che le PATCHes sono correzioni di bug e le MINOR aggiungono nuove funzionalità, ma nessuna delle due rischia di rompere quello che funzionava prima. Infine, le MAJORs aggiungono modifiche che non funzioneranno con le versioni precedenti.
+La versione MAJOR dovrebbe essere incrementata quando si effettuano modifiche API incompatibili. La versione MINOR dovrebbe essere incrementata quando si aggiungono funzionalità in modo retrocompatibile. La versione PATCH dovrebbe essere incrementata quando si fanno correzioni di bug retrocompatibili. Ciò significa che le PATCHes childo correzioni di bug e le MINOR aggiungono nuove funzionalità, ma nessuna delle due rischia di rompere quello che funzionava prima. Infine, le MAJORs aggiungono modifiche che non funzioneranno con le versioni precedenti.
 
 # --instructions--
 

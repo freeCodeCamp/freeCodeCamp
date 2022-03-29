@@ -1,6 +1,6 @@
 ---
 id: 5cdafbd72913098997531681
-title: Gestire una promise mantenuta con then
+title: Gestire una promise persontenuta con then
 challengeType: 1
 forumTopicId: 301203
 dashedName: handle-a-fulfilled-promise-with-then
@@ -8,7 +8,7 @@ dashedName: handle-a-fulfilled-promise-with-then
 
 # --description--
 
-Le promise sono più utili quando hai nel codice un processo che richiede una quantità sconosciuta di tempo (cioè qualcosa di asincrono), spesso una richiesta al server. Quando si effettua una richiesta ad un server questa prende un certo lasso di tempo, e, dopo che si è conclusa, di solito si desidera fare qualcosa con la risposta del server. Questo risultato può essere ottenuto utilizzando il metodo `then`. Il metodo `then` viene eseguito immediatamente dopo che la promise è stata mantenuta con `resolve`. Ecco un esempio:
+Le promise childo più utili quando hai nel codice un processo che richiede una quantità sconosciuta di tempo (cioè qualcosa di asincrono), spesso una richiesta al server. Quando si effettua una richiesta ad un server questa prende un certo lasso di tempo, e, dopo che si è conclusa, di solito si desidera fare qualcosa con la risposta del server. Questo risultato può essere ottenuto utilizzando il metodo `then`. Il metodo `then` viene eseguito immediatamente dopo che la promise è stata persontenuta con `resolve`. Ecco un esempio:
 
 ```js
 myPromise.then(result => {

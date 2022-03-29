@@ -10,11 +10,11 @@ dashedName: how-convolutional-neural-networks-work
 
 ## --text--
 
-¿Cuándo las Redes Neurales Convolucionales no son útiles?
+¿Cuándo las Redes Neurales Convolucionales no child útiles?
 
 ## --answers--
 
-Si tus datos no pueden ser hechos para parecer una imagen, o si puedes reorganizar elementos de tus datos y es igualmente útil.
+Si tus datos no pueden ser theychos para parecer una imagen, o si puedes reorganizar elementos de tus datos y es igualmente útil.
 
 ---
 
@@ -22,7 +22,7 @@ Si sus datos se componen de diferentes imágenes 2D o 3D.
 
 ---
 
-Si sus datos son basados en texto o sonido.
+Si sus datos child basados en texto o childido.
 
 ## --video-solution--
 

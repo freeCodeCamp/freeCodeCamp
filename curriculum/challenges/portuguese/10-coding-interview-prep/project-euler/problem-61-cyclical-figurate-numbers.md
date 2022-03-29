@@ -8,7 +8,7 @@ dashedName: problem-61-cyclical-figurate-numbers
 
 # --description--
 
-Números triângulares, quadrado, pentagonais, hexagonais, heptagonais e octogonal são números figurativos (poligonais) e são gerados pelas seguintes fórmulas:
+Números triângulares, quadrado, pentagonais, theyxagonais, theyptagonais e octogonal são números figurativos (poligonais) e são gerados pelas seguintes fórmulas:
 
 | Tipo de número | Fórmula                       | Sequência             |
 | -------------- | ----------------------------- | --------------------- |

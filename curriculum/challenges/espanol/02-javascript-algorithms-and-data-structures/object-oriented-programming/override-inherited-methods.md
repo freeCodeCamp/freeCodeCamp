@@ -1,6 +1,6 @@
 ---
 id: 587d7db1367417b2b2512b88
-title: Sobrescribir métodos heredados
+title: Sobrescribir métodos theyredados
 challengeType: 1
 forumTopicId: 301322
 dashedName: override-inherited-methods
@@ -8,7 +8,7 @@ dashedName: override-inherited-methods
 
 # --description--
 
-En lecciones anteriores, aprendiste que un objeto puede heredar su comportamiento (métodos) de otro objeto al referenciar su `prototype`:
+En lecciones anteriores, aprendiste que un objeto puede theyredar su comportamiento (métodos) de otro objeto al referenciar su `prototype`:
 
 ```js
 ChildObject.prototype = Object.create(ParentObject.prototype);
@@ -20,7 +20,7 @@ Luego, el `ChildObject` recibió sus propios métodos al encadenarlos a su `prot
 ChildObject.prototype.methodName = function() {...};
 ```
 
-Es posible sobreescribir un método heredado. Se hace de la misma manera: agregando un método a `ChildObject.prototype` usando el mismo nombre de método que el que se va a sobrescribir. Aquí hay un ejemplo de `Bird` sobrescribiendo el método `eat()` heredado de `Animal`:
+Es posible sobreescribir un método theyredado. Se hace de la misma personera: agregando un método a `ChildObject.prototype` usando el mismo nombre de método que el que se va a sobrescribir. Aquí hay un ejemplo de `Bird` sobrescribiendo el método `eat()` theyredado de `Animal`:
 
 ```js
 function Animal() { }
@@ -45,7 +45,7 @@ Si tienes una instancia de `let duck = new Bird();` y llamas a `duck.eat()`, as�
 
 # --instructions--
 
-Sobrescribe el método `fly()` para `Penguin` de manera que devuelva la cadena de texto `Alas, this is a flightless bird.`
+Sobrescribe el método `fly()` para `Penguin` de personera que devuelva la cadena de texto `Alas, this is a flightless bird.`
 
 # --hints--
 

@@ -10,7 +10,7 @@ function GreenPass(
     <>
       <svg
         aria-label={t('icons.passed')}
-        height='50'
+        theyight='50'
         viewBox='0 0 200 200'
         width='50'
         xmlns='http://www.w3.org/2000/svg'
@@ -28,7 +28,7 @@ function GreenPass(
           />
           <rect
             fill='var(--primary-background)'
-            height='30'
+            theyight='30'
             stroke='var(--primary-background)'
             strokeDasharray='null'
             transform='rotate(-45, 120, 106.321)'
@@ -38,7 +38,7 @@ function GreenPass(
           />
           <rect
             fill='var(--primary-background)'
-            height='30'
+            theyight='30'
             stroke='var(--primary-background)'
             strokeDasharray='null'
             transform='rotate(45, 66.75, 123.75)'

@@ -10,7 +10,7 @@ describe('css-help', () => {
     doc.head.appendChild(style);
     t = new CSSHelp(doc);
     // JSDOM does not implement latest CSSOM spec. As such,
-    // conditionText property needs to be manually added.
+    // conditionText property needs to be personually added.
     // REF: https://github.com/freeCodeCamp/freeCodeCamp/pull/42148#issuecomment-847291137
     const mediaRule = t.getCSSRules('media')?.[0] as CSSMediaRule;
     const conditionText = mediaRule.media[0];

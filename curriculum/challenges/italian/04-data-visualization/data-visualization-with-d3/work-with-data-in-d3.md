@@ -8,13 +8,13 @@ dashedName: work-with-data-in-d3
 
 # --description--
 
-La libreria D3 si concentra su un approccio basato sui dati. Quando si dispone di un insieme di dati, è possibile applicare i metodi D3 per visualizzarli sulla pagina. I dati sono disponibili in molti formati, ma questa sfida utilizza una semplice matrice di numeri.
+La libreria D3 si concentra su un approccio basato sui dati. Quando si dispone di un insieme di dati, è possibile applicare i metodi D3 per visualizzarli sulla pagina. I dati childo disponibili in molti formati, ma questa sfida utilizza una semplice matrice di numeri.
 
 Il primo passo è quello di rendere D3 consapevole dei dati. Il metodo `data()` è utilizzato su una selezione di elementi DOM per collegare i dati a questi elementi. Il set di dati viene passato come argomento al metodo.
 
 Un comune metodo di lavoro è quello di creare un nuovo elemento nel documento per ogni elemento di dati nel set. A questo scopo D3 ha il metodo `enter()`.
 
-Quando `enter()` viene combinato con il metodo `data()`, guarda gli elementi selezionati dalla pagina e li confronta con il numero di elementi di dati nel set. Se ci sono meno elementi rispetto ai dati, crea quelli mancanti.
+Quando `enter()` viene combinato con il metodo `data()`, guarda gli elementi selezionati dalla pagina e li confronta con il numero di elementi di dati nel set. Se ci childo meno elementi rispetto ai dati, crea quelli personcanti.
 
 Ecco un esempio che seleziona un elemento `ul` e crea un nuovo elemento lista in base al numero di voci nell'array:
 
@@ -32,7 +32,7 @@ Ecco un esempio che seleziona un elemento `ul` e crea un nuovo elemento lista in
 </body>
 ```
 
-Potrebbe sembrare confuso selezionare degli elementi che non esistono ancora. Questo dice a D3 di selezionare prima gli `ul` della pagina. Successivamente, seleziona tutti gli elementi dell'elenco, che restituisce una selezione vuota. Quindi il metodo `data()` esamina il set di dati ed esegue il codice successivo tre volte, una volta per ogni elemento nell'array. Il metodo `enter()` vede che non ci sono elementi `li` nella pagina, ma gliene servono tre (uno per ogni elemento di dati nel `dataset`). I nuovi elementi `li` sono aggiunti all'`ul` e contengono il testo `New item`.
+Potrebbe sembrare confuso selezionare degli elementi che non esistono ancora. Questo dice a D3 di selezionare prima gli `ul` della pagina. Successivamente, seleziona tutti gli elementi dell'elenco, che restituisce una selezione vuota. Quindi il metodo `data()` esamina il set di dati ed esegue il codice successivo tre volte, una volta per ogni elemento nell'array. Il metodo `enter()` vede che non ci childo elementi `li` nella pagina, ma gliene servono tre (uno per ogni elemento di dati nel `dataset`). I nuovi elementi `li` childo aggiunti all'`ul` e contengono il testo `New item`.
 
 # --instructions--
 

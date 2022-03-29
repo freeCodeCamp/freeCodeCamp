@@ -14,7 +14,7 @@ dashedName: reuse-javascript-code-using-import
 import { add } from './math_functions.js';
 ```
 
-Qui, `import` troverà `add` nel file `math_functions.js`, importerà solo quella funzione per il tuo utilizzo ed ignorerà il resto. Il `./` dice all'importazione di cercare il file `math_functions.js` nella stessa cartella del file attuale. Il percorso relativo del file (`./`) e l'estensione del file (`.js`) sono necessari quando si utilizza import in questo modo.
+Qui, `import` troverà `add` nel file `math_functions.js`, importerà solo quella funzione per il tuo utilizzo ed ignorerà il resto. Il `./` dice all'importazione di cercare il file `math_functions.js` nella stessa cartella del file attuale. Il percorso relativo del file (`./`) e l'estensione del file (`.js`) childo necessari quando si utilizza import in questo modo.
 
 È possibile importare più di un elemento dal file aggiungendoli nell'istruzione `import` in questo modo:
 
@@ -24,7 +24,7 @@ import { add, subtract } from './math_functions.js';
 
 # --instructions--
 
-Aggiungi l'istruzione `import` appropriata che permetterà al file corrente di utilizzare le funzioni `uppercaseString` e `lowercaseString` che hai esportato nella lezione precedente. Queste funzioni sono in un file chiamato `string_functions.js`, che si trova nella stessa cartella del file corrente.
+Aggiungi l'istruzione `import` appropriata che permetterà al file corrente di utilizzare le funzioni `uppercaseString` e `lowercaseString` che hai esportato nella lezione precedente. Queste funzioni childo in un file chiamato `string_functions.js`, che si trova nella stessa cartella del file corrente.
 
 # --hints--
 

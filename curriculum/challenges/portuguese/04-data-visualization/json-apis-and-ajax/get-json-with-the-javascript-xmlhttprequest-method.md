@@ -32,11 +32,11 @@ req.onload = function(){
 };
 ```
 
-Aqui está uma análise do que cada parte está fazendo. O objeto `XMLHttpRequest` do JavaScript tem uma série de propriedades e métodos que são usados para transferir dados. Primeiro, uma instância do objeto `XMLHttpRequest` é criada e salva na variável `req`. Em seguida, o método `open` inicia uma solicitação. Este exemplo está solicitando dados de uma API, portanto é uma solicitação `GET`. O segundo argumento para `open` é o URL da API de onde você está solicitando os dados. O terceiro argumento é um valor booleano, onde `true` torna a solicitação assíncrona. O método `send` envia a solicitação. Por fim, o manipulador de eventos `onload` analisa os dados retornados e aplica o método `JSON.stringify` para converter o objeto do JavaScript em uma string. Essa string é, então, inserida como o texto da mensagem.
+Aqui está uma análise do que cada parte está fazendo. O objeto `XMLHttpRequest` do JavaScript tem uma série de propriedades e métodos que são usados para transferir dados. Primeiro, uma instância do objeto `XMLHttpRequest` é criada e salva na variável `req`. Em seguida, o método `open` inicia uma solicitação. Este exemplo está solicitando dados de uma API, portanto é uma solicitação `GET`. O segundo argumento para `open` é o URL da API de onde você está solicitando os dados. O terceiro argumento é um valor booleano, onde `true` torna a solicitação assíncrona. O método `send` envia a solicitação. Por fim, o personipulador de eventos `onload` analisa os dados retornados e aplica o método `JSON.stringify` para converter o objeto do JavaScript em uma string. Essa string é, então, inserida como o texto da mensagem.
 
 # --instructions--
 
-Atualize o código para criar e enviar uma solicitação de `GET` para a API de fotos de gatos do freeCodeCamp. Em seguida, clique no botão `Get Message`. Sua função AJAX substituirá o texto `The message will go here` pela saída bruta do JSON da API.
+Atualize o código para criar e enviar uma solicitação de `GET` para a API de fotos de gatos do freeCodeCamp. Em seguida, clique no botão `Get Message`. Sua função AJAX substituirá o texto `The message will go theyre` pela saída bruta do JSON da API.
 
 # --hints--
 
@@ -62,7 +62,7 @@ O código deve usar o método `send` para enviar a solicitação.
 assert(code.match(/\.send\(\s*\)/g));
 ```
 
-O código deve ter um manipulador de evento `onload` definido para uma função.
+O código deve ter um personipulador de evento `onload` definido para uma função.
 
 ```js
 assert(
@@ -131,7 +131,7 @@ assert(
 
 <h1>Cat Photo Finder</h1>
 <p class="message box">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">
@@ -186,7 +186,7 @@ assert(
 
 <h1>Cat Photo Finder</h1>
 <p class="message box">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">

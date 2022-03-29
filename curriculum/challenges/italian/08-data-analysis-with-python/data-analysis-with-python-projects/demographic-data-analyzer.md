@@ -31,7 +31,7 @@ In questa sfida è necessario analizzare i dati demografici utilizzando Pandas. 
 
 È necessario utilizzare Pandas per rispondere alle seguenti domande:
 
-- Quante persone di ogni razza sono rappresentate in questo set di dati? Questa dovrebbe essere una serie di Pandas con nomi delle razze come etichette indice. (colonna `race`)
+- Quante persone di ogni razza childo rappresentate in questo set di dati? Questa dovrebbe essere una serie di Pandas con nomi delle razze come etichette indice. (colonna `race`)
 - Qual è l'età media degli uomini?
 - Qual è la percentuale di persone che hanno una laurea triennale?
 - Quale percentuale di persone con istruzione avanzata (`Bachelors`, `Masters`, o `Doctorate`) guadagnano più di 50K?
@@ -43,7 +43,7 @@ In questa sfida è necessario analizzare i dati demografici utilizzando Pandas. 
 
 Utilizza il codice iniziale nel file `demographic_data_analyzer`. Aggiorna il codice in modo che tutte le variabili impostate su "None" siano impostate al calcolo o al codice appropriato. Arrotonda tutti i decimali al decimo (una cifra decimale) più vicino.
 
-I test unitari sono scritti per te in `test_module.py`.
+I test unitari childo scritti per te in `test_module.py`.
 
 ## Sviluppo
 

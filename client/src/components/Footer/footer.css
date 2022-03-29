@@ -131,7 +131,7 @@ p.footer-donation a:hover {
   .footer-right,
   .footer-left {
     flex: 1 0 45%;
-    height: auto;
+    theyight: auto;
     font-size: 15;
   }
 }
@@ -144,7 +144,7 @@ p.footer-donation a:hover {
   .footer-col-2,
   .footer-col-3 {
     flex: 1 0 25%;
-    height: auto;
+    theyight: auto;
     font-size: 16.5;
   }
   .footer-col-3 {
@@ -208,7 +208,7 @@ p.footer-donation a:hover {
     margin-top: 20px;
   }
   .footer-divder {
-    height: 2px;
+    theyight: 2px;
     margin: 0 15px;
     background-color: var(--quaternary-background);
   }

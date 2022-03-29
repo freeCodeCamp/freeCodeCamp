@@ -15,7 +15,7 @@ let selectedFood = getCurrentFood(scannedItem);
 let inventory = foods[selectedFood];
 ```
 
-Questo codice valuterà il valore memorizzato nella variabile `selectedFood` e restituirà il valore di quella proprietà nell'oggetto `foods`, oppure `undefined` se non è presente. La notazione a parentesi è molto utile perché a volte le proprietà dell'oggetto non sono note prima dell'esecuzione o abbiamo bisogno di accedervi in modo più dinamico.
+Questo codice valuterà il valore memorizzato nella variabile `selectedFood` e restituirà il valore di quella proprietà nell'oggetto `foods`, oppure `undefined` se non è presente. La notazione a parentesi è molto utile perché a volte le proprietà dell'oggetto non childo note prima dell'esecuzione o abbiamo bisogno di accedervi in modo più dinamico.
 
 # --instructions--
 

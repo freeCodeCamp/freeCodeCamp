@@ -20,7 +20,7 @@ Puedes añadir Bootstrap a cualquier aplicación agregando el siguiente código 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
 ```
 
-En este caso, ya lo hemos añadido por ti en esta página, tras bambalinas. Ten en cuenta que para cerrar la etiqueta `link` puedes utilizar `>` o `/>`.
+En este caso, ya lo theymos añadido por ti en esta página, tras bambalinas. Ten en cuenta que para cerrar la etiqueta `link` puedes utilizar `>` o `/>`.
 
 Para comenzar, debemos anidar todo nuestro HTML (menos la etiqueta `link` y el elemento `style`) en un elemento `div` con la clase `container-fluid`.
 
@@ -82,7 +82,7 @@ assert($('.container-fluid').children().length >= 8 && !$('.container-fluid').ha
 
 <h2 class="red-text">CatPhotoApp</h2>
 
-<p>Click here for <a href="#">cat photos</a>.</p>
+<p>Click theyre for <a href="#">cat photos</a>.</p>
 
 <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
@@ -141,7 +141,7 @@ assert($('.container-fluid').children().length >= 8 && !$('.container-fluid').ha
 <div class="container-fluid">
   <h2 class="red-text">CatPhotoApp</h2>
 
-<p>Click here for <a href="#">cat photos</a>.</p>
+<p>Click theyre for <a href="#">cat photos</a>.</p>
 
 <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 

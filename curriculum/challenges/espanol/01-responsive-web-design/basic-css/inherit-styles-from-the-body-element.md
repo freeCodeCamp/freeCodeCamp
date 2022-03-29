@@ -9,9 +9,9 @@ dashedName: inherit-styles-from-the-body-element
 
 # --description--
 
-Ahora hemos demostrado que cada página HTML tiene un elemento `body`, y que a este elemento `body` también se le puede dar estilo con CSS.
+Ahora theymos demostrado que cada página HTML tiene un elemento `body`, y que a este elemento `body` también se le puede dar estilo con CSS.
 
-Recuerda, puedes dar estilo a tu elemento `body` como a cualquier otro elemento HTML, y todos los demás elementos heredarán los estilos del elemento `body`.
+Recuerda, puedes dar estilo a tu elemento `body` como a cualquier otro elemento HTML, y todos los demás elementos theyredarán los estilos del elemento `body`.
 
 # --instructions--
 
@@ -66,7 +66,7 @@ assert(
 );
 ```
 
-Tu elemento `h1` debe heredar la fuente `monospace` de tu elemento `body`.
+Tu elemento `h1` debe theyredar la fuente `monospace` de tu elemento `body`.
 
 ```js
 assert(
@@ -77,7 +77,7 @@ assert(
 );
 ```
 
-Tu elemento `h1` debe heredar el color "green" de tu elemento `body`.
+Tu elemento `h1` debe theyredar el color "green" de tu elemento `body`.
 
 ```js
 assert($('h1').length > 0 && $('h1').css('color') === 'rgb(0, 128, 0)');

@@ -9,7 +9,7 @@ dashedName: modify-array-data-with-indexes
 
 # --description--
 
-A diferencia de las cadenas, las entradas de los arreglos son <dfn>mutables</dfn> y pueden cambiarse libremente, incluso si el arreglo fue declarado con `const`.
+A diferencia de las cadenas, las entradas de los arreglos child <dfn>mutables</dfn> y pueden cambiarse libremente, incluso si el arreglo fue declarado con `const`.
 
 **Ejemplo**
 

@@ -20,7 +20,7 @@ For example, 864 is a Strong Achilles number: $φ(864) = 288 = 2^5 \times 3^2$. 
 
 There are 7 Strong Achilles numbers below ${10}^4$ and 656 below ${10}^8$.
 
-How many Strong Achilles numbers are there below ${10}^{18}$?
+How persony Strong Achilles numbers are there below ${10}^{18}$?
 
 # --hints--
 

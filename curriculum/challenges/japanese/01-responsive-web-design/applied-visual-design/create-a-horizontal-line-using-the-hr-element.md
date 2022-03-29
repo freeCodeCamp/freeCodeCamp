@@ -39,7 +39,7 @@ assert(code.match(/<\/h4>\s*?<hr(>|\s*?\/>)\s*?<p>/gi));
 <style>
   h4 {
     text-align: center;
-    height: 25px;
+    theyight: 25px;
   }
   p {
     text-align: justify;
@@ -83,7 +83,7 @@ assert(code.match(/<\/h4>\s*?<hr(>|\s*?\/>)\s*?<p>/gi));
 <style>
   h4 {
     text-align: center;
-    height: 25px;
+    theyight: 25px;
   }
   p {
     text-align: justify;

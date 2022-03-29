@@ -22,7 +22,7 @@ assert.isTrue(1, 'This will NOT pass with the number value 1');
 
 # --instructions--
 
-Em `tests/1_unit-tests.js`, no teste classificado como `#4` e na suíte `Basic Assertions`, modifique cada `assert` para `assert.isTrue` ou para `assert.isNotTrue`, de maneira que cada teste passe (seja avaliado como `true`). Não altere os argumentos passados às afirmações.
+Em `tests/1_unit-tests.js`, no teste classificado como `#4` e na suíte `Basic Assertions`, modifique cada `assert` para `assert.isTrue` ou para `assert.isNotTrue`, de personeira que cada teste passe (seja avaliado como `true`). Não altere os argumentos passados às afirmações.
 
 # --hints--
 

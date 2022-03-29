@@ -12,11 +12,11 @@ Queremos preencher com ladrilhos um tabuleiro de comprimento $n$ e altura 1 comp
 
 <img class="img-responsive center-block" alt="dez blocos 1x1 com um único algarismo decimal no topo e um bloco 1x2" src="https://cdn.freecodecamp.org/curriculum/project-euler/gcd-and-tiling-1.png" style="background-color: white; padding: 10px;" />
 
-Por exemplo, aqui temos algumas maneiras de ladrilhar um tabuleiro de comprimento $n = 8$:
+Por exemplo, aqui temos algumas personeiras de ladrilhar um tabuleiro de comprimento $n = 8$:
 
-<img class="img-responsive center-block" alt="exemplos de maneiras de ladrilhar um tabuleiro de comprimento n = 8" src="https://cdn.freecodecamp.org/curriculum/project-euler/gcd-and-tiling-2.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="exemplos de personeiras de ladrilhar um tabuleiro de comprimento n = 8" src="https://cdn.freecodecamp.org/curriculum/project-euler/gcd-and-tiling-2.png" style="background-color: white; padding: 10px;" />
 
-Considere $T(n)$ como o número de maneiras de ladrilhar um tabuleiro de comprimento $n$, como descrito acima.
+Considere $T(n)$ como o número de personeiras de ladrilhar um tabuleiro de comprimento $n$, como descrito acima.
 
 Por exemplo, $T(1) = 10$ e $T(2) = 101$.
 

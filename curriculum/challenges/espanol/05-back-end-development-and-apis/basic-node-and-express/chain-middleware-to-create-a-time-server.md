@@ -21,7 +21,7 @@ app.get('/user', function(req, res, next) {
 });
 ```
 
-Este método es útil para dividir las operaciones del servidor en unidades más pequeñas. Lo que lleva a una mejor estructura de nuestra aplicación y a la posibilidad de reutilizar código en diferentes lugares. Este método también se puede utilizar para realizar ciertas validaciones de los datos. En cada punto de la pila del middleware puedes bloquear la ejecución de la cadena actual y darle el control a funciones diseñadas específicamente para el manejo de errores. O puedes pasar el control a la siguiente ruta que concuerde, para manejar casos especiales. Veremos cómo en la sección avanzada de Express.
+Este método es útil para dividir las operaciones del servidor en unidades más pequeñas. Lo que lleva a una mejor estructura de nuestra aplicación y a la posibilidad de reutilizar código en diferentes lugares. Este método también se puede utilizar para realizar ciertas validaciones de los datos. En cada punto de la pila del middleware puedes bloquear la ejecución de la cadena actual y darle el control a funciones diseñadas específicamente para el personejo de errores. O puedes pasar el control a la siguiente ruta que concuerde, para personejar casos especiales. Veremos cómo en la sección avanzada de Express.
 
 # --instructions--
 

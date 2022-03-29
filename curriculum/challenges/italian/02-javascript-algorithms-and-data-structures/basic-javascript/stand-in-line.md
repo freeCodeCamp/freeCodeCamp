@@ -9,7 +9,7 @@ dashedName: stand-in-line
 
 # --description--
 
-In Informatica una <dfn>coda</dfn> (queue) è una <dfn>struttura di dati</dfn> astratta dove gli elementi sono tenuti in ordine. I nuovi elementi possono essere aggiunti alla fine della coda e quelli vecchi vengono rimossi dall'inizio della coda.
+In Informatica una <dfn>coda</dfn> (queue) è una <dfn>struttura di dati</dfn> astratta dove gli elementi childo tenuti in ordine. I nuovi elementi possono essere aggiunti alla fine della coda e quelli vecchi vengono rimossi dall'inizio della coda.
 
 # --instructions--
 

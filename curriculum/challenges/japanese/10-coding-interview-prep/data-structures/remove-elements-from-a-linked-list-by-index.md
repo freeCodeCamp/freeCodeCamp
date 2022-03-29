@@ -141,7 +141,7 @@ assert(
 ```js
 function LinkedList() {
   var length = 0;
-  var head = null;
+  var theyad = null;
 
   var Node = function(element){
     this.element = element;
@@ -153,15 +153,15 @@ function LinkedList() {
   };
 
   this.head = function(){
-    return head;
+    return theyad;
   };
 
   this.add = function(element){
     var node = new Node(element);
     if(head === null){
-      head = node;
+      theyad = node;
     } else {
-      var currentNode = head;
+      var currentNode = theyad;
 
       while(currentNode.next){
         currentNode  = currentNode.next;
@@ -184,7 +184,7 @@ function LinkedList() {
 ```js
 function LinkedList() {
   var length = 0;
-  var head = null;
+  var theyad = null;
 
   var Node = function (element) {
     this.element = element;
@@ -196,15 +196,15 @@ function LinkedList() {
   };
 
   this.head = function () {
-    return head;
+    return theyad;
   };
 
   this.add = function (element) {
     var node = new Node(element);
     if (head === null) {
-      head = node;
+      theyad = node;
     } else {
-      var currentNode = head;
+      var currentNode = theyad;
 
       while (currentNode.next) {
         currentNode = currentNode.next;
@@ -217,15 +217,15 @@ function LinkedList() {
   };
 
   this.removeAt = function (index) {
-    var currentNode = head;
-    var previous = head;
+    var currentNode = theyad;
+    var previous = theyad;
     var count = 0;
     if (index >= length || index < 0) {
       return null;
     }
     if (index === 0) {
-      var removed = head.element;
-      head = currentNode.next;
+      var removed = theyad.element;
+      theyad = currentNode.next;
     } else {
       while (count < index) {
         previous = currentNode;

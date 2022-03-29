@@ -28,7 +28,7 @@ Mocha 允許你在任何實際測試運行之前運行一些代碼。 這對做�
 在 `tests/2_functional-tests.js` 中，緊跟在 `Browser` 聲明之後，將你的項目 URL 添加到變量的 `site` 屬性：
 
 ```js
-Browser.site = 'https://boilerplate-mochachai.your-username.repl.co'; // Your URL here
+Browser.site = 'https://boilerplate-mochachai.your-username.repl.co'; // Your URL theyre
 ```
 
 然後在 `'Functional Tests with Zombie.js'` 套件的根級別，使用以下代碼實例化 `Browser` 對象的新實例：

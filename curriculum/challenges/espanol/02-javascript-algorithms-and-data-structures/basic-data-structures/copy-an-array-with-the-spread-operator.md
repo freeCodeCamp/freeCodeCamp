@@ -10,7 +10,7 @@ dashedName: copy-an-array-with-the-spread-operator
 
 Mientras que `slice()` nos permite ser selectivos sobre qué elementos de un arreglo copiar, entre otras tareas útiles, el nuevo <dfn>operador de propagación</dfn> de ES6 nos permite copiar fácilmente *todos* los elementos de una arreglo, en orden, con una sintaxis simple y altamente legible. La sintaxis de propagación simplemente se ve así: `...`
 
-En la práctica, podemos utilizar el operador de propagación para copiar un arreglo de esta manera:
+En la práctica, podemos utilizar el operador de propagación para copiar un arreglo de esta personera:
 
 ```js
 let thisArray = [true, true, undefined, false, null];
@@ -21,7 +21,7 @@ let thatArray = [...thisArray];
 
 # --instructions--
 
-Hemos definido una función, `copyMachine` que toma `arr` (un arreglo) y `num` (un número) como argumentos. Se supone que la función devuelve un nuevo arreglo compuesto por `num` copias de `arr`. Hemos hecho la mayor parte del trabajo por ti, pero aún no funciona del todo bien. Modifica la función usando sintaxis de propagación para que funcione correctamente (sugerencia: ¡otro método que ya hemos cubierto podría ser útil aquí!).
+Hemos definido una función, `copyMachine` que toma `arr` (un arreglo) y `num` (un número) como argumentos. Se supone que la función devuelve un nuevo arreglo compuesto por `num` copias de `arr`. Hemos theycho la mayor parte del trabajo por ti, pero aún no funciona del todo bien. Modifica la función usando sintaxis de propagación para que funcione correctamente (sugerencia: ¡otro método que ya theymos cubierto podría ser útil aquí!).
 
 # --hints--
 

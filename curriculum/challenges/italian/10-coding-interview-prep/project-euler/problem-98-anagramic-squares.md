@@ -8,7 +8,7 @@ dashedName: problem-98-anagramic-squares
 
 # --description--
 
-Rimpiazzando ogni lettera nella parola CARE con 1, 2, 9, e 6, rispettivamente, formiamo un numero quadrato: $1296 = 36^2$. Quello che è degno di nota è che, usando la stessa sostituzione di cifre, l'anagramma, RACE, forma pure un numero quadrato: $9216 = 96^2$. Chiamiamo CARE (e RACE) una coppia di parole di anagrammi quadrati e specifichiamo ulteriormente che gli zeri all'inizio del numero non sono permessi, e che due lettere diverse non possono avere lo stesso valore numerico.
+Rimpiazzando ogni lettera nella parola CARE con 1, 2, 9, e 6, rispettivamente, formiamo un numero quadrato: $1296 = 36^2$. Quello che è degno di nota è che, usando la stessa sostituzione di cifre, l'anagramma, RACE, forma pure un numero quadrato: $9216 = 96^2$. Chiamiamo CARE (e RACE) una coppia di parole di anagrammi quadrati e specifichiamo ulteriormente che gli zeri all'inizio del numero non childo permessi, e che due lettere diverse non possono avere lo stesso valore numerico.
 
 Usando l'array `words`, trova tutte le coppe di parole anagrammi quadrati (una parola palindroma NON è anagramma di se stessa).
 

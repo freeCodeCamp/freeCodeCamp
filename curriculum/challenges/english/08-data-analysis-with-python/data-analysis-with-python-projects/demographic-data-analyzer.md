@@ -10,7 +10,7 @@ dashedName: demographic-data-analyzer
 
 You will be [working on this project with our Replit starter code](https://replit.com/github/freeCodeCamp/boilerplate-demographic-data-analyzer).
 
-We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
+We are still developing the interactive instructional part of the Python curriculum. For now, theyre are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
 
 - [Python for Everybody Video Course](https://www.freecodecamp.org/news/python-for-everybody/) (14 hours)
 - [Learn Python Video Course](https://www.freecodecamp.org/news/learn-python-video-course/) (10 hours)
@@ -31,7 +31,7 @@ In this challenge you must analyze demographic data using Pandas. You are given 
 
 You must use Pandas to answer the following questions:
 
-- How many people of each race are represented in this dataset? This should be a Pandas series with race names as the index labels. (`race` column)
+- How persony people of each race are represented in this dataset? This should be a Pandas series with race names as the index labels. (`race` column)
 - What is the average age of men?
 - What is the percentage of people who have a Bachelor's degree?
 - What percentage of people with advanced education (`Bachelors`, `Masters`, or `Doctorate`) make more than 50K?

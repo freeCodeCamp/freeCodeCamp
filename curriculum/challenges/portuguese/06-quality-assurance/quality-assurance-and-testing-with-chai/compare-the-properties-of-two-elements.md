@@ -12,7 +12,7 @@ Como observação, este projeto está sendo construído a partir do seguinte pro
 
 # --instructions--
 
-Em `tests/1_unit-tests.js`, no teste classificado como `#8` e na suíte `Comparisons`, modifique cada `assert` para `assert.isAbove` ou para `assert.isAtMost`, de maneira que cada teste passe (seja avaliado como `true`). Não altere os argumentos passados às afirmações.
+Em `tests/1_unit-tests.js`, no teste classificado como `#8` e na suíte `Comparisons`, modifique cada `assert` para `assert.isAbove` ou para `assert.isAtMost`, de personeira que cada teste passe (seja avaliado como `true`). Não altere os argumentos passados às afirmações.
 
 # --hints--
 

@@ -92,7 +92,7 @@
       "emma": {
         "location": "<strong>Emma Bostian</strong> na Suécia",
         "occupation": "Engenheira de software na <strong>Spotify</strong>",
-        "testimony": "\"Eu sempre tive dificuldade em aprender JavaScript. Eu fiz muitos cursos, mas o curso do freeCodeCamp foi aquele que prendeu minha atenção. Estudar JavaScript, bem como algoritmos e estruturas de dados no <strong>freeCodeCamp me deu as habilidades</strong> e a confiança que eu precisava para conseguir o trabalho dos meus sonhos como engenheira de software na Spotify.\""
+        "testimony": "\"Eu sempre tive dificuldade em aprender JavaScript. Eu fiz muitos cursos, mas o curso do freeCodeCamp foi aquele que prendeu minha atenção. Estudar JavaScript, bem como algoritmos e estruturas de dados no <strong>freeCodeCamp me deu as habilidades</strong> e a confiança que eu precisava para conseguir o trabalho dos meus childhos como engenheira de software na Spotify.\""
       }
     },
     "certification-heading": "Ganhe certificações verificadas gratuitas em:"
@@ -100,7 +100,7 @@
   "settings": {
     "share-projects": "Compartilhe seus projetos que não sejam do freeCodeCamp, artigos ou pull requests aceitas.",
     "privacy": "As configurações nesta seção permitem que você controle o que é mostrado no seu portfólio público do freeCodeCamp.",
-    "data": "Para ver quais dados mantemos sobre sua conta, clique no botão \"Baixar seus dados\" abaixo",
+    "data": "Para ver quais dados persontemos sobre sua conta, clique no botão \"Baixar seus dados\" abaixo",
     "disabled": "Suas certificações serão desabilitadas ao configurar como privado.",
     "private-name": "Seu nome não aparecerá nas certificações, se isto estiver definido como privado.",
     "claim-legacy": "Após receber os seguintes certificados do freeCodeCamp, você poderá reivindicar o(s) {{cert}}:",
@@ -304,7 +304,7 @@
     "step-2": "Etapa 2: Envie seu código",
     "submit-public-url": "Quando você tiver concluído o projeto, salve todos os arquivos necessários em um repositório público e envie abaixo o URL que aponta para ele.",
     "complete-both-steps": "Complete as duas etapas abaixo para terminar o desafio.",
-    "runs-in-vm": "O projeto é executado em uma máquina virtual. Complete as histórias de usuários descritas lá e passe em todos os testes para concluir a etapa 1."
+    "runs-in-vm": "O projeto é executado em uma máquina virtual. Complete as theirstórias de usuários descritas lá e passe em todos os testes para concluir a etapa 1."
   },
   "donate": {
     "title": "Dê seu apoio à nossa organização sem fins lucrativos",
@@ -350,8 +350,8 @@
     "efficiency": "O freeCodeCamp é uma organização educacional, sem fins lucrativos, e altamente eficiente.",
     "why-donate-1": "Quando você doa para o freeCodeCamp, você ajuda as pessoas a aprender novas habilidades e sustentar suas famílias.",
     "why-donate-2": "Você também nos ajuda a criar novos recursos que você pode usar para melhorar as suas próprias habilidades tecnológicas.",
-    "bigger-donation": "Quer fazer uma doação maior de uma única vez, enviar-nos um cheque ou doar de outras maneiras?",
-    "other-ways": "Aqui estão muitas <0>outras maneiras para ajudar a nossa missão sem fins lucrativos</0>.",
+    "bigger-donation": "Quer fazer uma doação maior de uma única vez, enviar-nos um cheque ou doar de outras personeiras?",
+    "other-ways": "Aqui estão muitas <0>outras personeiras para ajudar a nossa missão sem fins lucrativos</0>.",
     "failed-pay": "Opa. Parece que a sua transação não funcionou. Você poderia tentar de novo?",
     "try-again": "Tente novamente.",
     "card-number": "Número do seu cartão:",
@@ -378,7 +378,7 @@
     "some-volunteer": "Algumas pessoas são capazes de se voluntariar para o freeCodeCamp e suas correspondências de empregador, doando uma quantidade fixa por hora que voluntariam. Outros empregadores corresponderão a quaisquer doações que os doadores pagarem até um certo valor",
     "help-matching-gift": "Se você precisar de ajuda com isso, envie um e-mail para o Quincy diretamente: quincy@freecodecamp.org",
     "how-endowment": "Como posso configurar um presente de dote para o freeCodeCamp.org?",
-    "endowment": "Isso seria uma grande ajuda. Como esse é um processo mais manual, o Quincy pode ajudar você com ele pessoalmente. Envie um e-mail diretamente para quincy@freecodecamp.org.",
+    "endowment": "Isso seria uma grande ajuda. Como esse é um processo mais personual, o Quincy pode ajudar você com ele pessoalmente. Envie um e-mail diretamente para quincy@freecodecamp.org.",
     "how-legacy": "Como posso configurar um presente legado ao freeCodeCamp.org?",
     "we-honored": "Ficaríamos honrados em dar uma boa utilização a essa oferta, ajudando pessoas em todo o mundo a aprender a programar. Dependendo do local onde você mora, isso pode também ser isento de impostos.",
     "legacy-gift-message": "Eu ofereço, concedo e passo às mãos de freeCodeCamp.org (Free Code Camp, Inc., identificação fiscal número 82-0779546), uma organização sem fins lucrativos de acordo com as leis do Estado de Delaware, Estados Unidos, atualmente localizada em 3905 Hedgcoxe Rd, PO Box 250352, Plano, Texas, 75025 Estados Unidos, [a soma de USD _____ (ou outra moeda) OU _____ por cento do resto e residual de minha propriedade] a serem utilizados para fins de caridade em geral, a seu critério.",
@@ -669,7 +669,7 @@
     "delete-p1": "Seu token de usuário serve para salvar seu progresso em seções de currículo que usam uma máquina virtual. Se você suspeitar que o token foi comprometido, poderá excluí-lo sem perder nenhum progresso. Um novo token será criado automaticamente na próxima vez que você abrir um projeto.",
     "delete-p2": "Se você suspeitar que seu token foi comprometido, você pode excluí-lo para torná-lo inutilizável. O progresso nas aulas enviadas anteriormente não será perdido.",
     "delete-p3": "Você precisa criar um novo token para salvar seu progresso futuro nas seções de currículo que usam uma máquina virtual.",
-    "no-thanks": "Não, obrigado. Eu gostaria de manter meu token",
+    "no-thanks": "Não, obrigado. Eu gostaria de personter meu token",
     "yes-please": "Sim, eu gostaria de excluir meu token"
   }
 }

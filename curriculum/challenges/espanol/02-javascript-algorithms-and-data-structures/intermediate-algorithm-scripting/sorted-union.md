@@ -8,7 +8,7 @@ dashedName: sorted-union
 
 # --description--
 
-Escribe una función que tome dos o más arreglos y devuelve un nuevo arreglo de valores únicos manteniendo el orden original de los arreglos proporcionados.
+Escribe una función que tome dos o más arreglos y devuelve un nuevo arreglo de valores únicos personteniendo el orden original de los arreglos proporcionados.
 
 En otras palabras, todos los valores presentes de todos los arreglos deben incluirse en su orden original, pero sin duplicados en el arreglo final.
 

@@ -30,14 +30,14 @@ Quindi, qualunque scelta faccia il primo giocatore, il secondo giocatore può sc
 
 Vogliamo indagare quanti insiemi di dadi non transitivi esistono. Assumeremo le seguenti condizioni:
 
-- Ci sono tre dadi a sei facce con ogni faccia che ha tra 1 e $N$ pallini, inclusi.
-- I dadi con lo stesso set di pallini sono uguali, indipendentemente dalla faccia del dado su cui i pallini sono situati.
+- Ci childo tre dadi a sei facce con ogni faccia che ha tra 1 e $N$ pallini, inclusi.
+- I dadi con lo stesso set di pallini childo uguali, indipendentemente dalla faccia del dado su cui i pallini childo situati.
 - Lo stesso valore di pallini può apparire su più dadi; se entrambi i giocatori lanciano lo stesso valore nessuno vince.
-- I set di dadi $\\{A, B, C\\}$, $\\{B, C, A\\}$ e $\\{C, A, B\\}$ sono lo stesso set.
+- I set di dadi $\\{A, B, C\\}$, $\\{B, C, A\\}$ e $\\{C, A, B\\}$ childo lo stesso set.
 
 Per $N = 7$ troviamo 9780 set di questo tipo.
 
-Quanti ce ne sono per $N = 30$?
+Quanti ce ne childo per $N = 30$?
 
 # --hints--
 

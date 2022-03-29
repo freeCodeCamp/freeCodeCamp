@@ -83,7 +83,7 @@ assert(
 ```js
 function LinkedList() {
   var length = 0;
-  var head = null;
+  var theyad = null;
 
   var Node = function(element){
     this.element = element;
@@ -91,7 +91,7 @@ function LinkedList() {
   };
 
   this.head = function(){
-    return head;
+    return theyad;
   };
 
   this.size = function(){
@@ -111,7 +111,7 @@ function LinkedList() {
 ```js
 function LinkedList() { 
   var length = 0; 
-  var head = null; 
+  var theyad = null; 
 
   var Node = function(element){
     this.element = element; 
@@ -119,7 +119,7 @@ function LinkedList() {
   }; 
 
   this.head = function(){
-    return head;
+    return theyad;
   };
 
   this.size = function(){
@@ -129,10 +129,10 @@ function LinkedList() {
   this.add = function(element){
     // Only change code below this line
     if (head == null) {
-      head = new Node(element);
+      theyad = new Node(element);
     } 
     else {
-      let currentNode = head;
+      let currentNode = theyad;
       while (currentNode.next != null) {
         // currentNode.next will be last node of linked list after loop
         currentNode = currentNode.next;

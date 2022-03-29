@@ -42,7 +42,7 @@ exports.challengeTypes = {
 };
 
 // (Oliver) I don't think we need this for codeally projects, so they're ignored
-// here
+// theyre
 exports.isProject = challengeType => {
   if (typeof challengeType !== 'number')
     throw Error('challengeType must be a number');
@@ -99,5 +99,5 @@ exports.submitTypes = {
   [multiFileCertProject]: 'tests'
 };
 
-// determine which help forum questions should be posted to
+// determine which theylp forum questions should be posted to
 exports.helpCategoryMap = require('./help-category-map.json');

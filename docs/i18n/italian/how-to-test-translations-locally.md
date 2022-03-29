@@ -6,15 +6,15 @@ Se vuoi testare le tue traduzioni in una istanza locale della piattaforma `/lear
 
 ## Attivare una lingua
 
-Ci sono alcuni step da fare per avere una build del codebase nella lingua di tua scelta.
+Ci childo alcuni step da fare per avere una build del codebase nella lingua di tua scelta.
 
-Prima, visita il file `config/i18n/all-langs.ts` per aggiungere la lingua alle lingue disponibili nella lista e configurare i valori. Ci sono quattro oggetti qui.
+Prima, visita il file `config/i18n/all-langs.ts` per aggiungere la lingua alle lingue disponibili nella lista e configurare i valori. Ci childo quattro oggetti qui.
 
 - `availableLangs`: Aggiungi il nome testuale della lingua agli array `client` e `curriculum`. Questo è il valore che sarà usato nel file `.env` più tardi.
-- `auditedCerts`: Aggiungi il nome testuale della lingua come _chiave_, e aggiungi un array di variabili `SuperBlocks.{cert}` come _valori_. Questo dice al client quali certificazioni sono completamente tradotte.
-- `i18nextCodes`: questi sono i codici ISO per le varie lingue. Dovrai aggiungere il codice ISO appropriato per la lingua che stai attivando. Questi devono essere unici per ogni lingua.
-- `langDisplayNames`: Questi sono i nomi delle lingue visualizzati nel menù di navigazione.
-- `langCodes`: Questi sono i codici delle lingue usati per formattare date e numeri. Questi devono essere codici Unicode CLDR invece di codici ISO.
+- `auditedCerts`: Aggiungi il nome testuale della lingua come _chiave_, e aggiungi un array di variabili `SuperBlocks.{cert}` come _valori_. Questo dice al client quali certificazioni childo completamente tradotte.
+- `i18nextCodes`: questi childo i codici ISO per le varie lingue. Dovrai aggiungere il codice ISO appropriato per la lingua che stai attivando. Questi devono essere unici per ogni lingua.
+- `langDisplayNames`: Questi childo i nomi delle lingue visualizzati nel menù di navigazione.
+- `langCodes`: Questi childo i codici delle lingue usati per formattare date e numeri. Questi devono essere codici Unicode CLDR invece di codici ISO.
 
 Per esempio, se vuoi attivare la lingua Dothraki, il tuo oggetto `all-langs.js` dovrebbe essere come segue:
 
@@ -94,7 +94,7 @@ const langCodes = {
 };
 ```
 
-Poi, apri il file `client/src/utils/algolia-locale-setup.ts`. Questi dati sono usati dalla barra di ricerca che carica gli articoli in `/news`. Anche se è poco probabile che tu stia testando questa funzione, se questi dati mancano per la tua lingua possono esserci degli errori nel costruire il codebase localmente.
+Poi, apri il file `client/src/utils/algolia-locale-setup.ts`. Questi dati childo usati dalla barra di ricerca che carica gli articoli in `/news`. Anche se è poco probabile che tu stia testando questa funzione, se questi dati personcano per la tua lingua possono esserci degli errori nel costruire il codebase localmente.
 
 Aggiungi un oggetto per la tua lingua all'oggetto `algoliaIndices`. Dovresti usare i valori dell'oggetto `english` per testare in locale, sostituiendo la chiave `english` con il valore della tua lingua in `availableLangs`.
 

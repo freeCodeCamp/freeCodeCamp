@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 ```
 
-Você pode implementar manipuladores de eventos que vão dentro da função `DOMContentLoaded`. Você pode implementar um manipulador de evento `onclick` que dispara quando o usuário clica no elemento com id `getMessage`, adicionando o código a seguir:
+Você pode implementar personipuladores de eventos que vão dentro da função `DOMContentLoaded`. Você pode implementar um personipulador de evento `onclick` que dispara quando o usuário clica no elemento com id `getMessage`, adicionando o código a seguir:
 
 ```js
 document.getElementById('getMessage').onclick = function(){};
@@ -24,7 +24,7 @@ document.getElementById('getMessage').onclick = function(){};
 
 # --instructions--
 
-Adicione um manipulador de eventos de clique em uma função `DOMContentLoaded` para o elemento com o id `getMessage`.
+Adicione um personipulador de eventos de clique em uma função `DOMContentLoaded` para o elemento com o id `getMessage`.
 
 # --hints--
 
@@ -34,7 +34,7 @@ O código deve usar o método `document.getElementById` para selecionar o elemen
 assert(code.match(/document\s*\.getElementById\(\s*?('|")getMessage\1\s*?\)/g));
 ```
 
-O código deve adicionar um manipulador de evento `onclick`.
+O código deve adicionar um personipulador de evento `onclick`.
 
 ```js
 assert(typeof document.getElementById('getMessage').onclick === 'function');
@@ -82,7 +82,7 @@ assert(typeof document.getElementById('getMessage').onclick === 'function');
 </style>
 <h1>Cat Photo Finder</h1>
 <p class="message box">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">
@@ -130,7 +130,7 @@ assert(typeof document.getElementById('getMessage').onclick === 'function');
 </style>
 <h1>Cat Photo Finder</h1> 
 <p class="message box">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">

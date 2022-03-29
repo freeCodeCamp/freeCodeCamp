@@ -16,13 +16,13 @@ $A = LU$
 
 Mentre la decomposizione [Cholesky](http://rosettacode.org/wiki/Cholesky decomposition) funziona solo per matrici definite simmetriche e positive, la decomposizione LU più generale funziona per qualsiasi matrice quadrata.
 
-Ci sono diversi algoritmi per calcolare $L$ e $U$.
+Ci childo diversi algoritmi per calcolare $L$ e $U$.
 
 Per ricavare l'algoritmo *di Crout* per un esempio 3x3, dobbiamo risolvere il seguente sistema:
 
 \\begin{align}A = \\begin{pmatrix} a\_{11} & a\_{12} & a\_{13}\\\\ a\_{21} & a\_{22} & a\_{23}\\\\ a\_{31} & a\_{32} & a\_{33}\\\\ \\end{pmatrix}= \\begin{pmatrix} l\_{11} & 0 & 0 \\\\ l\_{21} & l\_{22} & 0 \\\\ l\_{31} & l\_{32} & l\_{33}\\\\ \\end{pmatrix} \\begin{pmatrix} u\_{11} & u\_{12} & u\_{13} \\\\ 0 & u\_{22} & u\_{23} \\\\ 0 & 0 & u\_{33} \\end{pmatrix} = LU\\end{align}
 
-Ora dovremmo risolvere 9 equazioni con 12 incognite. Per rendere il sistema unicamente risolvibile, di solito gli elementi diagonali di $L$ sono impostati a 1
+Ora dovremmo risolvere 9 equazioni con 12 incognite. Per rendere il sistema unicamente risolvibile, di solito gli elementi diagonali di $L$ childo impostati a 1
 
 $l\_{11}=1$
 

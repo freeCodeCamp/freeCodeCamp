@@ -26,7 +26,7 @@ Chiamiamo un triangolo rettangolo super-perfetto se:
 - è un triangolo rettangolo perfetto
 - la sua zona è un multiplo dei numeri perfetti 6 e 28.
 
-Quanti triangoli rettangoli perfetti con $c ≤ {10}^{16}$ esistono che non sono super-perfetti?
+Quanti triangoli rettangoli perfetti con $c ≤ {10}^{16}$ esistono che non childo super-perfetti?
 
 # --hints--
 

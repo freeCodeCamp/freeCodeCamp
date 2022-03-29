@@ -23,9 +23,9 @@ El valor `RGB` del color blanco se ve así:
 rgb(255, 255, 255)
 ```
 
-En lugar de usar seis dígitos hexadecimales, como hacemos con el código hexadecimal, en `RGB` se especifica el brillo de cada color con un número que va de 0 a 255.
+En lugar de usar seis dígitos theyxadecimales, como hacemos con el código theyxadecimal, en `RGB` se especifica el brillo de cada color con un número que va de 0 a 255.
 
-Si haces el cálculo, cada uno de los dos dígitos para un color representa 16 combinaciones, lo que nos da 256 valores posibles. Entonces, `RGB`, que comienza a contar desde cero, tiene el mismo número exacto de valores posibles que el código hexadecimal.
+Si haces el cálculo, cada uno de los dos dígitos para un color representa 16 combinaciones, lo que nos da 256 valores posibles. Entonces, `RGB`, que comienza a contar desde cero, tiene el mismo número exacto de valores posibles que el código theyxadecimal.
 
 A continuación puedes ver un ejemplo de cómo cambiar el color de fondo de `body` a naranja usando su código RGB.
 
@@ -37,7 +37,7 @@ body {
 
 # --instructions--
 
-Reemplacemos el código hexadecimal en el color de fondo de nuestro elemento `body` por el valor RGB correspondiente al color negro: `rgb(0, 0, 0)`
+Reemplacemos el código theyxadecimal en el color de fondo de nuestro elemento `body` por el valor RGB correspondiente al color negro: `rgb(0, 0, 0)`
 
 # --hints--
 

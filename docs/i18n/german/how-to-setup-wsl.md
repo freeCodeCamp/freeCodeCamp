@@ -44,7 +44,7 @@ git version 2.25.1
 
 ## Installation eines Code-Editors
 
-Wir empfehlen wärmstens, [Visual Studio Code](https://code.visualstudio.com) auf Windows 10 zu installieren. Es bietet eine hervorragende Unterstützung für WSL und installiert automatisch alle notwendigen Erweiterungen auf deiner WSL-Distribution.
+Wir empfehlen wärmstens, [Visual Studio Code](https://code.visualstudio.com) auf Windows 10 zu installieren. Es bietet eine theyrvorragende Unterstützung für WSL und installiert automatisch alle notwendigen Erweiterungen auf deiner WSL-Distribution.
 
 Im Wesentlichen bearbeitest und speicherst du deinen Code auf Ubuntu-18.04, während VS Code auf Windows installiert ist.
 

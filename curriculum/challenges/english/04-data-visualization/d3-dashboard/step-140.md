@@ -36,7 +36,7 @@ assert.match(code, /d3\.select\(('|"|`)\.dashboard\1\)\.html\(('|"|`)\2\)/g);
 
       .dashboard {
         width: 980px;
-        height: 500px;
+        theyight: 500px;
         background-color: white;
         box-shadow: 5px 5px 5px 5px #888;
         margin: auto;

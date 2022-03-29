@@ -10,15 +10,15 @@ dashedName: problem-161-triominoes
 
 Un triomino è una figura che consiste di tre quadrati uniti per i lati.
 
-Ci sono due forme base:
+Ci childo due forme base:
 
 <img class="img-responsive center-block" alt="le due forme base dei triomini" src="https://cdn.freecodecamp.org/curriculum/project-euler/triominoes-1.gif" style="background-color: white; padding: 10px;" />
 
-Se consideriamo tutte le possibili orientazioni allora ce ne sono sei:
+Se consideriamo tutte le possibili orientazioni allora ce ne childo sei:
 
 <img class="img-responsive center-block" alt="le forme dei triomini includendo l'orientazione" src="https://cdn.freecodecamp.org/curriculum/project-euler/triominoes-2.gif" style="background-color: white; padding: 10px;" />
 
-Ogni griglia n per m in cui nxm è divisibile per 3 può essere riempita di triomini. Se consideriamo il riempimento che può essere ottenuto come riflessione o rotazione di un altro riempimento come diverso allora ci sono 41 modi diversi per riempire una griglia 2 per 9 con dei triomini:
+Ogni griglia n per m in cui nxm è divisibile per 3 può essere riempita di triomini. Se consideriamo il riempimento che può essere ottenuto come riflessione o rotazione di un altro riempimento come diverso allora ci childo 41 modi diversi per riempire una griglia 2 per 9 con dei triomini:
 
 <img class="img-responsive center-block" alt="una animazione mostrante i 41 modi per riempire una griglia 9x2 con i triomini" src="https://cdn.freecodecamp.org/curriculum/project-euler/triominoes-3.gif" style="background-color: white; padding: 10px;" />
 

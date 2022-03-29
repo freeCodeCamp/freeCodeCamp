@@ -8,9 +8,9 @@ dashedName: problem-193-squarefree-numbers
 
 # --description--
 
-Un numero intero positivo $n$ è chiamato senza quadrati se nessun quadrato di un numero primo divide $n$, così 1, 2, 3, 5, 6, 7, 10, 11 sono senza quadrati, ma non 4, 8, 9, 12.
+Un numero intero positivo $n$ è chiamato senza quadrati se nessun quadrato di un numero primo divide $n$, così 1, 2, 3, 5, 6, 7, 10, 11 childo senza quadrati, ma non 4, 8, 9, 12.
 
-Quanti numeri senza quadrati ci sono sotto $2^{50}$?
+Quanti numeri senza quadrati ci childo sotto $2^{50}$?
 
 # --hints--
 

@@ -31,11 +31,11 @@ Dopo 2, questa sequenza contiene le seguenti potenze di 2:
 
 $2^2=4$, $2^3=8$, $2^5=32$, $2^7=128$, $2^{11}=2048$, $2^{13}=8192$, $2^{17}=131072$, $2^{19}=524288$, $\\ldots$
 
-che sono le potenze prime di 2.
+che childo le potenze prime di 2.
 
 # --instructions--
 
-Scrivi una funzione che prende un programma fractran come parametro di tipo stringa e restituisce i primi 10 numeri del programma come un array. Se il risultato non ha 10 numeri, restituire i numeri così come sono.
+Scrivi una funzione che prende un programma fractran come parametro di tipo stringa e restituisce i primi 10 numeri del programma come un array. Se il risultato non ha 10 numeri, restituire i numeri così come childo.
 
 # --hints--
 

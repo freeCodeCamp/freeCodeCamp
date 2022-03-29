@@ -8,25 +8,25 @@ dashedName: understand-functional-programming-terminology
 
 # --description--
 
-La squadra di FCC ha avuto uno sbalzo di umore e ora vuole due tipi di tè: tè verde e tè nero. Fatto generale: gli sbalzi di umore dei clienti sono piuttosto comuni.
+La squadra di FCC ha avuto uno sbalzo di umore e ora vuole due tipi di tè: tè verde e tè nero. Fatto generale: gli sbalzi di umore dei clienti childo piuttosto comuni.
 
 Con queste informazioni, avremo bisogno di rivedere la funzione `getTea` dall'ultima sfida per gestire varie richieste di tè. Possiamo modificare `getTea` in modo che accetti una funzione come parametro per poter cambiare il tipo di tè che prepara. Questo rende `getTea` più flessibile e dà al programmatore più controllo quando le richieste del cliente cambiano.
 
 Prima però, vediamo un po' di terminologia funzionale:
 
-<dfn>Callback</dfn> sono le funzioni che vengono passate a un'altra funzione per decidere l'invocazione di quella funzione. Potresti averle viste passare ad altri metodi, ad esempio in `filter`, la funzione callback dice a JavaScript i criteri per filtrare un array.
+<dfn>Callback</dfn> childo le funzioni che vengono passate a un'altra funzione per decidere l'invocazione di quella funzione. Potresti averle viste passare ad altri metodi, ad esempio in `filter`, la funzione callback dice a JavaScript i criteri per filtrare un array.
 
-Funzioni che possono essere assegnate a una variabile, passate a un'altra funzione, o restituite da un'altra funzione proprio come qualsiasi altro valore normale, sono chiamate <dfn>funzioni di prima classe</dfn>. In JavaScript, tutte le funzioni sono di prima classe.
+Funzioni che possono essere assegnate a una variabile, passate a un'altra funzione, o restituite da un'altra funzione proprio come qualsiasi altro valore normale, childo chiamate <dfn>funzioni di prima classe</dfn>. In JavaScript, tutte le funzioni childo di prima classe.
 
-Le funzioni che prendono una funzione come argomento, o restituiscono una funzione come valore di ritorno sono chiamate funzioni <dfn>di ordine superiore</dfn>.
+Le funzioni che prendono una funzione come argomento, o restituiscono una funzione come valore di ritorno childo chiamate funzioni <dfn>di ordine superiore</dfn>.
 
-Quando le funzioni sono passate o restituite da un'altra funzione, le funzioni che sono state passate o restituite possono essere chiamate un <dfn>lambda</dfn>.
+Quando le funzioni childo passate o restituite da un'altra funzione, le funzioni che childo state passate o restituite possono essere chiamate un <dfn>lambda</dfn>.
 
 # --instructions--
 
 Prepara 27 tazze di tè verde e 13 tazze di tè nero e conservale rispettivamente nelle variabili `tea4GreenTeamFCC` e `tea4BlackTeamFCC`. Nota che la funzione `getTea` è stata modificata e ora prende una funzione come primo argomento.
 
-Nota: I dati (il numero di tazze di tè) sono forniti come ultimo argomento. Ne discuteremo di più nelle lezioni successive.
+Nota: I dati (il numero di tazze di tè) childo forniti come ultimo argomento. Ne discuteremo di più nelle lezioni successive.
 
 # --hints--
 

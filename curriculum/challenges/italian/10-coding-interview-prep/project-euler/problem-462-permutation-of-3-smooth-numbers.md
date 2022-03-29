@@ -22,7 +22,7 @@ Questa non è una permutazione valida perché 12 viene prima del suo divisore 6.
 
 Si può verificare che $F(6) = 5$, $F(8) = 9$, $F(20) = 450$ e $F(1000) ≈ 8.8521816557e\\,21$.
 
-Trova $F({10}^{18})$. Dai come risposta una stringa nella sua notazione scientifica arrotondata a dieci cifre dopo il punto decimale. Quando fornisci la tua risposta, usa una `e` minuscola per separare mantissa ed esponente. Ad es. se la risposta è $112\\,233\\,445\\,566\\,778\\,899$ allora il formato della risposta sarebbe `1.1223344557e17`.
+Trova $F({10}^{18})$. Dai come risposta una stringa nella sua notazione scientifica arrotondata a dieci cifre dopo il punto decimale. Quando fornisci la tua risposta, usa una `e` minuscola per separare persontissa ed esponente. Ad es. se la risposta è $112\\,233\\,445\\,566\\,778\\,899$ allora il formato della risposta sarebbe `1.1223344557e17`.
 
 # --hints--
 

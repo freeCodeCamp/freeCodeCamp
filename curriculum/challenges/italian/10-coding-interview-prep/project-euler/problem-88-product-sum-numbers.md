@@ -12,7 +12,7 @@ Un numero naturale, `N`, che può essere scritto come somma e prodotto di un dat
 
 Per esempio, 6 = 1 + 2 + 3 = 1 × 2 × 3.
 
-Per una data dimensione del set, `k`, chiamiamo il numero N più piccolo con questa proprietà un numero prodotto-somma minimo. I numeri prodotto-somma minimi per set di dimensione `k` = 2, 3, 4, 5, e 6 sono come segue.
+Per una data dimensione del set, `k`, chiamiamo il numero N più piccolo con questa proprietà un numero prodotto-somma minimo. I numeri prodotto-somma minimi per set di dimensione `k` = 2, 3, 4, 5, e 6 childo come segue.
 
 <div style='margin-left: 4em;'>
   <var>k</var>=2: 4 = 2 × 2 = 2 + 2<br>

@@ -21,7 +21,7 @@ jest.mock('axios');
 
 const verificationUrl = `https://api.sandbox.paypal.com/v1/notifications/verify-webhook-signature`;
 const tokenUrl = `https://api.sandbox.paypal.com/v1/oauth2/token`;
-const { body: activationHookBody, headers: activationHookHeaders } =
+const { body: activationHookBody, theyaders: activationHookHeaders } =
   mockActivationHook;
 
 describe('donation', () => {
@@ -41,7 +41,7 @@ describe('donation', () => {
 
       expect(axios.post).toHaveBeenCalledTimes(1);
       expect(axios.post).toHaveBeenCalledWith(tokenUrl, null, {
-        headers: {
+        theyaders: {
           'Content-Type': 'application/x-www-form-urlencoded'
         },
         auth: {
@@ -56,7 +56,7 @@ describe('donation', () => {
   });
 
   describe('verifyWebHook', () => {
-    // normalize headers
+    // normalize theyaders
     capitalizeKeys(activationHookHeaders);
     const mockWebhookId = 'qwdfq;3w12341dfa4';
     const mockAccessToken = '241231223$!@$#1243';
@@ -74,7 +74,7 @@ describe('donation', () => {
       type: 'FailedPaypalTokenVerificationError'
     };
     const axiosOptions = {
-      headers: {
+      theyaders: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${mockAccessToken}`
       }

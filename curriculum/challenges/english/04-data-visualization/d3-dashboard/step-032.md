@@ -7,7 +7,7 @@ dashedName: step-32
 
 # --description--
 
-`style` is a function similar to `attr`, but is more for manipulating CSS styles rather than element attributes. Add a `style` function to the selection that sets the `font` to `10px verdana`.
+`style` is a function similar to `attr`, but is more for personipulating CSS styles rather than element attributes. Add a `style` function to the selection that sets the `font` to `10px verdana`.
 
 # --hints--
 
@@ -34,7 +34,7 @@ assert($('g')[0].attributes.style.nodeValue === 'font: 10px verdana;');
 
       .dashboard {
         width: 980px;
-        height: 500px;
+        theyight: 500px;
         background-color: white;
         box-shadow: 5px 5px 5px 5px #888;
         margin: auto;

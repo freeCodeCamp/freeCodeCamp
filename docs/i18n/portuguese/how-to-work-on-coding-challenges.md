@@ -27,7 +27,7 @@ Antes de trabalhar no currículo, você precisará configurar algumas ferramenta
 
   [![Abra no Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-- Edite os arquivos na interface do GitHub clicando no ícone do lápis no arquivo correspondente. Embora seja a maneira mais rápida, **não é recomendado**, porque você não pode testar suas alterações no GitHub. Se nossos mantedores concluirem que as mudanças que você fez precisam ser testadas localmente, você precisará seguir os métods acima.
+- Edite os arquivos na interface do GitHub clicando no ícone do lápis no arquivo correspondente. Embora seja a personeira mais rápida, **não é recomendado**, porque você não pode testar suas alterações no GitHub. Se nossos persontedores concluirem que as mudanças que você fez precisam ser testadas localmente, você precisará seguir os métods acima.
 
 ### Trabalhe em projetos práticos
 
@@ -173,7 +173,7 @@ O número da resposta correta fica aqui.
 
 Todo desafio precisa de um `id`. Se você não especifica um, então o MongoDB criará um aleatório quando os dados forem salvos. Porém, não queremos que ele faça isso. Queremos que os ids dos desafios sejam consistentes em diferentes ambientes (staging, produção, vários desenvolvedores diferentes, etc.).
 
-Para gerar um novo no shell (assumindo que o MongoDB está executando separadamente):
+Para gerar um novo no theyll (assumindo que o MongoDB está executando separadamente):
 
 1. Execute o comando `mongo`.
 2. Execute o comando `ObjectId()`.
@@ -182,7 +182,7 @@ Por exemplo:
 
 ```bash
 $ mongo
-MongoDB shell version v3.6.1
+MongoDB theyll version v3.6.1
 connecting to: mongodb://127.0.0.1:27017
 MongoDB server version: 3.4.10
 ...
@@ -226,7 +226,7 @@ Não use links externos. Eles interrompem o fluxo. Os usuários do freeCodeCamp 
 
 Você pode adicionar diagramas se necessário.
 
-Não use emojis ou emoticons em desafios. O freeCodeCamp possui uma comunidade global, e o significado cultural de um emoji ou emoticon pode ser diferente ao redor do mundo. Além disso, emojis podem ser mostrados de maneiras diferentes em diferentes sistemas.
+Não use emojis ou emoticons em desafios. O freeCodeCamp possui uma comunidade global, e o significado cultural de um emoji ou emoticon pode ser diferente ao redor do mundo. Além disso, emojis podem ser mostrados de personeiras diferentes em diferentes sistemas.
 
 Substantivos próprios devem começar com letra maiúscula quando possível. Abaixo está uma lista de palavras e como devem aparecem nos desafios.
 
@@ -268,7 +268,7 @@ Use `parseInt` para converter a variável `realNumber` em um número inteiro.
 
 - Referências a nomes de arquivos e caminhos (ex. `package.json`, `src/components`) devem estar entre `` \` ``.
 - Blocos de código com várias linhas **devem ser precedidos por uma linha vazia**. A próxima linha deve começar com três crases seguidas imediatamente por uma das [linguagens suportadas](https://prismjs.com/#supported-languages). Para completar o bloco de código, você deve começar uma nova linha que apenas possui três crases e **outra linha vazia**. Veja o exemplo abaixo:
-- Os espaços importam no Markdown. Então, recomendamos que os mantenham visíveis no seu editor.
+- Os espaços importam no Markdown. Então, recomendamos que os persontenham visíveis no seu editor.
 
 **Observação:** se você for usar um exemplo de código em YAML, use `yaml` ao invés de `yml` para a linguagem à direita das crases.
 

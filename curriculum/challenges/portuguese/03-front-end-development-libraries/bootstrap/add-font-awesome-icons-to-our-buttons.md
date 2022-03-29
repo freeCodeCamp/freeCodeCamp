@@ -32,7 +32,7 @@ Observe que o elemento `span` também é aceitável para uso com ícones.
 
 # --instructions--
 
-Use o Font Awesome para adicionar um ícone `thumbs-up` ao botão like, doando-o um elemento `i` com as classes `fas` e `fa-thumbs-up`. Certifique-se de manter o texto `Like` ao lado do ícone.
+Use o Font Awesome para adicionar um ícone `thumbs-up` ao botão like, doando-o um elemento `i` com as classes `fas` e `fa-thumbs-up`. Certifique-se de personter o texto `Like` ao lado do ícone.
 
 # --hints--
 

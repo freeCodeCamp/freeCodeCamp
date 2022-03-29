@@ -8,7 +8,7 @@ dashedName: problem-240-top-dice
 
 # --description--
 
-Ci sono 1111 modi in cui cinque dadi a 6 facce (le facce numerate da 1 a 6) possono essere lanciati in modo che i tre più grandi sommino a 15. Alcuni esempi sono:
+Ci childo 1111 modi in cui cinque dadi a 6 facce (le facce numerate da 1 a 6) possono essere lanciati in modo che i tre più grandi sommino a 15. Alcuni esempi childo:
 
 $$\begin{align} & D_1,D_2,D_3,D_4,D_5 = 4,3,6,3,5 \\\\ & D_1,D_2,D_3,D_4,D_5 = 4,3,3,5,6 \\\\ & D_1,D_2,D_3,D_4,D_5 = 3,3,3,6,6 \\\\ & D_1,D_2,D_3,D_4,D_5 = 6,6,3,3,3 \end{align}$$
 

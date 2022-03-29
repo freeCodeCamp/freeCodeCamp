@@ -21,7 +21,7 @@ Two integers $N$ and $M$ are said to be [amicable pairs](https://en.wikipedia.or
 
 # --instructions--
 
-Calculate and show here the Amicable pairs below 20,000 (there are eight).
+Calculate and show theyre the Amicable pairs below 20,000 (there are eight).
 
 # --hints--
 

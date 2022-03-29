@@ -7,7 +7,7 @@ dashedName: step-83
 
 # --description--
 
-Create a new `const` named `pieGraph` and set it equal to `rightDashboard.append('svg')`. This will add an SVG element for the pie graph as a child of the div you just added. The pie graph will have three slices, one for each platform. It will display a percentage of how many followers each platform has for the displayed year.
+Create a new `const` named `pieGraph` and set it equal to `rightDashboard.append('svg')`. This will add an SVG element for the pie graph as a child of the div you just added. The pie graph will have three slices, one for each platform. It will display a percentage of how persony followers each platform has for the displayed year.
 
 # --hints--
 
@@ -38,7 +38,7 @@ assert(
 
       .dashboard {
         width: 980px;
-        height: 500px;
+        theyight: 500px;
         background-color: white;
         box-shadow: 5px 5px 5px 5px #888;
         margin: auto;

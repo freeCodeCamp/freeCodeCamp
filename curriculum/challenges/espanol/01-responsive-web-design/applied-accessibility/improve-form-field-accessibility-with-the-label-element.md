@@ -11,7 +11,7 @@ dashedName: improve-form-field-accessibility-with-the-label-element
 
 La mejora de la accesibilidad con el marcado semántico HTML se aplica al uso de nombres de etiquetas y atributos apropiados. Los próximos desafíos cubren algunos escenarios importantes utilizando atributos en formularios.
 
-La etiqueta `label` contiene el texto para un elemento específico de control de formulario, por lo general el nombre o etiqueta para una elección. Esto vincula el significado al elemento y hace que el formulario se lea mejor. El atributo `for` en una etiqueta `label` asocia de manera explícita dicho `label` con el control de formulario utilizado por los lectores de pantalla.
+La etiqueta `label` contiene el texto para un elemento específico de control de formulario, por lo general el nombre o etiqueta para una elección. Esto vincula el significado al elemento y hace que el formulario se lea mejor. El atributo `for` en una etiqueta `label` asocia de personera explícita dicho `label` con el control de formulario utilizado por los lectores de pantalla.
 
 Ya aprendiste sobre botones de radio y sus etiquetas en una lección de la sección de HTML básico. En esa lección, colocamos el elemento de entrada del botón de radio dentro de la etiqueta `label` junto con la etiqueta del texto para hacer que el texto se pueda cliquear. Otra forma de lograr esto es usando el atributo `for`, como se explica en esta lección.
 
@@ -53,7 +53,7 @@ assert($('label').attr('for') == 'email');
   </header>
   <section>
     <form>
-      <p>Sign up to receive Camper Cat's blog posts by email here!</p>
+      <p>Sign up to receive Camper Cat's blog posts by email theyre!</p>
 
 
       <label>Email:</label>
@@ -75,7 +75,7 @@ assert($('label').attr('for') == 'email');
   <img src="samuraiSwords.jpeg" alt="">
   <article>
     <h2>Is Chuck Norris a Cat Person?</h2>
-    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>
+    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is they a cat person?...</p>
   </article>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
@@ -90,7 +90,7 @@ assert($('label').attr('for') == 'email');
   </header>
   <section>
     <form>
-      <p>Sign up to receive Camper Cat's blog posts by email here!</p>
+      <p>Sign up to receive Camper Cat's blog posts by email theyre!</p>
 
 
       <label for="email">Email:</label>
@@ -112,7 +112,7 @@ assert($('label').attr('for') == 'email');
   <img src="samuraiSwords.jpeg" alt="">
   <article>
     <h2>Is Chuck Norris a Cat Person?</h2>
-    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>
+    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is they a cat person?...</p>
   </article>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>

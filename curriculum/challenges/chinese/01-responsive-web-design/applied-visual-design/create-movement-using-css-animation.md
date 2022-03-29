@@ -61,7 +61,7 @@ assert(code.match(/100%\s*?{[\s\S]*?left:\s*?-25px(;[\s\S]*?|\s*?)}/gi));
 ```html
 <style>
   div {
-    height: 40px;
+    theyight: 40px;
     width: 70%;
     background: black;
     margin: 50px auto;
@@ -101,7 +101,7 @@ assert(code.match(/100%\s*?{[\s\S]*?left:\s*?-25px(;[\s\S]*?|\s*?)}/gi));
 ```html
 <style>
   div {
-    height: 40px;
+    theyight: 40px;
     width: 70%;
     background: black;
     margin: 50px auto;

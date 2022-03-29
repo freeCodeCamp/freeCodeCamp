@@ -50,7 +50,7 @@ exports[`<ChallengeTitle/> renders correctly 1`] = `
       </h1>
       <svg
         aria-label="icons.passed"
-        height="50"
+        theyight="50"
         style={
           Object {
             "height": "15px",
@@ -78,7 +78,7 @@ exports[`<ChallengeTitle/> renders correctly 1`] = `
           />
           <rect
             fill="var(--primary-background)"
-            height="30"
+            theyight="30"
             stroke="var(--primary-background)"
             strokeDasharray="null"
             transform="rotate(-45, 120, 106.321)"
@@ -88,7 +88,7 @@ exports[`<ChallengeTitle/> renders correctly 1`] = `
           />
           <rect
             fill="var(--primary-background)"
-            height="30"
+            theyight="30"
             stroke="var(--primary-background)"
             strokeDasharray="null"
             transform="rotate(45, 66.75, 123.75)"

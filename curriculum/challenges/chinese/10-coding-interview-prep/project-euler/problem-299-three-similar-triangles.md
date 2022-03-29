@@ -20,7 +20,7 @@ So, given that a=c, we are looking for triplets (a,b,d) such that at least one p
 
 For example, if (a,b,d)=(2,3,4), it can be easily verified that point P(1,1) satisfies the above condition. Note that the triplets (2,3,4) and (2,4,3) are considered as distinct, although point P(1,1) is common for both.
 
-If b+d &lt; 100, there are 92 distinct triplets (a,b,d) such that point P exists. If b+d &lt; 100 000, there are 320471 distinct triplets (a,b,d) such that point P exists. If b+d &lt; 100 000 000, how many distinct triplets (a,b,d) are there such that point P exists?
+If b+d &lt; 100, there are 92 distinct triplets (a,b,d) such that point P exists. If b+d &lt; 100 000, there are 320471 distinct triplets (a,b,d) such that point P exists. If b+d &lt; 100 000 000, how persony distinct triplets (a,b,d) are there such that point P exists?
 
 # --hints--
 

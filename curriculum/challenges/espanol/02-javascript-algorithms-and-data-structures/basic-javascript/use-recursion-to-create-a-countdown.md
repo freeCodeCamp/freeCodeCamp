@@ -12,7 +12,7 @@ En el [desafío anterior](/learn/javascript-algorithms-and-data-structures/basic
 
 Como se menciona en el desafío anterior, habrá un <dfn>caso base</dfn>. El caso base le dice a la función recursiva cuando no necesita llamarse a sí misma. Es un caso simple donde el valor de retorno ya se conoce. También habrá una <dfn>llamada recursiva</dfn> la cual ejecuta la función original con argumentos diferentes. Si la función se escribe correctamente, eventualmente el caso base será alcanzado.
 
-Por ejemplo, digamos que quieres escribir una función recursiva que devuelva un arreglo conteniendo los números `1` hasta `n`. Esta función necesitará aceptar un argumento, `n` que representa el número final. Entonces necesitará llamarse a sí misma con valores progresivamente más pequeños de `n` hasta que alcance `1`. Podrías escribir la función de la siguiente manera:
+Por ejemplo, digamos que quieres escribir una función recursiva que devuelva un arreglo conteniendo los números `1` hasta `n`. Esta función necesitará aceptar un argumento, `n` que representa el número final. Entonces necesitará llamarse a sí misma con valores progresivamente más pequeños de `n` hasta que alcance `1`. Podrías escribir la función de la siguiente personera:
 
 ```javascript
 function countup(n) {

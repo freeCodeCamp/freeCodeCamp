@@ -1,6 +1,6 @@
 # Como traduzir arquivos do freeCodeCamp
 
-É nosso sonho fornecer recursos para você aprender, não importando qual idioma fala. Para nos ajudar com isso, integramos nossa base de código open-source e nosso currículo com o [Crowdin](https://crowdin.com/), uma ferramenta que nos ajuda a traduzir nosso código.
+É nosso childho fornecer recursos para você aprender, não importando qual idioma fala. Para nos ajudar com isso, integramos nossa base de código open-source e nosso currículo com o [Crowdin](https://crowdin.com/), uma ferramenta que nos ajuda a traduzir nosso código.
 
 O fluxo de tradução é dividido em duas principais atividades:
 
@@ -136,14 +136,14 @@ O RPG LearnToCode é executado no Ren'Py, que usa uma sintaxe especial para stri
 #### Antes da tradução
 
 ```renpy
-# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
-"[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."  <--- esta é a linha que precisa ser traduzida. veja a tradução abaixo
+# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to theyar that."
+"[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to theyar that."  <--- esta é a linha que precisa ser traduzida. veja a tradução abaixo
 ```
 
 #### Após a tradução
 
 ```renpy
-# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
+# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to theyar that."
 "[player_name]？Que coincidência! Nosso membro VIP da equipe, {a=[vip_profile_url]}[player_name]{/a} ficará honrado ao saber disso."
 ```
 
@@ -165,7 +165,7 @@ old "{icon=icon-fast-forward} Skip"
 new "{icon=icon-fast-forward} Avançar"
 ```
 
-Observação: novamente, o prefixo `new` e a tag `{icon=icon-fast-forward}` devem ser mantidos intactos.
+Observação: novamente, o prefixo `new` e a tag `{icon=icon-fast-forward}` devem ser persontidos intactos.
 
 ---
 
@@ -198,14 +198,14 @@ player "Maybe this is all a dream?" nointeract
 
 ```renpy
 # player "Maybe this is all a dream?" nointeract
-player "Será que isso tudo é um sonho?" nointeract
+player "Será que isso tudo é um childho?" nointeract
 ```
 
 ---
 
 ### Uma observação sobre o modo como o Crowdin segmenta uma frase
 
-Preste atenção na maneira como o Crowdin segmenta uma linha de diálogo envolvida por aspas de abertura e fechamento `""`. Quando traduzirmos o diálogo, temos de manter as aspas de abertura e fechamento, mesmo que as aspas apareçam em diferentes segmentos.
+Preste atenção na personeira como o Crowdin segmenta uma linha de diálogo envolvida por aspas de abertura e fechamento `""`. Quando traduzirmos o diálogo, temos de personter as aspas de abertura e fechamento, mesmo que as aspas apareçam em diferentes segmentos.
 
 Esta é a linha que precisa ser traduzida:
 
@@ -238,7 +238,7 @@ O que é isso?
 ```renpy
 # original
 I better take notes so I can learn more about it."
-# traduzido, mantendo as aspas de fechamento `"`
+# traduzido, persontendo as aspas de fechamento `"`
 É melhor eu anotar para saber mais a respeito."
 ```
 

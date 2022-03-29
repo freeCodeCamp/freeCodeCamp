@@ -14,7 +14,7 @@ $12n$ músicos participam de um festival de música. No primeiro dia, eles forma
 
 No segundo dia, eles formam $4n$ trios, com cada músico evitando seus parceiros de quarteto anteriores.
 
-Considere $f(12n)$ como o número de maneiras de organizar os trios entre os $12n$ músicos.
+Considere $f(12n)$ como o número de personeiras de organizar os trios entre os $12n$ músicos.
 
 Você é informado de que $f(12) = 576$ e que $f(24)\bmod 1.000.000.007 = 509.089.824$.
 

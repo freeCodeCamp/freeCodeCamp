@@ -8,7 +8,7 @@ dashedName: get-json-with-the-javascript-fetch-method
 
 # --description--
 
-Otra manera de solicitar datos externos es utilizar el método `fetch()` de JavaScript. Es equivalente a `XMLHttpRequest`, pero la sintaxis se considera más fácil de entender.
+Otra personera de solicitar datos externos es utilizar el método `fetch()` de JavaScript. Es equivalente a `XMLHttpRequest`, pero la sintaxis se considera más fácil de entender.
 
 Aquí está el código para hacer una solicitud GET a `/json/cats.json`
 
@@ -28,7 +28,7 @@ En la primera línea es la que realiza la petición. Entonces, `fetch(URL)` real
 
 Después de la devolución de la promesa, si la petición fue satisfactoria, se ejecuta el método `then`, el cual toma la respuesta y la convierte a formato JSON.
 
-El método `then` también devuelve una promesa, la cual es manejada por el siguiente método `then`. ¡El argumento en el segundo `then` es el objeto JSON que estás buscando!
+El método `then` también devuelve una promesa, la cual es personejada por el siguiente método `then`. ¡El argumento en el segundo `then` es el objeto JSON que estás buscando!
 
 Ahora, selecciona el elemento que recibirá los datos usando `document.getElementById()`. Luego modifica el código HTML del elemento insertando una cadena creada a partir del objeto JSON devuelto de la solicitud.
 
@@ -54,7 +54,7 @@ assert(
 );
 ```
 
-Tu código debe usar `then` para manejar los datos convertidos a JSON por el otro `then`.
+Tu código debe usar `then` para personejar los datos convertidos a JSON por el otro `then`.
 
 ```js
 assert(__helpers.removeWhiteSpace(code).match(/\.then\(\(?\w+\)?=>{[^}]*}\)/g));
@@ -113,7 +113,7 @@ assert(
 </style>
 <h1>Cat Photo Finder</h1>
 <p id="message" class="box">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">
@@ -164,7 +164,7 @@ assert(
 </style>
 <h1>Cat Photo Finder</h1>
 <p id="message" class="box">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">

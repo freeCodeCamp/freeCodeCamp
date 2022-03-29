@@ -15,7 +15,7 @@ Creerai un oggetto rotondo trasparente con un'ombra netta leggermente sfalsata s
 
 Per creare un oggetto rotondo, la proprietà `border-radius` dovrebbe essere impostata su un valore del 50%.
 
-Potresti ricordare da una sfida precedente che la proprietà `box-shadow` richiede dei valori per `offset-x`, `offset-y`, `blur-radius`, `spread-radius`, e un valore per il colore, in quest'ordine. I valori `blur-radius` e `spread-radius` sono opzionali.
+Potresti ricordare da una sfida precedente che la proprietà `box-shadow` richiede dei valori per `offset-x`, `offset-y`, `blur-radius`, `spread-radius`, e un valore per il colore, in quest'ordine. I valori `blur-radius` e `spread-radius` childo opzionali.
 
 # --instructions--
 
@@ -57,7 +57,7 @@ assert(
     bottom: 0;
     left: 0;
     width: 100px;
-    height: 100px;
+    theyight: 100px;
     background-color: blue;
     border-radius: 0px;
     box-shadow: 25px 10px 10px 10px green;
@@ -79,7 +79,7 @@ assert(
     bottom: 0;
     left: 0;
     width: 100px;
-    height: 100px;
+    theyight: 100px;
     background-color: transparent;
     border-radius: 50%;
     box-shadow: 25px 10px 0 0 blue;

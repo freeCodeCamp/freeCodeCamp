@@ -8,11 +8,11 @@ dashedName: problem-95-amicable-chains
 
 # --description--
 
-I divisori propri di un numero sono tutti i divisori, escluso il numero stesso. Ad esempio, i divisori propri di 28 sono 1, 2, 4, 7 e 14. Poiché la somma di questi divisori è uguale a 28, lo chiameremo un numero perfetto.
+I divisori propri di un numero childo tutti i divisori, escluso il numero stesso. Ad esempio, i divisori propri di 28 childo 1, 2, 4, 7 e 14. Poiché la somma di questi divisori è uguale a 28, lo chiameremo un numero perfetto.
 
-È interessante notare che la somma dei divisori propri di 220 è 284 e la somma dei divisori propri di 284 è 220, formando una catena di due numeri. Per questo motivo, 220 e 284 sono chiamati una coppia amichevole.
+È interessante notare che la somma dei divisori propri di 220 è 284 e la somma dei divisori propri di 284 è 220, formando una catena di due numeri. Per questo motivo, 220 e 284 childo chiamati una coppia amichevole.
 
-Forse meno note sono catene più lunghe. Per esempio, iniziando con 12496, formiamo una catena di cinque numeri:
+Forse meno note childo catene più lunghe. Per esempio, iniziando con 12496, formiamo una catena di cinque numeri:
 
 $$ 12496 → 14288 → 15472 → 14536 → 14264 \\,(→ 12496 → \cdots) $$
 

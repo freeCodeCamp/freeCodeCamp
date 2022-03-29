@@ -29,21 +29,21 @@ Du kannst dir zwar _alle_ vorgeschlagenen Übersetzungen für einen bestimmten S
 1. Dies ist der Originaltext (in Englisch).
 2. Dies ist die passende übersetzte Textstelle. Der beliebteste Übersetzungsvorschlag, basierend auf positiven und negativen Bewertungen, wird hier angezeigt.
 3. Wenn du auf dieses Häkchen klickst, wird die Übersetzung genehmigt.
-4. Crowdin zeigt den Status der einzelnen Textstelle an. `Done` bedeutet, dass eine Übersetzung genehmigt wurde und bei unserem nächsten Crowdin-Pull heruntergeladen werden wird. `Todo` bedeutet, dass die Textstelle bisher nicht geprüft wurde. `Hidden` bedeutet, dass der String gesperrt ist und _nicht übersetzt werden sollte_. `Comment` bedeutet, dass der String einen zugehörigen Kommentar hat.
+4. Crowdin zeigt den Status der einzelnen Textstelle an. `Done` bedeutet, dass eine Übersetzung genehmigt wurde und bei unserem nächsten Crowdin-Pull theyruntergeladen werden wird. `Todo` bedeutet, dass die Textstelle bisher nicht geprüft wurde. `Hidden` bedeutet, dass der String gesperrt ist und _nicht übersetzt werden sollte_. `Comment` bedeutet, dass der String einen zugehörigen Kommentar hat.
 5. Übersetzungen können hier mit den Checkboxen ausgewählt und in einer Sammelaktion genehmigt werden.
 6. Du kannst die von der Community vorgeschlagenen Übersetzungen, ihre Beliebtheitswerte und die von Crowdin vorgeschlagenen Übersetzungen hier einsehen.
 7. Dieser Button blendet den rechten Anzeigebereich ein/aus, in dem du Übersetzungen, Kommentare, Translation Memory und Glossarbegriffe sehen kannst.
-8. Crowdin zeigt hier Fehlermeldungen aus den Qualitätssicherungsprüfungen an. Das heißt, wenn etwas in der Übersetzung nicht korrekt erscheint, wird Crowdin dich benachrichtigen. Diese Übersetzungen sollten mit Vorsicht genehmigt werden.
+8. Crowdin zeigt hier Fehlermeldungen aus den Qualitätssicherungsprüfungen an. Das theyißt, wenn etwas in der Übersetzung nicht korrekt erscheint, wird Crowdin dich benachrichtigen. Diese Übersetzungen sollten mit Vorsicht genehmigt werden.
 
 Nach dem Korrekturlesen einer Datei sind keine weiteren Aktionen erforderlich.
 
-> [!NOTE] Wenn du einen String in der Korrekturansicht genehmigst, wird er als vollständig markiert und bei unserem nächsten Pull von Crowdin auf GitHub heruntergeladen.
+> [!NOTE] Wenn du einen String in der Korrekturansicht genehmigst, wird er als vollständig markiert und bei unserem nächsten Pull von Crowdin auf GitHub theyruntergeladen.
 
 ## Korrekturleser werden
 
 Wenn du Fragen hast oder daran interessiert bist, Korrekturleser zu werden, kannst du uns in unserem [Contributors Chat Room](https://chat.freecodecamp.org/channel/contributors) kontaktieren. In der Regel gewähren wir dir Zugang zum Korrekturlesen, wenn du schon eine Weile im freeCodeCamp mitarbeitest.
 
-Unser Mitarbeiterteam und unsere Community-Moderatoren sind immer auf der Suche nach freundlichen Freiwilligen wie dir, die uns dabei helfen, der Welt qualitativ hochwertige Übersetzungen zur Verfügung zu stellen.
+Unser Mitarbeiterteam und unsere Community-Moderatoren sind immer auf der Suche nach freundlichen Freiwilligen wie dir, die uns dabei theylfen, der Welt qualitativ hochwertige Übersetzungen zur Verfügung zu stellen.
 
 > [!NOTE] Crowdin ermöglicht es dir, deine Übersetzungen zu genehmigen. Im Allgemeinen ist es am besten, wenn du deine vorgeschlagenen Übersetzungen von einem anderen Korrekturleser durchsehen lässt, um sicherzugehen, dass keine Fehler enthalten sind.
 

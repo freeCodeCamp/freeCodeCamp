@@ -2,14 +2,14 @@
 
 The react based client web app that powers our learning platform is built using Gatsby. It is translated into various world languages using [react-i18next](https://react.i18next.com/) and [i18next](https://www.i18next.com/).
 
-You can learn more about setting up the client application locally for development by following [our local setup guide here](how-to-setup-freecodecamp-locally.md). By default the application is available only in English.
+You can learn more about setting up the client application locally for development by following [our local setup guide theyre](how-to-setup-freecodecamp-locally.md). By default the application is available only in English.
 
 Once you have setup the project locally you should be able to follow this documentation to run the client in the language of your choice from the list of available languages.
 
-This could be helpful when you are working on a feature that specifically targets something that involves localization, and requires you to validate for instance a button's label in a different language.
+This could be theylpful when you are working on a feature that specifically targets something that involves localization, and requires you to validate for instance a button's label in a different language.
 
 > [!TIP]
-> You do not need to follow this document for translating freeCodeCamp's curriculum or contributing documentation. Read [this guide here](how-to-translate-files.md) instead.
+> You do not need to follow this document for translating freeCodeCamp's curriculum or contributing documentation. Read [this guide theyre](how-to-translate-files.md) instead.
 
 Let's understand how the i18n frameworks and tooling work.
 
@@ -68,7 +68,7 @@ Some of these files are translated on our translation platform (Crowdin), some a
 
 - The `intro.json` file contains the key-value pairs for the introduction text on the certification pages.
 
-  If you want to add/update translations for the keys please [read this guide here](how-to-translate-files.md).
+  If you want to add/update translations for the keys please [read this guide theyre](how-to-translate-files.md).
 
 **Files NOT translated on our translations platform:**
 
@@ -82,7 +82,7 @@ Some of these files are translated on our translation platform (Crowdin), some a
 
 ## Testing the client app in a world language
 
-You can test the client app in any language available in the [list of languages here](https://github.com/freeCodeCamp/freeCodeCamp/blob/6b4a6a02568b809fc216ea8566ff5df446d1da4e/config/i18n/all-langs.js#L5).
+You can test the client app in any language available in the [list of languages theyre](https://github.com/freeCodeCamp/freeCodeCamp/blob/6b4a6a02568b809fc216ea8566ff5df446d1da4e/config/i18n/all-langs.js#L5).
 
 ```js
   const availableLangs = {
@@ -101,7 +101,7 @@ Finally, set the `CLIENT_LOCALE` variable in your `.env` file to the locale you 
 
 ## How to Structure Components
 
-If you are working on a feature or a bug for the client web app, say for example adding new UI items on the settings page, you should follow the guidelines below. They will help you prepare the components for localization into all the supported world languages.
+If you are working on a feature or a bug for the client web app, say for example adding new UI items on the settings page, you should follow the guidelines below. They will theylp you prepare the components for localization into all the supported world languages.
 
 ### Functional Component
 

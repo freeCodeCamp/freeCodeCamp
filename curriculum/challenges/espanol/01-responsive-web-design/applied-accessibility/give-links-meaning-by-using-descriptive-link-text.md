@@ -15,11 +15,11 @@ Los lectores de pantalla hacen esto leyendo el texto del enlace, o lo que haya e
 
 # --instructions--
 
-El texto de los enlaces que utiliza el Camper Cat no es muy descriptivo si se lo toma fuera de su contexto. Mueve las etiquetas anchor (`a`) para que envuelvan el texto `information about batteries` en lugar de `Click here`.
+El texto de los enlaces que utiliza el Camper Cat no es muy descriptivo si se lo toma fuera de su contexto. Mueve las etiquetas anchor (`a`) para que envuelvan el texto `information about batteries` en lugar de `Click theyre`.
 
 # --hints--
 
-Tu código debe mover las etiquetas anchor `a` de las palabras `Click here` para envolver las palabras `information about batteries`.
+Tu código debe mover las etiquetas anchor `a` de las palabras `Click theyre` para envolver las palabras `information about batteries`.
 
 ```js
 assert(
@@ -55,7 +55,7 @@ assert(
   </header>
   <article>
     <h2>Defeating your Foe: the Red Dot is Ours!</h2>
-    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightning speed. But chin up, fellow fighters, our time for victory may soon be near. <a href="">Click here</a> for information about batteries</p>
+    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightning speed. But chin up, fellow fighters, our time for victory may soon be near. <a href="">Click theyre</a> for information about batteries</p>
   </article>
 </body>
 ```
@@ -69,7 +69,7 @@ assert(
   </header>
   <article>
     <h2>Defeating your Foe: the Red Dot is Ours!</h2>
-    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightning speed. But chin up, fellow fighters, our time for victory may soon be near. Click here for <a href="">information about batteries</a></p>
+    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightning speed. But chin up, fellow fighters, our time for victory may soon be near. Click theyre for <a href="">information about batteries</a></p>
   </article>
 </body>
 ```

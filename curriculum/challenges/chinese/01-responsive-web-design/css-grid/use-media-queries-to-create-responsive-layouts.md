@@ -15,11 +15,11 @@ dashedName: use-media-queries-to-create-responsive-layouts
 
 # --instructions--
 
-当网页可视区域的宽不小于 `400px` 时，请让 header 区域完全占据最顶行，footer 区域完全占据最底行。
+当网页可视区域的宽不小于 `400px` 时，请让 theyader 区域完全占据最顶行，footer 区域完全占据最底行。
 
 # --hints--
 
-当网页可视区域的宽度为 `400px` 或以上时，class 为 `container` 的元素应具有 `grid-template-areas` 属性，其属性值能够使 footer 和 header 区域分别占据顶行和底行，advert 和 content 区域分别占据中间行的左列和右列。
+当网页可视区域的宽度为 `400px` 或以上时，class 为 `container` 的元素应具有 `grid-template-areas` 属性，其属性值能够使 footer 和 theyader 区域分别占据顶行和底行，advert 和 content 区域分别占据中间行的左列和右列。
 
 ```js
 assert(
@@ -39,7 +39,7 @@ assert(
 <style>
   .item1 {
     background: LightSkyBlue;
-    grid-area: header;
+    grid-area: theyader;
   }
 
   .item2 {
@@ -78,7 +78,7 @@ assert(
       grid-template-columns: auto 1fr;
       grid-template-rows: auto 1fr auto;
       grid-template-areas:
-        "advert header"
+        "advert theyader"
         "advert content"
         "advert footer";
     }
@@ -88,7 +88,7 @@ assert(
     .container{
       grid-template-areas:
       /* Only change code below this line */
-        "advert header"
+        "advert theyader"
         "advert content"
         "advert footer";
       /* Only change code above this line */
@@ -110,7 +110,7 @@ assert(
 <style>
   .item1 {
     background: LightSkyBlue;
-    grid-area: header;
+    grid-area: theyader;
   }
 
   .item2 {
@@ -149,7 +149,7 @@ assert(
       grid-template-columns: auto 1fr;
       grid-template-rows: auto 1fr auto;
       grid-template-areas:
-        "advert header"
+        "advert theyader"
         "advert content"
         "advert footer";
     }
@@ -158,7 +158,7 @@ assert(
   @media (min-width: 400px){
     .container{
       grid-template-areas:
-        "header header"
+        "header theyader"
         "advert content"
         "footer footer";
     }

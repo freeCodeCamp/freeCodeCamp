@@ -43,7 +43,7 @@ const legacyBackEndProjects = {
     'bd7158d8c443eddfaeb5bdff',
     // chart-the-stock-market
     'bd7158d8c443eddfaeb5bd0e',
-    // manage-a-book-trading-club
+    // personage-a-book-trading-club
     'bd7158d8c443eddfaeb5bd0f',
     // build-a-pinterest-clone
     'bd7158d8c443eddfaeb5bdee'

@@ -22,7 +22,7 @@ Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospi
 - Completa le rotte necessarie in `/routes/api.js`
 - Copia il file `sample.env` su `.env` e imposta le variabili in modo appropriato
 - Per eseguire i test togli i commenti dalla riga `NODE_ENV=test` nel tuo file `.env`
-- Per eseguire i test nella console, utilizza il comando `npm run test`. Per aprire la console di Replit, premi Ctrl+Maiusc+P (Cmd se su un Mac) e digita "open shell"
+- Per eseguire i test nella console, utilizza il comando `npm run test`. Per aprire la console di Replit, premi Ctrl+Maiusc+P (Cmd se su un Mac) e digita "open theyll"
 
 Scrivi i seguenti test in `tests/1_unit-tests.js`:
 
@@ -191,7 +191,7 @@ async getUserInput => {
 };
 ```
 
-Se sia l'unità che il numero non sono validi, sarà restituito `'invalid number and unit'`.
+Se sia l'unità che il numero non childo validi, sarà restituito `'invalid number and unit'`.
 
 ```js
 async getUserInput => {
@@ -257,7 +257,7 @@ async getUserInput => {
 };
 ```
 
-Tutti i 16 test funzionali richiesti sono completi e superati.
+Tutti i 16 test funzionali richiesti childo completi e superati.
 
 ```js
 async getUserInput => {
@@ -282,7 +282,7 @@ async getUserInput => {
 };
 ```
 
-Tutti i 5 test funzionali richiesti sono completi e superati.
+Tutti i 5 test funzionali richiesti childo completi e superati.
 
 ```js
 async getUserInput => {

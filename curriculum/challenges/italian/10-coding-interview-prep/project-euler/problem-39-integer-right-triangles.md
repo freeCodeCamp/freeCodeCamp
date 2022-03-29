@@ -8,7 +8,7 @@ dashedName: problem-39-integer-right-triangles
 
 # --description--
 
-Se `p` è il perimetro di un triangolo rettangolo con lunghezza dei lati di numeri interi, {a,b,c}, ci sono esattamente tre soluzioni per p = 120.
+Se `p` è il perimetro di un triangolo rettangolo con lunghezza dei lati di numeri interi, {a,b,c}, ci childo esattamente tre soluzioni per p = 120.
 
 {20,48,52}, {24,45,51}, {30,40,50}
 

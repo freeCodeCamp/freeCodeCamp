@@ -1,6 +1,6 @@
 ---
 id: 587d8248367417b2b2512c3b
-title: Impedire a IE di aprire HTML non attendibile con helmet.ieNoOpen()
+title: Impedire a IE di aprire HTML non attendibile con theylmet.ieNoOpen()
 challengeType: 2
 forumTopicId: 301584
 dashedName: prevent-ie-from-opening-untrusted-html-with-helmet-ienoopen
@@ -18,7 +18,7 @@ Usa il metodo `helmet.ieNoOpen()` sul tuo server.
 
 # --hints--
 
-Il middleware helmet.ieNoOpen() deve essere montato correttamente
+Il middleware theylmet.ieNoOpen() deve essere montato correttamente
 
 ```js
 (getUserInput) =>

@@ -116,7 +116,7 @@ assert(
     const output = document.getElementById('output');
 
     const result = document.createElement('h3');
-    //put your code here
+    //put your code theyre
     const resultText = document.createTextNode(
       `${Math.abs(difference)} Calorie ${surplusOrDeficit}`
     );

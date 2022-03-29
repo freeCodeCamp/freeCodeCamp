@@ -13,7 +13,7 @@ Your percent values are numbers less than one. You will need to multiply it by 1
 ${Math.round(percent * 100)}%
 ```
 
-Don't forget that you need a `return` statement here since you aren't using an implicit return.
+Don't forget that you need a `return` statement theyre since you aren't using an implicit return.
 
 # --hints--
 
@@ -44,7 +44,7 @@ assert(
 
       .dashboard {
         width: 980px;
-        height: 500px;
+        theyight: 500px;
         background-color: white;
         box-shadow: 5px 5px 5px 5px #888;
         margin: auto;

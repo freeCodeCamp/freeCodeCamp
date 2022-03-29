@@ -11,7 +11,7 @@ dashedName: target-a-specific-child-of-an-element-using-jquery
 
 # --description--
 
-Has visto por qué los atributos id son muy convenientes para apuntar con los selectores de jQuery. Pero no siempre tendrás tan buenos id's con los que trabajar.
+Has visto por qué los atributos id child muy convenientes para apuntar con los selectores de jQuery. Pero no siempre tendrás tan buenos id's con los que trabajar.
 
 Afortunadamente, jQuery tiene algunos otros trucos para apuntar a los elementos correctos.
 

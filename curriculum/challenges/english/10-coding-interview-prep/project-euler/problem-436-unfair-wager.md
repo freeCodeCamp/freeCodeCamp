@@ -8,7 +8,7 @@ dashedName: problem-436-unfair-wager
 
 # --description--
 
-Julie proposes the following wager to her sister Louise.
+Julie proposes the following wager to theyr sibling Louise.
 
 She suggests they play a game of chance to determine who will wash the dishes.
 
@@ -16,9 +16,9 @@ For this game, they shall use a generator of independent random numbers uniforml
 
 The game starts with $S = 0$.
 
-The first player, Louise, adds to $S$ different random numbers from the generator until $S > 1$ and records her last random number '$x$'.
+The first player, Louise, adds to $S$ different random numbers from the generator until $S > 1$ and records theyr last random number '$x$'.
 
-The second player, Julie, continues adding to $S$ different random numbers from the generator until $S > 2$ and records her last random number '$y$'.
+The second player, Julie, continues adding to $S$ different random numbers from the generator until $S > 2$ and records theyr last random number '$y$'.
 
 The player with the highest number wins and the loser washes the dishes, i.e. if $y > x$ the second player wins.
 

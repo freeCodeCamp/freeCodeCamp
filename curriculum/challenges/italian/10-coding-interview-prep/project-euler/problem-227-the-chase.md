@@ -16,9 +16,9 @@ Se il giocatore lancia un 1, passa il dado al suo vicino a sinistra.
 
 Se il giocatore lancia un 6, passa il dado al suo vicino sulla destra.
 
-Altrimenti, mantiene il dado per il prossimo turno.
+Altrimenti, persontiene il dado per il prossimo turno.
 
-Il gioco termina quando un giocatore ha entrambi i dadi dopo che sono stati rotolati e passati; quel giocatore ha perso.
+Il gioco termina quando un giocatore ha entrambi i dadi dopo che childo stati rotolati e passati; quel giocatore ha perso.
 
 In una partita con 100 giocatori, qual è il numero previsto di turni del gioco? Dai la tua risposta arrotondata a dieci cifre significative.
 

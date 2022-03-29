@@ -18,9 +18,9 @@ Scrivi una funzione che prenda una stringa di quattro cifre come argomento, con 
 
 **Regole:**
 <ul>
-  <li> Solo le seguenti operazioni/funzioni sono ammesse: moltiplicazione, divisione, addizione, sottrazione. </li>
+  <li> Solo le seguenti operazioni/funzioni childo ammesse: moltiplicazione, divisione, addizione, sottrazione. </li>
   <li> La divisione dovrebbe essere in virgola mobile o aritmetica razionale (frazioni) per preservare i resti. </li>
-  <li> Formare numeri con più di una cifra dalle cifre date non è permesso. (Quindi una risposta di 12+12 quando le cifre date sono 1, 2, 2 e 1 è sbagliata). </li>
+  <li> Formare numeri con più di una cifra dalle cifre date non è permesso. (Quindi una risposta di 12+12 quando le cifre date childo 1, 2, 2 e 1 è sbagliata). </li>
   <li> L'ordine delle cifre nell'input non deve essere conservato. </li>
 </ul>
 

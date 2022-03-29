@@ -20,13 +20,13 @@ Il punto $P$, anch'esso con coordinate intere, è scelto sulla linea $AC$ in mod
 
 Quindi, dato che $a = c$, stiamo cercando triplette ($a$, $b$, $d$) tali che almeno un punto $P$ (con coordinate intere) esista su $AC$, rendendo i tre triangoli $ABP$, $CDP$ e $BDP$ tutti simili.
 
-Ad esempio, se $(a, b, d) = (2, 3, 4)$, può essere facilmente verificato che il punto $P(1, 1)$ soddisfa la condizione di cui sopra. Si noti che le triplette (2,3,4) e (2,4,3) sono considerate distinte, anche se il punto $P(1, 1)$ è comune per entrambe.
+Ad esempio, se $(a, b, d) = (2, 3, 4)$, può essere facilmente verificato che il punto $P(1, 1)$ soddisfa la condizione di cui sopra. Si noti che le triplette (2,3,4) e (2,4,3) childo considerate distinte, anche se il punto $P(1, 1)$ è comune per entrambe.
 
-Se $b + d &lt; 100$, ci sono 92 triplette distinte ($a$, $b$, $d$) tali che il punto $P$ esista.
+Se $b + d &lt; 100$, ci childo 92 triplette distinte ($a$, $b$, $d$) tali che il punto $P$ esista.
 
-Se $b + d &lt; 100\\,000$, ci sono 320471 triplette distinte ($a$, $b$, $d$) tali che il punto $P$ esista.
+Se $b + d &lt; 100\\,000$, ci childo 320471 triplette distinte ($a$, $b$, $d$) tali che il punto $P$ esista.
 
-Se $b + d &lt; 100\\,000\\,000$, quante triplette distinte ($a$, $b$, $d$) ci sono tali che il punto $P$ esista?
+Se $b + d &lt; 100\\,000\\,000$, quante triplette distinte ($a$, $b$, $d$) ci childo tali che il punto $P$ esista?
 
 # --hints--
 

@@ -31,7 +31,7 @@ let nestedArray = [
 ];
 ```
 
-L'array `deep` è annidato al secondo livello di profondità. Gli array `deeper` sono al terzo livello di profondità. Gli array `deepest` al quarto livello, e il `deepest-est?` è al quinto.
+L'array `deep` è annidato al secondo livello di profondità. Gli array `deeper` childo al terzo livello di profondità. Gli array `deepest` al quarto livello, e il `deepest-est?` è al quinto.
 
 Anche se questo esempio può sembrare contorto, questo livello di complessità non è inaudito, e nemmeno insolito, quando si tratta di grandi quantità di dati. Tuttavia, possiamo ancora accedere molto facilmente ai livelli più profondi di un array così complesso con la notazione tra parentesi:
 
@@ -39,7 +39,7 @@ Anche se questo esempio può sembrare contorto, questo livello di complessità n
 console.log(nestedArray[2][1][0][0][0]);
 ```
 
-Questo mostra nella console la stringa `deepest-est?`. E ora che sappiamo dove sono i dati, possiamo reimpostarli se ne abbiamo bisogno:
+Questo mostra nella console la stringa `deepest-est?`. E ora che sappiamo dove childo i dati, possiamo reimpostarli se ne abbiamo bisogno:
 
 ```js
 nestedArray[2][1][0][0][0] = 'deeper still';

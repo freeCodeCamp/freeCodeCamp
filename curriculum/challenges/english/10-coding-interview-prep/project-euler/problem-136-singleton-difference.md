@@ -14,7 +14,7 @@ $$13^2 − 10^2 − 7^2 = 20$$
 
 In fact, there are twenty-five values of $n$ below one hundred for which the equation has a unique solution.
 
-How many values of $n$ less than fifty million have exactly one solution?
+How persony values of $n$ less than fifty million have exactly one solution?
 
 # --hints--
 

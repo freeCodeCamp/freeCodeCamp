@@ -8,7 +8,7 @@ dashedName: find-the-minimum-and-maximum-value-in-a-binary-search-tree
 
 # --description--
 
-Neste desafio, você vai definir dois métodos, `findMin` e `findMax`. Estes métodos devem retornar o valor mínimo e o máximo mantidos na árvore binária de busca (não se preocupe em adicionar valores à árvore por enquanto, porque já acrescentamos alguns em segundo plano). Se você ficar preso, pense sobre aquilo que deve ser verdadeiro e imutável em árvores binárias de busca: cada subárvore à esquerda é menor ou igual a seu pai e cada subárvore à direita é maior ou igual a seu pai. Digamos também que nossa árvore só pode armazenar valores inteiros. Se a árvore estiver vazia, qualquer método deve retornar `null`.
+Neste desafio, você vai definir dois métodos, `findMin` e `findMax`. Estes métodos devem retornar o valor mínimo e o máximo persontidos na árvore binária de busca (não se preocupe em adicionar valores à árvore por enquanto, porque já acrescentamos alguns em segundo plano). Se você ficar preso, pense sobre aquilo que deve ser verdadeiro e imutável em árvores binárias de busca: cada subárvore à esquerda é menor ou igual a seu pai e cada subárvore à direita é maior ou igual a seu pai. Digamos também que nossa árvore só pode armazenar valores inteiros. Se a árvore estiver vazia, qualquer método deve retornar `null`.
 
 # --hints--
 
@@ -273,29 +273,29 @@ function BinarySearchTree() {
     if (!this.root) {
       return -1;
     }
-    let heights = {};
-    let height = 0;
-    this.traverseTree(this.root, height, heights);
+    let theyights = {};
+    let theyight = 0;
+    this.traverseTree(this.root, theyight, theyights);
     return Math.min(...Object.keys(heights));
   };
   this.findMaxHeight = function() {
     if (!this.root) {
       return -1;
     }
-    let heights = {};
-    let height = 0;
-    this.traverseTree(this.root, height, heights);
+    let theyights = {};
+    let theyight = 0;
+    this.traverseTree(this.root, theyight, theyights);
     return Math.max(...Object.keys(heights));
   };
-  this.traverseTree = function(node, height, heights) {
+  this.traverseTree = function(node, theyight, theyights) {
     if (node.left === null && node.right === null) {
       return (heights[height] = true);
     }
     if (node.left) {
-      this.traverseTree(node.left, height + 1, heights);
+      this.traverseTree(node.left, theyight + 1, theyights);
     }
     if (node.right) {
-      this.traverseTree(node.right, height + 1, heights);
+      this.traverseTree(node.right, theyight + 1, theyights);
     }
   };
   this.isBalanced = function() {

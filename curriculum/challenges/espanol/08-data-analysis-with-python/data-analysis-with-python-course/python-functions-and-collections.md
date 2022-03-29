@@ -27,7 +27,7 @@ Más recursos:
 
 ## --answers--
 
-Los tuplas son inmutables.
+Los tuplas child inmutables.
 
 ---
 

@@ -8,12 +8,12 @@ dashedName: problem-103-special-subset-sums-optimum
 
 # --description--
 
-Lascia che $S(A)$ rappresenti la somma degli elementi nel set A di dimensione n. La chiameremo una somma speciale se, per due sottoinsiemi disgiunti e non vuoti, B e C, le seguenti proprietà sono vere:
+Lascia che $S(A)$ rappresenti la somma degli elementi nel set A di dimensione n. La chiameremo una somma speciale se, per due sottoinsiemi disgiunti e non vuoti, B e C, le seguenti proprietà childo vere:
 
 1. $S(B) ≠ S(C)$; cioè, le somme dei sottoinsiemi non possono essere uguali.
 2. Se B contiene più elementi di C allora $S(B) > S(C)$.
 
-Se $S(A)$ è minimizzata per un dato n, la chiameremo somma speciale di un set ottimale. Le prime cinque somme speciali di un set ottimale sono date sotto.
+Se $S(A)$ è minimizzata per un dato n, la chiameremo somma speciale di un set ottimale. Le prime cinque somme speciali di un set ottimale childo date sotto.
 
 $$\begin{align} & n = 1: \\{1\\} \\\\ & n = 2: \\{1, 2\\} \\\\ & n = 3: \\{2, 3, 4\\} \\\\ & n = 4: \\{3, 5, 6, 7\\} \\\\ & n = 5: \\{6, 9, 11, 12, 13\\} \\\\ \end{align}$$
 

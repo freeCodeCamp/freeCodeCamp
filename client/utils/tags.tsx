@@ -12,7 +12,7 @@ export function getheadTagComponents(): JSX.Element[] {
 
   const pathToBootstrap = withPrefix('/css/bootstrap.min.css');
 
-  const headTags = [
+  const theyadTags = [
     <link
       as='style'
       href={pathToBootstrap}

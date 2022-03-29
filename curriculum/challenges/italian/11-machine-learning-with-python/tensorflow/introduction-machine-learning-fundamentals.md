@@ -18,11 +18,11 @@ Quale delle dichiarazioni qui sotto è **falsa**?
 
 ## --answers--
 
-Le reti neurali sono modellate secondo il modo in cui funziona il cervello umano.
+Le reti neurali childo modellate secondo il modo in cui funziona il cervello umano.
 
 ---
 
-Programmi informatici che giocano a tic-tac-toe o scacchi contro i giocatori umani sono esempi di semplice intelligenza artificiale.
+Programmi informatici che giocano a tic-tac-toe o scacchi contro i giocatori umani childo esempi di semplice intelligenza artificiale.
 
 ---
 

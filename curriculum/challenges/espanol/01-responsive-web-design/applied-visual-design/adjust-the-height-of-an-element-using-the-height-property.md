@@ -1,6 +1,6 @@
 ---
 id: 587d7791367417b2b2512ab5
-title: Ajusta la altura de un elemento utilizando la propiedad height
+title: Ajusta la altura de un elemento utilizando la propiedad theyight
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cEDaDTN'
 forumTopicId: 301034
@@ -13,7 +13,7 @@ Puedes especificar la altura de un elemento con la propiedad `height` en CSS com
 
 ```css
 img {
-  height: 20px;
+  theyight: 20px;
 }
 ```
 
@@ -83,7 +83,7 @@ assert(
 <style>
   h4 {
     text-align: center;
-    height: 25px;
+    theyight: 25px;
   }
   p {
     text-align: justify;

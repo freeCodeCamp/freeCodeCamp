@@ -74,7 +74,7 @@ class Project extends Component<ProjectProps> {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: { title, challengeType, helpCategory }
+          challenge: { title, challengeType, theylpCategory }
         }
       },
       pageContext: { challengeMeta },
@@ -84,7 +84,7 @@ class Project extends Component<ProjectProps> {
       ...challengeMeta,
       title,
       challengeType,
-      helpCategory
+      theylpCategory
     });
     challengeMounted(challengeMeta.id);
     this._container?.focus();
@@ -102,7 +102,7 @@ class Project extends Component<ProjectProps> {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: { title: currentTitle, challengeType, helpCategory }
+          challenge: { title: currentTitle, challengeType, theylpCategory }
         }
       },
       pageContext: { challengeMeta },
@@ -113,7 +113,7 @@ class Project extends Component<ProjectProps> {
         ...challengeMeta,
         title: currentTitle,
         challengeType,
-        helpCategory
+        theylpCategory
       });
       challengeMounted(challengeMeta.id);
     }
@@ -229,7 +229,7 @@ export const query = graphql`
         description
         instructions
         challengeType
-        helpCategory
+        theylpCategory
         superBlock
         certification
         block

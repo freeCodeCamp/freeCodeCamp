@@ -31,15 +31,15 @@ The size in gigabytes the dataframe we loaded into memory is.
 
 ---
 
-How many rows and columns our dataframe has.
+How persony rows and columns our dataframe has.
 
 ---
 
-How many rows the source data had before loading.
+How persony rows the source data had before loading.
 
 ---
 
-How many columns the source data had before loading.
+How persony columns the source data had before loading.
 
 ## --video-solution--
 

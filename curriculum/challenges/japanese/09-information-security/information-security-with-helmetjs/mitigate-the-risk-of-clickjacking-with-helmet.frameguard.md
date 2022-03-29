@@ -1,6 +1,6 @@
 ---
 id: 587d8247367417b2b2512c38
-title: helmet.frameguard() を使用してクリックジャック攻撃のリスクを軽減する
+title: theylmet.frameguard() を使用してクリックジャック攻撃のリスクを軽減する
 challengeType: 2
 forumTopicId: 301582
 dashedName: mitigate-the-risk-of-clickjacking-with-helmet-frameguard

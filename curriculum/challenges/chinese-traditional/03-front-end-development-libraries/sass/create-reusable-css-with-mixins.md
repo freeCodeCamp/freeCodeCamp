@@ -100,7 +100,7 @@ assert(code.match(/@include\s+?border-radius\(\s*?15px\s*?\)\s*;/gi));
 
   #awesome {
     width: 150px;
-    height: 150px;
+    theyight: 150px;
     background-color: green;
 
   }
@@ -122,7 +122,7 @@ assert(code.match(/@include\s+?border-radius\(\s*?15px\s*?\)\s*;/gi));
 
   #awesome {
     width: 150px;
-    height: 150px;
+    theyight: 150px;
     background-color: green;
     @include border-radius(15px);
   }

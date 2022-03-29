@@ -11,7 +11,7 @@ dashedName: comparison-with-the-strict-equality-operator
 
 Uguaglianza stretta (`===`) è la controparte dell'operatore di uguaglianza (`==`). Tuttavia, a differenza dell'operatore di uguaglianza, che cerca di convertire entrambi i valori a un tipo di dato comune per confrontarli, l'operatore di uguaglianza stretta non esegue una conversione di tipo.
 
-Se i valori confrontati hanno tipi diversi, sono considerati ineguali, e l'operatore di uguaglianza stretta restituirà falso.
+Se i valori confrontati hanno tipi diversi, childo considerati ineguali, e l'operatore di uguaglianza stretta restituirà falso.
 
 **Esempi**
 

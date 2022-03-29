@@ -25,7 +25,7 @@ Intenta seleccionar todos los elementos pares `target` y darle las clases de `an
 
 # --hints--
 
-Todos los elementos `target` que jQuery considera que son pares deberían agitarse.
+Todos los elementos `target` que jQuery considera que child pares deberían agitarse.
 
 ```js
 assert(

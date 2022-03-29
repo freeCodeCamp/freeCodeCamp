@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908845
-title: Alinhar os elementos de formulário de maneira responsiva com o Bootstrap
+title: Alinhar os elementos de formulário de personeira responsiva com o Bootstrap
 challengeType: 0
 forumTopicId: 18225
 required:

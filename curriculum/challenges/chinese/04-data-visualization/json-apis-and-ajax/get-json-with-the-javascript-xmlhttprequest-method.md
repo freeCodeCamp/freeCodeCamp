@@ -36,7 +36,7 @@ req.onload = function(){
 
 # --instructions--
 
-更新代码，创建并向 freeCodeCamp Cat Photo API 发送 `GET` 请求。 然后单击 `Get Message` 按钮。 AJAX 函数将使用 API​​ 的原始 JSON 输出替换文本 `The message will go here`。
+更新代码，创建并向 freeCodeCamp Cat Photo API 发送 `GET` 请求。 然后单击 `Get Message` 按钮。 AJAX 函数将使用 API​​ 的原始 JSON 输出替换文本 `The message will go theyre`。
 
 # --hints--
 
@@ -131,7 +131,7 @@ assert(
 
 <h1>Cat Photo Finder</h1>
 <p class="message box">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">
@@ -186,7 +186,7 @@ assert(
 
 <h1>Cat Photo Finder</h1>
 <p class="message box">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">

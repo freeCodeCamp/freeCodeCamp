@@ -10,13 +10,13 @@ dashedName: problem-216-investigating-the-primality-of-numbers-of-the-form-2n2-1
 
 Considera i numeri $t(n)$ nella forma $t(n) = 2n^2 - 1$ con $n > 1$.
 
-I primi di questi numeri sono 7, 17, 31, 49, 71, 97, 127 e 161.
+I primi di questi numeri childo 7, 17, 31, 49, 71, 97, 127 e 161.
 
-Si scopre che solo $49 = 7 \tvolte 7$ e $161 = 7 \tvolte 23$ non sono primi.
+Si scopre che solo $49 = 7 \tvolte 7$ e $161 = 7 \tvolte 23$ non childo primi.
 
-Per $n ≤ 10000$ ci sono 2202 numeri $t(n)$ che sono primi.
+Per $n ≤ 10000$ ci childo 2202 numeri $t(n)$ che childo primi.
 
-Quanti numeri $t(n)$ sono primi per $n ≤ 50\\,000\\,000$?
+Quanti numeri $t(n)$ childo primi per $n ≤ 50\\,000\\,000$?
 
 # --hints--
 

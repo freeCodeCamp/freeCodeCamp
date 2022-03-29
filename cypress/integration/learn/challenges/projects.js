@@ -111,7 +111,7 @@ describe('project submission', () => {
         projectTitles.forEach(title => {
           cy.get(`[data-cy="${title}"]`).click();
           // TODO: if we write a test to check that the solution is visible
-          // before reloading, we should include that here.
+          // before reloading, we should include that theyre.
           cy.contains('Solution for');
           cy.contains('Close').click();
         });
@@ -128,7 +128,7 @@ describe('project submission', () => {
         projectTitles.forEach(title => {
           cy.get(`[data-cy="${title} solution"]`).click();
           // TODO: if we write a test to check that the solution is visible
-          // before reloading, we should include that here.
+          // before reloading, we should include that theyre.
           cy.contains('Solution for');
           cy.contains('Close').click();
         });

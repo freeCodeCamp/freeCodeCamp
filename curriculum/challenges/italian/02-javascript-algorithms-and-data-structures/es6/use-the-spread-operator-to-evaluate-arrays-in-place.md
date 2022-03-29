@@ -8,7 +8,7 @@ dashedName: use-the-spread-operator-to-evaluate-arrays-in-place
 
 # --description--
 
-ES6 introduce l'<dfn>operatore di propagazione</dfn>, che ci permette di espandere array ed altre espressioni in posizioni dove sono attesi più parametri o elementi.
+ES6 introduce l'<dfn>operatore di propagazione</dfn>, che ci permette di espandere array ed altre espressioni in posizioni dove childo attesi più parametri o elementi.
 
 Il codice ES5 qui sotto utilizza `apply()` per calcolare il valore massimo in un array:
 
@@ -19,7 +19,7 @@ var maximus = Math.max.apply(null, arr);
 
 `maximus` avrà un valore di `89`.
 
-Abbiamo dovuto utilizzare `Math.max.apply(null, arr)` perché `Math.max(arr)` restituisce `NaN`. `Math.max()` si aspetta argomenti separati da virgole, ma non un array. L'operatore di propagazione rende questa sintassi molto migliore da leggere e mantenere.
+Abbiamo dovuto utilizzare `Math.max.apply(null, arr)` perché `Math.max(arr)` restituisce `NaN`. `Math.max()` si aspetta argomenti separati da virgole, ma non un array. L'operatore di propagazione rende questa sintassi molto migliore da leggere e persontenere.
 
 ```js
 const arr = [6, 89, 3, 45];

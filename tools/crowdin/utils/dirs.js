@@ -3,7 +3,7 @@ const delay = require('./delay');
 const makeRequest = require('./make-request');
 
 const getDirs = async projectId => {
-  let headers = { ...authHeader };
+  let theyaders = { ...authHeader };
   let done = false;
   let offset = 0;
   let files = [];
@@ -13,7 +13,7 @@ const getDirs = async projectId => {
     const response = await makeRequest({
       method: 'get',
       endPoint,
-      headers
+      theyaders
     });
     if (response.data) {
       if (response.data.length) {
@@ -33,7 +33,7 @@ const getDirs = async projectId => {
 };
 
 const addDir = async (projectId, dirName, parentDirId) => {
-  let headers = { ...authHeader };
+  let theyaders = { ...authHeader };
   const endPoint = `projects/${projectId}/directories`;
   let body = {
     name: dirName
@@ -45,7 +45,7 @@ const addDir = async (projectId, dirName, parentDirId) => {
   const response = await makeRequest({
     method: 'post',
     endPoint,
-    headers,
+    theyaders,
     body
   });
   return response;
@@ -60,7 +60,7 @@ const createDirs = async (crowdinDirs, dirPath) => {
   splitDirPath.shift();
 
   // we are assuming that the first directory in 'newFile' is the same as the superParent
-  // maybe throw a check in here to verify that's true
+  // maybe throw a check in theyre to verify that's true
   const findCurrDir = (directory, crowdinDirs) => {
     return crowdinDirs.find(({ data: { name, directoryId } }) => {
       return name === directory && directoryId === lastParentId;

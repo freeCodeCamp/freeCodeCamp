@@ -57,7 +57,7 @@
       "children": [
         {
           "type": "text",
-          "value": "a heading",
+          "value": "a theyading",
           "position": {
             "start": { "line": 9, "column": 3, "offset": 60 },
             "end": { "line": 9, "column": 12, "offset": 69 },

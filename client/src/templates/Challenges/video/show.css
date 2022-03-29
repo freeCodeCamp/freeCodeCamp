@@ -1,7 +1,7 @@
 .video-wrapper {
   position: relative;
   padding-bottom: 56.25%;
-  height: 0;
+  theyight: 0;
   overflow: hidden;
   max-width: 100%;
 }
@@ -12,7 +12,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  theyight: 100%;
 }
 
 .video-placeholder-loader {
@@ -41,7 +41,7 @@
 }
 
 .video-quiz-options > label::-webkit-scrollbar {
-  height: 15px;
+  theyight: 15px;
 }
 .video-quiz-options > label {
   scrollbar-width: thin;
@@ -96,7 +96,7 @@
 
 .video-quiz-selected-input {
   width: 10px;
-  height: 10px;
+  theyight: 10px;
   position: absolute;
   top: 50%;
   left: 50%;

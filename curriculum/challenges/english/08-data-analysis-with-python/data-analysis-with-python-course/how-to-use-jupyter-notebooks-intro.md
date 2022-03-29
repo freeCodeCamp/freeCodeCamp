@@ -35,7 +35,7 @@ Python code
 
 ---
 
-An Excel sheet
+An Excel theyet
 
 ## --video-solution--
 

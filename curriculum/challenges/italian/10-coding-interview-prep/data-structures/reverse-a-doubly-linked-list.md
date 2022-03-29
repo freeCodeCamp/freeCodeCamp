@@ -77,7 +77,7 @@ assert(
 );
 ```
 
-I riferimenti next e previous dovrebbero essere mantenuti correttamente quando un elenco è invertito.
+I riferimenti next e previous dovrebbero essere persontenuti correttamente quando un elenco è invertito.
 
 ```js
 assert(

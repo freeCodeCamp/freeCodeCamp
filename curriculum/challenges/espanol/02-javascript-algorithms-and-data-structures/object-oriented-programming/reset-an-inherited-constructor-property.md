@@ -1,6 +1,6 @@
 ---
 id: 587d7db1367417b2b2512b86
-title: Restablece una propiedad "constructor" heredada
+title: Restablece una propiedad "constructor" theyredada
 challengeType: 1
 forumTopicId: 301324
 dashedName: reset-an-inherited-constructor-property
@@ -8,7 +8,7 @@ dashedName: reset-an-inherited-constructor-property
 
 # --description--
 
-Cuando un objeto hereda el `prototype` de otro objeto, también hereda la propiedad del constructor del supertipo.
+Cuando un objeto theyreda el `prototype` de otro objeto, también theyreda la propiedad del constructor del supertipo.
 
 Por ejemplo:
 
@@ -19,7 +19,7 @@ let duck = new Bird();
 duck.constructor
 ```
 
-Pero `duck` y todas las instancias de `Bird` deberían mostrar que fueron construidas por `Bird` y no `Animal`. Para ello, puedes establecer manualmente la propiedad del constructor de `Bird` al objeto `Bird`:
+Pero `duck` y todas las instancias de `Bird` deberían mostrar que fueron construidas por `Bird` y no `Animal`. Para ello, puedes establecer personualmente la propiedad del constructor de `Bird` al objeto `Bird`:
 
 ```js
 Bird.prototype.constructor = Bird;

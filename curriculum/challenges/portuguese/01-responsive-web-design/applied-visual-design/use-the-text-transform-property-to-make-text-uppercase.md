@@ -9,7 +9,7 @@ dashedName: use-the-text-transform-property-to-make-text-uppercase
 
 # --description--
 
-A propriedade `text-transform` no CSS é usada para alterar a aparência do texto. É uma maneira conveniente de garantir que o texto em uma página da web seja exibido de forma consistente, sem precisar alterar o conteúdo do texto dos elementos dentro do HTML.
+A propriedade `text-transform` no CSS é usada para alterar a aparência do texto. É uma personeira conveniente de garantir que o texto em uma página da web seja exibido de forma consistente, sem precisar alterar o conteúdo do texto dos elementos dentro do HTML.
 
 A tabela a seguir mostra como os diferentes valores de `text-transform` alteram o texto no exemplo "Me transforme".
 

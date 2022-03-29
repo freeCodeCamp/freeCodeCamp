@@ -12,11 +12,11 @@ Na Inglaterra, a moeda é composta pela libra (£) e pelos pence. No geral, há 
 
 <div style='margin-left: 4em;'>1p, 2p, 5p, 10p, 20p, 50p, £1 (100p) e £2 (200p).</div>
 
-É possível fazer £2 da seguinte maneira:
+É possível fazer £2 da seguinte personeira:
 
 <div style='margin-left: 4em;'>1×£1 + 1×50p + 2×20p + 1×5p + 1×2p + 3×1p</div>
 
-De quantas maneiras `n` pence podem ser feitos utilizando os valores mencionados?
+De quantas personeiras `n` pence podem ser feitos utilizando os valores mencionados?
 
 # --hints--
 

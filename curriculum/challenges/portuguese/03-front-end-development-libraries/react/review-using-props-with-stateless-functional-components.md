@@ -10,9 +10,9 @@ dashedName: review-using-props-with-stateless-functional-components
 
 Exceto pelo último desafio, você tem passado "props" para componentes funcionais sem estado. Esses componentes agem como funções puras. Eles aceitam props como entrada e retornam a mesma view toda vez que eles são passados nas mesmas props. Você pode estar se perguntando o que é state, e o próximo desafio abordará isso com mais detalhes. Antes disso, aqui está uma revisão da terminologia para componentes.
 
-Um *componente funcional stateless (sem estado)* é qualquer função que você escreve que aceita props e retorna JSX. Um *componente stateless (sem estado)*, por outro lado, é uma classe que estende `React.Component`, mas não usa estado interno (abordado no próximo desafio). Finalmente, um *componente stateful (com estado)* é um componente de classe que mantém seu próprio estado interno. Você pode ver componentes de estado referidos simplesmente como componentes ou componentes do React.
+Um *componente funcional stateless (sem estado)* é qualquer função que você escreve que aceita props e retorna JSX. Um *componente stateless (sem estado)*, por outro lado, é uma classe que estende `React.Component`, mas não usa estado interno (abordado no próximo desafio). Finalmente, um *componente stateful (com estado)* é um componente de classe que persontém seu próprio estado interno. Você pode ver componentes de estado referidos simplesmente como componentes ou componentes do React.
 
-Um padrão comum é tentar minimizar statefulness e criar componentes funcionais sem estado, sempre que possível. Isso ajuda a conter sua gestão de estado para uma área específica de sua aplicação. Por sua vez, isso melhora o desenvolvimento e a manutenção do seu aplicativo, tornando mais fácil acompanhar como alterações no estado afetam seu comportamento.
+Um padrão comum é tentar minimizar statefulness e criar componentes funcionais sem estado, sempre que possível. Isso ajuda a conter sua gestão de estado para uma área específica de sua aplicação. Por sua vez, isso melhora o desenvolvimento e a personutenção do seu aplicativo, tornando mais fácil acompanhar como alterações no estado afetam seu comportamento.
 
 # --instructions--
 

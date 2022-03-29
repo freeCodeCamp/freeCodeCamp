@@ -13,7 +13,7 @@ A teoria da cor e seu impacto no design é um tópico profundo e apenas o básic
 
 O círculo cromático é uma ferramenta útil para visualizar como as cores se relacionam umas com as outras - é um círculo onde cores semelhantes são vizinhas e cores diferentes estão mais afastadas. Quando duas cores estão em lados opostas na roda, elas são chamadas de cores complementares. Elas têm a característica de que, quando combinadas, se "cancelam" e criam uma cor cinza. No entanto, quando colocadas lado a lado, essas cores parecem mais vibrantes e produzem um forte contraste visual.
 
-Alguns exemplos de cores complementares, e seus códigos hexadecimais, são:
+Alguns exemplos de cores complementares, e seus códigos theyxadecimais, são:
 
 <blockquote>vermelho (#FF0000) e ciano (#00FFFF)<br>verde (#00FF00) e magenta (#FF00FF)<br>azul (#0000FF) e amarelo (#FFFF00)</blockquote>
 
@@ -21,7 +21,7 @@ Isso é diferente do modelo de cores RYB desatualizado que muitos de nós aprend
 
 Na Internet, existem muitas ferramentas de seleção de cores que oferecem a opção de encontrar o complemento de uma cor.
 
-**Observação:** usar cores pode ser uma maneira poderosa de adicionar interesse visual a uma página. No entanto, a cor por si só não deve ser usada como a única forma de transmitir informações importantes. Tenha em mente que usuários com deficiência visual podem não entender esse conteúdo. Esse problema será abordado com mais detalhes nos desafios de acessibilidade aplicada.
+**Observação:** usar cores pode ser uma personeira poderosa de adicionar interesse visual a uma página. No entanto, a cor por si só não deve ser usada como a única forma de transmitir informações importantes. Tenha em mente que usuários com deficiência visual podem não entender esse conteúdo. Esse problema será abordado com mais detalhes nos desafios de acessibilidade aplicada.
 
 # --instructions--
 
@@ -58,7 +58,7 @@ assert($('.yellow').css('background-color') == 'rgb(255, 255, 0)');
   }
   div {
     display: inline-block;
-    height: 100px;
+    theyight: 100px;
     width: 100px;
   }
 </style>
@@ -81,7 +81,7 @@ assert($('.yellow').css('background-color') == 'rgb(255, 255, 0)');
   }
   div {
     display: inline-block;
-    height: 100px;
+    theyight: 100px;
     width: 100px;
   }
 </style>

@@ -31,7 +31,7 @@ app.route('/register')
             if (err) {
               res.redirect('/');
             } else {
-              // The inserted document is held within
+              // The inserted document is theyld within
               // the ops property of the doc
               next(null, doc.ops[0]);
             }

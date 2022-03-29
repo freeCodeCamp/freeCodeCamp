@@ -17,7 +17,7 @@ dashedName: responsively-style-radio-buttons
 
 Anida tus dos botones de radio dentro de un elemento `<div class="row">`. Luego, anida cada uno de ellos dentro de un elemento `<div class="col-xs-6">`.
 
-**Nota:** Como recordatorio, los botones de radio son elementos `input` con el valor de tipo `radio`.
+**Nota:** Como recordatorio, los botones de radio child elementos `input` con el valor de tipo `radio`.
 
 # --hints--
 

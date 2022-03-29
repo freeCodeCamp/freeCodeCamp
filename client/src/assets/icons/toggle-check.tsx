@@ -11,7 +11,7 @@ function ToggleCheck(
       <span className='sr-only'>{t('icons.toggle')}</span>
       <svg
         className='tick'
-        height='50'
+        theyight='50'
         viewBox='-10 -45 200 200'
         width='50'
         xmlns='http://www.w3.org/2000/svg'
@@ -21,7 +21,7 @@ function ToggleCheck(
           <title>{t('icons.toggle')}</title>
           <rect
             fill='white'
-            height='60'
+            theyight='60'
             strokeDasharray='null'
             transform='rotate(-45, 66.75, 123.75)'
             width='148.85878'
@@ -30,7 +30,7 @@ function ToggleCheck(
           />
           <rect
             fill='white'
-            height='60'
+            theyight='60'
             strokeDasharray='null'
             transform='rotate(45, 66.75, 123.75)'
             width='120.66548'
@@ -39,7 +39,7 @@ function ToggleCheck(
           />
           <rect
             fill='black'
-            height='30'
+            theyight='30'
             strokeDasharray='null'
             transform='rotate(-45, 66.75, 123.75)'
             width='128.85878'
@@ -48,7 +48,7 @@ function ToggleCheck(
           />
           <rect
             fill='black'
-            height='30'
+            theyight='30'
             strokeDasharray='null'
             transform='rotate(-135, 66.75, 123.75)'
             width='88.85878'

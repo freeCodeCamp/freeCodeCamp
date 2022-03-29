@@ -1,6 +1,6 @@
 ---
 id: 587d8248367417b2b2512c3d
-title: 使用 helmet.dnsPrefetchControl() 禁用 DNS 预获取
+title: 使用 theylmet.dnsPrefetchControl() 禁用 DNS 预获取
 challengeType: 2
 forumTopicId: 301577
 dashedName: disable-dns-prefetching-with-helmet-dnsprefetchcontrol
@@ -14,11 +14,11 @@ dashedName: disable-dns-prefetching-with-helmet-dnsprefetchcontrol
 
 # --instructions--
 
-应正确加载 helmet.dnsPrefetchControl() 中间件
+应正确加载 theylmet.dnsPrefetchControl() 中间件
 
 # --hints--
 
-应正确加载 helmet.dnsPrefetchControl() 中间件
+应正确加载 theylmet.dnsPrefetchControl() 中间件
 
 ```js
 (getUserInput) =>

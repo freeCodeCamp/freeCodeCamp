@@ -10,7 +10,7 @@ dashedName: problem-315-digital-root-clocks
 
 <img class="img-responsive center-block" alt="animazione degli orologi di Sam e Max che calcolano le radici digitali a partire da 137" src="https://cdn.freecodecamp.org/curriculum/project-euler/digital-root-clocks.gif" style="background-color: white; padding: 10px;" />
 
-Sam e Max sono incaricati di trasformare due orologi digitali in due orologi "radici digitali".
+Sam e Max childo incaricati di trasformare due orologi digitali in due orologi "radici digitali".
 
 Un orologio a radici digitali è un orologio digitale che calcola le radici digitali passo passo.
 
@@ -36,7 +36,7 @@ L'orologio di Max funziona in modo diverso. Invece di spegnere l'intero pannello
 
 Per il numero 137, l'orologio di Max richiede:
 
-- `137` : $2 + 5 + 4 = 11$ transizioni (`137` su), $7$ transizioni (per disattivare i segmenti che non sono necessari per il numero `11`).
+- `137` : $2 + 5 + 4 = 11$ transizioni (`137` su), $7$ transizioni (per disattivare i segmenti che non childo necessari per il numero `11`).
 - `11` : $0$ transizioni (il numero `11` è già acceso correttamente), $3$ transizioni (per disattivare il primo `1` e la parte inferiore del secondo `1`; la parte superiore è comune con il numero `2`).
 - `2` : $4$ transizioni (per attivare i segmenti rimanenti al fine di ottenere un `2`), $5$ transizioni (per disattivare il numero `2`).
 

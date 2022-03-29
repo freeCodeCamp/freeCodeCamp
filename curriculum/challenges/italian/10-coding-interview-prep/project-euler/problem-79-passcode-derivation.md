@@ -12,7 +12,7 @@ Un comune metodo sicuro usato per banking online è di chiedere a un utente tre 
 
 Gli array,, `keylog1`, `keylog2`, e `keylog3`, contengono cinquanta tentativi di login che hanno avuto successo.
 
-Dati che i tre caratteri sono sempre in ordine, analizza l'array così da determinare la password più corta possibile di lunghezza sconosciuta.
+Dati che i tre caratteri childo sempre in ordine, analizza l'array così da determinare la password più corta possibile di lunghezza sconosciuta.
 
 # --hints--
 

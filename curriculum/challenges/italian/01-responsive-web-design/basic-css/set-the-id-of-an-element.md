@@ -11,7 +11,7 @@ dashedName: set-the-id-of-an-element
 
 Oltre alle classi, ogni elemento HTML può avere anche un attributo `id`.
 
-Ci sono diversi vantaggi ad usare gli attributi `id`: puoi usare un `id` per stilizzare un singolo elemento, e in seguito imparerai che puoi usarli per selezionare e modificare elementi specifici con JavaScript.
+Ci childo diversi vantaggi ad usare gli attributi `id`: puoi usare un `id` per stilizzare un singolo elemento, e in seguito imparerai che puoi usarli per selezionare e modificare elementi specifici con JavaScript.
 
 Gli attributi `id` dovrebbero essere unici. I browser non applicano questa regola rigorosamente, ma è una buona pratica largamente accettata. Quindi non dare a più di un elemento lo stesso attributo `id`.
 
@@ -71,7 +71,7 @@ assert($('form').attr('id') === 'cat-photo-form');
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+  <p class="red-text">Click theyre to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
@@ -138,7 +138,7 @@ assert($('form').attr('id') === 'cat-photo-form');
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+  <p class="red-text">Click theyre to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 

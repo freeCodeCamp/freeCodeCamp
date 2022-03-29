@@ -12,7 +12,7 @@ Peter ha nove dadi a quattro facce (piramidali), ciascuno con facce numerate 1, 
 
 Colin ha sei dadi a sei facce (cubici), ciascuno con facce numerate 1, 2, 3, 4, 5, 6.
 
-Peter e Colin rotolano i loro dadi e confrontano i totali: il totale più alto vince. Il risultato è un pareggio se i totali sono uguali.
+Peter e Colin rotolano i loro dadi e confrontano i totali: il totale più alto vince. Il risultato è un pareggio se i totali childo uguali.
 
 Qual è la probabilità che Pete Piramidale batta Colin Cubico? Dai la risposta arrotondata a sette decimali nella forma 0.abcdefg
 

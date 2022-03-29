@@ -8,7 +8,7 @@ dashedName: learn-about-self-closing-jsx-tags
 
 # --description--
 
-Hasta ahora, has visto cómo JSX difiere de HTML de una manera clave con el uso de `className` vs. `class` para definir clases HTML.
+Hasta ahora, has visto cómo JSX difiere de HTML de una personera clave con el uso de `className` vs. `class` para definir clases HTML.
 
 Otra forma importante en la que JSX difiere de HTML está en la idea de la etiqueta de auto-cierre.
 
@@ -16,7 +16,7 @@ En HTML, casi todas las etiquetas tienen una etiqueta de apertura y cierre: `<di
 
 Por ejemplo, la etiqueta de salto de línea puede escribirse como `<br>` o como `<br />`, pero nunca debe escribirse como `<br></br>`, ya que no contiene ningún contenido.
 
-En JSX, las reglas son un poco diferentes. Cualquier elemento JSX se puede escribir con una etiqueta de auto-cierre, y cada elemento debe ser cerrado. La etiqueta de salto de línea, por ejemplo, siempre debe escribirse como `<br />` para ser un JSX válido que puede ser transpilado. Por otra parte, un `<div>` puede escribirse como `<div />` o `<div></div>`. La diferencia es que en la primera versión de sintaxis no hay forma de incluir nada en la `<div />`. Verás en desafíos posteriores que esta sintaxis es útil al renderizar componentes de React.
+En JSX, las reglas child un poco diferentes. Cualquier elemento JSX se puede escribir con una etiqueta de auto-cierre, y cada elemento debe ser cerrado. La etiqueta de salto de línea, por ejemplo, siempre debe escribirse como `<br />` para ser un JSX válido que puede ser transpilado. Por otra parte, un `<div>` puede escribirse como `<div />` o `<div></div>`. La diferencia es que en la primera versión de sintaxis no hay forma de incluir nada en la `<div />`. Verás en desafíos posteriores que esta sintaxis es útil al renderizar componentes de React.
 
 # --instructions--
 

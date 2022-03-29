@@ -19,7 +19,7 @@ Ecco un esempio:
 
 # --instructions--
 
-I risultati del sondaggio di Camper Cat sul torneo di Mortal Kombat sono arrivati! Metti un tag `time` intorno al testo `Thursday, September 15<sup>th</sup>` e aggiungi un attributo `datetime` impostato a `2016-09-15`.
+I risultati del childdaggio di Camper Cat sul torneo di Mortal Kombat childo arrivati! Metti un tag `time` intorno al testo `Thursday, September 15<sup>th</sup>` e aggiungi un attributo `datetime` impostato a `2016-09-15`.
 
 # --hints--
 
@@ -83,7 +83,7 @@ const datetimeAttr = timeElement?.getAttribute("datetime");
       <h3>Comments:</h3>
       <article>
         <p>Posted by: Sub-Zero on <time datetime="2016-08-13T20:01Z">August 13<sup>th</sup></time></p>
-        <p>Johnny Cage better be there, I'll finish him!</p>
+        <p>Johnny Cage better be there, I'll finish them!</p>
       </article>
       <article>
         <p>Posted by: Doge on <time datetime="2016-08-15T08:12Z">August 15<sup>th</sup></time></p>
@@ -115,7 +115,7 @@ const datetimeAttr = timeElement?.getAttribute("datetime");
       <h3>Comments:</h3>
       <article>
         <p>Posted by: Sub-Zero on <time datetime="2016-08-13T20:01Z">August 13<sup>th</sup></time></p>
-        <p>Johnny Cage better be there, I'll finish him!</p>
+        <p>Johnny Cage better be there, I'll finish them!</p>
       </article>
       <article>
         <p>Posted by: Doge on <time datetime="2016-08-15T08:12Z">August 15<sup>th</sup></time></p>

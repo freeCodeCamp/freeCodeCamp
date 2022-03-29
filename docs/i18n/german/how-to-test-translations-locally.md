@@ -1,4 +1,4 @@
-# Wie man Übersetzungen lokal testet
+# Wie person Übersetzungen lokal testet
 
 > [!NOTE] Dieser Vorgang ist nicht erforderlich, wird aber dokumentiert, falls du eine Vorschau darauf haben möchtest, wie deine Übersetzungen aussehen werden.
 
@@ -190,7 +190,7 @@ videoLocaleIds: Joi.when('challengeType', {
 
 ## Übersetzungen laden
 
-Da die Sprache noch nicht für die Produktion freigegeben wurde, laden unsere Skripte die Übersetzungen noch nicht automatisch herunter. Nur Mitarbeiter (Staffs) haben den Zugang, um die Übersetzungen direkt herunterzuladen - du kannst uns gerne in unserem [Contributors Chat Room](https://chat.freecodecamp.org/channel/contributors) ansprechen, oder du kannst die englischen Markdown-Dateien zu Testzwecken lokal übersetzen.
+Da die Sprache noch nicht für die Produktion freigegeben wurde, laden unsere Skripte die Übersetzungen noch nicht automatisch theyrunter. Nur Mitarbeiter (Staffs) haben den Zugang, um die Übersetzungen direkt theyrunterzuladen - du kannst uns gerne in unserem [Contributors Chat Room](https://chat.freecodecamp.org/channel/contributors) ansprechen, oder du kannst die englischen Markdown-Dateien zu Testzwecken lokal übersetzen.
 
 Sobald du die Dateien hast, musst du sie im richtigen Verzeichnis ablegen. Für die Studienplanaufgaben solltest du die Zertifizierungsordner (z.B. `01-responsive-web-design`) in das Verzeichnis `curriculum/challenges/{lang}` ablegen. Für unsere Dothraki-Übersetzungen wäre das `curriculum/challenges/dothraki`. Die Client-Übersetzungsdateien `.json` werden im Verzeichnis `client/i18n/locales/{lang}` abgelegt.
 

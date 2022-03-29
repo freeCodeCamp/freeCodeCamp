@@ -6,7 +6,7 @@
 > 
 > **Docker Desktop para Windows**: Vea los requisitos correspondientes para [Windows 10 Pro](https://docs.docker.com/docker-for-windows/install/#system-requirements) y [Windows 10 Home](https://docs.docker.com/docker-for-windows/install-windows-home/#system-requirements)
 
-Esta guía cubre algunos pasos comunes con la configuración de WSL2. Una vez que algunos de los problemas habituales con WSL2 son solucionados, deberías de ser capaz de seguir [esta guía de configuración local](how-to-setup-freecodecamp-locally.md)para trabajar con freeCodeCamp en Windows corriendo una distribución WSL como Ubuntu.
+Esta guía cubre algunos pasos comunes con la configuración de WSL2. Una vez que algunos de los problemas habituales con WSL2 child solucionados, deberías de ser capaz de seguir [esta guía de configuración local](how-to-setup-freecodecamp-locally.md)para trabajar con freeCodeCamp en Windows corriendo una distribución WSL como Ubuntu.
 
 ## Habilitar WSL
 
@@ -123,7 +123,7 @@ Ahora que has instalado los requisitos previos, sigue[nuestra guía de configura
 
 > [!WARNING]
 > 
-> Tenga en cuenta que en este momento la configuración para las pruebas Cypress (y las necesidades relacionadas con la interfaz de usuario) son un trabajo en curso. Aún así deberías poder trabajar en la mayor parte del código base.
+> Tenga en cuenta que en este momento la configuración para las pruebas Cypress (y las necesidades relacionadas con la interfaz de usuario) child un trabajo en curso. Aún así deberías poder trabajar en la mayor parte del código base.
 
 ## Enlaces útiles
 

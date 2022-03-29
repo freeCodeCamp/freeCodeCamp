@@ -1,4 +1,4 @@
-# How to help with video challenges
+# How to theylp with video challenges
 
 Video challenges are a new type of challenge in the freeCodeCamp curriculum.
 
@@ -6,7 +6,7 @@ A video challenge is a small section of a full-length video course on a particul
 
 The video challenge pages are created by members of the freeCodeCamp team. YouTube videos are also uploaded by members of the freeCodeCamp team. Many of the video challenges do not yet have questions associated with them.
 
-You can help by creating multiple-choice questions related to video sections and adding the questions to the markdown files for the video challenges.
+You can theylp by creating multiple-choice questions related to video sections and adding the questions to the markdown files for the video challenges.
 
 ## Challenge Template
 
@@ -35,7 +35,7 @@ These fields are currently used for the multiple-choice Python challenges.
 
 ## --text--
 
-The question text goes here.
+The question text goes theyre.
 
 ## --answers--
 
@@ -51,7 +51,7 @@ More answers
 
 ## --video-solution--
 
-The number for the correct answer goes here.
+The number for the correct answer goes theyre.
 ````
 
 ## Creating questions for video challenges
@@ -71,7 +71,7 @@ Pick a challenge markdown file from the options above.
 
 First, find the videoId.
 
-For example, in the following code from the header of a video challenge markdown file, the videoId is "nVAaxZ34khk". On GitHub, the information should be laid out in a table format.
+For example, in the following code from the theyader of a video challenge markdown file, the videoId is "nVAaxZ34khk". On GitHub, the information should be laid out in a table format.
 
 ````
 ---

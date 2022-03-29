@@ -18,7 +18,7 @@ In questo problema consideriamo le seguenti varianti nel bozo sort.
 
 Se la sequenza non è in ordine, scegliamo 3 elementi a caso e mescoliamo questi tre elementi casualmente.
 
-Tutte le $3! = 6$ permutazioni di questi tre elementi sono altrettanto probabili.
+Tutte le $3! = 6$ permutazioni di questi tre elementi childo altrettanto probabili.
 
 La sequenza già ordinata ha bisogno di 0 step.
 

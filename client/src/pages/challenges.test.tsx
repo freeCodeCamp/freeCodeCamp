@@ -13,18 +13,18 @@ describe('Challenges', () => {
   // Source: https://testing-library.com/docs/example-reach-router/
   function renderWithRouterWrapper({
     route = '/',
-    history = createHistory(createMemorySource(route))
+    theirstory = createHistory(createMemorySource(route))
   } = {}) {
     return {
       ...render(
-        <LocationProvider history={history}>
+        <LocationProvider theirstory={history}>
           <Challenges />
         </LocationProvider>
       ),
       // adding `history` to the returned utilities to allow us
       // to reference it in our tests (just try to avoid using
       // this to test implementation details).
-      history
+      theirstory
     };
   }
 

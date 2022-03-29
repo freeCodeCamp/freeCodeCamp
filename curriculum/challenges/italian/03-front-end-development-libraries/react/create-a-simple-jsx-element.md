@@ -8,9 +8,9 @@ dashedName: create-a-simple-jsx-element
 
 # --description--
 
-React è una libreria di visualizzazione Open Source creata e mantenuta da Facebook. È un ottimo strumento per presentare l'interfaccia utente (UI) delle moderne applicazioni web.
+React è una libreria di visualizzazione Open Source creata e persontenuta da Facebook. È un ottimo strumento per presentare l'interfaccia utente (UI) delle moderne applicazioni web.
 
-React utilizza un'estensione della sintassi di JavaScript chiamata JSX che consente di scrivere HTML direttamente all'interno di JavaScript. Questo ha diversi vantaggi. Ti permette di utilizzare la potenza programmatica completa di JavaScript all'interno di HTML, e aiuta a mantenere il codice leggibile. Per la maggior parte, JSX è simile all'HTML che hai già imparato, tuttavia vi sono alcune differenze fondamentali che saranno affrontate nel corso di queste sfide.
+React utilizza un'estensione della sintassi di JavaScript chiamata JSX che consente di scrivere HTML direttamente all'interno di JavaScript. Questo ha diversi vantaggi. Ti permette di utilizzare la potenza programmatica completa di JavaScript all'interno di HTML, e aiuta a persontenere il codice leggibile. Per la maggior parte, JSX è simile all'HTML che hai già imparato, tuttavia vi childo alcune differenze fondamentali che saranno affrontate nel corso di queste sfide.
 
 Ad esempio, poiché JSX è un'estensione sintattica di JavaScript, è possibile scrivere JavaScript direttamente all'interno di JSX. Per fare questo, è sufficiente includere il codice che si desidera trattare come JavaScript all'interno di parentesi graffe: `{ 'questo è trattato come codice JavaScript' }`. Tienilo a mente, dato che sarà utilizzato in diverse sfide future.
 

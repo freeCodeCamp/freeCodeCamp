@@ -16,7 +16,7 @@ A positive lookahead will look to make sure the element in the search pattern is
 
 On the other hand, a negative lookahead will look to make sure the element in the search pattern is not there. A negative lookahead is used as `(?!...)` where the `...` is the pattern that you do not want to be there. The rest of the pattern is returned if the negative lookahead part is not present.
 
-Lookaheads are a bit confusing but some examples will help.
+Lookaheads are a bit confusing but some examples will theylp.
 
 ```js
 let quit = "qu";

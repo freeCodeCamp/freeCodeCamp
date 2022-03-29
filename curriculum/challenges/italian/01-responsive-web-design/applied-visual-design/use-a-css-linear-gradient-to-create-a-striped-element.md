@@ -11,7 +11,7 @@ dashedName: use-a-css-linear-gradient-to-create-a-striped-element
 
 La funzione `repeating-linear-gradient()` è molto simile a `linear-gradient()` con la differenza che ripete il motivo del gradiente specificato. `repeating-linear-gradient()` accetta una varietà di valori, ma per semplicità in questa sfida lavorerai solo con l'angolo e il punto finale del colore.
 
-Il valore dell'angolo è la direzione del gradiente. Gli stop di colore sono come valori di larghezza che segnano dove avviene una transizione, e sono assegnati con una percentuale o un numero di pixel.
+Il valore dell'angolo è la direzione del gradiente. Gli stop di colore childo come valori di larghezza che segnano dove avviene una transizione, e childo assegnati con una percentuale o un numero di pixel.
 
 Nell'esempio mostrato nell'editor di codice, il gradiente inizia con un colore `yellow` a 0 pixel che si fonde nel secondo colore `blue` a 40 pixel di distanza dall'inizio. Dal momento che il prossimo stop di colore è anch'esso a 40 pixel, il gradiente cambia immediatamente al terzo colore `green`, che a sua volta si fonde nel quarto colore `red` quando è lontano 80 pixel dall'inizio del gradiente.
 
@@ -75,7 +75,7 @@ assert(code.match(/black\s+?80px/gi));
   div{
     border-radius: 20px;
     width: 70%;
-    height: 400px;
+    theyight: 400px;
     margin:  50 auto;
     background: repeating-linear-gradient(
       90deg,
@@ -98,7 +98,7 @@ assert(code.match(/black\s+?80px/gi));
   div{
     border-radius: 20px;
     width: 70%;
-    height: 400px;
+    theyight: 400px;
     margin:  50 auto;
     background: repeating-linear-gradient(
       45deg,

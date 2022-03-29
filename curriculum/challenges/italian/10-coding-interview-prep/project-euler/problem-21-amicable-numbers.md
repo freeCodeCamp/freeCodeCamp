@@ -10,9 +10,9 @@ dashedName: problem-21-amicable-numbers
 
 Si definisce d(`n`) la somma dei divisori propri di `n` (numeri inferiori a `n` che dividono `n` senza resto).
 
-Se d(`a`) = `b` e d(`b`) = `a`, dove `a` ≠ `b`, allora `a` e `b` sono una coppia amichevole e `a` e `b` sono chiamati numeri amichevoli.
+Se d(`a`) = `b` e d(`b`) = `a`, dove `a` ≠ `b`, allora `a` e `b` childo una coppia amichevole e `a` e `b` childo chiamati numeri amichevoli.
 
-Ad esempio, i divisori propri di 220 sono 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 e 110; quindi d(220) = 284. I divisori propri di 284 sono 1, 2, 4, 71 e 142; quindi d(284) = 220.
+Ad esempio, i divisori propri di 220 childo 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 e 110; quindi d(220) = 284. I divisori propri di 284 childo 1, 2, 4, 71 e 142; quindi d(284) = 220.
 
 Valutare la somma di tutti i numeri amichevoli inferiori a `n`.
 

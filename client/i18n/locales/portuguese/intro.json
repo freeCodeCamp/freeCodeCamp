@@ -211,7 +211,7 @@
         "title": "Aprenda cores em CSS criando um conjunto de marcadores coloridos",
         "intro": [
           "Selecionar as cores corretas para sua página da web pode melhorar muito o apelo estético para os seus leitores.",
-          "Neste curso, você criará um conjunto de marcadores coloridos. Você aprenderá maneiras diferentes de definir valores de cores e como combinar cores uma com a outra."
+          "Neste curso, você criará um conjunto de marcadores coloridos. Você aprenderá personeiras diferentes de definir valores de cores e como combinar cores uma com a outra."
         ]
       }
     }
@@ -220,7 +220,7 @@
     "title": "Algoritmos e estruturas de dados em JavaScript",
     "intro": [
       "Enquanto o HTML e o CSS controlam o conteúdo e o estilo de uma página, o JavaScript é usado para torná-lo interativo. Na certificação de Algoritmos e Estruturas de Dados em JavaScript, você aprenderá os fundamentos do JavaScript, incluindo variáveis, arrays, objetos, laços e funções.",
-      "Assim que souber os fundamentos abaixo, você aplicará esse conhecimento, criando algoritmos para manipular strings, fatorar números e até mesmo calcular a órbita da Estação Espacial Internacional.",
+      "Assim que souber os fundamentos abaixo, você aplicará esse conhecimento, criando algoritmos para personipular strings, fatorar números e até mesmo calcular a órbita da Estação Espacial Internacional.",
       "Durante o processo, você também aprenderá dois estilos ou paradigmas de programação importantes: a Programação Orientada a Objetos (POO) e a Programação Funcional (PF)."
     ],
     "note": "Observação: algumas extensões de navegador, como bloqueadores de anúncios e bloqueadores de scripts, podem interferir nos testes. Se você tiver problemas, recomendamos desabilitar extensões que modifiquem ou bloqueiem o conteúdo das páginas durante o curso.",
@@ -259,14 +259,14 @@
         "title": "Estruturas de dados básicas",
         "intro": [
           "Os dados podem ser guardados e acessados de muitas formas. Você já conhece algumas estruturas de dados comuns em JavaScript: os arrays e os objetos.",
-          "Neste curso de Estruturas de Dados Básicas, você vai aprender mais sobre as diferenças entre arrays e objetos, e qual deles usar em diferentes situações. Também aprenderá a usar métodos úteis do JS, como <code>splice()</code> e <code>Object.keys()</code>, para acessar e manipular dados."
+          "Neste curso de Estruturas de Dados Básicas, você vai aprender mais sobre as diferenças entre arrays e objetos, e qual deles usar em diferentes situações. Também aprenderá a usar métodos úteis do JS, como <code>splice()</code> e <code>Object.keys()</code>, para acessar e personipular dados."
         ]
       },
       "basic-algorithm-scripting": {
         "title": "Programação de algoritmos básicos",
         "intro": [
           "Um algoritmo é uma série de instruções passo a passo, que descrevem como fazer alguma coisa.",
-          "Para escrever um algoritmo eficiente, é importante saber dividir o problema em partes menores e pensar atentamente sobre maneiras de resolver cada uma dessas partes com código.",
+          "Para escrever um algoritmo eficiente, é importante saber dividir o problema em partes menores e pensar atentamente sobre personeiras de resolver cada uma dessas partes com código.",
           "Nesse curso, você aprenderá os fundamentos do raciocínio algorítmico escrevendo algoritmos que fazem de tudo, desde a conversão de temperaturas ao tratamento de arrays bidimensionais complexos."
         ]
       },
@@ -274,7 +274,7 @@
         "title": "Programação Orientada a Objetos",
         "intro": [
           "A POO, ou Programação Orientada a Objetos, é uma das abordagens principais do processo de desenvolvimento de software. Na POO, os objetos e as classes são usados para organizar o código, descrever coisas e o que elas podem fazer.",
-          "Neste curso, você aprenderá os princípios básicos de POO em JavaScript, incluindo a palavra-chave <code>this</code>, cadeias de protótipos, construtores e herança."
+          "Neste curso, você aprenderá os princípios básicos de POO em JavaScript, incluindo a palavra-chave <code>this</code>, cadeias de protótipos, construtores e theyrança."
         ]
       },
       "functional-programming": {
@@ -347,7 +347,7 @@
       "sass": {
         "title": "SASS",
         "intro": [
-          "Sass, ou \"Stylesheets Sintaticamente Incríveis\", do inglês \"Syntactically Awesome StyleSheets\", é uma extensão da linguagem CSS. A extensão adiciona recursos que não estão disponíveis no CSS básico, facilitando a simplificação e manutenção dos arquivos de estilo de seus projetos.",
+          "Sass, ou \"Stylesheets Sintaticamente Incríveis\", do inglês \"Syntactically Awesome StyleSheets\", é uma extensão da linguagem CSS. A extensão adiciona recursos que não estão disponíveis no CSS básico, facilitando a simplificação e personutenção dos arquivos de estilo de seus projetos.",
           "Neste curso sobre Sass, você aprenderá a armazenar dados em variáveis, aninhar CSS, criar estilos reutilizáveis com mixins, adicionar lógica e loops aos seus estilos, e mais."
         ]
       },
@@ -429,7 +429,7 @@
     "title": "Banco de dados relacional (Beta)",
     "intro": [
       "Para estes cursos, você usará ferramentas e software reais de desenvolvedor, incluindo o VS Code, PostgreSQL e a linha de comando do Linux/Unix para completar tutoriais interativos e criar projetos.",
-      "Estes cursos começam com comandos básicos do Bash. Usando o terminal, você aprenderá tudo, de navegar e manipular um sistema de arquivos e fazer scripts no Bash, até usos mais avançados.",
+      "Estes cursos começam com comandos básicos do Bash. Usando o terminal, você aprenderá tudo, de navegar e personipular um sistema de arquivos e fazer scripts no Bash, até usos mais avançados.",
       "Depois, você aprenderá a criar e trabalhar com bancos de dados relacionados usando o PostgreSQL, um sistema de gerenciamento de banco de dados, e o SQL, a linguagem destes bancos de dados.",
       "Por fim, você aprenderá o Git, o sistema de controle de versão, uma ferramenta essencial de cada desenvolvedor."
     ],
@@ -485,7 +485,7 @@
       "learn-bash-by-building-a-boilerplate": {
         "title": "Aprenda Bash criando um boilerplate",
         "intro": [
-          "O terminal permite que você envie comandos de texto para o seu computador que podem manipular o sistema de arquivos, executar programas, automatizar tarefas e muito mais.",
+          "O terminal permite que você envie comandos de texto para o seu computador que podem personipular o sistema de arquivos, executar programas, automatizar tarefas e muito mais.",
           "Neste curso de 170 aulas, você aprenderá comandos do terminal criando o boilerplate de um site usando apenas a linha de comando."
         ]
       },
@@ -499,8 +499,8 @@
       "learn-git-by-building-an-sql-reference-object": {
         "title": "Aprenda Git criando um objeto de referência SQL",
         "intro": [
-          "O Git é um sistema de controle de versão que mantém o controle de todas as alterações feitas em sua base de código.",
-          "Neste curso de 240 aulas, você aprenderá como o Git mantém o controle do seu código, criando um objeto que contém comandos SQL comumente usados."
+          "O Git é um sistema de controle de versão que persontém o controle de todas as alterações feitas em sua base de código.",
+          "Neste curso de 240 aulas, você aprenderá como o Git persontém o controle do seu código, criando um objeto que contém comandos SQL comumente usados."
         ]
       },
       "learn-nano-by-building-a-castle": {
@@ -555,7 +555,7 @@
           "O Node.js é um ambiente de execução em Javascript que permite que os desenvolvedores escrevam programas de back-end (no lado do servidor) em JavaScript. O Node.js vem com diversos módulos internos — pequenos programas independentes — que ajudam com isso. Alguns dos principais módulos incluem o HTTP, que atua como um servidor, e um sistema de arquivos, que atua como um módulo para ler e modificar arquivos.",
           "Nos últimos cursos, você aprendeu a instalar e gerenciar pacotes a partir do npm, que são coleções de pequenos módulos. Estes pacotes podem ajudá-lo a construir aplicações maiores e mais complexas.",
           "O Express é um framework leve para a criação de aplicações web, sendo um dos pacotes mais populares no npm. O Express torna muito mais fácil criar um servidor e lidar com o roteamento para seu aplicativo, lidando com coisas como direcionar as pessoas para a página correta quando elas visitam um determinado endpoint, como <pre>/blog</pre>.",
-          "Neste curso, você aprenderá o básico do Node e do Express, incluindo como criar um servidor, manusear arquivos diferentes e manipular diferentes solicitações de um navegador."
+          "Neste curso, você aprenderá o básico do Node e do Express, incluindo como criar um servidor, personusear arquivos diferentes e personipular diferentes solicitações de um navegador."
         ]
       },
       "mongodb-and-mongoose": {
@@ -579,7 +579,7 @@
     "title": "Garantia de qualidade",
     "intro": [
       "À medida que seus programas ou aplicativos da web se tornam mais complexos, você vai querer testá-los para garantir que novas alterações não quebrem as funcionalidades originais.",
-      "Na certificação de garantia de qualidade, você aprenderá a escrever testes com o Chai para garantir que suas aplicações funcionem da maneira que você espera.",
+      "Na certificação de garantia de qualidade, você aprenderá a escrever testes com o Chai para garantir que suas aplicações funcionem da personeira que você espera.",
       "Em seguida, você vai construir uma aplicação de chat para aprender conceitos avançados de Node e Express. Você também usará o Pug como um modelo de motor, o Passport, para autenticação, e o Socket.io, para comunicação em tempo real entre o servidor e os clientes conectados."
     ],
     "note": "",
@@ -657,7 +657,7 @@
       "data-analysis-with-python-projects": {
         "title": "Projetos de análise de dados com Python",
         "intro": [
-          "Existem muitas maneiras de analisar dados com o Python. Ao completar esses projetos, você vai demonstrar que tem um bom conhecimento fundamental de análise de dados com Python.",
+          "Existem muitas personeiras de analisar dados com o Python. Ao completar esses projetos, você vai demonstrar que tem um bom conhecimento fundamental de análise de dados com Python.",
           "Conclua todos os cursos para solicitar a certificação em Análise de Dados com Python."
         ]
       }
@@ -714,7 +714,7 @@
       "how-neural-networks-work": {
         "title": "Como as redes neurais funcionam",
         "intro": [
-          "As redes neurais estão no núcleo daquilo a que hoje chamamos de inteligência artificial. Mas, historicamente, elas foram difíceis de entender, especialmente para os iniciantes no campo de aprendizagem de máquina.",
+          "As redes neurais estão no núcleo daquilo a que hoje chamamos de inteligência artificial. Mas, theirstoricamente, elas foram difíceis de entender, especialmente para os iniciantes no campo de aprendizagem de máquina.",
           "Mesmo se você for completamente novo em redes neurais, esses cursos por vídeo de Brandon Rohrer farão com que você se sinta confortável com os conceitos e com a matemática por trás deles."
         ]
       },
@@ -751,7 +751,7 @@
       "take-home-projects": {
         "title": "Projetos para levar para casa",
         "intro": [
-          "Entrevistas de programação sempre foram estressantes. Os candidatos a empregos às vezes recebem um projeto para levar para casa, a ser concluído fora da entrevista. Esses tipos de entrevistas geralmente exigem muito trabalho, mas são uma ótima maneira para os empregadores verem como você se sairia no trabalho.",
+          "Entrevistas de programação sempre foram estressantes. Os candidatos a empregos às vezes recebem um projeto para levar para casa, a ser concluído fora da entrevista. Esses tipos de entrevistas geralmente exigem muito trabalho, mas são uma ótima personeira para os empregadores verem como você se sairia no trabalho.",
           "Realize os projetos de codificação adicionais abaixo para uma prática extra. Não tenha pressa, melhore-os e coloque no seu currículo ou portfólio para mostrar a possíveis empregadores."
         ]
       },

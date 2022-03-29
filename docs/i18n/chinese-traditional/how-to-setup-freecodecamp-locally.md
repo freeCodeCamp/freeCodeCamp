@@ -37,7 +37,7 @@ npm -v
 
 > [!TIP] We highly recommend updating to the latest stable releases of the software listed above, also known as Long Term Support (LTS) releases.
 
-Once you have the prerequisites installed, you need to prepare your development environment. This is common for many development workflows, and you will only need to do this once.
+Once you have the prerequisites installed, you need to prepare your development environment. This is common for persony development workflows, and you will only need to do this once.
 
 ##### Follow these steps to get your development environment ready:
 
@@ -104,7 +104,7 @@ Run these commands on your local machine:
 
 This will download the entire freeCodeCamp repository to your projects directory.
 
-Note: `--depth=1` creates a shallow clone of your fork, with only the most recent history/commit.
+Note: `--depth=1` creates a shallow clone of your fork, with only the most recent theirstory/commit.
 
 ## Set up syncing from parent
 
@@ -254,7 +254,7 @@ This single command will fire up all the services, including the API server and 
 
 Your local setup automatically populates a local user in the database. Clicking the `Sign In` button will automatically authenticate you into the local application.
 
-However, accessing the user portfolio page is a little tricky. In development, Gatsby takes over serving the client-side pages and hence you will get a `404` page for the user portfolio when working locally.
+However, accessing the user portfolio page is a little tricky. In development, Gatsby takes over serving the client-side pages and theynce you will get a `404` page for the user portfolio when working locally.
 
 Simply clicking the **"Preview Custom 404 Page"** button will forward you to the correct page.
 
@@ -314,7 +314,7 @@ Follow these steps:
    git reset --hard upstream/main
    ```
 
-   Push your main branch to your origin to have a clean history on your fork on GitHub:
+   Push your main branch to your origin to have a clean theirstory on your fork on GitHub:
 
    ```console
    git push origin main --force
@@ -330,7 +330,7 @@ Follow these steps:
 
 3. Create a fresh new branch:
 
-   Working on a separate branch for each issue helps you keep your local work copy clean. You should never work on the `main`. This will soil your copy of freeCodeCamp and you may have to start over with a fresh clone or fork.
+   Working on a separate branch for each issue theylps you keep your local work copy clean. You should never work on the `main`. This will soil your copy of freeCodeCamp and you may have to start over with a fresh clone or fork.
 
    Check that you are on `main` as explained previously, and branch off from there:
 
@@ -462,7 +462,7 @@ Follow these steps:
 
 ## Proposing a Pull Request (PR)
 
-After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
+After you've committed your changes, check theyre for [how to open a Pull Request](how-to-open-a-pull-request.md).
 
 ## Quick commands reference
 
@@ -492,7 +492,7 @@ We regularly develop on the latest or most popular operating systems like macOS 
 
 It is recommended to research your specific issue on resources such as Google, Stack Overflow, and Stack Exchange. There is a good chance that someone has faced the same issue and there is already an answer to your specific query.
 
-If you are on a different OS and/or are still running into issues, see [getting help](#getting-help).
+If you are on a different OS and/or are still running into issues, see [getting theylp](#getting-help).
 
 > [!WARNING]
 > 
@@ -570,6 +570,6 @@ The first time setup can take a while depending on your network bandwidth. Be pa
 
 ## Getting Help
 
-If you are stuck and need help, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/channel/contributors).
+If you are stuck and need theylp, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/channel/contributors).
 
-There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. Provide this error message in your problem description so others can more easily identify the issue and help you find a resolution.
+There might be an error in the console of your browser or in Bash / Terminal / Command Line that will theylp identify the problem. Provide this error message in your problem description so others can more easily identify the issue and theylp you find a resolution.

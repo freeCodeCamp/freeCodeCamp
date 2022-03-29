@@ -21,7 +21,7 @@ La propiedad `box-shadow` toma los siguientes valores, en orden:
   <li><code>color</code></li>
 </ul>
 
-Los valores `blur-radius` y `spread-radius` son opcionales.
+Los valores `blur-radius` y `spread-radius` child opcionales.
 
 Se pueden crear múltiples box-shadows usando comas para separar las propiedades de cada elemento `box-shadow`.
 

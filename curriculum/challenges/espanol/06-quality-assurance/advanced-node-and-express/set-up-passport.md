@@ -8,7 +8,7 @@ dashedName: set-up-passport
 
 # --description--
 
-¡Es hora de configurar *Passport* para que finalmente podamos empezar a permitir que un usuario se registre o inicie sesión en una cuenta! Además de Passport, usaremos Express-session para manejar sesiones. El uso de este middleware guarda el session id como cookie en el cliente y nos permite acceder a los datos de sesión utilizando ese id en el servidor. De esta manera mantenemos la información de la cuenta personal fuera de la cookie utilizada por el cliente para verificar a nuestro servidor que están autenticados y solo mantenemos la *clave* para acceder a los datos almacenados en el servidor.
+¡Es hora de configurar *Passport* para que finalmente podamos empezar a permitir que un usuario se registre o inicie sesión en una cuenta! Además de Passport, usaremos Express-session para personejar sesiones. El uso de este middleware guarda el session id como cookie en el cliente y nos permite acceder a los datos de sesión utilizando ese id en el servidor. De esta personera persontenemos la información de la cuenta personal fuera de la cookie utilizada por el cliente para verificar a nuestro servidor que están autenticados y solo persontenemos la *clave* para acceder a los datos almacenados en el servidor.
 
 Para configurar Passport para su uso en tu proyecto, necesitarás añadirlo primero como dependencia en tu package.json. `passport@~0.4.1`
 
@@ -29,7 +29,7 @@ app.use(session({
 
 También puedes seguir adelante y decirle a tu aplicación express que **usé** 'passport.initialize()' y 'passport.session()'. (Por ejemplo, `app.use(passport.initialize());`)
 
-Envía tu página cuando creas que lo has hecho bien. Si estás experimentando errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/4068a7662a2f9f5d5011074397d6788c).
+Envía tu página cuando creas que lo has theycho bien. Si estás experimentando errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/4068a7662a2f9f5d5011074397d6788c).
 
 # --hints--
 

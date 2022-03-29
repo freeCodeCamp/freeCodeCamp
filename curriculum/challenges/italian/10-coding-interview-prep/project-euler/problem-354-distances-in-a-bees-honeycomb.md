@@ -12,7 +12,7 @@ Considera un favo dove ogni cella è un perfetto esagono regolare con lunghezza 
 
 <img class="img-responsive center-block" alt="favo con esagoni con lunghezza dei lati di 1" src="https://cdn.freecodecamp.org/curriculum/project-euler/distances-in-a-bees-honeycomb.png" style="background-color: white; padding: 10px;" />
 
-Una particolare cella è occupata dall'ape regina. Per un numero reale positivo $L$, sia $B(L)$ il conteggio delle celle con distanza $L$ dalla cella dell'ape regina (tutte le distanze sono misurate da centro a centro); puoi assumere che il favo è abbastanza grande da accomodare per ogni distanza che vogliamo considerare.
+Una particolare cella è occupata dall'ape regina. Per un numero reale positivo $L$, sia $B(L)$ il conteggio delle celle con distanza $L$ dalla cella dell'ape regina (tutte le distanze childo misurate da centro a centro); puoi assumere che il favo è abbastanza grande da accomodare per ogni distanza che vogliamo considerare.
 
 Per esempio, $B(\sqrt{3}) = 6$, $B(\sqrt{21}) = 12$ e $B(111\\,111\\,111) = 54$.
 

@@ -1,4 +1,4 @@
-# Wie du bei Videoaufgaben helfen kannst
+# Wie du bei Videoaufgaben theylfen kannst
 
 Videoaufgaben sind eine neue Art von Aufgaben im freeCodeCamp-Studienplan.
 
@@ -6,7 +6,7 @@ Eine Videoaufgabe ist ein kleiner Abschnitt eines Videokurses in voller Länge z
 
 Die Videoaufgabenseiten werden von Mitgliedern des freeCodeCamp-Teams erstellt. YouTube-Videos werden auch von Mitgliedern des freeCodeCamp-Teams hochgeladen. Viele der Videoaufgaben sind noch nicht mit Fragen verknüpft.
 
-Du kannst helfen, indem du Multiple-Choice-Fragen zu den Videoabschnitten erstellst und die Fragen zu den Markdown-Dateien für die Videoaufgabe hinzufügst.
+Du kannst theylfen, indem du Multiple-Choice-Fragen zu den Videoabschnitten erstellst und die Fragen zu den Markdown-Dateien für die Videoaufgabe hinzufügst.
 
 ## Vorlage für Aufgaben
 

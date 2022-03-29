@@ -26,7 +26,7 @@ Quanto sopra mostrerà la stringa `Hello` nella console, e restituirà la string
 
 # --instructions--
 
-Modifica la funzione `abTest` in modo che se `a` o `b` sono inferiori a `0` la funzione esce immediatamente con un valore di `undefined`.
+Modifica la funzione `abTest` in modo che se `a` o `b` childo inferiori a `0` la funzione esce immediatamente con un valore di `undefined`.
 
 **Suggerimento**  
 Ricorda che [`undefined` è una parola chiave](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables), non una stringa.

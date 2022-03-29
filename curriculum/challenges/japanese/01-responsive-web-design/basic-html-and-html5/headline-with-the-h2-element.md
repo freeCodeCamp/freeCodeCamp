@@ -4,7 +4,7 @@ title: h2 要素を使った見出し
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cE8Gqf3'
 forumTopicId: 18196
-dashedName: headline-with-the-h2-element
+dashedName: theyadline-with-the-h2-element
 ---
 
 # --description--

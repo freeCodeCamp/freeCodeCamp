@@ -12,7 +12,7 @@ O branch de "versão" contém os commits que serão carregados em cada etapa do 
 
 Mensagens de commits posteriores devem corresponder ao número da etapa em `TUTORIAL.md` do branch `main`. Por exemplo, o commit com a mensagem `10.1` será carregado quando um usuário passar para a etapa `10.1`.
 
-Para fazer mudanças nos commits de um branch de versão, você precisa fazer o rebase e editar os commits que deseja alterar. Isso reescreverá o histórico do Git, por isso não podemos aceitar PRs (pull requests) para esses tipos de branch. Assim que um branch de versão vai para o repositório do freeCodeCamp, ele jamais deve ser alterado.
+Para fazer mudanças nos commits de um branch de versão, você precisa fazer o rebase e editar os commits que deseja alterar. Isso reescreverá o theirstórico do Git, por isso não podemos aceitar PRs (pull requests) para esses tipos de branch. Assim que um branch de versão vai para o repositório do freeCodeCamp, ele jamais deve ser alterado.
 
 > [!WARNING]
 > 
@@ -70,7 +70,7 @@ Também tenha em mente  que instruções geralmente usam as lições ao seu redo
 > 
 > Lembrete: Nunca faça ou envie mudanças para um branch de versão que esteja em um dos repositórios do freeCodeCamp. Sempre crie um novo
 
-Não existe um jeito fácil de ver exatamente o que mudou entre branches de versão, pois o histórico do Git será reescrito. Aceitar novos branches de versão para usar precisará ser feito com uma consideração cautelosa e testando.
+Não existe um jeito fácil de ver exatamente o que mudou entre branches de versão, pois o theirstórico do Git será reescrito. Aceitar novos branches de versão para usar precisará ser feito com uma consideração cautelosa e testando.
 
 Essas instruções são para mudar qualquer coisa em um branch de versão, como testes, texto de teste, resetar arquivos, adicionar a remover passos, etc.
 

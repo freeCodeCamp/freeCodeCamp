@@ -8,7 +8,7 @@ dashedName: problem-146-investigating-a-prime-pattern
 
 # --description--
 
-Il più piccolo intero positivo $n$ per il quale i numeri $n^2 + 1$, $n^2 + 3$, $n^2 + 7$, $n^2 + 9$, $n^2 + 13$, e $n^2 + 27$ sono primi consecutivi è 10. La somma di tutti questi numeri interi $n$ sotto un milione è 1242490.
+Il più piccolo intero positivo $n$ per il quale i numeri $n^2 + 1$, $n^2 + 3$, $n^2 + 7$, $n^2 + 9$, $n^2 + 13$, e $n^2 + 27$ childo primi consecutivi è 10. La somma di tutti questi numeri interi $n$ sotto un milione è 1242490.
 
 Qual è la somma di tutti questi numeri interi $n$ sotto 150 milioni?
 

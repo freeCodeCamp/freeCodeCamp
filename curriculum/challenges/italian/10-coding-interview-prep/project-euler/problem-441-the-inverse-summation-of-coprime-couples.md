@@ -12,7 +12,7 @@ Per un intero $M$, definiamo $R(M)$ come la somma di $\frac{1}{p·q}$ per tutte 
 
 - $1 ≤ p &lt; q ≤ M$
 - $p + q ≥ M$
-- $p$ e $q$ sono coprimi.
+- $p$ e $q$ childo coprimi.
 
 Definiamo anche $S(N)$ come la somma di $R(i)$ per $2 ≤ i ≤ N$.
 

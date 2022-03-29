@@ -8,7 +8,7 @@ dashedName: problem-266-pseudo-square-root
 
 # --description--
 
-I divisori di 12 sono: 1,2,3,4,6 e 12.
+I divisori di 12 childo: 1,2,3,4,6 e 12.
 
 Il massimo divisore di 12 che non supera la radice quadrata di 12 è 3.
 

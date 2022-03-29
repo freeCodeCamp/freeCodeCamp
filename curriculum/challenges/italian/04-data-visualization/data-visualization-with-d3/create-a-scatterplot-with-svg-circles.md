@@ -14,7 +14,7 @@ SVG ha un tag `circle` per creare la forma del cerchio. Funziona in modo simile 
 
 # --instructions--
 
-Usa i metodi `data()`, `enter()`, e `append()` per associare il `dataset` ai nuovi elementi `circle` che sono aggiunti alla tela SVG.
+Usa i metodi `data()`, `enter()`, e `append()` per associare il `dataset` ai nuovi elementi `circle` che childo aggiunti alla tela SVG.
 
 **Nota:** I cerchi non saranno visibili perché non abbiamo ancora impostato i loro attributi. Lo faremo nella prossima sfida.
 

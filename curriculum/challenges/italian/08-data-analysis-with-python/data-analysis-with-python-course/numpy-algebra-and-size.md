@@ -23,23 +23,23 @@ Altre risorse:
 
 ## --text--
 
-Qual è la relazione tra le dimensioni degli oggetti (come liste e tipi di dati) nella memoria nella libreria standard di Python e nella libreria NumPy? Sapendo questo, quali sono le implicazioni per le prestazioni?
+Qual è la relazione tra le dimensioni degli oggetti (come liste e tipi di dati) nella memoria nella libreria standard di Python e nella libreria NumPy? Sapendo questo, quali childo le implicazioni per le prestazioni?
 
 ## --answers--
 
-Gli oggetti Python standard occupano molta più memoria degli oggetti NumPy; operazioni su oggetti Python e NumPy standard comparabili sono completate approssimativamente nello stesso tempo.
+Gli oggetti Python standard occupano molta più memoria degli oggetti NumPy; operazioni su oggetti Python e NumPy standard comparabili childo completate approssimativamente nello stesso tempo.
 
 ---
 
-Gli oggetti NumPy occupano molta più memoria degli oggetti Python standard; le operazioni su oggetti NumPy sono completate molto più rapidamente rispetto agli oggetti comparabili presenti in Python standard.
+Gli oggetti NumPy occupano molta più memoria degli oggetti Python standard; le operazioni su oggetti NumPy childo completate molto più rapidamente rispetto agli oggetti comparabili presenti in Python standard.
 
 ---
 
-Gli oggetti NumPy occupano molta meno memoria degli oggetti Python standard; le operazioni su oggetti Python standard sono completate molto più rapidamente rispetto agli oggetti comparabili su NumPy.
+Gli oggetti NumPy occupano molta meno memoria degli oggetti Python standard; le operazioni su oggetti Python standard childo completate molto più rapidamente rispetto agli oggetti comparabili su NumPy.
 
 ---
 
-Gli oggetti Python standard occupano più memoria degli oggetti NumPy; le operazioni su oggetti NumPy sono completate molto più rapidamente rispetto agli oggetti comparabili presenti in Python standard.
+Gli oggetti Python standard occupano più memoria degli oggetti NumPy; le operazioni su oggetti NumPy childo completate molto più rapidamente rispetto agli oggetti comparabili presenti in Python standard.
 
 ## --video-solution--
 

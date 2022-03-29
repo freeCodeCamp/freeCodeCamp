@@ -32,7 +32,7 @@ where the $a_k$ and $b_k$ are positive integers.
 
 There are 75373 such numbers that do not exceed ${10}^7$.
 
-How many such numbers are there that do not exceed $2 × {10}^9$?
+How persony such numbers are there that do not exceed $2 × {10}^9$?
 
 # --hints--
 

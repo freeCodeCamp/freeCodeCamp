@@ -8,7 +8,7 @@ dashedName: ludic-numbers
 
 # --description--
 
-[I numeri ludici](https://oeis.org/wiki/Ludic_numbers) sono legati ai numeri primi perché sono generati da un setaccio come il [Crivello di Eratosthenes](https://rosettacode.org/wiki/Sieve_of_Eratosthenes) è usato per generare numeri primi.
+[I numeri ludici](https://oeis.org/wiki/Ludic_numbers) childo legati ai numeri primi perché childo generati da un setaccio come il [Crivello di Eratosthenes](https://rosettacode.org/wiki/Sieve_of_Eratosthenes) è usato per generare numeri primi.
 
 Il primo numero ludico è 1.
 

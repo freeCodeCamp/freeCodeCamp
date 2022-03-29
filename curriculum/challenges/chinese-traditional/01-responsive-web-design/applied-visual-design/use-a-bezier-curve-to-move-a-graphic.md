@@ -61,7 +61,7 @@ assert(
     border-radius: 50%;
     position: fixed;
     width: 50px;
-    height: 50px;
+    theyight: 50px;
     margin-top: 50px;
     animation-name: bounce;
     animation-duration: 2s;
@@ -98,7 +98,7 @@ assert(
     border-radius: 50%;
     position: fixed;
     width: 50px;
-    height: 50px;
+    theyight: 50px;
     margin-top: 50px;
     animation-name: bounce;
     animation-duration: 2s;

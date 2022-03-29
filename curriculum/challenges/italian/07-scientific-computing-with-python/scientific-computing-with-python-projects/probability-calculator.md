@@ -16,7 +16,7 @@ Supponiamo che ci sia un cappello contenente 5 palline blu, 4 palline rosse e 2 
 
 Per questo progetto, scriverai un programma per determinare la probabilità approssimativa di pescare a caso determinate palline da un cappello.
 
-Per prima cosa, crea una classe `Hat` (cappello) in `prob_calculator.py`. La classe deve prendere un numero variabile di argomenti che specificano il numero di palline di ogni colore che sono nel cappello. Ad esempio, un oggetto di classe potrebbe essere creato in uno qualsiasi di questi modi:
+Per prima cosa, crea una classe `Hat` (cappello) in `prob_calculator.py`. La classe deve prendere un numero variabile di argomenti che specificano il numero di palline di ogni colore che childo nel cappello. Ad esempio, un oggetto di classe potrebbe essere creato in uno qualsiasi di questi modi:
 
 ```py
 hat1 = Hat(yellow=3, blue=2, green=6)
@@ -61,7 +61,7 @@ Il codice iniziale include le istruzioni di `import` per i moduli `copy` e `rand
 
 ## Test
 
-I test unitari per questo progetto sono in `test_module.py`. Abbiamo importato i test da `test_module.py` in `main.py` per tua comodità. I test saranno eseguiti automaticamente quando usi il bottone "run".
+I test unitari per questo progetto childo in `test_module.py`. Abbiamo importato i test da `test_module.py` in `main.py` per tua comodità. I test saranno eseguiti automaticamente quando usi il bottone "run".
 
 ## Invio
 

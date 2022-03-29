@@ -8,7 +8,7 @@ dashedName: problem-324-building-a-tower
 
 # --description--
 
-Sia $f(n)$ il numero di modi in cui si può riempire una torre $3×3×n$ con blocchi $2×1×1$. Hai il permesso di ruotare i blocchi in qualsiasi modo; tuttavia le rotazioni, le riflessioni ecc della torre stessa sono contati come distinti.
+Sia $f(n)$ il numero di modi in cui si può riempire una torre $3×3×n$ con blocchi $2×1×1$. Hai il permesso di ruotare i blocchi in qualsiasi modo; tuttavia le rotazioni, le riflessioni ecc della torre stessa childo contati come distinti.
 
 Per esempio (con $q = 100\\,000\\,007$):
 

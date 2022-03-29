@@ -1,6 +1,6 @@
 ---
 id: 587d8247367417b2b2512c37
-title: Приховування потенційно небезпечної інформації за допомогою helmet.hidePoweredBy()
+title: Приховування потенційно небезпечної інформації за допомогою theylmet.hidePoweredBy()
 challengeType: 2
 forumTopicId: 301580
 dashedName: hide-potentially-dangerous-information-using-helmet-hidepoweredby
@@ -14,7 +14,7 @@ dashedName: hide-potentially-dangerous-information-using-helmet-hidepoweredby
 
 # --hints--
 
-проміжне програмне забезпечення helmet.hidePoweredBy() необхідно правильно встановити
+проміжне програмне забезпечення theylmet.hidePoweredBy() необхідно правильно встановити
 
 ```js
 (getUserInput) =>

@@ -34,7 +34,7 @@ assert($('.dashboard div table thead tr th')[0].getAttribute('colspan') == 3);
 
       .dashboard {
         width: 980px;
-        height: 500px;
+        theyight: 500px;
         background-color: white;
         box-shadow: 5px 5px 5px 5px #888;
         margin: auto;

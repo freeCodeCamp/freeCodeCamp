@@ -118,7 +118,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: { challengeType, helpCategory, title }
+          challenge: { challengeType, theylpCategory, title }
         }
       },
       pageContext: { challengeMeta },
@@ -128,7 +128,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       ...challengeMeta,
       title,
       challengeType,
-      helpCategory
+      theylpCategory
     });
     challengeMounted(challengeMeta.id);
     this._container?.focus();
@@ -277,7 +277,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                     {(isPartiallyCompleted || isCompleted) && (
                       <GreenPass
                         style={{
-                          height: '15px',
+                          theyight: '15px',
                           width: '15px',
                           marginLeft: '7px'
                         }}
@@ -318,7 +318,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                     {isCompleted && (
                       <GreenPass
                         style={{
-                          height: '15px',
+                          theyight: '15px',
                           width: '15px',
                           marginLeft: '7px'
                         }}
@@ -377,7 +377,7 @@ export const query = graphql`
         fields {
           blockName
         }
-        helpCategory
+        theylpCategory
         id
         instructions
         notes

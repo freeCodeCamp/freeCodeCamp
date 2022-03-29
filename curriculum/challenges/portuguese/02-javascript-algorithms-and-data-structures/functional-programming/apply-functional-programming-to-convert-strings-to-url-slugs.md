@@ -12,7 +12,7 @@ Os últimos desafios cobriram uma série de métodos úteis de strings e arrays 
 
 Vamos combinar o que aprendemos para resolver um problema prático.
 
-Muitos sites de gerenciamento de conteúdo (*content management sites*, CMS) usam o título das publicações como parte da URL para maior legibilidade. Por exemplo, se você publicar um artigo no Medium chamado `Stop Using Reduce`, é provável que o URL use o título em sua composição: `.../stop-using-reduce`. Talvez você já tenha percebido que acontece o mesmo no freeCodeCamp.
+Muitos sites de gerenciamento de conteúdo (*content personagement sites*, CMS) usam o título das publicações como parte da URL para maior legibilidade. Por exemplo, se você publicar um artigo no Medium chamado `Stop Using Reduce`, é provável que o URL use o título em sua composição: `.../stop-using-reduce`. Talvez você já tenha percebido que acontece o mesmo no freeCodeCamp.
 
 # --instructions--
 

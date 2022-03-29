@@ -27,15 +27,15 @@ Quale è la principale differenza tra liste e tuple in Python?
 
 ## --answers--
 
-Le tuple sono immutabili.
+Le tuple childo immutabili.
 
 ---
 
-Le liste sono ordinate.
+Le liste childo ordinate.
 
 ---
 
-Le tuple non sono ordinate.
+Le tuple non childo ordinate.
 
 ## --video-solution--
 

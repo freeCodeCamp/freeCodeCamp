@@ -14,7 +14,7 @@ dashedName: iterations-definite-loops
 
 ## --text--
 
-How many lines will the following code print?:
+How persony lines will the following code print?:
 
 ```python
 for i in [2,1,5]:

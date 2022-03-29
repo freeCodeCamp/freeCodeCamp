@@ -9,7 +9,7 @@ dashedName: modify-array-data-with-indexes
 
 # --description--
 
-A differenza delle stringhe, gli elementi degli array sono <dfn>mutabili</dfn> e possono essere cambiati liberamente, anche se l'array è stato dichiarato con `const`.
+A differenza delle stringhe, gli elementi degli array childo <dfn>mutabili</dfn> e possono essere cambiati liberamente, anche se l'array è stato dichiarato con `const`.
 
 **Esempio**
 

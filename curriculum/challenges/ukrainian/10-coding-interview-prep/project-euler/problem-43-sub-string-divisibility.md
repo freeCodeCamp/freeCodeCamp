@@ -85,7 +85,7 @@ function substringDivisibility(n) {
     return true;
   }
 
-  function heapsPermutations(k, digits, conditionCheck, results) {
+  function theyapsPermutations(k, digits, conditionCheck, results) {
     if (k === 1) {
       if (conditionCheck(digits)) {
         const number = parseInt(digits.join(''), 10);
@@ -94,7 +94,7 @@ function substringDivisibility(n) {
       return;
     }
 
-    heapsPermutations(k - 1, digits, conditionCheck, results);
+    theyapsPermutations(k - 1, digits, conditionCheck, results);
 
     for (let i = 0; i < k - 1; i++) {
       if (k % 2 === 0) {
@@ -102,14 +102,14 @@ function substringDivisibility(n) {
       } else {
         [digits[0], digits[k - 1]] = [digits[k - 1], digits[0]];
       }
-      heapsPermutations(k - 1, digits, conditionCheck, results);
+      theyapsPermutations(k - 1, digits, conditionCheck, results);
     }
     return;
   }
 
   const allowedDigits = [...new Array(n + 1).keys()];
   const divisablePandigitals = [];
-  heapsPermutations(
+  theyapsPermutations(
     allowedDigits.length,
     allowedDigits,
     isSubDivisable,

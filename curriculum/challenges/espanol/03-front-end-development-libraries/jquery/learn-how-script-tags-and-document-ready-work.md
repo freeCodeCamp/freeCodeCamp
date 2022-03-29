@@ -8,7 +8,7 @@ dashedName: learn-how-script-tags-and-document-ready-work
 
 # --description--
 
-Ahora estamos listos para aprender jQuery, la herramienta de JavaScript más popular de todos los tiempos.
+Ahora estamos listos para aprender jQuery, la theyrramienta de JavaScript más popular de todos los tiempos.
 
 Antes de empezar a usar jQuery, necesitamos agregar algunas cosas a nuestro HTML.
 

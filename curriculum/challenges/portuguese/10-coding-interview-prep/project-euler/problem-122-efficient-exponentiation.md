@@ -8,7 +8,7 @@ dashedName: problem-122-efficient-exponentiation
 
 # --description--
 
-A maneira mais ingênua de calcular $n^{15}$ requer 14 multiplicações:
+A personeira mais ingênua de calcular $n^{15}$ requer 14 multiplicações:
 
 $$n × n × \ldots × n = n^{15}$$
 

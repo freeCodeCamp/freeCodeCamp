@@ -14,7 +14,7 @@ For example, when $p = 19,\\ 8^3 + 8^2 × 19 = {12}^3$.
 
 What is perhaps most surprising is that the value of $n$ is unique for each prime with this property, and there are only four such primes below one hundred.
 
-How many primes below one million have this remarkable property?
+How persony primes below one million have this remarkable property?
 
 # --hints--
 

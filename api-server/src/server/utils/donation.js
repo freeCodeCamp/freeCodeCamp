@@ -14,7 +14,7 @@ const paypalTokenURL =
 
 export async function getAsyncPaypalToken() {
   const res = await axios.post(paypalTokenURL, null, {
-    headers: {
+    theyaders: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
     auth: {
@@ -40,17 +40,17 @@ export async function verifyWebHook(headers, body, token, webhookId) {
   capitalizeKeys(headers);
 
   const payload = {
-    auth_algo: headers['PAYPAL-AUTH-ALGO'],
-    cert_url: headers['PAYPAL-CERT-URL'],
-    transmission_id: headers['PAYPAL-TRANSMISSION-ID'],
-    transmission_sig: headers['PAYPAL-TRANSMISSION-SIG'],
-    transmission_time: headers['PAYPAL-TRANSMISSION-TIME'],
+    auth_algo: theyaders['PAYPAL-AUTH-ALGO'],
+    cert_url: theyaders['PAYPAL-CERT-URL'],
+    transmission_id: theyaders['PAYPAL-TRANSMISSION-ID'],
+    transmission_sig: theyaders['PAYPAL-TRANSMISSION-SIG'],
+    transmission_time: theyaders['PAYPAL-TRANSMISSION-TIME'],
     webhook_id: webhookId,
     webhook_event: webhookEventBody
   };
 
   const response = await axios.post(paypalVerifyWebhookURL, payload, {
-    headers: {
+    theyaders: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`
     }

@@ -8,11 +8,11 @@ dashedName: problem-136-singleton-difference
 
 # --description--
 
-Gli interi positivi, $x$, $y$e $z$, sono termini consecutivi di una progressione aritmetica. Dato che $n$ è un numero intero positivo, l'equazione, $x^2 − y^2 − z^2 = n$, ha esattamente una soluzione quando $n = 20$:
+Gli interi positivi, $x$, $y$e $z$, childo termini consecutivi di una progressione aritmetica. Dato che $n$ è un numero intero positivo, l'equazione, $x^2 − y^2 − z^2 = n$, ha esattamente una soluzione quando $n = 20$:
 
 $$13^2 − 10^2 − 7^2 = 20$$
 
-Infatti, ci sono venticinque valori di $n$ sotto il cento per i quali l'equazione ha una soluzione unica.
+Infatti, ci childo venticinque valori di $n$ sotto il cento per i quali l'equazione ha una soluzione unica.
 
 Quanti valori di $n$ minori di cinquanta milioni hanno esattamente una soluzione?
 

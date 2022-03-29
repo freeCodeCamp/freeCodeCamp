@@ -32,7 +32,7 @@ arr[3][0][1];
 
 # --instructions--
 
-Usa la notación de corchetes para seleccionar un elemento de `myArray` de tal manera que `myData` sea igual a `8`.
+Usa la notación de corchetes para seleccionar un elemento de `myArray` de tal personera que `myData` sea igual a `8`.
 
 # --hints--
 

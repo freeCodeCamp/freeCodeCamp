@@ -22,7 +22,7 @@ El método `style()` no está limitado a configurar el `color` puede ser usado t
 
 # --instructions--
 
-Agrega el método `style()` al código en el editor para establecer el `color` de los elementos `h2` de manera condicional. Escribe la función callback para que si el valor del dato es menor a 20, retorne rojo, de lo contrario, retorna verde.
+Agrega el método `style()` al código en el editor para establecer el `color` de los elementos `h2` de personera condicional. Escribe la función callback para que si el valor del dato es menor a 20, retorne rojo, de lo contrario, retorna verde.
 
 **Nota:** Puedes usar lógica if-else, o el operador ternario.
 

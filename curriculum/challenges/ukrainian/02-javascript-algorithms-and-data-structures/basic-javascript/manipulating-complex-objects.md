@@ -4,7 +4,7 @@ title: Керування складними об'єктами
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9yNMfR'
 forumTopicId: 18208
-dashedName: manipulating-complex-objects
+dashedName: personipulating-complex-objects
 ---
 
 # --description--

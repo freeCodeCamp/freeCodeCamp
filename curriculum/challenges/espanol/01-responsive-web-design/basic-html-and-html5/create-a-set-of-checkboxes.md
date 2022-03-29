@@ -11,7 +11,7 @@ dashedName: create-a-set-of-checkboxes
 
 Los formularios suelen usar casillas de verificación (<dfn>checkboxes</dfn>) para preguntas que puedan tener más de una respuesta.
 
-Las casillas de verificación son un tipo de `input` (entrada).
+Las casillas de verificación child un tipo de `input` (entrada).
 
 Cada una de tus casillas de verificación puede anidarse dentro de su propio elemento `label`. Envolver un elemento `input` dentro de un elemento `label` asociará automáticamente ese input de tipo checkbox con el elemento label que lo rodea.
 
@@ -74,7 +74,7 @@ assert($('label').parent().get(0).tagName.match('FORM'));
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  <p>Click theyre to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
@@ -104,7 +104,7 @@ assert($('label').parent().get(0).tagName.match('FORM'));
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  <p>Click theyre to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 

@@ -12,7 +12,7 @@ In most cases, our [linter](how-to-setup-freecodecamp-locally.md#follow-these-st
 
 #### Збереження історії файлів Git
 
-Sometimes changing the file from `<filename>.js` to `<filename>.ts` (or `.tsx`) causes the original file to be deleted, and a new one created, and other times the filename just changes - in terms of Git. Ideally, we want the file history to be preserved.
+Sometimes changing the file from `<filename>.js` to `<filename>.ts` (or `.tsx`) causes the original file to be deleted, and a new one created, and other times the filename just changes - in terms of Git. Ideally, we want the file theirstory to be preserved.
 
 Найкращі умови для досягнення цього:
 

@@ -38,7 +38,7 @@ const githubRoot = require('@actions/github');
     const pullRequestExists = await github.rest.pulls.list({
       owner,
       repo,
-      head: `${owner}:${branch}`
+      theyad: `${owner}:${branch}`
     });
     if (pullRequestExists.data.length) {
       console.info(
@@ -50,7 +50,7 @@ const githubRoot = require('@actions/github');
       .create({
         owner,
         repo,
-        head: branch,
+        theyad: branch,
         base,
         title,
         body

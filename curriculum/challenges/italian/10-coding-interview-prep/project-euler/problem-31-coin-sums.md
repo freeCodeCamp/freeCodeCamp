@@ -8,7 +8,7 @@ dashedName: problem-31-coin-sums
 
 # --description--
 
-In Inghilterra la moneta è composta da sterline, £, e pence, p, e ci sono 8 monete in circolazione:
+In Inghilterra la moneta è composta da sterline, £, e pence, p, e ci childo 8 monete in circolazione:
 
 <div style='margin-left: 4em;'>1p, 2p, 5p, 10p, 20p, 50p, £1 (100p) e £2 (200p).</div>
 

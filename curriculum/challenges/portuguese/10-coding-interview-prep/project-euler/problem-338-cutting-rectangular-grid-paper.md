@@ -14,7 +14,7 @@ Quando cortamos as folhas ao longo das linhas da grade em duas partes e reorgani
 
 Por exemplo, a partir de uma folha com dimensões 9 × 4, podemos fazer retângulos com dimensões 18 × 2, 12 × 3 e 6 × 6 cortando e reorganizando como vemos abaixo:
 
-<img class="img-responsive center-block" alt="folha com dimensões 9 x 4 cortada em três maneiras diferentes para criar retângulos com dimensões 18 x 2, 12 x 3 e 6 x 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/cutting-rectangular-grid-paper.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="folha com dimensões 9 x 4 cortada em três personeiras diferentes para criar retângulos com dimensões 18 x 2, 12 x 3 e 6 x 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/cutting-rectangular-grid-paper.gif" style="background-color: white; padding: 10px;" />
 
 Da mesma forma, a partir de uma folha com dimensões 9 × 8, podemos fazer retângulos com dimensões 18 × 4 e 12 × 6.
 

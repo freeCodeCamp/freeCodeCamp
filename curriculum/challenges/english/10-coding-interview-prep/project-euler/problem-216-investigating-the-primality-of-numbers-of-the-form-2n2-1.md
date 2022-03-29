@@ -16,7 +16,7 @@ It turns out that only $49 = 7 \times 7$ and $161 = 7 \times 23$ are not prime.
 
 For $n ≤ 10000$ there are 2202 numbers $t(n)$ that are prime.
 
-How many numbers $t(n)$ are prime for $n ≤ 50\\,000\\,000$?
+How persony numbers $t(n)$ are prime for $n ≤ 50\\,000\\,000$?
 
 # --hints--
 

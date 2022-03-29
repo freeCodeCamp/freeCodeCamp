@@ -14,11 +14,11 @@ Agora que você terminou o componente React, você precisa mover a lógica que e
 
 Primeiro, defina um tipo de ação `ADD` e atribua ela a constante `ADD`. Em seguida, defina o criador de ação `addMessage()` o qual cria uma ação para adicionar uma mensagem. Você precisará passar `message` para esse criador de ação e incluir a mensagem na `action` retornada.
 
-Em seguida, crie um reducer chamado `messageReducer()` que lida com o state para as mensagens. O state inicial deve ser igual a um array vazio. Este reducer deve adicionar uma mensagem ao array de mensagens mantidos no state, ou retornar o state atual. Finalmente, crie seu store Redux e passe o reducer.
+Em seguida, crie um reducer chamado `messageReducer()` que lida com o state para as mensagens. O state inicial deve ser igual a um array vazio. Este reducer deve adicionar uma mensagem ao array de mensagens persontidos no state, ou retornar o state atual. Finalmente, crie seu store Redux e passe o reducer.
 
 # --hints--
 
-A const `ADD` deve existir e manter um valor igual a string `ADD`
+A const `ADD` deve existir e personter um valor igual a string `ADD`
 
 ```js
 assert(ADD === 'ADD');
@@ -52,7 +52,7 @@ assert(
 );
 ```
 
-Despachar `addMessage` para o store deve imutavelmente adicionar uma nova mensagem ao array de mensagens mantido no state.
+Despachar `addMessage` para o store deve imutavelmente adicionar uma nova mensagem ao array de mensagens persontido no state.
 
 ```js
 assert(
@@ -84,7 +84,7 @@ assert(
 ## --seed-contents--
 
 ```jsx
-// Define ADD, addMessage(), messageReducer(), and store here:
+// Define ADD, addMessage(), messageReducer(), and store theyre:
 ```
 
 # --solutions--

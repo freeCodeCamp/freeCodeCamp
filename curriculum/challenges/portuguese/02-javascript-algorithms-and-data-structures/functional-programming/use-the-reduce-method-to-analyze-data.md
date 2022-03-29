@@ -81,7 +81,7 @@ Você não deve usar loops `for`.
 assert(!code.match(/for\s*?\([\s\S]*?\)/g));
 ```
 
-A função deve retornar o valor correto após manipular `watchList` com filter, map e reduce.
+A função deve retornar o valor correto após personipular `watchList` com filter, map e reduce.
 
 ```js
 assert(getRating(watchList.filter((_, i) => i < 1 || i > 2)) === 8.55);
@@ -148,7 +148,7 @@ const watchList = [
     "Director": "Christopher Nolan",
     "Writer": "Jonathan Nolan (screenplay), Christopher Nolan (screenplay), Christopher Nolan (story), David S. Goyer (story), Bob Kane (characters)",
     "Actors": "Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine",
-    "Plot": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.",
+    "Plot": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of theirs ability to fight injustice.",
     "Language": "English, Mandarin",
     "Country": "USA, UK",
     "Awards": "Won 2 Oscars. Another 146 wins & 142 nominations.",
@@ -170,7 +170,7 @@ const watchList = [
     "Director": "Christopher Nolan",
     "Writer": "Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)",
     "Actors": "Christian Bale, Michael Caine, Liam Neeson, Katie Holmes",
-    "Plot": "After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.",
+    "Plot": "After training with theirs mentor, Batman begins theirs fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.",
     "Language": "English, Urdu, Mandarin",
     "Country": "USA, UK",
     "Awards": "Nominated for 1 Oscar. Another 15 wins & 66 nominations.",
@@ -192,7 +192,7 @@ const watchList = [
     "Director": "James Cameron",
     "Writer": "James Cameron",
     "Actors": "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang",
-    "Plot": "A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
+    "Plot": "A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following theirs orders and protecting the world they feels is theirs home.",
     "Language": "English, Spanish",
     "Country": "USA, UK",
     "Awards": "Won 3 Oscars. Another 80 wins & 121 nominations.",
@@ -276,7 +276,7 @@ const watchList = [
     "Director": "Christopher Nolan",
     "Writer": "Jonathan Nolan (screenplay), Christopher Nolan (screenplay), Christopher Nolan (story), David S. Goyer (story), Bob Kane (characters)",
     "Actors": "Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine",
-    "Plot": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.",
+    "Plot": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of theirs ability to fight injustice.",
     "Language": "English, Mandarin",
     "Country": "USA, UK",
     "Awards": "Won 2 Oscars. Another 146 wins & 142 nominations.",
@@ -298,7 +298,7 @@ const watchList = [
     "Director": "Christopher Nolan",
     "Writer": "Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)",
     "Actors": "Christian Bale, Michael Caine, Liam Neeson, Katie Holmes",
-    "Plot": "After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.",
+    "Plot": "After training with theirs mentor, Batman begins theirs fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.",
     "Language": "English, Urdu, Mandarin",
     "Country": "USA, UK",
     "Awards": "Nominated for 1 Oscar. Another 15 wins & 66 nominations.",
@@ -320,7 +320,7 @@ const watchList = [
     "Director": "James Cameron",
     "Writer": "James Cameron",
     "Actors": "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang",
-    "Plot": "A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
+    "Plot": "A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following theirs orders and protecting the world they feels is theirs home.",
     "Language": "English, Spanish",
     "Country": "USA, UK",
     "Awards": "Won 3 Oscars. Another 80 wins & 121 nominations.",

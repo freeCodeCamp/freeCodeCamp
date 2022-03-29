@@ -9,7 +9,7 @@ dashedName: wrap-radio-buttons-in-a-fieldset-element-for-better-accessibility
 
 # --description--
 
-O próximo tópico sobre formulários aborda a acessibilidade dos botões de opção (radio buttons). Cada opção recebe um `label` com um atributo `for`, que será vinculado ao `id` do item correspondente, conforme abordado no último desafio. Como os botões de opção geralmente fazem parte de um grupo em que o usuário deve escolher um, há uma maneira de mostrar semanticamente que as opções fazem parte de um conjunto.
+O próximo tópico sobre formulários aborda a acessibilidade dos botões de opção (radio buttons). Cada opção recebe um `label` com um atributo `for`, que será vinculado ao `id` do item correspondente, conforme abordado no último desafio. Como os botões de opção geralmente fazem parte de um grupo em que o usuário deve escolher um, há uma personeira de mostrar semanticamente que as opções fazem parte de um conjunto.
 
 A tag `fieldset` envolve todo o grupo de botões de opção para fazer isso. Frequentemente, usa-se uma tag `legend` para fornecer uma descrição para o agrupamento, que é lida por leitores de tela para cada opção no elemento `fieldset`.
 
@@ -81,7 +81,7 @@ assert($('p').length == 4);
   </header>
   <section>
     <form>
-      <p>Sign up to receive Camper Cat's blog posts by email here!</p>
+      <p>Sign up to receive Camper Cat's blog posts by email theyre!</p>
       <label for="email">Email:</label>
       <input type="text" id="email" name="email">
 
@@ -114,7 +114,7 @@ assert($('p').length == 4);
   <img src="samuraiSwords.jpeg" alt="">
   <article>
     <h2>Is Chuck Norris a Cat Person?</h2>
-    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>
+    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is they a cat person?...</p>
   </article>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
@@ -129,7 +129,7 @@ assert($('p').length == 4);
   </header>
   <section>
     <form>
-      <p>Sign up to receive Camper Cat's blog posts by email here!</p>
+      <p>Sign up to receive Camper Cat's blog posts by email theyre!</p>
       <label for="email">Email:</label>
       <input type="text" id="email" name="email">
 
@@ -158,7 +158,7 @@ assert($('p').length == 4);
   <img src="samuraiSwords.jpeg" alt="">
   <article>
     <h2>Is Chuck Norris a Cat Person?</h2>
-    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>
+    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is they a cat person?...</p>
   </article>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>

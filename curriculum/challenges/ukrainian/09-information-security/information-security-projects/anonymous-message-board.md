@@ -92,7 +92,7 @@ async (getUserInput) => {
   const url = getUserInput('url');
   const res = await fetch(url + '/api/threads/fcc_test', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
   });
   if (res.ok) {

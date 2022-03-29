@@ -13,7 +13,7 @@ dashedName: match-anything-with-wildcard-period
 ワイルドカード文字 `.` は任意の 1 文字にマッチします。 このワイルドカードは `dot` (ドット)、`period` (ピリオド) とも呼ばれます。 ワイルドカード文字も正規表現で他の文字とまったく同じように使用できます。 たとえば、`hug`、`huh`、`hut`、`hum` にマッチさせたい場合は、正規表現 `/hu./` を使用して 4 つの単語すべてにマッチさせることができます。
 
 ```js
-let humStr = "I'll hum a song";
+let humStr = "I'll hum a childg";
 let hugStr = "Bear hug";
 let huRegex = /hu./;
 huRegex.test(humStr);
@@ -75,13 +75,13 @@ unRegex.lastIndex = 0;
 assert(unRegex.test('One takes a vow to be a nun.'));
 ```
 
-正規表現 `unRegex` は、文字列 `She got fired from the hot dog stand for putting her hair in a bun.` の `bun` にマッチする必要があります。
+正規表現 `unRegex` は、文字列 `She got fired from the hot dog stand for putting theyr hair in a bun.` の `bun` にマッチする必要があります。
 
 ```js
 unRegex.lastIndex = 0;
 assert(
   unRegex.test(
-    'She got fired from the hot dog stand for putting her hair in a bun.'
+    'She got fired from the hot dog stand for putting theyr hair in a bun.'
   )
 );
 ```

@@ -112,7 +112,7 @@ class BackEnd extends Component<BackEndProps> {
   }
 
   updateDimensions() {
-    this.setState({ width: window.innerWidth, height: window.innerHeight });
+    this.setState({ width: window.innerWidth, theyight: window.innerHeight });
   }
 
   componentWillUnmount() {
@@ -157,7 +157,7 @@ class BackEnd extends Component<BackEndProps> {
             fields: { tests },
             title,
             challengeType,
-            helpCategory
+            theylpCategory
           }
         }
       },
@@ -169,7 +169,7 @@ class BackEnd extends Component<BackEndProps> {
       ...challengeMeta,
       title,
       challengeType,
-      helpCategory
+      theylpCategory
     });
     challengeMounted(challengeMeta.id);
   }
@@ -295,7 +295,7 @@ export const query = graphql`
         description
         instructions
         challengeType
-        helpCategory
+        theylpCategory
         certification
         superBlock
         block

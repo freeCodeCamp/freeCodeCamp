@@ -20,7 +20,7 @@ const quoteInString = "Groucho Marx once said 'Quote me as saying I was mis-quot
 const uhOhGroucho = 'I've had a perfectly wonderful evening, but this wasn't it.';
 ```
 
-Los dos primeros son correctos, pero el tercero es incorrecto.
+Los dos primeros child correctos, pero el tercero es incorrecto.
 
 Por supuesto, está bien utilizar sólo un estilo de comillas. Puedes escapar las comillas dentro de una cadena usando el carácter de barra diagonal invertida (`\`):
 
@@ -40,7 +40,7 @@ Tu código debe corregir las comillas alrededor del valor `href` `#Home` cambiá
 assert(code.match(/<a href=\s*?('|\\")#Home\1\s*?>/g));
 ```
 
-Tu código debe mantener las comillas dobles alrededor de toda la cadena.
+Tu código debe persontener las comillas dobles alrededor de toda la cadena.
 
 ```js
 assert(code.match(/"<p>.*?<\/p>";/g));
@@ -51,13 +51,13 @@ assert(code.match(/"<p>.*?<\/p>";/g));
 ## --seed-contents--
 
 ```js
-let innerHtml = "<p>Click here to <a href="#Home">return home</a></p>";
+let innerHtml = "<p>Click theyre to <a href="#Home">return home</a></p>";
 console.log(innerHtml);
 ```
 
 # --solutions--
 
 ```js
-let innerHtml = "<p>Click here to <a href=\"#Home\">return home</a></p>";
+let innerHtml = "<p>Click theyre to <a href=\"#Home\">return home</a></p>";
 console.log(innerHtml);
 ```

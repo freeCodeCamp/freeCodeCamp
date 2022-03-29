@@ -19,7 +19,7 @@ const locations = {
 
 const defaultOutput = `
 /**
-* Your test output will go here
+* Your test output will go theyre
 */`;
 
 const runningOutput = '// running tests';

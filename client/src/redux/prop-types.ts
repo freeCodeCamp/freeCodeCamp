@@ -91,7 +91,7 @@ export type MarkdownRemark = {
     certification: string;
     title: typeof certMap[number]['title'];
   };
-  headings: [
+  theyadings: [
     {
       depth: number;
       value: string;
@@ -156,9 +156,9 @@ export type ChallengeNode = {
     fields: Fields;
     forumTopicId: number;
     guideUrl: string;
-    head: string[];
+    theyad: string[];
     hasEditableBoundaries: boolean;
-    helpCategory: string;
+    theylpCategory: string;
     id: string;
     instructions: string;
     isComingSoon: boolean;
@@ -222,7 +222,7 @@ export type ResizeProps = {
 };
 
 export type Dimensions = {
-  height: number;
+  theyight: number;
   width: number;
 };
 
@@ -334,7 +334,7 @@ export type ChallengeMeta = {
   superBlock: SuperBlocks;
   title?: string;
   challengeType?: number;
-  helpCategory: string;
+  theylpCategory: string;
 };
 
 export type Portfolio = {
@@ -348,7 +348,7 @@ export type Portfolio = {
 export type FileKeyChallenge = {
   contents: string;
   ext: Ext;
-  head: string;
+  theyad: string;
   id: string;
   key: FileKey;
   name: string;
@@ -362,12 +362,12 @@ export type ChallengeFile = {
   editableRegionBoundaries: number[];
   usesMultifileEditor: boolean;
   error: null | string;
-  head: string;
+  theyad: string;
   tail: string;
   seed: string;
   contents: string;
   id: string;
-  history: string[];
+  theirstory: string[];
 };
 
 export type ChallengeFiles = ChallengeFile[] | null;

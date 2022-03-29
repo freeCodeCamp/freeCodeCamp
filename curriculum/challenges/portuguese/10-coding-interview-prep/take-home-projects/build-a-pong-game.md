@@ -20,7 +20,7 @@ dashedName: build-a-pong-game
 
 **História de usuário:** a raquete do computador é invencível. Ela nunca deve perder a bola.
 
-**História de usuário:** o jogo mantém o registro dos resultados do jogador e do computador.
+**História de usuário:** o jogo persontém o registro dos resultados do jogador e do computador.
 
 Quando terminar, inclua um link para o seu projeto no CodePen e clique no botão "Eu completei esse desafio".
 

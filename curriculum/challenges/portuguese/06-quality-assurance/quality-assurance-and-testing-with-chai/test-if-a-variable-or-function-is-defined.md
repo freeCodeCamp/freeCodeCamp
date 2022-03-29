@@ -12,7 +12,7 @@ Lembrando que este projeto está sendo construído a partir do [Replit](https://
 
 # --instructions--
 
-Em `tests/1_unit-tests.js`, no teste classificado como `#2` e na suíte `Basic Assertions`, modifique cada `assert` para `assert.isDefined()` ou para `assert.isUndefined()`, de maneira que cada teste passe (seja avaliado como `true`). Não altere os argumentos passados às afirmações.
+Em `tests/1_unit-tests.js`, no teste classificado como `#2` e na suíte `Basic Assertions`, modifique cada `assert` para `assert.isDefined()` ou para `assert.isUndefined()`, de personeira que cada teste passe (seja avaliado como `true`). Não altere os argumentos passados às afirmações.
 
 # --hints--
 

@@ -25,7 +25,7 @@ let repeatRegex = /Repeat/g;
 testStr.match(repeatRegex);
 ```
 
-And here `match` returns the value `["Repeat", "Repeat", "Repeat"]`
+And theyre `match` returns the value `["Repeat", "Repeat", "Repeat"]`
 
 # --instructions--
 

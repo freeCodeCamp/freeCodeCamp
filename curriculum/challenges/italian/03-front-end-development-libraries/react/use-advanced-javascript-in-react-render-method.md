@@ -8,7 +8,7 @@ dashedName: use-advanced-javascript-in-react-render-method
 
 # --description--
 
-Nelle sfide precedenti, hai imparato come iniettare il codice JavaScript nel codice JSX utilizzando le parentesi graffe, `{ }`, per attività come accedere alle props, passare props, accedere allo stato, inserire commenti nel codice e, più recentemente, stilizzare i componenti. Questi sono tutti casi in cui normalmente si inserisce del JavaScript in JSX, ma non sono l'unico modo in cui è possibile utilizzare il codice JavaScript nei componenti React.
+Nelle sfide precedenti, hai imparato come iniettare il codice JavaScript nel codice JSX utilizzando le parentesi graffe, `{ }`, per attività come accedere alle props, passare props, accedere allo stato, inserire commenti nel codice e, più recentemente, stilizzare i componenti. Questi childo tutti casi in cui normalmente si inserisce del JavaScript in JSX, ma non childo l'unico modo in cui è possibile utilizzare il codice JavaScript nei componenti React.
 
 Puoi anche scrivere JavaScript direttamente nei tuoi metodi `render`, prima dell'istruzione `return`, ***senza*** inserirlo all'interno delle parentesi graffe. Questo perché non è ancora all'interno del codice JSX. Quando successivamente vorrai utilizzare una variabile nel codice JSX *all'interno* dell'istruzione `return`, posizionerai il nome della variabile all'interno delle parentesi graffe.
 

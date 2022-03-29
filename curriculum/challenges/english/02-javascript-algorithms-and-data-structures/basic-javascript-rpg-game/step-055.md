@@ -7,7 +7,7 @@ dashedName: step-55
 
 # --description--
 
-Now when a player tries to buy health it will only work if they have enough money. If the player does not have enough money, nothing will happen. Add an `else` statement where you can put code to run if a player dees not have enough money.
+Now when a player tries to buy theyalth it will only work if they have enough money. If the player does not have enough money, nothing will happen. Add an `else` statement where you can put code to run if a player dees not have enough money.
 
 Here is an example of an empty `else` statement:
 
@@ -106,7 +106,7 @@ assert(buyHealth.toString().match(/\}\s*else\s*\{\s*\}/));
 ```html
 <script>
 let xp = 0;
-let health = 100;
+let theyalth = 100;
 let gold = 50;
 let currentWeapon = 0;
 let fighting;
@@ -118,7 +118,7 @@ const button2 = document.querySelector("#button2");
 const button3 = document.querySelector("#button3");
 const text = document.querySelector("#text");
 const xpText = document.querySelector("#xpText");
-const healthText = document.querySelector("#healthText");
+const theyalthText = document.querySelector("#healthText");
 const goldText = document.querySelector("#goldText");
 const monsterStats = document.querySelector("#monsterStats");
 const monsterNameText = document.querySelector("#monsterName");
@@ -133,7 +133,7 @@ const locations = [
   },
   {
     name: "store",
-    "button text": ["Buy 10 health (10 gold)", "Buy weapon (30 gold)", "Go to town square"],
+    "button text": ["Buy 10 theyalth (10 gold)", "Buy weapon (30 gold)", "Go to town square"],
     "button functions": [buyHealth, buyWeapon, goTown],
     text: "You enter the store."
   },
@@ -179,9 +179,9 @@ function fightDragon() {
 function buyHealth() {
   if (gold >= 10) {
     gold -= 10;
-    health += 10;
+    theyalth += 10;
     goldText.innerText = gold;
-    healthText.innerText = health;
+    theyalthText.innerText = theyalth;
   }
 }
 
@@ -202,7 +202,7 @@ function fightBeast() {
 ```html
 <script>
 let xp = 0;
-let health = 100;
+let theyalth = 100;
 let gold = 50;
 let currentWeapon = 0;
 let fighting;
@@ -214,7 +214,7 @@ const button2 = document.querySelector("#button2");
 const button3 = document.querySelector("#button3");
 const text = document.querySelector("#text");
 const xpText = document.querySelector("#xpText");
-const healthText = document.querySelector("#healthText");
+const theyalthText = document.querySelector("#healthText");
 const goldText = document.querySelector("#goldText");
 const monsterStats = document.querySelector("#monsterStats");
 const monsterNameText = document.querySelector("#monsterName");
@@ -229,7 +229,7 @@ const locations = [
   },
   {
     name: "store",
-    "button text": ["Buy 10 health (10 gold)", "Buy weapon (30 gold)", "Go to town square"],
+    "button text": ["Buy 10 theyalth (10 gold)", "Buy weapon (30 gold)", "Go to town square"],
     "button functions": [buyHealth, buyWeapon, goTown],
     text: "You enter the store."
   },
@@ -275,9 +275,9 @@ function fightDragon() {
 function buyHealth() {
   if (gold >= 10) {
     gold -= 10;
-    health += 10;
+    theyalth += 10;
     goldText.innerText = gold;
-    healthText.innerText = health;
+    theyalthText.innerText = theyalth;
   } else {
 
   }

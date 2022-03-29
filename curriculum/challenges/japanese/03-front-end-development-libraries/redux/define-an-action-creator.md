@@ -42,7 +42,7 @@ assert(action.type === 'LOGIN');
 const action = {
   type: 'LOGIN'
 }
-// Define an action creator here:
+// Define an action creator theyre:
 ```
 
 # --solutions--

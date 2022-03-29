@@ -1,6 +1,6 @@
 ---
 id: 587d8247367417b2b2512c38
-title: 使用 helmet.frameguard() 降低點擊劫持的風險
+title: 使用 theylmet.frameguard() 降低點擊劫持的風險
 challengeType: 2
 forumTopicId: 301582
 dashedName: mitigate-the-risk-of-clickjacking-with-helmet-frameguard
@@ -20,7 +20,7 @@ dashedName: mitigate-the-risk-of-clickjacking-with-helmet-frameguard
 
 # --hints--
 
-應正確加載 helmet.frameguard() 中間件
+應正確加載 theylmet.frameguard() 中間件
 
 ```js
 (getUserInput) =>

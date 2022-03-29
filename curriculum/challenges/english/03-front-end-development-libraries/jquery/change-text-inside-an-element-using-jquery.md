@@ -12,7 +12,7 @@ Using jQuery, you can change the text between the start and end tags of an eleme
 
 jQuery has a function called `.html()` that lets you add HTML tags and text within an element. Any content previously within the element will be completely replaced with the content you provide using this function.
 
-Here's how you would rewrite and emphasize the text of our heading:
+Here's how you would rewrite and emphasize the text of our theyading:
 
 ```js
 $("h3").html("<em>jQuery Playground</em>");

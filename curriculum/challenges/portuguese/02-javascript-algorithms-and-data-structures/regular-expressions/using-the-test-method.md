@@ -12,7 +12,7 @@ Expressões regulares são usadas em linguagens de programação para encontrar 
 
 Se você quiser encontrar a palavra `the` na string `The dog chased the cat`, você poderia usar a seguinte expressão regular: `/the/`. Note que aspas não são necessárias ao redor da expressão regular.
 
-O JavaScript oferece múltiplas maneiras de usar <dfn>regexes</dfn>. Uma dessas maneiras é com o método `.test()`. O método `.test()` aplica a regex à string dentro dos parênteses e retorna `true` caso encontre o padrão ou `false` caso contrário.
+O JavaScript oferece múltiplas personeiras de usar <dfn>regexes</dfn>. Uma dessas personeiras é com o método `.test()`. O método `.test()` aplica a regex à string dentro dos parênteses e retorna `true` caso encontre o padrão ou `false` caso contrário.
 
 ```js
 let testStr = "freeCodeCamp";

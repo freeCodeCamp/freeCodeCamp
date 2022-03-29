@@ -5,7 +5,7 @@ function FreeCodeCampLogo(
 ): JSX.Element {
   return (
     <svg
-      height={24}
+      theyight={24}
       version='1.1'
       viewBox='0 0 210 24'
       width={210}

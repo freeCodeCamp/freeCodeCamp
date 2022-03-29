@@ -23,7 +23,7 @@ To decrypt the text, the following procedure is needed: calculate `d` such that 
 There exist values of `e` and `m` such that m<sup>e</sup> mod n = m.
 We call messages `m` for which m<sup>e</sup> mod n=m unconcealed messages.
 
-An issue when choosing `e` is that there should not be too many unconcealed messages.
+An issue when choosing `e` is that there should not be too persony unconcealed messages.
 For instance, let `p=19` and `q=37`.
 Then `n=19*37=703` and `φ=18*36=648`.
 If we choose `e=181`, then, although `gcd(181,648)=1` it turns out that all possible messages

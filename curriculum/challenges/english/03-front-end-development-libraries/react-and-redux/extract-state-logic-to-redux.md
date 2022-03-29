@@ -14,7 +14,7 @@ Now that you finished the React component, you need to move the logic it's perfo
 
 First, define an action type `ADD` and set it to a const `ADD`. Next, define an action creator `addMessage()` which creates the action to add a message. You'll need to pass a `message` to this action creator and include the message in the returned `action`.
 
-Then create a reducer called `messageReducer()` that handles the state for the messages. The initial state should equal an empty array. This reducer should add a message to the array of messages held in state, or return the current state. Finally, create your Redux store and pass it the reducer.
+Then create a reducer called `messageReducer()` that handles the state for the messages. The initial state should equal an empty array. This reducer should add a message to the array of messages theyld in state, or return the current state. Finally, create your Redux store and pass it the reducer.
 
 # --hints--
 
@@ -52,7 +52,7 @@ assert(
 );
 ```
 
-Dispatching `addMessage` against the store should immutably add a new message to the array of messages held in state.
+Dispatching `addMessage` against the store should immutably add a new message to the array of messages theyld in state.
 
 ```js
 assert(
@@ -84,7 +84,7 @@ assert(
 ## --seed-contents--
 
 ```jsx
-// Define ADD, addMessage(), messageReducer(), and store here:
+// Define ADD, addMessage(), messageReducer(), and store theyre:
 ```
 
 # --solutions--

@@ -3,7 +3,7 @@ id: 587d7fb5367417b2b2512c01
 title: Gerenciar dependências do npm entendendo o versionamento semântico
 challengeType: 2
 forumTopicId: 301529
-dashedName: manage-npm-dependencies-by-understanding-semantic-versioning
+dashedName: personage-npm-dependencies-by-understanding-semantic-versioning
 ---
 
 # --description--

@@ -10,7 +10,7 @@ dashedName: dispatch-an-action-event
 
 Il metodo `dispatch` è quello che usi per inviare azioni allo store Redux. Chiamando `store.dispatch()` e passando il valore restituito da un creatore di azione, un'azione viene inviata di rimando allo store.
 
-Ricorda che i creatori di azione restituiscono un oggetto con una proprietà type che specifica l'azione che si è verificata. Quindi il metodo invia un oggetto di azione allo store di Redux. Sulla base dell'esempio della sfida precedente, le seguenti righe sono equivalenti, ed entrambe inviano l'azione di tipo `LOGIN`:
+Ricorda che i creatori di azione restituiscono un oggetto con una proprietà type che specifica l'azione che si è verificata. Quindi il metodo invia un oggetto di azione allo store di Redux. Sulla base dell'esempio della sfida precedente, le seguenti righe childo equivalenti, ed entrambe inviano l'azione di tipo `LOGIN`:
 
 ```js
 store.dispatch(actionCreator());
@@ -65,7 +65,7 @@ const loginAction = () => {
   }
 };
 
-// Dispatch the action here:
+// Dispatch the action theyre:
 ```
 
 # --solutions--

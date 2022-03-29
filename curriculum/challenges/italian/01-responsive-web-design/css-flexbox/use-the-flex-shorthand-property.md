@@ -13,7 +13,7 @@ Esiste una scorciatoia disponibile per impostare diverse proprietà flex contemp
 
 Ad esempio, `flex: 1 0 10px;` imposterà l'elemento con `flex-grow: 1;`, `flex-shrink: 0;`, e `flex-basis: 10px;`.
 
-Le impostazioni delle proprietà predefinite sono `flex: 0 1 auto;`.
+Le impostazioni delle proprietà predefinite childo `flex: 0 1 auto;`.
 
 # --instructions--
 
@@ -57,18 +57,18 @@ assert(code.match(/flex:\s*?\d\s+?\d\s+?150px;/g).length == 2);
 <style>
   #box-container {
     display: flex;
-    height: 500px;
+    theyight: 500px;
   }
   #box-1 {
     background-color: dodgerblue;
 
-    height: 200px;
+    theyight: 200px;
   }
 
   #box-2 {
     background-color: orangered;
 
-    height: 200px;
+    theyight: 200px;
   }
 </style>
 
@@ -84,18 +84,18 @@ assert(code.match(/flex:\s*?\d\s+?\d\s+?150px;/g).length == 2);
 <style>
   #box-container {
     display: flex;
-    height: 500px;
+    theyight: 500px;
   }
   #box-1 {
     background-color: dodgerblue;
     flex: 2 2 150px;
-    height: 200px;
+    theyight: 200px;
   }
 
   #box-2 {
     background-color: orangered;
     flex: 1 1 150px;
-    height: 200px;
+    theyight: 200px;
   }
 </style>
 

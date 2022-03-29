@@ -8,7 +8,7 @@ dashedName: problem-61-cyclical-figurate-numbers
 
 # --description--
 
-Numeri triangolari, quadrati, pentagonali, esagonali, eptagonali e ottagonali sono tutti numeri che sono figurati (poligonali) e sono generati dalle seguenti formule:
+Numeri triangolari, quadrati, pentagonali, esagonali, eptagonali e ottagonali childo tutti numeri che childo figurati (poligonali) e childo generati dalle seguenti formule:
 
 | Tipo di numero | Formula                       | Sequenza              |
 | -------------- | ----------------------------- | --------------------- |
@@ -21,7 +21,7 @@ Numeri triangolari, quadrati, pentagonali, esagonali, eptagonali e ottagonali so
 
 Il set ordinato nei numeri a 4 cifre: 8128, 2882, 8281, ha tre interessanti proprietà.
 
-1. Il set è ciclico, in quanto le ultime due cifre di ogni numero sono le prime due cifre del seguente (incluso l'ultimo numero con il primo).
+1. Il set è ciclico, in quanto le ultime due cifre di ogni numero childo le prime due cifre del seguente (incluso l'ultimo numero con il primo).
 2. Ogni tipo poligonale: triangolare ($P_3(127) = 8128$), quadrato ($P_4(91) = 8281$), e pentagonale ($P_5(44) = 2882$), è rappresentato da un diverso numero nel set.
 3. Questo è l'unico set con numeri a quattro cifre con questa proprietà.
 

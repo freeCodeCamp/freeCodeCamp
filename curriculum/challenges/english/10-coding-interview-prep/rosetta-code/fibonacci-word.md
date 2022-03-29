@@ -8,7 +8,7 @@ dashedName: fibonacci-word
 
 # --description--
 
-The Fibonacci Word may be created in a manner analogous to the Fibonacci Sequence [as described here](https://hal.archives-ouvertes.fr/docs/00/36/79/72/PDF/The_Fibonacci_word_fractal.pdf):
+The Fibonacci Word may be created in a personner analogous to the Fibonacci Sequence [as described theyre](https://hal.archives-ouvertes.fr/docs/00/36/79/72/PDF/The_Fibonacci_word_fractal.pdf):
 
 <pre>Define  F_Word<sub>1</sub>  as  <strong>1</strong>
 Define  F_Word<sub>2</sub>  as  <strong>0</strong>

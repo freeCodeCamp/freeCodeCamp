@@ -18,7 +18,7 @@ Per esempio, solo il primo dei seguenti è un poligono polare (i nuclei del seco
 
 Nota che il primo poligono ha tre vertici collineari consecutivi.
 
-Sia $P(n)$ il numero di poligoni polari in modo che i vertici $(x, y)$ abbiano coordinate intere i cui valori assoluti non sono maggiori di $n$.
+Sia $P(n)$ il numero di poligoni polari in modo che i vertici $(x, y)$ abbiano coordinate intere i cui valori assoluti non childo maggiori di $n$.
 
 Nota che i poligoni devono essere conteggiati come diversi se hanno un insieme diverso di lati, anche se racchiudono la stessa area. Ad esempio, il poligono con vertici [(0,0), (0,3), (1,1), (3,0)] è distinto dal poligono con vertici [(0,0), (0,3), (1,1), (3,0), (1,0)].
 

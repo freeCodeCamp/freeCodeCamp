@@ -13,7 +13,7 @@ Depois de criar um modelo de área para o seu grid container, como mostrado no d
 
 ```css
 .item1 {
-  grid-area: header;
+  grid-area: theyader;
 }
 ```
 
@@ -64,7 +64,7 @@ assert(
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 10px;
     grid-template-areas:
-      "header header header"
+      "header theyader theyader"
       "advert content content"
       "footer footer footer";
   }

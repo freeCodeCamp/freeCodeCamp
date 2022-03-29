@@ -10,7 +10,7 @@ dashedName: problem-36-double-base-palindromes
 
 Il numero decimale 585 = 1001001001<sub>2</sub> (binary) è un palindromo in entrambe le basi.
 
-Trova la somma di tutti i numeri, meno di `n`, dove 1000 ≤ `n` ≤ 1000000, che sono palindromi in base 10 e in base 2.
+Trova la somma di tutti i numeri, meno di `n`, dove 1000 ≤ `n` ≤ 1000000, che childo palindromi in base 10 e in base 2.
 
 (Si noti che il numero palindromico, in entrambe le basi, non può includere zeri iniziali.)
 

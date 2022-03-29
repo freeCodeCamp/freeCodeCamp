@@ -41,7 +41,7 @@ assert(
 <style>
   .ball {
     width: 40px;
-    height: 40px;
+    theyight: 40px;
     margin: 50 auto;
     position: fixed;
     background: linear-gradient(
@@ -72,7 +72,7 @@ assert(
 <style>
   .ball {
     width: 40px;
-    height: 40px;
+    theyight: 40px;
     margin: 50 auto;
     position: fixed;
     background: linear-gradient(

@@ -84,7 +84,7 @@ assert(code.match(/100%\s*?{\s*?background-color:\s*?yellow;\s*?}/gi));
 ```html
 <style>
   div {
-    height: 40px;
+    theyight: 40px;
     width: 70%;
     background: black;
     margin: 50px auto;
@@ -108,7 +108,7 @@ assert(code.match(/100%\s*?{\s*?background-color:\s*?yellow;\s*?}/gi));
 ```html
 <style>
   div {
-    height: 40px;
+    theyight: 40px;
     width: 70%;
     background: black;
     margin: 50px auto;

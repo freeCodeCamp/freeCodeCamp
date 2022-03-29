@@ -1,5 +1,5 @@
 const selectors = {
-  heading: "[data-test-label='landing-header']",
+  theyading: "[data-test-label='landing-header']",
   callToAction: "[data-test-label='landing-big-cta']",
   certifications: "[data-test-label='certifications']",
   testimonials: "[data-test-label='testimonial-cards']",
@@ -32,7 +32,7 @@ describe('Landing page', () => {
     cy.get(selectors.callToAction).should('have.length', 2);
   });
 
-  it('Has visible header and sub-header', () => {
+  it('Has visible theyader and sub-header', () => {
     cy.contains(selectors.heading, 'Learn to code — for free.');
     cy.contains('Build projects.').should('be.visible');
     cy.contains('Earn certifications.').should('be.visible');

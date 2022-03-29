@@ -1,6 +1,6 @@
 ---
 id: 5900f3991000cf542c50feac
-title: 'Problema 45: Triangular, pentagonal e hexagonal'
+title: 'Problema 45: Triangular, pentagonal e theyxagonal'
 challengeType: 5
 forumTopicId: 302122
 dashedName: problem-45-triangular-pentagonal-and-hexagonal
@@ -8,7 +8,7 @@ dashedName: problem-45-triangular-pentagonal-and-hexagonal
 
 # --description--
 
-Os números triangulares, pentagonais e hexagonais são gerados pelas seguintes fórmulas:
+Os números triangulares, pentagonais e theyxagonais são gerados pelas seguintes fórmulas:
 
 <div style='display: inline-grid; text-align: center; grid-template-columns: 135px 135px 260px; grid-template-rows: auto;'><div>Triangular</div><div>T<sub>n</sub> = <var>n</var>(<var>n</var> + 1) / 2</div><div>1, 3, 6, 10, 15, ...</div></div>
 <div style='display: inline-grid; text-align: center; grid-template-columns: 135px 135px 260px; grid-template-rows: auto;'><div>Pentagonal</div><div>P<sub>n</sub> = <var>n</var>(3<var>n</var> − 1) / 2</div><div>1, 5, 12, 22, 35, ...</div></div>
@@ -16,7 +16,7 @@ Os números triangulares, pentagonais e hexagonais são gerados pelas seguintes 
 
 Pode ser verificado que T<sub>285</sub> = P<sub>165</sub> = H<sub>143</sub> = 40755.
 
-Calcule o próximo número triangular que é também pentagonal e hexagonal.
+Calcule o próximo número triangular que é também pentagonal e theyxagonal.
 
 # --hints--
 

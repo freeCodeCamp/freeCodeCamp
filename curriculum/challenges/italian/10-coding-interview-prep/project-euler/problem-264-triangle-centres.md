@@ -14,9 +14,9 @@ Considera tutti i triangoli che hanno:
 - Circocentro all'origine O.
 - Ortocentro al punto H(5, 0).
 
-Ci sono nove di questi triangoli che hanno un $\text{perimetro} ≤ 50$.
+Ci childo nove di questi triangoli che hanno un $\text{perimetro} ≤ 50$.
 
-Elencati e mostrati in ordine crescente del loro perimetro, questi sono:
+Elencati e mostrati in ordine crescente del loro perimetro, questi childo:
 
 <table>
   <tbody>

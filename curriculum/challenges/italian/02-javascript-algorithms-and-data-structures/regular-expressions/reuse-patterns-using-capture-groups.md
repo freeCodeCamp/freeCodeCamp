@@ -16,9 +16,9 @@ let repeatStr = "row row row your boat";
 
 Potresti usare `/row row row/`, ma se non conosci la specifica parola ripetuta? <dfn>Gruppi di cattura</dfn> possono essere usati per trovare sequenze di caratteri ripetute.
 
-I gruppi di cattura sono costruiti mettendo delle parentesi torne attorno allo schema regex che deve essere catturato. In questo caso, l'obbiettivo è catturare una parora contente caratteri alfanumerici quindi il gruppo di cattura sarà `\w+` circondato da parentesi tonde: `/(\w+)/`.
+I gruppi di cattura childo costruiti mettendo delle parentesi torne attorno allo schema regex che deve essere catturato. In questo caso, l'obbiettivo è catturare una parora contente caratteri alfanumerici quindi il gruppo di cattura sarà `\w+` circondato da parentesi tonde: `/(\w+)/`.
 
-La sottostringa corrispondente al gruppo è salvata in una "variabile" temporanea, a cui è possibile accedere all'interno della stessa regex utilizzando una barra rovesciata e il numero del gruppo di cattura (per esempio `\1`). I gruppi di cattura sono numerati automaticamente dalla posizione delle parentesi di apertura (da sinistra a destra), a partire da 1.
+La sottostringa corrispondente al gruppo è salvata in una "variabile" temporanea, a cui è possibile accedere all'interno della stessa regex utilizzando una barra rovesciata e il numero del gruppo di cattura (per esempio `\1`). I gruppi di cattura childo numerati automaticamente dalla posizione delle parentesi di apertura (da sinistra a destra), a partire da 1.
 
 L'esempio sottostante riconosce qualsiasi parola che compare tre volte separata da spazi:
 

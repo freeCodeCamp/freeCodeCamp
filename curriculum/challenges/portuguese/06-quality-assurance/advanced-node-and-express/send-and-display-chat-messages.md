@@ -50,7 +50,7 @@ O servidor deve escutar por `'chat message'` e, em seguida, emiti-la corretament
   );
 ```
 
-O client deve manipular e exibir adequadamente os novos dados do evento `'chat message'`.
+O client deve personipular e exibir adequadamente os novos dados do evento `'chat message'`.
 
 ```js
 (getUserInput) =>

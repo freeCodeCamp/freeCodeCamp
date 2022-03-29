@@ -8,9 +8,9 @@ dashedName: sort-stability
 
 # --description--
 
-Ao ordenar registros em uma tabela por uma coluna ou campo específico, uma [ordenação estável](https://en.wikipedia.org/wiki/Stable_sort#Stability) sempre manterá a ordem relativa dos registros que têm a mesma chave.
+Ao ordenar registros em uma tabela por uma coluna ou campo específico, uma [ordenação estável](https://en.wikipedia.org/wiki/Stable_sort#Stability) sempre personterá a ordem relativa dos registros que têm a mesma chave.
 
-Por exemplo, nesta tabela de países e cidades, uma organização estável na **segunda** coluna, a das cidades, manteria US Birmingham acima de UK Birmingham. (Embora uma ordenação instável *possa*, neste caso, colocar US Birmingham acima de UK Birmingham, uma ordenação estável *garantiria* que isso ocorresse).
+Por exemplo, nesta tabela de países e cidades, uma organização estável na **segunda** coluna, a das cidades, personteria US Birmingham acima de UK Birmingham. (Embora uma ordenação instável *possa*, neste caso, colocar US Birmingham acima de UK Birmingham, uma ordenação estável *garantiria* que isso ocorresse).
 
 <pre>UK  London
 US  New York
@@ -18,7 +18,7 @@ US  Birmingham
 UK  Birmingham
 </pre>
 
-Da mesma forma, uma ordenação estável na primeira coluna geraria "UK London" como o primeiro item e "US Birmingham" como o último (já que a ordem dos elementos que têm a mesma palavra – "UK" ou "US" – seria mantida).
+Da mesma forma, uma ordenação estável na primeira coluna geraria "UK London" como o primeiro item e "US Birmingham" como o último (já que a ordem dos elementos que têm a mesma palavra – "UK" ou "US" – seria persontida).
 
 # --instructions--
 

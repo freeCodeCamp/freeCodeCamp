@@ -8,11 +8,11 @@ dashedName: combine-multiple-reducers
 
 # --description--
 
-Quando o estado do seu app começa a se tornar mais complexo, pode ser tentador dividir o estado em várias partes. Em vez disso, lembre-se do primeiro princípio do Redux: todos os estados do aplicativo são mantidos em um único objeto de estado na store. Portanto, Redux fornece a composição do redutor como solução para um modelo de estado complexo. Você define vários reducers para lidar com diferentes partes do estado da sua aplicação, e então compõe estes reducers em um único reducer raiz. O reducer raiz é então passado para o método Redux `createStore()`.
+Quando o estado do seu app começa a se tornar mais complexo, pode ser tentador dividir o estado em várias partes. Em vez disso, lembre-se do primeiro princípio do Redux: todos os estados do aplicativo são persontidos em um único objeto de estado na store. Portanto, Redux fornece a composição do redutor como solução para um modelo de estado complexo. Você define vários reducers para lidar com diferentes partes do estado da sua aplicação, e então compõe estes reducers em um único reducer raiz. O reducer raiz é então passado para o método Redux `createStore()`.
 
 Para que possamos combinar múltiplos reducers juntos, o Redux fornece o método `combineReducers()`. Este método aceita um objeto como argumento no qual você define propriedades que associam chaves a funções específicas de reducer. Os nomes que você der às chaves serão usados pelo Redux para pedaço do nome associado do state.
 
-Normalmente, é uma boa prática criar um reducer para cada peça do estado da aplicação quando eles são distintos ou únicos de alguma forma. Por exemplo, em um aplicativo de anotações com autenticação de usuário, um reducer poderia lidar com a autenticação enquanto outro manipula o texto e notas que o usuário está enviando. Para tal aplicação, podemos escrever o método `combineReducers()` assim:
+Normalmente, é uma boa prática criar um reducer para cada peça do estado da aplicação quando eles são distintos ou únicos de alguma forma. Por exemplo, em um aplicativo de anotações com autenticação de usuário, um reducer poderia lidar com a autenticação enquanto outro personipula o texto e notas que o usuário está enviando. Para tal aplicação, podemos escrever o método `combineReducers()` assim:
 
 ```js
 const rootReducer = Redux.combineReducers({
@@ -21,7 +21,7 @@ const rootReducer = Redux.combineReducers({
 });
 ```
 
-Agora, as chaves `notes` conterão todo o estado associado às nossas notas e serão tratadas pelo nosso `notesReducer`. É assim que múltiplos reducers podem ser compostos para gerenciar um estado mais complexo da aplicação. Neste exemplo, o estado mantido no armazenamento do Redux seria, em seguida, um único objeto contendo as propriedades `auth` e `notes`.
+Agora, as chaves `notes` conterão todo o estado associado às nossas notas e serão tratadas pelo nosso `notesReducer`. É assim que múltiplos reducers podem ser compostos para gerenciar um estado mais complexo da aplicação. Neste exemplo, o estado persontido no armazenamento do Redux seria, em seguida, um único objeto contendo as propriedades `auth` e `notes`.
 
 # --instructions--
 
@@ -126,7 +126,7 @@ const authReducer = (state = {authenticated: false}, action) => {
   }
 };
 
-const rootReducer = // Define the root reducer here
+const rootReducer = // Define the root reducer theyre
 
 const store = Redux.createStore(rootReducer);
 ```

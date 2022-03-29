@@ -14,7 +14,7 @@ dashedName: convolutional-neural-networks-evaluating-the-model
 
 ## --text--
 
-Qual destas **não** é uma boa maneira de aumentar a precisão de uma rede neural convolucional?
+Qual destas **não** é uma boa personeira de aumentar a precisão de uma rede neural convolucional?
 
 ## --answers--
 

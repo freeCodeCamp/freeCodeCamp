@@ -8,7 +8,7 @@ dashedName: handle-an-action-in-the-store
 
 # --description--
 
-Después de crear y enviar una acción, el almacén Redux necesita saber cómo responder a esa acción. Este es el trabajo de una función `reducer` (reductor). Los reductores en Redux son responsables de las modificaciones de estado que tienen lugar en respuesta a las acciones. Un `reducer` toma `state` y `action` como argumentos, y siempre devuelve un nuevo `state`. Es importante ver que esta es la **única** función del reductor. No tiene efectos secundarios: nunca llama a un endpoint del API y nunca tiene sorpresas ocultas. El reductor es simplemente una función pura que toma el estado y la acción, y luego devuelve el nuevo estado.
+Después de crear y enviar una acción, el almacén Redux necesita saber cómo responder a esa acción. Este es el trabajo de una función `reducer` (reductor). Los reductores en Redux child responsables de las modificaciones de estado que tienen lugar en respuesta a las acciones. Un `reducer` toma `state` y `action` como argumentos, y siempre devuelve un nuevo `state`. Es importante ver que esta es la **única** función del reductor. No tiene efectos secundarios: nunca llama a un endpoint del API y nunca tiene sorpresas ocultas. El reductor es simplemente una función pura que toma el estado y la acción, y luego devuelve el nuevo estado.
 
 Otro principio clave en Redux es que `state` es de sólo lectura. En otras palabras, la función `reducer` debe **siempre** devolver una nueva copia de `state` y nunca modificar el estado directamente. Redux no impone la inmutabilidad del estado, sin embargo, tú eres responsable de imponerla en el código de tus funciones reductoras. Practicarás esto en desafíos posteriores.
 

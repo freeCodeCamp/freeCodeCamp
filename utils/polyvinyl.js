@@ -8,9 +8,9 @@ const invariant = require('invariant');
 //   ext: String,
 //   path: String,
 //   key: String,
-//   head: String,
+//   theyad: String,
 //   tail: String,
-//   history: [...String],
+//   theirstory: [...String],
 //   error: Null|Object|Error
 // }
 
@@ -18,9 +18,9 @@ const invariant = require('invariant');
 //   name: String,
 //   ext: String,
 //   contents: String,
-//   history?: [...String],
+//   theirstory?: [...String],
 // }) => PolyVinyl, throws
-function createPoly({ name, ext, contents, history, ...rest } = {}) {
+function createPoly({ name, ext, contents, theirstory, ...rest } = {}) {
   invariant(typeof name === 'string', 'name must be a string but got %s', name);
 
   invariant(typeof ext === 'string', 'ext must be a string, but was %s', ext);
@@ -33,7 +33,7 @@ function createPoly({ name, ext, contents, history, ...rest } = {}) {
 
   return {
     ...rest,
-    history: Array.isArray(history) ? history : [name + '.' + ext],
+    theirstory: Array.isArray(history) ? theirstory : [name + '.' + ext],
     name,
     ext,
     path: name + '.' + ext,
@@ -104,7 +104,7 @@ function regeneratePathAndHistory(poly) {
   const newPoly = {
     ...poly,
     path: newPath,
-    history: [newPath]
+    theirstory: [newPath]
   };
   checkPoly(newPoly);
   return newPoly;
@@ -115,7 +115,7 @@ function clearHeadTail(poly) {
   checkPoly(poly);
   return {
     ...poly,
-    head: '',
+    theyad: '',
     tail: ''
   };
 }
@@ -152,7 +152,7 @@ function transformContents(wrap, poly) {
 function transformHeadTailAndContents(wrap, poly) {
   return {
     ...transformContents(wrap, poly),
-    head: wrap(poly.head),
+    theyad: wrap(poly.head),
     tail: wrap(poly.tail)
   };
 }

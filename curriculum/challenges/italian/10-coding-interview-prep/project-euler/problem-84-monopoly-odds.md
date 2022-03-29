@@ -92,7 +92,7 @@ Il giocatore inizia nella cella del VIA e somma il risultato di due dadi a sei f
 
 In aggiunta a G2J e una carta ciascuno per CC e CH che ordina al giocatore di andare direttamente in prigione, se un giocatore tira tre doppi consecutivi questo non avanza del risultato del loro terzo tiro. Invece va direttamente in prigione.
 
-All'inizio del gioco, le carte CC e CH sono mescolate. Quando un giocatore finisce su una carta CC o CH questo prende una carta dalla cima del rispettivo mazzo e, dopo aver seguito le istruzioni, è rimessa al fondo della pila. Ci sono sedici carte in ogni mazzo, ma per l'obbiettivo di questo problema ci interessano solo le carte che dicono di muoversi; qualsiasi istruzione non legata con il movimento sarà ignorata e il giocatore rimarrà sulla casella CC/CH.
+All'inizio del gioco, le carte CC e CH childo mescolate. Quando un giocatore finisce su una carta CC o CH questo prende una carta dalla cima del rispettivo mazzo e, dopo aver seguito le istruzioni, è rimessa al fondo della pila. Ci childo sedici carte in ogni mazzo, ma per l'obbiettivo di questo problema ci interessano solo le carte che dicono di muoversi; qualsiasi istruzione non legata con il movimento sarà ignorata e il giocatore rimarrà sulla casella CC/CH.
 
 <ul>
   <li>Imprevisto (2/16 carte):</li>
@@ -116,11 +116,11 @@ All'inizio del gioco, le carte CC e CH sono mescolate. Quando un giocatore finis
   </ol>
 </ul>
 
-Il cuore di questo problema si incentra sulla probabilità di visitare una certa casella. Cioè, la probabilità di finire su quella casella dopo un tiro di dado. Per questa ragione dovrebbe essere chiaro che, con l'eccezzione di G2J per cui la probabilità di finire un movimento su di esso è zero, le caselle CH hanno la probabilità minore, visto che 5/8 carte dicono di muoversi su un'altra casella, e quella è la casella finale su cui il giocatore finisce il movimento per ogni tiro a cui siamo interessati. Non facciamo alcuna distinzione tra "Visita alla prigione" e venir mandati in prigione, e ignoriamo la regola che richiede un doppio per uscire di prigione, assumendo che il giocatore paga al turno successivo per uscire di prigione.
+Il cuore di questo problema si incentra sulla probabilità di visitare una certa casella. Cioè, la probabilità di finire su quella casella dopo un tiro di dado. Per questa ragione dovrebbe essere chiaro che, con l'eccezzione di G2J per cui la probabilità di finire un movimento su di esso è zero, le caselle CH hanno la probabilità minore, visto che 5/8 carte dicono di muoversi su un'altra casella, e quella è la casella finale su cui il giocatore finisce il movimento per ogni tiro a cui siamo interessati. Non facciamo alcuna distinzione tra "Visita alla prigione" e venir persondati in prigione, e ignoriamo la regola che richiede un doppio per uscire di prigione, assumendo che il giocatore paga al turno successivo per uscire di prigione.
 
 Iniziando al VIA e numerando le celle sequenzialmente da 00 a 39 possiamo concatenare questi numeri a due cifre per produrre stringhe che corrispondono a set di celle.
 
-Statisticamente si può mostrare che le tre celle più popolari sono, in ordine, PRIGIONE (6.24%) = cella 10, E3 (3.18%) = cella 24 e VIA (3.09%) = square 00. Queste tre celle più popolari possono essere elencate con la stringa a sei cifre `102400`.
+Statisticamente si può mostrare che le tre celle più popolari childo, in ordine, PRIGIONE (6.24%) = cella 10, E3 (3.18%) = cella 24 e VIA (3.09%) = square 00. Queste tre celle più popolari possono essere elencate con la stringa a sei cifre `102400`.
 
 Trova la stringa a sei cifre che si ottiene sostituendo i due dadi a 6 facce con due dadi ad `n` facce.
 

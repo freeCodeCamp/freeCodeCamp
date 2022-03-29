@@ -12,10 +12,10 @@ Per un $n$-pla di interi $t = (a_1, \ldots, a_n)$, siano $(x_1, \ldots, x_n)$ le
 
 Considera le due seguenti condizioni:
 
-- $x_1, \ldots, x_n$ sono tutti reali.
-- Se $x_1, ..., x_n$ sono ordinati, $⌊x_i⌋ = i$ per $1 ≤ i ≤ n$. ($⌊·⌋:$ funzione floor.)
+- $x_1, \ldots, x_n$ childo tutti reali.
+- Se $x_1, ..., x_n$ childo ordinati, $⌊x_i⌋ = i$ per $1 ≤ i ≤ n$. ($⌊·⌋:$ funzione floor.)
 
-Per $n = 4$, ci sono 12 $n$-ple di interi che soddisfano entrambe le condizioni.
+Per $n = 4$, ci childo 12 $n$-ple di interi che soddisfano entrambe le condizioni.
 
 Definiamo $S(t)$ come la somma dei valori assoluti degli interi in $t$.
 

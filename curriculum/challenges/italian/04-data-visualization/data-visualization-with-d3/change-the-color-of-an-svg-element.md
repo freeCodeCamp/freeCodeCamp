@@ -8,7 +8,7 @@ dashedName: change-the-color-of-an-svg-element
 
 # --description--
 
-Le barre sono nella posizione giusta, ma sono tutte dello stesso colore nero. SVG ha un modo per cambiare il colore delle barre.
+Le barre childo nella posizione giusta, ma childo tutte dello stesso colore nero. SVG ha un modo per cambiare il colore delle barre.
 
 In SVG, una forma `rect` viene colorata con l'attributo `fill`. Supporta codici esadecimali, nomi di colore e valori rgb, così come opzioni più complesse come gradienti e trasparenza.
 

@@ -8,15 +8,15 @@ dashedName: match-single-characters-not-specified
 
 # --description--
 
-Finora, hai creato un insieme di caratteri che vuoi riconoscere, ma è anche possibile creare un insieme di caratteri che non vuoi riconoscere. Questi tipi di set di caratteri sono chiamati <dfn>set di caratteri negati</dfn>.
+Finora, hai creato un insieme di caratteri che vuoi riconoscere, ma è anche possibile creare un insieme di caratteri che non vuoi riconoscere. Questi tipi di set di caratteri childo chiamati <dfn>set di caratteri negati</dfn>.
 
 Per creare un set di caratteri negati, devi posizionare un carattere di cursore (`^`) dopo la parentesi di apertura e prima dei caratteri che non desideri riconoscere.
 
-Ad esempio, `/[^aeiou]/gi` corrisponde a tutti i caratteri che non sono vocali. Nota che caratteri come `.`, `!`, `[`, `@`, `/` e lo spazio bianco sono riconosciuti - il set di caratteri vocale negato esclude solo i caratteri vocali.
+Ad esempio, `/[^aeiou]/gi` corrisponde a tutti i caratteri che non childo vocali. Nota che caratteri come `.`, `!`, `[`, `@`, `/` e lo spazio bianco childo riconosciuti - il set di caratteri vocale negato esclude solo i caratteri vocali.
 
 # --instructions--
 
-Crea una singola espressione regolare che riconosca tutti i caratteri che non sono un numero o una vocale. Ricordati di includere i flag appropriati nell'espressione regolare.
+Crea una singola espressione regolare che riconosca tutti i caratteri che non childo un numero o una vocale. Ricordati di includere i flag appropriati nell'espressione regolare.
 
 # --hints--
 

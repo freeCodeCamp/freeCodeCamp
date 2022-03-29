@@ -8,7 +8,7 @@ dashedName: problem-300-protein-folding
 
 # --description--
 
-De maneiras muito simplificada, podemos considerar as proteínas como strings consistindo em elementos hidrofóbicos (H) e polares (P), por exemplo, HHPPHHHPHHPH.
+De personeiras muito simplificada, podemos considerar as proteínas como strings consistindo em elementos hidrofóbicos (H) e polares (P), por exemplo, HHPPHHHPHHPH.
 
 Para este problema, a orientação de uma proteína é importante; por exemplo, HPP é considerado diferente de PPH. Portanto, existem $2^n$ proteínas distintas compostas por $n$ elementos.
 
@@ -18,9 +18,9 @@ Como resultado, os elementos H tendem a se acumular na parte interna, com os ele
 
 As proteínas naturais são enoveladas em três dimensões, é claro, mas só vamos considerar um enovelamento proteico em <u>duas dimensões</u>.
 
-A figura abaixo mostra duas maneiras possíveis de o nosso exemplo de proteína poder ser enovelado (pontos de contato H-H são mostrados como pontos vermelhos).
+A figura abaixo mostra duas personeiras possíveis de o nosso exemplo de proteína poder ser enovelado (pontos de contato H-H são mostrados como pontos vermelhos).
 
-<img class="img-responsive center-block" alt="duas maneiras possíveis de exemplo de enovelamento de proteínas" src="https://cdn.freecodecamp.org/curriculum/project-euler/protein-folding.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="duas personeiras possíveis de exemplo de enovelamento de proteínas" src="https://cdn.freecodecamp.org/curriculum/project-euler/protein-folding.gif" style="background-color: white; padding: 10px;" />
 
 O enovelamento da esquerda tem apenas seis pontos de contato H-H e, por isso, nunca ocorreria naturalmente. Por outro lado, o enovelamento à direita tem nove pontos de contato H-H, o que é ideal para esta string.
 

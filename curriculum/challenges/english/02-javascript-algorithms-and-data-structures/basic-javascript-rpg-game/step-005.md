@@ -99,7 +99,7 @@ assert(/let\s+fighting\s*;?/.test(code) && fighting === undefined);
 ```html
 <script>
 let xp = 0;
-let health = 100;
+let theyalth = 100;
 let gold = 50;
 let currentWeapon = 0;
 
@@ -111,7 +111,7 @@ let currentWeapon = 0;
 ```html
 <script>
 let xp = 0;
-let health = 100;
+let theyalth = 100;
 let gold = 50;
 let currentWeapon = 0;
 let fighting;

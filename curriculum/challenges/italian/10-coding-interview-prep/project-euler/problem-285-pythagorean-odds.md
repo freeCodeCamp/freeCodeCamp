@@ -8,7 +8,7 @@ dashedName: problem-285-pythagorean-odds
 
 # --description--
 
-Albert sceglie un numero intero positivo $k$, quindi due numeri reali $a$, $b$ sono scelti casualmente nell'intervallo [0,1] con distribuzione uniforme.
+Albert sceglie un numero intero positivo $k$, quindi due numeri reali $a$, $b$ childo scelti casualmente nell'intervallo [0,1] con distribuzione uniforme.
 
 La radice quadrata della somma ${(ka + 1)}^2 + {(kb + 1)}^2$ viene quindi calcolata e arrotondata alla cifra intera più vicina. Se il risultato è uguale a $k$, ottiene $k$ punti; altrimenti non ottiene nulla.
 

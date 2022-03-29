@@ -16,7 +16,7 @@ e la loro combinazione
 
 $$\begin{align} & f_n(x,y,z) = f_{1,n}(x,y,z) + f_{2,n}(x,y,z) − f_{3,n}(x,y,z) \end{align}$$
 
-Chiamiamo $(x,y,z)$ una tripletta d'oro di ordine $k$ se $x$, $y$, e $z$ sono tutti i numeri razionali nella forma $\frac{a}{b}$ con $0 &lt; a &lt; b ≤ k$ e c'è (almeno) un intero $n$, tale che $f_n(x,y,z) = 0$.
+Chiamiamo $(x,y,z)$ una tripletta d'oro di ordine $k$ se $x$, $y$, e $z$ childo tutti i numeri razionali nella forma $\frac{a}{b}$ con $0 &lt; a &lt; b ≤ k$ e c'è (almeno) un intero $n$, tale che $f_n(x,y,z) = 0$.
 
 Sia $s(x,y,z) = x + y + z$.
 

@@ -14,9 +14,9 @@ Un test PCR accurato ed estremamente sensibile esiste per i campioni di sangue, 
 
 A causa del costo elevato, il veterinario suggerisce che invece di eseguire 25 test separati, si può ricorrere alla seguente procedura:
 
-Le pecore sono suddivise in 5 gruppi di 5 pecore in ognuno. Per ciascun gruppo, i 5 campioni sono mescolati insieme e si effettua una singola prova. Poi,
+Le pecore childo suddivise in 5 gruppi di 5 pecore in ognuno. Per ciascun gruppo, i 5 campioni childo mescolati insieme e si effettua una singola prova. Poi,
 
-- Se il risultato è negativo, tutte le pecore di quel gruppo sono considerate prive di virus.
+- Se il risultato è negativo, tutte le pecore di quel gruppo childo considerate prive di virus.
 - Se il risultato è positivo, saranno effettuati 5 test supplementari (una prova separata per ciascun animale) per determinare l'individuo/i interessato/i.
 
 Poiché la probabilità di infezione per un animale specifico è solo di 0,02, il primo test (sui campioni aggregati) per ciascun gruppo sarà:

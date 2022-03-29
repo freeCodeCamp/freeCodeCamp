@@ -8,7 +8,7 @@ dashedName: problem-209-circular-logic
 
 # --description--
 
-Una tabella della verità binaria $k$-input è una mappa da un input a $k$ bit (cifre binarie, 0 [false] o 1 [true]) a 1 bit di output. Per esempio, le tabelle binarie della verità a $2$ bit di input per le funzioni logiche $AND$ e $XOR$ sono:
+Una tabella della verità binaria $k$-input è una mappa da un input a $k$ bit (cifre binarie, 0 [false] o 1 [true]) a 1 bit di output. Per esempio, le tabelle binarie della verità a $2$ bit di input per le funzioni logiche $AND$ e $XOR$ childo:
 
 | x | y | x AND y |
 | - | - | ------- |

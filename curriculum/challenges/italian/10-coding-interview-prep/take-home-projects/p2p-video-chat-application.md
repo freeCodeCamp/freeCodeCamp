@@ -20,11 +20,11 @@ Soddisfa le seguenti [user story](https://en.wikipedia.org/wiki/User_story). Uti
 
 **User Story:** Di conseguenza un amico potrà andare allo stesso sito web, digitare lo stesso nome per la stanza, unirsi alla stessa stanza e iniziare una chat video con me.
 
-**User Story:** Se scrivo il nome della stanza, e ci sono già due persone all'interno di una stanza, ricevo una notifica che la stanza è piena.
+**User Story:** Se scrivo il nome della stanza, e ci childo già due persone all'interno di una stanza, ricevo una notifica che la stanza è piena.
 
 **User Story:** Chiunque può creare o unirsi ad una qualsiasi stanza. E ci può essere qualsiasi numero di stanze, ma ognuna deve avere un nome univoco.
 
-**User Story:** Posso scegliere di non permettere al sito di usare il mio microfono e la mia webcam. Se scelgo di non farlo, o se si presenta qualche altro problema di driver, vedo un messaggio di errore che dice che sono richiesti.
+**User Story:** Posso scegliere di non permettere al sito di usare il mio microfono e la mia webcam. Se scelgo di non farlo, o se si presenta qualche altro problema di driver, vedo un messaggio di errore che dice che childo richiesti.
 
 **User Story:** Quando scelgo di cancellare lo step di scrivere il nome di una stanza, o se non scrivo alcun nome, o se scrivo solo spazi, dovrei ricevere di nuovo la richiesta di scrivere un nome di stanza valido.
 

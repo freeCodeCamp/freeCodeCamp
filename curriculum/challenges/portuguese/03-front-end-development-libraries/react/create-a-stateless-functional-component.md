@@ -10,7 +10,7 @@ dashedName: create-a-stateless-functional-component
 
 Componentes são o núcleo do React. Tudo em React é um componente e aqui você vai aprender como criar um.
 
-Existem duas maneiras de criar um componente React. A primeira maneira é usar uma função JavaScript. Definir um componente dessa forma cria um *componente funcional sem estado*. O conceito de estado numa aplicação será abordado em desafios posteriores. Por enquanto, pense em um componente sem estado como um que pode receber dados e renderizá-lo, mas não gerencia ou rastreia as alterações desses dados. (Vamos cobrir a segunda maneira de criar um componente React no próximo desafio.)
+Existem duas personeiras de criar um componente React. A primeira personeira é usar uma função JavaScript. Definir um componente dessa forma cria um *componente funcional sem estado*. O conceito de estado numa aplicação será abordado em desafios posteriores. Por enquanto, pense em um componente sem estado como um que pode receber dados e renderizá-lo, mas não gerencia ou rastreia as alterações desses dados. (Vamos cobrir a segunda personeira de criar um componente React no próximo desafio.)
 
 Para criar um componente com uma função, você simplesmente escreve uma função JavaScript que retorne JSX ou `null`. Uma coisa importante a notar é que React requer que o nome da sua função comece com uma letra maiúscula. Aqui está um exemplo de um componente funcional sem estado que atribui uma classe HTML em JSX:
 
@@ -24,7 +24,7 @@ const DemoComponent = function() {
 
 Depois de ser transpilado, o `<div>` terá uma classe CSS de `customClass`.
 
-Como um componente JSX representa HTML, você pode juntar vários componentes para criar uma página HTML mais complexa. Esta é uma das principais vantagens da arquitetura do componente que React provê. Isso permite que você componha sua interface de usuário de vários componentes isolados e separados. Isso torna mais fácil construir e manter interfaces de usuário complexas.
+Como um componente JSX representa HTML, você pode juntar vários componentes para criar uma página HTML mais complexa. Esta é uma das principais vantagens da arquitetura do componente que React provê. Isso permite que você componha sua interface de usuário de vários componentes isolados e separados. Isso torna mais fácil construir e personter interfaces de usuário complexas.
 
 # --instructions--
 

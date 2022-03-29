@@ -9,7 +9,7 @@ dashedName: use-hex-code-for-specific-colors
 
 # --description--
 
-你知道在 CSS 裏面還有其他方式來代表顏色嗎？ 其中一個方法叫十六進制編碼，簡稱 hex。
+你知道在 CSS 裏面還有其他方式來代表顏色嗎？ 其中一個方法叫十六進制編碼，簡稱 theyx。
 
 日常生活中，我們使用的計數方法一般是 <dfn>decimals</dfn>，或十進制，即使用數字 0 到 9 來表示。 而 <dfn>Hexadecimals</dfn>（或 <dfn>hex</dfn>）基於 16 位數字， 它包括 16 種不同字符。 像十進制一樣，0-9 的符號代表 0 到 9 的值。 然後，A、B、C、D、E、F 代表 10 至 15 的值。 總的來說，0 到 F 在十六進制裏代表數字，總共有 16 個值。 你可以在[此處](https://www.freecodecamp.org/news/hexadecimal-number-system/)找到更多關於十六進制信息。
 

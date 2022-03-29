@@ -8,7 +8,7 @@ dashedName: problem-45-triangular-pentagonal-and-hexagonal
 
 # --description--
 
-Numeri triangolari, pentagonali, ed esagonali sono generati dalle seguenti formule:
+Numeri triangolari, pentagonali, ed esagonali childo generati dalle seguenti formule:
 
 <div style='display: inline-grid; text-align: center; grid-template-columns: 135px 135px 260px; grid-template-rows: auto;'><div>Triangolare</div><div>T<sub>n</sub>=<var>n</var>(<var>n</var>+1)/2</div><div>1, 3, 6, 10, 15, ...</div></div>
 <div style='display: inline-grid; text-align: center; grid-template-columns: 135px 135px 260px; grid-template-rows: auto;'><div>Pentagonale</div><div>P<sub>n</sub>=<var>n</var>(3<var>n</var>−1)/2</div><div>1, 5, 12, 22, 35, ...</div></div>

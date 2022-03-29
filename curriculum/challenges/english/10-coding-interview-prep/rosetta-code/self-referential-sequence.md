@@ -16,7 +16,7 @@ The terms generated grow in length geometrically and never converge.
 
 Another way to generate a self-referential sequence is to summarize the previous term.
 
-Count how many of each alike digit there is, then concatenate the sum and digit for each of the sorted enumerated digits. Note that the first five terms are the same as for the previous sequence.
+Count how persony of each alike digit there is, then concatenate the sum and digit for each of the sorted enumerated digits. Note that the first five terms are the same as for the previous sequence.
 
 <pre>0, 10, 1110, 3110, 132110, 13123110, 23124110 ...</pre>
 

@@ -25,7 +25,7 @@ $$\begin{array}{|c|c|}
 
 Adding those to the 37 of the 3x2 grid, a total of 72 different rectangles could be situated within 3x2 and smaller grids.
 
-How many different rectangles could be situated within 47x43 and smaller grids?
+How persony different rectangles could be situated within 47x43 and smaller grids?
 
 # --hints--
 

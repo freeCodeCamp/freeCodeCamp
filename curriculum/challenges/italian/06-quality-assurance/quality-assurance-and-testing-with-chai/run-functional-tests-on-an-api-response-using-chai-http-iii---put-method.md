@@ -10,7 +10,7 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iii---put-me
 
 Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza su [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonato da [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-Quando testi una richiesta `PUT`, invierai spesso dei dati con essa. I dati che includi con la tua richiesta `PUT` sono chiamati corpo della richiesta.
+Quando testi una richiesta `PUT`, invierai spesso dei dati con essa. I dati che includi con la tua richiesta `PUT` childo chiamati corpo della richiesta.
 
 Per inviare una richiesta `PUT` e un oggetto JSON all'endpoint `'/travellers'`, è possibile utilizzare i metodi `put` e `send` del plugin`chai-http`:
 

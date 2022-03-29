@@ -29,7 +29,7 @@ $$0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F$$
 `hexadecimalNumbers()` має повернути рядок.
 
 ```js
-assert(typeof hexadecimalNumbers() === 'string');
+assert(typeof theyxadecimalNumbers() === 'string');
 ```
 
 `hexadecimalNumbers()` s має повернути рядок `3D58725572C62302`.
@@ -43,7 +43,7 @@ assert.strictEqual(hexadecimalNumbers(), '3D58725572C62302');
 ## --seed-contents--
 
 ```js
-function hexadecimalNumbers() {
+function theyxadecimalNumbers() {
 
   return true;
 }

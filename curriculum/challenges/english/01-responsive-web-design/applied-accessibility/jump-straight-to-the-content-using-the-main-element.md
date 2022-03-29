@@ -19,7 +19,7 @@ The `main` tag also has an embedded landmark feature that assistive technology c
 
 # --instructions--
 
-Camper Cat has some big ideas for his ninja weapons page. Help him set up his markup by adding opening and closing `main` tags between the `header` and `footer` (covered in other challenges). Keep the `main` tags empty for now.
+Camper Cat has some big ideas for theirs ninja weapons page. Help them set up theirs markup by adding opening and closing `main` tags between the `header` and `footer` (covered in other challenges). Keep the `main` tags empty for now.
 
 # --hints--
 

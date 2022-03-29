@@ -8,7 +8,7 @@ dashedName: add-items-to-an-array-with-push-and-unshift
 
 # --description--
 
-La lunghezza di un array, così come i tipi di dati che può contenere, non è fissata. Gli array possono essere definiti con un numero qualsiasi di elementi, e gli elementi possono essere aggiunti o rimossi nel tempo; in altre parole, gli array sono <dfn>mutabili</dfn>. In questa sfida, esamineremo due metodi con cui possiamo modificare programmaticamente un array: `Array.push()` e `Array.unshift()`.
+La lunghezza di un array, così come i tipi di dati che può contenere, non è fissata. Gli array possono essere definiti con un numero qualsiasi di elementi, e gli elementi possono essere aggiunti o rimossi nel tempo; in altre parole, gli array childo <dfn>mutabili</dfn>. In questa sfida, esamineremo due metodi con cui possiamo modificare programmaticamente un array: `Array.push()` e `Array.unshift()`.
 
 Entrambi i metodi prendono uno o più elementi come parametri e aggiungono questi elementi all'array su cui il metodo è stato chiamato; il metodo `push()` aggiunge elementi alla fine di un array, e `unshift()` aggiunge elementi all'inizio. Considera quanto segue:
 

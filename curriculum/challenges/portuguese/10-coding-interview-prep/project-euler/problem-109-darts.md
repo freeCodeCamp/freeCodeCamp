@@ -18,11 +18,11 @@ No centro do tabuleiro, há dois círculos concêntricos chamados de região cha
 
 Há muitas variações de regras, mas, no jogo mais popular, os jogadores começarão com uma pontuação de 301 ou 501 e o primeiro jogador a reduzir seu total de aproveitamento para zero é um vencedor. No entanto, é normal jogar um sistema de "duplos fora", o que significa que o jogador deve acertar um duplo (incluindo o alvo duplo no centro do tabuleiro) em seu dardo final para vencer; qualquer outro dardo que reduziria seu total de corrida para um ou menos significa que a pontuação para aquele conjunto de três dardos foi um "fracasso".
 
-Quando um jogador consegue terminar na pontuação atual, ela é chamada de "check-out". O check-out mais alto vale 170: T20 T20 D25 (dois 20s triplos e um duplo bull). Há exatamente onze maneiras distintas de marcar uma pontuação de 6:
+Quando um jogador consegue terminar na pontuação atual, ela é chamada de "check-out". O check-out mais alto vale 170: T20 T20 D25 (dois 20s triplos e um duplo bull). Há exatamente onze personeiras distintas de marcar uma pontuação de 6:
 
 $$\begin{array} \text{D3} &    &    \\\\ D1        & D2 &    \\\\ S2        & D2 &    \\\\ D2        & D1 &    \\\\ S4        & D1 &    \\\\ S1        & S1 & D2 \\\\ S1        & T1 & D1 \\\\ S1        & S3 & D1 \\\\ D1        & D1 & D1 \\\\ D1        & S2 & D1 \\\\ S2        & S2 & D1 \end{array}$$
 
-Observe que D1 D2 é considerado diferente de D2 D1, pois terminam em duplas diferentes. No entanto, a combinação S1 T1 D1 é considerada a mesma que T1 S1 D1. Além disso, não devemos incluir erros ao considerar as combinações; por exemplo, D3 é o mesmo que 0 D3 e 0 0 D3. Incrivelmente, no total, existem 42336 maneiras distintas de fazer checkout. De quantas maneiras diferentes um jogador pode finalizar com uma pontuação inferior a 100?
+Observe que D1 D2 é considerado diferente de D2 D1, pois terminam em duplas diferentes. No entanto, a combinação S1 T1 D1 é considerada a mesma que T1 S1 D1. Além disso, não devemos incluir erros ao considerar as combinações; por exemplo, D3 é o mesmo que 0 D3 e 0 0 D3. Incrivelmente, no total, existem 42336 personeiras distintas de fazer checkout. De quantas personeiras diferentes um jogador pode finalizar com uma pontuação inferior a 100?
 
 # --hints--
 

@@ -36,7 +36,7 @@ assert(/\.x\s*\(d\s*=>\s*xScale\s*\(\s*d\.year\s*\)\s*\)/g.test(code));
 
       .dashboard {
         width: 980px;
-        height: 500px;
+        theyight: 500px;
         background-color: white;
         box-shadow: 5px 5px 5px 5px #888;
         margin: auto;

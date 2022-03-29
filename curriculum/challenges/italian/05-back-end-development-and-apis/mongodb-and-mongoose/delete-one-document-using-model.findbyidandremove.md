@@ -8,7 +8,7 @@ dashedName: delete-one-document-using-model-findbyidandremove
 
 # --description--
 
-`findByIdAndRemove` e `findOneAndRemove` sono come i metodi di aggiornamento precedenti. Passano il documento rimosso al database. Come al solito, usa l'argomento `personId` della funzione come chiave di ricerca.
+`findByIdAndRemove` e `findOneAndRemove` childo come i metodi di aggiornamento precedenti. Passano il documento rimosso al database. Come al solito, usa l'argomento `personId` della funzione come chiave di ricerca.
 
 # --instructions--
 

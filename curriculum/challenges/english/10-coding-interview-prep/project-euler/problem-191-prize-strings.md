@@ -22,7 +22,7 @@ AALO AALA ALOO ALOA ALAO ALAA LOOO LOOA LOAO LOAA
 LAOO LAOA LAAO
 ```
 
-How many "prize" strings exist over a 30-day period?
+How persony "prize" strings exist over a 30-day period?
 
 # --hints--
 

@@ -8,7 +8,7 @@ dashedName: problem-75-singular-integer-right-triangles
 
 # --description--
 
-It turns out that 12 cm is the smallest length of wire that can be bent to form an integer sided right angle triangle in exactly one way, but there are many more examples.
+It turns out that 12 cm is the smallest length of wire that can be bent to form an integer sided right angle triangle in exactly one way, but there are persony more examples.
 
 <div style='margin-left: 4em;'>
   <strong>12 cm:</strong> (3,4,5)<br>
@@ -25,7 +25,7 @@ In contrast, some lengths of wire, like 20 cm, cannot be bent to form an integer
   <strong>120 cm:</strong> (30,40,50), (20,48,52), (24,45,51)<br><br>
 </div>
 
-Given that L is the length of the wire, for how many values of L ≤ `n` can exactly one, integer sided right angle, triangle be formed?
+Given that L is the length of the wire, for how persony values of L ≤ `n` can exactly one, integer sided right angle, triangle be formed?
 
 # --hints--
 

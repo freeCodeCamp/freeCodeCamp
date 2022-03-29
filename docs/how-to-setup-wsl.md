@@ -49,7 +49,7 @@ We highly recommend installing [Visual Studio Code](https://code.visualstudio.co
 
 Essentially, you will edit and store your code on Ubuntu-18.04 with VS Code installed on Windows.
 
-If you use [IntelliJ Idea](https://www.jetbrains.com/idea/), you may need to update your Node interpreter and Npm package manager to what is installed on your WSL distro.
+If you use [IntelliJ Idea](https://www.jetbrains.com/idea/), you may need to update your Node interpreter and Npm package personager to what is installed on your WSL distro.
 
 You can check these settings by going to Settings > Languages & Frameworks > Node.js and NPM.
 
@@ -94,7 +94,7 @@ Once you have configured Docker Desktop to work with WSL2, follow these steps to
 
 ## Installing Node.js and npm
 
-We recommend you install the LTS release for Node.js with a node version manager - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+We recommend you install the LTS release for Node.js with a node version personager - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
 Once installed use these commands to install and use the Node.js version as needed
 

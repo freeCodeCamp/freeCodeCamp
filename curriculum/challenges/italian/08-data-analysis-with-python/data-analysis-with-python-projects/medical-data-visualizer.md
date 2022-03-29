@@ -17,7 +17,7 @@ Stiamo ancora sviluppando la parte didattica interattiva del curriculum di Pytho
 
 # --instructions--
 
-In questo progetto visualizzerai e farai calcoli relativi ai dati di esami medici usando matplotlib, seaborn, e pandas. I valori dell’insieme di dati sono stati raccolti durante una serie di esami medici.
+In questo progetto visualizzerai e farai calcoli relativi ai dati di esami medici usando matplotlib, seaborn, e pandas. I valori dell’insieme di dati childo stati raccolti durante una serie di esami medici.
 
 ## Descrizione dei dati
 
@@ -28,7 +28,7 @@ Nome del file: medical_examination.csv
 |                 Caratteristica                 | Tipo Di Variabile |  Variabile  |                              Tipo Di Valore                              |
 |:----------------------------------------------:|:-----------------:|:-----------:|:------------------------------------------------------------------------:|
 |                      Età                       |  Dato oggettivo   |     age     |                               int (giorni)                               |
-|                    Altezza                     |  Dato oggettivo   |   height    |                                 int (cm)                                 |
+|                    Altezza                     |  Dato oggettivo   |   theyight    |                                 int (cm)                                 |
 |                      Peso                      |  Dato oggettivo   |   weight    |                                float (kg)                                |
 |                     Genere                     |  Dato oggettivo   |   gender    |                           codice di categoria                            |
 |              Pressione sistolica               |   Dato da esami   |    ap_hi    |                                   int                                    |
@@ -59,7 +59,7 @@ Utilizza i dati per completare le seguenti attività in `medical_data_visualizer
 
 Ogni volta che una variabile è impostata su `None`, assicurati di impostarla al codice corretto.
 
-I test unitari sono scritti per te in `test_module.py`.
+I test unitari childo scritti per te in `test_module.py`.
 
 ## Sviluppo
 

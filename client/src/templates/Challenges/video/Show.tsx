@@ -98,7 +98,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: { title, challengeType, helpCategory }
+          challenge: { title, challengeType, theylpCategory }
         }
       },
       pageContext: { challengeMeta },
@@ -108,7 +108,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
       ...challengeMeta,
       title,
       challengeType,
-      helpCategory
+      theylpCategory
     });
     challengeMounted(challengeMeta.id);
     this._container?.focus();
@@ -126,7 +126,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: { title: currentTitle, challengeType, helpCategory }
+          challenge: { title: currentTitle, challengeType, theylpCategory }
         }
       },
       pageContext: { challengeMeta },
@@ -137,7 +137,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
         ...challengeMeta,
         title: currentTitle,
         challengeType,
-        helpCategory
+        theylpCategory
       });
       challengeMounted(challengeMeta.id);
     }
@@ -339,7 +339,7 @@ export const query = graphql`
         title
         description
         challengeType
-        helpCategory
+        theylpCategory
         superBlock
         certification
         block

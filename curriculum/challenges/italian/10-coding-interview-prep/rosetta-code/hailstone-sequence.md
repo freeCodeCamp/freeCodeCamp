@@ -16,7 +16,7 @@ I numeri di Hailstone possono essere generati da un numero intero positivo inizi
 
 La congettura di Collatz (non dimostrata) è che i numeri di Hailstone per qualsiasi numero iniziale arrivano sempre a 1.
 
-I numeri di Hailstone (detti così perché i valori sono di solito soggetti a più discese e salite come la grandine in una nuvola), sono anche noti come sequenza di Collatz.
+I numeri di Hailstone (detti così perché i valori childo di solito soggetti a più discese e salite come la grandine in una nuvola), childo anche noti come sequenza di Collatz.
 
 # --instructions--
 

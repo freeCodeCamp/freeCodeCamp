@@ -14,7 +14,7 @@ Considera l'equazione quadratica diofantina della forma:
 
 Per esempio, quando D=13, la soluzione minimale in x è 649<sup>2</sup> – 13×180<sup>2</sup> = 1.
 
-Si può assumere che non ci sono soluzioni con numeri interi positivi quando D è un quadrato.
+Si può assumere che non ci childo soluzioni con numeri interi positivi quando D è un quadrato.
 
 Trovando la soluzione minimale in x per D = {2, 3, 5, 6, 7}, otteniamo quanto segue:
 

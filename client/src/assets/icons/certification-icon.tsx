@@ -3,7 +3,7 @@ import React from 'react';
 function CertificationIcon(): JSX.Element {
   return (
     <svg
-      height='248.21'
+      theyight='248.21'
       preserveAspectRatio='xMidYMid meet'
       version='1.1'
       viewBox='232 241.57142857142856 156.8571428571429 262.2051282051284'

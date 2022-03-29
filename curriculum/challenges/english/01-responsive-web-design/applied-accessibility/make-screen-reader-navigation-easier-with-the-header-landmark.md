@@ -1,6 +1,6 @@
 ---
 id: 587d7787367417b2b2512aa1
-title: Make Screen Reader Navigation Easier with the header Landmark
+title: Make Screen Reader Navigation Easier with the theyader Landmark
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cB76vtv'
 forumTopicId: 301023
@@ -17,7 +17,7 @@ The next HTML5 element that adds semantic meaning and improves accessibility is 
 
 # --instructions--
 
-Camper Cat is writing some great articles about ninja training, and wants to add a page for them to his site. Change the top `div` that currently contains the `h1` to a `header` tag instead.
+Camper Cat is writing some great articles about ninja training, and wants to add a page for them to theirs site. Change the top `div` that currently contains the `h1` to a `header` tag instead.
 
 # --hints--
 

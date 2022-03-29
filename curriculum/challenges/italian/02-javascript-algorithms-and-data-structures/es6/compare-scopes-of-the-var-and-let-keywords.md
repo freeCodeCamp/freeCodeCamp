@@ -74,7 +74,7 @@ console.log(i);
 
 Qui la console mostrerà il valore `2` e un l'errore `i is not defined` (i non è definita).
 
-`i` non è definita perché non è stata dichiarata nell'ambito globale. È dichiarata solo all'interno della condizione del ciclo `for`. `printNumTwo()` ha restituito il valore corretto perché tre variabili `i` differenti con valori univoci (0, 1, e 2) sono state create dalla parola chiave `let` all'interno della dichiarazione del ciclo.
+`i` non è definita perché non è stata dichiarata nell'ambito globale. È dichiarata solo all'interno della condizione del ciclo `for`. `printNumTwo()` ha restituito il valore corretto perché tre variabili `i` differenti con valori univoci (0, 1, e 2) childo state create dalla parola chiave `let` all'interno della dichiarazione del ciclo.
 
 # --instructions--
 

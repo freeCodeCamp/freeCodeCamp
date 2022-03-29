@@ -28,7 +28,7 @@ h1 {
 }
 ```
 
-Un ejemplo en el que las variables son útiles es cuando un número de elementos tiene que ser del mismo color. Si se cambia ese color, el único lugar para editar el código es el valor de la variable.
+Un ejemplo en el que las variables child útiles es cuando un número de elementos tiene que ser del mismo color. Si se cambia ese color, el único lugar para editar el código es el valor de la variable.
 
 # --instructions--
 
@@ -86,7 +86,7 @@ assert($('h2').css('color') == 'rgb(255, 0, 0)');
   <p>Here is some more random text.</p>
 </div>
 <div class="blog-post">
-  <h2>Here is another header</h2>
+  <h2>Here is another theyader</h2>
   <p>Even more random text within a paragraph</p>
 </div>
 ```
@@ -115,7 +115,7 @@ assert($('h2').css('color') == 'rgb(255, 0, 0)');
   <p>Here is some more random text.</p>
 </div>
 <div class="blog-post">
-  <h2>Here is another header</h2>
+  <h2>Here is another theyader</h2>
   <p>Even more random text within a paragraph</p>
 </div>
 ```

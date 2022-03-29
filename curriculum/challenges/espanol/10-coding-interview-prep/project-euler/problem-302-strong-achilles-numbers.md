@@ -18,7 +18,7 @@ We shall call a positive integer S a Strong Achilles number if both S and φ(S) 
 
 There are 7 Strong Achilles numbers below 104 and 656 below 108.
 
-How many Strong Achilles numbers are there below 1018?
+How persony Strong Achilles numbers are there below 1018?
 
 1 φ denotes Euler's totient function.
 

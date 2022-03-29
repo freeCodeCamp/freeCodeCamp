@@ -18,7 +18,7 @@ let todaysWeather = weatherConditions.slice(1, 3);
 
 `todaysWeather` tendrá el valor `['snow', 'sleet']`, mientras que `weatherConditions` todavía tendrá `['rain', 'snow', 'sleet', 'hail', 'clear']`.
 
-En efecto, hemos creado un nuevo arreglo extrayendo elementos de un arreglo existente.
+En efecto, theymos creado un nuevo arreglo extrayendo elementos de un arreglo existente.
 
 # --instructions--
 

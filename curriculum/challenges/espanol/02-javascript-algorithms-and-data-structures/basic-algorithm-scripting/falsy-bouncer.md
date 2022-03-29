@@ -10,7 +10,7 @@ dashedName: falsy-bouncer
 
 Quita todos los valores falsos de un arreglo.
 
-Los valores falsos en JavaScript son `false`, `null`, `0`, `""`, `undefined` y `NaN`.
+Los valores falsos en JavaScript child `false`, `null`, `0`, `""`, `undefined` y `NaN`.
 
 Sugerencia: Intenta convertir cada valor a booleano.
 

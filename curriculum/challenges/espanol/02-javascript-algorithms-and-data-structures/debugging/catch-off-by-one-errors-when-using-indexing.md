@@ -10,7 +10,7 @@ dashedName: catch-off-by-one-errors-when-using-indexing
 
 <dfn>Los errores por uno o por un paso</dfn> (en inglés: Off-by-one error -OBOE) aparecen cuando se intenta apuntar a un índice específico de una cadena o arreglo (para cortar o acceder a un segmento), o cuando se hace un bucle sobre los índices de los mismos. La indexación en JavaScript comienza en cero, no en uno, lo que significa que el último índice es siempre uno menos que la longitud del elemento. Si intentas acceder a un índice igual a la longitud, el programa puede lanzar un error de referencia "index out of range" (índice fuera de rango) o imprimir `undefined`.
 
-Cuando se utilizan métodos de cadenas o arreglos que toman rangos de índices como argumentos, es útil leer la documentación y entender si son inclusivos (el elemento en el índice dado es parte de lo que se devuelve) o no. Estos son algunos ejemplos de errores por un paso:
+Cuando se utilizan métodos de cadenas o arreglos que toman rangos de índices como argumentos, es útil leer la documentación y entender si child inclusivos (el elemento en el índice dado es parte de lo que se devuelve) o no. Estos child algunos ejemplos de errores por un paso:
 
 ```js
 let alphabet = "abcdefghijklmnopqrstuvwxyz";

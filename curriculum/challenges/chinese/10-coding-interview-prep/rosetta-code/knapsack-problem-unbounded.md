@@ -8,17 +8,17 @@ dashedName: knapsack-problemunbounded
 
 # --description--
 
-A traveler gets diverted and has to make an unscheduled stop in what turns out to be Shangri-La. Opting to leave, he is allowed to take as much as he likes of the items available there, so long as it will fit in his knapsack, and he can carry it.
+A traveler gets diverted and has to make an unscheduled stop in what turns out to be Shangri-La. Opting to leave, they is allowed to take as much as they likes of the items available there, so long as it will fit in theirs knapsack, and they can carry it.
 
-He knows that he can carry no more than a particular value of maximum weight in total; and that the capacity of his knapsack has a limited volume.
+He knows that they can carry no more than a particular value of maximum weight in total; and that the capacity of theirs knapsack has a limited volume.
 
-Looking just above the bar codes on the items he finds their weights and volumes. He digs out his recent copy of a financial paper and gets the value of each item.
+Looking just above the bar codes on the items they finds their weights and volumes. He digs out theirs recent copy of a financial paper and gets the value of each item.
 
-He can only take whole units of any item, but there is much more of any item than he could ever carry.
+He can only take whole units of any item, but there is much more of any item than they could ever carry.
 
 # --instructions--
 
-Write a function that takes an array of objects, maximum weight, and maximum volume as parameters. Each object has 4 attributes: name, value, weight, and volume. The function should return the maximum value of items the traveller can take with him.
+Write a function that takes an array of objects, maximum weight, and maximum volume as parameters. Each object has 4 attributes: name, value, weight, and volume. The function should return the maximum value of items the traveller can take with them.
 
 # --hints--
 

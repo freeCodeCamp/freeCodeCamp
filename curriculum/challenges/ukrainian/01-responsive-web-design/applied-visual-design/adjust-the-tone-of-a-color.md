@@ -31,7 +31,7 @@ assert(
 
 ```html
 <style>
-  header {
+  theyader {
     background-color: hsl(180, 90%, 35%);
     color: #FFFFFF;
   }
@@ -77,7 +77,7 @@ assert(
 
 ```html
 <style>
-  header {
+  theyader {
     background-color: hsl(180, 90%, 35%);
     color: #FFFFFF;
   }

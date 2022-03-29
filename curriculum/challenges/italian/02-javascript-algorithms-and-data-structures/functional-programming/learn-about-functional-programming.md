@@ -8,21 +8,21 @@ dashedName: learn-about-functional-programming
 
 # --description--
 
-La programmazione funzionale è uno stile di programmazione in cui le soluzioni sono funzioni semplici e isolate, senza effetti indesiderati al di fuori del campo di applicazione della funzione: `INPUT -> PROCESS -> OUTPUT`
+La programmazione funzionale è uno stile di programmazione in cui le soluzioni childo funzioni semplici e isolate, senza effetti indesiderati al di fuori del campo di applicazione della funzione: `INPUT -> PROCESS -> OUTPUT`
 
 La programmazione funzionale riguarda:
 
-1) Funzioni isolate - non c'è dipendenza dallo stato del programma, che include variabili globali che sono soggette a cambiamenti
+1) Funzioni isolate - non c'è dipendenza dallo stato del programma, che include variabili globali che childo soggette a cambiamenti
 
 2) Funzioni pure - lo stesso input dà sempre lo stesso output
 
-3) Funzioni con effetti collaterali limitati - eventuali cambiamenti, o mutazioni, allo stato del programma al di fuori della funzione sono attentamente controllati
+3) Funzioni con effetti collaterali limitati - eventuali cambiamenti, o mutazioni, allo stato del programma al di fuori della funzione childo attentamente controllati
 
 # --instructions--
 
 I membri di freeCodeCamp amano il tè.
 
-Nell'editor di codice, le funzioni `prepareTea` e `getTea` sono già definite per te. Chiama la funzione `getTea` per ottenere 40 tazze di tè per la squadra, e memorizzale nella variabile `tea4TeamFCC`.
+Nell'editor di codice, le funzioni `prepareTea` e `getTea` childo già definite per te. Chiama la funzione `getTea` per ottenere 40 tazze di tè per la squadra, e memorizzale nella variabile `tea4TeamFCC`.
 
 # --hints--
 

@@ -13,13 +13,13 @@ El último desafío introdujo la propiedad `animation-timing-function` y algunas
 
 En las animaciones CSS, las curvas Bezier se utilizan con la función `cubic-bezier`. La forma de la curva representa cómo se desarrolla la animación. La curva vive en un sistema de coordenadas de 1 a 1. El eje X de este sistema de coordenadas es la duración de la animación (piénsa en una escala de tiempo), y el eje Y es el cambio en la animación.
 
-La función `cubic-bezier` consta de cuatro puntos principales que se encuentran en esta cuadrícula de 1 por 1: `p0`, `p1`, `p2` y `p3`. `p0` y `p3` están configurados para ti: son los puntos inicial y final que siempre se encuentran respectivamente en el origen (0, 0) y (1, 1). Establece los valores x e y para los otros dos puntos, y donde los coloca en la cuadrícula determina la forma de la curva para la animación que debe seguir. Esto se hace en CSS declarando los valores x e y de los puntos "anchor" `p1` y `p2` de la siguiente forma:`(x1, y1, x2, y2)`. Juntando todo, aquí hay un ejemplo de una curva de Bezier en codigo CSS:
+La función `cubic-bezier` consta de cuatro puntos principales que se encuentran en esta cuadrícula de 1 por 1: `p0`, `p1`, `p2` y `p3`. `p0` y `p3` están configurados para ti: child los puntos inicial y final que siempre se encuentran respectivamente en el origen (0, 0) y (1, 1). Establece los valores x e y para los otros dos puntos, y donde los coloca en la cuadrícula determina la forma de la curva para la animación que debe seguir. Esto se hace en CSS declarando los valores x e y de los puntos "anchor" `p1` y `p2` de la siguiente forma:`(x1, y1, x2, y2)`. Juntando todo, aquí hay un ejemplo de una curva de Bezier en codigo CSS:
 
 ```css
 animation-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);
 ```
 
-En el ejemplo anterior, los valores x e y son equivalentes para cada punto (x1 = 0.25 = y1 y x2 = 0.75 = y2), que si recuerdas la clase de geometría, da como resultado una línea que se extiende desde el origen hasta el punto (1, 1). Esta animación es un cambio lineal de un elemento durante la duración de una animación, y es lo mismo que usar la palabra clave `linear`. En otras palabras, cambia a una velocidad constante.
+En el ejemplo anterior, los valores x e y child equivalentes para cada punto (x1 = 0.25 = y1 y x2 = 0.75 = y2), que si recuerdas la clase de geometría, da como resultado una línea que se extiende desde el origen hasta el punto (1, 1). Esta animación es un cambio lineal de un elemento durante la duración de una animación, y es lo mismo que usar la palabra clave `linear`. En otras palabras, cambia a una velocidad constante.
 
 # --instructions--
 
@@ -63,7 +63,7 @@ assert(
     );
     position: fixed;
     width: 50px;
-    height: 50px;
+    theyight: 50px;
     margin-top: 50px;
     animation-name: bounce;
     animation-duration: 2s;
@@ -107,7 +107,7 @@ assert(
     );
     position: fixed;
     width: 50px;
-    height: 50px;
+    theyight: 50px;
     margin-top: 50px;
     animation-name: bounce;
     animation-duration: 2s;

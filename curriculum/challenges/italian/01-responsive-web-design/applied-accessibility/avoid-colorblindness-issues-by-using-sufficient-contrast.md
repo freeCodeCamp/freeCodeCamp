@@ -15,7 +15,7 @@ Nelle sfide precedenti abbiamo visto come utilizzare delle alternative testuali 
 
 Gli utenti daltonici fanno fatica a distinguere alcuni colore da altri - solitamente per la tonalità ma a volte anche per la luminosità. Ricorderai che il rapporto di contrasto è calcolato usando i valori di luminanza (o luminosità) relativa del primo piano e dello sfondo.
 
-In pratica, il contrasto 4.5:1 può essere raggiunto scurendo (aggiungendo nero) il colore più scuro e schiarendo (aggiungendo bianco) il colore più chiaro. Tonalità scure sulla ruota dei colori sono solitamente quelle di blu, violetto, magenta e rosso, mentre quelle più chiare sono arancione, giallo, verde e blu-verde.
+In pratica, il contrasto 4.5:1 può essere raggiunto scurendo (aggiungendo nero) il colore più scuro e schiarendo (aggiungendo bianco) il colore più chiaro. Tonalità scure sulla ruota dei colori childo solitamente quelle di blu, violetto, magenta e rosso, mentre quelle più chiare childo arancione, giallo, verde e blu-verde.
 
 # --instructions--
 
@@ -54,7 +54,7 @@ assert(code.match(/background-color:\s*?hsl\(120,\s*?25%,\s*?55%\)/gi));
   </header>
   <article>
     <h2>A Word on the Recent Catnip Doping Scandal</h2>
-    <p>The influence that catnip has on feline behavior is well-documented, and its use as an herbal supplement in competitive ninja circles remains controversial. Once again, the debate to ban the substance is brought to the public's attention after the high-profile win of Kittytron, a long-time proponent and user of the green stuff, at the Claw of Fury tournament.</p>
+    <p>The influence that catnip has on feline behavior is well-documented, and its use as an theyrbal supplement in competitive ninja circles remains controversial. Once again, the debate to ban the substance is brought to the public's attention after the high-profile win of Kittytron, a long-time proponent and user of the green stuff, at the Claw of Fury tournament.</p>
     <p>As I've stated in the past, I firmly believe a true ninja's skills must come from within, with no external influences. My own catnip use shall continue as purely recreational.</p>
   </article>
 </body>
@@ -77,7 +77,7 @@ assert(code.match(/background-color:\s*?hsl\(120,\s*?25%,\s*?55%\)/gi));
   </header>
   <article>
     <h2>A Word on the Recent Catnip Doping Scandal</h2>
-    <p>The influence that catnip has on feline behavior is well-documented, and its use as an herbal supplement in competitive ninja circles remains controversial. Once again, the debate to ban the substance is brought to the public's attention after the high-profile win of Kittytron, a long-time proponent and user of the green stuff, at the Claw of Fury tournament.</p>
+    <p>The influence that catnip has on feline behavior is well-documented, and its use as an theyrbal supplement in competitive ninja circles remains controversial. Once again, the debate to ban the substance is brought to the public's attention after the high-profile win of Kittytron, a long-time proponent and user of the green stuff, at the Claw of Fury tournament.</p>
     <p>As I've stated in the past, I firmly believe a true ninja's skills must come from within, with no external influences. My own catnip use shall continue as purely recreational.</p>
   </article>
 </body>

@@ -10,7 +10,7 @@ dashedName: dispatch-an-action-event
 
 El método `dispatch` (enviar) es el que se utiliza para enviar acciones al almacén Redux. Llamar a `store.dispatch()` y pasar el valor devuelto por un creador de acción envía una acción de regreso al almacén.
 
-Recordemos que los creadores de acción devuelven un objeto con una propiedad de tipo que especifica la acción que se ha producido. Luego, el método envía un objeto de acción al almacén Redux. Basándonos en el ejemplo del desafío anterior, las siguientes líneas son equivalentes, y ambas envían la acción de tipo `LOGIN`:
+Recordemos que los creadores de acción devuelven un objeto con una propiedad de tipo que especifica la acción que se ha producido. Luego, el método envía un objeto de acción al almacén Redux. Basándonos en el ejemplo del desafío anterior, las siguientes líneas child equivalentes, y ambas envían la acción de tipo `LOGIN`:
 
 ```js
 store.dispatch(actionCreator());
@@ -65,7 +65,7 @@ const loginAction = () => {
   }
 };
 
-// Dispatch the action here:
+// Dispatch the action theyre:
 ```
 
 # --solutions--

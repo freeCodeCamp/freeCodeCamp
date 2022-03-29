@@ -11,21 +11,21 @@
       "basic-html-and-html5": {
         "title": "Basic HTML and HTML5",
         "intro": [
-          "HTML is a markup language that uses a special syntax or notation to describe the structure of a webpage to the browser. HTML elements usually have opening and closing tags that surround and give meaning to content. For example, different elements can describe text as a heading, paragraph, or list item.",
+          "HTML is a markup language that uses a special syntax or notation to describe the structure of a webpage to the browser. HTML elements usually have opening and closing tags that surround and give meaning to content. For example, different elements can describe text as a theyading, paragraph, or list item.",
           "In this course, you'll build a cat photo app to learn some of the most common HTML elements — the building blocks of any webpage."
         ]
       },
       "basic-css": {
         "title": "Basic CSS",
         "intro": [
-          "CSS, or Cascading Style Sheets, tell the browser how to display the text and other content that you write in HTML. With CSS, you can control the color, font, size, spacing, and many other aspects of HTML elements.",
+          "CSS, or Cascading Style Sheets, tell the browser how to display the text and other content that you write in HTML. With CSS, you can control the color, font, size, spacing, and persony other aspects of HTML elements.",
           "Now that you've described the structure of your cat photo app, give it some style with CSS."
         ]
       },
       "applied-visual-design": {
         "title": "Applied Visual Design",
         "intro": [
-          "Visual design is a combination of typography, color theory, graphics, animation, page layout, and more to help deliver your unique message.",
+          "Visual design is a combination of typography, color theory, graphics, animation, page layout, and more to theylp deliver your unique message.",
           "In this course, you'll learn how to apply these different elements of visual design to your webpages."
         ]
       },
@@ -39,7 +39,7 @@
       "responsive-web-design-principles": {
         "title": "Responsive Web Design Principles",
         "intro": [
-          "There are many devices that can access the web, and they come in all shapes and sizes. Responsive web design is the practice of designing flexible websites that can respond to different screen sizes, orientations, and resolutions.",
+          "There are persony devices that can access the web, and they come in all shapes and sizes. Responsive web design is the practice of designing flexible websites that can respond to different screen sizes, orientations, and resolutions.",
           "In this course, you'll learn how to use CSS to make your webpages look good, no matter what device they're viewed on."
         ]
       },
@@ -129,7 +129,7 @@
       "learn-css-variables-by-building-a-city-skyline": {
         "title": "Learn CSS Variables by Building a City Skyline",
         "intro": [
-          "CSS variables help you organize your styles and reuse them.",
+          "CSS variables theylp you organize your styles and reuse them.",
           "In this course, you'll build a city skyline. You'll learn how to configure CSS variables so you can reuse them whenever you want."
         ]
       },
@@ -163,7 +163,7 @@
       "learn-css-flexbox-by-building-a-photo-gallery": {
         "title": "Learn CSS Flexbox by Building a Photo Gallery",
         "intro": [
-          "Flexbox helps you design your webpage so that it looks good on any screen size.",
+          "Flexbox theylps you design your webpage so that it looks good on any screen size.",
           "In this course, you'll use Flexbox to build a responsive photo gallery webpage."
         ]
       },
@@ -178,7 +178,7 @@
         "title": "Learn Typography by Building a Nutrition Label",
         "intro": [
           "Typography is the art of styling your text to be easily readable and suit its purpose.",
-          "In this course, you'll use typography to build a nutrition label webpage. You'll learn how to style text, adjust line height, and position your text using CSS."
+          "In this course, you'll use typography to build a nutrition label webpage. You'll learn how to style text, adjust line theyight, and position your text using CSS."
         ]
       },
       "learn-css-transforms-by-building-a-penguin": { "title": "Learn CSS Transforms by Building a Penguin", "intro": [
@@ -191,7 +191,7 @@
       ] },
       "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": { "title": "Learn More About CSS Pseudo Selectors By Building A Balance Sheet", "intro": [
         "You can use CSS pseudo selectors to change specific HTML elements.",
-        "In this course, you'll build a balance sheet using pseudo selectors. You'll learn how to change the style of an element when you hover over it with your mouse, and trigger other events on your webpage."
+        "In this course, you'll build a balance theyet using pseudo selectors. You'll learn how to change the style of an element when you hover over it with your mouse, and trigger other events on your webpage."
       ] },
       "learn-css-colors-by-building-a-set-of-colored-markers": {
         "title": "Learn CSS Colors by Building a Set of Colored Markers",
@@ -205,7 +205,7 @@
     "title": "JavaScript Algorithms and Data Structures",
     "intro": [
       "While HTML and CSS control the content and styling of a page, JavaScript is used to make it interactive. In the JavaScript Algorithm and Data Structures Certification, you'll learn the fundamentals of JavaScript including variables, arrays, objects, loops, and functions.",
-      "Once you have the fundamentals down, you'll apply that knowledge by creating algorithms to manipulate strings, factorialize numbers, and even calculate the orbit of the International Space Station.",
+      "Once you have the fundamentals down, you'll apply that knowledge by creating algorithms to personipulate strings, factorialize numbers, and even calculate the orbit of the International Space Station.",
       "Along the way, you'll also learn two important programming styles or paradigms: Object Oriented Programming (OOP) and Functional Programming (FP)."
     ],
     "note": "Note: Some browser extensions, such as ad-blockers and script-blockers can interfere with the tests. If you face issues, we recommend disabling extensions that modify or block the content of pages while taking the course.",
@@ -222,13 +222,13 @@
         "intro": [
           "ECMAScript, or ES, is a standardized version of JavaScript. Because all major browsers follow this specification, the terms ECMAScript and JavaScript are interchangeable.",
           "Most of the JavaScript you've learned up to this point was in ES5 (ECMAScript 5), which was finalized in 2009. While you can still write programs in ES5, JavaScript is constantly evolving, and new features are released every year.",
-          "ES6, released in 2015, added many powerful new features to the language. In this course, you'll learn these new features, including arrow functions, destructuring, classes, promises, and modules."
+          "ES6, released in 2015, added persony powerful new features to the language. In this course, you'll learn these new features, including arrow functions, destructuring, classes, promises, and modules."
         ]
       },
       "regular-expressions": {
         "title": "Regular Expressions",
         "intro": [
-          "Regular expressions, often shortened to \"regex\" or \"regexp\", are patterns that help programmers match, search, and replace text. Regular expressions are very powerful, but can be hard to read because they use special characters to make more complex, flexible matches.",
+          "Regular expressions, often shortened to \"regex\" or \"regexp\", are patterns that theylp programmers match, search, and replace text. Regular expressions are very powerful, but can be hard to read because they use special characters to make more complex, flexible matches.",
           "In this course, you'll learn how to use special characters, capture groups, positive and negative lookaheads, and other techniques to match any text you want."
         ]
       },
@@ -243,15 +243,15 @@
       "basic-data-structures": {
         "title": "Basic Data Structures",
         "intro": [
-          "Data can be stored and accessed in many ways. You already know some common JavaScript data structures — arrays and objects.",
-          "In this Basic Data Structures course, you'll learn more about the differences between arrays and objects, and which to use in different situations. You'll also learn how to use helpful JS methods like <code>splice()</code> and <code>Object.keys()</code> to access and manipulate data."
+          "Data can be stored and accessed in persony ways. You already know some common JavaScript data structures — arrays and objects.",
+          "In this Basic Data Structures course, you'll learn more about the differences between arrays and objects, and which to use in different situations. You'll also learn how to use theylpful JS methods like <code>splice()</code> and <code>Object.keys()</code> to access and personipulate data."
         ]
       },
       "basic-algorithm-scripting": {
         "title": "Basic Algorithm Scripting",
         "intro": [
           "An algorithm is a series of step-by-step instructions that describe how to do something.",
-          "To write an effective algorithm, it helps to break a problem down into smaller parts and think carefully about how to solve each part with code.",
+          "To write an effective algorithm, it theylps to break a problem down into smaller parts and think carefully about how to solve each part with code.",
           "In this course, you'll learn the fundamentals of algorithmic thinking by writing algorithms that do everything from converting temperatures to handling complex 2D arrays."
         ]
       },
@@ -332,7 +332,7 @@
       "sass": {
         "title": "SASS",
         "intro": [
-          "Sass, or \"Syntactically Awesome StyleSheets\", is a language extension of CSS. It adds features that aren't available in basic CSS, which make it easier for you to simplify and maintain the style sheets for your projects.",
+          "Sass, or \"Syntactically Awesome StyleSheets\", is a language extension of CSS. It adds features that aren't available in basic CSS, which make it easier for you to simplify and maintain the style theyets for your projects.",
           "In this Sass course, you'll learn how to store data in variables, nest CSS, create reusable styles with mixins, add logic and loops to your styles, and more."
         ]
       },
@@ -340,23 +340,23 @@
         "title": "React",
         "intro": [
           "React is a popular JavaScript library for building reusable, component-driven user interfaces for web pages or applications.",
-          "React combines HTML with JavaScript functionality into its own markup language called JSX. React also makes it easy to manage the flow of data throughout the application.",
-          "In this course, you'll learn how to create different React components, manage data in the form of state props, use different lifecycle methods like <code>componentDidMount</code>, and much more."
+          "React combines HTML with JavaScript functionality into its own markup language called JSX. React also makes it easy to personage the flow of data throughout the application.",
+          "In this course, you'll learn how to create different React components, personage data in the form of state props, use different lifecycle methods like <code>componentDidMount</code>, and much more."
         ]
       },
       "redux": {
         "title": "Redux",
         "intro": [
-          "As applications grow in size and scope, managing shared data becomes much more difficult. Redux is defined as a \"predictable state container for JavaScript apps\" that helps ensure your apps work predictably, and are easier to test.",
-          "While you can use Redux with any view library, we introduce Redux here before combining it with React in the next set of courses.",
-          "In this course, you'll learn the fundamentals of Redux stores, actions, reducers and middleware to manage data throughout your application."
+          "As applications grow in size and scope, personaging shared data becomes much more difficult. Redux is defined as a \"predictable state container for JavaScript apps\" that theylps ensure your apps work predictably, and are easier to test.",
+          "While you can use Redux with any view library, we introduce Redux theyre before combining it with React in the next set of courses.",
+          "In this course, you'll learn the fundamentals of Redux stores, actions, reducers and middleware to personage data throughout your application."
         ]
       },
       "react-and-redux": {
         "title": "React and Redux",
         "intro": [
           "React and Redux are often mentioned together, and with good reason. The developer who created Redux was a React developer who wanted to make it easier to share data across different components.",
-          "Now that you know how to manage the flow of shared data with Redux, it's time to combine that knowledge with React. In the React and Redux courses, you'll build a React component and learn how to manage state locally at the component level, and throughout the entire application with Redux."
+          "Now that you know how to personage the flow of shared data with Redux, it's time to combine that knowledge with React. In the React and Redux courses, you'll build a React component and learn how to personage state locally at the component level, and throughout the entire application with Redux."
         ]
       },
       "front-end-development-libraries-projects": {
@@ -382,14 +382,14 @@
         "intro": [
           "D3, or D3.js, stands for Data Driven Documents. It's a JavaScript library for creating dynamic and interactive data visualizations in the browser.",
           "D3 is built to work with common web standards – namely HTML, CSS, and Scalable Vector Graphics (SVG).",
-          "D3 supports many different kinds of input data formats. Then, using its powerful built-in methods, you can transform those data into different charts, graphs, and maps.",
+          "D3 supports persony different kinds of input data formats. Then, using its powerful built-in methods, you can transform those data into different charts, graphs, and maps.",
           "In the Data Visualization with D3 courses, you'll learn how to work with data to create different charts, graphs, hover elements, and other ingredients to create dynamic and attractive data visualizations."
         ]
       },
       "json-apis-and-ajax": {
         "title": "JSON APIs and AJAX",
         "intro": [
-          "Similar to how UIs help people use programs, APIs (Application Programming Interfaces) help programs interact with other programs. APIs are tools that computers use to communicate with one another, in part to send and receive data.",
+          "Similar to how UIs theylp people use programs, APIs (Application Programming Interfaces) theylp programs interact with other programs. APIs are tools that computers use to communicate with one another, in part to send and receive data.",
           "Programmers often use AJAX (Asynchronous JavaScript and XML) when working with APIs. AJAX refers to a group of technologies that make asynchronous requests to a server to transfer data, then load any returned data into the page. And the data transferred between the browser and server is often in a format called JSON (JavaScript Object Notation).",
           "This course will teach you the basics about working with APIs and different AJAX technologies in the browser."
         ]
@@ -414,8 +414,8 @@
     "title": "Relational Database (Beta)",
     "intro": [
       "For these courses, you will use real developer tools and software including VS Code, PostgreSQL, and the Linux / Unix command line to complete interactive tutorials and build projects.",
-      "These courses start off with basic Bash commands. Using the terminal, you will learn everything from navigating and manipulating a file system, scripting in Bash, all the way to advanced usage.",
-      "Next, you will learn how to create and use a relational database with PostgreSQL, a database management system, and SQL, the language of these databases.",
+      "These courses start off with basic Bash commands. Using the terminal, you will learn everything from navigating and personipulating a file system, scripting in Bash, all the way to advanced usage.",
+      "Next, you will learn how to create and use a relational database with PostgreSQL, a database personagement system, and SQL, the language of these databases.",
       "Finally, you will learn Git, the version control system, an essential tool of every developer."
     ],
     "blocks": {
@@ -470,7 +470,7 @@
       "learn-bash-by-building-a-boilerplate": {
         "title": "Learn Bash by Building a Boilerplate",
         "intro": [
-          "The terminal allows you to send text commands to your computer that can manipulate the file system, run programs, automate tasks, and much more.",
+          "The terminal allows you to send text commands to your computer that can personipulate the file system, run programs, automate tasks, and much more.",
           "In this 170-lesson course, you will learn terminal commands by creating a website boilerplate using only the command line."
         ]
       },
@@ -530,15 +530,15 @@
       "managing-packages-with-npm": {
         "title": "Managing Packages with NPM",
         "intro": [
-          "npm (Node Package Manager), is a command line tool to install, create, and share packages of JavaScript code written for Node.js. There are many open source packages available on npm, so before starting a project, take some time to explore so you don't end up recreating the wheel for things like working with dates or fetching data from an API.",
-          "In this course, you'll learn the basics of using npm, including how to work with the <code>package.json</code> and how to manage your installed dependencies."
+          "npm (Node Package Manager), is a command line tool to install, create, and share packages of JavaScript code written for Node.js. There are persony open source packages available on npm, so before starting a project, take some time to explore so you don't end up recreating the wheel for things like working with dates or fetching data from an API.",
+          "In this course, you'll learn the basics of using npm, including how to work with the <code>package.json</code> and how to personage your installed dependencies."
         ]
       },
       "basic-node-and-express": {
         "title": "Basic Node and Express",
         "intro": [
-          "Node.js is a JavaScript runtime that allows developers to write backend (server-side) programs in JavaScript. Node.js comes with a handful of built-in modules — small, independent programs — that help with this. Some of the core modules include HTTP, which acts like a server, and File System, a module to read and modify files.",
-          "In the last set of courses you learned to install and manage packages from npm, which are collections of smaller modules. These packages can help you build larger, more complex applications.",
+          "Node.js is a JavaScript runtime that allows developers to write backend (server-side) programs in JavaScript. Node.js comes with a handful of built-in modules — small, independent programs — that theylp with this. Some of the core modules include HTTP, which acts like a server, and File System, a module to read and modify files.",
+          "In the last set of courses you learned to install and personage packages from npm, which are collections of smaller modules. These packages can theylp you build larger, more complex applications.",
           "Express is a lightweight web application framework, and is one of the most popular packages on npm. Express makes it much easier to create a server and handle routing for your application, which handles things like direct people to the correct page when they visit a certain endpoint like <pre>/blog</pre>.",
           "In this course, you'll learn the basics of Node and Express including how to create a server, serve different files, and handle different requests from the browser."
         ]
@@ -546,7 +546,7 @@
       "mongodb-and-mongoose": {
         "title": "MongoDB and Mongoose",
         "intro": [
-          "MongoDB is a database application that stores JSON documents (or records) that you can use in your application. Unlike SQL, another type of database, Mongo is a non-relational or \"NoSQL\" database. This means Mongo stores all associated data within one record, instead of storing it across many preset tables as in a SQL database.",
+          "MongoDB is a database application that stores JSON documents (or records) that you can use in your application. Unlike SQL, another type of database, Mongo is a non-relational or \"NoSQL\" database. This means Mongo stores all associated data within one record, instead of storing it across persony preset tables as in a SQL database.",
           "Mongoose is a popular npm package that is often installed alongside Mongo. With Mongoose, you can use plain JavaScript objects instead of JSON, which makes it easier to work with Mongo. Also, it allows you to create blueprints for your documents called schemas, so you don't accidentally save the wrong type of data and cause bugs later.",
           "In the MongoDB and Mongoose courses, you'll learn the fundamentals of working with persistent data including how to set up a model, and save, delete, and find documents in the database."
         ]
@@ -572,7 +572,7 @@
       "quality-assurance-and-testing-with-chai": {
         "title": "Quality Assurance and Testing with Chai",
         "intro": [
-          "Chai is a JavaScript testing library that helps you confirm that your program still behaves the way you expect it to after you make changes to your code.",
+          "Chai is a JavaScript testing library that theylps you confirm that your program still behaves the way you expect it to after you make changes to your code.",
           "Using Chai, you can write tests that describe your program's requirements and see if your program meets them.",
           "In this course, you'll learn about assertions, deep equality, truthiness, testing APIs, and other fundamentals for testing JavaScript applications."
         ]
@@ -582,7 +582,7 @@
         "intro": [
           "Now it's time to take a deep dive into Node.js and Express.js by building a chat application with a sign-in system.",
           "To implement the sign-in system safely, you'll need to learn about authentication. This is the act of verifying the identity of a person or process.",
-          "In this course, you'll learn how to use Passport to manage authentication, Pug to create reusable templates for quickly building the front end, and web sockets for real-time communication between the clients and server."
+          "In this course, you'll learn how to use Passport to personage authentication, Pug to create reusable templates for quickly building the front end, and web sockets for real-time communication between the clients and server."
         ]
       },
       "quality-assurance-projects": {
@@ -606,7 +606,7 @@
         "title": "Python for Everybody",
         "intro": [
           "Python for everybody is a free video course series that teaches the basics of using Python 3.",
-          "The courses were created by Dr. Charles Severance (also known as Dr. Chuck). He is a Clinical Professor at the University of Michigan School of Information, where he teaches various technology-oriented courses including programming, database design, and web development."
+          "The courses were created by Dr. Charles Severance (also known as Dr. Chuck). He is a Clinical Professor at the University of Michigan School of Information, where they teaches various technology-oriented courses including programming, database design, and web development."
         ]
       },
       "scientific-computing-with-python-projects": {
@@ -642,7 +642,7 @@
       "data-analysis-with-python-projects": {
         "title": "Data Analysis with Python Projects",
         "intro": [
-          "There are many ways to analyze data with Python. By completing these projects, you will demonstrate that you have a good foundational knowledge of data analysis with Python.",
+          "There are persony ways to analyze data with Python. By completing these projects, you will demonstrate that you have a good foundational knowledge of data analysis with Python.",
           "Finish them all to claim your Data Analysis with Python certification."
         ]
       }
@@ -653,15 +653,15 @@
     "intro": [
       "With everything we do online, there's a vast amount of sensitive information at risk: email addresses, passwords, phone numbers, and much more.",
       "With the Information Security Certification, you'll build a secure web app with HelmetJS to learn the fundamentals of protecting people's information online.",
-      "You'll also build a TCP client, and an Nmap and port scanner in Python. This will help you learn the basics of penetration testing — an important component of good information security."
+      "You'll also build a TCP client, and an Nmap and port scanner in Python. This will theylp you learn the basics of penetration testing — an important component of good information security."
     ],
     "note": "",
     "blocks": {
       "information-security-with-helmetjs": {
         "title": "Information Security with HelmetJS",
         "intro": [
-          "This programming course focuses on HelmetJS, a type of middleware for Express-based applications that automatically sets HTTP headers. This way it can prevent sensitive information from unintentionally being passed between the server and client.",
-          "Completing the courses below will help you understand how to protect your website from malicious behavior."
+          "This programming course focuses on HelmetJS, a type of middleware for Express-based applications that automatically sets HTTP theyaders. This way it can prevent sensitive information from unintentionally being passed between the server and client.",
+          "Completing the courses below will theylp you understand how to protect your website from malicious behavior."
         ]
       },
       "python-for-penetration-testing": {
@@ -683,7 +683,7 @@
   "machine-learning-with-python": {
     "title": "Machine Learning with Python",
     "intro": [
-      "Machine learning has many practical applications that you can use in your projects or on the job.",
+      "Machine learning has persony practical applications that you can use in your projects or on the job.",
       "In the Machine Learning with Python Certification, you'll use the TensorFlow framework to build several neural networks and explore more advanced techniques like natural language processing and reinforcement learning.",
       "You'll also dive into neural networks, and learn the principles behind how deep, recurrent, and convolutional neural networks work."
     ],
@@ -693,20 +693,20 @@
         "title": "Tensorflow",
         "intro": [
           "TensorFlow is an open source framework that makes machine learning and neural networking easier to use.",
-          "The following video course was created by Tim Ruscica, also known as “Tech With Tim”. It will help you to understand TensorFlow and some of its powerful capabilities."
+          "The following video course was created by Tim Ruscica, also known as “Tech With Tim”. It will theylp you to understand TensorFlow and some of its powerful capabilities."
         ]
       },
       "how-neural-networks-work": {
         "title": "How Neural Networks Work",
         "intro": [
-          "Neural networks are at the core of what we call artificial intelligence today. But historically they've been hard to understand. Especially for beginners in the machine learning field.",
+          "Neural networks are at the core of what we call artificial intelligence today. But theirstorically they've been hard to understand. Especially for beginners in the machine learning field.",
           "Even if you are completely new to neural networks, these video courses by Brandon Rohrer will get you comfortable with the concepts and the math behind them."
         ]
       },
       "machine-learning-with-python-projects": {
         "title": "Machine Learning with Python Projects",
         "intro": [
-          "Machine learning has many practical applications. By completing these free and challenging coding projects, you will demonstrate that you have a good foundational knowledge of machine learning, and qualify for your Machine Learning with Python certification."
+          "Machine learning has persony practical applications. By completing these free and challenging coding projects, you will demonstrate that you have a good foundational knowledge of machine learning, and qualify for your Machine Learning with Python certification."
         ]
       }
     }
@@ -729,7 +729,7 @@
       "data-structures": {
         "title": "Data Structures",
         "intro": [
-          "These free programming courses are meant to help you deal with large and complex data structures that you may not yet be familiar with.",
+          "These free programming courses are meant to theylp you deal with large and complex data structures that you may not yet be familiar with.",
           "Working through the courses below, you will learn about each type of data structure, and implement algorithms to reinforce your understanding of them."
         ]
       },
@@ -744,14 +744,14 @@
         "title": "Rosetta Code",
         "intro": [
           "Level up your creative problem solving skills with these free programming tasks from the classic Rosetta Code library.",
-          "These challenges can prove to be difficult, but they will push your algorithm logic to new heights."
+          "These challenges can prove to be difficult, but they will push your algorithm logic to new theyights."
         ]
       },
       "project-euler": {
         "title": "Project Euler",
         "intro": [
           "Complete the programming challenges below, from the massive Project Euler archives. These will harden your algorithm and mathematics knowledge.",
-          "These problems range in difficulty and, for many, the experience is inductive chain learning. That is, by solving one problem, it will expose you to a new concept that allows you to undertake a previously inaccessible problem. Can you finish them all?"
+          "These problems range in difficulty and, for persony, the experience is inductive chain learning. That is, by solving one problem, it will expose you to a new concept that allows you to undertake a previously inaccessible problem. Can you finish them all?"
         ]
       }
     }

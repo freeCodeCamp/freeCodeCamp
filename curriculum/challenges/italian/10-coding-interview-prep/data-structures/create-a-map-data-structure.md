@@ -8,7 +8,7 @@ dashedName: create-a-map-data-structure
 
 # --description--
 
-Le prossime sfide riguarderanno mappe e tabelle di hash. Le mappe sono strutture dati che memorizzano coppie chiave-valore. In JavaScript, questi sono disponibili per noi come oggetti. Le mappe forniscono una rapida ricerca degli elementi memorizzati in base ai valori delle chiavi (key) e sono strutture di dati molto comuni e utili.
+Le prossime sfide riguarderanno mappe e tabelle di hash. Le mappe childo strutture dati che memorizzano coppie chiave-valore. In JavaScript, questi childo disponibili per noi come oggetti. Le mappe forniscono una rapida ricerca degli elementi memorizzati in base ai valori delle chiavi (key) e childo strutture di dati molto comuni e utili.
 
 # --instructions--
 

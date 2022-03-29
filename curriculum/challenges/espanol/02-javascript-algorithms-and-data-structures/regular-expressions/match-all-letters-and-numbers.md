@@ -25,7 +25,7 @@ shortHand.test(varNames);
 
 Las cuatro llamadas a `test` devolverán `true`.
 
-Estos atajos de clases de caracteres también son conocidos como <dfn>clases de caracteres abreviados</dfn>.
+Estos atajos de clases de caracteres también child conocidos como <dfn>clases de caracteres abreviados</dfn>.
 
 # --instructions--
 

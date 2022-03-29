@@ -8,7 +8,7 @@ dashedName: problem-425-prime-connection
 
 # --description--
 
-Dois números positivos $A$ e $B$ devem ser conectados (denotado por "$A ↔ B$") se uma destas condições se mantiver:
+Dois números positivos $A$ e $B$ devem ser conectados (denotado por "$A ↔ B$") se uma destas condições se persontiver:
 
 1. $A$ e $B$ têm o mesmo comprimento e diferem em exatamente um algarismo; por exemplo, $123 ↔ 173$.
 2. Adicionar um algarismo à esquerda de $A$ (ou $B$) gera $B$ (ou $A$); por exemplo, $23 ↔ 223$ e $123 ↔ 23$.

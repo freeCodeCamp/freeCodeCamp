@@ -10,7 +10,7 @@ dashedName: use-for-to-create-a-sass-loop
 
 A diretiva `@for` adiciona estilos em um laço, muito similar ao laço `for` em JavaScript.
 
-`@for` é usado de duas maneiras: "começo ao fim" ou "começo até o fim". A principal diferença é que "começo **até o** fim" *exclui* o número final como parte da contagem, enquanto "começo ** ao ** fim" *inclui* o número final como parte da contagem.
+`@for` é usado de duas personeiras: "começo ao fim" ou "começo até o fim". A principal diferença é que "começo **até o** fim" *exclui* o número final como parte da contagem, enquanto "começo ** ao ** fim" *inclui* o número final como parte da contagem.
 
 Aqui está um exemplo de começo **ao** fim:
 
@@ -38,7 +38,7 @@ A parte `#{$i}` é a sintaxe para combinar uma variável (`i`) com texto para cr
 }
 ```
 
-Essa é uma maneira poderosa de criar um layout de grade. Agora você tem doze opções para a largura das colunas disponíveis como classes CSS.
+Essa é uma personeira poderosa de criar um layout de grade. Agora você tem doze opções para a largura das colunas disponíveis como classes CSS.
 
 # --instructions--
 

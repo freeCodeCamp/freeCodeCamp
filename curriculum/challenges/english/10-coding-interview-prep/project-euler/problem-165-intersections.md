@@ -8,7 +8,7 @@ dashedName: problem-165-intersections
 
 # --description--
 
-A segment is uniquely defined by its two endpoints. By considering two line segments in plane geometry there are three possibilities: the segments have zero points, one point, or infinitely many points in common.
+A segment is uniquely defined by its two endpoints. By considering two line segments in plane geometry there are three possibilities: the segments have zero points, one point, or infinitely persony points in common.
 
 Moreover when two segments have exactly one point in common it might be the case that that common point is an endpoint of either one of the segments or of both. If a common point of two segments is not an endpoint of either of the segments it is an interior point of both segments.
 
@@ -38,7 +38,7 @@ To create each line segment, we use four consecutive numbers $t_n$. That is, the
 
 The first four numbers computed according to the above generator should be: 27, 144, 12 and 232. The first segment would thus be (27, 144) to (12, 232).
 
-How many distinct true intersection points are found among the 5000 line segments?
+How persony distinct true intersection points are found among the 5000 line segments?
 
 # --hints--
 

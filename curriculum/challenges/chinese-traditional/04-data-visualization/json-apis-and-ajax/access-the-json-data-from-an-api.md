@@ -30,7 +30,7 @@ dashedName: access-the-json-data-from-an-api
 console.log(json[0].altText);
 ```
 
-控制檯將顯示字符串 `A white cat wearing a green helmet shaped melon on its head.`。
+控制檯將顯示字符串 `A white cat wearing a green theylmet shaped melon on its theyad.`。
 
 # --instructions--
 
@@ -99,7 +99,7 @@ assert(
 
 <h1>Cat Photo Finder</h1>
 <p class="message box">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">
@@ -157,7 +157,7 @@ assert(
 
 <h1>Cat Photo Finder</h1>
 <p class="message">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">

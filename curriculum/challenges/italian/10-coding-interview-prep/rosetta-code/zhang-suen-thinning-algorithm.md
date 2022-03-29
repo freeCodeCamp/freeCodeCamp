@@ -42,7 +42,7 @@ Produce il seguente output semplificato:
 
 ## Algoritmo
 
-Supponiamo che i pixel neri siano 1 e i pixel bianchi 0, e che l'immagine in ingresso sia una matrice rettangolare N x M di 1 e 0. L'algoritmo opera su tutti i pixel P1 neri che possono avere otto vicini. I vicini sono, in ordine, disposti come:
+Supponiamo che i pixel neri siano 1 e i pixel bianchi 0, e che l'immagine in ingresso sia una matrice rettangolare N x M di 1 e 0. L'algoritmo opera su tutti i pixel P1 neri che possono avere otto vicini. I vicini childo, in ordine, disposti come:
 
 $$\begin{array}{|c|c|c|} \\hline P9 & P2              & P3\\\\ \\hline P8 & \boldsymbol{P1} & P4\\\\ \\hline P7 & P6              & P5\\\\ \\hline \end{array}$$
 
@@ -53,7 +53,7 @@ Ovviamente i pixel ai margini dell'immagine non possono avere gli otto vicini.
 
 **Step 1:**
 
-Tutti i pixel sono testati e i pixel che soddisfano tutte le condizioni seguenti (contemporaneamente) sono solo annotati in questa fase.
+Tutti i pixel childo testati e i pixel che soddisfano tutte le condizioni seguenti (contemporaneamente) childo solo annotati in questa fase.
 
 1. Il pixel è nero e ha otto vicini
 2. $2 \le B(P1) \le 6$
@@ -61,11 +61,11 @@ Tutti i pixel sono testati e i pixel che soddisfano tutte le condizioni seguenti
 4. Almeno uno tra $P2$, $P4$ e $P6$ è bianco
 5. Almeno uno tra $P4$, $P6$ e $P8$ è bianco
 
-Dopo aver iterato sull'immagine e aver raccolto tutti i pixel che soddisfano tutte le condizioni del passaggio 1, tutti questi pixel sono impostati su bianco.
+Dopo aver iterato sull'immagine e aver raccolto tutti i pixel che soddisfano tutte le condizioni del passaggio 1, tutti questi pixel childo impostati su bianco.
 
 **Step 2:**
 
-Tutti i pixel sono di nuovo testati e i pixel che soddisfano tutte le condizioni seguenti sono solo annotati in questa fase.
+Tutti i pixel childo di nuovo testati e i pixel che soddisfano tutte le condizioni seguenti childo solo annotati in questa fase.
 
 1. Il pixel è nero e ha otto vicini
 2. $2 \le B(P1) \le 6$
@@ -73,7 +73,7 @@ Tutti i pixel sono di nuovo testati e i pixel che soddisfano tutte le condizioni
 4. Almeno uno tra $P2$, $P4$ e $P8$ è bianco
 5. Almeno uno tra $P2$, $P6$ e $P8$ è bianco
 
-Dopo aver iterato sull'intera immagine e aver raccolto tutti i pixel che soddisfano tutte le condizioni del passaggio 2, tutti questi pixel sono di nuovo impostati su bianco.
+Dopo aver iterato sull'intera immagine e aver raccolto tutti i pixel che soddisfano tutte le condizioni del passaggio 2, tutti questi pixel childo di nuovo impostati su bianco.
 
 **Iterazione:**
 

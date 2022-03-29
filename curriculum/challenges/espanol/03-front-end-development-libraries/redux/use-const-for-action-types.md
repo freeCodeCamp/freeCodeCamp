@@ -67,7 +67,7 @@ assert(
 );
 ```
 
-La función `authReducer` debe manejar múltiples tipos de acción con una sentencia switch.
+La función `authReducer` debe personejar múltiples tipos de acción con una sentencia switch.
 
 ```js
 (getUserInput) =>

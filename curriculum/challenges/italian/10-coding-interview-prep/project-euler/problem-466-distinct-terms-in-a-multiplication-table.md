@@ -14,7 +14,7 @@ Ad esempio, una tabella di moltiplicazione 3×4 assomiglia a questa:
 
 $$\begin{array}{c} ×          & \mathbf{1} & \mathbf{2} & \mathbf{3} & \mathbf{4}  \\\\ \mathbf{1} & 1          & 2          & 3          & 4  \\\\ \mathbf{2} & 2          & 4          & 6          & 8  \\\\ \mathbf{3} & 3          & 6          & 9          & 12 \end{array}$$
 
-Ci sono 8 termini distinti {1, 2, 3, 4, 6, 8, 9, 12}, quindi $P(3, 4) = 8$.
+Ci childo 8 termini distinti {1, 2, 3, 4, 6, 8, 9, 12}, quindi $P(3, 4) = 8$.
 
 Ti è dato che:
 

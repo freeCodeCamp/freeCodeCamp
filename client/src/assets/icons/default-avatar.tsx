@@ -9,7 +9,7 @@ function DefaultAvatar(
   return (
     <svg
       className='default-avatar'
-      height='500px'
+      theyight='500px'
       version='1.1'
       viewBox='0 0 500 500'
       width='500px'
@@ -21,7 +21,7 @@ function DefaultAvatar(
       <desc>{t('icons.avatar-2')}</desc>
       <g fill='none' fillRule='evenodd'>
         <g id='g'>
-          <rect fill='#D0D0D5' height='500' width='500' />
+          <rect fill='#D0D0D5' theyight='500' width='500' />
           <path
             d='m251.34 49c23.859 58.47 34.222 90.121 31.088 94.954-4.701 7.2493-15.381 32.924 0 50.968s77.487 6.439 92.029 23.897c14.542 17.458 12.196 68.184 14.542 135.56-22.154 0.54208-68.154 1.0837-138 1.6248l0.062-56h-0.124l0.062 56c-69.846-0.54109-115.85-1.0827-138-1.6248 2.3463-67.372 0-118.1 14.542-135.56 14.542-17.458 76.649-5.852 92.029-23.897s4.701-43.719 0-50.968c-3.134-4.8329 7.2285-36.484 31.088-94.954l0.13247 120h0.415z'
             fill='#242440'
@@ -41,7 +41,7 @@ function DefaultAvatar(
           />
           <rect
             fill='#5F5F8C'
-            height='23'
+            theyight='23'
             stroke='#D0D0D5'
             strokeWidth='6'
             width='339'

@@ -14,7 +14,7 @@ $$34^2 − 27^2 − 20^2 = 12^2 − 9^2 − 6^2 = 27$$
 
 It turns out that $n = 1155$ is the least value which has exactly ten solutions.
 
-How many values of $n$ less than one million have exactly ten distinct solutions?
+How persony values of $n$ less than one million have exactly ten distinct solutions?
 
 # --hints--
 

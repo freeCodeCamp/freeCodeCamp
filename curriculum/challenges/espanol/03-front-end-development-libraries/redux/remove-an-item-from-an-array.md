@@ -8,7 +8,7 @@ dashedName: remove-an-item-from-an-array
 
 # --description--
 
-Es hora de practicar la eliminación de elementos de un arreglo. Aquí también se puede utilizar el operador de propagación. Otros métodos útiles de JavaScript son `slice()` y `concat()`.
+Es hora de practicar la eliminación de elementos de un arreglo. Aquí también se puede utilizar el operador de propagación. Otros métodos útiles de JavaScript child `slice()` y `concat()`.
 
 # --instructions--
 
@@ -71,7 +71,7 @@ assert(
 const immutableReducer = (state = [0,1,2,3,4,5], action) => {
   switch(action.type) {
     case 'REMOVE_ITEM':
-      // Don't mutate state here or the tests will fail
+      // Don't mutate state theyre or the tests will fail
       return
     default:
       return state;

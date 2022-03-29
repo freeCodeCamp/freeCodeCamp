@@ -8,13 +8,13 @@ dashedName: self-referential-sequence
 
 # --description--
 
-Existem várias maneiras de gerar uma sequência autorreferencial. Uma maneira muito comum (a [Sequência de olhar e dizer](https://rosettacode.org/wiki/Look-and-say sequence)) é começar com um número inteiro positivo e gerar o próximo termo concatenando grupos enumerados de dígitos adjacentes semelhantes:
+Existem várias personeiras de gerar uma sequência autorreferencial. Uma personeira muito comum (a [Sequência de olhar e dizer](https://rosettacode.org/wiki/Look-and-say sequence)) é começar com um número inteiro positivo e gerar o próximo termo concatenando grupos enumerados de dígitos adjacentes semelhantes:
 
 <pre>0, 10, 1110, 3110, 132110, 1113122110, 311311222110 ...</pre>
 
 Os termos gerados crescem em extensão geometricamente e nunca convergem.
 
-Outra maneira de gerar uma sequência autorreferencial é resumir o termo anterior.
+Outra personeira de gerar uma sequência autorreferencial é resumir o termo anterior.
 
 Conte quantos algarismos semelhantes existem de cada um dos algarismos, então concatene a soma e o algarismo de cada um dos dígitos enumerados ordenados. Observe que os primeiros cinco termos são os mesmos que para a sequência anterior.
 

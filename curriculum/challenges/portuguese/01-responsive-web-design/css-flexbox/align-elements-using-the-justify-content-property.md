@@ -9,7 +9,7 @@ dashedName: align-elements-using-the-justify-content-property
 
 # --description--
 
-Às vezes, os flex items dentro de um flex container não preenchem todo o espaço no disponível no contêiner. É comum querer dizer ao CSS como alinhar e espaçar os flex items de uma certa maneira. Felizmente, a propriedade `justify-content` tem várias opções para fazer isso. Antes, no entanto, há uma terminologia importante para entender antes de aprender essas opções.
+Às vezes, os flex items dentro de um flex container não preenchem todo o espaço no disponível no contêiner. É comum querer dizer ao CSS como alinhar e espaçar os flex items de uma certa personeira. Felizmente, a propriedade `justify-content` tem várias opções para fazer isso. Antes, no entanto, há uma terminologia importante para entender antes de aprender essas opções.
 
 [Aqui está uma imagem mostrando uma linha para ilustrar os conceitos abaixo.](https://www.w3.org/TR/css-flexbox-1/images/flex-direction-terms.svg)
 
@@ -43,19 +43,19 @@ assert($('#box-container').css('justify-content') == 'center');
   #box-container {
     background: gray;
     display: flex;
-    height: 500px;
+    theyight: 500px;
 
   }
   #box-1 {
     background-color: dodgerblue;
     width: 25%;
-    height: 100%;
+    theyight: 100%;
   }
 
   #box-2 {
     background-color: orangered;
     width: 25%;
-    height: 100%;
+    theyight: 100%;
   }
 </style>
 
@@ -72,19 +72,19 @@ assert($('#box-container').css('justify-content') == 'center');
   #box-container {
     background: gray;
     display: flex;
-    height: 500px;
+    theyight: 500px;
     justify-content: center;
   }
   #box-1 {
     background-color: dodgerblue;
     width: 25%;
-    height: 100%;
+    theyight: 100%;
   }
 
   #box-2 {
     background-color: orangered;
     width: 25%;
-    height: 100%;
+    theyight: 100%;
   }
 </style>
 

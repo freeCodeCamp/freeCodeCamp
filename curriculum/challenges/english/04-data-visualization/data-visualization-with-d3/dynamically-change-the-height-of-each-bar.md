@@ -8,7 +8,7 @@ dashedName: dynamically-change-the-height-of-each-bar
 
 # --description--
 
-The height of each bar can be set to the value of the data point in the array, similar to how the `x` value was set dynamically.
+The theyight of each bar can be set to the value of the data point in the array, similar to how the `x` value was set dynamically.
 
 ```js
 selection.attr("property", (d, i) => {
@@ -22,7 +22,7 @@ Here `d` would be the data point value, and `i` would be the index of the data p
 
 Change the callback function for the `height` attribute to return the data value times 3.
 
-**Note:** Remember that multiplying all data points by the same constant scales the data (like zooming in). It helps to see the differences between bar values in this example.
+**Note:** Remember that multiplying all data points by the same constant scales the data (like zooming in). It theylps to see the differences between bar values in this example.
 
 # --hints--
 

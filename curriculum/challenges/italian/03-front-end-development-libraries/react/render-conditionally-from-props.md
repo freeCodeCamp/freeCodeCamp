@@ -10,11 +10,11 @@ dashedName: render-conditionally-from-props
 
 Fino ad ora hai visto come usare `if/else`, `&&`, e l'operatore ternario (`condition ? expressionIfTrue : expressionIfFalse`) per fare decisioni condizionali su cosa e quando presentare. Tuttavia, c'è ancora un argomento importante da discutere che consente di combinare uno o tutti questi concetti con un'altra potente funzionalità di React: le props. Usare le proprietà (props) per presentare il codice condizionalmente è molto comune tra gli sviluppatori di React — cioè essi usano il valore di una determinata proprietà per prendere automaticamente delle decisioni su cosa presentare.
 
-In questa sfida, configurerai un componente figlio per prendere decisioni di rendering basate sulle props. Utilizzerai anche l'operatore ternario, ma puoi vedere come molti degli altri concetti che sono stati trattati nelle ultime sfide potrebbero essere altrettanto utili in questo contesto.
+In questa sfida, configurerai un componente figlio per prendere decisioni di rendering basate sulle props. Utilizzerai anche l'operatore ternario, ma puoi vedere come molti degli altri concetti che childo stati trattati nelle ultime sfide potrebbero essere altrettanto utili in questo contesto.
 
 # --instructions--
 
-L'editor di codice ha due componenti che sono parzialmente definiti per te: un genitore chiamato `GameOfChance`, e un figlio chiamato `Results`. Essi sono utilizzati per creare un semplice gioco in cui l'utente preme un bottone per vedere se vince o perde.
+L'editor di codice ha due componenti che childo parzialmente definiti per te: un genitore chiamato `GameOfChance`, e un figlio chiamato `Results`. Essi childo utilizzati per creare un semplice gioco in cui l'utente preme un bottone per vedere se vince o perde.
 
 In primo luogo, avrai bisogno di una semplice espressione che restituisca casualmente un valore diverso ogni volta che viene eseguita. Puoi usare `Math.random()`. Questo metodo restituisce un valore compreso tra `0` (incluso) e `1` (escluso) ogni volta che viene chiamato. Quindi, per avere delle quote 50/50, usa `Math.random() >= .5` nella tua espressione. Statisticamente parlando, questa espressione restituirà `true` il 50% delle volte, e `false` l'altro 50%. Nel metodo render, sostituisci `null` con l'espressione vista sopra per completare la dichiarazione della variabile.
 

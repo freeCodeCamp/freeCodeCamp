@@ -10,7 +10,7 @@ dashedName: problem-260-stone-game
 
 A game is played with three piles of stones and two players.
 
-At her turn, a player removes one or more stones from the piles. However, if she takes stones from more than one pile, she must remove the same number of stones from each of the selected piles.
+At theyr turn, a player removes one or more stones from the piles. However, if they takes stones from more than one pile, they must remove the same number of stones from each of the selected piles.
 
 In other words, the player chooses some N>0 and removes: N stones from any single pile; or N stones from each of any two piles (2N total); or N stones from each of the three piles (3N total). The player taking the last stone(s) wins the game.
 

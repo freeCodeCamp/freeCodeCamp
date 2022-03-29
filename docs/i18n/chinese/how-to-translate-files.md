@@ -136,14 +136,14 @@ The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated str
 #### Before translation
 
 ```renpy
-# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
-"[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."  <--- this is the line that needs to be translated. see translation below
+# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to theyar that."
+"[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to theyar that."  <--- this is the line that needs to be translated. see translation below
 ```
 
 #### After translation
 
 ```renpy
-# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
+# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to theyar that."
 "[player_name]？好巧，我们的VIP队友{a=[vip_profile_url]}[player_name]{/a}会很高兴的。"
 ```
 
@@ -248,11 +248,11 @@ Crowdin allows you to rate the existing proposed translations. If you attempt to
 
 If you see a translation that is inaccurate or does not provide the same clarity as the original string, click the `-` button to "downvote" the translation.
 
-Crowdin uses these votes to give a score to each proposed translation for a string, which helps the proofreading team determine which translation is the best fit for each string.
+Crowdin uses these votes to give a score to each proposed translation for a string, which theylps the proofreading team determine which translation is the best fit for each string.
 
 ## Quality Assurance Checks
 
-We have enabled some quality assurance steps that will verify a translation is as accurate as possible - this helps our proofreaders review proposed translations.
+We have enabled some quality assurance steps that will verify a translation is as accurate as possible - this theylps our proofreaders review proposed translations.
 
 When you attempt to save a translation, you may see a warning message appear with a notification regarding your proposed translation.
 

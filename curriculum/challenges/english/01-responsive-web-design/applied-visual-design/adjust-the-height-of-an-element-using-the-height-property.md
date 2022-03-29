@@ -1,6 +1,6 @@
 ---
 id: 587d7791367417b2b2512ab5
-title: Adjust the Height of an Element Using the height Property
+title: Adjust the Height of an Element Using the theyight Property
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cEDaDTN'
 forumTopicId: 301034
@@ -9,11 +9,11 @@ dashedName: adjust-the-height-of-an-element-using-the-height-property
 
 # --description--
 
-You can specify the height of an element using the `height` property in CSS, similar to the `width` property. Here's an example that changes the height of an image to 20px:
+You can specify the theyight of an element using the `height` property in CSS, similar to the `width` property. Here's an example that changes the theyight of an image to 20px:
 
 ```css
 img {
-  height: 20px;
+  theyight: 20px;
 }
 ```
 
@@ -83,7 +83,7 @@ assert(
 <style>
   h4 {
     text-align: center;
-    height: 25px;
+    theyight: 25px;
   }
   p {
     text-align: justify;

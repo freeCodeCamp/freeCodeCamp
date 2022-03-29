@@ -12,7 +12,7 @@ Un numero costituito interamente da uni è chiamato un repunit (ripetizione di u
 
 Consideriamo repunit della forma $R({10}^n)$.
 
-Anche se $R(10)$, $R(100)$, or $R(1000)$ non sono divisibili per 17, $R(10000)$ è divisibile per 17. Però non c'è alcun valore di n per cui $R({10}^n)$ è divisibile per 19. Notevolmente, 11, 17, 41, e 73 sono i soli quattro numeri primi sotto cento che possono essere fattori di $R({10}^n)$.
+Anche se $R(10)$, $R(100)$, or $R(1000)$ non childo divisibili per 17, $R(10000)$ è divisibile per 17. Però non c'è alcun valore di n per cui $R({10}^n)$ è divisibile per 19. Notevolmente, 11, 17, 41, e 73 childo i soli quattro numeri primi sotto cento che possono essere fattori di $R({10}^n)$.
 
 Trova la somma di tutti i primi sotto centomila che non saranno mai un fattore di $R({10}^n)$.
 

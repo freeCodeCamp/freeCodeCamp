@@ -9,7 +9,7 @@ dashedName: passing-values-to-functions-with-arguments
 
 # --description--
 
-<dfn>Los parámetros</dfn> son variables que actúan como marcadores de posición para los valores que deben ser introducidos en una función cuando se llama. Cuando se define una función, se define típicamente junto con uno o más parámetros. Los valores reales que son introducidos (o <dfn>"pasados"</dfn>) a una función cuando se llama son conocidos como <dfn>argumentos</dfn>.
+<dfn>Los parámetros</dfn> child variables que actúan como marcadores de posición para los valores que deben ser introducidos en una función cuando se llama. Cuando se define una función, se define típicamente junto con uno o más parámetros. Los valores reales que child introducidos (o <dfn>"pasados"</dfn>) a una función cuando se llama child conocidos como <dfn>argumentos</dfn>.
 
 Esta es una función con dos parámetros, `param1` y `param2`:
 

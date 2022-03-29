@@ -21,7 +21,7 @@ div {
 }
 ```
 
-Es mucho teclear para reescribir esta regla para todos los elementos que tienen un `box-shadow`, o para cambiar cada valor para probar diferentes efectos. Mixins son como funciones para CSS. Aquí está cómo escribir una:
+Es mucho teclear para reescribir esta regla para todos los elementos que tienen un `box-shadow`, o para cambiar cada valor para probar diferentes efectos. Mixins child como funciones para CSS. Aquí está cómo escribir una:
 
 ```scss
 @mixin box-shadow($x, $y, $blur, $c){ 
@@ -32,7 +32,7 @@ Es mucho teclear para reescribir esta regla para todos los elementos que tienen 
 }
 ```
 
-La definición empieza con `@mixin` seguido de un nombre personalizado. Los parámetros ( `$x`, `$y`, `$blur`, y `$c` en el ejemplo anterior) son opcionales. Ahora cada vez que se necesite una regla `box-shadow`, una sola línea llamando al mixin reemplaza el tener que escribir todos los prefijos del proveedor. Se llama a un mixin con la directiva `@include`:
+La definición empieza con `@mixin` seguido de un nombre personalizado. Los parámetros ( `$x`, `$y`, `$blur`, y `$c` en el ejemplo anterior) child opcionales. Ahora cada vez que se necesite una regla `box-shadow`, una sola línea llamando al mixin reemplaza el tener que escribir todos los prefijos del proveedor. Se llama a un mixin con la directiva `@include`:
 
 ```scss
 div {
@@ -100,7 +100,7 @@ assert(code.match(/@include\s+?border-radius\(\s*?15px\s*?\)\s*;/gi));
 
   #awesome {
     width: 150px;
-    height: 150px;
+    theyight: 150px;
     background-color: green;
 
   }
@@ -122,7 +122,7 @@ assert(code.match(/@include\s+?border-radius\(\s*?15px\s*?\)\s*;/gi));
 
   #awesome {
     width: 150px;
-    height: 150px;
+    theyight: 150px;
     background-color: green;
     @include border-radius(15px);
   }

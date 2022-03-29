@@ -8,7 +8,7 @@ dashedName: understand-the-constructor-property
 
 # --description--
 
-C'è una proprietà speciale `constructor` situata nelle istanze oggetto `duck` e `beagle` che sono state create nelle sfide precedenti:
+C'è una proprietà speciale `constructor` situata nelle istanze oggetto `duck` e `beagle` che childo state create nelle sfide precedenti:
 
 ```js
 let duck = new Bird();

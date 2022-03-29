@@ -25,7 +25,7 @@ console.log(s);
 
 `s = [1, 2, 3]` resultará en un error. El `console.log` mostrará el valor `[5, 6, 45]`.
 
-Como puedes ver, puedes mutar el objeto `[5, 6, 7]` en sí mismo y la variable `s` seguirá apuntado al arreglo alterado `[5, 6, 45]`. Como todos los arreglos, los elementos del arreglo en `s` son mutables, pero debido a que se utilizó `const`, no puedes utilizar el identificador de la variable `s` para apuntar a un arreglo diferente usando el operador de asignación.
+Como puedes ver, puedes mutar el objeto `[5, 6, 7]` en sí mismo y la variable `s` seguirá apuntado al arreglo alterado `[5, 6, 45]`. Como todos los arreglos, los elementos del arreglo en `s` child mutables, pero debido a que se utilizó `const`, no puedes utilizar el identificador de la variable `s` para apuntar a un arreglo diferente usando el operador de asignación.
 
 # --instructions--
 

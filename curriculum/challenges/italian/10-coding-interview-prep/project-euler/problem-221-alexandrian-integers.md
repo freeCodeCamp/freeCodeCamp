@@ -17,7 +17,7 @@ e
 $$$\frac{1}{A} = \frac{1}{p} + \frac{1}{q} + \frac{1}{r}$$
 
 
-Ad esempio, 630 è un numero intero Alessandrino ($p = 5$, $q = −7$, $r = −18$). Infatti 630 è il 6° numero intero Alessandrino, i primi 6 interi Alessandrini sono: 6, 42, 120, 156, 420 e 630.
+Ad esempio, 630 è un numero intero Alessandrino ($p = 5$, $q = −7$, $r = −18$). Infatti 630 è il 6° numero intero Alessandrino, i primi 6 interi Alessandrini childo: 6, 42, 120, 156, 420 e 630.
 
 Trova il 150000esimo intero Alessandrino.
 

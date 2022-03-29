@@ -49,7 +49,7 @@ Per esempio, `calculate([0,1,2,3,4,5,6,7,8])` dovrebbe restituire:
 }
 ```
 
-I test unitari per questo progetto sono in `test_module.py`.
+I test unitari per questo progetto childo in `test_module.py`.
 
 ## Sviluppo
 

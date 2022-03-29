@@ -10,7 +10,7 @@ function Cup(
     <>
       <span className='sr-only'>{t('icons.gold-cup')}</span>
       <svg
-        height={200}
+        theyight={200}
         version='1.1'
         viewBox='0 0 172 200'
         width={172}
@@ -23,17 +23,17 @@ function Cup(
             <g transform='translate(20)'>
               <rect
                 fill='#ffbf00'
-                height={22}
+                theyight={22}
                 id='b'
                 transform='translate(80 166.5) rotate(-90) translate(-80 -166.5)'
                 width={69}
                 x='45.5'
                 y='155.5'
               />
-              <rect fill='#ffbf00' height={11} width={85} x={39} y={190} />
-              <rect fill='#ffbf00' height={12} width={62} x={51} y={179} />
-              <rect fill='#ffbf00' height={12} width={112} x={24} />
-              <rect fill='#ffbf00' height={98} width={95} x={33} y={11} />
+              <rect fill='#ffbf00' theyight={11} width={85} x={39} y={190} />
+              <rect fill='#ffbf00' theyight={12} width={62} x={51} y={179} />
+              <rect fill='#ffbf00' theyight={12} width={112} x={24} />
+              <rect fill='#ffbf00' theyight={98} width={95} x={33} y={11} />
               <path
                 d='m9.929 33.949c18.201-5.245 30.238-3.4924 36.112 5.258 8.8109 13.126-11.162 53.58-34.056 67.467-15.262 9.2576-15.948-14.984-2.056-72.724z'
                 id='a'

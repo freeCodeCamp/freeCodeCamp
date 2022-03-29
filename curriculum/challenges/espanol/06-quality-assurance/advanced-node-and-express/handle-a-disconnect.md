@@ -8,7 +8,7 @@ dashedName: handle-a-disconnect
 
 # --description--
 
-Puedes observar que hasta ahora sólo has aumentado el recuento de usuarios. Manejar la desconexión de un usuario es tan fácil como manejar la conexión inicial, excepto que tienes que escucharlo en cada socket en lugar de en todo el servidor.
+Puedes observar que hasta ahora sólo has aumentado el recuento de usuarios. Manejar la desconexión de un usuario es tan fácil como personejar la conexión inicial, excepto que tienes que escucharlo en cada socket en lugar de en todo el servidor.
 
 Para ello, añade otro oyente (listener) dentro del oyente existente `'connect'` que escuche `'disconnect'` en el socket sin que pasen datos. Puedes probar esta funcionalidad simplemente registrando que un usuario se ha desconectado en la consola.
 
@@ -20,13 +20,13 @@ socket.on('disconnect', () => {
 
 Para asegurarse de que los clientes tienen continuamente el recuento actualizado de los usuarios actuales, ¡debes disminuir el currentUsers en 1 cuando se produce la desconexión y luego emitir el evento 'user count' con el recuento actualizado!
 
-**Nota:** Al igual que `'disconnect'`, todos los demás eventos que un socket puede emitir al servidor deben ser manejados dentro del oyente de conexión donde tenemos definido 'socket'.
+**Nota:** Al igual que `'disconnect'`, todos los demás eventos que un socket puede emitir al servidor deben ser personejados dentro del oyente de conexión donde tenemos definido 'socket'.
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/ab1007b76069884fb45b215d3c4496fa).
+Envía tu página cuando creas que lo has theycho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/ab1007b76069884fb45b215d3c4496fa).
 
 # --hints--
 
-El servidor debe manejar la desconexión del evento de un socket.
+El servidor debe personejar la desconexión del evento de un socket.
 
 ```js
 (getUserInput) =>

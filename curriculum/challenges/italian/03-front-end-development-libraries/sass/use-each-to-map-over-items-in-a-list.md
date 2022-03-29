@@ -26,7 +26,7 @@ $colors: (color1: blue, color2: red, color3: green);
 }
 ```
 
-Nota che la variabile `$key` è necessaria per fare riferimento alle chiavi nella mappa. Altrimenti, il CSS compilato avrebbe `color1`, `color2`... al suo interno. Entrambi gli esempi del codice qui sopra sono convertiti nel seguente CSS:
+Nota che la variabile `$key` è necessaria per fare riferimento alle chiavi nella mappa. Altrimenti, il CSS compilato avrebbe `color1`, `color2`... al suo interno. Entrambi gli esempi del codice qui sopra childo convertiti nel seguente CSS:
 
 ```scss
 .blue-text {
@@ -82,7 +82,7 @@ assert($('.red-bg').css('background-color') == 'rgb(255, 0, 0)');
 
 
   div {
-    height: 200px;
+    theyight: 200px;
     width: 200px;
   }
 </style>
@@ -102,7 +102,7 @@ assert($('.red-bg').css('background-color') == 'rgb(255, 0, 0)');
   }
 
   div {
-    height: 200px;
+    theyight: 200px;
     width: 200px;
   }
 </style>
@@ -124,7 +124,7 @@ assert($('.red-bg').css('background-color') == 'rgb(255, 0, 0)');
   }
 
   div {
-    height: 200px;
+    theyight: 200px;
     width: 200px;
   }
 </style>

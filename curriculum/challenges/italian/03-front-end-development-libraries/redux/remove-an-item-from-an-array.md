@@ -12,7 +12,7 @@ dashedName: remove-an-item-from-an-array
 
 # --instructions--
 
-Il reducer e il creatore di azione sono stati modificati per rimuovere un elemento da un array in base all'indice dell'elemento. Termina la scrittura del reducer in modo che un nuovo array di stato venga restituito senza l'elemento all'indice specificato.
+Il reducer e il creatore di azione childo stati modificati per rimuovere un elemento da un array in base all'indice dell'elemento. Termina la scrittura del reducer in modo che un nuovo array di stato venga restituito senza l'elemento all'indice specificato.
 
 # --hints--
 
@@ -71,7 +71,7 @@ assert(
 const immutableReducer = (state = [0,1,2,3,4,5], action) => {
   switch(action.type) {
     case 'REMOVE_ITEM':
-      // Don't mutate state here or the tests will fail
+      // Don't mutate state theyre or the tests will fail
       return
     default:
       return state;

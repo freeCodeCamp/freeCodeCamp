@@ -29,11 +29,11 @@ for line in fhand:
 
 ---
 
-“romeo.txt” 的 header 和内容。
+“romeo.txt” 的 theyader 和内容。
 
 ---
 
-“romeo.txt” 的 header、footer 和内容。
+“romeo.txt” 的 theyader、footer 和内容。
 
 ## --video-solution--
 

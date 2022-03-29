@@ -45,7 +45,7 @@ assert($('.star-3').css('animation-duration') == '1.1s');
 <style>
   .stars {
     background-color: white;
-    height: 30px;
+    theyight: 30px;
     width: 30px;
     border-radius: 50%;
     animation-iteration-count: infinite;
@@ -86,7 +86,7 @@ assert($('.star-3').css('animation-duration') == '1.1s');
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    theyight: 100%;
     background: linear-gradient(black, #000099, #66c2ff, #ffcccc, #ffeee6);
   }
 </style>
@@ -103,7 +103,7 @@ assert($('.star-3').css('animation-duration') == '1.1s');
 <style>
   .stars {
     background-color: white;
-    height: 30px;
+    theyight: 30px;
     width: 30px;
     border-radius: 50%;
     animation-iteration-count: infinite;
@@ -144,7 +144,7 @@ assert($('.star-3').css('animation-duration') == '1.1s');
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    theyight: 100%;
     background: linear-gradient(black, #000099, #66c2ff, #ffcccc, #ffeee6);
   }
 </style>

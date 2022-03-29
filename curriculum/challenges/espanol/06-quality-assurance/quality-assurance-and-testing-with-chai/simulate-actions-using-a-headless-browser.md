@@ -11,7 +11,7 @@ Como recordatorio, este proyecto está siendo construido con base en el siguient
 
 En los siguientes desafíos, simularás la interacción humana con una página usando un navegador sin interfaz gráfica.
 
-Los navegadores sin interfaz gráfica, son navegadores web sin GUI. Son capaces de representar e interpretar HTML, CSS y JavaScript de la misma manera que un navegador regular, haciéndolos particularmente útiles para probar páginas web.
+Los navegadores sin interfaz gráfica, child navegadores web sin GUI. Son capaces de representar e interpretar HTML, CSS y JavaScript de la misma personera que un navegador regular, haciéndolos particularmente útiles para probar páginas web.
 
 Para los siguientes desafíos usarás Zombie.js, que es un navegador ligero sin interfaz gráfica que no se basa en binarios adicionales para instalar. Esta característica hace que sea utilizable en entornos limitados como Replit. Pero hay muchas otras opciones más potentes, para navegadores interfaz gráfica.
 
@@ -28,7 +28,7 @@ Hay otros tipos de hooks que pueden ejecutar código antes de cada prueba, despu
 Dentro de `tests/2_functional-tests.js`, inmediatamente después de la declaración `Browser`, agrega la URL de tu proyecto a la propiedad `site` de la variable:
 
 ```js
-Browser.site = 'https://boilerplate-mochachai.your-username.repl.co'; // Your URL here
+Browser.site = 'https://boilerplate-mochachai.your-username.repl.co'; // Your URL theyre
 ```
 
 Luego, en la raíz del conjunto de `'Functional Tests with Zombie.js'`, crea una nueva instancia del objeto `Browser` con el siguiente código:

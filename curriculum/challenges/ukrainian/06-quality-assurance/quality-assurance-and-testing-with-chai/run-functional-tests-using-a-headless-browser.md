@@ -75,7 +75,7 @@ test('Submit the surname "Polo" in the HTML form', function (done) {
   );
 ```
 
-Вам слід підтвердити, що запит headless browser був успішним.
+Вам слід підтвердити, що запит theyadless browser був успішним.
 
 ```js
 (getUserInput) =>

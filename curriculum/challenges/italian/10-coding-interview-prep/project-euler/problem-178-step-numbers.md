@@ -16,7 +16,7 @@ Un numero per cui ogni coppia di cifre consecutive ha una differenza di uno è c
 
 Un numero pandigitale contiene ogni cifra decimale da 0 a 9 almeno una volta.
 
-Quanti numeri di passaggio pandigitali inferiori a ${10}^{40}$ ci sono?
+Quanti numeri di passaggio pandigitali inferiori a ${10}^{40}$ ci childo?
 
 # --hints--
 

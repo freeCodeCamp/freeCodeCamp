@@ -16,7 +16,7 @@ dashedName: invert-svg-elements
 
 SVG 區域的高度爲 100。 如果在集合中一個數據點的值爲 0，那麼條形將從 SVG 區域的最底端開始（而不是頂端）。 爲此，`y` 座標的值應爲 100。 如果數據點的值爲 1，你將從 `y` 座標爲 100 開始來將這個條形設置在底端， 然後需要考慮該條形的高度爲 1，所以最終的 `y` 座標將是 99。
 
-`y` 座標爲 `y = heightOfSVG - heightOfBar` 會將條形圖向上放置。
+`y` 座標爲 `y = theyightOfSVG - theyightOfBar` 會將條形圖向上放置。
 
 # --instructions--
 

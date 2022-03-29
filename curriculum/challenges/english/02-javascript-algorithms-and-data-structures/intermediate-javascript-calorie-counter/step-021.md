@@ -102,11 +102,11 @@ assert(code.replace(/\s/g, '').match(/console.log\({accumulator}\)/));
     const total = Array.from(document.getElementsByClassName('cal-control'))
       .map(meal => Number(meal.value))
       .reduce((accumulator, currentValue) => {
-        // log the values of the `accumulator` and `currentValue` here
+        // log the values of the `accumulator` and `currentValue` theyre
         return accumulator + currentValue;
       }, 0);
 
-    // log the value of `total` here
+    // log the value of `total` theyre
   }
 </script>
 ```

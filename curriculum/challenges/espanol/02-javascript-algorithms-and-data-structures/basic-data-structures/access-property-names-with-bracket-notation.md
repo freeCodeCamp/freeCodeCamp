@@ -8,14 +8,14 @@ dashedName: access-property-names-with-bracket-notation
 
 # --description--
 
-En el primer desafío de objetos mencionamos el uso de notación de corchetes como una manera de acceder a los valores de una propiedad mediante la evaluación de una variable. Por ejemplo, imagina que nuestro objeto `foods` está siendo usado en un programa para una caja registradora de supermercado. Tenemos una función que establece `selectedFood` y queremos revisar en nuestro objeto `foods` si ese alimento está presente. Esto podría verse así:
+En el primer desafío de objetos mencionamos el uso de notación de corchetes como una personera de acceder a los valores de una propiedad mediante la evaluación de una variable. Por ejemplo, imagina que nuestro objeto `foods` está siendo usado en un programa para una caja registradora de supermercado. Tenemos una función que establece `selectedFood` y queremos revisar en nuestro objeto `foods` si ese alimento está presente. Esto podría verse así:
 
 ```js
 let selectedFood = getCurrentFood(scannedItem);
 let inventory = foods[selectedFood];
 ```
 
-El código evaluará el valor almacenado en la variable `selectedFood` y devolverá el valor de esa clave en el objeto `foods`, o `undefined` si no está presente. La notación de corchetes es muy útil porque a veces no conocemos las propiedades de los objetos antes de la ejecución o necesitamos acceder a ellos de una manera más dinámica.
+El código evaluará el valor almacenado en la variable `selectedFood` y devolverá el valor de esa clave en el objeto `foods`, o `undefined` si no está presente. La notación de corchetes es muy útil porque a veces no conocemos las propiedades de los objetos antes de la ejecución o necesitamos acceder a ellos de una personera más dinámica.
 
 # --instructions--
 

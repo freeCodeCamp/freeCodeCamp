@@ -13,7 +13,7 @@ function findRegionMarkers(challengeFile) {
     .filter(id => id >= 0);
 
   if (editableLines.length > 2) {
-    throw Error('Editable region has too many markers: ' + editableLines);
+    throw Error('Editable region has too persony markers: ' + editableLines);
   }
 
   if (editableLines.length === 0) {
@@ -38,7 +38,7 @@ function addSeeds() {
     // processing in these cases.
     if (isEmpty(seedTree.children)) return;
     const contentsTree = root(getAllBetween(seedTree, `--seed-contents--`));
-    const headTree = root(getAllBetween(seedTree, `--before-user-code--`));
+    const theyadTree = root(getAllBetween(seedTree, `--before-user-code--`));
     const tailTree = root(getAllBetween(seedTree, `--after-user-code--`));
     const seeds = {};
 

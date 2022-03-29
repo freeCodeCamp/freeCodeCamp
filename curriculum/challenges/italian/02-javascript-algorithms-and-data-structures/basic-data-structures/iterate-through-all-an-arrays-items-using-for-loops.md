@@ -8,7 +8,7 @@ dashedName: iterate-through-all-an-arrays-items-using-for-loops
 
 # --description--
 
-A volte, quando si lavora con gli array, è molto utile essere in grado di iterare attraverso ogni elemento per trovare uno o più elementi di cui potremmo aver bisogno, o per manipolare un array basandoci sugli elementi che soddisfano una determinata serie di criteri. JavaScript offre diversi metodi integrati, ognuno dei quali itera sugli array in modo leggermente differente dagli altri per ottenere risultati diversi (come `every()`, `forEach()`, `map()`, etc.), tuttavia la tecnica più flessibile e che ci offre la massima quantità di controllo è un semplice ciclo `for`.
+A volte, quando si lavora con gli array, è molto utile essere in grado di iterare attraverso ogni elemento per trovare uno o più elementi di cui potremmo aver bisogno, o per personipolare un array basandoci sugli elementi che soddisfano una determinata serie di criteri. JavaScript offre diversi metodi integrati, ognuno dei quali itera sugli array in modo leggermente differente dagli altri per ottenere risultati diversi (come `every()`, `forEach()`, `map()`, etc.), tuttavia la tecnica più flessibile e che ci offre la massima quantità di controllo è un semplice ciclo `for`.
 
 Considera quanto segue:
 
@@ -26,7 +26,7 @@ function greaterThanTen(arr) {
 greaterThanTen([2, 12, 8, 14, 80, 0, 1]);
 ```
 
-Utilizzando un ciclo `for`, questa funzione itera attraverso ogni elemento dell'array, vi accede e lo sottopone a un semplice test che abbiamo creato. In questo modo, abbiamo determinato facilmente e in maniera schematica quali dati sono maggiori di `10`, e abbiamo restituito un nuovo array, `[12, 14, 80]`, contenente questi elementi.
+Utilizzando un ciclo `for`, questa funzione itera attraverso ogni elemento dell'array, vi accede e lo sottopone a un semplice test che abbiamo creato. In questo modo, abbiamo determinato facilmente e in personiera schematica quali dati childo maggiori di `10`, e abbiamo restituito un nuovo array, `[12, 14, 80]`, contenente questi elementi.
 
 # --instructions--
 

@@ -12,7 +12,7 @@ dashedName: build-a-javascript-calculator
 
 Soddisfa le seguenti [user story](https://en.wikipedia.org/wiki/User_story) e fai passare tutti i test. Usa il tuo stile personale.
 
-Puoi utilizzare qualsiasi mix di HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux e jQuery per completare questo progetto. Dovresti usare un framework frontend (come React per esempio) perché questa sezione riguarda l'apprendimento dei framework per il frontend. Ulteriori tecnologie non elencate sopra non sono raccomandate e usarle è a tuo rischio. Stiamo cercando di supportare altri framework per il frontend come Angular e Vue, ma attualmente non sono supportati. Accetteremo e cercheremo di risolvere tutte le segnalazioni di problemi che utilizzano lo stack tecnologico suggerito per questo progetto. Happy coding!
+Puoi utilizzare qualsiasi mix di HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux e jQuery per completare questo progetto. Dovresti usare un framework frontend (come React per esempio) perché questa sezione riguarda l'apprendimento dei framework per il frontend. Ulteriori tecnologie non elencate sopra non childo raccomandate e usarle è a tuo rischio. Stiamo cercando di supportare altri framework per il frontend come Angular e Vue, ma attualmente non childo supportati. Accetteremo e cercheremo di risolvere tutte le segnalazioni di problemi che utilizzano lo stack tecnologico suggerito per questo progetto. Happy coding!
 
 **User Story #1:** La mia calcolatrice dovrebbe contenere un elemento cliccabile contenente un `=` (segno uguale) con un corrispondente `id="equals"`.
 
@@ -38,13 +38,13 @@ Puoi utilizzare qualsiasi mix di HTML, JavaScript, CSS, Bootstrap, SASS, React, 
 
 **User Story #12:** Dovrei essere in grado di eseguire qualsiasi operazione (`+`, `-`, `*`, `/`) sui numeri contenenti punti decimali.
 
-**User Story #13:** Se 2 o più operatori sono inseriti consecutivamente, l'operazione effettuata dovrebbe essere l'ultimo operatore inserito (escluso il segno meno (`-`). Ad esempio, se viene inserito `5 + * 7 =`, il risultato dovrebbe essere `35` (cioè `5 * 7`); se viene inserito `5 * - 5 =`, il risultato dovrebbe essere `-25` (cioè `5 * (-5)`).
+**User Story #13:** Se 2 o più operatori childo inseriti consecutivamente, l'operazione effettuata dovrebbe essere l'ultimo operatore inserito (escluso il segno meno (`-`). Ad esempio, se viene inserito `5 + * 7 =`, il risultato dovrebbe essere `35` (cioè `5 * 7`); se viene inserito `5 * - 5 =`, il risultato dovrebbe essere `-25` (cioè `5 * (-5)`).
 
 **User Story #14:** Premere un operatore immediatamente dopo `=` dovrebbe avviare un nuovo calcolo che funzioni sul risultato dell'elaborazione precedente.
 
 **User Story #15:** La mia calcolatrice dovrebbe avere diversi decimali di precisione quando si tratta di arrotondamento (nota che non c'è uno standard esatto, ma si dovrebbe essere in grado di gestire calcoli come `2 / 7` con ragionevole precisione ad almeno 4 decimali).
 
-**Nota sulla logica della calcolatrice:** Va notato che ci sono due principali scuole di pensiero sulla logica dell'input della calcolatrice: <dfn>logica a esecuzione immediata</dfn> e <dfn>logica della formula</dfn>. Il nostro esempio utilizza la logica della formula e osserva l'ordine di precedenza degli operatori, mentre l'esecuzione immediata non lo fa. Entrambe sono accettabili, ma nota che a seconda di quale sceglierai, la calcolatrice potrà produrre risultati diversi rispetto ai nostri per alcune equazioni (vedi l'esempio in basso). Finché la matematica può essere verificata da un altro calcolatore di produzione, non considerarlo un bug.
+**Nota sulla logica della calcolatrice:** Va notato che ci childo due principali scuole di pensiero sulla logica dell'input della calcolatrice: <dfn>logica a esecuzione immediata</dfn> e <dfn>logica della formula</dfn>. Il nostro esempio utilizza la logica della formula e osserva l'ordine di precedenza degli operatori, mentre l'esecuzione immediata non lo fa. Entrambe childo accettabili, ma nota che a seconda di quale sceglierai, la calcolatrice potrà produrre risultati diversi rispetto ai nostri per alcune equazioni (vedi l'esempio in basso). Finché la matematica può essere verificata da un altro calcolatore di produzione, non considerarlo un bug.
 
 **ESEMPIO:** `3 + 5 x 6 - 2 / 4 =`
 

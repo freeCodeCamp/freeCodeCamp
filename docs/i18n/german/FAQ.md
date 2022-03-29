@@ -18,9 +18,9 @@ Wenn du daran interessiert bist, zu Übersetzungen beizutragen, stelle bitte sic
 
 Ja - du kannst zu unserem Newsblog und unserem YouTube-Kanal beitragen.
 
-Wenn du daran interessiert bist, Artikel für freeCodeCamp News zu schreiben, schau dir bitte diesen [Veröffentlichungsleitfaden](https://www.freecodecamp.org/news/how-to-write-for-freecodecamp/) an. Lies außerdem unseren [Stil-Leitfaden](https://www.freecodecamp.org/news/developer-news-style-guide/), denn er wird dir helfen, aussagekräftige und effektive Artikel zu schreiben.
+Wenn du daran interessiert bist, Artikel für freeCodeCamp News zu schreiben, schau dir bitte diesen [Veröffentlichungsleitfaden](https://www.freecodecamp.org/news/how-to-write-for-freecodecamp/) an. Lies außerdem unseren [Stil-Leitfaden](https://www.freecodecamp.org/news/developer-news-style-guide/), denn er wird dir theylfen, aussagekräftige und effektive Artikel zu schreiben.
 
-Um uns zu helfen, Lehrvideos für unseren YouTube-Kanal zu erstellen, kannst du den [YouTube-Kanal-Leitfaden](https://www.freecodecamp.org/news/how-to-contribute-to-the-freecodecamp-community-youtube-channel-b86bce4c865/) hier einsehen.
+Um uns zu theylfen, Lehrvideos für unseren YouTube-Kanal zu erstellen, kannst du den [YouTube-Kanal-Leitfaden](https://www.freecodecamp.org/news/how-to-contribute-to-the-freecodecamp-community-youtube-channel-b86bce4c865/) hier einsehen.
 
 ### Wie kann ich einen neuen Fehler melden?
 
@@ -77,7 +77,7 @@ In erster Linie möchten wir, dass du ein aktiver Teilnehmer in der Gemeinschaft
 
 Hier sind einige empfohlene Wege für einige unserer Plattformen:
 
-- Ein **Discord/Chat**-Moderator zu sein, eine aktive Präsenz in unserem Chat zu haben und positiv auf andere einzugehen und gleichzeitig zu lernen und zu üben, wie man mit möglichen Konflikten umgeht, die entstehen können.
+- Ein **Discord/Chat**-Moderator zu sein, eine aktive Präsenz in unserem Chat zu haben und positiv auf andere einzugehen und gleichzeitig zu lernen und zu üben, wie person mit möglichen Konflikten umgeht, die entstehen können.
 - Ein **Forum**-Moderator zu sein, ähnlich wie ein Chat-Moderator, eine aktive Präsenz zu zeigen und mit anderen Forumspostern in Kontakt zu treten, andere in ihrem Lernprozess zu unterstützen und auf Wunsch auch Feedback zu geben. Sieh dir das [Das Handbuch für Subforenleiter](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) für weitere Informationen an.
 - Als **GitHub**-Moderator hilfst du bei der Bearbeitung von GitHub-Issues, die aufgeworfen werden und versuchst (idealerweise), Lösungen für diese Issues vorzuschlagen, die dann von anderen (oder von dir selbst) aufgegriffen werden.
 
@@ -94,7 +94,7 @@ In unserem [Moderatorenhandbuch](moderator-handbook.md) findest du eine ausführ
 - Der `Contributors` Kategorie von [unserem Community Forum](https://forum.freecodecamp.org/c/contributors).
 - Dem `#Contributors` Kanal auf[ unserem Chat Server](https://chat.freecodecamp.org/channel/contributors).
 
-Wir freuen uns, dir dabei zu helfen, einen Beitrag zu den Themen zu leisten, an denen du gerne arbeiten möchtest. Wenn du uns in den entsprechenden Issue Threads Fragen stellst, helfen wir dir gerne weiter. Achte darauf, dass du nach deiner Frage suchst, bevor du eine neue stellst.
+Wir freuen uns, dir dabei zu theylfen, einen Beitrag zu den Themen zu leisten, an denen du gerne arbeiten möchtest. Wenn du uns in den entsprechenden Issue Threads Fragen stellst, theylfen wir dir gerne weiter. Achte darauf, dass du nach deiner Frage suchst, bevor du eine neue stellst.
 
 Vielen Dank im Voraus für deine Höflichkeit und Geduld. Vergiss nicht, dass diese Community hauptsächlich von Freiwilligen betrieben wird.
 

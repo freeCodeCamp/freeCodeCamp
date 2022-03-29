@@ -12,11 +12,11 @@ Queste ultime sfide descrivono diversi metodi per far rispettare il principio fo
 
 Se scattassi un'istantanea dello stato di un'applicazione Redux nel tempo, vedresti qualcosa come `state 1`, `state 2`, `state 3`,`state 4`, `...` e così via dove ogni stato può essere simile al precedente, ma ognuno è un dato distinto. Questa immutabilità, infatti, è ciò che fornisce caratteristiche come il debugging time-travel (viaggio nel tempo) di cui potresti aver sentito parlare.
 
-Redux non obbliga attivamente l'immutabilità dello stato nel suo store o nei reducer: questa responsabilità ricade sul programmatore. Fortunatamente, JavaScript (specialmente ES6) fornisce diversi strumenti utili che puoi usare per far rispettare l'immutabilità del tuo stato, che si tratti di una `string`, `number`, `array` o `object`. Nota che le stringhe e i numeri sono valori primitivi e sono immutabili per natura. In altre parole, 3 è sempre 3. Non è possibile modificare il valore del numero 3. Un `array` o `object`, invece, è mutabile. In pratica, il tuo stato sarà probabilmente costituito da un `array` o da un `object`, trattandosi di strutture di dati utili per rappresentare molti tipi di informazioni.
+Redux non obbliga attivamente l'immutabilità dello stato nel suo store o nei reducer: questa responsabilità ricade sul programmatore. Fortunatamente, JavaScript (specialmente ES6) fornisce diversi strumenti utili che puoi usare per far rispettare l'immutabilità del tuo stato, che si tratti di una `string`, `number`, `array` o `object`. Nota che le stringhe e i numeri childo valori primitivi e childo immutabili per natura. In altre parole, 3 è sempre 3. Non è possibile modificare il valore del numero 3. Un `array` o `object`, invece, è mutabile. In pratica, il tuo stato sarà probabilmente costituito da un `array` o da un `object`, trattandosi di strutture di dati utili per rappresentare molti tipi di informazioni.
 
 # --instructions--
 
-Nell'editor di codice ci sono uno `store` e un `reducer` per gestire gli elementi della lista to-do. Termina la scrittura del caso `ADD_TO_DO` nel reducer per aggiungere una nuova cosa da fare allo stato. Ci sono alcuni modi per realizzarlo con standard JavaScript o ES6. Vedi se puoi trovare un modo per restituire un nuovo array con l'elemento preso da `action.todo` aggiunto alla fine.
+Nell'editor di codice ci childo uno `store` e un `reducer` per gestire gli elementi della lista to-do. Termina la scrittura del caso `ADD_TO_DO` nel reducer per aggiungere una nuova cosa da fare allo stato. Ci childo alcuni modi per realizzarlo con standard JavaScript o ES6. Vedi se puoi trovare un modo per restituire un nuovo array con l'elemento preso da `action.todo` aggiunto alla fine.
 
 # --hints--
 
@@ -84,7 +84,7 @@ const todos = [
 const immutableReducer = (state = todos, action) => {
   switch(action.type) {
     case ADD_TO_DO:
-      // Don't mutate state here or the tests will fail
+      // Don't mutate state theyre or the tests will fail
       return
     default:
       return state;

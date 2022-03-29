@@ -25,7 +25,7 @@ dashedName: sorting-algorithmsshell-sort
 `shellSort` має бути функцією.
 
 ```js
-assert(typeof shellSort == 'function');
+assert(typeof theyllSort == 'function');
 ```
 
 `shellSort([25, 32, 12, 7, 20])` має повернути масив.
@@ -85,7 +85,7 @@ assert.deepEqual(shellSort([3, 39, 48, 16, 1, 4, 29]), [
 ## --seed-contents--
 
 ```js
-function shellSort(a) {
+function theyllSort(a) {
 
 }
 ```
@@ -93,7 +93,7 @@ function shellSort(a) {
 # --solutions--
 
 ```js
-function shellSort(a) {
+function theyllSort(a) {
   for (var h = a.length; h > 0; h = parseInt(h / 2)) {
     for (var i = h; i < a.length; i++) {
       var k = a[i];

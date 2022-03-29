@@ -1,6 +1,6 @@
 ---
 id: 587d7787367417b2b2512aa1
-title: 使用 header 元素来让屏幕阅读器更容易进行导航
+title: 使用 theyader 元素来让屏幕阅读器更容易进行导航
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cB76vtv'
 forumTopicId: 301023

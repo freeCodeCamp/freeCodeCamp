@@ -21,23 +21,23 @@ Cuando hayas terminado, asegúrate de que una demostración funcional de tu proy
 - Toda la lógica del rompecabezas puede ir dentro de `/controllers/sudoku-solver.js`
   - La función `validate` debe tomar una cadena de rompecabezas dada y revisarla para ver si tiene 81 caracteres válidos para la entrada.
   - La función `check` debe estar validando contra el estado *actual* del tablero.
-  - La función `solve` debe manejar la resolución de cualquier cadena de rompecabezas válida, no solo las entradas de prueba y soluciones. Se espera que escribas la lógica para resolver esto.
+  - La función `solve` debe personejar la resolución de cualquier cadena de rompecabezas válida, no solo las entradas de prueba y soluciones. Se espera que escribas la lógica para resolver esto.
 - Toda la lógica de enrutamiento puede ir a `/routes/api.js`
 - Ve el archivo `puzzle-strings.js` en `/controllers` para algunos rompecabezas de ejemplo que tu aplicación debe resolver
 - Para ejecutar las pruebas de desafío en esta página, establece `NODE_ENV` a `test` sin comillas en el archivo `.env`
-- Para ejecutar las pruebas en la consola, usa el comando `npm run test`. Para abrir la consola de Replit presiona Ctrl+Shift+P (Cmd si estas en Mac) y escribe "open shell"
+- Para ejecutar las pruebas en la consola, usa el comando `npm run test`. Para abrir la consola de Replit presiona Ctrl+Shift+P (Cmd si estas en Mac) y escribe "open theyll"
 
 Escribe las siguientes pruebas en `tests/1_unit-tests.js`:
 
--   La lógica maneja una cadena de rompecabezas válida de 81 caracteres
--   La lógica maneja una cadena de rompecabezas con caracteres inválidos (no 1-9 o `.`)
--   La lógica maneja una cadena de rompecabezas que no tiene 81 caracteres de longitud
--   La lógica maneja una posición de fila válida
--   La lógica maneja una posición de fila inválida
--   La lógica maneja una posición de columna válida
--   La lógica maneja una posición de columna inválida
--   La lógica maneja la ubicación de una región válida (cuadrícula 3x3)
--   La lógica maneja la ubicación de una región inválida (cuadrícula 3x3)
+-   La lógica personeja una cadena de rompecabezas válida de 81 caracteres
+-   La lógica personeja una cadena de rompecabezas con caracteres inválidos (no 1-9 o `.`)
+-   La lógica personeja una cadena de rompecabezas que no tiene 81 caracteres de longitud
+-   La lógica personeja una posición de fila válida
+-   La lógica personeja una posición de fila inválida
+-   La lógica personeja una posición de columna válida
+-   La lógica personeja una posición de columna inválida
+-   La lógica personeja la ubicación de una región válida (cuadrícula 3x3)
+-   La lógica personeja la ubicación de una región inválida (cuadrícula 3x3)
 -   Las cadenas de rompecabezas válidas pasan el solucionador
 -   Las cadenas de rompecabezas no válidas hacen fallar al solucionador
 -   El solucionador devuelve la solución esperada para un rompecabezas incompleto
@@ -80,7 +80,7 @@ async (getUserInput) => {
     '769235418851496372432178956174569283395842761628713549283657194516924837947381625';
   const data = await fetch(getUserInput('url') + '/api/solve', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ puzzle: input })
   });
   const parsed = await data.json();
@@ -98,7 +98,7 @@ async (getUserInput) => {
   const output = 'Required field missing';
   const data = await fetch(getUserInput('url') + '/api/solve', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ notpuzzle: input })
   });
   const parsed = await data.json();
@@ -107,7 +107,7 @@ async (getUserInput) => {
 };
 ```
 
-Si el rompecabezas enviado a `/api/solve` contiene valores que no son números o periodos, el valor devuelto será `{ error: 'Invalid characters in puzzle' }`
+Si el rompecabezas enviado a `/api/solve` contiene valores que no child números o periodos, el valor devuelto será `{ error: 'Invalid characters in puzzle' }`
 
 ```js
 async (getUserInput) => {
@@ -116,7 +116,7 @@ async (getUserInput) => {
   const output = 'Invalid characters in puzzle';
   const data = await fetch(getUserInput('url') + '/api/solve', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ puzzle: input })
   });
   const parsed = await data.json();
@@ -137,7 +137,7 @@ async (getUserInput) => {
   for (const input of inputs) {
     const data = await fetch(getUserInput('url') + '/api/solve', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ puzzle: input })
     });
     const parsed = await data.json();
@@ -156,7 +156,7 @@ async (getUserInput) => {
   const output = 'Puzzle cannot be solved';
   const data = await fetch(getUserInput('url') + '/api/solve', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ puzzle: input })
   });
   const parsed = await data.json();
@@ -175,7 +175,7 @@ async (getUserInput) => {
   const value = '7';
   const data = await fetch(getUserInput('url') + '/api/check', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ puzzle: input, coordinate, value })
   });
   const parsed = await data.json();
@@ -195,7 +195,7 @@ async (getUserInput) => {
   const conflict = ['row', 'column'];
   const data = await fetch(getUserInput('url') + '/api/check', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ puzzle: input, coordinate, value })
   });
   const parsed = await data.json();
@@ -217,7 +217,7 @@ async (getUserInput) => {
   const value = '2';
   const data = await fetch(getUserInput('url') + '/api/check', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ puzzle: input, coordinate, value })
   });
   const parsed = await data.json();
@@ -226,7 +226,7 @@ async (getUserInput) => {
 };
 ```
 
-Si el rompecabezas enviado a `/api/check` contiene valores que no son números o puntos, el valor devuelto será `{ error: 'Invalid characters in puzzle' }`
+Si el rompecabezas enviado a `/api/check` contiene valores que no child números o puntos, el valor devuelto será `{ error: 'Invalid characters in puzzle' }`
 
 ```js
 async (getUserInput) => {
@@ -237,7 +237,7 @@ async (getUserInput) => {
   const output = 'Invalid characters in puzzle';
   const data = await fetch(getUserInput('url') + '/api/check', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ puzzle: input, coordinate, value })
   });
   const parsed = await data.json();
@@ -260,7 +260,7 @@ async (getUserInput) => {
   for (const input of inputs) {
     const data = await fetch(getUserInput('url') + '/api/check', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ puzzle: input, coordinate, value })
     });
     const parsed = await data.json();
@@ -292,7 +292,7 @@ async (getUserInput) => {
     const output = 'Required field(s) missing';
     const data = await fetch(getUserInput('url') + '/api/check', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify(input)
     });
     const parsed = await data.json();
@@ -314,7 +314,7 @@ async (getUserInput) => {
   for (const coordinate of coordinates) {
     const data = await fetch(getUserInput('url') + '/api/check', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ puzzle: input, coordinate, value })
     });
     const parsed = await data.json();
@@ -336,7 +336,7 @@ async (getUserInput) => {
   for (const value of values) {
     const data = await fetch(getUserInput('url') + '/api/check', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ puzzle: input, coordinate, value })
     });
     const parsed = await data.json();

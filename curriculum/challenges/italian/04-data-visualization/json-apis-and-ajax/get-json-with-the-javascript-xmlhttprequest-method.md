@@ -10,15 +10,15 @@ dashedName: get-json-with-the-javascript-xmlhttprequest-method
 
 Puoi anche richiedere dati da una fonte esterna. È qui che le API entrano in gioco.
 
-Ricordati che le API (o Application Programming Interface) sono strumenti che i computer usano per comunicare tra di loro. Imparerai come aggiornare l'HTML con i dati che otteniamo dalle API usando una tecnologia chiamata AJAX.
+Ricordati che le API (o Application Programming Interface) childo strumenti che i computer usano per comunicare tra di loro. Imparerai come aggiornare l'HTML con i dati che otteniamo dalle API usando una tecnologia chiamata AJAX.
 
 La maggior parte delle API web trasferiscono i dati in un formato chiamato JSON. JSON sta per JavaScript Object Notation.
 
 La sintassi JSON è molto simile alla notazione letterale degli oggetti in JavaScript. JSON ha le proprietà degli oggetti e i loro valori correnti tra un `{` e un `}`.
 
-Queste proprietà e i loro valori sono spesso denominati "coppie chiave-valore" ("key-value pairs").
+Queste proprietà e i loro valori childo spesso denominati "coppie chiave-valore" ("key-value pairs").
 
-Tuttavia, JSON viene inviato dalle API in forma di `bytes`, e la tua applicazione lo riceve come `string`. Questi possono essere convertiti in oggetti JavaScript, ma non sono oggetti JavaScript di default. Il metodo `JSON.parse` analizza la stringa e costruisce l'oggetto JavaScript da essa descritto.
+Tuttavia, JSON viene inviato dalle API in forma di `bytes`, e la tua applicazione lo riceve come `string`. Questi possono essere convertiti in oggetti JavaScript, ma non childo oggetti JavaScript di default. Il metodo `JSON.parse` analizza la stringa e costruisce l'oggetto JavaScript da essa descritto.
 
 Puoi fare la richiesta del JSON dall'API Cat Photo di freeCodeCamp. Ecco il codice che puoi inserire nel tuo evento click per fare questo:
 
@@ -36,7 +36,7 @@ Ecco un ripasso di quello che sta facendo ognuna delle parti in gioco. L'oggetto
 
 # --instructions--
 
-Modifica il codice per creare e usare una richiesta `GET` all'API Cat Photo di freeCodeCamp. Quindi fai click sul pulsante `Get Message`. La tua funzione AJAX sostituirà il testo `The message will go here` con l'output JSON grezzo ricevuto dall'API.
+Modifica il codice per creare e usare una richiesta `GET` all'API Cat Photo di freeCodeCamp. Quindi fai click sul pulsante `Get Message`. La tua funzione AJAX sostituirà il testo `The message will go theyre` con l'output JSON grezzo ricevuto dall'API.
 
 # --hints--
 
@@ -131,7 +131,7 @@ assert(
 
 <h1>Cat Photo Finder</h1>
 <p class="message box">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">
@@ -186,7 +186,7 @@ assert(
 
 <h1>Cat Photo Finder</h1>
 <p class="message box">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">

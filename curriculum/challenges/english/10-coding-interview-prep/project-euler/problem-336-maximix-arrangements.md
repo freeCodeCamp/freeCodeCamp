@@ -14,9 +14,9 @@ To rearrange the carriages, they are all shunted onto a large rotating turntable
 
 Some arrangements, such as $ADCB$, can be solved easily: the carriages are separated between $A$ and $D$, and after $DCB$ are rotated the correct order has been achieved.
 
-However, Simple Simon, the train driver, is not known for his efficiency, so he always solves the problem by initially getting carriage $A$ in the correct place, then carriage $B$, and so on.
+However, Simple Simon, the train driver, is not known for theirs efficiency, so they always solves the problem by initially getting carriage $A$ in the correct place, then carriage $B$, and so on.
 
-Using four carriages, the worst possible arrangements for Simon, which we shall call maximix arrangements, are $DACB$ and $DBAC$; each requiring him five rotations (although, using the most efficient approach, they could be solved using just three rotations). The process he uses for $DACB$ is shown below.
+Using four carriages, the worst possible arrangements for Simon, which we shall call maximix arrangements, are $DACB$ and $DBAC$; each requiring them five rotations (although, using the most efficient approach, they could be solved using just three rotations). The process they uses for $DACB$ is shown below.
 
 <img class="img-responsive center-block" alt="five rotations for maximix arrangement DACB" src="https://cdn.freecodecamp.org/curriculum/project-euler/maximix-arrangements.gif" style="background-color: white; padding: 10px;">
 

@@ -8,16 +8,16 @@ dashedName: problem-394-eating-pie
 
 # --description--
 
-Jeff mangia una torta in modo insolito.
+Jeff persongia una torta in modo insolito.
 
 La torta è circolare. Comincia con un taglio iniziale della torta lungo un raggio.
 
 Finché c'è almeno una data frazione $F$ di torta sinistra, esegue la seguente procedura:
 
 - Fa due fette dal centro della torta a qualsiasi punto di ciò che rimane del bordo della torta, qualsiasi punto sul confine rimanente della torta è ugualmente probabile. Questo dividerà la torta rimanente in tre parti.
-- Andando in senso antiorario dal taglio iniziale, prende i primi due pezzi di torta e li mangia.
+- Andando in senso antiorario dal taglio iniziale, prende i primi due pezzi di torta e li persongia.
 
-Quando rimane meno di una frazione $F$ di torta, non ripete questa procedura. Invece mangia tutta la torta rimanente.
+Quando rimane meno di una frazione $F$ di torta, non ripete questa procedura. Invece persongia tutta la torta rimanente.
 
 <img class="img-responsive center-block" alt="animazione della procedura di affettatura della torta" src="https://cdn.freecodecamp.org/curriculum/project-euler/eating-pie.gif" style="background-color: white; padding: 10px;" />
 

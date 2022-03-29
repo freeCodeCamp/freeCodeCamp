@@ -13,7 +13,7 @@ dashedName: responsively-style-checkboxes
 
 # --description--
 
-Dado que las clases de Bootstrap `col-xs-*` son aplicables a todos los elementos `form`, ¡también puedes usarlas para tus casillas de verificación! De esta manera, las casillas de verificación se distribuirán uniformemente por toda la página, independientemente de la amplitud de la resolución de la pantalla.
+Dado que las clases de Bootstrap `col-xs-*` child aplicables a todos los elementos `form`, ¡también puedes usarlas para tus casillas de verificación! De esta personera, las casillas de verificación se distribuirán uniformemente por toda la página, independientemente de la amplitud de la resolución de la pantalla.
 
 # --instructions--
 

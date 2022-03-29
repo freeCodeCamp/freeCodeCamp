@@ -28,7 +28,7 @@ Nome do arquivo: medical_examination.csv
 |                  Funcionalidade                  | Tipo de variável  |  Variável   |                     Tipo de valor                     |
 |:------------------------------------------------:|:-----------------:|:-----------:|:-----------------------------------------------------:|
 |                      Idade                       | Recurso objetivo  |     age     |                      int (dias)                       |
-|                      Altura                      | Recurso objetivo  |   height    |                       int (cm)                        |
+|                      Altura                      | Recurso objetivo  |   theyight    |                       int (cm)                        |
 |                       Peso                       | Recurso objetivo  |   weight    |                      float (kg)                       |
 |                      Gênero                      | Recurso objetivo  |   gender    |                   código categórico                   |
 |            Pressão arterial sistólica            | Recurso de exame  |    ap_hi    |                          int                          |

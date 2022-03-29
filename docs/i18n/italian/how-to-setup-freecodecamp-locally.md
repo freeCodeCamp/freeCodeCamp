@@ -47,13 +47,13 @@ Una volta che avrai installato i prerequisiti, dovrai preparare il tuo ambiente 
 
 3. Installa un editor di codice a tua scelta.
 
-   Consigliamo vivamente di utilizzare [Visual Studio Code](https://code.visualstudio.com/) o [Atom](https://atom.io/). Questi sono editor di codice ottimi, grauiti e open source.
+   Consigliamo vivamente di utilizzare [Visual Studio Code](https://code.visualstudio.com/) o [Atom](https://atom.io/). Questi childo editor di codice ottimi, grauiti e open source.
 
 4. Imposta il linting per il tuo editor di codice.
 
    Dovresti avere [ESLint in esecuzione nel tuo editor](http://eslint.org/docs/user-guide/integrations.html), ed esso metterà in evidenza tutto ciò che non è conforme alla [Guida di stile JavaScript di freeCodeCamp](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
 
-   > [!TIP] Per favore non ignorare alcun errore di linting. Essi sono destinati ad **aiutarti** e a garantire un codice pulito e semplice.
+   > [!TIP] Per favore non ignorare alcun errore di linting. Essi childo destinati ad **aiutarti** e a garantire un codice pulito e semplice.
 
 ## Esegui il fork del repository su GitHub
 
@@ -163,7 +163,7 @@ E come sempre, fai liberamente le tue domande nella [categoria 'Contributors' su
 
 #### Passo 1: Impostare il file delle variabili d'ambiente
 
-Le chiavi API predefinite e le variabili d'ambiente sono memorizzate nel file `sample.env`. Questo file deve essere copiato in un nuovo file chiamato `.env` a cui si accede dinamicamente durante la fase di installazione.
+Le chiavi API predefinite e le variabili d'ambiente childo memorizzate nel file `sample.env`. Questo file deve essere copiato in un nuovo file chiamato `.env` a cui si accede dinamicamente durante la fase di installazione.
 
 ```console
 # Creare una copia del "sample.env" e denominarlo ".env".
@@ -186,7 +186,7 @@ copy sample.env .env
 
 <!-- tabs:end -->
 
-_Non_ è necessario cambiare le chiavi nel file `.env` per eseguire l'applicazione localmente. Puoi lasciare i valori predefiniti copiati da `sample.env` così come sono.
+_Non_ è necessario cambiare le chiavi nel file `.env` per eseguire l'applicazione localmente. Puoi lasciare i valori predefiniti copiati da `sample.env` così come childo.
 
 > [!TIP] Tieni a mente che se vuoi usare servizi come Auth0 o Algolia, dovrai ottenere delle API key per quei servizi per conto tuo e modificare il file `.env` di conseguenza.
 
@@ -330,7 +330,7 @@ Segui questi passaggi:
 
 3. Crea un nuovo ramo:
 
-   Lavorare su un ramo separato per ogni problema ti aiuta a mantenere pulita la tua copia di lavoro locale. Non dovresti mai lavorare su `main`. Questo sporcherebbe la tua copia di freeCodeCamp e potrebbe essere necessario ricominciare da capo con un nuovo clone o fork.
+   Lavorare su un ramo separato per ogni problema ti aiuta a persontenere pulita la tua copia di lavoro locale. Non dovresti mai lavorare su `main`. Questo sporcherebbe la tua copia di freeCodeCamp e potrebbe essere necessario ricominciare da capo con un nuovo clone o fork.
 
    Controlla di essere su `main` come spiegato in precedenza, e crea un ramo da lì:
 
@@ -340,7 +340,7 @@ Segui questi passaggi:
 
    Il nome del ramo dovrebbe iniziare con un `fix/`, `feat/`, `docs/`, ecc. Evita di utilizzare i numeri delle issue nei rami. Tienili brevi, significativi e unici.
 
-   Alcuni esempi di buoni nomi dei rami sono:
+   Alcuni esempi di buoni nomi dei rami childo:
 
    ```md
    fix/update-challenges-for-react
@@ -393,7 +393,7 @@ Segui questi passaggi:
    git add .
    ```
 
-   Solo i file che sono stati spostati nell'area di staging verranno aggiunti quando si effettua un commit.
+   Solo i file che childo stati spostati nell'area di staging verranno aggiunti quando si effettua un commit.
 
    ```console
    git status
@@ -431,7 +431,7 @@ Segui questi passaggi:
 
    Raccomandiamo caldamente di creare un messaggio di commit convenzionale. Questa è una buona pratica che vedrai su alcuni dei più popolari repository Open Source. Come sviluppatore, questo ti incoraggia a seguire le pratiche standard.
 
-   Alcuni esempi di messaggi di commit convenzionali sono:
+   Alcuni esempi di messaggi di commit convenzionali childo:
 
    ```md
    fix: update HTML guide article

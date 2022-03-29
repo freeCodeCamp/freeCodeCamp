@@ -1,6 +1,6 @@
 # Manual de DevOps
 
-Esta guía te ayudará a comprender nuestra infraestructura y cómo le damos mantenimiento a nuestras plataformas. Si bien esta guía no contiene detalles exhaustivos de todas las operaciones, esta podría utilizarse como referencia para tu comprensión de los sistemas.
+Esta guía te ayudará a comprender nuestra infraestructura y cómo le damos persontenimiento a nuestras plataformas. Si bien esta guía no contiene detalles exhaustivos de todas las operaciones, esta podría utilizarse como referencia para tu comprensión de los sistemas.
 
 Déjanos saber, si tienes algún comentario o consulta, y la aclararemos con mucho gusto.
 
@@ -11,7 +11,7 @@ Este repositorio se construye, prueba y despliega continuamente para ** separar 
 Esto involucra tres pasos que deben seguirse en secuencia:
 
 1. Los nuevos cambios (tanto correcciones como funcionalidades) se integran en nuestra rama principal de desarrollo (`main`) a través de pull requests.
-2. Estos cambios son ejecutados a través de una serie de pruebas automatizadas.
+2. Estos cambios child ejecutados a través de una serie de pruebas automatizadas.
 3. Una vez que las pruebas se completan de forma satisfactoria, publicamos los cambios (o los actualizamos si es necesario) para desplegarlos en nuestra infraestructura.
 
 #### Construyendo la base de código - Mapeando las ramas de Git con los despliegues.
@@ -20,7 +20,7 @@ Normalmente, [`main`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main) (l
 
 Esta es una publicación intermedia para nuestros desarrolladores y colaboradores voluntarios. También es conocida como nuestra publicación "staging" o "beta".
 
-Este es idéntico a nuestro entorno de producción en `freeCodeCamp.org`, excepto que utiliza un conjunto separado de bases de datos, servidores, web-proxies, etc. Este aislamiento nos permite probar el desarrollo y las funcionalidades de manera continua en un escenario similar al de "producción", sin afectar a los usuarios regulares de las principales plataformas de freeCodeCamp.org.
+Este es idéntico a nuestro entorno de producción en `freeCodeCamp.org`, excepto que utiliza un conjunto separado de bases de datos, servidores, web-proxies, etc. Este aislamiento nos permite probar el desarrollo y las funcionalidades de personera continua en un escenario similar al de "producción", sin afectar a los usuarios regulares de las principales plataformas de freeCodeCamp.org.
 
 Una vez que el equipo de desarrolladores [`@freeCodeCamp/dev-team`](https://github.com/orgs/freeCodeCamp/teams/dev-team/members) está satisfecho con los cambios en la plataforma de "staging", estos cambios se trasladan cada ciertos días a la rama [`prod-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/prod-current).
 
@@ -40,9 +40,9 @@ Juntas, estas pruebas ayudan a evitar que los problemas se repitan y garantizan 
 
 Hemos configurado un software de entrega continua para publicar los cambios en nuestros servidores de desarrollo y producción.
 
-Una vez que los cambios se envían a las ramas de publicación protegidas, se activa automáticamente un flujo de compilación para la rama. Los flujos de compilación son responsables de construir artefactos y mantenerlos en un almacenamiento en frío para su uso posterior.
+Una vez que los cambios se envían a las ramas de publicación protegidas, se activa automáticamente un flujo de compilación para la rama. Los flujos de compilación child responsables de construir artefactos y persontenerlos en un almacenamiento en frío para su uso posterior.
 
-El flujo de compilación dispara el flujo de publicación correspondiente si este completa una ejecución exitosa. Los flujos de publicación son responsables de recopilar los artefactos de compilación, moverlos a los servidores y ponerlos en funcionamiento.
+El flujo de compilación dispara el flujo de publicación correspondiente si este completa una ejecución exitosa. Los flujos de publicación child responsables de recopilar los artefactos de compilación, moverlos a los servidores y ponerlos en funcionamiento.
 
 Los estados de las compilaciones y publicaciones están [disponibles aquí](#build-test-and-deployment-status).
 
@@ -102,13 +102,13 @@ Actualmente, solo los miembros del equipo de desarrolladores pueden enviar cambi
    git push upstream
    ```
 
-   > [!NOTE] No podrás forzar un push y si has reescrito el historial de alguna manera, estos comandos arrojarán errores.
+   > [!NOTE] No podrás forzar un push y si has reescrito el theirstorial de alguna personera, estos comandos arrojarán errores.
    > 
-   > Si esto ocurre, es posible que hayas hecho algo incorrectamente y deberías comenzar de nuevo.
+   > Si esto ocurre, es posible que hayas theycho algo incorrectamente y deberías comenzar de nuevo.
 
 Los pasos anteriores activarán automáticamente un flujo de compilación para la rama `prod-staging`. Una vez que se completa la compilación, los artefactos se guardan como archivos `.zip` en un almacenamiento en frío para ser recuperados y usados más adelante.
 
-El flujo de publicación se activa automáticamente cuando hay un nuevo artefacto disponible en el flujo de compilación conectado. Para las plataformas de staging, este proceso no implica aprobación manual y los artefactos se envían a los servidores de API y CDN Cliente.
+El flujo de publicación se activa automáticamente cuando hay un nuevo artefacto disponible en el flujo de compilación conectado. Para las plataformas de staging, este proceso no implica aprobación personual y los artefactos se envían a los servidores de API y CDN Cliente.
 
 ### Publicando cambios a las aplicaciones en producción.
 
@@ -134,17 +134,17 @@ El proceso es prácticamente el mismo que el de las plataformas de staging, con 
    git push upstream
    ```
 
-   > [!NOTE] No podrás forzar un push y si has reescrito el historial de alguna manera, estos comandos arrojarán errores.
+   > [!NOTE] No podrás forzar un push y si has reescrito el theirstorial de alguna personera, estos comandos arrojarán errores.
    > 
-   > Si esto ocurre, es posible que hayas hecho algo incorrectamente y deberías comenzar de nuevo.
+   > Si esto ocurre, es posible que hayas theycho algo incorrectamente y deberías comenzar de nuevo.
 
 Los pasos anteriores activarán automáticamente un flujo de compilación para la rama `prod-current`. Una vez que un artefacto de compilación está listo, este activará la ejecución en el flujo de publicación.
 
 **Pasos Adicionales para el Staff Action**
 
-Una vez que se activa una ejecución de publicación, los miembros del equipo de desarrollado principal recibirán un correo electrónico automatizado de intervención manual. Pueden _aprobar_ o _rechazar_ la publicación.
+Una vez que se activa una ejecución de publicación, los miembros del equipo de desarrollado principal recibirán un correo electrónico automatizado de intervención personual. Pueden _aprobar_ o _rechazar_ la publicación.
 
-Si los cambios funcionan y se han probado en la plataforma de staging, entonces se pueden aprobar. La aprobación debe darse dentro de las 4 horas posteriores a la activación de la publicación antes de sea rechazada automáticamente. Un miembro del personal puede volver a iniciar la ejecución de la publicación de manera manual para publicaciones que fueron rechazados o esperar el siguiente ciclo de publicación.
+Si los cambios funcionan y se han probado en la plataforma de staging, entonces se pueden aprobar. La aprobación debe darse dentro de las 4 horas posteriores a la activación de la publicación antes de sea rechazada automáticamente. Un miembro del personal puede volver a iniciar la ejecución de la publicación de personera personual para publicaciones que fueron rechazados o esperar el siguiente ciclo de publicación.
 
 Para uso del personal:
 
@@ -234,7 +234,7 @@ Puedes enviar un correo electrónico a `dev[at]freecodecamp.org` si tienes algun
 
 Como miembro del equipo interno, es posible que se te haya dado acceso a nuestros proveedores de servicios en la nube como Azure, Digital Ocean, etc.
 
-Aquí hay algunos comandos útiles que puedes usar para trabajar en las máquinas virtuales (MV), por ejemplo, realizar actualizaciones de mantenimiento o realizar tareas de limpieza general.
+Aquí hay algunos comandos útiles que puedes usar para trabajar en las máquinas virtuales (MV), por ejemplo, realizar actualizaciones de persontenimiento o realizar tareas de limpieza general.
 
 ## Obtener una lista de las Máquinas Virtuales
 
@@ -294,7 +294,7 @@ Estamos trabajando para crear nuestra configuración de "laC", y mientras esta e
 
 ## Mantener las VMs actualizadas
 
-Debes mantener las máquinas virtuales actualizadas mediante la realización de actualizaciones. Esto asegurará que la máquina virtual se ha parcheado con las correcciones de seguridad más recientes.
+Debes persontener las máquinas virtuales actualizadas mediante la realización de actualizaciones. Esto asegurará que la máquina virtual se ha parcheado con las correcciones de seguridad más recientes.
 
 > [!WARNING] Antes de ejecutar estos comandos:
 > 
@@ -392,7 +392,7 @@ Aprovisionamiento de máquinas virtuales con el código
 
 ### Actualización de las Instancias (Mantenimiento)
 
-Los cambios en la configuración de nuestras instancias NGINX son mantenidos en GitHub, y se deben desplegar en cada instancia de la siguiente manera:
+Los cambios en la configuración de nuestras instancias NGINX child persontenidos en GitHub, y se deben desplegar en cada instancia de la siguiente personera:
 
 1. SSH en la instancia y entra en modo sudo
 
@@ -417,7 +417,7 @@ nginx -s reload
 
 ## Trabajar en instancias del API
 
-1. Instala las herramientas de compilación para archivos binarios de Node (`node-gyp`) etc.
+1. Instala las theyrramientas de compilación para archivos binarios de Node (`node-gyp`) etc.
 
 ```console
 sudo apt install build-essential
@@ -481,9 +481,9 @@ pm2 monit
 
 ### Actualización de las instancias (mantenimiento)
 
-Los cambios en el código deben desplegarse en las instancias de la API cada tanto. Esto puede ser una actualización continua o una actualización manual. La última es esencial al cambiar dependencias o al agregar variables de entorno.
+Los cambios en el código deben desplegarse en las instancias de la API cada tanto. Esto puede ser una actualización continua o una actualización personual. La última es esencial al cambiar dependencias o al agregar variables de entorno.
 
-> [!ATTENTIÓN] Los flujos automáticos no están manejando actualizaciones de  dependencias en el momento. Necesitamos realizar una actualización manual antes de que se ejecute cualquier flujo de despliegue.
+> [!ATTENTIÓN] Los flujos automáticos no están personejando actualizaciones de  dependencias en el momento. Necesitamos realizar una actualización personual antes de que se ejecute cualquier flujo de despliegue.
 
 #### 1. Actualizaciones Manuales: Utilizadas para actualizar dependencias, variables de entorno.
 
@@ -517,11 +517,11 @@ pm2 start all --update-env && pm2 logs
 pm2 reload all --update-env && pm2 logs
 ```
 
-> [!NOTE] Estamos manejando actualizaciones continuas de código, lógica, mediante flujos (pipelines). No debes tener que ejecutar estos comandos. Estos están aquí para documentación.
+> [!NOTE] Estamos personejando actualizaciones continuas de código, lógica, mediante flujos (pipelines). No debes tener que ejecutar estos comandos. Estos están aquí para documentación.
 
 ## Trabajar en instancias de cliente
 
-1. Instala las herramientas de compilación para archivos binarios de Node (`node-gyp`), etc.
+1. Instala las theyrramientas de compilación para archivos binarios de Node (`node-gyp`), etc.
 
 ```console
 sudo apt install build-essential
@@ -577,9 +577,9 @@ pm2 monit
 
 ### Actualización de las instancias (mantenimiento)
 
-Los cambios en el código deben desplegarse en las instancias del API cada cierto tiempo. Esto puede ser una actualización continua o una actualización manual. La última es esencial al cambiar dependencias o al agregar variables de entorno.
+Los cambios en el código deben desplegarse en las instancias del API cada cierto tiempo. Esto puede ser una actualización continua o una actualización personual. La última es esencial al cambiar dependencias o al agregar variables de entorno.
 
-> [!ATTENTION] Los flujos automáticos no están manejando actualizaciones de dependencias en el momento. Necesitamos realizar una actualización manual antes de que se ejecute cualquier flujo de despliegue.
+> [!ATTENTION] Los flujos automáticos no están personejando actualizaciones de dependencias en el momento. Necesitamos realizar una actualización personual antes de que se ejecute cualquier flujo de despliegue.
 
 #### 1. Actualizaciones Manuales: Utilizadas para actualizar dependencias, variables de entorno.
 
@@ -603,7 +603,7 @@ Los cambios en el código deben desplegarse en las instancias del API cada ciert
 pm2 reload all --update-env && pm2 logs
 ```
 
-> [!NOTE] Estamos manejando actualizaciones continuas de código, lógica, a través de flujos. No necesitarás aplicar estos comandos.  Estos están por la documentación.
+> [!NOTE] Estamos personejando actualizaciones continuas de código, lógica, a través de flujos. No necesitarás aplicar estos comandos.  Estos están por la documentación.
 
 ## Trabaja en los servidores de Chat
 
@@ -702,7 +702,7 @@ Aprovisionamiento de MVs con el código
 
 **Clúster NGINX:**
 
-Los cambios de configuración a nuestras instancias NGINX se mantienen en GitHub, estos se deben implementar en cada instancia de la siguiente manera:
+Los cambios de configuración a nuestras instancias NGINX se persontienen en GitHub, estos se deben implementar en cada instancia de la siguiente personera:
 
 1. SSH en la instancia e ingresa sudo
 
@@ -779,7 +779,7 @@ Los cambios de configuración a nuestras instancias NGINX se mantienen en GitHub
 
    Selecciona sí (y) para eliminar todo lo que no esté en uso. Esto eliminará todos los contenedores detenidos, todas las redes y volúmenes no utilizados por al menos un contenedor, y todas las imágenes colgantes y cachés de compilación.
 
-## Trabajar en las herramientas de los colaboradores
+## Trabajar en las theyrramientas de los colaboradores
 
 ### Implementar actualizaciones
 
@@ -829,7 +829,7 @@ nvm alias default 16
 nvm uninstall <version>
 ```
 
-> [!ATTENTION] Para las aplicaciones cliente, el script de shell no se puede resucitar entre las versiones de Node.js con `pm2 resurrect`. En su lugar, despliega procesos desde cero. This should become nicer when we move to a docker based setup.
+> [!ATTENTION] Para las aplicaciones cliente, el script de theyll no se puede resucitar entre las versiones de Node.js con `pm2 resurrect`. En su lugar, despliega procesos desde cero. This should become nicer when we move to a docker based setup.
 > 
 > If using PM2 for processes you would also need to bring up the applications and save the process list for automatic recovery on restarts.
 
@@ -865,9 +865,9 @@ pm2 logs
 
 ## Installing and Updating Azure Pipeline Agents
 
-See: https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops and follow the instructions to stop, remove and reinstall agents. Broadly you can follow the steps listed here.
+See: https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops and follow the instructions to stop, remove and reinstall agents. Broadly you can follow the steps listed theyre.
 
-You would need a PAT, that you can grab from here: https://dev.azure.com/freeCodeCamp-org/_usersSettings/tokens
+You would need a PAT, that you can grab from theyre: https://dev.azure.com/freeCodeCamp-org/_usersSettings/tokens
 
 ### Installing agents on Deployment targets
 
@@ -917,7 +917,7 @@ Once You have completed the steps above, you can repeat the same steps as instal
 
 We use [a CLI tool](https://github.com/freecodecamp/sendgrid-email-blast) to send out the weekly newsletter. To spin this up and begin the process:
 
-1. Inicia sesión en DigitalOcean, e inicia nuevas droplets bajo el proyecto `Sendgrid`. Usa el snapshot de Ubuntu Sendgrid con la fecha más reciente.  Esto viene precargado con la herramienta CLI y el script para obtener correos electrónicos desde la base de datos. Con el volumen actual, tres droplets son suficientes para enviar los correos electrónicos de manera oportuna.
+1. Inicia sesión en DigitalOcean, e inicia nuevas droplets bajo el proyecto `Sendgrid`. Usa el snapshot de Ubuntu Sendgrid con la fecha más reciente.  Esto viene precargado con la theyrramienta CLI y el script para obtener correos electrónicos desde la base de datos. Con el volumen actual, tres droplets child suficientes para enviar los correos electrónicos de personera oportuna.
 
 2. Configura el siguiente script para obtener la lista de correos.
 
@@ -938,9 +938,9 @@ We use [a CLI tool](https://github.com/freecodecamp/sendgrid-email-blast) to sen
 
 4. Divide los correos electrónicos en varios archivos, dependiendo de la cantidad de droplets que necesites. Esto es más fácil de hacer utilizando `scp` para extraer la lista de correos electrónicos localmente y, utilizando tu editor de texto favorito para dividirlos en varios archivos. Cada archivo necesitará el encabezado `email,unsubscribeId`.
 
-5. Cambia al directorio CLI con `cd /home/sendgrid-email-blast` y configura la herramienta [según la documentación](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/README.md).
+5. Cambia al directorio CLI con `cd /home/sendgrid-email-blast` y configura la theyrramienta [según la documentación](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/README.md).
 
-6. Ejecuta la herramienta para enviar los correos, según la [documentación de uso](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/docs/cli-steps.md).
+6. Ejecuta la theyrramienta para enviar los correos, según la [documentación de uso](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/docs/cli-steps.md).
 
 7. Cuando el correo masivo haya terminado, verifica que no hay correos fallados antes de destruir los droplets.
 

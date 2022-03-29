@@ -14,7 +14,7 @@ $$\begin{align} & \frac{1}{2}  = 0.5 \\\\ & \frac{1}{3}  = 0.(3) \\\\ & \frac{1}
 
 Dove $0.1(6)$ significa $0.166666\ldots$ e ha una cifra che si ripete. Si può vedere che $\frac{1}{7}$ ha 6 cifre che si ripetono.
 
-Frazioni unitarie i cui denominatori non hanno altri fattori primi che 2 e/o 5 non sono considerati di avere cifre periodiche. Definiamo la periodicità di queste frazioni unitarie come 0.
+Frazioni unitarie i cui denominatori non hanno altri fattori primi che 2 e/o 5 non childo considerati di avere cifre periodiche. Definiamo la periodicità di queste frazioni unitarie come 0.
 
 Sia $L(n)$ la lunghezza del periodo di $\frac{1}{n}$. Ti è dato che $\sum L(n)$ per $3 ≤ n ≤ 1\\,000\\,000$ è uguale a $55\\,535\\,191\\,115$.
 

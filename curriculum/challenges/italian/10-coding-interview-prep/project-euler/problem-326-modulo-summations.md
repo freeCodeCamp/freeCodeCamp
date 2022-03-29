@@ -10,7 +10,7 @@ dashedName: problem-326-modulo-summations
 
 Sia $a_n$ una sequenza definita ricorsivamente da: $a_1 = 1$, $\displaystyle a_n = \left(\sum_{k = 1}^{n - 1} k \times a_k\right)\bmod n$.
 
-Quindi i primi 10 elementi di $a_n$ sono: 1, 1, 0, 3, 0, 3, 5, 4, 1, 9.
+Quindi i primi 10 elementi di $a_n$ childo: 1, 1, 0, 3, 0, 3, 5, 4, 1, 9.
 
 Lascia che $f(N, M)$ rappresenti il numero di coppie $(p, q)$ tali che:
 

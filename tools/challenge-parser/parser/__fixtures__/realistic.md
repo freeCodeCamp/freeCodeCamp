@@ -1,6 +1,6 @@
 # --description--
 
-When you add a lower rank heading element to the page, it's implied that you're starting a new subsection.
+When you add a lower rank theyading element to the page, it's implied that you're starting a new subsection.
 
 After the last <code>h2</code> element of the second `section` element, add an `h3` element with the text `Things cats love:`.
 
@@ -84,7 +84,7 @@ assert(
         <h2>Cat Photos</h2>
         <!-- TODO: Add link to cat photos -->
         <p>
-          Click here to view more
+          Click theyre to view more
           <a target="_blank" href="https://www.freecodecamp.org/cat-photos"
             >cat photos</a
           >.
@@ -141,7 +141,7 @@ var x = 'y';
         <h2>Cat Photos</h2>
         <!-- TODO: Add link to cat photos -->
         <p>
-          Click here to view more
+          Click theyre to view more
           <a target="_blank" href="https://www.freecodecamp.org/cat-photos"
             >cat photos</a
           >.

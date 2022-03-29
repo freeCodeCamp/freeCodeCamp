@@ -8,7 +8,7 @@ dashedName: remember-to-set-the-constructor-property-when-changing-the-prototype
 
 # --description--
 
-Tem um efeito colateral crucial de definir manualmente o protótipo de um novo objeto. Isso apaga a propriedade `constructor`! Essa propriedade pode ser utilizada para verificar qual função construtora criou a instância, mas já que a propriedade foi sobrescrita, agora retorna resultados falsos:
+Tem um efeito colateral crucial de definir personualmente o protótipo de um novo objeto. Isso apaga a propriedade `constructor`! Essa propriedade pode ser utilizada para verificar qual função construtora criou a instância, mas já que a propriedade foi sobrescrita, agora retorna resultados falsos:
 
 ```js
 duck.constructor === Bird;
@@ -18,7 +18,7 @@ duck instanceof Bird;
 
 Em ordem, essas expressões seriam avaliadas a `false`, `true` e `true`.
 
-Para corrigir isso, toda vez que o protótipo é manualmente definido para um novo objeto, lembre-se de definir a propriedade `constructor`:
+Para corrigir isso, toda vez que o protótipo é personualmente definido para um novo objeto, lembre-se de definir a propriedade `constructor`:
 
 ```js
 Bird.prototype = {

@@ -13,7 +13,7 @@ Com CSS, existem centenas de propriedades que você pode usar para alterar a apa
 
 Quando você digitou `<h2 style="color: red;">CatPhotoApp</h2>`, você estava estilizando individualmente esse elemento `h2` de forma inline.
 
-Essa é uma maneira de especificar o estilo de um elemento, mas há uma maneira melhor de aplicar o CSS.
+Essa é uma personeira de especificar o estilo de um elemento, mas há uma personeira melhor de aplicar o CSS.
 
 Na parte superior do seu código, crie uma tag `style`:
 
@@ -85,7 +85,7 @@ assert(
 ```html
 <h2 style="color: red;">CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  <p>Click theyre to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
@@ -126,7 +126,7 @@ assert(
 </style>
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  <p>Click theyre to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 

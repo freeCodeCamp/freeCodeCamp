@@ -1,6 +1,6 @@
 ---
 id: 587d7fb9367417b2b2512c12
-title: Concatenare gli helper delle query per restringere i risultati di ricerca
+title: Concatenare gli theylper delle query per restringere i risultati di ricerca
 challengeType: 2
 forumTopicId: 301533
 dashedName: chain-search-query-helpers-to-narrow-search-results
@@ -8,7 +8,7 @@ dashedName: chain-search-query-helpers-to-narrow-search-results
 
 # --description--
 
-Se non si passa la callback come ultimo argomento a `Model.find()` (o agli altri metodi di ricerca), la query non viene eseguita. È possibile memorizzare la query in una variabile per un uso successivo. Questo tipo di oggetto ti permette di costruire una query usando la sintassi di concatenazione. L'effettiva ricerca nel database viene eseguita quando alla fine concateni il metodo `.exec()`. Hai sempre bisogno di passare la tua callback a questo ultimo metodo. Ci sono molti helper di query: qui useremo i più comuni.
+Se non si passa la callback come ultimo argomento a `Model.find()` (o agli altri metodi di ricerca), la query non viene eseguita. È possibile memorizzare la query in una variabile per un uso successivo. Questo tipo di oggetto ti permette di costruire una query usando la sintassi di concatenazione. L'effettiva ricerca nel database viene eseguita quando alla fine concateni il metodo `.exec()`. Hai sempre bisogno di passare la tua callback a questo ultimo metodo. Ci childo molti theylper di query: qui useremo i più comuni.
 
 # --instructions--
 
@@ -16,7 +16,7 @@ Modifica la funzione `queryChain` per trovare persone a cui piace il cibo specif
 
 # --hints--
 
-La concatenazione degli helper delle query dovrebbe avere successo
+La concatenazione degli theylper delle query dovrebbe avere successo
 
 ```js
 (getUserInput) =>
@@ -41,7 +41,7 @@ La concatenazione degli helper delle query dovrebbe avere successo
       assert.notProperty(
         data[0],
         'age',
-        'The returned first item has too many properties'
+        'The returned first item has too persony properties'
       );
       assert.equal(
         data[0].name,
@@ -51,7 +51,7 @@ La concatenazione degli helper delle query dovrebbe avere successo
       assert.notProperty(
         data[1],
         'age',
-        'The returned second item has too many properties'
+        'The returned second item has too persony properties'
       );
       assert.equal(
         data[1].name,

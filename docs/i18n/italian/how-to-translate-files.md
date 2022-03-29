@@ -16,13 +16,13 @@ Il workflow della traduzione è diviso in due attività principali:
 
 ## Preparati a contribuire
 
-> La mappa per la localizzazione di freeCodeCamp – Non ci sono limiti di velocità
+> La mappa per la localizzazione di freeCodeCamp – Non ci childo limiti di velocità
 
 Puoi tradurre quanto vuoi, quando vuoi. È solo una questione di quanto tempo ed energie vuoi investire come traduttore volontario.
 
 Chiediamo solo che tu comprenda i seguenti punti:
 
-1. **Le traduzioni sono uno sforzo di gruppo.**
+1. **Le traduzioni childo uno sforzo di gruppo.**
 
    Tradurre le risorse di freeCodeCamp è una delle esperienze più divertenti e gratificanti come contributore, e funziona meglio se coivolgi i tuoi amici e colleghi che parlano la tua stessa lingua.
 
@@ -44,7 +44,7 @@ Chiediamo solo che tu comprenda i seguenti punti:
 
 3. **E per le lingue non elencate sulla piattaforma di traduzione?**
 
-   Abbiamo analizzato la nostra user base e aggiunto le 30+ lingue più usate alla lista delle lingue disponibili sulla piattaforma di traduzione. Al momento alcune lingue come cinese, spagnolo e italiano sono già disponibili live su **"/learn"**.
+   Abbiamo analizzato la nostra user base e aggiunto le 30+ lingue più usate alla lista delle lingue disponibili sulla piattaforma di traduzione. Al momento alcune lingue come cinese, spagnolo e italiano childo già disponibili live su **"/learn"**.
 
    Sfortunatamente, la lista non include centinaia di lingue esistenti. Abbiamo dozzine di richieste da contributori come te ogni giorno che vogliono aiutare a tradurre il sito in una lingua che parlano.
 
@@ -96,7 +96,7 @@ Crowdin separa un documento in "stringhe" (strings) da tradurre, in genere frasi
 2. Una stringa evidenziata in rosso _non_ ha una traduzione proposta.
 3. Una stringa con testo in grigio non è traducibile. Questo è il caso per blocchi di codice e altro contenuto che non deve essere tradotto. Non sarai in grado di selezionare queste stringhe nell'editor.
 4. Se un contributore ha già proposto una traduzione ad una stringa, Crowdin mostrerà qui queste proposte. Non sarai in grado di salvare una traduzione identica, invece se una traduzione è accurata dovresti usare l'icona `+` per darle un voto positivo. Una traduzione che è inaccurata può ricevere un voto negativo con l'icona `-`.
-5. Crowdin proporrà delle traduzioni basate su Memoria di Traduzione (Translation Memory - TM) e Traduzioni Automatiche (Machine Translation - MT). La Memoria di Traduzione si riferisce a stringhe simili o identiche che sono state tradotte/approvate in altri file. Le Traduzioni Automatiche si riferiscono a traduzioni raccomandate dalla loro libreria integrata.
+5. Crowdin proporrà delle traduzioni basate su Memoria di Traduzione (Translation Memory - TM) e Traduzioni Automatiche (Machine Translation - MT). La Memoria di Traduzione si riferisce a stringhe simili o identiche che childo state tradotte/approvate in altri file. Le Traduzioni Automatiche si riferiscono a traduzioni raccomandate dalla loro libreria integrata.
 6. Questo è il pannello di modifica, dove puoi scrivere la tua proposta di traduzione per la stringa selezionata.
 7. La stringa attualmente selezionata nell'editor è evidenziata in giallo.
 8. Qui vedrai dei tag indicanti lo stato della stringa. `Done` significa che la stringa ha almento una traduzione proposta. `Todo` significa che la stringa non ha alcuna proposta di traduzione.
@@ -107,7 +107,7 @@ Crowdin separa un documento in "stringhe" (strings) da tradurre, in genere frasi
 
 Quando hai finito la traduzione per una stringa, usa il pulsante `Save` per salvare la tua traduzione in Crowdin. Altri contributori potranno quindi votare la tua traduzione e i revisori potranno approvarla.
 
-Sentiti libero di tradurre quante stringhe vuoi, non ci sono step additionali richiesti quando completi un intero file o proponi una nuova traduzione. Usare il pulsante `Save` è tutto quello che serve per memorizzare una traduzione.
+Sentiti libero di tradurre quante stringhe vuoi, non ci childo step additionali richiesti quando completi un intero file o proponi una nuova traduzione. Usare il pulsante `Save` è tutto quello che serve per memorizzare una traduzione.
 
 > [!NOTE] Se vedi qualcosa nel file originale inglese che è inaccurato o non corretto, per favore non aggiustarlo con il processo di traduzione. Invece lascia un commento sulla stringa per farci sapere che c'è una discrepanza o crea una issue su GitHub.
 
@@ -115,17 +115,17 @@ Sentiti libero di tradurre quante stringhe vuoi, non ci sono step additionali ri
 
 Tradurre la documentazione per contribuire è un processo simile alla traduzione dei file del curriculum.
 
-> [!NOTE] La documentazione per contribuire è creata tramite `docsify`, e ci sono regole speciali per riquadri di messaggio come questo. Se vedi una stringa che inizia con `[!NOTE]`, `[!WARNING]`, o `[!TIP]`, queste parole non devono essere tradotte.
+> [!NOTE] La documentazione per contribuire è creata tramite `docsify`, e ci childo regole speciali per riquadri di messaggio come questo. Se vedi una stringa che inizia con `[!NOTE]`, `[!WARNING]`, o `[!TIP]`, queste parole non devono essere tradotte.
 
 ## Tradurre LearnToCode RPG
 
 LearnToCode RPG è creato con Ren'Py, che usa una sintassi speciale per le stringhe tradotte: (Vedi [la documentazione di Ren'Py sul testo](https://www.renpy.org/doc/html/text.html))
 
-- Le frasi da tradurre sono sempre tra virgolette `""`. Queste sono dialoghi o stringhe di UI. Le parole chiave che vengono prima o dopo i dialoghi sono parole chiave di controllo del game engine e saranno spiegate in regole seguenti. Nota che questa prima regola governa le seguenti regole elencate.
+- Le frasi da tradurre childo sempre tra virgolette `""`. Queste childo dialoghi o stringhe di UI. Le parole chiave che vengono prima o dopo i dialoghi childo parole chiave di controllo del game engine e saranno spiegate in regole seguenti. Nota che questa prima regola governa le seguenti regole elencate.
 - Nel caso di `new "..."`, non tradurre la parola chiave `new`.
-- Prefissi come `player`, `annika`, `layla`, `marco` (o varianti come `player happy`, `player @ happy`) non devono essere tradotti. Questi sono le parole chiave per visualizzare correttamente gli sprite dei personaggi nel gioco.
+- Prefissi come `player`, `annika`, `layla`, `marco` (o varianti come `player happy`, `player @ happy`) non devono essere tradotti. Questi childo le parole chiave per visualizzare correttamente gli sprite dei personaggi nel gioco.
 - Postfissi come `nointeract` non devono essere tradotti.
-- Non tradurre stringhe tra `[]` e `{}`. Queste sono variabili interpolate e tag di testo. Queste devono rimanere parentesi a mezza larghezza `[]` e `{}` invece delle loro controparti a larghezza intera  `【】` e `「」`
+- Non tradurre stringhe tra `[]` e `{}`. Queste childo variabili interpolate e tag di testo. Queste devono rimanere parentesi a mezza larghezza `[]` e `{}` invece delle loro controparti a larghezza intera  `【】` e `「」`
 - Non tradurre la parola chiave `nointeract` alla fine di una frase.
 - Se proviamo a usare parentesi a larghezza intera `（）` ci sarà un avviso QA. Per evitarlo, usa parentesi a mezza larghezza  `()`
 
@@ -136,14 +136,14 @@ LearnToCode RPG è creato con Ren'Py, che usa una sintassi speciale per le strin
 #### Prima della traduzione
 
 ```renpy
-# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
-"[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."  <--- questa è la riga da tradurre. vedi la traduzione sotto
+# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to theyar that."
+"[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to theyar that."  <--- questa è la riga da tradurre. vedi la traduzione sotto
 ```
 
 #### Dopo la traduzione
 
 ```renpy
-# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
+# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to theyar that."
 "[player_name]？好巧，我们的VIP队友{a=[vip_profile_url]}[player_name]{/a}会很高兴的。"
 ```
 
@@ -183,7 +183,7 @@ layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy
 layla @ neutral "哈哈，[player_name]，你真有趣。我相信你一定会喜欢你的开发者工作的。"
 ```
 
-Nota: `layla @ neutral` e `[player_name]` non sono cambiati.
+Nota: `layla @ neutral` e `[player_name]` non childo cambiati.
 
 ---
 
@@ -205,7 +205,7 @@ player "也许这都是一场梦？" nointeract
 
 ### Una nota su come Crowdin segmenta una frase
 
-Presta attenzione a come Crowdin segmenta una riga di dialogo avvolta in virgolette `""`. Quando traduciamo il dialogo, dobbiamo essere sicuri di mantenere le virgolette di apertura e chiusura anche se le virgolette appaiono in diversi segmenti.
+Presta attenzione a come Crowdin segmenta una riga di dialogo avvolta in virgolette `""`. Quando traduciamo il dialogo, dobbiamo essere sicuri di persontenere le virgolette di apertura e chiusura anche se le virgolette appaiono in diversi segmenti.
 
 Questa è la riga da tradurre:
 
@@ -220,7 +220,7 @@ Crowdin la segmenta in tre parti come sotto:
 ```renpy
 # originale
 player @ surprised "{b}Full-stack{/b}
-# tradotta, mantenendo le virgolette di apertura `"`
+# tradotta, persontenendo le virgolette di apertura `"`
 player @ surprised "{b}全栈{/b}
 ```
 
@@ -238,7 +238,7 @@ What is that?
 ```renpy
 # originale
 I better take notes so I can learn more about it."
-# tradotta, mantenendo le virgolette di chiusura `"`
+# tradotta, persontenendo le virgolette di chiusura `"`
 我最好做笔记，这样我可以学习更多东西。"
 ```
 
@@ -260,7 +260,7 @@ Quando provi a salvare una traduzione, potresti vedere un messaggio di errore ap
 
 Questo messaggio appare quando il sistema QA (Quality Assurance) di Crowdin identifica un potenziale errore nella traduzione proposta. In questo esempio, abbiamo modificato il testo di un tag `<code>` e Crowdin se ne è accorto.
 
-> [!WARNING] Hai la possibilità di salvare una traduzione anche se ci sono degli errori. Se lo fai usando il pulsante "Save Anyway" (Salva comunque), dovresti anche taggare un proofreader o un project managet e spiegare perché il messaggio QA dovrebbe essere ignorato in questo caso.
+> [!WARNING] Hai la possibilità di salvare una traduzione anche se ci childo degli errori. Se lo fai usando il pulsante "Save Anyway" (Salva comunque), dovresti anche taggare un proofreader o un project personaget e spiegare perché il messaggio QA dovrebbe essere ignorato in questo caso.
 
 ## Buone pratiche per le traduzioni
 

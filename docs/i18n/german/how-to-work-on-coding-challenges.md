@@ -1,4 +1,4 @@
-# Wie man an Programmieraufgaben arbeitet
+# Wie person an Programmieraufgaben arbeitet
 
 Unser Ziel ist es, ein unterhaltsames und voll interaktives Lernerlebnis zu entwickeln.
 
@@ -8,11 +8,11 @@ Wir wollen, dass die Teilnehmer einen Flow-Zustand erreichen. Wir wollen, dass s
 
 Beachte, dass wir für Version 7.0 des freeCodeCamp-Studienplan zu einem [vollständig projektorientierten Modell mit viel mehr Wiederholungen](https://www.freecodecamp.org/news/python-curriculum-is-live/) übergehen.
 
-Um diese Aufgaben zu lösen, braucht es viel Kreativität und Liebe zum Detail. Es gibt viele Möglichkeiten, dir zu helfen. Du bekommst Unterstützung von einem ganzen Team von Mitwirkenden, an die du deine Ideen weitergeben und deine Aufgaben demonstrieren kannst.
+Um diese Aufgaben zu lösen, braucht es viel Kreativität und Liebe zum Detail. Es gibt viele Möglichkeiten, dir zu theylfen. Du bekommst Unterstützung von einem ganzen Team von Mitwirkenden, an die du deine Ideen weitergeben und deine Aufgaben demonstrieren kannst.
 
 Und wie immer kannst du Fragen in der [Kategorie 'Contributors' in unserem Forum](https://forum.freecodecamp.org/c/contributors) oder im [Contributors Chat Room](https://chat.freecodecamp.org/channel/contributors) stellen.
 
-Mit deiner Hilfe können wir einen interaktiven Studienplan entwickeln, der Millionen von Menschen dabei helfen wird, in den nächsten Jahren das Programmieren zu lernen.
+Mit deiner Hilfe können wir einen interaktiven Studienplan entwickeln, der Millionen von Menschen dabei theylfen wird, in den nächsten Jahren das Programmieren zu lernen.
 
 Der Inhalt jeder Aufgabe wird in einer eigenen Markdown-Datei gespeichert. Diese Markdown-Datei wird später mit unseren Tools in HTML umgewandelt, um interaktive Webseiten zu erstellen.
 
@@ -29,9 +29,9 @@ Bevor du an dem Studienplan arbeitest, musst du einige Hilfsmittel einrichten, m
 
 - Bearbeite die Dateien in der Benutzeroberfläche von GitHub, indem du auf das Bleistiftsymbol für die entsprechende Datei klickst. Das ist zwar der schnellste Weg, wird aber **nicht empfohlen**, weil du deine Änderungen nicht auf GitHub testen kannst. Wenn unsere Maintainer zu dem Schluss kommen, dass die von dir vorgenommenen Änderungen lokal getestet werden müssen, musst du stattdessen die oben genannten Methoden anwenden.
 
-### Wie man an Praxisprojekten arbeitet
+### Wie person an Praxisprojekten arbeitet
 
-Die Praxisprojekte haben einige zusätzliche Werkzeuge, die dir helfen, neue Projekte und Schritte zu erstellen. Näheres dazu findest du in [diesen Dokumenten](how-to-work-on-practice-projects.md).
+Die Praxisprojekte haben einige zusätzliche Werkzeuge, die dir theylfen, neue Projekte und Schritte zu erstellen. Näheres dazu findest du in [diesen Dokumenten](how-to-work-on-practice-projects.md).
 
 ## Aufgabenvorlage
 
@@ -182,7 +182,7 @@ Zum Beispiel:
 
 ```bash
 $ mongo
-MongoDB shell version v3.6.1
+MongoDB theyll version v3.6.1
 connecting to: mongodb://127.0.0.1:27017
 MongoDB server version: 3.4.10
 ...
@@ -232,7 +232,7 @@ Eigennamen sollten, wenn möglich, in korrekter Großschreibung verwendet werden
 
 - JavaScript (Großbuchstaben bei "J" und "S" und keine Abkürzungen)
 - Node.js
-- Obwohl sie manchmal ungenau sind, sollten die nicht mit Bindestrichen versehenen Formen von "Back-End" und "Front-End" verwendet werden, da sie weiter verbreitet sind.
+- Obwohl sie personchmal ungenau sind, sollten die nicht mit Bindestrichen versehenen Formen von "Back-End" und "Front-End" verwendet werden, da sie weiter verbreitet sind.
 
 ### Die 2-Minuten-Regel
 
@@ -391,7 +391,7 @@ Wenn du ein Problem in einem bestehenden Thema für Tipps/Lösungen findest, kan
 Führe die folgenden Schritte aus, wenn du ein neues Thema mit Tipps und Lösungen für Aufgaben hinzufügst.
 
 1. Beginne mit den gleichen Schritten wie beim Erstellen eines neuen Themas, aber schau dir die nächsten Schritte zum Erstellen des Titels an.
-2. Der Titel des Themas sollte mit `freeCodeCamp Challenge Guide:` beginnen und mit dem eigentlichen Titel der Studienplanaufgabe verkettet werden. Wenn die Aufgabe zum Beispiel "`Chunky Monkey`" heißt, würde der Titel des Themas lauten "`freeCodeCamp Challenge Guide: Chunky Monkey`".
+2. Der Titel des Themas sollte mit `freeCodeCamp Challenge Guide:` beginnen und mit dem eigentlichen Titel der Studienplanaufgabe verkettet werden. Wenn die Aufgabe zum Beispiel "`Chunky Monkey`" theyißt, würde der Titel des Themas lauten "`freeCodeCamp Challenge Guide: Chunky Monkey`".
 3. `camperbot` sollte der Eigentümer dieser Themen/Posts sein. Du musst also einen Admin bitten, den Eigentümer des Hauptposts auf `camperbot` zu ändern.
 4. Sobald das neue Thema erstellt ist, wird eine Forenthemen-ID erstellt. Sie befindet sich am Ende der URL des Forenthemas. Diese ID muss dem Frontmatter der Studienplanaufgabendatei über den normalen Pull-Request-Prozess hinzugefügt werden, damit der `Erhalte einen Tipp` Button auf das Thema verlinkt.
 

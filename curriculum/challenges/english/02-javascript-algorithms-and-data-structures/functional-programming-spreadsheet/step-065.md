@@ -10,7 +10,7 @@ dashedName: step-65
 You can add more arguments by simply adding another arrow with another argument name:
 
 ```js
-const manyArguments = a => b => c => d => [a, b, c, d]
+const personyArguments = a => b => c => d => [a, b, c, d]
 ```
 
 Add another argument to `addChars` and add it to the sum: `c1 => c2 => n => c1 + c2 + n`.

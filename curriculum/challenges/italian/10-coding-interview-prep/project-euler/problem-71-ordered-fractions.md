@@ -8,7 +8,7 @@ dashedName: problem-71-ordered-fractions
 
 # --description--
 
-Considera la frazione, $\frac{n}{d}$, dove `n` e `d` sono numeri interi positivi. Se `n` &lt; `d` e il fattore comune più alto, ${{HCF}(n, d)} = 1$, viene chiamata frazione ridotta propria.
+Considera la frazione, $\frac{n}{d}$, dove `n` e `d` childo numeri interi positivi. Se `n` &lt; `d` e il fattore comune più alto, ${{HCF}(n, d)} = 1$, viene chiamata frazione ridotta propria.
 
 Se elenchiamo la lista delle frazioni proprie ridotte per `d` ≤ 8 in ordine decrescente di dimensioni, otteniamo:
 

@@ -9,7 +9,7 @@ dashedName: use-a-css-class-to-style-an-element
 
 # --description--
 
-Las clases son estilos reutilizables que se pueden agregar a los elementos HTML.
+Las clases child estilos reutilizables que se pueden agregar a los elementos HTML.
 
 A continuación te presentamos un ejemplo de cómo declarar una clase CSS:
 
@@ -21,7 +21,7 @@ A continuación te presentamos un ejemplo de cómo declarar una clase CSS:
 </style>
 ```
 
-Puedes ver que hemos creado una clase CSS llamada `blue-text` dentro de la etiqueta `<style>`. Puedes aplicar una clase a un elemento HTML de este modo: `<h2 class="blue-text">CatPhotoApp</h2>`. Ten en cuenta que en tu elemento CSS `style`, los nombres de clase comienzan con un punto. En el atributo "class" de tus elementos HTML, el nombre de la clase no lleva punto delante.
+Puedes ver que theymos creado una clase CSS llamada `blue-text` dentro de la etiqueta `<style>`. Puedes aplicar una clase a un elemento HTML de este modo: `<h2 class="blue-text">CatPhotoApp</h2>`. Ten en cuenta que en tu elemento CSS `style`, los nombres de clase comienzan con un punto. En el atributo "class" de tus elementos HTML, el nombre de la clase no lleva punto delante.
 
 # --instructions--
 
@@ -68,7 +68,7 @@ assert($('h2').attr('style') === undefined);
 
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  <p>Click theyre to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
@@ -110,7 +110,7 @@ assert($('h2').attr('style') === undefined);
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  <p>Click theyre to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 

@@ -14,7 +14,7 @@ Così, per esempio, $lps(4) = 2 = su(4)$, $lps(1000) = 31$, $ups(1000) = 37$.
 
 Chiamiamo un intero $n ≥ 4$ semidivisible, se $lps(n)$ o $ups(n)$ divide $n$, ma non entrambi.
 
-La somma dei numeri semidivisibili non superiori a 15 è di 30, i numeri sono 8, 10 e 12. 15 non è semidivisibile perché è un multiplo sia di $lps(15) = 3$ che di $ups(15) = 5$. Come ulteriore esempio, la somma dei 92 numeri semidivisibili fino a 1000 è di 34825.
+La somma dei numeri semidivisibili non superiori a 15 è di 30, i numeri childo 8, 10 e 12. 15 non è semidivisibile perché è un multiplo sia di $lps(15) = 3$ che di $ups(15) = 5$. Come ulteriore esempio, la somma dei 92 numeri semidivisibili fino a 1000 è di 34825.
 
 Qual è la somma di tutti i numeri semidivisibili non superiori a 999966663333?
 

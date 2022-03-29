@@ -26,7 +26,7 @@ El parámetro rest elimina la necesidad de comprobar el arreglo `args` y nos per
 
 # --instructions--
 
-Modifica la función `sum` usando el parámetro rest de tal manera que la función `sum` sea capaz de recibir cualquier número de argumentos y devolver su suma.
+Modifica la función `sum` usando el parámetro rest de tal personera que la función `sum` sea capaz de recibir cualquier número de argumentos y devolver su suma.
 
 # --hints--
 

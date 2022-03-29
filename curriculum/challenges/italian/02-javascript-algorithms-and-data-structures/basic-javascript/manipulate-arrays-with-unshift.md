@@ -4,7 +4,7 @@ title: Manipolare gli array con unshift()
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ckNDESv'
 forumTopicId: 18239
-dashedName: manipulate-arrays-with-unshift
+dashedName: personipulate-arrays-with-unshift
 ---
 
 # --description--

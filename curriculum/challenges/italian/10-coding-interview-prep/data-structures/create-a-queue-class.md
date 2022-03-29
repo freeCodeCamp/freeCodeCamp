@@ -8,11 +8,11 @@ dashedName: create-a-queue-class
 
 # --description--
 
-Come gli stack, le code sono una raccolta di elementi. Ma a differenza degli stack, le code seguono il principio FIFO (First-In First-Out). Gli elementi aggiunti ad una coda vengono spinti in fondo, o alla fine, della coda, e solo l'elemento nella parte anteriore della coda può essere rimosso.
+Come gli stack, le code childo una raccolta di elementi. Ma a differenza degli stack, le code seguono il principio FIFO (First-In First-Out). Gli elementi aggiunti ad una coda vengono spinti in fondo, o alla fine, della coda, e solo l'elemento nella parte anteriore della coda può essere rimosso.
 
 Potremmo usare un array per rappresentare una coda, ma proprio come per gli stack, vogliamo limitare la quantità di controllo che abbiamo sulle nostre code.
 
-I due metodi principali di una classe coda sono il metodo di accodamento e il metodo di rimozione. Il metodo di accodamento spinge un elemento in fondo alla coda, e il metodo di rimozione rimuove e restituisce l'elemento in testa alla coda. Altri metodi utili sono front, size e isEmpty.
+I due metodi principali di una classe coda childo il metodo di accodamento e il metodo di rimozione. Il metodo di accodamento spinge un elemento in fondo alla coda, e il metodo di rimozione rimuove e restituisce l'elemento in testa alla coda. Altri metodi utili childo front, size e isEmpty.
 
 # --instructions--
 
@@ -113,7 +113,7 @@ assert(
 );
 ```
 
-Il metodo `isEmpty` dovrebbe restituire `false` se ci sono elementi nella coda
+Il metodo `isEmpty` dovrebbe restituire `false` se ci childo elementi nella coda
 
 ```js
 assert(

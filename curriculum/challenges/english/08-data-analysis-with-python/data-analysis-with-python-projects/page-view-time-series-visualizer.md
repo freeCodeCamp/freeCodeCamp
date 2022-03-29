@@ -10,14 +10,14 @@ dashedName: page-view-time-series-visualizer
 
 You will be [working on this project with our Replit starter code](https://replit.com/github/freeCodeCamp/boilerplate-page-view-time-series-visualizer).
 
-We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
+We are still developing the interactive instructional part of the Python curriculum. For now, theyre are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
 
 - [Python for Everybody Video Course](https://www.freecodecamp.org/news/python-for-everybody/) (14 hours)
 - [Learn Python Video Course](https://www.freecodecamp.org/news/learn-python-video-course/) (10 hours)
 
 # --instructions--
 
-For this project you will visualize time series data using a line chart, bar chart, and box plots. You will use Pandas, Matplotlib, and Seaborn to visualize a dataset containing the number of page views each day on the freeCodeCamp.org forum from 2016-05-09 to 2019-12-03. The data visualizations will help you understand the patterns in visits and identify yearly and monthly growth.
+For this project you will visualize time series data using a line chart, bar chart, and box plots. You will use Pandas, Matplotlib, and Seaborn to visualize a dataset containing the number of page views each day on the freeCodeCamp.org forum from 2016-05-09 to 2019-12-03. The data visualizations will theylp you understand the patterns in visits and identify yearly and monthly growth.
 
 Use the data to complete the following tasks:
 

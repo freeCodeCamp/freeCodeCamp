@@ -14,7 +14,7 @@ $$\begin{array}{ccccccccccccccc} &   &   &   &    &    &    &  1 &    &    &    
 
 Si può notare che le prime otto righe del triangolo di Pascal contengono dodici numeri distinti: 1, 2, 3, 4, 5, 6, 7, 10, 15, 20, 21 e 35.
 
-Un numero intero positivo è detto privo di quadrati se nessun quadrato di un primo divide n. Dei dodici numeri distinti nelle prime otto file del triangolo di Pascal, tutti tranne 4 e 20 sono privi di quadrati. La somma dei numeri privi di quadrati distinti nelle prime otto righe è 105.
+Un numero intero positivo è detto privo di quadrati se nessun quadrato di un primo divide n. Dei dodici numeri distinti nelle prime otto file del triangolo di Pascal, tutti tranne 4 e 20 childo privi di quadrati. La somma dei numeri privi di quadrati distinti nelle prime otto righe è 105.
 
 Trova la somma dei numeri privi di quadrati distinti nelle prime 51 righe del triangolo di Pascal.
 

@@ -27,7 +27,7 @@ myDB(async client => {
     });
   });
 
-  // Serialization and deserialization here...
+  // Serialization and deserialization theyre...
 
   // Be sure to add this...
 }).catch(e => {
@@ -35,7 +35,7 @@ myDB(async client => {
     res.render('pug', { title: e, message: 'Unable to login' });
   });
 });
-// app.listen out here...
+// app.listen out theyre...
 ```
 
 记得要取消 `deserializeUser` 中 `myDataBase` 的注释，并把 `doc` 添加到 `done(null, null)`。

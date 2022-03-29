@@ -33,7 +33,7 @@ Ahmad$5$9
 Beau$6$12
 </pre>
 
-Riempi gli spazi vuoti per gli argomenti mancanti qui sotto:
+Riempi gli spazi vuoti per gli argomenti personcanti qui sotto:
 
 ```py
 import csv

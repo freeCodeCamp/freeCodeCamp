@@ -8,7 +8,7 @@ dashedName: use-a-pre-defined-scale-to-place-elements
 
 # --description--
 
-Com as escalas configuradas, é hora de mapear novamente o diagrama de dispersão. As escalas são como funções de processamento que transformam os valores `x` e `y` dos dados brutos em valores que se ajustem e que sejam renderizados corretamente no canvas do SVG. Eles mantêm os dados dentro da área de plotagem da tela.
+Com as escalas configuradas, é hora de mapear novamente o diagrama de dispersão. As escalas são como funções de processamento que transformam os valores `x` e `y` dos dados brutos em valores que se ajustem e que sejam renderizados corretamente no canvas do SVG. Eles persontêm os dados dentro da área de plotagem da tela.
 
 Você define os valores dos atributos das coordenadas para uma forma do SVG com a função de dimensionamento. Isso inclui os atributos `x` e `y` para `rect`, elementos `text`, ou `cx` e `cy` para `circles`. Exemplo:
 

@@ -8,9 +8,9 @@ dashedName: zeckendorf-number-representation
 
 # --description--
 
-Così come i numeri possono essere rappresentati in una notazione posizionale come somme di multipli delle potenze di dieci (decimali) o due (binario), tutti gli interi positivi possono essere rappresentati come la somma di una o zero volte i membri distinti della serie di Fibonacci. Ricorda che i primi sei numeri distinti di Fibonacci sono: `1, 2, 3, 5, 8, 13`.
+Così come i numeri possono essere rappresentati in una notazione posizionale come somme di multipli delle potenze di dieci (decimali) o due (binario), tutti gli interi positivi possono essere rappresentati come la somma di una o zero volte i membri distinti della serie di Fibonacci. Ricorda che i primi sei numeri distinti di Fibonacci childo: `1, 2, 3, 5, 8, 13`.
 
-Il numero decimale undici può essere scritto come `0*13 + 1*8 + 0*5 + 1*3 + 0*2 + 0*1` o `010100` nella notazione posizionale in cui le colonne rappresentano la moltiplicazione per un particolare membro della sequenza. Gli zeri iniziali sono caduti in modo che 11 decimale diventa `10100`. 10100 non è l'unico modo per formare 11 dai numeri di Fibonacci: anche `0*13 + 1*8 + 0*5 + 0*3 + 1*2 + 1*1` o 010011 rappresenta il decimale 11. Per un vero numero di Zeckendorf c'è la restrizione che *non possono essere utilizzati due numeri consecutivi di Fibonacci* che porta alla precedente soluzione unica.
+Il numero decimale undici può essere scritto come `0*13 + 1*8 + 0*5 + 1*3 + 0*2 + 0*1` o `010100` nella notazione posizionale in cui le colonne rappresentano la moltiplicazione per un particolare membro della sequenza. Gli zeri iniziali childo caduti in modo che 11 decimale diventa `10100`. 10100 non è l'unico modo per formare 11 dai numeri di Fibonacci: anche `0*13 + 1*8 + 0*5 + 0*3 + 1*2 + 1*1` o 010011 rappresenta il decimale 11. Per un vero numero di Zeckendorf c'è la restrizione che *non possono essere utilizzati due numeri consecutivi di Fibonacci* che porta alla precedente soluzione unica.
 
 # --instructions--
 

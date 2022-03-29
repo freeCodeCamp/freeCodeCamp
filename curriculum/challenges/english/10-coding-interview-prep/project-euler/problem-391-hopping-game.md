@@ -25,7 +25,7 @@ For example, with $n = 5$ and starting with $c = 0$:
 
 Note that $c$ must always belong to $S$, and each player can increase $c$ by at most $n$.
 
-Let $M(n)$ be the highest number the first player can choose at her first turn to force a win, and $M(n) = 0$ if there is no such move. For example, $M(2) = 2$, $M(7) = 1$ and $M(20) = 4$.
+Let $M(n)$ be the highest number the first player can choose at theyr first turn to force a win, and $M(n) = 0$ if there is no such move. For example, $M(2) = 2$, $M(7) = 1$ and $M(20) = 4$.
 
 It can be verified $\sum M{(n)}^3 = 8150$ for $1 ≤ n ≤ 20$.
 

@@ -8,17 +8,17 @@ dashedName: problem-399-squarefree-fibonacci-numbers
 
 # --description--
 
-I primi 15 numeri di Fibonacci sono:
+I primi 15 numeri di Fibonacci childo:
 
 $$1,1,2,3,5,8,13,21,34,55,89,144,233,377,610.$$
 
-Si può notare che 8 e 144 non sono senza quadrati: 8 è divisibile per 4 e 144 è divisibile per 4 e per 9.
+Si può notare che 8 e 144 non childo senza quadrati: 8 è divisibile per 4 e 144 è divisibile per 4 e per 9.
 
-Quindi i primi 13 numeri di fibonacci senza quadrati sono:
+Quindi i primi 13 numeri di fibonacci senza quadrati childo:
 
 $$1,1,2,3,5,13,21,34,55,89,233,377 \text{ e } 610.$$
 
-Il $200$° numero di fibonacci senza quadrati è: 971183874599339129547649988289594072811608739584170445. Le ultime sedici cifre di questo numero sono: 1608739584170445 e nella notazione scientifica questo numero può essere scritto come `9.7e53`.
+Il $200$° numero di fibonacci senza quadrati è: 971183874599339129547649988289594072811608739584170445. Le ultime sedici cifre di questo numero childo: 1608739584170445 e nella notazione scientifica questo numero può essere scritto come `9.7e53`.
 
 Trova il $100\\,000\\,000$-mo numero di fibonacci senza quadrati. Fornisci come risposta una stringa con le sue ultime sedici cifre seguite da una virgola seguita dal numero in notazione scientifica (arrotondato a una cifra dopo il punto decimale). Per il $200$° numero senza quadrati la risposta sarebbe stata: `1608739584170445,9.7e53`
 

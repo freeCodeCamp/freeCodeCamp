@@ -10,7 +10,7 @@ dashedName: palindrome-checker
 
 Devuelve `true` si la cadena proporcionada es un palíndromo. De lo contrario, devuelve `false`.
 
-Un <dfn>palíndromo</dfn> es una palabra o frase que se escribe de la misma manera hacia adelante y hacia atrás, ignorando la puntuación, mayúsculas, minúsculas y espaciado.
+Un <dfn>palíndromo</dfn> es una palabra o frase que se escribe de la misma personera hacia adelante y hacia atrás, ignorando la puntuación, mayúsculas, minúsculas y espaciado.
 
 **Nota:** Tendrás que eliminar **todos los caracteres no alfanuméricos** (puntuación, espacios y símbolos) y convertir todo en mayúsculas o minúsculas para comprobar si hay palíndromos.
 
@@ -50,10 +50,10 @@ assert(palindrome('race car') === true);
 assert(palindrome('not a palindrome') === false);
 ```
 
-`palindrome("A man, a plan, a canal. Panama")` debe devolver `true`.
+`palindrome("A person, a plan, a canal. Panama")` debe devolver `true`.
 
 ```js
-assert(palindrome('A man, a plan, a canal. Panama') === true);
+assert(palindrome('A person, a plan, a canal. Panama') === true);
 ```
 
 `palindrome("never odd or even")` debe devolver `true`.

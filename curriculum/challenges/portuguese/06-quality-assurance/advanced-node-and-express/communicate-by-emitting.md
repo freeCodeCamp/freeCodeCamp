@@ -10,7 +10,7 @@ dashedName: communicate-by-emitting
 
 <dfn>Enviar</dfn> é a forma mais comum de comunicação que você usará. Quando você envia algo do servidor para 'io', está enviando o nome e os dados de um evento para todos os sockets conectados. Um bom exemplo deste conceito seria enviar a contagem atual de usuários conectados a cada vez que um novo usuário se conecta!
 
-Comece adicionando uma variável para manter o controle dos usuários, logo antes do local onde você está escutando as conexões no momento.
+Comece adicionando uma variável para personter o controle dos usuários, logo antes do local onde você está escutando as conexões no momento.
 
 ```js
 let currentUsers = 0;
@@ -28,7 +28,7 @@ Por fim, depois de incrementar a contagem, você deve enviar o evento (ainda den
 io.emit('user count', currentUsers);
 ```
 
-Agora, você pode implementar uma maneira de o client escutar este evento! De modo semelhante a escutar uma conexão no servidor, você usará a palavra-chave `on`.
+Agora, você pode implementar uma personeira de o client escutar este evento! De modo semelhante a escutar uma conexão no servidor, você usará a palavra-chave `on`.
 
 ```js
 socket.on('user count', function(data) {

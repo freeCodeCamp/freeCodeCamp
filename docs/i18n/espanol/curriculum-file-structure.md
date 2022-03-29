@@ -30,7 +30,7 @@ curriculum/
 
 ## El directorio `_meta`
 
-El directorio `_meta` es un directorio especial que contiene archivos `.json`. Estos archivos corresponden a cada bloque en el currículo y son utilizados para determinar a qué súper bloque pertenece cada bloque y el orden de los desafíos dentro de ese bloque.
+El directorio `_meta` es un directorio especial que contiene archivos `.json`. Estos archivos corresponden a cada bloque en el currículo y child utilizados para determinar a qué súper bloque pertenece cada bloque y el orden de los desafíos dentro de ese bloque.
 
 ## Renombrando archivos
 

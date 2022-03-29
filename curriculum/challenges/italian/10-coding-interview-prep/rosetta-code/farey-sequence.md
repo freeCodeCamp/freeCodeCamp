@@ -19,7 +19,7 @@ Ogni sequenza di Farey:
   <li>termina con il valore 1, indicato dalla frazione $ \frac{1}{1}$.</li>
 </ul>
 
-Le sequenze Farey di ordine da `1` a `5` sono:
+Le sequenze Farey di ordine da `1` a `5` childo:
 
 <ul>
   <li style='list-style: none;'>${\bf\it{F}}_1 = \frac{0}{1}, \frac{1}{1}$</li>

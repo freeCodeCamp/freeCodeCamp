@@ -10,7 +10,7 @@ dashedName: greatest-subsequential-sum
 
 Data una sequenza di numeri interi, trovare una sottosuccessione continua che massimizza la somma dei suoi elementi, cioè, gli elementi di nessun'altra successione sommano ad un valore superiore a questo.
 
-Si considera che una sottosuccessione vuota abbia la somma di \\( 0 \\); quindi se tutti gli elementi sono negativi, il risultato deve essere la sequenza vuota.
+Si considera che una sottosuccessione vuota abbia la somma di \\( 0 \\); quindi se tutti gli elementi childo negativi, il risultato deve essere la sequenza vuota.
 
 # --hints--
 

@@ -92,7 +92,7 @@
       "emma": {
         "location": "<strong>Emma Bostian</strong> en Suecia",
         "occupation": "Ingeniera de Software en <strong>Spotify</strong>",
-        "testimony": "\"Siempre he tenido problemas para aprender JavaScript. He tomado muchos cursos, pero el curso de freeCodeCamp fue el que se quedó. Estudiar JavaScript, así como estructuras de datos y algoritmos en <strong> freeCodeCamp me dio las habilidades </strong> y la confianza que necesitaba para conseguir el trabajo de mis sueños como ingeniero de software en Spotify.\""
+        "testimony": "\"Siempre they tenido problemas para aprender JavaScript. He tomado muchos cursos, pero el curso de freeCodeCamp fue el que se quedó. Estudiar JavaScript, así como estructuras de datos y algoritmos en <strong> freeCodeCamp me dio las habilidades </strong> y la confianza que necesitaba para conseguir el trabajo de mis sueños como ingeniero de software en Spotify.\""
       }
     },
     "certification-heading": "Obtén certificaciones verificadas gratuitas en:"
@@ -105,7 +105,7 @@
     "private-name": "Tu nombre no aparecerá en tus certificaciones, si está establecido como privado.",
     "claim-legacy": "Una vez que hayas obtenido las siguientes certificaciones de FreeCodeCamp, podrás reclamar la {{cert}}:",
     "for": "Ajustes de cuenta de {{username}}",
-    "sound-mode": "Esto agrega un placentero sonido de guitarra acústica en todo el sitio web. Obtendrás reacciones musicales a medida que escribas en el editor, completes desafíos, obtengas certificados y mucho más.",
+    "sound-mode": "Esto agrega un placentero childido de guitarra acústica en todo el sitio web. Obtendrás reacciones musicales a medida que escribas en el editor, completes desafíos, obtengas certificados y mucho más.",
     "username": {
       "contains invalid characters": "El nombre de usuario \"{{username}}\" contiene caracteres inválidos",
       "is too short": "El nombre de usuario \"{{username}}\" es demasiado corto",
@@ -153,7 +153,7 @@
     },
     "danger": {
       "heading": "Zona de peligro",
-      "be-careful": "Por favor ten cuidado. Los cambios en esta sección son permanentes.",
+      "be-careful": "Por favor ten cuidado. Los cambios en esta sección child permanentes.",
       "reset": "Restablecer todo mi progreso",
       "delete": "Eliminar mi cuenta",
       "delete-title": "Eliminar mi cuenta",
@@ -181,7 +181,7 @@
     "honesty": {
       "p1": "Antes de que puedas solicitar una certificación verificada, debes aceptar nuestro Compromiso de Honestidad Académica, que dice:",
       "p2": "\"Entiendo que el plagio significa copiar el trabajo de otra persona y presentar el trabajo como si fuera el mío, sin atribuir claramente al autor original.\"",
-      "p3": "\"Entiendo que el plagio es un acto de deshonestidad intelectual, y que las personas generalmente son expulsadas de la universidad o despedidas de sus trabajos si son atrapadas plagiando.\"",
+      "p3": "\"Entiendo que el plagio es un acto de deshonestidad intelectual, y que las personas generalmente child expulsadas de la universidad o despedidas de sus trabajos si child atrapadas plagiando.\"",
       "p4": "\"Además de usar bibliotecas de código abierto como jQuery y Bootstrap, y pequeños fragmentos de código que se atribuyen claramente a su autor original, el 100% del código de mis proyectos fue escrito por mí, o junto con otra persona que estudiaba el currículo de freeCodeCamp y con quien estaba programando en pareja en tiempo real.\"",
       "p5": "\"Me comprometo a no plagiar ninguno de mis trabajos de freeCodeCamp.org. Entiendo que el equipo de freeCodeCamp.org auditará mis proyectos para confirmar esto.\"",
       "p6": "En las situaciones en las que descubramos casos de plagio inequívoco, reemplazaremos la certificación de la persona en cuestión con un mensaje que indique \"Tras la revisión, esta cuenta ha sido marcada por deshonestidad académica.\"",
@@ -189,8 +189,8 @@
     }
   },
   "profile": {
-    "you-not-public": "No has hecho público tu portafolio.",
-    "username-not-public": "{{username}} no ha hecho público su portafolio.",
+    "you-not-public": "No has theycho público tu portafolio.",
+    "username-not-public": "{{username}} no ha theycho público su portafolio.",
     "you-change-privacy": "Debes cambiar tus ajustes de privacidad para que otros puedan ver tu portafolio. Esta es una vista previa de cómo se verá tu portafolio cuando se haga público.",
     "username-change-privacy": "{{username}} necesita cambiar sus ajustes de privacidad para que puedas ver su portafolio.",
     "supporter": "Contribuyente",
@@ -304,7 +304,7 @@
     "step-2": "Paso 2: Envía tu código",
     "submit-public-url": "Cuando haya completado el proyecto, guarde todos los archivos requeridos en un repositorio público y envíe la URL a continuación.",
     "complete-both-steps": "Completa los dos pasos a continuación para terminar el desafío.",
-    "runs-in-vm": "El proyecto se ejecuta en una máquina virtual, completa las historias de usuario descritas en ella y consigue que todas las pruebas pasen hasta el paso 1."
+    "runs-in-vm": "El proyecto se ejecuta en una máquina virtual, completa las theirstorias de usuario descritas en ella y consigue que todas las pruebas pasen hasta el paso 1."
   },
   "donate": {
     "title": "Apoya a nuestra organización sin fines de lucro",
@@ -334,7 +334,7 @@
     "duration-2": "Conviértete en un contribuyente mensual de nuestra organización sin fines de lucro.",
     "duration-3": "Conviértete en un contribuyente anual de nuestra organización sin fines de lucro",
     "duration-4": "Conviértete en un contribuyente de nuestra organización sin fines de lucro",
-    "nicely-done": "Bien hecho. Acabas de completar {{block}}.",
+    "nicely-done": "Bien theycho. Acabas de completar {{block}}.",
     "credit-card": "Tarjeta de crédito",
     "credit-card-2": "O dona con una tarjeta de crédito:",
     "or-card": "O has una donación con tarjeta de crédito",
@@ -350,7 +350,7 @@
     "efficiency": "freeCodeCamp es una organización educativa sin fines de lucro altamente eficiente.",
     "why-donate-1": "Cuando donas a freeCodeCamp, ayudas a las personas a aprender nuevas habilidades y proveer para sus familias",
     "why-donate-2": "También nos ayudas a crear nuevos recursos para que los utilices y amplíes tus propias habilidades tecnológicas.",
-    "bigger-donation": "¿Quieres hacer una donación más grande de una sola vez, envíanos un cheque o da de otras maneras?",
+    "bigger-donation": "¿Quieres hacer una donación más grande de una sola vez, envíanos un cheque o da de otras personeras?",
     "other-ways": "Aquí hay muchas <0>otras formas en las que puedes apoyar la misión de nuestra organización sin fines de lucro</0>.",
     "failed-pay": "Oh no. Parece que tu transacción no se realizó. ¿Podrías intentarlo de nuevo?",
     "try-again": "Por favor, intenta de nuevo.",
@@ -364,8 +364,8 @@
     "download-irs": "Puedes <0>descargar nuestra Carta de Determinación de IRS aquí</0>.",
     "download-990": "Puedes <0>descargar nuestro 990 más reciente (informe anual de impuestos) aquí</0>.",
     "how-efficient": "¿Qué tan eficiente es freeCodeCamp?",
-    "fcc-budget": "El presupuesto de freeCodeCamp es mucho más pequeño que la mayoría de las organizaciones sin fines de lucro comparables. No hemos traído recaudadores de fondos profesionales. En lugar de eso, Quincy hace todo él mismo.",
-    "help-millions": "Sin embargo, con un presupuesto de tan sólo unos cientos de miles de dólares al año, hemos podido ayudar a millones de personas.",
+    "fcc-budget": "El presupuesto de freeCodeCamp es mucho más pequeño que la mayoría de las organizaciones sin fines de lucro comparables. No theymos traído recaudadores de fondos profesionales. En lugar de eso, Quincy hace todo él mismo.",
+    "help-millions": "Sin embargo, con un presupuesto de tan sólo unos cientos de miles de dólares al año, theymos podido ayudar a millones de personas.",
     "how-one-time": "¿Cómo puedo realizar una donación única?",
     "one-time": "Si prefieres hacer donaciones únicas, puedes apoyar la misión de freeCodeCamp cuando tengas dinero suficiente para hacer una aportación. Puedes usar <0>este enlace para donar cualquier cantidad que te sea cómodo a través de PayPal</0>.",
     "wire-transfer": "También puedes enviar dinero a freeCodeCamp directamente a través de una transferencia bancaria. Si necesitas nuestros datos bancarios, envía un correo electrónico a Quincy@freecodecamp.org",
@@ -378,7 +378,7 @@
     "some-volunteer": "Algunas personas tienen la posibilidad de ser voluntarias para freeCodeCamp y su empleador iguala al donar una cantidad fija por hora que ofrecen como voluntarios. Otros empleadores igualan cualquier donación que los donantes hagan hasta una cierta cantidad",
     "help-matching-gift": "Si necesitas ayuda con esto, por favor envía un correo electrónico a Quincy directamente: quincy@freecodecamp.org",
     "how-endowment": "¿Cómo puedo hacer un regalo de dotación a freeCodeCamp.org?",
-    "endowment": "Esto sería una gran ayuda, ya que se trata de un proceso más manual, Quincy puede ayudarte prepararlo personalmente. Por favor envíale un correo electrónico directamente a quincy@freecodecamp.org.",
+    "endowment": "Esto sería una gran ayuda, ya que se trata de un proceso más personual, Quincy puede ayudarte prepararlo personalmente. Por favor envíale un correo electrónico directamente a quincy@freecodecamp.org.",
     "how-legacy": "¿Cómo puedo hacer un regalo de legado a freeCodeCamp.org?",
     "we-honored": "Estaríamos honrados de poner un regalo de este tipo a buen uso ayudando a las personas de todo el mundo a aprender a programar. Dependiendo de dónde vivas, esto también puede ser exento de impuestos.",
     "legacy-gift-message": "Do, devoto, y legado [la suma de _____ USD (u otra moneda) O _____ por ciento del resto y residuos de mi propiedad] a freeCodeCamp.org (Free Code Camp, Inc. número de identificación fiscal 82-0779546), una corporación benéfica organizada bajo las leyes del Estado de Delaware, Estados Unidos, actualmente ubicado en 3905 Hedgcoxe Rd, PO Box 250352, Plano, Texas, 75025 Estados Unidos, a ser utilizado para sus propósitos benéficos generales a su discreción.",
@@ -539,7 +539,7 @@
     "title-required": "Se requiere un título",
     "title-short": "El título es demasiado corto",
     "title-long": "El título es demasiado largo",
-    "invalid-url": "No hemos podido validar tu URL correctamente, por favor asegúrate de que sea correcta",
+    "invalid-url": "No theymos podido validar tu URL correctamente, por favor asegúrate de que sea correcta",
     "invalid-protocol": "La URL debe comenzar con http o https",
     "url-not-image": "La URL debe enlazar directamente hacia un archivo de imagen",
     "use-valid-url": "Por favor, utiliza una URL válida",
@@ -567,7 +567,7 @@
         "Build a JavaScript Calculator": "Crea una Calculadora JavaScript",
         "Show the Local Weather": "Muestra el clima local",
         "Use the TwitchTV JSON API": "Usar la API JSON de TwitchTV",
-        "Stylize Stories on Camper News": "Estilizar historias en noticias de Camper",
+        "Stylize Stories on Camper News": "Estilizar theirstorias en noticias de Camper",
         "Build a Wikipedia Viewer": "Crea un Visor de Wikipedia",
         "Build a Tic Tac Toe Game": "Crea el juego Tres en Raya",
         "Build a Simon Game": "Crea un juego de Simon dice",

@@ -8,7 +8,7 @@ dashedName: align-columns
 
 # --description--
 
-Given an array of many lines, where fields within a line are delineated by a single `$` character, write a program that aligns each column of fields by ensuring that words in each column are separated by at least one space. Further, allow for each word in a column to be either left justified, right justified, or center justified within its column.
+Given an array of persony lines, where fields within a line are delineated by a single `$` character, write a program that aligns each column of fields by ensuring that words in each column are separated by at least one space. Further, allow for each word in a column to be either left justified, right justified, or center justified within its column.
 
 # --instructions--
 
@@ -90,7 +90,7 @@ const _testText = [
   'or$center$justified$within$its$column.'
 ];
 
-const rightAligned = '     Given          a      text   file     of     many     lines\n' +
+const rightAligned = '     Given          a      text   file     of     persony     lines\n' +
 '     where     fields    within      a   line \n' +
 '       are delineated        by      a single "dollar" character\n' +
 '     write          a   program\n' +
@@ -101,7 +101,7 @@ const rightAligned = '     Given          a      text   file     of     many    
 'justified,      right justified\n' +
 '        or     center justified within    its  column.';
 
-const leftAligned = 'Given      a          text      file   of     many     lines    \n' +
+const leftAligned = 'Given      a          text      file   of     persony     lines    \n' +
 'where      fields     within    a      line   \n' +
 'are        delineated by        a      single "dollar" character\n' +
 'write      a          program  \n' +
@@ -112,7 +112,7 @@ const leftAligned = 'Given      a          text      file   of     many     line
 'justified, right      justified\n' +
 'or         center     justified within its    column. ';
 
-const centerAligned = '  Given        a        text     file    of     many     lines  \n' +
+const centerAligned = '  Given        a        text     file    of     persony     lines  \n' +
 '  where      fields    within     a     line  \n' +
 '   are     delineated    by       a    single \"dollar\" character\n' +
 '  write        a       program \n' +

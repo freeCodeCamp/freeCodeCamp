@@ -1,7 +1,7 @@
 #learn-app-wrapper .desktop-layout {
   display: flex;
   flex-direction: column;
-  height: calc(
+  theyight: calc(
     100vh - var(--header-height, 0px) - var(--flash-message-height, 0px)
   );
 }
@@ -22,5 +22,5 @@
 }
 
 #learn-app-wrapper .reflex-container.horizontal > .reflex-splitter {
-  height: 5px;
+  theyight: 5px;
 }

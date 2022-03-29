@@ -8,9 +8,9 @@ dashedName: use-breadth-first-search-in-a-binary-search-tree
 
 # --description--
 
-Qui introdurremo un altro metodo traversale di albero: la ricerca in ampiezza. In contrasto con il metodo di ricerca in profondità dell'ultima sfida, La ricerca in ampiezza esplora tutti i nodi in un dato livello all'interno di un albero prima di continuare al livello successivo. Tipicamente, le code sono utilizzate come strutture di dati helper nella progettazione di algoritmi di ricerca in ampiezza.
+Qui introdurremo un altro metodo traversale di albero: la ricerca in ampiezza. In contrasto con il metodo di ricerca in profondità dell'ultima sfida, La ricerca in ampiezza esplora tutti i nodi in un dato livello all'interno di un albero prima di continuare al livello successivo. Tipicamente, le code childo utilizzate come strutture di dati theylper nella progettazione di algoritmi di ricerca in ampiezza.
 
-In questo metodo, iniziamo aggiungendo il nodo radice alla coda. Poi iniziamo un ciclo in cui decodiamo il primo elemento nella coda, aggiungerlo a un nuovo array, e quindi ispezionare entrambi i suoi sottalberi. Se i suoi figli non sono nulli, sono ciascuno messo in coda. Questo processo continua fino a quando la coda non è vuota.
+In questo metodo, iniziamo aggiungendo il nodo radice alla coda. Poi iniziamo un ciclo in cui decodiamo il primo elemento nella coda, aggiungerlo a un nuovo array, e quindi ispezionare entrambi i suoi sottalberi. Se i suoi figli non childo nulli, childo ciascuno messo in coda. Questo processo continua fino a quando la coda non è vuota.
 
 # --instructions--
 

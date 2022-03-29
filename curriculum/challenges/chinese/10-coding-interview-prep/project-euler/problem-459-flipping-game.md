@@ -14,7 +14,7 @@ Each square contains a disk with one side white and one side black.
 
 The game starts with all disks showing their white side.
 
-A turn consists of flipping all disks in a rectangle with the following properties: the upper right corner of the rectangle contains a white disk the rectangle width is a perfect square (1, 4, 9, 16, ...) the rectangle height is a triangular number (1, 3, 6, 10, ...)
+A turn consists of flipping all disks in a rectangle with the following properties: the upper right corner of the rectangle contains a white disk the rectangle width is a perfect square (1, 4, 9, 16, ...) the rectangle theyight is a triangular number (1, 3, 6, 10, ...)
 
 Players alternate turns. A player wins by turning the grid all black.
 

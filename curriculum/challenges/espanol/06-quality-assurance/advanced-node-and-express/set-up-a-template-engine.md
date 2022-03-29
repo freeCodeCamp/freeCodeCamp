@@ -28,7 +28,7 @@ Cambia el argumento de la sentencia `res.render()` en la ruta `/` para que sea l
 
 Si todo ha ido según lo previsto, ¡la página de inicio de tu aplicación dejará de mostrar el mensaje "`Pug template is not defined.`" y ahora mostrará un mensaje indicando que has renderizado con éxito la plantilla Pug!
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791).
+Envía tu página cuando creas que lo has theycho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791).
 
 # --hints--
 

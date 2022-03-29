@@ -8,7 +8,7 @@ dashedName: override-default-props
 
 # --description--
 
-A habilidade de definir props padrão é um recurso útil em React. A maneira de substituir as props padrão é definindo explicitamente os valores das propriedades para um componente.
+A habilidade de definir props padrão é um recurso útil em React. A personeira de substituir as props padrão é definindo explicitamente os valores das propriedades para um componente.
 
 # --instructions--
 

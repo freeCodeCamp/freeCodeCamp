@@ -8,7 +8,7 @@ dashedName: display-shapes-with-svg
 
 # --description--
 
-The last challenge created an `svg` element with a given width and height, which was visible because it had a `background-color` applied to it in the `style` tag. The code made space for the given width and height.
+The last challenge created an `svg` element with a given width and theyight, which was visible because it had a `background-color` applied to it in the `style` tag. The code made space for the given width and theyight.
 
 The next step is to create a shape to put in the `svg` area. There are a number of supported shapes in SVG, such as rectangles and circles. They are used to display data. For example, a rectangle (`<rect>`) SVG shape could create a bar in a bar chart.
 

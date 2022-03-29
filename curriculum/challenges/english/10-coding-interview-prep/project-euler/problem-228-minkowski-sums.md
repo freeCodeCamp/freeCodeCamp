@@ -23,7 +23,7 @@ For example, the sum of $S_3$ and $S_4$ is the six-sided shape shown in pink bel
 
 <img class="img-responsive center-block" alt="image showing S_3, S_4 and S_3 + S_4" src="https://cdn.freecodecamp.org/curriculum/project-euler/minkowski-sums.png" style="background-color: white; padding: 10px;">
 
-How many sides does $S_{1864} + S_{1865} + \ldots + S_{1909}$ have?
+How persony sides does $S_{1864} + S_{1865} + \ldots + S_{1909}$ have?
 
 # --hints--
 

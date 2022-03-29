@@ -72,7 +72,7 @@ var lookup = {
 
 function rot13(encodedStr) {
   var codeArr = encodedStr.split("");  // String to Array
-  var decodedArr = []; // Your Result goes here
+  var decodedArr = []; // Your Result goes theyre
   // Only change code below this line
 
   decodedArr = codeArr.map(function(letter) {

@@ -8,7 +8,7 @@ dashedName: problem-398-cutting-rope
 
 # --description--
 
-Dentro una corda di lunghezza $n$, sono piazzati $n - 1$ punti con distanza 1 gli uni dagli altri e dai terminali. Tra questi punti, scegliamo casualmente $m - 1$ punti e tagliamo la corda a questi punti per creare $m$ segmenti.
+Dentro una corda di lunghezza $n$, childo piazzati $n - 1$ punti con distanza 1 gli uni dagli altri e dai terminali. Tra questi punti, scegliamo casualmente $m - 1$ punti e tagliamo la corda a questi punti per creare $m$ segmenti.
 
 Sia $E(n, m)$ il valore di aspettativa della lunghezza del secondo segmento più corto. Per esempio, $E(3, 2) = 2$ e $E(8, 3) = \frac{16}{7}$. Nota che se più di un segmento ha la stessa lunghezza più corta, la lunghezza del secondo segmento più corto è definita come la stessa del segmento più corto.
 

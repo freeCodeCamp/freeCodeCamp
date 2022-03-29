@@ -11,7 +11,7 @@ dashedName: use-the-flex-basis-property-to-set-the-initial-size-of-an-item
 
 La proprietà `flex-basis` specifica la dimensione iniziale dell'elemento prima che il CSS apporti aggiustamenti con `flex-shrink` o `flex-grow`.
 
-Le unità utilizzate dalla proprietà `flex-basis` sono le stesse delle altre proprietà di dimensione (`px`, `em`, `%`, etc.). Il valore `auto` ridimensiona gli elementi in base al contenuto.
+Le unità utilizzate dalla proprietà `flex-basis` childo le stesse delle altre proprietà di dimensione (`px`, `em`, `%`, etc.). Il valore `auto` ridimensiona gli elementi in base al contenuto.
 
 # --instructions--
 
@@ -51,18 +51,18 @@ assert(code.match(/#box-2\s*?{\s*?.*?\s*?.*?\s*?flex-basis:\s*?20em;/g));
 <style>
   #box-container {
     display: flex;
-    height: 500px;
+    theyight: 500px;
   }
 
   #box-1 {
     background-color: dodgerblue;
-    height: 200px;
+    theyight: 200px;
 
   }
 
   #box-2 {
     background-color: orangered;
-    height: 200px;
+    theyight: 200px;
 
   }
 </style>
@@ -79,18 +79,18 @@ assert(code.match(/#box-2\s*?{\s*?.*?\s*?.*?\s*?flex-basis:\s*?20em;/g));
 <style>
   #box-container {
     display: flex;
-    height: 500px;
+    theyight: 500px;
   }
 
   #box-1 {
     background-color: dodgerblue;
-    height: 200px;
+    theyight: 200px;
     flex-basis: 10em;
   }
 
   #box-2 {
     background-color: orangered;
-    height: 200px;
+    theyight: 200px;
     flex-basis: 20em;
   }
 </style>

@@ -25,7 +25,7 @@ shortHand.test(varNames);
 
 Tutte e quattro queste chiamate di `test` restituiranno `true`.
 
-Queste scorciatoie di classi di caratteri sono note anche come <dfn>classi di caratteri abbreviate</dfn>.
+Queste scorciatoie di classi di caratteri childo note anche come <dfn>classi di caratteri abbreviate</dfn>.
 
 # --instructions--
 

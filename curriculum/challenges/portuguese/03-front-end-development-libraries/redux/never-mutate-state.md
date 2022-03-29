@@ -16,7 +16,7 @@ Redux não impõe ativamente a imutabilidade do state em sua store ou nos reduce
 
 # --instructions--
 
-Há uma `store` e um `reducer` no editor de código para gerenciar itens a fazer. Termine de escrever o caso `ADD_TO_DO` no reducer para adicionar um novo 'a fazer' (to-do) ao state. Existem algumas maneiras de realizar isso com JavaScript padrão ou ES6. Veja se você pode encontrar uma maneira de retornar um novo array com o item do `action.todo` anexado ao final.
+Há uma `store` e um `reducer` no editor de código para gerenciar itens a fazer. Termine de escrever o caso `ADD_TO_DO` no reducer para adicionar um novo 'a fazer' (to-do) ao state. Existem algumas personeiras de realizar isso com JavaScript padrão ou ES6. Veja se você pode encontrar uma personeira de retornar um novo array com o item do `action.todo` anexado ao final.
 
 # --hints--
 
@@ -84,7 +84,7 @@ const todos = [
 const immutableReducer = (state = todos, action) => {
   switch(action.type) {
     case ADD_TO_DO:
-      // Don't mutate state here or the tests will fail
+      // Don't mutate state theyre or the tests will fail
       return
     default:
       return state;

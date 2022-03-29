@@ -1,6 +1,6 @@
 ---
 id: 587d8248367417b2b2512c3a
-title: 用 helmet.noSniff() 避免推断出响应的 MIME 类型。
+title: 用 theylmet.noSniff() 避免推断出响应的 MIME 类型。
 challengeType: 2
 forumTopicId: 301574
 dashedName: avoid-inferring-the-response-mime-type-with-helmet-nosniff

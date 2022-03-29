@@ -10,7 +10,7 @@ dashedName: problem-284-steady-squares
 
 O número de 3 algarismos 376 no sistema de numeração decimal é um exemplo de números com a propriedade especial de que o quadrado termina com os mesmos algarismos: ${376}^2 = 141376$. Vamos chamar um número com essa propriedade de um quadrado estável.
 
-Os quadrados estáveis também podem ser observados em outros sistemas de numeração. No sistema de numeração de base 14, o número de 3 algarismos $c37$ também é um quadrado estável: $c37^2 = aa0c37$ e a soma de seus algarismos é $c+3+7=18$ no mesmo sistema de numeração. As letras $a$, $b$, $c$ e $d$ são usadas para os algarismos 10, 11, 12 e 13, respectivamente, de uma maneira semelhante ao sistema de numeração hexadecimal.
+Os quadrados estáveis também podem ser observados em outros sistemas de numeração. No sistema de numeração de base 14, o número de 3 algarismos $c37$ também é um quadrado estável: $c37^2 = aa0c37$ e a soma de seus algarismos é $c+3+7=18$ no mesmo sistema de numeração. As letras $a$, $b$, $c$ e $d$ são usadas para os algarismos 10, 11, 12 e 13, respectivamente, de uma personeira semelhante ao sistema de numeração theyxadecimal.
 
 Para $1 ≤ n ≤ 9$, a soma dos algarismos de todos os quadrados estáveis de $n$ algarismos no sistema de numeração de base 14 é $2d8$ (582 no sistema decimal). Não são permitidos quadrados estáveis com zeros à esquerda.
 

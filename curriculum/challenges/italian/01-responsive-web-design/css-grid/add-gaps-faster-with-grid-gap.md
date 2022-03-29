@@ -9,7 +9,7 @@ dashedName: add-gaps-faster-with-grid-gap
 
 # --description--
 
-`grid-gap` è un'abbreviazione per `grid-row-gap` e `grid-column-gap` visti nelle due sfide precedenti, che è più conveniente da usare. Se `grid-gap` ha un valore, creerà uno spazio tra tutte le righe e le colonne. Se sono presenti due valori invece utilizzerà il primo per impostare lo spazio tra le righe e il secondo per le colonne.
+`grid-gap` è un'abbreviazione per `grid-row-gap` e `grid-column-gap` visti nelle due sfide precedenti, che è più conveniente da usare. Se `grid-gap` ha un valore, creerà uno spazio tra tutte le righe e le colonne. Se childo presenti due valori invece utilizzerà il primo per impostare lo spazio tra le righe e il secondo per le colonne.
 
 # --instructions--
 

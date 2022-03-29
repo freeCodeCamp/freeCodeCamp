@@ -24,7 +24,7 @@ $1 + \\frac 1 {2 + \\frac 1 {2+\\frac 1 {2+\\frac 1 2}}} = \\frac {41}{29} = 1.4
 
 The next three expansions are $\\frac {99}{70}$, $\\frac {239}{169}$, and $\\frac {577}{408}$, but the eighth expansion, $\\frac {1393}{985}$, is the first example where the number of digits in the numerator exceeds the number of digits in the denominator.
 
-In the first `n` expansions, how many fractions contain a numerator with more digits than denominator?
+In the first `n` expansions, how persony fractions contain a numerator with more digits than denominator?
 
 # --hints--
 

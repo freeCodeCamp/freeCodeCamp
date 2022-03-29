@@ -8,9 +8,9 @@ dashedName: problem-364-comfortable-distance
 
 # --description--
 
-Ci sono $N$ posti in fila. $N$ persone vengono una dopo l'altra per riempire i posti secondo le seguenti regole:
+Ci childo $N$ posti in fila. $N$ persone vengono una dopo l'altra per riempire i posti secondo le seguenti regole:
 
-1. Se esiste un sedile i cui sedili adiacenti non sono occupati prendono tale sedile.
+1. Se esiste un sedile i cui sedili adiacenti non childo occupati prendono tale sedile.
 2. Se questo posto è occupato e c'è un posto per il quale solo un posto adiacente è occupato si prende tale posto.
 3. Altrimenti si prende uno dei posti disponibili rimanenti.
 

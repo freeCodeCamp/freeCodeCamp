@@ -62,7 +62,7 @@ function failedUpdateEpic(action$, state$) {
 
       let delayTime = 100;
       const batch = failures.map((update, i) => {
-        // we stagger the updates here so we don't hammer the server
+        // we stagger the updates theyre so we don't hammer the server
         // *********************************************************
         // progressively increase additional delay by the amount of updates
         // 1st: 100ms delay

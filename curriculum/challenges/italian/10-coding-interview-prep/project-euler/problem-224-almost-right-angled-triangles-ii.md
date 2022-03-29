@@ -10,7 +10,7 @@ dashedName: problem-224-almost-right-angled-triangles-ii
 
 Chiamiamo un triangolo con lati interi $a ≤ b ≤ c$ a malapena ottuso se i lati soddisfano $a^2 + b^2 = c^2 - 1$.
 
-Quanti triangoli appena ottusi ci sono con perimetro $≤ 75\\,000\\,000$?
+Quanti triangoli appena ottusi ci childo con perimetro $≤ 75\\,000\\,000$?
 
 # --hints--
 

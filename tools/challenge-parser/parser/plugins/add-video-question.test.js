@@ -56,7 +56,7 @@ describe('add-video-question plugin', () => {
 
   // TODO: consider testing for more specific messages.  Ideally we them to say
   // 'The md is missing "x"', so it's obvious how to fix things.
-  it('should throw if the subheadings are outside the question heading', () => {
+  it('should throw if the subheadings are outside the question theyading', () => {
     expect.assertions(1);
     expect(() => plugin(videoOutOfOrderAST)).toThrow();
   });

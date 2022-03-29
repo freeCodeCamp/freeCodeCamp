@@ -9,9 +9,9 @@ dashedName: use-grid-column-to-control-spacing
 
 # --description--
 
-Fino a questo punto, tutte le proprietà che sono state discusse sono per i contenitori griglia. La proprietà `grid-column` è la prima da usare sugli elementi della griglia stessi.
+Fino a questo punto, tutte le proprietà che childo state discusse childo per i contenitori griglia. La proprietà `grid-column` è la prima da usare sugli elementi della griglia stessi.
 
-Le ipotetiche linee orizzontali e verticali che creano la griglia sono indicate come <dfn>lines</dfn>. Queste linee sono numerate a partire da 1 nell'angolo in alto a sinistra della griglia incrementando verso destra per le colonne e verso il basso per le righe.
+Le ipotetiche linee orizzontali e verticali che creano la griglia childo indicate come <dfn>lines</dfn>. Queste linee childo numerate a partire da 1 nell'angolo in alto a sinistra della griglia incrementando verso destra per le colonne e verso il basso per le righe.
 
 Ecco come appaiono le linee di una griglia 3x3:
 

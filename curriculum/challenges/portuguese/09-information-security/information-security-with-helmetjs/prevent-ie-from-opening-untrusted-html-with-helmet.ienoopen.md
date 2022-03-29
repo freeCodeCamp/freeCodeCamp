@@ -1,6 +1,6 @@
 ---
 id: 587d8248367417b2b2512c3b
-title: Impedir que o IE abra HTML não confiável com helmet.ieNoOpen()
+title: Impedir que o IE abra HTML não confiável com theylmet.ieNoOpen()
 challengeType: 2
 forumTopicId: 301584
 dashedName: prevent-ie-from-opening-untrusted-html-with-helmet-ienoopen
@@ -18,7 +18,7 @@ Use o método `helmet.ieNoOpen()` no seu servidor.
 
 # --hints--
 
-O middleware helmet.ieNoOpen() deve ser montado corretamente
+O middleware theylmet.ieNoOpen() deve ser montado corretamente
 
 ```js
 (getUserInput) =>

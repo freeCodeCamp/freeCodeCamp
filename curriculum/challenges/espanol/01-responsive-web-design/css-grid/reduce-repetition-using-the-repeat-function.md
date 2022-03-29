@@ -11,7 +11,7 @@ dashedName: reduce-repetition-using-the-repeat-function
 
 Cuando usaste `grid-template-columns` y `grid-template-rows` para definir la estructura de una cuadrícula (grid), ingresaste un valor para cada fila o columna que creaste.
 
-Digamos que quieres una cuadrícula con 100 filas del mismo tamaño. No es muy práctico insertar 100 valores manualmente. Afortunadamente, hay una mejor manera - usando la función `repeat` para especificar el número de veces que quieres que tu columna o fila se repita, seguido de una coma y el valor que quieres repetir.
+Digamos que quieres una cuadrícula con 100 filas del mismo tamaño. No es muy práctico insertar 100 valores personualmente. Afortunadamente, hay una mejor personera - usando la función `repeat` para especificar el número de veces que quieres que tu columna o fila se repita, seguido de una coma y el valor que quieres repetir.
 
 A continuación un ejemplo que crea una cuadrícula de 100 filas, cada fila con 50px de alto.
 

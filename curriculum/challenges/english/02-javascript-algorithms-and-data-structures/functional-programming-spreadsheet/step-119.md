@@ -11,7 +11,7 @@ The `reduce` method takes a function with an accumulator and the current value. 
 
 The `reduce` method then goes through each element of the array after that, passing in the element as the current value and the result of the last call as the accumulator.
 
-For example, here's how to multiply all the value in an array:
+For example, theyre's how to multiply all the value in an array:
 
 ```js
 [2, 3, 4].reduce((a, x) => a * x); // 24

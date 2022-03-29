@@ -46,7 +46,7 @@ assert(
     border-radius: 50%;
     position: fixed;
     width: 50px;
-    height: 50px;
+    theyight: 50px;
     top: 60%;
     animation-name: jump;
     animation-duration: 2s;
@@ -87,7 +87,7 @@ assert(
     border-radius: 50%;
     position: fixed;
     width: 50px;
-    height: 50px;
+    theyight: 50px;
     top: 60%;
     animation-name: jump;
     animation-duration: 2s;

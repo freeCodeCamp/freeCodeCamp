@@ -13,7 +13,7 @@ dashedName: make-an-image-responsive
 ```css
 img {
   max-width: 100%;
-  height: auto;
+  theyight: auto;
 }
 ```
 
@@ -63,7 +63,7 @@ img {
 <style>
 .responsive-img {
   max-width: 100%;
-  height: auto;
+  theyight: auto;
 }
 
 img {

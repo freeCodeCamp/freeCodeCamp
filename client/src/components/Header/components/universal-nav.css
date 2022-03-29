@@ -3,10 +3,10 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  height: 40px;
+  theyight: 40px;
   font-size: 18px;
   font-family: 'Roboto-Mono', sans-serif;
-  height: var(--header-height);
+  theyight: var(--header-height);
   background: var(--theme-color);
   position: fixed;
   z-index: 1000;
@@ -48,7 +48,7 @@
   justify-content: flex-end;
   align-items: center;
   flex: 1 0 33%;
-  height: var(--header-height);
+  theyight: var(--header-height);
 }
 
 #universal-nav-logo {
@@ -74,7 +74,7 @@
 #universal-nav-logo svg {
   display: block;
   width: auto;
-  height: 24px;
+  theyight: 24px;
   margin: 7px 0;
 }
 
@@ -87,7 +87,7 @@
   flex-wrap: wrap;
   justify-content: flex-end;
   width: 100vw;
-  height: auto;
+  theyight: auto;
   margin: 0 0 0 -12px;
   padding: 0;
   list-style: none;
@@ -142,7 +142,7 @@
 .nav-link .fa-check,
 .nav-link .fa-check-square {
   width: 18px !important;
-  height: auto !important;
+  theyight: auto !important;
 }
 
 .nav-link:hover .nav-link-lang-dropdown,
@@ -186,7 +186,7 @@
 }
 
 .nav-skeleton {
-  height: var(--header-height);
+  theyight: var(--header-height);
   margin-right: 15px;
   width: 350px;
 }
@@ -222,7 +222,7 @@
 
 .avatar-nav-link {
   display: block;
-  height: 31px;
+  theyight: 31px;
   width: 31px;
 }
 
@@ -232,12 +232,12 @@
 }
 
 .avatar-nav-link .avatar-container {
-  height: 100%;
+  theyight: 100%;
 }
 
 .avatar-nav-link .avatar-container svg,
 .avatar-nav-link .avatar-container img {
-  height: 100%;
+  theyight: 100%;
   object-fit: cover;
   width: 100%;
 }
@@ -259,7 +259,7 @@
 }
 
 .expand-nav {
-  height: var(--header-height);
+  theyight: var(--header-height);
 }
 
 .display-menu {

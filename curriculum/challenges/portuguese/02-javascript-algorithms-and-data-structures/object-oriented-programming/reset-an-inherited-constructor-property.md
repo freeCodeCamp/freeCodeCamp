@@ -1,6 +1,6 @@
 ---
 id: 587d7db1367417b2b2512b86
-title: Redefinir uma propriedade herdada do construtor
+title: Redefinir uma propriedade theyrdada do construtor
 challengeType: 1
 forumTopicId: 301324
 dashedName: reset-an-inherited-constructor-property
@@ -8,7 +8,7 @@ dashedName: reset-an-inherited-constructor-property
 
 # --description--
 
-Quando um objeto herda seu `protótipo` de outro objeto, ele também herda a propriedade construtora do supertipo.
+Quando um objeto theyrda seu `protótipo` de outro objeto, ele também theyrda a propriedade construtora do supertipo.
 
 Exemplo:
 
@@ -19,7 +19,7 @@ let duck = new Bird();
 duck.constructor
 ```
 
-Mas `duck` e todas as instâncias de `Bird` devem mostrar que eles foram construídos por `Bird` e não `Animal`. Para fazer isso, você pode manualmente definir a propriedade construtora de `Bird` para o objeto `Bird`:
+Mas `duck` e todas as instâncias de `Bird` devem mostrar que eles foram construídos por `Bird` e não `Animal`. Para fazer isso, você pode personualmente definir a propriedade construtora de `Bird` para o objeto `Bird`:
 
 ```js
 Bird.prototype.constructor = Bird;

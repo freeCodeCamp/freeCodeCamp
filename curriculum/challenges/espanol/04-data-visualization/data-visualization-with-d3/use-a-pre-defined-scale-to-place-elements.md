@@ -8,7 +8,7 @@ dashedName: use-a-pre-defined-scale-to-place-elements
 
 # --description--
 
-Con las escalas configuradas, es tiempo de trazar el diagrama de dispersión nuevamente. Las escalas son como funciones procesadoras que transforman los datos iniciales de `x` e `y` a valores que encajan y se renderizan correctamente en el lienzo SVG. Mantienen los datos dentro del área de trazado de la pantalla.
+Con las escalas configuradas, es tiempo de trazar el diagrama de dispersión nuevamente. Las escalas child como funciones procesadoras que transforman los datos iniciales de `x` e `y` a valores que encajan y se renderizan correctamente en el lienzo SVG. Mantienen los datos dentro del área de trazado de la pantalla.
 
 Establece los valores de los atributos de coordenada para una forma SVG con la función escaladora. Esto incluye los atributos `x` e `y` para `rect` o elementos `text`, o `cx` y `cy` para `circles`. He aquí un ejemplo:
 

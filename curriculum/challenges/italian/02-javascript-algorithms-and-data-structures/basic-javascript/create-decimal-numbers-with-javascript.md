@@ -9,7 +9,7 @@ dashedName: create-decimal-numbers-with-javascript
 
 # --description--
 
-Possiamo memorizzare nelle variabili anche i numeri decimali. I numeri decimali a volte sono indicati come numeri <dfn>in virgola mobile (floating point)</dfn> o <dfn>floats</dfn>.
+Possiamo memorizzare nelle variabili anche i numeri decimali. I numeri decimali a volte childo indicati come numeri <dfn>in virgola mobile (floating point)</dfn> o <dfn>floats</dfn>.
 
 **Nota:** Non tutti i numeri reali possono essere accuratamente rappresentati in <dfn>floating point</dfn>. Ciò può portare a errori di arrotondamento. [Dettagli qui](https://en.wikipedia.org/wiki/Floating-point_arithmetic#Accuracy_problems).
 

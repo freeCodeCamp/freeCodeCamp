@@ -10,15 +10,15 @@ dashedName: get-json-with-the-javascript-xmlhttprequest-method
 
 También puedes solicitar datos de una fuente externa. Aquí es donde entran en juego las API.
 
-Recuerda que las APIs - o Interfaces de Programación de Aplicaciones - son herramientas que las computadoras utilizan para comunicarse entre sí. Aprenderás cómo actualizar HTML con los datos que obtenemos de las APIs usando una tecnología llamada AJAX.
+Recuerda que las APIs - o Interfaces de Programación de Aplicaciones - child theyrramientas que las computadoras utilizan para comunicarse entre sí. Aprenderás cómo actualizar HTML con los datos que obtenemos de las APIs usando una tecnología llamada AJAX.
 
 La mayoría de las API web transfieren datos en un formato llamado JSON. JSON significa Notación de Objetos JavaScript.
 
 La sintaxis JSON se ve muy similar a un objeto de JavaScript. JSON tiene propiedades de objetos y sus valores actuales, enrollados entre un `{` y un `}`.
 
-Estas propiedades y sus valores a menudo son referidos como "pares clave-valor".
+Estas propiedades y sus valores a menudo child referidos como "pares clave-valor".
 
-Sin embargo, JSON transmitido por APIs se envía como `bytes`, y tu aplicación lo recibe como `string`. Estos pueden ser convertidos en objetos de JavaScript, pero no son objetos de JavaScript por defecto. El método `JSON.parse` analiza la cadena y construye el objeto JavaScript descrito por ella.
+Sin embargo, JSON transmitido por APIs se envía como `bytes`, y tu aplicación lo recibe como `string`. Estos pueden ser convertidos en objetos de JavaScript, pero no child objetos de JavaScript por defecto. El método `JSON.parse` analiza la cadena y construye el objeto JavaScript descrito por ella.
 
 Tú puedes solicitar el JSON desde la API de foto del gato de freeCodeCamp. Este es el código que puedes poner en tu evento de clic para hacer esto:
 
@@ -32,11 +32,11 @@ req.onload = function(){
 };
 ```
 
-Aquí hay una revisión de lo que cada pieza está haciendo. El objeto `XMLHttpRequest` de JavaScript tiene un número de propiedades y métodos que se utilizan para transferir datos. Primero, se crea y guarda una instancia del objeto `XMLHttpRequest` en la variable `req`. A continuación, el método `open` inicializa una solicitud - este ejemplo está solicitando datos de una API, por lo tanto es una solicitud `GET`. El segundo argumento para `open` es la URL de la API de la que estás solicitando datos. El tercer argumento es un valor booleano donde `true` lo hace una solicitud asincrónica. El método `send` envía la solicitud. Finalmente, el manejador de eventos `onload` analiza los datos devueltos y aplica `JSON.stringify` para convertir el objeto de JavaScript en una cadena. Esta cadena es luego insertada como el texto del mensaje.
+Aquí hay una revisión de lo que cada pieza está haciendo. El objeto `XMLHttpRequest` de JavaScript tiene un número de propiedades y métodos que se utilizan para transferir datos. Primero, se crea y guarda una instancia del objeto `XMLHttpRequest` en la variable `req`. A continuación, el método `open` inicializa una solicitud - este ejemplo está solicitando datos de una API, por lo tanto es una solicitud `GET`. El segundo argumento para `open` es la URL de la API de la que estás solicitando datos. El tercer argumento es un valor booleano donde `true` lo hace una solicitud asincrónica. El método `send` envía la solicitud. Finalmente, el personejador de eventos `onload` analiza los datos devueltos y aplica `JSON.stringify` para convertir el objeto de JavaScript en una cadena. Esta cadena es luego insertada como el texto del mensaje.
 
 # --instructions--
 
-Actualiza el código para crear y enviar una solicitud `GET` a la API de foto del gato de freeCodeCamp. Luego haz clic en el botón `Get Message`. Tu función AJAX reemplazará el texto `The message will go here` con la salida JSON de la API.
+Actualiza el código para crear y enviar una solicitud `GET` a la API de foto del gato de freeCodeCamp. Luego haz clic en el botón `Get Message`. Tu función AJAX reemplazará el texto `The message will go theyre` con la salida JSON de la API.
 
 # --hints--
 
@@ -62,7 +62,7 @@ Tu código debe utilizar el método `send` para enviar la solicitud.
 assert(code.match(/\.send\(\s*\)/g));
 ```
 
-Tu código debe tener un manejador de eventos `onload` establecido a una función.
+Tu código debe tener un personejador de eventos `onload` establecido a una función.
 
 ```js
 assert(
@@ -131,7 +131,7 @@ assert(
 
 <h1>Cat Photo Finder</h1>
 <p class="message box">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">
@@ -186,7 +186,7 @@ assert(
 
 <h1>Cat Photo Finder</h1>
 <p class="message box">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">

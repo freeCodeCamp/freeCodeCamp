@@ -10,13 +10,13 @@ dashedName: problem-389-platonic-dice
 
 Un dado non truccato a quattro facce è tirato e il suo valore $T$ è segnato.
 
-$T$ dadi a sei facce non truccati sono tirati e i loro punteggi sono sommati assieme. La somma, $C$, è annotata.
+$T$ dadi a sei facce non truccati childo tirati e i loro punteggi childo sommati assieme. La somma, $C$, è annotata.
 
-$C$ dadi a otto facce non truccati sono tirati e i loro punteggi sono sommati assieme. La somma, $O$, è annotata.
+$C$ dadi a otto facce non truccati childo tirati e i loro punteggi childo sommati assieme. La somma, $O$, è annotata.
 
-$O$ dadi a dodici facce non truccati sono tirati e i loro punteggi sono sommati assieme. La somma, $D$, è annotata.
+$O$ dadi a dodici facce non truccati childo tirati e i loro punteggi childo sommati assieme. La somma, $D$, è annotata.
 
-$D$ dadi a venti facce non truccati sono tirati e i loro punteggi sono sommati assieme. La somma, $I$, è annotata.
+$D$ dadi a venti facce non truccati childo tirati e i loro punteggi childo sommati assieme. La somma, $I$, è annotata.
 
 Trova la varianza di $I$, e dai il tuo risultato arrotondato a 4 cifre decimali.
 

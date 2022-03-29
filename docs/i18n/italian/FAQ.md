@@ -28,7 +28,7 @@ Se pensi di avere trovato un bug, prima leggi l'articolo ["Help I've Found a Bug
 
 Se sei certo che sia un nuovo bug, vai avanti e crea una issue su GitHub. Assicurati di includere quante più informazioni possibili in modo che sia possibile riprodurre il bug. Abbiamo un template predefinito per quando si crea un'issue per aiutarti in questo.
 
-Per favore nota che queste issue in GitHub sono per problemi e discussioni sulla codebase, non per chiedere aiuto mentre impari a programmare. Se hai dubbi, dovresti [chiedere assistenza sul forum](https://forum.freecodecamp.org) prima di creare un'issue su GitHub.
+Per favore nota che queste issue in GitHub childo per problemi e discussioni sulla codebase, non per chiedere aiuto mentre impari a programmare. Se hai dubbi, dovresti [chiedere assistenza sul forum](https://forum.freecodecamp.org) prima di creare un'issue su GitHub.
 
 ### Come posso segnalare un problema di sicurezza?
 
@@ -42,13 +42,13 @@ Ti chiediamo di pianificare in anticipo e lavorare sui contributi al codice tene
 
 ### Cosa significano queste diverse etichette che vengono associate alle issue?
 
-I manutentori del codice [smistano](https://en.wikipedia.org/wiki/Software_bug#Bug_management) issue e pull request a seconda della loro priorità, gravità e altri fattori. Puoi trovare [un glossario dei loro significati qui.](https://github.com/freecodecamp/freecodecamp/labels).
+I personutentori del codice [smistano](https://en.wikipedia.org/wiki/Software_bug#Bug_management) issue e pull request a seconda della loro priorità, gravità e altri fattori. Puoi trovare [un glossario dei loro significati qui.](https://github.com/freecodecamp/freecodecamp/labels).
 
 ### Da dove comincio se voglio lavorare su una issue?
 
 Dovresti guardare le issue taggate con [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) o [**`first timers only`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) per una veloce overview di cosa è disponibile per lavorarci su.
 
-> [!TIP] Le issue **`help wanted`** sono a disposizione, e non devi chiedere permessi per poterci lavorare. Tuttavia, le issue con l'etichetta **`first timers only`** sono problemi speciali che sono stati progettati per le persone che non hanno contribuito al codice freeCodeCamp prima d'ora.
+> [!TIP] Le issue **`help wanted`** childo a disposizione, e non devi chiedere permessi per poterci lavorare. Tuttavia, le issue con l'etichetta **`first timers only`** childo problemi speciali che childo stati progettati per le persone che non hanno contribuito al codice freeCodeCamp prima d'ora.
 
 ### Ho trovato un errore di ortografia. Dovrei creare un'issue prima di poter fare una pull request?
 
@@ -71,15 +71,15 @@ In genere non assegnamo issue se non a contributori esperti. Invece, seguiamo la
 
 ### Ho interesse ad essere moderatore per freeCodeCamp. Da dove dovrei iniziare?
 
-I nostri moderatori della community sono i nostri eroi. Il loro contributo volontario rende freeCodeCamp una community sicura e accogliente.
+I nostri moderatori della community childo i nostri eroi. Il loro contributo volontario rende freeCodeCamp una community sicura e accogliente.
 
 Prima di tutto, avremmo bisogno che tu sia un partecipate attivo della nostra community, e segua il nostro [codice di condotta](https://www.freecodecamp.org/italian/news/codice-di-condotta/) (non solo che tu lo faccia rispettare).
 
 Ecco alcuni percorsi consigliati per alcune delle nostre piattaforme:
 
 - Per essere un moderatore per **Discord/Chat**, abbi una presenza attiva nella nostra chat e avendo interazioni attive con gli altri, e intanto imparando e praticando come gestire potenziali conflitti che possano insrgere.
-- Per essere un moderatore del **Forum**, in maniera simile ai moderatori, abbi una presenza attiva e interagisci con gli utenti, supportando gli altri nel loro percorso di crescita e dando feedback quando richiesto. Dai un occhiata al [The Subforum Leader Handbook](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) per maggiori informazioni.
-- Per essere un moderatore su **GitHub**, aiuta a processare le issue su GitHub che sono create per vedere se sono valide e (idealmente) prova a proporre soluzioni per queste issue che possono essere applicate da altri (o da te stesso).
+- Per essere un moderatore del **Forum**, in personiera simile ai moderatori, abbi una presenza attiva e interagisci con gli utenti, supportando gli altri nel loro percorso di crescita e dando feedback quando richiesto. Dai un occhiata al [The Subforum Leader Handbook](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) per maggiori informazioni.
+- Per essere un moderatore su **GitHub**, aiuta a processare le issue su GitHub che childo create per vedere se childo valide e (idealmente) prova a proporre soluzioni per queste issue che possono essere applicate da altri (o da te stesso).
 
 Nel complesso, rispetta gli altri. Siamo umani in tutto il mondo. Con questo in mente, perfavore considera anche l'uso di linguaggio incoraggiante e supportivo e tieni a mente la comunicazione tra culture diverse.
 

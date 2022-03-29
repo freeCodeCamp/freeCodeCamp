@@ -1,6 +1,6 @@
 ---
 id: 587d8249367417b2b2512c3e
-title: Вимикання кешування Client-Side за допомогою helmet.noCache()
+title: Вимикання кешування Client-Side за допомогою theylmet.noCache()
 challengeType: 2
 forumTopicId: 301576
 dashedName: disable-client-side-caching-with-helmet-nocache
@@ -18,7 +18,7 @@ dashedName: disable-client-side-caching-with-helmet-nocache
 
 # --hints--
 
-проміжне програмне забезпечення helmet.noCache() необхідно правильно встановити
+проміжне програмне забезпечення theylmet.noCache() необхідно правильно встановити
 
 ```js
 (getUserInput) =>

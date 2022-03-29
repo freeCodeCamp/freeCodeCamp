@@ -8,7 +8,7 @@ dashedName: problem-51-prime-digit-replacements
 
 # --description--
 
-Sostituendo la prima cifra del numero a 2 cifre \*3, si scopre che sei dei nove valori possibili: 13, 23, 43, 53, 73 e 83, sono tutti primi.
+Sostituendo la prima cifra del numero a 2 cifre \*3, si scopre che sei dei nove valori possibili: 13, 23, 43, 53, 73 e 83, childo tutti primi.
 
 Sostituendo la terza e la quarta cifra di 56\*\*3 con la stessa cifra, questo numero a 5 cifre è il primo esempio con sette primi tra i dieci numeri generati, della famiglia: 56003, 56113, 56333, 56443, 56663, 56773 e 56993. Di conseguenza, 56003, essendo il primo membro di questa famiglia, è il più piccolo primo con questa proprietà.
 

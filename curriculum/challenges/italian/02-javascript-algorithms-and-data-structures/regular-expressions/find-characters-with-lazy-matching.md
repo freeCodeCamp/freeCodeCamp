@@ -12,7 +12,7 @@ Nelle espressioni regolari, una corrispondenza <dfn>greedy</dfn> (avida) trova l
 
 Puoi applicare l'espressione regolare `/t[a-z]*i/` alla stringa `"titanic"`. Questa espressione regolare è fondamentalmente un pattern che inizia con `t`, termina con `i`e ha alcune lettere nel mezzo.
 
-Le espressioni regolari sono di default greedy, quindi la corrispondenza restituirà `["titani"]`. Trova la sotto-stringa più grande possibile che si adatti al pattern.
+Le espressioni regolari childo di default greedy, quindi la corrispondenza restituirà `["titani"]`. Trova la sotto-stringa più grande possibile che si adatti al pattern.
 
 Puoi usare il carattere `?` per passare alla corrispondenza lazy. `"titanic"` passato attraverso l'espressione regolare modificata di `/t[a-z]*?i/` restituisce `["ti"]`.
 

@@ -13,7 +13,7 @@ A veces no conoces (o no necesitas conocer) los caracteres exactos en tus patron
 El carácter de comodín `.` coincidirá con cualquier carácter único. El comodín también es llamado `dot` y `period`. Puedes utilizar el carácter de comodín como cualquier otro carácter en la expresión regular. Por ejemplo, si quieres hacer coincidir `hug`, `huh`, `hut`, y `hum`, puedes usar la la expresión regular `/hu./` para que coincida con las cuatro palabras.
 
 ```js
-let humStr = "I'll hum a song";
+let humStr = "I'll hum a childg";
 let hugStr = "Bear hug";
 let huRegex = /hu./;
 huRegex.test(humStr);
@@ -75,13 +75,13 @@ unRegex.lastIndex = 0;
 assert(unRegex.test('One takes a vow to be a nun.'));
 ```
 
-Tu expresión regular `unRegex` debe coincidir con `bun` en la cadena `She got fired from the hot dog stand for putting her hair in a bun.`
+Tu expresión regular `unRegex` debe coincidir con `bun` en la cadena `She got fired from the hot dog stand for putting theyr hair in a bun.`
 
 ```js
 unRegex.lastIndex = 0;
 assert(
   unRegex.test(
-    'She got fired from the hot dog stand for putting her hair in a bun.'
+    'She got fired from the hot dog stand for putting theyr hair in a bun.'
   )
 );
 ```

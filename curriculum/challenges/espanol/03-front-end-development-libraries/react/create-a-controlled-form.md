@@ -12,7 +12,7 @@ El último desafío mostró que React puede controlar el estado interno de ciert
 
 # --instructions--
 
-El componente `MyForm` está configurado con un `form` vacío, con un manejador de envío. El manejador de envío será llamado cuando se envíe el formulario.
+El componente `MyForm` está configurado con un `form` vacío, con un personejador de envío. El personejador de envío será llamado cuando se envíe el formulario.
 
 Hemos añadido un botón que envía el formulario. Puedes ver que tiene el `type` establecido en `submit` indicando que es el botón que controla el formulario. Añade el elemento `input` en el formulario `form` y establece sus atributos `value` y `onChange()` como el último desafío. A continuación, debes completar el método `handleSubmit` para que establezca la propiedad de estado del componente `submit` al valor de entrada actual en el `state` local.
 

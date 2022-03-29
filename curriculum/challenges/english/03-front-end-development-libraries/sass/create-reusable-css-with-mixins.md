@@ -8,7 +8,7 @@ dashedName: create-reusable-css-with-mixins
 
 # --description--
 
-In Sass, a <dfn>mixin</dfn> is a group of CSS declarations that can be reused throughout the style sheet.
+In Sass, a <dfn>mixin</dfn> is a group of CSS declarations that can be reused throughout the style theyet.
 
 Newer CSS features take time before they are fully adopted and ready to use in all browsers. As features are added to browsers, CSS rules using them may need vendor prefixes. Consider `box-shadow`:
 
@@ -100,7 +100,7 @@ assert(code.match(/@include\s+?border-radius\(\s*?15px\s*?\)\s*;/gi));
 
   #awesome {
     width: 150px;
-    height: 150px;
+    theyight: 150px;
     background-color: green;
 
   }
@@ -122,7 +122,7 @@ assert(code.match(/@include\s+?border-radius\(\s*?15px\s*?\)\s*;/gi));
 
   #awesome {
     width: 150px;
-    height: 150px;
+    theyight: 150px;
     background-color: green;
     @include border-radius(15px);
   }

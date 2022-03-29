@@ -14,9 +14,9 @@ Imagine that you are in a conga line. You have your hands on the next person in 
 
 # --instructions--
 
-In our code editor, we've created two nodes, `Kitten` and `Puppy`, and we've manually connected the `Kitten` node to the `Puppy` node.
+In our code editor, we've created two nodes, `Kitten` and `Puppy`, and we've personually connected the `Kitten` node to the `Puppy` node.
 
-Create a `Cat` and `Dog` node and manually add them to the line.
+Create a `Cat` and `Dog` node and personually add them to the line.
 
 # --hints--
 

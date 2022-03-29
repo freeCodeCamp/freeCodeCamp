@@ -85,18 +85,18 @@
 .ais-PoweredBy-logo {
   display: block;
   width: 70px;
-  height: auto;
+  theyight: auto;
 }
 .ais-RatingMenu-starIcon {
   display: block;
   width: 20px;
-  height: 20px;
+  theyight: 20px;
 }
 .ais-SearchBox-input::-ms-clear,
 .ais-SearchBox-input::-ms-reveal {
   display: none;
   width: 0;
-  height: 0;
+  theyight: 0;
 }
 .ais-SearchBox-input::-webkit-search-decoration,
 .ais-SearchBox-input::-webkit-search-cancel-button,
@@ -110,7 +110,7 @@
   margin-bottom: 40px;
 }
 .ais-RangeSlider .rheostat-background {
-  height: 6px;
+  theyight: 6px;
   top: 0px;
   width: 100%;
 }
@@ -126,14 +126,14 @@
 .ais-RangeSlider .rheostat-progress {
   position: absolute;
   top: 1px;
-  height: 4px;
+  theyight: 4px;
   background-color: #333;
 }
 .rheostat-handle {
   position: relative;
   z-index: 1;
   width: 20px;
-  height: 20px;
+  theyight: 20px;
   background-color: #fff;
   border: 1px solid #333;
   border-radius: 0;
@@ -144,11 +144,11 @@
   margin-left: -1px;
   position: absolute;
   width: 1px;
-  height: 5px;
+  theyight: 5px;
   background-color: #aaa;
 }
 .rheostat-marker--large {
-  height: 9px;
+  theyight: 9px;
 }
 .rheostat-value {
   margin-left: 50%;
@@ -351,7 +351,7 @@ a[class^='ais-'] {
   margin-left: 0.3em;
   content: '';
   width: 10px;
-  height: 10px;
+  theyight: 10px;
   display: none;
   background-image: url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Cpath d=%27M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z%27 fill%3D%22%233A4570%22 /%3E%3C/svg%3E');
   background-size: 100% 100%;
@@ -463,7 +463,7 @@ a[class^='ais-'] {
 .ais-RangeInput-input {
   padding: 0 0.2rem;
   width: 5rem;
-  height: 1.5rem;
+  theyight: 1.5rem;
   line-height: 1.5rem;
 }
 .ais-RangeInput-separator {
@@ -475,7 +475,7 @@ a[class^='ais-'] {
   -moz-appearance: none;
   appearance: none;
   padding: 0 0.5rem;
-  height: 1.5rem;
+  theyight: 1.5rem;
   line-height: 1.5rem;
   font-size: 0.8rem;
   color: #fff;
@@ -620,7 +620,7 @@ a[class^='ais-'] {
   position: absolute;
   z-index: 100;
   width: 20px;
-  height: 20px;
+  theyight: 20px;
   top: 50%;
   right: 0.3rem;
   -webkit-transform: translateY(-50%);
@@ -645,15 +645,15 @@ a[class^='ais-'] {
 }
 .ais-SearchBox-submitIcon {
   width: 14px;
-  height: 14px;
+  theyight: 14px;
 }
 .ais-SearchBox-resetIcon {
   width: 12px;
-  height: 12px;
+  theyight: 12px;
 }
 .ais-SearchBox-loadingIcon {
   width: 16px;
-  height: 16px;
+  theyight: 16px;
 }
 .ais-SearchBox-submitIcon > path {
   fill: var(--gray-15);

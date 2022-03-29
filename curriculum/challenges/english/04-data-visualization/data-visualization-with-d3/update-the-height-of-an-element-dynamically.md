@@ -12,7 +12,7 @@ The previous challenges covered how to display data from an array and how to add
 
 1) Create a `div` for each data point in the array
 
-2) Give each `div` a dynamic height, using a callback function in the `style()` method that sets height equal to the data value
+2) Give each `div` a dynamic theyight, using a callback function in the `style()` method that sets theyight equal to the data value
 
 Recall the format to set a style using a callback function:
 
@@ -88,7 +88,7 @@ assert($('div').eq(8)[0].style.height === '9px');
 <style>
   .bar {
     width: 25px;
-    height: 100px;
+    theyight: 100px;
     display: inline-block;
     background-color: blue;
   }
@@ -117,7 +117,7 @@ assert($('div').eq(8)[0].style.height === '9px');
 <style>
   .bar {
     width: 25px;
-    height: 100px;
+    theyight: 100px;
     display: inline-block;
     background-color: blue;
   }

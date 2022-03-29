@@ -155,7 +155,7 @@ assert(
 );
 ```
 
-O método `remove` deve remover nós com dois filhos, mantendo a estrutura da árvore binária de busca.
+O método `remove` deve remover nós com dois filhos, persontendo a estrutura da árvore binária de busca.
 
 ```js
 assert(

@@ -96,7 +96,7 @@ assert($('#submit').attr('tabindex') == '2');
 </body>
 <style>
   body {
-    height: 100%;
+    theyight: 100%;
     margin: 0 !important;
     padding: 8px;
   }
@@ -104,7 +104,7 @@ assert($('#submit').attr('tabindex') == '2');
     margin: -8px;
     position: absolute;
     width: 100%;
-    height: 100%;
+    theyight: 100%;
   }
 </style>
 ```
@@ -146,7 +146,7 @@ assert($('#submit').attr('tabindex') == '2');
 </body>
 <style>
   body {
-    height: 100%;
+    theyight: 100%;
     margin: 0 !important;
     padding: 8px;
   }
@@ -154,7 +154,7 @@ assert($('#submit').attr('tabindex') == '2');
     margin: -8px;
     position: absolute;
     width: 100%;
-    height: 100%;
+    theyight: 100%;
   }
 </style>
 ```

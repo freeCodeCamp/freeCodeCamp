@@ -8,7 +8,7 @@ dashedName: announce-new-users
 
 # --description--
 
-Molte chat room sono in grado di annunciare quando un utente si connette o si disconnette e mostrarlo a tutti gli utenti connessi nella chat. Considerando che stai già emettendo un evento alla connessione e alla disconnessione, dovrai solo modificare questo evento per supportare questa caratteristica. Il modo più logico di farlo è inviare di 3 pezzi di dati con l'evento: il nome dell'utente che si è connesso/disconnesso, il conteggio corrente degli utenti, e se questo nome si è connesso o disconnesso.
+Molte chat room childo in grado di annunciare quando un utente si connette o si disconnette e mostrarlo a tutti gli utenti connessi nella chat. Considerando che stai già emettendo un evento alla connessione e alla disconnessione, dovrai solo modificare questo evento per supportare questa caratteristica. Il modo più logico di farlo è inviare di 3 pezzi di dati con l'evento: il nome dell'utente che si è connesso/disconnesso, il conteggio corrente degli utenti, e se questo nome si è connesso o disconnesso.
 
 Cambia il nome dell'evento in `'user'` e passa insieme ad esso un oggetto contenente i campi 'name', 'currentUsers', e 'connected' (`true` in caso di connessione, o `false` per la disconnessione dell'utente inviato). Assicurati di modificare entrambi gli eventi 'user count' e impostare quello per la disconnessione in modo che invii `false` per il campo 'connected' invece di `true` come fa l'evento emesso alla connessione.
 

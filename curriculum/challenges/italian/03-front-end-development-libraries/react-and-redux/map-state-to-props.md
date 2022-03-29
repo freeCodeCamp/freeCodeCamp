@@ -16,7 +16,7 @@ In queste funzioni, dichiari a quali parti dello stato vuoi avere accesso e qual
 
 # --instructions--
 
-Crea una funzione `mapStateToProps()`. Questa funzione dovrebbe prendere `state` come argomento, quindi restituire un oggetto che mappa quello stato a specifici nomi di proprietà. Queste proprietà diventeranno accessibili al tuo componente tramite `props`. Dal momento che questo esempio mantiene l'intero stato dell'app in un unico array, è possibile passare l'intero stato al tuo componente. Crea una proprietà `messages` nell'oggetto che viene restituito e impostala a `state`.
+Crea una funzione `mapStateToProps()`. Questa funzione dovrebbe prendere `state` come argomento, quindi restituire un oggetto che mappa quello stato a specifici nomi di proprietà. Queste proprietà diventeranno accessibili al tuo componente tramite `props`. Dal momento che questo esempio persontiene l'intero stato dell'app in un unico array, è possibile passare l'intero stato al tuo componente. Crea una proprietà `messages` nell'oggetto che viene restituito e impostala a `state`.
 
 # --hints--
 

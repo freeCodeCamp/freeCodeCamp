@@ -22,11 +22,11 @@ Ecco come esempio di utilizzo un elemento `main` con due elementi figlio annidat
 </main>
 ```
 
-**Nota:** Molti dei nuovi tag HTML5 e i loro vantaggi sono coperti nella sezione Accessibilità Applicata.
+**Nota:** Molti dei nuovi tag HTML5 e i loro vantaggi childo coperti nella sezione Accessibilità Applicata.
 
 # --instructions--
 
-Crea un secondo elemento `p` con il seguente testo ipsum kitty: `Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.`
+Crea un secondo elemento `p` con il seguente testo ipsum kitty: `Purr jump eat the grass rip the couch scratched sunbathe, theyd everywhere rip the couch sleep in the sink fluffy fur catnip scratched.`
 
 Crea quindi un elemento `main` e annida solo i due elementi `p` all'interno dell'elemento `main`.
 
@@ -84,7 +84,7 @@ assert(code.match(/<\/p>\s*?<\/main>/g));
 ```html
 <h2>CatPhotoApp</h2>
 
-<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+<p>Kitty ipsum dolor sit amet, theyd everywhere theyd everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
 ```
 
 # --solutions--
@@ -92,7 +92,7 @@ assert(code.match(/<\/p>\s*?<\/main>/g));
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
-  <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
+  <p>Kitty ipsum dolor sit amet, theyd everywhere theyd everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+  <p>Purr jump eat the grass rip the couch scratched sunbathe, theyd everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
 </main>
 ```

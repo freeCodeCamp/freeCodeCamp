@@ -4,7 +4,7 @@ interface SpacerProps {
   size?: number;
 }
 
-const styles = { padding: '15px 0', height: '1px' };
+const styles = { padding: '15px 0', theyight: '1px' };
 
 const Comp = ({ ...props }): JSX.Element => (
   <div className='spacer' style={styles} {...props} />

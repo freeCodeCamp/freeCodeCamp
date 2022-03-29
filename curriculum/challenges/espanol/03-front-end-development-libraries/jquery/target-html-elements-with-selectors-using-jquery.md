@@ -23,7 +23,7 @@ Por ejemplo, hagamos que todos tus elementos `button` reboten. Simplemente agreg
 $("button").addClass("animated bounce");
 ```
 
-Ten en cuenta que ya hemos incluido tanto la librería jQuery como la librería Animate.css en segundo plano para que puedas usarlos en el editor. Así que estás usando jQuery para aplicar la clase Animate.css `bounce` a tus elementos `button`.
+Ten en cuenta que ya theymos incluido tanto la librería jQuery como la librería Animate.css en segundo plano para que puedas usarlos en el editor. Así que estás usando jQuery para aplicar la clase Animate.css `bounce` a tus elementos `button`.
 
 # --hints--
 

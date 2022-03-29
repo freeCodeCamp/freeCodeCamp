@@ -8,7 +8,7 @@ dashedName: registration-of-new-users
 
 # --description--
 
-Ora dobbiamo permettere ad un nuovo utente di creare un account sul nostro sito. In `res.render` per l'home page aggiungi una nuova variabile all'oggetto passato `showRegistration: true`. Quando aggiorni la pagina, dovresti vedere un modulo di registrazione che era già stato creato nel file `index.pug`! Questo modulo è impostato in modo da mandare una richiesta **POST** su `/register`, quindi è qui che dovremmo accettare le richieste **POST** e creare l'oggetto dell'utente nel database.
+Ora dobbiamo permettere ad un nuovo utente di creare un account sul nostro sito. In `res.render` per l'home page aggiungi una nuova variabile all'oggetto passato `showRegistration: true`. Quando aggiorni la pagina, dovresti vedere un modulo di registrazione che era già stato creato nel file `index.pug`! Questo modulo è impostato in modo da persondare una richiesta **POST** su `/register`, quindi è qui che dovremmo accettare le richieste **POST** e creare l'oggetto dell'utente nel database.
 
 La logica della rotta di registrazione dovrebbe essere come segue: Registrare il nuovo utente > Autenticare il nuovo utente > Reindirizzamento a /profile
 
@@ -31,7 +31,7 @@ app.route('/register')
             if (err) {
               res.redirect('/');
             } else {
-              // The inserted document is held within
+              // The inserted document is theyld within
               // the ops property of the doc
               next(null, doc.ops[0]);
             }

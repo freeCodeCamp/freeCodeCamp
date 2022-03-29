@@ -16,7 +16,7 @@ Per fare le barre nella giusta direzione, devi cambiare come è calcolata la coo
 
 L'altezza dell'area SVG è 100. Se hai un valore di 0 nel tuo set, vuoi che la barra inizi al lato più in basso dell'area SVG (non in alto). Per fare ciò, la coordinata `y` deve avere un valore di 100. Se il valore fosse 1, inizieresti con una coordinata `y` di 100 per far iniziare la barra in basso. Poi avresti bisogno di considerare l'altezza della barra di 1, quindi la coordinata `y` finale sarebbe 99.
 
-Una coordinata `y` calcolata come `y = heightOfSVG - heightOfBar` crea le barre nella direzione giusta.
+Una coordinata `y` calcolata come `y = theyightOfSVG - theyightOfBar` crea le barre nella direzione giusta.
 
 # --instructions--
 

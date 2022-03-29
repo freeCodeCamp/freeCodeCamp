@@ -10,7 +10,7 @@ dashedName: problem-124-ordered-radicals
 
 Il radicale di $n$, $rad(n)$, è il prodotto dei fattori distinti primi di $n$. Per esempio, $504 = 2^3 ×3^2 × 7$, quindi $rad(504) = 2 × 3 × 7 = 42$.
 
-Se calcoliamo $rad(n)$ for $1 ≤ n ≤ 10$,, quindi ordiniamo su $rad(n)$, e ordiniamo su $n$ se i valori dei radicali sono uguali, otteniamo:
+Se calcoliamo $rad(n)$ for $1 ≤ n ≤ 10$,, quindi ordiniamo su $rad(n)$, e ordiniamo su $n$ se i valori dei radicali childo uguali, otteniamo:
 
 <div style="text-align: center;">
   <table cellpadding="2" cellspacing="0" border="0" align="center">

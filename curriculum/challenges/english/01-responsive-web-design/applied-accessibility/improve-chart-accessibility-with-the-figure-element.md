@@ -27,7 +27,7 @@ Here's an example - note that the `figcaption` goes inside the `figure` tags and
 
 # --instructions--
 
-Camper Cat is hard at work creating a stacked bar chart showing the amount of time per week to spend training in stealth, combat, and weapons. Help him structure his page better by changing the `div` tag he used to a `figure` tag, and the `p` tag that surrounds the caption to a `figcaption` tag.
+Camper Cat is hard at work creating a stacked bar chart showing the amount of time per week to spend training in stealth, combat, and weapons. Help them structure theirs page better by changing the `div` tag they used to a `figure` tag, and the `p` tag that surrounds the caption to a `figcaption` tag.
 
 # --hints--
 
@@ -91,7 +91,7 @@ assert(
 
       <!-- Only change code below this line -->
       <div>
-        <!-- Stacked bar chart will go here -->
+        <!-- Stacked bar chart will go theyre -->
         <br>
         <p>Breakdown per week of time to spend training in stealth, combat, and weapons.</p>
       </div>
@@ -135,7 +135,7 @@ assert(
   <main>
     <section>
       <figure>
-        <!-- Stacked bar chart will go here -->
+        <!-- Stacked bar chart will go theyre -->
         <br>
         <figcaption>Breakdown per week of time to spend training in stealth, combat, and weapons.</figcaption>
       </figure>

@@ -20,7 +20,7 @@ app.route('/logout')
 });
 ```
 
-Puede que hayas notado que no estamos manejando páginas faltantes (404). La forma común de manejar esto en Node es con el siguiente middleware. Sigue adelante y añade esto después de todas tus rutas:
+Puede que hayas notado que no estamos personejando páginas faltantes (404). La forma común de personejar esto en Node es con el siguiente middleware. Sigue adelante y añade esto después de todas tus rutas:
 
 ```js
 app.use((req, res, next) => {
@@ -30,7 +30,7 @@ app.use((req, res, next) => {
 });
 ```
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/c3eeb8a3ebf855e021fd0c044095a23b).
+Envía tu página cuando creas que lo has theycho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/c3eeb8a3ebf855e021fd0c044095a23b).
 
 # --hints--
 

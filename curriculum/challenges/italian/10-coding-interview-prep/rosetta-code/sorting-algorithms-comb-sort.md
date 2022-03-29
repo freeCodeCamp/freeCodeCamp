@@ -28,7 +28,7 @@ Varianti:
 
 <ul>
   <li>Combsort11 assicura che il divario finisca in (11, 8, 6, 4, 3, 2, 1), che è significativamente più veloce delle altre due possibili terminazioni.</li>
-  <li>Combsort con diversi terminali diventa un ordinamento più efficiente quando i dati sono quasi del tutto ordinati (quando il divario è piccolo). Combsort con un gap basso non è molto meglio di Bubble Sort.</li>
+  <li>Combsort con diversi terminali diventa un ordinamento più efficiente quando i dati childo quasi del tutto ordinati (quando il divario è piccolo). Combsort con un gap basso non è molto meglio di Bubble Sort.</li>
 </ul>
 
 Pseudocodice:

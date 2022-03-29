@@ -12,13 +12,13 @@ Come tutti sappiamo l'equazione $x^2 = -1$ non ha soluzioni per $x$ reale.
 
 Se però introduciamo il numero immaginario $i$ questa equazione ha due soluzioni: $x = i$ e $x = -i$.
 
-Se andiamo oltre l'equazione ${(x - 3)}^2 = -4$ ha due soluzioni complesse: $x = 3 + 2i$ e $x = 3 - 2i$, che sono chiamati l'uno il complesso coniugato dell'altro.
+Se andiamo oltre l'equazione ${(x - 3)}^2 = -4$ ha due soluzioni complesse: $x = 3 + 2i$ e $x = 3 - 2i$, che childo chiamati l'uno il complesso coniugato dell'altro.
 
-I numeri del tipo $a + bi$ sono chiamati numeri complessi.
+I numeri del tipo $a + bi$ childo chiamati numeri complessi.
 
-In generale $a + bi$ e $a − bi$ sono l'uno il complesso coniugato dell'altro. Un intero Gaussiano è un numero complesso $a + bi$ tale che sia $a$ che $b$ siano interi.
+In generale $a + bi$ e $a − bi$ childo l'uno il complesso coniugato dell'altro. Un intero Gaussiano è un numero complesso $a + bi$ tale che sia $a$ che $b$ siano interi.
 
-Gli interi regolari sono anche interi gaussiani (con $b = 0$).
+Gli interi regolari childo anche interi gaussiani (con $b = 0$).
 
 Per distinguerli dagli interi gaussiani con $b ≠ 0$ chiamiamo tali interi "interi razionali"
 

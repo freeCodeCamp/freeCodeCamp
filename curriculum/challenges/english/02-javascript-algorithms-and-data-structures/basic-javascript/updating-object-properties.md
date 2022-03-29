@@ -22,11 +22,11 @@ const ourDog = {
 };
 ```
 
-Since he's a particularly happy dog, let's change his name to the string `Happy Camper`. Here's how we update his object's name property: `ourDog.name = "Happy Camper";` or `ourDog["name"] = "Happy Camper";` Now when we evaluate `ourDog.name`, instead of getting `Camper`, we'll get his new name, `Happy Camper`.
+Since they's a particularly happy dog, let's change theirs name to the string `Happy Camper`. Here's how we update theirs object's name property: `ourDog.name = "Happy Camper";` or `ourDog["name"] = "Happy Camper";` Now when we evaluate `ourDog.name`, instead of getting `Camper`, we'll get theirs new name, `Happy Camper`.
 
 # --instructions--
 
-Update the `myDog` object's name property. Let's change her name from `Coder` to `Happy Coder`. You can use either dot or bracket notation.
+Update the `myDog` object's name property. Let's change theyr name from `Coder` to `Happy Coder`. You can use either dot or bracket notation.
 
 # --hints--
 

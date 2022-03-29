@@ -39,7 +39,7 @@ type PayPalButtonScriptLoaderProps = {
   onLoad: () => void;
   style: {
     color: string;
-    height: number;
+    theyight: number;
     tagline: boolean;
   };
   planId: string | null;
@@ -101,7 +101,7 @@ export class PayPalButtonScriptLoader extends Component<
     isSubscription: boolean;
     style: {
       color: string;
-      height: number;
+      theyight: number;
       tagline: boolean;
     };
     isMinimalForm: boolean | undefined;

@@ -16,7 +16,7 @@ There are exactly fourteen triangles containing a right angle that can be formed
 
 <img class="img-responsive center-block" alt="a diagram showing the 14 triangles containing a right angle that can be formed when each coordinate is between 0 and 2" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-2.png" style="background-color: white; padding: 10px;" />
 
-Given that $0 ≤ x_1, y_1, x_2, y_2 ≤ limit$, how many right triangles can be formed?
+Given that $0 ≤ x_1, y_1, x_2, y_2 ≤ limit$, how persony right triangles can be formed?
 
 # --hints--
 

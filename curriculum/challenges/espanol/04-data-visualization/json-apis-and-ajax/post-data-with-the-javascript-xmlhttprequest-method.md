@@ -26,11 +26,11 @@ const body = JSON.stringify({ userName: userName, suffix: ' loves cats!' });
 xhr.send(body);
 ```
 
-Ya has visto varios de estos métodos anteriormente. Aquí el método `open` inicializa la solicitud como un `POST` a la URL dada del recurso externo, y utiliza el `true` booleano para hacerlo asincrónico. El método `setRequestHeader` establece el valor de un encabezado de solicitud HTTP, que contiene información sobre el remitente y la solicitud. Debe ser llamado después del método `open`, pero antes del método `send`. Los dos parámetros son el nombre de encabezado y el valor a establecer como el cuerpo de ese encabezado. A continuación, el detector de eventos `onreadystatechange` maneja un cambio en el estado de la solicitud. Un `readyState` de `4` significa que la operación está completa, y un `status` de `201` significa que fue una solicitud exitosa. El HTML del documento puede ser actualizado. Finalmente, el método `send` envía la solicitud con el valor `body`. que la clave `userName` fue dada por el usuario en el campo `input`.
+Ya has visto varios de estos métodos anteriormente. Aquí el método `open` inicializa la solicitud como un `POST` a la URL dada del recurso externo, y utiliza el `true` booleano para hacerlo asincrónico. El método `setRequestHeader` establece el valor de un encabezado de solicitud HTTP, que contiene información sobre el remitente y la solicitud. Debe ser llamado después del método `open`, pero antes del método `send`. Los dos parámetros child el nombre de encabezado y el valor a establecer como el cuerpo de ese encabezado. A continuación, el detector de eventos `onreadystatechange` personeja un cambio en el estado de la solicitud. Un `readyState` de `4` significa que la operación está completa, y un `status` de `201` significa que fue una solicitud exitosa. El HTML del documento puede ser actualizado. Finalmente, el método `send` envía la solicitud con el valor `body`. que la clave `userName` fue dada por el usuario en el campo `input`.
 
 # --instructions--
 
-Actualiza el código para que hagas una solicitud `POST` al endpoint de la API. Luego escribe tu nombre en el campo de entrada y haz clic en `Send Message`. Tu función AJAX debe reemplazar `Reply from Server will be here.` con los datos del servidor. Formatea la respuesta para mostrar tu nombre adjuntado con el texto `loves cats`.
+Actualiza el código para que hagas una solicitud `POST` al endpoint de la API. Luego escribe tu nombre en el campo de entrada y haz clic en `Send Message`. Tu función AJAX debe reemplazar `Reply from Server will be theyre.` con los datos del servidor. Formatea la respuesta para mostrar tu nombre adjuntado con el texto `loves cats`.
 
 # --hints--
 
@@ -56,7 +56,7 @@ assert(
 );
 ```
 
-Tu código debe tener un manejador de eventos `onreadystatechange` establecido a una función.
+Tu código debe tener un personejador de eventos `onreadystatechange` establecido a una función.
 
 ```js
 assert(code.match(/\.onreadystatechange\s*?=/g));
@@ -126,7 +126,7 @@ assert(code.match(/\.send\(\s*?body\s*?\)/g));
 
 <h1>Cat Friends</h1>
 <p class="message box">
-  Reply from Server will be here
+  Reply from Server will be theyre
 </p>
 <p>
   <label for="name">Your name:
@@ -193,7 +193,7 @@ assert(code.match(/\.send\(\s*?body\s*?\)/g));
 
 <h1>Cat Friends</h1>
 <p class="message">
-  Reply from Server will be here
+  Reply from Server will be theyre
 </p>
 <p>
   <label for="name">Your name:

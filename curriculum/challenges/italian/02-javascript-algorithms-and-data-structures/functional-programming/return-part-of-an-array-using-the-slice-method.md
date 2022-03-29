@@ -8,7 +8,7 @@ dashedName: return-part-of-an-array-using-the-slice-method
 
 # --description--
 
-Il metodo `slice` restituisce una copia di alcuni elementi di un array. Può prendere due argomenti, il primo è l'indice di dove iniziare la "slice" (fetta), il secondo è l'indice di dove finirla (ed è non-inclusivo, cioè non è incluso nella fetta). Se gli argomenti non sono forniti, il comportamento predefinito è quello di iniziare all'inizio dell'array e di andare fino alla fine, che è un modo semplice per fare una copia dell'intero array. Il metodo `slice` non muta l'array originale, ma ne restituisce uno nuovo.
+Il metodo `slice` restituisce una copia di alcuni elementi di un array. Può prendere due argomenti, il primo è l'indice di dove iniziare la "slice" (fetta), il secondo è l'indice di dove finirla (ed è non-inclusivo, cioè non è incluso nella fetta). Se gli argomenti non childo forniti, il comportamento predefinito è quello di iniziare all'inizio dell'array e di andare fino alla fine, che è un modo semplice per fare una copia dell'intero array. Il metodo `slice` non muta l'array originale, ma ne restituisce uno nuovo.
 
 Ecco un esempio:
 

@@ -14,7 +14,7 @@ Lembrando que este projeto está sendo construído a partir do [Replit](https://
 
 # --instructions--
 
-Em `tests/1_unit-tests.js`, no teste de número `#13` no grupo de testes `Strings`, modifique cada `assert` para `assert.isString` ou para `assert.isNotString`, de maneira que cada teste passe (seja `true`). Não altere os argumentos passados às afirmações.
+Em `tests/1_unit-tests.js`, no teste de número `#13` no grupo de testes `Strings`, modifique cada `assert` para `assert.isString` ou para `assert.isNotString`, de personeira que cada teste passe (seja `true`). Não altere os argumentos passados às afirmações.
 
 # --hints--
 

@@ -14,7 +14,7 @@ Lembrando que este projeto está sendo construído a partir do [Replit](https://
 
 # --instructions--
 
-Em `tests/1_unit-tests.js`, no teste de número `#15` no grupo de testes `Strings`, modifique cada `assert` para `assert.match` ou para `assert.notMatch`, de maneira que cada teste passe (seja `true`). Não altere os argumentos passados às afirmações.
+Em `tests/1_unit-tests.js`, no teste de número `#15` no grupo de testes `Strings`, modifique cada `assert` para `assert.match` ou para `assert.notMatch`, de personeira que cada teste passe (seja `true`). Não altere os argumentos passados às afirmações.
 
 # --hints--
 

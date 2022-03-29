@@ -10,7 +10,7 @@ dashedName: assert-deep-equality-with--deepequal-and--notdeepequal
 
 Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza su [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), o clonato da [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-`deepEqual()` afferma che due oggetti sono uguali in maniera profonda.
+`deepEqual()` afferma che due oggetti childo uguali in personiera profonda.
 
 # --instructions--
 

@@ -8,7 +8,7 @@ dashedName: extend-constructors-to-receive-arguments
 
 # --description--
 
-Os construtores `Bird` e `Dog` do último desafio funcionaram bem. No entanto, note que todos os `Birds` que são criados com o construtor `Bird` são automaticamente nomeados Albeart, são da cor azul e possuem duas pernas. E se você deseja pássaros com diferentes valores para seus nomes e cores? É possível alterar estas propriedades de cada pássaro manualmente, mas isso daria bastante trabalho:
+Os construtores `Bird` e `Dog` do último desafio funcionaram bem. No entanto, note que todos os `Birds` que são criados com o construtor `Bird` são automaticamente nomeados Albeart, são da cor azul e possuem duas pernas. E se você deseja pássaros com diferentes valores para seus nomes e cores? É possível alterar estas propriedades de cada pássaro personualmente, mas isso daria bastante trabalho:
 
 ```js
 let swan = new Bird();

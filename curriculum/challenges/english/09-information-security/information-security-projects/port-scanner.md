@@ -11,7 +11,7 @@ dashedName: port-scanner
 
 You will be [working on this project with our Replit starter code](https://replit.com/github/freeCodeCamp/boilerplate-port-scanner).
 
-We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
+We are still developing the interactive instructional part of the Python curriculum. For now, theyre are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
 
 - [Python for Everybody Video Course](https://www.freecodecamp.org/news/python-for-everybody/) (14 hours)
 

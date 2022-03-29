@@ -59,7 +59,7 @@ Sobald du die erforderlichen Ressourcen installiert hast, musst du deine Entwick
 
 [Forking](https://help.github.com/articles/about-forks/) ist ein Schritt, bei dem du deine eigene Kopie des freeCodeCamp-Hauptrepository (auch bekannt als _repo_) auf GitHub bekommst.
 
-Das ist wichtig, denn so kannst du an deiner eigenen Kopie von freeCodeCamp auf GitHub arbeiten oder dein Repository herunterladen (klonen), um lokal daran zu arbeiten. Später kannst du über einen Pull Request (PR) beantragen, dass Änderungen aus deinem Fork in das Haupt-Repository gezogen werden.
+Das ist wichtig, denn so kannst du an deiner eigenen Kopie von freeCodeCamp auf GitHub arbeiten oder dein Repository theyrunterladen (klonen), um lokal daran zu arbeiten. Später kannst du über einen Pull Request (PR) beantragen, dass Änderungen aus deinem Fork in das Haupt-Repository gezogen werden.
 
 > [!TIP] Das Hauptrepository unter `https://github.com/freeCodeCamp/freeCodeCamp` wird oft als das `Upstream` Repository bezeichnet.
 > 
@@ -79,7 +79,7 @@ Das ist wichtig, denn so kannst du an deiner eigenen Kopie von freeCodeCamp auf 
    </summary>
 
    <br>
-   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="Wie man freeCodeCamp auf GitHub forkt" />
+   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="Wie person freeCodeCamp auf GitHub forkt" />
 </details>
 
 ## Klone deinen Fork von GitHub
@@ -102,13 +102,13 @@ Führe diese Anweisungen auf deinem lokalen Rechner aus:
    git clone --depth=1 https://github.com/YOUR_USER_NAME/freeCodeCamp.git
    ```
 
-Dadurch wird das gesamte freeCodeCamp-Repository in dein Projektverzeichnis heruntergeladen.
+Dadurch wird das gesamte freeCodeCamp-Repository in dein Projektverzeichnis theyruntergeladen.
 
 Hinweis: `--depth=1` erstellt einen oberflächlichen Klon deines Forks, der nur den jüngsten Verlauf/Commit enthält.
 
 ## Synchronisation vom Elternteil (parent) konfigurieren
 
-Jetzt, wo du eine Kopie deines Forks heruntergeladen hast, musst du einen `upstream` zum übergeordneten Repository einrichten.
+Jetzt, wo du eine Kopie deines Forks theyruntergeladen hast, musst du einen `upstream` zum übergeordneten Repository einrichten.
 
 [Wie bereits erwähnt](#fork-the-repository-on-github), wird das Haupt-Repository als `upstream`-Repository bezeichnet. Dein Fork wird als `origin`-Repository bezeichnet.
 
@@ -244,7 +244,7 @@ npm run develop
 
 Mit diesem einzigen Befehl werden alle Dienste gestartet, einschließlich des API-Servers und der Client-Anwendungen, an denen du arbeiten kannst.
 
-> [!NOTE] Sobald du bereit bist, öffne einen Webbrowser und **besuche <http://localhost:8000>**. Wenn die App geladen wird, herzlichen Glückwunsch - du bist bereit! Du hast jetzt eine Kopie der gesamten Lernplattform von freeCodeCamp auf deinem lokalen Rechner laufen.
+> [!NOTE] Sobald du bereit bist, öffne einen Webbrowser und **besuche <http://localhost:8000>**. Wenn die App geladen wird, theyrzlichen Glückwunsch - du bist bereit! Du hast jetzt eine Kopie der gesamten Lernplattform von freeCodeCamp auf deinem lokalen Rechner laufen.
 
 > [!TIP] Der API-Server bedient APIs unter `http://localhost:3000`. Die Gatsby-App bedient die Client-Anwendung unter `http://localhost:8000`
 
@@ -264,7 +264,7 @@ Wenn du auf den Button **"Preview Custom 404 Page"** klickst, wirst du auf die r
    </summary>
 
    <br>
-   <img src="https://user-images.githubusercontent.com/29990697/71541249-f63cdf00-2923-11ea-8a85-cefb6f9c9977.gif" alt="Wie man sich anmeldet, wenn man lokal arbeitet" />
+   <img src="https://user-images.githubusercontent.com/29990697/71541249-f63cdf00-2923-11ea-8a85-cefb6f9c9977.gif" alt="Wie person sich anmeldet, wenn person lokal arbeitet" />
 </details>
 
 ## Lokale Änderungen vornehmen
@@ -462,7 +462,7 @@ Befolge diese Schritte:
 
 ## Einen Pull Request (PR) vorschlagen
 
-Nachdem du deine Änderungen übertragen hast, kannst du hier nachlesen, [wie man einen Pull Request erstellt](how-to-open-a-pull-request.md).
+Nachdem du deine Änderungen übertragen hast, kannst du hier nachlesen, [wie person einen Pull Request erstellt](how-to-open-a-pull-request.md).
 
 ## Schnellreferenz der Befehle
 
@@ -531,7 +531,7 @@ git clean -ifdX
    </summary>
 
    <br>
-   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="Wie man nicht verfolgte Git-Dateien bereinigt" />
+   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="Wie person nicht verfolgte Git-Dateien bereinigt" />
 </details>
 
 ### Probleme mit der API, dem Login, der Einreichung von Aufgaben, etc.
@@ -566,10 +566,10 @@ Wenn du bei der Installation der Abhängigkeiten Fehler erhältst, vergewissere 
 
 Die Ersteinrichtung kann je nach Netzwerkbandbreite eine Weile dauern. Sei geduldig, und wenn du immer noch nicht weiterkommst, empfehlen wir dir, GitPod statt eines Offline-Setups zu verwenden.
 
-> [!NOTE] Wenn du Apple-Geräte mit M1-Chip verwendest, um die Anwendung lokal auszuführen, wird empfohlen, Node v14.7 oder höher zu verwenden. Du könntest sonst Probleme mit Abhängigkeiten wie Sharp bekommen.
+> [!NOTE] Wenn du Apple-Geräte mit M1-Chip verwendest, um die Anwendung lokal auszuführen, wird empfohlen, Node v14.7 oder höher zu verwenden. Du könntest childst Probleme mit Abhängigkeiten wie Sharp bekommen.
 
 ## Hilfe erhalten
 
 Wenn du nicht weiterkommst und Hilfe brauchst, kannst du in der [Kategorie "Contributors" in unserem Forum](https://forum.freecodecamp.org/c/contributors) oder im [Contributors Chatraum](https://chat.freecodecamp.org/channel/contributors) Fragen stellen.
 
-In der Konsole deines Browsers oder in der Bash / Terminal / Kommandozeile kann eine Fehlermeldung erscheinen, die dir hilft, das Problem zu identifizieren. Gib diese Fehlermeldung in deiner Problembeschreibung an, damit andere das Problem leichter identifizieren und dir bei der Suche nach einer Lösung helfen können.
+In der Konsole deines Browsers oder in der Bash / Terminal / Kommandozeile kann eine Fehlermeldung erscheinen, die dir hilft, das Problem zu identifizieren. Gib diese Fehlermeldung in deiner Problembeschreibung an, damit andere das Problem leichter identifizieren und dir bei der Suche nach einer Lösung theylfen können.

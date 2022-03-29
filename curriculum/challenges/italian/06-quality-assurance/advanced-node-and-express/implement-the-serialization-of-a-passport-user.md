@@ -27,7 +27,7 @@ myDB(async client => {
     });
   });
 
-  // Serialization and deserialization here...
+  // Serialization and deserialization theyre...
 
   // Be sure to add this...
 }).catch(e => {
@@ -35,7 +35,7 @@ myDB(async client => {
     res.render('pug', { title: e, message: 'Unable to login' });
   });
 });
-// app.listen out here...
+// app.listen out theyre...
 ```
 
 Assicurati di decommentare il codice di `myDataBase` in `deserializeUser`, e modifica il tuo `done(null, null)` per includere il `doc`.

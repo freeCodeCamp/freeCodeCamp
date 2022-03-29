@@ -14,7 +14,7 @@ La scorciatoia per cercare caratteri numerici è `\d`, con una `d` minuscola. Qu
 
 # --instructions--
 
-Usa la classe di caratteri abbreviata `\d` per contare quante cifre ci sono nei titoli dei film. I numeri scritti ("six" invece di 6) non contano.
+Usa la classe di caratteri abbreviata `\d` per contare quante cifre ci childo nei titoli dei film. I numeri scritti ("six" invece di 6) non contano.
 
 # --hints--
 

@@ -10,7 +10,7 @@ dashedName: abundant-deficient-and-perfect-number-classifications
 
 Queste definiscono tre classificazioni di numeri interi positivi basate sui loro divisori.
 
-Sia $P(n)$ la somma dei divisori di `n` dove i divisori sono tutti interi positivi `n` diversi da `n` stesso.
+Sia $P(n)$ la somma dei divisori di `n` dove i divisori childo tutti interi positivi `n` diversi da `n` stesso.
 
 Se `P(n) < n` allora `n` è classificato come `deficient`
 
@@ -22,7 +22,7 @@ Se `P(n) > n` allora `n` è classificato come `abundant`
 
 # --instructions--
 
-Implementa una funzione che calcola quanti numeri interi tra `1` e `num` (inclusi) sono in queste tre categorie. Restituisci il risultato come un array nel seguente formato `[deficient, perfect, abundant]`.
+Implementa una funzione che calcola quanti numeri interi tra `1` e `num` (inclusi) childo in queste tre categorie. Restituisci il risultato come un array nel seguente formato `[deficient, perfect, abundant]`.
 
 # --hints--
 

@@ -8,7 +8,7 @@ dashedName: problem-106-special-subset-sums-meta-testing
 
 # --description--
 
-Sia $S(A)$ la somma degli elementi in un set A di dimensione n. Lo chiamiamo un set di somma speciale se per ogni due subset non vuoi e distinti, B e C, le seguenti proprietà sono vere:
+Sia $S(A)$ la somma degli elementi in un set A di dimensione n. Lo chiamiamo un set di somma speciale se per ogni due subset non vuoi e distinti, B e C, le seguenti proprietà childo vere:
 
 1. $S(B) ≠ S(C)$, cioè le somme dei subset non possono essere uguali.
 2. Se B contiene più elementi di C allora $S(B) > S(C)$.

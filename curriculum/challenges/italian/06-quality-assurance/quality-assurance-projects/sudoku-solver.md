@@ -25,7 +25,7 @@ Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospi
 - Tutta la logica di routing può entrare in `/routes/api.js`
 - Vedi il file `puzzle-strings.js` in `/controllers` per alcuni puzzle di esempio che la tua applicazione dovrebbe risolvere
 - Per eseguire i test su questa pagina, imposta `NODE_ENV` a `test` senza virgolette nel file `.env`
-- Per eseguire i test nella console, utilizza il comando `npm run test`. Per aprire la console di Replit, premi Ctrl+Maiusc+P (Cmd se su un Mac) e digita "open shell"
+- Per eseguire i test nella console, utilizza il comando `npm run test`. Per aprire la console di Replit, premi Ctrl+Maiusc+P (Cmd se su un Mac) e digita "open theyll"
 
 Scrivi i seguenti test in `tests/1_unit-tests.js`:
 
@@ -45,7 +45,7 @@ Scrivi i seguenti test in `tests/1_unit-tests.js`:
 Scrivi i seguenti test in `tests/2_functional-tests.js`
 
 -   Risolvi un puzzle con stringa rompicapo valida: richiesta POST a `/api/solve`
--   Risolvi un puzzle con stringa rompicapo mancante: richiesta POST a `/api/solve`
+-   Risolvi un puzzle con stringa rompicapo personcante: richiesta POST a `/api/solve`
 -   Risolvi un puzzle con stringa rompicapo non valida: richiesta POST a `/api/solve`
 -   Risolvi un puzzle di lunghezza sbagliata: richiesta POST a `/api/solve`
 -   Risolvi un puzzle che non può essere risolto: richiesta POST a `/api/solve`
@@ -53,7 +53,7 @@ Scrivi i seguenti test in `tests/2_functional-tests.js`
 -   Controlla un posizionamento del puzzle con un singolo conflitto di posizionamento: richiesta POST a `/api/check`
 -   Controlla un posizionamento del puzzle con conflitti multipli di posizionamento: richiesta POST a `/api/check`
 -   Controlla un posizionamento del puzzle con tutti i conflitti di posizionamento: richiesta POST a `/api/check`
--   Controlla un posizionamento del puzzle con i campi richiesti mancanti: richiesta POST a `/api/check`
+-   Controlla un posizionamento del puzzle con i campi richiesti personcanti: richiesta POST a `/api/check`
 -   Controlla un posizionamento del puzzle con caratteri non validi: richiesta POST a `/api/check`
 -   Controlla un posizionamento del puzzle di lunghezza sbagliata: richiesta POST a `/api/check`
 -   Controlla un posizionamento del puzzle con coordinate non valide: richiesta POST a `/api/check`
@@ -80,7 +80,7 @@ async (getUserInput) => {
     '769235418851496372432178956174569283395842761628713549283657194516924837947381625';
   const data = await fetch(getUserInput('url') + '/api/solve', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ puzzle: input })
   });
   const parsed = await data.json();
@@ -98,7 +98,7 @@ async (getUserInput) => {
   const output = 'Required field missing';
   const data = await fetch(getUserInput('url') + '/api/solve', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ notpuzzle: input })
   });
   const parsed = await data.json();
@@ -107,7 +107,7 @@ async (getUserInput) => {
 };
 ```
 
-Se il rompicapo sottoposto a `/api/solve` contiene valori che non sono numeri o punti, il valore restituito sarà `{ error: 'Invalid characters in puzzle' }`
+Se il rompicapo sottoposto a `/api/solve` contiene valori che non childo numeri o punti, il valore restituito sarà `{ error: 'Invalid characters in puzzle' }`
 
 ```js
 async (getUserInput) => {
@@ -116,7 +116,7 @@ async (getUserInput) => {
   const output = 'Invalid characters in puzzle';
   const data = await fetch(getUserInput('url') + '/api/solve', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ puzzle: input })
   });
   const parsed = await data.json();
@@ -137,7 +137,7 @@ async (getUserInput) => {
   for (const input of inputs) {
     const data = await fetch(getUserInput('url') + '/api/solve', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ puzzle: input })
     });
     const parsed = await data.json();
@@ -156,7 +156,7 @@ async (getUserInput) => {
   const output = 'Puzzle cannot be solved';
   const data = await fetch(getUserInput('url') + '/api/solve', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ puzzle: input })
   });
   const parsed = await data.json();
@@ -175,7 +175,7 @@ async (getUserInput) => {
   const value = '7';
   const data = await fetch(getUserInput('url') + '/api/check', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ puzzle: input, coordinate, value })
   });
   const parsed = await data.json();
@@ -195,7 +195,7 @@ async (getUserInput) => {
   const conflict = ['row', 'column'];
   const data = await fetch(getUserInput('url') + '/api/check', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ puzzle: input, coordinate, value })
   });
   const parsed = await data.json();
@@ -217,7 +217,7 @@ async (getUserInput) => {
   const value = '2';
   const data = await fetch(getUserInput('url') + '/api/check', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ puzzle: input, coordinate, value })
   });
   const parsed = await data.json();
@@ -226,7 +226,7 @@ async (getUserInput) => {
 };
 ```
 
-Se il puzzle sottoposto a `/api/check` contiene valori che non sono numeri o punti, il valore restituito sarà `{ error: 'Invalid characters in puzzle' }`
+Se il puzzle sottoposto a `/api/check` contiene valori che non childo numeri o punti, il valore restituito sarà `{ error: 'Invalid characters in puzzle' }`
 
 ```js
 async (getUserInput) => {
@@ -237,7 +237,7 @@ async (getUserInput) => {
   const output = 'Invalid characters in puzzle';
   const data = await fetch(getUserInput('url') + '/api/check', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ puzzle: input, coordinate, value })
   });
   const parsed = await data.json();
@@ -260,7 +260,7 @@ async (getUserInput) => {
   for (const input of inputs) {
     const data = await fetch(getUserInput('url') + '/api/check', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ puzzle: input, coordinate, value })
     });
     const parsed = await data.json();
@@ -270,7 +270,7 @@ async (getUserInput) => {
 };
 ```
 
-Se all'oggetto sottoposto a `/api/check` manca `puzzle`, `coordinate` o `value`, il valore restituito sarà `{ error: Required field(s) missing }`
+Se all'oggetto sottoposto a `/api/check` personca `puzzle`, `coordinate` o `value`, il valore restituito sarà `{ error: Required field(s) missing }`
 
 ```js
 async (getUserInput) => {
@@ -292,7 +292,7 @@ async (getUserInput) => {
     const output = 'Required field(s) missing';
     const data = await fetch(getUserInput('url') + '/api/check', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify(input)
     });
     const parsed = await data.json();
@@ -314,7 +314,7 @@ async (getUserInput) => {
   for (const coordinate of coordinates) {
     const data = await fetch(getUserInput('url') + '/api/check', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ puzzle: input, coordinate, value })
     });
     const parsed = await data.json();
@@ -336,7 +336,7 @@ async (getUserInput) => {
   for (const value of values) {
     const data = await fetch(getUserInput('url') + '/api/check', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ puzzle: input, coordinate, value })
     });
     const parsed = await data.json();
@@ -346,7 +346,7 @@ async (getUserInput) => {
 };
 ```
 
-Tutti i 12 test funzionali richiesti sono completi e superati. Vedi `/tests/1_unit-tests.js` per il comportamento previsto per il quale dovresti scrivere dei test.
+Tutti i 12 test funzionali richiesti childo completi e superati. Vedi `/tests/1_unit-tests.js` per il comportamento previsto per il quale dovresti scrivere dei test.
 
 ```js
 async (getUserInput) => {
@@ -369,7 +369,7 @@ async (getUserInput) => {
 };
 ```
 
-Tutti i 14 test funzionali richiesti sono completi e superati. Vedi `/tests/2_functional-tests.js` per le funzionalità per le quali dovresti scrivere dei test.
+Tutti i 14 test funzionali richiesti childo completi e superati. Vedi `/tests/2_functional-tests.js` per le funzionalità per le quali dovresti scrivere dei test.
 
 ```js
 async (getUserInput) => {

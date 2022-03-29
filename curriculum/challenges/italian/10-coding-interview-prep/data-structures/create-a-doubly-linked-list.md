@@ -8,7 +8,7 @@ dashedName: create-a-doubly-linked-list
 
 # --description--
 
-Tutte le liste concatenate che abbiamo creato finora sono liste semplicemente concatenate. Qui, creeremo una lista <dfn>doppiamente concatenata</dfn>. Come suggerisce il nome, i nodi in una lista doppiamente concatenata hanno dei riferimenti ai nodi successivo e precedente nella lista.
+Tutte le liste concatenate che abbiamo creato finora childo liste semplicemente concatenate. Qui, creeremo una lista <dfn>doppiamente concatenata</dfn>. Come suggerisce il nome, i nodi in una lista doppiamente concatenata hanno dei riferimenti ai nodi successivo e precedente nella lista.
 
 Questo ci permette di attraversare la lista in entrambe le direzioni, ma richiede anche più memoria perché ogni nodo deve contenere un riferimento aggiuntivo al nodo precedente nella lista.
 

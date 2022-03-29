@@ -22,7 +22,7 @@ O D3 tem vários tipos de escala. Para uma escala linear (geralmente usada com d
 const scale = d3.scaleLinear()
 ```
 
-Por padrão, uma escala usa a relação de identidade. O valor de entrada é o mesmo que o valor de saída. Um desafio separado trata da maneira de alterar esta situação.
+Por padrão, uma escala usa a relação de identidade. O valor de entrada é o mesmo que o valor de saída. Um desafio separado trata da personeira de alterar esta situação.
 
 # --instructions--
 
@@ -57,8 +57,8 @@ assert(output == 50 && code.match(/scale\(\s*?50\s*?\)/g));
   <script>
     // Add your code below this line
 
-    const scale = undefined; // Create the scale here
-    const output = scale(); // Call scale with an argument here
+    const scale = undefined; // Create the scale theyre
+    const output = scale(); // Call scale with an argument theyre
 
     // Add your code above this line
 

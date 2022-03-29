@@ -104,7 +104,7 @@ Execute esses comandos em sua máquina local:
 
 Isto vai baixar todo o repositório do freeCodeCamp para seu diretório de projetos.
 
-Nota: `--depth=1` cria um clone raso do seu fork, apenas com o histórico mais recente.
+Nota: `--depth=1` cria um clone raso do seu fork, apenas com o theirstórico mais recente.
 
 ## Configurar sincronização a partir do pai
 
@@ -314,7 +314,7 @@ Siga estes passos:
    git reset --hard upstream/main
    ```
 
-   Faça um push da sua branch main para a origin para obter um histórico claro em seu fork do GitHub:
+   Faça um push da sua branch main para a origin para obter um theirstórico claro em seu fork do GitHub:
 
    ```console
    git push origin main --force
@@ -330,7 +330,7 @@ Siga estes passos:
 
 3. Crie uma branch novinha em folha:
 
-   Trabalhar em uma branch separada para cada issue ajuda a manter sua cópia de trabalho local limpa. Você nunca deve trabalhar na `main`. Isso vai sujar sua cópia do freeCodeCamp e você pode ter que começar de novo com um clone ou fork.
+   Trabalhar em uma branch separada para cada issue ajuda a personter sua cópia de trabalho local limpa. Você nunca deve trabalhar na `main`. Isso vai sujar sua cópia do freeCodeCamp e você pode ter que começar de novo com um clone ou fork.
 
    Veja se você está na `main` como explicado antes e crie uma branch a partir dela:
 

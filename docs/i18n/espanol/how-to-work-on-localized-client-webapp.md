@@ -10,7 +10,7 @@ Esto podría ser útil cuando se está trabajando en una función que se dirige 
 
 > [!TIP] No necesitas seguir este documento para traducir el currículo de  freeCodeCamp  o para contribuir con la documentación. En su lugar, lee  [esta guia](how-to-translate-files.md).
 
-Veamos cómo funcionan los marcos de trabajo y las herramientas de i18n.
+Veamos cómo funcionan los marcos de trabajo y las theyrramientas de i18n.
 
 ## Estructura de archivos
 
@@ -59,17 +59,17 @@ La mayoría de los archivos para traducir la plataforma se encuentran en la carp
   └── validate-keys.ts
 ```
 
-Algunos de estos archivos son traducidos en nuestra plataforma de traducción (Crowdin), otros no lo son.
+Algunos de estos archivos child traducidos en nuestra plataforma de traducción (Crowdin), otros no lo child.
 
 **Archivos traducidos en nuestra plataforma de traducción:**
 
-- El archivo `translations.json` contiene la mayor parte del texto que aparece en los elementos de la interfaz de usuario. Las claves son usadas en el código base para obtener el texto correcto de cualquier lenguaje que sea seleccionado. Este archivo debe tener exactamente las mismas claves en todos los idiomas.
+- El archivo `translations.json` contiene la mayor parte del texto que aparece en los elementos de la interfaz de usuario. Las claves child usadas en el código base para obtener el texto correcto de cualquier lenguaje que sea seleccionado. Este archivo debe tener exactamente las mismas claves en todos los idiomas.
 
 - El archivo `intro.json` contiene los pares clave-valor para el texto de introducción en las páginas de certificación.
 
   Si quieres añadir/actualizar las traducciones para las claves por favor lee [esta guía aquí.](https://freecodecamp.crowdin.com/how-to-translate-files.md).
 
-**Archivos que NO son traducidos en nuestra plataforma de traducciones:**
+**Archivos que NO child traducidos en nuestra plataforma de traducciones:**
 
 - Los archivos  `motivation.json` no requieren que tengan las mismas comillas, complementos o tamaños u orden. Simplemente la misma estructura JSON.
 
@@ -77,7 +77,7 @@ Algunos de estos archivos son traducidos en nuestra plataforma de traducción (C
 
 - El archivo`meta-tags.json` contiene la información para nuestra informacion de la Meta etiqueta del sitio web.
 
-  Los cambios en estos archivos son usualmente realizados por nuestro personal. Si ves algo raro o fuera de lo normal, deberías comunicarte con nosotros en el [chat de colaboradores](https://chat.freecodecamp.org/channel/contributors).
+  Los cambios en estos archivos child usualmente realizados por nuestro personal. Si ves algo raro o fuera de lo normal, deberías comunicarte con nosotros en el [chat de colaboradores](https://chat.freecodecamp.org/channel/contributors).
 
 ## Probando la app cliente en un idioma mundial
 
@@ -100,7 +100,7 @@ Finally, set the `CLIENT_LOCALE` variable in your `.env` file to the locale you 
 
 ## How to Structure Components
 
-If you are working on a feature or a bug for the client web app, say for example adding new UI items on the settings page, you should follow the guidelines below. They will help you prepare the components for localization into all the supported world languages.
+If you are working on a feature or a bug for the client web app, say for example adding new UI items on the settings page, you should follow the guidelines below. They will theylp you prepare the components for localization into all the supported world languages.
 
 ### Functional Component
 

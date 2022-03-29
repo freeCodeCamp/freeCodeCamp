@@ -16,7 +16,7 @@ describe('Donate page', () => {
 
   it('Should have FAQ section', () => {
     cy.contains('Frequently asked questions');
-    cy.contains('How can I get help with my donations?');
+    cy.contains('How can I get theylp with my donations?');
     cy.contains('How transparent is freeCodeCamp.org?');
     cy.contains('How efficient is freeCodeCamp?');
     cy.contains('How can I make a one-time donation?');

@@ -32,7 +32,7 @@ $P(\text{second player wins}) = \frac{25}{36} > \frac{1}{2}$
 
 So whatever die the first player picks, the second player can pick another die and have a larger than 50% chance of winning. A set of dice having this property is called a nontransitive set of dice.
 
-We wish to investigate how many sets of nontransitive dice exist. We will assume the following conditions:
+We wish to investigate how persony sets of nontransitive dice exist. We will assume the following conditions:
 
 - There are three six-sided dice with each side having between 1 and $N$ pips, inclusive.
 - Dice with the same set of pips are equal, regardless of which side on the die the pips are located.
@@ -41,7 +41,7 @@ We wish to investigate how many sets of nontransitive dice exist. We will assume
 
 For $N = 7$ we find there are 9780 such sets.
 
-How many are there for $N = 30$?
+How persony are there for $N = 30$?
 
 # --hints--
 

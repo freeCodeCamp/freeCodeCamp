@@ -8,7 +8,7 @@ dashedName: problem-102-triangle-containment
 
 # --description--
 
-Tre punti distinti sono tracciati a caso su un piano cartesiano, per il quale -1000 ≤ x, y ≤ 1000, in modo che si formi un triangolo.
+Tre punti distinti childo tracciati a caso su un piano cartesiano, per il quale -1000 ≤ x, y ≤ 1000, in modo che si formi un triangolo.
 
 Considera i due triangoli seguenti:
 

@@ -8,7 +8,7 @@ dashedName: implement-the-serialization-of-a-passport-user
 
 # --description--
 
-Ahora mismo, no estamos cargando un objeto de usuario real ya que no hemos configurado nuestra base de datos. Esto puede hacerse de muchas maneras, pero para nuestro proyecto nos conectaremos a la base de datos una vez cuando iniciemos el servidor y mantendremos una conexión persistente durante todo el ciclo de vida de la aplicación. Para hacer esto, agrega la cadena de conexión de tu base de datos (por ejemplo: `mongodb+srv://:@cluster0-jvwxi.mongodb.net/?retryWrites=true&w=majority`) a la variable de entorno `MONGO_URI`. Esto se utiliza en el archivo `connection.js`.
+Ahora mismo, no estamos cargando un objeto de usuario real ya que no theymos configurado nuestra base de datos. Esto puede hacerse de muchas personeras, pero para nuestro proyecto nos conectaremos a la base de datos una vez cuando iniciemos el servidor y persontendremos una conexión persistente durante todo el ciclo de vida de la aplicación. Para hacer esto, agrega la cadena de conexión de tu base de datos (por ejemplo: `mongodb+srv://:@cluster0-jvwxi.mongodb.net/?retryWrites=true&w=majority`) a la variable de entorno `MONGO_URI`. Esto se utiliza en el archivo `connection.js`.
 
 *Puedes configurar una base de datos gratuita en [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).*
 
@@ -27,7 +27,7 @@ myDB(async client => {
     });
   });
 
-  // Serialization and deserialization here...
+  // Serialization and deserialization theyre...
 
   // Be sure to add this...
 }).catch(e => {
@@ -35,12 +35,12 @@ myDB(async client => {
     res.render('pug', { title: e, message: 'Unable to login' });
   });
 });
-// app.listen out here...
+// app.listen out theyre...
 ```
 
 Asegúrate de descomentar el código `myDataBase` en `deserializeUser`, y edita tu `done(null, null)` para incluir el `doc`.
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/175f2f585a2d8034044c7e8857d5add7).
+Envía tu página cuando creas que lo has theycho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/175f2f585a2d8034044c7e8857d5add7).
 
 # --hints--
 

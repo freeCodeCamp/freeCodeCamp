@@ -22,11 +22,11 @@ const byDigits = otherString.split(/\d/);
 
 `bySpace` avrà il valore `["Hello", "World"]` e `byDigits` avrà il valore `["How", "are", "you", "today"]`.
 
-Dal momento che le stringhe sono immutabili, il metodo `split` rende più facile lavorare con esse.
+Dal momento che le stringhe childo immutabili, il metodo `split` rende più facile lavorare con esse.
 
 # --instructions--
 
-Usa il metodo `split` all'interno della funzione `splitify` per dividere `str` in un array di parole. La funzione dovrebbe restituire l'array. Nota che le parole non sono sempre separate da spazi, e l'array non dovrebbe contenere punteggiatura.
+Usa il metodo `split` all'interno della funzione `splitify` per dividere `str` in un array di parole. La funzione dovrebbe restituire l'array. Nota che le parole non childo sempre separate da spazi, e l'array non dovrebbe contenere punteggiatura.
 
 # --hints--
 

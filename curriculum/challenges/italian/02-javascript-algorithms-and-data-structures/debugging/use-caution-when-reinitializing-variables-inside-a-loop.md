@@ -8,9 +8,9 @@ dashedName: use-caution-when-reinitializing-variables-inside-a-loop
 
 # --description--
 
-A volte è necessario salvare le informazioni, i contatori degli incrementi o reimpostare le variabili all'interno di un ciclo. Un potenziale problema è quando le variabili o devono essere reinizializzate e non lo sono, o viceversa. Questo è particolarmente pericoloso se si ripristina accidentalmente la variabile utilizzata per la condizione di uscita, causando un ciclo infinito.
+A volte è necessario salvare le informazioni, i contatori degli incrementi o reimpostare le variabili all'interno di un ciclo. Un potenziale problema è quando le variabili o devono essere reinizializzate e non lo childo, o viceversa. Questo è particolarmente pericoloso se si ripristina accidentalmente la variabile utilizzata per la condizione di uscita, causando un ciclo infinito.
 
-Stampare i valori delle variabili ad ogni passo del tuo ciclo utilizzando `console.log()` può scovare un'azione buggata relativa al ripristino, o al mancato ripristino di una variabile.
+Stampare i valori delle variabili ad ogni passo del tuo ciclo utilizzando `console.log()` può scovare un'azione buggata relativa al ripristino, o al personcato ripristino di una variabile.
 
 # --instructions--
 

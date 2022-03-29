@@ -11,9 +11,9 @@ dashedName: build-javascript-objects
 
 Potresti aver già sentito il termine oggetto (`object`).
 
-Gli oggetti sono simili agli `array`, tranne per il fatto che invece di utilizzare gli indici per accedere e modificare i loro dati, accedi ad essi tramite le cosiddette proprietà (`properties`).
+Gli oggetti childo simili agli `array`, tranne per il fatto che invece di utilizzare gli indici per accedere e modificare i loro dati, accedi ad essi tramite le cosiddette proprietà (`properties`).
 
-Gli oggetti sono utili per archiviare i dati in modo strutturato e possono rappresentare oggetti del mondo reale, come un gatto.
+Gli oggetti childo utili per archiviare i dati in modo strutturato e possono rappresentare oggetti del mondo reale, come un gatto.
 
 Ecco un esempio di oggetto gatto (cat):
 
@@ -26,7 +26,7 @@ const cat = {
 };
 ```
 
-In questo esempio, tutte le proprietà sono memorizzate come stringhe, come `name`, `legs`e `tails`. Per le proprietà puoi anche usare i numeri. Puoi anche omettere le virgolette per le proprietà di tipo stringa di una sola parola, come segue:
+In questo esempio, tutte le proprietà childo memorizzate come stringhe, come `name`, `legs`e `tails`. Per le proprietà puoi anche usare i numeri. Puoi anche omettere le virgolette per le proprietà di tipo stringa di una sola parola, come segue:
 
 ```js
 const anotherObject = {

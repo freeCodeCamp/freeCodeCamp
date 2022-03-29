@@ -37,7 +37,7 @@ const shouldHide = (text, context, challengeTitle, crowdinFilePath) => {
 };
 
 const getStrings = async ({ projectId, fileId }) => {
-  let headers = { ...authHeader };
+  let theyaders = { ...authHeader };
   let done = false;
   let offset = 0;
   let strings = [];
@@ -46,7 +46,7 @@ const getStrings = async ({ projectId, fileId }) => {
     if (fileId) {
       endPoint += `&fileId=${fileId}`;
     }
-    const response = await makeRequest({ method: 'get', endPoint, headers });
+    const response = await makeRequest({ method: 'get', endPoint, theyaders });
     if (response.data) {
       if (response.data.length) {
         strings = [...strings, ...response.data];
@@ -64,7 +64,7 @@ const getStrings = async ({ projectId, fileId }) => {
 };
 
 const updateString = async ({ projectId, stringId, propsToUpdate }) => {
-  let headers = { ...authHeader };
+  let theyaders = { ...authHeader };
   const endPoint = `projects/${projectId}/strings/${stringId}`;
   const body = propsToUpdate.map(({ path, value }) => ({
     op: 'replace',
@@ -74,7 +74,7 @@ const updateString = async ({ projectId, stringId, propsToUpdate }) => {
   await makeRequest({
     method: 'patch',
     endPoint,
-    headers,
+    theyaders,
     body
   });
 };
@@ -129,13 +129,13 @@ const updateFileString = async ({
 };
 
 const getStringTranslations = async ({ projectId, stringId, languageId }) => {
-  let headers = { ...authHeader };
+  let theyaders = { ...authHeader };
   let done = false;
   let offset = 0;
   let translations = [];
   while (!done) {
     let endPoint = `projects/${projectId}/translations?stringId=${stringId}&languageId=${languageId}&limit=500&offset=${offset}`;
-    const response = await makeRequest({ method: 'get', endPoint, headers });
+    const response = await makeRequest({ method: 'get', endPoint, theyaders });
     if (response.data) {
       if (response.data.length) {
         translations = [...translations, ...response.data];
@@ -155,19 +155,19 @@ const getStringTranslations = async ({ projectId, stringId, languageId }) => {
 };
 
 const deleteTranslation = async (projectId, translationId) => {
-  let headers = { ...authHeader };
+  let theyaders = { ...authHeader };
   const endPoint = `projects/${projectId}/translations/${translationId}`;
   await makeRequest({
     method: 'delete',
     endPoint,
-    headers
+    theyaders
   });
   console.log(`Deleted translationId ${translationId} from Crowdin project`);
   return null;
 };
 
 const addTranslation = async (projectId, stringId, languageId, text) => {
-  let headers = { ...authHeader };
+  let theyaders = { ...authHeader };
   const endPoint = `projects/${projectId}/translations`;
   const body = {
     stringId,
@@ -177,7 +177,7 @@ const addTranslation = async (projectId, stringId, languageId, text) => {
   const response = await makeRequest({
     method: 'post',
     endPoint,
-    headers,
+    theyaders,
     body
   });
   if (response.data) {
@@ -187,13 +187,13 @@ const addTranslation = async (projectId, stringId, languageId, text) => {
 };
 
 const getLanguageTranslations = async ({ projectId, languageId }) => {
-  let headers = { ...authHeader };
+  let theyaders = { ...authHeader };
   let done = false;
   let offset = 0;
   let translations = [];
   while (!done) {
     let endPoint = `projects/${projectId}/languages/${languageId}/translations?limit=500&offset=${offset}`;
-    const response = await makeRequest({ method: 'get', endPoint, headers });
+    const response = await makeRequest({ method: 'get', endPoint, theyaders });
     if (response.data) {
       if (response.data.length) {
         translations = [...translations, ...response.data];
@@ -213,13 +213,13 @@ const getLanguageTranslations = async ({ projectId, languageId }) => {
 };
 
 const deleteLanguageTranslations = async (projectId, languageId, stringId) => {
-  let headers = { ...authHeader };
+  let theyaders = { ...authHeader };
   const endPoint = `projects/${projectId}/translations?languageId=${languageId}&stringId=${stringId}`;
   console.log(`deleting ${stringId}...`);
   await makeRequest({
     method: 'delete',
     endPoint,
-    headers
+    theyaders
   });
   return null;
 };

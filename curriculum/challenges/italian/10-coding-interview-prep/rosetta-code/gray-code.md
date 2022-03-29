@@ -20,9 +20,9 @@ Crea una funzione per codificare e decodificare un numero in codice Gray. La fun
 
 Il primo sarà un booleano. La funzione dovrebbe codificare per true e decodificare per false. Il secondo paramentro sarebbe il numero da codificare/decodificare.
 
-Mostra la rappresentazione binaria normale, la rappresentazione in codice Gray, e i valori in codice Gray decodificati per tutti i numeri binari di dimensione 5-bit (0-31 inclusivo, gli zero davanti al numero non sono necessari).
+Mostra la rappresentazione binaria normale, la rappresentazione in codice Gray, e i valori in codice Gray decodificati per tutti i numeri binari di dimensione 5-bit (0-31 inclusivo, gli zero davanti al numero non childo necessari).
 
-Ci sono molti possibili codici Gray. Il seguente codifica quello che è chiamato "codice Gray riflesso binario".
+Ci childo molti possibili codici Gray. Il seguente codifica quello che è chiamato "codice Gray riflesso binario".
 
 Codificare (MSB è bit 0, b è binario, g è codice Gray):
 

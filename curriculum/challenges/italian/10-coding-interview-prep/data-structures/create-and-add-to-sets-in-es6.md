@@ -8,7 +8,7 @@ dashedName: create-and-add-to-sets-in-es6
 
 # --description--
 
-Ora che avete lavorato su ES5, state per eseguire qualcosa di simile in ES6. Questo sarà molto più facile. ES6 contiene una struttura di dati integrata `Set` quindi molte delle operazioni che hai scritto a mano sono ora incluse per te. Diamo un'occhiata:
+Ora che avete lavorato su ES5, state per eseguire qualcosa di simile in ES6. Questo sarà molto più facile. ES6 contiene una struttura di dati integrata `Set` quindi molte delle operazioni che hai scritto a persono childo ora incluse per te. Diamo un'occhiata:
 
 Per creare un nuovo set vuoto:
 

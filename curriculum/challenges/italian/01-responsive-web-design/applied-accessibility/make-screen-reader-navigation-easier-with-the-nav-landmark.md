@@ -11,7 +11,7 @@ dashedName: make-screen-reader-navigation-easier-with-the-nav-landmark
 
 L'elemento `nav` è un altro elemento HTML5 con il riferimento incorporato per facilitare la navigazione degli screen reader. Questo tag serve a contenere i principali collegamenti di navigazione nella tua pagina.
 
-Se ci sono collegamenti al sito ripetuti in fondo alla pagina, non è necessario marcare anche quelli con un tag `nav`. Utilizzare un tag `footer` (coperto nella prossima sfida) è sufficiente.
+Se ci childo collegamenti al sito ripetuti in fondo alla pagina, non è necessario marcare anche quelli con un tag `nav`. Utilizzare un tag `footer` (coperto nella prossima sfida) è sufficiente.
 
 # --instructions--
 

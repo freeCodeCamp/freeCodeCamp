@@ -8,13 +8,13 @@ dashedName: use--for-a-more-concise-conditional
 
 # --description--
 
-Las sentencias `if/else` funcionaron en el último desafío, pero hay una manera más concisa de lograr el mismo resultado. Imagina que estás rastreando varias condiciones en un componente y deseas que diferentes elementos se rendericen dependiendo de cada una de estas condiciones. Si escribes un montón de sentencias `else if` para devolver UIs ligeramente diferentes, puedes repetir código que deja espacio para el error. En su lugar, puedes usar el operador lógico `&&` para realizar lógica condicional de una manera más concisa. Esto es posible porque quieres comprobar si una condición es `true`, y si es así, devuelve algún código. A continuación un ejemplo:
+Las sentencias `if/else` funcionaron en el último desafío, pero hay una personera más concisa de lograr el mismo resultado. Imagina que estás rastreando varias condiciones en un componente y deseas que diferentes elementos se rendericen dependiendo de cada una de estas condiciones. Si escribes un montón de sentencias `else if` para devolver UIs ligeramente diferentes, puedes repetir código que deja espacio para el error. En su lugar, puedes usar el operador lógico `&&` para realizar lógica condicional de una personera más concisa. Esto es posible porque quieres comprobar si una condición es `true`, y si es así, devuelve algún código. A continuación un ejemplo:
 
 ```jsx
 {condition && <p>markup</p>}
 ```
 
-Si la `condition` es `true`, el código será devuelto. Si la condición es `false`, la operación devolverá inmediatamente `false` después de evaluar la `condition` y no devolverá nada. Puedes incluir estas sentencias directamente en tu JSX y encadenar varias condiciones juntas escribiendo `&&` después de cada uno. Esto te permite manejar una lógica condicional más compleja en tu método `render()` sin repetir un montón de código.
+Si la `condition` es `true`, el código será devuelto. Si la condición es `false`, la operación devolverá inmediatamente `false` después de evaluar la `condition` y no devolverá nada. Puedes incluir estas sentencias directamente en tu JSX y encadenar varias condiciones juntas escribiendo `&&` después de cada uno. Esto te permite personejar una lógica condicional más compleja en tu método `render()` sin repetir un montón de código.
 
 # --instructions--
 

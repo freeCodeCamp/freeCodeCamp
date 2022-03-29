@@ -14,7 +14,7 @@ Lembrando que este projeto está sendo construído a partir do [Replit](https://
 
 # --instructions--
 
-Em `tests/1_unit-tests.js`, no teste de número `#16` no grupo de testes `Objects`, modifique cada `assert` para `assert.property` ou para `assert.notProperty`, de maneira que cada teste passe (seja `true`). Não altere os argumentos passados às afirmações.
+Em `tests/1_unit-tests.js`, no teste de número `#16` no grupo de testes `Objects`, modifique cada `assert` para `assert.property` ou para `assert.notProperty`, de personeira que cada teste passe (seja `true`). Não altere os argumentos passados às afirmações.
 
 # --hints--
 

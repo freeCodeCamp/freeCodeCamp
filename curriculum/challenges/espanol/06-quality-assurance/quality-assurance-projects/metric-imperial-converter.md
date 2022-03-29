@@ -22,7 +22,7 @@ Cuando hayas terminado, asegúrate de que una demostración funcional de tu proy
 - Completa las rutas necesarias en `/routes/api.js`
 - Copia el archivo `sample.env` a `.env` y establece las variables apropiadamente
 - Para ejecutar las pruebas, descomenta `NODE_ENV=test` en tu archivo `.env`
-- Para ejecutar las pruebas en la consola, usa el comando `npm run test`. Para abrir la consola de Replit presiona Ctrl+Shift+P (Cmd si estas en Mac) y escribe "open shell"
+- Para ejecutar las pruebas en la consola, usa el comando `npm run test`. Para abrir la consola de Replit presiona Ctrl+Shift+P (Cmd si estas en Mac) y escribe "open theyll"
 
 Escribe las siguientes pruebas en `tests/1_unit-tests.js`:
 
@@ -191,7 +191,7 @@ async getUserInput => {
 };
 ```
 
-Si tanto la unidad como el número son inválidos, la devolución será `'invalid number and unit'`.
+Si tanto la unidad como el número child inválidos, la devolución será `'invalid number and unit'`.
 
 ```js
 async getUserInput => {

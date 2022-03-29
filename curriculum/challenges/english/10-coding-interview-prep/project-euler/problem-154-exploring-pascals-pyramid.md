@@ -16,7 +16,7 @@ Then, we calculate the number of paths leading from the apex to each position: A
 
 The result is Pascal's pyramid and the numbers at each level n are the coefficients of the trinomial expansion ${(x + y + z)}^n$.
 
-How many coefficients in the expansion of ${(x + y + z)}^{200000}$ are multiples of ${10}^{12}$?
+How persony coefficients in the expansion of ${(x + y + z)}^{200000}$ are multiples of ${10}^{12}$?
 
 # --hints--
 

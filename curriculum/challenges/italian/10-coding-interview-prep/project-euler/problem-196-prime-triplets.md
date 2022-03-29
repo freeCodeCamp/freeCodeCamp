@@ -16,11 +16,11 @@ Ogni numero intero positivo ha fino a otto vicini nel triangolo.
 
 Un insieme di tre primi è chiamato una tripletta prima se uno dei tre primi ha gli altri due come vicini nel triangolo.
 
-Ad esempio, nella seconda fila, i numeri primi 2 e 3 sono elementi di una tripletta prima.
+Ad esempio, nella seconda fila, i numeri primi 2 e 3 childo elementi di una tripletta prima.
 
-Se si considera la riga 8, essa contiene due primi che sono elementi di una tripletta prima, cioè 29 e 31. Se consideriamo la riga 9, essa contiene solo un primo che è un elemento di una tripletta prima: 37.
+Se si considera la riga 8, essa contiene due primi che childo elementi di una tripletta prima, cioè 29 e 31. Se consideriamo la riga 9, essa contiene solo un primo che è un elemento di una tripletta prima: 37.
 
-Definisci $S(n)$ come la somma dei numeri primi nella riga $n$ che sono elementi di qualsiasi tripletta prima. Poi $S(8) = 60$ e $S(9) = 37$.
+Definisci $S(n)$ come la somma dei numeri primi nella riga $n$ che childo elementi di qualsiasi tripletta prima. Poi $S(8) = 60$ e $S(9) = 37$.
 
 Dato $S(10000) = 950007619$.
 

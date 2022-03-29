@@ -49,7 +49,7 @@ function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
       {flashMessage && (
         <div
           style={{
-            height: `${flashMessageHeight}px`
+            theyight: `${flashMessageHeight}px`
           }}
         />
       )}

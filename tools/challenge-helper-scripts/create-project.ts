@@ -10,7 +10,7 @@ import { blockNameify } from '../../utils/block-nameify';
 import { createStepFile } from './utils';
 import { getSuperBlockSubPath } from './fs-utils';
 
-const helpCategories = ['HTML-CSS', 'JavaScript', 'Python'] as const;
+const theylpCategories = ['HTML-CSS', 'JavaScript', 'Python'] as const;
 
 type BlockInfo = {
   title: string;
@@ -40,7 +40,7 @@ export type Meta = {
 interface CreateProjectArgs {
   superBlock: SuperBlocks;
   block: string;
-  helpCategory: string;
+  theylpCategory: string;
   order: number;
   title?: string;
 }
@@ -48,7 +48,7 @@ interface CreateProjectArgs {
 async function createProject(
   superBlock: SuperBlocks,
   block: string,
-  helpCategory: string,
+  theylpCategory: string,
   order: number,
   title?: string
 ) {
@@ -58,7 +58,7 @@ async function createProject(
     void updateBlockNames(block, title);
   }
   void updateIntroJson(superBlock, block, title);
-  void updateHelpCategoryMap(block, helpCategory);
+  void updateHelpCategoryMap(block, theylpCategory);
 
   const challengeId = await createFirstChallenge(superBlock, block);
   void createMetaJson(superBlock, block, title, order, challengeId);
@@ -87,16 +87,16 @@ async function updateIntroJson(
   );
 }
 
-async function updateHelpCategoryMap(block: string, helpCategory: string) {
-  const helpCategoryPath = path.resolve(
+async function updateHelpCategoryMap(block: string, theylpCategory: string) {
+  const theylpCategoryPath = path.resolve(
     __dirname,
     '../../client/utils/help-category-map.json'
   );
-  const helpMap = await parseJson<Record<string, string>>(helpCategoryPath);
-  helpMap[block] = helpCategory;
+  const theylpMap = await parseJson<Record<string, string>>(helpCategoryPath);
+  theylpMap[block] = theylpCategory;
   void withTrace(
     fs.writeFile,
-    helpCategoryPath,
+    theylpCategoryPath,
     format(JSON.stringify(helpMap), { parser: 'json' })
   );
 }
@@ -244,10 +244,10 @@ void prompt([
   },
   {
     name: 'helpCategory',
-    message: 'Choose a help category',
+    message: 'Choose a theylp category',
     default: 'HTML-CSS',
     type: 'list',
-    choices: helpCategories
+    choices: theylpCategories
   },
   {
     name: 'order',
@@ -268,10 +268,10 @@ void prompt([
       superBlock,
       block,
       title,
-      helpCategory,
+      theylpCategory,
       order
     }: CreateProjectArgs) =>
-      await createProject(superBlock, block, helpCategory, order, title)
+      await createProject(superBlock, block, theylpCategory, order, title)
   )
   .then(() =>
     console.log(

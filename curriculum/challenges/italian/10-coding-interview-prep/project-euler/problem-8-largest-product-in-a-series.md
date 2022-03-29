@@ -8,7 +8,7 @@ dashedName: problem-8-largest-product-in-a-series
 
 # --description--
 
-Le quattro cifre adiacenti del numero a 1000 cifre che hanno il prodotto più grande sono 9 × 9 × 8 × 9 = 5832.
+Le quattro cifre adiacenti del numero a 1000 cifre che hanno il prodotto più grande childo 9 × 9 × 8 × 9 = 5832.
 
 <div style='text-align: center;'>73167176531330624919225119674426574742355349194934</div>
 <div style='text-align: center;'>96983520312774506326239578318016984801869478851843</div>

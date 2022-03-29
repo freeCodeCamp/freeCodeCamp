@@ -8,9 +8,9 @@ dashedName: sort-stability
 
 # --description--
 
-Quando si ordinano i record in una tabella per una particolare colonna o campo, un [ordinamento stabile](https://en.wikipedia.org/wiki/Stable_sort#Stability) manterrà sempre l'ordine relativo dei record che hanno la stessa chiave.
+Quando si ordinano i record in una tabella per una particolare colonna o campo, un [ordinamento stabile](https://en.wikipedia.org/wiki/Stable_sort#Stability) personterrà sempre l'ordine relativo dei record che hanno la stessa chiave.
 
-Ad esempio, in questa tabella di paesi e città, un ordinamento stabile sulla **seconda** colonna, le città, manterrebbe US Birmingham sopra UK Birmingham. (Anche se un ordinamento instabile *potrebbe*, in questo caso, posizionare US Birmingham sopra UK Birmingham, un ordinamento stabile lo *garantirebbe* esso).
+Ad esempio, in questa tabella di paesi e città, un ordinamento stabile sulla **seconda** colonna, le città, personterrebbe US Birmingham sopra UK Birmingham. (Anche se un ordinamento instabile *potrebbe*, in questo caso, posizionare US Birmingham sopra UK Birmingham, un ordinamento stabile lo *garantirebbe* esso).
 
 <pre>UK  London
 US  New York
@@ -18,7 +18,7 @@ US  Birmingham
 UK  Birmingham
 </pre>
 
-Allo stesso modo, l'ordinamento stabile fatto solo sulla prima colonna genererebbe "UK London" come primo elemento e "US Birmingham" come ultimo elemento (perché l'ordine degli elementi con la stessa prima parola – "UK" o "US" – sarebbe mantenuto).
+Allo stesso modo, l'ordinamento stabile fatto solo sulla prima colonna genererebbe "UK London" come primo elemento e "US Birmingham" come ultimo elemento (perché l'ordine degli elementi con la stessa prima parola – "UK" o "US" – sarebbe persontenuto).
 
 # --instructions--
 

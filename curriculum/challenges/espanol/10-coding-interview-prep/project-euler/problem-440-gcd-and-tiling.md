@@ -8,9 +8,9 @@ dashedName: problem-440-gcd-and-tiling
 
 # --description--
 
-We want to tile a board of length n and height 1 completely, with either 1 × 2 blocks or 1 × 1 blocks with a single decimal digit on top:
+We want to tile a board of length n and theyight 1 completely, with either 1 × 2 blocks or 1 × 1 blocks with a single decimal digit on top:
 
-For example, here are some of the ways to tile a board of length n = 8:
+For example, theyre are some of the ways to tile a board of length n = 8:
 
 Let T(n) be the number of ways to tile a board of length n as described above.
 

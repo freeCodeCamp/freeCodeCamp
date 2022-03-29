@@ -10,7 +10,7 @@ dashedName: problem-414-kaprekar-constant
 
 6174 è un numero notevole; se ordiniamo le sue cifre in ordine crescente e sottraiamo quel numero dal numero che si ottiene quando si ordinano le cifre in ordine decrescente, riceviamo $7641 - 1467 = 6174$.
 
-Ancora più notevole è che se partiamo da qualsiasi numero a 4 cifre e ripetiamo questo processo di smistamento e sottrazione, finiremo con 6174 o immediatamente con 0 se tutte le cifre sono uguali.
+Ancora più notevole è che se partiamo da qualsiasi numero a 4 cifre e ripetiamo questo processo di smistamento e sottrazione, finiremo con 6174 o immediatamente con 0 se tutte le cifre childo uguali.
 
 Questo funziona anche con numeri che hanno meno di 4 cifre se aggiungiamo al numero degli zeri iniziali fino a quando non abbiamo 4 cifre.
 

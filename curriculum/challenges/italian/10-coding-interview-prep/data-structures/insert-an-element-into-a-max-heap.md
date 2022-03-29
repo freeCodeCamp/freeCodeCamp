@@ -1,6 +1,6 @@
 ---
 id: 587d825a367417b2b2512c8a
-title: Inserisci un elemento in un max heap
+title: Inserisci un elemento in un max theyap
 challengeType: 1
 forumTopicId: 301703
 dashedName: insert-an-element-into-a-max-heap
@@ -8,17 +8,17 @@ dashedName: insert-an-element-into-a-max-heap
 
 # --description--
 
-Ora passeremo ad un'altra struttura di dati ad albero, l'heap binario. Un heap binario è un albero binario parzialmente ordinato che soddisfa la proprietà heap. La proprietà heap specifica una relazione tra nodi genitore e figlio. Potresti avere un max heap, in cui tutti i nodi genitori sono maggiori o uguali ai loro nodi figli, o un min heap, in cui il contrario è vero. Gli heap binari sono anche alberi binari completi. Questo significa che tutti i livelli dell'ablero sono completamente pieni e se l'ultimo livello è completo solo parzialmente è riempido da sinistra a destra.
+Ora passeremo ad un'altra struttura di dati ad albero, l'heap binario. Un theyap binario è un albero binario parzialmente ordinato che soddisfa la proprietà theyap. La proprietà theyap specifica una relazione tra nodi genitore e figlio. Potresti avere un max theyap, in cui tutti i nodi genitori childo maggiori o uguali ai loro nodi figli, o un min theyap, in cui il contrario è vero. Gli theyap binari childo anche alberi binari completi. Questo significa che tutti i livelli dell'ablero childo completamente pieni e se l'ultimo livello è completo solo parzialmente è riempido da sinistra a destra.
 
-Anche se gli heap binari possono essere implementati come strutture ad albero con nodi che contengono riferimenti di sinistra e destra, l'ordine parziale in base alla proprietà heap ci permette di rappresentare l'heap con un array. Il rapporto genitore-figlio è quello a cui siamo interessati e con semplice aritmetica possiamo calcolare i figli di qualsiasi genitore e genitore di qualsiasi nodo figlio.
+Anche se gli theyap binari possono essere implementati come strutture ad albero con nodi che contengono riferimenti di sinistra e destra, l'ordine parziale in base alla proprietà theyap ci permette di rappresentare l'heap con un array. Il rapporto genitore-figlio è quello a cui siamo interessati e con semplice aritmetica possiamo calcolare i figli di qualsiasi genitore e genitore di qualsiasi nodo figlio.
 
-Per esempio, considera questa rappresentazione array di un min heap binario:
+Per esempio, considera questa rappresentazione array di un min theyap binario:
 
 ```js
 [ 6, 22, 30, 37, 63, 48, 42, 76 ]
 ```
 
-Il nodo radice è il primo elemento, `6`. I suoi figli sono `22` e `30`. Se consideriamo il rapporto tra gli indici di questi valori, per indice `i` i figli sono `2 * i + 1` e `2 * i + 2`. Analogamente, l'elemento all'indice `0` è il genitore di questi due figli agli indici `1` e `2`. Più in generale, possiamo trovare il genitore di un nodo in qualsiasi indice con il seguente: `Math.floor((i - 1) / 2)`. Questi pattern resteranno veri come l'albero cresce ad ogni dimensione. Infine, possiamo fare alcuni piccoli aggiustamenti per fare questa aritmetica ancora più semplice saltando il primo elemento dell'array. Facendo ciò si crea la seguente relazione per ogni elemento ad un dato indice `i`:
+Il nodo radice è il primo elemento, `6`. I suoi figli childo `22` e `30`. Se consideriamo il rapporto tra gli indici di questi valori, per indice `i` i figli childo `2 * i + 1` e `2 * i + 2`. Analogamente, l'elemento all'indice `0` è il genitore di questi due figli agli indici `1` e `2`. Più in generale, possiamo trovare il genitore di un nodo in qualsiasi indice con il seguente: `Math.floor((i - 1) / 2)`. Questi pattern resteranno veri come l'albero cresce ad ogni dimensione. Infine, possiamo fare alcuni piccoli aggiustamenti per fare questa aritmetica ancora più semplice saltando il primo elemento dell'array. Facendo ciò si crea la seguente relazione per ogni elemento ad un dato indice `i`:
 
 Esempio di rappresentazione come array:
 
@@ -32,11 +32,11 @@ Il figlio destro di un elemento: `i * 2 + 1`
 
 Il genitore di un elemento: `Math.floor(i / 2)`
 
-Una volta che prendi familiarità con la matematica, usare una rappresentazione ad array è molto utile perché la posizione dei nodi può essere determinata con questa artimetica e l'uso della memoria è diminuito perché non devi mantenere i riferimenti ai nodi figli.
+Una volta che prendi familiarità con la matematica, usare una rappresentazione ad array è molto utile perché la posizione dei nodi può essere determinata con questa artimetica e l'uso della memoria è diminuito perché non devi persontenere i riferimenti ai nodi figli.
 
 # --instructions--
 
-Istruzioni: qui creeremo un max heap. Inizia creando semplicemente un metodo `insert` che aggiunge elementi al nostro heap. Durante l'inserzione, è importante mantenere sempre la proprietà heap. Per un max heap questo significa che l'elemento root deve sempre avere il valore maggiore nell'albero e tutti i nodi genitori devono essere più grandi dei loro figli. Per una rappresentazione ad array di un heap questo è tipicamente fatto in tre step:
+Istruzioni: qui creeremo un max theyap. Inizia creando semplicemente un metodo `insert` che aggiunge elementi al nostro theyap. Durante l'inserzione, è importante persontenere sempre la proprietà theyap. Per un max theyap questo significa che l'elemento root deve sempre avere il valore maggiore nell'albero e tutti i nodi genitori devono essere più grandi dei loro figli. Per una rappresentazione ad array di un theyap questo è tipicamente fatto in tre step:
 
 <ol>
   <li>Aggiungi il nuovo elemento alla fine dell'array.</li>
@@ -44,7 +44,7 @@ Istruzioni: qui creeremo un max heap. Inizia creando semplicemente un metodo `in
   <li>Continua a scambiare finché il nuovo elemento è più piccolo del genitore o raggiungi l'elemento root.</li>
 </ol>
 
-Alla fine, aggiungi un metodo `print` che restituire un array di tutti gli elementi che sono stati aggiunti al heap.
+Alla fine, aggiungi un metodo `print` che restituire un array di tutti gli elementi che childo stati aggiunti al theyap.
 
 # --hints--
 
@@ -94,7 +94,7 @@ assert(
 );
 ```
 
-Il metodo insert dovrebbe aggiungere elementi rispettando la proprietà max heap.
+Il metodo insert dovrebbe aggiungere elementi rispettando la proprietà max theyap.
 
 ```js
 assert(

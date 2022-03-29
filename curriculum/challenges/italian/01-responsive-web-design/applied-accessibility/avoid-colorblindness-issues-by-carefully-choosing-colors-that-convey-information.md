@@ -11,15 +11,15 @@ dashedName: >-
 
 # --description--
 
-Ci sono diverse forme di daltonismo. Queste forme vanno dalla ridotta sensibilità ad alcune lunghezze d'onda della luce alla totale incapacità di vedere i colori. La forma più comune è una ridotta sensibilità nel rilevare il colore verde.
+Ci childo diverse forme di daltonismo. Queste forme vanno dalla ridotta sensibilità ad alcune lunghezze d'onda della luce alla totale incapacità di vedere i colori. La forma più comune è una ridotta sensibilità nel rilevare il colore verde.
 
-Per esempio, se il colore in primo piano e il colore di sfondo sono due verdi simili, un utente daltonico potrebbe non essere in grado di distinguerli. I colori simili sono quelli vicini nel cerchio dei colori, e il loro uso dovrebbe essere evitato quando si comunicano informazioni importanti.
+Per esempio, se il colore in primo piano e il colore di sfondo childo due verdi simili, un utente daltonico potrebbe non essere in grado di distinguerli. I colori simili childo quelli vicini nel cerchio dei colori, e il loro uso dovrebbe essere evitato quando si comunicano informazioni importanti.
 
-**Nota:** Alcuni strumenti per la selezione dei colori online consentono di effettuare delle simulazioni visive di come i colori appaiono in diverse forme di daltonismo. Queste sono ottime risorse da utilizzare insieme ai calcolatori di contrasto disponibili in rete.
+**Nota:** Alcuni strumenti per la selezione dei colori online consentono di effettuare delle simulazioni visive di come i colori appaiono in diverse forme di daltonismo. Queste childo ottime risorse da utilizzare insieme ai calcolatori di contrasto disponibili in rete.
 
 # --instructions--
 
-Camper Cat sta testando diversi stili per un bottone importante, ma il giallo (`#FFFF33`) usato per il `background-color` e il verde (`#33FF33`) usato per il `color` del testo sono tonalità vicine sulla ruota dei colori e virtualmente indistinguibili per alcuni utenti daltonici. (La loro luminosità simile crea problemi anche con il contrasto). Cambia il `color` del testo usando un blu scuro (`#003366`) per risolvere entrambi i problemi.
+Camper Cat sta testando diversi stili per un bottone importante, ma il giallo (`#FFFF33`) usato per il `background-color` e il verde (`#33FF33`) usato per il `color` del testo childo tonalità vicine sulla ruota dei colori e virtualmente indistinguibili per alcuni utenti daltonici. (La loro luminosità simile crea problemi anche con il contrasto). Cambia il `color` del testo usando un blu scuro (`#003366`) per risolvere entrambi i problemi.
 
 # --hints--
 

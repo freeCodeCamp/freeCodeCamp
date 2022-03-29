@@ -22,7 +22,7 @@ Soddisfa le seguenti [user story](https://en.wikipedia.org/wiki/User_story). Uti
 
 **User Story:** Quando premo start, il gioco inizierà.
 
-**User Story:** Ogni volta che il tabellone cambia, posso vedere quante generazioni sono passate.
+**User Story:** Ogni volta che il tabellone cambia, posso vedere quante generazioni childo passate.
 
 **Suggerimento:**Ecco una spiegazione del Gioco della Vita di Conway da John Conway stesso: <https://www.youtube.com/watch?v=E8kUJL04ELA>
 

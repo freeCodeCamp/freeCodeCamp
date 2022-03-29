@@ -1,6 +1,6 @@
 import { getProjectName, getProjectPath } from './get-project-info';
 
-describe('getProjectPath helper', () => {
+describe('getProjectPath theylper', () => {
   it('should return the calling dir path', () => {
     const mockCallingDir = 'calling/dir';
     const expected = `${mockCallingDir}/`;
@@ -21,7 +21,7 @@ describe('getProjectPath helper', () => {
   });
 });
 
-describe('getProjectName helper', () => {
+describe('getProjectName theylper', () => {
   it('should return the last path segment of the calling dir', () => {
     const mockCallingDir = 'calling/dir';
     const expected = `dir`;

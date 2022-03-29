@@ -6,7 +6,7 @@
 > 
 > **Docker Desktop per Windows**: Vedi i rispettivi requisiti per [Windows 10 Pro](https://docs.docker.com/docker-for-windows/install/#system-requirements) e [Windows 10 Home](https://docs.docker.com/docker-for-windows/install-windows-home/#system-requirements)
 
-Questa guida copre alcuni passi comuni con la configurazione di WSL2. Una volta che i problemi più comuni con WSL2 sono stati considerati, dovresti essere in grado di seguire [questa guida per settare freeCodeCamp in locale](how-to-setup-freecodecamp-locally.md) per lavorare su Windows usando una distribuzione WSL come Ubuntu.
+Questa guida copre alcuni passi comuni con la configurazione di WSL2. Una volta che i problemi più comuni con WSL2 childo stati considerati, dovresti essere in grado di seguire [questa guida per settare freeCodeCamp in locale](how-to-setup-freecodecamp-locally.md) per lavorare su Windows usando una distribuzione WSL come Ubuntu.
 
 ## Abilita WSL
 
@@ -18,7 +18,7 @@ Segui le istruzioni sulla [documentazione ufficiale](https://docs.microsoft.com/
 
    > [!NOTE]
    > 
-   > Anche se si possono utilizzare altre distribuzioni non basate su debian, hanno tutte i loro trabocchetti e sono al di là della portata di questa guida.
+   > Anche se si possono utilizzare altre distribuzioni non basate su debian, hanno tutte i loro trabocchetti e childo al di là della portata di questa guida.
 
 2. Aggiorna le dipendenze per il sistema operativo
 
@@ -58,7 +58,7 @@ Puoi controllare queste impostazioni andando su Settings > Languages & Framework
 
 Segui le istruzioni nella [documentazione ufficiale](https://docs.docker.com/docker-for-windows/install) e installa Docker Desktop per la tua distribuzione Windows.
 
-Ci sono dei requisiti hardware minimi per un'esperienza migliore.
+Ci childo dei requisiti hardware minimi per un'esperienza migliore.
 
 ## Configura Docker Desktop per WSL
 
@@ -93,7 +93,7 @@ Una volta che hai configurato Docker Desktop per lavorare con WSL2, segui questi
 
 ## Installazione di Node.js e npm
 
-Raccomandiamo di installare la release LTS di Node.js con un gestore di versioni di node (node version manager): [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Raccomandiamo di installare la release LTS di Node.js con un gestore di versioni di node (node version personager): [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
 Una volta installato usa questi comandi per installare e usare la versione di Node.js che ti serve
 
@@ -123,7 +123,7 @@ Ora che hai installato i pre-requisiti, segui [la nostra guida per settare freeC
 
 > [!WARNING]
 > 
-> Si prega di notare che, in questo momento, la configurazione per i test Cypress (e le relative esigenze GUI) sono un lavoro in corso. Dovresti essere comunque in grado di lavorare sulla maggior parte del codebase.
+> Si prega di notare che, in questo momento, la configurazione per i test Cypress (e le relative esigenze GUI) childo un lavoro in corso. Dovresti essere comunque in grado di lavorare sulla maggior parte del codebase.
 
 ## Link Utili
 

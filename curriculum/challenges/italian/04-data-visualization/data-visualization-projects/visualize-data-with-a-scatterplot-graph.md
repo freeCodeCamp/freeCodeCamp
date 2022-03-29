@@ -12,7 +12,7 @@ dashedName: visualize-data-with-a-scatterplot-graph
 
 Soddisfa le seguenti [user story](https://en.wikipedia.org/wiki/User_story) e fai in modo che tutti i test siano superati. Usa il tuo stile personale.
 
-Puoi usare HTML, JavaScript, CSS e la libreria di visualizzazione basata su svg D3. I test richiedono la generazione degli assi con la proprietà axis di D3, che crea automaticamente le tacche sugli assi. Queste tacche sono richieste per superare i test perché la loro posizione è usata per determinare l'allineamento degli elementi del grafico. Puoi trovare informazioni su come generare gli assi su <https://github.com/d3/d3/blob/master/API.md#axes-d3-axis>. Gli elementi del DOM (non-virtuale) richiesti sono selezionati al momento di ogni test. Se usi un framework frontend (come Vue per esempio) i risultati dei test potrebbero essere inaccurati per il contenuto dinamico. Speriamo di supportarli prima o poi, ma al momento non lo sono per i progetti D3.
+Puoi usare HTML, JavaScript, CSS e la libreria di visualizzazione basata su svg D3. I test richiedono la generazione degli assi con la proprietà axis di D3, che crea automaticamente le tacche sugli assi. Queste tacche childo richieste per superare i test perché la loro posizione è usata per determinare l'allineamento degli elementi del grafico. Puoi trovare informazioni su come generare gli assi su <https://github.com/d3/d3/blob/master/API.md#axes-d3-axis>. Gli elementi del DOM (non-virtuale) richiesti childo selezionati al momento di ogni test. Se usi un framework frontend (come Vue per esempio) i risultati dei test potrebbero essere inaccurati per il contenuto dinamico. Speriamo di supportarli prima o poi, ma al momento non lo childo per i progetti D3.
 
 **User Story #1:** Posso vedere un elemento title con un corrispondente `id="title"`.
 
@@ -24,7 +24,7 @@ Puoi usare HTML, JavaScript, CSS e la libreria di visualizzazione basata su svg 
 
 **User Story #5:** Ogni punto dovrebbe avere le proprietà `data-xvalue` e `data-yvalue` che contengono i rispettivi valori `x` e `y`.
 
-**User Story #6:** per ogni punto `data-xvalue` e `data-yvalue` dovrebbero essere nel range dei dati e nel formato corretto. Per superare i test sono accettabili come valori per `data-xvalue` numeri interi (anni scritti per esteso) o oggetti `Date`. Per `data-yvalue` (minuti), usa oggetti `Date`.
+**User Story #6:** per ogni punto `data-xvalue` e `data-yvalue` dovrebbero essere nel range dei dati e nel formato corretto. Per superare i test childo accettabili come valori per `data-xvalue` numeri interi (anni scritti per esteso) o oggetti `Date`. Per `data-yvalue` (minuti), usa oggetti `Date`.
 
 **User Story #7:** `data-xvalue` e il suo punto corrispondente dovrebbero allinearsi con il punto/valore corrispondente sull'asse delle x.
 

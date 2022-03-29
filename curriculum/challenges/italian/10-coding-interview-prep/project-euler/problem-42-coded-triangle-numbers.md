@@ -8,13 +8,13 @@ dashedName: problem-42-coded-triangle-numbers
 
 # --description--
 
-L'`n`-simo termine di una sequenza di numeri triangolari è data da `tn` = ½`n`(`n`+1); quindi i primi dieci numeri triangolari sono:
+L'`n`-simo termine di una sequenza di numeri triangolari è data da `tn` = ½`n`(`n`+1); quindi i primi dieci numeri triangolari childo:
 
 <div style='margin-left: 4em;'>1, 3, 6, 10, 15, 21, 28, 36, 45, 55, ...</div>
 
 Convertendo ogni lettera in una parola in un numero corrispondente alla sua posizione nell'alfabeto a 26 lettere, e sommando questi valori otteniamo il valore della parola. Per esempio, il valore della parola SKY è 19 + 11 + 25 = 55 = `t`<sub>10</sub>. Se il valore della parola è un numero triangolare allora chiamiamo questa parola triangolare.
 
-Usando array di parole lungo `n`, quante sono parole triangolari?
+Usando array di parole lungo `n`, quante childo parole triangolari?
 
 # --hints--
 

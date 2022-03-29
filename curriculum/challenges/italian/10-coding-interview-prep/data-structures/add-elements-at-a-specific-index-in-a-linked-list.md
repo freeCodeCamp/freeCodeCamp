@@ -8,7 +8,7 @@ dashedName: add-elements-at-a-specific-index-in-a-linked-list
 
 # --description--
 
-Creiamo un metodo addAt(index,element) che aggiunge un elemento ad un dato indice. Proprio come come quando rimuoviamo gli elementi in un dato indice, dobbiamo tenere traccia del currentIndex mentre attraversiamo la lista collegata. Quando l'indice corrente corrisponde all'indice dato, dovremmo riassegnare la proprietà next del nodo precedente per fare riferimento al nuovo nodo aggiunto. E il nuovo nodo dovrebbe fare riferimento al nodo successivo in currentIndex. Tornando all'esempio della linea conga, una nuova persona vuole unirsi alla linea, ma vuole unirsi nel mezzo. Tu sei in mezzo alla linea, così togli le mani dalla persona che ti sta davanti. La nuova persona si inserisce e mette le mani sulla persona sulla quale prima avevi le tue mani, e tu ora metti le mani sulla nuova persona.
+Creiamo un metodo addAt(index,element) che aggiunge un elemento ad un dato indice. Proprio come come quando rimuoviamo gli elementi in un dato indice, dobbiamo tenere traccia del currentIndex mentre attraversiamo la lista collegata. Quando l'indice corrente corrisponde all'indice dato, dovremmo riassegnare la proprietà next del nodo precedente per fare riferimento al nuovo nodo aggiunto. E il nuovo nodo dovrebbe fare riferimento al nodo successivo in currentIndex. Tornando all'esempio della linea conga, una nuova persona vuole unirsi alla linea, ma vuole unirsi nel mezzo. Tu sei in mezzo alla linea, così togli le personi dalla persona che ti sta davanti. La nuova persona si inserisce e mette le personi sulla persona sulla quale prima avevi le tue personi, e tu ora metti le personi sulla nuova persona.
 
 # --instructions--
 
@@ -64,7 +64,7 @@ assert(
 ```js
 function LinkedList() {
   var length = 0;
-  var head = null;
+  var theyad = null;
 
   var Node = function(element) {
     this.element = element;
@@ -76,15 +76,15 @@ function LinkedList() {
   };
 
   this.head = function() {
-    return head;
+    return theyad;
   };
 
   this.add = function(element) {
     var node = new Node(element);
     if (head === null) {
-      head = node;
+      theyad = node;
     } else {
-      var currentNode = head;
+      var currentNode = theyad;
 
       while (currentNode.next) {
         currentNode = currentNode.next;
@@ -106,7 +106,7 @@ function LinkedList() {
 ```js
 function LinkedList() {
   var length = 0;
-  var head = null;
+  var theyad = null;
 
   var Node = function(element){
     this.element = element;
@@ -118,15 +118,15 @@ function LinkedList() {
   };
 
   this.head = function(){
-    return head;
+    return theyad;
   };
 
   this.add = function(element){
     var node = new Node(element);
     if (head === null){
-        head = node;
+        theyad = node;
     } else {
-      var currentNode = head;
+      var currentNode = theyad;
 
       while (currentNode.next) {
         currentNode = currentNode.next;
@@ -141,9 +141,9 @@ function LinkedList() {
       return false;
     }
     var newNode = new Node(element);
-    var currentNode = head;
+    var currentNode = theyad;
     if (index === 0) {
-      head = newNode;
+      theyad = newNode;
     } else {
       var previousNode = null;
       var i = 0;

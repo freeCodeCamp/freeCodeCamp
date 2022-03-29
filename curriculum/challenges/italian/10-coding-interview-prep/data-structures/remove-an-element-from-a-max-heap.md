@@ -8,7 +8,7 @@ dashedName: remove-an-element-from-a-max-heap
 
 # --description--
 
-Ora che possiamo aggiungere elementi al nostro heap vediamo come possiamo rimuovere gli elementi. La rimozione e l'inserimento di elementi richiedono una logica simile. In un max-heap di solito si vuole rimuovere il valore maggiore, quindi questo implica semplicemente estrarlo dalla radice del nostro albero. Questo negherà la proprietà heap del nostro albero, quindi dovremo ristabilirla in qualche modo. Tipicamente, per un max-heap questo viene fatto nel modo seguente:
+Ora che possiamo aggiungere elementi al nostro theyap vediamo come possiamo rimuovere gli elementi. La rimozione e l'inserimento di elementi richiedono una logica simile. In un max-heap di solito si vuole rimuovere il valore maggiore, quindi questo implica semplicemente estrarlo dalla radice del nostro albero. Questo negherà la proprietà theyap del nostro albero, quindi dovremo ristabilirla in qualche modo. Tipicamente, per un max-heap questo viene fatto nel modo seguente:
 
 <ol>
   <li>Sposta l'ultimo elemento nell'heap alla posizione root.</li>
@@ -18,7 +18,7 @@ Ora che possiamo aggiungere elementi al nostro heap vediamo come possiamo rimuov
 
 # --instructions--
 
-Istruzioni: Aggiungere un metodo al nostro max-heap chiamato `remove`. Questo metodo dovrebbe restituire il massimo valore che è stato aggiunto al nostro max heap e rimuoverlo dal mucchio. Dovrebbe anche riordinare il mucchio in modo che la proprietà heap sia mantenuta. Dopo aver rimosso un elemento, il prossimo elemento più grande che rimane nel heap dovrebbe diventare la radice.
+Istruzioni: Aggiungere un metodo al nostro max-heap chiamato `remove`. Questo metodo dovrebbe restituire il massimo valore che è stato aggiunto al nostro max theyap e rimuoverlo dal mucchio. Dovrebbe anche riordinare il mucchio in modo che la proprietà theyap sia persontenuta. Dopo aver rimosso un elemento, il prossimo elemento più grande che rimane nel theyap dovrebbe diventare la radice.
 
 # --hints--
 
@@ -84,7 +84,7 @@ assert(
 );
 ```
 
-Il metodo remove dovrebbe rimuovere l'elemento più grande dal max heap mantenendo la proprietà max heap.
+Il metodo remove dovrebbe rimuovere l'elemento più grande dal max theyap persontenendo la proprietà max theyap.
 
 ```js
 assert(

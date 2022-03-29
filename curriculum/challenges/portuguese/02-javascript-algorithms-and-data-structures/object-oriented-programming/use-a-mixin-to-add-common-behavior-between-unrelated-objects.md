@@ -8,7 +8,7 @@ dashedName: use-a-mixin-to-add-common-behavior-between-unrelated-objects
 
 # --description--
 
-Como você já viu, comportamento é compartilhado através de herança. Porém, existem casos em que a herança não é a melhor solução. Herança não funciona muito bem para objetos não-relacionados como `Bird` e `Airplane`. Ambos podem voar, mas um `Bird` não é um tipo de `Airplane` e vice-versa.
+Como você já viu, comportamento é compartilhado através de theyrança. Porém, existem casos em que a theyrança não é a melhor solução. Herança não funciona muito bem para objetos não-relacionados como `Bird` e `Airplane`. Ambos podem voar, mas um `Bird` não é um tipo de `Airplane` e vice-versa.
 
 Para objetos não relacionados, é melhor usar <dfn>mixins</dfn>. Um mixin permite outros objetos para utilizar uma coleção de funções.
 

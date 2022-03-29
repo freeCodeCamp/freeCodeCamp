@@ -10,9 +10,9 @@ dashedName: problem-34-digit-factorials
 
 145 è un numero curioso, visto che 1! + 4! + 5! = 1 + 24 + 120 = 145.
 
-Trova i numeri e le somme dei numeri che sono uguali alla somma dei fattoriali delle loro cifre.
+Trova i numeri e le somme dei numeri che childo uguali alla somma dei fattoriali delle loro cifre.
 
-**Nota:** dato che 1! = 1 e 2! = 2 non sono somme essi non sono inclusi.
+**Nota:** dato che 1! = 1 e 2! = 2 non childo somme essi non childo inclusi.
 
 # --hints--
 

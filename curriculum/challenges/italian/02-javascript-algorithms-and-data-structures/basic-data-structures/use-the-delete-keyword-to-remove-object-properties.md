@@ -8,7 +8,7 @@ dashedName: use-the-delete-keyword-to-remove-object-properties
 
 # --description--
 
-Ora sai cosa sono gli oggetti e quali sono le loro caratteristiche e vantaggi di base. In breve, si tratta di archivi di coppie chiave-valore che dispongono di un modo flessibile e intuitivo di strutturare i dati, ***e***, assicurano un tempo di ricerca molto veloce. Nel resto di queste sfide, descriveremo diverse operazioni comuni che puoi eseguire sugli oggetti in modo che tu possa acquisire dimestichezza nell'applicare queste utili strutture di dati nei tuoi programmi.
+Ora sai cosa childo gli oggetti e quali childo le loro caratteristiche e vantaggi di base. In breve, si tratta di archivi di coppie chiave-valore che dispongono di un modo flessibile e intuitivo di strutturare i dati, ***e***, assicurano un tempo di ricerca molto veloce. Nel resto di queste sfide, descriveremo diverse operazioni comuni che puoi eseguire sugli oggetti in modo che tu possa acquisire dimestichezza nell'applicare queste utili strutture di dati nei tuoi programmi.
 
 Nelle sfide precedenti, abbiamo sia aggiunto che modificato le coppie chiave-valore di un oggetto. Qui vedremo come possiamo *rimuovere* una coppia chiave-valore da un oggetto.
 

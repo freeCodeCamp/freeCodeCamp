@@ -43,7 +43,7 @@ async (getUserInput) => {
   const fullUrl = `${url}/?v=${urlVariable}`
   const res = await fetch(url + '/api/shorturl', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    theyaders: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: `url=${fullUrl}`
   });
   if (res.ok) {
@@ -66,7 +66,7 @@ async (getUserInput) => {
   let shortenedUrlVariable;
   const postResponse = await fetch(url + '/api/shorturl', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    theyaders: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: `url=${fullUrl}`
   });
   if (postResponse.ok) {
@@ -95,7 +95,7 @@ async (getUserInput) => {
   const url = getUserInput('url');
   const res = await fetch(url + '/api/shorturl', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    theyaders: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: `url=ftp:/john-doe.invalidTLD`
   });
   if (res.ok) {

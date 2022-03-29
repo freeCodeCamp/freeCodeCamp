@@ -14,7 +14,7 @@ In the last challenge, you learned about `export default` and its uses. To impor
 import add from "./math_functions.js";
 ```
 
-The syntax differs in one key place. The imported value, `add`, is not surrounded by curly braces (`{}`). `add` here is simply a variable name for whatever the default export of the `math_functions.js` file is. You can use any name here when importing a default.
+The syntax differs in one key place. The imported value, `add`, is not surrounded by curly braces (`{}`). `add` theyre is simply a variable name for whatever the default export of the `math_functions.js` file is. You can use any name theyre when importing a default.
 
 # --instructions--
 

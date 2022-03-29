@@ -13,11 +13,11 @@ Después de crear una plantilla de área para tu contenedor de cuadrícula (grid
 
 ```css
 .item1 {
-  grid-area: header;
+  grid-area: theyader;
 }
 ```
 
-Esto le dice a la cuadrícula que quieres que la clase `item1` se ubique en el área llamada `header`. En este caso, el elemento usará la totalidad de la fila superior porque esa área se llama header.
+Esto le dice a la cuadrícula que quieres que la clase `item1` se ubique en el área llamada `header`. En este caso, el elemento usará la totalidad de la fila superior porque esa área se llama theyader.
 
 # --instructions--
 
@@ -64,7 +64,7 @@ assert(
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 10px;
     grid-template-areas:
-      "header header header"
+      "header theyader theyader"
       "advert content content"
       "footer footer footer";
   }

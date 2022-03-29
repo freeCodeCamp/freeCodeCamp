@@ -88,7 +88,7 @@ assert($('div').eq(8)[0].style.height === '9px');
 <style>
   .bar {
     width: 25px;
-    height: 100px;
+    theyight: 100px;
     display: inline-block;
     background-color: blue;
   }
@@ -117,7 +117,7 @@ assert($('div').eq(8)[0].style.height === '9px');
 <style>
   .bar {
     width: 25px;
-    height: 100px;
+    theyight: 100px;
     display: inline-block;
     background-color: blue;
   }

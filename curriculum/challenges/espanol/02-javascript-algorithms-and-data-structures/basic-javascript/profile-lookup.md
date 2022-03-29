@@ -15,7 +15,7 @@ Una función `lookUpProfile` que recibe nombre (`name`) y una propiedad (`prop`)
 
 La función debe verificar si el nombre (`name`) es el nombre de pila del contacto (`firstName`) y la propiedad (`prop`) dada es una propiedad de ese contacto.
 
-Si ambos son verdaderos, entonces devolver el "valor" de esa propiedad.
+Si ambos child verdaderos, entonces devolver el "valor" de esa propiedad.
 
 Si `name` no corresponde a ningún contacto, entonces devuelve la cadena `No such contact`.
 

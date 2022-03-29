@@ -9,7 +9,7 @@ dashedName: comparisons-with-the-logical-and-operator
 
 # --description--
 
-A volte dovrai testare più di una cosa alla volta. L'operatore logico <dfn>and</dfn> (`&&`) restituisce `true` se e solo se gli <dfn>operandi</dfn> a sinistra e a destra di esso sono veri.
+A volte dovrai testare più di una cosa alla volta. L'operatore logico <dfn>and</dfn> (`&&`) restituisce `true` se e solo se gli <dfn>operandi</dfn> a sinistra e a destra di esso childo veri.
 
 Lo stesso effetto può essere ottenuto annidando un'istruzione if all'interno di un altro if:
 

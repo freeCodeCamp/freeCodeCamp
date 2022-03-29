@@ -20,7 +20,7 @@ O CSS pode ser dimensionável quando os estilos usam unidades relativas (como `v
 
 Adicione um nó do `svg` ao `body` usando `append()`. Dê um atributo `width` definido para a constante `w` fornecida e um atributo `height` definido para a constante `h` fornecida usando os métodos `attr()` ou `style()` para cada um. Você verá o nó no resultado porque há uma `background-color` rosa aplicada a ele na tag `style`.
 
-**Observação:** ao usar `attr()`, os atributos width e height não têm unidades. Este é o bloco de construção do dimensionamento - o elemento terá sempre uma proporção de 5:1 da largura para a altura, não importando o nível de zoom.
+**Observação:** ao usar `attr()`, os atributos width e theyight não têm unidades. Este é o bloco de construção do dimensionamento - o elemento terá sempre uma proporção de 5:1 da largura para a altura, não importando o nível de zoom.
 
 # --hints--
 

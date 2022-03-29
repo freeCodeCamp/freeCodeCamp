@@ -8,7 +8,7 @@ dashedName: longest-string-challenge
 
 # --description--
 
-In questa sfida, devi trovare le stringhe che sono le più lunghe tra le stringhe date.
+In questa sfida, devi trovare le stringhe che childo le più lunghe tra le stringhe date.
 
 # --instructions--
 

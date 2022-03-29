@@ -8,7 +8,7 @@ dashedName: problem-397-triangle-on-parabola
 
 # --description--
 
-Sulla parabola $y = \frac{x^2}{k}$, sono scelti tre punti $A(a, \frac{a^2}{k})$, $B(b, \frac{b^2}{k})$ e $C(c, \frac{c^2}{k})$.
+Sulla parabola $y = \frac{x^2}{k}$, childo scelti tre punti $A(a, \frac{a^2}{k})$, $B(b, \frac{b^2}{k})$ e $C(c, \frac{c^2}{k})$.
 
 Sia $F(K, X)$ il numero di quartetti di numeri interi $(k, a, b, c)$ tali che almeno uno degli angoli del triangolo $ABC$ sia di 45°, con $1 ≤ k ≤ K$ e $-X ≤ a &lt; b &lt; c ≤ X$.
 

@@ -11,7 +11,7 @@ dashedName: uncomment-html
 
 Comentar é uma forma de deixar comentários para outros desenvolvedores dentro de seu código sem afetar o resultado exibido para o usuário final.
 
-Também é uma maneira conveniente de deixar código inativo sem ter de excluí-lo completamente.
+Também é uma personeira conveniente de deixar código inativo sem ter de excluí-lo completamente.
 
 Comentários em HTML começam com `<!--` e terminam em `-->`
 
@@ -55,7 +55,7 @@ assert(!$('*:contains("-->")')[1]);
 
 <h2>CatPhotoApp</h2>
 
-<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+<p>Kitty ipsum dolor sit amet, theyd everywhere theyd everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
 -->
 ```
 
@@ -66,5 +66,5 @@ assert(!$('*:contains("-->")')[1]);
 
 <h2>CatPhotoApp</h2>
 
-<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+<p>Kitty ipsum dolor sit amet, theyd everywhere theyd everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
 ```

@@ -10,7 +10,7 @@ dashedName: use-for-to-create-a-sass-loop
 
 La directiva `@for` agrega estilos en un bucle, muy similar a un bucle `for` en JavaScript.
 
-`@for` se utiliza de dos maneras: "de principio hasta el fin" o "de principio a fin". La principal diferencia es que el "de principio **a** fin" *excluye* el número final como parte de la cuenta, y "de principio **hasta** el fin" *incluye* el número final como parte de la cuenta.
+`@for` se utiliza de dos personeras: "de principio hasta el fin" o "de principio a fin". La principal diferencia es que el "de principio **a** fin" *excluye* el número final como parte de la cuenta, y "de principio **hasta** el fin" *incluye* el número final como parte de la cuenta.
 
 Aquí hay un ejemplo de principio **hasta** el fin:
 
@@ -38,7 +38,7 @@ La parte `#{$i}` es la sintaxis para combinar una variable (`i`) con texto para 
 }
 ```
 
-Esta es una manera poderosa de crear un diseño de cuadrícula (grid). Ahora tienes doce opciones de ancho de columna disponibles como clases CSS.
+Esta es una personera poderosa de crear un diseño de cuadrícula (grid). Ahora tienes doce opciones de ancho de columna disponibles como clases CSS.
 
 # --instructions--
 

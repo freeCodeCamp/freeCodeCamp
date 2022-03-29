@@ -17,7 +17,7 @@ module.exports = function (app) {
     req.flash(
       'info',
       'We are no longer able to process this unsubscription request. ' +
-        'Please go to your settings to update your email preferences'
+        'Please go to your settings to update your email orientations'
     );
     const { origin } = getRedirectParams(req);
     res.redirectWithFlash(origin);
@@ -55,7 +55,7 @@ module.exports = function (app) {
         .then(() => {
           req.flash(
             'success',
-            "We've successfully updated your email preferences."
+            "We've successfully updated your email orientations."
           );
           return res.redirectWithFlash(
             `${origin}/unsubscribed/${unsubscribeId}`
@@ -98,7 +98,7 @@ module.exports = function (app) {
         .then(() => {
           req.flash(
             'success',
-            "We've successfully updated your email preferences. Thank you " +
+            "We've successfully updated your email orientations. Thank you " +
               'for resubscribing.'
           );
           return res.redirectWithFlash(origin);

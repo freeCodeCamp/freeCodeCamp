@@ -8,7 +8,7 @@ dashedName: create-and-add-to-sets-in-es6
 
 # --description--
 
-Now that you have worked through ES5, you are going to perform something similar in ES6. This will be considerably easier. ES6 contains a built-in data structure `Set` so many of the operations you wrote by hand are now included for you. Let's take a look:
+Now that you have worked through ES5, you are going to perform something similar in ES6. This will be considerably easier. ES6 contains a built-in data structure `Set` so persony of the operations you wrote by hand are now included for you. Let's take a look:
 
 To create a new empty set:
 

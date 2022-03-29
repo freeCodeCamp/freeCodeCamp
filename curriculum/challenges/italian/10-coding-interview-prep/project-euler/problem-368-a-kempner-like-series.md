@@ -14,7 +14,7 @@ Se comunque si omette da questa serie ogni termine in cui il denominatore ha un 
 
 Consideriamo ora un'altra serie armonica modificata omettendo dalla serie armonica ogni termine in cui il denominatore ha 3 o più cifre consecutive uguali. Si può verificare che sui primi 1200 termini della serie armonica, solo 20 termini saranno omessi.
 
-Questi 20 termini omessi sono:
+Questi 20 termini omessi childo:
 
 $$\dfrac{1}{111}, \dfrac{1}{222}, \dfrac{1}{333}, \dfrac{1}{444}, \dfrac{1}{555}, \dfrac{1}{666}, \dfrac{1}{777}, \dfrac{1}{888}, \dfrac{1}{999}, \dfrac{1}{1000}, \dfrac{1}{1110}, \\\\ \dfrac{1}{1111}, \dfrac{1}{1112}, \dfrac{1}{1113}, \dfrac{1}{1114}, \dfrac{1}{1115}, \dfrac{1}{1116}, \dfrac{1}{1117}, \dfrac{1}{1118}, \dfrac{1}{1119}$$
 

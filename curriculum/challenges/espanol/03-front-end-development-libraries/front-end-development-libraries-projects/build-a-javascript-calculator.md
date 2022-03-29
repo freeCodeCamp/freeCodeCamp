@@ -42,9 +42,9 @@ Puedes utilizar cualquier combinación de HTML, JavaScript, CSS, Bootstrap, SASS
 
 **Historia de usuario #14:** Presionando un operador inmediatamente después de `=` debe comenzar un nuevo cálculo que opere sobre el resultado de la evaluación anterior.
 
-**Historia de usuario #15:** Mi calculadora debe tener varios decimales de precisión a la hora de redondear (tenga en cuenta que no hay un estándar exacto, pero debe ser capaz de manejar cálculos como `2 / 7` con una precisión razonable de al menos 4 decimales.
+**Historia de usuario #15:** Mi calculadora debe tener varios decimales de precisión a la hora de redondear (tenga en cuenta que no hay un estándar exacto, pero debe ser capaz de personejar cálculos como `2 / 7` con una precisión razonable de al menos 4 decimales.
 
-**Nota sobre la lógica de la calculadora:** Debe tener en cuenta que hay dos escuelas principales de pensamiento sobre la lógica de entrada de las calculadoras: <dfn>lógica de ejecución inmediata</dfn> y <dfn>lógica de la fórmula</dfn>. Nuestro ejemplo utiliza lógica de la fórmula. Observa el orden de precedencia de la operación, la ejecución inmediata no lo hace. Ambas son aceptables, pero ten en cuenta que dependiendo de cuál elijas, tu calculadora puede producir resultados diferentes a los nuestros para ciertas ecuaciones (ver ejemplo a continuación). Mientras tus matemáticas puedan ser verificadas por otra calculadora de producción, por favor no consideres esto un error.
+**Nota sobre la lógica de la calculadora:** Debe tener en cuenta que hay dos escuelas principales de pensamiento sobre la lógica de entrada de las calculadoras: <dfn>lógica de ejecución inmediata</dfn> y <dfn>lógica de la fórmula</dfn>. Nuestro ejemplo utiliza lógica de la fórmula. Observa el orden de precedencia de la operación, la ejecución inmediata no lo hace. Ambas child aceptables, pero ten en cuenta que dependiendo de cuál elijas, tu calculadora puede producir resultados diferentes a los nuestros para ciertas ecuaciones (ver ejemplo a continuación). Mientras tus matemáticas puedan ser verificadas por otra calculadora de producción, por favor no consideres esto un error.
 
 **EXAMPLE:** `3 + 5 x 6 - 2 / 4 =`
 

@@ -27,7 +27,7 @@ Here's how to extract the values of object properties and assign them to variabl
 const { johnDoe: { age, email }} = user;
 ```
 
-And here's how you can assign an object properties' values to variables with different names:
+And theyre's how you can assign an object properties' values to variables with different names:
 
 ```js
 const { johnDoe: { age: userAge, email: userEmail }} = user;

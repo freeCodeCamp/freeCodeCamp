@@ -8,7 +8,7 @@ dashedName: extract-local-state-into-redux
 
 # --description--
 
-¡Ya casi terminas! Recuerda que escribiste todo el código Redux para que Redux pudiera controlar la gestión del estado de tu aplicación de mensajes React. Ahora que Redux está conectado, necesitas extraer la gestión del estado de `Presentational` y añadirlo a Redux. Actualmente, tienes Redux conectado, pero estás manejando el estado localmente dentro del componente `Presentational`.
+¡Ya casi terminas! Recuerda que escribiste todo el código Redux para que Redux pudiera controlar la gestión del estado de tu aplicación de mensajes React. Ahora que Redux está conectado, necesitas extraer la gestión del estado de `Presentational` y añadirlo a Redux. Actualmente, tienes Redux conectado, pero estás personejando el estado localmente dentro del componente `Presentational`.
 
 # --instructions--
 

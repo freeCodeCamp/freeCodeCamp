@@ -8,7 +8,7 @@ dashedName: perform-an-intersection-on-two-sets-of-data
 
 # --description--
 
-In questo esercizio ci accingiamo a eseguire un intersezione su 2 set di dati. Creeremo un metodo nella nostra struttura dati `Set` chiamato `intersection`. Un'intersezione di insiemi rappresenta tutti i valori che sono comuni a due o più insiemi. Questo metodo dovrebbe prendere un altro `Set` come argomento e restituire l' `intersection` dei due set.
+In questo esercizio ci accingiamo a eseguire un intersezione su 2 set di dati. Creeremo un metodo nella nostra struttura dati `Set` chiamato `intersection`. Un'intersezione di insiemi rappresenta tutti i valori che childo comuni a due o più insiemi. Questo metodo dovrebbe prendere un altro `Set` come argomento e restituire l' `intersection` dei due set.
 
 Per esempio, se `setA = ['a','b','c']` e `setB = ['a','b','d','e']`, allora l'intersezione di setA e setB è: `setA.intersection(setB) = ['a', 'b']`.
 

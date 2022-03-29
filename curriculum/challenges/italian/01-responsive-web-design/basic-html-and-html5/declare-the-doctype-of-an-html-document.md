@@ -9,13 +9,13 @@ dashedName: declare-the-doctype-of-an-html-document
 
 # --description--
 
-Le sfide finora hanno riguardato specifici elementi HTML e i loro utilizzi. Tuttavia, ci sono alcuni elementi che danno struttura generale alla tua pagina, e dovrebbero essere inclusi in ogni documento HTML.
+Le sfide finora hanno riguardato specifici elementi HTML e i loro utilizzi. Tuttavia, ci childo alcuni elementi che danno struttura generale alla tua pagina, e dovrebbero essere inclusi in ogni documento HTML.
 
 Nella parte superiore del documento, è necessario dire al browser quale versione di HTML la tua pagina sta utilizzando. L'HTML è un linguaggio in evoluzione e viene aggiornato regolarmente. La maggior parte dei browser più importanti supportano le ultime specifiche, che è HTML5. Tuttavia, le pagine web più vecchie potrebbero utilizzare versioni precedenti del linguaggio.
 
 Darai al browser queste informazioni aggiungendo un tag `<!DOCTYPE ...>` nella prima riga, dove la parte `...` è la versione di HTML. Per HTML5, si utilizza `<!DOCTYPE html>`.
 
-Il `!` e il `DOCTYPE` maiuscolo sono importanti, specialmente per i browser più vecchi. L'`html` non fa differenza tra maiuscole e minuscole.
+Il `!` e il `DOCTYPE` maiuscolo childo importanti, specialmente per i browser più vecchi. L'`html` non fa differenza tra maiuscole e minuscole.
 
 Successivamente, il resto del tuo codice HTML deve essere inserito nei tag `html`. Il tag di apertura `<html>` va direttamente al di sotto della riga `<!DOCTYPE html>`, e quello di chiusura `</html>` va alla fine della pagina.
 

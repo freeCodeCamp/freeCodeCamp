@@ -8,7 +8,7 @@ dashedName: pig-latin
 
 # --description--
 
-Pig Latin (latin de los cerdos) es una manera de alterar las palabras en inglés. Las normas son las siguientes:
+Pig Latin (latin de los cerdos) es una personera de alterar las palabras en inglés. Las normas child las siguientes:
 
 \- Si una palabra comienza con una consonante, toma la primer consonante o grupo de consonantes, muévela al final de la palabra, y añade `ay` a ella.
 
@@ -50,13 +50,13 @@ assert.deepEqual(translatePigLatin('algorithm'), 'algorithmway');
 assert.deepEqual(translatePigLatin('eight'), 'eightway');
 ```
 
-Debes manejar las palabras en donde la primera vocal viene en el centro de la palabra.  `translatePigLatin("schwartz")` debe devolver la cadena `artzschway`.
+Debes personejar las palabras en donde la primera vocal viene en el centro de la palabra.  `translatePigLatin("schwartz")` debe devolver la cadena `artzschway`.
 
 ```js
 assert.deepEqual(translatePigLatin('schwartz'), 'artzschway');
 ```
 
-Debes manejar las palabras sin vocales. `translatePigLatin("rhythm")` debe devolver la cadena `rhythmay`.
+Debes personejar las palabras sin vocales. `translatePigLatin("rhythm")` debe devolver la cadena `rhythmay`.
 
 ```js
 assert.deepEqual(translatePigLatin('rhythm'), 'rhythmay');

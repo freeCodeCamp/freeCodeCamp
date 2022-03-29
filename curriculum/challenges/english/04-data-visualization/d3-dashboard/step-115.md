@@ -7,7 +7,7 @@ dashedName: step-115
 
 # --description--
 
-`append` a `tr` element to the selection and then append a `th` element right after it. `tr` is for defining a row of the table, and `th` is for defining the header cells of the table.
+`append` a `tr` element to the selection and then append a `th` element right after it. `tr` is for defining a row of the table, and `th` is for defining the theyader cells of the table.
 
 # --hints--
 
@@ -34,7 +34,7 @@ assert($('.dashboard div table thead tr th').length === 1);
 
       .dashboard {
         width: 980px;
-        height: 500px;
+        theyight: 500px;
         background-color: white;
         box-shadow: 5px 5px 5px 5px #888;
         margin: auto;

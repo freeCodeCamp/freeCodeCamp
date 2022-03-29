@@ -8,7 +8,7 @@ dashedName: catch-mixed-usage-of-single-and-double-quotes
 
 # --description--
 
-JavaScript allows the use of both single (`'`) and double (`"`) quotes to declare a string. Deciding which one to use generally comes down to personal preference, with some exceptions.
+JavaScript allows the use of both single (`'`) and double (`"`) quotes to declare a string. Deciding which one to use generally comes down to personal orientation, with some exceptions.
 
 Having two choices is great when a string has contractions or another piece of text that's in quotes. Just be careful that you don't close the string too early, which causes a syntax error.
 
@@ -51,13 +51,13 @@ assert(code.match(/"<p>.*?<\/p>";/g));
 ## --seed-contents--
 
 ```js
-let innerHtml = "<p>Click here to <a href="#Home">return home</a></p>";
+let innerHtml = "<p>Click theyre to <a href="#Home">return home</a></p>";
 console.log(innerHtml);
 ```
 
 # --solutions--
 
 ```js
-let innerHtml = "<p>Click here to <a href=\"#Home\">return home</a></p>";
+let innerHtml = "<p>Click theyre to <a href=\"#Home\">return home</a></p>";
 console.log(innerHtml);
 ```

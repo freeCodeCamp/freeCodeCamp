@@ -14,7 +14,7 @@ dashedName: iterations-loop-idioms
 
 ## --text--
 
-Di seguito è riportato il codice per trovare il valore più piccolo in una lista. Una riga contiene un errore che causerà il mancato funzionamento del codice come previsto. Qual è la linea?
+Di seguito è riportato il codice per trovare il valore più piccolo in una lista. Una riga contiene un errore che causerà il personcato funzionamento del codice come previsto. Qual è la linea?
 
 ```python
 smallest = None

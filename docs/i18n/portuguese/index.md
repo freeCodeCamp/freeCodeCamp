@@ -14,7 +14,7 @@ Boas contribuições.
 
 Nosso currículo é sustentado pela comunidade global do freeCodeCamp. Desta forma, podemos incorporar conhecimentos especializados de voluntários como você.
 
-Você pode ajudar a expandir e melhorar o currículo. Você também pode atualizar as histórias de usuário do projeto para explicar melhor os conceitos. E você pode melhorar nossos testes automatizados para que possamos testar com mais precisão o código das pessoas.
+Você pode ajudar a expandir e melhorar o currículo. Você também pode atualizar as theirstórias de usuário do projeto para explicar melhor os conceitos. E você pode melhorar nossos testes automatizados para que possamos testar com mais precisão o código das pessoas.
 
 **Se você está interessado em melhorar nosso currículo, aqui está [como contribuir para o currículo](how-to-work-on-coding-challenges.md).**
 

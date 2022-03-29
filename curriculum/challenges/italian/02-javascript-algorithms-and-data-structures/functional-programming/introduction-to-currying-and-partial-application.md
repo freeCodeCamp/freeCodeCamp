@@ -32,7 +32,7 @@ curried(1)(2)
 
 `curried(1)(2)` restituirà `3`.
 
-Questo sarà utile nel tuo programma se non sarai in grado di fornire tutti gli argomenti ad una funzione in una sola volta. Potrai salvare ogni chiamata di funzione in una variabile, che manterrà il riferimento alla funzione restituita, che prenderà l'argomento successivo quando sarà disponibile. Ecco un esempio usando la funzione curried dell'esempio visto sopra:
+Questo sarà utile nel tuo programma se non sarai in grado di fornire tutti gli argomenti ad una funzione in una sola volta. Potrai salvare ogni chiamata di funzione in una variabile, che personterrà il riferimento alla funzione restituita, che prenderà l'argomento successivo quando sarà disponibile. Ecco un esempio usando la funzione curried dell'esempio visto sopra:
 
 ```js
 const funcForY = curried(1);

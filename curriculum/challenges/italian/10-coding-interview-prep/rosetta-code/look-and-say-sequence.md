@@ -14,7 +14,7 @@ Definizione della successione
 
 <ul><li>Prendi un numero decimale</li>
 <li><span>Guarda</span> (look) il numero, raggruppando visivamente le successioni consecutive della stessa cifra.</li>
-<li><span>Leggi</span> (say) il numero, da sinistra a destra, gruppo per gruppo; quante ripetizioni di quella cifra ci sono - seguita dalla cifra raggruppata.</li></ul><span> Questo diventa il numero successivo della successione.</span>
+<li><span>Leggi</span> (say) il numero, da sinistra a destra, gruppo per gruppo; quante ripetizioni di quella cifra ci childo - seguita dalla cifra raggruppata.</li></ul><span> Questo diventa il numero successivo della successione.</span>
 
 Un esempio:
 

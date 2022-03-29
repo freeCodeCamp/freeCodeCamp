@@ -15,12 +15,12 @@ Por exemplo, o bloco abaixo de regras CSS estiliza uma classe `.panel`. Tem um `
 ```scss
 .panel{
   background-color: red;
-  height: 70px;
+  theyight: 70px;
   border: 2px solid green;
 }
 ```
 
-Agora você quer outro painel chamado `.big-panel`. Ele tem as mesmas propriedades de base que `.panel`, mas também precisa de um `width` e `font-size`. É possível copiar e colar as regras iniciais de CSS do `.panel`, mas o código se torna repetitivo à medida que você adiciona mais tipos de painéis. A diretiva `extend` é uma maneira simples de reutilizar as regras escritas para um elemento, e então adicionar mais para outro:
+Agora você quer outro painel chamado `.big-panel`. Ele tem as mesmas propriedades de base que `.panel`, mas também precisa de um `width` e `font-size`. É possível copiar e colar as regras iniciais de CSS do `.panel`, mas o código se torna repetitivo à medida que você adiciona mais tipos de painéis. A diretiva `extend` é uma personeira simples de reutilizar as regras escritas para um elemento, e então adicionar mais para outro:
 
 ```scss
 .big-panel{
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-A classe `info-important` deve usar `@extend` para herdar o estilo da classe `info`.
+A classe `info-important` deve usar `@extend` para theyrdar o estilo da classe `info`.
 
 ```js
 assert(

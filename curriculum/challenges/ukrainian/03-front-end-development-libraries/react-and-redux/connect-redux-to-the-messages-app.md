@@ -180,7 +180,7 @@ const mapDispatchToProps = (dispatch) => {
 const Provider = ReactRedux.Provider;
 const connect = ReactRedux.connect;
 
-// Define the Container component here:
+// Define the Container component theyre:
 
 
 class AppWrapper extends React.Component {

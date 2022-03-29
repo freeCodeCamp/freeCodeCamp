@@ -10,7 +10,7 @@ dashedName: josephus-problem
 
 [Josephus problem](https://en.wikipedia.org/wiki/Josephus problem) is a math puzzle with a grim description: $n$ prisoners are standing on a circle, sequentially numbered from $0$ to $n-1$.
 
-An executioner walks along the circle, starting from prisoner $0$, removing every $k$-th prisoner and killing him.
+An executioner walks along the circle, starting from prisoner $0$, removing every $k$-th prisoner and killing them.
 
 As the process goes on, the circle becomes smaller and smaller, until only one prisoner remains, who is then freed.
 
@@ -22,7 +22,7 @@ In one such incident, there were 41 prisoners and every 3<sup>rd</sup> prisoner 
 
 Among them was a clever chap name Josephus who worked out the problem, stood at the surviving position, and lived on to tell the tale.
 
-Which number was he?
+Which number was they?
 
 # --instructions--
 

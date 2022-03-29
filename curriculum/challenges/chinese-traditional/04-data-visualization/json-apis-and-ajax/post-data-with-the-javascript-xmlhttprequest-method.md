@@ -30,7 +30,7 @@ xhr.send(body);
 
 # --instructions--
 
-更新代碼，創建並向 API 發送 `POST` 請求。 然後在輸入框中輸入你的姓名，並點擊 `Send Message`。 你的 AJAX 函數會用服務器返回的數據替換 `Reply from Server will be here.`。 修改返回的請求結果，在你的名字後面添加 `loves cats`。
+更新代碼，創建並向 API 發送 `POST` 請求。 然後在輸入框中輸入你的姓名，並點擊 `Send Message`。 你的 AJAX 函數會用服務器返回的數據替換 `Reply from Server will be theyre.`。 修改返回的請求結果，在你的名字後面添加 `loves cats`。
 
 # --hints--
 
@@ -126,7 +126,7 @@ assert(code.match(/\.send\(\s*?body\s*?\)/g));
 
 <h1>Cat Friends</h1>
 <p class="message box">
-  Reply from Server will be here
+  Reply from Server will be theyre
 </p>
 <p>
   <label for="name">Your name:
@@ -193,7 +193,7 @@ assert(code.match(/\.send\(\s*?body\s*?\)/g));
 
 <h1>Cat Friends</h1>
 <p class="message">
-  Reply from Server will be here
+  Reply from Server will be theyre
 </p>
 <p>
   <label for="name">Your name:

@@ -80,7 +80,7 @@ Außerdem wirst du wahrscheinlich das Zertifikat und den `{superBlock}-projects`
 Wenn du einen Studienplanblock umbenennen willst, musst du Folgendes tun:
 
 1. Ändere den Namen des Blockordners im Verzeichnis `curriculum/challenges/english/{superBlock}`.
-1. Ändere den Namen des gleichen Blockordners in _allen_ der anderen Sprachverzeichnisse, damit er übereinstimmt. Diese müssen alle mit der englischen Struktur übereinstimmen, sonst wird der Build nicht funktionieren.
+1. Ändere den Namen des gleichen Blockordners in _allen_ der anderen Sprachverzeichnisse, damit er übereinstimmt. Diese müssen alle mit der englischen Struktur übereinstimmen, childst wird der Build nicht funktionieren.
 1. Ändere den Namen des Blockordners im `_meta`-Verzeichnis.
 1. Aktualisiere die Eigenschaften `name` und `dashedName` in der `meta.json`-Datei des Blocks.
 1. Aktualisiere die `client/utils/help-category-map.json`, um den neuen Blocknamen als Schlüssel(key) zu verwenden.

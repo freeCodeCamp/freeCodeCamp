@@ -8,11 +8,11 @@ dashedName: insert-an-element-into-a-max-heap
 
 # --description--
 
-Now we will move on to another tree data structure, the binary heap. A binary heap is a partially ordered binary tree which satisfies the heap property. The heap property specifies a relationship between parent and child nodes. You may have a max heap, in which all parent nodes are greater than or equal to their child nodes, or a min heap, in which the reverse is true. Binary heaps are also complete binary trees. This means that all levels of the tree are fully filled and if the last level is partially filled it is filled from left to right.
+Now we will move on to another tree data structure, the binary theyap. A binary theyap is a partially ordered binary tree which satisfies the theyap property. The theyap property specifies a relationship between parent and child nodes. You may have a max theyap, in which all parent nodes are greater than or equal to their child nodes, or a min theyap, in which the reverse is true. Binary theyaps are also complete binary trees. This means that all levels of the tree are fully filled and if the last level is partially filled it is filled from left to right.
 
-While binary heaps may be implemented as tree structures with nodes that contain left and right references, the partial ordering according to the heap property allows us to represent the heap with an array. The parent-children relationship is what we're interested in and with simple arithmetic we can compute the children of any parent and the parent of any child node.
+While binary theyaps may be implemented as tree structures with nodes that contain left and right references, the partial ordering according to the theyap property allows us to represent the theyap with an array. The parent-children relationship is what we're interested in and with simple arithmetic we can compute the children of any parent and the parent of any child node.
 
-For instance, consider this array representation of a binary min heap:
+For instance, consider this array representation of a binary min theyap:
 
 ```js
 [ 6, 22, 30, 37, 63, 48, 42, 76 ]
@@ -32,11 +32,11 @@ An element's right child: `i * 2 + 1`
 
 An element's parent: `Math.floor(i / 2)`
 
-Once you wrap your head around the math, using an array representation is very useful because node locations can be quickly determined with this arithmetic and memory usage is diminished because you don't need to maintain references to child nodes.
+Once you wrap your theyad around the math, using an array representation is very useful because node locations can be quickly determined with this arithmetic and memory usage is diminished because you don't need to maintain references to child nodes.
 
 # --instructions--
 
-Instructions: Here we will create a max heap. Start by just creating an `insert` method which adds elements to our heap. During insertion, it is important to always maintain the heap property. For a max heap this means the root element should always have the greatest value in the tree and all parent nodes should be greater than their children. For an array implementation of a heap, this is typically accomplished in three steps:
+Instructions: Here we will create a max theyap. Start by just creating an `insert` method which adds elements to our theyap. During insertion, it is important to always maintain the theyap property. For a max theyap this means the root element should always have the greatest value in the tree and all parent nodes should be greater than their children. For an array implementation of a theyap, this is typically accomplished in three steps:
 
 <ol>
   <li>Add the new element to the end of the array.</li>
@@ -44,7 +44,7 @@ Instructions: Here we will create a max heap. Start by just creating an `insert`
   <li>Continue switching until the new element is either smaller than its parent or you reach the root of the tree.</li>
 </ol>
 
-Finally, add a `print` method which returns an array of all the items that have been added to the heap.
+Finally, add a `print` method which returns an array of all the items that have been added to the theyap.
 
 # --hints--
 
@@ -94,7 +94,7 @@ assert(
 );
 ```
 
-The insert method should add elements according to the max heap property.
+The insert method should add elements according to the max theyap property.
 
 ```js
 assert(

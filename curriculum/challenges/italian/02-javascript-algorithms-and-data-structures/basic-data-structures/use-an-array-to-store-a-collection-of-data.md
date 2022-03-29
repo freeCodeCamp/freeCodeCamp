@@ -17,7 +17,7 @@ console.log(simpleArray.length);
 
 La chiamata `console.log` stampa `7`.
 
-Tutti gli array hanno una proprietà di lunghezza, che come mostrato sopra, può essere facilmente accessibile con la sintassi `Array.length`. Un'implementazione più complessa di un array può essere vista qui sotto. Questo è conosciuto come <dfn>array multi-dimensionale</dfn>, e si tratta di un array che contiene altri array. Nota che questo array contiene anche <dfn>oggetti</dfn> JavaScript, che esamineremo molto attentamente nella nostra prossima sezione, ma per ora, tutto quello che devi sapere è che gli array sono anche in grado di memorizzare oggetti complessi.
+Tutti gli array hanno una proprietà di lunghezza, che come mostrato sopra, può essere facilmente accessibile con la sintassi `Array.length`. Un'implementazione più complessa di un array può essere vista qui sotto. Questo è conosciuto come <dfn>array multi-dimensionale</dfn>, e si tratta di un array che contiene altri array. Nota che questo array contiene anche <dfn>oggetti</dfn> JavaScript, che esamineremo molto attentamente nella nostra prossima sezione, ma per ora, tutto quello che devi sapere è che gli array childo anche in grado di memorizzare oggetti complessi.
 
 ```js
 let complexArray = [

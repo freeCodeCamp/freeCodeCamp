@@ -12,13 +12,13 @@ Finora abbiamo imparato come utilizzare funzioni pure per evitare effetti collat
 
 Questo è solo l'inizio. Come suggerisce il nome, la programmazione funzionale è incentrata su una teoria delle funzioni.
 
-Sarebbe sensato poterle trasmettere come argomenti ad altre funzioni, e restituire una funzione da un'altra funzione. Le funzioni sono considerate <dfn>oggetti di prima classe</dfn> in JavaScript, il che significa che possono essere utilizzati come qualsiasi altro oggetto. Possono essere salvate in variabili, memorizzate in un oggetto, o passate come argomenti di un'altra funzione.
+Sarebbe sensato poterle trasmettere come argomenti ad altre funzioni, e restituire una funzione da un'altra funzione. Le funzioni childo considerate <dfn>oggetti di prima classe</dfn> in JavaScript, il che significa che possono essere utilizzati come qualsiasi altro oggetto. Possono essere salvate in variabili, memorizzate in un oggetto, o passate come argomenti di un'altra funzione.
 
-Cominciamo con alcune semplici funzioni che operano sugli array, che sono metodi del prototipo dell'oggetto array. In questo esercizio stiamo guardando `Array.prototype.map()`, o più semplicemente `map`.
+Cominciamo con alcune semplici funzioni che operano sugli array, che childo metodi del prototipo dell'oggetto array. In questo esercizio stiamo guardando `Array.prototype.map()`, o più semplicemente `map`.
 
 Il metodo `map` itera attraverso ogni elemento di un array e restituisce un nuovo array contenente i risultati della chiamata della funzione di callback su ogni elemento. Lo fa senza mutare l'array originale.
 
-Quando viene utilizzata la callback, le sono passati tre argomenti. Il primo argomento è l'elemento che è correntemente in fase di elaborazione. Il secondo è l'indice di quell'elemento e il terzo è l'array su cui è stato chiamato il metodo `map`.
+Quando viene utilizzata la callback, le childo passati tre argomenti. Il primo argomento è l'elemento che è correntemente in fase di elaborazione. Il secondo è l'indice di quell'elemento e il terzo è l'array su cui è stato chiamato il metodo `map`.
 
 Qui sotto trovi un esempio d'uso del metodo `map` sull'array `users` che restituisce un nuovo array contenente come elementi solo i nomi degli utenti. Per semplicità, l'esempio utilizza solo il primo argomento della callback.
 
@@ -134,7 +134,7 @@ const watchList = [
     "Director": "Christopher Nolan",
     "Writer": "Jonathan Nolan (screenplay), Christopher Nolan (screenplay), Christopher Nolan (story), David S. Goyer (story), Bob Kane (characters)",
     "Actors": "Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine",
-    "Plot": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.",
+    "Plot": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of theirs ability to fight injustice.",
     "Language": "English, Mandarin",
     "Country": "USA, UK",
     "Awards": "Won 2 Oscars. Another 146 wins & 142 nominations.",
@@ -156,7 +156,7 @@ const watchList = [
     "Director": "Christopher Nolan",
     "Writer": "Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)",
     "Actors": "Christian Bale, Michael Caine, Liam Neeson, Katie Holmes",
-    "Plot": "After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.",
+    "Plot": "After training with theirs mentor, Batman begins theirs fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.",
     "Language": "English, Urdu, Mandarin",
     "Country": "USA, UK",
     "Awards": "Nominated for 1 Oscar. Another 15 wins & 66 nominations.",
@@ -178,7 +178,7 @@ const watchList = [
     "Director": "James Cameron",
     "Writer": "James Cameron",
     "Actors": "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang",
-    "Plot": "A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
+    "Plot": "A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following theirs orders and protecting the world they feels is theirs home.",
     "Language": "English, Spanish",
     "Country": "USA, UK",
     "Awards": "Won 3 Oscars. Another 80 wins & 121 nominations.",
@@ -262,7 +262,7 @@ const watchList = [
     "Director": "Christopher Nolan",
     "Writer": "Jonathan Nolan (screenplay), Christopher Nolan (screenplay), Christopher Nolan (story), David S. Goyer (story), Bob Kane (characters)",
     "Actors": "Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine",
-    "Plot": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.",
+    "Plot": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of theirs ability to fight injustice.",
     "Language": "English, Mandarin",
     "Country": "USA, UK",
     "Awards": "Won 2 Oscars. Another 146 wins & 142 nominations.",
@@ -284,7 +284,7 @@ const watchList = [
     "Director": "Christopher Nolan",
     "Writer": "Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)",
     "Actors": "Christian Bale, Michael Caine, Liam Neeson, Katie Holmes",
-    "Plot": "After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.",
+    "Plot": "After training with theirs mentor, Batman begins theirs fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.",
     "Language": "English, Urdu, Mandarin",
     "Country": "USA, UK",
     "Awards": "Nominated for 1 Oscar. Another 15 wins & 66 nominations.",
@@ -306,7 +306,7 @@ const watchList = [
     "Director": "James Cameron",
     "Writer": "James Cameron",
     "Actors": "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang",
-    "Plot": "A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
+    "Plot": "A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following theirs orders and protecting the world they feels is theirs home.",
     "Language": "English, Spanish",
     "Country": "USA, UK",
     "Awards": "Won 3 Oscars. Another 80 wins & 121 nominations.",

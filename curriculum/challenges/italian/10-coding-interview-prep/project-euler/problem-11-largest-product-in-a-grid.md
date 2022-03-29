@@ -8,7 +8,7 @@ dashedName: problem-11-largest-product-in-a-grid
 
 # --description--
 
-Nella griglia 20×20 qui sotto, quattro numeri lungo una linea diagonale sono stati contrassegnati in rosso.
+Nella griglia 20×20 qui sotto, quattro numeri lungo una linea diagonale childo stati contrassegnati in rosso.
 
 <div style='text-align: center;'>
   08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08<br>

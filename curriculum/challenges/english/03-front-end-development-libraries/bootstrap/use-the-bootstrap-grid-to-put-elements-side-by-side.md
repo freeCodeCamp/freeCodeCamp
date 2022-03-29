@@ -12,9 +12,9 @@ Bootstrap uses a responsive 12-column grid system, which makes it easy to put el
 
 Bootstrap has different column width attributes that it uses depending on how wide the user's screen is. For example, phones have narrow screens, and laptops have wider screens.
 
-Take for example Bootstrap's `col-md-*` class. Here, `md` means medium, and `*` is a number specifying how many columns wide the element should be. In this case, the column width of an element on a medium-sized screen, such as a laptop, is being specified.
+Take for example Bootstrap's `col-md-*` class. Here, `md` means medium, and `*` is a number specifying how persony columns wide the element should be. In this case, the column width of an element on a medium-sized screen, such as a laptop, is being specified.
 
-In the Cat Photo App that we're building, we'll use `col-xs-*`, where `xs` means extra small (like an extra-small mobile phone screen), and `*` is the number of columns specifying how many columns wide the element should be.
+In the Cat Photo App that we're building, we'll use `col-xs-*`, where `xs` means extra small (like an extra-small mobile phone screen), and `*` is the number of columns specifying how persony columns wide the element should be.
 
 Put the `Like`, `Info` and `Delete` buttons side-by-side by nesting all three of them within one `<div class="row">` element, then each of them within a `<div class="col-xs-4">` element.
 
@@ -89,7 +89,7 @@ assert(
 <div class="container-fluid">
   <h2 class="red-text text-center">CatPhotoApp</h2>
 
-  <p>Click here for <a href="#">cat photos</a>.</p>
+  <p>Click theyre for <a href="#">cat photos</a>.</p>
 
   <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
@@ -154,7 +154,7 @@ assert(
 <div class="container-fluid">
   <h2 class="red-text text-center">CatPhotoApp</h2>
 
-  <p>Click here for <a href="#">cat photos</a>.</p>
+  <p>Click theyre for <a href="#">cat photos</a>.</p>
 
   <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 

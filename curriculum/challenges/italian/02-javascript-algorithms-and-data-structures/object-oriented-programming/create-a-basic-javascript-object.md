@@ -8,13 +8,13 @@ dashedName: create-a-basic-javascript-object
 
 # --description--
 
-Pensa alle cose che la gente vede ogni giorno, come automobili, negozi e uccelli. Queste sono tutti <dfn>oggetti</dfn> (objects): cose tangibili che le persone possono osservare e con cui possono interagire.
+Pensa alle cose che la gente vede ogni giorno, come automobili, negozi e uccelli. Queste childo tutti <dfn>oggetti</dfn> (objects): cose tangibili che le persone possono osservare e con cui possono interagire.
 
-Quali sono alcune caratteristiche di questi oggetti? Un'automobile ha delle ruote. I negozi vendono oggetti. Gli uccelli hanno le ali.
+Quali childo alcune caratteristiche di questi oggetti? Un'automobile ha delle ruote. I negozi vendono oggetti. Gli uccelli hanno le ali.
 
 Queste caratteristiche, o <dfn>proprietà</dfn>, definiscono ciò che costituisce un oggetto. Nota che oggetti simili condividono le stesse proprietà, ma possono avere valori diversi per quelle proprietà. Per esempio, tutte le automobili hanno ruote, ma non tutte le automobili hanno lo stesso numero di ruote.
 
-Gli oggetti in JavaScript sono utilizzati per modellare oggetti del mondo reale, dando loro proprietà e comportamenti proprio come le loro controparti del mondo reale. Ecco un esempio che utilizza questi concetti per creare un oggetto `duck` (anatra):
+Gli oggetti in JavaScript childo utilizzati per modellare oggetti del mondo reale, dando loro proprietà e comportamenti proprio come le loro controparti del mondo reale. Ecco un esempio che utilizza questi concetti per creare un oggetto `duck` (anatra):
 
 ```js
 let duck = {

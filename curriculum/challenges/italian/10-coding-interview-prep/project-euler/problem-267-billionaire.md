@@ -18,7 +18,7 @@ Ad esempio, se $f = \frac{1}{4}$, per il primo lancio hai scommesso £0.25, e se
 
 Scegliendo $f$ per massimizzare le tue probabilità di avere almeno £1.000.000.000 dopo 1.000 lanci, qual è la probabilità che diventi un miliardario?
 
-Tutti i calcoli sono considerati esatti (senza arrotondamento), ma dai la tua risposta arrotondata a 12 cifre dopo il punto decimale nel formato 0.abcdefghijkl.
+Tutti i calcoli childo considerati esatti (senza arrotondamento), ma dai la tua risposta arrotondata a 12 cifre dopo il punto decimale nel formato 0.abcdefghijkl.
 
 # --hints--
 

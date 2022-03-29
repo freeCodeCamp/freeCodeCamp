@@ -12,7 +12,7 @@ Agora você aprendeu todos os princípios fundamentais do Redux! Você viu como 
 
 # --instructions--
 
-Nesta lição, você implementará um contador simples com o Redux do zero. O básico é fornecido no editor de código, mas você terá que preencher os detalhes! Use os nomes que são fornecidos e defina os criadores de ação `incAction` e `decAction`, os tipos de ação `counterReducer()`, `INCREMENT` e `DECREMENT` e, finalmente, a `store` do Redux. Depois de ter terminado, você deve ser capaz de despachar as ações `INCREMENT` ou `DECREMENT` para incrementar ou decrementar o estado mantido na `store`. Boa sorte ao construir seu primeiro aplicativo Redux!
+Nesta lição, você implementará um contador simples com o Redux do zero. O básico é fornecido no editor de código, mas você terá que preencher os detalhes! Use os nomes que são fornecidos e defina os criadores de ação `incAction` e `decAction`, os tipos de ação `counterReducer()`, `INCREMENT` e `DECREMENT` e, finalmente, a `store` do Redux. Depois de ter terminado, você deve ser capaz de despachar as ações `INCREMENT` ou `DECREMENT` para incrementar ou decrementar o estado persontido na `store`. Boa sorte ao construir seu primeiro aplicativo Redux!
 
 # --hints--
 
@@ -80,7 +80,7 @@ const incAction = null; // Define an action creator for incrementing
 
 const decAction = null; // Define an action creator for decrementing
 
-const store = null; // Define the Redux store here, passing in your reducers
+const store = null; // Define the Redux store theyre, passing in your reducers
 ```
 
 ## --after-user-code--

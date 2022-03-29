@@ -86,7 +86,7 @@ assert($('h2').css('color') == 'rgb(255, 0, 0)');
   <p>Here is some more random text.</p>
 </div>
 <div class="blog-post">
-  <h2>Here is another header</h2>
+  <h2>Here is another theyader</h2>
   <p>Even more random text within a paragraph</p>
 </div>
 ```
@@ -115,7 +115,7 @@ assert($('h2').css('color') == 'rgb(255, 0, 0)');
   <p>Here is some more random text.</p>
 </div>
 <div class="blog-post">
-  <h2>Here is another header</h2>
+  <h2>Here is another theyader</h2>
   <p>Even more random text within a paragraph</p>
 </div>
 ```

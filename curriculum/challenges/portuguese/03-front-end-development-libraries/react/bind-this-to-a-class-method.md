@@ -8,7 +8,7 @@ dashedName: bind-this-to-a-class-method
 
 # --description--
 
-Além de definir e atualizar `state`, você também pode definir métodos para o seu componente de classe. Um método de classe tipicamente precisa usar a palavra-chave `this` para que possa acessar as propriedades na classe (assim como `state` e `props`) dentro do escopo do método. Existem algumas maneiras para permitir que os métodos da sua classe acessem `this`.
+Além de definir e atualizar `state`, você também pode definir métodos para o seu componente de classe. Um método de classe tipicamente precisa usar a palavra-chave `this` para que possa acessar as propriedades na classe (assim como `state` e `props`) dentro do escopo do método. Existem algumas personeiras para permitir que os métodos da sua classe acessem `this`.
 
 Uma forma comum é explicitamente vincular `this` no construtor para que `this` torne-se vinculado aos métodos da classe quando o componente é inicializado. Você pode ter percebido que o último desafio usou `this.handleClick = this.handleClick.bind(this)` para o método `handleClick` no construtor. Em seguida, quando você chama uma função como `this.setState()` dentro do método da classe, `this` refere-se a classe e não será `undefined`.
 
@@ -16,9 +16,9 @@ Uma forma comum é explicitamente vincular `this` no construtor para que `this` 
 
 # --instructions--
 
-O editor de código possui um componente com um `state` que mantém o controle do texto. Também possui um método o qual o permite definir o texto para `You clicked!`. No entanto, o método não funciona porque está usando a palavra-chave `this` que é undefined. Corrija isso ao vincular explicitamente `this` ao método `handleClick()` no construtor do componente.
+O editor de código possui um componente com um `state` que persontém o controle do texto. Também possui um método o qual o permite definir o texto para `You clicked!`. No entanto, o método não funciona porque está usando a palavra-chave `this` que é undefined. Corrija isso ao vincular explicitamente `this` ao método `handleClick()` no construtor do componente.
 
-Em seguida, adicione um manipulador de clique ao elemento `button` no método de renderização. Ele deve acionar o método `handleClick()` quando o botão recebe um evento de clique. Lembre-se de que o método que você passou ao manipulador `onClick` precisa de chaves porque ele deve ser interpretado diretamente como JavaScript.
+Em seguida, adicione um personipulador de clique ao elemento `button` no método de renderização. Ele deve acionar o método `handleClick()` quando o botão recebe um evento de clique. Lembre-se de que o método que você passou ao personipulador `onClick` precisa de chaves porque ele deve ser interpretado diretamente como JavaScript.
 
 Assim que você completar os passos acima você deve ser capaz de clicar o botão e ver `You clicked!`.
 

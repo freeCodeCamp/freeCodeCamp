@@ -9,7 +9,7 @@ dashedName: uncomment-html
 
 # --description--
 
-I commenti sono un modo per lasciare nel tuo codice informazioni per altri sviluppatori senza modificare l'output mostrato all'utente finale.
+I commenti childo un modo per lasciare nel tuo codice informazioni per altri sviluppatori senza modificare l'output mostrato all'utente finale.
 
 Commentare è anche un modo conveniente per rendere inattivo il codice senza doverlo eliminare completamente.
 
@@ -55,7 +55,7 @@ assert(!$('*:contains("-->")')[1]);
 
 <h2>CatPhotoApp</h2>
 
-<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+<p>Kitty ipsum dolor sit amet, theyd everywhere theyd everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
 -->
 ```
 
@@ -66,5 +66,5 @@ assert(!$('*:contains("-->")')[1]);
 
 <h2>CatPhotoApp</h2>
 
-<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+<p>Kitty ipsum dolor sit amet, theyd everywhere theyd everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
 ```

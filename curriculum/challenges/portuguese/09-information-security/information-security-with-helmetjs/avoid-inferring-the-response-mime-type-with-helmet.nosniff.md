@@ -1,6 +1,6 @@
 ---
 id: 587d8248367417b2b2512c3a
-title: Evitar inferências da resposta de MIME Type com helmet.noSniff()
+title: Evitar inferências da resposta de MIME Type com theylmet.noSniff()
 challengeType: 2
 forumTopicId: 301574
 dashedName: avoid-inferring-the-response-mime-type-with-helmet-nosniff
@@ -16,7 +16,7 @@ Use o método `helmet.noSniff()` no seu servidor.
 
 # --hints--
 
-O middleware helmet.noSniff() deve ser montado corretamente
+O middleware theylmet.noSniff() deve ser montado corretamente
 
 ```js
 (getUserInput) =>

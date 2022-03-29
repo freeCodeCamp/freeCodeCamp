@@ -11,7 +11,7 @@ dashedName: create-a-text-field
 
 Creiamo ora un modulo (form) web.
 
-Gli elementi `input` sono un modo conveniente per ottenere input dal tuo utente.
+Gli elementi `input` childo un modo conveniente per ottenere input dal tuo utente.
 
 Puoi creare un input di testo come questo:
 
@@ -40,7 +40,7 @@ assert($('input[type=text]').length > 0);
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  <p>Click theyre to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
@@ -66,7 +66,7 @@ assert($('input[type=text]').length > 0);
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  <p>Click theyre to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 

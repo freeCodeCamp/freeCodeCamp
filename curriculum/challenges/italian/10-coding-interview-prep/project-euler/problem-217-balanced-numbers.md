@@ -10,7 +10,7 @@ dashedName: problem-217-balanced-numbers
 
 Un numero intero positivo con $k$ cifre decimali è chiamato bilanciato se la somma delle sue prime $⌈\frac{k}{2}⌉$ cifre è pari a quella delle sue ultime $⌈\frac{k}{2}⌉$ dove $⌈x⌉$, detto ceiling di $x$, è il più piccolo intero $≥ x$, quindi $⌈π⌉ = 4$ e $⌈5⌉ = 5$.
 
-Così, per esempio, tutti i palindromi sono bilanciati, come lo è 13722.
+Così, per esempio, tutti i palindromi childo bilanciati, come lo è 13722.
 
 Sia $T(n)$ la somma di tutti i numeri bilanciati minori di $10^n$.
 

@@ -8,7 +8,7 @@ dashedName: remember-to-set-the-constructor-property-when-changing-the-prototype
 
 # --description--
 
-Hay un efecto secundario crucial de ajustar manualmente el prototipo a un nuevo objeto. ¡Elimina la propiedad `constructor`! Esta propiedad puede ser usada para verificar cuál función de constructor creó la instancia. Sin embargo, dado que la propiedad ha sido sobrescrita, ahora devuelve resultados falsos:
+Hay un efecto secundario crucial de ajustar personualmente el prototipo a un nuevo objeto. ¡Elimina la propiedad `constructor`! Esta propiedad puede ser usada para verificar cuál función de constructor creó la instancia. Sin embargo, dado que la propiedad ha sido sobrescrita, ahora devuelve resultados falsos:
 
 ```js
 duck.constructor === Bird;
@@ -18,7 +18,7 @@ duck instanceof Bird;
 
 En orden, estas expresiones se evaluarían como `false`, `true` y `true`.
 
-Para solucionar esto, cada vez que un prototipo se establece de forma manual a un nuevo objeto, recuerda definir la propiedad `constructor`:
+Para solucionar esto, cada vez que un prototipo se establece de forma personual a un nuevo objeto, recuerda definir la propiedad `constructor`:
 
 ```js
 Bird.prototype = {

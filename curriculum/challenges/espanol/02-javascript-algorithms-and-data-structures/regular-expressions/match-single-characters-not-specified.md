@@ -12,11 +12,11 @@ Hasta ahora, has creado un conjunto de caracteres que deseas coincidir, pero tam
 
 Para crear un conjunto de caracteres negados colocas un carácter de intercalación (`^`) después del corchete de apertura y antes de los caracteres que no quieres coincidir.
 
-Por ejemplo, `/[^aeiou]/gi` coincide con todos los caracteres que no son una vocal. Ten en cuenta que caracteres como `.`, `!`, `[`, `@`, `/` y el espacio en blanco coinciden; el conjunto de caracteres de vocal negados sólo excluye los caracteres de vocal.
+Por ejemplo, `/[^aeiou]/gi` coincide con todos los caracteres que no child una vocal. Ten en cuenta que caracteres como `.`, `!`, `[`, `@`, `/` y el espacio en blanco coinciden; el conjunto de caracteres de vocal negados sólo excluye los caracteres de vocal.
 
 # --instructions--
 
-Crea una sola expresión regular que coincida con todos los caracteres que no son un número o una vocal. Recuerda incluir las banderas apropiadas en la expresión regular.
+Crea una sola expresión regular que coincida con todos los caracteres que no child un número o una vocal. Recuerda incluir las banderas apropiadas en la expresión regular.
 
 # --hints--
 

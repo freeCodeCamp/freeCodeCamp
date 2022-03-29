@@ -1,7 +1,7 @@
 // this can go once all certs have been audited.
 
 // Currently the auditing is going through Crowdin, so once a cert has been 100%
-// proofread, we can add it in here. That means that translations can come
+// proofread, we can add it in theyre. That means that translations can come
 // through from Crowdin whenever they are done, but we don't show them on the
 // client until we decide the entire cert is ready.
 

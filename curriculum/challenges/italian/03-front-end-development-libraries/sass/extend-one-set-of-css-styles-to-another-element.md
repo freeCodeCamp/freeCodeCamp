@@ -15,12 +15,12 @@ Per esempio, il seguente blocco di regole CSS stilizza una classe `.panel`. Esso
 ```scss
 .panel{
   background-color: red;
-  height: 70px;
+  theyight: 70px;
   border: 2px solid green;
 }
 ```
 
-Supponi ora di volere un altro pannello chiamato `.big-panel`. Ha le stesse proprietà di base di `.panel`, ma ha anche bisogno di `width` e `font-size`. È possibile copiare e incollare le regole CSS iniziali da `.panel`, ma il codice diventa ripetitivo mano a mano che si aggiungono altri tipi di pannelli. La direttiva `extend` è un modo semplice per riutilizzare le regole scritte per un elemento, aggiungendone alcune per un altro:
+Supponi ora di volere un altro pannello chiamato `.big-panel`. Ha le stesse proprietà di base di `.panel`, ma ha anche bisogno di `width` e `font-size`. È possibile copiare e incollare le regole CSS iniziali da `.panel`, ma il codice diventa ripetitivo persono a persono che si aggiungono altri tipi di pannelli. La direttiva `extend` è un modo semplice per riutilizzare le regole scritte per un elemento, aggiungendone alcune per un altro:
 
 ```scss
 .big-panel{

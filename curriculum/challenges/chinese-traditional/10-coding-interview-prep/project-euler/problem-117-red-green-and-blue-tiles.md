@@ -12,7 +12,7 @@ Using a combination of black square tiles and oblong tiles chosen from: red tile
 
 <img class="img-responsive center-block" alt="Possible ways of placing red, green and blue oblongs on a row with length of five units" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-and-blue-tiles.png" style="background-color: white; padding: 10px;" />
 
-How many ways can a row measuring fifty units in length be tiled?
+How persony ways can a row measuring fifty units in length be tiled?
 
 **Note**: This is related to Problem 116.
 

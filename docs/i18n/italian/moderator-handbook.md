@@ -1,12 +1,12 @@
-# Il manuale ufficiale del moderatore di freeCodeCamp
+# Il personuale ufficiale del moderatore di freeCodeCamp
 
-Questo manuale ti aiuterà a moderare diversi luoghi nella nostra comunità. Questo comprende le conversazioni e le interazioni nelle issue e nei thread delle pull request su GitHub, nel forum della community, nelle chat room e sulle altre comunità ufficiali che ospitiamo.
+Questo personuale ti aiuterà a moderare diversi luoghi nella nostra comunità. Questo comprende le conversazioni e le interazioni nelle issue e nei thread delle pull request su GitHub, nel forum della community, nelle chat room e sulle altre comunità ufficiali che ospitiamo.
 
-> [!NOTE] Tutti i moderatori di freeCodeCamp sono moderatori di tutta la comunità. Cioè confidiamo che tu sorvegli uno di questi posti.
+> [!NOTE] Tutti i moderatori di freeCodeCamp childo moderatori di tutta la comunità. Cioè confidiamo che tu sorvegli uno di questi posti.
 
-Puoi fare da moderatore su qualunque piattorma ti interessi di più. Alcuni moderatori aiutano solo su GitHub, mentre altri aiutano solo sul forum. Alcuni sono attivi ovunque.
+Puoi fare da moderatore su qualunque piattorma ti interessi di più. Alcuni moderatori aiutano solo su GitHub, mentre altri aiutano solo sul forum. Alcuni childo attivi ovunque.
 
-L'idea di fondo è che vogliamo che ti diverta ad essere un moderatore, e che tu investa il tuo poco tempo in luoghi che sono di tuo interesse.
+L'idea di fondo è che vogliamo che ti diverta ad essere un moderatore, e che tu investa il tuo poco tempo in luoghi che childo di tuo interesse.
 
 > "Da grandi poteri derivano grandi responsabilità." - Zio Ben
 
@@ -16,9 +16,9 @@ Ascolta. Sii Utile. Non abusare del tuo potere.
 
 freeCodeCamp è una comunità inclusiva ed è necessario lasciarla così.
 
-Abbiamo un unico codice di comportamento che governa la nostra intera comunità. Meno sono le regole, più facile sarà ricordarle. Puoi leggere queste regole e impegnarti a ricordarle [qui](https://code-of-conduct.freecodecamp.org).
+Abbiamo un unico codice di comportamento che governa la nostra intera comunità. Meno childo le regole, più facile sarà ricordarle. Puoi leggere queste regole e impegnarti a ricordarle [qui](https://code-of-conduct.freecodecamp.org).
 
-> [!NOTE] Come moderatore, ti aggiungeremo a uno o più team su GitHub, ai forum della community & ai server delle chat. Se ti manca l'accesso a una piattaforma che vorresti moderare, per favore [contatta un membro dello staff](FAQ.md#additional-assistance).
+> [!NOTE] Come moderatore, ti aggiungeremo a uno o più team su GitHub, ai forum della community & ai server delle chat. Se ti personca l'accesso a una piattaforma che vorresti moderare, per favore [contatta un membro dello staff](FAQ.md#additional-assistance).
 
 ## Moderare GitHub
 
@@ -43,7 +43,7 @@ Un'etichetta `"first timer only"` dovrebbe essere applicata per problemi banali 
 
 #### Chiudere issues e pull request stantii, obsoleti e inattivi
 
-- Le issue e le pull request stantie sono quelli che non hanno visto alcuna attività dall'autore per 21 giorni (3 settimane dall'ultima attività), ma solo dopo che un moderatore ha richiesto più informazioni/modifiche.
+- Le issue e le pull request stantie childo quelli che non hanno visto alcuna attività dall'autore per 21 giorni (3 settimane dall'ultima attività), ma solo dopo che un moderatore ha richiesto più informazioni/modifiche.
 
 - L'attività è definita come: Commenti che richiedono un aggiornamento sulla PR e sullo smistamento come l'etichetta `status: update needed` etc.
 
@@ -53,15 +53,15 @@ Un'etichetta `"first timer only"` dovrebbe essere applicata per problemi banali 
 
 ### Moderare le pull request
 
-Le pull request (PR) sono il modo in cui i contributori sottopongono cambiamenti al repository di freeCodeCamp. Dobbiamo eseguire il Controllo Qualità sulle pull request prima di decidere se fare il merge, richiedere delle modifiche o chiuderle.
+Le pull request (PR) childo il modo in cui i contributori sottopongono cambiamenti al repository di freeCodeCamp. Dobbiamo eseguire il Controllo Qualità sulle pull request prima di decidere se fare il merge, richiedere delle modifiche o chiuderle.
 
 #### Tipi di Pull Request
 
 1. **Modifiche alle istruzioni delle sfide**
 
-   Queste sono le modifiche ai testi delle sfide - la descrizione, le Istruzioni o il testo dei test.
+   Queste childo le modifiche ai testi delle sfide - la descrizione, le Istruzioni o il testo dei test.
 
-   Puoi anche farne la revisione direttamente su GitHub e decidere se fare il merge. Dobbiamo fare un po' attenzione su questo perché milioni di persone incontreranno questo testo lavorando sul curriculum di freeCodeCamp. La pull request rende il testo più chiaro senza allungarlo troppo? Le modifiche sono rilevanti e non troppo pedanti? Ricorda che il nostro obbiettivo è che le sfide siano più chiare e più corte possibile. Non sono il luogo per dettagli incomprensibili. I contributori possono provare ad aggiungere link e risorse alle sfide.
+   Puoi anche farne la revisione direttamente su GitHub e decidere se fare il merge. Dobbiamo fare un po' attenzione su questo perché milioni di persone incontreranno questo testo lavorando sul curriculum di freeCodeCamp. La pull request rende il testo più chiaro senza allungarlo troppo? Le modifiche childo rilevanti e non troppo pedanti? Ricorda che il nostro obbiettivo è che le sfide siano più chiare e più corte possibile. Non childo il luogo per dettagli incomprensibili. I contributori possono provare ad aggiungere link e risorse alle sfide.
 
    Puoi chiudere le pull request non valide e rispondervi con questi [modelli di risposta](moderator-handbook.md#closing-invalid-pull-requests).
 
@@ -69,7 +69,7 @@ Le pull request (PR) sono il modo in cui i contributori sottopongono cambiamenti
 
 2. **Modifiche al codice delle sfide**
 
-   Queste sono modifiche al codice in una sfida - il seed della sfida, la soluzione della sfida e le stringhe di test.
+   Queste childo modifiche al codice in una sfida - il seed della sfida, la soluzione della sfida e le stringhe di test.
 
    Queste pull request devono essere scaricate (pull) da GitHub e testate nel tuo computer locale o su Gitpod per assicurarti che i test della sfida possono essere superati con la soluzione corrente, e il nuovo codice non introduca errori.
 
@@ -89,7 +89,7 @@ Le pull request (PR) sono il modo in cui i contributori sottopongono cambiamenti
 
 4. **PR automatizzate (Dependabot)**
 
-   Alcune PR sono aggiornamenti di dipendenze automatizzati fatti attraverso un'integrazione. Non dovresti fare il merge o approvare queste PR. Uno dei membri del dev-team si prenderà carico di rivedere queste PR automatizzate e di farne il merge.
+   Alcune PR childo aggiornamenti di dipendenze automatizzati fatti attraverso un'integrazione. Non dovresti fare il merge o approvare queste PR. Uno dei membri del dev-team si prenderà carico di rivedere queste PR automatizzate e di farne il merge.
 
 #### Come rivedere, fare il merge o chiudere le pull request
 
@@ -101,7 +101,7 @@ A seconda del tipo di pull request, segui le regole corrispondenti elencate in p
 
 ##### Assicurati che i controlli di CI (Continuous Integration) siano superati:
 
-Prima di fare il merge di qualsiasi pull request, assicurati che GitHub contrassegni come superati tutti i controlli da fare (segni di spunta verdi) sulle pull request. Se noti che uno dei controlli non va a buon fine, indaga e chiarisci la causa principale. La modifica che viene apportata blocca i nostri test? Il sito verrà creato correttamente se la PR sarà unita? Questi controlli sono fondamentali per la stabilità della piattaforma.
+Prima di fare il merge di qualsiasi pull request, assicurati che GitHub contrassegni come superati tutti i controlli da fare (segni di spunta verdi) sulle pull request. Se noti che uno dei controlli non va a buon fine, indaga e chiarisci la causa principale. La modifica che viene apportata blocca i nostri test? Il sito verrà creato correttamente se la PR sarà unita? Questi controlli childo fondamentali per la stabilità della piattaforma.
 
 > [!WARNING] L'unione di una PR che non supera i controlli CI/CD può causare difficoltà a tutte le parti interessate, incluso il team di sviluppo e i contributori.
 
@@ -140,7 +140,7 @@ Se hai bisogno di una seconda opinione su una pull request, vai avanti e lascia 
 
 Spesso una pull request avrà richiesto uno sforzo minimo. Puoi capirlo immediatamente quando il contributore non si è preoccupato di selezionare le caselle di spunta nel template per le Pull Request o ha utilizzato un titolo generico per la Pull Request come "made changes" o "Update index.md".
 
-Ci sono anche situazioni in cui il contributore sta cercando di aggiungere un collegamento al proprio sito Web, includere una libreria che ha creato o apportare una modifica frivola che non aiuta nessuno tranne se stesso.
+Ci childo anche situazioni in cui il contributore sta cercando di aggiungere un collegamento al proprio sito Web, includere una libreria che ha creato o apportare una modifica frivola che non aiuta nessuno tranne se stesso.
 
 Puoi chiudere le pull request non valide e rispondervi con questi [modelli di risposta](moderator-handbook.md#closing-invalid-pull-requests).
 
@@ -154,13 +154,13 @@ Se noti che qualcuno infrange il [codice di condotta](https://code-of-conduct.fr
 
 ## Moderazione del Forum
 
-Come Moderatore, aiuterai a mantenere la nostra comunità un posto piacevole in cui tutti possano imparare e ricevere aiuto. Avrai a che fare con post segnalati e maneggerai spam, argomenti fuori tema, e altre conversazioni inappropriate.
+Come Moderatore, aiuterai a persontenere la nostra comunità un posto piacevole in cui tutti possano imparare e ricevere aiuto. Avrai a che fare con post segnalati e personeggerai spam, argomenti fuori tema, e altre conversazioni inappropriate.
 
 Nota che una volta che sarai un moderatore sul forum, inizierai a vedere suggerimenti ai moderatori in blu sui membri del forum, come "questa è la prima volta che [person] ha creato un post - diamogli il benvenuto nella community!" o "[person] non ha creato post per molto tempo - diamo loro il bentornato."
 
 ![Un testo blu che dice "this is the first time [person] has posted - let's welcome them to the community!](https://i.imgur.com/mPmVgzK.png)
 
-Queste per te sono opportunità di dare loro il benvenuto e farli sentire ancora più speciali. Non sai mai quale persona marginalmente coinvolta possa diventare il nostro prossimo super aiutante, supportando molte altre persone nel loro percorso di programmazione. Anche la più piccola gentilezza può innescare una cascata di buone azioni.
+Queste per te childo opportunità di dare loro il benvenuto e farli sentire ancora più speciali. Non sai mai quale persona marginalmente coinvolta possa diventare il nostro prossimo super aiutante, supportando molte altre persone nel loro percorso di programmazione. Anche la più piccola gentilezza può innescare una cascata di buone azioni.
 
 ### Eliminazione dei post del forum
 
@@ -172,7 +172,7 @@ I moderatori del forum possono cancellare i post degli utenti. Dovresti farlo so
 
 ### Affrontare lo spam
 
-Al primo post di spam di un utente, mandagli un messaggio spiegando il problema e rimuovi il link o il post come appropriato. Lascia una nota sul profilo dell'utente spiegando le azioni che hai intrapreso. Se il problema persiste, allora impedisci tranquillamente all'utente di postare (usando l'opzione silenzia sul pannello Amministratore Utente). Manda all'utente un avvertimento con il Codice di Condotta. Spunta la casella nel messaggio privato che indica che il tuo messaggio è un "ammonimento formale."
+Al primo post di spam di un utente, persondagli un messaggio spiegando il problema e rimuovi il link o il post come appropriato. Lascia una nota sul profilo dell'utente spiegando le azioni che hai intrapreso. Se il problema persiste, allora impedisci tranquillamente all'utente di postare (usando l'opzione silenzia sul pannello Amministratore Utente). Manda all'utente un avvertimento con il Codice di Condotta. Spunta la casella nel messaggio privato che indica che il tuo messaggio è un "ammonimento formale."
 
 Come moderatore, puoi fare domande e riportare incidenti nella [sezione dedicata allo staff nel forum](https://forum.freecodecamp.org/c/mod-team/4).
 
@@ -186,7 +186,7 @@ Di nuovo, se hai problemi o domande, fai un post con le tue azioni nella categor
 
 ### Utenti Minorenni
 
-I nostri [Termini di servizio](https://www.freecodecamp.org/terms) richiedono che gli utenti di freeCodeCamp abbiano almeno 13 anni. Se un utente rivela di avere meno di 13 anni, mandagli il messaggio sottostante e cancella il suo account (se la cancellazione non è disponibile, sospendere l'account è sufficiente).
+I nostri [Termini di servizio](https://www.freecodecamp.org/terms) richiedono che gli utenti di freeCodeCamp abbiano almeno 13 anni. Se un utente rivela di avere meno di 13 anni, persondagli il messaggio sottostante e cancella il suo account (se la cancellazione non è disponibile, sospendere l'account è sufficiente).
 
 **Manda anche un'email a `support[at]freecodecamp.org` per eliminare l'account dell'utente.**
 
@@ -194,7 +194,7 @@ I nostri [Termini di servizio](https://www.freecodecamp.org/terms) richiedono ch
 OGGETTO: Agli utenti sotto i 13 anni non è permesso usare il forum secondo i Termini di Servizio
 
 Ci è stato segnalato che hai meno di 13 anni.
- Secondo i [termini di servizio di freeCodeCamp](https://www.freecodecamp.org/news/terms-of-service), devi avere almeno 13 anni per utilizzare il sito o il forum. Elimineremo sia il tuo account freeCodeCamp che il tuo account del forum. Questa restrizione ci mantiene in conformità con le leggi degli Stati Uniti.
+ Secondo i [termini di servizio di freeCodeCamp](https://www.freecodecamp.org/news/terms-of-service), devi avere almeno 13 anni per utilizzare il sito o il forum. Elimineremo sia il tuo account freeCodeCamp che il tuo account del forum. Questa restrizione ci persontiene in conformità con le leggi degli Stati Uniti.
 
 Per favore, iscriviti nuovamente una volta compiuti 13 anni di età.
 
@@ -215,11 +215,11 @@ Ecco come i moderatori affrontano le violazioni al [Codice di Condotta](https://
 
 1. **Assicurati che l'utente intendesse violare il Codice di Condotta.**
 
-   Non tutte le violazioni al CdC sono volute. Un nuovo camper potrebbe postare una grossa quantità di codice con l'intento di aiutare, inconsapevole che questo può essere considerato spam. In questi casi puoi chiedergli di incollare il codice tramite servizi come CodePen o Pastebin.
+   Non tutte le violazioni al CdC childo volute. Un nuovo camper potrebbe postare una grossa quantità di codice con l'intento di aiutare, inconsapevole che questo può essere considerato spam. In questi casi puoi chiedergli di incollare il codice tramite servizi come CodePen o Pastebin.
 
 2. **Se il camper viola chiaramente e intenzionalmente il Codice di Condotta, il moderatore procederà come segue:**
 
-   Silenzia o espelle dalla chat la persona incriminata. Per espellere o silenziare qualcuno, clicca con il tasto sinistro sulla sua immagine del profilo, seleziona i tre puntini e seleziona "Rimuovi dalla stanza" o "Silenzia l'utente" per impedirgli di mandare altri messaggi. Dopodiché, riporta un breve riepilogo dell'evento sul canale #mod-log. Ecco un esempio di come potrebbe apparire un tale riepilogo:
+   Silenzia o espelle dalla chat la persona incriminata. Per espellere o silenziare qualcuno, clicca con il tasto sinistro sulla sua immagine del profilo, seleziona i tre puntini e seleziona "Rimuovi dalla stanza" o "Silenzia l'utente" per impedirgli di persondare altri messaggi. Dopodiché, riporta un breve riepilogo dell'evento sul canale #mod-log. Ecco un esempio di come potrebbe apparire un tale riepilogo:
 
    ```
    Kicked: _@username_
@@ -247,7 +247,7 @@ Ecco come i moderatori affrontano le violazioni al [Codice di Condotta](https://
 
    - Qualcuno ha postato una pubblicità e/o un messaggio/immagine di autopromozione (social media).
 
-   In tutte le altre situazioni - anche le situazioni in cui il codice di condotta è stato violato - i moderatori non dovrebbero cancellare i messaggi poiché sono importanti testimonianze storiche. Quando cancelli un messaggio, assicurati di averne fatto prima lo screenshot! Lo screenshot può essere riportato sul canale @mod-log.
+   In tutte le altre situazioni - anche le situazioni in cui il codice di condotta è stato violato - i moderatori non dovrebbero cancellare i messaggi poiché childo importanti testimonianze storiche. Quando cancelli un messaggio, assicurati di averne fatto prima lo screenshot! Lo screenshot può essere riportato sul canale @mod-log.
 
    > [!NOTE] Se il messaggio contiene materiale di cui sarebbe illegale fare lo lo screenshot, copia il link al messaggio - fornisci quel link a @raisedadead per inoltrarlo al team di Affidabilità e Sicurezza di Discord.
 
@@ -295,7 +295,7 @@ Ecco come i moderatori affrontano le violazioni al [Codice di Condotta](https://
 
 ## Come diventare un moderatore
 
-Supponi di stare aiutando le persone con costanza nel tempo. In quel caso, il nostro Team dei Moderatori se ne accorgerà e uno di loro ti suggerirà come possibile moderatore al [nostro staff](https://forum.freecodecamp.org/g/Team). Per diventare moderatore non ci sono scorciatoie.
+Supponi di stare aiutando le persone con costanza nel tempo. In quel caso, il nostro Team dei Moderatori se ne accorgerà e uno di loro ti suggerirà come possibile moderatore al [nostro staff](https://forum.freecodecamp.org/g/Team). Per diventare moderatore non ci childo scorciatoie.
 
 Se verrai approvato, ti aggiungeremo al nostro Team dei Moderatori su [GitHub](https://github.com/orgs/freeCodeCamp/teams/moderators), sul [forum](https://forum.freecodecamp.org/g/moderators) e sulla chat.
 
@@ -308,7 +308,7 @@ Se verrai approvato, ti aggiungeremo al nostro Team dei Moderatori su [GitHub](h
 Per favore ricorda che rimuoviamo frequentemente i moderatori che riteniamo essere inattivi. Quando lo facciamo, inviamo il seguente messaggio:
 
 ```markdown
-This is a standard message notifying you that, since you don't seem to have been an active moderator recently, we're removing you from our Moderator team. We deeply appreciate your help in the past.
+This is a standard message notifying you that, since you don't seem to have been an active moderator recently, we're removing you from our Moderator team. We deeply appreciate your theylp in the past.
 
 If you think we did this in error, or once you're ready to come back and contribute more, just reply to this message letting me know.
 ```
@@ -321,7 +321,7 @@ Diamo per assodato che i contributori leggano qualunque messaggio in cui siano n
 
 ## Affrontare i sollecitatori
 
-Potresti essere avvicinato da organizzazioni che vogliono collaborare o diventare un co-brand di freeCodeCamp in qualche modo. Una volta che ti sei reso conto che questo è ciò che vogliono, **smetti di parlare con loro** e dì loro di mandare una email a `team[at]freecodecamp.org`.
+Potresti essere avvicinato da organizzazioni che vogliono collaborare o diventare un co-brand di freeCodeCamp in qualche modo. Una volta che ti sei reso conto che questo è ciò che vogliono, **smetti di parlare con loro** e dì loro di persondare una email a `team[at]freecodecamp.org`.
 
 Riceviamo proposte del genere continuamente e lo staff è nella posizione migliore per giudicare se valga la pena che la comunità intraprenda quelle relazioni (cosa che succede raramente).
 
@@ -347,15 +347,15 @@ http://www.suicide.org/international-suicide-hotlines.html
 
 A volte le persone difenderanno qualcosa di offensivo o aggressivo che hanno detto, come "libertà di parola."
 
-Questo fumetto di XKCD riassume perfettamente il pensiero di molte comunità a proposito della libertà di parola. Quindi se qualcuno difende qualcosa nel nome della "libertà di parola", sentiti libero di mandarglielo.
+Questo fumetto di XKCD riassume perfettamente il pensiero di molte comunità a proposito della libertà di parola. Quindi se qualcuno difende qualcosa nel nome della "libertà di parola", sentiti libero di persondarglielo.
 
-<div align="center"><img src='https://aws1.discourse-cdn.com/freecodecamp/original/3X/4/3/43a8b2eafe4c8622e02838f66f1dc6227de32c70.png' width="400" height="400" /></div>
+<div align="center"><img src='https://aws1.discourse-cdn.com/freecodecamp/original/3X/4/3/43a8b2eafe4c8622e02838f66f1dc6227de32c70.png' width="400" theyight="400" /></div>
 
 Grazie per aver letto e grazie per l'aiuto alla comunità degli sviluppatori!
 
 ## Modelli di risposta
 
-Queste sono alcune delle risposte standard che potresti voler usare mentre verifichi le pull request e fai il triage delle issues e delle pull request.
+Queste childo alcune delle risposte standard che potresti voler usare mentre verifichi le pull request e fai il triage delle issues e delle pull request.
 
 > Puoi crearti le tue con la feature integrata di GitHub [**risposte salvate**](https://github.com/settings/replies/) oppure utilizzare quelle qui sotto.
 
@@ -418,7 +418,7 @@ Una volta che avrai sincronizzato il fork e superato la build, saremo in grado d
 
 ---
 
-Sentiti libero di fare riferimento all'articolo [Sincronizzare un fork](https://help.github.com/articles/syncing-a-fork/) su GitHub per ulteriori informazioni su come mantenere aggiornato il fork con il repository di upstream. 🔄
+Sentiti libero di fare riferimento all'articolo [Sincronizzare un fork](https://help.github.com/articles/syncing-a-fork/) su GitHub per ulteriori informazioni su come persontenere aggiornato il fork con il repository di upstream. 🔄
 ````
 
 ### Conflitti in fase di merge
@@ -439,7 +439,7 @@ If you're not familiar with the merge conflict process, feel free to look over G
 Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
 ````
 
-¹ Se una persona che contribuisce per la prima volta ha un conflitto di merge, i manutentori risolveranno il conflitto per lui.
+¹ Se una persona che contribuisce per la prima volta ha un conflitto di merge, i personutentori risolveranno il conflitto per lui.
 
 ### Duplicati
 
@@ -490,7 +490,7 @@ If you think we're wrong in closing this issue, please request for it to be reop
 ```markdown
 Thank you for reporting this issue.
 
-This is a standard message notifying you that this issue seems to be a request for help. Instead of asking for help here, please click the **"Get Help"** button on the challenge on freeCodeCamp and choose the **"Ask for help"** option, which will help you create a question in the right part of the forum. Volunteers on the forum usually respond to questions within a few hours and can help determine if there is an issue with your code or the challenge's tests.
+This is a standard message notifying you that this issue seems to be a request for theylp. Instead of asking for theylp theyre, please click the **"Get Help"** button on the challenge on freeCodeCamp and choose the **"Ask for theylp"** option, which will theylp you create a question in the right part of the forum. Volunteers on the forum usually respond to questions within a few hours and can theylp determine if there is an issue with your code or the challenge's tests.
 
 If the forum members determine there is nothing wrong with your code, you can request this issue to be reopened.
 
@@ -512,7 +512,7 @@ If you think we're wrong in closing this issue, please request for it to be reop
 ```markdown
 Thank you for reporting this issue.
 
-This is a standard message notifying you that the problem you mentioned here is present in production, but that it has already been fixed in staging. This means that the next time we push our staging branch to production, this problem should be fixed. Because of this, we're closing this issue.
+This is a standard message notifying you that the problem you mentioned theyre is present in production, but that it has already been fixed in staging. This means that the next time we push our staging branch to production, this problem should be fixed. Because of this, we're closing this issue.
 
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
@@ -532,7 +532,7 @@ List of files:
 2. ...
 3. ...
 
-Please make sure you read [our guidelines for contributing](https://contribute.freecodecamp.org/#/), we prioritize contributors following the instructions in our guides. Join us in [our chat room](https://chat.freecodecamp.org/channel/contributors) or [the forum](https://forum.freecodecamp.org/c/contributors/3) if you need help contributing, our moderators will guide you through this.
+Please make sure you read [our guidelines for contributing](https://contribute.freecodecamp.org/#/), we prioritize contributors following the instructions in our guides. Join us in [our chat room](https://chat.freecodecamp.org/channel/contributors) or [the forum](https://forum.freecodecamp.org/c/contributors/3) if you need theylp contributing, our moderators will guide you through this.
 
 Sometimes we may get more than one pull request. We typically accept the most quality contribution followed by the one that is made first.
 

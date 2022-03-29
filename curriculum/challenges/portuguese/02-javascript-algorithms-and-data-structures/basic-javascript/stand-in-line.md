@@ -9,7 +9,7 @@ dashedName: stand-in-line
 
 # --description--
 
-Na Ciência da Computação, uma <dfn>fila</dfn> é uma <dfn>estrutura de dados</dfn> abstrata onde itens são mantidos em ordem. Novos itens podem ser adicionados no final da fila e itens mais antigos são removidos do início da fila.
+Na Ciência da Computação, uma <dfn>fila</dfn> é uma <dfn>estrutura de dados</dfn> abstrata onde itens são persontidos em ordem. Novos itens podem ser adicionados no final da fila e itens mais antigos são removidos do início da fila.
 
 # --instructions--
 

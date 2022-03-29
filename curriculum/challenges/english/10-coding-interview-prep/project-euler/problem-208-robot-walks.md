@@ -14,7 +14,7 @@ One of 70932 possible closed paths of 25 arcs starting northward is
 
 <img class="img-responsive center-block" alt="closed path of 25 arcs, starting northward" src="https://cdn.freecodecamp.org/curriculum/project-euler/robot-walks.gif" style="background-color: white; padding: 10px;">
 
-Given that the robot starts facing North, how many journeys of 70 arcs in length can it take that return it, after the final arc, to its starting position?
+Given that the robot starts facing North, how persony journeys of 70 arcs in length can it take that return it, after the final arc, to its starting position?
 
 **Note:** Any arc may be traversed multiple times.
 

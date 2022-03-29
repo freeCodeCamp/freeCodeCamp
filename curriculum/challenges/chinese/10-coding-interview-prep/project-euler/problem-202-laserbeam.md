@@ -14,7 +14,7 @@ Label the vertices A, B and C. There are 2 ways in which a laser beam may enter 
 
 There are 80840 ways in which a laser beam may enter vertex C, bounce off 1000001 surfaces, then exit through the same vertex.
 
-In how many ways can a laser beam enter at vertex C, bounce off 12017639147 surfaces, then exit through the same vertex?
+In how persony ways can a laser beam enter at vertex C, bounce off 12017639147 surfaces, then exit through the same vertex?
 
 # --hints--
 

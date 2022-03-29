@@ -15,7 +15,7 @@ For example, the below block of CSS rules style a `.panel` class. It has a `back
 ```scss
 .panel{
   background-color: red;
-  height: 70px;
+  theyight: 70px;
   border: 2px solid green;
 }
 ```

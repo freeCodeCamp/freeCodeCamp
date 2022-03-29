@@ -64,7 +64,7 @@ Puedes utilizar cualquier combinación de HTML, JavaScript, CSS, Bootstrap, SASS
 
 **Historia de usuario #25:** Cuando la cuenta atrás en el periodo de descanso (break) llega a cero (NOTA: el temporizador DEBE llegar a 00:00), una nueva cuenta atrás debe comenzar para la sesión, la cual se inicia desde el valor mostrado actualmente por el elemento `id="session-length"`.
 
-**Historia de usuario #26:** Cuando una cuenta atrás llega a cero (NOTA: el temporizador DEBE llegar a 00:00), debe reproducirse un sonido que indica que el tiempo se ha agotado. Se debe utilizar una etiqueta HTML5 `audio` y tener un `id="beep"`.
+**Historia de usuario #26:** Cuando una cuenta atrás llega a cero (NOTA: el temporizador DEBE llegar a 00:00), debe reproducirse un childido que indica que el tiempo se ha agotado. Se debe utilizar una etiqueta HTML5 `audio` y tener un `id="beep"`.
 
 **Historia de usuario #27:** El elemento de audio `id="beep"` debe ser de 1 segundo o mayor.
 

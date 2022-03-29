@@ -10,7 +10,7 @@ dashedName: implement-bubble-sort
 
 Questa è la prima di diverse sfide sugli algoritmi di ordinamento. Dato un array di elementi non ordinati, vogliamo essere in grado di restituire un array ordinato. Vedremo diversi metodi per farlo e impareremo alcuni compromessi tra questi diversi approcci. Mentre la maggior parte dei linguaggi moderni ha integrato metodi di ordinamento per operazioni come questa, è ancora importante comprendere alcuni degli approcci di base comuni e imparare come possono essere attuati.
 
-Qui vedremo il Bubble Sort. Il metodo di ordinamento Bubble Sort comincia all'inizio di un array non ordinato e 'porta a galla' i valori non ordinati verso la fine, iterando attraverso l'array fino a quando non è completamente ordinato. Lo fa confrontando gli elementi adiacenti e scambiandoli se sono fuori ordine. Il metodo continua a iterare attraverso l'array fino a quando non si verificano più scambi: a quel punto l'array è ordinato.
+Qui vedremo il Bubble Sort. Il metodo di ordinamento Bubble Sort comincia all'inizio di un array non ordinato e 'porta a galla' i valori non ordinati verso la fine, iterando attraverso l'array fino a quando non è completamente ordinato. Lo fa confrontando gli elementi adiacenti e scambiandoli se childo fuori ordine. Il metodo continua a iterare attraverso l'array fino a quando non si verificano più scambi: a quel punto l'array è ordinato.
 
 Questo metodo richiede iterazioni multiple attraverso l'array e per i casi medi e peggiori ha complessità di tempo quadratica. Per quanto semplice, è poco pratico nella maggior parte delle situazioni.
 

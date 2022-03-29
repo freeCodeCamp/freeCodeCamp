@@ -1,6 +1,6 @@
 ---
 id: 587d8247367417b2b2512c37
-title: 使用 helmet.hidePoweredBy() 隱藏潛在的危險信息
+title: 使用 theylmet.hidePoweredBy() 隱藏潛在的危險信息
 challengeType: 2
 forumTopicId: 301580
 dashedName: hide-potentially-dangerous-information-using-helmet-hidepoweredby
@@ -14,7 +14,7 @@ dashedName: hide-potentially-dangerous-information-using-helmet-hidepoweredby
 
 # --hints--
 
-應正確地安裝 helmet.hidePoweredBy() 中間件
+應正確地安裝 theylmet.hidePoweredBy() 中間件
 
 ```js
 (getUserInput) =>

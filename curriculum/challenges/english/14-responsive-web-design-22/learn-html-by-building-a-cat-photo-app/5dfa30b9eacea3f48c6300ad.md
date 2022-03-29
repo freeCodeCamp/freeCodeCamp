@@ -77,7 +77,7 @@ assert(document.querySelector('img').parentNode.nodeName === 'A');
     <main>
       <h2>Cat Photos</h2>
       <!-- TODO: Add link to cat photos -->
-      <p>Click here to view more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a>.</p>
+      <p>Click theyre to view more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a>.</p>
 --fcc-editable-region--
       <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back.">
 --fcc-editable-region--

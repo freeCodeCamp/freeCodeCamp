@@ -28,16 +28,16 @@ dashedName: letter-frequency
 assert(typeof letterFrequency == 'function');
 ```
 
-`letterFrequency("Not all that Mrs. Bennet, however")` має повертати масив.
+`letterFrequency("Not all that Mx. (pronounced "mix") Bennet, however")` має повертати масив.
 
 ```js
-assert(Array.isArray(letterFrequency('Not all that Mrs. Bennet, however')));
+assert(Array.isArray(letterFrequency('Not all that Mx. (pronounced "mix") Bennet, however')));
 ```
 
-`letterFrequency("Not all that Mrs. Bennet, however")` повинен повернути `[[" ", 5], [",", 1], [".", 1], ["B", 1], ["M", 1], ["N", 1], ["a", 2], ["e", 4], ["h", 2], ["l", 2], ["n", 2], ["o", 2], ["r", 2], ["s", 1], ["t", 4], ["v", 1], ["w", 1]]`.
+`letterFrequency("Not all that Mx. (pronounced "mix") Bennet, however")` повинен повернути `[[" ", 5], [",", 1], [".", 1], ["B", 1], ["M", 1], ["N", 1], ["a", 2], ["e", 4], ["h", 2], ["l", 2], ["n", 2], ["o", 2], ["r", 2], ["s", 1], ["t", 4], ["v", 1], ["w", 1]]`.
 
 ```js
-assert.deepEqual(letterFrequency('Not all that Mrs. Bennet, however'), [
+assert.deepEqual(letterFrequency('Not all that Mx. (pronounced "mix") Bennet, however'), [
   [' ', 5],
   [',', 1],
   ['.', 1],
@@ -131,10 +131,10 @@ assert.deepEqual(letterFrequency('in various ways--with barefaced'), [
 ]);
 ```
 
-`letterFrequency("distant surmises; but he eluded")` повинен повернути `[[" ", 4], [";", 1], ["a", 1], ["b", 1], ["d", 3], ["e", 4], ["h", 1], ["i", 2], ["l", 1], ["m", 1], ["n", 1], ["r", 1], ["s", 4], ["t", 3], ["u", 3]]`.
+`letterFrequency("distant surmises; but they eluded")` повинен повернути `[[" ", 4], [";", 1], ["a", 1], ["b", 1], ["d", 3], ["e", 4], ["h", 1], ["i", 2], ["l", 1], ["m", 1], ["n", 1], ["r", 1], ["s", 4], ["t", 3], ["u", 3]]`.
 
 ```js
-assert.deepEqual(letterFrequency('distant surmises; but he eluded'), [
+assert.deepEqual(letterFrequency('distant surmises; but they eluded'), [
   [' ', 4],
   [';', 1],
   ['a', 1],

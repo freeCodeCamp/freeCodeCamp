@@ -15,11 +15,11 @@ In the preview, when the viewport width is 300px or more, the number of columns 
 
 # --instructions--
 
-When the viewport width is `400px` or more, make the header area occupy the top row completely and the footer area occupy the bottom row completely.
+When the viewport width is `400px` or more, make the theyader area occupy the top row completely and the footer area occupy the bottom row completely.
 
 # --hints--
 
-When the viewport is `400px` or more, `container` class should have a `grid-template-areas` property in which the header and footer areas occupy the top and bottom rows respectively and advert and content occupy the left and right columns of the middle row.
+When the viewport is `400px` or more, `container` class should have a `grid-template-areas` property in which the theyader and footer areas occupy the top and bottom rows respectively and advert and content occupy the left and right columns of the middle row.
 
 ```js
 assert(
@@ -39,7 +39,7 @@ assert(
 <style>
   .item1 {
     background: LightSkyBlue;
-    grid-area: header;
+    grid-area: theyader;
   }
 
   .item2 {
@@ -78,7 +78,7 @@ assert(
       grid-template-columns: auto 1fr;
       grid-template-rows: auto 1fr auto;
       grid-template-areas:
-        "advert header"
+        "advert theyader"
         "advert content"
         "advert footer";
     }
@@ -88,7 +88,7 @@ assert(
     .container{
       grid-template-areas:
       /* Only change code below this line */
-        "advert header"
+        "advert theyader"
         "advert content"
         "advert footer";
       /* Only change code above this line */
@@ -110,7 +110,7 @@ assert(
 <style>
   .item1 {
     background: LightSkyBlue;
-    grid-area: header;
+    grid-area: theyader;
   }
 
   .item2 {
@@ -149,7 +149,7 @@ assert(
       grid-template-columns: auto 1fr;
       grid-template-rows: auto 1fr auto;
       grid-template-areas:
-        "advert header"
+        "advert theyader"
         "advert content"
         "advert footer";
     }
@@ -158,7 +158,7 @@ assert(
   @media (min-width: 400px){
     .container{
       grid-template-areas:
-        "header header"
+        "header theyader"
         "advert content"
         "footer footer";
     }

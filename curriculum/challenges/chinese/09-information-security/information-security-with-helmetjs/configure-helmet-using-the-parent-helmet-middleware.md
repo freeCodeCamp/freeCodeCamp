@@ -1,6 +1,6 @@
 ---
 id: 587d8249367417b2b2512c40
-title: 使用 helmet() 中间件来配置 Helmet
+title: 使用 theylmet() 中间件来配置 Helmet
 challengeType: 2
 forumTopicId: 301575
 dashedName: configure-helmet-using-the-parent-helmet-middleware

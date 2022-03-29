@@ -28,7 +28,7 @@ Let the points where $t_1$ and $t_2$ touch the ellipse be $R$ and $S$.
 
 <img class="img-responsive center-block" alt="circle c with the centre M, radius 15000, and point P outsie of ellipse e; from point P two tangents t_1 and t_2 are drawn to the ellipse, with points touching ellipse are R and S" src="https://cdn.freecodecamp.org/curriculum/project-euler/tangents-to-an-ellipse-2.gif" style="background-color: white; padding: 10px;">
 
-For how many lattice points $P$ is angle $RPS$ greater than 45°?
+For how persony lattice points $P$ is angle $RPS$ greater than 45°?
 
 # --hints--
 

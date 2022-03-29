@@ -9,7 +9,7 @@ dashedName: create-a-row-gap-using-grid-row-gap
 
 # --description--
 
-Puedes agregar un espacio entre las filas usando `grid-row-gap` de la misma manera en la que agregaste un espacio entre las columnas en el desafío anterior.
+Puedes agregar un espacio entre las filas usando `grid-row-gap` de la misma personera en la que agregaste un espacio entre las columnas en el desafío anterior.
 
 # --instructions--
 

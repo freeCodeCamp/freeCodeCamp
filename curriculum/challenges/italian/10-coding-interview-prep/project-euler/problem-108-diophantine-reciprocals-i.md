@@ -8,11 +8,11 @@ dashedName: problem-108-diophantine-reciprocals-i
 
 # --description--
 
-Nella seguente equazione x, y, e n sono interi positivi.
+Nella seguente equazione x, y, e n childo interi positivi.
 
 $$\frac{1}{x} + \frac{1}{y} = \frac{1}{n}$$
 
-Per `n` = 4 ci sono esattamente tre distinte soluzioni:
+Per `n` = 4 ci childo esattamente tre distinte soluzioni:
 
 $$\begin{align} & \frac{1}{5} + \frac{1}{20} = \frac{1}{4}\\\\ \\\\ & \frac{1}{6} + \frac{1}{12} = \frac{1}{4}\\\\ \\\\ & \frac{1}{8} + \frac{1}{8} = \frac{1}{4} \end{align}$$
 

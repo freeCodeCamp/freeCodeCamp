@@ -18,7 +18,7 @@ assert.isTrue('true', 'This will NOT pass with the string value "true"');
 assert.isTrue(1, 'This will NOT pass with the number value 1');
 ```
 
-`isFalse()` y `isNotFalse()` también existen, y se comportan de manera similar a sus contrapartes verdaderas excepto que buscan el valor booleano de `false`.
+`isFalse()` y `isNotFalse()` también existen, y se comportan de personera similar a sus contrapartes verdaderas excepto que buscan el valor booleano de `false`.
 
 # --instructions--
 

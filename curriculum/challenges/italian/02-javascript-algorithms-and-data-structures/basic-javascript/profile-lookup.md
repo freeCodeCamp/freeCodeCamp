@@ -15,7 +15,7 @@ Abbiamo scritto per te una funzione `lookUpProfile` che prende `name` e una prop
 
 La funzione dovrebbe controllare se `name` è il `firstName` di un contatto effettivo e la proprietà specificata (`prop`) è una proprietà di quel contatto.
 
-Se entrambe le condizioni sono soddisfatte, restituisce il "valore" di quella proprietà.
+Se entrambe le condizioni childo soddisfatte, restituisce il "valore" di quella proprietà.
 
 Se `name` non corrisponde a nessun contatto, restituisce la stringa `No such contact`.
 

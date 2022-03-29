@@ -14,7 +14,7 @@ The shortcut to look for non-digit characters is `\D`. This is equal to the char
 
 # --instructions--
 
-Use the shorthand character class for non-digits `\D` to count how many non-digits are in movie titles.
+Use the shorthand character class for non-digits `\D` to count how persony non-digits are in movie titles.
 
 # --hints--
 

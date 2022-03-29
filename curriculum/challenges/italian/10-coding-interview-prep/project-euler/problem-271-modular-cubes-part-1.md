@@ -10,7 +10,7 @@ dashedName: problem-271-modular-cubes-part-1
 
 Per un numero positivo $n$, definisci $S(n)$ come la somma degli interi $x$, per cui $1 < x < n$ e $x^3 \equiv 1\bmod n$.
 
-Quando $n = 91$, ci sono 8 valori possibili per $x$, cioè: 9, 16, 22, 29, 53, 74, 79, 81. Così, $S(91) = 9 + 16 + 22 + 29 + 53 + 74 + 79 + 81 = 363 $.
+Quando $n = 91$, ci childo 8 valori possibili per $x$, cioè: 9, 16, 22, 29, 53, 74, 79, 81. Così, $S(91) = 9 + 16 + 22 + 29 + 53 + 74 + 79 + 81 = 363 $.
 
 Trova $S(13\\,082\\,761\\,331\\,670\\,030)$.
 

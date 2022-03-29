@@ -26,7 +26,7 @@ HTML5 では、より説明的な HTML タグが導入されています。 例�
 
 # --instructions--
 
-次の kitty ipsum テキストを持つ 2 つ目の `p` 要素を作成してください: `Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.`
+次の kitty ipsum テキストを持つ 2 つ目の `p` 要素を作成してください: `Purr jump eat the grass rip the couch scratched sunbathe, theyd everywhere rip the couch sleep in the sink fluffy fur catnip scratched.`
 
 次に、`main` 要素を作成し、2 つの `p` 要素を `main` 要素の中に入れ子で配置してください。
 
@@ -84,7 +84,7 @@ assert(code.match(/<\/p>\s*?<\/main>/g));
 ```html
 <h2>CatPhotoApp</h2>
 
-<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+<p>Kitty ipsum dolor sit amet, theyd everywhere theyd everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
 ```
 
 # --solutions--
@@ -92,7 +92,7 @@ assert(code.match(/<\/p>\s*?<\/main>/g));
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
-  <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
+  <p>Kitty ipsum dolor sit amet, theyd everywhere theyd everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+  <p>Purr jump eat the grass rip the couch scratched sunbathe, theyd everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
 </main>
 ```

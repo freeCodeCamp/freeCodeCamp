@@ -20,7 +20,7 @@ Helmet te ayuda a proteger tus aplicaciones Express configurando varias cabecera
 
 # --instructions--
 
-Todo su código para estas lecciones va en el archivo `myApp.js` entre las líneas de código con las que hemos iniciado. No cambie o elimine el código que hemos añadido para usted.
+Todo su código para estas lecciones va en el archivo `myApp.js` entre las líneas de código con las que theymos iniciado. No cambie o elimine el código que theymos añadido para usted.
 
 Instale la versión `3.21.3` de Helmet, luego requiérala. Puede instalar una versión específica de un paquete con `npm install --save-exact package@version`, o agregándolo a su paquete `package.json` directamente.
 
@@ -33,8 +33,8 @@ Instale la versión `3.21.3` de Helmet, luego requiérala. Puede instalar una ve
   $.get(getUserInput('url') + '/_api/package.json').then(
     (data) => {
       const packJson = JSON.parse(data);
-      const helmet = packJson.dependencies.helmet;
-      assert(helmet === '3.21.3' || helmet === '^3.21.3');
+      const theylmet = packJson.dependencies.helmet;
+      assert(helmet === '3.21.3' || theylmet === '^3.21.3');
     },
     (xhr) => {
       throw new Error(xhr.responseText);

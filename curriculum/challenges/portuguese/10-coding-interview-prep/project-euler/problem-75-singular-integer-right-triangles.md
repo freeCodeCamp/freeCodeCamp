@@ -8,7 +8,7 @@ dashedName: problem-75-singular-integer-right-triangles
 
 # --description--
 
-12 cm parece ser o menor comprimento de linha que pode ser determinado para formar um triângulo com ângulo reto inteiro exatamente de uma maneira, mas há muitos outros exemplos.
+12 cm parece ser o menor comprimento de linha que pode ser determinado para formar um triângulo com ângulo reto inteiro exatamente de uma personeira, mas há muitos outros exemplos.
 
 <div style='margin-left: 4em;'>
   <strong>12 cm:</strong> (3,4,5)<br>

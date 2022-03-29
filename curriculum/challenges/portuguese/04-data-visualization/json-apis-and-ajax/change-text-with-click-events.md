@@ -20,7 +20,7 @@ document.getElementsByClassName('message')[0].textContent="Here is the message";
 
 # --instructions--
 
-Adicione código ao manipulador de evento `onclick` para alterar o texto dentro do elemento `message` de modo que ele diga `Here is the message`.
+Adicione código ao personipulador de evento `onclick` para alterar o texto dentro do elemento `message` de modo que ele diga `Here is the message`.
 
 # --hints--
 
@@ -79,7 +79,7 @@ assert(
 
 <h1>Cat Photo Finder</h1>
 <p class="message box">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">
@@ -130,7 +130,7 @@ assert(
 
 <h1>Cat Photo Finder</h1>
 <p class="message">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">

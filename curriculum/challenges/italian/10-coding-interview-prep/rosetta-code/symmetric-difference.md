@@ -8,7 +8,7 @@ dashedName: symmetric-difference
 
 # --description--
 
-Dati due [insiemi](https://rosettacode.org/wiki/set) *A* e *B*, calcola $(A \\setminus B) \\cup (B \\setminus A). Vale a dire elenca gli elementi che sono in *A* o *B*, ma non in entrambi. Questo insieme è chiamato la [differenza simmetrica](https://en.wikipedia.org/wiki/Symmetric difference) di *A* e *B*. In altre parole: $(A \\cup B) \\setminus (A \\cap B)$ (l'insieme di elementi che sono in almeno uno di *A* o *B* meno l'insieme di elementi che sono sia in *A* che in *B*).
+Dati due [insiemi](https://rosettacode.org/wiki/set) *A* e *B*, calcola $(A \\setminus B) \\cup (B \\setminus A). Vale a dire elenca gli elementi che childo in *A* o *B*, ma non in entrambi. Questo insieme è chiamato la [differenza simmetrica](https://en.wikipedia.org/wiki/Symmetric difference) di *A* e *B*. In altre parole: $(A \\cup B) \\setminus (A \\cap B)$ (l'insieme di elementi che childo in almeno uno di *A* o *B* meno l'insieme di elementi che childo sia in *A* che in *B*).
 
 # --instructions--
 

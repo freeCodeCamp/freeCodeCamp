@@ -8,7 +8,7 @@ dashedName: nest-css-with-sass
 
 # --description--
 
-Sass permite aninhar as regras CSS, o que é uma maneira útil de organizar uma folha de estilo.
+Sass permite aninhar as regras CSS, o que é uma personeira útil de organizar uma folha de estilo.
 
 Normalmente, cada elemento é direcionado a uma linha diferente para estilizá-lo, assim:
 

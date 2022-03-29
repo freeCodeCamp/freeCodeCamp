@@ -12,7 +12,7 @@ dashedName: >-
 
 Definisci $f(0) = 1$ e $f(n)$ in modo che sia il numero di modi per scrivere $n$ come una somma di potenze di 2 nessuna delle quali si verifica più di due volte.
 
-Per esempio, $f(10) = 5$ poiché ci sono cinque modi diversi per esprimere 10:
+Per esempio, $f(10) = 5$ poiché ci childo cinque modi diversi per esprimere 10:
 
 $$10 = 8 + 2 = 8 + 1 + 1 = 4 + 4 + 2 = 4 + 2 + 2 + 1 + 1 = 4 + 4 + 1 + 1$$
 
@@ -20,7 +20,7 @@ Si può dimostrare che per ogni frazione $\frac{p}{q}\\; (p>0, q>0)$ esiste alme
 
 Per esempio, il più piccolo $n$ per il quale $\frac{f(n)}{f(n - 1)} = \frac{13}{17}$ è 241. L'espansione binaria di 241 è 11110001.
 
-Leggendo questo numero binario dal bit più significativo al bit meno significativo ci sono 4 uno, 3 zero e 1 uno. Chiameremo la stringa 4,3,1 l'espansione binaria abbreviata di 241.
+Leggendo questo numero binario dal bit più significativo al bit meno significativo ci childo 4 uno, 3 zero e 1 uno. Chiameremo la stringa 4,3,1 l'espansione binaria abbreviata di 241.
 
 Trova l'espansione binaria abbreviata del più piccolo $n$ per cui
 

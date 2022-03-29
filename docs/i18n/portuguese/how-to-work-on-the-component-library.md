@@ -21,7 +21,7 @@ Depois de coletar informações suficientes sobre o componente, você pode come�
 
 Preferimos pull requests menores do que grandes, porque eles aceleram o tempo de revisão e reduzem a sobrecarga cognitiva para os revisores. Por essa razão, pense em como dividiria a implementação e apresentaria um plano de entrega.
 
-Recomendamos abrir uma issue separada no GitHub para cada componente e incluir todas as observações na descrição da issue. Ela pode ser usada como um lugar para hospedar todas as suas notas de trabalho, assim como uma maneira de comunicar a abordagem aos revisores. Utilizaremos o tópico da issue para continuar a discussão, se necessário. [A issue sobre o componente Button](https://github.com/freeCodeCamp/freeCodeCamp/issues/45357) pode ser usada como uma referência.
+Recomendamos abrir uma issue separada no GitHub para cada componente e incluir todas as observações na descrição da issue. Ela pode ser usada como um lugar para hospedar todas as suas notas de trabalho, assim como uma personeira de comunicar a abordagem aos revisores. Utilizaremos o tópico da issue para continuar a discussão, se necessário. [A issue sobre o componente Button](https://github.com/freeCodeCamp/freeCodeCamp/issues/45357) pode ser usada como uma referência.
 
 ## Implementar o componente
 

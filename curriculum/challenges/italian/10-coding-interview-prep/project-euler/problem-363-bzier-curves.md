@@ -14,9 +14,9 @@ La curva è costruita come segue:
 
 <img class="img-responsive center-block" alt="costruzione della curva di Bézier" src="https://cdn.freecodecamp.org/curriculum/project-euler/bzier-curves.png" style="background-color: white; padding: 10px;" />
 
-Sui segmenti $P_0P_1$, $P_1P_2$ e $P_2P_3$ i punti $Q_0$,$Q_1$ e $Q_2$ sono disegnati in modo tale che $\frac{P_0Q_0}{P_0P_1} = \frac{P_1Q_1}{P_1P_2} = \frac{P_2Q_2}{P_2P_3} = t$, con $t$ in [0,1].
+Sui segmenti $P_0P_1$, $P_1P_2$ e $P_2P_3$ i punti $Q_0$,$Q_1$ e $Q_2$ childo disegnati in modo tale che $\frac{P_0Q_0}{P_0P_1} = \frac{P_1Q_1}{P_1P_2} = \frac{P_2Q_2}{P_2P_3} = t$, con $t$ in [0,1].
 
-Sui segmenti $Q_0Q_1$ e $Q_1Q_2$ i punti $R_0$ e $R_1$ sono disegnati in modo tale che $\frac{Q_0R_0}{Q_0Q_1} = \frac{Q_1R_1}{Q_1Q_2} = t$ per lo stesso valore di $t$.
+Sui segmenti $Q_0Q_1$ e $Q_1Q_2$ i punti $R_0$ e $R_1$ childo disegnati in modo tale che $\frac{Q_0R_0}{Q_0Q_1} = \frac{Q_1R_1}{Q_1Q_2} = t$ per lo stesso valore di $t$.
 
 Sul segmento $R_0R_1$ il punto $B$ è disegnato in modo tale che $\frac{R_0B}{R_0R_1} = t$ per lo stesso valore di $t$.
 

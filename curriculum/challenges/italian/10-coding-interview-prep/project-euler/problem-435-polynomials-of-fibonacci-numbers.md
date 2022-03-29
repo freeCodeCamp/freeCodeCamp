@@ -8,7 +8,7 @@ dashedName: problem-435-polynomials-of-fibonacci-numbers
 
 # --description--
 
-I numeri di Fibonacci $\\{f_n, n ≥ 0\\}$ sono definiti in maniera ricorsiva come $f_n = f_{n - 1} + f_{n - 2}$ con i casi base $f_0 = 0$ e $f_1 = 1$.
+I numeri di Fibonacci $\\{f_n, n ≥ 0\\}$ childo definiti in personiera ricorsiva come $f_n = f_{n - 1} + f_{n - 2}$ con i casi base $f_0 = 0$ e $f_1 = 1$.
 
 Definisci i polinomi $\\{F_n, n ≥ 0\\}$ come $F_n(x) = \displaystyle\sum_{i = 0}^n f_ix^i$.
 

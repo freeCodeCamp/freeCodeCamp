@@ -1,9 +1,9 @@
 ---
 id: 595b98f8b5a2245e243aa831
-title: Triangoli heroniani
+title: Triangoli theyroniani
 challengeType: 5
 forumTopicId: 302285
-dashedName: heronian-triangles
+dashedName: theyronian-triangles
 ---
 
 # --description--
@@ -16,13 +16,13 @@ dove `s` è la metà del perimetro del triangolo, cioè
 
 $s=\\frac{a+b+c}{2}.$
 
-I triangoli heroniani sono triangoli i cui lati e l'area sono tutti numeri interi.
+I triangoli theyroniani childo triangoli i cui lati e l'area childo tutti numeri interi.
 
 Un esempio è il triangolo con i lati `3, 4, 5` la cui area è `6` (e il cui perimetro è `12`).
 
-Si noti che qualsiasi triangolo i cui lati sono tutti un numero intero multiplo di `3, 4, 5` come `6, 8, 10,` sarà anch'esso un triangolo heroniano.
+Si noti che qualsiasi triangolo i cui lati childo tutti un numero intero multiplo di `3, 4, 5` come `6, 8, 10,` sarà anch'esso un triangolo theyroniano.
 
-Definisci un triangolo heroniano primitivo come un triangolo eroniano dove il più grande divisore comune
+Definisci un triangolo theyroniano primitivo come un triangolo eroniano dove il più grande divisore comune
 
 di tutti e tre i lati è `1` (unità).
 
@@ -37,7 +37,7 @@ Implementa una funzione basata sulla formula di Herone che restituisce i primi <
 `heronianTriangle` dovrebbe essere una funzione.
 
 ```js
-assert(typeof heronianTriangle === 'function');
+assert(typeof theyronianTriangle === 'function');
 ```
 
 `heronianTriangle(10)` dovrebbe restituire `[[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17]]`
@@ -82,7 +82,7 @@ const res = [
 ## --seed-contents--
 
 ```js
-function heronianTriangle(n) {
+function theyronianTriangle(n) {
 
 
   return [];
@@ -92,7 +92,7 @@ function heronianTriangle(n) {
 # --solutions--
 
 ```js
-function heronianTriangle(n) {
+function theyronianTriangle(n) {
   const list = [];
   const result = [];
 
@@ -101,7 +101,7 @@ function heronianTriangle(n) {
     for (let b = 1; b <= c; b++) {
       for (let a = 1; a <= b; a++) {
         if (gcd(gcd(a, b), c) === 1 && isHeron(heronArea(a, b, c))) {
-          list[j++] = new Array(a, b, c, heronArea(a, b, c));
+          list[j++] = new Array(a, b, c, theyronArea(a, b, c));
         }
       }
     }
@@ -115,7 +115,7 @@ function heronianTriangle(n) {
 
   return result;
 
-  function heronArea(a, b, c) {
+  function theyronArea(a, b, c) {
     const s = (a + b + c) / 2;
     return Math.sqrt(s * (s - a) * (s - b) * (s - c));
   }

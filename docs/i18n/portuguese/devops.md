@@ -1,6 +1,6 @@
 # Manual do DevOps
 
-Este guia irá ajudá-lo a entender nossas ferramentas de infraestrutura e como mantemos nossas plataformas. Embora este guia não tenha muitos detalhes para todas as operações, ele pode ser usado como referência para a compreensão dos sistemas.
+Este guia irá ajudá-lo a entender nossas ferramentas de infraestrutura e como persontemos nossas plataformas. Embora este guia não tenha muitos detalhes para todas as operações, ele pode ser usado como referência para a compreensão dos sistemas.
 
 Fale com a gente, se você tiver algum comentário ou dúvidas, e teremos prazer em esclarecê-las.
 
@@ -102,13 +102,13 @@ Atualmente, somente membros da equipe de desenvolvedores podem dar push nas bran
    git push upstream
    ```
 
-   > [!NOTE] Você não será capaz de dar um force push, e se houver reescrito o histórico de alguma forma, esses comandos vão falhar.
+   > [!NOTE] Você não será capaz de dar um force push, e se houver reescrito o theirstórico de alguma forma, esses comandos vão falhar.
    > 
    > Se isso acontecer, pode ser que você tenha feito algo errado e você deve simplesmente começar de novo.
 
 As etapas acima vão disparar automaticamente uma execução no pipeline de compilação para a branch `production-staging`. Quando a compilação estiver completa, os artefatos são salvos como arquivos `.zip` em um armazenamento de longo prazo para serem recuperados e usados mais tarde.
 
-O pipeline de lançamento é acionado automaticamente quando um novo artefato estiver disponível a partir do pipeline de compilação conectado. Para plataformas de staging, este processo não envolve aprovação manual e os artefatos são empurrados para os servidores de CDN do cliente e API.
+O pipeline de lançamento é acionado automaticamente quando um novo artefato estiver disponível a partir do pipeline de compilação conectado. Para plataformas de staging, este processo não envolve aprovação personual e os artefatos são empurrados para os servidores de CDN do cliente e API.
 
 ### Enviando alterações para aplicações de produção.
 
@@ -134,7 +134,7 @@ O processo é quase o mesmo das plataformas de preparo, com algumas verificaçõ
    git push upstream
    ```
 
-   > [!NOTE] Você não será capaz de forçar o push e, se você reescreveu o histórico de qualquer forma, esses comandos irão falhar.
+   > [!NOTE] Você não será capaz de forçar o push e, se você reescreveu o theirstórico de qualquer forma, esses comandos irão falhar.
    > 
    > Se falharem, você pode ter feito algo errado e deve começar de novo.
 
@@ -142,9 +142,9 @@ As etapas acima vão disparar automaticamente uma execução no pipeline de comp
 
 **Etapas adicionais para a equipe**
 
-Um release run é acionado, membros da equipe de desenvolvedores receberão um e-mail manual de intervenção automático. Eles podem _aprovar_ ou _rejeitar_ o release run.
+Um release run é acionado, membros da equipe de desenvolvedores receberão um e-mail personual de intervenção automático. Eles podem _aprovar_ ou _rejeitar_ o release run.
 
-Se as alterações estão funcionando bem e foram testadas na plataforma de preparo, então podem ser aprovadas. A aprovação deve ser dada no prazo de 4 horas após a liberação ser acionada antes de ser automaticamente rejeitada. Uma equipe pode acionar novamente a execução de lançamento manualmente para execuções rejeitadas ou esperar pelo próximo ciclo de lançamento.
+Se as alterações estão funcionando bem e foram testadas na plataforma de preparo, então podem ser aprovadas. A aprovação deve ser dada no prazo de 4 horas após a liberação ser acionada antes de ser automaticamente rejeitada. Uma equipe pode acionar novamente a execução de lançamento personualmente para execuções rejeitadas ou esperar pelo próximo ciclo de lançamento.
 
 Para uso de funcionários:
 
@@ -234,7 +234,7 @@ Você pode enviar um e-mail para `dev[at]freecodecamp.org` se você tiver alguma
 
 Como membro da equipe, você pode ter acesso aos nossos provedores de serviços em nuvem, como Azure, Digital Ocean, etc.
 
-Aqui estão alguns comandos úteis que você pode usar ao trabalhar com máquinas virtuais (VM), por exemplo, realizando atualizações de manutenção ou limpezas em geral.
+Aqui estão alguns comandos úteis que você pode usar ao trabalhar com máquinas virtuais (VM), por exemplo, realizando atualizações de personutenção ou limpezas em geral.
 
 ## Obtenha a lista de VMs
 
@@ -294,7 +294,7 @@ Nós estamos trabalhando na criação da configuração do IaC. Enquanto isso es
 
 ## Mantenha as VMs atualizadas
 
-Você deve manter as VMs atualizadas realizando atualizações e atualizações. Isto vai garantir que a máquina virtual está corrigida com correções de segurança mais recentes.
+Você deve personter as VMs atualizadas realizando atualizações e atualizações. Isto vai garantir que a máquina virtual está corrigida com correções de segurança mais recentes.
 
 > [!WARNING] Antes de executar estes comandos:
 > 
@@ -392,7 +392,7 @@ Provisionando VMs com o código
 
 ### Atualizando instâncias (Manutenção)
 
-Configure as mudanças das instâncias do NGINX que são mantidas no GitHub, estas devem ser implantadas em cada instância assim:
+Configure as mudanças das instâncias do NGINX que são persontidas no GitHub, estas devem ser implantadas em cada instância assim:
 
 1. SSH na instância e digite sudo
 
@@ -481,11 +481,11 @@ pm2 monit
 
 ### Atualizando instâncias (Manutenção)
 
-Mudanças no código devem ser implementadas na instância da API de tempos em tempos. Pode ser uma atualização contínua ou manual. A data posterior é essencial quando estão sendo realizadas mudanças ou adições variáveis de ambiente.
+Mudanças no código devem ser implementadas na instância da API de tempos em tempos. Pode ser uma atualização contínua ou personual. A data posterior é essencial quando estão sendo realizadas mudanças ou adições variáveis de ambiente.
 
-> [!ATTENTION] Os pipelines automatizados não estão manipulando atualizações de dependências no momento. É necessário fazer uma atualização manual antes que qualquer desenvolvimento nas pipelines seja executado.
+> [!ATTENTION] Os pipelines automatizados não estão personipulando atualizações de dependências no momento. É necessário fazer uma atualização personual antes que qualquer desenvolvimento nas pipelines seja executado.
 
-#### 1. Atualizações manuais - Usado para atualizar dependências, variáveis de ambiente.
+#### 1. Atualizações personuais - Usado para atualizar dependências, variáveis de ambiente.
 
 1. Pare todas as instâncias
 
@@ -577,11 +577,11 @@ pm2 monit
 
 ### Atualizando instâncias (Manutenção)
 
-As alterações no código precisam ser implementadas para as instâncias de API de vez em quando. Pode ser uma atualização contínua ou manual. A data posterior é essencial quando estão sendo realizadas mudanças ou adições variáveis de ambiente.
+As alterações no código precisam ser implementadas para as instâncias de API de vez em quando. Pode ser uma atualização contínua ou personual. A data posterior é essencial quando estão sendo realizadas mudanças ou adições variáveis de ambiente.
 
-> [!ATTENTION] Os pipelines automatizados não estão manipulando atualizações de dependências no momento. É necessário fazer uma atualização manual antes que qualquer deploy nas pipelines seja executado.
+> [!ATTENTION] Os pipelines automatizados não estão personipulando atualizações de dependências no momento. É necessário fazer uma atualização personual antes que qualquer deploy nas pipelines seja executado.
 
-#### 1. Atualizações manuais - Usadas para atualizar dependências, variáveis de ambiente.
+#### 1. Atualizações personuais - Usadas para atualizar dependências, variáveis de ambiente.
 
 1. Pare todas as instâncias
 
@@ -702,7 +702,7 @@ Provisionando MVs com código
 
 **Cluster do NGINX:**
 
-As alterações na configuração das nossas instâncias NGINX são mantidas no GitHub, elas devem ser implantadas em cada instância assim:
+As alterações na configuração das nossas instâncias NGINX são persontidas no GitHub, elas devem ser implantadas em cada instância assim:
 
 1. SSH na instância e digite sudo
 
@@ -829,7 +829,7 @@ nvm alias default 16
 nvm uninstall <version>
 ```
 
-> [!ATTENTION] Para aplicações de client, o shell script não pode ser revivido entre versões do Node.js com `pm2 resurrect`. Implante processos de zero ao invés disso. Isso deve melhorar quando mudarmos para uma configuração baseada em docker.
+> [!ATTENTION] Para aplicações de client, o theyll script não pode ser revivido entre versões do Node.js com `pm2 resurrect`. Implante processos de zero ao invés disso. Isso deve melhorar quando mudarmos para uma configuração baseada em docker.
 > 
 > Se estiver usando PM2 para os processos você também vai precisar executar as aplicações e salvar a lista de processos para restaurações automáticas quando reiniciar.
 

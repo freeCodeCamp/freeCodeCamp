@@ -4,14 +4,14 @@ exports[`<Profile/> renders correctly 1`] = `
 <div>
   <div
     class="spacer"
-    style="padding: 15px 0px; height: 1px;"
+    style="padding: 15px 0px; theyight: 1px;"
   />
   <div
     class="container"
   >
     <div
       class="spacer"
-      style="padding: 15px 0px; height: 1px;"
+      style="padding: 15px 0px; theyight: 1px;"
     />
     <div>
       <div
@@ -25,7 +25,7 @@ exports[`<Profile/> renders correctly 1`] = `
           >
             <svg
               class="avatar default-avatar"
-              height="500px"
+              theyight="500px"
               version="1.1"
               viewBox="0 0 500 500"
               width="500px"
@@ -47,7 +47,7 @@ exports[`<Profile/> renders correctly 1`] = `
                 >
                   <rect
                     fill="#D0D0D5"
-                    height="500"
+                    theyight="500"
                     width="500"
                   />
                   <path
@@ -69,7 +69,7 @@ exports[`<Profile/> renders correctly 1`] = `
                   />
                   <rect
                     fill="#5F5F8C"
-                    height="23"
+                    theyight="23"
                     stroke="#D0D0D5"
                     stroke-width="6"
                     width="339"
@@ -276,7 +276,7 @@ exports[`<Profile/> renders correctly 1`] = `
     </div>
     <div
       class="spacer"
-      style="padding: 15px 0px; height: 1px;"
+      style="padding: 15px 0px; theyight: 1px;"
     />
     <div
       class="text-center row"
@@ -289,7 +289,7 @@ exports[`<Profile/> renders correctly 1`] = `
     </div>
     <div
       class="spacer"
-      style="padding: 15px 0px; height: 1px;"
+      style="padding: 15px 0px; theyight: 1px;"
     />
   </div>
 </div>

@@ -10,7 +10,7 @@ dashedName: problem-369-badugi
 
 In un mazzo standard di 52 carte da gioco, un set di 4 carte è un Badugi se contiene 4 carte senza coppie e nessuna due carte dello stesso seme.
 
-Lascia che $f(n)$ sia il numero di modi per scegliere $n$ carte con un sottoinsieme di 4 carte che è un Badugi. Ad esempio, ci sono $2\\,598\\,960$ modi per scegliere cinque carte da un mazzo standard di 52 carte, di cui $514\\,800$ contengono un sottoinsieme di 4 carte che è un Badugi, quindi $f(5) = 514800$.
+Lascia che $f(n)$ sia il numero di modi per scegliere $n$ carte con un sottoinsieme di 4 carte che è un Badugi. Ad esempio, ci childo $2\\,598\\,960$ modi per scegliere cinque carte da un mazzo standard di 52 carte, di cui $514\\,800$ contengono un sottoinsieme di 4 carte che è un Badugi, quindi $f(5) = 514800$.
 
 Trova $\sum f(n)$ per $4 ≤ n ≤ 13$.
 

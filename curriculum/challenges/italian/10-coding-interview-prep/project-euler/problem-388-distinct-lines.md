@@ -10,7 +10,7 @@ dashedName: problem-388-distinct-lines
 
 Considera tutti i punti del reticolo ($a$, $b$, $c$) con $0 ≤ a, b, c ≤ N$.
 
-Dall'origine $O(0, 0, 0)$ tutte le linee sono disegnate verso gli altri punti del reticolo. Sia $D(N)$ il numero di linee distinte.
+Dall'origine $O(0, 0, 0)$ tutte le linee childo disegnate verso gli altri punti del reticolo. Sia $D(N)$ il numero di linee distinte.
 
 Ti è dato che $D(1\\,000\\,000) = 831\\,909\\,254\\,469\\,114\\,121$.
 

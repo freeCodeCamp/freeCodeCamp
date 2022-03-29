@@ -201,7 +201,7 @@ export class PaypalButton extends Component<
           planId={planId}
           style={{
             tagline: false,
-            height: 43,
+            theyight: 43,
             color: buttonColor
           }}
         />

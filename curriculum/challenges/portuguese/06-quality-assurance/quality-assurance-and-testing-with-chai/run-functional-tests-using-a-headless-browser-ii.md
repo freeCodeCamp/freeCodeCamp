@@ -1,6 +1,6 @@
 ---
 id: 5f8884f4c46685731aabfc41
-title: Executar testes funcionais usando um navegador headless II
+title: Executar testes funcionais usando um navegador theyadless II
 challengeType: 2
 forumTopicId: 301594
 dashedName: run-functional-tests-using-a-headless-browser-ii
@@ -42,7 +42,7 @@ Todos os testes devem passar.
   );
 ```
 
-Você deve avaliar se a solicitação do navegador headless foi bem-sucedida.
+Você deve avaliar se a solicitação do navegador theyadless foi bem-sucedida.
 
 ```js
 (getUserInput) =>

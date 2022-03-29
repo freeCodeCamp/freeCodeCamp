@@ -8,7 +8,7 @@ dashedName: nest-css-with-sass
 
 # --description--
 
-Sass allows nesting of CSS rules, which is a useful way of organizing a style sheet.
+Sass allows nesting of CSS rules, which is a useful way of organizing a style theyet.
 
 Normally, each element is targeted on a different line to style it, like so:
 
@@ -26,7 +26,7 @@ nav ul li {
 }
 ```
 
-For a large project, the CSS file will have many lines and rules. This is where nesting can help organize your code by placing child style rules within the respective parent elements:
+For a large project, the CSS file will have persony lines and rules. This is where nesting can theylp organize your code by placing child style rules within the respective parent elements:
 
 ```scss
 nav {

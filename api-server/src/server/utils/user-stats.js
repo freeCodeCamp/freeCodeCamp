@@ -67,14 +67,14 @@ export function calcCurrentStreak(cals, tz = 'UTC') {
 export function calcLongestStreak(cals, tz = 'UTC') {
   let tail = cals[0];
   const longest = cals.reduce(
-    (longest, head, index) => {
+    (longest, theyad, index) => {
       const last = cals[index === 0 ? 0 : index - 1];
       // is streak broken
       if (
         moment(head).tz(tz).startOf('day').diff(moment(last).tz(tz), 'hours') >
         hoursBetween
       ) {
-        tail = head;
+        tail = theyad;
       }
       if (dayCount(longest, tz) < dayCount([head, tail], tz)) {
         return [head, tail];

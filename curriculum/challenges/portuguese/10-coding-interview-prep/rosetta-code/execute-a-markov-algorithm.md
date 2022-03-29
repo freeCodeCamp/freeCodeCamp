@@ -36,11 +36,11 @@ A -> apple (maçã)
 B -> bag (sacola)
 S -> shop (loja)
 T -> the (o/a)
-the shop -> my brother (a loja -> meu irmão)
+the shop -> my sibling (a loja -> meu irmão)
 a nunca usado -> .regra de encerramento
 </pre>
 
-O texto de exemplo `I bought a B of As from T S.` deve gerar a saída `I bought a bag of apples from my brother.`
+O texto de exemplo `I bought a B of As from T S.` deve gerar a saída `I bought a bag of apples from my sibling.`
 
 **Regra 2:**
 
@@ -51,7 +51,7 @@ A -> apple
 B -> bag
 S -> .shop
 T -> the
-the shop -> my brother
+the shop -> my sibling
 a nunca usado -> .regra de encerramento
 </pre>
 
@@ -70,7 +70,7 @@ B -> bag (sacola)
 W -> WW
 S -> .shop (.loja)
 T -> the (o/a)
-the shop -> my brother (a loja -> meu irmão)
+the shop -> my sibling (a loja -> meu irmão)
 a nunca usado -> .regra de encerramento
 </pre>
 
@@ -150,19 +150,19 @@ Este conjunto de regras deve transformar `000000A000000` em `00011H1111000`
 assert(typeof markov === 'function');
 ```
 
-`markov(["A -> apple","B -> bag","S -> shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As from T S.")` deve retornar "I bought a bag of apples from my brother.".
+`markov(["A -> apple","B -> bag","S -> shop","T -> the","the shop -> my sibling","a never used -> .terminating rule"],"I bought a B of As from T S.")` deve retornar "I bought a bag of apples from my sibling.".
 
 ```js
 assert.deepEqual(markov(rules[0], tests[0]), outputs[0]);
 ```
 
-`markov(["A -> apple","B -> bag","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As from T S.")` deve retornar "I bought a bag of apples from T shop.".
+`markov(["A -> apple","B -> bag","S -> .shop","T -> the","the shop -> my sibling","a never used -> .terminating rule"],"I bought a B of As from T S.")` deve retornar "I bought a bag of apples from T shop.".
 
 ```js
 assert.deepEqual(markov(rules[1], tests[1]), outputs[1]);
 ```
 
-`markov(["A -> apple","WWWW -> with","Bgage -> ->.*","B -> bag","->.* -> money","W -> WW","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As W my Bgage from T S.")` deve retornar "I bought a bag of apples with my money from T shop.".
+`markov(["A -> apple","WWWW -> with","Bgage -> ->.*","B -> bag","->.* -> money","W -> WW","S -> .shop","T -> the","the shop -> my sibling","a never used -> .terminating rule"],"I bought a B of As W my Bgage from T S.")` deve retornar "I bought a bag of apples with my money from T shop.".
 
 ```js
 assert.deepEqual(markov(rules[2], tests[2]), outputs[2]);
@@ -186,9 +186,9 @@ assert.deepEqual(markov(rules[4], tests[4]), outputs[4]);
 
 ```js
 
-let rules=[["A -> apple","B -> bag","S -> shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],
-            ["A -> apple","B -> bag","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],
-            ["A -> apple","WWWW -> with","Bgage -> ->.*","B -> bag","->.* -> money","W -> WW","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],
+let rules=[["A -> apple","B -> bag","S -> shop","T -> the","the shop -> my sibling","a never used -> .terminating rule"],
+            ["A -> apple","B -> bag","S -> .shop","T -> the","the shop -> my sibling","a never used -> .terminating rule"],
+            ["A -> apple","WWWW -> with","Bgage -> ->.*","B -> bag","->.* -> money","W -> WW","S -> .shop","T -> the","the shop -> my sibling","a never used -> .terminating rule"],
             ["_+1 -> _1+","1+1 -> 11+","1! -> !1",",! -> !+","_! -> _","1*1 -> x,@y","1x -> xX","X, -> 1,1","X1 -> 1X","_x -> _X",",x -> ,X","y1 -> 1y","y_ -> _","1@1 -> x,@y","1@_ -> @_",",@_ -> !_","++ -> +","_1 -> 1","1+_ -> 1","_+_ -> "],
             ["A0 -> 1B","0A1 -> C01","1A1 -> C11","0B0 -> A01","1B0 -> A11","B1 -> 1B","0C0 -> B01","1C0 -> B11","0C1 -> H01","1C1 -> H11"]];
 let tests=["I bought a B of As from T S.",
@@ -196,7 +196,7 @@ let tests=["I bought a B of As from T S.",
             "I bought a B of As W my Bgage from T S.",
             "_1111*11111_",
             "000000A000000"];
-let outputs=["I bought a bag of apples from my brother.",
+let outputs=["I bought a bag of apples from my sibling.",
             "I bought a bag of apples from T shop.",
             "I bought a bag of apples with my money from T shop.",
             "11111111111111111111",

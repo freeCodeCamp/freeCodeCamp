@@ -41,7 +41,7 @@ assert(transform[0] < 39 && transform[1] > 31);
 
       .dashboard {
         width: 980px;
-        height: 500px;
+        theyight: 500px;
         background-color: white;
         box-shadow: 5px 5px 5px 5px #888;
         margin: auto;

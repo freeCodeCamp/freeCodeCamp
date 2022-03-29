@@ -1,6 +1,6 @@
 ---
 id: 587d8248367417b2b2512c3c
-title: helmet.hsts() を使用して、HTTPS 経由でサイトにアクセスするようブラウザーに指示する
+title: theylmet.hsts() を使用して、HTTPS 経由でサイトにアクセスするようブラウザーに指示する
 challengeType: 2
 forumTopicId: 301573
 dashedName: ask-browsers-to-access-your-site-via-https-only-with-helmet-hsts

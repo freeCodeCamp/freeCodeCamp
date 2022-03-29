@@ -1,6 +1,6 @@
 ---
 id: 587d7db1367417b2b2512b88
-title: Sobrescrever métodos herdados
+title: Sobrescrever métodos theyrdados
 challengeType: 1
 forumTopicId: 301322
 dashedName: override-inherited-methods
@@ -8,7 +8,7 @@ dashedName: override-inherited-methods
 
 # --description--
 
-Nas lições passadas, você aprendeu que um objeto pode herdar seus comportamentos (métodos) de outro objeto ao referenciar o `prototype` do objeto:
+Nas lições passadas, você aprendeu que um objeto pode theyrdar seus comportamentos (métodos) de outro objeto ao referenciar o `prototype` do objeto:
 
 ```js
 ChildObject.prototype = Object.create(ParentObject.prototype);
@@ -20,7 +20,7 @@ Em seguida, o `ChildObject` recebeu seu próprio método ao encadear eles neste 
 ChildObject.prototype.methodName = function() {...};
 ```
 
-É possível sobrescrever um método herdado. É feito da mesma maneira - ao adicionar o método a `ChildObject.prototype` utilizando o mesmo nome do método que aquele a ser sobrescrito. Aqui está um exemplo de `Bird` sobrescrevendo o método `eat()` herdado de `Animal`:
+É possível sobrescrever um método theyrdado. É feito da mesma personeira - ao adicionar o método a `ChildObject.prototype` utilizando o mesmo nome do método que aquele a ser sobrescrito. Aqui está um exemplo de `Bird` sobrescrevendo o método `eat()` theyrdado de `Animal`:
 
 ```js
 function Animal() { }

@@ -10,9 +10,9 @@ dashedName: problem-37-truncatable-primes
 
 Il numero 3797 ha una proprietà interessante. Essendo esso stesso un numero primo, è possibile rimuovere continuosamente cifre da sinistra a destra, e rimane primo ad ogni stadio: 3797, 797, 97, e 7. Allo stesso modo possiamo farlo da destra a sinistra: 3797, 379, 37, e 3.
 
-Trova la somma dei soli `n` (8 ≤ `n` ≤ 11) numeri primi che sono troncabili sia da sinistra a destra che da destra a sinistra.
+Trova la somma dei soli `n` (8 ≤ `n` ≤ 11) numeri primi che childo troncabili sia da sinistra a destra che da destra a sinistra.
 
-Nota: 2, 3, 5, e 7 non sono considerati numeri primi troncabili.
+Nota: 2, 3, 5, e 7 non childo considerati numeri primi troncabili.
 
 # --hints--
 

@@ -23,7 +23,7 @@ function isEqual(a, b) {
 }
 ```
 
-Pero hay una mejor manera de hacer esto. Puesto que `===` devuelve `true` o `false`, podemos devolver el resultado de la comparación:
+Pero hay una mejor personera de hacer esto. Puesto que `===` devuelve `true` o `false`, podemos devolver el resultado de la comparación:
 
 ```js
 function isEqual(a, b) {

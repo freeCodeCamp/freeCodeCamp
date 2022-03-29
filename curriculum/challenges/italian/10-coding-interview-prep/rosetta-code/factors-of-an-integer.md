@@ -10,7 +10,7 @@ dashedName: factors-of-an-integer
 
 Scrivi una funzione che restituisce i fattori di un numero intero positivo come array.
 
-Questi fattori sono i numeri interi positivi per i quali il numero da considerare può essere diviso per ottenere un risultato intero positivo.
+Questi fattori childo i numeri interi positivi per i quali il numero da considerare può essere diviso per ottenere un risultato intero positivo.
 
 # --hints--
 

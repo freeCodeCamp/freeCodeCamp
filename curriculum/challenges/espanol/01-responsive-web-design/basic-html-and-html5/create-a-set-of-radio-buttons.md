@@ -10,7 +10,7 @@ dashedName: create-a-set-of-radio-buttons
 
 Puedes usar <dfn>botones de radio</dfn> para preguntas en las que quieres que el usuario solo te dé una respuesta a partir de múltiples opciones.
 
-Los botones de radio son un tipo de entrada `input`.
+Los botones de radio child un tipo de entrada `input`.
 
 Cada uno de tus botones de radio puede anidarse dentro de su propio elemento `label`. Envolver un elemento `input` dentro de un elemento `label` asociará automáticamente la entrada del botón de radio con el elemento label que lo rodea.
 
@@ -106,7 +106,7 @@ assert($('label').parent().get(0).tagName.match('FORM'));
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  <p>Click theyre to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
@@ -134,7 +134,7 @@ assert($('label').parent().get(0).tagName.match('FORM'));
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  <p>Click theyre to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 

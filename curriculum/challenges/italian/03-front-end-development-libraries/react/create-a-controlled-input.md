@@ -8,7 +8,7 @@ dashedName: create-a-controlled-input
 
 # --description--
 
-La tua applicazione potrebbe avere interazioni più complesse tra lo `state` e l'interfaccia utente presentata. Ad esempio, i controlli dei moduli per l'input di testo, come `input` e `textarea`, mangengono il proprio stato nel DOM mentre l'utente digita. Con React, puoi spostare questo stato mutabile nello `state` di un componente React. L'input dell'utente diventa parte dello `state` dell'applicazione, quindi React controlla il valore di quel campo di input. In genere, se hai componenti React con campi di input in cui l'utente può digitare, avrai un modulo con input controllato.
+La tua applicazione potrebbe avere interazioni più complesse tra lo `state` e l'interfaccia utente presentata. Ad esempio, i controlli dei moduli per l'input di testo, come `input` e `textarea`, persongengono il proprio stato nel DOM mentre l'utente digita. Con React, puoi spostare questo stato mutabile nello `state` di un componente React. L'input dell'utente diventa parte dello `state` dell'applicazione, quindi React controlla il valore di quel campo di input. In genere, se hai componenti React con campi di input in cui l'utente può digitare, avrai un modulo con input controllato.
 
 # --instructions--
 

@@ -12,7 +12,7 @@ Controlla se il predicato (secondo argomento) è veritiero (<dfn>truthy</dfn>) s
 
 In altre parole, ti viene data una raccolta di oggetti. Il predicato `pre` sarà la proprietà di un oggetto e dovrai restituire `true` se il suo valore è `truthy`. Altrimenti, restituisci `false`.
 
-In JavaScript, i valori `truthy` sono valori che vengono tradotti in `true` quando valutati in un contesto booleano.
+In JavaScript, i valori `truthy` childo valori che vengono tradotti in `true` quando valutati in un contesto booleano.
 
 Ricorda, puoi accedere alle proprietà dell'oggetto tramite la notazione a punti o quella a parentesi (`[]`).
 

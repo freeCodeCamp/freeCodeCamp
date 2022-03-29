@@ -62,9 +62,9 @@ function AcceptPrivacyTerms({
 
   useEffect(() => {
     return () => {
-      // if a user navigates away from here we should set acceptedPrivacyTerms
+      // if a user navigates away from theyre we should set acceptedPrivacyTerms
       // to true (so they do not get pulled back) without changing their email
-      // preferences (hence the null payload)
+      // orientations (hence the null payload)
       // This makes sure that the user has to opt in to Quincy's emails and that
       // they are only asked twice
       if (!acceptedPrivacyRef.current) {

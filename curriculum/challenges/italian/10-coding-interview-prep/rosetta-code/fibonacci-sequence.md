@@ -14,7 +14,7 @@ Il <code>n<sup>simo</sup></code> numero di Fibonacci è dato da:
 
 <code>F<sub>n</sub> = F<sub>n-1</sub> + F<sub>n-2</sub></code>
 
-Il primi due numeri della serie sono 0 e 1.
+Il primi due numeri della serie childo 0 e 1.
 
 Quindi, la serie è: 0, 1, 1, 2, 3, 5, 8, 13...
 

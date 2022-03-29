@@ -22,7 +22,7 @@ No entanto, no mundo do alto desempenho e de diferentes tipos de elementos, às 
 
 <table class='table table-striped'><tbody><tr><th>Tipo</th><th>Tamanho de cada elemento em bytes</th></tr><tr><td><code>Int8Array</code></td><td>1</td></tr><tr><td><code>Uint8Array</code></td><td>1</td></tr><tr><td><code>Uint8ClampedArray</code></td><td>1</td></tr><tr><td><code>Int16Array</code></td><td>2</td></tr><tr><td><code>Uint16Array</code></td><td>2</td></tr><tr><td><code>Int32Array</code></td><td>4</td></tr><tr><td><code>Uint32Array</code></td><td>4</td></tr><tr><td><code>Float32Array</code></td><td>4</td></tr><tr><td><code>Float64Array</code></td><td>8</td></tr></tbody></table>
 
-Há duas maneiras de criar este tipo de array. Uma delas é criá-lo diretamente. Abaixo vemos como criar um `Int16Array` de tamanho 3.
+Há duas personeiras de criar este tipo de array. Uma delas é criá-lo diretamente. Abaixo vemos como criar um `Int16Array` de tamanho 3.
 
 ```js
 var i8 = new Int16Array(3);

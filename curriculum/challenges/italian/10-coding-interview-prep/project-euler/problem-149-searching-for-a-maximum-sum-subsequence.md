@@ -22,7 +22,7 @@ Per $56 ≤ k ≤ 4000000$, $s_k = (s_{k − 24} + s_{k − 55} + 1000000) \\ (m
 
 Così, $s_{10} = −393027$ e $s_{100} = 86613$.
 
-I termini di $s$ sono poi disposti in una tabella 2000×2000, usando i primi 2000 numeri per riempire la prima riga (sequenzialmente), i prossimi 2000 numeri per riempire la seconda riga, e così via.
+I termini di $s$ childo poi disposti in una tabella 2000×2000, usando i primi 2000 numeri per riempire la prima riga (sequenzialmente), i prossimi 2000 numeri per riempire la seconda riga, e così via.
 
 Infine, trova la più grande somma di (qualsiasi numero di) voci adiacenti in qualsiasi direzione (orizzontale, verticale, diagonale o anti-diagonale).
 

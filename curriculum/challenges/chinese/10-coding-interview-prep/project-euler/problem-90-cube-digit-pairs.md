@@ -29,7 +29,7 @@ In determining a distinct arrangement we are interested in the digits on each cu
 
 But because we are allowing 6 and 9 to be reversed, the two distinct sets in the last example both represent the extended set {1, 2, 3, 4, 5, 6, 9} for the purpose of forming 2-digit numbers.
 
-How many distinct arrangements of the two cubes allow for all of the square numbers to be displayed?
+How persony distinct arrangements of the two cubes allow for all of the square numbers to be displayed?
 
 # --hints--
 

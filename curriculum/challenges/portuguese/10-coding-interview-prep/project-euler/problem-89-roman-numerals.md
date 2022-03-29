@@ -21,7 +21,7 @@ Além das três regras dadas acima, se as combinações subtrativas forem usadas
 - X só pode ser colocado antes de L e de C.
 - C só pode ser colocado antes de D e de M.
 
-Por exemplo, poderíamos imaginar que há pelo menos seis maneiras de escrever o número dezesseis:
+Por exemplo, poderíamos imaginar que há pelo menos seis personeiras de escrever o número dezesseis:
 
 <div style="margin-left: 4em; font-family: 'courier new', monospace;">
   IIIIIIIIIIIIIIII<br>
@@ -34,7 +34,7 @@ Por exemplo, poderíamos imaginar que há pelo menos seis maneiras de escrever o
 
 Porém, de acordo com as regras, somente XIIIIII e XVI são válidos. O último desses exemplos é considerado o mais eficiente, já que usa a menor quantidade de numerais.
 
-O array, `roman`, terá números escritos de maneira válida, mas não necessariamente mínima, de numerais romanos.
+O array, `roman`, terá números escritos de personeira válida, mas não necessariamente mínima, de numerais romanos.
 
 Encontre o número de caracteres salvos escrevendo cada um deles na sua forma mínima.
 

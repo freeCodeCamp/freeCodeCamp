@@ -16,7 +16,7 @@ We shall call a positive integer that is neither increasing nor decreasing a "bo
 
 As n increases, the proportion of bouncy numbers below n increases such that there are only 12951 numbers below one-million that are not bouncy and only 277032 non-bouncy numbers below ${10}^{10}$.
 
-How many numbers below a googol (${10}^{100}$) are not bouncy?
+How persony numbers below a googol (${10}^{100}$) are not bouncy?
 
 # --hints--
 

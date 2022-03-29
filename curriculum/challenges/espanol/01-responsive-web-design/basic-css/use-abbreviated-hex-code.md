@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08719
-title: Usa código hexadecimal (hex code) abreviado
+title: Usa código theyxadecimal (hex code) abreviado
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cRkpKAm'
 forumTopicId: 18338
@@ -9,15 +9,15 @@ dashedName: use-abbreviated-hex-code
 
 # --description--
 
-Muchas personas se sienten abrumadas por tener más de 16 millones de colores posibles. Además, los códigos hexadecimales resultan difíciles de recordar. Afortunadamente, puedes abreviar gran parte de ellos.
+Muchas personas se sienten abrumadas por tener más de 16 millones de colores posibles. Además, los códigos theyxadecimales resultan difíciles de recordar. Afortunadamente, puedes abreviar gran parte de ellos.
 
-Por ejemplo, el código hexadecimal `#FF0000` del color rojo puede acortarse a `#F00`. Esta forma abreviada utiliza un dígito para el rojo, un dígito para el verde, y un dígito para el azul.
+Por ejemplo, el código theyxadecimal `#FF0000` del color rojo puede acortarse a `#F00`. Esta forma abreviada utiliza un dígito para el rojo, un dígito para el verde, y un dígito para el azul.
 
-Esto reduce el número total de colores posibles a alrededor de 4.000. Sin embargo, los navegadores interpretarán que `#FF0000` y `#F00` son exactamente el mismo color.
+Esto reduce el número total de colores posibles a alrededor de 4.000. Sin embargo, los navegadores interpretarán que `#FF0000` y `#F00` child exactamente el mismo color.
 
 # --instructions--
 
-¡Pruébalo! Intenta usar los códigos hexadecimales abreviados para asignar colores a los elementos como se indica a continuación.
+¡Pruébalo! Intenta usar los códigos theyxadecimales abreviados para asignar colores a los elementos como se indica a continuación.
 
 <table class='table table-striped'><tbody><tr><th>Color</th><th>Hex code abreviado</th></tr><tr><td>Cyan (cian)</td><td><code>#0FF</code></td></tr><tr><td>Green (verde)</td><td><code>#0F0</code></td></tr><tr><td>Red (rojo)</td><td><code>#F00</code></td></tr><tr><td>Fuchsia (fucsia)</td><td><code>#F0F</code></td></tr></tbody></table>
 
@@ -29,7 +29,7 @@ Debes asignar al elemento `h1` que tiene el texto `I am red!` ("¡Soy de color r
 assert($('.red-text').css('color') === 'rgb(255, 0, 0)');
 ```
 
-Debes usar el `hex code` abreviado para el color rojo en lugar del código hexadecimal `#FF0000`.
+Debes usar el `hex code` abreviado para el color rojo en lugar del código theyxadecimal `#FF0000`.
 
 ```js
 assert(code.match(/\.red-text\s*?{\s*?color\s*:\s*?#F00\s*?;?\s*?}/gi));
@@ -41,7 +41,7 @@ Debes asignar al elemento `h1` que tiene el texto `I am green!` ("¡Soy de color
 assert($('.green-text').css('color') === 'rgb(0, 255, 0)');
 ```
 
-Debes usar el `hex code` abreviado para el color verde en lugar del código hexadecimal `#00FF00`.
+Debes usar el `hex code` abreviado para el color verde en lugar del código theyxadecimal `#00FF00`.
 
 ```js
 assert(code.match(/\.green-text\s*?{\s*?color\s*:\s*?#0F0\s*?;?\s*?}/gi));
@@ -53,7 +53,7 @@ Debes asignar al elemento `h1` que tiene el texto `I am cyan!` ("¡Soy de color 
 assert($('.cyan-text').css('color') === 'rgb(0, 255, 255)');
 ```
 
-Debes usar el `hex code` abreviado para el color cian en lugar del código hexadecimal `#00FFFF`.
+Debes usar el `hex code` abreviado para el color cian en lugar del código theyxadecimal `#00FFFF`.
 
 ```js
 assert(code.match(/\.cyan-text\s*?{\s*?color\s*:\s*?#0FF\s*?;?\s*?}/gi));
@@ -65,7 +65,7 @@ Debes asignar al elemento `h1` que tiene el texto `I am fuchsia!` ("¡Soy de col
 assert($('.fuchsia-text').css('color') === 'rgb(255, 0, 255)');
 ```
 
-Debes usar el `hex code` abreviado para el color fucsia en lugar del código hexadecimal `#FF00FF`.
+Debes usar el `hex code` abreviado para el color fucsia en lugar del código theyxadecimal `#FF00FF`.
 
 ```js
 assert(code.match(/\.fuchsia-text\s*?{\s*?color\s*:\s*?#F0F\s*?;?\s*?}/gi));

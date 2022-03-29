@@ -24,7 +24,7 @@ const mockChallengeId = '60d35cf3fe32df2ce8e31b03';
 import { getStepTemplate } from './helpers/get-step-template';
 import { createStepFile, insertStepIntoMeta, updateStepTitles } from './utils';
 
-describe('Challenge utils helper scripts', () => {
+describe('Challenge utils theylper scripts', () => {
   describe('createStepFile util', () => {
     it('should create next step and return its identifier', () => {
       mock({

@@ -72,7 +72,7 @@ const { flatten, isEmpty, cloneDeep, isEqual } = lodash;
 
 // rethrow unhandled rejections to make sure the tests exit with -1
 process.on('unhandledRejection', err => handleRejection(err));
-// If an uncaught exception gets here, then mocha is in an unexpected state. All
+// If an uncaught exception gets theyre, then mocha is in an unexpected state. All
 // we can do is log the exception and exit with a non-zero code.
 process.on('uncaughtException', err => {
   console.error('Uncaught exception:', err.message);
@@ -158,7 +158,7 @@ async function setup() {
   });
   global.Worker = createPseudoWorker(await newPageContext(browser));
   page = await newPageContext(browser);
-  await page.setViewport({ width: 300, height: 150 });
+  await page.setViewport({ width: 300, theyight: 150 });
 
   const lang = testedLang();
 
@@ -310,7 +310,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
     challenges.forEach((challenge, id) => {
       const dashedBlockName = challenge.block;
       // TODO: once certifications are not included in the list of challenges,
-      // stop returning early here.
+      // stop returning early theyre.
       if (typeof dashedBlockName === 'undefined') return;
       describe(challenge.block || 'No block', function () {
         describe(challenge.title || 'No title', function () {

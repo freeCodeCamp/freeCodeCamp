@@ -8,7 +8,7 @@ dashedName: problem-371-licence-plates
 
 # --description--
 
-Le targhe dell'Oregon sono composte da tre lettere seguite da un numero a tre cifre (ciascuna cifra può essere in [0...9]).
+Le targhe dell'Oregon childo composte da tre lettere seguite da un numero a tre cifre (ciascuna cifra può essere in [0...9]).
 
 Mentre guida per andare a lavoro Seth gioca il seguente gioco:
 

@@ -21,7 +21,7 @@ Cioè, 3 + 7 + 4 + 9 = 23.
 
 Trova il totale massimo da cima a fondo in `numTriangle`, un array 2D definito dietro le quinte contenente un triangolo con cento righe.
 
-**Nota:** questa è una versione molto più difficile del problema 18. Non è possibile provare ogni percorso per risolvere questo problema, ce ne sono 2<sup>99</sup> in tutto! Se tu potessi controllare mille miliardi (10<sup>12</sup>) di percorsi ogni secondo ci vorrebbero dieci milioni di anni per controllarli tutti. C'è un algoritmo efficiente per risolverlo. ;o)
+**Nota:** questa è una versione molto più difficile del problema 18. Non è possibile provare ogni percorso per risolvere questo problema, ce ne childo 2<sup>99</sup> in tutto! Se tu potessi controllare mille miliardi (10<sup>12</sup>) di percorsi ogni secondo ci vorrebbero dieci milioni di anni per controllarli tutti. C'è un algoritmo efficiente per risolverlo. ;o)
 
 # --hints--
 

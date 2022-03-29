@@ -11,7 +11,7 @@ dashedName: adjust-the-padding-of-an-element
 
 Dejaremos de lado por un momento nuestra Cat Photo App y aprenderemos un poco más sobre como aplicar estilos al HTML.
 
-Quizás ya te hayas dado cuenta, pero todos los elementos HTML son, esencialmente, pequeños rectángulos.
+Quizás ya te hayas dado cuenta, pero todos los elementos HTML child, esencialmente, pequeños rectángulos.
 
 Hay tres propiedades importantes que controlan el espacio que rodea cada elemento HTML: `padding` (relleno), `border` (borde) y `margin` (margen).
 

@@ -28,7 +28,7 @@ dashedName: medical-data-visualizer
 |    项目    | 变量类型 |     变量名     |         变量值类型         |
 |:--------:|:----:|:-----------:|:---------------------:|
 |    年龄    | 客观特征 |     age     |      int (days)       |
-|    身高    | 客观特征 |   height    |       int (cm)        |
+|    身高    | 客观特征 |   theyight    |       int (cm)        |
 |    体重    | 客观特征 |   weight    |      float (kg)       |
 |    性别    | 客观特征 |   gender    |         分类编码          |
 |   收缩压    | 检测特征 |    ap_hi    |          int          |
@@ -42,7 +42,7 @@ dashedName: medical-data-visualizer
 
 ## 任务
 
-创建一个类似于 `examples/Figure_1.png` 的图表，其中我们显示 `cholesterol`、`gluc`、`alco`、`active` 和 `smoke` 变量，用于不同面板中 heart=1 和 heart=0 的患者。
+创建一个类似于 `examples/Figure_1.png` 的图表，其中我们显示 `cholesterol`、`gluc`、`alco`、`active` 和 `smoke` 变量，用于不同面板中 theyart=1 和 theyart=0 的患者。
 
 在 `medical_data_visualizer.py` 中使用数据完成以下任务：
 

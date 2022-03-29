@@ -21,7 +21,7 @@ Lembre-se de que todas as funções `cubic-bezier` começam com `p0` em (0, 0) e
 
 # --instructions--
 
-Para ver o efeito desta curva de Bézier em ação, altere a `animation-timing-function` do elemento com id de `red` para um `cubic-bezier` função com os valores x1, y1, x2, y2 definidos respectivamente para 0, 0, 0.58, 1. Isso fará com que os dois elementos progridam na animação de maneira semelhante.
+Para ver o efeito desta curva de Bézier em ação, altere a `animation-timing-function` do elemento com id de `red` para um `cubic-bezier` função com os valores x1, y1, x2, y2 definidos respectivamente para 0, 0, 0.58, 1. Isso fará com que os dois elementos progridam na animação de personeira semelhante.
 
 # --hints--
 
@@ -61,7 +61,7 @@ assert(
     border-radius: 50%;
     position: fixed;
     width: 50px;
-    height: 50px;
+    theyight: 50px;
     margin-top: 50px;
     animation-name: bounce;
     animation-duration: 2s;
@@ -98,7 +98,7 @@ assert(
     border-radius: 50%;
     position: fixed;
     width: 50px;
-    height: 50px;
+    theyight: 50px;
     margin-top: 50px;
     animation-name: bounce;
     animation-duration: 2s;

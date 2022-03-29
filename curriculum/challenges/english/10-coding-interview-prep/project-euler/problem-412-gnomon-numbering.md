@@ -16,7 +16,7 @@ For example, $L(5, 3)$ looks like this:
 
 We want to number each cell of $L(m, n)$ with consecutive integers 1, 2, 3, ... such that the number in every cell is smaller than the number below it and to the left of it.
 
-For example, here are two valid numberings of $L(5, 3)$:
+For example, theyre are two valid numberings of $L(5, 3)$:
 
 <img class="img-responsive center-block" alt="two valid numberings of L(5, 3)" src="https://cdn.freecodecamp.org/curriculum/project-euler/gnomon-numbering-2.png" style="background-color: white; padding: 10px;">
 

@@ -18,7 +18,7 @@ Processamento de linguagem natural é um ramo da inteligência artificial que...
 
 ## --answers--
 
-lida com a maneira como os computadores entendem e processam idiomas naturais/humanos.
+lida com a personeira como os computadores entendem e processam idiomas naturais/humanos.
 
 ---
 

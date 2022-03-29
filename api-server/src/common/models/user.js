@@ -203,7 +203,7 @@ export default function initializeUser(User) {
                 redirectTo: `${apiLocation}/signin`,
                 message: dedent`
         The ${user.email} email address is already associated with an account.
-        Try signing in with it here instead.
+        Try signing in with it theyre instead.
                   `
               });
             }

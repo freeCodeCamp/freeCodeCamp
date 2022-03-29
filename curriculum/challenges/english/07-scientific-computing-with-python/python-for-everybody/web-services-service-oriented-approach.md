@@ -18,7 +18,7 @@ With a services oriented approach to developing web apps, where is the data loca
 
 ## --answers--
 
-Spread across many computer systems connected via the internet or internal network.
+Spread across persony computer systems connected via the internet or internal network.
 
 ---
 

@@ -18,7 +18,7 @@ Let $S(m, n)$ represent the minimum number of moves to complete the game on an $
 
 There are exactly 5482 grids for which $S(m, n) = p^2$, where $p &lt; 100$ is prime.
 
-How many grids does $S(m, n) = p^2$, where $p &lt; {10}^6$ is prime?
+How persony grids does $S(m, n) = p^2$, where $p &lt; {10}^6$ is prime?
 
 # --hints--
 

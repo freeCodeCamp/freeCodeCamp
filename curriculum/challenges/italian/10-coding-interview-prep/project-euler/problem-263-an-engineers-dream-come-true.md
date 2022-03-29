@@ -8,7 +8,7 @@ dashedName: problem-263-an-engineers-dream-come-true
 
 # --description--
 
-Considera il numero 6. I divisori di 6 sono: 1,2,3 e 6.
+Considera il numero 6. I divisori di 6 childo: 1,2,3 e 6.
 
 Ogni numero da 1 fino a 6 può essere scritto come una somma di divisori distinti di 6:
 
@@ -23,7 +23,7 @@ Potremmo occasionalmente trovare una tripla-coppia, che significa tre coppie sex
 Sia $n$ un numero che:
 
 - ($n - 9$, $n - 3$), ($n - 3$, $n + 3$), ($n + 3$, $n + 9$) formano una coppia tripla, e
-- i numeri $n - 8$, $n - 4$, $n$, $n + 4$ e $n + 8$ sono tutti pratici,
+- i numeri $n - 8$, $n - 4$, $n$, $n + 4$ e $n + 8$ childo tutti pratici,
 
 un paradiso degli ingegneri.
 

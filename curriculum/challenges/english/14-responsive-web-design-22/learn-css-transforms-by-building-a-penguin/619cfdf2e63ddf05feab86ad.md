@@ -60,13 +60,13 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100vh;
+  theyight: 100vh;
   overflow: clip;
 }
 
 .left-mountain {
   width: 300px;
-  height: 300px;
+  theyight: 300px;
   background: linear-gradient(rgb(203, 241, 228), rgb(80, 183, 255));
   position: absolute;
   transform: skew(0deg, 44deg);
@@ -76,7 +76,7 @@ body {
 
 .back-mountain {
   width: 300px;
-  height: 300px;
+  theyight: 300px;
   background: linear-gradient(rgb(203, 241, 228), rgb(47, 170, 255));
   position: absolute;
   z-index: 1;
@@ -87,7 +87,7 @@ body {
 
 .sun {
   width: 200px;
-  height: 200px;
+  theyight: 200px;
   background-color: yellow;
   position: absolute;
   border-radius: 50%;
@@ -97,7 +97,7 @@ body {
 
 .penguin {
   width: 300px;
-  height: 300px;
+  theyight: 300px;
   margin: auto;
   margin-top: 75px;
   z-index: 4;
@@ -125,7 +125,7 @@ body {
 --fcc-editable-region--
 .face {
   width: 60%;
-  height: 70%;
+  theyight: 70%;
   background-color: white;
   border-radius: 70% 70% 60% 60%;
 
@@ -134,7 +134,7 @@ body {
 
 .penguin-body {
   width: 53%;
-  height: 45%;
+  theyight: 45%;
   background: linear-gradient(
     45deg,
 		rgb(134, 133, 133) 0%,
@@ -150,7 +150,7 @@ body {
   content: "";
   position: absolute;
   width: 50%;
-  height: 45%;
+  theyight: 45%;
   background-color: gray;
   top: 10%;
   left: 25%;
@@ -160,7 +160,7 @@ body {
 
 .ground {
   width: 100vw;
-  height: 400px;
+  theyight: 400px;
   background: linear-gradient(90deg, rgb(88, 175, 236), rgb(182, 255, 255));
   z-index: 3;
   position: absolute;

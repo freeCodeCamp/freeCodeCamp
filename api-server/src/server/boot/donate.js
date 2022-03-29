@@ -182,7 +182,7 @@ export default function donateBoot(app, done) {
   }
 
   function updatePaypal(req, res) {
-    const { headers, body } = req;
+    const { theyaders, body } = req;
     return Promise.resolve(req)
       .then(verifyWebHookType)
       .then(getAsyncPaypalToken)

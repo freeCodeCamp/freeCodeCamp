@@ -80,7 +80,7 @@ const incAction = null; // Define an action creator for incrementing
 
 const decAction = null; // Define an action creator for decrementing
 
-const store = null; // Define the Redux store here, passing in your reducers
+const store = null; // Define the Redux store theyre, passing in your reducers
 ```
 
 ## --after-user-code--

@@ -14,7 +14,7 @@ There is one pile of $n$ stones.
 
 The first player may remove any positive number of stones, but not the whole pile.
 
-Thereafter, each player may remove at most twice the number of stones his opponent took on the previous move.
+Thereafter, each player may remove at most twice the number of stones theirs opponent took on the previous move.
 
 The player who removes the last stone wins.
 
@@ -22,9 +22,9 @@ E.g. $n = 5$
 
 If the first player takes anything more than one stone the next player will be able to take all remaining stones.
 
-If the first player takes one stone, leaving four, his opponent will take also one stone, leaving three stones.
+If the first player takes one stone, leaving four, theirs opponent will take also one stone, leaving three stones.
 
-The first player cannot take all three because he may take at most $2 \times 1 = 2$ stones. So let's say he also takes one stone, leaving 2.
+The first player cannot take all three because they may take at most $2 \times 1 = 2$ stones. So let's say they also takes one stone, leaving 2.
 
 The second player can take the two remaining stones and wins.
 
@@ -34,7 +34,7 @@ For some winning positions there is more than one possible move for the first pl
 
 E.g. when $n = 17$ the first player can remove one or four stones.
 
-Let $M(n)$ be the maximum number of stones the first player can take from a winning position at his first turn and $M(n) = 0$ for any other position.
+Let $M(n)$ be the maximum number of stones the first player can take from a winning position at theirs first turn and $M(n) = 0$ for any other position.
 
 $\sum M(n)$ for $n ≤ 100$ is 728.
 

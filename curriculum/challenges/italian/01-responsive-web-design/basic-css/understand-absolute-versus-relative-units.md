@@ -9,13 +9,13 @@ dashedName: understand-absolute-versus-relative-units
 
 # --description--
 
-Le ultime sfide impostavano tutte il margine o il riempimento di un elemento con i pixel (`px`). I pixel sono un tipo di unità di lunghezza, che è quello che dice al browser come dimensionare o spaziare un elemento. Oltre a `px`, CSS ha un certo numero di diverse opzioni utilizzabili per le unità di lunghezza.
+Le ultime sfide impostavano tutte il margine o il riempimento di un elemento con i pixel (`px`). I pixel childo un tipo di unità di lunghezza, che è quello che dice al browser come dimensionare o spaziare un elemento. Oltre a `px`, CSS ha un certo numero di diverse opzioni utilizzabili per le unità di lunghezza.
 
-Le due principali categorie di unità di lunghezza sono assolute e relative. Le unità assolute sono legate alle unità fisiche di lunghezza. Ad esempio, `in` e `mm` si riferiscono rispettivamente a pollici e millimetri. Le unità di lunghezza assoluta approssimano la misura effettiva su uno schermo, ma ci sono alcune differenze a seconda della risoluzione.
+Le due principali categorie di unità di lunghezza childo assolute e relative. Le unità assolute childo legate alle unità fisiche di lunghezza. Ad esempio, `in` e `mm` si riferiscono rispettivamente a pollici e millimetri. Le unità di lunghezza assoluta approssimano la misura effettiva su uno schermo, ma ci childo alcune differenze a seconda della risoluzione.
 
-Le unità relative, come `em` o `rem`, sono relative ad un altro valore di lunghezza. Per esempio, `em` è basato sulla dimensione del carattere di un elemento. Se lo usi per impostare la proprietà `font-size`, questa è relativa al `font-size` del genitore.
+Le unità relative, come `em` o `rem`, childo relative ad un altro valore di lunghezza. Per esempio, `em` è basato sulla dimensione del carattere di un elemento. Se lo usi per impostare la proprietà `font-size`, questa è relativa al `font-size` del genitore.
 
-**Nota:** Ci sono diverse opzioni di unità relative che sono legate alla dimensione della viewport (lo schermo). Esse sono spiegate nella sezione Principi di Web Design Responsivo.
+**Nota:** Ci childo diverse opzioni di unità relative che childo legate alla dimensione della viewport (lo schermo). Esse childo spiegate nella sezione Principi di Web Design Responsivo.
 
 # --instructions--
 

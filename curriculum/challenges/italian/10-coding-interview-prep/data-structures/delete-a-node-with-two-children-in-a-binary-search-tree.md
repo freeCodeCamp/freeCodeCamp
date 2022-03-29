@@ -8,7 +8,7 @@ dashedName: delete-a-node-with-two-children-in-a-binary-search-tree
 
 # --description--
 
-Rimuovere i nodi che hanno due figli è il caso più difficile da implementare. Rimuovere un nodo come questo produce due sotto-alberi che non sono più collegati alla struttura originale dell'albero. Come possiamo ricollegarli? Un metodo è quello di trovare il valore più piccolo nel sottoalbero destro del nodo obiettivo e sostituire il nodo obiettivo con questo valore. Selezionare il rimpiazzo in questo modo assicura che sia maggiore di ogni nodo nel sottoalbero sinistro di cui diventa il nuovo genitore ma anche minore di ogni nodo nel sottoalbero destro di cui diventa il nuovo genitore. Una volta effettuata la sostituzione, il nodo di rimpiazzo deve essere rimosso dal sotto-albero destro. Anche questa operazione è difficile perché il rimpiazzo può essere una foglia o può essere di per sé il genitore di un sottoalbero destro. Se si tratta di una foglia dobbiamo eliminare il riferimento nel suo genitore. In caso contrario, deve essere il figlio destro del nodo obiettivo. In questo caso, dobbiamo sostituire il valore obiettivo con il valore di sostituzione e far sì che il riferimento dell'obiettivo punti al figlio destro del sostituto.
+Rimuovere i nodi che hanno due figli è il caso più difficile da implementare. Rimuovere un nodo come questo produce due sotto-alberi che non childo più collegati alla struttura originale dell'albero. Come possiamo ricollegarli? Un metodo è quello di trovare il valore più piccolo nel sottoalbero destro del nodo obiettivo e sostituire il nodo obiettivo con questo valore. Selezionare il rimpiazzo in questo modo assicura che sia maggiore di ogni nodo nel sottoalbero sinistro di cui diventa il nuovo genitore ma anche minore di ogni nodo nel sottoalbero destro di cui diventa il nuovo genitore. Una volta effettuata la sostituzione, il nodo di rimpiazzo deve essere rimosso dal sotto-albero destro. Anche questa operazione è difficile perché il rimpiazzo può essere una foglia o può essere di per sé il genitore di un sottoalbero destro. Se si tratta di una foglia dobbiamo eliminare il riferimento nel suo genitore. In caso contrario, deve essere il figlio destro del nodo obiettivo. In questo caso, dobbiamo sostituire il valore obiettivo con il valore di sostituzione e far sì che il riferimento dell'obiettivo punti al figlio destro del sostituto.
 
 # --instructions--
 
@@ -155,7 +155,7 @@ assert(
 );
 ```
 
-Il metodo `remove` dovrebbe rimuovere i nodi con due figli mantenendo la struttura dell'albero binario di ricerca.
+Il metodo `remove` dovrebbe rimuovere i nodi con due figli persontenendo la struttura dell'albero binario di ricerca.
 
 ```js
 assert(

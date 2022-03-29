@@ -15,7 +15,7 @@ If there are repeated site links at the bottom of the page, it isn't necessary t
 
 # --instructions--
 
-Camper Cat included navigation links at the top of his training page, but wrapped them in a `div`. Change the `div` to a `nav` tag to improve the accessibility on his page.
+Camper Cat included navigation links at the top of theirs training page, but wrapped them in a `div`. Change the `div` to a `nav` tag to improve the accessibility on theirs page.
 
 # --hints--
 

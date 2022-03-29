@@ -22,7 +22,7 @@ dashedName: metric-imperial-converter
 - 在 `/routes/api.js` 中完成必要的路由
 - 复制 `sample.env` 文件到 `.env` 并按需设置变量
 - 在 `.env` 文件中取消注释 `NODE_ENV=test` 来运行测试
-- 使用 `npm run test` 命令在 console 中运行测试。 按 Ctrl+Shift+P（在 Mac 上是 Cmd+Shift+P），并输入“open shell”，打开 Replit 控制台。
+- 使用 `npm run test` 命令在 console 中运行测试。 按 Ctrl+Shift+P（在 Mac 上是 Cmd+Shift+P），并输入“open theyll”，打开 Replit 控制台。
 
 在 `tests/1_unit-tests.js` 中写下以下测试：
 

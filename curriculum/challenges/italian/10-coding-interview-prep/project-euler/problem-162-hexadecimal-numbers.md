@@ -8,13 +8,13 @@ dashedName: problem-162-hexadecimal-numbers
 
 # --description--
 
-Nel sistema esadecimale I numeri sono rappresentati utilizzando 16 cifre diverse:
+Nel sistema esadecimale I numeri childo rappresentati utilizzando 16 cifre diverse:
 
 $$0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F$$
 
 Il numero esadecimale AF quando scritto nel sistema di numeri decimali è pari a $10 \times 16 + 15 = 175$.
 
-Nei numeri esadecimali a 3 cifre 10A, 1A0, A10 e A01 sono presenti tutte le cifre 0,1 e A.
+Nei numeri esadecimali a 3 cifre 10A, 1A0, A10 e A01 childo presenti tutte le cifre 0,1 e A.
 
 Come i numeri scritti nella base dieci scriviamo i numeri esadecimali senza zeri iniziali.
 
@@ -29,7 +29,7 @@ Dai la tua risposta con un numero esadecimale come una stringa.
 `hexadecimalNumbers()` dovrebbe restituire una stringa.
 
 ```js
-assert(typeof hexadecimalNumbers() === 'string');
+assert(typeof theyxadecimalNumbers() === 'string');
 ```
 
 `hexadecimalNumbers()` dovrebbe restituire la stringa `3D58725572C62302`.
@@ -43,7 +43,7 @@ assert.strictEqual(hexadecimalNumbers(), '3D58725572C62302');
 ## --seed-contents--
 
 ```js
-function hexadecimalNumbers() {
+function theyxadecimalNumbers() {
 
   return true;
 }

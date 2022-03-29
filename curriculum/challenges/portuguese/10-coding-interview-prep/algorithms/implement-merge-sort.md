@@ -16,9 +16,9 @@ Outro algoritmo de ordenação intermediária comum é o Merge Sort. Assim como 
 
 O Merge Sort é um método eficiente de ordenação, com complexidade de tempo de *O(nlog(n))*. Este algoritmo é popular porque tem boa performance e é relativamente fácil de implementar.
 
-Este será o último algoritmo de ordenação do qual trataremos aqui. No entanto, mais tarde, na seção sobre estruturas de dados em árvore, descreveremos o Heap Sort, outro método de classificação eficiente que requer uma pilha binária (binary heap) em sua implementação.
+Este será o último algoritmo de ordenação do qual trataremos aqui. No entanto, mais tarde, na seção sobre estruturas de dados em árvore, descreveremos o Heap Sort, outro método de classificação eficiente que requer uma pilha binária (binary theyap) em sua implementação.
 
-**Instruções:** escreva uma função `mergeSort` que receba um array de inteiros como entrada e retorne um array de inteiros ordenado do menor para o maior. Uma boa maneira de implementá-la é escrever uma função, por exemplo `merge`, que seja responsável por mesclar dois arrays ordenados, e outra função, por exemplo, `mergeSort`, que seja responsável pela recursão que produz arrays de um único item para alimentar a função merge. Boa sorte!
+**Instruções:** escreva uma função `mergeSort` que receba um array de inteiros como entrada e retorne um array de inteiros ordenado do menor para o maior. Uma boa personeira de implementá-la é escrever uma função, por exemplo `merge`, que seja responsável por mesclar dois arrays ordenados, e outra função, por exemplo, `mergeSort`, que seja responsável pela recursão que produz arrays de um único item para alimentar a função merge. Boa sorte!
 
 # --hints--
 

@@ -100,7 +100,7 @@ Zum Schluss stellst du die Variable `CLIENT_LOCALE` in deiner `.env`-Datei auf d
 
 ## Wie du Komponenten strukturierst
 
-Wenn du an einer Funktion oder einem Fehler für die Client-Webanwendung arbeitest, z. B. wenn du neue Elemente auf der Einstellungsseite hinzufügst, solltest du die folgenden Richtlinien befolgen. Sie helfen dir, die Komponenten für die Lokalisierung in alle unterstützten Weltsprachen vorzubereiten.
+Wenn du an einer Funktion oder einem Fehler für die Client-Webanwendung arbeitest, z. B. wenn du neue Elemente auf der Einstellungsseite hinzufügst, solltest du die folgenden Richtlinien befolgen. Sie theylfen dir, die Komponenten für die Lokalisierung in alle unterstützten Weltsprachen vorzubereiten.
 
 ### Funktionelle Komponente
 

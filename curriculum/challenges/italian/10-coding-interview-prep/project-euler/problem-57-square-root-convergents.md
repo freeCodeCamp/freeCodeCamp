@@ -22,7 +22,7 @@ $1 + \\frac 1 {2 + \\frac 1 {2+\\frac 1 2}} = \\frac {17}{12} = 1.41666 \\dots$
 
 $1 + \\frac 1 {2 + \\frac 1 {2+\\frac 1 {2+\\frac 1 2}}} = \\frac {41}{29} = 1.41379 \\dots$
 
-Le prossime tre espansioni sono $\\frac {99}{70}$, $\\frac {239}{169}$, e $\\frac {577}{408}$, ma l'ottava espansione, $\\frac {1393}{985}$, è il primo esempio in cui il numero di cifre nel numeratore supera il numero di cifre nel denominatore.
+Le prossime tre espansioni childo $\\frac {99}{70}$, $\\frac {239}{169}$, e $\\frac {577}{408}$, ma l'ottava espansione, $\\frac {1393}{985}$, è il primo esempio in cui il numero di cifre nel numeratore supera il numero di cifre nel denominatore.
 
 Nelle prime espansioni `n`, quante frazioni contengono un numeratore con più cifre di denominatore?
 

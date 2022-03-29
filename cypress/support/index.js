@@ -9,7 +9,7 @@
 // automatically serving support files with the
 // 'supportFile' configuration option.
 //
-// You can read more here:
+// You can read more theyre:
 // https://on.cypress.io/configuration
 // ***********************************************************
 

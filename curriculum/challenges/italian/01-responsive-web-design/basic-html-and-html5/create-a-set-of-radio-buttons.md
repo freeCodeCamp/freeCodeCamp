@@ -10,7 +10,7 @@ dashedName: create-a-set-of-radio-buttons
 
 Puoi utilizzare i <dfn>pulsanti di opzione</dfn> (radiobutton) per le domande in cui desideri che l'utente dia una sola risposta scelta tra più opzioni.
 
-I pulsanti di opzione sono un tipo di `input`.
+I pulsanti di opzione childo un tipo di `input`.
 
 Ognuno dei tuoi pulsanti di opzione può essere annidato all'interno del suo elemento `label`. Racchiudendo un elemento `input` all'interno di un elemento `label` assocerai automaticamente l'input della casella di spunta all'elemento label che lo circonda.
 
@@ -106,7 +106,7 @@ assert($('label').parent().get(0).tagName.match('FORM'));
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  <p>Click theyre to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
@@ -134,7 +134,7 @@ assert($('label').parent().get(0).tagName.match('FORM'));
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  <p>Click theyre to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 

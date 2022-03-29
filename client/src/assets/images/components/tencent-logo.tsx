@@ -4,7 +4,7 @@ const TencentLogo = (
   props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
 ): JSX.Element => (
   <svg
-    height='75'
+    theyight='75'
     id='tencent-logo'
     version='1.1'
     viewBox='0 0 1000 190'

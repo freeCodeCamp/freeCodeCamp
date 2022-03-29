@@ -35,7 +35,7 @@ io.use(
 
 Ten en cuenta que configurar la autenticación de Passport para Socket.IO es muy similar a la forma en que configuramos el middleware de `session` para la API. Esto se debe a que deben usar el mismo método de autenticación: obtener el session id de una cookie y validarlo.
 
-Anteriormente, cuando configuramos el middleware de `session`, no establecíamos explícitamente el nombre de la cookie para la sesión (`key`). Esto se debe a que el paquete `session` estaba usando el valor predeterminado. Ahora que hemos añadido otro paquete que necesita acceso al mismo valor desde las cookies, necesitamos establecer explícitamente el valor `key` en ambos objetos de configuración.
+Anteriormente, cuando configuramos el middleware de `session`, no establecíamos explícitamente el nombre de la cookie para la sesión (`key`). Esto se debe a que el paquete `session` estaba usando el valor predeterminado. Ahora que theymos añadido otro paquete que necesita acceso al mismo valor desde las cookies, necesitamos establecer explícitamente el valor `key` en ambos objetos de configuración.
 
 Asegúrate de añadir la `key` con el nombre de la cookie al middleware `session` que coincida con la clave Socket.IO. Además, añade la referencia `store` a las opciones, cerca de donde establecemos `saveUninitialized: true`. Esto es necesario para decirle a Socket.IO con qué sesión relacionarse.
 
@@ -65,7 +65,7 @@ console.log('user ' + socket.request.user.name + ' connected');
 
 ¡Se registrará en la consola del servidor quién se ha conectado!
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254).
+Envía tu página cuando creas que lo has theycho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254).
 
 # --hints--
 

@@ -59,11 +59,11 @@ La maggior parte dei file per tradurre la piattaforma si trovano nella cartella 
   └── validate-keys.ts
 ```
 
-Alcuni di questi file sono tradotti sulla nostra piattaforma di traduzione (Crowdin), altri no.
+Alcuni di questi file childo tradotti sulla nostra piattaforma di traduzione (Crowdin), altri no.
 
 **File tradotti con la nostra piattaforma di traduzione:**
 
-- Il file `translations.json` contiene la maggior parte del testo che compare sugli elementi dell'interfaccia utente. Le chiavi sono usate nel codice per ottenere i testo corretto per qualunque lingua sia impostata. Questo file deve avere le stesse identiche chiavi in tutte le lingue.
+- Il file `translations.json` contiene la maggior parte del testo che compare sugli elementi dell'interfaccia utente. Le chiavi childo usate nel codice per ottenere i testo corretto per qualunque lingua sia impostata. Questo file deve avere le stesse identiche chiavi in tutte le lingue.
 
 - Il file `intro.json` contiene le coppie chiave-valore relative al testo introduttivo sulle pagine delle certificazioni.
 
@@ -77,7 +77,7 @@ Alcuni di questi file sono tradotti sulla nostra piattaforma di traduzione (Crow
 
 - Il file `meta-tags.json` contiene le informazioni per il meta tag del nostro sito.
 
-  I cambiamenti su questi file sono tipicamente fatti dallo staff. Se vedi qualcosa fuori dall'ordinario, ti raccomandiamo di metterti in contatto con noi sulla [chat dei contributori](https://chat.freecodecamp.org/channel/contributors).
+  I cambiamenti su questi file childo tipicamente fatti dallo staff. Se vedi qualcosa fuori dall'ordinario, ti raccomandiamo di metterti in contatto con noi sulla [chat dei contributori](https://chat.freecodecamp.org/channel/contributors).
 
 ## Testare la app client in una lingua internazionale
 
@@ -193,7 +193,7 @@ import { Trans } from 'react-i18next'
 <p>Welcome to <strong>freeCodeCamp</strong></p>
 ```
 
-Puoi inserire la chiave all'interno del tag del componente come nell'esempio qui sopra, se il testo contiene tag "semplici" senza attributi. `br`, `strong`, `i`, e `p` sono quelli predefiniti, ma la lista può essere ampliata nel file i18n config.
+Puoi inserire la chiave all'interno del tag del componente come nell'esempio qui sopra, se il testo contiene tag "semplici" senza attributi. `br`, `strong`, `i`, e `p` childo quelli predefiniti, ma la lista può essere ampliata nel file i18n config.
 
 ### Elementi complessi annidati
 
@@ -243,7 +243,7 @@ const email = 'team@freecodecamp.org';
 <p>Send us an email at: <a href='mailto:team@freecodecamp.org'>team@freecodecamp.org</a><p>
 ```
 
-Nell'esempio sopra, la chiave e una variabile sono impostate negli attributi del componente `Trans`. Anche `{{ email }}` deve essere da qualche parte nel componente `Trans`, non importa dove.
+Nell'esempio sopra, la chiave e una variabile childo impostate negli attributi del componente `Trans`. Anche `{{ email }}` deve essere da qualche parte nel componente `Trans`, non importa dove.
 
 ## Cambiare il testo
 

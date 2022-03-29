@@ -11,7 +11,7 @@ dashedName: override-class-declarations-by-styling-id-attributes
 
 No desafio anterior vimos que os navegadores leem o CSS de cima para baixo, seguindo a ordem de aparição das declarações de estilos. Isso significa que, em caso de conflito, o navegador utilizará a última declaração CSS escrita. No elemento `h1`, observe que se tivéssemos declarado a classe `blue-text` antes de classe `pink-text`, o h1 continuaria a aplicar os estilos baseado em quem foi declarado por último!
 
-Mas isso não é tudo. Existem outras maneiras de sobrescrever o CSS. Você se lembra dos atributos de id?
+Mas isso não é tudo. Existem outras personeiras de sobrescrever o CSS. Você se lembra dos atributos de id?
 
 Vamos sobrescrever as classes `pink-text` e `blue-text` dando ao elemento `h1` um id e então estilizar este id de forma a tornar o elemento `h1` laranja.
 

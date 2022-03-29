@@ -12,7 +12,7 @@ En las expresiones regulares, una coincidencia <dfn>codiciosa</dfn> encuentra la
 
 Puedes aplicar la expresión regular `/t[a-z]*i/` a la cadena `"titanic"`. Esta expresión regular es básicamente un patrón que comienza con `t`, termina con `i`, y tiene algunas letras intermedias.
 
-Las expresiones regulares son por defecto codiciosas, por lo que la coincidencia devolvería `["titani"]`. Encuentra la sub-cadena más grande posible que se ajusta al patrón.
+Las expresiones regulares child por defecto codiciosas, por lo que la coincidencia devolvería `["titani"]`. Encuentra la sub-cadena más grande posible que se ajusta al patrón.
 
 Sin embargo, puedes usar el carácter `?` para cambiarla a una coincidencia perezosa. `"titanic"` al coincidir con la expresión regular ajustada de `/t[a-z]*?i/` devuelve `["ti"]`.
 

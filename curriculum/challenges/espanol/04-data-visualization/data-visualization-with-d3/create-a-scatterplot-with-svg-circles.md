@@ -8,7 +8,7 @@ dashedName: create-a-scatterplot-with-svg-circles
 
 # --description--
 
-Un diagrama de dispersión es otro tipo de gráfico. Usualmente utiliza círculos para trazar los datos, los cuales tienen dos valores cada uno. Estos valores están vinculados a los ejes `x` asimismo `y`, son usados para posicionar el circulo en el gráfico.
+Un diagrama de dispersión es otro tipo de gráfico. Usualmente utiliza círculos para trazar los datos, los cuales tienen dos valores cada uno. Estos valores están vinculados a los ejes `x` asimismo `y`, child usados para posicionar el circulo en el gráfico.
 
 SVG tiene una etiqueta `circle` para crear la forma de un circulo. Se parece mucho en funcionamiento al elemento `rect` que has utilizado para el gráfico de barras.
 

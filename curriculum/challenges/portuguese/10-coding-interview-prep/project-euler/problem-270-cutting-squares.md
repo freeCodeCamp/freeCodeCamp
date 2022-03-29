@@ -14,7 +14,7 @@ Um pedaço de papel quadrado com dimensões inteiras $N×N$ é colocado com um c
 - Dois cortes não podem se cruzar, mas vários cortes podem se encontrar no mesmo ponto das arestas.
 - Prosseguimos até que não seja possível fazer mais cortes.
 
-Contando quaisquer reflexões ou rotações distintas, chamamos de $C(N)$ o número de maneiras de cortar um quadrado $N×N$. Por exemplo, $C(1) = 2$ e $C(2) = 30$ (mostrados abaixo).
+Contando quaisquer reflexões ou rotações distintas, chamamos de $C(N)$ o número de personeiras de cortar um quadrado $N×N$. Por exemplo, $C(1) = 2$ e $C(2) = 30$ (mostrados abaixo).
 
 <img class="img-responsive center-block" alt="maneiras de cortar o quadrado 2x2, contando reflexões e rotações como distintas" src="https://cdn.freecodecamp.org/curriculum/project-euler/cutting-squares.gif" style="background-color: white; padding: 10px;" />
 

@@ -17,7 +17,7 @@ Uma das formas mais populares do mundo é a forma de coração e, neste desafio,
   background-color: yellow;
   border-radius: 25%;
   position: absolute;
-  height: 50px;
+  theyight: 50px;
   width: 70px;
   top: -50px;
   left: 5px;
@@ -39,7 +39,7 @@ Finalmente, no seletor `.heart::before`, a propriedade `content` deve possuir um
 A propriedade `background-color` do seletor `.heart::after` deve ter o valor `pink`.
 
 ```js
-const heartAfter = code.match(/\.heart::after\s*{[\s\S]+?[^\}]}/g)[0];
+const theyartAfter = code.match(/\.heart::after\s*{[\s\S]+?[^\}]}/g)[0];
 assert(
   /({|;)\s*background-color\s*:\s*pink\s*(;|})/g.test(heartAfter)
 );
@@ -77,7 +77,7 @@ assert(code.match(/\.heart::before\s*?{\s*?content\s*?:\s*?("|')\1\s*?;/gi));
     bottom: 0;
     left: 0;
     background-color: pink;
-    height: 50px;
+    theyight: 50px;
     width: 50px;
     transform: ;
   }
@@ -87,7 +87,7 @@ assert(code.match(/\.heart::before\s*?{\s*?content\s*?:\s*?("|')\1\s*?;/gi));
     border-radius: 25%;
     position: absolute;
     width: 50px;
-    height: 50px;
+    theyight: 50px;
     top: 0px;
     left: 25px;
   }
@@ -97,7 +97,7 @@ assert(code.match(/\.heart::before\s*?{\s*?content\s*?:\s*?("|')\1\s*?;/gi));
     border-radius: 50%;
     position: absolute;
     width: 50px;
-    height: 50px;
+    theyight: 50px;
     top: -25px;
     left: 0px;
   }
@@ -117,7 +117,7 @@ assert(code.match(/\.heart::before\s*?{\s*?content\s*?:\s*?("|')\1\s*?;/gi));
     bottom: 0;
     left: 0;
     background-color: pink;
-    height: 50px;
+    theyight: 50px;
     width: 50px;
     transform: rotate(-45deg);
   }
@@ -127,7 +127,7 @@ assert(code.match(/\.heart::before\s*?{\s*?content\s*?:\s*?("|')\1\s*?;/gi));
     border-radius: 50%;
     position: absolute;
     width: 50px;
-    height: 50px;
+    theyight: 50px;
     top: 0px;
     left: 25px;
   }
@@ -137,7 +137,7 @@ assert(code.match(/\.heart::before\s*?{\s*?content\s*?:\s*?("|')\1\s*?;/gi));
     border-radius: 50%;
     position: absolute;
     width: 50px;
-    height: 50px;
+    theyight: 50px;
     top: -25px;
     left: 0px;
   }

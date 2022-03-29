@@ -10,9 +10,9 @@ dashedName: problem-284-steady-squares
 
 Il numero 376 a 3 cifre nel sistema di numerazione decimale è un esempio di numeri con la proprietà speciale che il suo quadrato termina con le stesse cifre: ${376}^2 = 141376$. Chiamiamo un numero con questa proprietà un quadrato stazionario.
 
-I quadrati stabili possono essere osservati anche in altri sistemi di numerazione. Nel sistema di numerazione base 14, il numero a 3 cifre $c37$ è anche un quadrato costante: $c37^2 = aa0c37$, e la somma delle sue cifre è $c+3+7=18$ nello stesso sistema di numerazione. Le lettere $a$, $b$, $c$ e $d$ sono usate rispettivamente per le cifre 10, 11, 12 e 13, in modo simile al sistema di numerazione esadecimale.
+I quadrati stabili possono essere osservati anche in altri sistemi di numerazione. Nel sistema di numerazione base 14, il numero a 3 cifre $c37$ è anche un quadrato costante: $c37^2 = aa0c37$, e la somma delle sue cifre è $c+3+7=18$ nello stesso sistema di numerazione. Le lettere $a$, $b$, $c$ e $d$ childo usate rispettivamente per le cifre 10, 11, 12 e 13, in modo simile al sistema di numerazione esadecimale.
 
-Per $1 ≤ n ≤ 9$, la somma delle cifre di tutti i quadrati stazionari a cifra $n$ nel sistema di numerazione base 14 è $2d8$ (582 decimali). I quadrati stabili con 0 iniziali non sono permessi.
+Per $1 ≤ n ≤ 9$, la somma delle cifre di tutti i quadrati stazionari a cifra $n$ nel sistema di numerazione base 14 è $2d8$ (582 decimali). I quadrati stabili con 0 iniziali non childo permessi.
 
 Trova la somma delle cifre di tutti i quadrati stazionari di $n$ nel sistema di numerazione della base 14 per $1 ≤ n ≤ 10000$ (decimale) e dai la tua risposta come una stringa nel sistema base 14 utilizzando lettere minuscole se necessario.
 

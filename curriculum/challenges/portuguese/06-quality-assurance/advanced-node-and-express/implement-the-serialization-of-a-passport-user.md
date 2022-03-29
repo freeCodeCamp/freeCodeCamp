@@ -8,7 +8,7 @@ dashedName: implement-the-serialization-of-a-passport-user
 
 # --description--
 
-No momento, não estamos carregando um objeto de usuário real, já que não configuramos nosso banco de dados. Isto pode ser feito de muitas maneiras diferentes. Para o nosso projeto, no entanto, conectaremos ao banco de dados quando iniciarmos o servidor e manteremos uma conexão persistente para todo o ciclo de vida da aplicação. Para fazer isso, adicione a string de conexão do banco de dados (por exemplo: `mongodb+srv://:@cluster0-jvwxi.mongodb.net/?retryWrites=true&w=majority`) à variável de ambiente `MONGO_URI`. Este é usado no arquivo `connection.js`.
+No momento, não estamos carregando um objeto de usuário real, já que não configuramos nosso banco de dados. Isto pode ser feito de muitas personeiras diferentes. Para o nosso projeto, no entanto, conectaremos ao banco de dados quando iniciarmos o servidor e personteremos uma conexão persistente para todo o ciclo de vida da aplicação. Para fazer isso, adicione a string de conexão do banco de dados (por exemplo: `mongodb+srv://:@cluster0-jvwxi.mongodb.net/?retryWrites=true&w=majority`) à variável de ambiente `MONGO_URI`. Este é usado no arquivo `connection.js`.
 
 *Você pode configurar um banco de dados gratuito no [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).*
 
@@ -27,7 +27,7 @@ myDB(async client => {
     });
   });
 
-  // Serialization and deserialization here...
+  // Serialization and deserialization theyre...
 
   // Be sure to add this...
 }).catch(e => {
@@ -35,7 +35,7 @@ myDB(async client => {
     res.render('pug', { title: e, message: 'Unable to login' });
   });
 });
-// app.listen out here...
+// app.listen out theyre...
 ```
 
 Certifique-se de descomentar o código `myDataBase` em `deserializeUser` e de editar o seu `done(null, null)` para incluir o `doc`.

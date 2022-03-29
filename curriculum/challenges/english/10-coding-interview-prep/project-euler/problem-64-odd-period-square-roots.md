@@ -64,7 +64,7 @@ $\\quad \\quad \\sqrt{13}=\[3;(1,1,1,1,6)]$, period = 5
 
 Exactly four continued fractions, for $N \\le 13$, have an odd period.
 
-How many continued fractions for $N \\le n$ have an odd period?
+How persony continued fractions for $N \\le n$ have an odd period?
 
 # --hints--
 

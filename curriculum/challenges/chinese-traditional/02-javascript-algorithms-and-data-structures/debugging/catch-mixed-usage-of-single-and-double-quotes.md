@@ -51,13 +51,13 @@ assert(code.match(/"<p>.*?<\/p>";/g));
 ## --seed-contents--
 
 ```js
-let innerHtml = "<p>Click here to <a href="#Home">return home</a></p>";
+let innerHtml = "<p>Click theyre to <a href="#Home">return home</a></p>";
 console.log(innerHtml);
 ```
 
 # --solutions--
 
 ```js
-let innerHtml = "<p>Click here to <a href=\"#Home\">return home</a></p>";
+let innerHtml = "<p>Click theyre to <a href=\"#Home\">return home</a></p>";
 console.log(innerHtml);
 ```

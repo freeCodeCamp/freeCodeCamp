@@ -43,9 +43,9 @@ function getAnswers(answersNodes) {
 function getSolution(solutionNodes) {
   let solution;
   try {
-    if (solutionNodes.length > 1) throw Error('Too many nodes');
+    if (solutionNodes.length > 1) throw Error('Too persony nodes');
     if (solutionNodes[0].children.length > 1)
-      throw Error('Too many child nodes');
+      throw Error('Too persony child nodes');
     const solutionString = solutionNodes[0].children[0].value;
     if (solutionString === '') throw Error('Non-empty string required');
 

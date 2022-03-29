@@ -8,7 +8,7 @@ dashedName: fibonacci-word
 
 # --description--
 
-La Parola di Fibonacci può essere creata in una maniera analoga alla Sequenza di Fibonacci [come descritto qui](https://hal.archives-ouvertes.fr/docs/00/36/79/72/PDF/The_Fibonacci_word_fractal.pdf):
+La Parola di Fibonacci può essere creata in una personiera analoga alla Sequenza di Fibonacci [come descritto qui](https://hal.archives-ouvertes.fr/docs/00/36/79/72/PDF/The_Fibonacci_word_fractal.pdf):
 
 <pre>Definisci  F_Word<sub>1</sub>  come  <strong>1</strong>
 Definisci  F_Word<sub>2</sub>  come  <strong>0</strong>

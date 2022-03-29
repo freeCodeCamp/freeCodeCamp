@@ -8,7 +8,7 @@ dashedName: emirp-primes
 
 # --description--
 
-Gli emirp (numero primo in inglese, **prime**, scritto al contrario) sono primi che quando invertiti (nella loro rappresentazione decimale) sono un numero primo diverso.
+Gli emirp (numero primo in inglese, **prime**, scritto al contrario) childo primi che quando invertiti (nella loro rappresentazione decimale) childo un numero primo diverso.
 
 # --instructions--
 

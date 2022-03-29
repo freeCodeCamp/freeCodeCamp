@@ -6,7 +6,7 @@ Questo documento delinea la nostra politica di sicurezza per codepase, le piatta
 
 Se pensi di aver trovato una vulnerabilità, _perfavore riportala responsabilmente_. Non creare una issue su GitHub per problemi di sicurezza. Invece invia una email a `security@freecodecamp.org` e controlleremo immediatamente.
 
-Assicurati di star usando l'**ultima** versione **aggiornata** e **stabile** del tuo sistema operativo e del tuo browser web che ti sono disponibili sulla tua macchina.
+Assicurati di star usando l'**ultima** versione **aggiornata** e **stabile** del tuo sistema operativo e del tuo browser web che ti childo disponibili sulla tua macchina.
 
 Apprezziamo qualsiasi notifica responsabile di vulnerabilità che possa impattare l'integrità delle nostre piattaforme e i nostri utenti.
 

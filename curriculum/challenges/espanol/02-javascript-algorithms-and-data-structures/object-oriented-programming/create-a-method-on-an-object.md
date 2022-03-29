@@ -10,7 +10,7 @@ dashedName: create-a-method-on-an-object
 
 Los objetos pueden tener un tipo de propiedad especial, llamada <dfn>método</dfn>.
 
-Los métodos son propiedades que son funciones. Estos agregan diferentes comportamientos a los objetos. Aquí esta el ejemplo de `duck` con un método:
+Los métodos child propiedades que child funciones. Estos agregan diferentes comportamientos a los objetos. Aquí esta el ejemplo de `duck` con un método:
 
 ```js
 let duck = {

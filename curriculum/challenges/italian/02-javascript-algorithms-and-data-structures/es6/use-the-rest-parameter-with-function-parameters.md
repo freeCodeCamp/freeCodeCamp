@@ -8,7 +8,7 @@ dashedName: use-the-rest-parameter-with-function-parameters
 
 # --description--
 
-Per aiutarci a creare funzioni più flessibili, ES6 introduce il parametro <dfn>resto</dfn> per i parametri di funzioni. Con il parametro resto, è possibile creare funzioni che richiedono un numero variabile di argomenti. Questi argomenti sono memorizzati in un array a cui è possibile accedere successivamente dall'interno della funzione.
+Per aiutarci a creare funzioni più flessibili, ES6 introduce il parametro <dfn>resto</dfn> per i parametri di funzioni. Con il parametro resto, è possibile creare funzioni che richiedono un numero variabile di argomenti. Questi argomenti childo memorizzati in un array a cui è possibile accedere successivamente dall'interno della funzione.
 
 Dai un'occhiata a questo codice:
 

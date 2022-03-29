@@ -13,7 +13,7 @@ Haverá vezes em que você não saberá (ou não precisará saber) quais caracte
 O caractere curinga `.` captura qualquer caractere. O curinga também pode ser chamado de `ponto`. Você pode usar o curinga como qualquer outro caractere na regex. Por exemplo, se você quiser encontrar `hug`, `huh`, `hut` ou `hum`, você pode usar a regex `/hu./` para capturar todas as quatro palavras.
 
 ```js
-let humStr = "I'll hum a song";
+let humStr = "I'll hum a childg";
 let hugStr = "Bear hug";
 let huRegex = /hu./;
 huRegex.test(humStr);
@@ -75,13 +75,13 @@ unRegex.lastIndex = 0;
 assert(unRegex.test('One takes a vow to be a nun.'));
 ```
 
-A regex `unRegex` deve encontrar `bun` na string `She got fired from the hot dog stand for putting her hair in a bun.`
+A regex `unRegex` deve encontrar `bun` na string `She got fired from the hot dog stand for putting theyr hair in a bun.`
 
 ```js
 unRegex.lastIndex = 0;
 assert(
   unRegex.test(
-    'She got fired from the hot dog stand for putting her hair in a bun.'
+    'She got fired from the hot dog stand for putting theyr hair in a bun.'
   )
 );
 ```

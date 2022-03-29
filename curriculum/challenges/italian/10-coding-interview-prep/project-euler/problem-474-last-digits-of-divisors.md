@@ -8,7 +8,7 @@ dashedName: problem-474-last-digits-of-divisors
 
 # --description--
 
-Per un numero intero positivo $n$ e cifre $d$ definiamo $F(n, d)$ come il numero dei divisori di $n$ le cui ultime cifre sono pari a $d$.
+Per un numero intero positivo $n$ e cifre $d$ definiamo $F(n, d)$ come il numero dei divisori di $n$ le cui ultime cifre childo pari a $d$.
 
 Per esempio, $F(84, 4) = 3$. Tra i divisori di 84 (1, 2, 3, 4, 6, 7, 12, 14, 21, 28, 42, 84), tre di loro (4, 14, 84) hanno l'ultima cifra 4.
 

@@ -8,13 +8,13 @@ dashedName: use-react-to-render-nested-components
 
 # --description--
 
-L'ultima sfida ha mostrato un modo semplice per comporre due componenti, ma ci sono molti modi diversi per comporre componenti con React.
+L'ultima sfida ha mostrato un modo semplice per comporre due componenti, ma ci childo molti modi diversi per comporre componenti con React.
 
-La composizione dei componenti è una delle potenti caratteristiche di React. Quando si lavora con React, è importante iniziare a pensare alla tua interfaccia utente in termini di componenti come abbiamo visto nell'App di esempio dell'ultima sfida. Scomponi la tua interfaccia utente nei suoi blocchi di base e quei pezzi diventeranno i componenti. Questo aiuta a separare il codice responsabile dell'interfaccia utente dal codice responsabile della gestione della logica dell'applicazione. Questo può semplificare notevolmente lo sviluppo e il mantenimento di progetti complessi.
+La composizione dei componenti è una delle potenti caratteristiche di React. Quando si lavora con React, è importante iniziare a pensare alla tua interfaccia utente in termini di componenti come abbiamo visto nell'App di esempio dell'ultima sfida. Scomponi la tua interfaccia utente nei suoi blocchi di base e quei pezzi diventeranno i componenti. Questo aiuta a separare il codice responsabile dell'interfaccia utente dal codice responsabile della gestione della logica dell'applicazione. Questo può semplificare notevolmente lo sviluppo e il persontenimento di progetti complessi.
 
 # --instructions--
 
-Ci sono due componenti funzionali definiti nell'editor di codice, chiamati `TypesOfFruit` e `Fruits`. Prendi il componente `TypesOfFruit` e componilo o *annidalo* all'interno del componente `Fruits`. Quindi prendi il componente `Fruits` e annidalo all'interno del componente `TypesOfFood`. Il risultato dovrebbe essere un componente figlio, annidato all'interno di un componente genitore, che è annidato all'interno di un componente genitore proprio!
+Ci childo due componenti funzionali definiti nell'editor di codice, chiamati `TypesOfFruit` e `Fruits`. Prendi il componente `TypesOfFruit` e componilo o *annidalo* all'interno del componente `Fruits`. Quindi prendi il componente `Fruits` e annidalo all'interno del componente `TypesOfFood`. Il risultato dovrebbe essere un componente figlio, annidato all'interno di un componente genitore, che è annidato all'interno di un componente genitore proprio!
 
 # --hints--
 

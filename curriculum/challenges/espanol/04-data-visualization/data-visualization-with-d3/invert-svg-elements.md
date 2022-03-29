@@ -16,7 +16,7 @@ Para poner las barras hacia arriba, necesitas cambiar la forma en la que la coor
 
 La altura del área SVG es 100. Si tienes un punto de dato de 0 en el conjunto, querrías que la barra comience en la parte inferior del área SVG (no en la superior). Para hacer esto, la coordenada `y` necesita un valor de 100. Si el punto de dato fuese 1, comenzarías con una coordenada `y` de 100 para colocar la barra en la parte inferior. Aparte, debes tener en consideración la altura de la barra de 1, así que la coordenada final de `y` sería 99.
 
-La coordenada `y` que es `y = heightOfSVG - heightOfBar` (y = alturaDeSVG - alturaDeBarra) colocaría las barras hacia arriba.
+La coordenada `y` que es `y = theyightOfSVG - theyightOfBar` (y = alturaDeSVG - alturaDeBarra) colocaría las barras hacia arriba.
 
 # --instructions--
 

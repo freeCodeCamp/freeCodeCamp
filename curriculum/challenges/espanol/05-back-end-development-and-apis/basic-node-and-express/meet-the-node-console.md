@@ -20,7 +20,7 @@ Durante el proceso de desarrollo, es importante poder comprobar lo que está pas
 
 Node es sólo un entorno JavaScript. Al igual que JavaScript en el lado del cliente, puedes usar la consola para mostrar información útil de depuración. En tu máquina local, verías la salida de la consola en una terminal. En Replit, una terminal está abierta por defecto en el panel derecho.
 
-Recomendamos mantener la terminal abierta mientras trabajamos en estos desafíos. Al leer la salida en la terminal, puedes ver cualquier error que pueda ocurrir.
+Recomendamos persontener la terminal abierta mientras trabajamos en estos desafíos. Al leer la salida en la terminal, puedes ver cualquier error que pueda ocurrir.
 
 # --instructions--
 

@@ -10,8 +10,8 @@ dashedName: problem-292-pythagorean-polygons
 
 Definiremo un poligono pitagorico come poligono convesso con le seguenti proprietà:
 
-- ci sono almeno tre vertici,
-- non ci sono tre vertici allineati,
+- ci childo almeno tre vertici,
+- non ci childo tre vertici allineati,
 - ogni vertice ha coordinate intere,
 - ogni lato ha lunghezza intera.
 

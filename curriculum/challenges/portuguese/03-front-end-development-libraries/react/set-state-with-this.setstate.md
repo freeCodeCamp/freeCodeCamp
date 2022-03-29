@@ -8,7 +8,7 @@ dashedName: set-state-with-this-setstate
 
 # --description--
 
-Os desafios anteriores abordaram o `state` dos componentes e como inicializar state no `constructor`. Há também uma maneira de alterar o `state` do componente. React fornece um método para atualizar o componente `state` chamado `setState`. Você chama o método `setState` dentro da sua classe de componente assim: `this.setState()`, passando como parâmetro um objeto com pares de valor chave. As chaves são suas propriedades do estado e os valores são dados do estado atualizados. Por exemplo, se armazenássemos um `username` em state e quiséssemos atualizá-lo, ficaria assim:
+Os desafios anteriores abordaram o `state` dos componentes e como inicializar state no `constructor`. Há também uma personeira de alterar o `state` do componente. React fornece um método para atualizar o componente `state` chamado `setState`. Você chama o método `setState` dentro da sua classe de componente assim: `this.setState()`, passando como parâmetro um objeto com pares de valor chave. As chaves são suas propriedades do estado e os valores são dados do estado atualizados. Por exemplo, se armazenássemos um `username` em state e quiséssemos atualizá-lo, ficaria assim:
 
 ```jsx
 this.setState({
@@ -20,9 +20,9 @@ React espera que você nunca modifique o `state` diretamente, em vez disso sempr
 
 # --instructions--
 
-Há um elemento`button` no editor de código que tem um manipulador `onClick()`. Este manipulador é acionado quando o `button` recebe um evento de clique no navegador e executa o método `handleClick` definido no `MyComponent`. Dentro do método `handleClick`, atualize o componente `state` usando `this.setState()`. Defina a propriedade `name` no `state` para ser igual à string `React Rocks!`.
+Há um elemento`button` no editor de código que tem um personipulador `onClick()`. Este personipulador é acionado quando o `button` recebe um evento de clique no navegador e executa o método `handleClick` definido no `MyComponent`. Dentro do método `handleClick`, atualize o componente `state` usando `this.setState()`. Defina a propriedade `name` no `state` para ser igual à string `React Rocks!`.
 
-Clique no botão e veja a atualização do estado renderizado. Não se preocupe se você não entender completamente como o código do manipulador de cliques funciona neste momento. Isso será tratado nos desafios futuros.
+Clique no botão e veja a atualização do estado renderizado. Não se preocupe se você não entender completamente como o código do personipulador de cliques funciona neste momento. Isso será tratado nos desafios futuros.
 
 # --hints--
 

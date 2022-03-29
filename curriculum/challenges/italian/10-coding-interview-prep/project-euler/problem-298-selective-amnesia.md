@@ -8,9 +8,9 @@ dashedName: problem-298-selective-amnesia
 
 # --description--
 
-Larry e Robin giocano un gioco di memoria che coinvolge una sequenza di numeri casuali tra 1 e 10, inclusi, che sono chiamati uno alla volta. Ogni giocatore può ricordare fino a 5 numeri precedenti. Quando il numero chiamato è nella memoria di un giocatore, a quel giocatore viene assegnato un punto. In caso contrario, il giocatore aggiunge il numero chiamato alla sua memoria, rimuovendo un altro numero se la sua memoria è piena.
+Larry e Robin giocano un gioco di memoria che coinvolge una sequenza di numeri casuali tra 1 e 10, inclusi, che childo chiamati uno alla volta. Ogni giocatore può ricordare fino a 5 numeri precedenti. Quando il numero chiamato è nella memoria di un giocatore, a quel giocatore viene assegnato un punto. In caso contrario, il giocatore aggiunge il numero chiamato alla sua memoria, rimuovendo un altro numero se la sua memoria è piena.
 
-Entrambi i giocatori iniziano con memoria vuota. Entrambi i giocatori aggiungono sempre nuovi numeri mancati alla loro memoria, ma usano una strategia diversa nel decidere quale numero rimuovere: la strategia di Larry è quella di rimuovere il numero che non è stato chiamato più lungo. La strategia di Robin è quella di rimuovere il numero che è stato più a lungo nella memoria.
+Entrambi i giocatori iniziano con memoria vuota. Entrambi i giocatori aggiungono sempre nuovi numeri personcati alla loro memoria, ma usano una strategia diversa nel decidere quale numero rimuovere: la strategia di Larry è quella di rimuovere il numero che non è stato chiamato più lungo. La strategia di Robin è quella di rimuovere il numero che è stato più a lungo nella memoria.
 
 Esempio di gioco:
 

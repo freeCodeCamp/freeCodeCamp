@@ -8,7 +8,7 @@ dashedName: problem-427-n-sequences
 
 # --description--
 
-Una sequenza di numeri interi $S = \\{s_i\\}$ è chiamata una $n$-sequenza se ha $n$ elementi e ogni elemento $s_i$ soddisfa $1 ≤ s_i ≤ n$. Quindi ci sono $n^n$ $n$-sequenze distinte in totale.
+Una sequenza di numeri interi $S = \\{s_i\\}$ è chiamata una $n$-sequenza se ha $n$ elementi e ogni elemento $s_i$ soddisfa $1 ≤ s_i ≤ n$. Quindi ci childo $n^n$ $n$-sequenze distinte in totale.
 
 Per esempio, la sequenza $S = \\{1, 5, 5, 10, 7, 7, 7, 2, 3, 7\\}$ è una 10-sequenza.
 

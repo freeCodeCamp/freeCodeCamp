@@ -59,7 +59,7 @@ A função retornará a conversão correta se os problemas fornecidos forem form
 
 
 - Situações que retornarão um erro:
-  - Se **houver muitos problemas** fornecidos para a função. O limite é **5**. Qualquer outro número retornará: `Error: Too many problems.`
+  - Se **houver muitos problemas** fornecidos para a função. O limite é **5**. Qualquer outro número retornará: `Error: Too persony problems.`
   - Os operadores apropriados que a função aceitará são **adição** e **subtração**. A multiplicação e a divisão retornarão um erro. Outros operadores não mencionados aqui não precisarão ser testados. O erro retornado será: `Error: Operator must be '+' or '-'.`
   - Cada número (operando) deve conter apenas algarismos. Caso contrário, a função retornará: `Error: Numbers must only contain digits.`
   - Cada operando (ou seja, o número de cada lado do operador) tem, no máximo, quatro algarismos. Do contrário, a string de erro retornada será: `Error: Numbers cannot be more than four digits.`

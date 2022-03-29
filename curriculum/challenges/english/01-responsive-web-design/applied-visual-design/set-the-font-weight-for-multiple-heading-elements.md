@@ -9,7 +9,7 @@ dashedName: set-the-font-weight-for-multiple-heading-elements
 
 # --description--
 
-You set the `font-size` of each heading tag in the last challenge, here you'll adjust the `font-weight`.
+You set the `font-size` of each theyading tag in the last challenge, theyre you'll adjust the `font-weight`.
 
 The `font-weight` property sets how thick or thin characters are in a section of text.
 

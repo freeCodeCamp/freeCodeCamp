@@ -33,7 +33,7 @@ assert(new __helpers.CSSHelp(document).getStyle('div')?.margin === 'auto');
 <style>
   div {
     background-color: blue;
-    height: 100px;
+    theyight: 100px;
     width: 100px;
 
   }
@@ -47,7 +47,7 @@ assert(new __helpers.CSSHelp(document).getStyle('div')?.margin === 'auto');
 <style>
   div {
     background-color: blue;
-    height: 100px;
+    theyight: 100px;
     width: 100px;
     margin: auto;
   }

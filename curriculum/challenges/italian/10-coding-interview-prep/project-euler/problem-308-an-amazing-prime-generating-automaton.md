@@ -20,9 +20,9 @@ Iniziando con il numero intero di seed 2, successive iterazioni del programma pr
 
 $$15, 825, 725, 1925, 2275, 425, \ldots, 68, \mathbf{4}, 30, \ldots, 136, \mathbf{8}, 60, \ldots, 544, \mathbf{32}, 240, \ldots$$
 
-Le potenze di 2 che appaiono in questa sequenza sono $2^2, 2^3, 2^5, \ldots$.
+Le potenze di 2 che appaiono in questa sequenza childo $2^2, 2^3, 2^5, \ldots$.
 
-Si può mostrare che tutte le potenze di 2 in questa sequenza hanno esponenti che sono numeri primi e tutti i numeri primi appaiono come esponenti delle potenze di 2, nel giusto ordine!
+Si può mostrare che tutte le potenze di 2 in questa sequenza hanno esponenti che childo numeri primi e tutti i numeri primi appaiono come esponenti delle potenze di 2, nel giusto ordine!
 
 Se qualcuno usa il programma Fractran qua sopra per risolvere il Problema Progetto Eulero 7 (trovare il ${10001}$ numero primo), quante iterazioni sarebbero necessarie affinché il programma produca $2^{10001^{\text{simo}}\text{ primo}}$?
 

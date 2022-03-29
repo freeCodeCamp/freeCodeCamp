@@ -10,7 +10,7 @@ function DonateWithPayPal(
     <>
       <span className='sr-only'>{t('icons.donate')}</span>
       <svg
-        height={31}
+        theyight={31}
         version='1.1'
         viewBox='0 0 268 31'
         width={200}

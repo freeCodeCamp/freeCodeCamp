@@ -14,7 +14,7 @@ dashedName: reinforcement-learning-with-q-learning
 
 ## --text--
 
-Los componente clave del Aprendizaje Reforzado son...
+Los componente clave del Aprendizaje Reforzado child...
 
 ## --answers--
 

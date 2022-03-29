@@ -8,7 +8,7 @@ No momento, os tokens são usados apenas para enviar os desafios de Bancos de da
 
 ## Quando eles forem excluídos ou deletados ou removidos
 
-Um token de usuário será excluído quando um usuário sai do freeCodeCamp, redefine seu progresso, exclui a conta ou exclui manualmente o token usando o widget na página de configurações.
+Um token de usuário será excluído quando um usuário sai do freeCodeCamp, redefine seu progresso, exclui a conta ou exclui personualmente o token usando o widget na página de configurações.
 
 ## Como eles funcionam
 

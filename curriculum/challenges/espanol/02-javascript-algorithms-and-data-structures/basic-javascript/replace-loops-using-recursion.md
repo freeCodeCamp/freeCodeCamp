@@ -34,7 +34,7 @@ Sin embargo, nota que `multiply(arr, n) == multiply(arr, n - 1) * arr[n - 1]`. E
   }
 ```
 
-La versión recursiva de `multiply` se desglosa así. En el <dfn>caso base</dfn>, donde `n <= 0`, devuelve 1. Para valores más grandes de `n`, se llama a sí misma, pero con `n - 1`. Esa llamada de función se evalúa de la misma manera, llamando a `multiply` otra vez hasta que `n <= 0`. En este punto, todas las funciones pueden devolver y la `multiply` original devuelve la respuesta.
+La versión recursiva de `multiply` se desglosa así. En el <dfn>caso base</dfn>, donde `n <= 0`, devuelve 1. Para valores más grandes de `n`, se llama a sí misma, pero con `n - 1`. Esa llamada de función se evalúa de la misma personera, llamando a `multiply` otra vez hasta que `n <= 0`. En este punto, todas las funciones pueden devolver y la `multiply` original devuelve la respuesta.
 
 **Nota:** Las funciones recursivas deben tener un caso base cuando devuelven sin tener que llamar a la función de nuevo (en este ejemplo, cuando `n <= 0`), de lo contrario nunca podrán terminar de ejecutarse.
 

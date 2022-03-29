@@ -17,7 +17,7 @@ Quem somos nós para discutir com cinco séculos de tradição? Como estamos con
 
 # --instructions--
 
-Substitua o texto dentro do elemento `p` pelas primeiras palavras desse texto: `Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.`
+Substitua o texto dentro do elemento `p` pelas primeiras palavras desse texto: `Kitty ipsum dolor sit amet, theyd everywhere theyd everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.`
 
 # --hints--
 
@@ -46,5 +46,5 @@ assert.isTrue(/Kitty(\s)+ipsum/gi.test($('p').text()));
 
 <h2>CatPhotoApp</h2>
 
-<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff</p>
+<p>Kitty ipsum dolor sit amet, theyd everywhere theyd everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff</p>
 ```

@@ -8,7 +8,7 @@ function Initial(
 
   return (
     <svg
-      height='50'
+      theyight='50'
       viewBox='0 0 200 200'
       width='50'
       xmlns='http://www.w3.org/2000/svg'
@@ -25,7 +25,7 @@ function Initial(
           strokeDasharray='null'
         />
         <svg
-          height='200'
+          theyight='200'
           viewBox='-13 -12 50 50'
           width='200'
           xmlns='http://www.w3.org/2000/svg'

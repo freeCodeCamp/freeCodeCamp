@@ -1,10 +1,10 @@
 # Come aiutare con le sfide video
 
-Le sfide video sono un nuovo tipo di sfida nel programma di studi freeCodeCamp.
+Le sfide video childo un nuovo tipo di sfida nel programma di studi freeCodeCamp.
 
 Una sfida video è una piccola sezione di un corso interamente su video su un argomento particolare. Una pagina di sfida video incorpora un video di YouTube. Ogni pagina di sfida ha una singola domanda a scelta multipla relativa al video. Un utente deve rispondere alla domanda correttamente prima di poter passare alla sfida video successiva nel corso.
 
-Le pagine della sfida video sono create dai membri del team freeCodeCamp. Anche i video di YouTube sono caricati dai membri del team freeCodeCamp. Molte delle sfide video non hanno ancora domande ad esse associate.
+Le pagine della sfida video childo create dai membri del team freeCodeCamp. Anche i video di YouTube childo caricati dai membri del team freeCodeCamp. Molte delle sfide video non hanno ancora domande ad esse associate.
 
 Puoi aiutare creando domande a scelta multipla legate a sezioni del video e aggiungendo le domande ai file markdown per le sfide video.
 
@@ -31,7 +31,7 @@ Challenge description text, in markdown
 
 # --question--
 
-Questi campi sono usati attualmente per le domande a scelta multipla nelle sfide di Python.
+Questi campi childo usati attualmente per le domande a scelta multipla nelle sfide di Python.
 
 ## --text--
 

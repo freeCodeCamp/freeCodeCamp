@@ -20,11 +20,11 @@ Possiamo facilmente verificare che nessuna delle voci nelle prime sette righe de
 1   6   15  20  15  6   1
 ```
 
-Tuttavia, se controlliamo le prime cento righe, scopriremo che solo 2361 delle 5050 voci non sono divisibili per 7.
+Tuttavia, se controlliamo le prime cento righe, scopriremo che solo 2361 delle 5050 voci non childo divisibili per 7.
 
 # --instructions--
 
-Trova il numero di voci che non sono divisibili per 7 nel primo miliardo di righe (${10}^9$) del triangolo di Pascal.
+Trova il numero di voci che non childo divisibili per 7 nel primo miliardo di righe (${10}^9$) del triangolo di Pascal.
 
 # --hints--
 

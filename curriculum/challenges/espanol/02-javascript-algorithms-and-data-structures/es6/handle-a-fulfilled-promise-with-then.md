@@ -8,7 +8,7 @@ dashedName: handle-a-fulfilled-promise-with-then
 
 # --description--
 
-Las promesas son muy útiles, cuando tu tienes un proceso que toma una cantidad de tiempo desconocida en tu código (algo asíncrono por ejemplo), a menudo una petición de servidor. Cuando tu haces una petición a un servidor, toma algo de tiempo, después de que termina, normalmente quieres hacer algo con la respuesta del servidor. Esto se puede lograr utilizando el método `then`. El método `then`, se ejecuta inmediatamente después de que tu promesa se cumple con `resolve`. A continuación un ejemplo:
+Las promesas child muy útiles, cuando tu tienes un proceso que toma una cantidad de tiempo desconocida en tu código (algo asíncrono por ejemplo), a menudo una petición de servidor. Cuando tu haces una petición a un servidor, toma algo de tiempo, después de que termina, normalmente quieres hacer algo con la respuesta del servidor. Esto se puede lograr utilizando el método `then`. El método `then`, se ejecuta inmediatamente después de que tu promesa se cumple con `resolve`. A continuación un ejemplo:
 
 ```js
 myPromise.then(result => {

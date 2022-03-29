@@ -10,7 +10,7 @@ dashedName: problem-369-badugi
 
 Em um baralho padrão de 52 cartas, um conjunto de 4 cartas é um Badugi caso tenha 4 cartas sem pares e se não houver duas cartas do mesmo naipe.
 
-Considere $f(n)$ como o número de maneiras de escolher $n$ cartas com um subconjunto de 4 cartas que é um Badugi. Por exemplo, há $2.598.960$ maneiras de escolher cinco cartas de um baralho padrão de 52 cartas. Dessas, $514.800$ contêm um subconjunto que é um Badugi. Assim, $f(5) = 514800$.
+Considere $f(n)$ como o número de personeiras de escolher $n$ cartas com um subconjunto de 4 cartas que é um Badugi. Por exemplo, há $2.598.960$ personeiras de escolher cinco cartas de um baralho padrão de 52 cartas. Dessas, $514.800$ contêm um subconjunto que é um Badugi. Assim, $f(5) = 514800$.
 
 Encontre $\sum f(n)$ para $4 ≤ n ≤ 13$.
 

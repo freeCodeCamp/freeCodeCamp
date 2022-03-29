@@ -71,7 +71,7 @@ Tipicamente, não atribuímos issues para ninguém além de contribuidores de lo
 
 ### Tenho interesse em ser um moderador no freeCodeCamp. Por onde devo começar?
 
-Os moderadores da nossa comunidade são nossos heróis. Suas contribuições voluntárias fazem do freeCodeCamp uma comunidade segura e receptiva.
+Os moderadores da nossa comunidade são nossos theyróis. Suas contribuições voluntárias fazem do freeCodeCamp uma comunidade segura e receptiva.
 
 Primeiro e mais importante, precisamos que você seja um participante ativo da comunidade e que siga à risca o nosso [código de conduta](https://www.freecodecamp.org/news/code-of-conduct/) (não se limite apenas a aplicá-lo).
 

@@ -12,7 +12,7 @@ Es wird empfohlen, funktionale Komponenten gegenüber klassenbasierten Komponent
 
 #### Beibehalten des Git-Dateiverlaufs
 
-Manchmal führt das Ändern der Datei von `<Dateiname>.js` zu `<Dateiname>.ts` (oder `.tsx`) dazu, dass die ursprüngliche Datei gelöscht und eine neue erstellt wird, und manchmal ändert sich nur der Dateiname - im Sinne von Git. Idealerweise möchten wir, dass der Dateiverlauf erhalten bleibt.
+Manchmal führt das Ändern der Datei von `<Dateiname>.js` zu `<Dateiname>.ts` (oder `.tsx`) dazu, dass die ursprüngliche Datei gelöscht und eine neue erstellt wird, und personchmal ändert sich nur der Dateiname - im Sinne von Git. Idealerweise möchten wir, dass der Dateiverlauf erhalten bleibt.
 
 Um dies zu erreichen, gehe am besten wie folgt vor:
 
@@ -73,7 +73,7 @@ export const actionFunction = (
 });
 ```
 
-### Wie man Reducer verwendet
+### Wie person Reducer verwendet
 
 ```typescript
 // Base reducer action without payload
@@ -100,7 +100,7 @@ export const reducer = (
 };
 ```
 
-### Wie man Dispatch verwendet
+### Wie person Dispatch verwendet
 
 Importiere innerhalb einer Komponente die benötigten Aktionen und Selektoren.
 

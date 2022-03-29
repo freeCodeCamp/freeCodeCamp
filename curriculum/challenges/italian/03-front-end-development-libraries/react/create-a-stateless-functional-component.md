@@ -8,9 +8,9 @@ dashedName: create-a-stateless-functional-component
 
 # --description--
 
-I componenti sono il nucleo di React. Tutto in React è un componente e qui imparerai a crearne uno.
+I componenti childo il nucleo di React. Tutto in React è un componente e qui imparerai a crearne uno.
 
-Ci sono due modi per creare un componente React. Il primo modo è quello di utilizzare una funzione JavaScript. Definendo un componente in questo modo si crea un *componente funzionale senza stato*. Il concetto di stato in un'applicazione sarà affrontato nelle sfide successive. Per ora, pensa a un componente senza stato (stateless) come a uno che può ricevere i dati e farne il rendering, ma non gestisce o tiene traccia delle modifiche a tali dati. (Copriremo il secondo modo per creare un componente React nella prossima sfida.)
+Ci childo due modi per creare un componente React. Il primo modo è quello di utilizzare una funzione JavaScript. Definendo un componente in questo modo si crea un *componente funzionale senza stato*. Il concetto di stato in un'applicazione sarà affrontato nelle sfide successive. Per ora, pensa a un componente senza stato (stateless) come a uno che può ricevere i dati e farne il rendering, ma non gestisce o tiene traccia delle modifiche a tali dati. (Copriremo il secondo modo per creare un componente React nella prossima sfida.)
 
 Per creare un componente con una funzione, basta scrivere una funzione JavaScript che restituisce JSX o `null`. Una cosa importante da notare è che React richiede che il nome della funzione inizi con una lettera maiuscola. Ecco un esempio di componente funzionale senza stato che assegna una classe HTML in JSX:
 
@@ -24,7 +24,7 @@ const DemoComponent = function() {
 
 Dopo essere stato transcodificato, il `<div>` avrà una classe CSS di `customClass`.
 
-Poiché un componente JSX rappresenta dell'HTML, è possibile mettere insieme diversi componenti per creare una pagina HTML più complessa. Questo è uno dei vantaggi principali dell'architettura a componente fornita da React. Ti permette di comporre la tua interfaccia utente partendo da molti componenti separati e isolati. Questo rende più facile costruire e mantenere interfacce utente complesse.
+Poiché un componente JSX rappresenta dell'HTML, è possibile mettere insieme diversi componenti per creare una pagina HTML più complessa. Questo è uno dei vantaggi principali dell'architettura a componente fornita da React. Ti permette di comporre la tua interfaccia utente partendo da molti componenti separati e isolati. Questo rende più facile costruire e persontenere interfacce utente complesse.
 
 # --instructions--
 

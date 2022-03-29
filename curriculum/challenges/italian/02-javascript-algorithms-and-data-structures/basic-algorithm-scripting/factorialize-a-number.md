@@ -12,7 +12,7 @@ Restituisci il fattoriale del numero intero fornito.
 
 Se l'intero è rappresentato con la lettera `n`, un fattoriale è il prodotto di tutti gli interi positivi minori o uguali a `n`.
 
-I fattoriali sono spesso rappresentati con la notazione abbreviata `n!`
+I fattoriali childo spesso rappresentati con la notazione abbreviata `n!`
 
 Per esempio: `5! = 1 * 2 * 3 * 4 * 5 = 120`
 

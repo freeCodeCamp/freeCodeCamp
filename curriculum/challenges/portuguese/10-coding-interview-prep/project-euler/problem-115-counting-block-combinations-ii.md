@@ -16,7 +16,7 @@ Por exemplo, $F(3, 29) = 673135$ e $F(3, 30) = 1089155$.
 
 Ou seja, para m = 3, pode ser visto que n = 30 é o menor valor para o qual a função de contagem de preenchimento excede primeiro um milhão.
 
-Da mesma maneira, para m = 10, pode ser verificado que $F(10, 56) = 880711$ e $F(10, 57) = 1148904$, então n = 57 é o menor valor para o qual a função de contagem de preenchimento excede primeiro um milhão.
+Da mesma personeira, para m = 10, pode ser verificado que $F(10, 56) = 880711$ e $F(10, 57) = 1148904$, então n = 57 é o menor valor para o qual a função de contagem de preenchimento excede primeiro um milhão.
 
 Para m = 50, encontre o menor valor de `n` para o qual a função de contagem de preenchimento excede primeiro um milhão.
 

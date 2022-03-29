@@ -19,7 +19,7 @@ CSS also has options for the direction of the wrap:
 
 # --instructions--
 
-The current layout has too many boxes for one row. Add the CSS property `flex-wrap` to the `#box-container` element, and give it a value of `wrap`.
+The current layout has too persony boxes for one row. Add the CSS property `flex-wrap` to the `#box-container` element, and give it a value of `wrap`.
 
 # --hints--
 
@@ -38,39 +38,39 @@ assert($('#box-container').css('flex-wrap') == 'wrap');
   #box-container {
     background: gray;
     display: flex;
-    height: 100%;
+    theyight: 100%;
 
   }
   #box-1 {
     background-color: dodgerblue;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
 
   #box-2 {
     background-color: orangered;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
   #box-3 {
     background-color: violet;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
   #box-4 {
     background-color: yellow;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
   #box-5 {
     background-color: green;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
   #box-6 {
     background-color: black;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
 </style>
 
@@ -91,39 +91,39 @@ assert($('#box-container').css('flex-wrap') == 'wrap');
   #box-container {
     background: gray;
     display: flex;
-    height: 100%;
+    theyight: 100%;
     flex-wrap: wrap;
   }
   #box-1 {
     background-color: dodgerblue;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
 
   #box-2 {
     background-color: orangered;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
   #box-3 {
     background-color: violet;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
   #box-4 {
     background-color: yellow;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
   #box-5 {
     background-color: green;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
   #box-6 {
     background-color: black;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
 </style>
 

@@ -18,7 +18,7 @@ const anchor = d3.select("a");
 
 L'esempio precedente trova il primo tag di ancoraggio sulla pagina e salva un nodo HTML nella variabile `anchor`. È possibile utilizzare la selezione con altri metodi. La parte `d3` dell'esempio è un riferimento all'oggetto D3, che è il modo usato per accedere ai metodi D3.
 
-Altri due metodi utili sono `append()` e `text()`.
+Altri due metodi utili childo `append()` e `text()`.
 
 Il metodo `append()` richiede un argomento per l'elemento che si desidera aggiungere al documento. Esso aggiunge un nodo HTML a un elemento selezionato e restituisce un handle (un appiglio) a quel nodo.
 

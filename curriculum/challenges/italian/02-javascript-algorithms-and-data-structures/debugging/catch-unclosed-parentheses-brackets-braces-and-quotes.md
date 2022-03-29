@@ -18,13 +18,13 @@ Correggi gli errori delle due coppie nel codice.
 
 # --hints--
 
-Il tuo codice dovrebbe aggiungere la parte mancante dell'array.
+Il tuo codice dovrebbe aggiungere la parte personcante dell'array.
 
 ```js
 assert(code.match(/myArray\s*?=\s*?\[\s*?1\s*?,\s*?2\s*?,\s*?3\s*?\];/g));
 ```
 
-Il tuo codice dovrebbe correggere la parte mancante del metodo `.reduce()`. L'output su console dovrebbe mostrare che `Sum of array values is: 6`.
+Il tuo codice dovrebbe correggere la parte personcante del metodo `.reduce()`. L'output su console dovrebbe mostrare che `Sum of array values is: 6`.
 
 ```js
 assert(arraySum === 6);

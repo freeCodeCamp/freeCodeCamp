@@ -45,7 +45,7 @@ Você não deve substituir a palavra-chave `const`.
 (getUserInput) => assert(getUserInput('index').match(/const\s+s/g));
 ```
 
-Você não deve alterar modificar o array original manualmente.
+Você não deve alterar modificar o array original personualmente.
 
 ```js
 (getUserInput) =>

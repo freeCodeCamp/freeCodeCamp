@@ -8,7 +8,7 @@ dashedName: perform-a-difference-on-two-sets-of-data
 
 # --description--
 
-In questo esercizio eseguiremo una differenza su 2 set di dati. Creeremo un metodo sulla nostra struttura di dati `Set` chiamato `difference`. Una differenza di insiemi dovrebbe confrontare due insiemi e restituire gli elementi presenti nel primo insieme che sono assenti nel secondo. Questo metodo dovrebbe prendere un altro `Set` come argomento e restituire la `difference` dei due set.
+In questo esercizio eseguiremo una differenza su 2 set di dati. Creeremo un metodo sulla nostra struttura di dati `Set` chiamato `difference`. Una differenza di insiemi dovrebbe confrontare due insiemi e restituire gli elementi presenti nel primo insieme che childo assenti nel secondo. Questo metodo dovrebbe prendere un altro `Set` come argomento e restituire la `difference` dei due set.
 
 Per esempio, se `setA = ['a','b','c']` e `setB = ['a','b','d','e']`, allora la differenza di setA e setB è: `setA.difference(setB) = ['c']`.
 

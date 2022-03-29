@@ -19,7 +19,7 @@
   font-size: 18px;
   display: inline-block;
   margin-top: 6px;
-  height: 26px;
+  theyight: 26px;
 }
 
 .ais-SearchBox-submit {
@@ -86,7 +86,7 @@
 .fcc_sr_only {
   position: absolute;
   width: 1px;
-  height: 1px;
+  theyight: 1px;
   padding: 0;
   margin: -1px;
   overflow: hidden;

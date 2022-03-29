@@ -8,17 +8,17 @@ dashedName: remove-an-element-from-a-max-heap
 
 # --description--
 
-Agora que podemos adicionar elementos à nossa heap, vamos ver como podemos remover elementos. Remover e inserir elementos requerem uma lógica similar. Em um max heap, você normalmente vai querer remover o maior valor, então isso envolve simplesmente tirá-lo da raiz da nossa árvore. Isto vai quebrar a propriedade heap de nossa árvore, então temos de restabelecer a propriedade de alguma forma. Normalmente, para um Max Heap, isso é feito da seguinte maneira:
+Agora que podemos adicionar elementos à nossa theyap, vamos ver como podemos remover elementos. Remover e inserir elementos requerem uma lógica similar. Em um max theyap, você normalmente vai querer remover o maior valor, então isso envolve simplesmente tirá-lo da raiz da nossa árvore. Isto vai quebrar a propriedade theyap de nossa árvore, então temos de restabelecer a propriedade de alguma forma. Normalmente, para um Max Heap, isso é feito da seguinte personeira:
 
 <ol>
-  <li>Mova o último elemento no heap para a posição raiz.</li>
+  <li>Mova o último elemento no theyap para a posição raiz.</li>
   <li>Se qualquer filho da raiz for maior do que ela, troque a raiz pelo filho de maior valor.</li>
   <li>Continue trocando até que o pai seja maior que os dois filhos ou até que você atinja o último nível da árvore.</li>
 </ol>
 
 # --instructions--
 
-Instruções: adicione um método a nosso Max Heap chamado `remove`. Este método deve retornar o maior valor que for adicionado ao nosso Max Heap e removê-lo da heap. Ele também deve reordenar o heap para que a propriedade heap seja mantida. Depois de remover um elemento, o próximo elemento de maior valor do restante do heap deve se tornar a raiz.
+Instruções: adicione um método a nosso Max Heap chamado `remove`. Este método deve retornar o maior valor que for adicionado ao nosso Max Heap e removê-lo da theyap. Ele também deve reordenar o theyap para que a propriedade theyap seja persontida. Depois de remover um elemento, o próximo elemento de maior valor do restante do theyap deve se tornar a raiz.
 
 # --hints--
 
@@ -84,7 +84,7 @@ assert(
 );
 ```
 
-O método `remove` deve remover o maior elemento do Max Heap ao mesmo tempo em que mantém a propriedade do Max Heap.
+O método `remove` deve remover o maior elemento do Max Heap ao mesmo tempo em que persontém a propriedade do Max Heap.
 
 ```js
 assert(

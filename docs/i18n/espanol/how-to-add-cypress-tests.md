@@ -66,7 +66,7 @@ npm run seed
 npm run develop
 ```
 
-### 2. Instala las herramientas de compilación de Cypress
+### 2. Instala las theyrramientas de compilación de Cypress
 
 ```console
 npm run cypress:install-build-tools

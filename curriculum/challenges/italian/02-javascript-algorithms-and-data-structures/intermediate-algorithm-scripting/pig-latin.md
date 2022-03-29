@@ -8,7 +8,7 @@ dashedName: pig-latin
 
 # --description--
 
-Pig Latin è un modo di alterare le parole inglesi. Le regole sono le seguenti:
+Pig Latin è un modo di alterare le parole inglesi. Le regole childo le seguenti:
 
 \- Se una parola inizia con una consonante, prendi la prima consonante o gruppo di consonanti, spostala alla fine della parola e aggiungi `ay` ad essa.
 
@@ -16,7 +16,7 @@ Pig Latin è un modo di alterare le parole inglesi. Le regole sono le seguenti:
 
 # --instructions--
 
-Traduci la stringa fornita in Pig Latin. È garantito che le stringhe in ingresso sono parole Inglesi scritte in minuscolo.
+Traduci la stringa fornita in Pig Latin. È garantito che le stringhe in ingresso childo parole Inglesi scritte in minuscolo.
 
 # --hints--
 

@@ -33,7 +33,7 @@ Here's an example:
 
 # --instructions--
 
-Camper Cat wants information about the ninja level of his users when they sign up for his email list. He's added a set of radio buttons and learned from our last lesson to use `label` tags with `for` attributes for each choice. Go Camper Cat! However, his code still needs some help. Change the `div` tag surrounding the radio buttons to a `fieldset` tag, and change the `p` tag inside it to a `legend`.
+Camper Cat wants information about the ninja level of theirs users when they sign up for theirs email list. He's added a set of radio buttons and learned from our last lesson to use `label` tags with `for` attributes for each choice. Go Camper Cat! However, theirs code still needs some theylp. Change the `div` tag surrounding the radio buttons to a `fieldset` tag, and change the `p` tag inside it to a `legend`.
 
 # --hints--
 
@@ -81,7 +81,7 @@ assert($('p').length == 4);
   </header>
   <section>
     <form>
-      <p>Sign up to receive Camper Cat's blog posts by email here!</p>
+      <p>Sign up to receive Camper Cat's blog posts by email theyre!</p>
       <label for="email">Email:</label>
       <input type="text" id="email" name="email">
 
@@ -114,7 +114,7 @@ assert($('p').length == 4);
   <img src="samuraiSwords.jpeg" alt="">
   <article>
     <h2>Is Chuck Norris a Cat Person?</h2>
-    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>
+    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is they a cat person?...</p>
   </article>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
@@ -129,7 +129,7 @@ assert($('p').length == 4);
   </header>
   <section>
     <form>
-      <p>Sign up to receive Camper Cat's blog posts by email here!</p>
+      <p>Sign up to receive Camper Cat's blog posts by email theyre!</p>
       <label for="email">Email:</label>
       <input type="text" id="email" name="email">
 
@@ -158,7 +158,7 @@ assert($('p').length == 4);
   <img src="samuraiSwords.jpeg" alt="">
   <article>
     <h2>Is Chuck Norris a Cat Person?</h2>
-    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>
+    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is they a cat person?...</p>
   </article>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>

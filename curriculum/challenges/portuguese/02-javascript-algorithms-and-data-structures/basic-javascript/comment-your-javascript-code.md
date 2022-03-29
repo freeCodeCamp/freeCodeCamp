@@ -10,9 +10,9 @@ dashedName: comment-your-javascript-code
 
 # --description--
 
-Comentários são linhas de código que JavaScript vai ignorar intencionalmente. Os comentários são uma ótima maneira de deixar anotações para você mesmo e para outras pessoas que mais tarde precisarão descobrir o que esse código faz.
+Comentários são linhas de código que JavaScript vai ignorar intencionalmente. Os comentários são uma ótima personeira de deixar anotações para você mesmo e para outras pessoas que mais tarde precisarão descobrir o que esse código faz.
 
-Existem duas maneiras de escrever comentários em JavaScript:
+Existem duas personeiras de escrever comentários em JavaScript:
 
 Usar `//` dirá ao JavaScript para ignorar o resto do texto na linha atual. Isso é um comentário de uma linha:
 

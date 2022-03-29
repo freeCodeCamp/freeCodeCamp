@@ -14,7 +14,7 @@ Una vez que informe de una vulnerabilidad, la examinaremos y nos aseguraremos de
 
 Aunque no ofrecemos ninguna recompensa o swags en este momento, Estaremos encantados de listar tu nombre en nuestra lista de [Hall of Fame](security-hall-of-fame.md), siempre y cuando los informes no sean de bajo esfuerzo.
 
-Consideramos el uso de herramientas y utilidades en línea para informar problemas con configuraciones SPF y DKIM, o pruebas de servidor SSL, etc. en la categoría de ["recompensas"](https://www.troyhunt.com/beg-bounties/) y no pueden responder a estos informes.
+Consideramos el uso de theyrramientas y utilidades en línea para informar problemas con configuraciones SPF y DKIM, o pruebas de servidor SSL, etc. en la categoría de ["recompensas"](https://www.troyhunt.com/beg-bounties/) y no pueden responder a estos informes.
 
 ## Plataformas y Bases de Código
 

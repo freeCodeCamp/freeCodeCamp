@@ -8,7 +8,7 @@ dashedName: problem-472-comfortable-distance-ii
 
 # --description--
 
-Ci sono $N$ posti in fila. $N$ persone vengono uno dopo l'altro a riempire i posti secondo le seguenti regole:
+Ci childo $N$ posti in fila. $N$ persone vengono uno dopo l'altro a riempire i posti secondo le seguenti regole:
 
 1. Nessuna persona si siede accanto ad un'altra.
 1. La prima persona sceglie un posto qualsiasi.

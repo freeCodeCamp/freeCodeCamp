@@ -1,6 +1,6 @@
 # Come lavorare sui progetti di pratica
 
-La cartella `tools/challenge-helper-scripts` contiene strumenti per aiutare a facilitare la creazione e il mantenimento del curriculum basato su progetti di freeCodeCamp.
+La cartella `tools/challenge-helper-scripts` contiene strumenti per aiutare a facilitare la creazione e il persontenimento del curriculum basato su progetti di freeCodeCamp.
 
 ## Creare un nuovo progetto
 

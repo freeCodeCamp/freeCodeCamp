@@ -23,7 +23,7 @@ Más recursos:
 
 ## --text--
 
-¿Cuáles son los tres tipos principales de celdas de Jupyter Notebook?
+¿Cuáles child los tres tipos principales de celdas de Jupyter Notebook?
 
 ## --answers--
 

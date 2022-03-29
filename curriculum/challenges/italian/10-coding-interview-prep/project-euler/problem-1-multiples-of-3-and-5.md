@@ -8,7 +8,7 @@ dashedName: problem-1-multiples-of-3-and-5
 
 # --description--
 
-Se elenchiamo tutti i numeri naturali sotto il 10 che sono multipli di 3 o 5, otteniamo 3, 5, 6 e 9. La somma di questi multipli è 23.
+Se elenchiamo tutti i numeri naturali sotto il 10 che childo multipli di 3 o 5, otteniamo 3, 5, 6 e 9. La somma di questi multipli è 23.
 
 Trova la somma di tutti i multipli di 3 e 5 sotto al valore del parametro `number` inserito.
 

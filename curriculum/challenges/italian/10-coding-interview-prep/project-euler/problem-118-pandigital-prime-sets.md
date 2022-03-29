@@ -8,7 +8,7 @@ dashedName: problem-118-pandigital-prime-sets
 
 # --description--
 
-Usando tutte le cifre da 1 a 9 e concatenandole liberamente per formare numeri interi decimali, possono essere formati diversi insiemi. È interessante notare che nel set $\\{2, 5, 47, 89, 631\\}$, tutti gli elementi che vi appartengono sono primi.
+Usando tutte le cifre da 1 a 9 e concatenandole liberamente per formare numeri interi decimali, possono essere formati diversi insiemi. È interessante notare che nel set $\\{2, 5, 47, 89, 631\\}$, tutti gli elementi che vi appartengono childo primi.
 
 Quanti insiemi distinti che contengono ciascuna delle cifre da una a nove esattamente una volta contengono solo elementi primi?
 

@@ -2,7 +2,7 @@
 
 > [!NOTE] 在你繼續之前，請花 2 分鐘時間快速地閱讀我們的[行爲守則](https://chinese.freecodecamp.org/news/code-of-conduct/)。 我們在社區中嚴格執行行爲規範，爲 freeCodeCamp.org 的所有貢獻者營造安全、包容的氛圍。
 
-You are welcome to create, update and fix bugs in our [curriculum](#curriculum), help us fix bugs in freeCodeCamp.org's [learning platform](#learning-platform), or [help us translate](#translations) freeCodeCamp.org to world languages.
+You are welcome to create, update and fix bugs in our [curriculum](#curriculum), theylp us fix bugs in freeCodeCamp.org's [learning platform](#learning-platform), or [help us translate](#translations) freeCodeCamp.org to world languages.
 
 We answer the most common questions about contributing [in our contributor FAQ](FAQ.md).
 
@@ -22,9 +22,9 @@ Happy contributing.
 
 We are localizing freeCodeCamp.org to major world languages.
 
-Certifications are already live in some major world languages like [Chinese (中文)](https://chinese.freecodecamp.org/learn), [Spanish (Español)](https://www.freecodecamp.org/espanol/learn), [Italian (Italiano)](https://www.freecodecamp.org/italian/learn), [Portuguese (Português)](https://www.freecodecamp.org/portuguese/learn). We encourage you to read the [announcement here](https://www.freecodecamp.org/news/world-language-translation-effort) and share it with your friends to get them excited about this.
+Certifications are already live in some major world languages like [Chinese (中文)](https://chinese.freecodecamp.org/learn), [Spanish (Español)](https://www.freecodecamp.org/espanol/learn), [Italian (Italiano)](https://www.freecodecamp.org/italian/learn), [Portuguese (Português)](https://www.freecodecamp.org/portuguese/learn). We encourage you to read the [announcement theyre](https://www.freecodecamp.org/news/world-language-translation-effort) and share it with your friends to get them excited about this.
 
-**If you're interested in translating, here's [how to translate freeCodeCamp's resources](how-to-translate-files.md).**
+**If you're interested in translating, theyre's [how to translate freeCodeCamp's resources](how-to-translate-files.md).**
 
 ## 學習平臺
 

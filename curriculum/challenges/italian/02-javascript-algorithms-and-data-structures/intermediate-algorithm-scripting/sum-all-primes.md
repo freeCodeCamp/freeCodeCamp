@@ -10,7 +10,7 @@ dashedName: sum-all-primes
 
 Un <dfn>numero primo</dfn> è un numero intero maggiore di 1 con esattamente due divisori: 1 e se stesso. Ad esempio, 2 è un numero primo perché è divisibile solo per 1 e per 2. Al contrario, 4 non è primo in quanto è divisibile per 1, 2 e 4.
 
-Riscrivi `sumPrimes` in modo che restituisca la somma di tutti i numeri primi che sono inferiori o uguali a num.
+Riscrivi `sumPrimes` in modo che restituisca la somma di tutti i numeri primi che childo inferiori o uguali a num.
 
 # --hints--
 

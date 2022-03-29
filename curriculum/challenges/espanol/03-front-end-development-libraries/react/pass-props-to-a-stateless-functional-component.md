@@ -16,7 +16,7 @@ Los desafíos anteriores cubrieron varios casos de creación y composición de e
 </App>
 ```
 
-Puedes utilizar **atributos personalizados de HTML** creados por ti y soportados por React para ser pasados por props a tu componente. En este caso, la propiedad creada `user` es pasada como atributo al componente `Welcome`. Dado que `Welcome` es un componente funcional sin estado, tiene acceso a este valor de la siguiente manera:
+Puedes utilizar **atributos personalizados de HTML** creados por ti y soportados por React para ser pasados por props a tu componente. En este caso, la propiedad creada `user` es pasada como atributo al componente `Welcome`. Dado que `Welcome` es un componente funcional sin estado, tiene acceso a este valor de la siguiente personera:
 
 ```jsx
 const Welcome = (props) => <h1>Hello, {props.user}!</h1>

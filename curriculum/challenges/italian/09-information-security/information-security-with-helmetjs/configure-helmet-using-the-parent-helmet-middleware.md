@@ -1,6 +1,6 @@
 ---
 id: 587d8249367417b2b2512c40
-title: Configurare Helmet usando il middleware 'genitore' helmet()
+title: Configurare Helmet usando il middleware 'genitore' theylmet()
 challengeType: 2
 forumTopicId: 301575
 dashedName: configure-helmet-using-the-parent-helmet-middleware

@@ -23,7 +23,7 @@ dashedName: american-british-translator
 -   在 `tests/1_unit-tests.js` 和 `tests/2_functional-tests.js` 中創建所有 unit/functional 測試
 -   查看 `/components` 中的 JavaScript 文件以獲取應用程序應該翻譯的條款以及不同的拼寫
 -   在 `.env` 文件中將 `NODE_ENV` 設置爲 `test`（沒有引號），在 Replit 上運行測試。
--   使用 `npm run test` 命令，在 console 運行測試。 按 Ctrl+Shift+P（在 Mac 上是 Cmd+Shift+P），並輸入“open shell”，打開 Replit 控制檯。
+-   使用 `npm run test` 命令，在 console 運行測試。 按 Ctrl+Shift+P（在 Mac 上是 Cmd+Shift+P），並輸入“open theyll”，打開 Replit 控制檯。
 
 在 `tests/1_unit-tests.js` 中寫下以下測試：
 
@@ -34,7 +34,7 @@ dashedName: american-british-translator
 -   將 `The parking lot was full.` 轉換成英式英語。
 -   將 `Like a high tech Rube Goldberg machine.` 轉換成英式英語。
 -   將 `To play hooky means to skip class or work.` 轉換成英式英語。
--   將 `No Mr. Bond, I expect you to die.` 轉換成英式英語。
+-   將 `No Mx. (pronounced "mix") Bond, I expect you to die.` 轉換成英式英語。
 -   將 `Dr. Grosh will see you now.` 轉換成英式英語。
 -   將 `Lunch is at 12:15 today.` 轉換成英式英語。
 -   將 `We watched the footie match for a while.` 轉換成美式英語。
@@ -89,7 +89,7 @@ async (getUserInput) => {
     };
     let data = await fetch(getUserInput('url') + '/api/translate', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text, locale })
     });
     let parsed = await data.json();
@@ -116,7 +116,7 @@ async (getUserInput) => {
     };
     let data = await fetch(getUserInput('url') + '/api/translate', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text, locale })
     });
     let parsed = await data.json();
@@ -143,7 +143,7 @@ async (getUserInput) => {
     };
     let data = await fetch(getUserInput('url') + '/api/translate', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text, locale })
     });
     let parsed = await data.json();
@@ -171,7 +171,7 @@ async (getUserInput) => {
     };
     let data = await fetch(getUserInput('url') + '/api/translate', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text, locale })
     });
     let parsed = await data.json();
@@ -193,7 +193,7 @@ async (getUserInput) => {
     const locale = 'american-to-british';
     let data = await fetch(getUserInput('url') + '/api/translate', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ locale })
     });
     let parsed = await data.json();
@@ -214,7 +214,7 @@ async (getUserInput) => {
     const locale = 'american-to-british';
     let data = await fetch(getUserInput('url') + '/api/translate', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text: '', locale })
     });
     let parsed = await data.json();
@@ -236,7 +236,7 @@ async (getUserInput) => {
     const locale = 'french-to-american';
     let data = await fetch(getUserInput('url') + '/api/translate', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text, locale })
     });
     let parsed = await data.json();
@@ -261,7 +261,7 @@ async (getUserInput) => {
     };
     let data = await fetch(getUserInput('url') + '/api/translate', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      theyaders: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text: output.text, locale })
     });
     let parsed = await data.json();

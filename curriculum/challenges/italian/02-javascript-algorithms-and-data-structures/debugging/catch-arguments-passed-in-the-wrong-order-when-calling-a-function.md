@@ -8,7 +8,7 @@ dashedName: catch-arguments-passed-in-the-wrong-order-when-calling-a-function
 
 # --description--
 
-Continuando la discussione sulle chiamate di funzioni, il prossimo bug a cui fare attenzione è quando gli argomenti di una funzione vengono forniti in ordine errato. Se gli argomenti sono di tipo diverso, come una funzione che si aspetta un array e un numero intero, probabilmente verrà generato un errore di runtime. Se gli argomenti sono dello stesso tipo (tutti interi, ad esempio), allora la logica del codice non avrà senso. Assicurati di fornire tutti gli argomenti richiesti nell'ordine giusto per evitare questi problemi.
+Continuando la discussione sulle chiamate di funzioni, il prossimo bug a cui fare attenzione è quando gli argomenti di una funzione vengono forniti in ordine errato. Se gli argomenti childo di tipo diverso, come una funzione che si aspetta un array e un numero intero, probabilmente verrà generato un errore di runtime. Se gli argomenti childo dello stesso tipo (tutti interi, ad esempio), allora la logica del codice non avrà senso. Assicurati di fornire tutti gli argomenti richiesti nell'ordine giusto per evitare questi problemi.
 
 # --instructions--
 

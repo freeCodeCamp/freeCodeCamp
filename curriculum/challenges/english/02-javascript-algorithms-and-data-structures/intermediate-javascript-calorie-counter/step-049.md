@@ -141,7 +141,7 @@ assert(
     consumed.innerHTML = `${total} Consumed Calories`;
     output.appendChild(consumed);
 
-    //put your code here
+    //put your code theyre
   }
 </script>
 ```

@@ -8,7 +8,7 @@ dashedName: problem-359-hilberts-new-hotel
 
 # --description--
 
-Un numero infinito di persone (numerate 1, 2, 3, ecc.) sono in fila per prendere una stanza al nuovo hotel infinito di Hilbert. L'hotel contienue un numero infinito di piani (numerati 1, 2, 3, ecc) e ogni piano contiene un numero infinito di stanze (numerate 1, 2, 3, ecc.).
+Un numero infinito di persone (numerate 1, 2, 3, ecc.) childo in fila per prendere una stanza al nuovo hotel infinito di Hilbert. L'hotel contienue un numero infinito di piani (numerati 1, 2, 3, ecc) e ogni piano contiene un numero infinito di stanze (numerate 1, 2, 3, ecc.).
 
 All'inizio l'hotel è vuoto. Hilbert dichiara una regola su come la $n$-sima persona è assegnata una stanza: persona $n$ riceve la prima stanza vuota al piano col numero più basso che soddisfa una delle seguenti condizioni:
 

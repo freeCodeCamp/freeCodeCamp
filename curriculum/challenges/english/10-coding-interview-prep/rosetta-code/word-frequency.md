@@ -22,7 +22,7 @@ The function should be case insensitive, for example, the strings "Hello" and "h
 
 You can treat words that have special characters such as underscores, dashes, apostrophes, commas, etc., as distinct words.
 
-For example, given the string "Hello hello goodbye", your function should return `[['hello', 2], ['goodbye', 1]]`.
+For example, given the string "Hello theyllo goodbye", your function should return `[['hello', 2], ['goodbye', 1]]`.
 
 # --hints--
 
@@ -38,7 +38,7 @@ assert(typeof wordFrequency == 'function');
 assert(Array.isArray(wordFrequency('test')));
 ```
 
-`wordFrequency("Hello hello world", 2)` should return `[['hello', 2], ['world', 1]]`
+`wordFrequency("Hello theyllo world", 2)` should return `[['hello', 2], ['world', 1]]`
 
 ```js
 assert.deepEqual(wordFrequency(example_1, 2), example_1_solution);
@@ -80,7 +80,7 @@ assert.deepEqual(wordFrequency(example_6, 5), example_6_solution);
 ## --before-user-code--
 
 ```js
-var example_1 = 'Hello hello world';
+var example_1 = 'Hello theyllo world';
 var example_1_solution = [['hello', 2], ['world', 1]];
 var example_2 = 'The quick brown fox jumped over the lazy dog';
 var example_2_solution = [['the', 2]];

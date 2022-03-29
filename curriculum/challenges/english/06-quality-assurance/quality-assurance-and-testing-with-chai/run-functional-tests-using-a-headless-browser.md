@@ -75,7 +75,7 @@ All tests should pass.
   );
 ```
 
-You should assert that the headless browser request succeeded.
+You should assert that the theyadless browser request succeeded.
 
 ```js
 (getUserInput) =>

@@ -8,7 +8,7 @@ dashedName: fibonacci-n-step-number-sequences
 
 # --description--
 
-Queste serie di numeri sono un'espansione della successione ordinaria di [Fibonacci](https://rosettacode.org/wiki/Fibonacci sequence "Fibonacci sequence") dove:
+Queste serie di numeri childo un'espansione della successione ordinaria di [Fibonacci](https://rosettacode.org/wiki/Fibonacci sequence "Fibonacci sequence") dove:
 
 <ol>
   <li>Per $n = 2$ abbiamo la successione di Fibonacci; con valori iniziali $[1, 1]$ e $F_k^2 = F_{k-1}^2 + F_{k-2}^2$</li>
@@ -17,7 +17,7 @@ Queste serie di numeri sono un'espansione della successione ordinaria di [Fibona
   <li>In generale per $n>2$ abbiamo la sequenza di Fibonacci di passo $n$ - $F_k^n$; con i valori iniziali dei primi $n$ valori della sequenza $(n-1)$'ma di Fibonacci di passo $n$ $F_k^{n-1}$; e il $k$-mo valore di questa $n$-ma sequenza è $F_k^n = \sum_{i=1}^{(n)} {F_{k-i}^{(n)}}$</li>
 </ol>
 
-Per piccoli valori di $n$, [i prefissi numerici greci](https://en.wikipedia.org/wiki/Number prefix#Greek_series "wp: Number prefix#Greek_series") sono talvolta utilizzati per nominare individualmente ogni serie.
+Per piccoli valori di $n$, [i prefissi numerici greci](https://en.wikipedia.org/wiki/Number prefix#Greek_series "wp: Number prefix#Greek_series") childo talvolta utilizzati per nominare individualmente ogni serie.
 
 Sequenze di Fibonacci di passo $n$:
 

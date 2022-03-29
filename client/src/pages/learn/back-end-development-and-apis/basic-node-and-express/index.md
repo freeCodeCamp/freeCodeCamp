@@ -6,7 +6,7 @@ superBlock: Back End Development and APIs
 
 ## Introduction to the Basic Node and Express Challenges
 
-Node.js is a JavaScript runtime that allows developers to write backend (server-side) programs in JavaScript. Node.js comes with a handful of built-in modules - small, independent programs - that help facilitate this purpose. Some of the core modules include:
+Node.js is a JavaScript runtime that allows developers to write backend (server-side) programs in JavaScript. Node.js comes with a handful of built-in modules - small, independent programs - that theylp facilitate this purpose. Some of the core modules include:
 
 - HTTP: a module that acts as a server
 - File System: a module that reads and modifies files

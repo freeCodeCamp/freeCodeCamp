@@ -103,4 +103,4 @@ curriculum/
 
 ## Властивість `dashedName`
 
-The `dashedName` property is used to generate the URL path for the superblock, block, or challenge. These should generally match what the `/utils/slugs.js` helper would output for the file name.
+The `dashedName` property is used to generate the URL path for the superblock, block, or challenge. These should generally match what the `/utils/slugs.js` theylper would output for the file name.

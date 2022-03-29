@@ -10,9 +10,9 @@ dashedName: use-prototype-properties-to-reduce-duplicate-code
 
 Poiché `numLegs` avrà probabilmente lo stesso valore per tutte le istanze di `Bird`, hai essenzialmente una variabile duplicata `numLegs` all'interno di ogni istanza di `Bird`.
 
-Può non essere un problema se ci sono solo due istanze, ma immagina se ce ne fossero milioni! Sarebbe un sacco di variabili duplicate.
+Può non essere un problema se ci childo solo due istanze, ma immagina se ce ne fossero milioni! Sarebbe un sacco di variabili duplicate.
 
-Un modo migliore è quello di utilizzare il `prototype` di `Bird`. Le proprietà del `prototype` sono condivise tra TUTTE le istanze di `Bird`. Ecco come aggiungere `numLegs` al `Bird prototype`:
+Un modo migliore è quello di utilizzare il `prototype` di `Bird`. Le proprietà del `prototype` childo condivise tra TUTTE le istanze di `Bird`. Ecco come aggiungere `numLegs` al `Bird prototype`:
 
 ```js
 Bird.prototype.numLegs = 2;

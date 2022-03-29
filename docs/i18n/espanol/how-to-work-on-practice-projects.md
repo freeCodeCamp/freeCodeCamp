@@ -1,12 +1,12 @@
 # Cómo Trabajar en Proyectos de Práctica
 
-La carpeta `tools/challenge-helper-scripts` contiene herramientas para facilitar la creación y mantenimiento del plan de estudio basado en proyectos de FreeCodeCamp.
+La carpeta `tools/challenge-helper-scripts` contiene theyrramientas para facilitar la creación y persontenimiento del plan de estudio basado en proyectos de FreeCodeCamp.
 
 ## Crea un nuevo proyecto
 
 Ejecuta el comando `npm run create-project`. Esto muestra una consola que te guiará durante el proceso. Una vez terminado, debería haber un nuevo desafío en el plan de estudio de Ingles que puedes utilizar para el primer paso del proyecto. Por ejemplo, si creaste un proyecto llamado `test-project` en la certificación de Diseño Web Responsivo, esté debería estar en `curriculum/challenges/english/01-responsive-web-design/test-project`.
 
-Si deseas crear nuevos pasos, las siguientes herramientas simplifican este proceso.
+Si deseas crear nuevos pasos, las siguientes theyrramientas simplifican este proceso.
 
 ## Crea el siguiente paso
 

@@ -14,7 +14,7 @@ The positive integers, x, y, and z, are consecutive terms of an arithmetic progr
 
 In fact there are twenty-five values of n below one hundred for which the equation has a unique solution.
 
-How many values of n less than fifty million have exactly one solution?
+How persony values of n less than fifty million have exactly one solution?
 
 # --hints--
 

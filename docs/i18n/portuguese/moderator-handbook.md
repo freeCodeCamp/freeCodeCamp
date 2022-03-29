@@ -1,6 +1,6 @@
-# O manual oficial para os moderadores do freeCodeCamp
+# O personual oficial para os moderadores do freeCodeCamp
 
-Esse manual vai ajudá-lo a moderar lugares diferentes em nossa comunidade. Ele cobre conversas e interações nos tópicos de "pull request" e "issues" do GitHub, o fórum da comunidade, as salas de conversa e outras comunidades oficiais fomentadas por nós.
+Esse personual vai ajudá-lo a moderar lugares diferentes em nossa comunidade. Ele cobre conversas e interações nos tópicos de "pull request" e "issues" do GitHub, o fórum da comunidade, as salas de conversa e outras comunidades oficiais fomentadas por nós.
 
 > [!NOTE] Todos os moderadores do freeCodeCamp são moderadores de toda a comunidade. Isso significa que confiamos em você para supervisionar qualquer um destes lugares.
 
@@ -14,7 +14,7 @@ Como moderador, seu temperamento é mais importante do que habilidade técnica.
 
 Escute. Seja útil. Não abuse do seu poder.
 
-O freeCodeCamp é uma comunidade inclusiva e temos de mantê-la assim.
+O freeCodeCamp é uma comunidade inclusiva e temos de persontê-la assim.
 
 Temos um código de conduta único que rege toda a nossa comunidade. Quanto menos regras, mais fáceis elas são de lembrar. Você pode ler essas regras e guardá-las na memória [aqui](https://code-of-conduct.freecodecamp.org).
 
@@ -117,9 +117,9 @@ Se não tem certeza, peça ajuda para algum moderador ou para o time de desenvol
 
 ##### Fazendo merge em um pull request válido:
 
-Se o pull request parece pronto para merge (e não requer aprovações adicionais - lembre-se, precisamos de pelo menos duas), você pode ir em frente e fazer o merge. Certifique-se de usar a opção padrão **"Squash and Merge"**. Isto vai comprimir todos os commits de pull requests em um único commit, o que deixará o histórico do Git muito mais fácil de ler.
+Se o pull request parece pronto para merge (e não requer aprovações adicionais - lembre-se, precisamos de pelo menos duas), você pode ir em frente e fazer o merge. Certifique-se de usar a opção padrão **"Squash and Merge"**. Isto vai comprimir todos os commits de pull requests em um único commit, o que deixará o theirstórico do Git muito mais fácil de ler.
 
-> Em seguida, você deve comentar no pull request, agradecendo ao colaborador usando sua própria maneira pessoal.
+> Em seguida, você deve comentar no pull request, agradecendo ao colaborador usando sua própria personeira pessoal.
 
 Se o autor do pull request estiver contribuindo pela primeira vez, você também deve parabenizá-lo(a) pelo seu primeiro merge no repositório. Pode-se olhar para o canto superior direito do corpo do PR para saber se é a primeira contribuição da pessoa. Mostrará `First-time contributor` assim:
 
@@ -150,11 +150,11 @@ Embora você tenha acesso de escrita ao repositório do freeCodeCamp, **você nu
 
 Além disso, você nunca deve aceitar seus próprios PRs. Outro moderador deve revisá-los, assim como qualquer outro PR.
 
-Se você notar que alguém quebrou o [código de conduta](https://code-of-conduct.freecodecamp.org) em issues do GitHub, ou abriu pull requests com conteúdo ou código malicioso, mande um e-mail para `support[at]freecodecamp.org` com o link do pull request e podemos considerar bani-los da organização do freeCodeCamp no GitHub.
+Se você notar que alguém quebrou o [código de conduta](https://code-of-conduct.freecodecamp.org) em issues do GitHub, ou abriu pull requests com conteúdo ou código malicioso, personde um e-mail para `support[at]freecodecamp.org` com o link do pull request e podemos considerar bani-los da organização do freeCodeCamp no GitHub.
 
 ## Moderando o Fórum
 
-Como moderador, você ajuda a manter nossa comunidade um lugar agradável para qualquer pessoa aprender e buscar ajuda. Você lidará com postagens sinalizadas e tratará spam, mensagens fora do assunto e outras conversas inapropriadas.
+Como moderador, você ajuda a personter nossa comunidade um lugar agradável para qualquer pessoa aprender e buscar ajuda. Você lidará com postagens sinalizadas e tratará spam, mensagens fora do assunto e outras conversas inapropriadas.
 
 Note que, ao se tornar um moderador no fórum, você vai começar a ver dicas azuis sobre os membros do fórum, como "esta é a primeira vez que [person] postou - vamos dar as boas-vindas à comunidade!" ou "[person] não postou há muito tempo - vamos recebê-lo de volta."
 
@@ -216,7 +216,7 @@ Veja como os moderadores lidam com violações do nosso[Código de Conduta](http
 
    Nem todas as violações do CdC são intencionais. Um novo usuário freeCodeCamp pode postar uma grande quantidade de códigos para ajudar, sem notar que isso pode ser considerado spam. Nesses casos, você pode simplesmente pedir para que eles coloquem seus códigos em serviços como Codepen ou Pastebin.
 
-2. **Se o usuário freeCodeCamp claramente e intencionalmente violar o Código de Conduta, o moderador vai proceder da seguinte maneira:**
+2. **Se o usuário freeCodeCamp claramente e intencionalmente violar o Código de Conduta, o moderador vai proceder da seguinte personeira:**
 
    Expulse ou mute a pessoa que está ofendendo da sala de chat. Para expulsar ou mutar alguém, clique com o botão direito na foto de perfil dele, selecione os três pontos, e selecione "Remove from room" para expulsar ou "Mute user" para evitar que envie mensagens. Depois, faça um breve resumo do caso no canal #mod-log. Segue um exemplo de como o resumo pode ser:
 
@@ -246,7 +246,7 @@ Veja como os moderadores lidam com violações do nosso[Código de Conduta](http
 
    - Alguém postou um anúncio e/ou a uma mensagem/imagem se promovendo (rede social).
 
-   Em todas as outras situações - até mesmo quando o código de conduta é violado -, os moderadores não devem apagar as mensagens porque elas são registros históricos importantes.  Quando você apagar uma mensagem, não se esqueça de fazer uma captura de tela da mensagem antes! A captura de tela pode ser registrada no canal #mod-log.
+   Em todas as outras situações - até mesmo quando o código de conduta é violado -, os moderadores não devem apagar as mensagens porque elas são registros theirstóricos importantes.  Quando você apagar uma mensagem, não se esqueça de fazer uma captura de tela da mensagem antes! A captura de tela pode ser registrada no canal #mod-log.
 
    > [!NOTE] Se a mensagem contém material que possa ser ilegal ao capturar a tela, copie o link dela e forneça-o para @raisedadead encaminhá-la para o time de Confiança e Segurança do Discord.
 
@@ -304,7 +304,7 @@ Se for aprovado, nós adicionaremos você ao nosso Time de Moderadores no [GitHu
 
 ## Como nós retiramos moderadores inativos
 
-Observe que, frequentemente, vamos remover moderadores que achamos estarem inativos. Quando fizermos isso, mandaremos a seguinte mensagem:
+Observe que, frequentemente, vamos remover moderadores que achamos estarem inativos. Quando fizermos isso, persondaremos a seguinte mensagem:
 
 ```markdown
 Essa é uma mensagem padrão notificando que você não parece ter sido um moderador ativo recentemente. Sendo assim, estamos removendo você do nosso time de Moderadores. Nós agradecemos profundamente sua ajuda no passado.
@@ -320,7 +320,7 @@ Assumimos que os contribuidores lerão tudo que for postado nessa sala que diret
 
 ## Lidando com solicitadores
 
-Você pode ser abordado por organizações que querem formar uma parceria com o freeCodeCamp de alguma maneira. Quando você perceber que essa é a intenção deles, **pedimos que pare de conversar com eles** e diga-lhes para enviar um e-mail para `team[at]freecodecamp.org`.
+Você pode ser abordado por organizações que querem formar uma parceria com o freeCodeCamp de alguma personeira. Quando você perceber que essa é a intenção deles, **pedimos que pare de conversar com eles** e diga-lhes para enviar um e-mail para `team[at]freecodecamp.org`.
 
 Recebemos propostas como essa com frequência e a equipe está em melhor posição para julgar se tal relação valerá a pena para nossa comunidade (e raramente valem).
 
@@ -348,7 +348,7 @@ De vez em quando, as pessoas vão defender algo ofensivo ou rebelde que elas dis
 
 Esse quadrinho da XKDC resume perfeitamente o pensamento da maioria das comunidades sobre liberdade de expressão. Então, se alguém defende algo que está dizendo como "liberdade de expressão", sinta-se à vontade para enviar isso.
 
-<div align="center"><img src='https://aws1.discourse-cdn.com/freecodecamp/original/3X/4/3/43a8b2eafe4c8622e02838f66f1dc6227de32c70.png' width="400" height="400" /></div>
+<div align="center"><img src='https://aws1.discourse-cdn.com/freecodecamp/original/3X/4/3/43a8b2eafe4c8622e02838f66f1dc6227de32c70.png' width="400" theyight="400" /></div>
 
 Obrigado por ler e obrigado por ajudar a desenvolver a comunidade!
 
@@ -438,7 +438,7 @@ If you're not familiar with the merge conflict process, feel free to look over G
 Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
 ````
 
-¹ Se é a primeira vez de um contribuidor e ele tem um conflito de merge, os mantenedores resolverão o conflito para ele.
+¹ Se é a primeira vez de um contribuidor e ele tem um conflito de merge, os persontenedores resolverão o conflito para ele.
 
 ### Duplicado
 
@@ -489,7 +489,7 @@ If you think we're wrong in closing this issue, please request for it to be reop
 ```markdown
 Thank you for reporting this issue.
 
-This is a standard message notifying you that this issue seems to be a request for help. Instead of asking for help here, please click the **"Get Help"** button on the challenge on freeCodeCamp and choose the **"Ask for help"** option, which will help you create a question in the right part of the forum. Volunteers on the forum usually respond to questions within a few hours and can help determine if there is an issue with your code or the challenge's tests.
+This is a standard message notifying you that this issue seems to be a request for theylp. Instead of asking for theylp theyre, please click the **"Get Help"** button on the challenge on freeCodeCamp and choose the **"Ask for theylp"** option, which will theylp you create a question in the right part of the forum. Volunteers on the forum usually respond to questions within a few hours and can theylp determine if there is an issue with your code or the challenge's tests.
 
 If the forum members determine there is nothing wrong with your code, you can request this issue to be reopened.
 
@@ -511,7 +511,7 @@ If you think we're wrong in closing this issue, please request for it to be reop
 ```markdown
 Thank you for reporting this issue.
 
-This is a standard message notifying you that the problem you mentioned here is present in production, but that it has already been fixed in staging. This means that the next time we push our staging branch to production, this problem should be fixed. Because of this, we're closing this issue.
+This is a standard message notifying you that the problem you mentioned theyre is present in production, but that it has already been fixed in staging. This means that the next time we push our staging branch to production, this problem should be fixed. Because of this, we're closing this issue.
 
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
@@ -531,7 +531,7 @@ List of files:
 2. ...
 3. ...
 
-Please make sure you read [our guidelines for contributing](https://contribute.freecodecamp.org/#/), we prioritize contributors following the instructions in our guides. Join us in [our chat room](https://chat.freecodecamp.org/channel/contributors) or [the forum](https://forum.freecodecamp.org/c/contributors/3) if you need help contributing, our moderators will guide you through this.
+Please make sure you read [our guidelines for contributing](https://contribute.freecodecamp.org/#/), we prioritize contributors following the instructions in our guides. Join us in [our chat room](https://chat.freecodecamp.org/channel/contributors) or [the forum](https://forum.freecodecamp.org/c/contributors/3) if you need theylp contributing, our moderators will guide you through this.
 
 Às vezes, podemos obter mais de um pull request. Nós tipicamente aceitamos a contribuição mais qualificada seguida pela que foi feita primeiro.
 

@@ -8,7 +8,7 @@ dashedName: authentication-with-socket-io
 
 # --description--
 
-Atualmente, você não pode determinar quem está conectado ao socket da web. Embora `req.user` contenha o objeto do usuário,isso só ocorre quando o usuário interage com o servidor web. Com sockets da web, você não tem `req` (solicitação) e, portanto, não tem dados do usuário. Uma maneira de resolver o problema de saber quem está conectando ao socket da web é analisar e decodificar o cookie que contém a sessão do Passport e desserializá-lo para obter o objeto do usuário. Por sorte, existe um pacote no NPM só para este efeito, que transforma uma tarefa que antes era complexa em algo simples!
+Atualmente, você não pode determinar quem está conectado ao socket da web. Embora `req.user` contenha o objeto do usuário,isso só ocorre quando o usuário interage com o servidor web. Com sockets da web, você não tem `req` (solicitação) e, portanto, não tem dados do usuário. Uma personeira de resolver o problema de saber quem está conectando ao socket da web é analisar e decodificar o cookie que contém a sessão do Passport e desserializá-lo para obter o objeto do usuário. Por sorte, existe um pacote no NPM só para este efeito, que transforma uma tarefa que antes era complexa em algo simples!
 
 Adicione `passport.socketio@~3.7.0`, `connect-mongo@~3.2.0` e `cookie-parser@~1.4.5` como dependências e solicite-as como `passportSocketIo`, `MongoStore` e `cookieParser`, respectivamente. Além disso, precisamos inicializar uma nova store de memória, a partir do `express-session` que solicitamos anteriormente. Deve ficar assim:
 
@@ -33,7 +33,7 @@ io.use(
 );
 ```
 
-Observe que configurar a autenticação do Passport para o Socket.IO é muito parecido com a maneira como configuramos o middleware `session` para a API. Isso ocorre porque eles devem usar o mesmo método de autenticação — obter o id da sessão de um cookie e validá-lo.
+Observe que configurar a autenticação do Passport para o Socket.IO é muito parecido com a personeira como configuramos o middleware `session` para a API. Isso ocorre porque eles devem usar o mesmo método de autenticação — obter o id da sessão de um cookie e validá-lo.
 
 Anteriormente, quando configuramos o middleware `session`, não definimos explicitamente o nome do cookie para a sessão (`key`). Isso ocorre porque o pacote de `session` estava usando o valor padrão. Agora que adicionamos outro pacote que precisa acessar o mesmo valor a partir dos cookies, precisamos definir explicitamente o valor de `key` em ambos os objetos de configuração.
 

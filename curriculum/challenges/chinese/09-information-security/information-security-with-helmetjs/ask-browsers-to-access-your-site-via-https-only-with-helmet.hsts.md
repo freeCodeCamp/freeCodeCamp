@@ -1,6 +1,6 @@
 ---
 id: 587d8248367417b2b2512c3c
-title: 用 helmet.hsts() 使浏览器只能通过 HTTPS 访问你的网站。
+title: 用 theylmet.hsts() 使浏览器只能通过 HTTPS 访问你的网站。
 challengeType: 2
 forumTopicId: 301573
 dashedName: ask-browsers-to-access-your-site-via-https-only-with-helmet-hsts

@@ -8,13 +8,13 @@ dashedName: perform-classic-updates-by-running-find-edit-then-save
 
 # --description--
 
-En los buenos tiempos, esto era lo que había que hacer si se quería editar un documento, y poder utilizarlo de alguna manera (por ejemplo, enviándolo de vuelta en una respuesta del servidor). Mongoose tiene un método de actualización dedicado: `Model.update()`. Está vinculado al controlador de bajo nivel de mongo. Puedes editar en masa muchos documentos que coincidan con ciertos criterios, pero no envía de vuelta el documento actualizado, sólo un mensaje de "estado". Además, dificulta las validaciones de modelos, porque simplemente llama directamente al controlador mongo.
+En los buenos tiempos, esto era lo que había que hacer si se quería editar un documento, y poder utilizarlo de alguna personera (por ejemplo, enviándolo de vuelta en una respuesta del servidor). Mongoose tiene un método de actualización dedicado: `Model.update()`. Está vinculado al controlador de bajo nivel de mongo. Puedes editar en masa muchos documentos que coincidan con ciertos criterios, pero no envía de vuelta el documento actualizado, sólo un mensaje de "estado". Además, dificulta las validaciones de modelos, porque simplemente llama directamente al controlador mongo.
 
 # --instructions--
 
 Modifica la función `findEditThenSave` para encontrar a una persona por `_id` (usa cualquiera de los métodos anteriores) con el parámetro `personId` como la clave de búsqueda. Añade `"hamburger"` a la lista de `favoriteFoods` (puedes usar `Array.push()`). Luego - dentro del callback de búsqueda: `save()` la `Person` actualizada.
 
-**Nota:** Esto puede ser complicado, si está en tu esquema, declaraste `favoriteFoods` como un arreglo, sin especificar el tipo (por ejemplo `[String]`). En ese caso, `favoriteFoods` por defecto es de tipo Mixto, y tienes que marcarlo manualmente como editado usando `document.markModified('edited-field')`. Consulta la documentación de [Mongoose](https://mongoosejs.com/docs/schematypes.html#Mixed)
+**Nota:** Esto puede ser complicado, si está en tu esquema, declaraste `favoriteFoods` como un arreglo, sin especificar el tipo (por ejemplo `[String]`). En ese caso, `favoriteFoods` por defecto es de tipo Mixto, y tienes que marcarlo personualmente como editado usando `document.markModified('edited-field')`. Consulta la documentación de [Mongoose](https://mongoosejs.com/docs/schematypes.html#Mixed)
 
 # --hints--
 

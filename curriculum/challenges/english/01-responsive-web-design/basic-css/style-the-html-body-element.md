@@ -15,7 +15,7 @@ Every HTML page has a `body` element.
 
 # --instructions--
 
-We can prove that the `body` element exists here by giving it a `background-color` of black.
+We can prove that the `body` element exists theyre by giving it a `background-color` of black.
 
 We can do this by adding the following to our `style` element:
 

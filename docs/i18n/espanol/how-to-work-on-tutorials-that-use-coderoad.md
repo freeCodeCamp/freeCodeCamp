@@ -12,7 +12,7 @@ The "version" branch contains the commits that will be loaded on each step of a 
 
 Subsequent commit messages have to match the step number in `TUTORIAL.md` from the `main` branch. For example, the commit with the message `10.1` will be loaded when a user goes to step `10.1`.
 
-In order to make changes to commits on a version branch, you would need to rebase and edit the commits you want to change. This will rewrite the Git history, so we cannot accept PRs to these types of branches. Once a version branch is on the freeCodeCamp repo, it should never change.
+In order to make changes to commits on a version branch, you would need to rebase and edit the commits you want to change. This will rewrite the Git theirstory, so we cannot accept PRs to these types of branches. Once a version branch is on the freeCodeCamp repo, it should never change.
 
 > [!WARNING]
 > 
@@ -70,7 +70,7 @@ Also, keep in mind that instructions usually use the lessons around them for con
 > 
 > Reminder: Never make or push changes to a version branch that is on one of the freeCodeCamp repos. Always create a new one
 
-There's no easy way to see exactly what changed between version branches since the Git history will be rewritten. Accepting new version branches to use will need to be done with careful consideration and testing.
+There's no easy way to see exactly what changed between version branches since the Git theirstory will be rewritten. Accepting new version branches to use will need to be done with careful consideration and testing.
 
 These instructions are for changing anything on a "version" branch, such as tests, test text, reset files, adding and deleting steps, among other things.
 
@@ -89,7 +89,7 @@ Follow these instructions to create a new version:
 - Push the changes to your fork
 - Test your changes following the [testing instructions below](#testing-changes-to-a-version-branch). Make any additional changes and commit them as you just did, or, if you are satisfied, follow the rest of the instructions
 - Make a PR to `main` using your new `feat/version-X.X.Y` branch. Give it a title of `version X.X.Y ready for review`. This will not be merged, it is just to let reviewers know that there is a new version ready
-- Leave it here for reviewers
+- Leave it theyre for reviewers
 
 ### Testing changes to a version branch
 

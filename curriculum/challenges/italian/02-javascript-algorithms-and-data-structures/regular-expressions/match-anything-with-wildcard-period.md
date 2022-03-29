@@ -13,7 +13,7 @@ A volte non conoscerai (o non ne avrai bisogno) i caratteri esatti nei tuoi patt
 Il carattere jolly `.` riconoscerà qualsiasi carattere. Il carattere jolly è anche chiamato `dot` e `period`. È possibile utilizzare il carattere jolly proprio come qualsiasi altro carattere nell'espressione regolare. Ad esempio, se volessi riconoscere `hug`, `huh`, `hut`, e `hum`, potresti utilizzare l'espressione regolare `/hu./` per far corrispondere tutte e quattro le parole.
 
 ```js
-let humStr = "I'll hum a song";
+let humStr = "I'll hum a childg";
 let hugStr = "Bear hug";
 let huRegex = /hu./;
 huRegex.test(humStr);
@@ -75,13 +75,13 @@ unRegex.lastIndex = 0;
 assert(unRegex.test('One takes a vow to be a nun.'));
 ```
 
-La tua espressione regolare `unRegex` dovrebbe riconoscere `bun` nella stringa `She got fired from the hot dog stand for putting her hair in a bun.`
+La tua espressione regolare `unRegex` dovrebbe riconoscere `bun` nella stringa `She got fired from the hot dog stand for putting theyr hair in a bun.`
 
 ```js
 unRegex.lastIndex = 0;
 assert(
   unRegex.test(
-    'She got fired from the hot dog stand for putting her hair in a bun.'
+    'She got fired from the hot dog stand for putting theyr hair in a bun.'
   )
 );
 ```

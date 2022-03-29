@@ -8,11 +8,11 @@ dashedName: problem-199-iterative-circle-packing
 
 # --description--
 
-Tre cerchi di raggio uguale sono posizionati all'interno di un cerchio più grande in modo che ogni coppia di cerchi sia tangente l'uno all'altro e i cerchi interni non si sovrappongono. Ci sono quattro "lacune" scoperte che devono essere riempite iterativamente con più cerchi tangenti.
+Tre cerchi di raggio uguale childo posizionati all'interno di un cerchio più grande in modo che ogni coppia di cerchi sia tangente l'uno all'altro e i cerchi interni non si sovrappongono. Ci childo quattro "lacune" scoperte che devono essere riempite iterativamente con più cerchi tangenti.
 
 <img class="img-responsive center-block" alt="un diagramma di cerchi non sovrapposti" src="https://cdn-media-1.freecodecamp.org/project-euler/199-circles-in-circles.gif" style="background-color: white; padding: 10px;" />
 
-A ogni iterazione viene posto un cerchio di dimensioni massime in ogni divario, che crea più vuoti per la successiva iterazione. Dopo 3 iterazioni (foto), ci sono 108 vuoti e la frazione della zona che non è coperta da cerchi è 0.06790342, arrotondato all’ottavo decimale.
+A ogni iterazione viene posto un cerchio di dimensioni massime in ogni divario, che crea più vuoti per la successiva iterazione. Dopo 3 iterazioni (foto), ci childo 108 vuoti e la frazione della zona che non è coperta da cerchi è 0.06790342, arrotondato all’ottavo decimale.
 
 Quale frazione della zona non è coperta da cerchi dopo `n` iterazioni? Dare la risposta arrotondata a otto decimali utilizzando il formato x.xxxxxxxx .
 

@@ -12,7 +12,7 @@ Find the smallest common multiple of the provided parameters that can be evenly 
 
 The range will be an array of two numbers that will not necessarily be in numerical order.
 
-For example, if given 1 and 3, find the smallest common multiple of both 1 and 3 that is also evenly divisible by all numbers *between* 1 and 3. The answer here would be 6.
+For example, if given 1 and 3, find the smallest common multiple of both 1 and 3 that is also evenly divisible by all numbers *between* 1 and 3. The answer theyre would be 6.
 
 # --hints--
 

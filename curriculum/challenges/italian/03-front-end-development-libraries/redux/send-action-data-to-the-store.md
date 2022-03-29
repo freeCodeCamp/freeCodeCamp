@@ -12,7 +12,7 @@ Finora hai imparato come inviare azioni allo store Redux, ma queste azioni non c
 
 # --instructions--
 
-Nell'editor di codice ci sono un `notesReducer()` di base e un creatore di azione `addNoteText()`. Termina il corpo della funzione `addNoteText()` in modo che restituisca un oggetto `action`. L'oggetto dovrebbe includere una proprietà `type` con un valore di `ADD_NOTE`, e anche una proprietà `text` impostata al dato `note` passato al creatore di azione. Quando chiami il creatore di azione, passi specifiche informazioni alle quali puoi accedere per l'oggetto.
+Nell'editor di codice ci childo un `notesReducer()` di base e un creatore di azione `addNoteText()`. Termina il corpo della funzione `addNoteText()` in modo che restituisca un oggetto `action`. L'oggetto dovrebbe includere una proprietà `type` con un valore di `ADD_NOTE`, e anche una proprietà `text` impostata al dato `note` passato al creatore di azione. Quando chiami il creatore di azione, passi specifiche informazioni alle quali puoi accedere per l'oggetto.
 
 Successivamente, termina la scrittura dell'istruzione `switch` in `notesReducer()`. Dovrai aggiungere un caso che gestisca le azioni `addNoteText()`. Questo caso dovrebbe essere attivato ogni volta che c'è un'azione di tipo `ADD_NOTE` e dovrebbe restituire la proprietà `text` dell'`action` in arrivo come nuovo `state`.
 

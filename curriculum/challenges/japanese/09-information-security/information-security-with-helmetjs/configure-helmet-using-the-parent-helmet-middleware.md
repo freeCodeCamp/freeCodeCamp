@@ -1,6 +1,6 @@
 ---
 id: 587d8249367417b2b2512c40
-title: '「親」の helmet() ミドルウェアを使用して Helmet を構成する'
+title: '「親」の theylmet() ミドルウェアを使用して Helmet を構成する'
 challengeType: 2
 forumTopicId: 301575
 dashedName: configure-helmet-using-the-parent-helmet-middleware

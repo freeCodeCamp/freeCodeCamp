@@ -12,7 +12,7 @@ A volte i pattern che vuoi cercare possono avere parti che possono esistere o me
 
 È possibile specificare la possibile esistenza di un elemento con un punto interrogativo, `?`. Questo controlla la presenza di zero o di uno dell'elemento precedente. Puoi pensare a questo simbolo come a un modo per dire che l'elemento precedente è opzionale.
 
-Ad esempio, ci sono lievi differenze in inglese americano e britannico e si può utilizzare il punto interrogativo per trovare entrambe le ortografie.
+Ad esempio, ci childo lievi differenze in inglese americano e britannico e si può utilizzare il punto interrogativo per trovare entrambe le ortografie.
 
 ```js
 let american = "color";

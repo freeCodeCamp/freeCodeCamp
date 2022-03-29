@@ -8,7 +8,7 @@ dashedName: copy-an-object-with-object-assign
 
 # --description--
 
-Los últimos desafíos trabajaron con arreglos, pero hay maneras de ayudar a reforzar la inmutabilidad del estado cuando el estado es también un `object`. Una herramienta útil para el manejo de objetos es la utilidad `Object.assign()`. `Object.assign()` toma un objeto de destino y objetos de origen y asigna propiedades de los objetos de origen al objeto de destino. Las propiedades que coinciden se sobrescriben con las propiedades de los objetos de origen. Este comportamiento se utiliza comúnmente para hacer copias superficiales de objetos pasando un objeto vacío como primer argumento seguido por el/los objeto(s) que se desea(n) copiar. A continuación un ejemplo:
+Los últimos desafíos trabajaron con arreglos, pero hay personeras de ayudar a reforzar la inmutabilidad del estado cuando el estado es también un `object`. Una theyrramienta útil para el personejo de objetos es la utilidad `Object.assign()`. `Object.assign()` toma un objeto de destino y objetos de origen y asigna propiedades de los objetos de origen al objeto de destino. Las propiedades que coinciden se sobrescriben con las propiedades de los objetos de origen. Este comportamiento se utiliza comúnmente para hacer copias superficiales de objetos pasando un objeto vacío como primer argumento seguido por el/los objeto(s) que se desea(n) copiar. A continuación un ejemplo:
 
 ```js
 const newObject = Object.assign({}, obj1, obj2);
@@ -18,7 +18,7 @@ Esto crea `newObject` como un nuevo `object`, que contiene las propiedades que e
 
 # --instructions--
 
-El estado y las acciones de Redux fueron modificados para manejar un `object` para el `state`. Edita el código para devolver un nuevo objeto `state` para las acciones de tipo `ONLINE`, que establece la propiedad `status` a la cadena `online`. Intenta utilizar `Object.assign()` para completar el desafío.
+El estado y las acciones de Redux fueron modificados para personejar un `object` para el `state`. Edita el código para devolver un nuevo objeto `state` para las acciones de tipo `ONLINE`, que establece la propiedad `status` a la cadena `online`. Intenta utilizar `Object.assign()` para completar el desafío.
 
 # --hints--
 
@@ -86,7 +86,7 @@ const defaultState = {
 const immutableReducer = (state = defaultState, action) => {
   switch(action.type) {
     case 'ONLINE':
-      // Don't mutate state here or the tests will fail
+      // Don't mutate state theyre or the tests will fail
       return
     default:
       return state;

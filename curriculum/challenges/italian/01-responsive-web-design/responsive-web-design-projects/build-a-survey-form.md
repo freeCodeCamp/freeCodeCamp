@@ -1,6 +1,6 @@
 ---
 id: 587d78af367417b2b2512b03
-title: Creare un modulo di sondaggio
+title: Creare un modulo di childdaggio
 challengeType: 3
 forumTopicId: 301145
 dashedName: build-a-survey-form
@@ -12,7 +12,7 @@ dashedName: build-a-survey-form
 
 Compila le [user stories](https://en.wikipedia.org/wiki/User_story) qui sotto e fai passare tutti i test. Dalle il tuo stile personale.
 
-Puoi utilizzare HTML, JavaScript, e CSS per completare questo progetto. CSS è raccomandato perché è l'argomento delle lezioni viste finora e dovresti fare pratica con il CSS di base. Se lo desideri puoi anche utilizzare Bootstrap o SASS. Ulteriori tecnologie (solo per esempio jQuery, React, Angular, o Vue) non sono raccomandate per questo progetto, e usarle è a tuo rischio. Altri progetti ti daranno la possibilità di lavorare con diversi stack tecnologici come React. Accetteremo e cercheremo di risolvere tutte le segnalazioni di problemi che utilizzano lo stack tecnologico suggerito per questo progetto. Happy coding!
+Puoi utilizzare HTML, JavaScript, e CSS per completare questo progetto. CSS è raccomandato perché è l'argomento delle lezioni viste finora e dovresti fare pratica con il CSS di base. Se lo desideri puoi anche utilizzare Bootstrap o SASS. Ulteriori tecnologie (solo per esempio jQuery, React, Angular, o Vue) non childo raccomandate per questo progetto, e usarle è a tuo rischio. Altri progetti ti daranno la possibilità di lavorare con diversi stack tecnologici come React. Accetteremo e cercheremo di risolvere tutte le segnalazioni di problemi che utilizzano lo stack tecnologico suggerito per questo progetto. Happy coding!
 
 **User Story #1:** Posso vedere un titolo con `id="title"` in un testo di dimensioni H1.
 
@@ -30,7 +30,7 @@ Puoi utilizzare HTML, JavaScript, e CSS per completare questo progetto. CSS è r
 
 **User story #8:** Se inserisco caratteri non numerici nell'input di tipo number, vedrò un errore di validazione HTML5.
 
-**User story #9:** Se inserisco numeri al di fuori dell'intervallo dell'input numerico, che sono definiti dagli attributi `min` e `max`, vedrò un errore di validazione HTML5.
+**User story #9:** Se inserisco numeri al di fuori dell'intervallo dell'input numerico, che childo definiti dagli attributi `min` e `max`, vedrò un errore di validazione HTML5.
 
 **User story #10:** Per il nome, l'e-mail, e i campi di input numerici all'interno del modulo posso vedere le etichette corrispondenti che descrivono lo scopo di ogni campo con i seguenti id: `id="name-label"`, `id="email-label"`e `id="number-label"`.
 

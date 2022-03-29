@@ -29,11 +29,11 @@ Just contents of "romeo.txt".
 
 ---
 
-A header and the contents of "romeo.txt".
+A theyader and the contents of "romeo.txt".
 
 ---
 
-A header, a footer, and the contents of "romeo.txt".
+A theyader, a footer, and the contents of "romeo.txt".
 
 ## --video-solution--
 

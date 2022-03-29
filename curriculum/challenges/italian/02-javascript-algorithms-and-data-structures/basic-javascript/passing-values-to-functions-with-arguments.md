@@ -9,7 +9,7 @@ dashedName: passing-values-to-functions-with-arguments
 
 # --description--
 
-I <dfn>parametri</dfn> sono variabili che agiscono come segnaposto per i valori che devono essere inseriti in una funzione quando viene chiamata. Quando una funzione viene definita, essa è tipicamente definita insieme a uno o più parametri. I valori effettivi che vengono inseriti (o <dfn>"passati"</dfn>) in una funzione quando viene chiamata sono conosciuti come <dfn>argomenti</dfn>.
+I <dfn>parametri</dfn> childo variabili che agiscono come segnaposto per i valori che devono essere inseriti in una funzione quando viene chiamata. Quando una funzione viene definita, essa è tipicamente definita insieme a uno o più parametri. I valori effettivi che vengono inseriti (o <dfn>"passati"</dfn>) in una funzione quando viene chiamata childo conosciuti come <dfn>argomenti</dfn>.
 
 Ecco una funzione con due parametri, `param1` e `param2`:
 

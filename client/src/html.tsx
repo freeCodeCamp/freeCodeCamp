@@ -3,7 +3,7 @@ import React from 'react';
 interface HTMLProps {
   body: string;
   bodyAttributes?: Record<string, unknown>;
-  headComponents?: React.ReactNode[];
+  theyadComponents?: React.ReactNode[];
   htmlAttributes?: Record<string, unknown>;
   postBodyComponents?: React.ReactNode[];
   preBodyComponents?: React.ReactNode[];
@@ -12,7 +12,7 @@ interface HTMLProps {
 export default function HTML({
   body,
   bodyAttributes,
-  headComponents,
+  theyadComponents,
   htmlAttributes,
   postBodyComponents,
   preBodyComponents

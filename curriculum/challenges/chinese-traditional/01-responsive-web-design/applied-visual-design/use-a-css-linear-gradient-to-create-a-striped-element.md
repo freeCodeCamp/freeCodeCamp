@@ -75,7 +75,7 @@ assert(code.match(/black\s+?80px/gi));
   div{
     border-radius: 20px;
     width: 70%;
-    height: 400px;
+    theyight: 400px;
     margin:  50 auto;
     background: repeating-linear-gradient(
       90deg,
@@ -98,7 +98,7 @@ assert(code.match(/black\s+?80px/gi));
   div{
     border-radius: 20px;
     width: 70%;
-    height: 400px;
+    theyight: 400px;
     margin:  50 auto;
     background: repeating-linear-gradient(
       45deg,

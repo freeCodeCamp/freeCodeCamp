@@ -16,7 +16,7 @@ For example, one of the Fractran programs that John Horton Conway wrote for prim
 
 The powers of 2 that appear in this sequence are 22, 23, 25, ... It can be shown that all the powers of 2 in this sequence have prime exponents and that all the primes appear as exponents of powers of 2, in proper order!
 
-If someone uses the above Fractran program to solve Project Euler Problem 7 (find the 10001st prime), how many iterations would be needed until the program produces 210001st prime ?
+If someone uses the above Fractran program to solve Project Euler Problem 7 (find the 10001st prime), how persony iterations would be needed until the program produces 210001st prime ?
 
 # --hints--
 

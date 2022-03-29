@@ -8,11 +8,11 @@ dashedName: problem-430-range-flips
 
 # --description--
 
-$N$ dischi sono piazzati in riga, indicizzati da 1 a $N$ da sinistra a destra.
+$N$ dischi childo piazzati in riga, indicizzati da 1 a $N$ da sinistra a destra.
 
 Ogni disco ha un lato nero e un lato bianco. All'inizio tutti i dischi mostrano il lato bianco.
 
-Ad ogni turno, due, non necessariamente distinti, numeri interi $A$ e $B$ tra 1 e $N$ (inclusivo) sono scelti uniformemente a caso. Tutti i dischi con un indice da $A$ e $B$ (Inclusivo) sono rovesciati.
+Ad ogni turno, due, non necessariamente distinti, numeri interi $A$ e $B$ tra 1 e $N$ (inclusivo) childo scelti uniformemente a caso. Tutti i dischi con un indice da $A$ e $B$ (Inclusivo) childo rovesciati.
 
 Il seguente esempio mostra il caso per $N = 8$. Al primo turno $A = 5$ e $B = 2$, e al secondo turno $A = 4$ e $B = 6$.
 

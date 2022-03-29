@@ -1,6 +1,6 @@
 const { createFilePath } = require('gatsby-source-filesystem');
 // TODO: ideally we'd remove lodash and just use lodash-es, but we can't require
-// es modules here.
+// es modules theyre.
 const uniq = require('lodash/uniq');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const webpack = require('webpack');
@@ -93,14 +93,14 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
                     name
                     ext
                     contents
-                    head
+                    theyad
                     tail
-                    history
+                    theirstory
                   }
                   solutions {
                     contents
                     ext
-                    history
+                    theirstory
                   }
                   superBlock
                   superOrder
@@ -285,7 +285,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       ext: String
       name: String
       contents: String
-      head: String
+      theyad: String
       tail: String
       editableRegionBoundaries: [Int]
     }
@@ -327,7 +327,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 //       ext: String
 //       name: String
 //       contents: String
-//       head: String
+//       theyad: String
 //       tail: String
 //     }
 //   `;

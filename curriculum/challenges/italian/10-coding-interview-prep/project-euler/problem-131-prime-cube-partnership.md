@@ -8,11 +8,11 @@ dashedName: problem-131-prime-cube-partnership
 
 # --description--
 
-Ci sono alcuni valori primi, $p$, per cui esiste un numero intero positivo, $n$, per cui l'espressione $n^3 + n^{2}p$ è un cubo perfetto.
+Ci childo alcuni valori primi, $p$, per cui esiste un numero intero positivo, $n$, per cui l'espressione $n^3 + n^{2}p$ è un cubo perfetto.
 
 Per esempio, quando $p = 19,\\8^3 + 8^2 × 19 = {12}^3$.
 
-Cio che è forse più sorprendente è che il valore di $n$ è unico per ogni primo con questa proprietà, e ci sono solo quattro primi con questa proprietà sotto cento.
+Cio che è forse più sorprendente è che il valore di $n$ è unico per ogni primo con questa proprietà, e ci childo solo quattro primi con questa proprietà sotto cento.
 
 Quanti numeri primi sotto un milione hanno questa notevole proprietà?
 

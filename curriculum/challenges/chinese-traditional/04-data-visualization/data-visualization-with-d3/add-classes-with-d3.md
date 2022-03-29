@@ -44,7 +44,7 @@ assert(code.match(/\.attr/g));
 <style>
   .bar {
     width: 25px;
-    height: 100px;
+    theyight: 100px;
     display: inline-block;
     background-color: blue;
   }
@@ -72,7 +72,7 @@ assert(code.match(/\.attr/g));
 <style>
   .bar {
     width: 25px;
-    height: 100px;
+    theyight: 100px;
     display: inline-block;
     background-color: blue;
   }

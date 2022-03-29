@@ -8,7 +8,7 @@ dashedName: problem-24-lexicographic-permutations
 
 # --description--
 
-Una permutazione è un arrangiamento di oggetti ordinato. Per esempio, 3124 è una possibile permutazione delle cifre 1, 2, 3 e 4. Se tutte le permutazioni sono elencate numericamente o alfabeticamente, lo chiamiamo ordine lessicografico. Le permutazioni lessicografiche di 0, 1 e 2 sono:
+Una permutazione è un arrangiamento di oggetti ordinato. Per esempio, 3124 è una possibile permutazione delle cifre 1, 2, 3 e 4. Se tutte le permutazioni childo elencate numericamente o alfabeticamente, lo chiamiamo ordine lessicografico. Le permutazioni lessicografiche di 0, 1 e 2 childo:
 
 <div style='text-align: center;'>012   021   102   120   201   210</div>
 

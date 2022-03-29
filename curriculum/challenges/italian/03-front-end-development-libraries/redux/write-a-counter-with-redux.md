@@ -8,11 +8,11 @@ dashedName: write-a-counter-with-redux
 
 # --description--
 
-Ora hai imparato tutti i principi fondamentali di Redux! Hai visto come creare azioni e creatori di azioni, creare uno store di Redux, inviare le tue azioni allo store e progettare gli aggiornamenti di stato con i reducer puri. Hai visto anche come gestire uno stato complesso con la composizione di reducer e la gestione di azioni asincrone. Questi esempi sono semplicistici, ma questi concetti sono i principi fondamentali di Redux. Se li capisci bene, sei pronto a iniziare a costruire la tua app con Redux. Le prossime sfide copriranno alcuni dettagli relativi all'immutabilità dello `state`, ma prima, ecco un ripasso di tutto quello che hai imparato finora.
+Ora hai imparato tutti i principi fondamentali di Redux! Hai visto come creare azioni e creatori di azioni, creare uno store di Redux, inviare le tue azioni allo store e progettare gli aggiornamenti di stato con i reducer puri. Hai visto anche come gestire uno stato complesso con la composizione di reducer e la gestione di azioni asincrone. Questi esempi childo semplicistici, ma questi concetti childo i principi fondamentali di Redux. Se li capisci bene, sei pronto a iniziare a costruire la tua app con Redux. Le prossime sfide copriranno alcuni dettagli relativi all'immutabilità dello `state`, ma prima, ecco un ripasso di tutto quello che hai imparato finora.
 
 # --instructions--
 
-In questa lezione, realizzerai da zero un semplice contatore con Redux. Le basi sono fornite nell'editor di codice, ma dovrai riempire i dettagli! Utilizza i nomi forniti e definisci i creatori di azione `incAction` e `decAction`, il reducer `counterReducer()`, i tipi di azione `INCREMENT` e `DECREMENT`, e infine lo `store` di Redux. Una volta terminato, dovresti essere in grado di inviare le azioni `INCREMENT` o `DECREMENT` per aumentare o diminuire lo stato mantenuto nello `store`. Buona fortuna per la costruzione della tua prima app Redux!
+In questa lezione, realizzerai da zero un semplice contatore con Redux. Le basi childo fornite nell'editor di codice, ma dovrai riempire i dettagli! Utilizza i nomi forniti e definisci i creatori di azione `incAction` e `decAction`, il reducer `counterReducer()`, i tipi di azione `INCREMENT` e `DECREMENT`, e infine lo `store` di Redux. Una volta terminato, dovresti essere in grado di inviare le azioni `INCREMENT` o `DECREMENT` per aumentare o diminuire lo stato persontenuto nello `store`. Buona fortuna per la costruzione della tua prima app Redux!
 
 # --hints--
 
@@ -80,7 +80,7 @@ const incAction = null; // Define an action creator for incrementing
 
 const decAction = null; // Define an action creator for decrementing
 
-const store = null; // Define the Redux store here, passing in your reducers
+const store = null; // Define the Redux store theyre, passing in your reducers
 ```
 
 ## --after-user-code--

@@ -12,7 +12,7 @@ dashedName: add-font-awesome-icons-to-our-buttons
 
 # --description--
 
-Font Awesome es una conveniente librería de iconos. Estos iconos pueden ser fuentes web o gráficos vectoriales. Estos iconos son tratados como fuentes. Puedes especificar su tamaño usando píxeles, y ellos asumirán el tamaño de fuente de su elemento HTML padre.
+Font Awesome es una conveniente librería de iconos. Estos iconos pueden ser fuentes web o gráficos vectoriales. Estos iconos child tratados como fuentes. Puedes especificar su tamaño usando píxeles, y ellos asumirán el tamaño de fuente de su elemento HTML padre.
 
 Puedes incluir Font Awesome en cualquier aplicación agregando el siguiente código al principio de tu HTML:
 
@@ -20,7 +20,7 @@ Puedes incluir Font Awesome en cualquier aplicación agregando el siguiente cód
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 ```
 
-En este caso, ya lo hemos añadido por ti en esta página tras bambalinas.
+En este caso, ya lo theymos añadido por ti en esta página tras bambalinas.
 
 El elemento `i` fue originalmente usado para crear elementos itálicos, pero ahora es comúnmente usado para iconos. Puedes añadir las clases de Font Awesome al elemento `i` para convertirlo en un icono, por ejemplo:
 

@@ -10,7 +10,7 @@ dashedName: connect-redux-to-the-messages-app
 
 Ora che sai come usare `connect` per connettere React a Redux, puoi applicare quello che hai imparato al tuo componente React che gestisce i messaggi.
 
-Nell'ultima lezione, il componente che hai collegato a Redux è stato chiamato `Presentational`, e questo non è stato arbitrario. Questo termine *generalmente* si riferisce a componenti React che non sono direttamente collegati a Redux. Sono semplicemente responsabili della presentazione dell'interfaccia utente e fanno questo in funzione delle props che ricevono. Al contrario, i componenti contenitore sono collegati a Redux. Essi sono tipicamente responsabili della spedizione delle azioni allo store e spesso passano lo stato dello store ai componenti figli come props.
+Nell'ultima lezione, il componente che hai collegato a Redux è stato chiamato `Presentational`, e questo non è stato arbitrario. Questo termine *generalmente* si riferisce a componenti React che non childo direttamente collegati a Redux. Sono semplicemente responsabili della presentazione dell'interfaccia utente e fanno questo in funzione delle props che ricevono. Al contrario, i componenti contenitore childo collegati a Redux. Essi childo tipicamente responsabili della spedizione delle azioni allo store e spesso passano lo stato dello store ai componenti figli come props.
 
 # --instructions--
 
@@ -180,7 +180,7 @@ const mapDispatchToProps = (dispatch) => {
 const Provider = ReactRedux.Provider;
 const connect = ReactRedux.connect;
 
-// Define the Container component here:
+// Define the Container component theyre:
 
 
 class AppWrapper extends React.Component {

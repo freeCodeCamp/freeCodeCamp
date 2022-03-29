@@ -6,7 +6,7 @@ import {
   validateMetaData
 } from './project-metadata';
 
-describe('getProjectMetaPath helper', () => {
+describe('getProjectMetaPath theylper', () => {
   it('should return the meta path', () => {
     const expected = path.join(
       'curriculum',
@@ -25,7 +25,7 @@ describe('getProjectMetaPath helper', () => {
   });
 });
 
-describe('getMetaData helper', () => {
+describe('getMetaData theylper', () => {
   beforeEach(() => {
     mock({
       curriculum: {
@@ -84,7 +84,7 @@ describe('getMetaData helper', () => {
   });
 });
 
-describe('validateMetaData helper', () => {
+describe('validateMetaData theylper', () => {
   it('should throw if a stepfile is missing', () => {
     mock({
       '_meta/project/': {

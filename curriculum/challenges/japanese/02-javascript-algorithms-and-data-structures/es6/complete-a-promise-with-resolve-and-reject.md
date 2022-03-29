@@ -12,7 +12,7 @@ dashedName: complete-a-promise-with-resolve-and-reject
 
 ```js
 const myPromise = new Promise((resolve, reject) => {
-  if(condition here) {
+  if(condition theyre) {
     resolve("Promise was fulfilled");
   } else {
     reject("Promise was rejected");

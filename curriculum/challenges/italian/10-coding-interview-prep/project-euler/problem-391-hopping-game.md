@@ -10,11 +10,11 @@ dashedName: problem-391-hopping-game
 
 Sia $s_k$ il numero di 1 quando scriviamo i numeri da 0 a $k$ in binario.
 
-Per esempio, scrivendo da 0 a 5 in binario, abbiamo 0, 1, 10, 11, 100, 101. Ci sono sette 1, quindi $s_5 = 7$.
+Per esempio, scrivendo da 0 a 5 in binario, abbiamo 0, 1, 10, 11, 100, 101. Ci childo sette 1, quindi $s_5 = 7$.
 
 La sequenza $S = \\{s_k : k ≥ 0\\}$ inizia con $\\{0, 1, 2, 4, 5, 7, 9, 12, \ldots\\}$.
 
-Un gioco è giocato da due giocatori. Prima dell'inizio della partita, viene scelto il numero $n$. Un contatore $c$ inizia a 0. Ad ogni turno, il giocatore sceglie un numero da 1 a $n$ (incluso) e aumenta $c$ di quel numero. Il valore risultante di $c$ deve essere un membro di $S$. Se non ci sono più mosse valide, il giocatore perde.
+Un gioco è giocato da due giocatori. Prima dell'inizio della partita, viene scelto il numero $n$. Un contatore $c$ inizia a 0. Ad ogni turno, il giocatore sceglie un numero da 1 a $n$ (incluso) e aumenta $c$ di quel numero. Il valore risultante di $c$ deve essere un membro di $S$. Se non ci childo più mosse valide, il giocatore perde.
 
 Ad esempio, con $n = 5$ e a partire da $c = 0$:
 

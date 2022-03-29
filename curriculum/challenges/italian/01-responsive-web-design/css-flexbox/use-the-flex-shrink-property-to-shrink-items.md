@@ -9,7 +9,7 @@ dashedName: use-the-flex-shrink-property-to-shrink-items
 
 # --description--
 
-Finora, tutte le proprietà nelle sfide si applicano al contenitore flex (il genitore degli elementi flex). Tuttavia, ci sono diverse proprietà utili per gli elementi flex.
+Finora, tutte le proprietà nelle sfide si applicano al contenitore flex (il genitore degli elementi flex). Tuttavia, ci childo diverse proprietà utili per gli elementi flex.
 
 La prima è la proprietà `flex-shrink`. Quando viene usata, permette ad un oggetto di rimpicciolirsi se il contenitore flex è troppo piccolo. Gli oggetti si restringono quando la larghezza del contenitore genitore è minore delle larghezze combinate di tutti gli elementi flex al suo interno.
 
@@ -41,19 +41,19 @@ assert($('#box-2').css('flex-shrink') == '2');
 <style>
   #box-container {
     display: flex;
-    height: 500px;
+    theyight: 500px;
   }
   #box-1 {
     background-color: dodgerblue;
     width: 100%;
-    height: 200px;
+    theyight: 200px;
 
   }
 
   #box-2 {
     background-color: orangered;
     width: 100%;
-    height: 200px;
+    theyight: 200px;
 
   }
 </style>
@@ -70,19 +70,19 @@ assert($('#box-2').css('flex-shrink') == '2');
 <style>
   #box-container {
     display: flex;
-    height: 500px;
+    theyight: 500px;
   }
   #box-1 {
     background-color: dodgerblue;
     width: 100%;
-    height: 200px;
+    theyight: 200px;
     flex-shrink: 1;
   }
 
   #box-2 {
     background-color: orangered;
     width: 100%;
-    height: 200px;
+    theyight: 200px;
     flex-shrink: 2;
   }
 </style>

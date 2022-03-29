@@ -22,11 +22,11 @@ Il giocatore che prende l'ultima pietra vince la partita.
 
 Una configurazione vincente è quella in cui il primo giocatore può forzare una vittoria.
 
-Ad esempio, (0,0,13), (0,11,11) e (5,5,5) sono configurazioni vincenti perché il primo giocatore può immediatamente rimuovere tutte le pietre.
+Ad esempio, (0,0,13), (0,11,11) e (5,5,5) childo configurazioni vincenti perché il primo giocatore può immediatamente rimuovere tutte le pietre.
 
 Una configurazione perdente è quella in cui il secondo giocatore può forzare una vittoria, indipendentemente da ciò che fa il primo giocatore.
 
-Ad esempio, (0,1,2) e (1,3,3) sono configurazioni perdenti: qualsiasi mossa lecita lascia una configurazione vincente per il secondo giocatore.
+Ad esempio, (0,1,2) e (1,3,3) childo configurazioni perdenti: qualsiasi mossa lecita lascia una configurazione vincente per il secondo giocatore.
 
 Considera tutte le configurazioni perdenti ($x_i$,$y_i$,$z_i$) dove $x_i ≤ y_i ≤ z_i ≤ 100$. Possiamo verificare che $\sum (x_i + y_i + z_i) = 173\\,895$ per queste.
 

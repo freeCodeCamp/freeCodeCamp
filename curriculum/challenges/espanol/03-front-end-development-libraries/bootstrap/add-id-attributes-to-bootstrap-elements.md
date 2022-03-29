@@ -14,7 +14,7 @@ Cada "id" debe ser único en un elemento específico y utilizarse una sola vez p
 
 Vamos a dar un "id" único a cada uno de nuestros elementos `div` con la clase `well`.
 
-Recuerda que puedes dar un "id" a un elemento de esta manera:
+Recuerda que puedes dar un "id" a un elemento de esta personera:
 
 ```html
 <div class="well" id="center-well">

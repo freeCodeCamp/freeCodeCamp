@@ -8,7 +8,7 @@ dashedName: problem-159-digital-root-sums-of-factorisations
 
 # --description--
 
-Um número composto pode ser fatorado de várias maneiras.
+Um número composto pode ser fatorado de várias personeiras.
 
 Por exemplo, não incluindo a multiplicação por um, 24 podem ser fatorado de 7 formas distintas:
 

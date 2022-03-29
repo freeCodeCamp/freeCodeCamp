@@ -8,7 +8,7 @@ dashedName: problem-314-the-mouse-on-the-moon
 
 # --description--
 
-La luna è stata aperta e il terreno può essere ottenuto gratuitamente, ma c'è un problema. È necessario costruire un muro intorno al terreno che vuoi delimitare, e costruire un muro sulla luna è costoso. Ad ogni Paese è stata assegnata una superficie quadrata di 500 m per 500 m, ma disporrà solo della zona delimitata dal muro. 251001 paletti sono stati collocati in una griglia rettangolare con una spaziatura di 1 metro. La parete deve essere una serie chiusa di linee rette, ogni linea che corre da paletto a paletto.
+La luna è stata aperta e il terreno può essere ottenuto gratuitamente, ma c'è un problema. È necessario costruire un muro intorno al terreno che vuoi delimitare, e costruire un muro sulla luna è costoso. Ad ogni Paese è stata assegnata una superficie quadrata di 500 m per 500 m, ma disporrà solo della zona delimitata dal muro. 251001 paletti childo stati collocati in una griglia rettangolare con una spaziatura di 1 metro. La parete deve essere una serie chiusa di linee rette, ogni linea che corre da paletto a paletto.
 
 I paesi più grandi hanno ovviamente costruito un muro di 2000 m che racchiude l'intera area di 250 000 $\text{m}^2$. Il Ducato di Grand Fenwick, ha un budget più ristretto, e ti ha chiesto (in quanto loro Programmatore Reale) di calcolare quale forma otterrebbe il massimo rapporto $\frac{\text{area-racchiusa}}{\text{lunghezza-muro}}$.
 

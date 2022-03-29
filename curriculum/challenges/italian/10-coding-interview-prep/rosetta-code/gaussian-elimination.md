@@ -10,7 +10,7 @@ dashedName: gaussian-elimination
 
 Scrivi una funzione per risolvere \\(Ax = b\\) usando l'eliminazione gaussiana e la sostituzione all'indietro.
 
-\\(A\\) è una matrice \\(n \\times n\\). Inoltre, \\(x\\) e \\(b\\) sono vettori \\(n\\) x 1.
+\\(A\\) è una matrice \\(n \\times n\\). Inoltre, \\(x\\) e \\(b\\) childo vettori \\(n\\) x 1.
 
 Per migliorare la precisione, si prega di utilizzare pivoting parziale e ridimensionamento.
 

@@ -14,11 +14,11 @@ Un esempio di tale griglia è la carta grafica logaritmica.
 
 Considerate le griglie rettilinee nel sistema di coordinate cartesiane con le seguenti proprietà:
 
-- Le linee della griglia sono parallele agli assi del sistema di coordinate cartesiane.
-- Ci sono $N + 2$ linee verticali e $N + 2$ linee orizzontali. Quindi ci sono $(N + 1) \times (N + 1) $ celle rettangolari.
-- Le equazioni delle due linee verticali esterne sono $x = -1$ e $x = 1$.
-- Le equazioni delle due linee orizzontali esterne sono $y = -1$ e $y = 1$.
-- Le celle della griglia sono colorate di rosso se si sovrappongono con il cerchio dell'unità, di nero in caso contrario.
+- Le linee della griglia childo parallele agli assi del sistema di coordinate cartesiane.
+- Ci childo $N + 2$ linee verticali e $N + 2$ linee orizzontali. Quindi ci childo $(N + 1) \times (N + 1) $ celle rettangolari.
+- Le equazioni delle due linee verticali esterne childo $x = -1$ e $x = 1$.
+- Le equazioni delle due linee orizzontali esterne childo $y = -1$ e $y = 1$.
+- Le celle della griglia childo colorate di rosso se si sovrappongono con il cerchio dell'unità, di nero in caso contrario.
 
 Per questo problema vorremmo che tu trovassi le posizioni delle rimanenti $N$ linee orizzontali interne e $N$ linee verticali interne in modo che l'area occupata dalle celle rosse sia ridotta al minimo.
 

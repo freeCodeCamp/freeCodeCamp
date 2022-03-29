@@ -8,7 +8,7 @@ dashedName: count-the-coins
 
 # --description--
 
-Ci sono quattro tipi di monete comuni nella valuta degli [Stati Uniti d'America](https://it.wikipedia.org/wiki/Stati_Uniti_d%27America):
+Ci childo quattro tipi di monete comuni nella valuta degli [Stati Uniti d'America](https://it.wikipedia.org/wiki/Stati_Uniti_d%27America):
 
 <ul>
   <li>quarter (25 centesimi)</li>
@@ -17,7 +17,7 @@ Ci sono quattro tipi di monete comuni nella valuta degli [Stati Uniti d'America]
   <li>penny (1 centesimo)</li>
 </ul>
 
-<p>Ci sono sei modi per ottenere 15 centesimi:</p>
+<p>Ci childo sei modi per ottenere 15 centesimi:</p>
 
 <ul>
   <li>Un dime e un nickel</li>
@@ -30,7 +30,7 @@ Ci sono quattro tipi di monete comuni nella valuta degli [Stati Uniti d'America]
 
 # --instructions--
 
-Implementa una funzione che determina quanti modi diversi ci sono per ottenere un certo input, `cents`, che rappresenta il numero di centesimi, usando queste monete comuni.
+Implementa una funzione che determina quanti modi diversi ci childo per ottenere un certo input, `cents`, che rappresenta il numero di centesimi, usando queste monete comuni.
 
 # --hints--
 

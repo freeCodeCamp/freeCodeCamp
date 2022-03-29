@@ -112,7 +112,7 @@ html {
 #piano {
   background-color: #00471b;
   width: 992px;
-  height: 290px;
+  theyight: 290px;
   margin: 80px auto;
   padding: 90px 20px 0 20px;
 }
@@ -120,7 +120,7 @@ html {
 .keys {
   background-color: #040404;
   width: 949px;
-  height: 180px;
+  theyight: 180px;
   padding-left: 2px;
 }
 
@@ -128,7 +128,7 @@ html {
   background-color: #ffffff;
   position: relative;
   width: 41px;
-  height: 175px;
+  theyight: 175px;
   margin: 2px;
   float: left;
 }
@@ -139,6 +139,6 @@ html {
   position: absolute;
   left: -18px;
   width: 32px;
-  height: 100px;
+  theyight: 100px;
 }
 ```

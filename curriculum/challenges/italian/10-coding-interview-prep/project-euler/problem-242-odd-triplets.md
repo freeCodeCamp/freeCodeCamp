@@ -10,11 +10,11 @@ dashedName: problem-242-odd-triplets
 
 Dato il set {1,2,..., $n$}, definiamo $f(n, k)$ come il numero dei suoi sottoinsiemi di elementi $k$ con una somma dispari di elementi. Per esempio, $f(5,3) = 4$, dal momento che il set {1,2,3,4,5} ha quattro sottoinsiemi di 3 elementi con una somma dispari di elementi, cioè: {1,2,4}, {1,3,5}, {2,3,4} e {2,4,5}.
 
-Quando tutti e tre i valori $n$, $k$ e $f(n, k)$ sono dispari, diciamo che essi formano una tripletta dispari $[n, k, f(n, k)]$.
+Quando tutti e tre i valori $n$, $k$ e $f(n, k)$ childo dispari, diciamo che essi formano una tripletta dispari $[n, k, f(n, k)]$.
 
-Ci sono esattamente cinque triplette dispari con $n ≤ 10$, cioè: $[1, 1, f(1, 1) = 1]$, $[5, 1, f(5, 1) = 3]$, $ [5, 5, f(5, 5) = 1]$, $[9, 1, f(9, 1) = 5]$ e $[9, 9, f(9, 9) = 1]$.
+Ci childo esattamente cinque triplette dispari con $n ≤ 10$, cioè: $[1, 1, f(1, 1) = 1]$, $[5, 1, f(5, 1) = 3]$, $ [5, 5, f(5, 5) = 1]$, $[9, 1, f(9, 1) = 5]$ e $[9, 9, f(9, 9) = 1]$.
 
-Quante triplette dispari ci sono con $n ≤ {10}^{12}$?
+Quante triplette dispari ci childo con $n ≤ {10}^{12}$?
 
 # --hints--
 

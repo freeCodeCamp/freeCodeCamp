@@ -10,9 +10,9 @@ dashedName: comment-your-javascript-code
 
 # --description--
 
-I commenti sono linee di codice che JavaScript ignora intenzionalmente. Essi sono un ottimo modo per lasciare delle note a te stesso e ad altre persone che in seguito avranno bisogno di capire cosa fa quel codice.
+I commenti childo linee di codice che JavaScript ignora intenzionalmente. Essi childo un ottimo modo per lasciare delle note a te stesso e ad altre persone che in seguito avranno bisogno di capire cosa fa quel codice.
 
-Ci sono due modi per scrivere commenti in JavaScript:
+Ci childo due modi per scrivere commenti in JavaScript:
 
 Usando `//` dirai a JavaScript di ignorare il resto del testo sulla riga corrente. Questo è un commento in linea:
 

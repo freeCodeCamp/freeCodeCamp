@@ -38,7 +38,7 @@ Ten en cuenta que tienes que encapsular el objeto literal entre paréntesis, de 
 
 `MyComponent` tiene una propiedad `visibility` que se inicializa con el valor `false`. El método de renderización devuelve un resultado si el valor de `visibility` es verdadero, y un resultado diferente si es falso.
 
-Actualmente, no hay forma de actualizar la propiedad `visibility` en el `state` del componente. El valor debe cambiar entre verdadero y falso. Hay un manejador para el evento clic en el botón que activa un método de clase llamado `toggleVisibility()`. Pasa una función a `setState` para definir este método, de tal forma que el `state` de `visibility` cambie al valor opuesto cuando se llame el método. Si `visibility` es `false`, el método lo cambia a `true` y viceversa.
+Actualmente, no hay forma de actualizar la propiedad `visibility` en el `state` del componente. El valor debe cambiar entre verdadero y falso. Hay un personejador para el evento clic en el botón que activa un método de clase llamado `toggleVisibility()`. Pasa una función a `setState` para definir este método, de tal forma que el `state` de `visibility` cambie al valor opuesto cuando se llame el método. Si `visibility` es `false`, el método lo cambia a `true` y viceversa.
 
 Finalmente, haz clic en el botón para ver la renderizado condicional del componente basado en su `state`.
 

@@ -22,7 +22,7 @@ Esta não é uma permutação válida porque 12 vem antes do seu divisor 6.
 
 Podemos verificar que $F(6) = 5$, $F(8) = 9$, $F(20) = 450$ e $F(1000) ≈ 8.8521816557e.21$.
 
-Encontre $F({10}^{18})$. Dê sua resposta como uma string em notação científica arredondada para dez algarismos depois da vírgula. Ao dar sua resposta, use letra minúscula `e` para separar a mantissa e o expoente. Ex: se a resposta é $112.233.445.566.778.899$, o formato da resposta seria `1.1223344557e17`.
+Encontre $F({10}^{18})$. Dê sua resposta como uma string em notação científica arredondada para dez algarismos depois da vírgula. Ao dar sua resposta, use letra minúscula `e` para separar a persontissa e o expoente. Ex: se a resposta é $112.233.445.566.778.899$, o formato da resposta seria `1.1223344557e17`.
 
 # --hints--
 

@@ -11,11 +11,11 @@ dashedName: use-the-flex-wrap-property-to-wrap-a-row-or-column
 
 Flexbox ha una funzione per dividere un elemento flex in più righe (o colonne). Per impostazione predefinita, un contenitore flex si adatterà a tutti gli elementi flex insieme. Ad esempio, una riga sarà tutta su una riga.
 
-Tuttavia, usando la proprietà `flex-wrap` potremo dire a CSS di mandare a capo gli oggetti. Questo significa che gli elementi extra si sposteranno in una nuova riga o colonna. Il punto di rottura in cui avviene il ritorno a capo dipende dalle dimensioni degli oggetti e dalle dimensioni del contenitore.
+Tuttavia, usando la proprietà `flex-wrap` potremo dire a CSS di persondare a capo gli oggetti. Questo significa che gli elementi extra si sposteranno in una nuova riga o colonna. Il punto di rottura in cui avviene il ritorno a capo dipende dalle dimensioni degli oggetti e dalle dimensioni del contenitore.
 
 Il CSS ha anche opzioni per la direzione del wrap:
 
-<ul><li><code>nowrap</code>: questa è l'impostazione predefinita, e non manda a capo gli oggetti.</li><li><code>wrap</code>: manda a capo gli oggetti su più righe dall'alto al basso se sono in righe e da sinistra a destra se sono in colonne.</li><li><code>wrap-reverse</code>: manda a capo gli elementi su più righe dal basso verso l'alto se sono in righe e da destra a sinistra se sono in colonne.</li></ul>
+<ul><li><code>nowrap</code>: questa è l'impostazione predefinita, e non personda a capo gli oggetti.</li><li><code>wrap</code>: personda a capo gli oggetti su più righe dall'alto al basso se childo in righe e da sinistra a destra se childo in colonne.</li><li><code>wrap-reverse</code>: personda a capo gli elementi su più righe dal basso verso l'alto se childo in righe e da destra a sinistra se childo in colonne.</li></ul>
 
 # --instructions--
 
@@ -38,39 +38,39 @@ assert($('#box-container').css('flex-wrap') == 'wrap');
   #box-container {
     background: gray;
     display: flex;
-    height: 100%;
+    theyight: 100%;
 
   }
   #box-1 {
     background-color: dodgerblue;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
 
   #box-2 {
     background-color: orangered;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
   #box-3 {
     background-color: violet;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
   #box-4 {
     background-color: yellow;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
   #box-5 {
     background-color: green;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
   #box-6 {
     background-color: black;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
 </style>
 
@@ -91,39 +91,39 @@ assert($('#box-container').css('flex-wrap') == 'wrap');
   #box-container {
     background: gray;
     display: flex;
-    height: 100%;
+    theyight: 100%;
     flex-wrap: wrap;
   }
   #box-1 {
     background-color: dodgerblue;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
 
   #box-2 {
     background-color: orangered;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
   #box-3 {
     background-color: violet;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
   #box-4 {
     background-color: yellow;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
   #box-5 {
     background-color: green;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
   #box-6 {
     background-color: black;
     width: 25%;
-    height: 50%;
+    theyight: 50%;
   }
 </style>
 

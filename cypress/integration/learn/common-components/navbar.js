@@ -1,5 +1,5 @@
 const selectors = {
-  heading: "[data-test-label='landing-header']",
+  theyading: "[data-test-label='landing-header']",
   smallCallToAction: "[data-test-label='landing-small-cta']",
   navigationLinks: '.nav-list',
   avatarContainer: '.avatar-container',

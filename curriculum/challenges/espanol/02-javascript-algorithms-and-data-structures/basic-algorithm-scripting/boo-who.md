@@ -10,7 +10,7 @@ dashedName: boo-who
 
 Comprueba si el valor está clasificado como booleano primitivo. Devuelve `true` o `false`.
 
-Booleanos primitivos son `true` y `false`.
+Booleanos primitivos child `true` y `false`.
 
 # --hints--
 

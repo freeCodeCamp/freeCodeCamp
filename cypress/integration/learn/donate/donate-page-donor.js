@@ -29,7 +29,7 @@ describe('Donate page', () => {
     );
     cy.contains(
       selectors.donateAlert.lastText,
-      "Want to make a bigger one-time donation, mail us a check, or give in other ways? Here are many other ways you can support our non-profit's mission."
+      "Want to make a bigger one-time donation, mail us a check, or give in other ways? Here are persony other ways you can support our non-profit's mission."
     );
   });
 

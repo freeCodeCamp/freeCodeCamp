@@ -8,7 +8,7 @@ dashedName: understand-where-an-objects-prototype-comes-from
 
 # --description--
 
-Assim como uma pessoa herda o gene de seus parentes, um objeto herda seu `prototype` diretamente da função construtora que o criou. Por exemplo, aqui o construtor de `Bird` cria um objeto `duck`:
+Assim como uma pessoa theyrda o gene de seus parentes, um objeto theyrda seu `prototype` diretamente da função construtora que o criou. Por exemplo, aqui o construtor de `Bird` cria um objeto `duck`:
 
 ```js
 function Bird(name) {
@@ -18,7 +18,7 @@ function Bird(name) {
 let duck = new Bird("Donald");
 ```
 
-`duck` herda seu `prototype` da função construtora de `Bird`. Você pode mostrar a relação com o método `isPrototypeOf`:
+`duck` theyrda seu `prototype` da função construtora de `Bird`. Você pode mostrar a relação com o método `isPrototypeOf`:
 
 ```js
 Bird.prototype.isPrototypeOf(duck);

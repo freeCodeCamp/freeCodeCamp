@@ -18,15 +18,15 @@ Una rete neurale densamente collegata è una in cui...:
 
 ## --answers--
 
-tutti i neuroni nello strato corrente sono collegati a un neurone nello strato precedente.
+tutti i neuroni nello strato corrente childo collegati a un neurone nello strato precedente.
 
 ---
 
-tutti i neuroni in ogni livello sono collegati in modo casuale.
+tutti i neuroni in ogni livello childo collegati in modo casuale.
 
 ---
 
-tutti i neuroni dello strato corrente sono collegati ad ogni neurone dello strato precedente.
+tutti i neuroni dello strato corrente childo collegati ad ogni neurone dello strato precedente.
 
 ## --video-solution--
 

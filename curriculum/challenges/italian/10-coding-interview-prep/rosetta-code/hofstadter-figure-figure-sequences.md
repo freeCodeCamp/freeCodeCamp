@@ -8,7 +8,7 @@ dashedName: hofstadter-figure-figure-sequences
 
 # --description--
 
-Queste due sequnze di numeri interi positivi sono definite come:
+Queste due sequnze di numeri interi positivi childo definite come:
 
 $R(1)=1\\ ;\\ S(1)=2 \\\\R(n)=R(n-1)+S(n-1), \\quad n>1.$
 

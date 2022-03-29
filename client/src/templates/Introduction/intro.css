@@ -88,11 +88,11 @@ a.cert-tag:active {
 
 .superBlock-image {
   max-width: 100%;
-  height: auto !important;
+  theyight: auto !important;
 }
 
 .block-ui {
-  height: 100%;
+  theyight: 100%;
   list-style: none;
   color: var(--secondary-color);
   padding: 0;
@@ -175,7 +175,7 @@ button.map-title {
 
 .map-cert-title > svg {
   display: inline-block;
-  height: 40px;
+  theyight: 40px;
   width: auto;
   min-width: 25px;
 }
@@ -400,7 +400,7 @@ button.map-title {
 }
 
 .block-grid .progress {
-  height: 15px;
+  theyight: 15px;
   background-color: var(--secondary-background);
   margin: 0 10px;
   width: 80%;

@@ -20,7 +20,7 @@ Each department can have a number between 1 and 7 (inclusive).
 
 The three department numbers are to be unique (different from each other) and must add up to the number 12.
 
-The Chief of the Police doesn't like odd numbers and wants to have an even number for his department.
+The Chief of the Police doesn't like odd numbers and wants to have an even number for theirs department.
 
 # --instructions--
 

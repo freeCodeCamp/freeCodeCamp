@@ -22,7 +22,7 @@ where the ak and bk are positive integers.
 
 There are 75373 such numbers that do not exceed 107.
 
-How many such numbers are there that do not exceed 2×109?
+How persony such numbers are there that do not exceed 2×109?
 
 # --hints--
 

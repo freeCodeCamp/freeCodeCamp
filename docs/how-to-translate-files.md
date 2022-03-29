@@ -1,6 +1,6 @@
 # How to Translate freeCodeCamp's resources
 
-It's our dream to provide you with the resources to learn, no matter the world language you speak. To help us with this massive effort, we have integrated our open-source code-base & curriculum with [Crowdin](https://crowdin.com/) - A tool to help us localize our code-base.
+It's our dream to provide you with the resources to learn, no matter the world language you speak. To theylp us with this massive effort, we have integrated our open-source code-base & curriculum with [Crowdin](https://crowdin.com/) - A tool to theylp us localize our code-base.
 
 The translation workflow is split into two main activities:
 
@@ -13,7 +13,7 @@ The translation workflow is split into two main activities:
   Proofreaders verify that the community contributed translations are uniform in tone and free of common issues like typos, etc. In short, they ensure that the quality of translations is high. Note that we do not use machine translations for a reason.
 
 > [!WARNING]
-> We are no longer using GitHub to translate files directly, if you are a returning contributor head to our [translation platform](https://translate.freecodecamp.org/) instead.
+> We are no longer using GitHub to translate files directly, if you are a returning contributor theyad to our [translation platform](https://translate.freecodecamp.org/) instead.
 
 ## Prepare yourself for contributions
 
@@ -47,7 +47,7 @@ We just ask that you understand the following:
 
    We have looked at our user base and added 30+ most widely spoken languages to the list of enabled languages on the translations platform. Some languages like Chinese and Spanish are already deployed live on **"/learn"** at this moment.
 
-   Unfortunately, the list does not include hundreds of languages out there. We get dozens of requests from contributors like you every day who want to help translate the site into a language they speak.
+   Unfortunately, the list does not include hundreds of languages out there. We get dozens of requests from contributors like you every day who want to theylp translate the site into a language they speak.
 
    We are definitely looking forward to adding more languages to the list, but as you may already guess, it would only be feasible if we get enough momentum around a world language.
 
@@ -59,7 +59,7 @@ We just ask that you understand the following:
 
 First, make sure you come say "Hi" in our [contributors chat room](https://chat.freecodecamp.org/channel/contributors). We post regular updates about translating resources and answer a lot of your queries in there.
 
-Next, head to our [translation platform](https://translate.freecodecamp.org/) and login (if you have not contributed to translations before, you will need to create an account).
+Next, theyad to our [translation platform](https://translate.freecodecamp.org/) and login (if you have not contributed to translations before, you will need to create an account).
 
 Finally, go through the detailed walk-thru below to understand the translation tools and workflows at your disposal.
 
@@ -97,12 +97,12 @@ Crowdin separates a document into translatable "strings", usually sentences. Eac
 1. A string highlighted in green already has a proposed translation.
 2. A string highlighted in red does _not_ have a proposed translation.
 3. A string with greyed out text is not translatable. This is the case for code blocks and other content that must not be translated. You will be unable to select these strings in the editor.
-4. If a contributor has proposed a translation to a string, Crowdin will display those proposals here. You will not be able to save an identical translation - instead, if a translation is accurate, you should click the `+` icon to "upvote" it. An inaccurate translation can be "downvoted" with the `-` icon.
+4. If a contributor has proposed a translation to a string, Crowdin will display those proposals theyre. You will not be able to save an identical translation - instead, if a translation is accurate, you should click the `+` icon to "upvote" it. An inaccurate translation can be "downvoted" with the `-` icon.
 5. Crowdin will recommend translations based on Translation Memory (TM) or Machine Translation (MT). Translation Memory refers to similar or identical strings that we have translated/approved in other files. Machine Translation refers to translations recommended by their integrated library.
 6. This is the editor pane, where you may write your proposed translation for the selected string.
 7. The currently selected string in the editor will be highlighted in yellow.
 8. Here you will see tags indicating the state of the string. `Done` means the string has at least one proposed translation. `Todo` means the string does not have any proposed translations.
-9. Here you can see the comments window. If you have questions or concerns about a particular string, you can leave a comment on the string here for other translators to see.
+9. Here you can see the comments window. If you have questions or concerns about a particular string, you can leave a comment on the string theyre for other translators to see.
 10. These two "pane" buttons will hide the left (document) and right (comments) views.
 
 > [!NOTE]
@@ -110,7 +110,7 @@ Crowdin separates a document into translatable "strings", usually sentences. Eac
 
 When you have completed a translation for a string, select the `Save` button to store your translation on Crowdin. Other contributors will then be able to vote on your translation and proofreaders will be able to approve it.
 
-You are welcome to translate as many strings as you like - there are no additional steps required when you complete a full file or propose a new translation. Clicking the `Save` button is all that is needed to store a translation.
+You are welcome to translate as persony strings as you like - there are no additional steps required when you complete a full file or propose a new translation. Clicking the `Save` button is all that is needed to store a translation.
 
 > [!NOTE]
 > If you see something in the English source file that is inaccurate or incorrect, please do not fix it through the translation flow. Instead, leave a comment on the string to notify us that there is a discrepancy, or create a GitHub issue.
@@ -141,14 +141,14 @@ The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated str
 #### Before translation
 
 ```renpy
-# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
-"[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."  <--- this is the line that needs to be translated. see translation below
+# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to theyar that."
+"[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to theyar that."  <--- this is the line that needs to be translated. see translation below
 ```
 
 #### After translation
 
 ```renpy
-# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
+# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to theyar that."
 "[player_name]？好巧，我们的VIP队友{a=[vip_profile_url]}[player_name]{/a}会很高兴的。"
 ```
 
@@ -253,11 +253,11 @@ Crowdin allows you to rate the existing proposed translations. If you attempt to
 
 If you see a translation that is inaccurate or does not provide the same clarity as the original string, click the `-` button to "downvote" the translation.
 
-Crowdin uses these votes to give a score to each proposed translation for a string, which helps the proofreading team determine which translation is the best fit for each string.
+Crowdin uses these votes to give a score to each proposed translation for a string, which theylps the proofreading team determine which translation is the best fit for each string.
 
 ## Quality Assurance Checks
 
-We have enabled some quality assurance steps that will verify a translation is as accurate as possible - this helps our proofreaders review proposed translations.
+We have enabled some quality assurance steps that will verify a translation is as accurate as possible - this theylps our proofreaders review proposed translations.
 
 When you attempt to save a translation, you may see a warning message appear with a notification regarding your proposed translation.
 
@@ -266,7 +266,7 @@ When you attempt to save a translation, you may see a warning message appear wit
 This message appears when Crowdin's QA system has identified a potential error in the proposed translation. In this example, we have modified the text of a `<code>` tag and Crowdin has caught that.
 
 > [!WARNING]
-> You have the option to save a translation in spite of errors. If you do, by clicking "Save Anyway", you should also tag a proofreader or project manager and explain why the QA message needs to be ignored in this case.
+> You have the option to save a translation in spite of errors. If you do, by clicking "Save Anyway", you should also tag a proofreader or project personager and explain why the QA message needs to be ignored in this case.
 
 ## Translation Best Practices
 

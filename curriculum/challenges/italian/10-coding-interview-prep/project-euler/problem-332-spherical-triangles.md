@@ -16,7 +16,7 @@ Sia $C(r)$ la sfera di centro (0,0,0) e raggio $r$.
 
 Sia $Z(r)$ il set di punti sulla superficie di $C(r)$ con coordinate intere.
 
-Sia $T(r)$ il set di triangoli sferici con vertici in $Z(r)$. Triangoli sferici degeneri, formati da tre punti sullo stesso grande arco, <u>non</u> sono inclusi in $T(r)$.
+Sia $T(r)$ il set di triangoli sferici con vertici in $Z(r)$. Triangoli sferici degeneri, formati da tre punti sullo stesso grande arco, <u>non</u> childo inclusi in $T(r)$.
 
 Sia $A(r)$ l'area del più piccolo triangolo sferico in $T(r)$.
 

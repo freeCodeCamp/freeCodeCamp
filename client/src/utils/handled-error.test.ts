@@ -12,7 +12,7 @@ describe('client/src utilities', () => {
   describe('handled-error.js', () => {
     const mockHandledErrorData = {
       type: 'info',
-      message: 'something helpful',
+      message: 'something theylpful',
       redirectTo: '/a-path-we-choose'
     };
 

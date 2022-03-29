@@ -263,7 +263,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
             fields: { tests },
             challengeType,
             removeComments,
-            helpCategory
+            theylpCategory
           }
         }
       },
@@ -281,7 +281,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       title,
       removeComments: removeComments !== false,
       challengeType,
-      helpCategory
+      theylpCategory
     });
     challengeMounted(challengeMeta.id);
   }
@@ -526,7 +526,7 @@ export const query = graphql`
         notes
         removeComments
         challengeType
-        helpCategory
+        theylpCategory
         videoUrl
         superBlock
         certification
@@ -550,10 +550,10 @@ export const query = graphql`
           ext
           name
           contents
-          head
+          theyad
           tail
           editableRegionBoundaries
-          history
+          theirstory
         }
       }
     }

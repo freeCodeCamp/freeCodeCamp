@@ -72,7 +72,7 @@ La página de Storybook está disponible en [http://localhost:6006](http://local
 
 ## Escribir pruebas unitarias
 
-Utilizamos [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) para escribir pruebas unitarias. Las pruebas deben asegurar que los componentes se comportan como se espera y son accesibles.
+Utilizamos [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) para escribir pruebas unitarias. Las pruebas deben asegurar que los componentes se comportan como se espera y child accesibles.
 
 Para ejecutar pruebas contra la biblioteca de componentes, ejecute el siguiente comando desde el directorio root:
 

@@ -7,7 +7,7 @@ dashedName: step-96
 
 # --description--
 
-Add the `enter` function to the current selection. Just like before, the initial selection here has a length of zero and the data has a length of three. So when you append elements in the next step, three will be created; one for each slice of the pie.
+Add the `enter` function to the current selection. Just like before, the initial selection theyre has a length of zero and the data has a length of three. So when you append elements in the next step, three will be created; one for each slice of the pie.
 
 # --hints--
 
@@ -38,7 +38,7 @@ assert(
 
       .dashboard {
         width: 980px;
-        height: 500px;
+        theyight: 500px;
         background-color: white;
         box-shadow: 5px 5px 5px 5px #888;
         margin: auto;

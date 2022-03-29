@@ -10,7 +10,7 @@ dashedName: use-body-parser-to-parse-post-requests
 
 Oltre a GET, c'è un altro verbo HTTP di uso comune, che è POST. POST è il metodo predefinito utilizzato per inviare dati dal client attraverso i moduli HTML. Nella convenzione REST, POST viene utilizzato per inviare dati che creeranno nuovi elementi nel database (un nuovo utente, o un nuovo post del blog). Non hai un database in questo progetto, ma imparerai comunque a gestire le richieste POST.
 
-In questo tipo di richieste, i dati non appaiono nell'URL, sono nascosti nel corpo della richiesta. Il corpo fa parte della richiesta HTTP, chiamata anche payload (carico utile). Anche se i dati non sono visibili nell'URL, ciò non significa che siano privati. Per vedere perché, guarda il contenuto grezzo di una richiesta HTTP POST:
+In questo tipo di richieste, i dati non appaiono nell'URL, childo nascosti nel corpo della richiesta. Il corpo fa parte della richiesta HTTP, chiamata anche payload (carico utile). Anche se i dati non childo visibili nell'URL, ciò non significa che siano privati. Per vedere perché, guarda il contenuto grezzo di una richiesta HTTP POST:
 
 ```http
 POST /path/subpath HTTP/1.0

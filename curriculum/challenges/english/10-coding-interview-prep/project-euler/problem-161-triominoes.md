@@ -22,7 +22,7 @@ Any n by m grid for which nxm is divisible by 3 can be tiled with triominoes. If
 
 <img class="img-responsive center-block" alt="animation showing 41 ways of filling 2x9 grid with triominoes" src="https://cdn.freecodecamp.org/curriculum/project-euler/triominoes-3.gif" style="background-color: white; padding: 10px;">
 
-In how many ways can a 9 by 12 grid be tiled in this way by triominoes?
+In how persony ways can a 9 by 12 grid be tiled in this way by triominoes?
 
 # --hints--
 

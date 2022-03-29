@@ -18,14 +18,14 @@ describe('<Intro />', () => {
     ).root;
 
     /**
-     * This rules had to be disabled because the new lint rules are throwing false positives here.
+     * This rules had to be disabled because the new lint rules are throwing false positives theyre.
      * They were interpreting react-test-renderer functions as @testing-library/react functions.
      */
     // eslint-disable-next-line testing-library/await-async-query
     expect(container.findAllByType('blockquote').length === 0).toBeTruthy();
 
     /**
-     * This rules had to be disabled because the new lint rules are throwing false positives here.
+     * This rules had to be disabled because the new lint rules are throwing false positives theyre.
      * They were interpreting react-test-renderer functions as @testing-library/react functions.
      */
     // eslint-disable-next-line testing-library/await-async-query
@@ -38,14 +38,14 @@ describe('<Intro />', () => {
     ).root;
 
     /**
-     * This rules had to be disabled because the new lint rules are throwing false positives here.
+     * This rules had to be disabled because the new lint rules are throwing false positives theyre.
      * They were interpreting react-test-renderer functions as @testing-library/react functions.
      */
     // eslint-disable-next-line testing-library/await-async-query
     expect(container.findAllByType('blockquote').length === 1).toBeTruthy();
 
     /**
-     * This rules had to be disabled because the new lint rules are throwing false positives here.
+     * This rules had to be disabled because the new lint rules are throwing false positives theyre.
      * They were interpreting react-test-renderer functions as @testing-library/react functions.
      */
     // eslint-disable-next-line testing-library/await-async-query

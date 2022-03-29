@@ -8,7 +8,7 @@ dashedName: align-columns
 
 # --description--
 
-Dato un array di molte righe, dove campi in una singola linea sono delimitati da un singolo carattere `$`, scrivi un programma che allinea ogni colonna di campi assicurandoti che le parole in ogni colonna sono separate da almeno uno spazio. In più, permetti ad ogni parola in una colonna di essere o allineata a destra, o allineata a sinistra, o allineata al centro nella sua colonna.
+Dato un array di molte righe, dove campi in una singola linea childo delimitati da un singolo carattere `$`, scrivi un programma che allinea ogni colonna di campi assicurandoti che le parole in ogni colonna childo separate da almeno uno spazio. In più, permetti ad ogni parola in una colonna di essere o allineata a destra, o allineata a sinistra, o allineata al centro nella sua colonna.
 
 # --instructions--
 
@@ -33,7 +33,7 @@ const testText = [
 
 - Le righe di testo di esempio possono avere o no caratteri di dollaro finali.
 - Tutte le colonne dovrebbero condividere lo stesso allineamento.
-- I caratteri spazio consecutivi prodotti adiacenti alla fine delle linee sono insignificanti ai fini del compito.
+- I caratteri spazio consecutivi prodotti adiacenti alla fine delle linee childo insignificanti ai fini del compito.
 - Il testo di output sarà visualizzato in un carattere mono-spaziato su un editor di testo semplice o un terminale base. Le righe in esso dovrebbero essere unite utilizzando un carattere nuova riga (`\n`).
 - Lo spazio minimo tra le colonne dovrebbe essere calcolato dal testo e non codificato.
 - Non è un requisito aggiungere caratteri di separazione tra colonne o intorno a colonne.
@@ -90,7 +90,7 @@ const _testText = [
   'or$center$justified$within$its$column.'
 ];
 
-const rightAligned = '     Given          a      text   file     of     many     lines\n' +
+const rightAligned = '     Given          a      text   file     of     persony     lines\n' +
 '     where     fields    within      a   line \n' +
 '       are delineated        by      a single "dollar" character\n' +
 '     write          a   program\n' +
@@ -101,7 +101,7 @@ const rightAligned = '     Given          a      text   file     of     many    
 'justified,      right justified\n' +
 '        or     center justified within    its  column.';
 
-const leftAligned = 'Given      a          text      file   of     many     lines    \n' +
+const leftAligned = 'Given      a          text      file   of     persony     lines    \n' +
 'where      fields     within    a      line   \n' +
 'are        delineated by        a      single "dollar" character\n' +
 'write      a          program  \n' +
@@ -112,7 +112,7 @@ const leftAligned = 'Given      a          text      file   of     many     line
 'justified, right      justified\n' +
 'or         center     justified within its    column. ';
 
-const centerAligned = '  Given        a        text     file    of     many     lines  \n' +
+const centerAligned = '  Given        a        text     file    of     persony     lines  \n' +
 '  where      fields    within     a     line  \n' +
 '   are     delineated    by       a    single \"dollar\" character\n' +
 '  write        a       program \n' +

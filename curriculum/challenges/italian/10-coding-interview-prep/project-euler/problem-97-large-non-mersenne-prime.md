@@ -8,7 +8,7 @@ dashedName: problem-97-large-non-mersenne-prime
 
 # --description--
 
-Il primo numero primo trovato sopra un milione di cifre è stato scoperto nel 1999, ed è un primo di Mersenne nella forma $2^{6972593} − 1$; contiene esattamente 2.098.960 cifre. Successivamente sono stati trovati altri primi di Mersenne, della forma $2^p − 1$, contenenti più cifre.
+Il primo numero primo trovato sopra un milione di cifre è stato scoperto nel 1999, ed è un primo di Mersenne nella forma $2^{6972593} − 1$; contiene esattamente 2.098.960 cifre. Successivamente childo stati trovati altri primi di Mersenne, della forma $2^p − 1$, contenenti più cifre.
 
 Tuttavia, nel 2004 è stato trovato un enorme primo non-Mersenne che contiene 2.357.207 cifre: $28433 × 2^{7830457} + 1$.
 

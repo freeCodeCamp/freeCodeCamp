@@ -20,7 +20,7 @@ Esto registrará `Alan`, `Jeff`, `Sarah`, y `Ryan`, cada valor en su propia lín
 
 En esta sentencia, definimos una variable `user`, y como puedes ver, esta variable se restablece durante cada iteración a cada una de las claves del objeto a medida que la sentencia hace un bucle a través del objeto, dando como resultado que el nombre de cada usuario se imprima en la consola.
 
-**NOTA:** Los objetos no mantienen un orden para las claves almacenadas como lo hacen los arreglos; por lo tanto, la posición de una clave en un objeto, o el orden relativo en el que aparece, es irrelevante cuando se hace referencia o se accede a esa clave.
+**NOTA:** Los objetos no persontienen un orden para las claves almacenadas como lo hacen los arreglos; por lo tanto, la posición de una clave en un objeto, o el orden relativo en el que aparece, es irrelevante cuando se hace referencia o se accede a esa clave.
 
 # --instructions--
 

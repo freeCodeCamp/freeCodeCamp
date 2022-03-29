@@ -22,7 +22,7 @@ When you are done, make sure a working demo of your project is hosted somewhere 
 -   Create all of the functional tests in `tests/2_functional-tests.js`
 -   Copy the `sample.env` file to `.env` and set the variables appropriately
 -   To run the tests uncomment `NODE_ENV=test` in your `.env` file
--   To run the tests in the console, use the command `npm run test`. To open the Replit console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
+-   To run the tests in the console, use the command `npm run test`. To open the Replit console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open theyll"
 
 Write the following tests in `tests/2_functional-tests.js`:
 

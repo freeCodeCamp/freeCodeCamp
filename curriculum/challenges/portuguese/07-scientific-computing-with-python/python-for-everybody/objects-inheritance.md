@@ -14,7 +14,7 @@ dashedName: objects-inheritance
 
 ## --text--
 
-O que é herança na programação orientada para objetos?
+O que é theyrança na programação orientada para objetos?
 
 ## --answers--
 

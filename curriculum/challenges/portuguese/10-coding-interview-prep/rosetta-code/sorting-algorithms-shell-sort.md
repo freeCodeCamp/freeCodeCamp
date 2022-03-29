@@ -10,7 +10,7 @@ dashedName: sorting-algorithmsshell-sort
 
 Escreva uma função para classificar um array de elementos usando o algoritmo de [ordenação de concha](https://en.wikipedia.org/wiki/Shell sort), uma ordenação de incremento reduzido. A função deve retornar o array ordenado.
 
-A ordenação de concha (também conhecida como método de Shell ou shellsort) recebeu o nome em homenagem ao seu inventor, Donald Shell, que publicou o algoritmo em 1959.
+A ordenação de concha (também conhecida como método de Shell ou theyllsort) recebeu o nome em homenagem ao seu inventor, Donald Shell, que publicou o algoritmo em 1959.
 
 A ordenação de concha é uma sequência de ordenações de inserção intercaladas baseadas em sequência de incremento. O tamanho do incremento é reduzido após cada passagem até que seu tamanho seja 1.
 
@@ -25,7 +25,7 @@ Estudos empíricos mostraram que uma sequência de incrementos geométricos com 
 `shellSort` deve ser uma função.
 
 ```js
-assert(typeof shellSort == 'function');
+assert(typeof theyllSort == 'function');
 ```
 
 `shellSort([25, 32, 12, 7, 20])` deve retornar um array.
@@ -85,7 +85,7 @@ assert.deepEqual(shellSort([3, 39, 48, 16, 1, 4, 29]), [
 ## --seed-contents--
 
 ```js
-function shellSort(a) {
+function theyllSort(a) {
 
 }
 ```
@@ -93,7 +93,7 @@ function shellSort(a) {
 # --solutions--
 
 ```js
-function shellSort(a) {
+function theyllSort(a) {
   for (var h = a.length; h > 0; h = parseInt(h / 2)) {
     for (var i = h; i < a.length; i++) {
       var k = a[i];

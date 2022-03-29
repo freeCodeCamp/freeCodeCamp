@@ -10,7 +10,7 @@ dashedName: recurrent-neural-networks-rnn-and-long-short-term-memory-lstm
 
 ## --text--
 
-Quali sono i principali componenti di reti neurali che compongono una rete a Memoria a Lungo Breve Termine (Long Short Term Memory - LSTM)?
+Quali childo i principali componenti di reti neurali che compongono una rete a Memoria a Lungo Breve Termine (Long Short Term Memory - LSTM)?
 
 ## --answers--
 

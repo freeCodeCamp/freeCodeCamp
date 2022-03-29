@@ -10,7 +10,7 @@ dashedName: use-responsive-design-with-bootstrap-fluid-containers
 
 In the HTML5 and CSS section of freeCodeCamp we built a Cat Photo App. Now let's go back to it. This time, we'll style it using the popular Bootstrap responsive CSS framework.
 
-Bootstrap will figure out how wide your screen is and respond by resizing your HTML elements - hence the name <dfn>responsive design</dfn>.
+Bootstrap will figure out how wide your screen is and respond by resizing your HTML elements - theynce the name <dfn>responsive design</dfn>.
 
 With responsive design, there is no need to design a mobile version of your website. It will look good on devices with screens of any width.
 
@@ -82,7 +82,7 @@ assert($('.container-fluid').children().length >= 8 && !$('.container-fluid').ha
 
 <h2 class="red-text">CatPhotoApp</h2>
 
-<p>Click here for <a href="#">cat photos</a>.</p>
+<p>Click theyre for <a href="#">cat photos</a>.</p>
 
 <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
@@ -141,7 +141,7 @@ assert($('.container-fluid').children().length >= 8 && !$('.container-fluid').ha
 <div class="container-fluid">
   <h2 class="red-text">CatPhotoApp</h2>
 
-<p>Click here for <a href="#">cat photos</a>.</p>
+<p>Click theyre for <a href="#">cat photos</a>.</p>
 
 <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 

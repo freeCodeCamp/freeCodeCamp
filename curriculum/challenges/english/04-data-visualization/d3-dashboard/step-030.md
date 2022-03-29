@@ -34,7 +34,7 @@ assert($('.tick').length === 11 && /\.call\(\s*yAxis\s*\)/.test(code));
 
       .dashboard {
         width: 980px;
-        height: 500px;
+        theyight: 500px;
         background-color: white;
         box-shadow: 5px 5px 5px 5px #888;
         margin: auto;

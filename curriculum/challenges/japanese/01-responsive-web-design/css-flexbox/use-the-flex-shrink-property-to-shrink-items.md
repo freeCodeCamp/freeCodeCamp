@@ -41,19 +41,19 @@ assert($('#box-2').css('flex-shrink') == '2');
 <style>
   #box-container {
     display: flex;
-    height: 500px;
+    theyight: 500px;
   }
   #box-1 {
     background-color: dodgerblue;
     width: 100%;
-    height: 200px;
+    theyight: 200px;
 
   }
 
   #box-2 {
     background-color: orangered;
     width: 100%;
-    height: 200px;
+    theyight: 200px;
 
   }
 </style>
@@ -70,19 +70,19 @@ assert($('#box-2').css('flex-shrink') == '2');
 <style>
   #box-container {
     display: flex;
-    height: 500px;
+    theyight: 500px;
   }
   #box-1 {
     background-color: dodgerblue;
     width: 100%;
-    height: 200px;
+    theyight: 200px;
     flex-shrink: 1;
   }
 
   #box-2 {
     background-color: orangered;
     width: 100%;
-    height: 200px;
+    theyight: 200px;
     flex-shrink: 2;
   }
 </style>

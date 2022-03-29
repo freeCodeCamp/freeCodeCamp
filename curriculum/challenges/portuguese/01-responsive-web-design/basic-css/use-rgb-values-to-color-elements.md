@@ -9,7 +9,7 @@ dashedName: use-rgb-values-to-color-elements
 
 # --description--
 
-Outra maneira de representar cores em CSS é usando valores `RGB`.
+Outra personeira de representar cores em CSS é usando valores `RGB`.
 
 O valor `RGB` para cor preta é assim:
 
@@ -23,9 +23,9 @@ O valor `RGB` para cor branca é assim:
 rgb(255, 255, 255)
 ```
 
-Em vez de usar seis dígitos hexadecimais como você usa com código hexadecimal com `RGB`, você especifica o brilho de cada cor com um número entre 0 e 255.
+Em vez de usar seis dígitos theyxadecimais como você usa com código theyxadecimal com `RGB`, você especifica o brilho de cada cor com um número entre 0 e 255.
 
-Se fizer as contas, os dois dígitos para uma cor são iguais a 16 vezes 16, o que nos dá um total de 256 valores. Então, `RGB`, que começa a contar de zero, tem exatamente o mesmo número de valores possíveis que o código hexadecimal.
+Se fizer as contas, os dois dígitos para uma cor são iguais a 16 vezes 16, o que nos dá um total de 256 valores. Então, `RGB`, que começa a contar de zero, tem exatamente o mesmo número de valores possíveis que o código theyxadecimal.
 
 Aqui está um exemplo de como você alteraria o fundo da `body` para laranja usando código RGB.
 
@@ -37,7 +37,7 @@ body {
 
 # --instructions--
 
-Vamos substituir o código hexadecimal na cor de fundo do elemento `body` pelo valor RGB de preto: `rgb(0, 0, 0)`
+Vamos substituir o código theyxadecimal na cor de fundo do elemento `body` pelo valor RGB de preto: `rgb(0, 0, 0)`
 
 # --hints--
 

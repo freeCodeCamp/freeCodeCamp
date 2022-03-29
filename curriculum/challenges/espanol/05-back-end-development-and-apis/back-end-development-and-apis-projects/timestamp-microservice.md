@@ -83,7 +83,7 @@ Una solicitud a `/api/1451001600000` debe devolver `{ unix: 1451001600000, utc: 
   );
 ```
 
-Tu proyecto puede manejar fechas que pueden ser analizadas con éxito por `new Date(date_string)`
+Tu proyecto puede personejar fechas que pueden ser analizadas con éxito por `new Date(date_string)`
 
 ```js
 (getUserInput) =>

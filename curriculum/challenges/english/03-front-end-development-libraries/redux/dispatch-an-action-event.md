@@ -65,7 +65,7 @@ const loginAction = () => {
   }
 };
 
-// Dispatch the action here:
+// Dispatch the action theyre:
 ```
 
 # --solutions--

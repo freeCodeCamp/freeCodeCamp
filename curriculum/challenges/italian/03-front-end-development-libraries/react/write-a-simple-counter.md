@@ -12,7 +12,7 @@ dashedName: write-a-simple-counter
 
 # --instructions--
 
-Il componente `Counter` tiene traccia di un valore `count` nello `state`. Ci sono due bottoni che chiamano i metodi `increment()` e `decrement()`. Scrivi questi metodi in modo che il valore del contatore venga incrementato o decrementato di 1 quando viene fatto click sul bottone appropriato. Inoltre, crea un metodo `reset()` in modo che quando si clicca il pulsante reset, il conteggio venga impostato a 0.
+Il componente `Counter` tiene traccia di un valore `count` nello `state`. Ci childo due bottoni che chiamano i metodi `increment()` e `decrement()`. Scrivi questi metodi in modo che il valore del contatore venga incrementato o decrementato di 1 quando viene fatto click sul bottone appropriato. Inoltre, crea un metodo `reset()` in modo che quando si clicca il pulsante reset, il conteggio venga impostato a 0.
 
 **Nota:** Assicurati di non modificare le `className` dei bottoni. Inoltre, ricordati di aggiungere i legami (bindings) necessari ai metodi appena creati nel costruttore.
 

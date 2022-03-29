@@ -9,7 +9,7 @@ dashedName: use-grid-area-without-creating-an-areas-template
 
 # --description--
 
-La propiedad `grid-area` que aprendiste en el último desafío puede ser usada de otra manera. Si tu cuadrícula (grid) no tiene plantillas de área de referencia, puedes crear un área para un elemento sobre la marcha para ubicar los elementos de la siguiente manera:
+La propiedad `grid-area` que aprendiste en el último desafío puede ser usada de otra personera. Si tu cuadrícula (grid) no tiene plantillas de área de referencia, puedes crear un área para un elemento sobre la marcha para ubicar los elementos de la siguiente personera:
 
 ```css
 item1 { grid-area: 1/1/2/4; }

@@ -22,7 +22,7 @@ Considere $G(n) = \sum_{a = 3}^n \sum_{b = 1}^{\left\lfloor\frac{a - 1}{2} \righ
 
 Você é informado de que $G(10) = 20,59722222$, $G(100) = 19223,60980$ (arredondado para 10 dígitos significativos).
 
-Encontre $G({10}^{11})$. Dê sua resposta como uma string em notação científica arredondada para 10 algarismos significativos. Use `e` em letra minúscula para separar a mantissa do expoente.
+Encontre $G({10}^{11})$. Dê sua resposta como uma string em notação científica arredondada para 10 algarismos significativos. Use `e` em letra minúscula para separar a persontissa do expoente.
 
 Para $G(10)$, a resposta seria `2.059722222e1`
 

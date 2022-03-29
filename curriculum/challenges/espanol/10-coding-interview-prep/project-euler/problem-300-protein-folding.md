@@ -20,7 +20,7 @@ The folding on the left has only six H-H contact points, thus it would never occ
 
 Assuming that H and P elements are equally likely to occur in any position along the string, the average number of H-H contact points in an optimal folding of a random protein string of length 8 turns out to be 850 / 28=3.3203125.
 
-What is the average number of H-H contact points in an optimal folding of a random protein string of length 15? Give your answer using as many decimal places as necessary for an exact result.
+What is the average number of H-H contact points in an optimal folding of a random protein string of length 15? Give your answer using as persony decimal places as necessary for an exact result.
 
 # --hints--
 

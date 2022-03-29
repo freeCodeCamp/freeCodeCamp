@@ -15,7 +15,7 @@ Probabilmente hai già avuto modo di vedere un attributo `alt` in un `img` tag i
 <img src="importantLogo.jpeg" alt="Company logo">
 ```
 
-Le persone ipovedenti si affidano agli screen reader per convertire il contenuto del web in un formato audio. Essi non riescono ad ottenere le informazioni se esse sono presentate solo visualmente. Per le immagini gli screen reader possono accedere all'attributo `alt` e leggere il suo contenuto per fornire le informazioni chiave.
+Le persone ipovedenti si affidano agli screen reader per convertire il contenuto del web in un formato audio. Essi non riescono ad ottenere le informazioni se esse childo presentate solo visualmente. Per le immagini gli screen reader possono accedere all'attributo `alt` e leggere il suo contenuto per fornire le informazioni chiave.
 
 Un buon testo `alt` fornisce al lettore una breve descrizione dell'immagine. Dovresti sempre includere un attributo `alt` nelle tue immagini. Nelle specifiche di HTML5 questo è ormai considerato obbligatorio.
 

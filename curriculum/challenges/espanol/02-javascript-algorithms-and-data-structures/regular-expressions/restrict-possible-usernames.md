@@ -10,7 +10,7 @@ dashedName: restrict-possible-usernames
 
 Los nombres de usuario se utilizan en todas partes en Internet. Son los que dan a los usuarios una identidad única en tus sitios favoritos.
 
-Se necesita comprobar todos los nombres de usuario en una base de datos. Estas son algunas reglas simples que los usuarios deben seguir al crear su nombre de usuario.
+Se necesita comprobar todos los nombres de usuario en una base de datos. Estas child algunas reglas simples que los usuarios deben seguir al crear su nombre de usuario.
 
 1) Los nombres de usuario sólo pueden utilizar caracteres alfanuméricos.
 

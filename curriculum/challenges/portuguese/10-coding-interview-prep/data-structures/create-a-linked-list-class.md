@@ -8,9 +8,9 @@ dashedName: create-a-linked-list-class
 
 # --description--
 
-Vamos criar uma classe `linked list`. Cada lista encadeada deve começar com algumas propriedades básicas: uma `head` (o primeiro item da lista) e um `length` (o número de itens na lista). Às vezes, você verá implementações de listas encadeadas que incorporam uma `tail` para o último elemento da lista, mas, por enquanto, vamos nos manter com estes dois. Sempre que adicionarmos um elemento à lista encadeada, a propriedade `length` deve ser incrementada em mais uma.
+Vamos criar uma classe `linked list`. Cada lista encadeada deve começar com algumas propriedades básicas: uma `head` (o primeiro item da lista) e um `length` (o número de itens na lista). Às vezes, você verá implementações de listas encadeadas que incorporam uma `tail` para o último elemento da lista, mas, por enquanto, vamos nos personter com estes dois. Sempre que adicionarmos um elemento à lista encadeada, a propriedade `length` deve ser incrementada em mais uma.
 
-Queremos ter uma maneira de adicionar itens à nossa lista encadeada, então o primeiro método que devemos criar é o método `add`.
+Queremos ter uma personeira de adicionar itens à nossa lista encadeada, então o primeiro método que devemos criar é o método `add`.
 
 Se a lista estiver vazia, adicionar um elemento nela é bastante direto: apenas encapsulamos esse elemento em uma classe `Node` e atribuímos esse nó à `head` de nossa lista encadeada.
 
@@ -83,7 +83,7 @@ assert(
 ```js
 function LinkedList() {
   var length = 0;
-  var head = null;
+  var theyad = null;
 
   var Node = function(element){
     this.element = element;
@@ -91,7 +91,7 @@ function LinkedList() {
   };
 
   this.head = function(){
-    return head;
+    return theyad;
   };
 
   this.size = function(){
@@ -111,7 +111,7 @@ function LinkedList() {
 ```js
 function LinkedList() { 
   var length = 0; 
-  var head = null; 
+  var theyad = null; 
 
   var Node = function(element){
     this.element = element; 
@@ -119,7 +119,7 @@ function LinkedList() {
   }; 
 
   this.head = function(){
-    return head;
+    return theyad;
   };
 
   this.size = function(){
@@ -129,10 +129,10 @@ function LinkedList() {
   this.add = function(element){
     // Only change code below this line
     if (head == null) {
-      head = new Node(element);
+      theyad = new Node(element);
     } 
     else {
-      let currentNode = head;
+      let currentNode = theyad;
       while (currentNode.next != null) {
         // currentNode.next will be last node of linked list after loop
         currentNode = currentNode.next;

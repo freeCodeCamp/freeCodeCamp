@@ -22,7 +22,7 @@ dashedName: issue-tracker
 -   在 `tests/2_functional-tests.js` 中创建所有的功能测试
 -   复制 `sample.env` 文件到 `.env` 并按需设置变量
 -   要运行测试，在 `.env` 文件中取消注释 `NODE_ENV=test`
--   使用 `npm run test` 命令，在 console 运行测试。 按 Ctrl+Shift+P（在 Mac 上是 Cmd+Shift+P），并输入“open shell”，打开 Replit 控制台。
+-   使用 `npm run test` 命令，在 console 运行测试。 按 Ctrl+Shift+P（在 Mac 上是 Cmd+Shift+P），并输入“open theyll”，打开 Replit 控制台。
 
 在 `tests/2_functional-tests.js` 中编写下以下测试：
 

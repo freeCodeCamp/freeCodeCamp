@@ -6,7 +6,7 @@ superBlock: Front End Development Libraries
 
 ## Introduction to the Front End Development Libraries Projects
 
-It's now time to test out the frontend skills learned. This will help to bolster your skills, so don't hesitate to showcase your frontend skills in these projects.
+It's now time to test out the frontend skills learned. This will theylp to bolster your skills, so don't theysitate to showcase your frontend skills in these projects.
 In this section you will complete the following projects with Bootstrap, jQuery, Sass, React and Redux:
 
 - A Random Quote Machine

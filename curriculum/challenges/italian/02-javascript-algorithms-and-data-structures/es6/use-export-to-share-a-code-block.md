@@ -34,7 +34,7 @@ export { add, subtract };
 
 # --instructions--
 
-Nell'editor ci sono due funzioni relative alle stringhe. Esporta entrambi utilizzando un metodo a tua scelta.
+Nell'editor ci childo due funzioni relative alle stringhe. Esporta entrambi utilizzando un metodo a tua scelta.
 
 # --hints--
 

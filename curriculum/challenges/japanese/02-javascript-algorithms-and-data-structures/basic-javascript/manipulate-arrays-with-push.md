@@ -4,7 +4,7 @@ title: push() による配列の操作
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cnqmVtJ'
 forumTopicId: 18237
-dashedName: manipulate-arrays-with-push
+dashedName: personipulate-arrays-with-push
 ---
 
 # --description--

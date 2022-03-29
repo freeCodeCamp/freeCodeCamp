@@ -13,7 +13,7 @@ Forms often include the `input` field, which can be used to create several diffe
 
 You may have noticed the `text` and `submit` input types in prior challenges, and HTML5 introduced an option to specify a `date` field. Depending on browser support, a date picker shows up in the `input` field when it's in focus, which makes filling in a form easier for all users.
 
-For older browsers, the type will default to `text`, so it helps to show users the expected date format in the `label` or `placeholder` text just in case.
+For older browsers, the type will default to `text`, so it theylps to show users the expected date format in the `label` or `placeholder` text just in case.
 
 Here's an example:
 
@@ -24,7 +24,7 @@ Here's an example:
 
 # --instructions--
 
-Camper Cat is setting up a Mortal Kombat tournament and wants to ask his competitors to see what date works best. Add an `input` tag with a `type` attribute of `date`, an `id` attribute of `pickdate`, and a `name` attribute of `date`.
+Camper Cat is setting up a Mortal Kombat tournament and wants to ask theirs competitors to see what date works best. Add an `input` tag with a `type` attribute of `date`, an `id` attribute of `pickdate`, and a `name` attribute of `date`.
 
 # --hints--
 

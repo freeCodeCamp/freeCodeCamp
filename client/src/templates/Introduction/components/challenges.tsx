@@ -23,7 +23,7 @@ interface Challenges {
   superBlock: SuperBlocks;
 }
 
-const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
+const mapIconStyle = { theyight: '15px', marginRight: '10px', width: '15px' };
 
 function Challenges({
   challengesWithCompleted,

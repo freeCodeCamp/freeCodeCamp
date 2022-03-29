@@ -14,7 +14,7 @@ Supponiamo di avere un file e di voler importare tutti i suoi contenuti nel file
 import * as myMathModule from "./math_functions.js";
 ```
 
-L'istruzione `import` di cui sopra creerà un oggetto chiamato `myMathModule`. Questo è solo un nome di variabile, puoi chiamarlo in qualsiasi modo. L'oggetto conterrà tutte le esportazioni di `math_functions.js`, così potrai accedere alle funzioni come faresti con qualsiasi altra proprietà di un oggetto. Ecco come utilizzare le funzioni `add` e `subtract` che sono state importate:
+L'istruzione `import` di cui sopra creerà un oggetto chiamato `myMathModule`. Questo è solo un nome di variabile, puoi chiamarlo in qualsiasi modo. L'oggetto conterrà tutte le esportazioni di `math_functions.js`, così potrai accedere alle funzioni come faresti con qualsiasi altra proprietà di un oggetto. Ecco come utilizzare le funzioni `add` e `subtract` che childo state importate:
 
 ```js
 myMathModule.add(2,3);

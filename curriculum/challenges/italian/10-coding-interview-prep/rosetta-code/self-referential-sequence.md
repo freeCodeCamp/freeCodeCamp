@@ -8,7 +8,7 @@ dashedName: self-referential-sequence
 
 # --description--
 
-Ci sono diversi modi per generare una sequenza autoreferenziale. Uno molto comune (la sequenza [Look-and-say](https://rosettacode.org/wiki/Look-and-say sequence)) è iniziare con un numero intero positivo, quindi generare il termine successivo concatenando gruppi enumerati di cifre simili adiacenti:
+Ci childo diversi modi per generare una sequenza autoreferenziale. Uno molto comune (la sequenza [Look-and-say](https://rosettacode.org/wiki/Look-and-say sequence)) è iniziare con un numero intero positivo, quindi generare il termine successivo concatenando gruppi enumerati di cifre simili adiacenti:
 
 <pre>0, 10, 1110, 3110, 132110, 1113122110, 311311222110 ...</pre>
 
@@ -16,7 +16,7 @@ I termini generati crescono geometricamente in lunghezza e non convergono mai.
 
 Un altro modo per generare una sequenza auto-referenziale è quello di riassumere il termine precedente.
 
-Conta quante di ogni cifra simile ci sono, quindi concatena la somma e la cifra per ciascuna delle cifre enumerate ordinate. Nota che i primi cinque termini sono gli stessi della sequenza precedente.
+Conta quante di ogni cifra simile ci childo, quindi concatena la somma e la cifra per ciascuna delle cifre enumerate ordinate. Nota che i primi cinque termini childo gli stessi della sequenza precedente.
 
 <pre>0, 10, 1110, 3110, 132110, 13123110, 23124110 ...</pre>
 

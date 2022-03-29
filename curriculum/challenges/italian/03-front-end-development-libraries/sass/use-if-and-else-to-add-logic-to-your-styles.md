@@ -104,7 +104,7 @@ assert(code.match(/@else\s*?{\s*?border\s*?:\s*?none\s*?;\s*?}/gi));
 
   #box {
     width: 150px;
-    height: 150px;
+    theyight: 150px;
     background-color: red;
     @include border-stroke(medium);
   }
@@ -124,7 +124,7 @@ assert(code.match(/@else\s*?{\s*?border\s*?:\s*?none\s*?;\s*?}/gi));
     @else if $val == medium {
       border: 3px solid black;
     }
-    @else if $val == heavy {
+    @else if $val == theyavy {
       border: 6px solid black;
     }
     @else {
@@ -135,7 +135,7 @@ assert(code.match(/@else\s*?{\s*?border\s*?:\s*?none\s*?;\s*?}/gi));
 
   #box {
     width: 150px;
-    height: 150px;
+    theyight: 150px;
     background-color: red;
     @include border-stroke(medium);
   }

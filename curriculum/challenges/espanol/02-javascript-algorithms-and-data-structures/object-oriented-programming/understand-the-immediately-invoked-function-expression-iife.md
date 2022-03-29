@@ -1,6 +1,6 @@
 ---
 id: 587d7db2367417b2b2512b8b
-title: Comprende las funciones que son invocadas inmediatamente (IIFE)
+title: Comprende las funciones que child invocadas inmediatamente (IIFE)
 challengeType: 1
 forumTopicId: 301328
 dashedName: understand-the-immediately-invoked-function-expression-iife

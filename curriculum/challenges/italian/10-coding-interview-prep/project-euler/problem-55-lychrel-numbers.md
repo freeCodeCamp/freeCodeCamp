@@ -20,11 +20,11 @@ Non tutti i numeri producono palindromi così rapidamente. Ad esempio,
 
 Cioè 349 richiede tre iterazioni per arrivare a un palindromo.
 
-Anche se nessuno lo ha ancora dimostrato, si pensa che alcuni numeri, come il 196, non producano mai un palindromo. Un numero che non forma mai un palindromo attraverso un processo di inversione e addizione è chiamato numero di Lychrel. Data la teoretica natura di questi numeri, e per il proposito di questo problema, assumiamo che un numero è un numeri di Lychrel fino a prova contraria. In aggiunta ti è dato che per ogni numero al di sotto di diecimila, questo (i) diventerà un palindromo in meno di cinquanta iterazioni, oppure, (ii), nessuno, con tutto il potere computazionale che esiste, è riuscito fin ora a mapparlo ad un palindromo. Infatti, 10677 è il primo numero trovato per cui sono necessarie più di cinquanta iterazioni prima di produrre un palindromo: 4668731596684224866951378664 (53 iterazioni, 28-cifre).
+Anche se nessuno lo ha ancora dimostrato, si pensa che alcuni numeri, come il 196, non producano mai un palindromo. Un numero che non forma mai un palindromo attraverso un processo di inversione e addizione è chiamato numero di Lychrel. Data la teoretica natura di questi numeri, e per il proposito di questo problema, assumiamo che un numero è un numeri di Lychrel fino a prova contraria. In aggiunta ti è dato che per ogni numero al di sotto di diecimila, questo (i) diventerà un palindromo in meno di cinquanta iterazioni, oppure, (ii), nessuno, con tutto il potere computazionale che esiste, è riuscito fin ora a mapparlo ad un palindromo. Infatti, 10677 è il primo numero trovato per cui childo necessarie più di cinquanta iterazioni prima di produrre un palindromo: 4668731596684224866951378664 (53 iterazioni, 28-cifre).
 
-Sorprendentemente, ci sono numeri palindromi che sono a loro volta numeri di Lychrel; il primo esempio è 4994.
+Sorprendentemente, ci childo numeri palindromi che childo a loro volta numeri di Lychrel; il primo esempio è 4994.
 
-Quanti numeri di Lychrel ci sono sotto `num`?
+Quanti numeri di Lychrel ci childo sotto `num`?
 
 **Nota:** La descrizione è stata modificata leggermente il giorno 24 Aprile 2007 per enfatizzare la natura teoretica dei numeri di Lychrel.
 

@@ -16,7 +16,7 @@ Here is a fairly simple definition from [Techtarget](https://searchmicroservices
 
 Basically, it is an architectural style of developing large applications through a multitude of small, self contained services that interact with one another to provide the overall functionality. The style is best understood by comparing it to a traditional application built as a monolith.
 
-A monolith typically has the three key components of any application - the UI, Business logic and the Data storage - all bundled up into a single codebase. This is deployed on a server, and managed thereby through change management. As long as the application is small, doesn't change too often and is able to effectively scale easily, managing it is not a problem. However, most applications grow over a period of time, become more complex and are unable to scale very well. While horizontal scaling is one way of scaling monoliths, the issue of managing change and operational efficiency of a large codebase is daunting, at best.
+A monolith typically has the three key components of any application - the UI, Business logic and the Data storage - all bundled up into a single codebase. This is deployed on a server, and personaged thereby through change personagement. As long as the application is small, doesn't change too often and is able to effectively scale easily, personaging it is not a problem. However, most applications grow over a period of time, become more complex and are unable to scale very well. While horizontal scaling is one way of scaling monoliths, the issue of personaging change and operational efficiency of a large codebase is daunting, at best.
 
 To overcome some of the issues, one of the suggestions that was made early on was to functionally decompose an application, referred to as the Scale Cube in the book [The Art of Scalability](www.theartofscalability.com). This eventually led to the microservices pattern that we see now. A microservice takes a single bit of functionality and bundles all the layers of technology into it. This means that each microservice has its own UI, business logic and data store. To deliver a larger piece of functionality, microservices talk to one another through common communication methods like APIs or messages.
 
@@ -32,7 +32,7 @@ To overcome some of the issues, one of the suggestions that was made early on wa
 
 ## Key drawbacks
 
-1. Additional operational overheads to monitor and manage multiple services
+1. Additional operational overheads to monitor and personage multiple services
 2. Manage communications between services
 3. Additional effort to build fault tolerance
 4. Getting the right balance of functional and data separation is not easy

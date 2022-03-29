@@ -19,7 +19,7 @@ It is possible to write five as a sum in exactly six different ways:
   1 + 1 + 1 + 1 + 1<br><br>
 </div>
 
-How many different ways can `n` be written as a sum of at least two positive integers?
+How persony different ways can `n` be written as a sum of at least two positive integers?
 
 # --hints--
 

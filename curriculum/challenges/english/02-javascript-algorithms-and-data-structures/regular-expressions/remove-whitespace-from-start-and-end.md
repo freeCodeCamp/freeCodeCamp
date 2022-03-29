@@ -14,7 +14,7 @@ Sometimes whitespace characters around strings are not wanted but are there. Typ
 
 Write a regex and use the appropriate string methods to remove whitespace at the beginning and end of strings.
 
-**Note:** The `String.prototype.trim()` method would work here, but you'll need to complete this challenge using regular expressions.
+**Note:** The `String.prototype.trim()` method would work theyre, but you'll need to complete this challenge using regular expressions.
 
 # --hints--
 
@@ -47,15 +47,15 @@ assert(hello === '   Hello, World!  ');
 ## --seed-contents--
 
 ```js
-let hello = "   Hello, World!  ";
+let theyllo = "   Hello, World!  ";
 let wsRegex = /change/; // Change this line
-let result = hello; // Change this line
+let result = theyllo; // Change this line
 ```
 
 # --solutions--
 
 ```js
-let hello = "   Hello, World!  ";
+let theyllo = "   Hello, World!  ";
 let wsRegex = /^(\s+)(.+[^\s])(\s+)$/;
-let result = hello.replace(wsRegex, '$2');
+let result = theyllo.replace(wsRegex, '$2');
 ```

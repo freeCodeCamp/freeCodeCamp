@@ -10,7 +10,7 @@ dashedName: adjacency-matrix
 
 Un altro modo per rappresentare un grafico è quello di metterlo in una <dfn>matrice di adiacenza</dfn>. Una matrice di <dfn>adiacenza</dfn> è un array bidimensionale (2D) in cui ogni array annidato ha lo stesso numero di elementi dell'array esterno. In altre parole, è una matrice o una griglia di numeri, dove i numeri rappresentano gli archi.
 
-**Nota**: I numeri in alto e a sinistra della matrice sono solo etichette per i nodi. All'interno della matrice, gli uni significano che esiste un arco tra i vertici (nodi) che rappresentano la riga e la colonna. Infine, gli zeri significano che non c'è un arco o relazione.
+**Nota**: I numeri in alto e a sinistra della matrice childo solo etichette per i nodi. All'interno della matrice, gli uni significano che esiste un arco tra i vertici (nodi) che rappresentano la riga e la colonna. Infine, gli zeri significano che non c'è un arco o relazione.
 
 <pre>
     1 2 3
@@ -40,11 +40,11 @@ var adjMatDirected = [
 ];
 ```
 
-I grafici possono anche avere <dfn>pesi</dfn> sui loro archi. Finora, abbiamo archi <dfn>non ponderati</dfn> dove la sola presenza e mancanza di archi è binaria (`0` o `1`). Puoi avere pesi diversi a seconda della tua applicazione.
+I grafici possono anche avere <dfn>pesi</dfn> sui loro archi. Finora, abbiamo archi <dfn>non ponderati</dfn> dove la sola presenza e personcanza di archi è binaria (`0` o `1`). Puoi avere pesi diversi a seconda della tua applicazione.
 
 # --instructions--
 
-Crea una matrice di adiacenza di un grafico non orientato con cinque nodi. Questa matrice dovrebbe essere in un array multidimensionale. Questi cinque nodi hanno relazioni tra il primo e il quarto nodo, il primo e il terzo nodo, il terzo e il quinto nodo, il quarto e il quinto nodo. Tutti i pesi degli archi sono uno.
+Crea una matrice di adiacenza di un grafico non orientato con cinque nodi. Questa matrice dovrebbe essere in un array multidimensionale. Questi cinque nodi hanno relazioni tra il primo e il quarto nodo, il primo e il terzo nodo, il terzo e il quinto nodo, il quarto e il quinto nodo. Tutti i pesi degli archi childo uno.
 
 # --hints--
 

@@ -12,7 +12,7 @@ Ahora tenemos que permitir que un nuevo usuario en nuestro sitio registre una cu
 
 La lógica de la ruta de registro debe ser la siguiente: Registrar al nuevo usuario > Autentificar al nuevo usuario > Redirigir a /profile
 
-La lógica del paso 1, el registro del nuevo usuario, debe ser la siguiente: Consultar la base de datos con un comando findOne > si el usuario es devuelto entonces existe y redirige de nuevo a la página de inicio *OR* si el usuario es indefinido y no se produce ningún error entonces 'insertOne' en la base de datos con el nombre de usuario y la contraseña, y, siempre que no se produzcan errores, llamar a *next* para ir al paso 2, autentificar al nuevo usuario, para lo que ya hemos escrito la lógica en nuestra ruta POST */login*.
+La lógica del paso 1, el registro del nuevo usuario, debe ser la siguiente: Consultar la base de datos con un comando findOne > si el usuario es devuelto entonces existe y redirige de nuevo a la página de inicio *OR* si el usuario es indefinido y no se produce ningún error entonces 'insertOne' en la base de datos con el nombre de usuario y la contraseña, y, siempre que no se produzcan errores, llamar a *next* para ir al paso 2, autentificar al nuevo usuario, para lo que ya theymos escrito la lógica en nuestra ruta POST */login*.
 
 ```js
 app.route('/register')
@@ -31,7 +31,7 @@ app.route('/register')
             if (err) {
               res.redirect('/');
             } else {
-              // The inserted document is held within
+              // The inserted document is theyld within
               // the ops property of the doc
               next(null, doc.ops[0]);
             }
@@ -47,7 +47,7 @@ app.route('/register')
   );
 ```
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/b230a5b3bbc89b1fa0ce32a2aa7b083e).
+Envía tu página cuando creas que lo has theycho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/b230a5b3bbc89b1fa0ce32a2aa7b083e).
 
 **NOTA:** A partir de este punto, pueden surgir problemas relacionados con el uso del navegador *picture-in-picture*. Si está utilizando un IDE en línea que ofrece una vista previa de la aplicación dentro del editor, se recomienda abrir esta vista previa en una nueva pestaña.
 

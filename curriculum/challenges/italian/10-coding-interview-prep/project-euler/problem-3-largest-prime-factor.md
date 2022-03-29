@@ -8,7 +8,7 @@ dashedName: problem-3-largest-prime-factor
 
 # --description--
 
-I fattori primi di 13195 sono 5, 7, 13 e 29.
+I fattori primi di 13195 childo 5, 7, 13 e 29.
 
 Qual è il fattore primo più grande del `number` dato?
 

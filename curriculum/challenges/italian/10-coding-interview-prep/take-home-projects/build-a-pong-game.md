@@ -18,7 +18,7 @@ dashedName: build-a-pong-game
 
 **User Story:** Il computer può controllare l'altra paletta.
 
-**User Story:** La paletta del computer non può essere battuta. Non deve mai mancare la palla.
+**User Story:** La paletta del computer non può essere battuta. Non deve mai personcare la palla.
 
 **User Story:** Il gioco tiene traccia dei punteggi del giocatore e del computer.
 

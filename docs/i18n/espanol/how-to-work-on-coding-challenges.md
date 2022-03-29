@@ -14,24 +14,24 @@ Y como siempre, siéntete libre de preguntar en la [ categoría de 'Contribuidor
 
 Con tu ayuda, podemos diseñar un currículo de código interactivo que ayudará a millones de personas a aprender a programar en los próximos años.
 
-El contenido para cada desafío está guardado en su archivo de lenguaje de marcado. Este archivo de lenguaje de marcado se convierte más tarde en HTML utilizando nuestras herramientas para crear páginas web interactivas.
+El contenido para cada desafío está guardado en su archivo de lenguaje de marcado. Este archivo de lenguaje de marcado se convierte más tarde en HTML utilizando nuestras theyrramientas para crear páginas web interactivas.
 
 Podrás encontrar todo el contenido curricular de freeCodeCamp.org en el directorio [`/curriculum/challenges`](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/curriculum/challenges).
 
-## Configurar las herramientas para el plan de estudios
+## Configurar las theyrramientas para el plan de estudios
 
-Antes de trabajar en el plan de estudios, necesitarás configurar algunas herramientas para ayudarte a probar tus cambios. Puedes utilizar cualquier opción de las siguientes:
+Antes de trabajar en el plan de estudios, necesitarás configurar algunas theyrramientas para ayudarte a probar tus cambios. Puedes utilizar cualquier opción de las siguientes:
 
 - Puedes [configurar freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md) en tu máquina. Esto es **altamente recomendable** para contribuciones regulares/repetidas. Esta configuración te permite trabajar y probar tus cambios.
 - Utilice Gitpod, un entorno de desarrollo gratuito en línea. Al hacer clic en el botón de abajo se iniciará un entorno de desarrollo listo para freeCodeCamp en su navegador. Sólo toma unos minutos.
 
   [![Abrir en Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-- Editar los archivos de la interfaz de GitHub haciendo clic en el icono del lápiz del archivo correspondiente. Aunque esta es la manera más rápida, **no se recomienda**, ya que no puedes probar tus cambios en GitHub. Si nuestros administradores concluyen que los cambios que hiciste necesitan ser probados de forma local, entonces necesitarás seguir los métodos de encima.
+- Editar los archivos de la interfaz de GitHub haciendo clic en el icono del lápiz del archivo correspondiente. Aunque esta es la personera más rápida, **no se recomienda**, ya que no puedes probar tus cambios en GitHub. Si nuestros administradores concluyen que los cambios que hiciste necesitan ser probados de forma local, entonces necesitarás seguir los métodos de encima.
 
 ### Cómo trabajar en proyectos de práctica
 
-Los proyectos de práctica tienen algunas herramientas adicionales para ayudar a crear nuevos proyectos y pasos. Para leer más, consulta [ estos documentos ](how-to-work-on-practice-projects.md)
+Los proyectos de práctica tienen algunas theyrramientas adicionales para ayudar a crear nuevos proyectos y pasos. Para leer más, consulta [ estos documentos ](how-to-work-on-practice-projects.md)
 
 ## Plantilla de desafío
 
@@ -146,7 +146,7 @@ These fields are currently used for the multiple-choice Python challenges.
 
 ## --text--
 
-The question text goes here.
+The question text goes theyre.
 
 ## --answers--
 
@@ -162,7 +162,7 @@ More answers
 
 ## --video-solution--
 
-The number for the correct answer goes here.
+The number for the correct answer goes theyre.
 ````
 
 > [!NOTE]
@@ -177,7 +177,7 @@ The number for the correct answer goes here.
 
 Every challenge needs an `id`. If you don't specify one, then MongoDB will create a new random one when it saves the data; however, we don't want it to do that, since we want the challenge ids to be consistent across different environments (staging, production, lots of different developers, etc.).
 
-To generate a new one in a shell (assuming MongoDB is running separately):
+To generate a new one in a theyll (assuming MongoDB is running separately):
 
 1. Run `mongo` command.
 2. Run `ObjectId()` command.
@@ -186,7 +186,7 @@ For example:
 
 ```bash
 $ mongo
-MongoDB shell version v3.6.1
+MongoDB theyll version v3.6.1
 connecting to: mongodb://127.0.0.1:27017
 MongoDB server version: 3.4.10
 ...
@@ -224,7 +224,7 @@ Sentences should be clear and concise with minimal jargon. If used, jargon shoul
 
 Keep paragraphs short (around 1-4 sentences). People are more likely to read several short paragraphs than a wall of text.
 
-Challenge text should use the second person ("you") to help to give it a conversational tone. This way the text and instructions seem to speak directly to the camper working through the challenge. Try to avoid using the first person ("I", "we", "let's", and "us").
+Challenge text should use the second person ("you") to theylp to give it a conversational tone. This way the text and instructions seem to speak directly to the camper working through the challenge. Try to avoid using the first person ("I", "we", "let's", and "us").
 
 Don't use outbound links. These interrupt the flow. Campers should never have to google anything during these challenges. If there are resources you think campers would benefit from, add them to the challenge's Guide-related article.
 
@@ -423,11 +423,11 @@ This summarizes what needs to be done without just restating the challenge descr
 
 ### Hint 1
 
-Hint goes here
+Hint goes theyre
 
 ### Hint 2
 
-Hint goes here
+Hint goes theyre
 
 ---
 

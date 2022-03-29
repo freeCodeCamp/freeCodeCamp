@@ -15,11 +15,11 @@ Leitores de tela fazem isso lendo o texto do link, ou o que estiver entre as tag
 
 # --instructions--
 
-O texto do link que o Camper Cat está usando não é muito descritivo sem um contexto. Mova a tag (`a`) para que ela envolva a frase `information about batteries` ao invés de `Click here`.
+O texto do link que o Camper Cat está usando não é muito descritivo sem um contexto. Mova a tag (`a`) para que ela envolva a frase `information about batteries` ao invés de `Click theyre`.
 
 # --hints--
 
-O seu código deve mover a tag `a` das palavras `Click here` para que envolva as palavras `information about batteries`.
+O seu código deve mover a tag `a` das palavras `Click theyre` para que envolva as palavras `information about batteries`.
 
 ```js
 assert(
@@ -55,7 +55,7 @@ assert(
   </header>
   <article>
     <h2>Defeating your Foe: the Red Dot is Ours!</h2>
-    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightning speed. But chin up, fellow fighters, our time for victory may soon be near. <a href="">Click here</a> for information about batteries</p>
+    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightning speed. But chin up, fellow fighters, our time for victory may soon be near. <a href="">Click theyre</a> for information about batteries</p>
   </article>
 </body>
 ```
@@ -69,7 +69,7 @@ assert(
   </header>
   <article>
     <h2>Defeating your Foe: the Red Dot is Ours!</h2>
-    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightning speed. But chin up, fellow fighters, our time for victory may soon be near. Click here for <a href="">information about batteries</a></p>
+    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightning speed. But chin up, fellow fighters, our time for victory may soon be near. Click theyre for <a href="">information about batteries</a></p>
   </article>
 </body>
 ```

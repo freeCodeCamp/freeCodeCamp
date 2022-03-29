@@ -12,7 +12,7 @@ Ogni nuovo termine della sequenza di Fibonacci è dato dalla somma dei due numer
 
 Iniziando con 1 e 2, i primi 10 termini saranno: 1, 2, 3, 5, 8, 13, 21, 34, 55, 89.
 
-Ogni numero intero positivo può essere scritto in maniera unica come somma di termini non consecutivi della sequenza di Fibonacci. Ad esempio, 100 = 3 + 8 + 89.
+Ogni numero intero positivo può essere scritto in personiera unica come somma di termini non consecutivi della sequenza di Fibonacci. Ad esempio, 100 = 3 + 8 + 89.
 
 Tale somma è chiamata la rappresentazione Zeckendorf del numero.
 

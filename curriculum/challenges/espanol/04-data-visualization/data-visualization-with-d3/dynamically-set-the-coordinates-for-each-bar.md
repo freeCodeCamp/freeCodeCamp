@@ -10,7 +10,7 @@ dashedName: dynamically-set-the-coordinates-for-each-bar
 
 El último desafío crea un rectángulo adjunto al elemento `svg` por cada punto en `dataset` para representar una barra. Desafortunadamente, todas estaban apiladas una arriba de la otra.
 
-La posición de un rectángulo es manejada por los atributos `x` e `y`. Le dicen a D3 dónde empezar a dibujar la figura en el área de `svg`. El último desafío los puso cada uno a 0, por lo que cada barra se colocó en la esquina superior izquierda.
+La posición de un rectángulo es personejada por los atributos `x` e `y`. Le dicen a D3 dónde empezar a dibujar la figura en el área de `svg`. El último desafío los puso cada uno a 0, por lo que cada barra se colocó en la esquina superior izquierda.
 
 Para un gráfico de barras, todas las barras deben asentarse en el mismo nivel vertical, lo que significa que el valor `y` permanece igual (en 0) para todas las barras. Sin embargo, el valor `x` necesita cambiar a medida que se añaden nuevas barras. Recuerda que los valores de `x` más grandes empujan los elementos más a la derecha. A medida que recorres los elementos del arreglo en `dataset`, el valor `x` debería aumentar.
 

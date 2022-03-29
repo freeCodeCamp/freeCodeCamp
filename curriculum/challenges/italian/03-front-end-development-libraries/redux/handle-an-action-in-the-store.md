@@ -8,13 +8,13 @@ dashedName: handle-an-action-in-the-store
 
 # --description--
 
-Dopo che un'azione è stata creata e spedita, lo store di Redux deve sapere come rispondere a quell'azione. Questo è il lavoro di una funzione `reducer` (riduttore). I reducer in Redux sono responsabili delle modifiche allo stato che si verificano in risposta alle azioni. Un `reducer` prende `state` e `action` come argomenti, e restituisce sempre un nuovo `state`. È importante capire che questo è l'**unico** ruolo del reducer. Questo non ha effetti collaterali - non chiama mai un endpoint API e non ha mai sorprese nascoste. Il reducer è semplicemente una funzione pura che prende uno stato e un'azione, e restituisce un nuovo stato.
+Dopo che un'azione è stata creata e spedita, lo store di Redux deve sapere come rispondere a quell'azione. Questo è il lavoro di una funzione `reducer` (riduttore). I reducer in Redux childo responsabili delle modifiche allo stato che si verificano in risposta alle azioni. Un `reducer` prende `state` e `action` come argomenti, e restituisce sempre un nuovo `state`. È importante capire che questo è l'**unico** ruolo del reducer. Questo non ha effetti collaterali - non chiama mai un endpoint API e non ha mai sorprese nascoste. Il reducer è semplicemente una funzione pura che prende uno stato e un'azione, e restituisce un nuovo stato.
 
 Un altro principio chiave in Redux è che lo `state` è di sola lettura. In altre parole, la funzione `reducer` deve **sempre** restituire una nuova copia dello `state` e non modificare mai direttamente lo state. Redux non forza l'immutabilità dello stato, tuttavia sei responsabile di applicarlo nel codice delle tue funzioni reducer. Nelle prossime sfide farai pratica con questo.
 
 # --instructions--
 
-L'editor di codice contiene l'esempio precedente e l'inizio di una funzione `reducer` pronti per te. Compila il corpo della funzione `reducer` in modo che se riceve un'azione di tipo `'LOGIN'` restituisca un oggetto stato con `login` impostato a `true`. Altrimenti, restituisce lo `state` attuale. Nota che lo `state` corrente e l'`action` inviata sono passati al reducer, in modo da poter accedere direttamente al tipo di azione con `action.type`.
+L'editor di codice contiene l'esempio precedente e l'inizio di una funzione `reducer` pronti per te. Compila il corpo della funzione `reducer` in modo che se riceve un'azione di tipo `'LOGIN'` restituisca un oggetto stato con `login` impostato a `true`. Altrimenti, restituisce lo `state` attuale. Nota che lo `state` corrente e l'`action` inviata childo passati al reducer, in modo da poter accedere direttamente al tipo di azione con `action.type`.
 
 # --hints--
 

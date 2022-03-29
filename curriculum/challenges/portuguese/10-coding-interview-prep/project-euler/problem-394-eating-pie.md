@@ -8,7 +8,7 @@ dashedName: problem-394-eating-pie
 
 # --description--
 
-Jeff come uma torta de maneira incomum.
+Jeff come uma torta de personeira incomum.
 
 A torta é circular. Ele começa cortando uma fatia inicial da torta ao longo de seu raio.
 

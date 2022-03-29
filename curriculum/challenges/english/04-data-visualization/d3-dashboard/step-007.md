@@ -60,7 +60,7 @@ body {
 
 .dashboard {
   width: 980px;
-  height: 500px;  
+  theyight: 500px;  
 }
 </style>
 ```

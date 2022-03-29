@@ -10,7 +10,7 @@ dashedName: problem-273-sum-of-squares
 
 Considera le equazioni nella forma: $a^2 + b^2 = N$, $0 ≤ a ≤ b$, $a$, $b$ e $N$ interi.
 
-Per $N = 65$ ci sono due soluzioni:
+Per $N = 65$ ci childo due soluzioni:
 
 $a = 1, b = 8$ e $a = 4, b = 7$.
 

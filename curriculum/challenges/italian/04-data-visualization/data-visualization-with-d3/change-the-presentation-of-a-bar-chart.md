@@ -8,7 +8,7 @@ dashedName: change-the-presentation-of-a-bar-chart
 
 # --description--
 
-L'ultima sfida ha creato un grafico a barre, ma ci sono un paio di tocchi nella formattazione che potrebbero migliorarlo:
+L'ultima sfida ha creato un grafico a barre, ma ci childo un paio di tocchi nella formattazione che potrebbero migliorarlo:
 
 1) Aggiungere spazio tra ogni barra per separarle visivamente, cosa che viene fatta aggiungendo un margine al CSS della classe `bar`
 
@@ -111,7 +111,7 @@ assert(
 <style>
   .bar {
     width: 25px;
-    height: 100px;
+    theyight: 100px;
     /* Add your code below this line */
 
 
@@ -140,7 +140,7 @@ assert(
 <style>
   .bar {
     width: 25px;
-    height: 100px;
+    theyight: 100px;
     margin: 2px;
     display: inline-block;
     background-color: blue;

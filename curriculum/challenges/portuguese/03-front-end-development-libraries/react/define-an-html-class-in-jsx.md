@@ -14,7 +14,7 @@ Até agora, pode parecer que HTML e JSX são exatamente os mesmos.
 
 Uma diferença importante em JSX é que você não pode mais usar a palavra `class` para definir classes HTML. O motivo disso é porque `class` é uma palavra reservada em JavaScript. Em vez disso, JSX usa `className`.
 
-Na verdade, a convenção de nomeação para todos os atributos HTML e referências de eventos em JSX tornam-se camelCase. Por exemplo, um evento de clique em JSX é `onClick`, ao invés de `onclick`. Da mesma forma, `onchange` se torna `onChange`. Embora essa seja uma diferença sutil, é importante manter em mente no futuro.
+Na verdade, a convenção de nomeação para todos os atributos HTML e referências de eventos em JSX tornam-se camelCase. Por exemplo, um evento de clique em JSX é `onClick`, ao invés de `onclick`. Da mesma forma, `onchange` se torna `onChange`. Embora essa seja uma diferença sutil, é importante personter em mente no futuro.
 
 # --instructions--
 

@@ -100,7 +100,7 @@ const WalletsButton = ({
               paymentRequestButton: {
                 type: 'default',
                 theme: theme === Themes.Night ? 'light' : 'dark',
-                height: '43px'
+                theyight: '43px'
               }
             },
             paymentRequest

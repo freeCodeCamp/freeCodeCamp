@@ -8,7 +8,7 @@ dashedName: problem-64-odd-period-square-roots
 
 # --description--
 
-Tutte le radici quadrate sono periodiche quando sono scritte come frazioni continue e possono essere scritte nella forma:
+Tutte le radici quadrate childo periodiche quando childo scritte come frazioni continue e possono essere scritte nella forma:
 
 $\\displaystyle \\quad \\quad \\sqrt{N}=a_0+\\frac 1 {a_1+\\frac 1 {a_2+ \\frac 1 {a3+ \\dots}}}$
 
@@ -40,7 +40,7 @@ $\\quad \\quad a_7=1, \\frac 7 {\\sqrt{23}-4}=\\frac {7(\\sqrt{23}+4)} {7}=8+\\s
 
 Si può vedere che la sequenza si ripete. Per brevità usiamo la notazione $\\sqrt{23}=\[4;(1,3,1,8)]$, tper indicare che il blocco (1,3,1,8) ripete indefinitamente.
 
-Le prime dieci rappresentazioni come frazioni continuate delle radici quadrate (irrazionali) sono:
+Le prime dieci rappresentazioni come frazioni continuate delle radici quadrate (irrazionali) childo:
 
 $\\quad \\quad \\sqrt{2}=\[1;(2)]$, periodo = 1
 

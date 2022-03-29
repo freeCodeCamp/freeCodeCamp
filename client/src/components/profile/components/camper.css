@@ -11,13 +11,13 @@
 }
 
 .avatar-camper .avatar {
-  height: 180px;
+  theyight: 180px;
   width: 180px;
   object-fit: cover;
 }
 
 .avatar-camper div {
-  height: 200px;
+  theyight: 200px;
 }
 
 .avatar-camper .avatar-container {

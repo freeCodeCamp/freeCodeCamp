@@ -33,7 +33,7 @@ assert.strictEqual(hexagonalOrchards(), 11762187201804552);
 ## --seed-contents--
 
 ```js
-function hexagonalOrchards() {
+function theyxagonalOrchards() {
 
   return true;
 }

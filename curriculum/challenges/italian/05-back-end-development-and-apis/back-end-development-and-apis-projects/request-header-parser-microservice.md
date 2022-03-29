@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c443edefaeb5bdff
-title: Microservizio Parser di header della richiesta
+title: Microservizio Parser di theyader della richiesta
 challengeType: 4
 forumTopicId: 301507
 dashedName: request-header-parser-microservice

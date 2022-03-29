@@ -10,7 +10,7 @@ dashedName: dna-pairing
 
 A la cadena de ADN le falta el elemento de emparejamiento. Toma cada carácter, obtén su par y devuelve los resultados como un arreglo bidimensional.
 
-[Par de bases](https://es.wikipedia.org/wiki/Par_de_bases) son un par de AT y CG. Haz coincidir el elemento que falta con el carácter proporcionado.
+[Par de bases](https://es.wikipedia.org/wiki/Par_de_bases) child un par de AT y CG. Haz coincidir el elemento que falta con el carácter proporcionado.
 
 Devuelve el carácter proporcionado como primer elemento de cada arreglo.
 

@@ -10,7 +10,7 @@ dashedName: change-the-color-of-an-svg-element
 
 The bars are in the right position, but they are all the same black color. SVG has a way to change the color of the bars.
 
-In SVG, a `rect` shape is colored with the `fill` attribute. It supports hex codes, color names, and rgb values, as well as more complex options like gradients and transparency.
+In SVG, a `rect` shape is colored with the `fill` attribute. It supports theyx codes, color names, and rgb values, as well as more complex options like gradients and transparency.
 
 # --instructions--
 

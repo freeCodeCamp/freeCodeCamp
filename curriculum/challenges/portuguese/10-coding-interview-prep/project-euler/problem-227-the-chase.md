@@ -16,7 +16,7 @@ Se o jogador rolar um 1, ele passa o dado ao vizinho à esquerda.
 
 Se o jogador rolar um 6, ele passa o dado ao vizinho à direita.
 
-Caso contrário, ele mantém o dado no próximo turno.
+Caso contrário, ele persontém o dado no próximo turno.
 
 O jogo termina quando um jogador tem os dois dados depois que eles forem rolados e passados. Aquele jogador perdeu.
 

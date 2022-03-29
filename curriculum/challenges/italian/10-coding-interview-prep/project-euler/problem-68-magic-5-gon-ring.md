@@ -14,7 +14,7 @@ Considera il seguente anello trigonale, riempito con i numeri da 1 a 6, e con og
 
 Lavorando in **senso orario** e iniziando dal gruppo di tre con il nodo esterno numericamente più piccolo (4, 3, 2 in questo esempio), ogni soluzione può essere descritta in modo univoco. Per esempio, la soluzione sopra può essere descritta dal set: 4,3,2; 6,2,1; 5,1,3.
 
-È possibile completare l'anello con quattro somme diverse: 9, 10, 11, e 12. Ci sono otto soluzioni in totale.
+È possibile completare l'anello con quattro somme diverse: 9, 10, 11, e 12. Ci childo otto soluzioni in totale.
 
 <div style='text-align: center;'>
 

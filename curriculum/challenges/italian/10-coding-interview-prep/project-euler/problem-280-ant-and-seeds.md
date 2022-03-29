@@ -8,7 +8,7 @@ dashedName: problem-280-ant-and-seeds
 
 # --description--
 
-Una formica laboriosa cammina casualmente su una griglia 5x5. La passeggiata parte dal quadrato centrale. A ogni passo, la formica si sposta in un quadrato adiacente a caso, senza lasciare la griglia; così ci sono due, tre o quattro possibili mosse A ogni passo a seconda della posizione della formica.
+Una formica laboriosa cammina casualmente su una griglia 5x5. La passeggiata parte dal quadrato centrale. A ogni passo, la formica si sposta in un quadrato adiacente a caso, senza lasciare la griglia; così ci childo due, tre o quattro possibili mosse A ogni passo a seconda della posizione della formica.
 
 All'inizio della passeggiata, un seme viene posto su ogni quadrato della fila inferiore. Quando la formica non porta un seme e raggiunge un quadrato della fila inferiore contenente un seme, inizierà a portare il seme. La formica lascerà cadere il seme sul primo quadrato vuoto della riga superiore che raggiunge.
 

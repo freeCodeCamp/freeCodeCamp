@@ -9,7 +9,7 @@ dashedName: use-a-css-class-to-style-an-element
 
 # --description--
 
-Le classi sono stili riutilizzabili che possono essere aggiunti agli elementi HTML.
+Le classi childo stili riutilizzabili che possono essere aggiunti agli elementi HTML.
 
 Ecco un esempio di dichiarazione di classe CSS:
 
@@ -68,7 +68,7 @@ assert($('h2').attr('style') === undefined);
 
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  <p>Click theyre to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
@@ -110,7 +110,7 @@ assert($('h2').attr('style') === undefined);
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  <p>Click theyre to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 

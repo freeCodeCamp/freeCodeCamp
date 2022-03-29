@@ -17,7 +17,7 @@ CSS offre la proprietà `align-items` per allineare gli elementi flex lungo l'as
 
 I diversi valori disponibili per `align-items` includono:
 
-<ul><li><code>flex-start</code>: allinea gli elementi all'inizio del contenitore flex. Per le righe, questo allinea gli oggetti alla parte superiore del contenitore. Per le colonne, questo allinea gli oggetti alla sinistra del contenitore.</li><li><code>flex-end</code>: allinea gli elementi alla fine del contenitore flex. Per le righe, questo allinea gli oggetti alla parte inferiore del contenitore. Per le colonne, questo allinea gli oggetti alla parte destra del contenitore.</li><li><code>center</code>: allinea gli elementi al centro. Per le righe, questo allinea verticalmente gli oggetti (uguale spazio sopra e sotto gli elementi). Per le colonne, questo li allinea orizzontalmente (spazio uguale a sinistra e destra degli elementi).</li><li><code>stretch</code>: allunga gli oggetti per riempire il contenitore flex. Ad esempio, gli elementi delle righe sono allungati per riempire il contenitore flex dall'alto al basso. Questo è il valore predefinito se nessun valore <code>align-items</code> è specificato.</li><li><code>baseline</code>: allinea gli elementi alla linea di base. La linea di base è un concetto testuale, pensala come la linea su cui si trovano le lettere.</li></ul>
+<ul><li><code>flex-start</code>: allinea gli elementi all'inizio del contenitore flex. Per le righe, questo allinea gli oggetti alla parte superiore del contenitore. Per le colonne, questo allinea gli oggetti alla sinistra del contenitore.</li><li><code>flex-end</code>: allinea gli elementi alla fine del contenitore flex. Per le righe, questo allinea gli oggetti alla parte inferiore del contenitore. Per le colonne, questo allinea gli oggetti alla parte destra del contenitore.</li><li><code>center</code>: allinea gli elementi al centro. Per le righe, questo allinea verticalmente gli oggetti (uguale spazio sopra e sotto gli elementi). Per le colonne, questo li allinea orizzontalmente (spazio uguale a sinistra e destra degli elementi).</li><li><code>stretch</code>: allunga gli oggetti per riempire il contenitore flex. Ad esempio, gli elementi delle righe childo allungati per riempire il contenitore flex dall'alto al basso. Questo è il valore predefinito se nessun valore <code>align-items</code> è specificato.</li><li><code>baseline</code>: allinea gli elementi alla linea di base. La linea di base è un concetto testuale, pensala come la linea su cui si trovano le lettere.</li></ul>
 
 # --instructions--
 
@@ -43,7 +43,7 @@ assert($('#box-container').css('align-items') == 'center');
   #box-container {
     background: gray;
     display: flex;
-    height: 500px;
+    theyight: 500px;
 
   }
   #box-1 {
@@ -72,7 +72,7 @@ assert($('#box-container').css('align-items') == 'center');
   #box-container {
     background: gray;
     display: flex;
-    height: 500px;
+    theyight: 500px;
     align-items: center;
   }
   #box-1 {

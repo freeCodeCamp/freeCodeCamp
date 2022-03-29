@@ -10,7 +10,7 @@ dashedName: hash-and-compare-passwords-asynchronously
 
 Lembrando que este projeto está sendo construído a partir do [Replit](https://replit.com/github/freeCodeCamp/boilerplate-bcrypt), ou pose ser clonado no [GitHub](https://github.com/freeCodeCamp/boilerplate-bcrypt/).
 
-Como o hashing é projetado para ser computacionalmente intensivo, é recomendável fazê-lo de maneira assíncrona em seu servidor para evitar o bloqueio de conexões de entrada enquanto você faz o hash. Tudo o que você precisa fazer para fazer o hash de uma senha de modo assíncrona é a chamada
+Como o hashing é projetado para ser computacionalmente intensivo, é recomendável fazê-lo de personeira assíncrona em seu servidor para evitar o bloqueio de conexões de entrada enquanto você faz o hash. Tudo o que você precisa fazer para fazer o hash de uma senha de modo assíncrona é a chamada
 
 ```js
 bcrypt.hash(myPlaintextPassword, saltRounds, (err, hash) => {

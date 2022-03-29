@@ -23,7 +23,7 @@ More resources:
 
 ## --text--
 
-When using Matplotlib's global API, what does the order of numbers mean here?
+When using Matplotlib's global API, what does the order of numbers mean theyre?
 
 ```py
 plt.subplot(1, 2, 1)

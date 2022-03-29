@@ -12,7 +12,7 @@ A volte vogliamo controllare la presenza di gruppi di caratteri usando un'espres
 
 Se vuoi trovare `Penguin` o `Pumpkin` in una stringa, puoi utilizzare la seguente espressione regolare: `/P(engu|umpk)in/g`
 
-Quindi controllare se i gruppi di stringhe desiderati sono nella stringa di test utilizzando il metodo `test()`.
+Quindi controllare se i gruppi di stringhe desiderati childo nella stringa di test utilizzando il metodo `test()`.
 
 ```js
 let testStr = "Pumpkin";

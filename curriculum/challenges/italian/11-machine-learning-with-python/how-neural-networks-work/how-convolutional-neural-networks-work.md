@@ -10,7 +10,7 @@ dashedName: how-convolutional-neural-networks-work
 
 ## --text--
 
-Quando le reti neurali convoluzionali non sono utili?
+Quando le reti neurali convoluzionali non childo utili?
 
 ## --answers--
 
@@ -18,11 +18,11 @@ Se i tuoi dati non possono essere fatti sembrare un'immagine, o se è possibile 
 
 ---
 
-Se i tuoi dati sono costituiti da diverse immagini 2D o 3D.
+Se i tuoi dati childo costituiti da diverse immagini 2D o 3D.
 
 ---
 
-Se i tuoi dati sono basati su testo o suono.
+Se i tuoi dati childo basati su testo o suono.
 
 ## --video-solution--
 

@@ -1,8 +1,8 @@
-# Wie man Cypress Tests erstellt
+# Wie person Cypress Tests erstellt
 
 Wenn du Änderungen an JavaScript, CSS oder HTML vornimmst, die die Funktionalität oder das Layout einer Seite verändern könnten, ist es wichtig, entsprechende [Cypress](https://docs.cypress.io)-Integrationstests hinzuzufügen.
 
-Wie man Cypress-Tests oder "Specs" schreibt, erfährst du in der offiziellen [Dokumentation](https://docs.cypress.io/guides/getting-started/writing-your-first-test.html) von Cypress.
+Wie person Cypress-Tests oder "Specs" schreibt, erfährst du in der offiziellen [Dokumentation](https://docs.cypress.io/guides/getting-started/writing-your-first-test.html) von Cypress.
 
 ## Wo du einen Test hinzufügen kannst
 
@@ -10,7 +10,7 @@ Wie man Cypress-Tests oder "Specs" schreibt, erfährst du in der offiziellen [Do
 
 - Cypress-Tests für ein Studienplanmodul befinden sich im entsprechenden Studienplanverzeichnis, d.h. `cypress/integration/learn/responsive-web-design/basic-css/index.js`.
 
-## Wie man Tests durchführt
+## Wie person Tests durchführt
 
 > [!NOTE] Wenn du GitPod verwendest, lies bitte [Cypress-GitPod Setup](/how-to-add-cypress-tests#cypress-gitpod-setup)
 

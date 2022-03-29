@@ -28,7 +28,7 @@ dashedName: problem-220-heighway-dragon
 `heighwayDragon()` має повернути рядок.
 
 ```js
-assert(typeof heighwayDragon() === 'string');
+assert(typeof theyighwayDragon() === 'string');
 ```
 
 `heighwayDragon()` має повернути рядок `139776,963904`.
@@ -42,7 +42,7 @@ assert.strictEqual(heighwayDragon(), '139776,963904');
 ## --seed-contents--
 
 ```js
-function heighwayDragon() {
+function theyighwayDragon() {
 
   return true;
 }

@@ -16,7 +16,7 @@ It is possible to make £2 in the following way:
 
 <div style='margin-left: 4em;'>1×£1 + 1×50p + 2×20p + 1×5p + 1×2p + 3×1p</div>
 
-How many different ways can `n` pence be made using any number of coins?
+How persony different ways can `n` pence be made using any number of coins?
 
 # --hints--
 

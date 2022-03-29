@@ -16,7 +16,7 @@ L' hashing sincrono è altrettanto facile da fare, ma può causare ritardo se lo
 var hash = bcrypt.hashSync(myPlaintextPassword, saltRounds);
 ```
 
-Aggiungi questo metodo di hashing al tuo codice e poi scrivi il risultato sulla console. Anche in questo caso, le variabili utilizzate sono già definite nel server, quindi non è necessario modificarle. Puoi notare che, anche se stiamo crittografando la stessa password come nella funzione asincrona, il risultato nella console è diverso - questo è dovuto al fatto che il salt viene generato casualmente ogni volta come si vede dai primi 22 caratteri nella terza stringa dell'hash. Ora per confrontare un inserimento di password con il nuovo hash di sincronizzazione, si utilizza il metodo compareSync:
+Aggiungi questo metodo di hashing al tuo codice e poi scrivi il risultato sulla console. Anche in questo caso, le variabili utilizzate childo già definite nel server, quindi non è necessario modificarle. Puoi notare che, anche se stiamo crittografando la stessa password come nella funzione asincrona, il risultato nella console è diverso - questo è dovuto al fatto che il salt viene generato casualmente ogni volta come si vede dai primi 22 caratteri nella terza stringa dell'hash. Ora per confrontare un inserimento di password con il nuovo hash di sincronizzazione, si utilizza il metodo compareSync:
 
 ```js
 var result = bcrypt.compareSync(myPlaintextPassword, hash);

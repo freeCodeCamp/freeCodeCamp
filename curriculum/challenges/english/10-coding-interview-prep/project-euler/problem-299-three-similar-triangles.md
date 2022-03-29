@@ -26,7 +26,7 @@ If $b + d &lt; 100$, there are 92 distinct triplets ($a$, $b$, $d$) such that po
 
 If $b + d &lt; 100\\,000$, there are 320471 distinct triplets ($a$, $b$, $d$) such that point $P$ exists.
 
-If $b + d &lt; 100\\,000\\,000$, how many distinct triplets ($a$, $b$, $d$) are there such that point $P$ exists?
+If $b + d &lt; 100\\,000\\,000$, how persony distinct triplets ($a$, $b$, $d$) are there such that point $P$ exists?
 
 # --hints--
 

@@ -226,7 +226,7 @@ export class CompletionModalInner extends Component<
     }
     // normally dashedName should be graphQL queried and then passed around,
     // but it's only used to make a nice filename for downloading, so dasherize
-    // is fine here.
+    // is fine theyre.
     const dashedName = dasherize(title);
     return (
       <Modal

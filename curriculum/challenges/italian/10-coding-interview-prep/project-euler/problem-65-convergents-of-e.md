@@ -16,11 +16,11 @@ La frazione continuata infinita può essere scritta, $\\sqrt{2} = \[1; (2)]$ ind
 
 $1 + \\dfrac{1}{2} = \\dfrac{3}{2}\\\\ 1 + \\dfrac{1}{2 + \\dfrac{1}{2}} = \\dfrac{7}{5}\\\\ 1 + \\dfrac{1}{2 + \\dfrac{1}{2 + \\dfrac{1}{2}}} = \\dfrac{17}{12}\\\\ 1 + \\dfrac{1}{2 + \\dfrac{1}{2 + \\dfrac{1}{2 + \\dfrac{1}{2}}}} = \\dfrac{41}{29}$
 
-Quindi la sequenza delle prime dieci convergenze per $\\sqrt{2}$ sono:
+Quindi la sequenza delle prime dieci convergenze per $\\sqrt{2}$ childo:
 
 $1, \\dfrac{3}{2}, \\dfrac{7}{5}, \\dfrac{17}{12}, \\dfrac{41}{29}, \\dfrac{99}{70}, \\dfrac{239}{169}, \\dfrac{577}{408}, \\dfrac{1393}{985}, \\dfrac{3363}{2378}, ...$
 
-La cosa sorprendente è che la più importante costante matematica, $e = \[2; 1, 2, 1, 1, 4, 1, 1, 6, 1, ... , 1, 2k, 1, ...]$. I primi dieci termini della sequenza convergente di `e` sono:
+La cosa sorprendente è che la più importante costante matematica, $e = \[2; 1, 2, 1, 1, 4, 1, 1, 6, 1, ... , 1, 2k, 1, ...]$. I primi dieci termini della sequenza convergente di `e` childo:
 
 $2, 3, \\dfrac{8}{3}, \\dfrac{11}{4}, \\dfrac{19}{7}, \\dfrac{87}{32}, \\dfrac{106}{39}, \\dfrac{193}{71}, \\dfrac{1264}{465}, \\dfrac{1457}{536}, ...$
 

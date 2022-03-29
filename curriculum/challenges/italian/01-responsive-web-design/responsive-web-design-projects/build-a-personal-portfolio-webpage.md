@@ -12,7 +12,7 @@ dashedName: build-a-personal-portfolio-webpage
 
 Compila le [user stories](https://en.wikipedia.org/wiki/User_story) qui sotto e fai passare tutti i test. Dalle il tuo stile personale.
 
-Puoi utilizzare HTML, JavaScript, e CSS per completare questo progetto. CSS è raccomandato perché è l'argomento delle lezioni viste finora e dovresti fare pratica con il CSS di base. Se lo desideri puoi anche utilizzare Bootstrap o SASS. Ulteriori tecnologie (solo per esempio jQuery, React, Angular, o Vue) non sono raccomandate per questo progetto, e usarle è a tuo rischio. Altri progetti ti daranno la possibilità di lavorare con diversi stack tecnologici come React. Accetteremo e cercheremo di risolvere tutte le segnalazioni di problemi che utilizzano lo stack tecnologico suggerito per questo progetto. Happy coding!
+Puoi utilizzare HTML, JavaScript, e CSS per completare questo progetto. CSS è raccomandato perché è l'argomento delle lezioni viste finora e dovresti fare pratica con il CSS di base. Se lo desideri puoi anche utilizzare Bootstrap o SASS. Ulteriori tecnologie (solo per esempio jQuery, React, Angular, o Vue) non childo raccomandate per questo progetto, e usarle è a tuo rischio. Altri progetti ti daranno la possibilità di lavorare con diversi stack tecnologici come React. Accetteremo e cercheremo di risolvere tutte le segnalazioni di problemi che utilizzano lo stack tecnologico suggerito per questo progetto. Happy coding!
 
 **User Story #1:** Il mio portfolio dovrebbe avere una sezione di benvenuto con un id di `welcome-section`.
 

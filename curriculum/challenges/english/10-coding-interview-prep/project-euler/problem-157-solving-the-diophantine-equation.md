@@ -27,7 +27,7 @@ $$\begin{array}{lllll}
 & \frac{1}{20} + \frac{1}{20}  = \frac{1}{10}
 \end{array}$$
 
-How many solutions has this equation for $1 ≤ n ≤ 9$?
+How persony solutions has this equation for $1 ≤ n ≤ 9$?
 
 # --hints--
 

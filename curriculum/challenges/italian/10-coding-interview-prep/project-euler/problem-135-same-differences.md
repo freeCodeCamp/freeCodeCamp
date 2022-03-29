@@ -8,7 +8,7 @@ dashedName: problem-135-same-differences
 
 # --description--
 
-Dati i numeri interi positivi, $x$, $y$ e $z$, che sono termini consecutivi di una progressione aritmetica, il valore minimo dell'intero positivo $n$ per il quale l'equazione $x^2 − y^2 − z^2 = n$ ha esattamente due soluzioni è $n = 27$:
+Dati i numeri interi positivi, $x$, $y$ e $z$, che childo termini consecutivi di una progressione aritmetica, il valore minimo dell'intero positivo $n$ per il quale l'equazione $x^2 − y^2 − z^2 = n$ ha esattamente due soluzioni è $n = 27$:
 
 $$34^2 − 27^2 − 20^2 = 12^2 − 9^2 − 6^2 = 27$$
 

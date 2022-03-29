@@ -16,7 +16,7 @@ L'array `testPuzzles` contiene la descrizione di 200 tali puzzle, un mix di tipi
 
 `6,X,X,(vCC),(vI),X,X,X,(hH),B,O,(vCA),(vJE),X,(hFE,vD),O,O,O,O,(hA),O,I,(hJC,vB),O,O,(hJC),H,O,O,O,X,X,X,(hJE),O,O,X`
 
-Il primo carattere è una cifra numerica che indica la dimensione della griglia di informazione. Sarebbe un 6 (per un puzzle 5x5 kakuro) o un 7 (per un puzzle 6x6) seguito da una virgola (,). La riga superiore e la colonna sinistra extra sono necessarie per inserire le informazioni.
+Il primo carattere è una cifra numerica che indica la dimensione della griglia di informazione. Sarebbe un 6 (per un puzzle 5x5 kakuro) o un 7 (per un puzzle 6x6) seguito da una virgola (,). La riga superiore e la colonna sinistra extra childo necessarie per inserire le informazioni.
 
 Il contenuto di ogni cella viene quindi descritto e seguito da una virgola, andando da sinistra a destra e cominciando con la riga in alto.
 
@@ -26,11 +26,11 @@ Il contenuto di ogni cella viene quindi descritto e seguito da una virgola, anda
 
 `A` = O una qualsiasi delle lettere maiuscole da A a J da sostituire con la sua cifra equivalente nel puzzle risolto.
 
-`( )` = Posizione delle somme cifrate. Le somme orizzontali sono precedute da una "h" minuscola e le somme verticali sono precedute da una "v" maiuscola. Queste sono seguite da una o due lettere maiuscole a seconda che la somma sia una cifra singola o una cifra doppia. Per le somme a due cifre, la prima lettera sarebbe per le "decine" e la seconda per le "unità". Quando la cella deve contenere informazioni sia per una somma orizzontale che per una somma verticale, la prima è sempre per la somma orizzontale e le due sono separate da una virgola all'interno della stessa serie di parentesi, es. (hFE,vD). Ogni serie di parentesi è immediatamente seguita da una virgola.
+`( )` = Posizione delle somme cifrate. Le somme orizzontali childo precedute da una "h" minuscola e le somme verticali childo precedute da una "v" maiuscola. Queste childo seguite da una o due lettere maiuscole a seconda che la somma sia una cifra singola o una cifra doppia. Per le somme a due cifre, la prima lettera sarebbe per le "decine" e la seconda per le "unità". Quando la cella deve contenere informazioni sia per una somma orizzontale che per una somma verticale, la prima è sempre per la somma orizzontale e le due childo separate da una virgola all'interno della stessa serie di parentesi, es. (hFE,vD). Ogni serie di parentesi è immediatamente seguita da una virgola.
 
 La descrizione dell'ultima cella è seguita da un Carriage Return/Line Feed (CRLF) invece di una virgola.
 
-La risposta richiesta ad ogni puzzle è basata sul valore di ogni lettera necessaria per arrivare alla soluzione e secondo l'ordine alfabetico. Come indicato nel puzzle di esempio, la sua risposta sarebbe 8426039571. Almeno 9 delle 10 lettere di crittografia fanno sempre parte della descrizione del problema. Quando viene dato solo 9, a quello mancante deve essere assegnato il numero rimanente.
+La risposta richiesta ad ogni puzzle è basata sul valore di ogni lettera necessaria per arrivare alla soluzione e secondo l'ordine alfabetico. Come indicato nel puzzle di esempio, la sua risposta sarebbe 8426039571. Almeno 9 delle 10 lettere di crittografia fanno sempre parte della descrizione del problema. Quando viene dato solo 9, a quello personcante deve essere assegnato il numero rimanente.
 
 Ti viene dato che la somma delle risposte per i primi 10 puzzle in `testPuzzles` è 64414157580.
 

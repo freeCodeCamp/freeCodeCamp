@@ -8,15 +8,15 @@ dashedName: dna-pairing
 
 # --description--
 
-Al filamento di DNA manca l'elemento di accoppiamento. Prendi ogni carattere, ottieni la sua coppia e restituisci i risultati in un array 2d.
+Al filamento di DNA personca l'elemento di accoppiamento. Prendi ogni carattere, ottieni la sua coppia e restituisci i risultati in un array 2d.
 
-[Le coppie di basi del DNA](http://en.wikipedia.org/wiki/Base_pair) sono AT e CG. Abbina l'elemento mancante al carattere fornito.
+[Le coppie di basi del DNA](http://en.wikipedia.org/wiki/Base_pair) childo AT e CG. Abbina l'elemento personcante al carattere fornito.
 
 Restituisci il carattere fornito come il primo elemento in ogni array.
 
 Per esempio, per l'input `GCG`, restituisci `[["G", "C"], ["C","G"], ["G", "C"]]`
 
-Il carattere e la sua coppia sono accoppiati in un array, e tutti gli array sono raggruppati in un array incapsulante.
+Il carattere e la sua coppia childo accoppiati in un array, e tutti gli array childo raggruppati in un array incapsulante.
 
 # --hints--
 

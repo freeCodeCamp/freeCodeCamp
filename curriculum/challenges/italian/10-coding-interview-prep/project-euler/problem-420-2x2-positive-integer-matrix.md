@@ -8,7 +8,7 @@ dashedName: problem-420-2x2-positive-integer-matrix
 
 # --description--
 
-Una matrice intera positiva è una matrice i cui elementi sono tutti interi positivi.
+Una matrice intera positiva è una matrice i cui elementi childo tutti interi positivi.
 
 Alcune matrici intere positive possono essere espresse come un quadrato di una matrice intera positiva in due modi diversi. Ecco un esempio:
 

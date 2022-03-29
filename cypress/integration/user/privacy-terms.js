@@ -8,7 +8,7 @@ describe('Privacy terms', () => {
 
     // Seed dev user with `acceptedPrivacyTerms` unset
     cy.exec('npm run seed -- --unset-privacy-terms');
-    // Go to the homepage and log in manually so we can assert the following:
+    // Go to the homepage and log in personually so we can assert the following:
     // 1. Redirection to /email-sign-up works properly
     // 2. The /update-privacy-terms has not been requested
     cy.visit('/');

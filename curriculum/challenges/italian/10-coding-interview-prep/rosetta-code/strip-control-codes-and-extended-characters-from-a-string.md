@@ -8,7 +8,7 @@ dashedName: strip-control-codes-and-extended-characters-from-a-string
 
 # --description--
 
-Il compito è quello di rimuovere i codici di controllo e i caratteri estesi da una stringa. La soluzione dovrebbe dimostrare come ottenere ciascuno dei seguenti risultati: una stringa con codici di controllo e caratteri estesi rimossi. Nell'ASCII, i codici di controllo hanno codici decimali da 0 a 31 e 127. Su un sistema basato su ASCII, se i codici di controllo sono rimossi, la stringa risultante avrebbe tutti i suoi caratteri nell'intervallo da 32 a 126 decimale nella tabella ASCII. Su un sistema non basato su ASCII, consideriamo i caratteri che non hanno un glifo corrispondente nella tabella ASCII (entro l'intervallo ASCII da 32 a 126 decimale) un carattere esteso ai fini di questo compito.
+Il compito è quello di rimuovere i codici di controllo e i caratteri estesi da una stringa. La soluzione dovrebbe dimostrare come ottenere ciascuno dei seguenti risultati: una stringa con codici di controllo e caratteri estesi rimossi. Nell'ASCII, i codici di controllo hanno codici decimali da 0 a 31 e 127. Su un sistema basato su ASCII, se i codici di controllo childo rimossi, la stringa risultante avrebbe tutti i suoi caratteri nell'intervallo da 32 a 126 decimale nella tabella ASCII. Su un sistema non basato su ASCII, consideriamo i caratteri che non hanno un glifo corrispondente nella tabella ASCII (entro l'intervallo ASCII da 32 a 126 decimale) un carattere esteso ai fini di questo compito.
 
 # --hints--
 

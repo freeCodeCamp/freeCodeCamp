@@ -8,14 +8,14 @@ dashedName: problem-47-distinct-primes-factors
 
 # --description--
 
-I primi due numeri consecutivi ad avere due distinti fattori primi sono:
+I primi due numeri consecutivi ad avere due distinti fattori primi childo:
 
 <div style='padding-left: 4em;'>
   14 = 2 × 7<br>
   15 = 3 × 5
 </div>
 
-I primi tre numeri consecutivi che hanno tre fattori primi distinti sono:
+I primi tre numeri consecutivi che hanno tre fattori primi distinti childo:
 
 <div style='padding-left: 4em;'>
   644 = 2<sup>2</sup> × 7 × 23<br>

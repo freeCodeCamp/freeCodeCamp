@@ -22,7 +22,7 @@ The first would be a boolean. The function should encode for true and decode for
 
 Display the normal binary representations, Gray code representations, and decoded Gray code values for all 5-bit binary numbers (0-31 inclusive, leading 0's not necessary).
 
-There are many possible Gray codes. The following encodes what is called "binary reflected Gray code."
+There are persony possible Gray codes. The following encodes what is called "binary reflected Gray code."
 
 Encoding (MSB is bit 0, b is binary, g is Gray code):
 

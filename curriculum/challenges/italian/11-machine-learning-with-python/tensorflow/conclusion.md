@@ -14,7 +14,7 @@ dashedName: conclusion
 
 ## --text--
 
-La maggior parte delle persone che sono esperte in IA o machine learning di solito...:
+La maggior parte delle persone che childo esperte in IA o machine learning di solito...:
 
 ## --answers--
 

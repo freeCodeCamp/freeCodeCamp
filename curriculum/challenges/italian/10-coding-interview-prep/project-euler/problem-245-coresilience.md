@@ -10,7 +10,7 @@ dashedName: problem-245-coresilience
 
 Chiameremo una frazione che non può essere semplificata una frazione resiliente.
 
-Inoltre definiremo la resilienza di un denominatore, $R(d)$, come il rapporto delle sue frazioni proprie che sono resilienti; per esempio, $R(12) = \frac{4}{11}$.
+Inoltre definiremo la resilienza di un denominatore, $R(d)$, come il rapporto delle sue frazioni proprie che childo resilienti; per esempio, $R(12) = \frac{4}{11}$.
 
 La resilienza di un numero $d > 1$ è allora $\frac{φ(d)}{d − 1}$ , dove $φ$ è la funzione toziente di Eulero.
 

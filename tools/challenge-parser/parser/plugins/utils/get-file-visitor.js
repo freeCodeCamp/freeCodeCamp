@@ -5,7 +5,7 @@ const position = require('unist-util-position');
 const getId = require('./get-id');
 
 const keyToSection = {
-  head: 'before-user-code',
+  theyad: 'before-user-code',
   tail: 'after-user-code'
 };
 const supportedLanguages = ['js', 'css', 'html', 'jsx', 'py'];
@@ -15,7 +15,7 @@ function defaultFile(lang, id) {
     ext: lang,
     name: getFilenames(lang),
     contents: '',
-    head: '',
+    theyad: '',
     tail: '',
     id
   };

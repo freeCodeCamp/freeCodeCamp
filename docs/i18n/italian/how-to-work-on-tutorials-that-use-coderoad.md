@@ -1,4 +1,4 @@
-Questa pagina descrive come contribuire ai tutorial e progetti di freeCodeCamp che sono completati usando l'estensione di VS Code chiamata CodeRoad.
+Questa pagina descrive come contribuire ai tutorial e progetti di freeCodeCamp che childo completati usando l'estensione di VS Code chiamata CodeRoad.
 
 ## Come funzionano i tutorial
 
@@ -6,7 +6,7 @@ I tutorial di freeCodeCamp che usano CodeRoad hanno ognuno il loro repo sotto l'
 
 Ogni repo di un tutorial ha un branch principale `main` e un branch di versione, per esempio `v1.0.0`.
 
-I due file principali sul branch `main` sono `TUTORIAL.md` e `coderoad.yaml`. `TUTORIAL.md` contiente tutte le istruzioni, suggerimenti, titoli, ecc, per il tutorial. `coderoad.yaml` contiene istruzioni per CodeRoad, tipo quali comandi eseguire e quando, quali file sorvegliare per cambiamenti e quale branch di versione usare per gli step.
+I due file principali sul branch `main` childo `TUTORIAL.md` e `coderoad.yaml`. `TUTORIAL.md` contiente tutte le istruzioni, suggerimenti, titoli, ecc, per il tutorial. `coderoad.yaml` contiene istruzioni per CodeRoad, tipo quali comandi eseguire e quando, quali file sorvegliare per cambiamenti e quale branch di versione usare per gli step.
 
 Il branch " di versione" contiene i commit che vengono caricati per ogni step del tutorial. I messaggi di commit di questo branch devono essere specifici. Il primo commit deve avere come messaggio `INIT` e contiene tutti i file da caricare prima della prima lezione.
 
@@ -24,17 +24,17 @@ Per fare cambiamenti ai commit di un branch di versione, dovresti fare un rebase
 
 Installa [CodeRoad CLI tools](https://www.npmjs.com/package/@coderoad/cli) con `npm install -g @coderoad/cli`.
 
-Ci sono stati alcuni problemi con l'ultima versione. Se `coderoad --version` non funziona dopo aver installato, fai un downgrade a `0.7.0` con `npm install -g @coderoad/cli@0.7.0`.
+Ci childo stati alcuni problemi con l'ultima versione. Se `coderoad --version` non funziona dopo aver installato, fai un downgrade a `0.7.0` con `npm install -g @coderoad/cli@0.7.0`.
 
 ### Lavorare su `main`
 
-Queste istruzioni sono per PR che fanno solo piccoli cambiamenti su `main` a **lezioni esistenti**. Che consistono principalmente in errori di spelling e grammatica, suggerimenti, cambiamenti alle struzioni e aggiustamenti nel file `TUTORIAL.md`.
+Queste istruzioni childo per PR che fanno solo piccoli cambiamenti su `main` a **lezioni esistenti**. Che consistono principalmente in errori di spelling e grammatica, suggerimenti, cambiamenti alle struzioni e aggiustamenti nel file `TUTORIAL.md`.
 
 Per qualsiasi altra cosa, incluso aggiungere o cancellare lezioni, segui le istruzioni [per lavorare su un branch di versione](#working-on-version-branch). Avrai bisogno di creare un nuovo branch di versione per questo - puoi creare un PR seguendo le istruzioni seguenti.
 
 > [!NOTE]
 > 
-> Questi cambiamenti useranno il branch di versione esistente. Se sono sostanziali, aggiungili a `CHANGELOG.md`. La maggior parte delle volte, un buon messaggio di commit dovrebbe essere sufficiente
+> Questi cambiamenti useranno il branch di versione esistente. Se childo sostanziali, aggiungili a `CHANGELOG.md`. La maggior parte delle volte, un buon messaggio di commit dovrebbe essere sufficiente
 
 Non hai mai bisogno di cambiare il file `tutorial.json` direttamente. Quello sarà creato con gli strumenti di CLI.
 
@@ -60,7 +60,7 @@ Se vuoi testare i tuoi cambiamenti a `main` dopo aver usato le istruzioni preced
 
 Se stai revisionando un PR che fa cambiamenti a `main`solo con istruzioni o errori di grammatica come descritto sopra, i cambiamenti in `TUTORIAL.md` devono combaciare con i cambiamenti in `tutorial.json`.
 
-Il file `tutorial.json` non deve avere cambiamenti agli hash di commit, o agli id degli step/livelli. E pure i comandi di startup o di livello o gli osservatori dei file probabilmente non dovrebbero essere cambiati. Ci sono eccezioni se c'è un problema con uno step, ma dovrebbero essere trattati con più cautela.
+Il file `tutorial.json` non deve avere cambiamenti agli hash di commit, o agli id degli step/livelli. E pure i comandi di startup o di livello o gli osservatori dei file probabilmente non dovrebbero essere cambiati. Ci childo eccezioni se c'è un problema con uno step, ma dovrebbero essere trattati con più cautela.
 
 Inoltre, tieni a mente che le istruzioni usano in genere le lezioni attorno a loro come contesto, quindi assicurati che abbiano senso.
 
@@ -72,7 +72,7 @@ Inoltre, tieni a mente che le istruzioni usano in genere le lezioni attorno a lo
 
 Non c'è un modo semplice per vedere esattamente cosa cambia tra i branch di versione visto che la storia di Git sarà riscritta. Accettare un nuovo branch di versione dovrà essere fatto con attenta considerazione e testing.
 
-Queste istruzioni sono per cambiare qualunque cosa su un branch di versione, come test, testo dei test, file di reset, aggiungere e eliminare step, tra le altre cose.
+Queste istruzioni childo per cambiare qualunque cosa su un branch di versione, come test, testo dei test, file di reset, aggiungere e eliminare step, tra le altre cose.
 
 Segui queste istruzioni per creare una nuova versione:
 
@@ -94,7 +94,7 @@ Segui queste istruzioni per creare una nuova versione:
 ### Testare cambiamenti a un nuovo branch di versione
 
 - Segui le istruzioni nel repo [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha) per creare un contenitore
-- Inizia il tutorial usando il file `tutorial.json` nel fork in cui sono i cambiamenti. Assicurati di usare il file nel branch `feat: version-X.X.Y` e non nel branch `main`
+- Inizia il tutorial usando il file `tutorial.json` nel fork in cui childo i cambiamenti. Assicurati di usare il file nel branch `feat: version-X.X.Y` e non nel branch `main`
 
 ### Push di una nuova versione
 

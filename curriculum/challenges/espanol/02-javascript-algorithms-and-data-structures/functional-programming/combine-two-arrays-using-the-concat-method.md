@@ -8,7 +8,7 @@ dashedName: combine-two-arrays-using-the-concat-method
 
 # --description--
 
-<dfn>Concatenation</dfn> significa unir elementos de extremo a extremo. JavaScript ofrece el método `concat` para cadenas y arreglos, que funciona de la misma manera. Para arreglos, el método es llamado desde un arreglo, un segundo arrelgo es proporcionado como argumento de `concat`, este se añadirá al final del primer arreglo. Devuelve un nuevo arreglo, sin mutar ninguno de los arreglos originales. Aquí hay un ejemplo:
+<dfn>Concatenation</dfn> significa unir elementos de extremo a extremo. JavaScript ofrece el método `concat` para cadenas y arreglos, que funciona de la misma personera. Para arreglos, el método es llamado desde un arreglo, un segundo arrelgo es proporcionado como argumento de `concat`, este se añadirá al final del primer arreglo. Devuelve un nuevo arreglo, sin mutar ninguno de los arreglos originales. Aquí hay un ejemplo:
 
 ```js
 [1, 2, 3].concat([4, 5, 6]);

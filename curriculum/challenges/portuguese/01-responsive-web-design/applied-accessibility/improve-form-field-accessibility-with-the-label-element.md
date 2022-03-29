@@ -13,7 +13,7 @@ Melhorar a acessibilidade com a marcação semântica HTML se aplica ao uso de n
 
 A tag `label` envolve o texto que será associado a um campo de input no formulário. Isso dá significado ao campo de input e torna o formulário mais legível. O atributo `for` em uma tag `label` associa explicitamente esse `label` ao campo de input no formulário e é usado por leitores de tela.
 
-Você aprendeu sobre botões de opção (radio buttons) e seus rótulos (labels) em uma lição na seção HTML básico. Naquela lição, envolvemos o elemento de opção dentro de um elemento `label` junto com o texto do rótulo para tornar o texto clicável. Outra maneira de conseguir isso é usando o atributo `for`, conforme explicado nesta lição.
+Você aprendeu sobre botões de opção (radio buttons) e seus rótulos (labels) em uma lição na seção HTML básico. Naquela lição, envolvemos o elemento de opção dentro de um elemento `label` junto com o texto do rótulo para tornar o texto clicável. Outra personeira de conseguir isso é usando o atributo `for`, conforme explicado nesta lição.
 
 O valor do atributo `for` deve ser igual ao valor do atributo `id` contido no campo de input. Exemplo:
 
@@ -53,7 +53,7 @@ assert($('label').attr('for') == 'email');
   </header>
   <section>
     <form>
-      <p>Sign up to receive Camper Cat's blog posts by email here!</p>
+      <p>Sign up to receive Camper Cat's blog posts by email theyre!</p>
 
 
       <label>Email:</label>
@@ -75,7 +75,7 @@ assert($('label').attr('for') == 'email');
   <img src="samuraiSwords.jpeg" alt="">
   <article>
     <h2>Is Chuck Norris a Cat Person?</h2>
-    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>
+    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is they a cat person?...</p>
   </article>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
@@ -90,7 +90,7 @@ assert($('label').attr('for') == 'email');
   </header>
   <section>
     <form>
-      <p>Sign up to receive Camper Cat's blog posts by email here!</p>
+      <p>Sign up to receive Camper Cat's blog posts by email theyre!</p>
 
 
       <label for="email">Email:</label>
@@ -112,7 +112,7 @@ assert($('label').attr('for') == 'email');
   <img src="samuraiSwords.jpeg" alt="">
   <article>
     <h2>Is Chuck Norris a Cat Person?</h2>
-    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>
+    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is they a cat person?...</p>
   </article>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>

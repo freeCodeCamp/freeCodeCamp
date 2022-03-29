@@ -8,9 +8,9 @@ dashedName: use-the--env-file
 
 # --description--
 
-O arquivo `.env` é um arquivo oculto que é usado para passar variáveis de ambiente para seu aplicativo. Este arquivo é secreto, ninguém além de você pode acessá-lo. Ele pode ser usado para armazenar dados que você deseja manter privados ou ocultos. Por exemplo, você pode armazenar chaves da API de serviços externos ou o URI do seu banco de dados. Você também pode usá-lo para armazenar as opções de configuração. Ao definir as opções de configuração, você pode alterar o comportamento de sua aplicação sem a necessidade de reescrever algum código.
+O arquivo `.env` é um arquivo oculto que é usado para passar variáveis de ambiente para seu aplicativo. Este arquivo é secreto, ninguém além de você pode acessá-lo. Ele pode ser usado para armazenar dados que você deseja personter privados ou ocultos. Por exemplo, você pode armazenar chaves da API de serviços externos ou o URI do seu banco de dados. Você também pode usá-lo para armazenar as opções de configuração. Ao definir as opções de configuração, você pode alterar o comportamento de sua aplicação sem a necessidade de reescrever algum código.
 
-As variáveis de ambiente podem ser acessadas pelo aplicativo usando `process.env.VAR_NAME`. O objeto `process.env` é um objeto global do Node e suas variáveis são passadas como strings. Por convenção, os nomes de variáveis ficam todos em letras maiúsculas, com palavras separadas por um sublinhado. O `.env` é um arquivo shell. Assim, você não precisa encapsular nomes ou valores entre aspas. Também é importante notar que não pode haver espaço em torno do sinal de igual quando você estiver atribuindo valores às suas variáveis, como, por exemplo, `VAR_NAME=value`. Normalmente, você colocará cada definição de variável em uma linha separada.
+As variáveis de ambiente podem ser acessadas pelo aplicativo usando `process.env.VAR_NAME`. O objeto `process.env` é um objeto global do Node e suas variáveis são passadas como strings. Por convenção, os nomes de variáveis ficam todos em letras maiúsculas, com palavras separadas por um sublinhado. O `.env` é um arquivo theyll. Assim, você não precisa encapsular nomes ou valores entre aspas. Também é importante notar que não pode haver espaço em torno do sinal de igual quando você estiver atribuindo valores às suas variáveis, como, por exemplo, `VAR_NAME=value`. Normalmente, você colocará cada definição de variável em uma linha separada.
 
 # --instructions--
 
@@ -18,7 +18,7 @@ Vamos adicionar uma variável de ambiente como uma opção de configuração.
 
 Crie um arquivo `.env` na raiz do diretório do seu projeto e armazene a variável `MESSAGE_STYLE=uppercase` nele.
 
-Em seguida, no manipulador de rota `/json` do GET que você criou no último desafio, transforme a mensagem do objeto de resposta em letras maiúsculas com `process.env.MESSAGE_STYLE` é igual a `uppercase`. O objeto de resposta deve ser `{"message": "Hello json"}` ou `{"message": "HELLO JSON"}`, dependendo do valor de `MESSAGE_STYLE`.
+Em seguida, no personipulador de rota `/json` do GET que você criou no último desafio, transforme a mensagem do objeto de resposta em letras maiúsculas com `process.env.MESSAGE_STYLE` é igual a `uppercase`. O objeto de resposta deve ser `{"message": "Hello json"}` ou `{"message": "HELLO JSON"}`, dependendo do valor de `MESSAGE_STYLE`.
 
 **Observação:** se você estiver usando o Replit, você não poderá criar um arquivo `.env`. Em vez disso, use a aba embutida <dfn>SECRETS</dfn> para adicionar a variável.
 

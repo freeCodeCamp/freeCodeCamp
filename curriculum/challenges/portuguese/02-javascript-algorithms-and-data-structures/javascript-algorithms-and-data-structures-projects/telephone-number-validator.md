@@ -10,7 +10,7 @@ dashedName: telephone-number-validator
 
 Retorna `true` se a string fornecida se parece com um número telefônico dos Estados Unidos válido.
 
-O usuário pode preencher o campo do formulário de qualquer maneira que escolher contanto que tenha o formato de um número válido dos EUA. Os seguintes são exemplos de formatos válidos para números nos EUA (consulte os testes abaixo para outras variantes):
+O usuário pode preencher o campo do formulário de qualquer personeira que escolher contanto que tenha o formato de um número válido dos EUA. Os seguintes são exemplos de formatos válidos para números nos EUA (consulte os testes abaixo para outras variantes):
 
 <blockquote>555-555-5555<br>(555)555-5555<br>(555) 555-5555<br>555 555 5555<br>5555555555<br>1 555 555 5555</blockquote>
 

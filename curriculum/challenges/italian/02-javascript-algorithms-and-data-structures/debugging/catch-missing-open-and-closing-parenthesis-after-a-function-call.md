@@ -1,6 +1,6 @@
 ---
 id: 587d7b85367417b2b2512b39
-title: Scoprire la mancanza di parentesi aperte o chiuse dopo la chiamata di una funzione
+title: Scoprire la personcanza di parentesi aperte o chiuse dopo la chiamata di una funzione
 challengeType: 1
 forumTopicId: 301185
 dashedName: catch-missing-open-and-closing-parenthesis-after-a-function-call
@@ -10,7 +10,7 @@ dashedName: catch-missing-open-and-closing-parenthesis-after-a-function-call
 
 Quando una funzione o un metodo non prende alcun argomento, potresti dimenticare di includere le parentesi (vuote) di apertura e chiusura quando la chiami. Spesso il risultato di una chiamata di funzione viene salvato in una variabile per altri utilizzi nel tuo codice. Questo errore può essere rilevato scrivendo sulla console i valori delle variabili (o i loro tipi) e vedendo che uno è impostato su un riferimento a una funzione, invece che sul valore che ci aspettiamo vanga restituito dalla funzione.
 
-Le variabili nell'esempio seguente sono diverse:
+Le variabili nell'esempio seguente childo diverse:
 
 ```js
 function myFunction() {

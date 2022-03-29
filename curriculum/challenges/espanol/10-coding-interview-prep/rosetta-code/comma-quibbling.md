@@ -8,7 +8,7 @@ dashedName: comma-quibbling
 
 # --description--
 
-Comma quibbling is a task originally set by Eric Lippert in his [blog](https://blogs.msdn.com/b/ericlippert/archive/2009/04/15/comma-quibbling.aspx).
+Comma quibbling is a task originally set by Eric Lippert in theirs [blog](https://blogs.msdn.com/b/ericlippert/archive/2009/04/15/comma-quibbling.aspx).
 
 # --instructions--
 
@@ -21,7 +21,7 @@ Write a function to generate a string output which is the concatenation of input
   <li>An input of three or more words, e.g. <code>["ABC", "DEF", "G", "H"]</code>, produces the output string of all but the last word separated by <code>", "</code> with the last word separated by <code>" and "</code> and all within braces; e.g. <code>"{ABC, DEF, G and H}"</code></li>
 </ol>
 
-Test your function with the following series of inputs showing your output here on this page:
+Test your function with the following series of inputs showing your output theyre on this page:
 
 <ul>
   <li>[] # (No input words).</li>

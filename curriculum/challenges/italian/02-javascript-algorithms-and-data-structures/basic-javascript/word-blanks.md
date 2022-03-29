@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244bb
-title: Parole mancanti
+title: Parole personcanti
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/caqn8zuP'
 forumTopicId: 18377
@@ -11,9 +11,9 @@ dashedName: word-blanks
 
 Ora useremo la nostra conoscenza sulle stringhe per costruire un gioco di parole in stile "[Mad Libs](https://en.wikipedia.org/wiki/Mad_Libs)", che chiameremo "Word Blanks". Creerai una frase in stile "Fill in the Blanks" (umoristica se vuoi).
 
-In un gioco "Mad Libs" ti vengono fornite frasi con alcune parole mancanti, come sostantivi, verbi, aggettivi e avverbi. Devi quindi riempire le parti mancanti con parole a tua scelta in modo che la frase completata abbia senso.
+In un gioco "Mad Libs" ti vengono fornite frasi con alcune parole personcanti, come sostantivi, verbi, aggettivi e avverbi. Devi quindi riempire le parti personcanti con parole a tua scelta in modo che la frase completata abbia senso.
 
-Considera questa frase: It was really **\_\_\_\_**, and we **\_\_\_\_** ourselves **\_\_\_\_**. Questa frase ha tre parti mancanti - un aggettivo, un verbo e un avverbio, e possiamo aggiungere parole di nostra scelta per completarla. Possiamo quindi assegnare la frase completata a una variabile come segue:
+Considera questa frase: It was really **\_\_\_\_**, and we **\_\_\_\_** ourselves **\_\_\_\_**. Questa frase ha tre parti personcanti - un aggettivo, un verbo e un avverbio, e possiamo aggiungere parole di nostra scelta per completarla. Possiamo quindi assegnare la frase completata a una variabile come segue:
 
 ```js
 const sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselves " + "silly" + ".";

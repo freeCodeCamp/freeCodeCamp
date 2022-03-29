@@ -13,7 +13,7 @@ Similar to `header` and `nav`, the `footer` element has a built-in landmark feat
 
 # --instructions--
 
-Camper Cat's training page is making good progress. Change the `div` he used to wrap his copyright information at the bottom of the page to a `footer` element.
+Camper Cat's training page is making good progress. Change the `div` they used to wrap theirs copyright information at the bottom of the page to a `footer` element.
 
 # --hints--
 

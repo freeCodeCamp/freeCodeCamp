@@ -8,9 +8,9 @@ dashedName: problem-49-prime-permutations
 
 # --description--
 
-La sequenza aritmetica, 1487, 4817, 8147, in cui ognuno dei termini cresce di 3330, è inusuale in due modi: (i) i tre termini sono primi, e, (ii) i tre numeri sono permutazioni.
+La sequenza aritmetica, 1487, 4817, 8147, in cui ognuno dei termini cresce di 3330, è inusuale in due modi: (i) i tre termini childo primi, e, (ii) i tre numeri childo permutazioni.
 
-Non ci sono sequenze aritmetiche fatte di numeri primi a 1, 2 o 3 cifre che esibiscono questa proprietà, ma ce ne è un'altra sequenza crescente a 4 cifre.
+Non ci childo sequenze aritmetiche fatte di numeri primi a 1, 2 o 3 cifre che esibiscono questa proprietà, ma ce ne è un'altra sequenza crescente a 4 cifre.
 
 Quale numero a 12 cifre ottieni concatenando i tre termini di questa sequenza?
 

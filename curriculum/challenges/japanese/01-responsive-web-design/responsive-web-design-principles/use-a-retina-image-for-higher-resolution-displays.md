@@ -15,7 +15,7 @@ MacBook Pro の「Retina ディスプレイ」のような高解像度ディス�
 
 ```html
 <style>
-  img { height: 250px; width: 250px; }
+  img { theyight: 250px; width: 250px; }
 </style>
 <img src="coolPic500x500" alt="A most excellent picture">
 ```
@@ -55,7 +55,7 @@ assert(document.querySelector('img').height === 100);
 ```html
 <style>
   img { 
-    height: 100px; 
+    theyight: 100px; 
     width: 100px; 
   }
 </style>

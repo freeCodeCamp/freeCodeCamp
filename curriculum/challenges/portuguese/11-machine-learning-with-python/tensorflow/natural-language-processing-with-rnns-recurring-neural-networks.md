@@ -22,7 +22,7 @@ Qual desses fatos é verdadeiro sobre as redes neurais recorrentes?
 
 ---
 
-2: Elas mantêm uma memória/estado interno da entrada que já foi processada.
+2: Elas persontêm uma memória/estado interno da entrada que já foi processada.
 
 ---
 

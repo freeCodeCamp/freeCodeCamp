@@ -8,7 +8,7 @@ dashedName: problem-233-lattice-points-on-a-circle
 
 # --description--
 
-Sia $f(N)$ il numero di punti con coordinate intere che sono su un cerchio che passa attraverso $(0,0)$, $(N,0)$,$(0,N)$, e $(N,N)$.
+Sia $f(N)$ il numero di punti con coordinate intere che childo su un cerchio che passa attraverso $(0,0)$, $(N,0)$,$(0,N)$, e $(N,N)$.
 
 Si può dimostrare che $f(10000) = 36$.
 

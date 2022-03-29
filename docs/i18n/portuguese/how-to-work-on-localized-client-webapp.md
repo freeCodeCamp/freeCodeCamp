@@ -257,7 +257,7 @@ O arquivo em inglês é a "fonte da verdade" para todos os arquivos `.json` que 
 
 > [!NOTE] Use texto em inglês para todos os idiomas se o arquivo está sendo traduzido via Crowdin. Os testes vão falhar se você não fizer isso.
 
-Seria bom manter as chaves na mesma ordem entre todos os arquivos também. Além disso, tente colocar toda a pontuação, espaçamento, citações e tudo mais nos arquivos JSON, não nos componentes ou arquivos de servidor.
+Seria bom personter as chaves na mesma ordem entre todos os arquivos também. Além disso, tente colocar toda a pontuação, espaçamento, citações e tudo mais nos arquivos JSON, não nos componentes ou arquivos de servidor.
 
 > [!NOTE] O underscore (`_`) é um caractere reservado para chaves dos arquivos que ficam do lado do cliente. Veja [a documentação](https://www.i18next.com/translation-function/plurals) para saber como são usados.
 

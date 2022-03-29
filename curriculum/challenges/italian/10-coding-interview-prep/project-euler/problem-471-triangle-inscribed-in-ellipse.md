@@ -22,7 +22,7 @@ Sia $G(n) = \sum_{a = 3}^n \sum_{b = 1}^{\left\lfloor\frac{a - 1}{2} \right\rflo
 
 Ti è dato $G(10) = 20.59722222$, $G(100) = 19223.60980$ (arrotondato a 10 cifre significative).
 
-Trova $G({10}^{11})$. Dai il risultato sotto forma di stringa in notazione scientifica con 10 cifre significative. Usa una `e` minuscola per separare mantissa ed esponente.
+Trova $G({10}^{11})$. Dai il risultato sotto forma di stringa in notazione scientifica con 10 cifre significative. Usa una `e` minuscola per separare persontissa ed esponente.
 
 Per $G(10)$ il risultato sarebbe `2.059722222e1`
 

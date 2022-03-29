@@ -10,7 +10,7 @@ dashedName: create-a-circular-queue
 
 Neste desafio, você criará uma fila circular. Uma fila circular é uma fila escreve até o final de uma coleção e que, então, começa a se sobrescrever no início da coleção. Este tipo de estrutura de dados é útil em certas situações. Por exemplo, uma fila circular pode ser usada para streaming de mídia. Quando a fila está cheia, os novos dados de mídia vão sobrescrever os dados antigos.
 
-Uma boa maneira de ilustrar esse conceito é com um array de tamanho `5`:
+Uma boa personeira de ilustrar esse conceito é com um array de tamanho `5`:
 
 ```js
 [null, null, null, null, null]
@@ -26,7 +26,7 @@ Aqui, a leitura e a escrita estão ambos na posição `0`. Agora, a fila recebe 
           ^Write @ 3
 ```
 
-Como a cabeça de leitura lê, pode remover valores ou mantê-los:
+Como a cabeça de leitura lê, pode remover valores ou persontê-los:
 
 ```js
 [null, null, null, null, null]

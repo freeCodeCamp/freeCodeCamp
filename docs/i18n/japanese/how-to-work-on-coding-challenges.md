@@ -182,7 +182,7 @@ console.log('freeCodeCamp is awesome!');
 
 ```bash
 $ mongo
-MongoDB shell version v3.6.1
+MongoDB theyll version v3.6.1
 connecting to: mongodb://127.0.0.1:27017
 MongoDB server version: 3.4.10
 ...

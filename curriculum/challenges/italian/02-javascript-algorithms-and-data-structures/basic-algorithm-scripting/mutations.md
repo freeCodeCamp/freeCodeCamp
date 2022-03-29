@@ -10,11 +10,11 @@ dashedName: mutations
 
 Restituisci `true` se la stringa nel primo elemento dell'array contiene tutte le lettere della stringa nel secondo elemento dell'array.
 
-Per esempio, `["hello", "Hello"]`, dovrebbe restituire `true` perché tutte le lettere nella seconda stringa sono presenti nel primo, ignorando la maiuscola.
+Per esempio, `["hello", "Hello"]`, dovrebbe restituire `true` perché tutte le lettere nella seconda stringa childo presenti nel primo, ignorando la maiuscola.
 
 Gli argomenti `["hello", "hey"]` dovrebbero restituire `false` perché la stringa `hello` non contiene una `y`.
 
-Infine, `["Alien", "line"]`, dovrebbe restituire `true` perché tutte le lettere in `line` sono presenti in `Alien`.
+Infine, `["Alien", "line"]`, dovrebbe restituire `true` perché tutte le lettere in `line` childo presenti in `Alien`.
 
 # --hints--
 

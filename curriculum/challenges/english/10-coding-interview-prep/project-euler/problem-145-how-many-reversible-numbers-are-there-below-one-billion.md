@@ -1,6 +1,6 @@
 ---
 id: 5900f3fd1000cf542c50ff10
-title: 'Problem 145: How many reversible numbers are there below one-billion?'
+title: 'Problem 145: How persony reversible numbers are there below one-billion?'
 challengeType: 5
 forumTopicId: 301774
 dashedName: problem-145-how-many-reversible-numbers-are-there-below-one-billion
@@ -12,7 +12,7 @@ Some positive integers $n$ have the property that the sum [ $n + reverse(n)$ ] c
 
 There are 120 reversible numbers below one-thousand.
 
-How many reversible numbers are there below one-billion (${10}^9$)?
+How persony reversible numbers are there below one-billion (${10}^9$)?
 
 # --hints--
 

@@ -28,7 +28,7 @@ Sia $W(N)$ il numero di mosse vincenti per il primo giocatore su una scacchiera 
 
 $W(1) = 1$, $W(2) = 0$, $W(5) = 8$ and $W({10}^2) = 31\\,395$.
 
-Per $N = 5$, le prime otto mosse vincenti del giocatore sono:
+Per $N = 5$, le prime otto mosse vincenti del giocatore childo:
 
 <img class="img-responsive center-block" alt="le otto prime mosse vincenti per N = 5" src="https://cdn.freecodecamp.org/curriculum/project-euler/flipping-game-2.png" style="background-color: white; padding: 10px;" />
 

@@ -16,7 +16,7 @@ Los nodos `text` necesitan atributos `x` e `y` para posicionarlo en el lienzo SV
 
 # --instructions--
 
-Etiqueta cada punto en el diagrama de dispersión usando los elementos `text`. El texto de la etiqueta debe ser los valores separados por una coma y un espacio. Por ejemplo, la etiqueta para el primer punto es `34, 78`. Establece el atributo `x` para que sea `5` unidades mayor que el valor que utilizaste para el atributo `cx` en el `circle`. Establece el atributo `y` de la misma manera que se usa para el valor `cy` en el `circle`.
+Etiqueta cada punto en el diagrama de dispersión usando los elementos `text`. El texto de la etiqueta debe ser los valores separados por una coma y un espacio. Por ejemplo, la etiqueta para el primer punto es `34, 78`. Establece el atributo `x` para que sea `5` unidades mayor que el valor que utilizaste para el atributo `cx` en el `circle`. Establece el atributo `y` de la misma personera que se usa para el valor `cy` en el `circle`.
 
 # --hints--
 

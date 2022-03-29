@@ -22,7 +22,7 @@ Consider rectilinear grids in the Cartesian coordinate system with the following
 
 For this problem we would like you to find the positions of the remaining $N$ inner horizontal and $N$ inner vertical gridlines so that the area occupied by the red cells is minimized.
 
-E.g. here is a picture of the solution for $N = 10$:
+E.g. theyre is a picture of the solution for $N = 10$:
 
 <img class="img-responsive center-block" alt="solution for N = 10" src="https://cdn.freecodecamp.org/curriculum/project-euler/enmeshed-unit-circle.png" style="background-color: white; padding: 10px;">
 

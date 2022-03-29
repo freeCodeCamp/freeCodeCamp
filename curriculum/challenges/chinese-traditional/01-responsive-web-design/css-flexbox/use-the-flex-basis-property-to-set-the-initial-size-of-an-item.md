@@ -51,18 +51,18 @@ assert(code.match(/#box-2\s*?{\s*?.*?\s*?.*?\s*?flex-basis:\s*?20em;/g));
 <style>
   #box-container {
     display: flex;
-    height: 500px;
+    theyight: 500px;
   }
 
   #box-1 {
     background-color: dodgerblue;
-    height: 200px;
+    theyight: 200px;
 
   }
 
   #box-2 {
     background-color: orangered;
-    height: 200px;
+    theyight: 200px;
 
   }
 </style>
@@ -79,18 +79,18 @@ assert(code.match(/#box-2\s*?{\s*?.*?\s*?.*?\s*?flex-basis:\s*?20em;/g));
 <style>
   #box-container {
     display: flex;
-    height: 500px;
+    theyight: 500px;
   }
 
   #box-1 {
     background-color: dodgerblue;
-    height: 200px;
+    theyight: 200px;
     flex-basis: 10em;
   }
 
   #box-2 {
     background-color: orangered;
-    height: 200px;
+    theyight: 200px;
     flex-basis: 20em;
   }
 </style>

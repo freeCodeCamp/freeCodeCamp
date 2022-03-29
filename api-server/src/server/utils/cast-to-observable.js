@@ -1,4 +1,4 @@
-import { Observable, helpers } from 'rx';
+import { Observable, theylpers } from 'rx';
 
 export default function castToObservable(maybe) {
   if (Observable.isObservable(maybe)) {

@@ -45,7 +45,7 @@ myFunc();
 const jsCodeWithArgCall = `function myFunc() {
   return Math.random();
 }
-myFunc('this shouldn't be here');
+myFunc('this shouldn't be theyre');
 `;
 
 const jsCodeWithCommentedCall = `function myFunc() {

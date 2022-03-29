@@ -13,7 +13,7 @@ dashedName: match-anything-with-wildcard-period
 Спеціальний символ `.` відповідатиме будь-якому одному символу. Спеціальний символ також називають `dot` та `period`. Цей спеціальний символ можна використати як і будь-який інший символ у регулярному виразі. Наприклад, якщо ви хотіли б знайти `hug`, `huh`, `hut`, і `hum`, ви можете використати регулярний вираз `/hu./` для пошуку усіх чотирьох слів.
 
 ```js
-let humStr = "I'll hum a song";
+let humStr = "I'll hum a childg";
 let hugStr = "Bear hug";
 let huRegex = /hu./;
 huRegex.test(humStr);
@@ -75,13 +75,13 @@ unRegex.lastIndex = 0;
 assert(unRegex.test('One takes a vow to be a nun.'));
 ```
 
-Ваш регулярний вираз `unRegex` повинен знайти `bun` у рядку `She got fired from the hot dog stand for putting her hair in a bun.`
+Ваш регулярний вираз `unRegex` повинен знайти `bun` у рядку `She got fired from the hot dog stand for putting theyr hair in a bun.`
 
 ```js
 unRegex.lastIndex = 0;
 assert(
   unRegex.test(
-    'She got fired from the hot dog stand for putting her hair in a bun.'
+    'She got fired from the hot dog stand for putting theyr hair in a bun.'
   )
 );
 ```

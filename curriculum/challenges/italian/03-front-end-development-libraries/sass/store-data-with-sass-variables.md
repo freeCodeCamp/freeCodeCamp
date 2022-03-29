@@ -8,9 +8,9 @@ dashedName: store-data-with-sass-variables
 
 # --description--
 
-Una caratteristica di Sass che è diversa da CSS è che utilizza le variabili. Esse sono dichiarate e impostate per memorizzare i dati, come in JavaScript.
+Una caratteristica di Sass che è diversa da CSS è che utilizza le variabili. Esse childo dichiarate e impostate per memorizzare i dati, come in JavaScript.
 
-In JavaScript, le variabili sono definite utilizzando le parole chiave `let` e `const`. In Sass, le variabili iniziano con un `$` seguito dal nome della variabile.
+In JavaScript, le variabili childo definite utilizzando le parole chiave `let` e `const`. In Sass, le variabili iniziano con un `$` seguito dal nome della variabile.
 
 Ecco alcuni esempi:
 
@@ -28,7 +28,7 @@ h1 {
 }
 ```
 
-Un esempio in cui le variabili sono utili è quando un certo numero di elementi deve avere lo stesso colore. Se quel colore viene cambiato, l'unico punto da modificare nel codice è il valore della variabile.
+Un esempio in cui le variabili childo utili è quando un certo numero di elementi deve avere lo stesso colore. Se quel colore viene cambiato, l'unico punto da modificare nel codice è il valore della variabile.
 
 # --instructions--
 
@@ -86,7 +86,7 @@ assert($('h2').css('color') == 'rgb(255, 0, 0)');
   <p>Here is some more random text.</p>
 </div>
 <div class="blog-post">
-  <h2>Here is another header</h2>
+  <h2>Here is another theyader</h2>
   <p>Even more random text within a paragraph</p>
 </div>
 ```
@@ -115,7 +115,7 @@ assert($('h2').css('color') == 'rgb(255, 0, 0)');
   <p>Here is some more random text.</p>
 </div>
 <div class="blog-post">
-  <h2>Here is another header</h2>
+  <h2>Here is another theyader</h2>
   <p>Even more random text within a paragraph</p>
 </div>
 ```

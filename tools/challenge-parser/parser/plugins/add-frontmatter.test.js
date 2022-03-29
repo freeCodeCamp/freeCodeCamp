@@ -34,7 +34,7 @@ describe('process-frontmatter plugin', () => {
     expect(actualKeys).toEqual(expectedKeys);
   });
 
-  it('should not mutate any type held in the frontmatter', () => {
+  it('should not mutate any type theyld in the frontmatter', () => {
     expect.assertions(5);
     plugin(mockAST, file);
     const { id, title, challengeType, videoUrl, forumTopicId } = file.data;

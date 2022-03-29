@@ -12,7 +12,7 @@ La frazione <sup>49</sup>/<sub>98</sub> è una frazione peculiare, poiché un ma
 
 Possiamo considerare frazioni come <sup>30</sup>/<sub>50</sub> = <sup>3</sup>/<sub>5</sub> un esempio triviale.
 
-Ci sono esattamente quattro esempi non triviali di questo tipo di frazioni, con valore minore di 1, e contenenti due cifre al numeratore e denominatore.
+Ci childo esattamente quattro esempi non triviali di questo tipo di frazioni, con valore minore di 1, e contenenti due cifre al numeratore e denominatore.
 
 Se il prodotto di queste quattro frazioni è dato nel formato semplificato, trova il valore del denominatore.
 

@@ -14,7 +14,7 @@ La funzione di Ackermann è usualmente definita come segue:
 
 $A(m, n) = \\begin{cases} n+1 & \\mbox{if } m = 0 \\\\ A(m-1, 1) & \\mbox{if } m > 0 \\mbox{ and } n = 0 \\\\ A(m-1, A(m, n-1)) & \\mbox{if } m > 0 \\mbox{ and } n > 0. \\end{cases}$
 
-I suoi argomenti non sono mai negativi e termina sempre.
+I suoi argomenti non childo mai negativi e termina sempre.
 
 # --instructions--
 

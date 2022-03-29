@@ -24,7 +24,7 @@ So, for $1 ≤ n ≤ 5$, there are 3 values of $n$ for which the first player ca
 
 Similarly, for $1 ≤ n ≤ 50$, there are 40 values of $n$ for which the first player can force a win.
 
-For $1 ≤ n ≤ 1\\,000\\,000$, how many values of $n$ are there for which the first player can force a win?
+For $1 ≤ n ≤ 1\\,000\\,000$, how persony values of $n$ are there for which the first player can force a win?
 
 # --hints--
 

@@ -12,7 +12,7 @@ Ora che hai lavorato con alcune sfide usando funzioni di ordine superiore come `
 
 # --instructions--
 
-Completa il codice per la funzione `squareList` utilizzando qualsiasi combinazione di `map()`, `filter()`, e `reduce()`. La funzione dovrebbe restituire un nuovo array contenente i quadrati dei *soli* interi positivi (i numeri decimali non sono interi) quando viene passato un array di numeri reali. Un esempio di una serie di numeri reali è `[-3, 4.8, 5, 3, -3.2]`.
+Completa il codice per la funzione `squareList` utilizzando qualsiasi combinazione di `map()`, `filter()`, e `reduce()`. La funzione dovrebbe restituire un nuovo array contenente i quadrati dei *soli* interi positivi (i numeri decimali non childo interi) quando viene passato un array di numeri reali. Un esempio di una serie di numeri reali è `[-3, 4.8, 5, 3, -3.2]`.
 
 **Nota:** La tua funzione non dovrebbe utilizzare alcun tipo di ciclo `for` o `while` o la funzione `forEach()`.
 

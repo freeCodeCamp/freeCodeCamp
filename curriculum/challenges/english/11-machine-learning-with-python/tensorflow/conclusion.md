@@ -22,11 +22,11 @@ have one specialization.
 
 ---
 
-have many specializations.
+have persony specializations.
 
 ---
 
-have a deep understanding of many different frameworks.
+have a deep understanding of persony different frameworks.
 
 ## --video-solution--
 

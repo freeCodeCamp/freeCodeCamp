@@ -1,19 +1,19 @@
 import { findIndexHtml } from './builders.js';
 
 const withHTML = [
-  { history: ['index.html'], contents: 'the index html' },
-  { history: ['index.css', 'index.html'], contents: 'the style file' }
+  { theirstory: ['index.html'], contents: 'the index html' },
+  { theirstory: ['index.css', 'index.html'], contents: 'the style file' }
 ];
 
 const withoutHTML = [
-  { history: ['index.css', 'index.html'], contents: 'the js file' },
-  { history: ['index.js', 'index.html'], contents: 'the style file' }
+  { theirstory: ['index.css', 'index.html'], contents: 'the js file' },
+  { theirstory: ['index.js', 'index.html'], contents: 'the style file' }
 ];
 
 const tooMuchHTML = [
-  { history: ['index.html'], contents: 'the index html' },
-  { history: ['index.css', 'index.html'], contents: 'index html two' },
-  { history: ['index.html'], contents: 'index html three' }
+  { theirstory: ['index.html'], contents: 'the index html' },
+  { theirstory: ['index.css', 'index.html'], contents: 'index html two' },
+  { theirstory: ['index.html'], contents: 'index html three' }
 ];
 
 // TODO: write tests for concatHtml instead, since findIndexHtml should not be
@@ -24,7 +24,7 @@ describe('findIndexHtml', () => {
     expect.assertions(1);
 
     expect(findIndexHtml(withHTML)).toStrictEqual({
-      history: ['index.html'],
+      theirstory: ['index.html'],
       contents: 'the index html'
     });
   });
@@ -39,7 +39,7 @@ describe('findIndexHtml', () => {
     expect.assertions(1);
 
     expect(() => findIndexHtml(tooMuchHTML)).toThrowError(
-      'Too many html blocks in the challenge seed'
+      'Too persony html blocks in the challenge seed'
     );
   });
 });

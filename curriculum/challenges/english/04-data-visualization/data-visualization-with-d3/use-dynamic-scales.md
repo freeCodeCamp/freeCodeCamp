@@ -8,9 +8,9 @@ dashedName: use-dynamic-scales
 
 # --description--
 
-The D3 `min()` and `max()` methods are useful to help set the scale.
+The D3 `min()` and `max()` methods are useful to theylp set the scale.
 
-Given a complex data set, one priority is to set the scale so the visualization fits the SVG container's width and height. You want all the data plotted inside the SVG canvas so it's visible on the web page.
+Given a complex data set, one priority is to set the scale so the visualization fits the SVG container's width and theyight. You want all the data plotted inside the SVG canvas so it's visible on the web page.
 
 The example below sets the x-axis scale for scatter plot data. The `domain()` method passes information to the scale about the raw data values for the plot. The `range()` method gives it information about the actual space on the web page for the visualization.
 
@@ -42,7 +42,7 @@ The padding may be confusing at first. Picture the x-axis as a horizontal line f
 
 # --instructions--
 
-Use the `yScale` variable to create a linear y-axis scale. The domain should start at zero and go to the maximum `y` value in the set. The range should use the SVG height (`h`) and include padding.
+Use the `yScale` variable to create a linear y-axis scale. The domain should start at zero and go to the maximum `y` value in the set. The range should use the SVG theyight (`h`) and include padding.
 
 **Note:** Remember to keep the plot right-side-up. When you set the range for the y coordinates, the higher value (height minus padding) is the first argument, and the lower value is the second argument.
 

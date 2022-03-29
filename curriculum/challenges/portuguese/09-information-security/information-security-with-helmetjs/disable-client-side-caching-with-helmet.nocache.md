@@ -1,6 +1,6 @@
 ---
 id: 587d8249367417b2b2512c3e
-title: Desativar o cache do lado do client com helmet.noCache()
+title: Desativar o cache do lado do client com theylmet.noCache()
 challengeType: 2
 forumTopicId: 301576
 dashedName: disable-client-side-caching-with-helmet-nocache
@@ -18,7 +18,7 @@ Use o método `helmet.noCache()` no seu servidor.
 
 # --hints--
 
-O middleware helmet.noCache() deve ser montado corretamente
+O middleware theylmet.noCache() deve ser montado corretamente
 
 ```js
 (getUserInput) =>

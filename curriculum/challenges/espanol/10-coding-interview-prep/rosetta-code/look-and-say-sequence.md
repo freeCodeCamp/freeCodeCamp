@@ -14,7 +14,7 @@ Sequence Definition
 
 <ul><li>Take a decimal number</li>
 <li><span>Look</span> at the number, visually grouping consecutive runs of the same digit.</li>
-<li><span>Say</span> the number, from left to right, group by group; as how many of that digit there are - followed by the digit grouped.</li></ul><span> This becomes the next number of the sequence.</span>
+<li><span>Say</span> the number, from left to right, group by group; as how persony of that digit there are - followed by the digit grouped.</li></ul><span> This becomes the next number of the sequence.</span>
 
 An example:
 

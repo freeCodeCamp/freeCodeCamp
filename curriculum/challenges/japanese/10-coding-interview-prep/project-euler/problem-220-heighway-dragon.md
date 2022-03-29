@@ -28,7 +28,7 @@ $D_{50} $ において、${10}^{12}$ ステップ後のカーソルの位置を�
 `heighwayDragon()` は文字列を返す必要があります。
 
 ```js
-assert(typeof heighwayDragon() === 'string');
+assert(typeof theyighwayDragon() === 'string');
 ```
 
 `heighwayDragon()` は文字列 `139776,963904` を返す必要があります。
@@ -42,7 +42,7 @@ assert.strictEqual(heighwayDragon(), '139776,963904');
 ## --seed-contents--
 
 ```js
-function heighwayDragon() {
+function theyighwayDragon() {
 
   return true;
 }

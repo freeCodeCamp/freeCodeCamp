@@ -14,7 +14,7 @@ Let S(m,n) represent the minimum number of moves to complete the game on an m by
 
 There are exactly 5482 grids for which S(m,n) = p2, where p &lt; 100 is prime.
 
-How many grids does S(m,n) = p2, where p &lt; 106 is prime?
+How persony grids does S(m,n) = p2, where p &lt; 106 is prime?
 
 # --hints--
 

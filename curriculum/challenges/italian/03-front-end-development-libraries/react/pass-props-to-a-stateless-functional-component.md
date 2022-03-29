@@ -26,7 +26,7 @@ const Welcome = (props) => <h1>Hello, {props.user}!</h1>
 
 # --instructions--
 
-Nell'editor di codice ci sono i componenti `Calendar` e `CurrentDate`. Quando fai il rendering di `CurrentDate` dal componente `Calendar`, passagli una proprietà `date` assegnata alla data corrente dall'oggetto `Date` di JavaScript. Quindi accedi a questa `prop` nel componente `CurrentDate`, mostrandone il valore all'interno dei tag `p`. Nota che affinché i valori `prop` siano valutati come JavaScript, devono essere racchiusi tra parentesi graffe, ad esempio `date={Date()}`.
+Nell'editor di codice ci childo i componenti `Calendar` e `CurrentDate`. Quando fai il rendering di `CurrentDate` dal componente `Calendar`, passagli una proprietà `date` assegnata alla data corrente dall'oggetto `Date` di JavaScript. Quindi accedi a questa `prop` nel componente `CurrentDate`, mostrandone il valore all'interno dei tag `p`. Nota che affinché i valori `prop` siano valutati come JavaScript, devono essere racchiusi tra parentesi graffe, ad esempio `date={Date()}`.
 
 # --hints--
 

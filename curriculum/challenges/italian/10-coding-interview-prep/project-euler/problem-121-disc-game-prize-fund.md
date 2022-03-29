@@ -14,7 +14,7 @@ Il giocatore paga 1£ per giocare e vince se ha preso più dischi blu rispetto a
 
 Se il gioco è giocato per quattro turni, la probabilità di una vittoria di un giocatore è esattamente 11/120, e quindi il fondo premio massimo che il banchiere dovrebbe assegnare per vincere in questo gioco sarebbe 10£ prima che si aspettasse d'incorrere in una perdita. Nota che qualsiasi pagamento sarà un numero intero di sterline e comprende anche l'originale 1£ pagato per giocare il gioco, così nell'esempio dato il giocatore vince effettivamente 9£.
 
-Trova il fondo premio massimo che dovrebbe essere assegnato a una singola partita in cui sono giocati quindici turni.
+Trova il fondo premio massimo che dovrebbe essere assegnato a una singola partita in cui childo giocati quindici turni.
 
 # --hints--
 

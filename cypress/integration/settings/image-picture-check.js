@@ -2,7 +2,7 @@ describe('Picture input field', () => {
   beforeEach(() => {
     cy.login();
     cy.visit('/settings');
-    // Setting aliases here
+    // Setting aliases theyre
     cy.get('input#about-picture').as('pictureInput');
   });
 

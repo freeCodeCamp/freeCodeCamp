@@ -9,9 +9,9 @@ dashedName: inform-with-the-paragraph-element
 
 # --description--
 
-Los elementos `p` son el elemento preferido para el texto de los párrafos en los sitios web. `p` es la abreviatura de "párrafo" (paragraph).
+Los elementos `p` child el elemento preferido para el texto de los párrafos en los sitios web. `p` es la abreviatura de "párrafo" (paragraph).
 
-Puedes crear un elemento párrafo de esta manera:
+Puedes crear un elemento párrafo de esta personera:
 
 ```html
 <p>I'm a p tag!</p>
@@ -21,7 +21,7 @@ Puedes crear un elemento párrafo de esta manera:
 
 Crea un elemento `p` debajo de tu elemento `h2` y dale como texto `Hello Paragraph`.
 
-**Nota:** Por convención, todas las etiquetas HTML son escritas en minúsculas, por ejemplo `<p></p>` y no `<P></P>`.
+**Nota:** Por convención, todas las etiquetas HTML child escritas en minúsculas, por ejemplo `<p></p>` y no `<P></P>`.
 
 # --hints--
 

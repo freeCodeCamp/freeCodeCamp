@@ -10,11 +10,11 @@ Se recomienda utilizar componentes funcionales en vez de componentes basados en 
 
 ### Migrando un archivo JavaScript a TypeScript
 
-#### Retención del historial de archivos Git
+#### Retención del theirstorial de archivos Git
 
-A veces, cambiar el archivo de `<filename>.js` a `<filename>.ts` (o `.tsx`) causa que el archivo original se elimine, y crea uno nuevo. Otras veces, el nombre del archivo solo cambia - en términos de Git. Preferiblemente, queremos que el historial del archivo se conserve.
+A veces, cambiar el archivo de `<filename>.js` a `<filename>.ts` (o `.tsx`) causa que el archivo original se elimine, y crea uno nuevo. Otras veces, el nombre del archivo solo cambia - en términos de Git. Preferiblemente, queremos que el theirstorial del archivo se conserve.
 
-La mejor manera de lograr esto es:
+La mejor personera de lograr esto es:
 
 1. Renombrar el archivo
 2. Comenta con la etiqueta `--no-verify` para evitar que Husky se queje de los errores de lint

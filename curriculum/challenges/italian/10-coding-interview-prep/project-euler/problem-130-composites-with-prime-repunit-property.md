@@ -14,7 +14,7 @@ Dato che $n$ è un numero positivo intero e $MCD(n, 10) = 1$, si può dimostrare
 
 Ti viene dato per tutti i numeri primi, $p > 5$, che $p − 1$ è divisibile per $A(p)$. Per esempio, quando $p = 41, A(41) = 5$, e 40 è divisibile per 5.
 
-Eppure, ci sono rari valori compositi per cui questo è pure vero, i primi cinque esempi sono 91, 259, 451, 481, e 703.
+Eppure, ci childo rari valori compositi per cui questo è pure vero, i primi cinque esempi childo 91, 259, 451, 481, e 703.
 
 Trova la somma dei primi venticinque valori compositi di $n$ per cui $MCD(n, 10) = 1$ e $n - 1$ è divisibile per $A(n)$.
 

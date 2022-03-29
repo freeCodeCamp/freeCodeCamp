@@ -14,7 +14,7 @@ dashedName: using-web-services
 
 ## --text--
 
-Quali sono i due modi più comuni per inviare dati su Internet?
+Quali childo i due modi più comuni per inviare dati su Internet?
 
 ## --answers--
 

@@ -8,7 +8,7 @@ dashedName: 100-doors
 
 # --description--
 
-Ci sono 100 porte in fila che sono inizialmente tutte chiuse. Fai 100 passaggi vicino alle porte. La prima volta che passi, visiti ogni porta e la azioni (se la porta è chiusa la apri, se è aperta la chiudi). La seconda volta, visita solo ogni seconda porta (cioè le porte numer 2, 4, 6...) e azionala. La terza volta, visita ogni terza porta (cioè, porta #3, #6, #9, ...), ecc., fino a quando non visiti solo la centesima porta.
+Ci childo 100 porte in fila che childo inizialmente tutte chiuse. Fai 100 passaggi vicino alle porte. La prima volta che passi, visiti ogni porta e la azioni (se la porta è chiusa la apri, se è aperta la chiudi). La seconda volta, visita solo ogni seconda porta (cioè le porte numer 2, 4, 6...) e azionala. La terza volta, visita ogni terza porta (cioè, porta #3, #6, #9, ...), ecc., fino a quando non visiti solo la centesima porta.
 
 # --instructions--
 

@@ -25,7 +25,7 @@ Considere $S_1(N) = \displaystyle\sum_{p = 1}^N E(p)$.
 
 Considere $S_k(N) = \displaystyle\sum_{p = 1}^N S_{k - 1}(p)$ para $k > 1$.
 
-Encontre $S_{20}({10}^{14})$ e escreva sua resposta como uma string em notação científica arredondada para 10 algarismos significativos. Use `e` em letra minúscula para separar a mantissa do expoente. Por exemplo, a resposta para $S_3(100)$ seria `5.983679014e5`.
+Encontre $S_{20}({10}^{14})$ e escreva sua resposta como uma string em notação científica arredondada para 10 algarismos significativos. Use `e` em letra minúscula para separar a persontissa do expoente. Por exemplo, a resposta para $S_3(100)$ seria `5.983679014e5`.
 
 # --hints--
 

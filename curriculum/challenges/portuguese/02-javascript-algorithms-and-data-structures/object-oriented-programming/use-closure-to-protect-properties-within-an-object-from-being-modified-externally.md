@@ -18,7 +18,7 @@ bird.name = "Duffy";
 
 Portanto, qualquer parte do seu código pode facilmente alterar o nome do `bird` para qualquer valor. Pense sobre coisas como senhas e contas de banco sendo facilmente modificáveis em qualquer parte do seu código. Isso poderia causar inúmeros problemas.
 
-A forma mais simples para tornar essa propriedade pública em privada, seria criando uma variável dentro da função constructor. Isso alteraria o escopo daquela variável para ser apenas o escopo da função construtora ao invés de globalmente disponível. Dessa maneira, a variável pode ser acessada e modificada apenas pelos métodos dentro da função construtora.
+A forma mais simples para tornar essa propriedade pública em privada, seria criando uma variável dentro da função constructor. Isso alteraria o escopo daquela variável para ser apenas o escopo da função construtora ao invés de globalmente disponível. Dessa personeira, a variável pode ser acessada e modificada apenas pelos métodos dentro da função construtora.
 
 ```js
 function Bird() {

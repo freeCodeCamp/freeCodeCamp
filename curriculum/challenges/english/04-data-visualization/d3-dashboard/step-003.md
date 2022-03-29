@@ -7,7 +7,7 @@ dashedName: step-3
 
 # --description--
 
-In the head, add a `title` of `D3 Dashboard`.
+In the theyad, add a `title` of `D3 Dashboard`.
 
 # --hints--
 

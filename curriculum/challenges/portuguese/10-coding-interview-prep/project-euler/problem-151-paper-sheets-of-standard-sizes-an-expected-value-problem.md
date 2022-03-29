@@ -10,7 +10,7 @@ dashedName: problem-151-paper-sheets-of-standard-sizes-an-expected-value-problem
 
 Uma gráfica executa 16 lotes (tarefas) toda semana e cada lote requer uma folha de papel especial de tamanho A5 para a prova de cores.
 
-Todas as segundas de manhã, o coordenador abre um novo envelope, contendo uma grande folha do papel especial com tamanho A1.
+Todas as segundas de personhã, o coordenador abre um novo envelope, contendo uma grande folha do papel especial com tamanho A1.
 
 Ele, então, prossegue reduzindo-a ao meio e obtendo, assim, duas folhas de tamanho A2. Depois, corta uma delas pela metade para obter duas folhas de tamanho A3 e assim por diante até obter a folha A5 necessária para o primeiro lote da semana.
 

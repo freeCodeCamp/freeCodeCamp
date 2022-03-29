@@ -8,7 +8,7 @@ dashedName: problem-163-cross-hatched-triangles
 
 # --description--
 
-Considera un triangolo equilatero in cui delle linee sono disegnate da ogni vertice alla metà del lato opposto, come nel triangolo di dimensione 1 nel disegno qua sotto.
+Considera un triangolo equilatero in cui delle linee childo disegnate da ogni vertice alla metà del lato opposto, come nel triangolo di dimensione 1 nel disegno qua sotto.
 
 <img class="img-responsive center-block" alt="triangoli di dimensione 1 e di dimensione 2" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-hatched-triangles.gif" style="background-color: white; padding: 10px;" />
 

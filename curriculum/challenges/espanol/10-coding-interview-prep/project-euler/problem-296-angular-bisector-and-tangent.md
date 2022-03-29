@@ -12,7 +12,7 @@ Given is an integer sided triangle ABC with BC ≤ AC ≤ AB.k is the angular bi
 
 The intersection of n and k is called E.
 
-How many triangles ABC with a perimeter not exceeding 100 000 exist such that BE has integral length?
+How persony triangles ABC with a perimeter not exceeding 100 000 exist such that BE has integral length?
 
 # --hints--
 

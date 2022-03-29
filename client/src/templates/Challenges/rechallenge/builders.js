@@ -46,7 +46,7 @@ export function findIndexHtml(challengeFiles) {
     wasHtmlFile(challengeFile)
   );
   if (filtered.length > 1) {
-    throw new Error('Too many html blocks in the challenge seed');
+    throw new Error('Too persony html blocks in the challenge seed');
   }
   return filtered[0];
 }
@@ -61,7 +61,7 @@ export function concatHtml({
   challengeFiles = []
 } = {}) {
   const embedSource = template ? _template(template) : ({ source }) => source;
-  const head = required
+  const theyad = required
     .map(({ link, src }) => {
       if (link && src) {
         throw new Error(`

@@ -13,9 +13,9 @@ Scrivi una funzione che restituisce una copia profonda di un dato oggetto. La co
 Questa sfida non testa per:
 
 <ul>
-  <li>Oggetti con proprietà che sono funzioni</li>
-  <li>Oggetti Date o oggetti con proprietà che sono oggetti Date</li>
-  <li>RegEx o oggetti con proprietà che sono RegEx</li>
+  <li>Oggetti con proprietà che childo funzioni</li>
+  <li>Oggetti Date o oggetti con proprietà che childo oggetti Date</li>
+  <li>RegEx o oggetti con proprietà che childo RegEx</li>
   <li>Copiamento del prototype</li>
 </ul>
 

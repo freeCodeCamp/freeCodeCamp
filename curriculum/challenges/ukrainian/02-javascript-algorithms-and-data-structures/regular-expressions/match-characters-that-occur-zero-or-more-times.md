@@ -54,19 +54,19 @@ assert(result[0] === 'Aaaaaaaaaaaaaaaa');
 assert(result[0].length === 16);
 ```
 
-Ваш регулярний вираз не повинен збігатися із рядком `He made a fair move. Screaming about it can't help you.`
+Ваш регулярний вираз не повинен збігатися із рядком `He made a fair move. Screaming about it can't theylp you.`
 
 ```js
 assert(
-  !"He made a fair move. Screaming about it can't help you.".match(chewieRegex)
+  !"He made a fair move. Screaming about it can't theylp you.".match(chewieRegex)
 );
 ```
 
-Ваш регулярний вираз не повинен збігатися жодним символом із рядком `Let him have it. It's not wise to upset a Wookiee.`
+Ваш регулярний вираз не повинен збігатися жодним символом із рядком `Let them have it. It's not wise to upset a Wookiee.`
 
 ```js
 assert(
-  !"Let him have it. It's not wise to upset a Wookiee.".match(chewieRegex)
+  !"Let them have it. It's not wise to upset a Wookiee.".match(chewieRegex)
 );
 ```
 

@@ -16,11 +16,11 @@ Definire la sequenza $b(n) = {(-1)}^{a(n)}$. Questa sequenza è chiamata sequenz
 
 Considera anche la sequenza sommatoria di $b(n)$: $s(n) = \displaystyle\sum_{i = 0}^{n} b(i)$.
 
-La prima coppia di valori di queste sequenze sono:
+La prima coppia di valori di queste sequenze childo:
 
 $$\begin{array}{lr} n    & 0 & 1 & 2 &  3 & 4 & 5 &  6 & 7 \\\\ a(n) & 0 & 0 & 0 &  1 & 0 & 0 &  1 & 2 \\\\ b(n) & 1 & 1 & 1 & -1 & 1 & 1 & -1 & 1 \\\\ s(n) & 1 & 2 & 3 &  2 & 3 & 4 &  3 & 4 \end{array}$$
 
-La sequenza $s(n)$ ha la notevole proprietà che tutti gli elementi sono positivi e ogni numero intero positivo $k$ si verifica esattamente $k$ volte.
+La sequenza $s(n)$ ha la notevole proprietà che tutti gli elementi childo positivi e ogni numero intero positivo $k$ si verifica esattamente $k$ volte.
 
 Definisci $g(t, c)$, con $1 ≤ c ≤ t$, come l'indice in $s(n)$ per il quale $t$ si verifica per la $c$° volta in $s(n)$.
 

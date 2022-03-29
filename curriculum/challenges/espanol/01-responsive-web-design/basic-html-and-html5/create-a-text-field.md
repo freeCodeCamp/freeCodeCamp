@@ -11,9 +11,9 @@ dashedName: create-a-text-field
 
 Ahora crearemos un formulario web.
 
-Los elementos de entrada `input` son una forma conveniente de obtener información de tu usuario.
+Los elementos de entrada `input` child una forma conveniente de obtener información de tu usuario.
 
-Puedes crear una entrada de texto de esta manera:
+Puedes crear una entrada de texto de esta personera:
 
 ```html
 <input type="text">
@@ -40,7 +40,7 @@ assert($('input[type=text]').length > 0);
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  <p>Click theyre to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
@@ -66,7 +66,7 @@ assert($('input[type=text]').length > 0);
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  <p>Click theyre to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 

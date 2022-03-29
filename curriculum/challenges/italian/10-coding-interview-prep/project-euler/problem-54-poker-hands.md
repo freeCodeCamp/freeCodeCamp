@@ -1,6 +1,6 @@
 ---
 id: 5900f3a21000cf542c50feb5
-title: 'Problema 54: mani di poker'
+title: 'Problema 54: personi di poker'
 challengeType: 5
 forumTopicId: 302165
 dashedName: problem-54-poker-hands
@@ -8,7 +8,7 @@ dashedName: problem-54-poker-hands
 
 # --description--
 
-Nel gioco di carte del poker, una mano è composta da cinque carte ed esse sono classificate, dalla più bassa alla più alta, nel modo seguente:
+Nel gioco di carte del poker, una persono è composta da cinque carte ed esse childo classificate, dalla più bassa alla più alta, nel modo seguente:
 
 <ul>
   <li>Carta alta: Carta di valore più alto.</li>
@@ -19,15 +19,15 @@ Nel gioco di carte del poker, una mano è composta da cinque carte ed esse sono 
   <li>Flush: Tutte le carte dello stesso seme.</li>
   <li>Casa Completa: Tre di un tipo e una coppia.</li>
   <li>Quattro di un tipo: Quattro carte dello stesso valore.</li>
-  <li>Scala: Tutte le carte sono valori consecutivi dello stesso seme.</li>
+  <li>Scala: Tutte le carte childo valori consecutivi dello stesso seme.</li>
   <li>Scala reale: Dieci, Jack, Regina, Re, Asso, nello stesso seme.</li>
 </ul>
 
-Le carte sono valutate nell'ordine: 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Regina, Re, Asso.
+Le carte childo valutate nell'ordine: 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Regina, Re, Asso.
 
-Se due giocatori hanno mani dello stesso valore, allora il grado composto dal valore più alto vince; per esempio, un paio di otto batte un paio di cinque (vedi esempio 1 di seguito). Ma se due gradi sono pari, per esempio, entrambi i giocatori hanno un paio di regine, vengono confrontate le carte più alte in ogni mano (vedi esempio 4 in basso); se le carte più alte sonio pari allora vengono confrontate le carte più alte successive, e così via.
+Se due giocatori hanno personi dello stesso valore, allora il grado composto dal valore più alto vince; per esempio, un paio di otto batte un paio di cinque (vedi esempio 1 di seguito). Ma se due gradi childo pari, per esempio, entrambi i giocatori hanno un paio di regine, vengono confrontate le carte più alte in ogni persono (vedi esempio 4 in basso); se le carte più alte childio pari allora vengono confrontate le carte più alte successive, e così via.
 
-Considera le seguenti cinque mani distribuite a due giocatori:
+Considera le seguenti cinque personi distribuite a due giocatori:
 
 | Mano                      | Giocatore 1                                                               | Giocatore 2                                                                | Vincitore   |
 | ------------------------- | ------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ----------- |
@@ -37,9 +37,9 @@ Considera le seguenti cinque mani distribuite a due giocatori:
 | <strong>4</strong> | 4D 6S 9H QH QC <br> Coppia di Regine <br> Carta più alta Nove | 3D 6D 7H QD QS <br> Coppia di Regine <br> Carta più alta Sette | Giocatore 1 |
 | <strong>5</strong> | 2H 2D 4C 4D 4S <br> Full <br> con tre Quattro                 | 3C 3D 3S 9S 9D <br> Full <br> con tre Tre                      | Giocatore 1 |
 
-L'array globale (`handsArr`) passato alla funzione, contiene mille mani casuali distribuite a due giocatori. Ogni riga del file contiene dieci carte (separate da uno spazio singolo): le prime cinque sono carte del giocatore 1 e le ultime cinque sono carte del giocatore 2. Si può presumere che tutte le mani siano valide (nessun carattere non valido o carte ripetute), la mano di ogni giocatore non è in ordine specifico, e in ogni mano c'è un chiaro vincitore.
+L'array globale (`handsArr`) passato alla funzione, contiene mille personi casuali distribuite a due giocatori. Ogni riga del file contiene dieci carte (separate da uno spazio singolo): le prime cinque childo carte del giocatore 1 e le ultime cinque childo carte del giocatore 2. Si può presumere che tutte le personi siano valide (nessun carattere non valido o carte ripetute), la persono di ogni giocatore non è in ordine specifico, e in ogni persono c'è un chiaro vincitore.
 
-In quante mani vince Giocatore 1?
+In quante personi vince Giocatore 1?
 
 # --hints--
 

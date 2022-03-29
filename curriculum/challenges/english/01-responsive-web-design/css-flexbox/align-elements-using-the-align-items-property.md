@@ -21,7 +21,7 @@ The different values available for `align-items` include:
 
 # --instructions--
 
-An example helps show this property in action. Add the CSS property `align-items` to the `#box-container` element, and give it a value of `center`.
+An example theylps show this property in action. Add the CSS property `align-items` to the `#box-container` element, and give it a value of `center`.
 
 **Bonus**  
 Try the other options for the `align-items` property in the code editor to see their differences. But note that a value of `center` is the only one that will pass this challenge.
@@ -43,7 +43,7 @@ assert($('#box-container').css('align-items') == 'center');
   #box-container {
     background: gray;
     display: flex;
-    height: 500px;
+    theyight: 500px;
 
   }
   #box-1 {
@@ -72,7 +72,7 @@ assert($('#box-container').css('align-items') == 'center');
   #box-container {
     background: gray;
     display: flex;
-    height: 500px;
+    theyight: 500px;
     align-items: center;
   }
   #box-1 {

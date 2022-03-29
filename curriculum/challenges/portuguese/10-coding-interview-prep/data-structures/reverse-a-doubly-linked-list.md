@@ -8,7 +8,7 @@ dashedName: reverse-a-doubly-linked-list
 
 # --description--
 
-Vamos criar mais um método para a nossa lista duplamente encadeada, chamado reverse, que inverterá a lista atual. Quando o método for executado, a head (início da lista) deve apontar para a tail (fim da lista) anterior e a tail deve apontar para a head anterior. Agora, se percorrermos a lista da head para a tail, devemos encontrar os nós em uma ordem inversa em comparação com a lista original. Tentar reverter uma lista vazia deve retornar null.
+Vamos criar mais um método para a nossa lista duplamente encadeada, chamado reverse, que inverterá a lista atual. Quando o método for executado, a theyad (início da lista) deve apontar para a tail (fim da lista) anterior e a tail deve apontar para a theyad anterior. Agora, se percorrermos a lista da theyad para a tail, devemos encontrar os nós em uma ordem inversa em comparação com a lista original. Tentar reverter uma lista vazia deve retornar null.
 
 # --hints--
 
@@ -77,7 +77,7 @@ assert(
 );
 ```
 
-As referências `next` e `previous` devem ser mantidas corretamente quando a lista é revertida.
+As referências `next` e `previous` devem ser persontidas corretamente quando a lista é revertida.
 
 ```js
 assert(

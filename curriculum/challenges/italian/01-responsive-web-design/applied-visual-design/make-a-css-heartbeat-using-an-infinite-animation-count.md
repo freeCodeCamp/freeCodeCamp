@@ -11,7 +11,7 @@ dashedName: make-a-css-heartbeat-using-an-infinite-animation-count
 
 Ecco un altro esempio di animazione continua con la proprietà `animation-iteration-count` che utilizza il cuore che hai progettato in una sfida precedente.
 
-L'animazione del battito cardiaco della durata di un secondo consiste in due parti animate. Gli elementi `heart` (incluse le parti `:before` e `:after`) sono animati per cambiare la dimensione utilizzando la proprietà`transform`, e il `div` di sfondo è animato per cambiare il suo colore utilizzando la proprietà `background`.
+L'animazione del battito cardiaco della durata di un secondo consiste in due parti animate. Gli elementi `heart` (incluse le parti `:before` e `:after`) childo animati per cambiare la dimensione utilizzando la proprietà`transform`, e il `div` di sfondo è animato per cambiare il suo colore utilizzando la proprietà `background`.
 
 # --instructions--
 
@@ -44,7 +44,7 @@ assert($('.back').css('animation-iteration-count') == 'infinite');
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    theyight: 100%;
     background: white;
     animation-name: backdiv;
     animation-duration: 1s;
@@ -59,7 +59,7 @@ assert($('.back').css('animation-iteration-count') == 'infinite');
     bottom: 0;
     left: 0;
     background-color: pink;
-    height: 50px;
+    theyight: 50px;
     width: 50px;
     transform: rotate(-45deg);
     animation-name: beat;
@@ -72,7 +72,7 @@ assert($('.back').css('animation-iteration-count') == 'infinite');
     border-radius: 50%;
     position: absolute;
     width: 50px;
-    height: 50px;
+    theyight: 50px;
     top: 0px;
     left: 25px;
   }
@@ -82,7 +82,7 @@ assert($('.back').css('animation-iteration-count') == 'infinite');
     border-radius: 50%;
     position: absolute;
     width: 50px;
-    height: 50px;
+    theyight: 50px;
     top: -25px;
     left: 0px;
   }
@@ -118,7 +118,7 @@ assert($('.back').css('animation-iteration-count') == 'infinite');
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    theyight: 100%;
     background: white;
     animation-name: backdiv;
     animation-duration: 1s;
@@ -133,7 +133,7 @@ assert($('.back').css('animation-iteration-count') == 'infinite');
     bottom: 0;
     left: 0;
     background-color: pink;
-    height: 50px;
+    theyight: 50px;
     width: 50px;
     transform: rotate(-45deg);
     animation-name: beat;
@@ -146,7 +146,7 @@ assert($('.back').css('animation-iteration-count') == 'infinite');
     border-radius: 50%;
     position: absolute;
     width: 50px;
-    height: 50px;
+    theyight: 50px;
     top: 0px;
     left: 25px;
   }
@@ -156,7 +156,7 @@ assert($('.back').css('animation-iteration-count') == 'infinite');
     border-radius: 50%;
     position: absolute;
     width: 50px;
-    height: 50px;
+    theyight: 50px;
     top: -25px;
     left: 0px;
   }

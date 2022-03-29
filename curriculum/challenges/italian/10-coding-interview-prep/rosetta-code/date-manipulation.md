@@ -8,7 +8,7 @@ dashedName: date-manipulation
 
 # --description--
 
-Data una data in forma di stringa nel fuso orario EST (UTC-05), restituisci la data come stringa con 12 ore aggiunte all'orario. Il fuso orario deve essere mantenuto.
+Data una data in forma di stringa nel fuso orario EST (UTC-05), restituisci la data come stringa con 12 ore aggiunte all'orario. Il fuso orario deve essere persontenuto.
 
 Input di esempio: `"March 6 2009 7:30pm EST"`
 

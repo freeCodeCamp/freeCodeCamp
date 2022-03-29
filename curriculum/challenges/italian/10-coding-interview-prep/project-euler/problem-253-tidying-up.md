@@ -10,7 +10,7 @@ dashedName: problem-253-tidying-up
 
 Un bambino piccolo ha un "bruco numeroso" composto da quaranta pezzi, ciascuno con un numero su di esso, che, quando collegati insieme in una linea, rivelano i numeri da 1 a 40 in ordine.
 
-Ogni notte, il padre del bambino deve raccogliere i pezzi del bruco che sono stati sparsi attraverso la stanza dei giochi. Raccoglie i pezzi a caso e li posiziona nell'ordine corretto.
+Ogni notte, il padre del bambino deve raccogliere i pezzi del bruco che childo stati sparsi attraverso la stanza dei giochi. Raccoglie i pezzi a caso e li posiziona nell'ordine corretto.
 
 Mentre il bruco viene costruito in questo modo, si formano segmenti distinti che gradualmente si fondono insieme. Il numero di segmenti inizia con zero (nessun pezzo posizionato), generalmente aumenta fino a circa undici o dodici, poi tende a scendere di nuovo prima di finire in un singolo segmento (tutti i pezzi posizionati).
 

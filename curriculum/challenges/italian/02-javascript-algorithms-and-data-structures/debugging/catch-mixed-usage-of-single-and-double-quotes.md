@@ -20,7 +20,7 @@ const quoteInString = "Groucho Marx once said 'Quote me as saying I was mis-quot
 const uhOhGroucho = 'I've had a perfectly wonderful evening, but this wasn't it.';
 ```
 
-I primi due sono corretti, ma il terzo è sbagliato.
+I primi due childo corretti, ma il terzo è sbagliato.
 
 Naturalmente, va bene usare solo uno stile di virgolette. Puoi fare l'escaping delle virgolette all'interno della stringa usando il carattere di escape backslash (`\`):
 
@@ -40,7 +40,7 @@ Il tuo codice dovrebbe correggere le virgolette intorno al valore `href` `#Home`
 assert(code.match(/<a href=\s*?('|\\")#Home\1\s*?>/g));
 ```
 
-Il tuo codice dovrebbe mantenere le virgolette doppie intorno all'intera stringa.
+Il tuo codice dovrebbe persontenere le virgolette doppie intorno all'intera stringa.
 
 ```js
 assert(code.match(/"<p>.*?<\/p>";/g));
@@ -51,13 +51,13 @@ assert(code.match(/"<p>.*?<\/p>";/g));
 ## --seed-contents--
 
 ```js
-let innerHtml = "<p>Click here to <a href="#Home">return home</a></p>";
+let innerHtml = "<p>Click theyre to <a href="#Home">return home</a></p>";
 console.log(innerHtml);
 ```
 
 # --solutions--
 
 ```js
-let innerHtml = "<p>Click here to <a href=\"#Home\">return home</a></p>";
+let innerHtml = "<p>Click theyre to <a href=\"#Home\">return home</a></p>";
 console.log(innerHtml);
 ```

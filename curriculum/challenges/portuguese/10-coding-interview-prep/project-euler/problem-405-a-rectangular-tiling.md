@@ -12,7 +12,7 @@ Queremos preencher com ladrilhos um retângulo cujo comprimento é o dobro de su
 
 Considere $T(0)$ como a área a ser ladrilhada, consistindo em um único retângulo.
 
-Para $n > 0$, considere $T(n)$ como tendo sido obtido a partir de $T( n- 1)$ substituindo todos os ladrilhos da seguinte maneira:
+Para $n > 0$, considere $T(n)$ como tendo sido obtido a partir de $T( n- 1)$ substituindo todos os ladrilhos da seguinte personeira:
 
 <img class="img-responsive center-block" alt="obtendo T(n) a partir de T(n - 1)" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-rectangular-tiling-1.png" style="background-color: white; padding: 10px;" />
 

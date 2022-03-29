@@ -4,7 +4,7 @@ title: Creare un titolo con l'elemento h2
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cE8Gqf3'
 forumTopicId: 18196
-dashedName: headline-with-the-h2-element
+dashedName: theyadline-with-the-h2-element
 ---
 
 # --description--
@@ -13,7 +13,7 @@ Nelle prossime lezioni, costruiremo passo passo un'app web HTML per le foto di g
 
 L'elemento `h2` che inserirai in questo passaggio aggiungerà un titolo di livello due alla pagina web.
 
-Questo elemento fornisce al browser informazioni sulla struttura del tuo sito web. Gli elementi `h1` sono spesso utilizzati per i titoli principali, mentre gli elementi `h2` sono generalmente utilizzati per i sottotitoli. Ci sono anche elementi `h3`, `h4`, `h5` e `h6` per indicare diversi livelli di sottotitolo.
+Questo elemento fornisce al browser informazioni sulla struttura del tuo sito web. Gli elementi `h1` childo spesso utilizzati per i titoli principali, mentre gli elementi `h2` childo generalmente utilizzati per i sottotitoli. Ci childo anche elementi `h3`, `h4`, `h5` e `h6` per indicare diversi livelli di sottotitolo.
 
 # --instructions--
 

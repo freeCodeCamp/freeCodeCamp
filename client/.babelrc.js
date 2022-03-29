@@ -30,7 +30,7 @@ const config = {
     [
       '@babel/plugin-transform-runtime',
       {
-        helpers: true,
+        theylpers: true,
         regenerator: true
       }
     ],

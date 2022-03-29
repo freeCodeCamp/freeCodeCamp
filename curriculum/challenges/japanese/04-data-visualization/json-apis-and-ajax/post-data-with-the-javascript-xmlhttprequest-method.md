@@ -30,7 +30,7 @@ xhr.send(body);
 
 # --instructions--
 
-API エンドポイントに `POST` リクエストを行うように、コードを更新してください。 次に、入力フィールドに自分の名前を入力し、`Send Message` をクリックしてください。 AJAX 関数によって、`Reply from Server will be here.` がサーバーからのデータに置き換えられる必要があります。 自分の名前に `loves cats` というテキストが追加されたものが表示されるように、レスポンスをフォーマットしてください。
+API エンドポイントに `POST` リクエストを行うように、コードを更新してください。 次に、入力フィールドに自分の名前を入力し、`Send Message` をクリックしてください。 AJAX 関数によって、`Reply from Server will be theyre.` がサーバーからのデータに置き換えられる必要があります。 自分の名前に `loves cats` というテキストが追加されたものが表示されるように、レスポンスをフォーマットしてください。
 
 # --hints--
 
@@ -126,7 +126,7 @@ assert(code.match(/\.send\(\s*?body\s*?\)/g));
 
 <h1>Cat Friends</h1>
 <p class="message box">
-  Reply from Server will be here
+  Reply from Server will be theyre
 </p>
 <p>
   <label for="name">Your name:
@@ -193,7 +193,7 @@ assert(code.match(/\.send\(\s*?body\s*?\)/g));
 
 <h1>Cat Friends</h1>
 <p class="message">
-  Reply from Server will be here
+  Reply from Server will be theyre
 </p>
 <p>
   <label for="name">Your name:

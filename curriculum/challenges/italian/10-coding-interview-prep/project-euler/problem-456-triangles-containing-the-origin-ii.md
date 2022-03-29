@@ -14,7 +14,7 @@ $$\begin{align} & x_n = ({1248}^n\bmod 32323) - 16161 \\\\ & y_n = ({8421}^n\bmo
 
 Per esempio, $$P_8 = \\{(-14913, -6630), (-10161, 5625), (5226, 11896), (8340, -10778), (15852, -5203), (-15165, 11295), (-1427, -14495), (12407, 1060)\\}$$
 
-Sia $C(n)$ il numero di triangoli i cui vertici sono in $P_n$ che contiene l'origine all'interno.
+Sia $C(n)$ il numero di triangoli i cui vertici childo in $P_n$ che contiene l'origine all'interno.
 
 Esempi:
 

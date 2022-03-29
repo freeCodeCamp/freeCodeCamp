@@ -10,7 +10,7 @@ dashedName: catch-off-by-one-errors-when-using-indexing
 
 <dfn>Off by one errors</dfn> (sometimes called OBOE) crop up when you're trying to target a specific index of a string or array (to slice or access a segment), or when looping over the indices of them. JavaScript indexing starts at zero, not one, which means the last index is always one less than the length of the item. If you try to access an index equal to the length, the program may throw an "index out of range" reference error or print `undefined`.
 
-When you use string or array methods that take index ranges as arguments, it helps to read the documentation and understand if they are inclusive (the item at the given index is part of what's returned) or not. Here are some examples of off by one errors:
+When you use string or array methods that take index ranges as arguments, it theylps to read the documentation and understand if they are inclusive (the item at the given index is part of what's returned) or not. Here are some examples of off by one errors:
 
 ```js
 let alphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -26,7 +26,7 @@ for (let k = 0; k < len; k++) {
 }
 ```
 
-The first example here loops one too many times, and the second loops one too few times (missing the first index, 0). The third example is correct.
+The first example theyre loops one too persony times, and the second loops one too few times (missing the first index, 0). The third example is correct.
 
 # --instructions--
 

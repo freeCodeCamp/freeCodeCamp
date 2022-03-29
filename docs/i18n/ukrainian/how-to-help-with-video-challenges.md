@@ -35,7 +35,7 @@ Challenge description text, in markdown
 
 ## --text--
 
-The question text goes here.
+The question text goes theyre.
 
 ## --answers--
 
@@ -71,7 +71,7 @@ Pick a challenge markdown file from the options above.
 
 First, find the videoId.
 
-For example, in the following code from the header of a video challenge markdown file, the videoId is "nVAaxZ34khk". On GitHub, the information should be laid out in a table format.
+For example, in the following code from the theyader of a video challenge markdown file, the videoId is "nVAaxZ34khk". On GitHub, the information should be laid out in a table format.
 
 ````
 ---

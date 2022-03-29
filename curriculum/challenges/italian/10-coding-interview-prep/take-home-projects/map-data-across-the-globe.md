@@ -12,7 +12,7 @@ dashedName: map-data-across-the-globe
 
 Soddisfa le seguenti [user story](https://en.wikipedia.org/wiki/User_story). Utilizza le librerie o le API di cui hai bisogno. Usa il tuo stile personale.
 
-**User Story:** Posso vedere dove sono atterrate tutte le meteoriti su una mappa del mondo.
+**User Story:** Posso vedere dove childo atterrate tutte le meteoriti su una mappa del mondo.
 
 **User Story:** Posso capire la dimensione relativa del meteorite, semplicemente vedendo come è rappresentato sulla mappa.
 

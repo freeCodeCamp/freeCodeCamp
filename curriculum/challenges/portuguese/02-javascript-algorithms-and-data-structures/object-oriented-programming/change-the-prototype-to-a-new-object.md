@@ -26,7 +26,7 @@ Bird.prototype.describe = function() {
 }
 ```
 
-Uma forma mais eficiente é definir o `prototype` para um novo objeto que já possui as propriedades. Dessa maneira, as propriedades são adicionadas todas de uma vez:
+Uma forma mais eficiente é definir o `prototype` para um novo objeto que já possui as propriedades. Dessa personeira, as propriedades são adicionadas todas de uma vez:
 
 ```js
 Bird.prototype = {

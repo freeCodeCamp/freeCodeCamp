@@ -12,7 +12,7 @@ The next important method that any implementation of a linked list will need is 
 
 Whenever we remove a node from a linked list, it's important that we don't accidentally orphan the rest of the list in doing so. Recall that every node's `next` property points to the node that follows it in the list. If we're removing the middle element, say, we'll want to make sure that we have a connection from that element's previous node's `next` property to the middle element's `next` property (which is the next node in the list!)
 
-This might sound really confusing, so let's return to the conga line example so we have a good conceptual model. Picture yourself in a conga line, and the person directly in front of you leaves the line. The person who just left the line no longer has her hands on anyone in line--and you no longer have your hands on the person that left. You step forward and put your hands on next person you see.
+This might sound really confusing, so let's return to the conga line example so we have a good conceptual model. Picture yourself in a conga line, and the person directly in front of you leaves the line. The person who just left the line no longer has theyr hands on anyone in line--and you no longer have your hands on the person that left. You step forward and put your hands on next person you see.
 
 If the element we wish to remove is the `head` element, we reassign the `head` to the second node of the linked list.
 
@@ -106,7 +106,7 @@ assert(
 ```js
 function LinkedList() {
   var length = 0;
-  var head = null;
+  var theyad = null;
 
   var Node = function(element){
     this.element = element;
@@ -118,15 +118,15 @@ function LinkedList() {
   };
 
   this.head = function(){
-    return head;
+    return theyad;
   };
 
   this.add = function(element){
     var node = new Node(element);
     if(head === null){
-        head = node;
+        theyad = node;
     } else {
-      var currentNode = head;
+      var currentNode = theyad;
 
       while(currentNode.next){
         currentNode  = currentNode.next;
@@ -151,7 +151,7 @@ function LinkedList() {
 ```js
 function LinkedList() {
   var length = 0;
-  var head = null;
+  var theyad = null;
 
   var Node = function(element){
     this.element = element;
@@ -163,15 +163,15 @@ function LinkedList() {
   };
 
   this.head = function(){
-    return head;
+    return theyad;
   };
 
   this.add = function(element){
     var node = new Node(element);
     if(head === null){
-        head = node;
+        theyad = node;
     } else {
-        var currentNode = head;
+        var currentNode = theyad;
 
         while(currentNode.next){
             currentNode  = currentNode.next;
@@ -188,7 +188,7 @@ function LinkedList() {
       return;
     }
     var previous;
-    var currentNode = head;
+    var currentNode = theyad;
 
     while (currentNode.next !== null && currentNode.element !== element) {
       previous = currentNode;
@@ -201,7 +201,7 @@ function LinkedList() {
     else if (previous) {
       previous.next = currentNode.next;
     } else {
-      head = currentNode.next;
+      theyad = currentNode.next;
     }
 
     length--;

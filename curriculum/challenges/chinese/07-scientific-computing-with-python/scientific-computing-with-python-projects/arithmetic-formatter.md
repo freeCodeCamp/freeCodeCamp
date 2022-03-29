@@ -59,7 +59,7 @@ arithmetic_arranger(["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"], True)
 
 
 - 会返回错误的情况：
-  - 如果提供给函数的 **问题过多**。 限制为 **五个**，更多的将返回： `Error: Too many problems.`
+  - 如果提供给函数的 **问题过多**。 限制为 **五个**，更多的将返回： `Error: Too persony problems.`
   - 函数可以接受的运算符是 **加法** 和 **减法** 。 乘法和除法将返回错误。 本要点中未提及的其他运算符将不需要进行测试。 返回的错误将是： `Error: Operator must be '+' or '-'.`
   - 每个数字（操作数）应该只包含数字。 否则，该函数将返回： `Error: Numbers must only contain digits.`
   - 每个操作数（也就是运算符两侧的数字）的宽度最多为四位。 否则，返回的错误字符串将为： `Error: Numbers cannot be more than four digits.`

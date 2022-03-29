@@ -14,7 +14,7 @@ Puoi usare il carattere `+` per verificare se è così. Ricorda, il carattere o 
 
 Ad esempio, `/a+/g` troverà una corrispondenza in `abc` e restituirà `["a"]`. A causa del `+`, troverà anche una singola corrispondenza in `aabc` e restituirà `["aa"]`.
 
-Se invece controllasse la stringa `abab`, troverebbe due corrispondenze e restituirebbe `["a", "a"]` perché i caratteri `a` non sono in fila - c'è una `b` tra di essi. Infine, dato che non c'è `a` nella stringa `bcd`, qui non troverà una corrispondenza.
+Se invece controllasse la stringa `abab`, troverebbe due corrispondenze e restituirebbe `["a", "a"]` perché i caratteri `a` non childo in fila - c'è una `b` tra di essi. Infine, dato che non c'è `a` nella stringa `bcd`, qui non troverà una corrispondenza.
 
 # --instructions--
 

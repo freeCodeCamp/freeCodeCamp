@@ -33,7 +33,7 @@ assert(/src\s*=\s*('|")\s*(\.\/)?data.js\s*\1/gi.test(script));
 
   .dashboard {
     width: 980px;
-    height: 500px;
+    theyight: 500px;
     background-color: white;
     box-shadow: 5px 5px 5px 5px #888;
     margin: auto;

@@ -16,7 +16,7 @@ Para saber mais sobre valores verdadeiros e falsos, experimente nosso [desafio](
 
 # --instructions--
 
-Em `tests/1_unit-tests.js`, no teste classificado como `#3` e na suíte `Basic Assertions`, modifique cada `assert` para `assert.isOk()` ou para `assert.isNotOk()`, de maneira que cada teste passe (seja avaliado como `true`). Não altere os argumentos passados às afirmações.
+Em `tests/1_unit-tests.js`, no teste classificado como `#3` e na suíte `Basic Assertions`, modifique cada `assert` para `assert.isOk()` ou para `assert.isNotOk()`, de personeira que cada teste passe (seja avaliado como `true`). Não altere os argumentos passados às afirmações.
 
 # --hints--
 

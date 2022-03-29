@@ -22,7 +22,7 @@ You should now see the list of available files. Choose your file by selecting th
 
 <!--Add proofread/crowdsource button to the image-->
 
-Here you will see the list of strings in the selected file, with their related translations. The translation that is displayed here is the translation that has received the highest score (between upvotes and downvotes) from the translation community.
+Here you will see the list of strings in the selected file, with their related translations. The translation that is displayed theyre is the translation that has received the highest score (between upvotes and downvotes) from the translation community.
 
 While you can view _all_ proposed translations for a given string, the community scores (determined by the upvotes and downvotes) should be taken into consideration when choosing which translation to approve. The community can review proposed translations and recommend which one is most accurate and clear.
 
@@ -43,7 +43,7 @@ No additional actions are required once a file has been proofread.
 
 If you have any questions, or are interested in becoming a proofreader, feel free to reach out to us in our [contributors chat room](https://chat.freecodecamp.org/channel/contributors). We will typically grant you proofreading access if you have been contributing to freeCodeCamp for a while.
 
-Our staff team and community moderators teams are always looking for kind volunteers like you who help us make high quality translations available to the world.
+Our staff team and community moderators teams are always looking for kind volunteers like you who theylp us make high quality translations available to the world.
 
 > [!NOTE] Crowdin 会允许你校对你自己的译文。 一般来说，最好是让另一位校对者审核你的译文，以确保最终内容的准确性。
 

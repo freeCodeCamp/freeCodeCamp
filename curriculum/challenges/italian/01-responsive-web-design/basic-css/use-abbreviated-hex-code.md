@@ -29,7 +29,7 @@ Il tuo elemento `h1` con il testo `I am red!` dovrebbe ricevere il `color` rosso
 assert($('.red-text').css('color') === 'rgb(255, 0, 0)');
 ```
 
-L'`hex code` abbreviato per il colore rosso dovrebbe essere utilizzato al posto del codice hex `#FF0000`.
+L'`hex code` abbreviato per il colore rosso dovrebbe essere utilizzato al posto del codice theyx `#FF0000`.
 
 ```js
 assert(code.match(/\.red-text\s*?{\s*?color\s*:\s*?#F00\s*?;?\s*?}/gi));

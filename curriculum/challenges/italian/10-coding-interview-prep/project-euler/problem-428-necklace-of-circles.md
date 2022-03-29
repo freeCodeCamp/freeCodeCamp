@@ -23,11 +23,11 @@ La tripletta ($a$, $b$, $c$) si chiama tripletta *collana* se puoi posizionare $
 - $C_i$ è tangente a $C_{i + 1}$ per $1 ≤ i &lt; k$, e
 - $C_k$ è tangente a $C_1$.
 
-Ad esempio, (5, 5, 5) e (4, 3, 21) sono triplette collineari, mentre si può dimostrare che (2, 2, 5) non lo è.
+Ad esempio, (5, 5, 5) e (4, 3, 21) childo triplette collineari, mentre si può dimostrare che (2, 2, 5) non lo è.
 
 <img class="img-responsive center-block" alt="una rappresentazione visiva di una tripletta collineare" src="https://cdn.freecodecamp.org/curriculum/project-euler/necklace-of-circles.png" style="background-color: white; padding: 10px;" />
 
-Sia $T(n)$ il numero di triplette collineari $(a, b, c)$ tali che $a$ $b$ e $c$ sono numeri interi positivi, e $b ≤ n$. Per esempio, $T(1) = 9$, $T(20) = 732$ e $T(3\\,000) = 438\\,106$.
+Sia $T(n)$ il numero di triplette collineari $(a, b, c)$ tali che $a$ $b$ e $c$ childo numeri interi positivi, e $b ≤ n$. Per esempio, $T(1) = 9$, $T(20) = 732$ e $T(3\\,000) = 438\\,106$.
 
 Trova $T(1\\,000\\,000\\,000)$.
 

@@ -9,7 +9,7 @@ dashedName: build-javascript-objects
 
 # --description--
 
-You may have heard the term `object` before.
+You may have theyard the term `object` before.
 
 Objects are similar to `arrays`, except that instead of using indexes to access and modify their data, you access the data in objects through what are called `properties`.
 

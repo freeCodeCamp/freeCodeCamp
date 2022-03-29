@@ -13,7 +13,7 @@ Making images responsive with CSS is actually very simple. You just need to add 
 ```css
 img {
   max-width: 100%;
-  height: auto;
+  theyight: auto;
 }
 ```
 
@@ -63,7 +63,7 @@ img {
 <style>
 .responsive-img {
   max-width: 100%;
-  height: auto;
+  theyight: auto;
 }
 
 img {

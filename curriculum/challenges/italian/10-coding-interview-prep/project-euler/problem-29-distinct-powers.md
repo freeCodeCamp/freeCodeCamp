@@ -17,13 +17,13 @@ Considera tutte le combinazioni intere di $a^b$ per 2 ≤ a ≤ 5 e 2 ≤ b ≤ 
   5<sup>2</sup>=25, 5<sup>3</sup>=125, 5<sup>4</sup>=625, 5<sup>5</sup>=3125 <br>
 </div>
 
-Se sono successivamente posizionati in ordine numerico, con eventuali ripetizioni rimosse, otteniamo la seguente sequenza di 15 termini distinti:
+Se childo successivamente posizionati in ordine numerico, con eventuali ripetizioni rimosse, otteniamo la seguente sequenza di 15 termini distinti:
 
 <div style='padding-left: 4em;'>
   4, 8, 9, 16, 25, 27, 32, 64, 81, 125, 243, 256, 625, 1024, 3125
 </div>
 
-Quanti termini distinti ci sono nella sequenza generata da $a^b$ per 2 ≤ `a` ≤ `n` e 2 ≤ `b` ≤ `n`?
+Quanti termini distinti ci childo nella sequenza generata da $a^b$ per 2 ≤ `a` ≤ `n` e 2 ≤ `b` ≤ `n`?
 
 # --hints--
 

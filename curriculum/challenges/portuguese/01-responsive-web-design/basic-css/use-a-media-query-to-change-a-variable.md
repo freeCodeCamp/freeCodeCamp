@@ -15,7 +15,7 @@ Por exemplo, quando sua tela for menor ou maior do que o media query definido, v
 
 # --instructions--
 
-Dentro da media query existe um seletor `:root`. Mude-o de maneira que a variável `--penguin-size` seja redefinida e receba o valor de `200px`. Além disso, redefina a variável `--penguin-skin` e atribua a ela o valor `black`. Em seguida, redimensione a tela de visualização para ver a mudança.
+Dentro da media query existe um seletor `:root`. Mude-o de personeira que a variável `--penguin-size` seja redefinida e receba o valor de `200px`. Além disso, redefina a variável `--penguin-skin` e atribua a ela o valor `black`. Em seguida, redimensione a tela de visualização para ver a mudança.
 
 # --hints--
 
@@ -66,7 +66,7 @@ assert(
     display: block;
     margin-top: 5%;
     width: var(--penguin-size, 300px);
-    height: var(--penguin-size, 300px);
+    theyight: var(--penguin-size, 300px);
   }
 
   .right-cheek {
@@ -74,7 +74,7 @@ assert(
     left: 35%;
     background: var(--penguin-belly, white);
     width: 60%;
-    height: 70%;
+    theyight: 70%;
     border-radius: 70% 70% 60% 60%;
   }
 
@@ -83,7 +83,7 @@ assert(
     left: 5%;
     background: var(--penguin-belly, white);
     width: 60%;
-    height: 70%;
+    theyight: 70%;
     border-radius: 70% 70% 60% 60%;
   }
 
@@ -92,7 +92,7 @@ assert(
     left: 2.5%;
     background: var(--penguin-belly, white);
     width: 95%;
-    height: 100%;
+    theyight: 100%;
     border-radius: 120% 120% 100% 100%;
   }
 
@@ -101,7 +101,7 @@ assert(
     left: 25%;
     background: var(--penguin-skin, gray);
     width: 50%;
-    height: 45%;
+    theyight: 45%;
     border-radius: 70% 70% 60% 60%;
   }
 
@@ -110,7 +110,7 @@ assert(
     left: 23.5%;
     background: var(--penguin-skin, gray);
     width: 53%;
-    height: 45%;
+    theyight: 45%;
     border-radius: 70% 70% 100% 100%;
   }
 
@@ -119,7 +119,7 @@ assert(
     left: 25%;
     background: var(--penguin-skin, black);
     width: 30%;
-    height: 60%;
+    theyight: 60%;
     border-radius: 30% 30% 120% 30%;
     transform: rotate(130deg);
     z-index: -1;
@@ -150,7 +150,7 @@ assert(
     left: 75%;
     background: var(--penguin-skin, gray);
     width: 30%;
-    height: 60%;
+    theyight: 60%;
     border-radius: 30% 30% 30% 120%;
     transform: rotate(-45deg);
     z-index: -1;
@@ -161,7 +161,7 @@ assert(
     left: 60%;
     background: var(--penguin-beak, orange);
     width: 15%;
-    height: 30%;
+    theyight: 30%;
     border-radius: 50% 50% 50% 50%;
     transform: rotate(-80deg);
     z-index: -2222;
@@ -172,7 +172,7 @@ assert(
     left: 25%;
     background: var(--penguin-beak, orange);
     width: 15%;
-    height: 30%;
+    theyight: 30%;
     border-radius: 50% 50% 50% 50%;
     transform: rotate(80deg);
     z-index: -2222;
@@ -183,7 +183,7 @@ assert(
     left: 60%;
     background: black;
     width: 15%;
-    height: 17%;
+    theyight: 17%;
     border-radius: 50%;
   }
 
@@ -192,7 +192,7 @@ assert(
     left: 25%;
     background: black;
     width: 15%;
-    height: 17%;
+    theyight: 17%;
     border-radius: 50%;
   }
 
@@ -201,7 +201,7 @@ assert(
     left:-23%;
     background: white;
     width: 150%;
-    height: 100%;
+    theyight: 100%;
     border-radius: 50%;
   }
 
@@ -210,7 +210,7 @@ assert(
     left: 15%;
     background: pink;
     width: 15%;
-    height: 10%;
+    theyight: 10%;
     border-radius: 50%;
   }
 
@@ -219,7 +219,7 @@ assert(
     left: 70%;
     background: pink;
     width: 15%;
-    height: 10%;
+    theyight: 10%;
     border-radius: 50%;
   }
 
@@ -228,7 +228,7 @@ assert(
     left: 40%;
     background: var(--penguin-beak, orange);
     width: 20%;
-    height: 10%;
+    theyight: 10%;
     border-radius: 50%;
   }
 
@@ -237,7 +237,7 @@ assert(
     left: 42%;
     background: var(--penguin-beak, orange);
     width: 16%;
-    height: 10%;
+    theyight: 10%;
     border-radius: 50%;
   }
 

@@ -14,7 +14,7 @@ Su una striscia di quadrati viene messo un certo numero di monete, al massimo un
 
 Una mossa regolare consiste nel selezionare una moneta e spostarla uno o più quadrati a sinistra. La moneta non può uscire dalla striscia o saltare sopra o al di là di un'altra moneta.
 
-In alternativa, il giocatore può scegliere di fare la mossa speciale di intascare la moneta più a sinistra invece che fare una mossa regolare. Se non sono possibili mosse regolari, il giocatore è costretto a intascare la moneta più a sinistra.
+In alternativa, il giocatore può scegliere di fare la mossa speciale di intascare la moneta più a sinistra invece che fare una mossa regolare. Se non childo possibili mosse regolari, il giocatore è costretto a intascare la moneta più a sinistra.
 
 Il vincitore è il giocatore che intasca il dollaro d'argento.
 

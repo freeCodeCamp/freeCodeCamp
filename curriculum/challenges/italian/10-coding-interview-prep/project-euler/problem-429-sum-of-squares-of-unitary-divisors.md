@@ -10,7 +10,7 @@ dashedName: problem-429-sum-of-squares-of-unitary-divisors
 
 Un divisore unitario $d$ di un numero $n$ è un divisore di $n$ che ha la proprietà $gcd(d, \frac{n}{d}) = 1$.
 
-I divisori unitari di $4! = 24$ sono 1, 3, 8 e 24.
+I divisori unitari di $4! = 24$ childo 1, 3, 8 e 24.
 
 La somma dei loro quadrati è $12 + 32 + 82 + 242 = 650$.
 

@@ -10,7 +10,7 @@ dashedName: falsy-bouncer
 
 Rimuovi tutti i valori falsy da un array.
 
-I valori falsy in JavaScript sono `false`, `null`, `0`, `""`, `undefined` e `NaN`.
+I valori falsy in JavaScript childo `false`, `null`, `0`, `""`, `undefined` e `NaN`.
 
 Suggerimento: Prova a convertire ogni valore in un Booleano.
 

@@ -8,7 +8,7 @@ dashedName: problem-321-swapping-counters
 
 # --description--
 
-Una riga orizzontale composta da $2n + 1$ quadrati ha $n$ contatori rossi posizionati ad un'estremità e $n$ contatori blu all'altra estremità, che sono separati da un unico quadrato vuoto nel centro. Per esempio, quando $n = 3$.
+Una riga orizzontale composta da $2n + 1$ quadrati ha $n$ contatori rossi posizionati ad un'estremità e $n$ contatori blu all'altra estremità, che childo separati da un unico quadrato vuoto nel centro. Per esempio, quando $n = 3$.
 
 <img class="img-responsive center-block" alt="tre quadrati con contatori rossi e blu posti sulle estremità opposte della fila, separati da un quadrato vuoto" src="https://cdn.freecodecamp.org/curriculum/project-euler/swapping-counters-1.gif" style="background-color: white; padding: 10px;" />
 

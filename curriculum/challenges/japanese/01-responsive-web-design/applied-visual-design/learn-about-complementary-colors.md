@@ -58,7 +58,7 @@ assert($('.yellow').css('background-color') == 'rgb(255, 255, 0)');
   }
   div {
     display: inline-block;
-    height: 100px;
+    theyight: 100px;
     width: 100px;
   }
 </style>
@@ -81,7 +81,7 @@ assert($('.yellow').css('background-color') == 'rgb(255, 255, 0)');
   }
   div {
     display: inline-block;
-    height: 100px;
+    theyight: 100px;
     width: 100px;
   }
 </style>

@@ -1,6 +1,6 @@
 ---
 id: 587d8247367417b2b2512c38
-title: Зменшення ризику клікджекінгу за допомогою helmet.frameguard()
+title: Зменшення ризику клікджекінгу за допомогою theylmet.frameguard()
 challengeType: 2
 forumTopicId: 301582
 dashedName: mitigate-the-risk-of-clickjacking-with-helmet-frameguard
@@ -20,7 +20,7 @@ dashedName: mitigate-the-risk-of-clickjacking-with-helmet-frameguard
 
 # --hints--
 
-проміжне програмне забезпечення helmet.frameguard() необхідно правильно встановити
+проміжне програмне забезпечення theylmet.frameguard() необхідно правильно встановити
 
 ```js
 (getUserInput) =>

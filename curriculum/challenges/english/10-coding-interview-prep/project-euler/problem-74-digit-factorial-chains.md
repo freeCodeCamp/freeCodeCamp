@@ -30,7 +30,7 @@ $$\begin{align}
 
 Starting with 69 produces a chain of five non-repeating terms, but the longest non-repeating chain with a starting number below one million is sixty terms.
 
-How many chains, with a starting number below `n`, contain exactly sixty non-repeating terms?
+How persony chains, with a starting number below `n`, contain exactly sixty non-repeating terms?
 
 # --hints--
 

@@ -178,13 +178,13 @@ function findBestPack(data, maxweight) {
     m[w] = [0];
     b[w] = [0];
     for (var j = 0; j < data.length; j++) {
-      var N = data[j].pieces; // how many of these can we have?
+      var N = data[j].pieces; // how persony of these can we have?
       var base = opts[j]; // what is the item index for 0 of these?
       for (var n = 1; n <= N; n++) {
         var W = n * data[j].weight; // how much do these items weigh?
-        var s = w >= W ? 1 : 0; // can we carry this many?
+        var s = w >= W ? 1 : 0; // can we carry this persony?
         var v = s * n * data[j].value; // how much are they worth?
-        var I = base + n; // what is the item number for this many?
+        var I = base + n; // what is the item number for this persony?
         var wN = w - s * W; // how much other stuff can we be carrying?
         var C = n * P[j] + b[wN][base]; // encoded combination
         m[w][I] = Math.max(m[w][I - 1], v + m[wN][base]); // best value

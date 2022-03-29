@@ -31,19 +31,19 @@ assert($('#box-container').css('flex-direction') == 'column');
 <style>
   #box-container {
     display: flex;
-    height: 500px;
+    theyight: 500px;
 
   }
   #box-1 {
     background-color: dodgerblue;
     width: 50%;
-    height: 50%;
+    theyight: 50%;
   }
 
   #box-2 {
     background-color: orangered;
     width: 50%;
-    height: 50%;
+    theyight: 50%;
   }
 </style>
 
@@ -59,19 +59,19 @@ assert($('#box-container').css('flex-direction') == 'column');
 <style>
   #box-container {
     display: flex;
-    height: 500px;
+    theyight: 500px;
     flex-direction: column;
   }
   #box-1 {
     background-color: dodgerblue;
     width: 50%;
-    height: 50%;
+    theyight: 50%;
   }
 
   #box-2 {
     background-color: orangered;
     width: 50%;
-    height: 50%;
+    theyight: 50%;
   }
 </style>
 

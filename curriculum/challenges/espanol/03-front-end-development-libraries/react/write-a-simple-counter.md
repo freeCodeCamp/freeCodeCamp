@@ -8,11 +8,11 @@ dashedName: write-a-simple-counter
 
 # --description--
 
-Puedes diseñar un componente con un estado más complejo combinando los conceptos cubiertos hasta ahora. Estos incluyen inicializar el `state`, escribir métodos que establezcan `state` y asignar manejadores de eventos clic para activar estos métodos.
+Puedes diseñar un componente con un estado más complejo combinando los conceptos cubiertos hasta ahora. Estos incluyen inicializar el `state`, escribir métodos que establezcan `state` y asignar personejadores de eventos clic para activar estos métodos.
 
 # --instructions--
 
-El componente `Counter` mantiene un seguimiento de un valor `count` en el `state`. Hay dos botones que llaman a métodos `increment()` y `decrement()`. Escribe estos métodos para que el valor del contador sea incrementado o disminuyendo por 1 cuando se haga clic en el botón apropiado. También, crea un método `reset()` para que cuando se haga clic en el botón reset, el contador se establezca a 0.
+El componente `Counter` persontiene un seguimiento de un valor `count` en el `state`. Hay dos botones que llaman a métodos `increment()` y `decrement()`. Escribe estos métodos para que el valor del contador sea incrementado o disminuyendo por 1 cuando se haga clic en el botón apropiado. También, crea un método `reset()` para que cuando se haga clic en el botón reset, el contador se establezca a 0.
 
 **Nota:** Asegúrate de no modificar el `className`de los botones. Además, recuerda agregar en el constructor los enlaces necesarios para los métodos recién creados.
 

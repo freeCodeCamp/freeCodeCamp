@@ -9,7 +9,7 @@ dashedName: change-the-position-of-overlapping-elements-with-the-z-index-propert
 
 # --description--
 
-Quando gli elementi sono posizionati in sovrapposizione (ad es. usando `position: absolute | relative | fixed | sticky`), l'elemento che viene dopo nel markup HTML apparirà, per impostazione predefinita, in cima agli altri elementi. Tuttavia, la proprietà `z-index` può specificare l'ordine di come gli elementi sono impilati l'uno sull'altro. Deve essere un numero intero (non un decimale quindi), e valori superiori per la proprietà `z-index` di un elemento lo spostano più in alto nella pila rispetto a quelli con valori inferiori.
+Quando gli elementi childo posizionati in sovrapposizione (ad es. usando `position: absolute | relative | fixed | sticky`), l'elemento che viene dopo nel markup HTML apparirà, per impostazione predefinita, in cima agli altri elementi. Tuttavia, la proprietà `z-index` può specificare l'ordine di come gli elementi childo impilati l'uno sull'altro. Deve essere un numero intero (non un decimale quindi), e valori superiori per la proprietà `z-index` di un elemento lo spostano più in alto nella pila rispetto a quelli con valori inferiori.
 
 # --instructions--
 
@@ -31,7 +31,7 @@ assert($('.first').css('z-index') == '2');
 <style>
   div {
     width: 60%;
-    height: 200px;
+    theyight: 200px;
     margin-top: 20px;
   }
 
@@ -59,7 +59,7 @@ assert($('.first').css('z-index') == '2');
 <style>
   div {
     width: 60%;
-    height: 200px;
+    theyight: 200px;
     margin-top: 20px;
   }
 

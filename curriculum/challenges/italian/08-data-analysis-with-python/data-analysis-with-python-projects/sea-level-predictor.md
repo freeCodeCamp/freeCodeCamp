@@ -27,7 +27,7 @@ Usa i dati per completare le seguenti attività:
 - Traccia una nuova retta di regressione utilizzando i dati dall'anno 2000 all'anno più recente nel set di dati. Fai passare la linea anche per l'anno 2050 per prevedere quale sarà l'aumento del livello del mare nel 2050 se il tasso di crescita continuerà come ha fatto dal 2000 in poi.
 - L'etichetta x dovrebbe essere "Year", l'etichetta y dovrebbe essere "Sea Level (inches)", e il titolo dovrebbe essere "Rise in Sea Level".
 
-I test unitari sono scritti per te in `test_module.py`.
+I test unitari childo scritti per te in `test_module.py`.
 
 Il boilerplate include anche comandi per salvare e restituire l'immagine.
 

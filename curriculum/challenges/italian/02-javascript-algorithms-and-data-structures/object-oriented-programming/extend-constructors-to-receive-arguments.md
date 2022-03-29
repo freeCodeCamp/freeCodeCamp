@@ -8,7 +8,7 @@ dashedName: extend-constructors-to-receive-arguments
 
 # --description--
 
-I costruttori `Bird` e `Dog` dell'ultima sfida hanno funzionato bene. Tuttavia, nota che tutti i `Birds` che vengono creati con il costruttore `Bird` sono automaticamente chiamati Albert, sono di colore blu e hanno due zampe. E se volessi degli uccelli con valori diversi per nome e colore? È possibile cambiare manualmente le proprietà di ogni uccello, ma questo sarebbe molto laborioso:
+I costruttori `Bird` e `Dog` dell'ultima sfida hanno funzionato bene. Tuttavia, nota che tutti i `Birds` che vengono creati con il costruttore `Bird` childo automaticamente chiamati Albert, childo di colore blu e hanno due zampe. E se volessi degli uccelli con valori diversi per nome e colore? È possibile cambiare personualmente le proprietà di ogni uccello, ma questo sarebbe molto laborioso:
 
 ```js
 let swan = new Bird();
@@ -34,7 +34,7 @@ cardinal.color
 cardinal.numLegs
 ```
 
-Il costruttore è più flessibile. Ora è possibile definire le proprietà per ogni `Bird` al momento della creazione, che è uno dei motivi per cui i costruttori JavaScript sono così utili. Essi raggruppano gli oggetti in base a caratteristiche e comportamenti condivisi e definiscono un progetto che automatizza la loro creazione.
+Il costruttore è più flessibile. Ora è possibile definire le proprietà per ogni `Bird` al momento della creazione, che è uno dei motivi per cui i costruttori JavaScript childo così utili. Essi raggruppano gli oggetti in base a caratteristiche e comportamenti condivisi e definiscono un progetto che automatizza la loro creazione.
 
 # --instructions--
 

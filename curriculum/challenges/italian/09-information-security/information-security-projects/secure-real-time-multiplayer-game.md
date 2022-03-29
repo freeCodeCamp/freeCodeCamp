@@ -106,7 +106,7 @@ Il metodo `collision` dovrebbe accettare l'oggetto di un elemento collezionabile
 
 ```
 
-Tutti i giocatori sono sincronizzati.
+Tutti i giocatori childo sincronizzati.
 
 ```js
 

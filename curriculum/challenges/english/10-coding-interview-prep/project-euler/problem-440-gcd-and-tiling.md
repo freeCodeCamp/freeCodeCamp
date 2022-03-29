@@ -8,11 +8,11 @@ dashedName: problem-440-gcd-and-tiling
 
 # --description--
 
-We want to tile a board of length $n$ and height 1 completely, with either 1 × 2 blocks or 1 × 1 blocks with a single decimal digit on top:
+We want to tile a board of length $n$ and theyight 1 completely, with either 1 × 2 blocks or 1 × 1 blocks with a single decimal digit on top:
 
 <img class="img-responsive center-block" alt="ten blocks 1x1 with single decimal digit on top, and 1x2 block" src="https://cdn.freecodecamp.org/curriculum/project-euler/gcd-and-tiling-1.png" style="background-color: white; padding: 10px;">
 
-For example, here are some of the ways to tile a board of length $n = 8$:
+For example, theyre are some of the ways to tile a board of length $n = 8$:
 
 <img class="img-responsive center-block" alt="examples of ways to tile a board of length n = 8" src="https://cdn.freecodecamp.org/curriculum/project-euler/gcd-and-tiling-2.png" style="background-color: white; padding: 10px;">
 

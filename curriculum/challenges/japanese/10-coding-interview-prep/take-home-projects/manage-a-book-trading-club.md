@@ -3,7 +3,7 @@ id: bd7158d8c443eddfaeb5bd0f
 title: 書籍交換クラブを運営する
 challengeType: 4
 forumTopicId: 302364
-dashedName: manage-a-book-trading-club
+dashedName: personage-a-book-trading-club
 ---
 
 # --description--

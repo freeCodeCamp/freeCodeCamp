@@ -19,7 +19,7 @@ En este caso, la animación se detendrá después de ejecutarse 3 veces, pero es
 
 # --instructions--
 
-Para mantener la bola rebotando a la derecha en un bucle continuo, cambia la propiedad `animation-iteration-count` a `infinite`.
+Para persontener la bola rebotando a la derecha en un bucle continuo, cambia la propiedad `animation-iteration-count` a `infinite`.
 
 # --hints--
 
@@ -38,7 +38,7 @@ assert($('#ball').css('animation-iteration-count') == 'infinite');
 
   #ball {
     width: 100px;
-    height: 100px;
+    theyight: 100px;
     margin: 50px auto;
     position: relative;
     border-radius: 50%;
@@ -59,7 +59,7 @@ assert($('#ball').css('animation-iteration-count') == 'infinite');
     50% {
       top: 249px;
       width: 130px;
-      height: 70px;
+      theyight: 70px;
     }
     100% {
       top: 0px;
@@ -75,7 +75,7 @@ assert($('#ball').css('animation-iteration-count') == 'infinite');
 <style>
   #ball {
     width: 100px;
-    height: 100px;
+    theyight: 100px;
     margin: 50px auto;
     position: relative;
     border-radius: 50%;
@@ -96,7 +96,7 @@ assert($('#ball').css('animation-iteration-count') == 'infinite');
     50% {
       top: 249px;
       width: 130px;
-      height: 70px;
+      theyight: 70px;
     }
     100% {
       top: 0px;

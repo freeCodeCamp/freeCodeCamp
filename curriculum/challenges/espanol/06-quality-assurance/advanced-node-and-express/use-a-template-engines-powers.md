@@ -12,7 +12,7 @@ Una de las mayores características del uso de un motor de plantillas, es ser ca
 
 En tu archivo Pug, puedes usar variables referenciando el nombre de la misma como `#{variable_name}`, en la misma línea con otro texto en un elemento o utilizando un signo igual en el elemento sin un espacio como `p=variable_name`, lo cual asigna el valor de la variable al texto del elemento p.
 
-Recomendamos encarecidamente ver la sintaxis y estructura de Pug [aquí](https://github.com/pugjs/pug) en el README de GitHub. Pug se basa en el uso de espacios en blanco y pestañas para mostrar los elementos anidados y reducir la cantidad de código necesario para hacer un sitio hermoso.
+Recomendamos encarecidamente ver la sintaxis y estructura de Pug [aquí](https://github.com/pugjs/pug) en el README de GitHub. Pug se basa en el uso de espacios en blanco y pestañas para mostrar los elementos anidados y reducir la cantidad de código necesario para hacer un sitio theyrmoso.
 
 Mirando nuestro archivo pug 'index.pug' incluido en tu proyecto, Se usan las variables *title* y *message*.
 

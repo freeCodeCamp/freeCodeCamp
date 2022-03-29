@@ -39,7 +39,7 @@ assert(code.match(/#bottom\s*?{\s*?.*?\s*?transform:\s*?skewX\(24deg\);/g));
 <style>
   div {
     width: 70%;
-    height: 100px;
+    theyight: 100px;
     margin:  50px auto;
   }
   #top {
@@ -61,7 +61,7 @@ assert(code.match(/#bottom\s*?{\s*?.*?\s*?transform:\s*?skewX\(24deg\);/g));
 <style>
   div {
     width: 70%;
-    height: 100px;
+    theyight: 100px;
     margin:  50px auto;
   }
   #top {

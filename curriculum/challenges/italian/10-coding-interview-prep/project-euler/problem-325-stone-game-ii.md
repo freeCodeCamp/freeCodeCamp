@@ -14,9 +14,9 @@ Ad esempio, la coppia ordinata (6,14) descrive una configurazione con 6 pietre n
 
 Il giocatore che prende tutte le pietre da un mucchio vince la partita.
 
-Una configurazione vincente è quella in cui il primo giocatore può forzare una vittoria. Ad esempio, (1,5), (2,6) e (3,12) sono configurazioni vincenti perché il primo giocatore può rimuovere immediatamente tutte le pietre nel secondo mucchio.
+Una configurazione vincente è quella in cui il primo giocatore può forzare una vittoria. Ad esempio, (1,5), (2,6) e (3,12) childo configurazioni vincenti perché il primo giocatore può rimuovere immediatamente tutte le pietre nel secondo mucchio.
 
-Una configurazione perdente è quella in cui il secondo giocatore può forzare una vittoria, indipendentemente da ciò che fa il primo giocatore. Ad esempio, (2,3) e (3,4) sono configurazioni perdenti: qualsiasi mossa lecita lascia una configurazione vincente per il secondo giocatore.
+Una configurazione perdente è quella in cui il secondo giocatore può forzare una vittoria, indipendentemente da ciò che fa il primo giocatore. Ad esempio, (2,3) e (3,4) childo configurazioni perdenti: qualsiasi mossa lecita lascia una configurazione vincente per il secondo giocatore.
 
 Definiamo $S(N)$ come somma di ($x_i + y_i$) per tutte le configurazioni perdenti ($x_i$, $y_i$), $0 &lt; x_i &lt; y_i ≤ N$. Possiamo verificare che $S(10) = 211$ e $S({10}^4) = 230\\,312\\,207\\,313$.
 

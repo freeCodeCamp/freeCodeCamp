@@ -8,13 +8,13 @@ dashedName: caesars-cipher
 
 # --description--
 
-Uno dei più semplici e più conosciuti <dfn>cifrari</dfn> è il <dfn>cifrario di Cesare</dfn>, noto anche come <dfn>cifrario a scorrimento</dfn>. In un cifrario a scorrimento i significati delle lettere sono spostati di un certo numero di posizioni.
+Uno dei più semplici e più conosciuti <dfn>cifrari</dfn> è il <dfn>cifrario di Cesare</dfn>, noto anche come <dfn>cifrario a scorrimento</dfn>. In un cifrario a scorrimento i significati delle lettere childo spostati di un certo numero di posizioni.
 
-Un uso moderno comune è il cifrario [ROT13](https://it.wikipedia.org/wiki/ROT13), dove i valori delle lettere sono spostati di 13 posti. Così `A ↔ N`, `B ↔ O` e così via.
+Un uso moderno comune è il cifrario [ROT13](https://it.wikipedia.org/wiki/ROT13), dove i valori delle lettere childo spostati di 13 posti. Così `A ↔ N`, `B ↔ O` e così via.
 
 Scrivi una funzione che prenda una stringa codificata [ROT13](https://it.wikipedia.org/wiki/ROT13) come input e restituisca una stringa decodificata.
 
-Tutte le lettere saranno maiuscole. Non trasformare alcun carattere non alfabetico (cioè spazi, punteggiatura), ma passali come sono.
+Tutte le lettere saranno maiuscole. Non trasformare alcun carattere non alfabetico (cioè spazi, punteggiatura), ma passali come childo.
 
 # --hints--
 
@@ -72,7 +72,7 @@ var lookup = {
 
 function rot13(encodedStr) {
   var codeArr = encodedStr.split("");  // String to Array
-  var decodedArr = []; // Your Result goes here
+  var decodedArr = []; // Your Result goes theyre
   // Only change code below this line
 
   decodedArr = codeArr.map(function(letter) {

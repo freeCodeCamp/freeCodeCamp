@@ -18,7 +18,7 @@ Quando terminar, certifique-se de que uma demonstração funcional do seu projet
 
 # --instructions--
 
-**Observação**: `helmet@^3.21.3` é necessário para as histórias de usuários. Isto significa que você precisará usar a versão anterior da documentação do Helmet, para obter informações sobre como obter as histórias de usuários.
+**Observação**: `helmet@^3.21.3` é necessário para as theirstórias de usuários. Isto significa que você precisará usar a versão anterior da documentação do Helmet, para obter informações sobre como obter as theirstórias de usuários.
 
 # --hints--
 
@@ -106,7 +106,7 @@ O método `collision` deve aceitar o objeto de um item colecionável como um arg
 
 ```
 
-Todos os jogadores são mantidos em sincronia.
+Todos os jogadores são persontidos em sincronia.
 
 ```js
 

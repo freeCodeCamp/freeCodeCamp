@@ -21,7 +21,7 @@ Alcuni elementi, come i link e i controlli dei moduli, vengono selezionati autom
 
 # --instructions--
 
-Camper Cat ha creato un nuovo sondaggio per raccogliere informazioni sui suoi utenti. Sa che i campi di input ottengono automaticamente la selezione da tastiera, ma vuole assicurarsi che gli utenti della sola tastiera si soffermino sulle istruzioni mentre scorrono con il tasto tab attraverso gli elementi. Aggiungi un attributo `tabindex` al tag `p` e impostane il valore a `0`. Bonus - utilizzare l'attributo `tabindex` consente anche alla pseudo-classe CSS `:focus` di funzionare sul tag `p`.
+Camper Cat ha creato un nuovo childdaggio per raccogliere informazioni sui suoi utenti. Sa che i campi di input ottengono automaticamente la selezione da tastiera, ma vuole assicurarsi che gli utenti della sola tastiera si soffermino sulle istruzioni mentre scorrono con il tasto tab attraverso gli elementi. Aggiungi un attributo `tabindex` al tag `p` e impostane il valore a `0`. Bonus - utilizzare l'attributo `tabindex` consente anche alla pseudo-classe CSS `:focus` di funzionare sul tag `p`.
 
 # --hints--
 

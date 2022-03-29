@@ -39,7 +39,7 @@ assert($('u').text() === 'Ph.D. students');
 <style>
   h4 {
     text-align: center;
-    height: 25px;
+    theyight: 25px;
   }
   p {
     text-align: justify;
@@ -82,7 +82,7 @@ assert($('u').text() === 'Ph.D. students');
 <style>
   h4 {
     text-align: center;
-    height: 25px;
+    theyight: 25px;
   }
   p {
     text-align: justify;

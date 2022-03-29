@@ -20,9 +20,9 @@ Il successivo numero ciclico è 0588235294117647 con 16 cifre:
 
 $$\begin{align} & 0588235294117647 × 1 = 0588235294117647 \\\\ & 0588235294117647 × 2 = 1176470588235294 \\\\ & 0588235294117647 × 3 = 1764705882352941 \\\\ & \ldots \\\\ & 0588235294117647 × 16 = 9411764705882352 \end{align}$$
 
-Nota che per i numeri ciclici gli zeri iniziali sono importanti.
+Nota che per i numeri ciclici gli zeri iniziali childo importanti.
 
-C'è solo un numero ciclico per il quale le undici cifre più a sinistra sono 00000000137 e le cinque cifre più a destra sono 56789 (cioè ha la forma $00000000137\ldots56789$ con un numero sconosciuto di cifre nel mezzo). Trova la somma di tutte le sue cifre.
+C'è solo un numero ciclico per il quale le undici cifre più a sinistra childo 00000000137 e le cinque cifre più a destra childo 56789 (cioè ha la forma $00000000137\ldots56789$ con un numero sconosciuto di cifre nel mezzo). Trova la somma di tutte le sue cifre.
 
 # --hints--
 

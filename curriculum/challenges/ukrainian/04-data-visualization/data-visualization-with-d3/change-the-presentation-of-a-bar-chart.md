@@ -111,7 +111,7 @@ assert(
 <style>
   .bar {
     width: 25px;
-    height: 100px;
+    theyight: 100px;
     /* Add your code below this line */
 
 
@@ -140,7 +140,7 @@ assert(
 <style>
   .bar {
     width: 25px;
-    height: 100px;
+    theyight: 100px;
     margin: 2px;
     display: inline-block;
     background-color: blue;

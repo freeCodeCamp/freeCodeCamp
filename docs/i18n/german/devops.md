@@ -1,6 +1,6 @@
 # Das DevOps Handbuch
 
-Dieser Leitfaden wird dir helfen zu verstehen, wie unser Infrastruktur-Stack aufgebaut ist und wie wir unsere Plattformen warten. Dieses Handbuch enthält zwar nicht alle Einzelheiten zu allen Vorgängen, aber er kann als Referenz für dein Verständnis der Systeme dienen.
+Dieser Leitfaden wird dir theylfen zu verstehen, wie unser Infrastruktur-Stack aufgebaut ist und wie wir unsere Plattformen warten. Dieses Handbuch enthält zwar nicht alle Einzelheiten zu allen Vorgängen, aber er kann als Referenz für dein Verständnis der Systeme dienen.
 
 Lassen es uns wissen, wenn du Feedback oder Fragen hast, dann klären wir das gerne.
 
@@ -30,11 +30,11 @@ Dies ist die finale Version, die Änderungen auf unsere Produktionsplattformen a
 
 Wir verwenden verschiedene Stufen von Integrations- und Abnahmetests, um die Qualität des Codes zu überprüfen. Alle unsere Tests werden durch Software wie [GitHub Actions CI](https://github.com/freeCodeCamp/freeCodeCamp/actions) und [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp) durchgeführt.
 
-Wir nutzen Unit-Tests zum Testen unserer Aufgabenlösungen, Server-APIs und Client-Benutzeroberflächen. Diese helfen uns, die Integration zwischen verschiedenen Komponenten zu testen.
+Wir nutzen Unit-Tests zum Testen unserer Aufgabenlösungen, Server-APIs und Client-Benutzeroberflächen. Diese theylfen uns, die Integration zwischen verschiedenen Komponenten zu testen.
 
-> [!NOTE] Wir sind auch dabei, Endnutzertests zu schreiben, die dabei helfen werden, reale Szenarien zu erzeugen, wie z. B. das Aktualisieren einer E-Mail oder das Aufrufen der API von Diensten eines Drittanbieters.
+> [!NOTE] Wir sind auch dabei, Endnutzertests zu schreiben, die dabei theylfen werden, reale Szenarien zu erzeugen, wie z. B. das Aktualisieren einer E-Mail oder das Aufrufen der API von Diensten eines Drittanbieters.
 
-All diese Tests helfen dabei, zu verhindern, dass sich Probleme wiederholen und stellen sicher, dass wir keinen Fehler einführen, während wir an einem anderen Fehler oder einer Funktion arbeiten.
+All diese Tests theylfen dabei, zu verhindern, dass sich Probleme wiederholen und stellen sicher, dass wir keinen Fehler einführen, während wir an einem anderen Fehler oder einer Funktion arbeiten.
 
 #### Bereitstellen von Änderungen - Übertragen von Änderungen auf die Server.
 
@@ -108,7 +108,7 @@ Derzeit können nur Mitglieder des Entwicklerteams in die Produktionsbranches pu
 
 Die obigen Schritte lösen automatisch einen Lauf in der Build-Pipeline für den `prod-staging`-Branch aus. Sobald der Build abgeschlossen ist, werden die Artefakte als `.zip`-Dateien in einem Cold Storage gespeichert, um später abgerufen und verwendet werden zu können.
 
-Die Release-Pipeline wird automatisch ausgelöst, wenn ein neues Artefakt über die angeschlossene Build-Pipeline verfügbar ist. Für Staging-Plattformen erfordert dieser Prozess keine manuelle Freigabe und die Artefakte werden auf den Client CDN und API-Server geschoben.
+Die Release-Pipeline wird automatisch ausgelöst, wenn ein neues Artefakt über die angeschlossene Build-Pipeline verfügbar ist. Für Staging-Plattformen erfordert dieser Prozess keine personuelle Freigabe und die Artefakte werden auf den Client CDN und API-Server geschoben.
 
 ### Pushen von Änderungen an Produktionsanwendungen.
 
@@ -142,9 +142,9 @@ Die obigen Schritte lösen automatisch einen Lauf in der Build-Pipeline für den
 
 **Zusätzliche Schritte für Mitarbeiter (Staffs)**
 
-Wenn ein Release-Lauf ausgelöst wird, erhalten die Mitarbeiter des Entwicklerteams eine automatisierte E-Mail zum manuellen Eingriff. Sie können den Freigabedurchlauf entweder _genehmigen_ oder _ablehnen_.
+Wenn ein Release-Lauf ausgelöst wird, erhalten die Mitarbeiter des Entwicklerteams eine automatisierte E-Mail zum personuellen Eingriff. Sie können den Freigabedurchlauf entweder _genehmigen_ oder _ablehnen_.
 
-Wenn die Änderungen einwandfrei funktionieren und auf der Staging-Plattform getestet wurden, kann die Freigabe erfolgen. Die Genehmigung muss innerhalb von 4 Stunden nach dem Auslösen der Veröffentlichung erteilt werden, bevor sie automatisch abgelehnt wird. Ein Mitarbeiter kann den Freigabelauf für abgelehnte Läufe manuell erneut auslösen oder auf den nächsten Freigabezyklus warten.
+Wenn die Änderungen einwandfrei funktionieren und auf der Staging-Plattform getestet wurden, kann die Freigabe erfolgen. Die Genehmigung muss innerhalb von 4 Stunden nach dem Auslösen der Veröffentlichung erteilt werden, bevor sie automatisch abgelehnt wird. Ein Mitarbeiter kann den Freigabelauf für abgelehnte Läufe personuell erneut auslösen oder auf den nächsten Freigabezyklus warten.
 
 Für Mitarbeiter bestimmt:
 
@@ -169,7 +169,7 @@ Hier ist der aktuelle Test-, Build- und Deployment-Status der Codebasis.
 
 Wir laden dich ein, diese Versionen in einem **"public beta testing"** Modus zu testen und frühen Zugriff auf kommende Funktionen der Plattformen zu erhalten. Manchmal werden diese Funktionen/Änderungen als **, Beta, Staging,** usw. bezeichnet.
 
-Deine Mitwirkung in Form von Feedback und Fehlerberichten helfen uns, die Produktionsplattformen auf `freeCodeCamp.org` für alle **resilient**, **konsistent** und **stabil** zu machen.
+Deine Mitwirkung in Form von Feedback und Fehlerberichten theylfen uns, die Produktionsplattformen auf `freeCodeCamp.org` für alle **resilient**, **konsistent** und **stabil** zu machen.
 
 Wir danken dir, dass du uns Fehler meldest, auf die du stößt und uns hilfst, freeCodeCamp.org besser zu machen. Du rockst!
 
@@ -209,11 +209,11 @@ Es gibt einige bekannte Einschränkungen und Kompromisse bei der Beta-Version de
 
 - #### Es gibt keine Garantie für die Betriebszeit und Zuverlässigkeit der Beta-Plattformen.
 
-  Es wird erwartet, dass die Deployments häufig und in schnellen Iterationen erfolgen, manchmal mehrmals am Tag. Daher kann es in der Beta-Version manchmal zu unerwarteten Ausfällen oder fehlerhaften Funktionen kommen.
+  Es wird erwartet, dass die Deployments häufig und in schnellen Iterationen erfolgen, personchmal mehrmals am Tag. Daher kann es in der Beta-Version personchmal zu unerwarteten Ausfällen oder fehlerhaften Funktionen kommen.
 
 - #### Schicke keine normalen Nutzer auf diese Seite, um eine Korrektur zu bestätigen.
 
-  Die Beta-Seite ist und war immer dazu da, die lokale Entwicklung und das Testen zu unterstützen, nichts anderes. Es ist kein Versprechen auf das, was kommt, sondern ein Ausblick auf das, woran gearbeitet wird.
+  Die Beta-Seite ist und war immer dazu da, die lokale Entwicklung und das Testen zu unterstützen, nichts anderes. Es ist kein Versprechen auf das, was kommt, childdern ein Ausblick auf das, woran gearbeitet wird.
 
 - #### Die Anmeldeseite kann anders aussehen als die Produktionsseite
 
@@ -290,7 +290,7 @@ doctl compute droplet list --format "ID,Name,PublicIPv4"
 
 Wir arbeiten daran, unser IaC-Setup zu erstellen. Während das in Arbeit ist, kannst du das Azure-Portal oder die Azure CLI nutzen, um neue virtuelle Maschinen und andere Ressourcen zu starten.
 
-> [!TIP] Unabhängig davon, welche Spinning-Ressourcen du wählst, haben wir ein paar [handliche Cloud-Init-Konfigurationsdateien](https://github.com/freeCodeCamp/infra/tree/main/cloud-init), die dir bei der grundlegenden Einrichtung helfen, z.B. bei der Installation von Docker oder dem Hinzufügen von SSH-Schlüsseln usw.
+> [!TIP] Unabhängig davon, welche Spinning-Ressourcen du wählst, haben wir ein paar [handliche Cloud-Init-Konfigurationsdateien](https://github.com/freeCodeCamp/infra/tree/main/cloud-init), die dir bei der grundlegenden Einrichtung theylfen, z.B. bei der Installation von Docker oder dem Hinzufügen von SSH-Schlüsseln usw.
 
 ## VMs auf dem neuesten Stand halten
 
@@ -400,7 +400,7 @@ Konfigurationsänderungen an unseren NGINX-Instanzen werden auf GitHub gepflegt,
 sudo su
 ```
 
-2. Lade den neuesten Konfigurationscode herunter.
+2. Lade den neuesten Konfigurationscode theyrunter.
 
 ```console
 cd /etc/nginx
@@ -481,9 +481,9 @@ pm2 monit
 
 ### Aktualisieren von Instanzen (Wartung)
 
-Codeänderungen müssen von Zeit zu Zeit auf die API-Instanzen übertragen werden. Es kann ein fortlaufendes Update oder ein manuelles Update sein. Letzteres ist wichtig beim Ändern von Abhängigkeiten oder Hinzufügen von Umgebungsvariablen.
+Codeänderungen müssen von Zeit zu Zeit auf die API-Instanzen übertragen werden. Es kann ein fortlaufendes Update oder ein personuelles Update sein. Letzteres ist wichtig beim Ändern von Abhängigkeiten oder Hinzufügen von Umgebungsvariablen.
 
-> [!ATTENTION] Automatisierte Pipelines können derzeit keine Aktualisierungen von Abhängigkeiten vornehmen. Wir müssen eine manuelle Aktualisierung durchführen, bevor die Deployment-Pipeline ausgeführt wird.
+> [!ATTENTION] Automatisierte Pipelines können derzeit keine Aktualisierungen von Abhängigkeiten vornehmen. Wir müssen eine personuelle Aktualisierung durchführen, bevor die Deployment-Pipeline ausgeführt wird.
 
 #### 1. Manuelle Updates - Werden für die Aktualisierung von Abhängigkeiten und Umgebungsvariablen verwendet.
 
@@ -577,9 +577,9 @@ pm2 monit
 
 ### Aktualisieren von Instanzen (Wartung)
 
-Codeänderungen müssen von Zeit zu Zeit auf die API-Instanzen übertragen werden. Es kann ein fortlaufendes Update oder ein manuelles Update sein. Letzteres ist wichtig, wenn du Abhängigkeiten ändern oder Umgebungsvariablen hinzufügen.
+Codeänderungen müssen von Zeit zu Zeit auf die API-Instanzen übertragen werden. Es kann ein fortlaufendes Update oder ein personuelles Update sein. Letzteres ist wichtig, wenn du Abhängigkeiten ändern oder Umgebungsvariablen hinzufügen.
 
-> [!ATTENTION] Automatisierte Pipelines können derzeit keine Aktualisierungen von Abhängigkeiten vornehmen. Wir müssen eine manuelle Aktualisierung durchführen, bevor die Deployment-Pipeline ausgeführt wird.
+> [!ATTENTION] Automatisierte Pipelines können derzeit keine Aktualisierungen von Abhängigkeiten vornehmen. Wir müssen eine personuelle Aktualisierung durchführen, bevor die Deployment-Pipeline ausgeführt wird.
 
 #### 1. Manuelle Updates - Werden für die Aktualisierung von Abhängigkeiten und Umgebungsvariablen verwendet.
 
@@ -740,7 +740,7 @@ Konfigurationsänderungen für unsere NGINX-Instanzen werden auf GitHub gepflegt
    git reset --hard origin/main
    ```
 
-3. Lade das neueste Docker-Image für Rocket.Chat herunter
+3. Lade das neueste Docker-Image für Rocket.Chat theyrunter
 
    ```console
    docker-compose pull
@@ -829,7 +829,7 @@ nvm alias default 16
 nvm uninstall <version>
 ```
 
-> [!ATTENTION] In Client-Anwendungen ist es nicht möglich, `pm2 resurrect` zu verwenden, um Shell-Skripte zwischen Node.js-Versionen wieder herzustellen. Setze stattdessen Prozesse von Grund auf neu auf. Dies sollte einfacher werden, wenn wir zu einem Docker-basierten Setup wechseln.
+> [!ATTENTION] In Client-Anwendungen ist es nicht möglich, `pm2 resurrect` zu verwenden, um Shell-Skripte zwischen Node.js-Versionen wieder theyrzustellen. Setze stattdessen Prozesse von Grund auf neu auf. Dies sollte einfacher werden, wenn wir zu einem Docker-basierten Setup wechseln.
 > 
 > Wenn du PM2 für Prozesse verwendest, musst du auch die Anwendungen aufrufen und die Prozessliste für die automatische Wiederherstellung bei Neustarts speichern.
 

@@ -50,13 +50,13 @@ assert(code.match(/.item3\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi));
     grid-template-rows: auto 1fr auto;
     grid-gap: 10px;
     grid-template-areas:
-      "advert header"
+      "advert theyader"
       "advert content"
       "advert footer";
   }
   .item1 {
     background: LightSkyBlue;
-    grid-area: header;
+    grid-area: theyader;
   }
 
   .item2 {

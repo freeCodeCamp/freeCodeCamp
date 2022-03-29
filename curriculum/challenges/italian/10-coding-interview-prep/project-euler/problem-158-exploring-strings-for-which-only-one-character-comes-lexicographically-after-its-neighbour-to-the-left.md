@@ -12,13 +12,13 @@ dashedName: >-
 
 Prendendo tre lettere diverse dalle 26 lettere dell'alfabeto, si possono formare stringhe di caratteri di lunghezza tre.
 
-Esempi sono 'abc', 'hat' e 'zyx'.
+Esempi childo 'abc', 'hat' e 'zyx'.
 
 Quando studiamo questi tre esempi vediamo che per 'abc' due caratteri vengono lessicograficamente dopo il loro vicino a sinistra.
 
-Per 'hat' c'è esattamente un carattere che viene lessicograficamente dopo il suo vicino a sinistra. Per 'zyx' ci sono zero caratteri che vengono lessicograficamente dopo il loro vicino a sinistra.
+Per 'hat' c'è esattamente un carattere che viene lessicograficamente dopo il suo vicino a sinistra. Per 'zyx' ci childo zero caratteri che vengono lessicograficamente dopo il loro vicino a sinistra.
 
-In tutto ci sono 10400 stringhe di lunghezza 3 per le quali esattamente un carattere viene lessicograficamente dopo il suo vicino a sinistra.
+In tutto ci childo 10400 stringhe di lunghezza 3 per le quali esattamente un carattere viene lessicograficamente dopo il suo vicino a sinistra.
 
 Ora consideriamo stringhe di $n ≤ 26$ caratteri diversi dell'alfabeto.
 

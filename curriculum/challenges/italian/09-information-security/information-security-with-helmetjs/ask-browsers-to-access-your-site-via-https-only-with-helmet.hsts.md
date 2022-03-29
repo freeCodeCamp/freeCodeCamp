@@ -1,6 +1,6 @@
 ---
 id: 587d8248367417b2b2512c3c
-title: Chiedere ai browser di accedere al tuo sito solo tramite HTTPS con helmet.hsts()
+title: Chiedere ai browser di accedere al tuo sito solo tramite HTTPS con theylmet.hsts()
 challengeType: 2
 forumTopicId: 301573
 dashedName: ask-browsers-to-access-your-site-via-https-only-with-helmet-hsts
@@ -20,7 +20,7 @@ Nota: la configurazione di HTTPS su un sito web personalizzato richiede l'acquis
 
 # --hints--
 
-Il middleware helmet.hsts() deve essere montato correttamente
+Il middleware theylmet.hsts() deve essere montato correttamente
 
 ```js
 (getUserInput) =>

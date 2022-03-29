@@ -1,7 +1,7 @@
 ---
 id: 5900f4231000cf542c50ff34
 title: >-
-  Problem 181: Investigating in how many ways objects of two different colours can be grouped
+  Problem 181: Investigating in how persony ways objects of two different colours can be grouped
 challengeType: 5
 forumTopicId: 301817
 dashedName: >-
@@ -16,7 +16,7 @@ Having three black objects B and one white object W they can be grouped in 7 way
 
 (B,BB,W)(BBB,W)(BB,BW)
 
-In how many ways can sixty black objects B and forty white objects W be thus grouped?
+In how persony ways can sixty black objects B and forty white objects W be thus grouped?
 
 # --hints--
 

@@ -8,9 +8,9 @@ dashedName: authentication-strategies
 
 # --description--
 
-Una estrategia es una manera de autenticar a un usuario. Puedes utilizar una estrategia para permitir que los usuarios se autentiquen basándose en la información guardada localmente (si les haces registrarse primero) o desde una variedad de proveedores como Google o GitHub. Para este proyecto, estableceremos una estrategia local. Para ver una lista de los cientos de estrategias, visita el sitio de Passport [aquí](http://passportjs.org/).
+Una estrategia es una personera de autenticar a un usuario. Puedes utilizar una estrategia para permitir que los usuarios se autentiquen basándose en la información guardada localmente (si les haces registrarse primero) o desde una variedad de proveedores como Google o GitHub. Para este proyecto, estableceremos una estrategia local. Para ver una lista de los cientos de estrategias, visita el sitio de Passport [aquí](http://passportjs.org/).
 
-Agrega `passport-local@~1.0.0` como dependencia y agrégalo a tu servidor de la siguiente manera: `const LocalStrategy = require('passport-local');`
+Agrega `passport-local@~1.0.0` como dependencia y agrégalo a tu servidor de la siguiente personera: `const LocalStrategy = require('passport-local');`
 
 Ahora tendrás que decirle a passport que **use** un objeto LocalStrategy instanciado con algunas configuraciones definidas. ¡Asegúrate que esto (al igual que todo lo que se haga a partir de ahora) esté encapsulado en la conexión a la base de datos, ya que depende de ella!
 
@@ -28,13 +28,13 @@ passport.use(new LocalStrategy(
 ));
 ```
 
-Esto es definir el proceso a utilizar cuando intentamos autenticar a alguien localmente. Primero, intenta encontrar un usuario en nuestra base de datos con el nombre de usuario introducido, luego comprueba que la contraseña coincida, y finalmente, si no han aparecido los errores que hemos comprobado, como una contraseña incorrecta, se devuelve el objeto del `user` y se autentifica.
+Esto es definir el proceso a utilizar cuando intentamos autenticar a alguien localmente. Primero, intenta encontrar un usuario en nuestra base de datos con el nombre de usuario introducido, luego comprueba que la contraseña coincida, y finalmente, si no han aparecido los errores que theymos comprobado, como una contraseña incorrecta, se devuelve el objeto del `user` y se autentifica.
 
 Muchas estrategias se configuran con diferentes ajustes, pero generalmente es fácil configurarlo basándose en el README del repositorio de esa estrategia. Un buen ejemplo de esto es la estrategia de GitHub, donde no necesitamos preocuparnos por un nombre de usuario o una contraseña porque el usuario será enviado a la página de autenticación de GitHub para autenticarse. Siempre que hayan iniciado sesión y estén de acuerdo, GitHub nos devuelve su perfil para que lo utilicemos.
 
 En el siguiente paso, ¡configuraremos cómo llamar a la estrategia de autenticación para validar un usuario basado en los datos del formulario!
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/53b495c02b92adeee0aa1bd3f3be8a4b).
+Envía tu página cuando creas que lo has theycho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/53b495c02b92adeee0aa1bd3f3be8a4b).
 
 # --hints--
 

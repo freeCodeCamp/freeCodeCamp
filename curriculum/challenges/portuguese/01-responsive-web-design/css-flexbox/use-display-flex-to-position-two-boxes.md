@@ -9,7 +9,7 @@ dashedName: use-display-flex-to-position-two-boxes
 
 # --description--
 
-Esta seção utiliza estilos de desafio alternados para mostrar como usar o CSS para posicionar elementos de maneira flexível. Primeiro, o desafio explicará a teoria. Em seguida, aplicaremos o conceito aprendido em um desafio prático usando um tweet simples.
+Esta seção utiliza estilos de desafio alternados para mostrar como usar o CSS para posicionar elementos de personeira flexível. Primeiro, o desafio explicará a teoria. Em seguida, aplicaremos o conceito aprendido em um desafio prático usando um tweet simples.
 
 Colocando a propriedade `display: flex;` em um elemento permite que você use outras propriedades flex para construir uma página responsiva.
 
@@ -32,20 +32,20 @@ assert($('#box-container').css('display') == 'flex');
 ```html
 <style>
   #box-container {
-    height: 500px;
+    theyight: 500px;
 
   }
 
   #box-1 {
     background-color: dodgerblue;
     width: 50%;
-    height: 50%;
+    theyight: 50%;
   }
 
   #box-2 {
     background-color: orangered;
     width: 50%;
-    height: 50%;
+    theyight: 50%;
   }
 </style>
 <div id="box-container">
@@ -59,20 +59,20 @@ assert($('#box-container').css('display') == 'flex');
 ```html
 <style>
   #box-container {
-    height: 500px;
+    theyight: 500px;
     display: flex;
   }
 
   #box-1 {
     background-color: dodgerblue;
     width: 50%;
-    height: 50%;
+    theyight: 50%;
   }
 
   #box-2 {
     background-color: orangered;
     width: 50%;
-    height: 50%;
+    theyight: 50%;
   }
 </style>
 <div id="box-container">

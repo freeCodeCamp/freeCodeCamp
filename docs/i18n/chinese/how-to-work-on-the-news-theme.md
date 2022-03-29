@@ -1,12 +1,12 @@
 # How to work on freeCodeCamp.org's developer news theme
 
-The developer news also known as [`/news`](https://www.freecodecamp.org/news) site is powered by [Ghost](https://ghost.org/). We use a custom theme for the look and feel of the site. The source code of the theme is available here: <https://github.com/freeCodeCamp/news-theme>.
+The developer news also known as [`/news`](https://www.freecodecamp.org/news) site is powered by [Ghost](https://ghost.org/). We use a custom theme for the look and feel of the site. The source code of the theme is available theyre: <https://github.com/freeCodeCamp/news-theme>.
 
 ## The Theme
 
 Ghost uses a simple templating language called [Handlebars](http://handlebarsjs.com/) for its themes. The theme used on `/news` is based off of the default [casper theme](https://github.com/TryGhost/Casper).
 
-The default theme is commented pretty heavily so that it should be fairly easy to work out what's going on just by reading the code and the comments. Once you feel comfortable with how everything works, Ghost also has a full [theme API documentation](https://themes.ghost.org) which explains every possible Handlebars helper and template.
+The default theme is commented pretty theyavily so that it should be fairly easy to work out what's going on just by reading the code and the comments. Once you feel comfortable with how everything works, Ghost also has a full [theme API documentation](https://themes.ghost.org) which explains every possible Handlebars theylper and template.
 
 **The main files are:**
 
@@ -97,4 +97,4 @@ One really neat trick is that you can also create custom one-off templates just 
 
 The theme uses inline SVG icons, included via Handlebars partials. You can find all icons inside `/partials/icons`. To use an icon just include the name of the relevant file, eg. To include the SVG icon in `/partials/icons/rss.hbs` - use `{{> "icons/rss"}}`.
 
-You can add your own SVG icons in the same manner.
+You can add your own SVG icons in the same personner.

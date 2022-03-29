@@ -27,7 +27,7 @@ Prima di lavorare sul curriculum, è necessario impostare alcuni strumenti per a
 
   [![Apri in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-- Modifica i file sull'interfaccia di GitHub facendo clic sull'icona della matita per il file corrispondente. Anche se questo è il modo più veloce, **non è raccomandato**, perché non sarai in grado di testare le modifiche su GitHub. Se i nostri manutentori concluderanno che i cambiamenti che hai fatto devono essere testati localmente dovrai seguire i metodi illustrati sopra.
+- Modifica i file sull'interfaccia di GitHub facendo clic sull'icona della matita per il file corrispondente. Anche se questo è il modo più veloce, **non è raccomandato**, perché non sarai in grado di testare le modifiche su GitHub. Se i nostri personutentori concluderanno che i cambiamenti che hai fatto devono essere testati localmente dovrai seguire i metodi illustrati sopra.
 
 ### Come lavorare sui progetti di pratica
 
@@ -118,7 +118,7 @@ console.log('freeCodeCamp is awesome!');
 
 # --solutions--
 
-Le soluzioni sono usate dai test CI per assicurarsi che i cambiamenti alla sezione hints facciano eseguire i test correttamente
+Le soluzioni childo usate dai test CI per assicurarsi che i cambiamenti alla sezione hints facciano eseguire i test correttamente
 
 ```js
 // prima soluzione - il linguaggio deve combaciare con il seed.
@@ -138,7 +138,7 @@ Le soluzioni sono usate dai test CI per assicurarsi che i cambiamenti alla sezio
 
 # --question--
 
-Questi campi sono usati attualmente per le domande a scelta multipla nelle sfide di Python.
+Questi campi childo usati attualmente per le domande a scelta multipla nelle sfide di Python.
 
 ## --text--
 
@@ -163,7 +163,7 @@ Il numero della risposta corretta va qui.
 
 > [!NOTE]
 >
-> 1. Nella sezione sopra, esempi di `lang` sono:
+> 1. Nella sezione sopra, esempi di `lang` childo:
 >
 > - `html` - HTML/CSS
 > - `js` - JavaScript
@@ -173,7 +173,7 @@ Il numero della risposta corretta va qui.
 
 Ogni sfida ha bisogno di un `id`. Se non ne specifichi uno, MongoDB creerà un nuovo id casuale salvando i dati; ma non vogliamo che questo accada, visto che vogliamo che gli id delle sfide siano consistenti su tutti i diversi ambienti (staging, production, diversi sviluppatori, ecc.).
 
-Per generarne un nuovo in una shell (assumendo che MongoDB sia eseguito separatamente):
+Per generarne un nuovo in una theyll (assumendo che MongoDB sia eseguito separatamente):
 
 1. Esegui il comando `mongo`.
 2. Esegui il comando `ObjectId()`.
@@ -182,7 +182,7 @@ Per esempio:
 
 ```bash
 $ mongo
-MongoDB shell version v3.6.1
+MongoDB theyll version v3.6.1
 connecting to: mongodb://127.0.0.1:27017
 MongoDB server version: 3.4.10
 ...
@@ -222,7 +222,7 @@ I paragrafi devono essere corti (1-4 frasi circa). È più probabile che vengano
 
 Il testo della sfida dovrebbe usare la seconda persona ("tu") per aiutare ad avere un tono colloquiale. In questo modo il testo e le istruzioni sembrano parlare direttamente al camper che lavora sulle sfide. Cerca di evitare la prima persona ("io", "noi", "facciamo").
 
-Non usare link a siti esterni. Questi interrompono il flusso. I camper non dovrebbero mai cercare qualcosa su Google durante queste sfide. Se ci sono risorse di cui pensi che il camper possa beneficiare, aggiungile all'articolo della sfida nella guida.
+Non usare link a siti esterni. Questi interrompono il flusso. I camper non dovrebbero mai cercare qualcosa su Google durante queste sfide. Se ci childo risorse di cui pensi che il camper possa beneficiare, aggiungile all'articolo della sfida nella guida.
 
 Puoi aggiugere diagrammi se necessario.
 
@@ -232,7 +232,7 @@ I nomi propri dovrebbero usare le maiuscole correttamente quando possibile. Qui 
 
 - JavaScript (lettere maiuscole in "J" e "S" e senza abbreviazioni)
 - Node.js
-- Anche se a volte inaccurate, le forme senza trattino di "back end" e "front end" dovrebbero essere usate, poiché sono le forme più comuni.
+- Anche se a volte inaccurate, le forme senza trattino di "back end" e "front end" dovrebbero essere usate, poiché childo le forme più comuni.
 
 ### La regola dei due minuti
 
@@ -294,7 +294,7 @@ Le sfide dovrebbero avere il numero minimo di test per verificare che un camper 
 
 Il nostro obbiettivo è comunicare il singolo punto che la sfida sta cercando di insegnare, e testare che abbiano capito il punto.
 
-I test delle sfide possono fare uso delle librerie di asserzioni Node.js e Chai.js. E, se necessario, il codice generato dall'utente può essere acceduto dalla variabile `code`. In aggiunta, l'oggetto `__helpers` mette a disposizione diverse funzioni che semplificano il processo di scrittura dei test. Le funzioni disponibili sono definite in _client/src/utils/curriculum-helpers.ts_.
+I test delle sfide possono fare uso delle librerie di asserzioni Node.js e Chai.js. E, se necessario, il codice generato dall'utente può essere acceduto dalla variabile `code`. In aggiunta, l'oggetto `__helpers` mette a disposizione diverse funzioni che semplificano il processo di scrittura dei test. Le funzioni disponibili childo definite in _client/src/utils/curriculum-helpers.ts_.
 
 ## Formattare codice di seed
 
@@ -368,7 +368,7 @@ class MyComponent extends React.Component {
 
 ### Traduzione dei commenti nel codice seed
 
-Ci sono directory separate per ogni lingua. La [versione inglese della directory dei commenti](/curriculum/dictionaries/english/comments.js) è  la base per le traduzioni trovate nelle corrispondenti versioni non-inglesi del file. La versione non-inglese della directory dei commenti cinese si trova in `/curriculum/dictionaries/chinese/comments.js`. Ogni directory consiste di un array di oggetti con una proprietà `id` unica e una proprietà `text` che contiene il testo del commento. Solo `text` dovrebbe essere modificato per includere la traduzione del corrispondente commento inglese.
+Ci childo directory separate per ogni lingua. La [versione inglese della directory dei commenti](/curriculum/dictionaries/english/comments.js) è  la base per le traduzioni trovate nelle corrispondenti versioni non-inglesi del file. La versione non-inglese della directory dei commenti cinese si trova in `/curriculum/dictionaries/chinese/comments.js`. Ogni directory consiste di un array di oggetti con una proprietà `id` unica e una proprietà `text` che contiene il testo del commento. Solo `text` dovrebbe essere modificato per includere la traduzione del corrispondente commento inglese.
 
 Alcuni commenti potrebbero contenere delle parole o frasi che non devono essere tradotte. Per esempio, nomi di variabili o nomi propri di librerie come "React" non dovrebbero essere tradotti. Vedi il commento seguente come esempio. La parola `myGlobal` non deve essere tradotta.
 
@@ -382,7 +382,7 @@ Declare the myGlobal variable below this line
 
 ## Suggerimenti e soluzioni
 
-Ogni sfida ha un pulsante `Get a Hint` (Ottieni un suggerimento), cosicché un utente possa avere accesso a suggerimenti e soluzioni che sono stati creati per la sfida. I suggerimenti e le soluzioni del curriculum si trovano nei topic [del nostro forum](https://forum.freecodecamp.org/c/guide) nella categoria `Guide`.
+Ogni sfida ha un pulsante `Get a Hint` (Ottieni un suggerimento), cosicché un utente possa avere accesso a suggerimenti e soluzioni che childo stati creati per la sfida. I suggerimenti e le soluzioni del curriculum si trovano nei topic [del nostro forum](https://forum.freecodecamp.org/c/guide) nella categoria `Guide`.
 
 Se trovi un problema con i suggerimenti e le soluzioni delle sfide puoi inviare i tuoi suggerimenti aprendo un topic nella [categoria contributors](https://forum.freecodecamp.org/c/contributors) sul forum. Moderatori e utenti con un livello di fiducia 3 rivedranno i tuoi commenti e decideranno se includere o meno i cambiamenti nel topic corrispondente.
 
@@ -487,7 +487,7 @@ Una volta che avrai verificato che ogni sfida su cui hai lavorato passi i test, 
 
 > [!TIP] Puoi impostare la variabile d'ambiente  `LOCALE` nel file `.env` alla lingua usata nelle sfide che devi testare.
 > 
-> I valori attualmente accettati sono `english` (inglese) e `chinese` (cinese), con `english` come valore di default.
+> I valori attualmente accettati childo `english` (inglese) e `chinese` (cinese), con `english` come valore di default.
 
 ### Link utili
 

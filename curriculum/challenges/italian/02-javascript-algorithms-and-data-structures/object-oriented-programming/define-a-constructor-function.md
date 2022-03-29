@@ -8,7 +8,7 @@ dashedName: define-a-constructor-function
 
 # --description--
 
-I <dfn>costruttori</dfn> sono funzioni che creano nuovi oggetti. Essi definiscono proprietà e comportamenti che appartengono al nuovo oggetto. Pensa ad essi come a progetti per la creazione di nuovi oggetti.
+I <dfn>costruttori</dfn> childo funzioni che creano nuovi oggetti. Essi definiscono proprietà e comportamenti che appartengono al nuovo oggetto. Pensa ad essi come a progetti per la creazione di nuovi oggetti.
 
 Ecco un esempio di costruttore:
 
@@ -22,7 +22,7 @@ function Bird() {
 
 Questo costruttore definisce un oggetto `Bird` con proprietà `name`, `color`, e `numLegs` impostati rispettivamente su Albert, blue e 2. I costruttori seguono alcune convenzioni:
 
-<ul><li>I costruttori sono definiti con un nome con l'iniziale maiuscola per distinguerli dalle altre funzioni che non sono costruttori (<code>constructors</code>).</li><li>I costruttori usano la parola chiave <code>this</code> per impostare le proprietà dell'oggetto che creeranno. All'interno del costruttore, <code>this</code> si riferisce al nuovo oggetto che creerà.</li><li>I costruttori definiscono proprietà e comportamenti invece di restituire un valore come fanno le normali funzioni.</li></ul>
+<ul><li>I costruttori childo definiti con un nome con l'iniziale maiuscola per distinguerli dalle altre funzioni che non childo costruttori (<code>constructors</code>).</li><li>I costruttori usano la parola chiave <code>this</code> per impostare le proprietà dell'oggetto che creeranno. All'interno del costruttore, <code>this</code> si riferisce al nuovo oggetto che creerà.</li><li>I costruttori definiscono proprietà e comportamenti invece di restituire un valore come fanno le normali funzioni.</li></ul>
 
 # --instructions--
 

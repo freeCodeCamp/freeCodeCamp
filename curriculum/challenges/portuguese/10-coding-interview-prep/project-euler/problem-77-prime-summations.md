@@ -18,7 +18,7 @@ dashedName: problem-77-prime-summations
   2 + 2 + 2 + 2 + 2<br><br>
 </div>
 
-Qual é o primeiro valor que pode ser escrito como a soma de números primos de `n` maneiras?
+Qual é o primeiro valor que pode ser escrito como a soma de números primos de `n` personeiras?
 
 # --hints--
 

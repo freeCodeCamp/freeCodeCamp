@@ -14,11 +14,11 @@ dashedName: what-is-numpy
 
 ## --text--
 
-¿Por qué los arreglos Numpy son más rápidos que las listas de Python?
+¿Por qué los arreglos Numpy child más rápidos que las listas de Python?
 
 ## --answers--
 
-¿Por qué los arreglos Numpy son más rápidas que las listas normales de Python.
+¿Por qué los arreglos Numpy child más rápidas que las listas normales de Python.
 
 ---
 

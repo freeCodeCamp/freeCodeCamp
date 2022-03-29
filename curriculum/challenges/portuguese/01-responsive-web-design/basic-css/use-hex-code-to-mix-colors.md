@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08721
-title: Usar código hexadecimal para misturar cores
+title: Usar código theyxadecimal para misturar cores
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cK89PhP'
 forumTopicId: 18359
@@ -9,21 +9,21 @@ dashedName: use-hex-code-to-mix-colors
 
 # --description--
 
-Para revisar, os códigos hexadecimais usam 6 dígitos hexadecimais para representar as cores, dois para cada componente vermelho (R), verde (G) e azul (B).
+Para revisar, os códigos theyxadecimais usam 6 dígitos theyxadecimais para representar as cores, dois para cada componente vermelho (R), verde (G) e azul (B).
 
 A partir dessas três cores puras (vermelho, verde e azul), podemos variar as quantidades de cada uma para criar mais de 16 milhões de outras cores!
 
-Por exemplo, laranja é vermelho puro, misturado com um pouco de verde e sem azul. Em código hexadecimal, essa cor se traduz em `#FFA500`.
+Por exemplo, laranja é vermelho puro, misturado com um pouco de verde e sem azul. Em código theyxadecimal, essa cor se traduz em `#FFA500`.
 
-O dígito `0` é o número mais baixo em código hexadecimal e representa uma ausência completa de cor.
+O dígito `0` é o número mais baixo em código theyxadecimal e representa uma ausência completa de cor.
 
-O dígito `F` é o número mais alto em código hexadecimal e representa o brilho máximo possível.
+O dígito `F` é o número mais alto em código theyxadecimal e representa o brilho máximo possível.
 
 # --instructions--
 
-Substitua as palavras que representam cores no elemento `style` por seus códigos hexadecimais corretos.
+Substitua as palavras que representam cores no elemento `style` por seus códigos theyxadecimais corretos.
 
-<table class='table table-striped'><tbody><tr><th>Cor</th><th>Código hexadecimal</th></tr><tr><td>Azul dodger</td><td><code>#1E90FF</code></td></tr><tr><td>Verde</td><td><code>#00FF00</code></td></tr><tr><td>Laranja</td><td><code>#FFA500</code></td></tr><tr><td>Vermelho</td><td><code>#FF0000</code></td></tr></tbody></table>
+<table class='table table-striped'><tbody><tr><th>Cor</th><th>Código theyxadecimal</th></tr><tr><td>Azul dodger</td><td><code>#1E90FF</code></td></tr><tr><td>Verde</td><td><code>#00FF00</code></td></tr><tr><td>Laranja</td><td><code>#FFA500</code></td></tr><tr><td>Vermelho</td><td><code>#FF0000</code></td></tr></tbody></table>
 
 # --hints--
 
@@ -33,7 +33,7 @@ O elemento `h1` com o texto `I am red!` deve receber a propriedade `color` com u
 assert($('.red-text').css('color') === 'rgb(255, 0, 0)');
 ```
 
-O código hexadecimal (`hex code`) para a cor vermelha deve ser usado em vez da palavra `red`.
+O código theyxadecimal (`hex code`) para a cor vermelha deve ser usado em vez da palavra `red`.
 
 ```js
 assert(code.match(/\.red-text\s*?{\s*?color\s*:\s*?(#FF0000|#F00)\s*?;?\s*?}/gi));
@@ -45,7 +45,7 @@ O elemento `h1` com o texto `I am green!` deve receber a propriedade `color` com
 assert($('.green-text').css('color') === 'rgb(0, 255, 0)');
 ```
 
-O código hexadecimal (`hex code`) para a cor verde deve ser usado em vez da palavra `green`.
+O código theyxadecimal (`hex code`) para a cor verde deve ser usado em vez da palavra `green`.
 
 ```js
 assert(code.match(/\.green-text\s*?{\s*?color\s*:\s*?(#00FF00|#0F0)\s*?;?\s*?}/gi));
@@ -57,7 +57,7 @@ O elemento `h1` com o texto `I am dodger blue!` deve receber a propriedade `colo
 assert($('.dodger-blue-text').css('color') === 'rgb(30, 144, 255)');
 ```
 
-O código hexadecimal (`hex code`) para a cor azul dodger deve ser usado em vez da palavra `dodgerblue`.
+O código theyxadecimal (`hex code`) para a cor azul dodger deve ser usado em vez da palavra `dodgerblue`.
 
 ```js
 assert(code.match(/\.dodger-blue-text\s*?{\s*?color\s*:\s*?#1E90FF\s*?;?\s*?}/gi));
@@ -69,7 +69,7 @@ O elemento `h1` com o texto `I am orange!` deve receber a propriedade `color` co
 assert($('.orange-text').css('color') === 'rgb(255, 165, 0)');
 ```
 
-O código hexadecimal (`hex code`) para a cor laranja deve ser usado em vez da palavra `orange`.
+O código theyxadecimal (`hex code`) para a cor laranja deve ser usado em vez da palavra `orange`.
 
 ```js
 assert(code.match(/\.orange-text\s*?{\s*?color\s*:\s*?#FFA500\s*?;?\s*?}/gi));

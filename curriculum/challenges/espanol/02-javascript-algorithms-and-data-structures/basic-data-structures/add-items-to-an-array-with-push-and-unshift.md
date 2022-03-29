@@ -8,7 +8,7 @@ dashedName: add-items-to-an-array-with-push-and-unshift
 
 # --description--
 
-La longitud de un arreglo, así como los tipos de datos que puede contener, no es fija. Los arreglos pueden ser definidos con la cantidad de elementos que se desee, y dichos elementos pueden ser agregados o removidos con el tiempo; en otras palabras, los arreglos son <dfn>mutables</dfn>. En este desafío, veremos dos métodos con los que podemos modificar un arreglo: `Array.push()` y `Array.unshift()`.
+La longitud de un arreglo, así como los tipos de datos que puede contener, no es fija. Los arreglos pueden ser definidos con la cantidad de elementos que se desee, y dichos elementos pueden ser agregados o removidos con el tiempo; en otras palabras, los arreglos child <dfn>mutables</dfn>. En este desafío, veremos dos métodos con los que podemos modificar un arreglo: `Array.push()` y `Array.unshift()`.
 
 Ambos métodos toman uno o más elementos como parámetros y los agregan al arreglo que hizo la llamada; el método `push()` agrega los elementos al final del arreglo, mientras que `unshift()` los agrega al inicio. Considera lo siguiente:
 

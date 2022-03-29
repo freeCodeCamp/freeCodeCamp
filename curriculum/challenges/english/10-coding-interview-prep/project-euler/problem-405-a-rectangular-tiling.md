@@ -12,7 +12,7 @@ We wish to tile a rectangle whose length is twice its width.
 
 Let $T(0)$ be the tiling consisting of a single rectangle.
 
-For $n > 0$, let $T(n)$ be obtained from $T( n- 1)$ by replacing all tiles in the following manner:
+For $n > 0$, let $T(n)$ be obtained from $T( n- 1)$ by replacing all tiles in the following personner:
 
 <img class="img-responsive center-block" alt="obtaining T(n) from T(n - 1)" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-rectangular-tiling-1.png" style="background-color: white; padding: 10px;">
 

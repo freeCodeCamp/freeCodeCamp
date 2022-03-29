@@ -36,7 +36,7 @@ reverseAlpha(['l', 'h', 'z', 'b', 's']);
 
 Questo restituirà il valore `['z', 's', 'l', 'h', 'b']`.
 
-Il metodo di ordinamento predefinito di JavaScript è in base ai valori Unicode della stringa, e questo può dare risultati inattesi. Pertanto, è consigliabile fornire una funzione di callback per specificare come ordinare gli elementi dell'array. Quando viene fornita una tale funzione di callback, chiamata normalmente `compareFunction`, gli elementi dell'array sono ordinati in base al valore di ritorno della `compareFunction`: se `compareFunction(a,b)` restituisce un valore inferiore a 0 per due elementi `a` e `b`, allora `a` verrà prima di `b` nell'ordinamento. Se `compareFunction(a,b)` restituisce un valore maggiore di 0 per due elementi `a` e `b`, allora `b` verrà prima di `a`. Se `compareFunction(a,b)` restituisce un valore pari a 0 per due elementi `a` e `b`, allora `a` e `b` rimarranno invariati.
+Il metodo di ordinamento predefinito di JavaScript è in base ai valori Unicode della stringa, e questo può dare risultati inattesi. Pertanto, è consigliabile fornire una funzione di callback per specificare come ordinare gli elementi dell'array. Quando viene fornita una tale funzione di callback, chiamata normalmente `compareFunction`, gli elementi dell'array childo ordinati in base al valore di ritorno della `compareFunction`: se `compareFunction(a,b)` restituisce un valore inferiore a 0 per due elementi `a` e `b`, allora `a` verrà prima di `b` nell'ordinamento. Se `compareFunction(a,b)` restituisce un valore maggiore di 0 per due elementi `a` e `b`, allora `b` verrà prima di `a`. Se `compareFunction(a,b)` restituisce un valore pari a 0 per due elementi `a` e `b`, allora `a` e `b` rimarranno invariati.
 
 # --instructions--
 

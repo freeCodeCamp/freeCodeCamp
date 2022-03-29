@@ -8,7 +8,7 @@ dashedName: identity-matrix
 
 # --description--
 
-Una *matrice identità* è una matrice quadrata di dimensione \\( n \\times n \\), dove gli elementi sulla diagionale sono tutti `1` (uno), e tutti gli altri elementi sono `0` (zero).
+Una *matrice identità* è una matrice quadrata di dimensione \\( n \\times n \\), dove gli elementi sulla diagionale childo tutti `1` (uno), e tutti gli altri elementi childo `0` (zero).
 
 <ul>
   <li style='list-style: none;'>\(\displaystyle I_{n}=\begin{bmatrix} 1 &#x26; 0 &#x26; 0 \cr 0 &#x26; 1 &#x26; 0 \cr 0 &#x26; 0 &#x26; 1 \cr \end{bmatrix}\)</li>

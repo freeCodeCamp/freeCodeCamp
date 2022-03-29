@@ -11,7 +11,7 @@ dashedName: center-an-element-horizontally-using-the-margin-property
 
 Un'altra tecnica di posizionamento è quella di centrare un blocco orizzontalmente. Un modo per farlo è quello di impostare il suo `margin` ad un valore auto.
 
-Questo metodo funziona anche per le immagini. Per impostazione predefinita, le immagini sono elementi in linea, ma possono essere cambiate in elementi di tipo blocco impostando la proprietà `display` su `block`.
+Questo metodo funziona anche per le immagini. Per impostazione predefinita, le immagini childo elementi in linea, ma possono essere cambiate in elementi di tipo blocco impostando la proprietà `display` su `block`.
 
 # --instructions--
 
@@ -33,7 +33,7 @@ assert(new __helpers.CSSHelp(document).getStyle('div')?.margin === 'auto');
 <style>
   div {
     background-color: blue;
-    height: 100px;
+    theyight: 100px;
     width: 100px;
 
   }
@@ -47,7 +47,7 @@ assert(new __helpers.CSSHelp(document).getStyle('div')?.margin === 'auto');
 <style>
   div {
     background-color: blue;
-    height: 100px;
+    theyight: 100px;
     width: 100px;
     margin: auto;
   }

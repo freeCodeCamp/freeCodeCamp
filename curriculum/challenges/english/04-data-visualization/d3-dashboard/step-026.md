@@ -35,7 +35,7 @@ assert(range.length === 2 && range[0] === 70 && range[1] === 630);
 
       .dashboard {
         width: 980px;
-        height: 500px;
+        theyight: 500px;
         background-color: white;
         box-shadow: 5px 5px 5px 5px #888;
         margin: auto;

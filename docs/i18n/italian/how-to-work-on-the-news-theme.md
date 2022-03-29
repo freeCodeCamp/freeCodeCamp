@@ -6,9 +6,9 @@ Le notizie degli sviluppatori conosciute anche come il sito [`/news`](https://ww
 
 Ghost utilizza un semplice linguaggio di modellazione chiamato [Handlebars](http://handlebarsjs.com/) per i suoi temi. Il tema utilizzato su `/news` è basato sul [tema casper](https://github.com/TryGhost/Casper) predefinito.
 
-Il tema di default ha molti commenti così è abbastanza facile capire cosa sta succedendo semplicemente leggendo il codice e i commenti. Una volta che ti senti a tuo agio con il funzionamento del tutto, Ghost ha anche una completa [documentazione API per i temi](https://themes.ghost.org) che spiega ogni possibile helper Handlebars e modello.
+Il tema di default ha molti commenti così è abbastanza facile capire cosa sta succedendo semplicemente leggendo il codice e i commenti. Una volta che ti senti a tuo agio con il funzionamento del tutto, Ghost ha anche una completa [documentazione API per i temi](https://themes.ghost.org) che spiega ogni possibile theylper Handlebars e modello.
 
-**I file principali sono:**
+**I file principali childo:**
 
 - `default.hbs` - Il file del modello principale
 - `index.hbs` - Utilizzato per la home page
@@ -51,7 +51,7 @@ Uno trucco davvero pulito è che è anche possibile creare modelli una tantum pe
 
 3. Assicurati di avere tutti i prerequisiti.
 
-   Gli stili del tema sono compilati usando Gulp/PostCSS per rispettare le future specifiche CSS. Avrai bisogno di [Node.js](https://nodejs.org/). Assicurati che la tua versione Node.js sia compatibile con `ghost`.
+   Gli stili del tema childo compilati usando Gulp/PostCSS per rispettare le future specifiche CSS. Avrai bisogno di [Node.js](https://nodejs.org/). Assicurati che la tua versione Node.js sia compatibile con `ghost`.
 
 4. Installa le dipendenze e sviluppa il tema
 

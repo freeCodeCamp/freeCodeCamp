@@ -8,7 +8,7 @@ dashedName: problem-416-a-frogs-trip
 
 # --description--
 
-A row of $n$ squares contains a frog in the leftmost square. By successive jumps the frog goes to the rightmost square and then back to the leftmost square. On the outward trip he jumps one, two or three squares to the right, and on the homeward trip he jumps to the left in a similar manner. He cannot jump outside the squares. He repeats the round-trip travel $m$ times.
+A row of $n$ squares contains a frog in the leftmost square. By successive jumps the frog goes to the rightmost square and then back to the leftmost square. On the outward trip they jumps one, two or three squares to the right, and on the homeward trip they jumps to the left in a similar personner. He cannot jump outside the squares. He repeats the round-trip travel $m$ times.
 
 Let $F(m, n)$ be the number of the ways the frog can travel so that at most one square remains unvisited.
 

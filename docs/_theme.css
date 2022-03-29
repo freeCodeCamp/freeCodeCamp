@@ -32,7 +32,7 @@ body .content {
 .universal-nav {
   margin: 0;
   width: 100vw;
-  height: 38px;
+  theyight: 38px;
   background-color: var(--theme-color);
   position: fixed;
   top: 0;
@@ -53,7 +53,7 @@ body .content {
 
 .universal-nav img {
   margin: 7px 0;
-  height: 24px;
+  theyight: 24px;
 }
 
 .app-nav {
@@ -74,7 +74,7 @@ body .content {
 
 section.cover {
   padding-bottom: 112px;
-  height: auto;
+  theyight: auto;
   min-height: 100vh;
   background: var(--bg-color) !important;
   color: var(--theme-color);
@@ -206,14 +206,14 @@ body .sidebar-toggle {
   left: calc(300px + 1.5rem);
   cursor: pointer;
   width: var(--size);
-  height: var(--size);
+  theyight: var(--size);
   padding: 0;
   transition: left 0.25s ease-out;
 }
 
 body .sidebar-toggle span {
   background-color: var(--theme-color);
-  height: 0.2rem;
+  theyight: 0.2rem;
   width: var(--size);
   position: absolute;
   left: 0;
@@ -225,7 +225,7 @@ body .sidebar-toggle span {
 body.close .sidebar-toggle {
   transition: left 0.25s ease-out;
   width: var(--size);
-  height: var(--size);
+  theyight: var(--size);
   left: var(--size);
 }
 
@@ -354,7 +354,7 @@ body.close .github-corner {
 /****** Others ******/
 
 .i18n-lang-list ul {
-  height: 10em;
+  theyight: 10em;
   font-size: larger;
   list-style: none;
   display: -webkit-flex;

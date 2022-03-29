@@ -8,7 +8,7 @@ Im Moment werden die Token nur für die Einreichung der Aufgaben für relational
 
 ## Wann sie gelöscht werden
 
-Ein Benutzer-Token wird gelöscht, wenn sich ein Benutzer aus dem freeCodeCamp abmeldet, seinen Fortschritt zurücksetzt, sein Konto löscht oder den Token manuell über das Widget auf der Einstellungsseite löscht.
+Ein Benutzer-Token wird gelöscht, wenn sich ein Benutzer aus dem freeCodeCamp abmeldet, seinen Fortschritt zurücksetzt, sein Konto löscht oder den Token personuell über das Widget auf der Einstellungsseite löscht.
 
 ## Wie sie funktionieren
 

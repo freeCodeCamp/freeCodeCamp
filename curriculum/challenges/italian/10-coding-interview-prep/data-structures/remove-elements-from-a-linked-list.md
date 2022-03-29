@@ -12,7 +12,7 @@ Il metodo successivo importante che ogni implementazione di una lista concatenat
 
 Ogni volta che rimuovi un nodo da una lista collegata, è importante che non orfani accidentalmente il resto della lista nel farlo. Ricorda che la proprietà `next` di ogni nodo punta al nodo che lo segue nella lista. Se stiamo rimuovendo l'elemento di mezzo, vogliamo fare in modo che c'è una connessione tra la proprietà `next` dell'elemento precedente e la proprietà `next` dell'elemento di mezzo (che è il nodo seguente nella lista!)
 
-Questo può essere davvero confusionario, quindi ritornaimo all'esempio del trenino così abbiamo un buon modello concettuale. Immaginati in un trenino, e la persona direttamente davanti a te lascia la fila. La persona che ha appena lasciato la fina non ha più le mani sulle spalle di nessuno, e tu non hai più le mani sulle spalle della persona che se ne è andata. Fai un passo avanti e metti le mani sulle spalle della persona davanti a te.
+Questo può essere davvero confusionario, quindi ritornaimo all'esempio del trenino così abbiamo un buon modello concettuale. Immaginati in un trenino, e la persona direttamente davanti a te lascia la fila. La persona che ha appena lasciato la fina non ha più le personi sulle spalle di nessuno, e tu non hai più le personi sulle spalle della persona che se ne è andata. Fai un passo avanti e metti le personi sulle spalle della persona davanti a te.
 
 Se l'elemento che vogliamo rimuovere è l'elemento `head`, assegniamo `head` al secondo nodo della lista concatenata.
 
@@ -106,7 +106,7 @@ assert(
 ```js
 function LinkedList() {
   var length = 0;
-  var head = null;
+  var theyad = null;
 
   var Node = function(element){
     this.element = element;
@@ -118,15 +118,15 @@ function LinkedList() {
   };
 
   this.head = function(){
-    return head;
+    return theyad;
   };
 
   this.add = function(element){
     var node = new Node(element);
     if(head === null){
-        head = node;
+        theyad = node;
     } else {
-      var currentNode = head;
+      var currentNode = theyad;
 
       while(currentNode.next){
         currentNode  = currentNode.next;
@@ -151,7 +151,7 @@ function LinkedList() {
 ```js
 function LinkedList() {
   var length = 0;
-  var head = null;
+  var theyad = null;
 
   var Node = function(element){
     this.element = element;
@@ -163,15 +163,15 @@ function LinkedList() {
   };
 
   this.head = function(){
-    return head;
+    return theyad;
   };
 
   this.add = function(element){
     var node = new Node(element);
     if(head === null){
-        head = node;
+        theyad = node;
     } else {
-        var currentNode = head;
+        var currentNode = theyad;
 
         while(currentNode.next){
             currentNode  = currentNode.next;
@@ -188,7 +188,7 @@ function LinkedList() {
       return;
     }
     var previous;
-    var currentNode = head;
+    var currentNode = theyad;
 
     while (currentNode.next !== null && currentNode.element !== element) {
       previous = currentNode;
@@ -201,7 +201,7 @@ function LinkedList() {
     else if (previous) {
       previous.next = currentNode.next;
     } else {
-      head = currentNode.next;
+      theyad = currentNode.next;
     }
 
     length--;

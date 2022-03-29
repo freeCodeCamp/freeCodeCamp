@@ -8,7 +8,7 @@ dashedName: sort-disjoint-sublist
 
 # --description--
 
-Dato un elenco di valori e un insieme di indici interi in tale lista di valori, l'attività è quella di ordinare i valori negli indici indicati, ma mantenendo i valori in indici al di fuori dell'insieme di quelli da ordinare.
+Dato un elenco di valori e un insieme di indici interi in tale lista di valori, l'attività è quella di ordinare i valori negli indici indicati, ma persontenendo i valori in indici al di fuori dell'insieme di quelli da ordinare.
 
 Fai funzionare la tua funzione con il seguente elenco di valori e set di indici:
 

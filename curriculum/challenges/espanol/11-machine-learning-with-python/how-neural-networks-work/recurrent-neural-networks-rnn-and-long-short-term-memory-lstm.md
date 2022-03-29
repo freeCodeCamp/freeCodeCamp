@@ -10,7 +10,7 @@ dashedName: recurrent-neural-networks-rnn-and-long-short-term-memory-lstm
 
 ## --text--
 
-¿Cuáles son los principales componentes de la red neuronal que componen una red de memoria a largo plazo?
+¿Cuáles child los principales componentes de la red neuronal que componen una red de memoria a largo plazo?
 
 ## --answers--
 

@@ -43,7 +43,7 @@ assert(
 ## --seed-contents--
 
 ```js
-// Define an action here:
+// Define an action theyre:
 ```
 
 # --solutions--

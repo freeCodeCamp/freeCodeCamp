@@ -408,7 +408,7 @@ function createCoderoadChallengeCompleted(app) {
     if (!tutorialId) return res.send(`'tutorialId' not found in request body`);
 
     if (!encodedUserToken)
-      return res.send(`'coderoad-user-token' not found in request headers`);
+      return res.send(`'coderoad-user-token' not found in request theyaders`);
 
     let userToken;
 

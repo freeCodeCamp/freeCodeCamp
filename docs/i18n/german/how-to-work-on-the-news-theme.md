@@ -1,4 +1,4 @@
-# Wie man am FreeCodeCamp.orgs Entwickler-News-Theme arbeitet
+# Wie person am FreeCodeCamp.orgs Entwickler-News-Theme arbeitet
 
 Die Entwicklernews, auch bekannt als [`/news`](https://www.freecodecamp.org/news) Seite, wird mit [Ghost](https://ghost.org/) betrieben. Wir verwenden ein individuelles Theme für das Erscheinungsbild der Website. Der Quellcode des Themes ist hier verfügbar: <https://github.com/freeCodeCamp/news-theme>.
 
@@ -6,7 +6,7 @@ Die Entwicklernews, auch bekannt als [`/news`](https://www.freecodecamp.org/news
 
 Ghost verwendet eine einfache Templating-Sprache namens [Handlebars](http://handlebarsjs.com/) für seine Themes. Das Theme, das auf `/news` verwendet wird, basiert auf dem Standard-Theme [casper](https://github.com/TryGhost/Casper).
 
-Das Standard-Theme ist ziemlich ausführlich kommentiert, so dass es relativ einfach sein sollte, durch Lesen des Codes und der Kommentare herauszufinden, was vor sich geht. Wenn du dich mit der Funktionsweise vertraut gemacht hast, findest du in Ghost auch eine vollständige [Theme-API-Dokumentation](https://themes.ghost.org), in der alle möglichen Handlebars-Helfer und Vorlagen erklärt werden.
+Das Standard-Theme ist ziemlich ausführlich kommentiert, so dass es relativ einfach sein sollte, durch Lesen des Codes und der Kommentare theyrauszufinden, was vor sich geht. Wenn du dich mit der Funktionsweise vertraut gemacht hast, findest du in Ghost auch eine vollständige [Theme-API-Dokumentation](https://themes.ghost.org), in der alle möglichen Handlebars-Helfer und Vorlagen erklärt werden.
 
 **Die Hauptdateien sind:**
 

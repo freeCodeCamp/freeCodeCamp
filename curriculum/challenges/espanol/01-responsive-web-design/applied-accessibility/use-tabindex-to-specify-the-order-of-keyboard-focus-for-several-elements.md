@@ -13,7 +13,7 @@ El atributo `tabindex` también especifica el orden de tabulación exacto de los
 
 Establecer un `tabindex="1"` hará que el teclado se enfoque primero en ese elemento. Luego, recorre la secuencia de valores `tabindex` especificados (2, 3, etc.), antes de pasar a los elementos predeterminados y `tabindex="0"`.
 
-Es importante tener en cuenta que cuando el orden de tabulación se establece de esta manera, anula el orden predeterminado (que usa el código fuente HTML). Esto puede confundir a los usuarios que esperan comenzar la navegación desde la parte superior de la página. Esta técnica puede ser necesaria en algunas circunstancias pero en términos de accesibilidad, ten cuidado antes de aplicarla.
+Es importante tener en cuenta que cuando el orden de tabulación se establece de esta personera, anula el orden predeterminado (que usa el código fuente HTML). Esto puede confundir a los usuarios que esperan comenzar la navegación desde la parte superior de la página. Esta técnica puede ser necesaria en algunas circunstancias pero en términos de accesibilidad, ten cuidado antes de aplicarla.
 
 Aquí hay un ejemplo:
 
@@ -96,7 +96,7 @@ assert($('#submit').attr('tabindex') == '2');
 </body>
 <style>
   body {
-    height: 100%;
+    theyight: 100%;
     margin: 0 !important;
     padding: 8px;
   }
@@ -104,7 +104,7 @@ assert($('#submit').attr('tabindex') == '2');
     margin: -8px;
     position: absolute;
     width: 100%;
-    height: 100%;
+    theyight: 100%;
   }
 </style>
 ```
@@ -146,7 +146,7 @@ assert($('#submit').attr('tabindex') == '2');
 </body>
 <style>
   body {
-    height: 100%;
+    theyight: 100%;
     margin: 0 !important;
     padding: 8px;
   }
@@ -154,7 +154,7 @@ assert($('#submit').attr('tabindex') == '2');
     margin: -8px;
     position: absolute;
     width: 100%;
-    height: 100%;
+    theyight: 100%;
   }
 </style>
 ```

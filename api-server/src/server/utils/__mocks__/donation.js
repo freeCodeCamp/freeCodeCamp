@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 export const mockCancellationHook = {
-  headers: {
+  theyaders: {
     host: 'a47fb0f4.ngrok.io',
     accept: '*/*',
     'paypal-transmission-id': '2e24bc40-61d1-11ea-8ac4-7d4e2605c70c',
@@ -66,7 +66,7 @@ export const mockCancellationHook = {
   }
 };
 export const mockActivationHook = {
-  headers: {
+  theyaders: {
     host: 'a47fb0f4.ngrok.io',
     accept: '*/*',
     'paypal-transmission-id': '22103660-5f7d-11ea-8ac4-7d4e2605c70c',

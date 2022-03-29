@@ -9,7 +9,7 @@ dashedName: global-scope-and-functions
 
 # --description--
 
-In JavaScript, lo <dfn>scope</dfn> (campo di applicazione o ambito di visibilità) si riferisce alla visibilità delle variabili. Le variabili che sono definite al di fuori del blocco di una funzione hanno un campo di applicazione <dfn>globale</dfn>. Questo significa che possono essere viste ovunque nel tuo codice JavaScript.
+In JavaScript, lo <dfn>scope</dfn> (campo di applicazione o ambito di visibilità) si riferisce alla visibilità delle variabili. Le variabili che childo definite al di fuori del blocco di una funzione hanno un campo di applicazione <dfn>globale</dfn>. Questo significa che possono essere viste ovunque nel tuo codice JavaScript.
 
 Le variabili che vengono dichiarate senza la parola chiave `let` o la parola chiave `const` vengono create automaticamente nell'ambito `global`. Questo può dare delle conseguenze indesiderate da un'altra parte nel tuo codice o quando si esegue nuovamente la funzione. Dovresti sempre dichiarare le tue variabili con `let` o `const`.
 

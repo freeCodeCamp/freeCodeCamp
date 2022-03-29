@@ -8,7 +8,7 @@ dashedName: override-default-props
 
 # --description--
 
-La capacidad de establecer valores por defecto para las props es una característica útil en React. La manera de reemplazar las props predeterminadas es establecer explícitamente los valores de las props para un componente.
+La capacidad de establecer valores por defecto para las props es una característica útil en React. La personera de reemplazar las props predeterminadas es establecer explícitamente los valores de las props para un componente.
 
 # --instructions--
 
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-El componente `Items` debe tener una prop de `{ quantity: 10 }` heredada desde el componente `ShoppingCart`.
+El componente `Items` debe tener una prop de `{ quantity: 10 }` theyredada desde el componente `ShoppingCart`.
 
 ```js
 (getUserInput) =>

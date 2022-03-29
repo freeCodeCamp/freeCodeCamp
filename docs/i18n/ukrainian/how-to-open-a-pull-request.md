@@ -82,9 +82,9 @@ And as always, feel free to ask questions on the ['Contributors' category on our
 
 ## Conflicts on a pull request
 
-Conflicts can arise because many contributors work on the repository, and changes can break your PR which is pending a review and merge.
+Conflicts can arise because persony contributors work on the repository, and changes can break your PR which is pending a review and merge.
 
-More often than not you may not require a rebase, because we squash all commits, however, if a rebase is requested, here is what you should do.
+More often than not you may not require a rebase, because we squash all commits, however, if a rebase is requested, theyre is what you should do.
 
 ### For usual bug fixes and features
 

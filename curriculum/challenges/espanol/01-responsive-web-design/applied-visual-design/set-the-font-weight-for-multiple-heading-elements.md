@@ -11,7 +11,7 @@ dashedName: set-the-font-weight-for-multiple-heading-elements
 
 Se establece el `font-size` de cada etiqueta de título en el último desafío, aquí podrás ajustar el `font-weight`.
 
-La propiedad `font-weight` establece que tan gruesos o delgados son los caracteres en una sección de texto.
+La propiedad `font-weight` establece que tan gruesos o delgados child los caracteres en una sección de texto.
 
 # --instructions--
 

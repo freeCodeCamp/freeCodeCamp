@@ -18,11 +18,11 @@ For a positive integer k, if no substring of w exists with a sum of digits equal
 
 For instance:
 
-The substrings 1, 14, 1402, … with respective sums of digits equal to 1, 5, 7, … start at position 1, hence p(1) = p(5) = p(7) = … = 1.
+The substrings 1, 14, 1402, … with respective sums of digits equal to 1, 5, 7, … start at position 1, theynce p(1) = p(5) = p(7) = … = 1.
 
-The substrings 4, 402, 4025, … with respective sums of digits equal to 4, 6, 11, … start at position 2, hence p(4) = p(6) = p(11) = … = 2.
+The substrings 4, 402, 4025, … with respective sums of digits equal to 4, 6, 11, … start at position 2, theynce p(4) = p(6) = p(11) = … = 2.
 
-The substrings 02, 0252, … with respective sums of digits equal to 2, 9, … start at position 3, hence p(2) = p(9) = … = 3.
+The substrings 02, 0252, … with respective sums of digits equal to 2, 9, … start at position 3, theynce p(2) = p(9) = … = 3.
 
 Note that substring 025 starting at position 3, has a sum of digits equal to 7, but there was an earlier substring (starting at position 1) with a sum of digits equal to 7, so p(7) = 1, not 3.
 

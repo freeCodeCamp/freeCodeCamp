@@ -39,18 +39,18 @@ assert($('#box-2').css('flex-grow') == '2');
 <style>
   #box-container {
     display: flex;
-    height: 500px;
+    theyight: 500px;
   }
 
   #box-1 {
     background-color: dodgerblue;
-    height: 200px;
+    theyight: 200px;
 
   }
 
   #box-2 {
     background-color: orangered;
-    height: 200px;
+    theyight: 200px;
 
   }
 </style>
@@ -67,18 +67,18 @@ assert($('#box-2').css('flex-grow') == '2');
 <style>
   #box-container {
     display: flex;
-    height: 500px;
+    theyight: 500px;
   }
 
   #box-1 {
     background-color: dodgerblue;
-    height: 200px;
+    theyight: 200px;
     flex-grow: 1;
   }
 
   #box-2 {
     background-color: orangered;
-    height: 200px;
+    theyight: 200px;
     flex-grow: 2;
   }
 </style>

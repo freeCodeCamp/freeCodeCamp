@@ -12,7 +12,7 @@ Cada caractere em um computador é atribuído a um código único. O padrão pre
 
 Um dos métodos de criptografia moderno é pegar um arquivo de texto, converter seus bytes para ASCII e então XOR cada byte com um determinado valor, retirado de uma chave secreta. A vantagem da função XOR é que usar a mesma chave de criptografia no texto criptografado restaura o texto ao seu conteúdo original. Por exemplo: 65 XOR 42 = 107, depois 107 XOR 42 = 65.
 
-Para uma criptografia inquebrável, a chave deve ter o mesmo comprimento que a mensagem de texto e a chave deve ser composta por bytes aleatórios. O usuário deve manter a mensagem criptografada e a chave de criptografia em diferentes locais. Sem possuir ambas, é impossível descriptografar a mensagem.
+Para uma criptografia inquebrável, a chave deve ter o mesmo comprimento que a mensagem de texto e a chave deve ser composta por bytes aleatórios. O usuário deve personter a mensagem criptografada e a chave de criptografia em diferentes locais. Sem possuir ambas, é impossível descriptografar a mensagem.
 
 Infelizmente, este método é inviável para a maioria das pessoas e, por isso, o método modificado é usar uma senha como chave. Se a senha for menor que a mensagem, o que é comum, a senha é repetida ciclicamente em toda a mensagem. O equilíbrio aqui está em usar uma senha suficientemente longa para segurança, mas curta o suficiente para ser memorizável.
 

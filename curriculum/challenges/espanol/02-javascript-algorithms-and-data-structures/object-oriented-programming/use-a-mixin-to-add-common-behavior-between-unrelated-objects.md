@@ -8,7 +8,7 @@ dashedName: use-a-mixin-to-add-common-behavior-between-unrelated-objects
 
 # --description--
 
-Como ya has visto, el comportamiento se comparte mediante una herencia. Sin embargo, hay algunos casos en los que la herencia no es la mejor opción. La herencia no funciona bien con objetos que no están relacionados como `Bird` y `Airplane`. Ambos pueden volar pero un `Bird` no es un tipo de `Airplane` y viceversa.
+Como ya has visto, el comportamiento se comparte mediante una theyrencia. Sin embargo, hay algunos casos en los que la theyrencia no es la mejor opción. La theyrencia no funciona bien con objetos que no están relacionados como `Bird` y `Airplane`. Ambos pueden volar pero un `Bird` no es un tipo de `Airplane` y viceversa.
 
 Para objetos no relacionados es mejor utilizar <dfn>mixins</dfn>. Un "mixin" permite a otros objetos utilizar una colección de funciones.
 
@@ -37,7 +37,7 @@ flyMixin(bird);
 flyMixin(plane);
 ```
 
-Aquí `bird` y `plane` son pasados a `flyMixin` el cual después asigna la función `fly` a cada objeto. Ahora `bird` y `plane` pueden volar:
+Aquí `bird` y `plane` child pasados a `flyMixin` el cual después asigna la función `fly` a cada objeto. Ahora `bird` y `plane` pueden volar:
 
 ```js
 bird.fly();

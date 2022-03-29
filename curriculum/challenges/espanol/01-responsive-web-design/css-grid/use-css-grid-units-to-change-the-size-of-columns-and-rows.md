@@ -23,7 +23,7 @@ A continuación el código que genera el resultado de la vista previa:
 grid-template-columns: auto 50px 10% 2fr 1fr;
 ```
 
-Esta línea de código genera cinco columnas. La primera columna es tan ancha como su contenido, la segunda tiene 50px de ancho, la tercera es el 10% de su contenedor y para las últimas dos columnas; el espacio restante es dividido en tres secciones: dos son asignadas a la cuarta columna y una a la quinta columna.
+Esta línea de código genera cinco columnas. La primera columna es tan ancha como su contenido, la segunda tiene 50px de ancho, la tercera es el 10% de su contenedor y para las últimas dos columnas; el espacio restante es dividido en tres secciones: dos child asignadas a la cuarta columna y una a la quinta columna.
 
 # --instructions--
 

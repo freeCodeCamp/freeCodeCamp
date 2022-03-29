@@ -14,9 +14,9 @@ Imagine que está em uma fila de dançarinos de conga. Suas mãos estão sobre a
 
 # --instructions--
 
-No nosso editor de código, criamos dois nós, `Kitten` e `Puppy`, e conectamos manualmente o nó `Kitten` com o nó `Puppy`.
+No nosso editor de código, criamos dois nós, `Kitten` e `Puppy`, e conectamos personualmente o nó `Kitten` com o nó `Puppy`.
 
-Crie um nó de `Cat` e um nó `Dog` e adicione-os manualmente à lista.
+Crie um nó de `Cat` e um nó `Dog` e adicione-os personualmente à lista.
 
 # --hints--
 

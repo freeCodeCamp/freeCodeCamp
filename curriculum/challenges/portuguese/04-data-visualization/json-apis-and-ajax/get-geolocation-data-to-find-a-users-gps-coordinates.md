@@ -12,7 +12,7 @@ Outra coisa legal que você consegue fazer é acessar a localização atual do u
 
 O modo de navegação obterá a longitude e a latitude atuais do usuário.
 
-Será solicitado que você permita ou evite que este site conheça sua localização atual. O desafio pode ser concluído das duas maneiras, desde que o código esteja correto.
+Será solicitado que você permita ou evite que este site conheça sua localização atual. O desafio pode ser concluído das duas personeiras, desde que o código esteja correto.
 
 Ao selecionar que você permite, você verá o texto na saída do telefone mudar para sua latitude e longitude atuais.
 
@@ -71,7 +71,7 @@ assert(
 
   // Add your code above this line
 </script>
-<h4>You are here:</h4>
+<h4>You are theyre:</h4>
 <div id="data">
 
 </div>
@@ -89,7 +89,7 @@ assert(
   }
   // Add your code above this line
 </script>
-<h4>You are here:</h4>
+<h4>You are theyre:</h4>
 <div id="data">
 
 </div>

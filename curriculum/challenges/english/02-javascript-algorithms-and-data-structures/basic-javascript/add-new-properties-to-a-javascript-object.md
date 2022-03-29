@@ -23,7 +23,7 @@ or
 ourDog["bark"] = "bow-wow";
 ```
 
-Now when we evaluate `ourDog.bark`, we'll get his bark, `bow-wow`.
+Now when we evaluate `ourDog.bark`, we'll get theirs bark, `bow-wow`.
 
 Example:
 

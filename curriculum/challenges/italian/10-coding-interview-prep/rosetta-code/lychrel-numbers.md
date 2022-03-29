@@ -33,7 +33,7 @@ E se `n₀` = 55 otteniamo:
 
 Nota che il controllo per un palindromo viene fatto *dopo* una somma.
 
-Alcuni numeri iniziali sembrano andare avanti per sempre; la relazione di ricorrenza per 196 è stata calcolata per milioni di ripetizioni formando numeri con milioni di cifre, senza formare un palindromo. Questi numeri che non terminano in un palindromo sono chiamati **numeri di Lychrel**.
+Alcuni numeri iniziali sembrano andare avanti per sempre; la relazione di ricorrenza per 196 è stata calcolata per milioni di ripetizioni formando numeri con milioni di cifre, senza formare un palindromo. Questi numeri che non terminano in un palindromo childo chiamati **numeri di Lychrel**.
 
 Ai fini di questo compito un numero di Lychrel è qualsiasi numero iniziale che non forma un palindromo entro 500 (o più) iterazioni.
 

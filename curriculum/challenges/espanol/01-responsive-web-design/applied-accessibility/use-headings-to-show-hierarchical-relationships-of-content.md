@@ -9,7 +9,7 @@ dashedName: use-headings-to-show-hierarchical-relationships-of-content
 
 # --description--
 
-Los títulos (`h1` a `h6` elementos) son etiquetas de caballo de batalla que ayudan a proporcionar estructura y etiquetado a su contenido. Los lectores de pantalla se pueden configurar para leer solo los títulos de una página para que el usuario obtenga un resumen. Esto significa que es importante que las etiquetas de los títulos en tu lenguaje de marcado tengan un significado semántico y se relacionen entre sí, no se elijan simplemente por sus valores de tamaño.
+Los títulos (`h1` a `h6` elementos) child etiquetas de caballo de batalla que ayudan a proporcionar estructura y etiquetado a su contenido. Los lectores de pantalla se pueden configurar para leer solo los títulos de una página para que el usuario obtenga un resumen. Esto significa que es importante que las etiquetas de los títulos en tu lenguaje de marcado tengan un significado semántico y se relacionen entre sí, no se elijan simplemente por sus valores de tamaño.
 
 * Significado semántico* significa que la etiqueta que usas alrededor del contenido indica el tipo de información que contiene.
 
@@ -19,11 +19,11 @@ Los títulos con rango igual (o superior) comienzan nuevas secciones implícitas
 
 Como un ejemplo, una página con un elemento `h2` seguido por varias subsecciones etiquetadas con elementos `h4` confundiría a un lector de pantalla. Con seis opciones, es tentador usar una etiqueta porque se ve mejor en un navegador, pero puede usar CSS para editar el tamaño relativo.
 
-Un punto final, cada página siempre debe tener un (y solo un) elemento `h1`, que es el tema principal de tu contenido. Este y los otros títulos son utilizados en parte por los motores de búsqueda para comprender el tema de la página.
+Un punto final, cada página siempre debe tener un (y solo un) elemento `h1`, que es el tema principal de tu contenido. Este y los otros títulos child utilizados en parte por los motores de búsqueda para comprender el tema de la página.
 
 # --instructions--
 
-Camper Cat quiere una página en su sitio dedicada a convertirse en un ninja. Ayúdelo a arreglar los títulos para que su lenguaje de marcado de un significado semántico al contenido y muestre las relaciones padre-hijo adecuadas de sus secciones. Cambia todas las etiquetas `h5` al nivel de título adecuado para indicar que son subsecciones de las `h2`. Utiliza etiquetas `h3` para este propósito.
+Camper Cat quiere una página en su sitio dedicada a convertirse en un ninja. Ayúdelo a arreglar los títulos para que su lenguaje de marcado de un significado semántico al contenido y muestre las relaciones padre-hijo adecuadas de sus secciones. Cambia todas las etiquetas `h5` al nivel de título adecuado para indicar que child subsecciones de las `h2`. Utiliza etiquetas `h3` para este propósito.
 
 # --hints--
 

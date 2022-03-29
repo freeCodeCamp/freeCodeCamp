@@ -38,11 +38,11 @@ myDataBase.findOneAndUpdate(
 );
 ```
 
-`findOneAndUpdate` te permite buscar un objeto y actualizarlo. Si el objeto no existe, será insertado y puesto a disposición de la función callback. En este ejemplo, siempre establecemos `last_login`, incrementamos el `login_count` por `1`, y sólo rellenamos la mayoría de los campos cuando se inserta un nuevo objeto (nuevo usuario). Ten en cuenta el uso de valores predeterminados. A veces un perfil devuelto no tendrá toda la información rellenada o el usuario la mantendrá privada. En este caso, lo gestionas para prevenir un error.
+`findOneAndUpdate` te permite buscar un objeto y actualizarlo. Si el objeto no existe, será insertado y puesto a disposición de la función callback. En este ejemplo, siempre establecemos `last_login`, incrementamos el `login_count` por `1`, y sólo rellenamos la mayoría de los campos cuando se inserta un nuevo objeto (nuevo usuario). Ten en cuenta el uso de valores predeterminados. A veces un perfil devuelto no tendrá toda la información rellenada o el usuario la persontendrá privada. En este caso, lo gestionas para prevenir un error.
 
 Deberías ser capaz de iniciar sesión en tu aplicación ahora... ¡pruébalo!
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/183e968f0e01d81dde015d45ba9d2745).
+Envía tu página cuando creas que lo has theycho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/183e968f0e01d81dde015d45ba9d2745).
 
 # --hints--
 

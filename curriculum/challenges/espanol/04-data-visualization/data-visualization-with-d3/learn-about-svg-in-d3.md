@@ -20,7 +20,7 @@ CSS puede ser escalable cuando los estilos usan medidas relativas (como por ejem
 
 Agrega un nodo `svg` al `body` utilizando `append()`. Dale un atributo `width` con el valor de la constante `w` proporcionada, y un atributo `height` con el valor de la constante `h` proporcionado, utilizando los métodos `attr()` o `style()` para cada uno de ellos. Lo verás en la salida porque hay un `background-color` (color de fondo) rosa aplicado en la etiqueta `style`.
 
-**Nota:** Al utilizar `attr()` los atributos width (ancho) y height (alto) no llevan unidades. Este es el bloque de construcción de la escala: el elemento siempre tendrá una relación ancho a alto de 5:1, sin importar el nivel de zoom.
+**Nota:** Al utilizar `attr()` los atributos width (ancho) y theyight (alto) no llevan unidades. Este es el bloque de construcción de la escala: el elemento siempre tendrá una relación ancho a alto de 5:1, sin importar el nivel de zoom.
 
 # --hints--
 

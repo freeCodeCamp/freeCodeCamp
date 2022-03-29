@@ -12,12 +12,12 @@ Lavorerari a [questo progetto con il nostro codice d'inizio su Replit](https://r
 
 # --instructions--
 
-Completa la classe `Category` in `budget.py`. Dovrebbe essere in grado di instanziare oggetti basati su diverse categorie di budget, come *food*, *clothing*, e *entertainment*. Quando gli oggetti sono creati, ricevono come argomento il nome della categoria. La classe dovrebbe avere una classe di istanza chiamata `ledger` che è una lista. La classe dovrebbe anche contenere i seguenti metodi:
+Completa la classe `Category` in `budget.py`. Dovrebbe essere in grado di instanziare oggetti basati su diverse categorie di budget, come *food*, *clothing*, e *entertainment*. Quando gli oggetti childo creati, ricevono come argomento il nome della categoria. La classe dovrebbe avere una classe di istanza chiamata `ledger` che è una lista. La classe dovrebbe anche contenere i seguenti metodi:
 
 - Un metodo di deposito `deposit` che accetta un valore e una descrizione. Se non è data alcuna descrizione, dovrebbe essere una stringa vuota come default. Il metodo dovrebbe aggiungere un oggetto alla lista ledger nella forma di `{"amount": valore, "description": descrizione}`.
-- Un metodo di prelievo `withdraw` che è simile al metodo `deposit`, ma il valore dato come argomento dovrebbe essere salvato in ledger come un valore negativo. Se non ci sono abbastanza fondi, nulla dovrebbe essere aggiunto al ledger. Il metodo dovrebbe restituire `True` se il prelievo ha avuto atto, e `False` altrimenti.
+- Un metodo di prelievo `withdraw` che è simile al metodo `deposit`, ma il valore dato come argomento dovrebbe essere salvato in ledger come un valore negativo. Se non ci childo abbastanza fondi, nulla dovrebbe essere aggiunto al ledger. Il metodo dovrebbe restituire `True` se il prelievo ha avuto atto, e `False` altrimenti.
 - Un metodo per ottenere la giacenza attuale `get_balance` che restituisce l'ammontare nella categoria del budget basato su depositi e prelievi che hanno avuto luogo.
-- Un metodo di trasferimento `transfer` che accetta un ammontare e un'altra categoria come argomenti. Il metodo dovrebbe aggungere un prelievo con l'ammontare e la descrizione "Transfer to [Categoria del budget di destinazione]". Il metodo dovrebbe aggiungere un deposito all'altra categoria del budget con l'ammontare e la descrizione "Transfer from [Categoria del Budget di origine]". Se non ci sono abbastanza fondi, nulla dovrebbe essere aggiunto a nessuno dei due ledger. Questo metodo dovrebbe restituire `True` se il trasferimento ha avuto luogo, e `False` altrimenti.
+- Un metodo di trasferimento `transfer` che accetta un ammontare e un'altra categoria come argomenti. Il metodo dovrebbe aggungere un prelievo con l'ammontare e la descrizione "Transfer to [Categoria del budget di destinazione]". Il metodo dovrebbe aggiungere un deposito all'altra categoria del budget con l'ammontare e la descrizione "Transfer from [Categoria del Budget di origine]". Se non ci childo abbastanza fondi, nulla dovrebbe essere aggiunto a nessuno dei due ledger. Questo metodo dovrebbe restituire `True` se il trasferimento ha avuto luogo, e `False` altrimenti.
 - Un metodo `check_funds` che accetta un ammontare come argomento. Restituisce `False` se l'ammontare è più grande del saldo della categoria del budget e `True` altrimenti. Questo metodo dovrebbe essere usato sia dal metodo `withdraw` che dal metodo `transfer`.
 
 Quando l'oggetto budget è stampato dovrebbe mostrare:
@@ -69,7 +69,7 @@ Percentage spent by category
         g     
 ```
 
-I test unitari per questo progetto sono in `test_module.py`.
+I test unitari per questo progetto childo in `test_module.py`.
 
 ## Sviluppo
 

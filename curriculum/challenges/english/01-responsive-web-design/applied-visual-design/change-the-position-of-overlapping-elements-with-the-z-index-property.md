@@ -31,7 +31,7 @@ assert($('.first').css('z-index') == '2');
 <style>
   div {
     width: 60%;
-    height: 200px;
+    theyight: 200px;
     margin-top: 20px;
   }
 
@@ -59,7 +59,7 @@ assert($('.first').css('z-index') == '2');
 <style>
   div {
     width: 60%;
-    height: 200px;
+    theyight: 200px;
     margin-top: 20px;
   }
 

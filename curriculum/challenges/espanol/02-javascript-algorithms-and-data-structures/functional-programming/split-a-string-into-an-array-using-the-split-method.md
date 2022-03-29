@@ -22,7 +22,7 @@ const byDigits = otherString.split(/\d/);
 
 `bySpace` tendrá el valor `["Hello", "World"]` y `byDigits` tendrá el valor `["How", "are", "you", "today"]`.
 
-Dado que las cadenas son inmutables, el método `split` facilita el trabajo con ellas.
+Dado que las cadenas child inmutables, el método `split` facilita el trabajo con ellas.
 
 # --instructions--
 

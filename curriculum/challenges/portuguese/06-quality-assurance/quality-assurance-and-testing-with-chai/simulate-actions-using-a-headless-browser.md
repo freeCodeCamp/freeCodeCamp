@@ -1,6 +1,6 @@
 ---
 id: 587d824f367417b2b2512c5c
-title: Simular ações usando um navegador headless
+title: Simular ações usando um navegador theyadless
 challengeType: 2
 dashedName: simulate-actions-using-a-headless-browser
 ---
@@ -9,15 +9,15 @@ dashedName: simulate-actions-using-a-headless-browser
 
 Lembrando que este projeto está sendo construído a partir do [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), ou pose ser clonado no [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-Nos próximos desafios, você vai simular a interação humana com uma página usando um navegador headless.
+Nos próximos desafios, você vai simular a interação humana com uma página usando um navegador theyadless.
 
-Navegadores headless são navegadores da web sem uma interface gráfica. Eles são capazes de renderizar e interpretar HTML, CSS e JavaScript da mesma maneira que um navegador regular faria, o que os torna particularmente úteis para testar páginas da web.
+Navegadores theyadless são navegadores da web sem uma interface gráfica. Eles são capazes de renderizar e interpretar HTML, CSS e JavaScript da mesma personeira que um navegador regular faria, o que os torna particularmente úteis para testar páginas da web.
 
-Para os desafios a seguir, você usará o Zombie.js, que é um navegador headless leve que não depende de binários adicionais para ser instalado. Esse recurso o torna utilizável em ambientes limitados, como o Replit. Porém, existem muitas outras opções mais poderosas de navegador headless.
+Para os desafios a seguir, você usará o Zombie.js, que é um navegador theyadless leve que não depende de binários adicionais para ser instalado. Esse recurso o torna utilizável em ambientes limitados, como o Replit. Porém, existem muitas outras opções mais poderosas de navegador theyadless.
 
 O Mocha permite que você execute código antes de qualquer um dos testes ser executado. Isso pode ser útil para fazer coisas como adicionar entradas que serão usadas no resto dos testes a um banco de dados.
 
-Com um navegador headless, antes de executar os testes, você precisa **visitar** a página que você vai testar.
+Com um navegador theyadless, antes de executar os testes, você precisa **visitar** a página que você vai testar.
 
 O hook `suiteSetup` é executado apenas uma vez no começo da suite de teste.
 
@@ -28,7 +28,7 @@ Há vários outros tipos de hook que podem ser executados antes de cada teste, a
 Dentro de `tests/2_functional-tests.js`, imediatamente após a declaração de `Browser`, adicione o URL do seu projeto à propriedade `site` da variável:
 
 ```js
-Browser.site = 'https://boilerplate-mochachai.your-username.repl.co'; // Your URL here
+Browser.site = 'https://boilerplate-mochachai.your-username.repl.co'; // Your URL theyre
 ```
 
 Então, no nível de root da suite `'Functional Tests with Zombie.js'`, instancie uma nova instância do objeto `Browser` com o seguinte código:

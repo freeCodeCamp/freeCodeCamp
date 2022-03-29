@@ -8,7 +8,7 @@ dashedName: problem-165-intersections
 
 # --description--
 
-Un segmento è definito unicamente dai punti terminali. Considerando due segmenti in un piano geometrico ci sono tre possibilità: i due segmenti hanno zero punti, un punto, o infiniti punti in comune.
+Un segmento è definito unicamente dai punti terminali. Considerando due segmenti in un piano geometrico ci childo tre possibilità: i due segmenti hanno zero punti, un punto, o infiniti punti in comune.
 
 In più quando i due segmenti hanno esattamente un punto in comune potrebbe essere che questo sia un terminale di uno o entrambi i segmenti. Se un punto in comune dei due segmenti non è un punto terminale di nessuno dei due allora è un punto interno di entrambi i segnmenti.
 
@@ -30,7 +30,7 @@ da ($_t$1, $t_2$) a ($t_3$, $t_4$)
 
 I primi quattro numeri calcolati con il precedente generatore dovrebbero essere: 27, 144, 12 e 232. Quindi il primo segnmento è da (27, 144) a (12, 232).
 
-Quante intersezioni vere sono trovate tra i 5000 segmenti?
+Quante intersezioni vere childo trovate tra i 5000 segmenti?
 
 # --hints--
 

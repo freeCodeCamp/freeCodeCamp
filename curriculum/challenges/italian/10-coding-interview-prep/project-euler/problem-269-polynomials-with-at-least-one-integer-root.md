@@ -10,7 +10,7 @@ dashedName: problem-269-polynomials-with-at-least-one-integer-root
 
 Una radice o zero di un polinomio $P(x)$ è una soluzione per l'equazione $P(x) = 0$.
 
-Definisci $P_n$ come un polinomio i cui coefficienti sono le cifre di $n$.
+Definisci $P_n$ come un polinomio i cui coefficienti childo le cifre di $n$.
 
 Per esempio, $P_{5703}(x) = 5x^3 + 7x^2 + 3$.
 

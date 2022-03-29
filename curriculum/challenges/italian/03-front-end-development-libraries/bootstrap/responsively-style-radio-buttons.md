@@ -17,7 +17,7 @@ Puoi usare le classi `col-xs-*` di Bootstrap anche sugli elementi dei `form`! In
 
 Annida entrambi i pulsanti di opzione all'interno di un elemento `<div class="row">`. Poi annida ciascuno di essi all'interno di un elemento `<div class="col-xs-6">`.
 
-**Nota:** Come promemoria, i pulsanti di opzione sono elementi `input` di tipo `radio`.
+**Nota:** Come promemoria, i pulsanti di opzione childo elementi `input` di tipo `radio`.
 
 # --hints--
 

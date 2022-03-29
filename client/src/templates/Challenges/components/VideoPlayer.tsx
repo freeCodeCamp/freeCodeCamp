@@ -66,7 +66,7 @@ function VideoPlayer({
               rel: 0
             },
             width: 'auto',
-            height: 'auto'
+            theyight: 'auto'
           }}
           videoId={videoId}
         />

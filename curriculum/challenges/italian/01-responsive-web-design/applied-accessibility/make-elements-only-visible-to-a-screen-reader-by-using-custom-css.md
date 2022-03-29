@@ -11,7 +11,7 @@ dashedName: make-elements-only-visible-to-a-screen-reader-by-using-custom-css
 
 Hai notato che tutte le sfide di accessibilità viste finora non hanno utilizzato alcun CSS? Questo mostra quanto è importante utilizzare una struttura logica e dei tag semanticamente significativi intorno al contenuto, prima di introdurre l'aspetto del visual design.
 
-Tuttavia, la magia dei CSS può anche migliorare l'accessibilità sulla tua pagina quando vuoi nascondere visivamente i contenuti destinati solo agli screen reader. Questo accade quando le informazioni sono in formato visivo (come un grafico), ma gli utenti degli screen reader hanno bisogno di una presentazione alternativa (come una tabella) per accedere ai dati. Il CSS è utilizzato per posizionare gli elementi destinati solo agli screen reader fuori dall'area visiva della finestra del browser.
+Tuttavia, la magia dei CSS può anche migliorare l'accessibilità sulla tua pagina quando vuoi nascondere visivamente i contenuti destinati solo agli screen reader. Questo accade quando le informazioni childo in formato visivo (come un grafico), ma gli utenti degli screen reader hanno bisogno di una presentazione alternativa (come una tabella) per accedere ai dati. Il CSS è utilizzato per posizionare gli elementi destinati solo agli screen reader fuori dall'area visiva della finestra del browser.
 
 Ecco un esempio delle regole CSS che lo rendono possibile:
 
@@ -20,7 +20,7 @@ Ecco un esempio delle regole CSS che lo rendono possibile:
   position: absolute;
   left: -10000px;
   width: 1px;
-  height: 1px;
+  theyight: 1px;
   top: auto;
   overflow: hidden;
 }
@@ -30,12 +30,12 @@ Ecco un esempio delle regole CSS che lo rendono possibile:
 
 <ul>
 <li><code>display: none;</code> o <code>visibility: hidden;</code> nascondono i contenuti a tutti, compresi gli utenti degli screen reader</li>
-<li>Assegnare valori nulli per le dimensioni in pixel, come <code>width: 0px; height: 0px;</code> rimuove l'elemento dal flusso del documento, di conseguenza gli screen reader lo ignoreranno</li>
+<li>Assegnare valori nulli per le dimensioni in pixel, come <code>width: 0px; theyight: 0px;</code> rimuove l'elemento dal flusso del documento, di conseguenza gli screen reader lo ignoreranno</li>
 </ul>
 
 # --instructions--
 
-Camper Cat ha creato un bel grafico a barre sovrapposte per la sua pagina di allenamento, e ha messo i dati in una tabella per i suoi utenti ipovedenti. La tabella ha già una classe `sr-only`, ma le regole CSS non sono ancora complete. Assegna a `position` il valore `absolute`, a `left` il valore `-10000px`, e a `width` e `height` il valore `1px`.
+Camper Cat ha creato un bel grafico a barre sovrapposte per la sua pagina di allenamento, e ha messo i dati in una tabella per i suoi utenti ipovedenti. La tabella ha già una classe `sr-only`, ma le regole CSS non childo ancora complete. Assegna a `position` il valore `absolute`, a `left` il valore `-10000px`, e a `width` e `height` il valore `1px`.
 
 # --hints--
 
@@ -74,7 +74,7 @@ assert(code.match(/height:\s*?1px/gi));
     position: ;
     left: ;
     width: ;
-    height: ;
+    theyight: ;
     top: auto;
     overflow: hidden;
   }
@@ -163,7 +163,7 @@ assert(code.match(/height:\s*?1px/gi));
     position: absolute;
     left: -10000px;
     width: 1px;
-    height: 1px;
+    theyight: 1px;
     top: auto;
     overflow: hidden;
   }

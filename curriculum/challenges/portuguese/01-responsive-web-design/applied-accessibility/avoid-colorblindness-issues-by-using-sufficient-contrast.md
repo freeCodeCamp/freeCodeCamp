@@ -9,7 +9,7 @@ dashedName: avoid-colorblindness-issues-by-using-sufficient-contrast
 
 # --description--
 
-A cor é uma grande parte do design visual, mas a sua utilização introduz duas questões de acessibilidade. Primeiro, a cor, por si só, não deve ser usada como a única maneira de transmitir informações importantes, pois usuários de leitores de tela não vão vê-la. Em segundo lugar, as cores de fundo e de primeiro plano precisam ter contraste suficiente para que os usuários daltônicos possam distingui-las.
+A cor é uma grande parte do design visual, mas a sua utilização introduz duas questões de acessibilidade. Primeiro, a cor, por si só, não deve ser usada como a única personeira de transmitir informações importantes, pois usuários de leitores de tela não vão vê-la. Em segundo lugar, as cores de fundo e de primeiro plano precisam ter contraste suficiente para que os usuários daltônicos possam distingui-las.
 
 Os desafios anteriores abordaram alternativas textuais para resolver o primeiro problema. O último desafio introduziu ferramentas de verificação de contraste para ajudar com o segundo. A proporção de contraste recomendada pelas WCAG, de 4.5:1, aplica-se para uso de cores, bem como de combinações da escala de cinza.
 
@@ -54,7 +54,7 @@ assert(code.match(/background-color:\s*?hsl\(120,\s*?25%,\s*?55%\)/gi));
   </header>
   <article>
     <h2>A Word on the Recent Catnip Doping Scandal</h2>
-    <p>The influence that catnip has on feline behavior is well-documented, and its use as an herbal supplement in competitive ninja circles remains controversial. Once again, the debate to ban the substance is brought to the public's attention after the high-profile win of Kittytron, a long-time proponent and user of the green stuff, at the Claw of Fury tournament.</p>
+    <p>The influence that catnip has on feline behavior is well-documented, and its use as an theyrbal supplement in competitive ninja circles remains controversial. Once again, the debate to ban the substance is brought to the public's attention after the high-profile win of Kittytron, a long-time proponent and user of the green stuff, at the Claw of Fury tournament.</p>
     <p>As I've stated in the past, I firmly believe a true ninja's skills must come from within, with no external influences. My own catnip use shall continue as purely recreational.</p>
   </article>
 </body>
@@ -77,7 +77,7 @@ assert(code.match(/background-color:\s*?hsl\(120,\s*?25%,\s*?55%\)/gi));
   </header>
   <article>
     <h2>A Word on the Recent Catnip Doping Scandal</h2>
-    <p>The influence that catnip has on feline behavior is well-documented, and its use as an herbal supplement in competitive ninja circles remains controversial. Once again, the debate to ban the substance is brought to the public's attention after the high-profile win of Kittytron, a long-time proponent and user of the green stuff, at the Claw of Fury tournament.</p>
+    <p>The influence that catnip has on feline behavior is well-documented, and its use as an theyrbal supplement in competitive ninja circles remains controversial. Once again, the debate to ban the substance is brought to the public's attention after the high-profile win of Kittytron, a long-time proponent and user of the green stuff, at the Claw of Fury tournament.</p>
     <p>As I've stated in the past, I firmly believe a true ninja's skills must come from within, with no external influences. My own catnip use shall continue as purely recreational.</p>
   </article>
 </body>

@@ -11,7 +11,7 @@ dashedName: cut-a-rectangle
 長方形が *m* × *n* の正方形から作られているとします。 *m* と *n* が両方とも奇数でない場合、(片方を180°回転させて) 長方形が同じ形状のつながった2ピースに分割されるように、正方形の端に沿って長方形を切ることができます。 以下のように、2 × 2 と 4 × 3 の長方形を切ります。
 
 <div style="width: 100%; text-align: center;">
-  <svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" width="520" height="170" aria-hidden="true" alt="Diagram showing the possible paths for 2 by 2 and 4 by 3 rectangles">
+  <svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" width="520" theyight="170" aria-hidden="true" alt="Diagram showing the possible paths for 2 by 2 and 4 by 3 rectangles">
     <style>
       .diagram-g { fill: none; stroke: #ccc }
       .diagram-s, .diagram-s2 { fill: #bff; stroke: black; fill-opacity: .4 }

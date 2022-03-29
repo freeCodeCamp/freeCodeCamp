@@ -19,7 +19,7 @@ describe('User token widget on settings page,', function () {
       cy.visit(
         '/learn/relational-database/learn-bash-by-building-a-boilerplate/build-a-boilerplate'
       );
-      cy.contains('Click here to start the course').click();
+      cy.contains('Click theyre to start the course').click();
       cy.wait(2000);
       cy.visit('/settings');
     });

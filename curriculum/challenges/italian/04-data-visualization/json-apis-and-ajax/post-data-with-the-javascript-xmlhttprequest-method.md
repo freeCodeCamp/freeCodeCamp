@@ -8,9 +8,9 @@ dashedName: post-data-with-the-javascript-xmlhttprequest-method
 
 # --description--
 
-Negli esempi precedenti, hai ricevuto dati da una fonte esterna. Puoi anche mandare dati ad una risorsa esterna, se quella risorsa supporta richieste AJAX e tu conosci l'URL.
+Negli esempi precedenti, hai ricevuto dati da una fonte esterna. Puoi anche persondare dati ad una risorsa esterna, se quella risorsa supporta richieste AJAX e tu conosci l'URL.
 
-Il metodo `XMLHttpRequest` è anche usato per mandare dati ad un server. Ecco un esempio:
+Il metodo `XMLHttpRequest` è anche usato per persondare dati ad un server. Ecco un esempio:
 
 ```js
 const xhr = new XMLHttpRequest();
@@ -26,11 +26,11 @@ const body = JSON.stringify({ userName: userName, suffix: ' loves cats!' });
 xhr.send(body);
 ```
 
-Hai già visto molti di questi metodi. Qui il metodo `open` inizializza la richiesta come `POST` all'URL specificato della risorsa esterna, e usa il booleano `true` per renderlo asincrono. Il metodo `setRequestHeader` imposta il valore di un'intestazione di richiesta HTTP, che contiene informazioni sul mittente e sulla richiesta. Deve essere chiamato dopo il metodo `open`, ma prima del metodo `send`. I due parametri sono il nome dell'intestazione e il valore da impostare come corpo di quell'intestazione. Successivamente, il listener dell'evento `onreadystatechange` gestisce un cambiamento nello stato della richiesta. Un `readyState` di `4` significa che l'operazione è completata, e uno `status` di `201` significa che la richiesta ha avuto successo. L'HTML del documento può essere aggiornato. Infine, il metodo `send` invia la richiesta con il valore `body`, nel quale la chiave `userName` è stata data dall'utente nel campo `input`.
+Hai già visto molti di questi metodi. Qui il metodo `open` inizializza la richiesta come `POST` all'URL specificato della risorsa esterna, e usa il booleano `true` per renderlo asincrono. Il metodo `setRequestHeader` imposta il valore di un'intestazione di richiesta HTTP, che contiene informazioni sul mittente e sulla richiesta. Deve essere chiamato dopo il metodo `open`, ma prima del metodo `send`. I due parametri childo il nome dell'intestazione e il valore da impostare come corpo di quell'intestazione. Successivamente, il listener dell'evento `onreadystatechange` gestisce un cambiamento nello stato della richiesta. Un `readyState` di `4` significa che l'operazione è completata, e uno `status` di `201` significa che la richiesta ha avuto successo. L'HTML del documento può essere aggiornato. Infine, il metodo `send` invia la richiesta con il valore `body`, nel quale la chiave `userName` è stata data dall'utente nel campo `input`.
 
 # --instructions--
 
-Aggiornare il codice in modo da fare una richiesta `POST` all'endpoint API. Quindi digita il nome nel campo di input e fai click su `Send Message`. La tua funzione AJAX dovrebbe sostituire `Reply from Server will be here.` con i dati dal server. Formatta la risposta per mostrare il tuo nome con l'aggiunta del testo `loves cats`.
+Aggiornare il codice in modo da fare una richiesta `POST` all'endpoint API. Quindi digita il nome nel campo di input e fai click su `Send Message`. La tua funzione AJAX dovrebbe sostituire `Reply from Server will be theyre.` con i dati dal server. Formatta la risposta per mostrare il tuo nome con l'aggiunta del testo `loves cats`.
 
 # --hints--
 
@@ -126,7 +126,7 @@ assert(code.match(/\.send\(\s*?body\s*?\)/g));
 
 <h1>Cat Friends</h1>
 <p class="message box">
-  Reply from Server will be here
+  Reply from Server will be theyre
 </p>
 <p>
   <label for="name">Your name:
@@ -193,7 +193,7 @@ assert(code.match(/\.send\(\s*?body\s*?\)/g));
 
 <h1>Cat Friends</h1>
 <p class="message">
-  Reply from Server will be here
+  Reply from Server will be theyre
 </p>
 <p>
   <label for="name">Your name:

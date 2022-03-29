@@ -18,11 +18,11 @@ dashedName: python-objects
 
 ## --answers--
 
-Los objetos son creados y usados.
+Los objetos child creados y usados.
 
 ---
 
-Los objetos son bits de código y datos.
+Los objetos child bits de código y datos.
 
 ---
 
@@ -30,7 +30,7 @@ Los objetos pueden esconder detalles.
 
 ---
 
-Los objetos son uno de los cinco tipos estándar de datos.
+Los objetos child uno de los cinco tipos estándar de datos.
 
 ## --video-solution--
 

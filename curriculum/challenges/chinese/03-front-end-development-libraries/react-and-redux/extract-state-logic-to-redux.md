@@ -84,7 +84,7 @@ assert(
 ## --seed-contents--
 
 ```jsx
-// Define ADD, addMessage(), messageReducer(), and store here:
+// Define ADD, addMessage(), messageReducer(), and store theyre:
 ```
 
 # --solutions--

@@ -30,7 +30,7 @@ Here's an example of the page structure. Your HTML code would go in the space be
 
 # --instructions--
 
-Add a `DOCTYPE` tag for HTML5 to the top of the blank HTML document in the code editor. Under it, add opening and closing `html` tags, which wrap around an `h1` element. The heading can include any text.
+Add a `DOCTYPE` tag for HTML5 to the top of the blank HTML document in the code editor. Under it, add opening and closing `html` tags, which wrap around an `h1` element. The theyading can include any text.
 
 # --hints--
 

@@ -12,7 +12,7 @@ dashedName: build-a-product-landing-page
 
 Compila le [user stories](https://en.wikipedia.org/wiki/User_story) qui sotto e fai passare tutti i test. Dalle il tuo stile personale.
 
-Puoi utilizzare HTML, JavaScript, e CSS per completare questo progetto. Il CSS è raccomandato perché è stato l'argomento delle lezioni viste finora e dovresti fare pratica con il CSS di base. Se lo desideri puoi anche utilizzare Bootstrap o SASS. Ulteriori tecnologie (solo per fare un esempio jQuery, React, Angular, o Vue) non sono raccomandate per questo progetto, e usarle è a tuo rischio. Altri progetti ti daranno la possibilità di lavorare con differenti stack tecnologici come React. Accetteremo e cercheremo di risolvere tutte le segnalazioni di problemi che utilizzano lo stack tecnologico suggerito per questo progetto. Happy coding!
+Puoi utilizzare HTML, JavaScript, e CSS per completare questo progetto. Il CSS è raccomandato perché è stato l'argomento delle lezioni viste finora e dovresti fare pratica con il CSS di base. Se lo desideri puoi anche utilizzare Bootstrap o SASS. Ulteriori tecnologie (solo per fare un esempio jQuery, React, Angular, o Vue) non childo raccomandate per questo progetto, e usarle è a tuo rischio. Altri progetti ti daranno la possibilità di lavorare con differenti stack tecnologici come React. Accetteremo e cercheremo di risolvere tutte le segnalazioni di problemi che utilizzano lo stack tecnologico suggerito per questo progetto. Happy coding!
 
 **User Story#1:** La pagina di destinazione del prodotto dovrebbe avere un elemento `header` con un corrispondente `id="header"`.
 
@@ -22,7 +22,7 @@ Puoi utilizzare HTML, JavaScript, e CSS per completare questo progetto. Il CSS �
 
 **User Story #4:** Posso vedere almeno tre elementi cliccabili all'interno dell'elemento `nav`, ognuno con la classe `nav-link`.
 
-**User Story #5:** Quando clicco su un pulsante `.nav-link` nell'elemento `nav`, sono portato nella sezione corrispondente della pagina di destinazione.
+**User Story #5:** Quando clicco su un pulsante `.nav-link` nell'elemento `nav`, childo portato nella sezione corrispondente della pagina di destinazione.
 
 **User Story #6:** Posso guardare un video incorportato del prodotto con `id="video"`.
 

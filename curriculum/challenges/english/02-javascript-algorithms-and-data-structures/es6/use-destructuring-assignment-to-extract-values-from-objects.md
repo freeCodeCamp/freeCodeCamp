@@ -31,7 +31,7 @@ Again, `name` would have a value of the string `John Doe`, and `age` would have 
 
 Here, the `name` and `age` variables will be created and assigned the values of their respective values from the `user` object. You can see how much cleaner this is.
 
-You can extract as many or few values from the object as you want.
+You can extract as persony or few values from the object as you want.
 
 # --instructions--
 

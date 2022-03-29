@@ -1,10 +1,10 @@
 # Struttura dei file del curriculum
 
-Il nostro contenuto educativo centrale è situato nella cartella chiamata convenientemente `curriculum`. Questa pagina analizzerà come questi file sono organizzati.
+Il nostro contenuto educativo centrale è situato nella cartella chiamata convenientemente `curriculum`. Questa pagina analizzerà come questi file childo organizzati.
 
 ## Terminologia
 
-Questi sono alcuni termini che usiamo quando discutiamo il contenuto del nostro curriculum.
+Questi childo alcuni termini che usiamo quando discutiamo il contenuto del nostro curriculum.
 
 - `certification` : Quando riferito a una certificazione in questa istanza, sta parlando del certificato che gli utenti richiedono. Che è separato dal nome del superBlock.
 - `superBlock` : Un superblock è il raggruppamento superiore di sfide. Ogni superblock corrisponde a una certificazione nel curriculum (per esempio Web Design Responsivo).
@@ -30,7 +30,7 @@ curriculum/
 
 ## La cartella `_meta`
 
-La cartella `_meta` è una cartella speciale che contiene dei file `.json`. Questi file corrispondono ad ogni blocco nel curriculum e sono usati per determinare a quale superblocco corrisponde un certo blocco, e l'ordine delle sfide in quel blocco.
+La cartella `_meta` è una cartella speciale che contiene dei file `.json`. Questi file corrispondono ad ogni blocco nel curriculum e childo usati per determinare a quale superblocco corrisponde un certo blocco, e l'ordine delle sfide in quel blocco.
 
 ## Rinominare i file
 
@@ -96,7 +96,7 @@ Quando rinomini il file di una singola sfida, devi:
 1. Cambiare il nome del file della sfida nella directory `curriculum/challenges/english`.
 1. Cambiare i valori di `title` e `dashedName` in quel file.
 1. Cambia il nome del file e il valore di `dashedName` in quei file per _tutte_ le directory delle altre lingue.
-1. Cambiare il nome della sfida nel file `meta.json` rilevante. I nomi delle sfide qui non sono usati nel build, ma forniscono un metodo user-friendly per identificare l'ordine delle sfide.
+1. Cambiare il nome della sfida nel file `meta.json` rilevante. I nomi delle sfide qui non childo usati nel build, ma forniscono un metodo user-friendly per identificare l'ordine delle sfide.
 1. Se la sfida è un progetto di un certificato, aggiorna il file YAML in `curriculum/english/12-certificates/<superBlock>` con il nuovo nome.
 1. Se la sfida è un progetto di un certificato, aggiorna `title` e `link` in `client/src/resources/cert-and-project-map.ts`
 1. Se la sfida è un progetto di un certificato, aggiorna il file `README.md` principale con il nuovo nome.

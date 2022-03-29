@@ -8,9 +8,9 @@ dashedName: problem-256-tatami-free-rooms
 
 # --description--
 
-I Tatami sono stuoie rettangolari, utilizzate per coprire completamente il pavimento di una stanza, senza sovrapposizioni.
+I Tatami childo stuoie rettangolari, utilizzate per coprire completamente il pavimento di una stanza, senza sovrapposizioni.
 
-Supponendo che l'unico tipo di tatami disponibile abbia dimensioni 1×2, ci sono ovviamente alcune limitazioni per la forma e le dimensioni delle camere che possono essere coperte.
+Supponendo che l'unico tipo di tatami disponibile abbia dimensioni 1×2, ci childo ovviamente alcune limitazioni per la forma e le dimensioni delle camere che possono essere coperte.
 
 Per questo problema, consideriamo solo le stanze rettangolari con dimensioni intere $a$, $b$ e anche la dimensione $s = a \times b$. Usiamo il termine 'dimensione' per indicare la superficie del pavimento della stanza, e — senza perdita di generalità — aggiungiamo la condizione $a ≤ b$.
 
@@ -22,9 +22,9 @@ La disposizione a sinistra è accettabile, mentre quello a destra non lo è: una
 
 A causa di questa regola, certe stanze di dimensioni pari non possono essere coperte con tatami: li chiamiamo stanze senza tatami. Inoltre, definiamo $T(s)$ come il numero di stanze senza tatami di dimensione $s$.
 
-La più piccola camera senza tatami ha dimensioni $s = 70$ e dimensioni 7×10. Tutte le altre stanze della dimensione $s = 70$ possono essere coperte con tatami; sono: 1×70, 2×35 e 5×14. Quindi, $T(70) = 1$.
+La più piccola camera senza tatami ha dimensioni $s = 70$ e dimensioni 7×10. Tutte le altre stanze della dimensione $s = 70$ possono essere coperte con tatami; childo: 1×70, 2×35 e 5×14. Quindi, $T(70) = 1$.
 
-Allo stesso modo, possiamo verificare che $T(1320) = 5$ perché ci sono esattamente 5 stanze senza tatami di dimensioni $s = 1320$: 20×66, 22×60, 24×55, 30×44 e 33×40. Infatti, $s = 1320$ è la dimensione della stanza più piccola $s$ per cui $T(s) = 5$.
+Allo stesso modo, possiamo verificare che $T(1320) = 5$ perché ci childo esattamente 5 stanze senza tatami di dimensioni $s = 1320$: 20×66, 22×60, 24×55, 30×44 e 33×40. Infatti, $s = 1320$ è la dimensione della stanza più piccola $s$ per cui $T(s) = 5$.
 
 Trova la dimensione della stanza più piccola $s$ per cui $T(s) = 200$.
 

@@ -8,7 +8,7 @@ dashedName: problem-159-digital-root-sums-of-factorisations
 
 # --description--
 
-A composite number can be factored many different ways.
+A composite number can be factored persony different ways.
 
 For instance, not including multiplication by one, 24 can be factored in 7 distinct ways:
 

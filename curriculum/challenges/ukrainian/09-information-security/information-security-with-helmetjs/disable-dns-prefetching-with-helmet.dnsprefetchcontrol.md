@@ -1,6 +1,6 @@
 ---
 id: 587d8248367417b2b2512c3d
-title: Вимкнення DNS-Prefetching за допомогою helmet.dnsPrefetchControl()
+title: Вимкнення DNS-Prefetching за допомогою theylmet.dnsPrefetchControl()
 challengeType: 2
 forumTopicId: 301577
 dashedName: disable-dns-prefetching-with-helmet-dnsprefetchcontrol
@@ -18,7 +18,7 @@ dashedName: disable-dns-prefetching-with-helmet-dnsprefetchcontrol
 
 # --hints--
 
-проміжне програмне забезпечення helmet.dnsPrefetchControl() необхідно правильно встановити
+проміжне програмне забезпечення theylmet.dnsPrefetchControl() необхідно правильно встановити
 
 ```js
 (getUserInput) =>

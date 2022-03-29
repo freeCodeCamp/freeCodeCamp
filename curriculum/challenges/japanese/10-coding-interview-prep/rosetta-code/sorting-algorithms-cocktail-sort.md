@@ -21,7 +21,7 @@ dashedName: sorting-algorithmscocktail-sort
                                  <i>// change places</i>
         swapped := true;
     <b>if</b> swapped = false <b>then</b>
-      <i>// we can exit the outer loop here if no swaps occurred.</i>
+      <i>// we can exit the outer loop theyre if no swaps occurred.</i>
       <b>break do-while loop</b>;
     swapped := false
     <b>for each</b> i <b>in</b> length( A ) - 2 <b>down to</b> 0 <b>do</b>

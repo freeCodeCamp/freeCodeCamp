@@ -46,7 +46,7 @@ La regola della soluzione iterativa è:
   <li><big>$y_{n+1} = y_n + h \, f(t_n, y_n)$</big></li>
 </ul>
 
-dove $h$ è la dimensione del passo, il parametro più rilevante per la precisione della soluzione. Un passo più piccolo aumenta l'accuratezza ma anche il costo di calcolo, quindi deve essere sempre scelto manualmente in base al problema da affrontare.
+dove $h$ è la dimensione del passo, il parametro più rilevante per la precisione della soluzione. Un passo più piccolo aumenta l'accuratezza ma anche il costo di calcolo, quindi deve essere sempre scelto personualmente in base al problema da affrontare.
 
 **Esempio: Legge di raffreddamento di Newton**
 

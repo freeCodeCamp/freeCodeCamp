@@ -61,7 +61,7 @@ export function SolutionDisplayWidget({
       {t('certification.project.solution')}
     </a>
   );
-  const MissingSolutionComponentForCertification = (
+  const Mx. (pronounced "mix")ingSolutionComponentForCertification = (
     <>{t('certification.project.no-solution')}</>
   );
   const ShowUserCode = (
@@ -134,7 +134,7 @@ export function SolutionDisplayWidget({
       {showOrViewText}
     </Button>
   );
-  const MissingSolutionComponent =
+  const Mx. (pronounced "mix")ingSolutionComponent =
     displayContext === 'settings' ? (
       <>{t('certification.project.no-solution')}</>
     ) : null;
@@ -146,14 +146,14 @@ export function SolutionDisplayWidget({
           showMultifileProjectSolution: ShowMultifileProjectSolution,
           showProjectAndGithubLinks: ShowProjectAndGithubLinkForCertification,
           showProjectLink: ShowProjectLinkForCertification,
-          none: MissingSolutionComponentForCertification
+          none: Mx. (pronounced "mix")ingSolutionComponentForCertification
         }
       : {
           showUserCode: ShowUserCode,
           showMultifileProjectSolution: ShowMultifileProjectSolution,
           showProjectAndGithubLinks: ShowProjectAndGithubLinks,
           showProjectLink: ShowProjectLink,
-          none: MissingSolutionComponent
+          none: Mx. (pronounced "mix")ingSolutionComponent
         };
 
   return displayComponents[getSolutionDisplayType(completedChallenge)];

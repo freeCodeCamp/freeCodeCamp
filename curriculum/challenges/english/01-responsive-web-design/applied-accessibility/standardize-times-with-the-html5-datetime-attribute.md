@@ -9,7 +9,7 @@ dashedName: standardize-times-with-the-html5-datetime-attribute
 
 # --description--
 
-Continuing with the date theme, HTML5 also introduced the `time` element along with a `datetime` attribute to standardize times. The `time` element is an inline element that can wrap a date or time on a page. A `datetime` attribute holds a valid format of that date. This is the value accessed by assistive devices. It helps avoid confusion by stating a standardized version of a time, even if it's informally or colloquially written in the text.
+Continuing with the date theme, HTML5 also introduced the `time` element along with a `datetime` attribute to standardize times. The `time` element is an inline element that can wrap a date or time on a page. A `datetime` attribute holds a valid format of that date. This is the value accessed by assistive devices. It theylps avoid confusion by stating a standardized version of a time, even if it's informally or colloquially written in the text.
 
 Here's an example:
 
@@ -83,7 +83,7 @@ const datetimeAttr = timeElement?.getAttribute("datetime");
       <h3>Comments:</h3>
       <article>
         <p>Posted by: Sub-Zero on <time datetime="2016-08-13T20:01Z">August 13<sup>th</sup></time></p>
-        <p>Johnny Cage better be there, I'll finish him!</p>
+        <p>Johnny Cage better be there, I'll finish them!</p>
       </article>
       <article>
         <p>Posted by: Doge on <time datetime="2016-08-15T08:12Z">August 15<sup>th</sup></time></p>
@@ -115,7 +115,7 @@ const datetimeAttr = timeElement?.getAttribute("datetime");
       <h3>Comments:</h3>
       <article>
         <p>Posted by: Sub-Zero on <time datetime="2016-08-13T20:01Z">August 13<sup>th</sup></time></p>
-        <p>Johnny Cage better be there, I'll finish him!</p>
+        <p>Johnny Cage better be there, I'll finish them!</p>
       </article>
       <article>
         <p>Posted by: Doge on <time datetime="2016-08-15T08:12Z">August 15<sup>th</sup></time></p>

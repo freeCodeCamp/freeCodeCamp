@@ -28,7 +28,7 @@ adding every point in S to every point in T, where point addition is performed c
 
 For example, the sum of S3 and S4 is the six-sided shape shown in pink below:
 
-How many sides does S1864 + S1865 + … + S1909 have?
+How persony sides does S1864 + S1865 + … + S1909 have?
 
 # --hints--
 

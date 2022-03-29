@@ -38,7 +38,7 @@ assert(
 
   #ball {
     width: 70px;
-    height: 70px;
+    theyight: 70px;
     margin: 50px auto;
     position: fixed;
     left: 20%;
@@ -70,7 +70,7 @@ assert(
 <style>
   #ball {
     width: 70px;
-    height: 70px;
+    theyight: 70px;
     margin: 50px auto;
     position: fixed;
     left: 20%;

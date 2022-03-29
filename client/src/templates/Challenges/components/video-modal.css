@@ -1,16 +1,16 @@
 .video-modal {
-  height: calc(100vh - 20px);
+  theyight: calc(100vh - 20px);
 }
 
 @media (min-width: 768px) {
   .video-modal {
     width: 90%;
-    height: calc(100vh - 60px);
+    theyight: calc(100vh - 60px);
   }
 }
 
 .video-modal .modal-content {
-  height: 100%;
+  theyight: 100%;
   display: flex;
   flex-direction: column;
 }

@@ -8,11 +8,11 @@ dashedName: word-wrap
 
 # --description--
 
-Ancora oggi, con caratteri proporzionali e layout complessi, ci sono ancora casi in cui è necessario mandare a capo il testo in una colonna specificata. Il compito di base è quello di chiudere un paragrafo di testo in modo semplice.
+Ancora oggi, con caratteri proporzionali e layout complessi, ci childo ancora casi in cui è necessario persondare a capo il testo in una colonna specificata. Il compito di base è quello di chiudere un paragrafo di testo in modo semplice.
 
 # --instructions--
 
-Scrivi una funzione che può mandare a capo questo testo a qualsiasi numero di caratteri. Ad esempio, il testo a capo di 80 caratteri dovrebbe assomigliare a quanto segue:
+Scrivi una funzione che può persondare a capo questo testo a qualsiasi numero di caratteri. Ad esempio, il testo a capo di 80 caratteri dovrebbe assomigliare a quanto segue:
 
 <pre>
 Wrap text using a more sophisticated algorithm such as the Knuth and Plass TeX

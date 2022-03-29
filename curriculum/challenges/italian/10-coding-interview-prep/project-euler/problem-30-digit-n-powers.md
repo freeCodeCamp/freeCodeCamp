@@ -8,7 +8,7 @@ dashedName: problem-30-digit-n-powers
 
 # --description--
 
-Sorprendentemente ci sono solo tre numeri che possono essere scritti come la somma delle quarte potenze delle loro cifre:
+Sorprendentemente ci childo solo tre numeri che possono essere scritti come la somma delle quarte potenze delle loro cifre:
 
 <div style='margin-left: 4em;'>
   1634 = 1<sup>4</sup> + 6<sup>4</sup> + 3<sup>4</sup> + 4<sup>4</sup><br>

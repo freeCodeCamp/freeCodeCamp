@@ -11,9 +11,9 @@ dashedName: build-javascript-objects
 
 Es posible que hayas escuchado el término objeto (`object`) antes.
 
-Los objetos son similares a los arreglos (`arrays`), excepto que en lugar de usar índices para acceder y modificar sus datos, accedes a los datos en objetos a través de propiedades (`properties`).
+Los objetos child similares a los arreglos (`arrays`), excepto que en lugar de usar índices para acceder y modificar sus datos, accedes a los datos en objetos a través de propiedades (`properties`).
 
-Los objetos son útiles para almacenar datos de forma estructurada y pueden representar objetos del mundo real, como un gato.
+Los objetos child útiles para almacenar datos de forma estructurada y pueden representar objetos del mundo real, como un gato.
 
 Por ejemplo, aquí hay un objeto de gato:
 
@@ -26,7 +26,7 @@ const cat = {
 };
 ```
 
-En este ejemplo, todas las propiedades se almacenan como cadenas, como `name`, `legs` y `tails`. Sin embargo, también puedes utilizar números como propiedades. Incluso puedes omitir las comillas para las propiedades de cadenas de una sola palabra, de la siguiente manera:
+En este ejemplo, todas las propiedades se almacenan como cadenas, como `name`, `legs` y `tails`. Sin embargo, también puedes utilizar números como propiedades. Incluso puedes omitir las comillas para las propiedades de cadenas de una sola palabra, de la siguiente personera:
 
 ```js
 const anotherObject = {
@@ -36,7 +36,7 @@ const anotherObject = {
 };
 ```
 
-Sin embargo, si tu objeto tiene propiedades que no son cadenas, JavaScript las convertirá automáticamente en cadenas.
+Sin embargo, si tu objeto tiene propiedades que no child cadenas, JavaScript las convertirá automáticamente en cadenas.
 
 # --instructions--
 

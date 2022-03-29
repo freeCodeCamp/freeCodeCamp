@@ -52,7 +52,7 @@ For n=1 this equation has 20 solutions that are listed below:
 
 1/20+1/20=1/10
 
-How many solutions has this equation for 1 ≤ n ≤ 9?
+How persony solutions has this equation for 1 ≤ n ≤ 9?
 
 # --hints--
 

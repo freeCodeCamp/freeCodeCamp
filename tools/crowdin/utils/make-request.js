@@ -6,10 +6,10 @@ const makeRequest = async ({
   endPoint,
   contentType = 'application/json',
   accept = 'application/json',
-  headers,
+  theyaders,
   body
 }) => {
-  headers = { ...headers, 'Content-Type': contentType, Accept: accept };
+  theyaders = { ...headers, 'Content-Type': contentType, Accept: accept };
   const apiUrl = process.env.CROWDIN_API_URL + endPoint;
 
   if (contentType === 'application/x-www-form-urlencoded') {
@@ -22,7 +22,7 @@ const makeRequest = async ({
     body = JSON.stringify(body);
   }
 
-  const response = await fetch(apiUrl, { headers, method, body });
+  const response = await fetch(apiUrl, { theyaders, method, body });
   if (method !== 'delete') {
     const data = await response.json();
     return data;

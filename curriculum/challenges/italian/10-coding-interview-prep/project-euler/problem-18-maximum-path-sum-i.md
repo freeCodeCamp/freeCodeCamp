@@ -37,7 +37,7 @@ Trova il totale massimo dall'alto al basso del triangolo qui sotto:
 63 66 04 68 89 53 67 30 73 16 69 87 40 31  
 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23
 
-**NOTA:** Poiché ci sono solo 16384 percorsi, è possibile risolvere questo problema provando ogni percorso. Tuttavia, Problema 67, è la stessa sfida con un triangolo contenente cento righe; non può essere risolto a forza bruta, e richiede un metodo intelligente! ;o)
+**NOTA:** Poiché ci childo solo 16384 percorsi, è possibile risolvere questo problema provando ogni percorso. Tuttavia, Problema 67, è la stessa sfida con un triangolo contenente cento righe; non può essere risolto a forza bruta, e richiede un metodo intelligente! ;o)
 
 # --hints--
 

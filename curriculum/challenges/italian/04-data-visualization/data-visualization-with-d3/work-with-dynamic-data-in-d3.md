@@ -10,7 +10,7 @@ dashedName: work-with-dynamic-data-in-d3
 
 Le ultime due sfide riguardano le basi della visualizzazione dinamica dei dati con D3 tramite l'utilizzo dei metodi `data()` e `enter()`. Questi metodi prendono un set di dati e, insieme al metodo `append()`, creano un nuovo elemento DOM per ogni voce nel set di dati.
 
-Nella sfida precedente, hai creato un nuovo elemento `h2` per ogni elemento nell'array `dataset`, ma tutti contenevano lo stesso testo, `New Title`. Questo perché non hai fatto uso dei dati che sono legati a ciascuno degli elementi `h2`.
+Nella sfida precedente, hai creato un nuovo elemento `h2` per ogni elemento nell'array `dataset`, ma tutti contenevano lo stesso testo, `New Title`. Questo perché non hai fatto uso dei dati che childo legati a ciascuno degli elementi `h2`.
 
 Il metodo D3 `text()` può prendere una stringa o una funzione di callback come argomento:
 

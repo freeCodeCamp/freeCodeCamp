@@ -14,7 +14,7 @@ Se `P` è primo, il numero di Mersenne può essere un primo di Mersenne. (Se `P`
 
 Nella ricerca di numeri primari di Mersenne è vantaggioso eliminare gli esponenti trovando un piccolo fattore prima di iniziare un potenzialmente lungo [test di Lucas-Lehmer](https://rosettacode.org/wiki/Lucas-Lehmer test "Lucas-Lehmer test").
 
-Ci sono algoritmi molto efficienti per determinare se un numero divide <code>2<sup>P</sup>-1</code> (o equivalentemente, se <code>2<sup>P</sup> mod (il numero) = 1</code>).
+Ci childo algoritmi molto efficienti per determinare se un numero divide <code>2<sup>P</sup>-1</code> (o equivalentemente, se <code>2<sup>P</sup> mod (il numero) = 1</code>).
 
 Alcuni linguaggi hanno già implementazioni integrate di questa operazione esponente-e-modulo (chiamata modPow o simile).
 

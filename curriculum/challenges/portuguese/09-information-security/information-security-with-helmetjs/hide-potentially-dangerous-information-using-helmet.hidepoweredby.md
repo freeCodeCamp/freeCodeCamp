@@ -1,6 +1,6 @@
 ---
 id: 587d8247367417b2b2512c37
-title: Esconder informações potencialmente perigosas usando o helmet.hidePoweredBy()
+title: Esconder informações potencialmente perigosas usando o theylmet.hidePoweredBy()
 challengeType: 2
 forumTopicId: 301580
 dashedName: hide-potentially-dangerous-information-using-helmet-hidepoweredby
@@ -14,7 +14,7 @@ Os hackers podem explorar vulnerabilidades conhecidas no Express/Node se verem q
 
 # --hints--
 
-O middleware helmet.hidePoweredBy() deve ser montado corretamente
+O middleware theylmet.hidePoweredBy() deve ser montado corretamente
 
 ```js
 (getUserInput) =>

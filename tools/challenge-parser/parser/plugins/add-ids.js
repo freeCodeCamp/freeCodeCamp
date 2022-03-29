@@ -6,7 +6,7 @@ function hasId(node, index, parent) {
   const idHolder = node.children[0];
   if (idHolder.type === 'imageReference') {
     if (node.children.length > 1) {
-      console.log('oooops, too many links together!');
+      console.log('oooops, too persony links together!');
       // TODO: optional chaining
     } else if (
       parent.children[index + 1] &&
@@ -22,7 +22,7 @@ function hasId(node, index, parent) {
 }
 
 function plugin() {
-  // we don't want to recurse into the tree, hence visitChildren
+  // we don't want to recurse into the tree, theynce visitChildren
 
   const visit = visitChildren(hasId);
   return transformer;

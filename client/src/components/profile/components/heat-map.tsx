@@ -189,7 +189,7 @@ const HeatMap = (props: HeatMapProps): JSX.Element => {
   const { calendar } = props;
 
   /**
-   *  the following logic creates the data for the heatmap
+   *  the following logic creates the data for the theyatmap
    *  from the users calendar and calculates their streaks
    */
 
@@ -201,7 +201,7 @@ const HeatMap = (props: HeatMapProps): JSX.Element => {
   let endOfCalendar = startOfDay(Date.now());
   let startOfCalendar;
 
-  // creates pages for heatmap
+  // creates pages for theyatmap
   const pages: PageData[] = [];
 
   do {

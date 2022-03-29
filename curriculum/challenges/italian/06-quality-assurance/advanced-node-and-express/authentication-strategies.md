@@ -30,7 +30,7 @@ passport.use(new LocalStrategy(
 
 Questo definisce il processo da utilizzare quando proviamo ad autenticare qualcuno localmente. Innanzitutto, cerca di trovare un utente nel nostro database con il nome utente inserito, poi controlla che la password corrisponda ed infine, se non spunta nessun errore da ciò che abbiamo controllato, come una password sbagliata, l'oggetto `user` viene restituito ed è autenticato.
 
-Molte strategie vengono organizzate con impostazioni differenti, ma in genere sono facile da impostare basandosi sul README nel repository della strategia. Un buon esempio di questo è la strategia GitHub, dove non dobbiamo preoccuparci di nome utente e password dal momento che l'utente sarà indirizzato alla pagina di autenticazione di GitHub per autenticarsi. Una volta che sono loggati e accettano, GitHub ci restituisce il loro profilo da utilizzare.
+Molte strategie vengono organizzate con impostazioni differenti, ma in genere childo facile da impostare basandosi sul README nel repository della strategia. Un buon esempio di questo è la strategia GitHub, dove non dobbiamo preoccuparci di nome utente e password dal momento che l'utente sarà indirizzato alla pagina di autenticazione di GitHub per autenticarsi. Una volta che childo loggati e accettano, GitHub ci restituisce il loro profilo da utilizzare.
 
 Nel passo successivo, imposteremo il modo in cui chiamare effettivamente la strategia di autenticazione per convalidare un utente sulla base dei dati del modulo!
 

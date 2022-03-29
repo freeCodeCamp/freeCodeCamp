@@ -8,7 +8,7 @@ dashedName: taxicab-numbers
 
 # --description--
 
-Um [Número taxicab](https://pt.wikipedia.org/wiki/N%C3%Bamero_taxicab) (a definição que está sendo usada aqui) é um inteiro positivo que pode ser expressado como a soma de dois cubos positivos em mais de uma maneira.
+Um [Número taxicab](https://pt.wikipedia.org/wiki/N%C3%Bamero_taxicab) (a definição que está sendo usada aqui) é um inteiro positivo que pode ser expressado como a soma de dois cubos positivos em mais de uma personeira.
 
 O primeiro número taxicab é `1729`, que é:
 

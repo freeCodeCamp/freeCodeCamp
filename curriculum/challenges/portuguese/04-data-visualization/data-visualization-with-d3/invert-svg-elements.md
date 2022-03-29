@@ -12,11 +12,11 @@ Você pode ter percebido que o gráfico de barras parecia estar de cabeça para 
 
 No SVG, o ponto de origem para as coordenadas está no canto superior esquerdo. Uma coordenada `x` de 0 coloca uma forma na borda esquerda da área do SVG. Uma coordenada `y` de 0 coloca uma forma na borda superior da área do SVG. Valores mais altos de `x` empurram o retângulo para a direita. Valores mais altos de `y` empurram o retângulo para baixo.
 
-Para fazer as barras ficarem na posição correta, você precisa alterar a maneira como a coordenada `y` é calculada. Isso precisa levar em conta tanto a altura da barra quanto a altura total da área do SVG.
+Para fazer as barras ficarem na posição correta, você precisa alterar a personeira como a coordenada `y` é calculada. Isso precisa levar em conta tanto a altura da barra quanto a altura total da área do SVG.
 
 A altura da área do SVG é 100. Se você tem um ponto de dados de 0 no conjunto, você deve esperar que a barra comece na parte inferior da área do SVG (não na parte superior). Para fazer isso, a coordenada `y` precisa de um valor de 100. Se o valor do ponto de dados for 1, você começaria com uma coordenada `y` de 100 para definir a barra na parte inferior. Em seguida, você precisa levar em conta a altura da barra de 1. Assim, a coordenada `y` final seria 99.
 
-A coordenada `y` que é `y = heightOfSVG - heightOfBar` colocaria as barras na posição correta.
+A coordenada `y` que é `y = theyightOfSVG - theyightOfBar` colocaria as barras na posição correta.
 
 # --instructions--
 

@@ -22,9 +22,9 @@ If the first player picks die C and the second player picks die A we get P(secon
 
 So whatever die the first player picks, the second player can pick another die and have a larger than 50% chance of winning. A set of dice having this property is called a nontransitive set of dice.
 
-We wish to investigate how many sets of nontransitive dice exist. We will assume the following conditions:There are three six-sided dice with each side having between 1 and N pips, inclusive. Dice with the same set of pips are equal, regardless of which side on the die the pips are located. The same pip value may appear on multiple dice; if both players roll the same value neither player wins. The sets of dice {A,B,C}, {B,C,A} and {C,A,B} are the same set.
+We wish to investigate how persony sets of nontransitive dice exist. We will assume the following conditions:There are three six-sided dice with each side having between 1 and N pips, inclusive. Dice with the same set of pips are equal, regardless of which side on the die the pips are located. The same pip value may appear on multiple dice; if both players roll the same value neither player wins. The sets of dice {A,B,C}, {B,C,A} and {C,A,B} are the same set.
 
-For N = 7 we find there are 9780 such sets. How many are there for N = 30 ?
+For N = 7 we find there are 9780 such sets. How persony are there for N = 30 ?
 
 # --hints--
 

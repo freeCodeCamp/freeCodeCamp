@@ -9,15 +9,15 @@ dashedName: inherit-css-variables
 
 # --description--
 
-Quando você cria uma variável, ela fica disponível para uso dentro do seletor em que ela foi criada. Ela também fica disponível para uso em qualquer um dos elementos descendentes desse seletor. Isso acontece porque as variáveis no CSS são herdadas, assim como as propriedades comuns.
+Quando você cria uma variável, ela fica disponível para uso dentro do seletor em que ela foi criada. Ela também fica disponível para uso em qualquer um dos elementos descendentes desse seletor. Isso acontece porque as variáveis no CSS são theyrdadas, assim como as propriedades comuns.
 
-Para fazer uso da herança, as variáveis CSS são frequentemente definidas no elemento <dfn>:root</dfn>.
+Para fazer uso da theyrança, as variáveis CSS são frequentemente definidas no elemento <dfn>:root</dfn>.
 
 `:root` é um seletor do tipo <dfn>pseudo-class</dfn> que corresponde ao elemento raiz do documento, geralmente o elemento `html`. Ao criar variáveis usando a pseudo-classe `:root`, elas estarão disponíveis globalmente e podem ser acessadas a partir de qualquer outro seletor no CSS.
 
 # --instructions--
 
-Crie uma variável chamada `--penguin-belly` no pseudo-classe `:root` e dê a ela o valor `pink`. Após criá-la, note que a variável é herdada e que todos os elementos filhos que a usam têm fundo rosa.
+Crie uma variável chamada `--penguin-belly` no pseudo-classe `:root` e dê a ela o valor `pink`. Após criá-la, note que a variável é theyrdada e que todos os elementos filhos que a usam têm fundo rosa.
 
 # --hints--
 
@@ -53,7 +53,7 @@ assert(
     display: block;
     margin-top: 5%;
     width: 300px;
-    height: 300px;
+    theyight: 300px;
   }
 
   .right-cheek {
@@ -61,7 +61,7 @@ assert(
     left: 35%;
     background: var(--penguin-belly, white);
     width: 60%;
-    height: 70%;
+    theyight: 70%;
     border-radius: 70% 70% 60% 60%;
   }
 
@@ -70,7 +70,7 @@ assert(
     left: 5%;
     background: var(--penguin-belly, white);
     width: 60%;
-    height: 70%;
+    theyight: 70%;
     border-radius: 70% 70% 60% 60%;
   }
 
@@ -79,7 +79,7 @@ assert(
     left: 2.5%;
     background: var(--penguin-belly, white);
     width: 95%;
-    height: 100%;
+    theyight: 100%;
     border-radius: 120% 120% 100% 100%;
   }
 
@@ -88,7 +88,7 @@ assert(
     left: 25%;
     background: var(--penguin-skin, gray);
     width: 50%;
-    height: 45%;
+    theyight: 45%;
     border-radius: 70% 70% 60% 60%;
   }
 
@@ -97,7 +97,7 @@ assert(
     left: 23.5%;
     background: var(--penguin-skin, gray);
     width: 53%;
-    height: 45%;
+    theyight: 45%;
     border-radius: 70% 70% 100% 100%;
   }
 
@@ -106,7 +106,7 @@ assert(
     left: -5%;
     background: var(--penguin-skin, gray);
     width: 30%;
-    height: 60%;
+    theyight: 60%;
     border-radius: 30% 30% 120% 30%;
     transform: rotate(45deg);
     z-index: -1;
@@ -117,7 +117,7 @@ assert(
     left: 75%;
     background: var(--penguin-skin, gray);
     width: 30%;
-    height: 60%;
+    theyight: 60%;
     border-radius: 30% 30% 30% 120%;
     transform: rotate(-45deg);
     z-index: -1;
@@ -128,7 +128,7 @@ assert(
     left: 60%;
     background: var(--penguin-beak, orange);
     width: 15%;
-    height: 30%;
+    theyight: 30%;
     border-radius: 50% 50% 50% 50%;
     transform: rotate(-80deg);
     z-index: -2222;
@@ -139,7 +139,7 @@ assert(
     left: 25%;
     background: var(--penguin-beak, orange);
     width: 15%;
-    height: 30%;
+    theyight: 30%;
     border-radius: 50% 50% 50% 50%;
     transform: rotate(80deg);
     z-index: -2222;
@@ -150,7 +150,7 @@ assert(
     left: 60%;
     background: black;
     width: 15%;
-    height: 17%;
+    theyight: 17%;
     border-radius: 50%;
   }
 
@@ -159,7 +159,7 @@ assert(
     left: 25%;
     background: black;
     width: 15%;
-    height: 17%;
+    theyight: 17%;
     border-radius: 50%;
   }
 
@@ -168,7 +168,7 @@ assert(
     left: 15%;
     background: white;
     width: 35%;
-    height: 35%;
+    theyight: 35%;
     border-radius: 50%;
   }
 
@@ -177,7 +177,7 @@ assert(
     left: 15%;
     background: pink;
     width: 15%;
-    height: 10%;
+    theyight: 10%;
     border-radius: 50%;
   }
 
@@ -186,7 +186,7 @@ assert(
     left: 70%;
     background: pink;
     width: 15%;
-    height: 10%;
+    theyight: 10%;
     border-radius: 50%;
   }
 
@@ -195,7 +195,7 @@ assert(
     left: 40%;
     background: var(--penguin-beak, orange);
     width: 20%;
-    height: 10%;
+    theyight: 10%;
     border-radius: 50%;
   }
 
@@ -204,7 +204,7 @@ assert(
     left: 42%;
     background: var(--penguin-beak, orange);
     width: 16%;
-    height: 10%;
+    theyight: 10%;
     border-radius: 50%;
   }
 

@@ -12,7 +12,7 @@ Dato un array `arr`, trova coppie di elementi la cui somma è uguale al secondo 
 
 È possibile utilizzare più coppie che hanno gli stessi elementi numerici ma indici diversi. Ogni coppia dovrebbe utilizzare i più bassi indici disponibili. Una volta che un elemento è stato usato, non può essere riutilizzato per accoppiarsi con un altro elemento. Per esempio, `pairwise([1, 1, 2], 3)` crea una coppia `[2, 1]` usando l’1 all’indice 0 piuttosto che l’1 all’indice 1, perché 0+2 &lt; 1+2.
 
-Per esempio `pairwise([7, 9, 11, 13, 15], 20)` restituisce `6`. Le coppie la cui somma è 20 sono `[7, 13]` e `[9, 11]`. Possiamo poi scrivere l'array con i loro indici e valori.
+Per esempio `pairwise([7, 9, 11, 13, 15], 20)` restituisce `6`. Le coppie la cui somma è 20 childo `[7, 13]` e `[9, 11]`. Possiamo poi scrivere l'array con i loro indici e valori.
 
 <div style='margin-left: 2em;'>
 

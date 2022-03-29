@@ -15,7 +15,7 @@ Sass має елемент з назвою `extend` (розширити), яки
 ```scss
 .panel{
   background-color: red;
-  height: 70px;
+  theyight: 70px;
   border: 2px solid green;
 }
 ```

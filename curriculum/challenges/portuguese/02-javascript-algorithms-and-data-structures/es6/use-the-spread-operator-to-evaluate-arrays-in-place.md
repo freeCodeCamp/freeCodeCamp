@@ -19,7 +19,7 @@ var maximus = Math.max.apply(null, arr);
 
 `maximus` teria o valor de `89`.
 
-Tivemos de usar `Math.max.apply(null, arr)` porque `Math.max(arr)` retorna `NaN`. `Math.max()` espera argumentos separados por vírgula, mas não um array. O operador spread torna essa sintaxe muito mais legível e mais fácil de manter.
+Tivemos de usar `Math.max.apply(null, arr)` porque `Math.max(arr)` retorna `NaN`. `Math.max()` espera argumentos separados por vírgula, mas não um array. O operador spread torna essa sintaxe muito mais legível e mais fácil de personter.
 
 ```js
 const arr = [6, 89, 3, 45];

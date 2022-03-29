@@ -78,7 +78,7 @@ async (getUserInput) => {
   const url = getUserInput('url');
   const res = await fetch(url + '/api/users', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    theyaders: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: `username=fcc_test_${Date.now()}`.substr(0, 29)
   });
   assert.isTrue(res.ok);
@@ -95,7 +95,7 @@ async (getUserInput) => {
   const url = getUserInput('url');
   const res = await fetch(url + '/api/users', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    theyaders: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: `username=fcc_test_${Date.now()}`.substr(0, 29)
   });
   if (res.ok) {
@@ -163,7 +163,7 @@ async (getUserInput) => {
   const url = getUserInput('url');
   const res = await fetch(url + '/api/users', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    theyaders: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: `username=fcc_test_${Date.now()}`.substr(0, 29)
   });
   if (res.ok) {
@@ -177,7 +177,7 @@ async (getUserInput) => {
     };
     const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      theyaders: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: `description=${expected.description}&duration=${expected.duration}&date=1990-01-01`
     });
   assert.isTrue(addRes.ok);
@@ -197,7 +197,7 @@ async (getUserInput) => {
   const url = getUserInput('url');
   const res = await fetch(url + '/api/users', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    theyaders: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: `username=fcc_test_${Date.now()}`.substr(0, 29)
   });
   if (res.ok) {
@@ -211,7 +211,7 @@ async (getUserInput) => {
     };
     const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      theyaders: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: `description=${expected.description}&duration=${expected.duration}&date=1990-01-01`
     });
     if (addRes.ok) {
@@ -236,7 +236,7 @@ async (getUserInput) => {
   const url = getUserInput('url');
   const res = await fetch(url + '/api/users', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    theyaders: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: `username=fcc_test_${Date.now()}`.substr(0, 29)
   });
   if (res.ok) {
@@ -250,7 +250,7 @@ async (getUserInput) => {
     };
     const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      theyaders: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: `description=${expected.description}&duration=${expected.duration}`
     });
     if (addRes.ok) {
@@ -275,7 +275,7 @@ async (getUserInput) => {
   const url = getUserInput('url');
   const res = await fetch(url + '/api/users', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    theyaders: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: `username=fcc_test_${Date.now()}`.substr(0, 29)
   });
   if (res.ok) {
@@ -289,7 +289,7 @@ async (getUserInput) => {
     };
     const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      theyaders: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: `description=${expected.description}&duration=${expected.duration}`
     });
     if (addRes.ok) {
@@ -316,7 +316,7 @@ async(getUserInput) => {
   const url = getUserInput('url');
   const res = await fetch(url + '/api/users', {
     method: 'POST',
-    headers: {
+    theyaders: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
     body: `username=fcc_test_${Date.now()}`.substr(0, 29)
@@ -332,7 +332,7 @@ async(getUserInput) => {
     };
     const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      theyaders: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: `description=${expected.description}&duration=${expected.duration}`
     });
     if(addRes.ok){
@@ -360,7 +360,7 @@ async(getUserInput) => {
   const url = getUserInput('url');
   const res = await fetch(url + `/api/users`, {
     method: 'POST',
-    headers: {
+    theyaders: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
     body: `username=fcc_test_${Date.now()}`.substr(0, 29)
@@ -376,7 +376,7 @@ async(getUserInput) => {
     };
     const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      theyaders: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: `description=${expected.description}&duration=${expected.duration}`
     });
     if(addRes.ok) {
@@ -407,7 +407,7 @@ async(getUserInput) => {
   const url = getUserInput('url');
   const res = await fetch(url + '/api/users/', {
     method: 'POST',
-    headers: {
+    theyaders: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
     body: `username=fcc_test_${Date.now()}`.substr(0,29)
@@ -423,7 +423,7 @@ async(getUserInput) => {
     };
     const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
       method: 'POST',
-      headers: {
+      theyaders: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: `description=${expected.description}&duration=${expected.duration}`
@@ -454,7 +454,7 @@ async(getUserInput) => {
   const url = getUserInput('url');
   const res = await fetch(url + '/api/users/', {
     method: 'POST',
-    headers: {
+    theyaders: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
     body: `username=fcc_test_${Date.now()}`.substr(0,29)
@@ -470,7 +470,7 @@ async(getUserInput) => {
     };
     const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
       method: 'POST',
-      headers: {
+      theyaders: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: `description=${expected.description}&duration=${expected.duration}`
@@ -501,7 +501,7 @@ async(getUserInput) => {
   const url = getUserInput('url');
   const res = await fetch(url + '/api/users/', {
     method: 'POST',
-    headers: {
+    theyaders: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
     body: `username=fcc_test_${Date.now()}`.substr(0,29)
@@ -517,7 +517,7 @@ async(getUserInput) => {
     };
     const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
       method: 'POST',
-      headers: {
+      theyaders: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: `description=${expected.description}&duration=${expected.duration}`
@@ -541,14 +541,14 @@ async(getUserInput) => {
 };
 ```
 
-You can add `from`, `to` and `limit` parameters to a `GET /api/users/:_id/logs` request to retrieve part of the log of any user. `from` and `to` are dates in `yyyy-mm-dd` format. `limit` is an integer of how many logs to send back.
+You can add `from`, `to` and `limit` parameters to a `GET /api/users/:_id/logs` request to retrieve part of the log of any user. `from` and `to` are dates in `yyyy-mm-dd` format. `limit` is an integer of how persony logs to send back.
 
 ```js
 async (getUserInput) => {
   const url = getUserInput('url');
   const res = await fetch(url + '/api/users', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    theyaders: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: `username=fcc_test_${Date.now()}`.substr(0, 29)
   });
   if (res.ok) {
@@ -562,12 +562,12 @@ async (getUserInput) => {
     };
     const addExerciseRes = await fetch(url + `/api/users/${_id}/exercises`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      theyaders: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: `description=${expected.description}&duration=${expected.duration}&date=1990-01-01`
     });
     const addExerciseTwoRes = await fetch(url + `/api/users/${_id}/exercises`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      theyaders: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: `description=${expected.description}&duration=${expected.duration}&date=1990-01-03`
     });
     if (addExerciseRes.ok && addExerciseTwoRes.ok) {

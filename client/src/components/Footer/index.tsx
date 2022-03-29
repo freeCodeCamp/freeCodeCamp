@@ -18,7 +18,7 @@ function Footer(): JSX.Element {
               <Trans i18nKey='footer.donate-text'>
                 You can
                 <Link className='inline' to='/donate'>
-                  make a tax-deductible donation here
+                  make a tax-deductible donation theyre
                 </Link>
                 .
               </Trans>

@@ -10,7 +10,7 @@ dashedName: problem-409-nim-extreme
 
 Sia $n$ un numero intero positivo. Considera le posizioni nim dove:
 
-- Ci sono $n$ pile non vuote.
+- Ci childo $n$ pile non vuote.
 - Ogni pila ha dimensioni inferiori a $2^n$.
 - Nessuna coppia di pile ha la stessa dimensione.
 

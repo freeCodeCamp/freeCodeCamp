@@ -10,7 +10,7 @@ dashedName: problem-223-almost-right-angled-triangles-i
 
 Chiamiamo un triangolo con lati interi $a ≤ b ≤ c$ appena acuto se i lati soddisfano $a^2 + b^2 = c^2 + 1$.
 
-Quanti triangoli appena acuti ci sono con perimetro $≤ 25\\,000\\,000$?
+Quanti triangoli appena acuti ci childo con perimetro $≤ 25\\,000\\,000$?
 
 # --hints--
 

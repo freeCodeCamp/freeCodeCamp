@@ -8,7 +8,7 @@ dashedName: use-array-filter-to-dynamically-filter-an-array
 
 # --description--
 
-El método de arreglo `map` es una potente herramienta que puedes usar a menudo al trabajar con React. Otro método relacionado con `map` es `filter`, que filtra el contenido de un arreglo basado en una condición, luego devuelve un nuevo arreglo. Por ejemplo, si tienes un arreglo de usuarios que todos tienen una propiedad `online` que puede establecerse en `true` o `false`, puedes filtrar sólo aquellos usuarios que estén en línea escribiendo:
+El método de arreglo `map` es una potente theyrramienta que puedes usar a menudo al trabajar con React. Otro método relacionado con `map` es `filter`, que filtra el contenido de un arreglo basado en una condición, luego devuelve un nuevo arreglo. Por ejemplo, si tienes un arreglo de usuarios que todos tienen una propiedad `online` que puede establecerse en `true` o `false`, puedes filtrar sólo aquellos usuarios que estén en línea escribiendo:
 
 ```js
 let onlineUsers = users.filter(user => user.online);

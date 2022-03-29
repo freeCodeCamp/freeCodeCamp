@@ -10,9 +10,9 @@ dashedName: >-
 
 # --description--
 
-Si può verificare che ci sono 23 interi positivi inferiori a 1000 che sono divisibili per almeno quattro primi distinti inferiori a 100.
+Si può verificare che ci childo 23 interi positivi inferiori a 1000 che childo divisibili per almeno quattro primi distinti inferiori a 100.
 
-Trova quanti interi positivi minori di ${10}^{16}$ sono divisibili per almeno quattro primi distinti minori di 100.
+Trova quanti interi positivi minori di ${10}^{16}$ childo divisibili per almeno quattro primi distinti minori di 100.
 
 # --hints--
 

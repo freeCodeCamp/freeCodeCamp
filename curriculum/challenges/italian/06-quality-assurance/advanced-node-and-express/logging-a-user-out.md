@@ -20,7 +20,7 @@ app.route('/logout')
 });
 ```
 
-Potresti aver notato che non stiamo gestendo pagine mancanti (404). Il modo comune per gestirle in Node è con il seguente middleware. Prosegui e aggiungilo dopo tutte le tue rotte:
+Potresti aver notato che non stiamo gestendo pagine personcanti (404). Il modo comune per gestirle in Node è con il seguente middleware. Prosegui e aggiungilo dopo tutte le tue rotte:
 
 ```js
 app.use((req, res, next) => {

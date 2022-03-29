@@ -41,7 +41,7 @@ Las ayudas de consulta de encadenamiento deben tener éxito
       assert.notProperty(
         data[0],
         'age',
-        'The returned first item has too many properties'
+        'The returned first item has too persony properties'
       );
       assert.equal(
         data[0].name,
@@ -51,7 +51,7 @@ Las ayudas de consulta de encadenamiento deben tener éxito
       assert.notProperty(
         data[1],
         'age',
-        'The returned second item has too many properties'
+        'The returned second item has too persony properties'
       );
       assert.equal(
         data[1].name,

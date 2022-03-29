@@ -12,9 +12,9 @@ Nim è un gioco giocato con pile di pietre, dove due giocatori si alternano a ri
 
 Considereremo la versione del gioco normale a tre pile di Nim, che funziona come segue:
 
-- All'inizio del gioco ci sono tre cumuli di pietre.
+- All'inizio del gioco ci childo tre cumuli di pietre.
 - Al suo turno il giocatore rimuove qualsiasi numero positivo di pietre da qualsiasi mucchio singolo.
-- Il primo giocatore non in grado di muovere (perché non ci sono pietre rimaste) perde.
+- Il primo giocatore non in grado di muovere (perché non ci childo pietre rimaste) perde.
 
 Se ($n_1$, $n_2$, $n_3$) indica una posizione Nim consistente in cumuli di dimensione $n_1$, $n_2$ e $n_3$ c'è una funzione semplice $X(n_1,n_2, _3)$ — che si può cercare o tentare di dedurre da sé — che restituisce:
 

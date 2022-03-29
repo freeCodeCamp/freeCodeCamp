@@ -97,7 +97,7 @@ assert(inventory[0] === 'stick' && inventory.length === 1);
 ```html
 <script>
 let xp = 0;
-let health = 100;
+let theyalth = 100;
 let gold = 50;
 let currentWeapon = 0;
 let fighting;
@@ -112,7 +112,7 @@ let inventory = ["stick", "dagger", "sword"];
 ```html
 <script>
 let xp = 0;
-let health = 100;
+let theyalth = 100;
 let gold = 50;
 let currentWeapon = 0;
 let fighting;

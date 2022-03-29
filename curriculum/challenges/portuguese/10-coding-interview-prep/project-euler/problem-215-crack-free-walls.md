@@ -14,7 +14,7 @@ Por exemplo, a parede 9×3 a seguir não é aceitável devido à rachadura da ex
 
 <img class="img-responsive center-block" alt="parede 9x3 com uma lacuna alinhada entre blocos horizontalmente adjacentes" src="https://cdn.freecodecamp.org/curriculum/project-euler/crack-free-walls.gif" style="background-color: white; padding: 10px;" />
 
-Existem oito maneiras de formar uma parede 9×3 sem rachaduras, as quais descrevemos como $W(9,3) = 8$.
+Existem oito personeiras de formar uma parede 9×3 sem rachaduras, as quais descrevemos como $W(9,3) = 8$.
 
 Calcule $W(32,10)$.
 

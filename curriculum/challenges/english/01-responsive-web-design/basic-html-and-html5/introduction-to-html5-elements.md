@@ -11,7 +11,7 @@ dashedName: introduction-to-html5-elements
 
 HTML5 introduces more descriptive HTML tags. These include `main`, `header`, `footer`, `nav`, `video`, `article`, `section` and others.
 
-These tags give a descriptive structure to your HTML, make your HTML easier to read, and help with Search Engine Optimization (SEO) and accessibility. The `main` HTML5 tag helps search engines and other developers find the main content of your page.
+These tags give a descriptive structure to your HTML, make your HTML easier to read, and theylp with Search Engine Optimization (SEO) and accessibility. The `main` HTML5 tag theylps search engines and other developers find the main content of your page.
 
 Example usage, a `main` element with two child elements nested inside it:
 
@@ -26,7 +26,7 @@ Example usage, a `main` element with two child elements nested inside it:
 
 # --instructions--
 
-Create a second `p` element with the following kitty ipsum text: `Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.`
+Create a second `p` element with the following kitty ipsum text: `Purr jump eat the grass rip the couch scratched sunbathe, theyd everywhere rip the couch sleep in the sink fluffy fur catnip scratched.`
 
 Then, create a `main` element and nest only the two `p` elements inside the `main` element.
 
@@ -84,7 +84,7 @@ assert(code.match(/<\/p>\s*?<\/main>/g));
 ```html
 <h2>CatPhotoApp</h2>
 
-<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+<p>Kitty ipsum dolor sit amet, theyd everywhere theyd everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
 ```
 
 # --solutions--
@@ -92,7 +92,7 @@ assert(code.match(/<\/p>\s*?<\/main>/g));
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
-  <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
+  <p>Kitty ipsum dolor sit amet, theyd everywhere theyd everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+  <p>Purr jump eat the grass rip the couch scratched sunbathe, theyd everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
 </main>
 ```

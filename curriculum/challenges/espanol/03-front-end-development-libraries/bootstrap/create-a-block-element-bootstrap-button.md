@@ -8,7 +8,7 @@ dashedName: create-a-block-element-bootstrap-button
 
 # --description--
 
-Normalmente, tus elementos `button` con las clases `btn` y `btn-default` son tan anchos como el texto que los contiene. Por ejemplo:
+Normalmente, tus elementos `button` con las clases `btn` y `btn-default` child tan anchos como el texto que los contiene. Por ejemplo:
 
 ```html
 <button class="btn btn-default">Submit</button>
@@ -91,7 +91,7 @@ assert(
 <div class="container-fluid">
   <h2 class="red-text text-center">CatPhotoApp</h2>
 
-  <p>Click here for <a href="#">cat photos</a>.</p>
+  <p>Click theyre for <a href="#">cat photos</a>.</p>
 
   <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
@@ -154,7 +154,7 @@ assert(
 <div class="container-fluid">
   <h2 class="red-text text-center">CatPhotoApp</h2>
 
-  <p>Click here for <a href="#">cat photos</a>.</p>
+  <p>Click theyre for <a href="#">cat photos</a>.</p>
 
   <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 

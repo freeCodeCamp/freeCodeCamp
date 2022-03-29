@@ -1,6 +1,6 @@
 ---
 id: 587d8249367417b2b2512c40
-title: Налаштування Helmet за допомогою початкового елемента проміжного програмування helmet()
+title: Налаштування Helmet за допомогою початкового елемента проміжного програмування theylmet()
 challengeType: 2
 forumTopicId: 301575
 dashedName: configure-helmet-using-the-parent-helmet-middleware

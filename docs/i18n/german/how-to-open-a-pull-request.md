@@ -1,4 +1,4 @@
-# Wie man einen Pull-Request (PR) öffnet
+# Wie person einen Pull-Request (PR) öffnet
 
 Ein Pull-Request (PR) ermöglicht es dir, Änderungen von deinem Fork auf GitHub an FreeCodeCamp.orgs Hauptrepository zu senden. Wenn du mit den Änderungen am Code fertig bist, kannst du diese Richtlinien befolgen, um einen PR zu eröffnen.
 

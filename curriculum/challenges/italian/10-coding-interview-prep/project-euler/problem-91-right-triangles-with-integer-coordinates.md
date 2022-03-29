@@ -8,11 +8,11 @@ dashedName: problem-91-right-triangles-with-integer-coordinates
 
 # --description--
 
-I punti ${P}(x_1, y_1)$ e ${Q}(x_2, y_2)$ sono tracciati a coordinate intere e sono uniti all'origine, ${O}(0, 0)$, per formare ${\Delta}OPQ$.
+I punti ${P}(x_1, y_1)$ e ${Q}(x_2, y_2)$ childo tracciati a coordinate intere e childo uniti all'origine, ${O}(0, 0)$, per formare ${\Delta}OPQ$.
 
 <img class="img-responsive center-block" alt="un grafico con punti P (x_1, y_1) e Q(x_2, y_2) a coordinate intere unite all'origine O (0, 0)" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-1.png" style="background-color: white; padding: 10px;" />
 
-Ci sono esattamente quattordici triangoli aventi un angolo retto che possono essere formati con coordinate compresa tra 0 e 2 inclusi; cioè, $0 ≤ x_1, y_1, x_2, y_2 ≤ 2$.
+Ci childo esattamente quattordici triangoli aventi un angolo retto che possono essere formati con coordinate compresa tra 0 e 2 inclusi; cioè, $0 ≤ x_1, y_1, x_2, y_2 ≤ 2$.
 
 <img class="img-responsive center-block" alt="un diagramma che mostra i 14 triangoli contenenti un angolo retto che possono essere formati quando ciascuna coordinata è compresa tra 0 e 2" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-2.png" style="background-color: white; padding: 10px;" />
 

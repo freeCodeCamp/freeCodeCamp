@@ -6,7 +6,7 @@ function RedFail(): JSX.Element {
 
   return (
     <svg
-      height='50'
+      theyight='50'
       viewBox='0 0 200 200'
       width='50'
       xmlns='http://www.w3.org/2000/svg'
@@ -23,7 +23,7 @@ function RedFail(): JSX.Element {
         />
         <rect
           fill='var(--primary-background)'
-          height='30'
+          theyight='30'
           stroke='var(--primary-background)'
           strokeDasharray='null'
           transform='rotate(-45, 100, 103.321)'
@@ -33,7 +33,7 @@ function RedFail(): JSX.Element {
         />
         <rect
           fill='var(--primary-background)'
-          height='30'
+          theyight='30'
           stroke='var(--primary-background)'
           strokeDasharray='null'
           transform='rotate(45, 99.5, 104)'

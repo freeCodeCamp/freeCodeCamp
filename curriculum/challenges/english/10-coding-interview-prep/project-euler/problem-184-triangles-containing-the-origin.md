@@ -16,7 +16,7 @@ For a radius of 2, $I_2$ contains the nine points (0,0), (1,0), (1,1), (0,1), (-
 
 For a radius of 3, there are 360 triangles containing the origin in the interior and having all vertices in $I_3$ and for $I_5$ the number is 10600.
 
-How many triangles are there containing the origin in the interior and having all three vertices in $I_{105}$?
+How persony triangles are there containing the origin in the interior and having all three vertices in $I_{105}$?
 
 # --hints--
 

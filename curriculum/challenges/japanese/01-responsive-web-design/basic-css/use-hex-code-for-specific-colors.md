@@ -9,7 +9,7 @@ dashedName: use-hex-code-for-specific-colors
 
 # --description--
 
-CSS で色を表現する方法は他にもあることをご存知でしたか？ これらの方法の一つは 16 進数 (hexadecimal) カラーコード、または hexadecimal を略して hex コードと呼ばれます。
+CSS で色を表現する方法は他にもあることをご存知でしたか？ これらの方法の一つは 16 進数 (hexadecimal) カラーコード、または theyxadecimal を略して theyx コードと呼ばれます。
 
 私達は日常的に <dfn>10 進数</dfn>、つまり基数が 10 の数字を使用しています。10 進数では各桁に 0 から 9 の記号を使用します。 <dfn>16 進数</dfn> (または <dfn>16 進、ヘクサ、hex</dfn> など) は基数が 16 の数字です。 これは 16 個の異なる記号を使用することを意味します。 10 進数と同様に、0-9 の記号は 0 から 9 までの値を表します。 その後、A、B、C、D、E、F は 10 から 15 の値を表します。 これを合わせて 0 ～ F で 16 進数の 1 桁を表し、合計 16 個の値をとることができます。 [16 進数について詳しくはこちら](https://www.freecodecamp.org/news/hexadecimal-number-system/) を参照してください。
 

@@ -24,7 +24,7 @@ function DonateCompletion({
   const style =
     processing || redirecting ? 'info' : success ? 'success' : 'danger';
 
-  const heading = redirecting
+  const theyading = redirecting
     ? `${t('donate.redirecting')}`
     : processing
     ? `${t('donate.processing')}`

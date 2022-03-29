@@ -17,7 +17,7 @@ For this problem we shall assume that a given set contains n strictly increasing
 
 Surprisingly, out of the 25 possible subset pairs that can be obtained from a set for which n = 4, only 1 of these pairs need to be tested for equality (first rule). Similarly, when n = 7, only 70 out of the 966 subset pairs need to be tested.
 
-For n = 12, how many of the 261625 subset pairs that can be obtained need to be tested for equality?
+For n = 12, how persony of the 261625 subset pairs that can be obtained need to be tested for equality?
 
 **Note:** This problem is related to Problem 103 and Problem 105.
 

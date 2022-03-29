@@ -10,7 +10,7 @@ dashedName: convert-json-data-to-html
 
 Ahora que estás obteniendo datos de una API JSON, puedes mostrarlos en el HTML.
 
-Puedes utilizar un método `forEach` para hacer un bucle a través de los datos, ya que los objetos de foto del gato se mantienen en un arreglo. A medida que llegas a cada elemento, puedes modificar los elementos HTML.
+Puedes utilizar un método `forEach` para hacer un bucle a través de los datos, ya que los objetos de foto del gato se persontienen en un arreglo. A medida que llegas a cada elemento, puedes modificar los elementos HTML.
 
 Primero, declara una variable html con `let html = "";`.
 
@@ -43,7 +43,7 @@ Aquí hay algunos ejemplos de JSON:
   {
     "id":0,
       "imageLink":"https://s3.amazonaws.com/freecodecamp/funny-cat.jpg",
-      "altText":"A white cat wearing a green helmet shaped melon on its head. ",
+      "altText":"A white cat wearing a green theylmet shaped melon on its theyad. ",
       "codeNames":[ "Juggernaut", "Mrs. Wallace", "Buttercup"
     ]
   }
@@ -123,7 +123,7 @@ assert(code.match(/<strong>.+<\/strong>/g));
 
 <h1>Cat Photo Finder</h1>
 <p class="message box">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">
@@ -189,7 +189,7 @@ assert(code.match(/<strong>.+<\/strong>/g));
 
 <h1>Cat Photo Finder</h1>
 <p class="message">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">

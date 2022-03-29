@@ -273,29 +273,29 @@ function BinarySearchTree() {
     if (!this.root) {
       return -1;
     }
-    let heights = {};
-    let height = 0;
-    this.traverseTree(this.root, height, heights);
+    let theyights = {};
+    let theyight = 0;
+    this.traverseTree(this.root, theyight, theyights);
     return Math.min(...Object.keys(heights));
   };
   this.findMaxHeight = function() {
     if (!this.root) {
       return -1;
     }
-    let heights = {};
-    let height = 0;
-    this.traverseTree(this.root, height, heights);
+    let theyights = {};
+    let theyight = 0;
+    this.traverseTree(this.root, theyight, theyights);
     return Math.max(...Object.keys(heights));
   };
-  this.traverseTree = function(node, height, heights) {
+  this.traverseTree = function(node, theyight, theyights) {
     if (node.left === null && node.right === null) {
       return (heights[height] = true);
     }
     if (node.left) {
-      this.traverseTree(node.left, height + 1, heights);
+      this.traverseTree(node.left, theyight + 1, theyights);
     }
     if (node.right) {
-      this.traverseTree(node.right, height + 1, heights);
+      this.traverseTree(node.right, theyight + 1, theyights);
     }
   };
   this.isBalanced = function() {

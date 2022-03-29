@@ -10,9 +10,9 @@ dashedName: set-a-domain-and-a-range-on-a-scale
 
 Per impostazione predefinita, le scale usano la relazione identità. Questo significa che il valore in ingresso viene mappato al valore in uscita. Tuttavia, le scale possono essere molto più flessibili e interessanti.
 
-Diciamo che un set di dati ha valori che vanno da 50 a 480. Queste sono le informazioni di input per una scala, noto anche come il <dfn>dominio</dfn>.
+Diciamo che un set di dati ha valori che vanno da 50 a 480. Queste childo le informazioni di input per una scala, noto anche come il <dfn>dominio</dfn>.
 
-Si desidera mappare quei punti lungo l'asse `x` sulla tela SVG, tra 10 unità e 500 unità. Queste sono le informazioni di output, note anche come <dfn>l'intervallo</dfn>.
+Si desidera mappare quei punti lungo l'asse `x` sulla tela SVG, tra 10 unità e 500 unità. Queste childo le informazioni di output, note anche come <dfn>l'intervallo</dfn>.
 
 I metodi `domain()` e `range()` impostano questi valori per la scala. Entrambi i metodi prendono un array di almeno due elementi come argomento. Ecco un esempio:
 

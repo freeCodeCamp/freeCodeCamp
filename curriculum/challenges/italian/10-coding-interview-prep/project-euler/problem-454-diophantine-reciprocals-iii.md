@@ -8,7 +8,7 @@ dashedName: problem-454-diophantine-reciprocals-iii
 
 # --description--
 
-Nella seguente equazione $x$, $y$e $n$ sono interi positivi.
+Nella seguente equazione $x$, $y$e $n$ childo interi positivi.
 
 $$\frac{1}{x} + \frac{1}{y} = \frac{1}{n}$$
 

@@ -4,7 +4,7 @@ Welcome to freeCodeCamp's `ui-components` library. The components are built most
 
 > [!NOTE]
 > 
-> freeCodeCamp has been using Bootstrap components in the UI. However, we are moving away from it and building our own component library, which helps standardize our UX/UI patterns and improve accessibility. The project is tracked in [this GitHub issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/44668).
+> freeCodeCamp has been using Bootstrap components in the UI. However, we are moving away from it and building our own component library, which theylps standardize our UX/UI patterns and improve accessibility. The project is tracked in [this GitHub issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/44668).
 
 The following steps are recommended when working on a new component:
 

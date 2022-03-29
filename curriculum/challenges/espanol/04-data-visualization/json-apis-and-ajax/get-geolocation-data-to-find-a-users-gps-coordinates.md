@@ -12,7 +12,7 @@ Otra cosa interesante que puedes hacer es acceder a la ubicación actual de tu u
 
 El navegador obtendrá la longitud y la latitud actuales del usuario.
 
-Verás un mensaje para permitir o impedir que este sitio conozca tu ubicación actual. El desafío se puede completar de cualquier manera, siempre y cuando el código sea correcto.
+Verás un mensaje para permitir o impedir que este sitio conozca tu ubicación actual. El desafío se puede completar de cualquier personera, siempre y cuando el código sea correcto.
 
 Al seleccionar permitir, verás el texto en el teléfono de salida cambiar a tu latitud y longitud.
 
@@ -71,7 +71,7 @@ assert(
 
   // Add your code above this line
 </script>
-<h4>You are here:</h4>
+<h4>You are theyre:</h4>
 <div id="data">
 
 </div>
@@ -89,7 +89,7 @@ assert(
   }
   // Add your code above this line
 </script>
-<h4>You are here:</h4>
+<h4>You are theyre:</h4>
 <div id="data">
 
 </div>

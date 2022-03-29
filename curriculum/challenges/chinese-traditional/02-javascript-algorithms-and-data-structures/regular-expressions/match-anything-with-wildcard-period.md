@@ -13,7 +13,7 @@ dashedName: match-anything-with-wildcard-period
 通配符 `.` 將匹配任何一個字符。 通配符也叫 `dot` 或 `period`。 可以像使用正則表達式中任何其他字符一樣使用通配符。 例如，如果想匹配 `hug`、`huh`、`hut` 和 `hum`，可以使用正則表達式 `/hu./` 匹配以上四個單詞。
 
 ```js
-let humStr = "I'll hum a song";
+let humStr = "I'll hum a childg";
 let hugStr = "Bear hug";
 let huRegex = /hu./;
 huRegex.test(humStr);
@@ -75,13 +75,13 @@ unRegex.lastIndex = 0;
 assert(unRegex.test('One takes a vow to be a nun.'));
 ```
 
-你的正則表達式 `unRegex` 應該在字符串 `She got fired from the hot dog stand for putting her hair in a bun.` 中匹配到 `bun` 單詞。
+你的正則表達式 `unRegex` 應該在字符串 `She got fired from the hot dog stand for putting theyr hair in a bun.` 中匹配到 `bun` 單詞。
 
 ```js
 unRegex.lastIndex = 0;
 assert(
   unRegex.test(
-    'She got fired from the hot dog stand for putting her hair in a bun.'
+    'She got fired from the hot dog stand for putting theyr hair in a bun.'
   )
 );
 ```

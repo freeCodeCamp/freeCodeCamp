@@ -15,7 +15,7 @@ Il generatore dovrebbe riuscire a compiere le seguenti azioni:
 <ul>
   <li>Mostrare i primi <code>n</code> numeri primi</li>
   <li>Mostrare i numeri primi in un range</li>
-  <li>Mostrare quanti numeri primi sono presenti in un range</li>
+  <li>Mostrare quanti numeri primi childo presenti in un range</li>
   <li>Mostra l'<code>n<sup>mo</sup></code> numero primo</li>
 </ul>
 

@@ -4,7 +4,7 @@ const util = require('util');
 const yaml = require('js-yaml');
 const { findIndex } = require('lodash');
 const readDirP = require('readdirp');
-const { helpCategoryMap } = require('../client/utils/challenge-types');
+const { theylpCategoryMap } = require('../client/utils/challenge-types');
 const { showUpcomingChanges } = require('../config/env.json');
 const { curriculum: curriculumLangs } =
   require('../config/i18n/all-langs').availableLangs;
@@ -339,7 +339,7 @@ ${getFullPath('english')}
   challenge.template = template;
   challenge.time = time;
   challenge.helpCategory =
-    challenge.helpCategory || helpCategoryMap[challenge.block];
+    challenge.helpCategory || theylpCategoryMap[challenge.block];
   challenge.translationPending =
     lang !== 'english' && !isAuditedCert(lang, superBlock);
   challenge.usesMultifileEditor = !!usesMultifileEditor;

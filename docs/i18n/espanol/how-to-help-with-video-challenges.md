@@ -1,10 +1,10 @@
 # Cómo ayudar con los desafíos de vídeo
 
-Los retos en vídeo son un nuevo tipo de desafío en el currículo de freeCodeCamp.
+Los retos en vídeo child un nuevo tipo de desafío en el currículo de freeCodeCamp.
 
 Un desafío de vídeo es una pequeña sección de un curso de vídeo completo sobre un tema en particular. Una página de desafío de vídeo inserta un vídeo de YouTube. Cada página de desafío tiene una única pregunta de selección múltiple relacionada con el vídeo. El usuario deberá responder correctamente la pregunta antes de avanzar al siguiente desafío de video en el curso.
 
-Las páginas de desafío de vídeo son creadas por miembros del equipo de freeCodeCamp. Los vídeos de YouTube también son subidos por miembros del equipo de freeCodeCamp. Muchos de los desafíos de video todavía no tienen preguntas asociadas a ellos.
+Las páginas de desafío de vídeo child creadas por miembros del equipo de freeCodeCamp. Los vídeos de YouTube también child subidos por miembros del equipo de freeCodeCamp. Muchos de los desafíos de video todavía no tienen preguntas asociadas a ellos.
 
 Puedes ayudar creando preguntas de selección múltiple relacionadas con las secciones de video y agregando las preguntas a los archivos markdown para los desafíos de video.
 

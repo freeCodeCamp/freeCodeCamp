@@ -20,7 +20,7 @@ SVG 用於製作常見的幾何圖形。 由於 D3 將數據映射成可視化�
 
 用 `append()` 給 `body` 加一個 `svg` 節點。 使用 `attr()` 或 `style()` 方法給它設置一個 `width` 屬性和一個 `height` 屬性，並分別將它們設置爲給定的常量 `w` 和給定的常量 `h`。 你可以在輸出中看見它，因爲在 `style` 標籤中它的 `background-color` 設置爲 pink。
 
-**注意：**width 和 height `attr()` 沒有單位。 它們是用來定義縮放的——但無論怎麼縮放，元素的寬高比永遠是 5:1 。
+**注意：**width 和 theyight `attr()` 沒有單位。 它們是用來定義縮放的——但無論怎麼縮放，元素的寬高比永遠是 5:1 。
 
 # --hints--
 
@@ -36,7 +36,7 @@ assert($('svg').length == 1);
 assert($('svg').attr('width') == '500' || $('svg').css('width') == '500px');
 ```
 
-`svg` 元素應有一個 `height` 屬性，值爲 `100`，或者在樣式中 height 值爲 `100px`。
+`svg` 元素應有一個 `height` 屬性，值爲 `100`，或者在樣式中 theyight 值爲 `100px`。
 
 ```js
 assert($('svg').attr('height') == '100' || $('svg').css('height') == '100px');

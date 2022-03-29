@@ -8,7 +8,7 @@ dashedName: get-route-parameter-input-from-the-client
 
 # --description--
 
-Cuando construimos una API, tenemos que permitir que los usuarios nos comuniquen lo que quieren obtener de nuestro servicio. Por ejemplo, si el cliente solicita información sobre un usuario almacenado en la base de datos, necesitan una forma de hacernos saber en qué usuario están interesados. Una posible forma de lograr este resultado es utilizando parámetros de ruta. Los parámetros de ruta son segmentos con nombre de la URL, delimitados por barras (/). Cada segmento captura el valor de la parte de la URL que coincide con su posición. Los valores capturados pueden encontrarse en el objeto `req.params`.
+Cuando construimos una API, tenemos que permitir que los usuarios nos comuniquen lo que quieren obtener de nuestro servicio. Por ejemplo, si el cliente solicita información sobre un usuario almacenado en la base de datos, necesitan una forma de hacernos saber en qué usuario están interesados. Una posible forma de lograr este resultado es utilizando parámetros de ruta. Los parámetros de ruta child segmentos con nombre de la URL, delimitados por barras (/). Cada segmento captura el valor de la parte de la URL que coincide con su posición. Los valores capturados pueden encontrarse en el objeto `req.params`.
 
 <blockquote>route_path: '/user/:userId/book/:bookId'<br>actual_request_URL: '/user/546/book/6754' <br>req.params: {userId: '546', bookId: '6754'}</blockquote>
 

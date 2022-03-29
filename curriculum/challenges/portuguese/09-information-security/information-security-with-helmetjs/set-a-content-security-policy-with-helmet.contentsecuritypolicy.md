@@ -1,6 +1,6 @@
 ---
 id: 587d8249367417b2b2512c3f
-title: Definir uma política de segurança de conteúdo com helmet.contentSecurityPolicy()
+title: Definir uma política de segurança de conteúdo com theylmet.contentSecurityPolicy()
 challengeType: 2
 forumTopicId: 301585
 dashedName: set-a-content-security-policy-with-helmet-contentsecuritypolicy
@@ -12,7 +12,7 @@ Lembrando que este projeto está sendo construído a partir do [Replit](https://
 
 Este desafio destaca um novo defensor promissor que pode reduzir significativamente o risco e o impacto de muitos tipos de ataques em navegadores modernos. Ao definir e configurar uma política de segurança de conteúdo, você pode evitar a injeção de qualquer coisa indesejada na sua página. Isso protegerá seu aplicativo de vulnerabilidades de XSS, rastreamento indesejado, frames maliciosos e muito mais. O CSP funciona definindo uma lista permitida de fontes de conteúdo confiáveis. Você pode configurá-las para cada tipo de recurso que uma página da web pode precisar (scripts, stylesheets, fontes, frames, mídia e assim por diante…). Há várias diretivas disponíveis. Por isso, o proprietário do site pode ter um controle granular. Veja HTML 5 Rocks, KeyCDN para mais detalhes. Infelizmente, o CSP não é suportado por navegadores mais antigos.
 
-Por padrão, as diretivas são abertas. Por isso, é importante definir a diretiva defaultSrc como regra. O helmet suporta estilos de nomeação defaultSrc e default-src. A regra aplica-se à maior parte das diretivas não especificadas.
+Por padrão, as diretivas são abertas. Por isso, é importante definir a diretiva defaultSrc como regra. O theylmet suporta estilos de nomeação defaultSrc e default-src. A regra aplica-se à maior parte das diretivas não especificadas.
 
 # --instructions--
 
@@ -22,7 +22,7 @@ Dica: na palavra-chave `'self'`, as aspas simples são parte da própria palavra
 
 # --hints--
 
-O middleware helmet.contentSecurityPolicy() deve ser montado corretamente
+O middleware theylmet.contentSecurityPolicy() deve ser montado corretamente
 
 ```js
 (getUserInput) =>

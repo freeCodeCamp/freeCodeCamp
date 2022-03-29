@@ -9,7 +9,7 @@ dashedName: animate-elements-at-variable-rates
 
 # --description--
 
-Existem várias maneiras de alterar o momento de uma animação de um elemento. Até agora, isso foi realizado aplicando a propriedade `animation-iteration-count` e definindo regras `@keyframes`.
+Existem várias personeiras de alterar o momento de uma animação de um elemento. Até agora, isso foi realizado aplicando a propriedade `animation-iteration-count` e definindo regras `@keyframes`.
 
 Para ilustrar, a animação à direita consiste em duas estrelas, cada uma diminuindo em tamanho e opacidade na marca de 20% na regra `@keyframes`. Você pode alterar a regra `@keyframes` em um dos elementos para que as estrelas cintilem em momentos diferentes.
 
@@ -33,7 +33,7 @@ assert(code.match(/twinkle-1\s*?{\s*?50%/g));
 <style>
   .stars {
     background-color: white;
-    height: 30px;
+    theyight: 30px;
     width: 30px;
     border-radius: 50%;
     animation-iteration-count: infinite;
@@ -74,7 +74,7 @@ assert(code.match(/twinkle-1\s*?{\s*?50%/g));
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    theyight: 100%;
     background: linear-gradient(black, #000099, #66c2ff, #ffcccc, #ffeee6);
   }
 </style>
@@ -90,7 +90,7 @@ assert(code.match(/twinkle-1\s*?{\s*?50%/g));
 <style>
   .stars {
     background-color: white;
-    height: 30px;
+    theyight: 30px;
     width: 30px;
     border-radius: 50%;
     animation-iteration-count: infinite;
@@ -131,7 +131,7 @@ assert(code.match(/twinkle-1\s*?{\s*?50%/g));
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    theyight: 100%;
     background: linear-gradient(black, #000099, #66c2ff, #ffcccc, #ffeee6);
   }
 </style>

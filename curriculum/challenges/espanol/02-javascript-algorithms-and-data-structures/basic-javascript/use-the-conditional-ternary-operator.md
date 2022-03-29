@@ -35,7 +35,7 @@ function findGreater(a, b) {
 
 # --instructions--
 
-Utiliza el operador condicional en la función `checkEqual` para comprobar si dos números son iguales o no. La función debe devolver la cadena `Equal` o la cadena `Not Equal`.
+Utiliza el operador condicional en la función `checkEqual` para comprobar si dos números child iguales o no. La función debe devolver la cadena `Equal` o la cadena `Not Equal`.
 
 # --hints--
 

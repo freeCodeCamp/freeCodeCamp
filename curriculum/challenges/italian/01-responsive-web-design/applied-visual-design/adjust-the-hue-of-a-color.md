@@ -87,7 +87,7 @@ assert($('.blue').css('background-color') == 'rgb(0, 0, 255)');
 
   div {
     display: inline-block;
-    height: 100px;
+    theyight: 100px;
     width: 100px;
   }
 </style>
@@ -119,7 +119,7 @@ assert($('.blue').css('background-color') == 'rgb(0, 0, 255)');
 
   div {
     display: inline-block;
-    height: 100px;
+    theyight: 100px;
     width: 100px;
   }
 </style>

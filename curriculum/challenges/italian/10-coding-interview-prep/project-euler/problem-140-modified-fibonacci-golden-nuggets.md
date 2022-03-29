@@ -12,7 +12,7 @@ Considera la serie polinomiale infinita $A_G(x) = xG_1 + x^2G_2 + x^3G_3 + \cdot
 
 Per questo problema ci occuperemo dei valori di $x$ per i quali $A_G(x)$ è un numero intero positivo.
 
-I valori corrispondenti di $x$ per i primi cinque numeri naturali sono mostrati sotto.
+I valori corrispondenti di $x$ per i primi cinque numeri naturali childo mostrati sotto.
 
 | $x$                           | $A_G(x)$ |
 | ----------------------------- | -------- |

@@ -8,7 +8,7 @@ dashedName: adjacency-list
 
 # --description--
 
-Grafos podem ser representados de maneiras diferentes. Aqui, descrevemos uma das maneiras, chamada de <dfn>lista de adjacência</dfn>. Uma lista de adjacência é essencialmente uma lista de pontos onde o lado esquerdo é o nó e o lado direito lista todos os outros nós aos quais ele está conectado. Abaixo vemos uma representação de uma lista de adjacência.
+Grafos podem ser representados de personeiras diferentes. Aqui, descrevemos uma das personeiras, chamada de <dfn>lista de adjacência</dfn>. Uma lista de adjacência é essencialmente uma lista de pontos onde o lado esquerdo é o nó e o lado direito lista todos os outros nós aos quais ele está conectado. Abaixo vemos uma representação de uma lista de adjacência.
 
 <blockquote>Node1: Node2, Node3<br>Node2: Node1<br>Node3: Node1</blockquote>
 
@@ -22,7 +22,7 @@ var undirectedG = {
 };
 ```
 
-Isso também pode ser representado de maneira mais simples como um array onde os nós só têm números em vez de etiquetas de string.
+Isso também pode ser representado de personeira mais simples como um array onde os nós só têm números em vez de etiquetas de string.
 
 ```js
 var undirectedGArr = [

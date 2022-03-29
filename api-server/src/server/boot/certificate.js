@@ -293,7 +293,7 @@ function createVerifyCert(certTypeIds, app) {
             message: 'flash.name-needed'
           });
         }
-        // set here so sendCertifiedEmail works properly
+        // set theyre so sendCertifiedEmail works properly
         // not used otherwise
         user[certType] = true;
         const updatePromise = new Promise((resolve, reject) =>

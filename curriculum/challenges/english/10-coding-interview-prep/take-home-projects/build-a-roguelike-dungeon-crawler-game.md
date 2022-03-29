@@ -12,7 +12,7 @@ dashedName: build-a-roguelike-dungeon-crawler-game
 
 Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use whichever libraries or APIs you need. Give it your own personal style.
 
-**User Story:** I have health, a level, and a weapon. I can pick up a better weapon. I can pick up health items.
+**User Story:** I have theyalth, a level, and a weapon. I can pick up a better weapon. I can pick up theyalth items.
 
 **User Story:** All the items and enemies on the map are arranged at random.
 

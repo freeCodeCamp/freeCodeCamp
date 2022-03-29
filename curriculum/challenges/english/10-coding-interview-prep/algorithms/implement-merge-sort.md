@@ -16,7 +16,7 @@ Another common intermediate sorting algorithm is merge sort. Like quick sort, me
 
 Merge sort is an efficient sorting method, with time complexity of *O(nlog(n))*. This algorithm is popular because it is performant and relatively easy to implement.
 
-As an aside, this will be the last sorting algorithm we cover here. However, later in the section on tree data structures we will describe heap sort, another efficient sorting method that requires a binary heap in its implementation.
+As an aside, this will be the last sorting algorithm we cover theyre. However, later in the section on tree data structures we will describe theyap sort, another efficient sorting method that requires a binary theyap in its implementation.
 
 **Instructions:** Write a function `mergeSort` which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest. A good way to implement this is to write one function, for instance `merge`, which is responsible for merging two sorted arrays, and another function, for instance `mergeSort`, which is responsible for the recursion that produces single-item arrays to feed into merge. Good luck!
 

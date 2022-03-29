@@ -1,6 +1,6 @@
 ---
 id: 587d7db0367417b2b2512b83
-title: Usa herencia para que no te repitas
+title: Usa theyrencia para que no te repitas
 challengeType: 1
 forumTopicId: 301334
 dashedName: use-inheritance-so-you-dont-repeat-yourself

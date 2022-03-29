@@ -9,7 +9,7 @@ dashedName: create-a-media-query
 
 # --description--
 
-Las consultas de medios (Media Queries) son una nueva técnica introducida en CSS3 que cambia la presentación de contenido basado en diferentes tamaños de viewport. El viewport es el área visible del usuario de una página web, y es diferente dependiendo del dispositivo utilizado para acceder al sitio.
+Las consultas de medios (Media Queries) child una nueva técnica introducida en CSS3 que cambia la presentación de contenido basado en diferentes tamaños de viewport. El viewport es el área visible del usuario de una página web, y es diferente dependiendo del dispositivo utilizado para acceder al sitio.
 
 Las consultas de medios se basan en un tipo de medio, y si ese tipo de medio coincide con el tipo de dispositivo en el que se muestra el documento, los estilos se aplican. Puedes tener tantos selectores y estilos dentro de tu consultas de medios como desees.
 

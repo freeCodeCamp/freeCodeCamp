@@ -10,11 +10,11 @@ dashedName: >-
 
 # --description--
 
-Definiamo uno sqube come un numero nella forma ${p^2}{q^3}$, dove $p$ e $q$ sono primi distinti.
+Definiamo uno sqube come un numero nella forma ${p^2}{q^3}$, dove $p$ e $q$ childo primi distinti.
 
 Ad esempio, $200 = {5^2}{2^3}$ o $120072949 = {{23}^2}{{61}^3}$.
 
-I primi cinque sqube sono 72, 108, 200, 392 e 500.
+I primi cinque sqube childo 72, 108, 200, 392 e 500.
 
 È interessante notare che 200 è anche il primo numero per il quale non si può cambiare nessuna singola cifra ottenendo un primo; chiameremo tali numeri, "a prova di primo". Il prossimo sqube a prova di primo che contiene la sotto-stringa contigua `200` è 1992008.
 

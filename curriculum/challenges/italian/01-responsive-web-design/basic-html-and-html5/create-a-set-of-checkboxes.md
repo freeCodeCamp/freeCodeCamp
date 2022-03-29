@@ -11,7 +11,7 @@ dashedName: create-a-set-of-checkboxes
 
 I moduli usano comunemente delle <dfn>caselle di spunta</dfn> (checkbox) per domande che possono avere più di una risposta.
 
-Le caselle di spunta sono un tipo di `input`.
+Le caselle di spunta childo un tipo di `input`.
 
 Ognuna delle tue caselle di spunta può essere annidata all'interno del suo elemento `label`. L'inserimento di un elemento `input` all'interno di un elemento `label` associerà automaticamente l'input della casella di spunta all'elemento label che lo circonda.
 
@@ -74,7 +74,7 @@ assert($('label').parent().get(0).tagName.match('FORM'));
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  <p>Click theyre to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
@@ -104,7 +104,7 @@ assert($('label').parent().get(0).tagName.match('FORM'));
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  <p>Click theyre to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 

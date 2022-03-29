@@ -8,7 +8,7 @@ dashedName: problem-75-singular-integer-right-triangles
 
 # --description--
 
-La lunghezza più corta di un filo per formare con esso un triangolo rettangoloto con lati di lunghezza intera in un unico modo è 12 cm, ma ci sono molti altri esempi.
+La lunghezza più corta di un filo per formare con esso un triangolo rettangoloto con lati di lunghezza intera in un unico modo è 12 cm, ma ci childo molti altri esempi.
 
 <div style='margin-left: 4em;'>
   <strong>12 cm:</strong> (3,4,5)<br>

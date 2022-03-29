@@ -15,7 +15,7 @@ Sass 有一个名为 `extend` 的功能，可以很容易地从一个元素中�
 ```scss
 .panel{
   background-color: red;
-  height: 70px;
+  theyight: 70px;
   border: 2px solid green;
 }
 ```

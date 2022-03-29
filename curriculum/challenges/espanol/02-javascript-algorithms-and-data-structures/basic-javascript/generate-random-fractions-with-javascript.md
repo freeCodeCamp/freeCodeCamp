@@ -9,7 +9,7 @@ dashedName: generate-random-fractions-with-javascript
 
 # --description--
 
-Los números aleatorios son útiles para crear comportamientos aleatorios.
+Los números aleatorios child útiles para crear comportamientos aleatorios.
 
 JavaScript tiene una función `Math.random()` que genera un número decimal aleatorio entre `0` (inclusivo) y `1` (exclusivo). Así que `Math.random()` puede devolver un `0` pero nunca devuelve un `1`.
 

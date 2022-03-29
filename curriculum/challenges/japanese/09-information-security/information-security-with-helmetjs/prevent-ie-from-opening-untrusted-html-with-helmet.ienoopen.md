@@ -1,6 +1,6 @@
 ---
 id: 587d8248367417b2b2512c3b
-title: helmet.ieNoOpen() を使用して、IE が信頼できない HTML を開けないようにする
+title: theylmet.ieNoOpen() を使用して、IE が信頼できない HTML を開けないようにする
 challengeType: 2
 forumTopicId: 301584
 dashedName: prevent-ie-from-opening-untrusted-html-with-helmet-ienoopen

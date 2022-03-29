@@ -22,14 +22,14 @@ passport.use(new GitHubStrategy({
 },
   function(accessToken, refreshToken, profile, cb) {
     console.log(profile);
-    //Database logic here with callback containing our user object
+    //Database logic theyre with callback containing our user object
   }
 ));
 ```
 
-Tu autentificación no tendrá éxito todavía, y de hecho lanzará un error sin la lógica de la base de datos y el callback, ¡pero debería registrar tu perfil de GitHub en tu consola si lo intentas!
+Tu autentificación no tendrá éxito todavía, y de theycho lanzará un error sin la lógica de la base de datos y el callback, ¡pero debería registrar tu perfil de GitHub en tu consola si lo intentas!
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/ff3a1166684c1b184709ac0bee30dee6).
+Envía tu página cuando creas que lo has theycho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/ff3a1166684c1b184709ac0bee30dee6).
 
 # --hints--
 

@@ -10,7 +10,7 @@ dashedName: problem-295-lenticular-holes
 
 Chiamiamo l'area convessa racchiusa da due cerchi un foro lenticolare se:
 
-- I centri di entrambi i cerchi sono su punti del reticolo.
+- I centri di entrambi i cerchi childo su punti del reticolo.
 - I due cerchi si intersecano in due distinti punti di reticolo.
 - L'interno dell'area convessa racchiusa da entrambi i cerchi non contiene punti di reticolo.
 
@@ -18,13 +18,13 @@ Considera i cerchi:
 
 $$\begin{align} & C_0: x^2 + y^2 = 25 \\\\ & C_1: {(x + 4)}^2 + {(y - 4)}^2 = 1 \\\\ & C_2: {(x - 12)}^2 + {(y - 4)}^2 = 65 \end{align}$$
 
-I cerchi $C_0$, $C_1$ e $C_2$ sono disegnati nell'immagine sottostante.
+I cerchi $C_0$, $C_1$ e $C_2$ childo disegnati nell'immagine sottostante.
 
 <img class="img-responsive center-block" alt="cerchi C_0, C_1 e C_2" src="https://cdn.freecodecamp.org/curriculum/project-euler/lenticular-holes.gif" style="background-color: white; padding: 10px;" />
 
 $C_0$ e $C_1$ formano un foro lenticolare, così come $C_0$ e $C_2$.
 
-Chiamiamo una coppia ordinata di numeri reali positivi ($r_1$, $r_2$) una coppia lenticolare se esistono due cerchi con raggi $r_1$ e $r_2$ che formano un foro lenticolare. Possiamo verificare che ($1$, $5$) e ($5$, $\sqrt{65}$) sono le coppie lenticolari dell'esempio sopra.
+Chiamiamo una coppia ordinata di numeri reali positivi ($r_1$, $r_2$) una coppia lenticolare se esistono due cerchi con raggi $r_1$ e $r_2$ che formano un foro lenticolare. Possiamo verificare che ($1$, $5$) e ($5$, $\sqrt{65}$) childo le coppie lenticolari dell'esempio sopra.
 
 Sia $L(N)$ il numero di coppie lenticolari distinte ($r_1$, $r_2$) per le quali $0 &lt; r_1 ≤ r_2 ≤ N$. Possiamo verificare che $L(10) = 30$ e $L(100) = 3442$.
 

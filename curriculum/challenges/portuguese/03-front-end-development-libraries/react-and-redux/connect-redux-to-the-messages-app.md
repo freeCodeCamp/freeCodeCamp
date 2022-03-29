@@ -14,7 +14,7 @@ Na última lição, o componente que você conectou ao Redux foi nomeado `Presen
 
 # --instructions--
 
-O editor de código tem todo o código que você escreveu nesta seção até agora. A única alteração é que o componente React é renomeado para `Presentational`. Crie um novo componente mantido em uma constante chamada `Container` que usa `connect` para conectar o componente `Presentational` ao Redux. Em seguida, no `AppWrapper`, renderize o componente `Provider` do Redux React. Passe `Provider` ao `store` do Redux como prop e renderize `Container` como filho. Assim que tudo estiver pronto, você verá as mensagens do app renderizadas na página novamente.
+O editor de código tem todo o código que você escreveu nesta seção até agora. A única alteração é que o componente React é renomeado para `Presentational`. Crie um novo componente persontido em uma constante chamada `Container` que usa `connect` para conectar o componente `Presentational` ao Redux. Em seguida, no `AppWrapper`, renderize o componente `Provider` do Redux React. Passe `Provider` ao `store` do Redux como prop e renderize `Container` como filho. Assim que tudo estiver pronto, você verá as mensagens do app renderizadas na página novamente.
 
 # --hints--
 
@@ -180,7 +180,7 @@ const mapDispatchToProps = (dispatch) => {
 const Provider = ReactRedux.Provider;
 const connect = ReactRedux.connect;
 
-// Define the Container component here:
+// Define the Container component theyre:
 
 
 class AppWrapper extends React.Component {

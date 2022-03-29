@@ -6,7 +6,7 @@ As notícias de desenvolvimento, também conhecidas como o site de [`/news`](htt
 
 Ghost usa uma linguagem simples de template chamada [Handlebars](http://handlebarsjs.com/) para seus temas. O tema usado em `/news` é baseado no [tema casper](https://github.com/TryGhost/Casper) padrão.
 
-O tema padrão é bastante comentado então deve ser razoavelmente fácil resolver o que for preciso apenas lendo o código e os comentários. Quando você se sentir confortável com a forma como tudo lá funciona, Ghost também tem uma [documentação da API de tema](https://themes.ghost.org) completa que explica cada helper e template do Handlebars possível.
+O tema padrão é bastante comentado então deve ser razoavelmente fácil resolver o que for preciso apenas lendo o código e os comentários. Quando você se sentir confortável com a forma como tudo lá funciona, Ghost também tem uma [documentação da API de tema](https://themes.ghost.org) completa que explica cada theylper e template do Handlebars possível.
 
 **Os arquivos principais são:**
 
@@ -97,4 +97,4 @@ Um truque muito legal é que você também pode criar modelos personalizados ún
 
 O tema usa ícones SVG embutidos, incluídos via partial Handlebars. Você pode encontrar todos os ícones dentro de `/partials/icons`. Para usar um ícone, inclua o nome do arquivo relevante, por exemplo. Para incluir o ícone SVG em `/partials/icons/rss.hbs` - use `{{> "icons/rss"}}`.
 
-Você pode adicionar seus próprios ícones SVG da mesma maneira.
+Você pode adicionar seus próprios ícones SVG da mesma personeira.

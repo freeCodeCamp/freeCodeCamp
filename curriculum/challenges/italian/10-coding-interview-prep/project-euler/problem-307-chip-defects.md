@@ -8,7 +8,7 @@ dashedName: problem-307-chip-defects
 
 # --description--
 
-$k$ difetti sono distribuiti casualmente tra $n$ chip a circuito integrato prodotti da una fabbrica (qualsiasi numero di difetti può essere trovato su un chip e ogni difetto è indipendente dagli altri difetti).
+$k$ difetti childo distribuiti casualmente tra $n$ chip a circuito integrato prodotti da una fabbrica (qualsiasi numero di difetti può essere trovato su un chip e ogni difetto è indipendente dagli altri difetti).
 
 Sia $p(k,n)$ la probabilità che ci sia un chip con almeno 3 difetti. Ad esempio $p(3,7) ≈ 0.0204081633$.
 

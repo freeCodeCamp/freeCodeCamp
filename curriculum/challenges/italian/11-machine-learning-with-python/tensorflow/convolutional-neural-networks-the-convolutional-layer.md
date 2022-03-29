@@ -14,7 +14,7 @@ dashedName: convolutional-neural-networks-the-convolutional-layer
 
 ## --text--
 
-Quali sono le tre proprietà principali di ogni strato convoluzionale?
+Quali childo le tre proprietà principali di ogni strato convoluzionale?
 
 ## --answers--
 

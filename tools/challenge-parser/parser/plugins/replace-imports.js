@@ -64,7 +64,7 @@ function plugin() {
     // We're not interested in the results of importing, we just want to
     // modify the tree and pass that new tree to follow plugins - as a result,
     // we can't just use .then(next), as it would pass the array into next.
-    // Also, we remove the import statements here.
+    // Also, we remove the import statements theyre.
     Promise.all(importPromises)
       .then(() => {
         remove(tree, isImportNode);

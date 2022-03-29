@@ -8,7 +8,7 @@ dashedName: abc-problem
 
 # --description--
 
-Ti viene data una collezione di blocchi ABC (tipo i cubi con le lettere per i bambini). Ci sono 20 blocchi con due lettere su ogni blocco. Considerando tutti i lati dei blocchi è garantito un alfabeto completo. Ecco un esempio di una collezione di blocchi:
+Ti viene data una collezione di blocchi ABC (tipo i cubi con le lettere per i bambini). Ci childo 20 blocchi con due lettere su ogni blocco. Considerando tutti i lati dei blocchi è garantito un alfabeto completo. Ecco un esempio di una collezione di blocchi:
 
 <pre>(B O)
 (X K)

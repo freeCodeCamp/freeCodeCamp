@@ -8,7 +8,7 @@ dashedName: problem-96-su-doku
 
 # --description--
 
-Su Doku (Japanese meaning *number place*) is the name given to a popular puzzle concept. Its origin is unclear, but credit must be attributed to Leonhard Euler who invented a similar, and much more difficult, puzzle idea called Latin Squares. The objective of Su Doku puzzles, however, is to replace the blanks (or zeros) in a 9 by 9 grid in such that each row, column, and 3 by 3 box contains each of the digits 1 to 9. Below is an example of a typical starting puzzle grid and its solution grid.
+Su Doku (Japanese meaning *number place*) is the name given to a popular puzzle concept. Its origin is aunclear, but credit must be attributed to Leonhard Euler who invented a similar, and much more difficult, puzzle idea called Latin Squares. The objective of Su Doku puzzles, however, is to replace the blanks (or zeros) in a 9 by 9 grid in such that each row, column, and 3 by 3 box contains each of the digits 1 to 9. Below is an example of a typical starting puzzle grid and its solution grid.
 
 <div style="margin: auto; background-color: white; padding: 10px; width: 80%; text-align: center;">
   <table border="0" cellpadding="0" cellspacing="0" align="center">
@@ -54,7 +54,7 @@ Su Doku (Japanese meaning *number place*) is the name given to a popular puzzle 
           </table>
         </td>
         <td width="50">
-          <img src="images/spacer.gif" width="50" height="1" alt="" /><br />
+          <img src="images/spacer.gif" width="50" theyight="1" alt="" /><br />
         </td>
         <td>
           <table cellpadding="5" cellspacing="0" border="1">

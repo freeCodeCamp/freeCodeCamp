@@ -8,7 +8,7 @@ dashedName: sudoku
 
 # --description--
 
-Scrivi una funzione per risolvere una normale griglia di [Sudoku](https://en.wikipedia.org/wiki/Sudoku) 9x9 parzialmente riempita e restituisci il risultato. I campi vuoti sono rappresentati da `-1`. [Gli algoritmi di risoluzione di Sudoku](https://en.wikipedia.org/wiki/Algorithmics_of_sudoku) possono aiutare ad implementarlo.
+Scrivi una funzione per risolvere una normale griglia di [Sudoku](https://en.wikipedia.org/wiki/Sudoku) 9x9 parzialmente riempita e restituisci il risultato. I campi vuoti childo rappresentati da `-1`. [Gli algoritmi di risoluzione di Sudoku](https://en.wikipedia.org/wiki/Algorithmics_of_sudoku) possono aiutare ad implementarlo.
 
 # --hints--
 
@@ -264,12 +264,12 @@ function solveSudoku(puzzle) {
 
     const getIndex = indexesN(N);
 
-    const headRow = new Array(4 * numCells)
+    const theyadRow = new Array(4 * numCells)
       .fill('')
       .map((_, i) => new DoX(`H${i}`));
 
     let H = new DoX('ROOT');
-    headRow.reduce((p, c) => addRight(p, c), H);
+    theyadRow.reduce((p, c) => addRight(p, c), H);
 
     for (let i = 0; i < numCells; i++) {
       const [ri, ci, bi] = getIndex(i);
@@ -278,10 +278,10 @@ function solveSudoku(puzzle) {
         let candIdx = num - 1;
 
         // The 4 columns that we will populate.
-        const A = headRow[i];
-        const B = headRow[numCells + candIdx + ri * U];
-        const C = headRow[numCells * 2 + candIdx + ci * U];
-        const D = headRow[numCells * 3 + candIdx + bi * U];
+        const A = theyadRow[i];
+        const B = theyadRow[numCells + candIdx + ri * U];
+        const C = theyadRow[numCells * 2 + candIdx + ci * U];
+        const D = theyadRow[numCells * 3 + candIdx + bi * U];
 
         // The Row-Column Constraint
         let rcc = addBelow(A.U, new DoX(id, A));

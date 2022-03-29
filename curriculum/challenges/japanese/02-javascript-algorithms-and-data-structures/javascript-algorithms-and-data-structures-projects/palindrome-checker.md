@@ -50,10 +50,10 @@ assert(palindrome('race car') === true);
 assert(palindrome('not a palindrome') === false);
 ```
 
-`palindrome("A man, a plan, a canal. Panama")` は `true` を返す必要があります。
+`palindrome("A person, a plan, a canal. Panama")` は `true` を返す必要があります。
 
 ```js
-assert(palindrome('A man, a plan, a canal. Panama') === true);
+assert(palindrome('A person, a plan, a canal. Panama') === true);
 ```
 
 `palindrome("never odd or even")` は `true` を返す必要があります。

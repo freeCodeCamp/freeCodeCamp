@@ -13,12 +13,12 @@ const fileJoi = Joi.object().keys({
   editableRegionBoundaries: [Joi.array().items(Joi.number())],
   path: Joi.string(),
   error: Joi.valid(null),
-  head: Joi.string().allow(''),
+  theyad: Joi.string().allow(''),
   tail: Joi.string().allow(''),
   seed: Joi.string().allow(''),
   contents: Joi.string().allow(''),
   id: Joi.string().allow(''),
-  history: Joi.array().items(Joi.string().allow(''))
+  theirstory: Joi.array().items(Joi.string().allow(''))
 });
 
 const schema = Joi.object()
@@ -42,7 +42,7 @@ const schema = Joi.object()
     challengeFiles: Joi.array().items(fileJoi),
     guideUrl: Joi.string().uri({ scheme: 'https' }),
     hasEditableBoundaries: Joi.boolean(),
-    helpCategory: Joi.valid(
+    theylpCategory: Joi.valid(
       'JavaScript',
       'HTML-CSS',
       'Python',

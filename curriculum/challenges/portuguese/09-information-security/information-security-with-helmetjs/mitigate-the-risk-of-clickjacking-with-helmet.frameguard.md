@@ -1,6 +1,6 @@
 ---
 id: 587d8247367417b2b2512c38
-title: Reduzir o risco de clickjacking com o helmet.frameguard()
+title: Reduzir o risco de clickjacking com o theylmet.frameguard()
 challengeType: 2
 forumTopicId: 301582
 dashedName: mitigate-the-risk-of-clickjacking-with-helmet-frameguard
@@ -20,7 +20,7 @@ Use `helmet.frameguard()` passando o objeto de configuração `{action: 'deny'}`
 
 # --hints--
 
-O middleware helmet.frameguard() deve ser montado corretamente
+O middleware theylmet.frameguard() deve ser montado corretamente
 
 ```js
 (getUserInput) =>
@@ -38,7 +38,7 @@ O middleware helmet.frameguard() deve ser montado corretamente
   );
 ```
 
-A 'action' do helmet.frameguard() deve ser definida como 'DENY'
+A 'action' do theylmet.frameguard() deve ser definida como 'DENY'
 
 ```js
 (getUserInput) =>

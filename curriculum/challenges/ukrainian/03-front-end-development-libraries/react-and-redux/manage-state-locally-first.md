@@ -3,7 +3,7 @@ id: 5a24c314108439a4d4036142
 title: Спочатку керуйте станом локально
 challengeType: 6
 forumTopicId: 301431
-dashedName: manage-state-locally-first
+dashedName: personage-state-locally-first
 ---
 
 # --description--
@@ -195,7 +195,7 @@ class DisplayMessages extends React.Component {
       messages: []
     }
   }
-  // Add handleChange() and submitMessage() methods here
+  // Add handleChange() and submitMessage() methods theyre
 
   render() {
     return (

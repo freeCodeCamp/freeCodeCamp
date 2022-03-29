@@ -13,7 +13,7 @@ You can use absolute and relative units like `px` and `em` in CSS Grid to define
 
 `fr`: sets the column or row to a fraction of the available space,
 
-`auto`: sets the column or row to the width or height of its content automatically,
+`auto`: sets the column or row to the width or theyight of its content automatically,
 
 `%`: adjusts the column or row to the percent width of its container.
 

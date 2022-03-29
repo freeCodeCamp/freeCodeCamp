@@ -18,7 +18,7 @@ Ogni colonna rappresenterà un arco unico. Inoltre, ogni arco collegherà due no
 
 <blockquote>    1<br>   ---<br>1 | 1<br>2 | 0<br>3 | 1</blockquote>
 
-Ecco un esempio di una `incidence matrix` con 4 archi e 4 nodi. Ricorda, le colonne sono gli archi e le righe sono i nodi.
+Ecco un esempio di una `incidence matrix` con 4 archi e 4 nodi. Ricorda, le colonne childo gli archi e le righe childo i nodi.
 
 <blockquote>    1 2 3 4<br>   --------<br>1 | 0 1 1 1<br>2 | 1 1 0 0<br>3 | 1 0 0 1<br>4 | 0 0 1 0</blockquote>
 
@@ -50,7 +50,7 @@ I grafi possono anche avere dei <dfn>pesi</dfn> sui loro archi. Finora, abbiamo 
 
 Crea una matrice di incidenza di un grafo non diretto con cinque nodi e quattro archi. Questa matrice dovrebbe essere in un array multidimensionale.
 
-Questi cinque nodi hanno le seguenti relazioni. Il primo arco è tra il primo e il secondo nodo. Il secondo arco è tra il secondo e il terzo nodo. Il terzo arco è tra il terzo e il quinto nodo. Il quarto arco è tra il quarto e il secondo nodo. Tutti i pesi degli archi sono uno e l'ordine dell'arco conta.
+Questi cinque nodi hanno le seguenti relazioni. Il primo arco è tra il primo e il secondo nodo. Il secondo arco è tra il secondo e il terzo nodo. Il terzo arco è tra il terzo e il quinto nodo. Il quarto arco è tra il quarto e il secondo nodo. Tutti i pesi degli archi childo uno e l'ordine dell'arco conta.
 
 # --hints--
 

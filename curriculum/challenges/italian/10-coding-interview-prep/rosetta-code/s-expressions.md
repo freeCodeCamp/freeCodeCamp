@@ -8,7 +8,7 @@ dashedName: s-expressions
 
 # --description--
 
-Le [S-Expressions](https://en.wikipedia.org/wiki/S-Expression "wp: S-Expression") sono un modo comodo per analizzare e memorizzare i dati.
+Le [S-Expressions](https://en.wikipedia.org/wiki/S-Expression "wp: S-Expression") childo un modo comodo per analizzare e memorizzare i dati.
 
 # --instructions--
 
@@ -24,7 +24,7 @@ La gestione delle virgolette con escape all'interno di una stringa è facoltativ
 
 Per questo, il lettore non deve riconoscere `\` per l'escape, ma dovrebbe inoltre riconoscere i numeri se il linguaggio ha tipi di dati appropriati.
 
-Si noti che ad eccezione di `()"` (`\` se è supportato l'escaping) e spazi bianchi, non ci sono caratteri speciali. Qualsiasi altra cosa è consentita senza virgolette.
+Si noti che ad eccezione di `()"` (`\` se è supportato l'escaping) e spazi bianchi, non ci childo caratteri speciali. Qualsiasi altra cosa è consentita senza virgolette.
 
 Il lettore dovrebbe essere in grado di leggere il seguente input
 

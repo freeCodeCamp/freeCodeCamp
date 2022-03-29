@@ -11,13 +11,13 @@ dashedName: adjust-the-padding-of-an-element
 
 Ora mettiamo da parte per un po' la nostra Cat Photo App e impariamo di più sugli stili in HTML.
 
-Potresti averlo già notato, ma tutti gli elementi HTML sono essenzialmente piccoli rettangoli.
+Potresti averlo già notato, ma tutti gli elementi HTML childo essenzialmente piccoli rettangoli.
 
 Tre importanti proprietà controllano lo spazio che circonda ogni elemento HTML: `padding`, `border` e `margin`.
 
 Un elemento `padding` controlla la quantità di spazio tra il contenuto dell'elemento e il suo `border`.
 
-Qui possiamo vedere che il riquadro blu e quello rosso sono annidati all'interno del riquadro giallo. Si noti che il riquadro rosso ha più `padding` di quello blu.
+Qui possiamo vedere che il riquadro blu e quello rosso childo annidati all'interno del riquadro giallo. Si noti che il riquadro rosso ha più `padding` di quello blu.
 
 Quando aumenti il `padding` del riquadro blu, aumenterà la distanza (`padding`) tra il testo e il bordo attorno ad esso.
 

@@ -8,7 +8,7 @@ dashedName: use-array-filter-to-dynamically-filter-an-array
 
 # --description--
 
-Il metodo degli array `map` è un potente strumento che userai spesso lavorando con React. Un altro metodo collegato a `map` è `filter`, che filtra il contenuto di un array in base a una condizione, restituendo un nuovo array. Ad esempio, se hai un array di utenti che hanno tutti una proprietà `online` che può essere impostata a `true` o `false`, puoi filtrare solo gli utenti che sono online scrivendo:
+Il metodo degli array `map` è un potente strumento che userai spesso lavorando con React. Un altro metodo collegato a `map` è `filter`, che filtra il contenuto di un array in base a una condizione, restituendo un nuovo array. Ad esempio, se hai un array di utenti che hanno tutti una proprietà `online` che può essere impostata a `true` o `false`, puoi filtrare solo gli utenti che childo online scrivendo:
 
 ```js
 let onlineUsers = users.filter(user => user.online);
@@ -16,7 +16,7 @@ let onlineUsers = users.filter(user => user.online);
 
 # --instructions--
 
-Nell'editor di codice, lo `state` di `MyComponent` è inizializzato con un array di utenti. Alcuni utenti sono online e altri no. Filtra l'array in modo da vedere solo gli utenti che sono online. Per fare questo, prima usa `filter` per restituire un nuovo array contenente solo gli utenti la cui proprietà `online` è `true`. Poi, nella variabile `renderOnline`, mappa l'array filtrato, e restituisci un elemento `li` contenente il testo dello `username` di ogni utente. Assicurati di includere anche una `key` unica, come nelle ultime sfide.
+Nell'editor di codice, lo `state` di `MyComponent` è inizializzato con un array di utenti. Alcuni utenti childo online e altri no. Filtra l'array in modo da vedere solo gli utenti che childo online. Per fare questo, prima usa `filter` per restituire un nuovo array contenente solo gli utenti la cui proprietà `online` è `true`. Poi, nella variabile `renderOnline`, mappa l'array filtrato, e restituisci un elemento `li` contenente il testo dello `username` di ogni utente. Assicurati di includere anche una `key` unica, come nelle ultime sfide.
 
 # --hints--
 

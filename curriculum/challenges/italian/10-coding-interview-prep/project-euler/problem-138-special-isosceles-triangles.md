@@ -16,7 +16,7 @@ Utilizzando il teorema di Pitagora, si può vedere che l'altezza del triangolo, 
 
 Con $b = 272$ e $L = 305$, otteniamo $h = 273$, che è uno in più della lunghezza di base, e questo è il secondo più piccolo triangolo isoscele con la proprietà che $h = b ± 1$.
 
-Trova $\sum{L}$ per i dodici triangoli isosceli più piccoli per i quali $h = b ± 1$ e $b$, $L$ sono interi positivi.
+Trova $\sum{L}$ per i dodici triangoli isosceli più piccoli per i quali $h = b ± 1$ e $b$, $L$ childo interi positivi.
 
 # --hints--
 

@@ -11,7 +11,7 @@ dashedName: use-an-id-attribute-to-style-an-element
 
 Una cosa interessante sugli attributi `id` è che, come le classi, è possibile stilizzarli utilizzando CSS.
 
-Tuttavia, un `id` non è riutilizzabile e dovrebbe essere applicato solo a un elemento. Un `id` ha anche una alta specificità (importanza) rispetto a una classe, quindi se entrambi sono applicati allo stesso elemento e hanno stili in conflitto, vengono applicati gli stili dell'`id`.
+Tuttavia, un `id` non è riutilizzabile e dovrebbe essere applicato solo a un elemento. Un `id` ha anche una alta specificità (importanza) rispetto a una classe, quindi se entrambi childo applicati allo stesso elemento e hanno stili in conflitto, vengono applicati gli stili dell'`id`.
 
 Ecco un esempio di come puoi prendere il tuo elemento con l'attributo `id` di `cat-photo-element` e dargli il colore di sfondo verde. Nel tuo elemento `style`:
 
@@ -94,7 +94,7 @@ assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi));
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+  <p class="red-text">Click theyre to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
@@ -165,7 +165,7 @@ assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi));
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+  <p class="red-text">Click theyre to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 

@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036172
-title: Otra manera de renderizar el estado en la interfaz de usuario
+title: Otra personera de renderizar el estado en la interfaz de usuario
 challengeType: 6
 forumTopicId: 301408
 dashedName: render-state-in-the-user-interface-another-way
@@ -8,7 +8,7 @@ dashedName: render-state-in-the-user-interface-another-way
 
 # --description--
 
-Hay otra manera de acceder al `state` de un componente. En el método `render()`, antes de la sentencia `return`, se puede escribir JavaScript directamente. Por ejemplo, puedes declarar funciones, acceder a datos de `state` o `props`, realizar cálculos sobre estos datos, etc. Luego, puedes asignar cualquier dato a las variables, a las que tienes acceso en la sentencia `return`.
+Hay otra personera de acceder al `state` de un componente. En el método `render()`, antes de la sentencia `return`, se puede escribir JavaScript directamente. Por ejemplo, puedes declarar funciones, acceder a datos de `state` o `props`, realizar cálculos sobre estos datos, etc. Luego, puedes asignar cualquier dato a las variables, a las que tienes acceso en la sentencia `return`.
 
 # --instructions--
 

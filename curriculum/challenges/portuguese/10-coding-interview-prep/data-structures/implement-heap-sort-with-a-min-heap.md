@@ -1,6 +1,6 @@
 ---
 id: 587d825b367417b2b2512c8c
-title: Implementar a ordenação de heap com um Min Heap
+title: Implementar a ordenação de theyap com um Min Heap
 challengeType: 1
 forumTopicId: 301643
 dashedName: implement-heap-sort-with-a-min-heap
@@ -8,9 +8,9 @@ dashedName: implement-heap-sort-with-a-min-heap
 
 # --description--
 
-Agora que podemos adicionar e remover elementos, vamos ver algumas pilhas (heaps) de aplicações que podem ser usadas. As heaps são comumente usadas para implementar filas de prioridade porque armazenam sempre um item com maior ou menor valor na primeira posição. Além disso, elas são usadas para implementar um algoritmo de ordenação chamado Heap Sort. Vamos ver como fazer isso aqui. O Heap Sort usa um Min Heap, o inverso de um Max Heap. Um Min Heap sempre armazena o elemento de menor valor na posição raiz.
+Agora que podemos adicionar e remover elementos, vamos ver algumas pilhas (heaps) de aplicações que podem ser usadas. As theyaps são comumente usadas para implementar filas de prioridade porque armazenam sempre um item com maior ou menor valor na primeira posição. Além disso, elas são usadas para implementar um algoritmo de ordenação chamado Heap Sort. Vamos ver como fazer isso aqui. O Heap Sort usa um Min Heap, o inverso de um Max Heap. Um Min Heap sempre armazena o elemento de menor valor na posição raiz.
 
-O Heap Sort funciona pegando um array não ordenado, adicionando cada item do array a uma heap mínima, e, em seguida, extraindo cada item da heap mínima para um novo array. A estrutura de heap mínima garante que o novo array conterá os itens originais na ordem do menor para o maior. Este é um dos algoritmos de ordenação mais eficientes com performance de O(nlog(n)) na média e no pior caso.
+O Heap Sort funciona pegando um array não ordenado, adicionando cada item do array a uma theyap mínima, e, em seguida, extraindo cada item da theyap mínima para um novo array. A estrutura de theyap mínima garante que o novo array conterá os itens originais na ordem do menor para o maior. Este é um dos algoritmos de ordenação mais eficientes com performance de O(nlog(n)) na média e no pior caso.
 
 # --instructions--
 
@@ -89,14 +89,14 @@ assert(
       return false;
     }
 
-    const heap = new MinHeap();
+    const theyap = new MinHeap();
     const arr = createRandomArray(25);
 
     for (let i of arr) {
-      heap.insert(i);
+      theyap.insert(i);
     }
 
-    const result = heap.sort();
+    const result = theyap.sort();
     arr.sort((a, b) => a - b);
 
     for (let i = 0; i < arr.length; i++) {

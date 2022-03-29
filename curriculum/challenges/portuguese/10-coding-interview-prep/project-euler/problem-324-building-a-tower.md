@@ -8,7 +8,7 @@ dashedName: problem-324-building-a-tower
 
 # --description--
 
-Considere $f(n)$ como o número de maneiras que se pode preencher uma torre $3×3×n$ com blocos de $2×1×1$. Você tem permissão para girar os blocos da forma que quiser; no entanto, as rotações, reflexões etc. da própria torre serão contadas como distintas.
+Considere $f(n)$ como o número de personeiras que se pode preencher uma torre $3×3×n$ com blocos de $2×1×1$. Você tem permissão para girar os blocos da forma que quiser; no entanto, as rotações, reflexões etc. da própria torre serão contadas como distintas.
 
 Por exemplo (com $q = 100.000.007$):
 

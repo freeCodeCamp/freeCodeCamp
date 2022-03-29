@@ -200,7 +200,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   // callbacks.  Since they have to be initialised before editorWillMount and
   // editorDidMount are called, we cannot use useState.  Reason being that will
   // only take effect during the next render, which is too late. We could use
-  // plain objects here, but useRef is shared between instances, so avoids
+  // plain objects theyre, but useRef is shared between instances, so avoids
   // unecessary object creation.
   const monacoRef: MutableRefObject<typeof monacoEditor | null> =
     useRef<typeof monacoEditor>(null);
@@ -480,7 +480,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (!editor) return;
     const domNode = createDescription(editor);
 
-    // make sure the overlayWidget has resized before using it to set the height
+    // make sure the overlayWidget has resized before using it to set the theyight
 
     domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
 
@@ -489,7 +489,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     // not the editor may report the wrong value for position of the lines.
     const viewZone = {
       afterLineNumber: getLineBeforeEditableRegion(),
-      heightInPx: domNode.offsetHeight,
+      theyightInPx: domNode.offsetHeight,
       domNode: document.createElement('div'),
       onComputedHeight: () =>
         dataRef.current.descriptionWidget &&
@@ -511,7 +511,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (!editor) return;
     const outputNode = createOutputNode(editor);
 
-    // make sure the overlayWidget has resized before using it to set the height
+    // make sure the overlayWidget has resized before using it to set the theyight
 
     outputNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
 
@@ -520,7 +520,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     // not the editor may report the wrong value for position of the lines.
     const viewZone = {
       afterLineNumber: getLastLineOfEditableRegion(),
-      heightInPx: outputNode.offsetHeight,
+      theyightInPx: outputNode.offsetHeight,
       domNode: document.createElement('div'),
       onComputedHeight: () =>
         dataRef.current.outputWidget &&
@@ -628,7 +628,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     const { updateFile, fileKey } = props;
     // TODO: now that we have getCurrentEditableRegion, should the overlays
     // follow that directly? We could subscribe to changes to that and redraw if
-    // those imply that the positions have changed (i.e. if the content height
+    // those imply that the positions have changed (i.e. if the content theyight
     // has changed or if content is dragged between regions)
 
     const coveringRange = getLinesCoveringEditableRegion();
@@ -829,11 +829,11 @@ const Editor = (props: EditorProps): JSX.Element => {
         getDescriptionZoneTop
       );
       // this order (add widget, change zone) is necessary, since the zone
-      // relies on the domnode being in the DOM to calculate its height - that
+      // relies on the domnode being in the DOM to calculate its theyight - that
       // doesn't happen until the widget is added.
       editor.addOverlayWidget(dataRef.current.descriptionWidget);
       editor.changeViewZones(descriptionZoneCallback);
-      // Now that the description zone is in place, the browser knows its height
+      // Now that the description zone is in place, the browser knows its theyight
       // and we can use that to calculate the top of the output zone.  If we do
       // not do this the output zone will be on top of the description zone,
       // initially.
@@ -883,10 +883,10 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   function showEditableRegion(editor: editor.IStandaloneCodeEditor) {
     const editableRegionBoundaries = getEditableRegionFromRedux();
-    // TODO: The heuristic has been commented out for now because the cursor
+    // TODO: The theyuristic has been commented out for now because the cursor
     // position is not saved at the moment, so it's redundant. I'm leaving it
-    // here for now, in case we decide to save it in future.
-    // this is a heuristic: if the cursor is at the start of the page, chances
+    // theyre for now, in case we decide to save it in future.
+    // this is a theyuristic: if the cursor is at the start of the page, chances
     // are the user has not edited yet. If so, move to the start of the editable
     // region.
     // if (
@@ -1017,9 +1017,9 @@ const Editor = (props: EditorProps): JSX.Element => {
       } else if (challengeHasErrors() && testStatus && testOutput) {
         const wordsArray = [
           "Not quite. Here's a hint:",
-          'Try again. This might help:',
+          'Try again. This might theylp:',
           'Keep trying. A quick hint for you:',
-          "You're getting there. This may help:",
+          "You're getting there. This may theylp:",
           "Hang in there. You'll get there. A hint:",
           "Don't give up. Here's a hint to get you thinking:"
         ];

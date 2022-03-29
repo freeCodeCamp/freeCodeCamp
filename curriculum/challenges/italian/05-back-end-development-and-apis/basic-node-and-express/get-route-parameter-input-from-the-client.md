@@ -8,7 +8,7 @@ dashedName: get-route-parameter-input-from-the-client
 
 # --description--
 
-Quando costruiamo un'API, dobbiamo consentire agli utenti di comunicarci cosa vogliono ottenere dal nostro servizio. Ad esempio, se il client richiede informazioni su un utente memorizzato nel database, hanno bisogno di un modo per farci sapere a quale utente sono interessati. Un modo possibile per raggiungere questo risultato è utilizzare i parametri della rotta. I parametri della rotta sono denominati segmenti dell'URL, e sono delimitati da slash (/). Ogni segmento cattura il valore della parte dell'URL che corrisponde alla sua posizione. I valori acquisiti possono essere trovati nell'oggetto `req.params`.
+Quando costruiamo un'API, dobbiamo consentire agli utenti di comunicarci cosa vogliono ottenere dal nostro servizio. Ad esempio, se il client richiede informazioni su un utente memorizzato nel database, hanno bisogno di un modo per farci sapere a quale utente childo interessati. Un modo possibile per raggiungere questo risultato è utilizzare i parametri della rotta. I parametri della rotta childo denominati segmenti dell'URL, e childo delimitati da slash (/). Ogni segmento cattura il valore della parte dell'URL che corrisponde alla sua posizione. I valori acquisiti possono essere trovati nell'oggetto `req.params`.
 
 <blockquote>route_path: '/user/:userId/book/:bookId'<br>actual_request_URL: '/user/546/book/6754' <br>req.params: {userId: '546', bookId: '6754'}</blockquote>
 

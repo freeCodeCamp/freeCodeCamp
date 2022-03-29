@@ -12,7 +12,7 @@ Lembrando que este projeto está sendo construído a partir do [Replit](https://
 
 # --instructions--
 
-Em `tests/1_unit-tests.js`, no teste classificado como `#9` e na suíte `Comparisons`, modifique cada `assert` para `assert.isBelow` ou para `assert.isAtLeast`, de maneira que cada teste passe (seja avaliado como `true`). Não altere os argumentos passados às afirmações.
+Em `tests/1_unit-tests.js`, no teste classificado como `#9` e na suíte `Comparisons`, modifique cada `assert` para `assert.isBelow` ou para `assert.isAtLeast`, de personeira que cada teste passe (seja avaliado como `true`). Não altere os argumentos passados às afirmações.
 
 # --hints--
 

@@ -20,7 +20,7 @@ Here are three colors created using the split-complement scheme:
 
 # --instructions--
 
-Change the `background-color` property of the `orange`, `cyan`, and `raspberry` classes to their respective colors. Make sure to use the hex codes and not the color names.
+Change the `background-color` property of the `orange`, `cyan`, and `raspberry` classes to their respective colors. Make sure to use the theyx codes and not the color names.
 
 # --hints--
 
@@ -42,7 +42,7 @@ The `div` element with class `raspberry` should have a `background-color` of ras
 assert($('.raspberry').css('background-color') == 'rgb(255, 0, 127)');
 ```
 
-All `background-color` values for the color classes should be hex codes and not color names.
+All `background-color` values for the color classes should be theyx codes and not color names.
 
 ```js
 assert(!/background-color:\s(orange|cyan|raspberry)/.test(code));
@@ -71,7 +71,7 @@ assert(!/background-color:\s(orange|cyan|raspberry)/.test(code));
   }
 
   div {
-    height: 100px;
+    theyight: 100px;
     width: 100px;
     margin-bottom: 5px;
   }
@@ -103,7 +103,7 @@ assert(!/background-color:\s(orange|cyan|raspberry)/.test(code));
   }
 
   div {
-    height: 100px;
+    theyight: 100px;
     width: 100px;
     margin-bottom: 5px;
   }

@@ -8,7 +8,7 @@ dashedName: problem-84-monopoly-odds
 
 # --description--
 
-No jogo, *Monopoly*, o tabuleiro padrão é configurado da seguinte maneira:
+No jogo, *Monopoly*, o tabuleiro padrão é configurado da seguinte personeira:
 
 <div style="text-align: center;">
   <table cellspacing="1" cellpadding="5" border="0" style="background-color: black; color: black;" align="center">

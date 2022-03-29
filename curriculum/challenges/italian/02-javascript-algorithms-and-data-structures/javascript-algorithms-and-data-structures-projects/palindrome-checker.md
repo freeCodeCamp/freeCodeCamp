@@ -50,10 +50,10 @@ assert(palindrome('race car') === true);
 assert(palindrome('not a palindrome') === false);
 ```
 
-`palindrome("A man, a plan, a canal. Panama")` dovrebbe restituire `true`.
+`palindrome("A person, a plan, a canal. Panama")` dovrebbe restituire `true`.
 
 ```js
-assert(palindrome('A man, a plan, a canal. Panama') === true);
+assert(palindrome('A person, a plan, a canal. Panama') === true);
 ```
 
 `palindrome("never odd or even")` dovrebbe restituire `true`.

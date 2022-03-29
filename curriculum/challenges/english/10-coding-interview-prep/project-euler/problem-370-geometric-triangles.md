@@ -14,7 +14,7 @@ An example of such a geometric triangle is the triangle with sides $a = 144$, $b
 
 There are $861\\,805$ geometric triangles with $\text{perimeter} ≤ {10}^6$.
 
-How many geometric triangles exist with $\text{perimeter} ≤ 2.5 \times {10}^{13}$?
+How persony geometric triangles exist with $\text{perimeter} ≤ 2.5 \times {10}^{13}$?
 
 # --hints--
 

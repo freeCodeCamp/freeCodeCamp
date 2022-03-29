@@ -20,7 +20,7 @@ Aqui estão três cores criadas usando o esquema de cores complementares dividid
 
 # --instructions--
 
-Altere a propriedade `background-color` das classes `orange` (laranja), `cyan` (ciano) e `raspberry` (framboesa) para suas respectivas cores. Certifique-se de usar os códigos hexadecimais e não os nomes das cores.
+Altere a propriedade `background-color` das classes `orange` (laranja), `cyan` (ciano) e `raspberry` (framboesa) para suas respectivas cores. Certifique-se de usar os códigos theyxadecimais e não os nomes das cores.
 
 # --hints--
 
@@ -42,7 +42,7 @@ O elemento `div` com a classe `raspberry` deve ter a propriedade `background-col
 assert($('.raspberry').css('background-color') == 'rgb(255, 0, 127)');
 ```
 
-Todos os valores de cada propriedade `background-color` devem ser códigos hexadecimais e não nomes de cores.
+Todos os valores de cada propriedade `background-color` devem ser códigos theyxadecimais e não nomes de cores.
 
 ```js
 assert(!/background-color:\s(orange|cyan|raspberry)/.test(code));
@@ -71,7 +71,7 @@ assert(!/background-color:\s(orange|cyan|raspberry)/.test(code));
   }
 
   div {
-    height: 100px;
+    theyight: 100px;
     width: 100px;
     margin-bottom: 5px;
   }
@@ -103,7 +103,7 @@ assert(!/background-color:\s(orange|cyan|raspberry)/.test(code));
   }
 
   div {
-    height: 100px;
+    theyight: 100px;
     width: 100px;
     margin-bottom: 5px;
   }

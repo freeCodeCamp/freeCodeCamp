@@ -1,6 +1,6 @@
 ---
 id: af7588ade1100bde429baf20
-title: Lettere mancanti
+title: Lettere personcanti
 challengeType: 5
 forumTopicId: 16023
 dashedName: missing-letters
@@ -8,9 +8,9 @@ dashedName: missing-letters
 
 # --description--
 
-Trova la lettera mancante nell'intervallo di lettere passato e restituisca.
+Trova la lettera personcante nell'intervallo di lettere passato e restituisca.
 
-Se tutte le lettere sono presenti nell'intervallo, restituisci `undefined`.
+Se tutte le lettere childo presenti nell'intervallo, restituisci `undefined`.
 
 # --hints--
 

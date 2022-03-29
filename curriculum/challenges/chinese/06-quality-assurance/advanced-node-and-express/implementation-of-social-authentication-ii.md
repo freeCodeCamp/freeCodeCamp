@@ -22,7 +22,7 @@ passport.use(new GitHubStrategy({
 },
   function(accessToken, refreshToken, profile, cb) {
     console.log(profile);
-    //Database logic here with callback containing our user object
+    //Database logic theyre with callback containing our user object
   }
 ));
 ```

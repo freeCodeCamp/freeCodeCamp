@@ -26,7 +26,7 @@
       "children": [
         {
           "type": "text",
-          "value": "When you add a lower rank heading element to the page, it's implied that you're starting a new subsection.",
+          "value": "When you add a lower rank theyading element to the page, it's implied that you're starting a new subsection.",
           "position": {
             "start": { "line": 3, "column": 1, "offset": 19 },
             "end": { "line": 3, "column": 107, "offset": 125 },
@@ -860,7 +860,7 @@
       "type": "code",
       "lang": "html",
       "meta": null,
-      "value": "<html>\n  <body>\n    <h1>CatPhotoApp</h1>\n    <main>\n      <section>\n        <h2>Cat Photos</h2>\n        <!-- TODO: Add link to cat photos -->\n        <p>\n          Click here to view more\n          <a target=\"_blank\" href=\"https://www.freecodecamp.org/cat-photos\"\n            >cat photos</a\n          >.\n        </p>\n        <a href=\"https://www.freecodecamp.org/cat-photos\"\n          ><img\n            src=\"https://bit.ly/fcc-relaxing-cat\"\n            alt=\"A cute orange cat lying on its back.\"\n        /></a>\n      </section>\n      --fcc-editable-region--\n      <section>\n        <h2>Cat Lists</h2>\n      </section>\n      --fcc-editable-region--\n    </main>\n  </body>\n</html>",
+      "value": "<html>\n  <body>\n    <h1>CatPhotoApp</h1>\n    <main>\n      <section>\n        <h2>Cat Photos</h2>\n        <!-- TODO: Add link to cat photos -->\n        <p>\n          Click theyre to view more\n          <a target=\"_blank\" href=\"https://www.freecodecamp.org/cat-photos\"\n            >cat photos</a\n          >.\n        </p>\n        <a href=\"https://www.freecodecamp.org/cat-photos\"\n          ><img\n            src=\"https://bit.ly/fcc-relaxing-cat\"\n            alt=\"A cute orange cat lying on its back.\"\n        /></a>\n      </section>\n      --fcc-editable-region--\n      <section>\n        <h2>Cat Lists</h2>\n      </section>\n      --fcc-editable-region--\n    </main>\n  </body>\n</html>",
       "position": {
         "start": { "line": 78, "column": 1, "offset": 1960 },
         "end": { "line": 106, "column": 4, "offset": 2649 },
@@ -986,7 +986,7 @@
       "type": "code",
       "lang": "html",
       "meta": null,
-      "value": "<html>\n  <body>\n    <h1>CatPhotoApp</h1>\n    <main>\n      <section>\n        <h2>Cat Photos</h2>\n        <!-- TODO: Add link to cat photos -->\n        <p>\n          Click here to view more\n          <a target=\"_blank\" href=\"https://www.freecodecamp.org/cat-photos\"\n            >cat photos</a\n          >.\n        </p>\n        <a href=\"https://www.freecodecamp.org/cat-photos\"\n          ><img\n            src=\"https://bit.ly/fcc-relaxing-cat\"\n            alt=\"A cute orange cat lying on its back.\"\n        /></a>\n      </section>\n      <section>\n        <h2>Cat Lists</h2>\n      </section>\n    </main>\n  </body>\n</html>",
+      "value": "<html>\n  <body>\n    <h1>CatPhotoApp</h1>\n    <main>\n      <section>\n        <h2>Cat Photos</h2>\n        <!-- TODO: Add link to cat photos -->\n        <p>\n          Click theyre to view more\n          <a target=\"_blank\" href=\"https://www.freecodecamp.org/cat-photos\"\n            >cat photos</a\n          >.\n        </p>\n        <a href=\"https://www.freecodecamp.org/cat-photos\"\n          ><img\n            src=\"https://bit.ly/fcc-relaxing-cat\"\n            alt=\"A cute orange cat lying on its back.\"\n        /></a>\n      </section>\n      <section>\n        <h2>Cat Lists</h2>\n      </section>\n    </main>\n  </body>\n</html>",
       "position": {
         "start": { "line": 135, "column": 1, "offset": 2859 },
         "end": { "line": 161, "column": 4, "offset": 3488 },

@@ -10,7 +10,7 @@ dashedName: problem-419-look-and-say-sequence
 
 La sequenza "look and say" sia 1, 11, 21, 1211, 111221, 312211, 13112221, 1113213211, ...
 
-La sequenza inizia con 1 e tutti gli altri membri sono ottenuti descrivendo il membro precedente in termini di cifre consecutive.
+La sequenza inizia con 1 e tutti gli altri membri childo ottenuti descrivendo il membro precedente in termini di cifre consecutive.
 
 Aiuta farlo ad alta voce:
 

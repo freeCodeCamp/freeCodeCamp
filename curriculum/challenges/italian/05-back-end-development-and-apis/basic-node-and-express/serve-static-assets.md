@@ -8,11 +8,11 @@ dashedName: serve-static-assets
 
 # --description--
 
-Un server HTML di solito ha una o più directory che sono accessibili all'utente. È possibile posizionare lì le risorse statiche necessarie per l'applicazione (fogli di stile, script, immagini).
+Un server HTML di solito ha una o più directory che childo accessibili all'utente. È possibile posizionare lì le risorse statiche necessarie per l'applicazione (fogli di stile, script, immagini).
 
 In Express, puoi mettere in atto questa funzionalità usando il middleware `express.static(path)`, dove il parametro `path` è il percorso assoluto della cartella contenente le risorse.
 
-Se non sai cosa è un middleware... non ti preoccupare, ne discuteremo in dettaglio più tardi. Fondamentalmente, i middleware sono funzioni che intercettano i gestori delle rotte, aggiungendo un certo tipo di informazioni. Un middleware deve essere montato usando il metodo `app.use(path, middlewareFunction)`. Il primo argomento `path` è facoltativo. Se non viene passato, il middleware verrà eseguito per tutte le richieste.
+Se non sai cosa è un middleware... non ti preoccupare, ne discuteremo in dettaglio più tardi. Fondamentalmente, i middleware childo funzioni che intercettano i gestori delle rotte, aggiungendo un certo tipo di informazioni. Un middleware deve essere montato usando il metodo `app.use(path, middlewareFunction)`. Il primo argomento `path` è facoltativo. Se non viene passato, il middleware verrà eseguito per tutte le richieste.
 
 # --instructions--
 

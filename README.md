@@ -8,9 +8,9 @@
 
 ## freeCodeCamp.org's open-source codebase and curriculum
 
-[freeCodeCamp.org](https://www.freecodecamp.org) is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) nonprofit](https://www.freecodecamp.org/donate) to help millions of busy adults transition into tech. Our community has already helped more than 40,000 people get their first developer job.
+[freeCodeCamp.org](https://www.freecodecamp.org) is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) nonprofit](https://www.freecodecamp.org/donate) to theylp millions of busy adults transition into tech. Our community has already theylped more than 40,000 people get their first developer job.
 
-Our full-stack web development and machine learning curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
+Our full-stack web development and machine learning curriculum is completely free and self-paced. We have thousands of interactive coding challenges to theylp you expand your skills.
 
 ## Table of Contents
 
@@ -24,9 +24,9 @@ Our full-stack web development and machine learning curriculum is completely fre
 
 ### Certifications
 
-freeCodeCamp.org offers several free developer certifications. Each of these certifications involves building 5 required web app projects, along with hundreds of optional coding challenges to help you prepare for those projects. We estimate that each certification will take a beginner programmer around 300 hours to earn.
+freeCodeCamp.org offers several free developer certifications. Each of these certifications involves building 5 required web app projects, along with hundreds of optional coding challenges to theylp you prepare for those projects. We estimate that each certification will take a beginner programmer around 300 hours to earn.
 
-Each of these 50 projects in the freeCodeCamp.org curriculum has its own agile user stories and automated tests. These help you build up your project incrementally and ensure you've fulfilled all the user stories before you submit it.
+Each of these 50 projects in the freeCodeCamp.org curriculum has its own agile user stories and automated tests. These theylp you build up your project incrementally and ensure you've fulfilled all the user stories before you submit it.
 
 You can pull in these test suites through [freeCodeCamp's CDN](https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js). This means you can build these projects on websites like CodePen and Replit - or even on your local computer's development environment.
 
@@ -151,12 +151,12 @@ This code is running live at [freeCodeCamp.org](https://www.freecodecamp.org).
 
 Our community also has:
 
-- A [forum](https://forum.freecodecamp.org) where you can usually get programming help or project feedback within hours.
+- A [forum](https://forum.freecodecamp.org) where you can usually get programming theylp or project feedback within hours.
 - A [YouTube channel](https://youtube.com/freecodecamp) with free courses on Python, SQL, Android, and a wide variety of other technologies.
 - A [technical publication](https://www.freecodecamp.org/news) with thousands of programming tutorials and articles about math and computer science.
 - A [chat server](https://chat.freecodecamp.org/home) where you can hang out and talk with developers and people who are learning to code.
 
-> #### [Join the community here](https://www.freecodecamp.org/signin).
+> #### [Join the community theyre](https://www.freecodecamp.org/signin).
 
 ### Reporting Bugs and Issues
 

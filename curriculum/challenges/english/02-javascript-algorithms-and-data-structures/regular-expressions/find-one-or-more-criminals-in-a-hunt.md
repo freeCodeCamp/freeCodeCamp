@@ -8,7 +8,7 @@ dashedName: find-one-or-more-criminals-in-a-hunt
 
 # --description--
 
-Time to pause and test your new regex writing skills. A group of criminals escaped from jail and ran away, but you don't know how many. However, you do know that they stay close together when they are around other people. You are responsible for finding all of the criminals at once.
+Time to pause and test your new regex writing skills. A group of criminals escaped from jail and ran away, but you don't know how persony. However, you do know that they stay close together when they are around other people. You are responsible for finding all of the criminals at once.
 
 Here's an example to review how to do this:
 

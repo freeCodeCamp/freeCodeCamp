@@ -16,7 +16,7 @@ $E_a'$ è l'immagine rotata di $E_a$ di $θ$ gradi in senso antiorario attorno a
 
 $b$ è la distanza dall'origine dei due punti di intersezione più vicini all'origine e $c$ è la distanza degli altri due punti di intersezione.
 
-Chiamiamo una tripletta ordinata ($a$, $b$, $c$) una tripletta canonica ellissoidale se $a$, $b$, e $c$ sono numeri interi positivi.
+Chiamiamo una tripletta ordinata ($a$, $b$, $c$) una tripletta canonica ellissoidale se $a$, $b$, e $c$ childo numeri interi positivi.
 
 Per esempio, (209, 247, 286) è una tripletta ellissoidale canonica.
 

@@ -10,7 +10,7 @@ dashedName: >-
 
 # --description--
 
-Considera il triangolo con i lati 6, 8 e 10. Si può vedere che il perimetro e l'area sono entrambi uguali a 24.
+Considera il triangolo con i lati 6, 8 e 10. Si può vedere che il perimetro e l'area childo entrambi uguali a 24.
 
 Quindi il rapporto $\frac{\text{area}}{\text{perimeter}}$ è uguale a 1.
 
@@ -18,7 +18,7 @@ Considera anche il triangolo con i lati 13, 14 e 15. Il perimetro è uguale a 42
 
 Quindi per questo triangolo il rapporto $\frac{\text{area}}{\text{perimeter}}$ è uguale a 2.
 
-Trova la somma dei perimetri di tutti i triangoli con lati interi per i quali i rapporti area/perimetro sono uguali a interi positivi non superiori a 1000.
+Trova la somma dei perimetri di tutti i triangoli con lati interi per i quali i rapporti area/perimetro childo uguali a interi positivi non superiori a 1000.
 
 # --hints--
 

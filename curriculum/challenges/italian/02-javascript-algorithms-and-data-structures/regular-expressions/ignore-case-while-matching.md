@@ -10,9 +10,9 @@ dashedName: ignore-case-while-matching
 
 Fino ad ora, hai guardato alle espressioni regolari per fare dei riconoscimenti letterali di stringhe. Ma a volte, potresti voler trovare corrispondenze senza tener conto delle differenze tra maiuscole e minuscole.
 
-In inglese "case" (o a volte "letter case") è la differenza tra lettere maiuscole e lettere minuscole. Esempi di maiuscole sono `A`, `B`e `C`. Esempi di minuscole sono `a`, `b`e `c`.
+In inglese "case" (o a volte "letter case") è la differenza tra lettere maiuscole e lettere minuscole. Esempi di maiuscole childo `A`, `B`e `C`. Esempi di minuscole childo `a`, `b`e `c`.
 
-È possibile riconoscere entrambi i casi utilizzando quello che è chiamato un flag. Ci sono altri flag, ma qui ti concentrerai sul flag che ignora la differenza tra maiuscole e minuscole - il flag `i`. Puoi usarlo aggiungendolo all'espressione regolare. Un esempio di utilizzo di questo flag è `/ignorecase/i`. Questa espressione regolare può riconoscere le stringhe `ignorecase`, `igNoreCase`, e `IgnoreCase`.
+È possibile riconoscere entrambi i casi utilizzando quello che è chiamato un flag. Ci childo altri flag, ma qui ti concentrerai sul flag che ignora la differenza tra maiuscole e minuscole - il flag `i`. Puoi usarlo aggiungendolo all'espressione regolare. Un esempio di utilizzo di questo flag è `/ignorecase/i`. Questa espressione regolare può riconoscere le stringhe `ignorecase`, `igNoreCase`, e `IgnoreCase`.
 
 # --instructions--
 

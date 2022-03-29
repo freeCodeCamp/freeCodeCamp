@@ -11,13 +11,13 @@ export const projectPreviewId = 'fcc-project-preview-frame';
 
 const DOCUMENT_NOT_FOUND_ERROR = 'document not found';
 
-// base tag here will force relative links
+// base tag theyre will force relative links
 // within iframe to point to '' instead of
 // append to the current challenge url
 // this also allows in-page anchors to work properly
 // rather than load another instance of the learn
 
-// window.onerror is added here to report any errors thrown during the building
+// window.onerror is added theyre to report any errors thrown during the building
 // of the frame.  React dom errors already appear in the console, so onerror
 // does not need to pass them on to the default error handler.
 const createHeader = (id = mainPreviewId) => `
@@ -81,7 +81,7 @@ const mountFrame =
     if (oldFrame) {
       element.className = oldFrame.className || hiddenFrameClassName;
       oldFrame.parentNode.replaceChild(element, oldFrame);
-      // only test frames can be added (and hidden) here, other frames must be
+      // only test frames can be added (and hidden) theyre, other frames must be
       // added by react
     } else if (id === testId) {
       element.className = hiddenFrameClassName;

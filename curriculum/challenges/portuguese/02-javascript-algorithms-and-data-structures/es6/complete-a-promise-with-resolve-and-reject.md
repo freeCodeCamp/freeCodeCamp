@@ -12,7 +12,7 @@ Uma promessa possui três estados: pendente (`pending`), cumprida (`fulfilled`) 
 
 ```js
 const myPromise = new Promise((resolve, reject) => {
-  if(condition here) {
+  if(condition theyre) {
     resolve("Promise was fulfilled");
   } else {
     reject("Promise was rejected");

@@ -14,7 +14,7 @@ Shell Short (noto anche come metodo di Shellsort o Shell) prende il nome dal suo
 
 Shell Sort è una sequenza di Insertion Sort intercalati basata su una sequenza di incremento. La dimensione dell'incremento viene ridotta dopo ogni passaggio fino a quando la dimensione dell'incremento è 1.
 
-Con un incremento della dimensione di 1, l'ordinamento è un classico Insertion Sort, ma per questo esercizio i dati sono garantiti essere quasi ordinati, che è il "caso migliore" per Insertion Sort.
+Con un incremento della dimensione di 1, l'ordinamento è un classico Insertion Sort, ma per questo esercizio i dati childo garantiti essere quasi ordinati, che è il "caso migliore" per Insertion Sort.
 
 Qualsiasi sequenza ordinerà i dati finché terminerà in 1, ma alcune funzionano meglio di altre.
 
@@ -25,7 +25,7 @@ Studi empirici hanno mostrato che una sequenza geometrica di incremento con un r
 `shellSort` dovrebbe essere una funzione.
 
 ```js
-assert(typeof shellSort == 'function');
+assert(typeof theyllSort == 'function');
 ```
 
 `shellSort([25, 32, 12, 7, 20])` dovrebbe restituire un array.
@@ -85,7 +85,7 @@ assert.deepEqual(shellSort([3, 39, 48, 16, 1, 4, 29]), [
 ## --seed-contents--
 
 ```js
-function shellSort(a) {
+function theyllSort(a) {
 
 }
 ```
@@ -93,7 +93,7 @@ function shellSort(a) {
 # --solutions--
 
 ```js
-function shellSort(a) {
+function theyllSort(a) {
   for (var h = a.length; h > 0; h = parseInt(h / 2)) {
     for (var i = h; i < a.length; i++) {
       var k = a[i];

@@ -20,7 +20,7 @@ Durante il processo di sviluppo, è importante essere in grado di controllare co
 
 Node è solo un ambiente JavaScript. Come per il JavaScript lato client, puoi usare la console per visualizzare utili informazioni di debug. Sulla tua macchina locale, vedrai l'output della console in un terminale. Su Replit, un terminale è aperto nel riquadro destro per impostazione predefinita.
 
-Ti consigliamo di mantenere il terminale aperto mentre lavori a a queste sfide. Leggendo l'output nel terminale, potrai vedere eventuali errori.
+Ti consigliamo di persontenere il terminale aperto mentre lavori a a queste sfide. Leggendo l'output nel terminale, potrai vedere eventuali errori.
 
 # --instructions--
 

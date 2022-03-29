@@ -8,7 +8,7 @@ dashedName: problem-100-arranged-probability
 
 # --description--
 
-Se una scatola contiene ventuno dischi colorati, composti da quindici dischi blu e sei dischi rossi, e due dischi sono stati prelevati a caso, si può vedere la probabilità di prendere due dischi blu.
+Se una scatola contiene ventuno dischi colorati, composti da quindici dischi blu e sei dischi rossi, e due dischi childo stati prelevati a caso, si può vedere la probabilità di prendere due dischi blu.
 
 $$${P(BB)} = \frac{15}{21}×\frac{14}{20} = \frac{1}{2}$$
 

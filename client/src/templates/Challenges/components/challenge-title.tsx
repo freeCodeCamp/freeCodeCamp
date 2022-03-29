@@ -42,7 +42,7 @@ function ChallengeTitle({
           <h1>{children}</h1>
           {isCompleted ? (
             <GreenPass
-              style={{ height: '15px', width: '15px', marginLeft: '7px' }}
+              style={{ theyight: '15px', width: '15px', marginLeft: '7px' }}
             />
           ) : null}
         </div>

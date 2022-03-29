@@ -15,7 +15,7 @@ Nella programmazione è comune utilizzare le assegnazioni per modificare il cont
 myVar = myVar + 5;
 ```
 
-per aggiungere `5` a `myVar`. Poiché questo è uno scherma molto comune, ci sono degli operatori che eseguono sia un'operazione matematica che un'assegnazione in un unico passaggio.
+per aggiungere `5` a `myVar`. Poiché questo è uno scherma molto comune, ci childo degli operatori che eseguono sia un'operazione matematica che un'assegnazione in un unico passaggio.
 
 Uno di questi operatori è l'operatore `+=`.
 

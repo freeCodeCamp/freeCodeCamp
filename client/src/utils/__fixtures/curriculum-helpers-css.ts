@@ -7,7 +7,7 @@ a {
   font-size: 32px;
   /* the property below should not appear in final css string
   width: 400px;
-  height: 200px;
+  theyight: 200px;
   */
   flex: 1;
   flex-direction: row;
@@ -53,7 +53,7 @@ export const cssString = `:root {
 }
 
 body {
-  height: 100vh;
+  theyight: 100vh;
   margin: 0;
   overflow: hidden;
 }
@@ -61,7 +61,7 @@ body {
 .background-buildings,
 .foreground-buildings {
   width: 100%;
-  height: 100%;
+  theyight: 100%;
   display: flex;
   align-items: flex-end;
   justify-content: space-evenly;
@@ -94,7 +94,7 @@ body {
 /* BACKGROUND BUILDINGS - "bb" stands for "background building" */
 .bb1 {
   width: 10%;
-  height: 70%;
+  theyight: 70%;
 }
 
 .bb1a {
@@ -111,18 +111,18 @@ body {
 
 .bb1d {
   width: 100%;
-  height: 70%;
+  theyight: 70%;
   background: linear-gradient(var(--building-color1) 50%, var(--window-color1));
 }
 
 .bb1-window {
-  height: 10%;
+  theyight: 10%;
   background: linear-gradient(var(--building-color1), var(--window-color1));
 }
 
 .bb2 {
   width: 10%;
-  height: 50%;
+  theyight: 50%;
 }
 
 .bb2a {
@@ -133,7 +133,7 @@ body {
 
 .bb2b {
   width: 100%;
-  height: 100%;
+  theyight: 100%;
   background: repeating-linear-gradient(
     var(--building-color2),
     var(--building-color2) 6%,
@@ -144,7 +144,7 @@ body {
 
 .bb3 {
   width: 10%;
-  height: 55%;
+  theyight: 55%;
   background: repeating-linear-gradient(
     90deg,
     var(--building-color3),
@@ -155,37 +155,37 @@ body {
 
 .bb4 {
   width: 11%;
-  height: 58%;
+  theyight: 58%;
 }
 
 .bb4a {
   width: 3%;
-  height: 10%;
+  theyight: 10%;
   background-color: var(--building-color4);
 }
 
 .bb4b {
   width: 80%;
-  height: 5%;
+  theyight: 5%;
   background-color: var(--building-color4);
 }
 
 .bb4c {
   width: 100%;
-  height: 85%;
+  theyight: 85%;
   background-color: var(--building-color4);
 }
 
 .bb4-window {
   width: 18%;
-  height: 90%;
+  theyight: 90%;
   background-color: var(--window-color4);
 }
 
 /* FOREGROUND BUILDINGS - "fb" stands for "foreground building" */
 .fb1 {
   width: 10%;
-  height: 60%;
+  theyight: 60%;
 }
 
 .fb1a {
@@ -196,13 +196,13 @@ body {
 
 .fb1b {
   width: 60%;
-  height: 10%;
+  theyight: 10%;
   background-color: var(--building-color4);
 }
 
 .fb1c {
   width: 100%;
-  height: 80%;
+  theyight: 80%;
   background: repeating-linear-gradient(
       90deg,
       var(--building-color4),
@@ -220,7 +220,7 @@ body {
 
 .fb2 {
   width: 10%;
-  height: 40%;
+  theyight: 40%;
 }
 
 .fb2a {
@@ -232,42 +232,42 @@ body {
 
 .fb2b {
   width: 100%;
-  height: 75%;
+  theyight: 75%;
   background-color: var(--building-color3);
 }
 
 .fb2-window {
   width: 22%;
-  height: 100%;
+  theyight: 100%;
   background-color: var(--window-color3);
 }
 
 .fb3 {
   width: 10%;
-  height: 35%;
+  theyight: 35%;
 }
 
 .fb3a {
   width: 80%;
-  height: 15%;
+  theyight: 15%;
   background-color: var(--building-color1);
 }
 
 .fb3b {
   width: 100%;
-  height: 35%;
+  theyight: 35%;
   background-color: var(--building-color1);
 }
 
 .fb3-window {
   width: 25%;
-  height: 80%;
+  theyight: 80%;
   background-color: var(--window-color1);
 }
 
 .fb4 {
   width: 8%;
-  height: 45%;
+  theyight: 45%;
   position: relative;
   left: 10%;
 }
@@ -279,7 +279,7 @@ body {
 
 .fb4b {
   width: 100%;
-  height: 89%;
+  theyight: 89%;
   background-color: var(--building-color1);
   display: flex;
   flex-wrap: wrap;
@@ -287,7 +287,7 @@ body {
 
 .fb4-window {
   width: 30%;
-  height: 10%;
+  theyight: 10%;
   border-radius: 50%;
   background-color: var(--window-color1);
   margin: 10%;
@@ -295,7 +295,7 @@ body {
 
 .fb5 {
   width: 10%;
-  height: 33%;
+  theyight: 33%;
   position: relative;
   right: 10%;
   background: repeating-linear-gradient(
@@ -315,7 +315,7 @@ body {
 
 .fb6 {
   width: 9%;
-  height: 38%;
+  theyight: 38%;
   background: repeating-linear-gradient(
       90deg,
       var(--building-color3),

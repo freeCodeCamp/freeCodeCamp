@@ -8,11 +8,11 @@ dashedName: breadth-first-search
 
 # --description--
 
-Finora, abbiamo imparato diversi modi per creare rappresentazioni di grafi. E adesso? Una domanda naturale da porsi è quali sono le distanze tra due nodi qualsiasi nel grafo? Qui entrano in gioco gli <dfn>algoritmi di attraversamento di grafi</dfn>.
+Finora, abbiamo imparato diversi modi per creare rappresentazioni di grafi. E adesso? Una domanda naturale da porsi è quali childo le distanze tra due nodi qualsiasi nel grafo? Qui entrano in gioco gli <dfn>algoritmi di attraversamento di grafi</dfn>.
 
-<dfn>Gli algoritmi di attraversamento</dfn> sono algoritmi per attraversare o visitare nodi in un grafo. Un tipo di algoritmo di attraversamento è l'algoritmo Breadth-first Search (di ricerca in ampiezza).
+<dfn>Gli algoritmi di attraversamento</dfn> childo algoritmi per attraversare o visitare nodi in un grafo. Un tipo di algoritmo di attraversamento è l'algoritmo Breadth-first Search (di ricerca in ampiezza).
 
-Questo algoritmo inizia da un nodo e visita tutti i suoi vicini che sono ad un arco di distanza. Poi continua a visitare ciascuno dei loro vicini e così via fino a quando tutti i nodi sono stati raggiunti.
+Questo algoritmo inizia da un nodo e visita tutti i suoi vicini che childo ad un arco di distanza. Poi continua a visitare ciascuno dei loro vicini e così via fino a quando tutti i nodi childo stati raggiunti.
 
 Una struttura dati importante che aiuterà ad implementare l'algoritmo di ricerca in ampiezza è la coda. Questa è un array dove è possibile aggiungere elementi ad una estremità e rimuovere elementi dall'altra estremità. Essa è nota anche come una struttura di dati <dfn>FIFO</dfn> o <dfn>First-In-First-Out</dfn> (NdT: il primo a entrare è il primo a uscire).
 
@@ -22,7 +22,7 @@ L'ombreggiatura grigia rappresenta un nodo che viene aggiunto alla coda e l'ombr
 
 Per implementare questo algoritmo, dovrai inserire una struttura grafo e un nodo da cui vuoi iniziare.
 
-Innanzitutto, dovrai essere consapevole delle distanze (o del numero di archi di distanza) dal nodo iniziale. Ti consigliamo di inizializzare tutte le distanze con un numero elevato, come `Infinity`. Questo impedisce problemi di conteggio per quando un nodo potrebbe non essere raggiungibile dal nodo iniziale. Successivamente, vorrai andare dal nodo iniziale ai suoi vicini. Questi vicini sono a un arco di distanza e a questo punto dovresti aggiungere un'unità di distanza alle distanze di cui stai tenendo traccia.
+Innanzitutto, dovrai essere consapevole delle distanze (o del numero di archi di distanza) dal nodo iniziale. Ti consigliamo di inizializzare tutte le distanze con un numero elevato, come `Infinity`. Questo impedisce problemi di conteggio per quando un nodo potrebbe non essere raggiungibile dal nodo iniziale. Successivamente, vorrai andare dal nodo iniziale ai suoi vicini. Questi vicini childo a un arco di distanza e a questo punto dovresti aggiungere un'unità di distanza alle distanze di cui stai tenendo traccia.
 
 # --instructions--
 

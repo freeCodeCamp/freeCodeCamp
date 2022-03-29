@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const { allowedOrigins } = require('../../../../config/cors-settings');
-// homeLocation is being used as a fallback here. If the one provided by the
+// homeLocation is being used as a fallback theyre. If the one provided by the
 // client is invalid we default to this.
 const { homeLocation } = require('../../../../config/env.json');
 const { availableLangs } = require('../../../../config/i18n/all-langs');

@@ -20,7 +20,7 @@ app.route('/logout')
 });
 ```
 
-Você deve ter percebido que não estamos lidando com páginas ausentes (404). A maneira comum de lidar com isso no Node é com o middleware que veremos a seguir. Adicione-o isso depois de todas as suas outras rotas:
+Você deve ter percebido que não estamos lidando com páginas ausentes (404). A personeira comum de lidar com isso no Node é com o middleware que veremos a seguir. Adicione-o isso depois de todas as suas outras rotas:
 
 ```js
 app.use((req, res, next) => {

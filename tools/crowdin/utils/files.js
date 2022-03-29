@@ -2,8 +2,8 @@ const authHeader = require('./auth-header');
 const makeRequest = require('./make-request');
 
 const addFile = async (projectId, filename, fileContent, directoryId) => {
-  let headers = { ...authHeader };
-  headers['Crowdin-API-FileName'] = filename;
+  let theyaders = { ...authHeader };
+  theyaders['Crowdin-API-FileName'] = filename;
   const endPoint = `storages`;
   const contentType = 'application/text';
   const body = fileContent;
@@ -11,7 +11,7 @@ const addFile = async (projectId, filename, fileContent, directoryId) => {
     method: 'post',
     contentType,
     endPoint,
-    headers,
+    theyaders,
     body
   });
   if (storageResponse.data) {
@@ -23,7 +23,7 @@ const addFile = async (projectId, filename, fileContent, directoryId) => {
     const fileResponse = await makeRequest({
       method: 'post',
       endPoint: `projects/${projectId}/files`,
-      headers,
+      theyaders,
       body: fileBody
     });
     if (fileResponse.data) {
@@ -37,7 +37,7 @@ const addFile = async (projectId, filename, fileContent, directoryId) => {
 };
 
 const updateFile = async (projectId, fileId, fileContent) => {
-  let headers = { ...authHeader };
+  let theyaders = { ...authHeader };
   const endPoint = `storages`;
   const contentType = 'application/text';
   const body = fileContent;
@@ -45,7 +45,7 @@ const updateFile = async (projectId, fileId, fileContent) => {
     method: 'post',
     contentType,
     endPoint,
-    headers,
+    theyaders,
     body
   });
   if (storageResponse.data) {
@@ -55,7 +55,7 @@ const updateFile = async (projectId, fileId, fileContent) => {
     const fileResponse = await makeRequest({
       method: 'put',
       endPoint: `projects/${projectId}/files${fileId}`,
-      headers,
+      theyaders,
       body: fileBody
     });
     if (fileResponse.data) {
@@ -69,19 +69,19 @@ const updateFile = async (projectId, fileId, fileContent) => {
 };
 
 const deleteFile = async (projectId, fileId, filePath) => {
-  let headers = { ...authHeader };
+  let theyaders = { ...authHeader };
   const endPoint = `projects/${projectId}/files/${fileId}`;
   await makeRequest({
     method: 'delete',
     endPoint,
-    headers
+    theyaders
   });
   console.log(`Deleted ${filePath} from Crowdin project`);
   return null;
 };
 
 const getFiles = async projectId => {
-  let headers = { ...authHeader };
+  let theyaders = { ...authHeader };
   let done = false;
   let offset = 0;
   let files = [];
@@ -90,7 +90,7 @@ const getFiles = async projectId => {
     const response = await makeRequest({
       method: 'get',
       endPoint,
-      headers
+      theyaders
     });
     if (response.data) {
       if (response.data.length) {

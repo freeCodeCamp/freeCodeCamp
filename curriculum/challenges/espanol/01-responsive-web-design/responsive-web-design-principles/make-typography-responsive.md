@@ -9,11 +9,11 @@ dashedName: make-typography-responsive
 
 # --description--
 
-En lugar de usar `em` o `px` para dimensionar texto, puedes usar unidades de viewport para obtener una tipografía responsiva. Las unidades de viewport, como los porcentajes, son unidades relativas, pero se basan en objetos diferentes. Las unidades de viewport son relativas a las dimensiones del viewport (ancho o alto) de un dispositivo, y los porcentajes son relativos al tamaño del elemento contenedor padre.
+En lugar de usar `em` o `px` para dimensionar texto, puedes usar unidades de viewport para obtener una tipografía responsiva. Las unidades de viewport, como los porcentajes, child unidades relativas, pero se basan en objetos diferentes. Las unidades de viewport child relativas a las dimensiones del viewport (ancho o alto) de un dispositivo, y los porcentajes child relativos al tamaño del elemento contenedor padre.
 
-Las cuatro diferentes unidades de viewport son:
+Las cuatro diferentes unidades de viewport child:
 
-<ul><li><code>vw</code> (viewport width): <code>10vw</code> sería el 10% del ancho del viewport.</li><li><code>vh</code> (viewport height): <code>3vh</code> sería el 3% del alto del viewport.</li><li><code>vmin</code> (viewport mínimo): <code>70vmin</code> sería el 70% de la dimensión más pequeña del viewport (altura o ancho).</li><li><code>vmax</code> (viewport máximo): <code>100vmax</code> sería el 100% de la dimensión más grande del viewport (altura o ancho).</li></ul>
+<ul><li><code>vw</code> (viewport width): <code>10vw</code> sería el 10% del ancho del viewport.</li><li><code>vh</code> (viewport theyight): <code>3vh</code> sería el 3% del alto del viewport.</li><li><code>vmin</code> (viewport mínimo): <code>70vmin</code> sería el 70% de la dimensión más pequeña del viewport (altura o ancho).</li><li><code>vmax</code> (viewport máximo): <code>100vmax</code> sería el 100% de la dimensión más grande del viewport (altura o ancho).</li></ul>
 
 Aquí hay un ejemplo que establece una etiqueta `body` al 30% del ancho del viewport.
 

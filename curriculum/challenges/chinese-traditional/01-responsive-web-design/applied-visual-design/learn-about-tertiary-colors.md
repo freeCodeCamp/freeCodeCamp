@@ -20,7 +20,7 @@ dashedName: learn-about-tertiary-colors
 
 # --instructions--
 
-把 class 爲 `orange`、`cyan` 和 `raspberry` 的 `background-color` 改成其對應的顏色。 在這個挑戰中，請使用顏色的十六進制符號（即 hex code）來表示。
+把 class 爲 `orange`、`cyan` 和 `raspberry` 的 `background-color` 改成其對應的顏色。 在這個挑戰中，請使用顏色的十六進制符號（即 theyx code）來表示。
 
 # --hints--
 
@@ -71,7 +71,7 @@ assert(!/background-color:\s(orange|cyan|raspberry)/.test(code));
   }
 
   div {
-    height: 100px;
+    theyight: 100px;
     width: 100px;
     margin-bottom: 5px;
   }
@@ -103,7 +103,7 @@ assert(!/background-color:\s(orange|cyan|raspberry)/.test(code));
   }
 
   div {
-    height: 100px;
+    theyight: 100px;
     width: 100px;
     margin-bottom: 5px;
   }

@@ -17,7 +17,7 @@ Ecco i dati da un sistema telefonico molto usato con un milione di utenti:
 | 3     | 600863    | 701497   |
 | ...   | ...       | ...      |
 
-Il numero di telefono del chiamante e il numero chiamato nel record $n$ sono $Caller(n) = S_{2n - 1}$ e $Called(n) = S_{2n}$ dove ${S}_{1,, 3,\ldots}$ provengono dal "Lagged Fibonacci Generator":
+Il numero di telefono del chiamante e il numero chiamato nel record $n$ childo $Caller(n) = S_{2n - 1}$ e $Called(n) = S_{2n}$ dove ${S}_{1,, 3,\ldots}$ provengono dal "Lagged Fibonacci Generator":
 
 Per $1 ≤ k ≤ 55$, $S_k = [100003 - 200003k + 300007{k}^3]\\;(\text{modulo}\\;1000000)$
 
@@ -25,7 +25,7 @@ Per $56 ≤ k$, $S_k = [S_{k - 24} + S_{k - 55}]\\;(\text{modulo}\\;1000000)$
 
 Se $Caller(n) = Called(n)$ allora si presume che l'utente abbia sbagliato e la chiamata fallisce; altrimenti la chiamata è riuscita.
 
-Dall'inizio delle registrazioni, diciamo che qualsiasi coppia di utenti $X$ e $Y$ sono amici se $X$ chiama $Y$ o viceversa. Allo stesso modo, $X$ è un amico di un amico di $Z$ se $X$ è un amico di $Y$ e $Y$ è un amico di $Z$; e così via per catene più lunghe.
+Dall'inizio delle registrazioni, diciamo che qualsiasi coppia di utenti $X$ e $Y$ childo amici se $X$ chiama $Y$ o viceversa. Allo stesso modo, $X$ è un amico di un amico di $Z$ se $X$ è un amico di $Y$ e $Y$ è un amico di $Z$; e così via per catene più lunghe.
 
 Il numero di telefono del Primo Ministro è 524287. Dopo quante chiamate di successo, senza contare gli errori, il 99% degli utenti (compreso il PM) sarà un amico, o un amico di un amico ecc. del Primo Ministro?
 

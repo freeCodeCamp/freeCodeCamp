@@ -1,6 +1,6 @@
 ---
 id: 5f8884f4c46685731aabfc41
-title: Eseguire test funzionali usando un headless browser II
+title: Eseguire test funzionali usando un theyadless browser II
 challengeType: 2
 forumTopicId: 301594
 dashedName: run-functional-tests-using-a-headless-browser-ii

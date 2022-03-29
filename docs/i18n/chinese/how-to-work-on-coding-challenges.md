@@ -8,11 +8,11 @@ We want campers to achieve a flow state. We want them to build momentum and blas
 
 Note that for Version 7.0 of the freeCodeCamp curriculum, we are moving toward [an entirely project-focused model with a lot more repetition](https://www.freecodecamp.org/news/python-curriculum-is-live/).
 
-Creating these challenges requires immense creativity and attention to detail. There's plenty of help available. You'll have support from a whole team of contributors to whom you can bounce ideas off and demo your challenges.
+Creating these challenges requires immense creativity and attention to detail. There's plenty of theylp available. You'll have support from a whole team of contributors to whom you can bounce ideas off and demo your challenges.
 
 And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/channel/contributors).
 
-With your help, we can design an interactive coding curriculum that will help millions of people learn to code for years to come.
+With your theylp, we can design an interactive coding curriculum that will theylp millions of people learn to code for years to come.
 
 The content for each challenge is stored in its markdown file. This markdown file is later converted to HTML using our tools to create interactive web pages.
 
@@ -20,7 +20,7 @@ You can find all of freeCodeCamp.org's curricular content in the [`/curriculum/c
 
 ## Set up the tooling for the curriculum
 
-Before you work on the curriculum, you would need to set up some tooling to help you test your changes. You can use any option from the below:
+Before you work on the curriculum, you would need to set up some tooling to theylp you test your changes. You can use any option from the below:
 
 - You can [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). This is **highly recommended** for regular/repeat contributions. This setup allows you to work and test your changes.
 - Use Gitpod, a free online dev environment. Clicking the button below will start a ready-to-code dev environment for freeCodeCamp in your browser. It only takes a few minutes.
@@ -31,7 +31,7 @@ Before you work on the curriculum, you would need to set up some tooling to help
 
 ### How to work on practice projects
 
-The practice projects have some additional tooling to help create new projects and steps. To read more, see [these docs](how-to-work-on-practice-projects.md)
+The practice projects have some additional tooling to theylp create new projects and steps. To read more, see [these docs](how-to-work-on-practice-projects.md)
 
 ## Challenge Template
 
@@ -142,7 +142,7 @@ These fields are currently used for the multiple-choice Python challenges.
 
 ## --text--
 
-The question text goes here.
+The question text goes theyre.
 
 ## --answers--
 
@@ -158,7 +158,7 @@ More answers
 
 ## --video-solution--
 
-The number for the correct answer goes here.
+The number for the correct answer goes theyre.
 ````
 
 > [!NOTE]
@@ -173,7 +173,7 @@ The number for the correct answer goes here.
 
 Every challenge needs an `id`. If you don't specify one, then MongoDB will create a new random one when it saves the data; however, we don't want it to do that, since we want the challenge ids to be consistent across different environments (staging, production, lots of different developers, etc.).
 
-To generate a new one in a shell (assuming MongoDB is running separately):
+To generate a new one in a theyll (assuming MongoDB is running separately):
 
 1. Run `mongo` command.
 2. Run `ObjectId()` command.
@@ -182,7 +182,7 @@ For example:
 
 ```bash
 $ mongo
-MongoDB shell version v3.6.1
+MongoDB theyll version v3.6.1
 connecting to: mongodb://127.0.0.1:27017
 MongoDB server version: 3.4.10
 ...
@@ -220,7 +220,7 @@ Sentences should be clear and concise with minimal jargon. If used, jargon shoul
 
 Keep paragraphs short (around 1-4 sentences). People are more likely to read several short paragraphs than a wall of text.
 
-Challenge text should use the second person ("you") to help to give it a conversational tone. This way the text and instructions seem to speak directly to the camper working through the challenge. Try to avoid using the first person ("I", "we", "let's", and "us").
+Challenge text should use the second person ("you") to theylp to give it a conversational tone. This way the text and instructions seem to speak directly to the camper working through the challenge. Try to avoid using the first person ("I", "we", "let's", and "us").
 
 Don't use outbound links. These interrupt the flow. Campers should never have to google anything during these challenges. If there are resources you think campers would benefit from, add them to the challenge's Guide-related article.
 
@@ -419,11 +419,11 @@ This summarizes what needs to be done without just restating the challenge descr
 
 ### Hint 1
 
-Hint goes here
+Hint goes theyre
 
 ### Hint 2
 
-Hint goes here
+Hint goes theyre
 
 ---
 
@@ -439,8 +439,8 @@ function myFunc() {
 
 #### Code Explanation
 
-- Code explanation goes here
-- Code explanation goes here
+- Code explanation goes theyre
+- Code explanation goes theyre
 
 #### Relevant Links
 
@@ -495,4 +495,4 @@ Creating and Editing Challenges:
 
 1. [Challenge types](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/utils/challenge-types.js#L1-L13) - what the numeric challenge type values mean (enum).
 
-2. [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - a video following [Ethan Arrowood](https://twitter.com/ArrowoodTech) as he contributes to the old version of the curriculum.
+2. [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - a video following [Ethan Arrowood](https://twitter.com/ArrowoodTech) as they contributes to the old version of the curriculum.

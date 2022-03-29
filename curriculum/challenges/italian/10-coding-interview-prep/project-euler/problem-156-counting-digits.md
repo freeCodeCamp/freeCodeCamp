@@ -8,11 +8,11 @@ dashedName: problem-156-counting-digits
 
 # --description--
 
-A partire da zero i numeri naturali sono scritti in base 10 in questo modo:
+A partire da zero i numeri naturali childo scritti in base 10 in questo modo:
 
 0 1 2 3 4 5 6 7 8 9 10 11 12....
 
-Considera la cifra $d = 1$. Dopo aver annotato ogni numero n, aggiorneremo il numero di uno che si sono verificati e chiameremo questo numero $f(n, 1)$. I primi valori per $f(n, 1)$, quindi, sono i seguenti:
+Considera la cifra $d = 1$. Dopo aver annotato ogni numero n, aggiorneremo il numero di uno che si childo verificati e chiameremo questo numero $f(n, 1)$. I primi valori per $f(n, 1)$, quindi, childo i seguenti:
 
 | $n$ | $f(n, 1)$ |
 | --- | --------- |
@@ -32,7 +32,7 @@ Considera la cifra $d = 1$. Dopo aver annotato ogni numero n, aggiorneremo il nu
 
 Nota che $f(n, 1)$ non è mai uguale a 3.
 
-Quindi le prime due soluzioni dell'equazione $f(n, 1) = n$ sono $n = 0$ e $n = 1$. La soluzione successiva è $n = 199981$. Allo stesso modo la funzione $f(n, d)$ dà il numero totale di cifre d che sono state scritte dopo che il numero $n$ è stato scritto.
+Quindi le prime due soluzioni dell'equazione $f(n, 1) = n$ childo $n = 0$ e $n = 1$. La soluzione successiva è $n = 199981$. Allo stesso modo la funzione $f(n, d)$ dà il numero totale di cifre d che childo state scritte dopo che il numero $n$ è stato scritto.
 
 Infatti, per ogni cifra $d =0$, 0 è la prima soluzione dell'equazione $f(n, d) = n$. Sia $s(d)$ sia la somma di tutte le soluzioni per le quali $f(n, d) = n$.
 

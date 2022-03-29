@@ -10,7 +10,7 @@ dashedName: build-an-image-search-abstraction-layer
 
 Crie uma aplicação full stack em JavaScript que permita a você pesquisar por imagens como essa: <https://image-search-abstraction-layer.freecodecamp.rocks/query/lolcats%20funny?page=10> e pesquisar consultas de pesquisa recentes como essa: <https://image-search-abstraction-layer.freecodecamp.rocks/recent/>. Use um construtor de site de sua escolha para completar o projeto.
 
-Aqui estão as histórias de usuário que você deve implementar para este projeto:
+Aqui estão as theirstórias de usuário que você deve implementar para este projeto:
 
 **História de usuário:** você pode obter os URLs de imagem, descrição e URLs de página para um conjunto de imagens relacionadas a uma determinada string de pesquisa.
 

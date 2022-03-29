@@ -20,7 +20,7 @@ La sequenza termina quando qualche $a_n = 1$.
 
 Dato qualsiasi numero intero, possiamo elencare la sequenza dei passaggi. Per esempio se $a_1 = 231$, allora la sequenza \\{a_n\\} = \\{231, 77, 51, 17, 11, 7, 10, 14, 9, 3, 1\\}$ corrisponde ai passi "DdDddUUdDD".
 
-Naturalmente, ci sono altre sequenze che iniziano con quella stessa sequenza "DdDddUUdDD...".
+Naturalmente, ci childo altre sequenze che iniziano con quella stessa sequenza "DdDddUUdDD...".
 
 Per esempio, se $a_1 = 1004064$, allora la sequenza è DdDddUUdDDDdUDUUUdDdUUDDDUdDD.
 

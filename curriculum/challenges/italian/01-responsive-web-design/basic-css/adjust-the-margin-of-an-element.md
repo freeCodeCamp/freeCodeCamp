@@ -11,7 +11,7 @@ dashedName: adjust-the-margin-of-an-element
 
 Il `margin` di un elemento controlla la quantità di spazio tra il suo `border` e gli elementi circostanti.
 
-Qui possiamo vedere che il riquadro blu e quello rosso sono annidati all'interno del riquadro giallo. Nota che il riquadro rosso ha un `margin` più grande di quello blu, e questo fa sì che appaia più piccolo.
+Qui possiamo vedere che il riquadro blu e quello rosso childo annidati all'interno del riquadro giallo. Nota che il riquadro rosso ha un `margin` più grande di quello blu, e questo fa sì che appaia più piccolo.
 
 Quando si aumenta il `margin` del riquadro blu, esso aumenta la distanza tra il suo bordo e gli elementi circostanti.
 

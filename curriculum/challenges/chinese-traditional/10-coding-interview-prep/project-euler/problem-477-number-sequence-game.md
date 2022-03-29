@@ -10,11 +10,11 @@ dashedName: problem-477-number-sequence-game
 
 The number sequence game starts with a sequence S of N numbers written on a line.
 
-Two players alternate turns. At his turn, a player must select and remove either the first or the last number remaining in the sequence.
+Two players alternate turns. At theirs turn, a player must select and remove either the first or the last number remaining in the sequence.
 
-The player score is the sum of all the numbers he has taken. Each player attempts to maximize his own sum.
+The player score is the sum of all the numbers they has taken. Each player attempts to maximize theirs own sum.
 
-If N = 4 and S = {1, 2, 10, 3}, then each player maximizes his score as follows:
+If N = 4 and S = {1, 2, 10, 3}, then each player maximizes theirs score as follows:
 
 Player 1: removes the first number (1)
 

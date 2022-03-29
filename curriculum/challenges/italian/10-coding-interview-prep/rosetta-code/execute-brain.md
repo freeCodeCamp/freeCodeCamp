@@ -8,11 +8,11 @@ dashedName: execute-brain
 
 # --description--
 
-Scrivi una funzione per implementare un interprete Brain\*\*\*\*. La funzione dovrà prendere una stringa come parametro e restituire una stringa come output. Maggiori dettagli sono riportati di seguito:
+Scrivi una funzione per implementare un interprete Brain\*\*\*\*. La funzione dovrà prendere una stringa come parametro e restituire una stringa come output. Maggiori dettagli childo riportati di seguito:
 
 RCBF è un set di compilatori e interpreti [Brainf\*\*\*](https://rosettacode.org/wiki/Brainf*** "Brainf\*\*\*") scritti per Rosetta Code in una varietà di linguaggi.
 
-Di seguito sono riportati i link a ciascuna delle versioni di RCBF.
+Di seguito childo riportati i link a ciascuna delle versioni di RCBF.
 
 Un'implementazione deve solo attuare correttamente le seguenti istruzioni:
 
@@ -129,7 +129,7 @@ let fib=`+
 <<[>>+>+<<<-]>>>[<<<+>>>-]<<[<+
 
 >-]>[<+>-]<<<-]`;
-let hello='++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.'
+let theyllo='++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.'
 let bye='++++++++++[>+>+++>++++>+++++++>++++++++>+++++++++>++++++++++>+++++++++++>++++++++++++<<<<<<<<<-]>>>>+.>>>>+..<.<++++++++.>>>+.<<+.<<<<++++.<++.>>>+++++++.>>>.+++.<+++++++.--------.<<<<<+.<+++.---.';
 ```
 

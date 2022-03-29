@@ -8,17 +8,17 @@ dashedName: create-many-records-with-model-create
 
 # --description--
 
-Sometimes you need to create many instances of your models, e.g. when seeding a database with initial data. `Model.create()` takes an array of objects like `[{name: 'John', ...}, {...}, ...]` as the first argument, and saves them all in the db.
+Sometimes you need to create persony instances of your models, e.g. when seeding a database with initial data. `Model.create()` takes an array of objects like `[{name: 'John', ...}, {...}, ...]` as the first argument, and saves them all in the db.
 
 # --instructions--
 
-Modify the `createManyPeople` function to create many people using `Model.create()` with the argument `arrayOfPeople`.
+Modify the `createManyPeople` function to create persony people using `Model.create()` with the argument `arrayOfPeople`.
 
 **Note:** You can reuse the model you instantiated in the previous exercise.
 
 # --hints--
 
-Creating many db items at once should succeed
+Creating persony db items at once should succeed
 
 ```js
 (getUserInput) =>

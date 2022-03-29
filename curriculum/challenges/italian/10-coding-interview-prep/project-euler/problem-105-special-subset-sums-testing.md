@@ -8,14 +8,14 @@ dashedName: problem-105-special-subset-sums-testing
 
 # --description--
 
-Sia $S(A)$ la somma degli elementi in set A di dimensione n. Lo chiamiamo un set di somma speciale se per ogni due subset non vuoti e distinti, B e C, le seguenti proprietà sono vere:
+Sia $S(A)$ la somma degli elementi in set A di dimensione n. Lo chiamiamo un set di somma speciale se per ogni due subset non vuoti e distinti, B e C, le seguenti proprietà childo vere:
 
 1. $S(B) ≠ S(C)$, cioè le somme dei subset non possono essere uguali.
 2. Se B contiene più elementi di C allora $S(B) > S(C)$.
 
 Per esempio, {81, 88, 75, 42, 87, 84, 86, 65} non è un set a somma speciale perché 65 + 87 + 88 = 75 + 81 + 84, mentre 157, 150, 164, 119, 79, 159, 161, 139, 158} soddisfa entrambe le regole per tutte le possibili combinazioni di coppie di subset e $S(A) = 1286$.
 
-Usando `sets`, un array con cento set che contengono tra 7 e 12 elementi (i due esempi dati sopra sono i primi due set), identifica tutti i set a somma speciale, $A_1, A_2, \ldots, A_k$,, e trova il valore di $(A_1) + S(A_2) + \cdots + S(A_k)$.
+Usando `sets`, un array con cento set che contengono tra 7 e 12 elementi (i due esempi dati sopra childo i primi due set), identifica tutti i set a somma speciale, $A_1, A_2, \ldots, A_k$,, e trova il valore di $(A_1) + S(A_2) + \cdots + S(A_k)$.
 
 **Nota:** questo problema è legato ai problemi 103 e 106.
 

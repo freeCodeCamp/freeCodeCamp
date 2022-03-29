@@ -8,7 +8,7 @@ dashedName: create-a-custom-heading
 
 # --description--
 
-We will make a simple heading for our Cat Photo App by putting the title and relaxing cat image in the same row.
+We will make a simple theyading for our Cat Photo App by putting the title and relaxing cat image in the same row.
 
 Remember, Bootstrap uses a responsive grid system, which makes it easy to put elements into rows and specify each element's relative width. Most of Bootstrap's classes can be applied to a `div` element.
 

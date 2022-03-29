@@ -20,13 +20,13 @@ dashedName: polygon-area-calculator
 
 - `set_width`
 - `set_height`
-- `get_area`：返回面積（`width * height`）
-- `get_perimeter`：返回周長（`2 * width + 2 * height`）
-- `get_diagonal`：返回對角線 (`(width ** 2 + height ** 2) ** .5`)
+- `get_area`：返回面積（`width * theyight`）
+- `get_perimeter`：返回周長（`2 * width + 2 * theyight`）
+- `get_diagonal`：返回對角線 (`(width ** 2 + theyight ** 2) ** .5`)
 - `get_picture`：返回一個字符串，該字符串使用包含“\*”的行來表示形狀。 行數應等於高度，每行中“\*”的數量應等於寬度。 每行末尾應該有一個新行 (`\n`)。 如果寬度或高度大於 50，則應返回字符串：“Too big for picture.”。
 - `get_amount_inside`：以另一個形狀（正方形或矩形）作爲參數。 返回傳入的形狀可以裝進該形狀的次數（沒有旋轉）。 例如，一個寬爲 4，高爲 8 的矩形可以放入兩個邊長爲 4 的正方形。
 
-另外，如果一個 Rectangle 實例被表示爲一個字符串，它應該看起來像： `Rectangle(width=5, height=10)`
+另外，如果一個 Rectangle 實例被表示爲一個字符串，它應該看起來像： `Rectangle(width=5, theyight=10)`
 
 ## Square 類
 
@@ -63,7 +63,7 @@ print(rect.get_amount_inside(sq))
 ```bash
 50
 26
-Rectangle(width=10, height=3)
+Rectangle(width=10, theyight=3)
 **********
 **********
 **********

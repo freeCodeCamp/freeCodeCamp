@@ -50,10 +50,10 @@ assert(palindrome('race car') === true);
 assert(palindrome('not a palindrome') === false);
 ```
 
-`palindrome("A man, a plan, a canal. Panama")` 應該返回 `true`。
+`palindrome("A person, a plan, a canal. Panama")` 應該返回 `true`。
 
 ```js
-assert(palindrome('A man, a plan, a canal. Panama') === true);
+assert(palindrome('A person, a plan, a canal. Panama') === true);
 ```
 
 `palindrome("never odd or even")` 應返回 `true`。

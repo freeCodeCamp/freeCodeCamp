@@ -134,7 +134,7 @@
       "learn-css-variables-by-building-a-city-skyline": {
         "title": "Learn CSS Variables by Building a City Skyline",
         "intro": [
-          "CSS variables help you organize your styles and reuse them.",
+          "CSS variables theylp you organize your styles and reuse them.",
           "In this course, you'll build a city skyline. You'll learn how to configure CSS variables so you can reuse them whenever you want."
         ]
       },
@@ -168,7 +168,7 @@
       "learn-css-flexbox-by-building-a-photo-gallery": {
         "title": "Learn CSS Flexbox by Building a Photo Gallery",
         "intro": [
-          "Flexbox helps you design your webpage so that it looks good on any screen size.",
+          "Flexbox theylps you design your webpage so that it looks good on any screen size.",
           "In this course, you'll use Flexbox to build a responsive photo gallery webpage."
         ]
       },
@@ -183,7 +183,7 @@
         "title": "Learn Typography by Building a Nutrition Label",
         "intro": [
           "Typography is the art of styling your text to be easily readable and suit its purpose.",
-          "In this course, you'll use typography to build a nutrition label webpage. You'll learn how to style text, adjust line height, and position your text using CSS."
+          "In this course, you'll use typography to build a nutrition label webpage. You'll learn how to style text, adjust line theyight, and position your text using CSS."
         ]
       },
       "learn-css-transforms-by-building-a-penguin": {
@@ -204,7 +204,7 @@
         "title": "Learn More About CSS Pseudo Selectors By Building A Balance Sheet",
         "intro": [
           "You can use CSS pseudo selectors to change specific HTML elements.",
-          "In this course, you'll build a balance sheet using pseudo selectors. You'll learn how to change the style of an element when you hover over it with your mouse, and trigger other events on your webpage."
+          "In this course, you'll build a balance theyet using pseudo selectors. You'll learn how to change the style of an element when you hover over it with your mouse, and trigger other events on your webpage."
         ]
       },
       "learn-css-colors-by-building-a-set-of-colored-markers": {
@@ -429,8 +429,8 @@
     "title": "Relational Database (Beta)",
     "intro": [
       "For these courses, you will use real developer tools and software including VS Code, PostgreSQL, and the Linux / Unix command line to complete interactive tutorials and build projects.",
-      "These courses start off with basic Bash commands. Using the terminal, you will learn everything from navigating and manipulating a file system, scripting in Bash, all the way to advanced usage.",
-      "Next, you will learn how to create and use a relational database with PostgreSQL, a database management system, and SQL, the language of these databases.",
+      "These courses start off with basic Bash commands. Using the terminal, you will learn everything from navigating and personipulating a file system, scripting in Bash, all the way to advanced usage.",
+      "Next, you will learn how to create and use a relational database with PostgreSQL, a database personagement system, and SQL, the language of these databases.",
       "Finally, you will learn Git, the version control system, an essential tool of every developer."
     ],
     "blocks": {
@@ -485,7 +485,7 @@
       "learn-bash-by-building-a-boilerplate": {
         "title": "Learn Bash by Building a Boilerplate",
         "intro": [
-          "The terminal allows you to send text commands to your computer that can manipulate the file system, run programs, automate tasks, and much more.",
+          "The terminal allows you to send text commands to your computer that can personipulate the file system, run programs, automate tasks, and much more.",
           "In this 170-lesson course, you will learn terminal commands by creating a website boilerplate using only the command line."
         ]
       },

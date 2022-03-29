@@ -26,7 +26,7 @@ Bird.prototype.describe = function() {
 }
 ```
 
-Una forma más eficiente es establecer el `prototype` a un nuevo objeto que ya contenga las propiedades. De esta forma, las propiedades son añadidas todas a la vez:
+Una forma más eficiente es establecer el `prototype` a un nuevo objeto que ya contenga las propiedades. De esta forma, las propiedades child añadidas todas a la vez:
 
 ```js
 Bird.prototype = {

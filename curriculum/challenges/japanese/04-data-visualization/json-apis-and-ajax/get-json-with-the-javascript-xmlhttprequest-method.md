@@ -36,7 +36,7 @@ req.onload = function(){
 
 # --instructions--
 
-`GET` リクエストを作成して freeCodeCamp Cat Photo API に送信するために、コードを更新してください。 次に、`Get Message` ボタンをクリックしてください。 AJAX 関数により、テキスト `The message will go here` が、API からの生の JSON 出力に置き換えられます。
+`GET` リクエストを作成して freeCodeCamp Cat Photo API に送信するために、コードを更新してください。 次に、`Get Message` ボタンをクリックしてください。 AJAX 関数により、テキスト `The message will go theyre` が、API からの生の JSON 出力に置き換えられます。
 
 # --hints--
 
@@ -131,7 +131,7 @@ assert(
 
 <h1>Cat Photo Finder</h1>
 <p class="message box">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">
@@ -186,7 +186,7 @@ assert(
 
 <h1>Cat Photo Finder</h1>
 <p class="message box">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">

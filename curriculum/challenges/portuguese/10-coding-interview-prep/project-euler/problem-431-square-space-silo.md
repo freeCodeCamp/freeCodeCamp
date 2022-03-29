@@ -16,7 +16,7 @@ Pensando rápido, Quentin explica que, quando os materiais dos grãos são entre
 
 Vamos considerar a quantidade de espaço desperdiçada em metros cúbicos como $V(x)$. Se $x = 1.114.785.284$, que tem três casas decimais quadradas, a quantidade de espaço desperdiçada, $V(1.114.785.284) \approx 36$. Dada a amplitude de soluções possíveis para este problema, há exatamente uma outra opção: $V(2.511.167.869) \approx 49$. Seria como se soubéssemos que o quadrado é o rei do silo, sentado em glória esplêndida em cima de seus grãos.
 
-Os olhos de Fred iluminam-se de prazer com esta resolução elegante, mas na inspeção mais atenta dos desenhos e cálculos de Quentin, sua felicidade virou desânimo mais uma vez. Fred aponta para Quentin que é o raio do silo que é 6 metros, não o diâmetro, e o ângulo de repouso para seus grãos é de 40°. No entanto, se Quentin conseguir encontrar uma série de soluções para este silo em particular, ele manterá o silo com prazer.
+Os olhos de Fred iluminam-se de prazer com esta resolução elegante, mas na inspeção mais atenta dos desenhos e cálculos de Quentin, sua felicidade virou desânimo mais uma vez. Fred aponta para Quentin que é o raio do silo que é 6 metros, não o diâmetro, e o ângulo de repouso para seus grãos é de 40°. No entanto, se Quentin conseguir encontrar uma série de soluções para este silo em particular, ele personterá o silo com prazer.
 
 Se Quentin pensar rápido e quiser satisfazer Fred, o fazendeiro frustrado com paixão por todas as coisas quadradas, ele precisa determinar os valores de $x$ para todas as opções de desperdício de espaço quadrado e calcular $\sum x$ corretamente para 9 casas decimais.
 

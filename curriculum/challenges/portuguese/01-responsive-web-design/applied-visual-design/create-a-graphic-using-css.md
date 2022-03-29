@@ -9,7 +9,7 @@ dashedName: create-a-graphic-using-css
 
 # --description--
 
-Ao manipular diferentes seletores e propriedades, você pode criar formas interessantes. Uma das mais fáceis de criar é a forma de lua crescente. Neste desafio, você precisa trabalhar com a propriedade `box-shadow` que define a sombra de um elemento, junto da propriedade `border-radius` que controla o arredondamento dos cantos do elemento.
+Ao personipular diferentes seletores e propriedades, você pode criar formas interessantes. Uma das mais fáceis de criar é a forma de lua crescente. Neste desafio, você precisa trabalhar com a propriedade `box-shadow` que define a sombra de um elemento, junto da propriedade `border-radius` que controla o arredondamento dos cantos do elemento.
 
 Você criará um objeto redondo e transparente com uma sombra nítida ligeiramente deslocada para o lado - a sombra será a forma de lua.
 
@@ -57,7 +57,7 @@ assert(
     bottom: 0;
     left: 0;
     width: 100px;
-    height: 100px;
+    theyight: 100px;
     background-color: blue;
     border-radius: 0px;
     box-shadow: 25px 10px 10px 10px green;
@@ -79,7 +79,7 @@ assert(
     bottom: 0;
     left: 0;
     width: 100px;
-    height: 100px;
+    theyight: 100px;
     background-color: transparent;
     border-radius: 50%;
     box-shadow: 25px 10px 0 0 blue;

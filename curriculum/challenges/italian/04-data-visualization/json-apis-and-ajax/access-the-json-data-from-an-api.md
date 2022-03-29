@@ -18,19 +18,19 @@ Capire la struttura dei dati che un'API restituisce è importante perché influi
 
 Sulla destra, fai click sul pulsante `Get Message` per caricare il JSON dell'API Cat Photo di freeCodeCamp nell'HTML.
 
-Il primo e l'ultimo carattere che vedi nei dati JSON sono parentesi quadre `[ ]`. Ciò significa che i dati restituiti sono un array. Il secondo carattere dei dati JSON è una parentesi graffa `{`, che dà inizio a un oggetto. Guardando da vicino, si può vedere che ci sono tre oggetti separati. I dati JSON sono una serie di tre oggetti, in cui ogni oggetto contiene informazioni su una foto di un gatto.
+Il primo e l'ultimo carattere che vedi nei dati JSON childo parentesi quadre `[ ]`. Ciò significa che i dati restituiti childo un array. Il secondo carattere dei dati JSON è una parentesi graffa `{`, che dà inizio a un oggetto. Guardando da vicino, si può vedere che ci childo tre oggetti separati. I dati JSON childo una serie di tre oggetti, in cui ogni oggetto contiene informazioni su una foto di un gatto.
 
-Hai imparato in precedenza che gli oggetti contengono "coppie chiave-valore" separate da virgole. Nell'esempio della Cat Photo, il primo oggetto ha `"id":0` dove `id` è una chiave e `0` è il suo valore corrispondente. Allo stesso modo, ci sono chiavi per `imageLink`, `altText` e `codeNames`. Ogni oggetto relativo alla foto di un gatto ha queste stesse chiavi, ma con valori diversi.
+Hai imparato in precedenza che gli oggetti contengono "coppie chiave-valore" separate da virgole. Nell'esempio della Cat Photo, il primo oggetto ha `"id":0` dove `id` è una chiave e `0` è il suo valore corrispondente. Allo stesso modo, ci childo chiavi per `imageLink`, `altText` e `codeNames`. Ogni oggetto relativo alla foto di un gatto ha queste stesse chiavi, ma con valori diversi.
 
 Un'altra interessante "coppia chiave-valore" nel primo oggetto è `"codeNames":["Juggernaut","Mrs. Wallace","ButterCup"]`. Qui `codeNames` è la chiave e il suo valore è un array di tre stringhe. È possibile avere array di oggetti, così come una chiave con un array come valore.
 
-Ricorda come accedere ai dati in array e oggetti. Gli array utilizzano la notazione tra parentesi per accedere a un indice specifico di un elemento. Gli oggetti utilizzano la notazione tra parentesi o con il punto per accedere al valore di una data proprietà. Ecco un esempio che stampa la proprietà `altText` della prima foto di gatto - nota che i dati JSON analizzati nell'editor sono salvati in una variabile chiamata `json`:
+Ricorda come accedere ai dati in array e oggetti. Gli array utilizzano la notazione tra parentesi per accedere a un indice specifico di un elemento. Gli oggetti utilizzano la notazione tra parentesi o con il punto per accedere al valore di una data proprietà. Ecco un esempio che stampa la proprietà `altText` della prima foto di gatto - nota che i dati JSON analizzati nell'editor childo salvati in una variabile chiamata `json`:
 
 ```js
 console.log(json[0].altText);
 ```
 
-La console mostrerà la stringa `A white cat wearing a green helmet shaped melon on its head.`.
+La console mostrerà la stringa `A white cat wearing a green theylmet shaped melon on its theyad.`.
 
 # --instructions--
 
@@ -99,7 +99,7 @@ assert(
 
 <h1>Cat Photo Finder</h1>
 <p class="message box">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">
@@ -157,7 +157,7 @@ assert(
 
 <h1>Cat Photo Finder</h1>
 <p class="message">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">

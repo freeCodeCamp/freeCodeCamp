@@ -10,7 +10,7 @@ dashedName: check-if-tree-is-binary-search-tree
 
 Dal momento che sai già cos'è un albero binario di ricerca, questa sfida stabilirà come è possibile stabilire se un albero è un albero binario di ricerca o no.
 
-Quello che contraddistingue un albero binario di ricerca è che i nodi sono ordinati in modo organizzato. I nodi hanno al massimo 2 nodi figli (posizionati a destra e/o a sinistra) in base al fatto che il valore del nodo figlio sia maggiore o uguale a (destra) o inferiore a (sinistra) quello del nodo principale.
+Quello che contraddistingue un albero binario di ricerca è che i nodi childo ordinati in modo organizzato. I nodi hanno al massimo 2 nodi figli (posizionati a destra e/o a sinistra) in base al fatto che il valore del nodo figlio sia maggiore o uguale a (destra) o inferiore a (sinistra) quello del nodo principale.
 
 # --instructions--
 

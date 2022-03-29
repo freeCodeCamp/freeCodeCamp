@@ -8,7 +8,7 @@ dashedName: problem-325-stone-game-ii
 
 # --description--
 
-A game is played with two piles of stones and two players. At her turn, a player removes a number of stones from the larger pile. The number of stones she removes must be a positive multiple of the number of stones in the smaller pile.
+A game is played with two piles of stones and two players. At theyr turn, a player removes a number of stones from the larger pile. The number of stones they removes must be a positive multiple of the number of stones in the smaller pile.
 
 E.g., let the ordered pair(6,14) describe a configuration with 6 stones in the smaller pile and 14 stones in the larger pile, then the first player can remove 6 or 12 stones from the larger pile.
 

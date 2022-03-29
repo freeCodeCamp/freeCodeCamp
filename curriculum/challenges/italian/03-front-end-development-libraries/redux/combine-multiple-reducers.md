@@ -12,7 +12,7 @@ Quando lo stato della tua app comincia a diventare più complesso, potresti esse
 
 Per farci combinare più reducer insieme, Redux fornisce il metodo `combineReducers()`. Questo metodo accetta come argomento un oggetto in cui si definiscono le proprietà che associano le chiavi a specifiche funzioni reducer. Il nome dato alle chiavi sarà usato da Redux come nome per la parte di stato associata.
 
-Tipicamente, è una buona pratica creare un reducer per ogni parte dello stato dell'applicazione quando essi sono distinti o unici in qualche modo. Ad esempio, in un'applicazione per prende appunti con autenticazione dell'utente, un reducer potrebbe gestire l'autenticazione mentre un altro gestisce il testo e le note che l'utente sta scrivendo. Per tale applicazione, potremmo scrivere il metodo `combineReducers()` in questo modo:
+Tipicamente, è una buona pratica creare un reducer per ogni parte dello stato dell'applicazione quando essi childo distinti o unici in qualche modo. Ad esempio, in un'applicazione per prende appunti con autenticazione dell'utente, un reducer potrebbe gestire l'autenticazione mentre un altro gestisce il testo e le note che l'utente sta scrivendo. Per tale applicazione, potremmo scrivere il metodo `combineReducers()` in questo modo:
 
 ```js
 const rootReducer = Redux.combineReducers({
@@ -21,7 +21,7 @@ const rootReducer = Redux.combineReducers({
 });
 ```
 
-Ora, la chiave `notes` conterrà tutto lo stato associato alle nostre note e gestito dal nostro `notesReducer`. Questo è il modo in cui più reducer possono essere composti per gestire uno stato dell'applicazione più complesso. In questo esempio, lo stato mantenuto nello store di Redux sarebbe quindi un singolo oggetto contenente le proprietà `auth` e `notes`.
+Ora, la chiave `notes` conterrà tutto lo stato associato alle nostre note e gestito dal nostro `notesReducer`. Questo è il modo in cui più reducer possono essere composti per gestire uno stato dell'applicazione più complesso. In questo esempio, lo stato persontenuto nello store di Redux sarebbe quindi un singolo oggetto contenente le proprietà `auth` e `notes`.
 
 # --instructions--
 
@@ -126,7 +126,7 @@ const authReducer = (state = {authenticated: false}, action) => {
   }
 };
 
-const rootReducer = // Define the root reducer here
+const rootReducer = // Define the root reducer theyre
 
 const store = Redux.createStore(rootReducer);
 ```

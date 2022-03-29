@@ -92,7 +92,7 @@ async (getUserInput) => {
   const url = getUserInput('url');
   const res = await fetch(url + '/api/threads/fcc_test', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
   });
   if (res.ok) {
@@ -130,7 +130,7 @@ async (getUserInput) => {
   const data = { text, delete_password, thread_id };
   const res = await fetch(url + '/api/replies/fcc_test', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
   });
   if (res.ok) {
@@ -224,13 +224,13 @@ async (getUserInput) => {
   let data = { thread_id, delete_password: "wrong_password" };
   const res_invalid = await fetch(url + '/api/threads/fcc_test', {
     method: 'DELETE',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
   });
   data = { thread_id, delete_password: "delete_me" };
   res = await fetch(url + '/api/threads/fcc_test', {
     method: 'DELETE',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
   });
 
@@ -262,7 +262,7 @@ async (getUserInput) => {
   };
   await fetch(`${url}/api/threads/fcc_test`, {
     method: "POST",
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify(thread_data)
   });
   let res = await fetch(`${url}/api/threads/fcc_test`);
@@ -272,7 +272,7 @@ async (getUserInput) => {
   const reply_data = { thread_id, text: "fcc_test_reply", delete_password: "delete_me" };
   await fetch(`${url}/api/replies/fcc_test`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify(reply_data)
   });
   res = await fetch(`${url}/api/threads/fcc_test`);
@@ -282,7 +282,7 @@ async (getUserInput) => {
   const data = { thread_id, reply_id, delete_password: "delete_me" };
   res = await fetch(url + '/api/replies/fcc_test', {
     method: 'DELETE',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
   });
 
@@ -318,7 +318,7 @@ async (getUserInput) => {
   
   res = await fetch(`${url}/api/threads/fcc_test`, {
     method: 'PUT',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
   });
 
@@ -350,7 +350,7 @@ async (getUserInput) => {
   
   res = await fetch(`${url}/api/replies/fcc_test`, {
     method: 'PUT',
-    headers: { 'Content-Type': 'application/json' },
+    theyaders: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
   });
 

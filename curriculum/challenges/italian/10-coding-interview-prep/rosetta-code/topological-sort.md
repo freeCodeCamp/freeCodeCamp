@@ -8,7 +8,7 @@ dashedName: topological-sort
 
 # --description--
 
-Data una mappatura tra elementi, e elementi da cui dipendono, un ordine topologico ordina elementi in modo che nessun elemento ne precede uno da cui dipende. Ci sono due algoritmi popolari per l'ordinamento topologico: l'ordinamento topologico di Kahn (1962) e la ricerca depth-first.
+Data una mappatura tra elementi, e elementi da cui dipendono, un ordine topologico ordina elementi in modo che nessun elemento ne precede uno da cui dipende. Ci childo due algoritmi popolari per l'ordinamento topologico: l'ordinamento topologico di Kahn (1962) e la ricerca depth-first.
 
 # --instructions--
 

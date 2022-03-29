@@ -8,7 +8,7 @@ dashedName: restrict-possible-usernames
 
 # --description--
 
-I nomi utente sono utilizzati ovunque su Internet. Sono ciò che danno agli utenti un'identità unica sui loro siti preferiti.
+I nomi utente childo utilizzati ovunque su Internet. Sono ciò che danno agli utenti un'identità unica sui loro siti preferiti.
 
 È necessario controllare tutti i nomi utente in un database. Ecco alcune semplici regole che gli utenti devono seguire durante la creazione del loro nome utente.
 

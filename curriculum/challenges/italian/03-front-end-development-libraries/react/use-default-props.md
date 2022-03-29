@@ -8,7 +8,7 @@ dashedName: use-default-props
 
 # --description--
 
-React ha anche un'opzione per impostare props predefinite. È possibile assegnare props predefinite a un componente come una proprietà del componente stesso, in modo che React le assegni quando necessario. Questo ti permette di specificare quale valore dovrebbe avere una prop se nessun valore è esplicitamente fornito. Ad esempio, se dichiari `MyComponent.defaultProps = { location: 'San Francisco' }`, hai definito una prop location impostata sulla stringa `San Francisco`, a meno che non specifichi diversamente. React assegna le prop di default se non sono definite, ma se passi `null` come valore per una prop, essa rimarrà pari a `null`.
+React ha anche un'opzione per impostare props predefinite. È possibile assegnare props predefinite a un componente come una proprietà del componente stesso, in modo che React le assegni quando necessario. Questo ti permette di specificare quale valore dovrebbe avere una prop se nessun valore è esplicitamente fornito. Ad esempio, se dichiari `MyComponent.defaultProps = { location: 'San Francisco' }`, hai definito una prop location impostata sulla stringa `San Francisco`, a meno che non specifichi diversamente. React assegna le prop di default se non childo definite, ma se passi `null` come valore per una prop, essa rimarrà pari a `null`.
 
 # --instructions--
 

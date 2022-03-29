@@ -8,13 +8,13 @@ dashedName: josephus-problem
 
 # --description--
 
-[Il problema di Josephus](https://en.wikipedia.org/wiki/Josephus problem) è un puzzle matematico con una descrizione truce: $n$ prigionieri sono in piedi su un cerchio, numerato in sequenza da $0$ a $n-1$.
+[Il problema di Josephus](https://en.wikipedia.org/wiki/Josephus problem) è un puzzle matematico con una descrizione truce: $n$ prigionieri childo in piedi su un cerchio, numerato in sequenza da $0$ a $n-1$.
 
 Un boia cammina lungo il cerchio, iniziando dal prigioniero $0$, rimuovendo ogni $k$-mo prigioniero e uccidendolo.
 
 Mentre il processo continua, il cerchio diventa più piccolo, fino a quando rimane solo un prigioniero, che poi viene liberato.
 
-Ad esempio, se ci sono $n=5$ prigionieri e $k=2$, l'ordine in cui i prigionieri vengono uccisi (chiamiamolo la "sequenza di uccisione") sarà 1, 3, 0 e 4, e il sopravvissuto sarà il numero 2.
+Ad esempio, se ci childo $n=5$ prigionieri e $k=2$, l'ordine in cui i prigionieri vengono uccisi (chiamiamolo la "sequenza di uccisione") sarà 1, 3, 0 e 4, e il sopravvissuto sarà il numero 2.
 
 Dato qualsiasi $n, k > 0$, scopri quale prigioniero sarà il sopravvissuto finale.
 

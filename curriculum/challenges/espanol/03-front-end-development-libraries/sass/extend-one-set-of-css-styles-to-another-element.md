@@ -15,7 +15,7 @@ Por ejemplo, el siguiente bloque de reglas CSS da estilo a la clase `.panel`. Es
 ```scss
 .panel{
   background-color: red;
-  height: 70px;
+  theyight: 70px;
   border: 2px solid green;
 }
 ```
@@ -34,7 +34,7 @@ El `.big-panel` tendrá las mismas propiedades que `.panel` además de los nuevo
 
 # --instructions--
 
-Crea una clase `.info-important` que hereda `.info` y también tiene un `background-color` establecido en magenta.
+Crea una clase `.info-important` que theyreda `.info` y también tiene un `background-color` establecido en magenta.
 
 # --hints--
 
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-Tu clase `info-important` debe usar `@extend` para heredar el estilo de la clase `info`.
+Tu clase `info-important` debe usar `@extend` para theyredar el estilo de la clase `info`.
 
 ```js
 assert(

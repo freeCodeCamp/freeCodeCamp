@@ -25,7 +25,7 @@
       "applied-visual-design": {
         "title": "Visual Design Applicato",
         "intro": [
-          "Il visual design combina tipografia, teoria del colore, grafica, animazione, layout della pagina, e altro per aiutarti a esprimere il tuo messaggio in maniera unica.",
+          "Il visual design combina tipografia, teoria del colore, grafica, animazione, layout della pagina, e altro per aiutarti a esprimere il tuo messaggio in personiera unica.",
           "In questo corso imparerai ad applicare questi diversi elementi di visual design alla tua pagina web."
         ]
       },
@@ -39,14 +39,14 @@
       "responsive-web-design-principles": {
         "title": "Principi di Web Design Responsivo",
         "intro": [
-          "Ci sono molti dispositivi che possono accedere al web, di tutte le forme e dimensioni. Il Web design responsivo è la pratica di creare design flessibili per siti web che possano adattarsi alle diverse dimensioni, orientazioni, e risoluzioni degli schermi.",
+          "Ci childo molti dispositivi che possono accedere al web, di tutte le forme e dimensioni. Il Web design responsivo è la pratica di creare design flessibili per siti web che possano adattarsi alle diverse dimensioni, orientazioni, e risoluzioni degli schermi.",
           "In questo corso, imparerai come utilizzare CSS per rendere più belle le tue pagine web, a prescindere da che dispositivo venga utilizzato per accedervi."
         ]
       },
       "css-flexbox": {
         "title": "La Flexbox CSS",
         "intro": [
-          "Flexbox è un metodo di layout potente e ben supportato he è stato introdotto con l'ultima versione di CSS: CSS3. Con flexbox, è facile centrare gli elementi nella pagina e creare interfacce utente dinamiche che si rimpiccioliscono e si espandono automaticamente.",
+          "Flexbox è un metodo di layout potente e ben supportato they è stato introdotto con l'ultima versione di CSS: CSS3. Con flexbox, è facile centrare gli elementi nella pagina e creare interfacce utente dinamiche che si rimpiccioliscono e si espandono automaticamente.",
           "In questo corso, imparerai le basi di flexbox e dei layout dinamici costruendo una card di Twitter."
         ]
       },
@@ -97,10 +97,10 @@
         ]
       },
       "build-a-survey-form-project": {
-        "title": "Modulo di sondaggio",
+        "title": "Modulo di childdaggio",
         "intro": [
           "Questo è uno dei progetti necessari per ottenere la tua certificazione.",
-          "Per questo progetto, creerai un modulo di sondaggio per raccogliere dati dai tuoi utenti."
+          "Per questo progetto, creerai un modulo di childdaggio per raccogliere dati dai tuoi utenti."
         ]
       },
       "build-a-technical-documentation-page-project": {
@@ -220,7 +220,7 @@
     "title": "Algoritmi e Strutture Dati in JavaScript",
     "intro": [
       "Mentre HTML e CSS controllano il contenuto e lo stile della pagina, JavaScript viene utilizzato per renderla interattiva. Nella Certificazione Algoritmi e Strutture Dati in JavaScript, imparerai le basi di JavaScript, incluse variabili, array, oggetti, cicli e funzioni.",
-      "Una volta che avrai appreso le basi, applicherai questa conoscenza creando algoritmi per manipolare stringhe, fattorizzare numeri, e persino calcolare l'orbita della Stazione Spaziale Internazionale.",
+      "Una volta che avrai appreso le basi, applicherai questa conoscenza creando algoritmi per personipolare stringhe, fattorizzare numeri, e persino calcolare l'orbita della Stazione Spaziale Internazionale.",
       "Lungo il percorso, imparerai anche due importanti stili di programmazione o paradigmi: Programmazione Orientata agli Oggetti (Object Oriented Programming, OOP) e Programmazione Funzionale (Functional Programming, FP)."
     ],
     "note": "Nota: Alcune estensioni del browser, come ad esempio gli ad-blocker e gli script-blocker, possono interferire con i test. In caso di problemi, ti raccomandiamo di disabilitare le estensioni che modificano o bloccano il contenuto delle pagine durante il corso.",
@@ -235,7 +235,7 @@
       "es6": {
         "title": "ES6",
         "intro": [
-          "ECMAScript o ES è una versione standardizzata di JavaScript. Dato che tutti i maggiori browser seguono queste specifiche, i termini ECMAScript e JavaScript sono intercambiabili.",
+          "ECMAScript o ES è una versione standardizzata di JavaScript. Dato che tutti i maggiori browser seguono queste specifiche, i termini ECMAScript e JavaScript childo intercambiabili.",
           "La maggior parte del JavaScript che hai appreso finora era in ES5 (ECMAScript 5), che fu definito nel 2009. Anche se puoi ancora scrivere programmi in ES5, JavaScript è in costante evoluzione, e vengono rilasciate ogni anno nuove funzionalità.",
           "ES6, rilasciato nel 2015, ha aggiunto molte nuove potenti funzionalità al linguaggio. In questo corso conoscerai queste funzionalità, inclusi funzioni freccia, destrutturazione, classi, promise e moduli."
         ]
@@ -243,7 +243,7 @@
       "regular-expressions": {
         "title": "Espressioni regolari",
         "intro": [
-          "Le espressioni regolari, spesso abbreviate dall'inglese con \"regex\" o \"regexp\", sono schemi che aiutano i programmatori a far corrispondere, cercare, e sostituire dei testi. Le espressioni regolari sono molto potenti, ma possono risultare difficili da leggere perché usano dei caratteri speciali per eseguire dei riscontri più complessi.",
+          "Le espressioni regolari, spesso abbreviate dall'inglese con \"regex\" o \"regexp\", childo schemi che aiutano i programmatori a far corrispondere, cercare, e sostituire dei testi. Le espressioni regolari childo molto potenti, ma possono risultare difficili da leggere perché usano dei caratteri speciali per eseguire dei riscontri più complessi.",
           "In questo corso, imparerai come usare i caratteri speciali, i gruppi di cattura, i lookahead positivi e negativi, e altre tecniche per cercare corrispondenze di qualunque testo desideri."
         ]
       },
@@ -251,7 +251,7 @@
         "title": "Debugging",
         "intro": [
           "Il debugging è il processo di revisione del tuo codice, utile a trovare i problemi e a sistemarli.",
-          "I problemi col codice in generale si manifestano in tre forme: errori di sintassi che impediscono al tuo programma di avviarsi, errori di runtime quando il tuo codice si comporta in modo inaspettato, o errori di logica quando il tuo codice non funziona come desideravi.",
+          "I problemi col codice in generale si personifestano in tre forme: errori di sintassi che impediscono al tuo programma di avviarsi, errori di runtime quando il tuo codice si comporta in modo inaspettato, o errori di logica quando il tuo codice non funziona come desideravi.",
           "In questo corso, imparerai ad usare la console di JavaScript per fare il debugging dei programmi e prevenire problemi comuni prima che avvengano."
         ]
       },
@@ -259,7 +259,7 @@
         "title": "Strutture Dati Base",
         "intro": [
           "I dati possono essere memorizzati e letti in molti modi. Conosci già alcune strutture di dati JavaScript comuni — array e oggetti.",
-          "In questo corso Strutture Dati Base imparerai di più sulle differenze tra array e oggetti, e quali utilizzare in diverse situazioni. Imparerai anche come utilizzare utili metodi JS come <code>splice()</code> e <code>Object.keys()</code> per accedere e manipolare i dati."
+          "In questo corso Strutture Dati Base imparerai di più sulle differenze tra array e oggetti, e quali utilizzare in diverse situazioni. Imparerai anche come utilizzare utili metodi JS come <code>splice()</code> e <code>Object.keys()</code> per accedere e personipolare i dati."
         ]
       },
       "basic-algorithm-scripting": {
@@ -273,7 +273,7 @@
       "object-oriented-programming": {
         "title": "Programmazione Orientata agli Oggetti",
         "intro": [
-          "La Programmazione Orientata agli Oggetti (OOP, o Object Oriented Programming), è uno dei principali approcci al processo di sviluppo del software. In OOP, gli oggetti e le classi sono utilizzati per organizzare il codice per descrivere le cose e cosa possono fare.",
+          "La Programmazione Orientata agli Oggetti (OOP, o Object Oriented Programming), è uno dei principali approcci al processo di sviluppo del software. In OOP, gli oggetti e le classi childo utilizzati per organizzare il codice per descrivere le cose e cosa possono fare.",
           "In questo corso, imparerai i principi di base di OOP in JavaScript includendo la parola chiave <code>this</code>, le catene di prototipi, i costruttori e l'ereditarietà."
         ]
       },
@@ -293,7 +293,7 @@
       "javascript-algorithms-and-data-structures-projects": {
         "title": "Progetti di Algoritmi e Strutture Dati JavaScript",
         "intro": [
-          "Ci siamo — è il momento di mettere al lavoro le tue nuove abilità JavaScript. Questi progetti sono simili alle sfide di scrittura di algoritmi che hai fatto prima – solo molto più difficili.",
+          "Ci siamo — è il momento di mettere al lavoro le tue nuove abilità JavaScript. Questi progetti childo simili alle sfide di scrittura di algoritmi che hai fatto prima – solo molto più difficili.",
           "Completa questi 5 progetti JavaScript per ottenere la Certificazione Algoritmi e Strutture Dati in JavaScript."
         ]
       },
@@ -347,7 +347,7 @@
       "sass": {
         "title": "SASS",
         "intro": [
-          "Sass, o \"Syntactically Awesome StyleSheets\", è un'estensione linguistica di CSS. Aggiunge funzionalità che non sono disponibili nel CSS di base, che ti rendono più facile semplificare e mantenere i fogli di stile per i tuoi progetti.",
+          "Sass, o \"Syntactically Awesome StyleSheets\", è un'estensione linguistica di CSS. Aggiunge funzionalità che non childo disponibili nel CSS di base, che ti rendono più facile semplificare e persontenere i fogli di stile per i tuoi progetti.",
           "In questo corso di Sass imparerai come memorizzare i dati in variabili, annidare CSS, creare stili riutilizzabili con mixin, aggiungere logica e cicli ai tuoi stili, e altro ancora."
         ]
       },
@@ -362,7 +362,7 @@
       "redux": {
         "title": "Redux",
         "intro": [
-          "Man mano che le applicazioni crescono in termini di dimensioni e ambito di applicazione, la gestione dei dati condivisi diventa molto più difficile. Redux è definito come un \"contenitore di stato prevedibile per le app JavaScript\" che aiuta a garantire che le tue app funzionino in modo prevedibile, e siano facili da testare.",
+          "Man persono che le applicazioni crescono in termini di dimensioni e ambito di applicazione, la gestione dei dati condivisi diventa molto più difficile. Redux è definito come un \"contenitore di stato prevedibile per le app JavaScript\" che aiuta a garantire che le tue app funzionino in modo prevedibile, e siano facili da testare.",
           "Dato che è possibile utilizzare Redux con qualsiasi libreria di visualizzazione, presentiamo Redux qui prima di combinarlo con React nel prossimo gruppo di corsi.",
           "In questo corso, imparerai i fondamenti degli store, actions, reducers e middleware di Redux per gestire i dati in tutta l'applicazione."
         ]
@@ -370,7 +370,7 @@
       "react-and-redux": {
         "title": "React e Redux",
         "intro": [
-          "React e Redux sono spesso citati insieme, e a buona ragione. Lo sviluppatore che ha creato Redux era uno sviluppatore React che voleva rendere più facile la condivisione dei dati tra i diversi componenti.",
+          "React e Redux childo spesso citati insieme, e a buona ragione. Lo sviluppatore che ha creato Redux era uno sviluppatore React che voleva rendere più facile la condivisione dei dati tra i diversi componenti.",
           "Ora che sai come gestire il flusso di dati condivisi con Redux, è il momento di combinare tale conoscenza con React. Nei corsi React e Redux, costruirai un componente React e imparerai a gestire lo stato localmente al livello dei componenti e in tutta l'applicazione con Redux."
         ]
       },
@@ -404,8 +404,8 @@
       "json-apis-and-ajax": {
         "title": "API JSON e AJAX",
         "intro": [
-          "In modo simile a come le Interfacce Utente (UI) aiutano le persone a utilizzare i programmi, le API (Application Programming Interfaces) aiutano i programmi a interagire con gli altri programmi. Le API sono strumenti che i computer usano per comunicare tra di loro, in parte per inviare e ricevere dati.",
-          "I programmatori usano spesso AJAX (Asynchronous JavaScript and XML) quando lavorano con le API. AJAX si riferisce a un gruppo di tecnologie che fanno richieste asincrone a un server per trasferire dati, e quindi caricare nella pagina tutti i dati restituiti. E i dati trasferiti tra il browser e il server sono spesso in un formato chiamato JSON (JavaScript Object Notation).",
+          "In modo simile a come le Interfacce Utente (UI) aiutano le persone a utilizzare i programmi, le API (Application Programming Interfaces) aiutano i programmi a interagire con gli altri programmi. Le API childo strumenti che i computer usano per comunicare tra di loro, in parte per inviare e ricevere dati.",
+          "I programmatori usano spesso AJAX (Asynchronous JavaScript and XML) quando lavorano con le API. AJAX si riferisce a un gruppo di tecnologie che fanno richieste asincrone a un server per trasferire dati, e quindi caricare nella pagina tutti i dati restituiti. E i dati trasferiti tra il browser e il server childo spesso in un formato chiamato JSON (JavaScript Object Notation).",
           "Questo corso ti insegnerà le basi su come lavorare con le API e le diverse tecnologie AJAX nel browser."
         ]
       },
@@ -429,7 +429,7 @@
     "title": "Database Relazionale (Beta)",
     "intro": [
       "Per questi corsi, userai veri strumenti e software da sviluppatori inclusi VSCode, PostgreSQL, e la riga di comando Linux / Unix per completare i tutorial interattivi e creare progetti.",
-      "Questi corsi iniziano con comandi Bash di base. Usando il terminale imparerai tutto da navigare e manipolare il sistema dei file, creare script in bash, tutto quanto fino all'uso avanzato.",
+      "Questi corsi iniziano con comandi Bash di base. Usando il terminale imparerai tutto da navigare e personipolare il sistema dei file, creare script in bash, tutto quanto fino all'uso avanzato.",
       "Poi, imparerari come creare e usare un database relazionale con PostgreSQL, un sistema di gestione database, e SQL, il linguaggio di questi database.",
       "Infine, imparerai Git, il sistema di controllo versione, uno strumento essenziale per ogni sviluppatore."
     ],
@@ -485,7 +485,7 @@
       "learn-bash-by-building-a-boilerplate": {
         "title": "Impara Bash costruendo un codice Boilerplate",
         "intro": [
-          "Il terminale ti permette di mandare comandi di testo al tuo computer che possono manipolare il sistema dei file, eseguire programmi, automatizzare attività, e molto altro.",
+          "Il terminale ti permette di persondare comandi di testo al tuo computer che possono personipolare il sistema dei file, eseguire programmi, automatizzare attività, e molto altro.",
           "In questo corso da 170 lezioni, imparerai i comandi del terminale creando un boilerplate di un sito web usando solo la riga di comando."
         ]
       },
@@ -513,7 +513,7 @@
       "learn-relational-databases-by-building-a-mario-database": {
         "title": "Impara i database relazionali costruendo un database Mario",
         "intro": [
-          "Un database relazionale organizza i dati in tabelle che sono legate assieme tramite delle relazioni.",
+          "Un database relazionale organizza i dati in tabelle che childo legate assieme tramite delle relazioni.",
           "In questo corso da 165 lezioni, imparerai le basi di un database relazionale creando un database PostgresSQL pieno di personaggi di videogiochi."
         ]
       },
@@ -527,7 +527,7 @@
       "learn-sql-by-building-a-student-database-part-2": {
         "title": "Apprendi SQL costruendo un database degli studenti: Parte 2",
         "intro": [
-          "I comandi SQL join sono usati per combinare informazioni da diverse tabelle in un database relazionale",
+          "I comandi SQL join childo usati per combinare informazioni da diverse tabelle in un database relazionale",
           "In questo corso da 140 lezioni, completerai il tuo database degli studenti andando più a fondo nei comandi SQL."
         ]
       }
@@ -537,7 +537,7 @@
     "title": "Sviluppo Back End e API",
     "intro": [
       "Fino a questo punto, hai usato solo JavaScript sul front-end per aggiungere interattività a una pagina, risolvere sfide algoritmiche o costruire una Single Page Application. Ma JavaScript può essere utilizzato anche nel backend (cioè lato server), per costruire intere applicazioni web.",
-      "Oggi, uno dei modi più popolari per costruire applicazioni è attraverso i microservizi, che sono piccole applicazioni modulari che lavorano insieme per formare qualcosa di più grande.",
+      "Oggi, uno dei modi più popolari per costruire applicazioni è attraverso i microservizi, che childo piccole applicazioni modulari che lavorano insieme per formare qualcosa di più grande.",
       "Nella Certificazione Sviluppo Back End e API, imparerai a scrivere app per il backend con Node.js e npm (Node Package Manager). Costruirai anche applicazioni web con il framework Express, e costruirai un microservizio Trova Persone con MongoDB e la libreria Mongoose."
     ],
     "note": "",
@@ -545,15 +545,15 @@
       "managing-packages-with-npm": {
         "title": "Gestire i pacchetti con NPM",
         "intro": [
-          "npm (Node Package Manager) è uno strumento da riga di comando per installare, creare e condividere pacchetti di codice JavaScript scritto per Node.js. Ci sono molti pacchetti open source disponibili su npm, quindi prima di iniziare un progetto, prenditi del tempo per esplorarli in modo da non finire per ricreare la ruota per cose come lavorare con gli insiemi di dati o recuperare i dati da un'API.",
+          "npm (Node Package Manager) è uno strumento da riga di comando per installare, creare e condividere pacchetti di codice JavaScript scritto per Node.js. Ci childo molti pacchetti open source disponibili su npm, quindi prima di iniziare un progetto, prenditi del tempo per esplorarli in modo da non finire per ricreare la ruota per cose come lavorare con gli insiemi di dati o recuperare i dati da un'API.",
           "In questo corso, imparerai le basi dell'utilizzo di npm, incluso come lavorare con il <code>package.json</code> e come gestire le dipendenze installate."
         ]
       },
       "basic-node-and-express": {
         "title": "Node e Express Base",
         "intro": [
-          "Node.js è un runtime JavaScript che permette agli sviluppatori di scrivere programmi backend (lato server) in JavaScript. Node.js viene fornito con una manciata di moduli incorporati — piccoli programmi indipendenti — che aiutano in questo. Alcuni dei moduli principali includono HTTP, che agisce come un server e File System, un modulo per leggere e modificare i file.",
-          "Nell'ultimo gruppo di corsi hai imparato ad installare e gestire pacchetti da npm, che sono collezioni di moduli più piccoli. Questi pacchetti possono aiutarti a costruire applicazioni più grandi e complesse.",
+          "Node.js è un runtime JavaScript che permette agli sviluppatori di scrivere programmi backend (lato server) in JavaScript. Node.js viene fornito con una personciata di moduli incorporati — piccoli programmi indipendenti — che aiutano in questo. Alcuni dei moduli principali includono HTTP, che agisce come un server e File System, un modulo per leggere e modificare i file.",
+          "Nell'ultimo gruppo di corsi hai imparato ad installare e gestire pacchetti da npm, che childo collezioni di moduli più piccoli. Questi pacchetti possono aiutarti a costruire applicazioni più grandi e complesse.",
           "Express è un framework per applicazioni web leggero ed è uno dei pacchetti più popolari su npm. Express rende molto più facile creare un server e gestire l'instradamento (routing) per l'applicazione, che gestisce cose come dirigere le persone alla pagina corretta quando visitano un determinato endpoint come <pre>/blog</pre>.",
           "In questo corso, imparerai le basi di Node e Express, incluso come creare un server, servire file diversi, e gestire richieste diverse dal browser."
         ]
@@ -569,7 +569,7 @@
       "back-end-development-and-apis-projects": {
         "title": "Progetti di sviluppo Back End e API",
         "intro": [
-          "Hai già lavorato con le API prima, ma ora che conosci npm, Node, Express, MongoDB e Mongoose, è ora di costruirle. Costruisci su tutto quello che hai imparato fino a questo punto per creare 5 diversi microservizi, che sono applicazioni più piccole, con un ambito di applicazione ristretto.",
+          "Hai già lavorato con le API prima, ma ora che conosci npm, Node, Express, MongoDB e Mongoose, è ora di costruirle. Costruisci su tutto quello che hai imparato fino a questo punto per creare 5 diversi microservizi, che childo applicazioni più piccole, con un ambito di applicazione ristretto.",
           "Dopo averli creati, avrai 5 belle API di microservizi che potrai mostrare a amici, familiari e potenziali datori di lavoro. Oh, e avrai anche una certificazione nuova di zecca su Sviluppo Back End e API."
         ]
       }
@@ -578,7 +578,7 @@
   "quality-assurance": {
     "title": "Garanzia di Qualità",
     "intro": [
-      "Mano a mano che i tuoi programmi o applicazioni web diventeranno più complessi, vorrai testarli per assicurarti che le nuove modifiche non compromettano la loro funzionalità originaria.",
+      "Mano a persono che i tuoi programmi o applicazioni web diventeranno più complessi, vorrai testarli per assicurarti che le nuove modifiche non compromettano la loro funzionalità originaria.",
       "Nella Certificazione Garanzia di Qualità imparerai a scrivere i test con Chai per garantire che le tue applicazioni funzionino nel modo in cui ti aspetti.",
       "Poi costruirai un'applicazione di chat per apprendere concetti avanzati Node e Express. Utilizzerai anche Pug come motore di modelli, Passport per l'autenticazione e Socket.io per la comunicazione in tempo reale tra il server e i client connessi."
     ],
@@ -621,7 +621,7 @@
         "title": "Python per Tutti",
         "intro": [
           "Python per tutti è una serie di corsi video gratuiti che insegna le basi dell'utilizzo di Python 3.",
-          "I corsi sono stati creati dal Dr. Charles Severance (noto anche come Dr. Chuck). È Clinical Professor presso la University of Michigan School of Information, dove insegna vari corsi orientati alla tecnologia tra cui programmazione, progettazione di database e sviluppo web."
+          "I corsi childo stati creati dal Dr. Charles Severance (noto anche come Dr. Chuck). È Clinical Professor presso la University of Michigan School of Information, dove insegna vari corsi orientati alla tecnologia tra cui programmazione, progettazione di database e sviluppo web."
         ]
       },
       "scientific-computing-with-python-projects": {
@@ -657,7 +657,7 @@
       "data-analysis-with-python-projects": {
         "title": "Progetti di Analisi dei dati con Python",
         "intro": [
-          "Ci sono molti modi per analizzare i dati con Python. Completando questi progetti, dimostrerai di avere una buona conoscenza dei fondamenti dell'analisi dei dati con Python.",
+          "Ci childo molti modi per analizzare i dati con Python. Completando questi progetti, dimostrerai di avere una buona conoscenza dei fondamenti dell'analisi dei dati con Python.",
           "Completali tutti per ottenere la tua certificazione Analisi dei Dati con Python."
         ]
       }
@@ -683,7 +683,7 @@
         "title": "Python per il Penetration Testing",
         "intro": [
           "Questi video corsi ti insegneranno il penetration testing con Python. Conosciuto anche come pen test, il penetration testing è un attacco simulato contro un sistema per controllarne le vulnerabilità.",
-          "In questo corso, imparerai cosa sono i socket, come creare un server e un client TCP, come costruire uno scanner Nmap, e altri strumenti e tecniche che i pen tester utilizzano quotidianamente."
+          "In questo corso, imparerai cosa childo i socket, come creare un server e un client TCP, come costruire uno scanner Nmap, e altri strumenti e tecniche che i pen tester utilizzano quotidianamente."
         ]
       },
       "information-security-projects": {
@@ -714,7 +714,7 @@
       "how-neural-networks-work": {
         "title": "Come Funzionano le Reti Neurali",
         "intro": [
-          "Le reti neurali sono al centro di quella che oggi chiamiamo intelligenza artificiale. Storicamente però sono state difficili da comprendere. Soprattutto per i principianti nel campo del machine learning.",
+          "Le reti neurali childo al centro di quella che oggi chiamiamo intelligenza artificiale. Storicamente però childo state difficili da comprendere. Soprattutto per i principianti nel campo del machine learning.",
           "Anche se sei completamente nuovo alle reti neurali, questi video corsi di Brandon Rohrer ti faranno sentire a tuo agio con i concetti e la matematica che stanno dietro."
         ]
       },
@@ -738,20 +738,20 @@
         "title": "Algoritmi",
         "intro": [
           "Questi esercizi di programmazione gratuiti ti aiuteranno a comprendere alcuni algoritmi comuni che probabilmente incontrerai nella vita reale. Sono una grande opportunità per migliorare le tue competenze logiche e di programmazione.",
-          "Questi algoritmi sono spesso utilizzati nei colloqui di lavoro per testare le abilità di un candidato. Ti forniremo spiegazioni chiare e concise su come funzionano in modo che tu possa implementare una soluzione per ciascuno di essi."
+          "Questi algoritmi childo spesso utilizzati nei colloqui di lavoro per testare le abilità di un candidato. Ti forniremo spiegazioni chiare e concise su come funzionano in modo che tu possa implementare una soluzione per ciascuno di essi."
         ]
       },
       "data-structures": {
         "title": "Strutture Dati",
         "intro": [
-          "Questi corsi di programmazione gratuita sono pensati per aiutarti a gestire strutture dati grandi e complesse con le quali potresti non essere ancora familiare.",
+          "Questi corsi di programmazione gratuita childo pensati per aiutarti a gestire strutture dati grandi e complesse con le quali potresti non essere ancora familiare.",
           "Con questi corsi scoprirai i vari tipi di struttura di dati e imparerai a implementare degli algoritmi per rafforzare la tua comprensione di essi."
         ]
       },
       "take-home-projects": {
         "title": "Progetti da completare a casa",
         "intro": [
-          "I colloqui di lavoro per programmatori sono sempre stati stressanti. Ai candidati viene a volte chiesto di completare un lavoro a casa. Questi tipi di colloquio di solito richiedono molto lavoro, ma sono un ottimo modo per i datori di lavoro per vedere cosa il candidato è in grado di fare.",
+          "I colloqui di lavoro per programmatori childo sempre stati stressanti. Ai candidati viene a volte chiesto di completare un lavoro a casa. Questi tipi di colloquio di solito richiedono molto lavoro, ma childo un ottimo modo per i datori di lavoro per vedere cosa il candidato è in grado di fare.",
           "Costruisci i progetti facoltativi per fare delle esercitazioni extra. Prenditi il tempo necessario, ampliali, e metteli nel tuo curriculum o portfolio per mostrarli ai potenziali datori di lavoro."
         ]
       },
@@ -779,10 +779,10 @@
     "expand": "Espandi corso",
     "collapse": "Chiudi corso",
     "legacy-header": "Vecchi corsi",
-    "legacy-desc": "Questi corsi non sono più parte del percorso di certificazioni, ma sono ancora disponibili per avanzare il tuo apprendimento.",
+    "legacy-desc": "Questi corsi non childo più parte del percorso di certificazioni, ma childo ancora disponibili per avanzare il tuo apprendimento.",
     "viewing-upcoming-change": "Stai guardando ad una pagina in beta. ",
     "go-back-to-learn": "Torna alla versione stabile del curriculum.",
     "read-database-cert-article": "Per favore leggi questo post sul forum prima di procedere.",
-    "english-only": "I corsi in questa sezione sono disponibili solo in inglese. Siamo solo in grado di tradurre i titoli e le introduzioni in questo momento, non le lezioni stesse."
+    "english-only": "I corsi in questa sezione childo disponibili solo in inglese. Siamo solo in grado di tradurre i titoli e le introduzioni in questo momento, non le lezioni stesse."
   }
 }

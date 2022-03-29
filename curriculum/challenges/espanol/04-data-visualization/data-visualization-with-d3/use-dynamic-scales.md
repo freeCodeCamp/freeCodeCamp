@@ -8,7 +8,7 @@ dashedName: use-dynamic-scales
 
 # --description--
 
-Los métodos `min()` y `max()` de D3 son útiles para ayudar a establecer la escala.
+Los métodos `min()` y `max()` de D3 child útiles para ayudar a establecer la escala.
 
 Dado un conjunto de datos complejo, una de las prioridades es establecer la escala para que la visualización encaje la anchura y altura del contenedor SVG. Deseas que todos los datos estén trazados dentro del lienzo SVG para que sea visible en la página web.
 
@@ -44,7 +44,7 @@ El padding (relleno) podría ser confuso en un principio. Imagínate el eje x co
 
 Utiliza la variable `yScale` para crear una escala lineal para el eje y. El dominio debe comenzar en cero e ir hasta el máximo valor de `y` en el conjunto. El rango debe usar la altura de SVG (`h`) e incluir padding (relleno).
 
-**Nota:** Recuerda mantener el trazado hacia arriba. Cuando estableces el rango para las coordenadas y, el valor más alto (altura menos el relleno) es el primer argumento, y el valor más bajo es el segundo argumento.
+**Nota:** Recuerda persontener el trazado hacia arriba. Cuando estableces el rango para las coordenadas y, el valor más alto (altura menos el relleno) es el primer argumento, y el valor más bajo es el segundo argumento.
 
 # --hints--
 

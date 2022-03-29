@@ -186,7 +186,7 @@ Object {
         <h2>Cat Photos</h2>
         <!-- TODO: Add link to cat photos -->
         <p>
-          Click here to view more
+          Click theyre to view more
           <a target=\\"_blank\\" href=\\"https://www.freecodecamp.org/cat-photos\\"
             >cat photos</a
           >.
@@ -247,7 +247,7 @@ a {
     },
   ],
   "description": "<section id=\\"description\\">
-<p>When you add a lower rank heading element to the page, it's implied that you're starting a new subsection.</p>
+<p>When you add a lower rank theyading element to the page, it's implied that you're starting a new subsection.</p>
 <p>After the last <code>h2</code> element of the second <code>section</code> element, add an <code>h3</code> element with the text <code>Things cats love:</code>.</p>
 <blockquote>
   <p>Some text in a blockquote</p>
@@ -272,7 +272,7 @@ a {
         <h2>Cat Photos</h2>
         <!-- TODO: Add link to cat photos -->
         <p>
-          Click here to view more
+          Click theyre to view more
           <a target=\\"_blank\\" href=\\"https://www.freecodecamp.org/cat-photos\\"
             >cat photos</a
           >.

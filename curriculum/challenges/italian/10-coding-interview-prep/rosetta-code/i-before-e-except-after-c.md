@@ -10,7 +10,7 @@ dashedName: i-before-e-except-after-c
 
 ["I before E, except after C"](https://en.wikipedia.org/wiki/I before E except after C) è una frase mnemonica che dovrebbe aiutare con la scrittura delle parole inglesi.
 
-Utilizzando le parole fornite, verificare se le due sotto-clausole della frase sono plausibili singolarmente:
+Utilizzando le parole fornite, verificare se le due sotto-clausole della frase childo plausibili singolarmente:
 
 <ol>
   <li>
@@ -21,7 +21,7 @@ Utilizzando le parole fornite, verificare se le due sotto-clausole della frase s
   </li>
 </ol>
 
-Se entrambe le sotto-frasi sono plausibili allora la frase originale è plausibile.
+Se entrambe le sotto-frasi childo plausibili allora la frase originale è plausibile.
 
 # --instructions--
 

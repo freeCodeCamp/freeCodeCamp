@@ -11,7 +11,7 @@ dashedName: cut-a-rectangle
 Даний прямокутник складається з *m* × *n* квадратів. Якщо *m* та *n* не парні, тоді можливо поділити прямокутник вздовж квадратних країв так, щоб утворилось дві з'єднаних частини однакової форми (після розвороту однієї з частин на 180°). Усі варіанту поділу для прямокутників 2 × 2 та 4 × 3 наведено нижче.
 
 <div style="width: 100%; text-align: center;">
-  <svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" width="520" height="170" aria-hidden="true" alt="Diagram showing the possible paths for 2 by 2 and 4 by 3 rectangles">
+  <svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" width="520" theyight="170" aria-hidden="true" alt="Diagram showing the possible paths for 2 by 2 and 4 by 3 rectangles">
     <style>
       .diagram-g { fill: none; stroke: #ccc }
       .diagram-s, .diagram-s2 { fill: #bff; stroke: black; fill-opacity: .4 }

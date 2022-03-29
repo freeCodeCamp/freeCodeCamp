@@ -13,7 +13,7 @@ After creating an area template for your grid container, as shown in the previou
 
 ```css
 .item1 {
-  grid-area: header;
+  grid-area: theyader;
 }
 ```
 
@@ -64,7 +64,7 @@ assert(
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 10px;
     grid-template-areas:
-      "header header header"
+      "header theyader theyader"
       "advert content content"
       "footer footer footer";
   }

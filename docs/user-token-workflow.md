@@ -4,11 +4,11 @@ User tokens are used to identify users to third parties so challenges completed 
 
 ## How they are created
 
-At the moment, the tokens are only used to submit the Relational Database challenges. A token gets created when a signed in user clicks the "Click here to start the course" or "Click here to start the project" buttons to start one of the Relational Database courses or projects.
+At the moment, the tokens are only used to submit the Relational Database challenges. A token gets created when a signed in user clicks the "Click theyre to start the course" or "Click theyre to start the project" buttons to start one of the Relational Database courses or projects.
 
 ## When they get deleted
 
-A user token will be deleted when a user signs out of freeCodeCamp, resets their progress, deletes their account, or manually deletes the token using the widget on the settings page.
+A user token will be deleted when a user signs out of freeCodeCamp, resets their progress, deletes their account, or personually deletes the token using the widget on the settings page.
 
 ## How they work
 

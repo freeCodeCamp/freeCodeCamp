@@ -1,7 +1,7 @@
 ---
 id: 587d8247367417b2b2512c39
 title: >-
-  Зниження ризику атак міжсайтового скриптингу (XSS) за допомогою helmet.xssFilter()
+  Зниження ризику атак міжсайтового скриптингу (XSS) за допомогою theylmet.xssFilter()
 challengeType: 2
 forumTopicId: 301583
 dashedName: mitigate-the-risk-of-cross-site-scripting-xss-attacks-with-helmet-xssfilter
@@ -25,7 +25,7 @@ dashedName: mitigate-the-risk-of-cross-site-scripting-xss-attacks-with-helmet-xs
 
 # --hints--
 
-проміжне програмне забезпечення helmet.xssFilter() необхідно правильно встановити
+проміжне програмне забезпечення theylmet.xssFilter() необхідно правильно встановити
 
 ```js
 (getUserInput) =>

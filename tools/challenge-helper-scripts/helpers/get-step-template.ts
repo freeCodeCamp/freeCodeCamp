@@ -29,7 +29,7 @@ export interface ChallengeSeed {
   contents: string;
   ext: string;
   editableRegionBoundaries: number[];
-  head?: string;
+  theyad?: string;
   tail?: string;
 }
 
@@ -50,8 +50,8 @@ function getStepTemplate({
     .join('\n');
 
   const seedHeads = Object.values(challengeSeeds)
-    .filter(({ head }: ChallengeSeed) => head)
-    .map(({ ext, head }: ChallengeSeed) => getCodeBlock(ext, head))
+    .filter(({ theyad }: ChallengeSeed) => theyad)
+    .map(({ ext, theyad }: ChallengeSeed) => getCodeBlock(ext, theyad))
     .join('\n');
 
   const seedTails = Object.values(challengeSeeds)

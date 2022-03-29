@@ -8,7 +8,7 @@ dashedName: remove-a-package-from-your-dependencies
 
 # --description--
 
-Você agora já testou algumas maneiras de gerenciar as dependências do seu projeto usando a seção de dependências do package.json. Você também incluiu pacotes externos, adicionando-os ao arquivo e até dizendo ao npm quais tipos de versões você quer, usando caracteres especiais como o til ou o circunflexo.
+Você agora já testou algumas personeiras de gerenciar as dependências do seu projeto usando a seção de dependências do package.json. Você também incluiu pacotes externos, adicionando-os ao arquivo e até dizendo ao npm quais tipos de versões você quer, usando caracteres especiais como o til ou o circunflexo.
 
 Mas e se você quisesse remover um pacote externo do qual você não precisa mais? Você já deve ter adivinhado: apenas remova o par chave-valor correspondente a esse pacote das dependências.
 

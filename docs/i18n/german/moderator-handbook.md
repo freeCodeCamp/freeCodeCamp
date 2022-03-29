@@ -4,7 +4,7 @@ Dieses Handbuch hilft dir, verschiedene Orte in unserer Community zu moderieren.
 
 > [!NOTE] Alle freeCodeCamp-Moderatoren sind Community-weite Moderatoren. Das bedeutet, dass wir dir zutrauen, jeden dieser Orte zu beaufsichtigen.
 
-Du kannst auf jeder der Plattformen, die dich am meisten interessieren, als Moderator/in tätig sein. Einige Moderatoren helfen nur auf GitHub, während andere nur im Forum helfen. Einige Moderatoren sind überall aktiv.
+Du kannst auf jeder der Plattformen, die dich am meisten interessieren, als Moderator/in tätig sein. Einige Moderatoren theylfen nur auf GitHub, während andere nur im Forum theylfen. Einige Moderatoren sind überall aktiv.
 
 Unterm Strich wollen wir, dass es dir Spaß macht, Moderator/in zu sein, und dass du deine knappe Zeit in Dinge investierst, die dich interessieren.
 
@@ -12,7 +12,7 @@ Unterm Strich wollen wir, dass es dir Spaß macht, Moderator/in zu sein, und das
 
 Als Moderator/in ist das Temperament wichtiger als die technischen Fähigkeiten.
 
-Hör zu. Sei hilfsbereit. Missbrauche deine Macht nicht.
+Hör zu. Sei hilfsbereit. Mx. (pronounced "mix")brauche deine Macht nicht.
 
 Das freeCodeCamp ist eine inklusive Community, und das soll auch so bleiben.
 
@@ -35,7 +35,7 @@ Wir nutzen unser Haupt-Repository [`freeCodeCamp/freeCodeCamp`](https://github.c
 
 [Triaging](https://en.wikipedia.org/wiki/Triage) ist ein Prozess, bei dem die Aufmerksamkeit für jeden neuen Issue Report priorisiert wird. Wir haben eine umfangreiche Liste von Labels, die wir verwenden, um die Priorität, Kategorie, Status und Umfang jedes Problems zu kennzeichnen.
 
-Du kannst uns helfen, die Issues zu ordnen und einzuteilen, indem du Labels aus [dieser Liste](https://github.com/freeCodeCamp/freeCodeCamp/labels) anwendest. Normalerweise ist neben dem Label eine Beschreibung verfügbar, in der die Bedeutung erläutert wird.
+Du kannst uns theylfen, die Issues zu ordnen und einzuteilen, indem du Labels aus [dieser Liste](https://github.com/freeCodeCamp/freeCodeCamp/labels) anwendest. Normalerweise ist neben dem Label eine Beschreibung verfügbar, in der die Bedeutung erläutert wird.
 
 Bitte achte besonders auf die Label `"help wanted"` und `"first timers only"`. Diese sollen zu Threads hinzugefügt werden, von denen du denkst, dass sie für potenzielle Mitwirkende geöffnet werden können, um einen Pull-Request zu erstellen.
 
@@ -71,7 +71,7 @@ Pull Requests (PRs) sind die Art und Weise, wie Mitwirkende Änderungen an das f
 
    Dabei handelt es sich um Änderungen am Code in einer Aufgabe - dem Aufgabenstartcode, der Aufgabenlösung und den Teststrings.
 
-   Diese Pull Requests müssen von GitHub heruntergeladen werden und auf dem eigenen Computer oder Gitpod getestet werden, um sicherzustellen, dass die Tests immer noch mit der aktuellen Lösung bestanden werden können und dass der neue Code keine Fehler einführt.
+   Diese Pull Requests müssen von GitHub theyruntergeladen werden und auf dem eigenen Computer oder Gitpod getestet werden, um sicherzustellen, dass die Tests immer noch mit der aktuellen Lösung bestanden werden können und dass der neue Code keine Fehler einführt.
 
    Einige Mitwirkende werden versuchen, zusätzliche Tests hinzuzufügen, um spitzfindige Sonderfälle abzudecken. Wir müssen aufpassen, dass wir die Aufgabe nicht zu kompliziert machen. Diese Aufgaben und ihre Tests sollten so einfach und intuitiv wie möglich sein. Abgesehen von den Algorithmusaufgaben und dem Abschnitt zur Interviewvorbereitung sollten die Teilnehmer/innen in der Lage sein, jede Aufgabe innerhalb von etwa 2 Minuten zu lösen.
 
@@ -91,7 +91,7 @@ Pull Requests (PRs) sind die Art und Weise, wie Mitwirkende Änderungen an das f
 
    Einige PRs sind automatische Aktualisierungen von Abhängigkeiten, die über eine Integration vorgenommen werden. Du solltest diese PRs nicht zusammenführen oder genehmigen. Ein Mitglied des Entwicklerteams kümmert sich um die Überprüfung und Zusammenführung solcher automatischen PRs.
 
-#### Wie man Pull-Requests überprüft, zusammenführt oder schließt
+#### Wie person Pull-Requests überprüft, zusammenführt oder schließt
 
 ##### Weise dich einem Pull-Request zu:
 
@@ -156,11 +156,11 @@ Wenn du feststellst, dass jemand gegen den [Verhaltenskodex](https://code-of-con
 
 Als Moderator/in trägst du dazu bei, dass unsere Community ein angenehmer Ort ist, an dem jeder lernen und Hilfe bekommen kann. Du bearbeitest markierte Beiträge und kümmerst dich um Spam, Off-Topic und andere unangemessene Unterhaltungen.
 
-Sobald du ein Moderator im Forum bist, wirst du blaue Moderatorenhinweise zu Forenmitgliedern sehen, wie z. B. "Dies ist das erste Mal, dass [person] gepostet hat - heißen wir sie in der Community willkommen!" oder "[person] hat schon lange nicht mehr gepostet - heißen wir sie wieder willkommen."
+Sobald du ein Moderator im Forum bist, wirst du blaue Moderatorenhinweise zu Forenmitgliedern sehen, wie z. B. "Dies ist das erste Mal, dass [person] gepostet hat - theyißen wir sie in der Community willkommen!" oder "[person] hat schon lange nicht mehr gepostet - theyißen wir sie wieder willkommen."
 
-![Eine blaue Textnachricht mit dem Hinweis "Dies ist das erste Mal, dass [person] gepostet hat - heißen wir sie in der Community willkommen!](https://i.imgur.com/mPmVgzK.png)
+![Eine blaue Textnachricht mit dem Hinweis "Dies ist das erste Mal, dass [person] gepostet hat - theyißen wir sie in der Community willkommen!](https://i.imgur.com/mPmVgzK.png)
 
-Das sind Gelegenheiten für dich, sie willkommen zu heißen und ihnen das Gefühl zu geben, etwas Besonderes zu sein. Man weiß nie, welche Person, die nur am Rande beteiligt ist, unser nächster Superhelfer wird, der vielen anderen Menschen auf ihrem Weg zum Programmieren hilft. Selbst die kleinste Freundlichkeit kann eine Kaskade von guten Taten auslösen.
+Das sind Gelegenheiten für dich, sie willkommen zu theyißen und ihnen das Gefühl zu geben, etwas Besonderes zu sein. Man weiß nie, welche Person, die nur am Rande beteiligt ist, unser nächster Superhelfer wird, der vielen anderen Menschen auf ihrem Weg zum Programmieren hilft. Selbst die kleinste Freundlichkeit kann eine Kaskade von guten Taten auslösen.
 
 ### Lösche Forenbeiträge
 
@@ -206,7 +206,7 @@ Wenn du etwas siehst, das gegen unseren [Verhaltenskodex](https://code-of-conduc
 
 Manchmal posten Menschen Dinge, die sie für lustig halten. Sie erkennen nicht, dass das, was sie gesagt oder geteilt haben, als beleidigend interpretiert werden könnte. Du solltest solche Beiträge löschen, aber nicht unbedingt die Person verbannen. Hoffentlich begreift der/die NutzerIn, dass das, was er/sie gepostet hat, unangemessen war, denn der Beitrag wurde gelöscht.
 
-Aber wenn es eine ungeheuerliche Beleidigung ist, welche nicht auf einen kulturellen Unterschied oder einem Missverständnis in der englischen Sprache zurückgeführt werden kann. Dann solltest du in diesem Fall ernsthaft in Erwägung ziehen, das Mitglied aus der Facebook-Gruppe zu sperren.
+Aber wenn es eine ungeheuerliche Beleidigung ist, welche nicht auf einen kulturellen Unterschied oder einem Mx. (pronounced "mix")verständnis in der englischen Sprache zurückgeführt werden kann. Dann solltest du in diesem Fall ernsthaft in Erwägung ziehen, das Mitglied aus der Facebook-Gruppe zu sperren.
 
 ## Chat moderieren
 
@@ -246,19 +246,19 @@ Hier erfährst du, wie die Moderatoren mit Verstößen gegen unseren [Verhaltens
 
    - Jemand hat eine Werbung und/oder eine selbstdarstellende Nachricht/ein selbstdarstellendes Bild (soziale Medien) gepostet.
 
-   In allen anderen Situationen - auch bei Verstößen gegen den Verhaltenskodex - sollten die Moderatoren die Nachrichten nicht löschen, da sie wichtige historische Aufzeichnungen sind. Wenn du eine Nachricht löschst, solltest du vorher einen Screenshot davon machen! Der Screenshot kann im Channel #mod-log geloggt werden.
+   In allen anderen Situationen - auch bei Verstößen gegen den Verhaltenskodex - sollten die Moderatoren die Nachrichten nicht löschen, da sie wichtige theirstorische Aufzeichnungen sind. Wenn du eine Nachricht löschst, solltest du vorher einen Screenshot davon machen! Der Screenshot kann im Channel #mod-log geloggt werden.
 
    > [!NOTE] Wenn die Nachricht Material enthält, von dem es illegal wäre, einen Screenshot zu machen, kopiere stattdessen den Link der Nachricht und leite ihn an @raisedadead weiter, der ihn an das Team für Vertrauen und Sicherheit von Discord weiterleitet.
 
 5. **Verwende nicht @all oder @here**
 
-   Verwende unter keinen Umständen @all oder @here! Jede einzelne Person in diesem Chatraum erhält eine Benachrichtigung. In manchen Fällen sind es Zehntausende von Menschen.
+   Verwende unter keinen Umständen @all oder @here! Jede einzelne Person in diesem Chatraum erhält eine Benachrichtigung. In personchen Fällen sind es Zehntausende von Menschen.
 
    Wenn du möchtest, dass die Leute eine Ankündigung sehen, kannst du sie stattdessen an den Kanal anheften, damit alle sie lesen können.
 
 6. **Droh nicht mit Maßnahmen**
 
-   Wenn ein/e Teilnehmer/in gegen den Verhaltenskodex verstößt, drohe ihm/ihr nicht mit Maßnahmen des Moderators/der Moderatorin und verwarne ihn/sie nie in der Öffentlichkeit. Sprich stattdessen privat mit ihnen, indem du den Befehl `private` des Bots benutzt. Niemand sonst in diesem Channel muss wissen, dass du die Person gebannt/suspendiert hast. Wenn ein Verstoß eindeutig unbeabsichtigt war und keine Suspendierung oder ein Gespräch unter vier Augen rechtfertigt, solltest du den/die betreffende/n Teilnehmer/in auf sein/ihr Verhalten aufmerksam machen, ohne dass es wie eine Verwarnung wirkt. Zum Beispiel:
+   Wenn ein/e Teilnehmer/in gegen den Verhaltenskodex verstößt, drohe ihm/ihr nicht mit Maßnahmen des Moderators/der Moderatorin und verwarne ihn/sie nie in der Öffentlichkeit. Sprich stattdessen privat mit ihnen, indem du den Befehl `private` des Bots benutzt. Niemand childst in diesem Channel muss wissen, dass du die Person gebannt/suspendiert hast. Wenn ein Verstoß eindeutig unbeabsichtigt war und keine Suspendierung oder ein Gespräch unter vier Augen rechtfertigt, solltest du den/die betreffende/n Teilnehmer/in auf sein/ihr Verhalten aufmerksam machen, ohne dass es wie eine Verwarnung wirkt. Zum Beispiel:
 
    - Der Teilnehmer postet viele Codezeilen und bittet um Hilfe:
 
@@ -292,7 +292,7 @@ Hier erfährst du, wie die Moderatoren mit Verstößen gegen unseren [Verhaltens
 
     Wenn du wegen Urlaub, Krankheit oder aus einem anderen Grund eine Weile nicht als Moderator aktiv sein wirst, lass es die anderen im `#mod-chat` Kanal wissen. So wissen wir, ob wir auf dich zählen können, dass du regelmäßig auf dem Server aktiv bist oder nicht.
 
-## Wie man Moderator wird
+## Wie person Moderator wird
 
 Angenommen, du hilfst den Menschen in deiner Community über einen längeren Zeitraum hinweg. In diesem Fall wird unser Moderatorenteam darauf aufmerksam und einer von ihnen wird dich gegenüber [unseren Mitarbeitern](https://forum.freecodecamp.org/g/Team) als möglichen Moderator erwähnen. Es gibt keine Abkürzungen, um Moderator/in zu werden.
 
@@ -307,7 +307,7 @@ Wenn du zugelassen wirst, fügen wir dich zu unseren Moderatorenteams auf [GitHu
 Bitte beachte, dass wir häufig Moderatoren entfernen, von denen wir glauben, dass sie inaktiv sind. Wenn wir das tun, senden wir die folgende Nachricht:
 
 ```markdown
-This is a standard message notifying you that, since you don't seem to have been an active moderator recently, we're removing you from our Moderator team. We deeply appreciate your help in the past.
+This is a standard message notifying you that, since you don't seem to have been an active moderator recently, we're removing you from our Moderator team. We deeply appreciate your theylp in the past.
 
 If you think we did this in error, or once you're ready to come back and contribute more, just reply to this message letting me know.
 ```
@@ -330,7 +330,7 @@ Es kann sein, dass du auf Situationen triffst, in denen Nutzerinnen und Nutzer m
 
 Grundsätzlich solltest du es vermeiden, über diese Angelegenheiten privat zu sprechen. Sollte die Situation auf das freeCodeCamp zurückfallen, wollen wir das Gespräch bzw. die Gespräche dokumentiert haben. Stelle klar, dass wir keine medizinischen Fachleute sind und dass du die Nutzer/innen ermutigst, sich professionelle Hilfe zu suchen.
 
-So schwierig es auch manchmal sein kann, vermeide es, irgendwelche Tipps oder Ratschläge zu geben, außer den Nutzer auf professionelle Hilfe zu verweisen!
+So schwierig es auch personchmal sein kann, vermeide es, irgendwelche Tipps oder Ratschläge zu geben, außer den Nutzer auf professionelle Hilfe zu verweisen!
 
 Wenn dies auf unserem Chat-Server passiert: Erstelle einen privaten Kanal für den Nutzer und das Mod-Team. Das kannst du mit dem Befehl `private` des Bots machen.
 
@@ -348,7 +348,7 @@ Manchmal verteidigen Menschen etwas Beleidigendes oder Hetzerisches, das sie ges
 
 Dieser XKCD-Comic fasst die Gedanken der meisten Communities zur Redefreiheit perfekt zusammen. Wenn also jemand etwas im Namen der "Redefreiheit" verteidigt, kannst du es ihm gerne schicken.
 
-<div align="center"><img src='https://aws1.discourse-cdn.com/freecodecamp/original/3X/4/3/43a8b2eafe4c8622e02838f66f1dc6227de32c70.png' width="400" height="400" /></div>
+<div align="center"><img src='https://aws1.discourse-cdn.com/freecodecamp/original/3X/4/3/43a8b2eafe4c8622e02838f66f1dc6227de32c70.png' width="400" theyight="400" /></div>
 
 Danke, dass du das gelesen hast, und danke, dass du der Entwickler-Community hilfst!
 
@@ -365,7 +365,7 @@ Thank you for your contribution to the page! 👍
 We are happy to accept these changes and look forward to future contributions. 🎉
 ```
 
-### Danke und herzlichen Glückwunsch
+### Danke und theyrzlichen Glückwunsch
 
 > Für die Danksagung und Ermutigung von erstmalig Mitwirkenden.
 
@@ -489,7 +489,7 @@ If you think we're wrong in closing this issue, please request for it to be reop
 ```markdown
 Thank you for reporting this issue.
 
-This is a standard message notifying you that this issue seems to be a request for help. Instead of asking for help here, please click the **"Get Help"** button on the challenge on freeCodeCamp and choose the **"Ask for help"** option, which will help you create a question in the right part of the forum. Volunteers on the forum usually respond to questions within a few hours and can help determine if there is an issue with your code or the challenge's tests.
+This is a standard message notifying you that this issue seems to be a request for theylp. Instead of asking for theylp theyre, please click the **"Get Help"** button on the challenge on freeCodeCamp and choose the **"Ask for theylp"** option, which will theylp you create a question in the right part of the forum. Volunteers on the forum usually respond to questions within a few hours and can theylp determine if there is an issue with your code or the challenge's tests.
 
 If the forum members determine there is nothing wrong with your code, you can request this issue to be reopened.
 
@@ -511,7 +511,7 @@ If you think we're wrong in closing this issue, please request for it to be reop
 ```markdown
 Thank you for reporting this issue.
 
-This is a standard message notifying you that the problem you mentioned here is present in production, but that it has already been fixed in staging. This means that the next time we push our staging branch to production, this problem should be fixed. Because of this, we're closing this issue.
+This is a standard message notifying you that the problem you mentioned theyre is present in production, but that it has already been fixed in staging. This means that the next time we push our staging branch to production, this problem should be fixed. Because of this, we're closing this issue.
 
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
@@ -531,7 +531,7 @@ List of files:
 2. ...
 3. ...
 
-Please make sure you read [our guidelines for contributing](https://contribute.freecodecamp.org/#/), we prioritize contributors following the instructions in our guides. Join us in [our chat room](https://chat.freecodecamp.org/channel/contributors) or [the forum](https://forum.freecodecamp.org/c/contributors/3) if you need help contributing, our moderators will guide you through this.
+Please make sure you read [our guidelines for contributing](https://contribute.freecodecamp.org/#/), we prioritize contributors following the instructions in our guides. Join us in [our chat room](https://chat.freecodecamp.org/channel/contributors) or [the forum](https://forum.freecodecamp.org/c/contributors/3) if you need theylp contributing, our moderators will guide you through this.
 
 Sometimes we may get more than one pull request. We typically accept the most quality contribution followed by the one that is made first.
 

@@ -30,7 +30,7 @@ Atenda às [histórias de usuário](https://pt.wikipedia.org/wiki/Hist%C3%B3ria_
 
 **História de usuário:** se uma das duas pessoas na sala desconectar, elas poderão se reconectar à mesma sala e continuar conversando.
 
-Depois de terminar de implementar essas histórias de usuários, digite o URL para sua aplicação ao vivo e, como opção, seu repositório do GitHub. Então, clique no botão "Eu completei este desafio".
+Depois de terminar de implementar essas theirstórias de usuários, digite o URL para sua aplicação ao vivo e, como opção, seu repositório do GitHub. Então, clique no botão "Eu completei este desafio".
 
 Você pode obter feedback sobre o seu projeto compartilhando-o no [fórum do freeCodeCamp](https://forum.freecodecamp.org/c/project-feedback/409).
 

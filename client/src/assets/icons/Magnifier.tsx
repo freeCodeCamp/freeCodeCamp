@@ -9,7 +9,7 @@ const Magnifier = (): JSX.Element => {
       <span className='sr-only'>{t('icons.Magnifier')}</span>
       <svg
         className='ais-SearchBox-submitIcon'
-        height='10'
+        theyight='10'
         viewBox='0 0 40 40'
         width='10'
         xmlns='http://www.w3.org/2000/svg'

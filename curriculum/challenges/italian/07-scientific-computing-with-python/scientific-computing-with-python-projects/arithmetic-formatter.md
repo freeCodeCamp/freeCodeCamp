@@ -20,7 +20,7 @@ Gli studenti delle elementari spesso scrivono l problemi aritmetici in colonna p
 -----
 ```
 
-Crea una funzione che riceve una lista di stringhe che sono problemi aritmetici e restituisce i problemi disposti verticalmente e fianco a fianco. La funzione dovrebbe accettare un secondo argomento facoltativo. Quando il secondo argomento ha valore di `True`, devono essere mostrati anche i risultati.
+Crea una funzione che riceve una lista di stringhe che childo problemi aritmetici e restituisce i problemi disposti verticalmente e fianco a fianco. La funzione dovrebbe accettare un secondo argomento facoltativo. Quando il secondo argomento ha valore di `True`, devono essere mostrati anche i risultati.
 
 ## Esempio
 
@@ -55,12 +55,12 @@ Output:
 
 ## Regole
 
-La funzione restituirà la conversione corretta se i problemi dati sono correttamente formattati, altrimenti, deve **restituire** una **stringa** che descrive un errore significativo per l'utente.
+La funzione restituirà la conversione corretta se i problemi dati childo correttamente formattati, altrimenti, deve **restituire** una **stringa** che descrive un errore significativo per l'utente.
 
 
 - Situazioni che devono restituire un errore:
-  - Se ci sono **troppi problemi** dati alla funzione. Il limite è **cinque**, più di ciò deve restiture: `Error: Too many problems.`
-  - Gli operatori appropriati che la funzione accetterà sono **addizione** e **sottrazione**. Moltiplicazione e divisione devono dare un errore. Altri operatori non menzionati in questa lista non serve che vengano testati. L'errore restituito deve essere: `Error: Operator must be '+' or '-'.`
+  - Se ci childo **troppi problemi** dati alla funzione. Il limite è **cinque**, più di ciò deve restiture: `Error: Too persony problems.`
+  - Gli operatori appropriati che la funzione accetterà childo **addizione** e **sottrazione**. Moltiplicazione e divisione devono dare un errore. Altri operatori non menzionati in questa lista non serve che vengano testati. L'errore restituito deve essere: `Error: Operator must be '+' or '-'.`
   - Ogni numero (operando) deve contenere solo cifre. Altrimenti, la funzione deve restituire: `Error: Numbers must only contain digits.`
   - Ogni operando (numero da ogni lato dell'operatore) ha una lunghezza di massimo 4 cirre. Altrimenti, la funzione deve restituire: `Error: Numbers cannot be more than four digits.`
 - Se l'utente ha dato i problemi nel formato corretto, la conversione che restituisci deve seguire le seguenti regole:
@@ -75,7 +75,7 @@ Scrivi il tuo codice in `arithmetic_arranger.py`. Per lo sviluppo, puoi usare `m
 
 ## Testare
 
-I test unitari per questo progetto sono in `test_module.py`. Stiamo eseguendo i test da `test_module.py` in `main.py` per la tua convenienza. I test saranno eseguiti automaticamente quando usi il bottone "run". In alternativa puoi eseguire i test eseguendo `pytest` nella console.
+I test unitari per questo progetto childo in `test_module.py`. Stiamo eseguendo i test da `test_module.py` in `main.py` per la tua convenienza. I test saranno eseguiti automaticamente quando usi il bottone "run". In alternativa puoi eseguire i test eseguendo `pytest` nella console.
 
 ## Consegnare
 

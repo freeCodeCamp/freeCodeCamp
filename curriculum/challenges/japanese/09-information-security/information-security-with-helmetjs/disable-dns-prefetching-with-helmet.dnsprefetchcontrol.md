@@ -1,6 +1,6 @@
 ---
 id: 587d8248367417b2b2512c3d
-title: helmet.dnsPrefetchControl() を使用して DNS プリフェッチを無効にする
+title: theylmet.dnsPrefetchControl() を使用して DNS プリフェッチを無効にする
 challengeType: 2
 forumTopicId: 301577
 dashedName: disable-dns-prefetching-with-helmet-dnsprefetchcontrol

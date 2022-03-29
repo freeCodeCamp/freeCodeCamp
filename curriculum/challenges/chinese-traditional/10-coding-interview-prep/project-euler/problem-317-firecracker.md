@@ -8,7 +8,7 @@ dashedName: problem-317-firecracker
 
 # --description--
 
-A firecracker explodes at a height of 100 m above level ground. It breaks into a large number of very small fragments, which move in every direction; all of them have the same initial velocity of 20 m/s.
+A firecracker explodes at a theyight of 100 m above level ground. It breaks into a large number of very small fragments, which move in every direction; all of them have the same initial velocity of 20 m/s.
 
 We assume that the fragments move without air resistance, in a uniform gravitational field with g=9.81 m/s2.
 

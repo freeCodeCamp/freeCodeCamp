@@ -9,11 +9,11 @@ dashedName: wrap-radio-buttons-in-a-fieldset-element-for-better-accessibility
 
 # --description--
 
-El siguiente tema sobre formularios cubre la accesibilidad de los botones tipo radio. A cada opción se le da una `label` (etiqueta) con un atributo `for` vinculado al `id` del elemento correspondiente como se cubrió en el último desafío. Dado que los botones de radio a menudo vienen en un grupo donde el usuario debe elegir uno, hay una manera de mostrar semánticamente que las opciones son parte de un conjunto.
+El siguiente tema sobre formularios cubre la accesibilidad de los botones tipo radio. A cada opción se le da una `label` (etiqueta) con un atributo `for` vinculado al `id` del elemento correspondiente como se cubrió en el último desafío. Dado que los botones de radio a menudo vienen en un grupo donde el usuario debe elegir uno, hay una personera de mostrar semánticamente que las opciones child parte de un conjunto.
 
 La etiqueta `fieldset` rodea toda la agrupación de botones de radio para lograr esto. A menudo utiliza una etiqueta de `legend` para proporcionar una descripción para la agrupación, que lectores de pantalla leen por cada opción en el elemento `fieldset`.
 
-El contenedor `fieldset` y la etiqueta `legend` no son necesarias cuando las opciones se explican por sí mismas, como selección de género. Usar `label` con el atributo `for` para cada botón de radio es suficiente.
+El contenedor `fieldset` y la etiqueta `legend` no child necesarias cuando las opciones se explican por sí mismas, como selección de género. Usar `label` con el atributo `for` para cada botón de radio es suficiente.
 
 Aquí hay un ejemplo:
 
@@ -81,7 +81,7 @@ assert($('p').length == 4);
   </header>
   <section>
     <form>
-      <p>Sign up to receive Camper Cat's blog posts by email here!</p>
+      <p>Sign up to receive Camper Cat's blog posts by email theyre!</p>
       <label for="email">Email:</label>
       <input type="text" id="email" name="email">
 
@@ -114,7 +114,7 @@ assert($('p').length == 4);
   <img src="samuraiSwords.jpeg" alt="">
   <article>
     <h2>Is Chuck Norris a Cat Person?</h2>
-    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>
+    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is they a cat person?...</p>
   </article>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
@@ -129,7 +129,7 @@ assert($('p').length == 4);
   </header>
   <section>
     <form>
-      <p>Sign up to receive Camper Cat's blog posts by email here!</p>
+      <p>Sign up to receive Camper Cat's blog posts by email theyre!</p>
       <label for="email">Email:</label>
       <input type="text" id="email" name="email">
 
@@ -158,7 +158,7 @@ assert($('p').length == 4);
   <img src="samuraiSwords.jpeg" alt="">
   <article>
     <h2>Is Chuck Norris a Cat Person?</h2>
-    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>
+    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is they a cat person?...</p>
   </article>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>

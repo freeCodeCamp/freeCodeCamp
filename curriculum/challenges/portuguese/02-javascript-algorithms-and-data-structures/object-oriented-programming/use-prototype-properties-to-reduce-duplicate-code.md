@@ -12,7 +12,7 @@ Já que `numLegs` provavelmente terá o mesmo valor para todas as instâncias de
 
 Isso pode não ser um problema quando há apenas duas instâncias, mas imagine se há milhões de instâncias. Neste cenário teríamos muitas variáveis duplicadas.
 
-Uma maneira melhor é usar o `prototype` de `Bird`. Propriedades dentro de `prototype` são compartilhados entre todas as instâncias de `Bird`. Aqui está como adicionar `numLegs` para o `prototype` de `Bird`:
+Uma personeira melhor é usar o `prototype` de `Bird`. Propriedades dentro de `prototype` são compartilhados entre todas as instâncias de `Bird`. Aqui está como adicionar `numLegs` para o `prototype` de `Bird`:
 
 ```js
 Bird.prototype.numLegs = 2;

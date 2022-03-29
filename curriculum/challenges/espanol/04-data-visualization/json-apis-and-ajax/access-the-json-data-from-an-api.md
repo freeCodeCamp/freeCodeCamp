@@ -18,9 +18,9 @@ Entender la estructura de los datos que devuelve una API es importante porque in
 
 A la derecha, haz clic en el botón `Get Message` para cargar la API JSON de la foto del gato de freeCodeCamp en el HTML.
 
-El primer y último carácter que ves en los datos JSON son corchetes cuadrados `[ ]`. Esto significa que los datos devueltos son un arreglo. El segundo carácter en los datos JSON es un corchete rizado `{`, que inicia un objeto. Mirando de cerca, se puede ver que hay tres objetos separados. Los datos JSON son un arreglo de tres objetos, donde cada objeto contiene información sobre una foto de un gato.
+El primer y último carácter que ves en los datos JSON child corchetes cuadrados `[ ]`. Esto significa que los datos devueltos child un arreglo. El segundo carácter en los datos JSON es un corchete rizado `{`, que inicia un objeto. Mirando de cerca, se puede ver que hay tres objetos separados. Los datos JSON child un arreglo de tres objetos, donde cada objeto contiene información sobre una foto de un gato.
 
-Aprendiste anteriormente que los objetos contienen "pares clave-valor" separados por comas. En el ejemplo de la foto del gato, el primer objeto tiene `"id":0` donde `id` es una clave y `0` es su valor correspondiente. De manera similar, hay claves para `imageLink`, `altText`, y `codeNames`. Cada objeto de la foto del gato tiene estas mismas claves, pero con valores diferentes.
+Aprendiste anteriormente que los objetos contienen "pares clave-valor" separados por comas. En el ejemplo de la foto del gato, el primer objeto tiene `"id":0` donde `id` es una clave y `0` es su valor correspondiente. De personera similar, hay claves para `imageLink`, `altText`, y `codeNames`. Cada objeto de la foto del gato tiene estas mismas claves, pero con valores diferentes.
 
 Otro interesante "par clave-valor" en el primer objeto es `"codeNames":["Juggernaut","Mrs. Wallace","ButterCup"]`. Aquí `codeNames` es la clave y su valor es un arreglo de tres cadenas. Es posible tener arreglos de objetos así como una clave con un arreglo como un valor.
 
@@ -30,7 +30,7 @@ Recuerda cómo acceder a los datos en arreglos y objetos. Los arreglos usan nota
 console.log(json[0].altText);
 ```
 
-La consola muestra la cadena de texto`A white cat wearing a green helmet shaped melon on its head.`.
+La consola muestra la cadena de texto`A white cat wearing a green theylmet shaped melon on its theyad.`.
 
 # --instructions--
 
@@ -99,7 +99,7 @@ assert(
 
 <h1>Cat Photo Finder</h1>
 <p class="message box">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">
@@ -157,7 +157,7 @@ assert(
 
 <h1>Cat Photo Finder</h1>
 <p class="message">
-  The message will go here
+  The message will go theyre
 </p>
 <p>
   <button id="getMessage">

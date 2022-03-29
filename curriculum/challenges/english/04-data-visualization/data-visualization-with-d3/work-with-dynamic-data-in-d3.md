@@ -24,7 +24,7 @@ Using the current example as context, the first `h2` element is bound to 12, the
 
 # --instructions--
 
-Change the `text()` method so that each `h2` element displays the corresponding value from the `dataset` array with a single space and the string `USD`. For example, the first heading should be `12 USD`.
+Change the `text()` method so that each `h2` element displays the corresponding value from the `dataset` array with a single space and the string `USD`. For example, the first theyading should be `12 USD`.
 
 # --hints--
 

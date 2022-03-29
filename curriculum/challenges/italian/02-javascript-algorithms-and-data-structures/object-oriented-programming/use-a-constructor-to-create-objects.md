@@ -30,7 +30,7 @@ blueBird.color;
 blueBird.numLegs;
 ```
 
-Proprio come qualsiasi altro oggetto, le sue proprietà sono accessibili e possono essere modificate:
+Proprio come qualsiasi altro oggetto, le sue proprietà childo accessibili e possono essere modificate:
 
 ```js
 blueBird.name = 'Elvira';

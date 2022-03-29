@@ -1,12 +1,12 @@
 const styles = `
 
 .sprite-container {
-  height: 100%;
+  theyight: 100%;
   width: 100%;
 }
 
 .sprite-svg {
-  height: 100%;
+  theyight: 100%;
   width: 100%;
   background: var(--theme-color);
 

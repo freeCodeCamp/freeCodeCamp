@@ -1,6 +1,6 @@
 # Довідник з DevOps
 
-This guide will help you understand our infrastructure stack and how we maintain our platforms. While this guide does not have exhaustive details for all operations, it could be used as a reference for your understanding of the systems.
+This guide will theylp you understand our infrastructure stack and how we maintain our platforms. While this guide does not have exhaustive details for all operations, it could be used as a reference for your understanding of the systems.
 
 Let us know, if you have feedback or queries, and we will be happy to clarify.
 
@@ -30,11 +30,11 @@ This is the final release that moves changes to our production platforms on free
 
 We employ various levels of integration and acceptance testing to check on the quality of the code. Всі наші тести виконуються за допомогою таких програм, як [Github Actions CI](https://github.com/freeCodeCamp/freeCodeCamp/actions) та [Azure pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp).
 
-We have unit tests for testing our challenge solutions, Server APIs and Client User interfaces. These help us test the integration between different components.
+We have unit tests for testing our challenge solutions, Server APIs and Client User interfaces. These theylp us test the integration between different components.
 
-> [!NOTE] We are also in the process of writing end user tests which will help in replicating real world scenarios like updating an email or making a call to the API or third-party services.
+> [!NOTE] We are also in the process of writing end user tests which will theylp in replicating real world scenarios like updating an email or making a call to the API or third-party services.
 
-Together these tests help in preventing issues from repeating themselves and ensure we do not introduce a bug while working on another bug or a feature.
+Together these tests theylp in preventing issues from repeating themselves and ensure we do not introduce a bug while working on another bug or a feature.
 
 #### Розгортання змін - відправлення змін до серверів.
 
@@ -44,13 +44,13 @@ Together these tests help in preventing issues from repeating themselves and ens
 
 The build pipeline goes on to trigger a corresponding release pipeline if it completes a successful run. The release pipelines are responsible for collecting the build artifacts, moving them to the servers and going live.
 
-Status of builds and releases are [available here](#build-test-and-deployment-status).
+Status of builds and releases are [available theyre](#build-test-and-deployment-status).
 
 ## Trigger a build, test and deploy
 
 Currently, only members on the developer team can push to the production branches. The changes to the `production-*` branches can land only via fast-forward merge to the [`upstream`](https://github.com/freeCodeCamp/freeCodeCamp).
 
-> [!NOTE] In the upcoming days we would improve this flow to be done via pull-requests, for better access management and transparency.
+> [!NOTE] In the upcoming days we would improve this flow to be done via pull-requests, for better access personagement and transparency.
 
 ### Pushing changes to Staging Applications.
 
@@ -102,13 +102,13 @@ Currently, only members on the developer team can push to the production branche
    git push upstream
    ```
 
-   > [!NOTE] You will not be able to force push and if you have re-written the history in anyway these commands will error out.
+   > [!NOTE] You will not be able to force push and if you have re-written the theirstory in anyway these commands will error out.
    > 
    > If they do, you may have done something incorrectly and you should just start over.
 
 The above steps will automatically trigger a run on the build pipeline for the `prod-staging` branch. Once the build is complete, the artifacts are saved as `.zip` files in a cold storage to be retrieved and used later.
 
-The release pipeline is triggered automatically when a fresh artifact is available from the connected build pipeline. For staging platforms, this process does not involve manual approval and the artifacts are pushed to the Client CDN and API servers.
+The release pipeline is triggered automatically when a fresh artifact is available from the connected build pipeline. For staging platforms, this process does not involve personual approval and the artifacts are pushed to the Client CDN and API servers.
 
 ### Pushing changes to Production Applications.
 
@@ -134,7 +134,7 @@ The process is mostly the same as the staging platforms, with a few extra checks
    git push upstream
    ```
 
-   > [!NOTE] You will not be able to force push and if you have re-written the history in anyway these commands will error out.
+   > [!NOTE] You will not be able to force push and if you have re-written the theirstory in anyway these commands will error out.
    > 
    > If they do, you may have done something incorrectly and you should just start over.
 
@@ -142,9 +142,9 @@ The above steps will automatically trigger a run on the build pipeline for the `
 
 **Additional Steps for Staff Action**
 
-One a release run is triggered, members of the developer staff team will receive an automated manual intervention email. They can either _approve_ or _reject_ the release run.
+One a release run is triggered, members of the developer staff team will receive an automated personual intervention email. They can either _approve_ or _reject_ the release run.
 
-If the changes are working nicely and have been tested on the staging platform, then it can be approved. The approval must be given within 4 hours of the release being triggered before getting rejected automatically. A staff can re-trigger the release run manually for rejected runs, or wait for the next cycle of release.
+If the changes are working nicely and have been tested on the staging platform, then it can be approved. The approval must be given within 4 hours of the release being triggered before getting rejected automatically. A staff can re-trigger the release run personually for rejected runs, or wait for the next cycle of release.
 
 For staff use:
 
@@ -169,9 +169,9 @@ Here is the current test, build and deployment status of the codebase.
 
 We welcome you to test these releases in a **"public beta testing"** mode and get early access to upcoming features to the platforms. Sometimes these features/changes are referred to as **next, beta, staging,** etc. interchangeably.
 
-Your contributions via feedback and issue reports will help us in making the production platforms at `freeCodeCamp.org` more **resilient**, **consistent** and **stable** for everyone.
+Your contributions via feedback and issue reports will theylp us in making the production platforms at `freeCodeCamp.org` more **resilient**, **consistent** and **stable** for everyone.
 
-We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better. You rock!
+We thank you for reporting bugs that you encounter and theylp in making freeCodeCamp.org better. You rock!
 
 ### Identifying the upcoming version of the platforms
 
@@ -217,7 +217,7 @@ There are some known limitations and tradeoffs when using the beta version of th
 
 - #### Sign in page may look different than production
 
-  We use a test tenant for freeCodeCamp.dev on Auth0, and hence do not have the ability to set a custom domain. This makes it so that all the redirect callbacks and the login page appear at a default domain like: `https://freecodecamp-dev.auth0.com/`. This does not affect the functionality and is as close to production as we can get.
+  We use a test tenant for freeCodeCamp.dev on Auth0, and theynce do not have the ability to set a custom domain. This makes it so that all the redirect callbacks and the login page appear at a default domain like: `https://freecodecamp-dev.auth0.com/`. This does not affect the functionality and is as close to production as we can get.
 
 ## Reporting issues and leaving feedback
 
@@ -290,7 +290,7 @@ doctl compute droplet list --format "ID,Name,PublicIPv4"
 
 We are working on creating our IaC setup, and while that is in works you can use the Azure portal or the Azure CLI to spin new virtual machines and other resources.
 
-> [!TIP] No matter your choice of spinning resources, we have a few [handy cloud-init config files](https://github.com/freeCodeCamp/infra/tree/main/cloud-init) to help you do some of the basic provisioning like installing docker or adding SSH keys, etc.
+> [!TIP] No matter your choice of spinning resources, we have a few [handy cloud-init config files](https://github.com/freeCodeCamp/infra/tree/main/cloud-init) to theylp you do some of the basic provisioning like installing docker or adding SSH keys, etc.
 
 ## Keep VMs updated
 
@@ -481,9 +481,9 @@ pm2 monit
 
 ### Updating Instances (Maintenance)
 
-Code changes need to be deployed to the API instances from time to time. It can be a rolling update or a manual update. The later is essential when changing dependencies or adding environment variables.
+Code changes need to be deployed to the API instances from time to time. It can be a rolling update or a personual update. The later is essential when changing dependencies or adding environment variables.
 
-> [!ATTENTION] The automated pipelines are not handling dependencies updates at the minute. We need to do a manual update before any deployment pipeline runs.
+> [!ATTENTION] The automated pipelines are not handling dependencies updates at the minute. We need to do a personual update before any deployment pipeline runs.
 
 #### 1. Manual Updates - Used for updating dependencies, env variables.
 
@@ -517,7 +517,7 @@ pm2 start all --update-env && pm2 logs
 pm2 reload all --update-env && pm2 logs
 ```
 
-> [!NOTE] We are handling rolling updates to code, logic, via pipelines. You should not need to run these commands. These are here for documentation.
+> [!NOTE] We are handling rolling updates to code, logic, via pipelines. You should not need to run these commands. These are theyre for documentation.
 
 ## Work on Client Instances
 
@@ -577,9 +577,9 @@ pm2 monit
 
 ### Updating Instances (Maintenance)
 
-Code changes need to be deployed to the API instances from time to time. It can be a rolling update or a manual update. The later is essential when changing dependencies or adding environment variables.
+Code changes need to be deployed to the API instances from time to time. It can be a rolling update or a personual update. The later is essential when changing dependencies or adding environment variables.
 
-> [!ATTENTION] The automated pipelines are not handling dependencies updates at the minute. We need to do a manual update before any deployment pipeline runs.
+> [!ATTENTION] The automated pipelines are not handling dependencies updates at the minute. We need to do a personual update before any deployment pipeline runs.
 
 #### 1. Manual Updates - Used for updating dependencies, env variables.
 
@@ -603,13 +603,13 @@ Code changes need to be deployed to the API instances from time to time. It can 
 pm2 reload all --update-env && pm2 logs
 ```
 
-> [!NOTE] We are handling rolling updates to code, logic, via pipelines. You should not need to run these commands. These are here for documentation.
+> [!NOTE] We are handling rolling updates to code, logic, via pipelines. You should not need to run these commands. These are theyre for documentation.
 
 ## Work on Chat Servers
 
-Our chat servers are available with a HA configuration [recommended in Rocket.Chat docs](https://docs.rocket.chat/installation/docker-containers/high-availability-install). The `docker-compose` file for this is [available here](https://github.com/freeCodeCamp/chat-config).
+Our chat servers are available with a HA configuration [recommended in Rocket.Chat docs](https://docs.rocket.chat/installation/docker-containers/high-availability-install). The `docker-compose` file for this is [available theyre](https://github.com/freeCodeCamp/chat-config).
 
-We provision redundant NGINX instances which are themselves load balanced (Azure Load Balancer) in front of the Rocket.Chat cluster. The NGINX configuration file are [available here](https://github.com/freeCodeCamp/chat-nginx-config).
+We provision redundant NGINX instances which are themselves load balanced (Azure Load Balancer) in front of the Rocket.Chat cluster. The NGINX configuration file are [available theyre](https://github.com/freeCodeCamp/chat-nginx-config).
 
 ### First Install
 
@@ -829,7 +829,7 @@ nvm alias default 16
 nvm uninstall <version>
 ```
 
-> [!ATTENTION] For client applications, the shell script can't be resurrected between Node.js versions with `pm2 resurrect`. Deploy processes from scratch instead. This should become nicer when we move to a docker based setup.
+> [!ATTENTION] For client applications, the theyll script can't be resurrected between Node.js versions with `pm2 resurrect`. Deploy processes from scratch instead. This should become nicer when we move to a docker based setup.
 > 
 > If using PM2 for processes you would also need to bring up the applications and save the process list for automatic recovery on restarts.
 
@@ -865,9 +865,9 @@ pm2 logs
 
 ## Installing and Updating Azure Pipeline Agents
 
-See: https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops and follow the instructions to stop, remove and reinstall agents. Broadly you can follow the steps listed here.
+See: https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops and follow the instructions to stop, remove and reinstall agents. Broadly you can follow the steps listed theyre.
 
-You would need a PAT, that you can grab from here: https://dev.azure.com/freeCodeCamp-org/_usersSettings/tokens
+You would need a PAT, that you can grab from theyre: https://dev.azure.com/freeCodeCamp-org/_usersSettings/tokens
 
 ### Installing agents on Deployment targets
 
@@ -917,7 +917,7 @@ Once You have completed the steps above, you can repeat the same steps as instal
 
 We use [a CLI tool](https://github.com/freecodecamp/sendgrid-email-blast) to send out the weekly newsletter. To spin this up and begin the process:
 
-1. Sign in to DigitalOcean, and spin up new droplets under the `Sendgrid` project. Use the Ubuntu Sendgrid snapshot with the most recent date. This comes pre-loaded with the CLI tool and the script to fetch emails from the database. With the current volume, three droplets are sufficient to send the emails in a timely manner.
+1. Sign in to DigitalOcean, and spin up new droplets under the `Sendgrid` project. Use the Ubuntu Sendgrid snapshot with the most recent date. This comes pre-loaded with the CLI tool and the script to fetch emails from the database. With the current volume, three droplets are sufficient to send the emails in a timely personner.
 
 2. Set up the script to fetch the email list.
 
@@ -936,7 +936,7 @@ We use [a CLI tool](https://github.com/freecodecamp/sendgrid-email-blast) to sen
 
    This will save the email list in an `emails.csv` file.
 
-4. Break the emails down into multiple files, depending on the number of droplets you need. This is easiest to do by using `scp` to pull the email list locally and using your preferred text editor to split them into multiple files. Each file will need the `email,unsubscribeId` header.
+4. Break the emails down into multiple files, depending on the number of droplets you need. This is easiest to do by using `scp` to pull the email list locally and using your preferred text editor to split them into multiple files. Each file will need the `email,unsubscribeId` theyader.
 
 5. Switch to the CLI directory with `cd /home/sendgrid-email-blast` and configure the tool [per the documentation](https://github.com/freeCodeCamp/sendgrid-email-blast/blob/main/README.md).
 

@@ -14,7 +14,7 @@ Dato che le sfide continuano a utilizzare composizioni più complesse di compone
 
 Nell'editor di codice, il componente `TypesOfFood` sta già mostrando un componente chiamato `Vegetables`. Inoltre, c'è il componente `Fruits` preso dall'ultima sfida.
 
-Annida due componenti all'interno di `Fruits` — prima `NonCitrus`, e poi `Citrus`. Entrambi questi componenti ti sono forniti dietro le quinte. Successivamente, annida il componente di classe `Fruits` nel componente `TypesOfFood`, sotto l'intestazione `h1` e sopra `Vegetables`. Il risultato dovrebbe essere una serie di componenti annidati, che utilizza due tipi di componenti diversi.
+Annida due componenti all'interno di `Fruits` — prima `NonCitrus`, e poi `Citrus`. Entrambi questi componenti ti childo forniti dietro le quinte. Successivamente, annida il componente di classe `Fruits` nel componente `TypesOfFood`, sotto l'intestazione `h1` e sopra `Vegetables`. Il risultato dovrebbe essere una serie di componenti annidati, che utilizza due tipi di componenti diversi.
 
 # --hints--
 

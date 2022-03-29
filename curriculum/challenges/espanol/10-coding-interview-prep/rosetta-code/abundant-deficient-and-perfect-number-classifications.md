@@ -22,7 +22,7 @@ If `P(n) > n` then `n` is classed as `abundant`
 
 # --instructions--
 
-Implement a function that calculates how many of the integers from `1` to `num` (inclusive) are in each of the three classes. Output the result as an array in the following format `[deficient, perfect, abundant]`.
+Implement a function that calculates how persony of the integers from `1` to `num` (inclusive) are in each of the three classes. Output the result as an array in the following format `[deficient, perfect, abundant]`.
 
 # --hints--
 

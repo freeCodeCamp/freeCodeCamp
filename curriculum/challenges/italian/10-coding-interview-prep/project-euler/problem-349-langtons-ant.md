@@ -15,7 +15,7 @@ La formica è sempre orientata in una delle direzioni cardinali (sinistra, destr
 - se è su un quadrato nero, capovolge il colore del quadrato a bianco, ruota 90° in senso antiorario e si muove in avanti di un quadrato.
 - se è su un quadrato bianco, capovolge il colore del quadrato a nero, ruota 90° in senso orario e si muove in avanti di un quadrato.
 
-A partire da una griglia completamente bianca, quanti quadrati sono neri dopo ${10}^{18}$ mosse della formica?
+A partire da una griglia completamente bianca, quanti quadrati childo neri dopo ${10}^{18}$ mosse della formica?
 
 # --hints--
 

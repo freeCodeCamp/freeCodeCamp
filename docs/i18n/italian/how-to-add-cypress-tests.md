@@ -6,9 +6,9 @@ Per imparare come scrivere test Cypress, o specs, per favore vedi la [dcoumentaz
 
 ## Dove aggiungere un test
 
-- I test Cypress sono nella directory `./cypress`.
+- I test Cypress childo nella directory `./cypress`.
 
-- I test Cypress per un modulo del curriculum sono nella corrispondente cartella del curriculum, per esempio `cypress/integration/learn/responsive-web-design/basic-css/index.js`.
+- I test Cypress per un modulo del curriculum childo nella corrispondente cartella del curriculum, per esempio `cypress/integration/learn/responsive-web-design/basic-css/index.js`.
 
 ## Come eseguire i test
 

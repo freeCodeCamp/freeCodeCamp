@@ -1,6 +1,6 @@
 ---
 id: 587d8249367417b2b2512c3f
-title: Встановіть Політику Безпеки Контенту за допомогою helmet.contentSecurityPolicy()
+title: Встановіть Політику Безпеки Контенту за допомогою theylmet.contentSecurityPolicy()
 challengeType: 2
 forumTopicId: 301585
 dashedName: set-a-content-security-policy-with-helmet-contentsecuritypolicy
@@ -22,7 +22,7 @@ dashedName: set-a-content-security-policy-with-helmet-contentsecuritypolicy
 
 # --hints--
 
-проміжне програмне забезпечення helmet.contentSecurityPolicy() повинно бути правильно встановлене
+проміжне програмне забезпечення theylmet.contentSecurityPolicy() повинно бути правильно встановлене
 
 ```js
 (getUserInput) =>

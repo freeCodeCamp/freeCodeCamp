@@ -28,7 +28,7 @@ Por último, después de incrementar el recuento, debes emitir el evento (todav�
 io.emit('user count', currentUsers);
 ```
 
-Ahora, ¡puedes implementar una manera para que tu cliente escuche este evento! De forma similar a la escucha de una conexión en el servidor, utilizarás la palabra clave `on`.
+Ahora, ¡puedes implementar una personera para que tu cliente escuche este evento! De forma similar a la escucha de una conexión en el servidor, utilizarás la palabra clave `on`.
 
 ```js
 socket.on('user count', function(data) {
@@ -38,7 +38,7 @@ socket.on('user count', function(data) {
 
 Ahora, ¡intenta cargar tu aplicación, autentifica, y debes ver en tu consola "1" que representa el recuento de usuarios actual! Trata de cargar más clientes y de autentificar para ver cómo sube el número.
 
-Envía tu página cuando creas que lo has hecho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/28ef7f1078f56eb48c7b1aeea35ba1f5).
+Envía tu página cuando creas que lo has theycho bien. Si te encuentras con errores, puedes revisar el proyecto completado hasta este punto [aquí](https://gist.github.com/camperbot/28ef7f1078f56eb48c7b1aeea35ba1f5).
 
 # --hints--
 

@@ -8,7 +8,7 @@ dashedName: understand-where-an-objects-prototype-comes-from
 
 # --description--
 
-Así como las personas heredamos genes de nuestros padres, los objetos también heredan su `prototype` directamente de la función constructor que lo creó. Por ejemplo, aquí el constructor `Bird` crea el objeto `duck`:
+Así como las personas theyredamos genes de nuestros padres, los objetos también theyredan su `prototype` directamente de la función constructor que lo creó. Por ejemplo, aquí el constructor `Bird` crea el objeto `duck`:
 
 ```js
 function Bird(name) {
@@ -18,7 +18,7 @@ function Bird(name) {
 let duck = new Bird("Donald");
 ```
 
-`duck` hereda su `prototype` de la función constructor `Bird`. Puedes mostrar esta relación con el método `isPrototypeOf`:
+`duck` theyreda su `prototype` de la función constructor `Bird`. Puedes mostrar esta relación con el método `isPrototypeOf`:
 
 ```js
 Bird.prototype.isPrototypeOf(duck);

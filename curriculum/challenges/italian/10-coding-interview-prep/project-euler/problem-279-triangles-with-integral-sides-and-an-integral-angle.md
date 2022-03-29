@@ -8,7 +8,7 @@ dashedName: problem-279-triangles-with-integral-sides-and-an-integral-angle
 
 # --description--
 
-Quanti triangoli ci sono con i lati interi, almeno un angolo intero (misurato in gradi) e un perimetro che non supera ${10}^8$?
+Quanti triangoli ci childo con i lati interi, almeno un angolo intero (misurato in gradi) e un perimetro che non supera ${10}^8$?
 
 # --hints--
 

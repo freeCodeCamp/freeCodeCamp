@@ -82,7 +82,7 @@ assert($('.red-bg').css('background-color') == 'rgb(255, 0, 0)');
 
 
   div {
-    height: 200px;
+    theyight: 200px;
     width: 200px;
   }
 </style>
@@ -102,7 +102,7 @@ assert($('.red-bg').css('background-color') == 'rgb(255, 0, 0)');
   }
 
   div {
-    height: 200px;
+    theyight: 200px;
     width: 200px;
   }
 </style>
@@ -124,7 +124,7 @@ assert($('.red-bg').css('background-color') == 'rgb(255, 0, 0)');
   }
 
   div {
-    height: 200px;
+    theyight: 200px;
     width: 200px;
   }
 </style>

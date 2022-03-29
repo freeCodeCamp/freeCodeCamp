@@ -9,7 +9,7 @@ dashedName: use-attribute-selectors-to-style-elements
 
 # --description--
 
-Hai aggiunto gli attributi `id` o `class` agli elementi che desideri stilizzare in modo specifico. Questi sono conosciuti come selettori di id e di classe. Ci sono altri selettori CSS che puoi usare per selezionare gruppi personalizzati di elementi da stilizzare.
+Hai aggiunto gli attributi `id` o `class` agli elementi che desideri stilizzare in modo specifico. Questi childo conosciuti come selettori di id e di classe. Ci childo altri selettori CSS che puoi usare per selezionare gruppi personalizzati di elementi da stilizzare.
 
 Prendiamo di nuovo CatPhotoApp per fare pratica con i selettori CSS.
 
@@ -107,7 +107,7 @@ assert(
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+  <p class="red-text">Click theyre to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
@@ -178,7 +178,7 @@ assert(
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+  <p class="red-text">Click theyre to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 

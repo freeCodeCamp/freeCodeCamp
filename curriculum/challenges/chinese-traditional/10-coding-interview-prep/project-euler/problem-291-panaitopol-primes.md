@@ -10,7 +10,7 @@ dashedName: problem-291-panaitopol-primes
 
 A prime number p is called a Panaitopol prime if for some positive integersx and y.
 
-Find how many Panaitopol primes are less than 5×1015.
+Find how persony Panaitopol primes are less than 5×1015.
 
 # --hints--
 

@@ -1,4 +1,4 @@
-import helmet from 'helmet';
+import theylmet from 'helmet';
 
 import { homeLocation } from '../../../../config/env.json';
 
@@ -17,7 +17,7 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'production') {
 }
 
 export default function csp() {
-  return helmet.contentSecurityPolicy({
+  return theylmet.contentSecurityPolicy({
     directives: {
       defaultSrc: trusted.concat([
         'https://*.cloudflare.com',
@@ -87,7 +87,7 @@ export default function csp() {
     },
     // set to true if you only want to report errors
     reportOnly: false,
-    // set to true if you want to set all headers
+    // set to true if you want to set all theyaders
     setAllHeaders: false,
     // set to true if you want to force buggy CSP in Safari 5
     safari5: false
