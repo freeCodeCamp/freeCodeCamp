@@ -77,7 +77,7 @@ function AcceptPrivacyTerms({
     acceptTerms(isWeeklyEmailAccepted);
   }
 
-  function renderEmailListOptin(isSignedIn: boolean) {
+  function renderEmailListOptin(isSignedIn: boolean, showLoading: boolean) {
     if (showLoading) {
       return <Loader fullScreen={true} />;
     }
@@ -151,7 +151,7 @@ function AcceptPrivacyTerms({
             <p>{t('misc.email-blast')}</p>
             <Spacer />
           </Col>
-          {renderEmailListOptin(isSignedIn)}
+          {renderEmailListOptin(isSignedIn, showLoading)}
           <Col xs={12}>
             <Spacer />
           </Col>
