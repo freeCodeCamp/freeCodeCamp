@@ -10,7 +10,7 @@ Wenn du neue Schritte erstellen willst, vereinfachen die folgenden Tools diesen 
 
 ## Nächsten Schritt erstellen
 
-A one-off script that will automatically add the next step based on the last step in the project. The challenge seed code will use the previous step's challenge seed code.
+Ein einmaliges Skript, das automatisch den nächsten Schritt basierend auf dem letzten Schritt des Projekts hinzufügt. Der Aufgaben-Startcode verwendet den Startcode aus der vorherigen Aufgabe.
 
 ### So führst du das Skript aus:
 
@@ -23,9 +23,9 @@ npm run create-next-step
 
 ## leere Schritte erstellen
 
-A one-off script that automatically adds a specified number of steps. The challenge seed code for all steps created will be empty.
+Ein einmaliges Skript, das automatisch eine bestimmte Anzahl von Schritten hinzufügt. Der Aufgaben-Seed-Code für alle erstellten Schritte wird leer sein.
 
-**Note:** This script also runs [update-step-titles](#update-step-titles).
+**Hinweis:** Dieses Skript führt auch [update-step-titles](#update-step-titles) aus.
 
 ### So führst du das Skript aus:
 
@@ -33,14 +33,14 @@ A one-off script that automatically adds a specified number of steps. The challe
 2. Führe den folgenden npm-Befehl aus:
 
 ```bash
-npm run create-empty-steps X # where X is the number of steps to create.
+npm run create-empty-steps X # wobei X die Anzahl der zu erstellenden Schritte ist.
 ```
 
 ## insert-step
 
-A one-off script that automatically adds a new step at a specified position, incrementing all subsequent steps (both their titles and in their meta.json). The challenge seed code will use the previous step's challenge seed code with the editable region markers (ERMs) removed.
+Ein Einmal-Skript, das automatisch einen neuen Schritt an einer bestimmten Stelle hinzufügt und alle nachfolgenden Schritte (sowohl ihre Titel als auch in ihrem meta.json) erhöht. Der Aufgaben-Seed-Code (initialer Startcode im Editor) verwendet den Aufgaben-Seed-Code des vorherigen Schritts, wobei die Editable Region Markers (ERMs) entfernt werden.
 
-**Note:** This script also runs [update-step-titles](#update-step-titles).
+**Hinweis:** Dieses Skript führt auch [update-step-titles](#update-step-titles) aus.
 
 ### So führst du das Skript aus:
 
@@ -48,14 +48,14 @@ A one-off script that automatically adds a new step at a specified position, inc
 2. Führe den folgenden npm-Befehl aus:
 
 ```bash
-npm run insert-step X # where X is the position to insert the new step.
+npm run insert-step X # wobei X die Position ist, an der der neue Schritt eingefügt werden soll.
 ```
 
 ## Lösche eine Schritt
 
-A one-off script that deletes an existing step, decrementing all subsequent steps (both their titles and in their meta.json)
+Ein einmaliges Skript, das einen bestehenden Schritt löscht und alle nachfolgenden Schritte dekrementiert (sowohl ihre Titel als auch in ihrer meta.json)
 
-**Note:** This script also runs [update-step-titles](#update-step-titles).
+**Hinweis:** Dieses Skript führt auch [update-step-titles](#update-step-titles) aus.
 
 ### So führst du das Skript aus
 
@@ -63,14 +63,14 @@ A one-off script that deletes an existing step, decrementing all subsequent step
 2. Führe den folgenden npm-Befehl aus:
 
 ```bash
-npm run delete-step X # where X is the step number to be deleted.
+npm run delete-step X # wobei X die Schrittnummer ist, die gelöscht werden soll.
 ```
 
 ## update-step-titles
 
-A one-off script that automatically updates the frontmatter in a project's markdown files so that they are consistent with the project's meta.json. It ensures that each step's title (and dashedName) match the meta's challengeOrder.
+Ein einmaliges Skript, das automatisch die Frontmatter in den Markdown-Dateien eines Projekts aktualisiert, damit sie mit der meta.json des Projekts übereinstimmen. Es stellt sicher, dass der Titel (und der dashedName) jedes Schritts mit der challengeOrder des Metas übereinstimmt.
 
-### How to run script
+### Wie man das Skript ausführt
 
 1. Wechsle in das Verzeichnis des Projekts.
 2. Führe den folgenden npm-Befehl aus:
