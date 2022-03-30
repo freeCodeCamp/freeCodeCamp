@@ -378,6 +378,7 @@ const Editor = (props: EditorProps): JSX.Element => {
           if (challengeIsComplete()) {
             props.submitChallenge();
           } else {
+            clearTestFeedback();
             props.executeChallenge();
           }
         } else {
@@ -561,25 +562,41 @@ const Editor = (props: EditorProps): JSX.Element => {
     return domNode;
   }
 
+  function clearTestFeedback() {
+    const testStatus = document.getElementById('test-status');
+    if (testStatus) {
+      testStatus.innerHTML = '';
+    }
+  }
+
   function createOutputNode(editor: editor.IStandaloneCodeEditor) {
     if (dataRef.current.outputNode) return dataRef.current.outputNode;
     const outputNode = document.createElement('div');
+    //const ariaLiveNode = document.createElement('div');
     const statusNode = document.createElement('div');
-    const hintNode = document.createElement('div');
     const editorActionRow = document.createElement('div');
     editorActionRow.classList.add('action-row-container');
     outputNode.classList.add('editor-lower-jaw');
     outputNode.appendChild(editorActionRow);
-    hintNode.setAttribute('id', 'test-output');
+    //ariaLiveNode.setAttribute('aria-live', 'assertive');
     statusNode.setAttribute('id', 'test-status');
+    statusNode.setAttribute('aria-live', 'assertive');
     const button = document.createElement('button');
     button.setAttribute('id', 'test-button');
     button.classList.add('btn-block');
     button.innerHTML = 'Check Your Code (Ctrl + Enter)';
+    const submitButton = document.createElement('button');
+    submitButton.setAttribute('id', 'submit-button');
+    submitButton.setAttribute('aria-hidden', 'true');
+    submitButton.innerHTML = 'Submit your code (Ctrl + Enter)';
+    submitButton.classList.add('btn-block');
     editorActionRow.appendChild(button);
+    editorActionRow.appendChild(submitButton);
+    //ariaLiveNode.appendChild(statusNode);
+    //ariaLiveNode.appendChild(hintNode);
     editorActionRow.appendChild(statusNode);
-    editorActionRow.appendChild(hintNode);
     button.onclick = () => {
+      clearTestFeedback();
       const { executeChallenge } = props;
       executeChallenge();
     };
@@ -598,17 +615,12 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (testButton) {
       testButton.innerHTML = 'Check Your Code (Ctrl + Enter)';
       testButton.onclick = () => {
+        clearTestFeedback();
         props.executeChallenge();
       };
     }
-    const testStatus = document.getElementById('test-status');
-    if (testStatus) {
-      testStatus.innerHTML = '';
-    }
-    const testOutput = document.getElementById('test-output');
-    if (testOutput) {
-      testOutput.innerHTML = '';
-    }
+
+    clearTestFeedback();
 
     // Resetting margin decorations
     const range = model?.getDecorationRange(insideEditDecId);
@@ -985,18 +997,34 @@ const Editor = (props: EditorProps): JSX.Element => {
     const { output } = props;
     const { model, insideEditDecId } = dataRef.current;
     const editableRegion = getEditableRegionFromRedux();
+    const isEditorInFocus = document.activeElement?.tagName === 'TEXTAREA';
     if (editableRegion.length === 2) {
-      const testOutput = document.getElementById('test-output');
       const testStatus = document.getElementById('test-status');
       if (challengeIsComplete()) {
         const testButton = document.getElementById('test-button');
-        if (testButton) {
-          testButton.innerHTML =
-            'Submit your code and go to next challenge (Ctrl + Enter)';
-          testButton.onclick = () => {
+        // We don't want to remove the test button from the accessibility API
+        // at this point because we don't want to lose focus until we set it
+        // on the submit button, so just visually hide it for now.
+        testButton?.classList.add('sr-only');
+        const submitButton = document.getElementById('submit-button');
+        if (submitButton) {
+          submitButton.removeAttribute('aria-hidden');
+          submitButton.onclick = () => {
+            clearTestFeedback();
             const { submitChallenge } = props;
             submitChallenge();
           };
+          // Give the aria-live announcement a little time before setting
+          // focus on submit button to make sure it gets announced first.
+          setTimeout(() => {
+            // Order is important. Must set focus on submit button before
+            // removing test button from accessibility API since test button
+            // might have focus.
+            if (!isEditorInFocus) {
+              submitButton.focus();
+            }
+            testButton?.setAttribute('aria-hidden', 'true');
+          }, 500);
         }
 
         const range = model?.getDecorationRange(insideEditDecId);
@@ -1010,23 +1038,26 @@ const Editor = (props: EditorProps): JSX.Element => {
           );
         }
 
-        if (testOutput && testStatus) {
-          testOutput.innerHTML = '';
-          testStatus.innerHTML = '&#9989; Step completed.';
+        const submitKeyboardInstructions = isEditorInFocus
+          ? '<span class="sr-only">Use Ctrl + Enter to submit.'
+          : '';
+
+        if (testStatus) {
+          testStatus.innerHTML = `<p class="status"><span aria-hidden="true">&#9989;</span> Congratulations, your code passes. Submit your code to complete this step and move on to the next one. ${submitKeyboardInstructions}</p>`;
         }
-      } else if (challengeHasErrors() && testStatus && testOutput) {
+      } else if (challengeHasErrors() && testStatus) {
         const wordsArray = [
-          "Not quite. Here's a hint:",
-          'Try again. This might help:',
-          'Keep trying. A quick hint for you:',
-          "You're getting there. This may help:",
-          "Hang in there. You'll get there. A hint:",
-          "Don't give up. Here's a hint to get you thinking:"
+          'Try again.',
+          'Keep trying.',
+          "You're getting there.",
+          'Hang in there.',
+          "Don't give up."
         ];
-        testStatus.innerHTML = `✖️ ${
+        testStatus.innerHTML = `<p class="status"><span aria-hidden="true">✖️</span> Sorry, your code does not pass. ${
           wordsArray[Math.floor(Math.random() * wordsArray.length)]
-        }`;
-        testOutput.innerHTML = `${output[1]}`;
+        }</p><div><h2 class="hint">Hint<span aria-hidden="true">:</span></h2> ${
+          output[1]
+        }</div>`;
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

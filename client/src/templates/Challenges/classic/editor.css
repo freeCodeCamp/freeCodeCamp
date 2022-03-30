@@ -62,6 +62,10 @@
   animation-delay: 0.5s;
 }
 
+.action-row-container button[aria-hidden='true'] {
+  display: none;
+}
+
 @keyframes example {
   from {
     background-color: var(--highlight-background);
@@ -78,6 +82,23 @@
 #test-status {
   padding-bottom: 5px;
   padding-top: 5px;
+}
+
+#test-status .status {
+  font-family: revert;
+}
+
+#test-status p {
+  margin: 0.5rem 0 0;
+}
+
+#test-status h2 {
+  font-size: 1rem;
+  line-height: 1.5;
+  padding-right: 0.5rem;
+  /* using float instead of inline display so screen readers recognize h2 as a block element */
+  float: left;
+  margin: 0;
 }
 
 .myEditableLineDecoration {
