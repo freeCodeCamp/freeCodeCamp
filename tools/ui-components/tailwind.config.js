@@ -56,6 +56,7 @@ module.exports = {
       }
     },
     borderWidth: {
+      1: '1px',
       3: '3px'
     },
     fontSize: {
@@ -82,7 +83,8 @@ module.exports = {
         39: '39px'
       },
       padding: {
-        'px-7': '7px 0px'
+        'px-7': '7px 0px',
+        'px-6-12': '6px 12px'
       }
     }
   },
