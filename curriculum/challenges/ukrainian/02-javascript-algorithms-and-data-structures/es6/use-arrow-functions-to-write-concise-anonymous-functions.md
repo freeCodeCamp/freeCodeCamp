@@ -45,13 +45,13 @@ const myFunc = () => "value";
 Вам слід замінити ключове слово `var`.
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/var/g));
+assert.notMatch(code, /var/g)
 ```
 
 `magic` має бути постійною змінною (використовуйте `const`).
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/const\s+magic/g));
+assert.match(code, /const\s+magic/g)
 ```
 
 `magic` має бути `function`.
@@ -69,7 +69,7 @@ assert(magic().setHours(0, 0, 0, 0) === new Date().setHours(0, 0, 0, 0));
 Не використовуйте ключове слово `function`.
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/function/g));
+assert.notMatch(code, /function/g)
 ```
 
 # --seed--
