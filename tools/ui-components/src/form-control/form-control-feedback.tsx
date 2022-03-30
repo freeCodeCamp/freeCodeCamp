@@ -8,7 +8,8 @@ export const FormControlFeedback = ({
   testId
 }: FormControlVariationProps) => {
   const defaultClasses =
-    'absolute top-0 right-0 z-2 block w-39 h-39 leading-39 text-center pointer-events-none';
+    'absolute top-0 right-0 z-2 block w-8 h-8 leading-8 ' +
+    'text-center pointer-events-none text-green-700';
 
   const classes = [defaultClasses, className].join(' ');
   return (

@@ -7,7 +7,7 @@ import { FormControlProps } from './types';
 const FormControl = React.forwardRef<HTMLInputElement, FormControlProps>(
   ({ className, id, testId }, ref): JSX.Element => {
     const defaultClasses =
-      'outline-0 block w-full h-39 p-px-6-12 text-md text-default-foreground-primary ' +
+      'outline-0 block w-full h-8 py-1.5 px-2.5 text-md text-default-foreground-primary ' +
       'bg-default-background-primary bg-none rounded-none border-1 border-solid ' +
       'border-default-background-quaternary shadow-none ' +
       'transition ease-in-out duration-150 focus:border-default-foreground-tertiary';

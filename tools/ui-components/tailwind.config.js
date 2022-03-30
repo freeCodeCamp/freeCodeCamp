@@ -72,19 +72,6 @@ module.exports = {
     extend: {
       zIndex: {
         2: '2'
-      },
-      width: {
-        39: '39px'
-      },
-      height: {
-        39: '39px'
-      },
-      lineHeight: {
-        39: '39px'
-      },
-      padding: {
-        'px-7': '7px 0px',
-        'px-6-12': '6px 12px'
       }
     }
   },
