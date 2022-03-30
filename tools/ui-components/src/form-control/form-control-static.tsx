@@ -7,8 +7,11 @@ export const FormControlStatic = ({
   children,
   testId
 }: FormControlVariationProps) => {
+  const defaultClasses = 'p-px-7 mb-0 min-h-43-px';
+
+  const classes = [defaultClasses, className].join(' ');
   return (
-    <p className={className} data-testid={testId}>
+    <p className={classes} data-testid={testId}>
       {children}
     </p>
   );

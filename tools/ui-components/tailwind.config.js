@@ -65,6 +65,9 @@ module.exports = {
       md: ['18px', '1.42857143'],
       lg: ['24px', '1.3333333']
     },
+    minHeight: {
+      '43-px': '43px'
+    },
     extend: {
       zIndex: {
         2: '2'
@@ -77,6 +80,9 @@ module.exports = {
       },
       lineHeight: {
         39: '39px'
+      },
+      padding: {
+        'px-7': '7px 0px'
       }
     }
   },
