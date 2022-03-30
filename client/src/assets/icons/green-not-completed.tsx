@@ -1,15 +1,18 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-function GreenNotCompleted(
-  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
-): JSX.Element {
+interface GreenNotCompletedProps
+  extends JSX.IntrinsicAttributes,
+    React.SVGProps<SVGSVGElement> {
+  suppressSrOnly: boolean;
+}
+
+function GreenNotCompleted(props: GreenNotCompletedProps): JSX.Element {
   const { t } = useTranslation();
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  const suppressSrOnly = props['data-suppress-sronly'];
+  const { suppressSrOnly, ...rest } = props;
   return (
     <>
-      {suppressSrOnly !== 'true' && (
+      {!suppressSrOnly && (
         <span className='sr-only'>{t('icons.not-passed')}</span>
       )}
       <svg
@@ -18,7 +21,7 @@ function GreenNotCompleted(
         viewBox='0 0 200 200'
         width='50'
         xmlns='http://www.w3.org/2000/svg'
-        {...props}
+        {...rest}
       >
         <g>
           <title>{t('icons.not-passed')}</title>

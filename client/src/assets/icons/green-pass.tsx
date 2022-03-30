@@ -1,23 +1,24 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-function GreenPass(
-  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
-): JSX.Element {
+interface GreenPassProps
+  extends JSX.IntrinsicAttributes,
+    React.SVGProps<SVGSVGElement> {
+  suppressLabel: boolean;
+}
+function GreenPass(props: GreenPassProps): JSX.Element {
   const { t } = useTranslation();
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  const suppressLabel = props['data-suppress-label'];
-
+  const { suppressLabel, ...rest } = props;
   return (
     <>
       <svg
-        {...(suppressLabel === 'true' && { 'aria-hidden': true })}
-        {...(suppressLabel !== 'true' && { 'aria-label': t('icons.passed') })}
+        {...(suppressLabel && { 'aria-hidden': true })}
+        {...(!suppressLabel && { 'aria-label': t('icons.passed') })}
         height='50'
         viewBox='0 0 200 200'
         width='50'
         xmlns='http://www.w3.org/2000/svg'
-        {...props}
+        {...rest}
       >
         <g aria-hidden='true'>
           <title>{t('icons.passed')}</title>
