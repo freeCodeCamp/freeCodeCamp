@@ -16,7 +16,6 @@ import {
 import { saveChallengeComplete } from './';
 
 export function* saveChallengeSaga() {
-  console.log('saveChallengeSaga');
   const { id, challengeType } = yield select(challengeMetaSelector);
   const { challengeFiles } = yield select(challengeDataSelector);
 
