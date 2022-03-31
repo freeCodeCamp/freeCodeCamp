@@ -8,7 +8,7 @@ const story = {
   component: HelpBlock,
   parameters: {
     controls: {
-      include: ['className']
+      include: ['className', 'children']
     }
   }
 };
