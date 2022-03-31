@@ -236,13 +236,12 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
   const isCert = path.extname(filePath) === '.yml';
   // TODO: there's probably a better way, but this makes sure we don't build any
   // of the new curriculum when we don't want it.
-  if (
-    process.env.SHOW_NEW_CURRICULUM !== 'true' &&
-    meta?.superBlock === '2022/responsive-web-design'
-  ) {
-    return;
-  }
-  const createChallenge = generateChallengeCreator(CHALLENGES_DIR, lang);
+  // if (
+  //   process.env.SHOW_NEW_CURRICULUM !== 'true' &&
+  //   meta?.superBlock === '2022/responsive-web-design'
+  // ) {
+  //   return;
+  // }
   const challenge = isCert
     ? await createCertification(CHALLENGES_DIR, filePath, lang)
     : await createChallenge(filePath, meta);
