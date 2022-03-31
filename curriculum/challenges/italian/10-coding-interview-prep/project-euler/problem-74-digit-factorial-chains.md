@@ -14,11 +14,15 @@ $$1! + 4! + 5! = 1 + 24 + 120 = 145$$
 
 Forse meno noto è 169, in quanto produce la più lunga catena di numeri che riportano a 169; si scopre che esistono solo tre di questi loop:
 
-$$\begin{align} &169 → 363601 → 1454 → 169\\\\ &871 → 45361 → 871\\\\ &872 → 45362 → 872\\\\ \end{align}$$
+$$\begin{align} &169 → 363601 → 1454 → 169\\\\
+&871 → 45361 → 871\\\\ &872 → 45362 → 872\\\\
+\end{align}$$
 
 Non è difficile dimostrare che OGNI numero di partenza alla fine entrerà in un ciclo. Per esempio,
 
-$$\begin{align} &69 → 363600 → 1454 → 169 → 363601\\ (→ 1454)\\\\ &78 → 45360 → 871 → 45361\\ (→ 871)\\\\ &540 → 145\\ (→ 145)\\\\ \end{align}$$
+$$\begin{align} &69 → 363600 → 1454 → 169 → 363601\\ (→ 1454)\\\\
+&78 → 45360 → 871 → 45361\\ (→ 871)\\\\ &540 → 145\\ (→ 145)\\\\
+\end{align}$$
 
 Partire con 69 produce una catena di cinque termini non ripetibili, ma la più lunga catena non ripetibile con un numero iniziale inferiore a un milione è di sessanta termini.
 

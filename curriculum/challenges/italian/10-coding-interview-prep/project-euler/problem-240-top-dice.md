@@ -10,7 +10,9 @@ dashedName: problem-240-top-dice
 
 Ci sono 1111 modi in cui cinque dadi a 6 facce (le facce numerate da 1 a 6) possono essere lanciati in modo che i tre più grandi sommino a 15. Alcuni esempi sono:
 
-$$\begin{align} & D_1,D_2,D_3,D_4,D_5 = 4,3,6,3,5 \\\\ & D_1,D_2,D_3,D_4,D_5 = 4,3,3,5,6 \\\\ & D_1,D_2,D_3,D_4,D_5 = 3,3,3,6,6 \\\\ & D_1,D_2,D_3,D_4,D_5 = 6,6,3,3,3 \end{align}$$
+$$\begin{align}   & D_1,D_2,D_3,D_4,D_5 = 4,3,6,3,5 \\\\
+  & D_1,D_2,D_3,D_4,D_5 = 4,3,3,5,6 \\\\   & D_1,D_2,D_3,D_4,D_5 = 3,3,3,6,6 \\\\
+  & D_1,D_2,D_3,D_4,D_5 = 6,6,3,3,3 \end{align}$$
 
 In quanti modi si possono lanciare venti dadi a 12 facce (facce numerate da 1 a 12) in modo che la somma dei dieci maggiori a 70?
 

@@ -16,7 +16,7 @@ Creiamo un trie per memorizzare parole. Accetterà parole attraverso un metodo `
 
 # --hints--
 
-Il Trie dovrebbe avere un metodo add.
+La tua classe `HashTable` dovrebbe avere un metodo `add`.
 
 ```js
 assert(
@@ -32,7 +32,7 @@ assert(
 );
 ```
 
-Il Trie dovrebbe avere un metodo print.
+Il `Trie` dovrebbe avere `print` come metodo.
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-Il Trie dovrebbe avere un metodo isWord.
+La tua classe `HashTable` dovrebbe avere un metodo `add`.
 
 ```js
 assert(
@@ -93,7 +93,7 @@ assert(
 );
 ```
 
-Il metodo isWord dovrebbe restituire vero solo per le parole aggiunte al trie e falso per tutte le altre parole.
+Il `has` dovrebbe ritornare `true` per gli oggetti aggiunti `false` per consentire gli altri oggetti.
 
 ```js
 assert(

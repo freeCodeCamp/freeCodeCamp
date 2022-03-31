@@ -10,7 +10,8 @@ dashedName: problem-288-an-enormous-factorial
 
 Per ogni numero primo $p$ il numero $N(p, q)$ è definito da $N(p,q) = \sum_{n=0}^q T_n \times p^n$ con $T_n$ generato dal seguente generatore casuale di numeri:
 
-$$\begin{align} & S_0 = 290797 \\\\ & S_{n + 1} = {S_n}^2\bmod 50\\,515\\,093 \\\\ & T_n = S_n\bmod p \end{align}$$
+$$\begin{align}   & S_0 = 290797 \\\\
+  & S_{n + 1} = {S_n}^2\bmod 50\\,515\\,093 \\\\ & T_n = S_n\bmod p \end{align}$$
 
 Sia $Nfac(p,q)$ il fattoriale di $N(p,q)$.
 

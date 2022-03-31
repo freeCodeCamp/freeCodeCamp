@@ -16,7 +16,9 @@ Una mossa è indicata dall'iniziale maiuscolo della direzione (sinistra, destra,
 
 Per ogni percorso, il suo checksum è calcolato con (pseudocodice):
 
-$$\begin{align} & \text{checksum} = 0 \\\\ & \text{checksum} = (\text{checksum} × 243 + m_1) \\; \text{mod} \\; 100\\,000\\,007 \\\\ & \text{checksum} = (\text{checksum} × 243 + m_2) \\; \text{mod} \\; 100\\,000\\,007 \\\\ & \ldots \\\\ & \text{checksum} = (\text{checksum} × 243 + m_n) \\; \text{mod} \\; 100\\,000\\,007 \end{align}$$
+$$\begin{align}   & \text{checksum} = 0 \\\\
+  & \text{checksum} = (\text{checksum} × 243 + m_1) \\; \text{mod} \\; 100\\,000\\,007 \\\\   & \text{checksum} = (\text{checksum} × 243 + m_2) \\; \text{mod} \\; 100\\,000\\,007 \\\\
+  & \ldots \\\\ & \text{checksum} = (\text{checksum} × 243 + m_n) \\; \text{mod} \\; 100\\,000\\,007 \end{align}$$
 
 dove $m_k$ è il valore ASCII della $k^{\text{th}}$-ma lettera nella sequenza di movimento e i valori ASCII per le mosse sono:
 

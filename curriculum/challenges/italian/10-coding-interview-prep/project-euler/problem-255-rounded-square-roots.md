@@ -28,7 +28,8 @@ Ad esempio, cerchiamo di trovare la radice-quadrata-arrotondata di $n = 4321$.
 
 $n$ ha 4 cifre, quindi $x_0 = 7 × {10}^{\frac{4-2}{2}} = 70$.
 
-$$x_1 = \left\lfloor\frac{70 + \left\lceil\frac{4321}{70}\right\rceil}{2}\right\rfloor = 66 \\\\ x_2 = \left\lfloor\frac{66 + \left\lceil\frac{4321}{66}\right\rceil}{2}\right\rfloor = 66$$
+$$x_1 = \left\lfloor\frac{70 + \left\lceil\frac{4321}{70}\right\rceil}{2}\right\rfloor = 66 \\\\
+x_2 = \left\lfloor\frac{66 + \left\lceil\frac{4321}{66}\right\rceil}{2}\right\rfloor = 66$$
 
 Dal momento che $x_2 = x_1$, ci fermiamo qui. Così, dopo solo due iterazioni, abbiamo scoperto che la radice-quadrata-arrotondata di 4321 è 66 (la vera radice quadrata è 65.7343137…).
 
