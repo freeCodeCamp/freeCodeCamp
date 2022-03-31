@@ -13,7 +13,7 @@ const story = {
   },
   argTypes: {
     variant: {
-      options: ['primary', 'danger']
+      options: ['primary', 'danger', 'info']
     },
     size: {
       options: ['small', 'medium', 'large']
