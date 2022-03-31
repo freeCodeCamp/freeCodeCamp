@@ -37,6 +37,16 @@ assert(
       'Disquisitiones Arithmeticae'
     ])
 );
+remove(bookList, "The Hound of the Baskervilles");
+assert(
+  JSON.stringify(bookList) ===
+    JSON.stringify([
+      'The Hound of the Baskervilles',
+      'On The Electrodynamics of Moving Bodies',
+      'Philosophiæ Naturalis Principia Mathematica',
+      'Disquisitiones Arithmeticae'
+    ])
+);
 ```
 
 `add(bookList, "A Brief History of Time")` should return `["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae", "A Brief History of Time"]`.
