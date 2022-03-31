@@ -10,7 +10,8 @@ dashedName: problem-340-crazy-function
 
 Per gli interi fissati $a$, $b$, $c$, definire la funzione pazza $F(n)$ come segue:
 
-$$\begin{align} & F(n) = n - c \\;\text{ per ogni } n > b \\\\ & F(n) = F(a + F(a + F(a + F(a + n)))) \\;\text{ per ogni } n ≤ b. \end{align}$$
+$$\begin{align}   & F(n) = n - c \\;\text{ per ogni } n > b \\\\
+  & F(n) = F(a + F(a + F(a + F(a + n)))) \\;\text{ per ogni } n ≤ b. \end{align}$$
 
 Inoltre, definisci $S(a, b, c) = \displaystyle\sum_{n = 0}^b F(n)$.
 

@@ -4,6 +4,7 @@ const selectors = {
 
 describe('Certification intro page', () => {
   before(() => {
+    cy.exec('npm run seed');
     cy.clearCookies();
     cy.login();
     cy.visit('/learn/responsive-web-design');

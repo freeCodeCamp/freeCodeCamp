@@ -10,7 +10,9 @@ dashedName: problem-81-path-sum-two-ways
 
 Nella matrice 5x5 sotto, il percorso della somma più piccola dall'angolo in alto a sinistra all'angolo in basso a destra, **muovendo solo verso destra e verso il basso**, è indicato in rosso grassetto ed è uguale a `2427`.
 
-  $$\begin{pmatrix} \color{red}{131} & 673 & 234 & 103 & 18\\\\ \color{red}{201} & \color{red}{96} & \color{red}{342} & 965 & 150\\\\ 630 & 803 & \color{red}{746} & \color{red}{422} & 111\\\\ 537 & 699 & 497 & \color{red}{121} & 956\\\\ 805 & 732 & 524 & \color{red}{37} & \color{red}{331} \end{pmatrix}$$
+  $$\begin{pmatrix}   \color{red}{131} & 673 & 234 & 103 & 18\\\\
+  \color{red}{201} & \color{red}{96} & \color{red}{342} & 965 & 150\\\\   630 & 803 & \color{red}{746} & \color{red}{422} & 111\\\\
+  537 & 699 & 497 & \color{red}{121} & 956\\\\ 805 & 732 & 524 & \color{red}{37} & \color{red}{331} \end{pmatrix}$$
 
 Trova il percorso della somma più piccola dall'angolo in alto a sinistra all'angolo in basso a destra muovendo solo verso destra e verso il basso in `matrix`, un array 2D rappresentante una matrice. La dimenzione più grande di una matrice usata nei test è 80x80.
 

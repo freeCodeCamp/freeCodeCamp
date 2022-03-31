@@ -16,7 +16,10 @@ Ad esempio, considera due ciotole adiacenti contenenti 2 e 3 fagioli rispettivam
 
 animazione di una partita con due ciotole adiacenti contenenti rispettivamente 2 e 3 fagioli:
 
-$$\begin{align} & t_0 = 123456, \\\\ & t_i = \begin{cases} \frac{t_{i - 1}}{2},               & \text{if $t_{i - 1}$ is even} \\\\ \left\lfloor\frac{t_{i - 1}}{2}\right\rfloor \oplus 926252, & \text{if $t_{i - 1}$ is odd} \end{cases} \\\\ & \qquad \text{dove$⌊x⌋$ è la funzione arrotonda verso il basso e $\oplus$ è l'operatore bitwise XOR.} \\\\ & b_i = (t_i\bmod 2^{11}) + 1. \end{align}$$
+$$\begin{align}   & t_0 = 123456, \\\\
+  & t_i = \begin{cases}          \frac{t_{i - 1}}{2},               & \text{if $t_{i - 1}$ is even} \\\\
+         \left\lfloor\frac{t_{i - 1}}{2}\right\rfloor \oplus 926252, & \text{if $t_{i - 1}$ is odd}          \end{cases} \\\\
+         & \qquad \text{dove$⌊x⌋$ è la funzione arrotonda verso il basso e $\oplus$ è l'operatore bitwise XOR.} \\\\ & b_i = (t_i\bmod 2^{11}) + 1. \end{align}$$
 
 I primi due termini dell'ultima sequenza sono $b_1 = 289$ e $b_2 = 145$. Se iniziamo con $b_1$ e $b_2$ fagioli in due ciotole adiacenti, saranno necessarie 3419100 mosse per finire la partita.
 

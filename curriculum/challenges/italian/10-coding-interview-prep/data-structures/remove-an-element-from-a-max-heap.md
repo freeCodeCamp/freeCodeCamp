@@ -22,7 +22,7 @@ Istruzioni: Aggiungere un metodo al nostro max-heap chiamato `remove`. Questo me
 
 # --hints--
 
-La struttura dati MaxHeap dovrebbe esistere.
+La struttura dati `MaxHeap` dovrebbe esistere
 
 ```js
 assert(
@@ -36,7 +36,7 @@ assert(
 );
 ```
 
-MaxHeap dovrebbe avere un metodo chiamato print.
+`MaxHeap` dovrebbe avere un metodo chiamato `print`.
 
 ```js
 assert(
@@ -52,7 +52,7 @@ assert(
 );
 ```
 
-MaxHeap dovrebbe avere un metodo chiamato insert.
+`MaxHeap`dovrebbe avere un metodo chiamato `insert`.
 
 ```js
 assert(
@@ -68,7 +68,7 @@ assert(
 );
 ```
 
-MaxHeap dovrebbe avere un metodo chiamato remove.
+`MaxHeap`dovrebbe avere un metodo chiamato `remove`.
 
 ```js
 assert(

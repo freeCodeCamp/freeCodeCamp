@@ -16,7 +16,8 @@ Questo funziona anche con numeri che hanno meno di 4 cifre se aggiungiamo al num
 
 Ad es. iniziamo con il numero 0837:
 
-$$\begin{align} & 8730 - 0378 = 8352 \\\\ & 8532 - 2358 = 6174 \end{align}$$
+$$\begin{align}   & 8730 - 0378 = 8352 \\\\
+  & 8532 - 2358 = 6174 \end{align}$$
 
 6174 è chiamata costante Kaprekar. Il processo di ordinamento e sottrazione e ripetizione fino a quando non si raggiunge lo 0 o la costante Kaprekar è chiamato la routine di Kaprekar.
 

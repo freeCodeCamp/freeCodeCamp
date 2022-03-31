@@ -20,7 +20,7 @@ Fai attenzione a gestire eventuali casi limite durante la scrittura di questi me
 
 # --hints--
 
-La struttura di dati DoublyLinkedList dovrebbe esistere.
+La struttura dei dati `DoublyLinkedList` dovrebbe esistere.
 
 ```js
 assert(
@@ -34,7 +34,7 @@ assert(
 );
 ```
 
-La lista DoublyLinkedList dovrebbe avere un metodo chiamato add.
+Il `DoublyLinkedList` dovrebbe avere un metodo denominato `add`.
 
 ```js
 assert(
@@ -51,7 +51,7 @@ assert(
 );
 ```
 
-La lista DoublyLinkedList dovrebbe avere un metodo chiamato remove.
+Il `DoublyLinkedList` dovrebbe avere un metodo denominato `remove`.
 
 ```js
 assert(
@@ -68,7 +68,7 @@ assert(
 );
 ```
 
-Rimuovere un elemento da una lista vuota dovrebbe restituire null.
+Inoltre, la rimozione di qualsiasi elemento da una lista vuota dovrebbe restituire `null`.
 
 ```js
 assert(
@@ -82,7 +82,7 @@ assert(
 );
 ```
 
-Il metodo add dovrebbe aggiungere elementi all'elenco.
+Il metodo `add` dovrebbe aggiungere elementi alla lista.
 
 ```js
 assert(

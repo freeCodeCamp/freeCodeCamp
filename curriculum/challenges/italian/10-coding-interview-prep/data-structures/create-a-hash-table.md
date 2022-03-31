@@ -24,7 +24,7 @@ Assicurati di scrivere il tuo codice per gestire le collisioni!
 
 # --hints--
 
-La struttura di dati HashTable dovrebbe esistere.
+La struttura di dati `HashTable` dovrebbe esistere.
 
 ```js
 assert(
@@ -38,7 +38,7 @@ assert(
 );
 ```
 
-L'HashTable dovrebbe avere un metodo add.
+La tua classe `HashTable` dovrebbe avere un metodo `add`.
 
 ```js
 assert(
@@ -52,7 +52,7 @@ assert(
 );
 ```
 
-L'HashTable dovrebbe avere un metodo lookup.
+La tua classe `HashTable` dovrebbe avere un metodo `lookup`.
 
 ```js
 assert(
@@ -66,7 +66,7 @@ assert(
 );
 ```
 
-L'HashTable dovrebbe avere un metodo remove.
+La tua classe `HashTable` dovrebbe avere un metodo `remove`.
 
 ```js
 assert(
@@ -80,7 +80,7 @@ assert(
 );
 ```
 
-Il metodo add dovrebbe aggiungere coppie chiave-valore e il metodo di ricerca dovrebbe restituire i valori associati a una determinata chiave.
+Il metodo `add` dovrebbe aggiungere coppie chiave-valore e il metodo `lookup` dovrebbe restituire i valori associati con una determinata chiave.
 
 ```js
 assert(
@@ -95,7 +95,7 @@ assert(
 );
 ```
 
-Il metodo di rimozione dovrebbe accettare una chiave come input e dovrebbe rimuovere la coppia chiave-valore associata.
+Il metodo `remove` dovrebbe accettare una chiave come input e rimuovere la coppia chiave-valore associata.
 
 ```js
 assert(
@@ -113,7 +113,7 @@ assert(
 );
 ```
 
-Il metodo di rimozione dovrebbe rimuovere solo la coppia chiave-valore corretta.
+Il metodo `remove` dovrebbe rimuovere solo la coppia chiave-valore corretta.
 
 ```js
 assert(

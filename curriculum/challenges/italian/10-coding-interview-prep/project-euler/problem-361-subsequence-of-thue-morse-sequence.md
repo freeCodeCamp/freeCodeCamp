@@ -20,7 +20,8 @@ Definiamo $\\{A_n\\}$ come la sequenza ordinata di interi in modo che l'espressi
 
 I primi svariati termini di $A_n$ sono dati come segue:
 
-$$\begin{array}{cr} n   & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 &  8 &  9 & 10 & 11 & 12 & \ldots \\\\ A_n & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 9 & 10 & 11 & 12 & 13 & 18 & \ldots \end{array}$$
+$$\begin{array}{cr}   n   & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 &  8 &  9 & 10 & 11 & 12 & \ldots \\\\
+  A_n & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 9 & 10 & 11 & 12 & 13 & 18 & \ldots \end{array}$$
 
 Possiamo verificare che $A_{100} = 3251$ e $A_{1000} = 80\\,852\\,364\\,498$.
 

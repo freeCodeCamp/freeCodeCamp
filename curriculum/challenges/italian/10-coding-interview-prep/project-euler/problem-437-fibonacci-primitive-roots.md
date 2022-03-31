@@ -16,7 +16,11 @@ Ma c'è di più:
 
 Se guardiamo più da vicino vediamo:
 
-$$\begin{align} & 1 + 8 = 9 \\\\ & 8 + 9 = 17 ≡ 6\bmod 11 \\\\ & 9 + 6 = 15 ≡ 4\bmod 11 \\\\ & 6 + 4 = 10 \\\\ & 4 + 10 = 14 ≡ 3\bmod 11 \\\\ & 10 + 3 = 13 ≡ 2\bmod 11 \\\\ & 3 + 2 = 5 \\\\ & 2 + 5 = 7 \\\\ & 5 + 7 = 12 ≡ 1\bmod 11. \end{align}$$
+$$\begin{align}   & 1 + 8 = 9 \\\\
+  & 8 + 9 = 17 ≡ 6\bmod 11 \\\\   & 9 + 6 = 15 ≡ 4\bmod 11 \\\\
+  & 6 + 4 = 10 \\\\   & 4 + 10 = 14 ≡ 3\bmod 11 \\\\
+  & 10 + 3 = 13 ≡ 2\bmod 11 \\\\   & 3 + 2 = 5 \\\\
+  & 2 + 5 = 7 \\\\ & 5 + 7 = 12 ≡ 1\bmod 11. \end{align}$$
 
 Quindi le potenze di 8 mod 11 sono cicliche con periodo 10, e $8^n + 8^{n + 1} ≡ 8^{n + 2} (\text{mod } 11)$. 8 è chiamata radice primitiva di Fibonacci di 11.
 

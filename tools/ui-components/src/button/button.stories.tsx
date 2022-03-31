@@ -13,7 +13,7 @@ const story = {
   },
   argTypes: {
     variant: {
-      options: ['primary', 'danger']
+      options: ['primary', 'danger', 'info']
     },
     size: {
       options: ['small', 'medium', 'large']
@@ -33,6 +33,12 @@ Default.args = {
 export const Danger = Template.bind({});
 Danger.args = {
   variant: 'danger',
+  children: 'Button'
+};
+
+export const Info = Template.bind({});
+Info.args = {
+  variant: 'info',
   children: 'Button'
 };
 

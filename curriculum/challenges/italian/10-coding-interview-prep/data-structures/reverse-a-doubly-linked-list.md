@@ -12,7 +12,7 @@ Creiamo un metodo in più per la nostra lista a doppio collegamento, chiamato re
 
 # --hints--
 
-La struttura dei dati DoublyLinkedList dovrebbe esistere.
+La struttura di dati DoublyLinkedList dovrebbe esistere.
 
 ```js
 assert(
@@ -26,7 +26,7 @@ assert(
 );
 ```
 
-La lista DoublyLinkedList dovrebbe avere un metodo chiamato reverse.
+`DoublyLinkedList` dovrebbe avere un metodo chiamato `reverse`.
 
 ```js
 assert(
@@ -43,7 +43,7 @@ assert(
 );
 ```
 
-Invertire una lista vuota dovrebbe restituire null.
+Invertire una lista vuota dovrebbe restituire `null`.
 
 ```js
 assert(
@@ -57,7 +57,7 @@ assert(
 );
 ```
 
-Il metodo reverse dovrebbe invertire l'elenco.
+Il metodo `reverse` dovrebbe invertire la lista.
 
 ```js
 assert(
@@ -77,7 +77,7 @@ assert(
 );
 ```
 
-I riferimenti next e previous dovrebbero essere mantenuti correttamente quando un elenco è invertito.
+I riferimenti `next` e `previous` dovrebbero essere mantenuti correttamente quando la lista è invertita.
 
 ```js
 assert(

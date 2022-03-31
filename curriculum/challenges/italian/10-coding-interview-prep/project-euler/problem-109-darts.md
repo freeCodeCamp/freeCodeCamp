@@ -20,7 +20,12 @@ Ci sono molte variazioni di regole ma nel gioco più popolare i giocatori inizia
 
 Quando un giocare è in grado di finire sul proprio punteggio viene chiamato un "checkout" e il checkout più alto è 170: T20 T20 D25 (due tripli 20 e un doppio centro). Ci sono esattamente 11 modi distinti per fare checkout con un punteggio di 6:
 
-$$\begin{array} \text{D3} &    &    \\\\ D1        & D2 &    \\\\ S2        & D2 &    \\\\ D2        & D1 &    \\\\ S4        & D1 &    \\\\ S1        & S1 & D2 \\\\ S1        & T1 & D1 \\\\ S1        & S3 & D1 \\\\ D1        & D1 & D1 \\\\ D1        & S2 & D1 \\\\ S2        & S2 & D1 \end{array}$$
+$$\begin{array}   \text{D3} &    &    \\\\
+  D1        & D2 &    \\\\   S2        & D2 &    \\\\
+  D2        & D1 &    \\\\   S4        & D1 &    \\\\
+  S1        & S1 & D2 \\\\   S1        & T1 & D1 \\\\
+  S1        & S3 & D1 \\\\   D1        & D1 & D1 \\\\
+  D1        & S2 & D1 \\\\ S2        & S2 & D1 \end{array}$$
 
 Nota che D1 D2 è considerato diverso da D2 D1 visto che finiscono su doppi diversi. Invece, la combinazione S1 T1 D1 è considerata la stessa di T1 S1 D1. In aggiunta, non includiamo lanci mancati considerando le combinazioni; per esempio, D3 è la stessa cosa di 0 D3 e 0 0 D3. Incredibilmente ci sono 42336 modi diversi per fare checkout in totale. Quanti modi distinti ci sono per un giocatore di fare checkout con un punteggio inferiore a 100?
 
