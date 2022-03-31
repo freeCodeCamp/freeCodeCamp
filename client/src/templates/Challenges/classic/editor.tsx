@@ -412,10 +412,10 @@ const Editor = (props: EditorProps): JSX.Element => {
       keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S],
       run:
         props.challengeType === challengeTypes.multiFileCertProject
-          // save to database
-          ? props.saveChallenge
-          // save to local storage
-          : props.saveEditorContent
+          ? // save to database
+            props.saveChallenge
+          : // save to local storage
+            props.saveEditorContent
     });
     editor.addAction({
       id: 'toggle-accessibility',
