@@ -50,6 +50,12 @@ export const UserPropType = PropTypes.shape({
       description: PropTypes.string
     })
   ),
+  savedChallenges: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      challengeFiles: PropTypes.array
+    })
+  ),
   sendQuincyEmail: PropTypes.bool,
   sound: PropTypes.bool,
   theme: PropTypes.string,
@@ -267,6 +273,7 @@ export type User = {
   portfolio: Portfolio[];
   profileUI: ProfileUI;
   progressTimestamps: Array<unknown>;
+  savedChallenges: SavedChallenges;
   sendQuincyEmail: boolean;
   sound: boolean;
   theme: Themes;
@@ -309,6 +316,23 @@ export type ClaimedCertifications = {
   isDataAnalysisPyCertV7: boolean;
   isMachineLearningPyCertV7: boolean;
 };
+
+export type SavedChallenges = SavedChallenge[];
+
+export type SavedChallenge = {
+  id: string;
+  challengeFiles: SavedChallengeFiles;
+};
+
+export type SavedChallengeFile = {
+  fileKey: string;
+  ext: Ext;
+  name: string;
+  history?: string[];
+  contents: string;
+};
+
+export type SavedChallengeFiles = SavedChallengeFile[];
 
 export type CompletedChallenge = {
   id: string;
@@ -359,8 +383,8 @@ export type ChallengeFile = {
   fileKey: string;
   ext: Ext;
   name: string;
-  editableRegionBoundaries: number[];
-  usesMultifileEditor: boolean;
+  editableRegionBoundaries?: number[];
+  usesMultifileEditor?: boolean;
   error: null | string;
   head: string;
   tail: string;

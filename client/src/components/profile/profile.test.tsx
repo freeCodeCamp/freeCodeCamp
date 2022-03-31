@@ -47,6 +47,7 @@ const userProps = {
     name: 'string',
     picture: 'string',
     points: 1,
+    savedChallenges: [],
     sendQuincyEmail: true,
     sound: true,
     theme: Themes.Default,

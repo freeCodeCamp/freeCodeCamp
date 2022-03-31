@@ -34,7 +34,8 @@ export const actionTypes = createTypes(
     ...createAsyncTypes('showCert'),
     ...createAsyncTypes('reportUser'),
     ...createAsyncTypes('postChargeStripeCard'),
-    ...createAsyncTypes('deleteUserToken')
+    ...createAsyncTypes('deleteUserToken'),
+    ...createAsyncTypes('saveChallenge')
   ],
   ns
 );
