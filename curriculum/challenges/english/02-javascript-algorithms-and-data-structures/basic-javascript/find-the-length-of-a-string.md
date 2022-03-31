@@ -21,7 +21,7 @@ For example, if we created a variable `const firstName = "Ada"`, we could find o
 
 # --instructions--
 
-Use the `.length` property to count the number of characters in the `lastName` variable and assign it to `lastNameLength`.
+Use the `.length` property to set `lastNameLength` to the number of characters in `lastName`.
 
 # --hints--
 
