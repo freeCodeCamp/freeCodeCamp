@@ -11,7 +11,7 @@ dashedName: change-a-variable-for-a-specific-area
 
 `:root` で変数を作成すると、その変数の値がページ全体に設定されます。
 
-これらの変数を特定の要素内で再度設定して上書きすることができます。
+これらの変数を特定のセレクター内で再度設定して上書きすることができます。
 
 # --instructions--
 
