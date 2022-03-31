@@ -1,6 +1,14 @@
-import { from } from 'rxjs';
+import { from, Observable } from 'rxjs';
 import { post } from '../../../utils/ajax';
 
-export default function postUpdate$({ endpoint, payload }) {
+interface PostData {
+  endpoint: string;
+  payload: unknown;
+}
+
+export default function postUpdate$({
+  endpoint,
+  payload
+}: PostData): Observable<void> {
   return from(post(endpoint, payload));
 }
