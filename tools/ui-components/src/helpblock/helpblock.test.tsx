@@ -7,7 +7,7 @@ describe('Render the helpblock component', () => {
     render(<HelpBlock />);
     expect(screen.getByTestId('help-block')).toBeInTheDocument();
     expect(screen.getByTestId('help-block')).toHaveClass(
-      'block mt-5 mb-10 text-default-foreground-quaternary',
+      'block mt-1 mb-2 text-default-foreground-quaternary',
       { exact: true }
     );
   });

@@ -1,14 +1,16 @@
-/* eslint-disable react/display-name */
-/* eslint-disable no-empty-pattern */
-
 import React from 'react';
+import { HelpBlockProps } from './types';
 
-const classes = ['block mt-5 mb-10 text-default-foreground-quaternary'].join(
-  ''
-);
-
-export const HelpBlock = React.forwardRef<HTMLSpanElement>(
-  ({}, ref): JSX.Element => {
-    return <span ref={ref} data-testid='help-block' className={classes} />;
+export const HelpBlock = React.forwardRef<HTMLSpanElement, HelpBlockProps>(
+  ({ className, children }, ref): JSX.Element => {
+    const defaultClasses = 'block mt-1 mb-2 text-default-foreground-quaternary';
+    const classes = [defaultClasses, className].join(' ');
+    return (
+      <span ref={ref} data-testid='help-block' className={classes}>
+        {children}
+      </span>
+    );
   }
 );
+
+HelpBlock.displayName = 'HelpBlock';

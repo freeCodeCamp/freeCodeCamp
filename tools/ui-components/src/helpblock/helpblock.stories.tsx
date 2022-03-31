@@ -1,14 +1,17 @@
 import React from 'react';
 import { Story } from '@storybook/react';
 import { HelpBlock } from './helpblock';
-import { HelpBlockProps } from './helpblock.types';
+import { HelpBlockProps } from './types';
 
 const story = {
   title: 'Example/HelpBlock',
-  component: HelpBlock
+  component: HelpBlock,
+  parameters: {
+    controls: {
+      include: ['className']
+    }
+  }
 };
-
-const ref = React.createRef<HTMLSpanElement>();
 
 const Template: Story<HelpBlockProps> = args => {
   return <HelpBlock {...args} />;
@@ -16,7 +19,7 @@ const Template: Story<HelpBlockProps> = args => {
 
 export const Default = Template.bind({});
 Default.args = {
-  ref: ref
+  children: 'This is a HelpBlock'
 };
 
 export default story;
