@@ -3,7 +3,10 @@ import envData from '../../../config/env.json';
 
 import type {
   ChallengeFile,
+  ChallengeFiles,
   CompletedChallenge,
+  SavedChallenge,
+  SavedChallengeFile,
   User
 } from '../redux/prop-types';
 
@@ -65,15 +68,23 @@ interface SessionUser {
   sessionMeta: { activeDonations: number };
 }
 
-type ChallengeFilesForFiles = {
+type CompleteChallengeFromApi = {
   files: Array<Omit<ChallengeFile, 'fileKey'> & { key: string }>;
 } & Omit<CompletedChallenge, 'challengeFiles'>;
+
+type SavedChallengeFromApi = {
+  files: Array<Omit<SavedChallengeFile, 'fileKey'> & { key: string }>;
+} & Omit<SavedChallenge, 'challengeFiles'>;
 
 type ApiSessionResponse = Omit<SessionUser, 'user'>;
 type ApiUser = {
   user: {
-    [username: string]: Omit<User, 'completedChallenges'> & {
-      completedChallenges?: ChallengeFilesForFiles[];
+    [username: string]: Omit<
+      User,
+      'completedChallenges' & 'savedChallenges'
+    > & {
+      completedChallenges?: CompleteChallengeFromApi[];
+      savedChallenges?: SavedChallengeFromApi[];
     };
   };
   result?: string;
@@ -87,28 +98,34 @@ type UserResponse = {
 function parseApiResponseToClientUser(data: ApiUser): UserResponse {
   const userData = data.user?.[data?.result ?? ''];
   let completedChallenges: CompletedChallenge[] = [];
+  let savedChallenges: SavedChallenge[] = [];
   if (userData) {
-    completedChallenges =
-      userData.completedChallenges?.reduce(
-        (acc: CompletedChallenge[], curr: ChallengeFilesForFiles) => {
-          return [
-            ...acc,
-            {
-              ...curr,
-              challengeFiles: curr.files.map(({ key: fileKey, ...file }) => ({
-                ...file,
-                fileKey
-              }))
-            }
-          ];
-        },
-        []
-      ) ?? [];
+    completedChallenges = mapFilesToChallengeFiles(
+      userData.completedChallenges
+    );
+    savedChallenges = mapFilesToChallengeFiles(userData.savedChallenges);
   }
   return {
-    user: { [data.result ?? '']: { ...userData, completedChallenges } },
+    user: {
+      [data.result ?? '']: { ...userData, completedChallenges, savedChallenges }
+    },
     result: data.result
   };
+}
+
+export function mapFilesToChallengeFiles<File, Rest>(
+  fileContainer: ({ files: (File & { key: string })[] } & Rest)[] = []
+) {
+  return fileContainer.map(({ files, ...rest }) => ({
+    ...rest,
+    challengeFiles: mapKeyToFileKey(files)
+  }));
+}
+
+function mapKeyToFileKey<K>(
+  files: (K & { key: string })[]
+): (Omit<K, 'key'> & { fileKey: string })[] {
+  return files.map(({ key, ...rest }) => ({ ...rest, fileKey: key }));
 }
 
 export function getSessionUser(): Promise<SessionUser> {
@@ -205,6 +222,13 @@ export function postResetProgress(): Promise<void> {
 
 export function postUserToken(): Promise<void> {
   return post('/user/user-token', {});
+}
+
+export function postSaveChallenge(body: {
+  id: string;
+  files: ChallengeFiles;
+}): Promise<void> {
+  return post('/save-challenge', body);
 }
 
 /** PUT **/

@@ -149,16 +149,19 @@ export function buildDOMChallenge(
   const finalFiles = challengeFiles.map(pipeLine);
   return Promise.all(finalFiles)
     .then(checkFilesErrors)
-    .then(challengeFiles => ({
-      challengeType: challengeTypes.html,
-      build: concatHtml({
-        required: finalRequires,
-        template,
-        challengeFiles
-      }),
-      sources: buildSourceMap(challengeFiles),
-      loadEnzyme
-    }));
+    .then(challengeFiles => {
+      return {
+        challengeType:
+          challengeTypes.html || challengeTypes.multiFileCertProject,
+        build: concatHtml({
+          required: finalRequires,
+          template,
+          challengeFiles
+        }),
+        sources: buildSourceMap(challengeFiles),
+        loadEnzyme
+      };
+    });
 }
 
 export function buildJSChallenge({ challengeFiles }, options) {
