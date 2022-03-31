@@ -829,23 +829,23 @@ nvm alias default 16
 nvm uninstall <version>
 ```
 
-> [!ATTENTION] Para las aplicaciones cliente, el script de shell no se puede resucitar entre las versiones de Node.js con `pm2 resurrect`. En su lugar, despliega procesos desde cero. This should become nicer when we move to a docker based setup.
+> [!ATTENTION] Para las aplicaciones cliente, el script de shell no se puede resucitar entre las versiones de Node.js con `pm2 resurrect`. En su lugar, despliega procesos desde cero. Esto será mejor cuando pasemos a una configuración basada en Docker.
 > 
-> If using PM2 for processes you would also need to bring up the applications and save the process list for automatic recovery on restarts.
+> Si utilizas PM2 para procesos, también deberás abrir las aplicaciones y guardar la lista de procesos para la recuperación automática en los reinicios.
 
-Get the uninstall instructions/commands with the `unstartup` command and use the output to remove the systemctl services
+Obtén las instrucciones/comandos de desinstalación con el comando `unstartup` y usa la salida para eliminar los servicios de systemctl
 
 ```console
 pm2 unstartup
 ```
 
-Get the install instructions/commands with the `startup` command and use the output to add the systemctl services
+Obtén las instrucciones/comandos de instalación con el comando  `startup` y usa la salida para agregar los servicios de systemctl
 
 ```console
 pm2 startup
 ```
 
-Quick commands for PM2 to list, resurrect saved processes, etc.
+Comandos rápidos para que PM2 enumere, reviva procesos guardados, etc.
 
 ```console
 pm2 ls
@@ -863,9 +863,9 @@ pm2 save
 pm2 logs
 ```
 
-## Installing and Updating Azure Pipeline Agents
+## Instalar y actualizar Agentes de Pipeline Azure
 
-See: https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops and follow the instructions to stop, remove and reinstall agents. Broadly you can follow the steps listed here.
+Consulta: https://docs.microsoft.com/es-es/azure/devops/pipelines/agents/v2-linux?view=azure-devops y sigue las instrucciones para detener, eliminar y reinstalar agentes. En términos generales, puedes seguir los pasos que se enumeran aquí.
 
 You would need a PAT, that you can grab from here: https://dev.azure.com/freeCodeCamp-org/_usersSettings/tokens
 
