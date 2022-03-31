@@ -285,6 +285,15 @@ button.nav-link[aria-disabled='true'] {
   background-repeat: no-repeat;
 }
 
+.nav-lang-button:hover svg,
+.nav-lang-button:focus {
+  fill: var(--gray-10);
+}
+
+.nav-lang-button:focus:not(:focus-visible) {
+  fill: revert;
+}
+
 .nav-lang-button[aria-expanded='true'] + .nav-lang-menu {
   display: block;
 }

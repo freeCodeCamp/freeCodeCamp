@@ -34,11 +34,18 @@ import { updateUserFlag } from '../../../redux/settings';
 import createLanguageRedirect from '../../create-language-redirect';
 import { Link } from '../../helpers';
 import { Themes } from '../../settings/theme';
+import LanguageGlobe from '../../../assets/icons/language-globe';
 
 const { clientLocale, radioLocation, apiLocation } = envData;
 
 const locales = availableLangs.client;
 
+const languageGlobeIconStyle = {
+  height: '1rem',
+  width: '1rem',
+  marginRight: '6px',
+  marginLeft: '-6px'
+};
 export interface NavLinksProps {
   displayMenu?: boolean;
   displayLanguageMenu?: boolean;
@@ -429,6 +436,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
               onKeyDown={this.handleLanguageButtonKeyDown}
               ref={this.langButtonRef}
             >
+              <LanguageGlobe style={languageGlobeIconStyle} />
               <span>Change Language</span>
             </button>
             <ul
