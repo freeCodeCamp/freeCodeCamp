@@ -10,7 +10,8 @@ dashedName: problem-228-minkowski-sums
 
 Sia $S_n$ il poligono regolare a $n$ lati i cui vertici $v_k (k = 1, 2, \ldots, n)$ hanno coordinate:
 
-$$\begin{align} & x_k = cos(\frac{2k - 1}{n} × 180°) \\\\ & y_k = sin(\frac{2k - 1}{n} × 180°) \end{align}$$
+$$\begin{align}   & x_k = cos(\frac{2k - 1}{n} × 180°) \\\\
+  & y_k = sin(\frac{2k - 1}{n} × 180°) \end{align}$$
 
 Ogni $S_n$ è da considerarsi come una forma riempita consistente di tutti i punti sia del perimetro che dell'interno.
 

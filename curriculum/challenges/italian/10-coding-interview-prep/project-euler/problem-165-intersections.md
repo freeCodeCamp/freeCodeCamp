@@ -16,13 +16,17 @@ Sia $T$, un punto in comune di due segmenti $L_1$ e $L_2$, un vero punto d'inter
 
 Considera i tre segmenti $L_1$, $L_2$, e $L_3$:
 
-$$\begin{align} & L_1: (27, 44) \\;\text{to}\\; (12, 32) \\\\ & L_2: (46, 53) \\;\text{to}\\; (17, 62) \\\\ & L_3: (46, 70) \\;\text{to}\\; (22, 40) \\\\ \end{align}$$
+$$\begin{align}   & L_1: (27, 44) \\;\text{to}\\; (12, 32) \\\\
+  & L_2: (46, 53) \\;\text{to}\\; (17, 62) \\\\   & L_3: (46, 70) \\;\text{to}\\; (22, 40) \\\\
+\end{align}$$
 
 Si può verificare che i segmenti $L_2$ e $L_3$ hanno un vero punto di intersezione. Notiamo che essendo uno dei terminali di $L_3$: (22, 40) su $L_1$ questo non è un vero punto d'intersezione. $L_1$ e $L_2$ non hanno un punto in comune. Quindi tra i tre segmenti troviamo un vero punto di intersezione.
 
 Adesso facciamo lo stesso per 5000 segmenti. A questo fine, generiamo 20000 numeri casuali usando il generatore pseudo-casuale di numeri chiamato "Blum Blum Shub".
 
-$$\begin{align} & s_0 = 290797 \\\\ & s_{n + 1} = s_n × s_n (\text{modulo}\\; 50515093) \\\\ & t_n = s_n (\text{modulo}\\; 500) \\\\ \end{align}$$
+$$\begin{align}   & s_0 = 290797 \\\\
+  & s_{n + 1} = s_n × s_n (\text{modulo}\\; 50515093) \\\\   & t_n = s_n (\text{modulo}\\; 500) \\\\
+\end{align}$$
 
 Per creare ogni segmento, usiamo quattro numeri consecutivi $t_n$. Quindi, il primo segmento è dato da:
 

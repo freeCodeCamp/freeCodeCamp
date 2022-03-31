@@ -32,7 +32,9 @@ Sia $C(n, a, b)$ il costo per il peggio scenario ottenuto da una strategia ottim
 
 Ecco alcuni esempi:
 
-$$\begin{align} & C(5, 2, 3) = 5 \\\\ & C(500, \sqrt{2}, \sqrt{3}) = 13.220\\,731\\,97\ldots \\\\ & C(20\\,000, 5, 7) = 82 \\\\ & C(2\\,000\\,000, √5, √7) = 49.637\\,559\\,55\ldots \\\\ \end{align}$$
+$$\begin{align}   & C(5, 2, 3) = 5 \\\\
+  & C(500, \sqrt{2}, \sqrt{3}) = 13.220\\,731\\,97\ldots \\\\   & C(20\\,000, 5, 7) = 82 \\\\
+  & C(2\\,000\\,000, √5, √7) = 49.637\\,559\\,55\ldots \\\\ \end{align}$$
 
 Siano $F_k$ i numeri di Fibonacci: $F_k = F_{k - 1} + F_{k - 2}$ con i casi base $F_1 = F_2 = 1$.
 

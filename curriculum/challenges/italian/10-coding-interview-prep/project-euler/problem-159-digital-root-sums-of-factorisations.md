@@ -12,7 +12,10 @@ Un numero composito può essere fattorizzato in molti modi diversi.
 
 Per esempio, senza includere la moltiplicazione per 1, 24 può essere fattorizzato in 7 modi distinti:
 
-$$\begin{align} & 24 = 2 \times 2 \times 2 \times 3\\\\ & 24 = 2 \times 3 \times 4  \\\\ & 24 = 2 \times 2 \times 6  \\\\ & 24 = 4 \times 6    \\\\ & 24 = 3 \times 8    \\\\ & 24 = 2 \times 12   \\\\ & 24 = 24 \end{align}$$
+$$\begin{align}   & 24 = 2 \times 2 \times 2 \times 3\\\\
+  & 24 = 2 \times 3 \times 4  \\\\   & 24 = 2 \times 2 \times 6  \\\\
+  & 24 = 4 \times 6    \\\\   & 24 = 3 \times 8    \\\\
+  & 24 = 2 \times 12   \\\\ & 24 = 24 \end{align}$$
 
 Ricordati che le radice numerica di un numero, in base 10, si trova sommando le cifre del numero e ripetendo il processo fino a che il risultato non è inferiore a 10. Quindi la radice numerica di 467 è 8.
 

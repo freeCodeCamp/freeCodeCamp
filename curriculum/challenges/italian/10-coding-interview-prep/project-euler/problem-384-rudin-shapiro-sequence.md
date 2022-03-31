@@ -18,7 +18,9 @@ Considera anche la sequenza sommatoria di $b(n)$: $s(n) = \displaystyle\sum_{i =
 
 La prima coppia di valori di queste sequenze sono:
 
-$$\begin{array}{lr} n    & 0 & 1 & 2 &  3 & 4 & 5 &  6 & 7 \\\\ a(n) & 0 & 0 & 0 &  1 & 0 & 0 &  1 & 2 \\\\ b(n) & 1 & 1 & 1 & -1 & 1 & 1 & -1 & 1 \\\\ s(n) & 1 & 2 & 3 &  2 & 3 & 4 &  3 & 4 \end{array}$$
+$$\begin{array}{lr}   n    & 0 & 1 & 2 &  3 & 4 & 5 &  6 & 7 \\\\
+  a(n) & 0 & 0 & 0 &  1 & 0 & 0 &  1 & 2 \\\\   b(n) & 1 & 1 & 1 & -1 & 1 & 1 & -1 & 1 \\\\
+  s(n) & 1 & 2 & 3 &  2 & 3 & 4 &  3 & 4 \end{array}$$
 
 La sequenza $s(n)$ ha la notevole proprietà che tutti gli elementi sono positivi e ogni numero intero positivo $k$ si verifica esattamente $k$ volte.
 
@@ -28,7 +30,8 @@ Ad esempio: $g(3, 3) = 6$, $g(4, 2) = 7$ and $g(54321, 12345) = 1\\,220\\,847\\,
 
 Sia $F(n)$ la sequenza di fibonacci definita da:
 
-$$\begin{align} & F(0) = F(1) = 1 \text{ and} \\\\ & F(n) = F(n - 1) + F(n - 2) \text{ for } n > 1. \end{align}$$
+$$\begin{align}   & F(0) = F(1) = 1 \text{ and} \\\\
+  & F(n) = F(n - 1) + F(n - 2) \text{ for } n > 1. \end{align}$$
 
 Definisci $GF(t) = g(F(t), F(t - 1))$.
 

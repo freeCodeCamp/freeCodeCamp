@@ -10,7 +10,9 @@ dashedName: problem-38-pandigital-multiples
 
 Prendi il numero 192 e moltiplicalo separatemente per 1, 2, e 3:
 
-$$\begin{align} 192 × 1 = 192\\\\ 192 × 2 = 384\\\\ 192 × 3 = 576\\\\ \end{align}$$
+$$\begin{align}   192 × 1 = 192\\\\
+  192 × 2 = 384\\\\   192 × 3 = 576\\\\
+\end{align}$$
 
 Concatenando ogni prodotto otteniamo il pandigitale di cifre da 1 a 9, 192384576. Chiamiamo 192384576 il prodotto concatenato di 192 e (1, 2, 3).
 
