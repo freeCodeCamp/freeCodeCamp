@@ -7,6 +7,7 @@ import { setContent, isPoly } from '../../../../../utils/polyvinyl';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { actionTypes as appTypes } from '../../../redux/action-types';
+import { challengeTypes } from '../../../../utils/challenge-types';
 
 import { actionTypes } from './action-types';
 import {
@@ -16,6 +17,7 @@ import {
   challengeFilesSelector,
   challengeMetaSelector
 } from './';
+import { saveChallenge } from '../../../redux';
 
 const legacyPrefixes = [
   'Bonfire: ',
@@ -84,24 +86,25 @@ function clearCodeEpic(action$, state$) {
 }
 
 function saveCodeEpic(action$, state$) {
+  console.log('saveCodeEpic');
   return action$.pipe(
     ofType(actionTypes.executeChallenge, actionTypes.saveEditorContent),
     // do not save challenge if code is locked
     filter(() => !isCodeLockedSelector(state$.value)),
     map(action => {
       const state = state$.value;
-      const { id } = challengeMetaSelector(state);
+      const { id, challengeType } = challengeMetaSelector(state);
       const challengeFiles = challengeFilesSelector(state);
       try {
-        store.set(id, challengeFiles);
-        const fileKey = challengeFiles[0].fileKey;
-        if (
-          store.get(id).find(challengeFile => challengeFile.fileKey === fileKey)
-            .contents !==
-          challengeFiles.find(challengeFile => challengeFile.fileKey).contents
-        ) {
-          throw Error('Failed to save to localStorage');
-        }
+          store.set(id, challengeFiles);
+          const fileKey = challengeFiles[0].fileKey;
+          if (
+            store.get(id).find(challengeFile => challengeFile.fileKey === fileKey)
+              .contents !==
+            challengeFiles.find(challengeFile => challengeFile.fileKey).contents
+          ) {
+            throw Error('Failed to save to localStorage');
+          }
         return action;
       } catch (e) {
         return { ...action, error: true };
@@ -122,6 +125,7 @@ function saveCodeEpic(action$, state$) {
 }
 
 function loadCodeEpic(action$, state$) {
+  console.log('loadCodeEpic');
   return action$.pipe(
     ofType(actionTypes.challengeMounted),
     filter(() => {

@@ -20,7 +20,11 @@ import store from 'store';
 
 import { Loader } from '../../../components/helpers';
 import { Themes } from '../../../components/settings/theme';
-import { userSelector, isDonationModalOpenSelector } from '../../../redux';
+import {
+  userSelector,
+  saveChallenge,
+  isDonationModalOpenSelector
+} from '../../../redux';
 import {
   ChallengeFiles,
   Dimensions,
@@ -31,8 +35,10 @@ import {
 } from '../../../redux/prop-types';
 import { editorToneOptions } from '../../../utils/tone/editor-config';
 import { editorNotes } from '../../../utils/tone/editor-notes';
+import { challengeTypes } from '../../../../utils/challenge-types';
 import {
   canFocusEditorSelector,
+  challengeMetaSelector,
   consoleOutputSelector,
   executeChallenge,
   saveEditorContent,
@@ -54,6 +60,7 @@ const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 interface EditorProps {
   canFocus: boolean;
   challengeFiles: ChallengeFiles;
+  challengeType: number;
   containerRef: RefObject<HTMLElement>;
   contents: string;
   description: string;
@@ -70,6 +77,7 @@ interface EditorProps {
   isResetting: boolean;
   output: string[];
   resizeProps: ResizeProps;
+  saveChallenge: () => void;
   saveEditorContent: () => void;
   setEditorFocusability: (isFocusable: boolean) => void;
   submitChallenge: () => void;
@@ -105,6 +113,7 @@ interface EditorProperties {
 
 const mapStateToProps = createSelector(
   canFocusEditorSelector,
+  challengeMetaSelector,
   consoleOutputSelector,
   isDonationModalOpenSelector,
   isProjectPreviewModalOpenSelector,
@@ -113,6 +122,7 @@ const mapStateToProps = createSelector(
   challengeTestsSelector,
   (
     canFocus: boolean,
+    { challengeType }: { challengeType: number },
     output: string[],
     open,
     previewOpen: boolean,
@@ -121,6 +131,7 @@ const mapStateToProps = createSelector(
     tests: [{ text: string; testString: string }]
   ) => ({
     canFocus: open ? false : canFocus,
+    challengeType,
     previewOpen,
     isResetting,
     output,
@@ -133,6 +144,7 @@ const mapStateToProps = createSelector(
 
 const mapDispatchToProps = {
   executeChallenge,
+  saveChallenge,
   saveEditorContent,
   setEditorFocusability,
   updateFile,
@@ -396,9 +408,14 @@ const Editor = (props: EditorProps): JSX.Element => {
     });
     editor.addAction({
       id: 'save-editor-content',
-      label: 'Save editor content to localStorage',
+      label: 'Save editor content',
       keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S],
-      run: props.saveEditorContent
+      run:
+        props.challengeType === challengeTypes.multiFileCertProject
+          // save to database
+          ? props.saveChallenge
+          // save to local storage
+          : props.saveEditorContent
     });
     editor.addAction({
       id: 'toggle-accessibility',
