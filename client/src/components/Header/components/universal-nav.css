@@ -449,9 +449,6 @@ button.nav-link[aria-disabled='true'] {
   border-color: var(--gray-45);
   width: 100%;
   margin: 0;
-}
-
-.nav-line-2 {
   border-top-width: 2px;
 }
 
