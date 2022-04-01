@@ -24,7 +24,8 @@ dashedName: problem-426-box-ball-system
 
 数列 $\\{t_i\\}$ を次のように定義します。
 
-$$\begin{align} & s_0 = 290\\,797 \\\\ & s_{k + 1} = {s_k}^2\bmod 50\\,515\\,093 \\\\ & t_k = (s_k\bmod 64) + 1 \end{align}$$
+$$\begin{align}   & s_0 = 290\\,797 \\\\
+  & s_{k + 1} = {s_k}^2\bmod 50\\,515\\,093 \\\\ & t_k = (s_k\bmod 64) + 1 \end{align}$$
 
 初期配置 $(t_0, t_1, \ldots, t_{10})$ から開始すると、最終状態は [1, 3, 10, 24, 51, 75] となります。
 

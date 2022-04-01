@@ -16,7 +16,10 @@ dashedName: problem-334-spilling-the-beans
 
 次の数列が与えられます。
 
-$$\begin{align} & t_0 = 123456, \\\\ & t_i = \begin{cases} \frac{t_{i - 1}}{2},               & \text{$t_{i - 1}$ が偶数の場合} \\\\ \left\lfloor\frac{t_{i - 1}}{2}\right\rfloor \oplus 926252, & \text{$t_{i - 1}$ が奇数の場合} \end{cases} \\\\ & \qquad \text{ここで、$⌊x⌋$ は床関数、$\oplus$ はビット排他論理和演算子} \\\\ & b_i = (t_i\bmod 2^{11}) + 1 \end{align}$$
+$$\begin{align}   & t_0 = 123456, \\\\
+  & t_i = \begin{cases}          \frac{t_{i - 1}}{2},               & \text{$t_{i - 1}$ が偶数の場合} \\\\
+         \left\lfloor\frac{t_{i - 1}}{2}\right\rfloor \oplus 926252, & \text{$t_{i - 1}$ が奇数の場合}          \end{cases} \\\\
+         & \qquad \text{ここで、$⌊x⌋$ は床関数、$\oplus$ はビット排他論理和演算子} \\\\ & b_i = (t_i\bmod 2^{11}) + 1 \end{align}$$
 
 最後の数列に含まれる最初の 2 項は $b_1 = 289$ と $b_2 = 145$ です。 隣り合う 2 つのボウルでそれぞれ $b_1$ 個と $b_2$ 個の豆から始めると、ゲームを終えるまでに 3419100 回動かす必要があります。
 

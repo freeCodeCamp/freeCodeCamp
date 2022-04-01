@@ -12,7 +12,8 @@ dashedName: problem-92-square-digit-chains
 
 例えば次のようになります。
 
-$$\begin{align} & 44 → 32 → 13 → 10 → \boldsymbol{1} → \boldsymbol{1}\\\\ & 85 → \boldsymbol{89} → 145 → 42 → 20 → 4 → 16 → 37 → 58 → \boldsymbol{89}\\\\ \end{align}$$
+$$\begin{align}   & 44 → 32 → 13 → 10 → \boldsymbol{1} → \boldsymbol{1}\\\\
+  & 85 → \boldsymbol{89} → 145 → 42 → 20 → 4 → 16 → 37 → 58 → \boldsymbol{89}\\\\ \end{align}$$
 
 したがって、1 または 89 に達する連鎖はすべて無限ループに入ります。 最も驚くべきことは、どの数から始めても最終的に 1 または 89 に達するということです。
 
