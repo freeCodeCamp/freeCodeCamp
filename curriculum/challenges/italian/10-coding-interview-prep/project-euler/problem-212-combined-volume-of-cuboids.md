@@ -12,7 +12,10 @@ Un cuboid allineato all'asse, specificato dai parametri $\{ (x_0,y_0,z_0), (dx,d
 
 Sia $C_1, \ldots, C_{50000}$ una collezione di 50000 cuboidi allineati assialmente in modo che $C_n$ abbia parametri
 
-$$\begin{align} & x_0 = S_{6n - 5} \\; \text{modulo} \\; 10000    \\\\ & y_0 = S_{6n - 4} \\; \text{modulo} \\; 10000    \\\\ & z_0 = S_{6n - 3} \\; \text{modulo} \\; 10000    \\\\ & dx = 1 + (S_{6n - 2} \\; \text{modulo} \\; 399) \\\\ & dy = 1 + (S_{6n - 1} \\; \text{modulo} \\; 399) \\\\ & dz = 1 + (S_{6n} \\; \text{modulo} \\; 399)     \\\\ \end{align}$$
+$$\begin{align}   & x_0 = S_{6n - 5} \\; \text{modulo} \\; 10000    \\\\
+  & y_0 = S_{6n - 4} \\; \text{modulo} \\; 10000    \\\\   & z_0 = S_{6n - 3} \\; \text{modulo} \\; 10000    \\\\
+  & dx = 1 + (S_{6n - 2} \\; \text{modulo} \\; 399) \\\\   & dy = 1 + (S_{6n - 1} \\; \text{modulo} \\; 399) \\\\
+  & dz = 1 + (S_{6n} \\; \text{modulo} \\; 399)     \\\\ \end{align}$$
 
 dove $S_1, \ldots, S_{300000}$ provengono dal "Lagged Fibonacci Generator":
 

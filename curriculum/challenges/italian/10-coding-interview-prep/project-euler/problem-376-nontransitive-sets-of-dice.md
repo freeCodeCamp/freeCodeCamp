@@ -10,7 +10,9 @@ dashedName: problem-376-nontransitive-sets-of-dice
 
 Considera la seguente serie di dadi con pallini non standard:
 
-$$$\begin{array}{} \text{Dado A: } & 1 & 4 & 4 & 4 & 4 & 4 \\\\ \text{Dado B: } & 2 & 2 & 2 & 5 & 5 & 5 \\\\ \text{Dado C: } & 3 & 3 & 3 & 3 & 3 & 6 \\\\ \end{array}$$
+$$$\begin{array}{}   \text{Dado A: } & 1 & 4 & 4 & 4 & 4 & 4 \\\\
+  \text{Dado B: } & 2 & 2 & 2 & 5 & 5 & 5 \\\\   \text{Dado C: } & 3 & 3 & 3 & 3 & 3 & 6 \\\\
+\end{array}$$
 
 Un gioco è giocato da due giocatori scegliendo un dado a turno e lanciandolo. Il giocatore che lancia il valore più alto vince.
 

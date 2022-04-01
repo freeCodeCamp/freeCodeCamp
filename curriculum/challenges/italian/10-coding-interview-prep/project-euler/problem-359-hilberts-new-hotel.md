@@ -27,7 +27,10 @@ Alla fine, ogni persona in fila ottiene una stanza nell'hotel.
 
 Sia $P(f, r)$ $n$ se la persona $n$ occupa stanza $r$ al piano $f$, e 0 se nessuna persona occupa la stanza. Ecco alcuni esempi:
 
-$$\begin{align} & P(1, 1) = 1 \\\\ & P(1, 2) = 3 \\\\ & P(2, 1) = 2 \\\\ & P(10, 20) = 440 \\\\ & P(25, 75) = 4863 \\\\ & P(99, 100) = 19454 \end{align}$$
+$$\begin{align}   & P(1, 1) = 1 \\\\
+  & P(1, 2) = 3 \\\\   & P(2, 1) = 2 \\\\
+  & P(10, 20) = 440 \\\\   & P(25, 75) = 4863 \\\\
+  & P(99, 100) = 19454 \end{align}$$
 
 Trova la somma di tutti i $P(f, r)$ per tutti i positivi $f$ e $r$ in modo tale che $f × r = 71\\,328\\,803\\,586\\,048$ e dai le ultime 8 cifre come risposta.
 

@@ -11,16 +11,32 @@ module.exports = {
       transparent: 'transparent',
       'dark-theme-background': 'var(--gray90)',
       'light-theme-background': 'var(--gray00)',
+      // Foreground
       'default-foreground-primary': 'var(--default-foreground-primary)',
       'default-foreground-secondary': 'var(--default-foreground-secondary)',
       'default-foreground-tertiary': 'var(--default-foreground-tertiary)',
       'default-foreground-quaternary': 'var(--default-foreground-quaternary)',
       'default-foreground-danger': 'var(--default-foreground-danger)',
+      'default-foreground-info': 'var(--default-foreground-info)',
+      // Background
       'default-background-primary': 'var(--default-background-primary)',
       'default-background-secondary': 'var(--default-background-secondary)',
       'default-background-tertiary': 'var(--default-background-tertiary)',
       'default-background-quaternary': 'var(--default-background-quaternary)',
       'default-background-danger': 'var(--default-background-danger)',
+      'default-background-info': 'var(--default-background-info)',
+      // Foreground hover
+      'default-foreground-primary-hover':
+        'var(--default-foreground-primary-hover)',
+      'default-foreground-danger-hover':
+        'var(--default-foreground-danger-hover)',
+      'default-foreground-info-hover': 'var(--default-foreground-info-hover)',
+      // Background hover
+      'default-background-primary-hover':
+        'var(--default-background-primary-hover)',
+      'default-background-danger-hover':
+        'var(--default-background-danger-hover)',
+      'default-background-info-hover': 'var(--default-background-info-hover)',
       green: {
         50: 'var(--green05)',
         100: 'var(--green10)',
@@ -56,6 +72,7 @@ module.exports = {
       }
     },
     borderWidth: {
+      1: '1px',
       3: '3px'
     },
     fontSize: {
@@ -64,6 +81,14 @@ module.exports = {
       sm: ['16px', '1.5'],
       md: ['18px', '1.42857143'],
       lg: ['24px', '1.3333333']
+    },
+    minHeight: {
+      '43-px': '43px'
+    },
+    extend: {
+      zIndex: {
+        2: '2'
+      }
     }
   },
   plugins: []

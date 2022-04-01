@@ -18,7 +18,8 @@ Si può vedere che il triangolo di dimensione 2 contiene 4 triangoli di dimensio
 
 Sia $T(n)$ il numero di triangoli presenti in un triangolo di dimensione $n$, allora
 
-$$\begin{align} & T(1) = 16 \\\\ & T(2) = 104 \end{align}$$
+$$\begin{align}   & T(1) = 16 \\\\
+  & T(2) = 104 \end{align}$$
 
 Trova $T(36)$.
 

@@ -12,7 +12,9 @@ dashedName: problem-82-path-sum-three-ways
 
 La somma minima del percorso nella matrice 5 per 5 qui sotto, iniziando in qualsiasi cella nella colonna di sinistra e terminando in qualsiasi cella nella colonna di destra, e solo muovendosi verso l'alto, verso il basso e verso destra, è indicata in rosso e in grassetto; la somma è pari a `994`.
 
-  $$\begin{pmatrix} 131 & 673 & \color{red}{234} & \color{red}{103} & \color{red}{18}\\\\ \color{red}{201} & \color{red}{96} & \color{red}{342} & 965 & 150\\\\ 630 & 803 & 746 & 422 & 111\\\\ 537 & 699 & 497 & 121 & 956\\\\ 805 & 732 & 524 & 37 & 331 \end{pmatrix}$$
+  $$\begin{pmatrix}   131 & 673 & \color{red}{234} & \color{red}{103} & \color{red}{18}\\\\
+  \color{red}{201} & \color{red}{96} & \color{red}{342} & 965 & 150\\\\   630 & 803 & 746 & 422 & 111\\\\
+  537 & 699 & 497 & 121 & 956\\\\ 805 & 732 & 524 & 37 & 331 \end{pmatrix}$$
 
 Trova la somma del percorso minimo dalla colonna di sinistra alla colonna di destra in `matrix`, un array 2D che rappresenta una matrice. La dimensione massima della matrice utilizzata nei test sarà di 80 per 80.
 
