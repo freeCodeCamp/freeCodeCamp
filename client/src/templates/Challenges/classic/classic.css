@@ -25,6 +25,7 @@
   padding: 5px 10px;
   text-decoration: none;
   font-size: 0.8em;
+  padding: 1rem;
 }
 
 #challenge-page-tabs .nav-tabs > li > a:hover {
