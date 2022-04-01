@@ -26,7 +26,7 @@
     "off": "关闭",
     "on": "打开",
     "sign-in": "登录",
-    "sign-up-email-list": "Sign up for Quincy's weekly emails",
+    "sign-up-email-list": "订阅 Quincy 每周的电子邮件",
     "sign-out": "退出",
     "curriculum": "课程",
     "forum": "论坛",
@@ -58,6 +58,7 @@
     "resubscribe": "你可以点击此处重新订阅",
     "click-here": "点击此处登陆",
     "save": "保存",
+    "save-code": "Save your Code",
     "no-thanks": "不用，谢谢",
     "yes-please": "好的",
     "update-email": "更新我的邮箱",
@@ -529,7 +530,11 @@
     "start-project-err": "在尝试启动该项目时出错。请再试一次。",
     "complete-project-first": "你必须先完成项目。",
     "local-code-save-error": "糟糕，你的代码没有保存，你的浏览器的本地存储空间可能已满。",
-    "local-code-saved": "保存！你的代码已保存到你的浏览器本地存储中。"
+    "local-code-saved": "保存！你的代码已保存到你的浏览器本地存储中。",
+    "code-saved": "Your code was saved to the database. It will be here when you return.",
+    "code-save-error": "An error occurred trying to save your code.",
+    "challenge-save-too-big": "Sorry, you cannot save your code. Your code is {{user-size}} bytes. We allow a maximum of {{max-size}} bytes. Please make your code smaller and try again or request assistance on https://forum.freecodecamp.org",
+    "challenge-submit-too-big": "Sorry, you cannot submit your code. Your code is {{user-size}} bytes. We allow a maximum of {{max-size}} bytes. Please make your code smaller and try again or request assistance on https://forum.freecodecamp.org"
   },
   "validation": {
     "max-characters": "字符数最多为 288 个，你还可以输入 {{charsLeft}} 个字符",
