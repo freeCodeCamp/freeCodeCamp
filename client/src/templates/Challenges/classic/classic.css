@@ -22,10 +22,10 @@
 }
 
 #challenge-page-tabs .nav-tabs > li > a {
-  padding: 5px 10px;
+  padding: 1rem;
   text-decoration: none;
   font-size: 0.8em;
-  padding: 1rem;
+  
 }
 
 #challenge-page-tabs .nav-tabs > li > a:hover {
