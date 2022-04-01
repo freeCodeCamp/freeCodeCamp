@@ -20,7 +20,7 @@ import {
   updateFailed
 } from '../../../redux';
 
-import postUpdate$ from '../utils/postUpdate$';
+import postUpdate$ from '../utils/post-update';
 import { mapFilesToChallengeFiles } from '../../../utils/ajax';
 import { standardizeRequestBody } from '../../../utils/challenge-request-helpers';
 import { actionTypes } from './action-types';
