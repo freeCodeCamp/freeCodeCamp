@@ -1,4 +1,5 @@
 import { SuperBlocks } from '../../../config/certification-settings';
+import { showUpcomingChanges } from '../../../config/env.json';
 
 const responsiveWebBase =
   '/learn/responsive-web-design/responsive-web-design-projects';
@@ -713,7 +714,9 @@ const certMap = [
 ] as const;
 
 function getResponsiveWebDesignPath(project: string) {
-  return `${responsiveWeb22Base}/${project}-project/${project}`;
+  return showUpcomingChanges
+    ? `${responsiveWeb22Base}/${project}-project/${project}`
+    : `${responsiveWebBase}/${project}`;
 }
 
 const titles = certMap.map(({ title }) => title);
