@@ -47,7 +47,7 @@ La fermata del colore a 0 pixel dovrebbe essere `yellow`.
 assert(code.match(/yellow\s+?0(px)?/gi));
 ```
 
-Un color stop a 40 pixel dovrebbe essere `yellow`.
+Il primo stop di colore a 40 pixel dovrebbe essere `yellow`.
 
 ```js
 assert(code.match(/yellow\s+?40px/gi));

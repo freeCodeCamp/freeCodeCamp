@@ -15,14 +15,14 @@
   - [Arbeite an der lokalisierten Client-Web-App](how-to-work-on-localized-client-webapp.md)
   - [Arbeite an den Cypress Tests](how-to-add-cypress-tests.md)
   - [Arbeite an den Videoaufgaben](how-to-help-with-video-challenges.md)
-  - [Work on the docs theme](how-to-work-on-the-docs-theme.md)
-  - [Work on the component library](how-to-work-on-the-component-library.md)
+  - [Arbeite an dem Dokumentations-Theme](how-to-work-on-the-docs-theme.md)
+  - [Arbeite an der Komponentenbibliothek](how-to-work-on-the-component-library.md)
 - **Zusätzliche Leitfäden**
   - [Übersetzungen lokal testen](how-to-test-translations-locally.md)
   - [Verstehe die Dateistruktur des Studienplans](curriculum-file-structure.md)
   - [Ausgehende Emails lokal debuggen](how-to-catch-outgoing-emails-locally.md)
   - [freeCodeCamp auf Windows einrichten (WSL)](how-to-setup-wsl.md)
-  - [User Token Workflow](user-token-workflow.md)
+  - [Benutzer-Token Workflow](user-token-workflow.md)
 
 ---
 

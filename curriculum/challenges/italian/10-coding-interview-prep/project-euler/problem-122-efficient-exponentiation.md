@@ -14,11 +14,16 @@ $$n × n × \ldots × n = n^{15}$$
 
 Ma usando un metodo "binario" è possibile calcolarlo in sei moltiplicazioni:
 
-$$$\start{align} & n × n = n^2\\\\ & n^2 × n^2 = n^4\\\\ & n^4 × n^4 = n^8\\\\ & n^8 × n^4 = n^{12}\\\\ & n^{12} × n^2 = n^{14}\\\\ & n^{14} × n = n^{15} \end{align}$$
+$$$\start{align}   & n × n = n^2\\\\
+  & n^2 × n^2 = n^4\\\\   & n^4 × n^4 = n^8\\\\
+  & n^8 × n^4 = n^{12}\\\\   & n^{12} × n^2 = n^{14}\\\\
+  & n^{14} × n = n^{15} \end{align}$$
 
 Tuttavia è ancora possibile calcolarlo in sole cinque moltiplicazioni:
 
-$$\begin{align} & n × n = n^2\\\\ & n^2 × n = n^3\\\\ & n^3 × n^3 = n^6\\\\ & n^6 × n^6 = n^{12}\\\\ & n^{12} × n^3 = n^{15} \end{align}$$
+$$\begin{align}   & n × n = n^2\\\\
+  & n^2 × n = n^3\\\\   & n^3 × n^3 = n^6\\\\
+  & n^6 × n^6 = n^{12}\\\\ & n^{12} × n^3 = n^{15} \end{align}$$
 
 Definiremo $m(k)$ in modo che sia il numero minimo di moltiplicazioni per calcolare $n^k$; per esempio $m(15) = 5$.
 

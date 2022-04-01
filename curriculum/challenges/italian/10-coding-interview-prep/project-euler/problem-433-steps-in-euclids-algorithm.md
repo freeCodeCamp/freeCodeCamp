@@ -10,7 +10,8 @@ dashedName: problem-433-steps-in-euclids-algorithm
 
 Sia $E(x_0, y_0)$ il numero di passi necessari a determinare il maggiore divisore comune di $x_0$ e $y_0$ con l'algoritmo di Euclide. Più formalmente:
 
-$$$\start{align} & x_1 = y_0, y_1 = x_0\bmod y_0 \\\\ & x_n = y_{n - 1}, y_n = x_{n - 1}\bmod y_{n - 1} \end{align}$$
+$$$\start{align}   & x_1 = y_0, y_1 = x_0\bmod y_0 \\\\
+  & x_n = y_{n - 1}, y_n = x_{n - 1}\bmod y_{n - 1} \end{align}$$
 
 $E(x_0, y_0)$ è il più piccolo $n$ tale che $y_n = 0$.
 

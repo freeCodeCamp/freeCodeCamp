@@ -1,7 +1,6 @@
-const slugs = require('./slugs');
+import { dasherize, nameify, unDasherize } from './slugs';
 
 describe('dasherize', () => {
-  const { dasherize } = slugs;
   it('returns a string', () => {
     expect(dasherize('')).toBe('');
   });
@@ -26,7 +25,6 @@ describe('dasherize', () => {
 });
 
 describe('nameify', () => {
-  const { nameify } = slugs;
   it('returns a string', () => {
     expect(nameify('')).toBe('');
   });
@@ -36,7 +34,6 @@ describe('nameify', () => {
 });
 
 describe('unDasherize', () => {
-  const { unDasherize } = slugs;
   it('returns a string', () => {
     expect(unDasherize('')).toBe('');
   });

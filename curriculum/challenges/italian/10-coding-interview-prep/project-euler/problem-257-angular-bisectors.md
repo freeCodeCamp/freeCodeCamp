@@ -8,7 +8,7 @@ dashedName: problem-257-angular-bisectors
 
 # --description--
 
-Dato un triangolo con lati interi $ABC$ con lati $a ≤ b ≤ c$. ($AB = c$, $BC = a$ and $AC = b$).
+Ti viene dato un triangolo con lati interi $ABC$ con lati $a ≤ b ≤ c$ ($AB = c$, $BC = a$ e $AC = b$).
 
 Le bisettrici angolari del triangolo intersecano i lati ai punti $E$, $F$ e $G$ (vedi la figura sotto).
 

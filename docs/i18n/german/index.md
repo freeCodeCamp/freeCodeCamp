@@ -22,7 +22,7 @@ Du kannst helfen, den Studienplan zu erweitern und zu verbessern. Du kannst auch
 
 Wir lokalisieren freeCodeCamp.org in die wichtigsten Sprachen der Welt.
 
-Certifications are already live in some major world languages like [Chinese (中文)](https://chinese.freecodecamp.org/learn), [Spanish (Español)](https://www.freecodecamp.org/espanol/learn), [Italian (Italiano)](https://www.freecodecamp.org/italian/learn), [Portuguese (Português)](https://www.freecodecamp.org/portuguese/learn). Wir ermutigen dich, die [Ankündigung ](https://www.freecodecamp.org/news/world-language-translation-effort) zu lesen und sie mit deinen Freunden zu teilen, um sie dafür zu begeistern.
+Zertifizierungen gibt es bereits in einigen wichtigen Weltsprachen wie [Chinesisch (中文)](https://chinese.freecodecamp.org/learn), [Spanisch (Español)](https://www.freecodecamp.org/espanol/learn), [Italienisch (Italiano)](https://www.freecodecamp.org/italian/learn), [Portugiesisch (Português)](https://www.freecodecamp.org/portuguese/learn). Wir ermutigen dich, die [Ankündigung ](https://www.freecodecamp.org/news/world-language-translation-effort) zu lesen und sie mit deinen Freunden zu teilen, um sie dafür zu begeistern.
 
 **Wenn du daran interessiert bist, zu übersetzen, findest du hier [eine Anleitung zum Übersetzen der freeCodeCamp-Ressourcen](how-to-translate-files.md).**
 

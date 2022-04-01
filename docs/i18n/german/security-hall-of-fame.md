@@ -1,6 +1,6 @@
 # Verantwortliche Offenlegung - Hall of Fame
 
-Wir freuen uns über jede verantwortungsvolle Offenlegung von Schwachstellen, die die Integrität unserer Plattformen und Nutzer/innen beeinträchtigen könnten. If you are interested in contributing to the security of our platform, please read our [security policy outlined here](security.md).
+Wir freuen uns über jede verantwortungsvolle Offenlegung von Schwachstellen, die die Integrität unserer Plattformen und Nutzer/innen beeinträchtigen könnten. Wenn du daran interessiert bist, zur Sicherheit unserer Plattform beizutragen, lies bitte unsere [Sicherheitsrichtlinien](security.md).
 
 Auch wenn wir im Moment keine Belohnungen oder Swags anbieten, sind wir diesen großartigen Menschen dankbar, dass sie uns helfen, die Plattform für alle sicher zu halten:
 

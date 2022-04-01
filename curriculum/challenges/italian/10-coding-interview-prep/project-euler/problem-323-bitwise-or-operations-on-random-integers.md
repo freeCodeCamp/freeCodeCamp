@@ -8,18 +8,16 @@ dashedName: problem-323-bitwise-or-operations-on-random-integers
 
 # --description--
 
-Sia $y_0, y_1, y_2, \ldots$ una sequenza di numeri interi casuali a 32 bit senza segno
+Sia $y_0, y_1, y_2, \ldots$ una successione casuale di numeri interi senza segno a 32 bit (cioè $0 ≤ y_i &lt; 2^{32}$, ogni valore altrettanto probabile).
 
-(cioè $0 ≤ y_i &lt; 2^{32}$, con ogni valore ugualmente probabile).
-
-Per la sequenza $x_i$ viene fornita la seguente ricorsione:
+Per la successione $x_i$ viene data la seguente ricorsione:
 
 - $x_0 = 0$ e
 - $x_i = x_{i - 1} \mathbf{|} y_{i - 1}$, per $i > 0$. ($\mathbf{|}$ è l'operatore bitwise-OR)
 
-Si può vedere che alla fine ci sarà un indice $N$ tale che $x_i = 2^{32} - 1$ (un bit-pattern di solo uno) per tutti $i ≥ N$.
+Si può vedere che alla fine ci sarà un indice $N$ tale che $x_i = 2^{32} - 1$ (un pattern con tutti i bit a uno) per tutti gli i $i ≥ N$.
 
-Trova il valore atteso di $N$. Dare la risposta arrotondata a 10 cifre dopo il punto decimale.
+Trova il valore atteso di $N$. Dai la tua risposta arrotondata a 10 cifre dopo il punto decimale.
 
 # --hints--
 

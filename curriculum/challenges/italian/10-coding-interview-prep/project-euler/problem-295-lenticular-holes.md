@@ -16,7 +16,8 @@ Chiamiamo l'area convessa racchiusa da due cerchi un foro lenticolare se:
 
 Considera i cerchi:
 
-$$\begin{align} & C_0: x^2 + y^2 = 25 \\\\ & C_1: {(x + 4)}^2 + {(y - 4)}^2 = 1 \\\\ & C_2: {(x - 12)}^2 + {(y - 4)}^2 = 65 \end{align}$$
+$$\begin{align}   & C_0: x^2 + y^2 = 25 \\\\
+  & C_1: {(x + 4)}^2 + {(y - 4)}^2 = 1 \\\\ & C_2: {(x - 12)}^2 + {(y - 4)}^2 = 65 \end{align}$$
 
 I cerchi $C_0$, $C_1$ e $C_2$ sono disegnati nell'immagine sottostante.
 

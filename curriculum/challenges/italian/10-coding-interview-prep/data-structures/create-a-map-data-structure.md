@@ -26,7 +26,7 @@ Facciamo un po' di pratica nel creare la nostra mappa. Poiché gli oggetti JavaS
 
 # --hints--
 
-La struttura di dati Mappa dovrebbe esistere.
+La struttura dati `Map` dovrebbe esistere.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-L'oggetto Map dovrebbe avere i seguenti metodi: add, remove, get, has, values, clear e size.
+L'oggetto `Map` dovrebbe seguire i seguenti metodi: `add`, `remove`, `get`, `has`, `values`, `clear`, and `size`.
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-Il metodo add dovrebbe aggiungere oggetti alla mappa.
+Il metodo `add` dovrebbe aggiungere degli oggetti alla mappa.
 
 ```js
 assert(
@@ -79,7 +79,7 @@ assert(
 );
 ```
 
-Il metodo has dovrebbe restituire true per elementi esistenti e false per oggetti non esistenti.
+Il metodo `has` dovrebbe restituire `true` per gli oggetti aggiunti e `false` per quelli assenti.
 
 ```js
 assert(
@@ -94,7 +94,7 @@ assert(
 );
 ```
 
-Il metodo get dovrebbe accettare delle chiavi come input e dovrebbe restituire i valori associati.
+Il metodo `get` dovrebbe accettare le chiavi come input e dovrebbe restituire i valori associati.
 
 ```js
 assert(
@@ -109,7 +109,7 @@ assert(
 );
 ```
 
-Il metodo values dovrebbe restituire tutti i valori immagazzinati nella mappa come stringhe in un array.
+Il `values` dovrebbe ritornare tutti i valori immagazzinati nella mappa come stringhe in una variabile.
 
 ```js
 assert(
@@ -131,7 +131,7 @@ assert(
 );
 ```
 
-Il metodo clear dovrebbe svuotare la mappa e il metodo size dovrebbe restituire il numeri di oggetti presenti nella mappa.
+Il metodo `clear` dovrebbe svuotare la mappa e il metodo `size` dovrebbe restituire il numero di elementi presenti nella mappa.
 
 ```js
 assert(

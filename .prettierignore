@@ -9,4 +9,6 @@ config/i18n/all-langs.js
 config/certification-settings.js
 client/i18n/**/*.json
 docs/i18n
+utils/slugs.js
+utils/slugs.test.js
 **/package-lock.json

@@ -10,7 +10,8 @@ dashedName: problem-456-triangles-containing-the-origin-ii
 
 Definisci:
 
-$$\begin{align} & x_n = ({1248}^n\bmod 32323) - 16161 \\\\ & y_n = ({8421}^n\bmod 30103) - 15051 \\\\ & P_n = \\{(x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)\\} \end{align}$$
+$$\begin{align}   & x_n = ({1248}^n\bmod 32323) - 16161 \\\\
+  & y_n = ({8421}^n\bmod 30103) - 15051 \\\\ & P_n = \\{(x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)\\} \end{align}$$
 
 Per esempio, $$P_8 = \\{(-14913, -6630), (-10161, 5625), (5226, 11896), (8340, -10778), (15852, -5203), (-15165, 11295), (-1427, -14495), (12407, 1060)\\}$$
 
@@ -18,7 +19,8 @@ Sia $C(n)$ il numero di triangoli i cui vertici sono in $P_n$ che contiene l'ori
 
 Esempi:
 
-$$\begin{align} & C(8) = 20 \\\\ & C(600) = 8\\,950\\,634 \\\\ & C(40\\,000) = 2\\,666\\,610\\,948\\,988 \end{align}$$
+$$\begin{align}   & C(8) = 20 \\\\
+  & C(600) = 8\\,950\\,634 \\\\ & C(40\\,000) = 2\\,666\\,610\\,948\\,988 \end{align}$$
 
 Trova $C(2\\,000\\,000)$.
 
