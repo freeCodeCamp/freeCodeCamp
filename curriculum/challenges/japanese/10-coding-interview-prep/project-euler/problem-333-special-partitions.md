@@ -14,7 +14,8 @@ dashedName: problem-333-special-partitions
 
 多くの整数には有効な分割が複数個あります。そのような最初の数は 11 であり、次の 2 つの分割があります。
 
-$$\begin{align} & 11 = 2 + 9 = (2^1 \times 3^0 + 2^0 \times 3^2) \\\\ & 11 = 8 + 3 = (2^3 \times 3^0 + 2^0 \times 3^1) \end{align}$$
+$$\begin{align}   & 11 = 2 + 9 = (2^1 \times 3^0 + 2^0 \times 3^2) \\\\
+  & 11 = 8 + 3 = (2^3 \times 3^0 + 2^0 \times 3^1) \end{align}$$
 
 $n$ の有効な分割の数を $P(n)$ とします。 例えば、$P(11) = 2$ です。
 

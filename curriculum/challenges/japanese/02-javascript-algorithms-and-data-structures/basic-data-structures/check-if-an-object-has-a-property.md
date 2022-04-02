@@ -19,7 +19,7 @@ users.hasOwnProperty('Alan');
 
 # --instructions--
 
-渡されたオブジェクトに `Alan`、`Jeff`、`Sarah`、`Ryan` の 4 つの名前すべてが含まれている場合は true を返し、そうでない場合は false を返すように、関数の記述を完成させてください。
+渡されたオブジェクトに `Alan`、`Jeff`、`Sarah`、`Ryan` の 4 つの名前すべてが含まれている場合は `true` を返し、そうでない場合は `false` を返すように、関数の記述を完成させてください。
 
 # --hints--
 
