@@ -1,31 +1,31 @@
-Welcome to freeCodeCamp's `ui-components` library. The components are built mostly from scratch with basic HTML elements and [Tailwind CSS](https://tailwindcss.com/).
+Benvenuti nella libreria `ui-components` di freeCodeCamp. I componenti sono principalmente creati da zero con elementi HTML base e [Tailwind CSS](https://tailwindcss.com/).
 
-# How to Work on the Component Library
+# Come lavorare sulla libreria dei componenti
 
 > [!NOTE]
 > 
-> freeCodeCamp has been using Bootstrap components in the UI. However, we are moving away from it and building our own component library, which helps standardize our UX/UI patterns and improve accessibility. The project is tracked in [this GitHub issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/44668).
+> freeCodeCamp stava utilizzando componeti Bootstrap nell'UI. Ma, ci stiamo pian piano allontanando da ciò e creando la nostra libreria componenti, il che aiuta a standardizzare i pattern UI/UX e a migliorare l'accessibilità. Teniamo traccia del progetto in [questa issue su GitHub](https://github.com/freeCodeCamp/freeCodeCamp/issues/44668).
 
-The following steps are recommended when working on a new component:
+I seguenti step sono raccomandati quando lavori su un nuovo componente:
 
-- Research and planning
-- Implement the component
-- Display the use cases on Storybook
-- Write unit tests
+- Ricerca e pianificazione
+- Implementazione del componente
+- Visualizzazione degli use case in Storybook
+- Scrittura dei test unitari
 
-## Researching and planning
+## Ricerca e pianificazione
 
-Before building a component, you need to research and document on how the existing version behaves and looks, to ensure that the new one has matching styles and supports all the current usages. In order to meet the web accessibility requirements, you should also pay attention to the accessibility aspect of the component, see which HTML elements and ARIA attributes are used under the hood.
+Prima di creare un componente, devi ricercare e documentare il comportamento e l'aspetto della versione esistente, per assicurarti che il nuovo componente combaci in stile e supporti tutti gli usi correnti. In modo da soddisfare tutti i requisiti di accessibilità web, dovresti prestare attenzione all'aspetto di accessibilità del componente, vedere quali elementi HTML e attributi ARIA sono usati.
 
-Once you have gathered enough information about the component, you can start thinking about the props interface. Ideally, the interface should be as similar to the current version as possible, to ease the adoption later on. Since we are using Bootstrap components, the simplest approach is to mimic [their implementation](https://github.com/react-bootstrap/react-bootstrap/tree/master/src).
+Una volta che hai raccolto abbastanza informazioni sul componente, puoi iniziare a pensare alle proprietà dell'interfaccia. Idealmente, l'interfaccia dovrebbe essere quanto più simile possibile alla versione corrente, per renderne più semplice l'adozione in futuro. Visto che stiamo usando componenti Bootstrap, l'approccio più semplice è mimare [la loro implementazione](https://github.com/react-bootstrap/react-bootstrap/tree/master/src).
 
-We prefer smaller pull requests rather than a large one, because they speed up the review time and reduce cognitive overload for the reviewers. For that reason, you should think about how you would break down the implementation and come up with a delivery plan.
+Preferiamo pull request piccole piuttosto che grandi, perché riducono la velocità di revisione e il carico cognitivo per i revisori. Per questa ragione dovresti pensare a come dividere l'implementazione in pezzi più piccoli e creare un piano di delivery.
 
-We recommend opening a separate GitHub issue for each component and include all the notes in the issue description. It can be used as a place to host all of your working notes, as well as a way to communicate the approach with the reviewers. We will use the issue thread for further discussion if needed. [The issue for Button component](https://github.com/freeCodeCamp/freeCodeCamp/issues/45357) can be used as a reference.
+Raccomandiamo di aprire una issue su GitHub separata per ogni componente e includere tutte le note nella descrizione della issue. Può essere usato come posto per ospitare tutte le tue note di lavoro, come pure un modo per comunicare l'approccio con i revisori. Useremo i commenti dell'issue per discussioni ulteriori se necessario. [La issue per il componente Button](https://github.com/freeCodeCamp/freeCodeCamp/issues/45357) può essere usata come referenza.
 
-## Implementing the component
+## Implementare il componente
 
-A new component can be created using the following command from the root directory:
+Un nuovo componente può essere creato usando i seguenti comandi dalla root directory:
 
 ```bash
 cd tools/ui-components
@@ -33,55 +33,55 @@ cd tools/ui-components
 npm run gen-component MyComponent
 ```
 
-The command will generate a new folder inside the `ui-components` directory, with the following files:
+Il comando genererà una nuova cartella dentro la directory `ui-components`, con i seguenti file:
 
-| File name                  | Purpose                                                |
-| -------------------------- | ------------------------------------------------------ |
-| `index.ts`                 | It is used for exporting the component and its types.  |
-| `my-component.stories.tsx` | It is used for demoing the component on Storybook.     |
-| `my-component.test.tsx`    | It is a test file.                                     |
-| `my-component.tsx`         | It is where we implement the component.                |
-| `types.ts`                 | Is is where we locate component's interface and types. |
+| Nome file                  | Scopo                                                |
+| -------------------------- | ---------------------------------------------------- |
+| `index.ts`                 | Usato per esportare il componente e i suoi tipi.     |
+| `my-component.stories.tsx` | Usato per fare la demo del componente con Storybook. |
+| `my-component.test.tsx`    | file di test.                                        |
+| `my-component.tsx`         | Dove implementiamo il componente.                    |
+| `types.ts`                 | Dove mettiamo l'interfaccia e i tipi del componente. |
 
-Each component is different, but in general a component should:
+Ogni componente è diverso, ma in genere un componente dovrebbe:
 
-- Support forwarding ref
-- Be styled for both light and dark themes
-- Be styled internally based on their props (the consumers should not need to restyle the component with the `className` prop)
-- Utilize the built-in styling system from Tailwind instead of having custom styles
+- Supportare l'invio a ref
+- Essere stilizzato sia per il tema chiaro che scuro
+- Essere stilizzato internamente basato sulle proprietà (Il consumatore non dovrebbe avere bisogno di stilizzare il componente con la proprietà `className`)
+- Utilizzare il sistema integrato di stilizzazione di Tailwind invece di usare stili personalizzati
 
-### Useful links
+### Link utili
 
 - [Tailwind CSS Configuration](https://tailwindcss.com/docs/configuration)
 - [React Bootstrap v0.33 Docs](https://react-bootstrap-v3.netlify.app)
 - [Bootstrap 3.3.7 stylesheet](https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css)
-- [React Bootstrap current implementation](https://github.com/react-bootstrap/react-bootstrap/tree/master/src)
-- [React Bootstrap current tests](https://github.com/react-bootstrap/react-bootstrap/tree/master/test)
+- [Implementazione corrente di React Bootstrap](https://github.com/react-bootstrap/react-bootstrap/tree/master/src)
+- [Test attuali di React Bootstrap](https://github.com/react-bootstrap/react-bootstrap/tree/master/test)
 
-## Displaying the use cases on Storybook
+## Visualizzazione degli use case con Storybook
 
-Use cases of the component should be added to the Storybook file (`.stories.tsx`).
+Gli use case di un componente dovrebbero essere aggiunti al file Storybook (`.stories.tsx`).
 
-To start Storybook, run the following command from the root directory:
+Per far partire Storybook, esegui i seguenti comandi dalla directory root:
 
 ```bash
 npm run storybook
 ```
 
-The Storybook page is available on [http://localhost:6006](http://localhost:6006).
+La pagina Storybook è disponibile a [http://localhost:6006](http://localhost:6006).
 
-## Writing unit tests
+## Scrivere test unitari
 
-We use [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) to write unit tests. The tests should assert that the components behave as expected and are accessible.
+Usiamo [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) per scrivere i test dell'unità. I test dovrebbero verificare che i componenti si comportano come previsto e sono accessibili.
 
-To run tests against the component library, run the following command from the root directory:
+Per eseguire i test sulla libreria componenti, esegui il seguente comando dalla directory root:
 
 ```bash
 npm run test-ui-components
 ```
 
-### Useful links
+### Link utili
 
-- [Testing for Accessibility](https://testing-library.com/docs/dom-testing-library/api-accessibility)
-- [Order of priority of React Testing Library's queries](https://testing-library.com/docs/queries/about/#priority)
-- [Common mistakes with React Testing Library](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library)
+- [Testare per accessibilità](https://testing-library.com/docs/dom-testing-library/api-accessibility)
+- [Ordine di priorità delle query di React Testing Library](https://testing-library.com/docs/queries/about/#priority)
+- [Errori comuni con React Testing Library](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library)
