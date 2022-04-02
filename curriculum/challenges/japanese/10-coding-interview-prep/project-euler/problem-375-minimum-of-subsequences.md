@@ -10,7 +10,8 @@ dashedName: problem-375-minimum-of-subsequences
 
 以下に述べる疑似乱数生成器で作成した整数の数列を $S_n$ とします。
 
-$$\begin{align} S_0 & = 290\\,797 \\\\ S_{n + 1} & = {S_n}^2\bmod 50\\,515\\,093 \end{align}$$
+$$\begin{align}         S_0 & = 290\\,797 \\\\
+  S_{n + 1} & = {S_n}^2\bmod 50\\,515\\,093 \end{align}$$
 
 $i ≤ j$ に対する数 $S_i, S_{i + 1}, \ldots, S_j$ のうちの最小数を $A(i, j)$ とします。 $1 ≤ i ≤ j ≤ N$ のとき、$M(N) = \sum A(i, j)$ とします。
 

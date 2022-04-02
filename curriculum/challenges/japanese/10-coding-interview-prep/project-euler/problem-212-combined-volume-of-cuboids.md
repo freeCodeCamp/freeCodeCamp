@@ -12,7 +12,10 @@ dashedName: problem-212-combined-volume-of-cuboids
 
 $C_n$ が次のようなパラメータを持ち、座標軸に平行に置かれた直方体 5000 個の集まりを、$C_1, \ldots, C_{50000}$ とします。
 
-$$\begin{align} & x_0 = S_{6n - 5} \\; \text{mod} \\; 10000    \\\\ & y_0 = S_{6n - 4} \\; \text{mod} \\; 10000    \\\\ & z_0 = S_{6n - 3} \\; \text{mod} \\; 10000    \\\\ & dx = 1 + (S_{6n - 2} \\; \text{mod} \\; 399) \\\\ & dy = 1 + (S_{6n - 1} \\; \text{mod} \\; 399) \\\\ & dz = 1 + (S_{6n} \\; \text{mod} \\; 399)     \\\\ \end{align}$$
+$$\begin{align}   & x_0 = S_{6n - 5} \\; \text{mod} \\; 10000    \\\\
+  & y_0 = S_{6n - 4} \\; \text{mod} \\; 10000    \\\\   & z_0 = S_{6n - 3} \\; \text{mod} \\; 10000    \\\\
+  & dx = 1 + (S_{6n - 2} \\; \text{mod} \\; 399) \\\\   & dy = 1 + (S_{6n - 1} \\; \text{mod} \\; 399) \\\\
+  & dz = 1 + (S_{6n} \\; \text{mod} \\; 399)     \\\\ \end{align}$$
 
 ここで、$S_1, \ldots, S_{300000}$ は「ラグ付きフィボナッチ 法」により生成されます。
 

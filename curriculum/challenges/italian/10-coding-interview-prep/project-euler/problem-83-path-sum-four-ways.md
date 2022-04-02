@@ -12,7 +12,9 @@ dashedName: problem-83-path-sum-four-ways
 
 Nella matrice 5 x 5 sotto, il percorso della somma più piccola dall'angolo in alto a sinistra all'angolo in basso a destra, muovendo verso destra, sinistra, alto e basso, è indicato in rosso grassetto ed è uguale a `2297`.
 
-  $$\begin{pmatrix} \color{red}{131} & 673 & \color{red}{234} & \color{red}{103} & \color{red}{18}\\\\ \color{red}{201} & \color{red}{96} & \color{red}{342} & 965 & \color{red}{150}\\\\ 630 & 803 & 746 & \color{red}{422} & \color{red}{111}\\\\ 537 & 699 & 497 & \color{red}{121} & 956\\\\ 805 & 732 & 524 & \color{red}{37} & \color{red}{331} \end{pmatrix}$$
+  $$\begin{pmatrix}   \color{red}{131} & 673 & \color{red}{234} & \color{red}{103} & \color{red}{18}\\\\
+  \color{red}{201} & \color{red}{96} & \color{red}{342} & 965 & \color{red}{150}\\\\   630 & 803 & 746 & \color{red}{422} & \color{red}{111}\\\\
+  537 & 699 & 497 & \color{red}{121} & 956\\\\ 805 & 732 & 524 & \color{red}{37} & \color{red}{331} \end{pmatrix}$$
 
 Trova il percorso della somma più piccola dall'angolo in alto a sinistra all'angolo in basso a destra muovendo a sinistra, destra, alto e basso in `matrix`, un array 2D rappresentate una matrice. La dimensione massima della matrice utilizzata nei test sarà di 80 per 80.
 

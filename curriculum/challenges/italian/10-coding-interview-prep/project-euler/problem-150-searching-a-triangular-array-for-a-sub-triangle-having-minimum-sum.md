@@ -17,13 +17,17 @@ Nell'esempio sottostante si può facilmente verificare che il triangolo marcato 
 
 Vogliamo creare una tale matrice triangolare con mille righe, in modo da generare 500500 numeri pseudo-casuali $s_k$ nel range $±2^{19}$, utilizzando un tipo di generatore di numeri casuali (noto come generatore di elementi costitutivi lineari) come segue:
 
-$$\begin{align} t := & \\ 0\\\\ \text{for}\\ & k = 1\\ \text{up to}\\ k = 500500:\\\\ & t := (615949 × t + 797807)\\ \text{modulo}\\ 2^{20}\\\\ & s_k := t − 219\\\\ \end{align}$$
+$$\begin{align}   t := & \\ 0\\\\
+  \text{for}\\ & k = 1\\ \text{up to}\\ k = 500500:\\\\   & t := (615949 × t + 797807)\\ \text{modulo}\\ 2^{20}\\\\
+  & s_k := t − 219\\\\ \end{align}$$
 
 Thus: $s_1 = 273519$, $s_2 = −153582$, $s_3 = 450905$ etc.
 
 La nostra matrice triangolare è poi formata utilizzando i numeri pseudo-casuali in questo modo:
 
-$$ s_1 \\\\ s_2\\;s_3 \\\\ s_4\\; s_5\\; s_6 \\\\ s_7\\; s_8\\; s_9\\; s_{10} \\\\ \ldots $$
+$$ s_1 \\\\
+s_2\\;s_3 \\\\ s_4\\; s_5\\; s_6 \\\\
+s_7\\; s_8\\; s_9\\; s_{10} \\\\ \ldots $$
 
 I sub-triangoli possono iniziare da qualsiasi elemento dell'array ed estendersi quanto vogliamo (prendendo i due elementi direttamente sotto di esso dalla riga successiva, i tre elementi direttamente al di sotto dalla riga successiva, e così via).
 

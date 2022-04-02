@@ -7,25 +7,43 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
+import { createSelector } from 'reselect';
+import { challengeTypes } from '../../../../utils/challenge-types';
 
 import './tool-panel.css';
-import { openModal, executeChallenge } from '../redux';
+import { openModal, executeChallenge, challengeMetaSelector } from '../redux';
 
-const mapStateToProps = () => ({});
+import { saveChallenge, isSignedInSelector } from '../../../redux';
+
+const mapStateToProps = createSelector(
+  challengeMetaSelector,
+  isSignedInSelector,
+  (
+    { challengeType }: { challengeId: string; challengeType: number },
+    isSignedIn
+  ) => ({
+    challengeType,
+    isSignedIn
+  })
+);
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
       executeChallenge,
       openHelpModal: () => openModal('help'),
       openVideoModal: () => openModal('video'),
-      openResetModal: () => openModal('reset')
+      openResetModal: () => openModal('reset'),
+      saveChallenge
     },
     dispatch
   );
 
 interface ToolPanelProps {
+  challengeType: number;
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
+  saveChallenge: () => void;
   isMobile?: boolean;
+  isSignedIn: boolean;
   openHelpModal: () => void;
   openVideoModal: () => void;
   openResetModal: () => void;
@@ -34,8 +52,11 @@ interface ToolPanelProps {
 }
 
 function ToolPanel({
+  challengeType,
   executeChallenge,
+  saveChallenge,
   isMobile,
+  isSignedIn,
   openHelpModal,
   openVideoModal,
   openResetModal,
@@ -60,14 +81,26 @@ function ToolPanel({
       >
         {isMobile ? t('buttons.run') : t('buttons.run-test')}
       </Button>
-      <Button
-        block={true}
-        bsStyle='primary'
-        className='btn-invert'
-        onClick={openResetModal}
-      >
-        {isMobile ? t('buttons.reset') : t('buttons.reset-code')}
-      </Button>
+      {isSignedIn && challengeType === challengeTypes.multiFileCertProject && (
+        <Button
+          block={true}
+          bsStyle='primary'
+          className='btn-invert'
+          onClick={saveChallenge}
+        >
+          {isMobile ? t('buttons.save') : t('buttons.save-code')}
+        </Button>
+      )}
+      {challengeType !== challengeTypes.multiFileCertProject && (
+        <Button
+          block={true}
+          bsStyle='primary'
+          className='btn-invert'
+          onClick={openResetModal}
+        >
+          {isMobile ? t('buttons.reset') : t('buttons.reset-code')}
+        </Button>
+      )}
       <DropdownButton
         block={true}
         bsStyle='primary'

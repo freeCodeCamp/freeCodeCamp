@@ -11,7 +11,7 @@ dashedName: change-a-variable-for-a-specific-area
 
 When you create your variables in `:root` they will set the value of that variable for the whole page.
 
-You can then over-write these variables by setting them again within a specific selector.
+You can then overwrite these variables by setting them again within a specific selector.
 
 # --instructions--
 

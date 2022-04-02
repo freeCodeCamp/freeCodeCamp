@@ -8,9 +8,9 @@ dashedName: convert-celsius-to-fahrenheit
 
 # --description--
 
-L'algoritmo per convertire i gradi da Celsius a Fahrenheit è la temperatura in Celsius moltiplicata per `9/5`, più `32`.
+La formula per convertire i gradi da Celsius a Fahrenheit è la temperatura in Celsius moltiplicata per `9/5`, più `32`.
 
-Ti viene data una variabile `celsius` che rappresenta una temperatura in Celsius. Usa la variabile `fahrenheit` già definita e assegnale la temperatura Fahrenheit equivalente alla temperatura Celsius specificata. Usa l'algoritmo definito sopra per aiutarti a convertire la temperatura da Celsius a Fahrenheit.
+Ti viene data una variabile `celsius` che rappresenta una temperatura in Celsius. Usa la variabile `fahrenheit` già definita e assegnale la temperatura Fahrenheit equivalente alla temperatura Celsius specificata. Usa la formula mernzionata qui sopra per aiutare a convertire la temperatura da gradi Celsius a Fahrenheit.
 
 # --hints--
 

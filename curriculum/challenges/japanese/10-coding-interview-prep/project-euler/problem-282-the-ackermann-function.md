@@ -10,7 +10,8 @@ dashedName: problem-282-the-ackermann-function
 
 負でない整数 $m$, $n$ に対して、アッカーマン関数 $A(m, n)$ は次のように定義されます。
 
-$$A(m, n) = \begin{cases} n + 1                 & \text{$m = 0$ の場合}             \\\\ A(m - 1, 1)           & \text{$m > 0$ かつ $n = 0$ の場合} \\\\ A(m - 1, A(m, n - 1)) & \text{$m > 0$ かつ $n > 0$ の場合} \end{cases}$$
+$$A(m, n) = \begin{cases} n + 1                 & \text{$m = 0$ の場合}             \\\\
+A(m - 1, 1)           & \text{$m > 0$ かつ $n = 0$ の場合} \\\\ A(m - 1, A(m, n - 1)) & \text{$m > 0$ かつ $n > 0$ の場合} \end{cases}$$
 
 例えば、$A(1, 0) = 2$, $A(2, 2) = 7$, $A(3, 4) = 125$ です。
 

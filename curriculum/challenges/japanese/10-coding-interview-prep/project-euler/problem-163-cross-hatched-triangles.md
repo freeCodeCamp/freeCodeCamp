@@ -18,7 +18,8 @@ dashedName: problem-163-cross-hatched-triangles
 
 大きさ $n$ の三角形に含まれる三角形の数を $T(n)$ とすると、次のようになります。
 
-$$\begin{align} & T(1) = 16 \\\\ & T(2) = 104 \end{align}$$
+$$\begin{align}   & T(1) = 16 \\\\
+  & T(2) = 104 \end{align}$$
 
 $T(36)$ を求めなさい。
 

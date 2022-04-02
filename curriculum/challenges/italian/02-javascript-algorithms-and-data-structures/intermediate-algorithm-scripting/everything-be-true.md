@@ -18,120 +18,123 @@ Ricorda, puoi accedere alle proprietà dell'oggetto tramite la notazione a punti
 
 # --hints--
 
-`truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex")` dovrebbe restituire `true`.
+`truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "isBot")` dovrebbe restituire `false`.
 
 ```js
-assert.strictEqual(
-  truthCheck(
-    [
-      { user: 'Tinky-Winky', sex: 'male' },
-      { user: 'Dipsy', sex: 'male' },
-      { user: 'Laa-Laa', sex: 'female' },
-      { user: 'Po', sex: 'female' }
-    ],
-    'sex'
-  ),
-  true
-);
+assert.strictEqual(truthCheck(
+  [
+    { name: "Quincy", role: "Founder", isBot: false },
+    { name: "Naomi", role: "", isBot: false },
+    { name: "Camperbot", role: "Bot", isBot: true }
+  ],
+  "isBot"), false);
 ```
 
-`truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex")` dovrebbe restituire `false`.
+`truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "name")` dovrebbe restituire `true`.
 
 ```js
-assert.strictEqual(
-  truthCheck(
-    [
-      { user: 'Tinky-Winky', sex: 'male' },
-      { user: 'Dipsy' },
-      { user: 'Laa-Laa', sex: 'female' },
-      { user: 'Po', sex: 'female' }
-    ],
-    'sex'
-  ),
-  false
-);
+assert.strictEqual(truthCheck(
+  [
+    { name: "Quincy", role: "Founder", isBot: false },
+    { name: "Naomi", role: "", isBot: false },
+    { name: "Camperbot", role: "Bot", isBot: true }
+  ],
+  "name"), true);
 ```
 
-`truthCheck([{"user": "Tinky-Winky", "sex": "male", "age": 0}, {"user": "Dipsy", "sex": "male", "age": 3}, {"user": "Laa-Laa", "sex": "female", "age": 5}, {"user": "Po", "sex": "female", "age": 4}], "age")` dovrebbe restituire `false`.
+`truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "role")` dovrebbe restituire `false`.
 
 ```js
-assert.strictEqual(
-  truthCheck(
-    [
-      { user: 'Tinky-Winky', sex: 'male', age: 2 },
-      { user: 'Dipsy', sex: 'male', age: 0 },
-      { user: 'Laa-Laa', sex: 'female', age: 5 },
-      { user: 'Po', sex: 'female', age: 4 }
-    ],
-    'age'
-  ),
-  false
-);
+assert.strictEqual(truthCheck(
+  [
+    { name: "Quincy", role: "Founder", isBot: false },
+    { name: "Naomi", role: "", isBot: false },
+    { name: "Camperbot", role: "Bot", isBot: true }
+  ],
+  "role"), false);
 ```
 
-`truthCheck([{"name": "Pete", "onBoat": true}, {"name": "Repeat", "onBoat": true}, {"name": "FastForward", "onBoat": null}], "onBoat")` dovrebbe restituire `false`.
+`truthCheck([{name: "Pikachu", number: 25, caught: 3}, {name: "Togepi", number: 175, caught: 1}], "number")` dovrebbe ritornare `true`.
 
 ```js
-assert.strictEqual(
-  truthCheck(
-    [
-      { name: 'Pete', onBoat: true },
-      { name: 'Repeat', onBoat: true },
-      { name: 'FastForward', onBoat: null }
-    ],
-    'onBoat'
-  ),
-  false
-);
+assert.strictEqual(truthCheck(
+  [
+    { name: "Pikachu", number: 25, caught: 3 },
+    { name: "Togepi", number: 175, caught: 1 },
+  ],
+  "number"), true);
 ```
 
-`truthCheck([{"name": "Pete", "onBoat": true}, {"name": "Repeat", "onBoat": true, "alias": "Repete"}, {"name": "FastForward", "onBoat": true}], "onBoat")` dovrebbe restituire `true`.
+`truthCheck([{name: "Pikachu", number: 25, caught: 3}, {name: "Togepi", number: 175, caught: 1}, {name: "MissingNo", number: NaN, caught: 0}], "caught")` dovrebbe restituire `false`.
 
 ```js
-assert.strictEqual(
-  truthCheck(
-    [
-      { name: 'Pete', onBoat: true },
-      { name: 'Repeat', onBoat: true, alias: 'Repete' },
-      { name: 'FastForward', onBoat: true }
-    ],
-    'onBoat'
-  ),
-  true
-);
+assert.strictEqual(truthCheck(
+  [
+    { name: "Pikachu", number: 25, caught: 3 },
+    { name: "Togepi", number: 175, caught: 1 },
+    { name: "MissingNo", number: NaN, caught: 0 },
+  ],
+  "caught"), false);
 ```
 
-`truthCheck([{"single": "yes"}], "single")` dovrebbe restituire `true`.
+`truthCheck([{name: "Pikachu", number: 25, caught: 3}, {name: "Togepi", number: 175, caught: 1}, {name: "MissingNo", number: NaN, caught: 0}], "number")` dovrebbe restituire `false`.
 
 ```js
-assert.strictEqual(truthCheck([{ single: 'yes' }], 'single'), true);
+assert.strictEqual(truthCheck(
+  [
+    { name: "Pikachu", number: 25, caught: 3 },
+    { name: "Togepi", number: 175, caught: 1 },
+    { name: "MissingNo", number: NaN, caught: 0 },
+  ],
+  "number"), false);
 ```
 
-`truthCheck([{"single": ""}, {"single": "double"}], "single")` dovrebbe restituire `false`.
+`truthCheck([{name: "Quincy", username: "QuincyLarson"}, {name: "Naomi", username: "nhcarrigan"}, {name: "Camperbot"}], "username")` dovrebbe restituire `false`.
 
 ```js
-assert.strictEqual(
-  truthCheck([{ single: '' }, { single: 'double' }], 'single'),
-  false
-);
+assert.strictEqual(truthCheck(
+  [
+    { name: "Quincy", username: "QuincyLarson" },
+    { name: "Naomi", username: "nhcarrigan" },
+    { name: "Camperbot" }
+  ],
+  "username"), false);
 ```
 
-`truthCheck([{"single": "double"}, {"single": undefined}], "single")` dovrebbe restituire `false`.
+`truthCheck([{name: "freeCodeCamp", users: [{name: "Quincy"}, {name: "Naomi"}]}, {name: "Code Radio", users: [{name: "Camperbot"}]}, {name: "", users: []}], "users")` dovrebbe restituire `true`.
 
 ```js
-assert.strictEqual(
-  truthCheck([{ single: 'double' }, { single: undefined }], 'single'),
-  false
-);
+assert.strictEqual(truthCheck(
+  [
+    { name: "freeCodeCamp", users: [{ name: "Quincy" }, { name: "Naomi" }] },
+    { name: "Code Radio", users: [{ name: "Camperbot" }] },
+    { name: "", users: [] },
+  ],
+  "users"), true);
 ```
 
-`truthCheck([{"single": "double"}, {"single": NaN}], "single")` dovrebbe restituire `false`.
+`truthCheck([{id: 1, data: {url: "https://freecodecamp.org", name: "freeCodeCamp"}}, {id: 2, data: {url: "https://coderadio.freecodecamp.org/", name: "CodeRadio"}}, {id: null, data: {}}], "data")` dovrebbe restituire `true`.
 
 ```js
-assert.strictEqual(
-  truthCheck([{ single: 'double' }, { single: NaN }], 'single'),
-  false
-);
+assert.strictEqual(truthCheck(
+  [
+    { id: 1, data: { url: "https://www.freecodecamp.org", name: "freeCodeCamp" } },
+    { id: 2, data: { url: "https://coderadio.freecodecamp.org/", name: "CodeRadio" } },
+    { id: null, data: {} },
+  ],
+  "data"), true);
+```
+
+`truthCheck([{id: 1, data: {url: "https://freecodecamp.org", name: "freeCodeCamp"}}, {id: 2, data: {url: "https://coderadio.freecodecamp.org/", name: "CodeRadio"}}, {id: null, data: {}}], "id")` dovrebbe restituire `false`.
+
+```js
+assert.strictEqual(truthCheck(
+  [
+    { id: 1, data: { url: "https://www.freecodecamp.org", name: "freeCodeCamp" } },
+    { id: 2, data: { url: "https://coderadio.freecodecamp.org/", name: "CodeRadio" } },
+    { id: null, data: {} },
+  ],
+  "id"), false);
 ```
 
 # --seed--
@@ -143,7 +146,7 @@ function truthCheck(collection, pre) {
   return pre;
 }
 
-truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
+truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "isBot");
 ```
 
 # --solutions--

@@ -165,6 +165,9 @@ config/curriculum.json
 config/i18n/all-langs.js
 config/certification-settings.js
 
+### Generated utils files ###
+utils/slugs.js
+utils/slugs.test.js
 
 ### vim ###
 # Swap

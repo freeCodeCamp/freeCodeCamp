@@ -24,7 +24,8 @@ Può essere mostrato che il sistema dopo un numero sufficiente di turni evolve a
 
 Definiamo la sequenza $\\{t_i\\}$:
 
-$$\begin{align} & s_0 = 290\\,797 \\\\ & s_{k + 1} = {s_k}^2\bmod 50\\,515\\,093 \\\\ & t_k = (s_k\bmod 64) + 1 \end{align}$$
+$$\begin{align}   & s_0 = 290\\,797 \\\\
+  & s_{k + 1} = {s_k}^2\bmod 50\\,515\\,093 \\\\ & t_k = (s_k\bmod 64) + 1 \end{align}$$
 
 Iniziando dalla configurazione iniziale $(t_0, t_1, \ldots, t_{10})$, lo stato finale diventa [1, 3, 10, 24, 51, 75].
 

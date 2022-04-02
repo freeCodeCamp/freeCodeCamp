@@ -28,11 +28,11 @@ Si crees que has encontrado un error, primero lee el artículo ["Ayuda, he encon
 
 Si estás seguro de que es un error nuevo, crea un tema de GitHub nuevo.  Asegúrate de incluir tanta información como sea posible para que podamos reproducir el error.  Tenemos una plantilla de informe predefinida para ayudarte con esto.
 
-Ten en cuenta que estos temas de GitHub son para debates y problemas relacionados al código base, no para obtener ayuda para aprender a programar. Whenever in doubt, you should [seek assistance on the forum](https://forum.freecodecamp.org) before creating a GitHub issue.
+Ten en cuenta que estos temas de GitHub son para debates y problemas relacionados al código base, no para obtener ayuda para aprender a programar. Siempre que tenga dudas, debe [buscar ayuda en el foro](https://forum.freecodecamp.org) antes de reportar un problema de GitHub.
 
 ### ¿Cómo puedo reportar un problema de seguridad?
 
-Please don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
+Por favor, no crees Tema de GitHub para problemas de seguridad. En su lugar, por favor envía un correo electrónico a `security@freecodecamp.org` y lo estudiaremos inmediatamente.
 
 ### Soy estudiante. ¿Puedo trabajar en una característica para los créditos académicos?
 
@@ -50,9 +50,9 @@ You should go through [**`help wanted`**](https://github.com/freeCodeCamp/freeCo
 
 > [!TIP] Los temas de **`se busca ayuda`** están en marcha y no es necesario pedir permiso antes de trabajar en ellos. Sin embargo, temas con la etiqueta **`solo principiantes`** son temas especiales que están diseñados para personas que no han contribuido a la base de código de freeCodeCamp antes.
 
-### Encontré un error tipográfico. Should I report an issue before I can make a pull request?
+### Encontré un error tipográfico. ¿Debo informar de un problema antes de poder hacer un pull request?
 
-For typos and other wording changes, you can directly open pull requests without creating an issue first. Please be sure to mention details in the pull request description to help us understand and review your contribution – even if it's just a minor change.
+Para errores tipográficos y otros cambios de redacción, puedes abrir pull-requests directamente sin tener que crear un problema primero. Please be sure to mention details in the pull request description to help us understand and review your contribution – even if it's just a minor change.
 
 Please do create an issue if you want to discuss bigger aspects of the codebase or curriculum.
 
@@ -87,9 +87,9 @@ If you practice the above **consistently for a while** and our fellow moderator 
 
 Take a look at our [Moderator Handbook](moderator-handbook.md) for a more exhaustive list of other responsibilities and expectations we have of our moderators.
 
-### I am stuck on something that is not included in this documentation.
+### Estoy atascado en algo que no está incluido en esta documentación.
 
-**Feel free to ask for help in:**
+**Siéntete libre de pedir ayuda en:**
 
 - The `Contributors` category of [our community forum](https://forum.freecodecamp.org/c/contributors).
 - The `#Contributors` channel on [our chat server](https://chat.freecodecamp.org/channel/contributors).
@@ -98,7 +98,7 @@ We are excited to help you contribute to any of the topics that you would like t
 
 Thanks in advance for being polite and patient. Remember – this community is run mainly by volunteers.
 
-### Additional Assistance
+### Asistencia adicional
 
 If you have queries about the stack, architecture of the codebase, translations, or anything else feel free to reach out to our staff team [on the forum](https://forum.freecodecamp.org/g/team).
 

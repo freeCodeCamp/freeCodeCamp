@@ -16,7 +16,9 @@ Il minimo comun divisore, o $lcm$ (dall'inglese least common multiple), di una l
 
 Sia $f(G, L, N)$ il numero di liste di dimensione $N$ con $gcd ≥ G$ e $lcm ≤ L$. Ad esempio:
 
-$$\begin{align} & f(10, 100, 1) = 91 \\\\ & f(10, 100, 2) = 327 \\\\ & f(10, 100, 3) = 1135 \\\\ & f(10, 100, 1000)\bmod {101}^4 = 3\\,286\\,053 \end{align}$$
+$$\begin{align}   & f(10, 100, 1) = 91 \\\\
+  & f(10, 100, 2) = 327 \\\\   & f(10, 100, 3) = 1135 \\\\
+  & f(10, 100, 1000)\bmod {101}^4 = 3\\,286\\,053 \end{align}$$
 
 Trova $f({10}^6, {10}^{12}, {10}^{18})\bmod {101}^4$.
 
