@@ -148,7 +148,7 @@ export const i18nextCodes = {
 };
 
 // These are for the language selector dropdown menu in the footer
-export const langDisplayNames = {
+export const langDisplayNames: Record<string, string> = {
   english: 'English',
   espanol: 'Español',
   chinese: '中文（简体字）',
@@ -163,7 +163,7 @@ export const langDisplayNames = {
  * There's an example in profile/components/Camper.js
  * List: https://github.com/unicode-cldr/cldr-dates-modern/tree/master/main
  */
-export const langCodes = {
+export const langCodes: Record<string, string> = {
   english: 'en-US',
   espanol: 'es-419',
   chinese: 'zh',

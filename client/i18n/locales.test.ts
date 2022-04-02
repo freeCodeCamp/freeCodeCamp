@@ -1,11 +1,10 @@
+import fs from 'fs';
+import { setup } from 'jest-json-schema-extended';
 import {
   availableLangs,
   langDisplayNames,
   langCodes
 } from '../../config/i18n/all-langs';
-
-const fs = require('fs');
-const { setup } = require('jest-json-schema-extended');
 
 setup();
 
@@ -44,11 +43,11 @@ describe('Locale tests:', () => {
       });
 
       test(`has an entry in the langDisplayNames variable`, () => {
-        expect(langDisplayNames[lang].length).toBeGreaterThan(0);
+        expect(langDisplayNames[lang]?.length).toBeGreaterThan(0);
       });
 
       test(`has an entry in the langCodes variable`, () => {
-        expect(langCodes[lang].length).toBeGreaterThan(0);
+        expect(langCodes[lang].length)?.toBeGreaterThan(0);
       });
     });
   });
