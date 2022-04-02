@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@actions/core": "1.6.0",
-    "@actions/github": "5.0.0",
+    "@actions/github": "5.0.1",
     "dotenv": "10.0.0",
     "fs-extra": "10.0.0",
     "gray-matter": "4.0.3",
