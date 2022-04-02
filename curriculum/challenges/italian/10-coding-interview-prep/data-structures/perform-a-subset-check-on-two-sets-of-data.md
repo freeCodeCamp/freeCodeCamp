@@ -25,7 +25,7 @@ assert(
 );
 ```
 
-Il primo Set() dovrebbe essere contenuto nel secondo Set
+Il primo `Set` dovrebbe essere contenuto nel secondo `Set`
 
 ```js
 assert(

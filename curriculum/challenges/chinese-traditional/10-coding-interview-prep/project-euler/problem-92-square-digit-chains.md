@@ -12,7 +12,8 @@ dashedName: problem-92-square-digit-chains
 
 舉個例子：
 
-$$\begin{align} & 44 → 32 → 13 → 10 → \boldsymbol{1} → \boldsymbol{1}\\\\ & 85 → \boldsymbol{89} → 145 → 42 → 20 → 4 → 16 → 37 → 58 → \boldsymbol{89}\\\\ \end{align}$$
+$$\begin{align}   & 44 → 32 → 13 → 10 → \boldsymbol{1} → \boldsymbol{1}\\\\
+  & 85 → \boldsymbol{89} → 145 → 42 → 20 → 4 → 16 → 37 → 58 → \boldsymbol{89}\\\\ \end{align}$$
 
 可以發現，每條到達 1 或 89 的數鏈都會陷入循環。 最令人驚訝的是，從任意數字開始，數鏈最終都會到達 1 或 89。
 

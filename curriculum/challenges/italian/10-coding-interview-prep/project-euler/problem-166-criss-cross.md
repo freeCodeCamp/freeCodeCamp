@@ -12,7 +12,9 @@ Una griglia 4x4 è riempita con cifre $d$, $0 ≤ d ≤ 9$.
 
 Si può vedere che nella griglia
 
-$$\begin{array}{} 6 & 3 & 3 & 0 \\\\ 5 & 0 & 4 & 3 \\\\ 0 & 7 & 1 & 4 \\\\ 1 & 2 & 4 & 5 \end{array}$$
+$$\begin{array}{}   6 & 3 & 3 & 0 \\\\
+  5 & 0 & 4 & 3 \\\\   0 & 7 & 1 & 4 \\\\
+  1 & 2 & 4 & 5 \end{array}$$
 
 la somma di ciascuna riga e di ciascuna colonna ha il valore 12. Inoltre la somma di ogni diagonale è anch'essa 12.
 

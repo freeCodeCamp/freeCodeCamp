@@ -19,7 +19,7 @@ Per $n = 4$, ci sono 12 $n$-ple di interi che soddisfano entrambe le condizioni.
 
 Definiamo $S(t)$ come la somma dei valori assoluti degli interi in $t$.
 
-Per $n = 4$ possiamo verificare che $\sum S(t) = 2087$ per tutte le $n$-ple t che soddisfano entrambe le condizioni.
+Per $n = 4$ possiamo verificare che $\sum S(t) = 2087$ per tutte le $n$-ple $t$ che soddisfano entrambe le condizioni.
 
 Trova $\sum S(t)$ per $n = 7$.
 

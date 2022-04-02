@@ -250,6 +250,39 @@
       ],
       "default": []
     },
+    "savedChallenges": {
+      "type": [
+        {
+          "lastSavedDate": "number",
+          "id": "string",
+          "challengeType": "number",
+          "files": {
+            "type": [
+              {
+                "contents": {
+                  "type": "string",
+                  "default": ""
+                },
+                "ext": {
+                  "type": "string"
+                },
+                "path": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "key": {
+                  "type": "string"
+                }
+              }
+            ],
+            "default": []
+          }
+        }
+      ],
+      "default": []
+    },
     "portfolio": {
       "type": "array",
       "default": []

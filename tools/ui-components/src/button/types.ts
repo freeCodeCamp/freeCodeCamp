@@ -1,6 +1,6 @@
 import { MouseEventHandler } from 'react';
 
-export type ButtonVariant = 'primary' | 'danger';
+export type ButtonVariant = 'primary' | 'danger' | 'info';
 
 export type ButtonSize = 'small' | 'medium' | 'large';
 
