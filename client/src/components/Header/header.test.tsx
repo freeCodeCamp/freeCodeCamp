@@ -358,8 +358,7 @@ const hasAllAvailableLanguagesInDropdown = (component: JSX.Element) => {
   return children.props.children.every(
     ({ props }: { props: { value: string; children: string } }) =>
       availableLangs.client.includes(props.value) &&
-      (langDisplayNames as Record<string, string>)[props.value] ===
-        props.children
+      langDisplayNames[props.value] === props.children
   );
 };
 
