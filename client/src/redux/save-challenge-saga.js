@@ -13,11 +13,23 @@ import {
   bodySizeFits,
   MAX_BODY_SIZE
 } from '../utils/challenge-request-helpers';
-import { saveChallengeComplete } from './';
+import { saveChallengeComplete, savedChallengesSelector } from './';
 
 export function* saveChallengeSaga() {
   const { id, challengeType } = yield select(challengeMetaSelector);
   const { challengeFiles } = yield select(challengeDataSelector);
+  const savedChallenges = yield select(savedChallengesSelector);
+  const savedChallenge = savedChallenges.find(challenge => challenge.id === id);
+
+  // don't let users save more than once every 5 seconds
+  if (Date.now() - savedChallenge?.lastSavedDate < 5000) {
+    return yield put(
+      createFlashMessage({
+        type: 'danger',
+        message: FlashMessages.CodeSaveLess
+      })
+    );
+  }
 
   // only allow saving of multiFileCertProject's
   if (challengeType === challengeTypes.multiFileCertProject) {
