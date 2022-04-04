@@ -6,7 +6,7 @@ const selectors = {
   saveCodeBtn: '[data-cy="save-code-to-database-btn"]'
 };
 
-describe('multiFileCertProjects', function () {
+describe('multifileCertProjects', function () {
   before(() => {
     cy.exec('npm run seed');
     cy.login();

@@ -86,15 +86,15 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
   const challengeFile = getChallengeFile();
   const projectBasedChallenge = hasEditableBoundaries;
-  const isMultiFileCertProject =
-    challengeType === challengeTypes.multiFileCertProject;
+  const isMultifileCertProject =
+    challengeType === challengeTypes.multifileCertProject;
   const displayPreview =
-    projectBasedChallenge || isMultiFileCertProject
+    projectBasedChallenge || isMultifileCertProject
       ? showPreview && hasPreview
       : hasPreview;
   const displayNotes = projectBasedChallenge ? showNotes && hasNotes : false;
   const displayConsole =
-    projectBasedChallenge || isMultiFileCertProject ? showConsole : true;
+    projectBasedChallenge || isMultifileCertProject ? showConsole : true;
   const {
     codePane,
     editorPane,
@@ -106,11 +106,11 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
   return (
     <div className='desktop-layout'>
-      {(projectBasedChallenge || isMultiFileCertProject) && (
+      {(projectBasedChallenge || isMultifileCertProject) && (
         <ActionRow
           block={block}
           hasNotes={hasNotes}
-          isMultiFileCertProject={isMultiFileCertProject}
+          isMultifileCertProject={isMultifileCertProject}
           showConsole={showConsole}
           showNotes={showNotes}
           showPreview={showPreview}

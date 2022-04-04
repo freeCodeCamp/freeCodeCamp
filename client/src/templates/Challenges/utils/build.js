@@ -75,7 +75,7 @@ const buildFunctions = {
   [challengeTypes.backend]: buildBackendChallenge,
   [challengeTypes.backEndProject]: buildBackendChallenge,
   [challengeTypes.pythonProject]: buildBackendChallenge,
-  [challengeTypes.multiFileCertProject]: buildDOMChallenge
+  [challengeTypes.multifileCertProject]: buildDOMChallenge
 };
 
 export function canBuildChallenge(challengeData) {
@@ -97,7 +97,7 @@ const testRunners = {
   [challengeTypes.html]: getDOMTestRunner,
   [challengeTypes.backend]: getDOMTestRunner,
   [challengeTypes.pythonProject]: getDOMTestRunner,
-  [challengeTypes.multiFileCertProject]: getDOMTestRunner
+  [challengeTypes.multifileCertProject]: getDOMTestRunner
 };
 export function getTestRunner(buildData, runnerConfig, document) {
   const { challengeType } = buildData;
@@ -152,7 +152,7 @@ export function buildDOMChallenge(
     .then(challengeFiles => {
       return {
         challengeType:
-          challengeTypes.html || challengeTypes.multiFileCertProject,
+          challengeTypes.html || challengeTypes.multifileCertProject,
         build: concatHtml({
           required: finalRequires,
           template,
@@ -198,7 +198,7 @@ export function buildBackendChallenge({ url }) {
 export function updatePreview(buildData, document, proxyLogger) {
   if (
     buildData.challengeType === challengeTypes.html ||
-    buildData.challengeType === challengeTypes.multiFileCertProject
+    buildData.challengeType === challengeTypes.multifileCertProject
   ) {
     createMainPreviewFramer(document, proxyLogger)(buildData);
   } else {
@@ -211,7 +211,7 @@ export function updatePreview(buildData, document, proxyLogger) {
 export function updateProjectPreview(buildData, document) {
   if (
     buildData.challengeType === challengeTypes.html ||
-    buildData.challengeType === challengeTypes.multiFileCertProject
+    buildData.challengeType === challengeTypes.multifileCertProject
   ) {
     // Give iframe a title attribute for accessibility using the preview
     // document's <title>.
@@ -233,7 +233,7 @@ export function challengeHasPreview({ challengeType }) {
   return (
     challengeType === challengeTypes.html ||
     challengeType === challengeTypes.modern ||
-    challengeType === challengeTypes.multiFileCertProject
+    challengeType === challengeTypes.multifileCertProject
   );
 }
 

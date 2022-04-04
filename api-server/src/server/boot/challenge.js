@@ -91,7 +91,7 @@ const jsCertProjectIds = [
   'aa2e6f85cab2ab736c9a9b24'
 ];
 
-const multiFileCertProjectIds = getChallenges()
+const multifileCertProjectIds = getChallenges()
   .filter(challenge => challenge.challengeType === 14)
   .map(challenge => challenge.id);
 
@@ -132,7 +132,7 @@ export function buildUserUpdate(
   let completedChallenge = {};
   if (
     jsCertProjectIds.includes(challengeId) ||
-    multiFileCertProjectIds.includes(challengeId)
+    multifileCertProjectIds.includes(challengeId)
   ) {
     completedChallenge = {
       ..._completedChallenge,
@@ -315,7 +315,7 @@ export function modernChallengeCompleted(req, res, next) {
       // step or normal challenge we can avoid storing in the database.
       if (
         jsCertProjectIds.includes(id) ||
-        multiFileCertProjectIds.includes(id)
+        multifileCertProjectIds.includes(id)
       ) {
         completedChallenge.challengeType = challengeType;
       }

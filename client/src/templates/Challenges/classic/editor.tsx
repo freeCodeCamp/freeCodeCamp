@@ -411,7 +411,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       label: 'Save editor content',
       keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S],
       run:
-        props.challengeType === challengeTypes.multiFileCertProject
+        props.challengeType === challengeTypes.multifileCertProject
           ? // save to database
             props.saveChallenge
           : // save to local storage
