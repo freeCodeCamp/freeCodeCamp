@@ -47,7 +47,7 @@ La parada de color en 0 píxeles debe ser `yellow`.
 assert(code.match(/yellow\s+?0(px)?/gi));
 ```
 
-Una parada de color a 40 píxeles debe ser `yellow`.
+La primera parada de color en 40 píxeles debe ser `yellow`.
 
 ```js
 assert(code.match(/yellow\s+?40px/gi));

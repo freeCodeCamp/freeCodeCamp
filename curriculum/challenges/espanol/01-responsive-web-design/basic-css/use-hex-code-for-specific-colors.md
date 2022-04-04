@@ -27,13 +27,13 @@ Reemplaza la palabra `black` en el "background-color" (color de fondo) de nuestr
 
 # --hints--
 
-Tu elemento `body` debe tener "background-color" black (negro).
+Tu elemento `body` debe tener un `background-color` black (negro).
 
 ```js
 assert($('body').css('background-color') === 'rgb(0, 0, 0)');
 ```
 
-Debes usar el `hex code` correspondiente al color negro en lugar de la palabra reservada `black`.
+Debes usar el código hexadecimal correspondiente al color negro en lugar de la palabra reservada `black`.
 
 ```js
 assert(
