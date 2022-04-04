@@ -85,6 +85,7 @@ function ToolPanel({
         <Button
           block={true}
           bsStyle='primary'
+          data-cy='save-code-to-database-btn'
           className='btn-invert'
           onClick={saveChallenge}
         >
