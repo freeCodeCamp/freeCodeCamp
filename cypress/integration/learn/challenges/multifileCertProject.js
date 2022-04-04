@@ -20,7 +20,7 @@ describe('multifileCertProjects', function () {
   });
 
   it('should show a save code button', function () {
-    cy.get('[data-cy="save-code-to-database"]');
+    cy.get(selectors.saveCodeBtn);
   });
 
   it('should save to database (savedChallenges) when clicking save code button', function () {
