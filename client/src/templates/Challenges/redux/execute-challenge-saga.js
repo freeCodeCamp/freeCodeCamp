@@ -25,6 +25,15 @@ import {
   isJavaScriptChallenge,
   isLoopProtected
 } from '../utils/build';
+import { challengeTypes } from '../../../../utils/challenge-types';
+import { createFlashMessage } from '../../../components/Flash/redux';
+import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
+import {
+  standardizeRequestBody,
+  getStringSizeInBytes,
+  bodySizeFits,
+  MAX_BODY_SIZE
+} from '../../../utils/challenge-request-helpers';
 import { actionTypes } from './action-types';
 import {
   challengeDataSelector,
@@ -45,7 +54,27 @@ import {
 const previewTimeout = 2500;
 let previewTask;
 
+// when 'run tests' is clicked, do this first
 export function* executeCancellableChallengeSaga(payload) {
+  const { challengeType, id } = yield select(challengeMetaSelector);
+  const { challengeFiles } = yield select(challengeDataSelector);
+
+  // if multiFileCertProject, see if body/code size is submittable
+  if (challengeType === challengeTypes.multiFileCertProject) {
+    const body = standardizeRequestBody({ id, challengeFiles, challengeType });
+    const bodySizeInBytes = getStringSizeInBytes(body);
+
+    if (!bodySizeFits(bodySizeInBytes)) {
+      return yield put(
+        createFlashMessage({
+          type: 'danger',
+          message: FlashMessages.ChallengeSubmitTooBig,
+          variables: { 'max-size': MAX_BODY_SIZE, 'user-size': bodySizeInBytes }
+        })
+      );
+    }
+  }
+
   if (previewTask) {
     yield cancel(previewTask);
   }

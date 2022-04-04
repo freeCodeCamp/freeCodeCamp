@@ -14,7 +14,9 @@ $$\frac{1}{x} + \frac{1}{y} = \frac{1}{n}$$
 
 Per `n` = 4 ci sono esattamente tre distinte soluzioni:
 
-$$\begin{align} & \frac{1}{5} + \frac{1}{20} = \frac{1}{4}\\\\ \\\\ & \frac{1}{6} + \frac{1}{12} = \frac{1}{4}\\\\ \\\\ & \frac{1}{8} + \frac{1}{8} = \frac{1}{4} \end{align}$$
+$$\begin{align}   & \frac{1}{5} + \frac{1}{20} = \frac{1}{4}\\\\
+  \\\\   & \frac{1}{6} + \frac{1}{12} = \frac{1}{4}\\\\
+  \\\\ & \frac{1}{8} + \frac{1}{8} = \frac{1}{4} \end{align}$$
 
 Qual è il valore più piccolo di `n` per cui il numero di soluzioni distinte supera mille?
 

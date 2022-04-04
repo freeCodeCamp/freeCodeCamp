@@ -16,7 +16,8 @@ Ad esempio, l'immagine sottostante mostra una serie di venti punti e alcuni di q
 
 Per il nostro esempio, abbiamo usato i primi 20 punti ($T_{2k − 1}$, $T_{2k}$), per $k = 1, 2, \ldots, 20$, prodotto con il generatore di numeri pseudo-casuali:
 
-$$\begin{align} S_0 & = 290\\,797 \\\\ S_{n+1} & = {S_n}^2 \\; \text{mod} \\; 50\\,515\\,093 \\\\ T_n & = (S_n \\; \text{mod} \\; 2000) − 1000 \end{align}$$
+$$\begin{align}   S_0 & = 290\\,797 \\\\
+  S_{n+1} & = {S_n}^2 \\; \text{mod} \\; 50\\,515\\,093 \\\\ T_n & = (S_n \\; \text{mod} \\; 2000) − 1000 \end{align}$$
 
 cioè (527, 144), (−488, 732), (−454, −947), …
 

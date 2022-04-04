@@ -11,7 +11,9 @@ dashedName: set-the-font-size-for-multiple-heading-elements
 
 La proprietà `font-size` è usata per specificare quanto grande è il testo in un dato elemento. Questa regola può essere utilizzata per più elementi per creare coerenza visiva del testo in una pagina. In questa sfida, imposterai i valori per tutti i tag da `h1` a `h6` per bilanciare le dimensioni dell'intestazione.
 
-# --instructions-- <p>Nel tag <code>style</code>, imposta la dimensione del font (<code>font-size</code>) per:</p>
+# --instructions--
+
+  <p>Nel tag <code>style</code>, imposta la dimensione del font (<code>font-size</code>) per:</p>
 
   <ul>
     <li>Il tag <code>h1</code> a 68px.</li>

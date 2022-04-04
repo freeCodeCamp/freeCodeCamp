@@ -27,19 +27,19 @@ Altere a propriedade `background-color` de cada elemento `div` com base nos nome
 
 # --hints--
 
-Você deve usar a função `hsl()` para declarar a cor `green` (verde).
+Você deve usar a função `hsl()` para declarar a cor verde.
 
 ```js
 assert(code.match(/\.green\s*?{\s*?background-color\s*:\s*?hsl/gi));
 ```
 
-Você deve usar a função `hsl()` para declarar a cor `cyan` (ciano).
+Você deve usar a função `hsl()` para declarar a cor ciano.
 
 ```js
 assert(code.match(/\.cyan\s*?{\s*?background-color\s*:\s*?hsl/gi));
 ```
 
-Você deve usar a função `hsl()` para declarar a cor `blue` (azul).
+Você deve usar a função `hsl()` para declarar a cor azul.
 
 ```js
 assert(code.match(/\.blue\s*?{\s*?background-color\s*:\s*?hsl/gi));

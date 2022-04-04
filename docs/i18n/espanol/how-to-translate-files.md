@@ -117,13 +117,13 @@ Traducir nuestra documentación de contribución es un proceso similar a traduci
 
 > [!NOTE] Nuestra documentación de contribución esta basada en `docsify`, y tenemos una  forma especial de procesar los cuadros de mensaje como este. Si ves cadenas que comiencen con `[!NOTE]`, `[!WARNING]` o ` [!TIP]`, estas palabras NO deben traducirse.
 
-## Translate the LearnToCode RPG
+## Traduce el LearnToCode RPG
 
-The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated strings: (See [Ren'Py Text documentation](https://www.renpy.org/doc/html/text.html))
+El RPG LearnToCode se ejecuta en Ren'Py, que utiliza una sintaxis especial para las cadenas traducidas: (Ver [ documentación de texto Ren'Py](https://www.renpy.org/doc/html/text.html))
 
-- The sentences to be translated are always between `""`. These are dialogues or UI strings. The keywords that come before or after the dialogue are game engine control keywords and will be explained in details in subsequent rules. Please note that this first rule governs all subsequent rules listed.
-- In case of `new "..."` Do not translate the `new` keyword.
-- Prefixes like `player`, `annika`, `layla`, `marco` (or variants like `player happy`, `player @ happy`) should not be translated. These are control keywords to correctly display the character sprite in the game.
+- Las oraciones a traducir están siempre entre `""`. Estos son diálogos o cadenas de interfaz de usuario. Las palabras clave que vienen antes o después del diálogo son palabras clave de control del motor del juego y se explicarán en detalle en las reglas posteriores. Tenga en cuenta que esta primera regla rige todas las reglas posteriores enumeradas.
+- En el caso de `new "..."` No traduzcas la palabra clave `new`.
+- Prefijos como `player`, `annika`, `layla`, `marco` (o variantes como `player happy`, `player @ happy`) no deben traducirse. Estas son palabras clave de control para mostrar correctamente el sprite del personaje en el juego.
 - Postfixes like `nointeract` should not be translated.
 - Do not translate things between `[]` and `{}`. These are variable interpolations and text tags. These must remain halfwidth parentheses `[]` and `{}` instead of their fullwidth counterparts `【】` and `「」`
 - Do not translate the `nointeract` keyword at the end of the sentence.

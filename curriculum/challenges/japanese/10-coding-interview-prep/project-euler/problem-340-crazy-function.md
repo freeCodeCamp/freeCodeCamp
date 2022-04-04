@@ -10,7 +10,8 @@ dashedName: problem-340-crazy-function
 
 固定小数点整数 $a$, $b$, $c$ について、クレイジー関数 (crazy function) $F(n)$ を次のように定義します。
 
-$$\begin{align} & F(n) = n - c \\;\text{ (すべての } n > b \text{ に対して)}\\\\ & F(n) = F(a + F(a + F(a + F(a + n)))) \\;\text{ (すべての } n ≤ b \text{ に対して)} \end{align}$$
+$$\begin{align}   & F(n) = n - c \\;\text{ (すべての } n > b \text{ に対して)}\\\\
+  & F(n) = F(a + F(a + F(a + F(a + n)))) \\;\text{ (すべての } n ≤ b \text{ に対して)} \end{align}$$
 
 また、$S(a, b, c) = \displaystyle\sum_{n = 0}^b F(n)$ と定義します。
 

@@ -20,7 +20,18 @@ describe('<EmailSignUp />', () => {
 
   describe('Non-Authenticated user "not accepted terms and condition"', () => {
     beforeEach(() => {
-      const initialState = { app: { appUsername: '', user: {} } };
+      const initialState = {
+        app: {
+          appUsername: '',
+          user: {},
+          userFetchState: {
+            pending: false,
+            complete: true,
+            errored: false,
+            error: null
+          }
+        }
+      };
 
       const store = mockStore(initialState);
       const container = renderer.create(
@@ -57,6 +68,12 @@ describe('<EmailSignUp />', () => {
               acceptedPrivacyTerms: true,
               name: 'John Doe'
             }
+          },
+          userFetchState: {
+            pending: false,
+            complete: true,
+            errored: false,
+            error: null
           }
         }
       };

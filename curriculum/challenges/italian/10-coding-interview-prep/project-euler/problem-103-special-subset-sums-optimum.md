@@ -15,7 +15,10 @@ Lascia che $S(A)$ rappresenti la somma degli elementi nel set A di dimensione n.
 
 Se $S(A)$ è minimizzata per un dato n, la chiameremo somma speciale di un set ottimale. Le prime cinque somme speciali di un set ottimale sono date sotto.
 
-$$\begin{align} & n = 1: \\{1\\} \\\\ & n = 2: \\{1, 2\\} \\\\ & n = 3: \\{2, 3, 4\\} \\\\ & n = 4: \\{3, 5, 6, 7\\} \\\\ & n = 5: \\{6, 9, 11, 12, 13\\} \\\\ \end{align}$$
+$$\begin{align}   & n = 1: \\{1\\} \\\\
+  & n = 2: \\{1, 2\\} \\\\   & n = 3: \\{2, 3, 4\\} \\\\
+  & n = 4: \\{3, 5, 6, 7\\} \\\\   & n = 5: \\{6, 9, 11, 12, 13\\} \\\\
+\end{align}$$
 
 Sembra che per un dato set ottimale, $A = \\{a_1, a_2, \ldots, a_n\\}$, il successivo set ottimale è della forma $B = \\{b, a_1 + b, a_2 + b, \ldots, a_n + b\\}$, dove b è l'elemento "di mezzo" della riga precedente.
 

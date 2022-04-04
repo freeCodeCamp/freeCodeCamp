@@ -31,7 +31,7 @@ grid-template-columns: auto 50px 10% 2fr 1fr;
 
 # --hints--
 
-`container` クラスは幅が `1fr, 100px, and 2fr` の 3 列を生成する `grid-template-columns` プロパティを持つ必要があります。
+`container` クラスは幅が `1fr`、`100px`、`2fr` の 3 列を生成する `grid-template-columns` プロパティを持つ必要があります。
 
 ```js
 assert(

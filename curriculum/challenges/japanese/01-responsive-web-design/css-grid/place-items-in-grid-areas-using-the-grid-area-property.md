@@ -17,7 +17,7 @@ dashedName: place-items-in-grid-areas-using-the-grid-area-property
 }
 ```
 
-これにより、`item1` クラスを `header` という名前のエリアに移動させることができます。 この場合、行全体が header エリアと名付けられているため、アイテムは一番上の行全体を使用します。
+これにより、`item1` クラスを `header` という名前のエリアに移動させることができます。 この場合、行全体が `header` エリアと名付けられているため、アイテムは一番上の行全体を使用します。
 
 # --instructions--
 

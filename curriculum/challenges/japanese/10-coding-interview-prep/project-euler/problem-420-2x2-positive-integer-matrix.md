@@ -12,11 +12,14 @@ dashedName: problem-420-2x2-positive-integer-matrix
 
 一部の正整数行列中は、正整数行列の 2 乗として 2 通りに表すことができます。 次に例を示します。
 
-$$\begin{pmatrix} 40 & 12 \\\\ 48 & 40 \end{pmatrix}=
+$$\begin{pmatrix}   40 & 12 \\\\
+  48 & 40 \end{pmatrix}=
 {\begin{pmatrix}
-  2 & 3 \\\\ 12 & 2 \end{pmatrix}}^2 =
+  2 & 3 \\\\
+ 12 & 2 \end{pmatrix}}^2 =
 {\begin{pmatrix}
-  6 & 1 \\\\ 4 & 6 \end{pmatrix}}^2$$
+  6 & 1 \\\\
+  4 & 6 \end{pmatrix}}^2$$
 
 対角和が N 未満であり、かつ、正整数行列の 2 乗として 2 通りに表せる 2x2 の正整数行列の個数を $F(N)$ とします。
 

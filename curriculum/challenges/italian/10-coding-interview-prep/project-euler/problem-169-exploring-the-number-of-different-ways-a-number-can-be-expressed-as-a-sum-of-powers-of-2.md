@@ -14,7 +14,9 @@ Sia $f(0) = 1$ e sia $f(n)$ il numero di modi diversi in cui $n$ può essere esp
 
 Per esempio, $f(10)=5$ visto che ci sono cinque modi diversi di esprimere 10:
 
-$$\begin{align} & 1 + 1 + 8 \\\\ & 1 + 1 + 4 + 4 \\\\ & 1 + 1 + 2 + 2 + 4 \\\\ & 2 + 4 + 4 \\\\ & 2 + 8 \end{align}$$
+$$\begin{align}   & 1 + 1 + 8 \\\\
+  & 1 + 1 + 4 + 4 \\\\   & 1 + 1 + 2 + 2 + 4 \\\\
+  & 2 + 4 + 4 \\\\ & 2 + 8 \end{align}$$
 
 Qual è il valore di $f({10}^{25})$?
 

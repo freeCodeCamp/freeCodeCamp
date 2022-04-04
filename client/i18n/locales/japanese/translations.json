@@ -26,7 +26,7 @@
     "off": "オフ",
     "on": "オン",
     "sign-in": "サインイン",
-    "sign-up-email-list": "Sign up for Quincy's weekly emails",
+    "sign-up-email-list": "Quincy のウィークリーメールを受け取る",
     "sign-out": "サインアウト",
     "curriculum": "カリキュラム",
     "forum": "フォーラム",
@@ -58,6 +58,7 @@
     "resubscribe": "ここをクリックして再購読できます",
     "click-here": "サインインするにはここをクリック",
     "save": "保存",
+    "save-code": "Save your Code",
     "no-thanks": "結構です",
     "yes-please": "はい、お願いします",
     "update-email": "メールアドレスを更新",
@@ -529,7 +530,11 @@
     "start-project-err": "プロジェクトの開始中に問題が発生しました。もう一度お試しください。",
     "complete-project-first": "まずプロジェクトを完成させる必要があります。",
     "local-code-save-error": "コードが保存されませんでした。ブラウザのローカルストレージに空きがない可能性があります。",
-    "local-code-saved": "保存しました！コードはブラウザのローカルストレージに保存されました。"
+    "local-code-saved": "保存しました！コードはブラウザのローカルストレージに保存されました。",
+    "code-saved": "Your code was saved to the database. It will be here when you return.",
+    "code-save-error": "An error occurred trying to save your code.",
+    "challenge-save-too-big": "Sorry, you cannot save your code. Your code is {{user-size}} bytes. We allow a maximum of {{max-size}} bytes. Please make your code smaller and try again or request assistance on https://forum.freecodecamp.org",
+    "challenge-submit-too-big": "Sorry, you cannot submit your code. Your code is {{user-size}} bytes. We allow a maximum of {{max-size}} bytes. Please make your code smaller and try again or request assistance on https://forum.freecodecamp.org"
   },
   "validation": {
     "max-characters": "上限は 288 文字です。残り {{charsLeft}} 文字です。",

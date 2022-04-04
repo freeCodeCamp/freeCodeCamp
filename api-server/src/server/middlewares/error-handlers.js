@@ -26,6 +26,11 @@ export default function prodErrorHandler() {
   // error handling in production.
   // eslint-disable-next-line no-unused-vars
   return function (err, req, res, next) {
+    // response for when req.body is bigger than body-parser's size limit
+    if (err?.type === 'entity.too.large') {
+      return res.status('413').send('Request payload is too large');
+    }
+
     const { origin } = getRedirectParams(req);
     const handled = unwrapHandledError(err);
     // respect handled error status

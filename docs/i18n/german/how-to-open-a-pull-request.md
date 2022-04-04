@@ -72,7 +72,7 @@ Einige Beispiele für gute PR-Titel wären:
 
 ## Feedback zu Pull-Requests
 
-> :tada: Congratulations on making a PR and thanks a lot for taking the time to contribute.
+> :tada: für die Erstellung eines PR und vielen Dank, dass du dir die Zeit genommen haben, einen Beitrag zu leisten.
 
 Unsere Moderatoren werden jetzt einen Blick darauf werfen und dir ein Feedback hinterlassen. Bitte habe Geduld mit den anderen Moderatoren und respektiere ihre Zeit. Alle Pull-Requests werden zu gegebener Zeit überprüft.
 

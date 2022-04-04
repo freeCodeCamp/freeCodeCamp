@@ -9,7 +9,7 @@ dashedName: adjust-the-hue-of-a-color
 
 # --description--
 
-Los colores tienen varias características tales como el matiz, la saturación y la ligereza. CSS3 introdujo la propiedad `hsl()` como una forma alternativa de elegir un color indicando directamente estas características.
+Los colores tienen varias características tales como el matiz, la saturación y la ligereza. CSS3 introdujo la función `hsl()` como una forma alternativa para elegir un color declarando directamente estas características.
 
 Se suele pensar que **Hue** es el "color". Si imaginas un espectro de colores con un rojo en la izquierda que se torna verde en el medio y azul en la derecha, el tono es donde cabe un color a lo largo de esta línea. En `hsl()`, el tono usa un concepto de círculo cromático en lugar del espectro, donde el ángulo del color en el círculo se da como un valor entre 0 y 360.
 
@@ -27,19 +27,19 @@ Cambia el `background-color` de cada elemento `div` sobre la base de los nombres
 
 # --hints--
 
-Tu código debe usar la propiedad `hsl()` para declarar el color `green`.
+Tu código debe usar la función `hsl()` para declarar el color `green`.
 
 ```js
 assert(code.match(/\.green\s*?{\s*?background-color\s*:\s*?hsl/gi));
 ```
 
-Tu código debe usar la propiedad `hsl()` para declarar el color `cyan`.
+Tu código debe usar la función `hsl()` para declarar el color `cyan`.
 
 ```js
 assert(code.match(/\.cyan\s*?{\s*?background-color\s*:\s*?hsl/gi));
 ```
 
-Tu código debe usar la propiedad `hsl()` para declarar el color `blue`.
+Tu código debe usar la función `hsl()` para declarar el color `blue`.
 
 ```js
 assert(code.match(/\.blue\s*?{\s*?background-color\s*:\s*?hsl/gi));

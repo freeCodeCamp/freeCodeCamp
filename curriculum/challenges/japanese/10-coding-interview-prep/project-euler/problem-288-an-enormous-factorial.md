@@ -10,7 +10,8 @@ dashedName: problem-288-an-enormous-factorial
 
 任意の素数 $p$ に対し、数 $N(p,q)$ は $N(p,q) = \sum_{n=0}^q T_n \times p^n$ と定義されます。$T_n$ は下の乱数生成法で生成されます。
 
-$$\begin{align} & S_0 = 290797 \\\\ & S_{n + 1} = {S_n}^2\bmod 50\\,515\\,093 \\\\ & T_n = S_n\bmod p \end{align}$$
+$$\begin{align}   & S_0 = 290797 \\\\
+  & S_{n + 1} = {S_n}^2\bmod 50\\,515\\,093 \\\\ & T_n = S_n\bmod p \end{align}$$
 
 $Nfac(p,q)$ を、$N(p,q)$ の階乗と定義します。
 
