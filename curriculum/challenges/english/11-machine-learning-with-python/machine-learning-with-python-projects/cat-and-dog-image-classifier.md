@@ -53,7 +53,7 @@ After you run the code, the output should look like this:
 ```py
 Found 2000 images belonging to 2 classes.
 Found 1000 images belonging to 2 classes.
-Found 50 images belonging to 1 classes.
+Found 50 images belonging to 1 class.
 ```
 
 ## Cell 4
@@ -94,7 +94,7 @@ In this cell, get the probability that each test image (from `test_data_gen`) is
 
 Call the `plotImages` function and pass in the test images and the probabilities corresponding to each test image.
 
-After your run the cell, you should see all 50 test images with a label showing the percentage sure that the image is a cat or a dog. The accuracy will correspond to the accuracy shown in the graph above (after running the previous cell). More training images could lead to a higher accuracy.
+After your run the cell, you should see all 50 test images with a label showing the percentage of "sure" that the image is a cat or a dog. The accuracy will correspond to the accuracy shown in the graph above (after running the previous cell). More training images could lead to a higher accuracy.
 
 ## Cell 11
 
