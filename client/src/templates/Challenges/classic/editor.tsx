@@ -572,13 +572,11 @@ const Editor = (props: EditorProps): JSX.Element => {
   function createOutputNode(editor: editor.IStandaloneCodeEditor) {
     if (dataRef.current.outputNode) return dataRef.current.outputNode;
     const outputNode = document.createElement('div');
-    //const ariaLiveNode = document.createElement('div');
     const statusNode = document.createElement('div');
     const editorActionRow = document.createElement('div');
     editorActionRow.classList.add('action-row-container');
     outputNode.classList.add('editor-lower-jaw');
     outputNode.appendChild(editorActionRow);
-    //ariaLiveNode.setAttribute('aria-live', 'assertive');
     statusNode.setAttribute('id', 'test-status');
     statusNode.setAttribute('aria-live', 'assertive');
     const button = document.createElement('button');
@@ -592,8 +590,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     submitButton.classList.add('btn-block');
     editorActionRow.appendChild(button);
     editorActionRow.appendChild(submitButton);
-    //ariaLiveNode.appendChild(statusNode);
-    //ariaLiveNode.appendChild(hintNode);
     editorActionRow.appendChild(statusNode);
     button.onclick = () => {
       clearTestFeedback();
@@ -1002,9 +998,8 @@ const Editor = (props: EditorProps): JSX.Element => {
       const testStatus = document.getElementById('test-status');
       if (challengeIsComplete()) {
         const testButton = document.getElementById('test-button');
-        // We don't want to remove the test button from the accessibility API
-        // at this point because we don't want to lose focus until we set it
-        // on the submit button, so just visually hide it for now.
+        // In case test button has focus, only visually hide it for now so we
+        // don't lose the focus before we set it on submit button.
         testButton?.classList.add('sr-only');
         const submitButton = document.getElementById('submit-button');
         if (submitButton) {
@@ -1014,12 +1009,11 @@ const Editor = (props: EditorProps): JSX.Element => {
             const { submitChallenge } = props;
             submitChallenge();
           };
-          // Give the aria-live announcement a little time before setting
-          // focus on submit button to make sure it gets announced first.
+          // Delay setting focus on submit button to ensure aria-live status
+          // message is announced first by screen reader.
           setTimeout(() => {
-            // Order is important. Must set focus on submit button before
-            // removing test button from accessibility API since test button
-            // might have focus.
+            // Must set focus on submit button before removing test button from
+            // accessibility API since test button might have focus.
             if (!isEditorInFocus) {
               submitButton.focus();
             }
@@ -1039,7 +1033,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         }
 
         const submitKeyboardInstructions = isEditorInFocus
-          ? '<span class="sr-only">Use Ctrl + Enter to submit.'
+          ? '<span class="sr-only">Use Ctrl + Enter to submit.</span>'
           : '';
 
         if (testStatus) {
