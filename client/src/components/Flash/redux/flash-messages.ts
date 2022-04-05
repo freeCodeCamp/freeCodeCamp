@@ -9,6 +9,7 @@ export enum FlashMessages {
   ChallengeSubmitTooBig = 'flash.challenge-submit-too-big',
   CodeSaved = 'flash.code-saved',
   CodeSaveError = 'flash.code-save-error',
+  CodeSaveLess = 'flash.code-save-less',
   CompleteProjectFirst = 'flash.complete-project-first',
   DeleteTokenErr = 'flash.delete-token-err',
   EmailValid = 'flash.email-valid',
