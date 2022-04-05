@@ -72,6 +72,7 @@ module.exports = {
       }
     },
     borderWidth: {
+      1: '1px',
       3: '3px'
     },
     fontSize: {
@@ -80,6 +81,14 @@ module.exports = {
       sm: ['16px', '1.5'],
       md: ['18px', '1.42857143'],
       lg: ['24px', '1.3333333']
+    },
+    minHeight: {
+      '43-px': '43px'
+    },
+    extend: {
+      zIndex: {
+        2: '2'
+      }
     }
   },
   plugins: []

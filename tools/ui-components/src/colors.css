@@ -118,6 +118,7 @@ html.dark,
 div.dark {
   --default-foreground-primary: var(--gray00);
   --default-foreground-secondary: var(--gray05);
+  --default-foreground-tertiary: var(--gray10);
   --default-foreground-quaternary: var(--gray15);
   --default-foreground-danger: var(--red90);
   --default-foreground-info: var(--blue90);

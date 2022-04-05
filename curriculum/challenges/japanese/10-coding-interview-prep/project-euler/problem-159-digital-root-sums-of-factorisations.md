@@ -12,7 +12,10 @@ dashedName: problem-159-digital-root-sums-of-factorisations
 
 例えば、1 による乗算を除くと、24 は次の 7 通りに因数分解できます。
 
-$$\begin{align} & 24 = 2 \times 2 \times 2 \times 3\\\\ & 24 = 2 \times 3 \times 4  \\\\ & 24 = 2 \times 2 \times 6  \\\\ & 24 = 4 \times 6    \\\\ & 24 = 3 \times 8    \\\\ & 24 = 2 \times 12   \\\\ & 24 = 24 \end{align}$$
+$$\begin{align}   & 24 = 2 \times 2 \times 2 \times 3\\\\
+  & 24 = 2 \times 3 \times 4  \\\\   & 24 = 2 \times 2 \times 6  \\\\
+  & 24 = 4 \times 6    \\\\   & 24 = 3 \times 8    \\\\
+  & 24 = 2 \times 12   \\\\ & 24 = 24 \end{align}$$
 
 数字根とは何かを思い出してください。ある数の各位の和を求め、その結果が 10 未満になるまでそれを繰り返したときに得られる 10 進数が数字根です。 したがって、467 の数字根は 8 です。
 
