@@ -27,7 +27,10 @@ No fim, cada pessoa na fila pegará um quarto no hotel.
 
 Defina $P(f, r)$ como $n$ se a pessoa $n$ ocupar o quarto $r$ no andar $f$, e 0 se ninguém ocupar o quarto. Aqui estão alguns exemplos:
 
-$$\begin{align} & P(1, 1) = 1 \\\\ & P(1, 2) = 3 \\\\ & P(2, 1) = 2 \\\\ & P(10, 20) = 440 \\\\ & P(25, 75) = 4863 \\\\ & P(99, 100) = 19454 \end{align}$$
+$$\begin{align}   & P(1, 1) = 1 \\\\
+  & P(1, 2) = 3 \\\\   & P(2, 1) = 2 \\\\
+  & P(10, 20) = 440 \\\\   & P(25, 75) = 4863 \\\\
+  & P(99, 100) = 19454 \end{align}$$
 
 Encontre a soma de todos os $P(f, r)$ para todos os números positivos $f$ e $r$, tal que $f × r = 71.328.803.586.048$ e dê os últimos 8 algarismos como resposta.
 

@@ -12,7 +12,17 @@ Para qualquer conjunto $A$ de números, considere $sum(A)$ a soma dos elementos 
 
 Considere o conjunto $B = \\{1,3,6,8,10,11\\}$. Há 20 subconjuntos de $B$ contendo três elementos, e suas somas são:
 
-$$\begin{align} & sum(\\{1,3,6\\}) = 10 \\\\ & sum(\\{1,3,8\\}) = 12 \\\\ & sum(\\{1,3,10\\}) = 14 \\\\ & sum(\\{1,3,11\\}) = 15 \\\\ & sum(\\{1,6,8\\}) = 15 \\\\ & sum(\\{1,6,10\\}) = 17 \\\\ & sum(\\{1,6,11\\}) = 18 \\\\ & sum(\\{1,8,10\\}) = 19 \\\\ & sum(\\{1,8,11\\}) = 20 \\\\ & sum(\\{1,10,11\\}) = 22 \\\\ & sum(\\{3,6,8\\}) = 17 \\\\ & sum(\\{3,6,10\\}) = 19 \\\\ & sum(\\{3,6,11\\}) = 20 \\\\ & sum(\\{3,8,10\\}) = 21 \\\\ & sum(\\{3,8,11\\}) = 22 \\\\ & sum(\\{3,10,11\\}) = 24 \\\\ & sum(\\{6,8,10\\}) = 24 \\\\ & sum(\\{6,8,11\\}) = 25 \\\\ & sum(\\{6,10,11\\}) = 27 \\\\ & sum(\\{8,10,11\\}) = 29 \\end{align}$$
+$$\begin{align}   & sum(\\{1,3,6\\}) = 10 \\\\
+  & sum(\\{1,3,8\\}) = 12 \\\\   & sum(\\{1,3,10\\}) = 14 \\\\
+  & sum(\\{1,3,11\\}) = 15 \\\\   & sum(\\{1,6,8\\}) = 15 \\\\
+  & sum(\\{1,6,10\\}) = 17 \\\\   & sum(\\{1,6,11\\}) = 18 \\\\
+  & sum(\\{1,8,10\\}) = 19 \\\\   & sum(\\{1,8,11\\}) = 20 \\\\
+  & sum(\\{1,10,11\\}) = 22 \\\\   & sum(\\{3,6,8\\}) = 17 \\\\
+  & sum(\\{3,6,10\\}) = 19 \\\\   & sum(\\{3,6,11\\}) = 20 \\\\
+  & sum(\\{3,8,10\\}) = 21 \\\\   & sum(\\{3,8,11\\}) = 22 \\\\
+  & sum(\\{3,10,11\\}) = 24 \\\\   & sum(\\{6,8,10\\}) = 24 \\\\
+  & sum(\\{6,8,11\\}) = 25 \\\\   & sum(\\{6,10,11\\}) = 27 \\\\
+  & sum(\\{8,10,11\\}) = 29 \\end{align}$$
 
 Algumas destas somas ocorrem mais de uma vez, outras são únicas. Para um conjunto de $A$, considere $U(A,k)$ como sendo o conjunto de somas únicas de subconjuntos de $k$ elementos de $A$, No nosso exemplo, encontramos $U(B,3) = \\{10,12,14,18,21,25,27,29\\}$ e $sum(U(B,3)) = 156$.
 

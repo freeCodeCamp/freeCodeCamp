@@ -16,7 +16,8 @@ Como exemplo, a imagem abaixo apresenta um conjunto de vinte pontos e alguns des
 
 Para nosso exemplo, usamos os primeiros 20 pontos ($T_{2k − 1}$, $T_{2k}$), para $k = 1, 2, \ldots, 20$, produzido com o gerador de números pseudoaleatório:
 
-$$\begin{align} S_0 & = 290.797 \\\\ S_{n+1} & = {S_n}^2 \\; \text{mod} \\; 50.515.093 \\\\ T_n & = (S_n \\; \text{mod} \\; 2000) − 1000 \end{align}$$
+$$\begin{align}   S_0 & = 290.797 \\\\
+  S_{n+1} & = {S_n}^2 \\; \text{mod} \\; 50.515.093 \\\\ T_n & = (S_n \\; \text{mod} \\; 2000) − 1000 \end{align}$$
 
 por exemplo: (527, 144), (-488, 732), (-454, − 947), …
 

@@ -14,7 +14,10 @@ Há oito números positivos inferiores a 15 que são coprimos para 15: 1, 2, 4, 
 
 As inversas modulares desses números modulo 15 são: 1, 8, 4, 13, 2, 11, 7, 14, porque
 
-$$\begin{align} & 1  \times 1\bmod 15 = 1 \\\\ & 2  \times 8  = 16\bmod 15 = 1 \\\\ & 4  \times 4  = 16\bmod 15 = 1 \\\\ & 7  \times 13 = 91\bmod 15 = 1 \\\\ & 11 \times 11 = 121\bmod 15 = 1 \\\\ & 14 \times 14 = 196\bmod 15 = 1 \end{align}$$
+$$\begin{align}   & 1  \times 1\bmod 15 = 1 \\\\
+  & 2  \times 8  = 16\bmod 15 = 1 \\\\   & 4  \times 4  = 16\bmod 15 = 1 \\\\
+  & 7  \times 13 = 91\bmod 15 = 1 \\\\   & 11 \times 11 = 121\bmod 15 = 1 \\\\
+  & 14 \times 14 = 196\bmod 15 = 1 \end{align}$$
 
 Considere $I(n)$ como o maior número positivo $m$ menor que $n - 1$, tal que a inversa modular de $m$ modulo $n$ é igual ao próprio $m$.
 

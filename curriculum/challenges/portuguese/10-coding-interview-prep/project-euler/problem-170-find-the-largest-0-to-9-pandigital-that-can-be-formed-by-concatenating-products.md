@@ -12,7 +12,8 @@ dashedName: >-
 
 Pegue o número 6 e multiplique-o por 1273 e 9854:
 
-$$\begin{align} & 6 × 1273 = 7638 \\\\ & 6 × 9854 = 59124 \\\\ \end{align}$$
+$$\begin{align}   & 6 × 1273 = 7638 \\\\
+  & 6 × 9854 = 59124 \\\\ \end{align}$$
 
 Ao concatenar esses produtos, temos o pandigital de 1 a 9 763859124. Chamaremos 763859124 de "produto concatenado de 6 e (1273, 9854)". Observe, também, que a concatenação dos números de entrada, 612739854, também é um pandigital de 1 a 9.
 

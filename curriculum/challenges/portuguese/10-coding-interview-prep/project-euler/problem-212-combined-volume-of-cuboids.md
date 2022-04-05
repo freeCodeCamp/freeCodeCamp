@@ -12,7 +12,10 @@ Um cuboide alinhado em seus eixos, especificado pelos parâmetros $\{ (x_0,y_0,z
 
 Considere $C_1, \ldots, C_{50000}$ como sendo uma coleção de 50.000 cuboides alinhados em seus eixos, de modo que $C_n$ tenha parâmetros
 
-$$\begin{align} & x_0 = S_{6n - 5} \\; \text{modulo} \\; 10000    \\\\ & y_0 = S_{6n - 4} \\; \text{modulo} \\; 10000    \\\\ & z_0 = S_{6n - 3} \\; \text{modulo} \\; 10000    \\\\ & dx = 1 + (S_{6n - 2} \\; \text{modulo} \\; 399) \\\\ & dy = 1 + (S_{6n - 1} \\; \text{modulo} \\; 399) \\\\ & dz = 1 + (S_{6n} \\; \text{modulo} \\; 399)     \\\\ \end{align}$$
+$$\begin{align}   & x_0 = S_{6n - 5} \\; \text{modulo} \\; 10000    \\\\
+  & y_0 = S_{6n - 4} \\; \text{modulo} \\; 10000    \\\\   & z_0 = S_{6n - 3} \\; \text{modulo} \\; 10000    \\\\
+  & dx = 1 + (S_{6n - 2} \\; \text{modulo} \\; 399) \\\\   & dy = 1 + (S_{6n - 1} \\; \text{modulo} \\; 399) \\\\
+  & dz = 1 + (S_{6n} \\; \text{modulo} \\; 399)     \\\\ \end{align}$$
 
 onde $S_1, \ldots, S_{300000}$ vem do "Gerador Fibonacci com atraso":
 
