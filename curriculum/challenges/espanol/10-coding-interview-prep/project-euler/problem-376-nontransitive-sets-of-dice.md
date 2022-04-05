@@ -1,6 +1,6 @@
 ---
 id: 5900f4e51000cf542c50fff7
-title: 'Problem 376: Nontransitive sets of dice'
+title: 'Problema 376: Conjuntos no transitorios de dados'
 challengeType: 5
 forumTopicId: 302038
 dashedName: problem-376-nontransitive-sets-of-dice
@@ -8,30 +8,45 @@ dashedName: problem-376-nontransitive-sets-of-dice
 
 # --description--
 
-Consider the following set of dice with nonstandard pips:
+Considera el siguiente conjunto de dados con pips no estándar:
 
-Die A: 1 4 4 4 4 4 Die B: 2 2 2 5 5 5 Die C: 3 3 3 3 3 6
+$$\Inicio{array}{}   \text{Die A: } & 1 & 4 & 4 & 4 & 4 & 4 \\\\
+  \text{Die B: } & 2 & 2 & 2 & 5 & 5 & 5 \\\\   \text{Die C: } & 3 & 3 & 3 & 3 & 3 & 6 \\\\
+\fin{array}$$
 
-A game is played by two players picking a die in turn and rolling it. The player who rolls the highest value wins.
+Un juego es jugado por dos jugadores que escogen un dado por turno y lo lanzan. El jugador que tire el valor más alto gana.
 
-If the first player picks die A and the second player picks die B we get P(second player wins) = 7/12 > 1/2
+Si el primer jugador escoge el dado $A$ y el segundo jugador toma el dado $B$ obtenemos
 
-If the first player picks die B and the second player picks die C we get P(second player wins) = 7/12 > 1/2
+$P(\text{second player wins}) = \frac{7}{12} > \frac{1}{2}$
 
-If the first player picks die C and the second player picks die A we get P(second player wins) = 25/36 > 1/2
+Si el primer jugador elige el dado $B$ y el segundo jugador elige el dado $C$ obtenemos
 
-So whatever die the first player picks, the second player can pick another die and have a larger than 50% chance of winning. A set of dice having this property is called a nontransitive set of dice.
+$P(\text{second player wins}) = \frac{7}{12} > \frac{1}{2}$
 
-We wish to investigate how many sets of nontransitive dice exist. We will assume the following conditions:There are three six-sided dice with each side having between 1 and N pips, inclusive. Dice with the same set of pips are equal, regardless of which side on the die the pips are located. The same pip value may appear on multiple dice; if both players roll the same value neither player wins. The sets of dice {A,B,C}, {B,C,A} and {C,A,B} are the same set.
+Si el primer jugador elige el dado $C$ y el segundo jugador elige el dado $A$ obtenemos
 
-For N = 7 we find there are 9780 such sets. How many are there for N = 30 ?
+$P(\text{second player wins}) = \frac{25}{36} > \frac{1}{2}$
+
+Así que, sea cual sea el dado que el primer jugador escoja, el segundo jugador puede elegir otro dado y tener más de un 50% de probabilidades de ganar. Un conjunto de dados que tienen esta propiedad se llama un conjunto no transitivo de dados.
+
+Queremos investigar cuántos conjuntos de dados no transitivos existen. Asumiremos las siguientes condiciones:
+
+- Hay tres dados de seis caras con cada lado que tiene entre 1 y $N$ pips, incluído.
+- Los dados con el mismo conjunto de puntos son iguales, independientemente del lado en el que se encuentren los puntos.
+- El mismo valor de puntos puede aparecer en múltiples dados; si ambos jugadores tiran el mismo valor ningún jugador gana.
+- Los conjuntos de dados {A, B, C}, {B, C, A} y {C, A, B} son el mismo conjunto.
+
+Para N = 7 encontramos que hay 9780 conjuntos de este tipo.
+
+¿Cuántos hay para N = 30?
 
 # --hints--
 
-`euler376()` should return 973059630185670.
+`nontransitiveSetsOfDice()` debería devolver `973059630185670`.
 
 ```js
-assert.strictEqual(euler376(), 973059630185670);
+assert.strictEqual(nontransitiveSetsOfDice(), 973059630185670);
 ```
 
 # --seed--
@@ -39,12 +54,12 @@ assert.strictEqual(euler376(), 973059630185670);
 ## --seed-contents--
 
 ```js
-function euler376() {
+function nontransitiveSetsOfDice() {
 
   return true;
 }
 
-euler376();
+nontransitiveSetsOfDice();
 ```
 
 # --solutions--
