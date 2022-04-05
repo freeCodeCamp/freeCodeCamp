@@ -25,8 +25,6 @@ const data = array[1];
 
 The `console.log(array[0])` prints `50`, and `data` has the value `60`.
 
-**Note:** There shouldn't be any spaces between the array name and the square brackets, like `array [0]`. Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.
-
 # --instructions--
 
 Create a variable called `myData` and set it to equal the first value of `myArray` using bracket notation.
