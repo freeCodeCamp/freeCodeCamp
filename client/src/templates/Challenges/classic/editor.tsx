@@ -379,7 +379,21 @@ const Editor = (props: EditorProps): JSX.Element => {
       null,
       () => {}
     );
-    /* eslint-enable */
+    const newLine = editor.getAction('editor.action.insertLineAfter');
+    // @ts-ignore
+    editor._standaloneKeybindingService.addDynamicKeybinding(
+      '-editor.action.insertLineAfter',
+      null,
+      () => {}
+    );
+    // @ts-ignore
+    editor._standaloneKeybindingService.addDynamicKeybinding(
+      'editor.action.insertLineAfter',
+      monaco.KeyMod.Alt | monaco.KeyCode.Enter,
+      () => {
+        newLine.run();
+      }
+    );
     editor.addAction({
       id: 'execute-challenge',
       label: 'Run tests',
