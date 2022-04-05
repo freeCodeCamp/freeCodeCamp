@@ -394,6 +394,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         newLine.run();
       }
     );
+    /* eslint-enable */
     editor.addAction({
       id: 'execute-challenge',
       label: 'Run tests',
