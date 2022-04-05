@@ -12,11 +12,14 @@ Uma matriz de números inteiros positivos é uma matriz cujos elementos são tod
 
 Algumas matrizes de números inteiros positivos podem ser expressas como um quadrado de uma matriz de números inteiros positivos de duas formas diferentes. Exemplo:
 
-$$\begin{pmatrix} 40 & 12 \\\\ 48 & 40 \end{pmatrix} =
+$$\begin{pmatrix}   40 & 12 \\\\
+  48 & 40 \end{pmatrix} =
 {\begin{pmatrix}
-  2 & 3 \\\\ 12 & 2 \end{pmatrix}}^2 =
+  2 & 3 \\\\
+ 12 & 2 \end{pmatrix}}^2 =
 {\begin{pmatrix}
-  6 & 1 \\\\ 4 & 6 \end{pmatrix}}^2$$
+  6 & 1 \\\\
+  4 & 6 \end{pmatrix}}^2$$
 
 Definimos $F(N)$ como a quantidade de matrizes de números inteiros positivos 2x2 que têm um traço inferior a N e que podem ser expressas como um quadrado de uma matriz de números inteiros positivos de duas formas diferentes.
 

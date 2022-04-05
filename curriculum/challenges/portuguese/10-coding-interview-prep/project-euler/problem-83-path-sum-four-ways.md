@@ -12,7 +12,9 @@ dashedName: problem-83-path-sum-four-ways
 
 Na matriz de 5 por 5 abaixo, a soma do caminho mínimo do canto superior esquerdo até o canto inferior direito, movendo-se para a esquerda, para a direita, para cima e para baixo, é indicado em vermelho e em negrito e é igual a `2297`.
 
-  $$\begin{pmatrix} \color{red}{131} & 673 & \color{red}{234} & \color{red}{103} & \color{red}{18}\\\\ \color{red}{201} & \color{red}{96} & \color{red}{342} & 965 & \color{red}{150}\\\\ 630 & 803 & 746 & \color{red}{422} & \color{red}{111}\\\\ 537 & 699 & 497 & \color{red}{121} & 956\\\\ 805 & 732 & 524 & \color{red}{37} & \color{red}{331} \end{pmatrix}$$
+  $$\begin{pmatrix}   \color{red}{131} & 673 & \color{red}{234} & \color{red}{103} & \color{red}{18}\\\\
+  \color{red}{201} & \color{red}{96} & \color{red}{342} & 965 & \color{red}{150}\\\\   630 & 803 & 746 & \color{red}{422} & \color{red}{111}\\\\
+  537 & 699 & 497 & \color{red}{121} & 956\\\\ 805 & 732 & 524 & \color{red}{37} & \color{red}{331} \end{pmatrix}$$
 
 Encontre a soma do caminho mínimo, do canto superior esquerdo para o canto inferior direito, movendo-se para a esquerda, para a direita, para cima e para baixo, na `matrix`, um array bidimensional que representa uma matriz. O tamanho máximo da matriz utilizado nos testes será de 80 por 80.
 

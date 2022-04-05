@@ -12,7 +12,9 @@ Uma grade de 4x4 é preenchida por algarismos $d$, sendo que $0 ≤ d ≤ 9$.
 
 Pode-se ver que na grade
 
-$$\begin{array}{} 6 & 3 & 3 & 0 \\\\ 5 & 0 & 4 & 3 \\\\ 0 & 7 & 1 & 4 \\\\ 1 & 2 & 4 & 5 \end{array}$$
+$$\begin{array}{}   6 & 3 & 3 & 0 \\\\
+  5 & 0 & 4 & 3 \\\\   0 & 7 & 1 & 4 \\\\
+  1 & 2 & 4 & 5 \end{array}$$
 
 a soma de cada linha e de cada coluna tem o valor 12. Além disso, a soma de cada diagonal também é 12.
 

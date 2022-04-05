@@ -14,7 +14,9 @@ Defina $f(0)=1$ e $f(n)$ como o número de diferentes maneiras pelas quais $n$ p
 
 Por exemplo, $f(10)=5$ já que há cinco maneiras diferentes de expressar 10:
 
-$$\begin{align} & 1 + 1 + 8 \\\\ & 1 + 1 + 4 + 4 \\\\ & 1 + 1 + 2 + 2 + 4 \\\\ & 2 + 4 + 4 \\\\ & 2 + 8 \end{align}$$
+$$\begin{align}   & 1 + 1 + 8 \\\\
+  & 1 + 1 + 4 + 4 \\\\   & 1 + 1 + 2 + 2 + 4 \\\\
+  & 2 + 4 + 4 \\\\ & 2 + 8 \end{align}$$
 
 Qual é $f({10}^{25})$?
 

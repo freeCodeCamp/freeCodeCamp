@@ -16,13 +16,17 @@ Chamaremos de ponto comum $T$ de dois segmentos $L_1$ e $L_2$ um ponto de inters
 
 Considere os três segmentos $L_1$, $L_2$, e $L_3$:
 
-$$\begin{align} & L_1: (27, 44) \\;\text{to}\\; (12, 32) \\\\ & L_2: (46, 53) \\;\text{to}\\; (17, 62) \\\\ & L_3: (46, 70) \\;\text{to}\\; (22, 40) \\\\ \end{align}$$
+$$\begin{align}   & L_1: (27, 44) \\;\text{to}\\; (12, 32) \\\\
+  & L_2: (46, 53) \\;\text{to}\\; (17, 62) \\\\   & L_3: (46, 70) \\;\text{to}\\; (22, 40) \\\\
+\end{align}$$
 
 É possível verificar que os segmentos de reta $L_2$ e $L_3$ têm um ponto de interseção verdadeira. Percebemos que, como um dos pontos de extremidade de $L_3$: (22, 40) fica sobre $L_1$, este não é considerado um ponto de interseção verdadeira. $L_1$ e $L_2$ não têm um ponto em comum. Portanto, entre os três segmentos de reta, encontramos um ponto de interseção verdadeira.
 
 Façamos agora o mesmo em 5.000 segmentos de reta. Para isso, geramos 20.000 números usando o chamado gerador pseudoaleatório de números "Blum Blum Shub".
 
-$$\begin{align} & s_0 = 290797 \\\\ & s_{n + 1} = s_n × s_n (\text{modulo}\\; 50515093) \\\\ & t_n = s_n (\text{modulo}\\; 500) \\\\ \end{align}$$
+$$\begin{align}   & s_0 = 290797 \\\\
+  & s_{n + 1} = s_n × s_n (\text{modulo}\\; 50515093) \\\\   & t_n = s_n (\text{modulo}\\; 500) \\\\
+\end{align}$$
 
 Para criar cada segmento de reta, usamos quatro números consecutivos $t_n$. Ou seja, o primeiro segmento de reta é dado por:
 

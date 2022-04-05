@@ -10,7 +10,8 @@ dashedName: problem-288-an-enormous-factorial
 
 Para qualquer número primo $p$, o número $N(p,q)$ é definido por $N(p,q) = \sum_{n=0}^q T_n \times p^n$ com $T_n$ gerado pelo seguinte gerador aleatório de números:
 
-$$\begin{align} & S_0 = 290797 \\\\ & S_{n + 1} = {S_n}^2\bmod 50.515.093 \\\\ & T_n = S_n\bmod p \end{align}$$
+$$\begin{align}   & S_0 = 290797 \\\\
+  & S_{n + 1} = {S_n}^2\bmod 50.515.093 \\\\ & T_n = S_n\bmod p \end{align}$$
 
 Considere $Nfac(p,q)$ como o fatorial de $N(p,q)$.
 
