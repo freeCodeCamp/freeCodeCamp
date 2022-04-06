@@ -315,7 +315,7 @@ ${getFullPath('english', filePath)}
     challenge.superBlock = meta.superBlock;
     challenge.challengeOrder = challengeOrder;
     challenge.isPrivate = challenge.isPrivate || meta.isPrivate;
-    challenge.required = meta.required.concat(challenge.required || []);
+    challenge.required = (meta.required || []).concat(challenge.required || []);
     challenge.template = meta.template;
     challenge.time = meta.time;
     challenge.helpCategory =
