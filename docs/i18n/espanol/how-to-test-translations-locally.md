@@ -8,11 +8,11 @@ En caso de que quieras probar tus traducciones en una instancia local del sitio 
 
 Hay algunos pasos a seguir para permitirle a la base de código compilar en tu lenguaje deseado.
 
-First, visit the `config/i18n/all-langs.ts` file to add the language to the available languages list and configure the values. Hay cuatro objetos aquí.
+Primero, visita el archivo `config/i18n/all-langs.ts` para agregar el idioma a la lista de lenguajes disponibles y configurar los valores. Hay cuatro objetos aquí.
 
 - `avaliableLangs`: Tanto para el arreglo `client` como para el arreglo `curriculum`, añade el nombre en texto del lenguaje. Este es el valor que se utilizará en el archivo `.env` más tarde.
-- `auditedCerts`: Add the text name of the language as the _key_, and add an array of `SuperBlocks.{cert}` variables as the _value_. This tells the client which certifications are fully translated.
-- `i18nextCodes`: These are the ISO language codes for each language. You will need to add the appropriate ISO code for the language you are enabling. These do need to be unique for each language.
+- `auditedCerts`: Add the text name of the language as the _key_, and add an array of `SuperBlocks.{cert}` variables as the _value_. Esto le dice al cliente qué certificaciones están totalmente traducidas.
+- `i18nextCodes`: Estos son los codigos de idioma ISO para cada lenguaje. You will need to add the appropriate ISO code for the language you are enabling. These do need to be unique for each language.
 - `langDisplayNames`: These are the display names for the language selector in the navigation menu.
 - `langCodes`: These are the language codes used for formatting dates and numbers. These should be Unicode CLDR codes instead of ISO codes.
 
@@ -94,13 +94,13 @@ const langCodes = {
 };
 ```
 
-Next, open the `client/src/utils/algolia-locale-setup.ts` file. Estos datos son utilizados por la barra de búsqueda que carga artículos de `/news` (noticias). While it is unlikely that you are going to test this functionality, missing the data for your language can lead to errors when attempting to build the codebase locally.
+Next, open the `client/src/utils/algolia-locale-setup.ts` file. Estos datos son utilizados por la barra de búsqueda que carga artículos de `/news` (noticias). Si bien es poco probable que pruebe esta funcionalidad, la falta de datos para su idioma puede provocar errores al intentar crear la base de código localmente.
 
-Add an object for your language to the `algoliaIndices` object. You should use the values for the `english` object for local testing, replacing the `english` key with your language's `availableLangs` value.
+Agregue un objeto para su idioma al objeto `algoliaIndices`. Debes usar los valores del objeto `english` para las pruebas locales, reemplazando la clave `english` con el valor `availableLangs` de tu idioma.
 
 > [!NOTE] If we have already deployed an instance of news in your target language, you can update the values to reflect the live instance. Otherwise, use the English values.
 
-If you were to add Dothraki:
+Si tuvieras que agregar Dothraki:
 
 ```js
 const algoliaIndices = {
@@ -119,12 +119,7 @@ const algoliaIndices = {
   'chinese-traditional': {
     name: 'news-zh',
     searchPage: 'https://chinese.freecodecamp.org/news/search'
-  },
-  dothraki: {
-    name: 'news',
-    searchPage: 'https://www.freecodecamp.org/news/search/'
-  }
-};
+  };
 ```
 
 Finally, in your `.env` file, set `CLIENT_LOCALE` and `CURRICULUM_LOCALE` to your new language (use the `availableLangs` value.)
@@ -134,7 +129,7 @@ CLIENT_LOCALE="dothraki"
 CURRICULUM_LOCALE="dothraki"
 ```
 
-## Enabling Localized Videos
+## Habilitar Videos Localizados
 
 For the video challenges, you need to change a few things. First add the new locale to the GraphQL query in the `client/src/templates/Challenges/video/Show.tsx` file. For example, adding Dothraki to the query:
 
@@ -188,7 +183,7 @@ videoLocaleIds: Joi.when('challengeType', {
 }),
 ```
 
-## Loading Translations
+## Cargando traducciones
 
 Because the language has not been approved for production, our scripts are not automatically downloading the translations yet. Only staff have the access to directly download the translations - you are welcome to reach out to us in our [contributors chat room](https://chat.freecodecamp.org/channel/contributors), or you can translate the English markdown files locally for testing purposes.
 

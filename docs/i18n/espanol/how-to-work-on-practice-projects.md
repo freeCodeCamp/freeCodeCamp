@@ -10,7 +10,7 @@ Si deseas crear nuevos pasos, las siguientes herramientas simplifican este proce
 
 ## Crea el siguiente paso
 
-A one-off script that will automatically add the next step based on the last step in the project. The challenge seed code will use the previous step's challenge seed code.
+Un script único que automáticamente agregará el siguiente paso basado en el último paso del proyecto. El código de semilla de desafío utilizará el código de semilla de desafío del paso anterior.
 
 ### Cómo ejecutar un script:
 
@@ -23,57 +23,57 @@ Ejecuta npm crear siguiente paso
 
 ## Crea pasos vacíos
 
-A one-off script that automatically adds a specified number of steps. The challenge seed code for all steps created will be empty.
+Un script único que agrega automáticamente un número determinado de pasos. El código para todos los pasos creados estará vacío.
 
-**Note:** This script also runs [update-step-titles](#update-step-titles).
+**Nota:** Este script también ejecuta [reorder-steps](#update-step-titles).
 
-### How to run script:
+### Cómo ejecutar un script:
 
-1. Change to the directory of the project.
-2. Run the following npm command:
+1. Redirígete al directorio del proyecto.
+2. Ejecuta el siguiente comando npm:
 
 ```bash
-npm run create-empty-steps X # where X is the number of steps to create.
+npm run create-empty-steps X # donde X es el número de pasos a crear.
 ```
 
 ## insert-step
 
-A one-off script that automatically adds a new step at a specified position, incrementing all subsequent steps (both their titles and in their meta.json). The challenge seed code will use the previous step's challenge seed code with the editable region markers (ERMs) removed.
+Un script único que agrega automáticamente un nuevo paso en una posición especificada, incrementando todos los pasos posteriores (tanto sus títulos como en su meta.json). El código principal del desafío, utilizará el código de los desafíos de pasos anteriores, con los marcadores de región editables (ERM) eliminados.
 
-**Note:** This script also runs [update-step-titles](#update-step-titles).
+**Nota:** Este script también ejecuta [reorder-steps](#update-step-titles).
 
-### How to run script:
+### Cómo ejecutar el script:
 
-1. Change to the directory of the project.
-2. Run the following npm command:
+1. Redirígete al directorio principal del proyecto.
+2. Ejecuta el siguiente comando npm:
 
 ```bash
-npm run insert-step X # where X is the position to insert the new step.
+npm run insert-step X # donde X es la posición para insertar el nuevo paso.
 ```
 
-## delete-step
+## Eliminar un paso
 
-A one-off script that deletes an existing step, decrementing all subsequent steps (both their titles and in their meta.json)
+Un script único que elimina un paso existente, decrementando todos los pasos posteriores (tanto sus títulos como en su meta.json)
 
-**Note:** This script also runs [update-step-titles](#update-step-titles).
+**Nota:** Este script también ejecuta [reorder-steps](#update-step-titles).
 
-### How to run script
+### Cómo ejecutar el script
 
-1. Change to the directory of the project.
-2. Run the following npm command:
+1. Redirígete al directorio principal del proyecto.
+2. Ejecuta el siguiente comando npm:
 
 ```bash
-npm run delete-step X # where X is the step number to be deleted.
+npm ejecuta delete-step X # donde X es el número de paso a ser eliminado.
 ```
 
 ## update-step-titles
 
-A one-off script that automatically updates the frontmatter in a project's markdown files so that they are consistent with the project's meta.json. It ensures that each step's title (and dashedName) match the meta's challengeOrder.
+Un script único que actualiza automáticamente la materia frontal en los archivos markdown de un proyecto para que sean consistentes con el meta.json del proyecto. Garantiza que el título de cada paso (y dashedName) coincida con el challengeOrder del meta.
 
-### How to run script
+### Cómo ejecutar un script
 
-1. Change to the directory of the project.
-2. Run the following npm command:
+1. Redirígete al directorio del proyecto.
+2. Ejecuta el siguiente comando npm:
 
 ```bash
 npm run update-step-titles

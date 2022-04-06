@@ -10,7 +10,8 @@ dashedName: problem-238-infinite-string-tour
 
 Crie uma sequência de números usando o gerador de números pseudoaleatório "Blum Blum Shub":
 
-$$ s_0 = 14025256 \\\\ s_{n + 1} = {s_n}^2 \\; mod \\; 20.300.713 $$
+$$ s_0 = 14025256 \\\\
+s_{n + 1} = {s_n}^2 \\; mod \\; 20.300.713 $$
 
 Concatene esses números $s_0s_1s_2\ldots$ para criar uma string $w$ de comprimento infinito. Assim, $w = 14025256741014958470038053646\ldots$
 

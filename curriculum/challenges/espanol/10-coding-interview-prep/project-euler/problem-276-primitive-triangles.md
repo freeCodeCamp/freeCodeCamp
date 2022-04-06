@@ -1,6 +1,6 @@
 ---
 id: 5900f4801000cf542c50ff93
-title: 'Problem 276: Primitive Triangles'
+title: 'Problema 276: Triángulos primitivos'
 challengeType: 5
 forumTopicId: 301926
 dashedName: problem-276-primitive-triangles
@@ -8,18 +8,18 @@ dashedName: problem-276-primitive-triangles
 
 # --description--
 
-Consider the triangles with integer sides a, b and c with a ≤ b ≤ c.
+Consideremos los triángulos con lados enteros $a$, $b$ y $c$ con $a ≤ b ≤ c$.
 
-An integer sided triangle (a,b,c) is called primitive if gcd(a,b,c)=1.
+Un triángulo de lados enteros $(a,b,c)$ se llama primitivo si $gcd(a,b,c) = 1$.
 
-How many primitive integer sided triangles exist with a perimeter not exceeding 10 000 000?
+¿Cuántos triángulos primitivos de lados enteros existen con un perímetro que no supere los $10\,000\,000$?
 
 # --hints--
 
-`euler276()` should return 5777137137739633000.
+`Triángulos primitivos()` debe devolver `5777137137739633000`.
 
 ```js
-assert.strictEqual(euler276(), 5777137137739633000);
+assert.strictEqual(primitiveTriangles(), 5777137137739633000);
 ```
 
 # --seed--
@@ -27,12 +27,12 @@ assert.strictEqual(euler276(), 5777137137739633000);
 ## --seed-contents--
 
 ```js
-function euler276() {
+function primitiveTriangles() {
 
   return true;
 }
 
-euler276();
+primitiveTriangles();
 ```
 
 # --solutions--

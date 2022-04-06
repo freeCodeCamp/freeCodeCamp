@@ -18,7 +18,8 @@ Agora, nesse triângulo, podem ser observados dezesseis triângulos de forma, ta
 
 Se quisermos indicar que $T(n)$ é o número de triângulos presentes em um triângulo de tamanho $n$, então
 
-$$\begin{align} & T(1) = 16 \\\\ & T(2) = 104 \end{align}$$
+$$\begin{align}   & T(1) = 16 \\\\
+  & T(2) = 104 \end{align}$$
 
 Encontre $T(36)$.
 

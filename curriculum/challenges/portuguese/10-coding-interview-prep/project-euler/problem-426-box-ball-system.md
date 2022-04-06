@@ -24,7 +24,8 @@ Pode-se mostrar que após um número suficiente de movimentos, o sistema evolui 
 
 Definimos a sequência $\\{t_i\\}$:
 
-$$\begin{align} & s_0 = 290.797 \\\\ & s_{k + 1} = {s_k}^2\bmod 50.515.093 \\\\ & t_k = (s_k\bmod 64) + 1 \end{align}$$
+$$\begin{align}   & s_0 = 290.797 \\\\
+  & s_{k + 1} = {s_k}^2\bmod 50.515.093 \\\\ & t_k = (s_k\bmod 64) + 1 \end{align}$$
 
 Começando da configuração inicial $(t_0, t_1, \ldots, t_{10})$, o estado final se torna [1, 3, 10, 24, 51, 75].
 

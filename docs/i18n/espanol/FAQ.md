@@ -36,11 +36,11 @@ Por favor, no crees Tema de GitHub para problemas de seguridad. En su lugar, por
 
 ### Soy estudiante. ¿Puedo trabajar en una característica para los créditos académicos?
 
-Sí. Please note we are unable to commit to any timelines or paperwork that may be a requirement by your college or university. We receive many pull-requests and code contributions from volunteer developers, and we respect their time and efforts. Out of respect for all of our other contributors, we will not give any PR special priority just because it happens to be school-related.
+Sí. Tenga en cuenta que no podemos comprometernos con ningún plazo o papeleo que pueda ser un requisito de su colegio o universidad. Recibimos muchas solicitudes de incorporación de cambios y contribuciones de código de desarrolladores voluntarios, y respetamos su tiempo y esfuerzos. Por respeto a todos nuestros otros colaboradores, no le daremos prioridad especial a las relaciones públicas solo porque esté relacionado con la escuela.
 
-We request you to plan ahead and work on code contributions with this in mind.
+Le solicitamos que planifique con anticipación y trabaje en las contribuciones de código teniendo esto en cuenta.
 
-### What do these different labels that are tagged on issues mean?
+### ¿Qué significan estas diferentes etiquetas que se etiquetan en los problemas?
 
 The code maintainers [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) issues and pull requests based on their priority, severity, and other factors. You can [find a complete glossary of their meanings here](https://github.com/freecodecamp/freecodecamp/labels).
 

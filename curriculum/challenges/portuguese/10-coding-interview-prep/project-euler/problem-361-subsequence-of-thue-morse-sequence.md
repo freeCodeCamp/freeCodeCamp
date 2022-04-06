@@ -20,7 +20,8 @@ Definimos $\\{A_n\\}$ como uma sequência ordenada de inteiros, de forma que a e
 
 Os primeiros termos de $A_n$ são atribuídos da seguinte forma:
 
-$$\begin{array}{cr} n   & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 &  8 &  9 & 10 & 11 & 12 & \ldots \\\\ A_n & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 9 & 10 & 11 & 12 & 13 & 18 & \ldots \end{array}$$
+$$\begin{array}{cr}   n   & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 &  8 &  9 & 10 & 11 & 12 & \ldots \\\\
+  A_n & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 9 & 10 & 11 & 12 & 13 & 18 & \ldots \end{array}$$
 
 Também podemos verificar que $A_{100} = 3251$ e $A_{1000} = 80.852.364.498$.
 

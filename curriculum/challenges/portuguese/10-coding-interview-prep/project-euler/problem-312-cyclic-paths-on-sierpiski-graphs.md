@@ -19,7 +19,9 @@ Considere $C(n)$ como o número de ciclos que passam exatamente uma vez por todo
 
 Também pode ser verificado que:
 
-$$\begin{align} & C(1) = C(2) = 1 \\\\ & C(5) = 71.328.803.586.048 \\\\ & C(10 000)\bmod {10}^8 = 37.652.224 \\\\ & C(10 000)\bmod {13}^8 = 617.720.485 \\\\ \end{align}$$
+$$\begin{align}   & C(1) = C(2) = 1 \\\\
+  & C(5) = 71.328.803.586.048 \\\\   & C(10 000)\bmod {10}^8 = 37.652.224 \\\\
+  & C(10 000)\bmod {13}^8 = 617.720.485 \\\\ \end{align}$$
 
 Encontre $C(C(C(10.000)))\bmod {13}^8$.
 

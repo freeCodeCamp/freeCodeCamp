@@ -867,17 +867,17 @@ pm2 logs
 
 Consulta: https://docs.microsoft.com/es-es/azure/devops/pipelines/agents/v2-linux?view=azure-devops y sigue las instrucciones para detener, eliminar y reinstalar agentes. En términos generales, puedes seguir los pasos que se enumeran aquí.
 
-You would need a PAT, that you can grab from here: https://dev.azure.com/freeCodeCamp-org/_usersSettings/tokens
+Necesitarás una PAT, que puedes obtener desde aquí: https://dev.azure.com/freeCodeCamp-org/_usersSettings/tokens
 
-### Installing agents on Deployment targets
+### Instalación de agentes en objetivos de despliegue
 
-Navigate to [Azure Devops](https://dev.azure.com/freeCodeCamp-org) and register the agent from scratch in the requisite [deployment groups](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_machinegroup).
+Navega a [Azure Devops](https://dev.azure.com/freeCodeCamp-org) y registra el agente desde cero en el requisito [deployment groups](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_machinegroup).
 
-> [!NOTE] You should run the scripts in the home directory, and make sure no other `azagent` directory exists.
+> [!NOTE] Debes ejecutar los scripts en el directorio de inicio, y asegurarte de que no existe ningún otro directorio `azagent`.
 
-### Updating agents
+### Actualizando agentes
 
-Currently updating agents requires them to be removed and reconfigured. This is required for them to correctly pick up `PATH` values and other system environment variables. We need to do this for instance updating Node.js on our deployment target VMs.
+Actualmente actualizar los agentes requiere que sean eliminados y reconfigurados. Esto es necesario para que recojan correctamente los valores `PATH` y otras variables de entorno del sistema. Necesitamos hacer esto, por ejemplo, para actualizar Node.js en nuestras MV objetivo de implemetación.
 
 1. Navega y revisa el estado del servicio
 
@@ -911,11 +911,11 @@ Currently updating agents requires them to be removed and reconfigured. This is 
    rm -rf ~/azagent
    ```
 
-Once You have completed the steps above, you can repeat the same steps as installing the agent.
+Una vez que hayas completado los pasos de arriba, puedes repetir los mismos pasos que para instalar el agente.
 
 # Manual de piloto - Correo masivo
 
-We use [a CLI tool](https://github.com/freecodecamp/sendgrid-email-blast) to send out the weekly newsletter. To spin this up and begin the process:
+Utilizamos [una herramienta CLI](https://github.com/freecodecamp/sendgrid-email-blast) para enviar el boletín semanal. Para actualizar y comenzar el proceso:
 
 1. Inicia sesión en DigitalOcean, e inicia nuevas droplets bajo el proyecto `Sendgrid`. Usa el snapshot de Ubuntu Sendgrid con la fecha más reciente.  Esto viene precargado con la herramienta CLI y el script para obtener correos electrónicos desde la base de datos. Con el volumen actual, tres droplets son suficientes para enviar los correos electrónicos de manera oportuna.
 
@@ -944,19 +944,19 @@ We use [a CLI tool](https://github.com/freecodecamp/sendgrid-email-blast) to sen
 
 7. Cuando el correo masivo haya terminado, verifica que no hay correos fallados antes de destruir los droplets.
 
-# Flight Manual - Adding news instances for new languages
+# Manual de vuelo - Agregando instancias de noticias para nuevos idiomas
 
-### Theme Changes
+### Cambios de tema
 
-We use a custom [theme](https://github.com/freeCodeCamp/news-theme) for our news publication. Adding the following changes to the theme enables the addition of new languages.
+Utilizamos un [tema](https://github.com/freeCodeCamp/news-theme) personalizado para nuestra publicación de noticias. Los siguientes cambios en el tema permiten añadir nuevos idiomas.
 
-1. Include an `else if` statement for the new [ISO language code](https://www.loc.gov/standards/iso639-2/php/code_list.php) in [`setup-locale.js`](https://github.com/freeCodeCamp/news-theme/blob/main/assets/config/setup-locale.js)
-2. Create an initial config folder by duplicating the [`assets/config/en`](https://github.com/freeCodeCamp/news-theme/tree/main/assets/config/en) folder and changing its name to the new language code. (`en` —> `es` for Spanish)
-3. Inside the new language folder, change the variable names in `main.js` and `footer.js` to the relevant language short code (`enMain` —> `esMain` for Spanish)
-4. Duplicate the [`locales/en.json`](https://github.com/freeCodeCamp/news-theme/blob/main/locales/en.json) and rename it to the new language code.
-5. In [`partials/i18n.hbs`](https://github.com/freeCodeCamp/news-theme/blob/main/partials/i18n.hbs), add scripts for the newly created config files.
-6. Add the related language `day.js` script from [cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) to the [freeCodeCamp CDN](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale)
+1. Incluya una sentencia `else if` para el nuevo [código de idioma ISO](https://www.loc.gov/standards/iso639-2/php/code_list.php) en [`setup-locale.js`](https://github.com/freeCodeCamp/news-theme/blob/main/assets/config/setup-locale.js)
+2. Crea una carpeta de configuración inicial duplicando la carpeta [`assets/config/es`](https://github.com/freeCodeCamp/news-theme/tree/main/assets/config/en) y cambiando su nombre al nuevo código de idioma. (`en` —> `es` para Español)
+3. Dentro de la nueva carpeta de idioma, cambie los nombres de las variables en `main.js` y `footer.js` al código corto de idioma relevante (`enMain` —> `esMain` para Español)
+4. Duplicar el [`locales/en.json`](https://github.com/freeCodeCamp/news-theme/blob/main/locales/en.json) y renombrarlo al nuevo código de idioma.
+5. En [`partials/i18n.hbs`](https://github.com/freeCodeCamp/news-theme/blob/main/partials/i18n.hbs), agrega scripts para los archivos de configuración creados recientemente.
+6. Agregue el lenguaje relacionado `day.js` script de [cdnjs](https://cdnjs.com/libraries/dayjs/1.10.4) al [CDN freeCodeCamp](https://github.com/freeCodeCamp/cdn/tree/main/build/news-assets/dayjs/1.10.4/locale)
 
-### Ghost Dashboard Changes
+### Cambios en el Dashboard de Ghost
 
-Update the publication assets by going to the Ghost dashboard > settings > general and uploading the publications's [icon](https://github.com/freeCodeCamp/design-style-guide/blob/master/assets/fcc-puck-500-favicon.png), [logo](https://github.com/freeCodeCamp/design-style-guide/blob/master/downloads/fcc_primary_large.png), and [cover](https://github.com/freeCodeCamp/design-style-guide/blob/master/assets/fcc_ghost_publication_cover.png).
+Actualice los recursos de la publicación yendo al panel de Ghost > ajustes > generales y subiendo el icono [de las publicaciones](https://github.com/freeCodeCamp/design-style-guide/blob/master/assets/fcc-puck-500-favicon.png), [logo](https://github.com/freeCodeCamp/design-style-guide/blob/master/downloads/fcc_primary_large.png)y [portada](https://github.com/freeCodeCamp/design-style-guide/blob/master/assets/fcc_ghost_publication_cover.png).

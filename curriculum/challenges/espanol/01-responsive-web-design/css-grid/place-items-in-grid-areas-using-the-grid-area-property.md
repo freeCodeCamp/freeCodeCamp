@@ -17,7 +17,7 @@ Después de crear una plantilla de área para tu contenedor de cuadrícula (grid
 }
 ```
 
-Esto le dice a la cuadrícula que quieres que la clase `item1` se ubique en el área llamada `header`. En este caso, el elemento usará la totalidad de la fila superior porque esa área se llama header.
+Esto le dice a la cuadrícula que quieres que la clase `item1` se ubique en el área llamada `header`. En este caso, el item usará la totalidad de la fila superior debido a que esa área es nombrada como el área `header`.
 
 # --instructions--
 

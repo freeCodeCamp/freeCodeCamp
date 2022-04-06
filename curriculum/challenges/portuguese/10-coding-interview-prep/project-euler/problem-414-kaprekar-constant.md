@@ -16,7 +16,8 @@ Isso também funciona com números que têm menos de 4 algarismos se colocarmos 
 
 Ex: vamos começar com o número 0837:
 
-$$\begin{align} & 8730 - 0378 = 8352 \\\\ & 8532 - 2358 = 6174 \end{align}$$
+$$\begin{align}   & 8730 - 0378 = 8352 \\\\
+  & 8532 - 2358 = 6174 \end{align}$$
 
 6174 é chamado de constante de Kaprekar. O processo de ordenar e subtrair e repetir isso até chegar a 0 ou à constante de Kaprekar é chamado de rotina de Kaprekar.
 
