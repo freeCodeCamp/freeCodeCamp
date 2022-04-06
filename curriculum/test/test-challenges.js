@@ -317,13 +317,13 @@ function populateTestsForLang({ lang, challenges, meta }) {
           // Note: the title in meta.json are purely for human readability and
           // do not include translations, so we do not validate against them.
           it('Matches an ID in meta.json', function () {
-            const index = meta[dashedBlockName].challengeOrder.findIndex(
+            const index = meta[dashedBlockName]?.challengeOrder?.findIndex(
               arr => arr[0] === challenge.id
             );
 
             if (index < 0) {
               throw new AssertionError(
-                `Cannot find ID "${challenge.id}" in meta.json file`
+                `Cannot find ID "${challenge.id}" in meta.json file for block "${dashedBlockName}"`
               );
             }
           });

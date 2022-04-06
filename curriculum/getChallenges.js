@@ -297,7 +297,7 @@ ${getFullPath('english', filePath)}
       ([id]) => id === challenge.id
     );
 
-    challenge.block = dasherize(meta.blockName);
+    challenge.block = meta.name ? dasherize(meta.name) : null;
     challenge.hasEditableBoundaries = !!meta.hasEditableBoundaries;
     challenge.order = meta.order;
     const superOrder = getSuperOrder(meta.superBlock, {
