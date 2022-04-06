@@ -533,6 +533,7 @@
     "local-code-saved": "Salvo! Seu código foi salvo no armazenamento local do seu navegador.",
     "code-saved": "Seu código foi salvo no banco de dados. Ele estará aqui quando você voltar.",
     "code-save-error": "Ocorreu um erro ao tentar salvar seu código.",
+    "code-save-less": "Devagar! O código não foi salvo. Tente novamente em alguns segundos.",
     "challenge-save-too-big": "Não foi possível salvar seu código. Seu código tem {{user-size}} bytes. A capacidade é de, no máximo, {{max-size}} bytes. Diminua o tamanho do seu código e tente novamente ou peça assistência em https://forum.freecodecamp.org",
     "challenge-submit-too-big": "Não foi possível enviar seu código. Seu código tem {{user-size}} bytes. É possível enviar, no máximo, {{max-size}} bytes. Diminua o tamanho do seu código e tente novamente ou peça assistência em https://forum.freecodecamp.org"
   },
