@@ -54,7 +54,7 @@ consecutivePrimeSum(1000000);
 # --solutions--
 
 ```js
-// Initalize prime number list with sieve
+// Initialize prime number list with sieve
 const NUM_PRIMES = 1000000;
 const PRIMES = [2];
 const PRIME_SIEVE = Array(Math.floor((NUM_PRIMES-1)/2)).fill(true);
@@ -88,7 +88,7 @@ function isPrime(num) {
 }
 
 function consecutivePrimeSum(limit) {
-  // Initalize for longest sum < 100
+  // Initialize for longest sum < 100
   let bestPrime = 41;
   let bestI = 0;
   let bestJ = 5;
