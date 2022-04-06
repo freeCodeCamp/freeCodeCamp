@@ -321,19 +321,10 @@ ${getFullPath('english', filePath)}
       meta.challengeOrder,
       ([id]) => id === challenge.id
     );
-    const {
-      name: blockName,
-      hasEditableBoundaries,
-      order,
-      isPrivate,
-      required = [],
-      template,
-      time,
-      usesMultifileEditor
-    } = meta;
-    challenge.block = dasherize(blockName);
-    challenge.hasEditableBoundaries = !!hasEditableBoundaries;
-    challenge.order = order;
+
+    challenge.block = dasherize(meta.blockName);
+    challenge.hasEditableBoundaries = !!meta.hasEditableBoundaries;
+    challenge.order = meta.order;
     const superOrder = getSuperOrder(superBlock, {
       showNewCurriculum: process.env.SHOW_NEW_CURRICULUM === 'true'
     });
@@ -348,15 +339,15 @@ ${getFullPath('english', filePath)}
         : superBlock;
     challenge.superBlock = superBlock;
     challenge.challengeOrder = challengeOrder;
-    challenge.isPrivate = challenge.isPrivate || isPrivate;
-    challenge.required = required.concat(challenge.required || []);
-    challenge.template = template;
-    challenge.time = time;
+    challenge.isPrivate = challenge.isPrivate || meta.isPrivate;
+    challenge.required = meta.required.concat(challenge.required || []);
+    challenge.template = meta.template;
+    challenge.time = meta.time;
     challenge.helpCategory =
       challenge.helpCategory || helpCategoryMap[challenge.block];
     challenge.translationPending =
       lang !== 'english' && !isAuditedCert(lang, superBlock);
-    challenge.usesMultifileEditor = !!usesMultifileEditor;
+    challenge.usesMultifileEditor = !!meta.usesMultifileEditor;
     if (challenge.challengeFiles) {
       // The client expects the challengeFiles to be an array of polyvinyls
       challenge.challengeFiles = challengeFilesToPolys(
