@@ -293,6 +293,7 @@
       "tests": "Tests",
       "restart": "Restart",
       "restart-step": "Restart Step",
+      "ask-help": "Ask for Help",
       "console": "Console",
       "notes": "Notes",
       "preview": "Preview"
