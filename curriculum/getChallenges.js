@@ -291,32 +291,7 @@ ${getFullPath('english', filePath)}
 `);
   }
 
-  async function createChallenge(filePath, maybeMeta) {
-    const meta = maybeMeta
-      ? maybeMeta
-      : require(path.resolve(
-          metaDir,
-          `./${getBlockNameFromPath(filePath)}/meta.json`
-        ));
-
-    const { superBlock } = meta;
-    await validate(filePath);
-    // assumes superblock names are unique
-    // while the auditing is ongoing, we default to English for un-audited certs
-    // once that's complete, we can revert to using isEnglishChallenge(fullPath)
-    const useEnglish =
-      lang === 'english' ||
-      !isAuditedCert(lang, superBlock) ||
-      !fs.existsSync(getFullPath(lang, filePath));
-
-    const challenge = await (useEnglish
-      ? parseMD(getFullPath('english', filePath))
-      : parseTranslation(
-          getFullPath(lang, filePath),
-          COMMENT_TRANSLATIONS,
-          lang
-        ));
-
+  function addMetaToChallenge(challenge, meta) {
     const challengeOrder = findIndex(
       meta.challengeOrder,
       ([id]) => id === challenge.id
@@ -325,7 +300,7 @@ ${getFullPath('english', filePath)}
     challenge.block = dasherize(meta.blockName);
     challenge.hasEditableBoundaries = !!meta.hasEditableBoundaries;
     challenge.order = meta.order;
-    const superOrder = getSuperOrder(superBlock, {
+    const superOrder = getSuperOrder(meta.superBlock, {
       showNewCurriculum: process.env.SHOW_NEW_CURRICULUM === 'true'
     });
     if (superOrder !== null) challenge.superOrder = superOrder;
@@ -334,10 +309,10 @@ ${getFullPath('english', filePath)}
    field to track which certification this belongs to. */
     // TODO: generalize this to all superBlocks
     challenge.certification =
-      superBlock === '2022/responsive-web-design'
+      meta.superBlock === '2022/responsive-web-design'
         ? 'responsive-web-design'
-        : superBlock;
-    challenge.superBlock = superBlock;
+        : meta.superBlock;
+    challenge.superBlock = meta.superBlock;
     challenge.challengeOrder = challengeOrder;
     challenge.isPrivate = challenge.isPrivate || meta.isPrivate;
     challenge.required = meta.required.concat(challenge.required || []);
@@ -346,7 +321,7 @@ ${getFullPath('english', filePath)}
     challenge.helpCategory =
       challenge.helpCategory || helpCategoryMap[challenge.block];
     challenge.translationPending =
-      lang !== 'english' && !isAuditedCert(lang, superBlock);
+      lang !== 'english' && !isAuditedCert(lang, meta.superBlock);
     challenge.usesMultifileEditor = !!meta.usesMultifileEditor;
     if (challenge.challengeFiles) {
       // The client expects the challengeFiles to be an array of polyvinyls
@@ -359,6 +334,34 @@ ${getFullPath('english', filePath)}
       // can sort them correctly.
       challenge.solutions = challenge.solutions.map(challengeFilesToPolys);
     }
+  }
+
+  async function createChallenge(filePath, maybeMeta) {
+    const meta = maybeMeta
+      ? maybeMeta
+      : require(path.resolve(
+          metaDir,
+          `./${getBlockNameFromPath(filePath)}/meta.json`
+        ));
+
+    await validate(filePath);
+    // assumes superblock names are unique
+    // while the auditing is ongoing, we default to English for un-audited certs
+    // once that's complete, we can revert to using isEnglishChallenge(fullPath)
+    const useEnglish =
+      lang === 'english' ||
+      !isAuditedCert(lang, meta.superBlock) ||
+      !fs.existsSync(getFullPath(lang, filePath));
+
+    const challenge = await (useEnglish
+      ? parseMD(getFullPath('english', filePath))
+      : parseTranslation(
+          getFullPath(lang, filePath),
+          COMMENT_TRANSLATIONS,
+          lang
+        ));
+
+    addMetaToChallenge(challenge, meta);
 
     return challenge;
   }
