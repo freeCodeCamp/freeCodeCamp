@@ -153,7 +153,9 @@ const walk = (root, target, options, cb) => {
 };
 
 exports.getChallengesForLang = async function getChallengesForLang(lang) {
-  const root = getChallengesDirForLang(lang);
+  // english determines the shape of the curriculum, all other languages mirror
+  // it.
+  const root = getChallengesDirForLang('english');
   // scaffold the curriculum, first set up the superblocks, then recurse into
   // the blocks
   const curriculum = await walk(
@@ -258,8 +260,7 @@ async function parseTranslation(transPath, dict, lang, parse = parseMD) {
     : translatedChal;
 }
 
-// eslint-disable-next-line no-unused-vars
-async function createCertification(basePath, filePath, lang) {
+async function createCertification(basePath, filePath) {
   function getFullPath(pathLang) {
     return path.resolve(__dirname, basePath, pathLang, filePath);
   }
@@ -297,7 +298,10 @@ ${getFullPath('english')}
   // assumes superblock names are unique
   // while the auditing is ongoing, we default to English for un-audited certs
   // once that's complete, we can revert to using isEnglishChallenge(fullPath)
-  const useEnglish = lang === 'english' || !isAuditedCert(lang, superBlock);
+  const useEnglish =
+    lang === 'english' ||
+    !isAuditedCert(lang, superBlock) ||
+    !fs.existsSync(getFullPath(lang));
 
   const challenge = await (useEnglish
     ? parseMD(getFullPath('english'))
