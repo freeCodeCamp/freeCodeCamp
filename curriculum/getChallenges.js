@@ -242,9 +242,10 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
   ) {
     return;
   }
+  const createChallenge = generateChallengeCreator(challengesDir, lang);
   const challenge = isCert
     ? await createCertification(challengesDir, filePath, lang)
-    : await createChallenge(challengesDir, filePath, lang, meta);
+    : await createChallenge(filePath, meta);
 
   challengeBlock.challenges = [...challengeBlock.challenges, challenge];
 }
@@ -271,93 +272,106 @@ async function createCertification(basePath, filePath) {
   return parseCert(getFullPath('english'));
 }
 
-async function createChallenge(basePath, filePath, lang, maybeMeta) {
-  function getFullPath(pathLang) {
+// This is a slightly weird abstraction, but it lets us define helper functions
+// without passing around a ton of arguments.
+function generateChallengeCreator(basePath, lang) {
+  function getFullPath(pathLang, filePath) {
     return path.resolve(__dirname, basePath, pathLang, filePath);
   }
-  let meta;
-  if (maybeMeta) {
-    meta = maybeMeta;
-  } else {
-    const metaPath = path.resolve(
-      metaDir,
-      `./${getBlockNameFromPath(filePath)}/meta.json`
-    );
-    meta = require(metaPath);
-  }
-  const { superBlock } = meta;
-  if (!curriculumLangs.includes(lang))
-    throw Error(`${lang} is not a accepted language.
-  Trying to parse ${filePath}`);
-  if (lang !== 'english' && !(await hasEnglishSource(basePath, filePath)))
-    throw Error(`Missing English challenge for
+
+  async function validate(filePath) {
+    if (!curriculumLangs.includes(lang))
+      throw Error(`${lang} is not a accepted language.
+Trying to parse ${filePath}`);
+    if (lang !== 'english' && !(await hasEnglishSource(basePath, filePath)))
+      throw Error(`Missing English challenge for
 ${filePath}
 It should be in
-${getFullPath('english')}
+${getFullPath('english', filePath)}
 `);
-  // assumes superblock names are unique
-  // while the auditing is ongoing, we default to English for un-audited certs
-  // once that's complete, we can revert to using isEnglishChallenge(fullPath)
-  const useEnglish =
-    lang === 'english' ||
-    !isAuditedCert(lang, superBlock) ||
-    !fs.existsSync(getFullPath(lang));
+  }
 
-  const challenge = await (useEnglish
-    ? parseMD(getFullPath('english'))
-    : parseTranslation(getFullPath(lang), COMMENT_TRANSLATIONS, lang));
+  async function createChallenge(filePath, maybeMeta) {
+    const meta = maybeMeta
+      ? maybeMeta
+      : require(path.resolve(
+          metaDir,
+          `./${getBlockNameFromPath(filePath)}/meta.json`
+        ));
 
-  const challengeOrder = findIndex(
-    meta.challengeOrder,
-    ([id]) => id === challenge.id
-  );
-  const {
-    name: blockName,
-    hasEditableBoundaries,
-    order,
-    isPrivate,
-    required = [],
-    template,
-    time,
-    usesMultifileEditor
-  } = meta;
-  challenge.block = dasherize(blockName);
-  challenge.hasEditableBoundaries = !!hasEditableBoundaries;
-  challenge.order = order;
-  const superOrder = getSuperOrder(superBlock, {
-    showNewCurriculum: process.env.SHOW_NEW_CURRICULUM === 'true'
-  });
-  if (superOrder !== null) challenge.superOrder = superOrder;
-  /* Since there can be more than one way to complete a certification (using the
+    const { superBlock } = meta;
+    await validate(filePath);
+    // assumes superblock names are unique
+    // while the auditing is ongoing, we default to English for un-audited certs
+    // once that's complete, we can revert to using isEnglishChallenge(fullPath)
+    const useEnglish =
+      lang === 'english' ||
+      !isAuditedCert(lang, superBlock) ||
+      !fs.existsSync(getFullPath(lang, filePath));
+
+    const challenge = await (useEnglish
+      ? parseMD(getFullPath('english', filePath))
+      : parseTranslation(
+          getFullPath(lang, filePath),
+          COMMENT_TRANSLATIONS,
+          lang
+        ));
+
+    const challengeOrder = findIndex(
+      meta.challengeOrder,
+      ([id]) => id === challenge.id
+    );
+    const {
+      name: blockName,
+      hasEditableBoundaries,
+      order,
+      isPrivate,
+      required = [],
+      template,
+      time,
+      usesMultifileEditor
+    } = meta;
+    challenge.block = dasherize(blockName);
+    challenge.hasEditableBoundaries = !!hasEditableBoundaries;
+    challenge.order = order;
+    const superOrder = getSuperOrder(superBlock, {
+      showNewCurriculum: process.env.SHOW_NEW_CURRICULUM === 'true'
+    });
+    if (superOrder !== null) challenge.superOrder = superOrder;
+    /* Since there can be more than one way to complete a certification (using the
    legacy curriculum or the new one, for instance), we need a certification
    field to track which certification this belongs to. */
-  // TODO: generalize this to all superBlocks
-  challenge.certification =
-    superBlock === '2022/responsive-web-design'
-      ? 'responsive-web-design'
-      : superBlock;
-  challenge.superBlock = superBlock;
-  challenge.challengeOrder = challengeOrder;
-  challenge.isPrivate = challenge.isPrivate || isPrivate;
-  challenge.required = required.concat(challenge.required || []);
-  challenge.template = template;
-  challenge.time = time;
-  challenge.helpCategory =
-    challenge.helpCategory || helpCategoryMap[challenge.block];
-  challenge.translationPending =
-    lang !== 'english' && !isAuditedCert(lang, superBlock);
-  challenge.usesMultifileEditor = !!usesMultifileEditor;
-  if (challenge.challengeFiles) {
-    // The client expects the challengeFiles to be an array of polyvinyls
-    challenge.challengeFiles = challengeFilesToPolys(challenge.challengeFiles);
-  }
-  if (challenge.solutions?.length) {
-    // The test runner needs the solutions to be arrays of polyvinyls so it
-    // can sort them correctly.
-    challenge.solutions = challenge.solutions.map(challengeFilesToPolys);
-  }
+    // TODO: generalize this to all superBlocks
+    challenge.certification =
+      superBlock === '2022/responsive-web-design'
+        ? 'responsive-web-design'
+        : superBlock;
+    challenge.superBlock = superBlock;
+    challenge.challengeOrder = challengeOrder;
+    challenge.isPrivate = challenge.isPrivate || isPrivate;
+    challenge.required = required.concat(challenge.required || []);
+    challenge.template = template;
+    challenge.time = time;
+    challenge.helpCategory =
+      challenge.helpCategory || helpCategoryMap[challenge.block];
+    challenge.translationPending =
+      lang !== 'english' && !isAuditedCert(lang, superBlock);
+    challenge.usesMultifileEditor = !!usesMultifileEditor;
+    if (challenge.challengeFiles) {
+      // The client expects the challengeFiles to be an array of polyvinyls
+      challenge.challengeFiles = challengeFilesToPolys(
+        challenge.challengeFiles
+      );
+    }
+    if (challenge.solutions?.length) {
+      // The test runner needs the solutions to be arrays of polyvinyls so it
+      // can sort them correctly.
+      challenge.solutions = challenge.solutions.map(challengeFilesToPolys);
+    }
 
-  return challenge;
+    return challenge;
+  }
+  return createChallenge;
 }
 
 function challengeFilesToPolys(files) {
@@ -394,4 +408,4 @@ function getBlockNameFromPath(filePath) {
 
 exports.hasEnglishSource = hasEnglishSource;
 exports.parseTranslation = parseTranslation;
-exports.createChallenge = createChallenge;
+exports.generateChallengeCreator = generateChallengeCreator;

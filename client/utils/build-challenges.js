@@ -5,7 +5,7 @@ const _ = require('lodash');
 const envData = require('../../config/env.json');
 const {
   getChallengesForLang,
-  createChallenge,
+  generateChallengeCreator,
   challengesDir,
   getChallengesDirForLang
 } = require('../../curriculum/getChallenges');
@@ -27,14 +27,14 @@ exports.replaceChallengeNode = () => {
     delete require.cache[require.resolve(metaPath)];
     const meta = require(metaPath);
     // TODO: reimplement hot-reloading of certifications
-    return await createChallenge(
-      challengesDir,
-      filePath,
-      curriculumLocale,
-      meta
-    );
+    return await createChallenge(filePath, meta);
   };
 };
+
+const createChallenge = generateChallengeCreator(
+  challengesDir,
+  curriculumLocale
+);
 
 exports.buildChallenges = async function buildChallenges() {
   const curriculum = await getChallengesForLang(curriculumLocale);
