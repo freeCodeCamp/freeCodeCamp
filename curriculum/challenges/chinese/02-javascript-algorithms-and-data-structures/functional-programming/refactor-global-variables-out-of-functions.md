@@ -28,6 +28,7 @@ dashedName: refactor-global-variables-out-of-functions
 
 ```js
 add(bookList, "Test");
+remove(bookList, "The Hound of the Baskervilles");
 assert(
   JSON.stringify(bookList) ===
     JSON.stringify([
