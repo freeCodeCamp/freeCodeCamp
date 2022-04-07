@@ -1,8 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 const util = require('util');
+const assert = require('assert');
 const yaml = require('js-yaml');
-const { findIndex } = require('lodash');
+const { findIndex, isEmpty } = require('lodash');
 const readDirP = require('readdirp');
 const { helpCategoryMap } = require('../client/utils/challenge-types');
 const { showUpcomingChanges } = require('../config/env.json');
@@ -164,6 +165,9 @@ exports.getChallengesForLang = async function getChallengesForLang(lang) {
     { type: 'directories', depth: 0 },
     buildSuperBlocks
   );
+  Object.entries(curriculum).forEach(([name, superBlock]) => {
+    assert(!isEmpty(superBlock.blocks), `superblock ${name} has no blocks`);
+  });
   const cb = (file, curriculum) => buildChallenges(file, curriculum, lang);
   // fill the scaffold with the challenges
   return walk(
