@@ -22,10 +22,10 @@ const { getSuperOrder, getSuperBlockFromDir } = require('./utils');
 
 const access = util.promisify(fs.access);
 
-const challengesDir = path.resolve(__dirname, './challenges');
-const metaDir = path.resolve(challengesDir, '_meta');
-exports.challengesDir = challengesDir;
-exports.metaDir = metaDir;
+const CHALLENGES_DIR = path.resolve(__dirname, './challenges');
+const META_DIR = path.resolve(CHALLENGES_DIR, '_meta');
+exports.CHALLENGES_DIR = CHALLENGES_DIR;
+exports.META_DIR = META_DIR;
 
 const COMMENT_TRANSLATIONS = createCommentMap(
   path.resolve(__dirname, './dictionaries')
@@ -117,12 +117,12 @@ function getTranslationEntry(dicts, { engId, text }) {
 }
 
 function getChallengesDirForLang(lang) {
-  return path.resolve(challengesDir, `./${lang}`);
+  return path.resolve(CHALLENGES_DIR, `./${lang}`);
 }
 
 function getMetaForBlock(block) {
   return JSON.parse(
-    fs.readFileSync(path.resolve(metaDir, `./${block}/meta.json`), 'utf8')
+    fs.readFileSync(path.resolve(META_DIR, `./${block}/meta.json`), 'utf8')
   );
 }
 
@@ -175,10 +175,7 @@ exports.getChallengesForLang = async function getChallengesForLang(lang) {
 };
 
 async function buildBlocks({ basename: blockName }, curriculum, superBlock) {
-  const metaPath = path.resolve(
-    __dirname,
-    `./challenges/_meta/${blockName}/meta.json`
-  );
+  const metaPath = path.resolve(META_DIR, `/${blockName}/meta.json`);
 
   if (fs.existsSync(metaPath)) {
     // try to read the file, if the meta path does not exist it should be a certification.
@@ -242,9 +239,9 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
   ) {
     return;
   }
-  const createChallenge = generateChallengeCreator(challengesDir, lang);
+  const createChallenge = generateChallengeCreator(CHALLENGES_DIR, lang);
   const challenge = isCert
-    ? await createCertification(challengesDir, filePath, lang)
+    ? await createCertification(CHALLENGES_DIR, filePath, lang)
     : await createChallenge(filePath, meta);
 
   challengeBlock.challenges = [...challengeBlock.challenges, challenge];
@@ -340,7 +337,7 @@ ${getFullPath('english', filePath)}
     const meta = maybeMeta
       ? maybeMeta
       : require(path.resolve(
-          metaDir,
+          META_DIR,
           `./${getBlockNameFromPath(filePath)}/meta.json`
         ));
 
