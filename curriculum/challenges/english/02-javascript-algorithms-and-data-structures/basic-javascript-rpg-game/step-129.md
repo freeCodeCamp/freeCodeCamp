@@ -199,7 +199,7 @@ const locations = [
     "button text": ["REPLAY?", "REPLAY?", "REPLAY?"],
     "button functions": [restart, restart, restart],
     text: "You die. ☠️"
-  }
+  },
   { 
     name: "win", 
     "button text": ["Fight slime", "Fight fanged beast", "Go to town square"], 
