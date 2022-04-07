@@ -73,9 +73,15 @@ It should be in
       expect(typeof createCommentMap(dictionaryDir)).toBe('object');
     });
 
-    it('throws if an entry is missing', () => {
-      expect.assertions(1);
-      expect(() => createCommentMap(incompleteDictDir)).toThrow();
+    it('fallback to the untranslated string', () => {
+      expect.assertions(2);
+      const commentMap = createCommentMap(incompleteDictDir);
+      expect(commentMap['To be translated one'].spanish).toEqual(
+        'Spanish translation one'
+      );
+      expect(commentMap['To be translated two'].spanish).toEqual(
+        'To be translated two'
+      );
     });
 
     it('returns an object with an expected form', () => {
