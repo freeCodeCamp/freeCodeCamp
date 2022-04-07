@@ -17,7 +17,6 @@ import React, { useState } from 'react';
 import envData from '../../../../config/env.json';
 import { Themes } from '../settings/theme';
 import { AddDonationData } from './paypal-button';
-import SecurityLockIcon from './security-lock-icon';
 
 const { stripePublicKey }: { stripePublicKey: string | null } = envData;
 
@@ -35,7 +34,6 @@ interface FormPropTypes {
   t: (label: string) => string;
   theme: Themes;
   processing: boolean;
-  isAVariant: boolean;
 }
 
 interface Element {
@@ -51,8 +49,7 @@ const StripeCardForm = ({
   t,
   onDonationStateChange,
   postStripeCardDonation,
-  processing,
-  isAVariant
+  processing
 }: FormPropTypes): JSX.Element => {
   const [isSubmissionValid, setSubmissionValidity] = useState(true);
   const [isTokenizing, setTokenizing] = useState(false);
@@ -170,7 +167,6 @@ const StripeCardForm = ({
         disabled={!stripe || !elements || isSubmitting}
         type='submit'
       >
-        {isAVariant === false && <SecurityLockIcon />}
         {t('buttons.donate')}
       </Button>
     </Form>

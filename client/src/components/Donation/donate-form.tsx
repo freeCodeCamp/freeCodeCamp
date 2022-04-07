@@ -335,11 +335,18 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     return (
       <>
         <b className={isMinimalForm ? 'donation-label-modal' : ''}>
-          {isAVariant === false && <SecurityLockIcon />}
           {this.getDonationButtonLabel()}:
         </b>
         <Spacer />
-        <div className={'donate-btn-group'}>
+        <fieldset
+          className={`donate-btn-group ${isAVariant ? '' : 'test-btn-group'}`}
+        >
+          {!isAVariant && (
+            <legend>
+              <SecurityLockIcon />
+              {t('donate.secure-donation')}
+            </legend>
+          )}
           {loading.stripe && loading.paypal && this.paymentButtonsLoader()}
           <WalletsWrapper
             amount={donationAmount}
@@ -374,11 +381,10 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
                 processing={processing}
                 t={t}
                 theme={priorityTheme}
-                isAVariant={isAVariant}
               />
             </>
           )}
-        </div>
+        </fieldset>
       </>
     );
   }
