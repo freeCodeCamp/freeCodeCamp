@@ -370,11 +370,14 @@ function populateTestsForLang({ lang, challenges, meta }) {
             //   currently have the text of a comment elsewhere. If that happens
             //   we can handle that challenge separately.
             TRANSLATABLE_COMMENTS.forEach(comment => {
+              const errorText = `English comment '${comment}' should be replaced with its translation`;
               challenge.challengeFiles.forEach(challengeFile => {
                 if (challengeFile.contents.includes(comment))
-                  throw Error(
-                    `English comment '${comment}' should be replaced with its translation`
-                  );
+                  if (process.env.SHOW_UPCOMING_CHANGES == 'true') {
+                    console.warn(errorText);
+                  } else {
+                    throw Error(errorText);
+                  }
               });
             });
 
@@ -414,7 +417,10 @@ function populateTestsForLang({ lang, challenges, meta }) {
               if (isEmpty(challenge.__commentCounts) && isEmpty(commentMap))
                 return;
 
-              if (!isEqual(commentMap, challenge.__commentCounts))
+              if (
+                process.env.SHOW_NEW_CURRICULUM !== 'true' &&
+                !isEqual(commentMap, challenge.__commentCounts)
+              )
                 throw Error(`Mismatch in ${challenge.title}. Replaced comments:
 ${inspect(challenge.__commentCounts)}
 Comments in translated text:

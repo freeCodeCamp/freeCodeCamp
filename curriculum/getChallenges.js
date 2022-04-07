@@ -110,9 +110,8 @@ function getTranslationEntry(dicts, { engId, text }) {
     if (entry) {
       return { ...acc, [lang]: entry };
     } else {
-      throw Error(`Missing translation for comment
-'${text}'
-        with id of ${engId}`);
+      // default to english
+      return { ...acc, [lang]: text };
     }
   }, {});
 }
