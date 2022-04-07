@@ -23,13 +23,13 @@ const { getSuperOrder, getSuperBlockFromDir } = require('./utils');
 
 const access = util.promisify(fs.access);
 
-const CHALLENGES_DIR = path.resolve(__dirname, './challenges');
+const CHALLENGES_DIR = path.resolve(__dirname, 'challenges');
 const META_DIR = path.resolve(CHALLENGES_DIR, '_meta');
 exports.CHALLENGES_DIR = CHALLENGES_DIR;
 exports.META_DIR = META_DIR;
 
 const COMMENT_TRANSLATIONS = createCommentMap(
-  path.resolve(__dirname, './dictionaries')
+  path.resolve(__dirname, 'dictionaries')
 );
 
 function getTranslatableComments(dictionariesDir) {
@@ -118,12 +118,12 @@ function getTranslationEntry(dicts, { engId, text }) {
 }
 
 function getChallengesDirForLang(lang) {
-  return path.resolve(CHALLENGES_DIR, `./${lang}`);
+  return path.resolve(CHALLENGES_DIR, `${lang}`);
 }
 
 function getMetaForBlock(block) {
   return JSON.parse(
-    fs.readFileSync(path.resolve(META_DIR, `./${block}/meta.json`), 'utf8')
+    fs.readFileSync(path.resolve(META_DIR, `${block}/meta.json`), 'utf8')
   );
 }
 
@@ -179,7 +179,7 @@ exports.getChallengesForLang = async function getChallengesForLang(lang) {
 };
 
 async function buildBlocks({ basename: blockName }, curriculum, superBlock) {
-  const metaPath = path.resolve(META_DIR, `/${blockName}/meta.json`);
+  const metaPath = path.resolve(META_DIR, `${blockName}/meta.json`);
 
   if (fs.existsSync(metaPath)) {
     // try to read the file, if the meta path does not exist it should be a certification.
@@ -342,7 +342,7 @@ ${getFullPath('english', filePath)}
       ? maybeMeta
       : require(path.resolve(
           META_DIR,
-          `./${getBlockNameFromPath(filePath)}/meta.json`
+          `${getBlockNameFromPath(filePath)}/meta.json`
         ));
 
     await validate(filePath);
