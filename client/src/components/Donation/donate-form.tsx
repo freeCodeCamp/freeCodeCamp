@@ -342,7 +342,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
         <Spacer />
         <fieldset
           className={`donate-btn-group ${
-            isAsVariant === false ? 'test-btn-group' : ''
+            isAVariant ? 'test-btn-group' : ''
           }`}
         >
           {isAsVariant === false && (
