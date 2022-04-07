@@ -348,7 +348,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
           {isAsVariant === false && (
             <legend>
               <SecurityLockIcon />
-              Secure donation
+              {t('donate.secure-donation')}
             </legend>
           )}
           {loading.stripe && loading.paypal && this.paymentButtonsLoader()}
