@@ -332,8 +332,6 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     )}:`;
     const showMinimalPayments = isSignedIn && (isMinimalForm || !isDonating);
 
-    const isAsVariant = !isAVariant;
-
     return (
       <>
         <b className={isMinimalForm ? 'donation-label-modal' : ''}>
@@ -341,11 +339,9 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
         </b>
         <Spacer />
         <fieldset
-          className={`donate-btn-group ${
-            isAVariant ? 'test-btn-group' : ''
-          }`}
+          className={`donate-btn-group ${isAVariant ? '' : 'test-btn-group'}`}
         >
-          {isAsVariant === false && (
+          {!isAVariant && (
             <legend>
               <SecurityLockIcon />
               {t('donate.secure-donation')}
