@@ -332,14 +332,25 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     )}:`;
     const showMinimalPayments = isSignedIn && (isMinimalForm || !isDonating);
 
+    const isAsVariant = !isAVariant;
+
     return (
       <>
         <b className={isMinimalForm ? 'donation-label-modal' : ''}>
-          {isAVariant === false && <SecurityLockIcon />}
           {this.getDonationButtonLabel()}:
         </b>
         <Spacer />
-        <div className={'donate-btn-group'}>
+        <fieldset
+          className={`donate-btn-group ${
+            isAsVariant === false ? 'test-btn-group' : ''
+          }`}
+        >
+          {isAsVariant === false && (
+            <legend>
+              <SecurityLockIcon />
+              Secure donation
+            </legend>
+          )}
           {loading.stripe && loading.paypal && this.paymentButtonsLoader()}
           <WalletsWrapper
             amount={donationAmount}
@@ -374,11 +385,10 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
                 processing={processing}
                 t={t}
                 theme={priorityTheme}
-                isAVariant={isAVariant}
               />
             </>
           )}
-        </div>
+        </fieldset>
       </>
     );
   }
