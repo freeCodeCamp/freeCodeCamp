@@ -42,6 +42,13 @@ exports.buildMobileCurriculum = function buildMobileCurriculum(json) {
 
         superBlock[superBlockKeys[i]]['blocks'][blockNames[j]]['challenges'] =
           curriculum[superBlockKeys[i]]['blocks'][blockNames[j]]['meta'];
+
+        superBlock[superBlockKeys[i]]['blocks'][blockNames[j]][
+          'challengeType'
+        ] =
+          curriculum[superBlockKeys[i]]['blocks'][blockNames[j]][
+            'challenges'
+          ][0]['challengeType'];
       }
 
       writeToFile(superBlockKeys[i].replace(/\//, '-'), superBlock);

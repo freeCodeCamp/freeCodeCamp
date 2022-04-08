@@ -15,7 +15,8 @@ const blockSchema = Joi.object({}).keys({
     required: Joi.array(),
     superBlock: Joi.string(),
     challengeOrder: Joi.array().items(Joi.array().min(1))
-  })
+  }),
+  challengeType: Joi.number()
 });
 
 const subSchema = Joi.object({}).keys({
