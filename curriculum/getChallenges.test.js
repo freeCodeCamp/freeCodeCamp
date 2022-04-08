@@ -3,7 +3,8 @@ const path = require('path');
 const {
   createChallenge,
   hasEnglishSource,
-  createCommentMap
+  createCommentMap,
+  getChallengesForLang
 } = require('./getChallenges');
 
 const EXISTING_CHALLENGE_PATH = 'challenge.md';
@@ -125,5 +126,38 @@ It should be in
       expect(untranslatedTwo.chinese).toBe('Not translated two');
       expect(untranslatedTwo.spanish).toBe('Not translated two');
     });
+  });
+});
+
+describe('get challenges', () => {
+  let curriculum;
+
+  beforeAll(async () => {
+    curriculum = await getChallengesForLang('english');
+  }, 20000);
+
+  it('should have the same challenge type for every block', () => {
+    const superBlockKeys = Object.keys(curriculum);
+
+    for (let i = 0; i < superBlockKeys.length; i++) {
+      const blockNames = Object.keys(curriculum[superBlockKeys[i]].blocks);
+
+      for (let j = 0; j < blockNames.length; j++) {
+        const challenges =
+          curriculum[superBlockKeys[i]]['blocks'][blockNames[j]]['challenges'];
+
+        const firstChallengeType = challenges[0]['challengeType'];
+
+        for (let k = 0; k < challenges.length; k++) {
+          const type = challenges[k]['challengeType'];
+          const location = challenges[k]['title'];
+
+          expect({ type: type, location: location }).toEqual({
+            type: firstChallengeType,
+            location: location
+          });
+        }
+      }
+    }
   });
 });
