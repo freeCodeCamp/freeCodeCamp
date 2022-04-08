@@ -1,7 +1,7 @@
 ---
 id: bd7158d8c443eddfaeb5bd0f
 title: Manage a Book Trading Club
-challengeType: 4
+challengeType: 3
 forumTopicId: 302364
 dashedName: manage-a-book-trading-club
 ---

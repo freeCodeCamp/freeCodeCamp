@@ -1,7 +1,7 @@
 ---
 id: bd7150d8c442eddfafb5bd1c
 title: P2P Video Chat Application
-challengeType: 4
+challengeType: 3
 forumTopicId: 302366
 dashedName: p2p-video-chat-application
 ---

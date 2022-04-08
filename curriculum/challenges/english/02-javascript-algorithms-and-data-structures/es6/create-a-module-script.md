@@ -1,7 +1,7 @@
 ---
 id: 5cddbfd622f1a59093ec611d
 title: Create a Module Script
-challengeType: 6
+challengeType: 1
 forumTopicId: 301198
 dashedName: create-a-module-script
 ---

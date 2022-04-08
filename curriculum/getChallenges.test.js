@@ -146,14 +146,14 @@ describe('get challenges', () => {
         const challenges =
           curriculum[superBlockKeys[i]]['blocks'][blockNames[j]]['challenges'];
 
-        const firstChallengeType = challenges[0]['challengeType'];
+        const firstType = challenges[0]['challengeType'];
 
         for (let k = 0; k < challenges.length; k++) {
           const type = challenges[k]['challengeType'];
-          const location = challenges[k]['title'];
+          const location = `challenge ${challenges[k]['title']}'s type is ${type} but should be ${firstType} because of ${challenges[0]['title']}`;
 
           expect({ type: type, location: location }).toEqual({
-            type: firstChallengeType,
+            type: firstType,
             location: location
           });
         }

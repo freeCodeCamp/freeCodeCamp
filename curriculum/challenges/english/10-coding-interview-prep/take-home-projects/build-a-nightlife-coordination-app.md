@@ -1,7 +1,7 @@
 ---
 id: bd7158d8c443eddfaeb5bdff
 title: Build a Nightlife Coordination App
-challengeType: 4
+challengeType: 3
 forumTopicId: 302351
 dashedName: build-a-nightlife-coordination-app
 ---
