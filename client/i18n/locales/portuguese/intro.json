@@ -554,7 +554,7 @@
         "intro": [
           "O Node.js é um ambiente de execução em Javascript que permite que os desenvolvedores escrevam programas de back-end (no lado do servidor) em JavaScript. O Node.js vem com diversos módulos internos — pequenos programas independentes — que ajudam com isso. Alguns dos principais módulos incluem o HTTP, que atua como um servidor, e um sistema de arquivos, que atua como um módulo para ler e modificar arquivos.",
           "Nos últimos cursos, você aprendeu a instalar e gerenciar pacotes a partir do npm, que são coleções de pequenos módulos. Estes pacotes podem ajudá-lo a construir aplicações maiores e mais complexas.",
-          "O Express é um framework leve para a criação de aplicações web, sendo um dos pacotes mais populares no npm. O Express torna muito mais fácil criar um servidor e lidar com o roteamento para seu aplicativo, lidando com coisas como direcionar as pessoas para a página correta quando elas visitam um determinado endpoint, como <pre>/blog</pre>.",
+          "Express is a lightweight web application framework, and is one of the most popular packages on npm. Express makes it much easier to create a server and handle routing for your application, which handles things like directing people to the correct page when they visit a certain endpoint like <pre>/blog</pre>.",
           "Neste curso, você aprenderá o básico do Node e do Express, incluindo como criar um servidor, manusear arquivos diferentes e manipular diferentes solicitações de um navegador."
         ]
       },
