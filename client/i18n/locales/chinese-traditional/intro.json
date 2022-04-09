@@ -554,7 +554,7 @@
         "intro": [
           "Node.js 是一個 JavaScript 運行時，它允許開發人員在 JavaScript 中寫入後端（服務器側）程序。Node.js 有幾個內置的模塊——小型、獨立的程序——來幫助實現這一點，一些核心模塊包括像服務器一樣運作的 HTTP 和文件系統，一個讀取和修改文件的模塊。",
           "在上一組課程中，你學到了怎麼從 npm下載和管理軟件包。這些軟件包是較小模塊的集合，可以幫助你構建更大更復雜的程序。",
-          "Express 是一個輕量級的網絡應用程序框架，是最受歡迎的 npm 軟件包之一。Express 使爲應用程序創建服務器和處理路由變得更容易。當用戶訪問某個端點例如 <pre>/blog</pre> 時，把人們引導到正確的頁面。",
+          "Express is a lightweight web application framework, and is one of the most popular packages on npm. Express makes it much easier to create a server and handle routing for your application, which handles things like directing people to the correct page when they visit a certain endpoint like <pre>/blog</pre>.",
           "在這個課程中，你將學習 Node 和 Express 的基礎知識，包括如何創建服務器、處理不同的文件，以及處理不同的瀏覽器請求。"
         ]
       },
