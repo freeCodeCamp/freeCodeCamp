@@ -11,4 +11,5 @@ export interface ButtonProps
   size?: ButtonSize;
   onClick?: MouseEventHandler<HTMLButtonElement>;
   type?: 'submit' | 'button';
+  disabled?: boolean;
 }
