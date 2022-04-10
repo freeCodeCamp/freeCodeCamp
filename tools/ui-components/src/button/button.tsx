@@ -1,7 +1,20 @@
 import React, { useMemo } from 'react';
 import { ButtonProps, ButtonSize, ButtonVariant } from './types';
 
-const defaultClassNames = ['cursor-pointer', 'inline-block', 'border-3'];
+const defaultClassNames = [
+  'relative',
+  'cursor-pointer',
+  'inline-block',
+  'border-3',
+  'active:before:w-full',
+  'active:before:h-full',
+  'active:before:absolute',
+  'active:before:inset-0',
+  'active:before:border-3',
+  'active:before:border-transparent',
+  'active:before:bg-gray-900',
+  'active:before:opacity-20'
+];
 
 const computeClassNames = ({
   size,
