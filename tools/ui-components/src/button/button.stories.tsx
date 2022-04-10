@@ -8,7 +8,7 @@ const story = {
   component: Button,
   parameters: {
     controls: {
-      include: ['children', 'variant', 'size', 'disabled']
+      include: ['children', 'variant', 'size', 'disabled', 'block']
     }
   },
   argTypes: {
@@ -19,6 +19,10 @@ const story = {
       options: ['small', 'medium', 'large']
     },
     disabled: {
+      options: [true, false],
+      control: { type: 'radio' }
+    },
+    block: {
       options: [true, false],
       control: { type: 'radio' }
     }
@@ -62,6 +66,12 @@ export const Disabled = Template.bind({});
 Disabled.args = {
   children: 'Button',
   disabled: true
+};
+
+export const FullWidth = Template.bind({});
+FullWidth.args = {
+  children: 'Button',
+  block: true
 };
 
 export default story;

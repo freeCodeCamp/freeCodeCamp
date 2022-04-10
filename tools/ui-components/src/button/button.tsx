@@ -21,13 +21,19 @@ const defaultClassNames = [
 const computeClassNames = ({
   size,
   variant,
-  disabled
+  disabled,
+  block
 }: {
   size: ButtonSize;
   variant: ButtonVariant;
   disabled?: boolean;
+  block?: boolean;
 }) => {
   const classNames = [...defaultClassNames];
+
+  if (block) {
+    classNames.push('block', 'w-full');
+  }
 
   // TODO: support 'link' variant
   switch (variant) {
@@ -95,13 +101,14 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       type = 'button',
       onClick,
       children,
-      disabled
+      disabled,
+      block
     },
     ref
   ) => {
     const classes = useMemo(
-      () => computeClassNames({ size, variant, disabled }),
-      [size, variant, disabled]
+      () => computeClassNames({ size, variant, disabled, block }),
+      [size, variant, disabled, block]
     );
 
     // Manually prevent click event if the button is disabled
