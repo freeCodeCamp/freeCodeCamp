@@ -8,7 +8,15 @@ const story = {
   component: Button,
   parameters: {
     controls: {
-      include: ['children', 'variant', 'size', 'disabled', 'block']
+      include: [
+        'children',
+        'variant',
+        'size',
+        'disabled',
+        'block',
+        'to',
+        'target'
+      ]
     }
   },
   argTypes: {
@@ -25,6 +33,9 @@ const story = {
     block: {
       options: [true, false],
       control: { type: 'radio' }
+    },
+    target: {
+      options: ['_self', '_blank', '_parent', '_top']
     }
   }
 };
@@ -72,6 +83,12 @@ export const FullWidth = Template.bind({});
 FullWidth.args = {
   children: 'Button',
   block: true
+};
+
+export const AsALink = Template.bind({});
+AsALink.args = {
+  children: "I'm a link that looks like a button",
+  to: 'https://www.freecodecamp.org'
 };
 
 export default story;

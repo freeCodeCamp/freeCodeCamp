@@ -13,4 +13,6 @@ export interface ButtonProps
   type?: 'submit' | 'button';
   disabled?: boolean;
   block?: boolean;
+  to?: string;
+  target?: React.HTMLAttributeAnchorTarget;
 }

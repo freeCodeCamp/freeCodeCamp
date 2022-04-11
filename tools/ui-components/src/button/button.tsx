@@ -96,7 +96,10 @@ const computeClassNames = ({
   return classNames.join(' ');
 };
 
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+export const Button = React.forwardRef<
+  HTMLButtonElement | HTMLAnchorElement,
+  ButtonProps
+>(
   (
     {
       variant = 'primary',
@@ -105,7 +108,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       onClick,
       children,
       disabled,
-      block
+      block,
+      to,
+      target
     },
     ref
   ) => {
@@ -128,17 +133,44 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       [onClick]
     );
 
-    return (
-      <button
-        ref={ref}
-        className={classes}
-        type={type}
-        onClick={handleClick}
-        aria-disabled={disabled}
-      >
-        {children}
-      </button>
-    );
+    const renderButton = useCallback(() => {
+      return (
+        <button
+          ref={ref as React.ForwardedRef<HTMLButtonElement>}
+          className={classes}
+          type={type}
+          onClick={handleClick}
+          aria-disabled={disabled}
+        >
+          {children}
+        </button>
+      );
+    }, [children, classes, ref, type, handleClick, disabled]);
+
+    const renderLink = useCallback(() => {
+      // Render a `button` tag if `disabled` is defined to keep the component semantically correct
+      // as a link cannot be disabled.
+      if (disabled) {
+        return renderButton();
+      }
+
+      return (
+        <a
+          ref={ref as React.ForwardedRef<HTMLAnchorElement>}
+          className={classes}
+          href={to}
+          target={target}
+        >
+          {children}
+        </a>
+      );
+    }, [children, classes, ref, disabled, to, target, renderButton]);
+
+    if (to) {
+      return renderLink();
+    } else {
+      return renderButton();
+    }
   }
 );
 
