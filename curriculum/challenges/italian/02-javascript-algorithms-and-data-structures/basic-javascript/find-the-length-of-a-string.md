@@ -15,7 +15,7 @@ Puoi trovare la lunghezza di un valore `String` scrivendo `.length` dopo la vari
 console.log("Alan Peter".length);
 ```
 
-Il valore `10` sarà visualizzato nella console.
+Il valore `10` sarà visualizzato nella console. Nota che è contato anche il carattere spazio tra "Alan" e "Peter".
 
 Ad esempio, se avessimo creato una variabile `const firstName = "Ada"`, potremmo scoprire quanto è lunga la stringa `Ada` utilizzando la proprietà `firstName.length`.
 

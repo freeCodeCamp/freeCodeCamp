@@ -14,7 +14,8 @@ dashedName: problem-423-consecutive-die-throws
 
 Наприклад, якщо $n = 7$ і значення кидків кубика є (1, 5, 6, 6, 6, 3), тоді наступні кидки поспіль дають однакове значення:
 
-$$\begin{align} & (\underline{1}, \underline{1}, 5, 6, 6, 6, 3) \\\\ & (1, 1, 5, \underline{6}, \underline{6}, 6, 3) \\\\ & (1, 1, 5, 6, \underline{6}, \underline{6}, 3) \end{align}$$
+$$\begin{align}   & (\underline{1}, \underline{1}, 5, 6, 6, 6, 3) \\\\
+  & (1, 1, 5, \underline{6}, \underline{6}, 6, 3) \\\\ & (1, 1, 5, 6, \underline{6}, \underline{6}, 3) \end{align}$$
 
 Таким чином, $c = 3$ за (1, 5, 6, 6, 3).
 

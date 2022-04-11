@@ -19,17 +19,15 @@ Los índices de los arreglos se escriben en la misma notación de corchetes que 
 
 ```js
 const array = [50, 60, 70];
-array[0];
+console.log(array[0]);
 const data = array[1];
 ```
 
-`array[0]` ahora es `50` y `data` tiene el valor `60`.
-
-**Nota:** No debe haber espacios entre el nombre del arreglo y los corchetes, como `array [0]`. Aunque JavaScript pueda procesar esto correctamente, puedes confundir a otros programadores al leer tu código.
+`console.log(array[0])` imprime `50`, y `data` tiene el valor `60`.
 
 # --instructions--
 
-Crea una variable llamada `myData` e iguálala al primer valor de `myArray` usando notación de corchetes.
+Crea una variable llamada `myData` y establécela para que sea igual al primer valor de `myArray` usando notación de corchetes.
 
 # --hints--
 
