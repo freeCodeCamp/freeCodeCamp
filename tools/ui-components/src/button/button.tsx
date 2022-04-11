@@ -15,7 +15,10 @@ const defaultClassNames = [
   'active:before:bg-gray-900',
   'active:before:opacity-20',
   'aria-disabled:cursor-not-allowed',
-  'aria-disabled:opacity-50'
+  'aria-disabled:opacity-50',
+  'focus:outline-none', // Hide the default browser outline
+  'focus:ring',
+  'focus:ring-focus-outline-color'
 ];
 
 const computeClassNames = ({

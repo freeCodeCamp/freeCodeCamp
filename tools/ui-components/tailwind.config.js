@@ -39,6 +39,8 @@ module.exports = {
       'default-background-danger-hover':
         'var(--default-background-danger-hover)',
       'default-background-info-hover': 'var(--default-background-info-hover)',
+      // Focus outline
+      'focus-outline-color': 'var(--focus-outline-color)',
       gray: {
         0: 'var(--gray00)',
         50: 'var(--gray05)',
