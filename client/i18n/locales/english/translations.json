@@ -68,8 +68,8 @@
     "ask-later": "Ask me later",
     "start-coding": "Start coding!",
     "go-to-settings": "Go to settings to claim your certification",
-    "click-start-course": "Click here to start the course",
-    "click-start-project": "Click here to start the project"
+    "click-start-course": "Make sure you have third-party cookies enabled, then click here to start the course",
+    "click-start-project": "Make sure you have third-party cookies enabled, then click here to start the project"
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
