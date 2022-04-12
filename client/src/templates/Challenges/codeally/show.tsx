@@ -1,5 +1,5 @@
 // Package Utilities
-import { Grid, Col, Row, Button } from '@freecodecamp/react-bootstrap';
+import { Alert, Grid, Col, Row, Button } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
@@ -300,9 +300,14 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                       : ''
                   }`}
                 >
+                  <Alert id='codeally-cookie-warning' bsStyle='info'>
+                    <p>{t(`intro:misc-text.enable-cookies`)}</p>
+                  </Alert>
                   <Button
+                    aria-describedby='codeally-cookie-warning'
                     block={true}
                     bsStyle='primary'
+                    data-cy='start-codeally'
                     onClick={tryToShowCodeAlly}
                   >
                     {challengeType === challengeTypes.codeAllyCert
