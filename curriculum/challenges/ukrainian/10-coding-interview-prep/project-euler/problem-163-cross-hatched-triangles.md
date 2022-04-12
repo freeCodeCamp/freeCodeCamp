@@ -18,7 +18,8 @@ dashedName: problem-163-cross-hatched-triangles
 
 Якщо позначити $T(n)$ як кількість трикутників, що містяться в трикутнику розміру $n$, тоді
 
-$$\begin{align} & T(1) = 16 \\\\ & T(2) = 104 \end{align}$$
+$$\begin{align}   & T(1) = 16 \\\\
+  & T(2) = 104 \end{align}$$
 
 Знайдіть $T(36)$.
 
