@@ -345,9 +345,7 @@ ${getFullPath('english', filePath)}
         ));
 
     await validate(filePath);
-    // assumes superblock names are unique
-    // while the auditing is ongoing, we default to English for un-audited certs
-    // once that's complete, we can revert to using isEnglishChallenge(fullPath)
+
     const useEnglish =
       lang === 'english' ||
       !isAuditedCert(lang, meta.superBlock) ||
