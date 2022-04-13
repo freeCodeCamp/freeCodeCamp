@@ -279,7 +279,7 @@ function generateChallengeCreator(basePath, lang) {
     return path.resolve(__dirname, basePath, pathLang, filePath);
   }
 
-  async function validate(filePath) {
+  async function validate(filePath, superBlock) {
     const invalidLang = !curriculumLangs.includes(lang);
     if (invalidLang)
       throw Error(`${lang} is not a accepted language.
@@ -293,6 +293,15 @@ ${filePath}
 It should be in
 ${getFullPath('english', filePath)}
 `);
+
+    const missingAuditedChallenge =
+      isAuditedCert(lang, superBlock) &&
+      !fs.existsSync(getFullPath(lang, filePath));
+    if (missingAuditedChallenge)
+      throw Error(`Missing ${lang} audited challenge for
+${filePath}
+No audited challenges should fallback to English.
+    `);
   }
 
   function addMetaToChallenge(challenge, meta) {
@@ -348,7 +357,7 @@ ${getFullPath('english', filePath)}
           `${getBlockNameFromPath(filePath)}/meta.json`
         ));
 
-    await validate(filePath);
+    await validate(filePath, meta.superBlock);
 
     const useEnglish =
       lang === 'english' ||
