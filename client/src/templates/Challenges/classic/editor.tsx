@@ -14,6 +14,8 @@ import React, {
   MutableRefObject,
   useRef
 } from 'react';
+import ReactDOM from 'react-dom';
+import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import store from 'store';
@@ -50,7 +52,8 @@ import {
   initTests,
   isResettingSelector,
   stopResetting,
-  isProjectPreviewModalOpenSelector
+  isProjectPreviewModalOpenSelector,
+  openModal
 } from '../redux';
 
 import './editor.css';
@@ -76,7 +79,11 @@ interface EditorProps {
   initTests: (tests: Test[]) => void;
   initialTests: Test[];
   isResetting: boolean;
+<<<<<<< HEAD
   isSignedIn: boolean;
+=======
+  openHelpModal: () => void;
+>>>>>>> 583af6c553 (feat: move button to test output area)
   output: string[];
   resizeProps: ResizeProps;
   saveChallenge: () => void;
@@ -155,7 +162,8 @@ const mapDispatchToProps = {
   updateFile,
   submitChallenge,
   initTests,
-  stopResetting
+  stopResetting,
+  openHelpModal: () => openModal('help')
 };
 
 const modeMap = {
@@ -213,6 +221,7 @@ const initialData: EditorProperties = {
 
 const Editor = (props: EditorProps): JSX.Element => {
   const { editorRef, initTests } = props;
+  const { t } = useTranslation();
   // These refs are used during initialisation of the editor as well as by
   // callbacks.  Since they have to be initialised before editorWillMount and
   // editorDidMount are called, we cannot use useState.  Reason being that will
@@ -1108,6 +1117,15 @@ const Editor = (props: EditorProps): JSX.Element => {
           wordsArray[Math.floor(Math.random() * wordsArray.length)]
         }</p><div><h2 class="hint">Hint</h2> ${output[1]}</div>`;
         setTestFeedbackHeight();
+        const outputJsx = (
+          <>
+            <span dangerouslySetInnerHTML={{ __html: output[1] }}></span>
+            <button className='btn-block' onClick={props.openHelpModal}>
+              {t('learn.editor-tabs.ask-help')}
+            </button>
+          </>
+        );
+        ReactDOM.render(outputJsx, testOutput);
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

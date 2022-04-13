@@ -1,9 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { bindActionCreators, Dispatch } from 'redux';
 import BreadCrumb from '../components/bread-crumb';
-import { openModal, resetChallenge } from '../redux';
+import { resetChallenge } from '../redux';
 import EditorTabs from './editor-tabs';
 
 interface ActionRowProps {
@@ -18,14 +17,9 @@ interface ActionRowProps {
   resetChallenge: () => void;
 }
 
-const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators(
-    {
-      openHelpModal: () => openModal('help'),
-      resetChallenge
-    },
-    dispatch
-  );
+const mapDispatchToProps = {
+  resetChallenge
+};
 
 const ActionRow = ({
   hasNotes,
