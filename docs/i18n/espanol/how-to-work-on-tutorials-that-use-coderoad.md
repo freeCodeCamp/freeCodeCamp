@@ -74,7 +74,7 @@ No hay una manera fácil de ver exactamente qué cambió entre las ramas de vers
 
 These instructions are for changing anything on a "version" branch, such as tests, test text, reset files, adding and deleting steps, among other things.
 
-Follow these instructions to create a new version:
+Sigue estas instrucciones para crear una nueva versión:
 
 - Checkout the **latest** version branch with `git checkout -b vX.X.X upstream/vX.X.X`
 - Create a new branch off of that, incrementing the version, with `git checkout -b vX.X.Y`
@@ -91,12 +91,12 @@ Follow these instructions to create a new version:
 - Make a PR to `main` using your new `feat/version-X.X.Y` branch. Give it a title of `version X.X.Y ready for review`. This will not be merged, it is just to let reviewers know that there is a new version ready
 - Leave it here for reviewers
 
-### Testing changes to a version branch
+### Probando cambios a una rama de versiones
 
 - Follow the instructions on the [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha) to run a container
 - Start the tutorial using the `tutorial.json` file on whatever fork the changes are on. Make sure to use the file on the `feat: version-X.X.Y` branch and not the `main` branch
 
-### Pushing a new version
+### Subiendo una nueva versión
 
 Before pushing a new version, view the new `feat/version-vX.X.Y` (will be merged to `main`) branch on the user's fork. Make sure there are additions to the `CHANGELOG.md` file that include the new changes, and the version in the two spots of `coderoad.yaml` matches the new version branch.
 
@@ -121,7 +121,7 @@ If you have write access to the freeCodeCamp repo, have verified the `CHANGELOG`
 - After the PR is merged, open the tutorial by following the instructions on the [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha) to make sure it's loading properly, and that you can get through a few steps
 - Finally, if any PRs for this version exists, close them
 
-### How to revert to a previous version
+### Cómo volver a una versión anterior
 
 - Create a new branch off the latest `main` with `git checkout -b revert/to-version-X.X.X`
 - Revert all commits on this branch up to and including the commit of the version after the one you want to revert to. For example, you may have commits that look like this:
@@ -135,4 +135,4 @@ release: version 1.0.0
 
 If you want to revert to v1.0.0, revert all the commits from `release: version 1.0.1` and after
 
-- Crea una PR. Give it a title of `revert: to version X.X.X`
+- Crea una PR. Dale un título de `revertir: a la versión X.X.X`
