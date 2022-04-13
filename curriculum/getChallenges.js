@@ -280,10 +280,14 @@ function generateChallengeCreator(basePath, lang) {
   }
 
   async function validate(filePath) {
-    if (!curriculumLangs.includes(lang))
+    const invalidLang = !curriculumLangs.includes(lang);
+    if (invalidLang)
       throw Error(`${lang} is not a accepted language.
 Trying to parse ${filePath}`);
-    if (lang !== 'english' && !(await hasEnglishSource(basePath, filePath)))
+
+    const missingEnglish =
+      lang !== 'english' && !(await hasEnglishSource(basePath, filePath));
+    if (missingEnglish)
       throw Error(`Missing English challenge for
 ${filePath}
 It should be in
