@@ -15,7 +15,7 @@ Você pode encontrar o tamanho de um valor de `String` ao escrever `.length` ap�
 console.log("Alan Peter".length);
 ```
 
-O valor `10` seria exibido no console.
+O valor `10` seria exibido no console. Observe que o caractere de espaço entre "Alan" e "Peter" também é contado.
 
 Por exemplo, se nós criássemos uma variável `const firstName = "Ada"`, poderíamos descobrir qual o tamanho da string `Ada` usando a propriedade `firstName.length`.
 
