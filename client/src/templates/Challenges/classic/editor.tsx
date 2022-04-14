@@ -1049,9 +1049,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         ];
         testStatus.innerHTML = `<p class="status"><span aria-hidden="true">✖️</span> Sorry, your code does not pass. ${
           wordsArray[Math.floor(Math.random() * wordsArray.length)]
-        }</p><div><h2 class="hint">Hint<span aria-hidden="true">:</span></h2> ${
-          output[1]
-        }</div>`;
+        }</p><div><h2 class="hint">Hint</h2> ${output[1]}</div>`;
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

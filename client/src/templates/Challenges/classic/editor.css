@@ -92,13 +92,17 @@
   margin: 0.5rem 0 0;
 }
 
-#test-status h2 {
+#test-status h2.hint {
   font-size: 1rem;
   line-height: 1.5;
   padding-right: 0.5rem;
   /* using float instead of inline display so screen readers recognize h2 as a block element */
   float: left;
   margin: 0;
+}
+
+#test-status h2.hint::after {
+  content: ':';
 }
 
 .myEditableLineDecoration {
