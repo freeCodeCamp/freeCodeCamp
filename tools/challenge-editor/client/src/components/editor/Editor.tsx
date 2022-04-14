@@ -6,6 +6,8 @@ import 'codemirror/theme/material.css';
 import 'codemirror/mode/markdown/markdown';
 // we need to import this mode to get the fenced codeblock highlighting
 import 'codemirror/mode/css/css';
+import 'codemirror/mode/javascript/javascript';
+import 'codemirror/mode/jsx/jsx';
 import { Link, useParams } from 'react-router-dom';
 import { ChallengeContent } from '../../../interfaces/ChallengeContent';
 import SaveChallenge from '../buttons/SaveChallenge';
