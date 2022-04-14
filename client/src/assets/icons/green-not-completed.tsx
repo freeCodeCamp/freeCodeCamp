@@ -4,15 +4,15 @@ import { useTranslation } from 'react-i18next';
 interface GreenNotCompletedProps
   extends JSX.IntrinsicAttributes,
     React.SVGProps<SVGSVGElement> {
-  suppressSrOnly: boolean;
+  hushScreenReaderText?: boolean;
 }
 
 function GreenNotCompleted(props: GreenNotCompletedProps): JSX.Element {
   const { t } = useTranslation();
-  const { suppressSrOnly, ...rest } = props;
+  const { hushScreenReaderText = false, ...rest } = props;
   return (
     <>
-      {!suppressSrOnly && (
+      {!hushScreenReaderText && (
         <span className='sr-only'>{t('icons.not-passed')}</span>
       )}
       <svg

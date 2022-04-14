@@ -78,9 +78,9 @@ export class Block extends Component<BlockProps> {
 
   renderCheckMark(isCompleted: boolean): JSX.Element {
     return isCompleted ? (
-      <GreenPass suppressLabel style={mapIconStyle} />
+      <GreenPass hushScreenReaderText style={mapIconStyle} />
     ) : (
-      <GreenNotCompleted suppressSrOnly style={mapIconStyle} />
+      <GreenNotCompleted hushScreenReaderText style={mapIconStyle} />
     );
   }
 
