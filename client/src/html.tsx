@@ -1,18 +1,4 @@
-import * as Sentry from '@sentry/react';
-import { Integrations } from '@sentry/tracing';
 import React from 'react';
-import { sentry } from '../../config/secrets';
-
-if (sentry.dns === 'dsn_from_sentry_dashboard') {
-  console.log('Sentry reporting disabled unless DSN is provided!');
-} else {
-  Sentry.init({
-    dsn: sentry.dns,
-    integrations: [new Integrations.BrowserTracing()],
-    tracesSampleRate: 1.0
-  });
-  console.log('Sentry initialized');
-}
 
 interface HTMLProps {
   body: string;
