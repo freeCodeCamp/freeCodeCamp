@@ -1,4 +1,4 @@
-import React, { useParams } from 'react-router-dom';
+import React, { Link, useParams } from 'react-router-dom';
 import CreateEmptySteps from '../buttons/CreateEmptySteps';
 import CreateNextStep from '../buttons/CreateNextStep';
 import CreateStepBetween from '../buttons/CreateStepBetween';
@@ -42,6 +42,8 @@ const Tools = () => {
         file order.
       </p>
       <ReorderSteps {...{ superblock, block }} />
+      <hr />
+      <Link to={`/${superblock}/${block}`}>Return to Block</Link>
     </div>
   );
 };
