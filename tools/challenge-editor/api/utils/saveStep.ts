@@ -8,7 +8,14 @@ export const saveStep = async (
   step: string,
   content: string
 ) => {
-  const filePath = join(CHALLENGE_DIR, sup, block, step);
+  try {
+    const filePath = join(CHALLENGE_DIR, sup, block, step);
 
-  await writeFile(filePath, content);
+    await writeFile(filePath, content);
+
+    return true;
+  } catch (err) {
+    console.log(err);
+    return false;
+  }
 };

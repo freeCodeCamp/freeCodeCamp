@@ -42,6 +42,12 @@ button {
   margin: 10px auto;
   background: var(--grey);
   color: var(--content);
+  cursor: pointer;
+}
+
+button:active {
+  color: var(--background);
+  background: var(--content);
 }
 
 code {
