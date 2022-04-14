@@ -51,8 +51,9 @@ const SuperBlock = () => {
       <hr />
       <h2>Create New Project</h2>
       <p>
-        Want to create a new project? Open your terminal, point to the root
-        directory for this repo, and run <code>npm run create-project</code>
+        Want to create a new project? Open your terminal, point to the{' '}
+        <code>tools/challenge-helper-scripts</code> directory, and run{' '}
+        <code>npm run create-project</code>
       </p>
     </div>
   );
