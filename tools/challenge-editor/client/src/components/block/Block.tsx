@@ -39,6 +39,7 @@ const Block = () => {
   return (
     <div>
       <h1>{params.block}</h1>
+      <span className='breadcrumb'>{params.superblock}</span>
       <ul className='step-grid'>
         {items.map(challenge => (
           <li key={challenge.name}>

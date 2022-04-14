@@ -68,6 +68,9 @@ const Editor = () => {
   return (
     <div>
       <h1>{items.name}</h1>
+      <span className='breadcrumb'>
+        {params.superblock} / {params.block}
+      </span>
       <CodeMirror
         value={input}
         onBeforeChange={handleChange}

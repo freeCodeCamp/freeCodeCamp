@@ -53,3 +53,8 @@ button:active {
 code {
   background: var(--grey);
 }
+
+.breadcrumb {
+  font-size: 1.2rem;
+  font-style: italic;
+}
