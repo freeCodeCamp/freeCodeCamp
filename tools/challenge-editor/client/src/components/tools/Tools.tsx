@@ -1,9 +1,9 @@
 import React, { Link, useParams } from 'react-router-dom';
 import CreateEmptySteps from '../buttons/CreateEmptySteps';
 import CreateNextStep from '../buttons/CreateNextStep';
-import CreateStepBetween from '../buttons/CreateStepBetween';
 import DeleteStep from '../buttons/DeleteStep';
-import ReorderSteps from '../buttons/ReorderSteps';
+import InsertStep from '../buttons/InsertStep';
+import UpdateStepTitles from '../buttons/UpdateStepTitles';
 
 import './Tools.css';
 
@@ -29,19 +29,19 @@ const Tools = () => {
       <p>
         This tool inserts a new step after the <code>nth</code> step.
       </p>
-      <CreateStepBetween {...{ superblock, block }} />
+      <InsertStep {...{ superblock, block }} />
       <h2>Delete Step</h2>
       <p>
         This tool deletes step <code>n</code>.
       </p>
       <DeleteStep {...{ superblock, block }} />
-      <h2>Reorder Steps</h2>
+      <h2>Update Step Titles</h2>
       <p>
         This reorders the existing steps, updating the meta for the block. You
         should not need to use this one unless you&apos;ve manually changed the
         file order.
       </p>
-      <ReorderSteps {...{ superblock, block }} />
+      <UpdateStepTitles {...{ superblock, block }} />
       <hr />
       <Link to={`/${superblock}/${block}`}>Return to Block</Link>
     </div>
