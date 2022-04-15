@@ -124,48 +124,48 @@ El RPG LearnToCode se ejecuta en Ren'Py, que utiliza una sintaxis especial para 
 - Las oraciones a traducir están siempre entre `""`. Estos son diálogos o cadenas de interfaz de usuario. Las palabras clave que vienen antes o después del diálogo son palabras clave de control del motor del juego y se explicarán en detalle en las reglas posteriores. Tenga en cuenta que esta primera regla rige todas las reglas posteriores enumeradas.
 - En el caso de `new "..."` No traduzcas la palabra clave `new`.
 - Prefijos como `player`, `annika`, `layla`, `marco` (o variantes como `player happy`, `player @ happy`) no deben traducirse. Estas son palabras clave de control para mostrar correctamente el sprite del personaje en el juego.
-- Postfixes like `nointeract` should not be translated.
-- Do not translate things between `[]` and `{}`. These are variable interpolations and text tags. These must remain halfwidth parentheses `[]` and `{}` instead of their fullwidth counterparts `【】` and `「」`
-- Do not translate the `nointeract` keyword at the end of the sentence.
-- If we try to use fullwidth parentheses `（）`, a QA warning will show. To avoid the QA warning, use halfwidth parentheses `()`
+- Postfixes como `nointeract` no deben ser traducidos.
+- No traduzca cosas entre `[]` y `{}`. Estas son interpolaciones variables y etiquetas de texto. Estos deben permanecer entre paréntesis de media anchura `[]` y `{}` en lugar de sus homólogos de ancho completo `【】` y `「」`
+- No traduzca la palabra clave `nointeract` al final de la oración.
+- Si intentamos usar paréntesis de ancho completo `()`, se mostrará una advertencia de QA. Para evitar la advertencia de QA, utilice paréntesis de ancho medio `()`
 
-### Examples
+### Ejemplos
 
 ---
 
-#### Before translation
+#### Antes de traducir
 
 ```renpy
-# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
-"[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."  <--- this is the line that needs to be translated. see translation below
+# "[player_name]? ¡Qué coincidencia! Nuestro miembro del equipo VIP {a=[vip_profile_url]}[player_name]{/a} se sentirá honrado de escuchar eso."
+"[player_name]? ¡Qué coincidencia! Nuestro miembro del equipo VIP {a=[vip_profile_url]}[player_name]{/a} se sentirá honrado de escuchar eso."  <--- esta es la línea que necesita traducirse. ver traducción a continuación
 ```
 
-#### After translation
+#### Después de traducir
 
 ```renpy
-# "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
+# "[player_name]? ¡Qué coincidencia! Nuestro miembro del equipo VIP {a=[vip_profile_url]}[player_name]{/a} se sentirá honrado de escuchar eso."
 "[player_name]？好巧，我们的VIP队友{a=[vip_profile_url]}[player_name]{/a}会很高兴的。"
 ```
 
-Note: The `[]` and `{}` tags should be left intact.
+Nota: Las etiquetas `[]` y `{}` deben dejarse intactas.
 
 ---
 
-#### Before translation
+#### Antes de traducir
 
 ```renpy
-old "{icon=icon-fast-forward} Skip"
-new "{icon=icon-fast-forward} Skip" <-- translate this line, see below
+antiguo "{icon=icon-fast-forward} Skip"
+nuevo "{icon=icon-fast-forward} Skip" <-- traduzca esta línea, vea abajo
 ```
 
-#### After translation
+#### Después de traducir
 
 ```renpy
-old "{icon=icon-fast-forward} Skip"
+Antiguo "{icon=icon-fast-forward} Skip"
 new "{icon=icon-fast-forward} 跳过"
 ```
 
-Note: Again, the `new` prefix and the `{icon=icon-fast-forward}` tag should be left intact.
+Nota: De nuevo, el prefijo `new` y la etiqueta `{icon=icon-fast-forward}` deben dejarse intactos.
 
 ---
 
