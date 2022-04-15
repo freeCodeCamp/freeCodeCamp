@@ -68,8 +68,8 @@
     "ask-later": "後で",
     "start-coding": "コーディングを始めましょう！",
     "go-to-settings": "設定へ移動して認定証を取得",
-    "click-start-course": "こちらをクリックしてコースを開始",
-    "click-start-project": "こちらをクリックしてプロジェクトを開始"
+    "click-start-course": "Start the course",
+    "click-start-project": "Start the project"
   },
   "landing": {
     "big-heading-1": "プログラミングを無料で学ぶ。",
@@ -536,7 +536,8 @@
     "code-save-error": "コードの保存中にエラーが発生しました。",
     "code-save-less": "コードは保存されませんでした。数秒時間をおいて、もう一度お試しください。",
     "challenge-save-too-big": "コードを保存できませんでした。あなたのコードは {{user-size}} バイトですが、保存可能なコードは最大 {{max-size}} バイトです。コードを削減してもう一度お試しいただくか、https://forum.freecodecamp.org にてサポートを依頼してください。",
-    "challenge-submit-too-big": "コードを提出できませんでした。あなたのコードは {{user-size}} バイトですが、提出可能なコードは最大 {{max-size}} バイトです。コードを削減してもう一度お試しいただくか、https://forum.freecodecamp.org にてサポートを依頼してください。"
+    "challenge-submit-too-big": "コードを提出できませんでした。あなたのコードは {{user-size}} バイトですが、提出可能なコードは最大 {{max-size}} バイトです。コードを削減してもう一度お試しいただくか、https://forum.freecodecamp.org にてサポートを依頼してください。",
+    "invalid-update-flag": "You are attempting to access forbidden resources. Please request assistance on https://forum.freecodecamp.org if this is a valid request."
   },
   "validation": {
     "max-characters": "上限は 288 文字です。残り {{charsLeft}} 文字です。",

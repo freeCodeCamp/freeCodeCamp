@@ -1,8 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 const util = require('util');
+const assert = require('assert');
 const yaml = require('js-yaml');
-const { findIndex } = require('lodash');
+const { findIndex, isEmpty } = require('lodash');
 const readDirP = require('readdirp');
 const { helpCategoryMap } = require('../client/utils/challenge-types');
 const { showUpcomingChanges } = require('../config/env.json');
@@ -22,13 +23,13 @@ const { getSuperOrder, getSuperBlockFromDir } = require('./utils');
 
 const access = util.promisify(fs.access);
 
-const challengesDir = path.resolve(__dirname, './challenges');
-const metaDir = path.resolve(challengesDir, '_meta');
-exports.challengesDir = challengesDir;
-exports.metaDir = metaDir;
+const CHALLENGES_DIR = path.resolve(__dirname, 'challenges');
+const META_DIR = path.resolve(CHALLENGES_DIR, '_meta');
+exports.CHALLENGES_DIR = CHALLENGES_DIR;
+exports.META_DIR = META_DIR;
 
 const COMMENT_TRANSLATIONS = createCommentMap(
-  path.resolve(__dirname, './dictionaries')
+  path.resolve(__dirname, 'dictionaries')
 );
 
 function getTranslatableComments(dictionariesDir) {
@@ -109,20 +110,19 @@ function getTranslationEntry(dicts, { engId, text }) {
     if (entry) {
       return { ...acc, [lang]: entry };
     } else {
-      throw Error(`Missing translation for comment
-'${text}'
-        with id of ${engId}`);
+      // default to english
+      return { ...acc, [lang]: text };
     }
   }, {});
 }
 
 function getChallengesDirForLang(lang) {
-  return path.resolve(challengesDir, `./${lang}`);
+  return path.resolve(CHALLENGES_DIR, `${lang}`);
 }
 
 function getMetaForBlock(block) {
   return JSON.parse(
-    fs.readFileSync(path.resolve(metaDir, `./${block}/meta.json`), 'utf8')
+    fs.readFileSync(path.resolve(META_DIR, `${block}/meta.json`), 'utf8')
   );
 }
 
@@ -153,7 +153,9 @@ const walk = (root, target, options, cb) => {
 };
 
 exports.getChallengesForLang = async function getChallengesForLang(lang) {
-  const root = getChallengesDirForLang(lang);
+  // english determines the shape of the curriculum, all other languages mirror
+  // it.
+  const root = getChallengesDirForLang('english');
   // scaffold the curriculum, first set up the superblocks, then recurse into
   // the blocks
   const curriculum = await walk(
@@ -162,6 +164,9 @@ exports.getChallengesForLang = async function getChallengesForLang(lang) {
     { type: 'directories', depth: 0 },
     buildSuperBlocks
   );
+  Object.entries(curriculum).forEach(([name, superBlock]) => {
+    assert(!isEmpty(superBlock.blocks), `superblock ${name} has no blocks`);
+  });
   const cb = (file, curriculum) => buildChallenges(file, curriculum, lang);
   // fill the scaffold with the challenges
   return walk(
@@ -173,10 +178,7 @@ exports.getChallengesForLang = async function getChallengesForLang(lang) {
 };
 
 async function buildBlocks({ basename: blockName }, curriculum, superBlock) {
-  const metaPath = path.resolve(
-    __dirname,
-    `./challenges/_meta/${blockName}/meta.json`
-  );
+  const metaPath = path.resolve(META_DIR, `${blockName}/meta.json`);
 
   if (fs.existsSync(metaPath)) {
     // try to read the file, if the meta path does not exist it should be a certification.
@@ -240,9 +242,10 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
   ) {
     return;
   }
+  const createChallenge = generateChallengeCreator(CHALLENGES_DIR, lang);
   const challenge = isCert
-    ? await createCertification(challengesDir, filePath, lang)
-    : await createChallenge(challengesDir, filePath, lang, meta);
+    ? await createCertification(CHALLENGES_DIR, filePath, lang)
+    : await createChallenge(filePath, meta);
 
   challengeBlock.challenges = [...challengeBlock.challenges, challenge];
 }
@@ -258,8 +261,7 @@ async function parseTranslation(transPath, dict, lang, parse = parseMD) {
     : translatedChal;
 }
 
-// eslint-disable-next-line no-unused-vars
-async function createCertification(basePath, filePath, lang) {
+async function createCertification(basePath, filePath) {
   function getFullPath(pathLang) {
     return path.resolve(__dirname, basePath, pathLang, filePath);
   }
@@ -270,90 +272,111 @@ async function createCertification(basePath, filePath, lang) {
   return parseCert(getFullPath('english'));
 }
 
-async function createChallenge(basePath, filePath, lang, maybeMeta) {
-  function getFullPath(pathLang) {
+// This is a slightly weird abstraction, but it lets us define helper functions
+// without passing around a ton of arguments.
+function generateChallengeCreator(basePath, lang) {
+  function getFullPath(pathLang, filePath) {
     return path.resolve(__dirname, basePath, pathLang, filePath);
   }
-  let meta;
-  if (maybeMeta) {
-    meta = maybeMeta;
-  } else {
-    const metaPath = path.resolve(
-      metaDir,
-      `./${getBlockNameFromPath(filePath)}/meta.json`
-    );
-    meta = require(metaPath);
-  }
-  const { superBlock } = meta;
-  if (!curriculumLangs.includes(lang))
-    throw Error(`${lang} is not a accepted language.
-  Trying to parse ${filePath}`);
-  if (lang !== 'english' && !(await hasEnglishSource(basePath, filePath)))
-    throw Error(`Missing English challenge for
+
+  async function validate(filePath, superBlock) {
+    const invalidLang = !curriculumLangs.includes(lang);
+    if (invalidLang)
+      throw Error(`${lang} is not a accepted language.
+Trying to parse ${filePath}`);
+
+    const missingEnglish =
+      lang !== 'english' && !(await hasEnglishSource(basePath, filePath));
+    if (missingEnglish)
+      throw Error(`Missing English challenge for
 ${filePath}
 It should be in
-${getFullPath('english')}
+${getFullPath('english', filePath)}
 `);
-  // assumes superblock names are unique
-  // while the auditing is ongoing, we default to English for un-audited certs
-  // once that's complete, we can revert to using isEnglishChallenge(fullPath)
-  const useEnglish = lang === 'english' || !isAuditedCert(lang, superBlock);
 
-  const challenge = await (useEnglish
-    ? parseMD(getFullPath('english'))
-    : parseTranslation(getFullPath(lang), COMMENT_TRANSLATIONS, lang));
+    const missingAuditedChallenge =
+      isAuditedCert(lang, superBlock) &&
+      !fs.existsSync(getFullPath(lang, filePath));
+    if (missingAuditedChallenge)
+      throw Error(`Missing ${lang} audited challenge for
+${filePath}
+No audited challenges should fallback to English.
+    `);
+  }
 
-  const challengeOrder = findIndex(
-    meta.challengeOrder,
-    ([id]) => id === challenge.id
-  );
-  const {
-    name: blockName,
-    hasEditableBoundaries,
-    order,
-    isPrivate,
-    required = [],
-    template,
-    time,
-    usesMultifileEditor
-  } = meta;
-  challenge.block = dasherize(blockName);
-  challenge.hasEditableBoundaries = !!hasEditableBoundaries;
-  challenge.order = order;
-  const superOrder = getSuperOrder(superBlock, {
-    showNewCurriculum: process.env.SHOW_NEW_CURRICULUM === 'true'
-  });
-  if (superOrder !== null) challenge.superOrder = superOrder;
-  /* Since there can be more than one way to complete a certification (using the
+  function addMetaToChallenge(challenge, meta) {
+    const challengeOrder = findIndex(
+      meta.challengeOrder,
+      ([id]) => id === challenge.id
+    );
+
+    challenge.block = meta.name ? dasherize(meta.name) : null;
+    challenge.hasEditableBoundaries = !!meta.hasEditableBoundaries;
+    challenge.order = meta.order;
+    const superOrder = getSuperOrder(meta.superBlock, {
+      showNewCurriculum: process.env.SHOW_NEW_CURRICULUM === 'true'
+    });
+    if (superOrder !== null) challenge.superOrder = superOrder;
+    /* Since there can be more than one way to complete a certification (using the
    legacy curriculum or the new one, for instance), we need a certification
    field to track which certification this belongs to. */
-  // TODO: generalize this to all superBlocks
-  challenge.certification =
-    superBlock === '2022/responsive-web-design'
-      ? 'responsive-web-design'
-      : superBlock;
-  challenge.superBlock = superBlock;
-  challenge.challengeOrder = challengeOrder;
-  challenge.isPrivate = challenge.isPrivate || isPrivate;
-  challenge.required = required.concat(challenge.required || []);
-  challenge.template = template;
-  challenge.time = time;
-  challenge.helpCategory =
-    challenge.helpCategory || helpCategoryMap[challenge.block];
-  challenge.translationPending =
-    lang !== 'english' && !isAuditedCert(lang, superBlock);
-  challenge.usesMultifileEditor = !!usesMultifileEditor;
-  if (challenge.challengeFiles) {
-    // The client expects the challengeFiles to be an array of polyvinyls
-    challenge.challengeFiles = challengeFilesToPolys(challenge.challengeFiles);
-  }
-  if (challenge.solutions?.length) {
-    // The test runner needs the solutions to be arrays of polyvinyls so it
-    // can sort them correctly.
-    challenge.solutions = challenge.solutions.map(challengeFilesToPolys);
+    // TODO: generalize this to all superBlocks
+    challenge.certification =
+      meta.superBlock === '2022/responsive-web-design'
+        ? 'responsive-web-design'
+        : meta.superBlock;
+    challenge.superBlock = meta.superBlock;
+    challenge.challengeOrder = challengeOrder;
+    challenge.isPrivate = challenge.isPrivate || meta.isPrivate;
+    challenge.required = (meta.required || []).concat(challenge.required || []);
+    challenge.template = meta.template;
+    challenge.time = meta.time;
+    challenge.helpCategory =
+      challenge.helpCategory || helpCategoryMap[challenge.block];
+    challenge.translationPending =
+      lang !== 'english' && !isAuditedCert(lang, meta.superBlock);
+    challenge.usesMultifileEditor = !!meta.usesMultifileEditor;
+    if (challenge.challengeFiles) {
+      // The client expects the challengeFiles to be an array of polyvinyls
+      challenge.challengeFiles = challengeFilesToPolys(
+        challenge.challengeFiles
+      );
+    }
+    if (challenge.solutions?.length) {
+      // The test runner needs the solutions to be arrays of polyvinyls so it
+      // can sort them correctly.
+      challenge.solutions = challenge.solutions.map(challengeFilesToPolys);
+    }
   }
 
-  return challenge;
+  async function createChallenge(filePath, maybeMeta) {
+    const meta = maybeMeta
+      ? maybeMeta
+      : require(path.resolve(
+          META_DIR,
+          `${getBlockNameFromPath(filePath)}/meta.json`
+        ));
+
+    await validate(filePath, meta.superBlock);
+
+    const useEnglish =
+      lang === 'english' ||
+      !isAuditedCert(lang, meta.superBlock) ||
+      !fs.existsSync(getFullPath(lang, filePath));
+
+    const challenge = await (useEnglish
+      ? parseMD(getFullPath('english', filePath))
+      : parseTranslation(
+          getFullPath(lang, filePath),
+          COMMENT_TRANSLATIONS,
+          lang
+        ));
+
+    addMetaToChallenge(challenge, meta);
+
+    return challenge;
+  }
+  return createChallenge;
 }
 
 function challengeFilesToPolys(files) {
@@ -390,4 +413,4 @@ function getBlockNameFromPath(filePath) {
 
 exports.hasEnglishSource = hasEnglishSource;
 exports.parseTranslation = parseTranslation;
-exports.createChallenge = createChallenge;
+exports.generateChallengeCreator = generateChallengeCreator;
