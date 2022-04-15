@@ -9,11 +9,9 @@
     "react": "16.14.0",
     "react-codemirror2": "^7.2.1",
     "react-dom": "16.14.0",
-    "react-router": "^6.2.1",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
-    "typescript": "^4.5.5",
-    "web-vitals": "^2.1.4"
+    "typescript": "^4.5.5"
   },
   "scripts": {
     "start": "PORT=3300 react-scripts start",
