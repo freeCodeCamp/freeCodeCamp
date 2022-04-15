@@ -2,9 +2,9 @@ import React from 'react';
 import { BlockRequiredProps } from '../../../interfaces/PropTypes';
 import { handleRequest } from '../../utils/handleRequest';
 
-const ReorderSteps = ({ superblock, block }: BlockRequiredProps) => {
+const UpdateStepTitles = ({ superblock, block }: BlockRequiredProps) => {
   const click = handleRequest(() =>
-    fetch(`http://localhost:3200/${superblock}/${block}/_tools/reorder`, {
+    fetch(`http://localhost:3200/${superblock}/${block}/_tools/update-step-titles`, {
       method: 'POST'
     })
   );
@@ -12,4 +12,4 @@ const ReorderSteps = ({ superblock, block }: BlockRequiredProps) => {
   return <button onClick={click}>Reorder Steps</button>;
 };
 
-export default ReorderSteps;
+export default UpdateStepTitles;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BlockRequiredProps } from '../../../interfaces/PropTypes';
 import { handleRequest } from '../../utils/handleRequest';
 
-const CreateStepBetween = ({ superblock, block }: BlockRequiredProps) => {
+const InsertStep = ({ superblock, block }: BlockRequiredProps) => {
   const [num, setNum] = useState(0);
 
   const click = handleRequest(() =>
@@ -25,9 +25,9 @@ const CreateStepBetween = ({ superblock, block }: BlockRequiredProps) => {
         Step to insert AFTER:
         <input id='num' type='number' onChange={changeNum} />
       </label>
-      <button onClick={click}>Create Step Between</button>
+      <button onClick={click}>Insert Step</button>
     </div>
   );
 };
 
-export default CreateStepBetween;
+export default InsertStep;

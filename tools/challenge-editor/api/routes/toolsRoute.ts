@@ -8,22 +8,20 @@ import { ToolsSwitch } from '../interfaces/Tools';
 const asyncExec = promisify(exec);
 
 const toolsSwitch: ToolsSwitch = {
-  'create-next-step': async directory => {
-    return await asyncExec(`cd ${directory} && npm run create-next-step`);
+  'create-next-step': directory => {
+    return asyncExec(`cd ${directory} && npm run create-next-step`);
   },
-  'create-empty-steps': async (directory, num) => {
-    return await asyncExec(
-      `cd ${directory} && npm run create-empty-steps ${num}`
-    );
+  'create-empty-steps': (directory, num) => {
+    return asyncExec(`cd ${directory} && npm run create-empty-steps ${num}`);
   },
-  'insert-step': async (directory, num) => {
-    return await asyncExec(`cd ${directory} && npm run insert-step ${num}`);
+  'insert-step': (directory, num) => {
+    return asyncExec(`cd ${directory} && npm run insert-step ${num}`);
   },
-  'delete-step': async (directory, num) => {
-    return await asyncExec(`cd ${directory} && npm run delete-step ${num}`);
+  'delete-step': (directory, num) => {
+    return asyncExec(`cd ${directory} && npm run delete-step ${num}`);
   },
-  'update-step-titles': async directory => {
-    return await asyncExec(`cd ${directory} && npm run update-step-titles`);
+  'update-step-titles': directory => {
+    return asyncExec(`cd ${directory} && npm run update-step-titles`);
   }
 };
 
