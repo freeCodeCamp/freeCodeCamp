@@ -1,4 +1,4 @@
-import * as Sentry from '@sentry/react';
+import * as Sentry from '@sentry/gatsby';
 import envData from '../../../config/env.json';
 
 const { sentryClientDSN } = envData;
