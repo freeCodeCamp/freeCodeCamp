@@ -242,6 +242,7 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
   // ) {
   //   return;
   // }
+  const createChallenge = generateChallengeCreator(CHALLENGES_DIR, lang);
   const challenge = isCert
     ? await createCertification(CHALLENGES_DIR, filePath, lang)
     : await createChallenge(filePath, meta);
@@ -312,9 +313,11 @@ No audited challenges should fallback to English.
     challenge.block = meta.name ? dasherize(meta.name) : null;
     challenge.hasEditableBoundaries = !!meta.hasEditableBoundaries;
     challenge.order = meta.order;
-    const superOrder = getSuperOrder(meta.superBlock, {
-      showNewCurriculum: process.env.SHOW_NEW_CURRICULUM === 'true'
-    });
+    const superOrder = getSuperOrder(meta.superBlock);
+    // NOTE: Use this version when a super block is in beta.
+    // const superOrder = getSuperOrder(meta.superBlock, {
+    //   showNewCurriculum: process.env.SHOW_NEW_CURRICULUM === 'true'
+    // });
     if (superOrder !== null) challenge.superOrder = superOrder;
     /* Since there can be more than one way to complete a certification (using the
    legacy curriculum or the new one, for instance), we need a certification
