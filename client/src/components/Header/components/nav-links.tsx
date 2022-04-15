@@ -42,9 +42,7 @@ const locales = availableLangs.client;
 
 const languageGlobeIconStyle = {
   height: '1rem',
-  width: '1rem',
-  marginRight: '6px',
-  marginLeft: '-6px'
+  width: '1rem'
 };
 export interface NavLinksProps {
   displayMenu?: boolean;
@@ -436,8 +434,8 @@ export class NavLinks extends Component<NavLinksProps, {}> {
               onKeyDown={this.handleLanguageButtonKeyDown}
               ref={this.langButtonRef}
             >
-              <LanguageGlobe style={languageGlobeIconStyle} />
               <span>Change Language</span>
+              <LanguageGlobe style={languageGlobeIconStyle} />
             </button>
             <ul
               aria-labelledby='nav-lang-button'
