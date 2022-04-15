@@ -70,61 +70,61 @@ Además, ten en cuenta que las instrucciones usualmente usan las lecciones a su 
 > 
 > Recordatorio: Nunca hacer o enviar cambios a una rama de versión que esté en uno de los repos de freeCodeCamp. Siempre crea una nueva
 
-No hay una manera fácil de ver exactamente qué cambió entre las ramas de versiones ya que la historia de Git será reescrita. Accepting new version branches to use will need to be done with careful consideration and testing.
+No hay una manera fácil de ver exactamente qué cambió entre las ramas de versiones ya que la historia de Git será reescrita. Aceptar nuevas ramas de versión para usar tendrá que hacerse con una cuidadosa consideración y pruebas.
 
-These instructions are for changing anything on a "version" branch, such as tests, test text, reset files, adding and deleting steps, among other things.
+Estas instrucciones son para cambiar cualquier cosa en una rama de "versión", como pruebas, texto de prueba, archivos de reinicio, añadiendo y eliminando pasos, entre otras cosas.
 
 Sigue estas instrucciones para crear una nueva versión:
 
-- Checkout the **latest** version branch with `git checkout -b vX.X.X upstream/vX.X.X`
-- Create a new branch off of that, incrementing the version, with `git checkout -b vX.X.Y`
-- Make your changes to the version branch. See more info in the [CodeRoad Documentation](https://coderoad.github.io/docs/edit-tutorial) for how to work with tutorials
-- Push the new branch to your fork with `git push -u origin vX.X.Y`
-- Checkout the `main` branch
-- Create a new branch off `main`. e.g. `feat/version-X.X.Y`
-- Change the `uri` in `coderoad.yaml` to your fork of the repo. This is so you and reviewers can test it before pushing it to the freeCodeCamp repo. Change the version to the new branch in the two spots of that file. Add your changes for the new version to `CHANGELOG.md`. Haz cualquier otros cambios que necesites.
-- Commit your changes with the message `feat: release version X.X.Y - <optional description>`
-- Run `coderoad build` to create a new `tutorial.json` file
-- Add and commit the file
-- Push the changes to your fork
-- Test your changes following the [testing instructions below](#testing-changes-to-a-version-branch). Make any additional changes and commit them as you just did, or, if you are satisfied, follow the rest of the instructions
-- Make a PR to `main` using your new `feat/version-X.X.Y` branch. Give it a title of `version X.X.Y ready for review`. This will not be merged, it is just to let reviewers know that there is a new version ready
-- Leave it here for reviewers
+- Echa un vistazo a la rama de **última versión** con `git checkout -b vX.X.X upstream/vX.X.X`
+- Crea una nueva rama de eso, incrementando la versión, con `git checkout -b vX.X.Y`
+- Haga sus cambios en la rama de versiones. Ver más información en la [Documentación de CodeRoad](https://coderoad.github.io/docs/edit-tutorial) para saber cómo trabajar con tutoriales
+- Empuja la nueva rama a tu bifurcación con `git push -u origin vX.X.Y`
+- Compruebe la rama `main`
+- Crea una nueva rama de `main`. ej. `feat/version-X.X.Y`
+- Cambia el `uri` en `coderoad.yaml` a tu bifurcación del repositorio. Esto es así que tú y los revisores pueden probarlo antes de empujarlo al repositorio freeCodeCamp. Cambie la versión a la nueva rama en los dos puntos de ese archivo. Añade tus cambios para la nueva versión a `CHANGELOG.md`. Haz cualquier otros cambios que necesites.
+- Comprueba tus cambios con el mensaje `feat: release version X.X.Y - <optional description>`
+- Ejecute `coderoad build` para crear un nuevo archivo `tutorial.json`
+- Agregar y confirmar el archivo
+- Enviar los cambios a tu bifurcación
+- Prueba tus cambios siguiendo las [instrucciones de prueba a continuación](#testing-changes-to-a-version-branch). Haga cualquier cambio adicional y confirme los cambios como acaba de hacer o, si está satisfecho, siga el resto de las instrucciones
+- Hacer un PR a `principal` usando su nueva rama `feat/version-X.X.Y`. Dale un título de `versión X.X.Y lista para la revisión`. Esto no se fusionará, es sólo para hacer saber a los revisores que hay una nueva versión lista
+- Déjalo aquí para revisores
 
 ### Probando cambios a una rama de versiones
 
-- Follow the instructions on the [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha) to run a container
-- Start the tutorial using the `tutorial.json` file on whatever fork the changes are on. Make sure to use the file on the `feat: version-X.X.Y` branch and not the `main` branch
+- Sigue las instrucciones en el repositorio [rdb-alpha](https://github.com/freeCodeCamp/rdb-alpha) para ejecutar un contenedor
+- Comience el tutorial utilizando el archivo `tutorial.json` en cualquier bifurcación en la que estén los cambios. Asegúrate de usar el archivo en la rama `feat: version-X.X.Y` y no la rama `main`
 
 ### Subiendo una nueva versión
 
-Before pushing a new version, view the new `feat/version-vX.X.Y` (will be merged to `main`) branch on the user's fork. Make sure there are additions to the `CHANGELOG.md` file that include the new changes, and the version in the two spots of `coderoad.yaml` matches the new version branch.
+Antes de empujar una nueva versión, ver la nueva `feat/version-vX.X.Y` (se fusionará a `main`) rama en el fork del usuario. Asegúrese de que hay adiciones al `CHANGELOG. d` archivo que incluye los nuevos cambios, y la versión en los dos manchas de la carga de código `. aml` coincide con la nueva rama de versión.
 
-If you have write access to the freeCodeCamp repo, have verified the `CHANGELOG` and `coderoad.yaml` files, have tested the changes using the instructions above, and want to push a new version of a tutorial:
+Si tienes acceso de escritura al repo de freeCodeCamp, has verificado los archivos `CHANGELOG` y `coderoad.yaml`, has probado los cambios usando las instrucciones anteriores, y quieres empujar una nueva versión de un tutorial:
 
 > [!WARNING]
 > 
-> Reminder: Never make or push changes to a version branch that is on one of the freeCodeCamp repos. Always create a new one
+> Recordatorio: Nunca hacer o enviar cambios a una rama de versión que esté en uno de los repos de freeCodeCamp. Siempre cree una nueva
 
-- If you don't have a remote to where the new changes exist, create a remote to the user's fork with `git remote add <users_fork>`
-- Delete any **local** branches that share a name with the new branches. Likely named either `vX.X.Y` or `feat/version-X.X.Y`
-- Checkout the new version branch with `git checkout -b vX.X.Y <remote>/vX.X.Y`
-- Push the new version branch to the freeCodeCamp repo with `git push -u upstream/vX.X.Y`. You need to push the new branch before you update `main` with the new `tutorial.json` file
-- Checkout the users branch that will be merged into `main` with `git checkout -b feat/version-X.X.Y <remote>/feat/version-X.X.Y`
-- Change the `uri` in `coderoad.yaml` back to the freeCodeCamp repo
-- Add and commit the changes
-- Run `coderoad build` to create the new `tutorial.json` file
-- Add and commit the file
-- Push the changes to your fork with `git push -u origin/feat/version-X.X.Y`
-- Make a PR to `main` on the freeCodeCamp repo
-- If you are satisfied, merge it or leave it and ask for a review from someone
-- After the PR is merged, open the tutorial by following the instructions on the [rdb-alpha repo](https://github.com/freeCodeCamp/rdb-alpha) to make sure it's loading properly, and that you can get through a few steps
-- Finally, if any PRs for this version exists, close them
+- Si no tiene un control remoto a donde existen los nuevos cambios, crear un control remoto a la bifurcación del usuario con `git remote add <users_fork>`
+- Elimina cualquier **ramas** locales que compartan un nombre con las nuevas ramas. Probablemente llamado `vX.X.Y` o `feat/version-X.X.Y`
+- Echa un vistazo a la nueva rama de versión con `git checkout -b vX.X.Y <remote>/vX.X.Y`
+- Empuja la nueva rama de versión al repositorio freeCodeCamp con `git push -u upstream/vX.X.Y`. Necesitas empujar la nueva rama antes de actualizar `main` con el nuevo archivo `tutorial.json`
+- Compruebe la rama de usuarios que se fusionará en `main` con `git checkout -b feat/version-X.X.Y <remote>/feat/version-X.X.Y`
+- Cambie el `uri` en `coderoad.yaml` de vuelta al repositorio freeCodeCamp
+- Agregar y confirmar los cambios
+- Ejecute `coderoad build` para crear el nuevo archivo `tutorial.json`
+- Añadir y confirmar el archivo
+- Empuja los cambios a su bifurcación con `git push -u origin/feat/version-X.X.Y`
+- Hacer un PR a `main` en el repositorio freeCodeCamp
+- Si estás satisfecho, fusionalo o déjalo y pide una reseña a alguien
+- Después de fusionar las relaciones públicas, abra el tutorial siguiendo las instrucciones en el repositorio [rdb-alpha](https://github.com/freeCodeCamp/rdb-alpha) para asegurarse de que está cargando correctamente, y que usted puede pasar unos pasos
+- Finalmente, si existe algún PRs para esta versión, ciérrelos
 
 ### Cómo volver a una versión anterior
 
-- Create a new branch off the latest `main` with `git checkout -b revert/to-version-X.X.X`
-- Revert all commits on this branch up to and including the commit of the version after the one you want to revert to. For example, you may have commits that look like this:
+- Crea una nueva rama desde la última `main` con `git checkout -b revert/to-version-X.X.X`
+- Revertir todos los commits en esta rama hasta e incluyendo el commit de la versión después del que desea revertir. Por ejemplo, puede haber commits que se vean así:
 
 ```
 fix: typo
@@ -133,6 +133,6 @@ fix: typo
 release: version 1.0.0
 ```
 
-If you want to revert to v1.0.0, revert all the commits from `release: version 1.0.1` and after
+Si quieres revertir a v1.0.0, revertir todos los commits de `release: version 1.0.1` y después
 
 - Crea una PR. Dale un título de `revertir: a la versión X.X.X`
