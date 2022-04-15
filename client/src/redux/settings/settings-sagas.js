@@ -8,6 +8,9 @@ import {
   putUpdateMyProfileUI,
   putUpdateMyUsername,
   putUpdateUserFlag,
+  putUpdateMySocials,
+  putUpdateMyHonesty,
+  putUpdateMyQuincyEmail,
   putVerifyCert
 } from '../../utils/ajax';
 import {
@@ -22,7 +25,13 @@ import {
   submitProfileUIComplete,
   submitProfileUIError,
   verifyCertComplete,
-  verifyCertError
+  verifyCertError,
+  updateMySocialsComplete,
+  updateMySocialsError,
+  updateMyHonestyError,
+  updateMyHonestyComplete,
+  updateMyQuincyEmailComplete,
+  updateMyQuincyEmailError
 } from './';
 
 function* submitNewAboutSaga({ payload }) {
@@ -67,6 +76,36 @@ function* updateUserFlagSaga({ payload: update }) {
   }
 }
 
+function* updateMySocialsSaga({ payload: update }) {
+  try {
+    const response = yield call(putUpdateMySocials, update);
+    yield put(updateMySocialsComplete({ ...response, payload: update }));
+    yield put(createFlashMessage({ ...response }));
+  } catch (e) {
+    yield put(updateMySocialsError);
+  }
+}
+
+function* updateMyHonestySaga({ payload: update }) {
+  try {
+    const response = yield call(putUpdateMyHonesty, update);
+    yield put(updateMyHonestyComplete({ ...response, payload: update }));
+    yield put(createFlashMessage({ ...response }));
+  } catch (e) {
+    yield put(updateMyHonestyError);
+  }
+}
+
+function* updateMyQuincyEmailSaga({ payload: update }) {
+  try {
+    const response = yield call(putUpdateMyQuincyEmail, update);
+    yield put(updateMyQuincyEmailComplete({ ...response, payload: update }));
+    yield put(createFlashMessage({ ...response }));
+  } catch (e) {
+    yield put(updateMyQuincyEmailError);
+  }
+}
+
 function* validateUsernameSaga({ payload }) {
   try {
     yield delay(500);
@@ -104,6 +143,9 @@ function* verifyCertificationSaga({ payload }) {
 export function createSettingsSagas(types) {
   return [
     takeEvery(types.updateUserFlag, updateUserFlagSaga),
+    takeEvery(types.updateMySocials, updateMySocialsSaga),
+    takeEvery(types.updateMyHonesty, updateMyHonestySaga),
+    takeEvery(types.updateMyQuincyEmail, updateMyQuincyEmailSaga),
     takeLatest(types.submitNewAbout, submitNewAboutSaga),
     takeLatest(types.submitNewUsername, submitNewUsernameSaga),
     takeLatest(types.validateUsername, validateUsernameSaga),

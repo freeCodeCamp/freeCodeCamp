@@ -26,7 +26,13 @@ import {
   userTokenSelector
 } from '../redux';
 import { User } from '../redux/prop-types';
-import { submitNewAbout, updateUserFlag, verifyCert } from '../redux/settings';
+import {
+  submitNewAbout,
+  updateMyHonesty,
+  updateMyQuincyEmail,
+  updateUserFlag,
+  verifyCert
+} from '../redux/settings';
 
 const { apiLocation } = envData;
 
@@ -69,10 +75,10 @@ const mapDispatchToProps = {
   toggleNightMode: (theme: Themes) => updateUserFlag({ theme }),
   toggleSoundMode: (sound: boolean) => updateUserFlag({ sound }),
   updateInternetSettings: updateUserFlag,
-  updateIsHonest: updateUserFlag,
+  updateIsHonest: updateMyHonesty,
   updatePortfolio: updateUserFlag,
   updateQuincyEmail: (sendQuincyEmail: boolean) =>
-    updateUserFlag({ sendQuincyEmail }),
+    updateMyQuincyEmail({ sendQuincyEmail }),
   verifyCert
 };
 

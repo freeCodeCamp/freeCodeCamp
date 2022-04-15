@@ -22,6 +22,6 @@ function* updateLocalSoundSaga({ payload }) {
 export function createSoundModeSaga(types) {
   return [
     takeEvery(types.fetchUserComplete, updateLocalSoundSaga),
-    takeEvery(types.updateUserFlagComplete, updateLocalSoundSaga)
+    takeEvery(types.updateMySoundComplete, updateLocalSoundSaga)
   ];
 }
