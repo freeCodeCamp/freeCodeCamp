@@ -90,7 +90,7 @@ const spreadsheetFunctions = {
   lasttwo: arr => arr.slice(-2),
   even: nums => nums.filter(isEven),
   sum: nums => nums.reduce((a, x) => a + x),
-  has2: arr => arr.includes(2)
+  has2: arr => arr.includes(2),
   nodups: arr => arr.reduce((a, x) => a.includes(x), [])
 };
 
