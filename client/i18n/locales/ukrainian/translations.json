@@ -68,8 +68,8 @@
     "ask-later": "Запитати пізніше",
     "start-coding": "Start coding!",
     "go-to-settings": "Go to settings to claim your certification",
-    "click-start-course": "Click here to start the course",
-    "click-start-project": "Click here to start the project"
+    "click-start-course": "Start the course",
+    "click-start-project": "Start the project"
   },
   "landing": {
     "big-heading-1": "Вчіться програмувати — це безкоштовно.",
@@ -536,7 +536,8 @@
     "code-save-error": "An error occurred trying to save your code.",
     "code-save-less": "Slow Down! Your code was not saved. Try again in a few seconds.",
     "challenge-save-too-big": "Sorry, you cannot save your code. Your code is {{user-size}} bytes. We allow a maximum of {{max-size}} bytes. Please make your code smaller and try again or request assistance on https://forum.freecodecamp.org",
-    "challenge-submit-too-big": "Sorry, you cannot submit your code. Your code is {{user-size}} bytes. We allow a maximum of {{max-size}} bytes. Please make your code smaller and try again or request assistance on https://forum.freecodecamp.org"
+    "challenge-submit-too-big": "Sorry, you cannot submit your code. Your code is {{user-size}} bytes. We allow a maximum of {{max-size}} bytes. Please make your code smaller and try again or request assistance on https://forum.freecodecamp.org",
+    "invalid-update-flag": "You are attempting to access forbidden resources. Please request assistance on https://forum.freecodecamp.org if this is a valid request."
   },
   "validation": {
     "max-characters": "Максимальний розмір — 288 символів, у вас залишилося {{charsLeft}}",
