@@ -564,7 +564,10 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   function clearTestFeedback() {
     const testStatus = document.getElementById('test-status');
-    if (testStatus) {
+    if (testStatus && testStatus.innerHTML) {
+      const currentHeight = `${testStatus.offsetHeight}px`;
+      // Height will be cleared after status message has been displayed
+      testStatus.style.height = currentHeight;
       testStatus.innerHTML = '';
     }
   }
@@ -1038,6 +1041,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
         if (testStatus) {
           testStatus.innerHTML = `<p class="status"><span aria-hidden="true">&#9989;</span> Congratulations, your code passes. Submit your code to complete this step and move on to the next one. ${submitKeyboardInstructions}</p>`;
+          testStatus.style.height = '';
         }
       } else if (challengeHasErrors() && testStatus) {
         const wordsArray = [
@@ -1050,6 +1054,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         testStatus.innerHTML = `<p class="status"><span aria-hidden="true">✖️</span> Sorry, your code does not pass. ${
           wordsArray[Math.floor(Math.random() * wordsArray.length)]
         }</p><div><h2 class="hint">Hint</h2> ${output[1]}</div>`;
+        testStatus.style.height = '';
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
