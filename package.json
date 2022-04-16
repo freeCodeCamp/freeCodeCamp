@@ -110,7 +110,7 @@
     "@testing-library/dom": "8.13.0",
     "@testing-library/jest-dom": "5.16.4",
     "@testing-library/user-event": "13.5.0",
-    "@types/chai": "4.3.0",
+    "@types/chai": "4.3.1",
     "@types/enzyme": "3.10.12",
     "@types/enzyme-adapter-react-16": "1.0.6",
     "@types/eslint": "7.29.0",
