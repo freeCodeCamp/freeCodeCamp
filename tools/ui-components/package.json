@@ -30,7 +30,7 @@
     "@rollup/plugin-babel": "5.3.1",
     "@rollup/plugin-commonjs": "19.0.2",
     "@rollup/plugin-node-resolve": "13.1.3",
-    "@rollup/plugin-typescript": "8.3.1",
+    "@rollup/plugin-typescript": "8.3.2",
     "@storybook/addon-a11y": "6.4.21",
     "@storybook/addon-actions": "6.4.21",
     "@storybook/addon-docs": "6.4.21",
