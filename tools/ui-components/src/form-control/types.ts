@@ -7,7 +7,7 @@ export interface FormControlProps
   className?: string;
   id?: string;
   testId?: string;
-  onChange: React.ChangeEventHandler<FormControlElement>;
+  onChange?: React.ChangeEventHandler<FormControlElement>;
   value?: string;
   componentClass?: typeof React.Component;
   placeholder?: string;

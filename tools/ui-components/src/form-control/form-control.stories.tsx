@@ -7,28 +7,31 @@ const story = {
   component: FormControl,
   parameters: {
     controls: {
-      include: ['componentClass']
+      include: [
+        'className',
+        'id',
+        'onChange',
+        'value',
+        'componentClass',
+        'placeholder',
+        'required',
+        'type'
+      ]
     }
   },
   argTypes: {
+    className: { control: { type: 'text' } },
+    id: { control: { type: 'text' } },
+    onChange: { action: 'changed' },
+    value: { control: { type: 'text' } },
     componentClass: {
       options: ['input', 'textarea']
-    }
+    },
+    placeholder: { control: { type: 'text' } },
+    required: { control: 'boolean' },
+    type: { options: ['text', 'email', 'url'] }
   }
 };
-
-/* to be controlls to be implemented
-className?: string;
-id?: string;
-testId?: string;
-onChange: React.ChangeEventHandler<FormControlElement>;
-value?: string;
-componentClass?: typeof React.Component;
-placeholder?: string;
-name?: string;
-required?: boolean;
-type?: 'text' | 'email' | 'url';
-*/
 
 const DefaultTemplate: Story<FormControlProps> = args => {
   return <FormControl {...args} />;
