@@ -11,7 +11,7 @@ dashedName: change-a-variable-for-a-specific-area
 
 Cuando creas tus variables en `:root`, el valor de esa variable quedará establecido para toda la página.
 
-Luego podrás sobreescribir estas variables, configurándolas de nuevo dentro de un elemento específico.
+Puedes entonces sobreescribir estas variables configurándolas nuevamente con un selector específico.
 
 # --instructions--
 
@@ -27,7 +27,7 @@ assert(
 );
 ```
 
-La clase `penguin` no debe contener la propiedad `background-color`
+La clase `penguin` no debe de tener la propiedad `background-color`.
 
 ```js
 assert(

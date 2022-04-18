@@ -1,16 +1,42 @@
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { ButtonProps, ButtonSize, ButtonVariant } from './types';
 
-const defaultClassNames = ['cursor-pointer', 'inline-block', 'border-3'];
+const defaultClassNames = [
+  'relative',
+  'cursor-pointer',
+  'inline-block',
+  'border-3',
+  'active:before:w-full',
+  'active:before:h-full',
+  'active:before:absolute',
+  'active:before:inset-0',
+  'active:before:border-3',
+  'active:before:border-transparent',
+  'active:before:bg-gray-900',
+  'active:before:opacity-20',
+  'aria-disabled:cursor-not-allowed',
+  'aria-disabled:opacity-50',
+  'focus:outline-none', // Hide the default browser outline
+  'focus:ring',
+  'focus:ring-focus-outline-color'
+];
 
 const computeClassNames = ({
   size,
-  variant
+  variant,
+  disabled,
+  block
 }: {
   size: ButtonSize;
   variant: ButtonVariant;
+  disabled?: boolean;
+  block?: boolean;
 }) => {
   const classNames = [...defaultClassNames];
+
+  if (block) {
+    classNames.push('block', 'w-full');
+  }
 
   // TODO: support 'link' variant
   switch (variant) {
@@ -19,8 +45,12 @@ const computeClassNames = ({
         'border-default-foreground-danger',
         'bg-default-background-danger',
         'text-default-foreground-danger',
-        'hover:bg-default-background-danger-hover',
-        'hover:text-default-foreground-danger-hover'
+        ...(disabled
+          ? []
+          : [
+              'hover:bg-default-background-danger-hover',
+              'hover:text-default-foreground-danger-hover'
+            ])
       );
       break;
     case 'info':
@@ -28,8 +58,12 @@ const computeClassNames = ({
         'border-default-foreground-info',
         'bg-default-background-info',
         'text-default-foreground-info',
-        'hover:bg-default-background-info-hover',
-        'hover:text-default-foreground-info-hover'
+        ...(disabled
+          ? []
+          : [
+              'hover:bg-default-background-info-hover',
+              'hover:text-default-foreground-info-hover'
+            ])
       );
       break;
     // default variant is 'primary'
@@ -38,8 +72,12 @@ const computeClassNames = ({
         'border-default-foreground-secondary',
         'bg-default-background-quaternary',
         'text-default-foreground-secondary',
-        'hover:bg-default-background-primary-hover',
-        'hover:text-default-foreground-primary-hover'
+        ...(disabled
+          ? []
+          : [
+              'hover:bg-default-background-primary-hover',
+              'hover:text-default-foreground-primary-hover'
+            ])
       );
   }
 
@@ -65,17 +103,39 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       size = 'medium',
       type = 'button',
       onClick,
-      children
+      children,
+      disabled,
+      block
     },
     ref
   ) => {
     const classes = useMemo(
-      () => computeClassNames({ size, variant }),
-      [size, variant]
+      () => computeClassNames({ size, variant, disabled, block }),
+      [size, variant, disabled, block]
+    );
+
+    // Manually prevent click event if the button is disabled
+    // as `aria-disabled` marks the element disabled but still registers the click event.
+    // Ref: https://css-tricks.com/making-disabled-buttons-more-inclusive/#aa-the-difference-between-disabled-and-aria-disabled
+    const handleClick = useCallback(
+      (event: React.MouseEvent<HTMLButtonElement>) => {
+        const ariaDisabled = event.currentTarget.getAttribute('aria-disabled');
+
+        if (!ariaDisabled && onClick) {
+          onClick(event);
+        }
+      },
+      [onClick]
     );
 
     return (
-      <button ref={ref} className={classes} type={type} onClick={onClick}>
+      <button
+        ref={ref}
+        className={classes}
+        type={type}
+        onClick={handleClick}
+        aria-disabled={disabled}
+      >
         {children}
       </button>
     );

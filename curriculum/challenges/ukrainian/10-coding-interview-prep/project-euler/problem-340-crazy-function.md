@@ -10,7 +10,8 @@ dashedName: problem-340-crazy-function
 
 Для фіксованих цілих $a$, $b$, $c$ визначити цю функцію $F(n)$ наступним чином:
 
-$$\begin{align} & F(n) = n - c \\;\text{ for all } n > b \\\\ & F(n) = F(a + F(a + F(a + F(a + n)))) \\;\text{ for all } n ≤ b. \end{align}$$
+$$\begin{align}   & F(n) = n - c \\;\text{ for all } n > b \\\\
+  & F(n) = F(a + F(a + F(a + F(a + n)))) \\;\text{ for all } n ≤ b. \end{align}$$
 
 Також визначте $S(a, b, c) = \displaystyle\sum_{n = 0}^b F(n)$.
 

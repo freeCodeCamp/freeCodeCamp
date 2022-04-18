@@ -31,13 +31,13 @@ assert(
 );
 ```
 
-Después de `updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me")`, `tracks` debe tener la cadena `Take a Chance on Me` como último elemento.
+Después `updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me")`, `tracks` debe de tener la cadena `Take a Chance on Me` como el último y único elemento.
 
 ```js
 assert(
-  updateRecords(_recordCollection, 5439, 'tracks', 'Take a Chance on Me')[5439][
-    'tracks'
-  ].pop() === 'Take a Chance on Me'
+  updateRecords(_recordCollection, 5439, 'tracks', 'Take a Chance on Me') &&
+  _recordCollection[5439]['tracks'].length === 1 &&
+  _recordCollection[5439]['tracks'].pop() === 'Take a Chance on Me'
 );
 ```
 

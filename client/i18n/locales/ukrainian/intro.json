@@ -554,7 +554,7 @@
         "intro": [
           "Node.js — це середовище виконання JavaScript, що дозволяє розробникам писати бекенд (серверні) програми в JavaScript. Node.js має кілька вбудованих модулів, — маленьких, незалежних програм — які допомагають з цим. Деякі з основних модулів містять HTTP, який працює на зразок сервера, і файлову систему — модуль для читання і редагування файлів.",
           "В останній групі курсів ви навчилися встановлювати та керувати пакетами npm, які є скупченнями менших модулів. Ці пакети можуть допомогти вам створити більші, складніші застосунки.",
-          "Express — це спрощений фреймворк вебзастосунків та один з найбільш популярних пакетів на npm. Express значно полегшує створення сервера та керування маршрутизацією вашого застосунку, яке відповідає за такі речі як перенаправлення людей до потрібної сторінки, коли вони відвідують певну кінцеву точку, таку як <pre>/blog</pre>.",
+          "Express is a lightweight web application framework, and is one of the most popular packages on npm. Express makes it much easier to create a server and handle routing for your application, which handles things like directing people to the correct page when they visit a certain endpoint like <pre>/blog</pre>.",
           "У цьому курсі ви дізнаєтесь основи Node та Express, включаючи те, як створювати сервер, обслуговувати різні файли та обробляти різні запити з браузера."
         ]
       },
@@ -783,6 +783,7 @@
     "viewing-upcoming-change": "You are looking at a beta page. ",
     "go-back-to-learn": "Go back to the stable version of the curriculum.",
     "read-database-cert-article": "Please read this forum post before proceeding.",
+    "enable-cookies": "You must enable third-party cookies before starting.",
     "english-only": "The courses in this section are only available in English. We are only able to translate the titles and introductions at the moment, not the lessons themselves."
   }
 }
