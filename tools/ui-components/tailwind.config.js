@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin');
+
 module.exports = {
   content: [
     './src/**/*.html',
@@ -37,6 +39,19 @@ module.exports = {
       'default-background-danger-hover':
         'var(--default-background-danger-hover)',
       'default-background-info-hover': 'var(--default-background-info-hover)',
+      // Focus outline
+      'focus-outline-color': 'var(--focus-outline-color)',
+      gray: {
+        0: 'var(--gray00)',
+        50: 'var(--gray05)',
+        100: 'var(--gray10)',
+        150: 'var(--gray15)',
+        450: 'var(--gray45)',
+        750: 'var(--gray75)',
+        800: 'var(--gray80)',
+        850: 'var(--gray85)',
+        900: 'var(--gray90)'
+      },
       green: {
         50: 'var(--green05)',
         100: 'var(--green10)',
@@ -91,5 +106,9 @@ module.exports = {
       }
     }
   },
-  plugins: []
+  plugins: [
+    plugin(({ addVariant }) => {
+      addVariant('aria-disabled', '[aria-disabled="true"]');
+    })
+  ]
 };
