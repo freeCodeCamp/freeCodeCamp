@@ -684,3 +684,7 @@ a[class^='ais-'] {
 strong.ais-Highlight-highlighted {
   background-color: transparent;
 }
+.magnifier {
+  background-color: black;
+  color: white;
+}
