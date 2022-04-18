@@ -15,7 +15,8 @@ const story = {
         'disabled',
         'block',
         'to',
-        'target'
+        'target',
+        'onClick'
       ]
     }
   },
@@ -36,6 +37,9 @@ const story = {
     },
     target: {
       options: ['_self', '_blank', '_parent', '_top']
+    },
+    onClick: {
+      action: 'clicked'
     }
   }
 };
