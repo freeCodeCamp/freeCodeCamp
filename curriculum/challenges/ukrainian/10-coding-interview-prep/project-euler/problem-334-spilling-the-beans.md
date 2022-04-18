@@ -16,7 +16,10 @@ dashedName: problem-334-spilling-the-beans
 
 Вам надано наступні послідовності:
 
-$$\begin{align} & t_0 = 123456, \\\\ & t_i = \begin{cases} \frac{t_{i - 1}}{2},               & \text{if $t_{i - 1}$ is even} \\\\ \left\lfloor\frac{t_{i - 1}}{2}\right\rfloor \oplus 926252, & \text{if $t_{i - 1}$ is odd} \end{cases} \\\\ & \qquad \text{where $⌊x⌋$ is the floor function and $\oplus$ is the bitwise XOR operator.} \\\\ & b_i = (t_i\bmod 2^{11}) + 1. \end{align}$$
+$$\begin{align}   & t_0 = 123456, \\\\
+  & t_i = \begin{cases}          \frac{t_{i - 1}}{2},               & \text{if $t_{i - 1}$ is even} \\\\
+         \left\lfloor\frac{t_{i - 1}}{2}\right\rfloor \oplus 926252, & \text{if $t_{i - 1}$ is odd}          \end{cases} \\\\
+         & \qquad \text{where $⌊x⌋$ is the floor function and $\oplus$ is the bitwise XOR operator.} \\\\ & b_i = (t_i\bmod 2^{11}) + 1. \end{align}$$
 
 Перші дві умови останньої послідовності: $b_1 = 289$ and $b_2 = 145$. Якщо б ми почали з $b_1$ і $b_2$ бобів у двох сусідніх мисках, то нам потрібно було б 3419100 кроків, щоб завершити гру.
 

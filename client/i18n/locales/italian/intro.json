@@ -554,7 +554,7 @@
         "intro": [
           "Node.js è un runtime JavaScript che permette agli sviluppatori di scrivere programmi backend (lato server) in JavaScript. Node.js viene fornito con una manciata di moduli incorporati — piccoli programmi indipendenti — che aiutano in questo. Alcuni dei moduli principali includono HTTP, che agisce come un server e File System, un modulo per leggere e modificare i file.",
           "Nell'ultimo gruppo di corsi hai imparato ad installare e gestire pacchetti da npm, che sono collezioni di moduli più piccoli. Questi pacchetti possono aiutarti a costruire applicazioni più grandi e complesse.",
-          "Express is a lightweight web application framework, and is one of the most popular packages on npm. Express makes it much easier to create a server and handle routing for your application, which handles things like directing people to the correct page when they visit a certain endpoint like <pre>/blog</pre>.",
+          "Express è un framework per applicazioni web leggero ed è uno dei pacchetti più popolari su npm. Express rende molto più facile creare un server e gestire l'instradamento (routing) per l'applicazione, che gestisce cose come dirigere le persone alla pagina corretta quando visitano un determinato endpoint come <pre>/blog</pre>.",
           "In questo corso, imparerai le basi di Node e Express, incluso come creare un server, servire file diversi, e gestire richieste diverse dal browser."
         ]
       },
@@ -783,6 +783,7 @@
     "viewing-upcoming-change": "Stai guardando ad una pagina in beta. ",
     "go-back-to-learn": "Torna alla versione stabile del curriculum.",
     "read-database-cert-article": "Per favore leggi questo post sul forum prima di procedere.",
+    "enable-cookies": "You must enable third-party cookies before starting.",
     "english-only": "I corsi in questa sezione sono disponibili solo in inglese. Siamo solo in grado di tradurre i titoli e le introduzioni in questo momento, non le lezioni stesse."
   }
 }

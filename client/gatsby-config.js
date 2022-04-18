@@ -6,7 +6,8 @@ const {
   localeChallengesRootDir
 } = require('./utils/build-challenges');
 
-const { clientLocale, curriculumLocale, homeLocation } = envData;
+const { clientLocale, curriculumLocale, homeLocation, sentryClientDSN } =
+  envData;
 
 const curriculumIntroRoot = path.resolve(__dirname, './src/pages');
 const pathPrefix =
@@ -24,6 +25,12 @@ module.exports = {
   },
   pathPrefix: pathPrefix,
   plugins: [
+    {
+      resolve: '@sentry/gatsby',
+      options: {
+        dsn: sentryClientDSN
+      }
+    },
     {
       resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
       options: {

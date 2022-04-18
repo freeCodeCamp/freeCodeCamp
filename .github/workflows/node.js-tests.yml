@@ -141,7 +141,6 @@ jobs:
       - name: Set Environment variables
         run: |
           cp sample.env .env
-          echo 'SHOW_UPCOMING_CHANGES=true' >> .env
           cat .env
 
       - name: Install Dependencies

@@ -42,23 +42,23 @@ Le solicitamos que planifique con anticipación y trabaje en las contribuciones 
 
 ### ¿Qué significan estas diferentes etiquetas que se etiquetan en los problemas?
 
-The code maintainers [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) issues and pull requests based on their priority, severity, and other factors. You can [find a complete glossary of their meanings here](https://github.com/freecodecamp/freecodecamp/labels).
+Los mantenedores de código [clasifican](https://en.wikipedia.org/wiki/Software_bug#Bug_management) problemas y pull requests basados en su prioridad, gravedad y otros factores. Puedes [encontrar un glosario completo de sus significados aquí](https://github.com/freecodecamp/freecodecamp/labels).
 
-### Where do I start if I want to work on an issue?
+### ¿Dónde comienzo si quiero trabajar en un problema?
 
-You should go through [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) or [**`first timers only`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) issues for a quick overview of what is available for you to work on.
+Deberías pasar por los temas [**`se busca ayuda`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) o [**`solo principiantes`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) para una rápida visión general de lo que está disponible para que trabajes.
 
 > [!TIP] Los temas de **`se busca ayuda`** están en marcha y no es necesario pedir permiso antes de trabajar en ellos. Sin embargo, temas con la etiqueta **`solo principiantes`** son temas especiales que están diseñados para personas que no han contribuido a la base de código de freeCodeCamp antes.
 
 ### Encontré un error tipográfico. ¿Debo informar de un problema antes de poder hacer un pull request?
 
-Para errores tipográficos y otros cambios de redacción, puedes abrir pull-requests directamente sin tener que crear un problema primero. Please be sure to mention details in the pull request description to help us understand and review your contribution – even if it's just a minor change.
+Para errores tipográficos y otros cambios de redacción, puedes abrir pull-requests directamente sin tener que crear un problema primero. Asegúrese de mencionar los detalles en la descripción del pull request para ayudarnos a comprender y revisar su contribución, incluso si es solo un cambio menor.
 
-Please do create an issue if you want to discuss bigger aspects of the codebase or curriculum.
+Por favor crea un reporte si deseas discutir aspectos más amplios del código base o currículo.
 
-### How can I get an issue assigned to me?
+### ¿Cómo puedo conseguir que me asignen un tema?
 
-We typically do not assign issues to anyone other than long-time contributors. Instead, we follow the below policy to be fair to everyone:
+Por lo general, no asignamos los temas a nadie más que a los colaboradores con mucha antigüedad. En su lugar, seguimos la siguiente política para ser justos con todos:
 
 1. Lo más probable es que fusionemos el primer pull request que aborde el tema o problema.
 2. En el caso de múltiples colaboradores abriendo un pull request para el mismo problema más o menos al mismo tiempo, daremos prioridad al pull request que aborde mejor la cuestión. Algunas de las cosas que consideramos:
@@ -69,37 +69,37 @@ We typically do not assign issues to anyone other than long-time contributors. I
    - ¿Has seguido la lista de verificación de pull request?
    - ¿Has dado a tu pull request un título significativo?
 
-### I am interested in being a moderator at freeCodeCamp. Where should I start?
+### Estoy interesado en ser moderador en freeCodeCamp. ¿Dónde debería empezar?
 
-Our community moderators are our heroes. Their voluntary contributions make freeCodeCamp a safe and welcoming community.
+Los moderadores de la comunidad son nuestros héroes. Sus contribuciones voluntarias hacen a freeCodeCamp una comunidad segura y acogedora.
 
-First and foremost, we would need you to be an active participant in the community, and live by our [code of conduct](https://www.freecodecamp.org/news/code-of-conduct/) (not just enforce it).
+En primer lugar, necesitamos que seas un participante activo en la  comunidad, y vivas nuestro [código de conducta](https://www.freecodecamp.org/news/code-of-conduct/) (No solo hacerlo cumplir).
 
-Here are some recommended paths for some of our platforms:
+Aquí hay algunas rutas para algunas de nuestras plataformas:
 
-- To be a **Discord/Chat** moderator, have an active presence in our chat and have positive engagements with others, while also learning and practicing how to deal with potential conflicts that may arise.
-- To be a **Forum** moderator, similar to a chat moderator, have an active presence and engage with other forum posters, supporting others in their learning journey, and even given feedback when asked. Take a look at [The Subforum Leader Handbook](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) for more information.
-- To be a **GitHub** moderator, help process GitHub issues that are brought up to see if they are valid and (ideally) try to propose solutions for these issues to be picked up by others (or yourself).
+- Para ser un moderador de **Discord/Chat**, hay que tener una presencia activa en nuestro chat y tener tratos positivos con los demás, mientras que también aprender y practicar cómo para hacer frente a los posibles conflictos que puedan surgir.
+- Para ser moderador del **Foro**, similar a un moderador de chat, debe de tener una presencia activa y participar en otras publicaciones del foro, apoyando a otros en su camino de aprendizaje, e incluso dar retroalimentación cuando se le pregunte. Echa un vistazo a [El manual del líder del subforo](https://forum.freecodecamp.org/t/the-subforum-leader-handbook/326326) para más información.
+- Para ser un moderador de **GitHub**, ayuda para procesar problemas de GitHub que son planteados para ver si son válidos e (idealmente) tratar de proponer soluciones para estos problemas que deben ser recogidos por otros (o por ti mismo).
 
-Altogether, be respectful to others. We are humans all around the world. With that in mind, please also consider using encouraging or supportive language and be mindful of cross-cultural communication.
+En total, sé respetuoso con los demás. Somos seres humanos en todo el mundo. Con esto en mente, por favor considera usar un lenguaje animado o de apoyo y ser consciente de la comunicación intercultural.
 
-If you practice the above **consistently for a while** and our fellow moderator members recommend you, a staff member will reach out and onboard you to the moderators' team. El trabajo de código abierto es voluntario, y nuestro tiempo es limitado. We acknowledge that this is probably true in your case as well. So we emphasize being **consistent** rather than engaging in the community 24/7.
+Si practicas lo anterior de forma consistente **durante un tiempo** y nuestros compañeros moderadores los recomiendan, un miembro del personal se pondrá en contacto contigo con el equipo de moderadores. El trabajo de código abierto es voluntario, y nuestro tiempo es limitado. Reconocemos que esto probablemente también sea cierto en su caso. Así que enfatizamos ser **consistente** en lugar de comprometerse en la comunidad 24/7.
 
-Take a look at our [Moderator Handbook](moderator-handbook.md) for a more exhaustive list of other responsibilities and expectations we have of our moderators.
+Echa un vistazo a nuestro [Manual de Moderadores](moderator-handbook.md) para una lista más exhaustiva de otras responsabilidades y expectativas que tenemos de nuestros moderadores.
 
 ### Estoy atascado en algo que no está incluido en esta documentación.
 
 **Siéntete libre de pedir ayuda en:**
 
-- The `Contributors` category of [our community forum](https://forum.freecodecamp.org/c/contributors).
-- The `#Contributors` channel on [our chat server](https://chat.freecodecamp.org/channel/contributors).
+- La categoria de `Contributors` de [nuestro foro de comunidad](https://forum.freecodecamp.org/c/contributors).
+- El canal de `#Contributors` en [nuestro servidor de chat](https://chat.freecodecamp.org/channel/contributors).
 
-We are excited to help you contribute to any of the topics that you would like to work on. If you ask us questions on the related issue threads, we will be glad to clarify. Be sure to search for your question before posting a new one.
+Estamos encantados de ayudarte a contribuir en cualquiera de los temas en los que quieras trabajar. Si nos hace preguntas sobre los issue threads, estaremos encantados de aclararlo. Asegúrate de buscar tu pregunta antes de publicar una nueva.
 
-Thanks in advance for being polite and patient. Remember – this community is run mainly by volunteers.
+Gracias de antemano por ser amable y paciente. Recuerda, esta comunidad es manejada principalmente por voluntarios.
 
 ### Asistencia adicional
 
-If you have queries about the stack, architecture of the codebase, translations, or anything else feel free to reach out to our staff team [on the forum](https://forum.freecodecamp.org/g/team).
+Si tiene preguntas sobre el stack, arquitectura de la base de código, traducciones, o cualquier otra cosa, no dudes en contactar con nuestro equipo de personal [en el foro](https://forum.freecodecamp.org/g/team).
 
-**You can email our developer staff at: `dev[at]freecodecamp.org`**
+**Puedes enviar un correo a nuestro grupo de desarrolladores en: `dev[at]freecodecamp.org`**

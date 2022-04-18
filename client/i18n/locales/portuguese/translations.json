@@ -68,8 +68,8 @@
     "ask-later": "Pergunte-me depois",
     "start-coding": "Comece a programar!",
     "go-to-settings": "Vá para as configurações para solicitar sua certificação",
-    "click-start-course": "Clique aqui para iniciar o curso",
-    "click-start-project": "Clique aqui para iniciar o projeto"
+    "click-start-course": "Iniciar o curso",
+    "click-start-project": "Iniciar o projeto"
   },
   "landing": {
     "big-heading-1": "Aprenda a programar — de graça.",
@@ -357,7 +357,7 @@
     "try-again": "Tente novamente.",
     "card-number": "Número do seu cartão:",
     "expiration": "Data de validade:",
-    "secure-donation": "Secure donation",
+    "secure-donation": "Doação segura",
     "faq": "Perguntas frequentes",
     "only-you": "Só você pode ver esta mensagem. Parabéns por ganhar este certificado. Não é uma tarefa fácil. Manter o freeCodeCamp também não é fácil. Nem é barato. Ajude-nos a ajudar você e muitas outras pessoas ao redor do mundo. Faça uma dedução de impostos doando para nossa organização sem fins lucrativos hoje.",
     "get-help": "Como posso obter ajuda com minhas doações?",
@@ -536,7 +536,8 @@
     "code-save-error": "Ocorreu um erro ao tentar salvar seu código.",
     "code-save-less": "Devagar! O código não foi salvo. Tente novamente em alguns segundos.",
     "challenge-save-too-big": "Não foi possível salvar seu código. Seu código tem {{user-size}} bytes. A capacidade é de, no máximo, {{max-size}} bytes. Diminua o tamanho do seu código e tente novamente ou peça assistência em https://forum.freecodecamp.org",
-    "challenge-submit-too-big": "Não foi possível enviar seu código. Seu código tem {{user-size}} bytes. É possível enviar, no máximo, {{max-size}} bytes. Diminua o tamanho do seu código e tente novamente ou peça assistência em https://forum.freecodecamp.org"
+    "challenge-submit-too-big": "Não foi possível enviar seu código. Seu código tem {{user-size}} bytes. É possível enviar, no máximo, {{max-size}} bytes. Diminua o tamanho do seu código e tente novamente ou peça assistência em https://forum.freecodecamp.org",
+    "invalid-update-flag": "Você está tentando acessar recursos proibidos. Solicite assistência em https://forum.freecodecamp.org se sua solicitação for válida."
   },
   "validation": {
     "max-characters": "Há um limite máximo de 288 caracteres, você tem {{charsLeft}} restante(s)",
