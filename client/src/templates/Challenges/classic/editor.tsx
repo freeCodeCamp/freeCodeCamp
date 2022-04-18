@@ -242,6 +242,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     noteIndex: 0,
     shouldPlay: store.get('fcc-sound') as boolean | undefined
   });
+  const attemptRef = useRef<{ attempts: number }>({ attempts: 0 });
 
   // since editorDidMount runs once with the initial props object, it keeps a
   // reference to *those* props. If we want it to use the latest props, we can
@@ -1105,7 +1106,8 @@ const Editor = (props: EditorProps): JSX.Element => {
           testStatus.innerHTML = `<p class="status"><span aria-hidden="true">&#9989;</span> Congratulations, your code passes. Submit your code to complete this step and move on to the next one. ${submitKeyboardInstructions}</p>`;
           setTestFeedbackHeight();
         }
-      } else if (challengeHasErrors() && testStatus) {
+      } else if (challengeHasErrors() && testStatus && testOutput) {
+        attemptRef.current.attempts++;
         const wordsArray = [
           'Try again.',
           'Keep trying.',
@@ -1120,9 +1122,11 @@ const Editor = (props: EditorProps): JSX.Element => {
         const outputJsx = (
           <>
             <span dangerouslySetInnerHTML={{ __html: output[1] }}></span>
-            <button className='btn-block' onClick={props.openHelpModal}>
-              {t('learn.editor-tabs.ask-help')}
-            </button>
+            {attemptRef.current.attempts >= props.tests.length && (
+              <button className='btn-block' onClick={props.openHelpModal}>
+                {t('learn.editor-tabs.ask-help')}
+              </button>
+            )}
           </>
         );
         ReactDOM.render(outputJsx, testOutput);
