@@ -9,7 +9,6 @@ interface GreenPassProps
 function GreenPass(props: GreenPassProps): JSX.Element {
   const { t } = useTranslation();
   const { hushScreenReaderText = false, ...rest } = props;
-  console.log('hushScreenReaderText = ', hushScreenReaderText);
   return (
     <>
       <svg
