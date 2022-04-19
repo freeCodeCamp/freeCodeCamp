@@ -29,7 +29,7 @@ require('@babel/register')({
 const {
   buildDOMChallenge,
   buildJSChallenge
-} = require('../../client/src/templates/Challenges/utils/build');
+} = require('@freecodecamp/client/src/templates/Challenges/utils/build');
 const {
   default: createWorker
 } = require('../../client/src/templates/Challenges/utils/worker-executor');
