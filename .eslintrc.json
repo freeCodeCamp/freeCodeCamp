@@ -46,7 +46,8 @@
           "./tsconfig.json",
           "./config/tsconfig.json",
           "./tools/ui-components/tsconfig.json",
-          "./utils/tsconfig.json"
+          "./utils/tsconfig.json",
+          "./web/tsconfig.json"
         ]
       },
       "extends": [
