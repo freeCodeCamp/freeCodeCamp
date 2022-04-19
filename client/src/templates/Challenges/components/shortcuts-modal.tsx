@@ -45,7 +45,6 @@ export function ShortcutsModal({
         closeButton={true}
       >
         <Modal.Title className='text-center'>
-          Keyboard shortcuts <br />
           {t('shortcuts.title')}
         </Modal.Title>
       </Modal.Header>
