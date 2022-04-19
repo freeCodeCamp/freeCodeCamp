@@ -286,6 +286,12 @@ export function putUpdateMyQuincyEmail(
   return put('/update-my-quincy-email', update);
 }
 
+export function putUpdateMyPortfolio(
+  update: Record<string, string>
+): Promise<void> {
+  return put('/update-my-portfolio', update);
+}
+
 export function putUserAcceptsTerms(quincyEmails: boolean): Promise<void> {
   return put('/update-privacy-terms', { quincyEmails });
 }

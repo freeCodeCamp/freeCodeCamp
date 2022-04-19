@@ -93,6 +93,15 @@ export const updateMyQuincyEmailError = createAction(
   types.updateMyQuincyEmailError
 );
 
+export const updateMyPortfolio = createAction(types.updateMyPortfolio);
+export const updateMyPortfolioComplete = createAction(
+  types.updateMyPortfolioComplete,
+  checkForSuccessPayload
+);
+export const updateMyPortfolioError = createAction(
+  types.updateMyPortfolioError
+);
+
 export const validateUsername = createAction(types.validateUsername);
 export const validateUsernameComplete = createAction(
   types.validateUsernameComplete

@@ -29,6 +29,7 @@ import { User } from '../redux/prop-types';
 import {
   submitNewAbout,
   updateMyHonesty,
+  updateMyPortfolio,
   updateMyQuincyEmail,
   updateUserFlag,
   verifyCert
@@ -76,7 +77,7 @@ const mapDispatchToProps = {
   toggleSoundMode: (sound: boolean) => updateUserFlag({ sound }),
   updateInternetSettings: updateUserFlag,
   updateIsHonest: updateMyHonesty,
-  updatePortfolio: updateUserFlag,
+  updatePortfolio: updateMyPortfolio,
   updateQuincyEmail: (sendQuincyEmail: boolean) =>
     updateMyQuincyEmail({ sendQuincyEmail }),
   verifyCert
