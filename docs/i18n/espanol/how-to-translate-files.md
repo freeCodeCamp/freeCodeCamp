@@ -169,32 +169,32 @@ Nota: De nuevo, el prefijo `new` y la etiqueta `{icon=icon-fast-forward}` deben 
 
 ---
 
-#### Before translation
+#### Antes de traducir
 
 ```renpy
 # layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy your work as a developer."
 layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy your work as a developer."
 ```
 
-#### After translation
+#### Después de traducir
 
 ```renpy
 # layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy your work as a developer."
 layla @ neutral "哈哈，[player_name]，你真有趣。我相信你一定会喜欢你的开发者工作的。"
 ```
 
-Note: `layla @ neutral` and `[player_name]` are left unchanged.
+Nota: `layla @ neutral` y `[player_name]` quedan sin cambios.
 
 ---
 
-#### Before translation
+#### Antes de traducir
 
 ```renpy
 # player "Maybe this is all a dream?" nointeract
 player "Maybe this is all a dream?" nointeract
 ```
 
-#### After translation
+#### Después de traducir
 
 ```renpy
 # player "Maybe this is all a dream?" nointeract
@@ -203,17 +203,17 @@ player "也许这都是一场梦？" nointeract
 
 ---
 
-### A Note on How Crowdin Segments a Sentence
+### Una nota sobre cómo Crowdin segmenta una oración
 
-Pay attention to how Crowdin segments a line of dialogue wrapped between opening and closing quotes `""`. When we are translating the dialogue, we need to make sure to retain the opening and closing quotes, even if the quotes appear in different segments.
+Presta atención a cómo Crowdin segmenta una línea de diálogo envuelta entre comillas de apertura y cierre `""`. Cuando traducimos el diálogo, tenemos que asegurarnos de mantener las cotizaciones de apertura y cierre, incluso si las comillas aparecen en diferentes segmentos.
 
-This is the line to be translated:
+Esta es la línea que hay que traducir:
 
 ```renpy
 player @ surprised "{b}Full-stack{/b}... What is that? I better take notes so I can learn more about it."
 ```
 
-Crowdin segments it into three parts like below:
+Crowdin lo segmenta en tres partes como a continuación:
 
 <img width="836" alt="Screen Shot 2022-01-23 at 10 36 43" src="https://user-images.githubusercontent.com/35674052/150693962-d3b091e5-2432-44d0-9d24-195ea7d7aeda.png" />
 
@@ -229,7 +229,7 @@ player @ surprised "{b}全栈{/b}
 ```renpy
 # original
 What is that?
-# translated, no quotes on either side
+# traducido, no hay comillas en ninguno de los lados.
 这是什么？
 ```
 
@@ -238,36 +238,36 @@ What is that?
 ```renpy
 # original
 I better take notes so I can learn more about it."
-# translated, keeping the closing quotes `"`
+# traducido, manteniendo las citas de cierre `"`
 我最好做笔记，这样我可以学习更多东西。"
 ```
 
-## Rate Translations
+## Calificar traducciones
 
-Crowdin allows you to rate the existing proposed translations. If you attempt to save a translation, you may see a message indicating that you cannot save a duplicate translation - this means another contributor has proposed that identical translation. If you agree with that translation, click the `+` button to "upvote" the translation.
+Crowdin te permite calificar las traducciones propuestas existentes. Si intentas guardar una traducción, es posible que veas un mensaje que indica que no puedes guardar una traducción duplicada, esto significa que otro contribuyente ha propuesto una traducción idéntica. Si estás de acuerdo con esa traducción, haz clic en el botón `+` para votar a favor de la traducción.
 
-If you see a translation that is inaccurate or does not provide the same clarity as the original string, click the `-` button to "downvote" the translation.
+Si ves una traducción que es inexacta o no proporciona la misma claridad que la cadena original, haz clic en el botón `-` para votar en contra de la traducción.
 
-Crowdin uses these votes to give a score to each proposed translation for a string, which helps the proofreading team determine which translation is the best fit for each string.
+Crowdin usa estos votos para dar una puntuación a cada traducción propuesta para una cadena, lo que ayuda al equipo de revisión a determinar qué traducción es la mejor para cada cadena.
 
-## Quality Assurance Checks
+## Comprobaciones de control de calidad
 
-We have enabled some quality assurance steps that will verify a translation is as accurate as possible - this helps our proofreaders review proposed translations.
+Hemos habilitado algunos pasos de control de calidad que verificarán que una traducción sea lo más precisa posible, esto ayuda a nuestros proofreaders a revisar las traducciones propuestas.
 
-When you attempt to save a translation, you may see a warning message appear with a notification regarding your proposed translation.
+Cuando intente guardar una traducción, puede que aparezca un mensaje de advertencia con una notificación con respecto a su traducción propuesta.
 
 ![Image - QA Warning Message](https://contribute.freecodecamp.org/images/crowdin/qa-message.png)
 
-This message appears when Crowdin's QA system has identified a potential error in the proposed translation. In this example, we have modified the text of a `<code>` tag and Crowdin has caught that.
+Este mensaje aparece cuando el sistema de calidad de Crowdin ha identificado un posible error en la traducción propuesta. En este ejemplo, hemos modificado el texto de una etiqueta `<code>` y Crowdin lo ha capturado.
 
 > [!WARNING] Tienes la opción de guardar una traducción a pesar de los errores. Si lo haces, al hacer clic en "Save Anyway (Guardar de todos modos)", también debes etiquetar a un miembro del equipo de revisión o encargado del proyecto y explicar por qué el mensaje de control de calidad debe ignorarse en este caso.
 
-## Translation Best Practices
+## Mejores prácticas de traducción
 
-Follow these guidelines to ensure our translations are as accurate as possible:
+Siga estas directrices para garantizar que nuestras traducciones sean lo más exactas posibles:
 
-- Do not translate the content within `<code>` tags. These tags indicate text that is found in code and should be left in English.
-- Do not add additional content. If you feel a challenge requires changes in the text content or additional information, you should propose the changes through a GitHub issue or a pull request that modifies the English file.
-- Do not change the order of content.
+- No traduzca el contenido con etiquetas de `<code>`. Estas etiquetas indican texto que se encuentra en código y que debe dejarse en inglés.
+- No agregues contenido adicional. Si sientes que un desafío requiere cambios en el contenido de texto o información adicional, debería proponer los cambios a través de un problema de GitHub o una pull request que modifique el archivo en inglés.
+- No cambiar el orden del contenido.
 
-If you have any questions, feel free to reach out to us in our [contributors chat room](https://chat.freecodecamp.org/channel/contributors) and we will be happy to assist you.
+Si tienes alguna pregunta, Siéntete libre de comunicarte con nosotros en nuestra [sala de chat de colaboradores](https://chat.freecodecamp.org/channel/contributors) y estaremos encantados de ayudarte.
