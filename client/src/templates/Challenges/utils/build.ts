@@ -1,19 +1,12 @@
 // the config files are created during the build, but not before linting
 // eslint-disable-next-line import/no-unresolved
-// @ts-ignore
 import frameRunnerData from '../../../../../config/client/frame-runner.json';
 // eslint-disable-next-line import/no-unresolved
-// @ts-ignore
 import testEvaluatorData from '../../../../../config/client/test-evaluator.json';
 import {challengeTypes} from '../../../../utils/challenge-types';
-import {cssToHtml, jsToHtml, concatHtml} from '../rechallenge/builders.js';
+import {concatHtml, cssToHtml, jsToHtml} from '../rechallenge/builders.js';
 import {getTransformers} from '../rechallenge/transformers';
-import {
-  createTestFramer,
-  runTestInTestFrame,
-  createMainPreviewFramer,
-  createProjectPreviewFramer
-} from './frame';
+import {createMainPreviewFramer, createProjectPreviewFramer, createTestFramer, runTestInTestFrame} from './frame';
 import createWorker from './worker-executor';
 
 interface File {
@@ -29,7 +22,7 @@ interface ChallengeDataType {
   sources: any;
   challengeType: any,
   challengeFiles: any,
-  required?: never[] | undefined;
+  required?: any[] | undefined;
   template?: string | undefined,
   url: any;
 }
@@ -54,13 +47,12 @@ const frameRunner = [
 
 const applyFunction: (fn: FnType) => File = (fn) =>
 
-// @ts-ignore
-  async function (file: file): Promise<any> {
+
+  async function (file: File) {
     try {
       if (file.error) {
         return file;
       }
-      // @ts-ignore
       const newFile = await fn.call(this, file);
       if (typeof newFile !== 'undefined') {
         return newFile;
@@ -72,12 +64,11 @@ const applyFunction: (fn: FnType) => File = (fn) =>
   };
 
 const composeFunctions = (...fns: FnType[]) =>
-  // @ts-ignore
-  fns.map(applyFunction).reduce((f: () => any, g: () => any) => x => f(x).then(g));
+  fns.map(applyFunction).reduce((f, g) => x => f(x).then(g));
 
 function buildSourceMap(challengeFiles: any[]) {
   // TODO: rename sources.index to sources.contents.
-  const source = challengeFiles.reduce(
+  return challengeFiles.reduce(
     (sources, challengeFile) => {
       sources.index += challengeFile.source || challengeFile.contents;
       sources.contents = sources.index;
@@ -87,7 +78,6 @@ function buildSourceMap(challengeFiles: any[]) {
     },
     {index: '', editableContents: '', original: {}}
   );
-  return source;
 }
 
 function checkFilesErrors(challengeFiles: any[]) {
@@ -169,12 +159,10 @@ async function getDOMTestRunner(buildData: any, {proxyLogger}: RunnerConfigType,
 }
 
 export function buildDOMChallenge(
-  // @ts-ignore
-  {challengeFiles, required = [], template = ''},
+  {challengeFiles, required = [], template = ''}: ChallengeDataType,
   {usesTestRunner} = {usesTestRunner: false}
 ) {
   const finalRequires = [...required];
-  // @ts-ignore
   if (usesTestRunner) finalRequires.push(...frameRunner);
 
   const loadEnzyme = challengeFiles.some(
