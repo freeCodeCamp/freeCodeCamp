@@ -86,7 +86,7 @@ function roundFloat(num, digits) {
   return Math.round(num * 10.0**digits) / (10.0**digits);
 }
 
-// Entrophy calculation for string with only 0 and 1
+// Entropy calculation for string with only 0 and 1
 function entropy(word) {
   function digitEntropy(count) {
     return count < 1 ? 0
