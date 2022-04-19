@@ -1,9 +1,9 @@
 import { render, fireEvent, screen } from '@testing-library/react';
 import React from 'react';
 
-import Form from './form';
+import Form, { FormProps } from './form';
 
-const defaultTestProps = {
+const defaultTestProps: FormProps = {
   buttonText: 'Submit',
   formFields: [
     { name: 'name', label: 'name Label' },
@@ -17,7 +17,7 @@ const defaultTestProps = {
     },
     required: ['website']
   },
-  submit: () => {}
+  submit: () => undefined
 };
 
 test('should render', () => {
@@ -77,12 +77,16 @@ test('should submit', () => {
 
   fireEvent.click(button);
   expect(submit).toHaveBeenCalledTimes(1);
-  expect(submit.mock.calls[0][0].values).toEqual({ website: websiteValue });
+  expect((submit.mock.calls[0] as unknown[])[0]).toEqual(
+    expect.objectContaining({ values: { website: websiteValue } })
+  );
 
   fireEvent.change(websiteInput, { target: { value: `${websiteValue}///` } });
   expect(websiteInput).toHaveValue(`${websiteValue}///`);
 
   fireEvent.click(button);
   expect(submit).toHaveBeenCalledTimes(2);
-  expect(submit.mock.calls[1][0].values).toEqual({ website: websiteValue });
+  expect((submit.mock.calls[1] as unknown[])[0]).toEqual(
+    expect.objectContaining({ values: { website: websiteValue } })
+  );
 });
