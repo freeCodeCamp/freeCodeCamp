@@ -1,3 +1,7 @@
+// Silence the `jest-dom/prefer-enabled-disabled` rule as the rule looks for the `disabled` attribute
+// while the Button component doesn't use it.
+/* eslint-disable jest-dom/prefer-enabled-disabled */
+
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
@@ -39,5 +43,32 @@ describe('Button', () => {
     userEvent.click(button);
 
     expect(onClick).toHaveBeenCalledTimes(1);
+  });
+
+  it('should reflect the disabled state using the aria-disabled attribute', () => {
+    render(<Button disabled>Hello world</Button>);
+
+    const button = screen.getByRole('button', { name: /hello world/i });
+
+    expect(button).toHaveAttribute('aria-disabled', 'true');
+
+    // Ensure that the `disabled` attribute is not used.
+    expect(button).not.toHaveAttribute('disabled', 'true');
+  });
+
+  it('should not trigger the onClick prop if the button is disabled', () => {
+    const onClick = jest.fn();
+
+    render(
+      <Button disabled onClick={onClick}>
+        Hello world
+      </Button>
+    );
+
+    const button = screen.getByRole('button', { name: /hello world/i });
+
+    userEvent.click(button);
+
+    expect(onClick).not.toBeCalled();
   });
 });
