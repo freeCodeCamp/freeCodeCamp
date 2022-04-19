@@ -638,3 +638,9 @@ blockquote .small {
 #search::placeholder {
   color: var(--secondary-color);
 }
+
+/* WCAG fix */
+.sr-only {
+  color: white;
+  background-color: black;
+}
