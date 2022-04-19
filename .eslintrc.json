@@ -117,6 +117,10 @@
         "cy": true,
         "Cypress": true
       }
+    },
+    {
+      "files": ["web/**/*.tsx"],
+      "extends": ["plugin:react/jsx-runtime"]
     }
   ]
 }
