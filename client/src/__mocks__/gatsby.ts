@@ -1,3 +1,4 @@
+// No changes necessary for TS support
 /* eslint-disable no-unused-vars */
 const React = require('react');
 
