@@ -40,7 +40,7 @@ assert(Array.isArray(fibWord(5)));
 assert.deepEqual(fibWord(5), words5);
 ```
 
-`fibWord(7)` should return `[{ N:1, Length:1, Entropy:0, Word:"1" },{ N:2, Length:1, Entropy:0, Word:"0" },{ N:3, Length:2, Entropy:1, Word:"01" },{ N:4, Length:3, Entropy:0.91829583, Word:"010" },{ N:5, Length:5, Entropy:0.97095059, Word:"01001" }, { N:6, Length:8, Entrophy:0.954434, Word:'01001010' }, { N:7, Length:13, Entrophy:0.9612366, Word:'0100101001001' }]`.
+`fibWord(7)` should return `[{ N:1, Length:1, Entropy:0, Word:"1" },{ N:2, Length:1, Entropy:0, Word:"0" },{ N:3, Length:2, Entropy:1, Word:"01" },{ N:4, Length:3, Entropy:0.91829583, Word:"010" },{ N:5, Length:5, Entropy:0.97095059, Word:"01001" }, { N:6, Length:8, Entropy:0.954434, Word:'01001010' }, { N:7, Length:13, Entropy:0.9612366, Word:'0100101001001' }]`.
 
 ```js
 assert.deepEqual(fibWord(7), words7);
@@ -52,21 +52,21 @@ assert.deepEqual(fibWord(7), words7);
 
 ```js
 const words5 = [
-  { N: 1, Length: 1, Entrophy: 0, Word: '1' },
-  { N: 2, Length: 1, Entrophy: 0, Word: '0' },
-  { N: 3, Length: 2, Entrophy: 1, Word: '01' },
-  { N: 4, Length: 3, Entrophy: 0.91829583, Word: '010' },
-  { N: 5, Length: 5, Entrophy: 0.97095059, Word: '01001' }
+  { N: 1, Length: 1, Entropy: 0, Word: '1' },
+  { N: 2, Length: 1, Entropy: 0, Word: '0' },
+  { N: 3, Length: 2, Entropy: 1, Word: '01' },
+  { N: 4, Length: 3, Entropy: 0.91829583, Word: '010' },
+  { N: 5, Length: 5, Entropy: 0.97095059, Word: '01001' }
 ];
 
 const words7 = [
-  { N: 1, Length: 1, Entrophy: 0, Word: '1' },
-  { N: 2, Length: 1, Entrophy: 0, Word: '0' },
-  { N: 3, Length: 2, Entrophy: 1, Word: '01' },
-  { N: 4, Length: 3, Entrophy: 0.91829583, Word: '010' },
-  { N: 5, Length: 5, Entrophy: 0.97095059, Word: '01001' },
-  { N: 6, Length: 8, Entrophy: 0.954434, Word: '01001010' },
-  { N: 7, Length: 13, Entrophy: 0.9612366, Word: '0100101001001' }
+  { N: 1, Length: 1, Entropy: 0, Word: '1' },
+  { N: 2, Length: 1, Entropy: 0, Word: '0' },
+  { N: 3, Length: 2, Entropy: 1, Word: '01' },
+  { N: 4, Length: 3, Entropy: 0.91829583, Word: '010' },
+  { N: 5, Length: 5, Entropy: 0.97095059, Word: '01001' },
+  { N: 6, Length: 8, Entropy: 0.954434, Word: '01001010' },
+  { N: 7, Length: 13, Entropy: 0.9612366, Word: '0100101001001' }
 ];
 ```
 
