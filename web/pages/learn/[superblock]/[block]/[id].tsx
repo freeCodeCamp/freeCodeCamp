@@ -16,15 +16,14 @@ export default function Challenge({ rwd, js }: Props) {
 
   if (!superblock || !block || !id) return null;
   if (typeof block !== 'string') return null;
-  if (!rwd || !js) return null;
 
-  if (superblock === 'responsive-web-design') {
+  if (rwd && superblock === 'responsive-web-design') {
     const challenge = rwd[block].challenges.filter(
       (c: { dashedName: string }) => c.dashedName == id
     )[0].description;
 
     return <div dangerouslySetInnerHTML={{ __html: challenge }} />;
-  } else if (superblock === 'javascript-algorithms-and-data-structures') {
+  } else if (js && superblock === 'javascript-algorithms-and-data-structures') {
     const challenge = js[block].challenges.filter(
       (c: { dashedName: string }) => c.dashedName == id
     )[0].description;
@@ -39,7 +38,7 @@ export default function Challenge({ rwd, js }: Props) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const rwd = await fetch('http://localhost:3000/responsive-web-design');
   const js = await fetch(
     'http://localhost:3000/javascript-algorithms-and-data-structures'
@@ -49,7 +48,15 @@ export const getStaticProps: GetStaticProps = async () => {
   const jsBlocks = ((await js.json()) as { blocks: Record<string, unknown> })
     .blocks;
 
-  return { props: { rwd: rwdBlocks, js: jsBlocks }, revalidate: 5 };
+  if (params?.superblock === 'responsive-web-design') {
+    return { props: { rwd: rwdBlocks }, revalidate: 5 };
+  } else if (
+    params?.superblock === 'javascript-algorithms-and-data-structures'
+  ) {
+    return { props: { js: jsBlocks }, revalidate: 5 };
+  } else {
+    return { props: {}, revalidate: 5 };
+  }
 };
 
 export const getStaticPaths: GetStaticPaths = () => ({
