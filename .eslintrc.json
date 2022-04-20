@@ -47,7 +47,8 @@
           "./config/tsconfig.json",
           "./tools/ui-components/tsconfig.json",
           "./utils/tsconfig.json",
-          "./web/tsconfig.json"
+          "./web/tsconfig.json",
+          "./curriculum-server/tsconfig.json"
         ]
       },
       "extends": [

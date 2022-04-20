@@ -24,5 +24,8 @@
   },
   "dependencies": {
     "json-server": "^0.17.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.3"
   }
 }
