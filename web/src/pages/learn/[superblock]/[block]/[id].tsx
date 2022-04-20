@@ -7,9 +7,10 @@ import { useRouter } from 'next/router';
 
 import { getCurriculum } from '../../../../data-fetching/get-curriculum';
 
+type Block = Record<string, any>;
 interface Props {
-  rwd?: Record<string, any>;
-  js?: Record<string, any>;
+  rwd?: Block;
+  js?: Block;
 }
 
 export default function Challenge({ rwd, js }: Props) {
@@ -20,17 +21,9 @@ export default function Challenge({ rwd, js }: Props) {
   if (typeof block !== 'string') return null;
 
   if (rwd && superblock === 'responsive-web-design') {
-    const challenge = rwd[block].challenges.filter(
-      (c: { dashedName: string }) => c.dashedName == id
-    )[0].description;
-
-    return <div dangerouslySetInnerHTML={{ __html: challenge }} />;
+    return <Description block={rwd} name={block} dashedName={id} />;
   } else if (js && superblock === 'javascript-algorithms-and-data-structures') {
-    const challenge = js[block].challenges.filter(
-      (c: { dashedName: string }) => c.dashedName == id
-    )[0].description;
-
-    return <div dangerouslySetInnerHTML={{ __html: challenge }} />;
+    return <Description block={js} name={block} dashedName={id} />;
   }
   return (
     <div>
@@ -38,6 +31,21 @@ export default function Challenge({ rwd, js }: Props) {
       <ul>{js && Object.keys(js).map(name => <li key={name}>{name}</li>)}</ul>
     </div>
   );
+}
+
+interface DescProps {
+  block: Block;
+  name: string;
+  dashedName: string | string[];
+}
+
+function Description({ block, name, dashedName }: DescProps) {
+  const challengeId = block[name].challenges.findIndex(
+    (c: { dashedName: string }) => c.dashedName == dashedName
+  );
+  const challenge = block[name].challenges[challengeId];
+
+  return <div dangerouslySetInnerHTML={{ __html: challenge.description }} />;
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
