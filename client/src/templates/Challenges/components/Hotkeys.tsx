@@ -10,7 +10,8 @@ import {
   setEditorFocusability,
   challengeFilesSelector,
   submitChallenge,
-  challengeTestsSelector
+  challengeTestsSelector,
+  openModal
 } from '../redux';
 import './hotkeys.css';
 
@@ -25,7 +26,11 @@ const mapStateToProps = createSelector(
   })
 );
 
-const mapDispatchToProps = { setEditorFocusability, submitChallenge };
+const mapDispatchToProps = {
+  setEditorFocusability,
+  submitChallenge,
+  openShortcutsModal: () => openModal('shortcuts')
+};
 
 const keyMap = {
   navigationMode: 'escape',
@@ -33,7 +38,8 @@ const keyMap = {
   focusEditor: 'e',
   focusInstructionsPanel: 'r',
   navigatePrev: ['p'],
-  navigateNext: ['n']
+  navigateNext: ['n'],
+  showShortcuts: 'shift+/'
 };
 
 interface HotkeysProps {
@@ -50,6 +56,7 @@ interface HotkeysProps {
   setEditorFocusability: (arg0: boolean) => void;
   tests: Test[];
   usesMultifileEditor?: boolean;
+  openShortcutsModal: () => void;
 }
 
 function Hotkeys({
@@ -64,7 +71,8 @@ function Hotkeys({
   setEditorFocusability,
   submitChallenge,
   tests,
-  usesMultifileEditor
+  usesMultifileEditor,
+  openShortcutsModal
 }: HotkeysProps): JSX.Element {
   const handlers = {
     executeChallenge: (e: React.KeyboardEvent<HTMLButtonElement>) => {
@@ -105,6 +113,11 @@ function Hotkeys({
     },
     navigateNext: () => {
       if (!canFocusEditor) void navigate(nextChallengePath);
+    },
+    showShortcuts: (e: React.KeyboardEvent) => {
+      if (!canFocusEditor && e.shiftKey && e.key === '?') {
+        openShortcutsModal();
+      }
     }
   };
   // GlobalHotKeys is always mounted and tracks all keypresses. Without it,
