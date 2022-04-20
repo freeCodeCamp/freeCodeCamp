@@ -45,7 +45,6 @@ export function ShortcutsModal({
       </Modal.Header>
       <Modal.Body className='shortcuts-modal-body'>
         <table>
-          <caption>{t('shortcuts.table-caption')}</caption>
           <thead>
             <tr>
               <th scope='col'>{t('shortcuts.table-header-action')}</th>
