@@ -3,7 +3,6 @@
 import React from 'react'
 const gatsby = jest.requireActual('gatsby');
 
-// @ts-ignore
 import envData from '../../../config/env.json';
 
 const { clientLocale } = envData;
