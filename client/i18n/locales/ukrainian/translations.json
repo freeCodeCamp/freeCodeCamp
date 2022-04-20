@@ -447,18 +447,6 @@
     "info": "Інформація",
     "spacer": "Роздільник",
     "toggle": "Перемкнути галочку",
-    "responsive-design": "Значок ноутбука та мобільного телефону",
-    "javascript": "Значок JavaScript",
-    "react": "Значок React",
-    "d3": "D3 значок",
-    "api": "Стек серверів",
-    "clipboard": "Буфер обміну з галочкою",
-    "python": "Python значок",
-    "analytics": "Гістограма і лінійний графік",
-    "shield": "Щит з галочкою",
-    "tensorflow": "Tensorflow значок",
-    "database": "Значок бази даних",
-    "algorithm": "Розгалужені вузли",
     "magnifier": "лупа"
   },
   "aria": {
