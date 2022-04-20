@@ -1,10 +1,10 @@
-// No changes necessary for TS support
-/* eslint-disable no-unused-vars */
-const React = require('react');
 
+/* eslint-disable no-unused-vars */
+import React from 'react'
 const gatsby = jest.requireActual('gatsby');
 
-const envData = require('../../../config/env.json');
+// @ts-ignore
+import envData from '../../../config/env.json';
 
 const { clientLocale } = envData;
 
