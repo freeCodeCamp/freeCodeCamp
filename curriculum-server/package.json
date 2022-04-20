@@ -19,13 +19,15 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "none",
   "scripts": {
-    "dev": "json-server --watch ../config/curriculum.json",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "json-server --watch ./data/curriculum.json",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "source-curriculum": "ts-node source-curriculum.ts"
   },
   "dependencies": {
     "json-server": "^0.17.0"
   },
   "devDependencies": {
+    "ts-node": "^10.7.0",
     "typescript": "^4.6.3"
   }
 }
