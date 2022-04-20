@@ -447,18 +447,6 @@
     "info": "Informazioni introduttive",
     "spacer": "Distanziatore",
     "toggle": "Attiva/Disattiva segno di spunta",
-    "responsive-design": "Icona portatile e telefono cellulare",
-    "javascript": "Icona JavaScript",
-    "react": "Icona React",
-    "d3": "Icona D3",
-    "api": "Una pila di server",
-    "clipboard": "Una clipboard con un segno di spunta",
-    "python": "Icona Python",
-    "analytics": "Un grafico a barre e un grafico a linea",
-    "shield": "Uno scudo con un segno di spunta",
-    "tensorflow": "Icona di Tensorflow",
-    "database": "Icona del database",
-    "algorithm": "Nodi con rami",
     "magnifier": "lente d'ingrandimento"
   },
   "aria": {
