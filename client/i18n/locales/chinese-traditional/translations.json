@@ -447,18 +447,6 @@
     "info": "介紹信息",
     "spacer": "間隔",
     "toggle": "切換選中標記",
-    "responsive-design": "筆記本和手機圖標",
-    "javascript": "JavaScript 圖標",
-    "react": "React 圖標",
-    "d3": "D3 圖標",
-    "api": "服務器",
-    "clipboard": "帶有複選標記的剪貼板",
-    "python": "Python 圖標",
-    "analytics": "條形圖和折線圖",
-    "shield": "帶有複選標記的盾牌",
-    "tensorflow": "Tensorflow 圖標",
-    "database": "數據庫圖標",
-    "algorithm": "分支節點",
     "magnifier": "放大鏡"
   },
   "aria": {

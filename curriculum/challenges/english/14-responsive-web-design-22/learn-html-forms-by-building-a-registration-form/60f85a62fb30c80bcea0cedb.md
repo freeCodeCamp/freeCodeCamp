@@ -46,7 +46,7 @@ assert.equal(document.querySelectorAll('fieldset:nth-child(2) input[type="radio"
   <body>
     <h1>Registration Form</h1>
     <p>Please fill out this form with the required information</p>
-    <form action='https://fcc-registration-form.com'>
+    <form action='https://register-demo.freecodecamp.org'>
       <fieldset>
         <label>Enter Your First Name: <input type="text" required /></label>
         <label>Enter Your Last Name: <input type="text" required /></label>

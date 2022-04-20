@@ -447,18 +447,6 @@
     "info": "導入情報",
     "spacer": "スペーサー",
     "toggle": "トグルチェックマーク",
-    "responsive-design": "ラップトップと携帯電話のアイコン",
-    "javascript": "JavaScript のアイコン",
-    "react": "React のアイコン",
-    "d3": "D3 のアイコン",
-    "api": "積み重ねられたサーバー",
-    "clipboard": "チェックマークのついたクリップボード",
-    "python": "Python のアイコン",
-    "analytics": "棒グラフと折れ線グラフ",
-    "shield": "チェックマークのついた盾",
-    "tensorflow": "TensorFlow のアイコン",
-    "database": "データベースのアイコン",
-    "algorithm": "分岐しているノード",
     "magnifier": "虫眼鏡"
   },
   "aria": {
