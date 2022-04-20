@@ -71,6 +71,7 @@
     "format:prettier": "prettier --write .",
     "hooks:install": "node node_modules/husky/husky.js install",
     "hooks:uninstall": "node node_modules/husky/husky.js uninstall",
+    "prelint": "npm run -w=client predevelop",
     "lint": "npm-run-all create:* -p lint:*",
     "lint:challenges": "cd ./curriculum && npm run lint",
     "lint:js": "eslint --max-warnings 0 .",
