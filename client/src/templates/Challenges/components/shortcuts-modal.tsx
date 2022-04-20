@@ -83,6 +83,7 @@ export function ShortcutsModal({
           bsSize='sm'
           bsStyle='primary'
           onClick={closeShortcutsModal}
+          autofocus
         >
           {t('buttons.close')}
         </Button>
