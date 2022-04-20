@@ -5,6 +5,8 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 
+import { getCurriculum } from '../../../../data-fetching/get-curriculum';
+
 interface Props {
   rwd?: Record<string, any>;
   js?: Record<string, any>;
@@ -39,14 +41,7 @@ export default function Challenge({ rwd, js }: Props) {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const rwd = await fetch('http://localhost:3000/responsive-web-design');
-  const js = await fetch(
-    'http://localhost:3000/javascript-algorithms-and-data-structures'
-  );
-  const rwdBlocks = ((await rwd.json()) as { blocks: Record<string, unknown> })
-    .blocks;
-  const jsBlocks = ((await js.json()) as { blocks: Record<string, unknown> })
-    .blocks;
+  const { rwdBlocks, jsBlocks } = await getCurriculum();
 
   if (params?.superblock === 'responsive-web-design') {
     return { props: { rwd: rwdBlocks }, revalidate: 5 };
