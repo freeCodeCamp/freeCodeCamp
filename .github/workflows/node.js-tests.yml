@@ -117,9 +117,54 @@ jobs:
       - name: Run Tests
         run: npm test
 
+  test-curriculum-builds:
+    name: Build Localized Curricula
+    needs: lint
+    runs-on: ubuntu-20.04
+
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [16.x]
+        locale:
+          [
+            'espanol',
+            'chinese',
+            'chinese-traditional',
+            'italian',
+            'portuguese',
+            'ukrainian',
+            'japanese'
+          ]
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+
+      - name: Set Environment variables
+        run: |
+          cp sample.env .env
+          cat .env
+
+      - name: Install Dependencies
+        env:
+          CURRICULUM_LOCALE: ${{ matrix.locale }}
+          CLIENT_LOCALE: ${{ matrix.locale }}
+        run: |
+          echo npm version $(npm -v)
+          npm ci
+          npm run create:config
+          npm run build:curriculum
+
   test-localization:
     name: Localize
-    needs: lint
+    needs: [lint, test-curriculum-builds]
     runs-on: ubuntu-20.04
 
     strategy:
