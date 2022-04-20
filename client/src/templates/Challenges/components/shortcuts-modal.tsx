@@ -49,32 +49,41 @@ export function ShortcutsModal({
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className='shortcuts-modal-body'>
-        <ul>
-          <li>
-            <h4>Navigation Mode</h4>
-            <span>ESC</span>
-          </li>
-          <li>
-            <h4>Execute Challenge</h4>
-            <span>CTRL/Command + Enter</span>
-          </li>
-          <li>
-            <h4>Focus Editor</h4>
-            <span>e</span>
-          </li>
-          <li>
-            <h4>Focus Instructions Panel</h4>
-            <span>r</span>
-          </li>
-          <li>
-            <h4>Navigate Previous</h4>
-            <span>p</span>
-          </li>
-          <li>
-            <h4>Navigate Next</h4>
-            <span>n</span>
-          </li>
-        </ul>
+        <table>
+          <caption>{t('shortcuts.table-caption')}</caption>
+          <thead>
+            <tr>
+              <th scope='col'>{t('shortcuts.table-header-action')}</th>
+              <th scope='col'>{t('shortcuts.table-header-key')}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{t('shortcuts.navigation-mode')}</td>
+              <td>ESC</td>
+            </tr>
+            <tr>
+              <td>{t('shortcuts.execute-challenge')}</td>
+              <td>CTRL/Command + Enter</td>
+            </tr>
+            <tr>
+              <td>{t('shortcuts.focus-editor')}</td>
+              <td>e</td>
+            </tr>
+            <tr>
+              <td>{t('shortcuts.focus-instructions-panel')}</td>
+              <td>r</td>
+            </tr>
+            <tr>
+              <td>{t('shortcuts.navigate-previous')}</td>
+              <td>p</td>
+            </tr>
+            <tr>
+              <td>{t('shortcuts.navigate-next')}</td>
+              <td>n</td>
+            </tr>
+          </tbody>
+        </table>
         <Button
           block={true}
           bsSize='sm'
