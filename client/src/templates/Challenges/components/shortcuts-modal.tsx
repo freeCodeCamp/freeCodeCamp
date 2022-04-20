@@ -4,14 +4,12 @@ import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 
-import { executeGA } from '../../../redux';
 import { closeModal, isShortcutsModalOpenSelector } from '../redux';
 
 import './shortcuts-modal.css';
 
 interface ShortcutsModalProps {
   closeShortcutsModal: () => void;
-  executeGA: (attributes: { type: string; data: string }) => void;
   isOpen?: boolean;
   t: (text: string) => string;
 }
@@ -21,19 +19,15 @@ const mapStateToProps = (state: unknown) => ({
 });
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
-    { executeGA, closeShortcutsModal: () => closeModal('shortcuts') },
+    { closeShortcutsModal: () => closeModal('shortcuts') },
     dispatch
   );
 
 export function ShortcutsModal({
   closeShortcutsModal,
-  executeGA,
   isOpen,
   t
 }: ShortcutsModalProps): JSX.Element {
-  if (isOpen) {
-    executeGA({ type: 'modal', data: '/shortcuts-modal' });
-  }
   return (
     <Modal
       dialogClassName='shortcuts-modal'
