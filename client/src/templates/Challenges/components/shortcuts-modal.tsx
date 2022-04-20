@@ -39,6 +39,7 @@ export function ShortcutsModal({
       dialogClassName='shortcuts-modal'
       onHide={closeShortcutsModal}
       show={isOpen}
+      aria-labelledby='Shortcuts modal'
     >
       <Modal.Header
         className='shortcuts-modal-header fcc-modal'
