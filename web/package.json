@@ -20,7 +20,7 @@
   "main": "none",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "next dev"
+    "dev": "next dev --port 8000"
   },
   "dependencies": {
     "next": "^12.1.5",
