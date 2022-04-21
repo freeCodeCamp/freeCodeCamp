@@ -15,7 +15,7 @@ dashedName: understanding-case-sensitivity-in-variables
 
 **最佳實踐**
 
-使用駝峯命名法（<dfn>camelCase</dfn>）來書寫一個 Javascript 變量。 在駝峯命名法（<dfn>camelCase</dfn>）中，變量名的第一個單詞的首寫字母小寫，後面的單詞的第一個字母大寫
+使用駝峯命名法（<dfn>camelCase</dfn>）來書寫一個 JavaScript 變量。 在駝峯命名法（<dfn>camelCase</dfn>）中，變量名的第一個單詞的首寫字母小寫，後面的單詞的第一個字母大寫
 
 **示例：**
 

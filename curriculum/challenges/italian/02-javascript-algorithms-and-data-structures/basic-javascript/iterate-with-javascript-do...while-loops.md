@@ -1,6 +1,6 @@
 ---
 id: 5a2efd662fb457916e1fe604
-title: Iterare con i cicli Do...While in Javascript
+title: Iterare con i cicli Do...While in JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cDqWGcp'
 forumTopicId: 301172

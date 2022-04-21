@@ -1,6 +1,6 @@
 ---
 id: cf1111c1c11feddfaeb5bdef
-title: Iterare con i cicli For in Javascript
+title: Iterare con i cicli For in JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9yNVCe'
 forumTopicId: 18219

@@ -8,7 +8,7 @@ dashedName: build-a-voting-app
 
 # --description--
 
-Створіть повний пакет Javascript додатку, який функціонально схожий до даного:[ https://voting-app.freecodecamp.rocks ](https://voting-app.freecodecamp.rocks/). Для виконання проєкту користуйтеся конструктором сайтів на ваш власний вибір.
+Створіть повний пакет JavaScript додатку, який функціонально схожий до даного:[ https://voting-app.freecodecamp.rocks ](https://voting-app.freecodecamp.rocks/). Для виконання проєкту користуйтеся конструктором сайтів на ваш власний вибір.
 
 Тут наведено конкретні історії користувача, які варто імплементувати в даний проєкт:
 

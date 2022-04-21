@@ -1,6 +1,6 @@
 ---
 id: 587d824a367417b2b2512c46
-title: Imparare come funzionano le asserzioni Javascript
+title: Imparare come funzionano le asserzioni JavaScript
 challengeType: 2
 forumTopicId: 301589
 dashedName: learn-how-javascript-assertions-work
