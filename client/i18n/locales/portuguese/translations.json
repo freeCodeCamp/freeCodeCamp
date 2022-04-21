@@ -447,18 +447,6 @@
     "info": "Informações introdutórias",
     "spacer": "Espaçador",
     "toggle": "Alternar marcação",
-    "responsive-design": "Ícone de celular e notebook",
-    "javascript": "Ícone do JavaScript",
-    "react": "Ícone do React",
-    "d3": "Ícone do D3",
-    "api": "Uma pilha de servidores",
-    "clipboard": "Uma prancheta com marca de verificação",
-    "python": "Ícone do Python",
-    "analytics": "Um gráfico de barras e um gráfico de linhas",
-    "shield": "Um escudo com marca de verificação",
-    "tensorflow": "Ícone do Tensorflow",
-    "database": "Ícone do banco de dados",
-    "algorithm": "Nós ramificados",
     "magnifier": "lupa"
   },
   "aria": {
