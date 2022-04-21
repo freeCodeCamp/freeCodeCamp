@@ -241,10 +241,10 @@ export class Block extends Component<BlockProps> {
 
     const courseCompletionStatus = () => {
       if (completedCount === 0) {
-        return 'not started';
+        return t('learn.not-started');
       }
       if (completedCount === challengesWithCompleted.length) {
-        return 'completed';
+        return t('learn.completed');
       }
       return `${completedCount} of ${challengesWithCompleted.length} steps completed`;
     };
