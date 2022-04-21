@@ -11,8 +11,6 @@ import {
   stubTrue
 } from 'lodash-es';
 
-// the config files are created during the build, but not before linting
-// eslint-disable-next-line import/no-unresolved
 import sassData from '../../../../../config/client/sass-compile.json';
 import {
   transformContents,

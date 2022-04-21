@@ -15,13 +15,13 @@ Puedes encontrar la longitud de un valor de cadena (`String`) escribiendo `.leng
 console.log("Alan Peter".length);
 ```
 
-El valor `10` se mostrará en la consola.
+El valor `10` se mostrará en la consola. Toma nota que el carácter espacial entre "Alan" y "Peter" también se cuenta.
 
 Por ejemplo, si creamos una variable `const firstName = "Ada"`, podríamos averiguar la longitud de la cadena `Ada` usando la propiedad `firstName.length`.
 
 # --instructions--
 
-Usa la propiedad `.length` para contar el número de caracteres en la variable `lastName` y asignarla a `lastNameLength`.
+Utilice la propiedad `.length` para establecer `lastNameLength` al número de caracteres en `lastName`.
 
 # --hints--
 

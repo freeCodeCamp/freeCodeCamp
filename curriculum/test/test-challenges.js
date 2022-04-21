@@ -317,13 +317,13 @@ function populateTestsForLang({ lang, challenges, meta }) {
           // Note: the title in meta.json are purely for human readability and
           // do not include translations, so we do not validate against them.
           it('Matches an ID in meta.json', function () {
-            const index = meta[dashedBlockName].challengeOrder.findIndex(
+            const index = meta[dashedBlockName]?.challengeOrder?.findIndex(
               arr => arr[0] === challenge.id
             );
 
             if (index < 0) {
               throw new AssertionError(
-                `Cannot find ID "${challenge.id}" in meta.json file`
+                `Cannot find ID "${challenge.id}" in meta.json file for block "${dashedBlockName}"`
               );
             }
           });
@@ -370,11 +370,14 @@ function populateTestsForLang({ lang, challenges, meta }) {
             //   currently have the text of a comment elsewhere. If that happens
             //   we can handle that challenge separately.
             TRANSLATABLE_COMMENTS.forEach(comment => {
+              const errorText = `English comment '${comment}' should be replaced with its translation`;
               challenge.challengeFiles.forEach(challengeFile => {
                 if (challengeFile.contents.includes(comment))
-                  throw Error(
-                    `English comment '${comment}' should be replaced with its translation`
-                  );
+                  if (process.env.SHOW_UPCOMING_CHANGES == 'true') {
+                    console.warn(errorText);
+                  } else {
+                    throw Error(errorText);
+                  }
               });
             });
 
@@ -414,7 +417,10 @@ function populateTestsForLang({ lang, challenges, meta }) {
               if (isEmpty(challenge.__commentCounts) && isEmpty(commentMap))
                 return;
 
-              if (!isEqual(commentMap, challenge.__commentCounts))
+              if (
+                process.env.SHOW_NEW_CURRICULUM !== 'true' &&
+                !isEqual(commentMap, challenge.__commentCounts)
+              )
                 throw Error(`Mismatch in ${challenge.title}. Replaced comments:
 ${inspect(challenge.__commentCounts)}
 Comments in translated text:

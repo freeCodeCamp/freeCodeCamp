@@ -109,7 +109,6 @@ export const auditedCerts = {
     SuperBlocks.DataAnalysisPy,
     SuperBlocks.InfoSec,
     SuperBlocks.MachineLearningPy,
-    SuperBlocks.CodingInterviewPrep,
     SuperBlocks.RelationalDb
   ],
   japanese: [

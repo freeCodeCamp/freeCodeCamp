@@ -53,11 +53,13 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
   ];
   const searchKeys = ['algoliaAppId', 'algoliaAPIKey'];
   const donationKeys = ['stripePublicKey', 'paypalClientId', 'patreonClientId'];
+  const loggingKeys = ['sentryClientDSN'];
 
   const expectedVariables = locationKeys.concat(
     deploymentKeys,
     searchKeys,
-    donationKeys
+    donationKeys,
+    loggingKeys
   );
   const receivedvariables = Object.keys(env as Record<string, unknown>);
   expectedVariables.sort();

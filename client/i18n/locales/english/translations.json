@@ -68,8 +68,8 @@
     "ask-later": "Ask me later",
     "start-coding": "Start coding!",
     "go-to-settings": "Go to settings to claim your certification",
-    "click-start-course": "Click here to start the course",
-    "click-start-project": "Click here to start the project"
+    "click-start-course": "Start the course",
+    "click-start-project": "Start the project"
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
@@ -447,18 +447,6 @@
     "info": "Intro Information",
     "spacer": "Spacer",
     "toggle": "Toggle Checkmark",
-    "responsive-design": "Laptop and mobile phone icon",
-    "javascript": "JavaScript icon",
-    "react": "React icon",
-    "d3": "D3 icon",
-    "api": "A stack of servers",
-    "clipboard": "A clipboard with a checkmark",
-    "python": "Python icon",
-    "analytics": "A bar chart and line graph",
-    "shield": "A shield with a checkmark",
-    "tensorflow": "Tensorflow icon",
-    "database": "Database icon",
-    "algorithm": "Branching nodes",
     "magnifier": "magnifier"
   },
   "aria": {
@@ -536,7 +524,8 @@
     "code-save-error": "An error occurred trying to save your code.",
     "code-save-less": "Slow Down! Your code was not saved. Try again in a few seconds.",
     "challenge-save-too-big": "Sorry, you cannot save your code. Your code is {{user-size}} bytes. We allow a maximum of {{max-size}} bytes. Please make your code smaller and try again or request assistance on https://forum.freecodecamp.org",
-    "challenge-submit-too-big": "Sorry, you cannot submit your code. Your code is {{user-size}} bytes. We allow a maximum of {{max-size}} bytes. Please make your code smaller and try again or request assistance on https://forum.freecodecamp.org"
+    "challenge-submit-too-big": "Sorry, you cannot submit your code. Your code is {{user-size}} bytes. We allow a maximum of {{max-size}} bytes. Please make your code smaller and try again or request assistance on https://forum.freecodecamp.org",
+    "invalid-update-flag": "You are attempting to access forbidden resources. Please request assistance on https://forum.freecodecamp.org if this is a valid request."
   },
   "validation": {
     "max-characters": "There is a maximum limit of 288 characters, you have {{charsLeft}} left",

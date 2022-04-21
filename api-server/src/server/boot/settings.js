@@ -1,5 +1,6 @@
 import debug from 'debug';
 import { check } from 'express-validator';
+import _ from 'lodash';
 import isURL from 'validator/lib/isURL';
 
 import { isValidUsername } from '../../../../utils/validate';
@@ -24,8 +25,8 @@ export default function settingsController(app) {
     createValidatorErrorHandler(alertTypes.danger),
     updateMyCurrentChallenge
   );
-  api.post('/update-my-portfolio', ifNoUser401, updateMyPortfolio);
-  api.post('/update-my-theme', deprecatedEndpoint);
+  api.put('/update-my-portfolio', ifNoUser401, updateMyPortfolio);
+  api.put('/update-my-theme', ifNoUser401, updateMyTheme);
   api.put('/update-my-about', ifNoUser401, updateMyAbout);
   api.put(
     '/update-my-email',
@@ -37,6 +38,10 @@ export default function settingsController(app) {
   api.put('/update-my-profileui', ifNoUser401, updateMyProfileUI);
   api.put('/update-my-username', ifNoUser401, updateMyUsername);
   api.put('/update-user-flag', ifNoUser401, updateUserFlag);
+  api.put('/update-my-socials', ifNoUser401, updateMySocials);
+  api.put('/update-my-sound', ifNoUser401, updateMySound);
+  api.put('/update-my-honesty', ifNoUser401, updateMyHonesty);
+  api.put('/update-my-quincy-email', ifNoUser401, updateMyQuincyEmail);
 
   app.use(api);
 }
@@ -97,18 +102,16 @@ function updateMyCurrentChallenge(req, res, next) {
   );
 }
 
-function updateMyPortfolio(req, res, next) {
-  const {
-    user,
-    body: { portfolio }
-  } = req;
-  // if we only have one key, it should be the id
-  // user cannot send only one key to this route
-  // other than to remove a portfolio item
-  const requestDelete = Object.keys(portfolio).length === 1;
-  return user
-    .updateMyPortfolio(portfolio, requestDelete)
-    .subscribe(message => res.json({ message }), next);
+function updateMyPortfolio(...args) {
+  const portfolioKeys = ['id', 'title', 'description', 'url', 'image'];
+  const buildUpdate = body => {
+    const portfolio = body?.portfolio?.map(elem => _.pick(elem, portfolioKeys));
+    return { portfolio };
+  };
+  const validate = ({ portfolio }) => portfolio?.every(isPortfolioElement);
+  const isPortfolioElement = elem =>
+    Object.values(elem).every(val => typeof val == 'string');
+  createUpdateUserProperties(buildUpdate, validate)(...args);
 }
 
 function updateMyProfileUI(req, res, next) {
@@ -204,7 +207,80 @@ const updatePrivacyTerms = (req, res, next) => {
   });
 };
 
+function updateMySocials(...args) {
+  const buildUpdate = body =>
+    _.pick(body, ['githubProfile', 'linkedin', 'twitter', 'website']);
+  const validate = update =>
+    Object.values(update).every(x => typeof x === 'string');
+  createUpdateUserProperties(buildUpdate, validate)(...args);
+}
+
+function updateMyTheme(...args) {
+  const buildUpdate = body => _.pick(body, 'theme');
+  const validate = ({ theme }) => theme == 'default' || theme == 'night';
+  createUpdateUserProperties(buildUpdate, validate)(...args);
+}
+
+function updateMySound(...args) {
+  const buildUpdate = body => _.pick(body, 'sound');
+  const validate = ({ sound }) => typeof sound === 'boolean';
+  createUpdateUserProperties(buildUpdate, validate)(...args);
+}
+
+function updateMyHonesty(...args) {
+  const buildUpdate = body => _.pick(body, 'isHonest');
+  const validate = ({ isHonest }) => isHonest === true;
+  createUpdateUserProperties(buildUpdate, validate)(...args);
+}
+
+function updateMyQuincyEmail(...args) {
+  const buildUpdate = body => _.pick(body, 'sendQuincyEmail');
+  const validate = ({ sendQuincyEmail }) =>
+    typeof sendQuincyEmail === 'boolean';
+  createUpdateUserProperties(buildUpdate, validate)(...args);
+}
+
+function createUpdateUserProperties(buildUpdate, validate) {
+  return (req, res, next) => {
+    const { user, body } = req;
+    const update = buildUpdate(body);
+    if (validate(update)) {
+      user.updateAttributes(update, createStandardHandler(req, res, next));
+    } else {
+      handleInvalidUpdate(res);
+    }
+  };
+}
+
+function handleInvalidUpdate(res) {
+  res.status(403).json({
+    type: 'danger',
+    message: 'flash.wrong-updating'
+  });
+}
+
 function updateUserFlag(req, res, next) {
   const { user, body: update } = req;
-  return user.updateAttributes(update, createStandardHandler(req, res, next));
+  const allowedKeys = [
+    'theme',
+    'sound',
+    'isHonest',
+    'portfolio',
+    'sendQuincyEmail',
+    'isGithub',
+    'isLinkedIn',
+    'isTwitter',
+    'isWebsite',
+    'githubProfile',
+    'linkedin',
+    'twitter',
+    'website'
+  ];
+  if (Object.keys(update).every(key => allowedKeys.includes(key))) {
+    return user.updateAttributes(update, createStandardHandler(req, res, next));
+  }
+  return res.status(403).json({
+    type: 'danger',
+    message: 'flash.invalid-update-flag'
+  });
 }
