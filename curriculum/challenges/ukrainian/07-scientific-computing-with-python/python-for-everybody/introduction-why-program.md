@@ -20,7 +20,7 @@ dashedName: introduction-why-program
 
 \- [Встановити Python для Windows](https://youtu.be/F7mtLrYzZP8)
 
-\- [Встановити Python для MacOS](https://youtu.be/wfLnZP-4sZw)
+\- [Встановити Python для macOS](https://youtu.be/wfLnZP-4sZw)
 
 # --question--
 

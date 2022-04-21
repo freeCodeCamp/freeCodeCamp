@@ -20,7 +20,7 @@ dashedName: introduction-why-program
 
 \- [Windows に Python をインストール](https://youtu.be/F7mtLrYzZP8)
 
-\- [MacOS に Python をインストール](https://youtu.be/wfLnZP-4sZw)
+\- [macOS に Python をインストール](https://youtu.be/wfLnZP-4sZw)
 
 # --question--
 

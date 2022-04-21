@@ -20,7 +20,7 @@ dashedName: introduction-why-program
 
 \- [Windows 系統安裝 Python](https://youtu.be/F7mtLrYzZP8)
 
-\- [MacOS 系統安裝 Python](https://youtu.be/wfLnZP-4sZw)
+\- [macOS 系統安裝 Python](https://youtu.be/wfLnZP-4sZw)
 
 # --question--
 

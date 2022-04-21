@@ -20,7 +20,7 @@ Altre risorse:
 
 \- [Installare Python su Windows](https://youtu.be/F7mtLrYzZP8)
 
-\- [Installare Python su MacOS](https://youtu.be/wfLnZP-4sZw)
+\- [Installare Python su macOS](https://youtu.be/wfLnZP-4sZw)
 
 # --question--
 
