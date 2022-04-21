@@ -11,15 +11,36 @@
 
 */
 
+export interface SuperBlock {
+  [index: string]: {
+    meta: {
+      name: string;
+      isUpcomingChange: boolean;
+      dashedName: string;
+      order: number;
+      time: string;
+      template: string;
+      required: string[];
+      superBlock: string;
+      challengeOrder: [id: string, title: string][];
+    };
+    challenges: Challenge[];
+  };
+}
+
+interface Challenge {
+  id: string;
+  dashedName: string;
+  description: string;
+}
+
 export async function getCurriculum() {
   const rwd = await fetch('http://localhost:3000/responsive-web-design');
   const js = await fetch(
     'http://localhost:3000/javascript-algorithms-and-data-structures'
   );
-  const rwdBlocks = ((await rwd.json()) as { blocks: Record<string, unknown> })
-    .blocks;
-  const jsBlocks = ((await js.json()) as { blocks: Record<string, unknown> })
-    .blocks;
+  const rwdBlocks = ((await rwd.json()) as { blocks: SuperBlock }).blocks;
+  const jsBlocks = ((await js.json()) as { blocks: SuperBlock }).blocks;
 
   return { rwdBlocks, jsBlocks };
 }

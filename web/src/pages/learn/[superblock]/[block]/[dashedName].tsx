@@ -6,25 +6,26 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import { getCurriculum } from '../../../../data-fetching/get-curriculum';
-
-type Block = Record<string, any>;
+import {
+  SuperBlock,
+  getCurriculum
+} from '../../../../data-fetching/get-curriculum';
 interface Props {
-  rwd?: Block;
-  js?: Block;
+  rwd?: SuperBlock;
+  js?: SuperBlock;
 }
 
 export default function Challenge({ rwd, js }: Props) {
   const router = useRouter();
-  const { superblock, block, id } = router.query;
+  const { superblock, block, dashedName } = router.query;
 
-  if (!superblock || !block || !id) return null;
+  if (!superblock || !block || !dashedName) return null;
   if (typeof block !== 'string') return null;
 
   if (rwd && superblock === 'responsive-web-design') {
     return (
       <>
-        <Description block={rwd} name={block} dashedName={id} />
+        <Description block={rwd} name={block} dashedName={dashedName} />
         <Link
           href={
             '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements'
@@ -35,7 +36,7 @@ export default function Challenge({ rwd, js }: Props) {
       </>
     );
   } else if (js && superblock === 'javascript-algorithms-and-data-structures') {
-    return <Description block={js} name={block} dashedName={id} />;
+    return <Description block={js} name={block} dashedName={dashedName} />;
   }
   return (
     <div>
@@ -46,7 +47,7 @@ export default function Challenge({ rwd, js }: Props) {
 }
 
 interface DescProps {
-  block: Block;
+  block: SuperBlock;
   name: string;
   dashedName: string | string[];
 }
@@ -74,7 +75,45 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 };
 
-export const getStaticPaths: GetStaticPaths = () => ({
-  paths: [],
-  fallback: true
-});
+export const getStaticPaths: GetStaticPaths = async () => {
+  const { rwdBlocks } = await getCurriculum();
+
+  const rwdBlocknames = Object.keys(rwdBlocks);
+
+  // TODO: generalize to all superblocks... OR consider the merits of avoiding
+  // this entirely. If we skip this the pro is quicker builds and the con is
+  // that we'd more work onto the webserver.  It's probably best to do as much
+  // work upfront as possible. At least until that upfront work takes too long.
+  const rwdPaths = rwdBlocknames
+    .map(name =>
+      rwdBlocks[name].meta.challengeOrder.map(([id]) =>
+        toParams(
+          'responsive-web-design',
+          name,
+          getDashedName(rwdBlocks, name, id)
+        )
+      )
+    )
+    .flat();
+
+  return {
+    paths: rwdPaths,
+    fallback: true
+  };
+};
+
+function getDashedName(block: SuperBlock, blockName: string, id: string) {
+  const challenge = block[blockName].challenges.find(c => c.id === id);
+  if (!challenge) throw Error(`Challenge ${id} not found in ${blockName}`);
+  return challenge.dashedName;
+}
+
+function toParams(superblock: string, block: string, dashedName: string) {
+  return {
+    params: {
+      superblock,
+      block,
+      dashedName
+    }
+  };
+}
