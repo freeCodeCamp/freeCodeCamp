@@ -57,7 +57,7 @@ npm -v
 
 ## GitHub でリポジトリをフォークする
 
-[フォーク](https://help.github.com/articles/about-forks/) とは Github 上に freeCodeCamp メインリポジトリ (別名 _repo_) のコピーを自分用に用意するステップです。
+[フォーク](https://help.github.com/articles/about-forks/) とは GitHub 上に freeCodeCamp メインリポジトリ (別名 _repo_) のコピーを自分用に用意するステップです。
 
 これは、GitHub 上の freeCodeCamp のコピーで作業できるようにするために、またリポジトリをダウンロード (クローン) しローカルで作業するために不可欠です。 後で、プルリクエスト (PR) を介して、フォークからメインリポジトリにプルされるように変更をリクエストできます。
 

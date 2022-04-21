@@ -89,7 +89,7 @@ Assista ao vídeo no YouTube daquele videoId e pense em uma questão de múltipl
 
 ### Adicione a pergunta ao arquivo markdown
 
-Você pode adicionar a pergunta localmente ou utilizando a interface do Github. Para adicionar a pergunta localmente, você precisa [configurar o freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md). Você também pode encontrar o arquivo no GitHub e clicar no botão editar para adicionar a pergunta diretamente em seu navegador.
+Você pode adicionar a pergunta localmente ou utilizando a interface do GitHub. Para adicionar a pergunta localmente, você precisa [configurar o freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md). Você também pode encontrar o arquivo no GitHub e clicar no botão editar para adicionar a pergunta diretamente em seu navegador.
 
 Se uma pergunta não tiver sido adicionada a um desafio de vídeo ainda, ela terá a seguinte forma padrão:
 

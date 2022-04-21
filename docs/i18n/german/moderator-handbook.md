@@ -298,7 +298,7 @@ Angenommen, du hilfst den Menschen in deiner Community über einen längeren Zei
 
 Wenn du zugelassen wirst, fügen wir dich zu unseren Moderatorenteams auf [GitHub](https://github.com/orgs/freeCodeCamp/teams/moderators), im [Forum](https://forum.freecodecamp.org/g/moderators) und im Chat etc. hinzu.
 
-> [!NOTE] Für GitHub: Nachdem du als Moderator akzeptiert wurdest, erhältst du eine Einladung zum Github-Repository. Du musst auf [freeCodeCamp GitHub Organisation Invitation](https://github.com/orgs/freeCodeCamp/invitation) gehen, um die Einladung zu akzeptieren.
+> [!NOTE] Für GitHub: Nachdem du als Moderator akzeptiert wurdest, erhältst du eine Einladung zum GitHub-Repository. Du musst auf [freeCodeCamp GitHub Organisation Invitation](https://github.com/orgs/freeCodeCamp/invitation) gehen, um die Einladung zu akzeptieren.
 > 
 > Dies ist erforderlich, damit wir dir Schreibzugriff auf einige unserer Repositories geben können.
 

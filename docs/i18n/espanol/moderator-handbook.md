@@ -298,7 +298,7 @@ Suppose you are helping people in the community consistently over time. In that 
 
 If you are approved, we will add you to our Moderator Teams on [GitHub](https://github.com/orgs/freeCodeCamp/teams/moderators), [forum](https://forum.freecodecamp.org/g/moderators), and chat etc.
 
-> [!NOTE] For GitHub: After you've been accepted as a moderator, you will receive a Github repository invitation. You'll need to head over towards [freeCodeCamp GitHub Organisation Invitation](https://github.com/orgs/freeCodeCamp/invitation) to be able to accept the invitation.
+> [!NOTE] For GitHub: After you've been accepted as a moderator, you will receive a GitHub repository invitation. You'll need to head over towards [freeCodeCamp GitHub Organisation Invitation](https://github.com/orgs/freeCodeCamp/invitation) to be able to accept the invitation.
 > 
 > This is required for us to be able to give you write access to some of our repositories.
 

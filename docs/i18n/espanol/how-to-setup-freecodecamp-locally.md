@@ -79,7 +79,7 @@ Esto es esencial, te permite trabajar en tu propia copia de FreeCodeCamp en GitH
    </summary>
 
    <br>
-   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="Cómo bifurcar freeCodeCamp en Github" />
+   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="Cómo bifurcar freeCodeCamp en GitHub" />
 </details>
 
 ## Clona tu bifurcación desde GitHub

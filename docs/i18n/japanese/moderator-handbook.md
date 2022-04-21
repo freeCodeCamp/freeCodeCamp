@@ -298,7 +298,7 @@ freeCodeCamp のリポジトリへの書き込み権限はありますが、**fr
 
 承認されると、皆さんは、[GitHub](https://github.com/orgs/freeCodeCamp/teams/moderators)、[フォーラム](https://forum.freecodecamp.org/g/moderators)、チャットなどのモデレーターチームに追加されます。
 
-> [!NOTE] GitHub の場合: モデレーターとして承認されると、Github リポジトリへの招待が届きます。 招待を承認するには、[freeCodeCamp GitHub Organization Invitation](https://github.com/orgs/freeCodeCamp/invitation) に進む必要があります。
+> [!NOTE] GitHub の場合: モデレーターとして承認されると、GitHub リポジトリへの招待が届きます。 招待を承認するには、[freeCodeCamp GitHub Organization Invitation](https://github.com/orgs/freeCodeCamp/invitation) に進む必要があります。
 > 
 > これは、一部のリポジトリへの書き込みアクセスを提供するために必要となります。
 

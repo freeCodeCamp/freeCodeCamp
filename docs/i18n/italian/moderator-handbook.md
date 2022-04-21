@@ -27,7 +27,7 @@ I moderatori hanno due responsabilità principali su GitHub:
 1. Fare lo smistamento e rispondere alle issues
 2. Verificare e fare il merge delle pull request (cioè controllo qualità).
 
-### Moderare gli issue di Github
+### Moderare gli issue di GitHub
 
 Usiamo il repository principale [`freeCodeCamp/freeCodeCamp`](https://github.com/freeCodeCamp/freeCodeCamp/issues) per tenere traccia delle issue su tutti i nostri repository. Riceviamo nuove issue ogni giorno e di tutte deve essere fatto lo smistamento, assegnata un'etichetta e data attenzione. Questo è anche un ottimo posto per iniziare ad aiutare contribuendo al codice open source.
 
@@ -299,7 +299,7 @@ Supponi di stare aiutando le persone con costanza nel tempo. In quel caso, il no
 
 Se verrai approvato, ti aggiungeremo al nostro Team dei Moderatori su [GitHub](https://github.com/orgs/freeCodeCamp/teams/moderators), sul [forum](https://forum.freecodecamp.org/g/moderators) e sulla chat.
 
-> [!NOTE] Per GitHub: Dopo essere stato accettato come moderatore, riceverai l'invito a una repository Github. Dovrai andare all'[invito all'Organizzazione GitHub di freeCodeCamp](https://github.com/orgs/freeCodeCamp/invitation) per essere in grado di accettare l'invito.
+> [!NOTE] Per GitHub: Dopo essere stato accettato come moderatore, riceverai l'invito a una repository GitHub. Dovrai andare all'[invito all'Organizzazione GitHub di freeCodeCamp](https://github.com/orgs/freeCodeCamp/invitation) per essere in grado di accettare l'invito.
 > 
 > Questo è necessario per consentirci di darti i permessi di scrittura su alcuni dei nostri repository.
 

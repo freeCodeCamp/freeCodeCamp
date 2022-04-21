@@ -70,7 +70,7 @@ passport.use(new GitHubStrategy({
   );
 ```
 
-到目前爲止，Github 策略應正確設置。
+到目前爲止，GitHub 策略應正確設置。
 
 ```js
 (getUserInput) =>

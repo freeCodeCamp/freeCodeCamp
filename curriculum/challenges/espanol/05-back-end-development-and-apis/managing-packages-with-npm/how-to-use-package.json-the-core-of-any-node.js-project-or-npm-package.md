@@ -10,7 +10,7 @@ dashedName: how-to-use-package-json-the-core-of-any-node-js-project-or-npm-packa
 
 Trabajar en estos desafíos implica escribir tu código usando uno de los siguientes métodos:
 
-- Clona [este repositorio de Github](https://github.com/freeCodeCamp/boilerplate-npm/) y completa estos desafíos localmente.
+- Clona [este repositorio de GitHub](https://github.com/freeCodeCamp/boilerplate-npm/) y completa estos desafíos localmente.
 - Usa [nuestro proyecto modelo de Replit](https://replit.com/github/freeCodeCamp/boilerplate-npm) para completar estos retos.
 - Utiliza un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio de GitHub.
 

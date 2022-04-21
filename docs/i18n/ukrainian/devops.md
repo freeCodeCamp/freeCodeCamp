@@ -28,7 +28,7 @@ This is the final release that moves changes to our production platforms on free
 
 #### Testing changes - Integration and User Acceptance Testing.
 
-We employ various levels of integration and acceptance testing to check on the quality of the code. Всі наші тести виконуються за допомогою таких програм, як [Github Actions CI](https://github.com/freeCodeCamp/freeCodeCamp/actions) та [Azure pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp).
+We employ various levels of integration and acceptance testing to check on the quality of the code. Всі наші тести виконуються за допомогою таких програм, як [GitHub Actions CI](https://github.com/freeCodeCamp/freeCodeCamp/actions) та [Azure pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp).
 
 We have unit tests for testing our challenge solutions, Server APIs and Client User interfaces. These help us test the integration between different components.
 

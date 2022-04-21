@@ -17,7 +17,7 @@ const tableAndStrikeThrough = require('./plugins/table-and-strikethrough');
 const processor = unified()
   // add the remark parser
   .use(remark)
-  // modify the parser so that Github flavour tables and strikethroughs get
+  // modify the parser so that GitHub flavour tables and strikethroughs get
   // converted to 'delete' nodes
   .use(tableAndStrikeThrough)
   // directives are parsed into 'leafDirective' nodes and used for imports

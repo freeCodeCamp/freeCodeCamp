@@ -10,7 +10,7 @@ dashedName: install-and-require-helmet
 
 Trabajar en estos desafíos implica escribir tu código usando uno de los siguientes métodos:
 
-- Clona [este repositorio de Github](https://github.com/freeCodeCamp/boilerplate-infosec/) y completa estos desafíos localmente.
+- Clona [este repositorio de GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/) y completa estos desafíos localmente.
 - Use [nuestro proyecto inicial de Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec) para completar estos desafios.
 - Utilice un constructor de sitios de su elección para completar el proyecto. Asegúrese de incorporar todos los archivos de nuestro repositorio de GitHub.
 

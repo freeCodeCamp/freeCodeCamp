@@ -8,7 +8,7 @@ dashedName: compare-the-properties-of-two-elements
 
 # --description--
 
-Como observação, este projeto está sendo construído a partir do seguinte projeto no [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), ou clonado do [Github](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Como observação, este projeto está sendo construído a partir do seguinte projeto no [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), ou clonado do [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
 # --instructions--
 

@@ -10,7 +10,7 @@ dashedName: learn-how-javascript-assertions-work
 
 Trabajar en estos desafíos implica escribir tu código usando uno de los siguientes métodos:
 
-- Clona [este repositorio de Github](https://github.com/freeCodeCamp/boilerplate-mochachai/) y completa estos desafíos localmente.
+- Clona [este repositorio de GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/) y completa estos desafíos localmente.
 - Usa [nuestro proyecto inicial de Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai) para completar estos desafíos.
 - Utiliza un constructor de sitios web de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio de GitHub.
 
