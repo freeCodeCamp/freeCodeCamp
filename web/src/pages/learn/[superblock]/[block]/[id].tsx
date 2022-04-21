@@ -3,6 +3,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { GetStaticPaths, GetStaticProps } from 'next';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import { getCurriculum } from '../../../../data-fetching/get-curriculum';
@@ -21,7 +22,18 @@ export default function Challenge({ rwd, js }: Props) {
   if (typeof block !== 'string') return null;
 
   if (rwd && superblock === 'responsive-web-design') {
-    return <Description block={rwd} name={block} dashedName={id} />;
+    return (
+      <>
+        <Description block={rwd} name={block} dashedName={id} />
+        <Link
+          href={
+            '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements'
+          }
+        >
+          Go here
+        </Link>
+      </>
+    );
   } else if (js && superblock === 'javascript-algorithms-and-data-structures') {
     return <Description block={js} name={block} dashedName={id} />;
   }
