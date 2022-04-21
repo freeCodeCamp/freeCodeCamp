@@ -97,7 +97,7 @@ MongoDB має бути залежністю.
   );
 ```
 
-Mongodb повинен бути включеним (required) належним чином, включаючи ObjectId.
+MongoDB повинен бути включеним (required) належним чином, включаючи ObjectId.
 
 ```js
 (getUserInput) =>

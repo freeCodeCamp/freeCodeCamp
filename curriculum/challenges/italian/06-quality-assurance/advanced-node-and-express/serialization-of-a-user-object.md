@@ -97,7 +97,7 @@ MongoDB dovrebbe essere una dipendenza.
   );
 ```
 
-Mongodb dovrebbe essere richiesto correttamente, includendo l'ObjectId.
+MongoDB dovrebbe essere richiesto correttamente, includendo l'ObjectId.
 
 ```js
 (getUserInput) =>

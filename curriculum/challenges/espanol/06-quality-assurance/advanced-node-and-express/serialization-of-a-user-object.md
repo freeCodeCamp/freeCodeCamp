@@ -97,7 +97,7 @@ MongoDB debe ser una dependencia.
   );
 ```
 
-Mongodb debe ser requerido correctamente, incluyendo el ObjectId.
+MongoDB debe ser requerido correctamente, incluyendo el ObjectId.
 
 ```js
 (getUserInput) =>

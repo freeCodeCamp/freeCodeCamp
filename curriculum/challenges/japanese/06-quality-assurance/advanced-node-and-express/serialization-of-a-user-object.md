@@ -97,7 +97,7 @@ MongoDB を依存関係にする必要があります。
   );
 ```
 
-ObjectId を含めて Mongodb を正しく require する必要があります。
+ObjectId を含めて MongoDB を正しく require する必要があります。
 
 ```js
 (getUserInput) =>

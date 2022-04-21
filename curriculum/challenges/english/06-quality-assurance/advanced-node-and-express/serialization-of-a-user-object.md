@@ -97,7 +97,7 @@ MongoDB should be a dependency.
   );
 ```
 
-Mongodb should be properly required including the ObjectId.
+MongoDB should be properly required including the ObjectId.
 
 ```js
 (getUserInput) =>

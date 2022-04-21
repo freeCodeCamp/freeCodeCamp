@@ -97,7 +97,7 @@ MongoDB 应作为项目的依赖。
   );
 ```
 
-应该正确请求 Mongodb，包括 ObjectId。
+应该正确请求 MongoDB，包括 ObjectId。
 
 ```js
 (getUserInput) =>

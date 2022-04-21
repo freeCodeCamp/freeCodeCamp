@@ -97,7 +97,7 @@ MongoDB 應作爲項目的依賴。
   );
 ```
 
-應該正確請求 Mongodb，包括 ObjectId。
+應該正確請求 MongoDB，包括 ObjectId。
 
 ```js
 (getUserInput) =>
