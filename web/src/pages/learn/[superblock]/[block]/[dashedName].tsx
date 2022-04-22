@@ -11,13 +11,14 @@ import { useRouter } from 'next/router';
 import {
   SuperBlock,
   Block,
+  Challenge,
   getCurriculum
 } from '../../../../data-fetching/get-curriculum';
 interface Props {
-  blockData: Block;
+  challengeData: Challenge | undefined;
 }
 
-export default function Challenge({ blockData }: Props) {
+export default function ChallengeComponent({ challengeData }: Props) {
   const router = useRouter();
   const { superblock, block, dashedName } = router.query;
 
@@ -26,7 +27,7 @@ export default function Challenge({ blockData }: Props) {
 
   return (
     <>
-      <Main block={blockData} dashedName={dashedName} />
+      <Main challengeData={challengeData} dashedName={dashedName} />
       <Link
         href={
           '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements'
@@ -39,25 +40,20 @@ export default function Challenge({ blockData }: Props) {
 }
 
 interface DescProps {
-  block: Block;
+  challengeData?: Challenge;
   dashedName: string | string[];
 }
 
-function Main({ block, dashedName }: DescProps) {
-  const challengeId = block.challenges.findIndex(
-    (c: { dashedName: string }) => c.dashedName == dashedName
-  );
-  const challenge = block.challenges[challengeId];
-
-  if (!challenge || !challenge.challengeFiles) return null;
+function Main({ challengeData }: DescProps) {
+  if (!challengeData || !challengeData.challengeFiles) return null;
 
   return (
     <>
-      <div dangerouslySetInnerHTML={{ __html: challenge.description }} />
+      <div dangerouslySetInnerHTML={{ __html: challengeData.description }} />
       <Editor
-        defaultLanguage={challenge.challengeFiles[0].ext}
+        defaultLanguage={challengeData.challengeFiles[0].ext}
         height={'50vh'}
-        defaultValue={challenge.challengeFiles[0].contents}
+        defaultValue={challengeData.challengeFiles[0].contents}
       />
     </>
   );
@@ -66,20 +62,22 @@ function Main({ block, dashedName }: DescProps) {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { rwdBlocks, jsBlocks } = await getCurriculum();
 
-  const superBlockToBlockMap: {
-    [index: string]: (params: ParsedUrlQuery) => Block;
+  const superBlockToChallengeMap: {
+    [index: string]: (params: ParsedUrlQuery) => Challenge | undefined;
   } = {
     'responsive-web-design': (params: ParsedUrlQuery) =>
-      findBlock(rwdBlocks, params),
+      findChallenge(findBlock(rwdBlocks, params), params),
     'javascript-algorithms-and-data-structures': (params: ParsedUrlQuery) =>
-      findBlock(jsBlocks, params)
+      findChallenge(findBlock(jsBlocks, params), params)
   };
 
   if (params) {
     if (typeof params.superblock !== 'string')
       throw Error(`superblock param has to be a string, {params.superblock}`);
     return {
-      props: { blockData: superBlockToBlockMap[params?.superblock](params) },
+      props: {
+        challengeData: superBlockToChallengeMap[params?.superblock](params)
+      },
       revalidate: 10
     };
   } else {
@@ -91,6 +89,14 @@ function findBlock(superblock: SuperBlock, params: ParsedUrlQuery) {
   if (typeof params.block !== 'string')
     throw Error('block param has to be a string');
   return superblock[params.block];
+}
+
+function findChallenge(block: Block, params: ParsedUrlQuery) {
+  if (typeof params.dashedName !== 'string')
+    throw Error('dashedName param has to be a string');
+  return block.challenges.find(
+    (c: { dashedName: string }) => c.dashedName == params.dashedName
+  );
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {

@@ -30,7 +30,7 @@ export interface Block {
   challenges: Challenge[];
 }
 
-interface Challenge {
+export interface Challenge {
   id: string;
   dashedName: string;
   description: string;
