@@ -1,6 +1,5 @@
-
 /* eslint-disable no-unused-vars */
-import React from 'react'
+import React from 'react';
 const gatsby = jest.requireActual('gatsby');
 
 import envData from '../../../config/env.json';
