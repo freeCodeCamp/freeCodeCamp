@@ -46,7 +46,7 @@ export const auditedCerts = {
     SuperBlocks.FrontEndDevLibs,
     SuperBlocks.DataVis,
     SuperBlocks.BackEndDevApis,
-    SuperBlocks.QualityAssurance,
+    SuperBlocks.QualityAssurance
   ],
   chinese: [
     SuperBlocks.RespWebDesign,
