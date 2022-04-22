@@ -11,6 +11,11 @@
 
 */
 
+interface Curriculum {
+  rwdBlocks: SuperBlock;
+  jsBlocks: SuperBlock;
+}
+
 export interface SuperBlock {
   [index: string]: Block;
 }
@@ -37,6 +42,12 @@ export interface Challenge {
   challengeFiles: { contents: string; ext: string }[];
 }
 
+export interface PathSegments {
+  superblock: string;
+  block: string;
+  dashedName: string;
+}
+
 export async function getCurriculum() {
   const rwd = await fetch('http://localhost:3000/responsive-web-design');
   const js = await fetch(
@@ -46,4 +57,25 @@ export async function getCurriculum() {
   const jsBlocks = ((await js.json()) as { blocks: SuperBlock }).blocks;
 
   return { rwdBlocks, jsBlocks };
+}
+
+export function getIdToPathSegmentsMap({ rwdBlocks }: Curriculum) {
+  // TODO: this is pretty inefficient. The curriculum server needs to return an
+  // object with ids as keys and the superblock, block and dashedName as values.
+  // i.e. enough info to recreate the full path.
+
+  // Also TODO: use params here and, instead of passing the map, just pass the
+  // new path.
+  const idToPathSegmentsMap: Record<string, PathSegments> = {};
+  for (const blockName of Object.keys(rwdBlocks)) {
+    const block = rwdBlocks[blockName];
+    for (const challenge of block.challenges) {
+      idToPathSegmentsMap[challenge.id] = {
+        superblock: 'responsive-web-design',
+        block: blockName,
+        dashedName: challenge.dashedName
+      };
+    }
+  }
+  return idToPathSegmentsMap;
 }

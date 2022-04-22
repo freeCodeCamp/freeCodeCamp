@@ -7,24 +7,43 @@ import Editor from '@monaco-editor/react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 import {
   SuperBlock,
   Block,
   Challenge,
-  getCurriculum
+  getCurriculum,
+  getIdToPathSegmentsMap,
+  PathSegments
 } from '../../../../../data-fetching/get-curriculum';
 interface Props {
-  challengeData: Challenge | undefined;
+  challengeData: Challenge | null;
+  pathSegments: PathSegments | undefined;
 }
 
-export default function ChallengeComponent({ challengeData }: Props) {
+export default function ChallengeComponent({
+  challengeData,
+  pathSegments
+}: Props) {
   const router = useRouter();
   const { superblock, block, dashedName, id } = router.query;
 
-  // TODO: handle ids separately, i.e. if the id corresponds to a challenge with
-  // the right superblock, block and dashname, just return the challenge. If
-  // *not*, redirect to it.
+  useEffect(() => {
+    if (
+      pathSegments &&
+      (pathSegments.block !== block ||
+        pathSegments.dashedName !== dashedName ||
+        pathSegments.superblock !== superblock)
+    ) {
+      // TODO: validate path segements.
+      void router.push(
+        `/learn/${pathSegments.superblock}/${pathSegments.block}/${
+          pathSegments.dashedName
+        }/${id as string}`
+      );
+    }
+  });
   if (!superblock || !block || !dashedName || !id) return null;
   if (typeof block !== 'string') return null;
 
@@ -43,12 +62,12 @@ export default function ChallengeComponent({ challengeData }: Props) {
 }
 
 interface DescProps {
-  challengeData?: Challenge;
+  challengeData: Challenge | null;
   dashedName: string | string[];
 }
 
 function Main({ challengeData }: DescProps) {
-  if (!challengeData || !challengeData.challengeFiles) return null;
+  if (!challengeData || !challengeData?.challengeFiles) return null;
 
   return (
     <>
@@ -63,10 +82,12 @@ function Main({ challengeData }: DescProps) {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { rwdBlocks, jsBlocks } = await getCurriculum();
+  const curriculum = await getCurriculum();
+  const { rwdBlocks, jsBlocks } = curriculum;
+  const idToPathSegmentsMap = getIdToPathSegmentsMap(curriculum);
 
   const superBlockToChallengeMap: {
-    [index: string]: (params: ParsedUrlQuery) => Challenge | undefined;
+    [index: string]: (params: ParsedUrlQuery) => Challenge | null;
   } = {
     'responsive-web-design': (params: ParsedUrlQuery) =>
       findChallenge(findBlock(rwdBlocks, params), params),
@@ -74,12 +95,22 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       findChallenge(findBlock(jsBlocks, params), params)
   };
 
+  // TODO: validate params first to mollify TS.
   if (params) {
     if (typeof params.superblock !== 'string')
-      throw Error(`superblock param has to be a string, {params.superblock}`);
+      throw Error(
+        `superblock param has to be a string, ${JSON.stringify(
+          params.superblock
+        )}`
+      );
+    if (typeof params.id !== 'string')
+      throw Error(
+        `superblock param has to be a string, ${JSON.stringify(params.id)}`
+      );
     return {
       props: {
-        challengeData: superBlockToChallengeMap[params?.superblock](params)
+        challengeData: superBlockToChallengeMap[params.superblock](params),
+        pathSegments: idToPathSegmentsMap[params.id]
       },
       revalidate: 10
     };
@@ -91,15 +122,16 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 function findBlock(superblock: SuperBlock, params: ParsedUrlQuery) {
   if (typeof params.block !== 'string')
     throw Error('block param has to be a string');
-  return superblock[params.block];
+  return superblock[params.block] ?? null;
 }
 
-function findChallenge(block: Block, params: ParsedUrlQuery) {
+function findChallenge(block: Block | null, params: ParsedUrlQuery) {
   if (typeof params.dashedName !== 'string')
     throw Error('dashedName param has to be a string');
-  return block.challenges.find(
+  const challenge = block?.challenges.find(
     (c: { dashedName: string }) => c.dashedName == params.dashedName
   );
+  return challenge ?? null;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
