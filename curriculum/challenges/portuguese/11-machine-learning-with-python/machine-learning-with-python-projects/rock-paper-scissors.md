@@ -8,53 +8,49 @@ dashedName: rock-paper-scissors
 
 # --description--
 
-Você [trabalhará neste projeto com nosso código inicial do Replit](https://replit.com/github/freeCodeCamp/boilerplate-rock-paper-scissors).
+Neste desafio, você vai criar um programa para jogar Pedra, papel e tesoura. Um programa com decisões aleatórias tem uma taxa de vitória média de 50%. Para passar no desafio, seu programa vai enfrentar quatro robôs diferentes e deve vencer pelo menos 60% dos jogos contra cada um.
+
+Você vai [trabalhar nesse projeto com nosso código inicial do Replit](https://replit.com/github/freeCodeCamp/boilerplate-rock-paper-scissors).
 
 Ainda estamos desenvolvendo a parte instrucional interativa do currículo de aprendizagem de máquina. Por enquanto, você terá que usar outros recursos para aprender a vencer este desafio.
 
 # --instructions--
 
-Crie uma função chamada `calculate()` em `mean_var_std.py` que use o Numpy para produzir a média, variância, desvio-padrão, máximo, mínimo e soma das linhas, colunas e elementos em uma matriz de 3 x 3.
+No arquivo `RPS.py`, é fornecida uma função chamada `player`. A função recebe um argumento que é uma string descrevendo a última movimentação do oponente ("R", "P" ou "S"). A função deve retornar uma string representando o próximo movimento a ser jogado ("R", "P" ou "S").
 
-A entrada da função deve ser uma lista com 9 algarismos. A função deve converter a lista em um array 3 x 3 do Numpy e, em seguida, retornar um dicionário contendo a média, variância, desvio padrão, máximo, mínimo e soma ao longo de ambos os eixos e para a matriz nivelada.
+Uma função player receberá uma string vazia como um argumento para o primeiro jogo em uma partida, já que não há nenhuma jogada anterior.
 
-O dicionário retornado deve seguir esse formato:
+O arquivo `RPS.py` mostra uma função de exemplo que você precisará atualizar. A função de exemplo é definida com dois argumentos (`player(prev_play, opponent_history = [])`. A função nunca é chamada com um segundo argumento, então um deles é completamente opcional. A razão pela qual a função de exemplo contém um segundo argumento (`opponent_history = []`) é porque essa é a única maneira de salvar o estado entre as chamadas consecutivas da função `player`. Você só precisa do argumento `opponent_history` se você quiser manter o controle de opponent_history.
 
-```py
-{
-  'mean': [axis1, axis2, flattened],
-  'variance': [axis1, axis2, flattened],
-  'standard deviation': [axis1, axis2, flattened],
-  'max': [axis1, axis2, flattened],
-  'min': [axis1, axis2, flattened],
-  'sum': [axis1, axis2, flattened]
-}
-```
-
-Se uma lista que contiver menos de 9 elementos for passada para a função, ela deve criar uma exceção `ValueError` com a mensagem: "List must contain nine numbers." (A lista deve conter nove números). Os valores do dicionário retornado devem ser listas e não matrizes do Numpy.
-
-Por exemplo, `calculate([0,1,2,3,4,5,6,7,8])` deve retornar:
-
-```py
-{
-  'mean': [[3.0, 4.0, 5.0], [1.0, 4.0, 7.0], 4.0], 
-  'variance': [[6.0, 6.0, 6.0], [0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 6.666666666666667], 
-  'standard deviation': [[2.449489742783178, 2.449489742783178, 2.449489742783178], [0.816496580927726, 0.816496580927726, 0.816496580927726], 2.581988897471611],
-  'max': [[6, 7, 8], [2, 5, 8], 8],
-  'min': [[0, 1, 2], [0, 3, 6], 0],
-  'sum': [[9, 12, 15], [3, 12, 21], 36]
-}
-```
-
-Os testes unitários para este projeto estão em `test_module.py`.
+*Dica: para derrotar os quatro oponentes, seu programa pode precisar ter múltiplas estratégias que mudam dependendo das jogadas do adversário.*
 
 ## Desenvolvimento
 
-Para o desenvolvimento, você pode usar `main.py` para testar sua função `calculate()`. Clique no botão "Run" e `main.py` será executado.
+Não modifique `RPS_game.py`. Escreva todo o seu código em `RPS.py`. Para o desenvolvimento, você pode usar `main.py` para testar seu código.
+
+`main.py` importa a função do jogo e os bots de `RPS_game.py`.
+
+Para testar seu código, jogue um jogo com a função `play`. A função `play` recebe quatro argumentos:
+
+- dois jogadores para jogar um contra o outro (os jogadores são de fato funções)
+- o número de jogos a serem jogados na partida
+- um argumento opcional para ver um registro de cada jogo. Defina-o como `True` para ver estas mensagens.
+
+```py
+play(player1, player2, num_games[, verbose])
+```
+
+Por exemplo, aqui está como você chamaria a função se quisesse que `player` e `quincy` jogassem 1000 jogos um contra o outro e se você quisesse ver os resultados de cada jogo:
+
+```py
+play(player, quincy, 1000, verbose=True)
+```
+
+Clique no botão "Run" e `main.py` será executado.
 
 ## Testes
 
-Importamos os testes de `test_module.py` em `main.py` para a sua conveniência. Os testes serão executados automaticamente sempre que você clicar no botão "Run".
+Os testes unitários para este projeto estão em `test_module.py`. Importamos os testes de `test_module.py` em `main.py` para a sua conveniência. Se você remover dos comentários a última linha de `main.py`, os testes serão executados automaticamente sempre que você pressionar o botão "Run".
 
 ## Envio
 
