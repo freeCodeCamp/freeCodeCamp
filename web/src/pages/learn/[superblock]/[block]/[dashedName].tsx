@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import Editor from '@monaco-editor/react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -25,7 +26,7 @@ export default function Challenge({ rwd, js }: Props) {
   if (rwd && superblock === 'responsive-web-design') {
     return (
       <>
-        <Description block={rwd} name={block} dashedName={dashedName} />
+        <Main block={rwd} name={block} dashedName={dashedName} />
         <Link
           href={
             '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements'
@@ -36,7 +37,7 @@ export default function Challenge({ rwd, js }: Props) {
       </>
     );
   } else if (js && superblock === 'javascript-algorithms-and-data-structures') {
-    return <Description block={js} name={block} dashedName={dashedName} />;
+    return <Main block={js} name={block} dashedName={dashedName} />;
   }
   return (
     <div>
@@ -52,26 +53,37 @@ interface DescProps {
   dashedName: string | string[];
 }
 
-function Description({ block, name, dashedName }: DescProps) {
+function Main({ block, name, dashedName }: DescProps) {
   const challengeId = block[name].challenges.findIndex(
     (c: { dashedName: string }) => c.dashedName == dashedName
   );
   const challenge = block[name].challenges[challengeId];
 
-  return <div dangerouslySetInnerHTML={{ __html: challenge.description }} />;
+  if (!challenge || !challenge.challengeFiles) return null;
+
+  return (
+    <>
+      <div dangerouslySetInnerHTML={{ __html: challenge.description }} />
+      <Editor
+        defaultLanguage={challenge.challengeFiles[0].ext}
+        height={'50vh'}
+        defaultValue={challenge.challengeFiles[0].contents}
+      />
+    </>
+  );
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { rwdBlocks, jsBlocks } = await getCurriculum();
 
   if (params?.superblock === 'responsive-web-design') {
-    return { props: { rwd: rwdBlocks }, revalidate: 5 };
+    return { props: { rwd: rwdBlocks }, revalidate: 10 };
   } else if (
     params?.superblock === 'javascript-algorithms-and-data-structures'
   ) {
-    return { props: { js: jsBlocks }, revalidate: 5 };
+    return { props: { js: jsBlocks }, revalidate: 10 };
   } else {
-    return { props: {}, revalidate: 5 };
+    return { props: {}, revalidate: 10 };
   }
 };
 

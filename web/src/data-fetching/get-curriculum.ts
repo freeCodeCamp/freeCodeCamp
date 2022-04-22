@@ -32,6 +32,7 @@ interface Challenge {
   id: string;
   dashedName: string;
   description: string;
+  challengeFiles: { contents: string; ext: string }[];
 }
 
 export async function getCurriculum() {
