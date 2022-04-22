@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { ParsedUrlQuery } from 'querystring';
 import Editor from '@monaco-editor/react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
@@ -9,55 +10,44 @@ import { useRouter } from 'next/router';
 
 import {
   SuperBlock,
+  Block,
   getCurriculum
 } from '../../../../data-fetching/get-curriculum';
 interface Props {
-  rwd?: SuperBlock;
-  js?: SuperBlock;
+  blockData: Block;
 }
 
-export default function Challenge({ rwd, js }: Props) {
+export default function Challenge({ blockData }: Props) {
   const router = useRouter();
   const { superblock, block, dashedName } = router.query;
 
   if (!superblock || !block || !dashedName) return null;
   if (typeof block !== 'string') return null;
 
-  if (rwd && superblock === 'responsive-web-design') {
-    return (
-      <>
-        <Main block={rwd} name={block} dashedName={dashedName} />
-        <Link
-          href={
-            '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements'
-          }
-        >
-          Go here
-        </Link>
-      </>
-    );
-  } else if (js && superblock === 'javascript-algorithms-and-data-structures') {
-    return <Main block={js} name={block} dashedName={dashedName} />;
-  }
   return (
-    <div>
-      <ul>{rwd && Object.keys(rwd).map(name => <li key={name}>{name}</li>)}</ul>
-      <ul>{js && Object.keys(js).map(name => <li key={name}>{name}</li>)}</ul>
-    </div>
+    <>
+      <Main block={blockData} dashedName={dashedName} />
+      <Link
+        href={
+          '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements'
+        }
+      >
+        Go here
+      </Link>
+    </>
   );
 }
 
 interface DescProps {
-  block: SuperBlock;
-  name: string;
+  block: Block;
   dashedName: string | string[];
 }
 
-function Main({ block, name, dashedName }: DescProps) {
-  const challengeId = block[name].challenges.findIndex(
+function Main({ block, dashedName }: DescProps) {
+  const challengeId = block.challenges.findIndex(
     (c: { dashedName: string }) => c.dashedName == dashedName
   );
-  const challenge = block[name].challenges[challengeId];
+  const challenge = block.challenges[challengeId];
 
   if (!challenge || !challenge.challengeFiles) return null;
 
@@ -76,16 +66,32 @@ function Main({ block, name, dashedName }: DescProps) {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { rwdBlocks, jsBlocks } = await getCurriculum();
 
-  if (params?.superblock === 'responsive-web-design') {
-    return { props: { rwd: rwdBlocks }, revalidate: 10 };
-  } else if (
-    params?.superblock === 'javascript-algorithms-and-data-structures'
-  ) {
-    return { props: { js: jsBlocks }, revalidate: 10 };
+  const superBlockToBlockMap: {
+    [index: string]: (params: ParsedUrlQuery) => Block;
+  } = {
+    'responsive-web-design': (params: ParsedUrlQuery) =>
+      findBlock(rwdBlocks, params),
+    'javascript-algorithms-and-data-structures': (params: ParsedUrlQuery) =>
+      findBlock(jsBlocks, params)
+  };
+
+  if (params) {
+    if (typeof params.superblock !== 'string')
+      throw Error(`superblock param has to be a string, {params.superblock}`);
+    return {
+      props: { blockData: superBlockToBlockMap[params?.superblock](params) },
+      revalidate: 10
+    };
   } else {
     return { props: {}, revalidate: 10 };
   }
 };
+
+function findBlock(superblock: SuperBlock, params: ParsedUrlQuery) {
+  if (typeof params.block !== 'string')
+    throw Error('block param has to be a string');
+  return superblock[params.block];
+}
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { rwdBlocks } = await getCurriculum();

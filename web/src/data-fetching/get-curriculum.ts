@@ -12,20 +12,22 @@
 */
 
 export interface SuperBlock {
-  [index: string]: {
-    meta: {
-      name: string;
-      isUpcomingChange: boolean;
-      dashedName: string;
-      order: number;
-      time: string;
-      template: string;
-      required: string[];
-      superBlock: string;
-      challengeOrder: [id: string, title: string][];
-    };
-    challenges: Challenge[];
+  [index: string]: Block;
+}
+
+export interface Block {
+  meta: {
+    name: string;
+    isUpcomingChange: boolean;
+    dashedName: string;
+    order: number;
+    time: string;
+    template: string;
+    required: string[];
+    superBlock: string;
+    challengeOrder: [id: string, title: string][];
   };
+  challenges: Challenge[];
 }
 
 interface Challenge {
