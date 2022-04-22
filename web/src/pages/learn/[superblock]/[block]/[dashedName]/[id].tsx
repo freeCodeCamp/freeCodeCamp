@@ -13,16 +13,19 @@ import {
   Block,
   Challenge,
   getCurriculum
-} from '../../../../data-fetching/get-curriculum';
+} from '../../../../../data-fetching/get-curriculum';
 interface Props {
   challengeData: Challenge | undefined;
 }
 
 export default function ChallengeComponent({ challengeData }: Props) {
   const router = useRouter();
-  const { superblock, block, dashedName } = router.query;
+  const { superblock, block, dashedName, id } = router.query;
 
-  if (!superblock || !block || !dashedName) return null;
+  // TODO: handle ids separately, i.e. if the id corresponds to a challenge with
+  // the right superblock, block and dashname, just return the challenge. If
+  // *not*, redirect to it.
+  if (!superblock || !block || !dashedName || !id) return null;
   if (typeof block !== 'string') return null;
 
   return (
@@ -114,7 +117,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
         toParams(
           'responsive-web-design',
           name,
-          getDashedName(rwdBlocks, name, id)
+          getDashedName(rwdBlocks, name, id),
+          id
         )
       )
     )
@@ -132,12 +136,18 @@ function getDashedName(block: SuperBlock, blockName: string, id: string) {
   return challenge.dashedName;
 }
 
-function toParams(superblock: string, block: string, dashedName: string) {
+function toParams(
+  superblock: string,
+  block: string,
+  dashedName: string,
+  id: string
+) {
   return {
     params: {
       superblock,
       block,
-      dashedName
+      dashedName,
+      id
     }
   };
 }

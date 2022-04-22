@@ -24,7 +24,7 @@ export default function Catch({
     if (!uuid || !idToPathSegmentsMap[uuid]) return;
 
     const { superblock, block, dashedName } = idToPathSegmentsMap[uuid];
-    void router.push(`/learn/${superblock}/${block}/${dashedName}`);
+    void router.push(`/learn/${superblock}/${block}/${dashedName}/${uuid}`);
   });
 }
 
