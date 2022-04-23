@@ -134,7 +134,7 @@
     "@codesee/tracker": "0.242.0",
     "@testing-library/jest-dom": "5.16.4",
     "@testing-library/react": "12.1.5",
-    "autoprefixer": "10.4.4",
+    "autoprefixer": "10.4.5",
     "babel-plugin-transform-imports": "2.0.0",
     "chokidar": "3.5.3",
     "copy-webpack-plugin": "9.1.0",
