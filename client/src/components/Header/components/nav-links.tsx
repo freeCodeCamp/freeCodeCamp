@@ -268,8 +268,12 @@ export class NavLinks extends Component<NavLinksProps, {}> {
   };
 
   handleBlur = (event: React.FocusEvent<HTMLButtonElement>): void => {
-    const { hideMenu } = this.props;
-    if (event.relatedTarget && !event.relatedTarget.closest('.nav-list')) {
+    const { hideMenu, menuButtonRef } = this.props;
+    if (
+      event.relatedTarget &&
+      !event.relatedTarget.closest('.nav-list') &&
+      event.relatedTarget !== menuButtonRef.current
+    ) {
       hideMenu();
     }
   };
