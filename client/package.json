@@ -110,7 +110,7 @@
     "react-tooltip": "4.2.21",
     "react-transition-group": "4.4.2",
     "react-youtube": "7.14.0",
-    "redux": "4.1.2",
+    "redux": "4.2.0",
     "redux-actions": "2.6.5",
     "redux-devtools-extension": "2.13.9",
     "redux-observable": "1.2.0",
