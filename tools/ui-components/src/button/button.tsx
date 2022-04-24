@@ -6,6 +6,7 @@ const defaultClassNames = [
   'cursor-pointer',
   'inline-block',
   'border-3',
+  'text-center',
   'active:before:w-full',
   'active:before:h-full',
   'active:before:absolute',
@@ -38,7 +39,6 @@ const computeClassNames = ({
     classNames.push('block', 'w-full');
   }
 
-  // TODO: support 'link' variant
   switch (variant) {
     case 'danger':
       classNames.push(

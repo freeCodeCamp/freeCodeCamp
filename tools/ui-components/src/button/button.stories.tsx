@@ -40,6 +40,9 @@ const story = {
     },
     onClick: {
       action: 'clicked'
+    },
+    to: {
+      control: { type: 'text' }
     }
   }
 };
