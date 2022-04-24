@@ -54,7 +54,7 @@ Your image should have a `src` attribute that points to the kitten image.
 assert(/^https:\/\/cdn\.freecodecamp\.org\/curriculum\/cat-photo-app\/relaxing-cat\.jpg$/i.test($('img').attr('src')));
 ```
 
-Your image element's `alt` attribute should not be empty.
+Your `img` have to be in the right format, and your `alt` attribute should not be empty.
 
 ```js
 assert(
