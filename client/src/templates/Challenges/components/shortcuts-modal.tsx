@@ -33,13 +33,18 @@ export function ShortcutsModal({
       dialogClassName='shortcuts-modal'
       onHide={closeShortcutsModal}
       show={isOpen}
-      aria-labelledby='Shortcuts modal'
+      aria-labelledby='shortcuts-modal-title'
     >
       <Modal.Header
         className='shortcuts-modal-header fcc-modal'
         closeButton={true}
+        closeLabel={t('buttons.close')}
       >
-        <Modal.Title className='text-center'>
+        <Modal.Title
+          id='shortcuts-modal-title'
+          className='text-center'
+          componentClass='h1'
+        >
           {t('shortcuts.title')}
         </Modal.Title>
       </Modal.Header>
@@ -83,7 +88,6 @@ export function ShortcutsModal({
           bsSize='sm'
           bsStyle='primary'
           onClick={closeShortcutsModal}
-          autofocus
         >
           {t('buttons.close')}
         </Button>
