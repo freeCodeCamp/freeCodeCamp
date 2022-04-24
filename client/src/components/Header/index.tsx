@@ -15,7 +15,7 @@ export interface HeaderProps {
 }
 export class Header extends React.Component<
   HeaderProps,
-  { displayMenu: boolean; displayLanguageMenu: boolean }
+  { displayMenu: boolean; isLanguageMenuDisplayed: boolean }
 > {
   menuButtonRef: React.RefObject<HTMLButtonElement>;
   searchBarRef: React.RefObject<any>;
@@ -24,7 +24,7 @@ export class Header extends React.Component<
     super(props);
     this.state = {
       displayMenu: false,
-      displayLanguageMenu: false
+      isLanguageMenuDisplayed: false
     };
     this.menuButtonRef = React.createRef();
     this.searchBarRef = React.createRef();
@@ -69,15 +69,17 @@ export class Header extends React.Component<
 
   // elementToFocus must be a link in the language menu
   showLanguageMenu(elementToFocus: HTMLAnchorElement): void {
-    this.setState({ displayLanguageMenu: true }, () => elementToFocus.focus());
+    this.setState({ isLanguageMenuDisplayed: true }, () =>
+      elementToFocus.focus()
+    );
   }
 
   hideLanguageMenu(): void {
-    this.setState({ displayLanguageMenu: false });
+    this.setState({ isLanguageMenuDisplayed: false });
   }
 
   render(): JSX.Element {
-    const { displayMenu, displayLanguageMenu } = this.state;
+    const { displayMenu, isLanguageMenuDisplayed } = this.state;
     const { fetchState, user } = this.props;
     return (
       <>
@@ -88,7 +90,7 @@ export class Header extends React.Component<
           <UniversalNav
             displayMenu={displayMenu}
             fetchState={fetchState}
-            displayLanguageMenu={displayLanguageMenu}
+            isLanguageMenuDisplayed={isLanguageMenuDisplayed}
             hideLanguageMenu={this.hideLanguageMenu}
             hideMenu={this.hideMenu}
             menuButtonRef={this.menuButtonRef}

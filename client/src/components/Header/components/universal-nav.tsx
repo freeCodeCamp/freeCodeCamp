@@ -21,7 +21,7 @@ const SearchBarOptimized = Loadable(
 
 export interface UniversalNavProps {
   displayMenu?: boolean;
-  displayLanguageMenu?: boolean;
+  isLanguageMenuDisplayed?: boolean;
   fetchState?: { pending: boolean };
   menuButtonRef?: Ref<HTMLButtonElement> | undefined;
   searchBarRef?: unknown;
@@ -33,7 +33,7 @@ export interface UniversalNavProps {
 }
 export const UniversalNav = ({
   displayMenu,
-  displayLanguageMenu,
+  isLanguageMenuDisplayed,
   showMenu,
   hideMenu,
   showLanguageMenu,
@@ -88,7 +88,7 @@ export const UniversalNav = ({
             <NavLinks
               displayMenu={displayMenu}
               fetchState={fetchState}
-              displayLanguageMenu={displayLanguageMenu}
+              isLanguageMenuDisplayed={isLanguageMenuDisplayed}
               hideLanguageMenu={hideLanguageMenu}
               hideMenu={hideMenu}
               menuButtonRef={menuButtonRef}

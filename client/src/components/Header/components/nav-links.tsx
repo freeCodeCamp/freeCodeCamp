@@ -46,7 +46,7 @@ const languageGlobeIconStyle = {
 };
 export interface NavLinksProps {
   displayMenu?: boolean;
-  displayLanguageMenu?: boolean;
+  isLanguageMenuDisplayed?: boolean;
   fetchState?: { pending: boolean };
   i18n: Object;
   t: TFunction;
@@ -148,9 +148,9 @@ export class NavLinks extends Component<NavLinksProps, {}> {
   };
 
   handleLanguageButtonClick = (): void => {
-    const { displayLanguageMenu, hideLanguageMenu, showLanguageMenu } =
+    const { isLanguageMenuDisplayed, hideLanguageMenu, showLanguageMenu } =
       this.props;
-    if (displayLanguageMenu) {
+    if (isLanguageMenuDisplayed) {
       hideLanguageMenu();
     } else {
       showLanguageMenu(this.firstLangOptionRef.current);
@@ -277,7 +277,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
   render() {
     const {
       displayMenu,
-      displayLanguageMenu,
+      isLanguageMenuDisplayed,
       fetchState,
       t,
       toggleNightMode,
@@ -425,7 +425,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
           <div className='nav-lang' key='language-dropdown'>
             <button
               aria-controls='nav-lang-menu'
-              {...(displayLanguageMenu && { 'aria-expanded': true })}
+              {...(isLanguageMenuDisplayed && { 'aria-expanded': true })}
               aria-haspopup='true'
               className='nav-link nav-lang-button'
               id='nav-lang-button'
