@@ -9,7 +9,7 @@ This document outlines our security policy for the codebases, platforms that we 
 
 ### Guidelines
 
-We appreciate a responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users. In interest of saving everyone time, we encourage you to report vulnerabilities with these in mind:
+We appreciate a responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users. In the interest of saving everyone time, we encourage you to report vulnerabilities with these in mind:
 
 1. Ensure that you are using the **latest**, **stable** and **updated** versions of the Operating System and Web Browser(s) available to you on your machine.
 2. We consider using tools & online utilities to report issues with SPF & DKIM configs, or SSL Server tests, etc. in the category of ["beg bounties"](https://www.troyhunt.com/beg-bounties/) and are unable to respond to these reports.
