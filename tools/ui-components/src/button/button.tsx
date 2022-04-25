@@ -47,9 +47,7 @@ const computeClassNames = ({
         'text-default-foreground-danger',
         ...(disabled
           ? [
-            'active:before:bg-default-background-quaternary',
-            'active:before:opacity-0',
-            'focus:ring-0'
+            'active:before:hidden',
           ]
           : [
               'hover:bg-default-background-danger-hover',
