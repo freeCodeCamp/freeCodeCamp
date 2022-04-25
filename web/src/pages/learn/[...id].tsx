@@ -7,6 +7,10 @@ import {
   PathSegments
 } from '../../data-fetching/get-curriculum';
 
+// TODO: rather than using path segments, use the whole path. This makes this
+// more generic and it's easier to redirect to non-challenge pages.  i.e. if we
+// have the id of a superblock, it won't have three path segments - it will have
+// one.
 export default function Catch({
   idToPathSegmentsMap
 }: {
@@ -29,6 +33,7 @@ export default function Catch({
 export const getStaticProps: GetStaticProps = async () => {
   const idToPathSegmentsMap = getIdToPathSegmentsMap(await getCurriculum());
 
+  // TODO: return notFound if no idToPathSegmentsMap entry.
   return { props: { idToPathSegmentsMap }, revalidate: 10 };
 };
 

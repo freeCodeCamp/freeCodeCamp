@@ -30,6 +30,9 @@ export default function ChallengeComponent({
   const { superblock, block, dashedName, id } = router.query;
 
   useEffect(() => {
+    // TODO: DRY this. We reuse the 'if path from params does not match path
+    // from trailing path segment, then use path from trailing path segment' for
+    // the superblock (and potentially the blocks) so it should be DRY.
     if (
       pathSegments &&
       (pathSegments.block !== block ||
@@ -95,6 +98,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       findChallenge(findBlock(jsBlocks, params), params)
   };
 
+  // TODO: return notFound if no idToPathSegmentsMap entry.
   // TODO: validate params first to mollify TS.
   if (params) {
     if (typeof params.superblock !== 'string')
