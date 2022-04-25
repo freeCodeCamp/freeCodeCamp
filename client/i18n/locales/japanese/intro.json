@@ -773,7 +773,7 @@
   },
   "misc-text": {
     "certification": "{{cert}} 認定",
-    "browse-other": "他の無料の認定講座を閲覧する\n(順番に受講することをお勧めします)",
+    "browse-other": "他の無料の認定講座を閲覧する\n(上から順に受講することをお勧めします)",
     "courses": "コース",
     "steps": "ステップ",
     "expand": "コースを展開",
@@ -783,7 +783,7 @@
     "viewing-upcoming-change": "ベータ版のページを閲覧中です。 ",
     "go-back-to-learn": "カリキュラムの安定版へ戻る。",
     "read-database-cert-article": "続行する前に、こちらのフォーラム投稿をお読みください。",
-    "enable-cookies": "You must enable third-party cookies before starting.",
+    "enable-cookies": "開始前にサードパーティーの Cookie を有効にしてください。",
     "english-only": "このセクションのコースは、英語版でのみ利用可能です。現時点ではタイトルと紹介文のみが翻訳に対応しており、レッスン自体は翻訳されておりません。"
   }
 }
