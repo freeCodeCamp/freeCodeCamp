@@ -24,8 +24,8 @@ Here's an example of a page's layout:
     <title>Example title</title>
   </head>
   <body>
-      <div>
-      </div>
+    <div>
+    </div>
   </body>
 </html>
 ```
