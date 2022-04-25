@@ -554,7 +554,7 @@
         "intro": [
           "Node.js 是一个 JavaScript 运行时，它允许开发人员在 JavaScript 中写入后端（服务器侧）程序。Node.js 有几个内置的模块——小型、独立的程序——来帮助实现这一点，一些核心模块包括像服务器一样运作的 HTTP 和文件系统，一个读取和修改文件的模块。",
           "在上一组课程中，你学到了怎么从 npm下载和管理软件包。这些软件包是较小模块的集合，可以帮助你构建更大更复杂的程序。",
-          "Express is a lightweight web application framework, and is one of the most popular packages on npm. Express makes it much easier to create a server and handle routing for your application, which handles things like directing people to the correct page when they visit a certain endpoint like <pre>/blog</pre>.",
+          "Express 是一个轻量级的 Web 应用程序框架，是 npm 上最流行的包之一。 Express 可以更轻松地为你的应用程序创建服务器和处理路由，例如在人们访问特定端点（如 <pre>/blog</pre>）时将人们引导到正确页面。",
           "在这个课程中，你将学习 Node 和 Express 的基础知识，包括如何创建服务器、处理不同的文件，以及处理不同的浏览器请求。"
         ]
       },
@@ -783,7 +783,7 @@
     "viewing-upcoming-change": "你正在查看Beta页面。 ",
     "go-back-to-learn": "回到正式版课程",
     "read-database-cert-article": "请在继续之前阅读这个论坛帖子。",
-    "enable-cookies": "You must enable third-party cookies before starting.",
+    "enable-cookies": "你必须在开始之前启用第三方 cookies。",
     "english-only": "本部分的课程只提供英文。我们目前只能翻译标题和介绍，而不能翻译课程本身。"
   }
 }

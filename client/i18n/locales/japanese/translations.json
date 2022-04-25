@@ -68,8 +68,8 @@
     "ask-later": "後で",
     "start-coding": "コーディングを始めましょう！",
     "go-to-settings": "設定へ移動して認定証を取得",
-    "click-start-course": "Start the course",
-    "click-start-project": "Start the project"
+    "click-start-course": "コースを開始",
+    "click-start-project": "プロジェクトを開始"
   },
   "landing": {
     "big-heading-1": "プログラミングを無料で学ぶ。",
@@ -249,7 +249,7 @@
       "heading": "ペースを落として、まずはこちらをお読みください。",
       "p1": "freeCodeCamp は、あなたが初めてソフトウェア開発者の仕事を得るための、実績のある道です。",
       "p2": "40,000 人以上の人々が、完了後に開発者の仕事に就きました。その中には Google や Microsoft などの大手企業も含まれます。",
-      "p3": "プログラミングに慣れていないのであれば、最初から始めて、これらの認定証を順番に獲得することをお勧めします。",
+      "p3": "プログラミングに慣れていないのであれば、最初から始めて、これらの認定証を上から順に獲得することをお勧めします。",
       "p4": "それぞれの認定証を獲得するには、各 5 つの必修のプロジェクトを構築し、すべてのテストに合格してください。",
       "p5": "獲得した認定証は、履歴書や LinkedIn に加えることができます。しかし認定証よりもさらに重要なことは道中で得る経験です。",
       "p6": "圧倒される思いがするとしても、それは正常です。プログラミングは難しいのです。",
@@ -525,7 +525,7 @@
     "code-save-less": "コードは保存されませんでした。数秒時間をおいて、もう一度お試しください。",
     "challenge-save-too-big": "コードを保存できませんでした。あなたのコードは {{user-size}} バイトですが、保存可能なコードは最大 {{max-size}} バイトです。コードを削減してもう一度お試しいただくか、https://forum.freecodecamp.org にてサポートを依頼してください。",
     "challenge-submit-too-big": "コードを提出できませんでした。あなたのコードは {{user-size}} バイトですが、提出可能なコードは最大 {{max-size}} バイトです。コードを削減してもう一度お試しいただくか、https://forum.freecodecamp.org にてサポートを依頼してください。",
-    "invalid-update-flag": "You are attempting to access forbidden resources. Please request assistance on https://forum.freecodecamp.org if this is a valid request."
+    "invalid-update-flag": "禁止されたリソースにアクセスしようとしています。正当なリクエストの場合、https://forum.freecodecamp.org でサポートを依頼してください。"
   },
   "validation": {
     "max-characters": "上限は 288 文字です。残り {{charsLeft}} 文字です。",

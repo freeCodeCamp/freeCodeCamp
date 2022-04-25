@@ -58,7 +58,7 @@
     "resubscribe": "你可以点击此处重新订阅",
     "click-here": "点击此处登陆",
     "save": "保存",
-    "save-code": "Save your Code",
+    "save-code": "保存你的代码",
     "no-thanks": "不用，谢谢",
     "yes-please": "好的",
     "update-email": "更新我的邮箱",
@@ -68,8 +68,8 @@
     "ask-later": "稍后问我",
     "start-coding": "开始编码！",
     "go-to-settings": "转到设置以申请你的认证",
-    "click-start-course": "Start the course",
-    "click-start-project": "Start the project"
+    "click-start-course": "开始课程",
+    "click-start-project": "启动项目"
   },
   "landing": {
     "big-heading-1": "免费学习编程",
@@ -357,7 +357,7 @@
     "try-again": "请重试。",
     "card-number": "你的卡号：",
     "expiration": "到期日：",
-    "secure-donation": "Secure donation",
+    "secure-donation": "安全捐款",
     "faq": "常见问题",
     "only-you": "只有你可以看到此消息。祝贺你获得这项认证。获得认证不是一件容易的事情，运营 freeCodeCamp 也不容易，而且需要花费很多。请帮助我们更好地帮助你和世界各地的许多其他人。今天就为我们的非营利组织提供免税捐款，支持我们。",
     "get-help": "我如何利用我的捐款得到帮助？",
@@ -520,12 +520,12 @@
     "complete-project-first": "你必须先完成项目。",
     "local-code-save-error": "糟糕，你的代码没有保存，你的浏览器的本地存储空间可能已满。",
     "local-code-saved": "保存！你的代码已保存到你的浏览器本地存储中。",
-    "code-saved": "Your code was saved to the database. It will be here when you return.",
-    "code-save-error": "An error occurred trying to save your code.",
-    "code-save-less": "Slow Down! Your code was not saved. Try again in a few seconds.",
-    "challenge-save-too-big": "Sorry, you cannot save your code. Your code is {{user-size}} bytes. We allow a maximum of {{max-size}} bytes. Please make your code smaller and try again or request assistance on https://forum.freecodecamp.org",
-    "challenge-submit-too-big": "Sorry, you cannot submit your code. Your code is {{user-size}} bytes. We allow a maximum of {{max-size}} bytes. Please make your code smaller and try again or request assistance on https://forum.freecodecamp.org",
-    "invalid-update-flag": "You are attempting to access forbidden resources. Please request assistance on https://forum.freecodecamp.org if this is a valid request."
+    "code-saved": "你的代码已保存到数据库。当你返回时它将在这里。",
+    "code-save-error": "尝试保存你的代码时发生错误。",
+    "code-save-less": "等等！你的代码未保存，请在几秒钟后重试。",
+    "challenge-save-too-big": "抱歉，你无法保存代码。你的代码是 {{user-size}} 字节。我们最多允许 {{max-size}} 个字节。请减少你的代码并重试，或在 https://forum.freecodecamp.org 上请求帮助。",
+    "challenge-submit-too-big": "抱歉，你无法提交代码。你的代码是 {{user-size}} 字节。我们最多允许 {{max-size}} 个字节。请减少你的代码并重试，或在 https://forum.freecodecamp.org 上请求帮助。",
+    "invalid-update-flag": "你正在尝试访问禁止的资源。如果这是一个有效的请求，请在 https://forum.freecodecamp.org 上请求帮助。"
   },
   "validation": {
     "max-characters": "字符数最多为 288 个，你还可以输入 {{charsLeft}} 个字符",
