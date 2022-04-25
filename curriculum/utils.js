@@ -32,12 +32,12 @@ const superBlockToOrder = {
   'information-security': 8,
   'machine-learning-with-python': 9,
   'coding-interview-prep': 10,
+  '2022/responsive-web-design': 11,
   'relational-database': 12
 };
 
 const superBlockToNewOrder = {
-  ...superBlockToOrder,
-  '2022/responsive-web-design': 11
+  ...superBlockToOrder
 };
 
 function getSuperOrder(

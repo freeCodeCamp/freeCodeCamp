@@ -1,7 +1,7 @@
 import { SuperBlocks } from '../../../config/certification-settings';
 import envData from '../../../config/env.json';
 
-const { showNewCurriculum, showUpcomingChanges } = envData;
+const { showUpcomingChanges } = envData;
 
 const responsiveWebBase =
   '/learn/responsive-web-design/responsive-web-design-projects';
@@ -300,42 +300,33 @@ const certMap = [
       {
         id: '587d78af367417b2b2512b03',
         title: 'Build a Survey Form',
-        link: getResponsiveWebDesignPath('build-a-survey-form', {
-          showNewCurriculum
-        }),
+        link: getResponsiveWebDesignPath('build-a-survey-form'),
         certSlug: SuperBlocks.RespWebDesign
       },
       {
         id: 'bd7158d8c442eddfaeb5bd18',
         title: 'Build a Tribute Page',
-        link: getResponsiveWebDesignPath('build-a-tribute-page', {
-          showNewCurriculum
-        }),
+        link: getResponsiveWebDesignPath('build-a-tribute-page'),
         certSlug: SuperBlocks.RespWebDesign
       },
       {
         id: '587d78b0367417b2b2512b05',
         title: 'Build a Technical Documentation Page',
         link: getResponsiveWebDesignPath(
-          'build-a-technical-documentation-page',
-          { showNewCurriculum }
+          'build-a-technical-documentation-page'
         ),
         certSlug: SuperBlocks.RespWebDesign
       },
       {
         id: '587d78af367417b2b2512b04',
         title: 'Build a Product Landing Page',
-        link: getResponsiveWebDesignPath('build-a-product-landing-page', {
-          showNewCurriculum
-        }),
+        link: getResponsiveWebDesignPath('build-a-product-landing-page'),
         certSlug: SuperBlocks.RespWebDesign
       },
       {
         id: 'bd7158d8c242eddfaeb5bd13',
         title: 'Build a Personal Portfolio Webpage',
-        link: getResponsiveWebDesignPath('build-a-personal-portfolio-webpage', {
-          showNewCurriculum
-        }),
+        link: getResponsiveWebDesignPath('build-a-personal-portfolio-webpage'),
         certSlug: SuperBlocks.RespWebDesign
       }
     ]
@@ -724,14 +715,10 @@ const certMap = [
   }
 ] as const;
 
-function getResponsiveWebDesignPath(
-  project: string,
-  { showNewCurriculum }: { showNewCurriculum: boolean }
-) {
-  // TODO: for the hard launch, the conditional should just be `showNewCurriculum`
-  return showNewCurriculum && showUpcomingChanges
+function getResponsiveWebDesignPath(project: string) {
+  return showUpcomingChanges
     ? `${responsiveWeb22Base}/${project}-project/${project}`
-    : `${responsiveWebBase}/${project}/`;
+    : `${responsiveWebBase}/${project}`;
 }
 
 const titles = certMap.map(({ title }) => title);
