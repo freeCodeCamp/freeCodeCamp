@@ -46,9 +46,7 @@ const computeClassNames = ({
         'bg-default-background-danger',
         'text-default-foreground-danger',
         ...(disabled
-          ? [
-            'active:before:hidden',
-          ]
+          ? ['active:before:hidden']
           : [
               'hover:bg-default-background-danger-hover',
               'hover:text-default-foreground-danger-hover'
@@ -62,10 +60,10 @@ const computeClassNames = ({
         'text-default-foreground-info',
         ...(disabled
           ? [
-            'active:before:bg-default-background-quaternary',
-            'active:before:opacity-0',
-            'focus:ring-0'
-          ]
+              'active:before:bg-default-background-quaternary',
+              'active:before:opacity-0',
+              'focus:ring-0'
+            ]
           : [
               'hover:bg-default-background-info-hover',
               'hover:text-default-foreground-info-hover'
@@ -80,10 +78,10 @@ const computeClassNames = ({
         'text-default-foreground-secondary',
         ...(disabled
           ? [
-            'active:before:bg-default-background-quaternary',
-            'active:before:opacity-0',
-            'focus:ring-0'
-          ]
+              'active:before:bg-default-background-quaternary',
+              'active:before:opacity-0',
+              'focus:ring-0'
+            ]
           : [
               'hover:bg-default-background-primary-hover',
               'hover:text-default-foreground-primary-hover'
@@ -130,6 +128,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const handleClick = useCallback(
       (event: React.MouseEvent<HTMLButtonElement>) => {
         const ariaDisabled = event.currentTarget.getAttribute('aria-disabled');
+
         if (!ariaDisabled && onClick) {
           onClick(event);
         }
