@@ -17,13 +17,15 @@ Here's an example of a page's layout:
 
 ```html
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta />
+    <meta charset="utf-8">
+    <title>Example title</title>
   </head>
   <body>
-    <div>
-    </div>
+      <div>
+      </div>
   </body>
 </html>
 ```
