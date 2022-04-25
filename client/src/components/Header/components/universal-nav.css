@@ -264,6 +264,11 @@ button.nav-link[aria-disabled='true'] {
   display: block;
 }
 
+.nav-lang-button svg {
+  height: 1rem;
+  width: 1rem;
+}
+
 .dark-palette .nav-lang-button:focus {
   fill: revert;
 }
