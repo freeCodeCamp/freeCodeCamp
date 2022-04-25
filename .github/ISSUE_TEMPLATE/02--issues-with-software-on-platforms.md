@@ -8,7 +8,7 @@ assignees: ''
 ---
 
 <!--
-NOTE: If you're reporting a security issue, don't create a GitHub issue. Instead, email security@freecodecamp.org. We will look into it immediately.
+NOTE: If you're reporting a security issue, don't create a GitHub issue. Instead, visit https://contribute.freecodecamp.org/#/security.
 -->
 
 ## Affected page
