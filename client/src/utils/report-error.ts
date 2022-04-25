@@ -1,15 +1,9 @@
-import * as Sentry from '@sentry/gatsby';
-import envData from '../../../config/env.json';
-
-const { sentryClientDSN } = envData;
+// TODO: re-integrate sentry, once chunk errors are resolved
+// https://github.com/freeCodeCamp/freeCodeCamp/pull/45778
 
 export function reportClientSideError(
   e: Error,
-  message = sentryClientDSN === null
-    ? 'Unhandled error'
-    : 'Error sent to Sentry'
-): string | void {
-  return sentryClientDSN === null
-    ? console.error(`Client: ${message}`, e)
-    : Sentry.captureException(e);
+  message = 'Unhandled error'
+): void {
+  return console.error(`Client: ${message}`, e);
 }
