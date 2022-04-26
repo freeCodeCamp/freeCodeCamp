@@ -59,11 +59,7 @@ const computeClassNames = ({
         'bg-default-background-info',
         'text-default-foreground-info',
         ...(disabled
-          ? [
-              'active:before:bg-default-background-quaternary',
-              'active:before:opacity-0',
-              'focus:ring-0'
-            ]
+          ? ['active:before:hidden']
           : [
               'hover:bg-default-background-info-hover',
               'hover:text-default-foreground-info-hover'
@@ -77,11 +73,7 @@ const computeClassNames = ({
         'bg-default-background-quaternary',
         'text-default-foreground-secondary',
         ...(disabled
-          ? [
-              'active:before:bg-default-background-quaternary',
-              'active:before:opacity-0',
-              'focus:ring-0'
-            ]
+          ? ['active:before:hidden']
           : [
               'hover:bg-default-background-primary-hover',
               'hover:text-default-foreground-primary-hover'
