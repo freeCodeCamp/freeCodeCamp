@@ -405,7 +405,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
               onKeyDown={this.handleLanguageButtonKeyDown}
               ref={this.langButtonRef}
             >
-              <span>Change Language</span>
+              <span>{t('buttons.change-language')}</span>
               <LanguageGlobe />
             </button>
             <ul
