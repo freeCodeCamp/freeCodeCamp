@@ -5,6 +5,7 @@
     "module": "esnext",
     "isolatedModules": true,
     "jsx": "preserve"
+    // "noUncheckedIndexedAccess": true TODO: add this when you've got time to clean up the code
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"],
