@@ -59,13 +59,13 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
     donationKeys,
     loggingKeys
   );
-  const receivedvariables = Object.keys(env as Record<string, unknown>);
-  if (expectedVariables.length !== receivedvariables.length) {
-    const extraVariables = receivedvariables
+  const actualVariables = Object.keys(env as Record<string, unknown>);
+  if (expectedVariables.length !== actualVariables.length) {
+    const extraVariables = actualVariables
       .filter(x => !expectedVariables.includes(x))
       .toString();
     const missingVariables = expectedVariables
-      .filter(x => !receivedvariables.includes(x))
+      .filter(x => !actualVariables.includes(x))
       .toString();
 
     throw Error(
