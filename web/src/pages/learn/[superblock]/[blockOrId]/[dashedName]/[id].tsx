@@ -6,8 +6,6 @@ import { ParsedUrlQuery } from 'querystring';
 import Editor from '@monaco-editor/react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
 
 import {
   SuperBlock,
@@ -19,40 +17,12 @@ import {
 } from '../../../../../data-fetching/get-curriculum';
 interface Props {
   challengeData: Challenge | null;
-  pathSegments: PathSegments | undefined;
 }
 
-export default function ChallengeComponent({
-  challengeData,
-  pathSegments
-}: Props) {
-  const router = useRouter();
-  const { superblock, blockOrId, dashedName, id } = router.query;
-
-  useEffect(() => {
-    // TODO: DRY this. We reuse the 'if path from params does not match path
-    // from trailing path segment, then use path from trailing path segment' for
-    // the superblock (and potentially the blocks) so it should be DRY.
-    if (
-      pathSegments &&
-      (pathSegments.block !== blockOrId ||
-        pathSegments.dashedName !== dashedName ||
-        pathSegments.superblock !== superblock)
-    ) {
-      // TODO: validate path segements.
-      void router.push(
-        `/learn/${pathSegments.superblock}/${pathSegments.block}/${
-          pathSegments.dashedName
-        }/${id as string}`
-      );
-    }
-  });
-  if (!superblock || !blockOrId || !dashedName || !id) return null;
-  if (typeof blockOrId !== 'string') return null;
-
+export default function ChallengeComponent({ challengeData }: Props) {
   return (
     <>
-      <Main challengeData={challengeData} dashedName={dashedName} />
+      <Main challengeData={challengeData} />
       <Link
         href={
           '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements'
@@ -64,12 +34,11 @@ export default function ChallengeComponent({
   );
 }
 
-interface DescProps {
+interface MainProps {
   challengeData: Challenge | null;
-  dashedName: string | string[];
 }
 
-function Main({ challengeData }: DescProps) {
+function Main({ challengeData }: MainProps) {
   if (!challengeData || !challengeData?.challengeFiles) return null;
 
   return (
@@ -98,43 +67,83 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       findChallenge(findBlock(jsBlocks, params), params)
   };
 
+  // TODO: this is getting ugly, refactor a bit.
   // TODO: validate params first to mollify TS.
   if (params) {
-    if (typeof params.superblock !== 'string')
+    const normalizedParams = normalizeParams(params);
+    const { superblock, id } = normalizedParams;
+
+    if (typeof superblock !== 'string')
       throw Error(
         `superblock param has to be a string, ${JSON.stringify(
           params.superblock
         )}`
       );
-    if (typeof params.id !== 'string')
+    if (typeof id !== 'string')
       throw Error(
         `superblock param has to be a string, ${JSON.stringify(params.id)}`
       );
 
-    const pathSegments = idToPathSegmentsMap[params.id];
-    return pathSegments
-      ? {
-          props: {
-            challengeData: superBlockToChallengeMap[params.superblock](params),
-            pathSegments
-          },
-          revalidate: 10
-        }
-      : {
-          notFound: true,
-          revalidate: 10
-        };
+    const pathSegments = idToPathSegmentsMap[id];
+
+    if (!pathSegments) {
+      return {
+        notFound: true,
+        revalidate: 10
+      };
+    }
+
+    const valid = validateParams(normalizedParams, pathSegments);
+
+    if (valid) {
+      const challengeData =
+        superBlockToChallengeMap[superblock](normalizedParams);
+      return {
+        props: {
+          challengeData
+        },
+        revalidate: 10
+      };
+    } else {
+      const { superblock, block, dashedName } = pathSegments;
+      return {
+        redirect: {
+          destination: `/learn/${superblock}/${block}/${dashedName}/${id}`,
+          permanent: false
+        },
+        revalidate: 10
+      };
+    }
   } else {
-    return { props: {}, revalidate: 10 };
+    return { notFound: true, revalidate: 10 };
   }
 };
 
+// TODO: combine normalizing and validating
+
+function normalizeParams(params: ParsedUrlQuery) {
+  const { superblock, blockOrId, dashedName, id } = params;
+  return {
+    superblock,
+    block: blockOrId,
+    dashedName,
+    id
+  };
+}
+
+function validateParams(params: ParsedUrlQuery, pathSegments: PathSegments) {
+  for (const [key, value] of Object.entries(pathSegments)) {
+    if (params[key] !== value) return false;
+  }
+  return true;
+}
+
 function findBlock(superblock: SuperBlock, params: ParsedUrlQuery) {
-  if (typeof params.blockOrId !== 'string')
+  if (typeof params.block !== 'string')
     throw Error(
-      'blockOrId param has to be a string. Received: ' + String(params.block)
+      'block param has to be a string. Received: ' + String(params.block)
     );
-  return superblock[params.blockOrId] ?? null;
+  return superblock[params.block] ?? null;
 }
 
 function findChallenge(block: Block | null, params: ParsedUrlQuery) {
