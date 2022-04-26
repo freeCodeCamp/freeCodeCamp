@@ -29,11 +29,16 @@ export default function Catch({
   });
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const idToPathSegmentsMap = getIdToPathSegmentsMap(await getCurriculum());
+  const uuid = params?.id?.slice(-1)[0];
 
-  // TODO: return notFound if no idToPathSegmentsMap entry.
-  return { props: { idToPathSegmentsMap }, revalidate: 10 };
+  return !uuid || !idToPathSegmentsMap[uuid]
+    ? {
+        notFound: true,
+        revalidate: 10
+      }
+    : { props: { idToPathSegmentsMap }, revalidate: 10 };
 };
 
 export const getStaticPaths: GetStaticPaths = () => ({

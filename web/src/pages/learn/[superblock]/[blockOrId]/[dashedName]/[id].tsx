@@ -98,7 +98,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       findChallenge(findBlock(jsBlocks, params), params)
   };
 
-  // TODO: return notFound if no idToPathSegmentsMap entry.
   // TODO: validate params first to mollify TS.
   if (params) {
     if (typeof params.superblock !== 'string')
@@ -111,13 +110,20 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       throw Error(
         `superblock param has to be a string, ${JSON.stringify(params.id)}`
       );
-    return {
-      props: {
-        challengeData: superBlockToChallengeMap[params.superblock](params),
-        pathSegments: idToPathSegmentsMap[params.id]
-      },
-      revalidate: 10
-    };
+
+    const pathSegments = idToPathSegmentsMap[params.id];
+    return pathSegments
+      ? {
+          props: {
+            challengeData: superBlockToChallengeMap[params.superblock](params),
+            pathSegments
+          },
+          revalidate: 10
+        }
+      : {
+          notFound: true,
+          revalidate: 10
+        };
   } else {
     return { props: {}, revalidate: 10 };
   }
