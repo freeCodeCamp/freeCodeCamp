@@ -1,23 +1,34 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
-import { getCurriculum } from '../../../data-fetching/get-curriculum';
+import {
+  getCurriculum,
+  getIdToDashedNameMap
+} from '../../../data-fetching/get-curriculum';
 
 interface Props {
   blockNames?: string[];
   challengeOrderMap?: { [index: string]: [id: string, title: string] };
+  idToDashedNameMap?: { [index: string]: string };
 }
 
-export default function SuperBlock({ blockNames, challengeOrderMap }: Props) {
+export default function SuperBlock({
+  blockNames,
+  challengeOrderMap,
+  idToDashedNameMap
+}: Props) {
+  if (!blockNames || !challengeOrderMap || !idToDashedNameMap) return null;
   return (
     <>
-      {blockNames?.map(blockName => (
+      {blockNames.map(blockName => (
         <ul key={blockName}>
           {blockName}
           <ul>
-            {challengeOrderMap?.[blockName]?.map(([id, title]) => (
+            {challengeOrderMap[blockName].map(([id, title]) => (
               <li key={id}>
-                <Link href={`/learn/${id}`}>
+                <Link
+                  href={`/learn/responsive-web-design/${blockName}/${idToDashedNameMap[id]}/${id}`}
+                >
                   <a>{title}</a>
                 </Link>
               </li>
@@ -30,7 +41,9 @@ export default function SuperBlock({ blockNames, challengeOrderMap }: Props) {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { rwdBlocks } = await getCurriculum();
+  const curriculum = await getCurriculum();
+  const idToDashedNameMap = getIdToDashedNameMap(curriculum);
+  const { rwdBlocks } = curriculum;
   const superblock = params && params['superblock'];
   const blockOrId = params && params['blockOrId'];
   // TODO: replace this ad hoc solution via idToPathSegmentsMap (idToPathMap
@@ -44,20 +57,23 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   } else {
     const blockNames = Object.keys(rwdBlocks);
     const challengeOrderMap = blockNames.reduce(
-      (prev, curr) => ({
+      (prev, blockName) => ({
         ...prev,
-        ...{ [curr]: rwdBlocks[curr].meta.challengeOrder }
+        ...{ [blockName]: rwdBlocks[blockName].meta.challengeOrder }
       }),
       {}
     );
 
-    return { props: { blockNames, challengeOrderMap }, revalidate: 10 };
+    return {
+      props: { blockNames, challengeOrderMap, idToDashedNameMap },
+      revalidate: 10
+    };
   }
 };
 
 export const getStaticPaths: GetStaticPaths = () => {
   return {
-    paths: [],
+    paths: ['/learn/responsive-web-design/special-path'],
     fallback: true
   };
 };

@@ -81,3 +81,16 @@ export function getIdToPathSegmentsMap({ rwdBlocks }: Curriculum) {
   }
   return idToPathSegmentsMap;
 }
+
+// TODO: again, bit ugly. Would be better to get data in this shape from the
+// curriculum server.
+export function getIdToDashedNameMap({ rwdBlocks }: Curriculum) {
+  const idToDashedNameMap: Record<string, string> = {};
+  for (const blockName of Object.keys(rwdBlocks)) {
+    const block = rwdBlocks[blockName];
+    for (const challenge of block.challenges) {
+      idToDashedNameMap[challenge.id] = challenge.dashedName;
+    }
+  }
+  return idToDashedNameMap;
+}
