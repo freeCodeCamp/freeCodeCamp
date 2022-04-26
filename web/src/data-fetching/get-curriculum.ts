@@ -46,6 +46,7 @@ export interface PathSegments {
   superblock: string;
   block: string;
   dashedName: string;
+  id: string;
 }
 
 export async function getCurriculum() {
@@ -73,7 +74,8 @@ export function getIdToPathSegmentsMap({ rwdBlocks }: Curriculum) {
       idToPathSegmentsMap[challenge.id] = {
         superblock: 'responsive-web-design',
         block: blockName,
-        dashedName: challenge.dashedName
+        dashedName: challenge.dashedName,
+        id: challenge.id
       };
     }
   }

@@ -59,96 +59,79 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const idToPathSegmentsMap = getIdToPathSegmentsMap(curriculum);
 
   const superBlockToChallengeMap: {
-    [index: string]: (params: ParsedUrlQuery) => Challenge | null;
+    [index: string]: (pathSegments: PathSegments) => Challenge | null;
   } = {
-    'responsive-web-design': (params: ParsedUrlQuery) =>
-      findChallenge(findBlock(rwdBlocks, params), params),
-    'javascript-algorithms-and-data-structures': (params: ParsedUrlQuery) =>
-      findChallenge(findBlock(jsBlocks, params), params)
+    'responsive-web-design': (pathSegments: PathSegments) =>
+      findChallenge(findBlock(rwdBlocks, pathSegments), pathSegments),
+    'javascript-algorithms-and-data-structures': (pathSegments: PathSegments) =>
+      findChallenge(findBlock(jsBlocks, pathSegments), pathSegments)
   };
 
-  // TODO: this is getting ugly, refactor a bit.
-  // TODO: validate params first to mollify TS.
-  if (params) {
-    const normalizedParams = normalizeParams(params);
-    const { superblock, id } = normalizedParams;
+  const { valid, pathSegments } = validateAndTransformParams(
+    idToPathSegmentsMap,
+    params
+  );
 
-    if (typeof superblock !== 'string')
-      throw Error(
-        `superblock param has to be a string, ${JSON.stringify(
-          params.superblock
-        )}`
-      );
-    if (typeof id !== 'string')
-      throw Error(
-        `superblock param has to be a string, ${JSON.stringify(params.id)}`
-      );
-
-    const pathSegments = idToPathSegmentsMap[id];
-
-    if (!pathSegments) {
-      return {
-        notFound: true,
-        revalidate: 10
-      };
-    }
-
-    const valid = validateParams(normalizedParams, pathSegments);
-
-    if (valid) {
-      const challengeData =
-        superBlockToChallengeMap[superblock](normalizedParams);
-      return {
-        props: {
-          challengeData
-        },
-        revalidate: 10
-      };
-    } else {
-      const { superblock, block, dashedName } = pathSegments;
-      return {
-        redirect: {
-          destination: `/learn/${superblock}/${block}/${dashedName}/${id}`,
-          permanent: false
-        },
-        revalidate: 10
-      };
-    }
+  if (!pathSegments) {
+    return {
+      notFound: true,
+      revalidate: 10
+    };
+  }
+  if (valid) {
+    const challengeData =
+      superBlockToChallengeMap[pathSegments.superblock](pathSegments);
+    return {
+      props: {
+        challengeData
+      },
+      revalidate: 10
+    };
   } else {
-    return { notFound: true, revalidate: 10 };
+    const { superblock, block, dashedName, id } = pathSegments;
+    return {
+      redirect: {
+        destination: `/learn/${superblock}/${block}/${dashedName}/${id}`,
+        permanent: false
+      },
+      revalidate: 10
+    };
   }
 };
 
-// TODO: combine normalizing and validating
+function validateAndTransformParams(
+  idToPathSegmentsMap: { [index: string]: PathSegments },
+  params?: ParsedUrlQuery
+) {
+  if (!params) return { valid: false };
+  if (typeof params.id !== 'string') return { valid: false };
+  const pathSegmentsForId = idToPathSegmentsMap[params.id];
+  if (!pathSegmentsForId) return { valid: false };
+  const normalizedParams: Record<string, unknown> = {
+    superblock: params.superblock,
+    block: params.blockOrId,
+    dashedName: params.dashedName,
+    id: params.id
+  };
+  for (const [key, value] of Object.entries(pathSegmentsForId)) {
+    if (normalizedParams[key] !== value)
+      return {
+        valid: false,
+        pathSegments: { ...pathSegmentsForId, id: params.id }
+      };
+  }
 
-function normalizeParams(params: ParsedUrlQuery) {
-  const { superblock, blockOrId, dashedName, id } = params;
   return {
-    superblock,
-    block: blockOrId,
-    dashedName,
-    id
+    valid: true,
+    pathSegments: { ...pathSegmentsForId, id: params.id }
   };
 }
 
-function validateParams(params: ParsedUrlQuery, pathSegments: PathSegments) {
-  for (const [key, value] of Object.entries(pathSegments)) {
-    if (params[key] !== value) return false;
-  }
-  return true;
-}
-
-function findBlock(superblock: SuperBlock, params: ParsedUrlQuery) {
-  if (typeof params.block !== 'string')
-    throw Error(
-      'block param has to be a string. Received: ' + String(params.block)
-    );
+function findBlock(superblock: SuperBlock, params: PathSegments) {
   return superblock[params.block] ?? null;
 }
 
-function findChallenge(block: Block | null, params: ParsedUrlQuery) {
-  if (typeof params.dashedName !== 'string')
-    throw Error('dashedName param has to be a string');
+function findChallenge(block: Block | null, params: PathSegments) {
   const challenge = block?.challenges.find(
     (c: { dashedName: string }) => c.dashedName == params.dashedName
   );
