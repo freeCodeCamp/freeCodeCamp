@@ -645,13 +645,16 @@ const Editor = (props: EditorProps): JSX.Element => {
     button.setAttribute('id', 'test-button');
     button.classList.add('btn-block');
     button.innerHTML = 'Check Your Code (Ctrl + Enter)';
+    const buttonsContainer = document.createElement('div');
+    buttonsContainer.setAttribute('id', 'action-buttons-container');
     const submitButton = document.createElement('button');
     submitButton.setAttribute('id', 'submit-button');
     submitButton.setAttribute('aria-hidden', 'true');
     submitButton.innerHTML = 'Submit your code (Ctrl + Enter)';
     submitButton.classList.add('btn-block');
+    buttonsContainer.appendChild(submitButton);
     editorActionRow.appendChild(button);
-    editorActionRow.appendChild(submitButton);
+    editorActionRow.appendChild(buttonsContainer);
     editorActionRow.appendChild(statusNode);
     button.onclick = () => {
       clearTestFeedback();
@@ -1062,6 +1065,10 @@ const Editor = (props: EditorProps): JSX.Element => {
     const isEditorInFocus = document.activeElement?.tagName === 'TEXTAREA';
     if (editableRegion.length === 2) {
       const testStatus = document.getElementById('test-status');
+      const buttonsContainer = document.getElementById(
+        'action-buttons-container'
+      );
+
       if (challengeIsComplete()) {
         const testButton = document.getElementById('test-button');
         // In case test button has focus, only visually hide it for now so we
@@ -1106,7 +1113,7 @@ const Editor = (props: EditorProps): JSX.Element => {
           testStatus.innerHTML = `<p class="status"><span aria-hidden="true">&#9989;</span> Congratulations, your code passes. Submit your code to complete this step and move on to the next one. ${submitKeyboardInstructions}</p>`;
           setTestFeedbackHeight();
         }
-      } else if (challengeHasErrors() && testStatus && testOutput) {
+      } else if (challengeHasErrors() && testStatus && buttonsContainer) {
         attemptRef.current.attempts++;
         const wordsArray = [
           'Try again.',
@@ -1121,15 +1128,14 @@ const Editor = (props: EditorProps): JSX.Element => {
         setTestFeedbackHeight();
         const outputJsx = (
           <>
-            <span dangerouslySetInnerHTML={{ __html: output[1] }}></span>
-            {attemptRef.current.attempts >= props.tests.length && (
+            {true && (
               <button className='btn-block' onClick={props.openHelpModal}>
                 {t('learn.editor-tabs.ask-help')}
               </button>
             )}
           </>
         );
-        ReactDOM.render(outputJsx, testOutput);
+        ReactDOM.render(outputJsx, buttonsContainer);
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
