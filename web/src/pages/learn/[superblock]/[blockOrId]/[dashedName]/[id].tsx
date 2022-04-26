@@ -27,7 +27,7 @@ export default function ChallengeComponent({
   pathSegments
 }: Props) {
   const router = useRouter();
-  const { superblock, block, dashedName, id } = router.query;
+  const { superblock, blockOrId, dashedName, id } = router.query;
 
   useEffect(() => {
     // TODO: DRY this. We reuse the 'if path from params does not match path
@@ -35,7 +35,7 @@ export default function ChallengeComponent({
     // the superblock (and potentially the blocks) so it should be DRY.
     if (
       pathSegments &&
-      (pathSegments.block !== block ||
+      (pathSegments.block !== blockOrId ||
         pathSegments.dashedName !== dashedName ||
         pathSegments.superblock !== superblock)
     ) {
@@ -47,8 +47,8 @@ export default function ChallengeComponent({
       );
     }
   });
-  if (!superblock || !block || !dashedName || !id) return null;
-  if (typeof block !== 'string') return null;
+  if (!superblock || !blockOrId || !dashedName || !id) return null;
+  if (typeof blockOrId !== 'string') return null;
 
   return (
     <>
@@ -85,6 +85,7 @@ function Main({ challengeData }: DescProps) {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  console.log('params', params);
   const curriculum = await getCurriculum();
   const { rwdBlocks, jsBlocks } = curriculum;
   const idToPathSegmentsMap = getIdToPathSegmentsMap(curriculum);
@@ -124,9 +125,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 function findBlock(superblock: SuperBlock, params: ParsedUrlQuery) {
-  if (typeof params.block !== 'string')
-    throw Error('block param has to be a string');
-  return superblock[params.block] ?? null;
+  if (typeof params.blockOrId !== 'string')
+    throw Error(
+      'blockOrId param has to be a string. Received: ' + String(params.block)
+    );
+  return superblock[params.blockOrId] ?? null;
 }
 
 function findChallenge(block: Block | null, params: ParsedUrlQuery) {
@@ -181,7 +184,7 @@ function toParams(
   return {
     params: {
       superblock,
-      block,
+      blockOrId: block,
       dashedName,
       id
     }
