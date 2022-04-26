@@ -1,15 +1,29 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { GetStaticPaths, GetStaticProps } from 'next';
+import Link from 'next/link';
 import { getCurriculum } from '../../../data-fetching/get-curriculum';
 
 interface Props {
   blockNames?: string[];
+  challengeOrderMap?: { [index: string]: [id: string, title: string] };
 }
 
-export default function SuperBlock({ blockNames }: Props) {
+export default function SuperBlock({ blockNames, challengeOrderMap }: Props) {
   return (
     <>
       {blockNames?.map(blockName => (
-        <li key={blockName}> {blockName}</li>
+        <ul key={blockName}>
+          {blockName}
+          <ul>
+            {challengeOrderMap?.[blockName]?.map(([id, title]) => (
+              <li key={id}>
+                <Link href={`/learn/${id}`}>
+                  <a>{title}</a>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </ul>
       ))}
     </>
   );
@@ -29,7 +43,15 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     return { notFound, revalidate: 10 };
   } else {
     const blockNames = Object.keys(rwdBlocks);
-    return { props: { blockNames }, revalidate: 10 };
+    const challengeOrderMap = blockNames.reduce(
+      (prev, curr) => ({
+        ...prev,
+        ...{ [curr]: rwdBlocks[curr].meta.challengeOrder }
+      }),
+      {}
+    );
+
+    return { props: { blockNames, challengeOrderMap }, revalidate: 10 };
   }
 };
 
