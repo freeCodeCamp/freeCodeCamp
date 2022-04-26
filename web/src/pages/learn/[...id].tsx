@@ -18,7 +18,6 @@ export default function Catch({
 }) {
   const router = useRouter();
   const { id } = router.query;
-  console.log(router.query);
 
   const uuid = id?.slice(-1)[0];
 

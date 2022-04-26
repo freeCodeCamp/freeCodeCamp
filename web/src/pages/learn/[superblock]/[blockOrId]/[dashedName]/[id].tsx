@@ -85,7 +85,6 @@ function Main({ challengeData }: DescProps) {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  console.log('params', params);
   const curriculum = await getCurriculum();
   const { rwdBlocks, jsBlocks } = curriculum;
   const idToPathSegmentsMap = getIdToPathSegmentsMap(curriculum);
