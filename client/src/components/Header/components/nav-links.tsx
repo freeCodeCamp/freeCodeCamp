@@ -88,18 +88,9 @@ export class NavLinks extends Component<NavLinksProps, {}> {
 
   getPreviousMenuItem(target: HTMLElement): HTMLElement {
     const { menuButtonRef } = this.props;
-    const currentListItem = target.closest('.nav-list > li');
-    if (!currentListItem) {
-      return menuButtonRef.current;
-    }
-    try {
-      const previousSibling =
-        currentListItem.previousSibling as HTMLElement | null;
-      const previousListItem = previousSibling.querySelector('a, button');
-      return previousListItem;
-    } catch (e) {
-      return menuButtonRef.current;
-    }
+    const previousSibling =
+      target.closest('.nav-list > li')?.previousElementSibling;
+    return previousSibling?.querySelector('a, button') ?? menuButtonRef.current;
   }
 
   handleLanguageChange = (event: React.MouseEvent<HTMLAnchorElement>): void => {
