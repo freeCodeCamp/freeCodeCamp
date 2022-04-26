@@ -1,20 +1,22 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { useRouter } from 'next/router';
+import { getCurriculum } from '../../../data-fetching/get-curriculum';
 
-export default function SuperBlock() {
-  const router = useRouter();
-  const { superblock, blockOrId } = router.query;
+interface Props {
+  blockNames?: string[];
+}
 
-  // TODO: use useEffect to redirect based on the trailing path segment.
-
+export default function SuperBlock({ blockNames }: Props) {
   return (
     <>
-      welcome to the superblock {superblock} at {blockOrId}
+      {blockNames?.map(blockName => (
+        <li key={blockName}> {blockName}</li>
+      ))}
     </>
   );
 }
 
-export const getStaticProps: GetStaticProps = ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const { rwdBlocks } = await getCurriculum();
   const superblock = params && params['superblock'];
   const blockOrId = params && params['blockOrId'];
   // TODO: replace this ad hoc solution via idToPathSegmentsMap (idToPathMap
@@ -22,10 +24,12 @@ export const getStaticProps: GetStaticProps = ({ params }) => {
   // skip building the page.
   const notFound =
     superblock !== 'responsive-web-design' || blockOrId !== 'special-path';
+
   if (notFound) {
     return { notFound, revalidate: 10 };
   } else {
-    return { props: {}, revalidate: 10 };
+    const blockNames = Object.keys(rwdBlocks);
+    return { props: { blockNames }, revalidate: 10 };
   }
 };
 
