@@ -5,6 +5,7 @@
     "client/src/**/*",
     "client/utils/**/*",
     "curriculum/*.test.ts",
+    "tools/challenge-editor/**/*",
     "tools/challenge-helper-scripts/**/*.ts",
     "tools/scripts/**/*.ts"
   ],
