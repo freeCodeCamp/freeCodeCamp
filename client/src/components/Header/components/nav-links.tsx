@@ -132,14 +132,10 @@ export class NavLinks extends Component<NavLinksProps, {}> {
 
   handleMenuKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>): void => {
     const { menuButtonRef, hideMenu } = this.props;
-    switch (event.key) {
-      case 'Escape':
-        menuButtonRef.current.focus();
-        hideMenu();
-        event.preventDefault();
-        event.stopPropagation();
-        break;
-      default:
+    if (event.key === 'Escape') {
+      menuButtonRef.current.focus();
+      hideMenu();
+      event.preventDefault();
     }
   };
 
@@ -157,39 +153,41 @@ export class NavLinks extends Component<NavLinksProps, {}> {
     event: React.KeyboardEvent<HTMLButtonElement>
   ): void => {
     const { menuButtonRef, showLanguageMenu, hideMenu } = this.props;
-    let keyFlag = false;
-    switch (event.key) {
-      case `Escape`:
+    /* eslint-disable @typescript-eslint/naming-convention */
+    const doKeyPress = {
+      Escape: () => {
         menuButtonRef.current.focus();
         hideMenu();
-        keyFlag = true;
-        break;
-      case 'ArrowDown':
-      case 'ArrowUp':
-        {
-          const focusElement =
-            event.key === 'ArrowDown'
-              ? this.firstLangOptionRef.current
-              : this.lastLangOptionRef.current;
-          showLanguageMenu(focusElement);
-        }
-        keyFlag = true;
-        break;
-      default:
-    }
-    if (keyFlag) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
+        event.preventDefault();
+      },
+      ArrowDown: () => {
+        showLanguageMenu(this.firstLangOptionRef.current);
+        event.preventDefault();
+      },
+      ArrowUp: () => {
+        showLanguageMenu(this.lastLangOptionRef.current);
+        event.preventDefault();
+      }
+    };
+    /* eslint-enable @typescript-eslint/naming-convention */
+    doKeyPress[event.key]?.();
   };
 
   handleLanguageMenuKeyDown = (
     event: React.KeyboardEvent<HTMLAnchorElement>
   ): void => {
     const { hideLanguageMenu, hideMenu } = this.props;
-    let keyFlag = false;
-    switch (event.key) {
-      case 'Tab':
+    const focusFirstLanguageMenuItem = () => {
+      this.firstLangOptionRef.current.focus();
+      event.preventDefault();
+    };
+    const focusLastLanguageMenuItem = () => {
+      this.lastLangOptionRef.current.focus();
+      event.preventDefault();
+    };
+    /* eslint-disable @typescript-eslint/naming-convention */
+    const doKeyPress = {
+      Tab: () => {
         if (!event.shiftKey) {
           // Let the Tab work as normal.
           hideLanguageMenu();
@@ -210,57 +208,39 @@ export class NavLinks extends Component<NavLinksProps, {}> {
         // is scrollable) we need to manually focus to the previous menu item.
         this.getPreviousMenuItem(this.langButtonRef.current).focus();
         hideLanguageMenu();
-        keyFlag = true;
-        break;
-      case 'Space':
-      case ' ':
-        this.handleLanguageChange(event);
-        keyFlag = true;
-        break;
-      case 'ArrowUp':
-        {
-          const arrowUpItemToFocus =
-            event.target === this.firstLangOptionRef.current
-              ? this.lastLangOptionRef.current
-              : (event.target.parentNode.previousSibling
-                  .firstChild as HTMLElement);
-          arrowUpItemToFocus.focus();
-        }
-        keyFlag = true;
-        break;
-      case 'ArrowDown':
-        {
-          const arrowDownItemToFocus =
-            event.target === this.lastLangOptionRef.current
-              ? this.firstLangOptionRef.current
-              : (event.target.parentNode.nextSibling.firstChild as HTMLElement);
-          arrowDownItemToFocus.focus();
-        }
-        keyFlag = true;
-        break;
-      case 'Home':
-      case 'PageUp':
-        this.firstLangOptionRef.current.focus();
-        keyFlag = true;
-        break;
-      case 'End':
-      case 'PageDown':
-        this.lastLangOptionRef.current.focus();
-        keyFlag = true;
-        break;
-      case 'Escape':
+        event.preventDefault();
+      },
+      ArrowUp: () => {
+        const arrowUpItemToFocus =
+          event.target === this.firstLangOptionRef.current
+            ? this.lastLangOptionRef.current
+            : (event.target.parentNode.previousSibling
+                .firstChild as HTMLElement);
+        arrowUpItemToFocus.focus();
+        event.preventDefault();
+      },
+      ArrowDown: () => {
+        const arrowDownItemToFocus =
+          event.target === this.lastLangOptionRef.current
+            ? this.firstLangOptionRef.current
+            : (event.target.parentNode.nextSibling.firstChild as HTMLElement);
+        arrowDownItemToFocus.focus();
+        event.preventDefault();
+      },
+      Escape: () => {
         // Set focus to language button first so we don't lose focus
         // for screen readers.
         this.langButtonRef.current.focus();
         hideLanguageMenu();
-        keyFlag = true;
-        break;
-      default:
-    }
-    if (keyFlag) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
+        event.preventDefault();
+      },
+      Home: focusFirstLanguageMenuItem,
+      PageUp: focusFirstLanguageMenuItem,
+      End: focusLastLanguageMenuItem,
+      PageDown: focusLastLanguageMenuItem
+    };
+    /* eslint-enable @typescript-eslint/naming-convention */
+    doKeyPress[event.key]?.();
   };
 
   handleBlur = (event: React.FocusEvent<HTMLButtonElement>): void => {
