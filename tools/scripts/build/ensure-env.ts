@@ -60,8 +60,6 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
     loggingKeys
   );
   const receivedvariables = Object.keys(env as Record<string, unknown>);
-  expectedVariables.sort();
-  receivedvariables.sort();
   if (expectedVariables.length !== receivedvariables.length) {
     const extraVariables = receivedvariables
       .filter(x => !expectedVariables.includes(x))
