@@ -3,9 +3,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 import { availableLangs } from '../../../config/i18n/all-langs';
-
-// eslint-disable-next-line
-const env = require('../../../config/read-env.js');
+import env from '../../../config/read-env';
 
 const globalConfigPath = path.resolve(__dirname, '../../../config');
 
@@ -61,31 +59,32 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
     donationKeys,
     loggingKeys
   );
-  const receivedvariables = Object.keys(env as Record<string, unknown>);
-  expectedVariables.sort();
-  receivedvariables.sort();
-  if (expectedVariables.length !== receivedvariables.length) {
-    /* eslint-disable @typescript-eslint/restrict-template-expressions */
-    throw Error(`
+  const actualVariables = Object.keys(env as Record<string, unknown>);
+  if (expectedVariables.length !== actualVariables.length) {
+    const extraVariables = actualVariables
+      .filter(x => !expectedVariables.includes(x))
+      .toString();
+    const missingVariables = expectedVariables
+      .filter(x => !actualVariables.includes(x))
+      .toString();
 
-    Env. variable validation failed. Make sure these keys are used and configured.
+    throw Error(
+      `
 
-    Mismatch:
-    ${expectedVariables
-      .filter(expected => !receivedvariables.includes(expected))
-      .concat(
-        receivedvariables.filter(
-          received => !expectedVariables.includes(received)
-        )
-      )}
+    Env. variable validation failed. Make sure only expected variables are used and configured.
 
-    `);
-    /* eslint-enable @typescript-eslint/restrict-template-expressions */
+    ` +
+        (extraVariables ? `Extra variables: ${extraVariables}\n` : '') +
+        (missingVariables ? `Missing variables: ${missingVariables}` : '')
+    );
   }
 
   for (const key of expectedVariables) {
-    /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-    if (typeof env[key] === 'undefined' || env[key] === null) {
+    // Since we may need to disable the sentry DSN (if we're getting too many
+    // errors), this is the one key we don't check is set.
+    if (key === 'sentryClientDSN') continue;
+    const envVal = env[key as keyof typeof env];
+    if (typeof envVal === 'undefined' || envVal === null) {
       throw Error(`
 
       Env. variable ${key} is missing, build cannot continue
