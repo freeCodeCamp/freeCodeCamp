@@ -26,7 +26,7 @@ describe('getSuperOrder', () => {
   });
 
   it('returns unique numbers for all current superblocks', () => {
-    expect.assertions(12);
+    expect.assertions(13);
     expect(getSuperOrder('responsive-web-design')).toBe(0);
     expect(getSuperOrder('javascript-algorithms-and-data-structures')).toBe(1);
     expect(getSuperOrder('front-end-development-libraries')).toBe(2);
@@ -38,10 +38,12 @@ describe('getSuperOrder', () => {
     expect(getSuperOrder('information-security')).toBe(8);
     expect(getSuperOrder('machine-learning-with-python')).toBe(9);
     expect(getSuperOrder('coding-interview-prep')).toBe(10);
+    expect(getSuperOrder('2022/responsive-web-design')).toBe(11);
     expect(getSuperOrder('relational-database')).toBe(12);
   });
 
-  it('returns a different order if passed the option showNewCurriculum: true', () => {
+  // Skipping these tests instead of deleting, so the infrastructure is there when we do the next superblock
+  it.skip('returns a different order if passed the option showNewCurriculum: true', () => {
     expect.assertions(13);
     expect(
       getSuperOrder('responsive-web-design', { showNewCurriculum: true })
