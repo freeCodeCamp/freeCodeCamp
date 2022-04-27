@@ -148,28 +148,28 @@ export const i18nextCodes = {
 };
 
 // These are for the language selector dropdown menu in the footer
-export const langDisplayNames = {
-  english: 'English',
-  espanol: 'Español',
-  chinese: '中文（简体字）',
-  'chinese-traditional': '中文（繁體字）',
-  italian: 'Italiano',
-  portuguese: 'Português',
-  ukrainian: 'Українська',
-  japanese: '日本語'
-};
+export enum LangNames {
+  English = 'English',
+  Espanol = 'Español',
+  Chinese = '中文（简体字）',
+  'Chinese-traditional' = '中文（繁體字）',
+  Italian = 'Italiano',
+  Portuguese = 'Português',
+  Ukrainian = 'Українська',
+  Japanese = '日本語'
+}
 
 /* These are for formatting dates and numbers. Used with JS .toLocaleString().
  * There's an example in profile/components/Camper.js
  * List: https://github.com/unicode-cldr/cldr-dates-modern/tree/master/main
  */
-export const langCodes = {
-  english: 'en-US',
-  espanol: 'es-419',
-  chinese: 'zh',
-  'chinese-traditional': 'zh-Hant',
-  italian: 'it',
-  portuguese: 'pt-BR',
-  ukrainian: 'uk',
-  japanese: 'ja'
-};
+export enum LangCodes {
+  English = 'en-US',
+  Espanol = 'es-419',
+  Chinese = 'zh',
+  'Chinese-traditional' = 'zh-Hant',
+  Italian = 'it',
+  Portuguese = 'pt-BR',
+  Ukrainian = 'uk',
+  Japanese = 'ja'
+}

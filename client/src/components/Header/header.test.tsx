@@ -8,10 +8,7 @@ import { create, ReactTestRendererJSON } from 'react-test-renderer';
 import ShallowRenderer from 'react-test-renderer/shallow';
 
 import envData from '../../../../config/env.json';
-import {
-  availableLangs,
-  langDisplayNames
-} from '../../../../config/i18n/all-langs';
+import { availableLangs, LangNames } from '../../../../config/i18n/all-langs';
 import { Themes } from '../settings/theme';
 import AuthOrProfile from './components/auth-or-profile';
 import { NavLinks } from './components/nav-links';
@@ -358,8 +355,9 @@ const hasAllAvailableLanguagesInDropdown = (component: JSX.Element) => {
   return children.props.children.every(
     ({ props }: { props: { value: string; children: string } }) =>
       availableLangs.client.includes(props.value) &&
-      (langDisplayNames as Record<string, string>)[props.value] ===
-        props.children
+      Object.values(LangNames).filter(
+        langName => langName == props.value
+      )[0] === props.children
   );
 };
 
