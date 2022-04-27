@@ -27,7 +27,7 @@ dashedName: add-images-to-your-website
 Додамо атрибут `alt` до нашого `img` прикладу вище:
 
 ```html
-<img src="https://www.freecatphotoapp.com/your-image.jpg" alt="A business cat wearing a necktie.">
+<img src="https://www.freecatphotoapp.com/your-image.jpg" alt="freeCodeCamp logo">
 ```
 
 # --instructions--

@@ -27,7 +27,7 @@ dashedName: add-images-to-your-website
 讓我們給上面例子的 `img` 添加 `alt` 屬性。
 
 ```html
-<img src="https://www.freecatphotoapp.com/your-image.jpg" alt="A business cat wearing a necktie.">
+<img src="https://www.freecatphotoapp.com/your-image.jpg" alt="freeCodeCamp logo">
 ```
 
 # --instructions--
