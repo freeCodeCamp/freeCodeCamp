@@ -40,6 +40,11 @@ export default function settingsController(app) {
   api.put('/update-user-flag', ifNoUser401, updateUserFlag);
   api.put('/update-my-socials', ifNoUser401, updateMySocials);
   api.put('/update-my-sound', ifNoUser401, updateMySound);
+  api.put(
+    '/update-my-keyboard-shortcuts',
+    ifNoUser401,
+    updateMyKeyboardShortcuts
+  );
   api.put('/update-my-honesty', ifNoUser401, updateMyHonesty);
   api.put('/update-my-quincy-email', ifNoUser401, updateMyQuincyEmail);
 
@@ -227,6 +232,14 @@ function updateMySound(...args) {
   createUpdateUserProperties(buildUpdate, validate)(...args);
 }
 
+function updateMyKeyboardShortcuts(...args) {
+  console.log('=========> updateMyKeyboardShortcuts');
+  const buildUpdate = body => _.pick(body, 'keyboardShortcuts');
+  const validate = ({ keyboardShortcuts }) =>
+    typeof keyboardShortcuts === 'boolean';
+  createUpdateUserProperties(buildUpdate, validate)(...args);
+}
+
 function updateMyHonesty(...args) {
   const buildUpdate = body => _.pick(body, 'isHonest');
   const validate = ({ isHonest }) => isHonest === true;
@@ -264,6 +277,7 @@ function updateUserFlag(req, res, next) {
   const allowedKeys = [
     'theme',
     'sound',
+    'keyboard-shortcuts',
     'isHonest',
     'portfolio',
     'sendQuincyEmail',

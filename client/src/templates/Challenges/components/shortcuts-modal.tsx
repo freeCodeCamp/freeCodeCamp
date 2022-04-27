@@ -1,15 +1,19 @@
-import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import React from 'react';
+import store from 'store';
+import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 
 import { closeModal, isShortcutsModalOpenSelector } from '../redux';
+import { updateUserFlag } from '../../../redux/settings';
+import KeyboardShortcutsSettings from '../../../components/settings/keyboard-shortcuts';
 
 import './shortcuts-modal.css';
 
 interface ShortcutsModalProps {
   closeShortcutsModal: () => void;
+  toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
   isOpen?: boolean;
   t: (text: string) => string;
 }
@@ -17,17 +21,24 @@ interface ShortcutsModalProps {
 const mapStateToProps = (state: unknown) => ({
   isOpen: isShortcutsModalOpenSelector(state) as boolean
 });
+
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
-    { closeShortcutsModal: () => closeModal('shortcuts') },
+    {
+      closeShortcutsModal: () => closeModal('shortcuts'),
+      toggleKeyboardShortcuts: (keyboardShortcuts: boolean) =>
+        updateUserFlag({ keyboardShortcuts })
+    },
     dispatch
   );
 
 export function ShortcutsModal({
   closeShortcutsModal,
+  toggleKeyboardShortcuts,
   isOpen,
   t
 }: ShortcutsModalProps): JSX.Element {
+  const keyboardShortcuts = !!store.get('fcc-keyboard-shortcuts');
   return (
     <Modal
       dialogClassName='shortcuts-modal'
@@ -83,6 +94,12 @@ export function ShortcutsModal({
             </tr>
           </tbody>
         </table>
+      </Modal.Body>
+      <Modal.Footer>
+        <KeyboardShortcutsSettings
+          keyboardShortcuts={keyboardShortcuts}
+          toggleKeyboardShortcuts={toggleKeyboardShortcuts}
+        />
         <Button
           block={true}
           bsSize='sm'
@@ -91,7 +108,7 @@ export function ShortcutsModal({
         >
           {t('buttons.close')}
         </Button>
-      </Modal.Body>
+      </Modal.Footer>
     </Modal>
   );
 }

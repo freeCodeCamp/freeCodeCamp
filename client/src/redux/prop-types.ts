@@ -59,6 +59,7 @@ export const UserPropType = PropTypes.shape({
   sendQuincyEmail: PropTypes.bool,
   sound: PropTypes.bool,
   theme: PropTypes.string,
+  keyboardShortcuts: PropTypes.bool,
   twitter: PropTypes.string,
   username: PropTypes.string,
   website: PropTypes.string
@@ -277,6 +278,7 @@ export type User = {
   sendQuincyEmail: boolean;
   sound: boolean;
   theme: Themes;
+  keyboardShortcuts: boolean;
   twitter: string;
   username: string;
   website: string;
