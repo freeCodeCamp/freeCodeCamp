@@ -1,6 +1,6 @@
 ---
 id: 60f85a62fb30c80bcea0cedb
-pathId: bc8bf6c3-11b4-4c8b-b06a-ecc23eb286d4
+pageId: bc8bf6c3-11b4-4c8b-b06a-ecc23eb286d4
 title: Step 22
 challengeType: 0
 dashedName: step-22

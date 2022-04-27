@@ -1,6 +1,6 @@
 ---
 id: 61fdaf9ff894b6a084ecdc1b
-pathId: 9f0f91d7-06b6-446e-8ac1-f0bfcb9e2d02
+pageId: 9f0f91d7-06b6-446e-8ac1-f0bfcb9e2d02
 title: Step 33
 challengeType: 0
 dashedName: step-33

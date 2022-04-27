@@ -1,6 +1,6 @@
 ---
 id: 5f3cade99dda4e6071a85dfd
-pathId: f8609ba4-75e8-40ee-9905-5544e675de9c
+pageId: f8609ba4-75e8-40ee-9905-5544e675de9c
 title: Step 47
 challengeType: 0
 dashedName: step-47

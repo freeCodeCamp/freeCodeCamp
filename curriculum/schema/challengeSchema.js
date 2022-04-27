@@ -51,7 +51,7 @@ const schema = Joi.object()
     videoUrl: Joi.string().allow(''),
     forumTopicId: Joi.number(),
     id: Joi.objectId().required(),
-    pathId: Joi.string().uuid({ version: 'uuidv4' }).required(),
+    pageId: Joi.string().uuid({ version: 'uuidv4' }).required(),
     instructions: Joi.string().allow(''),
     isComingSoon: Joi.bool(),
     isLocked: Joi.bool(),

@@ -39,9 +39,9 @@ function createChallengeNode(
   };
 
   if (internal.type === 'ChallengeNode') {
-    const { tests = [], block, dashedName, superBlock, pathId } = challenge;
+    const { tests = [], block, dashedName, superBlock, pageId } = challenge;
     const baseSlug = `/learn/${superBlock}/${block}/${dashedName}`;
-    const slug = pathId ? `${baseSlug}/${pathId}` : baseSlug;
+    const slug = pageId ? `${baseSlug}/${pageId}` : baseSlug;
 
     challenge.fields = {
       slug,

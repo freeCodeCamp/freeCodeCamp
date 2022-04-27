@@ -1,6 +1,6 @@
 ---
 id: 61fd986ddbcbd47ba8fbc5ec
-pathId: 5b94c060-9cb1-4c75-9640-3caea0f9a3e8
+pageId: 5b94c060-9cb1-4c75-9640-3caea0f9a3e8
 title: Step 23
 challengeType: 0
 dashedName: step-23

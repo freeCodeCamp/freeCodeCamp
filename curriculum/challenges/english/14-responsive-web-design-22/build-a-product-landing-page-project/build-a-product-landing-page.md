@@ -1,6 +1,6 @@
 ---
 id: 587d78af367417b2b2512b04
-pathId: 53db97fb-1ad2-4083-a00b-5824155da195
+pageId: 53db97fb-1ad2-4083-a00b-5824155da195
 title: Build a Product Landing Page
 challengeType: 3
 forumTopicId: 301144

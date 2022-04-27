@@ -1,6 +1,6 @@
 ---
 id: 61fda339eadcfd92a6812bed
-pathId: eae2524b-419d-493e-9481-ed022959ab02
+pageId: eae2524b-419d-493e-9481-ed022959ab02
 title: Step 30
 challengeType: 0
 dashedName: step-30
