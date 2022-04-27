@@ -25,6 +25,8 @@ interface MapData {
   };
 }
 
+const pageId = '392cb44d-742a-4cb2-ac1a-69322910ad3a';
+
 function createSuperBlockTitle(superBlock: SuperBlocks) {
   const superBlockTitle = i18next.t(`intro:${superBlock}.title`);
   return superBlock === 'coding-interview-prep'
@@ -46,20 +48,25 @@ function renderLandingMap(nodes: ChallengeNode[]) {
   );
   return (
     <ul data-test-label='certifications'>
-      {nodes.map(({ challenge }, i) => (
-        <li key={i}>
-          <Link
-            className='btn link-btn btn-lg'
-            to={`/learn/${challenge.superBlock}/`}
-          >
-            <div style={linkSpacingStyle}>
-              {generateIconComponent(challenge.superBlock, 'map-icon')}
-              {i18next.t(`intro:${challenge.superBlock}.title`)}
-            </div>
-            <LinkButton />
-          </Link>
-        </li>
-      ))}
+      {nodes.map(({ challenge }, i) => {
+        // We need the ids to be hardcoded for future use. Once the client can
+        // handle pageIds this kind of hackery should not be necessary.
+        const href =
+          challenge.superBlock === '2022/responsive-web-design'
+            ? `/learn/${challenge.superBlock}/${pageId}`
+            : `/learn/${challenge.superBlock}`;
+        return (
+          <li key={i}>
+            <Link className='btn link-btn btn-lg' to={href}>
+              <div style={linkSpacingStyle}>
+                {generateIconComponent(challenge.superBlock, 'map-icon')}
+                {i18next.t(`intro:${challenge.superBlock}.title`)}
+              </div>
+              <LinkButton />
+            </Link>
+          </li>
+        );
+      })}
     </ul>
   );
 }
@@ -73,19 +80,24 @@ function renderLearnMap(
   );
   return curriculumLocale === 'english' ? (
     <ul data-test-label='learn-curriculum-map'>
-      {nodes.map(({ challenge }, i) => (
-        <li key={i}>
-          <Link
-            className='btn link-btn btn-lg'
-            to={`/learn/${challenge.superBlock}/`}
-          >
-            <div style={linkSpacingStyle}>
-              {generateIconComponent(challenge.superBlock, 'map-icon')}
-              {createSuperBlockTitle(challenge.superBlock)}
-            </div>
-          </Link>
-        </li>
-      ))}
+      {nodes.map(({ challenge }, i) => {
+        // We need the ids to be hardcoded for future use. Once the client can
+        // handle pageIds this kind of hackery should not be necessary.
+        const href =
+          challenge.superBlock === '2022/responsive-web-design'
+            ? `/learn/${challenge.superBlock}/${pageId}`
+            : `/learn/${challenge.superBlock}`;
+        return (
+          <li key={i}>
+            <Link className='btn link-btn btn-lg' to={href}>
+              <div style={linkSpacingStyle}>
+                {generateIconComponent(challenge.superBlock, 'map-icon')}
+                {createSuperBlockTitle(challenge.superBlock)}
+              </div>
+            </Link>
+          </li>
+        );
+      })}
     </ul>
   ) : (
     <ul data-test-label='learn-curriculum-map'>
@@ -93,19 +105,24 @@ function renderLearnMap(
         .filter(({ challenge }) =>
           isAuditedCert(curriculumLocale, challenge.superBlock)
         )
-        .map(({ challenge }, i) => (
-          <li key={i}>
-            <Link
-              className='btn link-btn btn-lg'
-              to={`/learn/${challenge.superBlock}/`}
-            >
-              <div style={linkSpacingStyle}>
-                {generateIconComponent(challenge.superBlock, 'map-icon')}
-                {createSuperBlockTitle(challenge.superBlock)}
-              </div>
-            </Link>
-          </li>
-        ))}
+        .map(({ challenge }, i) => {
+          // We need the ids to be hardcoded for future use. Once the client can
+          // handle pageIds this kind of hackery should not be necessary.
+          const href =
+            challenge.superBlock === '2022/responsive-web-design'
+              ? `/learn/${challenge.superBlock}/${pageId}`
+              : `/learn/${challenge.superBlock}`;
+          return (
+            <li key={i}>
+              <Link className='btn link-btn btn-lg' to={href}>
+                <div style={linkSpacingStyle}>
+                  {generateIconComponent(challenge.superBlock, 'map-icon')}
+                  {createSuperBlockTitle(challenge.superBlock)}
+                </div>
+              </Link>
+            </li>
+          );
+        })}
       <hr />
       <div style={{ textAlign: 'center' }}>
         <p style={{ marginBottom: 0 }}>{i18next.t('learn.help-translate')} </p>
@@ -123,19 +140,24 @@ function renderLearnMap(
           ({ challenge }) =>
             !isAuditedCert(curriculumLocale, challenge.superBlock)
         )
-        .map(({ challenge }, i) => (
-          <li key={i}>
-            <Link
-              className='btn link-btn btn-lg'
-              to={`/learn/${challenge.superBlock}/`}
-            >
-              <div style={linkSpacingStyle}>
-                {generateIconComponent(challenge.superBlock, 'map-icon')}
-                {createSuperBlockTitle(challenge.superBlock)}
-              </div>
-            </Link>
-          </li>
-        ))}
+        .map(({ challenge }, i) => {
+          // We need the ids to be hardcoded for future use. Once the client can
+          // handle pageIds this kind of hackery should not be necessary.
+          const href =
+            challenge.superBlock === '2022/responsive-web-design'
+              ? `/learn/${challenge.superBlock}/${pageId}`
+              : `/learn/${challenge.superBlock}`;
+          return (
+            <li key={i}>
+              <Link className='btn link-btn btn-lg' to={href}>
+                <div style={linkSpacingStyle}>
+                  {generateIconComponent(challenge.superBlock, 'map-icon')}
+                  {createSuperBlockTitle(challenge.superBlock)}
+                </div>
+              </Link>
+            </li>
+          );
+        })}
     </ul>
   );
 }

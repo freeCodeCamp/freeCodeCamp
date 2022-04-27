@@ -10,8 +10,16 @@ interface BreadCrumbProps {
   superBlock: string;
 }
 
+const pageId = '392cb44d-742a-4cb2-ac1a-69322910ad3a';
+
 function BreadCrumb({ block, superBlock }: BreadCrumbProps): JSX.Element {
   const { t } = useTranslation();
+  // We need the ids to be hardcoded for future use. Once the client can handle
+  // pageIds this kind of hackery should not be necessary.
+  const href =
+    superBlock === '2022/responsive-web-design'
+      ? `/learn/${superBlock}/${pageId}`
+      : `/learn/${superBlock}`;
   return (
     <nav
       className='challenge-title-breadcrumbs'
@@ -19,10 +27,7 @@ function BreadCrumb({ block, superBlock }: BreadCrumbProps): JSX.Element {
     >
       <ol>
         <li className='breadcrumb-left'>
-          <Link
-            state={{ breadcrumbBlockClick: block }}
-            to={`/learn/${superBlock}`}
-          >
+          <Link state={{ breadcrumbBlockClick: block }} to={href}>
             <span className='ellipsis'>
               {i18next.t(`intro:${superBlock}.title`)}
             </span>
@@ -31,7 +36,7 @@ function BreadCrumb({ block, superBlock }: BreadCrumbProps): JSX.Element {
         <li className='breadcrumb-right'>
           <Link
             state={{ breadcrumbBlockClick: block }}
-            to={`/learn/${superBlock}/#${block}`}
+            to={`${href}/#${block}`}
           >
             {i18next.t(`intro:${superBlock}.blocks.${block}.title`)}
           </Link>
