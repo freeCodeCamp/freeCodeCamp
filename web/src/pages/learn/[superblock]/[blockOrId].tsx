@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
 import {
   getCurriculum,
@@ -7,17 +7,16 @@ import {
 } from '../../../data-fetching/get-curriculum';
 
 interface Props {
-  blockNames?: string[];
-  challengeOrderMap?: { [index: string]: [id: string, title: string] };
-  idToDashedNameMap?: { [index: string]: string };
+  blockNames: string[];
+  challengeOrderMap: { [index: string]: [id: string, title: string] };
+  idToDashedNameMap: { [index: string]: string };
 }
 
 export default function SuperBlock({
   blockNames,
   challengeOrderMap,
   idToDashedNameMap
-}: Props) {
-  if (!blockNames || !challengeOrderMap || !idToDashedNameMap) return null;
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       {blockNames.map(blockName => (
@@ -40,7 +39,7 @@ export default function SuperBlock({
   );
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   const curriculum = await getCurriculum();
   const idToDashedNameMap = getIdToDashedNameMap(curriculum);
   const { rwdBlocks } = curriculum;

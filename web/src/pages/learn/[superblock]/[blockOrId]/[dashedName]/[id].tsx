@@ -4,7 +4,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { ParsedUrlQuery } from 'querystring';
 import Editor from '@monaco-editor/react';
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
 
 import {
@@ -19,7 +19,9 @@ interface Props {
   challengeData: Challenge | null;
 }
 
-export default function ChallengeComponent({ challengeData }: Props) {
+export default function ChallengeComponent({
+  challengeData
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <Main challengeData={challengeData} />
@@ -53,7 +55,7 @@ function Main({ challengeData }: MainProps) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   const curriculum = await getCurriculum();
   const { rwdBlocks, jsBlocks } = curriculum;
   const idToPathSegmentsMap = getIdToPathSegmentsMap(curriculum);
