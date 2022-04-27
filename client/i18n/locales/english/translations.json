@@ -445,6 +445,7 @@
     "fail": "Test Failed",
     "not-passed": "Not Passed",
     "passed": "Passed",
+    "hint": "Hint",
     "heart": "Heart",
     "initial": "Initial",
     "info": "Intro Information",

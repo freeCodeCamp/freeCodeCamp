@@ -20,6 +20,9 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import store from 'store';
 
+import Fail from '../../../assets/icons/fail';
+import LightBulb from '../../../assets/icons/lightbulb';
+// import GreenPass from '../../../assets/icons/green-pass';
 import { Loader } from '../../../components/helpers';
 import { Themes } from '../../../components/settings/theme';
 import {
@@ -646,6 +649,17 @@ const Editor = (props: EditorProps): JSX.Element => {
     button.classList.add('btn-block');
     button.innerHTML = 'Check Your Code (Ctrl + Enter)';
     const buttonsContainer = document.createElement('div');
+    const outputJsx = (
+      <>
+        {/*attemptRef.current.attempts >= props.tests.length*/}
+        {true && (
+          <button className='btn-block' onClick={props.openHelpModal}>
+            {t('learn.editor-tabs.ask-help')}
+          </button>
+        )}
+      </>
+    );
+    ReactDOM.render(outputJsx, buttonsContainer);
     buttonsContainer.setAttribute('id', 'action-buttons-container');
     const submitButton = document.createElement('button');
     submitButton.setAttribute('id', 'submit-button');
@@ -656,6 +670,11 @@ const Editor = (props: EditorProps): JSX.Element => {
     editorActionRow.appendChild(button);
     editorActionRow.appendChild(buttonsContainer);
     editorActionRow.appendChild(statusNode);
+    // check if the mobile is being used
+
+    buttonsContainer.addEventListener('resize', function () {
+      console.log('resize');
+    });
     button.onclick = () => {
       clearTestFeedback();
       const { executeChallenge } = props;
@@ -1122,20 +1141,55 @@ const Editor = (props: EditorProps): JSX.Element => {
           'Hang in there.',
           "Don't give up."
         ];
-        testStatus.innerHTML = `<p class="status"><span aria-hidden="true">✖️</span> Sorry, your code does not pass. ${
-          wordsArray[Math.floor(Math.random() * wordsArray.length)]
-        }</p><div><h2 class="hint">Hint</h2> ${output[1]}</div>`;
         setTestFeedbackHeight();
-        const outputJsx = (
+        console.log(output[1]);
+
+        const hintDiscription = `<h2 class="hint">Hint</h2> ${output[1]}`;
+
+        const testStatusInnerHtml = (
           <>
-            {true && (
-              <button className='btn-block' onClick={props.openHelpModal}>
-                {t('learn.editor-tabs.ask-help')}
-              </button>
-            )}
+            <div className='test-status'>
+              <div className='status-icon' aria-hidden='true'>
+                <span>
+                  <Fail />
+                </span>
+              </div>
+              <div className='test-status-description'>
+                <h2>Test</h2>
+                <p>
+                  Sorry, your code does not pass.
+                  {wordsArray[Math.floor(Math.random() * wordsArray.length)]}
+                </p>
+              </div>
+            </div>
+
+            <div className='hint-status'>
+              <div className='hint-icon' aria-hidden='true'>
+                <span>
+                  <LightBulb />
+                </span>
+              </div>
+              <hr />
+              <div
+                className='hint-description'
+                dangerouslySetInnerHTML={{ __html: hintDiscription }}
+              />
+            </div>
           </>
         );
-        ReactDOM.render(outputJsx, buttonsContainer);
+        testStatus.style.height = '';
+        ReactDOM.render(testStatusInnerHtml, testStatus);
+
+        // const outputJsx = (
+        //   <>
+        //     {attemptRef.current.attempts >= props.tests.length && (
+        //       <button className='btn-block' onClick={props.openHelpModal}>
+        //         {t('learn.editor-tabs.ask-help')}
+        //       </button>
+        //     )}
+        //   </>
+        // );
+        // ReactDOM.render(outputJsx, buttonsContainer);
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

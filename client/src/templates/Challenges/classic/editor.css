@@ -50,9 +50,9 @@ textarea.inputarea {
 .action-row-container,
 .description-container {
   background-color: var(--secondary-background);
-  padding: 10px;
+  padding: 1rem;
   border: 2px solid var(--quaternary-background);
-  max-width: 700px;
+  max-width: 600px;
 }
 
 .description-container h1 {
@@ -102,7 +102,7 @@ textarea.inputarea {
   margin: 0.5rem 0 0;
 }
 
-#test-status h2.hint {
+#test-status h2 {
   font-size: 1rem;
   line-height: 1.5;
   padding-right: 0.5rem;
@@ -111,7 +111,7 @@ textarea.inputarea {
   margin: 0;
 }
 
-#test-status h2.hint::after {
+#test-status h2:after {
   content: ':';
 }
 
@@ -134,4 +134,35 @@ textarea.inputarea {
 /* Unless we increase the z-index the help widget gets obscured by the jaws */
 .accessibilityHelpWidget {
   z-index: 1;
+}
+
+#test-status svg {
+  height: 1.5rem;
+}
+
+/* #action-buttons-container{
+  margin-bottom: 1rem;
+} */
+#test-status {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+#test-status > div {
+  display: flex;
+  flex-direction: row;
+}
+
+#test-status > div > div {
+  margin-right: 0.5rem;
+}
+
+#test-status > div div {
+  align-self: center;
+}
+
+.hint-description,
+.hint-description div {
+  display: inline-block;
 }
