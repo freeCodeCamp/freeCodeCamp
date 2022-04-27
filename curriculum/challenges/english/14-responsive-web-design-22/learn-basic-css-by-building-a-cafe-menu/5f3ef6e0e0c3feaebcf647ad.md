@@ -1,5 +1,6 @@
 ---
 id: 5f3ef6e0e0c3feaebcf647ad
+pathId: a141b097-8415-421e-a157-134cb1bdfaac
 title: Step 48
 challengeType: 0
 dashedName: step-48

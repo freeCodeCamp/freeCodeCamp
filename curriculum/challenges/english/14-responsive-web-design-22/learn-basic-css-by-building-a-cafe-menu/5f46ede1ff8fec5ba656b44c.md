@@ -1,5 +1,6 @@
 ---
 id: 5f46ede1ff8fec5ba656b44c
+pathId: bac197f9-5ed9-4f98-9b89-74b0edd6e82a
 title: Step 78
 challengeType: 0
 dashedName: step-78
