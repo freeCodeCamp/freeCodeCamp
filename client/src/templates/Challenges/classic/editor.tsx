@@ -631,6 +631,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       // don't get a big content shift every time the code is checked.
       setTestFeedbackHeight(testStatus.offsetHeight);
       testStatus.innerHTML = '';
+      ReactDOM.unmountComponentAtNode(testStatus);
     }
   }
 
