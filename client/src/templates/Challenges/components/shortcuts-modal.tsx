@@ -50,11 +50,7 @@ export function ShortcutsModal({
       show={isOpen}
       aria-labelledby='shortcuts-modal-title'
     >
-      <Modal.Header
-        className='shortcuts-modal-header fcc-modal'
-        closeButton={true}
-        closeLabel={t('buttons.close')}
-      >
+      <Modal.Header className='shortcuts-modal-header fcc-modal'>
         <Modal.Title
           id='shortcuts-modal-title'
           className='text-center'
