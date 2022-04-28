@@ -194,3 +194,23 @@ export function langCodeIncludes(locale: string) {
 
   return result.length > 0 ? result[0]['value'] : LangCodes.English;
 }
+
+// does the same as the above function but for language names
+
+export function langNameFromLocale(locale: string) {
+  const langCodeObj = Object.entries(LangNames).map(([key, value]) => ({
+    id: key.toLocaleLowerCase(),
+    value: value
+  }));
+
+  const entryObj = (obj: Record<string, string>): boolean => {
+    if (obj.id == locale) {
+      return true;
+    }
+    return false;
+  };
+
+  const result = langCodeObj.filter(entryObj);
+
+  return result.length > 0 ? result[0]['value'] : '???';
+}

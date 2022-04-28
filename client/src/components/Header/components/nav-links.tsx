@@ -22,7 +22,7 @@ import { connect } from 'react-redux';
 import envData from '../../../../../config/env.json';
 import {
   availableLangs,
-  LangNames
+  langNameFromLocale
 } from '../../../../../config/i18n/all-langs';
 import { hardGoTo as navigate } from '../../../redux';
 import { updateUserFlag } from '../../../redux/settings';
@@ -200,11 +200,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
           >
             {locales.map(lang => (
               <option key={'lang-' + lang} value={lang}>
-                {
-                  Object.keys(LangNames).filter(
-                    langNames => langNames.toLowerCase() == lang
-                  )[0]
-                }
+                {langNameFromLocale(lang)}
               </option>
             ))}
           </select>
