@@ -200,7 +200,11 @@ export class NavLinks extends Component<NavLinksProps, {}> {
           >
             {locales.map(lang => (
               <option key={'lang-' + lang} value={lang}>
-                {Object.keys(LangNames).filter(langName => langName == lang)[0]}
+                {
+                  Object.keys(LangNames).filter(
+                    langNames => langNames.toLowerCase() == lang
+                  )[0]
+                }
               </option>
             ))}
           </select>
