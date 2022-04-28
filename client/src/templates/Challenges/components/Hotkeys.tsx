@@ -3,8 +3,9 @@ import React from 'react';
 import { HotKeys, GlobalHotKeys } from 'react-hotkeys';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { ChallengeFiles, Test } from '../../../redux/prop-types';
+import { ChallengeFiles, Test, User } from '../../../redux/prop-types';
 
+import { userSelector } from '../../../redux';
 import {
   canFocusEditorSelector,
   setEditorFocusability,
@@ -19,10 +20,17 @@ const mapStateToProps = createSelector(
   canFocusEditorSelector,
   challengeFilesSelector,
   challengeTestsSelector,
-  (canFocusEditor: boolean, challengeFiles: ChallengeFiles, tests: Test[]) => ({
+  userSelector,
+  (
+    canFocusEditor: boolean,
+    challengeFiles: ChallengeFiles,
+    tests: Test[],
+    user: User
+  ) => ({
     canFocusEditor,
     challengeFiles,
-    tests
+    tests,
+    user
   })
 );
 
@@ -57,6 +65,7 @@ interface HotkeysProps {
   tests: Test[];
   usesMultifileEditor?: boolean;
   openShortcutsModal: () => void;
+  user: User;
 }
 
 function Hotkeys({
@@ -72,7 +81,8 @@ function Hotkeys({
   submitChallenge,
   tests,
   usesMultifileEditor,
-  openShortcutsModal
+  openShortcutsModal,
+  user: { keyboardShortcuts }
 }: HotkeysProps): JSX.Element {
   const handlers = {
     executeChallenge: (e: React.KeyboardEvent<HTMLButtonElement>) => {
@@ -115,7 +125,7 @@ function Hotkeys({
       if (!canFocusEditor) void navigate(nextChallengePath);
     },
     showShortcuts: (e: React.KeyboardEvent) => {
-      if (!canFocusEditor && e.shiftKey && e.key === '?') {
+      if (keyboardShortcuts && !canFocusEditor && e.shiftKey && e.key === '?') {
         openShortcutsModal();
       }
     }
