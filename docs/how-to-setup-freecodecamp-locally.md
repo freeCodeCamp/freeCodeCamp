@@ -260,10 +260,10 @@ This single command will fire up all the services, including the API server and 
 > [!TIP]
 > The API Server serves APIs at `http://localhost:3000`. The Gatsby app serves the client application at `http://localhost:8000`
 
-> If you visit <http://localhost:3000/explorer> you should see the available APIs.
+> While you are logged in, if you visit <http://localhost:3000/explorer> you should see the available APIs.
 
 > [!WARNING]
-> Clearing your cookies or running `npm run seed:certified-user` will log you out, and you will have to sign in again
+> Clearing your cookies or running `npm run seed:certified-user` will log you out, and you will have to sign in again.
 
 ## Sign in with a local user
 
