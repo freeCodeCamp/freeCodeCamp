@@ -233,7 +233,6 @@ function updateMySound(...args) {
 }
 
 function updateMyKeyboardShortcuts(...args) {
-  console.log('=========> updateMyKeyboardShortcuts');
   const buildUpdate = body => _.pick(body, 'keyboardShortcuts');
   const validate = ({ keyboardShortcuts }) =>
     typeof keyboardShortcuts === 'boolean';
@@ -277,7 +276,7 @@ function updateUserFlag(req, res, next) {
   const allowedKeys = [
     'theme',
     'sound',
-    'keyboard-shortcuts',
+    'keyboardShortcuts',
     'isHonest',
     'portfolio',
     'sendQuincyEmail',

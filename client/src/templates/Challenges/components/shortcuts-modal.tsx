@@ -1,12 +1,14 @@
 import React from 'react';
-import store from 'store';
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
+import { createSelector } from 'reselect';
 
 import { closeModal, isShortcutsModalOpenSelector } from '../redux';
 import { updateUserFlag } from '../../../redux/settings';
+import { userSelector } from '../../../redux';
+import { User } from '../../../redux/prop-types';
 import KeyboardShortcutsSettings from '../../../components/settings/keyboard-shortcuts';
 
 import './shortcuts-modal.css';
@@ -14,14 +16,16 @@ import './shortcuts-modal.css';
 interface ShortcutsModalProps {
   closeShortcutsModal: () => void;
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
-  isOpen?: boolean;
+  isOpen: boolean;
   t: (text: string) => string;
+  user: User;
 }
 
-const mapStateToProps = (state: unknown) => ({
-  isOpen: isShortcutsModalOpenSelector(state) as boolean
-});
-
+const mapStateToProps = createSelector(
+  isShortcutsModalOpenSelector,
+  userSelector,
+  (isOpen: boolean, user: User) => ({ isOpen, user })
+);
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
@@ -36,9 +40,9 @@ export function ShortcutsModal({
   closeShortcutsModal,
   toggleKeyboardShortcuts,
   isOpen,
-  t
+  t,
+  user: { keyboardShortcuts }
 }: ShortcutsModalProps): JSX.Element {
-  const keyboardShortcuts = !!store.get('fcc-keyboard-shortcuts');
   return (
     <Modal
       dialogClassName='shortcuts-modal'
