@@ -19,7 +19,6 @@ export default function KeyboardShortcutsSettings({
     <Form inline={true} onSubmit={(e: React.FormEvent) => e.preventDefault()}>
       <ToggleSetting
         action={t('settings.labels.keyboard-shortcuts')}
-        explain={t('settings.keyboard-shortcuts')}
         flag={keyboardShortcuts}
         flagName='keyboard-shortcuts'
         offLabel={t('buttons.off')}

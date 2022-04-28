@@ -107,7 +107,6 @@
     "claim-legacy": "Once you've earned the following freeCodeCamp certifications, you'll be able to claim the {{cert}}:",
     "for": "Account Settings for {{username}}",
     "sound-mode": "This adds the pleasant sound of acoustic guitar throughout the website. You'll get musical feedback as you type in the editor, complete challenges, claim certifications, and more.",
-    "keyboard-shortcuts": "When enabled allows users to interact with challenges using keyboard shortcuts. List of available shortcuts can be called by pressing SHIFT+? when focus is not on editor. Pressing ESC keyboard button will remove the focus from the editor.",
     "username": {
       "contains invalid characters": "Username \"{{username}}\" contains invalid characters",
       "is too short": "Username \"{{username}}\" is too short",
@@ -144,7 +143,7 @@
       "my-donations": "My donations",
       "night-mode": "Night Mode",
       "sound-mode": "Campfire Mode",
-      "keyboard-shortcuts": "Keyboard Shortcuts"
+      "keyboard-shortcuts": "Enable Keyboard Shortcuts"
     },
     "headings": {
       "certs": "Certifications",
