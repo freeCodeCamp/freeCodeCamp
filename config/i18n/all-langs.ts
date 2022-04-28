@@ -173,3 +173,24 @@ export enum LangCodes {
   Ukrainian = 'uk',
   Japanese = 'ja'
 }
+
+// returns a key-value from an enum for client locale which is initiated from a JSON file.
+// JSON does not support enums.
+
+export function langCodeIncludes(locale: string) {
+  const langCodeObj = Object.entries(LangCodes).map(([key, value]) => ({
+    id: key.toLocaleLowerCase(),
+    value: value
+  }));
+
+  const entryObj = (obj: Record<string, string>): boolean => {
+    if (obj.id == locale) {
+      return true;
+    }
+    return false;
+  };
+
+  const result = langCodeObj.filter(entryObj);
+
+  return result.length > 0 ? result[0]['value'] : LangCodes.English;
+}
