@@ -70,17 +70,17 @@ describe('getMetaData helper', () => {
     process.env.CALLING_DIR =
       'curriculum/challenges/english/superblock/mick-priject';
 
-    // determine if path is from Linux based or Windows based systems
-    const pathFromLinuxOrWin = path.sep.includes('/')
-      ? 'curriculum/challenges/_meta/mick-priject/meta.json'
-      : 'curriculum\\challenges\\_meta\\mick-priject\\meta.json';
-
+    const errorPath = path.join(
+      'curriculum',
+      'challenges',
+      '_meta',
+      'mick-priject',
+      'meta.json'
+    );
     expect(() => {
       getMetaData();
     }).toThrowError(
-      new Error(
-        `ENOENT: no such file or directory, open '${pathFromLinuxOrWin}'`
-      )
+      new Error(`ENOENT: no such file or directory, open '${errorPath}'`)
     );
   });
 
