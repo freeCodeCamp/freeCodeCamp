@@ -42,12 +42,20 @@ describe('Locale tests:', () => {
         });
       });
 
-      test(`has an entry in the langDisplayNames variable`, () => {
-        expect(Object.keys(LangNames).includes(lang)).toBe(true);
+      test(`has an entry in the langDisplayNames enum`, () => {
+        expect(
+          Object.keys(LangNames)
+            .map(langCode => langCode.toLowerCase())
+            .includes(lang)
+        ).toBe(true);
       });
 
-      test(`has an entry in the langCodes variable`, () => {
-        expect(Object.keys(LangCodes).includes(lang)).toBe(true);
+      test(`has an entry in the langCodes enum`, () => {
+        expect(
+          Object.keys(LangCodes)
+            .map(langCode => langCode.toLowerCase())
+            .includes(lang)
+        ).toBe(true);
       });
     });
   });
