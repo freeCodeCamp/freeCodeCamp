@@ -653,7 +653,11 @@ const Editor = (props: EditorProps): JSX.Element => {
       <>
         {/*attemptRef.current.attempts >= props.tests.length*/}
         {true && (
-          <button className='btn-block' onClick={props.openHelpModal}>
+          <button
+            className='btn-block'
+            id='help-button'
+            onClick={props.openHelpModal}
+          >
             {t('learn.editor-tabs.ask-help')}
           </button>
         )}
@@ -1143,10 +1147,11 @@ const Editor = (props: EditorProps): JSX.Element => {
         ];
         setTestFeedbackHeight();
         console.log(output[1]);
+        // testStatus.innerHTML = ``;
 
         const hintDiscription = `<h2 class="hint">Hint</h2> ${output[1]}`;
 
-        const testStatusInnerHtml = (
+        const TestStatusInnerHtml = (
           <>
             <div className='test-status'>
               <div className='status-icon' aria-hidden='true'>
@@ -1157,19 +1162,17 @@ const Editor = (props: EditorProps): JSX.Element => {
               <div className='test-status-description'>
                 <h2>Test</h2>
                 <p>
-                  Sorry, your code does not pass.
-                  {wordsArray[Math.floor(Math.random() * wordsArray.length)]}
+                  {`Sorry, your code does not pass.
+                  ${wordsArray[Math.floor(Math.random() * wordsArray.length)]}`}
                 </p>
               </div>
             </div>
-
             <div className='hint-status'>
               <div className='hint-icon' aria-hidden='true'>
                 <span>
                   <LightBulb />
                 </span>
               </div>
-              <hr />
               <div
                 className='hint-description'
                 dangerouslySetInnerHTML={{ __html: hintDiscription }}
@@ -1178,7 +1181,8 @@ const Editor = (props: EditorProps): JSX.Element => {
           </>
         );
         testStatus.style.height = '';
-        ReactDOM.render(testStatusInnerHtml, testStatus);
+
+        ReactDOM.render(TestStatusInnerHtml, testStatus);
 
         // const outputJsx = (
         //   <>

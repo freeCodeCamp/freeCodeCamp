@@ -108,7 +108,7 @@ textarea.inputarea {
   padding-right: 0.5rem;
   /* using float instead of inline display so screen readers recognize h2 as a block element */
   float: left;
-  margin: 0;
+  margin: 0.5em 0 0 0;
 }
 
 #test-status h2:after {
@@ -138,31 +138,28 @@ textarea.inputarea {
 
 #test-status svg {
   height: 1.5rem;
+  width: auto;
+  margin-right: 0.5rem;
+  margin-top: 0.6rem;
 }
 
-/* #action-buttons-container{
-  margin-bottom: 1rem;
-} */
 #test-status {
-  margin-top: 1rem;
   display: flex;
   flex-direction: column;
+  padding: 0px;
 }
 
 #test-status > div {
+  margin-top: 1rem;
   display: flex;
   flex-direction: row;
 }
 
-#test-status > div > div {
-  margin-right: 0.5rem;
+#test-status p {
+  font-family: 'Lato', sans-serif;
 }
 
-#test-status > div div {
-  align-self: center;
-}
-
-.hint-description,
-.hint-description div {
-  display: inline-block;
+.test-status-description,
+.hint-description {
+  width: 100%;
 }
