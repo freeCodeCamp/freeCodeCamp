@@ -8,6 +8,7 @@ import { isAuditedCert } from '../../../../utils/is-audited';
 import { generateIconComponent } from '../../assets/icons';
 import LinkButton from '../../assets/icons/link-button';
 import { ChallengeNode } from '../../redux/prop-types';
+import { patchHref } from '../../utils/rwd-beta-hack';
 import { Link, Spacer } from '../helpers';
 
 import './map.css';
@@ -24,8 +25,6 @@ interface MapData {
     nodes: ChallengeNode[];
   };
 }
-
-const pageId = '392cb44d-742a-4cb2-ac1a-69322910ad3a';
 
 function createSuperBlockTitle(superBlock: SuperBlocks) {
   const superBlockTitle = i18next.t(`intro:${superBlock}.title`);
@@ -49,12 +48,7 @@ function renderLandingMap(nodes: ChallengeNode[]) {
   return (
     <ul data-test-label='certifications'>
       {nodes.map(({ challenge }, i) => {
-        // We need the ids to be hardcoded for future use. Once the client can
-        // handle pageIds this kind of hackery should not be necessary.
-        const href =
-          challenge.superBlock === '2022/responsive-web-design'
-            ? `/learn/${challenge.superBlock}/${pageId}`
-            : `/learn/${challenge.superBlock}`;
+        const href = patchHref(challenge.superBlock);
         return (
           <li key={i}>
             <Link className='btn link-btn btn-lg' to={href}>
@@ -81,12 +75,7 @@ function renderLearnMap(
   return curriculumLocale === 'english' ? (
     <ul data-test-label='learn-curriculum-map'>
       {nodes.map(({ challenge }, i) => {
-        // We need the ids to be hardcoded for future use. Once the client can
-        // handle pageIds this kind of hackery should not be necessary.
-        const href =
-          challenge.superBlock === '2022/responsive-web-design'
-            ? `/learn/${challenge.superBlock}/${pageId}`
-            : `/learn/${challenge.superBlock}`;
+        const href = patchHref(challenge.superBlock);
         return (
           <li key={i}>
             <Link className='btn link-btn btn-lg' to={href}>
@@ -106,12 +95,7 @@ function renderLearnMap(
           isAuditedCert(curriculumLocale, challenge.superBlock)
         )
         .map(({ challenge }, i) => {
-          // We need the ids to be hardcoded for future use. Once the client can
-          // handle pageIds this kind of hackery should not be necessary.
-          const href =
-            challenge.superBlock === '2022/responsive-web-design'
-              ? `/learn/${challenge.superBlock}/${pageId}`
-              : `/learn/${challenge.superBlock}`;
+          const href = patchHref(challenge.superBlock);
           return (
             <li key={i}>
               <Link className='btn link-btn btn-lg' to={href}>
@@ -141,12 +125,7 @@ function renderLearnMap(
             !isAuditedCert(curriculumLocale, challenge.superBlock)
         )
         .map(({ challenge }, i) => {
-          // We need the ids to be hardcoded for future use. Once the client can
-          // handle pageIds this kind of hackery should not be necessary.
-          const href =
-            challenge.superBlock === '2022/responsive-web-design'
-              ? `/learn/${challenge.superBlock}/${pageId}`
-              : `/learn/${challenge.superBlock}`;
+          const href = patchHref(challenge.superBlock);
           return (
             <li key={i}>
               <Link className='btn link-btn btn-lg' to={href}>

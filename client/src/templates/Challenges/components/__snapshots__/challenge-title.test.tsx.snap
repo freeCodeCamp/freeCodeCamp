@@ -13,7 +13,7 @@ exports[`<ChallengeTitle/> renders correctly 1`] = `
         className="breadcrumb-left"
       >
         <a
-          href="/learn/fake-superblock"
+          href="/learn/fake-superblock/"
           state={
             Object {
               "breadcrumbBlockClick": "fake-block",
