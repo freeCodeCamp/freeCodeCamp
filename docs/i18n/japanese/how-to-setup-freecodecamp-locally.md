@@ -244,11 +244,13 @@ npm run develop
 
 この単一コマンドは、API サーバーや利用可能なクライアントアプリケーションを含むすべてのサービスを起動します。
 
-> [!TIP] 準備が整ったら、Web ブラウザを開いて **<http://localhost:8000>** をご覧ください。 アプリがロードされたとしたら、すべての準備ができているということです。おめでとうございます！ これで、freeCodeCamp の学習プラットフォーム全体のコピーがローカルマシン上で実行されます。
+> [!TIP] 準備が整ったら、Web ブラウザを開いて **<http://localhost:8000>** をご覧ください。 If the app loads, sign in. Congratulations – you're all set! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
 
 > [!TIP] API サーバーは、API を `http://localhost:3000` で提供します。 Gatsby アプリは、クライアントアプリケーションを `http://localhost:8000` で提供します
 
-> <http://localhost:3000/explorer> にアクセスすると、利用可能な API が表示されます。
+> While you are logged in, if you visit <http://localhost:3000/explorer> you should see the available APIs.
+
+> [!WARNING] Clearing your cookies or running `npm run seed:certified-user` will log you out, and you will have to sign in again.
 
 ## ローカルユーザーでサインインする
 
@@ -496,7 +498,7 @@ Google、Stack Overflow、Stack Exchange などのリソースに関する特定
 
 > [!WARNING]
 > 
-> 必要条件の問題のために GitHub issue を作成しないでください。 それらはこのプロジェクトの範囲外です。
+> Please avoid creating GitHub issues for prerequisite issues. They are out of the scope of this project.
 
 ### UI、フォント、ビルドエラーなどに関する問題
 
@@ -566,7 +568,7 @@ TCP    0.0.0.0:3000           DESKTOP      LISTENING
 
 最初の設定では、ネットワーク帯域幅に応じて時間がかかることがあります。 それでも設定できない場合は、オフライン設定ではなく GitPod を使用することを推奨します。
 
-> [!NOTE] M1 チップのある Apple Devices を使用してアプリケーションをローカルで実行する場合は、Node v14.7 以上を使用することをお勧めします。 さもなければ、Sharp のような依存関係に関連する問題が発生する可能性があります
+> [!NOTE] If you are using Apple Devices with M1 Chip to run the application locally, it is suggested to use Node v14.7 or above. You might run into issues with dependencies like Sharp otherwise.
 
 ## ヘルプ
 

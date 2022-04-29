@@ -244,11 +244,13 @@ npm run develop
 
 Mit diesem einzigen Befehl werden alle Dienste gestartet, einschließlich des API-Servers und der Client-Anwendungen, an denen du arbeiten kannst.
 
-> [!NOTE] Sobald du bereit bist, öffne einen Webbrowser und **besuche <http://localhost:8000>**. Wenn die App geladen wird, herzlichen Glückwunsch - du bist bereit! Du hast jetzt eine Kopie der gesamten Lernplattform von freeCodeCamp auf deinem lokalen Rechner laufen.
+> [!NOTE] Sobald du bereit bist, öffne einen Webbrowser und **besuche <http://localhost:8000>**. If the app loads, sign in. Congratulations – you're all set! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
 
 > [!TIP] Der API-Server bedient APIs unter `http://localhost:3000`. Die Gatsby-App bedient die Client-Anwendung unter `http://localhost:8000`
 
-> Wenn du <http://localhost:3000/explorer> besuchst, solltest du die verfügbaren APIs sehen.
+> While you are logged in, if you visit <http://localhost:3000/explorer> you should see the available APIs.
+
+> [!WARNING] Clearing your cookies or running `npm run seed:certified-user` will log you out, and you will have to sign in again.
 
 ## Mit einem lokalen Benutzer anmelden
 
@@ -496,7 +498,7 @@ Wenn du ein anderes Betriebssystem verwendest und/oder immer noch Probleme hast,
 
 > [!WARNING]
 > 
-> Bitte vermeide es, GitHub Issues für Probleme mit den Voraussetzungen zu erstellen. Sie liegen außerhalb des Rahmens dieses Projekts.
+> Please avoid creating GitHub issues for prerequisite issues. They are out of the scope of this project.
 
 ### Probleme mit der Benutzeroberfläche, Schriftarten, Build-Fehler usw.
 
@@ -566,7 +568,7 @@ Wenn du bei der Installation der Abhängigkeiten Fehler erhältst, vergewissere 
 
 Die Ersteinrichtung kann je nach Netzwerkbandbreite eine Weile dauern. Sei geduldig, und wenn du immer noch nicht weiterkommst, empfehlen wir dir, GitPod statt eines Offline-Setups zu verwenden.
 
-> [!NOTE] Wenn du Apple-Geräte mit M1-Chip verwendest, um die Anwendung lokal auszuführen, wird empfohlen, Node v14.7 oder höher zu verwenden. Du könntest sonst Probleme mit Abhängigkeiten wie Sharp bekommen.
+> [!NOTE] If you are using Apple Devices with M1 Chip to run the application locally, it is suggested to use Node v14.7 or above. You might run into issues with dependencies like Sharp otherwise.
 
 ## Hilfe erhalten
 
