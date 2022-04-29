@@ -255,12 +255,15 @@ npm run develop
 This single command will fire up all the services, including the API server and the client applications available for you to work on.
 
 > [!NOTE]
-> Once ready, open a web browser and **visit <http://localhost:8000>**. If the app loads, congratulations – you're all set! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
+> Once ready, open a web browser and **visit <http://localhost:8000>**. If the app loads, sign in. Congratulations – you're all set! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
 
 > [!TIP]
 > The API Server serves APIs at `http://localhost:3000`. The Gatsby app serves the client application at `http://localhost:8000`
 
-> If you visit <http://localhost:3000/explorer> you should see the available APIs.
+> While you are logged in, if you visit <http://localhost:3000/explorer> you should see the available APIs.
+
+> [!WARNING]
+> Clearing your cookies or running `npm run seed:certified-user` will log you out, and you will have to sign in again.
 
 ## Sign in with a local user
 
