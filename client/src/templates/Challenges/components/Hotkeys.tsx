@@ -84,6 +84,9 @@ function Hotkeys({
   openShortcutsModal,
   user: { keyboardShortcuts }
 }: HotkeysProps): JSX.Element {
+  if (!keyboardShortcuts) {
+    return <>{children}</>;
+  }
   const handlers = {
     executeChallenge: (e: React.KeyboardEvent<HTMLButtonElement>) => {
       // the 'enter' part of 'ctrl+enter' stops HotKeys from listening, so it
@@ -125,7 +128,7 @@ function Hotkeys({
       if (!canFocusEditor) void navigate(nextChallengePath);
     },
     showShortcuts: (e: React.KeyboardEvent) => {
-      if (keyboardShortcuts && !canFocusEditor && e.shiftKey && e.key === '?') {
+      if (!canFocusEditor && e.shiftKey && e.key === '?') {
         openShortcutsModal();
       }
     }
