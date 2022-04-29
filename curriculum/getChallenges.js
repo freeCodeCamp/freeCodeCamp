@@ -23,6 +23,7 @@ const {
   generatePageID
 } = require('./utils');
 
+const originalPathData = require('./path-data.json');
 const pathData = { pageIDToSubPath: {}, subPathToPageID: {} };
 
 const access = util.promisify(fs.access);
@@ -387,10 +388,11 @@ No audited challenges should fallback to English.
     const { block, superBlock, dashedName } = challenge;
     const subPath = `${superBlock}/${block}/${dashedName}`;
 
-    const pageID = hasStoredPageID(subPath, pathData)
-      ? getStoredPageID(subPath, pathData)
-      : generateAndStorePageID(subPath, pathData, { len: 3 });
+    const pageID = hasStoredPageID(subPath, originalPathData)
+      ? getStoredPageID(subPath, originalPathData)
+      : tryToGeneratePageID(pathData, { len: 3 });
 
+    storePageId(subPath, pageID, pathData);
     return pageID;
   }
 
@@ -399,18 +401,23 @@ No audited challenges should fallback to English.
 
   const getStoredPageID = (subPath, data) => data.subPathToPageID[subPath];
 
-  function generateAndStorePageID(subPath, data, options) {
-    const { subPathToPageID, pageIDToSubPath } = data;
+  function tryToGeneratePageID(data, options) {
+    const ATTEMPTS = 5;
+    const { pageIDToSubPath } = data;
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < ATTEMPTS; i++) {
       const pageID = generatePageID(options);
       if (!pageIDToSubPath[pageID]) {
-        subPathToPageID[subPath] = pageID;
-        pageIDToSubPath[pageID] = subPath;
         return pageID;
       }
     }
-    throw Error('5 attempts to generate a new pageID failed');
+    throw Error(`${ATTEMPTS} attempts to generate a new pageID failed`);
+  }
+
+  function storePageId(subPath, pageID, data) {
+    const { subPathToPageID, pageIDToSubPath } = data;
+    subPathToPageID[subPath] = pageID;
+    pageIDToSubPath[pageID] = subPath;
   }
 
   async function createChallenge(filePath, maybeMeta) {
