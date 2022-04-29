@@ -77,5 +77,42 @@ function getSuperBlockFromDir(dir) {
   return directoryToSuperblock[dir];
 }
 
+const letters = [
+  'b',
+  'c',
+  'd',
+  'f',
+  'g',
+  'h',
+  'j',
+  'k',
+  'l',
+  'm',
+  'n',
+  'p',
+  'q',
+  'r',
+  's',
+  't',
+  'v',
+  'w',
+  'x',
+  'y',
+  'z'
+];
+const upperCaseLetters = letters.map(x => x.toUpperCase());
+const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+const allCharacters = letters.concat(upperCaseLetters).concat(digits);
+
+function generatePageID({ len }) {
+  function getRandomCharacter() {
+    const randomIndex = Math.floor(Math.random() * allCharacters.length);
+    return allCharacters[randomIndex];
+  }
+
+  return [...Array(len).keys()].map(getRandomCharacter).join('');
+}
+
 exports.getSuperOrder = getSuperOrder;
 exports.getSuperBlockFromDir = getSuperBlockFromDir;
+exports.generatePageID = generatePageID;

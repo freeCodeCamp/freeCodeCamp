@@ -10,16 +10,20 @@ const { showUpcomingChanges } = require('../config/env.json');
 const { curriculum: curriculumLangs } =
   require('../config/i18n/all-langs').availableLangs;
 const { parseMD } = require('../tools/challenge-parser/parser');
-/* eslint-disable max-len */
 const {
   translateCommentsInChallenge
 } = require('../tools/challenge-parser/translation-parser');
-/* eslint-enable max-len*/
 
 const { isAuditedCert } = require('../utils/is-audited');
 const { createPoly } = require('../utils/polyvinyl');
 const { dasherize } = require('../utils/slugs');
-const { getSuperOrder, getSuperBlockFromDir } = require('./utils');
+const {
+  getSuperOrder,
+  getSuperBlockFromDir,
+  generatePageID
+} = require('./utils');
+
+const pathData = { pageIDToSubPath: {}, subPathToPageID: {} };
 
 const access = util.promisify(fs.access);
 
@@ -169,13 +173,36 @@ exports.getChallengesForLang = async function getChallengesForLang(lang) {
   });
   const cb = (file, curriculum) => buildChallenges(file, curriculum, lang);
   // fill the scaffold with the challenges
-  return walk(
+  const output = await walk(
     root,
     curriculum,
     { type: 'files', fileFilter: ['*.md', '*.yml'] },
     cb
   );
+
+  const sortedPathData = sortPathData(pathData);
+  await fs.promises.writeFile(
+    './path-data.json',
+    JSON.stringify(sortedPathData, null, 2)
+  );
+
+  return output;
 };
+
+const sortPathData = ({ pageIDToSubPath, subPathToPageID }) => ({
+  subPathToPageID: sortObject(subPathToPageID),
+  pageIDToSubPath: sortObject(pageIDToSubPath)
+});
+
+function sortObject(obj) {
+  const sortedObj = {};
+  Object.keys(obj)
+    .sort()
+    .forEach(key => {
+      sortedObj[key] = obj[key];
+    });
+  return sortedObj;
+}
 
 async function buildBlocks({ basename: blockName }, curriculum, superBlock) {
   const metaPath = path.resolve(META_DIR, `${blockName}/meta.json`);
@@ -351,6 +378,41 @@ No audited challenges should fallback to English.
     }
   }
 
+  function addPageID(challenge) {
+    const pageID = getPageID(challenge);
+    challenge.pageID = pageID;
+  }
+
+  function getPageID(challenge) {
+    const { block, superBlock, dashedName } = challenge;
+    const subPath = `${superBlock}/${block}/${dashedName}`;
+
+    const pageID = hasStoredPageID(subPath, pathData)
+      ? getStoredPageID(subPath, pathData)
+      : generateAndStorePageID(subPath, pathData, { len: 3 });
+
+    return pageID;
+  }
+
+  const hasStoredPageID = (subPath, data) =>
+    data.subPathToPageID[subPath] !== undefined;
+
+  const getStoredPageID = (subPath, data) => data.subPathToPageID[subPath];
+
+  function generateAndStorePageID(subPath, data, options) {
+    const { subPathToPageID, pageIDToSubPath } = data;
+
+    for (let i = 0; i < 5; i++) {
+      const pageID = generatePageID(options);
+      if (!pageIDToSubPath[pageID]) {
+        subPathToPageID[subPath] = pageID;
+        pageIDToSubPath[pageID] = subPath;
+        return pageID;
+      }
+    }
+    throw Error('5 attempts to generate a new pageID failed');
+  }
+
   async function createChallenge(filePath, maybeMeta) {
     const meta = maybeMeta
       ? maybeMeta
@@ -375,6 +437,11 @@ No audited challenges should fallback to English.
         ));
 
     addMetaToChallenge(challenge, meta);
+    // TODO: extends this to all superBlocks once we're ready to migrate to the
+    // new paths
+    if (challenge.superBlock === '2022/responsive-web-design') {
+      addPageID(challenge);
+    }
 
     return challenge;
   }
