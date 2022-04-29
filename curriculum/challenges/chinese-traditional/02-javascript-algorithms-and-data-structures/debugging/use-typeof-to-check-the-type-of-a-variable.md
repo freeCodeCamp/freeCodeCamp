@@ -32,7 +32,7 @@ JavaScript 有七種原始（不可變）數據類型： `Boolean`，`Null`，`U
 應在兩個 `console.log()` 語句中使用 `typeof` 來檢查變量的類型。
 
 ```js
-assert(code.match(/console\.log\(typeof[\( ].*\)?\)/g).length == 2);
+assert(code.match(/console\.log\s*\(typeof[\( ].*\)?\)/g).length == 2);
 ```
 
 應使用 `typeof` 來檢查變量 `seven` 的類型。

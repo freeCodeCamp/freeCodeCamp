@@ -24,7 +24,7 @@ describe('getProjectPath helper', () => {
 describe('getProjectName helper', () => {
   it('should return the last path segment of the calling dir', () => {
     const mockCallingDir = 'calling/dir';
-    const expected = `dir`;
+    const expected = 'dir';
 
     // Add mock to test condition
     process.env.CALLING_DIR = mockCallingDir;

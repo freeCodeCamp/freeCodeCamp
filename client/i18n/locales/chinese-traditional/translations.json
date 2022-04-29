@@ -412,7 +412,7 @@
   },
   "search": {
     "label": "搜索",
-    "placeholder": "搜索 700+ 篇教程",
+    "placeholder": "搜索 800+ 篇教程",
     "see-results": "查看 {{searchQuery}} 的所有結果",
     "no-tutorials": "未找到教程",
     "try": "想要搜索信息？試試使用頁面上的搜索框。",
