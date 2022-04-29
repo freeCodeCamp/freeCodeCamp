@@ -201,7 +201,9 @@ const defineMonacoThemes = (
 const initialData: EditorProperties = {
   descriptionZoneId: '',
   insideEditDecId: '',
-  descriptionZoneTop: 0,
+  // This needs to be less than 0 so we can determine if the description has
+  // been placed and it could be placed at the very top (0).
+  descriptionZoneTop: -1,
   outputZoneId: '',
   outputZoneTop: 0
 };
@@ -525,13 +527,10 @@ const Editor = (props: EditorProps): JSX.Element => {
       heightInPx: domNode.offsetHeight,
       domNode: document.createElement('div'),
       onComputedHeight: () => {
-        console.log('onComputedHeight()');
         dataRef.current.descriptionWidget &&
           editor.layoutContentWidget(dataRef.current.descriptionWidget);
       },
-      onDomNodeTop: (/*top: number*/) => {
-        console.log('onDomNodeTop()');
-        //dataRef.current.descriptionZoneTop = top;
+      onDomNodeTop: () => {
         if (dataRef.current.descriptionWidget)
           editor.layoutContentWidget(dataRef.current.descriptionWidget);
       }
@@ -834,13 +833,14 @@ const Editor = (props: EditorProps): JSX.Element => {
       model
     })[0];
 
-    // This isn't strictly necessary, but it makes sure the description zone and
-    // widget are always rendered in the correct place. The reason it's not
-    // strictly necessary is that, somehow, the first (incorrect) position was
-    // never rendered.
-    dataRef.current.descriptionZoneTop = editor.getTopForLineNumber(
-      getLineBeforeEditableRegion() + 1
+    console.log(
+      'initializeRegions: descriptionZoneTop = ',
+      dataRef.current.descriptionZoneTop
     );
+    if (dataRef.current.descriptionZoneTop < 0)
+      dataRef.current.descriptionZoneTop = editor.getTopForLineNumber(
+        getLineBeforeEditableRegion() + 1
+      );
   }
 
   function addWidgetsToRegions(editor: editor.IStandaloneCodeEditor) {
@@ -994,6 +994,8 @@ const Editor = (props: EditorProps): JSX.Element => {
     // If a challenge is reset, it needs to communicate that change to the
     // editor.
     const { editor } = dataRef.current;
+
+    //console.log('useEffect1');
 
     if (props.isResetting) {
       // NOTE: this looks a lot like a race condition, since stopResetting gets
