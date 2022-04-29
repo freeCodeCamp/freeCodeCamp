@@ -1,9 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const { AssertionError } = require('chai');
-const { getChallengesForLang } = require('../../../curriculum/getChallenges');
 const envData = require('../../../config/env.json');
-const { buildMobileCurriculum } = require('./build-mobile-curriculum');
 const { mobileSchemaValidator } = require('./mobileSchema');
 
 if (envData.clientLocale == 'english' && !envData.showUpcomingChanges) {
@@ -15,13 +13,6 @@ if (envData.clientLocale == 'english' && !envData.showUpcomingChanges) {
     );
 
     const validateMobileSuperBlock = mobileSchemaValidator();
-
-    let curriculum;
-
-    beforeAll(async () => {
-      curriculum = await getChallengesForLang('english');
-      await buildMobileCurriculum(curriculum);
-    }, 20000);
 
     test('the mobile curriculum should have a static folder with multiple files', () => {
       expect(fs.existsSync(`${mobileStaticPath}/mobile`)).toBe(true);
