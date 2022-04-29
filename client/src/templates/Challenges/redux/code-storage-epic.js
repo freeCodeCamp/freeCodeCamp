@@ -7,6 +7,7 @@ import { setContent, isPoly } from '../../../../../utils/polyvinyl';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { actionTypes as appTypes } from '../../../redux/action-types';
+import { savedChallengesSelector } from '../../../redux';
 
 import { actionTypes } from './action-types';
 import {
@@ -136,9 +137,18 @@ function loadCodeEpic(action$, state$) {
       const fileKeys = challengeFiles.map(x => x.fileKey);
       const invalidForLegacy = fileKeys.length > 1;
       const { title: legacyKey } = challenge;
-
       const codeFound = getCode(id);
-      if (codeFound && isFilesAllPoly(codeFound)) {
+
+      // see if this challenge is saved in database
+      const savedChallenges = savedChallengesSelector(state);
+      const savedChallenge = savedChallenges?.find(saved => {
+        return saved.id === challenge.id;
+      });
+
+      // skip everything if a challenge is saved in db
+      if (savedChallenge) {
+        return of(noStoredCodeFound());
+      } else if (codeFound && isFilesAllPoly(codeFound)) {
         finalFiles = challengeFiles.reduce((challengeFiles, challengeFile) => {
           let foundChallengeFile = {};
           // TODO: after sufficient time, say 6 months from this commit, we can
