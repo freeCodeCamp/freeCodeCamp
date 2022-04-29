@@ -183,7 +183,7 @@ exports.getChallengesForLang = async function getChallengesForLang(lang) {
 
   const sortedPathData = sortPathData(pathData);
   await fs.promises.writeFile(
-    './path-data.json',
+    path.resolve(__dirname, 'path-data.json'),
     JSON.stringify(sortedPathData, null, 2)
   );
 
