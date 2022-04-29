@@ -4,7 +4,7 @@
 import fs from 'fs';
 import path from 'path';
 import { SuperBlocks } from '../config/certification-settings';
-import { getSuperOrder, getSuperBlockFromDir, generatePageID } from './utils';
+import { getSuperOrder, getSuperBlockFromDir, generatePageId } from './utils';
 
 describe('getSuperOrder', () => {
   it('returns a number for valid superblocks', () => {
@@ -140,23 +140,23 @@ describe('getSuperBlockFromPath', () => {
   });
 });
 
-describe('generatePageID', () => {
+describe('generatePageId', () => {
   it('returns a string', () => {
     expect.assertions(1);
-    expect(typeof generatePageID({ len: 3 })).toBe('string');
+    expect(typeof generatePageId({ len: 3 })).toBe('string');
   });
 
   it('returns a string of the correct length', () => {
     expect.assertions(1);
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    expect(generatePageID({ len: 3 }).length).toBe(3);
+    expect(generatePageId({ len: 3 }).length).toBe(3);
   });
 
   it('returns a string of lowercase, uppercase, and numbers', () => {
     const len = 1000;
     expect.assertions(len);
 
-    const ids = [...Array(len).keys()].map(() => generatePageID({ len }));
+    const ids = [...Array(len).keys()].map(() => generatePageId({ len }));
 
     ids.forEach(id => expect(id).toMatch(/^[a-zA-Z0-9]+$/));
   });
