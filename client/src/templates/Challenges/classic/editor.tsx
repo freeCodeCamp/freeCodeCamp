@@ -464,6 +464,16 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (!getStoredAriaRoledescription()) {
       setAriaRoledescription(false);
     }
+
+    // Move textarea between the jaws so DOM order follows visual ordering
+    // and makes navigation more sensible for screen reader users.
+    const overlayWidgetsDiv = document.querySelector('.overlayWidgets');
+    const textarea = document.querySelector('.monaco-editor textarea');
+    const lowerJaw = document.querySelector('.editor-lower-jaw');
+    overlayWidgetsDiv &&
+      textarea &&
+      lowerJaw &&
+      overlayWidgetsDiv.insertBefore(textarea, lowerJaw);
   };
 
   const toggleAriaRoledescription = () => {
