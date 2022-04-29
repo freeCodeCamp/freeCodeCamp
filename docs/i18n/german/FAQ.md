@@ -32,7 +32,7 @@ Bitte beachte, dass diese GitHub Issues für Codebasis-bezogene Probleme und Dis
 
 ### Wie kann ich ein Sicherheitsproblem melden?
 
-Bitte erstelle keine GitHub Issues für Sicherheitsprobleme. Schicke stattdessen bitte eine E-Mail an `security@freecodecamp.org` und wir werden uns sofort darum kümmern.
+Bitte erstelle keine GitHub Issues für Sicherheitsprobleme. Instead, please [follow our security policy](https://contribute.freecodecamp.org/#/security).
 
 ### Ich bin ein Student. Kann ich für akademische Credits an einem Feature arbeiten?
 

@@ -32,7 +32,7 @@ Ten en cuenta que estos temas de GitHub son para debates y problemas relacionado
 
 ### ¿Cómo puedo reportar un problema de seguridad?
 
-Por favor, no crees Tema de GitHub para problemas de seguridad. En su lugar, por favor envía un correo electrónico a `security@freecodecamp.org` y lo estudiaremos inmediatamente.
+Por favor, no crees Tema de GitHub para problemas de seguridad. Instead, please [follow our security policy](https://contribute.freecodecamp.org/#/security).
 
 ### Soy estudiante. ¿Puedo trabajar en una característica para los créditos académicos?
 
