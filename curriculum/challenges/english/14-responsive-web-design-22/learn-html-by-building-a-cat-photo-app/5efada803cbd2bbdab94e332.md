@@ -1,6 +1,5 @@
 ---
 id: 5efada803cbd2bbdab94e332
-pageId: f6dd0bf8-3293-4b9b-b4c3-f1e36b6c4d9a
 title: Step 28
 challengeType: 0
 dashedName: step-28

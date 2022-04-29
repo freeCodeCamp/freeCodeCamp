@@ -1,6 +1,5 @@
 ---
 id: 5f356ed6cf6eab5f15f5cfe6
-pageId: bc918e25-4e52-46bc-9cd7-69ef8ed70398
 title: Step 21
 challengeType: 0
 dashedName: step-21

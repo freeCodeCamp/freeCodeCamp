@@ -1,6 +1,5 @@
 ---
 id: 5dfa371beacea3f48c6300af
-pageId: c5e66eef-2957-40db-9951-8a054b8e7329
 title: Step 18
 challengeType: 0
 dashedName: step-18

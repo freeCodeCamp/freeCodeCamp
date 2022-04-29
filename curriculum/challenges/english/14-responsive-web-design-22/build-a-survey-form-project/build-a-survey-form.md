@@ -1,6 +1,5 @@
 ---
 id: 587d78af367417b2b2512b03
-pageId: 97ce0526-5101-4eca-82d3-e5cf284c49f2
 title: Build a Survey Form
 challengeType: 3
 forumTopicId: 301145

@@ -1,6 +1,5 @@
 ---
 id: bd7158d8c442eddfaeb5bd18
-pageId: 267d5763-04cf-4ec0-876d-c2892defd09e
 title: Build a Tribute Page
 challengeType: 3
 forumTopicId: 301147

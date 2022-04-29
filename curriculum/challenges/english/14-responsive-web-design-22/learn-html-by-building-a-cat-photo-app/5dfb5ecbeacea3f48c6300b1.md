@@ -1,6 +1,5 @@
 ---
 id: 5dfb5ecbeacea3f48c6300b1
-pageId: bf756971-525f-43b1-ac2a-00d9550ac3a7
 title: Step 20
 challengeType: 0
 dashedName: step-20

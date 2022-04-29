@@ -1,6 +1,5 @@
 ---
 id: bd7158d8c242eddfaeb5bd13
-pageId: 7d7dae06-befd-4589-8223-e36326844256
 title: Build a Personal Portfolio Webpage
 challengeType: 3
 forumTopicId: 301143

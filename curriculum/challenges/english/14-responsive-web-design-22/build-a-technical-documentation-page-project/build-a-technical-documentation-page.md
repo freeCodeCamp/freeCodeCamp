@@ -1,6 +1,5 @@
 ---
 id: 587d78b0367417b2b2512b05
-pageId: cd95b507-3163-4012-94a3-7f183c39aa52
 title: Build a Technical Documentation Page
 challengeType: 3
 forumTopicId: 301146

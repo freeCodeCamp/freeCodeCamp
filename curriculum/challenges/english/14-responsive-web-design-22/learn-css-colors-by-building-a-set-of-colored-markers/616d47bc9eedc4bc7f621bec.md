@@ -1,6 +1,5 @@
 ---
 id: 616d47bc9eedc4bc7f621bec
-pageId: e133bc1b-007d-42d7-ab50-aa256e967b54
 title: Step 10
 challengeType: 0
 dashedName: step-10
