@@ -3,15 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.2",
-    "@testing-library/react": "^12.1.3",
-    "@testing-library/user-event": "^13.5.0",
+    "@testing-library/jest-dom": "5.16.4",
+    "@testing-library/react": "12.1.5",
+    "@testing-library/user-event": "13.5.0",
     "react": "16.14.0",
-    "react-codemirror2": "^7.2.1",
+    "react-codemirror2": "7.2.1",
     "react-dom": "16.14.0",
-    "react-router-dom": "^6.2.1",
+    "react-router-dom": "6.2.1",
     "react-scripts": "5.0.0",
-    "typescript": "^4.5.5"
+    "typescript": "4.6.3"
   },
   "scripts": {
     "start": "PORT=3300 react-scripts start",
@@ -33,7 +33,7 @@
     ]
   },
   "devDependencies": {
-    "@types/codemirror": "^5.60.5",
-    "eslint-plugin-react-hooks": "^4.3.0"
+    "@types/codemirror": "5.60.5",
+    "eslint-plugin-react-hooks": "4.4.0"
   }
 }
