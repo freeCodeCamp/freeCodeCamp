@@ -855,6 +855,8 @@ const Editor = (props: EditorProps): JSX.Element => {
         // itself.
         return null;
       };
+      // Only the description content widget uses this method but it
+      // is harmless to pass it to the overlay widget.
       const afterRender = () => {
         domNode.style.left = '0';
         domNode.style.visibility = 'visible';
