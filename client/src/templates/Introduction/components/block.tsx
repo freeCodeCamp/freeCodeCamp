@@ -246,7 +246,7 @@ export class Block extends Component<BlockProps> {
       if (completedCount === challengesWithCompleted.length) {
         return t('learn.completed');
       }
-      return `${completedCount} of ${challengesWithCompleted.length} steps completed`;
+      return `${percentageComplated}% ${t('learn.completed')}`;
     };
 
     const GridBlock = (
