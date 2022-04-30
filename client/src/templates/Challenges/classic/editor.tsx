@@ -653,6 +653,10 @@ const Editor = (props: EditorProps): JSX.Element => {
       };
     }
 
+    // Must manually set test feedback height back to zero since
+    // clearTestFeedback does not.
+    const testStatus = document.getElementById('test-status');
+    if (testStatus) testStatus.style.height = '0';
     clearTestFeedback();
 
     // Resetting margin decorations
@@ -833,10 +837,6 @@ const Editor = (props: EditorProps): JSX.Element => {
       model
     })[0];
 
-    console.log(
-      'initializeRegions: descriptionZoneTop = ',
-      dataRef.current.descriptionZoneTop
-    );
     if (dataRef.current.descriptionZoneTop < 0)
       dataRef.current.descriptionZoneTop = editor.getTopForLineNumber(
         getLineBeforeEditableRegion() + 1
@@ -994,8 +994,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     // If a challenge is reset, it needs to communicate that change to the
     // editor.
     const { editor } = dataRef.current;
-
-    //console.log('useEffect1');
 
     if (props.isResetting) {
       // NOTE: this looks a lot like a race condition, since stopResetting gets
