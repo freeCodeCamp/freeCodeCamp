@@ -201,9 +201,7 @@ const defineMonacoThemes = (
 const initialData: EditorProperties = {
   descriptionZoneId: '',
   insideEditDecId: '',
-  // This needs to be less than 0 so we can determine if the description has
-  // been placed and it could be placed at the very top (0).
-  descriptionZoneTop: -1,
+  descriptionZoneTop: 0,
   outputZoneId: '',
   outputZoneTop: 0
 };
@@ -839,11 +837,6 @@ const Editor = (props: EditorProps): JSX.Element => {
       monaco,
       model
     })[0];
-
-    if (dataRef.current.descriptionZoneTop < 0)
-      dataRef.current.descriptionZoneTop = editor.getTopForLineNumber(
-        getLineBeforeEditableRegion() + 1
-      );
   }
 
   function addWidgetsToRegions(editor: editor.IStandaloneCodeEditor) {
