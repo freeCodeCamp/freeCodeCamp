@@ -43,6 +43,10 @@ textarea.inputarea {
   padding: 15px 15px 15px 0px;
 }
 
+.editor-upper-jaw {
+  max-width: unset !important;
+}
+
 .action-row-container,
 .description-container {
   background-color: var(--secondary-background);
