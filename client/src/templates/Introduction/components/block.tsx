@@ -153,14 +153,14 @@ export class Block extends Component<BlockProps> {
 
     const isBlockCompleted = completedCount === challengesWithCompleted.length;
 
-    const percentageComplated = Math.floor(
+    const percentageCompleted = Math.floor(
       (completedCount / challengesWithCompleted.length) * 100
     );
 
     const progressBarRender = (
       <div aria-hidden='true' className='progress-wrapper'>
-        <ProgressBar now={percentageComplated} />
-        <span>{`${percentageComplated}%`}</span>
+        <ProgressBar now={percentageCompleted} />
+        <span>{`${percentageCompleted}%`}</span>
       </div>
     );
 
@@ -246,7 +246,7 @@ export class Block extends Component<BlockProps> {
       if (completedCount === challengesWithCompleted.length) {
         return t('learn.completed');
       }
-      return `${percentageComplated}% ${t('learn.completed')}`;
+      return `${percentageCompleted}% ${t('learn.completed')}`;
     };
 
     const GridBlock = (
