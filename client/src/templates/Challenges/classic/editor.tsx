@@ -520,18 +520,21 @@ const Editor = (props: EditorProps): JSX.Element => {
     domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
 
     // We have to wait for the viewZone to finish rendering before adjusting the
-    // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
+    // position of the content widget (i.e. trigger it via onDomNodeTop). If
     // not the editor may report the wrong value for position of the lines.
     const viewZone = {
       afterLineNumber: getLineBeforeEditableRegion(),
       heightInPx: domNode.offsetHeight,
       domNode: document.createElement('div'),
-      onComputedHeight: () => {
-        dataRef.current.descriptionWidget &&
-          editor.layoutContentWidget(dataRef.current.descriptionWidget);
-      },
+      // This is called when the editor dimensions change and AFTER the
+      // text in the editor has shifted.
       onDomNodeTop: () => {
-        if (dataRef.current.descriptionWidget)
+        // The return value for getTopLineNumber includes the height of
+        // the content widget so we need to remove it.
+        dataRef.current.descriptionZoneTop =
+          editor.getTopForLineNumber(getLineBeforeEditableRegion() + 1) -
+          domNode.offsetHeight;
+        dataRef.current.descriptionWidget &&
           editor.layoutContentWidget(dataRef.current.descriptionWidget);
       }
     };
