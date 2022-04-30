@@ -27,7 +27,7 @@
     "bson-objectid": "2.0.3",
     "cross-env": "7.0.3",
     "gray-matter": "4.0.3",
-    "inquirer": "8.2.2",
+    "inquirer": "8.2.4",
     "prettier": "2.6.2",
     "ts-node": "10.7.0",
     "typescript": "4.6.3"
