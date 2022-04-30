@@ -32,7 +32,7 @@ YouTube チャンネル用の動画講座を作成するには、[YouTube チャ
 
 ### セキュリティ問題はどのように報告すればいいですか？
 
-セキュリティ問題のために GitHub Issue を作成しないでください。 `security@freecodecamp.org` までメールでご連絡いただければ、直ちに調査します。
+セキュリティ問題のために GitHub Issue を作成しないでください。 Instead, please [follow our security policy](https://contribute.freecodecamp.org/#/security).
 
 ### 私は学生です。 単位取得を目的として、機能に関して貢献することはできますか？
 
