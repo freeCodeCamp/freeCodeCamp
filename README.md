@@ -16,6 +16,7 @@ Our full-stack web development and machine learning curriculum is completely fre
 
 - [Certifications](#certifications)
 - [The Learning Platform](#the-learning-platform)
+- [Communication](#communication)
 - [Reporting Bugs and Issues](#reporting-bugs-and-issues)
 - [Reporting Security Issues and Responsible Disclosure](#reporting-security-issues-and-responsible-disclosure)
 - [Contributing](#contributing)
@@ -154,9 +155,26 @@ Our community also has:
 - A [forum](https://forum.freecodecamp.org) where you can usually get programming help or project feedback within hours.
 - A [YouTube channel](https://youtube.com/freecodecamp) with free courses on Python, SQL, Android, and a wide variety of other technologies.
 - A [technical publication](https://www.freecodecamp.org/news) with thousands of programming tutorials and articles about math and computer science.
-- A [chat server](https://chat.freecodecamp.org/home) where you can hang out and talk with developers and people who are learning to code.
 
 > #### [Join the community here](https://www.freecodecamp.org/signin).
+
+### Communication
+Our community has both official and unofficial platforms for communication
+
+Officially supported chatrooms
+
+- A [forum](https://forum.freecodecamp.org) where you can usually get programming help or project feedback within hours.
+
+- A [chat server](https://chat.freecodecamp.org/home) where you can hang out and talk with developers and people who are learning to code.
+
+- A [discord channel](https://discord.gg/KVUmVXA) where you can usually socialize with other people learning how to code.
+
+- A [reddit subreddit](https://www.reddit.com/r/FreeCodeCamp/) where you can make and read post related to topics like learning how to code and getting a job as a developer.
+
+
+Unofficially supported chatrooms
+
+- Slack where you can usually find unofficial freeCodeCamp groups online.
 
 ### Reporting Bugs and Issues
 
