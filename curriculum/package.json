@@ -50,7 +50,7 @@
     "joi-objectid": "3.0.1",
     "js-yaml": "4.0.0",
     "jsdom": "16.7.0",
-    "live-server": "1.2.1",
+    "live-server": "1.2.2",
     "lodash": "4.17.21",
     "mocha": "9.2.2",
     "mock-require": "3.0.3",
