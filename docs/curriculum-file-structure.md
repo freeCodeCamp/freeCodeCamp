@@ -28,6 +28,16 @@ curriculum/
 │  │  │  ├─ {challenge}.md
 ```
 
+## Getting a File Tree
+The command ```tree /f /a``` produces a tree of the current folder and all files & folders contained within it in ASCII format.
+The output can be redirected to a text file using the > parameter.
+
+1. [Set up freeCodeCamp locally.](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally)
+1. Navigate into the desired folder to get its file tree.
+1. In command line, type
+```tree /f /a > filename.txt```
+1. Open the new filename.txt file in your favorite text editor/viewer.
+
 ## The `_meta` Directory
 
 The `_meta` directory is a special directory which contains `.json` files. These files correspond to each block in the curriculum, and are used to determine which superBlock a block belongs to, and the order of the challenges within that block.
