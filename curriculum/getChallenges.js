@@ -390,7 +390,7 @@ No audited challenges should fallback to English.
 
     const pageId = hasStoredPageId(subPath, originalPathData)
       ? getStoredPageId(subPath, originalPathData)
-      : tryToGeneratePageId(pathData, { len: 3 });
+      : tryToGeneratePageId(pathData, { len: 4, attempts: 5 });
 
     storePageId(subPath, pageId, pathData);
     return pageId;
@@ -402,16 +402,15 @@ No audited challenges should fallback to English.
   const getStoredPageId = (subPath, data) => data.subPathToPageId[subPath];
 
   function tryToGeneratePageId(data, options) {
-    const ATTEMPTS = 5;
     const { pageIdToSubPath } = data;
 
-    for (let i = 0; i < ATTEMPTS; i++) {
+    for (let i = 0; i < options.attempts; i++) {
       const pageId = generatePageId(options);
       if (!pageIdToSubPath[pageId]) {
         return pageId;
       }
     }
-    throw Error(`${ATTEMPTS} attempts to generate a new pageId failed`);
+    throw Error(`${options.attempts} attempts to generate a new pageId failed`);
   }
 
   function storePageId(subPath, pageId, data) {
