@@ -10,7 +10,7 @@
   "license": "BSD-3-Clause",
   "dependencies": {
     "cors": "2.8.5",
-    "express": "4.17.3",
+    "express": "4.18.1",
     "gray-matter": "4.0.3",
     "ts-node": "10.7.0"
   },
