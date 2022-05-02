@@ -186,7 +186,8 @@ exports.getChallengesForLang = async function getChallengesForLang(lang) {
     path.resolve(__dirname, 'path-data.json'),
     JSON.stringify(sortedPathData, null, 2)
   );
-
+  // Prettier expects a trailing newline:
+  fs.promises.appendFile(path.resolve(__dirname, 'path-data.json'), '\n');
   return output;
 };
 
