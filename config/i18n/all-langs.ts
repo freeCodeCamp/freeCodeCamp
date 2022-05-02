@@ -148,15 +148,16 @@ export const i18nextCodes = {
 };
 
 // These are for the language selector dropdown menu in the footer
+/* eslint-disable @typescript-eslint/naming-convention */
 export enum LangNames {
-  English = 'English',
-  Espanol = 'Español',
-  Chinese = '中文（简体字）',
-  'Chinese-traditional' = '中文（繁體字）',
-  Italian = 'Italiano',
-  Portuguese = 'Português',
-  Ukrainian = 'Українська',
-  Japanese = '日本語'
+  english = 'English',
+  espanol = 'Español',
+  chinese = '中文（简体字）',
+  'chinese-traditional' = '中文（繁體字）',
+  italian = 'Italiano',
+  portuguese = 'Português',
+  ukrainian = 'Українська',
+  japanese = '日本語'
 }
 
 /* These are for formatting dates and numbers. Used with JS .toLocaleString().
@@ -164,52 +165,33 @@ export enum LangNames {
  * List: https://github.com/unicode-cldr/cldr-dates-modern/tree/master/main
  */
 export enum LangCodes {
-  English = 'en-US',
-  Espanol = 'es-419',
-  Chinese = 'zh',
-  'Chinese-traditional' = 'zh-Hant',
-  Italian = 'it',
-  Portuguese = 'pt-BR',
-  Ukrainian = 'uk',
-  Japanese = 'ja'
+  english = 'en-US',
+  espanol = 'es-419',
+  chinese = 'zh',
+  'chinese-traditional' = 'zh-Hant',
+  italian = 'it',
+  portuguese = 'pt-BR',
+  ukrainian = 'uk',
+  japanese = 'ja'
 }
+/* eslint-enable @typescript-eslint/naming-convention */
 
-// returns a key-value from an enum for client locale which is initiated from a JSON file.
-// JSON does not support enums.
+// locale is sourced from a JSON file, so we use getLangCode and getLangName to
+// find the associated enum values
 
 export function getLangCode(locale: PropertyKey) {
-  const langCodeArr = Object.entries(LangCodes).map(([key, value]) => ({
-    [key.toLocaleLowerCase()]: key.toLocaleLowerCase(),
-    value: value
-  }));
-
-  function isPropertyOf<LangCodes>(
-    obj: Record<string, string>,
-    localeKey: PropertyKey
-  ): localeKey is keyof LangCodes {
-    return Object.prototype.hasOwnProperty.call(obj, localeKey);
-  }
-
-  const result = langCodeArr.filter(obj => isPropertyOf(obj, locale));
-
-  return result[0]['value'];
+  if (isPropertyOf(LangCodes, locale)) return LangCodes[locale];
+  throw new Error(`${String(locale)} is not a valid locale`);
 }
 
-// does the same as the above function but for language names
-export function getLangNameFromLocale(locale: PropertyKey) {
-  const langCodeArr = Object.entries(LangNames).map(([key, value]) => ({
-    [key.toLocaleLowerCase()]: key.toLocaleLowerCase(),
-    value: value
-  }));
+export function getLangName(locale: PropertyKey) {
+  if (isPropertyOf(LangNames, locale)) return LangNames[locale];
+  throw new Error(`${String(locale)} is not a valid locale`);
+}
 
-  function isPropertyOf<LangNames>(
-    obj: Record<string, string>,
-    localeKey: PropertyKey
-  ): localeKey is keyof LangNames {
-    return Object.prototype.hasOwnProperty.call(obj, localeKey);
-  }
-
-  const result = langCodeArr.filter(obj => isPropertyOf(obj, locale));
-
-  return result[0]['value'];
+function isPropertyOf<O>(
+  obj: Record<string, string>,
+  key: PropertyKey
+): key is keyof O {
+  return Object.prototype.hasOwnProperty.call(obj, key);
 }
