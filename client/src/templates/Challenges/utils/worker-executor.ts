@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 interface Task {
-  done?: Promise<unknown>;
+  done?: Promise<Worker>;
   _events: Record<string, unknown[]>;
   _worker: Worker | null;
   on: (event: string, listener: unknown) => Task;
@@ -32,13 +32,13 @@ class WorkerExecutor {
     this._getWorker = this._getWorker.bind(this);
   }
 
-  async _getWorker(): Promise<unknown> {
+  async _getWorker(): Promise<Worker> {
     return this._workerPool.length
-      ? this._workerPool.shift()
+      ? this._workerPool.shift() as Worker
       : this._createWorker();
   }
 
-  _createWorker(): Promise<unknown> {
+  _createWorker(): Promise<Worker> {
     return new Promise((resolve, reject) => {
       const newWorker = new Worker(this._scriptURL);
       newWorker.onmessage = (ev: MessageEvent<Event>) => {
@@ -70,10 +70,10 @@ class WorkerExecutor {
 
   _processQueue() {
     while (this._workersInUse < this._maxWorkers && this._taskQueue.length) {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      const task: Task = this._taskQueue.shift()!;
+      const task: Task = this._taskQueue.shift() as Task;
       const handleTaskEnd = this._handleTaskEnd(task);
-      task._execute(this._getWorker).done.then(handleTaskEnd, handleTaskEnd);
+      // eslint-disable-next-line @typescript-eslint/unbound-method
+      (task._execute(this._getWorker).done as Promise<unknown>).then(handleTaskEnd, handleTaskEnd);
       this._workersInUse++;
     }
   }
@@ -85,7 +85,7 @@ class WorkerExecutor {
         (worker: Worker) => {
           task._worker = worker;
           const timeoutId = setTimeout(() => {
-            task._worker.terminate();
+            task._worker?.terminate();
             task._worker = null;
             this.emit('error', { message: 'timeout' });
           }, timeout);
@@ -96,7 +96,7 @@ class WorkerExecutor {
             // successfully and defined when something else has happened (e.g.
             // an error occurred)
             if (ev.data.type) {
-              this.emit(ev.data.type, ev.data.data);
+              this.emit(ev.data.type, ev.data);
             } else {
               this.emit('done', ev.data);
             }
@@ -116,7 +116,7 @@ class WorkerExecutor {
 
     task.done = new Promise((resolve, reject) => {
       task
-        .once('done', (data: unknown) => resolve(data))
+        .once('done', (data: Promise<Worker>) => resolve(data))
         .once('error', (err: { message: string; }) => reject(err.message));
     });
 
@@ -138,9 +138,9 @@ const eventify = (): Task => {
       self._events[event].push(listener);
       return self;
     },
-    once: (event: string, listener) => {
+    once: (event, listener) => {
       self.on(event, function handler(...args: unknown[]) {
-        self.removeListener(handler);
+        self.removeListener(event, handler);
         listener.apply(self, args);
       });
       return self;
@@ -164,6 +164,7 @@ const eventify = (): Task => {
     },
     done: undefined,
     _worker: null,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     _execute: function (getWorker: () => Promise<unknown>): Task {
       throw new Error("Function not implemented.");
     }
@@ -172,6 +173,6 @@ const eventify = (): Task => {
   return self;
 };
 
-export default function createWorkerExecutor(workerName, options) {
+export default function createWorkerExecutor(workerName: string, options: { location?: string | undefined; maxWorkers?: number | undefined; terminateWorker?: boolean | undefined; } | undefined) {
   return new WorkerExecutor(workerName, options);
 }
