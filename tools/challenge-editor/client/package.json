@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "@freecodecamp/challenge-editor-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
