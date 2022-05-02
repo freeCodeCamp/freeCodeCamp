@@ -597,12 +597,20 @@ const Editor = (props: EditorProps): JSX.Element => {
     return domNode;
   }
 
+  function setTestFeedbackHeight(height?: number): void {
+    const testStatus = document.getElementById('test-status');
+    const newHeight = height === undefined ? 'auto' : `${height}px`;
+    if (testStatus) {
+      testStatus.style.height = newHeight;
+    }
+  }
+
   function clearTestFeedback() {
     const testStatus = document.getElementById('test-status');
     if (testStatus && testStatus.innerHTML) {
-      const currentHeight = `${testStatus.offsetHeight}px`;
-      // Height will be cleared after status message has been displayed
-      testStatus.style.height = currentHeight;
+      // Explicitly set the height to what it currently is so that we
+      // don't get a big content shift every time the code is checked.
+      setTestFeedbackHeight(testStatus.offsetHeight);
       testStatus.innerHTML = '';
     }
   }
@@ -656,8 +664,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     // Must manually set test feedback height back to zero since
     // clearTestFeedback does not.
-    const testStatus = document.getElementById('test-status');
-    if (testStatus) testStatus.style.height = '0';
+    setTestFeedbackHeight(0);
     clearTestFeedback();
 
     // Resetting margin decorations
@@ -1081,7 +1088,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
         if (testStatus) {
           testStatus.innerHTML = `<p class="status"><span aria-hidden="true">&#9989;</span> Congratulations, your code passes. Submit your code to complete this step and move on to the next one. ${submitKeyboardInstructions}</p>`;
-          testStatus.style.height = '';
+          setTestFeedbackHeight();
         }
       } else if (challengeHasErrors() && testStatus) {
         const wordsArray = [
@@ -1094,7 +1101,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         testStatus.innerHTML = `<p class="status"><span aria-hidden="true">✖️</span> Sorry, your code does not pass. ${
           wordsArray[Math.floor(Math.random() * wordsArray.length)]
         }</p><div><h2 class="hint">Hint</h2> ${output[1]}</div>`;
-        testStatus.style.height = '';
+        setTestFeedbackHeight();
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
