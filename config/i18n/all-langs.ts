@@ -177,40 +177,39 @@ export enum LangCodes {
 // returns a key-value from an enum for client locale which is initiated from a JSON file.
 // JSON does not support enums.
 
-export function langCodeIncludes(locale: string) {
-  const langCodeObj = Object.entries(LangCodes).map(([key, value]) => ({
-    id: key.toLocaleLowerCase(),
+export function getLangCode(locale: PropertyKey) {
+  const langCodeArr = Object.entries(LangCodes).map(([key, value]) => ({
+    [key.toLocaleLowerCase()]: key.toLocaleLowerCase(),
     value: value
   }));
 
-  const entryObj = (obj: Record<string, string>): boolean => {
-    if (obj.id == locale) {
-      return true;
-    }
-    return false;
-  };
+  function isPropertyOf<LangCodes>(
+    obj: Record<string, string>,
+    localeKey: PropertyKey
+  ): localeKey is keyof LangCodes {
+    return Object.prototype.hasOwnProperty.call(obj, localeKey);
+  }
 
-  const result = langCodeObj.filter(entryObj);
+  const result = langCodeArr.filter(obj => isPropertyOf(obj, locale));
 
-  return result.length > 0 ? result[0]['value'] : LangCodes.English;
+  return result[0]['value'];
 }
 
 // does the same as the above function but for language names
-
-export function langNameFromLocale(locale: string) {
-  const langCodeObj = Object.entries(LangNames).map(([key, value]) => ({
-    id: key.toLocaleLowerCase(),
+export function getLangNameFromLocale(locale: PropertyKey) {
+  const langCodeArr = Object.entries(LangNames).map(([key, value]) => ({
+    [key.toLocaleLowerCase()]: key.toLocaleLowerCase(),
     value: value
   }));
 
-  const entryObj = (obj: Record<string, string>): boolean => {
-    if (obj.id == locale) {
-      return true;
-    }
-    return false;
-  };
+  function isPropertyOf<LangNames>(
+    obj: Record<string, string>,
+    localeKey: PropertyKey
+  ): localeKey is keyof LangNames {
+    return Object.prototype.hasOwnProperty.call(obj, localeKey);
+  }
 
-  const result = langCodeObj.filter(entryObj);
+  const result = langCodeArr.filter(obj => isPropertyOf(obj, locale));
 
-  return result.length > 0 ? result[0]['value'] : '???';
+  return result[0]['value'];
 }

@@ -7,7 +7,7 @@ import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 
 import envData from '../../../../../config/env.json';
-import { langCodeIncludes } from '../../../../../config/i18n/all-langs';
+import { getLangCode } from '../../../../../config/i18n/all-langs';
 import {
   getCertIds,
   getPathFromID,
@@ -33,7 +33,7 @@ const mapDispatchToProps = {
 };
 
 const { clientLocale } = envData;
-const localeCode = langCodeIncludes(clientLocale);
+const localeCode = getLangCode(clientLocale);
 
 // Items per page in timeline.
 const ITEMS_PER_PAGE = 15;

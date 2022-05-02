@@ -10,7 +10,7 @@ import ShallowRenderer from 'react-test-renderer/shallow';
 import envData from '../../../../config/env.json';
 import {
   availableLangs,
-  langNameFromLocale
+  getLangNameFromLocale
 } from '../../../../config/i18n/all-langs';
 import { Themes } from '../settings/theme';
 import AuthOrProfile from './components/auth-or-profile';
@@ -358,7 +358,7 @@ const hasAllAvailableLanguagesInDropdown = (component: JSX.Element) => {
   return children.props.children.every(
     ({ props }: { props: { value: string; children: string } }) =>
       availableLangs.client.includes(props.value) &&
-      langNameFromLocale(props.value) === props.children
+      getLangNameFromLocale(props.value) === props.children
   );
 };
 

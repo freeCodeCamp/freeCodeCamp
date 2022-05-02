@@ -7,7 +7,7 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import envData from '../../../config/env.json';
-import { langCodeIncludes } from '../../../config/i18n/all-langs';
+import { getLangCode } from '../../../config/i18n/all-langs';
 import FreeCodeCampLogo from '../assets/icons/FreeCodeCamp-logo';
 import DonateForm from '../components/Donation/donate-form';
 
@@ -36,7 +36,7 @@ import ShowProjectLinks from './show-project-links';
 
 const { clientLocale } = envData;
 
-const localeCode = langCodeIncludes(clientLocale);
+const localeCode = getLangCode(clientLocale);
 type Cert = {
   username: string;
   name: string;

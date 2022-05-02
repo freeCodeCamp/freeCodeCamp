@@ -9,7 +9,7 @@ import React from 'react';
 import { TFunction, useTranslation } from 'react-i18next';
 
 import envData from '../../../../../config/env.json';
-import { langCodeIncludes } from '../../../../../config/i18n/all-langs';
+import { getLangCode } from '../../../../../config/i18n/all-langs';
 import { AvatarRenderer } from '../../helpers';
 import Link from '../../helpers/link';
 import SocialIcons from './social-icons';
@@ -18,7 +18,7 @@ import './camper.css';
 
 const { clientLocale } = envData;
 
-const localeCode = langCodeIncludes(clientLocale);
+const localeCode = getLangCode(clientLocale);
 
 interface CamperProps {
   about: string;

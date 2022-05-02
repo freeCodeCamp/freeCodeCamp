@@ -16,7 +16,7 @@ import './heatmap.css';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import envData from '../../../../../config/env.json';
-import { langCodeIncludes } from '../../../../../config/i18n/all-langs';
+import { getLangCode } from '../../../../../config/i18n/all-langs';
 import { User } from '../../../redux/prop-types';
 import FullWidthRow from '../../helpers/full-width-row';
 import Spacer from '../../helpers/spacer';
@@ -24,7 +24,7 @@ import Spacer from '../../helpers/spacer';
 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 const { clientLocale } = envData;
 
-const localeCode = langCodeIncludes(clientLocale);
+const localeCode = getLangCode(clientLocale);
 
 interface HeatMapProps {
   calendar: User['calendar'];
