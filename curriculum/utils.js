@@ -77,6 +77,7 @@ function getSuperBlockFromDir(dir) {
   return directoryToSuperblock[dir];
 }
 
+// Vowels removed to reduce the chance of generating a meaningful word.
 const letters = [
   'b',
   'c',
@@ -101,7 +102,8 @@ const letters = [
   'z'
 ];
 const upperCaseLetters = letters.map(x => x.toUpperCase());
-const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+// Vowel-like digits removed, for the same reason as letters.
+const digits = [2, 5, 6, 7, 8, 9];
 const allCharacters = letters.concat(upperCaseLetters).concat(digits);
 
 function generatePageId({ len }) {
