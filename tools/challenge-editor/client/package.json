@@ -34,6 +34,6 @@
   },
   "devDependencies": {
     "@types/codemirror": "5.60.5",
-    "eslint-plugin-react-hooks": "4.4.0"
+    "eslint-plugin-react-hooks": "4.5.0"
   }
 }
