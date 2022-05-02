@@ -1,6 +1,25 @@
+/* eslint-disable @typescript-eslint/naming-convention */
+interface Task {
+  done?: Promise<unknown>;
+  _events: Record<string, unknown[]>;
+  _worker: Worker | null;
+  on: (event: string, listener: unknown) => Task;
+  once: (event: string, listener: unknown) => Task;
+  removeListener: (event: string, listener: unknown) => Task;
+  emit:  (event: string, args: unknown) => Task;
+  _execute: (getWorker: WorkerExecutor['_getWorker']) => Task
+}
+
 class WorkerExecutor {
+
+  _workersInUse: number;
+  _maxWorkers: number;
+  _terminateWorker: boolean;
+  _scriptURL: string;
+  _workerPool: Worker[];
+  _taskQueue: Task[];
   constructor(
-    workerName,
+    workerName: string,
     { location = '/js/', maxWorkers = 2, terminateWorker = false } = {}
   ) {
     this._workerPool = [];
@@ -13,17 +32,18 @@ class WorkerExecutor {
     this._getWorker = this._getWorker.bind(this);
   }
 
-  async _getWorker() {
+  async _getWorker(): Promise<unknown> {
     return this._workerPool.length
       ? this._workerPool.shift()
       : this._createWorker();
   }
 
-  _createWorker() {
+  _createWorker(): Promise<unknown> {
     return new Promise((resolve, reject) => {
       const newWorker = new Worker(this._scriptURL);
-      newWorker.onmessage = e => {
-        if (e.data?.type === 'contentLoaded') {
+      newWorker.onmessage = (ev: MessageEvent<Event>) => {
+   
+        if (ev.data.type === 'contentLoaded') {
           resolve(newWorker);
         }
       };
@@ -31,7 +51,7 @@ class WorkerExecutor {
     });
   }
 
-  _handleTaskEnd(task) {
+  _handleTaskEnd(task: Task) {
     return () => {
       this._workersInUse--;
       const worker = task._worker;
@@ -50,18 +70,19 @@ class WorkerExecutor {
 
   _processQueue() {
     while (this._workersInUse < this._maxWorkers && this._taskQueue.length) {
-      const task = this._taskQueue.shift();
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      const task: Task = this._taskQueue.shift()!;
       const handleTaskEnd = this._handleTaskEnd(task);
       task._execute(this._getWorker).done.then(handleTaskEnd, handleTaskEnd);
       this._workersInUse++;
     }
   }
 
-  execute(data, timeout = 1000) {
-    const task = eventify({});
+  execute(data: string, timeout = 1000) {
+    const task: Task = eventify();
     task._execute = function (getWorker) {
       getWorker().then(
-        worker => {
+        (worker: Worker) => {
           task._worker = worker;
           const timeoutId = setTimeout(() => {
             task._worker.terminate();
@@ -69,15 +90,15 @@ class WorkerExecutor {
             this.emit('error', { message: 'timeout' });
           }, timeout);
 
-          worker.onmessage = e => {
+          worker.onmessage = (ev: MessageEvent<Event>)  => {
             clearTimeout(timeoutId);
             // data.type is undefined when the message has been processed
             // successfully and defined when something else has happened (e.g.
             // an error occurred)
-            if (e.data?.type) {
-              this.emit(e.data.type, e.data.data);
+            if (ev.data.type) {
+              this.emit(ev.data.type, ev.data.data);
             } else {
-              this.emit('done', e.data);
+              this.emit('done', ev.data);
             }
           };
 
@@ -95,8 +116,8 @@ class WorkerExecutor {
 
     task.done = new Promise((resolve, reject) => {
       task
-        .once('done', data => resolve(data))
-        .once('error', err => reject(err.message));
+        .once('done', (data: unknown) => resolve(data))
+        .once('error', (err: { message: string; }) => reject(err.message));
     });
 
     this._taskQueue.push(task);
@@ -106,42 +127,46 @@ class WorkerExecutor {
 }
 
 // Error and completion handling
-const eventify = self => {
-  self._events = {};
+const eventify = (): Task => {
 
-  self.on = (event, listener) => {
-    if (typeof self._events[event] === 'undefined') {
-      self._events[event] = [];
-    }
-    self._events[event].push(listener);
-    return self;
-  };
-
-  self.removeListener = (event, listener) => {
-    if (typeof self._events[event] !== 'undefined') {
-      const index = self._events[event].indexOf(listener);
-      if (index !== -1) {
-        self._events[event].splice(index, 1);
+  const self: Task = {
+    _events: {},
+    on: (event, listener) => {
+      if (typeof self._events[event] === 'undefined') {
+        self._events[event] = [];
       }
-    }
-    return self;
-  };
-
-  self.emit = (event, ...args) => {
-    if (typeof self._events[event] !== 'undefined') {
-      self._events[event].forEach(listener => {
+      self._events[event].push(listener);
+      return self;
+    },
+    once: (event: string, listener) => {
+      self.on(event, function handler(...args: unknown[]) {
+        self.removeListener(handler);
         listener.apply(self, args);
       });
+      return self;
+    },
+    removeListener: (event, listener) => {
+      if (typeof self._events[event] !== 'undefined') {
+        const index = self._events[event].indexOf(listener);
+        if (index !== -1) {
+          self._events[event].splice(index, 1);
+        }
+      }
+      return self;
+    },
+    emit: (event, ...args) => {
+      if (typeof self._events[event] !== 'undefined') {
+        self._events[event].forEach(listener => {
+          listener.apply(self, args);
+        });
+      }
+      return self;
+    },
+    done: undefined,
+    _worker: null,
+    _execute: function (getWorker: () => Promise<unknown>): Task {
+      throw new Error("Function not implemented.");
     }
-    return self;
-  };
-
-  self.once = (event, listener) => {
-    self.on(event, function handler(...args) {
-      self.removeListener(handler);
-      listener.apply(self, args);
-    });
-    return self;
   };
 
   return self;
