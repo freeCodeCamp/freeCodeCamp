@@ -10,6 +10,9 @@ It is encouraged to use functional components over class-based components.
 
 ### Migrating a JavaScript File to TypeScript
 
+#### File Naming Conventions
+When working on freeCodeCamp, it is best to use the correct naming conventions to retain consistency. For Javascript and Typescript file names, we should rename them using PascalCase and methods within specific components should be named with camel case.
+
 #### Retaining Git File History
 
 Sometimes changing the file from `<filename>.js` to `<filename>.ts` (or `.tsx`) causes the original file to be deleted, and a new one created, and other times the filename just changes - in terms of Git. Ideally, we want the file history to be preserved.
