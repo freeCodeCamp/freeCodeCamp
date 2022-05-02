@@ -51,7 +51,7 @@ const schema = Joi.object()
     videoUrl: Joi.string().allow(''),
     forumTopicId: Joi.number(),
     id: Joi.objectId().required(),
-    pageId: Joi.string().uuid({ version: 'uuidv4' }), // TODO: require once all challenges can have them (i.e. when we're ready to use the ids for routing)
+    pageId: Joi.string().alphanum(), // TODO: require once all challenges can have them (i.e. when we're ready to use the ids for routing)
     instructions: Joi.string().allow(''),
     isComingSoon: Joi.bool(),
     isLocked: Joi.bool(),
