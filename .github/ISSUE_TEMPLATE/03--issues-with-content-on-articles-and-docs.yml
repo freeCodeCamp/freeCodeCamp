@@ -1,0 +1,36 @@
+name: Report issues with content on guide articles or documentation.
+about: Report issues with content on a specific article, like broken links, typos, missing parts, etc.
+title: ''
+labels: ['type: bug', 'status: waiting triage']
+assignees: ''
+body:
+  - type: markdown
+    attributes:
+      value: 'NOTE: If you want to become an author on freeCodeCamp, you can find everything here: https://www.freecodecamp.org/news/developer-news-style-guide'
+  - type: markdown
+    attributes:
+      value: If you are reporting an issue with an article on our news publication, please follow this link to send an email to our editorial team https://mailxto.com/lkj5n7
+  - type: input
+    attributes:
+      label: Affected Page
+      description: Add a link to the coding challenge with the problem.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Steps to Reproduce
+      description: Please describe the problem and provide the steps to reproduce the issue.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Recommended fix or suggestions
+      description: A clear and concise description of how you want to update it.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Screenshots
+      description: If applicable, add screenshots to help explain your problem. You can drag and drop `png`, `jpg`, `gif`, etc. in this box.
+    validations:
+      required: false
