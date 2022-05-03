@@ -1,19 +1,18 @@
-# Curriculum File Structure
+# Structure des fichiers du curriculum
 
-Our core instructional content is located within the conveniently named `curriculum` directory. This page will break down how these files are organized.
+Notre contenu pédagogique de base se trouve dans le répertoire des programmes d’études. Cette page décompose la façon dont ces fichiers sont organisés.
 
-## Terminology
+## Terminologie
 
-There are a few terms we use when discussing our curriculum content.
+Il y a quelques termes que nous utilisons lorsque nous discutons du contenu de notre programme.
+•	certification : Lorsqu’on parle de certification dans ce cas-ci, il s’agit du certificat réel que les utilisateurs réclament. Qui est séparé du nom du superBlock.
+•	superBlock : Un superbloc est la collection de défis de niveau supérieur. Chaque superbloc correspond à une certification dans le programme (c.-à-d. conception Web adaptative).
+•	block : Un bloc est une section dans un superbloc. Un bloc correspond à un groupe de défis dans une certification donnée (c.-à-d. HTML de base et HTML5)
+•	challenge : Un défi est une leçon unique dans le programme (c.-à-d. dire bonjour aux éléments HTML)
 
-- `certification` : When referring to a certification in this instance, it is talking about the actual certificate that users claim. Which is separate from the name of the superBlock.
-- `superBlock` : A superblock is the top level collection of challenges. Each superblock corresponds to a certification in the curriculum (i.e. Responsive Web Design).
-- `block` : A block is a section within a superblock. A block corresponds to a group of challenges in a given certification (i.e. Basic HTML and HTML5)
-- `challenge` : A challenge is a single lesson within the curriculum (i.e. Say Hello to HTML Elements)
+## arborescence de fichiers
 
-## File Tree
-
-Using those terms, here is how the file structure would be defined:
+En utilisant ces termes, voici comment la structure de fichier serait définie:
 
 <!-- prettier-ignore -->
 ```md
@@ -28,22 +27,22 @@ curriculum/
 │  │  │  ├─ {challenge}.md
 ```
 
-## The `_meta` Directory
+## le répertoire _meta
 
-The `_meta` directory is a special directory which contains `.json` files. These files correspond to each block in the curriculum, and are used to determine which superBlock a block belongs to, and the order of the challenges within that block.
+Le répertoire `_meta` est un répertoire spécial qui contient des fichiers . json. Ces fichiers correspondent à chaque bloc du programme, et sont utilisés pour déterminer à quel superBlock un bloc appartient, et l’ordre des défis dans ce bloc.
 
-## Renaming Files
+## renommer les fichiers
 
-There may be times when you need to rename a certificate, superblock, block, or challenge. This section will outline the steps needed to avoid build errors when doing so.
+Il peut arriver que vous deviez renommer un certificat, un superbloc, un bloc ou un défi. Cette section décrit les étapes à suivre pour éviter les erreurs de compilation.
 
 > [!ATTENTION]
-> Renaming files within the curriculum structure will often change the path (or URL) of the content on the main webpage. Doing so should be done with care, as redirects have to be set up for each change that is made.
+> Renommer des fichiers dans la structure du programme changera souvent le chemin (ou l’URL) du contenu sur la page Web principale. Cela devrait être fait avec soin, car les redirections doivent être configurées pour chaque changement apporté.
 
-### Renaming a Certification
+### Renommer une certification
 
-When renaming a certification, you will likely want to rename the associated superblock along with it. Do the following to rename only the certificate:
+Lorsque vous renommez une certification, vous voudrez probablement renommer le superbloc associé avec elle. Procédez comme suit pour renommer uniquement le certificat:
 
-1. Rename the `curriculum/challenges/_meta/{superBlock}-certificate` folder to the new name.
+1. Renommez le dossier `curriculum/challenges/_meta/{superBlock}-certificate` sous le nouveau nom.
 1. In the `meta.json` file of that folder, rename the values in `name`, `dashedName`, and `challengeOrder` to the new cert name.
 1. In `curriculum/challenges/english/12-certificate`, rename the `{superBlock}-certificate` folder, and the YAML file within it, to the new name.
 1. In the YAML file, change the `title` to the new name.
