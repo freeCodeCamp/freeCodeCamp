@@ -17,7 +17,7 @@ Initialize the three variables `a`, `b`, and `c` with `5`, `10`, and `"I am a"` 
 
 # --hints--
 
-`a` should be defined and evaluated to have the value of `6`.
+`a` should be defined and have a final value of `6`.
 
 ```js
 assert(typeof a === 'number' && a === 6);
