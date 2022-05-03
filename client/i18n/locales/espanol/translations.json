@@ -26,7 +26,7 @@
     "off": "Apagado",
     "on": "Encendido",
     "sign-in": "Iniciar sesión",
-    "sign-up-email-list": "Sign up for Quincy's weekly emails",
+    "sign-up-email-list": "Suscríbete a los correos electrónicos semanales de Quincy",
     "sign-out": "Cerrar sesión",
     "curriculum": "Currículo",
     "forum": "Foro",
@@ -58,7 +58,7 @@
     "resubscribe": "Puedes hacer clic aquí para volver a suscribirte",
     "click-here": "Haz clic aquí para iniciar sesión",
     "save": "Guardar",
-    "save-code": "Save your Code",
+    "save-code": "Guarda tu código",
     "no-thanks": "No, Gracias",
     "yes-please": "Sí, por favor",
     "update-email": "Actualizar mi correo electrónico",
@@ -68,8 +68,8 @@
     "ask-later": "Pregúntame luego",
     "start-coding": "¡Empieza a programar!",
     "go-to-settings": "Ve a la configuración para reclamar tu certificación",
-    "click-start-course": "Start the course",
-    "click-start-project": "Start the project"
+    "click-start-course": "Comienza el curso",
+    "click-start-project": "Comienza el proyecto"
   },
   "landing": {
     "big-heading-1": "Aprende a programar gratis.",
@@ -357,7 +357,7 @@
     "try-again": "Por favor, intenta de nuevo.",
     "card-number": "Tu número de tarjeta:",
     "expiration": "Fecha de vencimiento:",
-    "secure-donation": "Secure donation",
+    "secure-donation": "Donación segura",
     "faq": "Preguntas frecuentes",
     "only-you": "Solo tú puedes ver este mensaje. Felicitaciones por obtener esta certificación. No es una tarea fácil. Operar freeCodeCamp tampoco es fácil. Ni es barato. Ayúdanos a ayudarte a ti y a muchas otras personas en todo el mundo. Haz una donación de apoyo deducible de impuestos a nuestra organización sin fines de lucro hoy.",
     "get-help": "¿Cómo puedo obtener ayuda con mis donaciones?",
@@ -520,12 +520,12 @@
     "complete-project-first": "Primero debes completar el proyecto.",
     "local-code-save-error": "Vaya, tu código no se guardó, el almacenamiento local del navegador puede estar lleno.",
     "local-code-saved": "¡Guardado! Tu código ha sido guardado en el almacenamiento local de tu navegador.",
-    "code-saved": "Your code was saved to the database. It will be here when you return.",
-    "code-save-error": "An error occurred trying to save your code.",
-    "code-save-less": "Slow Down! Your code was not saved. Try again in a few seconds.",
-    "challenge-save-too-big": "Sorry, you cannot save your code. Your code is {{user-size}} bytes. We allow a maximum of {{max-size}} bytes. Please make your code smaller and try again or request assistance on https://forum.freecodecamp.org",
-    "challenge-submit-too-big": "Sorry, you cannot submit your code. Your code is {{user-size}} bytes. We allow a maximum of {{max-size}} bytes. Please make your code smaller and try again or request assistance on https://forum.freecodecamp.org",
-    "invalid-update-flag": "You are attempting to access forbidden resources. Please request assistance on https://forum.freecodecamp.org if this is a valid request."
+    "code-saved": "Tu código fue enviado a la base de datos. Estará aquí cuando regreses.",
+    "code-save-error": "Ocurrió un error al intentar guardar tu código.",
+    "code-save-less": "¡Espera! Tu código no fue guardado. Intenta de nuevo más tarde.",
+    "challenge-save-too-big": "Lo sentimos, no puedes guardar tu código. Tu código es de {{user-size}} bytes. Nosotros permitimos un máximo de {{max-size}} bytes. Por favor haz tu código más pequeño e intenta nuevamente o solicita asistencia en https://forum.freecodecamp.org",
+    "challenge-submit-too-big": "Lo sentimos, no puedes enviar tu código. Tu código es de {{user-size}} bytes. Nosotros permitimos un máximo de {{max-size}} bytes. Por favor haz tu código más pequeño e intenta nuevamente o solicita ayuda en https://forum.freecodecamp.org",
+    "invalid-update-flag": "Estás intentando acceder a recursos prohibidos. Por favor, solicita asistencia en https://forum.freecodecamp.org si es una solicitud válida."
   },
   "validation": {
     "max-characters": "Hay un límite máximo de 288 caracteres, te quedan {{charsLeft}}",
