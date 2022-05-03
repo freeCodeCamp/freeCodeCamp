@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story } from '@storybook/react';
-import { HelpBlock } from './helpblock';
+import { HelpBlock } from './help-block';
 import { HelpBlockProps } from './types';
 
 const story = {

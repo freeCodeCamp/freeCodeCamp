@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { Provider } from 'react-redux';
@@ -7,7 +8,7 @@ import { CertificationSettings } from './certification';
 
 jest.mock('../../analytics');
 
-function renderWithRedux(ui) {
+function renderWithRedux(ui: JSX.Element) {
   return render(<Provider store={createStore()}>{ui}</Provider>);
 }
 

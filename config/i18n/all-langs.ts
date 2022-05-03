@@ -148,28 +148,50 @@ export const i18nextCodes = {
 };
 
 // These are for the language selector dropdown menu in the footer
-export const langDisplayNames = {
-  english: 'English',
-  espanol: 'Español',
-  chinese: '中文（简体字）',
-  'chinese-traditional': '中文（繁體字）',
-  italian: 'Italiano',
-  portuguese: 'Português',
-  ukrainian: 'Українська',
-  japanese: '日本語'
-};
+/* eslint-disable @typescript-eslint/naming-convention */
+export enum LangNames {
+  english = 'English',
+  espanol = 'Español',
+  chinese = '中文（简体字）',
+  'chinese-traditional' = '中文（繁體字）',
+  italian = 'Italiano',
+  portuguese = 'Português',
+  ukrainian = 'Українська',
+  japanese = '日本語'
+}
 
 /* These are for formatting dates and numbers. Used with JS .toLocaleString().
  * There's an example in profile/components/Camper.js
  * List: https://github.com/unicode-cldr/cldr-dates-modern/tree/master/main
  */
-export const langCodes = {
-  english: 'en-US',
-  espanol: 'es-419',
-  chinese: 'zh',
-  'chinese-traditional': 'zh-Hant',
-  italian: 'it',
-  portuguese: 'pt-BR',
-  ukrainian: 'uk',
-  japanese: 'ja'
-};
+export enum LangCodes {
+  english = 'en-US',
+  espanol = 'es-419',
+  chinese = 'zh',
+  'chinese-traditional' = 'zh-Hant',
+  italian = 'it',
+  portuguese = 'pt-BR',
+  ukrainian = 'uk',
+  japanese = 'ja'
+}
+/* eslint-enable @typescript-eslint/naming-convention */
+
+// locale is sourced from a JSON file, so we use getLangCode and getLangName to
+// find the associated enum values
+
+export function getLangCode(locale: PropertyKey) {
+  if (isPropertyOf(LangCodes, locale)) return LangCodes[locale];
+  throw new Error(`${String(locale)} is not a valid locale`);
+}
+
+export function getLangName(locale: PropertyKey) {
+  if (isPropertyOf(LangNames, locale)) return LangNames[locale];
+  throw new Error(`${String(locale)} is not a valid locale`);
+}
+
+function isPropertyOf<O>(
+  obj: Record<string, string>,
+  key: PropertyKey
+): key is keyof O {
+  return Object.prototype.hasOwnProperty.call(obj, key);
+}

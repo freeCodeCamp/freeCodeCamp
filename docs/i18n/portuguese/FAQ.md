@@ -32,7 +32,7 @@ Observe que essas issues do GitHub são para discussões e questões relacionada
 
 ### Como posso relatar um problema de segurança?
 
-Não crie issues no GitHub para problemas de segurança. Instead, please [follow our security policy](https://contribute.freecodecamp.org/#/security).
+Não crie issues no GitHub para problemas de segurança. Em vez disso, [siga nossa política de segurança](https://contribute.freecodecamp.org/#/security).
 
 ### Eu sou estudante. Posso trabalhar em um recurso para créditos acadêmicos?
 
