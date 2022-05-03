@@ -51,7 +51,7 @@ import {
 } from '../redux';
 import { savedChallengesSelector } from '../../../redux';
 import { getGuideUrl } from '../utils';
-import MultifileEditor from './MultifileEditor';
+import MultifileEditor from './multifile-editor';
 import DesktopLayout from './desktop-layout';
 import MobileLayout from './mobile-layout';
 
