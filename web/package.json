@@ -20,12 +20,18 @@
   "main": "none",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "next dev --port 8000"
+    "develop-client": "next dev --port 8000",
+    "dev": "concurrently \"npm:develop-curriculum-server\" \"npm:develop-client\"",
+    "develop-curriculum-server": "npm --prefix ../curriculum-server run dev",
+    "prepare": "npm --prefix ../ run build:curriculum && npm --prefix ../curriculum-server/ run source-curriculum"
   },
   "dependencies": {
     "@monaco-editor/react": "^4.4.2",
     "next": "^12.1.5",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^7.1.0"
   }
 }
