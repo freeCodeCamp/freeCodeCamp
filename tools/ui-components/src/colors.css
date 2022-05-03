@@ -91,54 +91,54 @@
 
 html,
 div.light {
-  --default-foreground-primary: var(--gray90);
-  --default-foreground-secondary: var(--gray85);
-  --default-foreground-tertiary: var(--gray80);
-  --default-foreground-quaternary: var(--gray75);
-  --default-foreground-danger: var(--red15);
-  --default-foreground-info: var(--blue30);
+  --foreground-primary: var(--gray90);
+  --foreground-secondary: var(--gray85);
+  --foreground-tertiary: var(--gray80);
+  --foreground-quaternary: var(--gray75);
+  --foreground-danger: var(--red15);
+  --foreground-info: var(--blue30);
 
-  --default-background-primary: var(--gray00);
-  --default-background-secondary: var(--gray05);
-  --default-background-tertiary: var(--gray10);
-  --default-background-quaternary: var(--gray15);
-  --default-background-danger: var(--red90);
-  --default-background-info: var(--blue90);
+  --background-primary: var(--gray00);
+  --background-secondary: var(--gray05);
+  --background-tertiary: var(--gray10);
+  --background-quaternary: var(--gray15);
+  --background-danger: var(--red90);
+  --background-info: var(--blue90);
 
-  --default-foreground-primary-hover: var(--gray00);
-  --default-foreground-danger-hover: var(--red90);
-  --default-foreground-info-hover: var(--blue90);
+  --foreground-primary-hover: var(--gray00);
+  --foreground-danger-hover: var(--red90);
+  --foreground-info-hover: var(--blue90);
 
-  --default-background-primary-hover: var(--gray90);
-  --default-background-danger-hover: var(--red15);
-  --default-background-info-hover: var(--blue30);
+  --background-primary-hover: var(--gray90);
+  --background-danger-hover: var(--red15);
+  --background-info-hover: var(--blue30);
 
   --focus-outline-color: var(--blue50);
 }
 
 html.dark,
 div.dark {
-  --default-foreground-primary: var(--gray00);
-  --default-foreground-secondary: var(--gray05);
-  --default-foreground-tertiary: var(--gray10);
-  --default-foreground-quaternary: var(--gray15);
-  --default-foreground-danger: var(--red90);
-  --default-foreground-info: var(--blue90);
+  --foreground-primary: var(--gray00);
+  --foreground-secondary: var(--gray05);
+  --foreground-tertiary: var(--gray10);
+  --foreground-quaternary: var(--gray15);
+  --foreground-danger: var(--red90);
+  --foreground-info: var(--blue90);
 
-  --default-background-primary: var(--gray90);
-  --default-background-secondary: var(--gray85);
-  --default-background-tertiary: var(--gray80);
-  --default-background-quaternary: var(--gray75);
-  --default-background-danger: var(--red15);
-  --default-background-info: var(--blue30);
+  --background-primary: var(--gray90);
+  --background-secondary: var(--gray85);
+  --background-tertiary: var(--gray80);
+  --background-quaternary: var(--gray75);
+  --background-danger: var(--red15);
+  --background-info: var(--blue30);
 
-  --default-foreground-primary-hover: var(--gray90);
-  --default-foreground-danger-hover: var(--red15);
-  --default-foreground-info-hover: var(--blue30);
+  --foreground-primary-hover: var(--gray90);
+  --foreground-danger-hover: var(--red15);
+  --foreground-info-hover: var(--blue30);
 
-  --default-background-primary-hover: var(--gray00);
-  --default-background-danger-hover: var(--red90);
-  --default-background-info-hover: var(--blue90);
+  --background-primary-hover: var(--gray00);
+  --background-danger-hover: var(--red90);
+  --background-info-hover: var(--blue90);
 
   --focus-outline-color: var(--blue50);
 }

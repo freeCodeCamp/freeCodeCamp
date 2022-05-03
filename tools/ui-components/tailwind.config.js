@@ -14,31 +14,27 @@ module.exports = {
       'dark-theme-background': 'var(--gray90)',
       'light-theme-background': 'var(--gray00)',
       // Foreground
-      'default-foreground-primary': 'var(--default-foreground-primary)',
-      'default-foreground-secondary': 'var(--default-foreground-secondary)',
-      'default-foreground-tertiary': 'var(--default-foreground-tertiary)',
-      'default-foreground-quaternary': 'var(--default-foreground-quaternary)',
-      'default-foreground-danger': 'var(--default-foreground-danger)',
-      'default-foreground-info': 'var(--default-foreground-info)',
+      'foreground-primary': 'var(--foreground-primary)',
+      'foreground-secondary': 'var(--foreground-secondary)',
+      'foreground-tertiary': 'var(--foreground-tertiary)',
+      'foreground-quaternary': 'var(--foreground-quaternary)',
+      'foreground-danger': 'var(--foreground-danger)',
+      'foreground-info': 'var(--foreground-info)',
       // Background
-      'default-background-primary': 'var(--default-background-primary)',
-      'default-background-secondary': 'var(--default-background-secondary)',
-      'default-background-tertiary': 'var(--default-background-tertiary)',
-      'default-background-quaternary': 'var(--default-background-quaternary)',
-      'default-background-danger': 'var(--default-background-danger)',
-      'default-background-info': 'var(--default-background-info)',
+      'background-primary': 'var(--background-primary)',
+      'background-secondary': 'var(--background-secondary)',
+      'background-tertiary': 'var(--background-tertiary)',
+      'background-quaternary': 'var(--background-quaternary)',
+      'background-danger': 'var(--background-danger)',
+      'background-info': 'var(--background-info)',
       // Foreground hover
-      'default-foreground-primary-hover':
-        'var(--default-foreground-primary-hover)',
-      'default-foreground-danger-hover':
-        'var(--default-foreground-danger-hover)',
-      'default-foreground-info-hover': 'var(--default-foreground-info-hover)',
+      'foreground-primary-hover': 'var(--foreground-primary-hover)',
+      'foreground-danger-hover': 'var(--foreground-danger-hover)',
+      'foreground-info-hover': 'var(--foreground-info-hover)',
       // Background hover
-      'default-background-primary-hover':
-        'var(--default-background-primary-hover)',
-      'default-background-danger-hover':
-        'var(--default-background-danger-hover)',
-      'default-background-info-hover': 'var(--default-background-info-hover)',
+      'background-primary-hover': 'var(--background-primary-hover)',
+      'background-danger-hover': 'var(--background-danger-hover)',
+      'background-info-hover': 'var(--background-info-hover)',
       // Focus outline
       'focus-outline-color': 'var(--focus-outline-color)',
       gray: {

@@ -42,41 +42,41 @@ const computeClassNames = ({
   switch (variant) {
     case 'danger':
       classNames.push(
-        'border-default-foreground-danger',
-        'bg-default-background-danger',
-        'text-default-foreground-danger',
+        'border-foreground-danger',
+        'bg-background-danger',
+        'text-foreground-danger',
         ...(disabled
           ? ['active:before:hidden']
           : [
-              'hover:bg-default-background-danger-hover',
-              'hover:text-default-foreground-danger-hover'
+              'hover:bg-background-danger-hover',
+              'hover:text-foreground-danger-hover'
             ])
       );
       break;
     case 'info':
       classNames.push(
-        'border-default-foreground-info',
-        'bg-default-background-info',
-        'text-default-foreground-info',
+        'border-foreground-info',
+        'bg-background-info',
+        'text-foreground-info',
         ...(disabled
           ? ['active:before:hidden']
           : [
-              'hover:bg-default-background-info-hover',
-              'hover:text-default-foreground-info-hover'
+              'hover:bg-background-info-hover',
+              'hover:text-foreground-info-hover'
             ])
       );
       break;
     // default variant is 'primary'
     default:
       classNames.push(
-        'border-default-foreground-secondary',
-        'bg-default-background-quaternary',
-        'text-default-foreground-secondary',
+        'border-foreground-secondary',
+        'bg-background-quaternary',
+        'text-foreground-secondary',
         ...(disabled
           ? ['active:before:hidden']
           : [
-              'hover:bg-default-background-primary-hover',
-              'hover:text-default-foreground-primary-hover'
+              'hover:bg-background-primary-hover',
+              'hover:text-foreground-primary-hover'
             ])
       );
   }
