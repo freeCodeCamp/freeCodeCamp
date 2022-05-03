@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby';
-import React, { Component } from 'react';
+import React, { Component, MutableRefObject } from 'react';
 import Helmet from 'react-helmet';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -8,6 +8,7 @@ import Media from 'react-responsive';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import store from 'store';
+import { editor } from 'monaco-editor';
 import { challengeTypes } from '../../../../utils/challenge-types';
 import LearnLayout from '../../../components/layouts/learn';
 
@@ -385,7 +386,11 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           challengeFiles={challengeFiles}
           containerRef={this.containerRef}
           description={description}
-          editorRef={this.editorRef}
+          // Try to remove unknown
+          editorRef={
+            this
+              .editorRef as unknown as MutableRefObject<editor.IStandaloneCodeEditor>
+          }
           initialTests={tests}
           resizeProps={this.resizeProps}
           title={title}

@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
-import React, { useRef } from 'react';
+import React, { MutableRefObject, useRef } from 'react';
 import { connect } from 'react-redux';
 import { ReflexContainer, ReflexElement, ReflexSplitter } from 'react-reflex';
 import { createSelector } from 'reselect';
+import { editor } from 'monaco-editor';
 import { isDonationModalOpenSelector, userSelector } from '../../../redux';
 import {
   canFocusEditorSelector,
@@ -11,46 +11,57 @@ import {
 } from '../redux';
 import { getTargetEditor } from '../utils/get-target-editor';
 import './editor.css';
+import {
+  ChallengeFile,
+  FileKey,
+  ResizeProps,
+  Test
+} from '../../../redux/prop-types';
+import { Themes } from '../../../components/settings/theme';
 import Editor from './editor';
 
-const propTypes = {
-  canFocus: PropTypes.bool,
-  // TODO: use shape
-  challengeFiles: PropTypes.array,
-  containerRef: PropTypes.any.isRequired,
-  contents: PropTypes.string,
-  description: PropTypes.string,
-  dimensions: PropTypes.object,
-  editorRef: PropTypes.any.isRequired,
-  ext: PropTypes.string,
-  fileKey: PropTypes.string,
-  initialEditorContent: PropTypes.string,
-  initialExt: PropTypes.string,
-  initialTests: PropTypes.array,
-  output: PropTypes.arrayOf(PropTypes.string),
-  resizeProps: PropTypes.shape({
-    onStopResize: PropTypes.func,
-    onResize: PropTypes.func
-  }),
-  theme: PropTypes.string,
-  title: PropTypes.string,
-  showProjectPreview: PropTypes.bool,
-  usesMultifileEditor: PropTypes.bool,
-  visibleEditors: PropTypes.shape({
-    scriptjs: PropTypes.bool,
-    indexjsx: PropTypes.bool,
-    stylescss: PropTypes.bool,
-    indexhtml: PropTypes.bool
-  })
+type VisibleEditors = {
+  [key: string]: boolean;
 };
-
+interface MultifileEditorProps {
+  canFocus?: boolean;
+  challengeFiles: ChallengeFile[];
+  containerRef: React.RefObject<HTMLElement>;
+  contents?: string;
+  description: string;
+  dimensions?: object;
+  editorRef: MutableRefObject<editor.IStandaloneCodeEditor>;
+  ext?: string;
+  fileKey?: string;
+  initialEditorContent?: string;
+  initialExt?: string;
+  initialTests: Test[];
+  output?: string[];
+  resizeProps: ResizeProps;
+  theme: Themes;
+  title: string;
+  showProjectPreview: boolean;
+  usesMultifileEditor: boolean;
+  visibleEditors: {
+    indexhtml?: boolean;
+    indexjsx?: boolean;
+    stylescss?: boolean;
+    scriptjs?: boolean;
+  };
+}
 const mapStateToProps = createSelector(
   visibleEditorsSelector,
   canFocusEditorSelector,
   consoleOutputSelector,
   isDonationModalOpenSelector,
   userSelector,
-  (visibleEditors, canFocus, output, open, { theme = 'default' }) => ({
+  (
+    visibleEditors: VisibleEditors,
+    canFocus: boolean,
+    output: string[],
+    open,
+    { theme = Themes.Default }: { theme: Themes }
+  ) => ({
     visibleEditors,
     canFocus: open ? false : canFocus,
     output,
@@ -58,7 +69,7 @@ const mapStateToProps = createSelector(
   })
 );
 
-const MultifileEditor = props => {
+const MultifileEditor = (props: MultifileEditorProps) => {
   const {
     challengeFiles,
     containerRef,
@@ -72,7 +83,6 @@ const MultifileEditor = props => {
     usesMultifileEditor,
     showProjectPreview
   } = props;
-  const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
   // TODO: the tabs mess up the rendering (scroll doesn't work properly and
   // the in-editor description)
 
@@ -94,7 +104,7 @@ const MultifileEditor = props => {
   if (stylescss) editorKeys.push('stylescss');
   if (scriptjs) editorKeys.push('scriptjs');
 
-  const editorAndSplitterKeys = editorKeys.reduce((acc, key) => {
+  const editorAndSplitterKeys = editorKeys.reduce((acc: string[] | [], key) => {
     if (acc.length === 0) {
       return [key];
     } else {
@@ -126,10 +136,11 @@ const MultifileEditor = props => {
                     containerRef={containerRef}
                     description={targetEditor === key ? description : null}
                     editorRef={editorRef}
-                    fileKey={key}
+                    fileKey={key as FileKey}
                     initialTests={initialTests}
                     resizeProps={resizeProps}
-                    theme={editorTheme}
+                    // This is weird, both are of same type
+                    theme={theme}
                     title={title}
                     usesMultifileEditor={usesMultifileEditor}
                     showProjectPreview={showProjectPreview}
@@ -145,6 +156,5 @@ const MultifileEditor = props => {
 };
 
 MultifileEditor.displayName = 'MultifileEditor';
-MultifileEditor.propTypes = propTypes;
 
 export default connect(mapStateToProps)(MultifileEditor);
