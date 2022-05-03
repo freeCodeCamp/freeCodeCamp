@@ -174,6 +174,10 @@ The freeCodeCamp.org community is possible thanks to thousands of kind volunteer
 
 > #### [Please follow these steps to contribute](https://contribute.freecodecamp.org).
 
+### Recommended Curriculum before Contributing
+
+If you are confident in your JavaScript and TypeScript skills pleae continue and start contributing but if not we reccomend that you work through some of our curriculum. [JavaScript Algorithms and Data Structures Certification](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/), [Responsive Web Design Certification](https://www.freecodecamp.org/learn/responsive-web-design/), [Front End Libraries Certification](https://www.freecodecamp.org/learn/front-end-development-libraries/)
+
 ### Platform, Build, and Deployment Status
 
 The general platform status for all our applications is available at [`status.freecodecamp.org`](https://status.freecodecamp.org). The build and deployment status for the code is available in [our DevOps Guide](https://contribute.freecodecamp.org/#/devops).
