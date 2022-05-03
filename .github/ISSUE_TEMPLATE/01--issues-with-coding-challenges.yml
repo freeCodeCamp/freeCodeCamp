@@ -1,8 +1,6 @@
 name: Report issues with coding challenges & curriculum
 description: Report issues with a specific challenge, like broken tests, unclear instructions, etc.
-title: ''
 labels: ['scope: curriculum', 'type: bug', 'status: waiting triage']
-assignees: ''
 body:
   - type: markdown
     attributes:
@@ -17,7 +15,7 @@ body:
     attributes:
       label: Your code
       description: Copy and paste the code from the editor that you used in between the back-ticks.
-      placeholder: |
+      value: |
         ```
 
         ```
@@ -39,7 +37,7 @@ body:
     attributes:
       label: System
       description: Please complete the following information.
-      placeholder: |
+      value: |
         - Device: [e.g. iPhone 6, Laptop]
         - OS: [e.g. iOS 14, Windows 10, Ubuntu 20.04]
         - Browser: [e.g. Chrome, Safari]

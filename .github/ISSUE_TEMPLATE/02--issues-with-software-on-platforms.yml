@@ -1,8 +1,6 @@
 name: Report issues with software on freeCodeCamp.org's platforms
-description: Report a software bug on `/learn`, `/news`, Community Forum, Code Radio, or any of the platforms.
-title: ''
+description: Report a software bug on /learn, /news, Community Forum, Code Radio, or any of the platforms.
 labels: ['type: bug', 'status: waiting triage']
-assignees: ''
 body:
   - type: markdown
     attributes:
@@ -17,7 +15,7 @@ body:
     attributes:
       label: Steps to Reproduce
       description: Please provide the steps to reproduce the issue.
-      placeholder: |
+      value: |
         1. Go to '...'
         2. Click on '...'
         3. Scroll down to '...'
@@ -40,7 +38,7 @@ body:
     attributes:
       label: System
       description: Please complete the following information.
-      placeholder: |
+      value: |
         - Device: [e.g. iPhone 6, Laptop]
         - OS: [e.g. iOS 14, Windows 10, Ubuntu 20.04]
         - Browser: [e.g. Chrome, Safari]
