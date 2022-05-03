@@ -50,6 +50,18 @@ Each component is different, but in general a component should:
 - Be styled internally based on their props (the consumers should not need to restyle the component with the `className` prop)
 - Utilize the built-in styling system from Tailwind instead of having custom styles
 
+### Using colors
+
+There are two color "layers" in the component library:
+
+- The base layer, where the color names describe what the colors are, e.g. `gray00`, `blue50`
+- The semantic layer, where the color names describe what the colors are for, e.g. `foreground-primary`, `background-danger`
+
+Generally when using colors in a component, you should choose semantic variables over the base ones. There are exceptions, however, specifically when you are styling the component's states such as hover, active, disabled, etc. In these cases, we recommend using the base variables directly instead of creating new semantic variables, since each component can have different styles for their states.
+
+> [!NOTE]
+> Color definition can be found in the [`colors.css` file](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/tools/ui-components/src/colors.css). A color is only available for use if it is added to the [`tailwind.config.js` file](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/tools/ui-components/tailwind.config.js) under the `colors` property.
+
 ### Useful links
 
 - [Tailwind CSS Configuration](https://tailwindcss.com/docs/configuration)
