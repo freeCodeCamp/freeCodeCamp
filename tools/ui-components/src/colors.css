@@ -105,14 +105,6 @@ div.light {
   --background-danger: var(--red90);
   --background-info: var(--blue90);
 
-  --foreground-primary-hover: var(--gray00);
-  --foreground-danger-hover: var(--red90);
-  --foreground-info-hover: var(--blue90);
-
-  --background-primary-hover: var(--gray90);
-  --background-danger-hover: var(--red15);
-  --background-info-hover: var(--blue30);
-
   --focus-outline-color: var(--blue50);
 }
 
@@ -131,14 +123,6 @@ div.dark {
   --background-quaternary: var(--gray75);
   --background-danger: var(--red15);
   --background-info: var(--blue30);
-
-  --foreground-primary-hover: var(--gray90);
-  --foreground-danger-hover: var(--red15);
-  --foreground-info-hover: var(--blue30);
-
-  --background-primary-hover: var(--gray00);
-  --background-danger-hover: var(--red90);
-  --background-info-hover: var(--blue90);
 
   --focus-outline-color: var(--blue50);
 }

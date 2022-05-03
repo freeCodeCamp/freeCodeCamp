@@ -27,14 +27,6 @@ module.exports = {
       'background-quaternary': 'var(--background-quaternary)',
       'background-danger': 'var(--background-danger)',
       'background-info': 'var(--background-info)',
-      // Foreground hover
-      'foreground-primary-hover': 'var(--foreground-primary-hover)',
-      'foreground-danger-hover': 'var(--foreground-danger-hover)',
-      'foreground-info-hover': 'var(--foreground-info-hover)',
-      // Background hover
-      'background-primary-hover': 'var(--background-primary-hover)',
-      'background-danger-hover': 'var(--background-danger-hover)',
-      'background-info-hover': 'var(--background-info-hover)',
       // Focus outline
       'focus-outline-color': 'var(--focus-outline-color)',
       gray: {

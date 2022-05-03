@@ -48,8 +48,10 @@ const computeClassNames = ({
         ...(disabled
           ? ['active:before:hidden']
           : [
-              'hover:bg-background-danger-hover',
-              'hover:text-foreground-danger-hover'
+              'hover:bg-red-150',
+              'hover:text-red-900',
+              'dark:hover:bg-red-900',
+              'dark:hover:text-red-150'
             ])
       );
       break;
@@ -61,8 +63,10 @@ const computeClassNames = ({
         ...(disabled
           ? ['active:before:hidden']
           : [
-              'hover:bg-background-info-hover',
-              'hover:text-foreground-info-hover'
+              'hover:bg-blue-300',
+              'hover:text-blue-900',
+              'dark:hover:bg-blue-900',
+              'dark:hover:text-blue-300'
             ])
       );
       break;
@@ -75,8 +79,10 @@ const computeClassNames = ({
         ...(disabled
           ? ['active:before:hidden']
           : [
-              'hover:bg-background-primary-hover',
-              'hover:text-foreground-primary-hover'
+              'hover:bg-gray-900',
+              'hover:text-gray-0',
+              'dark:hover:bg-gray-0',
+              'dark:hover:text-gray-900'
             ])
       );
   }
