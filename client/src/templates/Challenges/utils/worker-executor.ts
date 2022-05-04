@@ -1,12 +1,30 @@
 /* eslint-disable @typescript-eslint/naming-convention */
+
+interface WorkerEvents {
+  LOG: Array<(data: unknown) => void>;
+  error: Array<(data: Error) => void>;
+  done: Array<(data: Event) => void>;
+}
+
+type newWorkerEvent = keyof WorkerEvents;
+
 interface Task {
   done?: Promise<Worker>;
-  _events: Record<string, unknown[]>;
+  _events: WorkerEvents;
   _worker: Worker | null;
-  on: (event: string, listener: unknown) => Task;
-  once: (event: string, listener: unknown) => Task;
-  removeListener: (event: string, listener: unknown) => Task;
-  emit: (event: string, args: unknown) => Task;
+  on: (
+    event: newWorkerEvent,
+    listener: (...data: (Event | Error)[]) => void
+  ) => Task;
+  once: (
+    event: newWorkerEvent,
+    listener: (data: Promise<Worker> | Worker) => void
+  ) => Task;
+  removeListener: (
+    event: newWorkerEvent,
+    listener: (...data: (Event | Error)[]) => void
+  ) => Task;
+  emit: (event: newWorkerEvent, data: Error | Event) => Task;
   _execute: (getWorker: WorkerExecutor['_getWorker']) => Task;
 }
 
@@ -79,39 +97,32 @@ class WorkerExecutor {
     }
   }
 
-  execute(data: string, timeout = 1000) {
+  execute(tests: string, timeout = 1000) {
     const task: Task = eventify();
     task._execute = function (getWorker) {
-      getWorker().then(
-        (worker: Worker) => {
+      getWorker()
+        .then((worker: Worker) => {
           task._worker = worker;
           const timeoutId = setTimeout(() => {
             task._worker?.terminate();
             task._worker = null;
-            this.emit('error', { message: 'timeout' });
+            this.emit('error', { message: 'timeout' } as Error);
           }, timeout);
 
           worker.onmessage = (ev: MessageEvent<Event>) => {
             clearTimeout(timeoutId);
-            // data.type is undefined when the message has been processed
-            // successfully and defined when something else has happened (e.g.
-            // an error occurred)
-            if (ev.data.type) {
-              this.emit(ev.data.type, ev.data);
-            } else {
-              this.emit('done', ev.data);
-            }
+            console.log(ev.data);
+            this.emit('done', ev.data);
           };
 
           worker.onerror = e => {
             clearTimeout(timeoutId);
-            this.emit('error', { message: e.message });
+            this.emit('error', { message: e.message } as Error);
           };
 
-          worker.postMessage(data);
-        },
-        err => this.emit('error', err)
-      );
+          worker.postMessage(tests);
+        })
+        .catch((error: Error) => this.emit('error', error));
       return this;
     };
 
@@ -130,21 +141,19 @@ class WorkerExecutor {
 // Error and completion handling
 const eventify = (): Task => {
   const self: Task = {
-    _events: {},
+    _events: {
+      error: [],
+      done: [],
+      LOG: []
+    },
     on: (event, listener) => {
-      if (typeof self._events[event] === 'undefined') {
-        self._events[event] = [];
-      }
       self._events[event].push(listener);
       return self;
     },
     once: (event, listener) => {
-      self.on(event, function handler(...args: unknown[]) {
+      self.on(event, function handler(...data) {
         self.removeListener(event, handler);
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-        listener.apply(self, args);
+        listener.apply(self, data);
       });
       return self;
     },
@@ -157,13 +166,11 @@ const eventify = (): Task => {
       }
       return self;
     },
-    emit: (event, ...args) => {
+    emit: (event, ...data) => {
+      console.log(self);
       if (typeof self._events[event] !== 'undefined') {
         self._events[event].forEach(listener => {
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-          listener.apply(self, args);
+          listener.apply(self, ...data);
         });
       }
       return self;
@@ -181,7 +188,7 @@ const eventify = (): Task => {
 
 export default function createWorkerExecutor(
   workerName: string,
-  options:
+  options?:
     | {
         location?: string | undefined;
         maxWorkers?: number | undefined;
