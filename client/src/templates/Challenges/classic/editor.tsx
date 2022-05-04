@@ -63,8 +63,7 @@ interface EditorProps {
   challengeType: number;
   containerRef: RefObject<HTMLElement>;
   contents: string;
-  // Temporary fix, need to investigate
-  description: string | null;
+  description: string;
   dimensions: Dimensions;
   editorRef: MutableRefObject<editor.IStandaloneCodeEditor>;
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
@@ -585,7 +584,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     domNode.appendChild(descContainer);
     descContainer.appendChild(jawHeading);
     descContainer.appendChild(desc);
-    desc.innerHTML = description ?? '';
+    desc.innerHTML = description;
     highlightAllUnder(desc);
 
     domNode.style.userSelect = 'text';

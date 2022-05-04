@@ -142,7 +142,7 @@ const BASE_LAYOUT = {
 class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   static displayName: string;
   containerRef: React.RefObject<HTMLElement>;
-  editorRef: React.RefObject<HTMLElement>;
+  editorRef: React.RefObject<editor.IStandaloneCodeEditor | HTMLElement>;
   instructionsPanelRef: React.RefObject<HTMLDivElement>;
   resizeProps: ResizeProps;
 
@@ -388,8 +388,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           description={description}
           // Try to remove unknown
           editorRef={
-            this
-              .editorRef as unknown as MutableRefObject<editor.IStandaloneCodeEditor>
+            this.editorRef as MutableRefObject<editor.IStandaloneCodeEditor>
           }
           initialTests={tests}
           resizeProps={this.resizeProps}
@@ -454,7 +453,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
 
     return (
       <Hotkeys
-        editorRef={this.editorRef}
+        editorRef={this.editorRef as React.RefObject<HTMLElement>}
         executeChallenge={executeChallenge}
         innerRef={this.containerRef}
         instructionsPanelRef={this.instructionsPanelRef}
