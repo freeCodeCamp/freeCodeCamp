@@ -50,15 +50,18 @@
 
 #challenge-page-tabs-pane-console {
   overflow-y: auto !important;
+  border: 2px dotted transparent;
 }
 
 #challenge-page-tabs-pane-console:focus {
-  outline: 1px dotted var(--primary-color);
-  outline-offset: -1px;
+  outline: none;
+  border: 2px dotted var(--primary-color);
+  /*outline-offset: -1px;*/
 }
 
 #challenge-page-tabs-pane-console:focus:not(:focus-visible) {
-  outline: none;
+  /*outline: none;*/
+  border: 2px dotted transparent;
 }
 
 #challenge-page-tabs-pane-console pre {
