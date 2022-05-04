@@ -3,10 +3,13 @@
  * Any ref to fixCompletedChallengesItem should be removed post
  * a db migration to fix all completedChallenges
  *
+ * NOTE: it's been 4 years, so any active users will have been migrated. We
+ * should still try to migrate the rest at some point.
+ *
  */
 import debug from 'debug';
 import dedent from 'dedent';
-import { isEmpty, pick, omit, find, uniqBy } from 'lodash';
+import { isEmpty, pick, omit, uniqBy } from 'lodash';
 import { ObjectID } from 'mongodb';
 import { Observable } from 'rx';
 import isNumeric from 'validator/lib/isNumeric';
@@ -17,7 +20,6 @@ import { jwtSecret } from '../../../../config/secrets';
 
 import { environment, deploymentEnv } from '../../../../config/env.json';
 import {
-  fixCompletedChallengeItem,
   fixPartiallyCompletedChallengeItem,
   fixSavedChallengeItem
 } from '../../common/utils';
@@ -147,11 +149,12 @@ export function buildUserUpdate(
   const updateData = {};
   const { timezone: userTimezone, completedChallenges = [] } = user;
 
-  const oldChallenge = find(
-    completedChallenges,
+  const oldIndex = completedChallenges.findIndex(
     ({ id }) => challengeId === id
   );
-  const alreadyCompleted = !!oldChallenge;
+
+  const alreadyCompleted = oldIndex !== -1;
+  const oldChallenge = alreadyCompleted ? completedChallenges[oldIndex] : null;
 
   if (alreadyCompleted) {
     finalChallenge = {
@@ -180,21 +183,18 @@ export function buildUserUpdate(
 
     // if savableChallenge, update saved array when submitting
     updateData.$set = {
-      completedChallenges: uniqBy(
-        [finalChallenge, ...completedChallenges.map(fixCompletedChallengeItem)],
-        'id'
-      ),
       savedChallenges: newSavedChallenges
-    };
-  } else {
-    updateData.$set = {
-      completedChallenges: uniqBy(
-        [finalChallenge, ...completedChallenges.map(fixCompletedChallengeItem)],
-        'id'
-      )
     };
   }
 
+  if (alreadyCompleted) {
+    updateData.$set = {
+      ...updateData.$set,
+      [`completedChallenges.${oldIndex}`]: finalChallenge
+    };
+  } else {
+    updateData.$push.completedChallenges = finalChallenge;
+  }
   // remove from partiallyCompleted on submit
   updateData.$pull = {
     partiallyCompletedChallenges: { id: challengeId }
