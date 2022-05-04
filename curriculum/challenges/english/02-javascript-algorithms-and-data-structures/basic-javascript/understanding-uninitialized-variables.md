@@ -29,7 +29,7 @@ assert(typeof a === 'number' && a === 6);
 assert(typeof b === 'number' && b === 15);
 ```
 
-`c` should not contain `undefined` and should have a value of the string `I am a String!`
+`c` should not contain `undefined` and should have a final value of the string `I am a String!`
 
 ```js
 assert(!/undefined/.test(c) && c === 'I am a String!');
