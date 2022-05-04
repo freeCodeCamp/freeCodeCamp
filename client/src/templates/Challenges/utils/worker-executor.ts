@@ -6,12 +6,11 @@ interface Task {
   on: (event: string, listener: unknown) => Task;
   once: (event: string, listener: unknown) => Task;
   removeListener: (event: string, listener: unknown) => Task;
-  emit:  (event: string, args: unknown) => Task;
-  _execute: (getWorker: WorkerExecutor['_getWorker']) => Task
+  emit: (event: string, args: unknown) => Task;
+  _execute: (getWorker: WorkerExecutor['_getWorker']) => Task;
 }
 
 class WorkerExecutor {
-
   _workersInUse: number;
   _maxWorkers: number;
   _terminateWorker: boolean;
@@ -34,7 +33,7 @@ class WorkerExecutor {
 
   async _getWorker(): Promise<Worker> {
     return this._workerPool.length
-      ? this._workerPool.shift() as Worker
+      ? (this._workerPool.shift() as Worker)
       : this._createWorker();
   }
 
@@ -42,7 +41,6 @@ class WorkerExecutor {
     return new Promise((resolve, reject) => {
       const newWorker = new Worker(this._scriptURL);
       newWorker.onmessage = (ev: MessageEvent<Event>) => {
-   
         if (ev.data.type === 'contentLoaded') {
           resolve(newWorker);
         }
@@ -73,7 +71,10 @@ class WorkerExecutor {
       const task: Task = this._taskQueue.shift() as Task;
       const handleTaskEnd = this._handleTaskEnd(task);
       // eslint-disable-next-line @typescript-eslint/unbound-method
-      (task._execute(this._getWorker).done as Promise<unknown>).then(handleTaskEnd, handleTaskEnd);
+      (task._execute(this._getWorker).done as Promise<unknown>).then(
+        handleTaskEnd,
+        handleTaskEnd
+      );
       this._workersInUse++;
     }
   }
@@ -90,7 +91,7 @@ class WorkerExecutor {
             this.emit('error', { message: 'timeout' });
           }, timeout);
 
-          worker.onmessage = (ev: MessageEvent<Event>)  => {
+          worker.onmessage = (ev: MessageEvent<Event>) => {
             clearTimeout(timeoutId);
             // data.type is undefined when the message has been processed
             // successfully and defined when something else has happened (e.g.
@@ -117,7 +118,7 @@ class WorkerExecutor {
     task.done = new Promise((resolve, reject) => {
       task
         .once('done', (data: Promise<Worker>) => resolve(data))
-        .once('error', (err: { message: string; }) => reject(err.message));
+        .once('error', (err: { message: string }) => reject(err.message));
     });
 
     this._taskQueue.push(task);
@@ -128,7 +129,6 @@ class WorkerExecutor {
 
 // Error and completion handling
 const eventify = (): Task => {
-
   const self: Task = {
     _events: {},
     on: (event, listener) => {
@@ -141,6 +141,9 @@ const eventify = (): Task => {
     once: (event, listener) => {
       self.on(event, function handler(...args: unknown[]) {
         self.removeListener(event, handler);
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-call
         listener.apply(self, args);
       });
       return self;
@@ -157,6 +160,9 @@ const eventify = (): Task => {
     emit: (event, ...args) => {
       if (typeof self._events[event] !== 'undefined') {
         self._events[event].forEach(listener => {
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-call
           listener.apply(self, args);
         });
       }
@@ -166,13 +172,22 @@ const eventify = (): Task => {
     _worker: null,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     _execute: function (getWorker: () => Promise<unknown>): Task {
-      throw new Error("Function not implemented.");
+      throw new Error('Function not implemented.');
     }
   };
 
   return self;
 };
 
-export default function createWorkerExecutor(workerName: string, options: { location?: string | undefined; maxWorkers?: number | undefined; terminateWorker?: boolean | undefined; } | undefined) {
+export default function createWorkerExecutor(
+  workerName: string,
+  options:
+    | {
+        location?: string | undefined;
+        maxWorkers?: number | undefined;
+        terminateWorker?: boolean | undefined;
+      }
+    | undefined
+) {
   return new WorkerExecutor(workerName, options);
 }
