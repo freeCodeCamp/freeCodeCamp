@@ -56,11 +56,9 @@
 #challenge-page-tabs-pane-console:focus {
   outline: none;
   border: 2px dotted var(--primary-color);
-  /*outline-offset: -1px;*/
 }
 
 #challenge-page-tabs-pane-console:focus:not(:focus-visible) {
-  /*outline: none;*/
   border: 2px dotted transparent;
 }
 
