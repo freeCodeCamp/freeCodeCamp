@@ -49,16 +49,16 @@
 }
 
 #challenge-page-tabs-pane-console {
-  border: 1px solid transparent;
   overflow-y: auto !important;
 }
 
 #challenge-page-tabs-pane-console:focus {
-  border: 1px dotted #000;
+  outline: 1px dotted var(--primary-color);
+  outline-offset: -1px;
 }
 
 #challenge-page-tabs-pane-console:focus:not(:focus-visible) {
-  border: 1px solid transparent;
+  outline: none;
 }
 
 #challenge-page-tabs-pane-console pre {
