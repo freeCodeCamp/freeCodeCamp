@@ -8,6 +8,12 @@ body:
   - type: markdown
     attributes:
       value: If you are reporting an issue with an article on our news publication, please follow this link to send an email to our editorial team https://mailxto.com/lkj5n7
+  - type: textarea
+    attributes:
+      label: Describe the Issue
+      description: A clear and concise description of the issue you encountered.
+    validations:
+      required: true
   - type: input
     attributes:
       label: Affected Page

@@ -5,6 +5,12 @@ body:
   - type: markdown
     attributes:
       value: If you're reporting a security issue, don't create a GitHub issue. Instead, visit https://contribute.freecodecamp.org/#/security.
+  - type: textarea
+    attributes:
+      label: Describe the Issue
+      description: A clear and concise description of the issue you encountered.
+    validations:
+      required: true
   - type: input
     attributes:
       label: Affected Page
