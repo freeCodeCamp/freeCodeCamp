@@ -21,7 +21,7 @@ exports.testedLang = function testedLang() {
 // config/certification-settings.ts
 
 const superBlockToOrder = {
-  'responsive-web-design': 0,
+  '2022/responsive-web-design': 0,
   'javascript-algorithms-and-data-structures': 1,
   'front-end-development-libraries': 2,
   'data-visualization': 3,
@@ -32,7 +32,7 @@ const superBlockToOrder = {
   'information-security': 8,
   'machine-learning-with-python': 9,
   'coding-interview-prep': 10,
-  '2022/responsive-web-design': 11,
+  'responsive-web-design': 11,
   'relational-database': 12
 };
 
