@@ -161,11 +161,13 @@ export function buildUserUpdate(
       ...completedChallenge,
       completedDate: oldChallenge.completedDate
     };
+    updateData.$set[`completedChallenges.${oldIndex}`] = finalChallenge;
   } else {
-    updateData.$push.progressTimestamps = completedDate;
     finalChallenge = {
       ...completedChallenge
     };
+    updateData.$push.progressTimestamps = completedDate;
+    updateData.$push.completedChallenges = finalChallenge;
   }
 
   let newSavedChallenges;
@@ -182,11 +184,6 @@ export function buildUserUpdate(
     updateData.$set.savedChallenges = newSavedChallenges;
   }
 
-  if (alreadyCompleted) {
-    updateData.$set[`completedChallenges.${oldIndex}`] = finalChallenge;
-  } else {
-    updateData.$push.completedChallenges = finalChallenge;
-  }
   // remove from partiallyCompleted on submit
   updateData.$pull.partiallyCompletedChallenges = { id: challengeId };
 
