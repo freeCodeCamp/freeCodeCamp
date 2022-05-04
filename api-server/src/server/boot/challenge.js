@@ -146,7 +146,7 @@ export function buildUserUpdate(
     completedChallenge = omit(_completedChallenge, ['files']);
   }
   let finalChallenge;
-  const updateData = {};
+  const updateData = { $push: {}, $set: {}, $pull: {} };
   const { timezone: userTimezone, completedChallenges = [] } = user;
 
   const oldIndex = completedChallenges.findIndex(
@@ -162,10 +162,7 @@ export function buildUserUpdate(
       completedDate: oldChallenge.completedDate
     };
   } else {
-    updateData.$push = {
-      ...updateData.$push,
-      progressTimestamps: completedDate
-    };
+    updateData.$push.progressTimestamps = completedDate;
     finalChallenge = {
       ...completedChallenge
     };
@@ -182,33 +179,23 @@ export function buildUserUpdate(
     });
 
     // if savableChallenge, update saved array when submitting
-    updateData.$set = {
-      savedChallenges: newSavedChallenges
-    };
+    updateData.$set.savedChallenges = newSavedChallenges;
   }
 
   if (alreadyCompleted) {
-    updateData.$set = {
-      ...updateData.$set,
-      [`completedChallenges.${oldIndex}`]: finalChallenge
-    };
+    updateData.$set[`completedChallenges.${oldIndex}`] = finalChallenge;
   } else {
     updateData.$push.completedChallenges = finalChallenge;
   }
   // remove from partiallyCompleted on submit
-  updateData.$pull = {
-    partiallyCompletedChallenges: { id: challengeId }
-  };
+  updateData.$pull.partiallyCompletedChallenges = { id: challengeId };
 
   if (
     timezone &&
     timezone !== 'UTC' &&
     (!userTimezone || userTimezone === 'UTC')
   ) {
-    updateData.$set = {
-      ...updateData.$set,
-      timezone: userTimezone
-    };
+    updateData.$set.timezone = userTimezone;
   }
   return {
     alreadyCompleted,
