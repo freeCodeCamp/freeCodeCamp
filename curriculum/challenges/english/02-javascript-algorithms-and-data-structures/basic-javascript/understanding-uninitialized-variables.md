@@ -23,7 +23,7 @@ Initialize the three variables `a`, `b`, and `c` with `5`, `10`, and `"I am a"` 
 assert(typeof a === 'number' && a === 6);
 ```
 
-`b` should be defined and evaluated to have the value of `15`.
+`b` should be defined and have a final value of `15`.
 
 ```js
 assert(typeof b === 'number' && b === 15);
