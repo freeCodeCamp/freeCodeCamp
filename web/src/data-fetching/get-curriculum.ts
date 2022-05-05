@@ -11,7 +11,7 @@
 
 */
 
-interface Curriculum {
+export interface Curriculum {
   rwdBlocks: SuperBlock;
   jsBlocks: SuperBlock;
 }
@@ -44,9 +44,13 @@ export interface Challenge {
 
 export interface PathSegments {
   superblock: string;
-  block: string;
-  dashedName: string;
+  block?: string;
+  dashedName?: string;
   id: string;
+}
+
+export interface IdToDashedNameMap {
+  [id: string]: string;
 }
 
 export async function getCurriculum() {
@@ -79,12 +83,18 @@ export function getIdToPathSegmentsMap({ rwdBlocks }: Curriculum) {
       };
     }
   }
+  idToPathSegmentsMap['special-path'] = {
+    superblock: 'responsive-web-design',
+    id: 'special-path'
+  };
   return idToPathSegmentsMap;
 }
 
 // TODO: again, bit ugly. Would be better to get data in this shape from the
 // curriculum server.
-export function getIdToDashedNameMap({ rwdBlocks }: Curriculum) {
+export function getIdToDashedNameMap({
+  rwdBlocks
+}: Curriculum): IdToDashedNameMap {
   const idToDashedNameMap: Record<string, string> = {};
   for (const blockName of Object.keys(rwdBlocks)) {
     const block = rwdBlocks[blockName];

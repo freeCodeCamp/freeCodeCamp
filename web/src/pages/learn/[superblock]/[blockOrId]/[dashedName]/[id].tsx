@@ -10,8 +10,13 @@ import {
   PathSegments
 } from '../../../../../data-fetching/get-curriculum';
 import ChallengeComponent from '../../../../../page-templates/challenge';
+import { getDestination } from '../../../[...id]';
 interface Props {
   challengeData: Challenge | null;
+}
+
+interface SuperBlockToChallengeMap {
+  [index: string]: (pathSegments: PathSegments) => Challenge | null;
 }
 
 export type { Challenge };
@@ -23,77 +28,62 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   const { rwdBlocks, jsBlocks } = curriculum;
   const idToPathSegmentsMap = getIdToPathSegmentsMap(curriculum);
 
-  const superBlockToChallengeMap: {
-    [index: string]: (pathSegments: PathSegments) => Challenge | null;
-  } = {
+  // TODO: simplify once noUncheckedIndexedAccess is set.
+  const pathSegments = idToPathSegmentsMap[params?.id as string] as
+    | PathSegments
+    | undefined;
+
+  // TODO: get this from get-curriculum
+  const superBlockToChallengeMap: SuperBlockToChallengeMap = {
     'responsive-web-design': (pathSegments: PathSegments) =>
       findChallenge(findBlock(rwdBlocks, pathSegments), pathSegments),
     'javascript-algorithms-and-data-structures': (pathSegments: PathSegments) =>
       findChallenge(findBlock(jsBlocks, pathSegments), pathSegments)
   };
 
-  const { valid, pathSegments } = validateAndTransformParams(
-    idToPathSegmentsMap,
-    params
-  );
-
-  if (!pathSegments) {
-    return {
-      notFound: true,
-      revalidate: 10
-    };
-  }
-  if (valid) {
-    const challengeData =
-      superBlockToChallengeMap[pathSegments.superblock](pathSegments);
-    return {
-      props: {
-        challengeData
-      },
-      revalidate: 10
-    };
+  if (!pathSegments) return fourOhFour();
+  if (pathExists(pathSegments, params)) {
+    return renderPage(pathSegments, superBlockToChallengeMap);
   } else {
-    const { superblock, block, dashedName, id } = pathSegments;
-    return {
-      redirect: {
-        destination: `/learn/${superblock}/${block}/${dashedName}/${id}`,
-        permanent: false
-      },
-      revalidate: 10
-    };
+    return redirect(pathSegments);
   }
 };
 
-function validateAndTransformParams(
-  idToPathSegmentsMap: { [index: string]: PathSegments },
-  params?: ParsedUrlQuery
-) {
-  if (!params) return { valid: false };
-  if (typeof params.id !== 'string') return { valid: false };
-  const pathSegmentsForId = idToPathSegmentsMap[params.id];
-  if (!pathSegmentsForId) return { valid: false };
-  const normalizedParams: Record<string, unknown> = {
-    superblock: params.superblock,
-    block: params.blockOrId,
-    dashedName: params.dashedName,
-    id: params.id
-  };
-  for (const [key, value] of Object.entries(pathSegmentsForId)) {
-    if (normalizedParams[key] !== value)
-      return {
-        valid: false,
-        pathSegments: { ...pathSegmentsForId, id: params.id }
-      };
-  }
+// DRY this with [blockOrId]'s version
+const fourOhFour = () => ({ notFound: true, revalidate: 10 } as const);
 
+// DRY this with [blockOrId]'s version
+const pathExists = (pathSegments: PathSegments, params?: ParsedUrlQuery) =>
+  params?.superblock === pathSegments.superblock &&
+  params?.blockOrId === pathSegments.block &&
+  params?.dashedName === pathSegments.dashedName;
+
+function renderPage(
+  pathSegments: PathSegments,
+  superBlockToChallengeMap: SuperBlockToChallengeMap
+) {
+  const challengeData =
+    superBlockToChallengeMap[pathSegments.superblock](pathSegments);
   return {
-    valid: true,
-    pathSegments: { ...pathSegmentsForId, id: params.id }
+    props: {
+      challengeData
+    },
+    revalidate: 10
+  };
+}
+
+function redirect(pathSegments: PathSegments) {
+  return {
+    redirect: {
+      destination: getDestination(pathSegments),
+      permanent: false
+    },
+    revalidate: 10
   };
 }
 
 function findBlock(superblock: SuperBlock, params: PathSegments) {
-  return superblock[params.block] ?? null;
+  return params.block ? superblock[params.block] : null;
 }
 
 function findChallenge(block: Block | null, params: PathSegments) {

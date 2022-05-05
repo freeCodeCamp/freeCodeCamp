@@ -1,9 +1,15 @@
+import { ParsedUrlQuery } from 'querystring';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import {
+  Curriculum,
+  IdToDashedNameMap,
   getCurriculum,
-  getIdToDashedNameMap
+  getIdToDashedNameMap,
+  getIdToPathSegmentsMap,
+  PathSegments
 } from '../../../data-fetching/get-curriculum';
 import SuperBlock from '../../../page-templates/superblock';
+import { getDestination } from '../[...id]';
 
 interface Props {
   blockNames: string[];
@@ -16,32 +22,62 @@ export default SuperBlock;
 export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   const curriculum = await getCurriculum();
   const idToDashedNameMap = getIdToDashedNameMap(curriculum);
-  const { rwdBlocks } = curriculum;
-  const superblock = params && params['superblock'];
-  const blockOrId = params && params['blockOrId'];
-  // TODO: replace this ad hoc solution via idToPathSegmentsMap (idToPathMap
-  // once that's done). If the map doesn't have an entry, we can return 404 and
-  // skip building the page.
-  const notFound =
-    superblock !== 'responsive-web-design' || blockOrId !== 'special-path';
+  const idToPathSegmentsMap = getIdToPathSegmentsMap(curriculum);
 
-  if (notFound) {
-    return { notFound, revalidate: 10 };
+  // TODO: simplify once noUncheckedIndexedAccess is set.
+  const pathSegments = idToPathSegmentsMap[params?.blockOrId as string] as
+    | PathSegments
+    | undefined;
+
+  if (!pathSegments) return fourOhFour();
+  if (pathExists(pathSegments, params)) {
+    return renderPage(pathSegments, curriculum, idToDashedNameMap);
   } else {
-    const blockNames = Object.keys(rwdBlocks);
-    const challengeOrderMap = blockNames.reduce(
-      (prev, blockName) => ({
-        ...prev,
-        ...{ [blockName]: rwdBlocks[blockName].meta.challengeOrder }
-      }),
-      {}
-    );
-
-    return {
-      props: { blockNames, challengeOrderMap, idToDashedNameMap },
-      revalidate: 10
-    };
+    return redirect(pathSegments);
   }
+};
+
+function renderPage(
+  pathSegments: PathSegments, // TODO: this will be used once we can render more than one page!
+  curriculum: Curriculum,
+  idToDashedNameMap: IdToDashedNameMap
+) {
+  // TODO: render page is doing too much, it should just return the props and
+  // revalidate. Both blocknames and challengeOrderMap should come from
+  // getCurriculum.
+  const { rwdBlocks } = curriculum;
+  const blockNames = Object.keys(rwdBlocks);
+  const challengeOrderMap = blockNames.reduce(
+    (prev, blockName) => ({
+      ...prev,
+      ...{ [blockName]: rwdBlocks[blockName].meta.challengeOrder }
+    }),
+    {}
+  );
+
+  return {
+    props: { blockNames, challengeOrderMap, idToDashedNameMap },
+    revalidate: 10
+  };
+}
+
+const redirect = (pathSegments: PathSegments) => ({
+  redirect: {
+    destination: getDestination(pathSegments),
+    permanent: false
+  },
+  revalidate: 10
+});
+
+// DRY this with [id]'s version
+const fourOhFour = () => ({ notFound: true, revalidate: 10 } as const);
+
+// DRY this with [id]'s version
+const pathExists = (pathSegments: PathSegments, params?: ParsedUrlQuery) => {
+  const isChallenge = pathSegments.dashedName;
+  const isExpectedSuperBlockParam =
+    params?.superblock === pathSegments.superblock;
+  return !isChallenge && isExpectedSuperBlockParam;
 };
 
 export const getStaticPaths: GetStaticPaths = () => {

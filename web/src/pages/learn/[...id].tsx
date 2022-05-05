@@ -1,7 +1,8 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import {
   getCurriculum,
-  getIdToPathSegmentsMap
+  getIdToPathSegmentsMap,
+  PathSegments
 } from '../../data-fetching/get-curriculum';
 
 // Next expects there to be a React component to render the page. This never
@@ -27,15 +28,25 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     return { notFound: true, revalidate: 10 };
   }
 
-  const { superblock, block, dashedName } = pathSegments;
-
   return {
     redirect: {
-      destination: `/learn/${superblock}/${block}/${dashedName}/${uuid}`,
+      destination: getDestination(pathSegments),
       permanent: false
     },
     revalidate: 10
   };
+};
+
+export const getDestination = (pathSegments: PathSegments) => {
+  const { superblock, block, dashedName, id } = pathSegments;
+  // Currently there are either
+  if (block && dashedName) {
+    // challenges:
+    return `/learn/${superblock}/${block}/${dashedName}/${id}`;
+  } else {
+    // or superblocks:
+    return `/learn/${superblock}/${id}`;
+  }
 };
 
 // As with the page component, even though we render 0 pages, this has to exist

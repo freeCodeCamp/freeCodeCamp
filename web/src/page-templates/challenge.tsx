@@ -1,4 +1,5 @@
 import { InferGetStaticPropsType } from 'next';
+import { useRouter } from 'next/router';
 import Editor from '@monaco-editor/react';
 import Link from 'next/link';
 
@@ -10,6 +11,9 @@ import type {
 export default function ChallengeComponent({
   challengeData
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const { isFallback } = useRouter();
+  if (isFallback) return <div>Loading...</div>;
+
   return (
     <>
       <Main challengeData={challengeData} />
