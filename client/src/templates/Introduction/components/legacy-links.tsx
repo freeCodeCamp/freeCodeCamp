@@ -22,7 +22,7 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
           <p>
             {t('intro:misc-text.legacy-desc')}{' '}
             <Link sameTab={false} to={`/learn/2022/responsive-web-design`}>
-              {t('intro:misc-text.go-back-to-learn')}
+              {t('intro:misc-text.legacy-go-back')}
             </Link>
           </p>
         </Alert>
