@@ -8,7 +8,7 @@ dashedName: build-a-technical-documentation-page
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to <a href="https://codepen.io/freeCodeCamp/full/NdrKKL" target="_blank"><https://codepen.io/freeCodeCamp/full/NdrKKL></a>
+**Objective:** Build an app that is functionally similar to <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank">https://technical-documentation-page.freecodecamp.rocks</a>
 
 **User Stories:**
 

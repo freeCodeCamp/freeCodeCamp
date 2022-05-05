@@ -8,7 +8,7 @@ dashedName: build-a-product-landing-page
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to <a href="https://codepen.io/freeCodeCamp/full/RKRbwL" target="_blank"><https://codepen.io/freeCodeCamp/full/RKRbwL></a>
+**Objective:** Build an app that is functionally similar to <a href="https://product-landing-page.freecodecamp.rocks" target="_blank">https://product-landing-page.freecodecamp.rocks</a>
 
 **User Stories:**
 

@@ -8,7 +8,7 @@ dashedName: build-a-survey-form
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to <a href="https://codepen.io/freeCodeCamp/full/VPaoNP" target="_blank"><https://codepen.io/freeCodeCamp/full/VPaoNP></a>
+**Objective:** Build an app that is functionally similar to <a href="https://survey-form.freecodecamp.rocks" target="_blank">https://survey-form.freecodecamp.rocks</a>
 
 **User Stories:**
 
