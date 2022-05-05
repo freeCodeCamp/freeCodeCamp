@@ -7,14 +7,22 @@ interface WorkerEvent {
   done: Array<(data: TestEvaluatorEvent) => void>; 
 }
 
+
 type newWorkerEvent = keyof WorkerEvent;
+
+
+
+type EmitError = (event: newWorkerEvent, args: Record<string, unknown>) => Task;
+type EmitDone = (event: newWorkerEvent, args: TestEvaluatorEvent) => Task;
+
+type Emitter = EmitError&EmitDone;
 
 interface Task {
   done: Promise<Worker>
   _worker: Worker | null;
   _events: WorkerEvent;
   _execute: (worker: WorkerExecutor['_getWorker']) => Task
-  emit: {(event: newWorkerEvent, args: TestEvaluatorEvent ): Task };
+  emit: Emitter;
   once: (event: newWorkerEvent, listener: (args: TestEvaluatorEvent) => void) => void;
   on: (event: newWorkerEvent, listener: (args: TestEvaluatorEvent) => void) => void;
   removeListener: (event: newWorkerEvent, listener: (args: TestEvaluatorEvent) => void) => void;
@@ -52,7 +60,7 @@ class WorkerExecutor {
     return new Promise((resolve, reject) => {
       const newWorker = new Worker(this._scriptURL);
       newWorker.onmessage = (e: TestEvaluatorEvent) => {
-        if (e.data?.type === 'contentLoaded') {
+        if (e.data.type === 'contentLoaded') {
           resolve(newWorker);
         }
       };
@@ -122,7 +130,7 @@ class WorkerExecutor {
 
           worker.postMessage(data);
         },
-        (err: Error) => this.emit('error', err)
+        (err: Error) => this.emit('error', { message: err.message})
       );
       return this;
     };

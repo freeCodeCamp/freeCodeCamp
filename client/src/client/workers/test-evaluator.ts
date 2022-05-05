@@ -73,6 +73,7 @@ export interface TestEvaluatorEvent extends MessageEvent {
     sources: {
       [fileName: string]: unknown;
     };
+    type?: unknown;
   };
 }
 
