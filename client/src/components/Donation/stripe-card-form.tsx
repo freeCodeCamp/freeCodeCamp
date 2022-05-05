@@ -35,7 +35,7 @@ interface FormPropTypes {
   t: (label: string) => string;
   theme: Themes;
   processing: boolean;
-  isAVariant: boolean;
+  isVariantA: boolean;
 }
 
 interface Element {
@@ -52,7 +52,7 @@ const StripeCardForm = ({
   onDonationStateChange,
   postStripeCardDonation,
   processing,
-  isAVariant
+  isVariantA
 }: FormPropTypes): JSX.Element => {
   const [isSubmissionValid, setSubmissionValidity] = useState(true);
   const [isTokenizing, setTokenizing] = useState(false);
@@ -170,7 +170,7 @@ const StripeCardForm = ({
         disabled={!stripe || !elements || isSubmitting}
         type='submit'
       >
-        {!isAVariant && <SecurityLockIcon />}
+        {!isVariantA && <SecurityLockIcon />}
         {t('buttons.donate')}
       </Button>
     </Form>

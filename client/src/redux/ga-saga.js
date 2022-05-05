@@ -42,7 +42,7 @@ function* callGaType({ payload: { type, data } }) {
         // Test_Type
         dimension4: aBTestConfig.type,
         // Test_Variation
-        dimension5: emailToABVariant(email).isAVariant ? 'A' : 'B',
+        dimension5: emailToABVariant(email).isVariantA ? 'A' : 'B',
         // View_Type
         dimension6: viewType
       };
