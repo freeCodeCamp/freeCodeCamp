@@ -10,8 +10,6 @@ dashedName: build-a-tribute-page
 
 **Objective:** Build an app that is functionally similar to <a href="https://tribute-page.freecodecamp.rocks" target="_blank">https://tribute-page.freecodecamp.rocks</a>
 
-test
-
 **User Stories:**
 
 1. Your tribute page should have an element with a corresponding `id="main"`, which contains all other elements
