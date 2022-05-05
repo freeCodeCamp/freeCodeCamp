@@ -139,13 +139,15 @@ function loadCodeEpic(action$, state$) {
       const { title: legacyKey } = challenge;
       const codeFound = getCode(id);
 
-      // see if this challenge is saved in database
+      // first check if the store (which is syncronized with the db) has saved
+      // code
       const savedChallenges = savedChallengesSelector(state);
       const savedChallenge = savedChallenges?.find(saved => {
         return saved.id === challenge.id;
       });
 
-      // skip everything if a challenge is saved in db
+      // if the store is already populated with the saved files, we should not
+      // overwrite them with the local storage data
       if (savedChallenge) {
         return of(noStoredCodeFound());
       } else if (codeFound && isFilesAllPoly(codeFound)) {
