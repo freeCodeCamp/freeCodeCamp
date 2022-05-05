@@ -7,7 +7,7 @@ describe('Certification intro page', () => {
     cy.exec('npm run seed');
     cy.clearCookies();
     cy.login();
-    cy.visit('/learn/responsive-web-design');
+    cy.visit('/learn/2022/responsive-web-design');
   });
 
   it('Should render', () => {
@@ -24,17 +24,25 @@ describe('Certification intro page', () => {
   });
 
   it('First block should be expanded', () => {
-    cy.contains('Say Hello to HTML Elements').should('be.visible');
+    cy.contains(
+      'HTML tags give a webpage its structure. You can use HTML tags to add photos, buttons, and other elements to your webpage.'
+    ).should('be.visible');
   });
 
   it('Second block should be closed', () => {
-    cy.contains('Change the Color of Text').should('not.exist');
+    cy.contains(
+      'CSS tells the browser how to display your webpage. You can use CSS to set the color, font, size, and other aspects of HTML elements.'
+    ).should('not.exist');
   });
 
   it('Block should handle toggle clicks correctly', () => {
     cy.get(selectors.firstBlock).click();
-    cy.contains('Say Hello to HTML Elements').should('not.exist');
+    cy.contains(
+      'HTML tags give a webpage its structure. You can use HTML tags to add photos, buttons, and other elements to your webpage.'
+    ).should('not.exist');
     cy.get(selectors.firstBlock).click();
-    cy.contains('Say Hello to HTML Elements').should('be.visible');
+    cy.contains(
+      'HTML tags give a webpage its structure. You can use HTML tags to add photos, buttons, and other elements to your webpage.'
+    ).should('be.visible');
   });
 });
