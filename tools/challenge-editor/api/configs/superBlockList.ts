@@ -1,6 +1,6 @@
 export const superBlockList = [
   {
-    name: 'Responsive Web Design (Legacy)',
+    name: 'Legacy Responsive Web Design',
     path: '01-responsive-web-design'
   },
   {
