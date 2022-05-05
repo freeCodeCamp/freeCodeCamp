@@ -266,7 +266,9 @@ export class Block extends Component<BlockProps> {
                   {this.renderCheckMark(isBlockCompleted)}
                   <span>
                     {blockTitle}{' '}
-                    <span className='sr-only'>{courseCompletionStatus()}</span>
+                    <span className='sr-only'>
+                      , {courseCompletionStatus()}
+                    </span>
                   </span>
                   <DropDown />
                 </span>
