@@ -1,10 +1,9 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
-import Link from 'next/link';
+import { GetStaticPaths, GetStaticProps } from 'next';
 import {
   getCurriculum,
   getIdToDashedNameMap
 } from '../../../data-fetching/get-curriculum';
+import SuperBlock from '../../../page-templates/superblock';
 
 interface Props {
   blockNames: string[];
@@ -12,32 +11,7 @@ interface Props {
   idToDashedNameMap: { [index: string]: string };
 }
 
-export default function SuperBlock({
-  blockNames,
-  challengeOrderMap,
-  idToDashedNameMap
-}: InferGetStaticPropsType<typeof getStaticProps>) {
-  return (
-    <>
-      {blockNames.map(blockName => (
-        <ul key={blockName}>
-          {blockName}
-          <ul>
-            {challengeOrderMap[blockName].map(([id, title]) => (
-              <li key={id}>
-                <Link
-                  href={`/learn/responsive-web-design/${blockName}/${idToDashedNameMap[id]}/${id}`}
-                >
-                  <a>{title}</a>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </ul>
-      ))}
-    </>
-  );
-}
+export default SuperBlock;
 
 export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   const curriculum = await getCurriculum();

@@ -1,11 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ParsedUrlQuery } from 'querystring';
-import Editor from '@monaco-editor/react';
-import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
-import Link from 'next/link';
+import { GetStaticPaths, GetStaticProps } from 'next';
 
 import {
   SuperBlock,
@@ -15,45 +9,14 @@ import {
   getIdToPathSegmentsMap,
   PathSegments
 } from '../../../../../data-fetching/get-curriculum';
+import ChallengeComponent from '../../../../../page-templates/challenge';
 interface Props {
   challengeData: Challenge | null;
 }
 
-export default function ChallengeComponent({
-  challengeData
-}: InferGetStaticPropsType<typeof getStaticProps>) {
-  return (
-    <>
-      <Main challengeData={challengeData} />
-      <Link
-        href={
-          '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements'
-        }
-      >
-        Go here
-      </Link>
-    </>
-  );
-}
+export type { Challenge };
 
-interface MainProps {
-  challengeData: Challenge | null;
-}
-
-function Main({ challengeData }: MainProps) {
-  if (!challengeData || !challengeData?.challengeFiles) return null;
-
-  return (
-    <>
-      <div dangerouslySetInnerHTML={{ __html: challengeData.description }} />
-      <Editor
-        defaultLanguage={challengeData.challengeFiles[0].ext}
-        height={'50vh'}
-        defaultValue={challengeData.challengeFiles[0].contents}
-      />
-    </>
-  );
-}
+export default ChallengeComponent;
 
 export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   const curriculum = await getCurriculum();
