@@ -59,7 +59,7 @@ const __utils = (() => {
   };
 })();
 
-interface TestEvaluatorEvent extends MessageEvent {
+export interface TestEvaluatorEvent extends MessageEvent {
   data: {
     code: {
       contents: string;
