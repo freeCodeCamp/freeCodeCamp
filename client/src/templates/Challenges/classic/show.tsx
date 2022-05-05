@@ -316,7 +316,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     return (
       challengeType === challengeTypes.html ||
       challengeType === challengeTypes.modern ||
-      challengeType === challengeTypes.multiFileCertProject
+      challengeType === challengeTypes.multifileCertProject
     );
   }
 
@@ -333,7 +333,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     } = this.getChallenge();
 
     const showBreadCrumbs =
-      challengeType !== challengeTypes.multiFileCertProject;
+      challengeType !== challengeTypes.multifileCertProject;
     return (
       <SidePanel
         block={block}
