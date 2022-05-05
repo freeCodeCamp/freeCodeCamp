@@ -338,15 +338,12 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
           {this.getDonationButtonLabel()}:
         </b>
         <Spacer />
-        <fieldset
-          className={`donate-btn-group ${isAVariant ? '' : 'test-btn-group'}`}
-        >
-          {!isAVariant && (
-            <legend>
-              <SecurityLockIcon />
-              {t('donate.secure-donation')}
-            </legend>
-          )}
+        <fieldset className={'donate-btn-group security-legend'}>
+          <legend>
+            <SecurityLockIcon />
+            {t('donate.secure-donation')}
+          </legend>
+
           {loading.stripe && loading.paypal && this.paymentButtonsLoader()}
           <WalletsWrapper
             amount={donationAmount}
@@ -381,6 +378,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
                 processing={processing}
                 t={t}
                 theme={priorityTheme}
+                isAVariant={isAVariant}
               />
             </>
           )}
