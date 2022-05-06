@@ -6,7 +6,8 @@ import {
   getIdToPathSegmentsMap,
   PathSegments,
   getSuperBlockToBlockMap,
-  getBlockNameToChallengeOrderMap
+  getBlockNameToChallengeOrderMap,
+  Curriculum
 } from '../../../data-fetching/get-curriculum';
 import SuperBlock from '../../../page-templates/superblock';
 import { getDestination } from '../[...id]';
@@ -23,8 +24,24 @@ export default SuperBlock;
 
 export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   const curriculum = await getCurriculum();
-  const idToDashedNameMap = getIdToDashedNameMap(curriculum);
   const idToPathSegmentsMap = getIdToPathSegmentsMap(curriculum);
+
+  // TODO: simplify once noUncheckedIndexedAccess is set.
+  const pathSegments = idToPathSegmentsMap[params?.blockOrId as string] as
+    | PathSegments
+    | undefined;
+
+  if (!pathSegments) return fourOhFour();
+  if (pathExists(pathSegments, params)) {
+    const props = getProps(curriculum);
+    return renderPage(props);
+  } else {
+    return redirect(pathSegments);
+  }
+};
+
+const getProps = (curriculum: Curriculum) => {
+  const idToDashedNameMap = getIdToDashedNameMap(curriculum);
   const superBlockToBlockMap = getSuperBlockToBlockMap(curriculum);
 
   // TODO: figure out how to generate string literal types for these. I think
@@ -37,24 +54,11 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
     blockNames
   );
 
-  // TODO: simplify once noUncheckedIndexedAccess is set.
-  const pathSegments = idToPathSegmentsMap[params?.blockOrId as string] as
-    | PathSegments
-    | undefined;
-
-  const props = {
+  return {
     blockNames,
     blockNameToChallengeOrderMap,
-    idToDashedNameMap,
-    pathSegments
+    idToDashedNameMap
   };
-
-  if (!pathSegments) return fourOhFour();
-  if (pathExists(pathSegments, params)) {
-    return renderPage(props);
-  } else {
-    return redirect(pathSegments);
-  }
 };
 
 const renderPage = (props: Props) => ({

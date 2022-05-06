@@ -7,12 +7,13 @@ import {
   getCurriculum,
   getIdToPathSegmentsMap,
   PathSegments,
-  getChallengeData
+  getChallengeData,
+  Curriculum
 } from '../../../../../data-fetching/get-curriculum';
 import ChallengeComponent from '../../../../../page-templates/challenge';
 import { getDestination } from '../../../[...id]';
 interface Props {
-  challengeData: Challenge | null;
+  challengeData: Challenge;
 }
 
 export type { Challenge };
@@ -29,23 +30,28 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
     | undefined;
 
   if (!pathSegments) return fourOhFour();
-
-  const challengeData = getChallengeData(curriculum, pathSegments);
-  const props = {
-    challengeData
-  };
   if (pathExists(pathSegments, params)) {
+    const props = getProps(curriculum, pathSegments);
     return renderPage(props);
   } else {
     return redirect(pathSegments);
   }
 };
 
+const getProps = (
+  curriculum: Curriculum,
+  pathSegments: Required<PathSegments>
+) => ({
+  challengeData: getChallengeData(curriculum, pathSegments)
+});
 // DRY this with [blockOrId]'s version
 const fourOhFour = () => ({ notFound: true, revalidate: 10 } as const);
 
 // DRY this with [blockOrId]'s version
-const pathExists = (pathSegments: PathSegments, params?: ParsedUrlQuery) =>
+const pathExists = (
+  pathSegments: PathSegments,
+  params?: ParsedUrlQuery
+): pathSegments is Required<PathSegments> =>
   params?.superblock === pathSegments.superblock &&
   params?.blockOrId === pathSegments.block &&
   params?.dashedName === pathSegments.dashedName;

@@ -55,7 +55,7 @@ export interface IdToDashedNameMap {
 }
 
 interface SuperBlockToChallengeMap {
-  [index: string]: (pathSegments: PathSegments) => Challenge | null;
+  [index: string]: (pathSegments: Required<PathSegments>) => Challenge;
 }
 
 export async function getCurriculum() {
@@ -108,7 +108,7 @@ export function getSuperBlockToBlockMap(
 export function getBlockNameToChallengeOrderMap(
   { rwdBlocks }: Curriculum,
   blockNames: string[]
-) {
+): { [index: string]: [id: string, title: string] } {
   return blockNames.reduce(
     (prev, blockName) => ({
       ...prev,
@@ -122,26 +122,31 @@ export function getBlockNameToChallengeOrderMap(
 // a mess
 export function getChallengeData(
   { rwdBlocks, jsBlocks }: Curriculum,
-  pathSegments: PathSegments
+  pathSegments: Required<PathSegments>
 ) {
   const superBlockToChallengeMap: SuperBlockToChallengeMap = {
-    'responsive-web-design': (pathSegments: PathSegments) =>
+    'responsive-web-design': (pathSegments: Required<PathSegments>) =>
       findChallenge(findBlock(rwdBlocks, pathSegments), pathSegments),
-    'javascript-algorithms-and-data-structures': (pathSegments: PathSegments) =>
-      findChallenge(findBlock(jsBlocks, pathSegments), pathSegments)
+    'javascript-algorithms-and-data-structures': (
+      pathSegments: Required<PathSegments>
+    ) => findChallenge(findBlock(jsBlocks, pathSegments), pathSegments)
   };
   return superBlockToChallengeMap[pathSegments.superblock](pathSegments);
 }
 
-function findBlock(superblock: SuperBlock, params: PathSegments) {
-  return params.block ? superblock[params.block] : null;
+function findBlock(superblock: SuperBlock, params: Required<PathSegments>) {
+  return superblock[params.block];
 }
 
-function findChallenge(block: Block | null, params: PathSegments) {
-  const challenge = block?.challenges.find(
+function findChallenge(block: Block, params: PathSegments) {
+  const challenge = block.challenges.find(
     (c: { dashedName: string }) => c.dashedName == params.dashedName
   );
-  return challenge ?? null;
+  // TODO: is there a nicer way to handle missing challenges?
+  if (!challenge) {
+    throw new Error(`Challenge not found: ${params.id}`);
+  }
+  return challenge;
 }
 
 // TODO: again, bit ugly. Would be better to get data in this shape from the
