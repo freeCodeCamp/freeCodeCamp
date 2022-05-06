@@ -6,9 +6,9 @@ Once that's done, the curriculum server and this package need installing. Then t
 
 ```sh
 cd ../curriculum-server
-npm ci
+npm i
 cd ../web
-npm ci
+npm i
 npm run dev
 ```
 
