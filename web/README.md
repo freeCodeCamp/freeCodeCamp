@@ -16,7 +16,7 @@ Now the server should be running on port 3000 and the client on port 8000.
 
 For now there's not much to see.
 
-http://localhost:8000/responsive-web-design/special-path
+http://localhost:8000/learn/special-path
 
 is the main entry point and
 
