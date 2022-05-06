@@ -308,7 +308,7 @@
     },
     "keyboardShortcuts": {
       "type": "boolean",
-      "default": true
+      "default": false
     },
     "profileUI": {
       "type": "object",
