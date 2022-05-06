@@ -538,13 +538,13 @@ a.patreon-button:hover {
   border-left-color: var(--quaternary-background);
 }
 
-.test-btn-group {
+.security-legend {
   padding: 10px;
   border: 2px solid var(--quaternary-background);
   border-radius: 4px;
 }
 
-.test-btn-group > legend {
+.security-legend > legend {
   width: fit-content;
   font-size: 0.9em;
   color: var(--quaternary-color);
@@ -553,4 +553,8 @@ a.patreon-button:hover {
   padding: 0 4px;
   left: 0;
   margin-left: -2px;
+}
+
+.confirm-donation-btn svg.svg-inline--fa.fa-lock {
+  margin-bottom: 2px;
 }
