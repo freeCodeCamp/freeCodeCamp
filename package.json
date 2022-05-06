@@ -31,8 +31,7 @@
     "tools/crowdin",
     "tools/scripts/build",
     "tools/scripts/seed",
-    "tools/ui-components",
-    "curriculum-server"
+    "tools/ui-components"
   ],
   "scripts": {
     "analyze-bundle": "webpack-bundle-analyzer",

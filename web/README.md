@@ -2,9 +2,12 @@
 
 If you haven't installed freeCodeCamp proper yet, that needs to happen first.
 
-Once that's done, the prepare script will take care of the rest and all you need to do is:
+Once that's done, the curriculum server and this package need installing. Then the prepare script will take care of the rest.
 
 ```sh
+cd ../curriculum-server
+npm ci
+cd ../web
 npm ci
 npm run dev
 ```
