@@ -1,12 +1,12 @@
 import { ParsedUrlQuery } from 'querystring';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import {
-  Curriculum,
-  IdToDashedNameMap,
   getCurriculum,
   getIdToDashedNameMap,
   getIdToPathSegmentsMap,
-  PathSegments
+  PathSegments,
+  getSuperBlockToBlockMap,
+  getBlockNameToChallengeOrderMap
 } from '../../../data-fetching/get-curriculum';
 import SuperBlock from '../../../page-templates/superblock';
 import { getDestination } from '../[...id]';
@@ -25,47 +25,42 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   const curriculum = await getCurriculum();
   const idToDashedNameMap = getIdToDashedNameMap(curriculum);
   const idToPathSegmentsMap = getIdToPathSegmentsMap(curriculum);
+  const superBlockToBlockMap = getSuperBlockToBlockMap(curriculum);
+
+  // TODO: figure out how to generate string literal types for these. I think
+  // the approach has to be to fetch the curriculum and use that to generate a
+  // type declaration.  This won't mean anything in production, but it will be
+  // helpful when developing.
+  const blockNames = superBlockToBlockMap['responsive-web-design'];
+  const blockNameToChallengeOrderMap = getBlockNameToChallengeOrderMap(
+    curriculum,
+    blockNames
+  );
 
   // TODO: simplify once noUncheckedIndexedAccess is set.
   const pathSegments = idToPathSegmentsMap[params?.blockOrId as string] as
     | PathSegments
     | undefined;
 
+  const props = {
+    blockNames,
+    blockNameToChallengeOrderMap,
+    idToDashedNameMap,
+    pathSegments
+  };
+
   if (!pathSegments) return fourOhFour();
   if (pathExists(pathSegments, params)) {
-    return renderPage(pathSegments, curriculum, idToDashedNameMap);
+    return renderPage(props);
   } else {
     return redirect(pathSegments);
   }
 };
 
-function renderPage(
-  pathSegments: PathSegments, // TODO: this will be used once we can render more than one page!
-  curriculum: Curriculum,
-  idToDashedNameMap: IdToDashedNameMap
-) {
-  // TODO: render page is doing too much, it should just return the props and
-  // revalidate. Both blocknames and challengeOrderMap should come from
-  // getCurriculum.
-  const { rwdBlocks } = curriculum;
-  const blockNames = Object.keys(rwdBlocks);
-  const blockNameToChallengeOrderMap = blockNames.reduce(
-    (prev, blockName) => ({
-      ...prev,
-      ...{ [blockName]: rwdBlocks[blockName].meta.challengeOrder }
-    }),
-    {}
-  );
-
-  return {
-    props: {
-      blockNames,
-      blockNameToChallengeOrderMap,
-      idToDashedNameMap
-    },
-    revalidate: 10
-  };
-}
+const renderPage = (props: Props) => ({
+  props,
+  revalidate: 10
+});
 
 const redirect = (pathSegments: PathSegments) => ({
   redirect: {

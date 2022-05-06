@@ -3,20 +3,16 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 
 import {
   SuperBlock,
-  Block,
   Challenge,
   getCurriculum,
   getIdToPathSegmentsMap,
-  PathSegments
+  PathSegments,
+  getChallengeData
 } from '../../../../../data-fetching/get-curriculum';
 import ChallengeComponent from '../../../../../page-templates/challenge';
 import { getDestination } from '../../../[...id]';
 interface Props {
   challengeData: Challenge | null;
-}
-
-interface SuperBlockToChallengeMap {
-  [index: string]: (pathSegments: PathSegments) => Challenge | null;
 }
 
 export type { Challenge };
@@ -25,7 +21,6 @@ export default ChallengeComponent;
 
 export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   const curriculum = await getCurriculum();
-  const { rwdBlocks, jsBlocks } = curriculum;
   const idToPathSegmentsMap = getIdToPathSegmentsMap(curriculum);
 
   // TODO: simplify once noUncheckedIndexedAccess is set.
@@ -33,17 +28,14 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
     | PathSegments
     | undefined;
 
-  // TODO: get this from get-curriculum
-  const superBlockToChallengeMap: SuperBlockToChallengeMap = {
-    'responsive-web-design': (pathSegments: PathSegments) =>
-      findChallenge(findBlock(rwdBlocks, pathSegments), pathSegments),
-    'javascript-algorithms-and-data-structures': (pathSegments: PathSegments) =>
-      findChallenge(findBlock(jsBlocks, pathSegments), pathSegments)
-  };
-
   if (!pathSegments) return fourOhFour();
+
+  const challengeData = getChallengeData(curriculum, pathSegments);
+  const props = {
+    challengeData
+  };
   if (pathExists(pathSegments, params)) {
-    return renderPage(pathSegments, superBlockToChallengeMap);
+    return renderPage(props);
   } else {
     return redirect(pathSegments);
   }
@@ -58,19 +50,10 @@ const pathExists = (pathSegments: PathSegments, params?: ParsedUrlQuery) =>
   params?.blockOrId === pathSegments.block &&
   params?.dashedName === pathSegments.dashedName;
 
-function renderPage(
-  pathSegments: PathSegments,
-  superBlockToChallengeMap: SuperBlockToChallengeMap
-) {
-  const challengeData =
-    superBlockToChallengeMap[pathSegments.superblock](pathSegments);
-  return {
-    props: {
-      challengeData
-    },
-    revalidate: 10
-  };
-}
+const renderPage = (props: Props) => ({
+  props,
+  revalidate: 10
+});
 
 function redirect(pathSegments: PathSegments) {
   return {
@@ -80,17 +63,6 @@ function redirect(pathSegments: PathSegments) {
     },
     revalidate: 10
   };
-}
-
-function findBlock(superblock: SuperBlock, params: PathSegments) {
-  return params.block ? superblock[params.block] : null;
-}
-
-function findChallenge(block: Block | null, params: PathSegments) {
-  const challenge = block?.challenges.find(
-    (c: { dashedName: string }) => c.dashedName == params.dashedName
-  );
-  return challenge ?? null;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {

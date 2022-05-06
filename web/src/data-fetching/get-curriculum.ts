@@ -11,6 +11,7 @@
 
 */
 
+// TODO: this should be { [superblock: string]: Superblock }
 export interface Curriculum {
   rwdBlocks: SuperBlock;
   jsBlocks: SuperBlock;
@@ -53,6 +54,10 @@ export interface IdToDashedNameMap {
   [id: string]: string;
 }
 
+interface SuperBlockToChallengeMap {
+  [index: string]: (pathSegments: PathSegments) => Challenge | null;
+}
+
 export async function getCurriculum() {
   const rwd = await fetch('http://localhost:3000/responsive-web-design');
   const js = await fetch(
@@ -88,6 +93,55 @@ export function getIdToPathSegmentsMap({ rwdBlocks }: Curriculum) {
     id: 'special-path'
   };
   return idToPathSegmentsMap;
+}
+
+type SuperBlockToBlockMap = {
+  [superblock: string]: string[];
+};
+
+export function getSuperBlockToBlockMap(
+  curriculum: Curriculum
+): SuperBlockToBlockMap {
+  return { 'responsive-web-design': Object.keys(curriculum.rwdBlocks) };
+}
+
+export function getBlockNameToChallengeOrderMap(
+  { rwdBlocks }: Curriculum,
+  blockNames: string[]
+) {
+  return blockNames.reduce(
+    (prev, blockName) => ({
+      ...prev,
+      ...{ [blockName]: rwdBlocks[blockName].meta.challengeOrder }
+    }),
+    {}
+  );
+}
+
+// TODO: remove the hardcoding of superblock names. Also, the map generation is
+// a mess
+export function getChallengeData(
+  { rwdBlocks, jsBlocks }: Curriculum,
+  pathSegments: PathSegments
+) {
+  const superBlockToChallengeMap: SuperBlockToChallengeMap = {
+    'responsive-web-design': (pathSegments: PathSegments) =>
+      findChallenge(findBlock(rwdBlocks, pathSegments), pathSegments),
+    'javascript-algorithms-and-data-structures': (pathSegments: PathSegments) =>
+      findChallenge(findBlock(jsBlocks, pathSegments), pathSegments)
+  };
+  return superBlockToChallengeMap[pathSegments.superblock](pathSegments);
+}
+
+function findBlock(superblock: SuperBlock, params: PathSegments) {
+  return params.block ? superblock[params.block] : null;
+}
+
+function findChallenge(block: Block | null, params: PathSegments) {
+  const challenge = block?.challenges.find(
+    (c: { dashedName: string }) => c.dashedName == params.dashedName
+  );
+  return challenge ?? null;
 }
 
 // TODO: again, bit ugly. Would be better to get data in this shape from the
