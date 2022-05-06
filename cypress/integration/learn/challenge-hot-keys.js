@@ -34,6 +34,14 @@ const titles = {
 };
 
 describe('The hotkeys should work correctly', () => {
+  beforeEach(() => {
+    cy.login();
+    cy.visit('/settings');
+    // enable shortcuts
+    cy.get('form[data-testid="fcc-enable-shortcuts-setting"]').within(() => {
+      cy.contains('On').click();
+    });
+  });
   it('should be possible to navigate to the next challenge/projects and previous', () => {
     cy.visit(links.classic1);
     cy.focused().type('{esc}');

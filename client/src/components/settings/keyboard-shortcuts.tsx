@@ -16,7 +16,11 @@ export default function KeyboardShortcutsSettings({
   const { t } = useTranslation();
 
   return (
-    <Form inline={true} onSubmit={(e: React.FormEvent) => e.preventDefault()}>
+    <Form
+      inline={true}
+      onSubmit={(e: React.FormEvent) => e.preventDefault()}
+      data-testid='fcc-enable-shortcuts-setting'
+    >
       <ToggleSetting
         action={t('settings.labels.keyboard-shortcuts')}
         flag={keyboardShortcuts}
