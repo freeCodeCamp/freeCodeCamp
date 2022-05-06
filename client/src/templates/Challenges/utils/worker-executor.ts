@@ -1,32 +1,47 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { TestEvaluatorEvent } from '../../../client/workers/test-evaluator'
+import { TestEvaluatorEvent } from '../../../client/workers/test-evaluator';
 
 interface WorkerEvent {
-  LOG: Array<(data: TestEvaluatorEvent) => void>;
-  error:  Array<(data: TestEvaluatorEvent) => void>;
-  done: Array<(data: TestEvaluatorEvent) => void>; 
+  LOG: Array<(listener: (args: TestEvaluatorEvent) => void) => void>;
+  error: Array<(listener: (args: TestEvaluatorEvent) => void) => void>;
+  done: Array<(listener: (args: TestEvaluatorEvent) => void) => void>;
 }
 
-
 type newWorkerEvent = keyof WorkerEvent;
-
-
 
 type EmitError = (event: newWorkerEvent, args: Record<string, unknown>) => Task;
 type EmitDone = (event: newWorkerEvent, args: TestEvaluatorEvent) => Task;
 
-type Emitter = EmitError&EmitDone;
+type promiseWorkerDone = (
+  event: newWorkerEvent,
+  listener: (data: Worker) => void
+) => Task;
+type promiseWorkerReject = (
+  event: newWorkerEvent,
+  listener: (err: Error) => void
+) => Task;
+type TestEvaluatorEventData = (
+  event: newWorkerEvent,
+  listener: (args: TestEvaluatorEvent) => void
+) => void;
+
+type Emitter = EmitError & EmitDone;
 
 interface Task {
-  done: Promise<Worker>
+  done: Promise<Worker>;
   _worker: Worker | null;
   _events: WorkerEvent;
-  _execute: (worker: WorkerExecutor['_getWorker']) => Task
+  _execute: (worker: WorkerExecutor['_getWorker']) => Task;
   emit: Emitter;
-  once: (event: newWorkerEvent, listener: (args: TestEvaluatorEvent) => void) => void;
-  on: (event: newWorkerEvent, listener: (args: TestEvaluatorEvent) => void) => void;
-  removeListener: (event: newWorkerEvent, listener: (args: TestEvaluatorEvent) => void) => void;
-
+  once: promiseWorkerDone & promiseWorkerReject & TestEvaluatorEventData;
+  on: (
+    event: newWorkerEvent,
+    listener: (args: TestEvaluatorEvent) => void
+  ) => Task;
+  removeListener: (
+    event: newWorkerEvent,
+    listener: (args: TestEvaluatorEvent) => void
+  ) => void;
 }
 
 class WorkerExecutor {
@@ -52,7 +67,7 @@ class WorkerExecutor {
 
   async _getWorker(): Promise<Worker> {
     return this._workerPool.length
-      ? this._workerPool.shift() as Worker
+      ? (this._workerPool.shift() as Worker)
       : this._createWorker();
   }
 
@@ -97,7 +112,9 @@ class WorkerExecutor {
 
   execute(data: TestEvaluatorEvent, timeout = 1000) {
     console.log(data);
-    const task: Task  = eventify({});
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    const task: Task = eventify({});
     task._execute = function (getWorker) {
       getWorker().then(
         (worker: Worker) => {
@@ -113,7 +130,7 @@ class WorkerExecutor {
             // data.type is undefined when the message has been processed
             // successfully and defined when something else has happened (e.g.
             // an error occurred)
-            console.log(e.data)
+            console.log(e.data);
             if (e.data?.type) {
               console.log(e.data.type);
               this.emit('error', data.data);
@@ -130,13 +147,15 @@ class WorkerExecutor {
 
           worker.postMessage(data);
         },
-        (err: Error) => this.emit('error', { message: err.message})
+        (err: Error) => this.emit('error', { message: err.message })
       );
       return this;
     };
 
     task.done = new Promise((resolve, reject) => {
-      task.once('done', data => resolve(data))
+      task
+        .once('done', (data: Worker) => resolve(data))
+        .once('error', (err: Error) => reject(err.message));
     });
 
     this._taskQueue.push(task);
@@ -146,8 +165,8 @@ class WorkerExecutor {
 }
 
 // Error and completion handling
-const eventify = (self: Task ) => {
-  self._events = {error: [], done: [], LOG: []};
+const eventify = (self: Task) => {
+  self._events = { error: [], done: [], LOG: [] };
 
   self.on = (event, listener) => {
     if (typeof self._events[event] === 'undefined') {
@@ -167,9 +186,8 @@ const eventify = (self: Task ) => {
     return self;
   };
 
-  self.emit = (event , ...args) => {
+  self.emit = (event, ...args) => {
     if (typeof self._events[event] !== 'undefined') {
-     
       self._events[event].forEach(listener => {
         listener.apply(self, args);
       });
@@ -178,7 +196,6 @@ const eventify = (self: Task ) => {
   };
 
   self.once = (event, listener) => {
-    console.log(typeof listener);
     self.on(event, function handler(...args) {
       self.removeListener(event, handler);
       listener.apply(self, args);
