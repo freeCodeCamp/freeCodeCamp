@@ -37,7 +37,7 @@ und das Verzeichnis `/docs` bereitstellen
 docsify serve docs
 ```
 
-Wenn du freeCodeCamp lokal installiert hast (siehe Anleitung für die lokale Installation), bündeln wir das CLI mit den Entwicklungswerkzeugen, sodass du die unten aufgeführten Befehle bei Bedarf vom Stammverzeichnis des Repos ausführen kannst:
+Alternatively, if you have installed freeCodeCamp locally (see the local setup guide), we bundled the CLI with the development tools so you can run any of the below commands as needed from the root of the repo:
 
 ### Nur die Dokumentationswebsite bereitstellen und starten
 

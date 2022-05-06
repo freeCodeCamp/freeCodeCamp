@@ -37,7 +37,7 @@ npm install -g docsify
 docsify serve docs
 ```
 
-freeCodeCamp をローカルにインストールした場合は (ローカルセットアップガイド参照)、 CLIを開発ツールに束ねることで、必要に応じてリポジトリのルートから以下のコマンドを実行することもできます。
+Alternatively, if you have installed freeCodeCamp locally (see the local setup guide), we bundled the CLI with the development tools so you can run any of the below commands as needed from the root of the repo:
 
 ### ドキュメントサイトのみを提供して起動する
 
