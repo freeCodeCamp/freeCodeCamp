@@ -13,7 +13,9 @@ import { getDestination } from '../[...id]';
 
 interface Props {
   blockNames: string[];
-  challengeOrderMap: { [index: string]: [id: string, title: string] };
+  blockNameToChallengeOrderMap: {
+    [index: string]: [id: string, title: string];
+  };
   idToDashedNameMap: { [index: string]: string };
 }
 
@@ -47,7 +49,7 @@ function renderPage(
   // getCurriculum.
   const { rwdBlocks } = curriculum;
   const blockNames = Object.keys(rwdBlocks);
-  const challengeOrderMap = blockNames.reduce(
+  const blockNameToChallengeOrderMap = blockNames.reduce(
     (prev, blockName) => ({
       ...prev,
       ...{ [blockName]: rwdBlocks[blockName].meta.challengeOrder }
@@ -56,7 +58,11 @@ function renderPage(
   );
 
   return {
-    props: { blockNames, challengeOrderMap, idToDashedNameMap },
+    props: {
+      blockNames,
+      blockNameToChallengeOrderMap,
+      idToDashedNameMap
+    },
     revalidate: 10
   };
 }

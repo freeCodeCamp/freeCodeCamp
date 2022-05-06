@@ -8,7 +8,7 @@ import type { getStaticProps } from '../pages/learn/[superblock]/[blockOrId]';
 
 export default function SuperBlock({
   blockNames,
-  challengeOrderMap,
+  blockNameToChallengeOrderMap,
   idToDashedNameMap
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { isFallback } = useRouter();
@@ -20,7 +20,7 @@ export default function SuperBlock({
         <ul key={blockName}>
           {blockName}
           <ul>
-            {challengeOrderMap[blockName].map(([id, title]) => (
+            {blockNameToChallengeOrderMap[blockName].map(([id, title]) => (
               <li key={id}>
                 <Link
                   href={`/learn/responsive-web-design/${blockName}/${idToDashedNameMap[id]}/${id}`}
