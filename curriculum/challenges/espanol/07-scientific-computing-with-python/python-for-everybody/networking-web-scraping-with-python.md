@@ -24,7 +24,7 @@ Más recursos:
 
 ## --text--
 
-¿Qué biblioteca de Python se usa para analizar documentos HTML y extraer datos de ellos?
+¿Qué librería de Python se usa para analizar documentos HTML y extraer datos de ellos?
 
 ## --answers--
 
