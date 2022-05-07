@@ -9,6 +9,7 @@ on:
     # run this Action every 14 days
     - cron: '0 * */14 * *'
   workflow_dispatch:
+
 permissions:
   contents: read
 
