@@ -8,8 +8,10 @@ permissions:
 jobs:
   triage:
     permissions:
-      contents: read  # for actions/labeler to determine modified files
-      pull-requests: write  # for actions/labeler to add labels to PRs
+      # for actions/labeler to determine modified files
+      contents: read
+      # for actions/labeler to add labels to PRs  
+      pull-requests: write  
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/labeler@v4
