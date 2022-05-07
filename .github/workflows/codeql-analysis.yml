@@ -19,7 +19,7 @@ jobs:
       # for github/codeql-action/init to get workflow details
       actions: read
       # for actions/checkout to fetch code
-      contents: read 
+      contents: read
       # for github/codeql-action/analyze to upload SARIF results
       security-events: write
     name: Analyse
