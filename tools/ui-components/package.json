@@ -29,7 +29,7 @@
     "@babel/preset-env": "7.17.10",
     "@rollup/plugin-babel": "5.3.1",
     "@rollup/plugin-commonjs": "19.0.2",
-    "@rollup/plugin-node-resolve": "13.2.1",
+    "@rollup/plugin-node-resolve": "13.3.0",
     "@rollup/plugin-typescript": "8.3.2",
     "@storybook/addon-a11y": "6.4.22",
     "@storybook/addon-actions": "6.4.22",
