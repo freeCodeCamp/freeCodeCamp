@@ -4,6 +4,9 @@ on:
     branches-ignore:
       - 'renovate/**'
   pull_request:
+permissions:
+  contents: read
+
 jobs:
   lint:
     name: Lint
