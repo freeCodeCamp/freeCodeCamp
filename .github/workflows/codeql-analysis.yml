@@ -10,8 +10,18 @@ on:
     paths-ignore:
       - 'docs/**'
 
+permissions:
+  contents: read
+
 jobs:
   analyse:
+    permissions:
+      # for github/codeql-action/init to get workflow details
+      actions: read
+      # for actions/checkout to fetch code
+      contents: read
+      # for github/codeql-action/analyze to upload SARIF results
+      security-events: write
     name: Analyse
     runs-on: ubuntu-20.04
     if: ${{ github.actor != 'renovate[bot]' && github.actor != 'camperbot' }}
