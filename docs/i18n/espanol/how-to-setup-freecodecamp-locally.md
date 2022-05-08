@@ -244,11 +244,13 @@ npm run develop
 
 Este único comando lanzará todos los servicios, incluyendo el servidor API y las aplicaciones cliente disponibles para que usted trabaje.
 
-> [!NOTE] Una vez listo, abre tu navegador y ** visita <http://localhost:8000>**. Si la aplicación carga, ¡felicidades! Ahora posees una copia de la plataforma freeCodeCamp's en tu PC.
+> [!NOTE] Una vez listo, abre tu navegador y ** visita <http://localhost:8000>**. If the app loads, sign in. Congratulations – you're all set! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
 
 > [!TIP] La URL de la API es `http://localhost:3000`. La aplicación Gatsby corre en  `http://localhost:8000`
 
-> Si visitas <http://localhost:3000/explorer> deberías poder ver las API disponibles.
+> While you are logged in, if you visit <http://localhost:3000/explorer> you should see the available APIs.
+
+> [!WARNING] Clearing your cookies or running `npm run seed:certified-user` will log you out, and you will have to sign in again.
 
 ## Iniciar sesión con un usuario local
 
@@ -496,7 +498,7 @@ Si estás en un sistema operativo diferente y/o todavía tienes problemas, consu
 
 > [!WARNING]
 > 
-> Por favor, evite crear problemas de GitHub para problemas de prerrequisitos. Están fuera del ámbito de este proyecto.
+> Please avoid creating GitHub issues for prerequisite issues. They are out of the scope of this project.
 
 ### Problemas con la interfaz de usuario, fuentes, errores de compilación, etc.
 
@@ -566,7 +568,7 @@ Si obtiene errores durante la instalación de las dependencias, por favor asegú
 
 La primera configuración puede tardar un rato dependiendo del ancho de banda de su red. Tenga paciencia, y si todavía está atascado le recomendamos usar GitPod en lugar de una configuración sin conexión.
 
-> [!NOTE] Si está utilizando dispositivos Apple con chip M1 para ejecutar la aplicación localmente, se sugiere usar Node v14.7 o superior. De lo contrario, es posible que tenga problemas con dependencias como Sharp.
+> [!NOTE] If you are using Apple Devices with M1 Chip to run the application locally, it is suggested to use Node v14.7 or above. You might run into issues with dependencies like Sharp otherwise.
 
 ## Obteniendo ayuda
 

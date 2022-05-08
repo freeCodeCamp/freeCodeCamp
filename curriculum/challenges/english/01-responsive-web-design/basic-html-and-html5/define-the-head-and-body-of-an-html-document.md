@@ -19,7 +19,8 @@ Here's an example of a page's layout:
 <!DOCTYPE html>
 <html>
   <head>
-    <meta />
+   <meta charset="utf-8">
+   <title>Example title</title>
   </head>
   <body>
     <div>

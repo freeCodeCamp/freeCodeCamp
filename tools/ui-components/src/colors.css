@@ -112,6 +112,8 @@ div.light {
   --default-background-primary-hover: var(--gray90);
   --default-background-danger-hover: var(--red15);
   --default-background-info-hover: var(--blue30);
+
+  --focus-outline-color: var(--blue50);
 }
 
 html.dark,
@@ -137,4 +139,6 @@ div.dark {
   --default-background-primary-hover: var(--gray00);
   --default-background-danger-hover: var(--red90);
   --default-background-info-hover: var(--blue90);
+
+  --focus-outline-color: var(--blue50);
 }

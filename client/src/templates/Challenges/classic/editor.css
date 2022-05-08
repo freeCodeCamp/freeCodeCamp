@@ -7,6 +7,12 @@
   z-index: 11;
 }
 
+/* NVDA skips the textarea in browse mode if there is no size */
+textarea.inputarea {
+  width: 1px !important;
+  height: 1px !important;
+}
+
 .editor-container {
   background: var(--editor-background);
 }
@@ -37,6 +43,10 @@
   padding: 15px 15px 15px 0px;
 }
 
+.editor-upper-jaw {
+  max-width: unset !important;
+}
+
 .action-row-container,
 .description-container {
   background-color: var(--secondary-background);
@@ -62,6 +72,10 @@
   animation-delay: 0.5s;
 }
 
+.action-row-container button[aria-hidden='true'] {
+  display: none;
+}
+
 @keyframes example {
   from {
     background-color: var(--highlight-background);
@@ -78,6 +92,27 @@
 #test-status {
   padding-bottom: 5px;
   padding-top: 5px;
+}
+
+#test-status .status {
+  font-family: revert;
+}
+
+#test-status p {
+  margin: 0.5rem 0 0;
+}
+
+#test-status h2.hint {
+  font-size: 1rem;
+  line-height: 1.5;
+  padding-right: 0.5rem;
+  /* using float instead of inline display so screen readers recognize h2 as a block element */
+  float: left;
+  margin: 0;
+}
+
+#test-status h2.hint::after {
+  content: ':';
 }
 
 .myEditableLineDecoration {

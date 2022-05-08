@@ -26,7 +26,7 @@ Más recursos:
 
 ## --text--
 
-¿Quién debería de aprender a programar?
+¿Quién debe de aprender a programar?
 
 ## --answers--
 

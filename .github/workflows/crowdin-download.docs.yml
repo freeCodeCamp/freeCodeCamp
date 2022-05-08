@@ -2,7 +2,7 @@ name: Crowdin Docs Download
 on:
   workflow_dispatch:
   schedule:
-    # runs every day at 12:00 noon UTC
+    # runs every weekday at 12:00 noon UTC
     - cron: '0 12 * * 1-5'
 
 env:

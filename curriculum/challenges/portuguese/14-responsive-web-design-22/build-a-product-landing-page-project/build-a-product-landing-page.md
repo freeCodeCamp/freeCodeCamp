@@ -1,55 +1,424 @@
 ---
 id: 587d78af367417b2b2512b04
 title: Criar uma página inicial para um produto
-challengeType: 3
+challengeType: 14
 forumTopicId: 301144
 dashedName: build-a-product-landing-page
 ---
 
 # --description--
 
-**Objetivo:** criar uma aplicação no [CodePen.io](https://codepen.io) que tenha função semelhante a esta: <https://codepen.io/freeCodeCamp/full/RKRbwL>.
+**Objetivo:** criar uma aplicação que funcione de modo semelhante a <a href="https://product-landing-page.freecodecamp.rocks" target="_blank">https://product-landing-page.freecodecamp.rocks</a>
 
-Atenda às [histórias de usuário](https://pt.wikipedia.org/wiki/Hist%C3%B3ria_de_usu%C3%A1rio) abaixo e obtenha aprovação em todos os testes. Dê ao projeto o seu próprio estilo pessoal.
+**Histórias de usuário:**
 
-Você pode usar HTML, JavaScript e CSS para completar este projeto. É recomendado utilizar CSS puro, pois é disso que trataram as lições até agora. É bom você adquirir alguma prática com CSS. Você pode usar Bootstrap ou SASS se quiser. Outras tecnologias (como, por exemplo, jQuery, React, Angular ou Vue) não são recomendadas para este projeto. Use-as por sua conta e risco. Outros projetos darão a você uma oportunidade de trabalhar com diferentes bibliotecas, como o React. Vamos aceitar e tentar corrigir todos os relatórios de problemas que usem o conjunto de tecnologias sugeridas para esse projeto. Boa programação!
+1. A página inicial do produto deve ter um elemento `header` com um `id="header"` correspondente
+1. Você pode ver uma imagem dentro do elemento `header` com um `id="header-img"` correspondente (um logotipo seria uma boa imagem aqui)
+1. Dentro do elemento `#header`, deve haver um elemento `nav` com um `id="nav-bar"` correspondente
+1. Deve haver pelo menos três elementos clicáveis dentro do elemento `nav` e cada um deles deve ter a classe `nav-link`
+1. Ao clicar em um botão com a classe `.nav-link` no elemento `nav`, o usuário deve ser levado para a seção correspondente na página inicial
+1. Você pode assistir a um vídeo de produto integrado com `id="video"`
+1. A página inicial do produto deve ter um elemento `form` com um `id="form"` correspondente
+1. Dentro do formulário, deve haver um `input` com `id="email"`, onde deve ser possível inserir um endereço de e-mail
+1. O campo de entrada `#email` deve ter um placeholder (texto ilustrativo) para que o usuário saiba para que serve o campo
+1. O campo de entrada `#email` deve usar a validação do próprio HTML5 para confirmar que o texto inserido é um endereço de e-mail
+1. Dentro do formulário, deve haver um `input` do tipo botão de envio com o `id="submit"` correspondente
+1. Ao clicar no elemento `#submit`, o e-mail deve ser enviado para uma página estática (use este URL fictício: `https://www.freecodecamp.com/email-submit`)
+1. A barra de navegação deve estar sempre na parte superior da viewport
+1. A página inicial deve ter pelo menos uma media query
+1. A página inicial do produto deve utilizar o CSS flexbox pelo menos uma vez
 
-**História de usuário nº 1:** a página inicial do produto deve ter um elemento `header` com um `id="header"` correspondente.
+Atenda às histórias de usuário e passe em todos os testes abaixo para concluir este projeto. Dê ao projeto o seu próprio estilo pessoal. Boa programação!
 
-**História de usuário nº 2:** deve haver uma imagem dentro do elemento `header` com um `id="header-img"` correspondente. Um logotipo da empresa seria uma boa imagem para colocar aqui.
+# --hints--
 
-**História de usuário nº 3:** dentro do elemento `#header`, deve haver um elemento `nav` com um `id="nav-bar"`.
+Você deve ter um elemento `header` com o `id` `header`
 
-**História de usuário nº 4:** deve haver pelo menos três elementos clicáveis dentro do elemento `nav` e cada um deles deve ter a classe `nav-link`.
+```js
+const el = document.getElementById('header')
+assert(!!el && el.tagName === 'HEADER')
+```
 
-**História de usuário nº 5:** ao clicar em um botão com a classe `.nav-link` no elemento `nav`, o usuário deve ser levado para a seção correspondente na página inicial.
+Você deve ter um elemento `img` com o `id` `header-img`
 
-**História de usuário nº 6:** é possível assistir a um vídeo do produto no elemento de `id="video"`.
+```js
+const el = document.getElementById('header-img')
+assert(!!el && el.tagName === 'IMG')
+```
 
-**História de usuário nº 7:** a página inicial deve ter um formulário (`form`) com um `id="form"`.
+O elemento `#header-img` deve estar aninhado dentro de `#header`
 
-**História de usuário nº 8:** dentro do formulário, deve haver um campo de entrada (`input`) com `id="email"`, onde deve ser possível digitar um endereço de e-mail.
+```js
+const els = document.querySelectorAll('#header #header-img')
+assert(els.length > 0)
+```
 
-**História de usuário nº 9:** o campo de entrada `#email` deve ter um placeholder (texto ilustrativo) para que o usuário saiba para que serve o campo.
+O elemento `#header-img` deve ter um atributo `src`
 
-**História de usuário nº 10:** o campo de entrada `#email` deve usar a validação do próprio HTML5 para confirmar que o texto inserido é um endereço de e-mail.
+```js
+const el = document.getElementById('header-img')
+assert(!!el && !!el.src)
+```
 
-**História de usuário nº 11:** dentro do formulário, deve haver um campo de entrada (`input`) do tipo botão com `id="submit"`.
+O `src` de `#header-img` deve ser um URL válido (que comece por `http`)
 
-**História de usuário nº 12:** quando o elemento `#submit` for clicado, o e-mail deve ser enviado para uma página estática (use esta URL fictícia: [https://www.freecodecamp.com/email-enviar](https://www.freecodecamp.com/email-submit)).
+```js
+const el = document.getElementById('header-img')
+assert(!!el && /^http/.test(el.src))
+```
 
-**História de usuário nº 13:** a barra de navegação deve estar sempre na parte superior da viewport.
+Você deve ter um elemento `nav` com o `id` `nav-bar`
 
-**História de usuário nº 14:** a página inicial deve ter pelo menos uma media query.
+```js
+const el = document.getElementById('nav-bar')
+assert(!!el && el.tagName === 'NAV')
+```
 
-**História de usuário nº 15:** a página inicial deve utilizar pelo menos uma vez o CSS Flexbox.
+O elemento `#nav-bar` deve estar aninhado dentro de `#header`
 
-Você pode fazer o seu projeto <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>usando este modelo da CodePen</a> e, logo após, clicar em `Save` para criar seu próprio projeto. Como alternativa, use este link da nossa CDN para executar os testes em qualquer ambiente que você preferir: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+```js
+const els = document.querySelectorAll('#header #nav-bar')
+assert(els.length > 0)
+```
 
-Quando você terminar, envie o URL do seu projeto depois de ele haver passado em todos os testes.
+Você deve ter pelo menos 3 elementos `.nav-link` dentro de `#nav-bar`
 
-# --solutions--
+```js
+const els = document.querySelectorAll('#nav-bar .nav-link')
+assert(els.length >= 3)
+```
+
+Cada elemento `.nav-link` deve ter um atributo `href`
+
+```js
+const els = document.querySelectorAll('.nav-link')
+els.forEach(el => {
+  if (!el.href) assert(false)
+})
+assert(els.length > 0)
+```
+
+Cada elemento `.nav-link` deve vincular a um elemento correspondente na página inicial (ter um `href` com o valor do id de outro elemento, como `#footer`)
+
+```js
+const els = document.querySelectorAll('.nav-link')
+els.forEach(el => {
+  const linkDestination = el.getAttribute('href').slice(1)
+  if (!document.getElementById(linkDestination)) assert(false)
+})
+assert(els.length > 0)
+```
+
+Você deve ter um elemento `video` ou um elemento `iframe` com o `id` `video`
+
+```js
+const el = document.getElementById('video')
+assert(!!el && (el.tagName === 'VIDEO' || el.tagName === 'IFRAME'))
+```
+
+O elemento `#video` deve ter um atributo `src`
+
+```js
+const el = document.getElementById('video')
+assert(!!el && !!el.src)
+```
+
+Você deve ter um elemento `form` com o `id` `form`
+
+```js
+const el = document.getElementById('form')
+assert(!!el && el.tagName === 'FORM')
+```
+
+Você deve ter um elemento `input` com o `id` `email`
+
+```js
+const el = document.getElementById('email')
+assert(!!el && el.tagName === 'INPUT')
+```
+
+O elemento `#email` deve estar aninhado dentro de `#form`
+
+```js
+const els = document.querySelectorAll('#form #email')
+assert(els.length > 0)
+```
+
+O elemento `#email` deve ter o atributo `placeholder` e um texto ilustrativo
+
+```js
+const el = document.getElementById('email')
+assert(!!el && !!el.placeholder && el.placeholder.length > 0)
+```
+
+O elemento `#email` deve usar a validação de HTML5 definindo seu `type` como `email`
+
+```js
+const el = document.getElementById('email')
+assert(!!el && el.type === 'email')
+```
+
+Você deve ter um elemento `input` com o `id` `submit`
+
+```js
+const el = document.getElementById('submit')
+assert(!!el && el.tagName === 'INPUT')
+```
+
+O elemento `#submit` deve estar aninhado dentro de `#form`
+
+```js
+const els = document.querySelectorAll('#form #submit')
+assert(els.length > 0)
+```
+
+O elemento `#submit` deve ter o atributo `type` com o valor `submit`
+
+```js
+const el = document.getElementById('submit')
+assert(!!el && el.type === 'submit')
+```
+
+Seu `#form` deve ter um atributo `action` definido como `https://www.freecodecamp.com/email-submit`
+
+```js
+const el = document.getElementById('form')
+assert(!!el && el.action === 'https://www.freecodecamp.com/email-submit')
+```
+
+O elemento `#email` deve ter um atributo `name` definido como `email`
+
+```js
+const el = document.getElementById('email')
+assert(!!el && el.name === 'email')
+```
+
+O elemento `#nav-bar` deve estar sempre na parte superior da viewport
+
+```js
+const el = document.getElementById('nav-bar')
+const top1 = el?.offsetTop
+const top2 = el?.offsetTop
+assert(!!el && top1 >= -15 && top1 <= 15 && top2 >= -15 && top2 <= 15)
+```
+
+A página inicial deve ter pelo menos uma media query
+
+```js
+assert.isAtLeast(new __helpers.CSSHelp(document).getCSSRules('media')?.length, 1);
+```
+
+A página inicial do produto deve utilizar o CSS flexbox pelo menos uma vez
+
+```js
+const stylesheet = new __helpers.CSSHelp(document).getStyleSheet()
+const cssRules = new __helpers.CSSHelp(document).styleSheetToCssRulesArray(stylesheet)
+const usesFlex = cssRules.find(rule => {
+  return rule.style?.display === 'flex' || rule.style?.display === 'inline-flex'
+})
+assert(usesFlex)
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
-// solution required
+
+```
+
+```css
+
+```
+
+## --solutions--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Product Landing Page</title>
+  </head>
+  <body>
+    <header id="header">
+      <nav id="nav-bar">
+        <img
+          id="header-img"
+          src="https://upload.wikimedia.org/wikipedia/commons/3/39/Pokeball.PNG"
+          max-height="50px"
+        />
+        <a href="#Features" class="nav-link">Features</a> |
+        <a href="#Video" class="nav-link">See our facility!</a> |
+        <a href="#Pricing" class="nav-link">Purchase</a>
+        <hr />
+      </nav>
+    </header>
+    <main>
+      <h1>
+        Pokemon Daycare Service
+      </h1>
+      <section id="Features">
+        <h2>What we offer</h2>
+        <div class="flex-here">
+          <div class="flex-left">
+            <img
+              id="bullet"
+              src="https://upload.wikimedia.org/wikipedia/commons/3/39/Pokeball.PNG"
+              max-height="25px"
+            />
+          </div>
+          <div class="flex-right">Guaranteed friendly and loving staff!</div>
+        </div>
+        <div class="flex-here">
+          <div class="flex-left">
+            <img
+              id="bullet"
+              src="https://upload.wikimedia.org/wikipedia/commons/3/39/Pokeball.PNG"
+              max-height="25px"
+            />
+          </div>
+          <div class="flex-right">
+            Comfortable environment for Pokemon to explore and play!
+          </div>
+        </div>
+        <div class="flex-here">
+          <div class="flex-left">
+            <img
+              id="bullet"
+              src="https://upload.wikimedia.org/wikipedia/commons/3/39/Pokeball.PNG"
+              max-height="25px"
+            />
+          </div>
+          <div class="flex-right">
+            Multiple membership plans to fit your lifestyle!
+          </div>
+        </div>
+      </section>
+      <section id="Video">
+        <h2>Check us out!</h2>
+        A sneak peek into our facility:
+        <br />
+        <iframe
+          id="video"
+          width="520"
+          height="347"
+          src="https://www.youtube.com/embed/Nw-ksH2r6AQ"
+          frameborder="0"
+          allowfullscreen
+          alt="A video tour of our facility"
+        >
+        </iframe>
+      </section>
+      <section id="Pricing">
+        <h2>Membership Plans</h2>
+        <div class="flex-mem">
+          <div class="flex-mem-box">
+            <font size="+2">Basic Membership</font><br />
+            <ul>
+              <li>One Pokemon</li>
+              <li>Food and berries provided</li>
+            </ul>
+            <em>$9.99/month</em>
+          </div>
+          <div class="flex-mem-box">
+            <font size="+2">Silver Membership</font><br />
+            <ul>
+              <li>Up to Three Pokemon</li>
+              <li>Food and berries provided</li>
+              <li>Grooming and accessories included</li>
+            </ul>
+            <em>$19.99/month</em>
+          </div>
+          <div class="flex-mem-box">
+            <font size="+2">Gold Membership</font><br />
+            <ul>
+              <li>Up to six Pokemon!</li>
+              <li>Food and berries provided</li>
+              <li>Grooming and accessories included</li>
+              <li>Personal training for each Pokemon</li>
+              <li>Breeding and egg hatching</li>
+            </ul>
+            <em>$29.99/month</em>
+          </div>
+        </div>
+      </section>
+      <form id="form" action="https://www.freecodecamp.com/email-submit">
+        <p>Sign up for our newsletter!</p>
+        <label for="email"><p>Email:</p><input name="email" id="email" type="email" placeholder="johnsmith@email.com" required></label>
+        <input type="submit" id="submit">
+      </form>
+      <footer>
+        <a href="../">Return to Project List</a> |
+        <a href="https://www.nhcarrigan.com">Return to HomePage</a>
+      </footer>
+    </main>
+  </body>
+</html>
+```
+
+```css
+body {
+  background-color: #3a3240;
+  color: white;
+}
+main {
+  max-width: 750px;
+  margin: 50px auto;
+}
+input {
+  background-color: #92869c;
+}
+a:not(.nav-link) {
+  color: white;
+}
+#header-img {
+  max-height: 25px;
+}
+#nav-bar {
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  top: 0%;
+  background-color: #92869c;
+}
+h1 {
+  text-align: center;
+}
+body {
+  text-align: center;
+}
+footer {
+  text-align: center;
+}
+#bullet {
+  max-height: 25px;
+}
+.flex-here {
+  display: flex;
+  justify-content: center;
+}
+.flex-left {
+  height: 25px;
+}
+.flex-mem {
+  display: flex;
+  justify-content: center;
+}
+.flex-mem-box {
+  background-color: #92869c;
+  border-color: black;
+  border-width: 5px;
+  border-style: solid;
+  margin: 10px;
+  padding: 10px;
+  color: black;
+}
+@media (max-width: 350px) {
+  #video {
+    width: 300;
+    height: 200;
+  }
+}
 ```

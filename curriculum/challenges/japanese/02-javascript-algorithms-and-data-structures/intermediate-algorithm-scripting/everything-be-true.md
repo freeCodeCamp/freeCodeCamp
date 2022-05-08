@@ -18,120 +18,123 @@ JavaScript では、`truthy` な値 (真値) とは、ブール値のコンテ�
 
 # --hints--
 
-`truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex")` は `true` を返す必要があります。
+`truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "isBot")` は `false` を返す必要があります。
 
 ```js
-assert.strictEqual(
-  truthCheck(
-    [
-      { user: 'Tinky-Winky', sex: 'male' },
-      { user: 'Dipsy', sex: 'male' },
-      { user: 'Laa-Laa', sex: 'female' },
-      { user: 'Po', sex: 'female' }
-    ],
-    'sex'
-  ),
-  true
-);
+assert.strictEqual(truthCheck(
+  [
+    { name: "Quincy", role: "Founder", isBot: false },
+    { name: "Naomi", role: "", isBot: false },
+    { name: "Camperbot", role: "Bot", isBot: true }
+  ],
+  "isBot"), false);
 ```
 
-`truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex")` は `false` を返す必要があります。
+`truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "name")` は `true` を返す必要があります。
 
 ```js
-assert.strictEqual(
-  truthCheck(
-    [
-      { user: 'Tinky-Winky', sex: 'male' },
-      { user: 'Dipsy' },
-      { user: 'Laa-Laa', sex: 'female' },
-      { user: 'Po', sex: 'female' }
-    ],
-    'sex'
-  ),
-  false
-);
+assert.strictEqual(truthCheck(
+  [
+    { name: "Quincy", role: "Founder", isBot: false },
+    { name: "Naomi", role: "", isBot: false },
+    { name: "Camperbot", role: "Bot", isBot: true }
+  ],
+  "name"), true);
 ```
 
-`truthCheck([{"user": "Tinky-Winky", "sex": "male", "age": 0}, {"user": "Dipsy", "sex": "male", "age": 3}, {"user": "Laa-Laa", "sex": "female", "age": 5}, {"user": "Po", "sex": "female", "age": 4}], "age")` は `false` を返す必要があります。
+`truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "role")` は `false` を返す必要があります。
 
 ```js
-assert.strictEqual(
-  truthCheck(
-    [
-      { user: 'Tinky-Winky', sex: 'male', age: 2 },
-      { user: 'Dipsy', sex: 'male', age: 0 },
-      { user: 'Laa-Laa', sex: 'female', age: 5 },
-      { user: 'Po', sex: 'female', age: 4 }
-    ],
-    'age'
-  ),
-  false
-);
+assert.strictEqual(truthCheck(
+  [
+    { name: "Quincy", role: "Founder", isBot: false },
+    { name: "Naomi", role: "", isBot: false },
+    { name: "Camperbot", role: "Bot", isBot: true }
+  ],
+  "role"), false);
 ```
 
-`truthCheck([{"name": "Pete", "onBoat": true}, {"name": "Repeat", "onBoat": true}, {"name": "FastForward", "onBoat": null}], "onBoat")` は `false` を返す必要があります。
+`truthCheck([{name: "Pikachu", number: 25, caught: 3}, {name: "Togepi", number: 175, caught: 1}], "number")` は `true` を返す必要があります。
 
 ```js
-assert.strictEqual(
-  truthCheck(
-    [
-      { name: 'Pete', onBoat: true },
-      { name: 'Repeat', onBoat: true },
-      { name: 'FastForward', onBoat: null }
-    ],
-    'onBoat'
-  ),
-  false
-);
+assert.strictEqual(truthCheck(
+  [
+    { name: "Pikachu", number: 25, caught: 3 },
+    { name: "Togepi", number: 175, caught: 1 },
+  ],
+  "number"), true);
 ```
 
-`truthCheck([{"name": "Pete", "onBoat": true}, {"name": "Repeat", "onBoat": true, "alias": "Repete"}, {"name": "FastForward", "onBoat": true}], "onBoat")` は `true` を返す必要があります。
+`truthCheck([{name: "Pikachu", number: 25, caught: 3}, {name: "Togepi", number: 175, caught: 1}, {name: "MissingNo", number: NaN, caught: 0}], "caught")` は `false` を返す必要があります。
 
 ```js
-assert.strictEqual(
-  truthCheck(
-    [
-      { name: 'Pete', onBoat: true },
-      { name: 'Repeat', onBoat: true, alias: 'Repete' },
-      { name: 'FastForward', onBoat: true }
-    ],
-    'onBoat'
-  ),
-  true
-);
+assert.strictEqual(truthCheck(
+  [
+    { name: "Pikachu", number: 25, caught: 3 },
+    { name: "Togepi", number: 175, caught: 1 },
+    { name: "MissingNo", number: NaN, caught: 0 },
+  ],
+  "caught"), false);
 ```
 
-`truthCheck([{"single": "yes"}], "single")` は `true` を返す必要があります。
+`truthCheck([{name: "Pikachu", number: 25, caught: 3}, {name: "Togepi", number: 175, caught: 1}, {name: "MissingNo", number: NaN, caught: 0}], "number")` は `false` を返す必要があります。
 
 ```js
-assert.strictEqual(truthCheck([{ single: 'yes' }], 'single'), true);
+assert.strictEqual(truthCheck(
+  [
+    { name: "Pikachu", number: 25, caught: 3 },
+    { name: "Togepi", number: 175, caught: 1 },
+    { name: "MissingNo", number: NaN, caught: 0 },
+  ],
+  "number"), false);
 ```
 
-`truthCheck([{"single": ""}, {"single": "double"}], "single")` は `false` を返す必要があります。
+`truthCheck([{name: "Quincy", username: "QuincyLarson"}, {name: "Naomi", username: "nhcarrigan"}, {name: "Camperbot"}], "username")` は `false` を返す必要があります。
 
 ```js
-assert.strictEqual(
-  truthCheck([{ single: '' }, { single: 'double' }], 'single'),
-  false
-);
+assert.strictEqual(truthCheck(
+  [
+    { name: "Quincy", username: "QuincyLarson" },
+    { name: "Naomi", username: "nhcarrigan" },
+    { name: "Camperbot" }
+  ],
+  "username"), false);
 ```
 
-`truthCheck([{"single": "double"}, {"single": undefined}], "single")` は `false` を返す必要があります。
+`truthCheck([{name: "freeCodeCamp", users: [{name: "Quincy"}, {name: "Naomi"}]}, {name: "Code Radio", users: [{name: "Camperbot"}]}, {name: "", users: []}], "users")` は `true` を返す必要があります。
 
 ```js
-assert.strictEqual(
-  truthCheck([{ single: 'double' }, { single: undefined }], 'single'),
-  false
-);
+assert.strictEqual(truthCheck(
+  [
+    { name: "freeCodeCamp", users: [{ name: "Quincy" }, { name: "Naomi" }] },
+    { name: "Code Radio", users: [{ name: "Camperbot" }] },
+    { name: "", users: [] },
+  ],
+  "users"), true);
 ```
 
-`truthCheck([{"single": "double"}, {"single": NaN}], "single")` は `false` を返す必要があります。
+`truthCheck([{id: 1, data: {url: "https://freecodecamp.org", name: "freeCodeCamp"}}, {id: 2, data: {url: "https://coderadio.freecodecamp.org/", name: "CodeRadio"}}, {id: null, data: {}}], "data")` は `true` を返す必要があります。
 
 ```js
-assert.strictEqual(
-  truthCheck([{ single: 'double' }, { single: NaN }], 'single'),
-  false
-);
+assert.strictEqual(truthCheck(
+  [
+    { id: 1, data: { url: "https://www.freecodecamp.org", name: "freeCodeCamp" } },
+    { id: 2, data: { url: "https://coderadio.freecodecamp.org/", name: "CodeRadio" } },
+    { id: null, data: {} },
+  ],
+  "data"), true);
+```
+
+`truthCheck([{id: 1, data: {url: "https://freecodecamp.org", name: "freeCodeCamp"}}, {id: 2, data: {url: "https://coderadio.freecodecamp.org/", name: "CodeRadio"}}, {id: null, data: {}}], "id")` は `false` を返す必要があります。
+
+```js
+assert.strictEqual(truthCheck(
+  [
+    { id: 1, data: { url: "https://www.freecodecamp.org", name: "freeCodeCamp" } },
+    { id: 2, data: { url: "https://coderadio.freecodecamp.org/", name: "CodeRadio" } },
+    { id: null, data: {} },
+  ],
+  "id"), false);
 ```
 
 # --seed--
@@ -143,7 +146,7 @@ function truthCheck(collection, pre) {
   return pre;
 }
 
-truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
+truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "isBot");
 ```
 
 # --solutions--

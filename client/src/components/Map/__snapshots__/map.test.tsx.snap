@@ -17,12 +17,8 @@ exports[`<Map /> snapshot: Map 1`] = `
           <div
             style="display: flex; justify-content: space-between; align-items: center;"
           >
-            <span
-              class="sr-only"
-            >
-              icons.responsive-design
-            </span>
             <svg
+              aria-hidden="true"
               class="map-icon"
               viewBox="0 0 640 512"
               xmlns="http://www.w3.org/2000/svg"
@@ -61,12 +57,8 @@ exports[`<Map /> snapshot: Map 1`] = `
           <div
             style="display: flex; justify-content: space-between; align-items: center;"
           >
-            <span
-              class="sr-only"
-            >
-              icons.responsive-design
-            </span>
             <svg
+              aria-hidden="true"
               class="map-icon"
               viewBox="0 0 640 512"
               xmlns="http://www.w3.org/2000/svg"
@@ -105,12 +97,8 @@ exports[`<Map /> snapshot: Map 1`] = `
           <div
             style="display: flex; justify-content: space-between; align-items: center;"
           >
-            <span
-              class="sr-only"
-            >
-              icons.responsive-design
-            </span>
             <svg
+              aria-hidden="true"
               class="map-icon"
               viewBox="0 0 640 512"
               xmlns="http://www.w3.org/2000/svg"
@@ -149,12 +137,8 @@ exports[`<Map /> snapshot: Map 1`] = `
           <div
             style="display: flex; justify-content: space-between; align-items: center;"
           >
-            <span
-              class="sr-only"
-            >
-              icons.responsive-design
-            </span>
             <svg
+              aria-hidden="true"
               class="map-icon"
               viewBox="0 0 640 512"
               xmlns="http://www.w3.org/2000/svg"
@@ -193,12 +177,8 @@ exports[`<Map /> snapshot: Map 1`] = `
           <div
             style="display: flex; justify-content: space-between; align-items: center;"
           >
-            <span
-              class="sr-only"
-            >
-              icons.responsive-design
-            </span>
             <svg
+              aria-hidden="true"
               class="map-icon"
               viewBox="0 0 640 512"
               xmlns="http://www.w3.org/2000/svg"
@@ -237,12 +217,8 @@ exports[`<Map /> snapshot: Map 1`] = `
           <div
             style="display: flex; justify-content: space-between; align-items: center;"
           >
-            <span
-              class="sr-only"
-            >
-              icons.responsive-design
-            </span>
             <svg
+              aria-hidden="true"
               class="map-icon"
               viewBox="0 0 640 512"
               xmlns="http://www.w3.org/2000/svg"
@@ -281,12 +257,8 @@ exports[`<Map /> snapshot: Map 1`] = `
           <div
             style="display: flex; justify-content: space-between; align-items: center;"
           >
-            <span
-              class="sr-only"
-            >
-              icons.responsive-design
-            </span>
             <svg
+              aria-hidden="true"
               class="map-icon"
               viewBox="0 0 640 512"
               xmlns="http://www.w3.org/2000/svg"
@@ -325,12 +297,8 @@ exports[`<Map /> snapshot: Map 1`] = `
           <div
             style="display: flex; justify-content: space-between; align-items: center;"
           >
-            <span
-              class="sr-only"
-            >
-              icons.responsive-design
-            </span>
             <svg
+              aria-hidden="true"
               class="map-icon"
               viewBox="0 0 640 512"
               xmlns="http://www.w3.org/2000/svg"
@@ -369,12 +337,8 @@ exports[`<Map /> snapshot: Map 1`] = `
           <div
             style="display: flex; justify-content: space-between; align-items: center;"
           >
-            <span
-              class="sr-only"
-            >
-              icons.responsive-design
-            </span>
             <svg
+              aria-hidden="true"
               class="map-icon"
               viewBox="0 0 640 512"
               xmlns="http://www.w3.org/2000/svg"
@@ -413,12 +377,8 @@ exports[`<Map /> snapshot: Map 1`] = `
           <div
             style="display: flex; justify-content: space-between; align-items: center;"
           >
-            <span
-              class="sr-only"
-            >
-              icons.responsive-design
-            </span>
             <svg
+              aria-hidden="true"
               class="map-icon"
               viewBox="0 0 640 512"
               xmlns="http://www.w3.org/2000/svg"
@@ -457,12 +417,8 @@ exports[`<Map /> snapshot: Map 1`] = `
           <div
             style="display: flex; justify-content: space-between; align-items: center;"
           >
-            <span
-              class="sr-only"
-            >
-              icons.responsive-design
-            </span>
             <svg
+              aria-hidden="true"
               class="map-icon"
               viewBox="0 0 640 512"
               xmlns="http://www.w3.org/2000/svg"

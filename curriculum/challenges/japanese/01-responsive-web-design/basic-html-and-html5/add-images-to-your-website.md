@@ -27,7 +27,7 @@ dashedName: add-images-to-your-website
 上の例の `img` に `alt` 属性を追加してみましょう:
 
 ```html
-<img src="https://www.freecatphotoapp.com/your-image.jpg" alt="A business cat wearing a necktie.">
+<img src="https://www.freecatphotoapp.com/your-image.jpg" alt="freeCodeCamp logo">
 ```
 
 # --instructions--
