@@ -221,7 +221,8 @@ const addImportedFiles = async function (fileP) {
     const importedFiles = [];
     if (link) {
       importedFiles.push('styles.css');
-      link.remove();
+      link.removeAttribute('href');
+      link.dataset.href = 'styles.css';
     }
     if (script) {
       importedFiles.push('script.js');
