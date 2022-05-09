@@ -36,6 +36,29 @@ const superBlockToOrder = {
   'relational-database': 12
 };
 
+/**
+ * This order is used for i18n instances where a new certification is released
+ * from beta but is not audited, so cannot be reordered (due to the way we
+ * split the map)
+ */
+const superBlockNonAuditedOrder = {
+  'responsive-web-design': 0,
+  'javascript-algorithms-and-data-structures': 1,
+  'front-end-development-libraries': 2,
+  'data-visualization': 3,
+  'back-end-development-and-apis': 4,
+  'quality-assurance': 5,
+  'scientific-computing-with-python': 6,
+  'data-analysis-with-python': 7,
+  'information-security': 8,
+  'machine-learning-with-python': 9,
+  'coding-interview-prep': 10,
+  '2022/responsive-web-design': 11,
+  'relational-database': 12
+};
+
+const auditedLanguages = ['english'];
+
 const superBlockToNewOrder = {
   ...superBlockToOrder
 };
@@ -44,7 +67,13 @@ function getSuperOrder(
   superblock,
   { showNewCurriculum } = { showNewCurriculum: false }
 ) {
-  const orderMap = showNewCurriculum ? superBlockToNewOrder : superBlockToOrder;
+  let orderMap = superBlockToOrder;
+  if (showNewCurriculum) {
+    orderMap = superBlockToNewOrder;
+  }
+  if (!auditedLanguages.includes(process.env.CURRICULUM_LOCALE)) {
+    orderMap = superBlockNonAuditedOrder;
+  }
   if (typeof superblock !== 'string')
     throw Error('superblock must be a string');
   const order = orderMap[superblock];
