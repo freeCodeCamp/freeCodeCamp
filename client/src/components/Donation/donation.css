@@ -21,14 +21,14 @@
 }
 .donation-elements div:nth-child(1) {
   flex: 1;
-  border-radius: 5px 5px 0px 0px;
+  border-radius: 5px 5px 0 0;
   border: none;
 }
 
 .donation-elements div:nth-child(2) {
   flex: 1;
   border-color: var(--gray-45);
-  border-radius: 0px 0px 5px 5px;
+  border-radius: 0 0 5px 5px;
   border-right: none;
   border-left: none;
   border-bottom: none;
@@ -43,12 +43,12 @@
   }
   .donation-elements div:nth-child(1) {
     flex: 4 4 80%;
-    border-radius: 5px 0px 0px 5px;
+    border-radius: 5px 0 0 5px;
     border: none;
   }
   .donation-elements div:nth-child(2) {
     flex: 1 1 100px;
-    border-radius: 0px 5px 5px 0px;
+    border-radius: 0 5px 5px 0;
     border: 1px solid var(--gray-45);
     border-right: none;
     border-top: none;
@@ -96,7 +96,7 @@
 }
 
 .donate-page-wrapper .paypal-buttons-container {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .donate-input-element {
@@ -143,7 +143,7 @@
   text-transform: capitalize;
   text-decoration: none;
   border: 3px solid var(--yellow-light);
-  border-radius: 0px;
+  border-radius: 0;
   color: var(--gray-85);
   margin: 0 1px;
 }
@@ -161,7 +161,7 @@
   background-color: var(--yellow-light);
   border: 3px solid var(--yellow-light);
   text-decoration: none;
-  border-radius: 0px;
+  border-radius: 0;
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 
@@ -178,7 +178,7 @@
   margin: 0 2px;
   color: var(--gray-85);
   border: 3px solid var(--yellow-light);
-  border-radius: 0px;
+  border-radius: 0;
   background-color: transparent;
 }
 
@@ -210,7 +210,7 @@
   color: var(--gray-85);
   background-color: var(--yellow-light);
   border: 3px solid var(--yellow-light);
-  border-radius: 0px;
+  border-radius: 0;
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 
@@ -315,7 +315,6 @@ li.disabled > a {
   align-items: center;
   justify-content: flex-start;
   margin-top: 15px;
-  height: auto;
 }
 
 .form-payment-methods {
@@ -411,7 +410,6 @@ li.disabled > a {
 }
 
 button.confirm-donation-btn {
-  display: flex;
   flex-direction: row;
   justify-content: center;
   align-content: center;
@@ -487,7 +485,7 @@ a.patreon-button:hover {
 
 .form-status {
   min-height: 35px;
-  padding: 5px 0px;
+  padding: 5px 0;
 }
 
 .form-status p {
@@ -495,7 +493,7 @@ a.patreon-button:hover {
   font-size: 16px;
   color: #eb1c26;
   text-align: left;
-  margin: 0px;
+  margin: 0;
   font-weight: bold;
 }
 
