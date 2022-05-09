@@ -44,9 +44,9 @@ jobs:
         run: |
           echo npm version $(npm -v)
           npm ci
+          npm run create:config
           npm i --prefix=curriculum-server
           npm i --prefix=web
-          npm run create:config
           npm run build:curriculum
           npm run lint
 
