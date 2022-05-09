@@ -365,13 +365,24 @@ button.map-title {
   background-color: var(--tertiary-background);
 }
 
+.block-grid .block-header[aria-expanded='true'] {
+  border-bottom: 3px solid var(--secondary-background);
+}
+
+.block-header-button-text {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .block-grid .block-header .block-link {
   flex-direction: row;
 }
 
 .block-ui .block-grid .block-description {
   border: none;
-  padding: 0 10px 10px;
+  padding: 25px;
 }
 
 .block-grid .map-title > svg {
@@ -413,7 +424,6 @@ button.map-title {
 .tags-wrapper {
   display: flex;
   width: 100%;
-  padding: 10px 10px 0;
 }
 
 .grid-project-block {
