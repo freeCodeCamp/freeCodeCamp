@@ -128,6 +128,13 @@ export const auditedCerts = {
   ]
 };
 
+/**
+ * This contains the list of languages which have a beta->stable release
+ * that has been 100% translated. This will only be used during the window
+ * where a beta goes to stable but the translation isn't complete yet.
+ */
+export const languagesWithAuditedBetaReleases = ['english'];
+
 // ---------------------------------------------------------------------------
 
 // Each client language needs an entry in the rest of the variables below

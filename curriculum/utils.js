@@ -1,8 +1,11 @@
 const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
-const { curriculum: curriculumLangs } =
-  require('../config/i18n/all-langs').availableLangs;
+const {
+  availableLangs,
+  languagesWithAuditedBetaReleases
+} = require('../config/i18n/all-langs');
+const curriculumLangs = availableLangs.curriculum;
 
 exports.testedLang = function testedLang() {
   if (process.env.CURRICULUM_LOCALE) {
@@ -57,8 +60,6 @@ const superBlockNonAuditedOrder = {
   'relational-database': 12
 };
 
-const auditedLanguages = ['english'];
-
 const superBlockToNewOrder = {
   ...superBlockToOrder
 };
@@ -71,7 +72,9 @@ function getSuperOrder(
   if (showNewCurriculum) {
     orderMap = superBlockToNewOrder;
   }
-  if (!auditedLanguages.includes(process.env.CURRICULUM_LOCALE)) {
+  if (
+    !languagesWithAuditedBetaReleases.includes(process.env.CURRICULUM_LOCALE)
+  ) {
     orderMap = superBlockNonAuditedOrder;
   }
   if (typeof superblock !== 'string')
