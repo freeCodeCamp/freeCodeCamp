@@ -15,14 +15,10 @@ import React, {
   useRef
 } from 'react';
 import ReactDOM from 'react-dom';
-import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import store from 'store';
 
-import Fail from '../../../assets/icons/fail';
-import LightBulb from '../../../assets/icons/lightbulb';
-// import GreenPass from '../../../assets/icons/green-pass';
 import { Loader } from '../../../components/helpers';
 import { Themes } from '../../../components/settings/theme';
 import {
@@ -58,6 +54,7 @@ import {
   isProjectPreviewModalOpenSelector,
   openModal
 } from '../redux';
+import LowerJaw from './lower-jaw';
 
 import './editor.css';
 
@@ -224,7 +221,6 @@ const initialData: EditorProperties = {
 
 const Editor = (props: EditorProps): JSX.Element => {
   const { editorRef, initTests } = props;
-  const { t } = useTranslation();
   // These refs are used during initialisation of the editor as well as by
   // callbacks.  Since they have to be initialised before editorWillMount and
   // editorDidMount are called, we cannot use useState.  Reason being that will
@@ -616,75 +612,37 @@ const Editor = (props: EditorProps): JSX.Element => {
     return domNode;
   }
 
-  function setTestFeedbackHeight(height?: number): void {
-    const testStatus = document.getElementById('test-status');
+  function setLowerJawHeight(height?: number): void {
+    const LowerJawHeight = document.getElementById('editor-lower-jaw');
     const newHeight = height === undefined ? 'auto' : `${height}px`;
-    if (testStatus) {
-      testStatus.style.height = newHeight;
+    if (LowerJawHeight) {
+      LowerJawHeight.style.height = newHeight;
     }
   }
 
   function clearTestFeedback() {
-    const testStatus = document.getElementById('test-status');
+    const testStatus = document.getElementById('test-feedback');
     if (testStatus && testStatus.innerHTML) {
       // Explicitly set the height to what it currently is so that we
       // don't get a big content shift every time the code is checked.
-      setTestFeedbackHeight(testStatus.offsetHeight);
-      testStatus.innerHTML = '';
-      ReactDOM.unmountComponentAtNode(testStatus);
+      // ReactDOM.unmountComponentAtNode(testStatus);
+      // setLowerJawHeight(testStatus.offsetHeight);
     }
   }
 
   function createOutputNode(editor: editor.IStandaloneCodeEditor) {
     if (dataRef.current.outputNode) return dataRef.current.outputNode;
     const outputNode = document.createElement('div');
-    const statusNode = document.createElement('div');
-    const editorActionRow = document.createElement('div');
-    editorActionRow.classList.add('action-row-container');
     outputNode.classList.add('editor-lower-jaw');
-    outputNode.appendChild(editorActionRow);
-    statusNode.setAttribute('id', 'test-status');
-    statusNode.setAttribute('aria-live', 'assertive');
-    const button = document.createElement('button');
-    button.setAttribute('id', 'test-button');
-    button.classList.add('btn-block');
-    button.innerHTML = 'Check Your Code (Ctrl + Enter)';
-    const buttonsContainer = document.createElement('div');
-    const outputJsx = (
-      <>
-        {/*attemptRef.current.attempts >= props.tests.length*/}
-        {true && (
-          <button
-            className='btn-block'
-            id='help-button'
-            onClick={props.openHelpModal}
-          >
-            {t('learn.editor-tabs.ask-help')}
-          </button>
-        )}
-      </>
+    outputNode.setAttribute('id', 'editor-lower-jaw');
+    ReactDOM.render(
+      <LowerJaw
+        openHelpModal={props.openHelpModal}
+        executeChallenge={props.executeChallenge}
+        submitChallenge={props.submitChallenge}
+      />,
+      outputNode
     );
-    ReactDOM.render(outputJsx, buttonsContainer);
-    buttonsContainer.setAttribute('id', 'action-buttons-container');
-    const submitButton = document.createElement('button');
-    submitButton.setAttribute('id', 'submit-button');
-    submitButton.setAttribute('aria-hidden', 'true');
-    submitButton.innerHTML = 'Submit your code (Ctrl + Enter)';
-    submitButton.classList.add('btn-block');
-    buttonsContainer.appendChild(submitButton);
-    editorActionRow.appendChild(button);
-    editorActionRow.appendChild(buttonsContainer);
-    editorActionRow.appendChild(statusNode);
-    // check if the mobile is being used
-
-    buttonsContainer.addEventListener('resize', function () {
-      console.log('resize');
-    });
-    button.onclick = () => {
-      clearTestFeedback();
-      const { executeChallenge } = props;
-      executeChallenge();
-    };
 
     outputNode.style.left = `${editor.getLayoutInfo().contentLeft}px`;
     outputNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
@@ -707,7 +665,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     // Must manually set test feedback height back to zero since
     // clearTestFeedback does not.
-    setTestFeedbackHeight(0);
+    setLowerJawHeight(0);
     clearTestFeedback();
 
     // Resetting margin decorations
@@ -1087,115 +1045,36 @@ const Editor = (props: EditorProps): JSX.Element => {
     const { model, insideEditDecId } = dataRef.current;
     const editableRegion = getEditableRegionFromRedux();
     const isEditorInFocus = document.activeElement?.tagName === 'TEXTAREA';
-    if (editableRegion.length === 2) {
-      const testStatus = document.getElementById('test-status');
-      const buttonsContainer = document.getElementById(
-        'action-buttons-container'
+    const lowerJawElement = document.getElementById('editor-lower-jaw');
+    const isChallengeComplete = challengeIsComplete();
+    if (editableRegion.length === 2 && lowerJawElement) {
+      const lowerJawHeight = lowerJawElement.offsetHeight;
+      ReactDOM.render(
+        <LowerJaw
+          openHelpModal={props.openHelpModal}
+          executeChallenge={props.executeChallenge}
+          hint={output[1]}
+          testsLength={props.tests.length}
+          attemptsNumber={attemptRef.current.attempts}
+          isEditorInFocus={isEditorInFocus}
+          challengeIsCompleted={isChallengeComplete}
+          challengeHasErrors={challengeHasErrors()}
+          submitChallenge={props.submitChallenge}
+          onAttempt={() => attemptRef.current.attempts++}
+        />,
+        lowerJawElement
       );
-
-      if (challengeIsComplete()) {
-        const testButton = document.getElementById('test-button');
-        // In case test button has focus, only visually hide it for now so we
-        // don't lose the focus before we set it on submit button.
-        testButton?.classList.add('sr-only');
-        const submitButton = document.getElementById('submit-button');
-        if (submitButton) {
-          submitButton.removeAttribute('aria-hidden');
-          submitButton.onclick = () => {
-            clearTestFeedback();
-            const { submitChallenge } = props;
-            submitChallenge();
-          };
-          // Delay setting focus on submit button to ensure aria-live status
-          // message is announced first by screen reader.
-          setTimeout(() => {
-            // Must set focus on submit button before removing test button from
-            // accessibility API since test button might have focus.
-            if (!isEditorInFocus) {
-              submitButton.focus();
-            }
-            testButton?.setAttribute('aria-hidden', 'true');
-          }, 500);
+      setLowerJawHeight(lowerJawHeight);
+    }
+    const range = model?.getDecorationRange(insideEditDecId);
+    if (range && isChallengeComplete) {
+      updateEditableRegion(
+        range,
+        { model },
+        {
+          linesDecorationsClassName: 'myEditableLineDecoration tests-passed'
         }
-
-        const range = model?.getDecorationRange(insideEditDecId);
-        if (range) {
-          updateEditableRegion(
-            range,
-            { model },
-            {
-              linesDecorationsClassName: 'myEditableLineDecoration tests-passed'
-            }
-          );
-        }
-
-        const submitKeyboardInstructions = isEditorInFocus
-          ? '<span class="sr-only">Use Ctrl + Enter to submit.</span>'
-          : '';
-
-        if (testStatus) {
-          testStatus.innerHTML = `<p class="status"><span aria-hidden="true">&#9989;</span> Congratulations, your code passes. Submit your code to complete this step and move on to the next one. ${submitKeyboardInstructions}</p>`;
-          setTestFeedbackHeight();
-        }
-      } else if (challengeHasErrors() && testStatus && buttonsContainer) {
-        attemptRef.current.attempts++;
-        const wordsArray = [
-          'Try again.',
-          'Keep trying.',
-          "You're getting there.",
-          'Hang in there.',
-          "Don't give up."
-        ];
-        setTestFeedbackHeight();
-        console.log(output[1]);
-        // testStatus.innerHTML = ``;
-
-        const hintDiscription = `<h2 class="hint">Hint</h2> ${output[1]}`;
-
-        const TestStatusInnerHtml = (
-          <>
-            <div className='test-status'>
-              <div className='status-icon' aria-hidden='true'>
-                <span>
-                  <Fail />
-                </span>
-              </div>
-              <div className='test-status-description'>
-                <h2>Test</h2>
-                <p>
-                  {`Sorry, your code does not pass.
-                  ${wordsArray[Math.floor(Math.random() * wordsArray.length)]}`}
-                </p>
-              </div>
-            </div>
-            <div className='hint-status'>
-              <div className='hint-icon' aria-hidden='true'>
-                <span>
-                  <LightBulb />
-                </span>
-              </div>
-              <div
-                className='hint-description'
-                dangerouslySetInnerHTML={{ __html: hintDiscription }}
-              />
-            </div>
-          </>
-        );
-        testStatus.style.height = '';
-
-        ReactDOM.render(TestStatusInnerHtml, testStatus);
-
-        // const outputJsx = (
-        //   <>
-        //     {attemptRef.current.attempts >= props.tests.length && (
-        //       <button className='btn-block' onClick={props.openHelpModal}>
-        //         {t('learn.editor-tabs.ask-help')}
-        //       </button>
-        //     )}
-        //   </>
-        // );
-        // ReactDOM.render(outputJsx, buttonsContainer);
-      }
+      );
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.tests]);

@@ -29,7 +29,7 @@ textarea.inputarea {
 }
 
 .action-row button {
-  padding: 4px 16px;
+  padding: 6px 12px;
 }
 
 .active-tab {
@@ -89,32 +89,6 @@ textarea.inputarea {
   margin: 0px;
 }
 
-#test-status {
-  padding-bottom: 5px;
-  padding-top: 5px;
-}
-
-#test-status .status {
-  font-family: revert;
-}
-
-#test-status p {
-  margin: 0.5rem 0 0;
-}
-
-#test-status h2 {
-  font-size: 1rem;
-  line-height: 1.5;
-  padding-right: 0.5rem;
-  /* using float instead of inline display so screen readers recognize h2 as a block element */
-  float: left;
-  margin: 0.5em 0 0 0;
-}
-
-#test-status h2:after {
-  content: ':';
-}
-
 .myEditableLineDecoration {
   background-color: var(--gray-45);
   width: 15px !important;
@@ -136,26 +110,43 @@ textarea.inputarea {
   z-index: 1;
 }
 
-#test-status svg {
+.test-feedback {
+  display: flex;
+  padding: 0px;
+  flex-direction: column;
+}
+
+.test-feedback p {
+  margin: 0.5rem 0 0;
+}
+
+.test-feedback h2 {
+  font-size: 1rem;
+  line-height: 1.5;
+  padding-right: 0.5rem;
+  /* using float instead of inline display so screen readers recognize h2 as a block element */
+  float: left;
+  margin: 0.5em 0 0;
+}
+
+.test-feedback h2:after {
+  content: ':';
+}
+
+.test-feedback svg {
   height: 1.5rem;
   width: auto;
   margin-right: 0.5rem;
   margin-top: 0.6rem;
 }
 
-#test-status {
-  display: flex;
-  flex-direction: column;
-  padding: 0px;
-}
-
-#test-status > div {
+.test-feedback > div {
   margin-top: 1rem;
   display: flex;
   flex-direction: row;
 }
 
-#test-status p {
+.test-feedback p {
   font-family: 'Lato', sans-serif;
 }
 
