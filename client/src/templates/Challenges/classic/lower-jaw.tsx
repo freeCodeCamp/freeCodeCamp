@@ -37,7 +37,7 @@ const LowerJaw = ({
         ? '<span class="sr-only">Use Ctrl + Enter to submit.</span>'
         : '';
       return (
-        <div className='test-status' aria-live='assertive'>
+        <div className='test-status'>
           <div className='status-icon' aria-hidden='true'>
             <span>
               <GreenPass />
@@ -65,7 +65,7 @@ const LowerJaw = ({
 
       return (
         <>
-          <div className='test-status' aria-live='assertive'>
+          <div className='test-status'>
             <div className='status-icon' aria-hidden='true'>
               <span>
                 <Fail />
@@ -93,7 +93,7 @@ const LowerJaw = ({
         </>
       );
     } else {
-      <div className='test-status' aria-live='assertive' />;
+      <div className='test-status' />;
     }
   };
 
@@ -144,7 +144,12 @@ const LowerJaw = ({
   return (
     <div className='action-row-container'>
       {renderButtons()}
-      <div className='test-feedback' id='test-feedback'>
+      <div
+        className='test-feedback'
+        id='test-feedback'
+        aria-atomic='true'
+        aria-live='assertive'
+      >
         {renderTestFeedbackContainer()}
       </div>
     </div>
