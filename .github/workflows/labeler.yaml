@@ -2,8 +2,16 @@ name: 'Pull Request Labeler'
 on:
   - pull_request_target
 
+permissions:
+  contents: read
+
 jobs:
   triage:
+    permissions:
+      # for actions/labeler to determine modified files
+      contents: read
+      # for actions/labeler to add labels to PRs
+      pull-requests: write
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/labeler@v4

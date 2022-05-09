@@ -38,15 +38,14 @@
   margin: 0;
   align-items: center;
   overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--quaternary-background) var(--secondary-background);
 }
 
 .video-quiz-options > label::-webkit-scrollbar {
   height: 15px;
 }
-.video-quiz-options > label {
-  scrollbar-width: thin;
-  scrollbar-color: var(--quaternary-background) var(--secondary-background);
-}
+
 .video-quiz-options > label::-webkit-scrollbar-track {
   background: var(--secondary-background);
 }
@@ -55,7 +54,6 @@
 }
 
 .video-quiz-option-label {
-  display: block;
   padding: 20px;
   cursor: pointer;
   display: flex;
