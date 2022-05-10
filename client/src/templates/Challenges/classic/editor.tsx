@@ -79,11 +79,8 @@ interface EditorProps {
   initTests: (tests: Test[]) => void;
   initialTests: Test[];
   isResetting: boolean;
-<<<<<<< HEAD
   isSignedIn: boolean;
-=======
   openHelpModal: () => void;
->>>>>>> 583af6c553 (feat: move button to test output area)
   output: string[];
   resizeProps: ResizeProps;
   saveChallenge: () => void;
