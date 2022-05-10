@@ -11,7 +11,7 @@ import { executeGA } from '../../../redux';
 import { SuperBlocks } from '../../../../../config/certification-settings';
 import { ExecuteGaArg } from '../../../pages/donate';
 import { ChallengeWithCompletedNode } from '../../../redux/prop-types';
-import { isNewRespCert } from '../../../utils/is-a-cert';
+import { isNewJsCert, isNewRespCert } from '../../../utils/is-a-cert';
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators({ executeGA }, dispatch);
@@ -47,7 +47,7 @@ function Challenges({
       <GreenNotCompleted style={mapIconStyle} />
     );
 
-  const isGridMap = isNewRespCert(superBlock);
+  const isGridMap = isNewRespCert(superBlock) || isNewJsCert(superBlock);
 
   return isGridMap ? (
     <ul className={`map-challenges-ul map-challenges-grid `}>

@@ -17,7 +17,7 @@ import { completedChallengesSelector, executeGA } from '../../../redux';
 import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
 import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
-import { isNewRespCert } from '../../../utils/is-a-cert';
+import { isNewJsCert, isNewRespCert } from '../../../utils/is-a-cert';
 import Challenges from './challenges';
 import '../intro.css';
 
@@ -105,6 +105,8 @@ export class Block extends Component<BlockProps> {
     } = this.props;
 
     const isNewResponsiveWebDesign = isNewRespCert(superBlock);
+    const isNewJsAlgos = isNewJsCert(superBlock);
+    console.table({ isNewJsAlgos });
 
     let completedCount = 0;
     const challengesWithCompleted = challenges.map(({ challenge }) => {
@@ -120,7 +122,8 @@ export class Block extends Component<BlockProps> {
 
     const isProjectBlock = challenges.some(({ challenge }) => {
       const isJsProject =
-        challenge.order === 10 && challenge.challengeType === 5;
+        [3, 6, 10, 14, 17].includes(challenge.order) &&
+        challenge.challengeType === 5;
 
       const isOtherProject =
         challenge.challengeType === 3 ||
@@ -335,14 +338,19 @@ export class Block extends Component<BlockProps> {
 
     const blockrenderer = () => {
       if (isProjectBlock)
-        return isNewResponsiveWebDesign ? GridProjectBlock : ProjectBlock;
-      return isNewResponsiveWebDesign ? GridBlock : Block;
+        return isNewResponsiveWebDesign || isNewJsAlgos
+          ? GridProjectBlock
+          : ProjectBlock;
+      return isNewResponsiveWebDesign || isNewJsAlgos ? GridBlock : Block;
     };
 
     return (
       <>
         {blockrenderer()}
-        {isNewResponsiveWebDesign && !isProjectBlock ? null : <Spacer />}
+        {(isNewResponsiveWebDesign || isNewJsAlgos) &&
+        !isProjectBlock ? null : (
+          <Spacer />
+        )}
       </>
     );
   }
