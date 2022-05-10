@@ -35,7 +35,7 @@ const el = document.getElementById('welcome-section')
 assert(!!el);
 ```
 
-Your `#welcom-section` element should contain an `h1` element.
+Your `#welcome-section` element should contain an `h1` element.
 
 ```js
 assert.isAbove(
