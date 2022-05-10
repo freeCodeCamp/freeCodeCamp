@@ -32,63 +32,63 @@ Fulfill the user stories and pass all the tests below to complete this project. 
 
 # --hints--
 
-You should have a `header` element with an `id` of `header`
+You should have a `header` element with an `id` of `header`.
 
 ```js
 const el = document.getElementById('header')
 assert(!!el && el.tagName === 'HEADER')
 ```
 
-You should have an `img` element with an `id` of `header-img`
+You should have an `img` element with an `id` of `header-img`.
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && el.tagName === 'IMG')
 ```
 
-Your `#header-img` should be a descendant of the `#header`
+Your `#header-img` should be a descendant of the `#header`.
 
 ```js
 const els = document.querySelectorAll('#header #header-img')
 assert(els.length > 0)
 ```
 
-Your `#header-img` should have a `src` attribute
+Your `#header-img` should have a `src` attribute.
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && !!el.src)
 ```
 
-Your `#header-img`’s `src` value should be a valid URL (starts with `http`)
+Your `#header-img`’s `src` value should be a valid URL (starts with `http`).
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && /^http/.test(el.src))
 ```
 
-You should have a `nav` element with an `id` of `nav-bar`
+You should have a `nav` element with an `id` of `nav-bar`.
 
 ```js
 const el = document.getElementById('nav-bar')
 assert(!!el && el.tagName === 'NAV')
 ```
 
-Your `#nav-bar` should be a descendant of the `#header`
+Your `#nav-bar` should be a descendant of the `#header`.
 
 ```js
 const els = document.querySelectorAll('#header #nav-bar')
 assert(els.length > 0)
 ```
 
-You should have at least 3 `.nav-link` elements within the `#nav-bar`
+You should have at least 3 `.nav-link` elements within the `#nav-bar`.
 
 ```js
 const els = document.querySelectorAll('#nav-bar .nav-link')
 assert(els.length >= 3)
 ```
 
-Each `.nav-link` element should have an `href` attribute
+Each `.nav-link` element should have an `href` attribute.
 
 ```js
 const els = document.querySelectorAll('.nav-link')
@@ -98,7 +98,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-Each `.nav-link` element should link to a corresponding element on the landing page (has an `href` with a value of another element's id. e.g. `#footer`)
+Each `.nav-link` element should link to a corresponding element on the landing page (has an `href` with a value of another element's id. e.g. `#footer`).
 
 ```js
 const els = document.querySelectorAll('.nav-link')
@@ -109,91 +109,91 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-You should have a `video` or `iframe` element with an `id` of `video`
+You should have a `video` or `iframe` element with an `id` of `video`.
 
 ```js
 const el = document.getElementById('video')
 assert(!!el && (el.tagName === 'VIDEO' || el.tagName === 'IFRAME'))
 ```
 
-Your `#video` should have a `src` attribute
+Your `#video` should have a `src` attribute.
 
 ```js
 const el = document.getElementById('video')
 assert(!!el && !!el.src)
 ```
 
-You should have a `form` element with an `id` of `form`
+You should have a `form` element with an `id` of `form`.
 
 ```js
 const el = document.getElementById('form')
 assert(!!el && el.tagName === 'FORM')
 ```
 
-You should have an `input` element with an `id` of `email`
+You should have an `input` element with an `id` of `email`.
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Your `#email` should be a descendant of the `#form`
+Your `#email` should be a descendant of the `#form`.
 
 ```js
 const els = document.querySelectorAll('#form #email')
 assert(els.length > 0)
 ```
 
-Your `#email` should have the `placeholder` attribute with placeholder text
+Your `#email` should have the `placeholder` attribute with placeholder text.
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-Your `#email` should use HTML5 validation by setting its `type` to `email`
+Your `#email` should use HTML5 validation by setting its `type` to `email`.
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.type === 'email')
 ```
 
-You should have an `input` element with an `id` of `submit`
+You should have an `input` element with an `id` of `submit`.
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Your `#submit` should be a descendant of the `#form`
+Your `#submit` should be a descendant of the `#form`.
 
 ```js
 const els = document.querySelectorAll('#form #submit')
 assert(els.length > 0)
 ```
 
-Your `#submit` should have a `type` of `submit`
+Your `#submit` should have a `type` of `submit`.
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && el.type === 'submit')
 ```
 
-Your `#form` should have an `action` attribute of `https://www.freecodecamp.com/email-submit`
+Your `#form` should have an `action` attribute of `https://www.freecodecamp.com/email-submit`.
 
 ```js
 const el = document.getElementById('form')
 assert(!!el && el.action === 'https://www.freecodecamp.com/email-submit')
 ```
 
-Your `#email` should have a `name` attribute of `email`
+Your `#email` should have a `name` attribute of `email`.
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.name === 'email')
 ```
 
-Your `#nav-bar` should always be at the top of the viewport
+Your `#nav-bar` should always be at the top of the viewport.
 
 ```js
 const el = document.getElementById('nav-bar')
@@ -202,13 +202,13 @@ const top2 = el?.offsetTop
 assert(!!el && top1 >= -15 && top1 <= 15 && top2 >= -15 && top2 <= 15)
 ```
 
-Your Product Landing Page should use at least one media query
+Your Product Landing Page should use at least one media query.
 
 ```js
 assert.isAtLeast(new __helpers.CSSHelp(document).getCSSRules('media')?.length, 1);
 ```
 
-Your Product Landing Page should use CSS Flexbox at least once
+Your Product Landing Page should use CSS Flexbox at least once.
 
 ```js
 const stylesheet = new __helpers.CSSHelp(document).getStyleSheet()
