@@ -1,55 +1,424 @@
 ---
 id: 587d78af367417b2b2512b04
-title: プロダクトのランディングページを作成する
-challengeType: 3
+title: Build a Product Landing Page
+challengeType: 14
 forumTopicId: 301144
 dashedName: build-a-product-landing-page
 ---
 
 # --description--
 
-**目標:** こちら <https://codepen.io/freeCodeCamp/full/RKRbwL> と同様の機能を持つ [CodePen.io](https://codepen.io) アプリを構築します。
+**Objective:** Build an app that is functionally similar to <a href="https://product-landing-page.freecodecamp.rocks" target="_blank">https://product-landing-page.freecodecamp.rocks</a>
 
-以下の[ユーザーストーリー](https://en.wikipedia.org/wiki/User_story)を満たし、すべてのテストがパスするようにしてください。 あなた独自のスタイルを与えてください。
+**User Stories:**
 
-このプロジェクトを完了するために、HTML、JavaScript、CSS を使用することができます。 これまでのレッスンでカバーされた純粋な CSS の練習をするため、純粋な CSS の使用を推奨します。 Bootstrap や SASS を使用しても構いません。 このプロジェクトで追加のテクノロジー (jQuery、React、Angular、Vue など) を使用することは推奨されません。使用する場合は自己責任で使用してください。 React のようなさまざまな技術スタックで作業する機会は他のプロジェクトで得られます。 このプロジェクトで推奨される一連のテクノロジーを使用している場合の不具合報告については、freeCodeCamp にて報告を受け入れ、修正するよう努めます。 ハッピーコーディング！
+1. Your product landing page should have a `header` element with a corresponding `id="header"`
+1. You can see an image within the `header` element with a corresponding `id="header-img"` (A logo would make a good image here)
+1. Within the `#header` element, you can see a `nav` element with a corresponding `id="nav-bar"`
+1. You can see at least three clickable elements inside the `nav` element, each with the class `nav-link`
+1. When you click a `.nav-link` button in the `nav` element, you are taken to the corresponding section of the landing page
+1. You can watch an embedded product video with `id="video"`
+1. Your landing page has a `form` element with a corresponding `id="form"`
+1. Within the form, there is an `input` field with `id="email"` where you can enter an email address
+1. The `#email` input field should have placeholder text to let users know what the field is for
+1. The `#email` input field uses HTML5 validation to confirm that the entered text is an email address
+1. Within the form, there is a submit `input` with a corresponding `id="submit"`
+1. When you click the `#submit` element, the email is submitted to a static page (use this mock URL: `https://www.freecodecamp.com/email-submit`)
+1. The navbar should always be at the top of the viewport
+1. Your product landing page should have at least one media query
+1. Your product landing page should utilize CSS flexbox at least once
 
-**ユーザーストーリー #1:** 私のプロダクトランディングページには `id="header"` を持つ `header` 要素があります。
+Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
 
-**ユーザーストーリー #2:** `header` 要素内には `id="header-img"` を持つ画像が表示されます。 会社のロゴがあればここでいいイメージを与えることができるでしょう。
+# --hints--
 
-**ユーザーストーリー #3:** `#header` 要素内に `id="nav-bar"` を持つ `nav` 要素があります。
+You should have a `header` element with an `id` of `header`
 
-**ユーザーストーリー #4:** `nav` 要素内に少なくとも 3 つのクリック可能な `nav-link` クラスの要素があります。
+```js
+const el = document.getElementById('header')
+assert(!!el && el.tagName === 'HEADER')
+```
 
-**ユーザーストーリー #5:** `nav` 要素内の `.nav-link` ボタンをクリックしたら、ランディングページの対応するセクションに移動します。
+You should have an `img` element with an `id` of `header-img`
 
-**ユーザーストーリー #6:** `id="video"` を持つプロダクトの埋め込み動画を見ることができます。
+```js
+const el = document.getElementById('header-img')
+assert(!!el && el.tagName === 'IMG')
+```
 
-**ユーザーストーリー #7:** 私のランディングページには `id="form"` を持つ `form` 要素があります。
+Your `#header-img` should be a descendant of the `#header`
 
-**ユーザーストーリー #8:** フォーム内には、Eメールアドレスが入力可能な `id="email"` を持つ `input` フィールドがあります。
+```js
+const els = document.querySelectorAll('#header #header-img')
+assert(els.length > 0)
+```
 
-**ユーザーストーリー #9:** `#email` 入力フィールドには、フィールドの用途をユーザーに知らせるためのプレイスホルダ―テキストが必要です。
+Your `#header-img` should have a `src` attribute
 
-**ユーザーストーリー #10:** `#email` 入力フィールドは、入力されたテキストがメールアドレスであるか確認するために HTML5 のバリデーションを使用します。
+```js
+const el = document.getElementById('header-img')
+assert(!!el && !!el.src)
+```
 
-**ユーザーストーリー #11:** フォーム内には、`id="submit"` を持つ送信ボタンの `input` があります。
+Your `#header-img`’s `src` value should be a valid URL (starts with `http`)
 
-**ユーザーストーリー #12:** `#submit` 要素をクリックすると、email の情報が静的ページに送信されます (このモック URL を使用してください: <https://www.freecodecamp.com/email-submit>)。
+```js
+const el = document.getElementById('header-img')
+assert(!!el && /^http/.test(el.src))
+```
 
-**ユーザーストーリー #13:** ナビゲーションバーは常にビューポートの上部に表示されている必要があります。
+You should have a `nav` element with an `id` of `nav-bar`
 
-**ユーザーストーリー #14:** 私のプロダクトランディングページには、少なくとも 1 つのメディアクエリがあります。
+```js
+const el = document.getElementById('nav-bar')
+assert(!!el && el.tagName === 'NAV')
+```
 
-**ユーザーストーリー #15:** 私のプロダクトランディングページは、少なくとも 1 つの CSS フレックスボックスを使用しています。
+Your `#nav-bar` should be a descendant of the `#header`
 
-<a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>この CodePen テンプレートを使用して</a>あなたのプロジェクトを構築することができます。`Save` をクリックすると、あなた用の pen を作成することができます。 または、この CDN リンクを使用して任意の環境でテストを実行できます: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+```js
+const els = document.querySelectorAll('#header #nav-bar')
+assert(els.length > 0)
+```
 
-完了したら、すべてのテストがパスする状態の作業プロジェクトの URL を送信します。
+You should have at least 3 `.nav-link` elements within the `#nav-bar`
 
-# --solutions--
+```js
+const els = document.querySelectorAll('#nav-bar .nav-link')
+assert(els.length >= 3)
+```
+
+Each `.nav-link` element should have an `href` attribute
+
+```js
+const els = document.querySelectorAll('.nav-link')
+els.forEach(el => {
+  if (!el.href) assert(false)
+})
+assert(els.length > 0)
+```
+
+Each `.nav-link` element should link to a corresponding element on the landing page (has an `href` with a value of another element's id. e.g. `#footer`)
+
+```js
+const els = document.querySelectorAll('.nav-link')
+els.forEach(el => {
+  const linkDestination = el.getAttribute('href').slice(1)
+  if (!document.getElementById(linkDestination)) assert(false)
+})
+assert(els.length > 0)
+```
+
+You should have a `video` or `iframe` element with an `id` of `video`
+
+```js
+const el = document.getElementById('video')
+assert(!!el && (el.tagName === 'VIDEO' || el.tagName === 'IFRAME'))
+```
+
+Your `#video` should have a `src` attribute
+
+```js
+const el = document.getElementById('video')
+assert(!!el && !!el.src)
+```
+
+You should have a `form` element with an `id` of `form`
+
+```js
+const el = document.getElementById('form')
+assert(!!el && el.tagName === 'FORM')
+```
+
+You should have an `input` element with an `id of `email`
+
+```js
+const el = document.getElementById('email')
+assert(!!el && el.tagName === 'INPUT')
+```
+
+Your `#email` should be a descendant of the `#form`
+
+```js
+const els = document.querySelectorAll('#form #email')
+assert(els.length > 0)
+```
+
+Your `#email` should have the `placeholder` attribute with placeholder text
+
+```js
+const el = document.getElementById('email')
+assert(!!el && !!el.placeholder && el.placeholder.length > 0)
+```
+
+Your `#email` should use HTML5 validation by setting its `type` to `email`
+
+```js
+const el = document.getElementById('email')
+assert(!!el && el.type === 'email')
+```
+
+You should have an `input` element with an `id` of `submit`
+
+```js
+const el = document.getElementById('submit')
+assert(!!el && el.tagName === 'INPUT')
+```
+
+Your `#submit` should be a descendant of the `#form`
+
+```js
+const els = document.querySelectorAll('#form #submit')
+assert(els.length > 0)
+```
+
+Your `#submit` should have a `type` of `submit`
+
+```js
+const el = document.getElementById('submit')
+assert(!!el && el.type === 'submit')
+```
+
+Your `#form` should have an `action` attribute of `https://www.freecodecamp.com/email-submit`
+
+```js
+const el = document.getElementById('form')
+assert(!!el && el.action === 'https://www.freecodecamp.com/email-submit')
+```
+
+Your `#email` should have a `name` attribute of `email`
+
+```js
+const el = document.getElementById('email')
+assert(!!el && el.name === 'email')
+```
+
+Your `#nav-bar` should always be at the top of the viewport
+
+```js
+const el = document.getElementById('nav-bar')
+const top1 = el?.offsetTop
+const top2 = el?.offsetTop
+assert(!!el && top1 >= -15 && top1 <= 15 && top2 >= -15 && top2 <= 15)
+```
+
+Your Product Landing Page should use at least one media query
+
+```js
+assert.isAtLeast(new __helpers.CSSHelp(document).getCSSRules('media')?.length, 1);
+```
+
+Your Product Landing Page should use CSS Flexbox at least once
+
+```js
+const stylesheet = new __helpers.CSSHelp(document).getStyleSheet()
+const cssRules = new __helpers.CSSHelp(document).styleSheetToCssRulesArray(stylesheet)
+const usesFlex = cssRules.find(rule => {
+  return rule.style?.display === 'flex' || rule.style?.display === 'inline-flex'
+})
+assert(usesFlex)
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
-// solution required
+
+```
+
+```css
+
+```
+
+## --solutions--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Product Landing Page</title>
+  </head>
+  <body>
+    <header id="header">
+      <nav id="nav-bar">
+        <img
+          id="header-img"
+          src="https://upload.wikimedia.org/wikipedia/commons/3/39/Pokeball.PNG"
+          max-height="50px"
+        />
+        <a href="#Features" class="nav-link">Features</a> |
+        <a href="#Video" class="nav-link">See our facility!</a> |
+        <a href="#Pricing" class="nav-link">Purchase</a>
+        <hr />
+      </nav>
+    </header>
+    <main>
+      <h1>
+        Pokemon Daycare Service
+      </h1>
+      <section id="Features">
+        <h2>What we offer</h2>
+        <div class="flex-here">
+          <div class="flex-left">
+            <img
+              id="bullet"
+              src="https://upload.wikimedia.org/wikipedia/commons/3/39/Pokeball.PNG"
+              max-height="25px"
+            />
+          </div>
+          <div class="flex-right">Guaranteed friendly and loving staff!</div>
+        </div>
+        <div class="flex-here">
+          <div class="flex-left">
+            <img
+              id="bullet"
+              src="https://upload.wikimedia.org/wikipedia/commons/3/39/Pokeball.PNG"
+              max-height="25px"
+            />
+          </div>
+          <div class="flex-right">
+            Comfortable environment for Pokemon to explore and play!
+          </div>
+        </div>
+        <div class="flex-here">
+          <div class="flex-left">
+            <img
+              id="bullet"
+              src="https://upload.wikimedia.org/wikipedia/commons/3/39/Pokeball.PNG"
+              max-height="25px"
+            />
+          </div>
+          <div class="flex-right">
+            Multiple membership plans to fit your lifestyle!
+          </div>
+        </div>
+      </section>
+      <section id="Video">
+        <h2>Check us out!</h2>
+        A sneak peek into our facility:
+        <br />
+        <iframe
+          id="video"
+          width="520"
+          height="347"
+          src="https://www.youtube.com/embed/Nw-ksH2r6AQ"
+          frameborder="0"
+          allowfullscreen
+          alt="A video tour of our facility"
+        >
+        </iframe>
+      </section>
+      <section id="Pricing">
+        <h2>Membership Plans</h2>
+        <div class="flex-mem">
+          <div class="flex-mem-box">
+            <font size="+2">Basic Membership</font><br />
+            <ul>
+              <li>One Pokemon</li>
+              <li>Food and berries provided</li>
+            </ul>
+            <em>$9.99/month</em>
+          </div>
+          <div class="flex-mem-box">
+            <font size="+2">Silver Membership</font><br />
+            <ul>
+              <li>Up to Three Pokemon</li>
+              <li>Food and berries provided</li>
+              <li>Grooming and accessories included</li>
+            </ul>
+            <em>$19.99/month</em>
+          </div>
+          <div class="flex-mem-box">
+            <font size="+2">Gold Membership</font><br />
+            <ul>
+              <li>Up to six Pokemon!</li>
+              <li>Food and berries provided</li>
+              <li>Grooming and accessories included</li>
+              <li>Personal training for each Pokemon</li>
+              <li>Breeding and egg hatching</li>
+            </ul>
+            <em>$29.99/month</em>
+          </div>
+        </div>
+      </section>
+      <form id="form" action="https://www.freecodecamp.com/email-submit">
+        <p>Sign up for our newsletter!</p>
+        <label for="email"><p>Email:</p><input name="email" id="email" type="email" placeholder="johnsmith@email.com" required></label>
+        <input type="submit" id="submit">
+      </form>
+      <footer>
+        <a href="../">Return to Project List</a> |
+        <a href="https://www.nhcarrigan.com">Return to HomePage</a>
+      </footer>
+    </main>
+  </body>
+</html>
+```
+
+```css
+body {
+  background-color: #3a3240;
+  color: white;
+}
+main {
+  max-width: 750px;
+  margin: 50px auto;
+}
+input {
+  background-color: #92869c;
+}
+a:not(.nav-link) {
+  color: white;
+}
+#header-img {
+  max-height: 25px;
+}
+#nav-bar {
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  top: 0%;
+  background-color: #92869c;
+}
+h1 {
+  text-align: center;
+}
+body {
+  text-align: center;
+}
+footer {
+  text-align: center;
+}
+#bullet {
+  max-height: 25px;
+}
+.flex-here {
+  display: flex;
+  justify-content: center;
+}
+.flex-left {
+  height: 25px;
+}
+.flex-mem {
+  display: flex;
+  justify-content: center;
+}
+.flex-mem-box {
+  background-color: #92869c;
+  border-color: black;
+  border-width: 5px;
+  border-style: solid;
+  margin: 10px;
+  padding: 10px;
+  color: black;
+}
+@media (max-width: 350px) {
+  #video {
+    width: 300;
+    height: 200;
+  }
+}
 ```

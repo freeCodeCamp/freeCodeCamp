@@ -1,43 +1,327 @@
 ---
 id: bd7158d8c442eddfaeb5bd18
-title: トリビュートページを作成する
-challengeType: 3
+title: Build a Tribute Page
+challengeType: 14
 forumTopicId: 301147
 dashedName: build-a-tribute-page
 ---
 
 # --description--
 
-**目標:** こちら <https://codepen.io/freeCodeCamp/full/zNqgVx> と同様の機能を持つ [CodePen.io](https://codepen.io) アプリを構築します。
+**Objective:** Build an app that is functionally similar to <a href="https://tribute-page.freecodecamp.rocks" target="_blank">https://tribute-page.freecodecamp.rocks</a>
 
-以下の[ユーザーストーリー](https://en.wikipedia.org/wiki/User_story)を満たし、すべてのテストがパスするようにしてください。 あなた独自のスタイルを与えてください。
+**User Stories:**
 
-このプロジェクトを完了するために、HTML、JavaScript、CSS を使用することができます。 これまでのレッスンでカバーされた純粋な CSS の練習をするため、純粋な CSS の使用を推奨します。 Bootstrap や SASS を使用しても構いません。 このプロジェクトで追加のテクノロジー (jQuery、React、Angular、Vue など) を使用することは推奨されません。使用する場合は自己責任で使用してください。 React のようなさまざまな技術スタックで作業する機会は他のプロジェクトで得られます。 このプロジェクトで推奨される一連のテクノロジーを使用している場合の不具合報告については、freeCodeCamp にて報告を受け入れ、修正するよう努めます。 ハッピーコーディング！
+1. Your tribute page should have an element with a corresponding `id="main"`, which contains all other elements
+1. You should see an element with an `id` of `title`, which contains a string (i.e. text), that describes the subject of the tribute page (e.g. "Dr. Norman Borlaug")
+1. You should see either a `figure` or a `div` element with an `id` of `img-div`
+1. Within the `img-div` element, you should see an `img` element with a corresponding `id="image"`
+1. Within the `img-div` element, you should see an element with a corresponding `id="img-caption"` that contains textual content describing the image shown in `img-div`
+1. You should see an element with a corresponding `id="tribute-info"`, which contains textual content describing the subject of the tribute page
+1. You should see an a element with a corresponding `id="tribute-link"`, which links to an outside site, that contains additional information about the subject of the tribute page. HINT: You must give your element an attribute of `target` and set it to `_blank` in order for your link to open in a new tab
+1. Your `#image` should use `max-width` and `height` properties to resize responsively, relative to the width of its parent element, without exceeding its original size
+1. Your `img` element should be centered within its parent element
 
-**ユーザーストーリー #1:** 私のトリビュートページには `id="main"` を持つ要素があり、その中に他のすべての要素が含まれます。
+Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
 
-**ユーザーストーリー #2:** `id="title"` を持つ要素があり、これにはトリビュートページで取り上げる対象者 (例: "Dr. Norman Borlaug) を説明する文字列 (すなわちテキスト) が記載されています。
+# --hints--
 
-**ユーザーストーリー #3:** `id="img-div"` を持つ、`figure` または `div` 要素のどちらかが表示される必要があります。
+You should have a `main` element with an `id` of `main`
 
-**ユーザーストーリー #4:** `img-div` 要素内に、`id="image"` を持つ `img` 要素があります。
+```js
+const el = document.getElementById('main')
+assert(!!el && el.tagName === 'MAIN')
+```
 
-**ユーザーストーリー #5:** `img-div` 要素内には、`id="img-caption"` を持つ要素があり、`img-div` 内に表示されている画像を説明するテキストコンテンツを含みます。
+Your `#img-div`, `#image`, `#img-caption`, `#tribute-info`, and `#tribute-link` should all be descendants of `#main`
 
-**ユーザーストーリー #6:** `id="tribute-info"` を持つ要素があり、これにはトリビュートページの対象者を説明するテキストコンテンツが含まれます。
+```js
+const el1 = document.querySelector('#main #img-div')
+const el2 = document.querySelector('#main #image')
+const el3 = document.querySelector('#main #img-caption')
+const el4 = document.querySelector('#main #tribute-info')
+const el5 = document.querySelector('#main #tribute-link')
+assert(!!el1 & !!el2 && !!el3 && !!el4 && !!el5)
+```
 
-**ユーザーストーリー #7:** `id="tribute-link"` を持つ `a` 要素があり、これはトリビュートページの対象者に関する追加情報を含む外部サイトへのリンクです。 ヒント: リンクを新しいタブで開くためには、要素に `target` 属性を与え、その値に `_blank` を設定しなければなりません (つまり `target="_blank"` となります)。
+You should have an element with an `id` of `title`
 
-**ユーザーストーリー #8:** `img` 要素は、オリジナルのサイズを超えることなく、親要素の幅に応じてレスポンシブにサイズが変更される必要があります。
+```js
+const el = document.getElementById('title')
+assert(!!el)
+```
 
-**ユーザーストーリー #9:** `img` 要素は、その親要素内で中央に配置される必要があります。
+Your `#title` should not be empty
 
-<a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>この CodePen テンプレートを使用して</a>あなたのプロジェクトを構築することができます。`Save` をクリックすると、あなた用の pen (CodePen 上の作品) を作成することができます。 または、この CDN リンクを使用して任意の環境でテストを実行できます: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+```js
+const el = document.getElementById('title')
+assert(!!el && el.innerText.length > 0)
 
-完了したら、すべてのテストがパスする状態の作業プロジェクトの URL を送信します。
+```
 
-# --solutions--
+You should have a `figure` or `div` element with an `id` of `img-div`
+
+```js
+const el = document.getElementById('img-div')
+assert(!!el && (el.tagName === 'DIV' || el.tagName === 'FIGURE'))
+```
+
+You should have an `img` element with an `id` of `image`
+
+```js
+const el = document.getElementById('image')
+assert(!!el && el.tagName === 'IMG')
+```
+
+Your `#image` should be a descendant of `#img-div`
+
+```js
+const el = document.querySelector('#img-div #image')
+assert(!!el)
+```
+
+You should have a `figcaption` or `div` element with an `id` of `img-caption`
+
+```js
+const el = document.getElementById('img-caption')
+assert(!!el && (el.tagName === 'DIV' || el.tagName === 'FIGCAPTION'))
+```
+
+Your `#img-caption` should be a descendant of `#img-div`
+
+```js
+const el = document.querySelector('#img-div #img-caption')
+assert(!!el)
+```
+
+Your `#img-caption` should not be empty
+
+```js
+const el = document.getElementById('img-caption')
+assert(!!el && el.innerText.length > 0)
+```
+
+You should have an element with an `id` of `tribute-info`
+
+```js
+const el = document.getElementById('tribute-info')
+assert(!!el)
+```
+
+Your `#tribute-info` should not be empty
+
+```js
+const el = document.getElementById('tribute-info')
+assert(!!el && el.innerText.length > 0)
+```
+
+You should have an `a` element with an `id` of `tribute-link`
+
+```js
+const el = document.getElementById('tribute-link')
+assert(!!el && el.tagName === 'A')
+```
+
+Your `#tribute-link` should have an `href` attribute and value
+
+```js
+const el = document.getElementById('tribute-link')
+assert(!!el && !!el.href && el.href.length > 0)
+```
+
+Your `#tribute-link` should have a `target` attribute set to `_blank`
+
+```js
+const el = document.getElementById('tribute-link')
+assert(!!el && el.target === '_blank')
+```
+
+You should use an `#image` selector in your CSS to style the `#image` and pass the next three tests
+
+```js
+const style = new __helpers.CSSHelp(document).getStyle('#image')
+assert(!!style)
+```
+
+Your `#image` should have a `display` of `block`
+
+```js
+const style = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('display')
+assert(style === 'block')
+```
+
+Your `#image` should have a `max-width` of `100%`
+
+```js
+const style = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('max-width')
+assert(style === '100%')
+```
+
+Your `#image` should have a `height` of `auto`
+
+```js
+// taken from the testable-projects repo
+const img = document.getElementById('image');
+const maxWidthValue = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('max-width')
+const displayValue = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('display')
+const oldDisplayValue = img?.style.getPropertyValue('display');
+const oldDisplayPriority = img?.style.getPropertyPriority('display');
+img?.style.setProperty('display', 'none', 'important');
+const heightValue = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('height')
+img?.style.setProperty('display', oldDisplayValue, oldDisplayPriority);
+assert(heightValue === 'auto')
+```
+
+Your `#image` should be centered within its parent
+
+```js
+// taken from the testable-projects repo
+const img = document.getElementById('image'),
+  imgParent = img?.parentElement,
+  imgLeft = img?.getBoundingClientRect().left,
+  imgRight = img?.getBoundingClientRect().right,
+  parentLeft = imgParent?.getBoundingClientRect().left,
+  parentRight = imgParent?.getBoundingClientRect().right,
+  leftMargin = imgLeft - parentLeft,
+  rightMargin = parentRight - imgRight;
+assert(leftMargin - rightMargin < 6 && rightMargin - leftMargin < 6)
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
-// solution required
+
+```
+
+```css
+
+```
+
+## --solutions--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lobster"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <title>Tribute Page</title>
+  </head>
+  <body>
+    <h1>Tribute Page</h1>
+    <p>The below card was designed as a tribute page for freeCodeCamp.</p>
+    <main id="main">
+      <div id="img-div">
+        <img
+          id="image"
+          class="border"
+          src="https://upload.wikimedia.org/wikipedia/en/5/53/Pok%C3%A9mon_Togepi_art.png"
+          alt="An image of Togepi"
+        />
+        <figcaption id="img-caption">Togepi, happy as always.</figcaption>
+      </div>
+      <h2 id="title">Togepi</h2>
+      <hr />
+      <div id="tribute-info">
+        <p>
+          Togepi was first discovered in the Johto region, when Ash Ketchum
+          discovered a mysterious egg. However, when the egg hatched, Togepi saw
+          Ash's friend Misty first and imprinted on her. Like many other
+          creatures, this imprinting process created a bond and Togepi views
+          Misty as his mother.
+        </p>
+        <p>
+          Togepi is a very childlike Pokemon, and is very emotionally
+          expressive. He demonstrates extreme levels of joy and sadness.
+        </p>
+        <hr />
+        <p><u>Battle Information</u></p>
+        <ul style="list-style-type: none">
+          <li>Type: Fairy</li>
+          <li>Evolutions: Togepi -> Togetic -> Togekiss</li>
+          <li>Moves: Growl, Pound, Sweet Kiss, Charm</li>
+          <li>Weaknesses: Poison, Steel</li>
+          <li>Resistances: Dragon</li>
+        </ul>
+        <p>
+          Check out this
+          <a
+            id="tribute-link"
+            href="https://bulbapedia.bulbagarden.net/wiki/Togepi_(Pok%C3%A9mon)"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Bulbapedia article on Togepi</a
+          >
+          for more information on this great Pokemon.
+        </p>
+      </div>
+    </main>
+  </body>
+  <footer>
+    <a href="../">Return to Project List</a> |
+    <a href="https://www.nhcarrigan.com">Return to HomePage</a>
+  </footer>
+</html>
+```
+
+```css
+body {
+  background-color: #3a3240;
+  color: white;
+}
+main {
+  background-color: #92869c;
+  font-family: Lobster;
+  max-width: 500px;
+  margin: 20px auto;
+  color: black;
+  border-radius: 50px;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.5);
+}
+h2 {
+  text-align: center;
+  font-size: 20pt;
+  font-family: Pacifico;
+}
+body {
+  text-align: center;
+  font-size: 12pt;
+}
+footer {
+  text-align: center;
+  font-size: 10pt;
+}
+.border {
+  border-color: black;
+  border-width: 5px;
+  border-style: solid;
+}
+#image {
+  height: auto;
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  border-radius: 50%;
+}
+#img-caption {
+  font-size: 10pt;
+}
+a:not(#tribute-link) {
+  color: white;
+}
+hr {
+  border-color: black;
+}
 ```
