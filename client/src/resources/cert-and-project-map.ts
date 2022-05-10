@@ -1,4 +1,7 @@
 import { SuperBlocks } from '../../../config/certification-settings';
+import config from '../../../config/env.json';
+
+const { showUpcomingChanges } = config;
 
 const responsiveWebBase =
   '/learn/responsive-web-design/responsive-web-design-projects';

@@ -86,6 +86,7 @@ export const certSlugTypeMap = {
   [SuperBlocks.RespWebDesign]: certTypes.respWebDesign,
   [SuperBlocks.RespWebDesignNew]: certTypes.respWebDesign,
   [SuperBlocks.JsAlgoDataStruct]: certTypes.jsAlgoDataStruct,
+  [SuperBlocks.JsAlgoDataStructNew]: certTypes.jsAlgoDataStruct,
   [SuperBlocks.FrontEndDevLibs]: certTypes.frontEndDevLibs,
   [SuperBlocks.DataVis]: certTypes.dataVis2018,
   [SuperBlocks.BackEndDevApis]: certTypes.apisMicroservices,

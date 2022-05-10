@@ -323,11 +323,20 @@ No audited challenges should fallback to English.
     /* Since there can be more than one way to complete a certification (using the
    legacy curriculum or the new one, for instance), we need a certification
    field to track which certification this belongs to. */
-    // TODO: generalize this to all superBlocks
-    challenge.certification =
-      meta.superBlock === '2022/responsive-web-design'
-        ? 'responsive-web-design'
-        : meta.superBlock;
+    const dupeCertifications = [
+      {
+        certification: 'responsive-web-design',
+        dupe: '2022/responsive-web-design'
+      },
+      {
+        certification: 'javascript-algorithms-and-data-structures',
+        dupe: '2022/javascript-algorithms-and-data-structures'
+      }
+    ];
+    const hasDupe = dupeCertifications.find(
+      cert => cert.dupe === meta.superBlock
+    );
+    challenge.certification = hasDupe ? hasDupe.certification : meta.superBlock;
     challenge.superBlock = meta.superBlock;
     challenge.challengeOrder = challengeOrder;
     challenge.isPrivate = challenge.isPrivate || meta.isPrivate;
