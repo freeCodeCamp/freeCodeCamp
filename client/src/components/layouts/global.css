@@ -29,7 +29,7 @@ body {
   display: block;
   height: calc(100vh - var(--header-height, 0px));
   width: 100%;
-  border: 0px;
+  border: 0;
 }
 
 .btn-cta-big {
@@ -54,7 +54,7 @@ body {
 
 .default-layout {
   flex: 1 0 auto;
-  margin-top: var(--header-height, 0px);
+  margin-top: var(--header-height, 0);
   background: var(--secondary-background);
 }
 
@@ -174,7 +174,7 @@ button.close:focus {
 
 .modal-content {
   background-color: var(--secondary-background);
-  border-radius: 0px;
+  border-radius: 0;
   border: 1px solid var(--secondary-color);
 }
 
@@ -190,7 +190,7 @@ input[type='submit'],
   border-width: 3px;
   border-color: var(--secondary-color);
   color: var(--secondary-color);
-  border-radius: 0px;
+  border-radius: 0;
   text-decoration: none;
   white-space: pre-line;
 }
@@ -391,7 +391,7 @@ strong {
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
   box-shadow: none !important;
-  border-radius: 0px;
+  border-radius: 0;
 }
 
 input {
@@ -400,7 +400,7 @@ input {
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
   box-shadow: none !important;
-  border-radius: 0px;
+  border-radius: 0;
 }
 
 textarea {
@@ -417,7 +417,7 @@ input:focus {
 code {
   background-color: var(--quaternary-background);
   color: var(--tertiary-color);
-  border-radius: 0px;
+  border-radius: 0;
   font-family: 'Roboto Mono', monospace;
   overflow-wrap: anywhere;
 }
@@ -448,7 +448,7 @@ hr {
 }
 
 .open > .dropdown-menu {
-  border-radius: 0px;
+  border-radius: 0;
 }
 
 .dropdown-menu {
@@ -506,12 +506,12 @@ hr {
 
 .breadcrumb {
   background: var(--tertiary-background);
-  border-radius: 0px;
+  border-radius: 0;
 }
 
 code[class*='language-'],
 pre[class*='language-'] {
-  border-radius: 0px;
+  border-radius: 0;
 }
 
 pre {
@@ -540,7 +540,7 @@ pre {
 
 .solution-viewer,
 .solution-viewer pre {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .solution-viewer {
@@ -606,7 +606,7 @@ blockquote .small {
 }
 
 .alert {
-  border-radius: 0px;
+  border-radius: 0;
   overflow-wrap: break-word;
 }
 
@@ -615,7 +615,7 @@ blockquote .small {
   color: #31708f;
   border-color: #31708f;
 }
-.alert .btn:hover,
+
 .alert .btn:focus,
 .alert a:hover,
 .alert a:hover {
@@ -631,7 +631,6 @@ blockquote .small {
   border-color: var(--quaternary-color);
   border-width: 2px;
   border-style: outset;
-  border-color: buttonface;
   border-image: initial;
 }
 
