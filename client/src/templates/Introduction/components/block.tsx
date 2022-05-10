@@ -258,6 +258,7 @@ export class Block extends Component<BlockProps> {
               <button
                 aria-expanded={isExpanded ? 'true' : 'false'}
                 className='block-header'
+                data-cy={challengesWithCompleted[0].block}
                 onClick={() => {
                   this.handleBlockClick();
                 }}
