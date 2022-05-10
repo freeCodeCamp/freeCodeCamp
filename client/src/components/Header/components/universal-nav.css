@@ -1,5 +1,4 @@
 .universal-nav {
-  z-index: 300;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
