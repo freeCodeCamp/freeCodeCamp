@@ -305,7 +305,9 @@
     "step-2": "Etapa 2: Envie seu código",
     "submit-public-url": "Quando você tiver concluído o projeto, salve todos os arquivos necessários em um repositório público e envie abaixo o URL que aponta para ele.",
     "complete-both-steps": "Complete as duas etapas abaixo para terminar o desafio.",
-    "runs-in-vm": "O projeto é executado em uma máquina virtual. Complete as histórias de usuários descritas lá e passe em todos os testes para concluir a etapa 1."
+    "runs-in-vm": "O projeto é executado em uma máquina virtual. Complete as histórias de usuários descritas lá e passe em todos os testes para concluir a etapa 1.",
+    "completed": "Completed",
+    "not-started": "Not started"
   },
   "donate": {
     "title": "Dê seu apoio à nossa organização sem fins lucrativos",

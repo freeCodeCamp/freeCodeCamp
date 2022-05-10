@@ -305,7 +305,9 @@
     "step-2": "步骤 2：提交你的代码",
     "submit-public-url": "当你完成项目后，将所有所需文件保存到公共仓库并将 URL 填写到下方。",
     "complete-both-steps": "完成下面的两个步骤来完成这一挑战。",
-    "runs-in-vm": "该项目在虚拟机中运行，完成在那里描述的用户故事，获取所有测试并通过它们以完成步骤 1。"
+    "runs-in-vm": "该项目在虚拟机中运行，完成在那里描述的用户故事，获取所有测试并通过它们以完成步骤 1。",
+    "completed": "Completed",
+    "not-started": "Not started"
   },
   "donate": {
     "title": "支持我们的非营利组织",
