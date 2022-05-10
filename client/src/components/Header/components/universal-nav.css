@@ -105,7 +105,6 @@
   white-space: normal;
   min-height: var(--header-height);
   width: 100%;
-  align-items: center;
   border: none;
 }
 
