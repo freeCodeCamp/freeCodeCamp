@@ -1,5 +1,6 @@
 const selectors = {
-  firstBlock: '.block-ui > .block:nth-child(1) > .block-header'
+  firstBlock:
+    '.block-ui > .block:nth-child(1) > .block-grid-title > .block-header'
 };
 
 describe('Certification intro page', () => {
