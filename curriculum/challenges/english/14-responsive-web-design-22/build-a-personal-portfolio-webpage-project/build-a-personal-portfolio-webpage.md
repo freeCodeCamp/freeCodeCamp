@@ -63,7 +63,7 @@ const el = document.getElementById('projects')
 assert(!!el);
 ```
 
-Your portfolio should contain at least one elment with a class of `project-tile`.
+Your portfolio should contain at least one element with a class of `project-tile`.
 
 ```js
 assert.isAbove(
