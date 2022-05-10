@@ -73,8 +73,11 @@ describe('getSuperOrder', () => {
     });
   }
 
-  // Skipping these tests instead of deleting, so the infrastructure is there when we do the next superblock
   it('returns a different order if passed the option showNewCurriculum: true', () => {
+    // Skip non-english tests while the RWD cert is still being translated.
+    if (process.env.CURRICULUM_LOCALE !== 'english') {
+      return;
+    }
     expect.assertions(14);
     expect(
       getSuperOrder('2022/responsive-web-design', { showNewCurriculum: true })
