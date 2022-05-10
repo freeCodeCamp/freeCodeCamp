@@ -17,19 +17,19 @@ Inicialize as três variáveis `a`, `b` e `c` com `5`, `10`, e `"I am a"` respec
 
 # --hints--
 
-`a` deve ser definido e avaliado para ter o valor de `6`.
+`a` deve ser definido e ter o valor de `6`.
 
 ```js
 assert(typeof a === 'number' && a === 6);
 ```
 
-`b` deve ser definido e avaliado para ter o valor de `15`.
+`b` deve ser definido e ter o valor de `15`.
 
 ```js
 assert(typeof b === 'number' && b === 15);
 ```
 
-`c` não deve conter `undefined` e o valor da string deve ser `I am a String!`
+`c` não deve conter `undefined` e deve ter o valor final de string `I am a String!`
 
 ```js
 assert(!/undefined/.test(c) && c === 'I am a String!');

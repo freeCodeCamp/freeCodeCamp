@@ -30,7 +30,7 @@ Indica que la siguiente identación de código va a ser almacenada para mas adel
 
 ---
 
-Indica el inicio de una función, y la siguiente identación de código va a ser almacenada para mas adelante.
+Indica el inicio de una función, y la siguiente identación de código va a ser almacenada para más adelante.
 
 ---
 

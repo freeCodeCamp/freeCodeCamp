@@ -23,7 +23,8 @@ import { Themes } from '../../../components/settings/theme';
 import {
   userSelector,
   saveChallenge,
-  isDonationModalOpenSelector
+  isDonationModalOpenSelector,
+  isSignedInSelector
 } from '../../../redux';
 import {
   ChallengeFiles,
@@ -75,6 +76,7 @@ interface EditorProps {
   initTests: (tests: Test[]) => void;
   initialTests: Test[];
   isResetting: boolean;
+  isSignedIn: boolean;
   output: string[];
   resizeProps: ResizeProps;
   saveChallenge: () => void;
@@ -118,6 +120,7 @@ const mapStateToProps = createSelector(
   isDonationModalOpenSelector,
   isProjectPreviewModalOpenSelector,
   isResettingSelector,
+  isSignedInSelector,
   userSelector,
   challengeTestsSelector,
   (
@@ -127,6 +130,7 @@ const mapStateToProps = createSelector(
     open,
     previewOpen: boolean,
     isResetting: boolean,
+    isSignedIn: boolean,
     { theme = Themes.Default }: { theme: Themes },
     tests: [{ text: string; testString: string }]
   ) => ({
@@ -134,6 +138,7 @@ const mapStateToProps = createSelector(
     challengeType,
     previewOpen,
     isResetting,
+    isSignedIn,
     output,
     theme,
     tests
@@ -427,7 +432,8 @@ const Editor = (props: EditorProps): JSX.Element => {
       label: 'Save editor content',
       keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S],
       run:
-        props.challengeType === challengeTypes.multiFileCertProject
+        props.challengeType === challengeTypes.multifileCertProject &&
+        props.isSignedIn
           ? // save to database
             props.saveChallenge
           : // save to local storage
