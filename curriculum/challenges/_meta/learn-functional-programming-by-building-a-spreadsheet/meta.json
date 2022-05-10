@@ -1,9 +1,9 @@
 {
-  "name": "Functional Programming Spreadsheet",
+  "name": "Learn Functional Programming by Building a Spreadsheet",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
-  "dashedName": "functional-programming-spreadsheet",
+  "dashedName": "learn-functional-programming-by-building-a-spreadsheet",
   "order": 8,
   "time": "2 hours",
   "template": "",
