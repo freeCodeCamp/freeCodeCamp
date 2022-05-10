@@ -1,6 +1,5 @@
 const selectors = {
-  firstBlock:
-    '.block-ui > .block:nth-child(1) > .block-grid-title > .block-header'
+  firstBlock: '[data-cy="learn-html-by-building-a-cat-photo-app"]'
 };
 
 describe('Certification intro page', () => {
