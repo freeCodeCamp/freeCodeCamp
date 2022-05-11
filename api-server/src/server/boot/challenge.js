@@ -145,7 +145,11 @@ export function buildUserUpdate(
   }
   let finalChallenge;
   const updateData = {};
-  const { timezone: userTimezone, completedChallenges = [], needsModeration = false } = user;
+  const {
+    timezone: userTimezone,
+    completedChallenges = [],
+    needsModeration = false
+  } = user;
 
   const oldChallenge = find(
     completedChallenges,
@@ -215,7 +219,7 @@ export function buildUserUpdate(
     updateData.$set = {
       ...updateData.$set,
       needsModeration: true
-    }
+    };
   }
 
   return {
