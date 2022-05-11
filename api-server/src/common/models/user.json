@@ -120,6 +120,11 @@
       "description": "Camper has signed academic honesty policy",
       "default": false
     },
+    "needsModeration": {
+      "type": "boolean",
+      "description": "Camper has challenges needing to be moderated",
+      "default": false
+    },
     "isFrontEndCert": {
       "type": "boolean",
       "description": "Camper is front end certified",
