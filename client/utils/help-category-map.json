@@ -90,5 +90,8 @@
   "build-a-product-landing-page-project": "HTML-CSS",
   "build-a-survey-form-project": "HTML-CSS",
   "build-a-technical-documentation-page-project": "HTML-CSS",
-  "build-a-tribute-page-project": "HTML-CSS"
+  "build-a-tribute-page-project": "HTML-CSS",
+  "learn-basic-javascript-by-building-a-role-playing-game": "JavaScript",
+  "learn-form-validation-by-building-a-calorie-counter": "JavaScript",
+  "learn-functional-programming-by-building-a-spreadsheet": "JavaScript"
 }
