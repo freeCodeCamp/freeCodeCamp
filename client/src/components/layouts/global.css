@@ -631,7 +631,6 @@ blockquote .small {
   border-color: var(--quaternary-color);
   border-width: 2px;
   border-style: outset;
-  border-color: buttonface;
   border-image: initial;
 }
 
