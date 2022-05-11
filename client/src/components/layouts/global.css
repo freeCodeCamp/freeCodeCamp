@@ -628,7 +628,7 @@ blockquote .small {
 #search {
   background-color: var(--quaternary-background);
   color: var(--primary-color);
-  border-color: var(--quaternary-color);
+  border-color: var(--quaternary-color, buttonface);
   border-width: 2px;
   border-style: outset;
   border-image: initial;
