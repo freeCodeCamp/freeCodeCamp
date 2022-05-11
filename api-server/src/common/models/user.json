@@ -123,7 +123,13 @@
     "needsModeration": {
       "type": "boolean",
       "description": "Camper has challenges needing to be moderated",
-      "default": false
+      "default": false,
+      "index": {
+        "mongodb": {
+          "unique": true,
+          "background": true
+        }
+      }
     },
     "isFrontEndCert": {
       "type": "boolean",
