@@ -618,7 +618,7 @@ blockquote .small {
 .alert .btn:hover,
 .alert .btn:focus,
 .alert a:hover,
-.alert a:hover {
+.alert a:focus {
   background-color: #31708f;
   color: #d9edf7;
   border-color: #31708f;
