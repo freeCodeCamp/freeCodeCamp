@@ -42,11 +42,15 @@ jobs:
           echo 'SHOW_NEW_CURRICULUM=true' >> .env
           cat .env
 
+      # The two prefixed installs are for the client update which are not,
+      # currently, built as workspaces.
       - name: Lint Source Files
         run: |
           echo npm version $(npm -v)
           npm ci
           npm run create:config
+          npm i --prefix=curriculum-server
+          npm i --prefix=web
           npm run build:curriculum
           npm run lint
 

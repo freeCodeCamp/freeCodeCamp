@@ -305,7 +305,9 @@
     "step-2": "步驟 2：提交你的代碼",
     "submit-public-url": "當你完成項目後，將所有所需文件保存到公共倉庫並將 URL 填寫到下方。",
     "complete-both-steps": "完成下面的兩個步驟來完成這一挑戰。",
-    "runs-in-vm": "該項目在虛擬機中運行，完成在那裏描述的用戶故事，獲取所有測試並通過它們以完成步驟 1。"
+    "runs-in-vm": "該項目在虛擬機中運行，完成在那裏描述的用戶故事，獲取所有測試並通過它們以完成步驟 1。",
+    "completed": "Completed",
+    "not-started": "Not started"
   },
   "donate": {
     "title": "支持我們的非營利組織",

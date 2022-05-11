@@ -89,7 +89,6 @@
   border-radius: 50%;
   background-color: var(--secondary-background);
   border: 2px solid var(--primary-color);
-  position: relative;
 }
 
 .video-quiz-selected-input {

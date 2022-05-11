@@ -46,7 +46,9 @@
           "./tsconfig.json",
           "./config/tsconfig.json",
           "./tools/ui-components/tsconfig.json",
-          "./utils/tsconfig.json"
+          "./utils/tsconfig.json",
+          "./web/tsconfig.json",
+          "./curriculum-server/tsconfig.json"
         ]
       },
       "extends": [
@@ -116,6 +118,10 @@
         "cy": true,
         "Cypress": true
       }
+    },
+    {
+      "files": ["web/**/*.tsx"],
+      "extends": ["plugin:react/jsx-runtime"]
     }
   ]
 }
