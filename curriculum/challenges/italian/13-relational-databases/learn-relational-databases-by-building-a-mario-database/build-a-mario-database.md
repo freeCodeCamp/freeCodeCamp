@@ -9,7 +9,7 @@ dashedName: build-a-mario-database
 
 # --description--
 
-In questo corso da 165 lezioni, imparerai le basi di un database relazionale creando un database PostgresSQL pieno di personaggi di videogiochi.
+In questo corso da 165 lezioni, imparerai le basi di un database relazionale creando un database PostgreSQL pieno di personaggi di videogiochi.
 
 # --instructions--
 
