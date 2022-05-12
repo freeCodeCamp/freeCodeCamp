@@ -574,72 +574,46 @@ const Editor = (props: EditorProps): JSX.Element => {
     );
   }
 
-  const outputZoneCallback = (
-    changeAccessor: editor.IViewZoneChangeAccessor
-  ) => {
+  const updateOutputZone = () => {
     const editor = dataRef.current.editor;
     if (!editor || !dataRef.current.outputNode) return;
 
-    console.log(changeAccessor);
     const outputNode = dataRef.current.outputNode;
-    createLowerJaw(
-      outputNode,
-      () => {
-        if (dataRef.current.outputNode) {
-          const height = dataRef.current.outputNode.offsetHeight;
-          console.log({ callback: height });
-          // setLowerJawHeight(height);
-        }
+    createLowerJaw(outputNode, () => {
+      if (dataRef.current.outputNode) {
+        updateOutputViewZone(outputNode, editor);
       }
-      //updateOutputZoneView(outputNode, editor, changeAccessor)
-    );
+    });
+  };
 
+  const updateOutputViewZone = (
+    outputNode: HTMLDivElement,
+    editor: editor.IStandaloneCodeEditor
+  ) => {
     // make sure the overlayWidget has resized before using it to set the height
     outputNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
     console.log(outputNode.offsetHeight);
     // We have to wait for the viewZone to finish rendering before adjusting the
     // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
     // not the editor may report the wrong value for position of the lines.
-    const viewZone = {
-      afterLineNumber: getLastLineOfEditableRegion(),
-      heightInPx: outputNode.offsetHeight,
-      domNode: document.createElement('div'),
-      onComputedHeight: () =>
-        dataRef.current.outputWidget &&
-        editor.layoutOverlayWidget(dataRef.current.outputWidget),
-      onDomNodeTop: (top: number) => {
-        dataRef.current.outputZoneTop = top;
-        if (dataRef.current.outputWidget)
-          editor.layoutOverlayWidget(dataRef.current.outputWidget);
-      }
-    };
-    dataRef.current.outputZoneId = changeAccessor.addZone(viewZone);
+    editor?.changeViewZones(changeAccessor => {
+      changeAccessor.removeZone(dataRef.current.outputZoneId);
+      const viewZone = {
+        afterLineNumber: getLastLineOfEditableRegion(),
+        heightInPx: outputNode.offsetHeight,
+        domNode: document.createElement('div'),
+        onComputedHeight: () =>
+          dataRef.current.outputWidget &&
+          editor.layoutOverlayWidget(dataRef.current.outputWidget),
+        onDomNodeTop: (top: number) => {
+          dataRef.current.outputZoneTop = top;
+          if (dataRef.current.outputWidget)
+            editor.layoutOverlayWidget(dataRef.current.outputWidget);
+        }
+      };
+      dataRef.current.outputZoneId = changeAccessor.addZone(viewZone);
+    });
   };
-
-  // const updateOutputZoneView = (outputNode, editor, changeAccessor) => {
-  //   console.log(changeAccessor);
-  //   // make sure the overlayWidget has resized before using it to set the height
-  //   outputNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
-  //   console.log(outputNode.offsetHeight);
-  //   // We have to wait for the viewZone to finish rendering before adjusting the
-  //   // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
-  //   // not the editor may report the wrong value for position of the lines.
-  //   const viewZone = {
-  //     afterLineNumber: getLastLineOfEditableRegion(),
-  //     heightInPx: outputNode.offsetHeight,
-  //     domNode: document.createElement('div'),
-  //     onComputedHeight: () =>
-  //       dataRef.current.outputWidget &&
-  //       editor.layoutOverlayWidget(dataRef.current.outputWidget),
-  //     onDomNodeTop: (top: number) => {
-  //       dataRef.current.outputZoneTop = top;
-  //       if (dataRef.current.outputWidget)
-  //         editor.layoutOverlayWidget(dataRef.current.outputWidget);
-  //     }
-  //   };
-
-  //   dataRef.current.outputZoneId = changeAccessor.addZone(viewZone);
-  // };
 
   function createDescription(editor: editor.IStandaloneCodeEditor) {
     if (dataRef.current.descriptionNode) return dataRef.current.descriptionNode;
@@ -953,7 +927,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         getOutputZoneTop
       );
       editor.addOverlayWidget(dataRef.current.outputWidget);
-      editor.changeViewZones(outputZoneCallback);
+      editor.changeViewZones(updateOutputZone);
     }
 
     editor.onDidScrollChange(() => {
@@ -1131,15 +1105,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.dimensions]);
-
-  // TODO: DRY (there's going to be a lot of that)
-  function updateOutputZone() {
-    const editor = dataRef.current.editor;
-    editor?.changeViewZones(changeAccessor => {
-      changeAccessor.removeZone(dataRef.current.outputZoneId);
-      outputZoneCallback(changeAccessor);
-    });
-  }
 
   function updateDescriptionZone() {
     const editor = dataRef.current.editor;
