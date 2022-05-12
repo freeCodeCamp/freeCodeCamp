@@ -334,7 +334,6 @@ export class Block extends Component<BlockProps> {
     );
 
     const blockrenderer = () => {
-      console.log(challengesWithCompleted);
       if (isProjectBlock)
         return isNewResponsiveWebDesign ? GridProjectBlock : ProjectBlock;
       return isNewResponsiveWebDesign ? GridBlock : Block;
