@@ -136,24 +136,19 @@ const el = document.getElementById('tribute-link')
 assert(!!el && el.target === '_blank')
 ```
 
-You should use an `#image` selector in your CSS to style the `#image` and pass the next three tests.
+Your `img` element should have a `display` of `block`.
 
 ```js
-const style = new __helpers.CSSHelp(document).getStyle('#image')
-assert(!!style)
-```
-
-Your `#image` should have a `display` of `block`.
-
-```js
-const style = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('display')
+const img = new __helpers.CSSHelp(document).getStyle('#image') || new __helpers.CSSHelp(document).getStyle('img')
+const style = img?.getPropertyValue('display')
 assert(style === 'block')
 ```
 
 Your `#image` should have a `max-width` of `100%`.
 
 ```js
-const style = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('max-width')
+const img = new __helpers.CSSHelp(document).getStyle('#image') || new __helpers.CSSHelp(document).getStyle('img')
+const style = img?.getPropertyValue('max-width')
 assert(style === '100%')
 ```
 
@@ -162,12 +157,13 @@ Your `#image` should have a `height` of `auto`.
 ```js
 // taken from the testable-projects repo
 const img = document.getElementById('image');
-const maxWidthValue = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('max-width')
-const displayValue = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('display')
+const imgStyle = new __helpers.CSSHelp(document).getStyle('#image') || new __helpers.CSSHelp(document).getStyle('img')
+const maxWidthValue = imgStyle?.getPropertyValue('max-width')
+const displayValue = imgStyle?.getPropertyValue('display')
 const oldDisplayValue = img?.style.getPropertyValue('display');
 const oldDisplayPriority = img?.style.getPropertyPriority('display');
 img?.style.setProperty('display', 'none', 'important');
-const heightValue = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('height')
+const heightValue = imgStyle?.getPropertyValue('height')
 img?.style.setProperty('display', oldDisplayValue, oldDisplayPriority);
 assert(heightValue === 'auto')
 ```
