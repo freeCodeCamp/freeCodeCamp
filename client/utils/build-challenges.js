@@ -21,7 +21,7 @@ exports.replaceChallengeNode = () => {
     const blockNameRe = /\d\d-[-\w]+\/([^/]+)\//;
     const posix = path.normalize(filePath).split(path.sep).join(path.posix.sep);
     const blockName = posix.match(blockNameRe)[1];
-    const metaPath = path.resolve(META_DIR, `/${blockName}/meta.json`);
+    const metaPath = path.resolve(META_DIR, `${blockName}/meta.json`);
     delete require.cache[require.resolve(metaPath)];
     const meta = require(metaPath);
     // TODO: reimplement hot-reloading of certifications

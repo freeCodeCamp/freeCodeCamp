@@ -19,7 +19,8 @@ dashedName: define-the-head-and-body-of-an-html-document
 <!DOCTYPE html>
 <html>
   <head>
-    <meta />
+   <meta charset="utf-8">
+   <title>Example title</title>
   </head>
   <body>
     <div>

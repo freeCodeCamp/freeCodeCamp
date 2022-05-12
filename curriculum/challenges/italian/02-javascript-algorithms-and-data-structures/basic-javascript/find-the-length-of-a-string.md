@@ -21,7 +21,7 @@ Ad esempio, se avessimo creato una variabile `const firstName = "Ada"`, potremmo
 
 # --instructions--
 
-Usa la proprietà `.length` per contare il numero di caratteri nella variabile `lastName` e assegnarla a `lastNameLength`.
+Usa la proprietà `.length` per dare a `lastNameLength` un valore pari al numero di caratteri in `lastName`.
 
 # --hints--
 

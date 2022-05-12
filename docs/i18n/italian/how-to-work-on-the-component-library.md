@@ -50,38 +50,49 @@ Ogni componente è diverso, ma in genere un componente dovrebbe:
 - Essere stilizzato internamente basato sulle proprietà (Il consumatore non dovrebbe avere bisogno di stilizzare il componente con la proprietà `className`)
 - Utilizzare il sistema integrato di stilizzazione di Tailwind invece di usare stili personalizzati
 
+### Using colors
+
+There are two color "layers" in the component library:
+
+- The base layer, where the color names describe what the colors are, e.g. `gray00`, `blue50`
+- The semantic layer, where the color names describe what the colors are for, e.g. `foreground-primary`, `background-danger`
+
+Generally when using colors in a component, you should choose semantic variables over the base ones. There are exceptions, however, specifically when you are styling the component's states such as hover, active, disabled, etc. In these cases, we recommend using the base variables directly instead of creating new semantic variables, since each component can have different styles for their states.
+
+> [!NOTE] Color definition can be found in the [`colors.css` file](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/tools/ui-components/src/colors.css). A color is only available for use if it is added to the [`tailwind.config.js` file](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/tools/ui-components/tailwind.config.js) under the `colors` property.
+
 ### Link utili
 
 - [Tailwind CSS Configuration](https://tailwindcss.com/docs/configuration)
 - [React Bootstrap v0.33 Docs](https://react-bootstrap-v3.netlify.app)
 - [Bootstrap 3.3.7 stylesheet](https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css)
-- [Implementazione corrente di React Bootstrap](https://github.com/react-bootstrap/react-bootstrap/tree/master/src)
-- [Test attuali di React Bootstrap](https://github.com/react-bootstrap/react-bootstrap/tree/master/test)
+- [React Bootstrap current implementation](https://github.com/react-bootstrap/react-bootstrap/tree/master/src)
+- [React Bootstrap current tests](https://github.com/react-bootstrap/react-bootstrap/tree/master/test)
 
 ## Visualizzazione degli use case con Storybook
 
-Gli use case di un componente dovrebbero essere aggiunti al file Storybook (`.stories.tsx`).
+Use cases of the component should be added to the Storybook file (`.stories.tsx`).
 
-Per far partire Storybook, esegui i seguenti comandi dalla directory root:
+To start Storybook, run the following command from the root directory:
 
 ```bash
 npm run storybook
 ```
 
-La pagina Storybook è disponibile a [http://localhost:6006](http://localhost:6006).
+The Storybook page is available on [http://localhost:6006](http://localhost:6006).
 
 ## Scrivere test unitari
 
-Usiamo [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) per scrivere i test dell'unità. I test dovrebbero verificare che i componenti si comportano come previsto e sono accessibili.
+We use [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) to write unit tests. The tests should assert that the components behave as expected and are accessible.
 
-Per eseguire i test sulla libreria componenti, esegui il seguente comando dalla directory root:
+To run tests against the component library, run the following command from the root directory:
 
 ```bash
 npm run test-ui-components
 ```
 
-### Link utili
+### Useful links
 
-- [Testare per accessibilità](https://testing-library.com/docs/dom-testing-library/api-accessibility)
-- [Ordine di priorità delle query di React Testing Library](https://testing-library.com/docs/queries/about/#priority)
-- [Errori comuni con React Testing Library](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library)
+- [Testing for Accessibility](https://testing-library.com/docs/dom-testing-library/api-accessibility)
+- [Order of priority of React Testing Library's queries](https://testing-library.com/docs/queries/about/#priority)
+- [Common mistakes with React Testing Library](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library)

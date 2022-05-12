@@ -166,9 +166,7 @@ If you're confident it's a new bug and have confirmed that someone else is facin
 
 ### Reporting Security Issues and Responsible Disclosure
 
-If you think you have found a vulnerability, _please report responsibly_. Don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
-
-We appreciate any responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users. While we do not offer any bounties or swags at the moment, we'll be happy to list your name in our [Hall of Fame](https://contribute.freecodecamp.org/#/security-hall-of-fame) for security researchers.
+[Our security policy is available here.](https://contribute.freecodecamp.org/#/security)
 
 ### Contributing
 

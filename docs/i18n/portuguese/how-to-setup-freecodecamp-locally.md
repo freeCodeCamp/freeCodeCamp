@@ -244,11 +244,13 @@ npm run develop
 
 Este único comando vai disparar todos os serviços, incluindo o servidor API e os aplicativos do cliente disponíveis para você trabalhar.
 
-> [!NOTE] Uma vez pronto, abra um navegador e **acesse <http://localhost:8000>**. Se o aplicativo carregar, parabéns - você está com tudo configurado! Agora você tem uma cópia da plataforma do freeCodeCamp de aprendizagem inteira rodando em sua máquina local.
+> [!NOTE] Uma vez pronto, abra um navegador e **acesse <http://localhost:8000>**. Se o aplicativo carregar, faça o login. Parabéns – está tudo pronto! Agora você tem uma cópia da plataforma do freeCodeCamp de aprendizagem inteira rodando em sua máquina local.
 
 > [!TIP] O API Server serve APIs em `http://localhost:3000`. O aplicativo Gatsby atende o aplicativo cliente em `http://localhost:8000`
 
-> Se você visitar <http://localhost:3000/explorer> poderá ver as APIs disponíveis.
+> Quando estiver conectado, se você visitar <http://localhost:3000/explorer> poderá ver as APIs disponíveis.
+
+> [!WARNING] Limpar seus cookies ou executar `npm run seed:certified-user` desconectará você e será preciso fazer o login novamente.
 
 ## Entre com um usuário local
 
@@ -496,7 +498,7 @@ Se você está em um sistema operacional diferente e/ou ainda está com problema
 
 > [!WARNING]
 > 
-> Por favor, evite criar issues no GitHub sobre pré-requisitos. Estão fora do escopo deste projeto.
+> Evite criar issues no GitHub sobre pré-requisitos. Estão fora do escopo deste projeto.
 
 ### Problemas com a Interface do Usuário, fontes, errors de build, etc.
 

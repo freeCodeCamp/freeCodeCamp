@@ -27,7 +27,7 @@ Ideally the `alt` attribute should not contain special characters unless needed.
 Let's add an `alt` attribute to our `img` example above:
 
 ```html
-<img src="https://www.freecatphotoapp.com/your-image.jpg" alt="A business cat wearing a necktie.">
+<img src="https://www.freecatphotoapp.com/your-image.jpg" alt="freeCodeCamp logo">
 ```
 
 # --instructions--

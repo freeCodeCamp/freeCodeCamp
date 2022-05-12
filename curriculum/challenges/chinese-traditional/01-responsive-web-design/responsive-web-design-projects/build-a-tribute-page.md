@@ -1,43 +1,327 @@
 ---
 id: bd7158d8c442eddfaeb5bd18
-title: 製作一個致敬頁
-challengeType: 3
+title: Build a Tribute Page
+challengeType: 14
 forumTopicId: 301147
 dashedName: build-a-tribute-page
 ---
 
 # --description--
 
-**目標：** 在 [CodePen.io](https://codepen.io) 上創建一個與這個功能類似的 app：<https://codepen.io/freeCodeCamp/full/zNqgVx>。
+**Objective:** Build an app that is functionally similar to <a href="https://tribute-page.freecodecamp.rocks" target="_blank">https://tribute-page.freecodecamp.rocks</a>
 
-在滿足以下 [需求](https://en.wikipedia.org/wiki/User_story) 並能通過所有測試的前提下， 你可以根據自己的喜好來美化你的 app。
+**User Stories:**
 
-你可以使用 HTML、JavaScript 以及 CSS 來完成項目。 由於目前你只學到了 CSS 課程，所以我們建議你只使用 CSS 來完成這個項目，同時鞏固一下你之前所學的內容。 你也可以使用 Bootstrap 或者 SASS。 我們不推薦你在這個項目中使用其他技術（比如 jQuery、React、Angular 或 Vue）。 在後續的其他項目中，你將有機會使用像是 React 等其他技術棧。 我們會接受並嘗試修復你在使用推薦技術棧創建項目時報告的問題。 祝你編碼愉快！
+1. Your tribute page should have an element with a corresponding `id="main"`, which contains all other elements
+1. You should see an element with an `id` of `title`, which contains a string (i.e. text), that describes the subject of the tribute page (e.g. "Dr. Norman Borlaug")
+1. You should see either a `figure` or a `div` element with an `id` of `img-div`
+1. Within the `img-div` element, you should see an `img` element with a corresponding `id="image"`
+1. Within the `img-div` element, you should see an element with a corresponding `id="img-caption"` that contains textual content describing the image shown in `img-div`
+1. You should see an element with a corresponding `id="tribute-info"`, which contains textual content describing the subject of the tribute page
+1. You should see an a element with a corresponding `id="tribute-link"`, which links to an outside site, that contains additional information about the subject of the tribute page. HINT: You must give your element an attribute of `target` and set it to `_blank` in order for your link to open in a new tab
+1. Your `#image` should use `max-width` and `height` properties to resize responsively, relative to the width of its parent element, without exceeding its original size
+1. Your `img` element should be centered within its parent element
 
-**需求 1：** 此 app 中應存在一個 `id="main"` 的元素，頁面上的所有元素都應置於這個元素中。
+Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
 
-**需求 2：** 此 app 中應存在一個 `id="title"` 的元素，其中包含描述致敬頁主題的字符串文本，如 "Dr. Norman Borlaug"。
+# --hints--
 
-**需求 3：** 此 app 中應存在一個 `id="img-div"` 的 `figure` 或 `div` 元素。
+You should have a `main` element with an `id` of `main`
 
-**需求 4：** 在 `img-div` 元素內，應存在一個 `id="image"` 的 `img` 元素。
+```js
+const el = document.getElementById('main')
+assert(!!el && el.tagName === 'MAIN')
+```
 
-**需求 5：** 在 `img-div` 元素內，應存在一個相應的 `id="img-caption"` 的元素，其中包含對 `img-div` 中圖像的描述文本。
+Your `#img-div`, `#image`, `#img-caption`, `#tribute-info`, and `#tribute-link` should all be descendants of `#main`
 
-**需求 6：** 此 app 中應存在一個 `id="tribute-info"` 的元素，其中應包含描述致敬頁主題的內容文本。
+```js
+const el1 = document.querySelector('#main #img-div')
+const el2 = document.querySelector('#main #image')
+const el3 = document.querySelector('#main #img-caption')
+const el4 = document.querySelector('#main #tribute-info')
+const el5 = document.querySelector('#main #tribute-link')
+assert(!!el1 & !!el2 && !!el3 && !!el4 && !!el5)
+```
 
-**需求 7：** 此 app 中應存在一個 `id="tribute-link"` 的 `a` 元素，它應鏈接到一個包含有關致敬頁主題額外信息的外部網頁。 提示：你必須爲 a 元素提供 `target` 屬性，並將其屬性值設置爲 `_blank`（即 `target="_blank"`），這樣纔可以在新選項卡中打開鏈接。
+You should have an element with an `id` of `title`
 
-**需求 8：** `img` 元素應相對於其父元素的寬度自動調整大小，但不超過圖片的原始大小。
+```js
+const el = document.getElementById('title')
+assert(!!el)
+```
 
-**需求 9：** `img` 應在其父元素內居中。
+Your `#title` should not be empty
 
-你可以<a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>使用這個 CodePen 模版</a>創建你的新項目，點擊 `Save` 即可創建你的新項目。 也可以使用此 CDN 鏈接在任何你喜歡的環境中運行測試：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`。
+```js
+const el = document.getElementById('title')
+assert(!!el && el.innerText.length > 0)
 
-完成項目並通過所有測試後，請輸入你的項目在 CodePen 上的鏈接並提交。
+```
 
-# --solutions--
+You should have a `figure` or `div` element with an `id` of `img-div`
+
+```js
+const el = document.getElementById('img-div')
+assert(!!el && (el.tagName === 'DIV' || el.tagName === 'FIGURE'))
+```
+
+You should have an `img` element with an `id` of `image`
+
+```js
+const el = document.getElementById('image')
+assert(!!el && el.tagName === 'IMG')
+```
+
+Your `#image` should be a descendant of `#img-div`
+
+```js
+const el = document.querySelector('#img-div #image')
+assert(!!el)
+```
+
+You should have a `figcaption` or `div` element with an `id` of `img-caption`
+
+```js
+const el = document.getElementById('img-caption')
+assert(!!el && (el.tagName === 'DIV' || el.tagName === 'FIGCAPTION'))
+```
+
+Your `#img-caption` should be a descendant of `#img-div`
+
+```js
+const el = document.querySelector('#img-div #img-caption')
+assert(!!el)
+```
+
+Your `#img-caption` should not be empty
+
+```js
+const el = document.getElementById('img-caption')
+assert(!!el && el.innerText.length > 0)
+```
+
+You should have an element with an `id` of `tribute-info`
+
+```js
+const el = document.getElementById('tribute-info')
+assert(!!el)
+```
+
+Your `#tribute-info` should not be empty
+
+```js
+const el = document.getElementById('tribute-info')
+assert(!!el && el.innerText.length > 0)
+```
+
+You should have an `a` element with an `id` of `tribute-link`
+
+```js
+const el = document.getElementById('tribute-link')
+assert(!!el && el.tagName === 'A')
+```
+
+Your `#tribute-link` should have an `href` attribute and value
+
+```js
+const el = document.getElementById('tribute-link')
+assert(!!el && !!el.href && el.href.length > 0)
+```
+
+Your `#tribute-link` should have a `target` attribute set to `_blank`
+
+```js
+const el = document.getElementById('tribute-link')
+assert(!!el && el.target === '_blank')
+```
+
+You should use an `#image` selector in your CSS to style the `#image` and pass the next three tests
+
+```js
+const style = new __helpers.CSSHelp(document).getStyle('#image')
+assert(!!style)
+```
+
+Your `#image` should have a `display` of `block`
+
+```js
+const style = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('display')
+assert(style === 'block')
+```
+
+Your `#image` should have a `max-width` of `100%`
+
+```js
+const style = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('max-width')
+assert(style === '100%')
+```
+
+Your `#image` should have a `height` of `auto`
+
+```js
+// taken from the testable-projects repo
+const img = document.getElementById('image');
+const maxWidthValue = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('max-width')
+const displayValue = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('display')
+const oldDisplayValue = img?.style.getPropertyValue('display');
+const oldDisplayPriority = img?.style.getPropertyPriority('display');
+img?.style.setProperty('display', 'none', 'important');
+const heightValue = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('height')
+img?.style.setProperty('display', oldDisplayValue, oldDisplayPriority);
+assert(heightValue === 'auto')
+```
+
+Your `#image` should be centered within its parent
+
+```js
+// taken from the testable-projects repo
+const img = document.getElementById('image'),
+  imgParent = img?.parentElement,
+  imgLeft = img?.getBoundingClientRect().left,
+  imgRight = img?.getBoundingClientRect().right,
+  parentLeft = imgParent?.getBoundingClientRect().left,
+  parentRight = imgParent?.getBoundingClientRect().right,
+  leftMargin = imgLeft - parentLeft,
+  rightMargin = parentRight - imgRight;
+assert(leftMargin - rightMargin < 6 && rightMargin - leftMargin < 6)
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
-// solution required
+
+```
+
+```css
+
+```
+
+## --solutions--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lobster"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <title>Tribute Page</title>
+  </head>
+  <body>
+    <h1>Tribute Page</h1>
+    <p>The below card was designed as a tribute page for freeCodeCamp.</p>
+    <main id="main">
+      <div id="img-div">
+        <img
+          id="image"
+          class="border"
+          src="https://upload.wikimedia.org/wikipedia/en/5/53/Pok%C3%A9mon_Togepi_art.png"
+          alt="An image of Togepi"
+        />
+        <figcaption id="img-caption">Togepi, happy as always.</figcaption>
+      </div>
+      <h2 id="title">Togepi</h2>
+      <hr />
+      <div id="tribute-info">
+        <p>
+          Togepi was first discovered in the Johto region, when Ash Ketchum
+          discovered a mysterious egg. However, when the egg hatched, Togepi saw
+          Ash's friend Misty first and imprinted on her. Like many other
+          creatures, this imprinting process created a bond and Togepi views
+          Misty as his mother.
+        </p>
+        <p>
+          Togepi is a very childlike Pokemon, and is very emotionally
+          expressive. He demonstrates extreme levels of joy and sadness.
+        </p>
+        <hr />
+        <p><u>Battle Information</u></p>
+        <ul style="list-style-type: none">
+          <li>Type: Fairy</li>
+          <li>Evolutions: Togepi -> Togetic -> Togekiss</li>
+          <li>Moves: Growl, Pound, Sweet Kiss, Charm</li>
+          <li>Weaknesses: Poison, Steel</li>
+          <li>Resistances: Dragon</li>
+        </ul>
+        <p>
+          Check out this
+          <a
+            id="tribute-link"
+            href="https://bulbapedia.bulbagarden.net/wiki/Togepi_(Pok%C3%A9mon)"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Bulbapedia article on Togepi</a
+          >
+          for more information on this great Pokemon.
+        </p>
+      </div>
+    </main>
+  </body>
+  <footer>
+    <a href="../">Return to Project List</a> |
+    <a href="https://www.nhcarrigan.com">Return to HomePage</a>
+  </footer>
+</html>
+```
+
+```css
+body {
+  background-color: #3a3240;
+  color: white;
+}
+main {
+  background-color: #92869c;
+  font-family: Lobster;
+  max-width: 500px;
+  margin: 20px auto;
+  color: black;
+  border-radius: 50px;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.5);
+}
+h2 {
+  text-align: center;
+  font-size: 20pt;
+  font-family: Pacifico;
+}
+body {
+  text-align: center;
+  font-size: 12pt;
+}
+footer {
+  text-align: center;
+  font-size: 10pt;
+}
+.border {
+  border-color: black;
+  border-width: 5px;
+  border-style: solid;
+}
+#image {
+  height: auto;
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  border-radius: 50%;
+}
+#img-caption {
+  font-size: 10pt;
+}
+a:not(#tribute-link) {
+  color: white;
+}
+hr {
+  border-color: black;
+}
 ```

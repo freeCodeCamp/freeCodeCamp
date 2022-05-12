@@ -1,9 +1,7 @@
 .universal-nav {
-  z-index: 300;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  height: 40px;
   font-size: 18px;
   font-family: 'Roboto-Mono', sans-serif;
   height: var(--header-height);
@@ -105,7 +103,6 @@
   white-space: normal;
   min-height: var(--header-height);
   width: 100%;
-  align-items: center;
   border: none;
 }
 

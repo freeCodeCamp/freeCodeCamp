@@ -305,7 +305,9 @@
     "step-2": "Step 2: Consegna il codice",
     "submit-public-url": "Quando hai completato il progetto salva tutti i file richiesti in una repository pubblica e consegna l'URL qui sotto.",
     "complete-both-steps": "Completa entrambi gli step qua sotto per finire la sfida.",
-    "runs-in-vm": "Il progetto esegue in una macchina virtuale, completa le user story descritte lì dentro e fai passare tutti i test per finire lo step 1."
+    "runs-in-vm": "Il progetto esegue in una macchina virtuale, completa le user story descritte lì dentro e fai passare tutti i test per finire lo step 1.",
+    "completed": "Completed",
+    "not-started": "Not started"
   },
   "donate": {
     "title": "Supporta il nostro no profit",
@@ -412,7 +414,7 @@
   },
   "search": {
     "label": "Cerca",
-    "placeholder": "Cerca oltre 8000 tutorial",
+    "placeholder": "Cerca tra 100+ tutorial",
     "see-results": "Vedi tutti i risultati per {{searchQuery}}",
     "no-tutorials": "Nessun tutorial trovato",
     "try": "Cerchi qualcosa? Prova la barra di ricerca su questa pagina.",

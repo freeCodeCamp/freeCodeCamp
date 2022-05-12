@@ -208,12 +208,12 @@ export const currentChallengeIdSelector = state =>
   state[MainApp].currentChallengeId;
 
 export const emailSelector = state => userSelector(state).email;
-export const isAVariantSelector = state => {
+export const isVariantASelector = state => {
   const email = emailSelector(state);
   // if the user is not signed in and the user info is not available.
   // always return A the control variant
   if (!email) return true;
-  return emailToABVariant(email).isAVariant;
+  return emailToABVariant(email).isVariantA;
 };
 export const isDonatingSelector = state => userSelector(state).isDonating;
 export const isOnlineSelector = state => state[MainApp].isOnline;

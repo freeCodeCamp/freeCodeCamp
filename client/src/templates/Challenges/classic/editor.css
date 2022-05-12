@@ -7,6 +7,12 @@
   z-index: 11;
 }
 
+/* NVDA skips the textarea in browse mode if there is no size */
+textarea.inputarea {
+  width: 1px !important;
+  height: 1px !important;
+}
+
 .editor-container {
   background: var(--editor-background);
 }
@@ -35,6 +41,10 @@
 .editor-upper-jaw,
 .editor-lower-jaw {
   padding: 15px 15px 15px 0px;
+}
+
+.editor-upper-jaw {
+  max-width: unset !important;
 }
 
 .action-row-container,

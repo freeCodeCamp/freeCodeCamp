@@ -306,7 +306,9 @@
     "step-2": "Step 2: Submit your code",
     "submit-public-url": "When you have completed the project, save all the required files into a public repository and submit the URL to it below.",
     "complete-both-steps": "Complete both steps below to finish the challenge.",
-    "runs-in-vm": "The project runs in a virtual machine, complete the user stories described in there and get all the tests to pass to finish step 1."
+    "runs-in-vm": "The project runs in a virtual machine, complete the user stories described in there and get all the tests to pass to finish step 1.",
+    "completed": "Completed",
+    "not-started": "Not started"
   },
   "donate": {
     "title": "Support our nonprofit",
