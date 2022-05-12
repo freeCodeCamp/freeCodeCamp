@@ -552,17 +552,51 @@ const Editor = (props: EditorProps): JSX.Element => {
     dataRef.current.descriptionZoneId = changeAccessor.addZone(viewZone);
   };
 
+  function createLowerJaw(outputNode: HTMLElement, callback?: () => void) {
+    console.log(document.getElementById('editor-lower-jaw'));
+
+    const { output } = props;
+    const isChallengeComplete = challengeIsComplete();
+    ReactDOM.render(
+      <LowerJaw
+        openHelpModal={props.openHelpModal}
+        executeChallenge={props.executeChallenge}
+        hint={output[1]}
+        testsLength={props.tests.length}
+        attemptsNumber={attemptRef.current.attempts}
+        challengeIsCompleted={isChallengeComplete}
+        challengeHasErrors={challengeHasErrors()}
+        submitChallenge={props.submitChallenge}
+        onAttempt={() => attemptRef.current.attempts++}
+      />,
+      outputNode,
+      callback
+    );
+  }
+
   const outputZoneCallback = (
     changeAccessor: editor.IViewZoneChangeAccessor
   ) => {
     const editor = dataRef.current.editor;
-    if (!editor) return;
-    const outputNode = createOutputNode(editor);
+    if (!editor || !dataRef.current.outputNode) return;
+
+    console.log(changeAccessor);
+    const outputNode = dataRef.current.outputNode;
+    createLowerJaw(
+      outputNode,
+      () => {
+        if (dataRef.current.outputNode) {
+          const height = dataRef.current.outputNode.offsetHeight;
+          console.log({ callback: height });
+          // setLowerJawHeight(height);
+        }
+      }
+      //updateOutputZoneView(outputNode, editor, changeAccessor)
+    );
 
     // make sure the overlayWidget has resized before using it to set the height
-
     outputNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
-
+    console.log(outputNode.offsetHeight);
     // We have to wait for the viewZone to finish rendering before adjusting the
     // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
     // not the editor may report the wrong value for position of the lines.
@@ -579,9 +613,33 @@ const Editor = (props: EditorProps): JSX.Element => {
           editor.layoutOverlayWidget(dataRef.current.outputWidget);
       }
     };
-
     dataRef.current.outputZoneId = changeAccessor.addZone(viewZone);
   };
+
+  // const updateOutputZoneView = (outputNode, editor, changeAccessor) => {
+  //   console.log(changeAccessor);
+  //   // make sure the overlayWidget has resized before using it to set the height
+  //   outputNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
+  //   console.log(outputNode.offsetHeight);
+  //   // We have to wait for the viewZone to finish rendering before adjusting the
+  //   // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
+  //   // not the editor may report the wrong value for position of the lines.
+  //   const viewZone = {
+  //     afterLineNumber: getLastLineOfEditableRegion(),
+  //     heightInPx: outputNode.offsetHeight,
+  //     domNode: document.createElement('div'),
+  //     onComputedHeight: () =>
+  //       dataRef.current.outputWidget &&
+  //       editor.layoutOverlayWidget(dataRef.current.outputWidget),
+  //     onDomNodeTop: (top: number) => {
+  //       dataRef.current.outputZoneTop = top;
+  //       if (dataRef.current.outputWidget)
+  //         editor.layoutOverlayWidget(dataRef.current.outputWidget);
+  //     }
+  //   };
+
+  //   dataRef.current.outputZoneId = changeAccessor.addZone(viewZone);
+  // };
 
   function createDescription(editor: editor.IStandaloneCodeEditor) {
     if (dataRef.current.descriptionNode) return dataRef.current.descriptionNode;
@@ -610,6 +668,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   }
 
   function setLowerJawHeight(height?: number): void {
+    console.log('reset-size');
     const LowerJawHeight = document.getElementById('editor-lower-jaw');
     const newHeight = height === undefined ? 'auto' : `${height}px`;
     if (LowerJawHeight) {
@@ -628,23 +687,12 @@ const Editor = (props: EditorProps): JSX.Element => {
   }
 
   function createOutputNode(editor: editor.IStandaloneCodeEditor) {
-    if (dataRef.current.outputNode) return dataRef.current.outputNode;
     const outputNode = document.createElement('div');
     outputNode.classList.add('editor-lower-jaw');
     outputNode.setAttribute('id', 'editor-lower-jaw');
-    ReactDOM.render(
-      <LowerJaw
-        openHelpModal={props.openHelpModal}
-        executeChallenge={props.executeChallenge}
-        submitChallenge={props.submitChallenge}
-      />,
-      outputNode
-    );
-
     outputNode.style.left = `${editor.getLayoutInfo().contentLeft}px`;
     outputNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
     outputNode.style.top = getOutputZoneTop();
-
     dataRef.current.outputNode = outputNode;
     return outputNode;
   }
@@ -845,6 +893,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   }
 
   function addWidgetsToRegions(editor: editor.IStandaloneCodeEditor) {
+    console.log('add widgets to regions');
     const createWidget = (
       id: string,
       domNode: HTMLDivElement,
@@ -1038,31 +1087,9 @@ const Editor = (props: EditorProps): JSX.Element => {
   }, [props.previewOpen]);
 
   useEffect(() => {
-    const { output } = props;
     const { model, insideEditDecId } = dataRef.current;
-    const editableRegion = getEditableRegionFromRedux();
-    const isEditorInFocus = document.activeElement?.tagName === 'TEXTAREA';
-    const lowerJawElement = document.getElementById('editor-lower-jaw');
+    const lowerJawElement = dataRef.current.outputNode;
     const isChallengeComplete = challengeIsComplete();
-    if (editableRegion.length === 2 && lowerJawElement) {
-      const lowerJawHeight = lowerJawElement.offsetHeight;
-      ReactDOM.render(
-        <LowerJaw
-          openHelpModal={props.openHelpModal}
-          executeChallenge={props.executeChallenge}
-          hint={output[1]}
-          testsLength={props.tests.length}
-          attemptsNumber={attemptRef.current.attempts}
-          isEditorInFocus={isEditorInFocus}
-          challengeIsCompleted={isChallengeComplete}
-          challengeHasErrors={challengeHasErrors()}
-          submitChallenge={props.submitChallenge}
-          onAttempt={() => attemptRef.current.attempts++}
-        />,
-        lowerJawElement
-      );
-      setLowerJawHeight(lowerJawHeight);
-    }
     const range = model?.getDecorationRange(insideEditDecId);
     if (range && isChallengeComplete) {
       updateEditableRegion(
@@ -1073,6 +1100,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         }
       );
     }
+    dataRef.current.outputNode = lowerJawElement;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.tests]);
   useEffect(() => {
@@ -1086,6 +1114,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       // now:
       if (output) {
         if (hasEditableRegion()) {
+          console.log('change output');
           updateOutputZone();
         }
       }
@@ -1097,6 +1126,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     editor?.layout();
     if (hasEditableRegion()) {
       updateDescriptionZone();
+      console.log('change dimention');
       updateOutputZone();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
