@@ -19,7 +19,6 @@ import hardGoToEpic from './hard-go-to-epic';
 import { createReportUserSaga } from './report-user-saga';
 import { actionTypes as settingsTypes } from './settings/action-types';
 import { createShowCertSaga } from './show-cert-saga';
-import { createSoundModeSaga } from './sound-mode-saga';
 import updateCompleteEpic from './update-complete-epic';
 import { createUserTokenSaga } from './user-token-saga';
 import { createSaveChallengeSaga } from './save-challenge-saga';
@@ -82,7 +81,6 @@ export const sagas = [
   ...createFetchUserSaga(actionTypes),
   ...createShowCertSaga(actionTypes),
   ...createReportUserSaga(actionTypes),
-  ...createSoundModeSaga({ ...actionTypes, ...settingsTypes }),
   ...createUserTokenSaga(actionTypes),
   ...createSaveChallengeSaga(actionTypes)
 ];
