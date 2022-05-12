@@ -84,9 +84,6 @@ function Hotkeys({
   openShortcutsModal,
   user: { keyboardShortcuts }
 }: HotkeysProps): JSX.Element {
-  if (!keyboardShortcuts) {
-    return <>{children}</>;
-  }
   const handlers = {
     executeChallenge: (e: React.KeyboardEvent<HTMLButtonElement>) => {
       // the 'enter' part of 'ctrl+enter' stops HotKeys from listening, so it
@@ -109,29 +106,33 @@ function Hotkeys({
         executeChallenge({ showCompletionModal: true });
       }
     },
-    focusEditor: (e: React.KeyboardEvent) => {
-      e.preventDefault();
-      if (editorRef && editorRef.current) {
-        editorRef.current.focus();
-      }
-    },
-    focusInstructionsPanel: () => {
-      if (instructionsPanelRef && instructionsPanelRef.current) {
-        instructionsPanelRef.current.focus();
-      }
-    },
-    navigationMode: () => setEditorFocusability(false),
-    navigatePrev: () => {
-      if (!canFocusEditor) void navigate(prevChallengePath);
-    },
-    navigateNext: () => {
-      if (!canFocusEditor) void navigate(nextChallengePath);
-    },
-    showShortcuts: (e: React.KeyboardEvent) => {
-      if (!canFocusEditor && e.shiftKey && e.key === '?') {
-        openShortcutsModal();
-      }
-    }
+    ...(keyboardShortcuts
+      ? {
+          focusEditor: (e: React.KeyboardEvent) => {
+            e.preventDefault();
+            if (editorRef && editorRef.current) {
+              editorRef.current.focus();
+            }
+          },
+          focusInstructionsPanel: () => {
+            if (instructionsPanelRef && instructionsPanelRef.current) {
+              instructionsPanelRef.current.focus();
+            }
+          },
+          navigationMode: () => setEditorFocusability(false),
+          navigatePrev: () => {
+            if (!canFocusEditor) void navigate(prevChallengePath);
+          },
+          navigateNext: () => {
+            if (!canFocusEditor) void navigate(nextChallengePath);
+          },
+          showShortcuts: (e: React.KeyboardEvent) => {
+            if (!canFocusEditor && e.shiftKey && e.key === '?') {
+              openShortcutsModal();
+            }
+          }
+        }
+      : {})
   };
   // GlobalHotKeys is always mounted and tracks all keypresses. Without it,
   // keyup events can be missed and react-hotkeys assumes that that key is still
