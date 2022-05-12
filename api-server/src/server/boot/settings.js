@@ -262,11 +262,6 @@ function handleInvalidUpdate(res) {
 function updateUserFlag(req, res, next) {
   const { user, body: update } = req;
   const allowedKeys = [
-    'theme',
-    'sound',
-    'isHonest',
-    'portfolio',
-    'sendQuincyEmail',
     'isGithub',
     'isLinkedIn',
     'isTwitter',
