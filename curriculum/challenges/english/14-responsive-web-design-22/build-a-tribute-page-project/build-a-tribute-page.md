@@ -139,16 +139,18 @@ assert(!!el && el.target === '_blank')
 Your `img` element should have a `display` of `block`.
 
 ```js
-const img = new __helpers.CSSHelp(document).getStyle('#image') || new __helpers.CSSHelp(document).getStyle('img')
-const style = img?.getPropertyValue('display')
+const img = document.getElementById('image');
+const imgStyle = window.getComputedStyle(img);
+const style = imgStyle?.getPropertyValue('display')
 assert(style === 'block')
 ```
 
 Your `#image` should have a `max-width` of `100%`.
 
 ```js
-const img = new __helpers.CSSHelp(document).getStyle('#image') || new __helpers.CSSHelp(document).getStyle('img')
-const style = img?.getPropertyValue('max-width')
+const img = document.getElementById('image');
+const imgStyle = window.getComputedStyle(img);
+const style = imgStyle?.getPropertyValue('max-width')
 assert(style === '100%')
 ```
 
@@ -157,7 +159,7 @@ Your `#image` should have a `height` of `auto`.
 ```js
 // taken from the testable-projects repo
 const img = document.getElementById('image');
-const imgStyle = new __helpers.CSSHelp(document).getStyle('#image') || new __helpers.CSSHelp(document).getStyle('img')
+const imgStyle = window.getComputedStyle(img);
 const maxWidthValue = imgStyle?.getPropertyValue('max-width')
 const displayValue = imgStyle?.getPropertyValue('display')
 const oldDisplayValue = img?.style.getPropertyValue('display');
