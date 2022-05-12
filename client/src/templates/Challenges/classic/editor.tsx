@@ -416,7 +416,6 @@ const Editor = (props: EditorProps): JSX.Element => {
           if (challengeIsComplete()) {
             props.submitChallenge();
           } else {
-            clearTestFeedback();
             props.executeChallenge();
           }
         } else {
@@ -638,25 +637,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     return domNode;
   }
 
-  function setLowerJawHeight(height?: number): void {
-    console.log('reset-size');
-    const LowerJawHeight = document.getElementById('editor-lower-jaw');
-    const newHeight = height === undefined ? 'auto' : `${height}px`;
-    if (LowerJawHeight) {
-      LowerJawHeight.style.height = newHeight;
-    }
-  }
-
-  function clearTestFeedback() {
-    const testStatus = document.getElementById('test-feedback');
-    if (testStatus && testStatus.innerHTML) {
-      // Explicitly set the height to what it currently is so that we
-      // don't get a big content shift every time the code is checked.
-      // ReactDOM.unmountComponentAtNode(testStatus);
-      // setLowerJawHeight(testStatus.offsetHeight);
-    }
-  }
-
   function createOutputNode(editor: editor.IStandaloneCodeEditor) {
     const outputNode = document.createElement('div');
     outputNode.classList.add('editor-lower-jaw');
@@ -670,19 +650,9 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   function resetOutputNode() {
     const { model, insideEditDecId } = dataRef.current;
-    const testButton = document.getElementById('test-button');
-    if (testButton) {
-      testButton.innerHTML = 'Check Your Code (Ctrl + Enter)';
-      testButton.onclick = () => {
-        clearTestFeedback();
-        props.executeChallenge();
-      };
-    }
 
     // Must manually set test feedback height back to zero since
-    // clearTestFeedback does not.
-    setLowerJawHeight(0);
-    clearTestFeedback();
+    console.log('reset');
 
     // Resetting margin decorations
     const range = model?.getDecorationRange(insideEditDecId);
