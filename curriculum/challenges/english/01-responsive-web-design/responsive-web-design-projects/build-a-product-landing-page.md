@@ -119,8 +119,16 @@ assert(!!el && (el.tagName === 'VIDEO' || el.tagName === 'IFRAME'))
 Your `#video` should have a `src` attribute
 
 ```js
-const el = document.getElementById('video')
-assert(!!el && !!el.src)
+let el = document.getElementById('video')
+const sourceNode = el.children;
+let sourceElement = null;
+if (sourceNode.length) {
+  sourceElement = [...video.children].filter(el => el.localName === 'source')[0];
+}
+if (sourceElement) {
+  el = sourceElement;
+}
+assert(el.hasAttribute('src'));
 ```
 
 You should have a `form` element with an `id` of `form`
