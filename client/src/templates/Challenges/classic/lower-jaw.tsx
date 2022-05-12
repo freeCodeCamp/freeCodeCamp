@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Fail from '../../../assets/icons/fail';
 import LightBulb from '../../../assets/icons/lightbulb';
@@ -31,6 +31,16 @@ const LowerJaw = ({
   testsLength,
   onAttempt
 }: LowerJawProps): JSX.Element => {
+  const [previousHint, setpreviousHint] = useState('');
+
+  useEffect(() => {
+    // only save error hints
+    if (challengeHasErrors && hint && previousHint !== hint) {
+      setpreviousHint(hint);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [challengeHasErrors, hint]);
+
   const renderTestFeedbackContainer = () => {
     if (challengeIsCompleted) {
       const submitKeyboardInstructions = isEditorInFocus
@@ -53,9 +63,12 @@ const LowerJaw = ({
           </div>
         </div>
       );
-    } else if (challengeHasErrors && hint) {
-      const hintDiscription = `<h2 class="hint">Hint</h2> ${hint}`;
 
+      // show the hint if the previousHint is not set
+    } else if (hint || previousHint) {
+      const hintDiscription = `<h2 class="hint">Hint</h2> ${
+        hint || previousHint
+      }`;
       return (
         <>
           <div className='test-status'>
@@ -86,7 +99,7 @@ const LowerJaw = ({
         </>
       );
     } else {
-      <div className='test-status' />;
+      ('');
     }
   };
 

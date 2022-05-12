@@ -553,8 +553,6 @@ const Editor = (props: EditorProps): JSX.Element => {
   };
 
   function createLowerJaw(outputNode: HTMLElement, callback?: () => void) {
-    console.log(document.getElementById('editor-lower-jaw'));
-
     const { output } = props;
     const isChallengeComplete = challengeIsComplete();
     ReactDOM.render(
@@ -592,7 +590,6 @@ const Editor = (props: EditorProps): JSX.Element => {
   ) => {
     // make sure the overlayWidget has resized before using it to set the height
     outputNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
-    console.log(outputNode.offsetHeight);
     // We have to wait for the viewZone to finish rendering before adjusting the
     // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
     // not the editor may report the wrong value for position of the lines.
@@ -1075,26 +1072,11 @@ const Editor = (props: EditorProps): JSX.Element => {
       );
     }
     dataRef.current.outputNode = lowerJawElement;
+    console.log('tests');
+    updateOutputZone();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.tests]);
-  useEffect(() => {
-    const { output } = props;
-    // TODO: do we need this condition?  What happens if the ref is empty?
-    if (dataRef.current.outputNode) {
-      // TODO: output gets wiped when the preview gets updated, keeping the
-      // display is an anti-pattern (the render should not ignore props!).
-      // The correct solution is probably to create a new redux variable
-      // (shownHint,maybe) and have that persist through previews.  But, for
-      // now:
-      if (output) {
-        if (hasEditableRegion()) {
-          console.log('change output');
-          updateOutputZone();
-        }
-      }
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props.output]);
+
   useEffect(() => {
     const editor = dataRef.current.editor;
     editor?.layout();
