@@ -55,13 +55,6 @@ const LowerJaw = ({
       );
     } else if (challengeHasErrors && hint) {
       const hintDiscription = `<h2 class="hint">Hint</h2> ${hint}`;
-      const wordsArray = [
-        'Try again.',
-        'Keep trying.',
-        "You're getting there.",
-        'Hang in there.',
-        "Don't give up."
-      ];
 
       return (
         <>
@@ -75,7 +68,7 @@ const LowerJaw = ({
               <h2>Test</h2>
               <p>
                 {`Sorry, your code does not pass.
-            ${wordsArray[Math.floor(Math.random() * wordsArray.length)]}`}
+            ${wordPicker()}`}
               </p>
             </div>
           </div>
@@ -95,6 +88,19 @@ const LowerJaw = ({
     } else {
       <div className='test-status' />;
     }
+  };
+
+  const wordPicker = () => {
+    const wordsArray = [
+      'Try again.',
+      'Keep trying.',
+      "You're getting there.",
+      'Hang in there.',
+      "Don't give up."
+    ];
+    return attemptsNumber
+      ? wordsArray[attemptsNumber % wordsArray.length]
+      : wordsArray[0];
   };
 
   const onTestButtonClick = () => {
