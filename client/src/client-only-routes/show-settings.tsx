@@ -31,6 +31,8 @@ import {
   updateMyHonesty,
   updateMyPortfolio,
   updateMyQuincyEmail,
+  updateMySound,
+  updateMyTheme,
   updateUserFlag,
   verifyCert
 } from '../redux/settings';
@@ -73,8 +75,8 @@ const mapDispatchToProps = {
   createFlashMessage,
   navigate,
   submitNewAbout,
-  toggleNightMode: (theme: Themes) => updateUserFlag({ theme }),
-  toggleSoundMode: (sound: boolean) => updateUserFlag({ sound }),
+  toggleNightMode: (theme: Themes) => updateMyTheme({ theme }),
+  toggleSoundMode: (sound: boolean) => updateMySound({ sound }),
   updateInternetSettings: updateUserFlag,
   updateIsHonest: updateMyHonesty,
   updatePortfolio: updateMyPortfolio,

@@ -12,7 +12,8 @@ import {
   putUpdateMyHonesty,
   putUpdateMyQuincyEmail,
   putVerifyCert,
-  putUpdateMyPortfolio
+  putUpdateMyPortfolio,
+  putUpdateMyTheme
 } from '../../utils/ajax';
 import {
   updateUserFlagComplete,
@@ -34,7 +35,9 @@ import {
   updateMyQuincyEmailComplete,
   updateMyQuincyEmailError,
   updateMyPortfolioError,
-  updateMyPortfolioComplete
+  updateMyPortfolioComplete,
+  updateMyThemeComplete,
+  updateMyThemeError
 } from './';
 
 function* submitNewAboutSaga({ payload }) {
@@ -86,6 +89,16 @@ function* updateMySocialsSaga({ payload: update }) {
     yield put(createFlashMessage({ ...response }));
   } catch (e) {
     yield put(updateMySocialsError);
+  }
+}
+
+function* updateMyThemeSaga({ payload: update }) {
+  try {
+    const response = yield call(putUpdateMyTheme, update);
+    yield put(updateMyThemeComplete({ ...response, payload: update }));
+    yield put(createFlashMessage({ ...response }));
+  } catch (e) {
+    yield put(updateMyThemeError);
   }
 }
 
@@ -158,6 +171,7 @@ export function createSettingsSagas(types) {
     takeEvery(types.updateUserFlag, updateUserFlagSaga),
     takeEvery(types.updateMySocials, updateMySocialsSaga),
     takeEvery(types.updateMyHonesty, updateMyHonestySaga),
+    takeEvery(types.updateMyTheme, updateMyThemeSaga),
     takeEvery(types.updateMyQuincyEmail, updateMyQuincyEmailSaga),
     takeEvery(types.updateMyPortfolio, updateMyPortfolioSaga),
     takeLatest(types.submitNewAbout, submitNewAboutSaga),

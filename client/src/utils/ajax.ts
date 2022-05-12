@@ -274,6 +274,12 @@ export function putUpdateMySound(
   return put('/update-my-sound', update);
 }
 
+export function putUpdateMyTheme(
+  update: Record<string, string>
+): Promise<void> {
+  return put('/update-my-theme', update);
+}
+
 export function putUpdateMyHonesty(
   update: Record<string, string>
 ): Promise<void> {
