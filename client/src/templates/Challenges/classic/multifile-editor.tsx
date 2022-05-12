@@ -13,6 +13,8 @@ import { getTargetEditor } from '../utils/get-target-editor';
 import './editor.css';
 import {
   ChallengeFile,
+  Dimensions,
+  Ext,
   FileKey,
   ResizeProps,
   Test
@@ -29,16 +31,15 @@ interface MultifileEditorProps {
   containerRef: RefObject<HTMLElement>;
   contents?: string;
   description: string;
-  dimensions?: object;
+  dimensions?: Dimensions;
   editorRef: MutableRefObject<editor.IStandaloneCodeEditor>;
-  ext?: string;
+  ext?: Ext;
   fileKey?: string;
   initialEditorContent?: string;
   initialExt?: string;
   initialTests: Test[];
   output?: string[];
   resizeProps: ResizeProps;
-  theme: Themes;
   title: string;
   showProjectPreview: boolean;
   usesMultifileEditor: boolean;
@@ -76,7 +77,6 @@ const MultifileEditor = (props: MultifileEditorProps) => {
     description,
     editorRef,
     initialTests,
-    theme,
     resizeProps,
     title,
     visibleEditors: { stylescss, indexhtml, scriptjs, indexjsx },
@@ -139,8 +139,11 @@ const MultifileEditor = (props: MultifileEditorProps) => {
                     fileKey={key as FileKey}
                     initialTests={initialTests}
                     resizeProps={resizeProps}
-                    // This is weird, both are of same type
-                    theme={theme}
+                    contents={props.contents ?? ''}
+                    dimensions={props.dimensions ?? { height: 0, width: 0 }}
+                    ext={props.ext ?? 'html'}
+                    initialEditorContent={props.initialEditorContent ?? ''}
+                    initialExt={props.initialExt ?? ''}
                     title={title}
                     usesMultifileEditor={usesMultifileEditor}
                     showProjectPreview={showProjectPreview}
