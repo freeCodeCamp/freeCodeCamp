@@ -1,6 +1,6 @@
 ---
 id: 587d78b0367417b2b2512b05
-title: Build a Technical Documentation Page
+title: 製作一個技術文檔頁面
 challengeType: 14
 forumTopicId: 301146
 dashedName: build-a-technical-documentation-page
@@ -8,45 +8,45 @@ dashedName: build-a-technical-documentation-page
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank">https://technical-documentation-page.freecodecamp.rocks</a>
+**目標：** 構建一個功能類似於 <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank">https://technical-documentation-page.freecodecamp.rocks</a> 的應用程序
 
-**User Stories:**
+**需求：**
 
-1. You can see a `main` element with a corresponding `id="main-doc"`, which contains the page's main content (technical documentation)
-1. Within the `#main-doc` element, you can see several `section` elements, each with a class of `main-section`. There should be a minimum of five
-1. The first element within each `.main-section` should be a `header` element, which contains text that describes the topic of that section.
-1. Each `section` element with the class of `main-section` should also have an `id` that corresponds with the text of each `header` contained within it. Any spaces should be replaced with underscores (e.g. The section that contains the header "JavaScript and Java" should have a corresponding `id="JavaScript_and_Java"`)
-1. The `.main-section` elements should contain at least ten `p` elements total (not each)
-1. The `.main-section` elements should contain at least five `code` elements total (not each)
-1. The `.main-section` elements should contain at least five `li` items total (not each)
-1. You can see a `nav` element with a corresponding `id="navbar"`
-1. The navbar element should contain one `header` element which contains text that describes the topic of the technical documentation
-1. Additionally, the navbar should contain link (`a`) elements with the class of `nav-link`. There should be one for every element with the class `main-section`
-1. The `header` element in the `#navbar` must come before any link (`a`) elements in the navbar
-1. Each element with the class of `nav-link` should contain text that corresponds to the `header` text within each `section` (e.g. if you have a "Hello world" section/header, your navbar should have an element which contains the text "Hello world")
-1. When you click on a navbar element, the page should navigate to the corresponding section of the `main-doc` element (e.g. If you click on a `nav-link` element that contains the text "Hello world", the page navigates to a `section` element with that id, and contains the corresponding header)
-1. On regular sized devices (laptops, desktops), the element with `id="navbar"` should be shown on the left side of the screen and should always be visible to the user
-1. Your technical documentation should use at least one media query
+1. 你能看見一個 `id="main-doc"` 的 `main`元素，它包含頁面的主要內容（技術文檔）。
+1. 在 `#main-doc` 元素內，我能看見至少 5 個 `section` 元素，每個元素都有一個 class 爲 `main-section`。 應存在至少 5 個這樣的元素。
+1. 每個 `.main-section` 中的第一個元素應該是 `header` 元素，其中包含描述該部分主題的文本。
+1. class 爲 `main-section` 的每個 `section` 元素應該有一個與包含在其中的每個 `header` 的文本相對應的 `id`。 所有空格都應該被替換爲下劃線（例如，包含標題 “JavaScript and Java” 的 section 應有一個相應的 `id="JavaScript_and_Java"`）。
+1. 所有 `.main-section` 元素總計（不是每個）包含至少 10 個 `p` 元素。
+1. 所有 `.main-section` 元素總計（不是每個）包含至少 5 個 `code` 元素。
+1. 所有 `.main-section` 元素總計（不是每個）包含至少 5 個 `li` 元素。
+1. 你能看見一個 `id="navbar"` 的 `nav` 元素。
+1. navbar 元素應包含一個 `header` 元素，其中包含描述技術文檔主題的文本。
+1. 此外，導航欄應包含 class 爲 `nav-link` 的鏈接元素（`a`）。 每個 class 爲 `main-section` 的元素都需要有一個。
+1. `#navbar` 中的 `header` 元素必須在任何鏈接 (`a`) 之前。
+1. class 爲 `nav-link` 的每個元素都應該包含每個 `section` 的 `header` 文本對應的文本（例如，如果你有一個 “Hello world” 部分/標題，你的導航欄應該有一個包含文本 “Hello world” 的元素）。
+1. 當你點擊一個 navbar 元素時，頁面應該導航到 `main-doc` 元素的相應部分（例如，如果你點擊包含文本 “Hello world” 的 `nav-link` 元素，頁面將導航到一個帶有對應 header 和 id 的 `section` 元素）。
+1. 在常規尺寸的設備上（筆記本電腦、臺式機），帶有 `id="navbar"` 的元素應該顯示在屏幕左側，並且始終對用戶可見。
+1. 你的技術文檔應該使用至少一個媒體查詢。
 
-Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
+完成需求並通過下面的所有測試來完成這個項目。 賦予它你自己的個人風格。 編程愉快！
 
 # --hints--
 
-You should have a `main` element with an `id` of `main-doc`
+你應該有一個 `id` 爲 `main-doc` 的 `main` 元素。
 
 ```js
 const el = document.getElementById('main-doc')
 assert(!!el)
 ```
 
-You should have at least five `section` elements with a class of `main-section`
+你至少應該有 5 個 class 爲 `main-section` 的 `section` 元素。
 
 ```js
 const els = document.querySelectorAll('#main-doc section')
 assert(els.length >= 5)
 ```
 
-All of your `.main-section` elements should be `section` elements
+你所有的 `.main-section` 元素都應該是 `section` 元素。
 
 ```js
 const els = document.querySelectorAll('.main-section')
@@ -56,14 +56,14 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-You should have at least five `.main-section` elements that are descendants of `#main-doc`
+你至少應該有 5 個 `.main-section` 元素，它們是 `#main-doc` 的子元素。
 
 ```js
 const els = document.querySelectorAll('#main-doc .main-section')
 assert(els.length >= 5)
 ```
 
-The first child of each `.main-section` should be a `header` element
+每個 `.main-section` 的第一個子元素都應該是一個 `header` 元素。
 
 ```js
 const els = document.querySelectorAll('.main-section')
@@ -73,7 +73,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-None of your `header` elements should be empty
+你的 `header` 元素不應爲空。
 
 ```js
 const els = document.querySelectorAll('header')
@@ -83,7 +83,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-All of your `.main-section` elements should have an `id`
+你所有的 `.main-section` 元素都應該有 `id`。
 
 ```js
 const els = document.querySelectorAll('.main-section')
@@ -93,7 +93,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-Each `.main-section` should have an `id` that matches the text of its first child, having any spaces in the child's text replaced with underscores (`_`) for the id’s
+每個 `.main-section` 都應該有一個與其第一個子元素的文本匹配的 `id`，把子元素的文本中的空格都替換爲下劃線（`_`）用於 id。
 
 ```js
 const els = document.querySelectorAll('.main-section')
@@ -104,49 +104,49 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-You should have at least 10 `p` elements (total) within your `.main-section` elements
+在你的 `.main-section` 元素中應該至少有 10 個 `p` 元素（總計）。
 
 ```js
 const els = document.querySelectorAll('.main-section p')
 assert(els.length >= 10)
 ```
 
-You should have at least five `code` elements that are descendants of `.main-section` elements
+所有 `.main-section` 元素內總計應有至少 5 個 `code` 元素。
 
 ```js
 const els = document.querySelectorAll('.main-section code')
 assert(els.length >= 5)
 ```
 
-You should have at least five `li` elements that are descendants of `.main-section` elements
+所有 `.main-section` 元素內總計應有至少 5 個 `li` 元素。
 
 ```js
 const els = document.querySelectorAll('.main-section li')
 assert(els.length >= 5)
 ```
 
-You should have a `nav` element with an `id` of `navbar`
+你應該有一個 `id` 爲 `navbar` 的 `nav` 元素。
 
 ```js
 const el = document.getElementById('navbar')
 assert(!!el && el.tagName === 'NAV')
 ```
 
-Your `#navbar` should have exactly one `header` element within it
+你的 `#navbar` 應該只有一個 `header` 元素。
 
 ```js
 const els = document.querySelectorAll('#navbar header')
 assert(els.length === 1)
 ```
 
-You should have at least one `a` element with a class of `nav-link`
+你應該至少有一個 class 爲 `nav-link` 的 `a` 元素。
 
 ```js
 const els = document.querySelectorAll('a[class="nav-link"]')
 assert(els.length >= 1)
 ```
 
-All of your `.nav-link` elements should be anchor (`a`) elements
+你所有的 `.nav-link` 元素都應該是錨點（`a`）元素。
 
 ```js
 const els = document.querySelectorAll('.nav-link')
@@ -156,7 +156,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-All of your `.nav-link` elements should be in the `#navbar`
+你所有的 `.nav-link` 元素都應該在 `#navbar` 中。
 
 ```js
 const els1 = document.querySelectorAll('.nav-link')
@@ -164,7 +164,7 @@ const els2 = document.querySelectorAll('#navbar .nav-link')
 assert(els2.length > 0 && els1.length === els2.length)
 ```
 
-You should have the same number of `.nav-link` and `.main-section` elements
+你應該有相同數量的 `.nav-link` 和 `.main-section` 元素。
 
 ```js
 const els1 = document.querySelectorAll('.main-section')
@@ -172,7 +172,7 @@ const els2 = document.querySelectorAll('.nav-link')
 assert(els1.length > 0 && els2.length > 0 && els1.length === els2.length)
 ```
 
-The `header` element in the `#navbar` should come before any link (`a`) elements also in the `#navbar`
+`#navbar` 中的 `header` 元素必須在 `#navbar` 中的任何鏈接 (`a`) 之前。
 
 ```js
 const navLinks = document.querySelectorAll('#navbar a.nav-link');
@@ -188,7 +188,7 @@ navLinks.forEach((navLink) => {
 assert(!!header)
 ```
 
-Each `.nav-link` should have text that corresponds to the `header` text of its related `section` (e.g. if you have a "Hello world" section/header, your `#navbar` should have a `.nav-link` which has the text "Hello world")
+每個 `.nav-link` 應該有與其相關 `section` 的 `header` 文本相對應的文本（例如，如果你有一個 “Hello world” 部分/標題，你的 `#navbar` 應該有一個 `.nav-link` 包含文本 “Hello world”）。
 
 ```js
 const headerText = Array.from(document.querySelectorAll('.main-section')).map(el =>
@@ -201,7 +201,7 @@ const remainder = headerText.filter(str => linkText.indexOf(str) === -1)
 assert(headerText.length > 0 && headerText.length > 0 && remainder.length === 0)
 ```
 
-Each `.nav-link` should have an `href` attribute that links to its corresponding `.main-section` (e.g. If you click on a `.nav-link` element that contains the text "Hello world", the page navigates to a `section` element with that id)
+每個 `.nav-link` 都應該有一個 `href` 屬性，該屬性鏈接到其對應的 `.main-section`（例如，如果你單擊包含文本 “Hello world” 的 `.nav-link` 元素，頁面導航到具有該 id 的 `section` 元素）。
 
 ```js
 const hrefValues = Array.from(document.querySelectorAll('.nav-link')).map(el => el.getAttribute('href'))
@@ -210,7 +210,7 @@ const missingHrefValues = mainSectionIDs.filter(str => hrefValues.indexOf('#' + 
 assert(hrefValues.length > 0 && mainSectionIDs.length > 0 && missingHrefValues.length === 0)
 ```
 
-Your `#navbar` should always be on the left edge of the window
+你的 `#navbar` 元素應該始終位於視口的頂部。
 
 ```js
 const el = document.getElementById('navbar')
@@ -219,7 +219,7 @@ const left2 = el?.offsetLeft
 assert(!!el && left1 >= -15 && left1 <= 15 && left2 >= -15 && left2 <= 15)
 ```
 
-Your Technical Documentation project should use at least one media query
+你的技術文檔項目應該使用至少一個媒體查詢。
 
 ```js
 assert.isAtLeast(new __helpers.CSSHelp(document).getCSSRules('media')?.length, 1);

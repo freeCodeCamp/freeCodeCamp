@@ -1,6 +1,6 @@
 ---
 id: 587d78af367417b2b2512b03
-title: Build a Survey Form
+title: 制作一个调查表格
 challengeType: 14
 forumTopicId: 301145
 dashedName: build-a-survey-form
@@ -8,277 +8,277 @@ dashedName: build-a-survey-form
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to <a href="https://survey-form.freecodecamp.rocks" target="_blank">https://survey-form.freecodecamp.rocks</a>
+**目标：** 构建一个功能类似于 <a href="https://survey-form.freecodecamp.rocks" target="_blank">https://survey-form.freecodecamp.rocks</a> 的应用程序
 
-**User Stories:**
+**需求：**
 
-1. You should have a page title in an `h1` element with an `id` of `title`
-1. You should have a short explanation in a `p` element with an `id` of `description`
-1. You should have a `form` element with an `id` of `survey-form`
-1. Inside the form element, you are **required** to enter your name in an `input` field that has an `id` of `name` and a `type` of `text`
-1. Inside the form element, you are **required** to enter your email in an `input` field that has an `id` of `email`
-1. If you enter an email that is not formatted correctly, you will see an HTML5 validation error
-1. Inside the form, you can enter a number in an `input` field that has an `id` of `number`
-1. If you enter non-numbers in the number input, you will see an HTML5 validation error
-1. If you enter numbers outside the range of the number input, which are defined by the `min` and `max` attributes, you will see an HTML5 validation error
-1. For the name, email, and number input fields, you can see corresponding `label` elements in the form, that describe the purpose of each field with the following ids: `id="name-label"`, `id="email-label"`, and `id="number-label"`
-1. For the name, email, and number input fields, you can see placeholder text that gives a description or instructions for each field
-1. Inside the form element, you should have a `select` dropdown element with an `id` of `dropdown` and at least two options to choose from
-1. Inside the form element, you can select an option from a group of at least two radio buttons that are grouped using the `name` attribute
-1. Inside the form element, you can select several fields from a series of checkboxes, each of which must have a `value` attribute
-1. Inside the form element, you are presented with a `textarea` for additional comments
-1. Inside the form element, you are presented with a button with `id` of `submit` to submit all the inputs
+1. 你应该有一个 `id` 为 `title` 的 `h1` 元素
+1. 你应该有一个 `id` 为 `description` 的 `p` 元素
+1. 你应该有一个 `id` 为 `survey-form` 的 `form` 元素
+1. 在表单元素内，你**需要**在 `input` 字段中输入你的名字，该字段的 `id` 为 `name`，`type` 为 `text`
+1. 在表单元素内，你**需要**在 `input` 字段中输入你的邮箱，该字段的 `id` 为 `email`
+1. 如果你输入了格式不正确的邮箱，你将会看见 HTML5 验证错误信息
+1. 在表单中，你可以在 `input` 字段中输入一个数字，该字段的 `id` 为 `number`
+1. 如果你在数字输入框内输入非数字内容，你会看到 HTML5 验证错误信息
+1. 如果你输入的数字超出了范围（使用 `min` 和 `max` 属性定义），你将会看见 HTML5 验证错误信息
+1. 表单中的名字、邮箱和数字输入框需有对应的包含描述输入框用途的 `label` 元素，id 应分别为 `id="name-label"`、`id="email-label"` 和 `id="number-label"`
+1. 在表单中的名字、邮箱和数字输入框中，你能看到各自的描述文字作为占位符
+1. 在表单元素内， 你应该有一个 `select` 下拉元素， `id` 为 `dropdown`，它至少有两个选项
+1. 在表单元素内， 你可以从至少两个单选按钮的组中选择一个选项，该选项使用 `name` 属性
+1. 在表单元素内，你可以从一系列复选框中选择几个字段，每个复选框都必须具有 `value` 属性
+1. 在表单元素内，你会有一个 `textarea` 以获取额外的评论
+1. 在表单元素内，你将收到一个按钮，其 `id` 为 `submit`，提交所有输入
 
-Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
+完成需求并通过下面的所有测试来完成这个项目。 赋予它你自己的个人风格。 编程愉快！
 
 # --hints--
 
-You should have an `h1` element with an `id` of `title`
+你应该有一个 `id` 为 `title` 的 `h1` 元素。
 
 ```js
 const el = document.getElementById('title')
 assert(!!el && el.tagName === 'H1')
 ```
 
-Your `#title` should not be empty
+你的 `#title` 不应为空。
 
 ```js
 const el = document.getElementById('title')
 assert(!!el && el.innerText.length > 0)
 ```
 
-You should have a `p` element with an `id` of `description`
+你应该有一个 `id` 为 `description` 的 `p` 元素。
 
 ```js
 const el = document.getElementById('description')
 assert(!!el && el.tagName === 'P')
 ```
 
-Your `#description` should not be empty
+你的 `#description` 不应为空。
 
 ```js
 const el = document.getElementById('description')
 assert(!!el && el.innerText.length > 0)
 ```
 
-You should have a `form` element with an `id` of `survey-form`
+你应该有一个 `id` 为 `survey-form` 的 `form` 元素
 
 ```js
 const el = document.getElementById('survey-form')
 assert(!!el && el.tagName === 'FORM')
 ```
 
-You should have an `input` element with an `id` of `name`
+你应该有一个 `id` 为 `name` 的 `input` 元素。
 
 ```js
 const el = document.getElementById('name')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Your `#name` should have a `type` of `text`
+你的 `#name` 元素应该具有 `type` 为 `text`。
 
 ```js
 const el = document.getElementById('name')
 assert(!!el && el.type === 'text')
 ```
 
-Your `#name` should require input
+你的 `#name` 元素应该需要输入。
 
 ```js
 const el = document.getElementById('name')
 assert(!!el && el.required)
 ```
 
-Your `#name` should be a descedant of `#survey-form`
+你的 `#name` 元素应该是 `#survey-form` 元素的子元素。
 
 ```js
 const el = document.querySelector('#survey-form #name')
 assert(!!el)
 ```
 
-You should have an `input` element with an `id` of `email`
+你应该有一个 `id` 为 `email` 的 `input` 元素
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Your `#email` should have a `type` of `email`
+你的 `#email` 元素应该具有 `type` 为 `email`。
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.type === 'email')
 ```
 
-Your `#email` should require input
+你的 `#email` 元素应该需要输入。
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.required)
 ```
 
-Your `#email` should be a descedant of `#survey-form`
+你的 `#email` 元素应该是 `#survey-form` 元素的子元素。
 
 ```js
 const el = document.querySelector('#survey-form #email')
 assert(!!el)
 ```
 
-You should have an `input` element with an `id` of `number`
+你应该有一个 `id` 为 `number` 的 `input` 元素。
 
 ```js
 const el = document.getElementById('number')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Your `#number` should be a descedant of `#survey-form`
+你的 `#number` 元素应该是 `#survey-form` 元素的子元素。
 
 ```js
 const el = document.querySelector('#survey-form #number')
 assert(!!el)
 ```
 
-Your `#number` should have a `type` of `number`
+你的 `#number` 元素应该具有 `type` 为 `number`。
 
 ```js
 const el = document.getElementById('number')
 assert(!!el && el.type === 'number')
 ```
 
-Your `#number` should have a `min` attribute with a numeric value
+你的 `#number` 应该有一个值为数字的 `min` 属性。
 
 ```js
 const el = document.getElementById('number')
 assert(!!el && el.min && isFinite(el.min))
 ```
 
-Your `#number` should have a `max` attribute with a numeric value
+你的 `#number` 应该有一个值为数字的 `max` 属性。
 
 ```js
 const el = document.getElementById('number')
 assert(!!el && el.max && isFinite(el.max))
 ```
 
-You should have a `label` element with an `id` of `name-label`
+你应该有一个 `id` 为 `name-label` 的 `label` 元素。
 
 ```js
 const el = document.getElementById('name-label')
 assert(!!el && el.tagName === 'LABEL')
 ```
 
-You should have a `label` element with an `id` of `email-label`
+你应该有一个 `id` 为 `email-label` 的 `label` 元素。
 
 ```js
 const el = document.getElementById('email-label')
 assert(!!el && el.tagName === 'LABEL')
 ```
 
-You should have a `label` element with an `id` of `number-label`
+你应该有一个 `id` 为 `number-label` 的 `label` 元素。
 
 ```js
 const el = document.getElementById('number-label')
 assert(!!el && el.tagName === 'LABEL')
 ```
 
-Your `#name-label` should not be empty
+你的 `#name-label` 不应为空。
 
 ```js
 const el = document.getElementById('name-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Your `#email-label` should not be empty
+你的 `#email-label` 不应为空。
 
 ```js
 const el = document.getElementById('email-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Your `#number-label` should not be empty
+你的 `#number-label` 不应为空。
 
 ```js
 const el = document.getElementById('number-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Your `#name-label` should be a descedant of `#survey-form`
+你的 `#name-label` 元素应该是 `#survey-form` 元素的子元素。
 
 ```js
 const el = document.querySelector('#survey-form #name-label')
 assert(!!el)
 ```
 
-Your `#email-label` should be a descedant of `#survey-form`
+你的 `#email-label` 元素应该是 `#survey-form` 元素的子元素。
 
 ```js
 const el = document.querySelector('#survey-form #email-label')
 assert(!!el)
 ```
 
-Your `#number-label` should be a descedant of `#survey-form`
+你的 `#number-label` 元素应该是 `#survey-form` 元素的子元素。
 
 ```js
 const el = document.querySelector('#survey-form #number-label')
 assert(!!el)
 ```
 
-Your `#name` should have a `placeholder` attribute and value
+你的 `#name` 元素应该有 `placeholder` 属性与占位符文本。
 
 ```js
 const el = document.getElementById('name')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-Your `#email` should have a `placeholder` attribute and value
+你的 `#email` 元素应该有 `placeholder` 属性与占位符文本。
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-Your `#number` should have a `placeholder` attribute and value
+你的 `#number` 元素应该有 `placeholder` 属性与占位符文本。
 
 ```js
 const el = document.getElementById('number')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-You should have a `select` field with an `id` of `dropdown`
+你应该有一个 `id` 为 `dropdown` 的 `select` 元素。
 
 ```js
 const el = document.getElementById('dropdown')
 assert(!!el && el.tagName === 'SELECT')
 ```
 
-Your `#dropdown` should have at least two selectable (not disabled) `option` elements
+你的 `#dropdown` 应该至少有两个可选择（未禁用）`option` 元素。
 
 ```js
 const els = document.querySelectorAll('#dropdown option:not([disabled])')
 assert(els.length >= 2)
 ```
 
-Your `#dropdown` should be a descendant of `#survey-form`
+你的 `#dropdown` 元素应该是 `#survey-form` 元素的子元素。
 
 ```js
 const el = document.querySelector('#survey-form #dropdown')
 assert(!!el)
 ```
 
-You should have at least two `input` elements with a `type` of `radio` (radio buttons)
+你应该有至少两个 `input` 元素，`type` 为 `radio`（单选按钮）。
 
 ```js
 const els = document.querySelectorAll('input[type="radio"]')
 assert(els.length >= 2)
 ```
 
-You should have at least two radio buttons that are descendants of `#survey-form`
+你至少应该有两个单选按钮，是 `#survey-form` 的子元素。
 
 ```js
 const els = document.querySelectorAll('#survey-form input[type="radio"]')
 assert(els.length >= 2)
 ```
 
-All your radio buttons should have a `value` attribute and value
+你所有的单选按钮都应该有一个 `value` 属性和值。
 
 ```js
 const els1 = document.querySelectorAll('input[type="radio"]')
@@ -286,7 +286,7 @@ const els2 = document.querySelectorAll('input[type="radio"][value=""], input[typ
 assert(els1.length > 0 && els2.length === 0)
 ```
 
-All your radio buttons should have a `name` attribute and value
+你所有的单选按钮都应该有一个 `name` 属性和值。
 
 ```js
 const els1 = document.querySelectorAll('input[type="radio"]')
@@ -294,7 +294,7 @@ const els2 = document.querySelectorAll('input[type="radio"][name=""], input[type
 assert(els1.length > 0 && els2.length === 0)
 ```
 
-Every radio button group should have at least 2 radio buttons
+每个单选按钮组应至少有 2 个单选按钮。
 
 ```js
 const radioButtons = document.querySelectorAll('input[type="radio"]');
@@ -316,14 +316,14 @@ groupKeys.forEach(key => {
 assert(groupKeys.length > 0)
 ```
 
-You should have at least two `input` elements with a `type` of `checkbox` (checkboxes) that are descendants of `#survey-form`
+你应该至少有两个 `input` 元素，`type` 为 `checkbox`（复选框），它们是 `#survey-form` 的子元素。
 
 ```js
 const els = document.querySelectorAll('#survey-form input[type="checkbox"]');
 assert(els.length >= 2)
 ```
 
-All your checkboxes inside `#survey-form` should have a `value` attribute and value
+你在 `#survey-form` 中的所有复选框都应该有 `value` 属性和值。
 
 ```js
 const els1 = document.querySelectorAll('#survey-form input[type="checkbox"]')
@@ -331,28 +331,28 @@ const els2 = document.querySelectorAll('#survey-form input[type="checkbox"][valu
 assert(els1.length > 0 && els2.length === 0)
 ```
 
-You should have at least one `textarea` element that is a descendant of `#survey-form`
+你至少应该有一个 `textarea` 元素，它是 `#survey-form` 的子元素。
 
 ```js
 const el = document.querySelector('#survey-form textarea')
 assert(!!el)
 ```
 
-You should have an `input` or `button` element with an `id` of `submit`
+你应该有一个 `id` 为 `submit` 的 `input` 或 `button` 元素。
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && (el.tagName === 'INPUT' || el.tagName === 'BUTTON'))
 ```
 
-Your `#submit` should have a `type` of `submit`
+你的 `#submit` 元素应该具有 `type` 为 `submit`
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && el.type === 'submit')
 ```
 
-Your `#submit` should be a descendant of `#survey-form`
+你的 `#submit` 元素应该是 `#survey-form` 元素的子元素。
 
 ```js
 const el = document.querySelector('#survey-form #submit')
