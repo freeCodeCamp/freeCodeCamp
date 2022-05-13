@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  height: 40px;
   font-size: 18px;
   font-family: 'Roboto-Mono', sans-serif;
   height: var(--header-height);

@@ -35,7 +35,7 @@ const el = document.getElementById('welcome-section')
 assert(!!el);
 ```
 
-Your `#welcom-section` element should contain an `h1` element.
+Your `#welcome-section` element should contain an `h1` element.
 
 ```js
 assert.isAbove(
@@ -63,7 +63,7 @@ const el = document.getElementById('projects')
 assert(!!el);
 ```
 
-Your portfolio should contain at least one elment with a class of `project-tile`.
+Your portfolio should contain at least one element with a class of `project-tile`.
 
 ```js
 assert.isAbove(
