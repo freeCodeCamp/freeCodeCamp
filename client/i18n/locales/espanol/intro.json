@@ -781,6 +781,8 @@
     "legacy-header": "Cursos Antiguos",
     "legacy-desc": "Estos cursos ya no forman parte de la ruta de certificación, pero todavía están disponibles para tu aprendizaje.",
     "legacy-go-back": "Go to the current version of the curriculum.",
+    "new-rwd-desc": "We have updated our Responsive Web Design Curriculum. If you were previously working on the RWD curriculum, your progress is still saved! You can find it under the Legacy Responsive Web Design section.",
+    "new-rwd-article": "We encourage you to read about the changes we made and consider exploring the updated curriculum.",
     "viewing-upcoming-change": "Estás viendo una página beta. ",
     "go-back-to-learn": "Volver a la versión estable del currículum.",
     "read-database-cert-article": "Por favor, lea este post del foro antes de continuar.",
