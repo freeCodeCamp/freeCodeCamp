@@ -136,24 +136,21 @@ const el = document.getElementById('tribute-link')
 assert(!!el && el.target === '_blank')
 ```
 
-You should use an `#image` selector in your CSS to style the `#image` and pass the next three tests
+Your `img` element should have a `display` of `block`
 
 ```js
-const style = new __helpers.CSSHelp(document).getStyle('#image')
-assert(!!style)
-```
-
-Your `#image` should have a `display` of `block`
-
-```js
-const style = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('display')
+const img = document.getElementById('image');
+const imgStyle = window.getComputedStyle(img);
+const style = imgStyle?.getPropertyValue('display')
 assert(style === 'block')
 ```
 
 Your `#image` should have a `max-width` of `100%`
 
 ```js
-const style = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('max-width')
+const img = document.getElementById('image');
+const imgStyle = window.getComputedStyle(img);
+const style = imgStyle?.getPropertyValue('max-width')
 assert(style === '100%')
 ```
 
@@ -162,12 +159,11 @@ Your `#image` should have a `height` of `auto`
 ```js
 // taken from the testable-projects repo
 const img = document.getElementById('image');
-const maxWidthValue = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('max-width')
-const displayValue = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('display')
-const oldDisplayValue = img?.style.getPropertyValue('display');
-const oldDisplayPriority = img?.style.getPropertyPriority('display');
+const imgStyle = window.getComputedStyle(img);
+const oldDisplayValue = imgStyle.getPropertyValue('display');
+const oldDisplayPriority = imgStyle.getPropertyPriority('display');
 img?.style.setProperty('display', 'none', 'important');
-const heightValue = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('height')
+const heightValue = imgStyle?.getPropertyValue('height')
 img?.style.setProperty('display', oldDisplayValue, oldDisplayPriority);
 assert(heightValue === 'auto')
 ```
