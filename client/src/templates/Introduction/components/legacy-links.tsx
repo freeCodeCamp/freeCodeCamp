@@ -2,7 +2,11 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Alert } from '@freecodecamp/react-bootstrap';
 import { SuperBlocks } from '../../../../../config/certification-settings';
-import { isOldRespCert, isRelationalDbCert } from '../../../utils/is-a-cert';
+import {
+  isNewRespCert,
+  isOldRespCert,
+  isRelationalDbCert
+} from '../../../utils/is-a-cert';
 import { Link } from '../../../components/helpers';
 import envData from '../../../../../config/env.json';
 
@@ -23,6 +27,25 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
             {t('intro:misc-text.legacy-desc')}{' '}
             <Link sameTab={false} to={`/learn/2022/responsive-web-design`}>
               {t('intro:misc-text.legacy-go-back')}
+            </Link>
+          </p>
+        </Alert>
+      </>
+    );
+  else if (isNewRespCert(superBlock))
+    return (
+      <>
+        <Alert bsStyle='info'>
+          <p>
+            {t('intro:misc-text.new-rwd-desc')}{' '}
+            <Link
+              sameTab={false}
+              external={true}
+              to={
+                'https://forum.freecodecamp.org/t/responsive-web-design-updates/508345'
+              }
+            >
+              {t('intro:misc-text.new-rwd-article')}
             </Link>
           </p>
         </Alert>
