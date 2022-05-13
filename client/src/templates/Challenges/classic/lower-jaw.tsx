@@ -40,6 +40,8 @@ const LowerJaw = ({
     attemptsNumber
   });
 
+  const submitButtonRef = React.createRef<HTMLButtonElement>();
+
   useEffect(() => {
     // only save error hints
     if (challengeHasErrors && hint && previousHint !== hint) {
@@ -47,6 +49,12 @@ const LowerJaw = ({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [challengeHasErrors, hint]);
+
+  useEffect(() => {
+    if (challengeIsCompleted && submitButtonRef?.current)
+      submitButtonRef.current.focus();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [challengeIsCompleted]);
 
   const renderTestFeedbackContainer = () => {
     if (attemptsNumber === 0) {
@@ -129,7 +137,10 @@ const LowerJaw = ({
   };
 
   const renderHelpButton = () => {
-    if (attemptsNumber && testsLength && attemptsNumber >= testsLength)
+    const isAtteptsLargerThanTest =
+      attemptsNumber && testsLength && attemptsNumber >= testsLength;
+
+    if (isAtteptsLargerThanTest && !challengeIsCompleted)
       return (
         <button
           className='btn-block btn'
@@ -158,6 +169,7 @@ const LowerJaw = ({
             aria-hidden={!challengeIsCompleted}
             className='btn-block btn'
             onClick={submitChallenge}
+            ref={submitButtonRef}
           >
             Submit your code (Ctrl + Enter)
           </button>
