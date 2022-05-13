@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Fail from '../../../assets/icons/fail';
 import LightBulb from '../../../assets/icons/lightbulb';
@@ -33,6 +34,7 @@ const LowerJaw = ({
 }: LowerJawProps): JSX.Element => {
   const [previousHint, setpreviousHint] = useState('');
   const [testBtnariaHidden, setTestBtnariaHidden] = useState(false);
+  const { t } = useTranslation();
   console.log({
     previousHint,
     hint,
@@ -68,7 +70,7 @@ const LowerJaw = ({
       return '';
     } else if (challengeIsCompleted) {
       const submitKeyboardInstructions = isEditorInFocus
-        ? '<span class="sr-only">Use Ctrl + Enter to submit.</span>'
+        ? `<span class="sr-only">${t('aria.submit')}</span>`
         : '';
       return (
         <div className='test-status'>
@@ -78,10 +80,9 @@ const LowerJaw = ({
             </span>
           </div>
           <div className='test-status-description'>
-            <h2>Test</h2>
+            <h2>{t('learn.test')}</h2>
             <p className='status'>
-              Congratulations, your code passes. Submit your code to complete
-              this step and move on to the next one.
+              {t('learn.congradulations')}
               {submitKeyboardInstructions}
             </p>
           </div>
@@ -90,7 +91,7 @@ const LowerJaw = ({
 
       // show the hint if the previousHint is not set
     } else if (hint || previousHint) {
-      const hintDiscription = `<h2 class="hint">Hint</h2> ${
+      const hintDiscription = `<h2 class="hint">${t('learn.hint')}</h2> ${
         hint || previousHint
       }`;
       return (
@@ -103,10 +104,7 @@ const LowerJaw = ({
             </div>
             <div className='test-status-description'>
               <h2>Test</h2>
-              <p>
-                {`Sorry, your code does not pass.
-            ${wordPicker()}`}
-              </p>
+              <p>{t(sentencePicker())}</p>
             </div>
           </div>
           <div className='hint-status'>
@@ -125,17 +123,17 @@ const LowerJaw = ({
     }
   };
 
-  const wordPicker = () => {
-    const wordsArray = [
-      'Try again.',
-      'Keep trying.',
-      "You're getting there.",
-      'Hang in there.',
-      "Don't give up."
+  const sentencePicker = () => {
+    const sentenceArray = [
+      'learn.sorry-try-again',
+      'learn.sorry-keep-trying',
+      'learn.sorry-getting-there',
+      'learn.sorry-hang-in-there',
+      'learn.sorry-dont-giveup'
     ];
     return attemptsNumber
-      ? wordsArray[attemptsNumber % wordsArray.length]
-      : wordsArray[0];
+      ? sentenceArray[attemptsNumber % sentenceArray.length]
+      : sentenceArray[0];
   };
 
   const onTestButtonClick = () => {
@@ -154,7 +152,7 @@ const LowerJaw = ({
           id='help-button'
           onClick={openHelpModal}
         >
-          Ask for Help
+          {t('buttons.ask-for-help')}
         </button>
       );
   };
@@ -168,7 +166,7 @@ const LowerJaw = ({
           aria-hidden={testBtnariaHidden}
           onClick={onTestButtonClick}
         >
-          Check Your Code (Ctrl + Enter)
+          {t('buttons.check-code')}
         </button>
         <div id='action-buttons-container'>
           <button
@@ -178,7 +176,7 @@ const LowerJaw = ({
             onClick={submitChallenge}
             ref={submitButtonRef}
           >
-            Submit your code (Ctrl + Enter)
+            {t('buttons.submit-and-go')}
           </button>
           {renderHelpButton()}
         </div>
