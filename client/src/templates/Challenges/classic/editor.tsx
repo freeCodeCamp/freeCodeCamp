@@ -638,6 +638,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   }
 
   function createOutputNode(editor: editor.IStandaloneCodeEditor) {
+    if (dataRef.current.outputNode) return dataRef.current.outputNode;
     const outputNode = document.createElement('div');
     outputNode.classList.add('editor-lower-jaw');
     outputNode.setAttribute('id', 'editor-lower-jaw');
@@ -648,13 +649,8 @@ const Editor = (props: EditorProps): JSX.Element => {
     return outputNode;
   }
 
-  function resetOutputNode() {
+  function resetMarginDecorations() {
     const { model, insideEditDecId } = dataRef.current;
-
-    // Must manually set test feedback height back to zero since
-    console.log('reset');
-
-    // Resetting margin decorations
     const range = model?.getDecorationRange(insideEditDecId);
     if (range) {
       updateEditableRegion(range, { model });
@@ -982,6 +978,10 @@ const Editor = (props: EditorProps): JSX.Element => {
     return tests.some(test => test.err);
   }
 
+  function resetAttampts() {
+    attemptRef.current.attempts = 0;
+  }
+
   // runs every update to the editor and when the challenge is reset
   useEffect(() => {
     // If a challenge is reset, it needs to communicate that change to the
@@ -1005,12 +1005,9 @@ const Editor = (props: EditorProps): JSX.Element => {
       if (props.isResetting) {
         initializeDescriptionAndOutputWidgets();
         updateDescriptionZone();
-        updateOutputZone();
         showEditableRegion(editor);
-
-        // Since the outputNode is only reset when the step is restarted, users
-        // that want to try different solutions will need to do that.
-        resetOutputNode();
+        resetAttampts();
+        resetMarginDecorations();
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

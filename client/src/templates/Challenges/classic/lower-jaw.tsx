@@ -32,6 +32,13 @@ const LowerJaw = ({
   onAttempt
 }: LowerJawProps): JSX.Element => {
   const [previousHint, setpreviousHint] = useState('');
+  console.log({
+    previousHint,
+    hint,
+    challengeHasErrors,
+    challengeIsCompleted,
+    attemptsNumber
+  });
 
   useEffect(() => {
     // only save error hints
@@ -42,7 +49,9 @@ const LowerJaw = ({
   }, [challengeHasErrors, hint]);
 
   const renderTestFeedbackContainer = () => {
-    if (challengeIsCompleted) {
+    if (attemptsNumber === 0) {
+      return '';
+    } else if (challengeIsCompleted) {
       const submitKeyboardInstructions = isEditorInFocus
         ? '<span class="sr-only">Use Ctrl + Enter to submit.</span>'
         : '';
@@ -98,8 +107,6 @@ const LowerJaw = ({
           </div>
         </>
       );
-    } else {
-      ('');
     }
   };
 
