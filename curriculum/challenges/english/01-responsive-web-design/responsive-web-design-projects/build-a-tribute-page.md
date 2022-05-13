@@ -160,10 +160,8 @@ Your `#image` should have a `height` of `auto`
 // taken from the testable-projects repo
 const img = document.getElementById('image');
 const imgStyle = window.getComputedStyle(img);
-const maxWidthValue = imgStyle?.getPropertyValue('max-width')
-const displayValue = imgStyle?.getPropertyValue('display')
-const oldDisplayValue = img?.style.getPropertyValue('display');
-const oldDisplayPriority = img?.style.getPropertyPriority('display');
+const oldDisplayValue = imgStyle.getPropertyValue('display');
+const oldDisplayPriority = imgStyle.getPropertyPriority('display');
 img?.style.setProperty('display', 'none', 'important');
 const heightValue = imgStyle?.getPropertyValue('height')
 img?.style.setProperty('display', oldDisplayValue, oldDisplayPriority);
