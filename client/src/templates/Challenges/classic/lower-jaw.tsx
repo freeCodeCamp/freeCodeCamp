@@ -32,6 +32,7 @@ const LowerJaw = ({
   onAttempt
 }: LowerJawProps): JSX.Element => {
   const [previousHint, setpreviousHint] = useState('');
+  const [testBtnariaHidden, setTestBtnariaHidden] = useState(false);
   console.log({
     previousHint,
     hint,
@@ -51,8 +52,14 @@ const LowerJaw = ({
   }, [challengeHasErrors, hint]);
 
   useEffect(() => {
-    if (challengeIsCompleted && submitButtonRef?.current)
+    if (challengeIsCompleted && submitButtonRef?.current) {
       submitButtonRef.current.focus();
+      console.log(challengeIsCompleted);
+      setTimeout(() => {
+        setTestBtnariaHidden(true);
+      }, 500);
+    }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [challengeIsCompleted]);
 
@@ -158,7 +165,7 @@ const LowerJaw = ({
         <button
           id='test-button'
           className={`btn-block btn ${challengeIsCompleted ? 'sr-only' : ''}`}
-          aria-hidden={challengeIsCompleted}
+          aria-hidden={testBtnariaHidden}
           onClick={onTestButtonClick}
         >
           Check Your Code (Ctrl + Enter)
