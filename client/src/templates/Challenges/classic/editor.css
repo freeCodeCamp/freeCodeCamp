@@ -112,12 +112,13 @@ textarea.inputarea {
 
 .test-feedback {
   display: flex;
-  padding: 0px;
+  padding: 0;
   flex-direction: column;
 }
 
 .test-feedback p {
   margin: 0.5rem 0 0;
+  font-family: 'Lato', sans-serif;
 }
 
 .test-feedback h2 {
@@ -144,10 +145,6 @@ textarea.inputarea {
   margin-top: 1rem;
   display: flex;
   flex-direction: row;
-}
-
-.test-feedback p {
-  font-family: 'Lato', sans-serif;
 }
 
 .test-status-description,

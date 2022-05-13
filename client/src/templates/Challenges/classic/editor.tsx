@@ -332,11 +332,11 @@ const Editor = (props: EditorProps): JSX.Element => {
     const { challengeFiles, fileKey } = props;
     const { model } = dataRef.current;
 
-    const newContents = challengeFiles?.find(
+    const initialContents = challengeFiles?.find(
       challengeFile => challengeFile.fileKey === fileKey
     )?.contents;
-    if (model?.getValue() !== newContents) {
-      model?.setValue(newContents ?? '');
+    if (model?.getValue() !== initialContents) {
+      model?.setValue(initialContents ?? '');
     }
   };
 
@@ -417,6 +417,7 @@ const Editor = (props: EditorProps): JSX.Element => {
             props.submitChallenge();
           } else {
             props.executeChallenge();
+            attemptRef.current.attempts++;
           }
         } else {
           props.executeChallenge({ showCompletionModal: true });
@@ -554,6 +555,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   function createLowerJaw(outputNode: HTMLElement, callback?: () => void) {
     const { output } = props;
     const isChallengeComplete = challengeIsComplete();
+    const isEditorInFocus = document.activeElement?.tagName === 'TEXTAREA';
     ReactDOM.render(
       <LowerJaw
         openHelpModal={props.openHelpModal}
@@ -565,6 +567,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         challengeHasErrors={challengeHasErrors()}
         submitChallenge={props.submitChallenge}
         onAttempt={() => attemptRef.current.attempts++}
+        isEditorInFocus={isEditorInFocus}
       />,
       outputNode,
       callback
@@ -830,7 +833,6 @@ const Editor = (props: EditorProps): JSX.Element => {
   }
 
   function addWidgetsToRegions(editor: editor.IStandaloneCodeEditor) {
-    console.log('add widgets to regions');
     const createWidget = (
       id: string,
       domNode: HTMLDivElement,
@@ -1039,7 +1041,6 @@ const Editor = (props: EditorProps): JSX.Element => {
       );
     }
     dataRef.current.outputNode = lowerJawElement;
-    console.log('tests');
     updateOutputZone();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.tests]);
@@ -1049,7 +1050,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     editor?.layout();
     if (hasEditableRegion()) {
       updateDescriptionZone();
-      console.log('change dimention');
       updateOutputZone();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

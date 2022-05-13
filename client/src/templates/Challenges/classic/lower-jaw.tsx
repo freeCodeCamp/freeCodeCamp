@@ -7,13 +7,12 @@ import GreenPass from '../../../assets/icons/green-pass';
 
 interface LowerJawProps {
   hint?: string;
-  isEditorInFocus?: boolean;
   challengeIsCompleted?: boolean;
   openHelpModal: () => void;
   executeChallenge: () => void;
   submitChallenge: () => void;
   showFeedback?: boolean;
-  isEditorOnFocus?: boolean;
+  isEditorInFocus?: boolean;
   challengeHasErrors?: boolean;
   testsLength?: number;
   attemptsNumber?: number;
@@ -25,24 +24,16 @@ const LowerJaw = ({
   challengeIsCompleted,
   challengeHasErrors,
   hint,
-  isEditorInFocus,
   executeChallenge,
   submitChallenge,
   attemptsNumber,
   testsLength,
-  onAttempt
+  onAttempt,
+  isEditorInFocus
 }: LowerJawProps): JSX.Element => {
   const [previousHint, setpreviousHint] = useState('');
   const [testBtnariaHidden, setTestBtnariaHidden] = useState(false);
   const { t } = useTranslation();
-  console.log({
-    previousHint,
-    hint,
-    challengeHasErrors,
-    challengeIsCompleted,
-    attemptsNumber
-  });
-
   const submitButtonRef = React.createRef<HTMLButtonElement>();
 
   useEffect(() => {
@@ -56,7 +47,6 @@ const LowerJaw = ({
   useEffect(() => {
     if (challengeIsCompleted && submitButtonRef?.current) {
       submitButtonRef.current.focus();
-      console.log(challengeIsCompleted);
       setTimeout(() => {
         setTestBtnariaHidden(true);
       }, 500);
@@ -69,9 +59,11 @@ const LowerJaw = ({
     if (attemptsNumber === 0) {
       return '';
     } else if (challengeIsCompleted) {
-      const submitKeyboardInstructions = isEditorInFocus
-        ? `<span class="sr-only">${t('aria.submit')}</span>`
-        : '';
+      const submitKeyboardInstructions = isEditorInFocus ? (
+        <span className='sr-only'>${t('aria.submit')}</span>
+      ) : (
+        ''
+      );
       return (
         <div className='test-status'>
           <div className='status-icon' aria-hidden='true'>
