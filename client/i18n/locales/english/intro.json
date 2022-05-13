@@ -1,6 +1,6 @@
 {
   "responsive-web-design": {
-    "title": "Responsive Web Design",
+    "title": "Legacy Responsive Web Design",
     "intro": [
       "In this Responsive Web Design Certification, you'll learn the languages that developers use to build webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design.",
       "First, you'll build a cat photo app to learn the basics of HTML and CSS. Later, you'll learn modern techniques like CSS variables by building a penguin, and best practices for accessibility by building a web form.",
@@ -67,7 +67,7 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "Responsive Web Design (Beta)",
+    "title": "Responsive Web Design",
     "intro": [
       "In this Responsive Web Design Certification, you'll learn the languages that developers use to build webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design.",
       "First, you'll build a cat photo app to learn the basics of HTML and CSS. Later, you'll learn modern techniques like CSS variables by building a penguin, and best practices for accessibility by building a web form.",
@@ -765,6 +765,9 @@
     "collapse": "Collapse course",
     "legacy-header": "Legacy Courses",
     "legacy-desc": "These courses are no longer part of the certification path, but are still available for you to further your learning.",
+    "legacy-go-back": "Go to the current version of the curriculum.",
+    "new-rwd-desc": "We have updated our Responsive Web Design Curriculum. If you were previously working on the RWD curriculum, your progress is still saved! You can find it under the Legacy Responsive Web Design section.",
+    "new-rwd-article": "We encourage you to read about the changes we made and consider exploring the updated curriculum.",
     "viewing-upcoming-change": "You are looking at a beta page. ",
     "go-back-to-learn": "Go back to the stable version of the curriculum.",
     "read-database-cert-article": "Please read this forum post before proceeding.",

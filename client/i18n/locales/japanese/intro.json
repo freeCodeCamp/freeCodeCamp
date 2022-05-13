@@ -1,6 +1,6 @@
 {
   "responsive-web-design": {
-    "title": "レスポンシブウェブデザイン",
+    "title": "レスポンシブウェブデザイン (レガシー)",
     "intro": [
       "このレスポンシブウェブデザイン認定講座では、開発者がウェブページを構築するために使用する言語について学びます。コンテンツには HTML (Hypertext Markup Language)、デザインには CSS (Cascading Style Sheets) を使用します。",
       "初めに、HTML と CSS の基礎を学ぶために、猫の写真アプリを作ります。その後、ペンギンの絵を作りながら CSS 変数等のモダンなテクニックを学びます。そしてウェブフォームを作りながらアクセシビリティのベストプラクティスを学びます。",
@@ -67,7 +67,7 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "レスポンシブウェブデザイン (ベータ版)",
+    "title": "レスポンシブウェブデザイン",
     "intro": [
       "このレスポンシブウェブデザイン認定講座では、開発者がウェブページを構築するために使用する言語について学びます。コンテンツには HTML (Hypertext Markup Language)、デザインには CSS (Cascading Style Sheets) を使用します。",
       "初めに、HTML と CSS の基礎を学ぶために、猫の写真アプリを作ります。その後、ペンギンの絵を作りながら CSS 変数等のモダンなテクニックを学びます。そしてウェブフォームを作りながらアクセシビリティのベストプラクティスを学びます。",
@@ -779,7 +779,10 @@
     "expand": "コースを展開",
     "collapse": "コースを閉じる",
     "legacy-header": "レガシーコース",
-    "legacy-desc": "現在、これらのコースは認定講座の一部ではありませんが、あなたの学習をより深めるために利用可能です。",
+    "legacy-desc": "このコースは認定講座から除外されましたが、追加の学習用に引き続きご利用いただけます。",
+    "legacy-go-back": "カリキュラムの最新版へ移動",
+    "new-rwd-desc": "We have updated our Responsive Web Design Curriculum. If you were previously working on the RWD curriculum, your progress is still saved! You can find it under the Legacy Responsive Web Design section.",
+    "new-rwd-article": "We encourage you to read about the changes we made and consider exploring the updated curriculum.",
     "viewing-upcoming-change": "ベータ版のページを閲覧中です。 ",
     "go-back-to-learn": "カリキュラムの安定版へ戻る。",
     "read-database-cert-article": "続行する前に、こちらのフォーラム投稿をお読みください。",

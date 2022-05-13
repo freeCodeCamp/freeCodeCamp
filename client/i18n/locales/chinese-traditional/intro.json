@@ -1,6 +1,6 @@
 {
   "responsive-web-design": {
-    "title": "響應式網頁設計",
+    "title": "Legacy Responsive Web Design",
     "intro": [
       "在響應式網頁設計認證中，你將學習開發者用來編寫網頁的語言：HTML（超文本標記語言）用於創建內容，CSS（級聯樣式表）用於樣式設計。",
       "首先，你將通過編寫一個展示貓咪圖片的應用，學習 HTML 和 CSS 的基本知識。 然後，通過畫企鵝來學習像 CSS 變量這樣的現代技術，以及通過構建網頁表單來學習無障礙的最佳實踐。",
@@ -67,7 +67,7 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "響應式網頁設計（Beta版）",
+    "title": "Responsive Web Design",
     "intro": [
       "在響應式網頁設計的認證課程中，你將學習用於構建網頁的語言： HTML（超文本標記語言）用於創建內容，CSS（級聯樣式表）用於樣式設計。",
       "首先，你將通過編寫一個貓咪相冊應用，學習 HTML 和 CSS 的基本知識。 然後，通過畫企鵝來學習像 CSS 變量這樣的現代技術，並通過編寫網頁表單來學習無障礙的最佳實踐。",
@@ -780,6 +780,9 @@
     "collapse": "收起課程",
     "legacy-header": "舊版課程",
     "legacy-desc": "這些課程不再是認證路徑的一部分，但仍可供你進一步學習。",
+    "legacy-go-back": "Go to the current version of the curriculum.",
+    "new-rwd-desc": "We have updated our Responsive Web Design Curriculum. If you were previously working on the RWD curriculum, your progress is still saved! You can find it under the Legacy Responsive Web Design section.",
+    "new-rwd-article": "We encourage you to read about the changes we made and consider exploring the updated curriculum.",
     "viewing-upcoming-change": "你正在查看Beta頁面。 ",
     "go-back-to-learn": "回到正式版課程",
     "read-database-cert-article": "請在繼續之前閱讀這個論壇帖子。",

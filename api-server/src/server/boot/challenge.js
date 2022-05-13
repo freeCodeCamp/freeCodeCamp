@@ -145,7 +145,11 @@ export function buildUserUpdate(
   }
   let finalChallenge;
   const updateData = {};
-  const { timezone: userTimezone, completedChallenges = [] } = user;
+  const {
+    timezone: userTimezone,
+    completedChallenges = [],
+    needsModeration = false
+  } = user;
 
   const oldChallenge = find(
     completedChallenges,
@@ -210,6 +214,14 @@ export function buildUserUpdate(
       timezone: userTimezone
     };
   }
+
+  if (needsModeration) {
+    updateData.$set = {
+      ...updateData.$set,
+      needsModeration: true
+    };
+  }
+
   return {
     alreadyCompleted,
     updateData,
@@ -309,6 +321,7 @@ export function modernChallengeCompleted(req, res, next) {
       // if multifile cert project
       if (challengeType === 14) {
         completedChallenge.isManuallyApproved = false;
+        user.needsModeration = true;
       }
 
       // We only need to know the challenge type if it's a project. If it's a

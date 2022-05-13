@@ -3,8 +3,12 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 import fs from 'fs';
 import path from 'path';
+import { config } from 'dotenv';
 import { SuperBlocks } from '../config/certification-settings';
+import { languagesWithAuditedBetaReleases } from '../config/i18n/all-langs';
 import { getSuperOrder, getSuperBlockFromDir } from './utils';
+
+config({ path: path.resolve(__dirname, '../.env') });
 
 describe('getSuperOrder', () => {
   it('returns a number for valid superblocks', () => {
@@ -25,22 +29,49 @@ describe('getSuperOrder', () => {
     expect(() => getSuperOrder('certifications')).toThrow();
   });
 
-  it('returns unique numbers for all current superblocks', () => {
-    expect.assertions(13);
-    expect(getSuperOrder('responsive-web-design')).toBe(0);
-    expect(getSuperOrder('javascript-algorithms-and-data-structures')).toBe(1);
-    expect(getSuperOrder('front-end-development-libraries')).toBe(2);
-    expect(getSuperOrder('data-visualization')).toBe(3);
-    expect(getSuperOrder('back-end-development-and-apis')).toBe(4);
-    expect(getSuperOrder('quality-assurance')).toBe(5);
-    expect(getSuperOrder('scientific-computing-with-python')).toBe(6);
-    expect(getSuperOrder('data-analysis-with-python')).toBe(7);
-    expect(getSuperOrder('information-security')).toBe(8);
-    expect(getSuperOrder('machine-learning-with-python')).toBe(9);
-    expect(getSuperOrder('coding-interview-prep')).toBe(10);
-    expect(getSuperOrder('2022/responsive-web-design')).toBe(11);
-    expect(getSuperOrder('relational-database')).toBe(12);
-  });
+  if (
+    languagesWithAuditedBetaReleases.includes(
+      process.env.CURRICULUM_LOCALE as string
+    )
+  ) {
+    it('returns unique numbers for all current superblocks (audited beta)', () => {
+      expect.assertions(13);
+      expect(getSuperOrder('2022/responsive-web-design')).toBe(0);
+      expect(getSuperOrder('javascript-algorithms-and-data-structures')).toBe(
+        1
+      );
+      expect(getSuperOrder('front-end-development-libraries')).toBe(2);
+      expect(getSuperOrder('data-visualization')).toBe(3);
+      expect(getSuperOrder('back-end-development-and-apis')).toBe(4);
+      expect(getSuperOrder('quality-assurance')).toBe(5);
+      expect(getSuperOrder('scientific-computing-with-python')).toBe(6);
+      expect(getSuperOrder('data-analysis-with-python')).toBe(7);
+      expect(getSuperOrder('information-security')).toBe(8);
+      expect(getSuperOrder('machine-learning-with-python')).toBe(9);
+      expect(getSuperOrder('coding-interview-prep')).toBe(10);
+      expect(getSuperOrder('responsive-web-design')).toBe(11);
+      expect(getSuperOrder('relational-database')).toBe(12);
+    });
+  } else {
+    it('returns unique numbers for all current superblocks (not audited beta)', () => {
+      expect.assertions(13);
+      expect(getSuperOrder('responsive-web-design')).toBe(0);
+      expect(getSuperOrder('javascript-algorithms-and-data-structures')).toBe(
+        1
+      );
+      expect(getSuperOrder('front-end-development-libraries')).toBe(2);
+      expect(getSuperOrder('data-visualization')).toBe(3);
+      expect(getSuperOrder('back-end-development-and-apis')).toBe(4);
+      expect(getSuperOrder('quality-assurance')).toBe(5);
+      expect(getSuperOrder('scientific-computing-with-python')).toBe(6);
+      expect(getSuperOrder('data-analysis-with-python')).toBe(7);
+      expect(getSuperOrder('information-security')).toBe(8);
+      expect(getSuperOrder('machine-learning-with-python')).toBe(9);
+      expect(getSuperOrder('coding-interview-prep')).toBe(10);
+      expect(getSuperOrder('2022/responsive-web-design')).toBe(11);
+      expect(getSuperOrder('relational-database')).toBe(12);
+    });
+  }
 
   // Skipping these tests instead of deleting, so the infrastructure is there when we do the next superblock
   it.skip('returns a different order if passed the option showNewCurriculum: true', () => {

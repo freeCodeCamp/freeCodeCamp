@@ -258,6 +258,7 @@ export class Block extends Component<BlockProps> {
               <button
                 aria-expanded={isExpanded ? 'true' : 'false'}
                 className='block-header'
+                data-cy={challengesWithCompleted[0].block}
                 onClick={() => {
                   this.handleBlockClick();
                 }}
@@ -305,12 +306,12 @@ export class Block extends Component<BlockProps> {
 
     const GridProjectBlock = (
       <div className='block block-grid grid-project-block'>
-        <a
+        <Link
           className='block-header'
           onClick={() => {
             this.handleBlockClick();
           }}
-          href={challengesWithCompleted[0].fields.slug}
+          to={challengesWithCompleted[0].fields.slug}
         >
           <div className='tags-wrapper'>
             <span className='cert-tag'>{t('misc.certification-project')}</span>
@@ -328,7 +329,7 @@ export class Block extends Component<BlockProps> {
             <h3 className='block-grid-title'>{blockTitle}</h3>
           </div>
           {this.renderBlockIntros(blockIntroArr)}
-        </a>
+        </Link>
       </div>
     );
 

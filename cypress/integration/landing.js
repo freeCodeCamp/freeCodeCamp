@@ -17,7 +17,7 @@ const certifications = [
   'Data Analysis with Python',
   'Information Security',
   'Machine Learning with Python',
-  'Responsive Web Design (Beta)',
+  'Legacy Responsive Web Design',
   'Relational Database (Beta)'
 ];
 

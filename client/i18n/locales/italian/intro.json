@@ -1,6 +1,6 @@
 {
   "responsive-web-design": {
-    "title": "Web Design Responsivo",
+    "title": "Legacy Responsive Web Design",
     "intro": [
       "In questo corso di Web Design Responsivo conoscerai i linguaggi usati per costruire le pagine web: HTML (Hypertext Markup Language) per il contenuto, e CSS (Cascade Style Sheets) per il design.",
       "Per prima cosa, costruirai un'app di foto per gatti per imparare le basi di HTML e CSS. Poi apprenderai tecniche più moderne come le variabili in CSS costruendo un pinguino, e le migliori pratiche per l'accessibilità costruendo un modulo web.",
@@ -67,7 +67,7 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "Web Design Responsivo (Beta)",
+    "title": "Responsive Web Design",
     "intro": [
       "In questo corso certificato di Web Design Responsivo imparerai i linguaggi che gli sviluppatori utilizzano per creare le pagine web. HTML (Hypertext Markup Language) per i contenuti e CSS (Cascading Style Sheets) per il design.",
       "Innanzitutto, creerai un'app di foto per gatti per imparare le basi dell'HTML e dei CSS. Più avanti, imparerai le moderne tecniche come le variabili CSS disegnando un pinguino, e le migliori pratiche di accessibilità creando un form web.",
@@ -466,7 +466,7 @@
         "title": "Database Coppa Del Mondo",
         "intro": [
           "Questo è uno dei progetti necessari per ottenere la tua certificazione.",
-          "Per questo progetto, creerai uno script di Bash che inserisce informazioni da partite della coppa del mondo in PostgresSQL, e poi fare query al database per ottenere statistiche utili."
+          "Per questo progetto, creerai uno script di Bash che inserisce informazioni da partite della coppa del mondo in PostgreSQL, e poi fare query al database per ottenere statistiche utili."
         ]
       },
       "learn-advanced-bash-by-building-a-kitty-ipsum-translator": {
@@ -479,7 +479,7 @@
       "learn-bash-and-sql-by-building-a-bike-rental-shop": {
         "title": "Impara Bash e SQL costruendo uno shop di noleggio biciclette",
         "intro": [
-          "In questo corso da 210 lezioni, costruirai un programma Bash interattivo che immagazzina informazioni per il tuo negozio di noleggio biciclette che usa PostgresSQL."
+          "In questo corso da 210 lezioni, costruirai un programma Bash interattivo che immagazzina informazioni per il tuo negozio di noleggio biciclette che usa PostgreSQL."
         ]
       },
       "learn-bash-by-building-a-boilerplate": {
@@ -514,7 +514,7 @@
         "title": "Impara i database relazionali costruendo un database Mario",
         "intro": [
           "Un database relazionale organizza i dati in tabelle che sono legate assieme tramite delle relazioni.",
-          "In questo corso da 165 lezioni, imparerai le basi di un database relazionale creando un database PostgresSQL pieno di personaggi di videogiochi."
+          "In questo corso da 165 lezioni, imparerai le basi di un database relazionale creando un database PostgreSQL pieno di personaggi di videogiochi."
         ]
       },
       "learn-sql-by-building-a-student-database-part-1": {
@@ -780,6 +780,9 @@
     "collapse": "Chiudi corso",
     "legacy-header": "Vecchi corsi",
     "legacy-desc": "Questi corsi non sono più parte del percorso di certificazioni, ma sono ancora disponibili per avanzare il tuo apprendimento.",
+    "legacy-go-back": "Go to the current version of the curriculum.",
+    "new-rwd-desc": "We have updated our Responsive Web Design Curriculum. If you were previously working on the RWD curriculum, your progress is still saved! You can find it under the Legacy Responsive Web Design section.",
+    "new-rwd-article": "We encourage you to read about the changes we made and consider exploring the updated curriculum.",
     "viewing-upcoming-change": "Stai guardando ad una pagina in beta. ",
     "go-back-to-learn": "Torna alla versione stabile del curriculum.",
     "read-database-cert-article": "Per favore leggi questo post sul forum prima di procedere.",
