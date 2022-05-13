@@ -1,30 +1,38 @@
 ---
-id: 5f47633757ae3469f2d33d2e
-title: Step 46
+id: 5f3cade99dda4e6071a85dfd
+title: Step 47
 challengeType: 0
-dashedName: step-46
+dashedName: step-47
 ---
 
 # --description--
 
-Se riduci la larghezza dell'anteprima della pagina, a un certo punto, noterai che parte del testo a sinistra inizia ad andare sulla riga successiva. Questo perché la larghezza degli elementi `p` sul lato sinistro può occupare solo il `50%` dello spazio.
-
-Dal momento che sai che i prezzi sulla destra hanno molti meno caratteri, modifica la classe `flavor` così che abbia una proprietà `width` con valore `75%` e la classe `price` così che abbia una proprietà `width` con valore `25%`.
+Tornerai a breve ad agire sullo stile del menu, intanto prosegui aggiungendo un secondo elemento `section` sotto il primo per visualizzare i dessert offerti dal bar.
 
 # --hints--
 
-Dovresti assegnare alla proprietà `width` il valore `75%` nel selettore `.flavor`.
+Dovresti avere un tag di apertura `section`.
 
 ```js
-const flavorWidth = new __helpers.CSSHelp(document).getStyle('.flavor')?.getPropertyValue('width');
-assert(flavorWidth === '75%');
+assert(code.match(/<section>/ig).length === 2);
 ```
 
-Dovresti assegnare alla proprietà `width` il valore `25%` nel selettore `.price`.
+Dovresti avere un tag di chiusura `section`.
 
 ```js
-const priceWidth = new __helpers.CSSHelp(document).getStyle('.price')?.getPropertyValue('width');
-assert(priceWidth === '25%');
+assert(code.match(/<\/section>/ig).length === 2);
+```
+
+Non dovresti cambiare l'elemento `main` esistente.
+
+```js
+assert($('main').length === 1);
+```
+
+Il nuovo elemento `section` dovrebbe essere annidato nell'elemento `main`.
+
+```js
+assert($('main').children('section').length === 2);
 ```
 
 # --seed--
@@ -47,6 +55,7 @@ assert(priceWidth === '25%');
         <p>Est. 2020</p>
       </header>
       <main>
+--fcc-editable-region--
         <section>
           <h2>Coffee</h2>
           <article class="item">
@@ -65,6 +74,7 @@ assert(priceWidth === '25%');
             <p class="flavor">Mocha</p><p class="price">4.50</p>
           </article>
         </section>
+--fcc-editable-region--
       </main>
     </div>
   </body>
@@ -91,16 +101,14 @@ h1, h2, p {
   display: inline-block;
 }
 
---fcc-editable-region--
 .flavor {
   text-align: left;
-  width: 50%;
+  width: 75%;
 }
 
 .price {
   text-align: right;
-  width: 50%;
+  width: 25%
 }
---fcc-editable-region--
 ```
 

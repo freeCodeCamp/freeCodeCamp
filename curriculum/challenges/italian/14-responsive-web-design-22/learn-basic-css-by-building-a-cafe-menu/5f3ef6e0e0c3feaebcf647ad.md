@@ -1,30 +1,32 @@
 ---
-id: 5f47633757ae3469f2d33d2e
-title: Step 46
+id: 5f3ef6e0e0c3feaebcf647ad
+title: Step 48
 challengeType: 0
-dashedName: step-46
+dashedName: step-48
 ---
 
 # --description--
 
-Se riduci la larghezza dell'anteprima della pagina, a un certo punto, noterai che parte del testo a sinistra inizia ad andare sulla riga successiva. Questo perché la larghezza degli elementi `p` sul lato sinistro può occupare solo il `50%` dello spazio.
-
-Dal momento che sai che i prezzi sulla destra hanno molti meno caratteri, modifica la classe `flavor` così che abbia una proprietà `width` con valore `75%` e la classe `price` così che abbia una proprietà `width` con valore `25%`.
+Nella nuova sezione, aggiungi un elemento `h2` con il testo `Desserts`.
 
 # --hints--
 
-Dovresti assegnare alla proprietà `width` il valore `75%` nel selettore `.flavor`.
+Non dovresti cambiare l'elemento `section` esistente.
 
 ```js
-const flavorWidth = new __helpers.CSSHelp(document).getStyle('.flavor')?.getPropertyValue('width');
-assert(flavorWidth === '75%');
+assert($('section').length === 2);
 ```
 
-Dovresti assegnare alla proprietà `width` il valore `25%` nel selettore `.price`.
+Dovresti aggiungere un elemento `h2` nel secondo elemento `section`.
 
 ```js
-const priceWidth = new __helpers.CSSHelp(document).getStyle('.price')?.getPropertyValue('width');
-assert(priceWidth === '25%');
+assert($('section')[1].children[0].tagName === 'H2');
+```
+
+Il nuovo elemento `h2` dovrebbe avere il testo `Desserts`.
+
+```js
+assert($('h2')[1].innerText.match(/Desserts/i));
 ```
 
 # --seed--
@@ -65,6 +67,10 @@ assert(priceWidth === '25%');
             <p class="flavor">Mocha</p><p class="price">4.50</p>
           </article>
         </section>
+--fcc-editable-region--
+        <section>
+        </section>
+--fcc-editable-region--
       </main>
     </div>
   </body>
@@ -91,16 +97,14 @@ h1, h2, p {
   display: inline-block;
 }
 
---fcc-editable-region--
 .flavor {
   text-align: left;
-  width: 50%;
+  width: 75%;
 }
 
 .price {
   text-align: right;
-  width: 50%;
+  width: 25%
 }
---fcc-editable-region--
 ```
 
