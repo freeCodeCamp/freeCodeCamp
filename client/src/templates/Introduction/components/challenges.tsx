@@ -59,6 +59,7 @@ function Challenges({
       {firstIncompleteChallenge && (
         <div className='challenge-jump-link'>
           <Link
+            className='btn btn-primary'
             onClick={() =>
               handleChallengeClick(firstIncompleteChallenge.fields.slug)
             }

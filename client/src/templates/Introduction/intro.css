@@ -58,6 +58,12 @@ a.cert-tag:active {
 
 .block-grid .challenge-jump-link {
   margin-left: 25px;
+  margin-top: 0.75rem;
+}
+
+.block-grid .challenge-jump-link a {
+  border: 2px solid var(--secondary-color);
+  padding: 3px 5px;
 }
 
 .block-title-translation-cta {
