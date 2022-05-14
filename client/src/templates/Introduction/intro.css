@@ -256,6 +256,14 @@ button.map-title {
   padding: 0;
 }
 
+.map-challenges-grid .map-challenge-title a:focus {
+  outline: 2px solid var(--secondary-color);
+}
+
+.map-challenges-grid .map-challenge-title a:focus:not(:focus-visible) {
+  outline: none;
+}
+
 .map-challenges-grid {
   display: flex;
   flex-wrap: wrap;
