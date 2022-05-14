@@ -151,3 +151,18 @@ textarea.inputarea {
 .hint-description {
   width: 100%;
 }
+
+.fade-in {
+  animation-name: FadeIn;
+  animation-duration: 1s;
+  transition-timing-function: linear;
+}
+
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

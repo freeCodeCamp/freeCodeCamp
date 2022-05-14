@@ -32,9 +32,19 @@ const LowerJaw = ({
   isEditorInFocus
 }: LowerJawProps): JSX.Element => {
   const [previousHint, setpreviousHint] = useState('');
+  const [showTestFeedbackAnim, setShowTestFeedbackAnim] = useState(true);
   const [testBtnariaHidden, setTestBtnariaHidden] = useState(false);
   const { t } = useTranslation();
   const submitButtonRef = React.createRef<HTMLButtonElement>();
+
+  useEffect(() => {
+    setShowTestFeedbackAnim(false);
+    setTimeout(() => {
+      setShowTestFeedbackAnim(true);
+    }, 0);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [attemptsNumber]);
 
   useEffect(() => {
     // only save error hints
@@ -140,7 +150,7 @@ const LowerJaw = ({
     if (isAtteptsLargerThanTest && !challengeIsCompleted)
       return (
         <button
-          className='btn-block btn'
+          className='btn-block btn fade-in'
           id='help-button'
           onClick={openHelpModal}
         >
@@ -180,7 +190,7 @@ const LowerJaw = ({
     <div className='action-row-container'>
       {renderButtons()}
       <div
-        className='test-feedback'
+        className={`test-feedback ${showTestFeedbackAnim ? 'fade-in' : ''}`}
         id='test-feedback'
         aria-atomic='true'
         aria-live='assertive'
