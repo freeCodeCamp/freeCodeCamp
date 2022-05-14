@@ -294,6 +294,7 @@ export class Block extends Component<BlockProps> {
             {isExpanded && this.renderBlockIntros(blockIntroArr)}
             {isExpanded && (
               <>
+                <h4>Challenges</h4>
                 <Challenges
                   challengesWithCompleted={challengesWithCompleted}
                   isProjectBlock={isProjectBlock}

@@ -1,6 +1,6 @@
 import { Link } from 'gatsby';
 import React from 'react';
-import { withTranslation } from 'react-i18next';
+import { withTranslation, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
@@ -31,6 +31,7 @@ function Challenges({
   isProjectBlock,
   superBlock
 }: Challenges): JSX.Element {
+  const { t } = useTranslation();
   const handleChallengeClick = (slug: string) =>
     executeGA({
       type: 'event',
@@ -49,40 +50,63 @@ function Challenges({
 
   const isGridMap = isNewRespCert(superBlock) || isNewJsCert(superBlock);
 
+  const firstIncompleteChallenge = challengesWithCompleted.find(
+    challenge => !challenge.isCompleted
+  );
+
   return isGridMap ? (
-    <ul className={`map-challenges-ul map-challenges-grid `}>
-      {challengesWithCompleted.map((challenge, i) => (
-        <li
-          className={`map-challenge-title map-challenge-title-grid ${
-            isProjectBlock ? 'map-project-wrap' : 'map-challenge-wrap'
-          }`}
-          id={challenge.dashedName}
-          key={`map-challenge ${challenge.fields.slug}`}
-        >
-          {!isProjectBlock ? (
-            <Link
-              onClick={() => handleChallengeClick(challenge.fields.slug)}
-              to={challenge.fields.slug}
-              className={`map-grid-item ${
-                challenge.isCompleted ? 'challenge-completed' : ''
-              }`}
-            >
-              {i + 1}
-            </Link>
-          ) : (
-            <Link
-              onClick={() => handleChallengeClick(challenge.fields.slug)}
-              to={challenge.fields.slug}
-            >
-              {challenge.title}
-              <span className=' badge map-badge map-project-checkmark'>
-                {renderCheckMark(challenge.isCompleted)}
-              </span>
-            </Link>
-          )}
-        </li>
-      ))}
-    </ul>
+    <>
+      {firstIncompleteChallenge && (
+        <div className='challenge-jump-link'>
+          <Link
+            onClick={() =>
+              handleChallengeClick(firstIncompleteChallenge.fields.slug)
+            }
+            to={firstIncompleteChallenge.fields.slug}
+          >
+            Jump to next incomplete challenge
+          </Link>
+        </div>
+      )}
+      <ul className={`map-challenges-ul map-challenges-grid `}>
+        {challengesWithCompleted.map((challenge, i) => (
+          <li
+            className={`map-challenge-title map-challenge-title-grid ${
+              isProjectBlock ? 'map-project-wrap' : 'map-challenge-wrap'
+            }`}
+            id={challenge.dashedName}
+            key={`map-challenge ${challenge.fields.slug}`}
+          >
+            {!isProjectBlock ? (
+              <Link
+                onClick={() => handleChallengeClick(challenge.fields.slug)}
+                to={challenge.fields.slug}
+                className={`map-grid-item ${
+                  +challenge.isCompleted ? 'challenge-completed' : ''
+                }`}
+              >
+                <span>{i + 1}</span>
+                <span className='sr-only'>
+                  {challenge.isCompleted
+                    ? t('icons.passed')
+                    : t('icons.not-passed')}
+                </span>
+              </Link>
+            ) : (
+              <Link
+                onClick={() => handleChallengeClick(challenge.fields.slug)}
+                to={challenge.fields.slug}
+              >
+                {challenge.title}
+                <span className=' badge map-badge map-project-checkmark'>
+                  {renderCheckMark(challenge.isCompleted)}
+                </span>
+              </Link>
+            )}
+          </li>
+        ))}
+      </ul>
+    </>
   ) : (
     <ul className={`map-challenges-ul`}>
       {challengesWithCompleted.map(challenge => (
