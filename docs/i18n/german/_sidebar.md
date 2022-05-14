@@ -29,6 +29,7 @@
 - **Handbücher** (für Mitarbeiter & Moderatoren)
   - [Moderatorenhandbuch](moderator-handbook.md)
   - [DevOps-Handbuch](devops.md)
+  - [Courses VSCode Extension](courses-vscode-extension.md)
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c242eddfaeb5bd13
-title: Build a Personal Portfolio Webpage
+title: 製作一個個人作品集展示頁
 challengeType: 14
 forumTopicId: 301143
 dashedName: build-a-personal-portfolio-webpage
@@ -8,34 +8,34 @@ dashedName: build-a-personal-portfolio-webpage
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to <a href="https://personal-portfolio.freecodecamp.rocks" target="_blank">https://personal-portfolio.freecodecamp.rocks</a>
+**目標：** 構建一個功能類似於 <a href="https://personal-portfolio.freecodecamp.rocks" target="_blank">https://personal-portfolio.freecodecamp.rocks</a> 的應用程序
 
-**User Stories:**
+**需求：**
 
-1. Your portfolio should have a welcome section with an `id` of `welcome-section`
-1. The welcome section should have an `h1` element that contains text
-1. Your portfolio should have a projects section with an `id` of `projects`
-1. The projects section should contain at least one element with a `class` of `project-tile` to hold a project
-1. The projects section should contain at least one link to a project
-1. Your portfolio should have a navbar with an id of `navbar`
-1. The navbar should contain at least one link that you can click on to navigate to different sections of the page
-1. Your portfolio should have a link with an id of `profile-link`, which opens your GitHub or freeCodeCamp profile in a new tab
-1. Your portfolio should have at least one media query
-1. The height of the welcome section should be equal to the height of the viewport
-1. The navbar should always be at the top of the viewport
+1. 你的作品集應該有一個 `id` 爲 `welcome-section` 的歡迎部分
+1. 歡迎部分應該有一個包含文本的 `h1` 元素
+1. 你的作品集應該有一個 `id` 爲 `projects` 的項目部分
+1. 項目部分應該包含至少一個 `class` 爲 `project-tile` 的元素來保存項目
+1. 項目部分應該包含至少一個項目的鏈接
+1. 你的作品集應該有一個 id 爲 `navbar` 的導航欄
+1. 導航欄應該至少包含一個鏈接，你可以點擊它來導航到頁面的不同部分
+1. 你的作品集應該有一個 id 爲 `profile-link` 的鏈接，在新標籤中打開你的 GitHub 或 freeCodeCodeCamp 個人主頁
+1. 你的作品集應該至少有一個媒體查詢
+1. 歡迎部分的高度應該等於視口的高度
+1. 導航欄應該始終位於視口的頂部
 
-Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
+完成需求並通過下面的所有測試來完成這個項目。 賦予它你自己的個人風格。 編程愉快！
 
 # --hints--
 
-Your portfolio should have a "Welcome" section with an `id` of `welcome-section`.
+你的作品集應該有一個 `id` 爲 `welcome-section` 的歡迎部分。
 
 ```js
 const el = document.getElementById('welcome-section')
 assert(!!el);
 ```
 
-Your `#welcom-section` element should contain an `h1` element.
+你的 `#welcom-section` 元素應該包含一個 `h1` 元素。
 
 ```js
 assert.isAbove(
@@ -45,7 +45,7 @@ assert.isAbove(
 );
 ```
 
-You should not have any empty `h1` elements within `#welcome-section` element.
+在 `#welcome-section` 元素中，你不應該有任何空的 `h1` 元素。
 
 ```js
 assert.isAbove(
@@ -56,14 +56,14 @@ assert.isAbove(
 );
 ```
 
-You should have a "Projects" section with an `id` of `projects`.
+你應該有一個 `id` 爲 `projects` 的項目部分。
 
 ```js
 const el = document.getElementById('projects')
 assert(!!el);
 ```
 
-Your portfolio should contain at least one elment with a class of `project-tile`.
+你的作品集應該包含至少一個 class 爲 `project-tile` 的元素。
 
 ```js
 assert.isAbove(
@@ -72,20 +72,20 @@ assert.isAbove(
 );
 ```
 
-Your `#projects` element should contain at least one `a` element.
+你的 `#projects` 元素應該包含至少一個 `a` 元素。
 
 ```js
 assert.isAbove(document.querySelectorAll('#projects a').length, 0);
 ```
 
-Your portfolio should have a navbar with an `id` of `navbar`.
+你的作品集應該有一個 `id` 爲 `navbar` 的導航欄。
 
 ```js
 const el = document.getElementById('navbar');
 assert(!!el);
 ```
 
-Your `#navbar` element should contain at least one `a` element whose `href` attribute starts with `#`.
+你的 `#navbar` 元素應該包含至少一個 `a` 元素，它的 `href` 屬性以 `#` 開頭。
 
 ```js
 const links = [...document.querySelectorAll('#navbar a')].filter(
@@ -99,27 +99,27 @@ assert.isAbove(
 );
 ```
 
-Your portfolio should have an `a` element with an `id` of `profile-link`.
+你的作品集應該有一個 `id` 爲 `profile-link` 的 `a` 元素。
 
 ```js
 const el = document.getElementById('profile-link');
 assert(!!el && el.tagName === 'A')
 ```
 
-Your `#profile-link` element should have a `target` attribute of `_blank`.
+你的 `#profile-link` 元素應該有一個值爲 `_blank` 的 `target` 屬性。
 
 ```js
 const el = document.getElementById('profile-link');
 assert(!!el && el.target === '_blank')
 ```
 
-Your portfolio should use at least one media query.
+你的作品集應該至少有一個媒體查詢。
 
 ```js
 assert.isAtLeast(new __helpers.CSSHelp(document).getCSSRules('media')?.length, 1);
 ```
 
-Your `#navbar` element should always be at the top of the viewport.
+你的 `#navbar` 元素應該始終位於視口的頂部。
 
 ```js
 (async () => {

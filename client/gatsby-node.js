@@ -96,6 +96,7 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
                     head
                     tail
                     history
+                    fileKey
                   }
                   solutions {
                     contents
