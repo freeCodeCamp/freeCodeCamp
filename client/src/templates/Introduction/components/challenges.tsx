@@ -64,7 +64,7 @@ function Challenges({
             }
             to={firstIncompleteChallenge.fields.slug}
           >
-            Jump to next incomplete challenge
+            Jump to next incomplete step
           </Link>
         </div>
       )}
