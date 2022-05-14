@@ -122,7 +122,7 @@ function TimelineInner({
     const { challengeTitle, challengePath, certPath } = idToNameMap.get(id);
     return (
       <tr className='timeline-row' key={id}>
-        <td>
+        <td className='solutions-dropdown'>
           {certPath ? (
             <Link
               className='timeline-cert-link'
