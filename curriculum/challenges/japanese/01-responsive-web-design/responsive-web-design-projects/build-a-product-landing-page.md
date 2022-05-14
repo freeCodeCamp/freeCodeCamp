@@ -1,6 +1,6 @@
 ---
 id: 587d78af367417b2b2512b04
-title: Build a Product Landing Page
+title: プロダクトのランディングページを作成する
 challengeType: 14
 forumTopicId: 301144
 dashedName: build-a-product-landing-page
@@ -8,87 +8,87 @@ dashedName: build-a-product-landing-page
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to <a href="https://product-landing-page.freecodecamp.rocks" target="_blank">https://product-landing-page.freecodecamp.rocks</a>
+**目標:** <a href="https://product-landing-page.freecodecamp.rocks" target="_blank">https://product-landing-page.freecodecamp.rocks</a> と同様の機能を持つアプリを構築します
 
-**User Stories:**
+**ユーザーストーリー:**
 
-1. Your product landing page should have a `header` element with a corresponding `id="header"`
-1. You can see an image within the `header` element with a corresponding `id="header-img"` (A logo would make a good image here)
-1. Within the `#header` element, you can see a `nav` element with a corresponding `id="nav-bar"`
-1. You can see at least three clickable elements inside the `nav` element, each with the class `nav-link`
-1. When you click a `.nav-link` button in the `nav` element, you are taken to the corresponding section of the landing page
-1. You can watch an embedded product video with `id="video"`
-1. Your landing page has a `form` element with a corresponding `id="form"`
-1. Within the form, there is an `input` field with `id="email"` where you can enter an email address
-1. The `#email` input field should have placeholder text to let users know what the field is for
-1. The `#email` input field uses HTML5 validation to confirm that the entered text is an email address
-1. Within the form, there is a submit `input` with a corresponding `id="submit"`
-1. When you click the `#submit` element, the email is submitted to a static page (use this mock URL: `https://www.freecodecamp.com/email-submit`)
-1. The navbar should always be at the top of the viewport
-1. Your product landing page should have at least one media query
-1. Your product landing page should utilize CSS flexbox at least once
+1. プロダクトランディングページには `id="header"` を持つ `header` 要素が必要です
+1. `header` 要素内には、`id="header-img"` を持つ画像が必要です。(ロゴのような画像を表示すると良いでしょう。)
+1. `#header` 要素内には、`id="nav-bar"` を持つ `nav` 要素が必要です
+1. `nav` 要素内に少なくとも 3 つ、クリック可能な `nav-link` クラスの要素が必要です
+1. `nav` 要素内の `.nav-link` ボタンをクリックすると、ランディングページの対応するセクションに移動します
+1. `id="video"` を持つ、プロダクトの埋め込み動画を見ることができます
+1. プロダクトランディングページには `id="form"` を持つ `form` 要素が必要です
+1. フォーム内には、E メールアドレスが入力可能な `id="email"` を持つ `input` フィールドが必要です
+1. `#email` 入力フィールドには、フィールドの用途をユーザーに知らせるためのプレイスホルダ―テキストが必要です
+1. `#email` 入力フィールドは、入力されたテキストがメールアドレスであるか確認するために HTML5 のバリデーションを使用します
+1. フォーム内には、`id="submit"` を持つ送信ボタンの `input` が必要です
+1. `#submit` 要素をクリックすると、email の情報が静的ページに送信されます (このモック URL を使用してください: `https://www.freecodecamp.com/email-submit`)
+1. ナビゲーションバーは常にビューポートの上部にある必要があります
+1. プロダクトランディングページには、少なくとも 1 つのメディアクエリが必要です
+1. プロダクトランディングページでは、少なくとも 1 つの CSS フレックスボックスが使用されている必要があります
 
-Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
+上記のユーザーストーリーを満たして、以下のすべてのテストに合格してこのプロジェクトを完成させてください。 あなた独自のスタイルを加えましょう。 ハッピーコーディング！
 
 # --hints--
 
-You should have a `header` element with an `id` of `header`
+`id` が `header` である `header` 要素が 1 つ必要です
 
 ```js
 const el = document.getElementById('header')
 assert(!!el && el.tagName === 'HEADER')
 ```
 
-You should have an `img` element with an `id` of `header-img`
+`id` が `header-img` である `img` 要素が 1 つ必要です
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && el.tagName === 'IMG')
 ```
 
-Your `#header-img` should be a descendant of the `#header`
+`#header-img` は `#header` の子孫要素である必要があります
 
 ```js
 const els = document.querySelectorAll('#header #header-img')
 assert(els.length > 0)
 ```
 
-Your `#header-img` should have a `src` attribute
+`#header-img` には `src` 属性が必要です
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && !!el.src)
 ```
 
-Your `#header-img`’s `src` value should be a valid URL (starts with `http`)
+`#header-img` の `src` の値は (`http` から始まる) 有効な URL である必要があります
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && /^http/.test(el.src))
 ```
 
-You should have a `nav` element with an `id` of `nav-bar`
+`id` が `nav-bar` である `nav` 要素が 1 つ必要です
 
 ```js
 const el = document.getElementById('nav-bar')
 assert(!!el && el.tagName === 'NAV')
 ```
 
-Your `#nav-bar` should be a descendant of the `#header`
+`#nav-bar` は `#header` の子孫要素である必要があります
 
 ```js
 const els = document.querySelectorAll('#header #nav-bar')
 assert(els.length > 0)
 ```
 
-You should have at least 3 `.nav-link` elements within the `#nav-bar`
+`#nav-bar` の中に最低 3 つの `.nav-link` 要素が必要です
 
 ```js
 const els = document.querySelectorAll('#nav-bar .nav-link')
 assert(els.length >= 3)
 ```
 
-Each `.nav-link` element should have an `href` attribute
+各 `.nav-link` 要素には `href` 属性が必要です
 
 ```js
 const els = document.querySelectorAll('.nav-link')
@@ -98,7 +98,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-Each `.nav-link` element should link to a corresponding element on the landing page (has an `href` with a value of another element's id. e.g. `#footer`)
+各 `.nav-link` 要素は、ランディングページ内の対応する要素にリンクされている必要があります (対応する要素の id (例えば `#footer`) が値に設定された `href` を持つ必要があります。)
 
 ```js
 const els = document.querySelectorAll('.nav-link')
@@ -109,91 +109,99 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-You should have a `video` or `iframe` element with an `id` of `video`
+`id` が `video` である、`video` または `iframe` 要素が 1 つ必要です
 
 ```js
 const el = document.getElementById('video')
 assert(!!el && (el.tagName === 'VIDEO' || el.tagName === 'IFRAME'))
 ```
 
-Your `#video` should have a `src` attribute
+`#video` には `src` 属性が必要です
 
 ```js
-const el = document.getElementById('video')
-assert(!!el && !!el.src)
+let el = document.getElementById('video')
+const sourceNode = el.children;
+let sourceElement = null;
+if (sourceNode.length) {
+  sourceElement = [...video.children].filter(el => el.localName === 'source')[0];
+}
+if (sourceElement) {
+  el = sourceElement;
+}
+assert(el.hasAttribute('src'));
 ```
 
-You should have a `form` element with an `id` of `form`
+`id` が `form` である `form` 要素が 1 つ必要です
 
 ```js
 const el = document.getElementById('form')
 assert(!!el && el.tagName === 'FORM')
 ```
 
-You should have an `input` element with an `id of `email`
+`id` が `email` である `input` 要素が 1 つ必要です
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Your `#email` should be a descendant of the `#form`
+`#email` は `#form` の子孫要素である必要があります
 
 ```js
 const els = document.querySelectorAll('#form #email')
 assert(els.length > 0)
 ```
 
-Your `#email` should have the `placeholder` attribute with placeholder text
+`#email` は、プレイスホルダ―テキストが設定された `placeholder` 属性を持つ必要があります
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-Your `#email` should use HTML5 validation by setting its `type` to `email`
+`#email` は、`type` を `email` に設定することによって、HTML5 のバリデーションが使用されている必要があります
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.type === 'email')
 ```
 
-You should have an `input` element with an `id` of `submit`
+`id` が `submit` である `input` 要素が 1 つ必要です
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Your `#submit` should be a descendant of the `#form`
+`#submit` は `#form` の子孫要素である必要があります
 
 ```js
 const els = document.querySelectorAll('#form #submit')
 assert(els.length > 0)
 ```
 
-Your `#submit` should have a `type` of `submit`
+`#submit` は `type` が `submit` に設定されている必要があります
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && el.type === 'submit')
 ```
 
-Your `#form` should have an `action` attribute of `https://www.freecodecamp.com/email-submit`
+`#form` の `action` 属性には `https://www.freecodecamp.com/email-submit` を設定する必要があります
 
 ```js
 const el = document.getElementById('form')
 assert(!!el && el.action === 'https://www.freecodecamp.com/email-submit')
 ```
 
-Your `#email` should have a `name` attribute of `email`
+`#email` の `name` 属性は `email` である必要があります
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.name === 'email')
 ```
 
-Your `#nav-bar` should always be at the top of the viewport
+`#nav-bar` は常にビューポートの上部にある必要があります
 
 ```js
 const el = document.getElementById('nav-bar')
@@ -202,13 +210,13 @@ const top2 = el?.offsetTop
 assert(!!el && top1 >= -15 && top1 <= 15 && top2 >= -15 && top2 <= 15)
 ```
 
-Your Product Landing Page should use at least one media query
+プロダクトランディングページに、少なくとも 1 つのメディアクエリが使われている必要があります
 
 ```js
 assert.isAtLeast(new __helpers.CSSHelp(document).getCSSRules('media')?.length, 1);
 ```
 
-Your Product Landing Page should use CSS Flexbox at least once
+プロダクトランディングページに、少なくとも 1 つの CSS フレックスボックスが使われている必要があります
 
 ```js
 const stylesheet = new __helpers.CSSHelp(document).getStyleSheet()

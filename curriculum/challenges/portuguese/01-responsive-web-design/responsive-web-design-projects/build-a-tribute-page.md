@@ -136,24 +136,21 @@ const el = document.getElementById('tribute-link')
 assert(!!el && el.target === '_blank')
 ```
 
-Você deve usar o seletor `#image` em seu CSS para estilizar `#image` e passar nos próximos três testes
+O elemento `img` deve ter o atributo `display` com o valor `block`
 
 ```js
-const style = new __helpers.CSSHelp(document).getStyle('#image')
-assert(!!style)
-```
-
-O elemento `#image` deve ter o atributo `display` com o valor `block`
-
-```js
-const style = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('display')
+const img = document.getElementById('image');
+const imgStyle = window.getComputedStyle(img);
+const style = imgStyle?.getPropertyValue('display')
 assert(style === 'block')
 ```
 
 O elemento `#image` deve ter o atributo `max-width` com o valor `100%`
 
 ```js
-const style = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('max-width')
+const img = document.getElementById('image');
+const imgStyle = window.getComputedStyle(img);
+const style = imgStyle?.getPropertyValue('max-width')
 assert(style === '100%')
 ```
 
@@ -162,12 +159,11 @@ O elemento `#image` deve ter o atributo `height` com o valor `auto`
 ```js
 // taken from the testable-projects repo
 const img = document.getElementById('image');
-const maxWidthValue = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('max-width')
-const displayValue = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('display')
-const oldDisplayValue = img?.style.getPropertyValue('display');
-const oldDisplayPriority = img?.style.getPropertyPriority('display');
+const imgStyle = window.getComputedStyle(img);
+const oldDisplayValue = imgStyle.getPropertyValue('display');
+const oldDisplayPriority = imgStyle.getPropertyPriority('display');
 img?.style.setProperty('display', 'none', 'important');
-const heightValue = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('height')
+const heightValue = imgStyle?.getPropertyValue('height')
 img?.style.setProperty('display', oldDisplayValue, oldDisplayPriority);
 assert(heightValue === 'auto')
 ```

@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c242eddfaeb5bd13
-title: Build a Personal Portfolio Webpage
+title: 個人ポートフォリオのウェブページを作成する
 challengeType: 14
 forumTopicId: 301143
 dashedName: build-a-personal-portfolio-webpage
@@ -8,34 +8,34 @@ dashedName: build-a-personal-portfolio-webpage
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to <a href="https://personal-portfolio.freecodecamp.rocks" target="_blank">https://personal-portfolio.freecodecamp.rocks</a>
+**目標:** <a href="https://personal-portfolio.freecodecamp.rocks" target="_blank">https://personal-portfolio.freecodecamp.rocks</a> と同様の機能を持つアプリを構築します
 
-**User Stories:**
+**ユーザーストーリー:**
 
-1. Your portfolio should have a welcome section with an `id` of `welcome-section`
-1. The welcome section should have an `h1` element that contains text
-1. Your portfolio should have a projects section with an `id` of `projects`
-1. The projects section should contain at least one element with a `class` of `project-tile` to hold a project
-1. The projects section should contain at least one link to a project
-1. Your portfolio should have a navbar with an id of `navbar`
-1. The navbar should contain at least one link that you can click on to navigate to different sections of the page
-1. Your portfolio should have a link with an id of `profile-link`, which opens your GitHub or freeCodeCamp profile in a new tab
-1. Your portfolio should have at least one media query
-1. The height of the welcome section should be equal to the height of the viewport
-1. The navbar should always be at the top of the viewport
+1. ポートフォリオには `id` の値が `welcome-section` に設定されているウェルカムセクションが 1 つ必要です
+1. そのウェルカムセクションにはテキストを含む `h1` 要素が 1 つ必要です
+1. ポートフォリオには `id` の値が `projects` に設定されているプロジェクトセクションが 1 つ必要です
+1. プロジェクトセクションには、プロジェクトを入れるために、`class` の値が `project-tile` である要素が少なくとも 1 つ必要です
+1. プロジェクトセクションには、プロジェクトへのリンクを少なくとも 1 つ含める必要があります
+1. ポートフォリオには id の値が `navbar` に設定されているナビゲーションバーが 1 つ必要です
+1. ナビゲーションバーには、クリックするとページ上の異なるセクションに移動できるリンクが少なくとも 1 つあります
+1. ポートフォリオには、あなたの GitHub または freeCodeCamp のプロフィールを新しいタブで開く、id の値が `profile-link` のリンクが 1 つ必要です
+1. ポートフォリオにはメディアクエリが少なくとも 1 つ必要です
+1. ウェルカムセクションの高さはビューポートの高さと等しくする必要があります
+1. ナビゲーションバーは常にビューポートの上部にある必要があります
 
-Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
+上記のユーザーストーリーを満たして、以下のすべてのテストに合格してこのプロジェクトを完成させてください。 あなた独自のスタイルを加えましょう。 ハッピーコーディング！
 
 # --hints--
 
-Your portfolio should have a "Welcome" section with an `id` of `welcome-section`.
+ポートフォリオには `id` が `welcome-section` であるウェルカムセクションが 1 つ必要です。
 
 ```js
 const el = document.getElementById('welcome-section')
 assert(!!el);
 ```
 
-Your `#welcom-section` element should contain an `h1` element.
+`#welcome-section` 要素内には `h1` 要素が必要です。
 
 ```js
 assert.isAbove(
@@ -45,7 +45,7 @@ assert.isAbove(
 );
 ```
 
-You should not have any empty `h1` elements within `#welcome-section` element.
+空の `h1` 要素を `#welcome-section` 要素内に入れないようにしてください。
 
 ```js
 assert.isAbove(
@@ -56,14 +56,14 @@ assert.isAbove(
 );
 ```
 
-You should have a "Projects" section with an `id` of `projects`.
+`id` が `projects` であるプロジェクトセクションが 1 つ必要です。
 
 ```js
 const el = document.getElementById('projects')
 assert(!!el);
 ```
 
-Your portfolio should contain at least one elment with a class of `project-tile`.
+ポートフォリオにはクラスが `project-tile` である要素が少なくとも 1 つ必要です。
 
 ```js
 assert.isAbove(
@@ -72,20 +72,20 @@ assert.isAbove(
 );
 ```
 
-Your `#projects` element should contain at least one `a` element.
+`#projects` 要素には `a` 要素を少なくとも 1 つ入れる必要があります。
 
 ```js
 assert.isAbove(document.querySelectorAll('#projects a').length, 0);
 ```
 
-Your portfolio should have a navbar with an `id` of `navbar`.
+ポートフォリオには `id` が `navbar` であるナビゲーションバーが 1 つ必要です。
 
 ```js
 const el = document.getElementById('navbar');
 assert(!!el);
 ```
 
-Your `#navbar` element should contain at least one `a` element whose `href` attribute starts with `#`.
+`#navbar` 要素には `href` 属性の値が `#` で始まる `a` 要素を少なくとも 1 つ入れる必要があります。
 
 ```js
 const links = [...document.querySelectorAll('#navbar a')].filter(
@@ -99,27 +99,27 @@ assert.isAbove(
 );
 ```
 
-Your portfolio should have an `a` element with an `id` of `profile-link`.
+ポートフォリオには `id` が `profile-link` である `a` 要素が 1 つ必要です。
 
 ```js
 const el = document.getElementById('profile-link');
 assert(!!el && el.tagName === 'A')
 ```
 
-Your `#profile-link` element should have a `target` attribute of `_blank`.
+`#profile-link` 要素は値が `_blank` に設定されている `target` 属性をもつ必要があります。
 
 ```js
 const el = document.getElementById('profile-link');
 assert(!!el && el.target === '_blank')
 ```
 
-Your portfolio should use at least one media query.
+ポートフォリオはメディアクエリを少なくとも 1 つ使用する必要があります。
 
 ```js
 assert.isAtLeast(new __helpers.CSSHelp(document).getCSSRules('media')?.length, 1);
 ```
 
-Your `#navbar` element should always be at the top of the viewport.
+`#navbar` 要素は常にビューポートの上部にある必要があります。
 
 ```js
 (async () => {
