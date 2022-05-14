@@ -1,6 +1,6 @@
 ---
 id: 587d78af367417b2b2512b03
-title: Build a Survey Form
+title: アンケートフォームを作成する
 challengeType: 14
 forumTopicId: 301145
 dashedName: build-a-survey-form
@@ -8,277 +8,277 @@ dashedName: build-a-survey-form
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to <a href="https://survey-form.freecodecamp.rocks" target="_blank">https://survey-form.freecodecamp.rocks</a>
+**目標:** <a href="https://survey-form.freecodecamp.rocks" target="_blank">https://survey-form.freecodecamp.rocks</a> と同様の機能を持つアプリを構築します
 
-**User Stories:**
+**ユーザーストーリー:**
 
-1. You should have a page title in an `h1` element with an `id` of `title`
-1. You should have a short explanation in a `p` element with an `id` of `description`
-1. You should have a `form` element with an `id` of `survey-form`
-1. Inside the form element, you are **required** to enter your name in an `input` field that has an `id` of `name` and a `type` of `text`
-1. Inside the form element, you are **required** to enter your email in an `input` field that has an `id` of `email`
-1. If you enter an email that is not formatted correctly, you will see an HTML5 validation error
-1. Inside the form, you can enter a number in an `input` field that has an `id` of `number`
-1. If you enter non-numbers in the number input, you will see an HTML5 validation error
-1. If you enter numbers outside the range of the number input, which are defined by the `min` and `max` attributes, you will see an HTML5 validation error
-1. For the name, email, and number input fields, you can see corresponding `label` elements in the form, that describe the purpose of each field with the following ids: `id="name-label"`, `id="email-label"`, and `id="number-label"`
-1. For the name, email, and number input fields, you can see placeholder text that gives a description or instructions for each field
-1. Inside the form element, you should have a `select` dropdown element with an `id` of `dropdown` and at least two options to choose from
-1. Inside the form element, you can select an option from a group of at least two radio buttons that are grouped using the `name` attribute
-1. Inside the form element, you can select several fields from a series of checkboxes, each of which must have a `value` attribute
-1. Inside the form element, you are presented with a `textarea` for additional comments
-1. Inside the form element, you are presented with a button with `id` of `submit` to submit all the inputs
+1. `id` の値が `title` に設定されている `h1` 要素内に、ページタイトルを入れる必要があります
+1. `id` の値が `description` に設定されている `p` 要素内に、簡単な説明を入れる必要があります
+1. `id` の値が `survey-form` に設定されている `form` 要素が 1 つ必要です
+1. その form 要素の中では、`id` の値が `name`、`type` の値が `text` である `input` 欄への名前の入力が**必須**となっています
+1. その form 要素の中では、`id` の値が `email` である `input` 欄へのメールアドレスの入力が**必須**となっています
+1. メールアドレスを不正なフォーマットで入力すると、HTML5 のバリデーションエラーが表示されます
+1. フォームの中で、`id` の値が `number` に設定されている `input` の欄内に数値を入力できます
+1. 数値入力欄に数値以外を入力すると、HTML5 のバリデーションエラーが表示されます
+1. `min` と `max` 属性で定義した範囲外の数字を入力すると、HTML5 のバリデーションエラーが表示されます
+1. 名前、メールアドレス、数値の入力欄に対応して、フォーム内に各欄の目的を説明する `label` 要素があり、それぞれ以下の id が設定されている必要があります: `id="name-label"`、`id="email-label"`、`id="number-label"`
+1. 名前、メールアドレス、数値の入力欄には、各欄の説明や指示を示すプレイスホルダーテキストが表示されます
+1. form 要素内には、`id` の値が `dropdown` に設定されている `select` ドロップダウン要素が 1 つ必要で、その選択肢は少なくとも 2 つ必要です
+1. form 要素内では、少なくとも 2 つのラジオボタンを `name` 属性を使用してグループ化したグループから、オプションを 1 つ選択できます
+1. フォーム要素内では、一連のチェックボックスからいくつかの欄を選択することができ、各チェックボックスは `value` 属性を持つ必要があります
+1. form 要素内には、追加のコメント用に `textarea` が用意されています
+1. form 要素内には、`id` の値が `submit` に設定されているボタンがすべての入力を送信するために用意されています
 
-Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
+上記のユーザーストーリーを満たして、以下のすべてのテストに合格してこのプロジェクトを完成させてください。 あなた独自のスタイルを加えましょう。 ハッピーコーディング！
 
 # --hints--
 
-You should have an `h1` element with an `id` of `title`
+`id` の値が `title` に設定されている `h1` 要素が 1 つ必要です
 
 ```js
 const el = document.getElementById('title')
 assert(!!el && el.tagName === 'H1')
 ```
 
-Your `#title` should not be empty
+`#title` は空ではないようにしてください
 
 ```js
 const el = document.getElementById('title')
 assert(!!el && el.innerText.length > 0)
 ```
 
-You should have a `p` element with an `id` of `description`
+`id` が `description` である `p` 要素が 1 つ必要です
 
 ```js
 const el = document.getElementById('description')
 assert(!!el && el.tagName === 'P')
 ```
 
-Your `#description` should not be empty
+`#description` が空でないようにしてください
 
 ```js
 const el = document.getElementById('description')
 assert(!!el && el.innerText.length > 0)
 ```
 
-You should have a `form` element with an `id` of `survey-form`
+`id` の値が `survey-form` に設定されている `form` 要素が 1 つ必要です
 
 ```js
 const el = document.getElementById('survey-form')
 assert(!!el && el.tagName === 'FORM')
 ```
 
-You should have an `input` element with an `id` of `name`
+`id` の値が `name` に設定されている `input` 要素が 1 つ必要です
 
 ```js
 const el = document.getElementById('name')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Your `#name` should have a `type` of `text`
+`#name` の `type` の値は `text` に設定されている必要があります
 
 ```js
 const el = document.getElementById('name')
 assert(!!el && el.type === 'text')
 ```
 
-Your `#name` should require input
+`#name` の入力が必須である必要があります
 
 ```js
 const el = document.getElementById('name')
 assert(!!el && el.required)
 ```
 
-Your `#name` should be a descedant of `#survey-form`
+`#name` は `#survey-form` の子孫要素である必要があります
 
 ```js
 const el = document.querySelector('#survey-form #name')
 assert(!!el)
 ```
 
-You should have an `input` element with an `id` of `email`
+`id` の値が `email` に設定されている `input` 要素が 1 つ必要です
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Your `#email` should have a `type` of `email`
+`#email` の `type` の値は `email` に設定されている必要があります
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.type === 'email')
 ```
 
-Your `#email` should require input
+`#email` の入力が必須である必要があります
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.required)
 ```
 
-Your `#email` should be a descedant of `#survey-form`
+`#email` は `#survey-form` の子孫要素である必要があります
 
 ```js
 const el = document.querySelector('#survey-form #email')
 assert(!!el)
 ```
 
-You should have an `input` element with an `id` of `number`
+`id` の値が `number` に設定されている `input` 要素が 1 つ必要です
 
 ```js
 const el = document.getElementById('number')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Your `#number` should be a descedant of `#survey-form`
+`#number` は `#survey-form` の子孫要素である必要があります
 
 ```js
 const el = document.querySelector('#survey-form #number')
 assert(!!el)
 ```
 
-Your `#number` should have a `type` of `number`
+`#number` の `type` の値は `number` に設定されている必要があります
 
 ```js
 const el = document.getElementById('number')
 assert(!!el && el.type === 'number')
 ```
 
-Your `#number` should have a `min` attribute with a numeric value
+`#number` は数値が設定された `min` 属性をもつ必要があります
 
 ```js
 const el = document.getElementById('number')
 assert(!!el && el.min && isFinite(el.min))
 ```
 
-Your `#number` should have a `max` attribute with a numeric value
+`#number` は数値が設定された `max` 属性をもつ必要があります
 
 ```js
 const el = document.getElementById('number')
 assert(!!el && el.max && isFinite(el.max))
 ```
 
-You should have a `label` element with an `id` of `name-label`
+`id` の値が `name-label` に設定されている `label` 要素が 1 つ必要です
 
 ```js
 const el = document.getElementById('name-label')
 assert(!!el && el.tagName === 'LABEL')
 ```
 
-You should have a `label` element with an `id` of `email-label`
+`id` の値が `email-label` に設定されている `label` 要素が 1 つ必要です
 
 ```js
 const el = document.getElementById('email-label')
 assert(!!el && el.tagName === 'LABEL')
 ```
 
-You should have a `label` element with an `id` of `number-label`
+`id` の値が `number-label` に設定されている `label` 要素が 1 つ必要です
 
 ```js
 const el = document.getElementById('number-label')
 assert(!!el && el.tagName === 'LABEL')
 ```
 
-Your `#name-label` should not be empty
+`#name-label` が空でないようにしてください
 
 ```js
 const el = document.getElementById('name-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Your `#email-label` should not be empty
+`#email-label` が空でないようにしてください
 
 ```js
 const el = document.getElementById('email-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Your `#number-label` should not be empty
+`#number-label` が空でないようにしてください
 
 ```js
 const el = document.getElementById('number-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Your `#name-label` should be a descedant of `#survey-form`
+`#name-label` は `#survey-form` の子孫要素である必要があります
 
 ```js
 const el = document.querySelector('#survey-form #name-label')
 assert(!!el)
 ```
 
-Your `#email-label` should be a descedant of `#survey-form`
+`#email-label` は `#survey-form` の子孫要素である必要があります
 
 ```js
 const el = document.querySelector('#survey-form #email-label')
 assert(!!el)
 ```
 
-Your `#number-label` should be a descedant of `#survey-form`
+`#number-label` は `#survey-form` の子孫要素である必要があります
 
 ```js
 const el = document.querySelector('#survey-form #number-label')
 assert(!!el)
 ```
 
-Your `#name` should have a `placeholder` attribute and value
+`#name` は `placeholder` 属性とその値をもつ必要があります
 
 ```js
 const el = document.getElementById('name')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-Your `#email` should have a `placeholder` attribute and value
+`#email` は `placeholder` 属性とその値をもつ必要があります
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-Your `#number` should have a `placeholder` attribute and value
+`#number` は `placeholder` 属性とその値をもつ必要があります
 
 ```js
 const el = document.getElementById('number')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-You should have a `select` field with an `id` of `dropdown`
+`id` の値が `dropdown` に設定されている `select` 欄が 1 つ必要です
 
 ```js
 const el = document.getElementById('dropdown')
 assert(!!el && el.tagName === 'SELECT')
 ```
 
-Your `#dropdown` should have at least two selectable (not disabled) `option` elements
+`#dropdown` は少なくとも 2 つの選択可能な (無効化されていない) `option` 要素をもつ必要があります
 
 ```js
 const els = document.querySelectorAll('#dropdown option:not([disabled])')
 assert(els.length >= 2)
 ```
 
-Your `#dropdown` should be a descendant of `#survey-form`
+`#dropdown` は `#survey-form` の子孫要素である必要があります
 
 ```js
 const el = document.querySelector('#survey-form #dropdown')
 assert(!!el)
 ```
 
-You should have at least two `input` elements with a `type` of `radio` (radio buttons)
+`type` の値が `radio` (ラジオボタン) に設定されている `input` 要素が少なくとも 2 つ必要です
 
 ```js
 const els = document.querySelectorAll('input[type="radio"]')
 assert(els.length >= 2)
 ```
 
-You should have at least two radio buttons that are descendants of `#survey-form`
+少なくとも 2 つのラジオボタンが `#survey-form` の子孫要素として必要です
 
 ```js
 const els = document.querySelectorAll('#survey-form input[type="radio"]')
 assert(els.length >= 2)
 ```
 
-All your radio buttons should have a `value` attribute and value
+すべてのラジオボタンには `value` 属性とその値が必要です
 
 ```js
 const els1 = document.querySelectorAll('input[type="radio"]')
@@ -286,7 +286,7 @@ const els2 = document.querySelectorAll('input[type="radio"][value=""], input[typ
 assert(els1.length > 0 && els2.length === 0)
 ```
 
-All your radio buttons should have a `name` attribute and value
+すべてのラジオボタンには `name` 属性とその値が必要です
 
 ```js
 const els1 = document.querySelectorAll('input[type="radio"]')
@@ -294,7 +294,7 @@ const els2 = document.querySelectorAll('input[type="radio"][name=""], input[type
 assert(els1.length > 0 && els2.length === 0)
 ```
 
-Every radio button group should have at least 2 radio buttons
+ラジオボタンの各グループには少なくとも 2 つのラジオボタンが必要です
 
 ```js
 const radioButtons = document.querySelectorAll('input[type="radio"]');
@@ -316,14 +316,14 @@ groupKeys.forEach(key => {
 assert(groupKeys.length > 0)
 ```
 
-You should have at least two `input` elements with a `type` of `checkbox` (checkboxes) that are descendants of `#survey-form`
+`type` の値が `checkbox` (チェックボックス) に設定されている `input` 要素が `#survey-form` の子孫要素として少なくとも 2 つ必要です
 
 ```js
 const els = document.querySelectorAll('#survey-form input[type="checkbox"]');
 assert(els.length >= 2)
 ```
 
-All your checkboxes inside `#survey-form` should have a `value` attribute and value
+`#survey-form` 内のすべてのチェックボックスには `value` 属性とその値が必要です
 
 ```js
 const els1 = document.querySelectorAll('#survey-form input[type="checkbox"]')
@@ -331,28 +331,28 @@ const els2 = document.querySelectorAll('#survey-form input[type="checkbox"][valu
 assert(els1.length > 0 && els2.length === 0)
 ```
 
-You should have at least one `textarea` element that is a descendant of `#survey-form`
+少なくとも 1 つの `textarea` 要素が `#survey-form` の子孫要素として必要です
 
 ```js
 const el = document.querySelector('#survey-form textarea')
 assert(!!el)
 ```
 
-You should have an `input` or `button` element with an `id` of `submit`
+`id` の値が `submit` に設定されている、`input` または `button` 要素が 1 つ必要です
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && (el.tagName === 'INPUT' || el.tagName === 'BUTTON'))
 ```
 
-Your `#submit` should have a `type` of `submit`
+`#submit` は `type` の値が `submit` に設定されている必要があります
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && el.type === 'submit')
 ```
 
-Your `#submit` should be a descendant of `#survey-form`
+`#submit` は `#survey-form` の子孫要素である必要があります
 
 ```js
 const el = document.querySelector('#survey-form #submit')
