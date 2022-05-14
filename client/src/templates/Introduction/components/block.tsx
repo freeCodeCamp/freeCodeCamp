@@ -305,32 +305,36 @@ export class Block extends Component<BlockProps> {
     );
 
     const GridProjectBlock = (
-      <div className='block block-grid grid-project-block'>
-        <Link
-          className='block-header'
-          onClick={() => {
-            this.handleBlockClick();
-          }}
-          to={challengesWithCompleted[0].fields.slug}
-        >
-          <div className='tags-wrapper'>
-            <span className='cert-tag'>{t('misc.certification-project')}</span>
-            {!isAuditedCert(curriculumLocale, superBlock) && (
-              <Link
-                className='cert-tag'
-                to={t('links:help-translate-link-url')}
-              >
-                {t('misc.translation-pending')}
-              </Link>
-            )}
-          </div>
-          <div className='title-wrapper map-title'>
-            {this.renderCheckMark(isBlockCompleted)}
-            <h3 className='block-grid-title'>{blockTitle}</h3>
-          </div>
-          {this.renderBlockIntros(blockIntroArr)}
-        </Link>
-      </div>
+      <ScrollableAnchor id={blockDashedName}>
+        <div className='block block-grid grid-project-block'>
+          <Link
+            className='block-header'
+            onClick={() => {
+              this.handleBlockClick();
+            }}
+            to={challengesWithCompleted[0].fields.slug}
+          >
+            <div className='tags-wrapper'>
+              <span className='cert-tag'>
+                {t('misc.certification-project')}
+              </span>
+              {!isAuditedCert(curriculumLocale, superBlock) && (
+                <Link
+                  className='cert-tag'
+                  to={t('links:help-translate-link-url')}
+                >
+                  {t('misc.translation-pending')}
+                </Link>
+              )}
+            </div>
+            <div className='title-wrapper map-title'>
+              {this.renderCheckMark(isBlockCompleted)}
+              <h3 className='block-grid-title'>{blockTitle}</h3>
+            </div>
+            {this.renderBlockIntros(blockIntroArr)}
+          </Link>
+        </div>
+      </ScrollableAnchor>
     );
 
     const blockrenderer = () => {
