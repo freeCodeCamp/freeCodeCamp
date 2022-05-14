@@ -52,6 +52,46 @@ exports[`<Map /> snapshot: Map 1`] = `
       <li>
         <a
           class="btn link-btn btn-lg"
+          href="/learn/super-block-three/"
+        >
+          <div
+            style="display: flex; justify-content: space-between; align-items: center;"
+          >
+            <svg
+              aria-hidden="true"
+              class="map-icon"
+              viewBox="0 0 640 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M112 48h352v48h48V32a32.09 32.09 0 00-32-32H96a32.09 32.09 0 00-32 32v256H16a16 16 0 00-16 16v16a64.14 64.14 0 0063.91 64H352v-96H112zm492 80H420a36 36 0 00-36 36v312a36 36 0 0036 36h184a36 36 0 0036-36V164a36 36 0 00-36-36zm-12 336H432V176h160z"
+              />
+            </svg>
+          </div>
+          <svg
+            aria-hidden="true"
+            fill="inherit"
+            height="20px"
+            version="1.1"
+            viewBox="0 0 16 20"
+            width="18px"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <g>
+              <polygon
+                points="-2.68014473e-15 -1.06357708e-13 2.01917516 -1.06357708e-13 8.99824941 9.00746464 2.01917516 18.0149293 -2.66453526e-15 18.0149293 7.00955027 9"
+              />
+              <polygon
+                points="7.99971435 -1.06357708e-13 10.0188895 -1.06357708e-13 16.9979638 9.00746464 10.0188895 18.0149293 7.99971435 18.0149293 15.0092646 9"
+              />
+            </g>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a
+          class="btn link-btn btn-lg"
           href="/learn/super-block-one/"
         >
           <div
