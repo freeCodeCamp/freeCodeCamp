@@ -99,7 +99,7 @@
     "react-helmet": "6.1.0",
     "react-hotkeys": "2.0.0",
     "react-i18next": "11.16.9",
-    "react-instantsearch-dom": "6.24.2",
+    "react-instantsearch-dom": "6.24.3",
     "react-lazy-load": "3.1.13",
     "react-monaco-editor": "0.40.0",
     "react-redux": "5.1.2",
