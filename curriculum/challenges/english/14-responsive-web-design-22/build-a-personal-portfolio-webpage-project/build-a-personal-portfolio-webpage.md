@@ -118,7 +118,7 @@ Your portfolio should use at least one media query.
 ```js
 const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
 const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
-assert(cssCheck.length > 0 || htmlSourceAttr.length > 0 );
+assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 ```
 
 Your `#navbar` element should always be at the top of the viewport.
