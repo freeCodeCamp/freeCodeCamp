@@ -48,7 +48,7 @@ function renderMessage(
   );
 }
 
-function renderProfile(user: ProfileProps['user']): JSX.Element {
+function renderProfile(user: ProfileProps['user'], t: TFunction): JSX.Element {
   const {
     profileUI: {
       showAbout = false,
@@ -77,7 +77,9 @@ function renderProfile(user: ProfileProps['user']): JSX.Element {
     portfolio,
     about,
     yearsTopContributor,
-    isDonating
+    isDonating,
+    isCheater,
+    isBanned
   } = user;
   return (
     <>
@@ -96,13 +98,21 @@ function renderProfile(user: ProfileProps['user']): JSX.Element {
         website={website}
         yearsTopContributor={yearsTopContributor}
       />
-      {/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */}
-      {showHeatMap ? <HeatMap calendar={calendar} /> : null}
-      {showCerts ? <Certifications username={username} /> : null}
-      {showPortfolio ? <Portfolio portfolio={portfolio} /> : null}
-      {showTimeLine ? (
-        <Timeline completedMap={completedChallenges} username={username} />
-      ) : null}
+      {isBanned || isCheater ? (
+        <>
+          <p>{t('intro:profile.ineligible')}</p>
+        </>
+      ) : (
+        <>
+          {/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */}
+          {showHeatMap ? <HeatMap calendar={calendar} /> : null}
+          {showCerts ? <Certifications username={username} /> : null}
+          {showPortfolio ? <Portfolio portfolio={portfolio} /> : null}
+          {showTimeLine ? (
+            <Timeline completedMap={completedChallenges} username={username} />
+          ) : null}
+        </>
+      )}
       <Spacer />
     </>
   );
@@ -124,7 +134,7 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
       <Grid>
         <Spacer />
         {isLocked ? renderMessage(isSessionUser, username, t) : null}
-        {!isLocked || isSessionUser ? renderProfile(user) : null}
+        {!isLocked || isSessionUser ? renderProfile(user, t) : null}
         {isSessionUser ? null : (
           <Row className='text-center'>
             <Link to={`/user/${username}/report-user`}>

@@ -14,6 +14,7 @@ import DonateForm from '../components/Donation/donate-form';
 
 import { createFlashMessage } from '../components/Flash/redux';
 import { Loader, Spacer } from '../components/helpers';
+import Profile from '../components/profile/profile';
 import RedirectHome from '../components/redirect-home';
 import { Themes } from '../components/settings/theme';
 import { showCert, executeGA, fetchProfileForUser } from '../redux/actions';
@@ -313,6 +314,10 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
       <Spacer size={2} />
     </Row>
   );
+
+  if (user.isCheater || user.isBanned) {
+    return <Profile user={user} isSessionUser={false}></Profile>;
+  }
 
   return (
     <Grid className='certificate-outer-wrapper'>

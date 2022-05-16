@@ -223,7 +223,8 @@
     "points": "{{count}} point on {{date}}",
     "points_plural": "{{count}} points on {{date}}",
     "screen-shot": "A screen shot of {{title}}",
-    "page-number": "{{pageNumber}} of {{totalPages}}"
+    "page-number": "{{pageNumber}} of {{totalPages}}",
+    "ineligible": "This camper is not eligible for freecodecamp.org certifications at this time."
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp is a donor-supported tax-exempt 501(c)(3) charitable organization (United States Federal Tax Identification Number: 82-0779546)",
