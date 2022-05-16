@@ -1,14 +1,14 @@
 {
-  "name": "Intermediate JavaScript Calorie Counter",
+  "name": "Learn Form Validation By Building a Calorie Counter",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
-  "dashedName": "intermediate-javascript-calorie-counter",
-  "order": 11,
+  "dashedName": "learn-form-validation-by-building-a-calorie-counter",
+  "order": 1,
   "time": "2 hours",
   "template": "",
   "required": [],
-  "superBlock": "javascript-algorithms-and-data-structures",
+  "superBlock": "2022/javascript-algorithms-and-data-structures",
   "challengeOrder": [
     [
       "5ddb965c65d27e1512d44d9a",
