@@ -213,7 +213,9 @@ assert(!!el && top1 >= -15 && top1 <= 15 && top2 >= -15 && top2 <= 15)
 A página inicial deve ter pelo menos uma media query
 
 ```js
-assert.isAtLeast(new __helpers.CSSHelp(document).getCSSRules('media')?.length, 1);
+const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
+const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
+assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 ```
 
 A página inicial do produto deve utilizar o CSS flexbox pelo menos uma vez

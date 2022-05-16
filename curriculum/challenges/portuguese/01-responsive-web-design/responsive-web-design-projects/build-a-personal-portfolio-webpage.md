@@ -116,7 +116,9 @@ assert(!!el && el.target === '_blank')
 O portfólio deve usar pelo menos uma media query.
 
 ```js
-assert.isAtLeast(new __helpers.CSSHelp(document).getCSSRules('media')?.length, 1);
+const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
+const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
+assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 ```
 
 O elemento `#navbar` deve estar sempre na parte superior da viewport.
