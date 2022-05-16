@@ -218,6 +218,7 @@ export const embedFilesInHtml = async function (challengeFiles) {
       documentElement.querySelector('script[src="./script.js"]');
     if (link) {
       const style = contentDocument.createElement('style');
+      style.classList.add('fcc-injected-styles');
       style.innerHTML = stylesCss?.contents;
 
       link.parentNode.replaceChild(style, link);

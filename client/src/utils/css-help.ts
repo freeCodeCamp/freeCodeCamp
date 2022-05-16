@@ -97,9 +97,8 @@ class CSSHelp {
     const link: HTMLLinkElement | null = this.doc?.querySelector(
       "link[href*='styles']"
     );
-    // Most* browser extensions inject styles with class/media attributes
     const style: HTMLStyleElement | null = this.doc?.querySelector(
-      'style:not([class]):not([media])'
+      'style.fcc-injected-styles'
     );
     if (link?.sheet?.cssRules?.length) {
       return link.sheet;
