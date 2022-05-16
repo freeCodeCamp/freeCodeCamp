@@ -48,7 +48,7 @@ export const superBlockList = [
     path: '13-relational-databases'
   },
   {
-    name: 'Responsive Web Design',
+    name: '(New) Responsive Web Design',
     path: '14-responsive-web-design-22'
   },
   {
