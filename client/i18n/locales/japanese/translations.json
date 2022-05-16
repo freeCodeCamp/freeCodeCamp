@@ -307,7 +307,7 @@
     "complete-both-steps": "チャレンジを終えるには、以下 2 つのステップを完了させてください。",
     "runs-in-vm": "このプロジェクトは仮想マシン内で動作します。ステップ 1 を完了するには、そこで述べられたユーザーストーリーを実装し、すべてのテストに合格してください。",
     "completed": "Completed",
-    "not-started": "Not started"
+    "not-started": "未着手"
   },
   "donate": {
     "title": "非営利団体を支援する",
@@ -597,7 +597,7 @@
         "Build a Tribute Page": "トリビュートページを作成する",
         "Build a Survey Form": "アンケートフォームを作成する",
         "Build a Product Landing Page": "プロダクトのランディングページを作成する",
-        "Build a Technical Documentation Page": "テクニカルドキュメントページを作成する",
+        "Build a Technical Documentation Page": "技術ドキュメントページを作成する",
         "Palindrome Checker": "回文チェッカー",
         "Roman Numeral Converter": "ローマ数字への変換",
         "Caesars Cipher": "シーザー暗号",
