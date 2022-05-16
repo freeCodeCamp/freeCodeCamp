@@ -34,7 +34,8 @@ You should have a third `img` element nested in the `figure` element.
 ```js
 const catsImg = document.querySelectorAll('figure > img')[1];
 assert(
-  catsImg
+  catsImg &&
+    catsImg.getAttribute('src')
 );
 ```
 
