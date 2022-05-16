@@ -122,31 +122,29 @@ function TimelineInner({
     const { challengeTitle, challengePath, certPath } = idToNameMap.get(id);
     return (
       <tr className='timeline-row' key={id}>
-        <div className='solutions-dropdown'>
-          <td>
-            {certPath ? (
-              <Link
-                className='timeline-cert-link'
-                to={`/certification/${username}/${certPath as string}`}
-              >
-                {challengeTitle}
-                <CertificationIcon />
-              </Link>
-            ) : (
-              <Link to={challengePath as string}>{challengeTitle}</Link>
-            )}
-          </td>
-          <td>{renderViewButton(completed)}</td>
-          <td className='text-center'>
-            <time dateTime={completedDate.toISOString()}>
-              {completedDate.toLocaleString([localeCode, 'en-US'], {
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric'
-              })}
-            </time>
-          </td>
-        </div>
+        <td>
+          {certPath ? (
+            <Link
+              className='timeline-cert-link'
+              to={`/certification/${username}/${certPath as string}`}
+            >
+              {challengeTitle}
+              <CertificationIcon />
+            </Link>
+          ) : (
+            <Link to={challengePath as string}>{challengeTitle}</Link>
+          )}
+        </td>
+        <td>{renderViewButton(completed)}</td>
+        <td className='text-center'>
+          <time dateTime={completedDate.toISOString()}>
+            {completedDate.toLocaleString([localeCode, 'en-US'], {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric'
+            })}
+          </time>
+        </td>
       </tr>
     );
   }
