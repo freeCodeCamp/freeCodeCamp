@@ -1,6 +1,6 @@
 {
   "responsive-web-design": {
-    "title": "Legacy Responsive Web Design",
+    "title": "Web Design Responsivo Legacy",
     "intro": [
       "In questo corso di Web Design Responsivo conoscerai i linguaggi usati per costruire le pagine web: HTML (Hypertext Markup Language) per il contenuto, e CSS (Cascade Style Sheets) per il design.",
       "Per prima cosa, costruirai un'app di foto per gatti per imparare le basi di HTML e CSS. Poi apprenderai tecniche più moderne come le variabili in CSS costruendo un pinguino, e le migliori pratiche per l'accessibilità costruendo un modulo web.",
@@ -67,7 +67,7 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "Responsive Web Design",
+    "title": "Web Design Responsivo",
     "intro": [
       "In questo corso certificato di Web Design Responsivo imparerai i linguaggi che gli sviluppatori utilizzano per creare le pagine web. HTML (Hypertext Markup Language) per i contenuti e CSS (Cascading Style Sheets) per il design.",
       "Innanzitutto, creerai un'app di foto per gatti per imparare le basi dell'HTML e dei CSS. Più avanti, imparerai le moderne tecniche come le variabili CSS disegnando un pinguino, e le migliori pratiche di accessibilità creando un form web.",
@@ -296,23 +296,68 @@
           "Ci siamo — è il momento di mettere al lavoro le tue nuove abilità JavaScript. Questi progetti sono simili alle sfide di scrittura di algoritmi che hai fatto prima – solo molto più difficili.",
           "Completa questi 5 progetti JavaScript per ottenere la Certificazione Algoritmi e Strutture Dati in JavaScript."
         ]
-      },
-      "basic-javascript-rpg-game": {
-        "title": "Gioco RPG di base in Javascript",
+      }
+    }
+  },
+  "2022/javascript-algorithms-and-data-structures": {
+    "title": "JavaScript Algorithms and Data Structures (Beta)",
+    "intro": [
+      "placeholder",
+      "placeholder"
+    ],
+    "note": "",
+    "blocks": {
+      "build-a-caesars-cipher-project": {
+        "title": "Build a Casears Cipher Project",
         "intro": [
           "",
           ""
         ]
       },
-      "intermediate-javascript-calorie-counter": {
-        "title": "Contatore Calorie in Javascript Intermedio",
+      "build-a-cash-register-project": {
+        "title": "Build a Cash Register Project",
         "intro": [
           "",
           ""
         ]
       },
-      "functional-programming-spreadsheet": {
-        "title": "Foglio di calcolo in Programmazione Funzionale",
+      "build-a-palindrome-checker-project": {
+        "title": "Build a Palindrome Checker Project",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "build-a-roman-numeral-converter-project": {
+        "title": "Build a Roman Numeral Converter Project",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "build-a-telephone-number-validator-project": {
+        "title": "Build a Telephone Number Validator Project",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "learn-basic-javascript-by-building-a-role-playing-game": {
+        "title": "Learn Basic JavaScript by Building a Role Playing Game",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "learn-form-validation-by-building-a-calorie-counter": {
+        "title": "Learn Form Validation by Building a Calorie Counter",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "learn-functional-programming-by-building-a-spreadsheet": {
+        "title": "Learn Functional Programming by Building a Spreadsheet",
         "intro": [
           "",
           ""
@@ -780,9 +825,9 @@
     "collapse": "Chiudi corso",
     "legacy-header": "Vecchi corsi",
     "legacy-desc": "Questi corsi non sono più parte del percorso di certificazioni, ma sono ancora disponibili per avanzare il tuo apprendimento.",
-    "legacy-go-back": "Go to the current version of the curriculum.",
-    "new-rwd-desc": "We have updated our Responsive Web Design Curriculum. If you were previously working on the RWD curriculum, your progress is still saved! You can find it under the Legacy Responsive Web Design section.",
-    "new-rwd-article": "We encourage you to read about the changes we made and consider exploring the updated curriculum.",
+    "legacy-go-back": "Vai alla versione corrente del curriculum.",
+    "new-rwd-desc": "Abbiamo aggiornato il curriculum Web Design Responsivo. Se stavi lavorando su questo curriculum, i tuoi progressi sono ancora salvati! Puoi trovarli nella sezione Web Design Responsivo Legacy.",
+    "new-rwd-article": "Ti incoraggiamo a leggere sui cambiamenti che abbiamo fatto e considerare di esporrare il curriculum aggiornato.",
     "viewing-upcoming-change": "Stai guardando ad una pagina in beta. ",
     "go-back-to-learn": "Torna alla versione stabile del curriculum.",
     "read-database-cert-article": "Per favore leggi questo post sul forum prima di procedere.",
