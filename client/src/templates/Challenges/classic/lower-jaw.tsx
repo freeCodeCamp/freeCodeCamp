@@ -32,16 +32,26 @@ const LowerJaw = ({
   isEditorInFocus
 }: LowerJawProps): JSX.Element => {
   const [previousHint, setpreviousHint] = useState('');
-  const [showTestFeedbackAnim, setShowTestFeedbackAnim] = useState(true);
+  const [runningTests, setRunningTests] = useState(false);
+  const [testFeedbackheight, setTestFeedbackheight] = useState(0);
+  const [isFeedbackHidden, setIsFeedbackHidden] = useState(false);
   const [testBtnariaHidden, setTestBtnariaHidden] = useState(false);
   const { t } = useTranslation();
   const submitButtonRef = React.createRef<HTMLButtonElement>();
+  const testFeedbackRef = React.createRef<HTMLDivElement>();
 
   useEffect(() => {
-    setShowTestFeedbackAnim(false);
-    setTimeout(() => {
-      setShowTestFeedbackAnim(true);
-    }, 0);
+    if (attemptsNumber && attemptsNumber > 0) {
+      //hide the feedback from SR untill the "Running tests" are displayed and removed.
+      setIsFeedbackHidden(true);
+      setTimeout(() => {
+        setRunningTests(true);
+      }, 100);
+      setTimeout(() => {
+        setRunningTests(false);
+        setIsFeedbackHidden(false);
+      }, 200);
+    }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [attemptsNumber]);
@@ -65,17 +75,26 @@ const LowerJaw = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [challengeIsCompleted]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    if (testFeedbackRef.current) {
+      setTestFeedbackheight(testFeedbackRef.current.clientHeight);
+    }
+  });
+
   const renderTestFeedbackContainer = () => {
     if (attemptsNumber === 0) {
       return '';
+    } else if (runningTests) {
+      return <span className='sr-only'>{t('aria.running-tests')}</span>;
     } else if (challengeIsCompleted) {
       const submitKeyboardInstructions = isEditorInFocus ? (
-        <span className='sr-only'>${t('aria.submit')}</span>
+        <span className='sr-only'>{t('aria.submit')}</span>
       ) : (
         ''
       );
       return (
-        <div className='test-status'>
+        <div className='test-status fade-in' aria-hidden={isFeedbackHidden}>
           <div className='status-icon' aria-hidden='true'>
             <span>
               <GreenPass />
@@ -98,7 +117,7 @@ const LowerJaw = ({
       }`;
       return (
         <>
-          <div className='test-status'>
+          <div className='test-status fade-in' aria-hidden={isFeedbackHidden}>
             <div className='status-icon' aria-hidden='true'>
               <span>
                 <Fail />
@@ -109,7 +128,7 @@ const LowerJaw = ({
               <p>{t(sentencePicker())}</p>
             </div>
           </div>
-          <div className='hint-status'>
+          <div className='hint-status fade-in' aria-hidden={isFeedbackHidden}>
             <div className='hint-icon' aria-hidden='true'>
               <span>
                 <LightBulb />
@@ -190,10 +209,11 @@ const LowerJaw = ({
     <div className='action-row-container'>
       {renderButtons()}
       <div
-        className={`test-feedback ${showTestFeedbackAnim ? 'fade-in' : ''}`}
+        style={runningTests ? { height: `${testFeedbackheight}px` } : {}}
+        className={`test-feedback`}
         id='test-feedback'
-        aria-atomic='true'
         aria-live='assertive'
+        ref={testFeedbackRef}
       >
         {renderTestFeedbackContainer()}
       </div>
