@@ -81,7 +81,7 @@ Você não deve usar loops `for`.
 assert(!code.match(/for\s*?\([\s\S]*?\)/g));
 ```
 
-A função deve retornar o valor correto após manipular `watchList` com filter, map e reduce.
+Você deve retornar o resultado correto após a modificação do objeto `watchList`.
 
 ```js
 assert(getRating(watchList.filter((_, i) => i < 1 || i > 2)) === 8.55);

@@ -1,6 +1,6 @@
 ---
 id: 587d78af367417b2b2512b04
-title: Build a Product Landing Page
+title: 制作一个产品登录页
 challengeType: 14
 forumTopicId: 301144
 dashedName: build-a-product-landing-page
@@ -8,87 +8,87 @@ dashedName: build-a-product-landing-page
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to <a href="https://product-landing-page.freecodecamp.rocks" target="_blank">https://product-landing-page.freecodecamp.rocks</a>
+**目标：** 构建一个功能类似于 <a href="https://product-landing-page.freecodecamp.rocks" target="_blank">https://product-landing-page.freecodecamp.rocks</a> 的应用程序
 
-**User Stories:**
+**需求：**
 
-1. Your product landing page should have a `header` element with a corresponding `id="header"`
-1. You can see an image within the `header` element with a corresponding `id="header-img"` (A logo would make a good image here)
-1. Within the `#header` element, you can see a `nav` element with a corresponding `id="nav-bar"`
-1. You can see at least three clickable elements inside the `nav` element, each with the class `nav-link`
-1. When you click a `.nav-link` button in the `nav` element, you are taken to the corresponding section of the landing page
-1. You can watch an embedded product video with `id="video"`
-1. Your landing page has a `form` element with a corresponding `id="form"`
-1. Within the form, there is an `input` field with `id="email"` where you can enter an email address
-1. The `#email` input field should have placeholder text to let users know what the field is for
-1. The `#email` input field uses HTML5 validation to confirm that the entered text is an email address
-1. Within the form, there is a submit `input` with a corresponding `id="submit"`
-1. When you click the `#submit` element, the email is submitted to a static page (use this mock URL: `https://www.freecodecamp.com/email-submit`)
-1. The navbar should always be at the top of the viewport
-1. Your product landing page should have at least one media query
-1. Your product landing page should utilize CSS flexbox at least once
+1. 你的产品登录页应该有一个 `id="header"` 的 `header` 元素
+1. 你可以在 `header` 元素中看到一个 `id="header-img"` 的图像（比如一个 logo）
+1. 在 `#header` 元素中，你可以看到一个 `id="nav-bar"` 的 `nav` 元素
+1. 在 `nav` 元素中，你可以看到至少三个可点击的元素，每个元素的 class 为 `nav-link`
+1. 当你点击 `nav` 内的 `.nav-link` 按钮时，应滚动到登录页相应的部分
+1. 你可以观看一个 `id="video"` 的嵌入的产品视频
+1. 你的登录页有一个 `id="form"` 的 `form` 元素
+1. 在表单中，应存在一个 `id="email"` 的 `input` 输入框供用户填写邮箱地址
+1. 在 `#email` 输入框内应有描述该区域用途的占位符文本
+1. `#email` 输入框应该用 HTML5 验证来确认输入的内容是否为邮箱地址
+1. 在表单中，有一个 `id="submit"` 的 `input` 提交按钮
+1. 当你点击 `#submit` 元素时，邮箱会被提交到一个静态页面 (使用这个模拟 URL：`https://www.freecodecamp.com/email-submit`)
+1. 导航栏应该始终位于视口的顶部
+1. 你的产品登陆页面至少要有一个媒体查询
+1. 你的产品登陆页面应该至少使用一次 CSS flexbox
 
-Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
+完成需求并通过下面的所有测试来完成这个项目。 赋予它你自己的个人风格。 编程愉快！
 
 # --hints--
 
-You should have a `header` element with an `id` of `header`
+你应该有一个 `id` 为 `header` 的 `header` 元素
 
 ```js
 const el = document.getElementById('header')
 assert(!!el && el.tagName === 'HEADER')
 ```
 
-You should have an `img` element with an `id` of `header-img`
+你应该有一个 `id` 为 `header-img` 的 `img` 元素
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && el.tagName === 'IMG')
 ```
 
-Your `#header-img` should be a descendant of the `#header`
+你的 `#header-img` 元素应该是 `#header` 元素的子元素
 
 ```js
 const els = document.querySelectorAll('#header #header-img')
 assert(els.length > 0)
 ```
 
-Your `#header-img` should have a `src` attribute
+你的 `#header-img` 元素应该有一个 `src` 属性
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && !!el.src)
 ```
 
-Your `#header-img`’s `src` value should be a valid URL (starts with `http`)
+你的 `#header-img` 元素的 `src` 属性应该有一个有效的 URL（以 `http` 开头）
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && /^http/.test(el.src))
 ```
 
-You should have a `nav` element with an `id` of `nav-bar`
+你应该有一个 `id` 为 `nav-bar` 的 `nav` 元素
 
 ```js
 const el = document.getElementById('nav-bar')
 assert(!!el && el.tagName === 'NAV')
 ```
 
-Your `#nav-bar` should be a descendant of the `#header`
+你的 `#nav-bar` 元素应该是 `#header` 元素的子元素
 
 ```js
 const els = document.querySelectorAll('#header #nav-bar')
 assert(els.length > 0)
 ```
 
-You should have at least 3 `.nav-link` elements within the `#nav-bar`
+在 `#nav-bar` 内，你应该有至少三个 `.nav-link` 元素
 
 ```js
 const els = document.querySelectorAll('#nav-bar .nav-link')
 assert(els.length >= 3)
 ```
 
-Each `.nav-link` element should have an `href` attribute
+每个 `.nav-link` 元素应该有一个 `href` 元素
 
 ```js
 const els = document.querySelectorAll('.nav-link')
@@ -98,7 +98,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-Each `.nav-link` element should link to a corresponding element on the landing page (has an `href` with a value of another element's id. e.g. `#footer`)
+每一个 `.nav-link` 元素应该链接到登陆页面上的相应元素（有一个 `href` 具有另一个元素的 id 的值，例如： `#footer`）
 
 ```js
 const els = document.querySelectorAll('.nav-link')
@@ -109,91 +109,99 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-You should have a `video` or `iframe` element with an `id` of `video`
+你应该有一个 `id` 为 `video` 的 `video` 或 `iframe` 元素
 
 ```js
 const el = document.getElementById('video')
 assert(!!el && (el.tagName === 'VIDEO' || el.tagName === 'IFRAME'))
 ```
 
-Your `#video` should have a `src` attribute
+你的 `#video` 元素应该有一个 `src` 属性
 
 ```js
-const el = document.getElementById('video')
-assert(!!el && !!el.src)
+let el = document.getElementById('video')
+const sourceNode = el.children;
+let sourceElement = null;
+if (sourceNode.length) {
+  sourceElement = [...video.children].filter(el => el.localName === 'source')[0];
+}
+if (sourceElement) {
+  el = sourceElement;
+}
+assert(el.hasAttribute('src'));
 ```
 
-You should have a `form` element with an `id` of `form`
+你应该有一个 `id` 为 `form` 的 `form` 元素
 
 ```js
 const el = document.getElementById('form')
 assert(!!el && el.tagName === 'FORM')
 ```
 
-You should have an `input` element with an `id of `email`
+你应该有一个 `id` 为 `email` 的 `input` 元素
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Your `#email` should be a descendant of the `#form`
+你的 `#email` 元素应该是 `#form` 元素的子元素
 
 ```js
 const els = document.querySelectorAll('#form #email')
 assert(els.length > 0)
 ```
 
-Your `#email` should have the `placeholder` attribute with placeholder text
+你的 `#email` 元素应该有 `placeholder` 属性与占位符文本
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-Your `#email` should use HTML5 validation by setting its `type` to `email`
+你的 `#email` 元素应该使用 HTML5 验证，方法是设置 `type` 为 `email`
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.type === 'email')
 ```
 
-You should have an `input` element with an `id` of `submit`
+你应该有一个 `id` 为 `submit` 的 `input` 元素
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Your `#submit` should be a descendant of the `#form`
+你的 `#submit` 元素应该是 `#form` 元素的子元素
 
 ```js
 const els = document.querySelectorAll('#form #submit')
 assert(els.length > 0)
 ```
 
-Your `#submit` should have a `type` of `submit`
+你的 `#submit` 元素应该具有 `type` 为 `submit`
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && el.type === 'submit')
 ```
 
-Your `#form` should have an `action` attribute of `https://www.freecodecamp.com/email-submit`
+你的 `#form` 元素应该有值为 `https://www.freecodecamp.com/email-submit` 的 `action` 属性
 
 ```js
 const el = document.getElementById('form')
 assert(!!el && el.action === 'https://www.freecodecamp.com/email-submit')
 ```
 
-Your `#email` should have a `name` attribute of `email`
+你的 `#email` 元素应该具有值为 `email` 的 `name` 属性
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.name === 'email')
 ```
 
-Your `#nav-bar` should always be at the top of the viewport
+你的 `#nav-bar` 元素应该始终位于视口的顶部
 
 ```js
 const el = document.getElementById('nav-bar')
@@ -202,13 +210,15 @@ const top2 = el?.offsetTop
 assert(!!el && top1 >= -15 && top1 <= 15 && top2 >= -15 && top2 <= 15)
 ```
 
-Your Product Landing Page should use at least one media query
+你的产品登陆页面至少要有一个媒体查询
 
 ```js
-assert.isAtLeast(new __helpers.CSSHelp(document).getCSSRules('media')?.length, 1);
+const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
+const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
+assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 ```
 
-Your Product Landing Page should use CSS Flexbox at least once
+你的产品登陆页面应该至少使用一次 CSS Flexbox
 
 ```js
 const stylesheet = new __helpers.CSSHelp(document).getStyleSheet()

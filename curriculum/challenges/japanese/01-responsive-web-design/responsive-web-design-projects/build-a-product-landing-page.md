@@ -213,7 +213,9 @@ assert(!!el && top1 >= -15 && top1 <= 15 && top2 >= -15 && top2 <= 15)
 プロダクトランディングページに、少なくとも 1 つのメディアクエリが使われている必要があります
 
 ```js
-assert.isAtLeast(new __helpers.CSSHelp(document).getCSSRules('media')?.length, 1);
+const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
+const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
+assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 ```
 
 プロダクトランディングページに、少なくとも 1 つの CSS フレックスボックスが使われている必要があります

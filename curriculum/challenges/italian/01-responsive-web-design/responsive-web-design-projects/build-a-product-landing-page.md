@@ -1,6 +1,6 @@
 ---
 id: 587d78af367417b2b2512b04
-title: Build a Product Landing Page
+title: Costruire la Landing Page per un prodotto
 challengeType: 14
 forumTopicId: 301144
 dashedName: build-a-product-landing-page
@@ -8,87 +8,87 @@ dashedName: build-a-product-landing-page
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to <a href="https://product-landing-page.freecodecamp.rocks" target="_blank">https://product-landing-page.freecodecamp.rocks</a>
+**Obbiettivo:** Crea un'app funzionalmente simile a <a href="https://product-landing-page.freecodecamp.rocks" target="_blank">https://product-landing-page.freecodecamp.rocks</a>
 
-**User Stories:**
+**User story:**
 
-1. Your product landing page should have a `header` element with a corresponding `id="header"`
-1. You can see an image within the `header` element with a corresponding `id="header-img"` (A logo would make a good image here)
-1. Within the `#header` element, you can see a `nav` element with a corresponding `id="nav-bar"`
-1. You can see at least three clickable elements inside the `nav` element, each with the class `nav-link`
-1. When you click a `.nav-link` button in the `nav` element, you are taken to the corresponding section of the landing page
-1. You can watch an embedded product video with `id="video"`
-1. Your landing page has a `form` element with a corresponding `id="form"`
-1. Within the form, there is an `input` field with `id="email"` where you can enter an email address
-1. The `#email` input field should have placeholder text to let users know what the field is for
-1. The `#email` input field uses HTML5 validation to confirm that the entered text is an email address
-1. Within the form, there is a submit `input` with a corresponding `id="submit"`
-1. When you click the `#submit` element, the email is submitted to a static page (use this mock URL: `https://www.freecodecamp.com/email-submit`)
-1. The navbar should always be at the top of the viewport
-1. Your product landing page should have at least one media query
-1. Your product landing page should utilize CSS flexbox at least once
+1. La pagina di destinazione del prodotto dovrebbe avere un elemento `header` con un corrispondente `id="header"`
+1. Puoi vedere un immagine dentro l'elemento `header` con un attributo corrispondente `id="header-img"` (un logo sarebbe una buona immagine qui)
+1. Dentro l'elemento `#header`, puoi vedere un elemento `nav` con un corrispondente attributo `id="nav-bar"`
+1. Puoi vedere almeno tre elementi cliccabili dentro l'elemento `nav`, ognuno con una classe di `nav-link`
+1. Quando clicchi su un pulsante `.nav-link` dentro l'elemento `nav`, vieni portato alla sezione corrispondente nella pagina
+1. Puoi vedere un video sul prodotto incorporato nella pagina con `id="video"`
+1. La tua pagina ha un elemento `form` con un corrispondente attributo `id="form"`
+1. Dentro il modulo, c'è un campo `input` con un `id="email"` dove puoi inserire un indirizzo email
+1. Il campo input `#email` dovrebbe avere testo segnaposto per far sapere agli utenti per che cosa è il campo
+1. Il campo input `#email` usa la validazione HTML5 per confermare che il testo inserito è un indirizzo email
+1. Dentro il modulo, c'è un `input` per inviare con un corrispondente `id="submit"`
+1. Quando clicchi l'elemento `#submit`, l'email è inviata a una pagina statica (usa l'URL non funzionante: `https://www.freecodecamp.com/email-submit`)
+1. La barra di navigazione dovrebbe essere sempre in cima alla porta di visualizzazione
+1. La tua pagina del prodotto dovrebbe avere almeno un media query
+1. La tua pagina del prodotto dovrebbe utilizzare CSS flexbox almeno una volta
 
-Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
+Soddisfa le storie utente e passa tutti i test qua sotto per completare il progetto. Usa il tuo stile personale. Buon divertimento!
 
 # --hints--
 
-You should have a `header` element with an `id` of `header`
+Dovresti avere un elemento `header` con un `id` di `header`
 
 ```js
 const el = document.getElementById('header')
 assert(!!el && el.tagName === 'HEADER')
 ```
 
-You should have an `img` element with an `id` of `header-img`
+Dovresti avere un elemento `img` con un attributo `id` di `header-img`
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && el.tagName === 'IMG')
 ```
 
-Your `#header-img` should be a descendant of the `#header`
+L'elemento `#header-img` dovrebbe essere un discendente di `#header`
 
 ```js
 const els = document.querySelectorAll('#header #header-img')
 assert(els.length > 0)
 ```
 
-Your `#header-img` should have a `src` attribute
+L'elemento `#header-img` dovrebbe avere un attributo `src`
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && !!el.src)
 ```
 
-Your `#header-img`’s `src` value should be a valid URL (starts with `http`)
+L'attributo `src` dell'elemento `#header-img` dovrebbe essere un URL valido (inizia con `http`)
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && /^http/.test(el.src))
 ```
 
-You should have a `nav` element with an `id` of `nav-bar`
+Dovresti avere un elemento `nav` con un `id` di `nav-bar`
 
 ```js
 const el = document.getElementById('nav-bar')
 assert(!!el && el.tagName === 'NAV')
 ```
 
-Your `#nav-bar` should be a descendant of the `#header`
+Il tuo elemento `#nav-bar` dovrebbe essere un discendente dell'elemento `#header`
 
 ```js
 const els = document.querySelectorAll('#header #nav-bar')
 assert(els.length > 0)
 ```
 
-You should have at least 3 `.nav-link` elements within the `#nav-bar`
+Dovresti avere almeno 3 elementi `.nav-link` dentro `#nav-bar`
 
 ```js
 const els = document.querySelectorAll('#nav-bar .nav-link')
 assert(els.length >= 3)
 ```
 
-Each `.nav-link` element should have an `href` attribute
+Ogni elemento `.nav-link` dovrebbe avere un attributo `href`
 
 ```js
 const els = document.querySelectorAll('.nav-link')
@@ -98,7 +98,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-Each `.nav-link` element should link to a corresponding element on the landing page (has an `href` with a value of another element's id. e.g. `#footer`)
+Ogni elemento `.nav-link` dovrebbe essere un collegamento ad un elemento corrispondente nella pagina (cioè ha un attributo `href` con il valore dell'id di un altro elemento, ad esempio `#footer`)
 
 ```js
 const els = document.querySelectorAll('.nav-link')
@@ -109,91 +109,99 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-You should have a `video` or `iframe` element with an `id` of `video`
+Dovresti avere un elemento `video` o `iframe` con un `id` di `video`
 
 ```js
 const el = document.getElementById('video')
 assert(!!el && (el.tagName === 'VIDEO' || el.tagName === 'IFRAME'))
 ```
 
-Your `#video` should have a `src` attribute
+L'elemento `#video` dovrebbe avere un attributo `src`
 
 ```js
-const el = document.getElementById('video')
-assert(!!el && !!el.src)
+let el = document.getElementById('video')
+const sourceNode = el.children;
+let sourceElement = null;
+if (sourceNode.length) {
+  sourceElement = [...video.children].filter(el => el.localName === 'source')[0];
+}
+if (sourceElement) {
+  el = sourceElement;
+}
+assert(el.hasAttribute('src'));
 ```
 
-You should have a `form` element with an `id` of `form`
+Dovresti avere un elemento `form` con un attributo `id` di `form`
 
 ```js
 const el = document.getElementById('form')
 assert(!!el && el.tagName === 'FORM')
 ```
 
-You should have an `input` element with an `id of `email`
+Dovresti avere un elemento `input` con un `id` di `email`
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Your `#email` should be a descendant of the `#form`
+L'elemento `#email` dovrebbe essere un discendente di `#form`
 
 ```js
 const els = document.querySelectorAll('#form #email')
 assert(els.length > 0)
 ```
 
-Your `#email` should have the `placeholder` attribute with placeholder text
+L'elemento `#email`dovrebbe avere un attributo `placeholder` con del testo segnaposto
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-Your `#email` should use HTML5 validation by setting its `type` to `email`
+L'elemento `#email` dovrebbe usare la validazione HTML5 impostando l'attributo `type` a `email`
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.type === 'email')
 ```
 
-You should have an `input` element with an `id` of `submit`
+Dovresti avere un elemento `input` con un `id` di `submit`
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Your `#submit` should be a descendant of the `#form`
+L'elemento `#submit` dovrebbe essere un discendente di `#form`
 
 ```js
 const els = document.querySelectorAll('#form #submit')
 assert(els.length > 0)
 ```
 
-Your `#submit` should have a `type` of `submit`
+L'elemento `#submit` dovrebbe avere un attributo `type` con valore di `submit`
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && el.type === 'submit')
 ```
 
-Your `#form` should have an `action` attribute of `https://www.freecodecamp.com/email-submit`
+L'elemento `#form` dovrebbe avere un attributo `action` con valore di `https://www.freecodecamp.com/email-submit`
 
 ```js
 const el = document.getElementById('form')
 assert(!!el && el.action === 'https://www.freecodecamp.com/email-submit')
 ```
 
-Your `#email` should have a `name` attribute of `email`
+L'elemento `#email` dovrebbe avere un attributo `name` con valore di `email`
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.name === 'email')
 ```
 
-Your `#nav-bar` should always be at the top of the viewport
+L'elemento `#nav-bar` dovrebbe sempre essere in cima al viewport
 
 ```js
 const el = document.getElementById('nav-bar')
@@ -202,13 +210,15 @@ const top2 = el?.offsetTop
 assert(!!el && top1 >= -15 && top1 <= 15 && top2 >= -15 && top2 <= 15)
 ```
 
-Your Product Landing Page should use at least one media query
+La pagina dovrebbe avere almeno un media query
 
 ```js
-assert.isAtLeast(new __helpers.CSSHelp(document).getCSSRules('media')?.length, 1);
+const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
+const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
+assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 ```
 
-Your Product Landing Page should use CSS Flexbox at least once
+La tua pagina dovrebbe usare CSS Flexbox almeno una volta
 
 ```js
 const stylesheet = new __helpers.CSSHelp(document).getStyleSheet()

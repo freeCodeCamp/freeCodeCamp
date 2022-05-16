@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c442eddfaeb5bd18
-title: Build a Tribute Page
+title: 制作一个致敬页
 challengeType: 14
 forumTopicId: 301147
 dashedName: build-a-tribute-page
@@ -8,32 +8,32 @@ dashedName: build-a-tribute-page
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to <a href="https://tribute-page.freecodecamp.rocks" target="_blank">https://tribute-page.freecodecamp.rocks</a>
+**目标：** 构建一个功能类似于 <a href="https://tribute-page.freecodecamp.rocks" target="_blank">https://tribute-page.freecodecamp.rocks</a> 的应用程序
 
-**User Stories:**
+**需求：**
 
-1. Your tribute page should have an element with a corresponding `id="main"`, which contains all other elements
-1. You should see an element with an `id` of `title`, which contains a string (i.e. text), that describes the subject of the tribute page (e.g. "Dr. Norman Borlaug")
-1. You should see either a `figure` or a `div` element with an `id` of `img-div`
-1. Within the `img-div` element, you should see an `img` element with a corresponding `id="image"`
-1. Within the `img-div` element, you should see an element with a corresponding `id="img-caption"` that contains textual content describing the image shown in `img-div`
-1. You should see an element with a corresponding `id="tribute-info"`, which contains textual content describing the subject of the tribute page
-1. You should see an a element with a corresponding `id="tribute-link"`, which links to an outside site, that contains additional information about the subject of the tribute page. HINT: You must give your element an attribute of `target` and set it to `_blank` in order for your link to open in a new tab
-1. Your `#image` should use `max-width` and `height` properties to resize responsively, relative to the width of its parent element, without exceeding its original size
-1. Your `img` element should be centered within its parent element
+1. 你的致敬页面应该有一个 `id="main"` 的元素，该元素包含所有其他元素
+1. 你应该会看到一个 `id` 为 `title` 的元素，其中包含一个字符串（即文本），描述了致敬页面的主题（例如 “Dr. Norman Borlaug”)
+1. 你应该有一个 `id` 为 `img-div` 的 `figure` 或 `div` 元素
+1. 在 `img-div` 元素中，你应该看到一个 `id="image"` 的 `img` 元素
+1. 在`img-div`元素内，你应该看到一个 `id="img-caption"` 的元素，其中包含对 `img-div` 中图像的文本描述
+1. 你应该看到一个 `id="tribute-info"` 的元素，其中包含描述致敬页主题的文本内容
+1. 你应该看到一个 `id="tribute-link"` 的元素，它链接到一个包含有关致敬页主题额外信息的外部网页。 提示：你必须为元素提供 `target` 属性，并设置其为 `_blank`，以便可以在新选项卡中打开链接。
+1. 你的 `#image` 应该使用 `max-width` 和 `height` 属性来响应式调整大小，相对于其父元素的宽度，但不超过其原始大小
+1. 你的 `img` 元素应该在其父元素内居中
 
-Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
+完成需求并通过下面的所有测试来完成这个项目。 赋予它你自己的个人风格。 编程愉快！
 
 # --hints--
 
-You should have a `main` element with an `id` of `main`
+你的页面应该包含一个 `main` 元素，且它有一个值为`main` 的`id`属性。
 
 ```js
 const el = document.getElementById('main')
 assert(!!el && el.tagName === 'MAIN')
 ```
 
-Your `#img-div`, `#image`, `#img-caption`, `#tribute-info`, and `#tribute-link` should all be descendants of `#main`
+你的 `#img-div`、`#image`、`#img-caption`、`#tribute-info` 和 `#tribute-link` 应该是 `#main` 的子元素。
 
 ```js
 const el1 = document.querySelector('#main #img-div')
@@ -44,14 +44,14 @@ const el5 = document.querySelector('#main #tribute-link')
 assert(!!el1 & !!el2 && !!el3 && !!el4 && !!el5)
 ```
 
-You should have an element with an `id` of `title`
+你应该有一个 `id` 为 `title` 的元素。
 
 ```js
 const el = document.getElementById('title')
 assert(!!el)
 ```
 
-Your `#title` should not be empty
+你的 `#title` 不应为空。
 
 ```js
 const el = document.getElementById('title')
@@ -59,120 +59,116 @@ assert(!!el && el.innerText.length > 0)
 
 ```
 
-You should have a `figure` or `div` element with an `id` of `img-div`
+你应该有一个 `id` 为 `img-div` 的 `figure` 或 `div` 元素。
 
 ```js
 const el = document.getElementById('img-div')
 assert(!!el && (el.tagName === 'DIV' || el.tagName === 'FIGURE'))
 ```
 
-You should have an `img` element with an `id` of `image`
+你应该有一个 `id` 为 `image` 的 `img` 元素。
 
 ```js
 const el = document.getElementById('image')
 assert(!!el && el.tagName === 'IMG')
 ```
 
-Your `#image` should be a descendant of `#img-div`
+你的 `#image` 元素应该是 `#img-div` 元素的子元素。
 
 ```js
 const el = document.querySelector('#img-div #image')
 assert(!!el)
 ```
 
-You should have a `figcaption` or `div` element with an `id` of `img-caption`
+你应该有一个 `id` 为 `img-caption` 的 `figcaption` 或 `div` 元素。
 
 ```js
 const el = document.getElementById('img-caption')
 assert(!!el && (el.tagName === 'DIV' || el.tagName === 'FIGCAPTION'))
 ```
 
-Your `#img-caption` should be a descendant of `#img-div`
+你的 `#img-caption` 元素应该是 `#img-div` 元素的子元素。
 
 ```js
 const el = document.querySelector('#img-div #img-caption')
 assert(!!el)
 ```
 
-Your `#img-caption` should not be empty
+你的 `#img-caption` 不应为空。
 
 ```js
 const el = document.getElementById('img-caption')
 assert(!!el && el.innerText.length > 0)
 ```
 
-You should have an element with an `id` of `tribute-info`
+你应该有一个 `id` 为 `tribute-info` 的元素。
 
 ```js
 const el = document.getElementById('tribute-info')
 assert(!!el)
 ```
 
-Your `#tribute-info` should not be empty
+你的 `#tribute-info` 不应为空。
 
 ```js
 const el = document.getElementById('tribute-info')
 assert(!!el && el.innerText.length > 0)
 ```
 
-You should have an `a` element with an `id` of `tribute-link`
+你应该有一个 `id` 为 `tribute-link` 的 `a` 元素。
 
 ```js
 const el = document.getElementById('tribute-link')
 assert(!!el && el.tagName === 'A')
 ```
 
-Your `#tribute-link` should have an `href` attribute and value
+你的 `#tribute-link` 应该有一个 `href` 属性和值。
 
 ```js
 const el = document.getElementById('tribute-link')
 assert(!!el && !!el.href && el.href.length > 0)
 ```
 
-Your `#tribute-link` should have a `target` attribute set to `_blank`
+你的 `#tribute-link` 元素应该有一个值为 `_blank` 的 `target` 属性。
 
 ```js
 const el = document.getElementById('tribute-link')
 assert(!!el && el.target === '_blank')
 ```
 
-You should use an `#image` selector in your CSS to style the `#image` and pass the next three tests
+你的 `img` 元素应该具有 `display` 值为 `block`。
 
 ```js
-const style = new __helpers.CSSHelp(document).getStyle('#image')
-assert(!!style)
-```
-
-Your `#image` should have a `display` of `block`
-
-```js
-const style = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('display')
+const img = document.getElementById('image');
+const imgStyle = window.getComputedStyle(img);
+const style = imgStyle?.getPropertyValue('display')
 assert(style === 'block')
 ```
 
-Your `#image` should have a `max-width` of `100%`
+你的 `#image` 元素应该具有 `max-width` 值为 `100%`。
 
 ```js
-const style = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('max-width')
+const img = document.getElementById('image');
+const imgStyle = window.getComputedStyle(img);
+const style = imgStyle?.getPropertyValue('max-width')
 assert(style === '100%')
 ```
 
-Your `#image` should have a `height` of `auto`
+你的 `#image` 元素应该具有 `height` 值为 `auto`。
 
 ```js
 // taken from the testable-projects repo
 const img = document.getElementById('image');
-const maxWidthValue = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('max-width')
-const displayValue = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('display')
-const oldDisplayValue = img?.style.getPropertyValue('display');
-const oldDisplayPriority = img?.style.getPropertyPriority('display');
+const imgStyle = window.getComputedStyle(img);
+const oldDisplayValue = imgStyle.getPropertyValue('display');
+const oldDisplayPriority = imgStyle.getPropertyPriority('display');
 img?.style.setProperty('display', 'none', 'important');
-const heightValue = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('height')
+const heightValue = imgStyle?.getPropertyValue('height')
 img?.style.setProperty('display', oldDisplayValue, oldDisplayPriority);
 assert(heightValue === 'auto')
 ```
 
-Your `#image` should be centered within its parent
+你的 `#image` 元素应该在其父元素内居中。
 
 ```js
 // taken from the testable-projects repo
