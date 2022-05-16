@@ -1,3 +1,4 @@
 .timeline-row .solutions-dropdown .dropdown {
   width: 100%;
+  max-width: 15ch;
 }
