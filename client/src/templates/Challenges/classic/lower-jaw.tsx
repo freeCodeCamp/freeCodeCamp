@@ -44,13 +44,17 @@ const LowerJaw = ({
     if (attemptsNumber && attemptsNumber > 0) {
       //hide the feedback from SR untill the "Running tests" are displayed and removed.
       setIsFeedbackHidden(true);
+
+      //allow the lower jaw height to be picked up by the editor.
       setTimeout(() => {
         setRunningTests(true);
-      }, 100);
+      }, 200);
+
+      //display the test feedback contents.
       setTimeout(() => {
         setRunningTests(false);
         setIsFeedbackHidden(false);
-      }, 200);
+      }, 300);
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -124,7 +128,7 @@ const LowerJaw = ({
               </span>
             </div>
             <div className='test-status-description'>
-              <h2>Test</h2>
+              <h2>{t('learn.test')}</h2>
               <p>{t(sentencePicker())}</p>
             </div>
           </div>

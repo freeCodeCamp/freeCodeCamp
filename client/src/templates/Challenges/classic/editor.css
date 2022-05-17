@@ -154,12 +154,16 @@ textarea.inputarea {
 
 .fade-in {
   animation-name: FadeIn;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   transition-timing-function: linear;
 }
 
 @keyframes FadeIn {
   0% {
+    opacity: 0;
+  }
+  /* keep test feedback contents initially hidden for 200ms*/
+  40% {
     opacity: 0;
   }
   100% {
