@@ -1,4 +1,4 @@
-import { put, select, call, takeEvery } from 'redux-saga/effects';
+import { put, select, takeEvery } from 'redux-saga/effects';
 import store from 'store';
 
 import {
@@ -6,8 +6,6 @@ import {
   updateComplete,
   updateFailed
 } from '../../../redux';
-
-import { post } from '../../../utils/ajax';
 
 import { randomCompliment } from '../../../utils/get-words';
 import { updateSuccessMessage } from './';
@@ -25,7 +23,9 @@ export function* currentChallengeSaga({ payload: id }) {
       }
     };
     try {
-      yield call(post, update.endpoint, update.payload);
+      // Temporarily removed to reduce calls to database
+      // will need to re-import things at the top
+      // yield call(post, update.endpoint, update.payload);
       yield put(updateComplete());
     } catch {
       yield put(updateFailed(update));
