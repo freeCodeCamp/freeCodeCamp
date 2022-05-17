@@ -14,13 +14,13 @@ Inside the `figure` element you just added, nest an `img` element with a `src` a
 Your second `figure` element should have an opening tag. Opening tags have this syntax: `<elementName>`.
 
 ```js
-assert(document.querySelectorAll('figure').length >== 2);
+assert(document.querySelectorAll('figure').length >= 2);
 ```
 
 Your second `figure` element should have a closing tag. Closing tags have a `/` just after the `<` character.
 
 ```js
-assert(code.match(/<\/figure>/g).length >== 2);
+assert(code.match(/<\/figure>/g).length >= 2);
 ```
 
 There should be a second `figure` element right above the second `section` element's closing tag. You have them in the wrong order.
