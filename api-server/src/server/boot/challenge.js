@@ -3,10 +3,13 @@
  * Any ref to fixCompletedChallengesItem should be removed post
  * a db migration to fix all completedChallenges
  *
+ * NOTE: it's been 4 years, so any active users will have been migrated. We
+ * should still try to migrate the rest at some point.
+ *
  */
 import debug from 'debug';
 import dedent from 'dedent';
-import { isEmpty, pick, omit, find, uniqBy } from 'lodash';
+import { isEmpty, pick, omit, uniqBy } from 'lodash';
 import { ObjectID } from 'mongodb';
 import { Observable } from 'rx';
 import isNumeric from 'validator/lib/isNumeric';
@@ -17,7 +20,6 @@ import { jwtSecret } from '../../../../config/secrets';
 
 import { environment, deploymentEnv } from '../../../../config/env.json';
 import {
-  fixCompletedChallengeItem,
   fixPartiallyCompletedChallengeItem,
   fixSavedChallengeItem
 } from '../../common/utils';
@@ -144,32 +146,34 @@ export function buildUserUpdate(
     completedChallenge = omit(_completedChallenge, ['files']);
   }
   let finalChallenge;
-  const updateData = {};
+  const $push = {},
+    $set = {},
+    $pull = {};
   const {
     timezone: userTimezone,
     completedChallenges = [],
     needsModeration = false
   } = user;
 
-  const oldChallenge = find(
-    completedChallenges,
+  const oldIndex = completedChallenges.findIndex(
     ({ id }) => challengeId === id
   );
-  const alreadyCompleted = !!oldChallenge;
+
+  const alreadyCompleted = oldIndex !== -1;
+  const oldChallenge = alreadyCompleted ? completedChallenges[oldIndex] : null;
 
   if (alreadyCompleted) {
     finalChallenge = {
       ...completedChallenge,
       completedDate: oldChallenge.completedDate
     };
+    $set[`completedChallenges.${oldIndex}`] = finalChallenge;
   } else {
-    updateData.$push = {
-      ...updateData.$push,
-      progressTimestamps: completedDate
-    };
     finalChallenge = {
       ...completedChallenge
     };
+    $push.progressTimestamps = completedDate;
+    $push.completedChallenges = finalChallenge;
   }
 
   let newSavedChallenges;
@@ -183,44 +187,26 @@ export function buildUserUpdate(
     });
 
     // if savableChallenge, update saved array when submitting
-    updateData.$set = {
-      completedChallenges: uniqBy(
-        [finalChallenge, ...completedChallenges.map(fixCompletedChallengeItem)],
-        'id'
-      ),
-      savedChallenges: newSavedChallenges
-    };
-  } else {
-    updateData.$set = {
-      completedChallenges: uniqBy(
-        [finalChallenge, ...completedChallenges.map(fixCompletedChallengeItem)],
-        'id'
-      )
-    };
+    $set.savedChallenges = newSavedChallenges;
   }
 
   // remove from partiallyCompleted on submit
-  updateData.$pull = {
-    partiallyCompletedChallenges: { id: challengeId }
-  };
+  $pull.partiallyCompletedChallenges = { id: challengeId };
 
   if (
     timezone &&
     timezone !== 'UTC' &&
     (!userTimezone || userTimezone === 'UTC')
   ) {
-    updateData.$set = {
-      ...updateData.$set,
-      timezone: userTimezone
-    };
+    $set.timezone = userTimezone;
   }
 
-  if (needsModeration) {
-    updateData.$set = {
-      ...updateData.$set,
-      needsModeration: true
-    };
-  }
+  if (needsModeration) $set.needsModeration = true;
+
+  const updateData = {};
+  if (!isEmpty($set)) updateData.$set = $set;
+  if (!isEmpty($push)) updateData.$push = $push;
+  if (!isEmpty($pull)) updateData.$pull = $pull;
 
   return {
     alreadyCompleted,

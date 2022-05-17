@@ -16,7 +16,6 @@ import {
   transformContents,
   transformHeadTailAndContents,
   setExt,
-  setImportedFiles,
   compileHeadTail
 } from '../../../../../utils/polyvinyl';
 import createWorker from '../utils/worker-executor';
@@ -204,43 +203,59 @@ async function transformScript(documentElement) {
   });
 }
 
-// Find if the base html refers to the css or js files and record if they do. If
-// the link or script exists we remove those elements since those files don't
-// exist on the site, only in the editor
-const addImportedFiles = async function (fileP) {
-  const file = await fileP;
-  const transform = documentElement => {
+// This does the final transformations of the files needed to embed them into
+// HTML.
+export const embedFilesInHtml = async function (challengeFiles) {
+  const { indexHtml, stylesCss, scriptJs, indexJsx } =
+    challengeFilesToObject(challengeFiles);
+
+  const embedStylesAndScript = (documentElement, contentDocument) => {
     const link =
       documentElement.querySelector('link[href="styles.css"]') ??
       documentElement.querySelector('link[href="./styles.css"]');
     const script =
       documentElement.querySelector('script[src="script.js"]') ??
       documentElement.querySelector('script[src="./script.js"]');
-    const importedFiles = [];
     if (link) {
-      importedFiles.push('styles.css');
-      link.remove();
+      const style = contentDocument.createElement('style');
+      style.innerHTML = stylesCss?.contents;
+
+      link.parentNode.replaceChild(style, link);
     }
     if (script) {
-      importedFiles.push('script.js');
-      script.remove();
+      const script = (contentDocument.createElement('script').innerHTML =
+        scriptJs?.contents);
+      link.parentNode.replaceChild(script, link);
     }
     return {
-      contents: documentElement.innerHTML,
-      importedFiles
+      contents: documentElement.innerHTML
     };
   };
 
-  const { importedFiles, contents } = await transformWithFrame(
-    transform,
-    file.contents
-  );
-
-  return flow(
-    partial(setImportedFiles, importedFiles),
-    partial(transformContents, () => contents)
-  )(file);
+  if (indexHtml) {
+    const { contents } = await transformWithFrame(
+      embedStylesAndScript,
+      indexHtml.contents
+    );
+    return [challengeFiles, contents];
+  } else if (indexJsx) {
+    return [challengeFiles, `<script>${indexJsx.contents}</script>`];
+  } else if (scriptJs) {
+    return [challengeFiles, `<script>${scriptJs.contents}</script>`];
+  } else {
+    throw Error('No html or js(x) file found');
+  }
 };
+
+function challengeFilesToObject(challengeFiles) {
+  const indexHtml = challengeFiles.find(file => file.fileKey === 'indexhtml');
+  const indexJsx = challengeFiles.find(
+    file => file.fileKey === 'indexjs' && file.history[0] === 'index.jsx'
+  );
+  const stylesCss = challengeFiles.find(file => file.fileKey === 'stylescss');
+  const scriptJs = challengeFiles.find(file => file.fileKey === 'scriptjs');
+  return { indexHtml, indexJsx, stylesCss, scriptJs };
+}
 
 const transformWithFrame = async function (transform, contents) {
   // we use iframe here since file.contents is destined to be be inserted into
@@ -260,7 +275,10 @@ const transformWithFrame = async function (transform, contents) {
     // itself. It appears that the frame's documentElement can get replaced by a
     // blank documentElement without the contents. This seems only to happen on
     // Firefox.
-    out = await transform(frame.contentDocument.documentElement);
+    out = await transform(
+      frame.contentDocument.documentElement,
+      frame.contentDocument
+    );
   } finally {
     document.body.removeChild(frame);
   }
@@ -280,19 +298,14 @@ const transformHtml = async function (file) {
   return transformContents(() => contents, file);
 };
 
-const composeHTML = cond([
-  [testHTML, partial(compileHeadTail, '')],
-  [stubTrue, identity]
-]);
-
 const htmlTransformer = cond([
-  [testHTML, flow(transformHtml, addImportedFiles)],
+  [testHTML, flow(transformHtml)],
   [stubTrue, identity]
 ]);
 
 export const getTransformers = options => [
   replaceNBSP,
   babelTransformer(options ? options : {}),
-  composeHTML,
+  partial(compileHeadTail, ''),
   htmlTransformer
 ];

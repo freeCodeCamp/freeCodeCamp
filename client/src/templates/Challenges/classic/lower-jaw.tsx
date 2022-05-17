@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { debounce } from 'lodash';
 import Fail from '../../../assets/icons/fail';
 import LightBulb from '../../../assets/icons/lightbulb';
 import GreenPass from '../../../assets/icons/green-pass';
@@ -198,7 +199,7 @@ const LowerJaw = ({
             id='submit-button'
             aria-hidden={!challengeIsCompleted}
             className='btn-block btn'
-            onClick={submitChallenge}
+            onClick={debounce(submitChallenge, 2000)}
             ref={submitButtonRef}
           >
             {t('buttons.submit-and-go')}

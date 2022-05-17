@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c442eddfaeb5bd18
-title: Build a Tribute Page
+title: トリビュートページを作成する
 challengeType: 14
 forumTopicId: 301147
 dashedName: build-a-tribute-page
@@ -8,32 +8,32 @@ dashedName: build-a-tribute-page
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to <a href="https://tribute-page.freecodecamp.rocks" target="_blank">https://tribute-page.freecodecamp.rocks</a>
+**目標:** <a href="https://tribute-page.freecodecamp.rocks" target="_blank">https://tribute-page.freecodecamp.rocks</a> と同様の機能を持つアプリを構築します
 
-**User Stories:**
+**ユーザーストーリー:**
 
-1. Your tribute page should have an element with a corresponding `id="main"`, which contains all other elements
-1. You should see an element with an `id` of `title`, which contains a string (i.e. text), that describes the subject of the tribute page (e.g. "Dr. Norman Borlaug")
-1. You should see either a `figure` or a `div` element with an `id` of `img-div`
-1. Within the `img-div` element, you should see an `img` element with a corresponding `id="image"`
-1. Within the `img-div` element, you should see an element with a corresponding `id="img-caption"` that contains textual content describing the image shown in `img-div`
-1. You should see an element with a corresponding `id="tribute-info"`, which contains textual content describing the subject of the tribute page
-1. You should see an a element with a corresponding `id="tribute-link"`, which links to an outside site, that contains additional information about the subject of the tribute page. HINT: You must give your element an attribute of `target` and set it to `_blank` in order for your link to open in a new tab
-1. Your `#image` should use `max-width` and `height` properties to resize responsively, relative to the width of its parent element, without exceeding its original size
-1. Your `img` element should be centered within its parent element
+1. トリビュートページには `id="main"` を持つ要素が 1 つあり、その中に他のすべての要素が含まれます
+1. `id` の値が `title` に設定されている要素が 1 つあり、それにはトリビュートページで取り上げる対象者 (例: "Dr. Norman Borlaug") を説明する文字列 (すなわちテキスト) が記載されています
+1. `id` の値が `img-div` に設定されている `figure` または `div` 要素のどちらか 1 つが必要です
+1. `img-div` の要素内には、`id="image"` を持つ `img` 要素があります
+1. `img-div` の要素内には、`id="img-caption"` を持つ要素があり、`img-div` 内に表示されている画像を説明するテキストコンテンツを含みます
+1. `id="tribute-info"` を持つ要素が 1 つあり、これにはトリビュートページの対象者を説明するテキストコンテンツが含まれます
+1. `id="tribute-link"` を持つ a 要素が 1 つあり、これはトリビュートページの対象者に関する追加情報を含む外部サイトへのリンクです。 ヒント: リンクを新しいタブで開くためには、要素に `target` 属性を与え、その値に `_blank` を設定しなければなりません
+1. `#image` に `max-width` と `height` プロパティを使用して、元のサイズを超えることなく、親要素の幅に応じてサイズが変更されるようにします
+1. `img` 要素は親要素内の中央に配置する必要があります
 
-Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
+上記のユーザーストーリーを満たして、以下のすべてのテストに合格してこのプロジェクトを完成させてください。 あなた独自のスタイルを加えましょう。 ハッピーコーディング！
 
 # --hints--
 
-You should have a `main` element with an `id` of `main`
+`id` の値が `main` に設定されている `main` 要素が 1 つ必要です
 
 ```js
 const el = document.getElementById('main')
 assert(!!el && el.tagName === 'MAIN')
 ```
 
-Your `#img-div`, `#image`, `#img-caption`, `#tribute-info`, and `#tribute-link` should all be descendants of `#main`
+`#img-div`、`#image`、`#img-caption`、`#tribute-info`、および `#tribute-link` は、すべて `#main` の子孫要素である必要があります
 
 ```js
 const el1 = document.querySelector('#main #img-div')
@@ -44,14 +44,14 @@ const el5 = document.querySelector('#main #tribute-link')
 assert(!!el1 & !!el2 && !!el3 && !!el4 && !!el5)
 ```
 
-You should have an element with an `id` of `title`
+`id` が `title` の要素が 1 つ必要です
 
 ```js
 const el = document.getElementById('title')
 assert(!!el)
 ```
 
-Your `#title` should not be empty
+`#title` が空でないようにしてください
 
 ```js
 const el = document.getElementById('title')
@@ -59,120 +59,116 @@ assert(!!el && el.innerText.length > 0)
 
 ```
 
-You should have a `figure` or `div` element with an `id` of `img-div`
+`id` の値が `img-div` に設定されている、`figure` または `div` 要素が 1 つ必要です
 
 ```js
 const el = document.getElementById('img-div')
 assert(!!el && (el.tagName === 'DIV' || el.tagName === 'FIGURE'))
 ```
 
-You should have an `img` element with an `id` of `image`
+`id` の値が `image` に設定されている `img` 要素が 1 つ必要です
 
 ```js
 const el = document.getElementById('image')
 assert(!!el && el.tagName === 'IMG')
 ```
 
-Your `#image` should be a descendant of `#img-div`
+`#image` は `#img-div` の子孫要素である必要があります
 
 ```js
 const el = document.querySelector('#img-div #image')
 assert(!!el)
 ```
 
-You should have a `figcaption` or `div` element with an `id` of `img-caption`
+`id` の値が `img-caption` に設定されている、`figcaption` または `div` 要素が 1 つ必要です
 
 ```js
 const el = document.getElementById('img-caption')
 assert(!!el && (el.tagName === 'DIV' || el.tagName === 'FIGCAPTION'))
 ```
 
-Your `#img-caption` should be a descendant of `#img-div`
+`#img-caption` は `#img-div` の子孫要素である必要があります
 
 ```js
 const el = document.querySelector('#img-div #img-caption')
 assert(!!el)
 ```
 
-Your `#img-caption` should not be empty
+`#img-caption` が空でないようにしてください
 
 ```js
 const el = document.getElementById('img-caption')
 assert(!!el && el.innerText.length > 0)
 ```
 
-You should have an element with an `id` of `tribute-info`
+`id` が `tribute-info` の要素が 1 つ必要です
 
 ```js
 const el = document.getElementById('tribute-info')
 assert(!!el)
 ```
 
-Your `#tribute-info` should not be empty
+`#tribute-info` が空でないようにしてください
 
 ```js
 const el = document.getElementById('tribute-info')
 assert(!!el && el.innerText.length > 0)
 ```
 
-You should have an `a` element with an `id` of `tribute-link`
+`id` の値が `tribute-link` に設定されている `a` 要素が 1 つ必要です
 
 ```js
 const el = document.getElementById('tribute-link')
 assert(!!el && el.tagName === 'A')
 ```
 
-Your `#tribute-link` should have an `href` attribute and value
+`#tribute-link` は `href` 属性とその値をもつ必要があります
 
 ```js
 const el = document.getElementById('tribute-link')
 assert(!!el && !!el.href && el.href.length > 0)
 ```
 
-Your `#tribute-link` should have a `target` attribute set to `_blank`
+`#tribute-link` は、値が `_blank` に設定されている `target` 属性をもつ必要があります
 
 ```js
 const el = document.getElementById('tribute-link')
 assert(!!el && el.target === '_blank')
 ```
 
-You should use an `#image` selector in your CSS to style the `#image` and pass the next three tests
+`img` 要素の `display` の値は `block` に設定されている必要があります
 
 ```js
-const style = new __helpers.CSSHelp(document).getStyle('#image')
-assert(!!style)
-```
-
-Your `#image` should have a `display` of `block`
-
-```js
-const style = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('display')
+const img = document.getElementById('image');
+const imgStyle = window.getComputedStyle(img);
+const style = imgStyle?.getPropertyValue('display')
 assert(style === 'block')
 ```
 
-Your `#image` should have a `max-width` of `100%`
+`#image` の `max-width` の値は `100%` に設定されている必要があります
 
 ```js
-const style = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('max-width')
+const img = document.getElementById('image');
+const imgStyle = window.getComputedStyle(img);
+const style = imgStyle?.getPropertyValue('max-width')
 assert(style === '100%')
 ```
 
-Your `#image` should have a `height` of `auto`
+`#image` の `height` の値は `auto` に設定されている必要があります
 
 ```js
 // taken from the testable-projects repo
 const img = document.getElementById('image');
-const maxWidthValue = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('max-width')
-const displayValue = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('display')
-const oldDisplayValue = img?.style.getPropertyValue('display');
-const oldDisplayPriority = img?.style.getPropertyPriority('display');
+const imgStyle = window.getComputedStyle(img);
+const oldDisplayValue = imgStyle.getPropertyValue('display');
+const oldDisplayPriority = imgStyle.getPropertyPriority('display');
 img?.style.setProperty('display', 'none', 'important');
-const heightValue = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('height')
+const heightValue = imgStyle?.getPropertyValue('height')
 img?.style.setProperty('display', oldDisplayValue, oldDisplayPriority);
 assert(heightValue === 'auto')
 ```
 
-Your `#image` should be centered within its parent
+`#image` は親要素内の中央に配置する必要があります
 
 ```js
 // taken from the testable-projects repo

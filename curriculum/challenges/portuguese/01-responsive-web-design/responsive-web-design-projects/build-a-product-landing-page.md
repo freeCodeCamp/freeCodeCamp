@@ -119,8 +119,16 @@ assert(!!el && (el.tagName === 'VIDEO' || el.tagName === 'IFRAME'))
 O elemento `#video` deve ter um atributo `src`
 
 ```js
-const el = document.getElementById('video')
-assert(!!el && !!el.src)
+let el = document.getElementById('video')
+const sourceNode = el.children;
+let sourceElement = null;
+if (sourceNode.length) {
+  sourceElement = [...video.children].filter(el => el.localName === 'source')[0];
+}
+if (sourceElement) {
+  el = sourceElement;
+}
+assert(el.hasAttribute('src'));
 ```
 
 Você deve ter um elemento `form` com o `id` `form`
@@ -205,7 +213,9 @@ assert(!!el && top1 >= -15 && top1 <= 15 && top2 >= -15 && top2 <= 15)
 A página inicial deve ter pelo menos uma media query
 
 ```js
-assert.isAtLeast(new __helpers.CSSHelp(document).getCSSRules('media')?.length, 1);
+const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
+const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
+assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 ```
 
 A página inicial do produto deve utilizar o CSS flexbox pelo menos uma vez

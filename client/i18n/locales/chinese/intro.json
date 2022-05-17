@@ -67,7 +67,7 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "Responsive Web Design",
+    "title": "(New) Responsive Web Design",
     "intro": [
       "在响应式网页设计的认证课程中，你将学习用于构建网页的语言： HTML（超文本标记语言）用于创建内容，CSS（级联样式表）用于样式设计。",
       "首先，你将通过编写一个猫咪相册应用，学习 HTML 和 CSS 的基本知识。 然后，通过画企鹅来学习像 CSS 变量这样的现代技术，并通过编写网页表单来学习无障碍的最佳实践。",
@@ -296,23 +296,68 @@
           "是时候用上你新学到的 JavaScript 技能了！接下来的项目和前面的算法挑战很相近，但是难度会更高。",
           "完成这 5 个 JavaScript 项目，以获得 JavaScript 算法和数据结构认证。"
         ]
-      },
-      "basic-javascript-rpg-game": {
-        "title": "基础 JavaScript RPG 游戏",
+      }
+    }
+  },
+  "2022/javascript-algorithms-and-data-structures": {
+    "title": "JavaScript Algorithms and Data Structures (Beta)",
+    "intro": [
+      "placeholder",
+      "placeholder"
+    ],
+    "note": "",
+    "blocks": {
+      "build-a-caesars-cipher-project": {
+        "title": "Build a Casears Cipher Project",
         "intro": [
           "",
           ""
         ]
       },
-      "intermediate-javascript-calorie-counter": {
-        "title": "中级 JavaScript 卡路里计算器",
+      "build-a-cash-register-project": {
+        "title": "Build a Cash Register Project",
         "intro": [
           "",
           ""
         ]
       },
-      "functional-programming-spreadsheet": {
-        "title": "函数式编程电子表格",
+      "build-a-palindrome-checker-project": {
+        "title": "Build a Palindrome Checker Project",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "build-a-roman-numeral-converter-project": {
+        "title": "Build a Roman Numeral Converter Project",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "build-a-telephone-number-validator-project": {
+        "title": "Build a Telephone Number Validator Project",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "learn-basic-javascript-by-building-a-role-playing-game": {
+        "title": "Learn Basic JavaScript by Building a Role Playing Game",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "learn-form-validation-by-building-a-calorie-counter": {
+        "title": "Learn Form Validation by Building a Calorie Counter",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "learn-functional-programming-by-building-a-spreadsheet": {
+        "title": "Learn Functional Programming by Building a Spreadsheet",
         "intro": [
           "",
           ""

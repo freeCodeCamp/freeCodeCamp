@@ -19,6 +19,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import store from 'store';
 
+import { debounce } from 'lodash';
 import { Loader } from '../../../components/helpers';
 import { Themes } from '../../../components/settings/theme';
 import {
@@ -414,7 +415,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       run: () => {
         if (props.usesMultifileEditor) {
           if (challengeIsComplete()) {
-            props.submitChallenge();
+            debounce(props.submitChallenge, 2000);
           } else {
             props.executeChallenge();
             attemptRef.current.attempts++;
