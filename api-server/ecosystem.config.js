@@ -10,7 +10,7 @@ module.exports = {
   apps: [
     {
       script: `./lib/production-start.js`,
-      env: { ...env, DEBUG: 'fcc*' },
+      env,
       max_memory_restart: '600M',
       instances: 'max',
       exec_mode: 'cluster',
