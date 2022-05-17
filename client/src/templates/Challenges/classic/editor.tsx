@@ -415,7 +415,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       run: () => {
         if (props.usesMultifileEditor) {
           if (challengeIsComplete()) {
-            debounce(props.submitChallenge, 2000);
+            debounce(props.submitChallenge, 2000)();
           } else {
             props.executeChallenge();
             attemptRef.current.attempts++;
