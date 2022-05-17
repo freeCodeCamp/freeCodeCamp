@@ -1,38 +1,33 @@
 ---
-id: 5f3cade99dda4e6071a85dfd
-title: Passo 47
+id: 5f3ef6e087d56ed3ffdc36be
+title: Passo 62
 challengeType: 0
-dashedName: step-47
+dashedName: step-62
 ---
 
 # --description--
 
-Você ainda vai voltar à estilização do menu, mas, por agora, adicione um segundo elemento `section` abaixo do primeiro para mostrar as sobremesas oferecidas pela cafeteria.
+Agora, aplique a classe `established` ao texto `Est. 2020`.
 
 # --hints--
 
-Você deve acrescentar uma tag de abertura para `section`.
+Você deve definir a `class` do elemento `p` como `established`.
 
 ```js
-assert(code.match(/<section>/ig).length === 2);
+assert(code.match(/<p class=('|")established\1>/i));
 ```
 
-Você deve acrescentar uma tag de fechamento para `section`.
+A classe `established` deve estar no elemento com o texto `Est. 2020`.
 
 ```js
-assert(code.match(/<\/section>/ig).length === 2);
+const established = $('.established');
+assert(established[0].innerText.match(/Est\.\s2020/i));
 ```
 
-O elemento preexistente `main` deve permanecer o mesmo.
+A classe `established` deve definir o texto como itálico.
 
 ```js
-assert($('main').length === 1);
-```
-
-O novo elemento `section` deve estar dentro do elemento `main`.
-
-```js
-assert($('main').children('section').length === 2);
+assert($('.established').css('font-style') === 'italic');
 ```
 
 # --seed--
@@ -50,12 +45,13 @@ assert($('main').children('section').length === 2);
   </head>
   <body>
     <div class="menu">
+--fcc-editable-region--
       <header>
         <h1>CAMPER CAFE</h1>
         <p>Est. 2020</p>
       </header>
-      <main>
 --fcc-editable-region--
+      <main>
         <section>
           <h2>Coffee</h2>
           <article class="item">
@@ -74,7 +70,21 @@ assert($('main').children('section').length === 2);
             <p class="flavor">Mocha</p><p class="price">4.50</p>
           </article>
         </section>
---fcc-editable-region--
+        <section>
+          <h2>Desserts</h2>
+          <article class="item">
+            <p class="dessert">Donut</p><p class="price">1.50</p>
+          </article>
+          <article class="item">
+            <p class="dessert">Cherry Pie</p><p class="price">2.75</p>
+          </article>
+          <article class="item">
+            <p class="dessert">Cheesecake</p><p class="price">3.00</p>
+          </article>
+          <article class="item">
+            <p class="dessert">Cinnamon Roll</p><p class="price">2.50</p>
+          </article>
+        </section>
       </main>
     </div>
   </body>
@@ -84,6 +94,11 @@ assert($('main').children('section').length === 2);
 ```css
 body {
   background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
+  font-family: sans-serif;
+}
+
+.established {
+  font-style: italic;
 }
 
 h1, h2, p {
@@ -95,13 +110,19 @@ h1, h2, p {
   background-color: burlywood;
   margin-left: auto;
   margin-right: auto;
+  padding: 20px;
+  max-width: 500px;
+}
+
+h1, h2 {
+  font-family: Impact, serif;
 }
 
 .item p {
   display: inline-block;
 }
 
-.flavor {
+.flavor, .dessert {
   text-align: left;
   width: 75%;
 }
@@ -111,4 +132,3 @@ h1, h2, p {
   width: 25%
 }
 ```
-
