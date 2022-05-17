@@ -416,7 +416,14 @@ const Editor = (props: EditorProps): JSX.Element => {
       run: () => {
         if (props.usesMultifileEditor) {
           if (challengeIsComplete()) {
-            props.submitChallenge();
+            const { submitChallenge } = props;
+            if (timeoutHasElapsed) {
+              submitChallenge();
+            } else {
+              debounce.current = setTimeout(() => {
+                submitChallenge();
+              }, 750);
+            }
           } else {
             clearTestFeedback();
             props.executeChallenge();
