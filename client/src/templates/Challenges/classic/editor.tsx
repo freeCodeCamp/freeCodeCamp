@@ -9,16 +9,17 @@ import type {
 import { highlightAllUnder } from 'prismjs';
 import React, {
   useEffect,
-  useState,
   Suspense,
   RefObject,
   MutableRefObject,
   useRef
 } from 'react';
+import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import store from 'store';
 
+import { debounce } from 'lodash';
 import { Loader } from '../../../components/helpers';
 import { Themes } from '../../../components/settings/theme';
 import {
@@ -51,8 +52,10 @@ import {
   initTests,
   isResettingSelector,
   stopResetting,
-  isProjectPreviewModalOpenSelector
+  isProjectPreviewModalOpenSelector,
+  openModal
 } from '../redux';
+import LowerJaw from './lower-jaw';
 
 import './editor.css';
 
@@ -78,6 +81,7 @@ interface EditorProps {
   initialTests: Test[];
   isResetting: boolean;
   isSignedIn: boolean;
+  openHelpModal: () => void;
   output: string[];
   resizeProps: ResizeProps;
   saveChallenge: () => void;
@@ -156,7 +160,8 @@ const mapDispatchToProps = {
   updateFile,
   submitChallenge,
   initTests,
-  stopResetting
+  stopResetting,
+  openHelpModal: () => openModal('help')
 };
 
 const modeMap = {
@@ -213,17 +218,6 @@ const initialData: EditorProperties = {
 };
 
 const Editor = (props: EditorProps): JSX.Element => {
-  const [timeoutHasElapsed, setTimeoutHasElapsed] = useState<boolean>(false);
-  const minTimeout = useRef<NodeJS.Timeout>();
-  useEffect(() => {
-    minTimeout.current = setTimeout(() => {
-      setTimeoutHasElapsed(true);
-    }, 1000 * 60);
-
-    return () => {
-      clearTimeout(minTimeout.current);
-    };
-  }, []);
   const { editorRef, initTests } = props;
   // These refs are used during initialisation of the editor as well as by
   // callbacks.  Since they have to be initialised before editorWillMount and
@@ -245,6 +239,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     noteIndex: 0,
     shouldPlay: store.get('fcc-sound') as boolean | undefined
   });
+  const attemptRef = useRef<{ attempts: number }>({ attempts: 0 });
 
   // since editorDidMount runs once with the initial props object, it keeps a
   // reference to *those* props. If we want it to use the latest props, we can
@@ -338,11 +333,11 @@ const Editor = (props: EditorProps): JSX.Element => {
     const { challengeFiles, fileKey } = props;
     const { model } = dataRef.current;
 
-    const newContents = challengeFiles?.find(
+    const initialContents = challengeFiles?.find(
       challengeFile => challengeFile.fileKey === fileKey
     )?.contents;
-    if (model?.getValue() !== newContents) {
-      model?.setValue(newContents ?? '');
+    if (model?.getValue() !== initialContents) {
+      model?.setValue(initialContents ?? '');
     }
   };
 
@@ -420,17 +415,10 @@ const Editor = (props: EditorProps): JSX.Element => {
       run: () => {
         if (props.usesMultifileEditor) {
           if (challengeIsComplete()) {
-            const { submitChallenge } = props;
-            if (timeoutHasElapsed) {
-              submitChallenge();
-            } else {
-              debounce.current = setTimeout(() => {
-                submitChallenge();
-              }, 750);
-            }
+            debounce(props.submitChallenge, 2000);
           } else {
-            clearTestFeedback();
             props.executeChallenge();
+            attemptRef.current.attempts++;
           }
         } else {
           props.executeChallenge({ showCompletionModal: true });
@@ -565,35 +553,66 @@ const Editor = (props: EditorProps): JSX.Element => {
     dataRef.current.descriptionZoneId = changeAccessor.addZone(viewZone);
   };
 
-  const outputZoneCallback = (
-    changeAccessor: editor.IViewZoneChangeAccessor
-  ) => {
+  function createLowerJaw(outputNode: HTMLElement, callback?: () => void) {
+    const { output } = props;
+    const isChallengeComplete = challengeIsComplete();
+    const isEditorInFocus = document.activeElement?.tagName === 'TEXTAREA';
+    ReactDOM.render(
+      <LowerJaw
+        openHelpModal={props.openHelpModal}
+        executeChallenge={props.executeChallenge}
+        hint={output[1]}
+        testsLength={props.tests.length}
+        attemptsNumber={attemptRef.current.attempts}
+        challengeIsCompleted={isChallengeComplete}
+        challengeHasErrors={challengeHasErrors()}
+        submitChallenge={props.submitChallenge}
+        onAttempt={() => attemptRef.current.attempts++}
+        isEditorInFocus={isEditorInFocus}
+      />,
+      outputNode,
+      callback
+    );
+  }
+
+  const updateOutputZone = () => {
     const editor = dataRef.current.editor;
-    if (!editor) return;
-    const outputNode = createOutputNode(editor);
+    if (!editor || !dataRef.current.outputNode) return;
 
+    const outputNode = dataRef.current.outputNode;
+    createLowerJaw(outputNode, () => {
+      if (dataRef.current.outputNode) {
+        updateOutputViewZone(outputNode, editor);
+      }
+    });
+  };
+
+  const updateOutputViewZone = (
+    outputNode: HTMLDivElement,
+    editor: editor.IStandaloneCodeEditor
+  ) => {
     // make sure the overlayWidget has resized before using it to set the height
-
     outputNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
-
     // We have to wait for the viewZone to finish rendering before adjusting the
     // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
     // not the editor may report the wrong value for position of the lines.
-    const viewZone = {
-      afterLineNumber: getLastLineOfEditableRegion(),
-      heightInPx: outputNode.offsetHeight,
-      domNode: document.createElement('div'),
-      onComputedHeight: () =>
-        dataRef.current.outputWidget &&
-        editor.layoutOverlayWidget(dataRef.current.outputWidget),
-      onDomNodeTop: (top: number) => {
-        dataRef.current.outputZoneTop = top;
-        if (dataRef.current.outputWidget)
-          editor.layoutOverlayWidget(dataRef.current.outputWidget);
-      }
-    };
-
-    dataRef.current.outputZoneId = changeAccessor.addZone(viewZone);
+    editor?.changeViewZones(changeAccessor => {
+      changeAccessor.removeZone(dataRef.current.outputZoneId);
+      const viewZone = {
+        afterLineNumber: getLastLineOfEditableRegion(),
+        heightInPx: outputNode.offsetHeight,
+        domNode: document.createElement('div'),
+        onComputedHeight: () =>
+          dataRef.current.outputWidget &&
+          editor.layoutOverlayWidget(dataRef.current.outputWidget),
+        onDomNodeTop: (top: number) => {
+          dataRef.current.outputZoneTop = top;
+          if (dataRef.current.outputWidget)
+            editor.layoutOverlayWidget(dataRef.current.outputWidget);
+        }
+      };
+      dataRef.current.outputZoneId = changeAccessor.addZone(viewZone);
+    });
   };
 
   function createDescription(editor: editor.IStandaloneCodeEditor) {
@@ -622,77 +641,20 @@ const Editor = (props: EditorProps): JSX.Element => {
     return domNode;
   }
 
-  function setTestFeedbackHeight(height?: number): void {
-    const testStatus = document.getElementById('test-status');
-    const newHeight = height === undefined ? 'auto' : `${height}px`;
-    if (testStatus) {
-      testStatus.style.height = newHeight;
-    }
-  }
-
-  function clearTestFeedback() {
-    const testStatus = document.getElementById('test-status');
-    if (testStatus && testStatus.innerHTML) {
-      // Explicitly set the height to what it currently is so that we
-      // don't get a big content shift every time the code is checked.
-      setTestFeedbackHeight(testStatus.offsetHeight);
-      testStatus.innerHTML = '';
-    }
-  }
-
   function createOutputNode(editor: editor.IStandaloneCodeEditor) {
     if (dataRef.current.outputNode) return dataRef.current.outputNode;
     const outputNode = document.createElement('div');
-    const statusNode = document.createElement('div');
-    const editorActionRow = document.createElement('div');
-    editorActionRow.classList.add('action-row-container');
     outputNode.classList.add('editor-lower-jaw');
-    outputNode.appendChild(editorActionRow);
-    statusNode.setAttribute('id', 'test-status');
-    statusNode.setAttribute('aria-live', 'assertive');
-    const button = document.createElement('button');
-    button.setAttribute('id', 'test-button');
-    button.classList.add('btn-block');
-    button.innerHTML = 'Check Your Code (Ctrl + Enter)';
-    const submitButton = document.createElement('button');
-    submitButton.setAttribute('id', 'submit-button');
-    submitButton.setAttribute('aria-hidden', 'true');
-    submitButton.innerHTML = 'Submit your code (Ctrl + Enter)';
-    submitButton.classList.add('btn-block');
-    editorActionRow.appendChild(button);
-    editorActionRow.appendChild(submitButton);
-    editorActionRow.appendChild(statusNode);
-    button.onclick = () => {
-      clearTestFeedback();
-      const { executeChallenge } = props;
-      executeChallenge();
-    };
-
+    outputNode.setAttribute('id', 'editor-lower-jaw');
     outputNode.style.left = `${editor.getLayoutInfo().contentLeft}px`;
     outputNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
     outputNode.style.top = getOutputZoneTop();
-
     dataRef.current.outputNode = outputNode;
     return outputNode;
   }
 
-  function resetOutputNode() {
+  function resetMarginDecorations() {
     const { model, insideEditDecId } = dataRef.current;
-    const testButton = document.getElementById('test-button');
-    if (testButton) {
-      testButton.innerHTML = 'Check Your Code (Ctrl + Enter)';
-      testButton.onclick = () => {
-        clearTestFeedback();
-        props.executeChallenge();
-      };
-    }
-
-    // Must manually set test feedback height back to zero since
-    // clearTestFeedback does not.
-    setTestFeedbackHeight(0);
-    clearTestFeedback();
-
-    // Resetting margin decorations
     const range = model?.getDecorationRange(insideEditDecId);
     if (range) {
       updateEditableRegion(range, { model });
@@ -931,7 +893,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         getOutputZoneTop
       );
       editor.addOverlayWidget(dataRef.current.outputWidget);
-      editor.changeViewZones(outputZoneCallback);
+      editor.changeViewZones(updateOutputZone);
     }
 
     editor.onDidScrollChange(() => {
@@ -1019,6 +981,10 @@ const Editor = (props: EditorProps): JSX.Element => {
     return tests.some(test => test.err);
   }
 
+  function resetAttampts() {
+    attemptRef.current.attempts = 0;
+  }
+
   // runs every update to the editor and when the challenge is reset
   useEffect(() => {
     // If a challenge is reset, it needs to communicate that change to the
@@ -1042,12 +1008,9 @@ const Editor = (props: EditorProps): JSX.Element => {
       if (props.isResetting) {
         initializeDescriptionAndOutputWidgets();
         updateDescriptionZone();
-        updateOutputZone();
         showEditableRegion(editor);
-
-        // Since the outputNode is only reset when the step is restarted, users
-        // that want to try different solutions will need to do that.
-        resetOutputNode();
+        resetAttampts();
+        resetMarginDecorations();
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -1064,100 +1027,25 @@ const Editor = (props: EditorProps): JSX.Element => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.previewOpen]);
 
-  const debounce = useRef<NodeJS.Timeout>();
-
   useEffect(() => {
-    clearTimeout(debounce.current);
-
-    const { output } = props;
     const { model, insideEditDecId } = dataRef.current;
-    const editableRegion = getEditableRegionFromRedux();
-    const isEditorInFocus = document.activeElement?.tagName === 'TEXTAREA';
-    if (editableRegion.length === 2) {
-      const testStatus = document.getElementById('test-status');
-      if (challengeIsComplete()) {
-        const testButton = document.getElementById('test-button');
-        // In case test button has focus, only visually hide it for now so we
-        // don't lose the focus before we set it on submit button.
-        testButton?.classList.add('sr-only');
-        const submitButton = document.getElementById('submit-button');
-        if (submitButton) {
-          submitButton.removeAttribute('aria-hidden');
-          submitButton.onclick = () => {
-            clearTestFeedback();
-            const { submitChallenge } = props;
-            if (timeoutHasElapsed) {
-              submitChallenge();
-            } else {
-              debounce.current = setTimeout(() => {
-                submitChallenge();
-              }, 750);
-            }
-          };
-          // Delay setting focus on submit button to ensure aria-live status
-          // message is announced first by screen reader.
-          setTimeout(() => {
-            // Must set focus on submit button before removing test button from
-            // accessibility API since test button might have focus.
-            if (!isEditorInFocus) {
-              submitButton.focus();
-            }
-            testButton?.setAttribute('aria-hidden', 'true');
-          }, 500);
+    const lowerJawElement = dataRef.current.outputNode;
+    const isChallengeComplete = challengeIsComplete();
+    const range = model?.getDecorationRange(insideEditDecId);
+    if (range && isChallengeComplete) {
+      updateEditableRegion(
+        range,
+        { model },
+        {
+          linesDecorationsClassName: 'myEditableLineDecoration tests-passed'
         }
-
-        const range = model?.getDecorationRange(insideEditDecId);
-        if (range) {
-          updateEditableRegion(
-            range,
-            { model },
-            {
-              linesDecorationsClassName: 'myEditableLineDecoration tests-passed'
-            }
-          );
-        }
-
-        const submitKeyboardInstructions = isEditorInFocus
-          ? '<span class="sr-only">Use Ctrl + Enter to submit.</span>'
-          : '';
-
-        if (testStatus) {
-          testStatus.innerHTML = `<p class="status"><span aria-hidden="true">&#9989;</span> Congratulations, your code passes. Submit your code to complete this step and move on to the next one. ${submitKeyboardInstructions}</p>`;
-          setTestFeedbackHeight();
-        }
-      } else if (challengeHasErrors() && testStatus) {
-        const wordsArray = [
-          'Try again.',
-          'Keep trying.',
-          "You're getting there.",
-          'Hang in there.',
-          "Don't give up."
-        ];
-        testStatus.innerHTML = `<p class="status"><span aria-hidden="true">✖️</span> Sorry, your code does not pass. ${
-          wordsArray[Math.floor(Math.random() * wordsArray.length)]
-        }</p><div><h2 class="hint">Hint</h2> ${output[1]}</div>`;
-        setTestFeedbackHeight();
-      }
+      );
     }
+    dataRef.current.outputNode = lowerJawElement;
+    updateOutputZone();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.tests]);
-  useEffect(() => {
-    const { output } = props;
-    // TODO: do we need this condition?  What happens if the ref is empty?
-    if (dataRef.current.outputNode) {
-      // TODO: output gets wiped when the preview gets updated, keeping the
-      // display is an anti-pattern (the render should not ignore props!).
-      // The correct solution is probably to create a new redux variable
-      // (shownHint,maybe) and have that persist through previews.  But, for
-      // now:
-      if (output) {
-        if (hasEditableRegion()) {
-          updateOutputZone();
-        }
-      }
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props.output]);
+
   useEffect(() => {
     const editor = dataRef.current.editor;
     editor?.layout();
@@ -1167,15 +1055,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.dimensions]);
-
-  // TODO: DRY (there's going to be a lot of that)
-  function updateOutputZone() {
-    const editor = dataRef.current.editor;
-    editor?.changeViewZones(changeAccessor => {
-      changeAccessor.removeZone(dataRef.current.outputZoneId);
-      outputZoneCallback(changeAccessor);
-    });
-  }
 
   function updateDescriptionZone() {
     const editor = dataRef.current.editor;

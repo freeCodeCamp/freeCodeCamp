@@ -50,6 +50,7 @@
     "reset-lesson": "Reset this lesson",
     "run": "Run",
     "run-test": "Run the Tests (Ctrl + Enter)",
+    "check-code": "Check Your Code (Ctrl + Enter)",
     "reset": "Reset",
     "reset-code": "Reset All Code",
     "help": "Help",
@@ -268,6 +269,7 @@
     "solution-link": "Solution Link",
     "github-link": "GitHub Link",
     "submit-and-go": "Submit and go to my next challenge",
+    "congradulations": "Congratulations, your code passes. Submit your code to complete this step and move on to the next one.",
     "i-completed": "I've completed this challenge",
     "test-output": "Your test output will go here",
     "running-tests": "// running tests",
@@ -307,7 +309,14 @@
     "complete-both-steps": "Complete both steps below to finish the challenge.",
     "runs-in-vm": "The project runs in a virtual machine, complete the user stories described in there and get all the tests to pass to finish step 1.",
     "completed": "Completed",
-    "not-started": "Not started"
+    "not-started": "Not started",
+    "hint": "Hint",
+    "test": "Test",
+    "sorry-try-again":"Sorry, your code does not pass. Try again.",
+    "sorry-keep-trying":"Sorry, your code does not pass. Keep trying.",
+    "sorry-getting-there":"Sorry, your code does not pass. You're getting there.",
+    "sorry-hang-in-there":"Sorry, your code does not pass. Hang in there.",
+    "sorry-dont-giveup":"Sorry, your code does not pass. Don't give up."
   },
   "donate": {
     "title": "Support our nonprofit",
@@ -444,6 +453,7 @@
     "fail": "Test Failed",
     "not-passed": "Not Passed",
     "passed": "Passed",
+    "hint": "Hint",
     "heart": "Heart",
     "initial": "Initial",
     "info": "Intro Information",
@@ -463,7 +473,9 @@
     "next-page": "Go to next page",
     "last-page": "Go to last page",
     "primary-nav": "primary",
-    "breadcrumb-nav": "breadcrumb"
+    "breadcrumb-nav": "breadcrumb",
+    "submit": "Use Ctrl + Enter to submit.",
+    "running-tests": "Running tests"
   },
   "flash": {
     "honest-first": "To claim a certification, you must first accept our academic honesty policy",
