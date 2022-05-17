@@ -6,7 +6,6 @@ describe('css-help', () => {
   let t: CSSHelp;
   beforeEach(() => {
     const style = doc.createElement('style');
-    style.classList.add('fcc-injected-styles');
     style.innerHTML = cssString as string;
     doc.head.appendChild(style);
     t = new CSSHelp(doc);
