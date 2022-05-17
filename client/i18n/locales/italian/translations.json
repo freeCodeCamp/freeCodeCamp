@@ -305,7 +305,9 @@
     "step-2": "Step 2: Consegna il codice",
     "submit-public-url": "Quando hai completato il progetto salva tutti i file richiesti in una repository pubblica e consegna l'URL qui sotto.",
     "complete-both-steps": "Completa entrambi gli step qua sotto per finire la sfida.",
-    "runs-in-vm": "Il progetto esegue in una macchina virtuale, completa le user story descritte lì dentro e fai passare tutti i test per finire lo step 1."
+    "runs-in-vm": "Il progetto esegue in una macchina virtuale, completa le user story descritte lì dentro e fai passare tutti i test per finire lo step 1.",
+    "completed": "Completato",
+    "not-started": "Non iniziato"
   },
   "donate": {
     "title": "Supporta il nostro no profit",

@@ -23,7 +23,8 @@ import { Themes } from '../../../components/settings/theme';
 import {
   userSelector,
   saveChallenge,
-  isDonationModalOpenSelector
+  isDonationModalOpenSelector,
+  isSignedInSelector
 } from '../../../redux';
 import {
   ChallengeFiles,
@@ -75,6 +76,7 @@ interface EditorProps {
   initTests: (tests: Test[]) => void;
   initialTests: Test[];
   isResetting: boolean;
+  isSignedIn: boolean;
   output: string[];
   resizeProps: ResizeProps;
   saveChallenge: () => void;
@@ -107,7 +109,7 @@ interface EditorProperties {
   outputZoneId: string;
   descriptionNode?: HTMLDivElement;
   outputNode?: HTMLDivElement;
-  descriptionWidget?: editor.IOverlayWidget;
+  descriptionWidget?: editor.IContentWidget;
   outputWidget?: editor.IOverlayWidget;
 }
 
@@ -118,6 +120,7 @@ const mapStateToProps = createSelector(
   isDonationModalOpenSelector,
   isProjectPreviewModalOpenSelector,
   isResettingSelector,
+  isSignedInSelector,
   userSelector,
   challengeTestsSelector,
   (
@@ -127,6 +130,7 @@ const mapStateToProps = createSelector(
     open,
     previewOpen: boolean,
     isResetting: boolean,
+    isSignedIn: boolean,
     { theme = Themes.Default }: { theme: Themes },
     tests: [{ text: string; testString: string }]
   ) => ({
@@ -134,6 +138,7 @@ const mapStateToProps = createSelector(
     challengeType,
     previewOpen,
     isResetting,
+    isSignedIn,
     output,
     theme,
     tests
@@ -427,7 +432,8 @@ const Editor = (props: EditorProps): JSX.Element => {
       label: 'Save editor content',
       keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S],
       run:
-        props.challengeType === challengeTypes.multiFileCertProject
+        props.challengeType === challengeTypes.multifileCertProject &&
+        props.isSignedIn
           ? // save to database
             props.saveChallenge
           : // save to local storage
@@ -518,19 +524,22 @@ const Editor = (props: EditorProps): JSX.Element => {
     domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
 
     // We have to wait for the viewZone to finish rendering before adjusting the
-    // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
+    // position of the content widget (i.e. trigger it via onDomNodeTop). If
     // not the editor may report the wrong value for position of the lines.
     const viewZone = {
       afterLineNumber: getLineBeforeEditableRegion(),
       heightInPx: domNode.offsetHeight,
       domNode: document.createElement('div'),
-      onComputedHeight: () =>
+      // This is called when the editor dimensions change and AFTER the
+      // text in the editor has shifted.
+      onDomNodeTop: () => {
+        // The return value for getTopLineNumber includes the height of
+        // the content widget so we need to remove it.
+        dataRef.current.descriptionZoneTop =
+          editor.getTopForLineNumber(getLineBeforeEditableRegion() + 1) -
+          domNode.offsetHeight;
         dataRef.current.descriptionWidget &&
-        editor.layoutOverlayWidget(dataRef.current.descriptionWidget),
-      onDomNodeTop: (top: number) => {
-        dataRef.current.descriptionZoneTop = top;
-        if (dataRef.current.descriptionWidget)
-          editor.layoutOverlayWidget(dataRef.current.descriptionWidget);
+          editor.layoutContentWidget(dataRef.current.descriptionWidget);
       }
     };
 
@@ -594,12 +603,20 @@ const Editor = (props: EditorProps): JSX.Element => {
     return domNode;
   }
 
+  function setTestFeedbackHeight(height?: number): void {
+    const testStatus = document.getElementById('test-status');
+    const newHeight = height === undefined ? 'auto' : `${height}px`;
+    if (testStatus) {
+      testStatus.style.height = newHeight;
+    }
+  }
+
   function clearTestFeedback() {
     const testStatus = document.getElementById('test-status');
     if (testStatus && testStatus.innerHTML) {
-      const currentHeight = `${testStatus.offsetHeight}px`;
-      // Height will be cleared after status message has been displayed
-      testStatus.style.height = currentHeight;
+      // Explicitly set the height to what it currently is so that we
+      // don't get a big content shift every time the code is checked.
+      setTestFeedbackHeight(testStatus.offsetHeight);
       testStatus.innerHTML = '';
     }
   }
@@ -651,6 +668,9 @@ const Editor = (props: EditorProps): JSX.Element => {
       };
     }
 
+    // Must manually set test feedback height back to zero since
+    // clearTestFeedback does not.
+    setTestFeedbackHeight(0);
     clearTestFeedback();
 
     // Resetting margin decorations
@@ -830,14 +850,6 @@ const Editor = (props: EditorProps): JSX.Element => {
       monaco,
       model
     })[0];
-
-    // This isn't strictly necessary, but it makes sure the description zone and
-    // widget are always rendered in the correct place. The reason it's not
-    // strictly necessary is that, somehow, the first (incorrect) position was
-    // never rendered.
-    dataRef.current.descriptionZoneTop = editor.getTopForLineNumber(
-      getLineBeforeEditableRegion() + 1
-    );
   }
 
   function addWidgetsToRegions(editor: editor.IStandaloneCodeEditor) {
@@ -856,10 +868,17 @@ const Editor = (props: EditorProps): JSX.Element => {
         // itself.
         return null;
       };
+      // Only the description content widget uses this method but it
+      // is harmless to pass it to the overlay widget.
+      const afterRender = () => {
+        domNode.style.left = '0';
+        domNode.style.visibility = 'visible';
+      };
       return {
         getId,
         getDomNode,
-        getPosition
+        getPosition,
+        afterRender
       };
     };
 
@@ -876,7 +895,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       // this order (add widget, change zone) is necessary, since the zone
       // relies on the domnode being in the DOM to calculate its height - that
       // doesn't happen until the widget is added.
-      editor.addOverlayWidget(dataRef.current.descriptionWidget);
+      editor.addContentWidget(dataRef.current.descriptionWidget);
       editor.changeViewZones(descriptionZoneCallback);
       // Now that the description zone is in place, the browser knows its height
       // and we can use that to calculate the top of the output zone.  If we do
@@ -898,7 +917,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     editor.onDidScrollChange(() => {
       if (dataRef.current.descriptionWidget)
-        editor.layoutOverlayWidget(dataRef.current.descriptionWidget);
+        editor.layoutContentWidget(dataRef.current.descriptionWidget);
       if (dataRef.current.outputWidget)
         editor.layoutOverlayWidget(dataRef.current.outputWidget);
     });
@@ -1075,7 +1094,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
         if (testStatus) {
           testStatus.innerHTML = `<p class="status"><span aria-hidden="true">&#9989;</span> Congratulations, your code passes. Submit your code to complete this step and move on to the next one. ${submitKeyboardInstructions}</p>`;
-          testStatus.style.height = '';
+          setTestFeedbackHeight();
         }
       } else if (challengeHasErrors() && testStatus) {
         const wordsArray = [
@@ -1088,7 +1107,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         testStatus.innerHTML = `<p class="status"><span aria-hidden="true">✖️</span> Sorry, your code does not pass. ${
           wordsArray[Math.floor(Math.random() * wordsArray.length)]
         }</p><div><h2 class="hint">Hint</h2> ${output[1]}</div>`;
-        testStatus.style.height = '';
+        setTestFeedbackHeight();
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

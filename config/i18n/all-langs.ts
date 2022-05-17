@@ -46,7 +46,9 @@ export const auditedCerts = {
     SuperBlocks.FrontEndDevLibs,
     SuperBlocks.DataVis,
     SuperBlocks.BackEndDevApis,
-    SuperBlocks.QualityAssurance
+    SuperBlocks.QualityAssurance,
+    SuperBlocks.SciCompPy,
+    SuperBlocks.DataAnalysisPy
   ],
   chinese: [
     SuperBlocks.RespWebDesign,
@@ -127,6 +129,13 @@ export const auditedCerts = {
     SuperBlocks.RelationalDb
   ]
 };
+
+/**
+ * This contains the list of languages which have a beta->stable release
+ * that has been 100% translated. This will only be used during the window
+ * where a beta goes to stable but the translation isn't complete yet.
+ */
+export const languagesWithAuditedBetaReleases = ['english'];
 
 // ---------------------------------------------------------------------------
 

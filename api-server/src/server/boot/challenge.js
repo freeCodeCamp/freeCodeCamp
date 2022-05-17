@@ -93,7 +93,7 @@ const jsCertProjectIds = [
   'aa2e6f85cab2ab736c9a9b24'
 ];
 
-const multiFileCertProjectIds = getChallenges()
+const multifileCertProjectIds = getChallenges()
   .filter(challenge => challenge.challengeType === 14)
   .map(challenge => challenge.id);
 
@@ -134,7 +134,7 @@ export function buildUserUpdate(
   let completedChallenge = {};
   if (
     jsCertProjectIds.includes(challengeId) ||
-    multiFileCertProjectIds.includes(challengeId)
+    multifileCertProjectIds.includes(challengeId)
   ) {
     completedChallenge = {
       ..._completedChallenge,
@@ -149,7 +149,11 @@ export function buildUserUpdate(
   const $push = {},
     $set = {},
     $pull = {};
-  const { timezone: userTimezone, completedChallenges = [] } = user;
+  const {
+    timezone: userTimezone,
+    completedChallenges = [],
+    needsModeration = false
+  } = user;
 
   const oldIndex = completedChallenges.findIndex(
     ({ id }) => challengeId === id
@@ -196,6 +200,8 @@ export function buildUserUpdate(
   ) {
     $set.timezone = userTimezone;
   }
+
+  if (needsModeration) $set.needsModeration = true;
 
   const updateData = {};
   if (!isEmpty($set)) updateData.$set = $set;
@@ -301,13 +307,14 @@ export function modernChallengeCompleted(req, res, next) {
       // if multifile cert project
       if (challengeType === 14) {
         completedChallenge.isManuallyApproved = false;
+        user.needsModeration = true;
       }
 
       // We only need to know the challenge type if it's a project. If it's a
       // step or normal challenge we can avoid storing in the database.
       if (
         jsCertProjectIds.includes(id) ||
-        multiFileCertProjectIds.includes(id)
+        multifileCertProjectIds.includes(id)
       ) {
         completedChallenge.challengeType = challengeType;
       }

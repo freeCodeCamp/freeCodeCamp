@@ -29,6 +29,7 @@
 - **Посібники** (для персоналу & модераторів)
   - [Довідник модератора](moderator-handbook.md)
   - [Довідник DevOps](devops.md)
+  - [Courses VSCode Extension](courses-vscode-extension.md)
 
 ---
 

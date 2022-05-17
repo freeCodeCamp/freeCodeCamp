@@ -14,7 +14,7 @@ dashedName: regular-expressions
 
 ## --text--
 
-¿Qué regex coincide sólo con un carácter de espacio en blanco?
+¿Qué expresiones regulares coincide solo con un carácter de espacio en blanco?
 
 ## --answers--
 

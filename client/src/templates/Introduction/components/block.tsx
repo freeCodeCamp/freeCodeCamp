@@ -17,7 +17,7 @@ import { completedChallengesSelector, executeGA } from '../../../redux';
 import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
 import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
-import { isNewRespCert } from '../../../utils/is-a-cert';
+import { isNewJsCert, isNewRespCert } from '../../../utils/is-a-cert';
 import Challenges from './challenges';
 import '../intro.css';
 
@@ -78,9 +78,9 @@ export class Block extends Component<BlockProps> {
 
   renderCheckMark(isCompleted: boolean): JSX.Element {
     return isCompleted ? (
-      <GreenPass style={mapIconStyle} />
+      <GreenPass hushScreenReaderText style={mapIconStyle} />
     ) : (
-      <GreenNotCompleted style={mapIconStyle} />
+      <GreenNotCompleted hushScreenReaderText style={mapIconStyle} />
     );
   }
 
@@ -105,6 +105,8 @@ export class Block extends Component<BlockProps> {
     } = this.props;
 
     const isNewResponsiveWebDesign = isNewRespCert(superBlock);
+    const isNewJsAlgos = isNewJsCert(superBlock);
+    console.table({ isNewJsAlgos });
 
     let completedCount = 0;
     const challengesWithCompleted = challenges.map(({ challenge }) => {
@@ -120,7 +122,8 @@ export class Block extends Component<BlockProps> {
 
     const isProjectBlock = challenges.some(({ challenge }) => {
       const isJsProject =
-        challenge.order === 10 && challenge.challengeType === 5;
+        [3, 6, 10, 14, 17].includes(challenge.order) &&
+        challenge.challengeType === 5;
 
       const isOtherProject =
         challenge.challengeType === 3 ||
@@ -153,14 +156,14 @@ export class Block extends Component<BlockProps> {
 
     const isBlockCompleted = completedCount === challengesWithCompleted.length;
 
-    const percentageComplated = Math.floor(
+    const percentageCompleted = Math.floor(
       (completedCount / challengesWithCompleted.length) * 100
     );
 
     const progressBarRender = (
-      <div className='progress-wrapper'>
-        <ProgressBar now={percentageComplated} />
-        <span>{`${percentageComplated}%`}</span>
+      <div aria-hidden='true' className='progress-wrapper'>
+        <ProgressBar now={percentageCompleted} />
+        <span>{`${percentageCompleted}%`}</span>
       </div>
     );
 
@@ -239,39 +242,57 @@ export class Block extends Component<BlockProps> {
       </>
     );
 
+    const courseCompletionStatus = () => {
+      if (completedCount === 0) {
+        return t('learn.not-started');
+      }
+      if (completedCount === challengesWithCompleted.length) {
+        return t('learn.completed');
+      }
+      return `${percentageCompleted}% ${t('learn.completed')}`;
+    };
+
     const GridBlock = (
       <>
         {' '}
         <ScrollableAnchor id={blockDashedName}>
           <div className={`block block-grid ${isExpanded ? 'open' : ''}`}>
-            <a
-              className='block-header'
-              onClick={() => {
-                this.handleBlockClick();
-              }}
-              href={`#${blockDashedName}`}
-            >
-              <div className='tags-wrapper'>
-                {!isAuditedCert(curriculumLocale, superBlock) && (
-                  <Link
-                    className='cert-tag'
-                    to={t('links:help-translate-link-url')}
-                  >
-                    {t('misc.translation-pending')}
-                  </Link>
-                )}
-              </div>
-              <div className='title-wrapper map-title'>
-                {this.renderCheckMark(isBlockCompleted)}
-                <h3 className='block-grid-title'>{blockTitle}</h3>
-                <DropDown />
-              </div>
-              {isExpanded && this.renderBlockIntros(blockIntroArr)}
-              {!isExpanded &&
-                !isBlockCompleted &&
-                completedCount > 0 &&
-                progressBarRender}
-            </a>
+            <h3 className='block-grid-title'>
+              <button
+                aria-expanded={isExpanded ? 'true' : 'false'}
+                className='block-header'
+                data-cy={challengesWithCompleted[0].block}
+                onClick={() => {
+                  this.handleBlockClick();
+                }}
+              >
+                <span className='block-header-button-text map-title'>
+                  {this.renderCheckMark(isBlockCompleted)}
+                  <span>
+                    {blockTitle}{' '}
+                    <span className='sr-only'>
+                      , {courseCompletionStatus()}
+                    </span>
+                  </span>
+                  <DropDown />
+                </span>
+                {!isExpanded &&
+                  !isBlockCompleted &&
+                  completedCount > 0 &&
+                  progressBarRender}
+              </button>
+            </h3>
+            <div className='tags-wrapper'>
+              {!isAuditedCert(curriculumLocale, superBlock) && (
+                <Link
+                  className='cert-tag'
+                  to={t('links:help-translate-link-url')}
+                >
+                  {t('misc.translation-pending')}
+                </Link>
+              )}
+            </div>
+            {isExpanded && this.renderBlockIntros(blockIntroArr)}
             {isExpanded && (
               <>
                 <Challenges
@@ -287,44 +308,53 @@ export class Block extends Component<BlockProps> {
     );
 
     const GridProjectBlock = (
-      <div className='block block-grid grid-project-block'>
-        <a
-          className='block-header'
-          onClick={() => {
-            this.handleBlockClick();
-          }}
-          href={challengesWithCompleted[0].fields.slug}
-        >
-          <div className='tags-wrapper'>
-            <span className='cert-tag'>{t('misc.certification-project')}</span>
-            {!isAuditedCert(curriculumLocale, superBlock) && (
-              <Link
-                className='cert-tag'
-                to={t('links:help-translate-link-url')}
-              >
-                {t('misc.translation-pending')}
-              </Link>
-            )}
-          </div>
-          <div className='title-wrapper map-title'>
-            {this.renderCheckMark(isBlockCompleted)}
-            <h3 className='block-grid-title'>{blockTitle}</h3>
-          </div>
-          {this.renderBlockIntros(blockIntroArr)}
-        </a>
-      </div>
+      <ScrollableAnchor id={blockDashedName}>
+        <div className='block block-grid grid-project-block'>
+          <Link
+            className='block-header'
+            onClick={() => {
+              this.handleBlockClick();
+            }}
+            to={challengesWithCompleted[0].fields.slug}
+          >
+            <div className='tags-wrapper'>
+              <span className='cert-tag'>
+                {t('misc.certification-project')}
+              </span>
+              {!isAuditedCert(curriculumLocale, superBlock) && (
+                <Link
+                  className='cert-tag'
+                  to={t('links:help-translate-link-url')}
+                >
+                  {t('misc.translation-pending')}
+                </Link>
+              )}
+            </div>
+            <div className='title-wrapper map-title'>
+              {this.renderCheckMark(isBlockCompleted)}
+              <h3 className='block-grid-title'>{blockTitle}</h3>
+            </div>
+            {this.renderBlockIntros(blockIntroArr)}
+          </Link>
+        </div>
+      </ScrollableAnchor>
     );
 
     const blockrenderer = () => {
       if (isProjectBlock)
-        return isNewResponsiveWebDesign ? GridProjectBlock : ProjectBlock;
-      return isNewResponsiveWebDesign ? GridBlock : Block;
+        return isNewResponsiveWebDesign || isNewJsAlgos
+          ? GridProjectBlock
+          : ProjectBlock;
+      return isNewResponsiveWebDesign || isNewJsAlgos ? GridBlock : Block;
     };
 
     return (
       <>
         {blockrenderer()}
-        {isNewResponsiveWebDesign && !isProjectBlock ? null : <Spacer />}
+        {(isNewResponsiveWebDesign || isNewJsAlgos) &&
+        !isProjectBlock ? null : (
+          <Spacer />
+        )}
       </>
     );
   }

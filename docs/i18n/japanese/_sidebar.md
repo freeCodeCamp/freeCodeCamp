@@ -29,6 +29,7 @@
 - **マニュアル** (スタッフ & モデレーター用)
   - [モデレーターハンドブック](moderator-handbook.md)
   - [DevOps ハンドブック](devops.md)
+  - [Courses VSCode Extension](courses-vscode-extension.md)
 
 ---
 

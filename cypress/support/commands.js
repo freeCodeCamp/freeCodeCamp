@@ -37,6 +37,15 @@ Cypress.Commands.add('login', () => {
   cy.contains('Welcome back');
 });
 
+Cypress.Commands.add('preserveSession', () => {
+  Cypress.Cookies.preserveOnce(
+    'jwt_access_token',
+    'csrf_token',
+    '_csrf',
+    'connect.sid'
+  );
+});
+
 Cypress.Commands.add('toggleAll', () => {
   cy.visit('/settings');
   // cy.get('input[name="isLocked"]').click();

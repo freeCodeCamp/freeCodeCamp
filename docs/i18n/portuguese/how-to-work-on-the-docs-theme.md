@@ -37,7 +37,7 @@ e veicule o diretório `/docs`
 docsify serve docs
 ```
 
-Como alternativa, se você tiver instalado o freeCodeCamp localmente (veja o guia de instalação local), nós empacotamos o CLI com as ferramentas de desenvolvimento para que você possa executar qualquer um dos comandos abaixo, conforme necessário, a partir da raiz do repositório:
+Como alternativa, se você tiver instalado o freeCodeCamp localmente (veja o guia de instalação local), nós empacotamos a CLI com as ferramentas de desenvolvimento para que você possa executar qualquer um dos comandos abaixo, conforme necessário, a partir da raiz do repositório:
 
 ### Veicule e inicie apenas o site da documentação
 
