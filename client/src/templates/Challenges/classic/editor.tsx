@@ -219,6 +219,10 @@ const Editor = (props: EditorProps): JSX.Element => {
     minTimeout.current = setTimeout(() => {
       setTimeoutHasElapsed(true);
     }, 1000 * 60);
+
+    return () => {
+      clearTimeout(minTimeout.current);
+    };
   }, []);
   const { editorRef, initTests } = props;
   // These refs are used during initialisation of the editor as well as by
