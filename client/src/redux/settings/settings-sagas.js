@@ -1,5 +1,12 @@
 import { omit } from 'lodash-es';
-import { call, delay, put, takeLatest, takeEvery } from 'redux-saga/effects';
+import {
+  call,
+  delay,
+  put,
+  select,
+  takeLatest,
+  takeEvery
+} from 'redux-saga/effects';
 
 import { createFlashMessage } from '../../components/Flash/redux';
 import {
@@ -10,6 +17,8 @@ import {
   putUpdateUserFlag,
   putVerifyCert
 } from '../../utils/ajax';
+import { certMap } from '../../resources/cert-and-project-map';
+import { completedChallengesSelector } from '..';
 import {
   updateUserFlagComplete,
   updateUserFlagError,
@@ -78,6 +87,34 @@ function* validateUsernameSaga({ payload }) {
 }
 
 function* verifyCertificationSaga({ payload }) {
+  // check redux if can claim cert before calling backend
+  const completedChallenges = yield select(completedChallengesSelector);
+  const currentCertMap = certMap.find(cert => cert.certSlug === payload);
+  const currentCertIds = currentCertMap?.projects.map(project => project.id);
+  const certTitle = currentCertMap?.title || payload;
+
+  const flash = {
+    type: 'info',
+    message: 'flash.incomplete-steps',
+    variables: { name: certTitle }
+  };
+
+  let canClaimCert = true;
+  currentCertIds.forEach(id => {
+    const challengeCompleted = completedChallenges.find(
+      challenge => challenge.id === id
+    );
+    if (!challengeCompleted) {
+      canClaimCert = false;
+    }
+  });
+
+  if (!canClaimCert) {
+    yield put(createFlashMessage(flash));
+    return;
+  }
+
+  // redux says challenges are complete, call back end
   try {
     const { response, isCertMap, completedChallenges } = yield call(
       putVerifyCert,
