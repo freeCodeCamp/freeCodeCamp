@@ -67,7 +67,7 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "Responsive Web Design",
+    "title": "(New) Responsive Web Design",
     "intro": [
       "在响应式网页设计的认证课程中，你将学习用于构建网页的语言： HTML（超文本标记语言）用于创建内容，CSS（级联样式表）用于样式设计。",
       "首先，你将通过编写一个猫咪相册应用，学习 HTML 和 CSS 的基本知识。 然后，通过画企鹅来学习像 CSS 变量这样的现代技术，并通过编写网页表单来学习无障碍的最佳实践。",
