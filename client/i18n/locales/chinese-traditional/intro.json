@@ -67,7 +67,7 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "Responsive Web Design",
+    "title": "(New) Responsive Web Design",
     "intro": [
       "在響應式網頁設計的認證課程中，你將學習用於構建網頁的語言： HTML（超文本標記語言）用於創建內容，CSS（級聯樣式表）用於樣式設計。",
       "首先，你將通過編寫一個貓咪相冊應用，學習 HTML 和 CSS 的基本知識。 然後，通過畫企鵝來學習像 CSS 變量這樣的現代技術，並通過編寫網頁表單來學習無障礙的最佳實踐。",
