@@ -9,6 +9,7 @@ import type {
 import { highlightAllUnder } from 'prismjs';
 import React, {
   useEffect,
+  useState,
   Suspense,
   RefObject,
   MutableRefObject,
@@ -212,6 +213,13 @@ const initialData: EditorProperties = {
 };
 
 const Editor = (props: EditorProps): JSX.Element => {
+  const [timeoutHasElapsed, setTimeoutHasElapsed] = useState<boolean>(false);
+  const minTimeout = useRef<NodeJS.Timeout>();
+  useEffect(() => {
+    minTimeout.current = setTimeout(() => {
+      setTimeoutHasElapsed(true);
+    }, 1000 * 60);
+  }, []);
   const { editorRef, initTests } = props;
   // These refs are used during initialisation of the editor as well as by
   // callbacks.  Since they have to be initialised before editorWillMount and
@@ -1045,7 +1053,11 @@ const Editor = (props: EditorProps): JSX.Element => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.previewOpen]);
 
+  const debounce = useRef<NodeJS.Timeout>();
+
   useEffect(() => {
+    clearTimeout(debounce.current);
+
     const { output } = props;
     const { model, insideEditDecId } = dataRef.current;
     const editableRegion = getEditableRegionFromRedux();
@@ -1063,7 +1075,13 @@ const Editor = (props: EditorProps): JSX.Element => {
           submitButton.onclick = () => {
             clearTestFeedback();
             const { submitChallenge } = props;
-            submitChallenge();
+            if (timeoutHasElapsed) {
+              submitChallenge();
+            } else {
+              debounce.current = setTimeout(() => {
+                submitChallenge();
+              }, 750);
+            }
           };
           // Delay setting focus on submit button to ensure aria-live status
           // message is announced first by screen reader.
