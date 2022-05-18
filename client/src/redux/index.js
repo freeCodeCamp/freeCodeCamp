@@ -646,9 +646,7 @@ export const reducer = handleActions(
       }
     }),
     [actionTypes.submitComplete]: (state, { payload }) => {
-      // eslint-disable-next-line no-unused-vars
-      const { username, points, savedChallenges, completedChallenges } =
-        payload;
+      const { points, savedChallenges, completedChallenges } = payload;
       const { appUsername } = state;
       return {
         ...state,
@@ -657,6 +655,7 @@ export const reducer = handleActions(
           ...state.user,
           [appUsername]: {
             ...state.user[appUsername],
+            points,
             completedChallenges: uniqBy(
               [
                 ...completedChallenges,

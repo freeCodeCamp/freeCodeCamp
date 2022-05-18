@@ -91,48 +91,40 @@ function batchSubmitter(type, state) {
  */
 function submitChallenges(type, state) {
   const { username } = userSelector(state);
-  const challengeBody = store.get('completed-challenges', []);
+  const completedChallenges = store.get('completed-challenges', []);
   const update = {
     endpoint: '/challenges-completed',
-    payload: challengeBody // batched challenge[]
+    payload: completedChallenges
   };
 
-  // TODO: There should be no parsing occuring in the below function.
-  // At this point, the `update` should be what the server expects,
-  // and `postChallenge` should just handle the post request and response.
   return postChallenge(update, username);
 }
 
 function submitProject(type, state) {
-  if (type === actionTypes.submitProject) {
-    const challengeType = state.challenge.challengeMeta.challengeType;
-    const { id } = challengeMetaSelector(state);
-    const { solution, githubLink } = projectFormValuesSelector(state);
-    const challengeFiles = challengeFilesSelector(state);
-    const { username } = userSelector(state);
-    // Handle all different project types:
-    const challengeBody = standardizeRequestBody({
-      challengeType,
-      id,
-      solution,
-      githubLink,
-      challengeFiles
-    });
-    const update = {
-      endpoint: '/project-completed',
-      payload: challengeBody
-    };
+  const challengeType = state.challenge.challengeMeta.challengeType;
+  const { id } = challengeMetaSelector(state);
+  const { solution, githubLink } = projectFormValuesSelector(state);
+  const challengeFiles = challengeFilesSelector(state);
+  const { username } = userSelector(state);
+  // Handle all different project types:
+  const challengeBody = standardizeRequestBody({
+    challengeType,
+    id,
+    solution,
+    githubLink,
+    challengeFiles
+  });
+  const update = {
+    endpoint: '/project-completed',
+    payload: challengeBody
+  };
 
-    // TODO: There should be no parsing occuring in the below function.
-    // At this point, the `update` should be what the server expects,
-    // and `postChallenge` should just handle the post request and response.
-    return postChallenge(update, username);
-  }
+  return postChallenge(update, username);
 }
 
 export default function completionEpic(action$, state$) {
   return action$.pipe(
-    ofType([actionTypes.submitChallenge, actionTypes.submitProject]),
+    ofType(actionTypes.submitChallenge),
     switchMap(({ type }) => {
       const state = state$.value;
       const meta = challengeMetaSelector(state);

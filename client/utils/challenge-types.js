@@ -43,13 +43,16 @@ exports.challengeTypes = {
 
 // (Oliver) I don't think we need this for codeally projects, so they're ignored
 // here
+// (Shaun) I think we need this for codeally projects, so they're included here
 exports.isProject = challengeType => {
   if (typeof challengeType !== 'number')
     throw Error('challengeType must be a number');
   return (
     challengeType === frontEndProject ||
     challengeType === backEndProject ||
-    challengeType === pythonProject
+    challengeType === pythonProject ||
+    challengeType === codeAllyCert ||
+    challengeType === multifileCertProject
   );
 };
 
