@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { ofType } from 'redux-observable';
 import { merge, empty } from 'rxjs';
 import {
@@ -103,7 +104,8 @@ function failedUpdateEpic(action$, state$) {
     ignoreElements()
   );
 
-  return merge(storeUpdates, flushUpdates);
+  return storeUpdates;
+  // return merge(storeUpdates, flushUpdates);
 }
 
 export default failedUpdateEpic;

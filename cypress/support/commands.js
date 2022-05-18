@@ -53,11 +53,12 @@ Cypress.Commands.add('toggleAll', () => {
   cy.get('#privacy-settings')
     .find('.toggle-not-active')
     .each(element => {
-      return new Cypress.Promise(resolve => {
-        cy.wrap(element).click().should('have.class', 'toggle-active');
-        resolve();
-      });
+      cy.wrap(element).click().should('have.class', 'toggle-active');
     });
+  new Cypress.Promise(resolve => {
+    cy.get('[data-cy=save-privacy-settings]').click();
+    resolve();
+  });
   cy.get('#honesty-policy').find('button').click().wait(300);
 });
 

@@ -30,6 +30,8 @@ dashedName: build-a-product-landing-page
 
 Atenda às histórias de usuário e passe em todos os testes abaixo para concluir este projeto. Dê ao projeto o seu próprio estilo pessoal. Boa programação!
 
+**Observação:** não se esqueça de adicionar `<link rel="stylesheet" href="styles.css">` em seu HTML para vincular sua folha de estilo e aplicar seu CSS
+
 # --hints--
 
 Você deve ter um elemento `header` com o `id` `header`.
