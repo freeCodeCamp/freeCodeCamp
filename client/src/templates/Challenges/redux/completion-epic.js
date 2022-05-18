@@ -79,50 +79,36 @@ function postChallenge(update, username) {
 function submitChallenges(type, state) {
   if (type === actionTypes.submitChallenges) {
     const challengeType = state.challenge.challengeMeta.challengeType;
-    // TODO: Do tests need to be checked here?
-    const tests = challengeTestsSelector(state);
-    if (
-      challengeType === 11 ||
-      (tests.length > 0 && tests.every(test => test.pass && !test.err))
-    ) {
-      const { username } = userSelector(state);
-      // TODO: get projectData for payload
-      const challengeBody = {};
-      const update = {
-        endpoint: '/project-completed',
-        payload: challengeBody
-      };
+    const { username } = userSelector(state);
+    // TODO: get projectData for payload
+    const challengeBody = {};
+    const update = {
+      endpoint: '/project-completed',
+      payload: challengeBody // batched challenge[]
+    };
 
-      // TODO: There should be no parsing occuring in the below function.
-      // At this point, the `update` should be what the server expects,
-      // and `postChallenge` should just handle the post request and response.
-      return postChallenge(update, username);
-    }
+    // TODO: There should be no parsing occuring in the below function.
+    // At this point, the `update` should be what the server expects,
+    // and `postChallenge` should just handle the post request and response.
+    return postChallenge(update, username);
   }
 }
 
 function submitProject(type, state) {
   if (type === actionTypes.submitProject) {
     const challengeType = state.challenge.challengeMeta.challengeType;
-    // TODO: Do tests need to be checked here?
-    const tests = challengeTestsSelector(state);
-    if (
-      challengeType === 11 ||
-      (tests.length > 0 && tests.every(test => test.pass && !test.err))
-    ) {
-      const { username } = userSelector(state);
-      // TODO: get projectData for payload
-      const challengeBody = {};
-      const update = {
-        endpoint: '/project-completed',
-        payload: challengeBody
-      };
+    const { username } = userSelector(state);
+    // TODO: get projectData for payload
+    const challengeBody = {};
+    const update = {
+      endpoint: '/project-completed',
+      payload: challengeBody
+    };
 
-      // TODO: There should be no parsing occuring in the below function.
-      // At this point, the `update` should be what the server expects,
-      // and `postChallenge` should just handle the post request and response.
-      return postChallenge(update, username);
-    }
+    // TODO: There should be no parsing occuring in the below function.
+    // At this point, the `update` should be what the server expects,
+    // and `postChallenge` should just handle the post request and response.
+    return postChallenge(update, username);
   }
 }
 
@@ -165,3 +151,14 @@ async function findPathToNavigateTo(nextChallengePath, superBlock) {
     return `/learn/${superBlock}/#${superBlock}-projects`;
   }
 }
+
+/*
+1. Camper clicks "Run Tests"
+2. Tests are run
+3. If tests pass, "Submit" button is enabled
+4. If tests fail, "Run Tests" button is enabled
+5. Camper clicks "Submit"
+6. Challenge gets checked through batch-epic
+7. Challenge is set as completed in local state
+8. Once batch is complete, request is sent to server
+*/
