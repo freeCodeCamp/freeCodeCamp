@@ -76,83 +76,54 @@ function postChallenge(update, username) {
  * @param {*} type
  * @param {*} state
  */
-function submitChallenges(type, state) {}
+function submitChallenges(type, state) {
+  if (type === actionTypes.submitChallenges) {
+    const challengeType = state.challenge.challengeMeta.challengeType;
+    // TODO: Do tests need to be checked here?
+    const tests = challengeTestsSelector(state);
+    if (
+      challengeType === 11 ||
+      (tests.length > 0 && tests.every(test => test.pass && !test.err))
+    ) {
+      const { username } = userSelector(state);
+      // TODO: get projectData for payload
+      const challengeBody = {};
+      const update = {
+        endpoint: '/project-completed',
+        payload: challengeBody
+      };
+
+      // TODO: There should be no parsing occuring in the below function.
+      // At this point, the `update` should be what the server expects,
+      // and `postChallenge` should just handle the post request and response.
+      return postChallenge(update, username);
+    }
+  }
+}
 
 function submitProject(type, state) {
-  const { username } = userSelector(state);
-  // TODO: get projectData for payload
-  const challengeBody = {};
-  const update = {
-    endpoint: '/project-completed',
-    payload: challengeBody
-  };
-
-  // TODO: There should be no parsing occuring in the below function.
-  // At this point, the `update` should be what the server expects,
-  // and `postChallenge` should just handle the post request and response.
-  return postChallenge(update, username).pipe(
-    concat(of(updateSolutionFormValues({})))
-  );
-}
-
-function submitModern(type, state) {
-  const challengeType = state.challenge.challengeMeta.challengeType;
-  const tests = challengeTestsSelector(state);
-  if (
-    challengeType === 11 ||
-    (tests.length > 0 && tests.every(test => test.pass && !test.err))
-  ) {
-    if (type === actionTypes.checkChallenge) {
-      return of({ type: 'this was a check challenge' });
-    }
-
-    if (type === actionTypes.submitChallenge) {
-      const { id, block } = challengeMetaSelector(state);
-      const challengeFiles = challengeFilesSelector(state);
+  if (type === actionTypes.submitProject) {
+    const challengeType = state.challenge.challengeMeta.challengeType;
+    // TODO: Do tests need to be checked here?
+    const tests = challengeTestsSelector(state);
+    if (
+      challengeType === 11 ||
+      (tests.length > 0 && tests.every(test => test.pass && !test.err))
+    ) {
       const { username } = userSelector(state);
-
-      let body;
-      if (
-        block === 'javascript-algorithms-and-data-structures-projects' ||
-        challengeType === challengeTypes.multifileCertProject
-      ) {
-        body = standardizeRequestBody({ id, challengeType, challengeFiles });
-      } else {
-        body = {
-          id,
-          challengeType
-        };
-      }
-
+      // TODO: get projectData for payload
+      const challengeBody = {};
       const update = {
-        endpoint: '/modern-challenge-completed',
-        payload: body
+        endpoint: '/project-completed',
+        payload: challengeBody
       };
+
+      // TODO: There should be no parsing occuring in the below function.
+      // At this point, the `update` should be what the server expects,
+      // and `postChallenge` should just handle the post request and response.
       return postChallenge(update, username);
     }
   }
-  return empty();
-}
-
-function submitBackendChallenge(type, state) {
-  const tests = challengeTestsSelector(state);
-  if (tests.length > 0 && tests.every(test => test.pass && !test.err)) {
-    if (type === actionTypes.submitChallenge) {
-      const { id } = challengeMetaSelector(state);
-      const { username } = userSelector(state);
-      const {
-        solution: { value: solution }
-      } = projectFormValuesSelector(state);
-      const challengeInfo = { id, solution };
-
-      const update = {
-        endpoint: '/backend-challenge-completed',
-        payload: challengeInfo
-      };
-      return postChallenge(update, username);
-    }
-  }
-  return empty();
 }
 
 export default function completionEpic(action$, state$) {

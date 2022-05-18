@@ -159,7 +159,7 @@ function projectCompleted(req, res, next) {
     });
   }
 
-  // `body` can exist as the following structures:
+  // `body` may exist as the following structures:
   /*
   # RWD Projects and JS Algorithm Projects
   { 
@@ -213,7 +213,7 @@ function projectCompleted(req, res, next) {
     });
   }
 
-  // Handle all the different types of project
+  // TODO: Handle all the different types of project
 }
 
 const expectedProjectStructures = {
@@ -291,7 +291,7 @@ const expectedProjectStructures = {
  * @returns {boolean}
  */
 function validateChallenge(id, challengeType) {
-  // Ensure challenge `id` exists, and is not a Certification Project
+  // TODO: Ensure challenge `id` exists, and is not a Certification Project
   return false;
 }
 
@@ -302,7 +302,7 @@ function validateChallenge(id, challengeType) {
  * @returns {boolean}
  */
 function validateProject(id, body) {
-  // Ensure project `id` exists, and IS a Certification Project
+  // TODO: Ensure project `id` exists, and IS a Certification Project
 
   // Ensure `body` matches the expected structure
   // TODO: Do we care, if `body` contains too many fields?
