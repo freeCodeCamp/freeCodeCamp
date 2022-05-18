@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import { navigate } from 'gatsby';
-import { omit } from 'lodash-es';
 import { ofType } from 'redux-observable';
 import { of, empty } from 'rxjs';
 import {
@@ -12,6 +11,7 @@ import {
   finalize
 } from 'rxjs/operators';
 
+import store from 'store';
 import {
   challengeTypes,
   isProject,
@@ -38,37 +38,50 @@ import {
   updateSolutionFormValues
 } from './';
 
-function postChallenge(update, username) {
+function postChallenge(update, username, clear = false) {
   const saveChallenge = postUpdate$(update).pipe(
     retry(3),
-    switchMap(({ points, savedChallenges }) => {
-      // TODO: do this all in ajax.ts
-      const payloadWithClientProperties = {
-        ...omit(update.payload, ['files'])
-      };
-      if (update.payload.files) {
-        payloadWithClientProperties.challengeFiles = update.payload.files.map(
-          ({ key, ...rest }) => ({
-            ...rest,
-            fileKey: key
-          })
-        );
-      }
+    switchMap(({ points, savedChallenges, completedChallenges }) => {
       return of(
         submitComplete({
-          submittedChallenge: {
-            username,
-            points,
-            ...payloadWithClientProperties
-          },
+          username,
+          points,
+          completedChallenges,
           savedChallenges: mapFilesToChallengeFiles(savedChallenges)
         }),
         updateComplete()
       );
     }),
-    catchError(() => of(updateFailed(update)))
+    // clear store only on success not on error
+    catchError(() => of(updateFailed(update))),
+    // clear store only on success not on error. DO NOT USE finalize
+    // because it will clear the store on error
+    filter(() => clear)
   );
   return saveChallenge;
+}
+
+function batchSubmitter(type, state) {
+  if (type === actionTypes.submitChallenge) {
+    const completedChallenges = store.get('completed-challenges', []);
+    const { id, challengeType } = challengeMetaSelector(state);
+    const completedChallenge = {
+      id,
+      challengeType
+    };
+    completedChallenges.push(completedChallenge);
+
+    if (completedChallenges.length >= 5) {
+      store.set('completed-challenges', []);
+      return submitChallenges(type, state);
+    } else {
+      store.set('completed-challenges', [
+        ...completedChallenges,
+        completedChallenge
+      ]);
+    }
+  }
+  return empty();
 }
 
 /**
@@ -77,29 +90,34 @@ function postChallenge(update, username) {
  * @param {*} state
  */
 function submitChallenges(type, state) {
-  if (type === actionTypes.submitChallenges) {
-    const challengeType = state.challenge.challengeMeta.challengeType;
-    const { username } = userSelector(state);
-    // TODO: get projectData for payload
-    const challengeBody = {};
-    const update = {
-      endpoint: '/project-completed',
-      payload: challengeBody // batched challenge[]
-    };
+  const { username } = userSelector(state);
+  const challengeBody = store.get('completed-challenges', []);
+  const update = {
+    endpoint: '/challenges-completed',
+    payload: challengeBody // batched challenge[]
+  };
 
-    // TODO: There should be no parsing occuring in the below function.
-    // At this point, the `update` should be what the server expects,
-    // and `postChallenge` should just handle the post request and response.
-    return postChallenge(update, username);
-  }
+  // TODO: There should be no parsing occuring in the below function.
+  // At this point, the `update` should be what the server expects,
+  // and `postChallenge` should just handle the post request and response.
+  return postChallenge(update, username);
 }
 
 function submitProject(type, state) {
   if (type === actionTypes.submitProject) {
     const challengeType = state.challenge.challengeMeta.challengeType;
+    const { id } = challengeMetaSelector(state);
+    const { solution, githubLink } = projectFormValuesSelector(state);
+    const challengeFiles = challengeFilesSelector(state);
     const { username } = userSelector(state);
-    // TODO: get projectData for payload
-    const challengeBody = {};
+    // Handle all different project types:
+    const challengeBody = standardizeRequestBody({
+      challengeType,
+      id,
+      solution,
+      githubLink,
+      challengeFiles
+    });
     const update = {
       endpoint: '/project-completed',
       payload: challengeBody
@@ -114,7 +132,7 @@ function submitProject(type, state) {
 
 export default function completionEpic(action$, state$) {
   return action$.pipe(
-    ofType(actionTypes.submitChallenge),
+    ofType([actionTypes.submitChallenge, actionTypes.submitProject]),
     switchMap(({ type }) => {
       const state = state$.value;
       const meta = challengeMetaSelector(state);
@@ -127,7 +145,7 @@ export default function completionEpic(action$, state$) {
         if (isProject(challengeType)) {
           submitter = submitProject;
         } else {
-          submitter = submitChallenges;
+          submitter = batchSubmitter;
         }
       }
 
