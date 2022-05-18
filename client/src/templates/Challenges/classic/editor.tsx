@@ -19,7 +19,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import store from 'store';
 
-import { debounce } from 'lodash';
+import { debounce } from 'lodash-es';
 import { Loader } from '../../../components/helpers';
 import { Themes } from '../../../components/settings/theme';
 import {
