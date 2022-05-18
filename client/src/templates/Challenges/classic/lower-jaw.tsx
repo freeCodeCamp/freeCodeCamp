@@ -9,8 +9,8 @@ interface LowerJawProps {
   hint?: string;
   challengeIsCompleted?: boolean;
   openHelpModal: () => void;
-  onChallengeExecution: () => void;
-  onChallengeSubmission: () => void;
+  tryToExecuteChallenge: () => void;
+  tryToSubmitChallenge: () => void;
   showFeedback?: boolean;
   isEditorInFocus?: boolean;
   challengeHasErrors?: boolean;
@@ -23,8 +23,8 @@ const LowerJaw = ({
   challengeIsCompleted,
   challengeHasErrors,
   hint,
-  onChallengeExecution,
-  onChallengeSubmission,
+  tryToExecuteChallenge,
+  tryToSubmitChallenge,
   attemptsNumber,
   testsLength,
   isEditorInFocus
@@ -182,7 +182,7 @@ const LowerJaw = ({
           id='test-button'
           className={`btn-block btn ${challengeIsCompleted ? 'sr-only' : ''}`}
           aria-hidden={testBtnariaHidden}
-          onClick={onChallengeExecution}
+          onClick={tryToExecuteChallenge}
         >
           {t('buttons.check-code')}
         </button>
@@ -191,7 +191,7 @@ const LowerJaw = ({
             id='submit-button'
             aria-hidden={!challengeIsCompleted}
             className='btn-block btn'
-            onClick={onChallengeSubmission}
+            onClick={tryToSubmitChallenge}
             ref={submitButtonRef}
           >
             {t('buttons.submit-and-go')}
