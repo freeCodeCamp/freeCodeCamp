@@ -52,6 +52,7 @@ function PrivacySettings({
   function submitNewProfileSettings(e: React.FormEvent) {
     e.preventDefault();
     submitProfileUI(privacyValues);
+    setMadeChanges(false);
   }
 
   return (
@@ -59,7 +60,7 @@ function PrivacySettings({
       <SectionHeader>{t('settings.headings.privacy')}</SectionHeader>
       <FullWidthRow>
         <p>{t('settings.privacy')}</p>
-        <Form inline={true}>
+        <Form inline={true} onSubmit={submitNewProfileSettings}>
           <ToggleSetting
             action={t('settings.labels.my-profile')}
             explain={t('settings.disabled')}
@@ -150,7 +151,6 @@ function PrivacySettings({
             data-cy='save-privacy-settings'
             block={true}
             disabled={!madeChanges}
-            onClick={submitNewProfileSettings}
           >
             {t('buttons.save')}
           </Button>
