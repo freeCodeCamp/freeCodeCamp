@@ -37,7 +37,6 @@ function PrivacySettings({
   t,
   user
 }: PrivacyProps): JSX.Element {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars , @typescript-eslint/no-unsafe-call,  @typescript-eslint/no-unsafe-assignment
   const [privacyValues, setPrivacyValues] = useState(user.profileUI);
   const [madeChanges, setMadeChanges] = useState(false);
 

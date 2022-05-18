@@ -55,7 +55,7 @@ Cypress.Commands.add('toggleAll', () => {
     .each(element => {
       cy.wrap(element).click().should('have.class', 'toggle-active');
     });
-  Cypress.Promise(resolve => {
+  new Cypress.Promise(resolve => {
     cy.get('[data-cy=save-privacy-settings]').click();
     resolve();
   });
