@@ -39,8 +39,8 @@ To pass the test on this challenge, change your `h1` element's text to say `Hell
 
 # --hints--
 
-Your `h1` element should have the text `Hello World`.
-
+Your `h1` element should have the below text.
+`Hello World`
 ```js
 assert.isTrue(/hello(\s)+world/gi.test($('h1').text()));
 ```
