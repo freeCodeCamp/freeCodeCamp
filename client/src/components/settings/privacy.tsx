@@ -37,19 +37,6 @@ function PrivacySettings({
   t,
   user
 }: PrivacyProps): JSX.Element {
-  function handleSubmit(e: React.FormEvent): void {
-    e.preventDefault();
-  }
-
-  function toggleFlag(flag: string): () => void {
-    return () => {
-      const privacyValues = { ...user.profileUI };
-      privacyValues[flag as keyof ProfileUI] =
-        !privacyValues[flag as keyof ProfileUI];
-      submitProfileUI(privacyValues);
-    };
-  }
-
   const {
     isLocked = true,
     showAbout = false,
@@ -63,12 +50,27 @@ function PrivacySettings({
     showTimeLine = false
   } = user.profileUI;
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const privacyValues = { ...user.profileUI };
+
+  function toggleFlag(flag: string): () => void {
+    return () => {
+      privacyValues[flag as keyof ProfileUI] =
+        !privacyValues[flag as keyof ProfileUI];
+    };
+  }
+
+  function submitNewProfileSettings(e: React.FormEvent) {
+    e.preventDefault();
+    submitProfileUI(privacyValues);
+  }
+
   return (
     <div className='privacy-settings' id='privacy-settings'>
       <SectionHeader>{t('settings.headings.privacy')}</SectionHeader>
       <FullWidthRow>
         <p>{t('settings.privacy')}</p>
-        <Form inline={true} onSubmit={handleSubmit}>
+        <Form inline={true} onSubmit={submitNewProfileSettings}>
           <ToggleSetting
             action={t('settings.labels.my-profile')}
             explain={t('settings.disabled')}
@@ -152,6 +154,10 @@ function PrivacySettings({
             onLabel={t('buttons.private')}
             toggleFlag={toggleFlag('showDonation')}
           />
+
+          <Button type='submit' bsSize='lg' bsStyle='primary'>
+            {t('buttons.save')}
+          </Button>
         </Form>
       </FullWidthRow>
       <FullWidthRow>
