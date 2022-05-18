@@ -124,6 +124,7 @@ function challengesCompleted(req, res, next) {
 
     // Add `timestamp` to challenge
     // NOTE: Consider what will happen if this comes with a batch
+    // TODO: handle resubmission of challenges - no new timestamp?
     const timestamp = Date.now();
 
     const completedChallenge = {
@@ -211,6 +212,8 @@ function projectCompleted(req, res, next) {
   }
 
   // TODO: Handle all the different types of project
+  // TODO: Handle resubmission of projects (no new timestamp)
+  const updatedProperties = {};
 }
 
 const expectedProjectStructures = {

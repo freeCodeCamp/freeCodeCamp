@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { navigate } from 'gatsby';
 import { ofType } from 'redux-observable';
 import { of, empty } from 'rxjs';
@@ -12,11 +11,7 @@ import {
 } from 'rxjs/operators';
 
 import store from 'store';
-import {
-  challengeTypes,
-  isProject,
-  submitTypes
-} from '../../../../utils/challenge-types';
+import { isProject } from '../../../../utils/challenge-types';
 import {
   userSelector,
   isSignedInSelector,
@@ -32,10 +27,8 @@ import { actionTypes } from './action-types';
 import {
   projectFormValuesSelector,
   challengeMetaSelector,
-  challengeTestsSelector,
   closeModal,
-  challengeFilesSelector,
-  updateSolutionFormValues
+  challengeFilesSelector
 } from './';
 
 function postChallenge(update, username, clear = false) {
@@ -44,7 +37,6 @@ function postChallenge(update, username, clear = false) {
     switchMap(({ points, savedChallenges, completedChallenges }) => {
       return of(
         submitComplete({
-          username,
           points,
           completedChallenges,
           savedChallenges: mapFilesToChallengeFiles(savedChallenges)
