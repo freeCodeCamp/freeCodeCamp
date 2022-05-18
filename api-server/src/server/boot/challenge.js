@@ -307,8 +307,8 @@ const expectedProjectStructures = {
  * @returns {boolean}
  */
 function validateChallenge(id, challengeType) {
-  // TODO: Ensure challenge `id` exists, and is not a Certification Project
-  return false;
+  const challenge = getChallenges().find(chal => chal.id === id);
+  return !!challenge && ![3, 4, 10, 13, 14].includes(challengeType);
 }
 
 /**
@@ -318,7 +318,7 @@ function validateChallenge(id, challengeType) {
  * @returns {boolean}
  */
 function validateProject(id, body) {
-  // TODO: Ensure project `id` exists, and IS a Certification Project
+  const challenge = getChallenges().find(chal => chal.id === id);
 
   // Ensure `body` matches the expected structure
   // TODO: Do we care, if `body` contains too many fields?
@@ -326,7 +326,8 @@ function validateProject(id, body) {
     body,
     expectedProjectStructures[body.challengeType]
   );
-  return false;
+  // Naomi: We aren't looking at the body here yet.
+  return !!challenge && [3, 4, 10, 13, 14].includes(body.challengeType);
 }
 
 /**
