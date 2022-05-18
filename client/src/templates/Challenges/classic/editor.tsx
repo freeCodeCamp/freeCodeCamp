@@ -636,10 +636,11 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (isChallengeCompleted) {
       jawHeading.classList.add('challenge-description-header');
       const challengeTitle = document.createElement('h1');
-      challengeTitle.innerText = title;
+      challengeTitle.innerHTML = `${title} <span class='sr-only'>Passed</span>`;
       jawHeading.appendChild(challengeTitle);
       const checkmark = ReactDOMServer.renderToStaticMarkup(
         <GreenPass
+          hushScreenReaderText
           style={{
             height: '15px',
             width: '15px',
