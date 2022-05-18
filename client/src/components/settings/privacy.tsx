@@ -1,5 +1,5 @@
 import { Button, Form } from '@freecodecamp/react-bootstrap';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -37,28 +37,20 @@ function PrivacySettings({
   t,
   user
 }: PrivacyProps): JSX.Element {
-  const {
-    isLocked = true,
-    showAbout = false,
-    showCerts = false,
-    showDonation = false,
-    showHeatMap = false,
-    showLocation = false,
-    showName = false,
-    showPoints = false,
-    showPortfolio = false,
-    showTimeLine = false
-  } = user.profileUI;
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const privacyValues = { ...user.profileUI };
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars , @typescript-eslint/no-unsafe-call,  @typescript-eslint/no-unsafe-assignment
+  const [privacyValues, setPrivacyValues] = useState(user.profileUI);
 
   function toggleFlag(flag: string): () => void {
     return () => {
       privacyValues[flag as keyof ProfileUI] =
         !privacyValues[flag as keyof ProfileUI];
+      setPrivacyValues({ ...privacyValues });
     };
   }
+
+  useEffect(() => {
+    console.log('rerender');
+  }, [privacyValues]);
 
   function submitNewProfileSettings(e: React.FormEvent) {
     e.preventDefault();
@@ -74,7 +66,7 @@ function PrivacySettings({
           <ToggleSetting
             action={t('settings.labels.my-profile')}
             explain={t('settings.disabled')}
-            flag={isLocked}
+            flag={privacyValues['isLocked']}
             flagName='isLocked'
             offLabel={t('buttons.public')}
             onLabel={t('buttons.private')}
@@ -83,7 +75,7 @@ function PrivacySettings({
           <ToggleSetting
             action={t('settings.labels.my-name')}
             explain={t('settings.private-name')}
-            flag={!showName}
+            flag={!privacyValues['showName']}
             flagName='name'
             offLabel={t('buttons.public')}
             onLabel={t('buttons.private')}
@@ -91,7 +83,7 @@ function PrivacySettings({
           />
           <ToggleSetting
             action={t('settings.labels.my-location')}
-            flag={!showLocation}
+            flag={!privacyValues['showLocation']}
             flagName='showLocation'
             offLabel={t('buttons.public')}
             onLabel={t('buttons.private')}
@@ -99,7 +91,7 @@ function PrivacySettings({
           />
           <ToggleSetting
             action={t('settings.labels.my-about')}
-            flag={!showAbout}
+            flag={!privacyValues['showAbout']}
             flagName='showAbout'
             offLabel={t('buttons.public')}
             onLabel={t('buttons.private')}
@@ -107,7 +99,7 @@ function PrivacySettings({
           />
           <ToggleSetting
             action={t('settings.labels.my-points')}
-            flag={!showPoints}
+            flag={!privacyValues['showPoints']}
             flagName='showPoints'
             offLabel={t('buttons.public')}
             onLabel={t('buttons.private')}
@@ -115,7 +107,7 @@ function PrivacySettings({
           />
           <ToggleSetting
             action={t('settings.labels.my-heatmap')}
-            flag={!showHeatMap}
+            flag={!privacyValues['showHeatMap']}
             flagName='showHeatMap'
             offLabel={t('buttons.public')}
             onLabel={t('buttons.private')}
@@ -124,7 +116,7 @@ function PrivacySettings({
           <ToggleSetting
             action={t('settings.labels.my-certs')}
             explain={t('settings.disabled')}
-            flag={!showCerts}
+            flag={!privacyValues['showCerts']}
             flagName='showCerts'
             offLabel={t('buttons.public')}
             onLabel={t('buttons.private')}
@@ -132,7 +124,7 @@ function PrivacySettings({
           />
           <ToggleSetting
             action={t('settings.labels.my-portfolio')}
-            flag={!showPortfolio}
+            flag={!privacyValues['showPortfolio']}
             flagName='showPortfolio'
             offLabel={t('buttons.public')}
             onLabel={t('buttons.private')}
@@ -140,7 +132,7 @@ function PrivacySettings({
           />
           <ToggleSetting
             action={t('settings.labels.my-timeline')}
-            flag={!showTimeLine}
+            flag={!privacyValues['showTimeLine']}
             flagName='showTimeLine'
             offLabel={t('buttons.public')}
             onLabel={t('buttons.private')}
@@ -148,7 +140,7 @@ function PrivacySettings({
           />
           <ToggleSetting
             action={t('settings.labels.my-donations')}
-            flag={!showDonation}
+            flag={!privacyValues['showDonation']}
             flagName='showPortfolio'
             offLabel={t('buttons.public')}
             onLabel={t('buttons.private')}
