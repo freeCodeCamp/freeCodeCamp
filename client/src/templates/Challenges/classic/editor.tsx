@@ -557,9 +557,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     attemptRef.current.attempts++;
   }
 
-  function tryToSubmitChallenge() {
-    debounce(props.submitChallenge, 2000)();
-  }
+  const tryToSubmitChallenge = debounce(props.submitChallenge, 2000);
 
   function createLowerJaw(outputNode: HTMLElement, callback?: () => void) {
     const { output } = props;
