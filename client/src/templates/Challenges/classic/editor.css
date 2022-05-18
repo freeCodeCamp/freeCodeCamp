@@ -55,6 +55,10 @@ textarea.inputarea {
   max-width: 600px;
 }
 
+.challenge-description-header {
+  display: flex;
+}
+
 .description-container h1 {
   color: var(--secondary-color);
   font-family: Roboto Mono, monospace;
