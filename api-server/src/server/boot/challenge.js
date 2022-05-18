@@ -19,10 +19,7 @@ import jwt from 'jsonwebtoken';
 import { jwtSecret } from '../../../../config/secrets';
 
 import { environment, deploymentEnv } from '../../../../config/env.json';
-import {
-  fixPartiallyCompletedChallengeItem,
-  fixSavedChallengeItem
-} from '../../common/utils';
+import { fixPartiallyCompletedChallengeItem } from '../../common/utils';
 import { getChallenges } from '../utils/get-curriculum';
 import { ifNoUserSend } from '../utils/middleware';
 import {
@@ -101,29 +98,6 @@ const savableChallenges = getChallenges()
   .filter(challenge => challenge.challengeType === 14)
   .map(challenge => challenge.id);
 
-function buildNewSavedChallenges({
-  user,
-  challengeId,
-  completedDate = Date.now(),
-  files
-}) {
-  const { savedChallenges } = user;
-  const challengeToSave = {
-    id: challengeId,
-    lastSavedDate: completedDate,
-    files: files?.map(file =>
-      pick(file, ['contents', 'key', 'name', 'ext', 'history'])
-    )
-  };
-
-  const newSavedChallenges = uniqBy(
-    [challengeToSave, ...savedChallenges.map(fixSavedChallengeItem)],
-    'id'
-  );
-
-  return newSavedChallenges;
-}
-
 export function buildUserUpdate(
   user,
   challengeId,
@@ -152,7 +126,8 @@ export function buildUserUpdate(
   const {
     timezone: userTimezone,
     completedChallenges = [],
-    needsModeration = false
+    needsModeration = false,
+    savedChallenges = []
   } = user;
 
   const oldIndex = completedChallenges.findIndex(
@@ -176,18 +151,26 @@ export function buildUserUpdate(
     $push.completedChallenges = finalChallenge;
   }
 
-  let newSavedChallenges;
-
   if (savableChallenges.includes(challengeId)) {
-    newSavedChallenges = buildNewSavedChallenges({
-      user,
-      challengeId,
-      completedDate,
-      files
-    });
+    const challengeToSave = {
+      id: challengeId,
+      lastSavedDate: completedDate,
+      files: files?.map(file =>
+        pick(file, ['contents', 'key', 'name', 'ext', 'history'])
+      )
+    };
 
-    // if savableChallenge, update saved array when submitting
-    $set.savedChallenges = newSavedChallenges;
+    const savedIndex = savedChallenges.findIndex(
+      ({ id }) => challengeId === id
+    );
+
+    if (savedIndex >= 0) {
+      $set[`savedChallenges.${savedIndex}`] = challengeToSave;
+      savedChallenges[savedIndex] = challengeToSave;
+    } else {
+      $push.savedChallenges = challengeToSave;
+      savedChallenges.push(challengeToSave);
+    }
   }
 
   // remove from partiallyCompleted on submit
@@ -212,7 +195,7 @@ export function buildUserUpdate(
     alreadyCompleted,
     updateData,
     completedDate: finalChallenge.completedDate,
-    savedChallenges: newSavedChallenges
+    savedChallenges
   };
 }
 
@@ -451,26 +434,42 @@ function backendChallengeCompleted(req, res, next) {
 
 function saveChallenge(req, res, next) {
   const user = req.user;
+  const { savedChallenges = [] } = user;
   const { id: challengeId, files = [] } = req.body;
 
   if (!savableChallenges.includes(challengeId)) {
     return res.status(403).send('That challenge type is not savable');
   }
 
-  const newSavedChallenges = buildNewSavedChallenges({
-    user,
-    challengeId,
-    completedDate: Date.now(),
-    files
-  });
+  const challengeToSave = {
+    id: challengeId,
+    lastSavedDate: Date.now(),
+    files: files?.map(file =>
+      pick(file, ['contents', 'key', 'name', 'ext', 'history'])
+    )
+  };
 
   return user
     .getSavedChallenges$()
     .flatMap(() => {
+      const savedIndex = savedChallenges.findIndex(
+        ({ id }) => challengeId === id
+      );
+      const $push = {},
+        $set = {};
+
+      if (savedIndex >= 0) {
+        $set[`savedChallenges.${savedIndex}`] = challengeToSave;
+        savedChallenges[savedIndex] = challengeToSave;
+      } else {
+        $push.savedChallenges = challengeToSave;
+        savedChallenges.push(challengeToSave);
+      }
+
       const updateData = {};
-      updateData.$set = {
-        savedChallenges: newSavedChallenges
-      };
+      if (!isEmpty($set)) updateData.$set = $set;
+      if (!isEmpty($push)) updateData.$push = $push;
+
       const updatePromise = new Promise((resolve, reject) =>
         user.updateAttributes(updateData, err => {
           if (err) {
@@ -481,7 +480,7 @@ function saveChallenge(req, res, next) {
       );
       return Observable.fromPromise(updatePromise).doOnNext(() => {
         return res.json({
-          savedChallenges: newSavedChallenges
+          savedChallenges
         });
       });
     })
