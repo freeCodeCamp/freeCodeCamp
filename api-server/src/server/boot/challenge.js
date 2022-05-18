@@ -173,18 +173,22 @@ function projectCompleted(req, res, next) {
     ]
     id: string,
   }
-  # Front End Libraries Projects
+  # Front End Libraries and Data Visualisation and APIs
   {
     challengeType: number,
     id: string,
     solution: string,
   }
-  # Back End Projects
+  # Back End Development / Quality Assurance / Scientific Computing with Python / Data Analysis with Python / Information Security / Machine Learning with Python
   {
     challengeType: number,
     id: string,
     solution: string,
     githubLink?: string,
+  }
+  # Relational Database
+  {
+    ???
   }
   # Take Home Projects
   {
@@ -207,6 +211,76 @@ function projectCompleted(req, res, next) {
 
   // Handle all the different types of project
 }
+
+const expectedProjectStructures = [
+  {
+    'responsive-web-design': [
+      'challengeType',
+      'files',
+      'files.contents',
+      'files.ext',
+      'files.history',
+      'files.key',
+      'files.name',
+      'id'
+    ]
+  },
+  {
+    'javascript-algorithms-and-data-structures': [
+      'challengeType',
+      'files',
+      'files.contents',
+      'files.ext',
+      'files.history',
+      'files.key',
+      'files.name',
+      'id'
+    ]
+  },
+  {
+    'front-end-development-libraries': ['challengeType', 'id', 'solution']
+  },
+  {
+    'data-visualization-and-apis': ['challengeType', 'id', 'solution']
+  },
+
+  {
+    'back-end-development': ['challengeType', 'id', 'solution', 'githubLink']
+  },
+  {
+    'quality-assurance': ['challengeType', 'id', 'solution', 'githubLink']
+  },
+  {
+    'scientific-computing-with-python': [
+      'challengeType',
+      'id',
+      'solution',
+      'githubLink'
+    ]
+  },
+  {
+    'data-analysis-with-python': [
+      'challengeType',
+      'id',
+      'solution',
+      'githubLink'
+    ]
+  },
+  {
+    'information-security': ['challengeType', 'id', 'solution', 'githubLink']
+  },
+  {
+    'machine-learning-with-python': [
+      'challengeType',
+      'id',
+      'solution',
+      'githubLink'
+    ]
+  },
+  {
+    'take-home-projects': ['id', 'solution']
+  }
+];
 
 /**
  * Validates the `id` submitted is a valid challenge.
