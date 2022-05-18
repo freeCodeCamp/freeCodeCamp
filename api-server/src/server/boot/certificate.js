@@ -16,7 +16,7 @@ import {
 } from '../../../../config/certification-settings';
 import { reportError } from '../middlewares/sentry-error-handler.js';
 
-import { deprecatedEndpoint } from '../utils/deprecatedEndpoint';
+import { deprecatedEndpoint } from '../utils/disabled-endpoints';
 import { getChallenges } from '../utils/get-curriculum';
 import { ifNoUser401 } from '../utils/middleware';
 import { observeQuery } from '../utils/rx';

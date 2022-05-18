@@ -26,6 +26,8 @@ dashedName: build-a-personal-portfolio-webpage
 
 Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
 
+**Note:** Be sure to add `<link rel="stylesheet" href="styles.css">` in your HTML to link your stylesheet and apply your CSS
+
 # --hints--
 
 Your portfolio should have a "Welcome" section with an `id` of `welcome-section`.
@@ -116,7 +118,9 @@ assert(!!el && el.target === '_blank')
 Your portfolio should use at least one media query.
 
 ```js
-assert.isAtLeast(new __helpers.CSSHelp(document).getCSSRules('media')?.length, 1);
+const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
+const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
+assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 ```
 
 Your `#navbar` element should always be at the top of the viewport.

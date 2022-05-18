@@ -67,7 +67,7 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "レスポンシブウェブデザイン",
+    "title": "(New) Responsive Web Design",
     "intro": [
       "このレスポンシブウェブデザイン認定講座では、開発者がウェブページを構築するために使用する言語について学びます。コンテンツには HTML (Hypertext Markup Language)、デザインには CSS (Cascading Style Sheets) を使用します。",
       "初めに、HTML と CSS の基礎を学ぶために、猫の写真アプリを作ります。その後、ペンギンの絵を作りながら CSS 変数等のモダンなテクニックを学びます。そしてウェブフォームを作りながらアクセシビリティのベストプラクティスを学びます。",
@@ -104,10 +104,10 @@
         ]
       },
       "build-a-technical-documentation-page-project": {
-        "title": "テクニカルドキュメントページ",
+        "title": "技術ドキュメントページ",
         "intro": [
           "これは認定証を獲得するために必須のプロジェクトの 1 つです。",
-          "このプロジェクトでは、トピックの説明書または参考資料として役に立つテクニカルドキュメントページを構築します。"
+          "このプロジェクトでは、トピックの説明書または参考資料として役に立つ技術ドキュメントページを構築します。"
         ]
       },
       "learn-html-by-building-a-cat-photo-app": {
@@ -296,23 +296,68 @@
           "さあ、新たな JavaScript 技能を活用する時です。これらのプロジェクトは以前にやったアルゴリズムスクリプトチャレンジに類似しています – ただもっと難しいです。",
           "JavaScript アルゴリズムとデータ構造認定証を取得するために、これら 5 つの JavaScript プロジェクトを完成させてください。"
         ]
-      },
-      "basic-javascript-rpg-game": {
-        "title": "基本的な JavaScript RPG ゲーム",
+      }
+    }
+  },
+  "2022/javascript-algorithms-and-data-structures": {
+    "title": "JavaScript Algorithms and Data Structures (Beta)",
+    "intro": [
+      "placeholder",
+      "placeholder"
+    ],
+    "note": "",
+    "blocks": {
+      "build-a-caesars-cipher-project": {
+        "title": "Build a Casears Cipher Project",
         "intro": [
           "",
           ""
         ]
       },
-      "intermediate-javascript-calorie-counter": {
-        "title": "中級の JavaScript カロリーカウンター",
+      "build-a-cash-register-project": {
+        "title": "Build a Cash Register Project",
         "intro": [
           "",
           ""
         ]
       },
-      "functional-programming-spreadsheet": {
-        "title": "関数型プログラミングスプレッドシート",
+      "build-a-palindrome-checker-project": {
+        "title": "Build a Palindrome Checker Project",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "build-a-roman-numeral-converter-project": {
+        "title": "Build a Roman Numeral Converter Project",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "build-a-telephone-number-validator-project": {
+        "title": "Build a Telephone Number Validator Project",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "learn-basic-javascript-by-building-a-role-playing-game": {
+        "title": "Learn Basic JavaScript by Building a Role Playing Game",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "learn-form-validation-by-building-a-calorie-counter": {
+        "title": "Learn Form Validation by Building a Calorie Counter",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "learn-functional-programming-by-building-a-spreadsheet": {
+        "title": "Learn Functional Programming by Building a Spreadsheet",
         "intro": [
           "",
           ""
@@ -781,8 +826,8 @@
     "legacy-header": "レガシーコース",
     "legacy-desc": "このコースは認定講座から除外されましたが、追加の学習用に引き続きご利用いただけます。",
     "legacy-go-back": "カリキュラムの最新版へ移動",
-    "new-rwd-desc": "We have updated our Responsive Web Design Curriculum. If you were previously working on the RWD curriculum, your progress is still saved! You can find it under the Legacy Responsive Web Design section.",
-    "new-rwd-article": "We encourage you to read about the changes we made and consider exploring the updated curriculum.",
+    "new-rwd-desc": "レスポンシブウェブデザインのカリキュラムが更新されました。以前のカリキュラムに取り組まれていた場合も、進捗状況は保存されておりますのでご安心ください。以前の進捗状況は「レスポンシブウェブデザイン (レガシー)」セクションでご確認いただけます。",
+    "new-rwd-article": "更新のお知らせをご確認いただき、新カリキュラムのご利用をご検討ください。",
     "viewing-upcoming-change": "ベータ版のページを閲覧中です。 ",
     "go-back-to-learn": "カリキュラムの安定版へ戻る。",
     "read-database-cert-article": "続行する前に、こちらのフォーラム投稿をお読みください。",

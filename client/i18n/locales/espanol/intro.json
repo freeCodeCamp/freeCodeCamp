@@ -67,7 +67,7 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "Responsive Web Design",
+    "title": "(New) Responsive Web Design",
     "intro": [
       "En esta certificación de Diseño Web Responsivo, aprenderás los lenguajes que los desarrolladores usan para construir páginas web: HTML (Lenguaje de Marcado de Hipertexto) para el contenido, y CSS (hojas de estilo en cascada) para el diseño.",
       "Primero, crearás una aplicación de fotos de gatos para aprender los conceptos básicos de HTML y CSS. Más adelante, aprenderás técnicas modernas como variables CSS mediante la construcción de un pingüino, y las mejores prácticas para la accesibilidad mediante la construcción de un formulario web.",
@@ -296,23 +296,68 @@
           "¡Ha llegado el momento de poner tus habilidades de JavaScript a prueba! Estos proyectos son muy similares a los desafíos algorítmicos que has hecho antes, pero más difíciles.",
           "Completa estos 5 proyectos de JavaScript para obtener la certificación algoritmos de JavaScript y estructuras de datos."
         ]
-      },
-      "basic-javascript-rpg-game": {
-        "title": "Juego RPG básico en JavaScript",
+      }
+    }
+  },
+  "2022/javascript-algorithms-and-data-structures": {
+    "title": "JavaScript Algorithms and Data Structures (Beta)",
+    "intro": [
+      "placeholder",
+      "placeholder"
+    ],
+    "note": "",
+    "blocks": {
+      "build-a-caesars-cipher-project": {
+        "title": "Build a Casears Cipher Project",
         "intro": [
           "",
           ""
         ]
       },
-      "intermediate-javascript-calorie-counter": {
-        "title": "Intermedio JavaScript contador de calorías",
+      "build-a-cash-register-project": {
+        "title": "Build a Cash Register Project",
         "intro": [
           "",
           ""
         ]
       },
-      "functional-programming-spreadsheet": {
-        "title": "Hoja de cálculo de programación funcional",
+      "build-a-palindrome-checker-project": {
+        "title": "Build a Palindrome Checker Project",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "build-a-roman-numeral-converter-project": {
+        "title": "Build a Roman Numeral Converter Project",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "build-a-telephone-number-validator-project": {
+        "title": "Build a Telephone Number Validator Project",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "learn-basic-javascript-by-building-a-role-playing-game": {
+        "title": "Learn Basic JavaScript by Building a Role Playing Game",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "learn-form-validation-by-building-a-calorie-counter": {
+        "title": "Learn Form Validation by Building a Calorie Counter",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "learn-functional-programming-by-building-a-spreadsheet": {
+        "title": "Learn Functional Programming by Building a Spreadsheet",
         "intro": [
           "",
           ""

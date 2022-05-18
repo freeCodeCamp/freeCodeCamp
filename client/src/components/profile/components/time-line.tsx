@@ -193,7 +193,7 @@ function TimelineInner({
             show={solutionOpen}
           >
             <Modal.Header closeButton={true}>
-              <Modal.Title id='contained-modal-title'>
+              <Modal.Title id='contained-modal-title' className='text-center'>
                 {`${username}'s Solution to ${
                   idToNameMap.get(id)?.challengeTitle ?? ''
                 }`}

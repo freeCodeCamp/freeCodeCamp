@@ -222,7 +222,9 @@ assert(!!el && left1 >= -15 && left1 <= 15 && left2 >= -15 && left2 <= 15)
 技術ドキュメントのプロジェクトに、少なくとも 1 つのメディアクエリが使われている必要があります
 
 ```js
-assert.isAtLeast(new __helpers.CSSHelp(document).getCSSRules('media')?.length, 1);
+const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
+const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
+assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 ```
 
 # --seed--

@@ -166,12 +166,17 @@ export function Map({
   `);
 
   const nodes = data.allChallengeNode.nodes;
+  const temp = [
+    nodes[0],
+    nodes[11],
+    ...nodes.filter((_, i) => i !== 0 && i !== 11)
+  ];
 
   return (
     <div className='map-ui' data-test-label='learn-curriculum-map'>
       {forLanding
-        ? renderLandingMap(nodes)
-        : renderLearnMap(nodes, currentSuperBlock)}
+        ? renderLandingMap(temp)
+        : renderLearnMap(temp, currentSuperBlock)}
     </div>
   );
 }
