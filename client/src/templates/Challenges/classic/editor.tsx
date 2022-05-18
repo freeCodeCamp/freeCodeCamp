@@ -1,3 +1,4 @@
+import * as ReactDOMServer from 'react-dom/server';
 import Loadable from '@loadable/component';
 // eslint-disable-next-line import/no-duplicates
 import type * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api';
@@ -53,8 +54,10 @@ import {
   isResettingSelector,
   stopResetting,
   isProjectPreviewModalOpenSelector,
-  openModal
+  openModal,
+  isChallengeCompletedSelector
 } from '../redux';
+import GreenPass from '../../../assets/icons/green-pass';
 import LowerJaw from './lower-jaw';
 
 import './editor.css';
@@ -100,6 +103,7 @@ interface EditorProps {
     editableRegionBoundaries?: number[];
   }) => void;
   usesMultifileEditor: boolean;
+  isChallengeCompleted: boolean;
 }
 
 // TODO: this is grab bag of unrelated properties.  There's no need for them to
@@ -128,6 +132,7 @@ const mapStateToProps = createSelector(
   isSignedInSelector,
   userSelector,
   challengeTestsSelector,
+  isChallengeCompletedSelector,
   (
     canFocus: boolean,
     { challengeType }: { challengeType: number },
@@ -137,7 +142,8 @@ const mapStateToProps = createSelector(
     isResetting: boolean,
     isSignedIn: boolean,
     { theme = Themes.Default }: { theme: Themes },
-    tests: [{ text: string; testString: string }]
+    tests: [{ text: string; testString: string }],
+    isChallengeCompleted: boolean
   ) => ({
     canFocus: open ? false : canFocus,
     challengeType,
@@ -146,7 +152,8 @@ const mapStateToProps = createSelector(
     isSignedIn,
     output,
     theme,
-    tests
+    tests,
+    isChallengeCompleted
   })
 );
 
@@ -617,9 +624,30 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   function createDescription(editor: editor.IStandaloneCodeEditor) {
     if (dataRef.current.descriptionNode) return dataRef.current.descriptionNode;
-    const { description, title } = props;
-    const jawHeading = document.createElement('h1');
-    jawHeading.innerText = title;
+    const { description, title, isChallengeCompleted } = props;
+    const jawHeading = isChallengeCompleted
+      ? document.createElement('div')
+      : document.createElement('h1');
+    if (isChallengeCompleted) {
+      jawHeading.classList.add('challenge-description-header');
+      const challengeTitle = document.createElement('h1');
+      challengeTitle.innerText = title;
+      jawHeading.appendChild(challengeTitle);
+      const checkmark = ReactDOMServer.renderToStaticMarkup(
+        <GreenPass
+          style={{
+            height: '15px',
+            width: '15px',
+            marginLeft: '7px'
+          }}
+        />
+      );
+      const completedChallengeHeader = document.createElement('div');
+      completedChallengeHeader.innerHTML = checkmark;
+      jawHeading.appendChild(completedChallengeHeader);
+    } else {
+      jawHeading.innerText = title;
+    }
     const domNode = document.createElement('div');
     const desc = document.createElement('div');
     const descContainer = document.createElement('div');
