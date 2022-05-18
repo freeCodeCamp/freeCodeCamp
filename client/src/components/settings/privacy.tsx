@@ -1,5 +1,5 @@
 import { Button, Form } from '@freecodecamp/react-bootstrap';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -39,18 +39,16 @@ function PrivacySettings({
 }: PrivacyProps): JSX.Element {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars , @typescript-eslint/no-unsafe-call,  @typescript-eslint/no-unsafe-assignment
   const [privacyValues, setPrivacyValues] = useState(user.profileUI);
+  const [madeChanges, setMadeChanges] = useState(false);
 
   function toggleFlag(flag: string): () => void {
     return () => {
       privacyValues[flag as keyof ProfileUI] =
         !privacyValues[flag as keyof ProfileUI];
+      setMadeChanges(true);
       setPrivacyValues({ ...privacyValues });
     };
   }
-
-  useEffect(() => {
-    console.log('rerender');
-  }, [privacyValues]);
 
   function submitNewProfileSettings(e: React.FormEvent) {
     e.preventDefault();
@@ -62,7 +60,7 @@ function PrivacySettings({
       <SectionHeader>{t('settings.headings.privacy')}</SectionHeader>
       <FullWidthRow>
         <p>{t('settings.privacy')}</p>
-        <Form inline={true} onSubmit={submitNewProfileSettings}>
+        <Form inline={true}>
           <ToggleSetting
             action={t('settings.labels.my-profile')}
             explain={t('settings.disabled')}
@@ -146,8 +144,15 @@ function PrivacySettings({
             onLabel={t('buttons.private')}
             toggleFlag={toggleFlag('showDonation')}
           />
-
-          <Button type='submit' bsSize='lg' bsStyle='primary'>
+          <Button
+            type='submit'
+            bsSize='lg'
+            bsStyle='primary'
+            data-cy='save-privacy-settings'
+            block={true}
+            disabled={!madeChanges}
+            onClick={submitNewProfileSettings}
+          >
             {t('buttons.save')}
           </Button>
         </Form>
