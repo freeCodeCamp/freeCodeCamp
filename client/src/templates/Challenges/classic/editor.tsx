@@ -19,7 +19,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import store from 'store';
 
-import { debounce } from 'lodash';
+import { debounce } from 'lodash-es';
 import { Loader } from '../../../components/helpers';
 import { Themes } from '../../../components/settings/theme';
 import {
@@ -415,10 +415,9 @@ const Editor = (props: EditorProps): JSX.Element => {
       run: () => {
         if (props.usesMultifileEditor) {
           if (challengeIsComplete()) {
-            debounce(props.submitChallenge, 2000);
+            tryToSubmitChallenge();
           } else {
-            props.executeChallenge();
-            attemptRef.current.attempts++;
+            tryToExecuteChallenge();
           }
         } else {
           props.executeChallenge({ showCompletionModal: true });
@@ -553,6 +552,13 @@ const Editor = (props: EditorProps): JSX.Element => {
     dataRef.current.descriptionZoneId = changeAccessor.addZone(viewZone);
   };
 
+  function tryToExecuteChallenge() {
+    props.executeChallenge();
+    attemptRef.current.attempts++;
+  }
+
+  const tryToSubmitChallenge = debounce(props.submitChallenge, 2000);
+
   function createLowerJaw(outputNode: HTMLElement, callback?: () => void) {
     const { output } = props;
     const isChallengeComplete = challengeIsComplete();
@@ -560,14 +566,13 @@ const Editor = (props: EditorProps): JSX.Element => {
     ReactDOM.render(
       <LowerJaw
         openHelpModal={props.openHelpModal}
-        executeChallenge={props.executeChallenge}
+        tryToExecuteChallenge={tryToExecuteChallenge}
         hint={output[1]}
         testsLength={props.tests.length}
         attemptsNumber={attemptRef.current.attempts}
         challengeIsCompleted={isChallengeComplete}
         challengeHasErrors={challengeHasErrors()}
-        submitChallenge={props.submitChallenge}
-        onAttempt={() => attemptRef.current.attempts++}
+        tryToSubmitChallenge={tryToSubmitChallenge}
         isEditorInFocus={isEditorInFocus}
       />,
       outputNode,
