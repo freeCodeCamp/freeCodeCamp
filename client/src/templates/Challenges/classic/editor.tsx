@@ -415,10 +415,9 @@ const Editor = (props: EditorProps): JSX.Element => {
       run: () => {
         if (props.usesMultifileEditor) {
           if (challengeIsComplete()) {
-            debounce(props.submitChallenge, 2000);
+            onChallengeSubmission();
           } else {
-            props.executeChallenge();
-            attemptRef.current.attempts++;
+            onChallengeExecution();
           }
         } else {
           props.executeChallenge({ showCompletionModal: true });
@@ -553,6 +552,15 @@ const Editor = (props: EditorProps): JSX.Element => {
     dataRef.current.descriptionZoneId = changeAccessor.addZone(viewZone);
   };
 
+  function onChallengeExecution() {
+    props.executeChallenge();
+    attemptRef.current.attempts++;
+  }
+
+  function onChallengeSubmission() {
+    debounce(props.submitChallenge, 2000)();
+  }
+
   function createLowerJaw(outputNode: HTMLElement, callback?: () => void) {
     const { output } = props;
     const isChallengeComplete = challengeIsComplete();
@@ -560,14 +568,13 @@ const Editor = (props: EditorProps): JSX.Element => {
     ReactDOM.render(
       <LowerJaw
         openHelpModal={props.openHelpModal}
-        executeChallenge={props.executeChallenge}
+        onChallengeExecution={onChallengeExecution}
         hint={output[1]}
         testsLength={props.tests.length}
         attemptsNumber={attemptRef.current.attempts}
         challengeIsCompleted={isChallengeComplete}
         challengeHasErrors={challengeHasErrors()}
-        submitChallenge={props.submitChallenge}
-        onAttempt={() => attemptRef.current.attempts++}
+        onChallengeSubmission={onChallengeSubmission}
         isEditorInFocus={isEditorInFocus}
       />,
       outputNode,

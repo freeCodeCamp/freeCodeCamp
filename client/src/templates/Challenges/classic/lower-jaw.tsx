@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { debounce } from 'lodash';
 import Fail from '../../../assets/icons/fail';
 import LightBulb from '../../../assets/icons/lightbulb';
 import GreenPass from '../../../assets/icons/green-pass';
@@ -10,14 +9,13 @@ interface LowerJawProps {
   hint?: string;
   challengeIsCompleted?: boolean;
   openHelpModal: () => void;
-  executeChallenge: () => void;
-  submitChallenge: () => void;
+  onChallengeExecution: () => void;
+  onChallengeSubmission: () => void;
   showFeedback?: boolean;
   isEditorInFocus?: boolean;
   challengeHasErrors?: boolean;
   testsLength?: number;
   attemptsNumber?: number;
-  onAttempt?: () => void;
 }
 
 const LowerJaw = ({
@@ -25,11 +23,10 @@ const LowerJaw = ({
   challengeIsCompleted,
   challengeHasErrors,
   hint,
-  executeChallenge,
-  submitChallenge,
+  onChallengeExecution,
+  onChallengeSubmission,
   attemptsNumber,
   testsLength,
-  onAttempt,
   isEditorInFocus
 }: LowerJawProps): JSX.Element => {
   const [previousHint, setpreviousHint] = useState('');
@@ -162,11 +159,6 @@ const LowerJaw = ({
       : sentenceArray[0];
   };
 
-  const onTestButtonClick = () => {
-    executeChallenge();
-    if (onAttempt) onAttempt();
-  };
-
   const renderHelpButton = () => {
     const isAtteptsLargerThanTest =
       attemptsNumber && testsLength && attemptsNumber >= testsLength;
@@ -190,7 +182,7 @@ const LowerJaw = ({
           id='test-button'
           className={`btn-block btn ${challengeIsCompleted ? 'sr-only' : ''}`}
           aria-hidden={testBtnariaHidden}
-          onClick={onTestButtonClick}
+          onClick={onChallengeExecution}
         >
           {t('buttons.check-code')}
         </button>
@@ -199,7 +191,7 @@ const LowerJaw = ({
             id='submit-button'
             aria-hidden={!challengeIsCompleted}
             className='btn-block btn'
-            onClick={debounce(submitChallenge, 2000)}
+            onClick={onChallengeSubmission}
             ref={submitButtonRef}
           >
             {t('buttons.submit-and-go')}
