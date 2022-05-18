@@ -167,6 +167,13 @@ const LowerJaw = ({
     if (onAttempt) onAttempt();
   };
 
+  const onSubmitButtonClick = () => {
+    if (submitButtonRef.current) {
+      submitButtonRef.current.disabled = true;
+    }
+    debounce(submitChallenge, 2000);
+  };
+
   const renderHelpButton = () => {
     const isAtteptsLargerThanTest =
       attemptsNumber && testsLength && attemptsNumber >= testsLength;
@@ -199,7 +206,7 @@ const LowerJaw = ({
             id='submit-button'
             aria-hidden={!challengeIsCompleted}
             className='btn-block btn'
-            onClick={debounce(submitChallenge, 2000)}
+            onClick={onSubmitButtonClick}
             ref={submitButtonRef}
           >
             {t('buttons.submit-and-go')}
