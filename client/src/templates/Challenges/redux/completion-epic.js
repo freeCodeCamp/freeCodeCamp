@@ -10,6 +10,7 @@ import {
   filter,
   finalize
 } from 'rxjs/operators';
+import store from 'store';
 
 import { challengeTypes, submitTypes } from '../../../../utils/challenge-types';
 import {
@@ -78,28 +79,72 @@ function submitModern(type, state) {
     }
 
     if (type === actionTypes.submitChallenge) {
+      const completedChallenges = store.get('completed-challenges', []);
       const { id, block } = challengeMetaSelector(state);
       const challengeFiles = challengeFilesSelector(state);
       const { username } = userSelector(state);
 
-      let body;
       if (
         block === 'javascript-algorithms-and-data-structures-projects' ||
         challengeType === challengeTypes.multifileCertProject
       ) {
-        body = standardizeRequestBody({ id, challengeType, challengeFiles });
-      } else {
-        body = {
+        /**
+         * If it's a file-based cert project we want to transform it and send it right away.
+         */
+        const body = standardizeRequestBody({
+          id,
+          challengeType,
+          challengeFiles
+        });
+        const update = {
+          endpoint: '/modern-challenge-completed',
+          payload: body
+        };
+        return postChallenge(update, username);
+      }
+      if (
+        [
+          challengeTypes.backEndProject,
+          challengeTypes.frontEndProject,
+          challengeTypes.pythonProject
+        ].includes(challengeType)
+      ) {
+        /**
+         * If it's a non-file-based cert project we don't want to transform it, but still send it right away.
+         */
+        const body = {
           id,
           challengeType
         };
+        const update = {
+          endpoint: '/modern-challenge-completed',
+          payload: body
+        };
+        return postChallenge(update, username);
       }
 
-      const update = {
-        endpoint: '/modern-challenge-completed',
-        payload: body
+      /**
+       * Everything else should be a challenge step, so we want to push it to store and check if we have more than 5.
+       */
+      const body = {
+        id,
+        challengeType
       };
-      return postChallenge(update, username);
+
+      completedChallenges.push(body);
+
+      if (completedChallenges.length >= 5) {
+        store.set('completed-challenges', []);
+        const update = {
+          endpoint: '/modern-challenge-completed',
+          payload: completedChallenges
+        };
+        /**
+         * TODO: Do we want a different method for arrays? Different endpoint?
+         */
+        return postChallenge(update, username);
+      }
+      store.set('completed-challenges', [...completedChallenges, body]);
     }
   }
   return empty();

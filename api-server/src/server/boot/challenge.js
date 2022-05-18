@@ -265,9 +265,7 @@ export async function createChallengeUrlResolver(
 }
 
 export function isValidChallengeCompletion(req, res, next) {
-  const {
-    body: { id, challengeType, solution }
-  } = req;
+  const { body } = req;
 
   // ToDO: Validate other things (challengeFiles, etc)
   const isValidChallengeCompletionErrorMsg = {
@@ -275,17 +273,19 @@ export function isValidChallengeCompletion(req, res, next) {
     message: 'That does not appear to be a valid challenge submission.'
   };
 
-  if (!ObjectID.isValid(id)) {
-    log('isObjectId', id, ObjectID.isValid(id));
-    return res.status(403).json(isValidChallengeCompletionErrorMsg);
-  }
-  if ('challengeType' in req.body && !isNumeric(String(challengeType))) {
-    log('challengeType', challengeType, isNumeric(challengeType));
-    return res.status(403).json(isValidChallengeCompletionErrorMsg);
-  }
-  if ('solution' in req.body && !isURL(solution)) {
-    log('isObjectId', id, ObjectID.isValid(id));
-    return res.status(403).json(isValidChallengeCompletionErrorMsg);
+  for (const { id, challengeType, solution } of body) {
+    if (!ObjectID.isValid(id)) {
+      log('isObjectId', id, ObjectID.isValid(id));
+      return res.status(403).json(isValidChallengeCompletionErrorMsg);
+    }
+    if (challengeType && !isNumeric(String(challengeType))) {
+      log('challengeType', challengeType, isNumeric(challengeType));
+      return res.status(403).json(isValidChallengeCompletionErrorMsg);
+    }
+    if (solution && !isURL(solution)) {
+      log('isObjectId', id, ObjectID.isValid(id));
+      return res.status(403).json(isValidChallengeCompletionErrorMsg);
+    }
   }
   return next();
 }
