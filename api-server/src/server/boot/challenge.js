@@ -284,19 +284,12 @@ const expectedProjectStructures = {
     'id'
   ],
   [challengeTypes.zipline]: ['challengeType', 'id', 'solution'], // 3 'front-end-development-libraries'
-  [challengeTypes.zipline]: ['challengeType', 'id', 'solution'], // 3 'data-visualization-and-apis'
   [challengeTypes.backEndProject]: [
     'challengeType',
     'id',
     'solution',
     'githubLink'
   ], // 4 'back-end-development'
-  [challengeTypes.backEndProject]: [
-    'challengeType',
-    'id',
-    'solution',
-    'githubLink'
-  ], // 4 'quality-assurance'
   [challengeTypes.pythonProject]: [
     // 10 'scientific-computing-with-python'
     'challengeType',
@@ -304,28 +297,7 @@ const expectedProjectStructures = {
     'solution',
     'githubLink'
   ],
-  [challengeTypes.pythonProject]: [
-    // 10 'data-analysis-with-python'
-    'challengeType',
-    'id',
-    'solution',
-    'githubLink'
-  ],
-  [challengeTypes.backEndProject]: [
-    'challengeType',
-    'id',
-    'solution',
-    'githubLink'
-  ], // 4 'information-security'
-  [challengeTypes.pythonProject]: [
-    // 10 'machine-learning-with-python'
-    'challengeType',
-    'id',
-    'solution',
-    'githubLink'
-  ],
-  [challengeTypes.codeAllyCert]: ['challengeType', 'id', 'solution'], // 13 'relational-database'
-  [challengeTypes.zipline]: ['id', 'solution'] // 3 'take-home-projects'
+  [challengeTypes.codeAllyCert]: ['challengeType', 'id', 'solution'] // 13 'relational-database'
 };
 
 /**
