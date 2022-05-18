@@ -14,7 +14,7 @@ module.exports = {
       max_memory_restart: '600M',
       instances: 'max',
       exec_mode: 'cluster',
-      name: 'org'
+      name: env.DEPLOYMENT_ENV === 'staging' ? 'dev' : 'org'
     }
   ]
 };
