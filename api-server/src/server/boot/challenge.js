@@ -30,6 +30,7 @@ import {
 } from '../utils/redirection';
 
 import { challengeTypes } from '../../../../client/utils/challenge-types';
+import { deprecatedEndpoint } from '../utils/disabled-endpoints';
 
 const log = debug('fcc:boot:challenges');
 
@@ -46,12 +47,7 @@ export default async function bootChallenge(app, done) {
     getRedirectParams
   );
 
-  api.post(
-    '/modern-challenge-completed',
-    send200toNonUser,
-    isValidChallengeCompletion,
-    modernChallengeCompleted
-  );
+  api.post('/modern-challenge-completed', deprecatedEndpoint);
 
   api.post('/challenges-completed', send200toNonUser, challengesCompleted);
 
@@ -125,6 +121,7 @@ function challengesCompleted(req, res, next) {
     // Add `timestamp` to challenge
     // NOTE: Consider what will happen if this comes with a batch
     // TODO: handle resubmission of challenges - no new timestamp?
+    // Naomi: Not yet - the current behaviour doesn't update the timestamp.
     const timestamp = Date.now();
 
     const completedChallenge = {
@@ -137,6 +134,53 @@ function challengesCompleted(req, res, next) {
   }
 
   // TODO: Update user's completed challenges
+  // Naomi: Here's a potential approach? Essentially mirroring the buildUserUpdate
+  // function but for an array of challenges
+
+  const $push = {
+      progressTimestamps: [],
+      completedChallenges: []
+    },
+    $set = {};
+
+  for (const chal of completedChallenges) {
+    const oldIndex = user.completedChallenges.findIndex(c => c.id === chal.id);
+    const alreadyCompleted = oldIndex !== -1;
+    const oldChallenge = alreadyCompleted
+      ? completedChallenges[oldIndex]
+      : null;
+    if (alreadyCompleted) {
+      $set[`completedChallenges.${oldIndex}`] = {
+        ...chal,
+        completedDate: oldChallenge.completedDate
+      };
+    } else {
+      $push.progressTimestamps = [...$push.progressTimestamps, Date.now()];
+      $push.completedChallenges = [...$push.completedChallenges, chal];
+    }
+  }
+
+  const updateData = {};
+  if ($push.completedChallenges.length) {
+    updateData.$push = $push;
+  }
+  if (!isEmpty($set)) {
+    updateData.$set = $set;
+  }
+
+  const updatePromise = new Promise((resolve, reject) =>
+    user.updateAttributes(updateData, err => {
+      if (err) {
+        return reject(err);
+      }
+      return resolve();
+    })
+  );
+  return Observable.fromPromise(updatePromise).doOnNext(() => {
+    return res.json({
+      completedChallenges
+    });
+  });
 }
 
 /**
