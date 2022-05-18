@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /**
  *
  * Any ref to fixCompletedChallengesItem should be removed post
@@ -53,12 +54,9 @@ export default async function bootChallenge(app, done) {
     modernChallengeCompleted
   );
 
-  api.post(
-    '/project-completed',
-    send200toNonUser,
-    isValidChallengeCompletion,
-    projectCompleted
-  );
+  api.post('/challenges-completed', send200toNonUser, challengesCompleted);
+
+  api.post('/project-completed', send200toNonUser, projectCompleted);
 
   api.post(
     '/backend-challenge-completed',
@@ -83,6 +81,157 @@ export default async function bootChallenge(app, done) {
   app.use(api);
   app.use(router);
   done();
+}
+
+/**
+ * Handles submissions for all challenges.
+ * @param {Request} req
+ * @param {Response} res
+ * @param {Next} next
+ * @returns Another good question??
+ */
+function challengesCompleted(req, res, next) {
+  // Challenges should only include `id` and `challengeType`
+  const { user, body } = req;
+
+  // Ensure `body` is an array:
+  if (!Array.isArray(body) || !body.length) {
+    return res.status(400).json({
+      type: 'error',
+      message: 'Invalid request format. Expected `body` to be an array.'
+    });
+  }
+  const completedChallenges = [];
+  for (const challenge of body) {
+    const { id, challengeType } = challenge;
+
+    // Ensure `id` and `challengeType` exist on `challenge`
+    if (typeof id !== 'string' || typeof challengeType !== 'number') {
+      return res.status(400).json({
+        type: 'error',
+        message:
+          'Invalid request format. Expected `id` and `challengeType` to be present.'
+      });
+    }
+
+    const isChallengeValid = validateChallenge(id, challengeType);
+
+    if (!isChallengeValid) {
+      return res.status(403).json({
+        type: 'error',
+        message: 'Invalid challenge submission.'
+      });
+    }
+
+    // Add `timestamp` to challenge
+    // NOTE: Consider what will happen if this comes with a batch
+    const timestamp = Date.now();
+
+    const completedChallenge = {
+      challengeType,
+      id,
+      timestamp
+    };
+
+    completedChallenges.push(completedChallenge);
+  }
+
+  // TODO: Update user's completed challenges
+}
+
+/**
+ * Handles submissions for all certification projects.
+ * @param {Request} req
+ * @param {Response} res
+ * @param {Next} _next
+ * @returns Good question??
+ */
+function projectCompleted(req, res, next) {
+  const { user, body } = req;
+
+  // Ensure `body` is an object
+  if (!body || typeof body !== 'object') {
+    return res.status(400).json({
+      type: 'error',
+      message: 'Invalid request format. Expected `body` to be an object.'
+    });
+  }
+
+  // `body` can exist as the following structures:
+  /*
+  # RWD Projects and JS Algorithm Projects
+  { 
+    challengeType: number,
+    files: [
+      {
+        contents: string,
+        ext: string,
+        history: string,
+        key: string,
+        name: string
+      }
+    ]
+    id: string,
+  }
+  # Front End Libraries Projects
+  {
+    challengeType: number,
+    id: string,
+    solution: string,
+  }
+  # Back End Projects
+  {
+    challengeType: number,
+    id: string,
+    solution: string,
+    githubLink?: string,
+  }
+  # Take Home Projects
+  {
+    id: string,
+    solution: string,
+  }
+  */
+
+  const { id } = body;
+
+  // Find the structure, based on the `id` of the project
+  const isProjectValid = validateProject(id, body);
+
+  if (!isProjectValid) {
+    return res.status(403).json({
+      type: 'error',
+      message: 'Invalid project submission.'
+    });
+  }
+
+  // Handle all the different types of project
+}
+
+/**
+ * Validates the `id` submitted is a valid challenge.
+ * @param {string} id
+ * @param {number} challengeType
+ * @returns {boolean}
+ */
+function validateChallenge(id, challengeType) {
+  // Ensure challenge `id` exists, and is not a Certification Project
+  return false;
+}
+
+/**
+ * Validates the submitted project is a Certification Project (or Take Home Project), and all required fields are present.
+ * @param {string} id - Id of the Certification Project or Take Home Project challenge file
+ * @param {Request.body} body - Request body
+ * @returns {boolean}
+ */
+function validateProject(id, body) {
+  // Ensure project `id` exists, and IS a Certification Project
+
+  // Ensure `body` matches the expected structure
+  // TODO: Do we care, if `body` contains too many fields?
+
+  return false;
 }
 
 const jsCertProjectIds = [
@@ -340,75 +489,6 @@ export function modernChallengeCompleted(req, res, next) {
           alreadyCompleted,
           completedDate,
           savedChallenges
-        });
-      });
-    })
-    .subscribe(() => {}, next);
-}
-
-function projectCompleted(req, res, next) {
-  const { user, body = {} } = req;
-
-  const completedChallenge = pick(body, [
-    'id',
-    'solution',
-    'githubLink',
-    'challengeType',
-    'files'
-  ]);
-  completedChallenge.completedDate = Date.now();
-
-  if (!completedChallenge.solution) {
-    return res.status(403).json({
-      type: 'error',
-      message:
-        'You have not provided the valid links for us to inspect your work.'
-    });
-  }
-
-  // CodeRoad cert project
-  if (completedChallenge.challengeType === 13) {
-    const { partiallyCompletedChallenges = [], completedChallenges = [] } =
-      user;
-
-    const isPartiallyCompleted = partiallyCompletedChallenges.some(
-      challenge => challenge.id === completedChallenge.id
-    );
-
-    const isCompleted = completedChallenges.some(
-      challenge => challenge.id === completedChallenge.id
-    );
-
-    if (!isPartiallyCompleted && !isCompleted) {
-      return res.status(403).json({
-        type: 'error',
-        message: 'You have to complete the project before you can submit a URL.'
-      });
-    }
-  }
-
-  return user
-    .getCompletedChallenges$()
-    .flatMap(() => {
-      const { alreadyCompleted, updateData } = buildUserUpdate(
-        user,
-        completedChallenge.id,
-        completedChallenge
-      );
-
-      const updatePromise = new Promise((resolve, reject) =>
-        user.updateAttributes(updateData, err => {
-          if (err) {
-            return reject(err);
-          }
-          return resolve();
-        })
-      );
-      return Observable.fromPromise(updatePromise).doOnNext(() => {
-        return res.json({
-          alreadyCompleted,
-          points: alreadyCompleted ? user.points : user.points + 1,
-          completedDate: completedChallenge.completedDate
         });
       });
     })

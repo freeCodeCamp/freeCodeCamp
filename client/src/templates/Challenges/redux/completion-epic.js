@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { navigate } from 'gatsby';
 import { omit } from 'lodash-es';
 import { ofType } from 'redux-observable';
@@ -11,7 +12,11 @@ import {
   finalize
 } from 'rxjs/operators';
 
-import { challengeTypes, submitTypes } from '../../../../utils/challenge-types';
+import {
+  challengeTypes,
+  isProject,
+  submitTypes
+} from '../../../../utils/challenge-types';
 import {
   userSelector,
   isSignedInSelector,
@@ -66,6 +71,25 @@ function postChallenge(update, username) {
   return saveChallenge;
 }
 
+/**
+ * Handles all the non-certification challenge submissions
+ * @param {*} type
+ * @param {*} state
+ */
+function submitChallenges(type, state) {}
+
+function submitProject(type, state) {
+  const { username } = userSelector(state);
+  const challengeBody = {};
+  const update = {
+    endpoint: '/project-completed',
+    payload: challengeBody
+  };
+  return postChallenge(update, username).pipe(
+    concat(of(updateSolutionFormValues({})))
+  );
+}
+
 function submitModern(type, state) {
   const challengeType = state.challenge.challengeMeta.challengeType;
   const tests = challengeTestsSelector(state);
@@ -105,28 +129,6 @@ function submitModern(type, state) {
   return empty();
 }
 
-function submitProject(type, state) {
-  if (type === actionTypes.checkChallenge) {
-    return empty();
-  }
-
-  const { solution, githubLink } = projectFormValuesSelector(state);
-  const { id, challengeType } = challengeMetaSelector(state);
-  const { username } = userSelector(state);
-  const challengeInfo = { id, challengeType, solution };
-  if (challengeType === challengeTypes.backEndProject) {
-    challengeInfo.githubLink = githubLink;
-  }
-
-  const update = {
-    endpoint: '/project-completed',
-    payload: challengeInfo
-  };
-  return postChallenge(update, username).pipe(
-    concat(of(updateSolutionFormValues({})))
-  );
-}
-
 function submitBackendChallenge(type, state) {
   const tests = challengeTestsSelector(state);
   if (tests.length > 0 && tests.every(test => test.pass && !test.err)) {
@@ -148,13 +150,6 @@ function submitBackendChallenge(type, state) {
   return empty();
 }
 
-const submitters = {
-  tests: submitModern,
-  backend: submitBackendChallenge,
-  'project.frontEnd': submitProject,
-  'project.backEnd': submitProject
-};
-
 export default function completionEpic(action$, state$) {
   return action$.pipe(
     ofType(actionTypes.submitChallenge),
@@ -165,17 +160,13 @@ export default function completionEpic(action$, state$) {
       const closeChallengeModal = of(closeModal('completion'));
 
       let submitter = () => of({ type: 'no-user-signed-in' });
-      if (
-        !(challengeType in submitTypes) ||
-        !(submitTypes[challengeType] in submitters)
-      ) {
-        throw new Error(
-          'Unable to find the correct submit function for challengeType ' +
-            challengeType
-        );
-      }
+
       if (isSignedInSelector(state)) {
-        submitter = submitters[submitTypes[challengeType]];
+        if (isProject(challengeType)) {
+          submitter = submitProject;
+        } else {
+          submitter = submitChallenges;
+        }
       }
 
       const pathToNavigateTo = async () => {
