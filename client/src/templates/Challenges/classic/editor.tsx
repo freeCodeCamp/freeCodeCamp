@@ -21,6 +21,7 @@ import { createSelector } from 'reselect';
 import store from 'store';
 
 import { debounce } from 'lodash-es';
+import { useTranslation } from 'react-i18next';
 import { Loader } from '../../../components/helpers';
 import { Themes } from '../../../components/settings/theme';
 import {
@@ -225,6 +226,7 @@ const initialData: EditorProperties = {
 };
 
 const Editor = (props: EditorProps): JSX.Element => {
+  const { t } = useTranslation();
   const { editorRef, initTests } = props;
   // These refs are used during initialisation of the editor as well as by
   // callbacks.  Since they have to be initialised before editorWillMount and
@@ -636,7 +638,9 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (isChallengeCompleted) {
       jawHeading.classList.add('challenge-description-header');
       const challengeTitle = document.createElement('h1');
-      challengeTitle.innerHTML = `${title} <span class='sr-only'>Passed</span>`;
+      challengeTitle.innerHTML = `${title} <span class='sr-only'>${t(
+        'icons.passed'
+      )}</span>`;
       jawHeading.appendChild(challengeTitle);
       const checkmark = ReactDOMServer.renderToStaticMarkup(
         <GreenPass
