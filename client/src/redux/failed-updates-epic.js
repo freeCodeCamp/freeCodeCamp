@@ -12,7 +12,6 @@ import store from 'store';
 import { v4 as uuid } from 'uuid';
 
 import { backEndProject } from '../../utils/challenge-types';
-import { isGoodXHRStatus } from '../templates/Challenges/utils';
 import postUpdate$ from '../templates/Challenges/utils/post-update';
 import { actionTypes } from './action-types';
 import {
@@ -79,7 +78,8 @@ function failedUpdateEpic(action$, state$) {
               switchMap(response => {
                 if (
                   response &&
-                  (response.message || isGoodXHRStatus(response.status))
+                  response.completedDate // completedDate is being used as a proxy for success
+                  // (response.message || isGoodXHRStatus(response.status))
                 ) {
                   console.info(`${update.id} succeeded`);
                   // the request completed successfully
