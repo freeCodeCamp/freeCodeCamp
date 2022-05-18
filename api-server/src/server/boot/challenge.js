@@ -98,29 +98,6 @@ const savableChallenges = getChallenges()
   .filter(challenge => challenge.challengeType === 14)
   .map(challenge => challenge.id);
 
-/*function buildNewSavedChallenges({
-  user,
-  challengeId,
-  completedDate = Date.now(),
-  files
-}) {
-  const { savedChallenges } = user;
-  const challengeToSave = {
-    id: challengeId,
-    lastSavedDate: completedDate,
-    files: files?.map(file =>
-      pick(file, ['contents', 'key', 'name', 'ext', 'history'])
-    )
-  };
-
-  const newSavedChallenges = uniqBy(
-    [challengeToSave, ...savedChallenges.map(fixSavedChallengeItem)],
-    'id'
-  );
-
-  return newSavedChallenges;
-}*/
-
 export function buildUserUpdate(
   user,
   challengeId,
@@ -149,7 +126,8 @@ export function buildUserUpdate(
   const {
     timezone: userTimezone,
     completedChallenges = [],
-    needsModeration = false
+    needsModeration = false,
+    savedChallenges = []
   } = user;
 
   const oldIndex = completedChallenges.findIndex(
@@ -174,7 +152,6 @@ export function buildUserUpdate(
   }
 
   if (savableChallenges.includes(challengeId)) {
-    const { savedChallenges = [] } = user;
     const challengeToSave = {
       id: challengeId,
       lastSavedDate: completedDate,
@@ -217,8 +194,8 @@ export function buildUserUpdate(
   return {
     alreadyCompleted,
     updateData,
-    completedDate: finalChallenge.completedDate // ,
-    // savedChallenges: newSavedChallenges
+    completedDate: finalChallenge.completedDate,
+    savedChallenges
   };
 }
 
