@@ -32,6 +32,8 @@ import {
   getPrefixedLandingPath
 } from '../utils/redirection';
 
+import { challengeTypes } from '../../../../client/utils/challenge-types';
+
 const log = debug('fcc:boot:challenges');
 
 export default async function bootChallenge(app, done) {
@@ -188,7 +190,9 @@ function projectCompleted(req, res, next) {
   }
   # Relational Database
   {
-    ???
+    challengeType: number,
+    id: string,
+    solution: string
   }
   # Take Home Projects
   {
@@ -212,75 +216,73 @@ function projectCompleted(req, res, next) {
   // Handle all the different types of project
 }
 
-const expectedProjectStructures = [
-  {
-    'responsive-web-design': [
-      'challengeType',
-      'files',
-      'files.contents',
-      'files.ext',
-      'files.history',
-      'files.key',
-      'files.name',
-      'id'
-    ]
-  },
-  {
-    'javascript-algorithms-and-data-structures': [
-      'challengeType',
-      'files',
-      'files.contents',
-      'files.ext',
-      'files.history',
-      'files.key',
-      'files.name',
-      'id'
-    ]
-  },
-  {
-    'front-end-development-libraries': ['challengeType', 'id', 'solution']
-  },
-  {
-    'data-visualization-and-apis': ['challengeType', 'id', 'solution']
-  },
-
-  {
-    'back-end-development': ['challengeType', 'id', 'solution', 'githubLink']
-  },
-  {
-    'quality-assurance': ['challengeType', 'id', 'solution', 'githubLink']
-  },
-  {
-    'scientific-computing-with-python': [
-      'challengeType',
-      'id',
-      'solution',
-      'githubLink'
-    ]
-  },
-  {
-    'data-analysis-with-python': [
-      'challengeType',
-      'id',
-      'solution',
-      'githubLink'
-    ]
-  },
-  {
-    'information-security': ['challengeType', 'id', 'solution', 'githubLink']
-  },
-  {
-    'machine-learning-with-python': [
-      'challengeType',
-      'id',
-      'solution',
-      'githubLink'
-    ]
-  },
-  {
-    'take-home-projects': ['id', 'solution']
-  }
-];
+const expectedProjectStructures = {
+  [challengeTypes.multifileCertProject]: [
+    // 14 'responsive-web-design'
+    'challengeType',
+    'files',
+    'files.contents',
+    'files.ext',
+    'files.history',
+    'files.key',
+    'files.name',
+    'id'
+  ],
+  [challengeTypes.js]: [
+    // 1 'javascript-algorithms-and-data-structures'
+    'challengeType',
+    'files',
+    'files.contents',
+    'files.ext',
+    'files.history',
+    'files.key',
+    'files.name',
+    'id'
+  ],
+  [challengeTypes.zipline]: ['challengeType', 'id', 'solution'], // 3 'front-end-development-libraries'
+  [challengeTypes.zipline]: ['challengeType', 'id', 'solution'], // 3 'data-visualization-and-apis'
+  [challengeTypes.backEndProject]: [
+    'challengeType',
+    'id',
+    'solution',
+    'githubLink'
+  ], // 4 'back-end-development'
+  [challengeTypes.backEndProject]: [
+    'challengeType',
+    'id',
+    'solution',
+    'githubLink'
+  ], // 4 'quality-assurance'
+  [challengeTypes.pythonProject]: [
+    // 10 'scientific-computing-with-python'
+    'challengeType',
+    'id',
+    'solution',
+    'githubLink'
+  ],
+  [challengeTypes.pythonProject]: [
+    // 10 'data-analysis-with-python'
+    'challengeType',
+    'id',
+    'solution',
+    'githubLink'
+  ],
+  [challengeTypes.backEndProject]: [
+    'challengeType',
+    'id',
+    'solution',
+    'githubLink'
+  ], // 4 'information-security'
+  [challengeTypes.pythonProject]: [
+    // 10 'machine-learning-with-python'
+    'challengeType',
+    'id',
+    'solution',
+    'githubLink'
+  ],
+  [challengeTypes.codeAllyCert]: ['challengeType', 'id', 'solution'], // 13 'relational-database'
+  [challengeTypes.zipline]: ['id', 'solution'] // 3 'take-home-projects'
+};
 
 /**
  * Validates the `id` submitted is a valid challenge.
@@ -304,8 +306,33 @@ function validateProject(id, body) {
 
   // Ensure `body` matches the expected structure
   // TODO: Do we care, if `body` contains too many fields?
-
+  ensureObjectContainsAllFields(
+    body,
+    expectedProjectStructures[body.challengeType]
+  );
   return false;
+}
+
+/**
+ * Checks all given keys exist in the given object.
+ * @param {object} obj
+ * @param {string[]} fields
+ * @returns
+ */
+function ensureObjectContainsAllFields(obj, fields) {
+  return fields.any(key => !hasFields(obj, key));
+}
+
+function hasFields(obj, keys) {
+  const keysArr = keys.split('.');
+  let currObj = obj;
+  for (const key of keysArr) {
+    if (!currObj[key]) {
+      return false;
+    }
+    currObj = currObj[key];
+  }
+  return true;
 }
 
 const jsCertProjectIds = [

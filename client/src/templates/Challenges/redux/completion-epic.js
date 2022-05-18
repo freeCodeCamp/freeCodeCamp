@@ -80,11 +80,16 @@ function submitChallenges(type, state) {}
 
 function submitProject(type, state) {
   const { username } = userSelector(state);
+  // TODO: get projectData for payload
   const challengeBody = {};
   const update = {
     endpoint: '/project-completed',
     payload: challengeBody
   };
+
+  // TODO: There should be no parsing occuring in the below function.
+  // At this point, the `update` should be what the server expects,
+  // and `postChallenge` should just handle the post request and response.
   return postChallenge(update, username).pipe(
     concat(of(updateSolutionFormValues({})))
   );
