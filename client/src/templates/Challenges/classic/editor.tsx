@@ -19,7 +19,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import store from 'store';
 
-import { debounce } from 'lodash';
+import { debounce } from 'lodash-es';
 import { Loader } from '../../../components/helpers';
 import { Themes } from '../../../components/settings/theme';
 import {
@@ -247,10 +247,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   const testRef = useRef<Test[]>([]);
   testRef.current = props.tests;
 
-  // TENATIVE PLAN: create a typical order [html/jsx, css, js], put the
-  // available files into that order.  i.e. if it's just one file it will
-  // automatically be first, but  if there's jsx and js (for some reason) it
-  //  will be [jsx, js].
+  const debouncedSubmitChallenge = debounce(props.submitChallenge, 2000);
 
   const options: editor.IStandaloneEditorConstructionOptions = {
     fontSize: 18,
@@ -415,7 +412,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       run: () => {
         if (props.usesMultifileEditor) {
           if (challengeIsComplete()) {
-            debounce(props.submitChallenge, 2000)();
+            debouncedSubmitChallenge();
           } else {
             props.executeChallenge();
             attemptRef.current.attempts++;
