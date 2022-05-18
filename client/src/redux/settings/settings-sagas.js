@@ -89,9 +89,9 @@ function* validateUsernameSaga({ payload }) {
 function* verifyCertificationSaga({ payload }) {
   // check redux if can claim cert before calling backend
   const completedChallenges = yield select(completedChallengesSelector);
-  const currentCertMap = certMap.find(cert => cert.certSlug === payload);
-  const currentCertIds = currentCertMap?.projects.map(project => project.id);
-  const certTitle = currentCertMap?.title || payload;
+  const currentCert = certMap.find(cert => cert.certSlug === payload);
+  const currentCertIds = currentCert?.projects.map(project => project.id);
+  const certTitle = currentCert?.title || payload;
 
   const flash = {
     type: 'info',
@@ -99,15 +99,9 @@ function* verifyCertificationSaga({ payload }) {
     variables: { name: certTitle }
   };
 
-  let canClaimCert = true;
-  currentCertIds.forEach(id => {
-    const challengeCompleted = completedChallenges.find(
-      challenge => challenge.id === id
-    );
-    if (!challengeCompleted) {
-      canClaimCert = false;
-    }
-  });
+  const canClaimCert = currentCertIds.every(id =>
+    completedChallenges.find(challenge => challenge.id === id)
+  );
 
   if (!canClaimCert) {
     yield put(createFlashMessage(flash));
