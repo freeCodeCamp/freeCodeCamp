@@ -101,7 +101,7 @@
   },
   "settings": {
     "share-projects": "あなたの freeCodeCamp 以外のプロジェクトや記事、承認されたプルリクエストをシェアしましょう。",
-    "privacy": "この設定セクションでは、あなたの freeCodeCamp 公開ポートフォリオに表示する項目を制御できます。",
+    "privacy": "The settings in this section enable you to control what is shown on your freeCodeCamp public portfolio. Press save to save your changes.",
     "data": "アカウントに保存されているデータを確認するには、下の「データをダウンロード」ボタンをクリックしてください",
     "disabled": "プライベートに設定されている場合、認定証は無効化されます。",
     "private-name": "非公開に設定されている場合、あなたの名前は認定証に表示されません。",
