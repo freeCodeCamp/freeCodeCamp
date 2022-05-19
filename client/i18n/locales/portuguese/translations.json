@@ -101,7 +101,7 @@
   },
   "settings": {
     "share-projects": "Compartilhe seus projetos que não sejam do freeCodeCamp, artigos ou pull requests aceitas.",
-    "privacy": "As configurações nesta seção permitem que você controle o que é mostrado no seu portfólio público do freeCodeCamp.",
+    "privacy": "The settings in this section enable you to control what is shown on your freeCodeCamp public portfolio. Press save to save your changes.",
     "data": "Para ver quais dados mantemos sobre sua conta, clique no botão \"Baixar seus dados\" abaixo",
     "disabled": "Suas certificações serão desabilitadas ao configurar como privado.",
     "private-name": "Seu nome não aparecerá nas certificações, se isto estiver definido como privado.",

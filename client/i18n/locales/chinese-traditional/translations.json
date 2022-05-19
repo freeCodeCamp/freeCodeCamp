@@ -101,7 +101,7 @@
   },
   "settings": {
     "share-projects": "分享你在 freeCodeCamp 之外做的項目，寫的文章或者在 GitHub 上被接受的 pull requests。",
-    "privacy": "你可以通過在本節設置來管理你展示在 freeCodeCamp 公開作品集中的內容。",
+    "privacy": "The settings in this section enable you to control what is shown on your freeCodeCamp public portfolio. Press save to save your changes.",
     "data": "請點擊下面的 \"下載你的數據\" 按鈕，查看我們在你的賬號上保存的數據",
     "disabled": "如果設置爲僅自己可見，其他人將無法訪問你的認證。",
     "private-name": "如果你將姓名設置爲私密，你的證書上不會顯示你的姓名。",
