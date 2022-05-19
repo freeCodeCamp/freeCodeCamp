@@ -66,7 +66,6 @@ export default async function bootChallenge(app, done) {
 
   const coderoadChallengeCompleted = createCoderoadChallengeCompleted(app);
 
-  // TODO: Confirm this endpoint is still used. It should be.
   api.post('/coderoad-challenge-completed', coderoadChallengeCompleted);
 
   app.use(api);
@@ -78,10 +77,9 @@ export default async function bootChallenge(app, done) {
  * Handles submissions for all challenges.
  * @param {Request} req
  * @param {Response} res
- * @param {Next} next
- * @returns Another good question??
+ * @returns {Observable}
  */
-function challengesCompleted(req, res, next) {
+function challengesCompleted(req, res) {
   // Challenges should only include `id` and `challengeType`
   const { user, body } = req;
 
@@ -114,10 +112,7 @@ function challengesCompleted(req, res, next) {
       });
     }
 
-    // Add `timestamp` to challenge
     // NOTE: Consider what will happen if this comes with a batch
-    // TODO: handle resubmission of challenges - no new timestamp?
-    // Naomi: Not yet - the current behaviour doesn't update the timestamp.
     const completedDate = Date.now();
 
     const completedChallenge = {
@@ -128,10 +123,6 @@ function challengesCompleted(req, res, next) {
 
     completedChallenges.push(completedChallenge);
   }
-
-  // TODO: Update user's completed challenges
-  // Naomi: Here's a potential approach? Essentially mirroring the buildUserUpdate
-  // function but for an array of challenges
 
   const $push = {
       progressTimestamps: {
@@ -200,10 +191,9 @@ function challengesCompleted(req, res, next) {
  * Handles submissions for all certification projects.
  * @param {Request} req
  * @param {Response} res
- * @param {Next} _next
- * @returns Good question??
+ * @returns {Observable}
  */
-function projectCompleted(req, res, next) {
+function projectCompleted(req, res) {
   const { user, body } = req;
 
   // Ensure `body` is an object
@@ -213,48 +203,6 @@ function projectCompleted(req, res, next) {
       message: 'Invalid request format. Expected `body` to be an object.'
     });
   }
-
-  // `body` may exist as the following structures:
-  /*
-  # RWD Projects and JS Algorithm Projects
-  { 
-    challengeType: number,
-    files: [
-      {
-        contents: string,
-        ext: string,
-        history: string,
-        key: string,
-        name: string
-      }
-    ]
-    id: string,
-  }
-  # Front End Libraries and Data Visualisation and APIs
-  {
-    challengeType: number,
-    id: string,
-    solution: string,
-  }
-  # Back End Development / Quality Assurance / Scientific Computing with Python / Data Analysis with Python / Information Security / Machine Learning with Python
-  {
-    challengeType: number,
-    id: string,
-    solution: string,
-    githubLink?: string,
-  }
-  # Relational Database
-  {
-    challengeType: number,
-    id: string,
-    solution: string
-  }
-  # Take Home Projects
-  {
-    id: string,
-    solution: string,
-  }
-  */
 
   const { id, completedChallenge } = body;
 
@@ -268,17 +216,11 @@ function projectCompleted(req, res, next) {
     });
   }
 
-  // TODO: Handle all the different types of project
-  // TODO: Handle resubmission of projects (no new timestamp)
-
   const { alreadyCompleted, savedChallenges, updateData } = buildUserUpdate(
     user,
     id,
     completedChallenge
   );
-  const completedDate = alreadyCompleted
-    ? user.completedChallenges[0]?.completedDate
-    : Date.now();
 
   const points = alreadyCompleted ? user.points : user.points + 1;
   const updatePromise = new Promise((resolve, reject) =>
@@ -291,9 +233,8 @@ function projectCompleted(req, res, next) {
   );
   return Observable.fromPromise(updatePromise).map(() => {
     return res.json({
+      completedChallenges: user.completedChallenges,
       points,
-      alreadyCompleted,
-      completedDate,
       savedChallenges
     });
   });

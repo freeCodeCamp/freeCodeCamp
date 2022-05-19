@@ -34,8 +34,10 @@ function postChallenge(update) {
   const saveChallenge = postUpdate$(update).pipe(
     retry(3),
     switchMap(({ points, savedChallenges, completedChallenges }) => {
-      // clear store only on success not on error
-      store.set('completed-challenges', []);
+      // clear store only on success not on error, and only when the update is/was a challenge
+      if (update.endpoint === '/challenges-completed') {
+        store.set('completed-challenges', []);
+      }
       return of(
         submitComplete({
           points,
