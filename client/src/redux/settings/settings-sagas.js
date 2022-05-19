@@ -55,9 +55,9 @@ import {
 
 function* submitNewAboutSaga({ payload }) {
   try {
-    const response = yield call(putUpdateMyAbout, payload);
-    yield put(submitNewAboutComplete({ ...response, payload }));
-    yield put(createFlashMessage(response));
+    const { data } = yield call(putUpdateMyAbout, payload);
+    yield put(submitNewAboutComplete({ ...data, payload }));
+    yield put(createFlashMessage(data));
   } catch (e) {
     yield put(submitNewAboutError(e));
   }
@@ -65,9 +65,9 @@ function* submitNewAboutSaga({ payload }) {
 
 function* submitNewUsernameSaga({ payload: username }) {
   try {
-    const response = yield call(putUpdateMyUsername, username);
-    yield put(submitNewUsernameComplete({ ...response, username }));
-    yield put(createFlashMessage(response));
+    const { data } = yield call(putUpdateMyUsername, username);
+    yield put(submitNewUsernameComplete({ ...data, username }));
+    yield put(createFlashMessage(data));
   } catch (e) {
     yield put(submitNewUsernameError(e));
   }
@@ -75,9 +75,9 @@ function* submitNewUsernameSaga({ payload: username }) {
 
 function* submitProfileUISaga({ payload }) {
   try {
-    const response = yield call(putUpdateMyProfileUI, payload);
-    yield put(submitProfileUIComplete({ ...response, payload }));
-    yield put(createFlashMessage(response));
+    const { data } = yield call(putUpdateMyProfileUI, payload);
+    yield put(submitProfileUIComplete({ ...data, payload }));
+    yield put(createFlashMessage(data));
   } catch (e) {
     yield put(submitProfileUIError);
   }
@@ -85,10 +85,10 @@ function* submitProfileUISaga({ payload }) {
 
 function* updateUserFlagSaga({ payload: update }) {
   try {
-    const response = yield call(putUpdateUserFlag, update);
-    yield put(updateUserFlagComplete({ ...response, payload: update }));
+    const { data } = yield call(putUpdateUserFlag, update);
+    yield put(updateUserFlagComplete({ ...data, payload: update }));
     yield put(
-      createFlashMessage({ ...response, variables: { theme: update.theme } })
+      createFlashMessage({ ...data, variables: { theme: update.theme } })
     );
   } catch (e) {
     yield put(updateUserFlagError(e));
@@ -158,7 +158,9 @@ function* updateMyPortfolioSaga({ payload: update }) {
 
 function* validateUsernameSaga({ payload }) {
   try {
-    const { exists } = yield call(getUsernameExists, payload);
+    const {
+      data: { exists }
+    } = yield call(getUsernameExists, payload);
     yield put(validateUsernameComplete(exists));
   } catch (e) {
     yield put(validateUsernameError(e));
@@ -189,10 +191,9 @@ function* verifyCertificationSaga({ payload }) {
 
   // redux says challenges are complete, call back end
   try {
-    const { response, isCertMap, completedChallenges } = yield call(
-      putVerifyCert,
-      payload
-    );
+    const {
+      data: { response, isCertMap, completedChallenges }
+    } = yield call(putVerifyCert, payload);
     yield put(
       verifyCertComplete({
         ...response,
