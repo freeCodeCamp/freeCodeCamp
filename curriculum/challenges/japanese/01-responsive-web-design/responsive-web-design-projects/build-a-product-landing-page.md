@@ -30,6 +30,8 @@ dashedName: build-a-product-landing-page
 
 上記のユーザーストーリーを満たして、以下のすべてのテストに合格してこのプロジェクトを完成させてください。 あなた独自のスタイルを加えましょう。 ハッピーコーディング！
 
+**注:** スタイルシートをリンクして CSS を適用するため、HTML 内に `<link rel="stylesheet" href="styles.css">` を必ず追加してください
+
 # --hints--
 
 `id` が `header` である `header` 要素が 1 つ必要です
@@ -138,7 +140,7 @@ const el = document.getElementById('form')
 assert(!!el && el.tagName === 'FORM')
 ```
 
-`id` が `email` である `input` 要素が 1 つ必要です
+`id` の値が `email` に設定されている `input` 要素が 1 つ必要です
 
 ```js
 const el = document.getElementById('email')
