@@ -53,12 +53,7 @@ export default async function bootChallenge(app, done) {
 
   api.post('/project-completed', send200toNonUser, projectCompleted);
 
-  api.post(
-    '/backend-challenge-completed',
-    send200toNonUser,
-    isValidChallengeCompletion,
-    backendChallengeCompleted
-  );
+  api.post('/backend-challenge-completed', deprecatedEndpoint);
 
   api.post(
     '/save-challenge',
@@ -71,6 +66,7 @@ export default async function bootChallenge(app, done) {
 
   const coderoadChallengeCompleted = createCoderoadChallengeCompleted(app);
 
+  // TODO: Confirm this endpoint is still used. It should be.
   api.post('/coderoad-challenge-completed', coderoadChallengeCompleted);
 
   app.use(api);
