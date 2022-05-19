@@ -8,7 +8,8 @@ jest.mock('../analytics');
 
 const key = 'fcc-failed-updates';
 
-describe('failed-updates-epic', () => {
+// TODO: re-enable once we start flushing failed updates again
+describe.skip('failed-updates-epic', () => {
   it('should remove faulty backend challenges from localStorage', async () => {
     store.set(key, failedSubmissions);
 

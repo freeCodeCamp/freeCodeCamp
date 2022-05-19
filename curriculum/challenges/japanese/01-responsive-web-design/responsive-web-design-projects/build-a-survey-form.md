@@ -31,6 +31,8 @@ dashedName: build-a-survey-form
 
 上記のユーザーストーリーを満たして、以下のすべてのテストに合格してこのプロジェクトを完成させてください。 あなた独自のスタイルを加えましょう。 ハッピーコーディング！
 
+**注:** スタイルシートをリンクして CSS を適用するため、HTML 内に `<link rel="stylesheet" href="styles.css">` を必ず追加してください
+
 # --hints--
 
 `id` の値が `title` に設定されている `h1` 要素が 1 つ必要です
@@ -345,7 +347,7 @@ const el = document.getElementById('submit')
 assert(!!el && (el.tagName === 'INPUT' || el.tagName === 'BUTTON'))
 ```
 
-`#submit` は `type` の値が `submit` に設定されている必要があります
+`#submit` は `type` が `submit` に設定されている必要があります
 
 ```js
 const el = document.getElementById('submit')

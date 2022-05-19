@@ -68,7 +68,7 @@ export function getFallbackFullStackDate(completedChallenges, completedDate) {
 
   const latestCertDate = completedChallenges
     .filter(chal => chalIds.includes(chal.id))
-    .sort((a, b) => b.completedDate - a.completedDate)[0].completedDate;
+    .sort((a, b) => b.completedDate - a.completedDate)[0]?.completedDate;
 
   return latestCertDate ? latestCertDate : completedDate;
 }

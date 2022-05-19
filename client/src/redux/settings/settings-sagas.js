@@ -1,11 +1,11 @@
 import { omit } from 'lodash-es';
 import {
   call,
-  delay,
   put,
   select,
   takeLatest,
-  takeEvery
+  takeEvery,
+  debounce
 } from 'redux-saga/effects';
 
 import { createFlashMessage } from '../../components/Flash/redux';
@@ -78,7 +78,6 @@ function* updateUserFlagSaga({ payload: update }) {
 
 function* validateUsernameSaga({ payload }) {
   try {
-    yield delay(500);
     const { exists } = yield call(getUsernameExists, payload);
     yield put(validateUsernameComplete(exists));
   } catch (e) {
@@ -137,7 +136,7 @@ export function createSettingsSagas(types) {
     takeEvery(types.updateUserFlag, updateUserFlagSaga),
     takeLatest(types.submitNewAbout, submitNewAboutSaga),
     takeLatest(types.submitNewUsername, submitNewUsernameSaga),
-    takeLatest(types.validateUsername, validateUsernameSaga),
+    debounce(2000, types.validateUsername, validateUsernameSaga),
     takeLatest(types.submitProfileUI, submitProfileUISaga),
     takeEvery(types.verifyCert, verifyCertificationSaga)
   ];
