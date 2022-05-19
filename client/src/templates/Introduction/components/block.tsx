@@ -122,7 +122,8 @@ export class Block extends Component<BlockProps> {
     const isProjectBlock = challenges.some(({ challenge }) => {
       const isJsProject =
         [3, 6, 10, 14, 17].includes(challenge.order) &&
-        challenge.challengeType === 5;
+        challenge.challengeType === 5 &&
+        challenge.superBlock !== 'coding-interview-prep';
 
       const isOtherProject =
         challenge.challengeType === 3 ||
