@@ -13,7 +13,6 @@ import {
 import store from 'store';
 import { isProject } from '../../../../../utils/challenge-types';
 import {
-  userSelector,
   isSignedInSelector,
   submitComplete,
   updateComplete,
@@ -35,6 +34,8 @@ function postChallenge(update) {
   const saveChallenge = postUpdate$(update).pipe(
     retry(3),
     switchMap(({ points, savedChallenges, completedChallenges }) => {
+      // clear store only on success not on error
+      store.set('completed-challenges', []);
       return of(
         submitComplete({
           points,
@@ -44,7 +45,6 @@ function postChallenge(update) {
         updateComplete()
       );
     }),
-    // clear store only on success not on error
     catchError(() => of(updateFailed(update)))
   );
   return saveChallenge;
@@ -58,11 +58,15 @@ function batchSubmitter(type, state) {
       id,
       challengeType
     };
-    completedChallenges.push(completedChallenge);
-    store.set('completed-challenges', completedChallenges);
-
+    const completedChallengeAlreadyInStore = completedChallenges.some(
+      challenge => challenge.id === id
+    );
+    if (completedChallengeAlreadyInStore) {
+      completedChallenges.push(completedChallenge);
+      store.set('completed-challenges', completedChallenges);
+    }
     if (completedChallenges.length >= 5) {
-      return submitChallenges(type, state);
+      return submitChallenges();
     }
   }
   return empty();
@@ -70,11 +74,8 @@ function batchSubmitter(type, state) {
 
 /**
  * Handles all the non-certification challenge submissions
- * @param {*} type
- * @param {*} state
  */
-function submitChallenges(type, state) {
-  const { username } = userSelector(state);
+function submitChallenges() {
   const completedChallenges = store.get('completed-challenges', []);
   const update = {
     endpoint: '/challenges-completed',
@@ -82,15 +83,14 @@ function submitChallenges(type, state) {
   };
   // TODO: Only clear store on success from server
   store.set('completed-challenges', []);
-  return postChallenge(update, username);
+  return postChallenge(update);
 }
 
-function submitProject(type, state) {
+function submitProject(_type, state) {
   const challengeType = state.challenge.challengeMeta.challengeType;
   const { id } = challengeMetaSelector(state);
   const { solution, githubLink } = projectFormValuesSelector(state);
   const challengeFiles = challengeFilesSelector(state);
-  const { username } = userSelector(state);
   // Handle all different project types:
   const challengeBody = standardizeRequestBody({
     challengeType,
@@ -104,7 +104,7 @@ function submitProject(type, state) {
     payload: challengeBody
   };
 
-  return postChallenge(update, username);
+  return postChallenge(update);
 }
 
 export default function completionEpic(action$, state$) {
