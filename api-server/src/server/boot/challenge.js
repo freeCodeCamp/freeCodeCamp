@@ -260,6 +260,13 @@ function projectCompleted(req, res, next) {
   const updatedProperties = {};
 }
 
+/**
+ * From Naomi:
+ * TODO: Shaun, we'll need to update this to not use the challenge types from the client.
+ * We want to decouple the API and client, and this recouples it. Maybe a question for Oliver, but
+ * can we move the challengeTypes stuff into the root level utils?? Otherwise, we'll need to hard code here
+ * IMHO.
+ */
 const expectedProjectStructures = {
   [challengeTypes.multifileCertProject]: [
     // 14 'responsive-web-design'
