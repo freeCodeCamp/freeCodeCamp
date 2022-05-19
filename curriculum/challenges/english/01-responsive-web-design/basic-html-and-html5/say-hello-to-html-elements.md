@@ -35,11 +35,11 @@ Each challenge has tests you can run at any time by clicking the "Run tests" but
 
 # --instructions--
 
-To pass the test on this challenge, change your `h1` element's text to say `Hello World`.
+To pass the test on this challenge, change your `h1` element's text to say:
+`Hello World`
 
 # --hints--
-
-Your `h1` element should have the below text.
+Change the text in the `h1` element text to:
 `Hello World`
 ```js
 assert.isTrue(/hello(\s)+world/gi.test($('h1').text()));
