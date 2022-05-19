@@ -62,15 +62,10 @@ function batchSubmitter(type, state) {
       challengeType
     };
     completedChallenges.push(completedChallenge);
+    store.set('completed-challenges', completedChallenges);
 
     if (completedChallenges.length >= 5) {
-      store.set('completed-challenges', []);
       return submitChallenges(type, state);
-    } else {
-      store.set('completed-challenges', [
-        ...completedChallenges,
-        completedChallenge
-      ]);
     }
   }
   return empty();
@@ -88,7 +83,8 @@ function submitChallenges(type, state) {
     endpoint: '/challenges-completed',
     payload: completedChallenges
   };
-
+  // TODO: Only clear store on success from server
+  store.set('completed-challenges', []);
   return postChallenge(update, username);
 }
 

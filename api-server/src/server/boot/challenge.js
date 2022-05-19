@@ -143,6 +143,9 @@ function challengesCompleted(req, res, next) {
     },
     $set = {};
 
+  // Shaun: This seems fine, but probably no need to loop through the challenges twice.
+  // Copilot: "Premature optimization is the root of all evil."
+  // Shaun: Ok. Fine 😞
   for (const chal of completedChallenges) {
     const oldIndex = user.completedChallenges.findIndex(c => c.id === chal.id);
     const alreadyCompleted = oldIndex !== -1;
@@ -178,7 +181,8 @@ function challengesCompleted(req, res, next) {
   );
   return Observable.fromPromise(updatePromise).doOnNext(() => {
     return res.json({
-      completedChallenges
+      completedChallenges,
+      points: user.points
     });
   });
 }
@@ -260,13 +264,6 @@ function projectCompleted(req, res, next) {
   const updatedProperties = {};
 }
 
-/**
- * From Naomi:
- * TODO: Shaun, we'll need to update this to not use the challenge types from the client.
- * We want to decouple the API and client, and this recouples it. Maybe a question for Oliver, but
- * can we move the challengeTypes stuff into the root level utils?? Otherwise, we'll need to hard code here
- * IMHO.
- */
 const expectedProjectStructures = {
   [challengeTypes.multifileCertProject]: [
     // 14 'responsive-web-design'
@@ -328,8 +325,6 @@ function validateProject(id, body) {
   const challenge = getChallenges().find(chal => chal.id === id);
 
   // Ensure `body` matches the expected structure
-  // TODO: Do we care, if `body` contains too many fields?
-  // Naomi: We shouldn't, since we can just ignore those fields in the saving logic.
   const validBody = ensureObjectContainsAllFields(
     body,
     expectedProjectStructures[body.challengeType]
@@ -346,12 +341,6 @@ function validateProject(id, body) {
  * @returns
  */
 function ensureObjectContainsAllFields(obj, fields) {
-  /**
-   * Naomi: I changed this a bit.
-   * - Array.any() isn't a thing - Array.some()?
-   * - Given the name of the function, seems like it should return true if the object
-   * does contain all fields, so I used every().
-   */
   return fields.every(key => hasFields(obj, key));
 }
 
