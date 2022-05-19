@@ -118,12 +118,12 @@ function challengesCompleted(req, res, next) {
     // NOTE: Consider what will happen if this comes with a batch
     // TODO: handle resubmission of challenges - no new timestamp?
     // Naomi: Not yet - the current behaviour doesn't update the timestamp.
-    const timestamp = Date.now();
+    const completedDate = Date.now();
 
     const completedChallenge = {
       challengeType,
       id,
-      timestamp
+      completedDate
     };
 
     completedChallenges.push(completedChallenge);
