@@ -142,7 +142,7 @@ assert(els.length === 1)
 你应该至少有一个 class 为 `nav-link` 的 `a` 元素。
 
 ```js
-const els = document.querySelectorAll('a[class="nav-link"]')
+const els = document.querySelectorAll('a.nav-link')
 assert(els.length >= 1)
 ```
 
