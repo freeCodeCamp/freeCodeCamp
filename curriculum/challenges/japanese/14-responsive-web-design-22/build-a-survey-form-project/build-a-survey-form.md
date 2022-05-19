@@ -31,88 +31,88 @@ dashedName: build-a-survey-form
 
 上記のユーザーストーリーを満たして、以下のすべてのテストに合格してこのプロジェクトを完成させてください。 あなた独自のスタイルを加えましょう。 ハッピーコーディング！
 
-**注:** スタイルシートをリンクして CSS を適用するため、HTML 内に `<link rel="stylesheet" href="styles.css">` を必ず追加してください
+**注:** スタイルシートをリンクして CSS が適用されるように、`<link rel="stylesheet" href="styles.css">` を HTML 内に必ず加えてください。
 
 # --hints--
 
-`id` の値が `title` に設定されている `h1` 要素が 1 つ必要です
+`id` の値が `title` に設定されている `h1` 要素が 1 つ必要です。
 
 ```js
 const el = document.getElementById('title')
 assert(!!el && el.tagName === 'H1')
 ```
 
-`#title` は空ではないようにしてください
+`#title` が空でないようにしてください。
 
 ```js
 const el = document.getElementById('title')
 assert(!!el && el.innerText.length > 0)
 ```
 
-`id` が `description` である `p` 要素が 1 つ必要です
+`id` が `description` である `p` 要素が 1 つ必要です。
 
 ```js
 const el = document.getElementById('description')
 assert(!!el && el.tagName === 'P')
 ```
 
-`#description` が空でないようにしてください
+`#description` が空でないようにしてください。
 
 ```js
 const el = document.getElementById('description')
 assert(!!el && el.innerText.length > 0)
 ```
 
-`id` の値が `survey-form` に設定されている `form` 要素が 1 つ必要です
+`id` の値が `survey-form` に設定されている `form` 要素が 1 つ必要です。
 
 ```js
 const el = document.getElementById('survey-form')
 assert(!!el && el.tagName === 'FORM')
 ```
 
-`id` の値が `name` に設定されている `input` 要素が 1 つ必要です
+`id` の値が `name` に設定されている `input` 要素が 1 つ必要です。
 
 ```js
 const el = document.getElementById('name')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-`#name` の `type` の値は `text` に設定されている必要があります
+`#name` の `type` の値は `text` に設定されている必要があります。
 
 ```js
 const el = document.getElementById('name')
 assert(!!el && el.type === 'text')
 ```
 
-`#name` の入力が必須である必要があります
+`#name` の入力が必須である必要があります。
 
 ```js
 const el = document.getElementById('name')
 assert(!!el && el.required)
 ```
 
-`#name` は `#survey-form` の子孫要素である必要があります
+`#name` は `#survey-form` の子孫要素である必要があります。
 
 ```js
 const el = document.querySelector('#survey-form #name')
 assert(!!el)
 ```
 
-`id` の値が `email` に設定されている `input` 要素が 1 つ必要です
+`id` の値が `email` に設定されている `input` 要素が 1 つ必要です。
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-`#email` の `type` の値は `email` に設定されている必要があります
+`#email` の `type` の値は `email` に設定されている必要があります。
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.type === 'email')
 ```
 
-`#email` の入力が必須である必要があります
+`#email` の入力が必須である必要があります。
 
 ```js
 const el = document.getElementById('email')
@@ -126,161 +126,161 @@ const el = document.querySelector('#survey-form #email')
 assert(!!el)
 ```
 
-`id` の値が `number` に設定されている `input` 要素が 1 つ必要です
+`id` の値が `number` に設定されている `input` 要素が 1 つ必要です。
 
 ```js
 const el = document.getElementById('number')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-`#number` は `#survey-form` の子孫要素である必要があります
+`#number` は `#survey-form` の子孫要素である必要があります。
 
 ```js
 const el = document.querySelector('#survey-form #number')
 assert(!!el)
 ```
 
-`#number` の `type` の値は `number` に設定されている必要があります
+`#number` の `type` の値は `number` に設定されている必要があります。
 
 ```js
 const el = document.getElementById('number')
 assert(!!el && el.type === 'number')
 ```
 
-`#number` は数値が設定された `min` 属性をもつ必要があります
+`#number` は数値が設定された `min` 属性をもつ必要があります。
 
 ```js
 const el = document.getElementById('number')
 assert(!!el && el.min && isFinite(el.min))
 ```
 
-`#number` は数値が設定された `max` 属性をもつ必要があります
+`#number` は数値が設定された `max` 属性をもつ必要があります。
 
 ```js
 const el = document.getElementById('number')
 assert(!!el && el.max && isFinite(el.max))
 ```
 
-`id` の値が `name-label` に設定されている `label` 要素が 1 つ必要です
+`id` の値が `name-label` に設定されている `label` 要素が 1 つ必要です。
 
 ```js
 const el = document.getElementById('name-label')
 assert(!!el && el.tagName === 'LABEL')
 ```
 
-`id` の値が `email-label` に設定されている `label` 要素が 1 つ必要です
+`id` の値が `email-label` に設定されている `label` 要素が 1 つ必要です。
 
 ```js
 const el = document.getElementById('email-label')
 assert(!!el && el.tagName === 'LABEL')
 ```
 
-`id` の値が `number-label` に設定されている `label` 要素が 1 つ必要です
+`id` の値が `number-label` に設定されている `label` 要素が 1 つ必要です。
 
 ```js
 const el = document.getElementById('number-label')
 assert(!!el && el.tagName === 'LABEL')
 ```
 
-`#name-label` が空でないようにしてください
+`#name-label` が空でないようにしてください。
 
 ```js
 const el = document.getElementById('name-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-`#email-label` が空でないようにしてください
+`#email-label` が空でないようにしてください。
 
 ```js
 const el = document.getElementById('email-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-`#number-label` が空でないようにしてください
+`#number-label` が空でないようにしてください。
 
 ```js
 const el = document.getElementById('number-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-`#name-label` は `#survey-form` の子孫要素である必要があります
+`#name-label` は `#survey-form` の子孫要素である必要があります。
 
 ```js
 const el = document.querySelector('#survey-form #name-label')
 assert(!!el)
 ```
 
-`#email-label` は `#survey-form` の子孫要素である必要があります
+`#email-label` は `#survey-form` の子孫要素である必要があります。
 
 ```js
 const el = document.querySelector('#survey-form #email-label')
 assert(!!el)
 ```
 
-`#number-label` は `#survey-form` の子孫要素である必要があります
+`#number-label` は `#survey-form` の子孫要素である必要があります。
 
 ```js
 const el = document.querySelector('#survey-form #number-label')
 assert(!!el)
 ```
 
-`#name` は `placeholder` 属性とその値をもつ必要があります
+`#name` は `placeholder` 属性とその値をもつ必要があります。
 
 ```js
 const el = document.getElementById('name')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-`#email` は `placeholder` 属性とその値をもつ必要があります
+`#email` は `placeholder` 属性とその値をもつ必要があります。
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-`#number` は `placeholder` 属性とその値をもつ必要があります
+`#number` は `placeholder` 属性とその値をもつ必要があります。
 
 ```js
 const el = document.getElementById('number')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-`id` の値が `dropdown` に設定されている `select` 欄が 1 つ必要です
+`id` の値が `dropdown` に設定されている `select` 欄が 1 つ必要です。
 
 ```js
 const el = document.getElementById('dropdown')
 assert(!!el && el.tagName === 'SELECT')
 ```
 
-`#dropdown` は少なくとも 2 つの選択可能な (無効化されていない) `option` 要素をもつ必要があります
+`#dropdown` は少なくとも 2 つの選択可能な (無効化されていない) `option` 要素をもつ必要があります。
 
 ```js
 const els = document.querySelectorAll('#dropdown option:not([disabled])')
 assert(els.length >= 2)
 ```
 
-`#dropdown` は `#survey-form` の子孫要素である必要があります
+`#dropdown` は `#survey-form` の子孫要素である必要があります。
 
 ```js
 const el = document.querySelector('#survey-form #dropdown')
 assert(!!el)
 ```
 
-`type` の値が `radio` (ラジオボタン) に設定されている `input` 要素が少なくとも 2 つ必要です
+`type` の値が `radio` (ラジオボタン) に設定されている `input` 要素が少なくとも 2 つ必要です。
 
 ```js
 const els = document.querySelectorAll('input[type="radio"]')
 assert(els.length >= 2)
 ```
 
-少なくとも 2 つのラジオボタンが `#survey-form` の子孫要素として必要です
+少なくとも 2 つのラジオボタンが `#survey-form` の子孫要素として必要です。
 
 ```js
 const els = document.querySelectorAll('#survey-form input[type="radio"]')
 assert(els.length >= 2)
 ```
 
-すべてのラジオボタンには `value` 属性とその値が必要です
+すべてのラジオボタンには `value` 属性とその値が必要です。
 
 ```js
 const els1 = document.querySelectorAll('input[type="radio"]')
@@ -288,7 +288,7 @@ const els2 = document.querySelectorAll('input[type="radio"][value=""], input[typ
 assert(els1.length > 0 && els2.length === 0)
 ```
 
-すべてのラジオボタンには `name` 属性とその値が必要です
+すべてのラジオボタンには `name` 属性とその値が必要です。
 
 ```js
 const els1 = document.querySelectorAll('input[type="radio"]')
@@ -296,7 +296,7 @@ const els2 = document.querySelectorAll('input[type="radio"][name=""], input[type
 assert(els1.length > 0 && els2.length === 0)
 ```
 
-ラジオボタンの各グループには少なくとも 2 つのラジオボタンが必要です
+ラジオボタンの各グループには少なくとも 2 つのラジオボタンが必要です。
 
 ```js
 const radioButtons = document.querySelectorAll('input[type="radio"]');
@@ -318,14 +318,14 @@ groupKeys.forEach(key => {
 assert(groupKeys.length > 0)
 ```
 
-`type` の値が `checkbox` (チェックボックス) に設定されている `input` 要素が `#survey-form` の子孫要素として少なくとも 2 つ必要です
+`type` の値が `checkbox` (チェックボックス) に設定されている `input` 要素が `#survey-form` の子孫要素として少なくとも 2 つ必要です。
 
 ```js
 const els = document.querySelectorAll('#survey-form input[type="checkbox"]');
 assert(els.length >= 2)
 ```
 
-`#survey-form` 内のすべてのチェックボックスには `value` 属性とその値が必要です
+`#survey-form` 内のすべてのチェックボックスには `value` 属性とその値が必要です。
 
 ```js
 const els1 = document.querySelectorAll('#survey-form input[type="checkbox"]')
@@ -333,28 +333,28 @@ const els2 = document.querySelectorAll('#survey-form input[type="checkbox"][valu
 assert(els1.length > 0 && els2.length === 0)
 ```
 
-少なくとも 1 つの `textarea` 要素が `#survey-form` の子孫要素として必要です
+少なくとも 1 つの `textarea` 要素が `#survey-form` の子孫要素として必要です。
 
 ```js
 const el = document.querySelector('#survey-form textarea')
 assert(!!el)
 ```
 
-`id` の値が `submit` に設定されている、`input` または `button` 要素が 1 つ必要です
+`id` の値が `submit` に設定されている、`input` または `button` 要素が 1 つ必要です。
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && (el.tagName === 'INPUT' || el.tagName === 'BUTTON'))
 ```
 
-`#submit` は `type` が `submit` に設定されている必要があります
+`#submit` は `type` が `submit` に設定されている必要があります。
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && el.type === 'submit')
 ```
 
-`#submit` は `#survey-form` の子孫要素である必要があります
+`#submit` は `#survey-form` の子孫要素である必要があります。
 
 ```js
 const el = document.querySelector('#survey-form #submit')

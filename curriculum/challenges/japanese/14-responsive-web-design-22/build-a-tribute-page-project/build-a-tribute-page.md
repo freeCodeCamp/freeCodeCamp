@@ -15,8 +15,8 @@ dashedName: build-a-tribute-page
 1. トリビュートページには `id="main"` を持つ要素が 1 つあり、その中に他のすべての要素が含まれます
 1. `id` の値が `title` に設定されている要素が 1 つあり、それにはトリビュートページで取り上げる対象者 (例: "Dr. Norman Borlaug") を説明する文字列 (すなわちテキスト) が記載されています
 1. `id` の値が `img-div` に設定されている `figure` または `div` 要素のどちらか 1 つが必要です
-1. `img-div` の要素内には、`id="image"` を持つ `img` 要素があります
-1. `img-div` の要素内には、`id="img-caption"` を持つ要素があり、`img-div` 内に表示されている画像を説明するテキストコンテンツを含みます
+1. `#img-div` の要素内には、`id="image"` を持つ `img` 要素があります
+1. `#img-div` の要素内には、`id="img-caption"` を持つ要素があり、`#img-div` 内に表示されている画像を説明するテキストコンテンツを含みます
 1. `id="tribute-info"` を持つ要素が 1 つあり、これにはトリビュートページの対象者を説明するテキストコンテンツが含まれます
 1. `id="tribute-link"` を持つ a 要素が 1 つあり、これはトリビュートページの対象者に関する追加情報を含む外部サイトへのリンクです。 ヒント: リンクを新しいタブで開くためには、要素に `target` 属性を与え、その値に `_blank` を設定しなければなりません
 1. `#image` に `max-width` と `height` プロパティを使用して、元のサイズを超えることなく、親要素の幅に応じてサイズが変更されるようにします
@@ -24,18 +24,18 @@ dashedName: build-a-tribute-page
 
 上記のユーザーストーリーを満たして、以下のすべてのテストに合格してこのプロジェクトを完成させてください。 あなた独自のスタイルを加えましょう。 ハッピーコーディング！
 
-**注:** スタイルシートをリンクして CSS を適用するため、HTML 内に `<link rel="stylesheet" href="styles.css">` を必ず追加してください
+**注:** スタイルシートをリンクして CSS が適用されるように、`<link rel="stylesheet" href="styles.css">` を HTML 内に必ず加えてください
 
 # --hints--
 
-`id` の値が `main` に設定されている `main` 要素が 1 つ必要です
+`id` の値が `main` に設定されている `main` 要素が 1 つ必要です。
 
 ```js
 const el = document.getElementById('main')
 assert(!!el && el.tagName === 'MAIN')
 ```
 
-`#img-div`、`#image`、`#img-caption`、`#tribute-info`、および `#tribute-link` は、すべて `#main` の子孫要素である必要があります
+`#img-div`、`#image`、`#img-caption`、`#tribute-info`、および `#tribute-link` は、すべて `#main` の子孫要素である必要があります。
 
 ```js
 const el1 = document.querySelector('#main #img-div')
@@ -46,14 +46,14 @@ const el5 = document.querySelector('#main #tribute-link')
 assert(!!el1 & !!el2 && !!el3 && !!el4 && !!el5)
 ```
 
-`id` が `title` の要素が 1 つ必要です
+`id` が `title` の要素が 1 つ必要です。
 
 ```js
 const el = document.getElementById('title')
 assert(!!el)
 ```
 
-`#title` が空でないようにしてください
+`#title` が空でないようにしてください。
 
 ```js
 const el = document.getElementById('title')
@@ -61,84 +61,84 @@ assert(!!el && el.innerText.length > 0)
 
 ```
 
-`id` の値が `img-div` に設定されている、`figure` または `div` 要素が 1 つ必要です
+`id` の値が `img-div` に設定されている、`figure` または `div` 要素が 1 つ必要です。
 
 ```js
 const el = document.getElementById('img-div')
 assert(!!el && (el.tagName === 'DIV' || el.tagName === 'FIGURE'))
 ```
 
-`id` の値が `image` に設定されている `img` 要素が 1 つ必要です
+`id` の値が `image` に設定されている `img` 要素が 1 つ必要です。
 
 ```js
 const el = document.getElementById('image')
 assert(!!el && el.tagName === 'IMG')
 ```
 
-`#image` は `#img-div` の子孫要素である必要があります
+`#image` は `#img-div` の子孫要素である必要があります。
 
 ```js
 const el = document.querySelector('#img-div #image')
 assert(!!el)
 ```
 
-`id` の値が `img-caption` に設定されている、`figcaption` または `div` 要素が 1 つ必要です
+`id` の値が `img-caption` に設定されている、`figcaption` または `div` 要素が 1 つ必要です。
 
 ```js
 const el = document.getElementById('img-caption')
 assert(!!el && (el.tagName === 'DIV' || el.tagName === 'FIGCAPTION'))
 ```
 
-`#img-caption` は `#img-div` の子孫要素である必要があります
+`#img-caption` は `#img-div` の子孫要素である必要があります。
 
 ```js
 const el = document.querySelector('#img-div #img-caption')
 assert(!!el)
 ```
 
-`#img-caption` が空でないようにしてください
+`#img-caption` が空でないようにしてください。
 
 ```js
 const el = document.getElementById('img-caption')
 assert(!!el && el.innerText.length > 0)
 ```
 
-`id` が `tribute-info` の要素が 1 つ必要です
+`id` が `tribute-info` の要素が 1 つ必要です。
 
 ```js
 const el = document.getElementById('tribute-info')
 assert(!!el)
 ```
 
-`#tribute-info` が空でないようにしてください
+`#tribute-info` が空でないようにしてください。
 
 ```js
 const el = document.getElementById('tribute-info')
 assert(!!el && el.innerText.length > 0)
 ```
 
-`id` の値が `tribute-link` に設定されている `a` 要素が 1 つ必要です
+`id` の値が `tribute-link` に設定されている `a` 要素が 1 つ必要です。
 
 ```js
 const el = document.getElementById('tribute-link')
 assert(!!el && el.tagName === 'A')
 ```
 
-`#tribute-link` は `href` 属性とその値をもつ必要があります
+`#tribute-link` は `href` 属性とその値をもつ必要があります。
 
 ```js
 const el = document.getElementById('tribute-link')
 assert(!!el && !!el.href && el.href.length > 0)
 ```
 
-`#tribute-link` は、値が `_blank` に設定されている `target` 属性をもつ必要があります
+`#tribute-link` は、値が `_blank` に設定されている `target` 属性をもつ必要があります。
 
 ```js
 const el = document.getElementById('tribute-link')
 assert(!!el && el.target === '_blank')
 ```
 
-`img` 要素の `display` の値は `block` に設定されている必要があります
+`img` 要素の `display` の値は `block` に設定されている必要があります。
 
 ```js
 const img = document.getElementById('image');
@@ -147,7 +147,7 @@ const style = imgStyle?.getPropertyValue('display')
 assert(style === 'block')
 ```
 
-`#image` の `max-width` の値は `100%` に設定されている必要があります
+`#image` の `max-width` の値は `100%` に設定されている必要があります。
 
 ```js
 const img = document.getElementById('image');
@@ -156,7 +156,7 @@ const style = imgStyle?.getPropertyValue('max-width')
 assert(style === '100%')
 ```
 
-`#image` の `height` の値は `auto` に設定されている必要があります
+`#image` の `height` の値は `auto` に設定されている必要があります。
 
 ```js
 // taken from the testable-projects repo
@@ -170,7 +170,7 @@ img?.style.setProperty('display', oldDisplayValue, oldDisplayPriority);
 assert(heightValue === 'auto')
 ```
 
-`#image` は親要素内の中央に配置する必要があります
+`#image` は親要素内の中央に配置する必要があります。
 
 ```js
 // taken from the testable-projects repo
