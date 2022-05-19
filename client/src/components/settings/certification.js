@@ -278,6 +278,7 @@ export class CertificationSettings extends Component {
             <Button
               block={true}
               bsStyle='primary'
+              className={'col-xs-12'}
               href={certLocation}
               data-cy={`btn-for-${certSlug}`}
               onClick={createClickHandler(certSlug)}
