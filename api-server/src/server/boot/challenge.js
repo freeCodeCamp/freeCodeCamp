@@ -134,14 +134,19 @@ function challengesCompleted(req, res, next) {
   // function but for an array of challenges
 
   const $push = {
-      progressTimestamps: [],
-      completedChallenges: []
+      progressTimestamps: {
+        $each: []
+      },
+      completedChallenges: {
+        $each: []
+      }
     },
     $set = {};
 
   // Shaun: This seems fine, but probably no need to loop through the challenges twice.
   // Copilot: "Premature optimization is the root of all evil."
   // Shaun: Ok. Fine 😞
+  let points = user.points;
   for (const chal of completedChallenges) {
     const oldIndex = user.completedChallenges.findIndex(c => c.id === chal.id);
     const alreadyCompleted = oldIndex !== -1;
@@ -154,19 +159,27 @@ function challengesCompleted(req, res, next) {
         completedDate: oldChallenge.completedDate
       };
     } else {
-      $push.progressTimestamps = [...$push.progressTimestamps, Date.now()];
-      $push.completedChallenges = [...$push.completedChallenges, chal];
+      points++;
+      $push.progressTimestamps.$each = [
+        ...$push.progressTimestamps.$each,
+        Date.now()
+      ];
+      $push.completedChallenges.$each = [
+        ...$push.completedChallenges.$each,
+        chal
+      ];
     }
   }
 
   const updateData = {};
-  if ($push.completedChallenges.length) {
+  if ($push.completedChallenges.$each.length) {
     updateData.$push = $push;
   }
   if (!isEmpty($set)) {
     updateData.$set = $set;
   }
 
+  user.points = points;
   const updatePromise = new Promise((resolve, reject) =>
     user.updateAttributes(updateData, err => {
       if (err) {
@@ -175,10 +188,10 @@ function challengesCompleted(req, res, next) {
       return resolve();
     })
   );
-  return Observable.fromPromise(updatePromise).doOnNext(() => {
+  return Observable.fromPromise(updatePromise).doOnCompleted(() => {
     return res.json({
       completedChallenges,
-      points: user.points
+      points
     });
   });
 }
@@ -243,7 +256,7 @@ function projectCompleted(req, res, next) {
   }
   */
 
-  const { id } = body;
+  const { id, completedChallenge } = body;
 
   // Find the structure, based on the `id` of the project
   const isProjectValid = validateProject(id, body);
@@ -257,7 +270,33 @@ function projectCompleted(req, res, next) {
 
   // TODO: Handle all the different types of project
   // TODO: Handle resubmission of projects (no new timestamp)
-  const updatedProperties = {};
+
+  const { alreadyCompleted, savedChallenges, updateData } = buildUserUpdate(
+    user,
+    id,
+    completedChallenge
+  );
+  const completedDate = alreadyCompleted
+    ? user.completedChallenges[0]?.completedDate
+    : Date.now();
+
+  const points = alreadyCompleted ? user.points : user.points + 1;
+  const updatePromise = new Promise((resolve, reject) =>
+    user.updateAttributes(updateData, err => {
+      if (err) {
+        return reject(err);
+      }
+      return resolve();
+    })
+  );
+  return Observable.fromPromise(updatePromise).map(() => {
+    return res.json({
+      points,
+      alreadyCompleted,
+      completedDate,
+      savedChallenges
+    });
+  });
 }
 
 const expectedProjectStructures = {

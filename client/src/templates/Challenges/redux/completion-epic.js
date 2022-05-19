@@ -31,7 +31,7 @@ import {
   challengeFilesSelector
 } from './';
 
-function postChallenge(update, username, clear = false) {
+function postChallenge(update) {
   const saveChallenge = postUpdate$(update).pipe(
     retry(3),
     switchMap(({ points, savedChallenges, completedChallenges }) => {
@@ -45,10 +45,7 @@ function postChallenge(update, username, clear = false) {
       );
     }),
     // clear store only on success not on error
-    catchError(() => of(updateFailed(update))),
-    // clear store only on success not on error. DO NOT USE finalize
-    // because it will clear the store on error
-    filter(() => clear)
+    catchError(() => of(updateFailed(update)))
   );
   return saveChallenge;
 }
