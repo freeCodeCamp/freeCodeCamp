@@ -7,7 +7,8 @@
     "curriculum/*.test.ts",
     "tools/challenge-editor/**/*",
     "tools/challenge-helper-scripts/**/*.ts",
-    "tools/scripts/**/*.ts"
+    "tools/scripts/**/*.ts",
+    "utils/challenge-types.js"
   ],
   "extends": "./tsconfig-base.json"
 }

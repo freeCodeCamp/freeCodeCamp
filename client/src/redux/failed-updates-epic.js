@@ -12,7 +12,7 @@ import {
 import store from 'store';
 import { v4 as uuid } from 'uuid';
 
-import { backEndProject } from '../../utils/challenge-types';
+import { backEndProject } from '../../../utils/challenge-types';
 import { isGoodXHRStatus } from '../templates/Challenges/utils';
 import postUpdate$ from '../templates/Challenges/utils/post-update';
 import { actionTypes } from './action-types';

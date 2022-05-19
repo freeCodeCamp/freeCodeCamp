@@ -8,7 +8,7 @@ import {
   codeAllyCert,
   frontEndProject,
   pythonProject
-} from '../../../../utils/challenge-types';
+} from '../../../../../utils/challenge-types';
 import { Form, ValidatedValues } from '../../../components/formHelpers';
 
 interface SubmitProps {

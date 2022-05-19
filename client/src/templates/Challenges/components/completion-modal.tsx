@@ -10,7 +10,7 @@ import { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import { dasherize } from '../../../../../utils/slugs';
-import { isProject } from '../../../../utils/challenge-types';
+import { isProject } from '../../../../../utils/challenge-types';
 import Login from '../../../components/Header/components/Login';
 import {
   isSignedInSelector,

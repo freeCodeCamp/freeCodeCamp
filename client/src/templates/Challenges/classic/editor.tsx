@@ -39,7 +39,7 @@ import {
 } from '../../../redux/prop-types';
 import { editorToneOptions } from '../../../utils/tone/editor-config';
 import { editorNotes } from '../../../utils/tone/editor-notes';
-import { challengeTypes } from '../../../../utils/challenge-types';
+import { challengeTypes } from '../../../../../utils/challenge-types';
 import {
   canFocusEditorSelector,
   challengeMetaSelector,

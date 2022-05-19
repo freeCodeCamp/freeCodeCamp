@@ -14,7 +14,7 @@ import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
 import ChallengeTitle from '../components/challenge-title';
 import PrismFormatted from '../components/prism-formatted';
-import { challengeTypes } from '../../../../utils/challenge-types';
+import { challengeTypes } from '../../../../../utils/challenge-types';
 import CompletionModal from '../components/completion-modal';
 import GreenPass from '../../../assets/icons/green-pass';
 import HelpModal from '../components/help-modal';

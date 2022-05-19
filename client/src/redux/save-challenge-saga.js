@@ -5,7 +5,7 @@ import {
   challengeMetaSelector
 } from '../templates/Challenges/redux';
 import { createFlashMessage } from '../components/Flash/redux';
-import { challengeTypes } from '../../utils/challenge-types';
+import { challengeTypes } from '../../../utils/challenge-types';
 import { FlashMessages } from '../components/Flash/redux/flash-messages';
 import {
   standardizeRequestBody,

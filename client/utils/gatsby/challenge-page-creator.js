@@ -1,7 +1,7 @@
 const path = require('path');
 const { dasherize } = require('../../../utils/slugs');
 const { sortChallengeFiles } = require('../../../utils/sort-challengefiles');
-const { challengeTypes, viewTypes } = require('../challenge-types');
+const { challengeTypes, viewTypes } = require('../../../utils/challenge-types');
 
 const backend = path.resolve(
   __dirname,

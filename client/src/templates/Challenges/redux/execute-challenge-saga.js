@@ -25,7 +25,7 @@ import {
   isJavaScriptChallenge,
   isLoopProtected
 } from '../utils/build';
-import { challengeTypes } from '../../../../utils/challenge-types';
+import { challengeTypes } from '../../../../../utils/challenge-types';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import {

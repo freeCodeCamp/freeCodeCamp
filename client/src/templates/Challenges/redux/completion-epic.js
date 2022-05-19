@@ -11,7 +11,7 @@ import {
 } from 'rxjs/operators';
 
 import store from 'store';
-import { isProject } from '../../../../utils/challenge-types';
+import { isProject } from '../../../../../utils/challenge-types';
 import {
   userSelector,
   isSignedInSelector,

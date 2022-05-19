@@ -2,7 +2,7 @@ import { isEmpty } from 'lodash-es';
 import { createAction, handleActions } from 'redux-actions';
 
 import { getLines } from '../../../../../utils/get-lines';
-import { challengeTypes } from '../../../../utils/challenge-types';
+import { challengeTypes } from '../../../../../utils/challenge-types';
 import { completedChallengesSelector } from '../../../redux';
 import { getTargetEditor } from '../utils/get-target-editor';
 import { actionTypes, ns } from './action-types';

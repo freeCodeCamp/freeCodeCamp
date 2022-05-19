@@ -8,7 +8,7 @@ import Media from 'react-responsive';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import store from 'store';
-import { challengeTypes } from '../../../../utils/challenge-types';
+import { challengeTypes } from '../../../../../utils/challenge-types';
 import LearnLayout from '../../../components/layouts/learn';
 
 import {

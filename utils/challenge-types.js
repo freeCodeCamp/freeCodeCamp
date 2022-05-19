@@ -103,4 +103,4 @@ exports.submitTypes = {
 };
 
 // determine which help forum questions should be posted to
-exports.helpCategoryMap = require('./help-category-map.json');
+exports.helpCategoryMap = require('../client/utils/help-category-map.json');

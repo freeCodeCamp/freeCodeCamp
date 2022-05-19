@@ -29,7 +29,7 @@ import {
   getPrefixedLandingPath
 } from '../utils/redirection';
 
-import { challengeTypes } from '../../../../client/utils/challenge-types';
+import { challengeTypes } from '../../../../utils/challenge-types';
 import { deprecatedEndpoint } from '../utils/disabled-endpoints';
 
 const log = debug('fcc:boot:challenges');

@@ -5,7 +5,7 @@ const assert = require('assert');
 const yaml = require('js-yaml');
 const { findIndex, isEmpty } = require('lodash');
 const readDirP = require('readdirp');
-const { helpCategoryMap } = require('../client/utils/challenge-types');
+const { helpCategoryMap } = require('../utils/challenge-types');
 const { showUpcomingChanges } = require('../config/env.json');
 const { curriculum: curriculumLangs } =
   require('../config/i18n/all-langs').availableLangs;

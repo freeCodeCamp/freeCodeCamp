@@ -1,5 +1,5 @@
 import type { CompletedChallenge } from '../redux/prop-types';
-import { challengeTypes } from '../../utils/challenge-types';
+import { challengeTypes } from '../../../utils/challenge-types';
 import { maybeUrlRE } from '.';
 
 export const getSolutionDisplayType = ({

@@ -1,6 +1,6 @@
 import frameRunnerData from '../../../../../config/client/frame-runner.json';
 import testEvaluatorData from '../../../../../config/client/test-evaluator.json';
-import { challengeTypes } from '../../../../utils/challenge-types';
+import { challengeTypes } from '../../../../../utils/challenge-types';
 import { concatHtml } from '../rechallenge/builders.js';
 import { getTransformers, embedFilesInHtml } from '../rechallenge/transformers';
 import {
