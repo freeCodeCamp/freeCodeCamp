@@ -329,12 +329,14 @@ function validateProject(id, body) {
 
   // Ensure `body` matches the expected structure
   // TODO: Do we care, if `body` contains too many fields?
-  ensureObjectContainsAllFields(
+  // Naomi: We shouldn't, since we can just ignore those fields in the saving logic.
+  const validBody = ensureObjectContainsAllFields(
     body,
     expectedProjectStructures[body.challengeType]
   );
-  // Naomi: We aren't looking at the body here yet.
-  return !!challenge && [3, 4, 10, 13, 14].includes(body.challengeType);
+  return (
+    !!challenge && [3, 4, 10, 13, 14].includes(body.challengeType) && validBody
+  );
 }
 
 /**
@@ -344,7 +346,13 @@ function validateProject(id, body) {
  * @returns
  */
 function ensureObjectContainsAllFields(obj, fields) {
-  return fields.any(key => !hasFields(obj, key));
+  /**
+   * Naomi: I changed this a bit.
+   * - Array.any() isn't a thing - Array.some()?
+   * - Given the name of the function, seems like it should return true if the object
+   * does contain all fields, so I used every().
+   */
+  return fields.every(key => hasFields(obj, key));
 }
 
 function hasFields(obj, keys) {
