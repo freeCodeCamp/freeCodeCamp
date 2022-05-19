@@ -252,7 +252,7 @@ const expectedProjectStructures = {
     'files.name',
     'id'
   ],
-  [challengeTypes.js]: [
+  [challengeTypes.bonfire]: [
     // 1 'javascript-algorithms-and-data-structures'
     'challengeType',
     'files',
