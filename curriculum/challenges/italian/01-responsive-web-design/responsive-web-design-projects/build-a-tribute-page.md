@@ -24,6 +24,8 @@ dashedName: build-a-tribute-page
 
 Soddisfa le user story e passa tutti i test qua sotto per complerare questo progetto. Usa il tuo stile personale. Buon divertimento!
 
+**Nota:** Assicurati di aggiungere `<link rel="stylesheet" href="styles.css">` nel tuo HTML per linkare il tuo foglio di stile e applicare il tuo CSS
+
 # --hints--
 
 Dovrebbe esserci un elemento `main` con un `id` di `main`
