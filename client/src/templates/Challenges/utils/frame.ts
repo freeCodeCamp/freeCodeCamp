@@ -69,7 +69,7 @@ const createHeader = (id = mainPreviewId) => `
       }
       if(element && element.nodeName === 'A'){
         e.preventDefault();
-        window.parent.window.alert('Normally this link would bring you to another website! It works!' + 'This is a link to: ' + '(' + element.href + ')');
+        window.parent.window.alert('Normally this link would bring you to another website! It works!' + ' This is a link to: ' + '(' + element.href + ')');
       }
       if (element) {
         const href = element.getAttribute('href');
