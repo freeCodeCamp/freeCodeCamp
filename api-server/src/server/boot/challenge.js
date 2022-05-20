@@ -79,7 +79,7 @@ export default async function bootChallenge(app, done) {
  * @param {Response} res
  * @returns {Observable}
  */
-export function challengesCompleted(req, res) {
+export function challengesCompleted(req, res, next) {
   // Challenges should only include `id` and `challengeType`
   const { user, body } = req;
 
@@ -179,12 +179,15 @@ export function challengesCompleted(req, res) {
       return resolve();
     })
   );
-  return Observable.fromPromise(updatePromise).doOnCompleted(() => {
-    return res.json({
-      completedChallenges,
-      points
-    });
-  });
+  // Shaun: No idea what this is doing, but I copied it from the old code.
+  return Observable.fromPromise(updatePromise)
+    .map(() => {
+      return res.json({
+        completedChallenges,
+        points
+      });
+    })
+    .subscribe(() => {}, next);
 }
 
 /**
@@ -193,7 +196,7 @@ export function challengesCompleted(req, res) {
  * @param {Response} res
  * @returns {Observable}
  */
-export function projectCompleted(req, res) {
+export function projectCompleted(req, res, next) {
   const { user, body } = req;
 
   // Ensure `body` is an object
@@ -204,7 +207,7 @@ export function projectCompleted(req, res) {
     });
   }
 
-  const { id, completedChallenge } = body;
+  const { id } = body;
 
   // Find the structure, based on the `id` of the project
   const isProjectValid = validateProject(id, body);
@@ -219,25 +222,27 @@ export function projectCompleted(req, res) {
   const { alreadyCompleted, savedChallenges, updateData } = buildUserUpdate(
     user,
     id,
-    completedChallenge
+    body
   );
 
   const points = alreadyCompleted ? user.points : user.points + 1;
   const updatePromise = new Promise((resolve, reject) =>
-    user.updateAttributes(updateData, err => {
+    user.updateAttributes(updateData, (err, instance) => {
       if (err) {
         return reject(err);
       }
-      return resolve();
+      return resolve(instance);
     })
   );
-  return Observable.fromPromise(updatePromise).map(() => {
-    return res.json({
-      completedChallenges: user.completedChallenges,
-      points,
-      savedChallenges
-    });
-  });
+  return Observable.fromPromise(updatePromise)
+    .map(() => {
+      return res.json({
+        completedChallenges: updateData.$push.completedChallenges,
+        points,
+        savedChallenges
+      });
+    })
+    .subscribe(() => {}, next);
 }
 
 export const expectedProjectStructures = {
