@@ -25,14 +25,14 @@ In your Pug file, you're able to use a variable by referencing the variable name
       else
         p Get on it!
     
-    <!--will lead to creating this code-->
+<!--will lead to creating this code-->
   <head>
-        <script type="text/javascript">
+    <script type="text/javascript">
       if (foo) bar(1 + 5);
     </script>
   </head>
   <body>
-      <p>You are amazing</p>
+    <p>You are amazing</p>
   </body>
   ```
 
