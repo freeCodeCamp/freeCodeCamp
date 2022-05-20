@@ -12,13 +12,13 @@ const certifications = [
   'JavaScript Algorithms and Data Structures',
   'Front End Development Libraries',
   'Data Visualization',
+  'Relational Database (Beta)',
   'Back End Development and APIs',
   'Quality Assurance',
   'Scientific Computing with Python',
   'Data Analysis with Python',
   'Information Security',
-  'Machine Learning with Python',
-  'Relational Database (Beta)'
+  'Machine Learning with Python'
 ];
 
 describe('Landing page', () => {
