@@ -26,6 +26,8 @@ dashedName: build-a-personal-portfolio-webpage
 
 上記のユーザーストーリーを満たして、以下のすべてのテストに合格してこのプロジェクトを完成させてください。 あなた独自のスタイルを加えましょう。 ハッピーコーディング！
 
+**注:** スタイルシートをリンクして CSS を適用するため、HTML 内に `<link rel="stylesheet" href="styles.css">` を必ず追加してください
+
 # --hints--
 
 ポートフォリオには `id` が `welcome-section` であるウェルカムセクションが 1 つ必要です。
@@ -63,7 +65,7 @@ const el = document.getElementById('projects')
 assert(!!el);
 ```
 
-ポートフォリオにはクラスが `project-tile` である要素が少なくとも 1 つ必要です。
+ポートフォリオにはクラスの値が `project-tile` に設定されている要素が少なくとも 1 つ必要です。
 
 ```js
 assert.isAbove(
@@ -116,7 +118,9 @@ assert(!!el && el.target === '_blank')
 ポートフォリオはメディアクエリを少なくとも 1 つ使用する必要があります。
 
 ```js
-assert.isAtLeast(new __helpers.CSSHelp(document).getCSSRules('media')?.length, 1);
+const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
+const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
+assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 ```
 
 `#navbar` 要素は常にビューポートの上部にある必要があります。
