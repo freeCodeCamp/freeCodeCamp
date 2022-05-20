@@ -83,8 +83,6 @@ function submitChallenges() {
     endpoint: '/challenges-completed',
     payload: completedChallenges
   };
-  // TODO: Only clear store on success from server
-  store.set('completed-challenges', []);
   return postChallenge(update);
 }
 
