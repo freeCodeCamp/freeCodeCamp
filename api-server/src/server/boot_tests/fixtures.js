@@ -1,5 +1,6 @@
 import { isEqual } from 'lodash';
 import { isEmail } from 'validator';
+import { challengeTypes } from '../../../../utils/challenge-types';
 
 export const firstChallengeUrl = '/learn/the/first/challenge';
 export const requestedChallengeUrl = '/learn/my/actual/challenge';
@@ -207,3 +208,235 @@ export const fullStackChallenges = [
     files: []
   }
 ];
+
+export const challengesPayload = [
+  {
+    id: '613e2546d0594208229ada50',
+    challengeType: challengeTypes.html
+  },
+  {
+    id: 'a77dbc43c33f39daa4429b4f',
+    challengeType: challengeTypes.js
+  },
+  {
+    id: '587d7fb1367417b2b2512bf4',
+    challengeType: challengeTypes.backend
+  },
+  {
+    id: '602da0de22201c65d2a019f6',
+    challengeType: challengeTypes.codeAllyPractice
+  },
+  {
+    id: '5a24c314108439a4d403616e',
+    challengeType: challengeTypes.modern
+  },
+  {
+    id: '5e7b9f060b6c005b0e76f05b',
+    challengeType: challengeTypes.video
+  }
+];
+
+export const challengesPayloadIncorrectId = [
+  {
+    id: '613e2546d0594208229ad',
+    challengeType: challengeTypes.html
+  },
+  {
+    id: 'a77dbc43c33f39daa4429',
+    challengeType: challengeTypes.js
+  },
+  {
+    id: '587d7fb1367417b2b2512',
+    challengeType: challengeTypes.backend
+  },
+  {
+    id: '602da0de22201c65d2a01',
+    challengeType: challengeTypes.codeAllyPractice
+  },
+  {
+    id: '5a24c314108439a4d4036',
+    challengeType: challengeTypes.modern
+  },
+  {
+    id: '5e7b9f060b6c005b0e76f',
+    challengeType: challengeTypes.video
+  }
+];
+
+export const challengesPayloadIncorrectChallengeType = [
+  {
+    id: '613e2546d0594208229ada50',
+    challengeType: challengeTypes.multifileCertProject
+  },
+  {
+    id: 'a77dbc43c33f39daa4429b4f',
+    challengeType: challengeTypes.multifileCertProject
+  },
+  {
+    id: '587d7fb1367417b2b2512bf4',
+    challengeType: challengeTypes.backEndProject
+  },
+  {
+    id: '602da0de22201c65d2a019f6',
+    challengeType: challengeTypes.codeAllyCert
+  },
+  {
+    id: '5a24c314108439a4d403616e',
+    challengeType: challengeTypes.pythonProject
+  },
+  {
+    id: '5e7b9f060b6c005b0e76f05b',
+    challengeType: challengeTypes.frontEndProject
+  }
+];
+
+export const projectPayloads = [
+  {
+    challengeType: challengeTypes.zipline,
+    id: 'bd7158d8c442eddfaeb5bd13',
+    solution: 'https://freecodecamp.org/'
+  },
+  {
+    challengeType: challengeTypes.backEndProject,
+    id: 'bd7158d8c443edefaeb5bdef',
+    solution: 'https://freecodecamp.org/',
+    githubLink: 'https://github.com/freeCodeCamp/freeCodeCamp'
+  },
+  {
+    challengeType: challengeTypes.bonfire,
+    id: 'aaa48de84e1ecc7c742e1124',
+    files: [
+      {
+        contents: 'function palindrome(str) {}',
+        ext: 'js',
+        history: ['script.js'],
+        key: 'scriptjs',
+        name: 'script',
+      }
+    ]
+  },
+{
+    challengeType: challengeTypes.pythonProject,
+    id: '5e46f8d6ac417301a38fb92d',
+    solution: 'https://freecodecamp.org/',
+    githubLink: 'https://github.com/freeCodeCamp/freeCodeCamp'
+  },
+  {
+    challengeType: challengeTypes.codeAllyCert,
+    id: '5f1a4ef5d5d6b5ab580fc6ae',
+    solution: 'https://github.com/moT01/celestial-bodies-database',
+  },
+  {
+    challengeType: challengeTypes.multifileCertProject,
+    id: 'bd7158d8c242eddfaeb5bd13',
+    files: [
+      {
+        contents: '<h1>Shaun\'s Portfolio</h1>',
+        ext: 'html',
+        history: ['index.html'],
+        key: 'indexhtml',
+        name: 'index',
+      }
+    ]
+  },
+];
+
+export const projectPayloadsIncorrectStructure = [
+  {
+    challengeType: challengeTypes.zipline,
+    id: 'bd7158d8c442eddfaeb5bd13',
+    files: [
+      {
+        contents: '',
+        ext: '',
+        history: [''],
+        key: '',
+        name: '',
+      }
+    ]
+  },
+  {
+    challengeType: challengeTypes.backEndProject,
+    id: 'bd7158d8c443edefaeb5bdef',
+    files: [
+      {
+        contents: '',
+        ext: '',
+        history: [''],
+        key: '',
+        name: '',
+      }
+    ],
+    githubLink: ''
+  },
+  {
+    challengeType: challengeTypes.bonfire,
+    id: 'aaa48de84e1ecc7c742e1124',
+    solution: ''
+  },
+   {
+    challengeType: challengeTypes.pythonProject,
+    id: '5e46f8d6ac417301a38fb92d',
+    solution: '',
+  },
+  {
+    challengeType: challengeTypes.codeAllyCert,
+    id: '5f1a4ef5d5d6b5ab580fc6ae',
+  },
+  {
+    challengeType: challengeTypes.multifileCertProject,
+    id: 'bd7158d8c242eddfaeb5bd13',
+    solution: ''
+  },
+];
+
+export const projectPayloadsIncorrectId = [
+  {
+    challengeType: challengeTypes.zipline,
+    id: 'bd7158d8c242eddfaeb5',
+    solution: ''
+  },
+  {
+    challengeType: challengeTypes.backEndProject,
+    id: 'bd7158d8c242eddfaeb5',
+    solution: '',
+    githubLink: ''
+  },
+  {
+    challengeType: challengeTypes.bonfire,
+    id: 'bd7158d8c242eddfaeb5',
+    files: [
+      {
+        contents: '',
+        ext: '',
+        history: [''],
+        key: '',
+        name: '',
+      }
+    ]
+  },
+   {
+    challengeType: challengeTypes.pythonProject,
+    id: 'bd7158d8c242eddfaeb5',
+    solution: '',
+    githubLink: ''
+  },
+  {
+    challengeType: challengeTypes.codeAllyCert,
+    id: 'bd7158d8c242eddfaeb5',
+    solution: '',
+  },
+  {
+    challengeType: challengeTypes.multifileCertProject,
+    id: 'bd7158d8c242eddfaeb5',
+    files: [
+      {
+        contents: '',
+        ext: '',
+        history: [''],
+        key: '',
+        name: '',
+      }
+    ]
+  },
+]
