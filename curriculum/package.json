@@ -25,7 +25,7 @@
     "delete-step": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/delete-step",
     "lint": "ts-node --project ../tsconfig.json lint-localized",
     "update-step-titles": "cross-env CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/update-step-titles",
-    "test": "mocha --delay --exit --reporter progress --bail",
+    "test": "ts-node ../node_modules/mocha/bin/mocha --delay --exit --reporter progress --bail",
     "test:full-output": "cross-env FULL_OUTPUT=true mocha --delay --reporter progress"
   },
   "devDependencies": {
