@@ -79,7 +79,7 @@ export default async function bootChallenge(app, done) {
  * @param {Response} res
  * @returns {Observable}
  */
-function challengesCompleted(req, res) {
+export function challengesCompleted(req, res) {
   // Challenges should only include `id` and `challengeType`
   const { user, body } = req;
 
@@ -116,7 +116,7 @@ function challengesCompleted(req, res) {
     const completedDate = Date.now();
 
     const completedChallenge = {
-      challengeType,
+      challengeType, // TODO: A little birdy told me we do not need to store `challengeType` for non-certs?
       id,
       completedDate
     };
@@ -193,7 +193,7 @@ function challengesCompleted(req, res) {
  * @param {Response} res
  * @returns {Observable}
  */
-function projectCompleted(req, res) {
+export function projectCompleted(req, res) {
   const { user, body } = req;
 
   // Ensure `body` is an object
@@ -240,7 +240,7 @@ function projectCompleted(req, res) {
   });
 }
 
-const expectedProjectStructures = {
+export const expectedProjectStructures = {
   [challengeTypes.multifileCertProject]: [
     // 14 'responsive-web-design'
     'challengeType',
@@ -253,7 +253,7 @@ const expectedProjectStructures = {
     'id'
   ],
   [challengeTypes.bonfire]: [
-    // 1 'javascript-algorithms-and-data-structures'
+    // 5 'javascript-algorithms-and-data-structures'
     'challengeType',
     'files',
     'files.contents',
@@ -286,7 +286,8 @@ const expectedProjectStructures = {
  * @param {number} challengeType
  * @returns {boolean}
  */
-function validateChallenge(id, challengeType) {
+export function validateChallenge(id, challengeType) {
+  // TODO: Probably can save some computation, by not calling `getChallenges` every time.
   const challenge = getChallenges().find(chal => chal.id === id);
   return !!challenge && ![3, 4, 10, 13, 14].includes(challengeType);
 }
@@ -297,7 +298,8 @@ function validateChallenge(id, challengeType) {
  * @param {Request.body} body - Request body
  * @returns {boolean}
  */
-function validateProject(id, body) {
+export function validateProject(id, body) {
+  // TODO: Probably can save some computation, by not calling `getChallenges` every time.
   const challenge = getChallenges().find(chal => chal.id === id);
 
   // Ensure `body` matches the expected structure
@@ -306,7 +308,9 @@ function validateProject(id, body) {
     expectedProjectStructures[body.challengeType]
   );
   return (
-    !!challenge && [3, 4, 10, 13, 14].includes(body.challengeType) && validBody
+    !!challenge &&
+    [3, 4, 5, 10, 13, 14].includes(body.challengeType) &&
+    validBody
   );
 }
 
@@ -316,15 +320,18 @@ function validateProject(id, body) {
  * @param {string[]} fields
  * @returns
  */
-function ensureObjectContainsAllFields(obj, fields) {
+export function ensureObjectContainsAllFields(obj, fields) {
   return fields.every(key => hasFields(obj, key));
 }
 
-function hasFields(obj, keys) {
+export function hasFields(obj, keys) {
   const keysArr = keys.split('.');
   let currObj = obj;
   for (const key of keysArr) {
-    if (!currObj[key]) {
+    if (Array.isArray(currObj)) {
+      currObj = currObj[0];
+    }
+    if (!currObj || !Object.prototype.hasOwnProperty.call(currObj, key)) {
       return false;
     }
     currObj = currObj[key];

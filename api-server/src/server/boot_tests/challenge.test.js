@@ -6,7 +6,14 @@ import {
   createChallengeUrlResolver,
   createRedirectToCurrentChallenge,
   getFirstChallenge,
-  isValidChallengeCompletion
+  isValidChallengeCompletion,
+  validateChallenge,
+  validateProject,
+  ensureObjectContainsAllFields,
+  hasFields,
+  challengesCompleted,
+  projectCompleted,
+  expectedProjectStructures
 } from '../boot/challenge';
 
 import {
@@ -18,7 +25,13 @@ import {
   mockGetFirstChallenge,
   mockCompletedChallenge,
   mockCompletedChallengeNoFiles,
-  mockCompletedChallenges
+  mockCompletedChallenges,
+  challengesPayload,
+  challengesPayloadIncorrectId,
+  challengesPayloadIncorrectChallengeType,
+  projectPayloads,
+  projectPayloadsIncorrectStructure,
+  projectPayloadsIncorrectId
 } from './fixtures';
 
 export const mockReq = opts => {
@@ -38,7 +51,108 @@ export const mockRes = opts => {
 };
 
 describe('boot/challenge', () => {
-  xdescribe('backendChallengeCompleted', () => {});
+  describe('validateChallenge', () => {
+    it('should return true if challenge is valid', () => {
+      for (const challenge of challengesPayload) {
+        expect(validateChallenge(challenge.id, challenge.challengeType)).toBe(
+          true
+        );
+      }
+    });
+    it('should return false if payload has incorrect id', () => {
+      for (const challenge of challengesPayloadIncorrectId) {
+        expect(validateChallenge(challenge.id, challenge.challengeType)).toBe(
+          false
+        );
+      }
+    });
+    it('should return false if payload has incorrect challengeType', () => {
+      for (const challenge of challengesPayloadIncorrectChallengeType) {
+        expect(validateChallenge(challenge.id, challenge.challengeType)).toBe(
+          false
+        );
+      }
+    });
+  });
+  describe('validateProject', () => {
+    it('should return true if project is valid', () => {
+      for (const project of projectPayloads) {
+        expect(validateProject(project.id, project)).toBe(true);
+      }
+    });
+    it('should return false if project has incorrect structure', () => {
+      for (const project of projectPayloadsIncorrectStructure) {
+        expect(validateProject(project.id, project)).toBe(false);
+      }
+    });
+    it('should return false if project has incorrect id', () => {
+      for (const project of projectPayloadsIncorrectId) {
+        expect(validateProject(project.id, project)).toBe(false);
+      }
+    });
+  });
+  describe('ensureObjectContainsAllFields', () => {
+    it('should return true if object contains all fields', () => {
+      for (const project of projectPayloads) {
+        expect(
+          ensureObjectContainsAllFields(
+            project,
+            expectedProjectStructures[project.challengeType]
+          )
+        ).toBe(true);
+      }
+    });
+    it('should return false if object does not contain all fields', () => {
+      for (const project of projectPayloadsIncorrectStructure) {
+        expect(
+          ensureObjectContainsAllFields(
+            project,
+            expectedProjectStructures[project.challengeType]
+          )
+        ).toBe(false);
+      }
+    });
+  });
+  describe('hasFields', () => {
+    const exampleObj = {
+      a: '',
+      b: null,
+      c: [
+        {
+          d: 0,
+          e: () => {}
+        }
+      ],
+      f: {
+        g: {
+          h: 2
+        }
+      }
+    };
+    const exampleFields = ['a', 'b', 'c.d', 'c.e', 'f.g.h'];
+    it('should return true if object has all fields', () => {
+      for (const field of exampleFields) {
+        expect(hasFields(exampleObj, field)).toBe(true);
+      }
+    });
+    it('should return false if object does not have all fields', () => {
+      for (const field of ['a.b', 'b.c', 'g', 'f.g.h.i', 'b.a']) {
+        expect(hasFields(exampleObj, field)).toBe(false);
+        expect(hasFields(exampleObj, field)).toBe(false);
+        expect(hasFields(exampleObj, field)).toBe(false);
+      }
+    });
+  });
+  xdescribe('challengesCompleted', () => {
+    it('', () => {
+      challengesCompleted();
+    });
+  });
+  xdescribe('projectCompleted', () => {
+    it('', () => {
+      projectCompleted();
+    });
+  });
 
   describe('buildUserUpdate', () => {
     it('returns an Object with a nested "completedChallenges" property', () => {
@@ -303,10 +417,6 @@ describe('boot/challenge', () => {
       expect(next).toHaveBeenCalled();
     });
   });
-
-  xdescribe('modernChallengeCompleted', () => {});
-
-  xdescribe('projectCompleted', () => {});
 
   describe('redirectToCurrentChallenge', () => {
     const mockHomeLocation = 'https://www.example.com';
