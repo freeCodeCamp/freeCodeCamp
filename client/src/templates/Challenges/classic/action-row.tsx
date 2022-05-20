@@ -56,6 +56,7 @@ const ActionRow = ({
                 ? 'active-tab instruction-button'
                 : 'instruction-button'
             }
+            aria-expanded={showInstructions ? 'true' : 'false'}
             onClick={() => togglePane('showInstructions')}
           >
             {t('learn.editor-tabs.instructions')}
