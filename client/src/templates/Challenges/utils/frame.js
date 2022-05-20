@@ -32,10 +32,16 @@ const createHeader = (id = mainPreviewId) => `
       console.log(msg);
       return true;
     };
+    
     document.addEventListener('click', function(e) {
       let element = e.target;
       while(element && element.nodeName !== 'A') {
         element = element.parentElement;
+      } 
+
+      if(element && element.nodeName === 'A'){
+        e.preventDefault();
+        window.parent.window.alert('Normally this link would bring you to another website! It works!' + "(" + element.href + ")");
       }
       if (element) {
         const href = element.getAttribute('href');
@@ -64,6 +70,7 @@ export const runTestInTestFrame = async function (document, test, timeout) {
 const createFrame = (document, id, title) => ctx => {
   const frame = document.createElement('iframe');
   frame.id = id;
+  frame.src = 'about::blank';
   if (typeof title === 'string') {
     frame.title = title;
   }
