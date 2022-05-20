@@ -50,49 +50,49 @@ Ogni componente è diverso, ma in genere un componente dovrebbe:
 - Essere stilizzato internamente basato sulle proprietà (Il consumatore non dovrebbe avere bisogno di stilizzare il componente con la proprietà `className`)
 - Utilizzare il sistema integrato di stilizzazione di Tailwind invece di usare stili personalizzati
 
-### Using colors
+### Uso dei colori
 
-There are two color "layers" in the component library:
+Ci sono due strati di colori nella libreria dei componenti:
 
-- The base layer, where the color names describe what the colors are, e.g. `gray00`, `blue50`
-- The semantic layer, where the color names describe what the colors are for, e.g. `foreground-primary`, `background-danger`
+- Lo strato base, dove i nomi dei colori descrivono cosa sono i colori, per esempio `gray00`, `blue50`
+- Lo strato semantico, dove i nomi dei colori descrivono lo scopo de colori, per esempio `foreground-primary`, `background-danger`
 
-Generally when using colors in a component, you should choose semantic variables over the base ones. There are exceptions, however, specifically when you are styling the component's states such as hover, active, disabled, etc. In these cases, we recommend using the base variables directly instead of creating new semantic variables, since each component can have different styles for their states.
+In genere quando usi i colori in un componente dovresti preferire le variabili semantiche rispetto a quelle base. Però ci sono eccezioni, specialmente quando stai dando uno stile agli stati del componente, tipo hover, attivo, disabilitato, ecc. In questo caso, raccomandiamo l'uso delle variabili base invece di creare nuove variabili semantiche, visto che ogni compnente può avere diversi stili per i vari stati.
 
-> [!NOTE] Color definition can be found in the [`colors.css` file](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/tools/ui-components/src/colors.css). A color is only available for use if it is added to the [`tailwind.config.js` file](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/tools/ui-components/tailwind.config.js) under the `colors` property.
+> [!NOTE] Le definizioni dei colori possono essere trovate nel [file `colors.css`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/tools/ui-components/src/colors.css). Un colore è disponibile per l'uso solo se è aggiunto al [file `tailwind.config.js`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/tools/ui-components/tailwind.config.js) sotto la proprietà `colors`.
 
 ### Link utili
 
 - [Tailwind CSS Configuration](https://tailwindcss.com/docs/configuration)
 - [React Bootstrap v0.33 Docs](https://react-bootstrap-v3.netlify.app)
 - [Bootstrap 3.3.7 stylesheet](https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css)
-- [React Bootstrap current implementation](https://github.com/react-bootstrap/react-bootstrap/tree/master/src)
-- [React Bootstrap current tests](https://github.com/react-bootstrap/react-bootstrap/tree/master/test)
+- [Implementazione corrente di React Bootstrap](https://github.com/react-bootstrap/react-bootstrap/tree/master/src)
+- [Test attuali di React Bootstrap](https://github.com/react-bootstrap/react-bootstrap/tree/master/test)
 
 ## Visualizzazione degli use case con Storybook
 
-Use cases of the component should be added to the Storybook file (`.stories.tsx`).
+Gli use case di un componente dovrebbero essere aggiunti al file Storybook (`.stories.tsx`).
 
-To start Storybook, run the following command from the root directory:
+Per far partire Storybook, esegui i seguenti comandi dalla directory root:
 
 ```bash
 npm run storybook
 ```
 
-The Storybook page is available on [http://localhost:6006](http://localhost:6006).
+La pagina Storybook è disponibile a [http://localhost:6006](http://localhost:6006).
 
 ## Scrivere test unitari
 
-We use [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) to write unit tests. The tests should assert that the components behave as expected and are accessible.
+Usiamo [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) per scrivere i test dell'unità. I test dovrebbero verificare che i componenti si comportano come previsto e sono accessibili.
 
-To run tests against the component library, run the following command from the root directory:
+Per eseguire i test sulla libreria componenti, esegui il seguente comando dalla directory root:
 
 ```bash
 npm run test-ui-components
 ```
 
-### Useful links
+### Link utili
 
-- [Testing for Accessibility](https://testing-library.com/docs/dom-testing-library/api-accessibility)
-- [Order of priority of React Testing Library's queries](https://testing-library.com/docs/queries/about/#priority)
-- [Common mistakes with React Testing Library](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library)
+- [Testare per accessibilità](https://testing-library.com/docs/dom-testing-library/api-accessibility)
+- [Ordine di priorità delle query di React Testing Library](https://testing-library.com/docs/queries/about/#priority)
+- [Errori comuni con React Testing Library](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library)

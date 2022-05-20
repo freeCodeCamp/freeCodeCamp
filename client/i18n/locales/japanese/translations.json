@@ -50,6 +50,7 @@
     "reset-lesson": "レッスンをリセット",
     "run": "実行",
     "run-test": "テスト実行 (Ctrl + Enter)",
+    "check-code": "Check Your Code (Ctrl + Enter)",
     "reset": "リセット",
     "reset-code": "全てのコードをリセット",
     "help": "ヘルプ",
@@ -100,7 +101,7 @@
   },
   "settings": {
     "share-projects": "あなたの freeCodeCamp 以外のプロジェクトや記事、承認されたプルリクエストをシェアしましょう。",
-    "privacy": "この設定セクションでは、あなたの freeCodeCamp 公開ポートフォリオに表示する項目を制御できます。",
+    "privacy": "The settings in this section enable you to control what is shown on your freeCodeCamp public portfolio. Press save to save your changes.",
     "data": "アカウントに保存されているデータを確認するには、下の「データをダウンロード」ボタンをクリックしてください",
     "disabled": "プライベートに設定されている場合、認定証は無効化されます。",
     "private-name": "非公開に設定されている場合、あなたの名前は認定証に表示されません。",
@@ -268,6 +269,7 @@
     "solution-link": "回答のリンク",
     "github-link": "GitHub のリンク",
     "submit-and-go": "提出して次のチャレンジに進む",
+    "congradulations": "Congratulations, your code passes. Submit your code to complete this step and move on to the next one.",
     "i-completed": "このチャレンジを完了しました",
     "test-output": "テストの結果はこちらに表示されます",
     "running-tests": "// テストを実行中です",
@@ -307,7 +309,14 @@
     "complete-both-steps": "チャレンジを終えるには、以下 2 つのステップを完了させてください。",
     "runs-in-vm": "このプロジェクトは仮想マシン内で動作します。ステップ 1 を完了するには、そこで述べられたユーザーストーリーを実装し、すべてのテストに合格してください。",
     "completed": "Completed",
-    "not-started": "未着手"
+    "not-started": "未着手",
+    "hint": "Hint",
+    "test": "Test",
+    "sorry-try-again": "Sorry, your code does not pass. Try again.",
+    "sorry-keep-trying": "Sorry, your code does not pass. Keep trying.",
+    "sorry-getting-there": "Sorry, your code does not pass. You're getting there.",
+    "sorry-hang-in-there": "Sorry, your code does not pass. Hang in there.",
+    "sorry-dont-giveup": "Sorry, your code does not pass. Don't give up."
   },
   "donate": {
     "title": "非営利団体を支援する",
@@ -444,6 +453,7 @@
     "fail": "テスト失敗",
     "not-passed": "未完了",
     "passed": "合格済み",
+    "hint": "Hint",
     "heart": "ハート",
     "initial": "初期状態",
     "info": "導入情報",
@@ -463,7 +473,9 @@
     "next-page": "次のページへ移動",
     "last-page": "最後のページへ移動",
     "primary-nav": "プライマリー",
-    "breadcrumb-nav": "パンくずリスト"
+    "breadcrumb-nav": "パンくずリスト",
+    "submit": "Use Ctrl + Enter to submit.",
+    "running-tests": "Running tests"
   },
   "flash": {
     "honest-first": "認定証を請求するには、まず学問的誠実性ポリシーに同意する必要があります。",

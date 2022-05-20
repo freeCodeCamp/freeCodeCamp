@@ -63,6 +63,52 @@ export const updateUserFlagComplete = createAction(
 );
 export const updateUserFlagError = createAction(types.updateUserFlagError);
 
+export const updateMySocials = createAction(types.updateMySocials);
+export const updateMySocialsComplete = createAction(
+  types.updateMySocialsComplete,
+  checkForSuccessPayload
+);
+export const updateMySocialsError = createAction(types.updateMySocialsError);
+
+export const updateMySound = createAction(types.updateMySound);
+export const updateMySoundComplete = createAction(
+  types.updateMySoundComplete,
+  checkForSuccessPayload
+);
+export const updateMySoundError = createAction(types.updateMySoundError);
+
+export const updateMyTheme = createAction(types.updateMyTheme);
+export const updateMyThemeComplete = createAction(
+  types.updateMyThemeComplete,
+  checkForSuccessPayload
+);
+export const updateMyThemeError = createAction(types.updateMyThemeError);
+
+export const updateMyHonesty = createAction(types.updateMyHonesty);
+export const updateMyHonestyComplete = createAction(
+  types.updateMyHonestyComplete,
+  checkForSuccessPayload
+);
+export const updateMyHonestyError = createAction(types.updateMyHonestyError);
+
+export const updateMyQuincyEmail = createAction(types.updateMyQuincyEmail);
+export const updateMyQuincyEmailComplete = createAction(
+  types.updateMyQuincyEmailComplete,
+  checkForSuccessPayload
+);
+export const updateMyQuincyEmailError = createAction(
+  types.updateMyQuincyEmailError
+);
+
+export const updateMyPortfolio = createAction(types.updateMyPortfolio);
+export const updateMyPortfolioComplete = createAction(
+  types.updateMyPortfolioComplete,
+  checkForSuccessPayload
+);
+export const updateMyPortfolioError = createAction(
+  types.updateMyPortfolioError
+);
+
 export const validateUsername = createAction(types.validateUsername);
 export const validateUsernameComplete = createAction(
   types.validateUsernameComplete

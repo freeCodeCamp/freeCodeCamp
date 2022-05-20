@@ -140,7 +140,7 @@ const el = document.getElementById('form')
 assert(!!el && el.tagName === 'FORM')
 ```
 
-You should have an `input` element with an `id of `email`
+You should have an `input` element with an `id` of `email`
 
 ```js
 const el = document.getElementById('email')

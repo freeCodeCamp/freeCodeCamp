@@ -97,14 +97,23 @@ class CSSHelp {
     const link: HTMLLinkElement | null = this.doc?.querySelector(
       "link[href*='styles']"
     );
-    // Most* browser extensions inject styles with class/media attributes
-    const style: HTMLStyleElement | null = this.doc?.querySelector(
+
+    // When using the styles.css tab, we add a 'fcc-injected-styles' class so we can target that. This allows users to add external scripts without them interfering
+    const stylesDotCss: HTMLStyleElement | null = this.doc?.querySelector(
+      'style.fcc-injected-styles'
+    );
+
+    // For steps that use <style> tags, where they don't add the above class - most* browser extensions inject styles with class/media attributes, so it filters those
+    const styleTag: HTMLStyleElement | null = this.doc?.querySelector(
       'style:not([class]):not([media])'
     );
+
     if (link?.sheet?.cssRules?.length) {
       return link.sheet;
-    } else if (style) {
-      return style.sheet;
+    } else if (stylesDotCss) {
+      return stylesDotCss.sheet;
+    } else if (styleTag) {
+      return styleTag.sheet;
     } else {
       return null;
     }

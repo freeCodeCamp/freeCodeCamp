@@ -106,7 +106,6 @@ export class Block extends Component<BlockProps> {
 
     const isNewResponsiveWebDesign = isNewRespCert(superBlock);
     const isNewJsAlgos = isNewJsCert(superBlock);
-    console.table({ isNewJsAlgos });
 
     let completedCount = 0;
     const challengesWithCompleted = challenges.map(({ challenge }) => {
