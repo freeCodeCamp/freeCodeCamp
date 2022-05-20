@@ -32,6 +32,11 @@ textarea.inputarea {
   padding: 6px 12px;
 }
 
+.instruction-button {
+  margin-right: auto;
+  margin-left: 30px;
+}
+
 .active-tab {
   border-color: var(--secondary-color);
   background-color: var(--secondary-color);

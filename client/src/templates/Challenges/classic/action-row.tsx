@@ -9,8 +9,10 @@ interface ActionRowProps {
   block: string;
   hasNotes: boolean;
   isMultifileCertProject: boolean;
+  isProjectBasedChallenge: boolean;
   showConsole: boolean;
   showNotes: boolean;
+  showInstructions: boolean;
   showPreview: boolean;
   superBlock: string;
   togglePane: (pane: string) => void;
@@ -28,6 +30,8 @@ const ActionRow = ({
   showNotes,
   showPreview,
   showConsole,
+  showInstructions,
+  isProjectBasedChallenge,
   superBlock,
   block,
   resetChallenge
@@ -43,6 +47,18 @@ const ActionRow = ({
         {!isMultifileCertProject && (
           <button className='restart-step-tab' onClick={resetChallenge}>
             {t('learn.editor-tabs.restart-step')}
+          </button>
+        )}
+        {!isProjectBasedChallenge && (
+          <button
+            className={
+              showInstructions
+                ? 'active-tab instruction-button'
+                : 'instruction-button'
+            }
+            onClick={() => togglePane('showInstructions')}
+          >
+            {t('learn.editor-tabs.instructions')}
           </button>
         )}
         <div className='panel-display-tabs'>
