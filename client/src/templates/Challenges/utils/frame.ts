@@ -1,6 +1,36 @@
 import { toString, flow } from 'lodash-es';
 import { format } from '../../../utils/format';
 
+const utilsFormat: <T>(x: T) => string = format;
+
+declare global {
+  interface Window {
+    console: {
+      log: () => void;
+    };
+  }
+}
+
+interface Context {
+  window: Window;
+  document: Document;
+  element: HTMLIFrameElement;
+  build: string;
+  sources: {
+    contents?: string;
+    editableContents?: string;
+    original?: { [id: string]: string };
+  };
+  loadEnzyme?: () => void;
+}
+
+type ProxyLogger = (msg: string) => void;
+
+type InitFrame = (
+  arg1?: () => unknown,
+  arg2?: ProxyLogger
+) => (ctx: Context) => Context;
+
 // we use two different frames to make them all essentially pure functions
 // main iframe is responsible rendering the preview and is where we proxy the
 export const mainPreviewId = 'fcc-main-frame';
@@ -53,121 +83,139 @@ const createHeader = (id = mainPreviewId) => `
   </script>
 `;
 
-export const runTestInTestFrame = async function (document, test, timeout) {
-  const { contentDocument: frame } = document.getElementById(testId);
-  return await Promise.race([
-    new Promise((_, reject) => setTimeout(() => reject('timeout'), timeout)),
-    frame.__runTest(test)
-  ]);
-};
-
-const createFrame = (document, id, title) => ctx => {
-  const frame = document.createElement('iframe');
-  frame.id = id;
-  if (typeof title === 'string') {
-    frame.title = title;
+export const runTestInTestFrame = async function (
+  document: Document,
+  test: string,
+  timeout: number
+) {
+  const { contentDocument: frame } = document.getElementById(
+    testId
+  ) as HTMLIFrameElement;
+  if (frame !== null) {
+    return await Promise.race([
+      new Promise<
+        { pass: boolean } | { err: { message: string; stack?: string } }
+      >((_, reject) => setTimeout(() => reject('timeout'), timeout)),
+      frame.__runTest(test)
+    ]);
   }
-  return {
-    ...ctx,
-    element: frame
-  };
 };
 
-const hiddenFrameClassName = 'hide-test-frame';
-const mountFrame =
-  (document, id) =>
-  ({ element, ...rest }) => {
-    const oldFrame = document.getElementById(element.id);
-    if (oldFrame) {
-      element.className = oldFrame.className || hiddenFrameClassName;
-      oldFrame.parentNode.replaceChild(element, oldFrame);
-      // only test frames can be added (and hidden) here, other frames must be
-      // added by react
-    } else if (id === testId) {
-      element.className = hiddenFrameClassName;
-      document.body.appendChild(element);
+const createFrame =
+  (document: Document, id: string, title?: string) => (ctx: Context) => {
+    const frame = document.createElement('iframe');
+    frame.id = id;
+    if (typeof title === 'string') {
+      frame.title = title;
     }
     return {
-      ...rest,
-      element,
-      document: element.contentDocument,
-      window: element.contentWindow
+      ...ctx,
+      element: frame
     };
   };
 
-const buildProxyConsole = proxyLogger => ctx => {
+const hiddenFrameClassName = 'hide-test-frame';
+const mountFrame = (document: Document, id: string) => (ctx: Context) => {
+  const { element }: { element: HTMLIFrameElement } = ctx;
+  const oldFrame = document.getElementById(element.id) as HTMLIFrameElement;
+  if (oldFrame) {
+    element.className = oldFrame.className || hiddenFrameClassName;
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    oldFrame.parentNode!.replaceChild(element, oldFrame);
+    // only test frames can be added (and hidden) here, other frames must be
+    // added by react
+  } else if (id === testId) {
+    element.className = hiddenFrameClassName;
+    document.body.appendChild(element);
+  }
+  return {
+    ...ctx,
+    element,
+    document: element.contentDocument,
+    window: element.contentWindow
+  };
+};
+
+const buildProxyConsole = (proxyLogger?: ProxyLogger) => (ctx: Context) => {
   // window does not exist if the preview is hidden, so we have to check.
   if (proxyLogger && ctx?.window) {
     const oldLog = ctx.window.console.log.bind(ctx.window.console);
-    ctx.window.console.log = function proxyConsole(...args) {
-      proxyLogger(args.map(arg => format(arg)).join(' '));
-      return oldLog(...args);
+    ctx.window.console.log = function proxyConsole(...args: string[]) {
+      proxyLogger(args.map((arg: string) => utilsFormat(arg)).join(' '));
+      return oldLog(...(args as []));
     };
   }
   return ctx;
 };
 
-const initTestFrame = frameReady => ctx => {
+const initTestFrame = (frameReady?: () => void) => (ctx: Context) => {
   waitForFrame(ctx)
     .then(async () => {
       const { sources, loadEnzyme } = ctx;
       // provide the file name and get the original source
-      const getUserInput = fileName => toString(sources[fileName]);
+      const getUserInput = (fileName: string) =>
+        toString(sources[fileName as keyof typeof sources]);
       await ctx.document.__initTestFrame({
         code: sources,
         getUserInput,
         loadEnzyme
       });
-      frameReady();
+      if (frameReady) {
+        frameReady();
+      }
     })
     .catch(handleDocumentNotFound);
   return ctx;
 };
 
-const initMainFrame = (_, proxyLogger) => ctx => {
-  waitForFrame(ctx)
-    .then(() => {
-      // Overwriting the onerror added by createHeader to catch any errors thrown
-      // after the frame is ready. It has to be overwritten, as proxyLogger cannot
-      // be added as part of createHeader.
-      ctx.window.onerror = function (msg) {
-        var string = msg.toLowerCase();
-        if (string.includes('script error')) {
-          msg = 'Error, open your browser console to learn more.';
-        }
-        if (proxyLogger) {
-          proxyLogger(msg);
-        }
-        // let the error propagate so it appears in the browser console, otherwise
-        // an error from a cross origin script just appears as 'Script error.'
-        return false;
-      };
-    })
-    .catch(handleDocumentNotFound);
-  return ctx;
-};
+const initMainFrame =
+  (_: unknown, proxyLogger?: ProxyLogger) => (ctx: Context) => {
+    waitForFrame(ctx)
+      .then(() => {
+        // Overwriting the onerror added by createHeader to catch any errors thrown
+        // after the frame is ready. It has to be overwritten, as proxyLogger cannot
+        // be added as part of createHeader.
 
-function handleDocumentNotFound(err) {
+        ctx.window.onerror = function (msg) {
+          if (typeof msg === 'string') {
+            const string = msg.toLowerCase();
+            if (string.includes('script error')) {
+              msg = 'Error, open your browser console to learn more.';
+            }
+            if (proxyLogger) {
+              proxyLogger(msg);
+            }
+          }
+          // let the error propagate so it appears in the browser console, otherwise
+          // an error from a cross origin script just appears as 'Script error.'
+          return false;
+        };
+      })
+      .catch(handleDocumentNotFound);
+    return ctx;
+  };
+
+function handleDocumentNotFound(err: string) {
   if (err !== DOCUMENT_NOT_FOUND_ERROR) {
     console.log(err);
   }
 }
 
-const initPreviewFrame = () => ctx => ctx;
+const initPreviewFrame = () => (ctx: Context) => ctx;
 
-const waitForFrame = ctx => {
+const waitForFrame = (ctx: Context) => {
   return new Promise((resolve, reject) => {
     if (!ctx.document) {
       reject(DOCUMENT_NOT_FOUND_ERROR);
     } else if (ctx.document.readyState === 'loading') {
       ctx.document.addEventListener('DOMContentLoaded', resolve);
     } else {
-      resolve();
+      resolve(null);
     }
   });
 };
 
-function writeToFrame(content, frame) {
+function writeToFrame(content: string, frame: Document | null) {
   // it's possible, if the preview is rapidly opened and closed, for the frame
   // to be null at this point.
   if (frame) {
@@ -177,12 +225,15 @@ function writeToFrame(content, frame) {
   }
 }
 
-const writeContentToFrame = ctx => {
+const writeContentToFrame = (ctx: Context) => {
   writeToFrame(createHeader(ctx.element.id) + ctx.build, ctx.document);
   return ctx;
 };
 
-export const createMainPreviewFramer = (document, proxyLogger) =>
+export const createMainPreviewFramer = (
+  document: Document,
+  proxyLogger: ProxyLogger
+) =>
   createFramer(
     document,
     mainPreviewId,
@@ -192,7 +243,10 @@ export const createMainPreviewFramer = (document, proxyLogger) =>
     'preview'
   );
 
-export const createProjectPreviewFramer = (document, frameTitle) =>
+export const createProjectPreviewFramer = (
+  document: Document,
+  frameTitle: string
+) =>
   createFramer(
     document,
     projectPreviewId,
@@ -202,16 +256,19 @@ export const createProjectPreviewFramer = (document, frameTitle) =>
     frameTitle
   );
 
-export const createTestFramer = (document, proxyLogger, frameReady) =>
-  createFramer(document, testId, initTestFrame, proxyLogger, frameReady);
+export const createTestFramer = (
+  document: Document,
+  proxyLogger: ProxyLogger,
+  frameReady: () => void
+) => createFramer(document, testId, initTestFrame, proxyLogger, frameReady);
 
 const createFramer = (
-  document,
-  id,
-  init,
-  proxyLogger,
-  frameReady,
-  frameTitle
+  document: Document,
+  id: string,
+  init: InitFrame,
+  proxyLogger?: ProxyLogger,
+  frameReady?: () => void,
+  frameTitle?: string
 ) =>
   flow(
     createFrame(document, id, frameTitle),
