@@ -22,8 +22,8 @@ import { connect } from 'react-redux';
 import envData from '../../../../../config/env.json';
 import {
   availableLangs,
-  langDisplayNames,
-  langCodes
+  LangNames,
+  LangCodes
 } from '../../../../../config/i18n/all-langs';
 import { hardGoTo as navigate } from '../../../redux';
 import { updateUserFlag } from '../../../redux/settings';
@@ -431,8 +431,8 @@ export class NavLinks extends Component<NavLinksProps, {}> {
                     {...(clientLocale === lang && { 'aria-current': true })}
                     className='nav-link nav-lang-menu-option'
                     data-value={lang}
-                    {...(langCodes[lang] && {
-                      lang: langCodes[lang] as string
+                    {...(LangCodes[lang] && {
+                      lang: LangCodes[lang] as string
                     })}
                     onClick={this.handleLanguageChange}
                     onKeyDown={this.handleLanguageMenuKeyDown}
@@ -442,7 +442,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
                     role='menuitem'
                     tabIndex='-1'
                   >
-                    {langDisplayNames[lang]}
+                    {LangNames[lang]}
                   </button>
                 </li>
               ))}
