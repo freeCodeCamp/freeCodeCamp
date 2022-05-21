@@ -17,10 +17,11 @@ const MenuButton = ({
 }: MenuButtonProps): JSX.Element => {
   const { t } = useTranslation();
 
+  // Will close the menu if the user Shift+Tabs from the menu button.
   const handleBlur = (event: React.FocusEvent<HTMLButtonElement>): void => {
     if (
       event.relatedTarget &&
-      !event.relatedTarget.closest('.nav-list') &&
+      !event.relatedTarget.closest('.universal-nav-right') &&
       displayMenu
     ) {
       hideMenu();
@@ -36,20 +37,18 @@ const MenuButton = ({
   };
 
   return (
-    <>
-      <button
-        aria-expanded={displayMenu}
-        className={
-          'toggle-button-nav' + (displayMenu ? ' reverse-toggle-color' : '')
-        }
-        id='toggle-button-nav'
-        onBlur={handleBlur}
-        onClick={handleClick}
-        ref={innerRef}
-      >
-        {t('buttons.menu')}
-      </button>
-    </>
+    <button
+      aria-expanded={displayMenu}
+      className={
+        'toggle-button-nav' + (displayMenu ? ' reverse-toggle-color' : '')
+      }
+      id='toggle-button-nav'
+      onBlur={handleBlur}
+      onClick={handleClick}
+      ref={innerRef}
+    >
+      {t('buttons.menu')}
+    </button>
   );
 };
 

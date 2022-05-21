@@ -234,6 +234,8 @@ export class NavLinks extends Component<NavLinksProps, {}> {
     doKeyPress[event.key]?.();
   };
 
+  // Added to the last item in the nav menu. Will close the menu if
+  // the user Tabs out of the menu.
   handleBlur = (event: React.FocusEvent<HTMLButtonElement>): void => {
     const { hideMenu, menuButtonRef } = this.props;
     if (

@@ -6,6 +6,7 @@
 import Loadable from '@loadable/component';
 import React, { Ref } from 'react';
 import { useTranslation } from 'react-i18next';
+import Media from 'react-responsive';
 import { isLanding } from '../../../utils/path-parsers';
 import { Link, SkeletonSprite } from '../../helpers';
 import MenuButton from './menu-button';
@@ -18,6 +19,8 @@ const SearchBar = Loadable(() => import('../../search/searchBar/search-bar'));
 const SearchBarOptimized = Loadable(
   () => import('../../search/searchBar/search-bar-optimized')
 );
+
+const MAX_MOBILE_WIDTH = 980;
 
 export interface UniversalNavProps {
   displayMenu?: boolean;
@@ -64,7 +67,7 @@ export const UniversalNav = ({
           'universal-nav-left' + (displayMenu ? ' display-search' : '')
         }
       >
-        {search}
+        <Media minWidth={MAX_MOBILE_WIDTH + 1}>{search}</Media>
       </div>
       <div className='universal-nav-middle'>
         <Link id='universal-nav-logo' to='/learn'>
@@ -85,6 +88,7 @@ export const UniversalNav = ({
               showMenu={showMenu}
               user={user}
             />
+            <Media maxWidth={MAX_MOBILE_WIDTH}>{search}</Media>
             <NavLinks
               displayMenu={displayMenu}
               fetchState={fetchState}
