@@ -22,12 +22,8 @@ import { connect } from 'react-redux';
 import envData from '../../../../../config/env.json';
 import {
   availableLangs,
-<<<<<<< HEAD
-  getLangName
-=======
   langDisplayNames,
   langCodes
->>>>>>> d183903aef (fix: main menu a11y updates)
 } from '../../../../../config/i18n/all-langs';
 import { hardGoTo as navigate } from '../../../redux';
 import { updateUserFlag } from '../../../redux/settings';
