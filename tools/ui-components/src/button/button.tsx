@@ -7,6 +7,7 @@ const defaultClassNames = [
   'inline-block',
   'border-3',
   'text-center',
+  'no-underline',
   'active:before:w-full',
   'active:before:h-full',
   'active:before:absolute',
