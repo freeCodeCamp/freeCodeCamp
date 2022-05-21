@@ -2,6 +2,7 @@
   "name": "Learn Form Validation By Building a Calorie Counter",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
+	"isStepBased": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-form-validation-by-building-a-calorie-counter",
   "order": 1,

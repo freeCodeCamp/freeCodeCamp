@@ -2,6 +2,7 @@
   "name": "Learn More About CSS Pseudo Selectors By Building A Balance Sheet",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
+	"isStepBased": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet",
   "order": 10,

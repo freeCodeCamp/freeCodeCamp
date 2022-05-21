@@ -2,6 +2,7 @@
   "name": "Learn Typography by Building a Nutrition Label",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
+	"isStepBased": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-typography-by-building-a-nutrition-label",
   "order": 7,

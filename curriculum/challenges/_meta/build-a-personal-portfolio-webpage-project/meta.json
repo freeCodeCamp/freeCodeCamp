@@ -2,6 +2,7 @@
   "name": "Build a Personal Portfolio Webpage Project",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
+	"isStepBased": true,
   "order": 19,
   "time": "30 hours",
   "template": "",

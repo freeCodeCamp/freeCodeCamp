@@ -168,6 +168,7 @@ export type ChallengeNode = {
     id: string;
     instructions: string;
     isComingSoon: boolean;
+    isStepBased: boolean;
     internal?: {
       content: string;
       contentDigest: string;
