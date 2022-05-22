@@ -293,14 +293,12 @@ export class Block extends Component<BlockProps> {
             </div>
             {isExpanded && this.renderBlockIntros(blockIntroArr)}
             {isExpanded && (
-              <>
-                <h4>Steps</h4>
-                <Challenges
-                  challengesWithCompleted={challengesWithCompleted}
-                  isProjectBlock={isProjectBlock}
-                  superBlock={superBlock}
-                />
-              </>
+              <Challenges
+                challengesWithCompleted={challengesWithCompleted}
+                isProjectBlock={isProjectBlock}
+                superBlock={superBlock}
+                blockTitle={blockTitle}
+              />
             )}
           </div>
         </ScrollableAnchor>

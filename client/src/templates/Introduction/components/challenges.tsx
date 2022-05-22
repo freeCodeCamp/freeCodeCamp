@@ -21,6 +21,7 @@ interface Challenges {
   executeGA: (payload: ExecuteGaArg) => void;
   isProjectBlock: boolean;
   superBlock: SuperBlocks;
+  blockTitle?: string;
 }
 
 const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
@@ -29,7 +30,8 @@ function Challenges({
   challengesWithCompleted,
   executeGA,
   isProjectBlock,
-  superBlock
+  superBlock,
+  blockTitle
 }: Challenges): JSX.Element {
   const { t } = useTranslation();
   const handleChallengeClick = (slug: string) =>
@@ -69,44 +71,46 @@ function Challenges({
           </Link>
         </div>
       )}
-      <ul className={`map-challenges-ul map-challenges-grid `}>
-        {challengesWithCompleted.map((challenge, i) => (
-          <li
-            className={`map-challenge-title map-challenge-title-grid ${
-              isProjectBlock ? 'map-project-wrap' : 'map-challenge-wrap'
-            }`}
-            id={challenge.dashedName}
-            key={`map-challenge ${challenge.fields.slug}`}
-          >
-            {!isProjectBlock ? (
-              <Link
-                onClick={() => handleChallengeClick(challenge.fields.slug)}
-                to={challenge.fields.slug}
-                className={`map-grid-item ${
-                  +challenge.isCompleted ? 'challenge-completed' : ''
-                }`}
-              >
-                <span>{i + 1}</span>
-                <span className='sr-only'>
-                  {challenge.isCompleted
-                    ? t('icons.passed')
-                    : t('icons.not-passed')}
-                </span>
-              </Link>
-            ) : (
-              <Link
-                onClick={() => handleChallengeClick(challenge.fields.slug)}
-                to={challenge.fields.slug}
-              >
-                {challenge.title}
-                <span className=' badge map-badge map-project-checkmark'>
-                  {renderCheckMark(challenge.isCompleted)}
-                </span>
-              </Link>
-            )}
-          </li>
-        ))}
-      </ul>
+      <nav aria-label={`Steps ${blockTitle ? `for ${blockTitle}` : ''}`}>
+        <ul className={`map-challenges-ul map-challenges-grid `}>
+          {challengesWithCompleted.map((challenge, i) => (
+            <li
+              className={`map-challenge-title map-challenge-title-grid ${
+                isProjectBlock ? 'map-project-wrap' : 'map-challenge-wrap'
+              }`}
+              id={challenge.dashedName}
+              key={`map-challenge ${challenge.fields.slug}`}
+            >
+              {!isProjectBlock ? (
+                <Link
+                  onClick={() => handleChallengeClick(challenge.fields.slug)}
+                  to={challenge.fields.slug}
+                  className={`map-grid-item ${
+                    +challenge.isCompleted ? 'challenge-completed' : ''
+                  }`}
+                >
+                  <span>{i + 1}</span>
+                  <span className='sr-only'>
+                    {challenge.isCompleted
+                      ? t('icons.passed')
+                      : t('icons.not-passed')}
+                  </span>
+                </Link>
+              ) : (
+                <Link
+                  onClick={() => handleChallengeClick(challenge.fields.slug)}
+                  to={challenge.fields.slug}
+                >
+                  {challenge.title}
+                  <span className=' badge map-badge map-project-checkmark'>
+                    {renderCheckMark(challenge.isCompleted)}
+                  </span>
+                </Link>
+              )}
+            </li>
+          ))}
+        </ul>
+      </nav>
     </>
   ) : (
     <ul className={`map-challenges-ul`}>
