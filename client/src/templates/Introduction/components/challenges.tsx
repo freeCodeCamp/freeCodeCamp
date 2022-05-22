@@ -21,7 +21,7 @@ interface Challenges {
   executeGA: (payload: ExecuteGaArg) => void;
   isProjectBlock: boolean;
   superBlock: SuperBlocks;
-  blockTitle?: string;
+  blockTitle?: string | null;
 }
 
 const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
