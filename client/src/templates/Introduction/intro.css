@@ -298,9 +298,6 @@ button.map-title {
 .challenge-completed {
   background: var(--highlight-background);
   position: relative;
-}
-
-.challenge-completed {
   background-color: #3895ff;
 }
 
