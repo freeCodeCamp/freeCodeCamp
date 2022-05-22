@@ -66,6 +66,15 @@ a.cert-tag:active {
   padding: 3px 5px;
 }
 
+.block-grid .challenge-jump-link a:focus {
+  outline: 3px solid var(--blue-mid);
+  outline-offset: 0;
+}
+
+.block-grid .challenge-jump-link a:focus:not(:focus-visible) {
+  outline: none;
+}
+
 .block-title-translation-cta {
   white-space: nowrap;
   padding: 0.2em 0.5em;
