@@ -30,6 +30,8 @@ dashedName: build-a-technical-documentation-page
 
 Soddisfa le user story e passa tutti i test qua sotto per complerare questo progetto. Usa il tuo stile personale. Buon divertimento!
 
+**Nota:** Assicurati di aggiungere `<link rel="stylesheet" href="styles.css">` nel tuo HTML per linkare il tuo foglio di stile e applicare il tuo CSS
+
 # --hints--
 
 Dovresti avere un elemento `main` con un `id` di `main-doc`
@@ -142,7 +144,7 @@ assert(els.length === 1)
 Dovrebbe esserci almeno un elemento `a` con una classe di `nav-link`
 
 ```js
-const els = document.querySelectorAll('a[class="nav-link"]')
+const els = document.querySelectorAll('a.nav-link')
 assert(els.length >= 1)
 ```
 
