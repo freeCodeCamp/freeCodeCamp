@@ -192,7 +192,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
           return;
         }
         // Because FF adds an extra tab stop to the lang menu (because it
-        // is scrollable) we need to manually focus to the previous menu item.
+        // is scrollable) we need to manually focus the previous menu item.
         this.getPreviousMenuItem(this.langButtonRef.current).focus();
         hideLanguageMenu();
         event.preventDefault();
@@ -236,7 +236,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
     const { hideMenu, menuButtonRef } = this.props;
     if (
       event.relatedTarget &&
-      !event.relatedTarget.closest('.nav-list') &&
+      !event.relatedTarget.closest('.universal-nav-right') &&
       event.relatedTarget !== menuButtonRef.current
     ) {
       hideMenu();

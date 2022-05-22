@@ -59,13 +59,11 @@ export const UniversalNav = ({
   return (
     <nav
       aria-label={t('aria.primary-nav')}
-      className={'universal-nav' + (displayMenu ? ' expand-nav' : '')}
+      className={`universal-nav${displayMenu ? ' expand-nav' : ''}`}
       id='universal-nav'
     >
       <div
-        className={
-          'universal-nav-left' + (displayMenu ? ' display-search' : '')
-        }
+        className={`universal-nav-left${displayMenu ? ' display-search' : ''}`}
       >
         <Media minWidth={MAX_MOBILE_WIDTH + 1}>{search}</Media>
       </div>
