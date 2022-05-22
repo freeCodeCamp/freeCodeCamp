@@ -30,6 +30,8 @@ dashedName: build-a-product-landing-page
 
 完成需求并通过下面的所有测试来完成这个项目。 赋予它你自己的个人风格。 编程愉快！
 
+**注意：** 请在你的 HTML 中添加 `<link rel="stylesheet" href="styles.css">` 以链接你的样式表并应用你的 CSS
+
 # --hints--
 
 你应该有一个 `id` 为 `header` 的 `header` 元素
@@ -98,7 +100,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-每一个 `.nav-link` 元素应该链接到登陆页面上的相应元素（有一个 `href` 具有另一个元素的 id 的值，例如： `#footer`）
+每个 `.nav-link` 元素应该链接到登陆页面上的相应元素（有一个 `href` 具有另一个元素的 id 的值，例如： `#footer`）
 
 ```js
 const els = document.querySelectorAll('.nav-link')
