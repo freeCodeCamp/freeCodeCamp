@@ -422,7 +422,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
                   role='menuitem'
                   tabIndex='-1'
                 >
-                  Cancel Change
+                  {t('buttons.cancel-change')}
                 </button>
               </li>
               {locales.map((lang, index) => (

@@ -71,7 +71,8 @@
     "go-to-settings": "Go to settings to claim your certification",
     "click-start-course": "Start the course",
     "click-start-project": "Start the project",
-    "change-language": "Change language"
+    "change-language": "Change language",
+    "cancel-change": "Cancel Change"
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
