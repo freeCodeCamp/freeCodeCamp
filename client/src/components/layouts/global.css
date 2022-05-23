@@ -58,6 +58,12 @@ body {
   background: var(--secondary-background);
 }
 
+.tc-integration-layout {
+  flex: 1 0 auto;
+  margin-top: var(--header-height, 0);
+  background: var(--primary-background);
+}
+
 h1 {
   color: var(--secondary-color);
   font-weight: 700;

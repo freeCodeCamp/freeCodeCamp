@@ -53,7 +53,7 @@ import {
 import { savedChallengesSelector } from '../../../redux';
 import { getGuideUrl } from '../utils';
 import MultifileEditor from './multifile-editor';
-import DesktopLayout from './desktop-layout';
+import TcLayout from './tc-layout';
 import MobileLayout from './mobile-layout';
 
 import './classic.css';
@@ -333,8 +333,6 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       translationPending
     } = this.getChallenge();
 
-    const showBreadCrumbs =
-      challengeType !== challengeTypes.multifileCertProject;
     return (
       <SidePanel
         block={block}
@@ -349,7 +347,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           <ChallengeTitle
             block={block}
             isCompleted={this.props.isChallengeCompleted}
-            showBreadCrumbs={showBreadCrumbs}
+            showBreadCrumbs={false}
             superBlock={superBlock}
             translationPending={translationPending}
           >
@@ -481,7 +479,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
             />
           </Media>
           <Media minWidth={MAX_MOBILE_WIDTH + 1}>
-            <DesktopLayout
+            <TcLayout
               block={block}
               challengeFiles={challengeFiles}
               challengeType={challengeType}
@@ -509,12 +507,13 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           <HelpModal />
           <VideoModal videoUrl={this.getVideoUrl()} />
           <ResetModal />
-          <ProjectPreviewModal
+          {/* TODO: Decide if this is still needed */}
+          {/* <ProjectPreviewModal
             challengeData={challengeData}
             closeText={t('buttons.start-coding')}
             previewTitle={t('learn.project-preview-title')}
             showProjectPreview={showProjectPreview}
-          />
+          /> */}
         </LearnLayout>
       </Hotkeys>
     );

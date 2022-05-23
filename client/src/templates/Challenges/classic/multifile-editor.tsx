@@ -20,7 +20,7 @@ import {
   Test
 } from '../../../redux/prop-types';
 import { Themes } from '../../../components/settings/theme';
-import Editor from './editor';
+import Editor from './simple-editor';
 
 type VisibleEditors = {
   [key: string]: boolean;
