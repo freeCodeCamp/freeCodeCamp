@@ -26,6 +26,7 @@ describe('Public profile certifications', () => {
       // Modify username to include uppercase characters
       cy.goToSettings();
       cy.typeUsername('CertifiedUser');
+      cy.contains('Username is available');
       cy.get('@usernameForm').contains('Save').click();
       cy.contains('We have updated your username to CertifiedUser').should(
         'be.visible'
