@@ -19,13 +19,11 @@ dashedName: access-array-data-with-indexes
 
 ```js
 const array = [50, 60, 70];
-array[0];
+console.log(array[0]);
 const data = array[1];
 ```
 
-ここで、`array[0]` は `50`、`data` の値は `60` となります。
-
-**注:** 「`array [0]`」のように、配列名と角括弧 (ブラケット) の間にスペースを入れないでください。 JavaScript はこれを正しく処理できますが、このコードを読む他のプログラマーを混乱させる恐れがあります。
+ここで、`console.log(array[0])` は `50` を出力し、`data` の値は `60` となります。
 
 # --instructions--
 
