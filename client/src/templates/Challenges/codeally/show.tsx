@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import store from 'store';
+// import store from 'store';
 
 // Local Utilities
 import Spacer from '../../../components/helpers/spacer';
@@ -212,14 +212,16 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
     const queryParams = new URLSearchParams(window.location.search);
     const codeAllyTempToken: string | null = queryParams.get('tempToken');
 
-    if (codeAllyTempToken) {
+    /* if (codeAllyTempToken) {
       store.set('codeAllyTempToken', codeAllyTempToken);
     }
 
     const storedTempToken: string | undefined = store.get(
       'codeAllyTempToken'
     ) as string | undefined;
-    const tempToken = storedTempToken ? `tempToken=${storedTempToken}` : '';
+    const tempToken = storedTempToken ? `tempToken=${storedTempToken}` : '';*/
+
+    const tempToken = codeAllyTempToken ? `tempToken=${codeAllyTempToken}` : '';
 
     // Include a unique param to avoid CodeAlly caching issues
     const date = `date=${Date.now()}`;
