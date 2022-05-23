@@ -8,7 +8,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-// import store from 'store';
 
 // Local Utilities
 import Spacer from '../../../components/helpers/spacer';
@@ -211,15 +210,6 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
     // Initial CodeAlly login includes a tempToken in redirect URL
     const queryParams = new URLSearchParams(window.location.search);
     const codeAllyTempToken: string | null = queryParams.get('tempToken');
-
-    /* if (codeAllyTempToken) {
-      store.set('codeAllyTempToken', codeAllyTempToken);
-    }
-
-    const storedTempToken: string | undefined = store.get(
-      'codeAllyTempToken'
-    ) as string | undefined;
-    const tempToken = storedTempToken ? `tempToken=${storedTempToken}` : '';*/
 
     const tempToken = codeAllyTempToken ? `tempToken=${codeAllyTempToken}` : '';
 
