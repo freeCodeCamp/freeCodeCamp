@@ -31,14 +31,13 @@ import {
 import { challengeTypes } from '../../../../utils/challenge-types';
 
 const log = debug('fcc:boot:challenges');
+const allChallenges = getChallenges();
 
 export default async function bootChallenge(app, done) {
   const send200toNonUser = ifNoUserSend(true);
   const api = app.loopback.Router();
   const router = app.loopback.Router();
-  const challengeUrlResolver = await createChallengeUrlResolver(
-    getChallenges()
-  );
+  const challengeUrlResolver = await createChallengeUrlResolver(allChallenges);
   const redirectToCurrentChallenge = createRedirectToCurrentChallenge(
     challengeUrlResolver,
     normalizeParams,
@@ -300,8 +299,7 @@ export const expectedProjectStructures = {
  * @returns {boolean}
  */
 export function validateChallenge(id, challengeType) {
-  // TODO: Probably can save some computation, by not calling `getChallenges` every time.
-  const challenge = getChallenges().find(chal => chal.id === id);
+  const challenge = allChallenges.find(chal => chal.id === id);
   return !!challenge && ![3, 4, 10, 13, 14].includes(challengeType);
 }
 
@@ -312,8 +310,7 @@ export function validateChallenge(id, challengeType) {
  * @returns {boolean}
  */
 export function validateProject(id, body) {
-  // TODO: Probably can save some computation, by not calling `getChallenges` every time.
-  const challenge = getChallenges().find(chal => chal.id === id);
+  const challenge = allChallenges.find(chal => chal.id === id);
 
   // Ensure `body` matches the expected structure
   const validBody = ensureObjectContainsAllFields(
@@ -360,11 +357,11 @@ const jsCertProjectIds = [
   'aa2e6f85cab2ab736c9a9b24'
 ];
 
-const multifileCertProjectIds = getChallenges()
+const multifileCertProjectIds = allChallenges
   .filter(challenge => challenge.challengeType === 14)
   .map(challenge => challenge.id);
 
-const savableChallenges = getChallenges()
+const savableChallenges = allChallenges
   .filter(challenge => challenge.challengeType === 14)
   .map(challenge => challenge.id);
 
@@ -688,7 +685,7 @@ function saveChallenge(req, res, next) {
     .subscribe(() => {}, next);
 }
 
-const codeRoadChallenges = getChallenges().filter(
+const codeRoadChallenges = allChallenges.filter(
   ({ challengeType }) => challengeType === 12 || challengeType === 13
 );
 
