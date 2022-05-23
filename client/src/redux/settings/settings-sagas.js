@@ -7,6 +7,7 @@ import {
   takeEvery,
   debounce
 } from 'redux-saga/effects';
+import store from 'store';
 
 import { createFlashMessage } from '../../components/Flash/redux';
 import {
@@ -106,6 +107,7 @@ function* updateMySocialsSaga({ payload: update }) {
 
 function* updateMySoundSaga({ payload: update }) {
   try {
+    store.set('fcc-sound', !!update.sound);
     const response = yield call(putUpdateMySound, update);
     yield put(updateMySoundComplete({ ...response, payload: update }));
     yield put(createFlashMessage({ ...response }));
