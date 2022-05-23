@@ -15,7 +15,7 @@ const mapStateToProps = (
   props: CertificationProps
 ) =>
   createSelector(
-    certificatesByNameSelector(props.username),
+    certificatesByNameSelector(props.username.toLowerCase()),
     ({
       hasModernCert,
       hasLegacyCert,
