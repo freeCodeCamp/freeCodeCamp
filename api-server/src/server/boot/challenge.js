@@ -97,7 +97,7 @@ export function challengesCompleted(req, res, next) {
       message: 'Invalid request format. Expected `body` to be an array.'
     });
   }
-  const completedChallenges = [];
+  const submittedChallenges = [];
   for (const challenge of body) {
     const { id, challengeType } = challenge;
 
@@ -113,7 +113,7 @@ export function challengesCompleted(req, res, next) {
     const isChallengeValid = validateChallenge(id, challengeType);
 
     if (!isChallengeValid) {
-      return res.status(403).json({
+      return res.status(400).json({
         type: 'error',
         message: 'Invalid challenge submission.'
       });
@@ -128,7 +128,7 @@ export function challengesCompleted(req, res, next) {
       completedDate
     };
 
-    completedChallenges.push(completedChallenge);
+    submittedChallenges.push(completedChallenge);
   }
 
   const $push = {
@@ -145,11 +145,11 @@ export function challengesCompleted(req, res, next) {
   // Copilot: "Premature optimization is the root of all evil."
   // Shaun: Ok. Fine 😞
   let points = user.points;
-  for (const chal of completedChallenges) {
+  for (const chal of submittedChallenges) {
     const oldIndex = user.completedChallenges.findIndex(c => c.id === chal.id);
     const alreadyCompleted = oldIndex !== -1;
     const oldChallenge = alreadyCompleted
-      ? completedChallenges[oldIndex]
+      ? submittedChallenges[oldIndex]
       : null;
     if (alreadyCompleted) {
       $set[`completedChallenges.${oldIndex}`] = {
@@ -190,7 +190,7 @@ export function challengesCompleted(req, res, next) {
   return Observable.fromPromise(updatePromise)
     .map(() => {
       return res.json({
-        completedChallenges,
+        submittedChallenges,
         points
       });
     })
@@ -220,7 +220,7 @@ export function projectCompleted(req, res, next) {
   const isProjectValid = validateProject(id, body);
 
   if (!isProjectValid) {
-    return res.status(403).json({
+    return res.status(400).json({
       type: 'error',
       message: 'Invalid project submission.'
     });
@@ -543,15 +543,15 @@ export function isValidChallengeCompletion(req, res, next) {
 
   if (!ObjectID.isValid(id)) {
     log('isObjectId', id, ObjectID.isValid(id));
-    return res.status(403).json(isValidChallengeCompletionErrorMsg);
+    return res.status(400).json(isValidChallengeCompletionErrorMsg);
   }
   if ('challengeType' in req.body && !isNumeric(String(challengeType))) {
     log('challengeType', challengeType, isNumeric(challengeType));
-    return res.status(403).json(isValidChallengeCompletionErrorMsg);
+    return res.status(400).json(isValidChallengeCompletionErrorMsg);
   }
   if ('solution' in req.body && !isURL(solution)) {
     log('isObjectId', id, ObjectID.isValid(id));
-    return res.status(403).json(isValidChallengeCompletionErrorMsg);
+    return res.status(400).json(isValidChallengeCompletionErrorMsg);
   }
   return next();
 }
@@ -652,7 +652,7 @@ function saveChallenge(req, res, next) {
   const { id: challengeId, files = [] } = req.body;
 
   if (!savableChallenges.includes(challengeId)) {
-    return res.status(403).send('That challenge type is not savable');
+    return res.status(400).send('That challenge type is not savable');
   }
 
   const challengeToSave = {
