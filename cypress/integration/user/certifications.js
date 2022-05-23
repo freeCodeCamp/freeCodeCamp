@@ -1,9 +1,9 @@
 describe('Public profile certifications', () => {
-  before(() => {
-    cy.exec('npm run seed:certified-user');
-  });
-
   context('Signed in user viewing their own public profile', () => {
+    before(() => {
+      cy.exec('npm run seed:certified-user');
+    });
+
     beforeEach(() => {
       cy.login();
     });
