@@ -300,7 +300,16 @@ export const expectedProjectStructures = {
  */
 export function validateChallenge(id, challengeType) {
   const challenge = allChallenges.find(chal => chal.id === id);
-  return !!challenge && ![3, 4, 10, 13, 14].includes(challengeType);
+  return (
+    !!challenge &&
+    ![
+      challengeTypes.frontEndProject,
+      challengeTypes.backEndProject,
+      challengeTypes.pythonProject,
+      challengeTypes.codeAllyCert,
+      challengeTypes.multifileCertProject
+    ].includes(challengeType)
+  );
 }
 
 /**
@@ -319,7 +328,14 @@ export function validateProject(id, body) {
   );
   return (
     !!challenge &&
-    [3, 4, 5, 10, 13, 14].includes(body.challengeType) &&
+    [
+      challengeTypes.frontEndProject,
+      challengeTypes.backEndProject,
+      challengeTypes.bonfire,
+      challengeTypes.pythonProject,
+      challengeTypes.codeAllyCert,
+      challengeTypes.multifileCertProject
+    ].includes(body.challengeType) &&
     validBody
   );
 }
