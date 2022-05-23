@@ -68,11 +68,15 @@ function Challenges({
             to={firstIncompleteChallenge.fields.slug}
           >
             {t('buttons.resume-project')}{' '}
-            <span className='sr-only'>{blockTitle}</span>
+            {blockTitle && <span className='sr-only'>{blockTitle}</span>}
           </Link>
         </div>
       )}
-      <nav aria-label={`Steps ${blockTitle ? `for ${blockTitle}` : ''}`}>
+      <nav
+        aria-label={
+          blockTitle ? t('aria.steps-for', { blockTitle }) : t('aria.steps')
+        }
+      >
         <ul className={`map-challenges-ul map-challenges-grid `}>
           {challengesWithCompleted.map((challenge, i) => (
             <li

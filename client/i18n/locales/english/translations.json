@@ -480,7 +480,9 @@
     "primary-nav": "primary",
     "breadcrumb-nav": "breadcrumb",
     "submit": "Use Ctrl + Enter to submit.",
-    "running-tests": "Running tests"
+    "running-tests": "Running tests",
+    "steps": "Steps",
+    "steps-for": "Steps for {{blockTitle}}"
   },
   "flash": {
     "honest-first": "To claim a certification, you must first accept our academic honesty policy",
