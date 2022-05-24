@@ -3,6 +3,7 @@ const path = require('path');
 
 const { getChallengesForLang } = require('../../../curriculum/getChallenges');
 const { buildMobileCurriculum } = require('./build-mobile-curriculum');
+const { buildExtCurriculumData } = require('./build-external-curricula-data');
 
 const { CURRICULUM_LOCALE } = process.env;
 
@@ -14,6 +15,7 @@ getChallengesForLang('english')
   .then(result => {
     if (CURRICULUM_LOCALE === 'english') {
       buildMobileCurriculum(result);
+      buildExtCurriculumData('v1', result);
     }
     return result;
   })
