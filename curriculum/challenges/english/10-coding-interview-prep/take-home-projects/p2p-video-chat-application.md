@@ -10,7 +10,9 @@ dashedName: p2p-video-chat-application
 
 **Objective:** Build a [Replit](https://replit.com/) app that is functionally similar to this: <https://p2p-video-chat-application.freecodecamp.rocks/>.
 
-Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use whichever libraries or APIs you need. Give it your own personal style.
+Fulfill the below user stories. Use whichever libraries or APIs you need. Give it your own personal style.
+
+**User Stories**
 
 **User Story:** Upon arriving, the browser will prompt me to access my camera and microphone.
 

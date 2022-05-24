@@ -8,7 +8,7 @@ dashedName: build-a-pong-game
 
 # --description--
 
-**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: <https://codepen.io/satyamdev/full/pdMmBp>.
+**Objective:** Build an app that is functionally similar to this: <https://codepen.io/satyamdev/full/pdMmBp>.
 
 **Rule #1:** Don't look at the example project's code. Figure it out for yourself.
 
