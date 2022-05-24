@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: flex-start;
   font-size: 18px;
-  font-family: 'Roboto Mono', sans-serif;
+  font-family: 'Lato', sans-serif;
   height: var(--header-height);
   background: var(--theme-color);
   position: fixed;
@@ -16,12 +16,6 @@
 
 .universal-nav a {
   text-decoration: none;
-}
-
-.universal-nav .universal-nav-right a,
-.universal-nav button.nav-link-header,
-button.nav-link {
-  font-family: 'Lato', 'sans-serif', monospace;
 }
 
 .universal-nav-left {
@@ -212,13 +206,8 @@ button.nav-link[aria-disabled='true'] {
   border-top: 0;
   border-bottom: 0;
   top: 0;
-  max-height: min(13.2rem, calc(100vh - var(--header-height)));
   overflow-y: auto;
   scrollbar-width: auto;
-}
-
-.nav-lang-menu.logged-in {
-  max-height: min(17.6rem, calc(100vh - var(--header-height)));
 }
 
 .nav-lang-menu > button:hover {
