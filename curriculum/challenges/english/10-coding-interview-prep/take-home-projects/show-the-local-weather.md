@@ -8,11 +8,13 @@ dashedName: show-the-local-weather
 
 # --description--
 
-**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/bELRjV>.
+**Objective:** Build a an app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/bELRjV>.
 
 **Rule #1:** Don't look at the example project's code. Figure it out for yourself.
 
-**Rule #2:** Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use whichever libraries or APIs you need. Give it your own personal style.
+**Rule #2:** Fulfill the below user stories. Use whichever libraries or APIs you need. Give it your own personal style.
+
+**User Stories**
 
 **User Story:** I can see the weather in my current location.
 
