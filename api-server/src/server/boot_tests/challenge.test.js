@@ -1,12 +1,8 @@
-import { find } from 'lodash';
-
 import {
-  buildUserUpdate,
   buildChallengeUrl,
   createChallengeUrlResolver,
   createRedirectToCurrentChallenge,
   getFirstChallenge,
-  isValidChallengeCompletion,
   validateChallenge,
   validateProject,
   ensureObjectContainsAllProperties,
@@ -23,9 +19,6 @@ import {
   mockChallenge,
   mockUser,
   mockGetFirstChallenge,
-  mockCompletedChallenge,
-  mockCompletedChallengeNoFiles,
-  mockCompletedChallenges,
   projectPayloads,
   projectPayloadsIncorrectStructure
 } from './fixtures';
@@ -120,111 +113,6 @@ describe('boot/challenge', () => {
     });
   });
 
-  describe('buildUserUpdate', () => {
-    it('returns an Object with a nested "completedChallenges" property', () => {
-      const result = buildUserUpdate(
-        mockUser,
-        '123abc',
-        mockCompletedChallenge,
-        'UTC'
-      );
-      expect(result).toHaveProperty('updateData.$push.completedChallenges');
-    });
-
-    // eslint-disable-next-line max-len
-    it('preserves file contents if the completed challenge is a JS Project', () => {
-      const jsChallengeId = 'aa2e6f85cab2ab736c9a9b24';
-      const completedChallenge = {
-        ...mockCompletedChallenge,
-        completedDate: Date.now(),
-        id: jsChallengeId
-      };
-      const result = buildUserUpdate(
-        mockUser,
-        jsChallengeId,
-        completedChallenge,
-        'UTC'
-      );
-      const newCompletedChallenge = result.updateData.$push.completedChallenges;
-
-      expect(newCompletedChallenge).toEqual(completedChallenge);
-    });
-
-    it('preserves the original completed date of a challenge', () => {
-      const completedChallengeId = 'aaa48de84e1ecc7c742e1124';
-      const completedChallenge = {
-        ...mockCompletedChallenge,
-        completedDate: Date.now(),
-        id: completedChallengeId
-      };
-      const originalCompletion = find(
-        mockCompletedChallenges,
-        x => x.id === completedChallengeId
-      ).completedDate;
-      const result = buildUserUpdate(
-        mockUser,
-        completedChallengeId,
-        completedChallenge,
-        'UTC'
-      );
-
-      const updatedCompletedChallenge =
-        result.updateData.$set['completedChallenges.2'];
-
-      expect(updatedCompletedChallenge.completedDate).toEqual(
-        originalCompletion
-      );
-    });
-
-    // eslint-disable-next-line max-len
-    it('does not attempt to update progressTimestamps for a previously completed challenge', () => {
-      const completedChallengeId = 'aaa48de84e1ecc7c742e1124';
-      const completedChallenge = {
-        ...mockCompletedChallenge,
-        completedDate: Date.now(),
-        id: completedChallengeId
-      };
-      const { updateData } = buildUserUpdate(
-        mockUser,
-        completedChallengeId,
-        completedChallenge,
-        'UTC'
-      );
-
-      const hasProgressTimestamps =
-        '$push' in updateData && 'progressTimestamps' in updateData.$push;
-      expect(hasProgressTimestamps).toBe(false);
-    });
-
-    // eslint-disable-next-line max-len
-    it('provides a progressTimestamps update for new challenge completion', () => {
-      expect.assertions(2);
-      const { updateData } = buildUserUpdate(
-        mockUser,
-        '123abc',
-        mockCompletedChallenge,
-        'UTC'
-      );
-      expect(updateData).toHaveProperty('$push');
-      expect(updateData.$push).toHaveProperty('progressTimestamps');
-    });
-
-    it('will $push newly completed challenges to the completedChallenges array', () => {
-      const {
-        updateData: {
-          $push: { completedChallenges }
-        }
-      } = buildUserUpdate(
-        mockUser,
-        '123abc',
-        mockCompletedChallengeNoFiles,
-        'UTC'
-      );
-
-      expect(completedChallenges).toEqual(mockCompletedChallengeNoFiles);
-    });
-  });
-
   describe('buildChallengeUrl', () => {
     it('resolves the correct Url for the provided challenge', () => {
       const result = buildChallengeUrl(mockChallenge);
@@ -286,101 +174,6 @@ describe('boot/challenge', () => {
       const result = await getFirstChallenge([]);
 
       expect(result).toEqual('/learn');
-    });
-  });
-
-  describe('isValidChallengeCompletion', () => {
-    const validObjectId = '5c716d1801013c3ce3aa23e6';
-
-    it('declares a 403 for an invalid id in the body', () => {
-      expect.assertions(2);
-      const req = mockReq({
-        body: { id: 'not-a-real-id' }
-      });
-      const res = mockRes();
-      const next = jest.fn();
-
-      isValidChallengeCompletion(req, res, next);
-
-      expect(res.status).toHaveBeenCalledWith(403);
-      expect(next).not.toHaveBeenCalled();
-    });
-
-    it('declares a 403 for an invalid challengeType in the body', () => {
-      expect.assertions(2);
-      const req = mockReq({
-        body: { id: validObjectId, challengeType: 'ponyfoo' }
-      });
-      const res = mockRes();
-      const next = jest.fn();
-
-      isValidChallengeCompletion(req, res, next);
-
-      expect(res.status).toHaveBeenCalledWith(403);
-      expect(next).not.toHaveBeenCalled();
-    });
-
-    it('declares a 403 for an invalid solution in the body', () => {
-      expect.assertions(2);
-      const req = mockReq({
-        body: {
-          id: validObjectId,
-          challengeType: '1',
-          solution: 'https://not-a-url'
-        }
-      });
-      const res = mockRes();
-      const next = jest.fn();
-
-      isValidChallengeCompletion(req, res, next);
-
-      expect(res.status).toHaveBeenCalledWith(403);
-      expect(next).not.toHaveBeenCalled();
-    });
-
-    it('calls next if the body is valid', () => {
-      const req = mockReq({
-        body: {
-          id: validObjectId,
-          challengeType: '1',
-          solution: 'https://www.freecodecamp.org'
-        }
-      });
-      const res = mockRes();
-      const next = jest.fn();
-
-      isValidChallengeCompletion(req, res, next);
-
-      expect(next).toHaveBeenCalled();
-    });
-
-    it('calls next if only the id is provided', () => {
-      const req = mockReq({
-        body: {
-          id: validObjectId
-        }
-      });
-      const res = mockRes();
-      const next = jest.fn();
-
-      isValidChallengeCompletion(req, res, next);
-
-      expect(next).toHaveBeenCalled();
-    });
-
-    it('can handle an "int" challengeType', () => {
-      const req = mockReq({
-        body: {
-          id: validObjectId,
-          challengeType: 1
-        }
-      });
-      const res = mockRes();
-      const next = jest.fn();
-
-      isValidChallengeCompletion(req, res, next);
-
-      expect(next).toHaveBeenCalled();
     });
   });
 
