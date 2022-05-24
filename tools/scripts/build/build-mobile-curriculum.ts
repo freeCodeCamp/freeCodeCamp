@@ -3,7 +3,7 @@ import { resolve } from 'path';
 import { SuperBlocks } from '../../../config/certification-settings';
 
 type Intro = { [keyValue in SuperBlocks]: IntroProps };
-type Curriculum = { [keyValue in SuperBlocks]: CurriculumProps };
+export type Curriculum = { [keyValue in SuperBlocks]: CurriculumProps };
 type SuperBlockKeys = keyof typeof SuperBlocks;
 type SuperBlockValues = typeof SuperBlocks[SuperBlockKeys];
 
