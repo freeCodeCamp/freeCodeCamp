@@ -30,7 +30,7 @@ dashedName: timestamp-microservice
 };
 ```
 
-有効な日付を持つ `/api/:date?` へのリクエストに対して、JSON オブジェクトを返し、その `unix` キーの値は入力日付を表す Unix タイムスタンプ (ミリ秒) の値である必要があります。
+有効な日付を持つ `/api/:date?` へのリクエストに対して、JSON オブジェクトを返し、その `unix` キーの値は入力日付を表す Unix タイムスタンプ (ミリ秒単位で、データ型は Number) の値である必要があります。
 
 ```js
 (getUserInput) =>

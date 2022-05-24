@@ -10,7 +10,8 @@
         "monaco-editor",
         "monaco-editor-webpack-plugin",
         "react-monaco-editor"
-      ]
+      ],
+      "enabled": false
     },
     {
       "matchPackageNames": ["normalize-url"],
