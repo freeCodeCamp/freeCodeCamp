@@ -15,7 +15,7 @@ jobs:
   has-translation:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/github-script@v6
+      - uses: actions/github-script@7a5c598405937d486b0331594b5da2b14db670da # tag=v6
         with:
           github-token: ${{secrets.CAMPERBOT_NO_TRANSLATE}}
           script: |
