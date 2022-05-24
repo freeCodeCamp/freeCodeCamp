@@ -36,22 +36,6 @@ const superBlockToOrder = {
   'relational-database': 12
 };
 
-const superBlockMobileAppOrder = {
-  'responsive-web-design': { public: true },
-  '2022/responsive-web-design': { public: false },
-  'javascript-algorithms-and-data-structures': { public: true },
-  'front-end-development-libraries': { public: false },
-  'data-visualization': { public: false },
-  'back-end-development-and-apis': { public: false },
-  'quality-assurance': { public: false },
-  'scientific-computing-with-python': { public: false },
-  'data-analysis-with-python': { public: false },
-  'information-security': { public: false },
-  'machine-learning-with-python': { public: false },
-  'coding-interview-prep': { public: false },
-  'relational-database': { public: false }
-};
-
 const superBlockToNewOrder = {
   ...superBlockToOrder
 };
@@ -94,5 +78,4 @@ function getSuperBlockFromDir(dir) {
 }
 
 exports.getSuperOrder = getSuperOrder;
-exports.superBlockMobileAppOrder = superBlockMobileAppOrder;
 exports.getSuperBlockFromDir = getSuperBlockFromDir;
