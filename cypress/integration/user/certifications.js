@@ -12,7 +12,7 @@ describe('Public profile certifications', () => {
       cy.visit('/certifieduser', { failOnStatusCode: false });
 
       // The following line is only required if you want to test it in development
-      cy.contains('Preview custom 404 page').click();
+      // cy.contains('Preview custom 404 page').click();
 
       cy.get('.certifications.row > div')
         .children()
@@ -35,7 +35,7 @@ describe('Public profile certifications', () => {
       cy.visit('/certifieduser', { failOnStatusCode: false });
 
       // The following line is only required if you want to test it in development
-      cy.contains('Preview custom 404 page').click();
+      // cy.contains('Preview custom 404 page').click();
 
       cy.get('.certifications.row > div')
         .children()
