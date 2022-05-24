@@ -14,7 +14,7 @@ In a `switch` statement you may not be able to specify all possible values as `c
 A `default` statement should be the last case.
 
 ```js
-switch (num) {
+switch(num) {
   case value1:
     statement1;
     break;
