@@ -51,9 +51,19 @@ export default async function bootChallenge(app, done) {
     modernChallengeCompleted
   );
 
-  api.post('/challenges-completed', send200toNonUser, challengesCompleted);
+  api.post(
+    '/challenges-completed',
+    send200toNonUser,
+    validateChallenge,
+    challengesCompleted
+  );
 
-  api.post('/project-completed', send200toNonUser, projectCompleted);
+  api.post(
+    '/project-completed',
+    send200toNonUser,
+    validateProject,
+    projectCompleted
+  );
 
   api.post(
     '/backend-challenge-completed',
@@ -80,15 +90,8 @@ export default async function bootChallenge(app, done) {
   done();
 }
 
-/**
- * Handles submissions for all challenges.
- * @param {Request} req
- * @param {Response} res
- * @returns {Observable}
- */
-export function challengesCompleted(req, res, next) {
-  // Challenges should only include `id` and `challengeType`
-  const { user, body } = req;
+export function validateChallenge(req, res, next) {
+  const { body } = req;
 
   // Ensure `body` is an array:
   if (!Array.isArray(body) || !body.length) {
@@ -97,7 +100,6 @@ export function challengesCompleted(req, res, next) {
       message: 'Invalid request format. Expected `body` to be an array.'
     });
   }
-  const submittedChallenges = [];
   for (const challenge of body) {
     const { id, challengeType } = challenge;
 
@@ -110,7 +112,16 @@ export function challengesCompleted(req, res, next) {
       });
     }
 
-    const isChallengeValid = validateChallenge(id, challengeType);
+    const foundChallenge = allChallenges.find(chal => chal.id === id);
+    const isChallengeValid =
+      !!foundChallenge &&
+      ![
+        challengeTypes.frontEndProject,
+        challengeTypes.backEndProject,
+        challengeTypes.pythonProject,
+        challengeTypes.codeAllyCert,
+        challengeTypes.multifileCertProject
+      ].includes(challengeType);
 
     if (!isChallengeValid) {
       return res.status(400).json({
@@ -118,6 +129,65 @@ export function challengesCompleted(req, res, next) {
         message: 'Invalid challenge submission.'
       });
     }
+  }
+  next();
+}
+
+export function validateProject(req, res, next) {
+  const { body } = req;
+
+  // Ensure `body` is an object
+  if (!body || typeof body !== 'object') {
+    return res.status(400).json({
+      type: 'error',
+      message: 'Invalid request format. Expected `body` to be an object.'
+    });
+  }
+
+  const { id } = body;
+
+  // Find the structure, based on the `id` of the project
+  const challenge = allChallenges.find(chal => chal.id === id);
+
+  // Ensure `body` matches the expected structure
+  const validBody = ensureObjectContainsAllProperties(
+    body,
+    expectedProjectStructures[body.challengeType]
+  );
+  const isProjectValid =
+    !!challenge &&
+    [
+      challengeTypes.frontEndProject,
+      challengeTypes.backEndProject,
+      challengeTypes.bonfire,
+      challengeTypes.pythonProject,
+      challengeTypes.codeAllyCert,
+      challengeTypes.multifileCertProject
+    ].includes(body.challengeType) &&
+    validBody;
+
+  if (!isProjectValid) {
+    return res.status(400).json({
+      type: 'error',
+      message: 'Invalid project submission.'
+    });
+  }
+  next();
+}
+
+/**
+ * Handles submissions for all challenges.
+ * @param {Request} req
+ * @param {Response} res
+ * @returns {Observable}
+ */
+export function challengesCompleted(req, res, next) {
+  // Challenges should only include `id` and `challengeType`
+  const { user, body } = req;
+
+  const submittedChallenges = [];
+  for (const challenge of body) {
+    const { id, challengeType } = challenge;
 
     // NOTE: Consider what will happen if this comes with a batch
     const completedDate = Date.now();
@@ -141,9 +211,6 @@ export function challengesCompleted(req, res, next) {
     },
     $set = {};
 
-  // Shaun: This seems fine, but probably no need to loop through the challenges twice.
-  // Copilot: "Premature optimization is the root of all evil."
-  // Shaun: Ok. Fine 😞
   let points = user.points;
   for (const chal of submittedChallenges) {
     const oldIndex = user.completedChallenges.findIndex(c => c.id === chal.id);
@@ -186,7 +253,6 @@ export function challengesCompleted(req, res, next) {
       return resolve();
     })
   );
-  // Shaun: No idea what this is doing, but I copied it from the old code.
   return Observable.fromPromise(updatePromise)
     .map(() => {
       return res.json({
@@ -205,32 +271,73 @@ export function challengesCompleted(req, res, next) {
  */
 export function projectCompleted(req, res, next) {
   const { user, body } = req;
+  const { files, completedDate = Date.now(), id } = body;
+  let completedChallenge = {};
 
-  // Ensure `body` is an object
-  if (!body || typeof body !== 'object') {
-    return res.status(400).json({
-      type: 'error',
-      message: 'Invalid request format. Expected `body` to be an object.'
-    });
-  }
+  let finalChallenge;
+  const $push = {},
+    $set = {},
+    $pull = {};
+  const {
+    completedChallenges = [],
+    needsModeration = false,
+    savedChallenges = []
+  } = user;
 
-  const { id } = body;
-
-  // Find the structure, based on the `id` of the project
-  const isProjectValid = validateProject(id, body);
-
-  if (!isProjectValid) {
-    return res.status(400).json({
-      type: 'error',
-      message: 'Invalid project submission.'
-    });
-  }
-
-  const { alreadyCompleted, savedChallenges, updateData } = buildUserUpdate(
-    user,
-    id,
-    body
+  const oldIndex = completedChallenges.findIndex(
+    ({ id: challengeId }) => challengeId === id
   );
+
+  const alreadyCompleted = oldIndex !== -1;
+  const oldChallenge = alreadyCompleted ? completedChallenges[oldIndex] : null;
+
+  if (alreadyCompleted) {
+    finalChallenge = {
+      ...completedChallenge,
+      completedDate: oldChallenge.completedDate
+    };
+    $set[`completedChallenges.${oldIndex}`] = finalChallenge;
+  } else {
+    finalChallenge = {
+      ...completedChallenge
+    };
+    $push.progressTimestamps = completedDate;
+    $push.completedChallenges = finalChallenge;
+  }
+
+  if (savableChallenges.includes(id)) {
+    const challengeToSave = {
+      id,
+      lastSavedDate: completedDate,
+      files: files?.map(file =>
+        pick(file, ['contents', 'key', 'name', 'ext', 'history'])
+      )
+    };
+
+    const savedIndex = savedChallenges.findIndex(
+      ({ id: challengeId }) => challengeId === id
+    );
+
+    if (savedIndex >= 0) {
+      $set[`savedChallenges.${savedIndex}`] = challengeToSave;
+      savedChallenges[savedIndex] = challengeToSave;
+    } else {
+      $push.savedChallenges = challengeToSave;
+      savedChallenges.push(challengeToSave);
+    }
+  }
+
+  // remove from partiallyCompleted on submit
+  $pull.partiallyCompletedChallenges = { id };
+
+  if (needsModeration) $set.needsModeration = true;
+
+  const updateData = {};
+  if (!isEmpty($set)) updateData.$set = $set;
+  if (!isEmpty($push)) updateData.$push = $push;
+  if (!isEmpty($pull)) updateData.$pull = $pull;
+
+  // ----------------------------------------------
 
   const points = alreadyCompleted ? user.points : user.points + 1;
   const updatePromise = new Promise((resolve, reject) =>
@@ -293,64 +400,16 @@ export const expectedProjectStructures = {
 };
 
 /**
- * Validates the `id` submitted is a valid challenge.
- * @param {string} id
- * @param {number} challengeType
- * @returns {boolean}
- */
-export function validateChallenge(id, challengeType) {
-  const challenge = allChallenges.find(chal => chal.id === id);
-  return (
-    !!challenge &&
-    ![
-      challengeTypes.frontEndProject,
-      challengeTypes.backEndProject,
-      challengeTypes.pythonProject,
-      challengeTypes.codeAllyCert,
-      challengeTypes.multifileCertProject
-    ].includes(challengeType)
-  );
-}
-
-/**
- * Validates the submitted project is a Certification Project (or Take Home Project), and all required fields are present.
- * @param {string} id - Id of the Certification Project or Take Home Project challenge file
- * @param {Request.body} body - Request body
- * @returns {boolean}
- */
-export function validateProject(id, body) {
-  const challenge = allChallenges.find(chal => chal.id === id);
-
-  // Ensure `body` matches the expected structure
-  const validBody = ensureObjectContainsAllFields(
-    body,
-    expectedProjectStructures[body.challengeType]
-  );
-  return (
-    !!challenge &&
-    [
-      challengeTypes.frontEndProject,
-      challengeTypes.backEndProject,
-      challengeTypes.bonfire,
-      challengeTypes.pythonProject,
-      challengeTypes.codeAllyCert,
-      challengeTypes.multifileCertProject
-    ].includes(body.challengeType) &&
-    validBody
-  );
-}
-
-/**
  * Checks all given keys exist in the given object.
  * @param {object} obj
  * @param {string[]} fields
  * @returns
  */
-export function ensureObjectContainsAllFields(obj, fields) {
-  return fields.every(key => hasFields(obj, key));
+export function ensureObjectContainsAllProperties(obj, fields) {
+  return fields.every(key => hasProperties(obj, key));
 }
 
-export function hasFields(obj, keys) {
+export function hasProperties(obj, keys) {
   const keysArr = keys.split('.');
   let currObj = obj;
   for (const key of keysArr) {
