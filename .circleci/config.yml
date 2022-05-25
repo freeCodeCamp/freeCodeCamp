@@ -41,7 +41,7 @@ running_npm_build: &running_npm_build
     sed "s/export\s//g" buildenvvar > .env
     # git config --global url."https://git@".insteadOf git://
     # rm -rf package-lock.json
-    npm install
+    npm ci
     npm run build
   no_output_timeout: 20m
 workspace_persist: &workspace_persist
