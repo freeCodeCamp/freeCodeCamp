@@ -1,8 +1,10 @@
-const path = require('path');
-const fs = require('fs');
-const { AssertionError } = require('chai');
-const envData = require('../../../config/env.json');
-const { mobileSchemaValidator } = require('./mobileSchema');
+import path from 'path';
+import fs from 'fs';
+import { AssertionError } from 'chai';
+import envData from '../../../config/env.json';
+import { SuperBlocks } from '../../../config/certification-settings';
+import { mobileSchemaValidator } from './mobileSchema';
+import { superBlockMobileAppOrder } from './build-external-curricula-data';
 
 if (envData.clientLocale == 'english' && !envData.showUpcomingChanges) {
   describe('mobile curriculum build', () => {
@@ -33,15 +35,27 @@ if (envData.clientLocale == 'english' && !envData.showUpcomingChanges) {
         .filter(fileInArray => fileInArray !== 'availableSuperblocks.json')
         .forEach(fileInArray => {
           const fileContent = fs.readFileSync(
-            `${mobileStaticPath}/mobile/${fileInArray}`
+            `${mobileStaticPath}/mobile/${fileInArray}`,
+            'utf-8'
           );
 
           const result = validateMobileSuperBlock(JSON.parse(fileContent));
 
           if (result.error) {
-            throw new AssertionError(result.error, `file: ${fileInArray}`);
+            throw new AssertionError(
+              result.error.toString(),
+              `file: ${fileInArray}`
+            );
           }
         });
+    });
+
+    test('All SuperBlocks should be present in the mobile SuperBlock object', () => {
+      Object.keys(SuperBlocks).forEach(superBlockKey =>
+        expect(
+          Object.keys(superBlockMobileAppOrder).includes(superBlockKey)
+        ).toBe(true)
+      );
     });
   });
 } else {

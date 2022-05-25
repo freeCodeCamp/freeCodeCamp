@@ -23,9 +23,9 @@ interface Block {
   meta: Record<string, unknown>;
 }
 
-const superBlockMobileAppOrder = {
+export const superBlockMobileAppOrder = {
   'responsive-web-design': { public: true },
-  '2022-responsive-web-design': { public: false },
+  '2022/responsive-web-design': { public: false },
   'javascript-algorithms-and-data-structures': { public: true },
   'front-end-development-libraries': { public: false },
   'data-visualization': { public: false },
