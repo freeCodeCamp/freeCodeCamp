@@ -10,7 +10,7 @@ dashedName: dna-pairing
 
 The DNA strand is missing the pairing element. Take each character, get its pair, and return the results as a 2d array.
 
-[Base pairs](http://en.wikipedia.org/wiki/Base_pair) are a pair of AT and CG. Match the missing element to the provided character.
+Base pairs are a pair of AT and CG, which form building blocks of the DNA double helix. Match the missing element to the provided character.
 
 Return the provided character as the first element in each array.
 
