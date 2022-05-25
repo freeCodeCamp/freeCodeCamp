@@ -107,11 +107,11 @@
     "invariant": "2.2.4"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.17.0",
+    "@babel/eslint-parser": "7.18.2",
     "@babel/plugin-proposal-function-bind": "7.16.7",
-    "@babel/preset-env": "7.17.10",
-    "@babel/preset-react": "7.16.7",
-    "@babel/preset-typescript": "7.16.7",
+    "@babel/preset-env": "7.18.2",
+    "@babel/preset-react": "7.17.12",
+    "@babel/preset-typescript": "7.17.12",
     "@testing-library/cypress": "7.0.7",
     "@testing-library/dom": "8.13.0",
     "@testing-library/jest-dom": "5.16.4",
