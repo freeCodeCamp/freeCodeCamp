@@ -2,8 +2,10 @@ import fs from 'fs';
 import path from 'path';
 
 import { getChallengesForLang } from '../../../curriculum/getChallenges';
-import { buildMobileCurriculum, Curriculum } from './build-mobile-curriculum';
-import { buildExtCurriculumData } from './build-external-curricula-data';
+import {
+  buildExtCurriculumData,
+  Curriculum
+} from './build-external-curricula-data';
 
 const { CURRICULUM_LOCALE } = process.env;
 
@@ -14,8 +16,7 @@ const globalConfigPath = path.resolve(__dirname, '../../../config');
 getChallengesForLang('english')
   .then((result: Record<string, unknown>) => {
     if (CURRICULUM_LOCALE === 'english') {
-      buildMobileCurriculum(result as Curriculum);
-      buildExtCurriculumData('v1', result as Curriculum);
+      buildExtCurriculumData('v1.0.0', result as Curriculum);
     }
     return result;
   })

@@ -3,7 +3,7 @@ import { resolve } from 'path';
 import { SuperBlocks } from '../../../config/certification-settings';
 
 type Intro = { [keyValue in SuperBlocks]: IntroProps };
-type Curriculum = { [keyValue in SuperBlocks]: CurriculumProps };
+export type Curriculum = { [keyValue in SuperBlocks]: CurriculumProps };
 type SuperBlockKeys = keyof typeof SuperBlocks;
 type SuperBlockValues = typeof SuperBlocks[SuperBlockKeys];
 
@@ -22,6 +22,22 @@ interface Block {
   challenges: Record<string, unknown>;
   meta: Record<string, unknown>;
 }
+
+const superBlockMobileAppOrder = {
+  'responsive-web-design': { public: true },
+  '2022-responsive-web-design': { public: false },
+  'javascript-algorithms-and-data-structures': { public: true },
+  'front-end-development-libraries': { public: false },
+  'data-visualization': { public: false },
+  'back-end-development-and-apis': { public: false },
+  'quality-assurance': { public: false },
+  'scientific-computing-with-python': { public: false },
+  'data-analysis-with-python': { public: false },
+  'information-security': { public: false },
+  'machine-learning-with-python': { public: false },
+  'coding-interview-prep': { public: false },
+  'relational-database': { public: false }
+};
 
 export function buildExtCurriculumData(
   ver: string,
@@ -43,7 +59,7 @@ export function buildExtCurriculumData(
 
     writeToFile('availableSuperblocks', {
       superblocks: [
-        superBlockKeys.map(superblock => superblock.replace(/\//, '-')),
+        superBlockMobileAppOrder,
         Object.values(SuperBlocks).map(superblock =>
           getSuperBlockName(superblock)
         )
