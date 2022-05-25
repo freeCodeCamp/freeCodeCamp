@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Fail from '../../../assets/icons/fail';
-import GreenPass from '../../../assets/icons/green-pass';
-import Initial from '../../../assets/icons/initial';
+import Fail from '../../../assets/icons/test-fail';
+import GreenPass from '../../../assets/icons/test-pass';
+import Initial from '../../../assets/icons/test-initial';
 
 import './test-suite.css';
 import { ChallengeTest, Test } from '../../../redux/prop-types';
@@ -40,6 +40,7 @@ function TestSuite({ tests }: TestSuiteProps): JSX.Element {
 
   return (
     <div className='challenge-test-suite'>
+      <h4>LESSON TESTS</h4>
       {testSuiteTests.map(({ err, pass = false, text = '' }, index) => {
         const isInitial = !pass && !err;
         const statusIcon = pass && !err ? <GreenPass /> : <Fail />;

@@ -52,7 +52,7 @@
     "run-test": "Run the Tests (Ctrl + Enter)",
     "check-code": "Check Your Code (Ctrl + Enter)",
     "reset": "Reset",
-    "reset-code": "Reset All Code",
+    "reset-code": "Reset Code",
     "help": "Help",
     "get-help": "Get Help",
     "watch-video": "Watch a Video",

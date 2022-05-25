@@ -3,12 +3,15 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Test } from '../../../redux/prop-types';
 
+import ExternalLink from '../../../assets/icons/link-external';
 import { mathJaxScriptLoader } from '../../../utils/script-loaders';
 import { challengeTestsSelector } from '../redux';
 import TestSuite from './test-suite';
 import ToolPanel from './tool-panel';
 
 import './side-panel.css';
+
+const currentYear = new Date().getFullYear();
 
 const mapStateToProps = createSelector(
   challengeTestsSelector,
@@ -37,6 +40,8 @@ export function SidePanel({
   tests,
   videoUrl
 }: SidePanelProps): JSX.Element {
+  const isChallengeComplete = tests.every(test => test.pass && !test.err);
+
   useEffect(() => {
     const MathJax = global.MathJax;
     const mathJaxMountPoint = document.querySelector('#mathjax');
@@ -74,8 +79,25 @@ export function SidePanel({
     >
       {challengeTitle}
       {challengeDescription}
-      {showToolPanel && <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />}
       <TestSuite tests={tests} />
+      {showToolPanel && (
+        <ToolPanel
+          guideUrl={guideUrl}
+          videoUrl={videoUrl}
+          challengeIsCompleted={isChallengeComplete}
+        />
+      )}
+      <hr />
+      <div className='all-rights-link'>
+        <a
+          href='https://www.freecodecamp.org/'
+          target='_blank'
+          rel='noreferrer'
+        >
+          © {currentYear}, freeCodeCamp. All rights reserved.
+          <ExternalLink />
+        </a>
+      </div>
     </div>
   );
 }

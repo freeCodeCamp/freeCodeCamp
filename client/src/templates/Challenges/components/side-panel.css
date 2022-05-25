@@ -7,8 +7,28 @@
 }
 
 .instructions-panel {
-  padding: 0 10px;
+  padding: 0 32px;
   height: 100%;
   width: 100%;
   overflow-y: auto;
+}
+
+.all-rights-link {
+  text-align: right;
+  margin-bottom: 32px;
+}
+
+.all-rights-link a,
+.all-rights-link a:hover {
+  text-decoration: none;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 0.667rem;
+  line-height: 1rem;
+  color: var(--tc-link-blue-dark);
+  background: transparent;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
