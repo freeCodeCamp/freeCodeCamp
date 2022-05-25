@@ -38,6 +38,9 @@ const LowerJaw = ({
   const submitButtonRef = React.createRef<HTMLButtonElement>();
   const testFeedbackRef = React.createRef<HTMLDivElement>();
 
+  const [challengeHasBeenCompleted, setChallengeHasBennCompleted] =
+    useState(false);
+
   useEffect(() => {
     if (attemptsNumber && attemptsNumber > 0) {
       //hide the feedback from SR untill the "Running tests" are displayed and removed.
@@ -67,11 +70,20 @@ const LowerJaw = ({
   }, [challengeHasErrors, hint]);
 
   useEffect(() => {
-    if (challengeIsCompleted && submitButtonRef?.current) {
+    if (challengeHasBeenCompleted && submitButtonRef?.current) {
       submitButtonRef.current.focus();
       setTimeout(() => {
         setTestBtnariaHidden(true);
       }, 500);
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [challengeHasBeenCompleted]);
+
+  useEffect(() => {
+    if (!challengeHasBeenCompleted) {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      setChallengeHasBennCompleted(challengeIsCompleted!);
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -89,7 +101,7 @@ const LowerJaw = ({
       return '';
     } else if (runningTests) {
       return <span className='sr-only'>{t('aria.running-tests')}</span>;
-    } else if (challengeIsCompleted) {
+    } else if (challengeHasBeenCompleted) {
       const submitKeyboardInstructions = isEditorInFocus ? (
         <span className='sr-only'>{t('aria.submit')}</span>
       ) : (
@@ -163,7 +175,7 @@ const LowerJaw = ({
     const isAtteptsLargerThanTest =
       attemptsNumber && testsLength && attemptsNumber >= testsLength;
 
-    if (isAtteptsLargerThanTest && !challengeIsCompleted)
+    if (isAtteptsLargerThanTest && !challengeHasBeenCompleted)
       return (
         <button
           className='btn-block btn fade-in'
@@ -180,7 +192,9 @@ const LowerJaw = ({
       <>
         <button
           id='test-button'
-          className={`btn-block btn ${challengeIsCompleted ? 'sr-only' : ''}`}
+          className={`btn-block btn ${
+            challengeHasBeenCompleted ? 'sr-only' : ''
+          }`}
           aria-hidden={testBtnariaHidden}
           onClick={tryToExecuteChallenge}
         >
@@ -189,7 +203,7 @@ const LowerJaw = ({
         <div id='action-buttons-container'>
           <button
             id='submit-button'
-            aria-hidden={!challengeIsCompleted}
+            aria-hidden={!challengeHasBeenCompleted}
             className='btn-block btn'
             onClick={tryToSubmitChallenge}
             ref={submitButtonRef}
