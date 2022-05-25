@@ -9,9 +9,14 @@ describe('CodeAlly cert challenge', function () {
     });
 
     it('should not allow you to submit a URL', function () {
-      cy.get('input[name="solution"]')
-        .type('https://example.com')
-        .type('{enter}');
+      cy.get('input[name="solution"]').type('https://example.com');
+
+      // temporary fix until https://github.com/cypress-io/cypress/issues/20562 is fixed
+      cy.contains(`I've completed this challenge`).click();
+
+      // revert to this when it is
+      // .type('{enter}')
+
       cy.contains('You must complete the project first.');
     });
   });
@@ -26,9 +31,14 @@ describe('CodeAlly cert challenge', function () {
     });
 
     it('should allow you to submit a URL', function () {
-      cy.get('input[name="solution"]')
-        .type('https://example.com')
-        .type('{enter}');
+      cy.get('input[name="solution"]').type('https://example.com');
+
+      // temporary fix until https://github.com/cypress-io/cypress/issues/20562 is fixed
+      cy.contains(`I've completed this challenge`).click();
+
+      // revert to this when it is
+      // .type('{enter}')
+
       cy.get('.completion-modal-body');
     });
   });
