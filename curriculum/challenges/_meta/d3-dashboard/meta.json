@@ -2,7 +2,7 @@
   "name": "D3 Dashboard",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
-	"isStepBased": true,
+	
   "hasEditableBoundaries": true,
   "dashedName": "d3-dashboard",
   "order": 3,

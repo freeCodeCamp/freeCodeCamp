@@ -120,7 +120,7 @@ export class Block extends Component<BlockProps> {
     });
 
     const isProjectBlock = challenges.some(({ challenge }) => {
-      const isJsProject = challenge.isStepBased === false;
+      const isJsProject = challenge.isStepBased === true;
       const isOtherProject =
         challenge.challengeType === 3 ||
         challenge.challengeType === 4 ||
