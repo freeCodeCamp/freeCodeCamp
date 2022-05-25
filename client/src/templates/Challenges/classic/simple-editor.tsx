@@ -204,7 +204,7 @@ const defineMonacoThemes = (
 };
 
 const initialData: SimpleEditorProperties = {
-  insideEditDecId: '',
+  insideEditDecId: ''
 };
 
 const SimpleEditor = (props: EditorProps): JSX.Element => {

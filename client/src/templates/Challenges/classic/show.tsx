@@ -440,7 +440,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     const {
       executeChallenge,
       pageContext: {
-        challengeMeta: { nextChallengePath, prevChallengePath },
+        challengeMeta: { nextChallengePath, prevChallengePath }
       },
       challengeFiles,
       t
