@@ -272,7 +272,7 @@ export function challengesCompleted(req, res, next) {
 export function projectCompleted(req, res, next) {
   const { user, body } = req;
   const { files, completedDate = Date.now(), id } = body;
-  let completedChallenge = {};
+  let completedChallenge = body;
 
   let finalChallenge;
   const $push = {},
