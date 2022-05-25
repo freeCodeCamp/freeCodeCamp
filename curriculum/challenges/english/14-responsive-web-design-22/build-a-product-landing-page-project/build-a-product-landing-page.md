@@ -229,7 +229,7 @@ Your `#nav-bar` should always be at the top of the viewport.
   );
 
   window.scroll(0, 500);
-  timeout(1);
+  await timeout(1);
 
   assert.approximately(
     getNavbarPosition(navbarCandidates),
