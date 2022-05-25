@@ -31,7 +31,6 @@ import HelpModal from '../components/help-modal';
 import Notes from '../components/notes';
 import Output from '../components/output';
 import Preview from '../components/preview';
-import ProjectPreviewModal from '../components/project-preview-modal';
 import SidePanel from '../components/side-panel';
 import VideoModal from '../components/video-modal';
 import {
@@ -324,7 +323,6 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   renderInstructionsPanel({ showToolPanel }: { showToolPanel: boolean }) {
     const {
       block,
-      challengeType,
       description,
       forumTopicId,
       instructions,
@@ -443,7 +441,6 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       executeChallenge,
       pageContext: {
         challengeMeta: { nextChallengePath, prevChallengePath },
-        projectPreview: { challengeData, showProjectPreview }
       },
       challengeFiles,
       t

@@ -211,9 +211,9 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
         prevChallengePath={prevChallengePath}
       >
         <LearnLayout>
-          {/* <Helmet
+          <Helmet
             title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
-          /> */}
+          />
           <Grid>
             <Row>
               <Spacer />
