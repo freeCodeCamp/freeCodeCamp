@@ -6,7 +6,7 @@ html {
 
 body {
   height: 100%;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Roboto', monospace;
   color: var(--secondary-color);
   background: var(--secondary-background);
 }
@@ -68,25 +68,32 @@ h1 {
   color: var(--secondary-color);
   font-weight: 700;
   font-size: 1.5rem;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Roboto', monospace;
   margin: 0.6rem 0;
 }
 h2 {
   color: var(--secondary-color);
   font-weight: 700;
   font-size: 1.25rem;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Roboto', monospace;
   margin: 0.6rem 0;
 }
 h3 {
   color: var(--secondary-color);
   font-weight: 700;
   font-size: 1.1rem;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Roboto', monospace;
   margin: 0 0 0.6rem;
 }
 
-h4,
+h4 {
+  color: var(--secondary-color);
+  font-weight: 500;
+  font-size: 1rem;
+  font-family: 'Roboto', monospace;
+  margin: 0 0 0.889rem;
+}
+
 h5,
 h6,
 p,
@@ -94,13 +101,13 @@ td,
 th {
   color: var(--secondary-color);
   font-weight: 400;
-  font-size: 1rem;
-  font-family: 'Roboto Mono', monospace;
+  font-size: 0.889rem;
+  font-family: 'Roboto', monospace;
   margin: 0 0 1.2rem;
 }
 
 p {
-  line-height: 1.5rem;
+  line-height: 1.334rem;
 }
 
 .big-heading {
@@ -201,29 +208,56 @@ input[type='submit'],
   white-space: pre-line;
 }
 
+.btn-primary {
+  background-color: var(--tc-turq-160);
+  border: 0 none;
+  color: var(--tc-white);
+  border-radius: 24px;
+  text-decoration: none;
+  white-space: pre-line;
+
+  font-size: 0.7223rem;
+  line-height: 1.334rem;
+  font-weight: bold;
+  font-family: 'Roboto';
+
+  padding: 3px 20px 4px;
+}
+
 button:hover,
 input[type='submit']:hover,
 .btn:hover,
 .btn-default.active:hover,
-.btn-default.active,
-.btn-primary:hover {
+.btn-default.active {
   border-color: var(--secondary-color);
   background-color: var(--secondary-color);
   color: var(--secondary-background);
   cursor: pointer;
 }
 
-.btn:active,
-.btn-primary:active {
+.btn-primary:hover {
+  background-color: var(--tc-turq-140);
+  cursor: pointer;
+}
+
+.btn:active {
   background-color: var(--secondary-background);
 }
 
-.btn:focus,
-.btn-primary:focus,
-.btn-primary.focus {
+.btn-primary:active {
+  background-color: var(--tc-turq-180);
+}
+
+.btn:focus {
   background-color: var(--quaternary-background);
   color: var(--secondary-color);
   border-color: var(--secondary-color);
+}
+
+.btn-primary:focus,
+.btn-primary.focus {
+  background-color: var(--tc-turq-140);
+  outline: 0 none;
 }
 
 .btn:active:hover,
@@ -241,6 +275,20 @@ input[type='submit']:hover,
   color: var(--secondary-background);
 }
 
+.btn-primary:hover,
+.btn-primary:active:hover,
+.btn-primary.active:hover,
+.open > .dropdown-toggle.btn-primary:hover,
+.btn-primary:active:focus,
+.btn-primary.active:focus,
+.open > .dropdown-toggle.btn-primary:focus,
+.btn-primary:active.focus,
+.btn-primary.active.focus,
+.open > .dropdown-toggle.btn-primary.focus {
+  background-color: var(--tc-turq-140);
+  outline: 0 none;
+}
+
 .btn.disabled,
 .btn[disabled],
 fieldset[disabled] .btn,
@@ -255,7 +303,6 @@ fieldset[disabled] .btn-primary:focus,
 fieldset[disabled] .btn-primary.focus {
   cursor: not-allowed;
   background-color: var(--quaternary-background);
-  border-color: var(--quaternary-color);
   color: var(--quaternary-color);
 }
 
@@ -282,18 +329,20 @@ fieldset[disabled] .btn-primary.focus {
 .btn-link,
 .btn-link:focus,
 .btn-link:active {
-  color: inherit;
+  font-size: 0.889rem;
+  font-weight: 500;
+  color: var(--tc-link-blue-dark);
   border: none;
-  text-decoration: underline;
+  text-decoration: none;
   background: transparent;
   padding: 0;
   outline: 0;
 }
 .btn-link:hover,
 .btn-link:focus:active {
-  background: var(--tertiary-background);
+  color: var(--tc-link-blue-light);
   text-decoration: none;
-  color: inherit;
+  background: transparent;
 }
 
 .link-btn {
@@ -421,7 +470,8 @@ input:focus {
   border-color: var(--tertiary-color);
 }
 code {
-  background-color: var(--quaternary-background);
+  padding: 0 2px;
+  background-color: var(--secondary-background);
   color: var(--tertiary-color);
   border-radius: 0;
   font-family: 'Roboto Mono', monospace;
@@ -438,7 +488,8 @@ code {
 }
 
 hr {
-  border-top: 1px solid var(--quaternary-background);
+  border-top: 2px solid var(--tc-black-10);
+  margin: 32px 0;
 }
 
 .panel-default {

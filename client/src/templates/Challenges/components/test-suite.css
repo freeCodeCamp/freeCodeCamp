@@ -13,15 +13,15 @@
 .test-result {
   display: flex;
   width: 100%;
-  align-items: center;
+  align-items: flex-start;
 }
 
-.test-result:nth-child(odd) {
-  background-color: var(--tertiary-background);
+.test-result:first-of-type {
+  margin-top: -8px;
 }
 
 .test-output {
-  padding: 5px 10px;
+  padding: 8px 10px;
 }
 
 .test-output p {
@@ -32,11 +32,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 60px;
-  min-height: 60px;
-}
-
-.test-status-icon > svg {
-  width: 40px;
-  height: 40px;
+  width: 22px;
+  height: 41px;
 }
