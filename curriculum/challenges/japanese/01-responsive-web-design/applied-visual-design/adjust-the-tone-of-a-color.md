@@ -20,9 +20,11 @@ CSS の `hsl()` オプションでは、色のトーンも簡単に調整する�
 `nav` 要素の `background-color` は、`hsl()` プロパティを使ってトーンを調整されたシアンである必要があります。
 
 ```js
-assert(
-  code.match(/nav\s*?{\s*?background-color:\s*?hsl\(180,\s*?80%,\s*?25%\)/gi)
-);
+// Computed style of hsl(180, 80%, 25%) results in rgb(13,115,115)
+assert.equal(
+  new __helpers.CSSHelp(document).getStyle('nav').getPropVal('background-color', true), 
+  'rgb(13,115,115)'
+)
 ```
 
 # --seed--
