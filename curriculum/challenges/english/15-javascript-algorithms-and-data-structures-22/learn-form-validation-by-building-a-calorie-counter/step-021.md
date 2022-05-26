@@ -120,6 +120,7 @@ assert(code.replace(/\s/g, '').match(/console.log\({accumulator}\)/));
   function calculate(e) {
     e.preventDefault();
 
+--fcc-editable-region--
     const total = Array.from(document.getElementsByClassName('cal-control'))
       .map(meal => Number(meal.value))
       .reduce((accumulator, currentValue) => {
@@ -130,5 +131,6 @@ assert(code.replace(/\s/g, '').match(/console.log\({accumulator}\)/));
 
     console.log({ total });
   }
+--fcc-editable-region--
 </script>
 ```

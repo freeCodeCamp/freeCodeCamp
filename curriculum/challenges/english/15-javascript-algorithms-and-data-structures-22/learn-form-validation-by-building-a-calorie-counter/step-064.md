@@ -149,7 +149,9 @@ assert(/clearOutput\(\)/.test(code) && /clearForm\(\)/.test(code));
     document.getElementById('entries').appendChild(calorieInput);
   };
 
+--fcc-editable-region--
   document.getElementById('clear').onclick = function() {};
+--fcc-editable-region--
 </script>
 ```
 

@@ -143,6 +143,7 @@ assert(
     output.style.backgroundColor = '#FFF9C4';
   }
 
+--fcc-editable-region--
   document.getElementById('add').onclick = function() {
     const foodInput = document.createElement('input');
     foodInput.placeholder = 'food name';
@@ -152,6 +153,7 @@ assert(
     const calorieInput = document.createElement('input');
     calorieInput.setAttribute('type', 'number');
   };
+--fcc-editable-region--
 </script>
 ```
 

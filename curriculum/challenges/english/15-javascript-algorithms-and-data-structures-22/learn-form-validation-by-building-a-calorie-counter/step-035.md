@@ -106,6 +106,7 @@ assert(
 <script>
   document.getElementById('calorie-form').onsubmit = calculate;
 
+--fcc-editable-region--
   function calculate(e) {
     e.preventDefault();
 
@@ -126,6 +127,7 @@ assert(
       Math.abs(difference) + ' Calorie ' + surplusOrDeficit
     );
   }
+--fcc-editable-region--
 </script>
 ```
 
