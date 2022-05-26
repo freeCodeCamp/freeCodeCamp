@@ -66,8 +66,8 @@ Cypress.Commands.add('goToSettings', () => {
   cy.visit('/settings');
 
   // Setting aliases here
-  cy.get('input[name=username-settings]').as('usernameInput');
-  cy.get('form#usernameSettings').as('usernameForm');
+  cy.get('[data-cy=username-input]').as('usernameInput');
+  cy.get('[data-cy=username-form]').as('usernameForm');
 });
 
 Cypress.Commands.add('typeUsername', username => {
