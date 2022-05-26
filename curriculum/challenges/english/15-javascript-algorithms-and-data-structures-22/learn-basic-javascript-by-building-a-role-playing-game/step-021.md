@@ -129,9 +129,11 @@ button1.onclick = goStore;
 button2.onclick = goCave;
 button3.onclick = fightDragon;
 
+--fcc-editable-region--
 function goStore() {
   button1.innerText = "Buy 10 health (10 gold)";
 }
+--fcc-editable-region--
 
 function goCave() {
   console.log("Going to cave.");

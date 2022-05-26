@@ -172,7 +172,9 @@ function buyHealth() {
 
 function buyWeapon() {
 }
+--fcc-editable-region--
 
+--fcc-editable-region--
 </script>
 ```
 

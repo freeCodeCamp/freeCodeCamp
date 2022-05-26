@@ -376,12 +376,14 @@ function pickEight() {
   pick(8);
 }
 
+--fcc-editable-region--
 function pick(guess) {
   let numbers = [];
   while(numbers.length < 10) {
     numbers.push(Math.floor(Math.random() * 11));
   }
 }
+--fcc-editable-region--
 
 </script>
 ```

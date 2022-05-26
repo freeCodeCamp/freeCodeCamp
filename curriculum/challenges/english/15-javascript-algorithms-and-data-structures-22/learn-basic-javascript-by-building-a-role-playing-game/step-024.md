@@ -141,7 +141,9 @@ function goCave() {
 function fightDragon() {
   console.log("Fighting dragon.");
 }
+--fcc-editable-region--
 
+--fcc-editable-region--
 </script>
 ```
 

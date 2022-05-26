@@ -382,6 +382,7 @@ function pickEight() {
   pick(8);
 }
 
+--fcc-editable-region--
 function pick(guess) {
   let numbers = [];
   while(numbers.length < 10) {
@@ -394,6 +395,7 @@ function pick(guess) {
     text.innerText += numbers[i] + "\n";
   }
 }
+--fcc-editable-region--
 
 </script>
 ```

@@ -151,6 +151,7 @@ button1.onclick = goStore;
 button2.onclick = goCave;
 button3.onclick = fightDragon;
 
+--fcc-editable-region--
 function update(location) {  
 }
 
@@ -173,6 +174,7 @@ function goStore() {
   button3.onclick = goTown;
   text.innerText = "You enter the store.";
 }
+--fcc-editable-region--
 
 function goCave() {
   console.log("Going to cave.");

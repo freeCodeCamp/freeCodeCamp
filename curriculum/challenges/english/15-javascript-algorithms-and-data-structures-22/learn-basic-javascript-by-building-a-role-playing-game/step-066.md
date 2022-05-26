@@ -199,6 +199,7 @@ function buyHealth() {
   }
 }
 
+--fcc-editable-region--
 function buyWeapon() {
   if (gold >= 30) {
     gold -= 30;
@@ -208,6 +209,7 @@ function buyWeapon() {
     text.innerText = "You now have a new weapon.";
   }
 }
+--fcc-editable-region--
 
 function fightSlime() {
 }
