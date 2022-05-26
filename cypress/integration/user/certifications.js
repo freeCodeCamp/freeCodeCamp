@@ -14,10 +14,7 @@ describe('Public profile certifications', () => {
       // The following line is only required if you want to test it in development
       cy.contains('Preview custom 404 page').click();
 
-      cy.get("[data-test-label='claimed-certification']").should(
-        'have.length',
-        16
-      );
+      cy.get("[data-cy='claimed-certification']").should('have.length', 16);
     });
 
     it('Should show claimed certifications if the username includes uppercase characters', () => {
@@ -35,10 +32,7 @@ describe('Public profile certifications', () => {
       // The following line is only required if you want to test it in development
       cy.contains('Preview custom 404 page').click();
 
-      cy.get("[data-test-label='claimed-certification']").should(
-        'have.length',
-        16
-      );
+      cy.get("[data-cy='claimed-certification']").should('have.length', 16);
     });
   });
 

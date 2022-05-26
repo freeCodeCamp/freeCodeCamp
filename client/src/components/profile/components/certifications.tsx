@@ -48,7 +48,7 @@ function renderCertShow(username: string, cert: CurrentCert): React.ReactNode {
           <Link
             className='btn btn-lg btn-primary btn-block'
             to={`/certification/${username}/${cert.certSlug}`}
-            data-test-label='claimed-certification'
+            data-cy='claimed-certification'
           >
             View {cert.title}
           </Link>
