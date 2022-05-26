@@ -239,7 +239,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   const dataRef = useRef<EditorProperties>({ ...initialData });
 
   const submitChallengeDebounceRef = useRef(
-    debounce(props.submitChallenge, 1000, { leading: true, trailing: true })
+    debounce(props.submitChallenge, 1000, { leading: true, trailing: false })
   );
 
   const player = useRef<{
