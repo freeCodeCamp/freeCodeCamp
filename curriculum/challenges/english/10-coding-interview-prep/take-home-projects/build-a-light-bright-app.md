@@ -14,8 +14,6 @@ dashedName: build-a-light-bright-app
 
 **Rule #2:** Fulfill the below user stories. Use whichever libraries or APIs you need. Give it your own personal style.
 
-**User Stories**
-
 **User Story:** I can click or drag the mouse cursor to color the circles.
 
 **User Story:** I can double-click on a colored circle to remove the color.

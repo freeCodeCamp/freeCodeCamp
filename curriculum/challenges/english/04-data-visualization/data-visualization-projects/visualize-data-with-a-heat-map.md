@@ -12,8 +12,6 @@ dashedName: visualize-data-with-a-heat-map
 
 Fulfill the below user stories. Use whichever libraries or APIs you need. Give it your own personal style.
 
-**User Stories**
-
 You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. Required (non-virtual) DOM elements are queried on the moment of each test. If you use a frontend framework (like Vue for example), the test results may be inaccurate for dynamic content. We hope to accommodate them eventually, but these frameworks are not currently supported for D3 projects.
 
 **User Story #1:** My heat map should have a title with a corresponding `id="title"`.

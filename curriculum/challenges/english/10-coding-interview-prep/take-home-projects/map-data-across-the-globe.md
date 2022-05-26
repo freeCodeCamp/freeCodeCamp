@@ -12,8 +12,6 @@ dashedName: map-data-across-the-globe
 
 Fulfill the below user stories. Use whichever libraries or APIs you need. Give it your own personal style.
 
-**User Stories**
-
 **User Story:** I can see where all Meteorites landed on a world map.
 
 **User Story:** I can tell the relative size of the meteorite, just by looking at the way it's represented on the map.

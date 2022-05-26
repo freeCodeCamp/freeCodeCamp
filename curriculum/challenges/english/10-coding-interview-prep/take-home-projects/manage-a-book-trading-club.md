@@ -12,8 +12,6 @@ dashedName: manage-a-book-trading-club
 
 Fulfill the below user stories. Use whichever libraries or APIs you need. Give it your own personal style.
 
-**User Stories**
-
 **User Story:** I can view all books posted by every user.
 
 **User Story:** I can add a new book.

@@ -12,8 +12,6 @@ dashedName: use-the-twitch-json-api
 
 Fulfill the below user stories. Use whichever libraries or APIs you need. Give it your own personal style.
 
-**User Stories**
-
 **User Story:** I can see whether freeCodeCamp is currently streaming on Twitch.tv.
 
 **User Story:** I can click the status output and be sent directly to the freeCodeCamp's Twitch.tv channel.

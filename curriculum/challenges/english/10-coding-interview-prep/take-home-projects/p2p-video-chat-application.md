@@ -12,8 +12,6 @@ dashedName: p2p-video-chat-application
 
 Fulfill the below user stories. Use whichever libraries or APIs you need. Give it your own personal style.
 
-**User Stories**
-
 **User Story:** Upon arriving, the browser will prompt me to access my camera and microphone.
 
 **User Story:** After I give it permission, I am prompted to type in a room name.

@@ -14,8 +14,6 @@ dashedName: build-a-pong-game
 
 **Rule #2:** Fulfill the below user stories. Use whichever libraries or APIs you need. Give it your own personal style.
 
-**User Stories**
-
 **User Story:** I can control a paddle.
 
 **User Story:** The computer can control the other paddle.

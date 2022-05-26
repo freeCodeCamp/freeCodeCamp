@@ -12,8 +12,6 @@ dashedName: build-a-freecodecamp-forum-homepage
 
 Fulfill the below user stories. Use whichever libraries or APIs you need. Give it your own personal style.
 
-**User Stories**
-
 **User Story:** I can see a list of the most recent posts on the freeCodeCamp forum.
 
 **User Story:** For each topic, I can see the title and a list of links to users who have recently posted in it.

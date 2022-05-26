@@ -12,8 +12,6 @@ dashedName: build-a-recipe-box
 
 Fulfill the below user stories. Use whichever libraries or APIs you need. Give it your own personal style.
 
-**User Stories**
-
 **User Story:** I can create recipes that have names and ingredients.
 
 **User Story:** I can see an index view where the names of all the recipes are visible.

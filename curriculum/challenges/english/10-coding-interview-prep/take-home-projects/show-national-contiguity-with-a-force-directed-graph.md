@@ -12,8 +12,6 @@ dashedName: show-national-contiguity-with-a-force-directed-graph
 
 Fulfill the below user stories. Use whichever libraries or APIs you need. Give it your own personal style.
 
-**User Stories**
-
 **User Story:** I can see a Force-directed Graph that shows which countries share borders.
 
 **User Story:** I can see each country's flag on its node.

@@ -12,8 +12,6 @@ dashedName: build-the-game-of-life
 
 Fulfill the below user stories. Use whichever libraries or APIs you need. Give it your own personal style.
 
-**User Stories**
-
 **User Story:** When I first arrive at the game, it will randomly generate a board and start playing.
 
 **User Story:** I can start and stop the board.

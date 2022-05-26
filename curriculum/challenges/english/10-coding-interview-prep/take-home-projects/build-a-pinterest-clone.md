@@ -12,8 +12,6 @@ dashedName: build-a-pinterest-clone
 
 Fulfill the below user stories. Use whichever libraries or APIs you need. Give it your own personal style.
 
-**User Stories**
-
 **User Story:** As an unauthenticated user, I can login with GitHub.
 
 **User Story:** As an authenticated user, I can link to images.
