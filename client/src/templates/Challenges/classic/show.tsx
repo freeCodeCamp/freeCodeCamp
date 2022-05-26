@@ -515,6 +515,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
               hasEditableBoundaries={hasEditableBoundaries}
               hasNotes={!!notes}
               hasPreview={this.hasPreview()}
+              htmlForPortal=''
               instructions={this.renderInstructionsPanel({
                 showToolPanel: true
               })}

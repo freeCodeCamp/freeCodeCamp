@@ -486,6 +486,7 @@
     "breadcrumb-nav": "breadcrumb",
     "submit": "Use Ctrl + Enter to submit.",
     "running-tests": "Running tests",
+    "preview-in-new-window": "Open the preview in a new window",
     "step": "Step",
     "steps": "Steps",
     "steps-for": "Steps for {{blockTitle}}"

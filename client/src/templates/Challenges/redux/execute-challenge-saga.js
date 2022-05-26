@@ -25,6 +25,7 @@ import {
   isJavaScriptChallenge,
   isLoopProtected
 } from '../utils/build';
+import { createHeader } from '../utils/frame';
 import { challengeTypes } from '../../../../utils/challenge-types';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
@@ -36,6 +37,7 @@ import {
 } from '../../../utils/challenge-request-helpers';
 import { actionTypes } from './action-types';
 import {
+  updateHtmlForPortal,
   challengeDataSelector,
   challengeMetaSelector,
   challengeTestsSelector,
@@ -243,6 +245,11 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
       // evaluate the user code in the preview frame or in the worker
       if (challengeHasPreview(challengeData)) {
         const document = yield getContext('document');
+
+        const htmlString =
+          createHeader('fcc-preview-portal-frame') + buildData.build;
+        yield put(updateHtmlForPortal(htmlString));
+
         yield call(updatePreview, buildData, document, proxyLogger);
       } else if (isJavaScriptChallenge(challengeData)) {
         const runUserCode = getTestRunner(buildData, {

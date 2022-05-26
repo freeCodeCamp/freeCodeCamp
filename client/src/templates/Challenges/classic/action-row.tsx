@@ -1,4 +1,6 @@
 import React from 'react';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useTranslation } from 'react-i18next';
 
 import BreadCrumb from '../components/bread-crumb';
@@ -11,7 +13,8 @@ interface ActionRowProps {
   showConsole: boolean;
   showNotes: boolean;
   showInstructions: boolean;
-  showPreview: boolean;
+  showPreviewPane: boolean;
+  showPreviewPortal: boolean;
   superBlock: string;
   togglePane: (pane: string) => void;
 }
@@ -20,7 +23,8 @@ const ActionRow = ({
   hasNotes,
   togglePane,
   showNotes,
-  showPreview,
+  showPreviewPane,
+  showPreviewPortal,
   showConsole,
   showInstructions,
   isProjectBasedChallenge,
@@ -28,6 +32,7 @@ const ActionRow = ({
   block
 }: ActionRowProps): JSX.Element => {
   const { t } = useTranslation();
+
   return (
     <div className='action-row'>
       <div className='breadcrumbs-demo'>
@@ -59,10 +64,17 @@ const ActionRow = ({
             </button>
           )}
           <button
-            aria-expanded={showPreview ? 'true' : 'false'}
-            onClick={() => togglePane('showPreview')}
+            aria-expanded={showPreviewPane ? 'true' : 'false'}
+            onClick={() => togglePane('showPreviewPane')}
           >
             {t('learn.editor-tabs.preview')}
+          </button>
+          <button
+            aria-expanded={showPreviewPortal ? 'true' : 'false'}
+            onClick={() => togglePane('showPreviewPortal')}
+          >
+            <span className='sr-only'>{t('aria.preview-in-new-window')}</span>
+            <FontAwesomeIcon icon={faExternalLinkAlt} />
           </button>
         </div>
       </div>
