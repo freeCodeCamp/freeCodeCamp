@@ -63,6 +63,7 @@
   padding: 0px 10px;
   background-color: var(--primary-background);
   border-bottom: 2px solid var(--primary-color);
+  margin-right: auto;
 }
 
 .monaco-editor-tab {

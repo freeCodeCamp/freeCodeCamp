@@ -33,8 +33,7 @@ textarea.inputarea {
 }
 
 .instruction-button {
-  margin-right: auto;
-  margin-left: 30px;
+  margin: 0 30px;
 }
 
 .active-tab {

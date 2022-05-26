@@ -43,12 +43,6 @@ const ActionRow = ({
         <BreadCrumb block={block} superBlock={superBlock} />
       </div>
       <div className='tabs-row'>
-        <EditorTabs />
-        {!isMultifileCertProject && (
-          <button className='restart-step-tab' onClick={resetChallenge}>
-            {t('learn.editor-tabs.restart-step')}
-          </button>
-        )}
         {!isProjectBasedChallenge && (
           <button
             className={
@@ -60,6 +54,12 @@ const ActionRow = ({
             onClick={() => togglePane('showInstructions')}
           >
             {t('learn.editor-tabs.instructions')}
+          </button>
+        )}
+        <EditorTabs />
+        {!isMultifileCertProject && (
+          <button className='restart-step-tab' onClick={resetChallenge}>
+            {t('learn.editor-tabs.restart-step')}
           </button>
         )}
         <div className='panel-display-tabs'>
