@@ -27,6 +27,7 @@ export const superBlockMobileAppOrder = {
   'responsive-web-design': { public: true },
   '2022/responsive-web-design': { public: false },
   'javascript-algorithms-and-data-structures': { public: true },
+  '2022/javascript-algorithms-and-data-structures': { public: false },
   'front-end-development-libraries': { public: false },
   'data-visualization': { public: false },
   'back-end-development-and-apis': { public: false },

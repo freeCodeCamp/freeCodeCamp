@@ -19,12 +19,12 @@ if (envData.clientLocale == 'english' && !envData.showUpcomingChanges) {
     const validateMobileSuperBlock = mobileSchemaValidator();
 
     test('the mobile curriculum should have a static folder with multiple files', () => {
-      expect(fs.existsSync(`${mobileStaticPath}/curriculum-data/${ver}`)).toBe(
-        true
-      );
+      expect(
+        fs.existsSync(`${mobileStaticPath}/curriculum-data/${VERSION}`)
+      ).toBe(true);
 
       expect(
-        fs.readdirSync(`${mobileStaticPath}/curriculum-data/${ver}`).length
+        fs.readdirSync(`${mobileStaticPath}/curriculum-data/${VERSION}`).length
       ).toBeGreaterThan(0);
     });
 
@@ -34,14 +34,14 @@ if (envData.clientLocale == 'english' && !envData.showUpcomingChanges) {
 
     test('the files generated should have the correct schema', () => {
       const fileArray = fs.readdirSync(
-        `${mobileStaticPath}/curriculum-data/${ver}`
+        `${mobileStaticPath}/curriculum-data/${VERSION}`
       );
 
       fileArray
         .filter(fileInArray => fileInArray !== 'availableSuperblocks.json')
         .forEach(fileInArray => {
           const fileContent = fs.readFileSync(
-            `${mobileStaticPath}/curriculum-data/${ver}/${fileInArray}`,
+            `${mobileStaticPath}/curriculum-data/${VERSION}/${fileInArray}`,
             'utf-8'
           );
 
