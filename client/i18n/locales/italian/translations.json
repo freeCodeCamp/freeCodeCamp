@@ -50,6 +50,7 @@
     "reset-lesson": "Resetta questa lezione",
     "run": "Avvia",
     "run-test": "Esegui i test (Ctrl + Invio)",
+    "check-code": "Check Your Code (Ctrl + Enter)",
     "reset": "Resetta",
     "reset-code": "Resetta tutto il codice",
     "help": "Guida",
@@ -100,7 +101,7 @@
   },
   "settings": {
     "share-projects": "Condividi i tuoi progetti non-freeCodeCamp, articoli o pull request accettate.",
-    "privacy": "Le impostazioni di questa sezione ti permettono di controllare quello che viene mostrato sul tuo portfolio pubblico di freeCodeCamp.",
+    "privacy": "The settings in this section enable you to control what is shown on your freeCodeCamp public portfolio. Press save to save your changes.",
     "data": "Per vedere quali dati teniamo nel tuo account, clicca sul pulsante \"Scarica i tuoi dati\" qui sotto",
     "disabled": "Le tue certificazioni saranno disabilitate, se impostato su privato.",
     "private-name": "Il tuo nome non apparirà sulle certificazioni, se impostato su privato.",
@@ -268,6 +269,7 @@
     "solution-link": "Link alla soluzione",
     "github-link": "Link GitHub",
     "submit-and-go": "Invia e vai alla prossima sfida",
+    "congradulations": "Congratulations, your code passes. Submit your code to complete this step and move on to the next one.",
     "i-completed": "Ho completato questa sfida",
     "test-output": "Il risultato del tuo test andrà qui",
     "running-tests": "// test in corso",
@@ -305,7 +307,16 @@
     "step-2": "Step 2: Consegna il codice",
     "submit-public-url": "Quando hai completato il progetto salva tutti i file richiesti in una repository pubblica e consegna l'URL qui sotto.",
     "complete-both-steps": "Completa entrambi gli step qua sotto per finire la sfida.",
-    "runs-in-vm": "Il progetto esegue in una macchina virtuale, completa le user story descritte lì dentro e fai passare tutti i test per finire lo step 1."
+    "runs-in-vm": "Il progetto esegue in una macchina virtuale, completa le user story descritte lì dentro e fai passare tutti i test per finire lo step 1.",
+    "completed": "Completato",
+    "not-started": "Non iniziato",
+    "hint": "Hint",
+    "test": "Test",
+    "sorry-try-again": "Sorry, your code does not pass. Try again.",
+    "sorry-keep-trying": "Sorry, your code does not pass. Keep trying.",
+    "sorry-getting-there": "Sorry, your code does not pass. You're getting there.",
+    "sorry-hang-in-there": "Sorry, your code does not pass. Hang in there.",
+    "sorry-dont-giveup": "Sorry, your code does not pass. Don't give up."
   },
   "donate": {
     "title": "Supporta il nostro no profit",
@@ -442,6 +453,7 @@
     "fail": "Test Fallito",
     "not-passed": "Non Superato",
     "passed": "Superato",
+    "hint": "Hint",
     "heart": "Cuore",
     "initial": "Iniziale",
     "info": "Informazioni introduttive",
@@ -461,7 +473,9 @@
     "next-page": "Va alla pagina successiva",
     "last-page": "Va all'ultima pagina",
     "primary-nav": "primario",
-    "breadcrumb-nav": "percorso"
+    "breadcrumb-nav": "percorso",
+    "submit": "Use Ctrl + Enter to submit.",
+    "running-tests": "Running tests"
   },
   "flash": {
     "honest-first": "Per richiedere una certificazione, è necessario prima accettare la nostra politica di onestà accademica",

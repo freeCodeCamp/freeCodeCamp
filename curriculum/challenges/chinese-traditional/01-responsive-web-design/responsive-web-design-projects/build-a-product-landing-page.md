@@ -1,55 +1,434 @@
 ---
 id: 587d78af367417b2b2512b04
 title: 製作一個產品登錄頁
-challengeType: 3
+challengeType: 14
 forumTopicId: 301144
 dashedName: build-a-product-landing-page
 ---
 
 # --description--
 
-**目標：** 在 [CodePen.io](https://codepen.io) 上創建一個與這個功能類似的 app：<https://codepen.io/freeCodeCamp/full/RKRbwL>。
+**目標：** 構建一個功能類似於 <a href="https://product-landing-page.freecodecamp.rocks" target="_blank">https://product-landing-page.freecodecamp.rocks</a> 的應用程序
 
-在滿足以下[需求](https://en.wikipedia.org/wiki/User_story)並能通過所有測試的前提下， 你可以根據自己的喜好來美化你的 app。
+**需求：**
 
-你可以使用 HTML、JavaScript 以及 CSS 來完成項目。 由於目前你只學到了 CSS 課程，所以我們建議你只使用 CSS 來完成這個項目，同時鞏固一下你之前所學的內容。 你也可以使用 Bootstrap 或者 SASS。 我們不推薦你在這個項目中使用其他技術（比如 jQuery、React、Angular 或 Vue）。 在後續的其他項目中，你將有機會使用像是 React 等其他技術棧。 我們會接受並嘗試修復你在使用推薦技術棧創建項目時報告的問題。 祝你編碼愉快！
+1. 你的產品登錄頁應該有一個 `id="header"` 的 `header` 元素
+1. 你可以在 `header` 元素中看到一個 `id="header-img"` 的圖像（比如一個 logo）
+1. 在 `#header` 元素中，你可以看到一個 `id="nav-bar"` 的 `nav` 元素
+1. 在 `nav` 元素中，你可以看到至少三個可點擊的元素，每個元素的 class 爲 `nav-link`
+1. 當你點擊 `nav` 內的 `.nav-link` 按鈕時，應滾動到登錄頁相應的部分
+1. 你可以觀看一個 `id="video"` 的嵌入的產品視頻
+1. 你的登錄頁有一個 `id="form"` 的 `form` 元素
+1. 在表單中，應存在一個 `id="email"` 的 `input` 輸入框供用戶填寫郵箱地址
+1. 在 `#email` 輸入框內應有描述該區域用途的佔位符文本
+1. `#email` 輸入框應該用 HTML5 驗證來確認輸入的內容是否爲郵箱地址
+1. 在表單中，有一個 `id="submit"` 的 `input` 提交按鈕
+1. 當你點擊 `#submit` 元素時，郵箱會被提交到一個靜態頁面 (使用這個模擬 URL：`https://www.freecodecamp.com/email-submit`)
+1. 導航欄應該始終位於視口的頂部
+1. 你的產品登陸頁面至少要有一個媒體查詢
+1. 你的產品登陸頁面應該至少使用一次 CSS flexbox
 
-**需求 1：** 產品登錄頁應存在 `id="header"` 的 `header` 元素。
+完成需求並通過下面的所有測試來完成這個項目。 賦予它你自己的個人風格。 編程愉快！
 
-**需求 2：** 在 `header` 元素內應存在 `id="header-img"` 的圖像， 這裏通常用來放置公司的 logo。
+# --hints--
 
-**需求 3：** 在 `#header` 元素內，應存在一個 `id="nav-bar"` 的 `nav` 元素。
+你應該有一個 `id` 爲 `header` 的 `header` 元素
 
-**需求 4：** `nav` 元素中應至少包含三個 class 爲 `nav-link` 且可點擊的元素。
+```js
+const el = document.getElementById('header')
+assert(!!el && el.tagName === 'HEADER')
+```
 
-**需求 5：** 當點擊 `nav` 內的 `.nav-link` 按鈕時，應滾動到產品主頁上相應的部分。
+你應該有一個 `id` 爲 `header-img` 的 `img` 元素
 
-**需求 6：** 頁面上應存在 `id="video"` 的嵌入式視頻播放區域。
+```js
+const el = document.getElementById('header-img')
+assert(!!el && el.tagName === 'IMG')
+```
 
-**需求 7：** 產品登陸頁應存在一個 `id="form"` 的 `form` 元素。
+你的 `#header-img` 元素應該是 `#header` 元素的子元素
 
-**需求 8：** 在表單中，應存在一個 `id="email"` 的 `input` 輸入框供用戶填寫郵箱。
+```js
+const els = document.querySelectorAll('#header #header-img')
+assert(els.length > 0)
+```
 
-**需求 9：** `#email` 輸入框內應存在描述該區域用途的佔位符文字。
+你的 `#header-img` 元素應該有一個 `src` 屬性
 
-**需求 10：** `#email` 輸入框應使用 HTML5 驗證來確認輸入的內容是否爲郵箱。
+```js
+const el = document.getElementById('header-img')
+assert(!!el && !!el.src)
+```
 
-**需求 11：** 在表單中，應存在一個 `id="submit"` 的 `input` 提交按鈕。
+你的 `#header-img` 元素的 `src` 屬性應該有一個有效的 URL（以 `http` 開頭）
 
-**需求 12：** 當點擊 `#submit` 元素時，應將郵箱信息提交到一個靜態頁面（請使用這個模擬的 URL：<https://www.freecodecamp.com/email-submit>）。
+```js
+const el = document.getElementById('header-img')
+assert(!!el && /^http/.test(el.src))
+```
 
-**需求 13：** navbar 應保持在視口（viewport）的頂部。
+你應該有一個 `id` 爲 `nav-bar` 的 `nav` 元素
 
-**需求 14：** 在此 app 中，應至少使用一次媒體查詢。
+```js
+const el = document.getElementById('nav-bar')
+assert(!!el && el.tagName === 'NAV')
+```
 
-**需求 15：** 在此 app 中，應至少使用一次 CSS 的 flexbox 佈局。
+你的 `#nav-bar` 元素應該是 `#header` 元素的子元素
 
-你可以<a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>使用這個 CodePen 模版</a>創建你自己的項目，點擊 `Save` 即可創建你的新項目。 也可以使用此 CDN 鏈接在任何你喜歡的環境中運行測試：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`。
+```js
+const els = document.querySelectorAll('#header #nav-bar')
+assert(els.length > 0)
+```
 
-完成項目並通過所有測試後，請輸入你的項目在 CodePen 上的鏈接並提交。
+在 `#nav-bar` 內，你應該有至少三個 `.nav-link` 元素
 
-# --solutions--
+```js
+const els = document.querySelectorAll('#nav-bar .nav-link')
+assert(els.length >= 3)
+```
+
+每個 `.nav-link` 元素應該有一個 `href` 元素
+
+```js
+const els = document.querySelectorAll('.nav-link')
+els.forEach(el => {
+  if (!el.href) assert(false)
+})
+assert(els.length > 0)
+```
+
+每一個 `.nav-link` 元素應該鏈接到登陸頁面上的相應元素（有一個 `href` 具有另一個元素的 id 的值，例如： `#footer`）
+
+```js
+const els = document.querySelectorAll('.nav-link')
+els.forEach(el => {
+  const linkDestination = el.getAttribute('href').slice(1)
+  if (!document.getElementById(linkDestination)) assert(false)
+})
+assert(els.length > 0)
+```
+
+你應該有一個 `id` 爲 `video` 的 `video` 或 `iframe` 元素
+
+```js
+const el = document.getElementById('video')
+assert(!!el && (el.tagName === 'VIDEO' || el.tagName === 'IFRAME'))
+```
+
+你的 `#video` 元素應該有一個 `src` 屬性
+
+```js
+let el = document.getElementById('video')
+const sourceNode = el.children;
+let sourceElement = null;
+if (sourceNode.length) {
+  sourceElement = [...video.children].filter(el => el.localName === 'source')[0];
+}
+if (sourceElement) {
+  el = sourceElement;
+}
+assert(el.hasAttribute('src'));
+```
+
+你應該有一個 `id` 爲 `form` 的 `form` 元素
+
+```js
+const el = document.getElementById('form')
+assert(!!el && el.tagName === 'FORM')
+```
+
+你應該有一個 `id` 爲 `email` 的 `input` 元素
+
+```js
+const el = document.getElementById('email')
+assert(!!el && el.tagName === 'INPUT')
+```
+
+你的 `#email` 元素應該是 `#form` 元素的子元素
+
+```js
+const els = document.querySelectorAll('#form #email')
+assert(els.length > 0)
+```
+
+你的 `#email` 元素應該有 `placeholder` 屬性與佔位符文本
+
+```js
+const el = document.getElementById('email')
+assert(!!el && !!el.placeholder && el.placeholder.length > 0)
+```
+
+你的 `#email` 元素應該使用 HTML5 驗證，方法是設置 `type` 爲 `email`
+
+```js
+const el = document.getElementById('email')
+assert(!!el && el.type === 'email')
+```
+
+你應該有一個 `id` 爲 `submit` 的 `input` 元素
+
+```js
+const el = document.getElementById('submit')
+assert(!!el && el.tagName === 'INPUT')
+```
+
+你的 `#submit` 元素應該是 `#form` 元素的子元素
+
+```js
+const els = document.querySelectorAll('#form #submit')
+assert(els.length > 0)
+```
+
+你的 `#submit` 元素應該具有 `type` 爲 `submit`
+
+```js
+const el = document.getElementById('submit')
+assert(!!el && el.type === 'submit')
+```
+
+你的 `#form` 元素應該有值爲 `https://www.freecodecamp.com/email-submit` 的 `action` 屬性
+
+```js
+const el = document.getElementById('form')
+assert(!!el && el.action === 'https://www.freecodecamp.com/email-submit')
+```
+
+你的 `#email` 元素應該具有值爲 `email` 的 `name` 屬性
+
+```js
+const el = document.getElementById('email')
+assert(!!el && el.name === 'email')
+```
+
+你的 `#nav-bar` 元素應該始終位於視口的頂部
+
+```js
+const el = document.getElementById('nav-bar')
+const top1 = el?.offsetTop
+const top2 = el?.offsetTop
+assert(!!el && top1 >= -15 && top1 <= 15 && top2 >= -15 && top2 <= 15)
+```
+
+你的產品登陸頁面至少要有一個媒體查詢
+
+```js
+const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
+const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
+assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
+```
+
+你的產品登陸頁面應該至少使用一次 CSS Flexbox
+
+```js
+const stylesheet = new __helpers.CSSHelp(document).getStyleSheet()
+const cssRules = new __helpers.CSSHelp(document).styleSheetToCssRulesArray(stylesheet)
+const usesFlex = cssRules.find(rule => {
+  return rule.style?.display === 'flex' || rule.style?.display === 'inline-flex'
+})
+assert(usesFlex)
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
-// solution required
+
+```
+
+```css
+
+```
+
+## --solutions--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Product Landing Page</title>
+  </head>
+  <body>
+    <header id="header">
+      <nav id="nav-bar">
+        <img
+          id="header-img"
+          src="https://upload.wikimedia.org/wikipedia/commons/3/39/Pokeball.PNG"
+          max-height="50px"
+        />
+        <a href="#Features" class="nav-link">Features</a> |
+        <a href="#Video" class="nav-link">See our facility!</a> |
+        <a href="#Pricing" class="nav-link">Purchase</a>
+        <hr />
+      </nav>
+    </header>
+    <main>
+      <h1>
+        Pokemon Daycare Service
+      </h1>
+      <section id="Features">
+        <h2>What we offer</h2>
+        <div class="flex-here">
+          <div class="flex-left">
+            <img
+              id="bullet"
+              src="https://upload.wikimedia.org/wikipedia/commons/3/39/Pokeball.PNG"
+              max-height="25px"
+            />
+          </div>
+          <div class="flex-right">Guaranteed friendly and loving staff!</div>
+        </div>
+        <div class="flex-here">
+          <div class="flex-left">
+            <img
+              id="bullet"
+              src="https://upload.wikimedia.org/wikipedia/commons/3/39/Pokeball.PNG"
+              max-height="25px"
+            />
+          </div>
+          <div class="flex-right">
+            Comfortable environment for Pokemon to explore and play!
+          </div>
+        </div>
+        <div class="flex-here">
+          <div class="flex-left">
+            <img
+              id="bullet"
+              src="https://upload.wikimedia.org/wikipedia/commons/3/39/Pokeball.PNG"
+              max-height="25px"
+            />
+          </div>
+          <div class="flex-right">
+            Multiple membership plans to fit your lifestyle!
+          </div>
+        </div>
+      </section>
+      <section id="Video">
+        <h2>Check us out!</h2>
+        A sneak peek into our facility:
+        <br />
+        <iframe
+          id="video"
+          width="520"
+          height="347"
+          src="https://www.youtube.com/embed/Nw-ksH2r6AQ"
+          frameborder="0"
+          allowfullscreen
+          alt="A video tour of our facility"
+        >
+        </iframe>
+      </section>
+      <section id="Pricing">
+        <h2>Membership Plans</h2>
+        <div class="flex-mem">
+          <div class="flex-mem-box">
+            <font size="+2">Basic Membership</font><br />
+            <ul>
+              <li>One Pokemon</li>
+              <li>Food and berries provided</li>
+            </ul>
+            <em>$9.99/month</em>
+          </div>
+          <div class="flex-mem-box">
+            <font size="+2">Silver Membership</font><br />
+            <ul>
+              <li>Up to Three Pokemon</li>
+              <li>Food and berries provided</li>
+              <li>Grooming and accessories included</li>
+            </ul>
+            <em>$19.99/month</em>
+          </div>
+          <div class="flex-mem-box">
+            <font size="+2">Gold Membership</font><br />
+            <ul>
+              <li>Up to six Pokemon!</li>
+              <li>Food and berries provided</li>
+              <li>Grooming and accessories included</li>
+              <li>Personal training for each Pokemon</li>
+              <li>Breeding and egg hatching</li>
+            </ul>
+            <em>$29.99/month</em>
+          </div>
+        </div>
+      </section>
+      <form id="form" action="https://www.freecodecamp.com/email-submit">
+        <p>Sign up for our newsletter!</p>
+        <label for="email"><p>Email:</p><input name="email" id="email" type="email" placeholder="johnsmith@email.com" required></label>
+        <input type="submit" id="submit">
+      </form>
+      <footer>
+        <a href="../">Return to Project List</a> |
+        <a href="https://www.nhcarrigan.com">Return to HomePage</a>
+      </footer>
+    </main>
+  </body>
+</html>
+```
+
+```css
+body {
+  background-color: #3a3240;
+  color: white;
+}
+main {
+  max-width: 750px;
+  margin: 50px auto;
+}
+input {
+  background-color: #92869c;
+}
+a:not(.nav-link) {
+  color: white;
+}
+#header-img {
+  max-height: 25px;
+}
+#nav-bar {
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  top: 0%;
+  background-color: #92869c;
+}
+h1 {
+  text-align: center;
+}
+body {
+  text-align: center;
+}
+footer {
+  text-align: center;
+}
+#bullet {
+  max-height: 25px;
+}
+.flex-here {
+  display: flex;
+  justify-content: center;
+}
+.flex-left {
+  height: 25px;
+}
+.flex-mem {
+  display: flex;
+  justify-content: center;
+}
+.flex-mem-box {
+  background-color: #92869c;
+  border-color: black;
+  border-width: 5px;
+  border-style: solid;
+  margin: 10px;
+  padding: 10px;
+  color: black;
+}
+@media (max-width: 350px) {
+  #video {
+    width: 300;
+    height: 200;
+  }
+}
 ```

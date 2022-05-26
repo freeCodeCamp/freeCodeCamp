@@ -466,7 +466,7 @@ Bereitstellung von VMs mit dem Code
 
    ```console
    cd api-server
-   pm2 start ./lib/production-start.js -i max --max-memory-restart 600M --name org
+   pm2 start "DEBUG=fcc* node lib/production-start.js"  -i max --max-memory-restart 600M --name org
    ```
 
 ### Logging und Monitoring

@@ -50,6 +50,7 @@
     "reset-lesson": "Скинути цей урок",
     "run": "Запустити",
     "run-test": "Run the Tests (Ctrl + Enter)",
+    "check-code": "Check Your Code (Ctrl + Enter)",
     "reset": "Скинути",
     "reset-code": "Скинути весь код",
     "help": "Допомога",
@@ -100,7 +101,7 @@
   },
   "settings": {
     "share-projects": "Діліться своїми проєктами, статтями або прийнятими пул реквестами, які не відносяться до freeCodeCamp.",
-    "privacy": "Налаштування в цьому розділі дозволяють управляти тим, що відображається на публічному портфоліо freeCodeCamp.",
+    "privacy": "The settings in this section enable you to control what is shown on your freeCodeCamp public portfolio. Press save to save your changes.",
     "data": "Щоб побачити, які дані ми зберігаємо на вашому обліковому записі, натисніть кнопку \"Завантажити дані\" нижче",
     "disabled": "Ваші сертифікати будуть відключені, коли ввімкнено режим приватного перегляду.",
     "private-name": "Ваше ім'я не буде показуватися на ваших сертифікатах, коли ввімкнено режим приватного перегляду.",
@@ -268,6 +269,7 @@
     "solution-link": "Посилання на рішення",
     "github-link": "Посилання на GitHub",
     "submit-and-go": "Відправити та перейти до мого наступного завдання",
+    "congradulations": "Congratulations, your code passes. Submit your code to complete this step and move on to the next one.",
     "i-completed": "Я виконав це завдання",
     "test-output": "Результат вашого тесту буде доступний тут",
     "running-tests": "// запуск тестів",
@@ -305,7 +307,16 @@
     "step-2": "Step 2: Submit your code",
     "submit-public-url": "When you have completed the project, save all the required files into a public repository and submit the URL to it below.",
     "complete-both-steps": "Complete both steps below to finish the challenge.",
-    "runs-in-vm": "The project runs in a virtual machine, complete the user stories described in there and get all the tests to pass to finish step 1."
+    "runs-in-vm": "The project runs in a virtual machine, complete the user stories described in there and get all the tests to pass to finish step 1.",
+    "completed": "Completed",
+    "not-started": "Not started",
+    "hint": "Hint",
+    "test": "Test",
+    "sorry-try-again": "Sorry, your code does not pass. Try again.",
+    "sorry-keep-trying": "Sorry, your code does not pass. Keep trying.",
+    "sorry-getting-there": "Sorry, your code does not pass. You're getting there.",
+    "sorry-hang-in-there": "Sorry, your code does not pass. Hang in there.",
+    "sorry-dont-giveup": "Sorry, your code does not pass. Don't give up."
   },
   "donate": {
     "title": "Підтримати нашу некомерційну організацію",
@@ -442,6 +453,7 @@
     "fail": "Тест не пройдений",
     "not-passed": "Не пройдено",
     "passed": "Пройдено",
+    "hint": "Hint",
     "heart": "Серце",
     "initial": "Початковий",
     "info": "Інформація",
@@ -461,7 +473,9 @@
     "next-page": "Перейти на наступну сторінку",
     "last-page": "Перейти на останню сторінку",
     "primary-nav": "primary",
-    "breadcrumb-nav": "breadcrumb"
+    "breadcrumb-nav": "breadcrumb",
+    "submit": "Use Ctrl + Enter to submit.",
+    "running-tests": "Running tests"
   },
   "flash": {
     "honest-first": "Щоб отримати сертифікат, ви повинні спочатку прийняти нашу політику академічної доброчесності",

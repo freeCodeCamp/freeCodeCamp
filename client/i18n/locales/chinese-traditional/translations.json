@@ -50,6 +50,7 @@
     "reset-lesson": "重置課程",
     "run": "運行",
     "run-test": "運行測試（Ctrl + Enter）",
+    "check-code": "Check Your Code (Ctrl + Enter)",
     "reset": "重置",
     "reset-code": "重置所有代碼",
     "help": "幫助",
@@ -100,7 +101,7 @@
   },
   "settings": {
     "share-projects": "分享你在 freeCodeCamp 之外做的項目，寫的文章或者在 GitHub 上被接受的 pull requests。",
-    "privacy": "你可以通過在本節設置來管理你展示在 freeCodeCamp 公開作品集中的內容。",
+    "privacy": "The settings in this section enable you to control what is shown on your freeCodeCamp public portfolio. Press save to save your changes.",
     "data": "請點擊下面的 \"下載你的數據\" 按鈕，查看我們在你的賬號上保存的數據",
     "disabled": "如果設置爲僅自己可見，其他人將無法訪問你的認證。",
     "private-name": "如果你將姓名設置爲私密，你的證書上不會顯示你的姓名。",
@@ -268,6 +269,7 @@
     "solution-link": "解決方案鏈接",
     "github-link": "GitHub 鏈接",
     "submit-and-go": "提交併訪問下一個挑戰",
+    "congradulations": "Congratulations, your code passes. Submit your code to complete this step and move on to the next one.",
     "i-completed": "我已經完成這個挑戰",
     "test-output": "你的測試輸出將在這裏顯示",
     "running-tests": "// 運行測試",
@@ -305,7 +307,16 @@
     "step-2": "步驟 2：提交你的代碼",
     "submit-public-url": "當你完成項目後，將所有所需文件保存到公共倉庫並將 URL 填寫到下方。",
     "complete-both-steps": "完成下面的兩個步驟來完成這一挑戰。",
-    "runs-in-vm": "該項目在虛擬機中運行，完成在那裏描述的用戶故事，獲取所有測試並通過它們以完成步驟 1。"
+    "runs-in-vm": "該項目在虛擬機中運行，完成在那裏描述的用戶故事，獲取所有測試並通過它們以完成步驟 1。",
+    "completed": "Completed",
+    "not-started": "Not started",
+    "hint": "Hint",
+    "test": "Test",
+    "sorry-try-again": "Sorry, your code does not pass. Try again.",
+    "sorry-keep-trying": "Sorry, your code does not pass. Keep trying.",
+    "sorry-getting-there": "Sorry, your code does not pass. You're getting there.",
+    "sorry-hang-in-there": "Sorry, your code does not pass. Hang in there.",
+    "sorry-dont-giveup": "Sorry, your code does not pass. Don't give up."
   },
   "donate": {
     "title": "支持我們的非營利組織",
@@ -442,6 +453,7 @@
     "fail": "測試失敗",
     "not-passed": "未通過",
     "passed": "通過",
+    "hint": "Hint",
     "heart": "愛心",
     "initial": "初始",
     "info": "介紹信息",
@@ -461,7 +473,9 @@
     "next-page": "訪問下一頁",
     "last-page": "訪問最後一頁",
     "primary-nav": "主要的",
-    "breadcrumb-nav": "麪包屑導航"
+    "breadcrumb-nav": "麪包屑導航",
+    "submit": "Use Ctrl + Enter to submit.",
+    "running-tests": "Running tests"
   },
   "flash": {
     "honest-first": "申請認證之前，你必須先接受我們的《學術誠信條例》",

@@ -3,10 +3,13 @@
  * Any ref to fixCompletedChallengesItem should be removed post
  * a db migration to fix all completedChallenges
  *
+ * NOTE: it's been 4 years, so any active users will have been migrated. We
+ * should still try to migrate the rest at some point.
+ *
  */
 import debug from 'debug';
 import dedent from 'dedent';
-import { isEmpty, pick, omit, find, uniqBy } from 'lodash';
+import { isEmpty, pick, omit, uniqBy } from 'lodash';
 import { ObjectID } from 'mongodb';
 import { Observable } from 'rx';
 import isNumeric from 'validator/lib/isNumeric';
@@ -16,11 +19,7 @@ import jwt from 'jsonwebtoken';
 import { jwtSecret } from '../../../../config/secrets';
 
 import { environment, deploymentEnv } from '../../../../config/env.json';
-import {
-  fixCompletedChallengeItem,
-  fixPartiallyCompletedChallengeItem,
-  fixSavedChallengeItem
-} from '../../common/utils';
+import { fixPartiallyCompletedChallengeItem } from '../../common/utils';
 import { getChallenges } from '../utils/get-curriculum';
 import { ifNoUserSend } from '../utils/middleware';
 import {
@@ -99,29 +98,6 @@ const savableChallenges = getChallenges()
   .filter(challenge => challenge.challengeType === 14)
   .map(challenge => challenge.id);
 
-function buildNewSavedChallenges({
-  user,
-  challengeId,
-  completedDate = Date.now(),
-  files
-}) {
-  const { savedChallenges } = user;
-  const challengeToSave = {
-    id: challengeId,
-    lastSavedDate: completedDate,
-    files: files?.map(file =>
-      pick(file, ['contents', 'key', 'name', 'ext', 'history'])
-    )
-  };
-
-  const newSavedChallenges = uniqBy(
-    [challengeToSave, ...savedChallenges.map(fixSavedChallengeItem)],
-    'id'
-  );
-
-  return newSavedChallenges;
-}
-
 export function buildUserUpdate(
   user,
   challengeId,
@@ -144,77 +120,82 @@ export function buildUserUpdate(
     completedChallenge = omit(_completedChallenge, ['files']);
   }
   let finalChallenge;
-  const updateData = {};
-  const { timezone: userTimezone, completedChallenges = [] } = user;
+  const $push = {},
+    $set = {},
+    $pull = {};
+  const {
+    timezone: userTimezone,
+    completedChallenges = [],
+    needsModeration = false,
+    savedChallenges = []
+  } = user;
 
-  const oldChallenge = find(
-    completedChallenges,
+  const oldIndex = completedChallenges.findIndex(
     ({ id }) => challengeId === id
   );
-  const alreadyCompleted = !!oldChallenge;
+
+  const alreadyCompleted = oldIndex !== -1;
+  const oldChallenge = alreadyCompleted ? completedChallenges[oldIndex] : null;
 
   if (alreadyCompleted) {
     finalChallenge = {
       ...completedChallenge,
       completedDate: oldChallenge.completedDate
     };
+    $set[`completedChallenges.${oldIndex}`] = finalChallenge;
   } else {
-    updateData.$push = {
-      ...updateData.$push,
-      progressTimestamps: completedDate
-    };
     finalChallenge = {
       ...completedChallenge
     };
+    $push.progressTimestamps = completedDate;
+    $push.completedChallenges = finalChallenge;
   }
 
-  let newSavedChallenges;
-
   if (savableChallenges.includes(challengeId)) {
-    newSavedChallenges = buildNewSavedChallenges({
-      user,
-      challengeId,
-      completedDate,
-      files
-    });
-
-    // if savableChallenge, update saved array when submitting
-    updateData.$set = {
-      completedChallenges: uniqBy(
-        [finalChallenge, ...completedChallenges.map(fixCompletedChallengeItem)],
-        'id'
-      ),
-      savedChallenges: newSavedChallenges
-    };
-  } else {
-    updateData.$set = {
-      completedChallenges: uniqBy(
-        [finalChallenge, ...completedChallenges.map(fixCompletedChallengeItem)],
-        'id'
+    const challengeToSave = {
+      id: challengeId,
+      lastSavedDate: completedDate,
+      files: files?.map(file =>
+        pick(file, ['contents', 'key', 'name', 'ext', 'history'])
       )
     };
+
+    const savedIndex = savedChallenges.findIndex(
+      ({ id }) => challengeId === id
+    );
+
+    if (savedIndex >= 0) {
+      $set[`savedChallenges.${savedIndex}`] = challengeToSave;
+      savedChallenges[savedIndex] = challengeToSave;
+    } else {
+      $push.savedChallenges = challengeToSave;
+      savedChallenges.push(challengeToSave);
+    }
   }
 
   // remove from partiallyCompleted on submit
-  updateData.$pull = {
-    partiallyCompletedChallenges: { id: challengeId }
-  };
+  $pull.partiallyCompletedChallenges = { id: challengeId };
 
   if (
     timezone &&
     timezone !== 'UTC' &&
     (!userTimezone || userTimezone === 'UTC')
   ) {
-    updateData.$set = {
-      ...updateData.$set,
-      timezone: userTimezone
-    };
+    $set.timezone = userTimezone;
   }
+
+  if (needsModeration) $set.needsModeration = true;
+
+  const updateData = {};
+  if (!isEmpty($set)) updateData.$set = $set;
+  if (!isEmpty($push)) updateData.$push = $push;
+  if (!isEmpty($pull)) updateData.$pull = $pull;
+
   return {
     alreadyCompleted,
     updateData,
     completedDate: finalChallenge.completedDate,
-    savedChallenges: newSavedChallenges
+    savedChallenges
   };
 }
 
@@ -309,6 +290,7 @@ export function modernChallengeCompleted(req, res, next) {
       // if multifile cert project
       if (challengeType === 14) {
         completedChallenge.isManuallyApproved = false;
+        user.needsModeration = true;
       }
 
       // We only need to know the challenge type if it's a project. If it's a
@@ -452,26 +434,42 @@ function backendChallengeCompleted(req, res, next) {
 
 function saveChallenge(req, res, next) {
   const user = req.user;
+  const { savedChallenges = [] } = user;
   const { id: challengeId, files = [] } = req.body;
 
   if (!savableChallenges.includes(challengeId)) {
     return res.status(403).send('That challenge type is not savable');
   }
 
-  const newSavedChallenges = buildNewSavedChallenges({
-    user,
-    challengeId,
-    completedDate: Date.now(),
-    files
-  });
+  const challengeToSave = {
+    id: challengeId,
+    lastSavedDate: Date.now(),
+    files: files?.map(file =>
+      pick(file, ['contents', 'key', 'name', 'ext', 'history'])
+    )
+  };
 
   return user
     .getSavedChallenges$()
     .flatMap(() => {
+      const savedIndex = savedChallenges.findIndex(
+        ({ id }) => challengeId === id
+      );
+      const $push = {},
+        $set = {};
+
+      if (savedIndex >= 0) {
+        $set[`savedChallenges.${savedIndex}`] = challengeToSave;
+        savedChallenges[savedIndex] = challengeToSave;
+      } else {
+        $push.savedChallenges = challengeToSave;
+        savedChallenges.push(challengeToSave);
+      }
+
       const updateData = {};
-      updateData.$set = {
-        savedChallenges: newSavedChallenges
-      };
+      if (!isEmpty($set)) updateData.$set = $set;
+      if (!isEmpty($push)) updateData.$push = $push;
+
       const updatePromise = new Promise((resolve, reject) =>
         user.updateAttributes(updateData, err => {
           if (err) {
@@ -482,7 +480,7 @@ function saveChallenge(req, res, next) {
       );
       return Observable.fromPromise(updatePromise).doOnNext(() => {
         return res.json({
-          savedChallenges: newSavedChallenges
+          savedChallenges
         });
       });
     })

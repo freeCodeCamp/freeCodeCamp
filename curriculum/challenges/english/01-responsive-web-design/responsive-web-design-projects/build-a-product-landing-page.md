@@ -30,6 +30,8 @@ dashedName: build-a-product-landing-page
 
 Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
 
+**Note:** Be sure to add `<link rel="stylesheet" href="styles.css">` in your HTML to link your stylesheet and apply your CSS
+
 # --hints--
 
 You should have a `header` element with an `id` of `header`
@@ -119,8 +121,16 @@ assert(!!el && (el.tagName === 'VIDEO' || el.tagName === 'IFRAME'))
 Your `#video` should have a `src` attribute
 
 ```js
-const el = document.getElementById('video')
-assert(!!el && !!el.src)
+let el = document.getElementById('video')
+const sourceNode = el.children;
+let sourceElement = null;
+if (sourceNode.length) {
+  sourceElement = [...video.children].filter(el => el.localName === 'source')[0];
+}
+if (sourceElement) {
+  el = sourceElement;
+}
+assert(el.hasAttribute('src'));
 ```
 
 You should have a `form` element with an `id` of `form`
@@ -130,7 +140,7 @@ const el = document.getElementById('form')
 assert(!!el && el.tagName === 'FORM')
 ```
 
-You should have an `input` element with an `id of `email`
+You should have an `input` element with an `id` of `email`
 
 ```js
 const el = document.getElementById('email')
@@ -205,7 +215,9 @@ assert(!!el && top1 >= -15 && top1 <= 15 && top2 >= -15 && top2 <= 15)
 Your Product Landing Page should use at least one media query
 
 ```js
-assert.isAtLeast(new __helpers.CSSHelp(document).getCSSRules('media')?.length, 1);
+const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
+const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
+assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 ```
 
 Your Product Landing Page should use CSS Flexbox at least once
