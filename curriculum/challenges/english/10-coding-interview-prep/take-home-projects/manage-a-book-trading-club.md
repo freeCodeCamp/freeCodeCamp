@@ -10,7 +10,7 @@ dashedName: manage-a-book-trading-club
 
 **Objective:** Build an app that is functionally similar to this: <https://manage-a-book-trading-club.freecodecamp.rocks/>.
 
-Fulfill the below user stories. Use whichever libraries or APIs you need. Give it your own personal style.
+Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
 
 **User Story:** I can view all books posted by every user.
 

@@ -10,7 +10,7 @@ dashedName: build-a-wikipedia-viewer
 
 **Objective:** Build an app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/wGqEga/>.
 
-Fulfill the below user stories. Use whichever libraries or APIs you need. Give it your own personal style.
+Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
 
 **User Story:** I can search Wikipedia entries in a search box and see the resulting Wikipedia entries.
 

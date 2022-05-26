@@ -10,7 +10,7 @@ dashedName: build-a-pinterest-clone
 
 **Objective:** Build an app that is functionally similar to this: <https://build-a-pinterest-clone.freecodecamp.rocks/>.
 
-Fulfill the below user stories. Use whichever libraries or APIs you need. Give it your own personal style.
+Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
 
 **User Story:** As an unauthenticated user, I can login with GitHub.
 

@@ -10,7 +10,7 @@ dashedName: show-national-contiguity-with-a-force-directed-graph
 
 **Objective:** Build an app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/xVopBo>.
 
-Fulfill the below user stories. Use whichever libraries or APIs you need. Give it your own personal style.
+Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
 
 **User Story:** I can see a Force-directed Graph that shows which countries share borders.
 
