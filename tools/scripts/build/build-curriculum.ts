@@ -23,4 +23,4 @@ void getChallengesForLang('english')
   .then(JSON.stringify)
   .then(json => {
     fs.writeFileSync(`${globalConfigPath}/curriculum.json`, json);
-  })
+  });
