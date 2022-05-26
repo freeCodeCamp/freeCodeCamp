@@ -64,7 +64,9 @@ assert(code.replace(/\s/g, '').includes('constaddVar=add'));
 function add(x, y) {
   return x + y;
 }
+--fcc-editable-region--
 
+--fcc-editable-region--
 const infixToFunction = {};
 
 
