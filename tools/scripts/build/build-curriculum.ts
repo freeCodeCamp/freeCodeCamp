@@ -13,7 +13,7 @@ const globalConfigPath = path.resolve(__dirname, '../../../config');
 
 // We are defaulting to English because the ids for the challenges are same
 // across all languages.
-getChallengesForLang('english')
+void getChallengesForLang('english')
   .then((result: Record<string, unknown>) => {
     if (CURRICULUM_LOCALE === 'english') {
       buildExtCurriculumData('v1.0.0', result as Curriculum);
@@ -24,6 +24,3 @@ getChallengesForLang('english')
   .then(json => {
     fs.writeFileSync(`${globalConfigPath}/curriculum.json`, json);
   })
-  .catch(error => {
-    console.log(error);
-  });

@@ -7,7 +7,7 @@ import { mobileSchemaValidator } from './mobileSchema';
 import { superBlockMobileAppOrder } from './build-external-curricula-data';
 
 if (envData.clientLocale == 'english' && !envData.showUpcomingChanges) {
-  const ver = 'v1.0.0';
+  const VERSION = 'v1.0.0';
 
   describe('mobile curriculum build', () => {
     const mobileStaticPath = path.resolve(__dirname, '../../../client/static');
@@ -57,10 +57,11 @@ if (envData.clientLocale == 'english' && !envData.showUpcomingChanges) {
     });
 
     test('All SuperBlocks should be present in the mobile SuperBlock object', () => {
-      Object.values(SuperBlocks).forEach(superBlockKey =>
-        expect(
-          Object.keys(superBlockMobileAppOrder).includes(superBlockKey)
-        ).toBe(true)
+      expect(Object.keys(superBlockMobileAppOrder)).toEqual(
+        expect.arrayContaining(Object.values(SuperBlocks))
+      );
+      expect(Object.keys(superBlockMobileAppOrder)).toHaveLength(
+        Object.values(SuperBlocks).length
       );
     });
   });
