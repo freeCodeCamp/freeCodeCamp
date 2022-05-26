@@ -12,14 +12,12 @@ describe('Public profile certifications', () => {
       cy.visit('/certifieduser', { failOnStatusCode: false });
 
       // The following line is only required if you want to test it in development
-      // cy.contains('Preview custom 404 page').click();
+      cy.contains('Preview custom 404 page').click();
 
-      cy.get('.certifications.row > div')
-        .children()
-        .should('contain', 'freeCodeCamp Certifications')
-        .and('contain', 'Legacy Certifications')
-        .get('.certifications > .btn')
-        .should('have.length.greaterThan', 0);
+      cy.get("[data-test-label='claimed-certification']").should(
+        'have.length',
+        16
+      );
     });
 
     it('Should show claimed certifications if the username includes uppercase characters', () => {
@@ -35,14 +33,12 @@ describe('Public profile certifications', () => {
       cy.visit('/certifieduser', { failOnStatusCode: false });
 
       // The following line is only required if you want to test it in development
-      // cy.contains('Preview custom 404 page').click();
+      cy.contains('Preview custom 404 page').click();
 
-      cy.get('.certifications.row > div')
-        .children()
-        .should('contain', 'freeCodeCamp Certifications')
-        .and('contain', 'Legacy Certifications')
-        .get('.certifications > .btn')
-        .should('have.length.greaterThan', 0);
+      cy.get("[data-test-label='claimed-certification']").should(
+        'have.length',
+        16
+      );
     });
   });
 
