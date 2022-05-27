@@ -28,7 +28,7 @@ module.exports = (env = {}) => {
         );
         return filename + '.js';
       },
-      chunkFilename: '[name].[contenthash].js',
+      chunkFilename: '[name]-[contenthash].js',
       path: staticPath
     },
     stats: {
