@@ -59,7 +59,9 @@ assert(typeof addVar === 'undefined');
 ```html
 <script>
 
+--fcc-editable-region--
 const addVar = (x, y) => x + y;
+--fcc-editable-region--
 
 const infixToFunction = {
   "+": (x, y) => x + y

@@ -140,9 +140,11 @@ assert(
     const consumed = document.createElement('h4');
     consumed.innerHTML = `${total} Consumed Calories`;
     output.appendChild(consumed);
+--fcc-editable-region--
 
     //put your code here
   }
+--fcc-editable-region--
 </script>
 ```
 

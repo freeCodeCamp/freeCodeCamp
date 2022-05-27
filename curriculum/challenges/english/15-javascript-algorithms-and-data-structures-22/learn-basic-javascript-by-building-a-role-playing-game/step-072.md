@@ -208,6 +208,7 @@ function buyHealth() {
   }
 }
 
+--fcc-editable-region--
 function buyWeapon() {
   if (gold >= 30) {
     gold -= 30;
@@ -221,6 +222,7 @@ function buyWeapon() {
     text.innerText = "You do not have enough gold to buy a weapon.";
   }
 }
+--fcc-editable-region--
 
 function fightSlime() {
 }

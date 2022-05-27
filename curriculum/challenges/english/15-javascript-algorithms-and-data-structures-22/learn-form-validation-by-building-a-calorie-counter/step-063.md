@@ -156,6 +156,9 @@ assert(
     calorieInput.classList.add('extra-cal-control');
     document.getElementById('entries').appendChild(calorieInput);
   };
+--fcc-editable-region--
+
+--fcc-editable-region--
 </script>
 ```
 

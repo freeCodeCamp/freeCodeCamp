@@ -103,10 +103,12 @@ const applyFn = str => {
   );
 };
 
+--fcc-editable-region--
 const range = (start, end) => {
   const arr = [start];
   return arr.concat(end);
 }
+--fcc-editable-region--
 
 
 </script>

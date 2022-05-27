@@ -147,7 +147,9 @@ assert(
     output.style.backgroundColor = '#FFF9C4';
   }
 
+--fcc-editable-region--
   document.getElementById('add');
+--fcc-editable-region--
 </script>
 ```
 

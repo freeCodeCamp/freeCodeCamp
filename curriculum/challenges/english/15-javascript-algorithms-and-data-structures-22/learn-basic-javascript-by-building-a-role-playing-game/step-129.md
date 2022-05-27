@@ -327,9 +327,11 @@ function getMonsterAttackValue(level) {
   return hit > 0 ? hit : 0;
 }
 
+--fcc-editable-region--
 function isMonsterHit() {
   return Math.random() > .2;
 }
+--fcc-editable-region--
 
 function dodge() {
   text.innerText = "You dodge the attack from the " + monsters[fighting].name + ".";

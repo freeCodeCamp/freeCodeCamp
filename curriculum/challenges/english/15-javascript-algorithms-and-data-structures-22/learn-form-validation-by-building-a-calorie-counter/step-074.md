@@ -169,10 +169,12 @@ assert(
 
     foodInputs.forEach(input => input.remove());
 
+--fcc-editable-region--
     const calInputs = Array.from(
       document.getElementsByClassName('extra-cal-control')
     );
   };
+--fcc-editable-region--
 </script>
 ```
 

@@ -292,8 +292,10 @@ function dodge() {
   text.innerText = "You dodge the attack from the " + monsters[fighting].name + ".";
 }
 
+--fcc-editable-region--
 function defeatMonster() {
 }
+--fcc-editable-region--
 
 function lose() {
 }
