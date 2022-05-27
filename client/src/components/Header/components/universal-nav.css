@@ -208,6 +208,7 @@ button.nav-link[aria-disabled='true'] {
   top: 0;
   overflow-y: auto;
   scrollbar-width: auto;
+  height: 100%;
 }
 
 .nav-lang-menu > button:hover {
