@@ -243,6 +243,7 @@ function useIdToNameMap(): Map<string, NameMap> {
             challenge {
               fields {
                 slug
+                blockName
               }
               id
               title
@@ -268,11 +269,16 @@ function useIdToNameMap(): Map<string, NameMap> {
           // @ts-expect-error Graphql needs typing
           title,
           // @ts-expect-error Graphql needs typing
-          fields: { slug }
+          fields: { slug, blockName }
         }
       }
     }) => {
-      idToNameMap.set(id, { challengeTitle: title, challengePath: slug });
+      idToNameMap.set(id, {
+        challengeTitle: `${blockName} ${
+          title.includes('Step') ? `- ${title}` : ''
+        }`,
+        challengePath: slug
+      });
     }
   );
   return idToNameMap;
