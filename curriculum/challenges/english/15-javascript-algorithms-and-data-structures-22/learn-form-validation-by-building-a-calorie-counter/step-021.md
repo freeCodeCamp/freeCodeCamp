@@ -96,6 +96,7 @@ assert(code.replace(/\s/g, '').match(/console.log\({accumulator}\)/));
 <script>
   document.getElementById('calorie-form').onsubmit = calculate;
 
+--fcc-editable-region--
   function calculate(e) {
     e.preventDefault();
 
@@ -108,6 +109,7 @@ assert(code.replace(/\s/g, '').match(/console.log\({accumulator}\)/));
 
     // log the value of `total` here
   }
+--fcc-editable-region--
 </script>
 ```
 
@@ -120,7 +122,6 @@ assert(code.replace(/\s/g, '').match(/console.log\({accumulator}\)/));
   function calculate(e) {
     e.preventDefault();
 
---fcc-editable-region--
     const total = Array.from(document.getElementsByClassName('cal-control'))
       .map(meal => Number(meal.value))
       .reduce((accumulator, currentValue) => {
@@ -131,6 +132,5 @@ assert(code.replace(/\s/g, '').match(/console.log\({accumulator}\)/));
 
     console.log({ total });
   }
---fcc-editable-region--
 </script>
 ```
