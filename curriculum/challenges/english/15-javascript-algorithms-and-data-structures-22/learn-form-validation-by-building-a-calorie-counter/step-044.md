@@ -92,6 +92,7 @@ assert(code.replace(/\s/g, '').match(/output\.appendChild\(recommended\)/));
 <script>
   document.getElementById('calorie-form').onsubmit = calculate;
 
+--fcc-editable-region--
   function calculate(e) {
     e.preventDefault();
 
@@ -125,6 +126,7 @@ assert(code.replace(/\s/g, '').match(/output\.appendChild\(recommended\)/));
 
     recommended.appendChild(recommendedText);
   }
+--fcc-editable-region--
 </script>
 ```
 

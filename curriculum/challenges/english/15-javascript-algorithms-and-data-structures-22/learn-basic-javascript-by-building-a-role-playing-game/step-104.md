@@ -288,8 +288,10 @@ function attack() {
   }
 }
 
+--fcc-editable-region--
 function dodge() {
 }
+--fcc-editable-region--
 
 function defeatMonster() {
 }

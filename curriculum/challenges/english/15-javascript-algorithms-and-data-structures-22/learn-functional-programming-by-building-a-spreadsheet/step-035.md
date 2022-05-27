@@ -83,6 +83,7 @@ const spreadsheetFunctions = {
   "": x => x
 };
 
+--fcc-editable-region--
 const applyFn = str => {
   const noHigh = highPrecedence(str);
   const infix = /([0-9.]+)([+-])([0-9.]+)/;
@@ -92,6 +93,7 @@ const applyFn = str => {
   const applyFunction = (fn, args) =>
     spreadsheetFunctions[fn.toLowerCase()](toNumberList(args));
 }
+--fcc-editable-region--
 
 
 </script>

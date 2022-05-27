@@ -162,7 +162,9 @@ assert(
     clearForm();
   };
 
+--fcc-editable-region--
   const clearOutput = () => {};
+--fcc-editable-region--
 </script>
 ```
 

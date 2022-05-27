@@ -95,6 +95,9 @@ assert(typeof calculate === 'function');
 ```html
 <script>
   document.getElementById('calorie-form').onsubmit = calculate;
+--fcc-editable-region--
+
+--fcc-editable-region--
 </script>
 ```
 

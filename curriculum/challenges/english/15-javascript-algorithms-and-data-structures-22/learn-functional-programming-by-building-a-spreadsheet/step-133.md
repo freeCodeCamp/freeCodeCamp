@@ -83,12 +83,14 @@ const isEven = num => num % 2 === 0;
 const sum = nums => nums.reduce((a, x) => a + x);
 const average = nums => sum(nums) / nums.length;
 
+--fcc-editable-region--
 const median = nums => {
   const sorted = nums.slice().sort((x, y) => x - y);
   const length = sorted.length;
   const middle = sorted.length / 2 - 1;
   return isEven(length);
 }; 
+--fcc-editable-region--
 
 
 

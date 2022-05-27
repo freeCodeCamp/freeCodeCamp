@@ -90,6 +90,7 @@ assert(code.replace(/\s/g, '').match(/Number\(meal\.value\)\;?/));
 
 ```html
 <script>
+--fcc-editable-region--
   document.getElementById('calorie-form').onsubmit = calculate;
 
   function calculate(e) {
@@ -100,6 +101,7 @@ assert(code.replace(/\s/g, '').match(/Number\(meal\.value\)\;?/));
       return meal.value;
     });
   }
+--fcc-editable-region--
 </script>
 ```
 

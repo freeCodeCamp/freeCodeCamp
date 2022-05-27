@@ -107,6 +107,7 @@ const charRange = (start, end) =>
     String.fromCharCode(x)
   );
 
+--fcc-editable-region--
 const evalFormula = x => {
   const rangeRegex = /([A-J])([1-9][0-9]?):([A-J])([1-9][0-9]?)/gi;
   const rangeFromString = (n1, n2) => range(parseInt(n1), parseInt(n2));
@@ -125,6 +126,7 @@ const evalFormula = x => {
     ? functionExpanded
     : evalFormula(functionExpanded);
 };
+--fcc-editable-region--
 
 window.onload = () => {
   const container = document.getElementById("container");
