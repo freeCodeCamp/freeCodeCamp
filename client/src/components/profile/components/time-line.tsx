@@ -274,9 +274,9 @@ function useIdToNameMap(): Map<string, NameMap> {
       }
     }) => {
       idToNameMap.set(id, {
-        challengeTitle: `${blockName} ${
-          title.includes('Step') ? `- ${title}` : ''
-        }`,
+        challengeTitle: `${
+          title.includes('Step') ? `${blockName} - ` : ''
+        }${title}`,
         challengePath: slug
       });
     }
