@@ -21,7 +21,7 @@ module.exports = (env = {}) => {
       filename: chunkData => {
         // construct and output the filename here, so the client can use the
         // json to find the file.
-        const filename = `${chunkData.chunk.name}.${chunkData.chunk.contentHash.javascript}`;
+        const filename = `${chunkData.chunk.name}-${chunkData.chunk.contentHash.javascript}`;
         writeFileSync(
           path.join(configPath, `${chunkData.chunk.name}.json`),
           `{"filename": "${filename}"}`
