@@ -30,7 +30,7 @@ export interface UniversalNavProps {
   searchBarRef?: unknown;
   showMenu?: () => void;
   hideMenu?: () => void;
-  showLanguageMenu?: (elementToFocus: HTMLAnchorElement) => void;
+  showLanguageMenu?: (elementToFocus: HTMLButtonElement) => void;
   hideLanguageMenu?: () => void;
   user?: Record<string, unknown>;
 }

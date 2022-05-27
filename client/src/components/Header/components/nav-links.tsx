@@ -46,7 +46,7 @@ export interface NavLinksProps {
   toggleNightMode: (x: any) => any;
   user?: Record<string, unknown>;
   navigate?: (location: string) => void;
-  showLanguageMenu?: (elementToFocus: HTMLAnchorElement) => void;
+  showLanguageMenu?: (elementToFocus: HTMLButtonElement) => void;
   hideLanguageMenu?: () => void;
   menuButtonRef: Ref<HTMLButtonElement>;
 }
@@ -89,7 +89,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
     return previousSibling?.querySelector('a, button') ?? menuButtonRef.current;
   }
 
-  handleLanguageChange = (event: React.MouseEvent<HTMLAnchorElement>): void => {
+  handleLanguageChange = (event: React.MouseEvent<HTMLButtonElement>): void => {
     event.preventDefault();
     const { hideMenu, hideLanguageMenu, menuButtonRef, navigate } = this.props;
     const newLanguage = event.target.dataset.value as string;
@@ -161,7 +161,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
   };
 
   handleLanguageMenuKeyDown = (
-    event: React.KeyboardEvent<HTMLAnchorElement>
+    event: React.KeyboardEvent<HTMLButtonElement>
   ): void => {
     const { hideLanguageMenu, hideMenu } = this.props;
     const focusFirstLanguageMenuItem = () => {

@@ -68,7 +68,7 @@ export class Header extends React.Component<
   }
 
   // elementToFocus must be a link in the language menu
-  showLanguageMenu(elementToFocus: HTMLAnchorElement): void {
+  showLanguageMenu(elementToFocus: HTMLButtonElement): void {
     this.setState({ isLanguageMenuDisplayed: true }, () =>
       elementToFocus.focus()
     );
