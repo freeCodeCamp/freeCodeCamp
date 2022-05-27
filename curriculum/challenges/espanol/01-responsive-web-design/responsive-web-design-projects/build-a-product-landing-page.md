@@ -206,10 +206,41 @@ assert(!!el && el.name === 'email')
 Tú `#nav-bar` siempre debe estar en la parte superior del viewport
 
 ```js
-const el = document.getElementById('nav-bar')
-const top1 = el?.offsetTop
-const top2 = el?.offsetTop
-assert(!!el && top1 >= -15 && top1 <= 15 && top2 >= -15 && top2 <= 15)
+(async () => {
+  const timeout = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
+
+  const header = document.getElementById('header');
+  const headerChildren = header.children;
+  const navbarCandidates = [header, ...headerChildren];
+
+  // Return smallest top position of all navbar candidates
+  const getNavbarPosition = (candidates = []) => {
+    return candidates.reduce(
+      (min, candidate) =>
+        Math.min(min, Math.abs(candidate?.getBoundingClientRect().top)),
+      Infinity
+    );
+  };
+  assert.approximately(
+    getNavbarPosition(navbarCandidates),
+    0,
+    15,
+    '#header or one of its children should be at the top of the viewport '
+  );
+
+  window.scroll(0, 500);
+  await timeout(1);
+
+  assert.approximately(
+    getNavbarPosition(navbarCandidates),
+    0,
+    15,
+    '#header or one of its children should be at the top of the ' +
+      'viewport even after scrolling '
+  );
+
+  window.scroll(0, 0);
+})();
 ```
 
 Tu página de inicio de producto debe tener al menos una consulta de medios

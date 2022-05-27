@@ -9,7 +9,7 @@ dashedName: counting-cards
 
 # --description--
 
-No jogo de casino Blackjack, um jogador pode ganhar vantagem sobre a casa, mantendo o número relativo de cartas altas e baixas restantes no baralho. Isso se chama [contagem de cartas](https://en.wikipedia.org/wiki/Card_counting).
+No jogo de casino Blackjack, um jogador pode determinar se tem uma vantagem sobre a próxima mão da casa, mantendo o número relativo de cartas altas e baixas restantes no baralho. Isso se chama "contar as cartas".
 
 Ter cartas mais altas restantes no baralho favorece o jogador. A cada carta é atribuído um valor de acordo com a tabela abaixo. Quando o contador for positivo, o jogador deve apostar alto. Quando a contagem for zero ou negativa, o jogador deverá apostar baixo.
 
