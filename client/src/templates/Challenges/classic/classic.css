@@ -11,43 +11,6 @@
   top: -999em;
 }
 
-#challenge-page-tabs .nav-tabs {
-  margin-left: 2px;
-  display: flex;
-}
-
-#challenge-page-tabs .nav-tabs > li {
-  flex: 1;
-  text-align: center;
-}
-
-#challenge-page-tabs .nav-tabs > li > a {
-  padding: 5px 10px;
-  text-decoration: none;
-  font-size: 0.8em;
-}
-
-#challenge-page-tabs .nav-tabs > li > a:hover {
-  color: var(--gray-85);
-}
-
-#challenge-page-tabs .tab-content {
-  height: calc(
-    100vh - var(--header-height, 0px) - var(--flash-message-height, 0px) - 69px
-  );
-  overflow-y: auto;
-}
-
-#challenge-page-tabs .tab-pane {
-  height: 100%;
-  overflow: hidden;
-}
-
-#challenge-page-tabs .nav-tabs > li.active > a {
-  color: var(--quaternary-color);
-  background-color: var(--quaternary-background);
-}
-
 .monaco-editor .editor-widget {
   display: none !important;
 }
@@ -58,58 +21,92 @@
   display: none !important;
 }
 
-.monaco-editor-tabs {
-  display: flex;
-  padding: 0px 10px;
-  background-color: var(--primary-background);
-  border-bottom: 2px solid var(--primary-color);
-  margin-right: auto;
-}
-
-.monaco-editor-tab {
-  position: relative;
-  top: 2px;
-  padding: 4px 16px;
-  border: 2px solid var(--primary-color);
-  border-left: none;
-  background-color: var(--secondary-background);
-}
-
-button.monaco-editor-tab:hover {
-  color: var(--quaternary-color);
-  background-color: var(--quaternary-background);
-}
-
-.monaco-editor-tab:first-child {
-  border-left: 2px solid var(--primary-color);
-}
-
-.monaco-editor-tab-selected {
-  background-color: var(--primary-background);
-  border-bottom: 2px solid var(--primary-background);
-}
-
-.monaco-editor-tab[aria-expanded='true'] {
-  border-color: var(--secondary-color);
-  background-color: var(--secondary-color);
-  color: var(--secondary-background);
-}
-
 .action-row {
   padding: 10px;
   border-bottom: 1px solid var(--quaternary-background);
 }
 
-.action-row .monaco-editor-tabs {
-  padding: 0;
-  border-bottom: none;
-  background-color: var(--secondary-background);
+.monaco-editor-tabs [aria-expanded='true'],
+.action-row [aria-expanded='true'] {
+  border-color: var(--secondary-color);
+  background-color: var(--secondary-color);
+  color: var(--secondary-background);
 }
 
-.action-row .monaco-editor-tabs .monaco-editor-tab {
-  top: 0;
+.tabs-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.monaco-editor .squiggly-hint {
-  background: none !important;
+.tabs-row button,
+.monaco-editor-tabs button {
+  padding: 6px 12px;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.monaco-editor-tabs {
+  display: flex;
+  margin-right: auto;
+}
+
+.monaco-editor-tabs button:not(:first-child) {
+  border-left: none;
+}
+
+.panel-display-tabs button:first-child,
+.tabs-row > button:first-child {
+  margin: 0 10px 0 0;
+}
+
+.restart-step-tab {
+  margin: 0 auto;
+}
+
+#mobile-layout .nav-tabs {
+  margin-left: 2px;
+  display: flex;
+}
+
+#mobile-layout .nav-tabs > li {
+  flex: 1;
+  text-align: center;
+}
+
+#mobile-layout .nav-tabs > li > a {
+  padding: 5px 10px;
+  text-decoration: none;
+  font-size: 0.8em;
+}
+
+#mobile-layout .nav-tabs > li > a:hover {
+  color: var(--gray-85);
+}
+
+#mobile-layout .tab-content {
+  height: calc(
+    100vh - var(--header-height, 0px) - var(--flash-message-height, 0px) - 69px
+  );
+  overflow-y: auto;
+}
+
+#mobile-layout .tab-pane {
+  height: 100%;
+  overflow: hidden;
+}
+
+#mobile-layout .nav-tabs > li.active > a {
+  color: var(--quaternary-color);
+  background-color: var(--quaternary-background);
+}
+
+#mobile-layout .monaco-editor-tabs {
+  padding: 10px;
+  width: 100%;
+}
+
+#mobile-layout .monaco-editor-tabs button {
+  flex: 1;
+  max-width: 50%;
 }

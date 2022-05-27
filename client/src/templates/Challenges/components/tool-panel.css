@@ -37,7 +37,7 @@
 
 .tool-panel-group .dropdown-menu {
   top: auto;
-  bottom: 100%;
+  bottom: 0;
   width: calc(100% + 2px);
   text-align: center;
   min-width: 240px;

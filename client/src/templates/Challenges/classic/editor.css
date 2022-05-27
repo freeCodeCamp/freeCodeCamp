@@ -22,26 +22,6 @@ textarea.inputarea {
   margin: 0 0 1.2rem;
 }
 
-.tabs-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.action-row button {
-  padding: 6px 12px;
-}
-
-.instruction-button {
-  margin: 0 30px;
-}
-
-.active-tab {
-  border-color: var(--secondary-color);
-  background-color: var(--secondary-color);
-  color: var(--secondary-background);
-}
-
 .editor-upper-jaw,
 .editor-lower-jaw {
   padding: 15px 15px 15px 0px;

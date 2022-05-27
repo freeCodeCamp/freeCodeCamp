@@ -45,11 +45,6 @@ const ActionRow = ({
       <div className='tabs-row'>
         {!isProjectBasedChallenge && (
           <button
-            className={
-              showInstructions
-                ? 'active-tab instruction-button'
-                : 'instruction-button'
-            }
             aria-expanded={showInstructions ? 'true' : 'false'}
             onClick={() => togglePane('showInstructions')}
           >
@@ -65,7 +60,6 @@ const ActionRow = ({
         <div className='panel-display-tabs'>
           <button
             aria-expanded={showConsole ? 'true' : 'false'}
-            className={showConsole ? 'active-tab' : ''}
             onClick={() => togglePane('showConsole')}
           >
             {t('learn.editor-tabs.console')}
@@ -73,7 +67,6 @@ const ActionRow = ({
           {hasNotes && (
             <button
               aria-expanded={showNotes ? 'true' : 'false'}
-              className={showNotes ? 'active-tab' : ''}
               onClick={() => togglePane('showNotes')}
             >
               {t('learn.editor-tabs.notes')}
@@ -81,7 +74,6 @@ const ActionRow = ({
           )}
           <button
             aria-expanded={showPreview ? 'true' : 'false'}
-            className={showPreview ? 'active-tab' : ''}
             onClick={() => togglePane('showPreview')}
           >
             {t('learn.editor-tabs.preview')}
