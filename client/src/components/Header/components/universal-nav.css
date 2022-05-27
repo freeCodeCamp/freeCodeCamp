@@ -208,7 +208,14 @@ button.nav-link[aria-disabled='true'] {
   top: 0;
   overflow-y: auto;
   scrollbar-width: auto;
-  height: 100%;
+  /* lang menu should always be full height */
+  height: 19.9rem;
+}
+
+/* main menu must be at least as tall as lang menu (when displayed) 
+   unless there isn't enough view port height */
+.nav-list.display-lang-menu {
+  min-height: min(19.9rem, calc(100vh - var(--header-height)));
 }
 
 .nav-lang-menu > button:hover {

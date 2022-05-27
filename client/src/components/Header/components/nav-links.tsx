@@ -260,7 +260,9 @@ export class NavLinks extends Component<NavLinksProps, {}> {
     ) : (
       <ul
         aria-labelledby='toggle-button-nav'
-        className={'nav-list' + (displayMenu ? ' display-menu' : '')}
+        className={`nav-list${displayMenu ? ' display-menu' : ''}${
+          isLanguageMenuDisplayed ? ' display-lang-menu' : ''
+        }`}
       >
         {isDonating ? (
           <li key='donate'>
