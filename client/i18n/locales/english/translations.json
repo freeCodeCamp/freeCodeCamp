@@ -321,7 +321,8 @@
     "sorry-keep-trying":"Sorry, your code does not pass. Keep trying.",
     "sorry-getting-there":"Sorry, your code does not pass. You're getting there.",
     "sorry-hang-in-there":"Sorry, your code does not pass. Hang in there.",
-    "sorry-dont-giveup":"Sorry, your code does not pass. Don't give up."
+    "sorry-dont-giveup":"Sorry, your code does not pass. Don't give up.",
+    "challenges-completed": "{{completedCount}} of {{totalChallenges}} challenges completed"
   },
   "donate": {
     "title": "Support our nonprofit",
