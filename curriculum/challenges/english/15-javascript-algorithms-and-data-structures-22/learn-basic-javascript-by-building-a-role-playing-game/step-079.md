@@ -230,11 +230,13 @@ function buyWeapon() {
   }
 }
 
+--fcc-editable-region--
 function sellWeapon() {
   if (inventory.length > 1) {
 
   }
 }
+--fcc-editable-region--
 
 function fightSlime() {
 }

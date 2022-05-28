@@ -98,7 +98,9 @@ assert(
 
 ```html
 <script>
+--fcc-editable-region--
   //console.log(document);
+--fcc-editable-region--
 </script>
 ```
 

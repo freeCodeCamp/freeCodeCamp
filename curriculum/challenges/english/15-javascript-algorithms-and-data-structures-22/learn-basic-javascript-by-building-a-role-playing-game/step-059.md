@@ -197,8 +197,10 @@ function buyHealth() {
   }
 }
 
+--fcc-editable-region--
 function buyWeapon() {
 }
+--fcc-editable-region--
 
 function fightSlime() {
 }

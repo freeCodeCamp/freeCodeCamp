@@ -149,6 +149,7 @@ window.onload = () => {
   });
 };
 
+--fcc-editable-region--
 const update = event => {
   const element = event.target;
   const value = element.value.replace(/\s/g, "");
@@ -156,6 +157,7 @@ const update = event => {
     console.log(value.slice(1));
   }
 };
+--fcc-editable-region--
 
 
 </script>

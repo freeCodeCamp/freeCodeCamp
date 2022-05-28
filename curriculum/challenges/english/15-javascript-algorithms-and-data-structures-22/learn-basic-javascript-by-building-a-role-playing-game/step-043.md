@@ -151,6 +151,7 @@ button1.onclick = goStore;
 button2.onclick = goCave;
 button3.onclick = fightDragon;
 
+--fcc-editable-region--
 function update(location) {  
   button1.innerText = location["button text"][0];
   button2.innerText = location["button text"][1];
@@ -160,6 +161,7 @@ function update(location) {
   button3.onclick = fightDragon;
   text.innerText = "You are in the town square. You see a sign that says \"Store\".";
 }
+--fcc-editable-region--
 
 function goTown() {
   update(locations[0]);

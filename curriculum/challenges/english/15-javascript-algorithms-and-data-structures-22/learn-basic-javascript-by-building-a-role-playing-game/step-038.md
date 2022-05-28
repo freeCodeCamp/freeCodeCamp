@@ -147,9 +147,11 @@ function update(location) {
   text.innerText = "You are in the town square. You see a sign that says \"Store\".";
 }
 
+--fcc-editable-region--
 function goTown() {
   update();
 }
+--fcc-editable-region--
 
 function goStore() {
 }

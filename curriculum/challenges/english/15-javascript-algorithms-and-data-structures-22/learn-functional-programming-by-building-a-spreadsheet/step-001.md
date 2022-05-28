@@ -62,8 +62,10 @@ assert(code.replace(/\s/g, '').includes('constinfixToFunction={}'));
 
 ```html
 <script>
+--fcc-editable-region--
 
 
+--fcc-editable-region--
 </script>
 ```
 

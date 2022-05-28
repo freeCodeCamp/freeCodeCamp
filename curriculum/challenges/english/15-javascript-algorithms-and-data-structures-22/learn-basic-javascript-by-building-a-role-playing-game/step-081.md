@@ -229,6 +229,7 @@ function buyWeapon() {
   }
 }
 
+--fcc-editable-region--
 function sellWeapon() {
   if (inventory.length > 1) {
     gold += 15;
@@ -236,6 +237,7 @@ function sellWeapon() {
     let currentWeapon;
   }
 }
+--fcc-editable-region--
 
 function fightSlime() {
 }

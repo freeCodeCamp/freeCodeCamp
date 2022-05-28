@@ -81,13 +81,10 @@ jobs:
           - 1025:1025
 
     steps:
-      # We use .npmrc to set the default version to 0, and prevents download during development.
-      # This installs it specifically in the CI runs.
       - name: Set Action Environment Variables
         run: |
           echo "CYPRESS_RECORD_KEY=${{ secrets.CYPRESS_RECORD_KEY }}" >> $GITHUB_ENV
           echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
-          echo "CYPRESS_INSTALL_BINARY=7.7.0" >> $GITHUB_ENV
 
       - name: Checkout Source Files
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3

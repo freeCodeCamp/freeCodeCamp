@@ -272,8 +272,10 @@ function goFight() {
   monsterHealthText.innerText = monsterHealth;
 }
 
+--fcc-editable-region--
 function attack() {
 }
+--fcc-editable-region--
 
 function dodge() {
 }

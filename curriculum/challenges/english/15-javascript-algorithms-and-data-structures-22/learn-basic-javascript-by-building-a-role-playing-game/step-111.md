@@ -160,6 +160,7 @@ const monsters = [
   }
 ];
 
+--fcc-editable-region--
 const locations = [
   {
     name: "town square",
@@ -192,6 +193,7 @@ const locations = [
     text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.'
   }
 ];
+--fcc-editable-region--
 
 // initialize buttons
 button1.onclick = goStore;
