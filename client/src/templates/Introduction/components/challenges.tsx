@@ -67,6 +67,7 @@ function Challenges({
                 challenge.isCompleted ? 'challenge-completed' : ''
               }`}
             >
+              <span className='fcc_sr_only'>Challenge</span>
               {i + 1}
             </Link>
           ) : (
