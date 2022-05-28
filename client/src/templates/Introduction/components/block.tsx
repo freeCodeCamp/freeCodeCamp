@@ -194,7 +194,8 @@ export class Block extends Component<BlockProps> {
             >
               <Caret />
               <div className='course-title'>
-                {`${isExpanded ? collapseText : expandText}`}
+                {`${isExpanded ? collapseText : expandText}`}{' '}
+                <span className='sr-only'>{blockTitle}</span>
               </div>
               <div className='map-title-completed course-title'>
                 {this.renderCheckMark(isBlockCompleted)}
