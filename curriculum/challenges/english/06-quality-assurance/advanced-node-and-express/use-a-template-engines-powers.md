@@ -38,11 +38,11 @@ In your Pug file, you're able to use a variable by referencing the variable name
   </body>
   ```
 
-Looking at our pug file 'index.pug' included in your project, we used the variables *title* and *message*.
+Looking at our pug file `index.pug` included in your project, we used the variables `title` and `message`.
 
-To pass those along from our server, you will need to add an object as a second argument to your *res.render* with the variables and their values. For example, pass this object along setting the variables for your index view: `{title: 'Hello', message: 'Please login'}`
+To pass those along from our server, you will need to add an object as a second argument to your `res.render` with the variables and their values. For example, pass this object along setting the variables for your index view: `{title: 'Hello', message: 'Please login'}`
 
-It should look like: `res.render(process.cwd() + '/views/pug/index', {title: 'Hello', message: 'Please login'});` Now refresh your page and you should see those values rendered in your view in the correct spot as laid out in your index.pug file!
+It should look like: `res.render(process.cwd() + '/views/pug/index', {title: 'Hello', message: 'Please login'});` Now refresh your page and you should see those values rendered in your view in the correct spot as laid out in your `index.pug` file!
 
 Submit your page when you think you've got it right. If you're running into errors, you can check out the [project completed up to this point](https://gist.github.com/camperbot/4af125119ed36e6e6a8bb920db0c0871).
 
