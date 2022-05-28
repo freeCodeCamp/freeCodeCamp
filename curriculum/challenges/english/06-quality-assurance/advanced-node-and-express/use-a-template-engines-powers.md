@@ -12,8 +12,9 @@ One of the greatest features of using a template engine is being able to pass va
 
 In your Pug file, you're able to use a variable by referencing the variable name as `#{variable_name}` inline with other text on an element or by using an equal sign on the element without a space such as `p=variable_name` which assigns the variable's value to the p element's text.
 
- Pug is all about using whitespace and tabs to show nested elements and cutting down on the amount of code needed to make a beautiful site. Here is an Example:
+ Pug is all about using whitespace and tabs to show nested elements and cutting down on the amount of code needed to make a beautiful site. Read the Pug documentation for more information on usage and syntax.
  
+ Here is an example: 
  ```html
  <!--Typing this using Pug-->
  head
