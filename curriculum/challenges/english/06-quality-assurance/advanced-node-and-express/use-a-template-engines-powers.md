@@ -42,7 +42,7 @@ To pass those along from our server, you will need to add an object as a second 
 
 It should look like: `res.render(process.cwd() + '/views/pug/index', {title: 'Hello', message: 'Please login'});` Now refresh your page and you should see those values rendered in your view in the correct spot as laid out in your index.pug file!
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the [project completed up to this point](https://gist.github.com/camperbot/4af125119ed36e6e6a8bb920db0c0871) here.
+Submit your page when you think you've got it right. If you're running into errors, you can check out the [project completed up to this point](https://gist.github.com/camperbot/4af125119ed36e6e6a8bb920db0c0871).
 
 # --hints--
 
