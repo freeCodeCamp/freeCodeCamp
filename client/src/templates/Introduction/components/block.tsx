@@ -193,9 +193,9 @@ export class Block extends Component<BlockProps> {
               }}
             >
               <Caret />
-              <h4 className='course-title'>
+              <div className='course-title'>
                 {`${isExpanded ? collapseText : expandText}`}
-              </h4>
+              </div>
               <div className='map-title-completed course-title'>
                 {this.renderCheckMark(isBlockCompleted)}
                 <span className='map-completed-count'>{`${completedCount}/${challengesWithCompleted.length}`}</span>
