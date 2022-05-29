@@ -222,6 +222,7 @@ function buyWeapon() {
   }
 }
 
+--fcc-editable-region--
 function sellWeapon() {
   if (inventory.length > 1) {
     gold += 15;
@@ -231,6 +232,7 @@ function sellWeapon() {
     text.innerText += " In your inventory you have: " + inventory;
   }
 }
+--fcc-editable-region--
 
 function fightSlime() {
 }

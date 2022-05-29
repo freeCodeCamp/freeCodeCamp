@@ -159,6 +159,9 @@ assert(typeof clearOutput === 'function');
     clearOutput();
     clearForm();
   };
+--fcc-editable-region--
+
+--fcc-editable-region--
 </script>
 ```
 

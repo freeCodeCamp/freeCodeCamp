@@ -33,12 +33,12 @@
     "validate-keys": "ts-node --project ../tsconfig.json ../tools/scripts/lint/validate-keys"
   },
   "dependencies": {
-    "@babel/plugin-proposal-export-default-from": "7.16.7",
+    "@babel/plugin-proposal-export-default-from": "7.17.12",
     "@babel/plugin-proposal-function-bind": "7.16.7",
     "@babel/polyfill": "7.12.1",
-    "@babel/preset-env": "7.17.10",
-    "@babel/preset-react": "7.16.7",
-    "@babel/standalone": "7.17.11",
+    "@babel/preset-env": "7.18.2",
+    "@babel/preset-react": "7.17.12",
+    "@babel/standalone": "7.18.3",
     "@fortawesome/fontawesome-svg-core": "6.1.1",
     "@fortawesome/free-brands-svg-icons": "6.1.1",
     "@fortawesome/free-solid-svg-icons": "6.1.1",
@@ -50,7 +50,7 @@
     "@loadable/component": "5.15.2",
     "@reach/router": "1.3.4",
     "@sentry/gatsby": "6.19.7",
-    "@stripe/react-stripe-js": "1.8.0",
+    "@stripe/react-stripe-js": "1.8.1",
     "@stripe/stripe-js": "1.29.0",
     "@types/react-scrollable-anchor": "0.6.1",
     "algoliasearch": "4.13.1",
@@ -129,9 +129,9 @@
     "validator": "13.7.0"
   },
   "devDependencies": {
-    "@babel/types": "7.17.10",
-    "@codesee/babel-plugin-instrument": "0.265.0",
-    "@codesee/tracker": "0.265.0",
+    "@babel/types": "7.18.2",
+    "@codesee/babel-plugin-instrument": "0.272.0",
+    "@codesee/tracker": "0.272.0",
     "@testing-library/jest-dom": "5.16.4",
     "@testing-library/react": "12.1.5",
     "autoprefixer": "10.4.7",

@@ -109,7 +109,9 @@ const evalFormula = (x, cells) => {
   const idToText = id => cells.find(cell => cell.id === id).value;
   const rangeRegex = /([A-J])([1-9][0-9]?):([A-J])([1-9][0-9]?)/gi;
   const rangeFromString = (n1, n2) => range(parseInt(n1), parseInt(n2));
+--fcc-editable-region--
   const elemValue = n => c => ""
+--fcc-editable-region--
   const addChars = c1 => c2 => n => charRange(c1, c2).map(elemValue(n));
   const varRangeExpanded = x.replace(rangeRegex, (_, c1, n1, c2, n2) =>
     rangeFromString(n1, n2).map(addChars(c1)(c2))

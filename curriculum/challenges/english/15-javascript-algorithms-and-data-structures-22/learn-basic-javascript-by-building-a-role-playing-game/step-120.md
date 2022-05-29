@@ -307,7 +307,9 @@ function attack() {
     fighting === 2 ? winGame() : defeatMonster();
   }
 }
+--fcc-editable-region--
 
+--fcc-editable-region--
 function dodge() {
   text.innerText = "You dodge the attack from the " + monsters[fighting].name + ".";
 }

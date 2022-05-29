@@ -139,8 +139,11 @@ assert(
     consumed.innerHTML = `${total} Consumed Calories`;
     output.appendChild(consumed);
 
+--fcc-editable-region--
     output.setAttribute('class', 'bordered-class');
+    
   }
+--fcc-editable-region--
 </script>
 ```
 

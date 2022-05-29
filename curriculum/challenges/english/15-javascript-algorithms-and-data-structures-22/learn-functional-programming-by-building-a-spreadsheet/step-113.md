@@ -117,10 +117,12 @@ const evalFormula = (x, cells) => {
     rangeFromString(n1, n2).map(addChars(c1)(c2))
   );
   const varRegex = /[A-J][1-9][0-9]?/gi;
+--fcc-editable-region--
   const varExpanded = varRangeExpanded.replace(
     varRegex,
     match => ""
   );
+--fcc-editable-region--
   
   const functionExpanded = applyFn(varExpanded);
   return functionExpanded === x

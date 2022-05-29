@@ -363,6 +363,9 @@ function restart() {
   xpText.innerText = xp;
   goTown();
 }
+--fcc-editable-region--
+
+--fcc-editable-region--
 
 </script>
 ```

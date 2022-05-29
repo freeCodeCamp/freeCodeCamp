@@ -159,6 +159,9 @@ assert(typeof clearForm === 'function');
     document.getElementById('output').innerHTML = '';
     document.getElementById('output').classList.remove('bordered-class');
   };
+--fcc-editable-region--
+
+--fcc-editable-region--
 </script>
 ```
 

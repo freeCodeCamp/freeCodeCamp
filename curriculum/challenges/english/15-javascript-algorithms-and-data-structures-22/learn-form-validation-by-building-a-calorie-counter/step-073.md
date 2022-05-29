@@ -170,6 +170,7 @@ assert(
     document.getElementById('output').classList.remove('bordered-class');
   };
 
+--fcc-editable-region--
   const clearForm = () => {
     const foodInputs = Array.from(
       document.getElementsByClassName('food-control')
@@ -177,6 +178,7 @@ assert(
 
     foodInputs.forEach(input => input.remove());
   };
+--fcc-editable-region--
 </script>
 ```
 

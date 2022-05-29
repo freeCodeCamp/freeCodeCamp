@@ -216,7 +216,9 @@ function buyWeapon() {
     button2.onclick = sellWeapon;
   }
 }
+--fcc-editable-region--
 
+--fcc-editable-region--
 function fightSlime() {
 }
 

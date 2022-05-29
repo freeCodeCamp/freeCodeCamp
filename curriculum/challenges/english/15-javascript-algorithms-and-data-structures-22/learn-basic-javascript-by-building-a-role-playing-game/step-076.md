@@ -203,6 +203,7 @@ function buyHealth() {
   }
 }
 
+--fcc-editable-region--
 function buyWeapon() {
   if (currentWeapon < weapons.length - 1) {
     if (gold >= 30) {
@@ -220,6 +221,7 @@ function buyWeapon() {
     text.innerText = "You already have the most powerful weapon!";
   }
 }
+--fcc-editable-region--
 
 function fightSlime() {
 }

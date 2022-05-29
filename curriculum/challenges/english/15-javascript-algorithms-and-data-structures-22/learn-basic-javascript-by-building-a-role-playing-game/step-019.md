@@ -133,7 +133,9 @@ function goStore() {
 function goCave() {
   console.log("Going to cave.");
 }
+--fcc-editable-region--
 
+--fcc-editable-region--
 </script>
 ```
 

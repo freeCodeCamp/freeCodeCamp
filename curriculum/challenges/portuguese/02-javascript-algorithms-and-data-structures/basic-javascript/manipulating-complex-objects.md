@@ -29,21 +29,7 @@ const ourMusic = [
 ];
 ```
 
-Este é um array que contém um objeto dentro dele. O objeto possui vários pedaços de <dfn>metadados</dfn> sobre um álbum. Também possui um array aninhado `formats`. Se você quiser adicionar mais álbuns, você pode fazer isso adicionando os discos ao array de alto nível. Objetos armazenam dados em uma propriedade, a qual possui um formato de chave-valor. No exemplo acima, `"artist": "Daft Punk"` é uma propriedade que tem uma chave `artist` e um valor de `Daft Punk`. [JavaScript Object Notation](http://www.json.org/) ou `JSON` é um formato de intercâmbio de dados relacionados usado para armazenar dados.
-
-```json
-{
-  "artist": "Daft Punk",
-  "title": "Homework",
-  "release_year": 1997,
-  "formats": [ 
-    "CD",
-    "Cassette",
-    "LP"
-  ],
-  "gold": true
-}
-```
+Este é um array que contém um objeto dentro dele. O objeto possui vários pedaços de <dfn>metadados</dfn> sobre um álbum. Também possui um array aninhado `formats`. Se você quiser adicionar mais álbuns, você pode fazer isso adicionando os discos ao array de alto nível. Objetos armazenam dados em uma propriedade, a qual possui um formato de chave-valor. No exemplo acima, `"artist": "Daft Punk"` é uma propriedade que tem uma chave `artist` e um valor de `Daft Punk`.
 
 **Observação:** você precisará colocar uma vírgula após cada objeto no array, a não ser que ele seja o último objeto no array.
 
