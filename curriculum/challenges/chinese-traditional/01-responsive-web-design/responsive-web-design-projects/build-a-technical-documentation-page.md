@@ -30,6 +30,8 @@ dashedName: build-a-technical-documentation-page
 
 完成需求並通過下面的所有測試來完成這個項目。 賦予它你自己的個人風格。 編程愉快！
 
+**注意：** 請在你的 HTML 中添加 `<link rel="stylesheet" href="styles.css">` 以鏈接你的樣式表並應用你的 CSS
+
 # --hints--
 
 你應該有一個 `id` 爲 `main-doc` 的 `main` 元素。
@@ -142,7 +144,7 @@ assert(els.length === 1)
 你應該至少有一個 class 爲 `nav-link` 的 `a` 元素。
 
 ```js
-const els = document.querySelectorAll('a[class="nav-link"]')
+const els = document.querySelectorAll('a.nav-link')
 assert(els.length >= 1)
 ```
 
@@ -222,7 +224,9 @@ assert(!!el && left1 >= -15 && left1 <= 15 && left2 >= -15 && left2 <= 15)
 你的技術文檔項目應該使用至少一個媒體查詢。
 
 ```js
-assert.isAtLeast(new __helpers.CSSHelp(document).getCSSRules('media')?.length, 1);
+const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
+const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
+assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 ```
 
 # --seed--

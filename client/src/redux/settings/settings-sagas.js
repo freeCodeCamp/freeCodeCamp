@@ -1,5 +1,13 @@
 import { omit } from 'lodash-es';
-import { call, delay, put, takeLatest, takeEvery } from 'redux-saga/effects';
+import {
+  call,
+  put,
+  select,
+  takeLatest,
+  takeEvery,
+  debounce
+} from 'redux-saga/effects';
+import store from 'store';
 
 import { createFlashMessage } from '../../components/Flash/redux';
 import {
@@ -8,8 +16,16 @@ import {
   putUpdateMyProfileUI,
   putUpdateMyUsername,
   putUpdateUserFlag,
-  putVerifyCert
+  putUpdateMySocials,
+  putUpdateMyHonesty,
+  putUpdateMyQuincyEmail,
+  putVerifyCert,
+  putUpdateMyPortfolio,
+  putUpdateMyTheme,
+  putUpdateMySound
 } from '../../utils/ajax';
+import { certMap } from '../../resources/cert-and-project-map';
+import { completedChallengesSelector } from '..';
 import {
   updateUserFlagComplete,
   updateUserFlagError,
@@ -22,7 +38,19 @@ import {
   submitProfileUIComplete,
   submitProfileUIError,
   verifyCertComplete,
-  verifyCertError
+  verifyCertError,
+  updateMySocialsComplete,
+  updateMySocialsError,
+  updateMyHonestyError,
+  updateMyHonestyComplete,
+  updateMyQuincyEmailComplete,
+  updateMyQuincyEmailError,
+  updateMyPortfolioError,
+  updateMyPortfolioComplete,
+  updateMyThemeComplete,
+  updateMyThemeError,
+  updateMySoundComplete,
+  updateMySoundError
 } from './';
 
 function* submitNewAboutSaga({ payload }) {
@@ -67,9 +95,69 @@ function* updateUserFlagSaga({ payload: update }) {
   }
 }
 
+function* updateMySocialsSaga({ payload: update }) {
+  try {
+    const response = yield call(putUpdateMySocials, update);
+    yield put(updateMySocialsComplete({ ...response, payload: update }));
+    yield put(createFlashMessage({ ...response }));
+  } catch (e) {
+    yield put(updateMySocialsError);
+  }
+}
+
+function* updateMySoundSaga({ payload: update }) {
+  try {
+    store.set('fcc-sound', !!update.sound);
+    const response = yield call(putUpdateMySound, update);
+    yield put(updateMySoundComplete({ ...response, payload: update }));
+    yield put(createFlashMessage({ ...response }));
+  } catch (e) {
+    yield put(updateMySoundError);
+  }
+}
+
+function* updateMyThemeSaga({ payload: update }) {
+  try {
+    const response = yield call(putUpdateMyTheme, update);
+    yield put(updateMyThemeComplete({ ...response, payload: update }));
+    yield put(createFlashMessage({ ...response }));
+  } catch (e) {
+    yield put(updateMyThemeError);
+  }
+}
+
+function* updateMyHonestySaga({ payload: update }) {
+  try {
+    const response = yield call(putUpdateMyHonesty, update);
+    yield put(updateMyHonestyComplete({ ...response, payload: update }));
+    yield put(createFlashMessage({ ...response }));
+  } catch (e) {
+    yield put(updateMyHonestyError);
+  }
+}
+
+function* updateMyQuincyEmailSaga({ payload: update }) {
+  try {
+    const response = yield call(putUpdateMyQuincyEmail, update);
+    yield put(updateMyQuincyEmailComplete({ ...response, payload: update }));
+    yield put(createFlashMessage({ ...response }));
+  } catch (e) {
+    yield put(updateMyQuincyEmailError);
+  }
+}
+
+function* updateMyPortfolioSaga({ payload: update }) {
+  try {
+    const response = yield call(putUpdateMyPortfolio, update);
+    yield put(updateMyPortfolioComplete({ ...response, payload: update }));
+    yield put(createFlashMessage({ ...response }));
+  } catch (e) {
+    yield put(updateMyPortfolioError);
+  }
+}
+
 function* validateUsernameSaga({ payload }) {
   try {
-    yield delay(500);
     const { exists } = yield call(getUsernameExists, payload);
     yield put(validateUsernameComplete(exists));
   } catch (e) {
@@ -78,6 +166,28 @@ function* validateUsernameSaga({ payload }) {
 }
 
 function* verifyCertificationSaga({ payload }) {
+  // check redux if can claim cert before calling backend
+  const completedChallenges = yield select(completedChallengesSelector);
+  const currentCert = certMap.find(cert => cert.certSlug === payload);
+  const currentCertIds = currentCert?.projects.map(project => project.id);
+  const certTitle = currentCert?.title || payload;
+
+  const flash = {
+    type: 'info',
+    message: 'flash.incomplete-steps',
+    variables: { name: certTitle }
+  };
+
+  const canClaimCert = currentCertIds.every(id =>
+    completedChallenges.find(challenge => challenge.id === id)
+  );
+
+  if (!canClaimCert) {
+    yield put(createFlashMessage(flash));
+    return;
+  }
+
+  // redux says challenges are complete, call back end
   try {
     const { response, isCertMap, completedChallenges } = yield call(
       putVerifyCert,
@@ -104,9 +214,15 @@ function* verifyCertificationSaga({ payload }) {
 export function createSettingsSagas(types) {
   return [
     takeEvery(types.updateUserFlag, updateUserFlagSaga),
+    takeEvery(types.updateMySocials, updateMySocialsSaga),
+    takeEvery(types.updateMyHonesty, updateMyHonestySaga),
+    takeEvery(types.updateMySound, updateMySoundSaga),
+    takeEvery(types.updateMyTheme, updateMyThemeSaga),
+    takeEvery(types.updateMyQuincyEmail, updateMyQuincyEmailSaga),
+    takeEvery(types.updateMyPortfolio, updateMyPortfolioSaga),
     takeLatest(types.submitNewAbout, submitNewAboutSaga),
     takeLatest(types.submitNewUsername, submitNewUsernameSaga),
-    takeLatest(types.validateUsername, validateUsernameSaga),
+    debounce(2000, types.validateUsername, validateUsernameSaga),
     takeLatest(types.submitProfileUI, submitProfileUISaga),
     takeEvery(types.verifyCert, verifyCertificationSaga)
   ];

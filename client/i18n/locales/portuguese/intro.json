@@ -67,7 +67,7 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "Design responsivo para a web",
+    "title": "Design responsivo para a web (novo)",
     "intro": [
       "Nessa certificação de Design responsivo para a web, você aprenderá as linguagens que os desenvolvedores usam para construir sites: HTML (Linguagem de Marcação de Hipertexto) para o conteúdo e CSS (Folha de Estilo em Cascata) para o design.",
       "Primeiro, você vai construir um aplicativo de fotos de gato para aprender o básico de HTML e CSS. Mais tarde, você aprenderá técnicas modernas como variáveis CSS construindo um pinguim, e melhores práticas de acessibilidade criando um formulário web.",
@@ -296,23 +296,68 @@
           "É hora de colocar suas novas habilidades em JavaScript para funcionar. Estes projetos são similares aos desafios de programação de algoritmos que você fez antes — só que muito mais difíceis.",
           "Conclua estes 5 projetos de JavaScript para ganhar a certificação de Algoritmos e Estruturas de Dados do JavaScript."
         ]
-      },
-      "basic-javascript-rpg-game": {
-        "title": "Jogo básico de RPG em JavaScript",
+      }
+    }
+  },
+  "2022/javascript-algorithms-and-data-structures": {
+    "title": "Algoritmos e estruturas de dados em JavaScript (Beta)",
+    "intro": [
+      "placeholder",
+      "placeholder"
+    ],
+    "note": "",
+    "blocks": {
+      "build-a-caesars-cipher-project": {
+        "title": "Projeto de criação da Cifra de César",
         "intro": [
           "",
           ""
         ]
       },
-      "intermediate-javascript-calorie-counter": {
-        "title": "Contador de calorias JavaScript Intermediário",
+      "build-a-cash-register-project": {
+        "title": "Projeto de criação de Caixa registradora",
         "intro": [
           "",
           ""
         ]
       },
-      "functional-programming-spreadsheet": {
-        "title": "Planilha de programação funcional",
+      "build-a-palindrome-checker-project": {
+        "title": "Projeto de criação de Verificador de palíndromo",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "build-a-roman-numeral-converter-project": {
+        "title": "Projeto de criação de Conversor de números romanos",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "build-a-telephone-number-validator-project": {
+        "title": "Projeto de criação de Validador de números de telefone",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "learn-basic-javascript-by-building-a-role-playing-game": {
+        "title": "Aprenda JavaScript básico criando um jogo de RPG",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "learn-form-validation-by-building-a-calorie-counter": {
+        "title": "Aprenda validação de formulários construindo um contador de calorias",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "learn-functional-programming-by-building-a-spreadsheet": {
+        "title": "Aprenda programação funcional criando uma planilha",
         "intro": [
           "",
           ""
@@ -781,8 +826,8 @@
     "legacy-header": "Cursos anteriores",
     "legacy-desc": "Estes cursos não fazem mais parte do caminho de certificação, mas ainda estão disponíveis para você continuar aprendendo.",
     "legacy-go-back": "Vá para a versão atual do currículo.",
-    "new-rwd-desc": "We have updated our Responsive Web Design Curriculum. If you were previously working on the RWD curriculum, your progress is still saved! You can find it under the Legacy Responsive Web Design section.",
-    "new-rwd-article": "We encourage you to read about the changes we made and consider exploring the updated curriculum.",
+    "new-rwd-desc": "Atualizamos nosso currículo de Design responsivo para a web. Se você estava fazendo o currículo anterior, seu progresso ainda está salvo! Você pode encontrá-lo na seção Design responsivo para a web legado.",
+    "new-rwd-article": "Encorajamos você a ler sobre as mudanças que fizemos e a explorar o currículo atualizado.",
     "viewing-upcoming-change": "Você está vendo uma página em estágio beta. ",
     "go-back-to-learn": "Voltar à versão estável do currículo.",
     "read-database-cert-article": "Leia esta publicação no fórum antes de prosseguir.",

@@ -5,7 +5,10 @@ import isURL from 'validator/lib/isURL';
 
 import { isValidUsername } from '../../../../utils/validate';
 import { alertTypes } from '../../common/utils/flash.js';
-import { deprecatedEndpoint } from '../utils/deprecatedEndpoint';
+import {
+  deprecatedEndpoint,
+  temporarilyDisabledEndpoint
+} from '../utils/disabled-endpoints';
 import { ifNoUser401, createValidatorErrorHandler } from '../utils/middleware';
 
 const log = debug('fcc:boot:settings');
@@ -18,13 +21,15 @@ export default function settingsController(app) {
   api.put('/update-privacy-terms', ifNoUser401, updatePrivacyTerms);
 
   api.post('/refetch-user-completed-challenges', deprecatedEndpoint);
-  api.post(
-    '/update-my-current-challenge',
-    ifNoUser401,
-    updateMyCurrentChallengeValidators,
-    createValidatorErrorHandler(alertTypes.danger),
-    updateMyCurrentChallenge
-  );
+  // Re-enable once we can handle the traffic
+  // api.post(
+  //   '/update-my-current-challenge',
+  //   ifNoUser401,
+  //   updateMyCurrentChallengeValidators,
+  //   createValidatorErrorHandler(alertTypes.danger),
+  //   updateMyCurrentChallenge
+  // );
+  api.post('/update-my-current-challenge', temporarilyDisabledEndpoint);
   api.put('/update-my-portfolio', ifNoUser401, updateMyPortfolio);
   api.put('/update-my-theme', ifNoUser401, updateMyTheme);
   api.put('/update-my-about', ifNoUser401, updateMyAbout);
@@ -78,29 +83,31 @@ function updateMyEmail(req, res, next) {
     .subscribe(message => res.json({ message }), next);
 }
 
-const updateMyCurrentChallengeValidators = [
-  check('currentChallengeId')
-    .isMongoId()
-    .withMessage('currentChallengeId is not a valid challenge ID')
-];
+// Re-enable once we can handle the traffic
+// const updateMyCurrentChallengeValidators = [
+//   check('currentChallengeId')
+//     .isMongoId()
+//     .withMessage('currentChallengeId is not a valid challenge ID')
+// ];
 
-function updateMyCurrentChallenge(req, res, next) {
-  const {
-    user,
-    body: { currentChallengeId }
-  } = req;
-  return user.updateAttribute(
-    'currentChallengeId',
-    currentChallengeId,
-    (err, updatedUser) => {
-      if (err) {
-        return next(err);
-      }
-      const { currentChallengeId } = updatedUser;
-      return res.status(200).json(currentChallengeId);
-    }
-  );
-}
+// Re-enable once we can handle the traffic
+// function updateMyCurrentChallenge(req, res, next) {
+//   const {
+//     user,
+//     body: { currentChallengeId }
+//   } = req;
+//   return user.updateAttribute(
+//     'currentChallengeId',
+//     currentChallengeId,
+//     (err, updatedUser) => {
+//       if (err) {
+//         return next(err);
+//       }
+//       const { currentChallengeId } = updatedUser;
+//       return res.status(200).json(currentChallengeId);
+//     }
+//   );
+// }
 
 function updateMyPortfolio(...args) {
   const portfolioKeys = ['id', 'title', 'description', 'url', 'image'];

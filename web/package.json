@@ -26,12 +26,12 @@
     "prepare": "npm --prefix ../ run build:curriculum && npm --prefix ../curriculum-server/ run source-curriculum"
   },
   "dependencies": {
-    "@monaco-editor/react": "^4.4.2",
-    "next": "^12.1.5",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "@monaco-editor/react": "4.4.5",
+    "next": "12.1.6",
+    "react": "18.1.0",
+    "react-dom": "18.1.0"
   },
   "devDependencies": {
-    "concurrently": "^7.1.0"
+    "concurrently": "7.2.1"
   }
 }

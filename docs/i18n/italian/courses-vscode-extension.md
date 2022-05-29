@@ -1,49 +1,49 @@
-# Courses VSCode Extension
+# Estensione di VSCode per i corsi
 
-This details the maintenance guidelines for the [freeCodeCamp/courses-vscode-extension](https://github.com/freeCodeCamp/courses-vscode-extension) repository which contains the source code for the [freeCodeCamp - Courses](https://marketplace.visualstudio.com/items?itemName=freeCodeCamp.freecodecamp-courses) extension.
+Questo dettaglia le linee guida della manutenzione del repo [freeCodeCamp/courses-vscode-extension](https://github.com/freeCodeCamp/courses-vscode-extension) che contiene il codice sorgente per l'estensione [freeCodeCamp - Courses](https://marketplace.visualstudio.com/items?itemName=freeCodeCamp.freecodecamp-courses).
 
-## Publishing the Extension
+## Pubblicazione dell'estensione
 
-A GitHub Action automagically publishes the extension to the Visual Studio Marketplace, on pushes to the `prod` branch.
+Una azione GitHub pubblica l'estensione automagicamente su Visual Studio marketplace quando il branch `prod` viene aggiornato.
 
-Ensure the `main` branch is checked out.
+Assicurati di essere sul branch `main`.
 
 ```bash
 git checkout main
 ```
 
-Update the local repository with `upstream`, and reset `main`.
+Aggiorna il repository locale con `upstream`, e ripristina `main`.
 
 ```bash
 git fetch upstream
 git reset --hard upstream/main
 ```
 
-Checkout the `prod` branch.
+Vai sul branch `prod`.
 
 ```bash
 git checkout prod
 ```
 
-Merge the commits wanted for deployment into `prod`.
+Unisci i commit da distribuire in `prod`.
 
 ```bash
 git merge main
 ```
 
-Push the local branch to `upstream`.
+Fai il push del ramo locale a `upstream`.
 
 ```bash
 git push upstream
 ```
 
-> [!NOTE] Pushing to `upstream` requires write access to the `freeCodeCamp/courses-vscode-extension` repository.
+> [!NOTE] Fare il push ad `upstream` richieste il permesso di scrittura al repo `freeCodeCamp/courses-vscode-extension`.
 
-## Manually Publishing the Extension
+## Pubblicare l'estensione manualmente
 
-A manual upload to the Visual Studio Marketplace can be achieved, by following these steps:
+Un upload manuale a Visual Studio Code può essere fatto, seguendo questi step:
 
-1. Visit https://marketplace.visualstudio.com/ and sign in
-2. Navigate to the [freeCodeCamp Publisher page](https://marketplace.visualstudio.com/manage/publishers/freecodecamp)
-3. Select the relevant extension, and select `Update`
-4. Upload the file from your local files
+1. Visita https://marketplace.visualstudio.com/ e fai l'accesso
+2. Naviga alla pagina [freeCodeCamp Publisher page](https://marketplace.visualstudio.com/manage/publishers/freecodecamp)
+3. Seleziona l'estensione rilevante, e seleziona `Update`
+4. Carica il file dal tuo file locale

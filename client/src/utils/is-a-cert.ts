@@ -8,6 +8,10 @@ export function isOldRespCert(superBlock: string): boolean {
   return superBlock === SuperBlocks.RespWebDesign;
 }
 
+export function isNewJsCert(superBlock: string): boolean {
+  return superBlock === SuperBlocks.JsAlgoDataStructNew;
+}
+
 export function isRelationalDbCert(superBlock: string): boolean {
   return superBlock === SuperBlocks.RelationalDb;
 }

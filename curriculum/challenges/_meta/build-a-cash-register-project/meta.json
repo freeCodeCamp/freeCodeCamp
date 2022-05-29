@@ -1,0 +1,16 @@
+{
+    "name": "Build a Cash Register Project",
+    "isUpcomingChange": false,
+    "usesMultifileEditor": false,
+    "order": 14,
+    "time": "30 hours",
+    "template": "",
+    "required": [],
+    "superBlock": "2022/javascript-algorithms-and-data-structures",
+    "challengeOrder": [
+        [
+            "aa2e6f85cab2ab736c9a9b24",
+            "Build a Cash Register"
+          ]
+    ]}
+  

@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: checkout
         id: checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
         with:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.event.pull_request.head.ref }}
@@ -31,7 +31,7 @@ jobs:
         uses: Codesee-io/codesee-detect-languages-action@latest
 
       - name: Configure JDK 16
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@860f60056505705214d223b91ed7a30f173f6142 # tag=v3
         if: ${{ fromJSON(steps.detect-languages.outputs.languages).java }}
         with:
           java-version: '16'
@@ -40,14 +40,14 @@ jobs:
       # CodeSee Maps Go support uses a static binary so there's no setup step required.
 
       - name: Configure Node.js 16
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@17f8bd926464a1afa4c6a11669539e9c1ba77048 # tag=v3
         if: ${{ fromJSON(steps.detect-languages.outputs.languages).javascript }}
         with:
           node-version: '16'
           cache: npm
 
       - name: Configure Python 3.x
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@98f2ad02fd48d057ee3b4d4f66525b231c3e52b6 # tag=v3
         if: ${{ fromJSON(steps.detect-languages.outputs.languages).python }}
         with:
           python-version: '3.x'

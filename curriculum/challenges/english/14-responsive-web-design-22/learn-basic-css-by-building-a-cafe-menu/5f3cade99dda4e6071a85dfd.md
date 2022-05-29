@@ -7,7 +7,7 @@ dashedName: step-47
 
 # --description--
 
-You will come back to the styling the menu in a few steps, but for now, go ahead add a second `section` element below the first for displaying the desserts offered by the cafe.
+You will come back to styling the menu in a few steps, but for now, go ahead and add a second `section` element below the first for displaying the desserts offered by the cafe.
 
 # --hints--
 

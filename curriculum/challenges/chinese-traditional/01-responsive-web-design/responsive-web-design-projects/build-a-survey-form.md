@@ -31,6 +31,8 @@ dashedName: build-a-survey-form
 
 完成需求並通過下面的所有測試來完成這個項目。 賦予它你自己的個人風格。 編程愉快！
 
+**注意：** 請在你的 HTML 中添加 `<link rel="stylesheet" href="styles.css">` 以鏈接你的樣式表並應用你的 CSS
+
 # --hints--
 
 你應該有一個 `id` 爲 `title` 的 `h1` 元素。
@@ -61,7 +63,7 @@ const el = document.getElementById('description')
 assert(!!el && el.innerText.length > 0)
 ```
 
-你應該有一個 `id` 爲 `survey-form` 的 `form` 元素
+你應該有一個 `id` 爲 `survey-form` 的 `form` 元素。
 
 ```js
 const el = document.getElementById('survey-form')
@@ -96,7 +98,7 @@ const el = document.querySelector('#survey-form #name')
 assert(!!el)
 ```
 
-你應該有一個 `id` 爲 `email` 的 `input` 元素
+你應該有一個 `id` 爲 `email` 的 `input` 元素。
 
 ```js
 const el = document.getElementById('email')
@@ -345,7 +347,7 @@ const el = document.getElementById('submit')
 assert(!!el && (el.tagName === 'INPUT' || el.tagName === 'BUTTON'))
 ```
 
-你的 `#submit` 元素應該具有 `type` 爲 `submit`
+你的 `#submit` 元素應該具有 `type` 爲 `submit`。
 
 ```js
 const el = document.getElementById('submit')
