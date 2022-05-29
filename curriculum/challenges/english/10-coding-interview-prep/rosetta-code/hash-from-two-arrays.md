@@ -15,9 +15,10 @@ Example:
 ```js
 firstArr = [1, 2, 3]
 secondArr = ["a", "b", "c"]
+const hashObj = arrToObj(firstArr, secondArr);
 ```
 
-Creating Hash object from the arrays above will provide this `hashObj = {1: "a", 2: "b", 3: "c"}` result.
+The hash object created from the arrays above will be `{1: "a", 2: "b", 3: "c"}`.
 
 # --hints--
 
