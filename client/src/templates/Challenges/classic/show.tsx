@@ -139,6 +139,15 @@ const BASE_LAYOUT = {
   testsPane: { flex: 0.3 }
 };
 
+// Used to prevent monaco from stealing mouse events on the content widget
+// so they can trigger their default actions. (Issue #46166)
+const handleContentWidgetMouseEvents = (e: MouseEvent): void => {
+  const target = e.target as HTMLElement;
+  if (target?.closest('.editor-upper-jaw')) {
+    e.stopPropagation();
+  }
+};
+
 // Component
 class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   static displayName: string;
@@ -224,6 +233,18 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       }
     } = this.props;
     this.initializeComponent(title);
+    // Bug fix for the monaco content widget and touch devices/right mouse
+    // click. (Issue #46166)
+    document.addEventListener(
+      'mousedown',
+      handleContentWidgetMouseEvents,
+      true
+    );
+    document.addEventListener(
+      'contextmenu',
+      handleContentWidgetMouseEvents,
+      true
+    );
   }
 
   componentDidUpdate(prevProps: ShowClassicProps) {
@@ -301,6 +322,16 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     const { createFiles, cancelTests } = this.props;
     createFiles([]);
     cancelTests();
+    document.removeEventListener(
+      'mousedown',
+      handleContentWidgetMouseEvents,
+      true
+    );
+    document.removeEventListener(
+      'contextmenu',
+      handleContentWidgetMouseEvents,
+      true
+    );
   }
 
   getChallenge = () => this.props.data.challengeNode.challenge;
