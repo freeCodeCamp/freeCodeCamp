@@ -90,12 +90,14 @@ assert(/const\s*meal\s*=\s*total\[0\]/.test(code));
 
 ```html
 <script>
+--fcc-editable-region--
   document.getElementById('calorie-form').onsubmit = calculate;
 
   function calculate(e) {
     e.preventDefault();
     const total = Array.from(document.getElementsByClassName('cal-control'));
   }
+--fcc-editable-region--
 </script>
 ```
 

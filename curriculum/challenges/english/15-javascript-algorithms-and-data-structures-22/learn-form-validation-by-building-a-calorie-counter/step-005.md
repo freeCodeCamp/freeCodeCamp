@@ -96,9 +96,11 @@ assert(calculate.toString().match(/function calculate\(\s*e\)\s*\{\s*\}/));
 
 ```html
 <script>
+--fcc-editable-region--
   document.getElementById('calorie-form').onsubmit = calculate;
 
   function calculate() {}
+--fcc-editable-region--
 </script>
 ```
 

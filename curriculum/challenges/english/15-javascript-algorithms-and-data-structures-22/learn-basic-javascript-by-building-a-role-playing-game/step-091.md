@@ -264,8 +264,10 @@ function fightDragon() {
   goFight();
 }
 
+--fcc-editable-region--
 function goFight() {
 }
+--fcc-editable-region--
 
 function attack() {
 }

@@ -144,7 +144,7 @@ assert(els.length === 1)
 Você deve ter pelo menos um elemento `a` com a classe `nav-link`.
 
 ```js
-const els = document.querySelectorAll('a[class="nav-link"]')
+const els = document.querySelectorAll('a.nav-link')
 assert(els.length >= 1)
 ```
 

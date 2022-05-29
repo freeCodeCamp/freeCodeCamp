@@ -30,6 +30,8 @@ dashedName: build-a-product-landing-page
 
 上記のユーザーストーリーを満たして、以下のすべてのテストに合格してこのプロジェクトを完成させてください。 あなた独自のスタイルを加えましょう。 ハッピーコーディング！
 
+**注:** スタイルシートをリンクして CSS を適用するため、HTML 内に `<link rel="stylesheet" href="styles.css">` を必ず追加してください
+
 # --hints--
 
 `id` が `header` である `header` 要素が 1 つ必要です
@@ -138,7 +140,7 @@ const el = document.getElementById('form')
 assert(!!el && el.tagName === 'FORM')
 ```
 
-`id` が `email` である `input` 要素が 1 つ必要です
+`id` の値が `email` に設定されている `input` 要素が 1 つ必要です
 
 ```js
 const el = document.getElementById('email')
@@ -204,10 +206,41 @@ assert(!!el && el.name === 'email')
 `#nav-bar` は常にビューポートの上部にある必要があります
 
 ```js
-const el = document.getElementById('nav-bar')
-const top1 = el?.offsetTop
-const top2 = el?.offsetTop
-assert(!!el && top1 >= -15 && top1 <= 15 && top2 >= -15 && top2 <= 15)
+(async () => {
+  const timeout = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
+
+  const header = document.getElementById('header');
+  const headerChildren = header.children;
+  const navbarCandidates = [header, ...headerChildren];
+
+  // Return smallest top position of all navbar candidates
+  const getNavbarPosition = (candidates = []) => {
+    return candidates.reduce(
+      (min, candidate) =>
+        Math.min(min, Math.abs(candidate?.getBoundingClientRect().top)),
+      Infinity
+    );
+  };
+  assert.approximately(
+    getNavbarPosition(navbarCandidates),
+    0,
+    15,
+    '#header or one of its children should be at the top of the viewport '
+  );
+
+  window.scroll(0, 500);
+  await timeout(1);
+
+  assert.approximately(
+    getNavbarPosition(navbarCandidates),
+    0,
+    15,
+    '#header or one of its children should be at the top of the ' +
+      'viewport even after scrolling '
+  );
+
+  window.scroll(0, 0);
+})();
 ```
 
 プロダクトランディングページに、少なくとも 1 つのメディアクエリが使われている必要があります

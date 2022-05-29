@@ -314,8 +314,10 @@ function defeatMonster() {
   update(locations[4]);
 }
 
+--fcc-editable-region--
 function lose() {
 }
+--fcc-editable-region--
 
 </script>
 ```

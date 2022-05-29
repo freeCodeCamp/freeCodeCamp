@@ -99,9 +99,11 @@ const applyFn = str => {
   );
 };
 
+--fcc-editable-region--
 const range = (start, end) => {
   return [start].concat([end]);
 }
+--fcc-editable-region--
 
 
 </script>

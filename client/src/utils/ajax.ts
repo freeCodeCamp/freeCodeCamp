@@ -262,6 +262,42 @@ export function putUpdateUserFlag(
   return put('/update-user-flag', update);
 }
 
+export function putUpdateMySocials(
+  update: Record<string, string>
+): Promise<void> {
+  return put('/update-my-socials', update);
+}
+
+export function putUpdateMySound(
+  update: Record<string, string>
+): Promise<void> {
+  return put('/update-my-sound', update);
+}
+
+export function putUpdateMyTheme(
+  update: Record<string, string>
+): Promise<void> {
+  return put('/update-my-theme', update);
+}
+
+export function putUpdateMyHonesty(
+  update: Record<string, string>
+): Promise<void> {
+  return put('/update-my-honesty', update);
+}
+
+export function putUpdateMyQuincyEmail(
+  update: Record<string, string>
+): Promise<void> {
+  return put('/update-my-quincy-email', update);
+}
+
+export function putUpdateMyPortfolio(
+  update: Record<string, string>
+): Promise<void> {
+  return put('/update-my-portfolio', update);
+}
+
 export function putUserAcceptsTerms(quincyEmails: boolean): Promise<void> {
   return put('/update-privacy-terms', { quincyEmails });
 }

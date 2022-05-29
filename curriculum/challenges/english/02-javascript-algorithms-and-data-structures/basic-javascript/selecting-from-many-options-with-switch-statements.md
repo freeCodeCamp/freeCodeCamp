@@ -14,7 +14,7 @@ If you have many options to choose from, use a <dfn>switch</dfn> statement. A `s
 Here is an example of a `switch` statement:
 
 ```js
-switch(lowercaseLetter) {
+switch (lowercaseLetter) {
   case "a":
     console.log("A");
     break;
@@ -96,7 +96,7 @@ caseInSwitch(1);
 function caseInSwitch(val) {
   let answer = "";
 
-  switch(val) {
+  switch (val) {
     case 1:
       answer = "alpha";
       break;

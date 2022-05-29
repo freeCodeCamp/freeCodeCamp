@@ -7,6 +7,7 @@ import {
   takeEvery,
   debounce
 } from 'redux-saga/effects';
+import store from 'store';
 
 import { createFlashMessage } from '../../components/Flash/redux';
 import {
@@ -15,7 +16,13 @@ import {
   putUpdateMyProfileUI,
   putUpdateMyUsername,
   putUpdateUserFlag,
-  putVerifyCert
+  putUpdateMySocials,
+  putUpdateMyHonesty,
+  putUpdateMyQuincyEmail,
+  putVerifyCert,
+  putUpdateMyPortfolio,
+  putUpdateMyTheme,
+  putUpdateMySound
 } from '../../utils/ajax';
 import { certMap } from '../../resources/cert-and-project-map';
 import { completedChallengesSelector } from '..';
@@ -31,7 +38,19 @@ import {
   submitProfileUIComplete,
   submitProfileUIError,
   verifyCertComplete,
-  verifyCertError
+  verifyCertError,
+  updateMySocialsComplete,
+  updateMySocialsError,
+  updateMyHonestyError,
+  updateMyHonestyComplete,
+  updateMyQuincyEmailComplete,
+  updateMyQuincyEmailError,
+  updateMyPortfolioError,
+  updateMyPortfolioComplete,
+  updateMyThemeComplete,
+  updateMyThemeError,
+  updateMySoundComplete,
+  updateMySoundError
 } from './';
 
 function* submitNewAboutSaga({ payload }) {
@@ -73,6 +92,67 @@ function* updateUserFlagSaga({ payload: update }) {
     );
   } catch (e) {
     yield put(updateUserFlagError(e));
+  }
+}
+
+function* updateMySocialsSaga({ payload: update }) {
+  try {
+    const response = yield call(putUpdateMySocials, update);
+    yield put(updateMySocialsComplete({ ...response, payload: update }));
+    yield put(createFlashMessage({ ...response }));
+  } catch (e) {
+    yield put(updateMySocialsError);
+  }
+}
+
+function* updateMySoundSaga({ payload: update }) {
+  try {
+    store.set('fcc-sound', !!update.sound);
+    const response = yield call(putUpdateMySound, update);
+    yield put(updateMySoundComplete({ ...response, payload: update }));
+    yield put(createFlashMessage({ ...response }));
+  } catch (e) {
+    yield put(updateMySoundError);
+  }
+}
+
+function* updateMyThemeSaga({ payload: update }) {
+  try {
+    const response = yield call(putUpdateMyTheme, update);
+    yield put(updateMyThemeComplete({ ...response, payload: update }));
+    yield put(createFlashMessage({ ...response }));
+  } catch (e) {
+    yield put(updateMyThemeError);
+  }
+}
+
+function* updateMyHonestySaga({ payload: update }) {
+  try {
+    const response = yield call(putUpdateMyHonesty, update);
+    yield put(updateMyHonestyComplete({ ...response, payload: update }));
+    yield put(createFlashMessage({ ...response }));
+  } catch (e) {
+    yield put(updateMyHonestyError);
+  }
+}
+
+function* updateMyQuincyEmailSaga({ payload: update }) {
+  try {
+    const response = yield call(putUpdateMyQuincyEmail, update);
+    yield put(updateMyQuincyEmailComplete({ ...response, payload: update }));
+    yield put(createFlashMessage({ ...response }));
+  } catch (e) {
+    yield put(updateMyQuincyEmailError);
+  }
+}
+
+function* updateMyPortfolioSaga({ payload: update }) {
+  try {
+    const response = yield call(putUpdateMyPortfolio, update);
+    yield put(updateMyPortfolioComplete({ ...response, payload: update }));
+    yield put(createFlashMessage({ ...response }));
+  } catch (e) {
+    yield put(updateMyPortfolioError);
   }
 }
 
@@ -134,6 +214,12 @@ function* verifyCertificationSaga({ payload }) {
 export function createSettingsSagas(types) {
   return [
     takeEvery(types.updateUserFlag, updateUserFlagSaga),
+    takeEvery(types.updateMySocials, updateMySocialsSaga),
+    takeEvery(types.updateMyHonesty, updateMyHonestySaga),
+    takeEvery(types.updateMySound, updateMySoundSaga),
+    takeEvery(types.updateMyTheme, updateMyThemeSaga),
+    takeEvery(types.updateMyQuincyEmail, updateMyQuincyEmailSaga),
+    takeEvery(types.updateMyPortfolio, updateMyPortfolioSaga),
     takeLatest(types.submitNewAbout, submitNewAboutSaga),
     takeLatest(types.submitNewUsername, submitNewUsernameSaga),
     debounce(2000, types.validateUsername, validateUsernameSaga),

@@ -30,6 +30,8 @@ dashedName: build-a-technical-documentation-page
 
 上記のユーザーストーリーを満たして、以下のすべてのテストに合格してこのプロジェクトを完成させてください。 あなた独自のスタイルを加えましょう。 ハッピーコーディング！
 
+**注:** スタイルシートをリンクして CSS を適用するため、HTML 内に `<link rel="stylesheet" href="styles.css">` を必ず追加してください
+
 # --hints--
 
 `id` の値が `main-doc` に設定されている `main` 要素が 1 つ必要です
@@ -142,7 +144,7 @@ assert(els.length === 1)
 クラスが `nav-link` である `a` 要素が少なくとも 1 つ必要です
 
 ```js
-const els = document.querySelectorAll('a[class="nav-link"]')
+const els = document.querySelectorAll('a.nav-link')
 assert(els.length >= 1)
 ```
 

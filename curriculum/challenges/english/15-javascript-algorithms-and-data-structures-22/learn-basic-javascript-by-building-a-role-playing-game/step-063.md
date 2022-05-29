@@ -201,12 +201,14 @@ function buyHealth() {
   }
 }
 
+--fcc-editable-region--
 function buyWeapon() {
   if (gold >= 30) {
     gold -= 30;
     currentWeapon++;
   }
 }
+--fcc-editable-region--
 
 function fightSlime() {
 }

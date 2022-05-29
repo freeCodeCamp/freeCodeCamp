@@ -104,7 +104,9 @@ assert(
 
 ```html
 <script>
+--fcc-editable-region--
   document.getElementById('calorie-form');
+--fcc-editable-region--
 </script>
 ```
 

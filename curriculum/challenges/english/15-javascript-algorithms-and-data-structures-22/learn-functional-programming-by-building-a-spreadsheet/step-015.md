@@ -72,10 +72,12 @@ const infixToFunction = {
   "/": (x, y) => x / y
 };
 
+--fcc-editable-region--
 const infixEval = (str, regex) =>
   str.replace(regex, (match, arg1, fn, arg2) =>
     infixToFunction["+"]
   );
+--fcc-editable-region--
 
 
 </script>

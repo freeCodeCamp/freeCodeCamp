@@ -50,7 +50,7 @@
     "reset-lesson": "Reiniciar esta aula",
     "run": "Executar",
     "run-test": "Execute os testes (Ctrl + Enter)",
-    "check-code": "Check Your Code (Ctrl + Enter)",
+    "check-code": "Verifique seu código (Ctrl + Enter)",
     "reset": "Redefinir",
     "reset-code": "Redefinir todo o código",
     "help": "Ajuda",
@@ -101,7 +101,7 @@
   },
   "settings": {
     "share-projects": "Compartilhe seus projetos que não sejam do freeCodeCamp, artigos ou pull requests aceitas.",
-    "privacy": "As configurações nesta seção permitem que você controle o que é mostrado no seu portfólio público do freeCodeCamp.",
+    "privacy": "As configurações nesta seção permitem que você controle o que é mostrado no seu portfólio público do freeCodeCamp. Pressione Save para salvar suas alterações.",
     "data": "Para ver quais dados mantemos sobre sua conta, clique no botão \"Baixar seus dados\" abaixo",
     "disabled": "Suas certificações serão desabilitadas ao configurar como privado.",
     "private-name": "Seu nome não aparecerá nas certificações, se isto estiver definido como privado.",
@@ -269,7 +269,7 @@
     "solution-link": "Link da solução",
     "github-link": "Link do GitHub",
     "submit-and-go": "Enviar e ir para o meu próximo desafio",
-    "congradulations": "Congratulations, your code passes. Submit your code to complete this step and move on to the next one.",
+    "congradulations": "Parabéns, o seu código passa. Envie seu código para completar este passo e seguir para o próximo.",
     "i-completed": "Já completei este desafio",
     "test-output": "O resultado do seu código vai aparecer aqui",
     "running-tests": "// executando testes",
@@ -310,13 +310,13 @@
     "runs-in-vm": "O projeto é executado em uma máquina virtual. Complete as histórias de usuários descritas lá e passe em todos os testes para concluir a etapa 1.",
     "completed": "Concluído",
     "not-started": "Não iniciado",
-    "hint": "Hint",
-    "test": "Test",
-    "sorry-try-again": "Sorry, your code does not pass. Try again.",
-    "sorry-keep-trying": "Sorry, your code does not pass. Keep trying.",
-    "sorry-getting-there": "Sorry, your code does not pass. You're getting there.",
-    "sorry-hang-in-there": "Sorry, your code does not pass. Hang in there.",
-    "sorry-dont-giveup": "Sorry, your code does not pass. Don't give up."
+    "hint": "Dica",
+    "test": "Teste",
+    "sorry-try-again": "Desculpe, seu código não passou nos testes. Tente novamente.",
+    "sorry-keep-trying": "Desculpe, seu código não passou nos testes. Continue tentando.",
+    "sorry-getting-there": "Desculpe, seu código não passou nos testes. Você está chegando lá.",
+    "sorry-hang-in-there": "Desculpe, seu código não passou nos testes. Você está chegando lá.",
+    "sorry-dont-giveup": "Desculpe, seu código não passou nos testes. Não desista."
   },
   "donate": {
     "title": "Dê seu apoio à nossa organização sem fins lucrativos",
@@ -453,7 +453,7 @@
     "fail": "Exame não concluído com sucesso",
     "not-passed": "Não aprovado",
     "passed": "Aprovado",
-    "hint": "Hint",
+    "hint": "Dica",
     "heart": "Coração",
     "initial": "Inicial",
     "info": "Informações introdutórias",
@@ -474,8 +474,8 @@
     "last-page": "Ir para a última página",
     "primary-nav": "primário",
     "breadcrumb-nav": "breadcrumb",
-    "submit": "Use Ctrl + Enter to submit.",
-    "running-tests": "Running tests"
+    "submit": "Use Ctrl + Enter para enviar.",
+    "running-tests": "Executando testes"
   },
   "flash": {
     "honest-first": "Para solicitar uma certificação, você precisa primeiro aceitar nossa política de honestidade acadêmica",
