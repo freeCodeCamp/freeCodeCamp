@@ -13,8 +13,8 @@ Using two arrays of length, create a hash object where the elements from one arr
 Example:
 
 ```js
-firstArr = [1, 2, 3]
-secondArr = ["a", "b", "c"]
+const firstArr = [1, 2, 3];
+const secondArr = ["a", "b", "c"];
 const hashObj = arrToObj(firstArr, secondArr);
 ```
 
