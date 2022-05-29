@@ -30,6 +30,8 @@ dashedName: build-a-product-landing-page
 
 完成需求並通過下面的所有測試來完成這個項目。 賦予它你自己的個人風格。 編程愉快！
 
+**注意：** 請在你的 HTML 中添加 `<link rel="stylesheet" href="styles.css">` 以鏈接你的樣式表並應用你的 CSS
+
 # --hints--
 
 你應該有一個 `id` 爲 `header` 的 `header` 元素
@@ -98,7 +100,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-每一個 `.nav-link` 元素應該鏈接到登陸頁面上的相應元素（有一個 `href` 具有另一個元素的 id 的值，例如： `#footer`）
+每個 `.nav-link` 元素應該鏈接到登陸頁面上的相應元素（有一個 `href` 具有另一個元素的 id 的值，例如： `#footer`）
 
 ```js
 const els = document.querySelectorAll('.nav-link')
@@ -204,10 +206,41 @@ assert(!!el && el.name === 'email')
 你的 `#nav-bar` 元素應該始終位於視口的頂部
 
 ```js
-const el = document.getElementById('nav-bar')
-const top1 = el?.offsetTop
-const top2 = el?.offsetTop
-assert(!!el && top1 >= -15 && top1 <= 15 && top2 >= -15 && top2 <= 15)
+(async () => {
+  const timeout = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
+
+  const header = document.getElementById('header');
+  const headerChildren = header.children;
+  const navbarCandidates = [header, ...headerChildren];
+
+  // Return smallest top position of all navbar candidates
+  const getNavbarPosition = (candidates = []) => {
+    return candidates.reduce(
+      (min, candidate) =>
+        Math.min(min, Math.abs(candidate?.getBoundingClientRect().top)),
+      Infinity
+    );
+  };
+  assert.approximately(
+    getNavbarPosition(navbarCandidates),
+    0,
+    15,
+    '#header or one of its children should be at the top of the viewport '
+  );
+
+  window.scroll(0, 500);
+  await timeout(1);
+
+  assert.approximately(
+    getNavbarPosition(navbarCandidates),
+    0,
+    15,
+    '#header or one of its children should be at the top of the ' +
+      'viewport even after scrolling '
+  );
+
+  window.scroll(0, 0);
+})();
 ```
 
 你的產品登陸頁面至少要有一個媒體查詢

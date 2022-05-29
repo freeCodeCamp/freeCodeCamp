@@ -375,6 +375,9 @@ function pickEight() {
   pick(8);
 }
 
+--fcc-editable-region--
+
+--fcc-editable-region--
 </script>
 ```
 

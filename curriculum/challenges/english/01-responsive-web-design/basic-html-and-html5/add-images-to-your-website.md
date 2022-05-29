@@ -60,7 +60,7 @@ Your image element's `alt` attribute should not be empty.
 assert(
   $('img').attr('alt') &&
     $('img').attr('alt').length &&
-    /<img\S*alt=(['"])(?!\1|>)\S+\1\S*\/?>/.test(
+    /<(?:img|IMG)\S*alt=(['"])(?!\1|>)\S+\1\S*\/?>/.test(
       __helpers.removeWhiteSpace(code)
     )
 );

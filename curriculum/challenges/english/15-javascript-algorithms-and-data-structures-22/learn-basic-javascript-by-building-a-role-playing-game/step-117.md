@@ -314,6 +314,9 @@ function defeatMonster() {
 function lose() {
   update(locations[5]);
 }
+--fcc-editable-region--
+
+--fcc-editable-region--
 
 function restart() {
   xp = 0;

@@ -108,10 +108,12 @@ const charRange = (start, end) =>
     String.fromCharCode(x)
   );
 
+--fcc-editable-region--
 const evalFormula = x => {
   const rangeRegex = /([A-J])([1-9][0-9]?):([A-J])([1-9][0-9]?)/gi;
 
 };
+--fcc-editable-region--
 
 
 </script>

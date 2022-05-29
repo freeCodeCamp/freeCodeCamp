@@ -1,29 +1,15 @@
 describe('Username input field', () => {
   beforeEach(() => {
     cy.login();
+    cy.goToSettings();
   });
 
-  function goToSettings() {
-    cy.visit('/settings');
-
-    // Setting aliases here
-    cy.get('input[name=username-settings]').as('usernameInput');
-    cy.get('form#usernameSettings').as('usernameForm');
-  }
-
   it('Should be possible to type', () => {
-    goToSettings();
-    cy.get('@usernameInput')
-      .clear({ force: true })
-      .type('twaha', { force: true })
-      .should('have.attr', 'value', 'twaha');
+    cy.typeUsername('twaha').should('have.attr', 'value', 'twaha');
   });
 
   it('Should show message when validating name', () => {
-    goToSettings();
-    cy.get('@usernameInput')
-      .clear({ force: true })
-      .type('twaha', { force: true });
+    cy.typeUsername('twaha');
 
     cy.contains('Validating username...')
       .should('have.attr', 'role', 'alert')
@@ -33,10 +19,7 @@ describe('Username input field', () => {
   });
 
   it('Should show username is available if it is', () => {
-    goToSettings();
-    cy.get('@usernameInput')
-      .clear({ force: true })
-      .type('brad', { force: true });
+    cy.typeUsername('brad');
 
     cy.contains('Username is available')
       .should('be.visible')
@@ -47,10 +30,7 @@ describe('Username input field', () => {
   });
 
   it('Should info message if username is available', () => {
-    goToSettings();
-    cy.get('@usernameInput')
-      .clear({ force: true })
-      .type('mrugesh', { force: true });
+    cy.typeUsername('mrugesh');
 
     cy.contains(
       'Please note, changing your username will also change ' +
@@ -64,11 +44,8 @@ describe('Username input field', () => {
   });
 
   // eslint-disable-next-line
-  it('Should be able to click the `Save` button if username is avalable', () => {
-    goToSettings();
-    cy.get('@usernameInput')
-      .clear({ force: true })
-      .type('oliver', { force: true });
+  it('Should be able to click the `Save` button if username is available', () => {
+    cy.typeUsername('oliver');
 
     cy.get('@usernameForm').within(() => {
       cy.contains('Save').should('not.be.disabled');
@@ -76,10 +53,7 @@ describe('Username input field', () => {
   });
 
   it('Should show username is unavailable if it is', () => {
-    goToSettings();
-    cy.get('@usernameInput')
-      .clear({ force: true })
-      .type('twaha', { force: true });
+    cy.typeUsername('twaha');
 
     cy.contains('Username not available')
       .should('be.visible')
@@ -91,10 +65,7 @@ describe('Username input field', () => {
 
   // eslint-disable-next-line
   it('Should not be possible to click the `Save` button if username is unavailable', () => {
-    goToSettings();
-    cy.get('@usernameInput')
-      .clear({ force: true })
-      .type('twaha', { force: true });
+    cy.typeUsername('twaha');
 
     cy.contains('Username is available').should('not.exist');
     cy.contains('Username not available').should('not.exist');
@@ -107,29 +78,20 @@ describe('Username input field', () => {
   });
 
   it('Should not show anything if user types their current name', () => {
-    goToSettings();
-    cy.get('@usernameInput')
-      .clear({ force: true })
-      .type('developmentuser', { force: true });
+    cy.typeUsername('developmentuser');
 
     cy.get('@usernameForm').contains('Save').should('be.disabled');
   });
 
   // eslint-disable-next-line max-len
   it('Should not be possible to click the `Save` button if user types their current name', () => {
-    goToSettings();
-    cy.get('@usernameInput')
-      .clear({ force: true })
-      .type('developmentuser', { force: true });
+    cy.typeUsername('developmentuser');
 
     cy.get('@usernameForm').contains('Save').should('be.disabled');
   });
 
   it('Should show warning if username includes invalid character', () => {
-    goToSettings();
-    cy.get('@usernameInput')
-      .clear({ force: true })
-      .type('Quincy Larson', { force: true });
+    cy.typeUsername('Quincy Larson');
 
     cy.contains('Username "Quincy Larson" contains invalid characters')
       .should('be.visible')
@@ -141,19 +103,13 @@ describe('Username input field', () => {
 
   // eslint-disable-next-line max-len
   it('Should not be able to click the `Save` button if username includes invalid character', () => {
-    goToSettings();
-    cy.get('@usernameInput')
-      .clear({ force: true })
-      .type('Quincy Larson', { force: true });
+    cy.typeUsername('Quincy Larson');
 
     cy.get('@usernameForm').contains('Save').should('be.disabled');
   });
 
   it('Should change username if `Save` button is clicked', () => {
-    goToSettings();
-    cy.get('@usernameInput')
-      .clear({ force: true })
-      .type('quincy', { force: true });
+    cy.typeUsername('quincy');
 
     cy.contains('Username is available');
 
@@ -164,10 +120,7 @@ describe('Username input field', () => {
   });
 
   it('Should change username with uppercase characters if `Save` button is clicked', () => {
-    goToSettings();
-    cy.get('@usernameInput')
-      .clear({ force: true })
-      .type('Quincy', { force: true });
+    cy.typeUsername('Quincy');
 
     cy.contains('Username is available');
 
@@ -178,10 +131,7 @@ describe('Username input field', () => {
   });
 
   it('Should show flash message showing username has been updated', () => {
-    goToSettings();
-    cy.get('@usernameInput')
-      .clear({ force: true })
-      .type('nhcarrigan', { force: true });
+    cy.typeUsername('nhcarrigan');
     cy.contains('Username is available');
 
     // temporary fix until https://github.com/cypress-io/cypress/issues/20562 is fixed
@@ -203,10 +153,7 @@ describe('Username input field', () => {
   });
 
   it('Should be able to close the shown flash message', () => {
-    goToSettings();
-    cy.get('@usernameInput')
-      .clear({ force: true })
-      .type('bjorno', { force: true });
+    cy.typeUsername('bjorno');
     cy.contains('Username is available');
 
     // temporary fix until https://github.com/cypress-io/cypress/issues/20562 is fixed
@@ -225,10 +172,7 @@ describe('Username input field', () => {
   });
 
   it('Should change username if enter is pressed', () => {
-    goToSettings();
-    cy.get('@usernameInput')
-      .clear({ force: true })
-      .type('symbol', { force: true });
+    cy.typeUsername('symbol');
     cy.contains('Username is available');
 
     // temporary fix until https://github.com/cypress-io/cypress/issues/20562 is fixed

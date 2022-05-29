@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c242eddfaeb5bd13
-title: Build a Personal Portfolio Webpage
+title: Creare una pagina Web per il Portfolio Personale
 challengeType: 14
 forumTopicId: 301143
 dashedName: build-a-personal-portfolio-webpage
@@ -8,34 +8,36 @@ dashedName: build-a-personal-portfolio-webpage
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to <a href="https://personal-portfolio.freecodecamp.rocks" target="_blank">https://personal-portfolio.freecodecamp.rocks</a>
+**Obbiettivo:** Crea un'app funzionalmente simile a <a href="https://personal-portfolio.freecodecamp.rocks" target="_blank">https://personal-portfolio.freecodecamp.rocks</a>
 
-**User Stories:**
+**User story:**
 
-1. Your portfolio should have a welcome section with an `id` of `welcome-section`
-1. The welcome section should have an `h1` element that contains text
-1. Your portfolio should have a projects section with an `id` of `projects`
-1. The projects section should contain at least one element with a `class` of `project-tile` to hold a project
-1. The projects section should contain at least one link to a project
-1. Your portfolio should have a navbar with an id of `navbar`
-1. The navbar should contain at least one link that you can click on to navigate to different sections of the page
-1. Your portfolio should have a link with an id of `profile-link`, which opens your GitHub or freeCodeCamp profile in a new tab
-1. Your portfolio should have at least one media query
-1. The height of the welcome section should be equal to the height of the viewport
-1. The navbar should always be at the top of the viewport
+1. Il portfolio dovrebbe avere una sezione di benvenuto con un `id` di `welcome-section`
+1. La sezione di benvenuto dovrebbe avere un elemento `h1` che contiene del testo
+1. Il tuo portfolio dovrebbe avere una sezione progetti con un attributo `id` di `projects`
+1. La sezione progetti dovrebbe contenere almeno un elemento con un attributo `class` di `project-tile` per contenere un progetto
+1. La sezione progetti dovrebbe contenere almeno un link ad un progetto
+1. Il tuo portfolio dovrebbe avere una barra di navigazione con un id di `navbar`
+1. La barra di navigazione dovrebbe contenere almeno un link che puoi cliccare per navigare ad una sezione diversa della pagina
+1. Il portfolio dovrebbe avere un link con un id di `profile-link` che apre il tuo profilo GitHub o freeCodeCamp in una nuova scheda
+1. Il portfolio dovrebbe avere almeno una media query
+1. L'altezza della sezione di benvenuto dovrebbe essere uguale all'altezza della porta di visualizzazione
+1. La barra di navigazione dovrebbe sempre essere in cima alla porta di visualizzazione
 
-Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
+Soddisfa le user story e passa tutti i test qua sotto per complerare questo progetto. Usa il tuo stile personale. Buon divertimento!
+
+**Nota:** Assicurati di aggiungere `<link rel="stylesheet" href="styles.css">` nel tuo HTML per linkare il tuo foglio di stile e applicare il tuo CSS
 
 # --hints--
 
-Your portfolio should have a "Welcome" section with an `id` of `welcome-section`.
+Il portfolio dovrebbe avere una sezione "Benvenuto" con un `id` di `welcome-section`.
 
 ```js
 const el = document.getElementById('welcome-section')
 assert(!!el);
 ```
 
-Your `#welcom-section` element should contain an `h1` element.
+L'elemento `#welcome-section` dovrebbe contenere un elemento `h1`.
 
 ```js
 assert.isAbove(
@@ -45,7 +47,7 @@ assert.isAbove(
 );
 ```
 
-You should not have any empty `h1` elements within `#welcome-section` element.
+Non dovrebbe esserci alcun elemento `h1` dentro l'elemento `#welcome-section`.
 
 ```js
 assert.isAbove(
@@ -56,14 +58,14 @@ assert.isAbove(
 );
 ```
 
-You should have a "Projects" section with an `id` of `projects`.
+Dovresti avere una sezione "Progetti" con un `id` di `projects`.
 
 ```js
 const el = document.getElementById('projects')
 assert(!!el);
 ```
 
-Your portfolio should contain at least one elment with a class of `project-tile`.
+Il portfolio dovrebbe contenere almeno un elemento con una classe di `project-tile`.
 
 ```js
 assert.isAbove(
@@ -72,20 +74,20 @@ assert.isAbove(
 );
 ```
 
-Your `#projects` element should contain at least one `a` element.
+L'elemento `#projects` dovrebbe contenere almeno un elemento `a`.
 
 ```js
 assert.isAbove(document.querySelectorAll('#projects a').length, 0);
 ```
 
-Your portfolio should have a navbar with an `id` of `navbar`.
+Il portfolio dovrebbe avere una barra di navigazione con un attributo `id` di `navbar`.
 
 ```js
 const el = document.getElementById('navbar');
 assert(!!el);
 ```
 
-Your `#navbar` element should contain at least one `a` element whose `href` attribute starts with `#`.
+L'elemento `#navbar` dovrebbe contenere almeno un elemento `a` il cui attributo `href` inizia con `#`.
 
 ```js
 const links = [...document.querySelectorAll('#navbar a')].filter(
@@ -99,27 +101,29 @@ assert.isAbove(
 );
 ```
 
-Your portfolio should have an `a` element with an `id` of `profile-link`.
+Il portfolio dovrebbe avere almeno un elemento `a` con un attributo `id` di `profile-link`.
 
 ```js
 const el = document.getElementById('profile-link');
 assert(!!el && el.tagName === 'A')
 ```
 
-Your `#profile-link` element should have a `target` attribute of `_blank`.
+L'elemento `#profile-link` dovrebbe avere un attributo `target` di `_blank`.
 
 ```js
 const el = document.getElementById('profile-link');
 assert(!!el && el.target === '_blank')
 ```
 
-Your portfolio should use at least one media query.
+Il portfolio dovrebbe usare almeno una media query.
 
 ```js
-assert.isAtLeast(new __helpers.CSSHelp(document).getCSSRules('media')?.length, 1);
+const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
+const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
+assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 ```
 
-Your `#navbar` element should always be at the top of the viewport.
+L'elemento `#navbar` dovrebbe sempre essere in cima al viewport.
 
 ```js
 (async () => {

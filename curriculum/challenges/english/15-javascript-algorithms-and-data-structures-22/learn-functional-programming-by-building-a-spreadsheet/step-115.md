@@ -81,11 +81,13 @@ const highPrecedence = str => {
   return str === str2 ? str : highPrecedence(str2);
 };
 
+--fcc-editable-region--
 const spreadsheetFunctions = {
   "": x => x,
   random: ([x, y]) => Math.floor(Math.random() * y + x),
   increment: nums => nums.map(x => x + 1)
 };
+--fcc-editable-region--
 
 
 

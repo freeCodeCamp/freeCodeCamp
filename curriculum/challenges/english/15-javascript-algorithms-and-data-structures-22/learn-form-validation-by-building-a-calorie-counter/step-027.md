@@ -102,6 +102,7 @@ assert(
 <script>
   document.getElementById('calorie-form').onsubmit = calculate;
 
+--fcc-editable-region--
   function calculate(e) {
     e.preventDefault();
 
@@ -113,6 +114,7 @@ assert(
 
     const difference = total - maxCalories;
   }
+--fcc-editable-region--
 </script>
 ```
 

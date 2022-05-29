@@ -277,9 +277,11 @@ function fightDragon() {
   goFight();
 }
 
+--fcc-editable-region--
 function goFight() {
   update(locations[3]);
 }
+--fcc-editable-region--
 
 function attack() {
 }

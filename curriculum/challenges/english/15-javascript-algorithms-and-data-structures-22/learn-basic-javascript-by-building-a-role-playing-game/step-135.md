@@ -163,6 +163,7 @@ const monsters = [
   }
 ];
 
+--fcc-editable-region--
 const locations = [
   {
     name: "town square",
@@ -207,6 +208,7 @@ const locations = [
     text: "You defeat the dragon! YOU WIN THE GAME! 🎉" 
   }
 ];
+--fcc-editable-region--
 
 // initialize buttons
 button1.onclick = goStore;

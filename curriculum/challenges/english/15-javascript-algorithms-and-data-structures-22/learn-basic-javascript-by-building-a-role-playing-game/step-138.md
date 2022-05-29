@@ -380,9 +380,11 @@ function pickEight() {
   pick(8);
 }
 
+--fcc-editable-region--
 function pick(guess) {
 
 }
+--fcc-editable-region--
 
 </script>
 ```

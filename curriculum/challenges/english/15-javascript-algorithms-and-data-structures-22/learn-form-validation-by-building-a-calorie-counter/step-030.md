@@ -104,6 +104,7 @@ assert(
 <script>
   document.getElementById('calorie-form').onsubmit = calculate;
 
+--fcc-editable-region--
   function calculate(e) {
     e.preventDefault();
 
@@ -121,6 +122,7 @@ assert(
 
     const result = document.createElement('h3');
   }
+--fcc-editable-region--
 </script>
 ```
 

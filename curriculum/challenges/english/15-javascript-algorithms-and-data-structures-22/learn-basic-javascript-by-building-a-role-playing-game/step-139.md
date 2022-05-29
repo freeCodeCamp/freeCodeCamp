@@ -394,9 +394,11 @@ function pickEight() {
   pick(8);
 }
 
+--fcc-editable-region--
 function pick(guess) {
   let numbers = [];
 }
+--fcc-editable-region--
 
 </script>
 ```
