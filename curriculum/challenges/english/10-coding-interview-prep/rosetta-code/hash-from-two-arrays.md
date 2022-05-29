@@ -8,13 +8,16 @@ dashedName: hash-from-two-arrays
 
 # --description--
 
-Using two Arrays of equal length, create a Hash object where the elements from one array (the keys) are linked to the elements of the other (the values).
+Using two Arrays of length, create a Hash object where the elements from one array (the keys) are linked to the elements of the other (the values).
 
-**Related task:**
+Example:
 
-<ul>
-  <li><a href='https://rosettacode.org/wiki/Associative arrays/Creation' title='Associative arrays/Creation' target='_blank'>Associative arrays/Creation</a></li>
-</ul>
+```js
+firstArr = [1, 2, 3]
+secondArr = ["a", "b", "c"]
+```
+
+Creating Hash object from the arrays above will provide this `hashObj = {1: "a", 2: "b", 3: "c"}` result.
 
 # --hints--
 
