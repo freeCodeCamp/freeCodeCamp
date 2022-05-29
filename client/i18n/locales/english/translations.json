@@ -482,6 +482,7 @@
     "breadcrumb-nav": "breadcrumb",
     "submit": "Use Ctrl + Enter to submit.",
     "running-tests": "Running tests",
+    "step": "Step",
     "steps": "Steps",
     "steps-for": "Steps for {{blockTitle}}"
   },

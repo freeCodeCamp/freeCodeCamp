@@ -94,6 +94,7 @@ function Challenges({
                     +challenge.isCompleted ? 'challenge-completed' : ''
                   }`}
                 >
+                  <span className='sr-only'>{t('aria.step')}</span>
                   <span>{i + 1}</span>
                   <span className='sr-only'>
                     {challenge.isCompleted
