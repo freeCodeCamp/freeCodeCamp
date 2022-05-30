@@ -148,6 +148,13 @@ const handleContentWidgetMouseEvents = (e: MouseEvent): void => {
   }
 };
 
+const handleContentWidgetTouchEvents = (e: TouchEvent): void => {
+  const target = e.target as HTMLElement;
+  if (target?.closest('.editor-upper-jaw')) {
+    e.stopPropagation();
+  }
+};
+
 // Component
 class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   static displayName: string;
@@ -245,6 +252,17 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       handleContentWidgetMouseEvents,
       true
     );
+    document.addEventListener(
+      'touchstart',
+      handleContentWidgetTouchEvents,
+      true
+    );
+    document.addEventListener(
+      'touchmove',
+      handleContentWidgetTouchEvents,
+      true
+    );
+    document.addEventListener('touchend', handleContentWidgetTouchEvents, true);
   }
 
   componentDidUpdate(prevProps: ShowClassicProps) {
@@ -330,6 +348,21 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     document.removeEventListener(
       'contextmenu',
       handleContentWidgetMouseEvents,
+      true
+    );
+    document.removeEventListener(
+      'touchstart',
+      handleContentWidgetTouchEvents,
+      true
+    );
+    document.removeEventListener(
+      'touchmove',
+      handleContentWidgetTouchEvents,
+      true
+    );
+    document.removeEventListener(
+      'touchend',
+      handleContentWidgetTouchEvents,
       true
     );
   }
