@@ -46,8 +46,7 @@ Cypress.Commands.add('preserveSession', () => {
   );
 });
 
-Cypress.Commands.add('toggleAll', () => {
-  cy.visit('/settings');
+Cypress.Commands.add('setPrivacyTogglesToPublic', () => {
   cy.get('#privacy-settings')
     .find('.toggle-not-active')
     .each(element => {
