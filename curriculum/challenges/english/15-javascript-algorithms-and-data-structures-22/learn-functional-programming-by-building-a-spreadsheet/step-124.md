@@ -82,6 +82,7 @@ const highPrecedence = str => {
 const isEven = num => num % 2 === 0;
 const sum = nums => nums.reduce((a, x) => a + x);
 
+--fcc-editable-region--
 const spreadsheetFunctions = {
   "": x => x,
   random: ([x, y]) => Math.floor(Math.random() * y + x),
@@ -92,6 +93,7 @@ const spreadsheetFunctions = {
   has2: arr => arr.includes(2),
   nodups: arr => arr.reduce((a, x) => a.includes(x) ? a : a.concat(x), [])
 };
+--fcc-editable-region--
 
 
 

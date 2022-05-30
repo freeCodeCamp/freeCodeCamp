@@ -320,11 +320,13 @@ function attack() {
   }
 }
 
+--fcc-editable-region--
 function getMonsterAttackValue(level) {
   const hit = (level * 5) - (Math.floor(Math.random() * xp));
   console.log(hit);
   return hit;
 }
+--fcc-editable-region--
 
 function dodge() {
   text.innerText = "You dodge the attack from the " + monsters[fighting].name + ".";

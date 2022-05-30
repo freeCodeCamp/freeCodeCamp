@@ -383,6 +383,7 @@ function pickEight() {
   pick(8);
 }
 
+--fcc-editable-region--
 function pick(guess) {
   let numbers = [];
   while(numbers.length < 10) {
@@ -391,6 +392,7 @@ function pick(guess) {
 
   text.innerText = "You picked " + guess + ". Here are the random numbers:\n";
 }
+--fcc-editable-region--
 
 </script>
 ```

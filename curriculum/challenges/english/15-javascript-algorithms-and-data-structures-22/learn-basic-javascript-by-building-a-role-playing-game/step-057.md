@@ -114,7 +114,9 @@ const goldText = document.querySelector("#goldText");
 const monsterStats = document.querySelector("#monsterStats");
 const monsterNameText = document.querySelector("#monsterName");
 const monsterHealthText = document.querySelector("#monsterHealth");
+--fcc-editable-region--
 
+--fcc-editable-region--
 const locations = [
   {
     name: "town square",

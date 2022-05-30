@@ -67,6 +67,10 @@ const createHeader = (id = mainPreviewId) => `
       while(element && element.nodeName !== 'A') {
         element = element.parentElement;
       }
+      if(element && element.nodeName === 'A'){
+        e.preventDefault();
+        window.parent.window.alert('Normally this link would bring you to another website! It works!' + ' This is a link to: ' + '(' + element.href + ')');
+      }
       if (element) {
         const href = element.getAttribute('href');
         if (!href || href[0] !== '#' && !href.match(/^https?:\\/\\//)) {

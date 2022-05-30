@@ -117,12 +117,14 @@ assert(
   function calculate(e) {
     e.preventDefault();
 
+--fcc-editable-region--
     const total = Array.from(document.getElementsByClassName('cal-control'))
       .map(meal => Number(meal.value))
       .reduce((accumulator, currentValue) => {
         /* code to run */
       }, 0);
   }
+--fcc-editable-region--
 </script>
 ```
 

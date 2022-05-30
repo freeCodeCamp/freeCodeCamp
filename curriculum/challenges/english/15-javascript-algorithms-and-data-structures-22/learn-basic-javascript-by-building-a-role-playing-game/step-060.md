@@ -197,11 +197,13 @@ function buyHealth() {
   }
 }
 
+--fcc-editable-region--
 function buyWeapon() {
   if (gold >= 30) {
     
   }
 }
+--fcc-editable-region--
 
 function fightSlime() {
 }

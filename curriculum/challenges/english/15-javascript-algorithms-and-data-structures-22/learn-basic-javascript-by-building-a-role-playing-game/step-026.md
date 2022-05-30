@@ -128,6 +128,7 @@ button1.onclick = goStore;
 button2.onclick = goCave;
 button3.onclick = fightDragon;
 
+--fcc-editable-region--
 function goTown() {
   button1.innerText = "Go to store";
   button2.innerText = "Go to cave";
@@ -137,6 +138,7 @@ function goTown() {
   button3.onclick = fightDragon;
   text.innerText = "You are in the town square. You see a sign that says Store.";
 }
+--fcc-editable-region--
 
 function goStore() {
   button1.innerText = "Buy 10 health (10 gold)";

@@ -14,7 +14,7 @@ dashedName: selecting-from-many-options-with-switch-statements
 <p spaces-before="0">Ось наводиться приклад інструкції <code>switch`:
 
 ```js
-switch(lowercaseLetter) {
+switch (lowercaseLetter) {
   case "a":
     console.log("A");
     break;
@@ -96,7 +96,7 @@ caseInSwitch(1);
 function caseInSwitch(val) {
   let answer = "";
 
-  switch(val) {
+  switch (val) {
     case 1:
       answer = "alpha";
       break;

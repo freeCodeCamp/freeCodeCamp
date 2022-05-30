@@ -110,7 +110,9 @@ const charRange = (start, end) =>
     String.fromCharCode(x)
   );
 
+--fcc-editable-region--
 
+--fcc-editable-region--
 </script>
 ```
 

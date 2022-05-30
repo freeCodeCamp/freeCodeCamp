@@ -108,6 +108,7 @@ assert(
 <script>
   document.getElementById('calorie-form').onsubmit = calculate;
 
+--fcc-editable-region--
   function calculate(e) {
     e.preventDefault();
 
@@ -117,6 +118,7 @@ assert(
 
     const maxCalories = document.getElementById('female').checked;
   }
+--fcc-editable-region--
 </script>
 ```
 
