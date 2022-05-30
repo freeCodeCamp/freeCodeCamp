@@ -8,7 +8,7 @@ dashedName: compare-a-list-of-strings
 
 # --description--
 
-a list or sequence is an abstract data type that represents a finite number of ordered values, where the same value may occur more than once. Here is an example:
+A list or sequence is an abstract data type that represents a finite number of ordered values, where the same value may occur more than once. Here is an example:
 
 ```js
 const list = [['AA',  'BB', 'CC'], ['AA', 'ACB', 'AA'], [], ['AA']];
