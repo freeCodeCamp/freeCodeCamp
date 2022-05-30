@@ -88,7 +88,7 @@ describe('project submission', () => {
 
             solutions.forEach(files => {
               files.forEach(({ contents }) => {
-                cy.get(selectors.editor).as('editor');
+                cy.get(selectors.editor, { timeout: 16000 }).as('editor');
                 cy.get('@editor').click().focused().type('{ctrl+a}{del}');
                 // NOTE: clipboard operations are flaky in watch mode, because
                 // the document can lose focus
@@ -98,7 +98,7 @@ describe('project submission', () => {
                 cy.document().invoke('execCommand', 'paste');
                 cy.contains('Run the Tests').click();
                 cy.contains('Submit and go to next challenge', {
-                  timeout: 8000
+                  timeout: 16000
                 }).click();
                 cy.contains(textInNextPage[i]);
               });
