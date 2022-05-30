@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby';
-import React, { Component } from 'react';
+import React, { Component, MutableRefObject } from 'react';
 import Helmet from 'react-helmet';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -8,6 +8,7 @@ import Media from 'react-responsive';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import store from 'store';
+import { editor } from 'monaco-editor';
 import { challengeTypes } from '../../../../utils/challenge-types';
 import LearnLayout from '../../../components/layouts/learn';
 
@@ -52,7 +53,7 @@ import {
 } from '../redux';
 import { savedChallengesSelector } from '../../../redux';
 import { getGuideUrl } from '../utils';
-import MultifileEditor from './MultifileEditor';
+import MultifileEditor from './multifile-editor';
 import DesktopLayout from './desktop-layout';
 import MobileLayout from './mobile-layout';
 
@@ -142,7 +143,7 @@ const BASE_LAYOUT = {
 class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   static displayName: string;
   containerRef: React.RefObject<HTMLElement>;
-  editorRef: React.RefObject<HTMLElement>;
+  editorRef: React.RefObject<editor.IStandaloneCodeEditor | HTMLElement>;
   instructionsPanelRef: React.RefObject<HTMLDivElement>;
   resizeProps: ResizeProps;
 
@@ -386,7 +387,10 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           challengeFiles={challengeFiles}
           containerRef={this.containerRef}
           description={description}
-          editorRef={this.editorRef}
+          // Try to remove unknown
+          editorRef={
+            this.editorRef as MutableRefObject<editor.IStandaloneCodeEditor>
+          }
           initialTests={tests}
           resizeProps={this.resizeProps}
           title={title}
@@ -450,7 +454,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
 
     return (
       <Hotkeys
-        editorRef={this.editorRef}
+        editorRef={this.editorRef as React.RefObject<HTMLElement>}
         executeChallenge={executeChallenge}
         innerRef={this.containerRef}
         instructionsPanelRef={this.instructionsPanelRef}

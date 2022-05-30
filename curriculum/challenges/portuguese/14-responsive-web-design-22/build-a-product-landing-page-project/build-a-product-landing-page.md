@@ -30,65 +30,67 @@ dashedName: build-a-product-landing-page
 
 Atenda às histórias de usuário e passe em todos os testes abaixo para concluir este projeto. Dê ao projeto o seu próprio estilo pessoal. Boa programação!
 
+**Observação:** não se esqueça de adicionar `<link rel="stylesheet" href="styles.css">` em seu HTML para vincular sua folha de estilo e aplicar seu CSS
+
 # --hints--
 
-Você deve ter um elemento `header` com o `id` `header`
+Você deve ter um elemento `header` com o `id` `header`.
 
 ```js
 const el = document.getElementById('header')
 assert(!!el && el.tagName === 'HEADER')
 ```
 
-Você deve ter um elemento `img` com o `id` `header-img`
+Você deve ter um elemento `img` com o `id` `header-img`.
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && el.tagName === 'IMG')
 ```
 
-O elemento `#header-img` deve estar aninhado dentro de `#header`
+O elemento `#header-img` deve estar aninhado dentro de `#header`.
 
 ```js
 const els = document.querySelectorAll('#header #header-img')
 assert(els.length > 0)
 ```
 
-O elemento `#header-img` deve ter um atributo `src`
+O elemento `#header-img` deve ter um atributo `src`.
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && !!el.src)
 ```
 
-O `src` de `#header-img` deve ser um URL válido (que comece por `http`)
+O `src` de `#header-img` deve ser um URL válido (que comece por `http`).
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && /^http/.test(el.src))
 ```
 
-Você deve ter um elemento `nav` com o `id` `nav-bar`
+Você deve ter um elemento `nav` com o `id` `nav-bar`.
 
 ```js
 const el = document.getElementById('nav-bar')
 assert(!!el && el.tagName === 'NAV')
 ```
 
-O elemento `#nav-bar` deve estar aninhado dentro de `#header`
+O elemento `#nav-bar` deve estar aninhado dentro de `#header`.
 
 ```js
 const els = document.querySelectorAll('#header #nav-bar')
 assert(els.length > 0)
 ```
 
-Você deve ter pelo menos 3 elementos `.nav-link` dentro de `#nav-bar`
+Você deve ter pelo menos 3 elementos `.nav-link` dentro de `#nav-bar`.
 
 ```js
 const els = document.querySelectorAll('#nav-bar .nav-link')
 assert(els.length >= 3)
 ```
 
-Cada elemento `.nav-link` deve ter um atributo `href`
+Cada elemento `.nav-link` deve ter um atributo `href`.
 
 ```js
 const els = document.querySelectorAll('.nav-link')
@@ -98,7 +100,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-Cada elemento `.nav-link` deve vincular a um elemento correspondente na página inicial (ter um `href` com o valor do id de outro elemento, como `#footer`)
+Cada elemento `.nav-link` deve vincular a um elemento correspondente na página inicial (ter um `href` com o valor do id de outro elemento, como `#footer`).
 
 ```js
 const els = document.querySelectorAll('.nav-link')
@@ -109,106 +111,147 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-Você deve ter um elemento `video` ou um elemento `iframe` com o `id` `video`
+Você deve ter um elemento `video` ou um elemento `iframe` com o `id` `video`.
 
 ```js
 const el = document.getElementById('video')
 assert(!!el && (el.tagName === 'VIDEO' || el.tagName === 'IFRAME'))
 ```
 
-O elemento `#video` deve ter um atributo `src`
+O elemento `#video` deve ter um atributo `src`.
 
 ```js
-const el = document.getElementById('video')
-assert(!!el && !!el.src)
+let el = document.getElementById('video')
+const sourceNode = el.children;
+let sourceElement = null;
+if (sourceNode.length) {
+  sourceElement = [...video.children].filter(el => el.localName === 'source')[0];
+}
+if (sourceElement) {
+  el = sourceElement;
+}
+assert(el.hasAttribute('src'));
 ```
 
-Você deve ter um elemento `form` com o `id` `form`
+Você deve ter um elemento `form` com o `id` `form`.
 
 ```js
 const el = document.getElementById('form')
 assert(!!el && el.tagName === 'FORM')
 ```
 
-Você deve ter um elemento `input` com o `id` `email`
+Você deve ter um elemento `input` com o `id` de `email`.
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-O elemento `#email` deve estar aninhado dentro de `#form`
+O elemento `#email` deve estar aninhado dentro de `#form`.
 
 ```js
 const els = document.querySelectorAll('#form #email')
 assert(els.length > 0)
 ```
 
-O elemento `#email` deve ter o atributo `placeholder` e um texto ilustrativo
+O elemento `#email` deve ter o atributo `placeholder` e um texto ilustrativo.
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-O elemento `#email` deve usar a validação de HTML5 definindo seu `type` como `email`
+O elemento `#email` deve usar a validação de HTML5 definindo seu `type` como `email`.
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.type === 'email')
 ```
 
-Você deve ter um elemento `input` com o `id` `submit`
+Você deve ter um elemento `input` com o `id` `submit`.
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-O elemento `#submit` deve estar aninhado dentro de `#form`
+O elemento `#submit` deve estar aninhado dentro de `#form`.
 
 ```js
 const els = document.querySelectorAll('#form #submit')
 assert(els.length > 0)
 ```
 
-O elemento `#submit` deve ter o atributo `type` com o valor `submit`
+O elemento `#submit` deve ter o atributo `type` com o valor `submit`.
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && el.type === 'submit')
 ```
 
-Seu `#form` deve ter um atributo `action` definido como `https://www.freecodecamp.com/email-submit`
+Seu `#form` deve ter um atributo `action` definido como `https://www.freecodecamp.com/email-submit`.
 
 ```js
 const el = document.getElementById('form')
 assert(!!el && el.action === 'https://www.freecodecamp.com/email-submit')
 ```
 
-O elemento `#email` deve ter um atributo `name` definido como `email`
+O elemento `#email` deve ter um atributo `name` definido como `email`.
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.name === 'email')
 ```
 
-O elemento `#nav-bar` deve estar sempre na parte superior da viewport
+O elemento `#nav-bar` deve estar sempre na parte superior da viewport.
 
 ```js
-const el = document.getElementById('nav-bar')
-const top1 = el?.offsetTop
-const top2 = el?.offsetTop
-assert(!!el && top1 >= -15 && top1 <= 15 && top2 >= -15 && top2 <= 15)
+(async () => {
+  const timeout = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
+
+  const header = document.getElementById('header');
+  const headerChildren = header.children;
+  const navbarCandidates = [header, ...headerChildren];
+
+  // Return smallest top position of all navbar candidates
+  const getNavbarPosition = (candidates = []) => {
+    return candidates.reduce(
+      (min, candidate) =>
+        Math.min(min, Math.abs(candidate?.getBoundingClientRect().top)),
+      Infinity
+    );
+  };
+  assert.approximately(
+    getNavbarPosition(navbarCandidates),
+    0,
+    15,
+    '#header or one of its children should be at the top of the viewport '
+  );
+
+  window.scroll(0, 500);
+  await timeout(1);
+
+  assert.approximately(
+    getNavbarPosition(navbarCandidates),
+    0,
+    15,
+    '#header or one of its children should be at the top of the ' +
+      'viewport even after scrolling '
+  );
+
+  window.scroll(0, 0);
+})();
 ```
 
-A página inicial deve ter pelo menos uma media query
+A página inicial deve ter pelo menos uma media query.
 
 ```js
-assert.isAtLeast(new __helpers.CSSHelp(document).getCSSRules('media')?.length, 1);
+const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
+const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
+assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 ```
 
-A página inicial do produto deve utilizar o CSS flexbox pelo menos uma vez
+A página inicial do produto deve utilizar o CSS flexbox pelo menos uma vez.
 
 ```js
 const stylesheet = new __helpers.CSSHelp(document).getStyleSheet()

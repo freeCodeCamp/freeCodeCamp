@@ -26,7 +26,16 @@ import {
   userTokenSelector
 } from '../redux';
 import { User } from '../redux/prop-types';
-import { submitNewAbout, updateUserFlag, verifyCert } from '../redux/settings';
+import {
+  submitNewAbout,
+  updateMyHonesty,
+  updateMyPortfolio,
+  updateMyQuincyEmail,
+  updateMySound,
+  updateMyTheme,
+  updateUserFlag,
+  verifyCert
+} from '../redux/settings';
 
 const { apiLocation } = envData;
 
@@ -67,15 +76,15 @@ const mapDispatchToProps = {
   createFlashMessage,
   navigate,
   submitNewAbout,
-  toggleNightMode: (theme: Themes) => updateUserFlag({ theme }),
-  toggleSoundMode: (sound: boolean) => updateUserFlag({ sound }),
+  toggleNightMode: (theme: Themes) => updateMyTheme({ theme }),
+  toggleSoundMode: (sound: boolean) => updateMySound({ sound }),
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) =>
     updateUserFlag({ keyboardShortcuts }),
   updateInternetSettings: updateUserFlag,
-  updateIsHonest: updateUserFlag,
-  updatePortfolio: updateUserFlag,
+  updateIsHonest: updateMyHonesty,
+  updatePortfolio: updateMyPortfolio,
   updateQuincyEmail: (sendQuincyEmail: boolean) =>
-    updateUserFlag({ sendQuincyEmail }),
+    updateMyQuincyEmail({ sendQuincyEmail }),
   verifyCert
 };
 

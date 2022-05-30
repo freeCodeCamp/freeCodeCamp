@@ -7,7 +7,7 @@ dashedName: step-47
 
 # --description--
 
-Você voltará para o estilo do menu em alguns passos, mas por enquanto, vá em frente e adicione um segundo elemento `section` abaixo do primeiro para exibir as sobremesas oferecidas pela cafeteria.
+Você ainda vai voltar à estilização do menu, mas, por agora, adicione um segundo elemento `section` abaixo do primeiro para mostrar as sobremesas oferecidas pela cafeteria.
 
 # --hints--
 

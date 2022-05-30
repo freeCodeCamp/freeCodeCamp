@@ -73,11 +73,14 @@ describe('getSuperOrder', () => {
     });
   }
 
-  // Skipping these tests instead of deleting, so the infrastructure is there when we do the next superblock
-  it.skip('returns a different order if passed the option showNewCurriculum: true', () => {
-    expect.assertions(13);
+  it('returns a different order if passed the option showNewCurriculum: true', () => {
+    // Skip non-english tests while the RWD cert is still being translated.
+    if (process.env.CURRICULUM_LOCALE !== 'english') {
+      return;
+    }
+    expect.assertions(14);
     expect(
-      getSuperOrder('responsive-web-design', { showNewCurriculum: true })
+      getSuperOrder('2022/responsive-web-design', { showNewCurriculum: true })
     ).toBe(0);
     expect(
       getSuperOrder('javascript-algorithms-and-data-structures', {
@@ -118,11 +121,16 @@ describe('getSuperOrder', () => {
       getSuperOrder('coding-interview-prep', { showNewCurriculum: true })
     ).toBe(10);
     expect(
-      getSuperOrder('2022/responsive-web-design', { showNewCurriculum: true })
+      getSuperOrder('responsive-web-design', { showNewCurriculum: true })
     ).toBe(11);
     expect(
       getSuperOrder('relational-database', { showNewCurriculum: true })
     ).toBe(12);
+    expect(
+      getSuperOrder('2022/javascript-algorithms-and-data-structures', {
+        showNewCurriculum: true
+      })
+    ).toBe(13);
   });
 });
 
@@ -132,7 +140,7 @@ describe('getSuperBlockFromPath', () => {
   );
 
   it('handles all the directories in ./challenges/english', () => {
-    expect.assertions(14);
+    expect.assertions(15);
 
     for (const directory of directories) {
       expect(() => getSuperBlockFromDir(directory)).not.toThrow();
@@ -140,7 +148,7 @@ describe('getSuperBlockFromPath', () => {
   });
 
   it("returns valid superblocks (or 'certifications') for all valid arguments", () => {
-    expect.assertions(14);
+    expect.assertions(15);
 
     const superBlockPaths = directories.filter(x => x !== '00-certifications');
 

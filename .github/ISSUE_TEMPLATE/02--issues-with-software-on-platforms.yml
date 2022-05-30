@@ -1,4 +1,4 @@
-name: Report issues with software on freeCodeCamp.org's platforms
+name: Issue - User Interface on our Platforms
 description: Report a software bug on /learn, /news, Community Forum, Code Radio, or any of the platforms.
 labels: ['type: bug', 'status: waiting triage']
 body:

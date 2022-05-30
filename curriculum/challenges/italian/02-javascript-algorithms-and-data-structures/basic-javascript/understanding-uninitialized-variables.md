@@ -17,19 +17,19 @@ Inizializza le tre variabili `a`, `b` e `c` con `5`, `10`, e `"I am a"` rispetti
 
 # --hints--
 
-`a` dovrebbe essere definito e avere il valore `6`.
+La variabile `a` dovrebbe essere definita e avere un valore finale di `6`.
 
 ```js
 assert(typeof a === 'number' && a === 6);
 ```
 
-`b` dovrebbe essere definito e avere il valore `15`.
+La variabile `b` dovrebbe essere definita e avere un valore finale di `15`.
 
 ```js
 assert(typeof b === 'number' && b === 15);
 ```
 
-`c` non dovrebbe contenere `undefined` e dovrebbe avere un valore stringa `I am a String!`
+`c` non dovrebbe contenere `undefined` e dovrebbe avere un valore finale della stringa `I am a String!`
 
 ```js
 assert(!/undefined/.test(c) && c === 'I am a String!');

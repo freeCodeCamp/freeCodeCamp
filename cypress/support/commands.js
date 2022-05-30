@@ -53,20 +53,33 @@ Cypress.Commands.add('toggleAll', () => {
   cy.get('#privacy-settings')
     .find('.toggle-not-active')
     .each(element => {
-      return new Cypress.Promise(resolve => {
-        cy.wrap(element).click().should('have.class', 'toggle-active');
-        resolve();
-      });
+      cy.wrap(element).click().should('have.class', 'toggle-active');
     });
+  new Cypress.Promise(resolve => {
+    cy.get('[data-cy=save-privacy-settings]').click();
+    resolve();
+  });
   cy.get('#honesty-policy').find('button').click().wait(300);
+});
+
+Cypress.Commands.add('goToSettings', () => {
+  cy.visit('/settings');
+
+  // Setting aliases here
+  cy.get('[data-cy=username-input]').as('usernameInput');
+  cy.get('[data-cy=username-form]').as('usernameForm');
+});
+
+Cypress.Commands.add('typeUsername', username => {
+  cy.get('@usernameInput')
+    .clear({ force: true })
+    .type(username, { force: true });
 });
 
 Cypress.Commands.add('resetUsername', () => {
   cy.visit('/settings');
 
-  cy.get('@usernameInput')
-    .clear({ force: true })
-    .type('developmentuser', { force: true });
+  cy.typeUsername('developmentuser');
 
   cy.contains('Username is available');
 

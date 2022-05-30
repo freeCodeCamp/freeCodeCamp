@@ -32,7 +32,7 @@ Per favore nota che queste issue in GitHub sono per problemi e discussioni sulla
 
 ### Come posso segnalare un problema di sicurezza?
 
-Per favore non creare issue su GitHub per problemi di sicurezza. Instead, please [follow our security policy](https://contribute.freecodecamp.org/#/security).
+Per favore non creare issue su GitHub per problemi di sicurezza. Invece, per favore [segui la nostra politica di sicurezza](https://contribute.freecodecamp.org/#/security).
 
 ### Sono uno studente. Posso lavorare su una funzionalità ottenendo crediti accademici?
 

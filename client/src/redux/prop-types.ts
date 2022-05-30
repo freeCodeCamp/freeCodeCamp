@@ -348,7 +348,7 @@ export type CompletedChallenge = {
 };
 
 export type Ext = 'js' | 'html' | 'css' | 'jsx';
-export type FileKey = 'scriptjs' | 'indexhtml' | 'stylescss';
+export type FileKey = 'scriptjs' | 'indexhtml' | 'stylescss' | 'indexjsx';
 
 export type ChallengeMeta = {
   block: string;

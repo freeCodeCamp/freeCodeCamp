@@ -193,7 +193,7 @@ function TimelineInner({
             show={solutionOpen}
           >
             <Modal.Header closeButton={true}>
-              <Modal.Title id='contained-modal-title'>
+              <Modal.Title id='contained-modal-title' className='text-center'>
                 {`${username}'s Solution to ${
                   idToNameMap.get(id)?.challengeTitle ?? ''
                 }`}
@@ -243,6 +243,7 @@ function useIdToNameMap(): Map<string, NameMap> {
             challenge {
               fields {
                 slug
+                blockName
               }
               id
               title
@@ -268,11 +269,16 @@ function useIdToNameMap(): Map<string, NameMap> {
           // @ts-expect-error Graphql needs typing
           title,
           // @ts-expect-error Graphql needs typing
-          fields: { slug }
+          fields: { slug, blockName }
         }
       }
     }) => {
-      idToNameMap.set(id, { challengeTitle: title, challengePath: slug });
+      idToNameMap.set(id, {
+        challengeTitle: `${
+          title.includes('Step') ? `${blockName} - ` : ''
+        }${title}`,
+        challengePath: slug
+      });
     }
   );
   return idToNameMap;

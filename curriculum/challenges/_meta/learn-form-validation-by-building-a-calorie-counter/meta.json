@@ -1,0 +1,317 @@
+{
+  "name": "Learn Form Validation By Building a Calorie Counter",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-form-validation-by-building-a-calorie-counter",
+  "order": 1,
+  "time": "2 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "2022/javascript-algorithms-and-data-structures",
+  "challengeOrder": [
+    [
+      "5ddb965c65d27e1512d44d9a",
+      "Step 1"
+    ],
+    [
+      "5ddb965c65d27e1512d44d9b",
+      "Step 2"
+    ],
+    [
+      "5ddb965c65d27e1512d44d9c",
+      "Step 3"
+    ],
+    [
+      "5ddb965c65d27e1512d44d9d",
+      "Step 4"
+    ],
+    [
+      "5ddb965c65d27e1512d44d9e",
+      "Step 5"
+    ],
+    [
+      "5ddb965c65d27e1512d44d9f",
+      "Step 6"
+    ],
+    [
+      "5ddb965c65d27e1512d44da0",
+      "Step 7"
+    ],
+    [
+      "5ddb965c65d27e1512d44da1",
+      "Step 8"
+    ],
+    [
+      "5ddb965c65d27e1512d44da2",
+      "Step 9"
+    ],
+    [
+      "5ddb965c65d27e1512d44da3",
+      "Step 10"
+    ],
+    [
+      "5ddb965c65d27e1512d44da4",
+      "Step 11"
+    ],
+    [
+      "5ddb965c65d27e1512d44da5",
+      "Step 12"
+    ],
+    [
+      "5ddb965c65d27e1512d44da6",
+      "Step 13"
+    ],
+    [
+      "5ddb965c65d27e1512d44da7",
+      "Step 14"
+    ],
+    [
+      "5ddb965c65d27e1512d44da8",
+      "Step 15"
+    ],
+    [
+      "5ddb965c65d27e1512d44da9",
+      "Step 16"
+    ],
+    [
+      "5ddb965c65d27e1512d44daa",
+      "Step 17"
+    ],
+    [
+      "5ddb965c65d27e1512d44dab",
+      "Step 18"
+    ],
+    [
+      "5ddb965c65d27e1512d44dac",
+      "Step 19"
+    ],
+    [
+      "5ddb965c65d27e1512d44dad",
+      "Step 20"
+    ],
+    [
+      "5e302e80e003129199103c78",
+      "Step 21"
+    ],
+    [
+      "5e302e8ce003129199103c79",
+      "Step 22"
+    ],
+    [
+      "5ddb965c65d27e1512d44dae",
+      "Step 23"
+    ],
+    [
+      "5ddb965c65d27e1512d44daf",
+      "Step 24"
+    ],
+    [
+      "5ddb965c65d27e1512d44db0",
+      "Step 25"
+    ],
+    [
+      "5ddb965c65d27e1512d44db1",
+      "Step 26"
+    ],
+    [
+      "5ddb965c65d27e1512d44db2",
+      "Step 27"
+    ],
+    [
+      "5ddb965c65d27e1512d44db3",
+      "Step 28"
+    ],
+    [
+      "5ddb965c65d27e1512d44db4",
+      "Step 29"
+    ],
+    [
+      "5ddb965c65d27e1512d44db5",
+      "Step 30"
+    ],
+    [
+      "5ddb965c65d27e1512d44db6",
+      "Step 31"
+    ],
+    [
+      "5ddb965c65d27e1512d44db7",
+      "Step 32"
+    ],
+    [
+      "5ddb965c65d27e1512d44db8",
+      "Step 33"
+    ],
+    [
+      "5ddb965c65d27e1512d44db9",
+      "Step 34"
+    ],
+    [
+      "5ddb965c65d27e1512d44dba",
+      "Step 35"
+    ],
+    [
+      "5ddb965c65d27e1512d44dbb",
+      "Step 36"
+    ],
+    [
+      "5ddb965c65d27e1512d44dbc",
+      "Step 37"
+    ],
+    [
+      "5ddb965c65d27e1512d44dbd",
+      "Step 38"
+    ],
+    [
+      "5ddb965c65d27e1512d44dbe",
+      "Step 39"
+    ],
+    [
+      "5ddb965c65d27e1512d44dbf",
+      "Step 40"
+    ],
+    [
+      "5ddb965c65d27e1512d44dc0",
+      "Step 41"
+    ],
+    [
+      "5ddb965c65d27e1512d44dc1",
+      "Step 42"
+    ],
+    [
+      "5ddb965c65d27e1512d44dc2",
+      "Step 43"
+    ],
+    [
+      "5ddb965c65d27e1512d44dc3",
+      "Step 44"
+    ],
+    [
+      "5ddb965c65d27e1512d44dc4",
+      "Step 45"
+    ],
+    [
+      "5ddb965c65d27e1512d44dc5",
+      "Step 46"
+    ],
+    [
+      "5ddb965c65d27e1512d44dc6",
+      "Step 47"
+    ],
+    [
+      "5ddb965c65d27e1512d44dc7",
+      "Step 48"
+    ],
+    [
+      "5ddb965c65d27e1512d44dc8",
+      "Step 49"
+    ],
+    [
+      "5ddb965c65d27e1512d44dc9",
+      "Step 50"
+    ],
+    [
+      "5ddb965c65d27e1512d44dca",
+      "Step 51"
+    ],
+    [
+      "5ddb965c65d27e1512d44dcb",
+      "Step 52"
+    ],
+    [
+      "5ddb965c65d27e1512d44dcc",
+      "Step 53"
+    ],
+    [
+      "5ddb965c65d27e1512d44dcd",
+      "Step 54"
+    ],
+    [
+      "5ddb965c65d27e1512d44dce",
+      "Step 55"
+    ],
+    [
+      "5ddb965c65d27e1512d44dcf",
+      "Step 56"
+    ],
+    [
+      "5ddb965c65d27e1512d44dd0",
+      "Step 57"
+    ],
+    [
+      "5ddb965c65d27e1512d44dd1",
+      "Step 58"
+    ],
+    [
+      "5ddb965c65d27e1512d44dd2",
+      "Step 59"
+    ],
+    [
+      "5ddb965c65d27e1512d44dd3",
+      "Step 60"
+    ],
+    [
+      "5ddb965c65d27e1512d44dd4",
+      "Step 61"
+    ],
+    [
+      "5ddb965c65d27e1512d44dd5",
+      "Step 62"
+    ],
+    [
+      "5ddb965c65d27e1512d44dd6",
+      "Step 63"
+    ],
+    [
+      "5ddb965c65d27e1512d44dd7",
+      "Step 64"
+    ],
+    [
+      "5ddb965c65d27e1512d44dd8",
+      "Step 65"
+    ],
+    [
+      "5ddb965c65d27e1512d44dd9",
+      "Step 66"
+    ],
+    [
+      "5ddb965c65d27e1512d44dda",
+      "Step 67"
+    ],
+    [
+      "5ddb965c65d27e1512d44ddb",
+      "Step 68"
+    ],
+    [
+      "5ddb965c65d27e1512d44ddc",
+      "Step 69"
+    ],
+    [
+      "5ddb965c65d27e1512d44ddd",
+      "Step 70"
+    ],
+    [
+      "5ddb965c65d27e1512d44dde",
+      "Step 71"
+    ],
+    [
+      "5ddb965c65d27e1512d44ddf",
+      "Step 72"
+    ],
+    [
+      "5ddb965c65d27e1512d44de0",
+      "Step 73"
+    ],
+    [
+      "5ddb965c65d27e1512d44de1",
+      "Step 74"
+    ],
+    [
+      "5ddb965c65d27e1512d44de2",
+      "Step 75"
+    ],
+    [
+      "5ddb965c65d27e1512d44de3",
+      "Step 76"
+    ]
+  ]}
