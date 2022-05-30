@@ -8,7 +8,7 @@ dashedName: i-before-e-except-after-c
 
 # --description--
 
-The phrase ["I before E, except after C"](<https://en.wikipedia.org/wiki/I before E except after C>) is a widely known mnemonic which is supposed to help when spelling English words.
+**"I before E, except after C"** is a mnemonic rule of thumb for English spelling. If one is unsure whether a word is spelled with the digraph `ei` or `ie`, the rhyme suggests that the correct order is `ie` unless the preceding letter is `c`, in which case it may be `ei`.
 
 Using the words provided, check if the two sub-clauses of the phrase are plausible individually:
 
