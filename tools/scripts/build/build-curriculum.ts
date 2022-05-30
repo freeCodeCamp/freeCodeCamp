@@ -1,8 +1,11 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
-const { getChallengesForLang } = require('../../../curriculum/getChallenges');
-const { buildMobileCurriculum } = require('./build-mobile-curriculum');
+import { getChallengesForLang } from '../../../curriculum/getChallenges';
+import {
+  buildExtCurriculumData,
+  Curriculum
+} from './build-external-curricula-data';
 
 const { CURRICULUM_LOCALE } = process.env;
 
@@ -10,10 +13,10 @@ const globalConfigPath = path.resolve(__dirname, '../../../config');
 
 // We are defaulting to English because the ids for the challenges are same
 // across all languages.
-getChallengesForLang('english')
-  .then(result => {
+void getChallengesForLang('english')
+  .then((result: Record<string, unknown>) => {
     if (CURRICULUM_LOCALE === 'english') {
-      buildMobileCurriculum(result);
+      buildExtCurriculumData('v1.0.0', result as Curriculum);
     }
     return result;
   })
