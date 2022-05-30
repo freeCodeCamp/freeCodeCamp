@@ -8,7 +8,7 @@ dashedName: linear-congruential-generator
 
 # --description--
 
-The [linear congruential generator](<https://en.wikipedia.org/wiki/linear congruential generator>) is a very simple example of a [random number generator](<http://rosettacode.org/wiki/random number generator>). All linear congruential generators use this formula:
+A linear congruential generator (LCG) is an <em>algorithm</em> that yields a sequence of pseudo-randomized numbers calculated with a discontinuous piecewise linear equation. All linear congruential generators use this formula:
 
 $$r_{n + 1} = (a \times r_n + c) \bmod m$$
 
@@ -22,7 +22,7 @@ Where:
 
 If one chooses the values of $a$, $c$ and $m$ with care, then the generator produces a uniform distribution of integers from $0$ to $m - 1$.
 
-LCG numbers have poor quality. $r_n$ and $r\_{n + 1}$ are not independent, as true random numbers would be. Anyone who knows $r_n$ can predict $r\_{n + 1}$, therefore LCG is not cryptographically secure. The LCG is still good enough for simple tasks like [Miller-Rabin primality test](<http://rosettacode.org/wiki/Miller-Rabin primality test>), or [FreeCell deals](<http://rosettacode.org/wiki/deal cards for FreeCell>). Among the benefits of the LCG, one can easily reproduce a sequence of numbers, from the same $r_0$. One can also reproduce such sequence with a different programming language, because the formula is so simple.
+<abbr title="linear congruential generator">LCG</abbr> numbers have poor quality. $r_n$ and $r\_{n + 1}$ are not independent, as true random numbers would be. Anyone who knows $r_n$ can predict $r\_{n + 1}$, therefore <abbr title="linear congruential generator">LCG</abbr> is not cryptographically secure. The <abbr title="linear congruential generator">LCG</abbr> is still good enough for simple tasks like Miller-Rabin primality test, or FreeCell deals. Among the benefits of the <abbr title="linear congruential generator">LCG</abbr>, one can easily reproduce a sequence of numbers, from the same $r_0$. One can also reproduce such sequence with a different programming language, because the formula is so simple.
 
 # --instructions--
 
