@@ -8,7 +8,13 @@ dashedName: compare-a-list-of-strings
 
 # --description--
 
-Given a [list](https://en.wikipedia.org/wiki/List_(abstract_data_type) "wp: List\_(abstract_data_type)") of arbitrarily many strings, implement a function for each of the following conditions:
+A list or sequence is an abstract data type that represents a finite number of ordered values, where the same value may occur more than once. Here is an example:
+
+```js
+const list = [['AA',  'BB', 'CC'], ['AA', 'ACB', 'AA'], [], ['AA']];
+````
+
+Given a list of arbitrarily many strings, implement a function for each of the following conditions:
 
 <ul>
   <li>test if they are all lexically equal</li>
