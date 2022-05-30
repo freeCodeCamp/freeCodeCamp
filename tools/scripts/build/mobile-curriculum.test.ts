@@ -38,7 +38,7 @@ if (envData.clientLocale == 'english' && !envData.showUpcomingChanges) {
       );
 
       fileArray
-        .filter(fileInArray => fileInArray !== 'availableSuperblocks.json')
+        .filter(fileInArray => fileInArray !== 'available-superblocks.json')
         .forEach(fileInArray => {
           const fileContent = fs.readFileSync(
             `${mobileStaticPath}/curriculum-data/${VERSION}/${fileInArray}`,
