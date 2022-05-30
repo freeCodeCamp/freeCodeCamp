@@ -21,12 +21,10 @@ import './commands';
 
 Cypress.on('uncaught:exception', err => {
   console.log('Cypress detected uncaught exception', err.name);
-  // Rapidly cy.visiting pages seems to cause an uncaught exception. This seems
-  // to be a testing artifact, since users can't click fast enough to cause this
-  // (to our knowledge).
-  // UPDATE: this may have morphed into NS_ERROR_UNEXPECTED with the move to
-  // Cypress 9.  Quite why, I'm not sure.
-  if (err.name === 'NS_ERROR_UNEXPECTED') {
+  // Rapidly cy.visiting pages seems to cause uncaught exceptions. It remains
+  // unclear why this is happening, but we need to ignore them in testing so
+  // that we can test other behaviour.
+  if (err.name === 'NS_ERROR_UNEXPECTED' || err.name === 'ChunkLoadError') {
     return false;
   }
   // We are still interested in other errors.
