@@ -571,7 +571,9 @@ const Editor = (props: EditorProps): JSX.Element => {
     attemptRef.current.attempts++;
   }
 
-  const tryToSubmitChallenge = submitChallengeDebounceRef.current;
+  const tryToSubmitChallenge = props.usesMultifileEditor
+    ? submitChallengeDebounceRef.current
+    : props.submitChallenge;
 
   function createLowerJaw(outputNode: HTMLElement, callback?: () => void) {
     const { output } = props;
