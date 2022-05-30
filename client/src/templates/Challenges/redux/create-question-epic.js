@@ -21,7 +21,7 @@ function filesToMarkdown(challengeFiles = {}) {
       return fileString;
     }
     const fileName = moreThanOneFile
-      ? `\\ file: ${challengeFile.name}.${challengeFile.ext}\n`
+      ? `/* file: ${challengeFile.name}.${challengeFile.ext} */\n`
       : '';
     const fileType = challengeFile.ext;
     return `${fileString}\`\`\`${fileType}\n${fileName}${challengeFile.contents}\n\`\`\`\n\n`;
