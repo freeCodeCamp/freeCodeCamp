@@ -18,7 +18,7 @@ In the morning (after the surreptitious and separate action of each of the five 
 
 # --instructions--
 
-Create a function that returns the minimum possible size of the initial pile of coconuts collected during the day for `N` sailors. **Note:** Of course the tale is told in a world where the collection of any amount of coconuts in a day and multiple divisions of the pile, etc. can occur in time fitting the story line, so as not to affect the mathematics.
+Create a function that returns the minimum possible size of the initial pile of coconuts collected during the day for `N` sailors. **Note:** Of course the tale is told in a world where the collection of any number of coconuts in a day and multiple divisions of the pile, etc. can occur in time fitting the story line, so as not to affect mathematics.
 
 # --hints--
 
