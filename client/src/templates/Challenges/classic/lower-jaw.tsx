@@ -184,7 +184,9 @@ const LowerJaw = ({
           aria-hidden={testBtnariaHidden}
           onClick={tryToExecuteChallenge}
         >
-          {t('buttons.check-code')}
+          {window.screen.width < 768
+            ? 'Check Your Code'
+            : t('buttons.check-code')}
         </button>
         <div id='action-buttons-container'>
           <button
