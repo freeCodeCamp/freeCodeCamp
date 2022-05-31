@@ -7,9 +7,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   // }
 
   try {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    const staticPaths = await getStaticPaths();
+    const staticPaths = await getStaticPaths({});
     console.log(staticPaths.paths);
     await res.unstable_revalidate(staticPaths.paths[0] as string);
     return res.json({ revalidated: true });
