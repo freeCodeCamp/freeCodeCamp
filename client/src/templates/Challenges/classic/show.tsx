@@ -188,7 +188,6 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   }
 
   onStopResize(event: HandlerProps) {
-    // @ts-expect-error TODO: Apparently, name does not exist on type
     const { name, flex } = event.component.props;
 
     // Only interested in tracking layout updates for ReflexElement's
