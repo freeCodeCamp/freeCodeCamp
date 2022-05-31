@@ -23,7 +23,11 @@
     "develop-client": "next dev --port 8000",
     "dev": "concurrently \"npm:develop-curriculum-server\" \"npm:develop-client\"",
     "develop-curriculum-server": "npm --prefix ../curriculum-server run dev",
-    "prepare": "npm --prefix ../ run build:curriculum && npm --prefix ../curriculum-server/ run source-curriculum"
+    "prepare": "npm --prefix ../ run build:curriculum && npm --prefix ../curriculum-server/ run source-curriculum",
+    "build-client": "next build",
+    "build": "concurrently -k \"npm:develop-curriculum-server\" \"npm:build-client\"",
+    "start-client": "next start --port 8000",
+    "start": "concurrently \"npm:develop-curriculum-server\" \"npm:start-client\""
   },
   "dependencies": {
     "@monaco-editor/react": "4.4.5",

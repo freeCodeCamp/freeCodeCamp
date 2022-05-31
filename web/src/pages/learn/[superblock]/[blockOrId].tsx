@@ -62,16 +62,14 @@ const getProps = (curriculum: Curriculum) => {
 };
 
 const renderPage = (props: Props) => ({
-  props,
-  revalidate: 10
+  props
 });
 
 const redirect = (pathSegments: PathSegments) => ({
   redirect: {
     destination: getDestination(pathSegments),
     permanent: false
-  },
-  revalidate: 10
+  }
 });
 
 // DRY this with [id]'s version
