@@ -296,6 +296,7 @@
       "restart": "重启",
       "restart-step": "重启步骤",
       "console": "控制台",
+      "instructions": "Instructions",
       "notes": "注意",
       "preview": "预览"
     },
