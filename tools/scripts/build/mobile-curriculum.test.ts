@@ -7,7 +7,7 @@ import { mobileSchemaValidator } from './mobileSchema';
 import { superBlockMobileAppOrder } from './build-external-curricula-data';
 
 if (envData.clientLocale == 'english' && !envData.showUpcomingChanges) {
-  const VERSION = 'v1.0.0';
+  const VERSION = 'v1';
 
   describe('mobile curriculum build', () => {
     const mobileStaticPath = path.resolve(__dirname, '../../../client/static');
