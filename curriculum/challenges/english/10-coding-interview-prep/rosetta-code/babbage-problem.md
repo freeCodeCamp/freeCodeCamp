@@ -8,7 +8,7 @@ dashedName: babbage-problem
 
 # --description--
 
-Charles Babbage was looking ahead to the sorts of problems his Analytical Engine would be able to solve, gave this example:
+Charles Babbage, looking ahead to the sorts of problems his Analytical Engine would be able to solve, gave this example:
 
 <blockquote>
   What is the smallest positive integer whose square ends in the digits 269,696?
