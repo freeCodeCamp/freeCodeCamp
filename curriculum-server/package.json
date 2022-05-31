@@ -19,11 +19,13 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "none",
   "scripts": {
-    "dev": "json-server --watch ./data/curriculum.json",
+    "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "source-curriculum": "ts-node source-curriculum.ts"
   },
   "dependencies": {
+    "axios": "^0.27.2",
+    "nodemon": "^2.0.16",
     "json-server": "0.17.0"
   },
   "devDependencies": {
