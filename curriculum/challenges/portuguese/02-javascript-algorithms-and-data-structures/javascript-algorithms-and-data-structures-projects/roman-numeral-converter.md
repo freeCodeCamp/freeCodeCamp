@@ -21,7 +21,7 @@ Converta o número dado em um número romano.
 | L               | 50               |
 | XL              | 40               |
 | X               | 10               |
-| IX              | 0                |
+| IX              | 9                |
 | V               | 5                |
 | IV              | 4                |
 | I               | 1                |
