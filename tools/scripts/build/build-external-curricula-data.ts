@@ -58,7 +58,7 @@ export function buildExtCurriculumData(
   function parseCurriculumData() {
     const superBlockKeys = Object.values(SuperBlocks);
 
-    writeToFile('availableSuperblocks', {
+    writeToFile('available-superblocks', {
       superblocks: [
         superBlockMobileAppOrder,
         Object.values(SuperBlocks).map(superblock =>
