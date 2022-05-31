@@ -19,7 +19,10 @@ import jwt from 'jsonwebtoken';
 import { jwtSecret } from '../../../../config/secrets';
 
 import { environment, deploymentEnv } from '../../../../config/env.json';
-import { fixPartiallyCompletedChallengeItem } from '../../common/utils';
+import {
+  fixPartiallyCompletedChallengeItem,
+  getIdToChallengeTypeMap
+} from '../../common/utils';
 import { getChallenges } from '../utils/get-curriculum';
 import { ifNoUserSend } from '../utils/middleware';
 import {
@@ -32,6 +35,8 @@ import { challengeTypes } from '../../../../utils/challenge-types';
 
 const log = debug('fcc:boot:challenges');
 const allChallenges = getChallenges();
+
+const idToChallengeType = getIdToChallengeTypeMap(allChallenges);
 
 export default async function bootChallenge(app, done) {
   const send200toNonUser = ifNoUserSend(true);
@@ -93,7 +98,6 @@ export default async function bootChallenge(app, done) {
 export function validateChallenge(req, res, next) {
   const { body } = req;
 
-  // Ensure `body` is an array:
   if (!Array.isArray(body) || !body.length) {
     return res.status(400).json({
       type: 'error',
@@ -101,14 +105,13 @@ export function validateChallenge(req, res, next) {
     });
   }
   for (const challenge of body) {
-    const { id, challengeType } = challenge;
+    const { id } = challenge;
+    const challengeType = idToChallengeType[id];
 
-    // Ensure `id` and `challengeType` exist on `challenge`
-    if (typeof id !== 'string' || typeof challengeType !== 'number') {
+    if (typeof id !== 'string') {
       return res.status(400).json({
         type: 'error',
-        message:
-          'Invalid request format. Expected `id` and `challengeType` to be present.'
+        message: 'Invalid request format. Expected `id` to be present.'
       });
     }
 
@@ -136,23 +139,30 @@ export function validateChallenge(req, res, next) {
 export function validateProject(req, res, next) {
   const { body } = req;
 
-  // Ensure `body` is an object
-  if (!body || typeof body !== 'object') {
+  if (!body || body?.constructor?.name !== 'Object') {
     return res.status(400).json({
       type: 'error',
-      message: 'Invalid request format. Expected `body` to be an object.'
+      message:
+        'Invalid request format. Expected `body` to be an object literal.'
     });
   }
 
   const { id } = body;
 
-  // Find the structure, based on the `id` of the project
+  if (typeof id !== 'string') {
+    return res.status(400).json({
+      type: 'error',
+      message: 'Invalid request format. Expected `id` to be present.'
+    });
+  }
+
+  const challengeType = idToChallengeType[id];
+
   const challenge = allChallenges.find(chal => chal.id === id);
 
-  // Ensure `body` matches the expected structure
-  const validBody = ensureObjectContainsAllProperties(
+  const isValidBody = ensureObjectContainsAllProperties(
     body,
-    expectedProjectStructures[body.challengeType]
+    expectedProjectStructures[challengeType]
   );
   const isProjectValid =
     !!challenge &&
@@ -163,8 +173,8 @@ export function validateProject(req, res, next) {
       challengeTypes.pythonProject,
       challengeTypes.codeAllyCert,
       challengeTypes.multifileCertProject
-    ].includes(body.challengeType) &&
-    validBody;
+    ].includes(challengeType) &&
+    isValidBody;
 
   if (!isProjectValid) {
     return res.status(400).json({
@@ -182,18 +192,16 @@ export function validateProject(req, res, next) {
  * @returns {Observable}
  */
 export function challengesCompleted(req, res, next) {
-  // Challenges should only include `id` and `challengeType`
   const { user, body } = req;
 
   const submittedChallenges = [];
   for (const challenge of body) {
-    const { id, challengeType } = challenge;
+    const { id } = challenge;
 
     // NOTE: Consider what will happen if this comes with a batch
     const completedDate = Date.now();
 
     const completedChallenge = {
-      challengeType, // TODO: A little birdy told me we do not need to store `challengeType` for non-certs?
       id,
       completedDate
     };
@@ -271,7 +279,8 @@ export function challengesCompleted(req, res, next) {
  */
 export function projectCompleted(req, res, next) {
   const { user, body } = req;
-  const { files, completedDate = Date.now(), id } = body;
+  const { files, id } = body;
+  const completedDate = Date.now();
   let completedChallenge = body;
 
   let finalChallenge;
@@ -361,8 +370,6 @@ export function projectCompleted(req, res, next) {
 
 export const expectedProjectStructures = {
   [challengeTypes.multifileCertProject]: [
-    // 14 'responsive-web-design'
-    'challengeType',
     'files',
     'files.contents',
     'files.ext',
@@ -372,8 +379,6 @@ export const expectedProjectStructures = {
     'id'
   ],
   [challengeTypes.bonfire]: [
-    // 5 'javascript-algorithms-and-data-structures'
-    'challengeType',
     'files',
     'files.contents',
     'files.ext',
@@ -382,31 +387,20 @@ export const expectedProjectStructures = {
     'files.name',
     'id'
   ],
-  [challengeTypes.zipline]: ['challengeType', 'id', 'solution'], // 3 'front-end-development-libraries'
-  [challengeTypes.backEndProject]: [
-    'challengeType',
-    'id',
-    'solution',
-    'githubLink'
-  ], // 4 'back-end-development'
-  [challengeTypes.pythonProject]: [
-    // 10 'scientific-computing-with-python'
-    'challengeType',
-    'id',
-    'solution',
-    'githubLink'
-  ],
-  [challengeTypes.codeAllyCert]: ['challengeType', 'id', 'solution'] // 13 'relational-database'
+  [challengeTypes.zipline]: ['id', 'solution'],
+  [challengeTypes.backEndProject]: ['id', 'solution', 'githubLink'],
+  [challengeTypes.pythonProject]: ['id', 'solution', 'githubLink'],
+  [challengeTypes.codeAllyCert]: ['id', 'solution']
 };
 
 /**
  * Checks all given keys exist in the given object.
  * @param {object} obj
  * @param {string[]} fields
- * @returns
+ * @returns {boolean | undefined}
  */
 export function ensureObjectContainsAllProperties(obj, fields) {
-  return fields.every(key => hasProperties(obj, key));
+  return fields?.every(key => hasProperties(obj, key));
 }
 
 export function hasProperties(obj, keys) {

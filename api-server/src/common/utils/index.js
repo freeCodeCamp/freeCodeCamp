@@ -26,3 +26,12 @@ export const fixSavedChallengeItem = obj =>
 
 export const fixPartiallyCompletedChallengeItem = obj =>
   pick(obj, ['id', 'completedDate']);
+
+export function getIdToChallengeTypeMap(challenges) {
+  return challenges.reduce((acc, curr) => {
+    return {
+      ...acc,
+      [curr.id]: curr.challengeType
+    };
+  }, {});
+}

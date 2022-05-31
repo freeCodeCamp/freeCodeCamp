@@ -40,14 +40,233 @@ export const mockRes = opts => {
 };
 
 describe('boot/challenge', () => {
-  xdescribe('validateChallenge', () => {
-    it('', () => {
-      validateChallenge();
+  describe('validateChallenge', () => {
+    it('calls `next` with valid inputs', () => {
+      const id = '619665c9abd72906f3ad30f9';
+      const req = mockReq({ body: [{ id }] });
+      const res = mockRes();
+      const next = jest.fn();
+      validateChallenge(req, res, next);
+      expect(next).toHaveBeenCalled();
+    });
+    it('returns an error when `body` is an object literal', () => {
+      const id = '619665c9abd72906f3ad30f9';
+      const req = mockReq({ body: { id } });
+      const res = mockRes();
+      const next = jest.fn();
+      validateChallenge(req, res, next);
+      expect(res.status).toHaveBeenCalledWith(400);
+      expect(res.json).toHaveBeenCalledWith({
+        type: 'error',
+        message: 'Invalid request format. Expected `body` to be an array.'
+      });
+    });
+    it('returns an error when `id` is not in `body`', () => {
+      const malformedRequestBody = '619665c9abd72906f3ad30f9';
+      const req = mockReq({ body: [{ malformedRequestBody }] });
+      const res = mockRes();
+      const next = jest.fn();
+      validateChallenge(req, res, next);
+      expect(res.status).toHaveBeenCalledWith(400);
+      expect(res.json).toHaveBeenCalledWith({
+        type: 'error',
+        message: 'Invalid request format. Expected `id` to be present.'
+      });
+    });
+    it('returns an error when `id` is invalid', () => {
+      const id = '1019665c9abd72906f3ad30f9';
+      const req = mockReq({ body: [{ id }] });
+      const res = mockRes();
+      const next = jest.fn();
+      validateChallenge(req, res, next);
+      expect(res.status).toHaveBeenCalledWith(400);
+      expect(res.json).toHaveBeenCalledWith({
+        type: 'error',
+        message: 'Invalid challenge submission.'
+      });
+    });
+    it('returns an error when `id` is for a certification project', () => {
+      const id = 'bd7158d8c242eddfaeb5bd13';
+      const req = mockReq({ body: [{ id }] });
+      const res = mockRes();
+      const next = jest.fn();
+      validateChallenge(req, res, next);
+      expect(res.status).toHaveBeenCalledWith(400);
+      expect(res.json).toHaveBeenCalledWith({
+        type: 'error',
+        message: 'Invalid challenge submission.'
+      });
     });
   });
-  xdescribe('validateProject', () => {
-    it('', () => {
-      validateProject();
+  describe('validateProject', () => {
+    it('calls `next` with valid inputs', () => {
+      const id = 'bd7158d8c242eddfaeb5bd13';
+      const files = [
+        {
+          name: '',
+          ext: '',
+          contents: '',
+          history: [],
+          key: ''
+        }
+      ];
+      const req = mockReq({ body: { id, files } });
+      const res = mockRes();
+      const next = jest.fn();
+      validateProject(req, res, next);
+      expect(next).toHaveBeenCalled();
+    });
+    it('returns an error when `body` is not an object literal', () => {
+      const id = 'bd7158d8c242eddfaeb5bd13';
+      const files = [
+        {
+          name: '',
+          ext: '',
+          contents: '',
+          history: [],
+          key: ''
+        }
+      ];
+      const req = mockReq({ body: [{ id, files }] });
+      const res = mockRes();
+      const next = jest.fn();
+      validateProject(req, res, next);
+      expect(res.status).toHaveBeenCalledWith(400);
+      expect(res.json).toHaveBeenCalledWith({
+        type: 'error',
+        message:
+          'Invalid request format. Expected `body` to be an object literal.'
+      });
+    });
+    it('returns an error when `id` is not in `body`', () => {
+      const malformedRequestBody = 'bd7158d8c242eddfaeb5bd13';
+      const files = [
+        {
+          name: '',
+          ext: '',
+          contents: '',
+          history: [],
+          key: ''
+        }
+      ];
+      const req = mockReq({ body: { malformedRequestBody, files } });
+      const res = mockRes();
+      const next = jest.fn();
+      validateProject(req, res, next);
+      expect(res.status).toHaveBeenCalledWith(400);
+      expect(res.json).toHaveBeenCalledWith({
+        type: 'error',
+        message: 'Invalid request format. Expected `id` to be present.'
+      });
+    });
+    it('returns an error when `id` is invalid', () => {
+      const id = '1019665c9abd72906f3ad30f9';
+      const files = [
+        {
+          name: '',
+          ext: '',
+          contents: '',
+          history: [],
+          key: ''
+        }
+      ];
+      const req = mockReq({ body: { id, files } });
+      const res = mockRes();
+      const next = jest.fn();
+      validateProject(req, res, next);
+      expect(res.status).toHaveBeenCalledWith(400);
+      expect(res.json).toHaveBeenCalledWith({
+        type: 'error',
+        message: 'Invalid project submission.'
+      });
+    });
+    it('returns an error when `id` is for a challenge', () => {
+      const id = '619665c9abd72906f3ad30f9';
+      const files = [
+        {
+          name: '',
+          ext: '',
+          contents: '',
+          history: [],
+          key: ''
+        }
+      ];
+      const req = mockReq({ body: { id, files } });
+      const res = mockRes();
+      const next = jest.fn();
+      validateProject(req, res, next);
+      expect(res.status).toHaveBeenCalledWith(400);
+      expect(res.json).toHaveBeenCalledWith({
+        type: 'error',
+        message: 'Invalid project submission.'
+      });
+    });
+    it('returns an error when any property is missing for a project', () => {
+      const id = 'bd7158d8c242eddfaeb5bd13';
+      const files = [
+        {
+          name: '',
+          ext: '',
+          contents: '',
+          history: [],
+          key: ''
+        }
+      ];
+      // eslint-disable-next-line no-unused-vars
+      const { name, ...noName } = files;
+      let req = mockReq({ body: { id, files: noName } });
+      const res = mockRes();
+      const next = jest.fn();
+      validateProject(req, res, next);
+      expect(res.status).toHaveBeenCalledWith(400);
+      expect(res.json).toHaveBeenCalledWith({
+        type: 'error',
+        message: 'Invalid project submission.'
+      });
+
+      // eslint-disable-next-line no-unused-vars
+      const { ext, ...noExt } = files;
+      req = mockReq({ body: { id, files: noExt } });
+      validateProject(req, res, next);
+      expect(res.status).toBeCalledTimes(2);
+      expect(res.status).toHaveBeenCalledWith(400);
+      expect(res.json).toHaveBeenCalledWith({
+        type: 'error',
+        message: 'Invalid project submission.'
+      });
+
+      // eslint-disable-next-line no-unused-vars
+      const { contents, ...noContents } = files;
+      req = mockReq({ body: { id, files: noContents } });
+      validateProject(req, res, next);
+      expect(res.status).toBeCalledTimes(3);
+      expect(res.status).toHaveBeenCalledWith(400);
+      expect(res.json).toHaveBeenCalledWith({
+        type: 'error',
+        message: 'Invalid project submission.'
+      });
+
+      // eslint-disable-next-line no-unused-vars
+      const { history, ...noHistory } = files;
+      req = mockReq({ body: { id, files: noHistory } });
+      validateProject(req, res, next);
+      expect(res.status).toBeCalledTimes(4);
+      expect(res.status).toHaveBeenCalledWith(400);
+      expect(res.json).toHaveBeenCalledWith({
+        type: 'error',
+        message: 'Invalid project submission.'
+      });
+
+      // eslint-disable-next-line no-unused-vars
+      const { key, ...noKey } = files;
+      req = mockReq({ body: { id, files: noKey } });
+      validateProject(req, res, next);
+      expect(res.status).toBeCalledTimes(5);
+      expect(res.status).toHaveBeenCalledWith(400);
+      expect(res.json).toHaveBeenCalledWith({
+        type: 'error',
+        message: 'Invalid project submission.'
+      });
     });
   });
   describe('ensureObjectContainsAllFields', () => {
