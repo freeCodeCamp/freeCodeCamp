@@ -31,7 +31,7 @@ After 2, this sequence contains the following powers of 2:
 
 $2^2=4$, $2^3=8$, $2^5=32$, $2^7=128$, $2^{11}=2048$, $2^{13}=8192$, $2^{17}=131072$, $2^{19}=524288$, $\\ldots$
 
-which are the prime powers of 2.
+Which are the prime powers of 2.
 
 # --instructions--
 
