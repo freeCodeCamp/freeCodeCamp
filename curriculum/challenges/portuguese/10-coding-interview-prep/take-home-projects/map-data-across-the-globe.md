@@ -8,9 +8,9 @@ dashedName: map-data-across-the-globe
 
 # --description--
 
-**Objetivo:** criar uma aplicação no [CodePen.io](https://codepen.io) que tenha função semelhante a esta: <https://codepen.io/freeCodeCamp/full/mVEJag>.
+**Objetivo:** criar uma aplicação que funcione de modo semelhante ao que vemos em: <https://codepen.io/freeCodeCamp/full/mVEJag>.
 
-Atenda às seguintes [histórias de usuário](https://en.wikipedia.org/wiki/User_story). Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
+Atenda às histórias de usuário abaixo e faça com que todos os testes passem. Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
 
 **História de usuário:** posso ver onde todos os meteoritos pousaram no mapa do mundo.
 
