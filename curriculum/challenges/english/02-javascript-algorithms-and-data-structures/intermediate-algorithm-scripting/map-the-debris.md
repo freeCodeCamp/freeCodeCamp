@@ -8,18 +8,16 @@ dashedName: map-the-debris
 
 # --description--
 
-The orbital period is the amount of time a given astronomical object takes to complete one orbit around another object.
-
-According to Kepler's Third Law, the orbital period T of two point masses orbiting each other in a circular or elliptic orbit is:
+According to Kepler's Third Law, the orbital period $T$ of two point masses orbiting each other in a circular or elliptic orbit is:
 
 $$
 T = 2 \pi \sqrt{\frac{a^{3}}{\mu}}
 $$
 
-- a is the orbit's semi-major axis
-- μ = GM is the standard gravitational parameter
-- G is the gravitational constant,
-- M is the mass of the more massive body.
+- $a$ is the orbit's semi-major axis
+- $μ = GM$ is the standard gravitational parameter
+- $G$ is the gravitational constant,
+- $M$ is the mass of the more massive body.
 
 Return a new array that transforms the elements' average altitude into their orbital periods (in seconds).
 
