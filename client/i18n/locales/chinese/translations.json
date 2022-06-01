@@ -70,7 +70,9 @@
     "start-coding": "开始编码！",
     "go-to-settings": "转到设置以申请你的认证",
     "click-start-course": "开始课程",
-    "click-start-project": "启动项目"
+    "click-start-project": "启动项目",
+    "change-language": "Change Language",
+    "cancel-change": "Cancel Change"
   },
   "landing": {
     "big-heading-1": "免费学习编程",
