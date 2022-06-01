@@ -36,8 +36,20 @@ class EditorTabs extends Component<EditorTabsProps> {
   static displayName: string;
   render() {
     const { challengeFiles, toggleVisibleEditor, visibleEditors } = this.props;
+
+    const handleMobileTabs = () => {
+      const editorVisbilityArr = Object.values(visibleEditors).map(
+        visibleEditors => visibleEditors
+      );
+
+      if (editorVisbilityArr.length > 1 && window.innerWidth <= 768) {
+        toggleVisibleEditor(challengeFiles?.at(0)?.fileKey);
+      }
+    };
+
     return (
       <div className='monaco-editor-tabs'>
+        {handleMobileTabs()}
         {/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call */}
         {sortChallengeFiles(challengeFiles).map(
           (challengeFile: ChallengeFile) => (
