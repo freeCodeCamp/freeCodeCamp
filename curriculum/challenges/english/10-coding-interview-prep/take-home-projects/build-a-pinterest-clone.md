@@ -24,7 +24,7 @@ Fulfill the below user stories and get all of the tests to pass. Use whichever l
 
 **User Story:** As an authenticated user, if I upload an image that is broken, it will be replaced by a placeholder image. (can use jQuery broken image detection)
 
-**Hint:** [Masonry.js](https://masonry.desandro.com/) is a library that allows for Pinterest-style image grids.
+**Hint:** Masonry.js is a library that allows for Pinterest-style image grids.
 
 Once you've finished implementing these user stories, enter the URL to your live app and, optionally, your GitHub repository. Then click the "I've completed this challenge" button.
 

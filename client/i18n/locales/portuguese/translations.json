@@ -70,7 +70,9 @@
     "start-coding": "Comece a programar!",
     "go-to-settings": "Vá para as configurações para solicitar sua certificação",
     "click-start-course": "Iniciar o curso",
-    "click-start-project": "Iniciar o projeto"
+    "click-start-project": "Iniciar o projeto",
+    "change-language": "Change Language",
+    "cancel-change": "Cancel Change"
   },
   "landing": {
     "big-heading-1": "Aprenda a programar — de graça.",
@@ -296,6 +298,7 @@
       "restart": "Reiniciar",
       "restart-step": "Reiniciar etapa",
       "console": "Console",
+      "instructions": "Instruções",
       "notes": "Observações",
       "preview": "Pré-visualizar"
     },

@@ -16,7 +16,7 @@ const globalConfigPath = path.resolve(__dirname, '../../../config');
 void getChallengesForLang('english')
   .then((result: Record<string, unknown>) => {
     if (CURRICULUM_LOCALE === 'english') {
-      buildExtCurriculumData('v1.0.0', result as Curriculum);
+      buildExtCurriculumData('v1', result as Curriculum);
     }
     return result;
   })

@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c442eddfaeb5bd18
-title: Build a Tribute Page
+title: Construye una página tributo
 challengeType: 14
 forumTopicId: 301147
 dashedName: build-a-tribute-page
@@ -8,32 +8,34 @@ dashedName: build-a-tribute-page
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to <a href="https://tribute-page.freecodecamp.rocks" target="_blank">https://tribute-page.freecodecamp.rocks</a>
+**Objetivo:** Crear una aplicación que sea funcionalmente similar a <a href="https://tribute-page.freecodecamp.rocks" target="_blank">https://tribute-page.freecodecamp.rocks</a>
 
-**User Stories:**
+**Historias de usuario:**
 
-1. Your tribute page should have an element with a corresponding `id="main"`, which contains all other elements
-1. You should see an element with an `id` of `title`, which contains a string (i.e. text), that describes the subject of the tribute page (e.g. "Dr. Norman Borlaug")
-1. You should see either a `figure` or a `div` element with an `id` of `img-div`
-1. Within the `img-div` element, you should see an `img` element with a corresponding `id="image"`
-1. Within the `img-div` element, you should see an element with a corresponding `id="img-caption"` that contains textual content describing the image shown in `img-div`
-1. You should see an element with a corresponding `id="tribute-info"`, which contains textual content describing the subject of the tribute page
-1. You should see an a element with a corresponding `id="tribute-link"`, which links to an outside site, that contains additional information about the subject of the tribute page. HINT: You must give your element an attribute of `target` and set it to `_blank` in order for your link to open in a new tab
-1. Your `#image` should use `max-width` and `height` properties to resize responsively, relative to the width of its parent element, without exceeding its original size
-1. Your `img` element should be centered within its parent element
+1. Tu página de tributo debe tener un elemento con un correspondiente `id="main"`, el cual contiene todos los demás elementos
+1. Debes ver un elemento con un `id` de `title` que contiene una cadena (por ejemplo, texto), que describa el tema de la página de tributo (por ejemplo, "Dr. Norman Borlaug")
+1. Debes ver ya sea un elemento `figure` o un elemento `div` con un `id` de `img-div`
+1. Dentro del elemento `img-div`, debes ver un elemento `img` con un correspondiente `id="image"`
+1. Dentro del elemento `img-div`, debes ver un elemento con un correspondiente `id="img-caption"` que contiene contenido textual que describe la imagen mostrada en `img-div`
+1. Debes ver un elemento con un correspondiente `id="tribute-info"`, que contiene contenido textual que describe el tema de la página de tributo
+1. Debes ver un elemento con un correspondiente `id="tribute-link"`, que enlaza a un sitio externo que contiene información adicional sobre el tema de la página de tributo. CONSEJO: Debes dar a tu elemento un atributo de `target` y establecerlo a `_blank` para que tu enlace se abra en una nueva pestaña
+1. Tu `#image` debe usar las propiedades `max-width` y `height` para redimensionar, de forma responsiva, relativo al ancho de su elemento padre, sin exceder su tamaño original
+1. Tu elemento `img` debe estar centrado dentro de su elemento padre
 
-Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
+Completa las historias de usuario y pasa todas las pruebas a continuación para completar este proyecto. Dale tu propio estilo personal. ¡Feliz día programando!
+
+**Nota:** Asegúrate de agregar `<link rel="stylesheet" href="styles.css">` en tu HTML para enlazar tu hoja de estilos y aplicar tu CSS
 
 # --hints--
 
-You should have a `main` element with an `id` of `main`
+Debes tener un elemento `main` con un `id` de `main`
 
 ```js
 const el = document.getElementById('main')
 assert(!!el && el.tagName === 'MAIN')
 ```
 
-Your `#img-div`, `#image`, `#img-caption`, `#tribute-info`, and `#tribute-link` should all be descendants of `#main`
+Tus `#img-div`, `#image`, `#img-caption`, `#tribute-info`, y `#tribute-link` deben ser descendientes de `#main`
 
 ```js
 const el1 = document.querySelector('#main #img-div')
@@ -44,14 +46,14 @@ const el5 = document.querySelector('#main #tribute-link')
 assert(!!el1 & !!el2 && !!el3 && !!el4 && !!el5)
 ```
 
-You should have an element with an `id` of `title`
+Debes tener un elemento con un `id` de `title`
 
 ```js
 const el = document.getElementById('title')
 assert(!!el)
 ```
 
-Your `#title` should not be empty
+Tu `#title` no debe estar vacío
 
 ```js
 const el = document.getElementById('title')
@@ -59,120 +61,116 @@ assert(!!el && el.innerText.length > 0)
 
 ```
 
-You should have a `figure` or `div` element with an `id` of `img-div`
+Debes tener un elemento `figure` o `div` con un `id` de `img-div`
 
 ```js
 const el = document.getElementById('img-div')
 assert(!!el && (el.tagName === 'DIV' || el.tagName === 'FIGURE'))
 ```
 
-You should have an `img` element with an `id` of `image`
+Debes tener un elemento `img` con un `id` de `image`
 
 ```js
 const el = document.getElementById('image')
 assert(!!el && el.tagName === 'IMG')
 ```
 
-Your `#image` should be a descendant of `#img-div`
+Tu `#image` debe ser descendiente de `#img-div`
 
 ```js
 const el = document.querySelector('#img-div #image')
 assert(!!el)
 ```
 
-You should have a `figcaption` or `div` element with an `id` of `img-caption`
+Debes tener un elemento `figcaption` o `div` con un `id` de `img-caption`
 
 ```js
 const el = document.getElementById('img-caption')
 assert(!!el && (el.tagName === 'DIV' || el.tagName === 'FIGCAPTION'))
 ```
 
-Your `#img-caption` should be a descendant of `#img-div`
+Tu `#img-caption` debe ser descendiente de `#img-div`
 
 ```js
 const el = document.querySelector('#img-div #img-caption')
 assert(!!el)
 ```
 
-Your `#img-caption` should not be empty
+Tu `#img-caption` no debe estar vacío
 
 ```js
 const el = document.getElementById('img-caption')
 assert(!!el && el.innerText.length > 0)
 ```
 
-You should have an element with an `id` of `tribute-info`
+Debes tener un elemento con un `id` de `tribute-info`
 
 ```js
 const el = document.getElementById('tribute-info')
 assert(!!el)
 ```
 
-Your `#tribute-info` should not be empty
+Tu `#tribute-info` no debe estar vacío
 
 ```js
 const el = document.getElementById('tribute-info')
 assert(!!el && el.innerText.length > 0)
 ```
 
-You should have an `a` element with an `id` of `tribute-link`
+Debes tener un elemento `a` con un `id` de `tribute-link`
 
 ```js
 const el = document.getElementById('tribute-link')
 assert(!!el && el.tagName === 'A')
 ```
 
-Your `#tribute-link` should have an `href` attribute and value
+Tu `#tribute-link` debe tener un atributo `href` y un valor
 
 ```js
 const el = document.getElementById('tribute-link')
 assert(!!el && !!el.href && el.href.length > 0)
 ```
 
-Your `#tribute-link` should have a `target` attribute set to `_blank`
+Tu `#tribute-link` debe tener un atributo `target` establecido en `_blank`
 
 ```js
 const el = document.getElementById('tribute-link')
 assert(!!el && el.target === '_blank')
 ```
 
-You should use an `#image` selector in your CSS to style the `#image` and pass the next three tests
+Tu elemento `img` debe tener un `display` de `block`
 
 ```js
-const style = new __helpers.CSSHelp(document).getStyle('#image')
-assert(!!style)
-```
-
-Your `#image` should have a `display` of `block`
-
-```js
-const style = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('display')
+const img = document.getElementById('image');
+const imgStyle = window.getComputedStyle(img);
+const style = imgStyle?.getPropertyValue('display')
 assert(style === 'block')
 ```
 
-Your `#image` should have a `max-width` of `100%`
+Tu `#image` debe tener un `max-width` de `100%`
 
 ```js
-const style = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('max-width')
+const img = document.getElementById('image');
+const imgStyle = window.getComputedStyle(img);
+const style = imgStyle?.getPropertyValue('max-width')
 assert(style === '100%')
 ```
 
-Your `#image` should have a `height` of `auto`
+Tu `#image` debe tener un `height` de `auto`
 
 ```js
 // taken from the testable-projects repo
 const img = document.getElementById('image');
-const maxWidthValue = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('max-width')
-const displayValue = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('display')
-const oldDisplayValue = img?.style.getPropertyValue('display');
-const oldDisplayPriority = img?.style.getPropertyPriority('display');
+const imgStyle = window.getComputedStyle(img);
+const oldDisplayValue = imgStyle.getPropertyValue('display');
+const oldDisplayPriority = imgStyle.getPropertyPriority('display');
 img?.style.setProperty('display', 'none', 'important');
-const heightValue = new __helpers.CSSHelp(document).getStyle('#image')?.getPropertyValue('height')
+const heightValue = imgStyle?.getPropertyValue('height')
 img?.style.setProperty('display', oldDisplayValue, oldDisplayPriority);
 assert(heightValue === 'auto')
 ```
 
-Your `#image` should be centered within its parent
+Tu `#image` debe estar centrado dentro de su padre
 
 ```js
 // taken from the testable-projects repo

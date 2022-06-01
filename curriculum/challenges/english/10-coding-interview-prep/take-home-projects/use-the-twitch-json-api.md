@@ -10,6 +10,8 @@ dashedName: use-the-twitch-json-api
 
 **Objective:** Build an app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/Myvqmo/>.
 
+The Twitch API is a RESTful API that lets developers build creative integrations for the broader Twitch community.
+
 Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
 
 **User Story:** I can see whether freeCodeCamp is currently streaming on Twitch.tv.
@@ -18,11 +20,9 @@ Fulfill the below user stories and get all of the tests to pass. Use whichever l
 
 **User Story:** if a Twitch user is currently streaming, I can see additional details about what they are streaming.
 
-**Hint:** The relevant documentation about Twitch.tv's JSON API is here: <https://dev.twitch.tv/docs/api/reference/#get-streams>.
-
 **Hint:** Here's an array of the Twitch.tv usernames of people who regularly stream: `["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"]`
 
-**UPDATE:** Due to a change in conditions on API usage, Twitch.tv requires an API key, but we've built a workaround. Use <https://twitch-proxy.freecodecamp.rocks/> instead of Twitch's API base URL (i.e. `https://api.twitch.tv/helix` ) and you'll still be able to get account information, without needing to sign up for an API key.
+**UPDATE:** Due to a change in conditions on API usage, Twitch.tv requires an API key, but we've built a workaround. Use <https://twitch-proxy.freecodecamp.rocks/> instead of Twitch's API base URL and you'll still be able to get account information, without needing to sign up for an API key.
 
 When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
 

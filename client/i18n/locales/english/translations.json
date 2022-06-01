@@ -70,7 +70,9 @@
     "start-coding": "Start coding!",
     "go-to-settings": "Go to settings to claim your certification",
     "click-start-course": "Start the course",
-    "click-start-project": "Start the project"
+    "click-start-project": "Start the project",
+    "change-language": "Change Language",
+    "cancel-change": "Cancel Change"
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
