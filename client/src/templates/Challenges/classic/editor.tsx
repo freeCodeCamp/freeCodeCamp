@@ -56,7 +56,8 @@ import {
   stopResetting,
   isProjectPreviewModalOpenSelector,
   openModal,
-  isChallengeCompletedSelector
+  isChallengeCompletedSelector,
+  resetChallenge
 } from '../redux';
 import GreenPass from '../../../assets/icons/green-pass';
 import LowerJaw from './lower-jaw';
@@ -105,6 +106,7 @@ interface EditorProps {
   }) => void;
   usesMultifileEditor: boolean;
   isChallengeCompleted: boolean;
+  resetChallenge: () => void;
 }
 
 // TODO: this is grab bag of unrelated properties.  There's no need for them to
@@ -169,6 +171,7 @@ const mapDispatchToProps = {
   submitChallenge,
   initTests,
   stopResetting,
+  resetChallenge,
   openHelpModal: () => openModal('help')
 };
 
@@ -588,6 +591,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         challengeHasErrors={challengeHasErrors()}
         tryToSubmitChallenge={tryToSubmitChallenge}
         isEditorInFocus={isEditorInFocus}
+        resetChallenge={props.resetChallenge}
       />,
       outputNode,
       callback

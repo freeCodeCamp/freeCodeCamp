@@ -115,7 +115,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         <ActionRow
           block={block}
           hasNotes={hasNotes}
-          isMultifileCertProject={isMultifileCertProject}
           isProjectBasedChallenge={projectBasedChallenge}
           showConsole={showConsole}
           showNotes={showNotes}
