@@ -1,6 +1,6 @@
 ---
 id: 587d78af367417b2b2512b03
-title: Build a Survey Form
+title: Crea un formulario de encuesta
 challengeType: 14
 forumTopicId: 301145
 dashedName: build-a-survey-form
@@ -8,277 +8,279 @@ dashedName: build-a-survey-form
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to <a href="https://survey-form.freecodecamp.rocks" target="_blank">https://survey-form.freecodecamp.rocks</a>
+**Objetivo:** Crear una aplicación que sea funcionalmente similar a <a href="https://survey-form.freecodecamp.rocks" target="_blank">https://survey-form.freecodecamp.rocks</a>
 
-**User Stories:**
+**Historias de usuario:**
 
-1. You should have a page title in an `h1` element with an `id` of `title`
-1. You should have a short explanation in a `p` element with an `id` of `description`
-1. You should have a `form` element with an `id` of `survey-form`
-1. Inside the form element, you are **required** to enter your name in an `input` field that has an `id` of `name` and a `type` of `text`
-1. Inside the form element, you are **required** to enter your email in an `input` field that has an `id` of `email`
-1. If you enter an email that is not formatted correctly, you will see an HTML5 validation error
-1. Inside the form, you can enter a number in an `input` field that has an `id` of `number`
-1. If you enter non-numbers in the number input, you will see an HTML5 validation error
-1. If you enter numbers outside the range of the number input, which are defined by the `min` and `max` attributes, you will see an HTML5 validation error
-1. For the name, email, and number input fields, you can see corresponding `label` elements in the form, that describe the purpose of each field with the following ids: `id="name-label"`, `id="email-label"`, and `id="number-label"`
-1. For the name, email, and number input fields, you can see placeholder text that gives a description or instructions for each field
-1. Inside the form element, you should have a `select` dropdown element with an `id` of `dropdown` and at least two options to choose from
-1. Inside the form element, you can select an option from a group of at least two radio buttons that are grouped using the `name` attribute
-1. Inside the form element, you can select several fields from a series of checkboxes, each of which must have a `value` attribute
-1. Inside the form element, you are presented with a `textarea` for additional comments
-1. Inside the form element, you are presented with a button with `id` of `submit` to submit all the inputs
+1. Debes tener un título de página en un elemento `h1` con un `id` de `title`
+1. Debes tener una pequeña explicación en un elemento `p` con un `id` de `description`
+1. Debes tener un elemento `form` con un `id` de `survey-form`
+1. Dentro del elemento form, debes ser **obligatorio** (required) ingresar tu nombre en un campo de `input` que tenga un `id` de `name` y un `type` de `text`
+1. Dentro del elemento form debe ser **obligatorio** (required) ingresar tu nombre en un campo de `input` que tenga un `id` de `email`
+1. Si introduces un correo electrónico que no tiene el formato correcto, tú debes ver una alerta de validación en THML5
+1. Dentro de tu form, tu puedes introducir un número en un campo `input` que tenga un `id` de `number`
+1. Si introduces un valor no numérico en la entrada de números, tú debes ver una alerta de validación en HTML5
+1. Si introduces un número fuera del rango de la entrada de números, los cuales están definidos por los atributos `min` y `max`, debes ver una alerta de validación en HTML5
+1. Para los campos de entrada de nombre, correo electrónico y número, podrás ver los correspondientes elementos `label` en el formulario, que describen el propósito de cada campo con los siguientes ids: `id="name-label"`, `id="email-label"`, y `id="number-label"`
+1. Para los campos de entrada de nombre, correo electrónico y número, podrás ver un texto provisional que da una descripción o instrucciones para cada campo
+1. Dentro del elemento de formulario, debes tener un elemento desplegable `select` con un `id` de `dropdown` con al menos dos opciones para elegir
+1. Dentro del elemento de formulario, puedes seleccionar una opción de un grupo de al menos dos botones de radio que son agrupados utilizando el atributo `name`
+1. Dentro del elemento de formulario, puedes seleccionar varios campos en una serie de casillas de verificación, cada una debe tener un atributo `value`
+1. Dentro del elemento de formulario, se te presenta un `textarea` para comentarios adicionales
+1. Dentro del elemento form, se te presenta un botón con un `id` de `submit` para enviar todas las entradas
 
-Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
+Completa las historias de usuario y pasa todas las pruebas a continuación para completar este proyecto. Dale tu propio estilo personal. ¡Que tengas una feliz programación!
+
+**Nota:** Asegúrate de agregar `<link rel="stylesheet" href="styles.css">` en tu HTML para enlazar tu hoja de estilos y aplicar tu CSS
 
 # --hints--
 
-You should have an `h1` element with an `id` of `title`
+Debes tener un elemento `h1` con un `id` de `title`
 
 ```js
 const el = document.getElementById('title')
 assert(!!el && el.tagName === 'H1')
 ```
 
-Your `#title` should not be empty
+Tú `#title` no debe estar vacío
 
 ```js
 const el = document.getElementById('title')
 assert(!!el && el.innerText.length > 0)
 ```
 
-You should have a `p` element with an `id` of `description`
+Debes tener un elemento `p` con un `id` de `description`
 
 ```js
 const el = document.getElementById('description')
 assert(!!el && el.tagName === 'P')
 ```
 
-Your `#description` should not be empty
+Tú `#description` no debe estar vacío
 
 ```js
 const el = document.getElementById('description')
 assert(!!el && el.innerText.length > 0)
 ```
 
-You should have a `form` element with an `id` of `survey-form`
+Debe tener un elemento `form` con un `id` de `survey-form`
 
 ```js
 const el = document.getElementById('survey-form')
 assert(!!el && el.tagName === 'FORM')
 ```
 
-You should have an `input` element with an `id` of `name`
+Debes tener un elemento `input` con un `id` de `name`
 
 ```js
 const el = document.getElementById('name')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Your `#name` should have a `type` of `text`
+Tú `#name` debe tener un `type` de `text`
 
 ```js
 const el = document.getElementById('name')
 assert(!!el && el.type === 'text')
 ```
 
-Your `#name` should require input
+Tú `#name` debe requerir una entrada
 
 ```js
 const el = document.getElementById('name')
 assert(!!el && el.required)
 ```
 
-Your `#name` should be a descedant of `#survey-form`
+Tú `#name` debe ser un descendiente de `#survey-form`
 
 ```js
 const el = document.querySelector('#survey-form #name')
 assert(!!el)
 ```
 
-You should have an `input` element with an `id` of `email`
+Debes tener un elemento `input` con un `id` de `email`
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Your `#email` should have a `type` of `email`
+Tú `#email` debe tener un `type` de `email`
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.type === 'email')
 ```
 
-Your `#email` should require input
+Tú `#email` debe requerir una entrada
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.required)
 ```
 
-Your `#email` should be a descedant of `#survey-form`
+Tú `#email` debe ser un descendiente de `#survey-form`
 
 ```js
 const el = document.querySelector('#survey-form #email')
 assert(!!el)
 ```
 
-You should have an `input` element with an `id` of `number`
+Debes tener un elemento `input` con un `id` de `number`
 
 ```js
 const el = document.getElementById('number')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Your `#number` should be a descedant of `#survey-form`
+Tú `#number` debe ser un descendiente de `#survey-form`
 
 ```js
 const el = document.querySelector('#survey-form #number')
 assert(!!el)
 ```
 
-Your `#number` should have a `type` of `number`
+Tú `#number` debe tener un `type` de `number`
 
 ```js
 const el = document.getElementById('number')
 assert(!!el && el.type === 'number')
 ```
 
-Your `#number` should have a `min` attribute with a numeric value
+Tú `#number` debe tener un atributo `min` con un valor numérico
 
 ```js
 const el = document.getElementById('number')
 assert(!!el && el.min && isFinite(el.min))
 ```
 
-Your `#number` should have a `max` attribute with a numeric value
+Tú `#number` debe tener un atributo `max` con un valor numérico
 
 ```js
 const el = document.getElementById('number')
 assert(!!el && el.max && isFinite(el.max))
 ```
 
-You should have a `label` element with an `id` of `name-label`
+Debes tener un elemento `label` con un `id` de `name-label`
 
 ```js
 const el = document.getElementById('name-label')
 assert(!!el && el.tagName === 'LABEL')
 ```
 
-You should have a `label` element with an `id` of `email-label`
+Debes tener un elemento `label` con un `id` de `email-label`
 
 ```js
 const el = document.getElementById('email-label')
 assert(!!el && el.tagName === 'LABEL')
 ```
 
-You should have a `label` element with an `id` of `number-label`
+Debes tener un elemento `label` con un `id` de `name-label`
 
 ```js
 const el = document.getElementById('number-label')
 assert(!!el && el.tagName === 'LABEL')
 ```
 
-Your `#name-label` should not be empty
+Tu`#name-label`no debe estar vacio
 
 ```js
 const el = document.getElementById('name-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Your `#email-label` should not be empty
+Tu`#name-label`no debe estar vacio
 
 ```js
 const el = document.getElementById('email-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Your `#number-label` should not be empty
+Tu`#name-label`no debe estar vacio
 
 ```js
 const el = document.getElementById('number-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Your `#name-label` should be a descedant of `#survey-form`
+Tú `#name` debe ser una variante de `#survey-form`
 
 ```js
 const el = document.querySelector('#survey-form #name-label')
 assert(!!el)
 ```
 
-Your `#email-label` should be a descedant of `#survey-form`
+Tú `#name` debe ser una variante de `#survey-form`
 
 ```js
 const el = document.querySelector('#survey-form #email-label')
 assert(!!el)
 ```
 
-Your `#number-label` should be a descedant of `#survey-form`
+Tú `#name` debe ser una variante de `#survey-form`
 
 ```js
 const el = document.querySelector('#survey-form #number-label')
 assert(!!el)
 ```
 
-Your `#name` should have a `placeholder` attribute and value
+Tú `#email` debe tener el atributo `placeholder` con un marcador de texto
 
 ```js
 const el = document.getElementById('name')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-Your `#email` should have a `placeholder` attribute and value
+Tú `#email` debe tener el atributo `placeholder` y valor
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-Your `#number` should have a `placeholder` attribute and value
+Tú `#number` debe tener el atributo `placeholder` y valor
 
 ```js
 const el = document.getElementById('number')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-You should have a `select` field with an `id` of `dropdown`
+Debes tener un campo `select` con un `id` de `dropdown`
 
 ```js
 const el = document.getElementById('dropdown')
 assert(!!el && el.tagName === 'SELECT')
 ```
 
-Your `#dropdown` should have at least two selectable (not disabled) `option` elements
+Tú `#dropdown` debe tener al menos dos elementos seleccionables (no deshabilitado) `option`
 
 ```js
 const els = document.querySelectorAll('#dropdown option:not([disabled])')
 assert(els.length >= 2)
 ```
 
-Your `#dropdown` should be a descendant of `#survey-form`
+Tú `#dropdown` debe ser un descendiente de `#survey-form`
 
 ```js
 const el = document.querySelector('#survey-form #dropdown')
 assert(!!el)
 ```
 
-You should have at least two `input` elements with a `type` of `radio` (radio buttons)
+Debes tener al menos dos elementos `input` con un `type` de `radio` (botones de radio)
 
 ```js
 const els = document.querySelectorAll('input[type="radio"]')
 assert(els.length >= 2)
 ```
 
-You should have at least two radio buttons that are descendants of `#survey-form`
+Debes tener al menos dos botones de radio que sean descendientes de `#survey-form`
 
 ```js
 const els = document.querySelectorAll('#survey-form input[type="radio"]')
 assert(els.length >= 2)
 ```
 
-All your radio buttons should have a `value` attribute and value
+Todos los botones de radio deben tener un atributo `value` y valor
 
 ```js
 const els1 = document.querySelectorAll('input[type="radio"]')
@@ -286,7 +288,7 @@ const els2 = document.querySelectorAll('input[type="radio"][value=""], input[typ
 assert(els1.length > 0 && els2.length === 0)
 ```
 
-All your radio buttons should have a `name` attribute and value
+Todos los botones de radio deben tener un atributo `name` y valor
 
 ```js
 const els1 = document.querySelectorAll('input[type="radio"]')
@@ -294,7 +296,7 @@ const els2 = document.querySelectorAll('input[type="radio"][name=""], input[type
 assert(els1.length > 0 && els2.length === 0)
 ```
 
-Every radio button group should have at least 2 radio buttons
+Cada grupo de botones de radio deben tener al menos 2 botones de radio
 
 ```js
 const radioButtons = document.querySelectorAll('input[type="radio"]');
@@ -316,14 +318,14 @@ groupKeys.forEach(key => {
 assert(groupKeys.length > 0)
 ```
 
-You should have at least two `input` elements with a `type` of `checkbox` (checkboxes) that are descendants of `#survey-form`
+Debes tener al menos dos elementos `input` con un `type` de `checkbox` (casillas de verificación) que son descendientes de `#survey-form`
 
 ```js
 const els = document.querySelectorAll('#survey-form input[type="checkbox"]');
 assert(els.length >= 2)
 ```
 
-All your checkboxes inside `#survey-form` should have a `value` attribute and value
+Todas las casillas de verificación dentro de `#survey-form` deben tener un atributo `value` y valor
 
 ```js
 const els1 = document.querySelectorAll('#survey-form input[type="checkbox"]')
@@ -331,28 +333,28 @@ const els2 = document.querySelectorAll('#survey-form input[type="checkbox"][valu
 assert(els1.length > 0 && els2.length === 0)
 ```
 
-You should have at least one `textarea` element that is a descendant of `#survey-form`
+Debes tener al menos un elemento de `textarea` que sea descendiente de `#survey-form`
 
 ```js
 const el = document.querySelector('#survey-form textarea')
 assert(!!el)
 ```
 
-You should have an `input` or `button` element with an `id` of `submit`
+Debes tener un elemento `input` o un elemento `button` con un `id` de `submit`
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && (el.tagName === 'INPUT' || el.tagName === 'BUTTON'))
 ```
 
-Your `#submit` should have a `type` of `submit`
+Tú `#submit` debe tener un `type` de `submit`
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && el.type === 'submit')
 ```
 
-Your `#submit` should be a descendant of `#survey-form`
+Tú `#submit` debe ser un descendiente de `#survey-form`
 
 ```js
 const el = document.querySelector('#survey-form #submit')

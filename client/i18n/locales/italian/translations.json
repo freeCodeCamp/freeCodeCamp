@@ -70,7 +70,9 @@
     "start-coding": "Inizia a programmare!",
     "go-to-settings": "Vai alle impostazioni per richiedere la tua certificazione",
     "click-start-course": "Inizia il corso",
-    "click-start-project": "Inizia il progetto"
+    "click-start-project": "Inizia il progetto",
+    "change-language": "Change Language",
+    "cancel-change": "Cancel Change"
   },
   "landing": {
     "big-heading-1": "Impara a programmare — gratis.",

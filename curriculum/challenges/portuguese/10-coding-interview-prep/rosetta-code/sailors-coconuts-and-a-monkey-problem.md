@@ -8,16 +8,17 @@ dashedName: sailors-coconuts-and-a-monkey-problem
 
 # --description--
 
-Cinco marinheiros são náufragos em uma ilha e coletam muitos cocos durante o dia. Naquela noite, o primeiro marinheiro acorda e decide tomar a sua parte dos cocos mais cedo, então tenta dividir o monte de cocos igualmente em cinco pilhas, mas descobre que ainda há um coco sobrando. Então, ele o joga para um macaco e então esconde "sua" pilha, uma das cinco pilhas de cocos de tamanho igual, e empurra os outros quatro montes para formar um único monte visível de cocos novamente e vai para a cama. Resumindo uma longa história, cada marinheiro por sua vez se levanta uma vez durante a noite e executa as mesmas ações de dividir a pilha de cocos em cinco, descobrindo que sobra um coco e deixando o coco que resta para o macaco. De manhã (depois da ação às escondidas e separada de cada um dos cinco marinheiros durante a noite), os cocos restantes são divididos em cinco pilhas iguais para cada um dos marinheiros, onde se descobre que a pilha de cocos pode ser dividida igualmente entre os marinheiros, sem sobrar nenhum. (Nada é dado para o macaco da manhã.)
+Cinco marinheiros são náufragos em uma ilha e coletam muitos cocos durante o dia.
+
+Naquela noite, o primeiro marinheiro acorda e decide tomar a sua parte dos cocos mais cedo, então tenta dividir o monte de cocos igualmente em cinco pilhas, mas descobre que ainda há um coco sobrando. Então, ele o joga para um macaco e então esconde "sua" pilha, uma das cinco pilhas de cocos de tamanho igual, e empurra os outros quatro montes para formar um único monte visível de cocos novamente e vai para a cama.
+
+Resumindo uma longa história, cada marinheiro por sua vez se levanta uma vez durante a noite e executa as mesmas ações de dividir a pilha de cocos em cinco, descobrindo que sobra um coco e deixando o coco que resta para o macaco e unindo as outras quatro pilhas em uma única pilha.
+
+De manhã (depois da ação às escondidas e separada de cada um dos cinco marinheiros durante a noite), os cocos restantes são divididos em cinco pilhas iguais para cada um dos marinheiros, onde se descobre que a pilha de cocos pode ser dividida igualmente entre os marinheiros, sem sobrar nenhum. (Nada é dado para o macaco da manhã.)
 
 # --instructions--
 
-Crie uma função que retorne o tamanho mínimo possível para a pilha inicial de cocos coletados durante o dia para `N` marinheiros. **Observação:** logicamente, a história é contada em um mundo onde a coleção de qualquer quantidade de cocos em um dia e múltiplas divisões do monte pode ocorrer em tempo ajustando a linha da história, de modo a não afetar a matemática. **De acordo com:**
-
-<ul>
-  <li><a href="https://www.youtube.com/watch?v=U9qU20VmvaU" target="_blank"> Monkeys and Coconuts - Numberphile</a> (Vídeo) Solução analítica.</li>
-  <li><a href="https://oeis.org/A002021" target="_blank">A002021 Pile of coconuts problem</a> The On-Line Encyclopedia of Integer Sequences. (Embora algumas das referências possam usar a forma alternativa de conto).</li>
-</ul>
+Crie uma função que retorne o tamanho mínimo possível para a pilha inicial de cocos coletados durante o dia para `N` marinheiros. **Observação:** logicamente, a história é contada em um mundo onde a coleção de qualquer quantidade de cocos em um dia e múltiplas divisões do monte pode ocorrer em tempo ajustando a linha da história, de modo a não afetar a matemática.
 
 # --hints--
 
