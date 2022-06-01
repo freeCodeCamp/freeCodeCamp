@@ -43,7 +43,10 @@ describe('boot/challenge', () => {
   describe('validateChallenge', () => {
     it('calls `next` with valid inputs', () => {
       const id = '619665c9abd72906f3ad30f9';
-      const req = mockReq({ body: [{ id }] });
+      const completedDate = Date.now();
+      const req = mockReq({
+        body: [{ id, completedDate }, { id: '619692ff79f5770fc6d8c0b4' }]
+      });
       const res = mockRes();
       const next = jest.fn();
       validateChallenge(req, res, next);

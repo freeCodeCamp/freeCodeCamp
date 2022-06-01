@@ -196,10 +196,9 @@ export function challengesCompleted(req, res, next) {
 
   const submittedChallenges = [];
   for (const challenge of body) {
-    const { id } = challenge;
-
-    // NOTE: Consider what will happen if this comes with a batch
-    const completedDate = Date.now();
+    // Client should send `completedDate`, but during the deployment of these changes
+    // this ensures there are no lost dates.
+    const { id, completedDate = Date.now() } = challenge;
 
     const completedChallenge = {
       id,
@@ -235,7 +234,7 @@ export function challengesCompleted(req, res, next) {
       points++;
       $push.progressTimestamps.$each = [
         ...$push.progressTimestamps.$each,
-        Date.now()
+        chal.completedDate
       ];
       $push.completedChallenges.$each = [
         ...$push.completedChallenges.$each,
