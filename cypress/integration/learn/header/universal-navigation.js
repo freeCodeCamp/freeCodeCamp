@@ -41,7 +41,7 @@ describe('Default Navigation Menu', () => {
 
 describe('Lanuage menu', () => {
   it('should render all used languages.', () => {
-    cy.get(selectors['navigation-list']).contains('Change language').click();
+    cy.get(selectors['navigation-list']).contains('Change Language').click();
     testAllLanuges();
     cy.get(selectors['language-menu'])
       .should('be.visible')
