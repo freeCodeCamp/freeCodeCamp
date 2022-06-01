@@ -537,16 +537,13 @@ button.nav-link[aria-disabled='true'] {
     margin-top: 0;
   }
 
-  .fcc_searchBar .ais-SearchBox-form {
-    max-width: 100%;
+  .fcc_searchBar,
+  .fcc_searchBar div {
+    width: 100%;
   }
 
-  .ais-SearchBox-input {
-    min-width: 100%;
-  }
-
-  .ais-Hits {
-    min-width: calc(100% - 30px);
+  .universal-nav-right .fcc_searchBar .ais-SearchBox-form {
+    width: 100%;
   }
 
   .display-menu {
@@ -558,7 +555,7 @@ button.nav-link[aria-disabled='true'] {
   }
 
   .universal-nav-right .fcc_searchBar .ais-Hits {
-    width: calc(100vw - 30px);
+    width: calc(100% - 30px);
   }
 }
 
