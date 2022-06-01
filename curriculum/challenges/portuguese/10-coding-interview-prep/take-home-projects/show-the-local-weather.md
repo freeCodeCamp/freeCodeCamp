@@ -8,11 +8,11 @@ dashedName: show-the-local-weather
 
 # --description--
 
-**Objetivo:** criar uma aplicação no [CodePen.io](https://codepen.io) que tenha função semelhante a esta: <https://codepen.io/freeCodeCamp/full/bELRjV>.
+**Objetivo:** criar uma aplicação que funcione de modo semelhante ao que vemos em: <https://codepen.io/freeCodeCamp/full/bELRjV>.
 
 **Regra nº 1:** não olhe o código do projeto de exemplo. Descubra por conta própria.
 
-**Regra nº 2:** atenda às [histórias de usuário](https://pt.wikipedia.org/wiki/Hist%C3%B3ria_de_usu%C3%A1rio) abaixo. Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
+**Regra nº 2:** preencha as histórias de usuários abaixo e faça com que todos os testes passem. Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
 
 **História de usuário:** posso ver o clima na minha localização atual.
 

@@ -296,6 +296,7 @@
       "restart": "Restart",
       "restart-step": "Restart Step",
       "console": "Console",
+      "instructions": "Instructions",
       "notes": "Notes",
       "preview": "Preview"
     },
