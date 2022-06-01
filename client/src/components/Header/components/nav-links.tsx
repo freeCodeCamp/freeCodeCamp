@@ -8,7 +8,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
-/* eslint-disable jsx-a11y/no-redundant-roles */
 // @ts-nocheck
 import {
   faCheckSquare,
@@ -265,7 +264,6 @@ export class NavLinks extends Component<NavLinksProps, {}> {
         className={`nav-list${displayMenu ? ' display-menu' : ''}${
           isLanguageMenuDisplayed ? ' display-lang-menu' : ''
         }`}
-        role='list'
       >
         {isDonating ? (
           <li key='donate'>
