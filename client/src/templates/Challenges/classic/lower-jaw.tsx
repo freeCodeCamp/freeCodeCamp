@@ -161,7 +161,7 @@ const LowerJaw = ({
       : sentenceArray[0];
   };
 
-  const renderLowerLowerJaw = () => {
+  const renderContexualActionRow = () => {
     const isAtteptsLargerThanTest =
       attemptsNumber && testsLength && attemptsNumber >= testsLength;
 
@@ -221,7 +221,7 @@ const LowerJaw = ({
       >
         {renderTestFeedbackContainer()}
       </div>
-      {renderLowerLowerJaw()}
+      {renderContexualActionRow()}
     </div>
   );
 };
