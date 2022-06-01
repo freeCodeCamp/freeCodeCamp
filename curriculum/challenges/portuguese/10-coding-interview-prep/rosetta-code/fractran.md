@@ -8,7 +8,7 @@ dashedName: fractran
 
 # --description--
 
-[FRACTRAN](https://en.wikipedia.org/wiki/FRACTRAN "wp: FRACTRAN") é uma linguagem de programação esotérica completa de Turing inventada pelo matemático [John Horton Conway](https://en.wikipedia.org/wiki/John Horton Conway "wp: John Horton Conway").
+FRACTRAN é uma linguagem de programação estotérica, completa para testes Turing, inventada pelo matemático John Horton Conway.
 
 Um programa em FRACTRAN é uma lista ordenada de frações positivas $P = (f_1, f_2, \\ldots, f_m)$, juntamente com uma primeira entrada positiva inteira $n$.
 
