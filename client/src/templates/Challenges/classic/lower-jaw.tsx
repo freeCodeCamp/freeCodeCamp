@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import Fail from '../../../assets/icons/fail';
 import LightBulb from '../../../assets/icons/lightbulb';
 import GreenPass from '../../../assets/icons/green-pass';
+import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 
 interface LowerJawProps {
   hint?: string;
@@ -175,6 +176,8 @@ const LowerJaw = ({
       );
   };
 
+  const showDesktopButton = window.innerWidth > MAX_MOBILE_WIDTH;
+
   const renderButtons = () => {
     return (
       <>
@@ -184,9 +187,9 @@ const LowerJaw = ({
           aria-hidden={testBtnariaHidden}
           onClick={tryToExecuteChallenge}
         >
-          {window.screen.width < 768
-            ? 'Check Your Code'
-            : t('buttons.check-code')}
+          {showDesktopButton
+            ? t('buttons.check-code')
+            : t('buttons.check-code-2')}
         </button>
         <div id='action-buttons-container'>
           <button
