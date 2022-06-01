@@ -10,7 +10,7 @@ dashedName: use-the-twitch-json-api
 
 **Objective:** Build an app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/Myvqmo/>.
 
-The Twitch API is a RESTful API that lets developers build creative integrations for the broader Twitch community. After you have registered your app, add below user stories.
+The Twitch API is a RESTful API that lets developers build creative integrations for the broader Twitch community.
 
 Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
 
