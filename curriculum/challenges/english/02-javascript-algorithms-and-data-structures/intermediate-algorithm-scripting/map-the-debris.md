@@ -12,7 +12,9 @@ The orbital period is the amount of time a given astronomical object takes to co
 
 According to Kepler's Third Law, the orbital period T of two point masses orbiting each other in a circular or elliptic orbit is:
 
-${T=2\pi {\sqrt {\frac {a^{3}}{\mu }}}}$
+$$
+T = 2 \pi \sqrt{\frac{a^{3}}{\mu}}
+$$
 
 - a is the orbit's semi-major axis
 - μ = GM is the standard gravitational parameter
