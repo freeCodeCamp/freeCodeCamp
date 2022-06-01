@@ -234,7 +234,6 @@ export class NavLinks extends Component<NavLinksProps, {}> {
   // the user Tabs out of the menu.
   handleBlur = (event: React.FocusEvent<HTMLButtonElement>): void => {
     const { hideMenu, menuButtonRef } = this.props;
-    console.log('handleBlur: relatedTarget = ', event.relatedTarget);
     if (
       event.relatedTarget &&
       !event.relatedTarget.closest('.nav-list') &&
