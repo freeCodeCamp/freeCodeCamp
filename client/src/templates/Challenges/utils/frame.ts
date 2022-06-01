@@ -67,7 +67,7 @@ const createHeader = (id = mainPreviewId) => `
       while(element && element.nodeName !== 'A') {
         element = element.parentElement;
       }
-      if(element && element.nodeName === 'A'){
+      if (element && element.nodeName === 'A' && new URL(element.href).hash === '') {
         e.preventDefault();
         window.parent.window.alert('Normally this link would bring you to another website! It works!' + ' This is a link to: ' + '(' + element.href + ')');
       }
