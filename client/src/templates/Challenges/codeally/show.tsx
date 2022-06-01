@@ -236,6 +236,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
         <Helmet title={`${blockName}: ${title} | freeCodeCamp.org`} />
         <iframe
           className='codeally-frame'
+          data-cy='codeally-frame'
           // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
           sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
           src={`https://codeally.io/embed/?repoUrl=${url}&${goBackTo}&${envVariables}&${tempToken}&${date}`}

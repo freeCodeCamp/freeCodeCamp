@@ -29,7 +29,7 @@ class UserToken extends Component<UserTokenProps> {
     const { t } = this.props;
 
     return (
-      <div className='user-token text-center'>
+      <div data-cy='user-token' className='user-token text-center'>
         <FullWidthRow>
           <Panel className='user-panel'>
             <Panel.Heading>{t('user-token.title')}</Panel.Heading>
