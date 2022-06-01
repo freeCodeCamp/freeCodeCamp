@@ -70,7 +70,9 @@
     "start-coding": "開始編碼！",
     "go-to-settings": "轉到設置以申請你的認證",
     "click-start-course": "開始課程",
-    "click-start-project": "啓動項目"
+    "click-start-project": "啓動項目",
+    "change-language": "Change Language",
+    "cancel-change": "Cancel Change"
   },
   "landing": {
     "big-heading-1": "免費學習編程",
