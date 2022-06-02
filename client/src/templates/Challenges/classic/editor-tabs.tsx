@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
@@ -32,40 +32,62 @@ const mapDispatchToProps = {
   toggleVisibleEditor
 };
 
-class EditorTabs extends Component<EditorTabsProps> {
-  static displayName: string;
-  render() {
-    const { challengeFiles, toggleVisibleEditor, visibleEditors } = this.props;
+function EditorTabs({
+  challengeFiles,
+  visibleEditors,
+  toggleVisibleEditor
+}: EditorTabsProps) {
+  const [latestFileKey, setLatestFileKey] = useState('');
+  const [clickedTabs, setClickedTabs] = useState<string[]>([]);
 
-    const handleMobileTabs = () => {
-      const editorVisbilityArr = Object.values(visibleEditors).map(
-        visibleEditors => visibleEditors
+  useEffect(() => {
+    if (clickedTabs.length == 0) {
+      setClickedTabs(
+        Object.keys(visibleEditors).filter(key => visibleEditors[key])
       );
+    }
 
-      if (editorVisbilityArr.length > 1 && window.innerWidth <= 768) {
-        toggleVisibleEditor(challengeFiles?.at(0)?.fileKey);
+    const fileIsVisible = visibleEditors[latestFileKey];
+
+    if (latestFileKey.length > 0) {
+      if (clickedTabs.length == 2 && fileIsVisible) {
+        clickedTabs.shift();
+        clickedTabs.push(latestFileKey);
+        setClickedTabs(clickedTabs);
+      } else if (fileIsVisible) {
+        clickedTabs.push(latestFileKey);
+        setClickedTabs(clickedTabs);
       }
-    };
+    }
+    console.log(visibleEditors);
+    console.log(clickedTabs);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [visibleEditors]);
 
-    return (
-      <div className='monaco-editor-tabs'>
-        {handleMobileTabs()}
-        {/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call */}
-        {sortChallengeFiles(challengeFiles).map(
-          (challengeFile: ChallengeFile) => (
-            <button
-              aria-expanded={visibleEditors[challengeFile.fileKey] ?? 'false'}
-              key={challengeFile.fileKey}
-              onClick={() => toggleVisibleEditor(challengeFile.fileKey)}
-            >
-              {`${challengeFile.name}.${challengeFile.ext}`}{' '}
-              <span className='sr-only'>editor</span>
-            </button>
-          )
-        )}
-      </div>
-    );
-  }
+  const toggleTab = (fileKey: string) => {
+    setLatestFileKey(fileKey);
+    toggleVisibleEditor(fileKey);
+  };
+
+  return (
+    <div className='monaco-editor-tabs'>
+      {/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call */}
+      {sortChallengeFiles(challengeFiles).map(
+        (challengeFile: ChallengeFile) => (
+          <button
+            aria-expanded={visibleEditors[challengeFile.fileKey] ?? 'false'}
+            key={challengeFile.fileKey}
+            onClick={() => {
+              toggleTab(challengeFile.fileKey);
+            }}
+          >
+            {`${challengeFile.name}.${challengeFile.ext}`}{' '}
+            <span className='sr-only'>editor</span>
+          </button>
+        )
+      )}
+    </div>
+  );
 }
 
 EditorTabs.displayName = 'EditorTabs';
