@@ -8,7 +8,11 @@ dashedName: symmetric-difference
 
 # --description--
 
-Given two [set](https://rosettacode.org/wiki/set)s *A* and *B*, compute $(A \\setminus B) \\cup (B \\setminus A).$ That is, enumerate the items that are in *A* or *B* but not both. This set is called the [symmetric difference](<https://en.wikipedia.org/wiki/Symmetric difference>) of *A* and *B*. In other words: $(A \\cup B) \\setminus (A \\cap B)$ (the set of items that are in at least one of *A* or *B* minus the set of items that are in both *A* and *B*).
+Given two sets *A* and *B*, compute $(A \\setminus B) \\cup (B \\setminus A).$ That is, enumerate the items that are in *A* or *B* but not both. This set is called the symmetric difference of *A* and *B*. In other words: $(A \\cup B) \\setminus (A \\cap B)$ (the set of items that are in at least one of *A* or *B* minus the set of items that are in both *A* and *B*).
+
+Example:
+
+Assuming *A* and *B* are an arrays with their value set to `[variable1, variable2, variable3]`, and `[variable1, variable3, variable4]` respectively. If we try to compute *A* and *B*, it will result in `[variable2, variable4]`.
 
 # --instructions--
 
