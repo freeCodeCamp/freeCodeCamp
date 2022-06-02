@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -57,11 +58,25 @@ function EditorTabs({
       } else if (fileIsVisible) {
         clickedTabs.push(latestFileKey);
         setClickedTabs(clickedTabs);
+      } else {
+        const index = clickedTabs.indexOf(latestFileKey);
+
+        clickedTabs.splice(index, 1);
+
+        setClickedTabs(clickedTabs);
       }
     }
-    console.log(visibleEditors);
-    console.log(clickedTabs);
     // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [visibleEditors]);
+
+  useEffect(() => {
+    if (clickedTabs.length == 2 && window.innerWidth <= 768) {
+      console.log('should close window 1');
+    } else if (clickedTabs.length == 1 && window.innerWidth <= 768) {
+      console.log('should close 0 open window 1');
+    } else {
+      console.log('we do not have any windows open');
+    }
   }, [visibleEditors]);
 
   const toggleTab = (fileKey: string) => {
