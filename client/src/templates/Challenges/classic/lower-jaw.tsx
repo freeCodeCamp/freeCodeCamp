@@ -37,8 +37,7 @@ const LowerJaw = ({
   const { t } = useTranslation();
   const submitButtonRef = React.createRef<HTMLButtonElement>();
   const testFeedbackRef = React.createRef<HTMLDivElement>();
-
-  const [challengeHasBeenCompleted, setChallengeHasBennCompleted] =
+  const [challengeHasBeenCompleted, setChallengeHasBeenCompleted] =
     useState(false);
 
   useEffect(() => {
@@ -83,7 +82,7 @@ const LowerJaw = ({
   useEffect(() => {
     if (!challengeHasBeenCompleted) {
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      setChallengeHasBennCompleted(challengeIsCompleted!);
+      setChallengeHasBeenCompleted(challengeIsCompleted!);
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -96,12 +95,22 @@ const LowerJaw = ({
     }
   });
 
+  /*
+    Retun early in lifecycle based on the earliest available conditions to help the editor 
+    calcuate the correct editor gap for the lower jaw.
+
+    For consistency, use the persisted version if the conditions has been met before.
+  */
+  const earliestAvailableCompletion =
+    challengeHasBeenCompleted || challengeIsCompleted;
+  const earliestAvailableHint = hint || previousHint;
+
   const renderTestFeedbackContainer = () => {
     if (attemptsNumber === 0) {
       return '';
     } else if (runningTests) {
       return <span className='sr-only'>{t('aria.running-tests')}</span>;
-    } else if (challengeHasBeenCompleted) {
+    } else if (earliestAvailableCompletion) {
       const submitKeyboardInstructions = isEditorInFocus ? (
         <span className='sr-only'>{t('aria.submit')}</span>
       ) : (
@@ -123,12 +132,10 @@ const LowerJaw = ({
           </div>
         </div>
       );
-
-      // show the hint if the previousHint is not set
-    } else if (hint || previousHint) {
-      const hintDiscription = `<h2 class="hint">${t('learn.hint')}</h2> ${
-        hint || previousHint
-      }`;
+    } else if (earliestAvailableHint) {
+      const hintDiscription = `<h2 class="hint">${t(
+        'learn.hint'
+      )}</h2> ${earliestAvailableHint}`;
       return (
         <>
           <div className='test-status fade-in' aria-hidden={isFeedbackHidden}>
@@ -175,7 +182,7 @@ const LowerJaw = ({
     const isAtteptsLargerThanTest =
       attemptsNumber && testsLength && attemptsNumber >= testsLength;
 
-    if (isAtteptsLargerThanTest && !challengeHasBeenCompleted)
+    if (isAtteptsLargerThanTest && !earliestAvailableCompletion)
       return (
         <button
           className='btn-block btn fade-in'
@@ -193,7 +200,7 @@ const LowerJaw = ({
         <button
           id='test-button'
           className={`btn-block btn ${
-            challengeHasBeenCompleted ? 'sr-only' : ''
+            earliestAvailableCompletion ? 'sr-only' : ''
           }`}
           aria-hidden={testBtnariaHidden}
           onClick={tryToExecuteChallenge}
@@ -203,7 +210,7 @@ const LowerJaw = ({
         <div id='action-buttons-container'>
           <button
             id='submit-button'
-            aria-hidden={!challengeHasBeenCompleted}
+            aria-hidden={!earliestAvailableCompletion}
             className='btn-block btn'
             onClick={tryToSubmitChallenge}
             ref={submitButtonRef}
