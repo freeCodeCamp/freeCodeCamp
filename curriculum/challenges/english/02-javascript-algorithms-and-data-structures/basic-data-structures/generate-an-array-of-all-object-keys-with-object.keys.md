@@ -8,7 +8,7 @@ dashedName: generate-an-array-of-all-object-keys-with-object-keys
 
 # --description--
 
-We might want to retrieve all keys of our object. Using the `Object.keys()` method we can generate an array which contains strings for all the keys that are stored in an object. To do this, we pass the object as the argument of `Object.keys()`. Again, there will be no specific order to the entries in the array.
+We can also generate an array which contains all the keys stored in an object with the `Object.keys()` method. This method takes an object as the argument and returns an array of strings representing each property in the object. Again, there will be no specific order to the entries in the array.
 
 # --instructions--
 
