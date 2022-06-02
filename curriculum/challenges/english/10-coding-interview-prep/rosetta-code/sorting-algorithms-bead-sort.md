@@ -19,7 +19,7 @@ The algorithm has $O(S)$.
 
 This is the case when bead sort is implemented without a mechanism to assist in finding empty spaces below the beads, such as in software implementations.
 
-Compare beads in an array, such as on an abacus, but each element in the array has different number of beads.
+Compare beads in an array, but each element in the array has different number of beads.
 
 Example:
 
