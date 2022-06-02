@@ -8,7 +8,9 @@ dashedName: execute-a-markov-algorithm
 
 # --description--
 
-Create an interpreter for a [Markov Algorithm](<https://en.wikipedia.org/wiki/Markov algorithm> "wp: Markov algorithm").
+Markov algorithm is a string rewriting system that uses grammar-like <em>rules</em> to operate on strings of symbols. Markov algorithms have been shown to be Turing-complete, which means that they are suitable as a general model of computation and can represent any mathematical expression from its simple notation.
+
+Create an interpreter for a Markov Algorithm.
 
 Rules have the syntax:
 
@@ -114,7 +116,7 @@ Sample text of `_1111*11111_` should generate the output `11111111111111111111`
 
 **Ruleset 5:**
 
-A simple [Turing machine](http://en.wikipedia.org/wiki/Turing_machine "link: http&#x3A;//en.wikipedia.org/wiki/Turing_machine"), implementing a three-state [busy beaver](http://en.wikipedia.org/wiki/Busy_beaver "link: http&#x3A;//en.wikipedia.org/wiki/Busy_beaver").
+A simple Turing machine, implementing a three-state busy beaver.
 
 The tape consists of `0`s and `1`s, the states are `A`, `B`, `C` and `H` (for `H`alt), and the head position is indicated by writing the state letter before the character where the head is. All parts of the initial tape the machine operates on have to be given in the input.
 
