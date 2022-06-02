@@ -3,6 +3,7 @@ import { check } from 'express-validator';
 import _ from 'lodash';
 import isURL from 'validator/lib/isURL';
 
+import { customAlphabet } from 'nanoid';
 import { isValidUsername } from '../../../../utils/validate';
 import { nanoidCharSet } from '../../common/models/user';
 import { alertTypes } from '../../common/utils/flash.js';
@@ -13,7 +14,6 @@ import {
 import { ifNoUser401, createValidatorErrorHandler } from '../utils/middleware';
 import { getRedirectParams } from '../utils/redirection';
 
-const generate = require('nanoid/generate');
 const { DISCOURSE_SECRET, API_LOCATION } = process.env;
 
 const log = debug('fcc:boot:settings');
@@ -309,7 +309,7 @@ function updateUserFlag(req, res, next) {
 
 function connectDiscourse(req, res) {
   // Generate nonce
-  const nonce = generate(nanoidCharSet, 20);
+  const nonce = customAlphabet(nanoidCharSet, 20);
   // Save nonce to dedicated collection
   saveNonceToDB(nonce);
   // Create payload with nonce and return url: nonce=NONCE&return_sso_url=RETURN_URL
