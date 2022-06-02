@@ -10,7 +10,7 @@ dashedName: sorting-algorithmsbead-sort
 
 Sort an array of positive integers using the Bead Sort Algorithm.
 
-A *bead sort* is also known as a *gravity sort*. The bead sort operation can be compared to the manner in which beads slide on parallel poles, such as on an abacus. However, each pole may have a distinct number of beads.
+A *bead sort* is also known as a *gravity sort*.
 
 The algorithm has $O(S)$.
 
@@ -18,6 +18,15 @@ The algorithm has $O(S)$.
 - $S$ is the sum of the integers in the input set: Each bead is moved individually.
 
 This is the case when bead sort is implemented without a mechanism to assist in finding empty spaces below the beads, such as in software implementations.
+
+Compare beads in an array, such as on an abacus, but each element in the array has different number of beads.
+
+Example:
+
+```js
+const array = [30, 45, 25, 40, 15]
+const beadSortedArray = [15, 25, 30, 40, 45]
+```
 
 # --hints--
 
