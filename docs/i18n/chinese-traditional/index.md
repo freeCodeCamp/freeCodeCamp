@@ -40,4 +40,4 @@ Broadly, we have a Node.js based API server, a set of React-based client applica
 
 或者，你也可以……
 
-**[本地化安裝 freeCodeCamp](how-to-setup-freecodecamp-locally.md) 到你自己的電腦設備上。**
+**[Set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md) on your machine.**
