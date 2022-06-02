@@ -12,7 +12,7 @@ Given two sets *A* and *B*, compute $(A \\setminus B) \\cup (B \\setminus A).$ T
 
 Example:
 
-Assuming *A* and *B* are an array with their value set to `[variable1, variable2, variable3]`, and `[variable1, variable3, variable4]` respectively. If we try to compute *A* and *B*, it will result in `[variable2, variable4]`.
+For sets `A = [1, 2, 3]`, and `B = [1, 3, 4]`, the symmetric difference of *A* and *B* is `[2, 4]`.
 
 # --instructions--
 
