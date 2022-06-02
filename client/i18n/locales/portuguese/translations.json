@@ -71,8 +71,8 @@
     "go-to-settings": "Vá para as configurações para solicitar sua certificação",
     "click-start-course": "Iniciar o curso",
     "click-start-project": "Iniciar o projeto",
-    "change-language": "Change Language",
-    "cancel-change": "Cancel Change"
+    "change-language": "Alterar idioma",
+    "cancel-change": "Cancelar alteração"
   },
   "landing": {
     "big-heading-1": "Aprenda a programar — de graça.",
