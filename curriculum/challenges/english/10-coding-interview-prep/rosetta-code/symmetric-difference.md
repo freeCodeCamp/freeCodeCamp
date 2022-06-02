@@ -12,7 +12,7 @@ Given two sets *A* and *B*, compute $(A \\setminus B) \\cup (B \\setminus A).$ T
 
 Example:
 
-Assuming *A* and *B* are an arrays with their value set to `[variable1, variable2, variable3]`, and `[variable1, variable3, variable4]` respectively. If we try to compute *A* and *B*, it will result in `[variable2, variable4]`.
+Assuming *A* and *B* are an array with their value set to `[variable1, variable2, variable3]`, and `[variable1, variable3, variable4]` respectively. If we try to compute *A* and *B*, it will result in `[variable2, variable4]`.
 
 # --instructions--
 
