@@ -56,8 +56,7 @@ import {
   stopResetting,
   isProjectPreviewModalOpenSelector,
   openModal,
-  isChallengeCompletedSelector,
-  resetChallenge
+  isChallengeCompletedSelector
 } from '../redux';
 import GreenPass from '../../../assets/icons/green-pass';
 import LowerJaw from './lower-jaw';
@@ -87,6 +86,7 @@ interface EditorProps {
   isResetting: boolean;
   isSignedIn: boolean;
   openHelpModal: () => void;
+  openResetModal: () => void;
   output: string[];
   resizeProps: ResizeProps;
   saveChallenge: () => void;
@@ -106,7 +106,6 @@ interface EditorProps {
   }) => void;
   usesMultifileEditor: boolean;
   isChallengeCompleted: boolean;
-  resetChallenge: () => void;
 }
 
 // TODO: this is grab bag of unrelated properties.  There's no need for them to
@@ -171,8 +170,8 @@ const mapDispatchToProps = {
   submitChallenge,
   initTests,
   stopResetting,
-  resetChallenge,
-  openHelpModal: () => openModal('help')
+  openHelpModal: () => openModal('help'),
+  openResetModal: () => openModal('reset')
 };
 
 const modeMap = {
@@ -583,6 +582,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     ReactDOM.render(
       <LowerJaw
         openHelpModal={props.openHelpModal}
+        openResetModal={props.openResetModal}
         tryToExecuteChallenge={tryToExecuteChallenge}
         hint={output[1]}
         testsLength={props.tests.length}
@@ -591,7 +591,6 @@ const Editor = (props: EditorProps): JSX.Element => {
         challengeHasErrors={challengeHasErrors()}
         tryToSubmitChallenge={tryToSubmitChallenge}
         isEditorInFocus={isEditorInFocus}
-        resetChallenge={props.resetChallenge}
       />,
       outputNode,
       callback

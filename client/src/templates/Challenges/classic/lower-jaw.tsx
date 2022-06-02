@@ -16,7 +16,7 @@ interface LowerJawProps {
   challengeHasErrors?: boolean;
   testsLength?: number;
   attemptsNumber?: number;
-  resetChallenge: () => void;
+  openResetModal: () => void;
 }
 
 const LowerJaw = ({
@@ -29,7 +29,7 @@ const LowerJaw = ({
   attemptsNumber,
   testsLength,
   isEditorInFocus,
-  resetChallenge
+  openResetModal
 }: LowerJawProps): JSX.Element => {
   const [previousHint, setpreviousHint] = useState('');
   const [runningTests, setRunningTests] = useState(false);
@@ -176,7 +176,7 @@ const LowerJaw = ({
           >
             {t('buttons.ask-for-help')}
           </button>
-          <button className='btn-block btn fade-in' onClick={resetChallenge}>
+          <button className='btn-block btn fade-in' onClick={openResetModal}>
             {t('learn.editor-tabs.restart-step')}
           </button>
         </div>
