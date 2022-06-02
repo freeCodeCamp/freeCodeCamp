@@ -41,7 +41,7 @@ import {
 
 const log = debugFactory('fcc:models:user');
 const BROWNIEPOINTS_TIMEOUT = [1, 'hour'];
-const nanoidCharSet =
+export const nanoidCharSet =
   '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const nanoid = customAlphabet(nanoidCharSet, 21);
 

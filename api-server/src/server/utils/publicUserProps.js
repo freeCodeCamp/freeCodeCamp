@@ -60,7 +60,8 @@ export const userPropsForSession = [
   'completedCertCount',
   'completedLegacyCertCount',
   'acceptedPrivacyTerms',
-  'donationEmails'
+  'donationEmails',
+  'discourseId'
 ];
 
 export function normaliseUserFields(user) {
