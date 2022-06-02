@@ -50,6 +50,8 @@ function EditorTabs({
 
     const fileIsVisible = visibleEditors[latestFileKey];
 
+    if (clickedTabs.at(-1) == latestFileKey) return;
+
     if (latestFileKey.length > 0) {
       if (clickedTabs.length == 2 && fileIsVisible) {
         clickedTabs.shift();
@@ -65,18 +67,14 @@ function EditorTabs({
 
         setClickedTabs(clickedTabs);
       }
+
+      console.log(clickedTabs);
+
+      if (clickedTabs.length == 2 && window.innerWidth <= 768) {
+        toggleVisibleEditor(clickedTabs[0]);
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [visibleEditors]);
-
-  useEffect(() => {
-    if (clickedTabs.length == 2 && window.innerWidth <= 768) {
-      console.log('should close window 1');
-    } else if (clickedTabs.length == 1 && window.innerWidth <= 768) {
-      console.log('should close 0 open window 1');
-    } else {
-      console.log('we do not have any windows open');
-    }
   }, [visibleEditors]);
 
   const toggleTab = (fileKey: string) => {
