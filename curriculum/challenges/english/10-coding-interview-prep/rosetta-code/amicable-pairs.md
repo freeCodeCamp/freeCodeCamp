@@ -19,7 +19,7 @@ Two integers $N$ and $M$ are said to be amicable pairs, if $N \\neq M$ and the s
   <li>1, 2, 5, 10, 11, 22, 55, 110, 121, 242, 605 respectively.</li>
 </ul>
 
-Notice that the sum of the first amicable par **1184**, after properly divided is **1210**. Same can be applied for **1210**'s sum as well.
+The sum of the divisors for the first value, **1184**, is **1210** and the sum of the divisors for the second value, **1210**', is **1184**.
 
 # --instructions--
 
