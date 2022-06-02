@@ -8,11 +8,14 @@ dashedName: sorting-algorithmsbead-sort
 
 # --description--
 
-Sort an array of positive integers using the [Bead Sort Algorithm](https://en.wikipedia.org/wiki/Bead_sort).
+Sort an array of positive integers using the Bead Sort Algorithm.
 
-A *bead sort* is also known as a *gravity sort*.
+A *bead sort* is also known as a *gravity sort*. The bead sort operation can be compared to the manner in which beads slide on parallel poles, such as on an abacus. However, each pole may have a distinct number of beads.
 
-The algorithm has O(S), where S is the sum of the integers in the input set: Each bead is moved individually.
+The algorithm has $O(S)$.
+
+- $O$ is Big $O$ notation
+- $S$ is the sum of the integers in the input set: Each bead is moved individually.
 
 This is the case when bead sort is implemented without a mechanism to assist in finding empty spaces below the beads, such as in software implementations.
 
