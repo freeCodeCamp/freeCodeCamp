@@ -86,6 +86,7 @@ interface EditorProps {
   isResetting: boolean;
   isSignedIn: boolean;
   openHelpModal: () => void;
+  openResetModal: () => void;
   output: string[];
   resizeProps: ResizeProps;
   saveChallenge: () => void;
@@ -169,7 +170,8 @@ const mapDispatchToProps = {
   submitChallenge,
   initTests,
   stopResetting,
-  openHelpModal: () => openModal('help')
+  openHelpModal: () => openModal('help'),
+  openResetModal: () => openModal('reset')
 };
 
 const modeMap = {
@@ -580,6 +582,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     ReactDOM.render(
       <LowerJaw
         openHelpModal={props.openHelpModal}
+        openResetModal={props.openResetModal}
         tryToExecuteChallenge={tryToExecuteChallenge}
         hint={output[1]}
         testsLength={props.tests.length}
