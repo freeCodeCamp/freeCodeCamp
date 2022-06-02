@@ -38,7 +38,9 @@ function EditorTabs({
   visibleEditors,
   toggleVisibleEditor
 }: EditorTabsProps) {
-  const [latestFileKey, setLatestFileKey] = useState('');
+  const [latestFileKey, setLatestFileKey] = useState(
+    challengeFiles?.at(0)?.fileKey ?? ''
+  );
   const [clickedTabs, setClickedTabs] = useState<string[]>([]);
 
   useEffect(() => {
@@ -78,8 +80,15 @@ function EditorTabs({
   }, [visibleEditors]);
 
   const toggleTab = (fileKey: string) => {
-    setLatestFileKey(fileKey);
-    toggleVisibleEditor(fileKey);
+    const canOpenCloseFile = fileKey != latestFileKey;
+    console.log(latestFileKey);
+    if (canOpenCloseFile && window.innerWidth <= 768) {
+      toggleVisibleEditor(fileKey);
+      setLatestFileKey(fileKey);
+    } else if (window.innerWidth > 768) {
+      toggleVisibleEditor(fileKey);
+      setLatestFileKey(fileKey);
+    }
   };
 
   return (
