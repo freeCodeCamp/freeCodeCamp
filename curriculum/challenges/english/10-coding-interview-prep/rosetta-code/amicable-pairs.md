@@ -8,16 +8,18 @@ dashedName: amicable-pairs
 
 # --description--
 
-Two integers $N$ and $M$ are said to be [amicable pairs](<https://en.wikipedia.org/wiki/Amicable numbers> "wp: Amicable numbers") if $N \\neq M$ and the sum of the [proper divisors](<https://rosettacode.org/wiki/Proper divisors> "Proper divisors") of $N$ ($\\mathrm{sum}(\\mathrm{propDivs}(N))$) $= M$ as well as $\\mathrm{sum}(\\mathrm{propDivs}(M)) = N$.
+Two integers $N$ and $M$ are said to be amicable pairs, if $N \\neq M$ and the sum of the proper divisors of $N$ ($\\mathrm{sum}(\\mathrm{propDivs}(N))$) $= M$ as well as $\\mathrm{sum}(\\mathrm{propDivs}(M)) = N$.
 
 **Example:**
 
 **1184** and **1210** are an amicable pair, with proper divisors:
 
 <ul>
-  <li>1, 2, 4, 8, 16, 32, 37, 74, 148, 296, 592  and</li>
-  <li>1, 2, 5, 10, 11, 22, 55, 110, 121, 242, 605   respectively.</li>
+  <li>1, 2, 4, 8, 16, 32, 37, 74, 148, 296, 592 and</li>
+  <li>1, 2, 5, 10, 11, 22, 55, 110, 121, 242, 605 respectively.</li>
 </ul>
+
+Notice that the sum of the first amicable par **1184**, after properly divided is **1210**. Same can be applied for **1210**'s sum as well.
 
 # --instructions--
 
