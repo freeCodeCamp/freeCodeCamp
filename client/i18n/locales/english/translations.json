@@ -145,7 +145,8 @@
       "my-timeline": "My timeline",
       "my-donations": "My donations",
       "night-mode": "Night Mode",
-      "sound-mode": "Campfire Mode"
+      "sound-mode": "Campfire Mode",
+      "keyboard-shortcuts": "Enable Keyboard Shortcuts"
     },
     "headings": {
       "certs": "Certifications",
@@ -684,5 +685,16 @@
     "delete-p3": "You will need to create a new token to save future progress on the curriculum sections that use a virtual machine.",
     "no-thanks": "No thanks, I would like to keep my token",
     "yes-please": "Yes please, I would like to delete my token"
+  },
+  "shortcuts": {
+    "title": "Keyboard shortcuts",
+    "table-header-action": "Action",
+    "table-header-key": "Key(s)",
+    "navigation-mode": "Navigation Mode",
+    "execute-challenge": "Execute Challenge",
+    "focus-editor": "Focus Editor",
+    "focus-instructions-panel": "Focus Instructions Panel",
+    "navigate-previous": "Navigate Previous Exercise",
+    "navigate-next": "Navigate Next Exercise"
   }
 }
