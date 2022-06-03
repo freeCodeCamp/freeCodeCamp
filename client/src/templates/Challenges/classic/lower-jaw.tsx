@@ -16,6 +16,7 @@ interface LowerJawProps {
   challengeHasErrors?: boolean;
   testsLength?: number;
   attemptsNumber?: number;
+  openResetModal: () => void;
 }
 
 const LowerJaw = ({
@@ -27,7 +28,8 @@ const LowerJaw = ({
   tryToSubmitChallenge,
   attemptsNumber,
   testsLength,
-  isEditorInFocus
+  isEditorInFocus,
+  openResetModal
 }: LowerJawProps): JSX.Element => {
   const [previousHint, setpreviousHint] = useState('');
   const [runningTests, setRunningTests] = useState(false);
@@ -159,19 +161,25 @@ const LowerJaw = ({
       : sentenceArray[0];
   };
 
-  const renderHelpButton = () => {
+  const renderContexualActionRow = () => {
     const isAtteptsLargerThanTest =
       attemptsNumber && testsLength && attemptsNumber >= testsLength;
 
     if (isAtteptsLargerThanTest && !challengeIsCompleted)
       return (
-        <button
-          className='btn-block btn fade-in'
-          id='help-button'
-          onClick={openHelpModal}
-        >
-          {t('buttons.ask-for-help')}
-        </button>
+        <div>
+          <hr />
+          <button
+            className='btn-block btn fade-in'
+            id='help-button'
+            onClick={openHelpModal}
+          >
+            {t('buttons.ask-for-help')}
+          </button>
+          <button className='btn-block btn fade-in' onClick={openResetModal}>
+            {t('learn.editor-tabs.restart-step')}
+          </button>
+        </div>
       );
   };
 
@@ -196,7 +204,6 @@ const LowerJaw = ({
           >
             {t('buttons.submit-and-go')}
           </button>
-          {renderHelpButton()}
         </div>
       </>
     );
@@ -214,6 +221,7 @@ const LowerJaw = ({
       >
         {renderTestFeedbackContainer()}
       </div>
+      {renderContexualActionRow()}
     </div>
   );
 };

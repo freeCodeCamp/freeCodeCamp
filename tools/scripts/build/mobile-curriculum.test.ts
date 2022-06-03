@@ -57,11 +57,20 @@ if (envData.clientLocale == 'english' && !envData.showUpcomingChanges) {
     });
 
     test('All SuperBlocks should be present in the mobile SuperBlock object', () => {
-      expect(Object.keys(superBlockMobileAppOrder)).toEqual(
-        expect.arrayContaining(Object.values(SuperBlocks))
+      const dashedNames = superBlockMobileAppOrder.map(
+        ({ dashedName }) => dashedName
+      );
+      // TODO: this is a hack, we should have a single source of truth for the
+      // list of superblocks that are available.
+      const publicSuperBlockNames = Object.values(SuperBlocks).filter(
+        x => x !== '2022/javascript-algorithms-and-data-structures'
+      );
+
+      expect(dashedNames).toEqual(
+        expect.arrayContaining(publicSuperBlockNames)
       );
       expect(Object.keys(superBlockMobileAppOrder)).toHaveLength(
-        Object.values(SuperBlocks).length
+        publicSuperBlockNames.length
       );
     });
   });
