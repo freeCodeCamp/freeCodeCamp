@@ -24,7 +24,7 @@ Atenda às histórias de usuário abaixo e faça com que todos os testes passem.
 
 **História de usuário:** como um usuário não autenticado, se eu enviar uma imagem com o vínculo não funcional, ela será substituída por uma imagem temporária. (é possível usar o jQuery para detectar imagens sem o link funcional)
 
-**Dica:** o [Masonry.js](https://masonry.desandro.com/) é uma biblioteca que permite grades de imagens no estilo Pinterest.
+**Dica:** o Masonry.js é uma biblioteca que permite grades de imagens no estilo Pinterest.
 
 Depois de terminar de implementar essas histórias de usuários, digite o URL para sua aplicação ao vivo e, como opção, seu repositório do GitHub. Então, clique no botão "Eu completei este desafio".
 
