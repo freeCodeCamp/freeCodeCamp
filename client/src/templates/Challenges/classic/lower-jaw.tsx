@@ -80,9 +80,8 @@ const LowerJaw = ({
   }, [challengeHasBeenCompleted]);
 
   useEffect(() => {
-    if (!challengeHasBeenCompleted) {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      setChallengeHasBeenCompleted(challengeIsCompleted!);
+    if (!challengeHasBeenCompleted && challengeIsCompleted) {
+      setChallengeHasBeenCompleted(challengeIsCompleted);
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
