@@ -8,7 +8,7 @@ dashedName: look-and-say-sequence
 
 # --description--
 
-A [sequência de olhar e dizer](https://en.wikipedia.org/wiki/Look and say sequence) é uma sequência de números definida recursivamente.
+A sequência para olhar e dizer é uma sequência de números recursivamente definida.
 
 Definição da sequência
 
