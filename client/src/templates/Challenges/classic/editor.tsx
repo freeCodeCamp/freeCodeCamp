@@ -299,7 +299,8 @@ const Editor = (props: EditorProps): JSX.Element => {
       enabled: false
     },
     quickSuggestions: false,
-    suggestOnTriggerCharacters: false
+    suggestOnTriggerCharacters: false,
+    lineNumbersMinChars: 2
   };
 
   const getEditableRegionFromRedux = () => {
