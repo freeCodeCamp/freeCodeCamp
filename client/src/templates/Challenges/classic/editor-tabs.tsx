@@ -38,42 +38,60 @@ function EditorTabs({
   visibleEditors,
   toggleVisibleEditor
 }: EditorTabsProps) {
-  const [latestFileKey, setLatestFileKey] = useState(
-    challengeFiles?.at(0)?.fileKey ?? ''
-  );
-  const [clickedTabs, setClickedTabs] = useState<string[]>([]);
+  const [latestFileKey, setLatestFileKey] = useState('');
+  const [latestActiveTabs, setlatestActiveTabs] = useState<string[]>([]);
 
   useEffect(() => {
-    if (clickedTabs.length == 0) {
-      setClickedTabs(
+    // If the length of latestActiveTabs is 0 make sure if there are no active panes visible.
+    // If there are panes visible add them to the array.
+
+    if (latestActiveTabs.length == 0) {
+      setlatestActiveTabs(
         Object.keys(visibleEditors).filter(key => visibleEditors[key])
+      );
+    }
+
+    // The latest file key will be undefined on first render thus we need
+    // to set it to the active pane e.g. styles.css.
+
+    if (!latestFileKey) {
+      setLatestFileKey(
+        Object.keys(visibleEditors).filter(key => visibleEditors[key])[0]
       );
     }
 
     const fileIsVisible = visibleEditors[latestFileKey];
 
-    if (clickedTabs.at(-1) == latestFileKey) return;
+    // If the current clicked pane is already defined at the last index of the array
+    // (thus the most recent tab) there is no need to add it again and get duplicated
+    // keys in the array. As the current key at the last index wil be shifted to the first index.
+
+    if (latestActiveTabs.at(-1) == latestFileKey) return;
 
     if (latestFileKey.length > 0) {
-      if (clickedTabs.length == 2 && fileIsVisible) {
-        clickedTabs.shift();
-        clickedTabs.push(latestFileKey);
-        setClickedTabs(clickedTabs);
+      // Shift they old "latest" file to the first index if it is visible and the new to the last index
+
+      if (latestActiveTabs.length == 2 && fileIsVisible) {
+        latestActiveTabs.shift();
+        latestActiveTabs.push(latestFileKey);
+        setlatestActiveTabs(latestActiveTabs);
+
+        // If the file is visible push it to the latestActive tabs array
       } else if (fileIsVisible) {
-        clickedTabs.push(latestFileKey);
-        setClickedTabs(clickedTabs);
+        latestActiveTabs.push(latestFileKey);
+        setlatestActiveTabs(latestActiveTabs);
       } else {
-        const index = clickedTabs.indexOf(latestFileKey);
+        // If the file is not visible remove it from the array.
 
-        clickedTabs.splice(index, 1);
+        const index = latestActiveTabs.indexOf(latestFileKey);
 
-        setClickedTabs(clickedTabs);
+        latestActiveTabs.splice(index, 1);
+
+        setlatestActiveTabs(latestActiveTabs);
       }
 
-      console.log(clickedTabs);
-
-      if (clickedTabs.length == 2 && window.innerWidth <= 768) {
-        toggleVisibleEditor(clickedTabs[0]);
+      if (latestActiveTabs.length == 2 && window.innerWidth <= 768) {
+        toggleVisibleEditor(latestActiveTabs[0]);
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -81,7 +99,6 @@ function EditorTabs({
 
   const toggleTab = (fileKey: string) => {
     const canOpenCloseFile = fileKey != latestFileKey;
-    console.log(latestFileKey);
     if (canOpenCloseFile && window.innerWidth <= 768) {
       toggleVisibleEditor(fileKey);
       setLatestFileKey(fileKey);
