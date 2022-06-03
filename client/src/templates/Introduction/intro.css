@@ -54,11 +54,6 @@ a.cert-tag:active {
   margin-bottom: 1.25rem;
 }
 
-.block-grid .challenge-jump-link a {
-  border: 2px solid var(--secondary-color);
-  padding: 3px 5px;
-}
-
 .block-grid .challenge-jump-link a:focus {
   outline: 3px solid var(--blue-mid);
   outline-offset: 0;

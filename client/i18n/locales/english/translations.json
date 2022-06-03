@@ -72,7 +72,8 @@
     "click-start-course": "Start the course",
     "click-start-project": "Start the project",
     "change-language": "Change Language",
-    "cancel-change": "Cancel Change"
+    "cancel-change": "Cancel Change",
+    "resume-project": "Resume project"
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",

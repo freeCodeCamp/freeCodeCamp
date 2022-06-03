@@ -67,7 +67,8 @@ function Challenges({
             }
             to={firstIncompleteChallenge.fields.slug}
           >
-            Jump to next incomplete step
+            {t('buttons.resume-project')}{' '}
+            <span className='sr-only'>{blockTitle}</span>
           </Link>
         </div>
       )}
