@@ -22,7 +22,7 @@ describe('failed update flushing', () => {
   });
 
   beforeEach(() => {
-    Cypress.Cookies.preserveOnce('jwt_access_token');
+    cy.preserveSession();
   });
 
   it('should resubmit failed updates, check they are stored, then flush', () => {
