@@ -12,14 +12,7 @@ Sort an array of positive integers using the Bead Sort Algorithm.
 
 A *bead sort* is also known as a *gravity sort*.
 
-The algorithm has $O(S)$.
-
-- $O$ is Big $O$ notation
-- $S$ is the sum of the integers in the input set: Each bead is moved individually.
-
-This is the case when bead sort is implemented without a mechanism to assist in finding empty spaces below the beads, such as in software implementations.
-
-Compare beads in an array, but each element in the array has different number of beads.
+Compare beads in an array, while each element in the array has different number of beads.
 
 Example:
 
