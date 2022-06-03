@@ -28,6 +28,7 @@ import ResetModal from '../components/ResetModal';
 import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
+import ShortcutsModal from '../components/shortcuts-modal';
 import Notes from '../components/notes';
 import Output from '../components/output';
 import Preview from '../components/preview';
@@ -514,6 +515,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
             previewTitle={t('learn.project-preview-title')}
             showProjectPreview={showProjectPreview}
           />
+          <ShortcutsModal />
         </LearnLayout>
       </Hotkeys>
     );
