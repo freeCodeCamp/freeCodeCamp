@@ -12,15 +12,15 @@ Write a function to perform Stooge Sort on an array of integers. The function sh
 
 The Stooge Sort algorithm is as follows:
 
-<pre><b>algorithm</b> stoogesort(<b>array</b> L, i = 0, j = <b>length</b>(L)-1)
-  <b>if</b> L[j] &#x3C; L[i] <b>then</b>
-    L[i] <b>↔</b> L[j]
-  <b>if</b> j - i > 1 <b>then</b>
-    t <b>:=</b> (j - i + 1)/3
-    stoogesort(L, i , j-t)
-    stoogesort(L, i+t, j )
-    stoogesort(L, i , j-t)
-  <b>return</b> L
+<pre><b>algorithm</b> stoogesort(<b>array</b> elements, firstElementPosition = 0, lastElementPosition = <b>length</b>(elements)-1)
+  <b>if</b> elements[lastElementPosition] &#x3C; elements[firstElementPosition] <b>then</b>
+    elements[firstElementPosition] <b>↔</b> elements[lastElementPosition]
+  <b>if</b> lastElementPosition - firstElementPosition > 1 <b>then</b>
+    elementsPositionedBetween <b>:=</b> (lastElementPosition - firstElementPosition + 1)/3
+    stoogesort(elements, firstElementPosition , lastElementPosition - elementsPositionedBetween)
+    stoogesort(elements, firstElementPosition + elementsPositionedBetween, lastElementPosition )
+    stoogesort(elements, firstElementPosition , lastElementPosition - elementsPositionedBetween)
+  <b>return</b> elements
 </pre>
 
 # --hints--
@@ -97,26 +97,26 @@ function stoogeSort(arr) {
 
 ```js
 function stoogeSort(arr) {
-  function stoogeSortRecurse(array, i, j) {
-    if (j === undefined) {
-      j = array.length - 1;
+  function stoogeSortRecurse(array, firstElementPosition, lastElementPosition) {
+    if (lastElementPosition === undefined) {
+      lastElementPosition = array.length - 1;
     }
 
-    if (i === undefined) {
-      i = 0;
+    if (firstElementPosition === undefined) {
+      firstElementPosition = 0;
     }
 
-    if (array[j] < array[i]) {
-      var aux = array[i];
-      array[i] = array[j];
-      array[j] = aux;
+    if (array[lastElementPosition] < array[firstElementPosition]) {
+      var aux = array[firstElementPosition];
+      array[firstElementPosition] = array[lastElementPosition];
+      array[lastElementPosition] = aux;
     }
 
-    if (j - i > 1) {
-      var t = Math.floor((j - i + 1) / 3);
-      stoogeSortRecurse(array, i, j - t);
-      stoogeSortRecurse(array, i + t, j);
-      stoogeSortRecurse(array, i, j - t);
+    if (lastElementPosition - firstElementPosition > 1) {
+      var elementsPositionedBetween = Math.floor((lastElementPosition - firstElementPosition + 1) / 3);
+      stoogeSortRecurse(array, firstElementPosition, lastElementPosition - elementsPositionedBetween);
+      stoogeSortRecurse(array, firstElementPosition + elementsPositionedBetween, lastElementPosition);
+      stoogeSortRecurse(array, firstElementPosition, lastElementPosition - elementsPositionedBetween);
     }
   }
   stoogeSortRecurse(arr);
