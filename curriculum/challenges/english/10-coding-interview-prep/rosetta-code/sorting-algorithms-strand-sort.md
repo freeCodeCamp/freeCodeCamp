@@ -7,6 +7,7 @@ dashedName: sorting-algorithmsstrand-sort
 ---
 
 # --description--
+
 To **Strand sort** an `unsortedArray` with value `[3, 1, 4, 2]`. Pick the first element `[3]` and compare if there is a bigger element following it. When you find this element, in this case `4` you pick it `[3, 4]` and compare the next numbers to the number `4`.
 
 After you have picked what you can and reached the end of the array, you remove the elements you picked `[3, 4]`, and pick the first element again from the `unsortedArray` in this case `[1]`. After you have compared the following elements and picking the suitable elements, you will have two sorted arrays `[3, 4]` and `[1, 2]`, merge them to have `strandSortedArray`.
