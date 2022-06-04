@@ -177,7 +177,7 @@
     "process": "0.11.10",
     "rimraf": "3.0.2",
     "start-server-and-test": "1.14.0",
-    "ts-node": "10.8.0",
+    "ts-node": "10.8.1",
     "typescript": "4.7.2",
     "webpack-bundle-analyzer": "4.5.0"
   }
