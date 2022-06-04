@@ -19,6 +19,8 @@ const array = [30, 45, 25, 40, 15]
 const beadSortedArray = [15, 25, 30, 40, 45]
 ```
 
+**Note:** Each element in `arr` is unique.
+
 # --hints--
 
 `beadSort` should be a function.
