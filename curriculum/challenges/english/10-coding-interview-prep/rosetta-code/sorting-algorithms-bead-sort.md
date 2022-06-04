@@ -12,8 +12,6 @@ Sort an array of positive integers using the Bead Sort Algorithm.
 
 A *bead sort* is also known as a *gravity sort*.
 
-Compare beads in an array, while each element in the array has different number of beads.
-
 Example:
 
 ```js
