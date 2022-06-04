@@ -1,6 +1,7 @@
 {
   "name": "Learn CSS Grid by Building a Magazine",
   "isUpcomingChange": false,
+  "isStepBased": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-css-grid-by-building-a-magazine",

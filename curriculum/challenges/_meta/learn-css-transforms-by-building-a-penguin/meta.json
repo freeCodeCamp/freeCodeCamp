@@ -1,6 +1,7 @@
 {
   "name": "Learn CSS Transforms by Building a Penguin",
   "isUpcomingChange": false,
+  "isStepBased": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-css-transforms-by-building-a-penguin",

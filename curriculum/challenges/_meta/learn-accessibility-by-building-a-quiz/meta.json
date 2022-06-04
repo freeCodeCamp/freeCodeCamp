@@ -1,6 +1,7 @@
 {
   "name": "Learn Accessibility by Building a Quiz",
   "isUpcomingChange": false,
+  "isStepBased": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-accessibility-by-building-a-quiz",

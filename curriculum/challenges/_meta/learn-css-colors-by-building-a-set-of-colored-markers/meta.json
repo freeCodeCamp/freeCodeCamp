@@ -1,6 +1,7 @@
 {
   "name": "Learn CSS Colors by Building a Set of Colored Markers",
   "isUpcomingChange": false,
+  "isStepBased": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-css-colors-by-building-a-set-of-colored-markers",
