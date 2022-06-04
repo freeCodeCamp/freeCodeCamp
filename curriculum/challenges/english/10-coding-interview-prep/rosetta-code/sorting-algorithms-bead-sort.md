@@ -14,10 +14,11 @@ A *bead sort* is also known as a *gravity sort*.
 
 Example:
 
-```js
-const array = [30, 45, 25, 40, 15]
-const beadSortedArray = [15, 25, 30, 40, 45]
-```
+<pre>Before:
+<b>array</b>
+After:
+<b>sortedbead</b>
+</pre>
 
 **Note:** Each element in `arr` is unique.
 
