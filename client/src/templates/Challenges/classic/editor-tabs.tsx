@@ -41,6 +41,8 @@ function EditorTabs({
   const [latestFileKey, setLatestFileKey] = useState('');
   const [latestActiveTabs, setlatestActiveTabs] = useState<string[]>([]);
 
+  const isMobileLayout = window.innerWidth <= 768;
+
   useEffect(() => {
     // If the length of latestActiveTabs is 0 make sure if there are no active panes visible.
     // If there are panes visible add them to the array.
@@ -60,8 +62,6 @@ function EditorTabs({
       );
     }
 
-    const fileIsVisible = visibleEditors[latestFileKey];
-
     // If the current clicked pane is already defined at the last index of the array
     // (thus the most recent tab) there is no need to add it again and get duplicated
     // keys in the array. As the current key at the last index wil be shifted to the first index.
@@ -70,6 +70,8 @@ function EditorTabs({
 
     if (latestFileKey.length > 0) {
       // Shift they old "latest" file to the first index if it is visible and the new to the last index
+
+      const fileIsVisible = visibleEditors[latestFileKey];
 
       if (latestActiveTabs.length == 2 && fileIsVisible) {
         latestActiveTabs.shift();
@@ -90,7 +92,7 @@ function EditorTabs({
         setlatestActiveTabs(latestActiveTabs);
       }
 
-      if (latestActiveTabs.length == 2 && window.innerWidth <= 768) {
+      if (latestActiveTabs.length == 2 && isMobileLayout) {
         toggleVisibleEditor(latestActiveTabs[0]);
       }
     }
@@ -99,7 +101,7 @@ function EditorTabs({
 
   const toggleTab = (fileKey: string) => {
     const canOpenCloseFile = fileKey != latestFileKey;
-    if (canOpenCloseFile && window.innerWidth <= 768) {
+    if (canOpenCloseFile && isMobileLayout) {
       toggleVisibleEditor(fileKey);
       setLatestFileKey(fileKey);
     } else if (window.innerWidth > 768) {
