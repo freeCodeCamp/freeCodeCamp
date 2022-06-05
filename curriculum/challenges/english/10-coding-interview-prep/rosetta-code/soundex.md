@@ -8,7 +8,10 @@ dashedName: soundex
 
 # --description--
 
-Soundex is an algorithm for creating indices for words based on their pronunciation. The goal is for homophones to be encoded to the same representation so that they can be matched despite minor differences in spelling (from the WP article). There is a major issue in many of the implementations concerning the separation of two consonants that have the same soundex code! According to the official Rules. So check for instance if **Ashcraft** is coded to **A-261**.
+Encode a `string` with **Soundex Algorithem**, if a `string` value is `Ashcraft` its coded to `A-261`.
+
+
+Here is the rules: 
 
 <ul>
   <li>If a vowel (A, E, I, O, U) separates two consonants that have the same soundex code, the consonant to the right of the vowel is coded. Tymczak is coded as T-522 (T, 5 for the M, 2 for the C, Z ignored (see "Side-by-Side" rule above), 2 for the K). Since the vowel "A" separates the Z and K, the K is coded.</li>
