@@ -48,6 +48,7 @@ interface ShowSettingsProps {
   submitNewAbout: () => void;
   toggleNightMode: (theme: Themes) => void;
   toggleSoundMode: (sound: boolean) => void;
+  toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
   updateInternetSettings: () => void;
   updateIsHonest: () => void;
   updatePortfolio: () => void;
@@ -77,6 +78,8 @@ const mapDispatchToProps = {
   submitNewAbout,
   toggleNightMode: (theme: Themes) => updateMyTheme({ theme }),
   toggleSoundMode: (sound: boolean) => updateMySound({ sound }),
+  toggleKeyboardShortcuts: (keyboardShortcuts: boolean) =>
+    updateUserFlag({ keyboardShortcuts }),
   updateInternetSettings: updateUserFlag,
   updateIsHonest: updateMyHonesty,
   updatePortfolio: updateMyPortfolio,
@@ -93,6 +96,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     submitNewAbout,
     toggleNightMode,
     toggleSoundMode,
+    toggleKeyboardShortcuts,
     user: {
       completedChallenges,
       email,
@@ -121,6 +125,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       points,
       theme,
       sound,
+      keyboardShortcuts,
       location,
       name,
       githubProfile,
@@ -165,9 +170,11 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             picture={picture}
             points={points}
             sound={sound}
+            keyboardShortcuts={keyboardShortcuts}
             submitNewAbout={submitNewAbout}
             toggleNightMode={toggleNightMode}
             toggleSoundMode={toggleSoundMode}
+            toggleKeyboardShortcuts={toggleKeyboardShortcuts}
             username={username}
           />
           <Spacer />

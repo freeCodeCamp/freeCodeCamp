@@ -2,7 +2,7 @@
 
 > [!NOTE] Esse processo não é obrigatório, mas documentado caso você queira visualizar como suas traduções ficarão.
 
-Se você gostaria de testar suas traduções em uma instância local do site FreeCodeCamp `/learn`, primeiro certifique-se de que você tem que [configurar a base de código](how-to-setup-freecodecamp-locally.md).
+Se você gostaria de testar suas traduções em uma instância local do site FreeCodeCamp `/learn`, primeiro certifique-se de que você [configurou a base de código](how-to-setup-freecodecamp-locally.md).
 
 ## Habilitando um idioma
 

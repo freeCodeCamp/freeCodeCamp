@@ -8,11 +8,11 @@ dashedName: hofstadter-q-sequence
 
 # --description--
 
-A [sequência Q de Hofstadter](https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Q_sequence "wp: Hofstadter_sequence#Hofstadter_Q_sequence") é definida como:
+A sequência de Hofstadter Q é definida como:
 
 $Q(1)=Q(2)=1, \\\\ Q(n)=Q\\big(n-Q(n-1)\\big)+Q\\big(n-Q(n-2)), \\quad n>2.$
 
-Ela é definida como a [sequência de Fibonacci](https://rosettacode.org/wiki/Fibonacci sequence "Fibonacci sequence"), mas enquanto o próximo termo na sequência de Fibonacci é a soma dos dois termos anteriores, na sequência Q, os dois termos anteriores dizer a distância a retornar na sequência Q para encontrar os dois números somados para fazer o próximo termo da sequência.
+Ela é definida como a sequência de Fibonacci, mas enquanto o próximo termo na sequência de Fibonacci é a soma dos dois termos anteriores, na sequência Q, os dois termos anteriores dizer a distância a retornar na sequência Q para encontrar os dois números somados para fazer o próximo termo da sequência.
 
 # --instructions--
 

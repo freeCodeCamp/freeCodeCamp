@@ -8,11 +8,18 @@ dashedName: map-the-debris
 
 # --description--
 
+De acordo com a Terceira Lei de Kepler, o período orbital $T$ de dois pontos de massa orbitando uma à outra em uma órbita circular ou elíptica é:
+
+$$ T = 2 \pi \sqrt{\frac{a^{3}}{\mu}} $$
+
+- $a$ é o eixo semimaior da órbita
+- $μ = GM$ é o parâmetro gravitacional padrão
+- $G$ é a constante gravitacional,
+- $M$ é a massa do maior corpo.
+
 Retorna um novo array que transforma a altitude média dos elementos em seus períodos órbita (em segundos).
 
 O array conterá objetos no formato `{name: 'name', avgAlt: avgAlt}`.
-
-Você pode ler sobre períodos de órbita [na Wikipedia](http://en.wikipedia.org/wiki/Orbital_period).
 
 Os valores devem estar arredondados para o número inteiro mais próximo. O corpo sendo orbitado é a Terra.
 

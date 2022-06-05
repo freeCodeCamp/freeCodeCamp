@@ -19,38 +19,35 @@ describe('multifileCertProjects', function () {
     cy.preserveSession();
   });
 
-  it('should show a save code button', function () {
-    cy.get(selectors.saveCodeBtn);
-  });
-
-  it('should save to database (savedChallenges) when clicking save code button', function () {
+  it('should save and reload user code', function () {
+    // save to database (savedChallenges) when clicking save code button
     cy.get(selectors.editor).click().focused().clear().type(save1text);
     cy.get(selectors.saveCodeBtn).click();
     cy.contains('Your code was saved to the database.');
-  });
-
-  it('should not allow you to save twice in a row too fast', function () {
-    cy.get(selectors.saveCodeBtn).click().click();
-    cy.contains('Your code was not saved.');
-  });
-
-  it('should load saved code on a hard refresh', function () {
+    // load saved code on a hard refresh
     cy.reload();
     cy.contains(save1text);
   });
 
-  it('should save to database (savedChallenges) when using ctrl+s hotkey', function () {
+  it('should save to using ctrl+s hotkey and persist through navigation', function () {
+    // since rapid clicks will cause the save requests to be ignored, we have to
+    // purge the db:
+    cy.exec('npm run seed');
+    // and the redux store:
+    cy.reload();
     cy.get(selectors.editor)
       .click()
       .focused()
       .clear()
       .type(`${save2text}{ctrl+s}`);
     cy.contains('Your code was saved to the database.');
-  });
-
-  it('should load saved code when navigating site (no hard refresh)', function () {
+    // load saved code when navigating site (no hard refresh)'
     cy.contains('Responsive Web Design Projects').click();
+    cy.contains('In this Responsive Web Design Certification');
     cy.contains('Build a Tribute Page').click();
     cy.contains(save2text);
+    // trigger the warning about saving too quickly
+    cy.get(selectors.saveCodeBtn).click().click();
+    cy.contains('Your code was not saved.');
   });
 });

@@ -8,11 +8,11 @@ dashedName: gray-code
 
 # --description--
 
-O [Código de Gray](https://en.wikipedia.org/wiki/Gray code) é uma forma de codificação binária, onde as transições entre números consecutivos diferem apenas em um bit.
+O Código de Gray é uma forma de codificação binária, onde as transições entre números consecutivos diferem apenas em um bit.
 
 Esta é uma codificação útil para reduzir riscos de dados de hardware com valores que se alteram rapidamente e/ou estejam associados ao hardware mais lento como entradas.
 
-Ele também é útil para gerar entradas para os [mapas de Karnaugh](https://en.wikipedia.org/wiki/Karnaugh map) em ordem, da esquerda para a direita ou de cima para baixo.
+Ele também é útil para gerar entradas para os mapas de Karnaugh, em ordem, da esquerda para a direita e de cima para baixo.
 
 # --instructions--
 

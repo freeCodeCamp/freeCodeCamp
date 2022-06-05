@@ -10,7 +10,18 @@ dashedName: build-the-game-of-life
 
 **Objetivo:** criar uma aplicação que funcione de modo semelhante ao que vemos em: <https://codepen.io/freeCodeCamp/full/BpwMZv/>.
 
-Atenda às histórias de usuário abaixo e faça com que todos os testes passem. Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
+O Jogo da Vida é um autômato celular concebido pelo matemático britânico John Horton Conway. É um <em>jogo sem jogadores</em>, o que significa que sua evolução é determinada pelo seu estado inicial, não exigindo mais nenhuma entrada. Uma pessoa interage com o Jogo da Vida criando uma configuração inicial e observando como ela evolui.
+
+O universo do Jogo da Vida é uma grade infinita e bidimensional ortogonal de células quadradas. Cada uma dessas células se encontra em um de dois estados possíveis, preenchida ou não preechida. Toda célula interage com seus oito vizinhos, que são as células que estão horizontalmente, verticalmente ou diagonalmente adjacentes.
+
+Em cada etapa no tempo, ocorrem as seguintes transições:
+
+- Qualquer célula viva com menos de dois vizinhos vivos morre, como se fosse uma subpopulação.
+- Qualquer célula viva com dois ou três vizinhos vivos sobrevive para a próxima geração.
+- Qualquer célula viva com mais de três vizinhos vivos morre, como se fosse uma superpopulação.
+- Qualquer célula morta com exatamente três vizinhos vivos torna-se uma célula viva, como se fosse uma reprodução.
+
+Atenda às histórias de usuário abaixo e faça com que todos os testes passem. Use quaisquer bibliotecas ou APIs de que você precisar. Dê ao projeto o seu próprio estilo pessoal.
 
 **História de usuário:** assim que eu chegar ao jogo, ele vai gerar aleatoriamente um tabuleiro e começar a jogar.
 
@@ -24,13 +35,9 @@ Atenda às histórias de usuário abaixo e faça com que todos os testes passem.
 
 **História de usuário:** cada vez que o tabuleiro muda, posso ver quantas gerações já passaram.
 
-**Dica:** aqui está uma explicação do Jogo da Vida da Conway escrito pelo próprio John Conway: <https://www.youtube.com/watch?v=E8kUJL04ELA>
+Quando terminar, inclua um link para o seu projeto e clique no botão "Eu completei esse desafio".
 
-**Dica:** aqui está uma visão geral do Jogo da Vida da Conway, com as regras para sua referência: [https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
-
-Quando terminar, inclua um link para o seu projeto no CodePen e clique no botão "Eu completei esse desafio".
-
-Você pode obter feedback sobre o seu projeto compartilhando-o no [fórum freeCodeCamp](https://forum.freecodecamp.org/c/project-feedback/409).
+Você pode obter feedback sobre o seu projeto compartilhando-o no [fórum do freeCodeCamp](https://forum.freecodecamp.org/c/project-feedback/409).
 
 # --solutions--
 
