@@ -700,6 +700,16 @@ const Editor = (props: EditorProps): JSX.Element => {
     return outputNode;
   }
 
+  function createScrollGutterNode(): HTMLDivElement {
+    const scrollGutterNode = document.createElement('div');
+    scrollGutterNode.setAttribute('id', 'scroll-gutter');
+    scrollGutterNode.style.width = `32px`;
+    scrollGutterNode.style.left = `0`;
+    scrollGutterNode.style.height = '100vh';
+    scrollGutterNode.style.background = 'transparent';
+    return scrollGutterNode;
+  }
+
   function resetMarginDecorations() {
     const { model, insideEditDecId } = dataRef.current;
     const range = model?.getDecorationRange(insideEditDecId);
@@ -884,12 +894,14 @@ const Editor = (props: EditorProps): JSX.Element => {
     const createWidget = (
       id: string,
       domNode: HTMLDivElement,
-      getTop: () => string
+      getTop: () => string,
+      width?: string
     ) => {
       const getId = () => id;
       const getDomNode = () => domNode;
       const getPosition = () => {
-        domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
+        domNode.style.width =
+          width || `${editor.getLayoutInfo().contentWidth}px`;
         domNode.style.top = getTop();
 
         // must return null, so that Monaco knows the widget will position
@@ -913,6 +925,8 @@ const Editor = (props: EditorProps): JSX.Element => {
     const descriptionNode = createDescription(editor);
 
     const outputNode = createOutputNode(editor);
+
+    const scrollGutterNode = createScrollGutterNode();
 
     if (!dataRef.current.descriptionWidget) {
       dataRef.current.descriptionWidget = createWidget(
@@ -942,6 +956,15 @@ const Editor = (props: EditorProps): JSX.Element => {
       editor.addOverlayWidget(dataRef.current.outputWidget);
       editor.changeViewZones(updateOutputZone);
     }
+
+    /* Add invisible overlay over line numbers so touch users will always have a place to vertically scroll the editor */
+    const scrollGutterWidget = createWidget(
+      'scrollgutter.widget',
+      scrollGutterNode,
+      () => '0',
+      '32px'
+    );
+    editor.addOverlayWidget(scrollGutterWidget);
 
     editor.onDidScrollChange(() => {
       if (dataRef.current.descriptionWidget)
