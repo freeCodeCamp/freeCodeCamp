@@ -10,7 +10,6 @@ dashedName: soundex
 
 Encode a `string` with **Soundex Algorithem**, if a `string` value is `Ashcraft` its coded to `A-261`.
 
-
 Here is the rules: 
 
 <ul>
