@@ -10,7 +10,7 @@ dashedName: state-name-puzzle
 
 **State name** puzzle is a <em>wordplay</em>.
 
-In which you take states names, rearrange them into different states names from the original ones.
+In which you take two states names, rearrange them into different two states names from the original ones.
 
 # --instructions--
 
