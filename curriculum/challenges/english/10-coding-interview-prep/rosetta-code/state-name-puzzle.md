@@ -8,7 +8,9 @@ dashedName: state-name-puzzle
 
 # --description--
 
+**State name** puzzle is a <em>wordplay</em>.
 
+In which you take states names, rearrange them into different states names from the original ones.
 
 # --instructions--
 
