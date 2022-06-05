@@ -12,6 +12,13 @@ dashedName: state-name-puzzle
 
 In which you take two states names, rearrange them into different two states names from the original ones.
 
+Example:
+
+```js
+const puzzleArray= ["North Carolina ", "South Dakota"];
+const solvedArray= ["North Dakota", "South Carolina"];
+```
+
 # --instructions--
 
 Write a function to solve the challenge for the given array of names of states. The function should return an array. Each element should be an object in this form: `{"from":[],"to":[]}`. The "from" array should contain the original names and the "to" array should contain the resultant names.
