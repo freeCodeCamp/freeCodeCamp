@@ -957,17 +957,15 @@ const Editor = (props: EditorProps): JSX.Element => {
       editor.changeViewZones(updateOutputZone);
     }
 
-    /* Add invisible overlay over line numbers so touch users will always have a place to vertically scroll the editor */
-    /*
+    // Add invisible content overlay over line numbers so touch users will
+    // always have a place to vertically scroll the editor.
     const scrollGutterWidget = createWidget(
       'scrollgutter.widget',
       scrollGutterNode,
       () => '0',
       '32px'
     );
-    editor.addOverlayWidget(scrollGutterWidget);
-    */
-    console.log(scrollGutterNode);
+    editor.addContentWidget(scrollGutterWidget);
 
     editor.onDidScrollChange(() => {
       if (dataRef.current.descriptionWidget)
