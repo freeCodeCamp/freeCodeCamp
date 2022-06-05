@@ -911,7 +911,11 @@ const Editor = (props: EditorProps): JSX.Element => {
       // Only the description content widget uses this method but it
       // is harmless to pass it to the overlay widget.
       const afterRender = () => {
-        domNode.style.left = '0';
+        // If we passed a width in then this is the scroll gutter and we don't
+        // want to adjust the left property.
+        if (!width) {
+          domNode.style.left = '0';
+        }
         domNode.style.visibility = 'visible';
       };
       return {
