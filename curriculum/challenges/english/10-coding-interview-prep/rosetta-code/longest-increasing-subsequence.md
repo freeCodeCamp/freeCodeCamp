@@ -18,9 +18,7 @@ const array = [3, 10, 2, 1, 20];
 
 Longest increasing sequence is:
 
-```js
-const longestSubsquenceArray = [3, 10, 20];
-```
+$\\{3, 10, 20\\}$
 
 # --instructions--
 
