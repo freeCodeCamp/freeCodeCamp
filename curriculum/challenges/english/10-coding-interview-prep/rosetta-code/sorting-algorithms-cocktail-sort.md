@@ -8,7 +8,7 @@ dashedName: sorting-algorithmscocktail-sort
 
 # --description--
 
-**Cocktail sort** tests whether the two elements are in the wrong order, then change the two elements places. If no elements left to be swapped, then the list is sorted.
+Cocktail sort works by iterating through the list, comparing adjacent elements and swapping them if they’re in the wrong order. This algorithm operates by traversing through a given array in both directions.
 
 # --instructions--
 
