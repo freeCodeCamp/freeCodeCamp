@@ -958,6 +958,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
 
     /* Add invisible overlay over line numbers so touch users will always have a place to vertically scroll the editor */
+    /*
     const scrollGutterWidget = createWidget(
       'scrollgutter.widget',
       scrollGutterNode,
@@ -965,6 +966,8 @@ const Editor = (props: EditorProps): JSX.Element => {
       '32px'
     );
     editor.addOverlayWidget(scrollGutterWidget);
+    */
+    console.log(scrollGutterNode);
 
     editor.onDidScrollChange(() => {
       if (dataRef.current.descriptionWidget)
