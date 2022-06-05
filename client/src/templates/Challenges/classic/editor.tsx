@@ -704,7 +704,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     const scrollGutterNode = document.createElement('div');
     scrollGutterNode.setAttribute('id', 'scroll-gutter');
     scrollGutterNode.style.width = `32px`;
-    scrollGutterNode.style.left = `0`;
+    scrollGutterNode.style.left = `-32px`;
     scrollGutterNode.style.height = '100vh';
     scrollGutterNode.style.background = 'transparent';
     return scrollGutterNode;
