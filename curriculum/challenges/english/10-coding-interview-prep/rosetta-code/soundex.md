@@ -10,7 +10,7 @@ dashedName: soundex
 
 **Soundex Algorithm** deals with the *intentions* of the words. It creates a representation for similar sounding words. 
 
-It is mainly used in searching for <em>names</em> and <em>addresses</em>, because the person, who inputting the <em>names</em>, can focus on how they sound instead of the correct spelling of the <em>names</em>.
+It is used for searching <em>names</em> and <em>addresses</em>. This means that the person who filled in the <em>name</em>, can focus on how it sounds instead of correcting the spelling of <em>names</em>.
 
 For example: 
 
