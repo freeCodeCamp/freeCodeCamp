@@ -57,8 +57,7 @@ const pathExists = (
   params?.dashedName === pathSegments.dashedName;
 
 const renderPage = (props: Props) => ({
-  props,
-  revalidate: 10
+  props
 });
 
 function redirect(pathSegments: PathSegments) {
@@ -66,8 +65,7 @@ function redirect(pathSegments: PathSegments) {
     redirect: {
       destination: getDestination(pathSegments),
       permanent: false
-    },
-    revalidate: 10
+    }
   };
 }
 
