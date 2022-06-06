@@ -145,7 +145,8 @@
       "my-timeline": "Minha linha do tempo",
       "my-donations": "Minhas doações",
       "night-mode": "Modo noturno",
-      "sound-mode": "Modo fogueira"
+      "sound-mode": "Modo fogueira",
+      "keyboard-shortcuts": "Enable Keyboard Shortcuts"
     },
     "headings": {
       "certs": "Certificações",
@@ -684,5 +685,16 @@
     "delete-p3": "Você precisa criar um novo token para salvar seu progresso futuro nas seções de currículo que usam uma máquina virtual.",
     "no-thanks": "Não, obrigado. Eu gostaria de manter meu token",
     "yes-please": "Sim, eu gostaria de excluir meu token"
+  },
+  "shortcuts": {
+    "title": "Keyboard shortcuts",
+    "table-header-action": "Action",
+    "table-header-key": "Key(s)",
+    "navigation-mode": "Navigation Mode",
+    "execute-challenge": "Execute Challenge",
+    "focus-editor": "Focus Editor",
+    "focus-instructions-panel": "Focus Instructions Panel",
+    "navigate-previous": "Navigate Previous Exercise",
+    "navigate-next": "Navigate Next Exercise"
   }
 }

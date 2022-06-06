@@ -145,7 +145,8 @@
       "my-timeline": "La mia cronologia",
       "my-donations": "Le mie donazioni",
       "night-mode": "Modalità Notturna",
-      "sound-mode": "Modalità Campfire"
+      "sound-mode": "Modalità Campfire",
+      "keyboard-shortcuts": "Enable Keyboard Shortcuts"
     },
     "headings": {
       "certs": "Certificazioni",
@@ -684,5 +685,16 @@
     "delete-p3": "Avrai bisogno di creare un nuovo token per salvare progressi futuri nelle sezioni del curriculum che usano una macchina virtuale.",
     "no-thanks": "No grazie, vorrei tenere il mio token",
     "yes-please": "Sì per favore, vorrei eliminare il mio token"
+  },
+  "shortcuts": {
+    "title": "Keyboard shortcuts",
+    "table-header-action": "Action",
+    "table-header-key": "Key(s)",
+    "navigation-mode": "Navigation Mode",
+    "execute-challenge": "Execute Challenge",
+    "focus-editor": "Focus Editor",
+    "focus-instructions-panel": "Focus Instructions Panel",
+    "navigate-previous": "Navigate Previous Exercise",
+    "navigate-next": "Navigate Next Exercise"
   }
 }
