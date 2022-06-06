@@ -62,61 +62,6 @@ describe('getSetAccessToken', () => {
           created: accessToken.created.toISOString()
         });
       });
-
-      it('returns the signed jwt if found', () => {
-        const validJWT = jwt.sign({ accessToken }, validJWTSecret);
-        // eslint-disable-next-line camelcase
-        const req = mockReq({ cookie: { jwt_access_token: validJWT } });
-        const result = getAccessTokenFromRequest(req, validJWTSecret);
-
-        expect(result.jwt).toEqual(validJWT);
-      });
-    });
-
-    describe('Auth headers', () => {
-      it('returns `invalid token` error for malformed tokens', () => {
-        const invalidJWT = jwt.sign({ accessToken }, invalidJWTSecret);
-        // eslint-disable-next-line camelcase
-        const req = mockReq({ headers: { 'X-fcc-access-token': invalidJWT } });
-        const result = getAccessTokenFromRequest(req, validJWTSecret);
-
-        expect(result.error).toEqual(errorTypes.invalidToken);
-      });
-
-      it('returns `expired token` error for expired tokens', () => {
-        const invalidJWT = jwt.sign(
-          { accessToken: { ...accessToken, created: theBeginningOfTime } },
-          validJWTSecret
-        );
-        // eslint-disable-next-line camelcase
-        const req = mockReq({ headers: { 'X-fcc-access-token': invalidJWT } });
-        const result = getAccessTokenFromRequest(req, validJWTSecret);
-
-        expect(result.error).toEqual(errorTypes.expiredToken);
-      });
-
-      it('returns a valid access token with no errors ', () => {
-        expect.assertions(2);
-        const validJWT = jwt.sign({ accessToken }, validJWTSecret);
-        // eslint-disable-next-line camelcase
-        const req = mockReq({ headers: { 'X-fcc-access-token': validJWT } });
-        const result = getAccessTokenFromRequest(req, validJWTSecret);
-
-        expect(result.error).toBeFalsy();
-        expect(result.accessToken).toEqual({
-          ...accessToken,
-          created: accessToken.created.toISOString()
-        });
-      });
-
-      it('returns the signed jwt if found', () => {
-        const validJWT = jwt.sign({ accessToken }, validJWTSecret);
-        // eslint-disable-next-line camelcase
-        const req = mockReq({ headers: { 'X-fcc-access-token': validJWT } });
-        const result = getAccessTokenFromRequest(req, validJWTSecret);
-
-        expect(result.jwt).toEqual(validJWT);
-      });
     });
   });
 
