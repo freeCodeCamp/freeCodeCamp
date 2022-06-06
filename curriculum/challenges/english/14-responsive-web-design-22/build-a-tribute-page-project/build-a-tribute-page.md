@@ -28,6 +28,13 @@ Fulfill the user stories and pass all the tests below to complete this project. 
 
 # --hints--
 
+You should link your stylesheet to your HTML file.
+
+```js
+const link = document.querySelector('.fcc-injected-styles');
+assert.exists(link);
+```
+
 You should have a `main` element with an `id` of `main`.
 
 ```js
