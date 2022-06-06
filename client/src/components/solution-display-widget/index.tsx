@@ -77,20 +77,22 @@ export function SolutionDisplayWidget({
     </Button>
   );
   const ShowMultifileProjectSolution = (
-    <DropdownButton
-      block={true}
-      bsStyle='primary'
-      className='btn-invert'
-      id={`dropdown-for-${id}`}
-      title={t('buttons.view')}
-    >
-      <MenuItem bsStyle='primary' onClick={showUserCode}>
-        {t('buttons.show-code')}
-      </MenuItem>
-      <MenuItem bsStyle='primary' onClick={showProjectPreview}>
-        {t('buttons.show-project')}
-      </MenuItem>
-    </DropdownButton>
+    <div className='solutions-dropdown'>
+      <DropdownButton
+        block={true}
+        bsStyle='primary'
+        className='btn-invert'
+        id={`dropdown-for-${id}`}
+        title={t('buttons.view')}
+      >
+        <MenuItem bsStyle='primary' onClick={showUserCode}>
+          {t('buttons.show-code')}
+        </MenuItem>
+        <MenuItem bsStyle='primary' onClick={showProjectPreview}>
+          {t('buttons.show-project')}
+        </MenuItem>
+      </DropdownButton>
+    </div>
   );
 
   const ShowProjectAndGithubLinks = (
