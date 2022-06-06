@@ -493,6 +493,18 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (!getStoredAriaRoledescription()) {
       setAriaRoledescription(false);
     }
+
+    // Add invisible content widget over line numbers so touch users will
+    // always have a place to vertically scroll the editor.
+    const scrollGutterNode = createScrollGutterNode(editor);
+    const scrollGutterWidget = createWidget(
+      editor,
+      'scrollgutter.widget',
+      scrollGutterNode,
+      () => '0',
+      false
+    );
+    editor.addContentWidget(scrollGutterWidget);
   };
 
   const toggleAriaRoledescription = () => {
@@ -700,11 +712,14 @@ const Editor = (props: EditorProps): JSX.Element => {
     return outputNode;
   }
 
-  function createScrollGutterNode(): HTMLDivElement {
+  function createScrollGutterNode(
+    editor: editor.IStandaloneCodeEditor
+  ): HTMLDivElement {
     const scrollGutterNode = document.createElement('div');
-    scrollGutterNode.setAttribute('id', 'scroll-gutter');
-    scrollGutterNode.style.width = `32px`;
-    scrollGutterNode.style.left = `-32px`;
+    const lineGutterWidth = editor.getLayoutInfo().contentLeft;
+    scrollGutterNode.style.width = `${lineGutterWidth}px`;
+    scrollGutterNode.style.left = `-${lineGutterWidth}px`;
+    scrollGutterNode.style.top = '0';
     scrollGutterNode.style.height = '10000px';
     scrollGutterNode.style.background = 'transparent';
     return scrollGutterNode;
@@ -890,50 +905,49 @@ const Editor = (props: EditorProps): JSX.Element => {
     })[0];
   }
 
-  function addWidgetsToRegions(editor: editor.IStandaloneCodeEditor) {
-    const createWidget = (
-      id: string,
-      domNode: HTMLDivElement,
-      getTop: () => string,
-      width?: string
-    ) => {
-      const getId = () => id;
-      const getDomNode = () => domNode;
-      const getPosition = () => {
-        domNode.style.width =
-          width || `${editor.getLayoutInfo().contentWidth}px`;
+  const createWidget = (
+    editor: editor.IStandaloneCodeEditor,
+    id: string,
+    domNode: HTMLDivElement,
+    getTop: () => string,
+    // scroll gutter sets this to false since positioning is done elsewhere
+    setPosition?: boolean
+  ) => {
+    const getId = () => id;
+    const getDomNode = () => domNode;
+    const getPosition = () => {
+      if (setPosition !== false) {
+        domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
         domNode.style.top = getTop();
-
-        // must return null, so that Monaco knows the widget will position
-        // itself.
-        return null;
-      };
-      // Only the description content widget uses this method but it
-      // is harmless to pass it to the overlay widget.
-      const afterRender = () => {
-        // If we passed a width in then this is the scroll gutter and we don't
-        // want to adjust the left property.
-        if (!width) {
-          domNode.style.left = '0';
-        }
-        domNode.style.visibility = 'visible';
-      };
-      return {
-        getId,
-        getDomNode,
-        getPosition,
-        afterRender
-      };
+      }
+      // must return null, so that Monaco knows the widget will position
+      // itself.
+      return null;
     };
+    // Only the description content widget uses this method but it
+    // is harmless to pass it to the overlay widget.
+    const afterRender = () => {
+      if (setPosition !== false) {
+        domNode.style.left = '0';
+      }
+      domNode.style.visibility = 'visible';
+    };
+    return {
+      getId,
+      getDomNode,
+      getPosition,
+      afterRender
+    };
+  };
 
+  function addWidgetsToRegions(editor: editor.IStandaloneCodeEditor) {
     const descriptionNode = createDescription(editor);
 
     const outputNode = createOutputNode(editor);
 
-    const scrollGutterNode = createScrollGutterNode();
-
     if (!dataRef.current.descriptionWidget) {
       dataRef.current.descriptionWidget = createWidget(
+        editor,
         'description.widget',
         descriptionNode,
         getDescriptionZoneTop
@@ -953,6 +967,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
     if (!dataRef.current.outputWidget) {
       dataRef.current.outputWidget = createWidget(
+        editor,
         'output.widget',
         outputNode,
         getOutputZoneTop
@@ -960,16 +975,6 @@ const Editor = (props: EditorProps): JSX.Element => {
       editor.addOverlayWidget(dataRef.current.outputWidget);
       editor.changeViewZones(updateOutputZone);
     }
-
-    // Add invisible content overlay over line numbers so touch users will
-    // always have a place to vertically scroll the editor.
-    const scrollGutterWidget = createWidget(
-      'scrollgutter.widget',
-      scrollGutterNode,
-      () => '0',
-      '32px'
-    );
-    editor.addContentWidget(scrollGutterWidget);
 
     editor.onDidScrollChange(() => {
       if (dataRef.current.descriptionWidget)
