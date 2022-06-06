@@ -14,7 +14,7 @@ It is used for searching <em>names</em> and <em>addresses</em>. This means that 
 
 For example: 
 
-If you heard the name `Quenci` for the first time, and misspelled it, you will get **Soundex** code `Q520`. 
+If you are hearing the name `Quenci` for the first time, and misspelled it, you will get **Soundex** code `Q520`. 
 
 When you spell it correctly next time `Quincy`, you will still get the same code `Q520`, which mean you can link multiple name pronunciation into the same <em>person</em> without the need to add every possible spelling. 
 
