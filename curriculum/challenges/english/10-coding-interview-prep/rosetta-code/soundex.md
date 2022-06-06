@@ -16,7 +16,7 @@ For example:
 
 If you are hearing the name `Quenci` for the first time, and misspelled it, you will get **Soundex** code `Q520`. 
 
-When you spell it correctly next time `Quincy`, you will still get the same code `Q520`, which mean you can link multiple name pronunciation into the same <em>person</em> without the need to add every possible spelling. 
+When you spell the name `Quincy` correctly next time, you will still get the same code `Q520`, which means you can link multiple name pronunciations into the same <em>person</em> without the need for adding every spelling. 
 
 Here is the rules: 
 
