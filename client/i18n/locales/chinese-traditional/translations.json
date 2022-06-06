@@ -145,7 +145,8 @@
       "my-timeline": "我的時間線",
       "my-donations": "我的捐款",
       "night-mode": "夜間模式",
-      "sound-mode": "篝火模式"
+      "sound-mode": "篝火模式",
+      "keyboard-shortcuts": "Enable Keyboard Shortcuts"
     },
     "headings": {
       "certs": "認證",
@@ -684,5 +685,16 @@
     "delete-p3": "您需要創建一個新的令牌來保存使用虛擬機的課程部分的未來進度。",
     "no-thanks": "不，謝謝，我想保留我的令牌",
     "yes-please": "是的，我想刪除我的令牌"
+  },
+  "shortcuts": {
+    "title": "Keyboard shortcuts",
+    "table-header-action": "Action",
+    "table-header-key": "Key(s)",
+    "navigation-mode": "Navigation Mode",
+    "execute-challenge": "Execute Challenge",
+    "focus-editor": "Focus Editor",
+    "focus-instructions-panel": "Focus Instructions Panel",
+    "navigate-previous": "Navigate Previous Exercise",
+    "navigate-next": "Navigate Next Exercise"
   }
 }
