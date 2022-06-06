@@ -145,7 +145,8 @@
       "my-timeline": "我的时间线",
       "my-donations": "我的捐款",
       "night-mode": "夜间模式",
-      "sound-mode": "篝火模式"
+      "sound-mode": "篝火模式",
+      "keyboard-shortcuts": "Enable Keyboard Shortcuts"
     },
     "headings": {
       "certs": "认证",
@@ -684,5 +685,16 @@
     "delete-p3": "您需要创建一个新的令牌来保存使用虚拟机的课程部分的未来进度。",
     "no-thanks": "不，谢谢，我想保留我的令牌",
     "yes-please": "是的，我想删除我的令牌"
+  },
+  "shortcuts": {
+    "title": "Keyboard shortcuts",
+    "table-header-action": "Action",
+    "table-header-key": "Key(s)",
+    "navigation-mode": "Navigation Mode",
+    "execute-challenge": "Execute Challenge",
+    "focus-editor": "Focus Editor",
+    "focus-instructions-panel": "Focus Instructions Panel",
+    "navigate-previous": "Navigate Previous Exercise",
+    "navigate-next": "Navigate Next Exercise"
   }
 }
