@@ -25,10 +25,11 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
-    "nodemon": "^2.0.16",
-    "json-server": "0.17.0"
+    "json-server": "0.17.0",
+    "nodemon": "^2.0.16"
   },
   "devDependencies": {
+    "dotenv": "^16.0.1",
     "ts-node": "10.8.0",
     "typescript": "4.7.2"
   }
