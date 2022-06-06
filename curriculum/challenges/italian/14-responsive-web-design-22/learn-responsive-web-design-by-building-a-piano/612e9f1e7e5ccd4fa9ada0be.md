@@ -1,30 +1,26 @@
 ---
-id: 612ebf9a210f2b6d77001e68
-title: Step 30
+id: 612e9f1e7e5ccd4fa9ada0be
+title: Step 17
 challengeType: 0
-dashedName: step-30
+dashedName: step-17
 ---
 
 # --description--
 
-Ora aggiungi un selettore `.logo` alla `@media` query e imposta la proprietà `width` a `150px`.
+Assegna a `.key` un `margin` di `2px` e una proprietà `float` con il valore `left`.
 
 # --hints--
 
-La regola `@media` dovrebbe avere un selettore `.logo`.
+Il selettore `.key` dovrebbe avere una proprietà `margin` impostata a `2px`.
 
 ```js
-const rules = new __helpers.CSSHelp(document).getRuleListsWithinMedia('(max-width: 768px)');
-const logo = rules?.find(rule => rule.selectorText === '.logo');
-assert(logo);
+assert(new __helpers.CSSHelp(document).getStyle('.key')?.margin === '2px');
 ```
 
-Il nuovo selettore `.logo` dovrebbe avere una proprietà `width` di `150px`.
+Il selettore `.key` dovrebbe avere una proprietà `float` con il valore `left`.
 
 ```js
-const rules = new __helpers.CSSHelp(document).getRuleListsWithinMedia('(max-width: 768px)');
-const logo = rules?.find(rule => rule.selectorText === '.logo');
-assert(logo?.style.width === '150px');
+assert(new __helpers.CSSHelp(document).getStyle('.key')?.float === 'left');
 ```
 
 # --seed--
@@ -42,7 +38,6 @@ assert(logo?.style.width === '150px');
   </head>
   <body>
     <div id="piano">
-      <img class="logo" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg" alt="freeCodeCamp Logo" />
       <div class="keys">
         <div class="key"></div>
         <div class="key black--key"></div>
@@ -88,8 +83,6 @@ html {
   height: 290px;
   margin: 80px auto;
   padding: 90px 20px 0 20px;
-  position: relative;
-  border-radius: 10px;
 }
 
 .keys {
@@ -99,41 +92,12 @@ html {
   padding-left: 2px;
 }
 
+--fcc-editable-region--
 .key {
   background-color: #ffffff;
   position: relative;
   width: 41px;
   height: 175px;
-  margin: 2px;
-  float: left;
-  border-radius: 0 0 3px 3px;
-}
-
-.key.black--key::after {
-  background-color: #1d1e22;
-  content: "";
-  position: absolute;
-  left: -18px;
-  width: 32px;
-  height: 100px;
-  border-radius: 0 0 3px 3px;
-}
-
-.logo {
-  width: 200px;
-  position: absolute;
-  top: 23px;
-}
-
---fcc-editable-region--
-@media (max-width: 768px) {
-  #piano {
-    width: 358px;
-  }
-
-  .keys {
-    width: 318px;
-  }
 }
 --fcc-editable-region--
 ```
