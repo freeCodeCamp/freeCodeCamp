@@ -11,16 +11,17 @@ describe('Challenge with multifile editor', () => {
   });
 
   it('renders the file tab buttons', () => {
-    cy.get(selectors.monacoTabs).should('exist');
     cy.get(selectors.monacoTabs).contains('index.html');
     cy.get(selectors.monacoTabs).contains('styles.css');
   });
 
-  it('checks for correct text at different widths', () => {
-    cy.viewport(768, 660)
-      .get(selectors.testButton)
-      .contains('Check Your Code (Ctrl + Enter)');
+  it.only('checks for correct text at different widths', () => {
+    cy.viewport(768, 660);
+    cy.get(selectors.testButton).contains('Check Your Code (Ctrl + Enter)');
 
-    cy.viewport(767, 660).get(selectors.testButton).contains('Check Your Code');
+    cy.viewport(767, 660);
+    cy.get(selectors.testButton)
+      .should('not.contain.text', '(Ctrl + Enter)')
+      .contains('Check Your Code');
   });
 });
