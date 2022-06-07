@@ -14,7 +14,8 @@ export function getGuideUrl({ forumTopicId, title = '' }: GuideData): string {
     : `${forumLocation}/search?q=${title}%20in%3Atitle%20order%3Aviews`;
 }
 
-export function isGoodXHRStatus(status: string): boolean {
+export function isGoodXHRStatus(status?: string): boolean {
+  if (!status) return false;
   const statusInt = parseInt(status, 10);
   return (statusInt >= 200 && statusInt < 400) || statusInt === 402;
 }
