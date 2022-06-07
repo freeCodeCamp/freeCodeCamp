@@ -8,7 +8,7 @@ dashedName: kaprekar-numbers
 
 # --description--
 
-A positive integer is a [Kaprekar number](<https://en.wikipedia.org/wiki/Kaprekar number>) if:
+A positive integer is a Kaprekar number if:
 
 <ul>
   <li>It is 1, or,</li>
@@ -21,7 +21,7 @@ Example Kaprekar numbers:
 
 <ul>
   <li><code>2223</code> is a Kaprekar number, as <code>2223 * 2223 = 4941729</code>, <code>4941729</code> may be split to <code>494</code> and <code>1729</code>, and <code>494 + 1729 = 2223</code></li>
-  <li>The series of Kaprekar numbers is known as <a href='https://oeis.org/A006886' target='_blank'>A006886</a>, and begins as <code>1, 9, 45, 55, ...</code></li>
+  <li>The series of Kaprekar numbers is known as A006886, and begins as <code>1, 9, 45, 55, ...</code></li>
 </ul>
 
 # --instructions--

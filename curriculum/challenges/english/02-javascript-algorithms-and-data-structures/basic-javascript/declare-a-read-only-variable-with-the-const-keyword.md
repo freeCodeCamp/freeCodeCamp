@@ -25,7 +25,7 @@ You should always name variables you don't want to reassign using the `const` ke
 
 # --instructions--
 
-Change the code so that all variables are declared using `let` or `const`. Use `let` when you want the variable to change, and `const` when you want the variable to remain constant. Also, rename variables declared with `const` to conform to common practices.
+Change the code so that all variables are declared using `let` or `const`. Use `let` when you want the variable to change, and `const` when you want the variable to remain constant. Also, rename variables declared with `const` to conform to common practices. Do not change the strings assigned to the variables.
 
 # --hints--
 
@@ -45,8 +45,13 @@ assert.notMatch(code, /(fCC)/);
 `FCC` should be a constant variable declared with `const`.
 
 ```js
-assert.equal(FCC, 'freeCodeCamp');
 assert.match(code, /const\s+FCC/);
+```
+
+The string assigned to `FCC` should not be changed.
+
+```js
+assert.equal(FCC, 'freeCodeCamp');
 ```
 
 `fact` should be declared with `let`.
