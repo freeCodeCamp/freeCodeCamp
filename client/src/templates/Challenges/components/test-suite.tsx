@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Fail from '../../../assets/icons/fail';
 import GreenPass from '../../../assets/icons/green-pass';
@@ -6,7 +7,6 @@ import Initial from '../../../assets/icons/initial';
 
 import './test-suite.css';
 import { ChallengeTest, Test } from '../../../redux/prop-types';
-
 type TestSuiteTest = {
   err?: string;
   pass?: boolean;
@@ -21,6 +21,7 @@ interface TestSuiteProps {
 }
 
 function TestSuite({ tests }: TestSuiteProps): JSX.Element {
+  const { t } = useTranslation();
   const testSuiteTests = tests.filter(isTestSuiteTest);
 
   return (
@@ -30,8 +31,9 @@ function TestSuite({ tests }: TestSuiteProps): JSX.Element {
         {testSuiteTests.map(({ err, pass = false, text = '' }, index) => {
           const isInitial = !pass && !err;
           const statusIcon = pass && !err ? <GreenPass /> : <Fail />;
-          const initialText = 'Waiting';
-          const statusText = pass && !err ? 'Passed' : 'Failed';
+          const initialText = t('icons.waiting');
+          const statusText =
+            pass && !err ? t('icons.passed') : t('icons.failed');
           // Remove opening/closing <p> so screen reader will read both
           // status message and test text as one block.
           text = text.replace(/^<p>|<\/p>$/g, '');
