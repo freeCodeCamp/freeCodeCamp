@@ -131,11 +131,9 @@ function* updateMyThemeSaga({ payload: update }) {
 
 function* updateMyKeyboardShortcutsSaga({ payload: update }) {
   try {
-    const response = yield call(putUpdateMyKeyboardShortcuts, update);
-    yield put(
-      updateMyKeyboardShortcutsComplete({ ...response, payload: update })
-    );
-    yield put(createFlashMessage({ ...response }));
+    const { data } = yield call(putUpdateMyKeyboardShortcuts, update);
+    yield put(updateMyKeyboardShortcutsComplete({ ...data, payload: update }));
+    yield put(createFlashMessage({ ...data }));
   } catch (e) {
     yield put(updateMyKeyboardShortcutsError);
   }
