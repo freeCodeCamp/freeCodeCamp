@@ -8,11 +8,11 @@ describe('Help Button', () => {
 
   it('should toggle the dropdown menu', () => {
     cy.get('#get-help-dropdown').scrollIntoView().click();
-    cy.get('ul[role="menu"]').should('be.visible');
+    cy.get('.tool-panel-group ul[role="menu"]').should('be.visible');
   });
 
   it('should render three links when video is available', () => {
-    cy.get('ul[role="menu"]').within(() => {
+    cy.get('.tool-panel-group ul[role="menu"]').within(() => {
       cy.get('a').should('have.length', 3);
       cy.get('a').eq(0).contains('Get a Hint');
       cy.get('a').eq(1).contains('Watch a Video');
@@ -25,7 +25,7 @@ describe('Help Button', () => {
       '/learn/front-end-development-libraries/bootstrap/apply-the-default-bootstrap-button-style'
     );
     cy.get('#get-help-dropdown').scrollIntoView().click();
-    cy.get('ul[role="menu"]').within(() => {
+    cy.get('.tool-panel-group ul[role="menu"]').within(() => {
       cy.get('a').should('have.length', 2);
       cy.get('a').eq(0).contains('Get a Hint');
       cy.get('a').eq(1).contains('Ask for Help');
