@@ -22,7 +22,8 @@ import {
   putVerifyCert,
   putUpdateMyPortfolio,
   putUpdateMyTheme,
-  putUpdateMySound
+  putUpdateMySound,
+  putUpdateMyKeyboardShortcuts
 } from '../../utils/ajax';
 import { certMap } from '../../resources/cert-and-project-map';
 import { completedChallengesSelector } from '..';
@@ -50,7 +51,9 @@ import {
   updateMyThemeComplete,
   updateMyThemeError,
   updateMySoundComplete,
-  updateMySoundError
+  updateMySoundError,
+  updateMyKeyboardShortcutsComplete,
+  updateMyKeyboardShortcutsError
 } from './';
 
 function* submitNewAboutSaga({ payload }) {
@@ -123,6 +126,18 @@ function* updateMyThemeSaga({ payload: update }) {
     yield put(createFlashMessage({ ...response }));
   } catch (e) {
     yield put(updateMyThemeError);
+  }
+}
+
+function* updateMyKeyboardShortcutsSaga({ payload: update }) {
+  try {
+    const response = yield call(putUpdateMyKeyboardShortcuts, update);
+    yield put(
+      updateMyKeyboardShortcutsComplete({ ...response, payload: update })
+    );
+    yield put(createFlashMessage({ ...response }));
+  } catch (e) {
+    yield put(updateMyKeyboardShortcutsError);
   }
 }
 
@@ -218,6 +233,7 @@ export function createSettingsSagas(types) {
     takeEvery(types.updateMyHonesty, updateMyHonestySaga),
     takeEvery(types.updateMySound, updateMySoundSaga),
     takeEvery(types.updateMyTheme, updateMyThemeSaga),
+    takeEvery(types.updateMyKeyboardShortcuts, updateMyKeyboardShortcutsSaga),
     takeEvery(types.updateMyQuincyEmail, updateMyQuincyEmailSaga),
     takeEvery(types.updateMyPortfolio, updateMyPortfolioSaga),
     takeLatest(types.submitNewAbout, submitNewAboutSaga),
