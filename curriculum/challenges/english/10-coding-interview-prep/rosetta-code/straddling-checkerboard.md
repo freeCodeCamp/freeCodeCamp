@@ -10,7 +10,7 @@ dashedName: straddling-checkerboard
 
 Implement functions to encrypt and decrypt a message using the **straddling checkerboard** method.
 
-Each function will take a two arguments, a `message` string and  the `alphabet` array. The `alphabet` contains 3 strings representing the 3 rows of the checkerboard. 
+Each function will take two arguments, a `message` string and an `alphabet` array. The `alphabet` array will contain 3 strings representing the 3 rows of the straddling checkerboard.
 
 The output of the `straddle()` function should be a series of decimal digits. Numbers should be encrypted by inserting the escape character before each digit, then including the digit <em>unencrypted</em>.
 
