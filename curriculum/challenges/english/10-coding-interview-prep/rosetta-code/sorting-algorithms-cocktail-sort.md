@@ -8,7 +8,7 @@ dashedName: sorting-algorithmscocktail-sort
 
 # --description--
 
-Cocktail sort works by iterating through lists, comparing adjacent elements and swapping them if they’re in the wrong order. This algorithm operates by traversing through a given array in both directions.
+Cocktail sort works by iterating through lists, comparing adjacent elements, and swapping them if they’re in the wrong order. This algorithm operates by traversing through a given array in both directions.
 
 # --instructions--
 
