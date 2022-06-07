@@ -500,9 +500,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     const scrollGutterWidget = createWidget(
       editor,
       'scrollgutter.widget',
-      scrollGutterNode,
-      () => '0',
-      false
+      scrollGutterNode
     );
     editor.addContentWidget(scrollGutterWidget);
   };
@@ -909,14 +907,14 @@ const Editor = (props: EditorProps): JSX.Element => {
     editor: editor.IStandaloneCodeEditor,
     id: string,
     domNode: HTMLDivElement,
-    getTop: () => string,
-    // scroll gutter sets this to false since positioning is done elsewhere
-    setPosition?: boolean
+    // If getTop function is not provided then no positioning will be done here.
+    // This allows scroll gutter to do its positioning elsewhere.
+    getTop?: () => string
   ) => {
     const getId = () => id;
     const getDomNode = () => domNode;
     const getPosition = () => {
-      if (setPosition !== false) {
+      if (getTop) {
         domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
         domNode.style.top = getTop();
       }
@@ -927,7 +925,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     // Only the description content widget uses this method but it
     // is harmless to pass it to the overlay widget.
     const afterRender = () => {
-      if (setPosition !== false) {
+      if (getTop) {
         domNode.style.left = '0';
       }
       domNode.style.visibility = 'visible';
