@@ -326,7 +326,7 @@ export function putUpdateMyTheme(
 
 export function putUpdateMyKeyboardShortcuts(
   update: Record<string, string>
-): Promise<void> {
+): Promise<ResponseWithData<void>> {
   return put('/update-my-keyboard-shortcuts', update);
 }
 
