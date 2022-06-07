@@ -171,11 +171,6 @@ Officially supported chatrooms
 
 - A [reddit subreddit](https://www.reddit.com/r/FreeCodeCamp/) where you can make and read post related to topics like learning how to code and getting a job as a developer.
 
-
-Unofficially supported chatrooms
-
-- Slack where you can usually find unofficial freeCodeCamp groups online.
-
 ### Reporting Bugs and Issues
 
 If you think you've found a bug, first read the [how to report a bug](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
