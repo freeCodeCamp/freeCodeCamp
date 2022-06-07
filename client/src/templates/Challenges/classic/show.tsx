@@ -11,6 +11,7 @@ import store from 'store';
 import { editor } from 'monaco-editor';
 import { challengeTypes } from '../../../../utils/challenge-types';
 import LearnLayout from '../../../components/layouts/learn';
+import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 
 import {
   ChallengeFiles,
@@ -128,7 +129,6 @@ interface ReflexLayout {
   testsPane: { flex: number };
 }
 
-const MAX_MOBILE_WIDTH = 767;
 const REFLEX_LAYOUT = 'challenge-layout';
 const BASE_LAYOUT = {
   codePane: { flex: 1 },
