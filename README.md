@@ -161,7 +161,7 @@ Our community also has:
 ### Communication
 Our community has both official and unofficial platforms for communication
 
-Officially supported chatrooms
+Officially supported communities
 
 - A [forum](https://forum.freecodecamp.org) where you can usually get programming help or project feedback within hours.
 
