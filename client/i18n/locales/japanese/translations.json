@@ -145,7 +145,8 @@
       "my-timeline": "自分のタイムライン",
       "my-donations": "自分の寄付",
       "night-mode": "ナイトモード",
-      "sound-mode": "キャンプファイアモード"
+      "sound-mode": "キャンプファイアモード",
+      "keyboard-shortcuts": "Enable Keyboard Shortcuts"
     },
     "headings": {
       "certs": "認定証",
@@ -684,5 +685,16 @@
     "delete-p3": "仮想マシンを使用するカリキュラムセクションでこの先の進行状況を保存するには、新しいトークンを作成する必要があります。",
     "no-thanks": "いいえ、トークンを維持したいです",
     "yes-please": "はい、トークンを削除します"
+  },
+  "shortcuts": {
+    "title": "Keyboard shortcuts",
+    "table-header-action": "Action",
+    "table-header-key": "Key(s)",
+    "navigation-mode": "Navigation Mode",
+    "execute-challenge": "Execute Challenge",
+    "focus-editor": "Focus Editor",
+    "focus-instructions-panel": "Focus Instructions Panel",
+    "navigate-previous": "Navigate Previous Exercise",
+    "navigate-next": "Navigate Next Exercise"
   }
 }

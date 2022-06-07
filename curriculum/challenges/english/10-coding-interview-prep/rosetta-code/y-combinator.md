@@ -8,15 +8,13 @@ dashedName: y-combinator
 
 # --description--
 
-In strict [functional programming](<https://www.freecodecamp.org/news/the-principles-of-functional-programming/> "news: the principles of functional programming") and the [lambda calculus](<https://en.wikipedia.org/wiki/lambda calculus> "wp: lambda calculus"), functions (lambda expressions) don't have state and are only allowed to refer to arguments of enclosing functions. This rules out the usual definition of a recursive function wherein a function is associated with the state of a variable and this variable's state is used in the body of the function. The [Y combinator](https://mvanier.livejournal.com/2897.html) is itself a stateless function that, when applied to another stateless function, returns a recursive version of the function. The Y combinator is the simplest of the class of such functions, called [fixed-point combinators](<https://en.wikipedia.org/wiki/Fixed-point combinator> "wp: fixed-point combinator").
+In strict [functional programming](<https://www.freecodecamp.org/news/the-principles-of-functional-programming/> "news: the principles of functional programming") and the lambda calculus, functions (lambda expressions) don't have state and are only allowed to refer to arguments of enclosing functions. This rules out the usual definition of a recursive function wherein a function is associated with the state of a variable and this variable's state is used in the body of the function.
+
+The Y combinator is itself a stateless function that, when applied to another stateless function, returns a recursive version of the function. The Y combinator is the simplest of the class of such functions, called fixed-point combinators.
 
 # --instructions--
 
-Define the stateless Y combinator function and use it to compute [factorial](https://en.wikipedia.org/wiki/Factorial "wp: factorial"). The `factorial(N)` function is already given to you. **See also:**
-
-<ul>
-  <li><a href="https://vimeo.com/45140590" target="_blank">Jim Weirich: Adventures in Functional Programming</a>.</li>
-</ul>
+Define the stateless Y combinator function and use it to compute the factorials. The `factorial(N)` function is already given to you. 
 
 # --hints--
 
