@@ -30,7 +30,7 @@ Como um componente JSX representa HTML, você pode juntar vários componentes pa
 
 O editor de código tem uma função chamada `MyComponent`. Complete essa função para que ela retorne um único elemento `div`, que contém alguma string de texto.
 
-**Observação:** o texto é considerado filho do elemento `div`, portanto você não poderá usar uma tag de fechamento.
+**Observação:** o texto é considerado filho do elemento `div`, portanto você não poderá usar uma tag de fechamento automático.
 
 # --hints--
 

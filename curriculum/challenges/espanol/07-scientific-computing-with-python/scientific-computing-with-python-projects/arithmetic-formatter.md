@@ -61,7 +61,7 @@ La función devolverá la conversión correcta si los problemas suministrados es
 - Situaciones que devolverán un error:
   - Si hay **demasiados problemas** suministrados a la función. El límite es **cinco**, cualquier cosa más regresará: `Error: Too many problems.`
   - Los operadores apropiados que la función aceptará son **suma** y **resta**. La multiplicación y la división devolverán un error. Otros operadores que no se mencionan en este punto no tendrán que ser probados. El error devuelto será: `Error: Operator must be '+' or '-'.`
-  - Cada número (operando) debe contener sólo dígitos. De lo contrario, la función devolverá: `Error: Numbers must only contain digits.`
+  - Cada número (operando) debe contener solo dígitos. De lo contrario, la función devolverá: `Error: Numbers must only contain digits.`
   - Cada operando (también conocido como número en cada lado del operador) tiene un máximo de cuatro dígitos de ancho. De lo contrario, la cadena de error devuelta será: `Error: Numbers cannot be more than four digits.`
 - Si el usuario proporcionó el formato correcto de los problemas, la conversión que devuelva seguirá estas reglas:
   - Debe haber un solo espacio entre el operador y el más largo de los dos operandos, el operador estará en la misma línea que el segundo operando, ambos operandos estarán en el mismo orden proporcionado (el primero será el superior y el segundo el inferior.

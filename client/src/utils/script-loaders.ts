@@ -33,12 +33,13 @@ export function mathJaxScriptLoader(): void {
       tex2jax: {
         inlineMath: [['$', '$'], ['\\\\(', '\\\\)']],
         processEscapes: true,
-        processClass: 'rosetta-code|project-euler'
+        processClass: 'rosetta-code|project-euler|intermediate-algorithm-scripting'
       }
     });
     MathJax.Hub.Queue([
       'Typeset',
       MathJax.Hub,
+      document.querySelector('intermediate-algorithm-scripting'),
       document.querySelector('.rosetta-code'),
       document.querySelector('.project-euler')
     ]);`

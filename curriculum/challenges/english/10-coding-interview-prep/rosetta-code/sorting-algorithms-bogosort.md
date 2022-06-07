@@ -8,7 +8,7 @@ dashedName: sorting-algorithmsbogosort
 
 # --description--
 
-[Bogosort](https://en.wikipedia.org/wiki/Bogosort) a list of numbers.
+Bogosort a list of numbers.
 
 Bogosort simply shuffles a collection randomly until it is sorted.
 

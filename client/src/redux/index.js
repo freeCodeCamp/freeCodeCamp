@@ -19,7 +19,7 @@ import hardGoToEpic from './hard-go-to-epic';
 import { createReportUserSaga } from './report-user-saga';
 import { actionTypes as settingsTypes } from './settings/action-types';
 import { createShowCertSaga } from './show-cert-saga';
-import { createSoundModeSaga } from './sound-mode-saga';
+import { createKeyboardShortcuts } from './keyboard-shortcuts-mode-saga';
 import updateCompleteEpic from './update-complete-epic';
 import { createUserTokenSaga } from './user-token-saga';
 import { createSaveChallengeSaga } from './save-challenge-saga';
@@ -82,7 +82,7 @@ export const sagas = [
   ...createFetchUserSaga(actionTypes),
   ...createShowCertSaga(actionTypes),
   ...createReportUserSaga(actionTypes),
-  ...createSoundModeSaga({ ...actionTypes, ...settingsTypes }),
+  ...createKeyboardShortcuts({ ...actionTypes, ...settingsTypes }),
   ...createUserTokenSaga(actionTypes),
   ...createSaveChallengeSaga(actionTypes)
 ];
@@ -206,12 +206,12 @@ export const currentChallengeIdSelector = state =>
   state[MainApp].currentChallengeId;
 
 export const emailSelector = state => userSelector(state).email;
-export const isAVariantSelector = state => {
+export const isVariantASelector = state => {
   const email = emailSelector(state);
   // if the user is not signed in and the user info is not available.
   // always return A the control variant
   if (!email) return true;
-  return emailToABVariant(email).isAVariant;
+  return emailToABVariant(email).isVariantA;
 };
 export const isDonatingSelector = state => userSelector(state).isDonating;
 export const isOnlineSelector = state => state[MainApp].isOnline;
@@ -745,6 +745,18 @@ export const reducer = handleActions(
     [settingsTypes.submitNewAboutComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.updateMyEmailComplete]: (state, { payload }) =>
+      payload ? spreadThePayloadOnUser(state, payload) : state,
+    [settingsTypes.updateMySocialsComplete]: (state, { payload }) =>
+      payload ? spreadThePayloadOnUser(state, payload) : state,
+    [settingsTypes.updateMySoundComplete]: (state, { payload }) =>
+      payload ? spreadThePayloadOnUser(state, payload) : state,
+    [settingsTypes.updateMyThemeComplete]: (state, { payload }) =>
+      payload ? spreadThePayloadOnUser(state, payload) : state,
+    [settingsTypes.updateMyHonestyComplete]: (state, { payload }) =>
+      payload ? spreadThePayloadOnUser(state, payload) : state,
+    [settingsTypes.updateMyQuincyEmailComplete]: (state, { payload }) =>
+      payload ? spreadThePayloadOnUser(state, payload) : state,
+    [settingsTypes.updateMyPortfolioComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.updateUserFlagComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,

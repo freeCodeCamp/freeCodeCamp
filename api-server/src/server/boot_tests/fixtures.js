@@ -36,6 +36,12 @@ export const mockCompletedChallenge = {
   completedDate: Date.now()
 };
 
+export const mockCompletedChallengeNoFiles = {
+  id: '123abc456def',
+  challengeType: 0,
+  completedDate: Date.now()
+};
+
 export const mockCompletedChallenges = [
   {
     id: 'bd7123c8c441eddfaeb5bdef',

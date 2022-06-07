@@ -19,6 +19,8 @@ function* callGaType({ payload: { type, data } }) {
     aBTestConfig.isTesting
   ) {
     const email = yield select(emailSelector);
+
+    // a b test results are only reported when user is signed in and has email
     if (email) {
       const completedChallengeTotal = yield select(completedChallengesSelector);
       const completedChallengeSession = yield select(completionCountSelector);
@@ -40,7 +42,7 @@ function* callGaType({ payload: { type, data } }) {
         // Test_Type
         dimension4: aBTestConfig.type,
         // Test_Variation
-        dimension5: emailToABVariant(email).isAVariant ? 'A' : 'B',
+        dimension5: emailToABVariant(email).isVariantA ? 'A' : 'B',
         // View_Type
         dimension6: viewType
       };

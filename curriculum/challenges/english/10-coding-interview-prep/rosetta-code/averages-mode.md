@@ -8,7 +8,7 @@ dashedName: averagesmode
 
 # --description--
 
-Write a program to find the [mode](<https://en.wikipedia.org/wiki/Mode (statistics)> "wp: Mode (statistics)") value of a collection.
+Write a function `mode` to find the value that appears most in an array.
 
 The case where the collection is empty may be ignored. Care must be taken to handle the case where the mode is non-unique.
 

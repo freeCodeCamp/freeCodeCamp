@@ -88,8 +88,10 @@ describe('project submission', () => {
 
             solutions.forEach(files => {
               files.forEach(({ contents }) => {
-                cy.get(selectors.editor).as('editor');
-                cy.get('@editor').click().focused().type('{ctrl+a}{del}');
+                cy.get(selectors.editor, { timeout: 16000 })
+                  .click()
+                  .focused()
+                  .type('{ctrl+a}{del}');
                 // NOTE: clipboard operations are flaky in watch mode, because
                 // the document can lose focus
                 cy.window()
@@ -98,7 +100,7 @@ describe('project submission', () => {
                 cy.document().invoke('execCommand', 'paste');
                 cy.contains('Run the Tests').click();
                 cy.contains('Submit and go to next challenge', {
-                  timeout: 8000
+                  timeout: 16000
                 }).click();
                 cy.contains(textInNextPage[i]);
               });
@@ -118,8 +120,7 @@ describe('project submission', () => {
 
         // Claim and view solutions on certification page
 
-        cy.toggleAll();
-        cy.visit('/settings');
+        cy.setPrivacyTogglesToPublic();
         cy.get(
           `a[href="/certification/developmentuser/${projectsInOrder[0]?.superBlock}"]`
         ).click();

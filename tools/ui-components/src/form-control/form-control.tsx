@@ -25,10 +25,10 @@ const FormControl = React.forwardRef<FormControlElement, FormControlProps>(
     ref
   ): JSX.Element => {
     let defaultClasses =
-      'outline-0 block w-full py-1.5 px-2.5 text-md text-default-foreground-primary ' +
-      'bg-default-background-primary bg-none rounded-none border-1 border-solid ' +
-      'border-default-background-quaternary shadow-none ' +
-      'transition ease-in-out duration-150 focus:border-default-foreground-tertiary';
+      'outline-0 block w-full py-1.5 px-2.5 text-md text-foreground-primary ' +
+      'bg-background-primary bg-none rounded-none border-1 border-solid ' +
+      'border-background-quaternary shadow-none ' +
+      'transition ease-in-out duration-150 focus:border-foreground-tertiary';
 
     let variantClass;
     if (Component === 'textarea') variantClass = 'h-auto';

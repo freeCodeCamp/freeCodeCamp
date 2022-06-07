@@ -11,9 +11,9 @@ const links = {
   classic2:
     '/learn/responsive-web-design/basic-html-and-html5/headline-with-the-h2-element',
   frontEnd1:
-    '/learn/responsive-web-design/responsive-web-design-projects/build-a-tribute-page',
+    '/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-random-quote-machine',
   frontEnd2:
-    '/learn/responsive-web-design/responsive-web-design-projects/build-a-survey-form',
+    '/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-markdown-previewer',
   backEnd1:
     '/learn/back-end-development-and-apis/back-end-development-and-apis-projects/timestamp-microservice',
   backEnd2:
@@ -28,12 +28,20 @@ const links = {
 // we wait for these titles to be present:
 const titles = {
   classic2: 'Headline with the h2 Element',
-  frontEnd2: 'Build a Survey Form',
+  frontEnd2: 'Build a Markdown Previewer',
   backEnd2: 'Request Header Parser Microservice',
   video2: 'Introduction: Hardware Architecture'
 };
 
 describe('The hotkeys should work correctly', () => {
+  beforeEach(() => {
+    cy.login();
+    cy.visit('/settings');
+    // enable shortcuts
+    cy.get('form[data-testid="fcc-enable-shortcuts-setting"]').within(() => {
+      cy.contains('On').click();
+    });
+  });
   it('should be possible to navigate to the next challenge/projects and previous', () => {
     cy.visit(links.classic1);
     cy.focused().type('{esc}');

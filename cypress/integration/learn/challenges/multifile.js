@@ -1,5 +1,9 @@
 const location =
   '/learn/2022/responsive-web-design/learn-accessibility-by-building-a-quiz/step-2';
+const selectors = {
+  testButton: '#test-button',
+  monacoTabs: '.monaco-editor-tabs'
+};
 
 describe('Challenge with multifile editor', () => {
   before(() => {
@@ -7,8 +11,17 @@ describe('Challenge with multifile editor', () => {
   });
 
   it('renders the file tab buttons', () => {
-    cy.get('.monaco-editor-tabs').should('exist');
-    cy.get('.monaco-editor-tabs').contains('index.html');
-    cy.get('.monaco-editor-tabs').contains('styles.css');
+    cy.get(selectors.monacoTabs).contains('index.html');
+    cy.get(selectors.monacoTabs).contains('styles.css');
+  });
+
+  it.only('checks for correct text at different widths', () => {
+    cy.viewport(768, 660);
+    cy.get(selectors.testButton).contains('Check Your Code (Ctrl + Enter)');
+
+    cy.viewport(767, 660);
+    cy.get(selectors.testButton)
+      .should('not.contain.text', '(Ctrl + Enter)')
+      .contains('Check Your Code');
   });
 });

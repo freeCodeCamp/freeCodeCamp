@@ -11,7 +11,7 @@ dashedName: align-elements-using-the-justify-content-property
 
 Algunas veces los elementos flexibles dentro de un contenedor flexible no llenan todo el espacio del contenedor. Es común querer indicarle al CSS cómo alinear y espaciar los elementos flexibles de una determinada manera. Afortunadamente, la propiedad `justify-content` tiene varias opciones para hacer esto. Pero primero, hay que entender alguna terminología importante antes de revisar dichas opciones.
 
-[Aquí hay una imagen útil del W3C que ilustra los conceptos siguientes para un contenedor 'row' flex.](https://www.w3.org/TR/css-flexbox-1/images/flex-direction-terms.svg)
+[Para más información acerca de las propiedades de flex-box](https://www.freecodecamp.org/news/flexbox-the-ultimate-css-flex-cheatsheet/)
 
 Recuerda que establecer un contenedor flexible como fila coloca los elementos flexibles uno al lado del otro de izquierda a derecha. Un contenedor flexible establecido como columna coloca los elementos flexibles apilados verticalmente de arriba a abajo. Para cada uno, la dirección en la que están dispuestos los elementos flexibles se llama el **eje principal**. Para una fila, esta es una línea horizontal que recorta cada elemento. Y para una columna, el eje principal es una línea vertical a través de los elementos.
 

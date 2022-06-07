@@ -8,7 +8,7 @@ dashedName: secure-real-time-multiplayer-game
 
 # --description--
 
-Desenvolva um jogo multijogador em tempo real 2D usando a API do canvas do HTML e [Socket.io](https://socket.io/), que é funcionalmente similar ao seguinte: <https://secure-real-time-multiplayer-game.freecodecamp.rocks/>. Trabalhar nesse projeto vai fazer com que você escreva seu código usando um dos seguintes métodos:
+Desenvolva um jogo multijogador 2D em tempo real usando a API do Canvas do HTML e o Socket.io que seja funcionalmente similar a este: <https://secure-real-time-multiplayer-game.freecodecamp.rocks/>. Trabalhar nesse projeto vai fazer com que você escreva seu código usando um dos seguintes métodos:
 
 -   Clone [este repositório do GitHub](https://github.com/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game/) e complete o projeto localmente.
 -   Use [nosso projeto inicial do Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game) para completar o projeto.

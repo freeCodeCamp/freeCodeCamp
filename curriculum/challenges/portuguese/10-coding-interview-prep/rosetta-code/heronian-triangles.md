@@ -8,7 +8,7 @@ dashedName: heronian-triangles
 
 # --description--
 
-A [fórmula de Heron](https://en.wikipedia.org/wiki/Heron's formula "wp: Heron's formula") para a área de um triângulo dado o comprimento de seus três lados `a`, `b`, e `c`, é dada por:
+A fórmula de Hero para a área de um triângulo dado o comprimento de seus três lados `a`, `b` e `c` é dada por:
 
 $A = \\sqrt{s(s-a)(s-b)(s-c)},$
 

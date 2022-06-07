@@ -37,7 +37,7 @@ y sirve el directorio `/docs`
 docsify serve docs
 ```
 
-Alternativamente, si ha instalado freeCodeCamp localmente (vea la guía de configuración local), empaquetamos la CLI con las herramientas de desarrollo para que puedas ejecutar cualquiera de los siguientes comandos según sea necesario desde la raíz del repo:
+Alternatively, if you have installed freeCodeCamp locally (see the local setup guide), we bundled the CLI with the development tools so you can run any of the below commands as needed from the root of the repo:
 
 ### Servir y lanzar el sitio de documentación solamente
 

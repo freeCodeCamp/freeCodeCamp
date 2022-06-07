@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "@freecodecamp/challenge-editor-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,9 +9,9 @@
     "react": "16.14.0",
     "react-codemirror2": "7.2.1",
     "react-dom": "16.14.0",
-    "react-router-dom": "6.2.1",
+    "react-router-dom": "6.3.0",
     "react-scripts": "5.0.1",
-    "typescript": "4.6.4"
+    "typescript": "4.7.3"
   },
   "scripts": {
     "start": "PORT=3300 react-scripts start",
@@ -34,6 +34,6 @@
   },
   "devDependencies": {
     "@types/codemirror": "5.60.5",
-    "eslint-plugin-react-hooks": "4.4.0"
+    "eslint-plugin-react-hooks": "4.5.0"
   }
 }

@@ -10,9 +10,9 @@ dashedName: caesars-cipher
 
 Uma das <dfn>cifras</dfn> mais simples e mais conhecidas é a <dfn>cifra de César</dfn>, também conhecida como uma <dfn>cifra de mudança</dfn>. Em uma cifra de transferência, os significados das letras são deslocados de acordo com a quantidade definida.
 
-Um uso moderno comum é a cifra [ROT13](https://en.wikipedia.org/wiki/ROT13), onde os valores das letras são deslocados em 13 lugares. Da seguinte forma: `A ↔ N`, `B ↔ O` e assim por diante.
+Um uso moderno comum é a cifra [ROT13](https://www.freecodecamp.org/news/how-to-code-the-caesar-cipher-an-introduction-to-basic-encryption-3bf77b4e19f7/), onde os valores das letras são deslocados em 13 lugares. Da seguinte forma: `A ↔ N`, `B ↔ O` e assim por diante.
 
-Escreva uma função que recebe uma string codificada de [ROT13](https://en.wikipedia.org/wiki/ROT13) como entrada e retorna uma string decodificada.
+Escreva uma função que recebe uma string codificada de [ROT13](https://www.freecodecamp.org/news/how-to-code-the-caesar-cipher-an-introduction-to-basic-encryption-3bf77b4e19f7/) como entrada e retorna uma string decodificada.
 
 Todas as letras serão maiúsculas. Não transforme nenhum caractere não-alfabético (ou seja, espaços, pontuação), mas passe por eles.
 

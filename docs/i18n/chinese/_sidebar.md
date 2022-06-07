@@ -29,6 +29,7 @@
 - **飞行手册**（针对员工  &  维护人员）
   - [维护人员手册](moderator-handbook.md)
   - [DevOps 手册](devops.md)
+  - [Courses VSCode Extension](courses-vscode-extension.md)
 
 ---
 
