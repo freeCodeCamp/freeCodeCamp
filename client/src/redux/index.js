@@ -644,13 +644,7 @@ export const reducer = handleActions(
       }
     }),
     [actionTypes.submitComplete]: (state, { payload }) => {
-      const { submittedChallenge, savedChallenges } = payload;
-      let submittedchallenges = [
-        { ...submittedChallenge, completedDate: Date.now() }
-      ];
-      if (submittedChallenge.challArray) {
-        submittedchallenges = submittedChallenge.challArray;
-      }
+      const { points, savedChallenges, completedChallenges } = payload;
       const { appUsername } = state;
       return {
         ...state,
@@ -659,9 +653,10 @@ export const reducer = handleActions(
           ...state.user,
           [appUsername]: {
             ...state.user[appUsername],
+            points,
             completedChallenges: uniqBy(
               [
-                ...submittedchallenges,
+                ...completedChallenges,
                 ...state.user[appUsername].completedChallenges
               ],
               'id'

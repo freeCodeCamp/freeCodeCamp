@@ -10,14 +10,28 @@ export const MAX_BODY_SIZE = 102400;
 interface StandardizeRequestBodyArgs {
   id: string;
   challengeFiles: ChallengeFiles;
-  challengeType: number;
+  challengeType?: number;
+  solution?: string;
+  githubLink?: string;
 }
 
 export function standardizeRequestBody({
   id,
   challengeFiles = [],
-  challengeType
+  challengeType,
+  solution,
+  githubLink
 }: StandardizeRequestBodyArgs) {
+  if (!challengeType) {
+    // Zipline is stupid
+    return { id, solution };
+  }
+  if (solution && githubLink) {
+    return { challengeType, id, githubLink, solution };
+  }
+  if (solution) {
+    return { challengeType, id, solution };
+  }
   return {
     id,
     files: challengeFiles?.map(({ fileKey, contents, ext, name, history }) => {

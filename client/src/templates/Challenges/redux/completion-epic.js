@@ -1,12 +1,11 @@
 import { navigate } from 'gatsby';
-import { omit } from 'lodash-es';
 import { ofType } from 'redux-observable';
 import { of, empty } from 'rxjs';
 import { switchMap, retry, catchError, concat, tap } from 'rxjs/operators';
 
-import { challengeTypes, submitTypes } from '../../../../utils/challenge-types';
+import store from 'store';
+import { isProject } from '../../../../utils/challenge-types';
 import {
-  userSelector,
   isSignedInSelector,
   submitComplete,
   updateComplete,
@@ -21,35 +20,23 @@ import { actionTypes } from './action-types';
 import {
   projectFormValuesSelector,
   challengeMetaSelector,
-  challengeTestsSelector,
   closeModal,
-  challengeFilesSelector,
-  updateSolutionFormValues
+  challengeFilesSelector
 } from './';
 
-function postChallenge(update, username) {
+function postChallenge(update) {
   const saveChallenge = postUpdate$(update).pipe(
     retry(3),
     switchMap(({ data }) => {
-      const { savedChallenges, points } = data;
-      const payloadWithClientProperties = {
-        ...omit(update.payload, ['files'])
-      };
-      if (update.payload.files) {
-        payloadWithClientProperties.challengeFiles = update.payload.files.map(
-          ({ key, ...rest }) => ({
-            ...rest,
-            fileKey: key
-          })
-        );
+      const { savedChallenges, points, completedChallenges } = data;
+      // clear store only on success not on error, and only when the update is/was a challenge
+      if (update.endpoint === '/challenges-completed') {
+        store.set('completed-challenges', []);
       }
       return of(
         submitComplete({
-          submittedChallenge: {
-            username,
-            points,
-            ...payloadWithClientProperties
-          },
+          points,
+          completedChallenges,
           savedChallenges: mapFilesToChallengeFiles(savedChallenges)
         }),
         updateComplete()
@@ -60,94 +47,60 @@ function postChallenge(update, username) {
   return saveChallenge;
 }
 
-function submitModern(type, state) {
-  const challengeType = state.challenge.challengeMeta.challengeType;
-  const tests = challengeTestsSelector(state);
-  if (
-    challengeType === 11 ||
-    (tests.length > 0 && tests.every(test => test.pass && !test.err))
-  ) {
-    if (type === actionTypes.checkChallenge) {
-      return of({ type: 'this was a check challenge' });
+function batchSubmitter(type, state) {
+  if (type === actionTypes.submitChallenge) {
+    const completedChallenges = store.get('completed-challenges', []);
+    const { id, challengeType } = challengeMetaSelector(state);
+    const completedChallenge = {
+      id,
+      challengeType
+    };
+    const completedChallengeAlreadyInStore = completedChallenges.some(
+      challenge => challenge.id === id
+    );
+    if (completedChallengeAlreadyInStore) {
+      completedChallenges.push(completedChallenge);
+      store.set('completed-challenges', completedChallenges);
     }
-
-    if (type === actionTypes.submitChallenge) {
-      const { id, block } = challengeMetaSelector(state);
-      const challengeFiles = challengeFilesSelector(state);
-      const { username } = userSelector(state);
-
-      let body;
-      if (
-        block === 'javascript-algorithms-and-data-structures-projects' ||
-        challengeType === challengeTypes.multifileCertProject
-      ) {
-        body = standardizeRequestBody({ id, challengeType, challengeFiles });
-      } else {
-        body = {
-          id,
-          challengeType
-        };
-      }
-
-      const update = {
-        endpoint: '/modern-challenge-completed',
-        payload: body
-      };
-      return postChallenge(update, username);
+    if (completedChallenges.length >= 5) {
+      return submitChallenges();
     }
   }
   return empty();
 }
 
-function submitProject(type, state) {
-  if (type === actionTypes.checkChallenge) {
-    return empty();
-  }
+/**
+ * Handles all the non-certification challenge submissions
+ */
+function submitChallenges() {
+  const completedChallenges = store.get('completed-challenges', []);
+  const update = {
+    endpoint: '/challenges-completed',
+    payload: completedChallenges
+  };
+  return postChallenge(update);
+}
 
+function submitProject(_type, state) {
+  const challengeType = state.challenge.challengeMeta.challengeType;
+  const { id } = challengeMetaSelector(state);
   const { solution, githubLink } = projectFormValuesSelector(state);
-  const { id, challengeType } = challengeMetaSelector(state);
-  const { username } = userSelector(state);
-  const challengeInfo = { id, challengeType, solution };
-  if (challengeType === challengeTypes.backEndProject) {
-    challengeInfo.githubLink = githubLink;
-  }
-
+  const challengeFiles = challengeFilesSelector(state);
+  // Handle all different project types:
+  const challengeBody = standardizeRequestBody({
+    challengeType,
+    id,
+    solution,
+    githubLink,
+    challengeFiles
+  });
   const update = {
     endpoint: '/project-completed',
-    payload: challengeInfo
+    payload: challengeBody
   };
-  return postChallenge(update, username).pipe(
-    concat(of(updateSolutionFormValues({})))
-  );
+
+  return postChallenge(update);
 }
-
-function submitBackendChallenge(type, state) {
-  const tests = challengeTestsSelector(state);
-  if (tests.length > 0 && tests.every(test => test.pass && !test.err)) {
-    if (type === actionTypes.submitChallenge) {
-      const { id } = challengeMetaSelector(state);
-      const { username } = userSelector(state);
-      const {
-        solution: { value: solution }
-      } = projectFormValuesSelector(state);
-      const challengeInfo = { id, solution };
-
-      const update = {
-        endpoint: '/backend-challenge-completed',
-        payload: challengeInfo
-      };
-      return postChallenge(update, username);
-    }
-  }
-  return empty();
-}
-
-const submitters = {
-  tests: submitModern,
-  backend: submitBackendChallenge,
-  'project.frontEnd': submitProject,
-  'project.backEnd': submitProject
-};
 
 export default function completionEpic(action$, state$) {
   return action$.pipe(
@@ -155,20 +108,19 @@ export default function completionEpic(action$, state$) {
     switchMap(({ type }) => {
       const state = state$.value;
       const meta = challengeMetaSelector(state);
-      const { nextChallengePath, challengeType, superBlock } = meta;
+      const { nextChallengePath, challengeType, superBlock, block } = meta;
 
       let submitter = () => of({ type: 'no-user-signed-in' });
-      if (
-        !(challengeType in submitTypes) ||
-        !(submitTypes[challengeType] in submitters)
-      ) {
-        throw new Error(
-          'Unable to find the correct submit function for challengeType ' +
-            challengeType
-        );
-      }
+
       if (isSignedInSelector(state)) {
-        submitter = submitters[submitTypes[challengeType]];
+        if (
+          isProject(challengeType) ||
+          block === 'javascript-algorithms-and-data-structures-projects'
+        ) {
+          submitter = submitProject;
+        } else {
+          submitter = batchSubmitter;
+        }
       }
 
       const pathToNavigateTo = () => {

@@ -377,7 +377,7 @@ export const projectPayloadsIncorrectStructure = [
    {
     challengeType: challengeTypes.pythonProject,
     id: '5e46f8d6ac417301a38fb92d',
-    solution: '',
+    githubLink: '',
   },
   {
     challengeType: challengeTypes.codeAllyCert,
