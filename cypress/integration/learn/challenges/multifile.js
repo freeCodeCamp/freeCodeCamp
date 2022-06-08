@@ -1,8 +1,10 @@
+import translations from '../../../../client/i18n/locales/english/translations.json';
 const location =
   '/learn/2022/responsive-web-design/learn-accessibility-by-building-a-quiz/step-2';
 const selectors = {
   testButton: '#test-button',
-  monacoTabs: '.monaco-editor-tabs'
+  monacoTabs: '.monaco-editor-tabs',
+  signInButton: '.action-row-container a[href$="/signin"]'
 };
 
 describe('Challenge with multifile editor', () => {
@@ -15,7 +17,7 @@ describe('Challenge with multifile editor', () => {
     cy.get(selectors.monacoTabs).contains('styles.css');
   });
 
-  it.only('checks for correct text at different widths', () => {
+  it('checks for correct text at different widths', () => {
     cy.viewport(768, 660);
     cy.get(selectors.testButton).contains('Check Your Code (Ctrl + Enter)');
 
@@ -23,5 +25,12 @@ describe('Challenge with multifile editor', () => {
     cy.get(selectors.testButton)
       .should('not.contain.text', '(Ctrl + Enter)')
       .contains('Check Your Code');
+  });
+
+  it('prompts unauthenticated user to sign in to save progress', () => {
+    cy.get(selectors.signInButton).contains(translations.learn['sign-in-save']);
+    cy.get(selectors.signInButton).click();
+    cy.go('back');
+    cy.get(selectors.signInButton).should('not.exist');
   });
 });
