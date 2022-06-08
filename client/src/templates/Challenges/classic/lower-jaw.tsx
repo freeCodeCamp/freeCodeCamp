@@ -45,7 +45,7 @@ const LowerJaw = ({
 
   useEffect(() => {
     if (attemptsNumber && attemptsNumber > 0) {
-      //hide the feedback from SR untill the "Running tests" are displayed and removed.
+      //hide the feedback from SR until the "Running tests" are displayed and removed.
       setIsFeedbackHidden(true);
 
       //allow the lower jaw height to be picked up by the editor.
@@ -98,8 +98,8 @@ const LowerJaw = ({
   });
 
   /*
-    Retun early in lifecycle based on the earliest available conditions to help the editor
-    calcuate the correct editor gap for the lower jaw.
+    Return early in lifecycle based on the earliest available conditions to help the editor
+    calculate the correct editor gap for the lower jaw.
 
     For consistency, use the persisted version if the conditions has been met before.
   */
@@ -135,7 +135,7 @@ const LowerJaw = ({
         </div>
       );
     } else if (earliestAvailableHint) {
-      const hintDiscription = `<h2 class="hint">${t(
+      const hintDescription = `<h2 class="hint">${t(
         'learn.hint'
       )}</h2> ${earliestAvailableHint}`;
       return (
@@ -159,7 +159,7 @@ const LowerJaw = ({
             </div>
             <div
               className='hint-description'
-              dangerouslySetInnerHTML={{ __html: hintDiscription }}
+              dangerouslySetInnerHTML={{ __html: hintDescription }}
             />
           </div>
         </>
@@ -180,7 +180,7 @@ const LowerJaw = ({
       : sentenceArray[0];
   };
 
-  const renderContexualActionRow = () => {
+  const renderContextualActionRow = () => {
     const isAttemptsLargerThanTest =
       attemptsNumber && testsLength && attemptsNumber >= testsLength;
 
@@ -246,7 +246,7 @@ const LowerJaw = ({
       >
         {renderTestFeedbackContainer()}
       </div>
-      {renderContexualActionRow()}
+      {renderContextualActionRow()}
     </div>
   );
 };
