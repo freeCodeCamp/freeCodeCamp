@@ -41,7 +41,7 @@ assert(typeof quibble(['freeCodeCamp']) === 'string');
 assert.equal(quibble(testCases[0]), results[0]);
 ```
 
-`quibble(["freeCodeCamp"])` should return "{freeCodeCamp}".
+`quibble(["freeCodeCamp"])` should return `"{freeCodeCamp}"`.
 
 ```js
 assert.equal(quibble(testCases[1]), results[1]);
