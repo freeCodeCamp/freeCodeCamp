@@ -51,6 +51,7 @@
     "run": "运行",
     "run-test": "运行测试（Ctrl + Enter）",
     "check-code": "Check Your Code (Ctrl + Enter)",
+    "check-code-2": "Check Your Code",
     "reset": "重置",
     "reset-code": "重置所有代码",
     "help": "帮助",

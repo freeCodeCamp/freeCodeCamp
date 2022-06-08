@@ -51,6 +51,7 @@
     "run": "Запустити",
     "run-test": "Run the Tests (Ctrl + Enter)",
     "check-code": "Check Your Code (Ctrl + Enter)",
+    "check-code-2": "Check Your Code",
     "reset": "Скинути",
     "reset-code": "Скинути весь код",
     "help": "Допомога",

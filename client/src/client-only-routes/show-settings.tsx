@@ -1,5 +1,5 @@
 import { Grid } from '@freecodecamp/react-bootstrap';
-import React from 'react';
+import React, { useRef } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -143,12 +143,13 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     verifyCert,
     userToken
   } = props;
+  const isSignedInRef = useRef(isSignedIn);
 
   if (showLoading) {
     return <Loader fullScreen={true} />;
   }
 
-  if (!isSignedIn) {
+  if (!isSignedInRef.current) {
     navigate(`${apiLocation}/signin`);
     return <Loader fullScreen={true} />;
   }
