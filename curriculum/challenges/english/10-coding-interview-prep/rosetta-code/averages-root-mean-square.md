@@ -10,8 +10,6 @@ dashedName: averagesroot-mean-square
 
 Compute the Root mean square of the numbers 1 through 10 inclusive.
 
-The *root mean square* is also known by its initials RMS (or rms), and as the **quadratic mean**.
-
 The RMS is calculated as the mean of the squares of the numbers, square-rooted:
 
 $$x\_{\\mathrm{rms}} = \\sqrt {{{x_1}^2 + {x_2}^2 + \\cdots + {x_n}^2} \\over n}. $$
