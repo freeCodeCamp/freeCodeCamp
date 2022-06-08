@@ -34,6 +34,18 @@ if (envData.clientLocale == 'english' && !envData.showUpcomingChanges) {
       expect(fs.existsSync(blockIntroPath)).toBe(true);
     });
 
+    test('the available-superblocks file should have the correct structure', async () => {
+      const availableSuperblocks = JSON.parse(
+        await fs.promises.readFile(
+          `${mobileStaticPath}/curriculum-data/${VERSION}/available-superblocks.json`,
+          'utf-8'
+        )
+      ) as { superblocks: unknown[][] };
+      const superblockOrder = availableSuperblocks.superblocks[0];
+      const superblockNames = availableSuperblocks.superblocks[1];
+      expect(superblockOrder.length).toBe(superblockNames.length);
+    });
+
     test('the files generated should have the correct schema', async () => {
       const fileArray = (
         await readdirp.promise(`${mobileStaticPath}/curriculum-data/${VERSION}`)
