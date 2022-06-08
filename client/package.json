@@ -43,7 +43,7 @@
     "@fortawesome/free-brands-svg-icons": "6.1.1",
     "@fortawesome/free-solid-svg-icons": "6.1.1",
     "@fortawesome/react-fontawesome": "0.1.18",
-    "@freecodecamp/loop-protect": "2.2.1",
+    "@freecodecamp/loop-protect": "https://github.com/ShaunSHamilton/loop-protect/tarball/master",
     "@freecodecamp/react-bootstrap": "0.32.3",
     "@freecodecamp/react-calendar-heatmap": "1.0.0",
     "@freecodecamp/strip-comments": "3.0.1",

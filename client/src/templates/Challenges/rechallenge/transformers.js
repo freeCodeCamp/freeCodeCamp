@@ -23,6 +23,7 @@ import createWorker from '../utils/worker-executor';
 const { filename: sassCompile } = sassData;
 
 const protectTimeout = 100;
+const recursionTimeout = 700;
 const testProtectTimeout = 1500;
 const loopsPerTimeoutCheck = 2000;
 
@@ -54,6 +55,10 @@ async function loadBabel() {
   Babel.registerPlugin(
     'loopProtection',
     protect(protectTimeout, loopProtectCB)
+  );
+  Babel.registerPlugin(
+    'recursionProtection',
+    protect(recursionTimeout, loopProtectCB)
   );
   Babel.registerPlugin(
     'testLoopProtection',
@@ -94,7 +99,7 @@ async function loadPresetReact() {
     );
   /* eslint-enable no-inline-comments */
   babelOptionsJSX = {
-    plugins: ['loopProtection'],
+    plugins: ['recursionProtection'],
     presets: [presetEnv, presetReact]
   };
 }
