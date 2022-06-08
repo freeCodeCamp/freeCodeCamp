@@ -10,12 +10,6 @@ dashedName: state-name-puzzle
 
 **State name** is a <em>word puzzle</em> in which you take the letters from two U.S. state names and rearrange them to form the names of two different U.S. states.
 
-Example:
-
-```js
-const puzzleArray= ["North Carolina ", "South Dakota"];
-const solvedArray= ["North Dakota", "South Carolina"];
-```
 
 # --instructions--
 
