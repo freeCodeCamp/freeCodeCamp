@@ -8,11 +8,11 @@ dashedName: gamma-function
 
 # --description--
 
-Implement one algorithm (or more) to compute the [Gamma](<https://en.wikipedia.org/wiki/Gamma function>) ($\\Gamma$) function (in the real field only).
+Implement one algorithm (or more) to compute the Gamma function (in the real field only).
 
 The Gamma function can be defined as:
 
-<div style='padding-left: 4em;'><big><big>$\Gamma(x) = \displaystyle\int_0^\infty t^{x-1}e^{-t} dt$</big></big></div>
+$\Gamma(x) = \displaystyle\int_0^\infty t^{x-1}e^{-t} dt$
 
 # --hints--
 
