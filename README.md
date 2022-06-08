@@ -173,6 +173,7 @@ If you're confident it's a new bug and have confirmed that someone else is facin
 The freeCodeCamp.org community is possible thanks to thousands of kind volunteers like you. We welcome all contributions to the community and are excited to welcome you aboard.
 
 > #### [Please follow these steps to contribute](https://contribute.freecodecamp.org).
+> #### [Here for the contribution chat server](https://chat.freecodecamp.org/home).
 
 ### Platform, Build, and Deployment Status
 
