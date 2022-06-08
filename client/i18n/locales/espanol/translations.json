@@ -51,6 +51,7 @@
     "run": "Ejecutar",
     "run-test": "Ejecutar las Pruebas (Ctrl + Entrar)",
     "check-code": "Comprueba tu código (Ctrl + Enter)",
+    "check-code-2": "Check Your Code",
     "reset": "Restablecer",
     "reset-code": "Restablecer todo el código",
     "help": "Ayuda",
