@@ -8,7 +8,7 @@ dashedName: averagesroot-mean-square
 
 # --description--
 
-Compute the Root mean square of the numbers 1 through 10 inclusive.
+Compute the Root Mean Square (RMS) of the numbers 1 through 10 inclusive.
 
 The <abbr title="Root mean square">RMS</abbr> is calculated by taking the square root of the mean of the squares of the numbers, given by the equation:
 
