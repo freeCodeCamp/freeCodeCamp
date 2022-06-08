@@ -592,6 +592,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         challengeHasErrors={challengeHasErrors()}
         tryToSubmitChallenge={tryToSubmitChallenge}
         isEditorInFocus={isEditorInFocus}
+        isSignedIn={props.isSignedIn}
       />,
       outputNode,
       callback

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Button } from '@freecodecamp/react-bootstrap';
 
 import Fail from '../../../assets/icons/fail';
 import LightBulb from '../../../assets/icons/lightbulb';
 import GreenPass from '../../../assets/icons/green-pass';
 import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
+import { apiLocation } from '../../../../../config/env.json';
 
 interface LowerJawProps {
   hint?: string;
@@ -18,6 +20,7 @@ interface LowerJawProps {
   testsLength?: number;
   attemptsNumber?: number;
   openResetModal: () => void;
+  isSignedIn: boolean;
 }
 
 const LowerJaw = ({
@@ -30,7 +33,8 @@ const LowerJaw = ({
   attemptsNumber,
   testsLength,
   isEditorInFocus,
-  openResetModal
+  openResetModal,
+  isSignedIn
 }: LowerJawProps): JSX.Element => {
   const [previousHint, setpreviousHint] = useState('');
   const [runningTests, setRunningTests] = useState(false);
@@ -236,6 +240,11 @@ const LowerJaw = ({
 
   return (
     <div className='action-row-container'>
+      {isSignedIn ? null : (
+        <Button block={true} bsStyle='primary' href={`${apiLocation}/signin`}>
+          {t('learn.sign-in-save')}
+        </Button>
+      )}
       {renderButtons()}
       <div
         style={runningTests ? { height: `${testFeedbackheight}px` } : {}}
