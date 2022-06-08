@@ -12,11 +12,11 @@ Comma quibbling is a task originally set by Eric Lippert in his 2009 blog.
 
 # --instructions--
 
-Write a function to generate a string output which is the concatenation of input words from a list/sequence where:
+Write a function to generate a string output which is the concatenation of input words from a Array where:
 
-|                       Sequence                           |                      Output                             |
+|                          Array                           |                      Output                             |
 | -------------------------------------------------------- | ------------------------------------------------------- |
-| ""                                                       | "{}"                                                    |
+| []                                                       | "{}"                                                    |
 | ["freeCodeCamp"]                                         | "{freeCodeCamp}"                                        |
 | ["freeCodeCamp", "Curriculum"]                           | "{freeCodeCamp and Curriculum}"                         |
 | ["freeCodeCamp", "Curriculum", "Articles", "Volunteers"] | "{freeCodeCamp, Curriculum, Articles and Volunteers}"   |
