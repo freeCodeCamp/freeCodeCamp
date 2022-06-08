@@ -1,5 +1,5 @@
 import { mkdirSync, writeFileSync, readFileSync } from 'fs';
-import { resolve } from 'path';
+import { resolve, dirname } from 'path';
 import { SuperBlocks } from '../../../config/certification-settings';
 
 type Intro = { [keyValue in SuperBlocks]: IntroProps };
@@ -86,15 +86,13 @@ export function buildExtCurriculumData(
           curriculum[superBlockKey]['blocks'][blockNames[j]]['meta'];
       }
 
-      writeToFile(superBlockKeys[i].replace(/\//, '-'), superBlock);
+      writeToFile(superBlockKeys[i], superBlock);
     }
   }
 
   function writeToFile(fileName: string, data: Record<string, unknown>): void {
-    mkdirSync(versionPath, { recursive: true });
-
     const filePath = `${versionPath}/${fileName}.json`;
-
+    mkdirSync(dirname(filePath), { recursive: true });
     writeFileSync(filePath, JSON.stringify(data, null, 2));
   }
 
