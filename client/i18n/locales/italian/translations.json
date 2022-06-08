@@ -51,6 +51,7 @@
     "run": "Avvia",
     "run-test": "Esegui i test (Ctrl + Invio)",
     "check-code": "Check Your Code (Ctrl + Enter)",
+    "check-code-2": "Check Your Code",
     "reset": "Resetta",
     "reset-code": "Resetta tutto il codice",
     "help": "Guida",
