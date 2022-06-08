@@ -31,8 +31,8 @@ export function* saveChallengeSaga() {
     );
   }
 
-  // only allow saving of multiFileCertProject's
-  if (challengeType === challengeTypes.multiFileCertProject) {
+  // only allow saving of multifileCertProject's
+  if (challengeType === challengeTypes.multifileCertProject) {
     const body = standardizeRequestBody({ id, challengeFiles, challengeType });
     const bodySizeInBytes = getStringSizeInBytes(body);
 
@@ -46,14 +46,14 @@ export function* saveChallengeSaga() {
       );
     } else {
       try {
-        const response = yield call(postSaveChallenge, body);
+        const { data } = yield call(postSaveChallenge, body);
 
-        if (response?.message) {
-          yield put(createFlashMessage(response));
-        } else if (response?.savedChallenges) {
+        if (data?.message) {
+          yield put(createFlashMessage(data));
+        } else if (data?.savedChallenges) {
           yield put(
             saveChallengeComplete(
-              mapFilesToChallengeFiles(response.savedChallenges)
+              mapFilesToChallengeFiles(data.savedChallenges)
             )
           );
           yield put(

@@ -205,6 +205,7 @@ curriculum/dist
 curriculum/build
 client/static/_redirects
 client/static/mobile
+client/static/curriculum-data
 
 ### UI Components ###
 tools/ui-components/dist

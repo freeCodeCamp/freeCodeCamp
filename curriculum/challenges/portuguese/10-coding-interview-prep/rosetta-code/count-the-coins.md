@@ -8,7 +8,7 @@ dashedName: count-the-coins
 
 # --description--
 
-Existem quatro tipos de moedas comuns no dinheiro dos [EUA](https://en.wikipedia.org/wiki/United_States):
+Existem quatro tipos de moedas comuns nos EUA:
 
 <ul>
   <li>quarters (25 centavos)</li>

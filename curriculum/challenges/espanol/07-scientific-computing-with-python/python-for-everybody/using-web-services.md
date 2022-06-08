@@ -14,7 +14,7 @@ dashedName: using-web-services
 
 ## --text--
 
-¿Cuáles son las dos formas mas comunes para enviar datos a través de internet?
+¿Cuáles son las dos formas más comunes para enviar datos a través de internet?
 
 ## --answers--
 

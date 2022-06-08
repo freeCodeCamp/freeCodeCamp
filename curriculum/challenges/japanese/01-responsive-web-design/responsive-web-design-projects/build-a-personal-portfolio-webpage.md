@@ -1,47 +1,281 @@
 ---
 id: bd7158d8c242eddfaeb5bd13
 title: 個人ポートフォリオのウェブページを作成する
-challengeType: 3
+challengeType: 14
 forumTopicId: 301143
 dashedName: build-a-personal-portfolio-webpage
 ---
 
 # --description--
 
-**目標:** こちら <https://codepen.io/freeCodeCamp/full/zNBOYG> と同様の機能を持つ [CodePen.io](https://codepen.io) アプリを構築します。
+**目標:** <a href="https://personal-portfolio.freecodecamp.rocks" target="_blank">https://personal-portfolio.freecodecamp.rocks</a> と同様の機能を持つアプリを構築します
 
-以下の[ユーザーストーリー](https://en.wikipedia.org/wiki/User_story)を満たし、すべてのテストがパスするようにしてください。 あなた独自のスタイルを与えてください。
+**ユーザーストーリー:**
 
-このプロジェクトを完了するために、HTML、JavaScript、CSS を使用することができます。 これまでのレッスンでカバーされた純粋な CSS の練習をするため、純粋な CSS の使用を推奨します。 Bootstrap や SASS を使用しても構いません。 このプロジェクトで追加のテクノロジー (jQuery、React、Angular、Vue など) を使用することは推奨されません。使用する場合は自己責任で使用してください。 React のようなさまざまな技術スタックで作業する機会は他のプロジェクトで得られます。 このプロジェクトで推奨される一連のテクノロジーを使用している場合の不具合報告については、freeCodeCamp にて報告を受け入れ、修正するよう努めます。 ハッピーコーディング！
+1. ポートフォリオには `id` の値が `welcome-section` に設定されているウェルカムセクションが 1 つ必要です
+1. そのウェルカムセクションにはテキストを含む `h1` 要素が 1 つ必要です
+1. ポートフォリオには `id` の値が `projects` に設定されているプロジェクトセクションが 1 つ必要です
+1. プロジェクトセクションには、プロジェクトを入れるために、`class` の値が `project-tile` である要素が少なくとも 1 つ必要です
+1. プロジェクトセクションには、プロジェクトへのリンクを少なくとも 1 つ含める必要があります
+1. ポートフォリオには id の値が `navbar` に設定されているナビゲーションバーが 1 つ必要です
+1. ナビゲーションバーには、クリックするとページ上の異なるセクションに移動できるリンクが少なくとも 1 つあります
+1. ポートフォリオには、あなたの GitHub または freeCodeCamp のプロフィールを新しいタブで開く、id の値が `profile-link` のリンクが 1 つ必要です
+1. ポートフォリオにはメディアクエリが少なくとも 1 つ必要です
+1. ウェルカムセクションの高さはビューポートの高さと等しくする必要があります
+1. ナビゲーションバーは常にビューポートの上部にある必要があります
 
-**ユーザーストーリー #1:** 私のポートフォリオには、`welcome-section` の id を持つウェルカムセクションがあります。
+上記のユーザーストーリーを満たして、以下のすべてのテストに合格してこのプロジェクトを完成させてください。 あなた独自のスタイルを加えましょう。 ハッピーコーディング！
 
-**ユーザーストーリー #2:** ウェルカムセクションにはテキストを含む `h1` 要素があります。
+**注:** スタイルシートをリンクして CSS を適用するため、HTML 内に `<link rel="stylesheet" href="styles.css">` を必ず追加してください
 
-**ユーザーストーリー #3:** 私のポートフォリオには、`projects` の id を持つプロジェクトセクションがあります。
+# --hints--
 
-**ユーザーストーリー #4:** プロジェクトセクションには、プロジェクトを入れるために少なくとも 1 つの `project-tile` クラスの要素があります。
+ポートフォリオには `id` が `welcome-section` であるウェルカムセクションが 1 つ必要です。
 
-**ユーザーストーリー #5:** プロジェクトセクションには、少なくとも 1 つのプロジェクトへのリンクが含まれている必要があります。
+```js
+const el = document.getElementById('welcome-section')
+assert(!!el);
+```
 
-**ユーザーストーリー #6:** 私のポートフォリオには、 `navbar` の id を持つナビゲーションバーがあります。
+`#welcome-section` 要素内には `h1` 要素が必要です。
 
-**ユーザーストーリー #7:** ナビゲーションバーには、クリックするとページ上の異なるセクションに移動できるリンクが少なくとも 1 つあります。
+```js
+assert.isAbove(
+  document.querySelectorAll('#welcome-section h1').length,
+  0,
+  'Welcome section should contain an h1 element '
+);
+```
 
-**ユーザーストーリー #8:** 私のポートフォリオには `profile-link`の id を持つリンクがあり、GitHub または FCC プロフィールを新しいタブで開くことができます。
+空の `h1` 要素を `#welcome-section` 要素内に入れないようにしてください。
 
-**ユーザーストーリー #9:** 私のポートフォリオには、少なくとも 1 つのメディアクエリがあります。
+```js
+assert.isAbove(
+  document.querySelectorAll('#welcome-section h1')?.[0]?.innerText?.length,
+  0,
+  'h1 element in welcome section should contain your name or camper ' +
+    'name '
+);
+```
 
-**ユーザーストーリー #10:** ウェルカムセクションの高さはビューポートの高さと等しくなければなりません。
+`id` が `projects` であるプロジェクトセクションが 1 つ必要です。
 
-**ユーザーストーリー #11:** ナビゲーションバーは常にビューポートの上部に表示されている必要があります。
+```js
+const el = document.getElementById('projects')
+assert(!!el);
+```
 
-<a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>この CodePen テンプレートを使用して</a>あなたのプロジェクトを構築することができます。`Save` をクリックすると、あなた用の pen を作成することができます。 または、この CDN リンクを使用して任意の環境でテストを実行できます: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+ポートフォリオにはクラスの値が `project-tile` に設定されている要素が少なくとも 1 つ必要です。
 
-完了したら、すべてのテストがパスする状態の作業プロジェクトの URL を送信します。
+```js
+assert.isAbove(
+  document.querySelectorAll('#projects .project-tile').length,
+  0
+);
+```
 
-# --solutions--
+`#projects` 要素には `a` 要素を少なくとも 1 つ入れる必要があります。
+
+```js
+assert.isAbove(document.querySelectorAll('#projects a').length, 0);
+```
+
+ポートフォリオには `id` が `navbar` であるナビゲーションバーが 1 つ必要です。
+
+```js
+const el = document.getElementById('navbar');
+assert(!!el);
+```
+
+`#navbar` 要素には `href` 属性の値が `#` で始まる `a` 要素を少なくとも 1 つ入れる必要があります。
+
+```js
+const links = [...document.querySelectorAll('#navbar a')].filter(
+  (nav) => (nav?.getAttribute('href') || '').substr(0, 1) === '#'
+);
+
+assert.isAbove(
+  links.length,
+  0,
+  'Navbar should contain an anchor link '
+);
+```
+
+ポートフォリオには `id` が `profile-link` である `a` 要素が 1 つ必要です。
+
+```js
+const el = document.getElementById('profile-link');
+assert(!!el && el.tagName === 'A')
+```
+
+`#profile-link` 要素は値が `_blank` に設定されている `target` 属性をもつ必要があります。
+
+```js
+const el = document.getElementById('profile-link');
+assert(!!el && el.target === '_blank')
+```
+
+ポートフォリオはメディアクエリを少なくとも 1 つ使用する必要があります。
+
+```js
+const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
+const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
+assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
+```
+
+`#navbar` 要素は常にビューポートの上部にある必要があります。
+
+```js
+(async () => {
+  const timeout = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
+
+  const navbar = document.getElementById('navbar');
+  assert.approximately(
+    navbar?.getBoundingClientRect().top,
+    0,
+    15,
+    "Navbar's parent should be body and it should be at the top of " +
+    'the viewport '
+  );
+
+  window.scroll(0, 500);
+
+  await timeout(1);
+
+  assert.approximately(
+    navbar?.getBoundingClientRect().top,
+    0,
+    15,
+    'Navbar should be at the top of the viewport even after ' +
+    'scrolling '
+  );
+  window.scroll(0, 0);
+})();
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
-// solution required
+
+```
+
+```css
+
+```
+
+## --solutions--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Personal Portfolio</title>
+</head>
+<body>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
+<!--Font Reference-->
+<nav id="navbar">
+  <a href="#projects">Projects</a> |
+  <a href="#contact">Contact me</a>
+</nav>
+<main>
+  <section id="welcome-section">
+    <br>
+    <h1>It's me!</h1>
+    <img src="https://s.cdpn.io/profiles/user/4369153/512.jpg?1587151780" height=100px>
+    <h2>Naomi Carrigan</h2>
+    <p>Welcome to my portfolio page!</p>
+  </section><hr>
+  <section id="projects">
+    <h1>Projects</h1>
+    <h2><a href="https://codepen.io/nhcarrigan">Here's what I've worked on!</a></h2>
+    <p class="project-tile">
+<iframe height="265" style="width: 25;" scrolling="no" title="Algebraic Concepts" src="https://codepen.io/nhcarrigan/embed/preview/NWGrWBR?height=265&theme-id=dark&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
+  See the Pen <a href='https://codepen.io/nhcarrigan/pen/NWGrWBR'>Algebraic Concepts</a> by Naomi Carrigan
+  (<a href='https://codepen.io/nhcarrigan'>@nhcarrigan</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+<iframe height="265" style="width: 25;" scrolling="no" title="Pokemon Daycare Service" src="https://codepen.io/nhcarrigan/embed/preview/mdeEbeq?height=265&theme-id=dark&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
+  See the Pen <a href='https://codepen.io/nhcarrigan/pen/mdeEbeq'>Pokemon Daycare Service</a> by Naomi Carrigan
+  (<a href='https://codepen.io/nhcarrigan'>@nhcarrigan</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+<iframe height="265" style="width: 25;" scrolling="no" title="Togepi Fan Club" src="https://codepen.io/nhcarrigan/embed/preview/vYNGoBE?height=265&theme-id=dark&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
+  See the Pen <a href='https://codepen.io/nhcarrigan/pen/vYNGoBE'>Togepi Fan Club</a> by Naomi Carrigan
+  (<a href='https://codepen.io/nhcarrigan'>@nhcarrigan</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+<iframe height="265" style="width: 25;" scrolling="no" title="Togepi" src="https://codepen.io/nhcarrigan/embed/preview/yLYOWEN?height=265&theme-id=dark&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
+  See the Pen <a href='https://codepen.io/nhcarrigan/pen/yLYOWEN'>Togepi</a> by Naomi Carrigan
+  (<a href='https://codepen.io/nhcarrigan'>@nhcarrigan</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+    </p></section><hr>
+  <section id="contact">
+    <h1>Contact me!</h1>
+    <h2>Use the links below to get in touch.</h2>
+    <p><a href="https://www.freecodecamp.org/nhcarrigan" id="profile-link" target="_blank" rel="noopener noreferrer">FreeCodeCamp.org</a> | <a href="https://github.com/nhcarrigan" id="github-link" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://www.facebook.com/nhcarrigan" id="facebook-link" target="_blank" rel="noopener noreferrer">Facebook</a> | <a href="https://www.linkedin.com/in/Naomi-l-carrigan/" id="linkedin-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </section>
+<footer><a href="../">Return to Project List</a> | <a href="https://www.nhcarrigan.com">Return to HomePage</a></footer>
+</body>
+</html>
+```
+
+```css
+nav{
+  position: fixed;
+  width: 100%;
+  text-align: right;
+  font-size: 24pt;
+  top: 0%;
+  right: 5px;
+  background-color: #000000;
+  color: #ffffff;
+}
+@media (max-width: 500px){
+  nav{
+    display: none;
+  }
+}
+a{
+  color: #ffffff;
+}
+main{
+  text-align: center;
+  background-color: black;
+  font-family:Pacifico
+}
+h1{
+  font-size: 48pt;
+}
+h2{
+  font-size: 24pt;
+}
+p{
+  font-size: 12pt;
+}
+#welcome-section{
+  background-color:#251a4a;
+  color: #FFFFFF;
+  display: table-cell;
+  vertical-align: middle;
+  width: 100vw;
+  height: 100vh;
+}
+#projects{
+  background-color: #060a9c;
+  color: #ffffff;
+  display: table-cell;
+  vertical-align: middle;
+  width: 100vw;
+  height: 100vh;
+}
+#contact{
+  background-color: #03300b;
+  color: #ffffff;
+  display: table-cell;
+  vertical-align: middle;
+  width: 100vw;
+  height: 100vh;
+}
 ```

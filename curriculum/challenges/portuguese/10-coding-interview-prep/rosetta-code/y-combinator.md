@@ -8,15 +8,13 @@ dashedName: y-combinator
 
 # --description--
 
-Em [programação funcional](https://www.freecodecamp.org/news/the-principles-of-functional-programming/ "news: the principles of functional programming") estrita e em [cálculo de lambda](https://en.wikipedia.org/wiki/lambda calculus "wp: lambda calculus"), funções (expressões lambda) não têm estado e é permitido apenas se referir a argumentos de funções encapsuladas. Isso exclui a definição habitual de uma função recursiva, na qual uma função é associada ao estado de uma variável e o estado dessa variável é usado no corpo da função. O [combinador Y](https://mvanier.livejournal.com/2897.html) é uma função sem estado que, ao ser aplicada a outra função sem estado, retorna uma versão recursiva da função. O combinador Y é a mais simples dessas classes de funções, chamada de [combinador de ponto fixo](https://en.wikipedia.org/wiki/Fixed-point combinator "wp: fixed-point combinator").
+Em [programação funcional](https://www.freecodecamp.org/news/the-principles-of-functional-programming/ "news: the principles of functional programming") estrita e em cálculo de lambda, as funções (expressões lambda) não têm estado e é permitido apenas se referir a argumentos de funções encapsuladas. Isso exclui a definição habitual de uma função recursiva, na qual uma função é associada ao estado de uma variável e o estado dessa variável é usado no corpo da função.
+
+O combinador Y é uma função sem estado que, ao ser aplicada a outra função sem estado, retorna uma versão recursiva da função. O combinador Y é a classe mais simples de tais funções, chamadas de combinadores de pontos fixos.
 
 # --instructions--
 
-Defina a função de combinador Y sem estado e use-a para calcular o [fatorial](https://en.wikipedia.org/wiki/Factorial "wp: factorial"). A função de fatorial, `factorial(N)`, você já tem. **Consulte também:**
-
-<ul>
-  <li><a href="https://vimeo.com/45140590" target="_blank">Jim Weirich: Adventures in Functional Programming</a>.</li>
-</ul>
+Defina a função do combinador Y sem estado e use-a para calcular os fatores. A função de fatorial, `factorial(N)`, você já tem.
 
 # --hints--
 

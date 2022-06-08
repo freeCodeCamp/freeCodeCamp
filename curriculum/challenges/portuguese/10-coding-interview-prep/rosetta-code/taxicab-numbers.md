@@ -8,7 +8,7 @@ dashedName: taxicab-numbers
 
 # --description--
 
-Um [Número taxicab](https://pt.wikipedia.org/wiki/N%C3%Bamero_taxicab) (a definição que está sendo usada aqui) é um inteiro positivo que pode ser expressado como a soma de dois cubos positivos em mais de uma maneira.
+Um número de taxicab (a definição que será usada aqui) é um número inteiro positivo que pode ser expresso como a soma de dois cubos positivos de mais de uma maneira.
 
 O primeiro número taxicab é `1729`, que é:
 
@@ -28,13 +28,6 @@ Os números taxicab também são conhecidos como:
 # --instructions--
 
 Escreva uma função que retorne o menor número taxicab de `n`. Para cada um dos números taxicab, mostre o número e os cubos que o constituem.
-
-**Veja também:**
-
-<ul>
-  <li><a href='https://oeis.org/A001235' target='_blank'>A001235 números taxicab</a> na The On-Line Encyclopedia of Integer Sequences.</li>
-  <li><a href='https://pt.wikipedia.org/wiki/N%C3%Bamero_taxicab' target='_blank'>Número taxicab</a> na Wikipédia.</li>
-</ul>
 
 # --hints--
 

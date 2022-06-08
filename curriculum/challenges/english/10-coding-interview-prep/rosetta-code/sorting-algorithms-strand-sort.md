@@ -8,9 +8,21 @@ dashedName: sorting-algorithmsstrand-sort
 
 # --description--
 
-Write a function to sort an array using the [Strand sort](<https://en.wikipedia.org/wiki/Strand sort>). The function should return the sorted array.
+The **Strand sort** creates sorted subsets that are merged to create the final result. 
 
-This is a way of sorting numbers by extracting shorter sequences of already sorted numbers from an unsorted list.
+Consider an `unsortedArray = [3, 1, 4, 2]`. Pick the first element `3` and copy it into a separate array. Search for any bigger element following this element. When you find the a larger element, in this case `4`, copy it to the separate array, `[3, 4]`, and compare the following elements to this new value, `4`.
+
+After you have reached the end of the array, remove the elements you copied, `[3, 4]`, and start again with the first element remaining in the `unsortedArray`, in this case `1`.
+
+Following this process results in two sorted arrays, `[3, 4]` and `[1, 2]`. Merge these two arrays to create the `strandSortedArray`.
+
+```js
+const unsortedArray = [3, 1, 4, 2];
+const strandsortedArray = [1, 2, 3, 4];
+```
+
+Write a function to sort an array using the **Strand sort**. The function should return the sorted array.
+
 
 # --hints--
 

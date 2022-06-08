@@ -136,6 +136,29 @@ CLIENT_LOCALE="dothraki"
 CURRICULUM_LOCALE="dothraki"
 ```
 
+### Releasing a Superblock
+
+After a superblock has been fully translated into a language, there are two steps to release it. First add the superblock enum to that language's `auditedCerts` array. So, if you want to release the new Responsive Web Design superblock for Dothraki, the array should look like this:
+
+```ts
+export const auditedCerts = {
+  // other languages
+  dothraki: [
+    SuperBlocks.RespWebDesignNew, // the newly translated superblock
+    SuperBlocks.RespWebDesign,
+    SuperBlocks.JsAlgoDataStruct,
+    SuperBlocks.FrontEndDevLibs
+  ]
+```
+
+Finally, the `languagesWithAuditedBetaReleases` array should be updated to include the new language like this:
+
+```ts
+export const languagesWithAuditedBetaReleases: ['english', 'dothraki'];
+```
+
+This will move the new superblock to the correct place in the curriculum map on `/learn`.
+
 ## Enabling Localized Videos
 
 For the video challenges, you need to change a few things. First add the new locale to the GraphQL query in the `client/src/templates/Challenges/video/Show.tsx` file. For example, adding Dothraki to the query:

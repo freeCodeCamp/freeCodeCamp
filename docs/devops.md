@@ -489,7 +489,7 @@ Provisioning VMs with the Code
 
    ```console
    cd api-server
-   pm2 start ./lib/production-start.js -i max --max-memory-restart 600M --name org
+   pm2 reload ecosystem.config.js
    ```
 
 ### Logging and Monitoring

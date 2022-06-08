@@ -50,6 +50,17 @@ Ogni componente è diverso, ma in genere un componente dovrebbe:
 - Essere stilizzato internamente basato sulle proprietà (Il consumatore non dovrebbe avere bisogno di stilizzare il componente con la proprietà `className`)
 - Utilizzare il sistema integrato di stilizzazione di Tailwind invece di usare stili personalizzati
 
+### Uso dei colori
+
+Ci sono due strati di colori nella libreria dei componenti:
+
+- Lo strato base, dove i nomi dei colori descrivono cosa sono i colori, per esempio `gray00`, `blue50`
+- Lo strato semantico, dove i nomi dei colori descrivono lo scopo de colori, per esempio `foreground-primary`, `background-danger`
+
+In genere quando usi i colori in un componente dovresti preferire le variabili semantiche rispetto a quelle base. Però ci sono eccezioni, specialmente quando stai dando uno stile agli stati del componente, tipo hover, attivo, disabilitato, ecc. In questo caso, raccomandiamo l'uso delle variabili base invece di creare nuove variabili semantiche, visto che ogni compnente può avere diversi stili per i vari stati.
+
+> [!NOTE] Le definizioni dei colori possono essere trovate nel [file `colors.css`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/tools/ui-components/src/colors.css). Un colore è disponibile per l'uso solo se è aggiunto al [file `tailwind.config.js`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/tools/ui-components/tailwind.config.js) sotto la proprietà `colors`.
+
 ### Link utili
 
 - [Tailwind CSS Configuration](https://tailwindcss.com/docs/configuration)

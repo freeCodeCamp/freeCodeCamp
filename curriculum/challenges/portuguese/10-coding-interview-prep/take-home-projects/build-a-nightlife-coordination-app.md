@@ -20,7 +20,7 @@ Aqui estão as histórias de usuário que você deve implementar para este proje
 
 **História de usuário:** como um usuário não autenticado, quando você faz o login, você não deve ter que pesquisar novamente.
 
-**Dica:** tente usar a [API da Yelp](https://www.yelp.com/developers/documentation/v3) para encontrar estabelecimentos que os usuários pesquisam nas cidades. Se você usar a API da Yelp, certifique-se de mencionar isso na aplicação.
+**Dica:** tente usar a API Yelp para encontrar espaços nas cidades que seus usuários procuram. Se você usar a API da Yelp, certifique-se de mencionar isso na aplicação.
 
 Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Em seguida, envie o URL para ela no campo `Solution Link`. Como opção, envie também um link para o código-fonte do projeto no campo `GitHub Link`.
 

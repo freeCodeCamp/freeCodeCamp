@@ -8,9 +8,9 @@ dashedName: visualize-data-with-a-choropleth-map
 
 # --description--
 
-**Objetivo:** Construye una aplicación en [CodePen.io](https://codepen.io) que funcionalmente sea similar a esta: <https://codepen.io/freeCodeCamp/full/EZKqza>.
+**Objetivo:** Crear una aplicación que sea funcionalmente similar a <https://codepen.io/freeCodeCamp/full/EZKqza>.
 
-Completa las siguientes [historias de usuario](https://en.wikipedia.org/wiki/User_story) y consigue que pasen todas las pruebas. Dale tu propio estilo personal.
+Completa las historias de usuario a continuación y obtén todas las pruebas para aprobar. Utiliza cualquier librería o API que necesites. Dale tu propio estilo.
 
 Puedes utilizar HTML, JavaScript, CSS y la librería D3 de visualización basada en svg. Los elementos DOM obligatorios (no virtuales) son consultados en el momento de cada prueba. Si usas un framework frontend (como por ejemplo Vue), los resultados de la prueba pueden ser inexactos para el contenido dinámico. Esperamos poder adaptarlos eventualmente, pero por ahora estos frameworks no son soportados por los proyectos con D3.
 

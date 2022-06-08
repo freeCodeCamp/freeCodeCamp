@@ -19,7 +19,7 @@ function* deleteAccountSaga() {
     );
     // remove current user information from application state
     yield put(resetUserData());
-    yield call(navigate, '/');
+    yield call(navigate, '/learn');
   } catch (e) {
     yield put(deleteAccountError(e));
   }

@@ -55,6 +55,7 @@ export const userPropsForSession = [
   'sendQuincyEmail',
   'theme',
   'sound',
+  'keyboardShortcuts',
   'completedChallengeCount',
   'completedProjectCount',
   'completedCertCount',

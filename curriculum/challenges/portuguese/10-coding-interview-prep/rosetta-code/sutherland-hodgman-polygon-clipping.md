@@ -8,7 +8,7 @@ dashedName: sutherland-hodgman-polygon-clipping
 
 # --description--
 
-O [algoritmo de recorte de polígonos de Sutherland-Hodgman](https://en.wikipedia.org/wiki/Sutherland-Hodgman clipping algorithm) encontra o polígono que é a intersecção entre um polígono arbitrário (o "polígono sujeito") e um polígono convexo (o "polígono de recorte"). Ele é usado em gráficos de computador (especialmente gráficos 2D) para reduzir a complexidade de uma cena que está sendo exibida eliminando partes de um polígono que não precisam ser exibidas. Pegue o polígono que se fecha definido pelos pontos:
+O algoritmo de recorte de polígonos de Sutherland-Hodgman encontra o polígono que é a intersecção entre um polígono arbitrário (o "polígono sujeito") e um polígono convexo (o "polígono de recorte"). Ele é usado em gráficos de computador (especialmente gráficos 2D) para reduzir a complexidade de uma cena que está sendo exibida eliminando partes de um polígono que não precisam ser exibidas. Pegue o polígono que se fecha definido pelos pontos:
 
 <pre>[(50, 150), (200, 50), (350, 150), (350, 300), (250, 300), (200, 250), (150, 350), (100, 250), (100, 200)]</pre>
 

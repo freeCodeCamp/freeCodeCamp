@@ -1,55 +1,467 @@
 ---
 id: 587d78af367417b2b2512b04
 title: 制作一个产品登录页
-challengeType: 3
+challengeType: 14
 forumTopicId: 301144
 dashedName: build-a-product-landing-page
 ---
 
 # --description--
 
-**目标：** 在 [CodePen.io](https://codepen.io) 上创建一个与这个功能类似的 app：<https://codepen.io/freeCodeCamp/full/RKRbwL>。
+**目标：** 构建一个功能类似于 <a href="https://product-landing-page.freecodecamp.rocks" target="_blank">https://product-landing-page.freecodecamp.rocks</a> 的应用程序
 
-在满足以下[需求](https://en.wikipedia.org/wiki/User_story)并能通过所有测试的前提下， 你可以根据自己的喜好来美化你的 app。
+**需求：**
 
-你可以使用 HTML、JavaScript 以及 CSS 来完成项目。 由于目前你只学到了 CSS 课程，所以我们建议你只使用 CSS 来完成这个项目，同时巩固一下你之前所学的内容。 你也可以使用 Bootstrap 或者 SASS。 我们不推荐你在这个项目中使用其他技术（比如 jQuery、React、Angular 或 Vue）。 在后续的其他项目中，你将有机会使用像是 React 等其他技术栈。 我们会接受并尝试修复你在使用推荐技术栈创建项目时报告的问题。 祝你编码愉快！
+1. 你的产品登录页应该有一个 `id="header"` 的 `header` 元素
+1. 你可以在 `header` 元素中看到一个 `id="header-img"` 的图像（比如一个 logo）
+1. 在 `#header` 元素中，你可以看到一个 `id="nav-bar"` 的 `nav` 元素
+1. 在 `nav` 元素中，你可以看到至少三个可点击的元素，每个元素的 class 为 `nav-link`
+1. 当你点击 `nav` 内的 `.nav-link` 按钮时，应滚动到登录页相应的部分
+1. 你可以观看一个 `id="video"` 的嵌入的产品视频
+1. 你的登录页有一个 `id="form"` 的 `form` 元素
+1. 在表单中，应存在一个 `id="email"` 的 `input` 输入框供用户填写邮箱地址
+1. 在 `#email` 输入框内应有描述该区域用途的占位符文本
+1. `#email` 输入框应该用 HTML5 验证来确认输入的内容是否为邮箱地址
+1. 在表单中，有一个 `id="submit"` 的 `input` 提交按钮
+1. 当你点击 `#submit` 元素时，邮箱会被提交到一个静态页面 (使用这个模拟 URL：`https://www.freecodecamp.com/email-submit`)
+1. 导航栏应该始终位于视口的顶部
+1. 你的产品登陆页面至少要有一个媒体查询
+1. 你的产品登陆页面应该至少使用一次 CSS flexbox
 
-**需求 1：** 产品登录页应存在 `id="header"` 的 `header` 元素。
+完成需求并通过下面的所有测试来完成这个项目。 赋予它你自己的个人风格。 编程愉快！
 
-**需求 2：** 在 `header` 元素内应存在 `id="header-img"` 的图像， 这里通常用来放置公司的 logo。
+**注意：** 请在你的 HTML 中添加 `<link rel="stylesheet" href="styles.css">` 以链接你的样式表并应用你的 CSS
 
-**需求 3：** 在 `#header` 元素内，应存在一个 `id="nav-bar"` 的 `nav` 元素。
+# --hints--
 
-**需求 4：** `nav` 元素中应至少包含三个 class 为 `nav-link` 且可点击的元素。
+你应该有一个 `id` 为 `header` 的 `header` 元素
 
-**需求 5：** 当点击 `nav` 内的 `.nav-link` 按钮时，应滚动到产品主页上相应的部分。
+```js
+const el = document.getElementById('header')
+assert(!!el && el.tagName === 'HEADER')
+```
 
-**需求 6：** 页面上应存在 `id="video"` 的嵌入式视频播放区域。
+你应该有一个 `id` 为 `header-img` 的 `img` 元素
 
-**需求 7：** 产品登陆页应存在一个 `id="form"` 的 `form` 元素。
+```js
+const el = document.getElementById('header-img')
+assert(!!el && el.tagName === 'IMG')
+```
 
-**需求 8：** 在表单中，应存在一个 `id="email"` 的 `input` 输入框供用户填写邮箱。
+你的 `#header-img` 元素应该是 `#header` 元素的子元素
 
-**需求 9：** `#email` 输入框内应存在描述该区域用途的占位符文字。
+```js
+const els = document.querySelectorAll('#header #header-img')
+assert(els.length > 0)
+```
 
-**需求 10：** `#email` 输入框应使用 HTML5 验证来确认输入的内容是否为邮箱。
+你的 `#header-img` 元素应该有一个 `src` 属性
 
-**需求 11：** 在表单中，应存在一个 `id="submit"` 的 `input` 提交按钮。
+```js
+const el = document.getElementById('header-img')
+assert(!!el && !!el.src)
+```
 
-**需求 12：** 当点击 `#submit` 元素时，应将邮箱信息提交到一个静态页面（请使用这个模拟的 URL：<https://www.freecodecamp.com/email-submit>）。
+你的 `#header-img` 元素的 `src` 属性应该有一个有效的 URL（以 `http` 开头）
 
-**需求 13：** navbar 应保持在视口（viewport）的顶部。
+```js
+const el = document.getElementById('header-img')
+assert(!!el && /^http/.test(el.src))
+```
 
-**需求 14：** 在此 app 中，应至少使用一次媒体查询。
+你应该有一个 `id` 为 `nav-bar` 的 `nav` 元素
 
-**需求 15：** 在此 app 中，应至少使用一次 CSS 的 flexbox 布局。
+```js
+const el = document.getElementById('nav-bar')
+assert(!!el && el.tagName === 'NAV')
+```
 
-你可以<a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>使用这个 CodePen 模版</a>创建你自己的项目，点击 `Save` 即可创建你的新项目。 也可以使用此 CDN 链接在任何你喜欢的环境中运行测试：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`。
+你的 `#nav-bar` 元素应该是 `#header` 元素的子元素
 
-完成项目并通过所有测试后，请输入你的项目在 CodePen 上的链接并提交。
+```js
+const els = document.querySelectorAll('#header #nav-bar')
+assert(els.length > 0)
+```
 
-# --solutions--
+在 `#nav-bar` 内，你应该有至少三个 `.nav-link` 元素
+
+```js
+const els = document.querySelectorAll('#nav-bar .nav-link')
+assert(els.length >= 3)
+```
+
+每个 `.nav-link` 元素应该有一个 `href` 元素
+
+```js
+const els = document.querySelectorAll('.nav-link')
+els.forEach(el => {
+  if (!el.href) assert(false)
+})
+assert(els.length > 0)
+```
+
+每个 `.nav-link` 元素应该链接到登陆页面上的相应元素（有一个 `href` 具有另一个元素的 id 的值，例如： `#footer`）
+
+```js
+const els = document.querySelectorAll('.nav-link')
+els.forEach(el => {
+  const linkDestination = el.getAttribute('href').slice(1)
+  if (!document.getElementById(linkDestination)) assert(false)
+})
+assert(els.length > 0)
+```
+
+你应该有一个 `id` 为 `video` 的 `video` 或 `iframe` 元素
+
+```js
+const el = document.getElementById('video')
+assert(!!el && (el.tagName === 'VIDEO' || el.tagName === 'IFRAME'))
+```
+
+你的 `#video` 元素应该有一个 `src` 属性
+
+```js
+let el = document.getElementById('video')
+const sourceNode = el.children;
+let sourceElement = null;
+if (sourceNode.length) {
+  sourceElement = [...video.children].filter(el => el.localName === 'source')[0];
+}
+if (sourceElement) {
+  el = sourceElement;
+}
+assert(el.hasAttribute('src'));
+```
+
+你应该有一个 `id` 为 `form` 的 `form` 元素
+
+```js
+const el = document.getElementById('form')
+assert(!!el && el.tagName === 'FORM')
+```
+
+你应该有一个 `id` 为 `email` 的 `input` 元素
+
+```js
+const el = document.getElementById('email')
+assert(!!el && el.tagName === 'INPUT')
+```
+
+你的 `#email` 元素应该是 `#form` 元素的子元素
+
+```js
+const els = document.querySelectorAll('#form #email')
+assert(els.length > 0)
+```
+
+你的 `#email` 元素应该有 `placeholder` 属性与占位符文本
+
+```js
+const el = document.getElementById('email')
+assert(!!el && !!el.placeholder && el.placeholder.length > 0)
+```
+
+你的 `#email` 元素应该使用 HTML5 验证，方法是设置 `type` 为 `email`
+
+```js
+const el = document.getElementById('email')
+assert(!!el && el.type === 'email')
+```
+
+你应该有一个 `id` 为 `submit` 的 `input` 元素
+
+```js
+const el = document.getElementById('submit')
+assert(!!el && el.tagName === 'INPUT')
+```
+
+你的 `#submit` 元素应该是 `#form` 元素的子元素
+
+```js
+const els = document.querySelectorAll('#form #submit')
+assert(els.length > 0)
+```
+
+你的 `#submit` 元素应该具有 `type` 为 `submit`
+
+```js
+const el = document.getElementById('submit')
+assert(!!el && el.type === 'submit')
+```
+
+你的 `#form` 元素应该有值为 `https://www.freecodecamp.com/email-submit` 的 `action` 属性
+
+```js
+const el = document.getElementById('form')
+assert(!!el && el.action === 'https://www.freecodecamp.com/email-submit')
+```
+
+你的 `#email` 元素应该具有值为 `email` 的 `name` 属性
+
+```js
+const el = document.getElementById('email')
+assert(!!el && el.name === 'email')
+```
+
+你的 `#nav-bar` 元素应该始终位于视口的顶部
+
+```js
+(async () => {
+  const timeout = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
+
+  const header = document.getElementById('header');
+  const headerChildren = header.children;
+  const navbarCandidates = [header, ...headerChildren];
+
+  // Return smallest top position of all navbar candidates
+  const getNavbarPosition = (candidates = []) => {
+    return candidates.reduce(
+      (min, candidate) =>
+        Math.min(min, Math.abs(candidate?.getBoundingClientRect().top)),
+      Infinity
+    );
+  };
+  assert.approximately(
+    getNavbarPosition(navbarCandidates),
+    0,
+    15,
+    '#header or one of its children should be at the top of the viewport '
+  );
+
+  window.scroll(0, 500);
+  await timeout(1);
+
+  assert.approximately(
+    getNavbarPosition(navbarCandidates),
+    0,
+    15,
+    '#header or one of its children should be at the top of the ' +
+      'viewport even after scrolling '
+  );
+
+  window.scroll(0, 0);
+})();
+```
+
+你的产品登陆页面至少要有一个媒体查询
+
+```js
+const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
+const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
+assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
+```
+
+你的产品登陆页面应该至少使用一次 CSS Flexbox
+
+```js
+const stylesheet = new __helpers.CSSHelp(document).getStyleSheet()
+const cssRules = new __helpers.CSSHelp(document).styleSheetToCssRulesArray(stylesheet)
+const usesFlex = cssRules.find(rule => {
+  return rule.style?.display === 'flex' || rule.style?.display === 'inline-flex'
+})
+assert(usesFlex)
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
-// solution required
+
+```
+
+```css
+
+```
+
+## --solutions--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Product Landing Page</title>
+  </head>
+  <body>
+    <header id="header">
+      <nav id="nav-bar">
+        <img
+          id="header-img"
+          src="https://upload.wikimedia.org/wikipedia/commons/3/39/Pokeball.PNG"
+          max-height="50px"
+        />
+        <a href="#Features" class="nav-link">Features</a> |
+        <a href="#Video" class="nav-link">See our facility!</a> |
+        <a href="#Pricing" class="nav-link">Purchase</a>
+        <hr />
+      </nav>
+    </header>
+    <main>
+      <h1>
+        Pokemon Daycare Service
+      </h1>
+      <section id="Features">
+        <h2>What we offer</h2>
+        <div class="flex-here">
+          <div class="flex-left">
+            <img
+              id="bullet"
+              src="https://upload.wikimedia.org/wikipedia/commons/3/39/Pokeball.PNG"
+              max-height="25px"
+            />
+          </div>
+          <div class="flex-right">Guaranteed friendly and loving staff!</div>
+        </div>
+        <div class="flex-here">
+          <div class="flex-left">
+            <img
+              id="bullet"
+              src="https://upload.wikimedia.org/wikipedia/commons/3/39/Pokeball.PNG"
+              max-height="25px"
+            />
+          </div>
+          <div class="flex-right">
+            Comfortable environment for Pokemon to explore and play!
+          </div>
+        </div>
+        <div class="flex-here">
+          <div class="flex-left">
+            <img
+              id="bullet"
+              src="https://upload.wikimedia.org/wikipedia/commons/3/39/Pokeball.PNG"
+              max-height="25px"
+            />
+          </div>
+          <div class="flex-right">
+            Multiple membership plans to fit your lifestyle!
+          </div>
+        </div>
+      </section>
+      <section id="Video">
+        <h2>Check us out!</h2>
+        A sneak peek into our facility:
+        <br />
+        <iframe
+          id="video"
+          width="520"
+          height="347"
+          src="https://www.youtube.com/embed/Nw-ksH2r6AQ"
+          frameborder="0"
+          allowfullscreen
+          alt="A video tour of our facility"
+        >
+        </iframe>
+      </section>
+      <section id="Pricing">
+        <h2>Membership Plans</h2>
+        <div class="flex-mem">
+          <div class="flex-mem-box">
+            <font size="+2">Basic Membership</font><br />
+            <ul>
+              <li>One Pokemon</li>
+              <li>Food and berries provided</li>
+            </ul>
+            <em>$9.99/month</em>
+          </div>
+          <div class="flex-mem-box">
+            <font size="+2">Silver Membership</font><br />
+            <ul>
+              <li>Up to Three Pokemon</li>
+              <li>Food and berries provided</li>
+              <li>Grooming and accessories included</li>
+            </ul>
+            <em>$19.99/month</em>
+          </div>
+          <div class="flex-mem-box">
+            <font size="+2">Gold Membership</font><br />
+            <ul>
+              <li>Up to six Pokemon!</li>
+              <li>Food and berries provided</li>
+              <li>Grooming and accessories included</li>
+              <li>Personal training for each Pokemon</li>
+              <li>Breeding and egg hatching</li>
+            </ul>
+            <em>$29.99/month</em>
+          </div>
+        </div>
+      </section>
+      <form id="form" action="https://www.freecodecamp.com/email-submit">
+        <p>Sign up for our newsletter!</p>
+        <label for="email"><p>Email:</p><input name="email" id="email" type="email" placeholder="johnsmith@email.com" required></label>
+        <input type="submit" id="submit">
+      </form>
+      <footer>
+        <a href="../">Return to Project List</a> |
+        <a href="https://www.nhcarrigan.com">Return to HomePage</a>
+      </footer>
+    </main>
+  </body>
+</html>
+```
+
+```css
+body {
+  background-color: #3a3240;
+  color: white;
+}
+main {
+  max-width: 750px;
+  margin: 50px auto;
+}
+input {
+  background-color: #92869c;
+}
+a:not(.nav-link) {
+  color: white;
+}
+#header-img {
+  max-height: 25px;
+}
+#nav-bar {
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  top: 0%;
+  background-color: #92869c;
+}
+h1 {
+  text-align: center;
+}
+body {
+  text-align: center;
+}
+footer {
+  text-align: center;
+}
+#bullet {
+  max-height: 25px;
+}
+.flex-here {
+  display: flex;
+  justify-content: center;
+}
+.flex-left {
+  height: 25px;
+}
+.flex-mem {
+  display: flex;
+  justify-content: center;
+}
+.flex-mem-box {
+  background-color: #92869c;
+  border-color: black;
+  border-width: 5px;
+  border-style: solid;
+  margin: 10px;
+  padding: 10px;
+  color: black;
+}
+@media (max-width: 350px) {
+  #video {
+    width: 300;
+    height: 200;
+  }
+}
 ```

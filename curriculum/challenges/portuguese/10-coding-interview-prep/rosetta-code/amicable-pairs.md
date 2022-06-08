@@ -8,7 +8,7 @@ dashedName: amicable-pairs
 
 # --description--
 
-Dizem que dois inteiros $N$ e $M$ são [pares amigáveis](https://en.wikipedia.org/wiki/Amicable numbers "wp: Amicable numbers") se $N \\neq M$ e a soma dos [divisores adequados](https://rosettacode.org/wiki/Proper divisors "Proper divisors") de $N$ ($\\mathrm{sum}(\\mathrm{propDivs}(N))$) $= M$, bem como $\\mathrm{sum}(\\mathrm{propDivs}(M)) = N$.
+Dizemos que dois números inteiros, $N$ e $M$, são pares amigáveis se $N \\neq M$ e a soma dos divisores apropriados de $N$ ($\\mathrm{sum}(\\mathrm{propDivs}(N))$) $= M$, assim como $\\mathrm{sum}(\\mathrm{propDivs}(M)) = N$.
 
 **Exemplo:**
 
@@ -18,6 +18,8 @@ Dizem que dois inteiros $N$ e $M$ são [pares amigáveis](https://en.wikipedia.o
   <li>1, 2, 4, 8, 16, 32, 37, 74, 148, 296, 592 e</li>
   <li>1, 2, 5, 10, 11, 22, 55, 110, 121, 242, 605, respectivamente.</li>
 </ul>
+
+A soma dos divisores pelo primeiro valor, **1184**, é **1210** e a soma dos divisores pelo segundo valor, **1210**', é **1184**.
 
 # --instructions--
 

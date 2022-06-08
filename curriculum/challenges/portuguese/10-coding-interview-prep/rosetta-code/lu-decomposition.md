@@ -8,13 +8,13 @@ dashedName: lu-decomposition
 
 # --description--
 
-Toda matriz quadrada $A$ pode ser decomposta em um produto de uma matriz triangular inferior $L$ e uma matriz triangular superior $U$, conforme descrito em [Decomposição de LU](https://en.wikipedia.org/wiki/LU decomposition).
+Toda matriz quadrada $A$ pode ser decomposta em um produto de uma matriz triangular inferior $L$ e uma matriz triangular superior $U$. Essa é conhecida como a decomposição de LU.
 
 $A = LU$
 
 Ela é uma forma modificada da eliminação de Gauss.
 
-Enquanto a [Decomposição do Cholesky](http://rosettacode.org/wiki/Cholesky decomposition) funciona somente para matrizes simétricas, definidas e positivas, a decomposição da LU é mais geral e funciona para qualquer matriz quadrada.
+Enquanto a decomposição do Cholesky funciona somente para matrizes simétricas, definidas e positivas, a decomposição da LU é mais geral e funciona para qualquer matriz quadrada.
 
 Existem vários algoritmos para calcular $L$ e $U$.
 

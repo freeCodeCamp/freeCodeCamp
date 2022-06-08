@@ -21,6 +21,7 @@ export enum SuperBlocks {
   RespWebDesignNew = '2022/responsive-web-design',
   RespWebDesign = 'responsive-web-design',
   JsAlgoDataStruct = 'javascript-algorithms-and-data-structures',
+  JsAlgoDataStructNew = '2022/javascript-algorithms-and-data-structures',
   FrontEndDevLibs = 'front-end-development-libraries',
   DataVis = 'data-visualization',
   RelationalDb = 'relational-database',
@@ -83,7 +84,9 @@ export const certSlugTypeMap = {
 
   // modern
   [SuperBlocks.RespWebDesign]: certTypes.respWebDesign,
+  [SuperBlocks.RespWebDesignNew]: certTypes.respWebDesign,
   [SuperBlocks.JsAlgoDataStruct]: certTypes.jsAlgoDataStruct,
+  [SuperBlocks.JsAlgoDataStructNew]: certTypes.jsAlgoDataStruct,
   [SuperBlocks.FrontEndDevLibs]: certTypes.frontEndDevLibs,
   [SuperBlocks.DataVis]: certTypes.dataVis2018,
   [SuperBlocks.BackEndDevApis]: certTypes.apisMicroservices,
@@ -118,7 +121,8 @@ export const superBlockCertTypeMap = {
 
   // post-modern
   // TODO: use enum
-  '2022/responsive-web-design': certTypes.respWebDesign
+  [SuperBlocks.RespWebDesignNew]: certTypes.respWebDesign,
+  [SuperBlocks.JsAlgoDataStructNew]: certTypes.jsAlgoDataStruct
 };
 
 export const certTypeIdMap = {

@@ -9,7 +9,7 @@ dashedName: word-blanks
 
 # --description--
 
-Ahora usaremos nuestros conocimientos de cadenas para construir un juego de palabras estilo "[Mad Libs](https://en.wikipedia.org/wiki/Mad_Libs)" que llamamos "Palabra en blanco". Crearás una frase (opcionalmente humorística) del estilo: Rellena los espacios vacíos.
+Ahora vamos a usar nuestro conocimiento sobre cadenas para construir un juego de palabras estilo "Mad Libs" que llamaremos "Palabras en blanco". Crearás una frase (opcionalmente humorística) del estilo: Rellena los espacios vacíos.
 
 En un juego de "Mad Libs", se te proporcionan oraciones con algunas palabras faltantes, como sustantivos, verbos, adjetivos y adverbios. Luego, rellenas las piezas que faltan con palabras de tu elección de una manera que la frase completa tenga sentido.
 

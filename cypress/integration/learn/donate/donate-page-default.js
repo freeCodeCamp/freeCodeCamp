@@ -1,20 +1,10 @@
 describe('Donate page', () => {
-  before(() => {
-    cy.clearCookies();
-    cy.exec('npm run seed');
-    cy.login();
+  it('Should render correctly', () => {
     cy.visit('/donate');
-  });
-
-  it('Should render', () => {
     cy.title().should('eq', 'Support our nonprofit | freeCodeCamp.org');
-  });
 
-  it('Should display default amount and duration', () => {
     cy.contains('Confirm your donation of $5 / month:').should('be.visible');
-  });
 
-  it('Should have FAQ section', () => {
     cy.contains('Frequently asked questions');
     cy.contains('How can I get help with my donations?');
     cy.contains('How transparent is freeCodeCamp.org?');

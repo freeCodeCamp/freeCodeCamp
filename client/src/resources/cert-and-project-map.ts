@@ -1,7 +1,7 @@
 import { SuperBlocks } from '../../../config/certification-settings';
-import envData from '../../../config/env.json';
+import config from '../../../config/env.json';
 
-const { showUpcomingChanges } = envData;
+const { showUpcomingChanges } = config;
 
 const responsiveWebBase =
   '/learn/responsive-web-design/responsive-web-design-projects';
@@ -9,6 +9,7 @@ const responsiveWeb22Base = '/learn/2022/responsive-web-design';
 const jsAlgoBase =
   '/learn/javascript-algorithms-and-data-structures/' +
   'javascript-algorithms-and-data-structures-projects';
+const jsAlgo22Base = '/learn/2022/javascript-algorithms-and-data-structures';
 const feLibsBase =
   '/learn/front-end-development-libraries/front-end-development-libraries-projects';
 const dataVisBase = '/learn/data-visualization/data-visualization-projects';
@@ -341,31 +342,31 @@ const certMap = [
       {
         id: 'aaa48de84e1ecc7c742e1124',
         title: 'Palindrome Checker',
-        link: `${jsAlgoBase}/palindrome-checker`,
+        link: getJavaScriptAlgoPath('palindrome-checker'),
         certSlug: SuperBlocks.JsAlgoDataStruct
       },
       {
         id: 'a7f4d8f2483413a6ce226cac',
         title: 'Roman Numeral Converter',
-        link: `${jsAlgoBase}/roman-numeral-converter`,
+        link: getJavaScriptAlgoPath('roman-numeral-converter'),
         certSlug: SuperBlocks.JsAlgoDataStruct
       },
       {
         id: '56533eb9ac21ba0edf2244e2',
         title: 'Caesars Cipher',
-        link: `${jsAlgoBase}/caesars-cipher`,
+        link: getJavaScriptAlgoPath('caesars-cipher'),
         certSlug: SuperBlocks.JsAlgoDataStruct
       },
       {
         id: 'aff0395860f5d3034dc0bfc9',
         title: 'Telephone Number Validator',
-        link: `${jsAlgoBase}/telephone-number-validator`,
+        link: getJavaScriptAlgoPath('telephone-number-validator'),
         certSlug: SuperBlocks.JsAlgoDataStruct
       },
       {
         id: 'aa2e6f85cab2ab736c9a9b24',
         title: 'Cash Register',
-        link: `${jsAlgoBase}/cash-register`,
+        link: getJavaScriptAlgoPath('cash-register'),
         certSlug: SuperBlocks.JsAlgoDataStruct
       }
     ]
@@ -716,9 +717,13 @@ const certMap = [
 ] as const;
 
 function getResponsiveWebDesignPath(project: string) {
+  return `${responsiveWeb22Base}/${project}-project/${project}`;
+}
+
+function getJavaScriptAlgoPath(project: string) {
   return showUpcomingChanges
-    ? `${responsiveWeb22Base}/${project}-project/${project}`
-    : `${responsiveWebBase}/${project}`;
+    ? `${jsAlgo22Base}/${project}-project/${project}`
+    : `${jsAlgoBase}/${project}`;
 }
 
 const titles = certMap.map(({ title }) => title);

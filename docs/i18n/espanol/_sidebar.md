@@ -29,6 +29,7 @@
 - **Manuales de Vuelo** (para el personal & moderadores)
   - [Manual del moderador](moderator-handbook.md)
   - [Manual de DevOps](devops.md)
+  - [Courses VSCode Extension](courses-vscode-extension.md)
 
 ---
 

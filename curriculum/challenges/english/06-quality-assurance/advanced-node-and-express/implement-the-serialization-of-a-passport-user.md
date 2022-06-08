@@ -10,7 +10,7 @@ dashedName: implement-the-serialization-of-a-passport-user
 
 Right now, we're not loading an actual user object since we haven't set up our database. This can be done many different ways, but for our project we will connect to the database once when we start the server and keep a persistent connection for the full life-cycle of the app. To do this, add your database's connection string (for example: `mongodb+srv://:@cluster0-jvwxi.mongodb.net/?retryWrites=true&w=majority`) to the environment variable `MONGO_URI`. This is used in the `connection.js` file.
 
-*You can set up a free database on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).*
+*If you are having issues setting up a free database on MongoDB Atlas, check out [tutorial](https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/).*
 
 Now we want to connect to our database then start listening for requests. The purpose of this is to not allow requests before our database is connected or if there is a database error. To accomplish this, you will want to encompass your serialization and your app routes in the following code:
 

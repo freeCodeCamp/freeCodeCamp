@@ -8,7 +8,7 @@ dashedName: subleq
 
 # --description--
 
-O [Subleq](https://rosettacode.org/wiki/eso:Subleq) é um exemplo de um [One-Instruction Set Computer (OISC)](https://en.wikipedia.org/wiki/One_instruction_set_computer).
+Subleq é um exemplo de máquina de uma instrução (OISC).
 
 Seu nome vem de sua única instrução, que é **SU**btract and **B**ranch if **L**ess than or **EQ**ual (subtraia e ramifique se for menor ou igual) a zero.
 

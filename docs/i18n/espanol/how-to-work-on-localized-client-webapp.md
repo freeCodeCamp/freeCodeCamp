@@ -90,89 +90,89 @@ Puedes probar la app cliente en cualquier lenguaje disponible en la [lista de id
   };
 ```
 
-If you are testing a new language, create a folder with the language name as the title next to the other languages and copy the JSON files from another language into your new folder.
+Si estas probando un nuevo idioma, crea una carpeta con el nombre del idioma como titulo junto al otro idioma y copia los archivos JSON desde el otro idioma dentro de la nueva carpeta.
 
-Add the language to the `client` array as seen above in the [`config/i18n/all-langs.js`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n/all-langs.js) file.
+Agrega el idioma al arreglo `cliente` como se ve arriba en el archivo[`config/i18n/all-langs.js`](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/config/i18n/all-langs.js).
 
-Next, follow the instructions in the comments in the same file to add/update the rest of the variables as needed.
+A continuación, sigue las instrucciones en los comentarios en el mismo archivo para agregar/actualizar el resto de las variables tanto como se necesite.
 
-Finally, set the `CLIENT_LOCALE` variable in your `.env` file to the locale you want to build and you're ready.
+Finalmente, establece la variable `CLIENT_LOCALE`  en tu archivo `.env`  en la configuración regional que quieres crear y estás listo.
 
 ## How to Structure Components
 
-If you are working on a feature or a bug for the client web app, say for example adding new UI items on the settings page, you should follow the guidelines below. They will help you prepare the components for localization into all the supported world languages.
+Si estás trabajando en una característica o en un error para el cliente de la app web, por ejemplo agregando unos nuevos elementos UI en la página de configuración, debes seguir las líneas de ayuda siguientes. Te ayudarán a preparar los componentes para localizarlo en todos los idiomas mundiales soportados.
 
-### Functional Component
+### Componente funcional
 
 ```js
 import { useTranslation } from 'react-i18next';
 
-// in the render method:
+// en el método de renderizado:
 const { t } = useTranslation();
 
-// call the "t" function with a key from the JSON file:
-<p>{t('key')}</p>; // more details below
+// llamar la función "t" con una clave del archivo JSON:
+<p>{t('key')}</p>; // más detalles abajo
 ```
 
-### Class Component
+### Componente de clase
 
 ```js
 import { withTranslation } from 'react-i18next';
 
-// withTranslation adds the "t" function to props:
+// withTranslation agregar la función "t" a props:
 const { t } = this.props;
 
-// call the "t" function with a key from the JSON file:
-<h1>{t('key')}</h1> // more details below
+// llamar la función "t" con una clave del archivo JSON:
+<h1>{t('key')}</h1> // más detalles abajo
 
-// export without redux:
+// exportar sin redux:
 export default withTranslation()(Component);
 
-// or with redux:
+// o con renderizado:
 export default connect(...)(withTranslation()(Component));
 ```
 
-## Translate Using the "t" Function
+## Traducir utilizando la función "t"
 
-### Basic Translation
+### Traducción básica
 
 ```js
-// in the component:
+// en el componente:
 <p>{t('p1')}</p>
 
-// in the JSON file:
+// en el archivo JSON:
 {
   "p1": "My paragraph"
 }
 
-// output:
+// salida:
 <p>My paragraph</p>
 ```
 
-### With Dynamic Data
+### Con datos dinámicos
 
 ```js
-// in the component:
+// en el componente:
 const username = 'moT';
 
 <p>{t('welcome', { username: username })}</p>
 
-// in the JSON file:
+// en el archivo JSON:
 {
   "welcome": "Welcome {{username}}"
 }
 
-// output:
+// salida:
 <p>Welcome moT</p>
 ```
 
-The above example passes an object to the `t` function with a `username` variable. The variable will be used in the JSON value where `{{username}}` is.
+Los ejemplos de arriba pasan un objeto a la función  `t` con una variable `username`. La variable deberá ser usada en el valor JSON donde está `{{username}}`.
 
-## Translate with the `Trans` Component
+## Traduce con el Componente `Trans`
 
-The general rule is to use the "t" function when you can. But there's a `Trans` component for when that isn't enough, usually when you have elements embedded in the text. You can use the `Trans` component with any type of react component.
+La regla general es usar la función "t" cuando puedas. Pero hay un componente `Trans` para cuando eso no sea suficiente, generalmente cuando tienes un elemento insertado dentro del texto. Puedes usar el componente `Trans` con cualquier tipo de componente de react.
 
-### Basic Elements Nested
+### Elementos básicos anidados
 
 ```js
 // in the component:
