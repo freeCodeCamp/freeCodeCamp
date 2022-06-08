@@ -98,7 +98,7 @@ const LowerJaw = ({
   });
 
   /*
-    Retun early in lifecycle based on the earliest available conditions to help the editor 
+    Retun early in lifecycle based on the earliest available conditions to help the editor
     calcuate the correct editor gap for the lower jaw.
 
     For consistency, use the persisted version if the conditions has been met before.
@@ -181,10 +181,10 @@ const LowerJaw = ({
   };
 
   const renderContexualActionRow = () => {
-    const isAtteptsLargerThanTest =
+    const isAttemptsLargerThanTest =
       attemptsNumber && testsLength && attemptsNumber >= testsLength;
 
-    if (isAtteptsLargerThanTest && !earliestAvailableCompletion)
+    if (isAttemptsLargerThanTest && !earliestAvailableCompletion)
       return (
         <div>
           <hr />
