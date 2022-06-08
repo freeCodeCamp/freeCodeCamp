@@ -39,6 +39,10 @@ export const superBlockMobileAppOrder = [
   { dashedName: 'relational-database', public: false }
 ];
 
+const dashedNames = superBlockMobileAppOrder.map(
+  ({ dashedName }) => dashedName
+);
+
 export function buildExtCurriculumData(
   ver: string,
   curriculum: Curriculum
@@ -55,21 +59,20 @@ export function buildExtCurriculumData(
   parseCurriculumData();
 
   function parseCurriculumData() {
-    const superBlockKeys = Object.values(SuperBlocks);
+    const superBlockKeys = Object.values(SuperBlocks).filter(x =>
+      dashedNames.includes(x)
+    );
 
     writeToFile('available-superblocks', {
       superblocks: [
         superBlockMobileAppOrder,
-        Object.values(SuperBlocks).map(superblock =>
-          getSuperBlockName(superblock)
-        )
+        superBlockKeys.map(superblock => getSuperBlockName(superblock))
       ]
     });
 
-    for (let i = 0; i < superBlockKeys.length; i++) {
+    for (const superBlockKey of superBlockKeys) {
       const superBlock = <Curriculum>{};
-      const superBlockKey = Object.values(SuperBlocks)[i];
-      const blockNames = Object.keys(curriculum[superBlockKeys[i]].blocks);
+      const blockNames = Object.keys(curriculum[superBlockKey].blocks);
 
       if (blockNames.length === 0) continue;
 
@@ -86,7 +89,7 @@ export function buildExtCurriculumData(
           curriculum[superBlockKey]['blocks'][blockNames[j]]['meta'];
       }
 
-      writeToFile(superBlockKeys[i], superBlock);
+      writeToFile(superBlockKey, superBlock);
     }
   }
 
