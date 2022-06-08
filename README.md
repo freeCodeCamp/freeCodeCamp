@@ -169,7 +169,7 @@ Officially supported communities
 
 - A [discord channel](https://discord.gg/KVUmVXA) where you can usually socialize with other people learning how to code.
 
-- A [reddit subreddit](https://www.reddit.com/r/FreeCodeCamp/) where you can make and read post related to topics like learning how to code and getting a job as a developer.
+- A [reddit subreddit](https://www.reddit.com/r/FreeCodeCamp/) where you can make and read post related to learning how to code and getting a job as a developer.
 
 ### Reporting Bugs and Issues
 
