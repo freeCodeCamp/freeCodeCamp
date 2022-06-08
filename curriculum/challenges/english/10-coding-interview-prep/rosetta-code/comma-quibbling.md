@@ -53,7 +53,7 @@ assert.equal(quibble(testCases[1]), results[1]);
 assert.equal(quibble(testCases[2]), results[2]);
 ```
 
-`quibble(["freeCodeCamp", "Curriculum", "Articles", "Volunteers"])` should return "{freeCodeCamp,Curriculum,Articles and Volunteers}".
+`quibble(["freeCodeCamp", "Curriculum", "Articles", "Volunteers"])` should return "{freeCodeCamp, Curriculum, Articles and Volunteers}".
 
 ```js
 assert.equal(quibble(testCases[3]), results[3]);
