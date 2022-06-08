@@ -7,8 +7,6 @@ import {
   validateProject,
   ensureObjectContainsAllProperties,
   hasProperties,
-  challengesCompleted,
-  projectCompleted,
   expectedProjectStructures
 } from '../boot/challenge';
 
@@ -322,16 +320,6 @@ describe('boot/challenge', () => {
         expect(hasProperties(exampleObj, field)).toBe(false);
         expect(hasProperties(exampleObj, field)).toBe(false);
       }
-    });
-  });
-  xdescribe('challengesCompleted', () => {
-    it('', () => {
-      challengesCompleted();
-    });
-  });
-  xdescribe('projectCompleted', () => {
-    it('', () => {
-      projectCompleted();
     });
   });
 
