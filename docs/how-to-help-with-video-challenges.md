@@ -21,7 +21,7 @@ videoId: 'YouTube videoId for video challenge'
 forumTopicId: 12345
 ---
 
-# --description--
+## --description--
 
 Challenge description text, in markdown
 
@@ -29,7 +29,7 @@ Challenge description text, in markdown
 <div>example code</div>
 ```
 
-# --question--
+## --question--
 
 These fields are currently used for the multiple-choice Python challenges.
 
@@ -96,7 +96,7 @@ You can add the question locally or using the GitHub interface. To add the quest
 If a question has not yet been added to a particular video challenge, it will have the following default question:
 
 ```md
-# --question--
+## --question--
 
 ## --text--
 
@@ -122,7 +122,7 @@ More answers
 Add/Update the question text under the part that shows:
 
 ```
-# --question--
+## --question--
 
 ## --text--
 ```
@@ -132,7 +132,7 @@ Add/Update answers (`Answer 1`, `Answer 2`, and so on) under `## --answers--`. M
 ### Question examples
 
 ````md
-# --question--
+## --question--
 
 ## --text--
 
@@ -162,7 +162,7 @@ hello world
 ````
 
 ````md
-# --question--
+## --question--
 
 ## --text--
 

@@ -19,7 +19,7 @@ Follow the instructions on the [official documentation](https://docs.microsoft.c
 
    > [!NOTE]
    >
-   > While you may use other non-debian based distros, they all come with their own gotchas and are beyond the scope of this guide.
+   > While you may use other non-debian based distros, they all come with their own gotchas and are beyond the scope of this guide. Note distros come with their own aesthetics and functionality, so find something that best suits your style and needs.
 
 2. Update the dependencies for the OS
 
