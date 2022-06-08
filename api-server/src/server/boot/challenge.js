@@ -387,8 +387,8 @@ export const expectedProjectStructures = {
     'id'
   ],
   [challengeTypes.zipline]: ['id', 'solution'],
-  [challengeTypes.backEndProject]: ['id', 'solution', 'githubLink'],
-  [challengeTypes.pythonProject]: ['id', 'solution', 'githubLink'],
+  [challengeTypes.backEndProject]: ['id', 'solution'],
+  [challengeTypes.pythonProject]: ['id', 'solution'],
   [challengeTypes.codeAllyCert]: ['id', 'solution']
 };
 
