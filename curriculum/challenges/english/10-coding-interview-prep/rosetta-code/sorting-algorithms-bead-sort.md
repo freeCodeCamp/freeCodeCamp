@@ -8,11 +8,9 @@ dashedName: sorting-algorithmsbead-sort
 
 # --description--
 
-A *bead sort* is also known as a *gravity sort*.
+To sort `array` using *bead sort*,
 
-Think of an abacus, with the biggest number in the <em>data</em> set as its row's number. For you to sort that <em>data</em>, you can tilt the abacus, move the beads, or use the butterfly movement, that's why it's called *gravity sort*. 
-
-This does sound practical for us, but for computing devices. The <em>data's</em> form needs to change to account for the sorting, most likely change from an <em>array</em> to <em>two-dimensional array</em>. After they have had sorted the <em>data<em>, they need to change the <em>data</em> back to its original form, which put extra unnecessary load on them.
+This does sound practical for us, but for computing devices. The data's form needs to change to account for the sorting, most likely change from an <em>array</em> to <em>two-dimensional array</em>. After they have had sorted the data, they need to change the data back to its original form, which put extra unnecessary load on them.
 
 **Note:** Each element in `arr` is unique.
 
