@@ -8,7 +8,7 @@ dashedName: comma-quibbling
 
 # --description--
 
-Comma quibbling is a task originally set by Eric Lippert in his [blog](https://blogs.msdn.com/b/ericlippert/archive/2009/04/15/comma-quibbling.aspx).
+Comma quibbling is a task originally set by Eric Lippert in his 2009 blog.
 
 # --instructions--
 
