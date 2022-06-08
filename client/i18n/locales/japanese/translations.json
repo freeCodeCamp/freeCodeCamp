@@ -51,6 +51,7 @@
     "run": "実行",
     "run-test": "テスト実行 (Ctrl + Enter)",
     "check-code": "Check Your Code (Ctrl + Enter)",
+    "check-code-2": "Check Your Code",
     "reset": "リセット",
     "reset-code": "全てのコードをリセット",
     "help": "ヘルプ",
