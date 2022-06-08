@@ -1,5 +1,7 @@
 import path from 'path';
 import fs from 'fs';
+
+import readdirp from 'readdirp';
 import { AssertionError } from 'chai';
 import envData from '../../../config/env.json';
 import { SuperBlocks } from '../../../config/certification-settings';
@@ -32,10 +34,10 @@ if (envData.clientLocale == 'english' && !envData.showUpcomingChanges) {
       expect(fs.existsSync(blockIntroPath)).toBe(true);
     });
 
-    test('the files generated should have the correct schema', () => {
-      const fileArray = fs.readdirSync(
-        `${mobileStaticPath}/curriculum-data/${VERSION}`
-      );
+    test('the files generated should have the correct schema', async () => {
+      const fileArray = (
+        await readdirp.promise(`${mobileStaticPath}/curriculum-data/${VERSION}`)
+      ).map(file => file.path);
 
       fileArray
         .filter(fileInArray => fileInArray !== 'available-superblocks.json')
