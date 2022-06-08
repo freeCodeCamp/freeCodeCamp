@@ -7,7 +7,8 @@ const locations = {
 };
 
 const superBlockNames = [
-  'Responsive Web Design Certification',
+  '(New) Responsive Web Design Certification',
+  'Legacy Responsive Web Design Certification',
   'JavaScript Algorithms and Data Structures Certification',
   'Front End Development Libraries Certification',
   'Data Visualization Certification',
@@ -18,7 +19,6 @@ const superBlockNames = [
   'Information Security Certification',
   'Machine Learning with Python Certification',
   'Coding Interview Prep (Thousands of hours of challenges)',
-  'Responsive Web Design (Beta) Certification',
   'Relational Database (Beta) Certification'
 ];
 

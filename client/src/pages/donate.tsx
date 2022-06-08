@@ -100,8 +100,8 @@ function DonatePage({
                 </Col>
               </Row>
               {isDonating ? (
-                <Alert closeLabel={t('buttons.close')}>
-                  <p>{t('donate.thank-you-2')}</p>
+                <Alert data-cy='donate-alert' closeLabel={t('buttons.close')}>
+                  <p data-cy='donate.thank-you'>{t('donate.thank-you-2')}</p>
                   <br />
                   <DonationOptionsAlertText />
                 </Alert>

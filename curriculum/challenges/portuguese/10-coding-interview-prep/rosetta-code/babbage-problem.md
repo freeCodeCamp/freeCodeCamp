@@ -8,7 +8,7 @@ dashedName: babbage-problem
 
 # --description--
 
-[Charles Babbage](https://en.wikipedia.org/wiki/Charles_Babbage "wp: Charles_Babbage"), olhando para os tipos de problemas que seu mecanismo analítico poderia resolver, deu este exemplo:
+Charles Babbage, olhando com antecedência para o tipo de problemas que sua Máquina Analítica poderia resolver, deu este exemplo:
 
 <blockquote>
   Qual é o menor inteiro positivo cujo quadrado termina nos dígitos 269.696?

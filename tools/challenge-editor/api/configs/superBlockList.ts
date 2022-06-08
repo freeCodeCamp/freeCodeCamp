@@ -1,6 +1,6 @@
 export const superBlockList = [
   {
-    name: 'Responsive Web Design',
+    name: 'Legacy Responsive Web Design',
     path: '01-responsive-web-design'
   },
   {
@@ -48,7 +48,11 @@ export const superBlockList = [
     path: '13-relational-databases'
   },
   {
-    name: 'Responsive Web Design (Beta)',
+    name: '(New) Responsive Web Design',
     path: '14-responsive-web-design-22'
+  },
+  {
+    name: 'JavaScript Algorithms and Data Structures (Beta)',
+    path: '15-javascript-algorithms-and-data-structures-22'
   }
 ];

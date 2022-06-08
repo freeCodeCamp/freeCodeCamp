@@ -10,6 +10,12 @@ bilibiliIds:
 dashedName: relational-databases-and-sqlite
 ---
 
+# --description--
+
+[Scarica SQLite](https://www.sqlite.org/download.html)  
+[Scarica DB Browser per SQLite](https://sqlitebrowser.org/dl/)  
+[Uso di SQLite](https://www.sqlite.org/famous.html)
+
 # --question--
 
 ## --text--

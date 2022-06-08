@@ -26,7 +26,7 @@
     "off": "Apagado",
     "on": "Encendido",
     "sign-in": "Iniciar sesión",
-    "sign-up-email-list": "Sign up for Quincy's weekly emails",
+    "sign-up-email-list": "Suscríbete a los correos electrónicos semanales de Quincy",
     "sign-out": "Cerrar sesión",
     "curriculum": "Currículo",
     "forum": "Foro",
@@ -50,6 +50,7 @@
     "reset-lesson": "Restablecer esta lección",
     "run": "Ejecutar",
     "run-test": "Ejecutar las Pruebas (Ctrl + Entrar)",
+    "check-code": "Comprueba tu código (Ctrl + Enter)",
     "reset": "Restablecer",
     "reset-code": "Restablecer todo el código",
     "help": "Ayuda",
@@ -58,7 +59,7 @@
     "resubscribe": "Puedes hacer clic aquí para volver a suscribirte",
     "click-here": "Haz clic aquí para iniciar sesión",
     "save": "Guardar",
-    "save-code": "Save your Code",
+    "save-code": "Guarda tu código",
     "no-thanks": "No, Gracias",
     "yes-please": "Sí, por favor",
     "update-email": "Actualizar mi correo electrónico",
@@ -68,8 +69,10 @@
     "ask-later": "Pregúntame luego",
     "start-coding": "¡Empieza a programar!",
     "go-to-settings": "Ve a la configuración para reclamar tu certificación",
-    "click-start-course": "Start the course",
-    "click-start-project": "Start the project"
+    "click-start-course": "Comienza el curso",
+    "click-start-project": "Comienza el proyecto",
+    "change-language": "Cambiar Idioma",
+    "cancel-change": "Cancelar Cambio"
   },
   "landing": {
     "big-heading-1": "Aprende a programar gratis.",
@@ -100,7 +103,7 @@
   },
   "settings": {
     "share-projects": "Comparte tus proyectos, artículos o pull request aceptados que no sean de FreeCodeCamp.",
-    "privacy": "Los ajustes de esta sección te permiten controlar lo que se muestra en tu portafolio público de freeCodeCamp.",
+    "privacy": "Los ajustes de esta sección te permiten controlar lo que se muestra en tu cartera pública de freeCodeCamp. Pulsa guardar para guardar tus cambios.",
     "data": "Para ver qué datos tenemos en tu cuenta, haz clic en el botón \"Descarga tus datos\" a continuación",
     "disabled": "Tus certificaciones se deshabilitarán si se configuran como privadas.",
     "private-name": "Tu nombre no aparecerá en tus certificaciones, si está establecido como privado.",
@@ -142,7 +145,8 @@
       "my-timeline": "Mi cronología",
       "my-donations": "Mis donaciones",
       "night-mode": "Modo nocturno",
-      "sound-mode": "Modo de fogata"
+      "sound-mode": "Modo de fogata",
+      "keyboard-shortcuts": "Enable Keyboard Shortcuts"
     },
     "headings": {
       "certs": "Certificaciones",
@@ -268,6 +272,7 @@
     "solution-link": "Enlace a la solución",
     "github-link": "Enlace de GitHub",
     "submit-and-go": "Enviar y pasar a mi siguiente desafío",
+    "congradulations": "Felicidades, tu código es correcto. Envía el código para completar este paso y continuar al siguiente.",
     "i-completed": "He completado este desafío",
     "test-output": "El resultado de tu prueba irá aquí",
     "running-tests": "// ejecutando pruebas",
@@ -294,6 +299,7 @@
       "restart": "Reiniciar",
       "restart-step": "Paso de reiniciar",
       "console": "Consola",
+      "instructions": "Instrucciones",
       "notes": "Notas",
       "preview": "Vista"
     },
@@ -305,7 +311,16 @@
     "step-2": "Paso 2: Envía tu código",
     "submit-public-url": "Cuando haya completado el proyecto, guarde todos los archivos requeridos en un repositorio público y envíe la URL a continuación.",
     "complete-both-steps": "Completa los dos pasos a continuación para terminar el desafío.",
-    "runs-in-vm": "El proyecto se ejecuta en una máquina virtual, completa las historias de usuario descritas en ella y consigue que todas las pruebas pasen hasta el paso 1."
+    "runs-in-vm": "El proyecto se ejecuta en una máquina virtual, completa las historias de usuario descritas en ella y consigue que todas las pruebas pasen hasta el paso 1.",
+    "completed": "Completado",
+    "not-started": "Sin iniciar",
+    "hint": "Sugerencia",
+    "test": "Prueba",
+    "sorry-try-again": "Lo sentimos, tu código no pasa. Inténtalo de nuevo.",
+    "sorry-keep-trying": "Lo sentimos, tu código no pasa. Continúa intentándolo.",
+    "sorry-getting-there": "Lo sentimos, tu código no pasa. Casi lo consigues.",
+    "sorry-hang-in-there": "Lo sentimos, su código no pasa. Aguanta ahí.",
+    "sorry-dont-giveup": "Lo sentimos, su código no pasa. No te rindas."
   },
   "donate": {
     "title": "Apoya a nuestra organización sin fines de lucro",
@@ -357,7 +372,7 @@
     "try-again": "Por favor, intenta de nuevo.",
     "card-number": "Tu número de tarjeta:",
     "expiration": "Fecha de vencimiento:",
-    "secure-donation": "Secure donation",
+    "secure-donation": "Donación segura",
     "faq": "Preguntas frecuentes",
     "only-you": "Solo tú puedes ver este mensaje. Felicitaciones por obtener esta certificación. No es una tarea fácil. Operar freeCodeCamp tampoco es fácil. Ni es barato. Ayúdanos a ayudarte a ti y a muchas otras personas en todo el mundo. Haz una donación de apoyo deducible de impuestos a nuestra organización sin fines de lucro hoy.",
     "get-help": "¿Cómo puedo obtener ayuda con mis donaciones?",
@@ -442,6 +457,7 @@
     "fail": "Prueba fallida",
     "not-passed": "Sin aprobar",
     "passed": "Aprobado",
+    "hint": "Sugerencia",
     "heart": "Corazón",
     "initial": "Inicial",
     "info": "Información de introducción",
@@ -461,7 +477,9 @@
     "next-page": "Ir a la página siguiente",
     "last-page": "Ir a la última página",
     "primary-nav": "primario",
-    "breadcrumb-nav": "migas de pan"
+    "breadcrumb-nav": "migas de pan",
+    "submit": "Utiliza Ctrl + Enter para enviar.",
+    "running-tests": "Ejecutando pruebas"
   },
   "flash": {
     "honest-first": "Para reclamar una certificación, primero debes aceptar nuestra política de honestidad académica.",
@@ -520,12 +538,12 @@
     "complete-project-first": "Primero debes completar el proyecto.",
     "local-code-save-error": "Vaya, tu código no se guardó, el almacenamiento local del navegador puede estar lleno.",
     "local-code-saved": "¡Guardado! Tu código ha sido guardado en el almacenamiento local de tu navegador.",
-    "code-saved": "Your code was saved to the database. It will be here when you return.",
-    "code-save-error": "An error occurred trying to save your code.",
-    "code-save-less": "Slow Down! Your code was not saved. Try again in a few seconds.",
-    "challenge-save-too-big": "Sorry, you cannot save your code. Your code is {{user-size}} bytes. We allow a maximum of {{max-size}} bytes. Please make your code smaller and try again or request assistance on https://forum.freecodecamp.org",
-    "challenge-submit-too-big": "Sorry, you cannot submit your code. Your code is {{user-size}} bytes. We allow a maximum of {{max-size}} bytes. Please make your code smaller and try again or request assistance on https://forum.freecodecamp.org",
-    "invalid-update-flag": "You are attempting to access forbidden resources. Please request assistance on https://forum.freecodecamp.org if this is a valid request."
+    "code-saved": "Tu código fue enviado a la base de datos. Estará aquí cuando regreses.",
+    "code-save-error": "Ocurrió un error al intentar guardar tu código.",
+    "code-save-less": "¡Espera! Tu código no fue guardado. Intenta de nuevo más tarde.",
+    "challenge-save-too-big": "Lo sentimos, no puedes guardar tu código. Tu código es de {{user-size}} bytes. Nosotros permitimos un máximo de {{max-size}} bytes. Por favor haz tu código más pequeño e intenta nuevamente o solicita asistencia en https://forum.freecodecamp.org",
+    "challenge-submit-too-big": "Lo sentimos, no puedes enviar tu código. Tu código es de {{user-size}} bytes. Nosotros permitimos un máximo de {{max-size}} bytes. Por favor haz tu código más pequeño e intenta nuevamente o solicita ayuda en https://forum.freecodecamp.org",
+    "invalid-update-flag": "Estás intentando acceder a recursos prohibidos. Por favor, solicita asistencia en https://forum.freecodecamp.org si es una solicitud válida."
   },
   "validation": {
     "max-characters": "Hay un límite máximo de 288 caracteres, te quedan {{charsLeft}}",
@@ -667,5 +685,16 @@
     "delete-p3": "Necesitará crear un nuevo token para guardar el progreso futuro en las secciones de currículum que utilizan una máquina virtual.",
     "no-thanks": "No gracias, me gustaría quedarme con mi token",
     "yes-please": "Si por favor, deseo borrar mi token"
+  },
+  "shortcuts": {
+    "title": "Keyboard shortcuts",
+    "table-header-action": "Action",
+    "table-header-key": "Key(s)",
+    "navigation-mode": "Navigation Mode",
+    "execute-challenge": "Execute Challenge",
+    "focus-editor": "Focus Editor",
+    "focus-instructions-panel": "Focus Instructions Panel",
+    "navigate-previous": "Navigate Previous Exercise",
+    "navigate-next": "Navigate Next Exercise"
   }
 }

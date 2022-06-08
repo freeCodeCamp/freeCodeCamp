@@ -11,7 +11,7 @@ dashedName: align-elements-using-the-justify-content-property
 
 Sometimes the flex items within a flex container do not fill all the space in the container. It is common to want to tell CSS how to align and space out the flex items a certain way. Fortunately, the `justify-content` property has several options to do this. But first, there is some important terminology to understand before reviewing those options.
 
-[Here is a useful image from W3C illustrating the concepts below for a 'row' flex container.](https://www.w3.org/TR/css-flexbox-1/images/flex-direction-terms.svg)
+[For more info about flex-box properties](https://www.freecodecamp.org/news/flexbox-the-ultimate-css-flex-cheatsheet/)
 
 Recall that setting a flex container as a row places the flex items side-by-side from left-to-right. A flex container set as a column places the flex items in a vertical stack from top-to-bottom. For each, the direction the flex items are arranged is called the **main axis**. For a row, this is a horizontal line that cuts through each item. And for a column, the main axis is a vertical line through the items.
 

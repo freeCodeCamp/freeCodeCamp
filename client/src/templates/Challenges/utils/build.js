@@ -1,8 +1,8 @@
 import frameRunnerData from '../../../../../config/client/frame-runner.json';
 import testEvaluatorData from '../../../../../config/client/test-evaluator.json';
 import { challengeTypes } from '../../../../utils/challenge-types';
-import { cssToHtml, jsToHtml, concatHtml } from '../rechallenge/builders.js';
-import { getTransformers } from '../rechallenge/transformers';
+import { concatHtml } from '../rechallenge/builders.js';
+import { getTransformers, embedFilesInHtml } from '../rechallenge/transformers';
 import {
   createTestFramer,
   runTestInTestFrame,
@@ -72,7 +72,7 @@ const buildFunctions = {
   [challengeTypes.backend]: buildBackendChallenge,
   [challengeTypes.backEndProject]: buildBackendChallenge,
   [challengeTypes.pythonProject]: buildBackendChallenge,
-  [challengeTypes.multiFileCertProject]: buildDOMChallenge
+  [challengeTypes.multifileCertProject]: buildDOMChallenge
 };
 
 export function canBuildChallenge(challengeData) {
@@ -94,7 +94,7 @@ const testRunners = {
   [challengeTypes.html]: getDOMTestRunner,
   [challengeTypes.backend]: getDOMTestRunner,
   [challengeTypes.pythonProject]: getDOMTestRunner,
-  [challengeTypes.multiFileCertProject]: getDOMTestRunner
+  [challengeTypes.multifileCertProject]: getDOMTestRunner
 };
 export function getTestRunner(buildData, runnerConfig, document) {
   const { challengeType } = buildData;
@@ -141,19 +141,19 @@ export function buildDOMChallenge(
   const loadEnzyme = challengeFiles.some(
     challengeFile => challengeFile.ext === 'jsx'
   );
-  const toHtml = [jsToHtml, cssToHtml];
-  const pipeLine = composeFunctions(...getTransformers(), ...toHtml);
+  const pipeLine = composeFunctions(...getTransformers());
   const finalFiles = challengeFiles.map(pipeLine);
   return Promise.all(finalFiles)
     .then(checkFilesErrors)
-    .then(challengeFiles => {
+    .then(embedFilesInHtml)
+    .then(([challengeFiles, contents]) => {
       return {
         challengeType:
-          challengeTypes.html || challengeTypes.multiFileCertProject,
+          challengeTypes.html || challengeTypes.multifileCertProject,
         build: concatHtml({
           required: finalRequires,
           template,
-          challengeFiles
+          contents
         }),
         sources: buildSourceMap(challengeFiles),
         loadEnzyme
@@ -195,7 +195,7 @@ export function buildBackendChallenge({ url }) {
 export function updatePreview(buildData, document, proxyLogger) {
   if (
     buildData.challengeType === challengeTypes.html ||
-    buildData.challengeType === challengeTypes.multiFileCertProject
+    buildData.challengeType === challengeTypes.multifileCertProject
   ) {
     createMainPreviewFramer(document, proxyLogger)(buildData);
   } else {
@@ -208,7 +208,7 @@ export function updatePreview(buildData, document, proxyLogger) {
 export function updateProjectPreview(buildData, document) {
   if (
     buildData.challengeType === challengeTypes.html ||
-    buildData.challengeType === challengeTypes.multiFileCertProject
+    buildData.challengeType === challengeTypes.multifileCertProject
   ) {
     // Give iframe a title attribute for accessibility using the preview
     // document's <title>.
@@ -230,7 +230,7 @@ export function challengeHasPreview({ challengeType }) {
   return (
     challengeType === challengeTypes.html ||
     challengeType === challengeTypes.modern ||
-    challengeType === challengeTypes.multiFileCertProject
+    challengeType === challengeTypes.multifileCertProject
   );
 }
 

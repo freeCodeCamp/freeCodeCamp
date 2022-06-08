@@ -2,7 +2,7 @@ name: Crowdin Curriculum Download
 on:
   workflow_dispatch:
   schedule:
-    # runs every day at 12:30 PM UTC
+    # runs every weekday at 12:30 PM UTC
     - cron: '30 12 * * 1-5'
 
 env:
@@ -18,7 +18,7 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@v3
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
         with:
           token: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
 

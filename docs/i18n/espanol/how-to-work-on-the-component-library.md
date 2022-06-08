@@ -50,38 +50,49 @@ Cada componente es diferente, pero en general un componente debería:
 - Estilo internamente basado en sus accesorios (los consumidores no deben necesitar reponer el componente con el accesorio `className`)
 - Utilizar el sistema de estilo incorporado desde Tailwind, en lugar de tener estilos personalizados
 
+### Using colors
+
+There are two color "layers" in the component library:
+
+- The base layer, where the color names describe what the colors are, e.g. `gray00`, `blue50`
+- The semantic layer, where the color names describe what the colors are for, e.g. `foreground-primary`, `background-danger`
+
+Generally when using colors in a component, you should choose semantic variables over the base ones. There are exceptions, however, specifically when you are styling the component's states such as hover, active, disabled, etc. In these cases, we recommend using the base variables directly instead of creating new semantic variables, since each component can have different styles for their states.
+
+> [!NOTE] Color definition can be found in the [`colors.css` file](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/tools/ui-components/src/colors.css). A color is only available for use if it is added to the [`tailwind.config.js` file](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/tools/ui-components/tailwind.config.js) under the `colors` property.
+
 ### Enlaces útiles
 
-- [Configuración de Tailwind CSS](https://tailwindcss.com/docs/configuration)
-- [Documentación de React Bootstrap v0.33](https://react-bootstrap-v3.netlify.app)
-- [Hoja de estilos de Bootstrap 3.3.7](https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css)
-- [Implementación actual de React Bootstrap](https://github.com/react-bootstrap/react-bootstrap/tree/master/src)
-- [Pruebas actuales de React Bootstrap](https://github.com/react-bootstrap/react-bootstrap/tree/master/test)
+- [Tailwind CSS Configuration](https://tailwindcss.com/docs/configuration)
+- [React Bootstrap v0.33 Docs](https://react-bootstrap-v3.netlify.app)
+- [Bootstrap 3.3.7 stylesheet](https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css)
+- [React Bootstrap current implementation](https://github.com/react-bootstrap/react-bootstrap/tree/master/src)
+- [React Bootstrap current tests](https://github.com/react-bootstrap/react-bootstrap/tree/master/test)
 
 ## Mostrar los casos de uso en el Storybook
 
-Los casos de uso del componente deben añadirse al archivo Storybook (`.stories.tsx`).
+Use cases of the component should be added to the Storybook file (`.stories.tsx`).
 
-Para iniciar Storybook, ejecute el siguiente comando desde el directorio raíz:
+To start Storybook, run the following command from the root directory:
 
 ```bash
 npm run storybook
 ```
 
-La página de Storybook está disponible en [http://localhost:6006](http://localhost:6006).
+The Storybook page is available on [http://localhost:6006](http://localhost:6006).
 
 ## Escribir pruebas unitarias
 
-Utilizamos [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) para escribir pruebas unitarias. Las pruebas deben asegurar que los componentes se comportan como se espera y son accesibles.
+We use [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) to write unit tests. The tests should assert that the components behave as expected and are accessible.
 
-Para ejecutar pruebas contra la biblioteca de componentes, ejecute el siguiente comando desde el directorio root:
+To run tests against the component library, run the following command from the root directory:
 
 ```bash
 npm run test-ui-components
 ```
 
-### Enlaces útiles
+### Useful links
 
-- [Pruebas de Accesibilidad](https://testing-library.com/docs/dom-testing-library/api-accessibility)
-- [Orden de prioridad de las consultas de React Testing Library](https://testing-library.com/docs/queries/about/#priority)
-- [Errores comunes con React Testing Library](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library)
+- [Testing for Accessibility](https://testing-library.com/docs/dom-testing-library/api-accessibility)
+- [Order of priority of React Testing Library's queries](https://testing-library.com/docs/queries/about/#priority)
+- [Common mistakes with React Testing Library](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library)
