@@ -19,7 +19,9 @@ const solvedArray= ["North Dakota", "South Carolina"];
 
 # --instructions--
 
-Write a function to solve the challenge for the given array of names of states. The function should return an array. Each element should be an object in this form: `{"from":[],"to":[]}`. The "from" array should contain the original names and the "to" array should contain the resultant names.
+Write a function to solve the challenge for a given array of actual U.S. state names, and for fictional state names.
+
+The function should return an array. Each element should be an object in this form: `{"from":[],"to":[]}`. The `"from"` array should contain the original names and the `"to"` array should contain the resultant names.
 
 # --hints--
 
