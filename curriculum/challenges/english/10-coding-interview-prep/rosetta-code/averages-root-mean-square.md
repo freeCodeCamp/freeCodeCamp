@@ -10,7 +10,7 @@ dashedName: averagesroot-mean-square
 
 Compute the Root mean square of the numbers 1 through 10 inclusive.
 
-The <abbr title="Root mean square">RMS</abbr> is calculated by taking the mean of the squares of the numbers, and then square-rooting that number:
+The <abbr title="Root mean square">RMS</abbr> is calculated by taking the square root of the mean of the squares of the numbers, given by the equation:
 
 $$x\_{\\mathrm{rms}} = \\sqrt {{{x_1}^2 + {x_2}^2 + \\cdots + {x_n}^2} \\over n}. $$
 
