@@ -15,7 +15,7 @@ describe('Challenge with multifile editor', () => {
     cy.get(selectors.monacoTabs).contains('styles.css');
   });
 
-  it.only('checks for correct text at different widths', () => {
+  it('checks for correct text at different widths', () => {
     cy.viewport(768, 660);
     cy.get(selectors.testButton).contains('Check Your Code (Ctrl + Enter)');
 
