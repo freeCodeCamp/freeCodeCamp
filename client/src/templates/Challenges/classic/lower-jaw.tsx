@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import Fail from '../../../assets/icons/fail';
 import LightBulb from '../../../assets/icons/lightbulb';
 import GreenPass from '../../../assets/icons/green-pass';
+import { randomCompliment } from '../../../../src/utils/get-words';
 import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 
 interface LowerJawProps {
@@ -33,6 +34,7 @@ const LowerJaw = ({
   openResetModal
 }: LowerJawProps): JSX.Element => {
   const [previousHint, setpreviousHint] = useState('');
+  const [quote, setQuote] = useState('');
   const [runningTests, setRunningTests] = useState(false);
   const [testFeedbackheight, setTestFeedbackheight] = useState(0);
   const [isFeedbackHidden, setIsFeedbackHidden] = useState(false);
@@ -42,7 +44,6 @@ const LowerJaw = ({
   const testFeedbackRef = React.createRef<HTMLDivElement>();
   const [challengeHasBeenCompleted, setChallengeHasBeenCompleted] =
     useState(false);
-
   useEffect(() => {
     if (attemptsNumber && attemptsNumber > 0) {
       //hide the feedback from SR untill the "Running tests" are displayed and removed.
@@ -74,6 +75,7 @@ const LowerJaw = ({
   useEffect(() => {
     if (challengeHasBeenCompleted && submitButtonRef?.current) {
       submitButtonRef.current.focus();
+      setQuote(randomCompliment());
       setTimeout(() => {
         setTestBtnariaHidden(true);
       }, 500);
@@ -131,6 +133,7 @@ const LowerJaw = ({
               {t('learn.congratulations')}
               {submitKeyboardInstructions}
             </p>
+            <p>{quote}</p>
           </div>
         </div>
       );
