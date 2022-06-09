@@ -5,7 +5,10 @@ import readdirp from 'readdirp';
 import { AssertionError } from 'chai';
 import envData from '../../../config/env.json';
 import { SuperBlocks } from '../../../config/certification-settings';
-import { mobileSchemaValidator } from './mobileSchema';
+import {
+  mobileSchemaValidator,
+  availableSuperBlocksValidator
+} from './mobileSchema';
 import { superBlockMobileAppOrder } from './build-external-curricula-data';
 
 if (envData.clientLocale == 'english' && !envData.showUpcomingChanges) {
@@ -35,15 +38,22 @@ if (envData.clientLocale == 'english' && !envData.showUpcomingChanges) {
     });
 
     test('the available-superblocks file should have the correct structure', async () => {
-      const availableSuperblocks = JSON.parse(
+      const availableSuperblocks: unknown = JSON.parse(
         await fs.promises.readFile(
           `${mobileStaticPath}/curriculum-data/${VERSION}/available-superblocks.json`,
           'utf-8'
         )
-      ) as { superblocks: unknown[][] };
-      const superblockOrder = availableSuperblocks.superblocks[0];
-      const superblockNames = availableSuperblocks.superblocks[1];
-      expect(superblockOrder.length).toBe(superblockNames.length);
+      );
+      const validateAvailableSuperBlocks = availableSuperBlocksValidator();
+      console.log(availableSuperblocks);
+      const result = validateAvailableSuperBlocks(availableSuperblocks);
+
+      if (result.error) {
+        throw new AssertionError(
+          result.error.toString(),
+          `file: available-superblocks.json`
+        );
+      }
     });
 
     test('the files generated should have the correct schema', async () => {

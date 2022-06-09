@@ -4,8 +4,6 @@ import { SuperBlocks } from '../../../config/certification-settings';
 
 type Intro = { [keyValue in SuperBlocks]: IntroProps };
 export type Curriculum = { [keyValue in SuperBlocks]: CurriculumProps };
-type SuperBlockKeys = keyof typeof SuperBlocks;
-type SuperBlockValues = typeof SuperBlocks[SuperBlockKeys];
 
 interface IntroProps extends CurriculumProps {
   title: string;
@@ -64,10 +62,10 @@ export function buildExtCurriculumData(
     );
 
     writeToFile('available-superblocks', {
-      superblocks: [
-        superBlockMobileAppOrder,
-        superBlockKeys.map(superblock => getSuperBlockName(superblock))
-      ]
+      superblocks: superBlockMobileAppOrder.map(x => ({
+        ...x,
+        title: getSuperBlockTitle(x.dashedName as SuperBlocks)
+      }))
     });
 
     for (const superBlockKey of superBlockKeys) {
@@ -100,7 +98,7 @@ export function buildExtCurriculumData(
   }
 
   function getBlockDescription(
-    superBlockKeys: SuperBlockValues,
+    superBlockKeys: SuperBlocks,
     blockKey: string
   ): string[] {
     const intros = JSON.parse(readFileSync(blockIntroPath, 'utf-8')) as Intro;
@@ -108,7 +106,7 @@ export function buildExtCurriculumData(
     return intros[superBlockKeys]['blocks'][blockKey]['intro'];
   }
 
-  function getSuperBlockName(superBlockKeys: SuperBlockValues): string {
+  function getSuperBlockTitle(superBlockKeys: SuperBlocks): string {
     const superBlocks = JSON.parse(
       readFileSync(blockIntroPath, 'utf-8')
     ) as Intro;
