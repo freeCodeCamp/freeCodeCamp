@@ -12,7 +12,7 @@ A *bead sort* starts by creating a matrix of zeroes whose length is equal to the
 
 Iterating over the matrix, summing the number of elements greater than zero, then decreasing the value of each element by one yields the sorted array.
 
-**Note:** Each element in array is unique.
+**Note:** Each element in the input array is unique.
 
 Sort an array of positive integers using the Bead Sort Algorithm.
 
