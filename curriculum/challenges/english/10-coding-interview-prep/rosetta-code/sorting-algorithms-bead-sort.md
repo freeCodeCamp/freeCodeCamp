@@ -96,7 +96,7 @@ function beadSort(arr) {
   for (let i = 0; i < grid.length; i++) {
     grid[i] = new Array(max);
   }
-  let levelcount = new Array(max);
+  const levelcount = new Array(max);
   levelcount.fill(0);
   for (let i = 0; i < max; i++) {
     levelcount[i] = 0;
@@ -109,7 +109,7 @@ function beadSort(arr) {
       num--;
     }
   }
-  let sorted = new Array(arr.length);
+  const sorted = new Array(arr.length);
   sorted.fill(0);
   for (let i = 0; i < arr.length; i++) {
     let putt = 0;
