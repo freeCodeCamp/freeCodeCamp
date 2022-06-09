@@ -38,7 +38,7 @@ age :  number
 favoriteFoods : array of strings (*)
 ```
 
-Use the Mongoose basic schema types. If you want you can also add more fields, use simple validators like required or unique, and set default values. See the [Mongoose docs](http://mongoosejs.com/docs/guide.html).
+Use the Mongoose basic schema types. If you want you can also add more fields, use simple validators like required or unique, and set default values. See the Mongoose docs.
 
 Now, create a model called `Person` from the `personSchema`.
 
