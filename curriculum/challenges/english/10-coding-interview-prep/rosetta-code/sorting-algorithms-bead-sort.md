@@ -8,11 +8,11 @@ dashedName: sorting-algorithmsbead-sort
 
 # --description--
 
-To sort `array` using *bead sort*,
+A bead sort starts by creating an array of zeroes whose length is equal to the value of the largest element in the input array.
 
-Considering `originalArray` elements are `[5, 2, 3, 10]`. When sorting them using *bead sort*, we search for the biggest element in the ` originalArray `, which is `10`, and put it in the start of the `beadSortArray`. 
+Next, by iterating over the array, it is transformed by adding one to all elements between the zeroth index and the index indicated by the current element.
 
-We repeat this action, a number of times equal to `orginialArray`'s length, to sort it. This will output our desired `const beadSortedArray = [2, 3, 5, 10]`.
+Iterating over the resultant array, summing the number of elements greater than zero, then decreasing the value of each element by one yields the sorted array.
 
 **Note:** Each element in `arr` is unique.
 
