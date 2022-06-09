@@ -8,11 +8,11 @@ dashedName: sorting-algorithmsbead-sort
 
 # --description--
 
-A *bead sort* starts by creating a grid of zeroes whose length is equal to the value of the largest element in the input array. The grid is transformed by adding one to all elements between the zeroth index and the index indicated by the current element. This process is repeated, until you have filled the grid.
+A *bead sort* starts by creating a matrix of zeroes whose length is equal to the value of the largest element in the input array. The matrix is transformed by adding one to all elements between the zeroth index and the index indicated by the current element. This process is repeated, until you have filled the matrix.
 
-Iterating over the grid, summing the number of elements greater than zero, then decreasing the value of each element by one yields the sorted array.
+Iterating over the matrix, summing the number of elements greater than zero, then decreasing the value of each element by one yields the sorted array.
 
-**Note:** Each element in `arr` is unique.
+**Note:** Each element in array is unique.
 
 Sort an array of positive integers using the Bead Sort Algorithm.
 
