@@ -98,7 +98,7 @@ const LowerJaw = ({
   });
 
   /*
-    Retun early in lifecycle based on the earliest available conditions to help the editor 
+    Retun early in lifecycle based on the earliest available conditions to help the editor
     calcuate the correct editor gap for the lower jaw.
 
     For consistency, use the persisted version if the conditions has been met before.
@@ -128,7 +128,7 @@ const LowerJaw = ({
           <div className='test-status-description'>
             <h2>{t('learn.test')}</h2>
             <p className='status'>
-              {t('learn.congradulations')}
+              {t('learn.congratulations')}
               {submitKeyboardInstructions}
             </p>
           </div>
