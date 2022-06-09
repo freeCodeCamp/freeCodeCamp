@@ -32,7 +32,8 @@ const availableSuperBlocksSchema = Joi.object({
     Joi.object({
       dashedName: Joi.string().required(),
       title: Joi.string().required(),
-      public: Joi.bool().required()
+      public: Joi.bool().required(),
+      hours: Joi.number()
     })
   )
 });
