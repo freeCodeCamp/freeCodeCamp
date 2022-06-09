@@ -1,6 +1,10 @@
 import { mkdirSync, writeFileSync, readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
-import { SuperBlocks } from '../../../config/certification-settings';
+import {
+  SuperBlocks,
+  completionHours,
+  superBlockCertTypeMap
+} from '../../../config/certification-settings';
 
 type Intro = { [keyValue in SuperBlocks]: IntroProps };
 export type Curriculum = { [keyValue in SuperBlocks]: CurriculumProps };
@@ -35,9 +39,16 @@ export const orderedSuperBlockInfo = [
   { dashedName: SuperBlocks.MachineLearningPy, public: false },
   { dashedName: SuperBlocks.CodingInterviewPrep, public: false },
   { dashedName: SuperBlocks.RelationalDb, public: false }
-];
+].map(info => ({ ...info, hours: dashedNameToHours(info.dashedName) }));
 
 const dashedNames = orderedSuperBlockInfo.map(({ dashedName }) => dashedName);
+
+function dashedNameToHours(dashedName: SuperBlocks): number {
+  const certType =
+    superBlockCertTypeMap[dashedName as keyof typeof superBlockCertTypeMap];
+
+  return completionHours[certType];
+}
 
 export function buildExtCurriculumData(
   ver: string,
