@@ -14,6 +14,7 @@ import './tool-panel.css';
 import { openModal, executeChallenge, challengeMetaSelector } from '../redux';
 
 import { saveChallenge, isSignedInSelector } from '../../../redux';
+import { getModifierKey } from '../../../utils/get-modifier-key';
 
 const mapStateToProps = createSelector(
   challengeMetaSelector,
@@ -67,6 +68,8 @@ function ToolPanel({
     executeChallenge({ showCompletionModal: true });
   };
   const { t } = useTranslation();
+  const modifierKey = getModifierKey();
+
   return (
     <div
       className={`tool-panel-group button-group ${
@@ -74,12 +77,12 @@ function ToolPanel({
       }`}
     >
       <Button
-        aria-label='Run the tests use shortcut Ctrl+enter'
+        aria-label={`Run the tests use shortcut ${modifierKey}+enter`}
         block={true}
         bsStyle='primary'
         onClick={handleRunTests}
       >
-        {isMobile ? t('buttons.run') : t('buttons.run-test')}
+        {isMobile ? t('buttons.run') : t('buttons.run-test', { modifierKey })}
       </Button>
       {isSignedIn && challengeType === challengeTypes.multifileCertProject && (
         <Button

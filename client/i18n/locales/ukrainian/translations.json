@@ -49,8 +49,8 @@
     "cancel": "Скасувати",
     "reset-lesson": "Скинути цей урок",
     "run": "Запустити",
-    "run-test": "Run the Tests (Ctrl + Enter)",
-    "check-code": "Check Your Code (Ctrl + Enter)",
+    "run-test": "Run the Tests ({{modifierKey}} + Enter)",
+    "check-code": "Check Your Code ({{modifierKey}} + Enter)",
     "check-code-2": "Check Your Code",
     "reset": "Скинути",
     "reset-code": "Скинути весь код",
@@ -479,7 +479,7 @@
     "last-page": "Перейти на останню сторінку",
     "primary-nav": "primary",
     "breadcrumb-nav": "breadcrumb",
-    "submit": "Use Ctrl + Enter to submit.",
+    "submit": "Use {{modifierKey}} + Enter to submit.",
     "running-tests": "Running tests"
   },
   "flash": {

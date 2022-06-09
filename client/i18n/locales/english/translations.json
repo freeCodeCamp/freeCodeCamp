@@ -49,8 +49,8 @@
     "cancel": "Cancel",
     "reset-lesson": "Reset this lesson",
     "run": "Run",
-    "run-test": "Run the Tests (Ctrl + Enter)",
-    "check-code": "Check Your Code (Ctrl + Enter)",
+    "run-test": "Run the Tests ({{modifierKey}} + Enter)",
+    "check-code": "Check Your Code ({{modifierKey}} + Enter)",
     "check-code-2": "Check Your Code",
     "reset": "Reset",
     "reset-code": "Reset All Code",
@@ -480,6 +480,7 @@
     "primary-nav": "primary",
     "breadcrumb-nav": "breadcrumb",
     "submit": "Use Ctrl + Enter to submit.",
+    "submit-mac": "Use {{modifierKey}} + Enter to submit.",
     "running-tests": "Running tests"
   },
   "flash": {

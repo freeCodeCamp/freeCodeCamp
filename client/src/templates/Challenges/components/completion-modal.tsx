@@ -18,6 +18,7 @@ import {
   allowBlockDonationRequests
 } from '../../../redux';
 import { AllChallengeNode, ChallengeFiles } from '../../../redux/prop-types';
+import { getModifierKey } from '../../../utils/get-modifier-key';
 
 import {
   closeModal,
@@ -178,7 +179,7 @@ export class CompletionModalInner extends Component<
   handleKeypress(e: React.KeyboardEvent): void {
     if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
       e.preventDefault();
-      // Since Hotkeys also listens to Ctrl + Enter we have to stop this event
+      // Since Hotkeys also listens to Ctrl + Enter / Cmd + Enter we have to stop this event
       // getting to it.
       e.stopPropagation();
       this.handleSubmit();
@@ -228,6 +229,8 @@ export class CompletionModalInner extends Component<
     // but it's only used to make a nice filename for downloading, so dasherize
     // is fine here.
     const dashedName = dasherize(title);
+    const modifierKey = getModifierKey();
+
     return (
       <Modal
         animation={false}
@@ -263,7 +266,7 @@ export class CompletionModalInner extends Component<
             onClick={() => this.handleSubmit()}
           >
             {isSignedIn ? t('buttons.submit-and-go') : t('buttons.go-to-next')}
-            <span className='hidden-xs'> (Ctrl + Enter)</span>
+            <span className='hidden-xs'> ({modifierKey} + Enter)</span>
           </Button>
           {this.state.downloadURL ? (
             <Button

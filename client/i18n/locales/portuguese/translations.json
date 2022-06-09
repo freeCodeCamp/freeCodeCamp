@@ -49,8 +49,8 @@
     "cancel": "Cancelar",
     "reset-lesson": "Reiniciar esta aula",
     "run": "Executar",
-    "run-test": "Execute os testes (Ctrl + Enter)",
-    "check-code": "Verifique seu código (Ctrl + Enter)",
+    "run-test": "Execute os testes ({{modifierKey}} + Enter)",
+    "check-code": "Verifique seu código ({{modifierKey}} + Enter)",
     "check-code-2": "Check Your Code",
     "reset": "Redefinir",
     "reset-code": "Redefinir todo o código",
@@ -479,7 +479,7 @@
     "last-page": "Ir para a última página",
     "primary-nav": "primário",
     "breadcrumb-nav": "breadcrumb",
-    "submit": "Use Ctrl + Enter para enviar.",
+    "submit": "Use {{modifierKey}} + Enter para enviar.",
     "running-tests": "Executando testes"
   },
   "flash": {

@@ -5,6 +5,7 @@ import Fail from '../../../assets/icons/fail';
 import LightBulb from '../../../assets/icons/lightbulb';
 import GreenPass from '../../../assets/icons/green-pass';
 import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
+import { getModifierKey } from '../../../utils/get-modifier-key';
 
 interface LowerJawProps {
   hint?: string;
@@ -107,6 +108,8 @@ const LowerJaw = ({
     challengeHasBeenCompleted || challengeIsCompleted;
   const earliestAvailableHint = hint || previousHint;
 
+  const modifierKey = getModifierKey();
+
   const renderTestFeedbackContainer = () => {
     if (attemptsNumber === 0) {
       return '';
@@ -114,7 +117,7 @@ const LowerJaw = ({
       return <span className='sr-only'>{t('aria.running-tests')}</span>;
     } else if (earliestAvailableCompletion) {
       const submitKeyboardInstructions = isEditorInFocus ? (
-        <span className='sr-only'>{t('aria.submit')}</span>
+        <span className='sr-only'>{t('aria.submit', { modifierKey })}</span>
       ) : (
         ''
       );
@@ -216,7 +219,7 @@ const LowerJaw = ({
           onClick={tryToExecuteChallenge}
         >
           {showDesktopButton
-            ? t('buttons.check-code')
+            ? t('buttons.check-code', { modifierKey })
             : t('buttons.check-code-2')}
         </button>
         <div id='action-buttons-container'>
