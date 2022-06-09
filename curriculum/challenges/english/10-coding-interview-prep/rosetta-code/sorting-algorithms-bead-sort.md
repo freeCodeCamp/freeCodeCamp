@@ -10,7 +10,9 @@ dashedName: sorting-algorithmsbead-sort
 
 To sort `array` using *bead sort*,
 
-This does sound practical for us, but for computing devices. The data's form needs to change to account for the sorting, most likely change from an <em>array</em> to <em>two-dimensional array</em>. After they have had sorted the data, they need to change the data back to its original form, which put extra unnecessary load on them.
+Considering `originalArray` elements are `[5, 2, 3, 10]`. When sorting them using *bead sort*, we search for the biggest element in the ` originalArray `, which is `10`, and put it in the start of the `beadSortArray`. 
+
+We repeat this action, a number of times equal to `orginialArray`'s length, to sort it. This will output our desired `const beadSortedArray = [2, 3, 5, 10]`.
 
 **Note:** Each element in `arr` is unique.
 
