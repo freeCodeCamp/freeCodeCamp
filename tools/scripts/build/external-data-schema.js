@@ -37,7 +37,8 @@ const availableSuperBlocksSchema = Joi.object({
   )
 });
 
-exports.mobileSchemaValidator = () => superblock => schema.validate(superblock);
+exports.superblockSchemaValidator = () => superblock =>
+  schema.validate(superblock);
 
 exports.availableSuperBlocksValidator = () => data =>
   availableSuperBlocksSchema.validate(data);

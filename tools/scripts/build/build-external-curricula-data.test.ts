@@ -6,46 +6,38 @@ import { AssertionError } from 'chai';
 import envData from '../../../config/env.json';
 import { SuperBlocks } from '../../../config/certification-settings';
 import {
-  mobileSchemaValidator,
+  superblockSchemaValidator,
   availableSuperBlocksValidator
-} from './mobileSchema';
-import { superBlockMobileAppOrder } from './build-external-curricula-data';
+} from './external-data-schema';
+import { orderedSuperBlockInfo } from './build-external-curricula-data';
 
 if (envData.clientLocale == 'english' && !envData.showUpcomingChanges) {
   const VERSION = 'v1';
 
-  describe('mobile curriculum build', () => {
-    const mobileStaticPath = path.resolve(__dirname, '../../../client/static');
-    const blockIntroPath = path.resolve(
-      __dirname,
-      '../../../client/i18n/locales/english/intro.json'
-    );
+  describe('external curriculum data build', () => {
+    const clientStaticPath = path.resolve(__dirname, '../../../client/static');
 
-    const validateMobileSuperBlock = mobileSchemaValidator();
+    const validateSuperBlock = superblockSchemaValidator();
 
-    test('the mobile curriculum should have a static folder with multiple files', () => {
+    test("the external curriculum data should be in the client's static directory", () => {
       expect(
-        fs.existsSync(`${mobileStaticPath}/curriculum-data/${VERSION}`)
+        fs.existsSync(`${clientStaticPath}/curriculum-data/${VERSION}`)
       ).toBe(true);
 
       expect(
-        fs.readdirSync(`${mobileStaticPath}/curriculum-data/${VERSION}`).length
+        fs.readdirSync(`${clientStaticPath}/curriculum-data/${VERSION}`).length
       ).toBeGreaterThan(0);
     });
 
-    test('the mobile curriculum should have access to the intro.json file', () => {
-      expect(fs.existsSync(blockIntroPath)).toBe(true);
-    });
-
     test('the available-superblocks file should have the correct structure', async () => {
+      const validateAvailableSuperBlocks = availableSuperBlocksValidator();
       const availableSuperblocks: unknown = JSON.parse(
         await fs.promises.readFile(
-          `${mobileStaticPath}/curriculum-data/${VERSION}/available-superblocks.json`,
+          `${clientStaticPath}/curriculum-data/${VERSION}/available-superblocks.json`,
           'utf-8'
         )
       );
-      const validateAvailableSuperBlocks = availableSuperBlocksValidator();
-      console.log(availableSuperblocks);
+
       const result = validateAvailableSuperBlocks(availableSuperblocks);
 
       if (result.error) {
@@ -58,18 +50,18 @@ if (envData.clientLocale == 'english' && !envData.showUpcomingChanges) {
 
     test('the files generated should have the correct schema', async () => {
       const fileArray = (
-        await readdirp.promise(`${mobileStaticPath}/curriculum-data/${VERSION}`)
+        await readdirp.promise(`${clientStaticPath}/curriculum-data/${VERSION}`)
       ).map(file => file.path);
 
       fileArray
         .filter(fileInArray => fileInArray !== 'available-superblocks.json')
         .forEach(fileInArray => {
           const fileContent = fs.readFileSync(
-            `${mobileStaticPath}/curriculum-data/${VERSION}/${fileInArray}`,
+            `${clientStaticPath}/curriculum-data/${VERSION}/${fileInArray}`,
             'utf-8'
           );
 
-          const result = validateMobileSuperBlock(JSON.parse(fileContent));
+          const result = validateSuperBlock(JSON.parse(fileContent));
 
           if (result.error) {
             throw new AssertionError(
@@ -80,8 +72,8 @@ if (envData.clientLocale == 'english' && !envData.showUpcomingChanges) {
         });
     });
 
-    test('All SuperBlocks should be present in the mobile SuperBlock object', () => {
-      const dashedNames = superBlockMobileAppOrder.map(
+    test('All public SuperBlocks should be present in the SuperBlock object', () => {
+      const dashedNames = orderedSuperBlockInfo.map(
         ({ dashedName }) => dashedName
       );
       // TODO: this is a hack, we should have a single source of truth for the
@@ -93,13 +85,13 @@ if (envData.clientLocale == 'english' && !envData.showUpcomingChanges) {
       expect(dashedNames).toEqual(
         expect.arrayContaining(publicSuperBlockNames)
       );
-      expect(Object.keys(superBlockMobileAppOrder)).toHaveLength(
+      expect(Object.keys(orderedSuperBlockInfo)).toHaveLength(
         publicSuperBlockNames.length
       );
     });
   });
 } else {
-  describe.skip('Mobile curriculum is not localized', () => {
+  describe.skip('External curriculum data is localized', () => {
     test.todo('localized tests');
   });
 }

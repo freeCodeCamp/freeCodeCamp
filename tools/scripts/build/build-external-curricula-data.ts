@@ -21,7 +21,7 @@ interface Block {
   meta: Record<string, unknown>;
 }
 
-export const superBlockMobileAppOrder = [
+export const orderedSuperBlockInfo = [
   { dashedName: '2022/responsive-web-design', public: false },
   { dashedName: 'responsive-web-design', public: true },
   { dashedName: 'javascript-algorithms-and-data-structures', public: true },
@@ -37,9 +37,7 @@ export const superBlockMobileAppOrder = [
   { dashedName: 'relational-database', public: false }
 ];
 
-const dashedNames = superBlockMobileAppOrder.map(
-  ({ dashedName }) => dashedName
-);
+const dashedNames = orderedSuperBlockInfo.map(({ dashedName }) => dashedName);
 
 export function buildExtCurriculumData(
   ver: string,
@@ -62,7 +60,7 @@ export function buildExtCurriculumData(
     );
 
     writeToFile('available-superblocks', {
-      superblocks: superBlockMobileAppOrder.map(x => ({
+      superblocks: orderedSuperBlockInfo.map(x => ({
         ...x,
         title: getSuperBlockTitle(x.dashedName as SuperBlocks)
       }))
