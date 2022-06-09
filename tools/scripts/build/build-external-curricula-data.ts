@@ -22,19 +22,19 @@ interface Block {
 }
 
 export const orderedSuperBlockInfo = [
-  { dashedName: '2022/responsive-web-design', public: false },
-  { dashedName: 'responsive-web-design', public: true },
-  { dashedName: 'javascript-algorithms-and-data-structures', public: true },
-  { dashedName: 'front-end-development-libraries', public: false },
-  { dashedName: 'data-visualization', public: false },
-  { dashedName: 'back-end-development-and-apis', public: false },
-  { dashedName: 'quality-assurance', public: false },
-  { dashedName: 'scientific-computing-with-python', public: false },
-  { dashedName: 'data-analysis-with-python', public: false },
-  { dashedName: 'information-security', public: false },
-  { dashedName: 'machine-learning-with-python', public: false },
-  { dashedName: 'coding-interview-prep', public: false },
-  { dashedName: 'relational-database', public: false }
+  { dashedName: SuperBlocks.RespWebDesignNew, public: false },
+  { dashedName: SuperBlocks.RespWebDesign, public: true },
+  { dashedName: SuperBlocks.JsAlgoDataStruct, public: true },
+  { dashedName: SuperBlocks.FrontEndDevLibs, public: false },
+  { dashedName: SuperBlocks.DataVis, public: false },
+  { dashedName: SuperBlocks.BackEndDevApis, public: false },
+  { dashedName: SuperBlocks.QualityAssurance, public: false },
+  { dashedName: SuperBlocks.SciCompPy, public: false },
+  { dashedName: SuperBlocks.DataAnalysisPy, public: false },
+  { dashedName: SuperBlocks.InfoSec, public: false },
+  { dashedName: SuperBlocks.MachineLearningPy, public: false },
+  { dashedName: SuperBlocks.CodingInterviewPrep, public: false },
+  { dashedName: SuperBlocks.RelationalDb, public: false }
 ];
 
 const dashedNames = orderedSuperBlockInfo.map(({ dashedName }) => dashedName);
@@ -62,7 +62,7 @@ export function buildExtCurriculumData(
     writeToFile('available-superblocks', {
       superblocks: orderedSuperBlockInfo.map(x => ({
         ...x,
-        title: getSuperBlockTitle(x.dashedName as SuperBlocks)
+        title: getSuperBlockTitle(x.dashedName)
       }))
     });
 
@@ -104,11 +104,11 @@ export function buildExtCurriculumData(
     return intros[superBlockKeys]['blocks'][blockKey]['intro'];
   }
 
-  function getSuperBlockTitle(superBlockKeys: SuperBlocks): string {
+  function getSuperBlockTitle(superBlock: SuperBlocks): string {
     const superBlocks = JSON.parse(
       readFileSync(blockIntroPath, 'utf-8')
     ) as Intro;
 
-    return superBlocks[superBlockKeys].title;
+    return superBlocks[superBlock].title;
   }
 }
