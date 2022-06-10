@@ -8,9 +8,9 @@ dashedName: towers-of-hanoi
 
 # --description--
 
-Solve the Towers of Hanoi problem. You have the number of objects as the first parameters, and strings used to identify each of the stacks of objects. create a nested array containing the list of moves, source -> destination.
+Solve the Towers of Hanoi problem. The number of objects will be given as the first parameter, and followed by the strings used to identify each of the stacks of objects. Create a nested array containing the list of moves, `["source", "destination"]`.
  
-For example, objects with these parameters `(4, 'A', 'B', 'C')`, will have a nested array `[['A', 'C'], ['B', 'A']]` indicating that the 1st move was to move an object from stack `A` to `C`, and the 2nd move was to move an object from stack `B` to `A`.
+For example, the parameters `(4, 'A', 'B', 'C')`, will result in nested array of moves `[['A', 'C'], ['B', 'A']]`, indicating that the 1st move was to move an object from stack `A` to `C` and the 2nd move was to move an object from stack `B` to `A`.
 
 # --instructions--
 
