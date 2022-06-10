@@ -1,17 +1,15 @@
 ---
-id: 62a255dae245b52317da824a
-title: Step 15
+id: 62a3bb9aeefe4b3fc43c6d7b
+title: Step 29
 challengeType: 0
-dashedName: step-15
+dashedName: step-29
 ---
 
 # --description--
 
-One of the most powerful tools is your developer console. Depending on your browser, this might be opened by pressing `F12` or `Ctrl+Shift+I`. You can also click the "Console" button above the preview window to see our built-in console.
+`button1` is a variable that is not going to be reassigned. If you are not going to assign a new value to a variable, it is best practice to use the `const` keyword to declare it instead of the `let` keyword. This will tell JavaScript to throw an error if you accidentally reassign it.
 
-Add a `console.log("Hello World");` line between your `script` tags, and you should see the text `Hello World` in your console.
-
-Note how the line ends with a semi-colon. It is common practice in JavaScript to end your code lines with semi-colons.
+Change your `button1` variable to be declared with the `const` keyword.
 
 # --hints--
 
@@ -32,11 +30,7 @@ Test 1
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./styles.css">
     <title>RPG - Dragon Repeller</title>
---fcc-editable-region--
-    <script>
-
-    </script>
---fcc-editable-region--
+    <script src="./script.js"></script>
 </head>
 <body>
     <div id="game">
@@ -95,4 +89,17 @@ body {
 .stat {
     padding-right: 10px;
 }
+```
+
+```js
+let xp = 0;
+let health = 100;
+let currentWeapon = 0;
+let fighting;
+let monsterHealth;
+let inventory = ["stick"];
+
+--fcc-editable-region--
+let button1 = document.querySelector("#button1");
+--fcc-editable-region--
 ```
