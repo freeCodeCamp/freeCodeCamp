@@ -8,7 +8,7 @@ dashedName: fibonacci-word
 
 # --description--
 
-The Fibonacci Word may be created in a manner analogous to the Fibonacci Sequence [as described here](https://hal.archives-ouvertes.fr/docs/00/36/79/72/PDF/The_Fibonacci_word_fractal.pdf):
+The Fibonacci Word may be created in a manner analogous to the Fibonacci Sequence, but it focus on iterating concatenation, with terms different each time.
 
 <pre>Define  F_Word<sub>1</sub>  as  <strong>1</strong>
 Define  F_Word<sub>2</sub>  as  <strong>0</strong>
@@ -18,7 +18,7 @@ Form   F_Word<sub>n</sub>  as  F_Word<sub>n-1</sub>  concatenated with  F_word<s
 
 # --instructions--
 
-Write a function to return the Fibonacci Words up to `n`. `n` will be provided as a parameter to the function. The function should return an array of objects. The objects should be of the form: `{ N: 1, Length: 1, Entropy: 0, Word: '1' }`. `Entropy` is computed for the string `Word` [as described here](https://en.wikipedia.org/wiki/Entropy_%28information_theory%29) and rounded to 8 decimal digits of accuracy.
+Write a function to return the Fibonacci Words up to `n`. `n` will be provided as a parameter to the function. The function should return an array of objects. The objects should be of the form: `{ N: 1, Length: 1, Entropy: 0, Word: '1' }`. `Entropy` is computed for the string `Word` and rounded to 8 decimal digits of accuracy.
 
 # --hints--
 
