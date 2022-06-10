@@ -31,7 +31,7 @@ passport.use(new GitHubStrategy({
 
 Your authentication won't be successful yet, and it will actually throw an error without the database logic and callback, but it should log your GitHub profile to your console if you try it!
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/ff3a1166684c1b184709ac0bee30dee6).
+Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://gist.github.com/camperbot/ff3a1166684c1b184709ac0bee30dee6" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
