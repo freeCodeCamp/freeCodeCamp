@@ -49,8 +49,8 @@
     "cancel": "キャンセル",
     "reset-lesson": "レッスンをリセット",
     "run": "実行",
-    "run-test": "テスト実行 ({{modifierKey}} + Enter)",
-    "check-code": "Check Your Code ({{modifierKey}} + Enter)",
+    "run-test": "テスト実行 (Ctrl + Enter)",
+    "check-code": "Check Your Code (Ctrl + Enter)",
     "check-code-2": "Check Your Code",
     "reset": "リセット",
     "reset-code": "全てのコードをリセット",
@@ -479,7 +479,7 @@
     "last-page": "最後のページへ移動",
     "primary-nav": "プライマリー",
     "breadcrumb-nav": "パンくずリスト",
-    "submit": "Use {{modifierKey}} + Enter to submit.",
+    "submit": "Use Ctrl + Enter to submit.",
     "running-tests": "Running tests"
   },
   "flash": {

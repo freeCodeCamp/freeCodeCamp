@@ -49,8 +49,8 @@
     "cancel": "取消",
     "reset-lesson": "重置課程",
     "run": "運行",
-    "run-test": "運行測試（{{modifierKey}} + Enter）",
-    "check-code": "Check Your Code ({{modifierKey}} + Enter)",
+    "run-test": "運行測試（Ctrl + Enter）",
+    "check-code": "Check Your Code (Ctrl + Enter)",
     "check-code-2": "Check Your Code",
     "reset": "重置",
     "reset-code": "重置所有代碼",
@@ -479,7 +479,7 @@
     "last-page": "訪問最後一頁",
     "primary-nav": "主要的",
     "breadcrumb-nav": "麪包屑導航",
-    "submit": "Use {{modifierKey}} + Enter to submit.",
+    "submit": "Use Ctrl + Enter to submit.",
     "running-tests": "Running tests"
   },
   "flash": {
