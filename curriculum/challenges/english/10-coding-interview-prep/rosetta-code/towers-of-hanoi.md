@@ -8,13 +8,11 @@ dashedName: towers-of-hanoi
 
 # --description--
 
-Solve the Towers of Hanoi problem.
+Solve the Towers of Hanoi problem. You have the number of objects as the first parameters, and strings used to identify each of the stacks of objects, for example `towerOfHanoi(4, 'A', 'B', 'C')`. create a nested array containing the list of moves, source -> destination. For example, the array `[['A', 'C'], ['B', 'A']]` indicates that the 1st move was to move a object from stack `A` to `C`, and the 2nd move was to move a object from stack `B` to `A`.
 
-Your solution should accept the number of discs as the first parameters, and three string used to identify each of the three stacks of discs, for example `towerOfHanoi(4, 'A', 'B', 'C')`. The function should return an array of arrays containing the list of moves, source -> destination.
+# --instructions--
 
-For example, the array `[['A', 'C'], ['B', 'A']]` indicates that the 1st move was to move a disc from stack A to C, and the 2nd move was to move a disc from stack B to A.
-
-<p></p>
+Write a function that return the number of moves needed for the objects to stack.
 
 # --hints--
 
