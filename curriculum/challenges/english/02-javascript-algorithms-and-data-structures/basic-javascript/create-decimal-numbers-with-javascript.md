@@ -11,7 +11,7 @@ dashedName: create-decimal-numbers-with-javascript
 
 We can store decimal numbers in variables too. Decimal numbers are sometimes referred to as <dfn>floating point</dfn> numbers or <dfn>floats</dfn>.
 
-**Note:** when you compute numbers, they are cumputed with finite precision. Operations using floating points may lead to different results than the desired ones. if you are getting one of these results, open topic in the [freeCodeCamp forum](https://forum.freecodecamp.org/).
+**Note:** when you compute numbers, they are computed with finite precision. Operations using floating points may lead to different results than the desired outcome. If you are getting one of these results, open a topic on the [freeCodeCamp forum](https://forum.freecodecamp.org/).
 
 # --instructions--
 
