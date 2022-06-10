@@ -2,7 +2,11 @@ import { graphql, useStaticQuery } from 'gatsby';
 import i18next from 'i18next';
 import React from 'react';
 
-import { SuperBlocks } from '../../../../config/certification-settings';
+import {
+  SuperBlocks,
+  completionHours,
+  superBlockCertTypeMap
+} from '../../../../config/certification-settings';
 import envData from '../../../../config/env.json';
 import { isAuditedCert } from '../../../../utils/is-audited';
 import { generateIconComponent } from '../../assets/icons';
@@ -31,7 +35,10 @@ function createSuperBlockTitle(superBlock: SuperBlocks) {
     ? i18next.t('learn.cert-map-estimates.coding-prep', {
         title: superBlockTitle
       })
-    : i18next.t('learn.cert-map-estimates.certs', { title: superBlockTitle });
+    : i18next.t('learn.cert-map-estimates.certs', {
+        title: superBlockTitle,
+        hours: completionHours[superBlockCertTypeMap[superBlock]]
+      });
 }
 
 const linkSpacingStyle = {
