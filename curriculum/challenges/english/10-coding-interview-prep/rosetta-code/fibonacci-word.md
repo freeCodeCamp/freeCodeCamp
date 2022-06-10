@@ -13,12 +13,12 @@ The Fibonacci Word may be created in a manner analogous to the Fibonacci Sequenc
 <pre>Define  F_Word<sub>1</sub>  as  <strong>1</strong>
 Define  F_Word<sub>2</sub>  as  <strong>0</strong>
 Form   F_Word<sub>3</sub>  as  F_Word<sub>2</sub>   concatenated with  F_Word<sub>1</sub>   i.e.:  <strong>01</strong>
-Form   F_Word<sub>n</sub>  as  F_Word<sub>n-1</sub>  concatenated with  F_word<sub>n-2</sub>
+Form   F_Word<sub>term</sub>  as  F_Word<sub>term-1</sub>  concatenated with  F_word<sub>term-2</sub>
 </pre>
 
 # --instructions--
 
-Write a function to return the Fibonacci Words up to `n`. `n` will be provided as a parameter to the function. The function should return an array of objects. The objects should be of the form: `{ N: 1, Length: 1, Entropy: 0, Word: '1' }`. `Entropy` is computed for the string `Word` and rounded to 8 decimal digits of accuracy.
+Write a function to return the Fibonacci Words up to `terms`. `terms` will be provided as a parameter to the function. The function should return an array of objects. The objects should be of the form: `{ term: 1, Length: 1, Entropy: 0, Word: '1' }`. `Entropy` is computed for the string `Word` and rounded to 8 decimal digits of accuracy.
 
 # --hints--
 
@@ -34,13 +34,13 @@ assert(typeof fibWord === 'function');
 assert(Array.isArray(fibWord(5)));
 ```
 
-`fibWord(5)` should return `[{ N:1, Length:1, Entropy:0, Word:"1" },{ N:2, Length:1, Entropy:0, Word:"0" },{ N:3, Length:2, Entropy:1, Word:"01" },{ N:4, Length:3, Entropy:0.91829583, Word:"010" },{ N:5, Length:5, Entropy:0.97095059, Word:"01001" }]`.
+`fibWord(5)` should return `[{ term:1, Length:1, Entropy:0, Word:"1" },{ term:2, Length:1, Entropy:0, Word:"0" },{ term:3, Length:2, Entropy:1, Word:"01" },{ term:4, Length:3, Entropy:0.91829583, Word:"010" },{ term:5, Length:5, Entropy:0.97095059, Word:"01001" }]`.
 
 ```js
 assert.deepEqual(fibWord(5), words5);
 ```
 
-`fibWord(7)` should return `[{ N:1, Length:1, Entropy:0, Word:"1" },{ N:2, Length:1, Entropy:0, Word:"0" },{ N:3, Length:2, Entropy:1, Word:"01" },{ N:4, Length:3, Entropy:0.91829583, Word:"010" },{ N:5, Length:5, Entropy:0.97095059, Word:"01001" }, { N:6, Length:8, Entropy:0.954434, Word:'01001010' }, { N:7, Length:13, Entropy:0.9612366, Word:'0100101001001' }]`.
+`fibWord(7)` should return `[{ term:1, Length:1, Entropy:0, Word:"1" },{ term:2, Length:1, Entropy:0, Word:"0" },{ term:3, Length:2, Entropy:1, Word:"01" },{ term:4, Length:3, Entropy:0.91829583, Word:"010" },{ term:5, Length:5, Entropy:0.97095059, Word:"01001" }, { term:6, Length:8, Entropy:0.954434, Word:'01001010' }, { term:7, Length:13, Entropy:0.9612366, Word:'0100101001001' }]`.
 
 ```js
 assert.deepEqual(fibWord(7), words7);
@@ -52,28 +52,28 @@ assert.deepEqual(fibWord(7), words7);
 
 ```js
 const words5 = [
-  { N: 1, Length: 1, Entropy: 0, Word: '1' },
-  { N: 2, Length: 1, Entropy: 0, Word: '0' },
-  { N: 3, Length: 2, Entropy: 1, Word: '01' },
-  { N: 4, Length: 3, Entropy: 0.91829583, Word: '010' },
-  { N: 5, Length: 5, Entropy: 0.97095059, Word: '01001' }
+  { term: 1, Length: 1, Entropy: 0, Word: '1' },
+  { term: 2, Length: 1, Entropy: 0, Word: '0' },
+  { term: 3, Length: 2, Entropy: 1, Word: '01' },
+  { term: 4, Length: 3, Entropy: 0.91829583, Word: '010' },
+  { term: 5, Length: 5, Entropy: 0.97095059, Word: '01001' }
 ];
 
 const words7 = [
-  { N: 1, Length: 1, Entropy: 0, Word: '1' },
-  { N: 2, Length: 1, Entropy: 0, Word: '0' },
-  { N: 3, Length: 2, Entropy: 1, Word: '01' },
-  { N: 4, Length: 3, Entropy: 0.91829583, Word: '010' },
-  { N: 5, Length: 5, Entropy: 0.97095059, Word: '01001' },
-  { N: 6, Length: 8, Entropy: 0.954434, Word: '01001010' },
-  { N: 7, Length: 13, Entropy: 0.9612366, Word: '0100101001001' }
+  { term: 1, Length: 1, Entropy: 0, Word: '1' },
+  { term: 2, Length: 1, Entropy: 0, Word: '0' },
+  { term: 3, Length: 2, Entropy: 1, Word: '01' },
+  { term: 4, Length: 3, Entropy: 0.91829583, Word: '010' },
+  { term: 5, Length: 5, Entropy: 0.97095059, Word: '01001' },
+  { term: 6, Length: 8, Entropy: 0.954434, Word: '01001010' },
+  { term: 7, Length: 13, Entropy: 0.9612366, Word: '0100101001001' }
 ];
 ```
 
 ## --seed-contents--
 
 ```js
-function fibWord(n) {
+function fibWord(terms) {
 
 }
 ```
@@ -98,14 +98,14 @@ function entropy(word) {
 }
 
 // Compute array of Fibonacci words
-function fibWord(n) {
-  return [...Array(n).keys()]
+function fibWord(terms) {
+  return [...Array(terms).keys()]
     .reduce((words, i) => {
       const word = i === 0 ? "1"
                  : i === 1 ? "0"
                  : words[i - 1].Word + words[i - 2].Word;
       words.push(
-        { N: i + 1, Length: word.length, Entropy: entropy(word), Word: word }
+        { term: i + 1, Length: word.length, Entropy: entropy(word), Word: word }
       );
       return words;
     }, []);
