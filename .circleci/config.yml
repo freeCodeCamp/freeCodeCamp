@@ -3,6 +3,7 @@ version: 2.1
 defaults: &defaults
   docker:
     - image: node:16.14
+  resource_class: xlarge
 
 deploy_defaults: &deploy_defaults
   docker:
