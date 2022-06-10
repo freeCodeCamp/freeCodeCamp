@@ -8,7 +8,7 @@ dashedName: zig-zag-matrix
 
 # --description--
 
-Uma matriz 'zig-zag' é um arranjo quadrado dos primeiros $N^2$ inteiros, onde os números crescem sequencialmente à medida que você percorre em zigue-zague ao longo das [antidiagonais](https://en.wiktionary.org/wiki/antidiagonal) da matriz.
+Uma matriz 'zig-zag' é um arranjo quadrado dos primeiros $N^2$ inteiros, onde os números crescem sequencialmente à medida que você percorre em zigue-zague ao longo das antidiagonais da matriz.
 
 Por exemplo, para a entrada `5`, o seguinte resultado deve ser produzido:
 
