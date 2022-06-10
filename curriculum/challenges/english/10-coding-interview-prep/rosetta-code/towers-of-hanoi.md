@@ -10,11 +10,11 @@ dashedName: towers-of-hanoi
 
 Solve the Towers of Hanoi problem. You have the number of objects as the first parameters, and strings used to identify each of the stacks of objects. create a nested array containing the list of moves, source -> destination.
  
-For example, object with these parameters `(4, 'A', 'B', 'C')`, will have a nested array `[['A', 'C'], ['B', 'A']]` indicating that the 1st move was to move a object from stack `A` to `C`, and the 2nd move was to move a object from stack `B` to `A`.
+For example, objects with these parameters `(4, 'A', 'B', 'C')`, will have a nested array `[['A', 'C'], ['B', 'A']]` indicating that the 1st move was to move an object from stack `A` to `C`, and the 2nd move was to move an object from stack `B` to `A`.
 
 # --instructions--
 
-Write a function that return the moves to stack the objects in a nested array.
+Write a function that returns the moves to stack the objects in a nested array.
 
 # --hints--
 
