@@ -129,9 +129,32 @@ CLIENT_LOCALE="dothraki"
 CURRICULUM_LOCALE="dothraki"
 ```
 
+### Releasing a Superblock
+
+After a superblock has been fully translated into a language, there are two steps to release it. First add the superblock enum to that language's `auditedCerts` array. So, if you want to release the new Responsive Web Design superblock for Dothraki, the array should look like this:
+
+```ts
+export const auditedCerts = {
+  // other languages
+  dothraki: [
+    SuperBlocks.RespWebDesignNew, // the newly translated superblock
+    SuperBlocks.RespWebDesign,
+    SuperBlocks.JsAlgoDataStruct,
+    SuperBlocks.FrontEndDevLibs
+  ]
+```
+
+Finally, the `languagesWithAuditedBetaReleases` array should be updated to include the new language like this:
+
+```ts
+export const languagesWithAuditedBetaReleases: ['english', 'dothraki'];
+```
+
+This will move the new superblock to the correct place in the curriculum map on `/learn`.
+
 ## Habilitar Videos Localizados
 
-Para los desafíos de vídeo, tienes que cambiar algunas cosas. Primero agregue la nueva configuración regional a la consulta GraphQL en el archivo `client/src/templates/Challenges/video/Show.tsx`. Por ejemplo, agregando Dothraki a la consulta:
+For the video challenges, you need to change a few things. First add the new locale to the GraphQL query in the `client/src/templates/Challenges/video/Show.tsx` file. For example, adding Dothraki to the query:
 
 ```tsx
   query VideoChallenge($slug: String!) {
@@ -146,7 +169,7 @@ Para los desafíos de vídeo, tienes que cambiar algunas cosas. Primero agregue 
       ...
 ```
 
-Luego, agregue una identificación para el nuevo idioma a cualquier desafío de video en un bloque auditado. Por ejemplo, si `auditedCerts` en `all-langs.ts` incluye `scientific-computing-with-python` para `dothraki`, luego debe agregar una entrada `dothraki` en `videoLocaleIds`. La portada debería verse así:
+Then add an id for the new language to any video challenge in an audited block. For example, if `auditedCerts` in `all-langs.ts` includes `scientific-computing-with-python` for `dothraki`, then you must add a `dothraki` entry in `videoLocaleIds`. The frontmatter should then look like this:
 
 ```yml
 videoLocaleIds:
@@ -158,7 +181,7 @@ dashedName: introduction-why-program
 ---
 ```
 
-Actualice la interfaz `VideoLocaleIds` en `client/src/redux/prop-types` para incluir el nuevo idioma.
+Update the `VideoLocaleIds` interface in `client/src/redux/prop-types` to include the new language.
 
 ```ts
 export interface VideoLocaleIds {
@@ -169,7 +192,7 @@ export interface VideoLocaleIds {
 }
 ```
 
-Y finalmente actualice el esquema de desafío en `curriculum/schema/challengeSchema.js`.
+And finally update the challenge schema in `curriculum/schema/challengeSchema.js`.
 
 ```js
 videoLocaleIds: Joi.when('challengeType', {
@@ -185,10 +208,10 @@ videoLocaleIds: Joi.when('challengeType', {
 
 ## Cargando traducciones
 
-Como el lenguaje no ha sido aprovado para producción, nuestros scripts aún no descargan las traducciones de manera automática. Sólo el personal tiene acceso a la descarga directa de traducciones. Eres bienvenido a comunicarte con nosotros en nuestra [sala de chat para contribuidores](https://chat.freecodecamp.org/channel/contributors), o puedes traducir los archivos markdown localmente con razones de testeo.
+Because the language has not been approved for production, our scripts are not automatically downloading the translations yet. Only staff have the access to directly download the translations - you are welcome to reach out to us in our [contributors chat room](https://chat.freecodecamp.org/channel/contributors), or you can translate the English markdown files locally for testing purposes.
 
-Una vez que poseas los archivos, necesitarás colocarlos en el directorio correcto. Para los retos del plan de estudios, debe colocar las carpetas de certificación (por ejemplo, `01-responsive-web-design`) dentro del directorio `curriculum/challenges/{lang}`. En el caso de nuestras traducciones al dothraki, sería `curriculum/challenges/dothraki`. Los archivos `.json` del cliente deberán colocarse en el directorio `client/i18n/locales/{lang}`.
+Once you have the files, you will need to place them in the correct directory. For the curriculum challenges, you should place the certification folders (i.e. `01-responsive-web-design`) within the `curriculum/challenges/{lang}` directory. For our Dothraki translations, this would be `curriculum/challenges/dothraki`. The client translation `.json` files will go in the `client/i18n/locales/{lang}` directory.
 
-Una vez que estos esten en su lugar, deberías ser capaz de correr `npm run develop` para ver tu versión traducida de freeCodeCamp.
+Once these are in place, you should be able to run `npm run develop` to view your translated version of freeCodeCamp.
 
 > [!ATTENTION] Si bien puedes realizar traducciones localmente con motivos de prueba, le recordamos a todos que las traducciones _no_ deben ser enviadas a través de GitHub, estas deben ser enviadas únicamente a traves de Crowdin. Asegúrate de reestablecer tu base de código local despues de que hayas finalizado con las pruebas.
