@@ -8,7 +8,7 @@ dashedName: towers-of-hanoi
 
 # --description--
 
-Solve the [Towers of Hanoi](https://en.wikipedia.org/wiki/Towers_of_Hanoi "wp: Towers_of_Hanoi") problem.
+Solve the Towers of Hanoi problem.
 
 Your solution should accept the number of discs as the first parameters, and three string used to identify each of the three stacks of discs, for example `towerOfHanoi(4, 'A', 'B', 'C')`. The function should return an array of arrays containing the list of moves, source -> destination.
 
