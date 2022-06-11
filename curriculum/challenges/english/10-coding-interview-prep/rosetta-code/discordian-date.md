@@ -12,9 +12,11 @@ The Gregorian calendar is a solar calendar with 12 months of 28–31 days each. 
 
 The Discordian calendar is aligned with the Gregorian calendar and begins on January 1. Its week consists of five days, there are 73 weeks per year. Every fourth year in the Discordian calendar, an extra day is inserted between Chaos 59 and Chaos 60
 
-Note that in the Discordian calendar Chaos 1, 3188 YOLD is January 1, 2022, in the Gregorian calendar.
+# --instructions--
 
 Convert a given date from the Gregorian calendar to the Discordian calendar.
+
+**Note** that in the Discordian calendar (Chaos 1, 3188 YOLD) is (January 1, 2022), in the Gregorian calendar.
 
 # --hints--
 
