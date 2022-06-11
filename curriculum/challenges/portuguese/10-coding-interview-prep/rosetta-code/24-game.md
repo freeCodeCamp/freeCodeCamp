@@ -8,7 +8,7 @@ dashedName: 24-game
 
 # --description--
 
-O [Jogo dos 24](https://en.wikipedia.org/wiki/24_Game) testa a aritmética mental das pessoas.
+O jogo do 24 testa a aritmética mental de uma pessoa.
 
 O objetivo do jogo é organizar quatro números de maneira que, quando avaliados, o resultado seja 24
 
