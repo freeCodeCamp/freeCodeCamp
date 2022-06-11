@@ -8,17 +8,17 @@ dashedName: fibonacci-word
 
 # --description--
 
-The Fibonacci Word may be created in a manner analogous to the Fibonacci Sequence, but it focus on iterating concatenation, with terms different each time.
+The Fibonacci Word may be created in a manner analogous to the Fibonacci Sequence, but it focus on iterating concatenation, with terms different `n` each time.
 
 <pre>Define  F_Word<sub>1</sub>  as  <strong>1</strong>
 Define  F_Word<sub>2</sub>  as  <strong>0</strong>
 Form   F_Word<sub>3</sub>  as  F_Word<sub>2</sub>   concatenated with  F_Word<sub>1</sub>   i.e.:  <strong>01</strong>
-Form   F_Word<sub>term</sub>  as  F_Word<sub>term-1</sub>  concatenated with  F_word<sub>term-2</sub>
+Form   F_Word<sub>n</sub>  as  F_Word<sub>n-1</sub>  concatenated with  F_word<sub>term-2</sub>
 </pre>
 
 # --instructions--
 
-Write a function to return the Fibonacci Words up to `terms`. `terms` will be provided as a parameter to the function. The function should return an array of objects. The objects should be of the form: `{ term: 1, Length: 1, Entropy: 0, Word: '1' }`. `Entropy` is computed for the string `Word` and rounded to 8 decimal digits of accuracy.
+Write a function to return the Fibonacci Words up to `terms`. `terms` will be provided as a parameter `n` to the function. The function should return an array of objects. The objects should be of the form: `{ term: 1, Length: 1, Entropy: 0, Word: '1' }`. `Entropy` is computed for the string `Word` and rounded to 8 decimal digits of accuracy.
 
 # --hints--
 
