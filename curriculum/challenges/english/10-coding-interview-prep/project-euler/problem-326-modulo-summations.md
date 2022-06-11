@@ -8,7 +8,7 @@ dashedName: problem-326-modulo-summations
 
 # --description--
 
-Let an be a sequence recursively defined by: $a_1 = 1$, $\displaystyle a_n = \left(\sum_{k = 1}^{n - 1} k \times a_k\right)\bmod n$.
+Let $a_n$ be a sequence recursively defined by: $a_1 = 1$, $\displaystyle a_n = \left(\sum_{k = 1}^{n - 1} k \times a_k\right)\bmod n$.
 
 So the first 10 elements of $a_n$ are: 1, 1, 0, 3, 0, 3, 5, 4, 1, 9.
 
