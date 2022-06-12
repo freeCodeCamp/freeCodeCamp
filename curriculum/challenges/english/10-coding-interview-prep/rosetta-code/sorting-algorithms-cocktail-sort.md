@@ -8,7 +8,9 @@ dashedName: sorting-algorithmscocktail-sort
 
 # --description--
 
-The cocktail shaker sort is an improvement on the Bubble Sort. The improvement is basically that values "bubble" both directions through the array, because on each iteration the cocktail shaker sort bubble sorts once forwards and once backwards.
+The [cocktail shaker](https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort) sort is an improvement on the Bubble Sort. While the data is an `array` of numbers, cocktail sorting them run from both sides from the array. The **firstSide** starts at `arr[0]` and the **secondSide** starts `arr[arr.length - 1]`.
+
+Cocktail sorting checks if the element `arr[0]` of the **firstSide** is bigger than the one following it, then it swaps their positions, a similar process happens to the **secondSide** it's checking whether the element `arr[arr.length - 1]` is smaller than the one behind it, then swaps their positions. This process is iterated until you get your cocktail sorted array.
 
 # --instructions--
 
