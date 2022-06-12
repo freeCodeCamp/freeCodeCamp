@@ -51,6 +51,7 @@
     "run": "Executar",
     "run-test": "Execute os testes (Ctrl + Enter)",
     "check-code": "Verifique seu código (Ctrl + Enter)",
+    "check-code-2": "Verifique seu código",
     "reset": "Redefinir",
     "reset-code": "Redefinir todo o código",
     "help": "Ajuda",
@@ -146,7 +147,7 @@
       "my-donations": "Minhas doações",
       "night-mode": "Modo noturno",
       "sound-mode": "Modo fogueira",
-      "keyboard-shortcuts": "Enable Keyboard Shortcuts"
+      "keyboard-shortcuts": "Habilitar teclas de atalho"
     },
     "headings": {
       "certs": "Certificações",
@@ -272,7 +273,7 @@
     "solution-link": "Link da solução",
     "github-link": "Link do GitHub",
     "submit-and-go": "Enviar e ir para o meu próximo desafio",
-    "congradulations": "Parabéns, o seu código passa. Envie seu código para completar este passo e seguir para o próximo.",
+    "congratulations": "Congratulations, your code passes. Submit your code to complete this step and move on to the next one.",
     "i-completed": "Já completei este desafio",
     "test-output": "O resultado do seu código vai aparecer aqui",
     "running-tests": "// executando testes",
@@ -687,14 +688,14 @@
     "yes-please": "Sim, eu gostaria de excluir meu token"
   },
   "shortcuts": {
-    "title": "Keyboard shortcuts",
-    "table-header-action": "Action",
-    "table-header-key": "Key(s)",
-    "navigation-mode": "Navigation Mode",
-    "execute-challenge": "Execute Challenge",
-    "focus-editor": "Focus Editor",
-    "focus-instructions-panel": "Focus Instructions Panel",
-    "navigate-previous": "Navigate Previous Exercise",
-    "navigate-next": "Navigate Next Exercise"
+    "title": "Atalhos do teclado",
+    "table-header-action": "Ação",
+    "table-header-key": "Tecla(s)",
+    "navigation-mode": "Modo de navegação",
+    "execute-challenge": "Executar desafio",
+    "focus-editor": "Foco no editor",
+    "focus-instructions-panel": "Foco no painel de instruções",
+    "navigate-previous": "Navegar para o exercício anterior",
+    "navigate-next": "Navegar para o próximo exercício"
   }
 }

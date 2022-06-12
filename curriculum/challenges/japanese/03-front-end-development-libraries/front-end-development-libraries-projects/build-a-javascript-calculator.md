@@ -8,9 +8,9 @@ dashedName: build-a-javascript-calculator
 
 # --description--
 
-**目標:** <https://codepen.io/freeCodeCamp/full/wgGVVX> と同様の機能を持つ [CodePen.io](https://codepen.io) アプリを作成します。
+**目標:** こちらに示したものと同様の機能を持つアプリを構築してください: <https://codepen.io/freeCodeCamp/full/wgGVVX>
 
-以下の[ユーザーストーリー](https://en.wikipedia.org/wiki/User_story)を達成して、すべてのテストに合格してください。 アプリにはあなた独自のスタイルを設定してください。
+下記のユーザーストーリーを満たして、すべてのテストに合格してください。 必要に応じて、どのようなライブラリあるいは API を使用してもかまいません。 あなた独自のスタイルを加えましょう。
 
 このプロジェクトを完了するために、HTML、JavaScript、CSS、Bootstrap、SASS、React、Redux、および jQuery を自在に組み合わせて利用することができます。 このセクションはフロントエンドフレームワークの学習を目的としていますので、React などのフロントエンドフレームワークを使用してください。 上記以外の他のテクノロジーは推奨されません。使用する場合は自己責任で行ってください。 Angular や Vue などの他のフロントエンドフレームワークのサポートを検討していますが、現時点ではサポートされていません。 このプロジェクトで推奨される一連のテクノロジーを使用している場合の不具合報告については、freeCodeCamp にて報告を受け入れ、修正するよう努めます。 コーディングの成功を祈ります！
 
