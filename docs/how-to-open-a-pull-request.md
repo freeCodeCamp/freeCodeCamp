@@ -43,13 +43,13 @@ Some examples of good PR titles would be:
 
 ## Proposing a Pull Request
 
-1. Once the edits have been committed, you will be prompted to create a pull request on your fork's GitHub Page.
+1. Once the edits have been committed, you will be prompted to create a pull request on your fork's GitHub Page. Notice that you will have to make sure there is no linting error locally before you commit your changes. You will also have to make sure there is no merge conflicts before you merge in your changes to the main branch. 
 
    ![Image - Compare & pull request prompt on GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
 
 2. By default, all pull requests should be against the freeCodeCamp main repo, `main` branch.
 
-   Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.
+   Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request (Unless you are working with a feature that shouldn't go into the production yet, then your Base Fork should be set to the feature branch).
 
    ![Image - Comparing forks when making a pull request](https://contribute.freecodecamp.org/images/github/comparing-forks-for-pull-request.png)
 
