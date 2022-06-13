@@ -1,3 +1,4 @@
+name: CI - Create CodeSee Maps
 on:
   workflow_dispatch:
   schedule:
@@ -7,8 +8,6 @@ on:
     paths-ignore:
       - 'docs/**'
     types: [opened, synchronize, reopened]
-
-name: CodeSee Map
 
 jobs:
   test_map_action:

@@ -1,4 +1,4 @@
-name: Crowdin Client UI Download
+name: Crowdin - Download Client UI
 on:
   workflow_dispatch:
   schedule:
