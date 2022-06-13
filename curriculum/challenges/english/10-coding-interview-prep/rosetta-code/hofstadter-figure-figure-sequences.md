@@ -8,11 +8,7 @@ dashedName: hofstadter-figure-figure-sequences
 
 # --description--
 
-These two sequences of positive integers are defined as:
-
-$R(1)=1\\ ;\\ S(1)=2 \\\\R(n)=R(n-1)+S(n-1), \\quad n>1.$
-
-The sequence $S(n)$ is further defined as the sequence of positive integers not present in $R(n)$.
+You are given two sequences as `nested array`, these two sequences $R$ and $S$ start like this.
 
 Sequence $R$ starts:
 
@@ -22,22 +18,22 @@ Sequence $S$ starts:
 
 <pre>2, 4, 5, 6, 8, ...</pre>
 
+These two sequences of a positive integers are defined as:
+
+$R(1)=1\\ ;\\ S(1)=2 \\\\R(n)=R(n-1)+S(n-1), \\quad n>1.$
+
+**Note** $S(n)$ is a sequence of positive integers, that is <em>unqiue</em> from $R(n)$ positive integers
+
 # --instructions--
 
-Create two functions named `ffr` and `ffs` that when given `n` return `R(n)` or `S(n)` respectively. (Note that R(1) = 1 and S(1) = 2 to avoid off-by-one errors).
+Create two functions named `ffr` and `ffs` that when given `n` return `R(n)` or `S(n)` respectively. (Note that $R(1) = 1$ and $S(1) = 2$ to avoid off-by-one errors).
 
 No maximum value for `n` should be assumed.
 
 **References**
 
-<ul>
-  <li>
-    Sloane's <a href='https://oeis.org/A005228' target='_blank'>A005228</a> and <a href='https://oeis.org/A030124' target='_blank'>A030124</a>.
-  </li>
-  <li>
-    Wikipedia: <a href='https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Figure-Figure_sequences' title='wp: Hofstadter_sequence#Hofstadter_Figure-Figure_sequences' target='_blank'>Hofstadter Figure-Figure sequences</a>.
-  </li>
-</ul>
+ <p>Wikipedia: <a href='https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Figure-Figure_sequences' title='wp: Hofstadter_sequence#Hofstadter_Figure-Figure_sequences' target='_blank'>Hofstadter Figure-Figure sequences</a></p>.
+
 
 # --hints--
 
