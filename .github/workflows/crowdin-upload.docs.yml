@@ -1,4 +1,4 @@
-name: Crowdin Docs Upload
+name: Crowdin - Upload Docs
 on:
   workflow_dispatch:
   schedule:

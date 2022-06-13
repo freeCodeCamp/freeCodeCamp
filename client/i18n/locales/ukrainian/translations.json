@@ -273,7 +273,7 @@
     "solution-link": "Посилання на рішення",
     "github-link": "Посилання на GitHub",
     "submit-and-go": "Відправити та перейти до мого наступного завдання",
-    "congradulations": "Congratulations, your code passes. Submit your code to complete this step and move on to the next one.",
+    "congratulations": "Congratulations, your code passes. Submit your code to complete this step and move on to the next one.",
     "i-completed": "Я виконав це завдання",
     "test-output": "Результат вашого тесту буде доступний тут",
     "running-tests": "// запуск тестів",

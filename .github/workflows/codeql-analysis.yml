@@ -1,5 +1,4 @@
-name: 'CodeQL'
-
+name: CI - Run CodeQL Analysis
 on:
   push:
     branches: [main]

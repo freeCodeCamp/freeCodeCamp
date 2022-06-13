@@ -25,7 +25,7 @@ FAV_PET = "Dogs";
 
 # --instructions--
 
-コードを変更して、すべての変数を `let` または `const` を使用して宣言してください。 変更を必要とする変数には `let` を使用し、定数にする必要がある変数には `const` を使用してください。 また、`const` で宣言した変数の名前について、一般的な慣習に従うように変更してください。
+コードを変更して、すべての変数を `let` または `const` を使用して宣言してください。 変更を必要とする変数には `let` を使用し、定数にする必要がある変数には `const` を使用してください。 また、`const` で宣言した変数の名前について、一般的な慣習に従うように変更してください。 変数に代入する文字列は変更しないようにしてください。
 
 # --hints--
 
@@ -45,8 +45,13 @@ assert.notMatch(code, /(fCC)/);
 `FCC` は `const` で宣言された定数変数である必要があります。
 
 ```js
-assert.equal(FCC, 'freeCodeCamp');
 assert.match(code, /const\s+FCC/);
+```
+
+`FCC` に代入する文字列を変更しないようにしてください。
+
+```js
+assert.equal(FCC, 'freeCodeCamp');
 ```
 
 `fact` は `let` を使用して宣言する必要があります。
@@ -55,7 +60,7 @@ assert.match(code, /const\s+FCC/);
 assert.match(code, /(let\s+fact)/g);
 ```
 
-`console.log` を、`FCC` と `fact` 変数が出力されるように変更する必要があります。
+`console.log` を、`FCC` と `fact` という変数を出力するように変更する必要があります。
 
 ```js
 assert.match(code, /console\.log\(\s*FCC\s*\,\s*fact\s*\)\s*;?/g);

@@ -1,4 +1,4 @@
-name: Crowdin Client UI Upload
+name: Crowdin - Upload Client UI
 on:
   workflow_dispatch:
   schedule:

@@ -273,7 +273,7 @@
     "solution-link": "Link alla soluzione",
     "github-link": "Link GitHub",
     "submit-and-go": "Invia e vai alla prossima sfida",
-    "congradulations": "Congratulations, your code passes. Submit your code to complete this step and move on to the next one.",
+    "congratulations": "Congratulations, your code passes. Submit your code to complete this step and move on to the next one.",
     "i-completed": "Ho completato questa sfida",
     "test-output": "Il risultato del tuo test andrà qui",
     "running-tests": "// test in corso",
