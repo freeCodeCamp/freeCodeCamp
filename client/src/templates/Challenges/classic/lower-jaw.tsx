@@ -211,19 +211,28 @@ const LowerJaw = ({
   const renderButtons = () => {
     return (
       <>
-        <button
-          id='test-button'
-          className={`btn-block btn ${
-            earliestAvailableCompletion ? 'sr-only' : ''
-          }`}
-          aria-hidden={testBtnariaHidden}
-          onClick={tryToExecuteChallenge}
-        >
-          {showDesktopButton
-            ? t('buttons.check-code')
-            : t('buttons.check-code-2')}
-        </button>
         <div id='action-buttons-container'>
+          {isSignedIn ? null : earliestAvailableCompletion ? (
+            <Button
+              block={true}
+              href={`${apiLocation}/signin`}
+              className='btn-cta'
+            >
+              {t('learn.sign-in-save')}
+            </Button>
+          ) : null}
+          {earliestAvailableCompletion ? null : (
+            <button
+              id='test-button'
+              className={`btn-block btn`}
+              aria-hidden={testBtnariaHidden}
+              onClick={tryToExecuteChallenge}
+            >
+              {showDesktopButton
+                ? t('buttons.check-code')
+                : t('buttons.check-code-2')}
+            </button>
+          )}
           <button
             id='submit-button'
             aria-hidden={!earliestAvailableCompletion}
@@ -240,11 +249,6 @@ const LowerJaw = ({
 
   return (
     <div className='action-row-container'>
-      {isSignedIn ? null : (
-        <Button block={true} bsStyle='primary' href={`${apiLocation}/signin`}>
-          {t('learn.sign-in-save')}
-        </Button>
-      )}
       {renderButtons()}
       <div
         style={runningTests ? { height: `${testFeedbackheight}px` } : {}}
