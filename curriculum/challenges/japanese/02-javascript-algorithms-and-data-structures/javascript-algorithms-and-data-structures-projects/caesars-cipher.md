@@ -10,9 +10,9 @@ dashedName: caesars-cipher
 
 最もシンプルで広く知られている<dfn>暗号</dfn>の 1 つが<dfn>シーザー暗号</dfn>で、<dfn>シフト暗号</dfn>とも呼ばれています。 シフト暗号では、文字の意味が一定量ずつシフトされます。
 
-現代では、文字を 13 文字ずつシフトさせる [ROT13](https://en.wikipedia.org/wiki/ROT13) 暗号がよく使用されます。 たとえば、`A ↔ N`、`B ↔ O` のようになります。
+現代では、文字を 13 文字ずつシフトさせる [ROT13](https://www.freecodecamp.org/news/how-to-code-the-caesar-cipher-an-introduction-to-basic-encryption-3bf77b4e19f7/) という暗号がよく使用されます。 たとえば、`A ↔ N`、`B ↔ O` のようになります。
 
-[ROT13](https://en.wikipedia.org/wiki/ROT13) でエンコードされた文字列を入力として受け取り、デコードされた文字列を返す関数を作成してください。
+[ROT13](https://www.freecodecamp.org/news/how-to-code-the-caesar-cipher-an-introduction-to-basic-encryption-3bf77b4e19f7/) でエンコードされた文字列を入力として受け取り、デコードされた文字列を返す関数を作成してください。
 
 文字はすべて大文字にしてください。 アルファベット以外の文字 (スペース、句読点など) は、変換せず、そのまま渡してください。
 

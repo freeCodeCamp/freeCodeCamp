@@ -134,9 +134,32 @@ CLIENT_LOCALE="dothraki"
 CURRICULUM_LOCALE="dothraki"
 ```
 
+### Liberar um superbloco
+
+Após um superbloco ter sido totalmente traduzido para um idioma, há duas etapas necessárias para seu lançamento. Primeiro, adicione o enum do superblock ao array `auditedCerts` do idioma. Assim, se você quiser liberar o novo superbloco de Design Responsivo para a Web para o dothraki, o array deverá ter essa aparência:
+
+```ts
+export const auditedCerts = {
+  // outros idiomas
+  dothraki: [
+    SuperBlocks.RespWebDesignNew, // o superbloco recém-traduzido
+    SuperBlocks.RespWebDesign,
+    SuperBlocks.JsAlgoDataStruct,
+    SuperBlocks.FrontEndDevLibs
+  ]
+```
+
+Por fim, o array `languagesWithAuditedBetaReleases` deve ser atualizado para incluir o novo idioma, assim:
+
+```ts
+export const languagesWithAuditedBetaReleases: ['english', 'dothraki'];
+```
+
+Isso moverá o novo superbloco para o lugar correto no mapa do currículo em `/learn`.
+
 ## Ativando vídeos localizados
 
-Para os desafios em vídeo, você precisa fazer algumas alterações. Primeiro, adicione o novo idioma (locale) à consulta do GraphQL no arquivo `client/src/templates/Challenges/video/Show.tsx`. Por exemplo, para adicionar Dothraki à consulta:
+Para os desafios em vídeo, você precisa fazer algumas alterações. Primeiro, adicione o novo idioma (locale) à consilta do GraphQL no arquivo `client/src/templates/Challenges/video/Show.tsx`. Por exemplo, para adicionar Dothraki à consulta:
 
 ```tsx
   query VideoChallenge($slug: String!) {
@@ -159,7 +182,7 @@ videoLocaleIds:
   italian: hiRTRAqNlpE
   portuguese: AelGAcoMXbI
   dothraki: new-id-here
-nomeComTracos: introducao-por-que-programar
+nomeComTracos: introducao-por-que-programa
 ---
 ```
 

@@ -1,4 +1,4 @@
-name: Crowdin Docs Download
+name: Crowdin - Download Docs
 on:
   workflow_dispatch:
   schedule:
