@@ -4,7 +4,7 @@ const location =
 const selectors = {
   testButton: '#test-button',
   monacoTabs: '.monaco-editor-tabs',
-  signInButton: '.action-row-container a[href$="/signin"]'
+  signInButton: '#action-buttons-container a[href$="/signin"]'
 };
 
 describe('Challenge with multifile editor', () => {
