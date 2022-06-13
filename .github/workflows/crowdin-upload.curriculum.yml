@@ -1,4 +1,4 @@
-name: Crowdin Curriculum Upload
+name: Crowdin - Upload Curriculum
 on:
   workflow_dispatch:
   schedule:

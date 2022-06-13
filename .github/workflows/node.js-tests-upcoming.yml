@@ -1,4 +1,4 @@
-name: Node.js CI - Test Upcoming
+name: CI - Node.js Test Upcoming
 on:
   push:
     branches:

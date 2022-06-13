@@ -1,4 +1,4 @@
-name: Node.js CI
+name: CI - Node.js Test Current
 on:
   push:
     branches-ignore:
