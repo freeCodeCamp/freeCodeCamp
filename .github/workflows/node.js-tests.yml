@@ -72,7 +72,6 @@ jobs:
         uses: actions/setup-node@eeb10cff27034e7acf239c5d29f62154018672fd # tag=v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: npm
 
       - name: Set Environment variables
         run: |
@@ -107,7 +106,6 @@ jobs:
         uses: actions/setup-node@eeb10cff27034e7acf239c5d29f62154018672fd # tag=v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: npm
 
       - name: Set Environment variables
         run: |
@@ -144,7 +142,6 @@ jobs:
         uses: actions/setup-node@eeb10cff27034e7acf239c5d29f62154018672fd # tag=v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: npm
 
       - name: Set Environment variables
         run: |
