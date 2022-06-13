@@ -1,4 +1,4 @@
-name: Crowdin - Download Client UI
+name: i18n - Download Client UI
 on:
   workflow_dispatch:
   schedule:

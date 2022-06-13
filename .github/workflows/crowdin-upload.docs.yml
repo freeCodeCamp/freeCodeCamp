@@ -1,4 +1,4 @@
-name: Crowdin - Upload Docs
+name: i18n - Upload Docs
 on:
   workflow_dispatch:
   schedule:
