@@ -40,6 +40,7 @@ const LowerJaw = ({
   const [runningTests, setRunningTests] = useState(false);
   const [testFeedbackheight, setTestFeedbackheight] = useState(0);
   const [isFeedbackHidden, setIsFeedbackHidden] = useState(false);
+  const [testBtnariaHidden, setTestBtnariaHidden] = useState(false);
   const { t } = useTranslation();
   const submitButtonRef = React.createRef<HTMLButtonElement>();
   const testFeedbackRef = React.createRef<HTMLDivElement>();
@@ -77,6 +78,9 @@ const LowerJaw = ({
   useEffect(() => {
     if (challengeHasBeenCompleted && submitButtonRef?.current) {
       submitButtonRef.current.focus();
+      setTimeout(() => {
+        setTestBtnariaHidden(true);
+      }, 500);
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -217,19 +221,11 @@ const LowerJaw = ({
               {t('learn.sign-in-save')}
             </Button>
           ) : null}
-          {earliestAvailableCompletion ? (
-            <button
-              id='submit-button'
-              className='btn-block btn'
-              onClick={tryToSubmitChallenge}
-              ref={submitButtonRef}
-            >
-              {t('buttons.submit-and-go')}
-            </button>
-          ) : (
+          {earliestAvailableCompletion ? null : (
             <button
               id='test-button'
               className={`btn-block btn`}
+              aria-hidden={testBtnariaHidden}
               onClick={tryToExecuteChallenge}
             >
               {showDesktopButton
@@ -237,6 +233,15 @@ const LowerJaw = ({
                 : t('buttons.check-code-2')}
             </button>
           )}
+          <button
+            id='submit-button'
+            aria-hidden={!earliestAvailableCompletion}
+            className='btn-block btn'
+            onClick={tryToSubmitChallenge}
+            ref={submitButtonRef}
+          >
+            {t('buttons.submit-and-go')}
+          </button>
         </div>
       </>
     );
