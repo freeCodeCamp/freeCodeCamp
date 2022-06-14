@@ -8,25 +8,23 @@ dashedName: hofstadter-figure-figure-sequences
 
 # --description--
 
-You are given two sequences as `nested array`, these two sequences $R$ and $S$ start like this.
+The Hofstadter Figure-Figure sequences $R_n$ and $S_n$ are given by
 
-These two sequences of a positive integers $R$ and $S$ are defined as:
+$R_1 = 1\\ ;\\ S_1 = 2 \\\\R_n = R_{n-1} + S_{n-1}, \\quad n>1.$
 
-$R(1)=1\\ ;\\ S(1)=2 \\\\R(n)=R(n-1)+S(n-1), \\quad n>1.$
-
-Sequence $R$ starts:
+Specifically, the sequence $R_n$ contains the values
 
 <pre>1, 3, 7, 12, 18, ...</pre>
 
-Sequence $S$ starts:
+and the sequence $S_n$ contains the values
 
 <pre>2, 4, 5, 6, 8, ...</pre>
 
-**Note** $S(n)$ is defined as $n^{th}$ integer sequence of positive integers, that is <em>unqiue</em> from $R(n)$ positive integers
+The sequence $R_n$ is defined by the recurrence relation $R_n = R_{n-1} + S_{n-1}$, while $S_n$ is defined as sequence of positive integers that are not included in the sequence $R_n$.
 
 # --instructions--
 
-Create two functions named `ffr` and `ffs` that when given `n` return `R(n)` or `S(n)` respectively. (Note that $R(1) = 1$ and $S(1) = 2$ to avoid off-by-one errors).
+Create two functions named `ffr` and `ffs` that return `R(n)` or `S(n)`, respectively, for any index `n`. Note that the Hofgstadter Figure-Figure sequences are 1-indexed, with $R_1 = 1$ and $S_1 = 2$.
 
 No maximum value for `n` should be assumed.
 
