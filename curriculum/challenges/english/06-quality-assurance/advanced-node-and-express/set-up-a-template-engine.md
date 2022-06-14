@@ -10,8 +10,8 @@ dashedName: set-up-a-template-engine
 
 Working on these challenges will involve you writing your code using one of the following methods:
 
-- Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-advancednode/) and complete these challenges locally.
-- Use [our Replit starter project](https://replit.com/github/freeCodeCamp/boilerplate-advancednode) to complete these challenges.
+- Clone <a href="https://github.com/freeCodeCamp/boilerplate-advancednode/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete these challenges locally.
+- Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-advancednode" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete these challenges.
 - Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
 
 When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field.
@@ -28,7 +28,7 @@ Change the argument of the `res.render()` declaration in the `/` route to be the
 
 If all went as planned, your app home page will stop showing the message "`Pug template is not defined.`" and will now display a message indicating you've successfully rendered the Pug template!
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791).
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href="" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791).
 
 # --hints--
 

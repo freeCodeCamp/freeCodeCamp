@@ -8,7 +8,7 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iii---put-me
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 When you test a `PUT` request, you'll often send data along with it. The data you include with your `PUT` request is called the body of the request.
 
