@@ -27,7 +27,10 @@ describe('Challenge with multifile editor', () => {
       .contains('Check Your Code');
   });
 
+  // Page will change after this test. If your test requires page used in previous
+  // tests make sure it is above this one
   it('prompts unauthenticated user to sign in to save progress', () => {
+    cy.focused().type('{end}{enter}<meta charset="UTF-8" />{cmd+enter}');
     cy.get(selectors.signInButton).contains(translations.learn['sign-in-save']);
     cy.get(selectors.signInButton).click();
     cy.go('back');
