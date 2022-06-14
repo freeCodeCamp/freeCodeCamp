@@ -32,7 +32,7 @@ No maximum value for `n` should be assumed.
 
 **References**
 
- <p>Wikipedia: <a href='https://rosettacode.org/wiki/Hofstadter_Figure-Figure_sequences' target='_blank'>Hofstadter Figure-Figure sequences</a></p>.
+ <p>Rosetta: <a href='https://rosettacode.org/wiki/Hofstadter_Figure-Figure_sequences' target='_blank'>Hofstadter Figure-Figure sequences</a></p>.
 
 
 # --hints--
