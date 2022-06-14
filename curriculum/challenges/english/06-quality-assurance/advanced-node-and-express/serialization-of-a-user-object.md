@@ -28,7 +28,7 @@ passport.deserializeUser((id, done) => {
 
 NOTE: This `deserializeUser` will throw an error until we set up the DB in the next step, so for now comment out the whole block and just call `done(null, null)` in the function `deserializeUser`.
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/7068a0d09e61ec7424572b366751f048).
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href="" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/7068a0d09e61ec7424572b366751f048).
 
 # --hints--
 

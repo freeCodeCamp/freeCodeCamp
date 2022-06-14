@@ -65,7 +65,7 @@ console.log('user ' + socket.request.user.name + ' connected');
 
 It will log to the server console who has connected!
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project up to this point [here](https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254).
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project up to this point <a href="" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254).
 
 # --hints--
 
