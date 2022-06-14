@@ -22,7 +22,7 @@ Sequence $S$ starts:
 
 <pre>2, 4, 5, 6, 8, ...</pre>
 
-**Note** $S(n)$ is defined as $n^th$ integer sequence of positive integers, that is <em>unqiue</em> from $R(n)$ positive integers
+**Note** $S(n)$ is defined as $n^{th}$ integer sequence of positive integers, that is <em>unqiue</em> from $R(n)$ positive integers
 
 # --instructions--
 
