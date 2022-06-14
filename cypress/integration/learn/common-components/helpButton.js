@@ -8,7 +8,9 @@ describe('Help Button', () => {
 
   it('should toggle the dropdown menu', () => {
     cy.get('#get-help-dropdown').scrollIntoView().click();
-    cy.get('.tool-panel-group ul[role="menu"]').should('be.visible');
+    cy.get('.tool-panel-group ul[role="menu"]')
+      .scrollIntoView()
+      .should('be.visible');
   });
 
   it('should render three links when video is available', () => {
