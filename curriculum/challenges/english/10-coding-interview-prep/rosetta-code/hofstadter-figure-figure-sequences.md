@@ -10,6 +10,10 @@ dashedName: hofstadter-figure-figure-sequences
 
 You are given two sequences as `nested array`, these two sequences $R$ and $S$ start like this.
 
+These two sequences of a positive integers $R$ and $S$ are defined as:
+
+$R(1)=1\\ ;\\ S(1)=2 \\\\R(n)=R(n-1)+S(n-1), \\quad n>1.$
+
 Sequence $R$ starts:
 
 <pre>1, 3, 7, 12, 18, ...</pre>
@@ -18,11 +22,7 @@ Sequence $S$ starts:
 
 <pre>2, 4, 5, 6, 8, ...</pre>
 
-These two sequences of a positive integers are defined as:
-
-$R(1)=1\\ ;\\ S(1)=2 \\\\R(n)=R(n-1)+S(n-1), \\quad n>1.$
-
-**Note** $S(n)$ is a sequence of positive integers, that is <em>unqiue</em> from $R(n)$ positive integers
+**Note** $S(n)$ is defined as nth integer sequence of positive integers, that is <em>unqiue</em> from $R(n)$ positive integers
 
 # --instructions--
 
