@@ -223,7 +223,9 @@ const LowerJaw = ({
           ) : null}
           <button
             id='test-button'
-            className={`btn-block btn`}
+            className={`btn-block btn ${
+              earliestAvailableCompletion ? 'sr-only' : ''
+            }`}
             aria-hidden={testBtnariaHidden}
             onClick={tryToExecuteChallenge}
           >
