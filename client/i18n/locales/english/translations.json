@@ -73,7 +73,8 @@
     "click-start-project": "Start the project",
     "change-language": "Change Language",
     "cancel-change": "Cancel Change",
-    "resume-project": "Resume project"
+    "resume-project": "Resume project",
+    "start-project": "Start project"
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",

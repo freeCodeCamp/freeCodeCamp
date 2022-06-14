@@ -56,6 +56,10 @@ function Challenges({
     challenge => !challenge.isCompleted
   );
 
+  const isChallengeStarted = !!challengesWithCompleted.find(
+    challenge => challenge.isCompleted
+  );
+
   return isGridMap ? (
     <>
       {firstIncompleteChallenge && (
@@ -67,7 +71,9 @@ function Challenges({
             }
             to={firstIncompleteChallenge.fields.slug}
           >
-            {t('buttons.resume-project')}{' '}
+            {!isChallengeStarted
+              ? t('buttons.start-project')
+              : t('buttons.resume-project')}{' '}
             {blockTitle && <span className='sr-only'>{blockTitle}</span>}
           </Link>
         </div>
