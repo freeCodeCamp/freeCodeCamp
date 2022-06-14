@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby';
-import React, { Component } from 'react';
+import React, { Component, MutableRefObject } from 'react';
 import Helmet from 'react-helmet';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -8,8 +8,10 @@ import Media from 'react-responsive';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import store from 'store';
+import { editor } from 'monaco-editor';
 import { challengeTypes } from '../../../../utils/challenge-types';
 import LearnLayout from '../../../components/layouts/learn';
+import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 
 import {
   ChallengeFiles,
@@ -27,6 +29,7 @@ import ResetModal from '../components/ResetModal';
 import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
+import ShortcutsModal from '../components/shortcuts-modal';
 import Notes from '../components/notes';
 import Output from '../components/output';
 import Preview from '../components/preview';
@@ -51,7 +54,7 @@ import {
 } from '../redux';
 import { savedChallengesSelector } from '../../../redux';
 import { getGuideUrl } from '../utils';
-import MultifileEditor from './MultifileEditor';
+import MultifileEditor from './multifile-editor';
 import DesktopLayout from './desktop-layout';
 import MobileLayout from './mobile-layout';
 
@@ -126,7 +129,6 @@ interface ReflexLayout {
   testsPane: { flex: number };
 }
 
-const MAX_MOBILE_WIDTH = 767;
 const REFLEX_LAYOUT = 'challenge-layout';
 const BASE_LAYOUT = {
   codePane: { flex: 1 },
@@ -137,11 +139,20 @@ const BASE_LAYOUT = {
   testsPane: { flex: 0.3 }
 };
 
+// Used to prevent monaco from stealing mouse/touch events on the upper jaw
+// content widget so they can trigger their default actions. (Issue #46166)
+const handleContentWidgetEvents = (e: MouseEvent | TouchEvent): void => {
+  const target = e.target as HTMLElement;
+  if (target?.closest('.editor-upper-jaw')) {
+    e.stopPropagation();
+  }
+};
+
 // Component
 class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   static displayName: string;
   containerRef: React.RefObject<HTMLElement>;
-  editorRef: React.RefObject<HTMLElement>;
+  editorRef: React.RefObject<editor.IStandaloneCodeEditor | HTMLElement>;
   instructionsPanelRef: React.RefObject<HTMLDivElement>;
   resizeProps: ResizeProps;
 
@@ -187,7 +198,6 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   }
 
   onStopResize(event: HandlerProps) {
-    // @ts-expect-error TODO: Apparently, name does not exist on type
     const { name, flex } = event.component.props;
 
     // Only interested in tracking layout updates for ReflexElement's
@@ -223,6 +233,13 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       }
     } = this.props;
     this.initializeComponent(title);
+    // Bug fix for the monaco content widget and touch devices/right mouse
+    // click. (Issue #46166)
+    document.addEventListener('mousedown', handleContentWidgetEvents, true);
+    document.addEventListener('contextmenu', handleContentWidgetEvents, true);
+    document.addEventListener('touchstart', handleContentWidgetEvents, true);
+    document.addEventListener('touchmove', handleContentWidgetEvents, true);
+    document.addEventListener('touchend', handleContentWidgetEvents, true);
   }
 
   componentDidUpdate(prevProps: ShowClassicProps) {
@@ -300,6 +317,15 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     const { createFiles, cancelTests } = this.props;
     createFiles([]);
     cancelTests();
+    document.removeEventListener('mousedown', handleContentWidgetEvents, true);
+    document.removeEventListener(
+      'contextmenu',
+      handleContentWidgetEvents,
+      true
+    );
+    document.removeEventListener('touchstart', handleContentWidgetEvents, true);
+    document.removeEventListener('touchmove', handleContentWidgetEvents, true);
+    document.removeEventListener('touchend', handleContentWidgetEvents, true);
   }
 
   getChallenge = () => this.props.data.challengeNode.challenge;
@@ -385,7 +411,10 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           challengeFiles={challengeFiles}
           containerRef={this.containerRef}
           description={description}
-          editorRef={this.editorRef}
+          // Try to remove unknown
+          editorRef={
+            this.editorRef as MutableRefObject<editor.IStandaloneCodeEditor>
+          }
           initialTests={tests}
           resizeProps={this.resizeProps}
           title={title}
@@ -449,7 +478,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
 
     return (
       <Hotkeys
-        editorRef={this.editorRef}
+        editorRef={this.editorRef as React.RefObject<HTMLElement>}
         executeChallenge={executeChallenge}
         innerRef={this.containerRef}
         instructionsPanelRef={this.instructionsPanelRef}
@@ -511,6 +540,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
             previewTitle={t('learn.project-preview-title')}
             showProjectPreview={showProjectPreview}
           />
+          <ShortcutsModal />
         </LearnLayout>
       </Hotkeys>
     );

@@ -8,7 +8,11 @@ dashedName: sedols
 
 # --description--
 
-Para cada lista de números de 6 algarismos [SEDOL](https://en.wikipedia.org/wiki/SEDOL "wp: SEDOL"), calcule e acrescente o algarismo da soma de verificação. Ou seja, dada a string de entrada à esquerda, sua função deve retornar a string correspondente à direita:
+A <abbr title="Stock Exchange Daily Official List">SEDOL</abbr> é uma lista de identificadores de segurança usados no Reino Unido e na Irlanda para fins de compensação contábil. Os números são atribuídos pela Bolsa de Valores de Londres, a pedido da seguradora.
+
+A <abbr title="Stock Exchange Daily Official List">A SEDOL</abbr> funciona como o Número de Identificação dos Valores Mobiliários Nacionais para todos os valores mobiliários emitidos no Reino Unido e portanto também fazem parte da <abbr title="International Securities Identification Number">ISIN</abbr> de segurança. O Masterfile da <abbr title="Stock Exchange Daily Official List">SEDOL</abbr> fornece dados de referência a milhões de seguros multiativos globais, cada um identificado exclusivamente no nível de mercado usando um código universal do <abbr title="Stock Exchange Daily Official List">SEDOL</abbr>.
+
+Para cada lista de números de SEDOLs de 6 algarismos, calcule e anexe o algarismo da soma de verificação (checksum). Ou seja, dada a string de entrada à esquerda, a função deve retornar a string correspondente à direita:
 
 <pre>
 710889 => 7108899

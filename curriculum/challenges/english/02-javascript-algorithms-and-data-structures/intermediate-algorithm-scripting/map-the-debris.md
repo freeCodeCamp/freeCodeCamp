@@ -8,11 +8,20 @@ dashedName: map-the-debris
 
 # --description--
 
+According to Kepler's Third Law, the orbital period $T$ of two point masses orbiting each other in a circular or elliptic orbit is:
+
+$$
+T = 2 \pi \sqrt{\frac{a^{3}}{\mu}}
+$$
+
+- $a$ is the orbit's semi-major axis
+- $μ = GM$ is the standard gravitational parameter
+- $G$ is the gravitational constant,
+- $M$ is the mass of the more massive body.
+
 Return a new array that transforms the elements' average altitude into their orbital periods (in seconds).
 
 The array will contain objects in the format `{name: 'name', avgAlt: avgAlt}`.
-
-You can read about orbital periods [on Wikipedia](http://en.wikipedia.org/wiki/Orbital_period).
 
 The values should be rounded to the nearest whole number. The body being orbited is Earth.
 

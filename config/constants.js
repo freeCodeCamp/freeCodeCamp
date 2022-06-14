@@ -121,6 +121,7 @@ let blocklist = [
   'update-my-socials',
   'update-my-sound',
   'update-my-theme',
+  'update-my-keyboard-shortcuts',
   'update-my-username',
   'user',
   'username',

@@ -1,8 +1,8 @@
 import frameRunnerData from '../../../../../config/client/frame-runner.json';
 import testEvaluatorData from '../../../../../config/client/test-evaluator.json';
 import { challengeTypes } from '../../../../utils/challenge-types';
-import { cssToHtml, jsToHtml, concatHtml } from '../rechallenge/builders.js';
-import { getTransformers } from '../rechallenge/transformers';
+import { concatHtml } from '../rechallenge/builders.js';
+import { getTransformers, embedFilesInHtml } from '../rechallenge/transformers';
 import {
   createTestFramer,
   runTestInTestFrame,
@@ -141,19 +141,19 @@ export function buildDOMChallenge(
   const loadEnzyme = challengeFiles.some(
     challengeFile => challengeFile.ext === 'jsx'
   );
-  const toHtml = [jsToHtml, cssToHtml];
-  const pipeLine = composeFunctions(...getTransformers(), ...toHtml);
+  const pipeLine = composeFunctions(...getTransformers());
   const finalFiles = challengeFiles.map(pipeLine);
   return Promise.all(finalFiles)
     .then(checkFilesErrors)
-    .then(challengeFiles => {
+    .then(embedFilesInHtml)
+    .then(([challengeFiles, contents]) => {
       return {
         challengeType:
           challengeTypes.html || challengeTypes.multifileCertProject,
         build: concatHtml({
           required: finalRequires,
           template,
-          challengeFiles
+          contents
         }),
         sources: buildSourceMap(challengeFiles),
         loadEnzyme

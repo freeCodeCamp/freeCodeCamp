@@ -31,17 +31,17 @@ assert(
 );
 ```
 
-`updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me")` の実行後、`tracks` の末尾の要素は文字列 `Take a Chance on Me` になる必要があります。
+`updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me")` の実行後、`tracks` 配列は、文字列 `Take a Chance on Me` が末尾かつ唯一の要素になる必要があります。
 
 ```js
 assert(
-  updateRecords(_recordCollection, 5439, 'tracks', 'Take a Chance on Me')[5439][
-    'tracks'
-  ].pop() === 'Take a Chance on Me'
+  updateRecords(_recordCollection, 5439, 'tracks', 'Take a Chance on Me') &&
+  _recordCollection[5439]['tracks'].length === 1 &&
+  _recordCollection[5439]['tracks'].pop() === 'Take a Chance on Me'
 );
 ```
 
-`updateRecords(recordCollection, 2548, "artist", "")` の実行後、`artist` は設定されない必要があります。
+`updateRecords(recordCollection, 2548, "artist", "")` の実行後、`artist` は未設定であるべきです。
 
 ```js
 updateRecords(_recordCollection, 2548, 'artist', '');
@@ -58,7 +58,7 @@ assert(
 );
 ```
 
-`updateRecords(recordCollection, 2468, "tracks", "Free")` の実行後、`tracks` の先頭の要素は文字列 `1999` になる必要があります。
+`updateRecords(recordCollection, 2468, "tracks", "Free")` の実行後、`tracks` の先頭の要素は文字列 `1999` であるべきです。
 
 ```js
 assert(
@@ -68,7 +68,7 @@ assert(
 );
 ```
 
-`updateRecords(recordCollection, 2548, "tracks", "")` の実行後、`tracks` は設定されない必要があります。
+`updateRecords(recordCollection, 2548, "tracks", "")` の実行後、`tracks` は未設定であるべきです。
 
 ```js
 updateRecords(_recordCollection, 2548, 'tracks', '');

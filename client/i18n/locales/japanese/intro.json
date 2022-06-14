@@ -1,6 +1,6 @@
 {
   "responsive-web-design": {
-    "title": "レスポンシブウェブデザイン",
+    "title": "(レガシー) レスポンシブウェブデザイン",
     "intro": [
       "このレスポンシブウェブデザイン認定講座では、開発者がウェブページを構築するために使用する言語について学びます。コンテンツには HTML (Hypertext Markup Language)、デザインには CSS (Cascading Style Sheets) を使用します。",
       "初めに、HTML と CSS の基礎を学ぶために、猫の写真アプリを作ります。その後、ペンギンの絵を作りながら CSS 変数等のモダンなテクニックを学びます。そしてウェブフォームを作りながらアクセシビリティのベストプラクティスを学びます。",
@@ -67,7 +67,7 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "レスポンシブウェブデザイン (ベータ版)",
+    "title": "(新) レスポンシブウェブデザイン",
     "intro": [
       "このレスポンシブウェブデザイン認定講座では、開発者がウェブページを構築するために使用する言語について学びます。コンテンツには HTML (Hypertext Markup Language)、デザインには CSS (Cascading Style Sheets) を使用します。",
       "初めに、HTML と CSS の基礎を学ぶために、猫の写真アプリを作ります。その後、ペンギンの絵を作りながら CSS 変数等のモダンなテクニックを学びます。そしてウェブフォームを作りながらアクセシビリティのベストプラクティスを学びます。",
@@ -104,10 +104,10 @@
         ]
       },
       "build-a-technical-documentation-page-project": {
-        "title": "テクニカルドキュメントページ",
+        "title": "技術ドキュメントページ",
         "intro": [
           "これは認定証を獲得するために必須のプロジェクトの 1 つです。",
-          "このプロジェクトでは、トピックの説明書または参考資料として役に立つテクニカルドキュメントページを構築します。"
+          "このプロジェクトでは、トピックの説明書または参考資料として役に立つ技術ドキュメントページを構築します。"
         ]
       },
       "learn-html-by-building-a-cat-photo-app": {
@@ -296,23 +296,68 @@
           "さあ、新たな JavaScript 技能を活用する時です。これらのプロジェクトは以前にやったアルゴリズムスクリプトチャレンジに類似しています – ただもっと難しいです。",
           "JavaScript アルゴリズムとデータ構造認定証を取得するために、これら 5 つの JavaScript プロジェクトを完成させてください。"
         ]
-      },
-      "basic-javascript-rpg-game": {
-        "title": "基本的な JavaScript RPG ゲーム",
+      }
+    }
+  },
+  "2022/javascript-algorithms-and-data-structures": {
+    "title": "JavaScript アルゴリズムとデータ構造 (ベータ版)",
+    "intro": [
+      "プレイスホルダ―",
+      "プレイスホルダ―"
+    ],
+    "note": "",
+    "blocks": {
+      "build-a-caesars-cipher-project": {
+        "title": "シーザー暗号解析器作成プロジェクト",
         "intro": [
           "",
           ""
         ]
       },
-      "intermediate-javascript-calorie-counter": {
-        "title": "中級の JavaScript カロリーカウンター",
+      "build-a-cash-register-project": {
+        "title": "キャッシュレジスター作成プロジェクト",
         "intro": [
           "",
           ""
         ]
       },
-      "functional-programming-spreadsheet": {
-        "title": "関数型プログラミングスプレッドシート",
+      "build-a-palindrome-checker-project": {
+        "title": "回文チェッカー作成プロジェクト",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "build-a-roman-numeral-converter-project": {
+        "title": "ローマ数字コンバーター作成プロジェクト",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "build-a-telephone-number-validator-project": {
+        "title": "電話番号バリデーター作成プロジェクト",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "learn-basic-javascript-by-building-a-role-playing-game": {
+        "title": "JavaScript の基礎の学習: ロールプレイングゲームを作る",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "learn-form-validation-by-building-a-calorie-counter": {
+        "title": "フォームの検証の学習: カロリー計算機を作る",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "learn-functional-programming-by-building-a-spreadsheet": {
+        "title": "関数型プログラミングの学習: スプレッドシートを作る",
         "intro": [
           "",
           ""
@@ -779,7 +824,10 @@
     "expand": "コースを展開",
     "collapse": "コースを閉じる",
     "legacy-header": "レガシーコース",
-    "legacy-desc": "現在、これらのコースは認定講座の一部ではありませんが、あなたの学習をより深めるために利用可能です。",
+    "legacy-desc": "このコースは認定講座から除外されましたが、追加の学習用に引き続きご利用いただけます。",
+    "legacy-go-back": "カリキュラムの最新版へ移動",
+    "new-rwd-desc": "レスポンシブウェブデザインのカリキュラムが更新されました。以前のカリキュラムに取り組まれていた場合も、進捗状況は保存されておりますのでご安心ください。以前の進捗状況は「レスポンシブウェブデザイン (レガシー)」セクションでご確認いただけます。",
+    "new-rwd-article": "更新のお知らせをご確認いただき、新カリキュラムのご利用をご検討ください。",
     "viewing-upcoming-change": "ベータ版のページを閲覧中です。 ",
     "go-back-to-learn": "カリキュラムの安定版へ戻る。",
     "read-database-cert-article": "続行する前に、こちらのフォーラム投稿をお読みください。",

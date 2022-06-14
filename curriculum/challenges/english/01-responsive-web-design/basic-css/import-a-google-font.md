@@ -11,7 +11,7 @@ dashedName: import-a-google-font
 
 In addition to specifying common fonts that are found on most operating systems, we can also specify non-standard, custom web fonts for use on our website. There are many sources for web fonts on the Internet. For this example we will focus on the Google Fonts library.
 
-[Google Fonts](https://fonts.google.com/) is a free library of web fonts that you can use in your CSS by referencing the font's URL.
+Google Fonts is a free library of web fonts that you can use in your CSS by referencing the font's URL.
 
 So, let's go ahead and import and apply a Google font (note that if Google is blocked in your country, you will need to skip this challenge).
 

@@ -8,7 +8,7 @@ dashedName: sudoku
 
 # --description--
 
-Escreva uma função para resolver um tabuleiro 9x9 normal, parcialmente preenchido, de [Sudoku](https://pt.wikipedia.org/wiki/Sudoku) e retorne o resultado. Os campos em branco são representados por `-1`. O [Algoritmo de Sudoku](https://pt.wikipedia.org/wiki/Algoritmo_de_sudoku) pode ajudar a implementar isso.
+Escreva uma função para resolver uma grade 9x9 normal, parcialmente preenchida, e retornar o resultado. Os campos em branco são representados por `-1`.
 
 # --hints--
 

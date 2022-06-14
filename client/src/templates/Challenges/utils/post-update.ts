@@ -1,5 +1,6 @@
 import { from, Observable } from 'rxjs';
 import { post } from '../../../utils/ajax';
+import type { ResponseWithData } from '../../../utils/ajax';
 
 interface PostData {
   endpoint: string;
@@ -9,6 +10,6 @@ interface PostData {
 export default function postUpdate$({
   endpoint,
   payload
-}: PostData): Observable<void> {
+}: PostData): Observable<ResponseWithData<void>> {
   return from(post(endpoint, payload));
 }

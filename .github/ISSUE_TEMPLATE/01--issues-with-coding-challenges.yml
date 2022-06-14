@@ -1,4 +1,4 @@
-name: Report issues with coding challenges & curriculum
+name: Issue - Content in our Coding Challenges
 description: Report issues with a specific challenge, like broken tests, unclear instructions, etc.
 labels: ['scope: curriculum', 'type: bug', 'status: waiting triage']
 body:

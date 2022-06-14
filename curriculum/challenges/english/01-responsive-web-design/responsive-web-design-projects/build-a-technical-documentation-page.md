@@ -8,7 +8,7 @@ dashedName: build-a-technical-documentation-page
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank">https://technical-documentation-page.freecodecamp.rocks</a>
+**Objective:** Build an app that is functionally similar to <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://technical-documentation-page.freecodecamp.rocks</a>
 
 **User Stories:**
 
@@ -29,6 +29,8 @@ dashedName: build-a-technical-documentation-page
 1. Your technical documentation should use at least one media query
 
 Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
+
+**Note:** Be sure to add `<link rel="stylesheet" href="styles.css">` in your HTML to link your stylesheet and apply your CSS
 
 # --hints--
 
@@ -142,7 +144,7 @@ assert(els.length === 1)
 You should have at least one `a` element with a class of `nav-link`
 
 ```js
-const els = document.querySelectorAll('a[class="nav-link"]')
+const els = document.querySelectorAll('a.nav-link')
 assert(els.length >= 1)
 ```
 
@@ -222,7 +224,9 @@ assert(!!el && left1 >= -15 && left1 <= 15 && left2 >= -15 && left2 <= 15)
 Your Technical Documentation project should use at least one media query
 
 ```js
-assert.isAtLeast(new __helpers.CSSHelp(document).getCSSRules('media')?.length, 1);
+const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
+const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
+assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 ```
 
 # --seed--

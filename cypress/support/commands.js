@@ -46,35 +46,39 @@ Cypress.Commands.add('preserveSession', () => {
   );
 });
 
-Cypress.Commands.add('toggleAll', () => {
-  cy.visit('/settings');
-  // cy.get('input[name="isLocked"]').click();
-  // cy.get('input[name="name"]').click();
+Cypress.Commands.add('setPrivacyTogglesToPublic', () => {
   cy.get('#privacy-settings')
     .find('.toggle-not-active')
     .each(element => {
-      return new Cypress.Promise(resolve => {
-        cy.wrap(element).click().should('have.class', 'toggle-active');
-        resolve();
-      });
+      cy.wrap(element).click().should('have.class', 'toggle-active');
     });
-  cy.get('#honesty-policy').find('button').click().wait(300);
+  cy.get('[data-cy=save-privacy-settings]').click();
+  cy.get('#honesty-policy').find('button').click();
+  cy.contains('You have accepted our Academic Honesty Policy');
+});
+
+Cypress.Commands.add('goToSettings', () => {
+  cy.visit('/settings');
+
+  // Setting aliases here
+  cy.get('[data-cy=username-input]').as('usernameInput');
+  cy.get('[data-cy=username-form]').as('usernameForm');
+});
+
+Cypress.Commands.add('typeUsername', username => {
+  cy.get('@usernameInput')
+    .clear({ force: true })
+    .type(username, { force: true });
 });
 
 Cypress.Commands.add('resetUsername', () => {
-  cy.visit('/settings');
+  cy.goToSettings();
 
-  cy.get('@usernameInput')
-    .clear({ force: true })
-    .type('developmentuser', { force: true });
+  cy.typeUsername('developmentuser');
 
   cy.contains('Username is available');
 
-  // temporary fix until https://github.com/cypress-io/cypress/issues/20562 is fixed
-  cy.contains(`Save`).click();
-
-  // revert to this when it is
-  // cy.get('@usernameInput').type('{enter}', { force: true, release: false });
+  cy.get('@usernameInput').type('{enter}', { force: true, release: false });
 
   cy.contains('Account Settings for developmentuser').should('be.visible');
 });

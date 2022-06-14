@@ -50,6 +50,8 @@
     "reset-lesson": "Restablecer esta lección",
     "run": "Ejecutar",
     "run-test": "Ejecutar las Pruebas (Ctrl + Entrar)",
+    "check-code": "Comprueba tu código (Ctrl + Enter)",
+    "check-code-2": "Check Your Code",
     "reset": "Restablecer",
     "reset-code": "Restablecer todo el código",
     "help": "Ayuda",
@@ -69,7 +71,9 @@
     "start-coding": "¡Empieza a programar!",
     "go-to-settings": "Ve a la configuración para reclamar tu certificación",
     "click-start-course": "Comienza el curso",
-    "click-start-project": "Comienza el proyecto"
+    "click-start-project": "Comienza el proyecto",
+    "change-language": "Cambiar Idioma",
+    "cancel-change": "Cancelar Cambio"
   },
   "landing": {
     "big-heading-1": "Aprende a programar gratis.",
@@ -100,7 +104,7 @@
   },
   "settings": {
     "share-projects": "Comparte tus proyectos, artículos o pull request aceptados que no sean de FreeCodeCamp.",
-    "privacy": "Los ajustes de esta sección te permiten controlar lo que se muestra en tu portafolio público de freeCodeCamp.",
+    "privacy": "Los ajustes de esta sección te permiten controlar lo que se muestra en tu cartera pública de freeCodeCamp. Pulsa guardar para guardar tus cambios.",
     "data": "Para ver qué datos tenemos en tu cuenta, haz clic en el botón \"Descarga tus datos\" a continuación",
     "disabled": "Tus certificaciones se deshabilitarán si se configuran como privadas.",
     "private-name": "Tu nombre no aparecerá en tus certificaciones, si está establecido como privado.",
@@ -142,7 +146,8 @@
       "my-timeline": "Mi cronología",
       "my-donations": "Mis donaciones",
       "night-mode": "Modo nocturno",
-      "sound-mode": "Modo de fogata"
+      "sound-mode": "Modo de fogata",
+      "keyboard-shortcuts": "Enable Keyboard Shortcuts"
     },
     "headings": {
       "certs": "Certificaciones",
@@ -268,6 +273,7 @@
     "solution-link": "Enlace a la solución",
     "github-link": "Enlace de GitHub",
     "submit-and-go": "Enviar y pasar a mi siguiente desafío",
+    "congratulations": "Congratulations, your code passes. Submit your code to complete this step and move on to the next one.",
     "i-completed": "He completado este desafío",
     "test-output": "El resultado de tu prueba irá aquí",
     "running-tests": "// ejecutando pruebas",
@@ -294,6 +300,7 @@
       "restart": "Reiniciar",
       "restart-step": "Paso de reiniciar",
       "console": "Consola",
+      "instructions": "Instrucciones",
       "notes": "Notas",
       "preview": "Vista"
     },
@@ -305,7 +312,16 @@
     "step-2": "Paso 2: Envía tu código",
     "submit-public-url": "Cuando haya completado el proyecto, guarde todos los archivos requeridos en un repositorio público y envíe la URL a continuación.",
     "complete-both-steps": "Completa los dos pasos a continuación para terminar el desafío.",
-    "runs-in-vm": "El proyecto se ejecuta en una máquina virtual, completa las historias de usuario descritas en ella y consigue que todas las pruebas pasen hasta el paso 1."
+    "runs-in-vm": "El proyecto se ejecuta en una máquina virtual, completa las historias de usuario descritas en ella y consigue que todas las pruebas pasen hasta el paso 1.",
+    "completed": "Completado",
+    "not-started": "Sin iniciar",
+    "hint": "Sugerencia",
+    "test": "Prueba",
+    "sorry-try-again": "Lo sentimos, tu código no pasa. Inténtalo de nuevo.",
+    "sorry-keep-trying": "Lo sentimos, tu código no pasa. Continúa intentándolo.",
+    "sorry-getting-there": "Lo sentimos, tu código no pasa. Casi lo consigues.",
+    "sorry-hang-in-there": "Lo sentimos, su código no pasa. Aguanta ahí.",
+    "sorry-dont-giveup": "Lo sentimos, su código no pasa. No te rindas."
   },
   "donate": {
     "title": "Apoya a nuestra organización sin fines de lucro",
@@ -441,7 +457,10 @@
     "donate": "Dona con PayPal",
     "fail": "Prueba fallida",
     "not-passed": "Sin aprobar",
+    "waiting": "Waiting",
     "passed": "Aprobado",
+    "failed": "Failed",
+    "hint": "Sugerencia",
     "heart": "Corazón",
     "initial": "Inicial",
     "info": "Información de introducción",
@@ -461,7 +480,9 @@
     "next-page": "Ir a la página siguiente",
     "last-page": "Ir a la última página",
     "primary-nav": "primario",
-    "breadcrumb-nav": "migas de pan"
+    "breadcrumb-nav": "migas de pan",
+    "submit": "Utiliza Ctrl + Enter para enviar.",
+    "running-tests": "Ejecutando pruebas"
   },
   "flash": {
     "honest-first": "Para reclamar una certificación, primero debes aceptar nuestra política de honestidad académica.",
@@ -667,5 +688,16 @@
     "delete-p3": "Necesitará crear un nuevo token para guardar el progreso futuro en las secciones de currículum que utilizan una máquina virtual.",
     "no-thanks": "No gracias, me gustaría quedarme con mi token",
     "yes-please": "Si por favor, deseo borrar mi token"
+  },
+  "shortcuts": {
+    "title": "Keyboard shortcuts",
+    "table-header-action": "Action",
+    "table-header-key": "Key(s)",
+    "navigation-mode": "Navigation Mode",
+    "execute-challenge": "Execute Challenge",
+    "focus-editor": "Focus Editor",
+    "focus-instructions-panel": "Focus Instructions Panel",
+    "navigate-previous": "Navigate Previous Exercise",
+    "navigate-next": "Navigate Next Exercise"
   }
 }

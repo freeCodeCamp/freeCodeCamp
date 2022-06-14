@@ -8,7 +8,7 @@ dashedName: linear-congruential-generator
 
 # --description--
 
-O [gerador congruente linear](https://en.wikipedia.org/wiki/linear congruential generator) é um exemplo muito simples de um [gerador de números aleatórios](http://rosettacode.org/wiki/random number generator). Todos os geradores congruentes lineares usam esta fórmula:
+Um gerador linear de congruência (LCG) é um <em>algoritmo</em> que gera uma sequência de números pseudoaleatórios calculados com uma equação linear descontínua. Todos os geradores congruentes lineares usam esta fórmula:
 
 $$r_{n + 1} = (a \times r_n + c) \bmod m$$
 
@@ -22,7 +22,7 @@ Onde:
 
 Se a escolha de $a$, $c$ e $m$ for feita com cuidado, o gerador produzirá uma distribuição uniforme de números inteiros de $0$ a $m - 1$.
 
-Os números LCG são de má qualidade. $r_n$ e $r\_{n + 1}$ não são independentes como os números verdadeiramente aleatórios seriam. Qualquer um que conheça $r_n$ pode prever $r\_{n + 1}$. Assim, o LCG não é criptograficamente seguro. O LCG, ainda assim, é bom o suficiente para tarefas simples como [o teste de primalidade de Miller-Rabin ](http://rosettacode.org/wiki/Miller-Rabin primality test) ou [dar as cartas no FreeCell](http://rosettacode.org/wiki/deal cards for FreeCell). Entre os benefícios do LCG, pode-se facilmente reproduzir uma sequência de números, a partir da mesma $r_0$. Também é possível reproduzir essa sequência com uma linguagem de programação diferente, porque a fórmula é muito simples.
+Os números da <abbr title="linear congruential generator">LCG</abbr> são de baixa qualidade. $r_n$ e $r\_{n + 1}$ não são independentes como os números verdadeiramente aleatórios seriam. Alguém que conheça $r_n$ pode prever $r\_{n + 1}$, portanto <abbr title="linear congruential generator">LCG</abbr> não é criptograficamente segura. O <abbr title="linear congruential generator">LCG</abbr> ainda é bom o suficiente para tarefas simples como teste de Miller-Rabin de primalidade ou mãos do FreeCell. Entre os benefícios do <abbr title="linear congruential generator">LCG</abbr>, pode-se facilmente reproduzir uma sequência de números, a partir do mesmo $r_0$. Também é possível reproduzir essa sequência com uma linguagem de programação diferente, porque a fórmula é muito simples.
 
 # --instructions--
 

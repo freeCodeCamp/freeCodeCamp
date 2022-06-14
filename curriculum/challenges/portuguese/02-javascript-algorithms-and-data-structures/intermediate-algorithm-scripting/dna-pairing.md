@@ -8,11 +8,9 @@ dashedName: dna-pairing
 
 # --description--
 
-A faixa de DNA está faltando o elemento de pareamento. Pegue cada caractere, pegue seu par e retorne os resultados como um array de duas dimensões.
+Os pares de fileiras de ADN são constituídos por pares de bases de proteínas. Os pares de bases são representados pelos caracteres <em>AT</em> and <em>CG</em>, que formam os blocos de construção da dupla hélice do ADN.
 
-[Pares de base](http://en.wikipedia.org/wiki/Base_pair) são pares de AT e CG. Associe o elemento faltando para o caractere fornecido.
-
-Retorne o caractere fornecido como o primeiro elemento em cada array.
+A fileira do ADN está sem o elemento de que faz par com ele. Escreva uma função que corresponda aos pares de base que faltam para a fileira de ADN fornecida. Para cada caractere na string fornecida, encontre o caractere de par de bases. Retorne os resultados em um array bidimensional.
 
 Por exemplo, para a entrada `GCG`, retorne `[["G", "C"], ["C","G"], ["G", "C"]]`
 

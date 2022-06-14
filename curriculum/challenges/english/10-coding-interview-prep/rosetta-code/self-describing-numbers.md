@@ -8,7 +8,7 @@ dashedName: self-describing-numbers
 
 # --description--
 
-There are several so-called "self describing" or ["self-descriptive"](https://en.wikipedia.org/wiki/Self-descriptive_number) integers.
+There are several so-called "self-describing" or "self-descriptive" integers.
 
 An integer is said to be "self-describing" if it has the property that, when digit positions are labeled 0 to N-1, the digit in each position is equal to the number of times that digit appears in the number.
 

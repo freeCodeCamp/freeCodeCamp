@@ -1,57 +1,518 @@
 ---
 id: 587d78af367417b2b2512b03
 title: Crea un modulo di sondaggio
-challengeType: 3
+challengeType: 14
 forumTopicId: 301145
 dashedName: build-a-survey-form
 ---
 
 # --description--
 
-**Obiettivo:** Costruisci un'app [CodePen.io](https://codepen.io) funzionalmente simile a questa: <https://codepen.io/freeCodeCamp/full/VPaoNP>.
+**Obiettivo:** Crea un'app funzionalmente simile a <a href="https://survey-form.freecodecamp.rocks" target="_blank">https://survey-form.freecodecamp.rocks</a>
 
-Soddisfa le seguenti [user story](https://en.wikipedia.org/wiki/User_story) e fai passare tutti i test. Usa il tuo stile personale.
+**User story:**
 
-Puoi utilizzare HTML, JavaScript, e CSS per completare questo progetto. CSS è raccomandato perché è l'argomento delle lezioni viste finora e dovresti fare pratica con il CSS di base. Se lo desideri puoi anche utilizzare Bootstrap o SASS. Ulteriori tecnologie (solo per fare un esempio jQuery, React, Angular, o Vue) non sono raccomandate per questo progetto, e usarle è a tuo rischio. Altri progetti ti daranno la possibilità di lavorare con diversi stack tecnologici come React. Accetteremo e cercheremo di risolvere tutte le segnalazioni di problemi che utilizzano lo stack tecnologico suggerito per questo progetto. Happy coding!
+1. Dovresti avere un titolo di pagina in un elemento `h1` con un attributo `id` di `title`
+1. Dovrebbe esserci una breve spiegazione in un elemento `p` con un attributo `id` con il valore `description`
+1. Dovrebbe esserci un elemento `form` con un attributo `id` dal valore `survey-form`
+1. All'interno dell'elemento form, devi inserire obbligatoriamente (**required**) il nome in un campo di `input` che ha un `id` con il valore `name` e un `type` con il valore `text`
+1. All'interno dell'elemento form, devi inserire obbligatoriamente (**required**) l'email in un campo di `input` che ha un `id` con il valore `email`
+1. Se inserisci una email che non è formattata correttamente, vedrai un errore di validazione HTML5
+1. All'interno del modulo, puoi inserire un numero in un campo di `input` con un `id` del valore `number`
+1. Se inserisci valori non numerici nell'input del numero, vedrai un errore di validazione HTML5
+1. Se immetti un numero al di fuori del range del campo del numero, che hai definito con gli attributi `min` e `max`, vedrai un errore di validazione HTML5
+1. Per le caselle di input per il nome, l'email e il numero, puoi vedere gli elementi `label` corrispondenti nel modulo che descrivono lo scopo di ogni campo con i seguenti attributi id: `id="name-label"`, `id="email-label"` e `id="number-label"`
+1. Per i campi di input di nome, e-mail e numero, puoi vedere il testo del placeholder che fornisce una descrizione o delle istruzioni per ogni campo
+1. Dentro l'elemento form, dovresti avere un elemento `select` a tendina con un `id` del valore `dropdown` e almeno due opzioni tra cui scegliere
+1. Dentro l'elemento form, puoi selezionare una opzione da un gruppo di almeno due pulsanti di opzione che sono raggruppati con l'attributo `name`
+1. All'interno dell'elemento form, puoi selezionare diversi campi da una serie di caselle di spunta, ciascuno dei quali deve avere un attributo `value`
+1. All'interno dell'elemento form, deve essere un elemento `textarea` per commenti aggiuntivi
+1. All'interno dell'elemento form, deve essere presente un pulsante con un `id` del valore `submit` per inviare tutti gli input
 
-**User Story #1:** Posso vedere un titolo con `id="title"` in un testo di dimensioni H1.
+Soddisfa le user story e passa tutti i test per completare questo progetto. Usa il tuo stile personale. Buon divertimento!
 
-**User Story #2:** Posso vedere una breve spiegazione con `id="description"` in un testo di dimensione P.
+**Nota:** Assicurati di aggiungere `<link rel="stylesheet" href="styles.css">` nel tuo HTML per linkare il foglio di stile e applicare il CSS
 
-**User Story #3:** Posso vedere un `form` con `id="survey-form"`.
+# --hints--
 
-**User Story #4:** All'interno del modulo, mi viene chiesto di inserire il mio nome in un campo con `id="name"`.
+Dovrebbe esserci un elemento `h1` con un `id` di `title`.
 
-**User Story #5:** All'interno del modulo, mi viene chiesto di inserire un'email in un campo con `id="email"`.
+```js
+const el = document.getElementById('title')
+assert(!!el && el.tagName === 'H1')
+```
 
-**User Story #6:** Se inserisco un'email non formattata correttamente, vedrò un errore di validazione HTML5.
+L'elemento `#title` non dovrebbe essere vuoto.
 
-**User Story #7:** All'interno del modulo, posso inserire un numero in un campo con `id="number"`.
+```js
+const el = document.getElementById('title')
+assert(!!el && el.innerText.length > 0)
+```
 
-**User story #8:** Se inserisco caratteri non numerici nell'input di tipo number, vedrò un errore di validazione HTML5.
+Dovrebbe esserci un elemento `p` con un `id` di `description`.
 
-**User story #9:** Se inserisco numeri al di fuori dell'intervallo dell'input numerico, che sono definiti dagli attributi `min` e `max`, vedrò un errore di validazione HTML5.
+```js
+const el = document.getElementById('description')
+assert(!!el && el.tagName === 'P')
+```
 
-**User story #10:** Per il nome, l'e-mail, e i campi di input numerici all'interno del modulo posso vedere le etichette corrispondenti che descrivono lo scopo di ogni campo con i seguenti id: `id="name-label"`, `id="email-label"`e `id="number-label"`.
+L'elemento `#description` non dovrebbe essere vuoto.
 
-**User story#11:** Per i campi di input di nome, email e numero, posso vedere il testo segnaposto che mi dà una descrizione o delle istruzioni per ogni campo.
+```js
+const el = document.getElementById('description')
+assert(!!el && el.innerText.length > 0)
+```
 
-**User story #12:** All'interno del modulo, posso selezionare un'opzione da un menu a discesa che ha un corrispondente `id="dropdown"`.
+Dovrebbe esserci un elemento `form` con un attributo `id` di `survey-form`.
 
-**User story #13:** All'interno del modulo, posso selezionare un campo da uno o più gruppi di pulsanti di opzione. Ogni gruppo dovrebbe essere raggruppato usando l'attributo `name`.
+```js
+const el = document.getElementById('survey-form')
+assert(!!el && el.tagName === 'FORM')
+```
 
-**User story #14:** All'interno del modulo, posso selezionare diversi campi da una serie di caselle di spunta, ciascuno dei quali deve avere un attributo `value`.
+Dovrebbe esserci un elemento `input` con un `id` di `name`.
 
-**User story #15:** All'interno del modulo, mi viene presentata alla fine una `textarea`, per inserire ulteriori commenti.
+```js
+const el = document.getElementById('name')
+assert(!!el && el.tagName === 'INPUT')
+```
 
-**User story #16:** All'interno del modulo, mi viene presentato un pulsante con `id="submit"` per inviare tutti i miei input.
+L'elemento `#name` dovrebbe avere un attributo `type` con il valore `text`.
 
-Puoi costruire il tuo progetto <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>usando questo modello CodePen</a> e facendo click su `Save` per creare il tuo pen. Oppure puoi usare questo link CDN per eseguire i test in qualsiasi ambiente tu voglia: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+```js
+const el = document.getElementById('name')
+assert(!!el && el.type === 'text')
+```
 
-Una volta fatto, invia l'URL del tuo progetto di lavoro con tutti i suoi test superati.
+L'elemento `#name` dovrebbe richiedere un input.
 
-# --solutions--
+```js
+const el = document.getElementById('name')
+assert(!!el && el.required)
+```
+
+L'elemento `#name` dovrebbe essere un discendente di `#survey-form`.
+
+```js
+const el = document.querySelector('#survey-form #name')
+assert(!!el)
+```
+
+Dovrebbe esserci un elemento `input` con un `id` con il valore `email`.
+
+```js
+const el = document.getElementById('email')
+assert(!!el && el.tagName === 'INPUT')
+```
+
+L'elemento `#email` dovrebbe avere un attributo `type` con il valore `email`.
+
+```js
+const el = document.getElementById('email')
+assert(!!el && el.type === 'email')
+```
+
+L'elemento `#email` dovrebbe richiedere un input.
+
+```js
+const el = document.getElementById('email')
+assert(!!el && el.required)
+```
+
+L'elemento `#email` dovrebbe essere un discendente di `#survey-form`
+
+```js
+const el = document.querySelector('#survey-form #email')
+assert(!!el)
+```
+
+Dovresti avere un elemento `input` con un `id` con il valore `number`.
+
+```js
+const el = document.getElementById('number')
+assert(!!el && el.tagName === 'INPUT')
+```
+
+L'elemento `#number` dovrebbe essere un discendente di `#survey-form`.
+
+```js
+const el = document.querySelector('#survey-form #number')
+assert(!!el)
+```
+
+L'elemento `#number` dovrebbe avere un attributo `type` con il valore `number`.
+
+```js
+const el = document.getElementById('number')
+assert(!!el && el.type === 'number')
+```
+
+L'elemento `#number` dovrebbe avere un attributo `min` con un valore numerico.
+
+```js
+const el = document.getElementById('number')
+assert(!!el && el.min && isFinite(el.min))
+```
+
+L'elemento `#number` dovrebbe avere un attributo `max` con un valore numerico.
+
+```js
+const el = document.getElementById('number')
+assert(!!el && el.max && isFinite(el.max))
+```
+
+Dovresti avere un elemento `label` con un `id` con il valore `name-label`.
+
+```js
+const el = document.getElementById('name-label')
+assert(!!el && el.tagName === 'LABEL')
+```
+
+Dovresti avere un elemento `label` con un `id` con il valore `email-label`.
+
+```js
+const el = document.getElementById('email-label')
+assert(!!el && el.tagName === 'LABEL')
+```
+
+Dovresti avere un elemento `label` con un `id` con il valore `number-label`.
+
+```js
+const el = document.getElementById('number-label')
+assert(!!el && el.tagName === 'LABEL')
+```
+
+L'elemento `#name-label` non dovrebbe essere vuoto.
+
+```js
+const el = document.getElementById('name-label')
+assert(!!el && el.innerText.length > 0)
+```
+
+L'elemento `#email-label` non dovrebbe essere vuoto.
+
+```js
+const el = document.getElementById('email-label')
+assert(!!el && el.innerText.length > 0)
+```
+
+L'elemento `#number-label` non dovrebbe essere vuoto.
+
+```js
+const el = document.getElementById('number-label')
+assert(!!el && el.innerText.length > 0)
+```
+
+L'elemento `#name-label` dovrebbe essere un discendente di `#survey-form`.
+
+```js
+const el = document.querySelector('#survey-form #name-label')
+assert(!!el)
+```
+
+L'elemento `#email-label` dovrebbe essere un discendente di `#survey-form`.
+
+```js
+const el = document.querySelector('#survey-form #email-label')
+assert(!!el)
+```
+
+L'elemento `#number-label` dovrebbe essere un discendente di `#survey-form`.
+
+```js
+const el = document.querySelector('#survey-form #number-label')
+assert(!!el)
+```
+
+L'elemento `#name` dovrebbe avere un attributo `placeholder` con un valore.
+
+```js
+const el = document.getElementById('name')
+assert(!!el && !!el.placeholder && el.placeholder.length > 0)
+```
+
+L'elemento `#email` dovrebbe avere un attributo `placeholder` con un valore.
+
+```js
+const el = document.getElementById('email')
+assert(!!el && !!el.placeholder && el.placeholder.length > 0)
+```
+
+L'elemento `#number` dovrebbe avere un attributo `placeholder` con un valore.
+
+```js
+const el = document.getElementById('number')
+assert(!!el && !!el.placeholder && el.placeholder.length > 0)
+```
+
+Dovrebbe esserci un campo `select` con un `id` con il valore `dropdown`.
+
+```js
+const el = document.getElementById('dropdown')
+assert(!!el && el.tagName === 'SELECT')
+```
+
+L'elemento `#dropdown` dovrebbe avere almeno due elementi `option` selezionabili (non disattivati).
+
+```js
+const els = document.querySelectorAll('#dropdown option:not([disabled])')
+assert(els.length >= 2)
+```
+
+L'elemento `#dropdown` dovrebbe essere un discendente di `#survey-form`.
+
+```js
+const el = document.querySelector('#survey-form #dropdown')
+assert(!!el)
+```
+
+Dovresti avere almeno due elementi `input` con un attributo `type` con il valore `radio` (pulsanti radio o di opzione).
+
+```js
+const els = document.querySelectorAll('input[type="radio"]')
+assert(els.length >= 2)
+```
+
+Dovresti avere almeno due pulsanti di opzione discendenti di `#survey-form`.
+
+```js
+const els = document.querySelectorAll('#survey-form input[type="radio"]')
+assert(els.length >= 2)
+```
+
+Tutti i pulsanti di opzione dovrebbero avere un attributo `value` con un valore.
+
+```js
+const els1 = document.querySelectorAll('input[type="radio"]')
+const els2 = document.querySelectorAll('input[type="radio"][value=""], input[type="radio"]:not([value])')
+assert(els1.length > 0 && els2.length === 0)
+```
+
+Tutti i pulsanti di opzione dovrebbero avere un attributo `name` con un valore.
+
+```js
+const els1 = document.querySelectorAll('input[type="radio"]')
+const els2 = document.querySelectorAll('input[type="radio"][name=""], input[type="radio"]:not([name])')
+assert(els1.length > 0 && els2.length === 0)
+```
+
+Ogni gruppo di pulsanti di opzione dovrebbe avere almeno 2 pulsanti.
+
+```js
+const radioButtons = document.querySelectorAll('input[type="radio"]');
+const groups = {}
+
+if (radioButtons) {
+  radioButtons.forEach(el => {
+    if (!groups[el.name]) groups[el.name] = []
+    groups[el.name].push(el)
+  })
+}
+
+const groupKeys = Object.keys(groups)
+
+groupKeys.forEach(key => {
+  if (groups[key].length < 2) assert(false)
+})
+
+assert(groupKeys.length > 0)
+```
+
+Dovresti avere almeno due elementi `input` con un attributo `type` con il valore `checkbox` (caselle di spunta) discendenti di `#survey-form`.
+
+```js
+const els = document.querySelectorAll('#survey-form input[type="checkbox"]');
+assert(els.length >= 2)
+```
+
+Tutte le caselle di spunta dentro l'elemento `#survey-form` dovrebbero avere un attributo `value` con un valore.
+
+```js
+const els1 = document.querySelectorAll('#survey-form input[type="checkbox"]')
+const els2 = document.querySelectorAll('#survey-form input[type="checkbox"][value=""], #survey-form input[type="checkbox"]:not([value])')
+assert(els1.length > 0 && els2.length === 0)
+```
+
+Dovrebbe esserci almeno un elemento `textarea` discendente di `#survey-form`.
+
+```js
+const el = document.querySelector('#survey-form textarea')
+assert(!!el)
+```
+
+Dovrebbe esserci un elemento `input` o `button` con un `id` con il valore `submit`.
+
+```js
+const el = document.getElementById('submit')
+assert(!!el && (el.tagName === 'INPUT' || el.tagName === 'BUTTON'))
+```
+
+L'elemento `#submit` dovrebbe avere un attributo `type` con il valore `submit`.
+
+```js
+const el = document.getElementById('submit')
+assert(!!el && el.type === 'submit')
+```
+
+L'elemento `#submit` dovrebbe essere un discendente di `#survey-form`.
+
+```js
+const el = document.querySelector('#survey-form #submit')
+assert(!!el)
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
-// solution required
+
+```
+
+```css
+
+```
+
+## --solutions--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Survey Form</title>
+  </head>
+  <body>
+    <h1>Survey Form</h1>
+    <p>The card below was built as a sample survey form for freeCodeCamp.</p>
+    <main id="main">
+      <h1 id="title">Join the Togepi Fan Club!</h1>
+      <p id="description">
+        Enter your information here to receive updates about club activities,
+        our monthly newsletter, and other email communications.
+      </p>
+      <form id="survey-form" action="#">
+        <label for="name" id="name-label"
+          ><p>Name:</p>
+          <input type="text" id="name" placeholder="e.g. John Smith" required />
+        </label>
+        <label for="email" id="email-label"
+          ><p>Email:</p>
+          <input
+            type="email"
+            id="email"
+            placeholder="e.g. john.smith@email.com"
+            required
+          />
+        </label>
+        <label for="age" id="number-label"
+          ><p>Age<em>(optional)</em>:</p>
+          <input
+            type="number"
+            id="number"
+            placeholder="e.g. 19"
+            min="18"
+            max="99"
+          />
+        </label>
+        <label for="interest" id="interest-label"
+          ><p>What are you most interested in?</p>
+          <select id="dropdown">
+            <option selected disabled hidden></option>
+            <option id="battles">Battling</option>
+            <option id="breeding">Breeding</option>
+            <option id="catching">Completing my Pokedex</option>
+            <option id="exploring">Exploring new regions</option>
+          </select>
+        </label>
+        <p>Who is your favourite Pokemon?</p>
+        <label for="togepi">
+          <input
+            id="togepi"
+            type="radio"
+            name="favorite"
+            value="togepi"
+          />Togepi!
+        </label>
+        <label for="pikachu">
+          <input
+            id="pikachu"
+            type="radio"
+            name="favorite"
+            value="pikachu"
+          />Pikachu
+        </label>
+        <label for="other">
+          <input id="other" type="radio" name="favorite" value="other" />Other
+        </label>
+        <p>Which communications do you want to receive?</p>
+        <label for="newsletter">
+          <input
+            id="newsletter"
+            type="checkbox"
+            name="communications"
+            value="newsletter"
+          />Newsletter
+        </label>
+        <label for="events">
+          <input
+            id="events"
+            type="checkbox"
+            name="communications"
+            value="events"
+          />Event updates
+        </label>
+        <label for="updates">
+          <input
+            id="updates"
+            type="checkbox"
+            name="communications"
+            value="updates"
+          />Club updates
+        </label>
+        <p>Any other information you would like to share?</p>
+        <textarea id="additional-information" rows="4" cols="50">
+You can provide comments, suggestions, or feedback here.</textarea
+        >
+        <p>
+          <em
+            >Please note: This form is a proof of concept. Submitting the form
+            will not actually transmit your data.</em
+          >
+        </p>
+        <button type="Submit" id="submit">Submit</button>
+      </form>
+    </main>
+  </body>
+  <footer>
+    <a href="../">Return to Project List</a> |
+    <a href="https://www.nhcarrigan.com">Return to HomePage</a>
+  </footer>
+</html>
+```
+
+```css
+main {
+  text-align: center;
+  background-color: #92869c;
+  background-blend-mode: lighten;
+  max-width: 500px;
+  margin: 20px auto;
+  border-radius: 50px;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.5);
+  color: black;
+}
+body {
+  text-align: center;
+  background: #3a3240;
+  color: white;
+}
+input, textarea, select, button {
+  background: #3a3240;
+  color: white;
+}
+a {
+  color: white;
+}
 ```

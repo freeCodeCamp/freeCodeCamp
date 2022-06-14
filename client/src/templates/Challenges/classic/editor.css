@@ -3,6 +3,15 @@
   color: var(--primary-color);
 }
 
+.monaco-scrollable-element {
+  overflow: visible !important;
+}
+
+.monaco-editor-background {
+  overflow: visible !important;
+  contain: none !important;
+}
+
 .vs .monaco-scrollable-element > .scrollbar > .slider {
   z-index: 11;
 }
@@ -22,22 +31,6 @@ textarea.inputarea {
   margin: 0 0 1.2rem;
 }
 
-.tabs-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.action-row button {
-  padding: 4px 16px;
-}
-
-.active-tab {
-  border-color: var(--secondary-color);
-  background-color: var(--secondary-color);
-  color: var(--secondary-background);
-}
-
 .editor-upper-jaw,
 .editor-lower-jaw {
   padding: 15px 15px 15px 0px;
@@ -50,9 +43,13 @@ textarea.inputarea {
 .action-row-container,
 .description-container {
   background-color: var(--secondary-background);
-  padding: 10px;
+  padding: 1rem;
   border: 2px solid var(--quaternary-background);
-  max-width: 700px;
+  max-width: 600px;
+}
+
+.challenge-description-header {
+  display: flex;
 }
 
 .description-container h1 {
@@ -89,32 +86,6 @@ textarea.inputarea {
   margin: 0px;
 }
 
-#test-status {
-  padding-bottom: 5px;
-  padding-top: 5px;
-}
-
-#test-status .status {
-  font-family: revert;
-}
-
-#test-status p {
-  margin: 0.5rem 0 0;
-}
-
-#test-status h2.hint {
-  font-size: 1rem;
-  line-height: 1.5;
-  padding-right: 0.5rem;
-  /* using float instead of inline display so screen readers recognize h2 as a block element */
-  float: left;
-  margin: 0;
-}
-
-#test-status h2.hint::after {
-  content: ':';
-}
-
 .myEditableLineDecoration {
   background-color: var(--gray-45);
   width: 15px !important;
@@ -134,4 +105,65 @@ textarea.inputarea {
 /* Unless we increase the z-index the help widget gets obscured by the jaws */
 .accessibilityHelpWidget {
   z-index: 1;
+}
+
+.test-feedback {
+  display: flex;
+  padding: 0;
+  flex-direction: column;
+}
+
+.test-feedback p {
+  margin: 0.5rem 0 0;
+  font-family: 'Lato', sans-serif;
+}
+
+.test-feedback h2 {
+  font-size: 1rem;
+  line-height: 1.5;
+  padding-right: 0.5rem;
+  /* using float instead of inline display so screen readers recognize h2 as a block element */
+  float: left;
+  margin: 0.5em 0 0;
+}
+
+.test-feedback h2:after {
+  content: ':';
+}
+
+.test-feedback svg {
+  height: 1.5rem;
+  width: auto;
+  margin-right: 0.5rem;
+  margin-top: 0.6rem;
+}
+
+.test-feedback > div {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.test-status-description,
+.hint-description {
+  width: 100%;
+}
+
+.fade-in {
+  animation-name: FadeIn;
+  animation-duration: 0.5s;
+  transition-timing-function: linear;
+}
+
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  /* keep test feedback contents initially hidden for 200ms*/
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

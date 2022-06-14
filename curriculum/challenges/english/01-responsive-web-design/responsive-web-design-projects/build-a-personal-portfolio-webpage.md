@@ -8,7 +8,7 @@ dashedName: build-a-personal-portfolio-webpage
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to <a href="https://personal-portfolio.freecodecamp.rocks" target="_blank">https://personal-portfolio.freecodecamp.rocks</a>
+**Objective:** Build an app that is functionally similar to <a href="https://personal-portfolio.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://personal-portfolio.freecodecamp.rocks</a>
 
 **User Stories:**
 
@@ -26,6 +26,8 @@ dashedName: build-a-personal-portfolio-webpage
 
 Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
 
+**Note:** Be sure to add `<link rel="stylesheet" href="styles.css">` in your HTML to link your stylesheet and apply your CSS
+
 # --hints--
 
 Your portfolio should have a "Welcome" section with an `id` of `welcome-section`.
@@ -35,7 +37,7 @@ const el = document.getElementById('welcome-section')
 assert(!!el);
 ```
 
-Your `#welcom-section` element should contain an `h1` element.
+Your `#welcome-section` element should contain an `h1` element.
 
 ```js
 assert.isAbove(
@@ -63,7 +65,7 @@ const el = document.getElementById('projects')
 assert(!!el);
 ```
 
-Your portfolio should contain at least one elment with a class of `project-tile`.
+Your portfolio should contain at least one element with a class of `project-tile`.
 
 ```js
 assert.isAbove(
@@ -116,7 +118,9 @@ assert(!!el && el.target === '_blank')
 Your portfolio should use at least one media query.
 
 ```js
-assert.isAtLeast(new __helpers.CSSHelp(document).getCSSRules('media')?.length, 1);
+const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
+const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
+assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 ```
 
 Your `#navbar` element should always be at the top of the viewport.

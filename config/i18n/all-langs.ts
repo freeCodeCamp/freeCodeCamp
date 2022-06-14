@@ -88,6 +88,7 @@ export const auditedCerts = {
     SuperBlocks.CodingInterviewPrep
   ],
   portuguese: [
+    SuperBlocks.RespWebDesignNew,
     SuperBlocks.RespWebDesign,
     SuperBlocks.JsAlgoDataStruct,
     SuperBlocks.FrontEndDevLibs,
@@ -129,6 +130,13 @@ export const auditedCerts = {
     SuperBlocks.RelationalDb
   ]
 };
+
+/**
+ * This contains the list of languages which have a beta->stable release
+ * that has been 100% translated. This will only be used during the window
+ * where a beta goes to stable but the translation isn't complete yet.
+ */
+export const languagesWithAuditedBetaReleases = ['english', 'portuguese'];
 
 // ---------------------------------------------------------------------------
 

@@ -17,19 +17,19 @@ Inicializa las tres variables `a`, `b`, y `c` con `5`, `10` y `"I am a"` respect
 
 # --hints--
 
-`a` debe ser definido y evaluado para tener el valor de `6`.
+`a` debe estar definida y tener un valor final de `6`.
 
 ```js
 assert(typeof a === 'number' && a === 6);
 ```
 
-`b` debe ser definido y evaluado para tener el valor de `15`.
+`b` debe estar definido y tener un valor final de `15`.
 
 ```js
 assert(typeof b === 'number' && b === 15);
 ```
 
-`c` no debe contener `undefined` y debe tener una cadena con valor `I am a String!`
+`c` no debe contener `undefined` y debe tener un valor final de la cadena `I am a String!`
 
 ```js
 assert(!/undefined/.test(c) && c === 'I am a String!');

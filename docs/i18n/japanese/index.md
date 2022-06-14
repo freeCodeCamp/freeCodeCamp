@@ -40,4 +40,4 @@ Node.js ベースの API サーバー、React ベースのクライアントア�
 
 あるいは
 
-**コンピュータ上で [freeCodeCamp をローカル設定](how-to-setup-freecodecamp-locally.md) することができます。**
+**[Set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md) on your machine.**

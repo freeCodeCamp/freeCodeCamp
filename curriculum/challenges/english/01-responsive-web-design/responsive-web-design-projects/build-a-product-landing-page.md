@@ -8,7 +8,7 @@ dashedName: build-a-product-landing-page
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to <a href="https://product-landing-page.freecodecamp.rocks" target="_blank">https://product-landing-page.freecodecamp.rocks</a>
+**Objective:** Build an app that is functionally similar to <a href="https://product-landing-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://product-landing-page.freecodecamp.rocks</a>
 
 **User Stories:**
 
@@ -29,6 +29,8 @@ dashedName: build-a-product-landing-page
 1. Your product landing page should utilize CSS flexbox at least once
 
 Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
+
+**Note:** Be sure to add `<link rel="stylesheet" href="styles.css">` in your HTML to link your stylesheet and apply your CSS
 
 # --hints--
 
@@ -119,8 +121,16 @@ assert(!!el && (el.tagName === 'VIDEO' || el.tagName === 'IFRAME'))
 Your `#video` should have a `src` attribute
 
 ```js
-const el = document.getElementById('video')
-assert(!!el && !!el.src)
+let el = document.getElementById('video')
+const sourceNode = el.children;
+let sourceElement = null;
+if (sourceNode.length) {
+  sourceElement = [...video.children].filter(el => el.localName === 'source')[0];
+}
+if (sourceElement) {
+  el = sourceElement;
+}
+assert(el.hasAttribute('src'));
 ```
 
 You should have a `form` element with an `id` of `form`
@@ -130,7 +140,7 @@ const el = document.getElementById('form')
 assert(!!el && el.tagName === 'FORM')
 ```
 
-You should have an `input` element with an `id of `email`
+You should have an `input` element with an `id` of `email`
 
 ```js
 const el = document.getElementById('email')
@@ -196,16 +206,49 @@ assert(!!el && el.name === 'email')
 Your `#nav-bar` should always be at the top of the viewport
 
 ```js
-const el = document.getElementById('nav-bar')
-const top1 = el?.offsetTop
-const top2 = el?.offsetTop
-assert(!!el && top1 >= -15 && top1 <= 15 && top2 >= -15 && top2 <= 15)
+(async () => {
+  const timeout = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
+
+  const header = document.getElementById('header');
+  const headerChildren = header.children;
+  const navbarCandidates = [header, ...headerChildren];
+  
+  // Return smallest top position of all navbar candidates
+  const getNavbarPosition = (candidates = []) => {
+    return candidates.reduce(
+      (min, candidate) =>
+        Math.min(min, Math.abs(candidate?.getBoundingClientRect().top)),
+      Infinity
+    );
+  };
+  assert.approximately(
+    getNavbarPosition(navbarCandidates),
+    0,
+    15,
+    '#header or one of its children should be at the top of the viewport '
+  );
+
+  window.scroll(0, 500);
+  await timeout(1);
+
+  assert.approximately(
+    getNavbarPosition(navbarCandidates),
+    0,
+    15,
+    '#header or one of its children should be at the top of the ' +
+      'viewport even after scrolling '
+  );
+    
+  window.scroll(0, 0);
+})();
 ```
 
 Your Product Landing Page should use at least one media query
 
 ```js
-assert.isAtLeast(new __helpers.CSSHelp(document).getCSSRules('media')?.length, 1);
+const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
+const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
+assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 ```
 
 Your Product Landing Page should use CSS Flexbox at least once

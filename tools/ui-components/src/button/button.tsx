@@ -7,6 +7,7 @@ const defaultClassNames = [
   'inline-block',
   'border-3',
   'text-center',
+  'no-underline',
   'active:before:w-full',
   'active:before:h-full',
   'active:before:absolute',
@@ -42,41 +43,47 @@ const computeClassNames = ({
   switch (variant) {
     case 'danger':
       classNames.push(
-        'border-default-foreground-danger',
-        'bg-default-background-danger',
-        'text-default-foreground-danger',
+        'border-foreground-danger',
+        'bg-background-danger',
+        'text-foreground-danger',
         ...(disabled
           ? ['active:before:hidden']
           : [
-              'hover:bg-default-background-danger-hover',
-              'hover:text-default-foreground-danger-hover'
+              'hover:bg-foreground-danger',
+              'hover:text-background-danger',
+              'dark:hover:bg-background-danger',
+              'dark:hover:text-foreground-danger'
             ])
       );
       break;
     case 'info':
       classNames.push(
-        'border-default-foreground-info',
-        'bg-default-background-info',
-        'text-default-foreground-info',
+        'border-foreground-info',
+        'bg-background-info',
+        'text-foreground-info',
         ...(disabled
           ? ['active:before:hidden']
           : [
-              'hover:bg-default-background-info-hover',
-              'hover:text-default-foreground-info-hover'
+              'hover:bg-foreground-info',
+              'hover:text-background-info',
+              'dark:hover:bg-background-info',
+              'dark:hover:text-foreground-info'
             ])
       );
       break;
     // default variant is 'primary'
     default:
       classNames.push(
-        'border-default-foreground-secondary',
-        'bg-default-background-quaternary',
-        'text-default-foreground-secondary',
+        'border-foreground-secondary',
+        'bg-background-quaternary',
+        'text-foreground-secondary',
         ...(disabled
           ? ['active:before:hidden']
           : [
-              'hover:bg-default-background-primary-hover',
-              'hover:text-default-foreground-primary-hover'
+              'hover:bg-foreground-primary',
+              'hover:text-background-primary',
+              'dark:hover:bg-background-primary',
+              'dark:hover:text-foreground-primary'
             ])
       );
   }

@@ -8,7 +8,7 @@ dashedName: authentication-strategies
 
 # --description--
 
-Uma estratégia é uma maneira de autenticar um usuário. Você pode usar uma estratégia para permitir que os usuários se autentiquem com base em informações salvas localmente (se você os tem registrados primeiro) ou em uma variedade de provedores, como o Google ou o GitHub. Para este projeto, vamos configurar uma estratégia local. Para ver uma lista das centenas de estratégias, visite o site do Passport [aqui](http://passportjs.org/).
+Uma estratégia é uma maneira de autenticar um usuário. Você pode usar uma estratégia para permitir que os usuários se autentiquem com base em informações salvas localmente (se você os tem registrados primeiro) ou em uma variedade de provedores, como o Google ou o GitHub. Para este projeto, usaremos o middleware chamado Passaport. O Passaport fornece um conjunto abrangente de estratégias que suportam a autenticação usando um nome de usuário e senha, GitHub, Google e muito mais.
 
 Adicione `passport-local@~1.0.0` como uma dependência e adicione-a ao seu servidor da seguinte forma: `const LocalStrategy = require('passport-local');`
 

@@ -50,6 +50,8 @@
     "reset-lesson": "レッスンをリセット",
     "run": "実行",
     "run-test": "テスト実行 (Ctrl + Enter)",
+    "check-code": "コードをチェック (Ctrl + Enter)",
+    "check-code-2": "コードをチェック",
     "reset": "リセット",
     "reset-code": "全てのコードをリセット",
     "help": "ヘルプ",
@@ -69,7 +71,9 @@
     "start-coding": "コーディングを始めましょう！",
     "go-to-settings": "設定へ移動して認定証を取得",
     "click-start-course": "コースを開始",
-    "click-start-project": "プロジェクトを開始"
+    "click-start-project": "プロジェクトを開始",
+    "change-language": "言語変更",
+    "cancel-change": "変更キャンセル"
   },
   "landing": {
     "big-heading-1": "プログラミングを無料で学ぶ。",
@@ -100,7 +104,7 @@
   },
   "settings": {
     "share-projects": "あなたの freeCodeCamp 以外のプロジェクトや記事、承認されたプルリクエストをシェアしましょう。",
-    "privacy": "この設定セクションでは、あなたの freeCodeCamp 公開ポートフォリオに表示する項目を制御できます。",
+    "privacy": "この設定セクションでは、あなたの freeCodeCamp 公開ポートフォリオに表示する項目を制御できます。変更を保存するには「保存」をクリックしてください。",
     "data": "アカウントに保存されているデータを確認するには、下の「データをダウンロード」ボタンをクリックしてください",
     "disabled": "プライベートに設定されている場合、認定証は無効化されます。",
     "private-name": "非公開に設定されている場合、あなたの名前は認定証に表示されません。",
@@ -142,7 +146,8 @@
       "my-timeline": "自分のタイムライン",
       "my-donations": "自分の寄付",
       "night-mode": "ナイトモード",
-      "sound-mode": "キャンプファイアモード"
+      "sound-mode": "キャンプファイアモード",
+      "keyboard-shortcuts": "キーボードショートカットを有効にする"
     },
     "headings": {
       "certs": "認定証",
@@ -268,6 +273,7 @@
     "solution-link": "回答のリンク",
     "github-link": "GitHub のリンク",
     "submit-and-go": "提出して次のチャレンジに進む",
+    "congratulations": "おめでとうございます、コードは合格です。このステップを完了して次に進むには、コードを提出してください。",
     "i-completed": "このチャレンジを完了しました",
     "test-output": "テストの結果はこちらに表示されます",
     "running-tests": "// テストを実行中です",
@@ -294,18 +300,28 @@
       "restart": "リスタート",
       "restart-step": "ステップをリスタート",
       "console": "コンソール",
+      "instructions": "手順書",
       "notes": "ノート",
       "preview": "プレビュー"
     },
     "help-translate": "以下の認定講座は現在翻訳中です。",
     "help-translate-link": "翻訳にご協力ください。",
-    "project-preview-title": "あなたが作るもののプレビューはこちらです。",
+    "project-preview-title": "これがあなたが作成するもののプレビューです。",
     "github-required": "<0>GitHub</0> アカウントをお持ちでない場合は作成してください。 仮想 Linux サーバーマシンを作成する際に必要です。この処理には数分かかることがあります。",
     "step-1": "ステップ 1: プロジェクトを完成させる",
     "step-2": "ステップ 2: コードを提出する",
     "submit-public-url": "プロジェクトが完成したら、必須のファイルをすべてパブリックリポジトリに保存し、リポジトリの URL を以下に提出してください。",
     "complete-both-steps": "チャレンジを終えるには、以下 2 つのステップを完了させてください。",
-    "runs-in-vm": "このプロジェクトは仮想マシン内で動作します。ステップ 1 を完了するには、そこで述べられたユーザーストーリーを実装し、すべてのテストに合格してください。"
+    "runs-in-vm": "このプロジェクトは仮想マシン内で動作します。ステップ 1 を完了するには、そこで述べられたユーザーストーリーを実装し、すべてのテストに合格してください。",
+    "completed": "完了",
+    "not-started": "未着手",
+    "hint": "ヒント",
+    "test": "テスト",
+    "sorry-try-again": "残念ながら、テストが通りませんでした。もう一度挑戦しましょう。",
+    "sorry-keep-trying": "残念ながら、テストが通りませんでした。挑戦を続けましょう。",
+    "sorry-getting-there": "残念ながら、テストが通りませんでした。もう一息です。",
+    "sorry-hang-in-there": "残念ながら、テストが通りませんでした。がんばりましょう。",
+    "sorry-dont-giveup": "残念ながら、テストが通りませんでした。諦めないでください。"
   },
   "donate": {
     "title": "非営利団体を支援する",
@@ -441,7 +457,10 @@
     "donate": "PayPal で寄付する",
     "fail": "テスト失敗",
     "not-passed": "未完了",
+    "waiting": "Waiting",
     "passed": "合格済み",
+    "failed": "Failed",
+    "hint": "ヒント",
     "heart": "ハート",
     "initial": "初期状態",
     "info": "導入情報",
@@ -461,7 +480,9 @@
     "next-page": "次のページへ移動",
     "last-page": "最後のページへ移動",
     "primary-nav": "プライマリー",
-    "breadcrumb-nav": "パンくずリスト"
+    "breadcrumb-nav": "パンくずリスト",
+    "submit": "提出するには Ctrl + Enter を押してください。",
+    "running-tests": "テスト実行中"
   },
   "flash": {
     "honest-first": "認定証を請求するには、まず学問的誠実性ポリシーに同意する必要があります。",
@@ -595,7 +616,7 @@
         "Build a Tribute Page": "トリビュートページを作成する",
         "Build a Survey Form": "アンケートフォームを作成する",
         "Build a Product Landing Page": "プロダクトのランディングページを作成する",
-        "Build a Technical Documentation Page": "テクニカルドキュメントページを作成する",
+        "Build a Technical Documentation Page": "技術ドキュメントページを作成する",
         "Palindrome Checker": "回文チェッカー",
         "Roman Numeral Converter": "ローマ数字への変換",
         "Caesars Cipher": "シーザー暗号",
@@ -667,5 +688,16 @@
     "delete-p3": "仮想マシンを使用するカリキュラムセクションでこの先の進行状況を保存するには、新しいトークンを作成する必要があります。",
     "no-thanks": "いいえ、トークンを維持したいです",
     "yes-please": "はい、トークンを削除します"
+  },
+  "shortcuts": {
+    "title": "キーボードショートカット",
+    "table-header-action": "操作",
+    "table-header-key": "キー",
+    "navigation-mode": "ナビゲーションモード",
+    "execute-challenge": "チャレンジを実行",
+    "focus-editor": "エディターにフォーカス",
+    "focus-instructions-panel": "手順書パネルにフォーカス",
+    "navigate-previous": "前の課題へ移動",
+    "navigate-next": "次の課題へ移動"
   }
 }

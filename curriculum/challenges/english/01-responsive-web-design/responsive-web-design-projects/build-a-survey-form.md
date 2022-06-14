@@ -8,7 +8,7 @@ dashedName: build-a-survey-form
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to <a href="https://survey-form.freecodecamp.rocks" target="_blank">https://survey-form.freecodecamp.rocks</a>
+**Objective:** Build an app that is functionally similar to <a href="https://survey-form.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://survey-form.freecodecamp.rocks</a>
 
 **User Stories:**
 
@@ -30,6 +30,8 @@ dashedName: build-a-survey-form
 1. Inside the form element, you are presented with a button with `id` of `submit` to submit all the inputs
 
 Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
+
+**Note:** Be sure to add `<link rel="stylesheet" href="styles.css">` in your HTML to link your stylesheet and apply your CSS
 
 # --hints--
 
