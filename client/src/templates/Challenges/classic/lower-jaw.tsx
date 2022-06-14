@@ -221,18 +221,16 @@ const LowerJaw = ({
               {t('learn.sign-in-save')}
             </Button>
           ) : null}
-          {earliestAvailableCompletion ? null : (
-            <button
-              id='test-button'
-              className={`btn-block btn`}
-              aria-hidden={testBtnariaHidden}
-              onClick={tryToExecuteChallenge}
-            >
-              {showDesktopButton
-                ? t('buttons.check-code')
-                : t('buttons.check-code-2')}
-            </button>
-          )}
+          <button
+            id='test-button'
+            className={`btn-block btn`}
+            aria-hidden={testBtnariaHidden}
+            onClick={tryToExecuteChallenge}
+          >
+            {showDesktopButton
+              ? t('buttons.check-code')
+              : t('buttons.check-code-2')}
+          </button>
           <button
             id='submit-button'
             aria-hidden={!earliestAvailableCompletion}
