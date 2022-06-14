@@ -1,4 +1,4 @@
-name: Crowdin - Download Curriculum
+name: i18n - Download Curriculum
 on:
   workflow_dispatch:
   schedule:
