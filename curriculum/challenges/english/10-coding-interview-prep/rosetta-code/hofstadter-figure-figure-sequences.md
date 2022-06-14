@@ -24,7 +24,7 @@ The sequence $R_n$ is defined by the recurrence relation $R_n = R_{n-1} + S_{n-1
 
 # --instructions--
 
-Create two functions named `ffr` and `ffs` that return `R(n)` or `S(n)`, respectively, for any index `n`. Note that the Hofgstadter Figure-Figure sequences are 1-indexed, with $R_1 = 1$ and $S_1 = 2$.
+Create two functions named `ffr` and `ffs` that return `R(n)` or `S(n)`, respectively, for any index `n`. Note that the Hofstadter Figure-Figure sequences are 1-indexed, with $R_1 = 1$ and $S_1 = 2$.
 
 No maximum value for `n` should be assumed.
 
