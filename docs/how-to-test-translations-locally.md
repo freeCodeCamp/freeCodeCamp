@@ -116,11 +116,11 @@ const algoliaIndices = {
   },
   chinese: {
     name: 'news-zh',
-    searchPage: 'https://freecodecamp.org/chinese/news/search/'
+    searchPage: 'https://www.freecodecamp.org/chinese/news/search/'
   },
   'chinese-traditional': {
     name: 'news-zh',
-    searchPage: 'https://freecodecamp.org/chinese/news/search'
+    searchPage: 'https://www.freecodecamp.org/chinese/news/search/'
   },
   dothraki: {
     name: 'news',

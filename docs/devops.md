@@ -186,7 +186,7 @@ Currently a public beta testing version is available at:
 | :---------- | :------- | :--------------------------------------- |
 | Learn       | English  | <https://www.freecodecamp.dev>           |
 |             | Espanol  | <https://www.freecodecamp.dev/espanol>   |
-|             | Chinese  | <https://freecodecamp.dev/chinese>       |
+|             | Chinese  | <https://www.freecodecamp.dev/chinese>       |
 | News        | English  | <https://www.freecodecamp.dev/news>      |
 | Forum       | English  | <https://forum.freecodecamp.dev>         |
 |             | Chinese  | <https://freecodecamp.dev/chinese/forum> |
