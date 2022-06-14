@@ -31,6 +31,8 @@ dashedName: build-a-survey-form
 
 完成需求並通過下面的所有測試來完成這個項目。 賦予它你自己的個人風格。 編程愉快！
 
+**注意：** 請在你的 HTML 中添加 `<link rel="stylesheet" href="styles.css">` 以鏈接你的樣式表並應用你的 CSS
+
 # --hints--
 
 你應該有一個 `id` 爲 `title` 的 `h1` 元素。
@@ -40,7 +42,7 @@ const el = document.getElementById('title')
 assert(!!el && el.tagName === 'H1')
 ```
 
-你的 `#title` 不應爲空。
+你的 `#title` 元素不應爲空。
 
 ```js
 const el = document.getElementById('title')

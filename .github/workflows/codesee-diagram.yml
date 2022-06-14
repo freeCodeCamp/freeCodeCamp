@@ -1,3 +1,4 @@
+name: CI - Create CodeSee Maps
 on:
   workflow_dispatch:
   schedule:
@@ -7,8 +8,6 @@ on:
     paths-ignore:
       - 'docs/**'
     types: [opened, synchronize, reopened]
-
-name: CodeSee Map
 
 jobs:
   test_map_action:
@@ -44,7 +43,6 @@ jobs:
         if: ${{ fromJSON(steps.detect-languages.outputs.languages).javascript }}
         with:
           node-version: '16'
-          cache: npm
 
       - name: Configure Python 3.x
         uses: actions/setup-python@98f2ad02fd48d057ee3b4d4f66525b231c3e52b6 # tag=v3

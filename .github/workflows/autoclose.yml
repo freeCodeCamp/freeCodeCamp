@@ -1,4 +1,4 @@
-name: Autoclose
+name: GitHub - Autoclose Invalid PRs
 on:
   pull_request_target:
     branches:

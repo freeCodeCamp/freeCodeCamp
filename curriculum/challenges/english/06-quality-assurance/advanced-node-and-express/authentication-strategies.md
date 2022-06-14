@@ -34,7 +34,7 @@ Many strategies are set up using different settings, but generally it is easy to
 
 In the next step, we will set up how to actually call the authentication strategy to validate a user based on form data!
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/53b495c02b92adeee0aa1bd3f3be8a4b).
+Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://gist.github.com/camperbot/53b495c02b92adeee0aa1bd3f3be8a4b" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 

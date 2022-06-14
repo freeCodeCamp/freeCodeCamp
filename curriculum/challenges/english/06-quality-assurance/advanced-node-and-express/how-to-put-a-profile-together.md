@@ -24,7 +24,7 @@ Also, in `profile.pug`, add a link referring to the `/logout` route, which will 
 a(href='/logout') Logout
 ```
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/136b3ad611cc80b41cab6f74bb460f6a).
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href="" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/136b3ad611cc80b41cab6f74bb460f6a).
 
 # --hints--
 
