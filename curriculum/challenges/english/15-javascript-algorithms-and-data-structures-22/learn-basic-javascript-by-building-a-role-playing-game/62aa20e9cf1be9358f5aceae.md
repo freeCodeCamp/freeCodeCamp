@@ -1,13 +1,13 @@
 ---
-id: 62a94114ce0b8918b487390f
-title: Step 138
+id: 62aa20e9cf1be9358f5aceae
+title: Step 147
 challengeType: 0
-dashedName: step-138
+dashedName: step-147
 ---
 
 # --description--
 
-Add another object in the `lcoations` array. Everything should be the same as the `lose` object, except the `name` should be `win` and the `text` should be `You defeat the dragon! YOU WIN THE GAME! 🎉`.
+Add an `else` statement to your `if` statement. In the `else` statement, use the `+=` operator to add the text ` You miss.` to the end of `text.innerText`.
 
 # --hints--
 
@@ -161,14 +161,18 @@ const locations = [
         "button functions": [goTown, goTown, goTown],
         text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.'
     },
---fcc-editable-region--
     {
         name: "lose",
         "button text": ["REPLAY?", "REPLAY?", "REPLAY?"],
         "button functions": [restart, restart, restart],
         text: "You die. ☠️"
+    },
+    { 
+        name: "win", 
+        "button text": ["Fight slime", "Fight fanged beast", "Go to town square"], 
+        "button functions": [restart, restart, restart], 
+        text: "You defeat the dragon! YOU WIN THE GAME! 🎉" 
     }
---fcc-editable-region--
 ];
 
 // initialize buttons
@@ -264,11 +268,14 @@ function goFight() {
   monsterHealthText.innerText = monsterHealth;
 }
 
+--fcc-editable-region--
 function attack() {
   text.innerText = "The " monsters[fighting].name + " attacks.";
   text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
-  health -= monsters[fighting].level;
-  monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+  health -= getMonsterAttackValue(monsters[fighting].level);
+  if (isMonsterHit()) {
+    monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;    
+  }
   healthText.innerText = health;
   monsterHealthText.innerText = monsterHealth;
   if (health <= 0) {
@@ -276,6 +283,13 @@ function attack() {
   } else if (monsterHealth <= 0) {
     fighting === 2 ? winGame() : defeatMonster();
   }
+}
+--fcc-editable-region--
+
+function getMonsterAttackValue(level) {
+  const hit = (level * 5) - (Math.floor(Math.random() * xp));
+  console.log(hit);
+  return hit > 0 ? hit : 0;
 }
 
 function dodge() {
