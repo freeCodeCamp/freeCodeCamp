@@ -25,11 +25,18 @@ textarea.inputarea {
 .tabs-row {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
 }
 
 .action-row button {
   padding: 6px 12px;
+}
+
+.editor-row {
+  flex: 1 1 auto;
+  display: flex;
+  overflow: auto;
 }
 
 .active-tab {
@@ -38,9 +45,12 @@ textarea.inputarea {
   color: var(--secondary-background);
 }
 
-.editor-upper-jaw,
+.editor-upper-jaw {
+  padding: 15px 15px 0 0px;
+}
+
 .editor-lower-jaw {
-  padding: 15px 15px 15px 0px;
+  padding: 0 15px 15px 0px;
 }
 
 .editor-upper-jaw {
@@ -49,10 +59,8 @@ textarea.inputarea {
 
 .action-row-container,
 .description-container {
-  background-color: var(--secondary-background);
+  background-color: var(--tc-black-5);
   padding: 1rem;
-  border: 2px solid var(--quaternary-background);
-  max-width: 600px;
 }
 
 .challenge-description-header {
@@ -60,12 +68,21 @@ textarea.inputarea {
 }
 
 .description-container h1 {
-  color: var(--secondary-color);
-  font-family: Roboto Mono, monospace;
-  font-size: 1.1rem;
+  font-family: Roboto, monospace;
+  font-size: 0.889rem;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1;
   margin: 0 0 0.6rem;
+
+  display: flex;
+  align-items: center;
+}
+
+.description-container h1,
+.description-container p,
+.description-container h5,
+.description-container h6 {
+  color: var(--tc-black-100);
 }
 
 .description-highlighter {
@@ -94,7 +111,7 @@ textarea.inputarea {
 }
 
 .myEditableLineDecoration {
-  background-color: var(--gray-45);
+  background-color: var(--tc-blue-140);
   width: 15px !important;
   margin-left: 5px !important;
   margin-right: 5px !important;
@@ -118,20 +135,26 @@ textarea.inputarea {
   display: flex;
   padding: 0;
   flex-direction: column;
+  font-family: Roboto, 'Lato', sans-serif;
+  font-size: 0.889rem;
+}
+
+.test-feedback ~ * {
+  margin-top: 1rem;
 }
 
 .test-feedback p {
-  margin: 0.5rem 0 0;
-  font-family: 'Lato', sans-serif;
+  margin: 0;
 }
 
 .test-feedback h2 {
-  font-size: 1rem;
-  line-height: 1.5;
-  padding-right: 0.5rem;
+  font-size: 0.889rem;
+  font-weight: normal;
+  line-height: 1.33rem;
+  padding-right: 0.445rem;
   /* using float instead of inline display so screen readers recognize h2 as a block element */
   float: left;
-  margin: 0.5em 0 0;
+  margin: 0;
 }
 
 .test-feedback h2:after {
@@ -139,14 +162,12 @@ textarea.inputarea {
 }
 
 .test-feedback svg {
-  height: 1.5rem;
+  height: 1.1rem;
   width: auto;
   margin-right: 0.5rem;
-  margin-top: 0.6rem;
 }
 
 .test-feedback > div {
-  margin-top: 1rem;
   display: flex;
   flex-direction: row;
 }

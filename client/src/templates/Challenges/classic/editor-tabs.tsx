@@ -43,7 +43,7 @@ class EditorTabs extends Component<EditorTabsProps> {
           (challengeFile: ChallengeFile) => (
             <button
               aria-expanded={visibleEditors[challengeFile.fileKey] ?? 'false'}
-              className='monaco-editor-tab'
+              className={visibleEditors[challengeFile.fileKey] ? 'btn-tab-primary' : 'btn-tab-primary--outline'}
               key={challengeFile.fileKey}
               onClick={() => toggleVisibleEditor(challengeFile.fileKey)}
             >

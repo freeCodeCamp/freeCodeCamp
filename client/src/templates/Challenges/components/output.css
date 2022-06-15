@@ -5,6 +5,7 @@
   height: 100%;
   width: 100%;
   overflow-y: auto;
+  background: var(--tc-black-5);
 }
 
 pre.output-text code {

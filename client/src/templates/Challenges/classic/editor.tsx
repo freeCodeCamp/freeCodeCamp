@@ -61,6 +61,7 @@ import GreenPass from '../../../assets/icons/green-pass';
 import LowerJaw from './lower-jaw';
 
 import './editor.css';
+import Code from '../../../assets/icons/code';
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
@@ -651,7 +652,16 @@ const Editor = (props: EditorProps): JSX.Element => {
       completedChallengeHeader.innerHTML = checkmark;
       jawHeading.appendChild(completedChallengeHeader);
     } else {
-      jawHeading.innerText = title;
+      const code = ReactDOMServer.renderToStaticMarkup(
+        <Code
+          style={{
+            height: '24px',
+            width: '24px',
+            marginRight: '7px'
+          }}
+        />
+      );
+      jawHeading.innerHTML = code + title;
     }
     const domNode = document.createElement('div');
     const desc = document.createElement('div');
