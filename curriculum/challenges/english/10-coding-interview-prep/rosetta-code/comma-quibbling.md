@@ -14,12 +14,12 @@ Comma quibbling is a task originally set by Eric Lippert in his 2009 blog. In th
 
 Write a function to generate a string output which is the concatenation of input words from a Array where:
 
-|                          Array                           |                      Output                             |
-| -------------------------------------------------------- | ------------------------------------------------------- |
-| []                                                       | "{}"                                                    |
-| ["freeCodeCamp"]                                         | "{freeCodeCamp}"                                        |
-| ["freeCodeCamp", "Curriculum"]                           | "{freeCodeCamp and Curriculum}"                         |
-| ["freeCodeCamp", "Curriculum", "Articles", "Volunteers"] | "{freeCodeCamp, Curriculum, Articles and Volunteers}"   |
+|             Array          |           Output         |
+| -------------------------- | ------------------------ |
+| []                         | "{}"                     |
+| ["ABC"]                    | "{ABC}"                  |
+| ["ABC", "DEF"]             | "{ABC and DEF}"          |
+| ["ABC", "DEF", "G", "H"]   | "{ABC, DEF, G and H}"    |
 
 # --hints--
 
@@ -29,10 +29,10 @@ Write a function to generate a string output which is the concatenation of input
 assert(typeof quibble === 'function');
 ```
 
-`quibble(["freeCodeCamp"])` should return a string.
+`quibble(["ABC"])` should return a string.
 
 ```js
-assert(typeof quibble(['freeCodeCamp']) === 'string');
+assert(typeof quibble(['ABC']) === 'string');
 ```
 
 `quibble([])` should return "{}".
@@ -41,19 +41,19 @@ assert(typeof quibble(['freeCodeCamp']) === 'string');
 assert.equal(quibble(testCases[0]), results[0]);
 ```
 
-`quibble(["freeCodeCamp"])` should return `"{freeCodeCamp}"`.
+`quibble(["ABC"])` should return `"{ABC}"`.
 
 ```js
 assert.equal(quibble(testCases[1]), results[1]);
 ```
 
-`quibble(["freeCodeCamp", "Curriculum"])` should return `"{freeCodeCamp and Curriculum}"`.
+`quibble(["ABC", "DEF"])` should return `"{ABC and DEF}"`.
 
 ```js
 assert.equal(quibble(testCases[2]), results[2]);
 ```
 
-`quibble(["freeCodeCamp", "Curriculum", "Articles", "Volunteers"])` should return `"{freeCodeCamp, Curriculum, Articles and Volunteers}"`.
+`quibble(["ABC", "DEF", "G", "H"])` should return `"{ABC, DEF, G and H}"`.
 
 ```js
 assert.equal(quibble(testCases[3]), results[3]);
@@ -64,8 +64,8 @@ assert.equal(quibble(testCases[3]), results[3]);
 ## --after-user-code--
 
 ```js
-const testCases = [[], ["freeCodeCamp"], ["freeCodeCamp", "Curriculum"], ["freeCodeCamp", "Curriculum", "Articles", "Volunteers"]];
-const results = ["{}", "{freeCodeCamp}", "{freeCodeCamp and Curriculum}", "{freeCodeCamp,Curriculum,Articles and Volunteers}"];
+const testCases = [[], ["ABC"], ["ABC", "DEF"], ["ABC", "DEF", "G", "H"]];
+const results = ["{}", "{ABC}", "{ABC and DEF}", "{ABC,DEF,G and H}"];
 ```
 
 ## --seed-contents--
