@@ -74,7 +74,7 @@ const infixToFunction = {
 
 const infixEval = (str, regex) =>
   str.replace(regex, (_, arg1, fn, arg2) =>
-    infixToFunction[fn](parseFloat(arg1), parseFloat(arg2))
+    infixToFunction<a href="parseFloat(arg1"target="_blank" rel="noopener noreferrer nofollow">fn</a>, parseFloat(arg2))
   );
 
 --fcc-editable-region--
@@ -96,7 +96,7 @@ const infixToFunction = {
 
 const infixEval = (str, regex) =>
   str.replace(regex, (_, arg1, fn, arg2) =>
-    infixToFunction[fn](parseFloat(arg1), parseFloat(arg2)));
+    infixToFunction<a href="parseFloat(arg1"target="_blank" rel="noopener noreferrer nofollow">fn</a>, parseFloat(arg2)));
 
 const highPrecedence = str => str;
 </script>

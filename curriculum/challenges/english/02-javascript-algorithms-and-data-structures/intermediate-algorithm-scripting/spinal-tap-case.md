@@ -64,7 +64,7 @@ spinalCase('This Is Spinal Tap');
 
 ```js
 function spinalCase(str) {
-  str = str.replace(/([a-z](?=[A-Z]))/g, '$1 ');
+  str = str.replace(/(<a href="?=[A-Z]"target="_blank" rel="noopener noreferrer nofollow">a-z</a>)/g, '$1 ');
   return str.toLowerCase().replace(/\ |\_/g, '-');
 }
 ```

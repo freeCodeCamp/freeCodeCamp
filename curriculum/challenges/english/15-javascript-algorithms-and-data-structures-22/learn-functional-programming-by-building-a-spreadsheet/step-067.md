@@ -80,7 +80,7 @@ const infixToFunction = {
 
 const infixEval = (str, regex) =>
   str.replace(regex, (_, arg1, fn, arg2) =>
-    infixToFunction[fn](parseFloat(arg1), parseFloat(arg2))
+    infixToFunction<a href="parseFloat(arg1"target="_blank" rel="noopener noreferrer nofollow">fn</a>, parseFloat(arg2))
   );
 
 const highPrecedence = str => {
@@ -100,7 +100,7 @@ const applyFn = str => {
   const regex = /([a-z]*)\(([0-9., ]*)\)(?!.*\()/i;
   const toNumberList = args => args.split(",").map(parseFloat);
   const applyFunction = (fn, args) =>
-    spreadsheetFunctions[fn.toLowerCase()](toNumberList(args));
+    spreadsheetFunctions<a href="toNumberList(args"target="_blank" rel="noopener noreferrer nofollow">fn.toLowerCase()</a>);
   return str2.replace(
     regex,
     (match, fn, args) =>
@@ -144,7 +144,7 @@ const infixToFunction = {
 
 const infixEval = (str, regex) =>
   str.replace(regex, (_, arg1, fn, arg2) =>
-    infixToFunction[fn](parseFloat(arg1), parseFloat(arg2))
+    infixToFunction<a href="parseFloat(arg1"target="_blank" rel="noopener noreferrer nofollow">fn</a>, parseFloat(arg2))
   );
 
 const highPrecedence = str => {
@@ -164,7 +164,7 @@ const applyFn = str => {
   const regex = /([a-z]*)\(([0-9., ]*)\)(?!.*\()/i;
   const toNumberList = args => args.split(",").map(parseFloat);
   const applyFunction = (fn, args) =>
-    spreadsheetFunctions[fn.toLowerCase()](toNumberList(args));
+    spreadsheetFunctions<a href="toNumberList(args"target="_blank" rel="noopener noreferrer nofollow">fn.toLowerCase()</a>);
   return str2.replace(
     regex,
     (match, fn, args) =>

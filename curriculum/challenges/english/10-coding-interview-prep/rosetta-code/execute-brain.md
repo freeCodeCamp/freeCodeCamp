@@ -10,7 +10,7 @@ dashedName: execute-brain
 
 Write a function to implement a Brain\*\*\*\* interpreter. The function will take a string as a parameter and should return a string as the output. More details are given below:
 
-RCBF is a set of [Brainf\*\*\*](https://rosettacode.org/wiki/Brainf*** "Brainf\*\*\*") compilers and interpreters written for Rosetta Code in a variety of languages.
+RCBF is a set of <a href="https://rosettacode.org/wiki/Brainf*** "Brainf\*\*\*""target="_blank" rel="noopener noreferrer nofollow">Brainf\*\*\*</a> compilers and interpreters written for Rosetta Code in a variety of languages.
 
 Below are links to each of the versions of RCBF.
 
@@ -194,7 +194,7 @@ function brain(prog){
 
     for(ip=0;ip<ar.length;ip++){
     if(commands.hasOwnProperty(ar[ip]))
-          commands[ar[ip]]();
+          commands<a href=""target="_blank" rel="noopener noreferrer nofollow">ar[ip]</a>;
     }
 
     return output;

@@ -14,7 +14,7 @@ Define an object `spreadsheetFunctions`, with a single key - an empty string (`"
 See description above for instructions.
 
 ```js
-assert(spreadsheetFunctions['']('x') === 'x');
+assert(spreadsheetFunctions<a href="'x'"target="_blank" rel="noopener noreferrer nofollow">''</a> === 'x');
 ```
 
 # --seed--
@@ -68,7 +68,7 @@ const infixToFunction = {
 
 const infixEval = (str, regex) =>
   str.replace(regex, (_, arg1, fn, arg2) =>
-    infixToFunction[fn](parseFloat(arg1), parseFloat(arg2))
+    infixToFunction<a href="parseFloat(arg1"target="_blank" rel="noopener noreferrer nofollow">fn</a>, parseFloat(arg2))
   );
 
 const highPrecedence = str => {
@@ -96,7 +96,7 @@ const infixToFunction = {
 
 const infixEval = (str, regex) =>
   str.replace(regex, (_, arg1, fn, arg2) =>
-    infixToFunction[fn](parseFloat(arg1), parseFloat(arg2))
+    infixToFunction<a href="parseFloat(arg1"target="_blank" rel="noopener noreferrer nofollow">fn</a>, parseFloat(arg2))
   );
 
 const highPrecedence = str => {

@@ -131,6 +131,6 @@ let result = userCheck.test(username);
 
 ```js
 let username = "JackOfAllTrades";
-const userCheck = /^[a-z]([0-9]{2,}|[a-z]+\d*)$/i;
+const userCheck = /^<a href="[0-9]{2,}|[a-z]+\d*"target="_blank" rel="noopener noreferrer nofollow">a-z</a>$/i;
 let result = userCheck.test(username);
 ```

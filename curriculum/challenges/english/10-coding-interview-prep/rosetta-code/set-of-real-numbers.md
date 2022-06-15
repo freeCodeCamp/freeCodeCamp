@@ -232,7 +232,7 @@ function realSet(set1, set2, operation, values) {
   set2 = new RealSet(set2.low, set2.high, set2.rangeType);
   var result = [];
   values.forEach(function(value) {
-    result.push(set1[operation](set2).contains(value));
+    result.push(set1<a href="set2"target="_blank" rel="noopener noreferrer nofollow">operation</a>.contains(value));
   });
   return result;
 }

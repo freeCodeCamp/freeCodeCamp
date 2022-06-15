@@ -15,9 +15,9 @@ See description above for instructions.
 
 ```js
 assert(
-  infixToFunction['-'](10, 2) === 8 &&
-    infixToFunction['*'](10, 10) === 100 &&
-    infixToFunction['/'](100, 10) === 10
+  infixToFunction<a href="10, 2"target="_blank" rel="noopener noreferrer nofollow">'-'</a> === 8 &&
+    infixToFunction<a href="10, 10"target="_blank" rel="noopener noreferrer nofollow">'*'</a> === 100 &&
+    infixToFunction<a href="100, 10"target="_blank" rel="noopener noreferrer nofollow">'/'</a> === 10
 );
 ```
 
