@@ -11,7 +11,7 @@ dashedName: create-decimal-numbers-with-javascript
 
 変数に小数を格納することもできます。 小数は<dfn>浮動小数点数</dfn>または <dfn>float</dfn> と呼ばれることもあります。
 
-**注:** コンピューターは数値を有限精度で表します。 そのため、浮動小数点演算が厳密な算術演算を正確に表現できず、意外な状況につながることが多くあります。 このような問題に直面した場合は、[freeCodeCamp フォーラム](https://forum.freecodecamp.org/)にトピックを立ててください。
+**注:** 数値は有限精度で計算されます。 そのため、浮動小数点を使用した演算は、期待する結果と異なる結果になる可能性があります。 その場合は、[freeCodeCamp フォーラム](https://forum.freecodecamp.org/)にトピックを作成してください。
 
 # --instructions--
 

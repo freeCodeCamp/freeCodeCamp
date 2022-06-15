@@ -8,12 +8,12 @@ dashedName: medical-data-visualizer
 
 # --description--
 
-Você [trabalhará neste projeto com nosso código inicial do Replit](https://replit.com/github/freeCodeCamp/boilerplate-medical-data-visualizer).
+Você <a href="https://replit.com/github/freeCodeCamp/boilerplate-medical-data-visualizer" target="_blank" rel="noopener noreferrer nofollow">trabalhará neste projeto com nosso código inicial do Replit</a>.
 
 Ainda estamos desenvolvendo a parte instrucional interativa do currículo Python. Por enquanto, aqui estão alguns vídeos no canal do freeCodeCamp.org do YouTube que ensinarão tudo o que você precisa saber para completar este projeto:
 
-- [Curso de Python em vídeo para todos](https://www.freecodecamp.org/news/python-for-everybody/) (14 horas)
-- [Curso Aprenda Python em vídeo](https://www.freecodecamp.org/news/learn-python-video-course/) (10 horas)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Curso de Python em vídeo para todos</a> (14 horas)
+- <a href="https://www.freecodecamp.org/news/learn-python-video-course/" target="_blank" rel="noopener noreferrer nofollow">Curso por vídeo Aprenda Python</a>
 
 # --instructions--
 

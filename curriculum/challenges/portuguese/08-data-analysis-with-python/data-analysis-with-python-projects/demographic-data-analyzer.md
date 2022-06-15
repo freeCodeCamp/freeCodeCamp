@@ -8,12 +8,12 @@ dashedName: demographic-data-analyzer
 
 # --description--
 
-Você [trabalhará neste projeto com nosso código inicial do Replit](https://replit.com/github/freeCodeCamp/boilerplate-demographic-data-analyzer).
+Você <a href="https://replit.com/github/freeCodeCamp/boilerplate-demographic-data-analyzer" target="_blank" rel="noopener noreferrer nofollow">trabalhará neste projeto com nosso código inicial do Replit</a>.
 
 Ainda estamos desenvolvendo a parte instrucional interativa do currículo Python. Por enquanto, aqui estão alguns vídeos no canal do freeCodeCamp.org do YouTube que ensinarão tudo o que você precisa saber para completar este projeto:
 
-- [Curso de Python em vídeo para todos](https://www.freecodecamp.org/news/python-for-everybody/) (14 horas)
-- [Curso Aprenda Python em vídeo](https://www.freecodecamp.org/news/learn-python-video-course/) (10 horas)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Curso de Python em vídeo para todos</a> (14 horas)
+- <a href="https://www.freecodecamp.org/news/learn-python-video-course/" target="_blank" rel="noopener noreferrer nofollow">Curso Aprenda Python em vídeo</a> (10 horas)
 
 # --instructions--
 
@@ -59,7 +59,7 @@ Copie o URL do seu projeto e envie-o para o freeCodeCamp.
 
 ## Fonte do dataset
 
-Dua, D. e Graff, C. (2019). [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml). Irvine, CA: University of California, School of Information and Computer Science.
+Dua, D. e Graff, C. (2019). <a href="http://archive.ics.uci.edu/ml" target="_blank" rel="noopener noreferrer nofollow">UCI Machine Learning Repository</a>. Irvine, CA: University of California, School of Information and Computer Science.
 
 # --hints--
 

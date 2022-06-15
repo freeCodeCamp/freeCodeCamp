@@ -10,7 +10,7 @@ dashedName: rock-paper-scissors
 
 Neste desafio, você vai criar um programa para jogar Pedra, papel e tesoura. Um programa com decisões aleatórias tem uma taxa de vitória média de 50%. Para passar no desafio, seu programa vai enfrentar quatro robôs diferentes e deve vencer pelo menos 60% dos jogos contra cada um.
 
-Você vai [trabalhar nesse projeto com nosso código inicial do Replit](https://replit.com/github/freeCodeCamp/boilerplate-rock-paper-scissors).
+Você <a href="https://replit.com/github/freeCodeCamp/boilerplate-rock-paper-scissors" target="_blank" rel="noopener noreferrer nofollow">trabalhará neste projeto com nosso código inicial do Replit</a>.
 
 Ainda estamos desenvolvendo a parte instrucional interativa do currículo de aprendizagem de máquina. Por enquanto, você terá que usar outros recursos para aprender a vencer este desafio.
 
