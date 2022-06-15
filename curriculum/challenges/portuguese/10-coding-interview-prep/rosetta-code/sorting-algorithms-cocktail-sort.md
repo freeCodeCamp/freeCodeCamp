@@ -8,29 +8,7 @@ dashedName: sorting-algorithmscocktail-sort
 
 # --description--
 
-A ordenação do shaker de coquetel é uma melhoria da [Ordenação de bolha](https://rosettacode.org/wiki/Bubble Sort). A melhoria consiste basicamente no fato de que os valores são levados como "bolhas" para ambas as direções através do array, porque, em cada iteração, o shaker de coquetel classifica uma vez para frente e uma vez para trás. Pseudocódigo para o algoritmo (da [Wikipédia](https://en.wikipedia.org/wiki/Cocktail sort)):
-
-<pre><b>function</b> <i>cocktailSort</i>( A : lista de itens ordenáveis)
-  <b>do</b>
-    swapped := false
-    <b>for each</b> i <b>in</b> 0 <b>to</b> length( A ) - 2 <b>do</b>
-      <b>if</b> A[ i ] > A[ i+1 ] <b>then</b> <i>// test whether the two</i>
-                                <i>// elementos na ordem</i>
-                                <i>// incorreta</i>
-        swap( A[ i ], A[ i+1 ] ) <i>// permitir que os elementos</i>
-                                 <i>// troquem de lugar</i>
-        swapped := true;
-    <b>if</b> swapped = false <b>then</b>
-      <i>// saímos do laço externo aqui se não houver trocas.</i>
-      <b>break do-while loop</b>;
-    swapped := false
-    <b>for each</b> i <b>in</b> length( A ) - 2 <b>down to</b> 0 <b>do</b>
-      <b>if</b> A[ i ] > A[ i+1 ] <b>then</b>
-        swap( A[ i ], A[ i+1 ] )
-        swapped := true;
-  <b>while</b> swapped; <i>// se nenhum elemento for trocado,</i>
-                <i>// a lista está ordenada</i>
-</pre>
+A ordenação [cocktail shaker](https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort) é uma melhoria da ordenação Bubble Sort. Dado um array de números, a ordenação cocktail shaker fará a travessia do array do início ao fim, movendo o maior número para o final. Em seguida, ela fará a travessia do array de trás para a frente, movendo o menor número para o início. Ela repete essas duas travessias, movendo o próximo maior número e o próximo menor número até suas posições corretas no array until até que este esteja ordenado.
 
 # --instructions--
 

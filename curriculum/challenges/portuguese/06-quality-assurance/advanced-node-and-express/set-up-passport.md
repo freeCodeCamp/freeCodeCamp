@@ -29,7 +29,7 @@ app.use(session({
 
 Você também pode dizer à aplicação do Express para **usar** 'passport.initialize()' e 'passport.session()'. (Por exemplo, `app.use(passport.initialize());`)
 
-Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto concluído até este momento [aqui](https://gist.github.com/camperbot/4068a7662a2f9f5d5011074397d6788c).
+Envie sua página quando você achar que ela está certa. Se você estiver encontrando erros, pode <a href="https://gist.github.com/camperbot/4068a7662a2f9f5d5011074397d6788c" target="_blank" rel="noopener noreferrer nofollow">conferir o projeto concluído até este ponto</a>.
 
 # --hints--
 
