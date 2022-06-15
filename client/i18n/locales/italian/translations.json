@@ -50,8 +50,8 @@
     "reset-lesson": "Resetta questa lezione",
     "run": "Avvia",
     "run-test": "Esegui i test (Ctrl + Invio)",
-    "check-code": "Check Your Code (Ctrl + Enter)",
-    "check-code-2": "Check Your Code",
+    "check-code": "Verifica il tuo codice (Ctrl + Invio)",
+    "check-code-2": "Verifica il tuo codice",
     "reset": "Resetta",
     "reset-code": "Resetta tutto il codice",
     "help": "Guida",
@@ -72,8 +72,8 @@
     "go-to-settings": "Vai alle impostazioni per richiedere la tua certificazione",
     "click-start-course": "Inizia il corso",
     "click-start-project": "Inizia il progetto",
-    "change-language": "Change Language",
-    "cancel-change": "Cancel Change"
+    "change-language": "Cambia lingua",
+    "cancel-change": "Annulla modifica"
   },
   "landing": {
     "big-heading-1": "Impara a programmare — gratis.",
@@ -104,7 +104,7 @@
   },
   "settings": {
     "share-projects": "Condividi i tuoi progetti non-freeCodeCamp, articoli o pull request accettate.",
-    "privacy": "The settings in this section enable you to control what is shown on your freeCodeCamp public portfolio. Press save to save your changes.",
+    "privacy": "Le impostazioni di questa sezione ti permettono di controllare quello che viene mostrato sul tuo portfolio pubblico di freeCodeCamp. Premi salva per salvare le tue modifiche.",
     "data": "Per vedere quali dati teniamo nel tuo account, clicca sul pulsante \"Scarica i tuoi dati\" qui sotto",
     "disabled": "Le tue certificazioni saranno disabilitate, se impostato su privato.",
     "private-name": "Il tuo nome non apparirà sulle certificazioni, se impostato su privato.",
@@ -147,7 +147,7 @@
       "my-donations": "Le mie donazioni",
       "night-mode": "Modalità Notturna",
       "sound-mode": "Modalità Campfire",
-      "keyboard-shortcuts": "Enable Keyboard Shortcuts"
+      "keyboard-shortcuts": "Abilita le scorciatoie da tastiera"
     },
     "headings": {
       "certs": "Certificazioni",
@@ -273,7 +273,7 @@
     "solution-link": "Link alla soluzione",
     "github-link": "Link GitHub",
     "submit-and-go": "Invia e vai alla prossima sfida",
-    "congratulations": "Congratulations, your code passes. Submit your code to complete this step and move on to the next one.",
+    "congratulations": "Congratulazioni, il tuo codice è corretto. Invia il codice per completare questo step e passare quello successivo.",
     "i-completed": "Ho completato questa sfida",
     "test-output": "Il risultato del tuo test andrà qui",
     "running-tests": "// test in corso",
@@ -300,7 +300,7 @@
       "restart": "Inizia da capo",
       "restart-step": "Ricomincia step",
       "console": "Console",
-      "instructions": "Instructions",
+      "instructions": "Istruzioni",
       "notes": "Note",
       "preview": "Anteprima"
     },
@@ -315,13 +315,13 @@
     "runs-in-vm": "Il progetto esegue in una macchina virtuale, completa le user story descritte lì dentro e fai passare tutti i test per finire lo step 1.",
     "completed": "Completato",
     "not-started": "Non iniziato",
-    "hint": "Hint",
+    "hint": "Suggerimento",
     "test": "Test",
-    "sorry-try-again": "Sorry, your code does not pass. Try again.",
-    "sorry-keep-trying": "Sorry, your code does not pass. Keep trying.",
-    "sorry-getting-there": "Sorry, your code does not pass. You're getting there.",
-    "sorry-hang-in-there": "Sorry, your code does not pass. Hang in there.",
-    "sorry-dont-giveup": "Sorry, your code does not pass. Don't give up."
+    "sorry-try-again": "Il tuo codice non è corretto. Riprova.",
+    "sorry-keep-trying": "Il tuo codice non è corretto. Continua a provare.",
+    "sorry-getting-there": "Il tuo codice non è corretto. Ci sei quasi.",
+    "sorry-hang-in-there": "Il tuo codice non è corretto. Tieni duro.",
+    "sorry-dont-giveup": "Il tuo codice non è corretto. Non arrenderti."
   },
   "donate": {
     "title": "Supporta il nostro no profit",
@@ -457,10 +457,10 @@
     "donate": "Dona con PayPal",
     "fail": "Test Fallito",
     "not-passed": "Non Superato",
-    "waiting": "Waiting",
+    "waiting": "Attendi",
     "passed": "Superato",
-    "failed": "Failed",
-    "hint": "Hint",
+    "failed": "Non corretto",
+    "hint": "Suggerimento",
     "heart": "Cuore",
     "initial": "Iniziale",
     "info": "Informazioni introduttive",
@@ -481,8 +481,8 @@
     "last-page": "Va all'ultima pagina",
     "primary-nav": "primario",
     "breadcrumb-nav": "percorso",
-    "submit": "Use Ctrl + Enter to submit.",
-    "running-tests": "Running tests"
+    "submit": "Usa Ctrl + Invio per inviare.",
+    "running-tests": "Test in corso"
   },
   "flash": {
     "honest-first": "Per richiedere una certificazione, è necessario prima accettare la nostra politica di onestà accademica",
@@ -690,14 +690,14 @@
     "yes-please": "Sì per favore, vorrei eliminare il mio token"
   },
   "shortcuts": {
-    "title": "Keyboard shortcuts",
-    "table-header-action": "Action",
-    "table-header-key": "Key(s)",
-    "navigation-mode": "Navigation Mode",
-    "execute-challenge": "Execute Challenge",
+    "title": "Scorciatoie da tastiera",
+    "table-header-action": "Azione",
+    "table-header-key": "Tasti",
+    "navigation-mode": "Modalità Di Navigazione",
+    "execute-challenge": "Esegui Sfida",
     "focus-editor": "Focus Editor",
-    "focus-instructions-panel": "Focus Instructions Panel",
-    "navigate-previous": "Navigate Previous Exercise",
-    "navigate-next": "Navigate Next Exercise"
+    "focus-instructions-panel": "Focus sul pannello delle istruzioni",
+    "navigate-previous": "Passa all'esercizio precedente",
+    "navigate-next": "Passa all'esercizio successivo"
   }
 }
