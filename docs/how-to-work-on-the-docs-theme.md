@@ -21,7 +21,7 @@ This is necessary to make these links work for the translated version of the doc
 
 #### Translating docs with internal links
 
-When you work on translating docs on Crowdin, make sure to substitute the `#target-section-heading-id` with the id on the translated document. [Learn more about translating docs here](how-to-translate-files.md#translate-documentation).
+When you work on translating docs on Crowdin, make sure to replace the `#target-section-heading-id` with the id on the translated document. [Learn more about translating docs here](how-to-translate-files.md#translate-documentation).
 
 ## Work on the docs theme
 

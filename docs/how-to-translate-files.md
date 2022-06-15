@@ -126,21 +126,33 @@ Translating our contributing documentation is a similar flow to translating our 
 
 When you work on translating contributing documentation, watch out for internal links targeting a different section of the documentation.
 
-Make sure to substitute the id of the target section (the part after `#`) with the id on the translated document. For example, it will look like this in Japanese:
+Make sure to replace the id of the target section (the part after `#`) with the id on the translated document. For example, it will look like this in Japanese:
 
 Before translation
 
-```md
+```
+// in HTML
+<a href="target-file-name.md#target-section-heading-id">Link text</a>
+<a href="#target-section-heading-id">Link text</a>
+
+// in Markdown
 [Link text](target-file-name.md#target-section-heading-id)
 [Link text](#target-section-heading-id)
 ```
 
 After translation
 
-```md
+```
+// in HTML
+<a href="target-file-name.md#翻訳後の-id">翻訳後のリンクテキスト</a>
+<a href="#翻訳後の-id">翻訳後のリンクテキスト</a>
+
+// in Markdown
 [翻訳後のリンクテキスト](target-file-name.md#翻訳後の-id)
 [翻訳後のリンクテキスト](#翻訳後の-id)
 ```
+
+The actual files in docs are written in Markdown, but they will appear as HTML tags on Crowdin.
 
 You can find out how `docsify` converts a string in your language into an id by looking into the translated pages. If the translation is not deployed yet, you can preview it by [running the docs site locally](how-to-work-on-the-docs-theme.md#serving-the-documentation-site-locally).
 
