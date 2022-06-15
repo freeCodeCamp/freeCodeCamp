@@ -8,7 +8,7 @@ dashedName: comma-quibbling
 
 # --description--
 
-Comma quibbling is a task originally set by Eric Lippert in his 2009 blog. In this challenge, you will create a `string` from an `array`. You have to account for the `array` having no items, a single item, or multiple items in it. 
+[Comma quibbling](https://rosettacode.org/wiki/Comma_quibbling) is a task originally set by Eric Lippert in his 2009 blog. In this challenge, you will create a `string` from an `array`. You have to account for the `array` having no items, a single item, or multiple items in it. 
 
 # --instructions--
 
