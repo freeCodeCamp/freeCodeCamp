@@ -29,10 +29,6 @@ textarea.inputarea {
   gap: 8px;
 }
 
-.action-row button {
-  padding: 6px 12px;
-}
-
 .editor-row {
   flex: 1 1 auto;
   display: flex;
