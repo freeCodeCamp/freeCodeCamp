@@ -58,10 +58,10 @@ import {
   isChallengeCompletedSelector
 } from '../redux';
 import GreenPass from '../../../assets/icons/green-pass';
+import Code from '../../../assets/icons/code';
 import LowerJaw from './lower-jaw';
 
 import './editor.css';
-import Code from '../../../assets/icons/code';
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));

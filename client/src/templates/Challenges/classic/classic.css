@@ -56,11 +56,11 @@
 .monaco-editor .margin,
 .monaco-editor-background,
 .monaco-editor .inputarea.ime-input {
-  background-color: var(--tc-white)!important;
+  background-color: var(--tc-white) !important;
 }
 
 .monaco-editor .view-overlays .current-line {
-  width: auto!important;
+  width: auto !important;
   right: 15px;
 }
 

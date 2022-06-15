@@ -119,7 +119,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
           togglePane={togglePane}
         />
       )}
-      <div className="editor-row">
+      <div className='editor-row'>
         <ReflexContainer orientation='vertical'>
           {!projectBasedChallenge && (
             <ReflexElement flex={instructionPane.flex} {...resizeProps}>
@@ -143,7 +143,9 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
                 >
                   {editor}
                 </ReflexElement>
-                {displayNotes && <ReflexSplitter propagate={true} {...resizeProps} />}
+                {displayNotes && (
+                  <ReflexSplitter propagate={true} {...resizeProps} />
+                )}
                 {displayNotes && (
                   <ReflexElement flex={notesPane.flex} {...resizeProps}>
                     {notes}
@@ -165,7 +167,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
                     {preview}
                   </ReflexElement>
                 )}
-                {(displayConsole && displayPreview) && (
+                {displayConsole && displayPreview && (
                   <ReflexSplitter propagate={true} {...resizeProps} />
                 )}
                 {displayConsole && (

@@ -24,15 +24,13 @@ const mapDispatchToProps = {
 
 const ActionRow = ({
   hasNotes,
-  isMultifileCertProject,
   togglePane,
   showNotes,
   showPreview,
   showConsole,
   superBlock,
   showBreadcrumbs = true,
-  block,
-  resetChallenge
+  block
 }: ActionRowProps): JSX.Element => {
   const { t } = useTranslation();
   return (
@@ -44,14 +42,11 @@ const ActionRow = ({
       )}
       <div className='tabs-row'>
         <EditorTabs />
-        {/* {!isMultifileCertProject && (
-          <button className='restart-step-tab' onClick={resetChallenge}>
-            {t('learn.editor-tabs.restart-step')}
-          </button>
-        )} */}
         <button
           aria-expanded={showConsole ? 'true' : 'false'}
-          className={showConsole ? 'btn-tab-primary' : 'btn-tab-primary--outline'}
+          className={
+            showConsole ? 'btn-tab-primary' : 'btn-tab-primary--outline'
+          }
           onClick={() => togglePane('showConsole')}
         >
           {t('learn.editor-tabs.console')}
@@ -59,7 +54,9 @@ const ActionRow = ({
         {hasNotes && (
           <button
             aria-expanded={showNotes ? 'true' : 'false'}
-            className={showNotes ? 'btn-tab-primary' : 'btn-tab-primary--outline'}
+            className={
+              showNotes ? 'btn-tab-primary' : 'btn-tab-primary--outline'
+            }
             onClick={() => togglePane('showNotes')}
           >
             {t('learn.editor-tabs.notes')}
@@ -67,7 +64,9 @@ const ActionRow = ({
         )}
         <button
           aria-expanded={showPreview ? 'true' : 'false'}
-          className={showPreview ? 'btn-tab-primary' : 'btn-tab-primary--outline'}
+          className={
+            showPreview ? 'btn-tab-primary' : 'btn-tab-primary--outline'
+          }
           onClick={() => togglePane('showPreview')}
         >
           {t('learn.editor-tabs.preview')}
