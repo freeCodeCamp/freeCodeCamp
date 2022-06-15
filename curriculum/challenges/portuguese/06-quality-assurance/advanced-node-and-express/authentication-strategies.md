@@ -34,7 +34,7 @@ Muitas estratégias são configuradas usando definições diferentes, mas geralm
 
 Na próxima etapa, vamos configurar como chamar realmente a estratégia de autenticação para validar um usuário com base nos dados do formulário!
 
-Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto concluído até este momento [aqui](https://gist.github.com/camperbot/53b495c02b92adeee0aa1bd3f3be8a4b).
+Envie sua página quando você achar que ela está certa. Se você estiver encontrando erros, pode <a href="https://gist.github.com/camperbot/53b495c02b92adeee0aa1bd3f3be8a4b" target="_blank" rel="noopener noreferrer nofollow">conferir o projeto concluído até este ponto</a>.
 
 # --hints--
 

@@ -8,7 +8,7 @@ dashedName: visualize-data-with-a-scatterplot-graph
 
 # --description--
 
-**Objetivo:** criar uma aplicação que funcione de modo semelhante ao que vemos em: <https://codepen.io/freeCodeCamp/full/bgpXyK>.
+**Objetivo:** criar uma aplicação que funcione de modo semelhante ao que vemos em: <a href="https://codepen.io/freeCodeCamp/full/bgpXyK" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/bgpXyK</a>.
 
 Atenda às histórias de usuário abaixo e faça com que todos os testes passem. Use quaisquer bibliotecas ou APIs de que você precisar. Dê ao projeto o seu próprio estilo pessoal.
 
@@ -46,7 +46,7 @@ Você pode usar HTML, JavaScript, CSS e a biblioteca de visualização D3, basea
 
 Aqui está o conjunto de dados de que você vai precisar para completar esse projeto: `https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/cyclist-data.json`
 
-Você pode fazer o seu projeto <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>usando este modelo da CodePen</a> e, logo após, clicar em `Save` para criar seu próprio projeto. Como alternativa, use este link da nossa CDN para executar os testes em qualquer ambiente que você preferir: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+Você pode fazer o seu projeto <a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">usando este modelo da CodePen</a> e clicando em `Save` para criar seu próprio pen. Como alternativa, use este link da nossa CDN para executar os testes em qualquer ambiente que você preferir: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
 Quando tiver terminado, envie o URL do seu projeto depois de ele haver passado em todos os testes.
 

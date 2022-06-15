@@ -8,7 +8,7 @@ dashedName: build-a-technical-documentation-page
 
 # --description--
 
-**Objetivo:** criar uma aplicação que funcione de modo semelhante a <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank">https://technical-documentation-page.freecodecamp.rocks</a>
+**Objetivo:** criar uma aplicação que funcione de modo semelhante a <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://technical-documentation-page.freecodecamp.rocks</a>
 
 **Histórias de usuário:**
 

@@ -9,7 +9,7 @@ dashedName: mitigate-the-risk-of-cross-site-scripting-xss-attacks-with-helmet-xs
 
 # --description--
 
-Lembrando que este projeto está sendo construído a partir do [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec), ou pose ser clonado no [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
+Lembrando que este projeto está sendo construído a partir do [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec), ou pode ser clonado no [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
 
 O cross-site scripting (XSS) é um tipo frequente de ataque, onde scripts maliciosos são injetados em páginas vulneráveis com o objetivo de roubar dados confidenciais, como cookies de sessão ou senhas.
 
