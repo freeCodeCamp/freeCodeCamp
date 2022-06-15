@@ -122,6 +122,30 @@ Translating our contributing documentation is a similar flow to translating our 
 > [!NOTE]
 > Our contributing documentation is powered by `docsify`, and we have special parsing for message boxes like this one. If you see strings that start with `[!NOTE]`, `[!WARNING]`, or `[!TIP]`, these words should NOT be translated.
 
+### How to translate documentation with internal links
+
+When you work on translating contributing documentation, watch out for internal links targeting a different section of the documentation.
+
+Make sure to substitute the id of the target section (the part after `#`) with the id on the translated document. For example, it will look like this in Japanese:
+
+Before translation
+
+```md
+[Link text](target-file-name.md#target-section-heading-id)
+[Link text](#target-section-heading-id)
+```
+
+After translation
+
+```md
+[翻訳後のリンクテキスト](target-file-name.md#翻訳後の-id)
+[翻訳後のリンクテキスト](#翻訳後の-id)
+```
+
+You can find out how `docsify` converts a string in your language into an id by looking into the translated pages. If the translation is not deployed yet, you can preview it by [running the docs site locally](how-to-work-on-the-docs-theme.md#serving-the-documentation-site-locally).
+
+You can learn more about [internal links in our docs here](how-to-work-on-the-docs-theme.md#how-to-create-an-internal-link).
+
 ## Translate the LearnToCode RPG
 
 The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated strings: (See [Ren'Py Text documentation](https://www.renpy.org/doc/html/text.html))
