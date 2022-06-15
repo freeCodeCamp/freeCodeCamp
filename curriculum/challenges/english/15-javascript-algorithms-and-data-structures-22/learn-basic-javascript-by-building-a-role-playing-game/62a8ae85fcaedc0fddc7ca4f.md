@@ -1,13 +1,13 @@
 ---
-id: 62a3c91a2bab1b4d6fabb726
-title: Step 36
+id: 62a8ae85fcaedc0fddc7ca4f
+title: Step 55
 challengeType: 0
-dashedName: step-36
+dashedName: step-55
 ---
 
 # --description--
 
-Now create a `goCave` function that prints `Going to cave.` to the console.
+Add a second object to your `locations` array (remember to separate them with a comma). Following the pattern you used in the first object, create the same properties but use the values from the `goStore` function. Set the `name` property to `store`.
 
 # --hints--
 
@@ -107,17 +107,59 @@ const goldText = document.querySelector("#goldText");
 const monsterStats = document.querySelector("#monsterStats");
 const monsterName = document.querySelector("#monsterName");
 const monsterHealthName =document.querySelector("#monsterHealth");
+--fcc-editable-region--
+const locations = [
+    {
+        name: "town square",
+        "button text": ["Go to store", "Go to cave", "Fight dragon"],
+        "button functions": [goStore, goCave, fightDragon],
+        text: "You are in the town square. You see a sign that says \"Store.\""
+    }
+];
+--fcc-editable-region--
 
 // initialize buttons
 button1.onclick = goStore;
 button2.onclick = goCave;
 button3.onclick = fightDragon;
 
-function goStore() {
-  console.log("Going to store.");
+function update(location) {
+
 }
 
---fcc-editable-region--
+function goTown() {
+  button1.innerText = "Go to store";
+  button2.innerText = "Go to cave";
+  button3.innerText = "Fight dragon";
+  button1.onclick = goStore;
+  button2.onclick = goCave;
+  button3.onclick = fightDragon;
+  text.innerText = "You are in the town square. You see a sign that says \"Store.\"";
+}
 
---fcc-editable-region--
+function goStore() {
+  button1.innerText = "Buy health (10 gold)";
+  button2.innerText = "Buy weapon (30 gold)";
+  button3.innerText = "Go to town square";
+  button1.onclick = buyHealth;
+  button2.onclick = buyWeapon;
+  button3.onclick = goTown;
+  text.innerText = "You enter the store.";
+}
+
+function goCave() {
+  console.log("Going to cave.");
+}
+
+function fightDragon() {
+  console.log("Fighting dragon.");
+}
+
+function buyHealth() {
+
+}
+
+function buyWeapon() {
+
+}
 ```
