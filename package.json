@@ -88,6 +88,8 @@
     "serve:client-ci": "cd ./client && npm run serve-ci",
     "start": "npm-run-all create:* -p develop:server serve:client",
     "start-ci": "npm-run-all create:* -p start:server serve:client-ci",
+    "start-proxy": "local-ssl-proxy -n fcc.topcoder-dev.com -s 4431 -t 8000",
+    "start-proxy-api": "local-ssl-proxy -n fcc.topcoder-dev.com -s 44311 -t 3000",
     "start:server": "cd ./api-server && npm start",
     "storybook": "cd ./tools/ui-components && npm run storybook",
     "test": "run-s create:* build:curriculum build-workers test:*",
