@@ -76,7 +76,7 @@ assert.equal(quibble(testCases[3]), results[3]);
 
 ```js
 const testCases = [[], ["ABC"], ["ABC", "DEF"], ["ABC", "DEF", "G", "H"]];
-const results = ["{}", "{ABC}", "{ABC and DEF}", "{ABC,DEF,G and H}"];
+const results = ["{}", "{ABC}", "{ABC and DEF}", "{ABC, DEF, G and H}"];
 ```
 
 ## --seed-contents--
