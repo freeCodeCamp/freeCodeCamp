@@ -58,6 +58,7 @@ import {
   isChallengeCompletedSelector
 } from '../redux';
 import GreenPass from '../../../assets/icons/green-pass';
+import Code from '../../../assets/icons/code';
 import LowerJaw from './lower-jaw';
 
 import './editor.css';
@@ -651,7 +652,16 @@ const Editor = (props: EditorProps): JSX.Element => {
       completedChallengeHeader.innerHTML = checkmark;
       jawHeading.appendChild(completedChallengeHeader);
     } else {
-      jawHeading.innerText = title;
+      const code = ReactDOMServer.renderToStaticMarkup(
+        <Code
+          style={{
+            height: '24px',
+            width: '24px',
+            marginRight: '7px'
+          }}
+        />
+      );
+      jawHeading.innerHTML = code + title;
     }
     const domNode = document.createElement('div');
     const desc = document.createElement('div');

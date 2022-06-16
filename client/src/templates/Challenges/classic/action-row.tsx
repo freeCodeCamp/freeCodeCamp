@@ -15,6 +15,7 @@ interface ActionRowProps {
   superBlock: string;
   togglePane: (pane: string) => void;
   resetChallenge: () => void;
+  showBreadcrumbs?: boolean;
 }
 
 const mapDispatchToProps = {
@@ -23,53 +24,53 @@ const mapDispatchToProps = {
 
 const ActionRow = ({
   hasNotes,
-  isMultifileCertProject,
   togglePane,
   showNotes,
   showPreview,
   showConsole,
   superBlock,
-  block,
-  resetChallenge
+  showBreadcrumbs = true,
+  block
 }: ActionRowProps): JSX.Element => {
   const { t } = useTranslation();
   return (
     <div className='action-row'>
-      <div className='breadcrumbs-demo'>
-        <BreadCrumb block={block} superBlock={superBlock} />
-      </div>
+      {showBreadcrumbs && (
+        <div className='breadcrumbs-demo'>
+          <BreadCrumb block={block} superBlock={superBlock} />
+        </div>
+      )}
       <div className='tabs-row'>
         <EditorTabs />
-        {!isMultifileCertProject && (
-          <button className='restart-step-tab' onClick={resetChallenge}>
-            {t('learn.editor-tabs.restart-step')}
+        <button
+          aria-expanded={showConsole ? 'true' : 'false'}
+          className={
+            showConsole ? 'btn-tab-primary' : 'btn-tab-primary--outline'
+          }
+          onClick={() => togglePane('showConsole')}
+        >
+          {t('learn.editor-tabs.console')}
+        </button>
+        {hasNotes && (
+          <button
+            aria-expanded={showNotes ? 'true' : 'false'}
+            className={
+              showNotes ? 'btn-tab-primary' : 'btn-tab-primary--outline'
+            }
+            onClick={() => togglePane('showNotes')}
+          >
+            {t('learn.editor-tabs.notes')}
           </button>
         )}
-        <div className='panel-display-tabs'>
-          <button
-            aria-expanded={showConsole ? 'true' : 'false'}
-            className={showConsole ? 'active-tab' : ''}
-            onClick={() => togglePane('showConsole')}
-          >
-            {t('learn.editor-tabs.console')}
-          </button>
-          {hasNotes && (
-            <button
-              aria-expanded={showNotes ? 'true' : 'false'}
-              className={showNotes ? 'active-tab' : ''}
-              onClick={() => togglePane('showNotes')}
-            >
-              {t('learn.editor-tabs.notes')}
-            </button>
-          )}
-          <button
-            aria-expanded={showPreview ? 'true' : 'false'}
-            className={showPreview ? 'active-tab' : ''}
-            onClick={() => togglePane('showPreview')}
-          >
-            {t('learn.editor-tabs.preview')}
-          </button>
-        </div>
+        <button
+          aria-expanded={showPreview ? 'true' : 'false'}
+          className={
+            showPreview ? 'btn-tab-primary' : 'btn-tab-primary--outline'
+          }
+          onClick={() => togglePane('showPreview')}
+        >
+          {t('learn.editor-tabs.preview')}
+        </button>
       </div>
     </div>
   );

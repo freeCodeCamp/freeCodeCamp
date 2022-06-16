@@ -52,6 +52,18 @@
   display: none !important;
 }
 
+.monaco-editor,
+.monaco-editor .margin,
+.monaco-editor-background,
+.monaco-editor .inputarea.ime-input {
+  background-color: var(--tc-white) !important;
+}
+
+.monaco-editor .view-overlays .current-line {
+  width: auto !important;
+  right: 15px;
+}
+
 .monaco-menu .monaco-action-bar.vertical .action-item:nth-last-child(n + 5),
 .monaco-menu .monaco-action-bar.vertical .action-item:last-child,
 .monaco-menu .monaco-action-bar.vertical .action-label.separator {
