@@ -31,7 +31,7 @@ passport.use(new GitHubStrategy({
 
 A autenticação ainda não será bem-sucedida e realmente lançará um erro sem a lógica e a função de callback do banco de dados, mas ela deverá fazer o login com o seu perfil do GitHub no console se você tentar!
 
-Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto concluído até este momento [aqui](https://gist.github.com/camperbot/ff3a1166684c1b184709ac0bee30dee6).
+Envie sua página quando você achar que ela está certa. Se você estiver encontrando erros, pode <a href="https://gist.github.com/camperbot/ff3a1166684c1b184709ac0bee30dee6" target="_blank" rel="noopener noreferrer nofollow">conferir o projeto concluído até este ponto</a>.
 
 # --hints--
 

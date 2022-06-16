@@ -1,6 +1,6 @@
 ---
 id: 587d78af367417b2b2512b04
-title: Costruire la Landing Page per un prodotto
+title: Costruisci la landing page per un prodotto
 challengeType: 14
 forumTopicId: 301144
 dashedName: build-a-product-landing-page
@@ -8,7 +8,7 @@ dashedName: build-a-product-landing-page
 
 # --description--
 
-**Obiettivo:** Crea un'app funzionalmente simile a <a href="https://product-landing-page.freecodecamp.rocks" target="_blank">https://product-landing-page.freecodecamp.rocks</a>
+**Obiettivo:** crea un'app funzionalmente simile a <a href="https://product-landing-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://product-landing-page.freecodecamp.rocks</a>
 
 **User story:**
 
