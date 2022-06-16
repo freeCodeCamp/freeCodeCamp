@@ -279,7 +279,7 @@ export class Block extends Component<BlockProps> {
                 <span className='block-header-button-text map-title'>
                   {this.renderCheckMark(isBlockCompleted)}
                   <span>
-                    {blockTitle}{' '}
+                    {blockTitle}
                     <span className='sr-only'>
                       , {courseCompletionStatus()}
                     </span>
