@@ -36,4 +36,4 @@
 - **Our Community**
   - [**GitHub**](https://github.com/freecodecamp/freecodecamp)
   - [**Discourse Forum**](https://freecodecamp.org/forum/c/contributors)
-  - [**Chat Server**](https://chat.freecodecamp.org/home)
+  - [**Chat Server**](https://discord.gg/PRyKn3Vbay)
