@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Button } from '@freecodecamp/react-bootstrap';
 
 import Fail from '../../../assets/icons/fail';
 import LightBulb from '../../../assets/icons/lightbulb';
 import GreenPass from '../../../assets/icons/green-pass';
 import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
+import { apiLocation } from '../../../../../config/env.json';
 
 interface LowerJawProps {
   hint?: string;
@@ -18,6 +20,7 @@ interface LowerJawProps {
   testsLength?: number;
   attemptsNumber?: number;
   openResetModal: () => void;
+  isSignedIn: boolean;
 }
 
 const LowerJaw = ({
@@ -30,7 +33,8 @@ const LowerJaw = ({
   attemptsNumber,
   testsLength,
   isEditorInFocus,
-  openResetModal
+  openResetModal,
+  isSignedIn
 }: LowerJawProps): JSX.Element => {
   const [previousHint, setpreviousHint] = useState('');
   const [runningTests, setRunningTests] = useState(false);
@@ -45,7 +49,7 @@ const LowerJaw = ({
 
   useEffect(() => {
     if (attemptsNumber && attemptsNumber > 0) {
-      //hide the feedback from SR untill the "Running tests" are displayed and removed.
+      //hide the feedback from SR until the "Running tests" are displayed and removed.
       setIsFeedbackHidden(true);
 
       //allow the lower jaw height to be picked up by the editor.
@@ -98,8 +102,8 @@ const LowerJaw = ({
   });
 
   /*
-    Retun early in lifecycle based on the earliest available conditions to help the editor
-    calcuate the correct editor gap for the lower jaw.
+    Return early in lifecycle based on the earliest available conditions to help the editor
+    calculate the correct editor gap for the lower jaw.
 
     For consistency, use the persisted version if the conditions has been met before.
   */
@@ -135,7 +139,7 @@ const LowerJaw = ({
         </div>
       );
     } else if (earliestAvailableHint) {
-      const hintDiscription = `<h2 class="hint">${t(
+      const hintDescription = `<h2 class="hint">${t(
         'learn.hint'
       )}</h2> ${earliestAvailableHint}`;
       return (
@@ -159,7 +163,7 @@ const LowerJaw = ({
             </div>
             <div
               className='hint-description'
-              dangerouslySetInnerHTML={{ __html: hintDiscription }}
+              dangerouslySetInnerHTML={{ __html: hintDescription }}
             />
           </div>
         </>
@@ -180,11 +184,11 @@ const LowerJaw = ({
       : sentenceArray[0];
   };
 
-  const renderContexualActionRow = () => {
-    const isAtteptsLargerThanTest =
+  const renderContextualActionRow = () => {
+    const isAttemptsLargerThanTest =
       attemptsNumber && testsLength && attemptsNumber >= testsLength;
 
-    if (isAtteptsLargerThanTest && !earliestAvailableCompletion)
+    if (isAttemptsLargerThanTest && !earliestAvailableCompletion)
       return (
         <div>
           <hr />
@@ -207,19 +211,28 @@ const LowerJaw = ({
   const renderButtons = () => {
     return (
       <>
-        <button
-          id='test-button'
-          className={`btn-block btn ${
-            earliestAvailableCompletion ? 'sr-only' : ''
-          }`}
-          aria-hidden={testBtnariaHidden}
-          onClick={tryToExecuteChallenge}
-        >
-          {showDesktopButton
-            ? t('buttons.check-code')
-            : t('buttons.check-code-2')}
-        </button>
         <div id='action-buttons-container'>
+          {isSignedIn ? null : earliestAvailableCompletion ? (
+            <Button
+              block={true}
+              href={`${apiLocation}/signin`}
+              className='btn-cta'
+            >
+              {t('learn.sign-in-save')}
+            </Button>
+          ) : null}
+          <button
+            id='test-button'
+            className={`btn-block btn ${
+              earliestAvailableCompletion ? 'sr-only' : ''
+            }`}
+            aria-hidden={testBtnariaHidden}
+            onClick={tryToExecuteChallenge}
+          >
+            {showDesktopButton
+              ? t('buttons.check-code')
+              : t('buttons.check-code-2')}
+          </button>
           <button
             id='submit-button'
             aria-hidden={!earliestAvailableCompletion}
@@ -246,7 +259,7 @@ const LowerJaw = ({
       >
         {renderTestFeedbackContainer()}
       </div>
-      {renderContexualActionRow()}
+      {renderContextualActionRow()}
     </div>
   );
 };
