@@ -8,7 +8,17 @@ dashedName: soundex
 
 # --description--
 
-Soundex é um algoritmo para criar índices para palavras com base em sua pronúncia. O objetivo é que os homófonos sejam codificados para a mesma representação, para que eles possam ser combinados apesar das pequenas diferenças na ortografia (do [artigo da Wikipédia](https://en.wikipedia.org/wiki/soundex)). Há uma questão importante em muitas das implementações relativas à separação de duas consoantes que têm o mesmo código soundex! De acordo com as [regras oficiais](https://www.archives.gov/research/census/soundex.html). Então, verifique por exemplo se **Ashcraft** é codificado para **A-261**.
+O **Algoritmo Soundex** lida com as *intenções* das palavras. Ele cria uma representação para palavras que soam semelhantes.
+
+Ele é usado para pesquisar <em>nomes</em> e <em>endereços</em>. Isso significa que a pessoa que preencheu o <em>nome</em> pode se concentrar em como ele soa em vez de corrigir a ortografia dos <em>nomes</em>.
+
+Por exemplo:
+
+Se você está ouvindo o nome `Quenci` pela primeira vez e o escreveu errado, receberá o código **Soundex** `Q520`.
+
+Quando você soletrar o nome `Quincy` corretamente na próxima vez, ainda receberá o mesmo código `Q520`, o que significa que você pode vincular múltiplas pronúncias do nome para a mesma <em>pessoa</em> sem a necessidade de adicionar cada ortografia.
+
+Aqui estão as regras: 
 
 <ul>
   <li>Se uma vogal (A, E, I, O, U) separa duas consoantes que tenham o mesmo código soundex, a consoante à direita da vogal é codificada. Tymczak é codificado como T-522 (T, 5 para M, 2 para o C, Z ignorado – veja a regra "Lado a lado" acima –, 2 para o K). Uma vez que a vogal "A" separa Z e K, o K está codificado.</li>

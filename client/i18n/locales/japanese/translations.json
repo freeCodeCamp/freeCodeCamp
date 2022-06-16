@@ -50,7 +50,8 @@
     "reset-lesson": "レッスンをリセット",
     "run": "実行",
     "run-test": "テスト実行 (Ctrl + Enter)",
-    "check-code": "Check Your Code (Ctrl + Enter)",
+    "check-code": "コードをチェック (Ctrl + Enter)",
+    "check-code-2": "コードをチェック",
     "reset": "リセット",
     "reset-code": "全てのコードをリセット",
     "help": "ヘルプ",
@@ -71,8 +72,8 @@
     "go-to-settings": "設定へ移動して認定証を取得",
     "click-start-course": "コースを開始",
     "click-start-project": "プロジェクトを開始",
-    "change-language": "Change Language",
-    "cancel-change": "Cancel Change"
+    "change-language": "言語変更",
+    "cancel-change": "変更キャンセル"
   },
   "landing": {
     "big-heading-1": "プログラミングを無料で学ぶ。",
@@ -103,7 +104,7 @@
   },
   "settings": {
     "share-projects": "あなたの freeCodeCamp 以外のプロジェクトや記事、承認されたプルリクエストをシェアしましょう。",
-    "privacy": "The settings in this section enable you to control what is shown on your freeCodeCamp public portfolio. Press save to save your changes.",
+    "privacy": "この設定セクションでは、あなたの freeCodeCamp 公開ポートフォリオに表示する項目を制御できます。変更を保存するには「保存」をクリックしてください。",
     "data": "アカウントに保存されているデータを確認するには、下の「データをダウンロード」ボタンをクリックしてください",
     "disabled": "プライベートに設定されている場合、認定証は無効化されます。",
     "private-name": "非公開に設定されている場合、あなたの名前は認定証に表示されません。",
@@ -145,7 +146,8 @@
       "my-timeline": "自分のタイムライン",
       "my-donations": "自分の寄付",
       "night-mode": "ナイトモード",
-      "sound-mode": "キャンプファイアモード"
+      "sound-mode": "キャンプファイアモード",
+      "keyboard-shortcuts": "キーボードショートカットを有効にする"
     },
     "headings": {
       "certs": "認定証",
@@ -271,7 +273,7 @@
     "solution-link": "回答のリンク",
     "github-link": "GitHub のリンク",
     "submit-and-go": "提出して次のチャレンジに進む",
-    "congradulations": "Congratulations, your code passes. Submit your code to complete this step and move on to the next one.",
+    "congratulations": "おめでとうございます、コードは合格です。このステップを完了して次に進むには、コードを提出してください。",
     "i-completed": "このチャレンジを完了しました",
     "test-output": "テストの結果はこちらに表示されます",
     "running-tests": "// テストを実行中です",
@@ -298,7 +300,7 @@
       "restart": "リスタート",
       "restart-step": "ステップをリスタート",
       "console": "コンソール",
-      "instructions": "Instructions",
+      "instructions": "手順書",
       "notes": "ノート",
       "preview": "プレビュー"
     },
@@ -311,15 +313,15 @@
     "submit-public-url": "プロジェクトが完成したら、必須のファイルをすべてパブリックリポジトリに保存し、リポジトリの URL を以下に提出してください。",
     "complete-both-steps": "チャレンジを終えるには、以下 2 つのステップを完了させてください。",
     "runs-in-vm": "このプロジェクトは仮想マシン内で動作します。ステップ 1 を完了するには、そこで述べられたユーザーストーリーを実装し、すべてのテストに合格してください。",
-    "completed": "Completed",
+    "completed": "完了",
     "not-started": "未着手",
-    "hint": "Hint",
-    "test": "Test",
-    "sorry-try-again": "Sorry, your code does not pass. Try again.",
-    "sorry-keep-trying": "Sorry, your code does not pass. Keep trying.",
-    "sorry-getting-there": "Sorry, your code does not pass. You're getting there.",
-    "sorry-hang-in-there": "Sorry, your code does not pass. Hang in there.",
-    "sorry-dont-giveup": "Sorry, your code does not pass. Don't give up."
+    "hint": "ヒント",
+    "test": "テスト",
+    "sorry-try-again": "残念ながら、テストが通りませんでした。もう一度挑戦しましょう。",
+    "sorry-keep-trying": "残念ながら、テストが通りませんでした。挑戦を続けましょう。",
+    "sorry-getting-there": "残念ながら、テストが通りませんでした。もう一息です。",
+    "sorry-hang-in-there": "残念ながら、テストが通りませんでした。がんばりましょう。",
+    "sorry-dont-giveup": "残念ながら、テストが通りませんでした。諦めないでください。"
   },
   "donate": {
     "title": "非営利団体を支援する",
@@ -455,8 +457,10 @@
     "donate": "PayPal で寄付する",
     "fail": "テスト失敗",
     "not-passed": "未完了",
+    "waiting": "Waiting",
     "passed": "合格済み",
-    "hint": "Hint",
+    "failed": "Failed",
+    "hint": "ヒント",
     "heart": "ハート",
     "initial": "初期状態",
     "info": "導入情報",
@@ -477,8 +481,8 @@
     "last-page": "最後のページへ移動",
     "primary-nav": "プライマリー",
     "breadcrumb-nav": "パンくずリスト",
-    "submit": "Use Ctrl + Enter to submit.",
-    "running-tests": "Running tests"
+    "submit": "提出するには Ctrl + Enter を押してください。",
+    "running-tests": "テスト実行中"
   },
   "flash": {
     "honest-first": "認定証を請求するには、まず学問的誠実性ポリシーに同意する必要があります。",
@@ -684,5 +688,16 @@
     "delete-p3": "仮想マシンを使用するカリキュラムセクションでこの先の進行状況を保存するには、新しいトークンを作成する必要があります。",
     "no-thanks": "いいえ、トークンを維持したいです",
     "yes-please": "はい、トークンを削除します"
+  },
+  "shortcuts": {
+    "title": "キーボードショートカット",
+    "table-header-action": "操作",
+    "table-header-key": "キー",
+    "navigation-mode": "ナビゲーションモード",
+    "execute-challenge": "チャレンジを実行",
+    "focus-editor": "エディターにフォーカス",
+    "focus-instructions-panel": "手順書パネルにフォーカス",
+    "navigate-previous": "前の課題へ移動",
+    "navigate-next": "次の課題へ移動"
   }
 }

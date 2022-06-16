@@ -15,21 +15,21 @@
   - [ローカライズされたクライアント Web アプリに貢献する](how-to-work-on-localized-client-webapp.md)
   - [Cypress テストに貢献する](how-to-add-cypress-tests.md)
   - [ビデオチャレンジに貢献する](how-to-help-with-video-challenges.md)
-  - [Work on the docs theme](how-to-work-on-the-docs-theme.md)
-  - [Work on the component library](how-to-work-on-the-component-library.md)
+  - [ドキュメントのテーマに貢献する](how-to-work-on-the-docs-theme.md)
+  - [コンポーネントライブラリに貢献する](how-to-work-on-the-component-library.md)
 - **その他のガイド**
   - [翻訳をローカルでテストする](how-to-test-translations-locally.md)
   - [カリキュラムのファイル構造を理解する](curriculum-file-structure.md)
   - [送信メールをローカルでデバッグする](how-to-catch-outgoing-emails-locally.md)
   - [freeCodeCamp を Windows (WSL) でセットアップする](how-to-setup-wsl.md)
-  - [User Token Workflow](user-token-workflow.md)
+  - [ユーザートークンワークフロー](user-token-workflow.md)
 
 ---
 
 - **マニュアル** (スタッフ & モデレーター用)
   - [モデレーターハンドブック](moderator-handbook.md)
   - [DevOps ハンドブック](devops.md)
-  - [Courses VSCode Extension](courses-vscode-extension.md)
+  - [VSCode 拡張機能「Courses」](courses-vscode-extension.md)
 
 ---
 

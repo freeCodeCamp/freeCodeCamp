@@ -9,13 +9,13 @@ dashedName: sha-1-password-cracker
 
 # --description--
 
-Você [trabalhará neste projeto com nosso código inicial do Replit](https://replit.com/github/freeCodeCamp/boilerplate-SHA-1-password-cracker).
+Você <a href="https://replit.com/github/freeCodeCamp/boilerplate-SHA-1-password-cracker" target="_blank" rel="noopener noreferrer nofollow">trabalhará neste projeto com nosso código inicial do Replit</a>.
 
 Ainda estamos desenvolvendo a parte instrucional interativa do currículo Python. Por enquanto, aqui estão alguns vídeos no canal do freeCodeCamp.org do YouTube que ensinarão tudo o que você precisa saber para completar este projeto:
 
-- [Curso de Python em vídeo para todos](https://www.freecodecamp.org/news/python-for-everybody/) (14 horas)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Curso de Python em vídeo para todos</a> (14 horas)
 
-- [Curso Aprenda Python em vídeo](https://www.freecodecamp.org/news/learn-python-video-course/) (10 horas)
+- <a href="https://www.freecodecamp.org/news/learn-python-video-course/" target="_blank" rel="noopener noreferrer nofollow">Curso Aprenda Python em vídeo</a> (10 horas)
 
 # --instructions--
 
@@ -41,7 +41,7 @@ Aqui estão algumas senhas com hash para testar a função quando `use_salts` fo
 - `da5a4e8cf89539e66097acd2f8af128acae2f8ae` deve retornar "q1w2e3r4t5"
 - `ea3f62d498e3b98557f9f9cd0d905028b3b019e1` deve retornar "bubbles1"
 
-A biblioteca `hashlib` foi importada para você. Sugerimos que você a use no seu código. [Siaba mais sobre a "hashlib" aqui.](https://docs.python.org/3/library/hashlib.html)
+A biblioteca `hashlib` foi importada para você. Sugerimos que você a use no seu código. <a href="https://docs.python.org/3/library/hashlib.html" target="_blank" rel="noopener noreferrer nofollow">Siaba mais sobre a "hashlib" aqui</a>.
 
 ## Desenvolvimento
 

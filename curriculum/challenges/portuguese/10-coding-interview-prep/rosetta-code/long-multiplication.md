@@ -8,7 +8,7 @@ dashedName: long-multiplication
 
 # --description--
 
-Implemente explicitamente a [multiplicação de números grandes](https://en.wikipedia.org/wiki/long multiplication).
+Implemente explicitamente uma multiplicação longa.
 
 Esta é uma abordagem possível para a álgebra de números inteiros de precisão arbitrária.
 

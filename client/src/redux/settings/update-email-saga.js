@@ -13,14 +13,14 @@ function* updateMyEmailSaga({ payload: email = '' }) {
     return;
   }
   try {
-    const response = yield call(putUserUpdateEmail, email);
+    const { data } = yield call(putUserUpdateEmail, email);
     yield put(
       updateMyEmailComplete({
-        ...response,
+        ...data,
         payload: { email, isEmailVerified: false }
       })
     );
-    yield put(createFlashMessage(response));
+    yield put(createFlashMessage(data));
   } catch (e) {
     yield put(updateMyEmailError(e));
   }

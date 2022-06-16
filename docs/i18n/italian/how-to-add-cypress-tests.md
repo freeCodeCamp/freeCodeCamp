@@ -12,13 +12,13 @@ Per imparare come scrivere test Cypress, o specs, per favore vedi la [dcoumentaz
 
 ## Come eseguire i test
 
-> [!NOTE] Se stai usando GitPod, vedi [Cypress-GitPod Setup](#setup-di-cypress-su-gitpod)
+> [!NOTE] If using GitPod, please see [Cypress-GitPod Setup](how-to-add-cypress-tests.md#cypress-gitpod-setup)
 
 ### 1. Assicurati che MongoDB e l'applicazione del client siano in esecuzione
 
-- [Fai partire MongoDB e fai il seed del database](/how-to-setup-freecodecamp-locally#step-3-start-mongodb-and-seed-the-database)
+- [Fai partire MongoDB e fai il seed del database](how-to-setup-freecodecamp-locally.md#step-3-start-mongodb-and-seed-the-database)
 
-- [Avvia l'applicazione del client di freeCodeCamp e il server API](/how-to-setup-freecodecamp-locally#step-4-start-the-freecodecamp-client-application-and-api-server)
+- [Avvia l'applicazione del client di freeCodeCamp e il server API](how-to-setup-freecodecamp-locally.md#step-4-start-the-freecodecamp-client-application-and-api-server)
 
 ### 2. Esegui i test cypress
 
@@ -74,4 +74,4 @@ npm run cypress:install-build-tools
 
 - Quando chiesto dal terminale, seleziona il layout della tua tastiera per lingua/area
 
-Ora, [puoi eseguire Cypress](#_2-esegui-i-test-cypress)
+Now, [Cypress can be run](how-to-add-cypress-tests.md#_2-run-the-cypress-tests)

@@ -8,13 +8,13 @@ dashedName: towers-of-hanoi
 
 # --description--
 
-Resolva o problema das [Torres de Hanói](https://pt.wikipedia.org/wiki/Torre_de_Han%C3%B3i "wp: Torres_de_Hanoi").
+Resolva o problema das Torres de Hanói. O número de objetos será dado como o primeiro parâmetro, seguido pelas strings usadas para identificar cada pilha de objetos. Crie um array aninhado contendo a lista de movimentos, `["source", "destination"]`.
 
-Sua solução deve aceitar o número de discos como os primeiros parâmetros, e três strings usadas para identificar cada uma das três pilhas de discos, por exemplo `towerOfHanoi(4, 'A', 'B', 'C')`. A função deve retornar um array de arrays contendo a lista de movimentos, origem -> destino.
+Por exemplo, os parâmetros `(4, 'A', 'B', 'C')` resultarão em um array aninhado de movimentos `[['A', 'C'], ['B', 'A']]`, indicando que o primeiro movimento foi mover um objeto da pilha `A` para a `C` e o segundo movimento foi mover um objeto da pilha `B` para a `A`.
 
-Por exemplo, o array `[['A', 'C'], ['B', 'A']]` indica que o primeiro movimento foi mover um disco da pilha A para C, e o segundo movimento foi para mover um disco da pilha B para A.
+# --instructions--
 
-<p></p>
+Escreva uma função que retorne os movimentos para empilhar os objetos em um array aninhado.
 
 # --hints--
 

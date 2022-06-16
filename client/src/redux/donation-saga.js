@@ -103,7 +103,9 @@ function* postChargeStripeCardSaga({
 }) {
   try {
     const optimizedPayload = { paymentMethodId, amount, duration };
-    const { error } = yield call(postChargeStripeCard, optimizedPayload);
+    const {
+      data: { error }
+    } = yield call(postChargeStripeCard, optimizedPayload);
     if (error) {
       yield stripeCardErrorHandler(
         error,

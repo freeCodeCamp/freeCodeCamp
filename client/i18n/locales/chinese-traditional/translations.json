@@ -51,6 +51,7 @@
     "run": "運行",
     "run-test": "運行測試（Ctrl + Enter）",
     "check-code": "Check Your Code (Ctrl + Enter)",
+    "check-code-2": "Check Your Code",
     "reset": "重置",
     "reset-code": "重置所有代碼",
     "help": "幫助",
@@ -145,7 +146,8 @@
       "my-timeline": "我的時間線",
       "my-donations": "我的捐款",
       "night-mode": "夜間模式",
-      "sound-mode": "篝火模式"
+      "sound-mode": "篝火模式",
+      "keyboard-shortcuts": "Enable Keyboard Shortcuts"
     },
     "headings": {
       "certs": "認證",
@@ -271,7 +273,7 @@
     "solution-link": "解決方案鏈接",
     "github-link": "GitHub 鏈接",
     "submit-and-go": "提交併訪問下一個挑戰",
-    "congradulations": "Congratulations, your code passes. Submit your code to complete this step and move on to the next one.",
+    "congratulations": "Congratulations, your code passes. Submit your code to complete this step and move on to the next one.",
     "i-completed": "我已經完成這個挑戰",
     "test-output": "你的測試輸出將在這裏顯示",
     "running-tests": "// 運行測試",
@@ -455,7 +457,9 @@
     "donate": "使用 PayPal 捐款",
     "fail": "測試失敗",
     "not-passed": "未通過",
+    "waiting": "Waiting",
     "passed": "通過",
+    "failed": "Failed",
     "hint": "Hint",
     "heart": "愛心",
     "initial": "初始",
@@ -684,5 +688,16 @@
     "delete-p3": "您需要創建一個新的令牌來保存使用虛擬機的課程部分的未來進度。",
     "no-thanks": "不，謝謝，我想保留我的令牌",
     "yes-please": "是的，我想刪除我的令牌"
+  },
+  "shortcuts": {
+    "title": "Keyboard shortcuts",
+    "table-header-action": "Action",
+    "table-header-key": "Key(s)",
+    "navigation-mode": "Navigation Mode",
+    "execute-challenge": "Execute Challenge",
+    "focus-editor": "Focus Editor",
+    "focus-instructions-panel": "Focus Instructions Panel",
+    "navigate-previous": "Navigate Previous Exercise",
+    "navigate-next": "Navigate Next Exercise"
   }
 }
