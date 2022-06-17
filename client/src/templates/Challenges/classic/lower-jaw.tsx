@@ -11,6 +11,7 @@ import {
   getCompletedPercent,
   useCurrentBlockIds
 } from '../components/completion-modal';
+import { isProject } from '../../../../utils/challenge-types';
 
 interface LowerJawProps {
   hint?: string;
@@ -20,6 +21,7 @@ interface LowerJawProps {
   tryToSubmitChallenge: () => void;
   id: string;
   completedChallengesIds: string[];
+  challengeType: number;
   block: string;
   certification: string;
   currentBlockIds?: string[];
@@ -39,6 +41,7 @@ const LowerJaw = ({
   certification,
   block,
   id,
+  challengeType,
   challengeHasErrors,
   hint,
   tryToExecuteChallenge,
@@ -220,14 +223,21 @@ const LowerJaw = ({
   };
 
   const showDesktopButton = window.innerWidth > MAX_MOBILE_WIDTH;
-  const useBlockIds = useCurrentBlockIds(block, certification);
-  const completedPercent = getCompletedPercent(
-    completedChallengesIds,
-    useBlockIds,
-    id
-  );
 
-  const renderProgressBar = () => {
+  const RenderProgressBar = () => {
+    const currentBlockIds = useCurrentBlockIds(
+      block || '',
+      certification || '',
+
+      { isCertificationBlock: isProject(challengeType) }
+    );
+
+    const completedPercent = getCompletedPercent(
+      completedChallengesIds,
+      currentBlockIds,
+      id
+    );
+
     return (
       <>
         <progress
@@ -291,7 +301,7 @@ const LowerJaw = ({
         ref={testFeedbackRef}
       >
         {renderTestFeedbackContainer()}
-        {earliestAvailableCompletion ? renderProgressBar() : null}
+        {earliestAvailableCompletion ? RenderProgressBar() : null}
       </div>
       {renderContextualActionRow()}
     </div>

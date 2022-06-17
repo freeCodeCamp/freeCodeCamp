@@ -591,7 +591,14 @@ const Editor = (props: EditorProps): JSX.Element => {
   const tryToSubmitChallenge = submitChallengeDebounceRef.current;
 
   function createLowerJaw(outputNode: HTMLElement, callback?: () => void) {
-    const { output, completedChallengesIds, certification, block, id } = props;
+    const {
+      output,
+      completedChallengesIds,
+      certification,
+      block,
+      id,
+      challengeType
+    } = props;
     const isChallengeComplete = challengeIsComplete();
     const isEditorInFocus = document.activeElement?.tagName === 'TEXTAREA';
     ReactDOM.render(
@@ -611,6 +618,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         isSignedIn={false}
         block={block}
         certification={certification}
+        challengeType={challengeType}
       />,
       outputNode,
       callback
