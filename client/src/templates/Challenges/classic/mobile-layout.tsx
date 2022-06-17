@@ -14,6 +14,7 @@ interface MobileLayoutProps {
   instructions: JSX.Element;
   notes: ReactElement;
   preview: JSX.Element;
+  updateUsingKeyboardInTablist: (arg0: boolean) => void;
   testOutput: JSX.Element;
   videoUrl: string;
   usesMultifileEditor: boolean;
@@ -29,17 +30,13 @@ enum Tab {
 
 interface MobileLayoutState {
   currentTab: Tab;
-  isUsingKeyboard: boolean;
 }
 
 class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
   static displayName: string;
 
   state: MobileLayoutState = {
-    currentTab: this.props.hasEditableBoundaries
-      ? Tab.Editor
-      : Tab.Instructions,
-    isUsingKeyboard: false
+    currentTab: this.props.hasEditableBoundaries ? Tab.Editor : Tab.Instructions
   };
 
   switchTab = (tab: Tab) => {
@@ -48,20 +45,12 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
     });
   };
 
-  handleKeyDown = () => {
-    this.setState({
-      isUsingKeyboard: true
-    });
-  };
+  handleKeyDown = () => this.props.updateUsingKeyboardInTablist(true);
 
-  handleClick = () => {
-    this.setState({
-      isUsingKeyboard: false
-    });
-  };
+  handleClick = () => this.props.updateUsingKeyboardInTablist(false);
 
   render() {
-    const { currentTab, isUsingKeyboard } = this.state;
+    const { currentTab } = this.state;
     const {
       hasEditableBoundaries,
       instructions,
@@ -88,7 +77,6 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       <>
         <Tabs
           activeKey={currentTab}
-          data-keyboard={isUsingKeyboard}
           defaultActiveKey={currentTab}
           id='mobile-layout'
           onKeyDown={this.handleKeyDown}
@@ -106,6 +94,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
           )}
           <TabPane
             eventKey={Tab.Editor}
+            tabIndex='0'
             title={i18next.t('learn.editor-tabs.code')}
             {...editorTabPaneProps}
           >
@@ -114,7 +103,6 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
           </TabPane>
           <TabPane
             eventKey={Tab.Console}
-            tabIndex='0'
             title={i18next.t('learn.editor-tabs.tests')}
             {...editorTabPaneProps}
           >
