@@ -1,6 +1,6 @@
 ---
 id: 587d824a367417b2b2512c45
-title: Anonymous Message Board
+title: Tablero de mensajes anónimos
 challengeType: 4
 forumTopicId: 301568
 dashedName: anonymous-message-board
@@ -8,38 +8,38 @@ dashedName: anonymous-message-board
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <https://anonymous-message-board.freecodecamp.rocks/>.
+Construye una aplicación full stack de JavaScript que sea funcionalmente similar a esta: <https://anonymous-message-board.freecodecamp.rocks/>.
 
-Working on this project will involve you writing your code using one of the following methods:
+Trabajar en este proyecto implicará escribir tu código utilizando uno de los siguientes métodos:
 
--   Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-messageboard/) and complete your project locally.
--   Use [our Replit starter project](https://replit.com/github/freeCodeCamp/boilerplate-project-messageboard) to complete your project.
--   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+-   Clona [este repositorio de GitHub](https://github.com/freeCodeCamp/boilerplate-project-messageboard/) y completa tu proyecto localmente.
+-   Usa [nuestro proyecto inicial de Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-messageboard) para completar tu proyecto.
+-   Utiliza un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio GitHub.
 
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your projects source code in the `GitHub Link` field.
+Cuando hayas terminado, asegúrate de que un demo funcional de tu proyecto esté alojado en algún lugar público. Luego, envía la URL en el campo `Solution Link`. Opcionalmente, también envía un enlace al código fuente de tu proyecto en el campo `GitHub Link`.
 
 # --instructions--
 
-1.  Set `NODE_ENV` to test without quotes when ready to write tests and DB to your databases connection string (in `.env`)
-2.  Recommended to create controllers/handlers and handle routing in `routes/api.js`
-3.  You will add any security features to `server.js`
+1.  Define `NODE_ENV` para probar sin comillas cuando esté listo para escribir pruebas y BD en la cadena de conexión de tus bases de datos (en `.env`)
+2.  Se recomienda crear controladores/manejadores y manejar el enrutamiento en `routes/api.js`
+3.  Añadirás cualquier característica de seguridad a `server.js`
 
-Write the following tests in `tests/2_functional-tests.js`:
+Escribe las siguientes pruebas en `tests/2_functional-tests.js`:
 
--   Creating a new thread: POST request to `/api/threads/{board}`
--   Viewing the 10 most recent threads with 3 replies each: GET request to `/api/threads/{board}`
--   Deleting a thread with the incorrect password: DELETE request to `/api/threads/{board}` with an invalid `delete_password`
--   Deleting a thread with the correct password: DELETE request to `/api/threads/{board}` with a valid `delete_password`
--   Reporting a thread: PUT request to `/api/threads/{board}`
--   Creating a new reply: POST request to `/api/replies/{board}`
--   Viewing a single thread with all replies: GET request to `/api/replies/{board}`
--   Deleting a reply with the incorrect password: DELETE request to `/api/replies/{board}` with an invalid `delete_password`
--   Deleting a reply with the correct password: DELETE request to `/api/replies/{board}` with a valid `delete_password`
--   Reporting a reply: PUT request to `/api/replies/{board}`
+-   Creando un nuevo hilo: solicitud de POST a `/api/threads/{board}`
+-   Viendo los 10 hilos más recientes con 3 respuestas cada una: Solicitud GET a `/api/threads/{board}`
+-   Eliminando un hilo con la contraseña incorrecta: solicitud de DELETE a `/api/threads/{board}` con una `delete_password` inválida
+-   Eliminando un hilo con la contraseña incorrecta: solicitud de DELETE a `/api/threads/{board}` con una `delete_password` inválida
+-   Creando un nuevo hilo: solicitud de PUT a `/api/threads/{board}`
+-   Creando una nueva respuesta: solicitud de POST a `/api/replies/{board}`
+-   Viendo un hilo simple con todas las respuestas: Solicitud GET a `/api/replies/{board}`
+-   Eliminando una respuesta con la contraseña incorrecta: solicitud de DELETE a `/api/replies/{board}` con un `delete_password` inválido
+-   Eliminando una respuesta con la contraseña correcta: solicitud de DELETE a `/api/replies/{board}` con un `delete_password` válido
+-   Creando una respuesta: solicitud de PUT a `/api/replies/{board}`
 
 # --hints--
 
-You can provide your own project, not the example URL.
+Puedes proporcionar tu propio proyecto, no la URL de ejemplo.
 
 ```js
 (getUserInput) => {
@@ -51,7 +51,7 @@ You can provide your own project, not the example URL.
 };
 ```
 
-Only allow your site to be loaded in an iFrame on your own pages.
+Solo permite que tu sitio se cargue en un iFrame en tus propias páginas.
 
 ```js
 async (getUserInput) => {
@@ -61,7 +61,7 @@ async (getUserInput) => {
 };
 ```
 
-Do not allow DNS prefetching.
+No permitas la captación previa de DNS.
 
 ```js
 async (getUserInput) => {
@@ -71,7 +71,7 @@ async (getUserInput) => {
 };
 ```
 
-Only allow your site to send the referrer for your own pages.
+Solo permite que tu sitio envíe el referente hacia tus propias páginas.
 
 ```js
 async (getUserInput) => {
@@ -81,7 +81,7 @@ async (getUserInput) => {
 };
 ```
 
-You can send a POST request to `/api/threads/{board}` with form data including `text` and `delete_password`. The saved database record will have at least the fields `_id`, `text`, `created_on`(date & time), `bumped_on`(date & time, starts same as `created_on`), `reported` (boolean), `delete_password`, & `replies` (array).
+Puedes enviar una solicitud POST a `/api/threads/{board}` con datos de formulario incluyendo `text` y `delete_password`. El registro de base de datos guardado tendrá al menos los campos `_id`, `text`, `created_on`(fecha & hora), `bumped_on`(fecha & hora, comienza igual que `created_on`), `reported` (boolean), `delete_password`, & `replies` (arreglo).
 
 ```js
 async (getUserInput) => {
@@ -113,52 +113,273 @@ async (getUserInput) => {
 };
 ```
 
-You can send a POST request to `/api/replies/{board}` with form data including `text`, `delete_password`, & `thread_id`. This will update the `bumped_on` date to the comment's date. In the thread's `replies` array, an object will be saved with at least the properties `_id`, `text`, `created_on`, `delete_password`, & `reported`.
+Puedes enviar una solicitud POST a `/api/replies/{board}` con datos de formulario incluyendo `text`, `delete_password`, & `thread_id`. Esto actualizará la fecha de `bumped_on` a la fecha del comentario. En el arreglo de `replies` del hilo, un objeto se guardará con al menos las propiedades `_id`, `text`, `created_on`, `delete_password`, & `reported`.
 
 ```js
+async (getUserInput) => {
+  const url = getUserInput('url');
+  const body = await fetch(url + '/api/threads/fcc_test');
+  const thread = await body.json();
 
+  const date = new Date();
+  const text = `fcc_test_reply_${date}`;
+  const delete_password = 'delete_me';
+  const thread_id = thread[0]._id;
+  const replyCount = thread[0].replies.length;
+
+  const data = { text, delete_password, thread_id };
+  const res = await fetch(url + '/api/replies/fcc_test', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+  if (res.ok) {
+    const checkData = await fetch(`${url}/api/replies/fcc_test?thread_id=${thread_id}`);
+    const parsed = await checkData.json();
+    try {
+      assert.equal(parsed.replies.length, replyCount + 1);
+      assert.equal(parsed.replies[0].text, text);
+      assert.equal(parsed._id, thread_id);
+      assert.equal(parsed.bumped_on, parsed.replies[0].created_on);
+    } catch (err) {
+      throw new Error(err.responseText || err.message);
+    }
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  }
+};
 ```
 
-You can send a GET request to `/api/threads/{board}`. Returned will be an array of the most recent 10 bumped threads on the board with only the most recent 3 replies for each. The `reported` and `delete_password` fields will not be sent to the client.
+Puedes enviar una solicitud GET a `/api/threads/{board}`. Se devolverá un arreglo de los 10 hilos más recientes en el tablero con solo las 3 respuestas más recientes para cada uno. Los campos `reported` y `delete_password` no serán enviados al cliente.
 
 ```js
+async (getUserInput) => {
+  const url = getUserInput('url');
+  const res = await fetch(url + '/api/threads/fcc_test');
 
+  if (res.ok) {
+    const threads = await res.json();
+    try {
+      assert.equal(res.status, 200);
+      assert.isAtMost(threads.length, 10);
+      for (let i = 0; i < threads.length; i++) {
+        assert.containsAllKeys(threads[i], ["_id", "text", "created_on", "bumped_on", "replies"]);
+        assert.isAtMost(threads[i].replies.length, 3);
+        assert.notExists(threads[i].delete_password);
+        assert.notExists(threads[i].reported);
+        for (let j = 0; j < threads[i].replies.length; j++) {
+          assert.notExists(threads[i].replies[j].delete_password);
+          assert.notExists(threads[i].replies[j].reported);
+        }
+      }
+    } catch (err) {
+      throw new Error(err.responseText || err.message);
+    }
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  }
+};
 ```
 
-You can send a GET request to `/api/replies/{board}?thread_id={thread_id}`. Returned will be the entire thread with all its replies, also excluding the same fields from the client as the previous test.
+Puedes enviar una solicitud GET a `/api/replies/{board}?thread_id={thread_id}`. Se devolverá el hilo completo con todas sus respuestas, también excluyendo los mismos campos del cliente que la prueba anterior.
 
 ```js
+async (getUserInput) => {
+  const url = getUserInput('url');
+  let res = await fetch(url + '/api/threads/fcc_test');
+  const threads = await res.json();
+  const thread_id = threads[0]._id;
+  res = await fetch(`${url}/api/replies/fcc_test?thread_id=${thread_id}`);
 
+  if (res.ok) {
+    const thread = await res.json();
+    try {
+      assert.equal(res.status, 200);
+      assert.isObject(thread);
+      assert.containsAllKeys(thread, ["_id", "text", "created_on", "bumped_on", "replies"]);
+      assert.isArray(thread.replies);
+      assert.notExists(thread.delete_password);
+      assert.notExists(thread.reported);
+      for (let i = 0; i < thread.replies.length; i++) {
+        assert.notExists(thread.replies[i].delete_password);
+        assert.notExists(thread.replies[i].reported);
+      }
+    } catch (err) {
+      throw new Error(err.responseText || err.message);
+    }
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  }
+};
 ```
 
-You can send a DELETE request to `/api/threads/{board}` and pass along the `thread_id` & `delete_password` to delete the thread. Returned will be the string `incorrect password` or `success`.
+Puedes enviar una solicitud DELETE a `/api/threads/{board}` y pasar a lo largo del `thread_id` & `delete_password` para eliminar el hilo. Devuelto será la cadena `incorrect password` o `success`.
 
 ```js
+async (getUserInput) => {
+  const url = getUserInput('url');
+  let res = await fetch(url + '/api/threads/fcc_test');
+  const threads = await res.json();
+  const thread_id = threads[0]._id;
+  let data = { thread_id, delete_password: "wrong_password" };
+  const res_invalid = await fetch(url + '/api/threads/fcc_test', {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+  data = { thread_id, delete_password: "delete_me" };
+  res = await fetch(url + '/api/threads/fcc_test', {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
 
+  if (res.ok) {
+    const deleted = await res.text();
+    const not_deleted = await res_invalid.text();
+    try {
+      assert.equal(res.status, 200);
+      assert.equal(deleted, "success");
+      assert.equal(not_deleted, "incorrect password");
+    } catch (err) {
+      throw new Error(err.responseText || err.message);
+    }
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  }
+};
 ```
 
-You can send a DELETE request to `/api/replies/{board}` and pass along the `thread_id`, `reply_id`, & `delete_password`. Returned will be the string `incorrect password` or `success`. On success, the text of the `reply_id` will be changed to `[deleted]`.
+Puedes enviar una solicitud DELETE a `/api/replies/{board}` y pasar a lo largo del `thread_id`, `reply_id`, & `delete_password`. Devuelta será la cadena `incorrect password` o `success`. En caso de éxito, el texto del `reply_id` se cambiará a `[deleted]`.
 
 ```js
+async (getUserInput) => {
+  const url = getUserInput('url');
 
+  const thread_data = {
+    text: "fcc_test_thread",
+    delete_password: "delete_me",
+  };
+  await fetch(`${url}/api/threads/fcc_test`, {
+    method: "POST",
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(thread_data)
+  });
+  let res = await fetch(`${url}/api/threads/fcc_test`);
+  let threads = await res.json();
+  const thread_id = threads[0]._id;
+
+  const reply_data = { thread_id, text: "fcc_test_reply", delete_password: "delete_me" };
+  await fetch(`${url}/api/replies/fcc_test`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(reply_data)
+  });
+  res = await fetch(`${url}/api/threads/fcc_test`);
+  threads = await res.json();
+  const reply_id = threads[0].replies[0]._id;
+
+  const data = { thread_id, reply_id, delete_password: "delete_me" };
+  res = await fetch(url + '/api/replies/fcc_test', {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+
+  if (res.ok) {
+    const deleted = await res.text();
+    try {
+      assert.equal(res.status, 200);
+      assert.equal(deleted, "success");
+      res = await fetch(`${url}/api/replies/fcc_test?thread_id=${thread_id}`);
+      const thread = await res.json();
+      assert.equal(thread._id, thread_id);
+      assert.equal(thread.replies[0]._id, reply_id);
+      assert.equal(thread.replies[0].text, "[deleted]");
+    } catch (err) {
+      throw new Error(err.responseText || err.message);
+    }
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  }
+};
 ```
 
-You can send a PUT request to `/api/threads/{board}` and pass along the `thread_id`. Returned will be the string `success`. The `reported` value of the `thread_id` will be changed to `true`.
+Puedes enviar una solicitud PUT a `/api/threads/{board}` y pasar a lo largo del `thread_id`. Devuelta será la cadena `reported`. El valor `reported` del `thread_id` será cambiado a `true`.
 
 ```js
+async (getUserInput) => {
+  const url = getUserInput('url');
 
+  let res = await fetch(`${url}/api/threads/fcc_test`);
+  const threads = await res.json();
+  const report_id = threads[0]._id;
+  const data = { report_id };
+
+  res = await fetch(`${url}/api/threads/fcc_test`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+
+  if (res.ok) {
+    const reported = await res.text();
+    try {
+      assert.equal(res.status, 200);
+      assert.equal(reported, "reported");
+    } catch (err) {
+      throw new Error(err.responseText || err.message);
+    }
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  }
+};
 ```
 
-You can send a PUT request to `/api/replies/{board}` and pass along the `thread_id` & `reply_id`. Returned will be the string `success`. The `reported` value of the `reply_id` will be changed to `true`.
+Puedes enviar una solicitud PUT a`/api/replies/{board}` y pasar a lo largo de `thread_id` & `reply_id`. Devuelta será la cadena `reported`. El valor `reported` del `reply_id` será cambiado a `true`.
 
 ```js
+async (getUserInput) => {
+  const url = getUserInput('url');
 
+  let res = await fetch(`${url}/api/threads/fcc_test`);
+  const threads = await res.json();
+  const thread_id = threads[0]._id;
+  const reply_id = threads[0].replies[0]._id;
+  const data = { thread_id, reply_id };
+
+  res = await fetch(`${url}/api/replies/fcc_test`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+
+  if (res.ok) {
+    const reported = await res.text();
+    try {
+      assert.equal(res.status, 200);
+      assert.equal(reported, "reported");
+    } catch (err) {
+      throw new Error(err.responseText || err.message);
+    }
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  }
+};
 ```
 
-All 10 functional tests are complete and passing.
+Las 10 pruebas funcionales están completas y pasan.
 
 ```js
-
+async (getUserInput) => {
+  const tests = await fetch(getUserInput('url') + '/_api/get-tests');
+  const parsed = await tests.json();
+  assert.isTrue(parsed.length >= 10);
+  parsed.forEach((test) => {
+    assert.equal(test.state, 'passed');
+    assert.isAtLeast(test.assertions.length, 1);
+  });
+};
 ```
 
 # --solutions--

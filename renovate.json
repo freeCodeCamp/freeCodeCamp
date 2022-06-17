@@ -1,8 +1,5 @@
 {
-  "extends": [
-    "github>freecodecamp/renovate-config",
-    "helpers:pinGitHubActionDigests"
-  ],
+  "extends": ["github>freecodecamp/renovate-config"],
   "packageRules": [
     {
       "groupName": "Monaco Editor",

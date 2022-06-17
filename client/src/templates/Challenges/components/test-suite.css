@@ -3,6 +3,12 @@
   justify-content: flex-start;
   flex-direction: column;
   margin: 15px 0;
+  padding-left: 0;
+}
+
+.challenge-test-suite-heading {
+  font-size: 0.9em;
+  text-align: center;
 }
 
 .challenge-test-suite code {

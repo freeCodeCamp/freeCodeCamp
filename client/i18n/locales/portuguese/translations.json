@@ -51,6 +51,7 @@
     "run": "Executar",
     "run-test": "Execute os testes (Ctrl + Enter)",
     "check-code": "Verifique seu código (Ctrl + Enter)",
+    "check-code-2": "Verifique seu código",
     "reset": "Redefinir",
     "reset-code": "Redefinir todo o código",
     "help": "Ajuda",
@@ -145,7 +146,8 @@
       "my-timeline": "Minha linha do tempo",
       "my-donations": "Minhas doações",
       "night-mode": "Modo noturno",
-      "sound-mode": "Modo fogueira"
+      "sound-mode": "Modo fogueira",
+      "keyboard-shortcuts": "Habilitar teclas de atalho"
     },
     "headings": {
       "certs": "Certificações",
@@ -271,7 +273,7 @@
     "solution-link": "Link da solução",
     "github-link": "Link do GitHub",
     "submit-and-go": "Enviar e ir para o meu próximo desafio",
-    "congradulations": "Parabéns, o seu código passa. Envie seu código para completar este passo e seguir para o próximo.",
+    "congratulations": "Parabéns, o seu código passa. Envie seu código para completar este passo e seguir para o próximo.",
     "i-completed": "Já completei este desafio",
     "test-output": "O resultado do seu código vai aparecer aqui",
     "running-tests": "// executando testes",
@@ -455,7 +457,9 @@
     "donate": "Doar com PayPal",
     "fail": "Exame não concluído com sucesso",
     "not-passed": "Não aprovado",
+    "waiting": "Aguardando",
     "passed": "Aprovado",
+    "failed": "Falhou",
     "hint": "Dica",
     "heart": "Coração",
     "initial": "Inicial",
@@ -684,5 +688,16 @@
     "delete-p3": "Você precisa criar um novo token para salvar seu progresso futuro nas seções de currículo que usam uma máquina virtual.",
     "no-thanks": "Não, obrigado. Eu gostaria de manter meu token",
     "yes-please": "Sim, eu gostaria de excluir meu token"
+  },
+  "shortcuts": {
+    "title": "Atalhos do teclado",
+    "table-header-action": "Ação",
+    "table-header-key": "Tecla(s)",
+    "navigation-mode": "Modo de navegação",
+    "execute-challenge": "Executar desafio",
+    "focus-editor": "Foco no editor",
+    "focus-instructions-panel": "Foco no painel de instruções",
+    "navigate-previous": "Navegar para o exercício anterior",
+    "navigate-next": "Navegar para o próximo exercício"
   }
 }

@@ -56,7 +56,7 @@ import {
   stopResetting,
   isProjectPreviewModalOpenSelector,
   openModal,
-  isChallengeCompletedSelector,
+  isChallengeCompletedSelector
 } from '../redux';
 import GreenPass from '../../../assets/icons/green-pass';
 import LowerJaw from './lower-jaw';
@@ -606,7 +606,12 @@ const Editor = (props: EditorProps): JSX.Element => {
         completedChallengesIds={completedChallengesIds}
         challengeHasErrors={challengeHasErrors()}
         tryToSubmitChallenge={tryToSubmitChallenge}
-        isEditorInFocus={isEditorInFocus} id={id} isSignedIn={false} block={block} certification={certification}          />,
+        isEditorInFocus={isEditorInFocus}
+        id={id}
+        isSignedIn={false}
+        block={block}
+        certification={certification}
+      />,
       outputNode,
       callback
     );

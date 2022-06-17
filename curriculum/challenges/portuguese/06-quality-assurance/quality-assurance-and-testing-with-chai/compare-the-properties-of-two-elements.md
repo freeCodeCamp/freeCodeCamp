@@ -7,12 +7,11 @@ dashedName: compare-the-properties-of-two-elements
 ---
 
 # --description--
-
-Como observação, este projeto está sendo construído a partir do seguinte projeto no [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), ou clonado do [Github](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Como lembrete, este projeto está sendo criado a partir do projeto inicial seguinte, no <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> ou pode ser clonado do <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub<a>.
 
 # --instructions--
 
-Em `tests/1_unit-tests.js`, no teste classificado como `#8` e na suíte `Comparisons`, modifique cada `assert` para `assert.isAbove` ou para `assert.isAtMost`, de maneira que cada teste passe (seja avaliado como `true`). Não altere os argumentos passados às afirmações.
+Dentro de `tests/1_unit-tests.js` no teste `#8` na suite `Comparisons`, altere todos os `assert` para `assert.isAbove` ou `assert.isAtMost` para fazer com que o teste passe (seja avaliado como `true`). Não altere os argumentos passados para os asserts.
 
 # --hints--
 
@@ -30,7 +29,7 @@ Todos os testes devem passar.
   );
 ```
 
-Você deve escolher o método correto para a primeira afirmação - `isAbove` ou `isAtMost`.
+Você deve selecionar o método correto para a primeira asserção - `isAbove` x `isAtMost`.
 
 ```js
 (getUserInput) =>
@@ -48,7 +47,7 @@ Você deve escolher o método correto para a primeira afirmação - `isAbove` ou
   );
 ```
 
-Você deve escolher o método correto para a segunda afirmação - `isAbove` ou `isAtMost`.
+Você deve selecionar o método correto para a segunda asserção - `isAbove` x `isAtMost`.
 
 ```js
 (getUserInput) =>
@@ -62,7 +61,7 @@ Você deve escolher o método correto para a segunda afirmação - `isAbove` ou 
   );
 ```
 
-Você deve escolher o método correto para a terceira afirmação - `isAbove` ou `isAtMost`.
+Você deve selecionar o método correto para a terceira asserção - `isAbove` x `isAtMost`.
 
 ```js
 (getUserInput) =>
@@ -80,7 +79,7 @@ Você deve escolher o método correto para a terceira afirmação - `isAbove` ou
   );
 ```
 
-Você deve escolher o método correto para a quarta afirmação - `isAbove` ou `isAtMost`.
+Você deve selecionar o método correto para a quarta asserção - `isAbove` x `isAtMost`.
 
 ```js
 (getUserInput) =>
@@ -89,7 +88,7 @@ Você deve escolher o método correto para a quarta afirmação - `isAbove` ou `
       assert.equal(
         data.assertions[3].method,
         'isAtMost',
-        '1 - Math.random() is > 0 and <= 1. It is atMost 1 !'
+        '1 - Math.random() is > 0 and <= 1. É atMost 1 !'
       );
     },
     (xhr) => {
@@ -102,8 +101,8 @@ Você deve escolher o método correto para a quarta afirmação - `isAbove` ou `
 
 ```js
 /**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
+  Desafios de back-end não precisam de solução, 
+  pois precisariam ser testados contra o projeto funcional completo. 
+  Confira nossas diretrizes de contribuição para saber mais.
 */
 ```

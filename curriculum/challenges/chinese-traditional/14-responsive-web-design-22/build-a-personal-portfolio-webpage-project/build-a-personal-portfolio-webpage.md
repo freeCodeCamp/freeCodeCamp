@@ -26,6 +26,8 @@ dashedName: build-a-personal-portfolio-webpage
 
 完成需求並通過下面的所有測試來完成這個項目。 賦予它你自己的個人風格。 編程愉快！
 
+**注意：** 請在你的 HTML 中添加 `<link rel="stylesheet" href="styles.css">` 以鏈接你的樣式表並應用你的 CSS
+
 # --hints--
 
 你的作品集應該有一個 `id` 爲 `welcome-section` 的歡迎部分。

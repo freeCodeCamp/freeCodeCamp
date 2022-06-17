@@ -8,7 +8,7 @@ dashedName: build-a-25--5-clock
 
 # --description--
 
-**Objetivo:** criar uma aplicação que funcione de modo semelhante ao que vemos em: <https://codepen.io/freeCodeCamp/full/XpKrrW>.
+**Objetivo:** criar uma aplicação que funcione de modo semelhante ao que vemos em: <a href="https://codepen.io/freeCodeCamp/full/XpKrrW" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/XpKrrW</a>.
 
 Atenda às histórias de usuário abaixo e faça com que todos os testes passem. Use quaisquer bibliotecas ou APIs de que você precisar. Dê ao projeto o seu próprio estilo pessoal.
 
@@ -70,7 +70,7 @@ Você pode usar qualquer mistura de HTML, JavaScript, CSS, Bootstrap, SASS, Reac
 
 **História de usuário nº 28:** o elemento audio com id `beep` deve parar de reproduzir e ser rebobinado para começar quando o elemento com o id `reset` for clicado.
 
-Você pode fazer o seu projeto <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>usando este modelo da CodePen</a> e clicando em `Save` para criar seu próprio pen. Como alternativa, use este link da nossa CDN para executar os testes em qualquer ambiente que você preferir: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+Você pode fazer o seu projeto <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel="noopener noreferrer nofollow">usando este modelo da CodePen</a> e clicando em `Save` para criar seu próprio pen. Como alternativa, use este link da nossa CDN para executar os testes em qualquer ambiente que você preferir: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
 Quando tiver terminado, envie o URL do seu projeto depois de ele haver passado em todos os testes.
 

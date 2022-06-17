@@ -295,7 +295,7 @@ interface CertificateNode {
   };
 }
 
-const useCurrentBlockIds = (
+export const useCurrentBlockIds = (
   block: string,
   certification: string,
   options?: Options

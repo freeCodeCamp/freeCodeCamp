@@ -51,6 +51,7 @@
     "run": "Запустити",
     "run-test": "Run the Tests (Ctrl + Enter)",
     "check-code": "Check Your Code (Ctrl + Enter)",
+    "check-code-2": "Check Your Code",
     "reset": "Скинути",
     "reset-code": "Скинути весь код",
     "help": "Допомога",
@@ -145,7 +146,8 @@
       "my-timeline": "Моя хронологія",
       "my-donations": "Мої внески",
       "night-mode": "Нічний режим",
-      "sound-mode": "Режим багаття"
+      "sound-mode": "Режим багаття",
+      "keyboard-shortcuts": "Enable Keyboard Shortcuts"
     },
     "headings": {
       "certs": "Сертифікати",
@@ -271,7 +273,7 @@
     "solution-link": "Посилання на рішення",
     "github-link": "Посилання на GitHub",
     "submit-and-go": "Відправити та перейти до мого наступного завдання",
-    "congradulations": "Congratulations, your code passes. Submit your code to complete this step and move on to the next one.",
+    "congratulations": "Congratulations, your code passes. Submit your code to complete this step and move on to the next one.",
     "i-completed": "Я виконав це завдання",
     "test-output": "Результат вашого тесту буде доступний тут",
     "running-tests": "// запуск тестів",
@@ -455,7 +457,9 @@
     "donate": "Зробити внесок через PayPal",
     "fail": "Тест не пройдений",
     "not-passed": "Не пройдено",
+    "waiting": "Waiting",
     "passed": "Пройдено",
+    "failed": "Failed",
     "hint": "Hint",
     "heart": "Серце",
     "initial": "Початковий",
@@ -684,5 +688,16 @@
     "delete-p3": "You will need to create a new token to save future progress on the curriculum sections that use a virtual machine.",
     "no-thanks": "No thanks, I would like to keep my token",
     "yes-please": "Yes please, I would like to delete my token"
+  },
+  "shortcuts": {
+    "title": "Keyboard shortcuts",
+    "table-header-action": "Action",
+    "table-header-key": "Key(s)",
+    "navigation-mode": "Navigation Mode",
+    "execute-challenge": "Execute Challenge",
+    "focus-editor": "Focus Editor",
+    "focus-instructions-panel": "Focus Instructions Panel",
+    "navigate-previous": "Navigate Previous Exercise",
+    "navigate-next": "Navigate Next Exercise"
   }
 }

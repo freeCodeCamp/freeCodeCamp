@@ -30,7 +30,7 @@ app.use((req, res, next) => {
 });
 ```
 
-Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto concluído até este momento [aqui](https://gist.github.com/camperbot/c3eeb8a3ebf855e021fd0c044095a23b).
+Envie sua página quando você achar que ela está certa. Se você estiver encontrando erros, pode <a href="https://gist.github.com/camperbot/c3eeb8a3ebf855e021fd0c044095a23b" target="_blank" rel="noopener noreferrer nofollow">conferir o projeto concluído até este ponto</a>.
 
 # --hints--
 

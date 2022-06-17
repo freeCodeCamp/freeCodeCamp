@@ -10,15 +10,15 @@ dashedName: install-and-set-up-mongoose
 
 Trabalhar nesses desafios vai fazer com que você escreva seu código usando um dos seguintes métodos:
 
-- Clone [este repositório do GitHub](https://github.com/freeCodeCamp/boilerplate-mongomongoose/) e complete esses desafios localmente.
-- Use [nosso projeto inicial do Replit](https://replit.com/github/freeCodeCamp/boilerplate-mongomongoose) para completar esses desafios.
+- Clone <a href="https://github.com/freeCodeCamp/boilerplate-mongomongoose/" target="_blank" rel="noopener noreferrer nofollow">este repositório do GitHub</a> e complete esses desafios localmente.
+- Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-mongomongoose" target="_blank" rel="noopener noreferrer nofollow">nosso projeto inicial do Replit</a> para completar esses desafios.
 - Use um construtor de site de sua escolha para completar o projeto. Certifique-se de incorporar todos os arquivos do nosso repositório no GitHub.
 
 Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Em seguida, envie o URL para ela no campo `Solution Link`.
 
 Neste desafio, você vai configurar um banco de dados do MongoDB Atlas e importar os pacotes necessários para se conectar a ele.
 
-Siga <a href='https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/' rel='noopener noreferrer' target='_blank'>este tutorial</a> para configurar um banco de dados hospedado no MongoDB Atlas.
+Siga <a href='https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/' target="_blank" rel="noopener noreferrer nofollow">este tutorial</a> para configurar um banco de dados hospedado no MongoDB Atlas.
 
 # --instructions--
 
