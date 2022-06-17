@@ -8,7 +8,7 @@ dashedName: build-a-tribute-page
 
 # --description--
 
-**目標:** <a href="https://tribute-page.freecodecamp.rocks" target="_blank">https://tribute-page.freecodecamp.rocks</a> と同様の機能を持つアプリを構築します
+**目標:** <a href="https://tribute-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://tribute-page.freecodecamp.rocks</a> と似た機能を持つアプリを構築します
 
 **ユーザーストーリー:**
 
