@@ -77,7 +77,7 @@ Einige dieser Dateien werden auf unserer Übersetzungsplattform (Crowdin) übers
 
 - Die Datei `meta-tags.json` enthält die Informationen für die Meta-Tag-Informationen unserer Website.
 
-  Änderungen an diesen Dateien werden normalerweise von dem Mitarbeiterteam vorgenommen.  Wenn dir etwas Ungewöhnliches auffällt, empfehlen wir dir, uns im [Contributors Chat Room](https://chat.freecodecamp.org/channel/contributors) anzusprechen.
+  Änderungen an diesen Dateien werden normalerweise von dem Mitarbeiterteam vorgenommen.  If you see something out of the ordinary we recommend you reach us in the [contributors chat room](https://discord.gg/PRyKn3Vbay).
 
 ## Das Testen der Client-App in einer Weltsprache
 

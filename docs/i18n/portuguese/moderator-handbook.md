@@ -314,7 +314,7 @@ Se acha que fizemos isso por engano ou quando você estiver pronto para voltar e
 
 ## Como funciona nossa sala de Contribuidores
 
-Todos são bem-vindos na [Sala de contribuidores no nosso servidor de chat](https://chat.freecodecamp.org/channel/contributors). É a sala de chat destinada aos moderadores e outros usuários freeCodeCamp que estão contribuindo para nossa comunidade de diversas formas, incluindo através de grupos de estudo.
+Todos são bem-vindos na [Sala de contribuidores no nosso servidor de chat](https://discord.gg/PRyKn3Vbay). É a sala de chat destinada aos moderadores e outros usuários freeCodeCamp que estão contribuindo para nossa comunidade de diversas formas, incluindo através de grupos de estudo.
 
 Assumimos que os contribuidores lerão tudo que for postado nessa sala que diretamente os mencione com um `@username`. Tudo o mais é opcional, mas sinta-se à vontade para ler e interagir com tudo que todos postam lá.
 
@@ -455,7 +455,7 @@ Thanks again! 😊
 
 ---
 
-If you have any questions, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/channel/contributors).
+If you have any questions, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
 ```
 
 ### Fechando pull requests inválidos
@@ -531,7 +531,7 @@ List of files:
 2. ...
 3. ...
 
-Please make sure you read [our guidelines for contributing](https://contribute.freecodecamp.org/#/), we prioritize contributors following the instructions in our guides. Join us in [our chat room](https://chat.freecodecamp.org/channel/contributors) or [the forum](https://forum.freecodecamp.org/c/contributors/3) if you need help contributing, our moderators will guide you through this.
+Please make sure you read [our guidelines for contributing](https://contribute.freecodecamp.org/#/), we prioritize contributors following the instructions in our guides. Join us in [our chat room](https://discord.gg/PRyKn3Vbay) or [the forum](https://forum.freecodecamp.org/c/contributors/3) if you need help contributing, our moderators will guide you through this.
 
 Às vezes, podemos obter mais de um pull request. Nós tipicamente aceitamos a contribuição mais qualificada seguida pela que foi feita primeiro.
 

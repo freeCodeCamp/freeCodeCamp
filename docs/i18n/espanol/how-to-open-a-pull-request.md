@@ -76,7 +76,7 @@ Algunos ejemplos de buenos títulos de PR serían:
 
 Nuestros moderadores ahora echarán un vistazo y te dejarán tus comentarios. Por favor, sea paciente con los demás moderadores y respete su tiempo. Todos los pull requests son revisados a su debido tiempo.
 
-Y como siempre, siéntete libre de preguntar en la [categoría de 'Contribuidores' de nuestro foro](https://forum.freecodecamp.org/c/contributors) o [en la sala de chat de contribuidores](https://chat.freecodecamp.org/channel/contributors).
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
 
 > [!TIP] Si vas a contribuir con más PRs, te recomendamos que leas las directrices ["haciendo cambios y sincronizando"](how-to-setup-freecodecamp-locally.md#making-changes-locally) para evitar la necesidad de borrar tu bifurcación.
 
