@@ -41,7 +41,7 @@ Non sono necessarie altre azioni una volta che un file è stato revisionato.
 
 ## Diventare un proofreader/revisore
 
-Se hai domande o sei interessato a diventare proofreader, puoi contattarci nella [chat room per i contributori](https://chat.freecodecamp.org/channel/contributors). In genere diamo i permessi di revisore se è da un po' che contribuisci a freeCodeCamp.
+If you have any questions, or are interested in becoming a proofreader, feel free to reach out to us in our [contributors chat room](https://discord.gg/PRyKn3Vbay). In genere diamo i permessi di revisore se è da un po' che contribuisci a freeCodeCamp.
 
 Il nostro staff e i moderatori della community sono sempre alla ricerca di volontari come te che ci aiutino a rendere disponibili al mondo traduzioni di alta qualità.
 
@@ -49,6 +49,6 @@ Il nostro staff e i moderatori della community sono sempre alla ricerca di volon
 
 ## Creare un canale su Chat per una lingua
 
-Per la maggior parte, incoraggiamo l'uso della [chat room per i contributori](https://chat.freecodecamp.org/channel/contributors) per tutte le comunicazioni. Ma se il team di volontari per una certa lingua cresce, possiamo considerare di creare un canale aggiuntivo per la lingua.
+For the most part we encourage you to use the [contributors chat](https://discord.gg/PRyKn3Vbay) room for all correspondence. Ma se il team di volontari per una certa lingua cresce, possiamo considerare di creare un canale aggiuntivo per la lingua.
 
 Se sei un proofreader e sei interessato ad avere un canale dedicato sul server di chat per una specifica lingua, [compila questo modulo](https://forms.gle/XU5CyutrYCgDYaVZA).
