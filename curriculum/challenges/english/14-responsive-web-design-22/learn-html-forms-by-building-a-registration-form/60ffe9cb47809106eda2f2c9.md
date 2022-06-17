@@ -106,7 +106,7 @@ fieldset {
 }
 
 fieldset:last-of-type {
-  border-bottom: none
+  border-bottom: none;
 }
 
 label {
