@@ -44,14 +44,12 @@ a.cert-tag:active {
 }
 
 .block-grid-title {
-  font-size: 1.2rem;
   margin: 0;
   overflow-wrap: break-word;
 }
 
 .block-grid .challenge-jump-link {
-  margin-left: 25px;
-  margin-bottom: 1.25rem;
+  margin: 0 25px 25px 25px;
 }
 
 .block-grid .challenge-jump-link a:focus {
@@ -295,11 +293,6 @@ button.map-title {
 .challenge-completed {
   background: var(--highlight-background);
   position: relative;
-  background-color: #3895ff;
-}
-
-.dark-palette .challenge-completed {
-  background-color: #0044ff;
 }
 
 .challenge-completed span {
@@ -391,7 +384,7 @@ button.map-title {
 }
 
 .block-grid {
-  border-bottom: 3px solid var(--secondary-background);
+  border-bottom: 4px solid var(--secondary-background);
 }
 
 .block-grid .block-header {
@@ -411,7 +404,7 @@ button.map-title {
 }
 
 .block-grid .block-header[aria-expanded='true'] {
-  border-bottom: 3px solid var(--secondary-background);
+  border-bottom: 2px solid var(--secondary-background);
 }
 
 .block-header-button-text {
