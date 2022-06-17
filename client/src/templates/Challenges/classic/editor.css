@@ -163,27 +163,26 @@ textarea.inputarea {
   border: 3px solid black;
   text-align: center;
   color: var(--gray-45);
-  position:relative;
+  position: relative;
 }
 
 .completion-bar:before {
   content: attr(data-label);
   font-size: 1em;
   font-weight: 500;
-  position:absolute;
+  position: absolute;
   top: 10px;
-  left:0;
-  right:0;
+  left: 0;
+  right: 0;
 }
 
 .completion-bar::-webkit-progress-value {
-  background-color: var(--gray-85)
+  background-color: var(--gray-85);
 }
 
 .completion-bar::-webkit-progress-bar {
   background-color: transparent;
 }
-
 
 @keyframes FadeIn {
   0% {

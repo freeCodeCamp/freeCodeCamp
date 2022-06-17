@@ -404,7 +404,8 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
         }
       }
     } = this.props;
-    const { description, title, block, certification, id} = this.getChallenge();
+    const { description, title, block, certification, id } =
+      this.getChallenge();
     return (
       challengeFiles && (
         <MultifileEditor

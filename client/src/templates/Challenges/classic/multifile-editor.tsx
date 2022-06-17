@@ -68,13 +68,13 @@ const mapStateToProps = createSelector(
     output: string[],
     open,
     { theme = Themes.Default }: { theme: Themes },
-    completedChallengesIds: string[],
+    completedChallengesIds: string[]
   ) => ({
     visibleEditors,
     canFocus: open ? false : canFocus,
     output,
     theme,
-    completedChallengesIds,
+    completedChallengesIds
   })
 );
 
@@ -160,7 +160,10 @@ const MultifileEditor = (props: MultifileEditorProps) => {
                     title={title}
                     id={id}
                     usesMultifileEditor={usesMultifileEditor}
-                    showProjectPreview={showProjectPreview} block={block} certification={certification}                  />
+                    showProjectPreview={showProjectPreview}
+                    block={block}
+                    certification={certification}
+                  />
                 </ReflexElement>
               );
             }

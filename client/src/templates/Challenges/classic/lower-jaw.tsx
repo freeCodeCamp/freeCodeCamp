@@ -7,7 +7,10 @@ import LightBulb from '../../../assets/icons/lightbulb';
 import GreenPass from '../../../assets/icons/green-pass';
 import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 import { apiLocation } from '../../../../../config/env.json';
-import { getCompletedPercent, useCurrentBlockIds } from '../components/completion-modal';
+import {
+  getCompletedPercent,
+  useCurrentBlockIds
+} from '../components/completion-modal';
 
 interface LowerJawProps {
   hint?: string;
@@ -217,12 +220,14 @@ const LowerJaw = ({
   };
 
   const showDesktopButton = window.innerWidth > MAX_MOBILE_WIDTH;
-  const useBlockIds = useCurrentBlockIds(block, certification)
-  const completedPercent = getCompletedPercent(completedChallengesIds, useBlockIds, id);
+  const useBlockIds = useCurrentBlockIds(block, certification);
+  const completedPercent = getCompletedPercent(
+    completedChallengesIds,
+    useBlockIds,
+    id
+  );
 
   const renderProgressBar = () => {
-
-
     return (
       <>
         <progress
