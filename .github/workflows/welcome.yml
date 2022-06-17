@@ -1,4 +1,4 @@
-name: New Contributor Welcome
+name: Github - Welcome First-timers
 on:
   pull_request:
     types:
@@ -6,6 +6,8 @@ on:
 
 jobs:
   welcome:
+    runs-on: ubuntu-latest
+
     steps:
       - name: Welcome New Contributors
         if: github.event.pull_request.merged == true
