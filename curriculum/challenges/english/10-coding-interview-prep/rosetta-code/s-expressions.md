@@ -8,7 +8,7 @@ dashedName: s-expressions
 
 # --description--
 
-[S-Expressions](https://rosettacode.org/wiki/S-expressions) present data as binary tree structure, making it possible to reference part of the data easily. this makes it a convenient way to parse and store data
+<a href="https://rosettacode.org/wiki/S-expressions" target="_blank" rel="noopener noreferrer nofollow">S-Expressions</a> present data as binary tree structure, making it possible to reference part of the data easily. this makes it a convenient way to parse and store data
 
 # --instructions--
 
