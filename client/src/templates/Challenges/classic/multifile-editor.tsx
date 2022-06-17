@@ -6,6 +6,7 @@ import { editor } from 'monaco-editor';
 import { isDonationModalOpenSelector, userSelector } from '../../../redux';
 import {
   canFocusEditorSelector,
+  completedChallengesIds,
   consoleOutputSelector,
   visibleEditorsSelector
 } from '../redux';
@@ -28,6 +29,7 @@ type VisibleEditors = {
 interface MultifileEditorProps {
   canFocus?: boolean;
   challengeFiles: ChallengeFile[];
+  completedChallengesIds: string[];
   containerRef: RefObject<HTMLElement>;
   contents?: string;
   description: string;
@@ -41,6 +43,9 @@ interface MultifileEditorProps {
   output?: string[];
   resizeProps: ResizeProps;
   title: string;
+  id: string;
+  block: string;
+  certification: string;
   showProjectPreview: boolean;
   usesMultifileEditor: boolean;
   visibleEditors: {
@@ -56,17 +61,20 @@ const mapStateToProps = createSelector(
   consoleOutputSelector,
   isDonationModalOpenSelector,
   userSelector,
+  completedChallengesIds,
   (
     visibleEditors: VisibleEditors,
     canFocus: boolean,
     output: string[],
     open,
-    { theme = Themes.Default }: { theme: Themes }
+    { theme = Themes.Default }: { theme: Themes },
+    completedChallengesIds: string[],
   ) => ({
     visibleEditors,
     canFocus: open ? false : canFocus,
     output,
-    theme
+    theme,
+    completedChallengesIds,
   })
 );
 
@@ -79,6 +87,10 @@ const MultifileEditor = (props: MultifileEditorProps) => {
     initialTests,
     resizeProps,
     title,
+    block,
+    certification,
+    completedChallengesIds,
+    id,
     visibleEditors: { stylescss, indexhtml, scriptjs, indexjsx },
     usesMultifileEditor,
     showProjectPreview
@@ -133,6 +145,7 @@ const MultifileEditor = (props: MultifileEditorProps) => {
                   <Editor
                     canFocusOnMountRef={canFocusOnMountRef}
                     challengeFiles={challengeFiles}
+                    completedChallengesIds={completedChallengesIds}
                     containerRef={containerRef}
                     description={targetEditor === key ? description : ''}
                     editorRef={editorRef}
@@ -145,9 +158,9 @@ const MultifileEditor = (props: MultifileEditorProps) => {
                     initialEditorContent={props.initialEditorContent ?? ''}
                     initialExt={props.initialExt ?? ''}
                     title={title}
+                    id={id}
                     usesMultifileEditor={usesMultifileEditor}
-                    showProjectPreview={showProjectPreview}
-                  />
+                    showProjectPreview={showProjectPreview} block={block} certification={certification}                  />
                 </ReflexElement>
               );
             }

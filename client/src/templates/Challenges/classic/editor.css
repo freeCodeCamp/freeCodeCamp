@@ -3,6 +3,15 @@
   color: var(--primary-color);
 }
 
+.monaco-scrollable-element {
+  overflow: visible !important;
+}
+
+.monaco-editor-background {
+  overflow: visible !important;
+  contain: none !important;
+}
+
 .vs .monaco-scrollable-element > .scrollbar > .slider {
   z-index: 11;
 }
@@ -145,6 +154,36 @@ textarea.inputarea {
   animation-duration: 0.5s;
   transition-timing-function: linear;
 }
+
+.completion-bar {
+  height: 50px;
+  width: 100%;
+  margin-top: 1em;
+  border-radius: 0;
+  border: 3px solid black;
+  text-align: center;
+  color: var(--gray-45);
+  position:relative;
+}
+
+.completion-bar:before {
+  content: attr(data-label);
+  font-size: 1em;
+  font-weight: 500;
+  position:absolute;
+  top: 10px;
+  left:0;
+  right:0;
+}
+
+.completion-bar::-webkit-progress-value {
+  background-color: var(--gray-85)
+}
+
+.completion-bar::-webkit-progress-bar {
+  background-color: transparent;
+}
+
 
 @keyframes FadeIn {
   0% {

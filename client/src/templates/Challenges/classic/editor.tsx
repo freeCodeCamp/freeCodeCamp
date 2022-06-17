@@ -56,7 +56,7 @@ import {
   stopResetting,
   isProjectPreviewModalOpenSelector,
   openModal,
-  isChallengeCompletedSelector
+  isChallengeCompletedSelector,
 } from '../redux';
 import GreenPass from '../../../assets/icons/green-pass';
 import LowerJaw from './lower-jaw';
@@ -68,6 +68,10 @@ const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 
 interface EditorProps {
   canFocus: boolean;
+  id: string;
+  block: string;
+  certification: string;
+  completedChallengesIds: string[];
   challengeFiles: ChallengeFiles;
   challengeType: number;
   containerRef: RefObject<HTMLElement>;
@@ -493,6 +497,16 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (!getStoredAriaRoledescription()) {
       setAriaRoledescription(false);
     }
+
+    // Add invisible content widget over line numbers so touch users will
+    // always have a place to vertically scroll the editor.
+    const scrollGutterNode = createScrollGutterNode(editor);
+    const scrollGutterWidget = createWidget(
+      editor,
+      'scrollgutter.widget',
+      scrollGutterNode
+    );
+    editor.addContentWidget(scrollGutterWidget);
   };
 
   const toggleAriaRoledescription = () => {
@@ -577,7 +591,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   const tryToSubmitChallenge = submitChallengeDebounceRef.current;
 
   function createLowerJaw(outputNode: HTMLElement, callback?: () => void) {
-    const { output } = props;
+    const { output, completedChallengesIds, certification, block, id } = props;
     const isChallengeComplete = challengeIsComplete();
     const isEditorInFocus = document.activeElement?.tagName === 'TEXTAREA';
     ReactDOM.render(
@@ -589,10 +603,10 @@ const Editor = (props: EditorProps): JSX.Element => {
         testsLength={props.tests.length}
         attemptsNumber={attemptRef.current.attempts}
         challengeIsCompleted={isChallengeComplete}
+        completedChallengesIds={completedChallengesIds}
         challengeHasErrors={challengeHasErrors()}
         tryToSubmitChallenge={tryToSubmitChallenge}
-        isEditorInFocus={isEditorInFocus}
-      />,
+        isEditorInFocus={isEditorInFocus} id={id} isSignedIn={false} block={block} certification={certification}          />,
       outputNode,
       callback
     );
@@ -698,6 +712,19 @@ const Editor = (props: EditorProps): JSX.Element => {
     outputNode.style.top = getOutputZoneTop();
     dataRef.current.outputNode = outputNode;
     return outputNode;
+  }
+
+  function createScrollGutterNode(
+    editor: editor.IStandaloneCodeEditor
+  ): HTMLDivElement {
+    const scrollGutterNode = document.createElement('div');
+    const lineGutterWidth = editor.getLayoutInfo().contentLeft;
+    scrollGutterNode.style.width = `${lineGutterWidth}px`;
+    scrollGutterNode.style.left = `-${lineGutterWidth}px`;
+    scrollGutterNode.style.top = '0';
+    scrollGutterNode.style.height = '10000px';
+    scrollGutterNode.style.background = 'transparent';
+    return scrollGutterNode;
   }
 
   function resetMarginDecorations() {
@@ -880,42 +907,49 @@ const Editor = (props: EditorProps): JSX.Element => {
     })[0];
   }
 
-  function addWidgetsToRegions(editor: editor.IStandaloneCodeEditor) {
-    const createWidget = (
-      id: string,
-      domNode: HTMLDivElement,
-      getTop: () => string
-    ) => {
-      const getId = () => id;
-      const getDomNode = () => domNode;
-      const getPosition = () => {
+  const createWidget = (
+    editor: editor.IStandaloneCodeEditor,
+    id: string,
+    domNode: HTMLDivElement,
+    // If getTop function is not provided then no positioning will be done here.
+    // This allows scroll gutter to do its positioning elsewhere.
+    getTop?: () => string
+  ) => {
+    const getId = () => id;
+    const getDomNode = () => domNode;
+    const getPosition = () => {
+      if (getTop) {
         domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
         domNode.style.top = getTop();
-
-        // must return null, so that Monaco knows the widget will position
-        // itself.
-        return null;
-      };
-      // Only the description content widget uses this method but it
-      // is harmless to pass it to the overlay widget.
-      const afterRender = () => {
-        domNode.style.left = '0';
-        domNode.style.visibility = 'visible';
-      };
-      return {
-        getId,
-        getDomNode,
-        getPosition,
-        afterRender
-      };
+      }
+      // must return null, so that Monaco knows the widget will position
+      // itself.
+      return null;
     };
+    // Only the description content widget uses this method but it
+    // is harmless to pass it to the overlay widget.
+    const afterRender = () => {
+      if (getTop) {
+        domNode.style.left = '0';
+      }
+      domNode.style.visibility = 'visible';
+    };
+    return {
+      getId,
+      getDomNode,
+      getPosition,
+      afterRender
+    };
+  };
 
+  function addWidgetsToRegions(editor: editor.IStandaloneCodeEditor) {
     const descriptionNode = createDescription(editor);
 
     const outputNode = createOutputNode(editor);
 
     if (!dataRef.current.descriptionWidget) {
       dataRef.current.descriptionWidget = createWidget(
+        editor,
         'description.widget',
         descriptionNode,
         getDescriptionZoneTop
@@ -935,6 +969,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
     if (!dataRef.current.outputWidget) {
       dataRef.current.outputWidget = createWidget(
+        editor,
         'output.widget',
         outputNode,
         getOutputZoneTop
