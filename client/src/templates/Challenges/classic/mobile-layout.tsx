@@ -29,13 +29,17 @@ enum Tab {
 
 interface MobileLayoutState {
   currentTab: Tab;
+  isUsingKeyboard: boolean;
 }
 
 class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
   static displayName: string;
 
   state: MobileLayoutState = {
-    currentTab: this.props.hasEditableBoundaries ? Tab.Editor : Tab.Instructions
+    currentTab: this.props.hasEditableBoundaries
+      ? Tab.Editor
+      : Tab.Instructions,
+    isUsingKeyboard: false
   };
 
   switchTab = (tab: Tab) => {
@@ -44,8 +48,20 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
     });
   };
 
+  handleKeyDown = () => {
+    this.setState({
+      isUsingKeyboard: true
+    });
+  };
+
+  handleClick = () => {
+    this.setState({
+      isUsingKeyboard: false
+    });
+  };
+
   render() {
-    const { currentTab } = this.state;
+    const { currentTab, isUsingKeyboard } = this.state;
     const {
       hasEditableBoundaries,
       instructions,
@@ -72,9 +88,13 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       <>
         <Tabs
           activeKey={currentTab}
+          data-keyboard={isUsingKeyboard}
           defaultActiveKey={currentTab}
           id='mobile-layout'
+          onKeyDown={this.handleKeyDown}
+          onMouseDown={this.handleClick}
           onSelect={this.switchTab}
+          onTouchStart={this.handleClick}
         >
           {!hasEditableBoundaries && (
             <TabPane
@@ -94,6 +114,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
           </TabPane>
           <TabPane
             eventKey={Tab.Console}
+            tabIndex='0'
             title={i18next.t('learn.editor-tabs.tests')}
             {...editorTabPaneProps}
           >

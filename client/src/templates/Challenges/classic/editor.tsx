@@ -405,11 +405,22 @@ const Editor = (props: EditorProps): JSX.Element => {
     editor.updateOptions({
       accessibilitySupport: accessibilityMode ? 'on' : 'auto'
     });
-    // Users who are using screen readers should not have to move focus from
-    // the editor to the description every time they open a challenge.
-    if (props.canFocus && !accessibilityMode) {
-      focusIfTargetEditor();
-    } else focusOnHotkeys();
+
+    const isTablistShowing = (): boolean =>
+      !!document.querySelector('.nav-tabs');
+    const isUsingKeyboard = (): boolean =>
+      document.querySelector('.nav-tabs')?.getAttribute('data-keyboard') ===
+      'true';
+
+    // Focus should not automatically leave the 'Code' tab when using a keyboard
+    // to navigate the tablist.
+    if (!isTablistShowing() || !isUsingKeyboard()) {
+      // Users who are using screen readers should not have to move focus from
+      // the editor to the description every time they open a challenge.
+      props.canFocus && !accessibilityMode
+        ? focusIfTargetEditor()
+        : focusOnHotkeys();
+    }
     // Removes keybind for intellisense
     // Private method - hopefully changes with future version
     // ref: https://github.com/microsoft/monaco-editor/issues/102
