@@ -1,0 +1,37 @@
+name: New Contributor Welcome
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  welcome:
+    steps:
+      - name: Welcome New Contributors
+        if: github.event.pull_request.merged == true
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const creator = context.payload.sender.login;
+            const repo = `${context.repo.owner}/${context.repo.repo}`;
+            const pulls = await github.rest.search.issuesAndPullRequests({
+              q: `repo:${repo}+author:${creator}+is:pr+is:merged`
+            });
+            // This means they've got merged PRs.
+            if (pulls?.data?.total_count) {
+              return;
+            }
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `
+              #### :sparkles: :tada: **AWESOME!** :tada: :sparkles:
+
+              Hi @${creator},
+
+              Thanks for this pull request and for contributing to the code-base for the first time. We are looking forward to more contributions from you in the future.
+
+              Cheers & happy contributing!
+              `
+            });
