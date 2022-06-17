@@ -8,36 +8,28 @@ dashedName: hofstadter-figure-figure-sequences
 
 # --description--
 
-Estas duas sequências de inteiros positivos são definidas como:
+As sequências de figura-figura de Hofstadter $R_n$ e $S_n$ são dadas por
 
-$R(1)=1\\ ;\\ S(1)=2 \\\\R(n)=R(n-1)+S(n-1), \\quad n>1.$
+$R_1 = 1\\ ;\\ S_1 = 2 \\\\R_n = R_{n-1} + S_{n-1}, \\quad n>1.$
 
-A sequência $S(n)$ está definida ainda mais como a sequência de números inteiros positivos não presentes em $R(n)$.
-
-A sequência $R$ inicia assim:
+Especificamente, a sequência $R_n$ contém os valores
 
 <pre>1, 3, 7, 12, 18, ...</pre>
 
-A sequência $S$ inicia assim:
+e a sequência $S_n$ contém os valores
 
 <pre>2, 4, 5, 6, 8, ...</pre>
 
+A sequência $R_n$ é definida pela relação de recorrência $R_n = R_{n-1} + S_{n-1}$, enquanto $S_n$ é definida como a sequência de números inteiros positivos não incluídos na sequência $R_n$.
+
 # --instructions--
 
-Crie duas funções chamadas `ffr` e `ffs` que, ao receber `n`, retornam `R(n)` ou `S(n)`, respectivamente. (Observe que R(1) = 1 e S(1) = 2 para evitar erros de "fora por um").
+Crie duas funções, chamadas `ffr` e `ffs` que retornem `R(n)` ou `S(n)`, respectivamente, para qualquer índice `n`. Observe que as sequências de figura-figura de Hofstadter são de índice 1, com $R_1 = 1$ e $S_1 = 2$.
 
 Nenhum valor máximo para `n` deve ser assumido.
 
-**Referências**
+**Referências**<p>Rosetta: <a href='https://rosettacode.org/wiki/Hofstadter_Figure-Figure_sequences' target='_blank'>sequências de figura-figura de Hofstadter</a></p>.
 
-<ul>
-  <li>
-    <a href='https://oeis.org/A005228' target='_blank'>A005228</a> e <a href='https://oeis.org/A030124' target='_blank'>A030124</a> de Sloane.
-  </li>
-  <li>
-    Wikipédia: <a href='https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Figure-Figure_sequences' title='wp: Hofstadter_sequence#Hofstadter_Figure-Figure_sequences' target='_blank'>sequências de figura-figura de Hofstadter</a>.
-  </li>
-</ul>
 
 # --hints--
 
@@ -53,13 +45,13 @@ assert(typeof ffr === 'function');
 assert(typeof ffs === 'function');
 ```
 
-`ffr` deve retornar um inteiro.
+`ffr` deve retornar um número inteiro.
 
 ```js
 assert(Number.isInteger(ffr(1)));
 ```
 
-`ffs` deve retornar um inteiro.
+`ffs` deve retornar um número inteiro.
 
 ```js
 assert(Number.isInteger(ffs(1)));
