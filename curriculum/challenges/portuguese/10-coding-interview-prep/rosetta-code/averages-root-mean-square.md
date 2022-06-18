@@ -8,11 +8,9 @@ dashedName: averagesroot-mean-square
 
 # --description--
 
-Calcule o [vaor eficaz](https://en.wikipedia.org/wiki/Root mean square "wp: Root mean square") dos números de 1 a 10 inclusive.
+Calcule a raiz do valor quadrático médio (RMS) dos números de 1 a 10.
 
-O *valor eficaz* (ou raiz do valor quadrático médio) também é conhecido por suas iniciais RMS (ou rms) e como **média quadrática**.
-
-O RMS é calculado como a raiz quadrada da média dos quadrados dos números:
+A <abbr title="raiz do valor quadrático médio">RMS</abbr> é calculada pela raiz quadrada da média dos quadrados dos números, dada pela equação:
 
 $$x\_{\\mathrm{rms}} = \\sqrt {{{x_1}^2 + {x_2}^2 + \\cdots + {x_n}^2} \\sobre n}. $$
 

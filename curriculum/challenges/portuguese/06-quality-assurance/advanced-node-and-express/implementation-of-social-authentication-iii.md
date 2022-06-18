@@ -42,7 +42,7 @@ myDataBase.findOneAndUpdate(
 
 Você deve poder acessar a aplicação agora - experimente!
 
-Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto concluído até este momento [aqui](https://gist.github.com/camperbot/183e968f0e01d81dde015d45ba9d2745).
+Envie sua página quando você achar que ela está certa. Se você estiver encontrando erros, pode <a href="https://gist.github.com/camperbot/183e968f0e01d81dde015d45ba9d2745" target="_blank" rel="noopener noreferrer nofollow">conferir o projeto concluído até este ponto</a>.
 
 # --hints--
 

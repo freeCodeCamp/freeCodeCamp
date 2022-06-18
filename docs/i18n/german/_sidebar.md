@@ -15,7 +15,7 @@
   - [Arbeite an der lokalisierten Client-Web-App](how-to-work-on-localized-client-webapp.md)
   - [Arbeite an den Cypress Tests](how-to-add-cypress-tests.md)
   - [Arbeite an den Videoaufgaben](how-to-help-with-video-challenges.md)
-  - [Arbeite an dem Dokumentations-Theme](how-to-work-on-the-docs-theme.md)
+  - [Work on documentation](how-to-work-on-the-docs-theme.md)
   - [Arbeite an der Komponentenbibliothek](how-to-work-on-the-component-library.md)
 - **Zusätzliche Leitfäden**
   - [Übersetzungen lokal testen](how-to-test-translations-locally.md)
@@ -36,4 +36,4 @@
 - **Unsere Community**
   - [**GitHub**](https://github.com/freecodecamp/freecodecamp)
   - [**Discourse Forum**](https://freecodecamp.org/forum/c/contributors)
-  - [**Chatserver**](https://chat.freecodecamp.org/home)
+  - [**Chatserver**](https://discord.gg/PRyKn3Vbay)

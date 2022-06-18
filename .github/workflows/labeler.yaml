@@ -1,4 +1,4 @@
-name: 'Pull Request Labeler'
+name: GitHub - Label PRs
 on:
   - pull_request_target
 

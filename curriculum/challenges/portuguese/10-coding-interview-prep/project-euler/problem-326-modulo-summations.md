@@ -8,7 +8,7 @@ dashedName: problem-326-modulo-summations
 
 # --description--
 
-Considere an como sendo uma sequência recursivamente definida por: $a_1 = 1$, $\displaystyle a_n = \left(\sum_{k = 1}^{n - 1} k \times a_k\right)\bmod n$.
+Considere $a_n$ como sendo uma sequência recursivamente definida por: $a_1 = 1$, $\displaystyle a_n = \left(\sum_{k = 1}^{n - 1} k \times a_k\right)\bmod n$.
 
 Portanto, os primeiros 10 elementos de $a_n$ são: 1, 1, 0, 3, 0, 3, 5, 4, 1, 9.
 

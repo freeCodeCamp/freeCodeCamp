@@ -1,49 +1,49 @@
-# Courses VSCode Extension
+# VSCode 拡張機能「Courses」について
 
-This details the maintenance guidelines for the [freeCodeCamp/courses-vscode-extension](https://github.com/freeCodeCamp/courses-vscode-extension) repository which contains the source code for the [freeCodeCamp - Courses](https://marketplace.visualstudio.com/items?itemName=freeCodeCamp.freecodecamp-courses) extension.
+ここでは、[freeCodeCamp/courses-vscode-extension](https://github.com/freeCodeCamp/courses-vscode-extension) リポジトリのメンテナンス方針について説明します。このリポジトリには、[freeCodeCamp - Courses](https://marketplace.visualstudio.com/items?itemName=freeCodeCamp.freecodecamp-courses) 拡張機能のソースコードが含まれています。
 
-## Publishing the Extension
+## 拡張機能を公開する
 
-A GitHub Action automagically publishes the extension to the Visual Studio Marketplace, on pushes to the `prod` branch.
+`prod` ブランチにプッシュされ次第、GitHub Action が拡張機能を自動的に Visual Studio Marketplace に公開します。
 
-Ensure the `main` branch is checked out.
+`main` ブランチがチェックアウトされていることを確認してください。
 
 ```bash
 git checkout main
 ```
 
-Update the local repository with `upstream`, and reset `main`.
+`upstream` からローカルリポジトリを最新の状態にし、`main` をリセットしてください。
 
 ```bash
 git fetch upstream
 git reset --hard upstream/main
 ```
 
-Checkout the `prod` branch.
+`prod` ブランチをチェックアウトしてください。
 
 ```bash
 git checkout prod
 ```
 
-Merge the commits wanted for deployment into `prod`.
+`prod` にデプロイしたいコミットをマージしてください。
 
 ```bash
 git merge main
 ```
 
-Push the local branch to `upstream`.
+ローカルブランチを `upstream` にプッシュしてください。
 
 ```bash
 git push upstream
 ```
 
-> [!NOTE] Pushing to `upstream` requires write access to the `freeCodeCamp/courses-vscode-extension` repository.
+> [!NOTE] `upstream` にプッシュするには、`freeCodeCamp/courses-vscode-extension` リポジトリへの書き込み権限が必要です。
 
-## Manually Publishing the Extension
+## 拡張機能を手動で公開する
 
-A manual upload to the Visual Studio Marketplace can be achieved, by following these steps:
+手作業での Visual Studio Marketplace への公開は、次の手順に従って行うことができます:
 
-1. Visit https://marketplace.visualstudio.com/ and sign in
-2. Navigate to the [freeCodeCamp Publisher page](https://marketplace.visualstudio.com/manage/publishers/freecodecamp)
-3. Select the relevant extension, and select `Update`
-4. Upload the file from your local files
+1. https://marketplace.visualstudio.com/ にアクセスし、サインイン
+2. [freeCodeCamp Publisher page](https://marketplace.visualstudio.com/manage/publishers/freecodecamp) に移動する
+3. 該当する拡張機能を選択し、`Update` をクリックする
+4. ローカルからファイルをアップロードする

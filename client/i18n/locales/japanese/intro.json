@@ -300,64 +300,64 @@
     }
   },
   "2022/javascript-algorithms-and-data-structures": {
-    "title": "JavaScript Algorithms and Data Structures (Beta)",
+    "title": "JavaScript アルゴリズムとデータ構造 (ベータ版)",
     "intro": [
-      "placeholder",
-      "placeholder"
+      "プレイスホルダ―",
+      "プレイスホルダ―"
     ],
     "note": "",
     "blocks": {
       "build-a-caesars-cipher-project": {
-        "title": "Build a Casears Cipher Project",
+        "title": "シーザー暗号解析器作成プロジェクト",
         "intro": [
           "",
           ""
         ]
       },
       "build-a-cash-register-project": {
-        "title": "Build a Cash Register Project",
+        "title": "キャッシュレジスター作成プロジェクト",
         "intro": [
           "",
           ""
         ]
       },
       "build-a-palindrome-checker-project": {
-        "title": "Build a Palindrome Checker Project",
+        "title": "回文チェッカー作成プロジェクト",
         "intro": [
           "",
           ""
         ]
       },
       "build-a-roman-numeral-converter-project": {
-        "title": "Build a Roman Numeral Converter Project",
+        "title": "ローマ数字コンバーター作成プロジェクト",
         "intro": [
           "",
           ""
         ]
       },
       "build-a-telephone-number-validator-project": {
-        "title": "Build a Telephone Number Validator Project",
+        "title": "電話番号バリデーター作成プロジェクト",
         "intro": [
           "",
           ""
         ]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
-        "title": "Learn Basic JavaScript by Building a Role Playing Game",
+        "title": "JavaScript の基礎の学習: ロールプレイングゲームを作る",
         "intro": [
           "",
           ""
         ]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
-        "title": "Learn Form Validation by Building a Calorie Counter",
+        "title": "フォームの検証の学習: カロリー計算機を作る",
         "intro": [
           "",
           ""
         ]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
-        "title": "Learn Functional Programming by Building a Spreadsheet",
+        "title": "関数型プログラミングの学習: スプレッドシートを作る",
         "intro": [
           "",
           ""

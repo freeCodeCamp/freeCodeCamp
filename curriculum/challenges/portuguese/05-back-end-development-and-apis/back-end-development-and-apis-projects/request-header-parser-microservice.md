@@ -8,9 +8,9 @@ dashedName: request-header-parser-microservice
 
 # --description--
 
-Crie um aplicativo full stack em JavaScript que seja funcionalmente semelhante a este: <https://request-header-parser-microservice.freecodecamp.rocks/>. Trabalhar nesse projeto vai fazer com que você escreva seu código usando um dos seguintes métodos:
+Crie um aplicativo full stack em JavaScript que seja funcionalmente semelhante a este: <a href="https://request-header-parser-microservice.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://request-header-parser-microservice.freecodecamp.rocks/</a>. Trabalhar nesse projeto vai fazer com que você escreva seu código usando um dos seguintes métodos:
 
--   Clone [este repositório do GitHub](https://github.com/freeCodeCamp/boilerplate-project-headerparser/) e complete o projeto localmente.
+-   Clone <a href="https://github.com/freeCodeCamp/boilerplate-project-headerparser/" target="_blank" rel="noopener noreferrer nofollow">este repositório do GitHub</a> e complete o projeto localmente.
 -   Use [nosso projeto inicial do Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-headerparser) para completar o projeto.
 -   Use um construtor de site de sua escolha para completar o projeto. Certifique-se de incorporar todos os arquivos do nosso repositório no GitHub.
 

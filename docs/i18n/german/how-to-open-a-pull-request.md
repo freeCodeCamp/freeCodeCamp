@@ -76,7 +76,7 @@ Einige Beispiele für gute PR-Titel wären:
 
 Unsere Moderatoren werden jetzt einen Blick darauf werfen und dir ein Feedback hinterlassen. Bitte habe Geduld mit den anderen Moderatoren und respektiere ihre Zeit. Alle Pull-Requests werden zu gegebener Zeit überprüft.
 
-Und wie immer kannst du Fragen in der [Kategorie 'Contributors' in unserem Forum](https://forum.freecodecamp.org/c/contributors) oder im [Chatraum für Mitwirkende](https://chat.freecodecamp.org/channel/contributors) stellen.
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
 
 > [!TIP] Wenn du mehr Pull-Requests beisteuern willst, empfehlen wir dir, die [Richtlinien für Änderungen und Synchronisierung](how-to-setup-freecodecamp-locally.md#making-changes-locally) zu lesen, damit du deinen Fork nicht löschen musst.
 

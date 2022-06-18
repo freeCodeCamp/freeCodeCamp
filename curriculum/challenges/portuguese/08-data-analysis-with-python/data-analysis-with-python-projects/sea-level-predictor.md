@@ -8,12 +8,12 @@ dashedName: sea-level-predictor
 
 # --description--
 
-Você [trabalhará neste projeto com nosso código inicial do Replit](https://replit.com/github/freeCodeCamp/boilerplate-sea-level-predictor).
+Você <a href="https://replit.com/github/freeCodeCamp/boilerplate-sea-level-predictor" target="_blank" rel="noopener noreferrer nofollow">trabalhará neste projeto com nosso código inicial do Replit</a>.
 
 Ainda estamos desenvolvendo a parte instrucional interativa do currículo Python. Por enquanto, aqui estão alguns vídeos no canal do freeCodeCamp.org do YouTube que ensinarão tudo o que você precisa saber para completar este projeto:
 
-- [Curso de Python em vídeo para todos](https://www.freecodecamp.org/news/python-for-everybody/) (14 horas)
-- [Curso Aprenda Python em vídeo](https://www.freecodecamp.org/news/learn-python-video-course/) (10 horas)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Curso de Python em vídeo para todos</a> (14 horas)
+- <a href="https://www.freecodecamp.org/news/learn-python-video-course/" target="_blank" rel="noopener noreferrer nofollow">Curso por vídeo Aprenda Python</a>
 
 # --instructions--
 
@@ -44,7 +44,8 @@ Importamos os testes de `test_module.py` em `main.py` para a sua conveniência. 
 Copie o URL do seu projeto e envie-o para o freeCodeCamp.
 
 ## Fonte dos dados
-[Global Average Absolute Sea Level Change](https://datahub.io/core/sea-level-rise), 1880-2014 da Agência de Proteção Ambiental dos EUA, usando dados do CSIRO, 2015; NOAA, 2015.
+
+<a href="https://datahub.io/core/sea-level-rise" target="_blank" rel="noopener noreferrer nofollow">Global Average Absolute Sea Level Change</a>, 1880-2014 da Agência de Proteção Ambiental dos EUA, usando dados do CSIRO, 2015; NOAA, 2015.
 
 
 # --hints--
