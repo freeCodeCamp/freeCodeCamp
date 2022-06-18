@@ -128,12 +128,11 @@ const LowerJaw = ({
             </span>
           </div>
           <div className='test-status-description'>
-            <h2>{t('learn.test')}</h2>
             <p className='status'>
-              {t('learn.congratulations')}
+              <span className='sr-only'>{t('learn.congratulations')}</span>
               {submitKeyboardInstructions}
+              {quote}
             </p>
-            <p>{quote}</p>
           </div>
         </div>
       );
