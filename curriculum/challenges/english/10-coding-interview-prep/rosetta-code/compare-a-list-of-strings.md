@@ -8,13 +8,13 @@ dashedName: compare-a-list-of-strings
 
 # --description--
 
-A list is a type of data that shows values, you may notice its similarity to sequence from other Rosetta challenges, which is true. As they can have a repeating values, here is an example:
+A [list](compare-a-list-of-strings) is a type of data that shows values, you may notice its similarity to sequence from other Rosetta challenges, which is true. As they can have a repeating values, here is an example:
 
 ```js
 const list = [['AA',  'BB', 'CC'], ['AA', 'ACB', 'AA'], [], ['AA']];
 ````
 
-Given a list of arbitrarily many strings, implement a function for each of the following conditions:
+Given a [list](https://rosettacode.org/wiki/Compare_a_list_of_strings) of arbitrarily many strings, implement a function for each of the following conditions:
 
 <ul>
   <li>test if they are all lexically equal</li>
