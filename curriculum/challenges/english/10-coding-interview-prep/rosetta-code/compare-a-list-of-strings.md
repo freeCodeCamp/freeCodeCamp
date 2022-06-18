@@ -8,7 +8,7 @@ dashedName: compare-a-list-of-strings
 
 # --description--
 
-A [list](https://en.wikipedia.org/wiki/List_(abstract_data_type) "wp: List\_(abstract_data_type)") or sequence is an abstract data type that represents a finite number of ordered values, where the same value may occur more than once. Here is an example:
+A list is a type of data that shows values, you may notice its similarity to sequence from other Rosetta challenges, which is true. As they can have a repeating values, here is an example:
 
 ```js
 const list = [['AA',  'BB', 'CC'], ['AA', 'ACB', 'AA'], [], ['AA']];
