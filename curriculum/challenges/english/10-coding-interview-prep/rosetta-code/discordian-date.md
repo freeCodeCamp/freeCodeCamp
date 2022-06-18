@@ -12,8 +12,15 @@ The Gregorian calendar is a solar calendar with 12 months of 28–31 days each. 
 
 The Discordian calendar is aligned with the Gregorian calendar and begins on January 1. Its week consists of five days, there are 73 weeks per year. Every fourth year in the Discordian calendar, an extra day is inserted between Chaos 59 and Chaos 60.
 
-for more info:
-[Wikipedia](https://en.wikipedia.org/wiki/Discordian_calendar)
+here are the structure of Discordian calendar.
+
+Seasons: `'Chaos', 'Discord', 'Confusion', 'Bureaucracy', 'The Aftermath'`.
+  
+Weekday: `'Sweetmorn', 'Boomtime', 'Pungenday', 'Prickle-Prickle', 'Setting Orange'`.
+
+Apostle: `'Mungday', 'Mojoday', 'Syaday', 'Zaraday', 'Maladay'`.
+
+Holidays: `'Chaoflux', 'Discoflux', 'Confuflux', 'Bureflux', 'Afflux'`.
 
 # --instructions--
 
