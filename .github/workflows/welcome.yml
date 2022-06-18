@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Welcome New Contributors
         if: github.event.pull_request.merged == true
-        uses: actions/github-script@v6
+        uses: actions/github-script@7a5c598405937d486b0331594b5da2b14db670da # tag=v6
         with:
           script: |
             const creator = context.payload.sender.login;
