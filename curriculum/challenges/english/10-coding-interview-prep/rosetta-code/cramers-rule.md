@@ -8,9 +8,11 @@ dashedName: cramers-rule
 
 # --description--
 
-In linear algebra, [Cramer's rule](https://en.wikipedia.org/wiki/Cramer%27s_rule) is an explicit formula for the solution of a system of linear equations with as many equations as unknowns, valid whenever the system has a unique solution. It expresses the solution in terms of the determinants of the (square) coefficient matrix and of matrices obtained from it by replacing one column by the vector of right hand sides of the equations.
+A  [Cramer's rule](https://rosettacode.org/wiki/Cramer%27s_rule) make use of the value of determinants to determine the original values in a system. Here is an example of determinant:
 
-Given
+$\begin{aligned}|A|={\begin{vmatrix}a&b\\\c&d\end{vmatrix}}=ad-bc.\end{aligned}$
+
+Given a system of determinants:
 
 $\\left\\{\\begin{matrix}a_1x + b_1y + c_1z&= {\\color{red}d_1}\\\\a_2x + b_2y + c_2z&= {\\color{red}d_2}\\\\a_3x + b_3y + c_3z&= {\\color{red}d_3}\\end{matrix}\\right.$
 
