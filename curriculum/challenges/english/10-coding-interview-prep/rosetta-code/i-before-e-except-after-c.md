@@ -8,7 +8,7 @@ dashedName: i-before-e-except-after-c
 
 # --description--
 
-**"["I before E, except after C"](<https://en.wikipedia.org/wiki/I before E except after C>)"** is a mnemonic rule of thumb for English spelling. If one is unsure whether a word is spelled with the digraph `ei` or `ie`, the rhyme suggests that the correct order is `ie` unless the preceding letter is `c`, in which case it may be `ei`.
+**"["I before E, except after C"](http://www.rosettacode.org/wiki/I_before_E_except_after_C)"** is used to aid with the English language spelling, using the rythem of the word. If one is unsure whether a word is spelled with the digraph `ei` or `ie`, the rhyme suggests that the correct order is `ie` unless the preceding letter is `c`, in which case it may be `ei`.
 
 Using the words provided, check if the two sub-clauses of the phrase are plausible individually:
 
