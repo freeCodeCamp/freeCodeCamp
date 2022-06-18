@@ -8,7 +8,7 @@ dashedName: cramers-rule
 
 # --description--
 
-A  [Cramer's rule](https://rosettacode.org/wiki/Cramer%27s_rule) make use of the value of determinants to determine the original values in a system. Here is an example of determinant:
+A <a href="https://rosettacode.org/wiki/Cramer%27s_rule" target="_blank" rel="noopener noreferrer nofollow">Cramer's rule</a> make use of the value of determinants to determine the original values in a system. Here is an example of determinant:
 
 $\begin{aligned}|A|={\begin{vmatrix}a&b\\\c&d\end{vmatrix}}=ad-bc.\end{aligned}$
 
