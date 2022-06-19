@@ -16,7 +16,7 @@ Use list item (`li`) elements to create items in a list. Here is an example of l
 </ul>
 ```
 
-Within the `ul` element display three things cats love, nest three list items:
+Within the `ul` element nest three list items to display three things cats love:
 
 `cat nip`
 `laser pointers`
