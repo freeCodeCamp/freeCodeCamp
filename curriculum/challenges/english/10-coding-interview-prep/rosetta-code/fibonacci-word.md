@@ -16,6 +16,8 @@ Form   F_Word<sub>3</sub>  as  F_Word<sub>2</sub>   concatenated with  F_Word<su
 Form   F_Word<sub>n</sub>  as  F_Word<sub>n-1</sub>  concatenated with  F_word<sub>Term-2</sub>
 </pre>
 
+Entropy calculation is required in this challenge, [Here is a rosetta challenge for calculating entropy](https://www.freecodecamp.org/learn/coding-interview-prep/rosetta-code/entropy)
+
 # --instructions--
 
 Write a function to return the Fibonacci Words up to `terms`. `terms` will be provided as a parameter `n` to the function. The function should return an array of objects. The objects should be of the form: `{ Term: 1, Length: 1, Entropy: 0, Word: '1' }`. `Entropy` is computed for the string `Word` and rounded to 8 decimal digits of accuracy.
