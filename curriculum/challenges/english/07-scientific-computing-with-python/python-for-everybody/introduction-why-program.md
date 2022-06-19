@@ -18,9 +18,9 @@ dashedName: introduction-why-program
 
 More resources:
 
-\- <a href="https://youtu.be/F7mtLrYzZP8"target="_blank" rel="noopener noreferrer nofollow">Install Python on Windows</a>
+\- <a href="https://youtu.be/F7mtLrYzZP8" target="_blank" rel="noopener noreferrer nofollow">Install Python on Windows</a>
 
-\- <a href="https://youtu.be/wfLnZP-4sZw"target="_blank" rel="noopener noreferrer nofollow">Install Python on MacOS</a>
+\- <a href="https://youtu.be/wfLnZP-4sZw" target="_blank" rel="noopener noreferrer nofollow">Install Python on MacOS</a>
 
 # --question--
 
