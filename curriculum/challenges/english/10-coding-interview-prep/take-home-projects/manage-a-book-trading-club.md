@@ -8,7 +8,7 @@ dashedName: manage-a-book-trading-club
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to this: <https://manage-a-book-trading-club.freecodecamp.rocks/>.
+**Objective:** Build an app that is functionally similar to this: <a href="https://manage-a-book-trading-club.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://manage-a-book-trading-club.freecodecamp.rocks/</a>.
 
 Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
 

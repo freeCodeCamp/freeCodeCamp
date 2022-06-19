@@ -8,7 +8,7 @@ dashedName: build-a-pinterest-clone
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to this: <https://build-a-pinterest-clone.freecodecamp.rocks/>.
+**Objective:** Build an app that is functionally similar to this: <a href="https://build-a-pinterest-clone.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://build-a-pinterest-clone.freecodecamp.rocks/</a>.
 
 Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
 
