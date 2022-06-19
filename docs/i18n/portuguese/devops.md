@@ -197,7 +197,7 @@ Atualmente uma versão pública de testes beta está disponível em:
 
 O time de desenvolvimento faz o merge nas mudanças da branch `prod-staging` para `prod-current` quando lançam mudanças. O commit principal deve ser o que você vê no site.
 
-Você pode identificar a versão exata implantada visitando os registros de compilação e implantação disponíveis na seção de estado. Alternativamente, você também pode entrar em contato na [sala de bate-papo dos contribuidores](https://chat.freecodecamp.org/channel/contributors).
+Você pode identificar a versão exata implantada visitando os registros de compilação e implantação disponíveis na seção de estado. Alternativamente, você também pode entrar em contato na [sala de bate-papo dos contribuidores](https://discord.gg/PRyKn3Vbay).
 
 ### Limitações conhecidas
 

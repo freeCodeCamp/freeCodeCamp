@@ -151,7 +151,7 @@ Ahora que tienes una copia local de freeCodeCamp, puedes seguir estas instruccio
 
 Si tiene problemas, primero realice una búsqueda web para su problema y compruebe si ya ha sido respondida. Si no encuentra una solución, por favor busque en nuestra página [GitHub issues](https://github.com/freeCodeCamp/freeCodeCamp/issues) para una solución e infórmese del problema si aún no ha sido reportado.
 
-Y como siempre, siéntase libre de hacer preguntas en la categoría ['Contributors' en nuestro foro](https://forum.freecodecamp.org/c/contributors) o [nuestro servidor de chat](https://chat.freecodecamp.org/home).
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our chat server](https://discord.gg/PRyKn3Vbay).
 
 > [!TIP] Puedes optar por no ejecutar freeCodeCamp localmente si simplemente estas editando archivos. Por ejemplo, realizar un `rebase`, or resolver conflictos `merge`.
 > 
@@ -572,6 +572,6 @@ La primera configuración puede tardar un rato dependiendo del ancho de banda de
 
 ## Obteniendo ayuda
 
-Si estas atascado y necesitas ayuda, siéntete libre de realizar preguntas en la [Categoria "Contribuyentes" en nuestro foro](https://forum.freecodecamp.org/c/contributors) o en la [Sala de Chat de los Contribuyentes](https://chat.freecodecamp.org/channel/contributors).
+If you are stuck and need help, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
 
 Puede haber un error en la consola de su navegador o en Bash / Terminal / Command Line que le ayudará a identificar el problema. Proporcione este mensaje de error en la descripción de su problema para que otros puedan identificar el problema más fácilmente y ayudarle a encontrar una solución.

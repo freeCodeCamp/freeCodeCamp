@@ -15,7 +15,7 @@
   - [ローカライズされたクライアント Web アプリに貢献する](how-to-work-on-localized-client-webapp.md)
   - [Cypress テストに貢献する](how-to-add-cypress-tests.md)
   - [ビデオチャレンジに貢献する](how-to-help-with-video-challenges.md)
-  - [ドキュメントのテーマに貢献する](how-to-work-on-the-docs-theme.md)
+  - [ドキュメントに貢献する](how-to-work-on-the-docs-theme.md)
   - [コンポーネントライブラリに貢献する](how-to-work-on-the-component-library.md)
 - **その他のガイド**
   - [翻訳をローカルでテストする](how-to-test-translations-locally.md)
@@ -36,4 +36,4 @@
 - **私達のコミュニティ**
   - [**GitHub**](https://github.com/freecodecamp/freecodecamp)
   - [**Discourse フォーラム**](https://freecodecamp.org/forum/c/contributors)
-  - [**チャットサーバー**](https://chat.freecodecamp.org/home)
+  - [**チャットサーバー**](https://discord.gg/PRyKn3Vbay)

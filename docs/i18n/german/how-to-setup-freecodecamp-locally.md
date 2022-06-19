@@ -151,7 +151,7 @@ Jetzt, wo du eine lokale Kopie von freeCodeCamp besitzt, kannst du diese Anweisu
 
 Wenn du auf Probleme stößt, führe zuerst eine Websuche nach deinem Problem durch und schaue nach, ob es bereits beantwortet wurde. Wenn du keine Lösung findest, suche bitte auf unserer [GitHub issues](https://github.com/freeCodeCamp/freeCodeCamp/issues)-Seite nach einer Lösung und melde das Problem, falls es noch nicht gemeldet wurde.
 
-Und wie immer kannst du Fragen in der [Kategorie 'Contributors' in unserem Forum](https://forum.freecodecamp.org/c/contributors) oder [unserem Chat-Server](https://chat.freecodecamp.org/home) stellen.
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our chat server](https://discord.gg/PRyKn3Vbay).
 
 > [!TIP] Du kannst darauf verzichten, freeCodeCamp lokal auszuführen, wenn du nur Dateien bearbeitest. Du kannst zum Beispiel ein `rebase` durchführen oder `merge`-Konflikte beheben.
 > 
@@ -572,6 +572,6 @@ Die Ersteinrichtung kann je nach Netzwerkbandbreite eine Weile dauern. Sei gedul
 
 ## Hilfe erhalten
 
-Wenn du nicht weiterkommst und Hilfe brauchst, kannst du in der [Kategorie "Contributors" in unserem Forum](https://forum.freecodecamp.org/c/contributors) oder im [Contributors Chatraum](https://chat.freecodecamp.org/channel/contributors) Fragen stellen.
+If you are stuck and need help, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
 
 In der Konsole deines Browsers oder in der Bash / Terminal / Kommandozeile kann eine Fehlermeldung erscheinen, die dir hilft, das Problem zu identifizieren. Gib diese Fehlermeldung in deiner Problembeschreibung an, damit andere das Problem leichter identifizieren und dir bei der Suche nach einer Lösung helfen können.

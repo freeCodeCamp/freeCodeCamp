@@ -10,7 +10,7 @@ Beachte, dass wir für Version 7.0 des freeCodeCamp-Studienplan zu einem [vollst
 
 Um diese Aufgaben zu lösen, braucht es viel Kreativität und Liebe zum Detail. Es gibt viele Möglichkeiten, dir zu helfen. Du bekommst Unterstützung von einem ganzen Team von Mitwirkenden, an die du deine Ideen weitergeben und deine Aufgaben demonstrieren kannst.
 
-Und wie immer kannst du Fragen in der [Kategorie 'Contributors' in unserem Forum](https://forum.freecodecamp.org/c/contributors) oder im [Contributors Chat Room](https://chat.freecodecamp.org/channel/contributors) stellen.
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
 
 Mit deiner Hilfe können wir einen interaktiven Studienplan entwickeln, der Millionen von Menschen dabei helfen wird, in den nächsten Jahren das Programmieren zu lernen.
 
