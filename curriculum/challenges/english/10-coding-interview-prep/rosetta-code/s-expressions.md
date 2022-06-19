@@ -32,7 +32,7 @@ The reader should be able to read the following input
 (data (!@# (4.5) "(more" "data)")))
 </pre>
 
-and turn it into a native data structure. (See the <a href="https://rosettacode.org/wiki/S-Expressions#Pike "\#Pike""target="_blank" rel="noopener noreferrer nofollow">Pike</a>, <a href="https://rosettacode.org/wiki/S-Expressions#Python "\#Python""target="_blank" rel="noopener noreferrer nofollow">Python</a> and <a href="https://rosettacode.org/wiki/S-Expressions#Ruby "\#Ruby""target="_blank" rel="noopener noreferrer nofollow">Ruby</a> implementations for examples of native data structures.)
+and turn it into a native data structure. (See the <a href="https://rosettacode.org/wiki/S-Expressions#Pike " target="_blank" rel="noopener noreferrer nofollow">Pike</a>, <a href="https://rosettacode.org/wiki/S-Expressions#Python " target="_blank" rel="noopener noreferrer nofollow">Python</a> and <a href="https://rosettacode.org/wiki/S-Expressions#Ruby " target="_blank" rel="noopener noreferrer nofollow">Ruby</a> implementations for examples of native data structures.)
 
 # --hints--
 
