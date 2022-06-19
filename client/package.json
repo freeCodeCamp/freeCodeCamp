@@ -95,7 +95,7 @@
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-final-form": "6.5.9",
-    "react-ga": "3.3.0",
+    "react-ga": "3.3.1",
     "react-helmet": "6.1.0",
     "react-hotkeys": "2.0.0",
     "react-i18next": "11.17.1",
