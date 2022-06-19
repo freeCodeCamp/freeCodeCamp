@@ -23,7 +23,7 @@ You can help expand and improve the curriculum. You can also update project user
 
 We are localizing freeCodeCamp.org to major world languages.
 
-Certifications are already live in some major world languages like [Chinese (中文)](https://chinese.freecodecamp.org/learn), [Spanish (Español)](https://www.freecodecamp.org/espanol/learn), [Italian (Italiano)](https://www.freecodecamp.org/italian/learn), [Portuguese (Português)](https://www.freecodecamp.org/portuguese/learn). We encourage you to read the [announcement here](https://www.freecodecamp.org/news/world-language-translation-effort) and share it with your friends to get them excited about this.
+Certifications are already live in some major world languages like [Chinese (中文)](https://chinese.freecodecamp.org/learn), [Spanish (Español)](https://www.freecodecamp.org/espanol/learn), [Italian (Italiano)](https://www.freecodecamp.org/italian/learn), [Portuguese (Português)](https://www.freecodecamp.org/portuguese/learn). We encourage you to read the [announcement here](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) and share it with your friends to get them excited about this.
 
 **If you're interested in translating, here's [how to translate freeCodeCamp's resources](how-to-translate-files.md).**
 
