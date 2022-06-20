@@ -18,7 +18,7 @@ const superBlockNames = [
   'Data Analysis with Python Certification',
   'Information Security Certification',
   'Machine Learning with Python Certification',
-  'Coding Interview Prep (Thousands of hours of challenges)',
+  'Coding Interview Prep',
   'Relational Database (Beta) Certification'
 ];
 

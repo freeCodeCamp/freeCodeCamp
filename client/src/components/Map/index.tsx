@@ -2,11 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import i18next from 'i18next';
 import React from 'react';
 
-import {
-  SuperBlocks,
-  completionHours,
-  superBlockCertTypeMap
-} from '../../../../config/certification-settings';
+import { SuperBlocks } from '../../../../config/certification-settings';
 import envData from '../../../../config/env.json';
 import { isAuditedCert } from '../../../../utils/is-audited';
 import { generateIconComponent } from '../../assets/icons';
@@ -32,12 +28,9 @@ interface MapData {
 function createSuperBlockTitle(superBlock: SuperBlocks) {
   const superBlockTitle = i18next.t(`intro:${superBlock}.title`);
   return superBlock === 'coding-interview-prep'
-    ? i18next.t('learn.cert-map-estimates.coding-prep', {
-        title: superBlockTitle
-      })
+    ? superBlockTitle
     : i18next.t('learn.cert-map-estimates.certs', {
-        title: superBlockTitle,
-        hours: completionHours[superBlockCertTypeMap[superBlock]]
+        title: superBlockTitle
       });
 }
 
