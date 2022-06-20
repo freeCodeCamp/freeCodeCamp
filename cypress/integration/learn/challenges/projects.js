@@ -137,7 +137,7 @@ describe('project submission', () => {
     }
   );
 
-  it.only('Ctrl + enter triggers the completion modal on multifile projects', () => {
+  it('Ctrl + enter triggers the completion modal on multifile projects', () => {
     cy.fixture('../../config/curriculum.json').then(curriculum => {
       const targetBlock = 'build-a-personal-portfolio-webpage-project';
       const portfolioBlock = Object.values(curriculum).filter(
@@ -153,9 +153,7 @@ describe('project submission', () => {
       const url = `/learn/${superBlock}/${block}/${dashedName}`;
       cy.visit(url);
 
-      const { files } = solutions[0];
-
-      files.forEach(({ contents, fileKey }) => {
+      solutions[0].forEach(({ contents, fileKey }) => {
         const tabSelector = `[data-cy=editor-tab-${fileKey}]`;
         console.log(tabSelector);
         if (fileKey !== 'indexhtml') {
