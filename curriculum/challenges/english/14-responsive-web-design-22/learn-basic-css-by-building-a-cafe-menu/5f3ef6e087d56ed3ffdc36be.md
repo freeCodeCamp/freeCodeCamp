@@ -88,7 +88,7 @@ assert($('.established').css('font-style') === 'italic');
       </main>
     </div>
   </body>
-<html>
+</html>
 ```
 
 ```css

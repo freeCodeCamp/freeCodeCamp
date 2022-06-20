@@ -80,7 +80,7 @@ assert(code.match(/\/\*\s*FOOTER\s*\*\//i));
       </footer>
     </div>
   </body>
-<html>
+</html>
 ```
 
 ```css

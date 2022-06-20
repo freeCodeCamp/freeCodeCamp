@@ -74,7 +74,7 @@ assert($('h2')[1].innerText.match(/Desserts/i));
       </main>
     </div>
   </body>
-<html>
+</html>
 ```
 
 ```css

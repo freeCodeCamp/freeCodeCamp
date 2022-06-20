@@ -78,7 +78,7 @@ assert($('main').children('section').length === 2);
       </main>
     </div>
   </body>
-<html>
+</html>
 ```
 
 ```css
