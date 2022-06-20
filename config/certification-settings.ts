@@ -120,6 +120,7 @@ export const superBlockCertTypeMap = {
   [SuperBlocks.RelationalDb]: certTypes.relationalDatabaseV8,
 
   // post-modern
+  // TODO: use enum
   [SuperBlocks.RespWebDesignNew]: certTypes.respWebDesign,
   [SuperBlocks.JsAlgoDataStructNew]: certTypes.jsAlgoDataStruct
 };
