@@ -73,7 +73,9 @@
     "click-start-course": "Inizia il corso",
     "click-start-project": "Inizia il progetto",
     "change-language": "Cambia lingua",
-    "cancel-change": "Annulla modifica"
+    "cancel-change": "Annulla modifica",
+    "resume-project": "Resume project",
+    "start-project": "Start project"
   },
   "landing": {
     "big-heading-1": "Impara a programmare — gratis.",
@@ -321,7 +323,8 @@
     "sorry-keep-trying": "Il tuo codice non è corretto. Continua a provare.",
     "sorry-getting-there": "Il tuo codice non è corretto. Ci sei quasi.",
     "sorry-hang-in-there": "Il tuo codice non è corretto. Tieni duro.",
-    "sorry-dont-giveup": "Il tuo codice non è corretto. Non arrenderti."
+    "sorry-dont-giveup": "Il tuo codice non è corretto. Non arrenderti.",
+    "challenges-completed": "{{completedCount}} of {{totalChallenges}} challenges completed"
   },
   "donate": {
     "title": "Supporta il nostro no profit",
@@ -482,7 +485,10 @@
     "primary-nav": "primario",
     "breadcrumb-nav": "percorso",
     "submit": "Usa Ctrl + Invio per inviare.",
-    "running-tests": "Test in corso"
+    "running-tests": "Test in corso",
+    "step": "Step",
+    "steps": "Steps",
+    "steps-for": "Steps for {{blockTitle}}"
   },
   "flash": {
     "honest-first": "Per richiedere una certificazione, è necessario prima accettare la nostra politica di onestà accademica",
