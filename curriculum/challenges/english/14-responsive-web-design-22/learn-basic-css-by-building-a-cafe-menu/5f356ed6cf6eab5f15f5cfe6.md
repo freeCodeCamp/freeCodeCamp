@@ -62,7 +62,7 @@ assert(div.parentElement.tagName === 'BODY');
     </main>
   </body>
 --fcc-editable-region--
-<html>
+</html>
 ```
 
 ```css
