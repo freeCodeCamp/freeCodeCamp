@@ -28,7 +28,7 @@
     "cross-env": "7.0.3",
     "gray-matter": "4.0.3",
     "inquirer": "8.2.4",
-    "prettier": "2.6.2",
+    "prettier": "2.7.1",
     "ts-node": "10.8.1",
     "typescript": "4.7.4"
   }
