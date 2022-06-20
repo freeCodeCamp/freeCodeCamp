@@ -153,24 +153,24 @@ describe('project submission', () => {
       const url = `/learn/${superBlock}/${block}/${dashedName}`;
       cy.visit(url);
 
-      solutions.forEach(files => {
-        files.forEach(({ contents, fileKey }) => {
-          const tabSelector = `[data-cy=editor-tab-${fileKey}]`;
-          console.log(tabSelector);
-          if (fileKey !== 'indexhtml') {
-            cy.get(tabSelector).click();
-          }
-          const editorContainerSelector = `[data-cy=editor-container-${fileKey}]`;
-          cy.get(editorContainerSelector, { timeout: 16000 })
-            .find(selectors.editor, { timeout: 16000 })
-            .click()
-            .focused()
-            .type('{ctrl+a}{del}');
-          // NOTE: clipboard operations are flaky in watch mode, because
-          // the document can lose focus
-          cy.window().its('navigator.clipboard').invoke('writeText', contents);
-          cy.document().invoke('execCommand', 'paste');
-        });
+      const { files } = solutions[0];
+
+      files.forEach(({ contents, fileKey }) => {
+        const tabSelector = `[data-cy=editor-tab-${fileKey}]`;
+        console.log(tabSelector);
+        if (fileKey !== 'indexhtml') {
+          cy.get(tabSelector).click();
+        }
+        const editorContainerSelector = `[data-cy=editor-container-${fileKey}]`;
+        cy.get(editorContainerSelector, { timeout: 16000 })
+          .find(selectors.editor, { timeout: 16000 })
+          .click()
+          .focused()
+          .type('{ctrl+a}{del}');
+        // NOTE: clipboard operations are flaky in watch mode, because
+        // the document can lose focus
+        cy.window().its('navigator.clipboard').invoke('writeText', contents);
+        cy.document().invoke('execCommand', 'paste');
       });
 
       cy.get('[data-cy=editor-container-indexhtml', { timeout: 16000 })
