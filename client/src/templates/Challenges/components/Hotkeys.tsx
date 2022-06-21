@@ -54,7 +54,7 @@ const keyMap = {
 interface HotkeysProps {
   canFocusEditor: boolean;
   challengeFiles: ChallengeFiles;
-  challengeType: number;
+  challengeType?: number;
   children: React.ReactElement;
   editorRef?: React.RefObject<HTMLElement>;
   executeChallenge?: (options?: { showCompletionModal: boolean }) => void;
@@ -99,7 +99,11 @@ function Hotkeys({
 
       const testsArePassing = tests.every(test => test.pass && !test.err);
 
-      if (usesMultifileEditor && !isProject(challengeType)) {
+      if (
+        usesMultifileEditor &&
+        typeof challengeType == 'number' &&
+        !isProject(challengeType)
+      ) {
         if (testsArePassing) {
           submitChallenge();
         } else {
