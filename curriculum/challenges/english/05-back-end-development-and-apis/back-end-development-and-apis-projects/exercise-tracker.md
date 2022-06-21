@@ -494,7 +494,7 @@ async(getUserInput) => {
 };
 ```
 
-The `date` property of any object in the `log` array that is returned from `GET /api/users/:id/logs` should be a string.. Use the `dateString` format of the `Date` API.
+The `date` property of any object in the `log` array that is returned from `GET /api/users/:id/logs` should be a string. Use the `dateString` format of the `Date` API.
 
 ```js
 async(getUserInput) => {
