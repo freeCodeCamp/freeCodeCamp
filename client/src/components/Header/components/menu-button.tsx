@@ -46,6 +46,7 @@ const MenuButton = ({
       onBlur={handleBlur}
       onClick={handleClick}
       ref={innerRef}
+      style={{backgroundColor:'#feac32'}}
     >
       {t('buttons.menu')}
     </button>
