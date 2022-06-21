@@ -158,7 +158,6 @@ describe('project submission', () => {
 
         solutions[0].forEach(({ contents, fileKey }) => {
           const tabSelector = `[data-cy=editor-tab-${fileKey}]`;
-          console.log(tabSelector);
           if (fileKey !== 'indexhtml') {
             cy.get(tabSelector).click();
           }
