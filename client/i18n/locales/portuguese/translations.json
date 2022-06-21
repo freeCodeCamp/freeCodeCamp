@@ -74,8 +74,8 @@
     "click-start-project": "Iniciar o projeto",
     "change-language": "Alterar idioma",
     "cancel-change": "Cancelar alteração",
-    "resume-project": "Resume project",
-    "start-project": "Start project"
+    "resume-project": "Retomar projeto",
+    "start-project": "Iniciar o projeto"
   },
   "landing": {
     "big-heading-1": "Aprenda a programar — de graça.",
@@ -324,7 +324,7 @@
     "sorry-getting-there": "Desculpe, seu código não passou nos testes. Você está chegando lá.",
     "sorry-hang-in-there": "Desculpe, seu código não passou nos testes. Você está chegando lá.",
     "sorry-dont-giveup": "Desculpe, seu código não passou nos testes. Não desista.",
-    "challenges-completed": "{{completedCount}} of {{totalChallenges}} challenges completed"
+    "challenges-completed": "{{completedCount}} de {{totalChallenges}} desafios concluídos"
   },
   "donate": {
     "title": "Dê seu apoio à nossa organização sem fins lucrativos",
@@ -486,9 +486,9 @@
     "breadcrumb-nav": "breadcrumb",
     "submit": "Use Ctrl + Enter para enviar.",
     "running-tests": "Executando testes",
-    "step": "Step",
-    "steps": "Steps",
-    "steps-for": "Steps for {{blockTitle}}"
+    "step": "Passo",
+    "steps": "Passos",
+    "steps-for": "Passos para {{blockTitle}}"
   },
   "flash": {
     "honest-first": "Para solicitar uma certificação, você precisa primeiro aceitar nossa política de honestidade acadêmica",
