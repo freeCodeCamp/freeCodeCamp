@@ -10,7 +10,7 @@ dashedName: implement-the-serialization-of-a-passport-user
 
 今の段階ではまだデータベースを設定していないため、実際のユーザーオブジェクトを読み込んでいません。 これはさまざまな方法で実現できますが、このプロジェクトでは、サーバーを起動し、アプリのライフサイクル全体にわたって永続的な接続を維持した時点で、データベースに接続します。 接続するために、データベースの接続文字列 (例: `mongodb+srv://:@cluster0-jvwxi.mongodb.net/?retryWrites=true&w=majority`) を環境変数 `MONGO_URI` に追加してください 。 この変数は `connection.js` ファイルで使用されます。
 
-*[MongoDB Atlas](https://www.mongodb.com/cloud/atlas) で無料のデータベースを設定することができます。*
+*MongoDB Atlas での無料データベースの設定に問題が発生した場合は、こちらの[チュートリアル](https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/)を確認してください。*
 
 ここではデータベースに接続し、リクエストのリッスンを開始します。 その目的は、データベースの接続前やデータベースエラーの発生時にリクエストを許可しないことです。 そのためには、次のようなコードでシリアライズとアプリルートを処理します。
 

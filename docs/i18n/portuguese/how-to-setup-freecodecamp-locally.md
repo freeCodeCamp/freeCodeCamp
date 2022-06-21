@@ -151,7 +151,7 @@ Agora que você tem uma cópia local do freeCodeCamp, você pode seguir estas in
 
 Se você encontrar problemas, primeiro faça uma busca na web e procurar por respostas. Se não for encontrada uma solução, procure em nossa página de [issues do GitHub](https://github.com/freeCodeCamp/freeCodeCamp/issues) para encontrar uma solução e reporte o problema se ainda não foi reportado.
 
-E, como sempre, fique à vontade em perguntar na [categoria 'Contribuidores' do fórum](https://forum.freecodecamp.org/c/contributors) ou [no chat dos contribuidores](https://chat.freecodecamp.org/home).
+E como sempre, fique à vontade em perguntar na [categoria 'Contribuidores' do fórum](https://forum.freecodecamp.org/c/contributors) ou [no chat dos contribuidores](https://discord.gg/PRyKn3Vbay).
 
 > [!TIP] Você talvez não queira executar freeCodeCamp localmente se está simplesmente editando arquivos. Por exemplo, fazer `rebase`, ou resolver conflitos de `merge`.
 > 
@@ -244,11 +244,13 @@ npm run develop
 
 Este único comando vai disparar todos os serviços, incluindo o servidor API e os aplicativos do cliente disponíveis para você trabalhar.
 
-> [!NOTE] Uma vez pronto, abra um navegador e **acesse <http://localhost:8000>**. Se o aplicativo carregar, parabéns - você está com tudo configurado! Agora você tem uma cópia da plataforma do freeCodeCamp de aprendizagem inteira rodando em sua máquina local.
+> [!NOTE] Uma vez pronto, abra um navegador e **acesse <http://localhost:8000>**. Se o aplicativo carregar, faça o login. Parabéns – está tudo pronto! Agora você tem uma cópia da plataforma do freeCodeCamp de aprendizagem inteira rodando em sua máquina local.
 
 > [!TIP] O API Server serve APIs em `http://localhost:3000`. O aplicativo Gatsby atende o aplicativo cliente em `http://localhost:8000`
 
-> Se você visitar <http://localhost:3000/explorer> poderá ver as APIs disponíveis.
+> Quando estiver conectado, se você visitar <http://localhost:3000/explorer> poderá ver as APIs disponíveis.
+
+> [!WARNING] Limpar seus cookies ou executar `npm run seed:certified-user` desconectará você e será preciso fazer o login novamente.
 
 ## Entre com um usuário local
 
@@ -496,7 +498,7 @@ Se você está em um sistema operacional diferente e/ou ainda está com problema
 
 > [!WARNING]
 > 
-> Por favor, evite criar issues no GitHub sobre pré-requisitos. Estão fora do escopo deste projeto.
+> Evite criar issues no GitHub sobre pré-requisitos. Estão fora do escopo deste projeto.
 
 ### Problemas com a Interface do Usuário, fontes, errors de build, etc.
 
@@ -570,6 +572,6 @@ A primeira configuração pode demorar um pouco, dependendo da largura de banda 
 
 ## Obtendo ajuda
 
-Se você está com dificuldades e precisa de ajuda, fique à vontade em perguntar na categoria ['Contribuidores' em nosso fórum](https://forum.freecodecamp.org/c/contributors) ou [no chat de contribuidores](https://chat.freecodecamp.org/channel/contributors).
+Se você está com dificuldades e precisa de ajuda, fique à vontade em perguntar na categoria ['Contribuidores' em nosso fórum](https://forum.freecodecamp.org/c/contributors) ou [no chat de contribuidores](https://discord.gg/PRyKn3Vbay).
 
 Pode haver um erro no console do seu navegador ou no bash/terminal/linha de comando que ajudará a identificar o problema. Forneça esta mensagem de erro na descrição do seu problema para que outros possam identificá-lo mais facilmente e ajudá-lo a encontrar uma solução.

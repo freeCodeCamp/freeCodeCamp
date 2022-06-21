@@ -8,139 +8,71 @@ dashedName: execute-a-markov-algorithm
 
 # --description--
 
-Crie um interpretador para um [Algoritmo de Markov](https://en.wikipedia.org/wiki/Markov algorithm "wp: Markov algorithm").
+Os conceitos de Markov são utilizados na aprendizagem de máquina, devido à abordagem simples na manipulação de dados. Com um número definido de regras (`rules`), você pode manipular dados (`data`) para criar uma saída (`output`) desejada.
 
-As regras têm a seguinte sintaxe:
+Adicionamos em segundo plano:
 
-<pre>[ruleset] ::= (([comment] | [rule]) [newline]+)*
-[comment] ::= # {[any character]}
-[rule] ::= [pattern] [whitespace] -> [whitespace] [.] [replacement]
-[whitespace] ::= ([tab] | [space]) [[whitespace]]
-</pre>
+As regras (`rules`) no formato de array aninhado (`nested array`), e os dados (`data`) também na forma de um `array`.E as saídas (`outputs`) desejadas.
 
-Há uma regra por linha.
+As regras (`rules`):
 
-Se houver um `.` (ponto) presente antes de \[replacement], esta é uma regra de encerramento. Neste caso, o interpretador deve parar a execução.
+```js
+let rules=[
+[
+"A -> apple","B -> bag","S -> shop","T -> the",
+"the shop -> my brother","a never used -> .terminating rule"
+],
 
-Um conjunto de regras consiste em uma sequência de regras, com comentários opcionais.
+[
+ "A -> apple","B -> bag","S -> .shop","T -> the",
+ "the shop -> my brother","a never used -> .terminating rule"
+],
 
-Regras
+[
+ "A -> apple","WWWW -> with","Bgage -> ->.*","B -> bag",
+ "->.* -> money","W -> WW","S -> .shop","T -> the",
+ "the shop -> my brother","a never used -> .terminating rule"
+],
 
-Use os seguintes testes em entradas:
+[
+ "_+1 -> _1+","1+1 -> 11+","1! -> !1",",! -> !+","_! -> _","1*1 -> x,@y","1x -> xX",
+ "X, -> 1,1","X1 -> 1X","_x -> _X",",x -> ,X","y1 -> 1y","y_ -> _","1@1 -> x,@y",
+ "1@_ -> @_",",@_ -> !_","++ -> +","_1 -> 1","1+_ -> 1","_+_ -> "
+],
 
-**Regra 1:**
+[
+"A0 -> 1B","0A1 -> C01","1A1 -> C11","0B0 -> A01","1B0 -> A11",
+"B1 -> 1B","0C0 -> B01","1C0 -> B11","0C1 -> H01","1C1 -> H11"
+]
 
-<pre># Este arquivo de regras foi extraído da Wikipédia:
-# <code>http://en.wikipedia.org/wiki/Markov_Algorithm</code>
-A -> apple (maçã)
-B -> bag (sacola)
-S -> shop (loja)
-T -> the (o/a)
-the shop -> my brother (a loja -> meu irmão)
-a nunca usado -> .regra de encerramento
-</pre>
+];
+```
 
-O texto de exemplo `I bought a B of As from T S.` deve gerar a saída `I bought a bag of apples from my brother.`
+Os dados (`data`):
 
-**Regra 2:**
+```js
+let data=[
+        "I bought a B of As from T S.",
+        "I bought a B of As from T S.",
+        "I bought a B of As W my Bgage from T S.",
+        "_1111*11111_",
+        "000000A000000"
+        ];
+```
 
-Um teste da regra de encerramento
+As saídas (`outputs`):
 
-<pre># Levemente modificado a partir das regras da Wikipédia
-A -> apple
-B -> bag
-S -> .shop
-T -> the
-the shop -> my brother
-a nunca usado -> .regra de encerramento
-</pre>
+```js
+let outputs=[
+    "I bought a bag of apples from my brother.",
+    "I bought a bag of apples from T shop.",
+    "I bought a bag of apples with my money from T shop.",
+    "11111111111111111111",
+    "00011H1111000"
+    ]
+```
 
-O texto de exemplo `I bought a B of As from T S.` deve gerar a saída `I bought a bag of apples from T shop.`
-
-**Regra 3:**
-
-Isto testa a ordem de substituição correta e pode capturar rotinas de substituição simples baseadas em regexp se caracteres especiais não forem escapados.
-
-<pre># Regras de teste de sintaxe do formalismo de Backus-Naur
-A -> apple (maçã)
-WWWW -> with (com)
-Bgage -> ->.*
-B -> bag (sacola)
-->.* -> money (dinheiro)
-W -> WW
-S -> .shop (.loja)
-T -> the (o/a)
-the shop -> my brother (a loja -> meu irmão)
-a nunca usado -> .regra de encerramento
-</pre>
-
-O texto de exemplo `I bought a B of As W my Bgage from T S.` deve gerar `I bought a bag of apples with my money from T shop.`
-
-**Regra 4:**
-
-Esta regra testa a ordem correta de varredura das regras e pode capturar rotinas de substituição que fazem a varredura na ordem errada. Ela implementa um mecanismo de multiplicação unária geral. (Observe que a expressão de entrada deve ser colocada dentro dos sublinhados nesta implementação.)
-
-<pre>### Mecanismo de multiplicação unária para testar implementações do Algoritmo de Markov
-### De Donal Fellows.
-# Mecanismo de adição unária
-_+1 -> _1+
-1+1 -> 11+
-# Passe para converter da divisão da multiplicação para uma
-# adição comum
-1! -> !1
-,! -> !+
-_! -> _
-# Multiplicação unária duplicando o lado esquerdo o número de vezes igual ao lado direito
-1*1 -> x,@y
-1x -> xX
-X, -> 1,1
-X1 -> 1X
-_x -> _X
-,x -> ,X
-y1 -> 1y
-y_ -> _
-# Próxima fase de aplicação
-1@1 -> x,@y
-1@_ -> @_
-,@_ -> !_
-++ -> +
-# Limpeza de encerramento para a adição
-_1 -> 1
-1+_ -> 1
-_+_ ->
-</pre>
-
-O texto de exemplo `_1111*11111_` deve gerar o resultado `11111111111111111111`
-
-**Regra 5:**
-
-Uma [Máquina de Turing](http://en.wikipedia.org/wiki/Turing_machine "link: http&#x3A;//en.wikipedia.org/wiki/Turing_machine") simples, implementando um [algoritmo do castor](http://en.wikipedia.org/wiki/Busy_beaver "link: http&#x3A;//en.wikipedia.org/wiki/Busy_beaver") de três estados.
-
-A fita consiste em `0`s e `1`s, os estados são `A`, `B`, `C` e `H` (para `H`alt - parada), e a posição do cabeçote é indicada pela escrita da letra de estado antes do caractere onde o cabeçote está. Todas as partes da fita inicial que a máquina opera têm de ser fornecidas na entrada.
-
-Além de demonstrar que o algoritmo de Markov está completo para Turing, essa regra também me fez pegar um bug na implementação de C ++, que não foi capturado pelas primeiras quatro regras.
-
-<pre># Máquina de Turing: algoritmo do castor de três estados
-#
-# estado A, símbolo 0 => escreve 1, move para a direita, novo estado B
-A0 -> 1B
-# estado A, símbolo 1 => escreve 1, move para a esquerda, novo estado C
-0A1 -> C01
-1A1 -> C11
-# estado B, símbolo 0 => escreve 1, move para a esquerda, novo estado A
-0B0 -> A01
-1B0 -> A11
-# estado B, símbolo 1 => escreve 1, move para a direita, novo estado B
-B1 -> 1B
-# estado C, símbolo 0 => escreve 1, move para a esquerda, novo estado B
-0C0 -> B01
-1C0 -> B11
-# estado C, símbolo 1 => escreve 1, move para a esquerda, para
-0C1 -> H01
-1C1 -> H11
-</pre>
-
-Este conjunto de regras deve transformar `000000A000000` em `00011H1111000`
+Usando o algoritmo de Markov, altere os dados (`data`) para que as saídas (`outputs`) desejadas usem as regras (`rules`) fornecidas para você.
 
 # --hints--
 
@@ -153,31 +85,31 @@ assert(typeof markov === 'function');
 `markov(["A -> apple","B -> bag","S -> shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As from T S.")` deve retornar "I bought a bag of apples from my brother.".
 
 ```js
-assert.deepEqual(markov(rules[0], tests[0]), outputs[0]);
+assert.deepEqual(markov(rules[0], datas[0]), outputs[0]);
 ```
 
 `markov(["A -> apple","B -> bag","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As from T S.")` deve retornar "I bought a bag of apples from T shop.".
 
 ```js
-assert.deepEqual(markov(rules[1], tests[1]), outputs[1]);
+assert.deepEqual(markov(rules[1], datas[1]), outputs[1]);
 ```
 
 `markov(["A -> apple","WWWW -> with","Bgage -> ->.*","B -> bag","->.* -> money","W -> WW","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As W my Bgage from T S.")` deve retornar "I bought a bag of apples with my money from T shop.".
 
 ```js
-assert.deepEqual(markov(rules[2], tests[2]), outputs[2]);
+assert.deepEqual(markov(rules[2], datas[2]), outputs[2]);
 ```
 
 `markov(["_+1 -> _1+","1+1 -> 11+","1! -> !1",",! -> !+","_! -> _","1*1 -> x,@y","1x -> xX","X, -> 1,1","X1 -> 1X","_x -> _X",",x -> ,X","y1 -> 1y","y_ -> _","1@1 -> x,@y","1@_ -> @_",",@_ -> !_","++ -> +","_1 -> 1","1+_ -> 1","_+_ -> "],"_1111*11111_")` deve retornar "11111111111111111111".
 
 ```js
-assert.deepEqual(markov(rules[3], tests[3]), outputs[3]);
+assert.deepEqual(markov(rules[3], datas[3]), outputs[3]);
 ```
 
 `markov(["A0 -> 1B","0A1 -> C01","1A1 -> C11","0B0 -> A01","1B0 -> A11","B1 -> 1B","0C0 -> B01","1C0 -> B11","0C1 -> H01","1C1 -> H11"],"")` deve retornar "00011H1111000".
 
 ```js
-assert.deepEqual(markov(rules[4], tests[4]), outputs[4]);
+assert.deepEqual(markov(rules[4], datas[4]), outputs[4]);
 ```
 
 # --seed--
@@ -191,7 +123,7 @@ let rules=[["A -> apple","B -> bag","S -> shop","T -> the","the shop -> my broth
             ["A -> apple","WWWW -> with","Bgage -> ->.*","B -> bag","->.* -> money","W -> WW","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],
             ["_+1 -> _1+","1+1 -> 11+","1! -> !1",",! -> !+","_! -> _","1*1 -> x,@y","1x -> xX","X, -> 1,1","X1 -> 1X","_x -> _X",",x -> ,X","y1 -> 1y","y_ -> _","1@1 -> x,@y","1@_ -> @_",",@_ -> !_","++ -> +","_1 -> 1","1+_ -> 1","_+_ -> "],
             ["A0 -> 1B","0A1 -> C01","1A1 -> C11","0B0 -> A01","1B0 -> A11","B1 -> 1B","0C0 -> B01","1C0 -> B11","0C1 -> H01","1C1 -> H11"]];
-let tests=["I bought a B of As from T S.",
+let datas=["I bought a B of As from T S.",
             "I bought a B of As from T S.",
             "I bought a B of As W my Bgage from T S.",
             "_1111*11111_",
@@ -208,7 +140,7 @@ let outputs=["I bought a bag of apples from my brother.",
 ## --seed-contents--
 
 ```js
-function markov(rules,test) {
+function markov(rules,data) {
 
 }
 ```
@@ -216,9 +148,9 @@ function markov(rules,test) {
 # --solutions--
 
 ```js
-function markov(rules,test) {
+function markov(rules,data) {
     let pattern = new RegExp("^([^#]*?)\\s+->\\s+(\\.?)(.*)");
-    let origTest = test;
+    let origData = data;
 
     let captures = [];
 
@@ -229,18 +161,18 @@ function markov(rules,test) {
         captures.push(m);
     });
 
-    test = origTest;
-    let copy = test;
+    data = origData;
+    let copy = data;
     for (let j = 0; j < captures.length; j++) {
         let c = captures[j];
-        test = test.replace(c[0], c[2]);
+        data = data.replace(c[0], c[2]);
         if (c[1]==".")
             break;
-        if (test!=copy) {
+        if (data!=copy) {
             j = -1;
-            copy = test;
+            copy = data;
         }
     }
-    return test;
+    return data;
 }
 ```

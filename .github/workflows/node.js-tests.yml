@@ -1,9 +1,13 @@
-name: Node.js CI
+name: CI - Node.js Test Current
 on:
   push:
     branches-ignore:
       - 'renovate/**'
   pull_request:
+
+permissions:
+  contents: read
+
 jobs:
   lint:
     name: Lint
@@ -16,7 +20,7 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@v3
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
 
       - name: Check number of lockfiles
         run: |
@@ -27,7 +31,7 @@ jobs:
           fi
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@eeb10cff27034e7acf239c5d29f62154018672fd # tag=v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
@@ -38,11 +42,15 @@ jobs:
           echo 'SHOW_NEW_CURRICULUM=true' >> .env
           cat .env
 
+      # The two prefixed installs are for the client update which are not,
+      # currently, built as workspaces.
       - name: Lint Source Files
         run: |
           echo npm version $(npm -v)
           npm ci
           npm run create:config
+          npm i --prefix=curriculum-server
+          npm i --prefix=web
           npm run build:curriculum
           npm run lint
 
@@ -58,13 +66,12 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@v3
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@eeb10cff27034e7acf239c5d29f62154018672fd # tag=v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: npm
 
       - name: Set Environment variables
         run: |
@@ -93,13 +100,12 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@v3
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@eeb10cff27034e7acf239c5d29f62154018672fd # tag=v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: npm
 
       - name: Set Environment variables
         run: |
@@ -130,13 +136,12 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@v3
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@eeb10cff27034e7acf239c5d29f62154018672fd # tag=v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: npm
 
       - name: Set Environment variables
         run: |

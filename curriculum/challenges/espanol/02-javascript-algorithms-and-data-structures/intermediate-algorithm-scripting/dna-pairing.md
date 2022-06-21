@@ -8,13 +8,11 @@ dashedName: dna-pairing
 
 # --description--
 
-A la cadena de ADN le falta el elemento de emparejamiento. Toma cada carácter, obtén su par y devuelve los resultados como un arreglo bidimensional.
+Los pares de las cadenas de ADN consisten en pares de base de proteínas. Los pares de base son representados por los caracteres <em>AT</em> y <em>CG</em>, que forman bloques de doble hélix ADN.
 
-[Par de bases](https://es.wikipedia.org/wiki/Par_de_bases) son un par de AT y CG. Haz coincidir el elemento que falta con el carácter proporcionado.
+A la cadena de ADN le falta el elemento de emparejamiento. Escribe una función que coincida con los pares de base faltantes para la hebra de ADN proporcionada. Para cada carácter de la cadena proporcionada, encuentra el carácter de par base. Devuelve los resultados como un arreglo 2d.
 
-Devuelve el carácter proporcionado como primer elemento de cada arreglo.
-
-Por ejemplo, la entrada `GCG`, devolverá `[["G", "C"], ["C","G"], ["G", "C"]]`
+Por ejemplo, la entrada `GCG`, devuelve `[["G", "C"], ["C","G"], ["G", "C"]]`
 
 El carácter y su par se emparejan en un arreglo, y todos los arreglos se agrupan en un arreglo encapsulado.
 

@@ -15,13 +15,13 @@ dashedName: find-the-length-of-a-string
 console.log("Alan Peter".length);
 ```
 
-字符串 `10` 将会出现在控制台中。
+值 `10` 将显示在控制台中。 请注意，“Alan” 和 “Peter” 之间的空格字符也被计算在内。
 
 例如，如果我们创建了一个变量 `const firstName = "Ada"`，我们可以通过使用 `firstName.length` 找出字符串 `Ada` 的长度属性。
 
 # --instructions--
 
-使用 `.length` 属性来获得变量 `lastName` 的长度，并把它赋值给变量 `lastNameLength`。
+使用 `.length` 属性将 `lastNameLength` 设置为 `lastName` 中的字符数。
 
 # --hints--
 

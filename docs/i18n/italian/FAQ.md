@@ -32,7 +32,7 @@ Per favore nota che queste issue in GitHub sono per problemi e discussioni sulla
 
 ### Come posso segnalare un problema di sicurezza?
 
-Per favore non creare issue su GitHub per problemi di sicurezza. Invece invia una email a `security@freecodecamp.org` e controlleremo immediatamente.
+Per favore non creare issue su GitHub per problemi di sicurezza. Invece, per favore [segui la nostra politica di sicurezza](https://contribute.freecodecamp.org/#/security).
 
 ### Sono uno studente. Posso lavorare su una funzionalità ottenendo crediti accademici?
 
@@ -92,7 +92,7 @@ Dai un'occhiata al [Manuale per moderatori](moderator-handbook.md) per una lista
 **Se hai bisogno chiedi liberamente aiuto in:**
 
 - La categoria `Contributors` del [forum della nostra community](https://forum.freecodecamp.org/c/contributors).
-- Il canale `#Contributors` sul nostro [chat server](https://chat.freecodecamp.org/channel/contributors).
+- The `#Contributors` channel on [our chat server](https://discord.gg/PRyKn3Vbay).
 
 Siamo entusiasti di aiutarti a contribuire in ognuno degli ambiti su cui vorresti lavorare. Se fai domande sul relativo thread di un'issue, saremo lieti di rispondere. Assicurati di fare una ricerca per la tua domanda prima di porne una nuova.
 

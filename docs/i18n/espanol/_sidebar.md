@@ -15,7 +15,7 @@
   - [Trabajar en la aplicación web de cliente localizada](how-to-work-on-localized-client-webapp.md)
   - [Trabaja con los test Cypress](how-to-add-cypress-tests.md)
   - [Colabora con los desafíos en vídeo](how-to-help-with-video-challenges.md)
-  - [Trabajar en el tema docs](how-to-work-on-the-docs-theme.md)
+  - [Work on documentation](how-to-work-on-the-docs-theme.md)
   - [Trabajar en la biblioteca de componentes](how-to-work-on-the-component-library.md)
 - **Guías adicionales**
   - [Previsualiza las traducciones localmente](how-to-test-translations-locally.md)
@@ -29,10 +29,11 @@
 - **Manuales de Vuelo** (para el personal & moderadores)
   - [Manual del moderador](moderator-handbook.md)
   - [Manual de DevOps](devops.md)
+  - [Courses VSCode Extension](courses-vscode-extension.md)
 
 ---
 
 - **Nuestra Comunidad**
   - [**GitHub**](https://github.com/freecodecamp/freecodecamp)
   - [**Foro Discourse**](https://freecodecamp.org/forum/c/contributors)
-  - [**Servidor de chat**](https://chat.freecodecamp.org/home)
+  - [**Servidor de chat**](https://discord.gg/PRyKn3Vbay)

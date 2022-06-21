@@ -9,7 +9,7 @@ export const getSolutionDisplayType = ({
   challengeType
 }: CompletedChallenge) => {
   if (challengeFiles?.length)
-    return challengeType === challengeTypes.multiFileCertProject
+    return challengeType === challengeTypes.multifileCertProject
       ? 'showMultifileProjectSolution'
       : 'showUserCode';
   if (!solution) return 'none';

@@ -1,6 +1,6 @@
 [freeCodeCamp.org](https://freecodecamp.org) コミュニティは、皆さんのような親切な何千人ものボランティアのおかげで成り立っています。 貴重な時間や専門知識を提供してくださる方々を、喜んで歓迎しています。
 
-> [!NOTE] 先に進まれる前に、私たちの [行動規範](https://www.freecodecamp.org/code-of-conduct) をご一読ください。2 分ほどでお読みいただけます。 freeCodeCamp.org に貢献することが誰にとっても安全でインクルーシブな体験になるよう、コミュニティ全体でこの規範を厳守します。
+> [!NOTE] 先に進まれる前に、私たちの [行動規範](https://www.freecodecamp.org/japanese/news/code-of-conduct/) をご一読ください。2 分ほどでお読みいただけます。 freeCodeCamp.org に貢献することが誰にとっても安全でインクルーシブな体験になるよう、コミュニティ全体でこの規範を厳守します。
 
 私たちの [カリキュラム](#カリキュラム) の作成、更新、バグの解消や、freeCodeCamp.org の [学習プラットフォーム](#学習プラットフォーム) のバグの解消、freeCodeCamp.org の世界言語への [翻訳](#翻訳) にご協力いただけると助かります。
 
@@ -22,7 +22,7 @@
 
 私たちは freeCodeCamp.org を世界中の主要言語へローカライズしています。
 
-Certifications are already live in some major world languages like [Chinese (中文)](https://chinese.freecodecamp.org/learn), [Spanish (Español)](https://www.freecodecamp.org/espanol/learn), [Italian (Italiano)](https://www.freecodecamp.org/italian/learn), [Portuguese (Português)](https://www.freecodecamp.org/portuguese/learn). [お知らせ](https://www.freecodecamp.org/news/world-language-translation-effort) を読んで、仲間と共に楽しんでください。
+[中国語 (中文)](https://chinese.freecodecamp.org/learn)、[スペイン語 (Español)](https://www.freecodecamp.org/espanol/learn)、[イタリア語 (Italiano)](https://www.freecodecamp.org/italian/learn)、[ポルトガル語 (Português)](https://www.freecodecamp.org/portuguese/learn) のような世界の主要言語の認定講座が既に公開されています。 [こちらのお知らせ](https://www.freecodecamp.org/news/world-language-translation-effort)を読んで、ぜひ周囲の人にも共有してください。
 
 **翻訳にご興味があれば、[freeCodeCamp リソースを翻訳する方法](how-to-translate-files.md) をご覧ください。**
 
@@ -40,4 +40,4 @@ Node.js ベースの API サーバー、React ベースのクライアントア�
 
 あるいは
 
-**コンピュータ上で [freeCodeCamp をローカル設定](how-to-setup-freecodecamp-locally.md) することができます。**
+**[ローカルマシンに freeCodeCamp の開発環境を構築](how-to-setup-freecodecamp-locally.md)することができます。**

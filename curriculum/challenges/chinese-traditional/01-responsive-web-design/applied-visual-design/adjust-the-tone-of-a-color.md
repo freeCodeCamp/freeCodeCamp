@@ -20,9 +20,11 @@ dashedName: adjust-the-tone-of-a-color
 `nav` 元素應該有一個使用 `hsl()` 屬性調節藍綠色調的 `background-color` 屬性。
 
 ```js
-assert(
-  code.match(/nav\s*?{\s*?background-color:\s*?hsl\(180,\s*?80%,\s*?25%\)/gi)
-);
+// Computed style of hsl(180, 80%, 25%) results in rgb(13,115,115)
+assert.equal(
+  new __helpers.CSSHelp(document).getStyle('nav').getPropVal('background-color', true), 
+  'rgb(13,115,115)'
+)
 ```
 
 # --seed--

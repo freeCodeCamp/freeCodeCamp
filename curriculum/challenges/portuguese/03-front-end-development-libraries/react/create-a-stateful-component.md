@@ -22,7 +22,7 @@ Você precisa acessar o objeto `state` ao longo da vida do seu componente. Você
 
 # --instructions--
 
-Existe um componente no editor de código que está tentando renderizar uma propriedade `name` de seu `state`. No entanto, não há nenhum `state` definido. Inicialize o componente com `state` no `constructor` e atribua o seu nome para a propriedade `name`.
+Há um componente no editor de código que está tentando renderizar a propriedade `firstName` de seu `state`. No entanto, não há nenhum `state` definido. Inicialize o componente com `state` no `constructor` e atribua o seu nome para a propriedade `firstName`.
 
 # --hints--
 
@@ -55,7 +55,7 @@ assert(
 );
 ```
 
-O estado de `StatefulComponent` deve ser inicializado com uma propriedade `name` definida como uma string.
+O estado de `StatefulComponent` deve ser inicializado com uma propriedade `firstName` definida como uma string.
 
 ```js
 assert(
@@ -65,13 +65,13 @@ assert(
     );
     const initialState = mockedComponent.state();
     return (
-      typeof initialState === 'object' && typeof initialState.name === 'string'
+      typeof initialState === 'object' && typeof initialState.firstName === 'string'
     );
   })()
 );
 ```
 
-A propriedade `name` no state de `StatefulComponent` deve renderizar o elemento `h1`.
+A propriedade `firstName` no state de `StatefulComponent` deve renderizar o elemento `h1`.
 
 ```js
 assert(
@@ -80,7 +80,7 @@ assert(
       React.createElement(StatefulComponent)
     );
     const initialState = mockedComponent.state();
-    return mockedComponent.find('h1').text() === initialState.name;
+    return mockedComponent.find('h1').text() === initialState.firstName;
   })()
 );
 ```
@@ -106,7 +106,7 @@ class StatefulComponent extends React.Component {
   render() {
     return (
       <div>
-        <h1>{this.state.name}</h1>
+        <h1>{this.state.firstName}</h1>
       </div>
     );
   }
@@ -120,13 +120,13 @@ class StatefulComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: 'freeCodeCamp!'
+      firstName: 'freeCodeCamp!'
     }
   }
   render() {
     return (
       <div>
-        <h1>{this.state.name}</h1>
+        <h1>{this.state.firstName}</h1>
       </div>
     );
   }

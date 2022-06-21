@@ -1,20 +1,24 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-function GreenPass(
-  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
-): JSX.Element {
+interface GreenPassProps
+  extends JSX.IntrinsicAttributes,
+    React.SVGProps<SVGSVGElement> {
+  hushScreenReaderText?: boolean;
+}
+function GreenPass(props: GreenPassProps): JSX.Element {
   const { t } = useTranslation();
-
+  const { hushScreenReaderText = false, ...rest } = props;
   return (
     <>
       <svg
-        aria-label={t('icons.passed')}
+        {...(hushScreenReaderText && { 'aria-hidden': true })}
+        {...(!hushScreenReaderText && { 'aria-label': t('icons.passed') })}
         height='50'
         viewBox='0 0 200 200'
         width='50'
         xmlns='http://www.w3.org/2000/svg'
-        {...props}
+        {...rest}
       >
         <g aria-hidden='true'>
           <title>{t('icons.passed')}</title>

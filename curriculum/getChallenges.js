@@ -237,8 +237,8 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
   // TODO: there's probably a better way, but this makes sure we don't build any
   // of the new curriculum when we don't want it.
   if (
-    process.env.SHOW_NEW_CURRICULUM !== 'true' &&
-    meta?.superBlock === '2022/responsive-web-design'
+    !showUpcomingChanges &&
+    meta?.superBlock === '2022/javascript-algorithms-and-data-structures'
   ) {
     return;
   }
@@ -300,7 +300,10 @@ ${getFullPath('english', filePath)}
     if (missingAuditedChallenge)
       throw Error(`Missing ${lang} audited challenge for
 ${filePath}
-No audited challenges should fallback to English.
+
+Explanation:
+
+Challenges that have been already audited cannot fall back to their English versions. If you are seeing this, please update, and approve these Challenges on Crowdin first, followed by downloading them to the main branch using the GitHub workflows.
     `);
   }
 
@@ -313,18 +316,30 @@ No audited challenges should fallback to English.
     challenge.block = meta.name ? dasherize(meta.name) : null;
     challenge.hasEditableBoundaries = !!meta.hasEditableBoundaries;
     challenge.order = meta.order;
+    // const superOrder = getSuperOrder(meta.superBlock);
+    // NOTE: Use this version when a super block is in beta.
     const superOrder = getSuperOrder(meta.superBlock, {
-      showNewCurriculum: process.env.SHOW_NEW_CURRICULUM === 'true'
+      // switch this back to SHOW_NEW_CURRICULUM when we're ready to beta the JS superblock
+      showNewCurriculum: process.env.SHOW_UPCOMING_CHANGES === 'true'
     });
     if (superOrder !== null) challenge.superOrder = superOrder;
     /* Since there can be more than one way to complete a certification (using the
    legacy curriculum or the new one, for instance), we need a certification
    field to track which certification this belongs to. */
-    // TODO: generalize this to all superBlocks
-    challenge.certification =
-      meta.superBlock === '2022/responsive-web-design'
-        ? 'responsive-web-design'
-        : meta.superBlock;
+    const dupeCertifications = [
+      {
+        certification: 'responsive-web-design',
+        dupe: '2022/responsive-web-design'
+      },
+      {
+        certification: 'javascript-algorithms-and-data-structures',
+        dupe: '2022/javascript-algorithms-and-data-structures'
+      }
+    ];
+    const hasDupe = dupeCertifications.find(
+      cert => cert.dupe === meta.superBlock
+    );
+    challenge.certification = hasDupe ? hasDupe.certification : meta.superBlock;
     challenge.superBlock = meta.superBlock;
     challenge.challengeOrder = challengeOrder;
     challenge.isPrivate = challenge.isPrivate || meta.isPrivate;

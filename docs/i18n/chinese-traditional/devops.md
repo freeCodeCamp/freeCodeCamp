@@ -197,7 +197,7 @@ Currently a public beta testing version is available at:
 
 The dev-team merges changes from the `prod-staging` branch to `prod-current` when they release changes. The top commit should be what you see live on the site.
 
-You can identify the exact version deployed by visiting the build and deployment logs available in the status section. Alternatively you can also ping us in the [contributors chat room](https://chat.freecodecamp.org/channel/contributors) for a confirmation.
+You can identify the exact version deployed by visiting the build and deployment logs available in the status section. Alternatively you can also ping us in the [contributors chat room](https://discord.gg/PRyKn3Vbay) for a confirmation.
 
 ### Known Limitations
 
@@ -466,7 +466,7 @@ Provisioning VMs with the Code
 
    ```console
    cd api-server
-   pm2 start ./lib/production-start.js -i max --max-memory-restart 600M --name org
+   pm2 reload ecosystem.config.js
    ```
 
 ### Logging and Monitoring

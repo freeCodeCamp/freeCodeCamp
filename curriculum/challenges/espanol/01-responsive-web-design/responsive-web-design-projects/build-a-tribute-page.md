@@ -1,43 +1,325 @@
 ---
 id: bd7158d8c442eddfaeb5bd18
 title: Construye una página tributo
-challengeType: 3
+challengeType: 14
 forumTopicId: 301147
 dashedName: build-a-tribute-page
 ---
 
 # --description--
 
-**Objetivo:** Construye una aplicación en [CodePen.io](https://codepen.io) que funcionalmente sea similar a esta: <https://codepen.io/freeCodeCamp/full/zNqgVx>.
+**Objetivo:** Crear una aplicación que sea funcionalmente similar a <a href="https://tribute-page.freecodecamp.rocks" target="_blank">https://tribute-page.freecodecamp.rocks</a>
 
-Completa las siguientes [historias de usuario](https://es.wikipedia.org/wiki/Historias_de_usuario) y consigue aprobar todos los tests. Dale tu propio estilo personal.
+**Historias de usuario:**
 
-Puedes usar HTML, JavaScript y CSS para completar este proyecto. Se recomienda usar CSS puro porque eso es lo que las lecciones han cubierto hasta ahora y debes practicar un poco con él. Puedes usar Bootstrap o SASS si lo deseas. Tecnologías adicionales (por ejemplo, jQuery, React, Angular o Vue) no se recomiendan para este proyecto, y usarlas es bajo tu propio riesgo. Otros proyectos te darán la oportunidad de trabajar con diferentes stacks de tecnologías como React. Aceptaremos e intentaremos solucionar todos los informes de incidencias que utilicen el stack de tecnología sugerido para este proyecto. ¡Feliz día programando!
+1. Tu página de tributo debe tener un elemento con un correspondiente `id="main"`, el cual contiene todos los demás elementos
+1. Debes ver un elemento con un `id` de `title` que contiene una cadena (por ejemplo, texto), que describa el tema de la página de tributo (por ejemplo, "Dr. Norman Borlaug")
+1. Debes ver ya sea un elemento `figure` o un elemento `div` con un `id` de `img-div`
+1. Dentro del elemento `img-div`, debes ver un elemento `img` con un correspondiente `id="image"`
+1. Dentro del elemento `img-div`, debes ver un elemento con un correspondiente `id="img-caption"` que contiene contenido textual que describe la imagen mostrada en `img-div`
+1. Debes ver un elemento con un correspondiente `id="tribute-info"`, que contiene contenido textual que describe el tema de la página de tributo
+1. Debes ver un elemento con un correspondiente `id="tribute-link"`, que enlaza a un sitio externo que contiene información adicional sobre el tema de la página de tributo. CONSEJO: Debes dar a tu elemento un atributo de `target` y establecerlo a `_blank` para que tu enlace se abra en una nueva pestaña
+1. Tu `#image` debe usar las propiedades `max-width` y `height` para redimensionar, de forma responsiva, relativo al ancho de su elemento padre, sin exceder su tamaño original
+1. Tu elemento `img` debe estar centrado dentro de su elemento padre
 
-**Historia de Usuario #1:** Mi página tributo debería tener un elemento con un respectivo `id="main"`, el cual contiene todos los demás elementos.
+Completa las historias de usuario y pasa todas las pruebas a continuación para completar este proyecto. Dale tu propio estilo personal. ¡Feliz día programando!
 
-**Historia de Usuario #2:** Debería ver un elemento con un respectivo `id="title"`, que contiene una cadena que describe el tema de la página tributo (p. ej. "Dr. Norman Borlaug").
+**Nota:** Asegúrate de agregar `<link rel="stylesheet" href="styles.css">` en tu HTML para enlazar tu hoja de estilos y aplicar tu CSS
 
-**Historia de Usuario #3:** Debe ver un elemento `figure` o `div` con su respectivo `id="img-div"`.
+# --hints--
 
-**Historia de Usuario #4:** Dentro del elemento `img-div`, debería ver un elemento `img` con un respectivo `id="image"`.
+Debes tener un elemento `main` con un `id` de `main`
 
-**Historia de Usuario #5:** Dentro del elemento `img-div`, debería ver un elemento con un respectivo `id="img-caption"` que contiene contenido textual describiendo la imagen mostrada en `img-div`.
+```js
+const el = document.getElementById('main')
+assert(!!el && el.tagName === 'MAIN')
+```
 
-**Historia de Usuario #6:** Debería ver un elemento con un respectivo `id="tribute-info"`, que contiene contenido textual describiendo el tema de la página tributo.
+Tus `#img-div`, `#image`, `#img-caption`, `#tribute-info`, y `#tribute-link` deben ser descendientes de `#main`
 
-**Historia de Usuario #7:** Debería ver un elemento `a` con un respectivo `id="tribute-link"`, que enlaza a un sitio externo conteniendo información adicional sobre el tema de la página tributo. SUGERENCIA: Debes dar a tu elemento un atributo `target` y establecerlo como `_blank` para que tu enlace se abra en una nueva pestaña (p. ej. `target="_blank"`).
+```js
+const el1 = document.querySelector('#main #img-div')
+const el2 = document.querySelector('#main #image')
+const el3 = document.querySelector('#main #img-caption')
+const el4 = document.querySelector('#main #tribute-info')
+const el5 = document.querySelector('#main #tribute-link')
+assert(!!el1 & !!el2 && !!el3 && !!el4 && !!el5)
+```
 
-**Historia de Usuario #8:** El elemento `img` debería cambiar de tamaño de forma responsiva, en relación al ancho de su elemento padre, sin exceder su tamaño original.
+Debes tener un elemento con un `id` de `title`
 
-**Historia de Usuario #9:** El elemento `img` debería estar centrado dentro de su elemento padre.
+```js
+const el = document.getElementById('title')
+assert(!!el)
+```
 
-Puedes construir tu proyecto usando <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>esta plantilla CodePen</a> y haciendo clic en `Save` para crear tu propio pen. O puedes utilizar este enlace CDN para ejecutar los tests en cualquier entorno que desees: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`.
+Tu `#title` no debe estar vacío
 
-Una vez que hayas terminado, envía la URL de tu proyecto funcional con todos los tests aprobados.
+```js
+const el = document.getElementById('title')
+assert(!!el && el.innerText.length > 0)
 
-# --solutions--
+```
+
+Debes tener un elemento `figure` o `div` con un `id` de `img-div`
+
+```js
+const el = document.getElementById('img-div')
+assert(!!el && (el.tagName === 'DIV' || el.tagName === 'FIGURE'))
+```
+
+Debes tener un elemento `img` con un `id` de `image`
+
+```js
+const el = document.getElementById('image')
+assert(!!el && el.tagName === 'IMG')
+```
+
+Tu `#image` debe ser descendiente de `#img-div`
+
+```js
+const el = document.querySelector('#img-div #image')
+assert(!!el)
+```
+
+Debes tener un elemento `figcaption` o `div` con un `id` de `img-caption`
+
+```js
+const el = document.getElementById('img-caption')
+assert(!!el && (el.tagName === 'DIV' || el.tagName === 'FIGCAPTION'))
+```
+
+Tu `#img-caption` debe ser descendiente de `#img-div`
+
+```js
+const el = document.querySelector('#img-div #img-caption')
+assert(!!el)
+```
+
+Tu `#img-caption` no debe estar vacío
+
+```js
+const el = document.getElementById('img-caption')
+assert(!!el && el.innerText.length > 0)
+```
+
+Debes tener un elemento con un `id` de `tribute-info`
+
+```js
+const el = document.getElementById('tribute-info')
+assert(!!el)
+```
+
+Tu `#tribute-info` no debe estar vacío
+
+```js
+const el = document.getElementById('tribute-info')
+assert(!!el && el.innerText.length > 0)
+```
+
+Debes tener un elemento `a` con un `id` de `tribute-link`
+
+```js
+const el = document.getElementById('tribute-link')
+assert(!!el && el.tagName === 'A')
+```
+
+Tu `#tribute-link` debe tener un atributo `href` y un valor
+
+```js
+const el = document.getElementById('tribute-link')
+assert(!!el && !!el.href && el.href.length > 0)
+```
+
+Tu `#tribute-link` debe tener un atributo `target` establecido en `_blank`
+
+```js
+const el = document.getElementById('tribute-link')
+assert(!!el && el.target === '_blank')
+```
+
+Tu elemento `img` debe tener un `display` de `block`
+
+```js
+const img = document.getElementById('image');
+const imgStyle = window.getComputedStyle(img);
+const style = imgStyle?.getPropertyValue('display')
+assert(style === 'block')
+```
+
+Tu `#image` debe tener un `max-width` de `100%`
+
+```js
+const img = document.getElementById('image');
+const imgStyle = window.getComputedStyle(img);
+const style = imgStyle?.getPropertyValue('max-width')
+assert(style === '100%')
+```
+
+Tu `#image` debe tener un `height` de `auto`
+
+```js
+// taken from the testable-projects repo
+const img = document.getElementById('image');
+const imgStyle = window.getComputedStyle(img);
+const oldDisplayValue = imgStyle.getPropertyValue('display');
+const oldDisplayPriority = imgStyle.getPropertyPriority('display');
+img?.style.setProperty('display', 'none', 'important');
+const heightValue = imgStyle?.getPropertyValue('height')
+img?.style.setProperty('display', oldDisplayValue, oldDisplayPriority);
+assert(heightValue === 'auto')
+```
+
+Tu `#image` debe estar centrado dentro de su padre
+
+```js
+// taken from the testable-projects repo
+const img = document.getElementById('image'),
+  imgParent = img?.parentElement,
+  imgLeft = img?.getBoundingClientRect().left,
+  imgRight = img?.getBoundingClientRect().right,
+  parentLeft = imgParent?.getBoundingClientRect().left,
+  parentRight = imgParent?.getBoundingClientRect().right,
+  leftMargin = imgLeft - parentLeft,
+  rightMargin = parentRight - imgRight;
+assert(leftMargin - rightMargin < 6 && rightMargin - leftMargin < 6)
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
-// solution required
+
+```
+
+```css
+
+```
+
+## --solutions--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lobster"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <title>Tribute Page</title>
+  </head>
+  <body>
+    <h1>Tribute Page</h1>
+    <p>The below card was designed as a tribute page for freeCodeCamp.</p>
+    <main id="main">
+      <div id="img-div">
+        <img
+          id="image"
+          class="border"
+          src="https://upload.wikimedia.org/wikipedia/en/5/53/Pok%C3%A9mon_Togepi_art.png"
+          alt="An image of Togepi"
+        />
+        <figcaption id="img-caption">Togepi, happy as always.</figcaption>
+      </div>
+      <h2 id="title">Togepi</h2>
+      <hr />
+      <div id="tribute-info">
+        <p>
+          Togepi was first discovered in the Johto region, when Ash Ketchum
+          discovered a mysterious egg. However, when the egg hatched, Togepi saw
+          Ash's friend Misty first and imprinted on her. Like many other
+          creatures, this imprinting process created a bond and Togepi views
+          Misty as his mother.
+        </p>
+        <p>
+          Togepi is a very childlike Pokemon, and is very emotionally
+          expressive. He demonstrates extreme levels of joy and sadness.
+        </p>
+        <hr />
+        <p><u>Battle Information</u></p>
+        <ul style="list-style-type: none">
+          <li>Type: Fairy</li>
+          <li>Evolutions: Togepi -> Togetic -> Togekiss</li>
+          <li>Moves: Growl, Pound, Sweet Kiss, Charm</li>
+          <li>Weaknesses: Poison, Steel</li>
+          <li>Resistances: Dragon</li>
+        </ul>
+        <p>
+          Check out this
+          <a
+            id="tribute-link"
+            href="https://bulbapedia.bulbagarden.net/wiki/Togepi_(Pok%C3%A9mon)"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Bulbapedia article on Togepi</a
+          >
+          for more information on this great Pokemon.
+        </p>
+      </div>
+    </main>
+  </body>
+  <footer>
+    <a href="../">Return to Project List</a> |
+    <a href="https://www.nhcarrigan.com">Return to HomePage</a>
+  </footer>
+</html>
+```
+
+```css
+body {
+  background-color: #3a3240;
+  color: white;
+}
+main {
+  background-color: #92869c;
+  font-family: Lobster;
+  max-width: 500px;
+  margin: 20px auto;
+  color: black;
+  border-radius: 50px;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.5);
+}
+h2 {
+  text-align: center;
+  font-size: 20pt;
+  font-family: Pacifico;
+}
+body {
+  text-align: center;
+  font-size: 12pt;
+}
+footer {
+  text-align: center;
+  font-size: 10pt;
+}
+.border {
+  border-color: black;
+  border-width: 5px;
+  border-style: solid;
+}
+#image {
+  height: auto;
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  border-radius: 50%;
+}
+#img-caption {
+  font-size: 10pt;
+}
+a:not(#tribute-link) {
+  color: white;
+}
+hr {
+  border-color: black;
+}
 ```

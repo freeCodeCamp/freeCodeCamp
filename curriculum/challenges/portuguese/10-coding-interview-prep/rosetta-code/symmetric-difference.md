@@ -8,7 +8,11 @@ dashedName: symmetric-difference
 
 # --description--
 
-Dados dois [conjuntos ](https://rosettacode.org/wiki/set)*A* e *B*, calcule $(A \\setminus B) \\cup (B \\setminus A). Ou seja, enumere os itens que estão em *A* ou *B* mas não em ambos. Este conjunto é chamado de [diferença simétrica](https://pt.wikipedia.org/wiki/Diferen%C3%A7a_sim%C3%A9trica) de *A* e *B*. Em outras palavras: $(A \\cup B) \\setminus (A \\cap B)$ (o conjunto de itens que estão em pelo menos um dos conjuntos, *A* ou *B*, menos o conjunto de itens que estão em ambos, *A* e *B*).
+Dados dois conjuntos *A* e *B*, calcule $(A \\setminus B) \\cup (B \\setminus A). Ou seja, enumere os itens que estão em *A* ou *B* mas não em ambos. Esse conjunto é chamado de diferença simétrica de *A* e *B*. Em outras palavras: $(A \\cup B) \\setminus (A \\cap B)$ (o conjunto de itens que estão em pelo menos um dos conjuntos, *A* ou *B*, menos o conjunto de itens que estão em ambos, *A* e *B*).
+
+Exemplo:
+
+Para os conjuntos `A = [1, 2, 3]` e `B = [1, 3, 4]`, a diferença simétrica de *A* e *B* é `[2, 4]`.
 
 # --instructions--
 

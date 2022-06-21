@@ -1,26 +1,30 @@
-# Política de seguridad
+# freeCodeCamp.org's Security Policy
 
 Este documento describe nuestra política de seguridad para los códigos, plataformas que operamos, y cómo reportar vulnerabilidades.
 
 ## Informar una vulnerabilidad
 
-Si crees que has encontrado una vulnerabilidad, _informa responsablemente_. No crees temas de GitHub para problemas de seguridad. En su lugar, por favor envía un correo electrónico a `security@freecodecamp.org` y lo estudiaremos inmediatamente.
+> [!NOTE] If you think you have found a vulnerability, **please report it responsibly**. Do not create GitHub issues for security issues. Instead, follow this guide.
 
-Asegúrese de que está usando la **última**, **estable** y **actualizaron** versión del sistema operativo y del navegador Web disponible para usted en su máquina.
+### Guidelines
 
-Apreciamos cualquier divulgación responsable de vulnerabilidades que puedan afectar la integridad de nuestras plataformas y usuarios.
+We appreciate responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users. In the interest of saving everyone time, we encourage you to report vulnerabilities with these in mind:
 
-Una vez que informe de una vulnerabilidad, la examinaremos y nos aseguraremos de que no sea un falso positivo. Nos pondremos en contacto con usted si necesitamos aclarar cualquier detalle. Puedes enviar informes separados para cada número que encuentres.
+1. Ensure that you are using the **latest**, **stable**, and **updated** versions of the Operating System and Web Browser(s) available to you on your machine.
+2. We consider using tools & online utilities to report issues with SPF & DKIM configs, SSL Server tests, etc., in the category of ["beg bounties"](https://www.troyhunt.com/beg-bounties) and are unable to respond to these reports.
+3. While we do not offer any bounties or swags at the moment, we'll be happy to list your name in our [Hall of Fame](security-hall-of-fame.md) list, provided the reports are not low-effort.
 
-Aunque no ofrecemos ninguna recompensa o swags en este momento, Estaremos encantados de listar tu nombre en nuestra lista de [Hall of Fame](security-hall-of-fame.md), siempre y cuando los informes no sean de bajo esfuerzo.
+### Reporting
 
-Consideramos el uso de herramientas y utilidades en línea para informar problemas con configuraciones SPF y DKIM, o pruebas de servidor SSL, etc. en la categoría de ["recompensas"](https://www.troyhunt.com/beg-bounties/) y no pueden responder a estos informes.
+After confirming the above guidelines, please feel free to send an email to `possible-security-issue [at] freecodecamp.org`. You can also send us a PGP encrypted message at `flowcrypt.com/me/freecodecamp`.
+
+Once you report a vulnerability, we will look into it and ensure that it is not a false positive. If we need to clarify any details, we will get back to you. You can submit separate reports for each issue you find. Please note that we will not be able to respond to any issues that we think are outside the guidelines.
 
 ## Plataformas y Bases de Código
 
-Aquí hay una lista de las plataformas y bases de código para las que estamos aceptando informes:
+Here is a list of the platforms and codebases we are accepting reports for:
 
-### Plataforma de aprendizaje
+### Learn Platform
 
 | Versión    | Rama           | Soportado | Sitio web activo         |
 | ---------- | -------------- | --------- | ------------------------ |
@@ -28,19 +32,23 @@ Aquí hay una lista de las plataformas y bases de código para las que estamos a
 | escenario  | `prod-staging` | Sí        | `freecodecamp.dev/learn` |
 | desarrollo | `principal`    | No        |                          |
 
-### Plataforma de publicación
+### Publication Platform
 
 | Versión    | Soportado | Sitio web activo                         |
 | ---------- | --------- | ---------------------------------------- |
 | producción | Sí        | `freecodecamp.org/news`                  |
 | localizado | Sí        | `freecodecamp.org/<language>/news` |
 
-### Aplicación Móvil
+### Mobile App
 
 | Versión    | Soportado | Sitio web activo                                                 |
 | ---------- | --------- | ---------------------------------------------------------------- |
 | producción | Sí        | `https://play.google.com/store/apps/details?id=org.freecodecamp` |
 
-Aparte de lo anterior, también estamos aceptando informes para repositorios alojados en GitHub, bajo la organización freeCodeCamp.
+### Other Platforms
 
-Auto-alojamos algunas de nuestras plataformas utilizando software de código abierto como Ghost & Discourse. Si está reportando una vulnerabilidad, asegúrese de que no es un error en el software original.
+Apart from the above, we are also accepting reports for repositories hosted on GitHub under the freeCodeCamp organization.
+
+### Other Self-hosted Applications
+
+We self-host some of our platforms using open-source software like Ghost & Discourse. If you are reporting a vulnerability, please ensure that it is not a bug in the upstream software.

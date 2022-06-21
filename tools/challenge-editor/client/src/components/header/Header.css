@@ -1,0 +1,16 @@
+.header {
+  width: 100vw;
+  margin-top: 0;
+  text-align: center;
+  background: var(--background);
+  color: var(--content);
+}
+
+.header a {
+  color: var(--content);
+}
+
+.header p {
+  margin: 0;
+  font-size: 2rem;
+}

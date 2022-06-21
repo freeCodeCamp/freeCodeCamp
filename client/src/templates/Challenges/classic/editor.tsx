@@ -1,3 +1,4 @@
+import * as ReactDOMServer from 'react-dom/server';
 import Loadable from '@loadable/component';
 // eslint-disable-next-line import/no-duplicates
 import type * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api';
@@ -14,16 +15,20 @@ import React, {
   MutableRefObject,
   useRef
 } from 'react';
+import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import store from 'store';
 
+import { debounce } from 'lodash-es';
+import { useTranslation } from 'react-i18next';
 import { Loader } from '../../../components/helpers';
 import { Themes } from '../../../components/settings/theme';
 import {
   userSelector,
   saveChallenge,
-  isDonationModalOpenSelector
+  isDonationModalOpenSelector,
+  isSignedInSelector
 } from '../../../redux';
 import {
   ChallengeFiles,
@@ -49,8 +54,12 @@ import {
   initTests,
   isResettingSelector,
   stopResetting,
-  isProjectPreviewModalOpenSelector
+  isProjectPreviewModalOpenSelector,
+  openModal,
+  isChallengeCompletedSelector
 } from '../redux';
+import GreenPass from '../../../assets/icons/green-pass';
+import LowerJaw from './lower-jaw';
 
 import './editor.css';
 
@@ -75,6 +84,9 @@ interface EditorProps {
   initTests: (tests: Test[]) => void;
   initialTests: Test[];
   isResetting: boolean;
+  isSignedIn: boolean;
+  openHelpModal: () => void;
+  openResetModal: () => void;
   output: string[];
   resizeProps: ResizeProps;
   saveChallenge: () => void;
@@ -93,6 +105,7 @@ interface EditorProps {
     editableRegionBoundaries?: number[];
   }) => void;
   usesMultifileEditor: boolean;
+  isChallengeCompleted: boolean;
 }
 
 // TODO: this is grab bag of unrelated properties.  There's no need for them to
@@ -107,7 +120,7 @@ interface EditorProperties {
   outputZoneId: string;
   descriptionNode?: HTMLDivElement;
   outputNode?: HTMLDivElement;
-  descriptionWidget?: editor.IOverlayWidget;
+  descriptionWidget?: editor.IContentWidget;
   outputWidget?: editor.IOverlayWidget;
 }
 
@@ -118,8 +131,10 @@ const mapStateToProps = createSelector(
   isDonationModalOpenSelector,
   isProjectPreviewModalOpenSelector,
   isResettingSelector,
+  isSignedInSelector,
   userSelector,
   challengeTestsSelector,
+  isChallengeCompletedSelector,
   (
     canFocus: boolean,
     { challengeType }: { challengeType: number },
@@ -127,16 +142,20 @@ const mapStateToProps = createSelector(
     open,
     previewOpen: boolean,
     isResetting: boolean,
+    isSignedIn: boolean,
     { theme = Themes.Default }: { theme: Themes },
-    tests: [{ text: string; testString: string }]
+    tests: [{ text: string; testString: string }],
+    isChallengeCompleted: boolean
   ) => ({
     canFocus: open ? false : canFocus,
     challengeType,
     previewOpen,
     isResetting,
+    isSignedIn,
     output,
     theme,
-    tests
+    tests,
+    isChallengeCompleted
   })
 );
 
@@ -150,7 +169,9 @@ const mapDispatchToProps = {
   updateFile,
   submitChallenge,
   initTests,
-  stopResetting
+  stopResetting,
+  openHelpModal: () => openModal('help'),
+  openResetModal: () => openModal('reset')
 };
 
 const modeMap = {
@@ -207,6 +228,7 @@ const initialData: EditorProperties = {
 };
 
 const Editor = (props: EditorProps): JSX.Element => {
+  const { t } = useTranslation();
   const { editorRef, initTests } = props;
   // These refs are used during initialisation of the editor as well as by
   // callbacks.  Since they have to be initialised before editorWillMount and
@@ -217,6 +239,11 @@ const Editor = (props: EditorProps): JSX.Element => {
   const monacoRef: MutableRefObject<typeof monacoEditor | null> =
     useRef<typeof monacoEditor>(null);
   const dataRef = useRef<EditorProperties>({ ...initialData });
+
+  const submitChallengeDebounceRef = useRef(
+    debounce(props.submitChallenge, 1000, { leading: true, trailing: false })
+  );
+
   const player = useRef<{
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     sampler: any;
@@ -228,6 +255,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     noteIndex: 0,
     shouldPlay: store.get('fcc-sound') as boolean | undefined
   });
+  const attemptRef = useRef<{ attempts: number }>({ attempts: 0 });
 
   // since editorDidMount runs once with the initial props object, it keeps a
   // reference to *those* props. If we want it to use the latest props, we can
@@ -271,7 +299,8 @@ const Editor = (props: EditorProps): JSX.Element => {
       enabled: false
     },
     quickSuggestions: false,
-    suggestOnTriggerCharacters: false
+    suggestOnTriggerCharacters: false,
+    lineNumbersMinChars: 2
   };
 
   const getEditableRegionFromRedux = () => {
@@ -321,11 +350,11 @@ const Editor = (props: EditorProps): JSX.Element => {
     const { challengeFiles, fileKey } = props;
     const { model } = dataRef.current;
 
-    const newContents = challengeFiles?.find(
+    const initialContents = challengeFiles?.find(
       challengeFile => challengeFile.fileKey === fileKey
     )?.contents;
-    if (model?.getValue() !== newContents) {
-      model?.setValue(newContents ?? '');
+    if (model?.getValue() !== initialContents) {
+      model?.setValue(initialContents ?? '');
     }
   };
 
@@ -403,10 +432,9 @@ const Editor = (props: EditorProps): JSX.Element => {
       run: () => {
         if (props.usesMultifileEditor) {
           if (challengeIsComplete()) {
-            props.submitChallenge();
+            tryToSubmitChallenge();
           } else {
-            clearTestFeedback();
-            props.executeChallenge();
+            tryToExecuteChallenge();
           }
         } else {
           props.executeChallenge({ showCompletionModal: true });
@@ -427,7 +455,8 @@ const Editor = (props: EditorProps): JSX.Element => {
       label: 'Save editor content',
       keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S],
       run:
-        props.challengeType === challengeTypes.multiFileCertProject
+        props.challengeType === challengeTypes.multifileCertProject &&
+        props.isSignedIn
           ? // save to database
             props.saveChallenge
           : // save to local storage
@@ -464,6 +493,16 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (!getStoredAriaRoledescription()) {
       setAriaRoledescription(false);
     }
+
+    // Add invisible content widget over line numbers so touch users will
+    // always have a place to vertically scroll the editor.
+    const scrollGutterNode = createScrollGutterNode(editor);
+    const scrollGutterWidget = createWidget(
+      editor,
+      'scrollgutter.widget',
+      scrollGutterNode
+    );
+    editor.addContentWidget(scrollGutterWidget);
   };
 
   const toggleAriaRoledescription = () => {
@@ -518,61 +557,127 @@ const Editor = (props: EditorProps): JSX.Element => {
     domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
 
     // We have to wait for the viewZone to finish rendering before adjusting the
-    // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
+    // position of the content widget (i.e. trigger it via onDomNodeTop). If
     // not the editor may report the wrong value for position of the lines.
     const viewZone = {
       afterLineNumber: getLineBeforeEditableRegion(),
       heightInPx: domNode.offsetHeight,
       domNode: document.createElement('div'),
-      onComputedHeight: () =>
+      // This is called when the editor dimensions change and AFTER the
+      // text in the editor has shifted.
+      onDomNodeTop: () => {
+        // The return value for getTopLineNumber includes the height of
+        // the content widget so we need to remove it.
+        dataRef.current.descriptionZoneTop =
+          editor.getTopForLineNumber(getLineBeforeEditableRegion() + 1) -
+          domNode.offsetHeight;
         dataRef.current.descriptionWidget &&
-        editor.layoutOverlayWidget(dataRef.current.descriptionWidget),
-      onDomNodeTop: (top: number) => {
-        dataRef.current.descriptionZoneTop = top;
-        if (dataRef.current.descriptionWidget)
-          editor.layoutOverlayWidget(dataRef.current.descriptionWidget);
+          editor.layoutContentWidget(dataRef.current.descriptionWidget);
       }
     };
 
     dataRef.current.descriptionZoneId = changeAccessor.addZone(viewZone);
   };
 
-  const outputZoneCallback = (
-    changeAccessor: editor.IViewZoneChangeAccessor
-  ) => {
+  function tryToExecuteChallenge() {
+    props.executeChallenge();
+    attemptRef.current.attempts++;
+  }
+
+  const tryToSubmitChallenge = submitChallengeDebounceRef.current;
+
+  function createLowerJaw(outputNode: HTMLElement, callback?: () => void) {
+    const { output } = props;
+    const isChallengeComplete = challengeIsComplete();
+    const isEditorInFocus = document.activeElement?.tagName === 'TEXTAREA';
+    ReactDOM.render(
+      <LowerJaw
+        openHelpModal={props.openHelpModal}
+        openResetModal={props.openResetModal}
+        tryToExecuteChallenge={tryToExecuteChallenge}
+        hint={output[1]}
+        testsLength={props.tests.length}
+        attemptsNumber={attemptRef.current.attempts}
+        challengeIsCompleted={isChallengeComplete}
+        challengeHasErrors={challengeHasErrors()}
+        tryToSubmitChallenge={tryToSubmitChallenge}
+        isEditorInFocus={isEditorInFocus}
+        isSignedIn={props.isSignedIn}
+      />,
+      outputNode,
+      callback
+    );
+  }
+
+  const updateOutputZone = () => {
     const editor = dataRef.current.editor;
-    if (!editor) return;
-    const outputNode = createOutputNode(editor);
+    if (!editor || !dataRef.current.outputNode) return;
 
+    const outputNode = dataRef.current.outputNode;
+    createLowerJaw(outputNode, () => {
+      if (dataRef.current.outputNode) {
+        updateOutputViewZone(outputNode, editor);
+      }
+    });
+  };
+
+  const updateOutputViewZone = (
+    outputNode: HTMLDivElement,
+    editor: editor.IStandaloneCodeEditor
+  ) => {
     // make sure the overlayWidget has resized before using it to set the height
-
     outputNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
-
     // We have to wait for the viewZone to finish rendering before adjusting the
     // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
     // not the editor may report the wrong value for position of the lines.
-    const viewZone = {
-      afterLineNumber: getLastLineOfEditableRegion(),
-      heightInPx: outputNode.offsetHeight,
-      domNode: document.createElement('div'),
-      onComputedHeight: () =>
-        dataRef.current.outputWidget &&
-        editor.layoutOverlayWidget(dataRef.current.outputWidget),
-      onDomNodeTop: (top: number) => {
-        dataRef.current.outputZoneTop = top;
-        if (dataRef.current.outputWidget)
-          editor.layoutOverlayWidget(dataRef.current.outputWidget);
-      }
-    };
-
-    dataRef.current.outputZoneId = changeAccessor.addZone(viewZone);
+    editor?.changeViewZones(changeAccessor => {
+      changeAccessor.removeZone(dataRef.current.outputZoneId);
+      const viewZone = {
+        afterLineNumber: getLastLineOfEditableRegion(),
+        heightInPx: outputNode.offsetHeight,
+        domNode: document.createElement('div'),
+        onComputedHeight: () =>
+          dataRef.current.outputWidget &&
+          editor.layoutOverlayWidget(dataRef.current.outputWidget),
+        onDomNodeTop: (top: number) => {
+          dataRef.current.outputZoneTop = top;
+          if (dataRef.current.outputWidget)
+            editor.layoutOverlayWidget(dataRef.current.outputWidget);
+        }
+      };
+      dataRef.current.outputZoneId = changeAccessor.addZone(viewZone);
+    });
   };
 
   function createDescription(editor: editor.IStandaloneCodeEditor) {
     if (dataRef.current.descriptionNode) return dataRef.current.descriptionNode;
-    const { description, title } = props;
-    const jawHeading = document.createElement('h1');
-    jawHeading.innerText = title;
+    const { description, title, isChallengeCompleted } = props;
+    const jawHeading = isChallengeCompleted
+      ? document.createElement('div')
+      : document.createElement('h1');
+    if (isChallengeCompleted) {
+      jawHeading.classList.add('challenge-description-header');
+      const challengeTitle = document.createElement('h1');
+      challengeTitle.innerHTML = `${title} <span class='sr-only'>${t(
+        'icons.passed'
+      )}</span>`;
+      jawHeading.appendChild(challengeTitle);
+      const checkmark = ReactDOMServer.renderToStaticMarkup(
+        <GreenPass
+          hushScreenReaderText
+          style={{
+            height: '15px',
+            width: '15px',
+            marginLeft: '7px'
+          }}
+        />
+      );
+      const completedChallengeHeader = document.createElement('div');
+      completedChallengeHeader.innerHTML = checkmark;
+      jawHeading.appendChild(completedChallengeHeader);
+    } else {
+      jawHeading.innerText = title;
+    }
     const domNode = document.createElement('div');
     const desc = document.createElement('div');
     const descContainer = document.createElement('div');
@@ -594,66 +699,33 @@ const Editor = (props: EditorProps): JSX.Element => {
     return domNode;
   }
 
-  function clearTestFeedback() {
-    const testStatus = document.getElementById('test-status');
-    if (testStatus && testStatus.innerHTML) {
-      const currentHeight = `${testStatus.offsetHeight}px`;
-      // Height will be cleared after status message has been displayed
-      testStatus.style.height = currentHeight;
-      testStatus.innerHTML = '';
-    }
-  }
-
   function createOutputNode(editor: editor.IStandaloneCodeEditor) {
     if (dataRef.current.outputNode) return dataRef.current.outputNode;
     const outputNode = document.createElement('div');
-    const statusNode = document.createElement('div');
-    const editorActionRow = document.createElement('div');
-    editorActionRow.classList.add('action-row-container');
     outputNode.classList.add('editor-lower-jaw');
-    outputNode.appendChild(editorActionRow);
-    statusNode.setAttribute('id', 'test-status');
-    statusNode.setAttribute('aria-live', 'assertive');
-    const button = document.createElement('button');
-    button.setAttribute('id', 'test-button');
-    button.classList.add('btn-block');
-    button.innerHTML = 'Check Your Code (Ctrl + Enter)';
-    const submitButton = document.createElement('button');
-    submitButton.setAttribute('id', 'submit-button');
-    submitButton.setAttribute('aria-hidden', 'true');
-    submitButton.innerHTML = 'Submit your code (Ctrl + Enter)';
-    submitButton.classList.add('btn-block');
-    editorActionRow.appendChild(button);
-    editorActionRow.appendChild(submitButton);
-    editorActionRow.appendChild(statusNode);
-    button.onclick = () => {
-      clearTestFeedback();
-      const { executeChallenge } = props;
-      executeChallenge();
-    };
-
+    outputNode.setAttribute('id', 'editor-lower-jaw');
     outputNode.style.left = `${editor.getLayoutInfo().contentLeft}px`;
     outputNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
     outputNode.style.top = getOutputZoneTop();
-
     dataRef.current.outputNode = outputNode;
     return outputNode;
   }
 
-  function resetOutputNode() {
+  function createScrollGutterNode(
+    editor: editor.IStandaloneCodeEditor
+  ): HTMLDivElement {
+    const scrollGutterNode = document.createElement('div');
+    const lineGutterWidth = editor.getLayoutInfo().contentLeft;
+    scrollGutterNode.style.width = `${lineGutterWidth}px`;
+    scrollGutterNode.style.left = `-${lineGutterWidth}px`;
+    scrollGutterNode.style.top = '0';
+    scrollGutterNode.style.height = '10000px';
+    scrollGutterNode.style.background = 'transparent';
+    return scrollGutterNode;
+  }
+
+  function resetMarginDecorations() {
     const { model, insideEditDecId } = dataRef.current;
-    const testButton = document.getElementById('test-button');
-    if (testButton) {
-      testButton.innerHTML = 'Check Your Code (Ctrl + Enter)';
-      testButton.onclick = () => {
-        clearTestFeedback();
-        props.executeChallenge();
-      };
-    }
-
-    clearTestFeedback();
-
-    // Resetting margin decorations
     const range = model?.getDecorationRange(insideEditDecId);
     if (range) {
       updateEditableRegion(range, { model });
@@ -830,45 +902,51 @@ const Editor = (props: EditorProps): JSX.Element => {
       monaco,
       model
     })[0];
-
-    // This isn't strictly necessary, but it makes sure the description zone and
-    // widget are always rendered in the correct place. The reason it's not
-    // strictly necessary is that, somehow, the first (incorrect) position was
-    // never rendered.
-    dataRef.current.descriptionZoneTop = editor.getTopForLineNumber(
-      getLineBeforeEditableRegion() + 1
-    );
   }
 
-  function addWidgetsToRegions(editor: editor.IStandaloneCodeEditor) {
-    const createWidget = (
-      id: string,
-      domNode: HTMLDivElement,
-      getTop: () => string
-    ) => {
-      const getId = () => id;
-      const getDomNode = () => domNode;
-      const getPosition = () => {
+  const createWidget = (
+    editor: editor.IStandaloneCodeEditor,
+    id: string,
+    domNode: HTMLDivElement,
+    // If getTop function is not provided then no positioning will be done here.
+    // This allows scroll gutter to do its positioning elsewhere.
+    getTop?: () => string
+  ) => {
+    const getId = () => id;
+    const getDomNode = () => domNode;
+    const getPosition = () => {
+      if (getTop) {
         domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
         domNode.style.top = getTop();
-
-        // must return null, so that Monaco knows the widget will position
-        // itself.
-        return null;
-      };
-      return {
-        getId,
-        getDomNode,
-        getPosition
-      };
+      }
+      // must return null, so that Monaco knows the widget will position
+      // itself.
+      return null;
     };
+    // Only the description content widget uses this method but it
+    // is harmless to pass it to the overlay widget.
+    const afterRender = () => {
+      if (getTop) {
+        domNode.style.left = '0';
+      }
+      domNode.style.visibility = 'visible';
+    };
+    return {
+      getId,
+      getDomNode,
+      getPosition,
+      afterRender
+    };
+  };
 
+  function addWidgetsToRegions(editor: editor.IStandaloneCodeEditor) {
     const descriptionNode = createDescription(editor);
 
     const outputNode = createOutputNode(editor);
 
     if (!dataRef.current.descriptionWidget) {
       dataRef.current.descriptionWidget = createWidget(
+        editor,
         'description.widget',
         descriptionNode,
         getDescriptionZoneTop
@@ -876,7 +954,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       // this order (add widget, change zone) is necessary, since the zone
       // relies on the domnode being in the DOM to calculate its height - that
       // doesn't happen until the widget is added.
-      editor.addOverlayWidget(dataRef.current.descriptionWidget);
+      editor.addContentWidget(dataRef.current.descriptionWidget);
       editor.changeViewZones(descriptionZoneCallback);
       // Now that the description zone is in place, the browser knows its height
       // and we can use that to calculate the top of the output zone.  If we do
@@ -888,17 +966,18 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
     if (!dataRef.current.outputWidget) {
       dataRef.current.outputWidget = createWidget(
+        editor,
         'output.widget',
         outputNode,
         getOutputZoneTop
       );
       editor.addOverlayWidget(dataRef.current.outputWidget);
-      editor.changeViewZones(outputZoneCallback);
+      editor.changeViewZones(updateOutputZone);
     }
 
     editor.onDidScrollChange(() => {
       if (dataRef.current.descriptionWidget)
-        editor.layoutOverlayWidget(dataRef.current.descriptionWidget);
+        editor.layoutContentWidget(dataRef.current.descriptionWidget);
       if (dataRef.current.outputWidget)
         editor.layoutOverlayWidget(dataRef.current.outputWidget);
     });
@@ -981,6 +1060,10 @@ const Editor = (props: EditorProps): JSX.Element => {
     return tests.some(test => test.err);
   }
 
+  function resetAttampts() {
+    attemptRef.current.attempts = 0;
+  }
+
   // runs every update to the editor and when the challenge is reset
   useEffect(() => {
     // If a challenge is reset, it needs to communicate that change to the
@@ -1004,12 +1087,9 @@ const Editor = (props: EditorProps): JSX.Element => {
       if (props.isResetting) {
         initializeDescriptionAndOutputWidgets();
         updateDescriptionZone();
-        updateOutputZone();
         showEditableRegion(editor);
-
-        // Since the outputNode is only reset when the step is restarted, users
-        // that want to try different solutions will need to do that.
-        resetOutputNode();
+        resetAttampts();
+        resetMarginDecorations();
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -1027,89 +1107,24 @@ const Editor = (props: EditorProps): JSX.Element => {
   }, [props.previewOpen]);
 
   useEffect(() => {
-    const { output } = props;
     const { model, insideEditDecId } = dataRef.current;
-    const editableRegion = getEditableRegionFromRedux();
-    const isEditorInFocus = document.activeElement?.tagName === 'TEXTAREA';
-    if (editableRegion.length === 2) {
-      const testStatus = document.getElementById('test-status');
-      if (challengeIsComplete()) {
-        const testButton = document.getElementById('test-button');
-        // In case test button has focus, only visually hide it for now so we
-        // don't lose the focus before we set it on submit button.
-        testButton?.classList.add('sr-only');
-        const submitButton = document.getElementById('submit-button');
-        if (submitButton) {
-          submitButton.removeAttribute('aria-hidden');
-          submitButton.onclick = () => {
-            clearTestFeedback();
-            const { submitChallenge } = props;
-            submitChallenge();
-          };
-          // Delay setting focus on submit button to ensure aria-live status
-          // message is announced first by screen reader.
-          setTimeout(() => {
-            // Must set focus on submit button before removing test button from
-            // accessibility API since test button might have focus.
-            if (!isEditorInFocus) {
-              submitButton.focus();
-            }
-            testButton?.setAttribute('aria-hidden', 'true');
-          }, 500);
+    const lowerJawElement = dataRef.current.outputNode;
+    const isChallengeComplete = challengeIsComplete();
+    const range = model?.getDecorationRange(insideEditDecId);
+    if (range && isChallengeComplete) {
+      updateEditableRegion(
+        range,
+        { model },
+        {
+          linesDecorationsClassName: 'myEditableLineDecoration tests-passed'
         }
-
-        const range = model?.getDecorationRange(insideEditDecId);
-        if (range) {
-          updateEditableRegion(
-            range,
-            { model },
-            {
-              linesDecorationsClassName: 'myEditableLineDecoration tests-passed'
-            }
-          );
-        }
-
-        const submitKeyboardInstructions = isEditorInFocus
-          ? '<span class="sr-only">Use Ctrl + Enter to submit.</span>'
-          : '';
-
-        if (testStatus) {
-          testStatus.innerHTML = `<p class="status"><span aria-hidden="true">&#9989;</span> Congratulations, your code passes. Submit your code to complete this step and move on to the next one. ${submitKeyboardInstructions}</p>`;
-          testStatus.style.height = '';
-        }
-      } else if (challengeHasErrors() && testStatus) {
-        const wordsArray = [
-          'Try again.',
-          'Keep trying.',
-          "You're getting there.",
-          'Hang in there.',
-          "Don't give up."
-        ];
-        testStatus.innerHTML = `<p class="status"><span aria-hidden="true">✖️</span> Sorry, your code does not pass. ${
-          wordsArray[Math.floor(Math.random() * wordsArray.length)]
-        }</p><div><h2 class="hint">Hint</h2> ${output[1]}</div>`;
-        testStatus.style.height = '';
-      }
+      );
     }
+    dataRef.current.outputNode = lowerJawElement;
+    updateOutputZone();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.tests]);
-  useEffect(() => {
-    const { output } = props;
-    // TODO: do we need this condition?  What happens if the ref is empty?
-    if (dataRef.current.outputNode) {
-      // TODO: output gets wiped when the preview gets updated, keeping the
-      // display is an anti-pattern (the render should not ignore props!).
-      // The correct solution is probably to create a new redux variable
-      // (shownHint,maybe) and have that persist through previews.  But, for
-      // now:
-      if (output) {
-        if (hasEditableRegion()) {
-          updateOutputZone();
-        }
-      }
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props.output]);
+
   useEffect(() => {
     const editor = dataRef.current.editor;
     editor?.layout();
@@ -1119,15 +1134,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.dimensions]);
-
-  // TODO: DRY (there's going to be a lot of that)
-  function updateOutputZone() {
-    const editor = dataRef.current.editor;
-    editor?.changeViewZones(changeAccessor => {
-      changeAccessor.removeZone(dataRef.current.outputZoneId);
-      outputZoneCallback(changeAccessor);
-    });
-  }
 
   function updateDescriptionZone() {
     const editor = dataRef.current.editor;

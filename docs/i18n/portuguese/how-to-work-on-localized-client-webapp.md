@@ -77,7 +77,7 @@ Alguns desses arquivos estão traduzidos na nossa plataforma de tradução (Crow
 
 - O arquivo `meta-tags.json` contém as informações para a tag meta do nosso site.
 
-  Mudanças nesses arquivos são tipicamente feitos pelo time da staff. Se você vir algo fora do ordinário, nós recomendamos que você nos contate na [sala de chat dos contribuidores](https://chat.freecodecamp.org/channel/contributors).
+  Mudanças nesses arquivos são tipicamente feitos pelo time da staff. Se você vir algo fora do ordinário, nós recomendamos que você nos contate na [sala de chat dos contribuidores](https://discord.gg/PRyKn3Vbay).
 
 ## Testando o cliente web em um idioma mundial
 

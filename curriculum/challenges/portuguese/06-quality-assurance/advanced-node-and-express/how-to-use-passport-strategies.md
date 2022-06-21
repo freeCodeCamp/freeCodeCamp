@@ -18,7 +18,7 @@ Se a autenticação for bem-sucedida, o objeto do usuário será salvo em `req.u
 
 Neste ponto, se você digitar um nome de usuário e uma senha no formulário, ele deve redirecionar para a página inicial `/`. O console do servidor deve exibir `'User {USERNAME} attempted to log in.'`, já que, no momento, não podemos fazer login com um usuário que não está registrado.
 
-Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto concluído até este momento [aqui](https://gist.github.com/camperbot/7ad011ac54612ad53188b500c5e99cb9).
+Envie sua página quando você achar que ela está certa. Se você estiver encontrando erros, pode <a href="https://gist.github.com/camperbot/7ad011ac54612ad53188b500c5e99cb9" target="_blank" rel="noopener noreferrer nofollow">conferir o projeto concluído até este ponto</a>.
 
 # --hints--
 

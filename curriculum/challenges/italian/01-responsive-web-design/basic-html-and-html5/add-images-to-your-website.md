@@ -27,7 +27,7 @@ Idealmente l'attributo `alt` non dovrebbe contenere caratteri speciali a meno ch
 Aggiungiamo un attributo `alt` al nostro esempio `img` precedente:
 
 ```html
-<img src="https://www.freecatphotoapp.com/your-image.jpg" alt="A business cat wearing a necktie.">
+<img src="https://www.freecatphotoapp.com/your-image.jpg" alt="freeCodeCamp logo">
 ```
 
 # --instructions--
@@ -60,7 +60,7 @@ L'elemento `alt` della tua immagine non dovrebbe essere vuoto.
 assert(
   $('img').attr('alt') &&
     $('img').attr('alt').length &&
-    /<img\S*alt=(['"])(?!\1|>)\S+\1\S*\/?>/.test(
+    /<(?:img|IMG)\S*alt=(['"])(?!\1|>)\S+\1\S*\/?>/.test(
       __helpers.removeWhiteSpace(code)
     )
 );

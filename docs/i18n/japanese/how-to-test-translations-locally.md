@@ -134,9 +134,32 @@ CLIENT_LOCALE="dothraki"
 CURRICULUM_LOCALE="dothraki"
 ```
 
+### Releasing a Superblock
+
+After a superblock has been fully translated into a language, there are two steps to release it. First add the superblock enum to that language's `auditedCerts` array. So, if you want to release the new Responsive Web Design superblock for Dothraki, the array should look like this:
+
+```ts
+export const auditedCerts = {
+  // other languages
+  dothraki: [
+    SuperBlocks.RespWebDesignNew, // the newly translated superblock
+    SuperBlocks.RespWebDesign,
+    SuperBlocks.JsAlgoDataStruct,
+    SuperBlocks.FrontEndDevLibs
+  ]
+```
+
+Finally, the `languagesWithAuditedBetaReleases` array should be updated to include the new language like this:
+
+```ts
+export const languagesWithAuditedBetaReleases: ['english', 'dothraki'];
+```
+
+This will move the new superblock to the correct place in the curriculum map on `/learn`.
+
 ## ローカライズされた動画を有効にする
 
-ビデオチャレンジのために、いくつかの変更が必要です。 まず、`client/src/templates/Challenges/video/Show.tsx` ファイルの中の GraphQL クエリに新しいロケールを追加します。 例えば、クエリに Dothraki を追加します。
+For the video challenges, you need to change a few things. First add the new locale to the GraphQL query in the `client/src/templates/Challenges/video/Show.tsx` file. For example, adding Dothraki to the query:
 
 ```tsx
   query VideoChallenge($slug: String!) {
@@ -151,7 +174,7 @@ CURRICULUM_LOCALE="dothraki"
       ...
 ```
 
-次に、監査済みブロック内の任意のビデオチャレンジに新しい言語の id を追加します。 例えば、 `all-langs.ts` 中の `auditedCerts` に `dothraki` の `scientific-computing-with-python` が含まれる場合、`videoLocaleIds` に `dothraki` を追加しなければなりません。 フロントマターは次のようになります。
+Then add an id for the new language to any video challenge in an audited block. For example, if `auditedCerts` in `all-langs.ts` includes `scientific-computing-with-python` for `dothraki`, then you must add a `dothraki` entry in `videoLocaleIds`. The frontmatter should then look like this:
 
 ```yml
 videoLocaleIds:
@@ -163,7 +186,7 @@ dashedName: introduction-why-program
 ---
 ```
 
-`client/src/redux/prop-types` の `VideoLocaleIds` インターフェースを更新して、新しい言語を入れます。
+Update the `VideoLocaleIds` interface in `client/src/redux/prop-types` to include the new language.
 
 ```ts
 export interface VideoLocaleIds {
@@ -174,7 +197,7 @@ export interface VideoLocaleIds {
 }
 ```
 
-そして最後に、`curriculum/schema/challengeSchema.js` のチャレンジスキーマを更新します。
+And finally update the challenge schema in `curriculum/schema/challengeSchema.js`.
 
 ```js
 videoLocaleIds: Joi.when('challengeType', {
@@ -190,10 +213,10 @@ videoLocaleIds: Joi.when('challengeType', {
 
 ## 翻訳内容を読み込む
 
-言語が本番用に承認されていないため、スクリプトは翻訳を自動的にダウンロードしていません。 スタッフのみ、翻訳を直接ダウンロードすることができます - [contributors チャットルーム](https://chat.freecodecamp.org/channel/contributors) にお問い合わせください。 または、テスト目的で、ローカルで英語のマークダウンファイルを翻訳することもできます。
+Because the language has not been approved for production, our scripts are not automatically downloading the translations yet. Only staff have the access to directly download the translations - you are welcome to reach out to us in our [contributors chat room](https://discord.gg/PRyKn3Vbay), or you can translate the English markdown files locally for testing purposes.
 
-ファイルを入手したら、それらを正しいディレクトリに配置する必要があります。 カリキュラムのチャレンジについては、認定講座のフォルダ (すなわち、`01-responsive-web-design`) を `curriculum/challenges/{lang}` ディレクトリ内に配置する必要があります。 Dothraki の翻訳では、これが `curriculum/challenges/dothraki` になります。 クライアント翻訳の `.json` ファイルは、 `client/i18n/locales/{lang}` ディレクトリに移動します。
+Once you have the files, you will need to place them in the correct directory. For the curriculum challenges, you should place the certification folders (i.e. `01-responsive-web-design`) within the `curriculum/challenges/{lang}` directory. For our Dothraki translations, this would be `curriculum/challenges/dothraki`. The client translation `.json` files will go in the `client/i18n/locales/{lang}` directory.
 
-以上の準備が整ったら、 `npm run develop` を実行することで freeCodeCamp の翻訳版を表示できるはずです。
+Once these are in place, you should be able to run `npm run develop` to view your translated version of freeCodeCamp.
 
 > [!ATTENTION] テスト目的でローカルで翻訳を実行することもできますが、翻訳は GitHub を介して送信 _するのではなく_、Crowdin を介してのみ送信する必要があることをご承知おきください。 テストが終了したら、必ずローカルコードベースをリセットしてください。

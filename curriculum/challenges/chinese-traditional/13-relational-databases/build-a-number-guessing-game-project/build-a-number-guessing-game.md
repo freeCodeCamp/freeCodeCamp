@@ -1,6 +1,6 @@
 ---
 id: 602da04c22201c65d2a019f4
-title: Build a Number Guessing Game
+title: 構建一個猜數字遊戲
 challengeType: 13
 helpCategory: Backend Development
 url: https://github.com/freeCodeCamp/learn-number-guessing-game
@@ -9,15 +9,15 @@ dashedName: build-a-number-guessing-game
 
 # --description--
 
-This is one of the required projects to earn your certification. For this project, you will use Bash scripting, PostgreSQL, and Git to create a number guessing game that runs in the terminal and saves user information.
+這是你獲得認證的必做項目之一。 對於這個項目，你將使用 Bash 腳本、PostgreSQL 和 Git 創建一個在終端中運行並保存用戶信息的猜數字遊戲。
 
 # --instructions--
 
-**Important:** After you pass all the project tests, save a dump of your database into a `number_guessers.sql` file, as well as your whole `number_guessing_game` folder, so you can complete step 2. There will be instructions how to do that within the virtual machine.
+**重要：**在你通過所有項目測試後，將你的數據庫存放到一個 `number_guess.sql` 文件中，和你的 `number_guess.sh` 文件，以便你完成步驟 2。 你將看到如何在虛擬機中完成這一點的提示。
 
 # --notes--
 
-Required files: `number_guessers.sql`, and the whole `number_guessing_game` folder
+需要的文件： `number_guess.sql`，`number_guess.sh`
 
 # --hints--
 

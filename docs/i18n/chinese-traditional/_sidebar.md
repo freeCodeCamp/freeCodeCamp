@@ -15,7 +15,7 @@
   - [Work on localized client web app](how-to-work-on-localized-client-webapp.md)
   - [Work on Cypress tests](how-to-add-cypress-tests.md)
   - [Work on video challenges](how-to-help-with-video-challenges.md)
-  - [Work on the docs theme](how-to-work-on-the-docs-theme.md)
+  - [Work on documentation](how-to-work-on-the-docs-theme.md)
   - [Work on the component library](how-to-work-on-the-component-library.md)
 - **Additional Guides**
   - [Test translations locally](how-to-test-translations-locally.md)
@@ -29,10 +29,11 @@
 - **飛行手冊**（針對員工  &  維護人員）
   - [維護人員手冊](moderator-handbook.md)
   - [DevOps 手冊](devops.md)
+  - [Courses VSCode Extension](courses-vscode-extension.md)
 
 ---
 
 - **我們的社區**
   - [**GitHub**](https://github.com/freecodecamp/freecodecamp)
   - [**Discourse 論壇**](https://freecodecamp.org/forum/c/contributors)
-  - [**聊天室**](https://chat.freecodecamp.org/home)
+  - [**聊天室**](https://discord.gg/PRyKn3Vbay)

@@ -50,6 +50,8 @@
     "reset-lesson": "Reset this lesson",
     "run": "Run",
     "run-test": "Run the Tests (Ctrl + Enter)",
+    "check-code": "Check Your Code (Ctrl + Enter)",
+    "check-code-2": "Check Your Code",
     "reset": "Reset",
     "reset-code": "Reset All Code",
     "help": "Help",
@@ -69,7 +71,11 @@
     "start-coding": "Start coding!",
     "go-to-settings": "Go to settings to claim your certification",
     "click-start-course": "Start the course",
-    "click-start-project": "Start the project"
+    "click-start-project": "Start the project",
+    "change-language": "Change Language",
+    "cancel-change": "Cancel Change",
+    "resume-project": "Resume project",
+    "start-project": "Start project"
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
@@ -100,7 +106,7 @@
   },
   "settings": {
     "share-projects": "Share your non-freeCodeCamp projects, articles or accepted pull requests.",
-    "privacy": "The settings in this section enable you to control what is shown on your freeCodeCamp public portfolio.",
+    "privacy": "The settings in this section enable you to control what is shown on your freeCodeCamp public portfolio. Press save to save your changes.",
     "data": "To see what data we hold on your account, click the \"Download your data\" button below",
     "disabled": "Your certifications will be disabled, if set to private.",
     "private-name": "Your name will not appear on your certifications, if this is set to private.",
@@ -142,7 +148,8 @@
       "my-timeline": "My timeline",
       "my-donations": "My donations",
       "night-mode": "Night Mode",
-      "sound-mode": "Campfire Mode"
+      "sound-mode": "Campfire Mode",
+      "keyboard-shortcuts": "Enable Keyboard Shortcuts"
     },
     "headings": {
       "certs": "Certifications",
@@ -268,6 +275,7 @@
     "solution-link": "Solution Link",
     "github-link": "GitHub Link",
     "submit-and-go": "Submit and go to my next challenge",
+    "congratulations": "Congratulations, your code passes. Submit your code to complete this step and move on to the next one.",
     "i-completed": "I've completed this challenge",
     "test-output": "Your test output will go here",
     "running-tests": "// running tests",
@@ -294,6 +302,7 @@
       "restart": "Restart",
       "restart-step": "Restart Step",
       "console": "Console",
+      "instructions": "Instructions",
       "notes": "Notes",
       "preview": "Preview"
     },
@@ -305,7 +314,17 @@
     "step-2": "Step 2: Submit your code",
     "submit-public-url": "When you have completed the project, save all the required files into a public repository and submit the URL to it below.",
     "complete-both-steps": "Complete both steps below to finish the challenge.",
-    "runs-in-vm": "The project runs in a virtual machine, complete the user stories described in there and get all the tests to pass to finish step 1."
+    "runs-in-vm": "The project runs in a virtual machine, complete the user stories described in there and get all the tests to pass to finish step 1.",
+    "completed": "Completed",
+    "not-started": "Not started",
+    "hint": "Hint",
+    "test": "Test",
+    "sorry-try-again":"Sorry, your code does not pass. Try again.",
+    "sorry-keep-trying":"Sorry, your code does not pass. Keep trying.",
+    "sorry-getting-there":"Sorry, your code does not pass. You're getting there.",
+    "sorry-hang-in-there":"Sorry, your code does not pass. Hang in there.",
+    "sorry-dont-giveup":"Sorry, your code does not pass. Don't give up.",
+    "challenges-completed": "{{completedCount}} of {{totalChallenges}} challenges completed"
   },
   "donate": {
     "title": "Support our nonprofit",
@@ -441,7 +460,10 @@
     "donate": "Donate with PayPal",
     "fail": "Test Failed",
     "not-passed": "Not Passed",
+    "waiting": "Waiting",
     "passed": "Passed",
+    "failed": "Failed",
+    "hint": "Hint",
     "heart": "Heart",
     "initial": "Initial",
     "info": "Intro Information",
@@ -461,7 +483,12 @@
     "next-page": "Go to next page",
     "last-page": "Go to last page",
     "primary-nav": "primary",
-    "breadcrumb-nav": "breadcrumb"
+    "breadcrumb-nav": "breadcrumb",
+    "submit": "Use Ctrl + Enter to submit.",
+    "running-tests": "Running tests",
+    "step": "Step",
+    "steps": "Steps",
+    "steps-for": "Steps for {{blockTitle}}"
   },
   "flash": {
     "honest-first": "To claim a certification, you must first accept our academic honesty policy",
@@ -667,5 +694,16 @@
     "delete-p3": "You will need to create a new token to save future progress on the curriculum sections that use a virtual machine.",
     "no-thanks": "No thanks, I would like to keep my token",
     "yes-please": "Yes please, I would like to delete my token"
+  },
+  "shortcuts": {
+    "title": "Keyboard shortcuts",
+    "table-header-action": "Action",
+    "table-header-key": "Key(s)",
+    "navigation-mode": "Navigation Mode",
+    "execute-challenge": "Execute Challenge",
+    "focus-editor": "Focus Editor",
+    "focus-instructions-panel": "Focus Instructions Panel",
+    "navigate-previous": "Navigate Previous Exercise",
+    "navigate-next": "Navigate Next Exercise"
   }
 }

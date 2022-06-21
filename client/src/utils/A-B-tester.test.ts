@@ -5,7 +5,7 @@ describe('client/src is-email-variation-a', () => {
   it('Consistently returns the same result for the same input', () => {
     const preSavedResult = {
       hash: '23e3cacb302b0c759531faa8b414b23709c26029',
-      isAVariant: true,
+      isVariantA: true,
       hashInt: 2
     };
     const result = emailToABVariant('foo@freecodecamp.org');
@@ -18,7 +18,7 @@ describe('client/src is-email-variation-a', () => {
     faker.seed(123);
 
     for (let i = 0; i < sampleSize; i++) {
-      if (emailToABVariant(faker.internet.email()).isAVariant) A++;
+      if (emailToABVariant(faker.internet.email()).isVariantA) A++;
       else B++;
     }
 
