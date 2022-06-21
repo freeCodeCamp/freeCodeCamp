@@ -47,7 +47,7 @@ app.route('/register')
   );
 ```
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href="" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/b230a5b3bbc89b1fa0ce32a2aa7b083e).
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href="https://gist.github.com/camperbot/b230a5b3bbc89b1fa0ce32a2aa7b083e" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/b230a5b3bbc89b1fa0ce32a2aa7b083e</a>.
 
 **NOTE:** From this point onwards, issues can arise relating to the use of the *picture-in-picture* browser. If you are using an online IDE which offers a preview of the app within the editor, it is recommended to open this preview in a new tab.
 
