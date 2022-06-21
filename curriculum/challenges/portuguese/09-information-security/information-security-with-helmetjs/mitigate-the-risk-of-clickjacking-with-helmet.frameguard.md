@@ -8,7 +8,7 @@ dashedName: mitigate-the-risk-of-clickjacking-with-helmet-frameguard
 
 # --description--
 
-Lembrando que este projeto está sendo construído a partir do [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec), ou pose ser clonado no [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
+Lembrando que este projeto está sendo construído a partir do [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec), ou pode ser clonado no [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
 
 Sua página pode ser colocada em um `<frame>` ou `<iframe>` sem o seu consentimento. Isso pode resultar em ataques de clickjacking, entre outras coisas. Clickjacking é uma técnica de enganar um usuário para que ele interaja com uma página diferente da que o usuário pensa que é. Isso pode ser feito ao executar sua página em um contexto malicioso, por meio de iframing. Nesse contexto, um hacker pode colocar uma camada oculta sobre sua página. Botões ocultos podem ser usados para executar scripts maliciosos. Este middleware define o cabeçalho X-Frame-Options. Ele restringe quem pode colocar seu site em um frame. Ele tem três modos: DENY, SAMEORIGIN, e ALLOW-FROM.
 

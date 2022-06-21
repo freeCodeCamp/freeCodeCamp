@@ -1,4 +1,4 @@
-name: GitHub - No translions via PRs
+name: GitHub - No translations via PRs
 on:
   pull_request_target:
     branches:

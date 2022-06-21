@@ -8,7 +8,7 @@ dashedName: visualize-data-with-a-choropleth-map
 
 # --description--
 
-**Objetivo:** criar uma aplicação que funcione de modo semelhante ao que vemos em: <https://codepen.io/freeCodeCamp/full/EZKqza>.
+**Objetivo:** criar uma aplicação que funcione de modo semelhante ao que vemos em: <a href="https://codepen.io/freeCodeCamp/full/EZKqza" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/EZKqza</a>.
 
 Atenda às histórias de usuário abaixo e faça com que todos os testes passem. Use quaisquer bibliotecas ou APIs de que você precisar. Dê ao projeto o seu próprio estilo pessoal.
 
@@ -41,7 +41,7 @@ Aqui estão os conjuntos de dados de que você precisará para completar esse pr
 -   **Dados educacionais dos EUA:**`https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/for_user_education.json`
 -   **Dados dos condados dos EUA:**`https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/counties.json`
 
-Você pode fazer o seu projeto <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>usando este modelo da CodePen</a> e clicando em `Save` para criar seu próprio pen. Como alternativa, use este link da nossa CDN para executar os testes em qualquer ambiente que você preferir: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+Você pode fazer o seu projeto <a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">usando este modelo da CodePen</a> e clicando em `Save` para criar seu próprio pen. Como alternativa, use este link da nossa CDN para executar os testes em qualquer ambiente que você preferir: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
 Quando tiver terminado, envie o URL do seu projeto depois de ele haver passado em todos os testes.
 

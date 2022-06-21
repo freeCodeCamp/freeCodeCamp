@@ -73,7 +73,9 @@
     "click-start-course": "コースを開始",
     "click-start-project": "プロジェクトを開始",
     "change-language": "言語変更",
-    "cancel-change": "変更キャンセル"
+    "cancel-change": "変更キャンセル",
+    "resume-project": "Resume project",
+    "start-project": "Start project"
   },
   "landing": {
     "big-heading-1": "プログラミングを無料で学ぶ。",
@@ -321,7 +323,8 @@
     "sorry-keep-trying": "残念ながら、テストが通りませんでした。挑戦を続けましょう。",
     "sorry-getting-there": "残念ながら、テストが通りませんでした。もう一息です。",
     "sorry-hang-in-there": "残念ながら、テストが通りませんでした。がんばりましょう。",
-    "sorry-dont-giveup": "残念ながら、テストが通りませんでした。諦めないでください。"
+    "sorry-dont-giveup": "残念ながら、テストが通りませんでした。諦めないでください。",
+    "challenges-completed": "{{completedCount}} of {{totalChallenges}} challenges completed"
   },
   "donate": {
     "title": "非営利団体を支援する",
@@ -482,7 +485,10 @@
     "primary-nav": "プライマリー",
     "breadcrumb-nav": "パンくずリスト",
     "submit": "提出するには Ctrl + Enter を押してください。",
-    "running-tests": "テスト実行中"
+    "running-tests": "テスト実行中",
+    "step": "Step",
+    "steps": "Steps",
+    "steps-for": "Steps for {{blockTitle}}"
   },
   "flash": {
     "honest-first": "認定証を請求するには、まず学問的誠実性ポリシーに同意する必要があります。",

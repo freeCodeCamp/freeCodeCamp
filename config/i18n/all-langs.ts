@@ -75,6 +75,7 @@ export const auditedCerts = {
     SuperBlocks.MachineLearningPy
   ],
   italian: [
+    SuperBlocks.RespWebDesignNew,
     SuperBlocks.RespWebDesign,
     SuperBlocks.JsAlgoDataStruct,
     SuperBlocks.FrontEndDevLibs,
@@ -136,7 +137,11 @@ export const auditedCerts = {
  * that has been 100% translated. This will only be used during the window
  * where a beta goes to stable but the translation isn't complete yet.
  */
-export const languagesWithAuditedBetaReleases = ['english', 'portuguese'];
+export const languagesWithAuditedBetaReleases = [
+  'english',
+  'portuguese',
+  'italian'
+];
 
 // ---------------------------------------------------------------------------
 

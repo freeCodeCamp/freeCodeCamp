@@ -8,7 +8,7 @@ dashedName: visualize-data-with-a-treemap-diagram
 
 # --description--
 
-**Objetivo:** criar uma aplicação que funcione de modo semelhante ao que vemos em: <https://codepen.io/freeCodeCamp/full/KaNGNR>.
+**Objetivo:** criar uma aplicação que funcione de modo semelhante ao que vemos em: <a href="https://codepen.io/freeCodeCamp/full/KaNGNR" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/KaNGNR</a>.
 
 Atenda às histórias de usuário abaixo e faça com que todos os testes passem. Use quaisquer bibliotecas ou APIs de que você precisar. Dê ao projeto o seu próprio estilo pessoal.
 
@@ -42,7 +42,7 @@ Para este projeto, você pode usar qualquer um dos seguintes conjuntos de dados:
 -   **Venda de filmes:** `https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/movie-data.json`
 -   **Venda de videogames:** `https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/video-game-sales-data.json`
 
-Você pode fazer o seu projeto <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>usando este modelo da CodePen</a> e clicando em `Save` para criar seu próprio pen. Como alternativa, use este link da nossa CDN para executar os testes em qualquer ambiente que você preferir: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+Você pode fazer o seu projeto <a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">usando este modelo da CodePen</a> e clicando em `Save` para criar seu próprio pen. Como alternativa, use este link da nossa CDN para executar os testes em qualquer ambiente que você preferir: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
 Quando tiver terminado, envie o URL do seu projeto depois de ele haver passado em todos os testes.
 

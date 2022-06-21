@@ -10,8 +10,8 @@ dashedName: set-up-a-template-engine
 
 Trabalhar nesses desafios vai fazer com que você escreva seu código usando um dos seguintes métodos:
 
-- Clone [este repositório do GitHub](https://github.com/freeCodeCamp/boilerplate-advancednode/) e complete esses desafios localmente.
-- Use [nosso projeto inicial do Replit](https://replit.com/github/freeCodeCamp/boilerplate-advancednode) para completar esses desafios.
+- Clone <a href="https://github.com/freeCodeCamp/boilerplate-advancednode/" target="_blank" rel="noopener noreferrer nofollow">este repositório do GitHub</a> e complete esses desafios localmente.
+- Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-advancednode" target="_blank" rel="noopener noreferrer nofollow">nosso projeto inicial do Replit</a> para completar esses desafios.
 - Use um construtor de site de sua escolha para completar o projeto. Certifique-se de incorporar todos os arquivos do nosso repositório no GitHub.
 
 Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Em seguida, envie o URL para ela no campo `Solution Link`.
@@ -27,8 +27,7 @@ A página não será carregada até que você renderize corretamente o arquivo d
 Altere o argumento da declaração `res.render()` na rota `/` para que seja o caminho de arquivo para o diretório `views/pug`. O caminho pode ser um caminho relativo (relativo às visualizações) ou um caminho absoluto e não necessita de uma extensão de arquivo.
 
 Se tudo correu como planejado, sua página inicial vai parar de mostrar a mensagem "`Pug template is not defined.`" e agora exibirá uma mensagem indicando que você renderizou com sucesso o modelo do Pug!
-
-Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto concluído até este momento [aqui](https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791).
+Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto concluído até este momento em <a href="" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791).
 
 # --hints--
 

@@ -92,7 +92,7 @@ Dê uma olhada no nosso [Manual do Moderador](moderator-handbook.md) para obter 
 **Fique à vontade para pedir ajuda em:**
 
 - A categoria `Contributors` do [fórum da nossa comunidade](https://forum.freecodecamp.org/c/contributors).
-- O canal `#Contributors` em nosso [servidor](https://chat.freecodecamp.org/channel/contributors).
+- O canal `#Contributors` em nosso [servidor](https://discord.gg/PRyKn3Vbay).
 
 Estamos animados em ajudar você a contribuir com qualquer tópico que desejar. Se você nos perguntar algo relacionado às issues, vamos ficar felizes em esclarecer. Certifique-se de pesquisar sua pergunta antes de postar uma nova.
 

@@ -8,7 +8,7 @@ dashedName: configure-helmet-using-the-parent-helmet-middleware
 
 # --description--
 
-Lembrando que este projeto está sendo construído a partir do [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec), ou pose ser clonado no [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
+Lembrando que este projeto está sendo construído a partir do [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec), ou pode ser clonado no [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
 
 `app.use(helmet())` incluirá automaticamente todo o middleware apresentado acima, exceto `noCache()` e `contentSecurityPolicy()`, mas estes podem ser habilitados, se necessário. Você também pode desativar ou configurar qualquer outro middleware individualmente, usando um objeto de configuração.
 

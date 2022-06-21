@@ -42,7 +42,7 @@ No se requieren acciones adicionales una vez que el archivo ha sido revisado.
 
 ## Llegar hacer un revisor
 
-Si tienes alguna pregunta o te interesa colaborar como revisor, ten la liberta de contactarnos en nuestra [sala de chat de contribuidores](https://chat.freecodecamp.org/channel/contributors). Generalmente, le concederemos acceso a la corrección si ha estado contribuyendo a freeCodeCamp durante un tiempo.
+If you have any questions, or are interested in becoming a proofreader, feel free to reach out to us in our [contributors chat room](https://discord.gg/PRyKn3Vbay). Generalmente, le concederemos acceso a la corrección si ha estado contribuyendo a freeCodeCamp durante un tiempo.
 
 Nuestro equipo de personal y de moderadores de la comunidad buscan constantemente voluntarios amables como tú que nos ayuden a poner a disposición del mundo traducciones de alta calidad.
 
@@ -50,6 +50,6 @@ Nuestro equipo de personal y de moderadores de la comunidad buscan constantement
 
 ## Creando un canal en Chat para un idioma mundial
 
-Mayormente, te recomendamos que utilices la sala de chat de [contribuidores](https://chat.freecodecamp.org/channel/contributors) para toda la correspondencia. Sin embargo, si el equipo de traductores voluntarios crece para un idioma determinado, podemos considerar la creación de un canal de escape adicional para el idioma.
+For the most part we encourage you to use the [contributors chat](https://discord.gg/PRyKn3Vbay) room for all correspondence. Sin embargo, si el equipo de traductores voluntarios crece para un idioma determinado, podemos considerar la creación de un canal de escape adicional para el idioma.
 
 Si ya eres un revisor y estás interesado en tener un canal dedicado en nuestros servidores de chat para un idioma específico, [completa este formulario](https://forms.gle/XU5CyutrYCgDYaVZA).

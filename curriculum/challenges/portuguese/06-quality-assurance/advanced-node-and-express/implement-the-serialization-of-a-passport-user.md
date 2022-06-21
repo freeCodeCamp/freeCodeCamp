@@ -10,7 +10,7 @@ dashedName: implement-the-serialization-of-a-passport-user
 
 No momento, não estamos carregando um objeto de usuário real, já que não configuramos nosso banco de dados. Isto pode ser feito de muitas maneiras diferentes. Para o nosso projeto, no entanto, conectaremos ao banco de dados quando iniciarmos o servidor e manteremos uma conexão persistente para todo o ciclo de vida da aplicação. Para fazer isso, adicione a string de conexão do banco de dados (por exemplo: `mongodb+srv://:@cluster0-jvwxi.mongodb.net/?retryWrites=true&w=majority`) à variável de ambiente `MONGO_URI`. Este é usado no arquivo `connection.js`.
 
-*Se você estiver com problemas na criação de um banco de dados gratuito no MongoDB Atlas, confira o [tutorial](https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/).*
+*Se você estiver com problemas na criação de um banco de dados gratuito no MongoDB Atlas, confira o <a href="https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/" target="_blank" rel="noopener noreferrer nofollow">tutorial</a>.*
 
 Agora, queremos conectar ao nosso banco de dados. Em seguida, vamos começar a escutar pedidos. O objetivo é não permitir solicitações antes de nosso banco de dados estar conectado ou se houver um erro no banco de dados. Para fazer isso, você vai querer englobar a serialização e as rotas da aplicação no código a seguir:
 
@@ -39,8 +39,7 @@ myDB(async client => {
 ```
 
 Certifique-se de descomentar o código `myDataBase` em `deserializeUser` e de editar o seu `done(null, null)` para incluir o `doc`.
-
-Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto concluído até este momento [aqui](https://gist.github.com/camperbot/175f2f585a2d8034044c7e8857d5add7).
+Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto concluído até este momento em <a href="" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/175f2f585a2d8034044c7e8857d5add7).
 
 # --hints--
 

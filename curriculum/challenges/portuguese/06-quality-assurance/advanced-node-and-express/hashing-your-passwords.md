@@ -24,7 +24,7 @@ if (!bcrypt.compareSync(password, user.password)) {
 
 Isso é tudo o que precisamos para implementar um dos mais importantes recursos de segurança quando você tem que armazenar senhas!
 
-Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto concluído até este momento [aqui](https://gist.github.com/camperbot/dc16cca09daea4d4151a9c36a1fab564).
+Envie sua página quando você achar que ela está certa. Se você estiver encontrando erros, pode <a href="https://gist.github.com/camperbot/dc16cca09daea4d4151a9c36a1fab564" target="_blank" rel="noopener noreferrer nofollow">conferir o projeto concluído até este ponto</a>.
 
 # --hints--
 

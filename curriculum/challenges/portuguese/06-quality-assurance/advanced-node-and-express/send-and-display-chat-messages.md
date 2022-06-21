@@ -28,7 +28,7 @@ No `client.js`, agora, você deve escutar o evento `'chat message'` e, quando el
 
 Neste ponto, o chat deve estar totalmente funcional e enviando mensagens para todos os clients!
 
-Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto concluído até este momento [aqui](https://gist.github.com/camperbot/d7af9864375207e254f73262976d2016).
+Envie sua página quando você achar que ela está certa. Se você estiver encontrando erros, pode <a href="https://gist.github.com/camperbot/d7af9864375207e254f73262976d2016" target="_blank" rel="noopener noreferrer nofollow">conferir o projeto concluído até este ponto</a>.
 
 # --hints--
 

@@ -8,7 +8,7 @@ dashedName: build-a-personal-portfolio-webpage
 
 # --description--
 
-**Obiettivo:** Crea un'app funzionalmente simile a <a href="https://personal-portfolio.freecodecamp.rocks" target="_blank">https://personal-portfolio.freecodecamp.rocks</a>
+**Obiettivo:** crea un'app funzionalmente simile a <a href="https://personal-portfolio.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://personal-portfolio.freecodecamp.rocks</a>
 
 **User story:**
 
