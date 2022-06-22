@@ -7,7 +7,7 @@ dashedName: step-41
 
 # --description--
 
-To give the `fieldset` elements a bit of separation, select all `fieldset` elements, and give them a `border-bottom` of `3px solid #3b3b4f`.
+To give the `fieldset` elements a bit of separation, select them and give them a `border-bottom` of `3px solid #3b3b4f`.
 
 # --hints--
 
