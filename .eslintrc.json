@@ -68,7 +68,20 @@
             "leadingUnderscore": "allow",
             "trailingUnderscore": "allow"
           },
-
+          {
+            "selector": [
+              "classProperty",
+              "objectLiteralProperty",
+              "typeProperty",
+              "classMethod",
+              "objectLiteralMethod",
+              "typeMethod",
+              "accessor",
+              "enumMember"
+            ],
+            "format": null,
+            "modifiers": ["requiresQuotes"]
+          },
           {
             "selector": "variable",
             "format": ["camelCase", "UPPER_CASE", "PascalCase"],
