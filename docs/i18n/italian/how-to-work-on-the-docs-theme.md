@@ -1,8 +1,8 @@
 # How to work on documentation
 
-## Work on the docs content
+## Work on the content of the docs
 
-To work on the contributing guidelines, you can edit or add files in the `docs` directory [available here](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/docs). When your changes are merged, it will be made available automatically at the documentation site.
+To work on the contributing guidelines, you can edit or add files in the `docs` directory [available here](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/docs). When your changes are merged, they will be made available automatically at the documentation site.
 
 ### How to create an internal link
 
@@ -25,19 +25,19 @@ When you work on translating docs on Crowdin, make sure to replace the `#target-
 
 ## Work on the docs theme
 
-> [!NOTE] Un rapido promemoria per ricordarti che non è necessario configurare nulla per lavorare sul contenuto del sito di documentazione.
+> [!NOTE] A quick reminder that you do not need to set up anything for working on the content for the documentation site.
 > 
 > To work on the contributing guidelines, see [work on the docs content](#work-on-the-docs-content) section.
 
 ### Structure of the docs website
 
-The site is generated using [`docsify`](https://docsify.js.org), and served using GitHub pages.
+The site is generated using [`docsify`](https://docsify.js.org) and served using GitHub pages.
 
 Typically you would not need to change any configuration or build the site locally. In case you are interested, here is how it works:
 
 - Il sorgente della homepage per questo sito è disponibile in [`docs/index.html`](index.html).
 - Serviamo questo file come SPA (Single Page Application) usando `docsify` e GitHub Pages.
-- Lo script `docsify` genera il contenuto del `file markdown` nella directory `docs` su richiesta.
+- The `docsify` script generates the content of `markdown` files in the `docs` directory on demand.
 - La homepage è generata dal file [`_coverpage.md`](_coverpage.md).
 - la navigazione della barra laterale è generata da [`_sidebar.md`](_sidebar.md).
 

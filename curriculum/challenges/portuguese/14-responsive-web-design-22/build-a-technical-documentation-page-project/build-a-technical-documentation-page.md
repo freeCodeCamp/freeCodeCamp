@@ -248,7 +248,7 @@ assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Technical Documentation Page</title>
   </head>
   <body>

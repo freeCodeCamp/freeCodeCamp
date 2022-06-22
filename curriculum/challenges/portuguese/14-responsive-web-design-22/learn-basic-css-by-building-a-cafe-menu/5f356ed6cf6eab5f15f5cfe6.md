@@ -47,7 +47,7 @@ assert(div.parentElement.tagName === 'BODY');
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cafe Menu</title>
-    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <link href="styles.css" rel="stylesheet"/>
   </head>
 --fcc-editable-region--
   <body>

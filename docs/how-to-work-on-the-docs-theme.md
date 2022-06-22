@@ -1,8 +1,8 @@
 # How to work on documentation
 
-## Work on the docs content
+## Work on the content of the docs
 
-To work on the contributing guidelines, you can edit or add files in the `docs` directory [available here](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/docs). When your changes are merged, it will be made available automatically at the documentation site.
+To work on the contributing guidelines, you can edit or add files in the `docs` directory [available here](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/docs). When your changes are merged, they will be made available automatically at the documentation site.
 
 ### How to create an internal link
 
@@ -26,19 +26,19 @@ When you work on translating docs on Crowdin, make sure to replace the `#target-
 ## Work on the docs theme
 
 > [!NOTE]
-> A quick reminder that you do not need to setup anything for working on the content for the documentation site.
+> A quick reminder that you do not need to set up anything for working on the content for the documentation site.
 >
 > To work on the contributing guidelines, see [work on the docs content](#work-on-the-docs-content) section.
 
 ### Structure of the docs website
 
-The site is generated using [`docsify`](https://docsify.js.org), and served using GitHub pages.
+The site is generated using [`docsify`](https://docsify.js.org) and served using GitHub pages.
 
 Typically you would not need to change any configuration or build the site locally. In case you are interested, here is how it works:
 
 - The homepage's source for this site is available in [`docs/index.html`](index.html).
 - We serve this file as a SPA using `docsify` and GitHub Pages.
-- The `docsify` script generates the content of `markdown` files in `docs` directory on demand.
+- The `docsify` script generates the content of `markdown` files in the `docs` directory on demand.
 - The homepage is generated from the [`_coverpage.md`](_coverpage.md).
 - the sidebar navigation is generated from [`_sidebar.md`](_sidebar.md).
 

@@ -23,7 +23,7 @@ $$\begin{align}   & 8730 - 0378 = 8352 \\\\
 
 Podemos considerar a rotina de Kaprekar para outras bases e quantidades de algarismos. Infelizmente, não é garantido que uma constante de Kaprekar exista em todos os casos; ou a rotina pode terminar em um ciclo para alguns números de entrada ou a constante a qual a rotina chega pode diferir para números de entrada diversos. Podemos, no entanto, mostrar que, para 5 algarismos e uma base $b = 6t + 3 ≠ 9$, existe uma constante de Kaprekar.
 
-Ex: base 15: ${(10, 4, 14, 9, 5)}\_{15}$ base 21: $(14, 6, 20, 13, 7)_{21}$
+Ex: base 15: ${(10, 4, 14, 9, 5)}\_{15}$ base 21: $(14, 6, 20, 13, 7)\_{21}$
 
 Defina $C_b$ como a constante de Kaprekar na base $b$ para 5 algarismos. Defina a função $sb(i)$ como:
 

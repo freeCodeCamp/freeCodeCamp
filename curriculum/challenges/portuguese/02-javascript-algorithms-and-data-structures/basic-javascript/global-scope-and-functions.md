@@ -17,7 +17,7 @@ Variáveis que são declaradas sem a palavra-chave `var` são automaticamente cr
 
 Usando `let` ou `const`, declare uma variável global chamada `myGlobal` fora de qualquer função. Inicialize-a com o valor de `10`.
 
-Dentro da função `fun1`, atribua `5` para `oopsGlobal` ***sem*** usar as palavras-chave `let` ou `const`.
+Dentro da função `fun1`, atribua `5` para `oopsGlobal` ***sem*** usar as palavras-chave `var`, `let` ou `const`.
 
 # --hints--
 

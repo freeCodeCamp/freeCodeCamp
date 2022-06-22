@@ -73,7 +73,9 @@
     "click-start-course": "開始課程",
     "click-start-project": "啓動項目",
     "change-language": "Change Language",
-    "cancel-change": "Cancel Change"
+    "cancel-change": "Cancel Change",
+    "resume-project": "Resume project",
+    "start-project": "Start project"
   },
   "landing": {
     "big-heading-1": "免費學習編程",
@@ -321,7 +323,8 @@
     "sorry-keep-trying": "Sorry, your code does not pass. Keep trying.",
     "sorry-getting-there": "Sorry, your code does not pass. You're getting there.",
     "sorry-hang-in-there": "Sorry, your code does not pass. Hang in there.",
-    "sorry-dont-giveup": "Sorry, your code does not pass. Don't give up."
+    "sorry-dont-giveup": "Sorry, your code does not pass. Don't give up.",
+    "challenges-completed": "{{completedCount}} of {{totalChallenges}} challenges completed"
   },
   "donate": {
     "title": "支持我們的非營利組織",
@@ -482,7 +485,10 @@
     "primary-nav": "主要的",
     "breadcrumb-nav": "麪包屑導航",
     "submit": "Use Ctrl + Enter to submit.",
-    "running-tests": "Running tests"
+    "running-tests": "Running tests",
+    "step": "Step",
+    "steps": "Steps",
+    "steps-for": "Steps for {{blockTitle}}"
   },
   "flash": {
     "honest-first": "申請認證之前，你必須先接受我們的《學術誠信條例》",

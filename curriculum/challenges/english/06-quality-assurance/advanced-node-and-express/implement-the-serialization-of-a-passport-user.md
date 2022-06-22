@@ -40,7 +40,7 @@ myDB(async client => {
 
 Be sure to uncomment the `myDataBase` code in `deserializeUser`, and edit your `done(null, null)` to include the `doc`.
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href="" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/175f2f585a2d8034044c7e8857d5add7).
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href="https://gist.github.com/camperbot/175f2f585a2d8034044c7e8857d5add7" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/175f2f585a2d8034044c7e8857d5add7</a>.
 
 # --hints--
 

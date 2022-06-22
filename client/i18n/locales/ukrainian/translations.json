@@ -73,7 +73,9 @@
     "click-start-course": "Start the course",
     "click-start-project": "Start the project",
     "change-language": "Change Language",
-    "cancel-change": "Cancel Change"
+    "cancel-change": "Cancel Change",
+    "resume-project": "Resume project",
+    "start-project": "Start project"
   },
   "landing": {
     "big-heading-1": "Вчіться програмувати — це безкоштовно.",
@@ -321,7 +323,8 @@
     "sorry-keep-trying": "Sorry, your code does not pass. Keep trying.",
     "sorry-getting-there": "Sorry, your code does not pass. You're getting there.",
     "sorry-hang-in-there": "Sorry, your code does not pass. Hang in there.",
-    "sorry-dont-giveup": "Sorry, your code does not pass. Don't give up."
+    "sorry-dont-giveup": "Sorry, your code does not pass. Don't give up.",
+    "challenges-completed": "{{completedCount}} of {{totalChallenges}} challenges completed"
   },
   "donate": {
     "title": "Підтримати нашу некомерційну організацію",
@@ -482,7 +485,10 @@
     "primary-nav": "primary",
     "breadcrumb-nav": "breadcrumb",
     "submit": "Use Ctrl + Enter to submit.",
-    "running-tests": "Running tests"
+    "running-tests": "Running tests",
+    "step": "Step",
+    "steps": "Steps",
+    "steps-for": "Steps for {{blockTitle}}"
   },
   "flash": {
     "honest-first": "Щоб отримати сертифікат, ви повинні спочатку прийняти нашу політику академічної доброчесності",

@@ -1,6 +1,6 @@
 # Como trabalhar na documentação
 
-## Trabalhe no conteúdo da documentação
+## Trabalhar no conteúdo da documentação
 
 Para trabalhar nas diretrizes de contribuição, você pode editar ou adicionar arquivos no diretório `docs` [disponível aqui](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/docs). Ao fazermos o merge de suas alterações, elas são disponibilizadas automaticamente no site da documentação.
 
