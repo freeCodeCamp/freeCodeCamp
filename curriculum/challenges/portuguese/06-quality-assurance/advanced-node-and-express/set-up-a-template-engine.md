@@ -27,7 +27,8 @@ A página não será carregada até que você renderize corretamente o arquivo d
 Altere o argumento da declaração `res.render()` na rota `/` para que seja o caminho de arquivo para o diretório `views/pug`. O caminho pode ser um caminho relativo (relativo às visualizações) ou um caminho absoluto e não necessita de uma extensão de arquivo.
 
 Se tudo correu como planejado, sua página inicial vai parar de mostrar a mensagem "`Pug template is not defined.`" e agora exibirá uma mensagem indicando que você renderizou com sucesso o modelo do Pug!
-Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto concluído até este momento em <a href="" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791).
+
+Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto concluído até este momento em <a href="https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791</a>.
 
 # --hints--
 

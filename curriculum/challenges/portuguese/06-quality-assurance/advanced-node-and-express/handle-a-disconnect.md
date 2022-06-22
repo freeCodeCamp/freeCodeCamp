@@ -21,7 +21,8 @@ socket.on('disconnect', () => {
 Para garantir que os clients tenham a contagem atualizada dos usuários atuais continuamente, você deve diminuir os currentUsers em 1 quando a desconexão acontece, emitindo o evento 'user count' com a contagem atualizada!
 
 **Observação:** assim como ocorre com `'disconnect'`, todos os outros eventos que um socket pode emitir para o servidor devem ser tratados dentro do listener que estiver conectando, onde 'socket' está definido.
-Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto concluído até este momento em <a href="" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/ab1007b76069884fb45b215d3c4496fa).
+
+Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto concluído até este momento em <a href="https://gist.github.com/camperbot/ab1007b76069884fb45b215d3c4496fa" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/ab1007b76069884fb45b215d3c4496fa</a>.
 
 # --hints--
 
