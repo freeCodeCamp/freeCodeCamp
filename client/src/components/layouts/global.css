@@ -239,7 +239,6 @@ input[type='submit'],
   font-family: 'Roboto';
 
   padding: 3px 7px;
-  text-transform: lowercase;
 }
 
 .btn-tab-primary--outline {

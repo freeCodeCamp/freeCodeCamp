@@ -23,7 +23,6 @@ function ChallengeDescription(challenge: Challenge): JSX.Element {
           <PrismFormatted text={challenge.instructions} />
         </>
       )}
-      <hr />
     </div>
   );
 }

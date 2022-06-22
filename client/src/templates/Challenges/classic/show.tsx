@@ -341,17 +341,6 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
             instructions={instructions}
           />
         }
-        challengeTitle={
-          <ChallengeTitle
-            block={block}
-            isCompleted={this.props.isChallengeCompleted}
-            showBreadCrumbs={false}
-            superBlock={superBlock}
-            translationPending={translationPending}
-          >
-            {title}
-          </ChallengeTitle>
-        }
         guideUrl={getGuideUrl({ forumTopicId, title })}
         instructionsPanelRef={this.instructionsPanelRef}
         showToolPanel={showToolPanel}

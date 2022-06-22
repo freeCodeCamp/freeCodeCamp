@@ -18,4 +18,6 @@
 #instructions ol,
 #notes ol {
   font-family: 'Roboto', sans-serif;
+  font-size: 0.889rem;
+  line-height: 1.334rem;
 }
