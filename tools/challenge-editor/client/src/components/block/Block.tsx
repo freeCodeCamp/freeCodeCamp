@@ -23,6 +23,18 @@ const Block = () => {
           console.log(superblocks);
           const items = [];
           for (let i = 0; i < superblocks.length; i++) {
+            superblocks[i].previousChallengeLink =
+              i > 0
+                ? `/${params.superblock}/${params.block}/${
+                    superblocks[i - 1].path
+                  }`
+                : '';
+            superblocks[i].nextChallengeLink =
+              i < superblocks.length - 1
+                ? `/${params.superblock}/${params.block}/${
+                    superblocks[i + 1].path
+                  }`
+                : '';
             items.push(superblocks[i]);
           }
           setLoading(false);
