@@ -324,7 +324,7 @@ async (getUserInput) => {
 };
 ```
 
-Se o `value` enviado à `/api/check` não for um número entre 1 e 9, os valores retornados serão `{ error: 'Invalid value' }`
+Se o `value` enviado à `/api/check` não for um número entre 1 e 9, o valor retornado será `{ error: 'Invalid value' }`
 
 ```js
 async (getUserInput) => {
@@ -369,7 +369,7 @@ async (getUserInput) => {
 };
 ```
 
-Todos os 14 testes funcionais foram concluídos e deram aprovação. Veja `/tests/2_functional-tests.js` para o comportamento esperado para o qual você deve escrever os testes.
+Todos os 14 testes funcionais foram concluídos e deram aprovação. Veja `/tests/2_functional-tests.js` para a funcionalidade esperada para o qual você deve escrever os testes.
 
 ```js
 async (getUserInput) => {

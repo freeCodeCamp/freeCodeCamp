@@ -23,7 +23,8 @@ Além disso, em `profile.pug`, adicione um link referindo-se à rota `/logout`, 
 ```pug
 a(href='/logout') Logout
 ```
-Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto concluído até este momento em <a href="" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/136b3ad611cc80b41cab6f74bb460f6a).
+
+Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto concluído até este momento em <a href="https://gist.github.com/camperbot/136b3ad611cc80b41cab6f74bb460f6a" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/136b3ad611cc80b41cab6f74bb460f6a</a>.
 
 # --hints--
 

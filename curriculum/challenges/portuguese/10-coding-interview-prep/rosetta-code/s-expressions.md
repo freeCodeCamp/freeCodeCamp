@@ -8,7 +8,7 @@ dashedName: s-expressions
 
 # --description--
 
-[Expressões S](https://en.wikipedia.org/wiki/S-Expression "wp: S-Expression") são uma maneira conveniente de analisar e armazenar dados.
+<a href="https://rosettacode.org/wiki/S-expressions" target="_blank" rel="noopener noreferrer nofollow">Expressões S</a> apresentam dados como uma estrutura de árvore binária, tornando possível a referência de parte dos dados facilmente. Isto também torna conveniente analisar e armazenar dados.
 
 # --instructions--
 
@@ -32,7 +32,7 @@ O leitor deve poder ler a entrada a seguir
 (data (!@# (4.5) "(more" "data)")))
 </pre>
 
-e transformá-la em uma estrutura de dados nativa. (veja as implementações em [Pike](https://rosettacode.org/wiki/S-Expressions#Pike "\#Pike"), [Python](https://rosettacode.org/wiki/S-Expressions#Python "\#Python") e [Ruby](https://rosettacode.org/wiki/S-Expressions#Ruby "\#Ruby") para obter exemplos de estruturas de dados nativas.)
+e transformá-la em uma estrutura de dados nativa.
 
 # --hints--
 
