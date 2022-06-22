@@ -14,7 +14,7 @@
     "typescript": "4.7.4"
   },
   "scripts": {
-    "start": "PORT=3300 react-scripts start",
+    "start": "cross-env PORT=3300 react-scripts start",
     "lint": "eslint src",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "@types/codemirror": "5.60.5",
+    "cross-env": "^7.0.3",
     "eslint-plugin-react-hooks": "4.6.0"
   }
 }
