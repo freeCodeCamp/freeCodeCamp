@@ -20,8 +20,13 @@ const Block = () => {
       .then(res => res.json() as Promise<ChallengeData[]>)
       .then(
         superblocks => {
+          console.log(superblocks);
+          const items = [];
+          for (let i = 0; i < superblocks.length; i++) {
+            items.push(superblocks[i]);
+          }
           setLoading(false);
-          setItems(superblocks);
+          setItems(items);
         },
         (error: Error) => {
           setLoading(false);
