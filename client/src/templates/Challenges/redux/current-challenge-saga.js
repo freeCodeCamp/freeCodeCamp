@@ -2,9 +2,8 @@ import { put, takeEvery } from 'redux-saga/effects';
 import store from 'store';
 
 import { randomCompliment } from '../../../utils/get-words';
+import { CURRENT_CHALLENGE_KEY } from './action-types';
 import { updateSuccessMessage } from './';
-
-export const CURRENT_CHALLENGE_KEY = 'currentChallengeId';
 
 export function* currentChallengeSaga({ payload: id }) {
   yield store.set(CURRENT_CHALLENGE_KEY, id);

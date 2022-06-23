@@ -1,5 +1,7 @@
 import { createTypes } from '../../../utils/create-types';
 
+export const CURRENT_CHALLENGE_KEY = 'currentChallengeId';
+
 export const ns = 'challenge';
 
 export const actionTypes = createTypes(

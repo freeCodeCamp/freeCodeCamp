@@ -3,8 +3,7 @@ import { createAction, handleActions } from 'redux-actions';
 import store from 'store';
 
 import { SuperBlocks } from '../../../config/certification-settings';
-import { actionTypes as challengeTypes } from '../templates/Challenges/redux/action-types';
-import { CURRENT_CHALLENGE_KEY } from '../templates/Challenges/redux/current-challenge-saga';
+import { actionTypes as challengeTypes, CURRENT_CHALLENGE_KEY } from '../templates/Challenges/redux/action-types';
 import { emailToABVariant } from '../utils/A-B-tester';
 import { createAcceptTermsSaga } from './accept-terms-saga';
 import { actionTypes } from './action-types';
