@@ -87,38 +87,56 @@ export function calcLongestStreak(cals, tz = 'UTC') {
   return dayCount(longest, tz);
 }
 
+// BEGIN TOPCODER:
+// we need to use the external ID to get the user
+// instead of the internal ID
+export function getUserByExternalId(
+  externalId,
+  User = loopback.getModelByType('User')
+) {
+  return new Promise((resolve, reject) =>
+    User.find({ where: { externalId } }, (err, results) =>
+      handleUserResult(resolve, reject, err, results[0])
+    )
+  );
+}
+
 export function getUserById(id, User = loopback.getModelByType('User')) {
   return new Promise((resolve, reject) =>
     User.findById(id, (err, instance) => {
-      if (err || isEmpty(instance)) {
-        return reject(err || 'No user instance found');
-      }
-
-      let completedChallengeCount = 0;
-      let completedProjectCount = 0;
-      if ('completedChallenges' in instance) {
-        completedChallengeCount = instance.completedChallenges.length;
-        instance.completedChallenges.forEach(item => {
-          if (
-            'challengeType' in item &&
-            (item.challengeType === 3 || item.challengeType === 4)
-          ) {
-            completedProjectCount++;
-          }
-        });
-      }
-
-      instance.completedChallengeCount = completedChallengeCount;
-      instance.completedProjectCount = completedProjectCount;
-      instance.completedCertCount = getCompletedCertCount(instance);
-      instance.completedLegacyCertCount = getLegacyCertCount(instance);
-      instance.points =
-        (instance.progressTimestamps && instance.progressTimestamps.length) ||
-        1;
-      return resolve(instance);
+      return handleUserResult(resolve, reject, err, instance);
     })
   );
 }
+
+function handleUserResult(resolve, reject, err, instance) {
+  if (err || isEmpty(instance)) {
+    return reject(err || 'No user instance found');
+  }
+
+  let completedChallengeCount = 0;
+  let completedProjectCount = 0;
+  if ('completedChallenges' in instance) {
+    completedChallengeCount = instance.completedChallenges.length;
+    instance.completedChallenges.forEach(item => {
+      if (
+        'challengeType' in item &&
+        (item.challengeType === 3 || item.challengeType === 4)
+      ) {
+        completedProjectCount++;
+      }
+    });
+  }
+
+  instance.completedChallengeCount = completedChallengeCount;
+  instance.completedProjectCount = completedProjectCount;
+  instance.completedCertCount = getCompletedCertCount(instance);
+  instance.completedLegacyCertCount = getLegacyCertCount(instance);
+  instance.points =
+    (instance.progressTimestamps && instance.progressTimestamps.length) || 1;
+  return resolve(instance);
+}
+// END TOPCODER
 
 function getCompletedCertCount(user) {
   return [

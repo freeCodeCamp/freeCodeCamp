@@ -9,7 +9,12 @@ import {
   authHeaderNS
 } from '../utils/getSetAccessToken';
 import { getRedirectParams } from '../utils/redirection';
-import { getUserById as _getUserById } from '../utils/user-stats';
+// TOPCODER: we need to use the external ID (i.e. Auth0 ID)
+// to link w/the TC account
+import {
+  /* getUserById as _getUserById */
+  getUserByExternalId as _getUserByExternalId
+} from '../utils/user-stats';
 
 const authRE = /^\/auth\//;
 const confirmEmailRE = /^\/confirm-email$/;
@@ -51,7 +56,10 @@ export function isAllowedPath(path, pathsAllowedREs = _pathsAllowedREs) {
 
 export default function getRequestAuthorisation({
   jwtSecret = _jwtSecret,
-  getUserById = _getUserById
+  // TOPCODER: we need to use the external ID
+  // (i.e. Auth0 ID) to link w/the TC user
+  getUserByExternalId = _getUserByExternalId
+  // getUserById = _getUserById
 } = {}) {
   return function requestAuthorisation(req, res, next) {
     const { origin } = getRedirectParams(req);
@@ -90,16 +98,22 @@ export default function getRequestAuthorisation({
       }
       res.set(authHeaderNS, jwt);
       if (isEmpty(req.user)) {
-        const { userId } = accessToken;
-        return getUserById(userId)
-          .then(user => {
-            if (user) {
-              req.user = user;
-            }
-            return;
-          })
-          .then(next)
-          .catch(next);
+        // TOPCODER: the accessToken.sub value is the Auth0 ID
+        // (e.g. auth0|12345) that we use to link the
+        // TC user to the local FCC user.
+        return (
+          getUserByExternalId(accessToken.sub)
+            // const { userId } = accessToken;
+            // return getUserById(userId)
+            .then(user => {
+              if (user) {
+                req.user = user;
+              }
+              return;
+            })
+            .then(next)
+            .catch(next)
+        );
       } else {
         return Promise.resolve(next());
       }

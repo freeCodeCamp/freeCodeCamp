@@ -145,7 +145,12 @@ function populateRequiredFields(user) {
   }
 
   if (!user.externalId) {
-    user.externalId = uuid();
+    // TOPCODER: the user.sub value is the Auth0 ID
+    // (e.g. auth0|12345) that we use to link the
+    // TC user to the local FCC user.
+    // TODO: get this working for new users PROD-2289
+    user.externalId = user.sub;
+    // user.externalId = uuid();
   }
 
   if (!user.unsubscribeId) {

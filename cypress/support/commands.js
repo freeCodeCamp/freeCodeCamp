@@ -39,7 +39,10 @@ Cypress.Commands.add('login', () => {
 
 Cypress.Commands.add('preserveSession', () => {
   Cypress.Cookies.preserveOnce(
-    'jwt_access_token',
+    // TOPCODER: we need to use the name of the cookie
+    // created by the TC Auth0 implementation
+    'tcjwt',
+    // 'jwt_access_token',
     'csrf_token',
     '_csrf',
     'connect.sid'
