@@ -28,7 +28,7 @@ Change the argument of the `res.render()` declaration in the `/` route to be the
 
 If all went as planned, your app home page will stop showing the message "`Pug template is not defined.`" and will now display a message indicating you've successfully rendered the Pug template!
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href="" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791).
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href="https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791</a>.
 
 # --hints--
 

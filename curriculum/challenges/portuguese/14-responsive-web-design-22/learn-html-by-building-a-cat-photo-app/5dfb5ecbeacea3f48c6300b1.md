@@ -16,7 +16,9 @@ Use elementos de item de lista (`li`) para criar itens em uma lista. Aqui está 
 </ul>
 ```
 
-Aninhe três itens de lista dentro do elemento `ul` para exibir três coisas que os gatos adoram: `cat nip`, `laser pointers` e `lasagna`.
+Dentro do elemento `ul`, aninhe três itens de lista para exibir três coisas que os gatos amam:
+
+`cat nip` `laser pointers` `lasagna`
 
 # --hints--
 

@@ -27,6 +27,10 @@ import {
 import { certMap } from '../../resources/cert-and-project-map';
 import { completedChallengesSelector } from '..';
 import {
+  certTypes,
+  certTypeIdMap
+} from '../../../../config/certification-settings';
+import {
   updateUserFlagComplete,
   updateUserFlagError,
   validateUsernameComplete,
@@ -169,24 +173,28 @@ function* validateUsernameSaga({ payload }) {
 
 function* verifyCertificationSaga({ payload }) {
   // check redux if can claim cert before calling backend
-  const completedChallenges = yield select(completedChallengesSelector);
   const currentCert = certMap.find(cert => cert.certSlug === payload);
-  const currentCertIds = currentCert?.projects.map(project => project.id);
+  const completedChallenges = yield select(completedChallengesSelector);
   const certTitle = currentCert?.title || payload;
 
-  const flash = {
-    type: 'info',
-    message: 'flash.incomplete-steps',
-    variables: { name: certTitle }
-  };
+  // (20/06/2022) Full Stack client-side validation is already done here:
+  // https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/src/components/settings/certification.js#L309
+  if (currentCert?.id !== certTypeIdMap[certTypes.fullStack]) {
+    const flash = {
+      type: 'info',
+      message: 'flash.incomplete-steps',
+      variables: { name: certTitle }
+    };
 
-  const canClaimCert = currentCertIds.every(id =>
-    completedChallenges.find(challenge => challenge.id === id)
-  );
+    const currentCertIds = currentCert?.projects?.map(project => project.id);
+    const canClaimCert = currentCertIds.every(id =>
+      completedChallenges.find(challenge => challenge.id === id)
+    );
 
-  if (!canClaimCert) {
-    yield put(createFlashMessage(flash));
-    return;
+    if (!canClaimCert) {
+      yield put(createFlashMessage(flash));
+      return;
+    }
   }
 
   // redux says challenges are complete, call back end

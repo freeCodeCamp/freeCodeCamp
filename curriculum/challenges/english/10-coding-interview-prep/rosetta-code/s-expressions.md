@@ -8,7 +8,7 @@ dashedName: s-expressions
 
 # --description--
 
-<a href="https://en.wikipedia.org/wiki/S-Expression " target="_blank" rel="noopener noreferrer nofollow">S-Expressions</a> are one convenient way to parse and store data.
+<a href="https://rosettacode.org/wiki/S-expressions " target="_blank" rel="noopener noreferrer nofollow">S-Expressions</a> are one convenient way to parse and store data.
 
 # --instructions--
 
@@ -32,7 +32,7 @@ The reader should be able to read the following input
 (data (!@# (4.5) "(more" "data)")))
 </pre>
 
-and turn it into a native data structure. (See the <a href="https://rosettacode.org/wiki/S-Expressions#Pike " target="_blank" rel="noopener noreferrer nofollow">Pike</a>, <a href="https://rosettacode.org/wiki/S-Expressions#Python " target="_blank" rel="noopener noreferrer nofollow">Python</a> and <a href="https://rosettacode.org/wiki/S-Expressions#Ruby " target="_blank" rel="noopener noreferrer nofollow">Ruby</a> implementations for examples of native data structures.)
+and turn it into a native data structure.
 
 # --hints--
 

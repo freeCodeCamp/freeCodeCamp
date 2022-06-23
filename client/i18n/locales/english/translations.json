@@ -292,8 +292,7 @@
     "scrimba-tip": "Tip: If the mini-browser is covering the code, click and drag to move it. Also, feel free to stop and edit the code in the video at any time.",
     "chal-preview": "Challenge Preview",
     "cert-map-estimates": {
-      "certs": "{{title}} Certification (300\u00A0hours)",
-      "coding-prep": "{{title}} (Thousands of hours of challenges)"
+      "certs": "{{title}} Certification"
     },
     "editor-tabs": {
       "info": "Info",
