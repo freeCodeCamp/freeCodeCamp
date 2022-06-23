@@ -14,7 +14,7 @@ A list is a unordered set of values that may contain duplicates. Here is an exam
 const list = [['AA',  'BB', 'CC'], ['AA', 'ACB', 'AA'], [], ['AA']];
 ````
 
-Given a <a href="https://rosettacode.org/wiki/Compare_a_list_of_strings" target="_blank" rel="noopener noreferrer nofollow">list</a> of arbitrarily many strings, implement a function for each of the following conditions:
+Given a list of arbitrarily many strings, implement a function for each of the following conditions:
 
 <ul>
   <li>test if they are all lexically equal</li>
