@@ -1,8 +1,21 @@
 import fs from 'fs';
 import path from 'path';
 import glob from 'glob';
-import { Meta } from '../create-project';
 import { getProjectName, getProjectPath } from './get-project-info';
+
+export type Meta = {
+  name: string;
+  isUpcomingChange: boolean;
+  dashedName: string;
+  order: number;
+  time: string;
+  template: string;
+  required: string[];
+  superBlock: string;
+  superOrder: number;
+  isBeta: boolean;
+  challengeOrder: string[][];
+};
 
 function getMetaData(): Meta {
   const metaData = fs.readFileSync(getProjectMetaPath(), 'utf8');
