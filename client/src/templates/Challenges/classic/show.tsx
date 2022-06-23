@@ -25,7 +25,6 @@ import { isContained } from '../../../utils/is-contained';
 import ChallengeDescription from '../components/Challenge-Description';
 import Hotkeys from '../components/Hotkeys';
 import ResetModal from '../components/ResetModal';
-import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
 import Notes from '../components/notes';
@@ -321,15 +320,8 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   }
 
   renderInstructionsPanel({ showToolPanel }: { showToolPanel: boolean }) {
-    const {
-      block,
-      description,
-      forumTopicId,
-      instructions,
-      superBlock,
-      title,
-      translationPending
-    } = this.getChallenge();
+    const { block, description, forumTopicId, instructions, title } =
+      this.getChallenge();
 
     return (
       <SidePanel
@@ -340,17 +332,6 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
             description={description}
             instructions={instructions}
           />
-        }
-        challengeTitle={
-          <ChallengeTitle
-            block={block}
-            isCompleted={this.props.isChallengeCompleted}
-            showBreadCrumbs={false}
-            superBlock={superBlock}
-            translationPending={translationPending}
-          >
-            {title}
-          </ChallengeTitle>
         }
         guideUrl={getGuideUrl({ forumTopicId, title })}
         instructionsPanelRef={this.instructionsPanelRef}

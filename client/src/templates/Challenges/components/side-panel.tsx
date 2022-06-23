@@ -22,7 +22,7 @@ const mapStateToProps = createSelector(
 interface SidePanelProps {
   block: string;
   challengeDescription: ReactElement;
-  challengeTitle: ReactElement;
+  challengeTitle?: ReactElement;
   guideUrl: string;
   instructionsPanelRef: React.RefObject<HTMLDivElement>;
   showToolPanel: boolean;
@@ -79,15 +79,23 @@ export function SidePanel({
     >
       {challengeTitle}
       {challengeDescription}
-      <TestSuite tests={tests} />
-      {showToolPanel && (
-        <ToolPanel
-          guideUrl={guideUrl}
-          videoUrl={videoUrl}
-          challengeIsCompleted={isChallengeComplete}
-        />
-      )}
-      <hr />
+      <div className='test-area-wrap'>
+        {showToolPanel && (
+          <ToolPanel
+            guideUrl={guideUrl}
+            videoUrl={videoUrl}
+            challengeIsCompleted={isChallengeComplete}
+          />
+        )}
+        <TestSuite tests={tests} />
+        {showToolPanel && (
+          <ToolPanel
+            guideUrl={guideUrl}
+            videoUrl={videoUrl}
+            challengeIsCompleted={isChallengeComplete}
+          />
+        )}
+      </div>
       <div className='all-rights-link'>
         <a
           href='https://www.freecodecamp.org/'

@@ -13,6 +13,26 @@
   overflow-y: auto;
 }
 
+.instructions-panel .challenge-instructions:first-child {
+  padding-top: 32px;
+}
+
+.instructions-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+.instructions-panel::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.instructions-panel::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.4);
+}
+
+.instructions-panel::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(100, 100, 100, 0.7);
+}
+
 .all-rights-link {
   text-align: right;
   margin-bottom: 32px;
@@ -31,4 +51,12 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
+}
+
+.test-area-wrap {
+  margin: 16px -16px;
+  padding: 32px 16px;
+
+  background: var(--tc-black-5);
+  border-radius: 4px;
 }
