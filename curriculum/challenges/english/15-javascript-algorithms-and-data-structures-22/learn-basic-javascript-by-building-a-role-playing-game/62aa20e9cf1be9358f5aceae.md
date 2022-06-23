@@ -1,8 +1,8 @@
 ---
 id: 62aa20e9cf1be9358f5aceae
-title: Step 147
+title: Step 148
 challengeType: 0
-dashedName: step-147
+dashedName: step-148
 ---
 
 # --description--
@@ -28,7 +28,6 @@ Test 1
     <meta charset="utf-8">
     <link rel="stylesheet" href="./styles.css">
     <title>RPG - Dragon Repeller</title>
-    <script src="./script.js"></script>
 </head>
 <body>
     <div id="game">
@@ -50,6 +49,7 @@ Test 1
             Welcome to Dragon Repeller. You must defeat the dragon that is preventing people from leaving the town. You are in the town square. Where do you want to go? Use the buttons above.
         </div>
     </div>
+    <script src="./script.js"></script>
 </body>
 </html>
 ```
