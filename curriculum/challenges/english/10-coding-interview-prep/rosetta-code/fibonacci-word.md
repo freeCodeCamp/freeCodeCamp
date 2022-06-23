@@ -8,7 +8,7 @@ dashedName: fibonacci-word
 
 # --description--
 
-The Fibonacci Word may be created in a manner analogous to the Fibonacci Sequence, but it focus on iterating concatenation, with terms different `n` each time.
+The Fibonacci Word may be created in a manner analogous to the Fibonacci Sequence, but it focus on iterating concatenation.
 
 <pre>Define  F_Word<sub>1</sub>  as  <strong>1</strong>
 Define  F_Word<sub>2</sub>  as  <strong>0</strong>
@@ -16,11 +16,11 @@ Form   F_Word<sub>3</sub>  as  F_Word<sub>2</sub>   concatenated with  F_Word<su
 Form   F_Word<sub>n</sub>  as  F_Word<sub>n-1</sub>  concatenated with  F_word<sub>Term-2</sub>
 </pre>
 
-Entropy calculation is required in this challenge, [Here is a rosetta challenge for calculating entropy](https://www.freecodecamp.org/learn/coding-interview-prep/rosetta-code/entropy)
+Entropy calculation is required in this challenge, [as shown in this Rosetta Code challenge](https://www.freecodecamp.org/learn/coding-interview-prep/rosetta-code/entropy)
 
 # --instructions--
 
-Write a function to return the Fibonacci Words up to `terms`. `terms` will be provided as a parameter `n` to the function. The function should return an array of objects. The objects should be of the form: `{ Term: 1, Length: 1, Entropy: 0, Word: '1' }`. `Entropy` is computed for the string `Word` and rounded to 8 decimal digits of accuracy.
+Write a function to return the first `n` Fibonacci Words. The number of terms is provided as a parameter to the function. The function should return an array of objects. The objects should be of the form: `{ Term: 1, Length: 1, Entropy: 0, Word: '1' }`. `Entropy` is computed for the string `Word` and rounded to 8 decimal digits of accuracy. Note that the indices of this sequence start at `1`.
 
 # --hints--
 
