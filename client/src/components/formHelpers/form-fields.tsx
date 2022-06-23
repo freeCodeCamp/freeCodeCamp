@@ -18,7 +18,15 @@ import {
   fCCValidator,
   httpValidator
 } from './form-validators';
-import { FormOptions } from './index';
+
+export type FormOptions = {
+  ignored?: string[];
+  isEditorLinkAllowed?: boolean;
+  isLocalLinkAllowed?: boolean;
+  required?: string[];
+  types?: { [key: string]: string };
+  placeholders?: { [key: string]: string };
+};
 
 type FormFieldsProps = {
   formFields: { name: string; label: string }[];
