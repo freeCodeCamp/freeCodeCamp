@@ -41,12 +41,16 @@ const reflexProps = {
 };
 
 const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
+  const [showInstructions, setShowInstructions] = useState(true);
   const [showNotes, setShowNotes] = useState(false);
   const [showPreview, setShowPreview] = useState(true);
   const [showConsole, setShowConsole] = useState(false);
 
   const togglePane = (pane: string): void => {
     switch (pane) {
+      case 'showInstructions':
+        setShowInstructions(!showInstructions);
+        break;
       case 'showPreview':
         setShowPreview(!showPreview);
         break;
@@ -113,6 +117,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
           isMultifileCertProject={isMultifileCertProject}
           showConsole={showConsole}
           showNotes={showNotes}
+          showInstructions={showInstructions}
           showPreview={showPreview}
           superBlock={superBlock}
           showBreadcrumbs={false}
@@ -121,7 +126,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
       )}
       <div className='editor-row'>
         <ReflexContainer orientation='vertical'>
-          {!projectBasedChallenge && (
+          {!projectBasedChallenge && showInstructions && (
             <ReflexElement flex={instructionPane.flex} {...resizeProps}>
               {instructions}
             </ReflexElement>

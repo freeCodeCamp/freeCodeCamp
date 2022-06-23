@@ -9,6 +9,7 @@ interface ActionRowProps {
   block: string;
   hasNotes: boolean;
   isMultifileCertProject: boolean;
+  showInstructions: boolean;
   showConsole: boolean;
   showNotes: boolean;
   showPreview: boolean;
@@ -27,6 +28,8 @@ const ActionRow = ({
   togglePane,
   showNotes,
   showPreview,
+  isMultifileCertProject,
+  showInstructions,
   showConsole,
   superBlock,
   showBreadcrumbs = true,
@@ -41,6 +44,17 @@ const ActionRow = ({
         </div>
       )}
       <div className='tabs-row'>
+        {isMultifileCertProject && (
+          <button
+            aria-expanded={showInstructions ? 'true' : 'false'}
+            className={
+              showInstructions ? 'btn-tab-primary' : 'btn-tab-primary--outline'
+            }
+            onClick={() => togglePane('showInstructions')}
+          >
+            Instructions
+          </button>
+        )}
         <EditorTabs />
         <button
           aria-expanded={showConsole ? 'true' : 'false'}

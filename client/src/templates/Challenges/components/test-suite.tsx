@@ -40,7 +40,6 @@ function TestSuite({ tests }: TestSuiteProps): JSX.Element {
 
   return (
     <div className='challenge-test-suite'>
-      <h4>LESSON TESTS</h4>
       {testSuiteTests.map(({ err, pass = false, text = '' }, index) => {
         const isInitial = !pass && !err;
         const statusIcon = pass && !err ? <GreenPass /> : <Fail />;

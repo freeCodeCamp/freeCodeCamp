@@ -2,7 +2,7 @@
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  margin: 15px 0;
+  margin: 6px 0 16px;
 }
 
 .challenge-test-suite code {
