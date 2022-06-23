@@ -7,7 +7,7 @@ on:
 jobs:
   welcome:
     runs-on: ubuntu-latest
-
+    if: ${{ github.actor != 'renovate[bot]' && github.actor != 'camperbot' }}
     steps:
       - name: Welcome New Contributors
         if: github.event.pull_request.merged == true
