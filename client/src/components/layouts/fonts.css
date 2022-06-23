@@ -41,8 +41,8 @@
 /* roboto mono */
 
 @font-face {
-  font-family: 'Roboto Mono';
-  src: url('../../../static/fonts/roboto-mono/RobotoMono-Regular.woff')
+  font-family: 'Ubuntu Mono';
+  src: url('../../../static/fonts/ubuntu-mono/UbuntuMono-Regular.woff')
     format('woff');
   font-weight: normal;
   font-style: normal;
@@ -50,8 +50,8 @@
 }
 
 @font-face {
-  font-family: 'Roboto Mono';
-  src: url('../../../static/fonts/roboto-mono/RobotoMono-Italic.woff')
+  font-family: 'Ubuntu Mono';
+  src: url('../../../static/fonts/ubuntu-mono/UbuntuMono-Italic.woff')
     format('woff');
   font-weight: normal;
   font-style: italic;
@@ -59,8 +59,8 @@
 }
 
 @font-face {
-  font-family: 'Roboto Mono';
-  src: url('../../../static/fonts/roboto-mono/RobotoMono-Bold.woff')
+  font-family: 'Ubuntu Mono';
+  src: url('../../../static/fonts/ubuntu-mono/UbuntuMono-Bold.woff')
     format('woff');
   font-weight: bold;
   font-style: normal;
