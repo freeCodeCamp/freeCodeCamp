@@ -8,9 +8,9 @@ import { createSelector } from 'reselect';
 import latoBoldURL from '../../../static/fonts/lato/Lato-Bold.woff';
 import latoLightURL from '../../../static/fonts/lato/Lato-Light.woff';
 import latoRegularURL from '../../../static/fonts/lato/Lato-Regular.woff';
-import robotoBoldURL from '../../../static/fonts/roboto-mono/RobotoMono-Bold.woff';
-import robotoItalicURL from '../../../static/fonts/roboto-mono/RobotoMono-Italic.woff';
-import robotoRegularURL from '../../../static/fonts/roboto-mono/RobotoMono-Regular.woff';
+import ubuntuBoldURL from '../../../static/fonts/ubuntu-mono/UbuntuMono-Bold.woff';
+import ubuntuItalicURL from '../../../static/fonts/ubuntu-mono/UbuntuMono-Italic.woff';
+import ubuntuRegularURL from '../../../static/fonts/ubuntu-mono/UbuntuMono-Regular.woff';
 import { isBrowser } from '../../../utils';
 import {
   fetchUser,
@@ -177,21 +177,21 @@ class DefaultLayout extends Component<DefaultLayoutProps> {
           <link
             as='font'
             crossOrigin='anonymous'
-            href={robotoRegularURL}
+            href={ubuntuRegularURL}
             rel='preload'
             type='font/woff'
           />
           <link
             as='font'
             crossOrigin='anonymous'
-            href={robotoBoldURL}
+            href={ubuntuBoldURL}
             rel='preload'
             type='font/woff'
           />
           <link
             as='font'
             crossOrigin='anonymous'
-            href={robotoItalicURL}
+            href={ubuntuItalicURL}
             rel='preload'
             type='font/woff'
           />
