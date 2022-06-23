@@ -8,7 +8,7 @@ dashedName: compare-a-list-of-strings
 
 # --description--
 
-A list is a type of data that shows values, you may notice its similarity to sequence from other Rosetta challenges, which is true. As they can have a repeating values, here is an example:
+A list is a unordered set of values that may contain duplicates. Here is an example:
 
 ```js
 const list = [['AA',  'BB', 'CC'], ['AA', 'ACB', 'AA'], [], ['AA']];

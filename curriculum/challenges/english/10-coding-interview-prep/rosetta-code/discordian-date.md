@@ -12,7 +12,7 @@ The Gregorian calendar is a solar calendar with 12 months of 28–31 days each. 
 
 The <a href="http://www.rosettacode.org/wiki/Discordian_date" target="_blank" rel="noopener noreferrer nofollow">Discordian calendar</a> is aligned with the Gregorian calendar and begins on January 1. Its week consists of five days, there are 73 weeks per year. Every fourth year in the Discordian calendar, an extra day is inserted between Chaos 59 and Chaos 60.
 
-here are the structure of Discordian calendar.
+The months, weekdays, and events in the Discordian calendar are given by:
 
 Seasons: `'Chaos', 'Discord', 'Confusion', 'Bureaucracy', 'The Aftermath'`.
   

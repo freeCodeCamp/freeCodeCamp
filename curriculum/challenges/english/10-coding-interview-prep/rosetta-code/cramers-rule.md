@@ -8,11 +8,13 @@ dashedName: cramers-rule
 
 # --description--
 
-A <a href="https://rosettacode.org/wiki/Cramer%27s_rule" target="_blank" rel="noopener noreferrer nofollow">Cramer's rule</a> make use of the value of determinants to determine the original values in a system. Here is an example of determinant:
+<a href="https://rosettacode.org/wiki/Cramer%27s_rule" target="_blank" rel="noopener noreferrer nofollow">Cramer's rule</a> is a formula for solving a system of linear equations by using the determinates of matrixes formed from subsets of the coefficients and right hand side values.
+
+The determinate of a matrix with 2 rows and two columns is given by:
 
 $\begin{aligned}|A|={\begin{vmatrix}a&b\\\c&d\end{vmatrix}}=ad-bc.\end{aligned}$
 
-Given a system of determinants:
+Given a system of linear equations:
 
 $\\left\\{\\begin{matrix}a_1x + b_1y + c_1z&= {\\color{red}d_1}\\\\a_2x + b_2y + c_2z&= {\\color{red}d_2}\\\\a_3x + b_3y + c_3z&= {\\color{red}d_3}\\end{matrix}\\right.$
 
