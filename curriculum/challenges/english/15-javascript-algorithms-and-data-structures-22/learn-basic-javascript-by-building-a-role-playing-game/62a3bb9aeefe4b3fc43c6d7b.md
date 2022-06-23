@@ -13,10 +13,16 @@ Change your `button1` variable to be declared with the `const` keyword.
 
 # --hints--
 
-Test 1
+Your `button1` variable should be declared with `const`.
 
 ```js
+assert.match(code, /const button1/);
+```
 
+Your `button1` variable should still have the value of your `#button1` element.
+
+```js
+assert.deepEqual(button1, document.querySelector("#button1"));
 ```
 
 # --seed--
