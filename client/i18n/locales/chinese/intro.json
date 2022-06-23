@@ -70,8 +70,8 @@
     "title": "(New) Responsive Web Design",
     "intro": [
       "在响应式网页设计的认证课程中，你将学习用于构建网页的语言： HTML（超文本标记语言）用于创建内容，CSS（级联样式表）用于样式设计。",
-      "首先，你将通过编写一个猫咪相册应用，学习 HTML 和 CSS 的基本知识。 然后，通过画企鹅来学习像 CSS 变量这样的现代技术，并通过编写网页表单来学习无障碍的最佳实践。",
-      "最后，你将通过编写一个 Twitter 卡片，学习如何使用 Flexbox 实现能够适应不同屏幕大小的网页 ，以及如何使用 CSS Grid 实现一个复杂的博客布局。"
+      "First, you'll build a cat photo app to learn the basics of HTML and CSS. Later, you'll learn modern techniques like CSS variables by building a penguin, and best practices for accessibility by building a quiz site.",
+      "Finally, you'll learn how to make webpages that respond to different screen sizes by building a photo gallery with Flexbox, and a magazine article layout with CSS Grid."
     ],
     "note": "注意：某些浏览器扩展程序（例如广告拦截器和深色模式）可能干扰测试。如果遇到问题，我们建议你在学习课程时禁用那些修改网页内容或布局的扩展程序。",
     "blocks": {
