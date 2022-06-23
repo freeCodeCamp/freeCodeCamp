@@ -1,5 +1,4 @@
 import normalizeUrl from 'normalize-url';
-import { FormOptions } from './form';
 import {
   localhostValidator,
   editorValidator,
@@ -10,11 +9,18 @@ import {
 
 export { default as BlockSaveButton } from './block-save-button';
 export { default as BlockSaveWrapper } from './block-save-wrapper';
-export { default as Form } from './form';
-export { default as FormFields } from './form-fields';
 
 const normalizeOptions = {
   stripWWW: false
+};
+
+export type FormOptions = {
+  ignored?: string[];
+  isEditorLinkAllowed?: boolean;
+  isLocalLinkAllowed?: boolean;
+  required?: string[];
+  types?: { [key: string]: string };
+  placeholders?: { [key: string]: string };
 };
 
 export type URLValues = {

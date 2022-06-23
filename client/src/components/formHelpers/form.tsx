@@ -1,23 +1,15 @@
 import React, { FormEvent } from 'react';
 import { Form } from 'react-final-form';
 
+import FormFields from './form-fields';
 import {
   URLValues,
   ValidatedValues,
-  FormFields,
   BlockSaveButton,
   BlockSaveWrapper,
-  formatUrlValues
-} from '../formHelpers/index';
-
-export type FormOptions = {
-  ignored?: string[];
-  isEditorLinkAllowed?: boolean;
-  isLocalLinkAllowed?: boolean;
-  required?: string[];
-  types?: { [key: string]: string };
-  placeholders?: { [key: string]: string };
-};
+  formatUrlValues,
+  FormOptions
+} from './index';
 
 export type FormProps = {
   buttonText?: string;
