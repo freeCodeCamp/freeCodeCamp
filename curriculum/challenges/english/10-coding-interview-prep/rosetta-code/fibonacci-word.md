@@ -13,7 +13,7 @@ The Fibonacci Word may be created in a manner analogous to the Fibonacci Sequenc
 <pre>Define  F_Word<sub>1</sub>  as  <strong>1</strong>
 Define  F_Word<sub>2</sub>  as  <strong>0</strong>
 Form   F_Word<sub>3</sub>  as  F_Word<sub>2</sub>   concatenated with  F_Word<sub>1</sub>   i.e.:  <strong>01</strong>
-Form   F_Word<sub>N</sub>  as  F_Word<sub>N-1</sub>  concatenated with  F_word<sub>N-2</sub>
+Form   F_Word<sub>n</sub>  as  F_Word<sub>n-1</sub>  concatenated with  F_word<sub>n-2</sub>
 </pre>
 
 Entropy calculation is required in this challenge, [as shown in this Rosetta Code challenge](https://www.freecodecamp.org/learn/coding-interview-prep/rosetta-code/entropy)
