@@ -27,8 +27,6 @@ If both sub-phrases are plausible then the original phrase can be said to be pla
 
 Write a function that accepts a word and check if the word follows this rule. The function should return true if the word follows the rule and false if it does not.
 
-here are the words tested: receive, science, imperceivable, inconceivable, insufficient, and omniscient
-
 # --hints--
 
 `IBeforeExceptC` should be a function.
