@@ -52,7 +52,7 @@ import {
 import { savedChallengesSelector } from '../../../redux';
 import { getGuideUrl } from '../utils';
 import MultifileEditor from './multifile-editor';
-import TcLayout from './tc-layout';
+import DesktopLayout from './desktop-layout';
 import MobileLayout from './mobile-layout';
 
 import './classic.css';
@@ -476,7 +476,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
             />
           </Media>
           <Media minWidth={MAX_MOBILE_WIDTH + 1}>
-            <TcLayout
+            <DesktopLayout
               block={block}
               challengeFiles={challengeFiles}
               challengeType={challengeType}
