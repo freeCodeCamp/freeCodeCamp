@@ -8,7 +8,7 @@ dashedName: comma-quibbling
 
 # --description--
 
-[Comma quibbling](https://rosettacode.org/wiki/Comma_quibbling) é uma tarefa originalmente definida por Eric Lippert em seu blog de 2009. Neste desafio, você criará uma `string` a partir de um `array`. Você precisa informar se o `array` não tem itens, se tem um único item ou vários itens nele.
+[Entre vírgulas](https://rosettacode.org/wiki/Comma_quibbling) é uma tarefa originalmente criada por Eric Lippert em seu blog de 2009. Neste desafio, você criará uma `string` a partir de um `array`. Você precisa informar se o `array` não tem itens, se tem um único item ou vários itens nele.
 
 # --instructions--
 

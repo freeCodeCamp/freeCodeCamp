@@ -70,8 +70,8 @@
     "title": "(Nuovo) Web Design Responsivo",
     "intro": [
       "In questo corso certificato di Web Design Responsivo imparerai i linguaggi che gli sviluppatori utilizzano per creare le pagine web. HTML (Hypertext Markup Language) per i contenuti e CSS (Cascading Style Sheets) per il design.",
-      "Innanzitutto, creerai un'app di foto per gatti per imparare le basi dell'HTML e dei CSS. Più avanti, imparerai le moderne tecniche come le variabili CSS disegnando un pinguino, e le migliori pratiche di accessibilità creando un form web.",
-      "Infine imparerai a fare pagine web adattabili a diverse misure di schermo creando una Twitter Card con Flexbox, e un complesso layout per un blog con una griglia CSS."
+      "First, you'll build a cat photo app to learn the basics of HTML and CSS. Later, you'll learn modern techniques like CSS variables by building a penguin, and best practices for accessibility by building a quiz site.",
+      "Finally, you'll learn how to make webpages that respond to different screen sizes by building a photo gallery with Flexbox, and a magazine article layout with CSS Grid."
     ],
     "note": "Nota: Alcune estensioni del browser, come ad esempio gli ad-blocker e le estensioni per la modalità scura, possono interferire con i test. In caso di problemi, ti consigliamo di disabilitare le estensioni che modificano il contenuto o il layout delle pagine durante il corso.",
     "blocks": {

@@ -70,8 +70,8 @@
     "title": "(New) Responsive Web Design",
     "intro": [
       "在響應式網頁設計的認證課程中，你將學習用於構建網頁的語言： HTML（超文本標記語言）用於創建內容，CSS（級聯樣式表）用於樣式設計。",
-      "首先，你將通過編寫一個貓咪相冊應用，學習 HTML 和 CSS 的基本知識。 然後，通過畫企鵝來學習像 CSS 變量這樣的現代技術，並通過編寫網頁表單來學習無障礙的最佳實踐。",
-      "最後，你將通過編寫一個 Twitter 卡片，學習如何使用 Flexbox 實現能夠適應不同屏幕大小的網頁 ，以及如何使用 CSS Grid 實現一個複雜的博客佈局。"
+      "First, you'll build a cat photo app to learn the basics of HTML and CSS. Later, you'll learn modern techniques like CSS variables by building a penguin, and best practices for accessibility by building a quiz site.",
+      "Finally, you'll learn how to make webpages that respond to different screen sizes by building a photo gallery with Flexbox, and a magazine article layout with CSS Grid."
     ],
     "note": "注意：某些瀏覽器擴展程序（例如廣告攔截器和深色模式）可能干擾測試。如果遇到問題，我們建議你在學習課程時禁用那些修改網頁內容或佈局的擴展程序。",
     "blocks": {
