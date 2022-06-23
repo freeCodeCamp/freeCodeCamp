@@ -1,9 +1,6 @@
 import { combineReducers } from 'redux';
 
-import {
-  reducer as flash,
-  FlashApp as flashNameSpace
-} from '../components/Flash/redux';
+import { reducer as flash } from '../components/Flash/redux';
 import {
   reducer as search,
   ns as searchNameSpace
@@ -17,6 +14,7 @@ import {
   ns as curriculumMapNameSpace
 } from '../templates/Introduction/redux';
 import { reducer as settings, ns as settingsNameSpace } from './settings';
+import { FlashApp as flashNameSpace } from './types';
 import { reducer as app, MainApp as appNameSpace } from './';
 
 export default combineReducers({

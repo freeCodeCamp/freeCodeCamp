@@ -1,5 +1,14 @@
-import { FlashApp, FlashMessageArg } from '../components/Flash/redux';
+import { FlashMessages } from '../components/Flash/redux/flash-messages';
 import { MainApp } from '.';
+
+// Shaun: Is this fine as in "rootReducer" you imported both reducer and namespace together from same file for easier updation
+export const FlashApp = 'flash';
+
+export type FlashMessageArg = {
+  type: string;
+  message: FlashMessages;
+  variables?: Record<string, unknown>;
+};
 
 export interface State {
   [FlashApp]: FlashState;
