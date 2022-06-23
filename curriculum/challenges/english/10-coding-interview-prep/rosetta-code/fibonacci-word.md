@@ -8,7 +8,7 @@ dashedName: fibonacci-word
 
 # --description--
 
-The Fibonacci Word may be created in a manner analogous to the Fibonacci Sequence, but it focus on iterating concatenation.
+The Fibonacci Word Sequence may be created in a manner analogous to the Fibonacci Sequence, but it focuses on iterating concatenation.
 
 <pre>Define  F_Word<sub>1</sub>  as  <strong>1</strong>
 Define  F_Word<sub>2</sub>  as  <strong>0</strong>
