@@ -502,7 +502,35 @@ button.nav-link[aria-disabled='true'] {
 .ais-SearchBox-submit:focus:not(:focus-visible) {
   outline: none;
 }
-
+#toggle-button-nav .menu-btn-text {
+  display: inline-block;
+}
+#toggle-button-nav .menu-btn-icon {
+  display: none;
+}
+.login-btn-text {
+  display: inline-block;
+}
+.login-btn-icon {
+  display: none;
+}
+.login-btn-icon svg {
+  min-height: 30px;
+}
+@media (max-width: 600px) {
+  #toggle-button-nav .menu-btn-text {
+    display: none;
+  }
+  #toggle-button-nav .menu-btn-icon {
+    display: inline-block;
+  }
+  .login-btn-text {
+    display: none;
+  }
+  .login-btn-icon {
+    display: inline-block;
+  }
+}
 @media (max-width: 980px) {
   .universal-nav-middle {
     flex: none;

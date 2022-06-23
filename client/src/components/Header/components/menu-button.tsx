@@ -47,7 +47,14 @@ const MenuButton = ({
       onClick={handleClick}
       ref={innerRef}
     >
-      {t('buttons.menu')}
+      <span className='menu-btn-icon'>
+        <svg viewBox='0 0 100 20' width='20' height='30' fill='white'>
+          <rect width='100' height='10' />
+          <rect y='20' width='100' height='10' />
+          <rect y='40' width='100' height='10' />
+        </svg>
+      </span>
+      <span className='menu-btn-text'>{t('buttons.menu')}</span>
     </button>
   );
 };
