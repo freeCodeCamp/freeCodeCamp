@@ -23,6 +23,7 @@ import {
 import postUpdate$ from '../utils/post-update';
 import { mapFilesToChallengeFiles } from '../../../utils/ajax';
 import { standardizeRequestBody } from '../../../utils/challenge-request-helpers';
+import { postChallengeCompletedEvent } from '../../../utils/iframe-message';
 import { actionTypes } from './action-types';
 import {
   projectFormValuesSelector,
@@ -32,7 +33,6 @@ import {
   challengeFilesSelector,
   updateSolutionFormValues
 } from './';
-import { postChallengeCompletedEvent } from '../../../utils/iframe-message';
 
 function postChallenge(update, username) {
   const saveChallenge = postUpdate$(update).pipe(
@@ -187,8 +187,8 @@ export default function completionEpic(action$, state$) {
         concat(closeChallengeModal),
         filter(Boolean),
         finalize(async () => {
-          postChallengeCompletedEvent({meta});
-          return navigate(await pathToNavigateTo())
+          postChallengeCompletedEvent({ meta });
+          return navigate(await pathToNavigateTo());
         })
       );
     })

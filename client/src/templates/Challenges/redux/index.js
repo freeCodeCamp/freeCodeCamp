@@ -53,7 +53,7 @@ export const epics = [
   createQuestionEpic,
   codeStorageEpic,
   ifrMessageChannelEpic,
-  incomingIframeMessagesEpic,
+  incomingIframeMessagesEpic
 ];
 
 export const sagas = [

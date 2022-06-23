@@ -1,20 +1,21 @@
-export enum POSTMSG_IFR_EVENTS {
-  challengeCompleted = 'fcc:challenge:completed',
-  challengeReady = 'fcc:challenge:ready',
-  incomingUrlUpdate = 'fcc:url:update',
+export enum PostMessageIframeEvents {
+  ChallengeCompleted = 'fcc:challenge:completed',
+  ChallengeReady = 'fcc:challenge:ready',
+  IncomingUrlUpdate = 'fcc:url:update'
 }
 
-export const postChallengeCompletedEvent = (data: any) => (
-  iframeMessage(POSTMSG_IFR_EVENTS.challengeCompleted, { ...data})
-);
+export const postChallengeCompletedEvent = (data: unknown) =>
+  iframeMessage(PostMessageIframeEvents.ChallengeCompleted, data);
 
-export const postChallengeReadyEvent = (data: any) => (
-  iframeMessage(POSTMSG_IFR_EVENTS.challengeReady, { ...data})
-);
+export const postChallengeReadyEvent = (data: unknown) =>
+  iframeMessage(PostMessageIframeEvents.ChallengeReady, data);
 
-export const iframeMessage = (eventName: string, data: any) => {
-  parent.postMessage(JSON.stringify({
-    event: eventName,
-    data,
-  }), '*');
-}
+export const iframeMessage = (eventName: string, data: unknown) => {
+  parent.postMessage(
+    JSON.stringify({
+      event: eventName,
+      data
+    }),
+    '*'
+  );
+};
