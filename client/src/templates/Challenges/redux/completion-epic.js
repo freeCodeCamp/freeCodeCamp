@@ -1,3 +1,4 @@
+import { navigate } from 'gatsby';
 import { omit } from 'lodash-es';
 import { ofType } from 'redux-observable';
 import { of, empty } from 'rxjs';
@@ -31,7 +32,7 @@ import {
   challengeFilesSelector,
   updateSolutionFormValues
 } from './';
-import { iframeMessage } from '../../../utils/iframe-message';
+import { postChallengeCompletedEvent } from '../../../utils/iframe-message';
 
 function postChallenge(update, username) {
   const saveChallenge = postUpdate$(update).pipe(
@@ -178,16 +179,26 @@ export default function completionEpic(action$, state$) {
         submitter = submitters[submitTypes[challengeType]];
       }
 
+      const pathToNavigateTo = async () => {
+        return await findPathToNavigateTo(nextChallengePath, superBlock);
+      };
+
       return submitter(type, state).pipe(
         concat(closeChallengeModal),
         filter(Boolean),
         finalize(async () => {
-          iframeMessage('fcc:challenge:ready', {
-            superBlock,
-            nextChallengePath,
-          })
+          postChallengeCompletedEvent({meta});
+          return navigate(await pathToNavigateTo())
         })
       );
     })
   );
+}
+
+async function findPathToNavigateTo(nextChallengePath, superBlock) {
+  if (nextChallengePath.includes(superBlock)) {
+    return nextChallengePath;
+  } else {
+    return `/learn/${superBlock}/#${superBlock}-projects`;
+  }
 }
