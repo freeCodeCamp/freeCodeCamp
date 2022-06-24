@@ -27,7 +27,7 @@ const links = {
 describe('Default Navigation Menu', () => {
   it('should render the expected nav items.', () => {
     cy.visit('/learn');
-    testLink('Sign in', 'sign-in-button');
+    testLink('Sign in', 'sign-in-button', true);
     cy.get(selectors['language-menu']).should('not.be.visible');
     cy.get(selectors['toggle-button']).should('be.visible').click();
     cy.get(selectors['navigation-list']).contains('Sign in to change theme.');
@@ -105,9 +105,18 @@ const testAllLanuges = () => {
   );
 };
 
-const testLink = (item, selector = 'navigation-list') =>
-  cy
+const testLink = (item, selector = 'navigation-list', checkParent) => {
+  if (checkParent) {
+    return cy
+      .get(selectors[selector])
+      .contains(item)
+      .parent()
+      .should('have.attr', 'href')
+      .and('contain', links[item.replaceAll(' ', '-').toLowerCase()]);
+  }
+  return cy
     .get(selectors[selector])
     .contains(item)
     .should('have.attr', 'href')
     .and('contain', links[item.replaceAll(' ', '-').toLowerCase()]);
+};
