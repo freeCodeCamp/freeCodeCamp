@@ -13,7 +13,7 @@ const main = async () => {
     console.log('please use the following format: type: description \n commit message: ' + commitMessage);
     process.exit(1);
   } else {
-    console.log('commit message ok');
+    console.log('commit message ok: ' + commitMessage);
   }
 };
 
