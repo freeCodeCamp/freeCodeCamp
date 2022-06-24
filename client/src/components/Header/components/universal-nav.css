@@ -516,6 +516,7 @@ button.nav-link[aria-disabled='true'] {
 }
 .login-btn-icon svg {
   min-height: 30px;
+  margin-top: 5px;
 }
 @media (max-width: 600px) {
   #toggle-button-nav .menu-btn-text {

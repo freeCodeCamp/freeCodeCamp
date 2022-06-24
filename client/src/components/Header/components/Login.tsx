@@ -1,4 +1,6 @@
 import { Button } from '@freecodecamp/react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import React, { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -37,10 +39,7 @@ const Login = ({
       href={href}
     >
       <span className='login-btn-icon'>
-        <svg viewBox='0 -100 500 500' xmlns='http://www.w3.org/2000/svg'>
-          <path d='M168,126v-96a20,20 0 01 34-12l177,177a20,20 0 01 0,27l-177,177a20,20 0 01-34-12v-96h-146a20,20 0 01-20-20v-125a20,20 0 01 21-20z' />
-          <path d='M290,10a10,10 0 01 10-10h100a100,100 0 01 100,100v215a100,100 0 01-100,100h-100a10,10 0 01-10-10v-20a10,10 0 01 10-10h105a55,55 0 00 55-55v-225a55,55 0 00-55-55h-105a10,10 0 01-10-10z' />
-        </svg>
+        <FontAwesomeIcon icon={faRightToBracket} />
       </span>
       <span className='login-btn-text'>{children || t('buttons.sign-in')}</span>
     </Button>
