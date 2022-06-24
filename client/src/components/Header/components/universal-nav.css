@@ -127,9 +127,14 @@
 .nav-link:not([aria-disabled='true']):hover {
   color: var(--theme-color) !important;
   text-decoration: none;
-  background-color: var(--gray-10) !important;
+  background-color: var(--gray-10);
   cursor: pointer;
   outline: none !important;
+}
+
+.nav-link-signout:not([aria-disabled='true']):hover,
+.nav-link-signout:not([aria-disabled='true']):focus {
+  background-color: hsl(16, 100%, 67%);
 }
 
 .nav-link-header,
