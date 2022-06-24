@@ -292,8 +292,7 @@
     "scrimba-tip": "Suggerimento: Se il mini-browser copre il codice, fare clic e trascinalo per spostarlo. Inoltre, sentiti libero di fermare e modificare il codice nel video in qualsiasi momento.",
     "chal-preview": "Anteprima della sfida",
     "cert-map-estimates": {
-      "certs": "Certificazione {{title}} (300 ore)",
-      "coding-prep": "{{title}} (migliaia di ore di sfide)"
+      "certs": "{{title}} Certification"
     },
     "editor-tabs": {
       "info": "Informazioni",

@@ -292,8 +292,7 @@
     "scrimba-tip": "注意：如果这个小浏览器窗口覆盖了代码，点击拖动它。同时，你可以随时暂停，在视频中编辑代码。",
     "chal-preview": "挑战预览",
     "cert-map-estimates": {
-      "certs": "{{title}} 认证 (300小时)",
-      "coding-prep": "{{title}}（数千小时的挑战）"
+      "certs": "{{title}} Certification"
     },
     "editor-tabs": {
       "info": "信息",
