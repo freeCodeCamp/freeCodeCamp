@@ -5,3 +5,6 @@ pre-commit:
     lint:
       glob: '*.{js,jsx,ts,tsx}'
       run: npx eslint {staged_files}
+    thank-you:
+      run: echo thank you for contributing to freeCodeCamp
+      
