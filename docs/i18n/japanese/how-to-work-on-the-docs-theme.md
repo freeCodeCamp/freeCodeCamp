@@ -1,8 +1,8 @@
 # ドキュメントに貢献する方法
 
-## ドキュメントの内容に貢献する
+## Work on the content of the docs
 
-コントリビューションガイドラインを編集するには、`docs` [ディレクトリ](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/docs) のファイルを編集または追加します。 変更がマージされると、ドキュメントサイトで自動的に公開されます。
+コントリビューションガイドラインを編集するには、`docs` [ディレクトリ](https://github.com/freeCodeCamp/freeCodeCamp/tree/main/docs) のファイルを編集または追加します。 When your changes are merged, they will be made available automatically at the documentation site.
 
 ### 内部リンクを作成する
 
@@ -25,19 +25,19 @@ Crowdin でドキュメントの翻訳を行う際には、`#target-section-head
 
 ## ドキュメントのテーマに貢献する
 
-> [!NOTE] ドキュメントサイトのコンテンツを変更する作業に必要な設定は何もありません。
+> [!NOTE] A quick reminder that you do not need to set up anything for working on the content for the documentation site.
 > 
 > コントリビューションガイドラインを編集するには、[ドキュメントの内容に貢献する](#ドキュメントの内容に貢献する) セクションを参照してください。
 
 ### ドキュメント Web サイトの構造
 
-サイトは [`docsify`](https://docsify.js.org) を使用して生成され、GitHub ページを使用して提供されています。
+The site is generated using [`docsify`](https://docsify.js.org) and served using GitHub pages.
 
 通常、サイトの設定を変更したり、サイトをローカルにビルドしたりする必要はありません。 参考までに、以下のように動作します。
 
 - このサイト向けのホームページのソースは、[`docs/index.html`](index.html) にあります。
 - `docsify` と GitHub Pages を使用して、このファイルを SPA として提供します。
-- `docsify` スクリプトは、`docs` ディレクトリ内の `markdown` ファイルの内容を必要に応じて生成します。
+- The `docsify` script generates the content of `markdown` files in the `docs` directory on demand.
 - ホームページは [`_coverpage.md`](_coverpage.md) から生成されます。
 - サイドバーナビゲーションは [`_sidebar.md`](_sidebar.md) から生成されます。
 

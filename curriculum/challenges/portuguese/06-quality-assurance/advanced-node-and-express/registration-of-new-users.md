@@ -46,7 +46,8 @@ app.route('/register')
     }
   );
 ```
-Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto concluído até este momento em <a href="" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/b230a5b3bbc89b1fa0ce32a2aa7b083e).
+
+Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto concluído até este momento em <a href="https://gist.github.com/camperbot/b230a5b3bbc89b1fa0ce32a2aa7b083e" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/b230a5b3bbc89b1fa0ce32a2aa7b083e</a>.
 
 **OBSERVAÇÃO:** a partir deste ponto, podem surgir problemas relacionados com o uso do navegador *picture-in-picture*. Se você estiver usando uma IDE on-line que oferece uma pré-visualização do aplicativo dentro do editor, é recomendável abrir esta pré-visualização em uma nova aba.
 

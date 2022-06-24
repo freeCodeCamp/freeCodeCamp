@@ -70,8 +70,8 @@
     "title": "(Nuevo) Diseño Web Responsivo",
     "intro": [
       "En esta certificación de Diseño Web Responsivo, aprenderás los lenguajes que los desarrolladores usan para construir páginas web: HTML (Lenguaje de Marcado de Hipertexto) para el contenido, y CSS (hojas de estilo en cascada) para el diseño.",
-      "Primero, crearás una aplicación de fotos de gatos para aprender los conceptos básicos de HTML y CSS. Más adelante, aprenderás técnicas modernas como variables CSS mediante la construcción de un pingüino, y las mejores prácticas para la accesibilidad mediante la construcción de un formulario web.",
-      "Finalmente, aprenderás cómo hacer páginas web que respondan a diferentes tamaños de pantalla construyendo una tarjeta de Twitter con Flexbox, y un diseño complejo de blog con CSS Grid."
+      "First, you'll build a cat photo app to learn the basics of HTML and CSS. Later, you'll learn modern techniques like CSS variables by building a penguin, and best practices for accessibility by building a quiz site.",
+      "Finally, you'll learn how to make webpages that respond to different screen sizes by building a photo gallery with Flexbox, and a magazine article layout with CSS Grid."
     ],
     "note": "Nota: Algunas extensiones del navegador, como bloqueadores de anuncios o extensiones de modo oscuro pueden interferir con las pruebas. Si tienes algun problema, te recomendamos deshabilitar las extensiones que modifiquen el contenido de la página, mientras tomas el curso.",
     "blocks": {

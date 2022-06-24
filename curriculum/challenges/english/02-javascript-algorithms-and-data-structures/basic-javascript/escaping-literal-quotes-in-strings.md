@@ -39,7 +39,7 @@ You should use two double quotes (`"`) and four escaped double quotes (`\"`).
 assert(code.match(/\\"/g).length === 4 && code.match(/[^\\]"/g).length === 2);
 ```
 
-Variable myStr should contain the string: `I am a "double quoted" string inside "double quotes".`
+Variable `myStr` should contain the string: `I am a "double quoted" string inside "double quotes".`
 
 ```js
 assert(/I am a "double quoted" string inside "double quotes(\."|"\.)$/.test(myStr));
