@@ -11,10 +11,75 @@ Add a second object to your `locations` array (remember to separate them with a 
 
 # --hints--
 
-Test 1
+Your `locations` array should have two values.
 
 ```js
+assert.lengthOf(locations, 2);
+```
 
+Both `locations` values should be objects.
+
+
+```js
+assert.isObject(locations[0]);
+assert.isObject(locations[1]);
+```
+
+Your second `locations` object should have a `name` property with the value of `store`.
+
+```js
+assert.equal(locations[1].name, "store");
+```
+
+Your second `locations` object should have a `button text` property which is an array.
+
+```js
+assert.isArray(locations[1]["button text"]);
+```
+
+Your `button text` property should have the string values `Buy health (10 gold)`, `Buy weapon (30 gold)`, and `Go to town square`.
+
+```js
+assert.equal(locations[1]["button text"][0], "Buy health (10 gold)");
+assert.equal(locations[1]["button text"][1], "Buy weapon (30 gold)");
+assert.equal(locations[1]["button text"][2], "Go to town square");
+```
+
+Your second `locations` object should have a `button functions` property which is an array.
+
+```js
+assert.isArray(locations[1]["button functions"]);
+```
+
+Your `button functions` property should have the function values `buyHealth`, `buyWeapon`, and `goTown`.
+
+```js
+assert.equal(locations[1]["button functions"][0], buyHealth);
+assert.equal(locations[1]["button functions"][1], buyWeapon);
+assert.equal(locations[1]["button functions"][2], goTown);
+```
+
+Your second `locations` object should have a `text` property which is a string.
+
+```js
+assert.isString(locations[1].text);
+```
+
+Your second `locations` object should have a `text` property with the value of `You enter the store.`.
+
+```js
+assert.equal(locations[1].text, "You enter the store.");
+```
+
+You should not modify the first `locations` object.
+
+```js
+assert.deepEqual(locations[0], {
+  name: "town square",
+  "button text": ["Go to store", "Go to cave", "Fight dragon"],
+  "button functions": [goStore, goCave, fightDragon],
+  text: "You are in the town square. You see a sign that says \"Store\"."
+});
 ```
 
 # --seed--
@@ -93,6 +158,7 @@ body {
 ```js
 let xp = 0;
 let health = 100;
+let gold = 50;
 let currentWeapon = 0;
 let fighting;
 let monsterHealth;
@@ -114,7 +180,7 @@ const locations = [
         name: "town square",
         "button text": ["Go to store", "Go to cave", "Fight dragon"],
         "button functions": [goStore, goCave, fightDragon],
-        text: "You are in the town square. You see a sign that says \"Store.\""
+        text: "You are in the town square. You see a sign that says \"Store\"."
     }
 ];
 --fcc-editable-region--
@@ -135,7 +201,7 @@ function goTown() {
   button1.onclick = goStore;
   button2.onclick = goCave;
   button3.onclick = fightDragon;
-  text.innerText = "You are in the town square. You see a sign that says \"Store.\"";
+  text.innerText = "You are in the town square. You see a sign that says \"Store\".";
 }
 
 function goStore() {

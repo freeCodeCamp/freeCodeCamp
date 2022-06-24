@@ -11,10 +11,40 @@ Create another property in your object called `button functions`. Give this prop
 
 # --hints--
 
-Test 1
+Your first `locations` object should have a `button functions` property.
 
 ```js
+assert.isDefined(locations[0]["button functions"]);
+```
 
+Your `button functions` property should be an array.
+
+```js
+assert.isArray(locations[0]["button functions"]);
+```
+
+Your `button functions` property should have three values in it.
+
+```js
+assert.lengthOf(locations[0]["button functions"], 3);
+```
+
+Your first `button functions` array value should be the function `goStore`.
+
+```js
+assert.equal(locations[0]["button functions"][0], goStore);
+```
+
+Your second `button functions` array value should be the function `goCave`.
+
+```js
+assert.equal(locations[0]["button functions"][1], goCave);
+```
+
+Your third `button functions` array value should be the function `fightDragon`.
+
+```js
+assert.equal(locations[0]["button functions"][2], fightDragon);
 ```
 
 # --seed--
@@ -93,6 +123,7 @@ body {
 ```js
 let xp = 0;
 let health = 100;
+let gold = 50;
 let currentWeapon = 0;
 let fighting;
 let monsterHealth;
@@ -133,7 +164,7 @@ function goTown() {
   button1.onclick = goStore;
   button2.onclick = goCave;
   button3.onclick = fightDragon;
-  text.innerText = "You are in the town square. You see a sign that says \"Store.\"";
+  text.innerText = "You are in the town square. You see a sign that says \"Store\".";
 }
 
 function goStore() {
