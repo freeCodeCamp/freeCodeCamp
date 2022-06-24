@@ -186,7 +186,9 @@ const LowerJaw = ({
 
   const renderContextualActionRow = () => {
     const isAttemptsLargerThanTest =
-      attemptsNumber && testsLength && (attemptsNumber >= testsLength || attemptsNumber > 3);
+      attemptsNumber &&
+      testsLength &&
+      (attemptsNumber >= testsLength || attemptsNumber > 3);
 
     if (isAttemptsLargerThanTest && !earliestAvailableCompletion)
       return (
