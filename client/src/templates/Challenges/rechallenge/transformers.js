@@ -206,7 +206,7 @@ async function transformScript(documentElement) {
 // This does the final transformations of the files needed to embed them into
 // HTML.
 export const embedFilesInHtml = async function (challengeFiles) {
-  const { indexHtml, scriptJs, indexJsx } =
+  const { indexHtml, stylesCss, scriptJs, indexJsx } =
     challengeFilesToObject(challengeFiles);
 
   const embedStylesAndScript = (documentElement, contentDocument) => {
@@ -217,6 +217,12 @@ export const embedFilesInHtml = async function (challengeFiles) {
       documentElement.querySelector('script[src="script.js"]') ??
       documentElement.querySelector('script[src="./script.js"]');
     if (link) {
+      const style = contentDocument.createElement('style');
+      style.classList.add('fcc-injected-styles');
+      style.innerHTML = stylesCss?.contents;
+
+      link.parentNode.appendChild(style);
+
       link.removeAttribute('href');
       link.dataset.href = 'styles.css';
     }
