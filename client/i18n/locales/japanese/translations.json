@@ -292,8 +292,7 @@
     "scrimba-tip": "ヒント: ミニブラウザがコードを覆ってしまう場合は、クリックとドラッグで移動させてください。また、いつでも遠慮なくビデオを停止させてコードを編集してください。",
     "chal-preview": "チャレンジのプレビュー",
     "cert-map-estimates": {
-      "certs": "{{title}} 認定講座 (300 時間)",
-      "coding-prep": "{{title}} (数千時間のチャレンジ)"
+      "certs": "{{title}} Certification"
     },
     "editor-tabs": {
       "info": "詳細",
