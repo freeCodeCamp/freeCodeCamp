@@ -3,3 +3,5 @@ pre-commit:
     eslint:
       glob: '*.{js,jsx}'
       run: npx eslint {staged_files}
+    valid-commit-name:
+      run: node ./commit-message-hook.js
