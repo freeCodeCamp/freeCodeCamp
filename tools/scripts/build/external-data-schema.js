@@ -27,6 +27,18 @@ const schema = Joi.object({}).pattern(
   Joi.object().concat(subSchema)
 );
 
-exports.mobileSchemaValidator = () => {
-  return superblock => schema.validate(superblock);
-};
+const availableSuperBlocksSchema = Joi.object({
+  superblocks: Joi.array().items(
+    Joi.object({
+      dashedName: Joi.string().required(),
+      title: Joi.string().required(),
+      public: Joi.bool().required()
+    })
+  )
+});
+
+exports.superblockSchemaValidator = () => superblock =>
+  schema.validate(superblock);
+
+exports.availableSuperBlocksValidator = () => data =>
+  availableSuperBlocksSchema.validate(data);
