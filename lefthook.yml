@@ -1,0 +1,5 @@
+pre-commit:
+  commands:
+    eslint:
+      glob: '*.{js,jsx}'
+      run: npx eslint {staged_files}

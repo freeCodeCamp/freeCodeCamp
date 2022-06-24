@@ -104,9 +104,11 @@
   },
   "dependencies": {
     "dotenv": "10.0.0",
-    "invariant": "2.2.4"
+    "invariant": "2.2.4",
+    "lefthook": "^1.0.2"
   },
   "devDependencies": {
+    "@arkweid/lefthook": "^0.7.7",
     "@babel/eslint-parser": "7.18.2",
     "@babel/plugin-proposal-function-bind": "7.16.7",
     "@babel/preset-env": "7.18.2",
@@ -164,7 +166,6 @@
     "eslint-plugin-testing-library": "4.12.4",
     "execa": "5.1.1",
     "faker": "5.5.3",
-    "husky": "7.0.4",
     "jest": "27.5.1",
     "js-yaml": "3.14.1",
     "lint-staged": "12.5.0",
