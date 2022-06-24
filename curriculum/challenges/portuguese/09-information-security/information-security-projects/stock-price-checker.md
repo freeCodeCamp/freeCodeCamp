@@ -8,7 +8,7 @@ dashedName: stock-price-checker
 
 # --description--
 
-Crie um aplicativo full stack em JavaScript que seja funcionalmente semelhante a este: [ target="_blank" rel="noopener noreferrer nofollow">https://stock-price-checker.freecodecamp.rocks/](https://stock-price-checker.freecodecamp.rocks/ mark=).
+Crie um aplicativo full stack em JavaScript que seja funcionalmente semelhante a este: <a href="https://stock-price-checker.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://stock-price-checker.freecodecamp.rocks/</a>.
 
 Como todas as APIs de preço de ações confiáveis requerem uma chave de API, criamos uma solução alternativa. Use <a href="https://stock-price-checker-proxy.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://stock-price-checker-proxy.freecodecamp.rocks/</a> para obter informações atualizadas sobre o preço das ações sem precisar se inscrever para ter sua própria chave.
 
