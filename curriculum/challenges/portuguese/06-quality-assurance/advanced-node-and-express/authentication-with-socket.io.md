@@ -64,8 +64,7 @@ console.log('user ' + socket.request.user.name + ' connected');
 ```
 
 Ele vai logar no console do servidor que está conectado!
-
-Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto até este momento [aqui](https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254).
+Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto até este momento em <a href="" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254).
 
 # --hints--
 

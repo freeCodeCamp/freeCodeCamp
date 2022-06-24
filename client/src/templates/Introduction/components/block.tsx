@@ -193,12 +193,23 @@ export class Block extends Component<BlockProps> {
               }}
             >
               <Caret />
-              <h4 className='course-title'>
-                {`${isExpanded ? collapseText : expandText}`}
-              </h4>
+              <div className='course-title'>
+                {`${isExpanded ? collapseText : expandText}`}{' '}
+                <span className='sr-only'>{blockTitle}</span>
+              </div>
               <div className='map-title-completed course-title'>
                 {this.renderCheckMark(isBlockCompleted)}
-                <span className='map-completed-count'>{`${completedCount}/${challengesWithCompleted.length}`}</span>
+                <span
+                  aria-hidden='true'
+                  className='map-completed-count'
+                >{`${completedCount}/${challengesWithCompleted.length}`}</span>
+                <span className='sr-only'>
+                  ,{' '}
+                  {t('learn.challenges-completed', {
+                    completedCount,
+                    totalChallenges: challengesWithCompleted.length
+                  })}
+                </span>
               </div>
             </button>
             {isExpanded && (
@@ -268,7 +279,7 @@ export class Block extends Component<BlockProps> {
                 <span className='block-header-button-text map-title'>
                   {this.renderCheckMark(isBlockCompleted)}
                   <span>
-                    {blockTitle}{' '}
+                    {blockTitle}
                     <span className='sr-only'>
                       , {courseCompletionStatus()}
                     </span>
@@ -293,13 +304,12 @@ export class Block extends Component<BlockProps> {
             </div>
             {isExpanded && this.renderBlockIntros(blockIntroArr)}
             {isExpanded && (
-              <>
-                <Challenges
-                  challengesWithCompleted={challengesWithCompleted}
-                  isProjectBlock={isProjectBlock}
-                  superBlock={superBlock}
-                />
-              </>
+              <Challenges
+                challengesWithCompleted={challengesWithCompleted}
+                isProjectBlock={isProjectBlock}
+                superBlock={superBlock}
+                blockTitle={blockTitle}
+              />
             )}
           </div>
         </ScrollableAnchor>

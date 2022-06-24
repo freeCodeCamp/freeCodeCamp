@@ -92,7 +92,7 @@ Take a look at our [Moderator Handbook](moderator-handbook.md) for a more exhaus
 **Feel free to ask for help in:**
 
 - The `Contributors` category of [our community forum](https://forum.freecodecamp.org/c/contributors).
-- The `#Contributors` channel on [our chat server](https://chat.freecodecamp.org/channel/contributors).
+- The `#Contributors` channel on [our chat server](https://discord.gg/PRyKn3Vbay).
 
 We are excited to help you contribute to any of the topics that you would like to work on. If you ask us questions on the related issue threads, we will be glad to clarify. Be sure to search for your question before posting a new one.
 

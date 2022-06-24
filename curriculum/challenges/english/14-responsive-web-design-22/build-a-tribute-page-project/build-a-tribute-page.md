@@ -12,7 +12,7 @@ dashedName: build-a-tribute-page
 
 **User Stories:**
 
-1. Your tribute page should have an element with a corresponding `id="main"`, which contains all other elements
+1. Your tribute page should have a `main` element with a corresponding `id` of `main`, which contains all other elements
 1. You should see an element with an `id` of `title`, which contains a string (i.e. text), that describes the subject of the tribute page (e.g. "Dr. Norman Borlaug")
 1. You should see either a `figure` or a `div` element with an `id` of `img-div`
 1. Within the `#img-div` element, you should see an `img` element with a corresponding `id="image"`
@@ -207,14 +207,14 @@ assert(leftMargin - rightMargin < 6 && rightMargin - leftMargin < 6)
     <link
       href="https://fonts.googleapis.com/css?family=Pacifico"
       rel="stylesheet"
-      type="text/css"
+     
     />
     <link
       href="https://fonts.googleapis.com/css?family=Lobster"
       rel="stylesheet"
-      type="text/css"
+     
     />
-    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <link href="styles.css" rel="stylesheet" />
     <title>Tribute Page</title>
   </head>
   <body>

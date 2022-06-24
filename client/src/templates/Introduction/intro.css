@@ -44,9 +44,21 @@ a.cert-tag:active {
 }
 
 .block-grid-title {
-  font-size: 1.2rem;
   margin: 0;
   overflow-wrap: break-word;
+}
+
+.block-grid .challenge-jump-link {
+  margin: 0 25px 25px;
+}
+
+.block-grid .challenge-jump-link a:focus {
+  outline: 3px solid var(--blue-mid);
+  outline-offset: 0;
+}
+
+.block-grid .challenge-jump-link a:focus:not(:focus-visible) {
+  outline: none;
 }
 
 .block-title-translation-cta {
@@ -234,11 +246,30 @@ button.map-title {
 .map-challenge-title a {
   width: 100%;
   padding: 10px 15px;
+  align-items: center;
+}
+
+.map-challenges-grid .map-challenge-title a {
+  width: 3.4rem;
+  height: 2.75rem;
+  min-width: 24px;
+  min-height: 24px;
+  padding: 0;
+}
+
+.map-challenges-grid .map-challenge-title a:focus {
+  outline: 3px solid var(--secondary-color);
+  outline-offset: -3px;
+}
+
+.map-challenges-grid .map-challenge-title a:focus:not(:focus-visible) {
+  outline: none;
 }
 
 .map-challenges-grid {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 1rem;
 }
 .map-challenge-title-grid {
   flex: 0 1 60px;
@@ -261,6 +292,13 @@ button.map-title {
 
 .challenge-completed {
   background: var(--highlight-background);
+  position: relative;
+}
+
+.challenge-completed span {
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-top: -0.05rem;
 }
 
 @media screen and (max-width: 500px) {
@@ -346,7 +384,7 @@ button.map-title {
 }
 
 .block-grid {
-  border-bottom: 3px solid var(--secondary-background);
+  border-bottom: 4px solid var(--secondary-background);
 }
 
 .block-grid .block-header {
@@ -366,7 +404,7 @@ button.map-title {
 }
 
 .block-grid .block-header[aria-expanded='true'] {
-  border-bottom: 3px solid var(--secondary-background);
+  border-bottom: 2px solid var(--secondary-background);
 }
 
 .block-header-button-text {

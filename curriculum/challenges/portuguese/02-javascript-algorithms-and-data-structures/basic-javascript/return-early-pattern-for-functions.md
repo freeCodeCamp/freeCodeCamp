@@ -29,7 +29,7 @@ O código acima exibirá no console a string `Hello`, e retorna a string `World`
 Modifique a função `abTest` para que se `a` ou `b` forem menores que `0` a função irá imediatamente terminar retornando o valor de `undefined`.
 
 **Dica**  
-Lembre-se de que [`undefined` é uma palavra-chave](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables) e não uma string.
+Lembre-se de que <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables" target="_blank" rel="noopener noreferrer nofollow">`undefined` é uma palavra-chave</a> e não uma string.
 
 # --hints--
 
