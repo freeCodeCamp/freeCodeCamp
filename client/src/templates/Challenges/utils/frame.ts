@@ -1,5 +1,7 @@
 import { toString, flow } from 'lodash-es';
 import { format } from '../../../utils/format';
+// import { TFunction } from 'react-i18next';
+// import { misc.javascript-alert } from ('../../../client/i18n/locales/english/translations.json')
 
 const utilsFormat: <T>(x: T) => string = format;
 
@@ -10,6 +12,10 @@ declare global {
     };
   }
 }
+// interface AlertPanelProps {
+//   elementLink: string;
+//   t: TFunction;
+// }
 
 interface Context {
   window: Window;
@@ -41,6 +47,14 @@ export const projectPreviewId = 'fcc-project-preview-frame';
 
 const DOCUMENT_NOT_FOUND_ERROR = 'document not found';
 
+// const AlertPanel = ({externalLink, t} : AlertPanelProps) :JSX.Element => {
+//   return (
+//       <script>
+//       `window.parent.window.alert('{t(learn.javascript-alert)} + externalLink')`
+//       </script>
+//     )
+// }
+
 // base tag here will force relative links
 // within iframe to point to '' instead of
 // append to the current challenge url
@@ -55,7 +69,7 @@ const createHeader = (id = mainPreviewId) => `
   <script>
     window.__frameId = '${id}';
     window.onerror = function(msg) {
-      var string = msg.toLowerCase();
+      const string = msg.toLowerCase();
       if (string.includes('script error')) {
         msg = 'Build error, open your browser console to learn more.';
       }
@@ -69,7 +83,7 @@ const createHeader = (id = mainPreviewId) => `
       }
       if (element && element.nodeName === 'A' && new URL(element.href).hash === '') {
         e.preventDefault();
-        window.parent.window.alert('Normally this link would bring you to another website! It works!' + ' This is a link to: ' + '(' + element.href + ')');
+        render(AlertPanel)
       }
       if (element) {
         const href = element.getAttribute('href');
