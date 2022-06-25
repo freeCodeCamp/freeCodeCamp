@@ -1,11 +1,8 @@
-/* eslint-disable jsx-a11y/no-onchange */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/ban-types */
-/* eslint-disable react/prop-types */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 // @ts-nocheck
@@ -72,8 +69,6 @@ export class NavLinks extends Component<NavLinksProps, {}> {
     this.handleLanguageButtonClick = this.handleLanguageButtonClick.bind(this);
     this.handleLanguageButtonKeyDown =
       this.handleLanguageButtonKeyDown.bind(this);
-    this.handleMenuKeyDown = this.handleMenuKeyDown.bind(this);
-    this.handleBlur = this.handleBlur.bind(this);
   }
 
   toggleTheme(currentTheme = Themes.Default, toggleNightMode: any) {
