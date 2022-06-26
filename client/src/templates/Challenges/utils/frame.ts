@@ -13,7 +13,7 @@ declare global {
 }
 
 // interface AlertPanelProps {
-//   art: ()=> string;
+//   AlertPanelFunction: ()=> string;
 //   t: TFunction;
 //   externalLink: string;
 // }
@@ -50,7 +50,7 @@ const DOCUMENT_NOT_FOUND_ERROR = 'document not found';
 
 // const AlertPanel = ( {externalLink} : AlertPanelProps )  => {
 //   const { t } = useTranslation();
-//   // return `window.parent.window.alert('${t(learn.iframe-alert), externalLink}')`
+//   return `window.parent.window.alert('${t(misc.iframe-alert , externalLink)}')`
 // }
 
 // base tag here will force relative links
@@ -81,7 +81,7 @@ const createHeader = (id = mainPreviewId) => `
       }
       if (element && element.nodeName === 'A' && new URL(element.href).hash === '') {
         e.preventDefault();
-        {AlertPanel(element.href)}
+        {AlertPanel(Element.href)}
       }
       if (element) {
         const href = element.getAttribute('href');
