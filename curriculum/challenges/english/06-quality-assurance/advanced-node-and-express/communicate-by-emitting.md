@@ -38,7 +38,7 @@ socket.on('user count', function(data) {
 
 Now, try loading up your app, authenticate, and you should see in your client console '1' representing the current user count! Try loading more clients up, and authenticating to see the number go up.
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href="https://gist.github.com/camperbot/28ef7f1078f56eb48c7b1aeea35ba1f5" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/28ef7f1078f56eb48c7b1aeea35ba1f5</a>.
+Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://gist.github.com/camperbot/28ef7f1078f56eb48c7b1aeea35ba1f5" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 
