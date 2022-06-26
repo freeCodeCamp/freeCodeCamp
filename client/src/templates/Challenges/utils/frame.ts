@@ -1,5 +1,5 @@
 import { toString, flow } from 'lodash-es';
-// import { TFunction } from 'i18next';
+// import i18next from 'i18next';
 import { format } from '../../../utils/format';
 
 const utilsFormat: <T>(x: T) => string = format;
@@ -13,8 +13,6 @@ declare global {
 }
 
 // interface AlertPanelProps {
-//   AlertPanelFunction: ()=> string;
-//   t: TFunction;
 //   externalLink: string;
 // }
 
@@ -49,7 +47,7 @@ export const projectPreviewId = 'fcc-project-preview-frame';
 const DOCUMENT_NOT_FOUND_ERROR = 'document not found';
 
 // const AlertPanel = ( {externalLink} : AlertPanelProps )  => {
-//   return `window.parent.window.alert('${t(misc.iframe-alert , externalLink) as string}')`
+//   return `window.parent.window.alert('${i18next.t(misc.iframe-alert , {currentLink: externalLink})}')`
 // }
 
 // base tag here will force relative links
@@ -61,11 +59,14 @@ const DOCUMENT_NOT_FOUND_ERROR = 'document not found';
 // window.onerror is added here to report any errors thrown during the building
 // of the frame.  React dom errors already appear in the console, so onerror
 // does not need to pass them on to the default error handler.
+
+// const createHeader = (id = mainPreviewId, link: string) => `
 const createHeader = (id = mainPreviewId) => `
   <base href='' />
   <script>
     window.__frameId = '${id}';
     window.onerror = function(msg) {
+      const element.href = '{link}';
       const string = msg.toLowerCase();
       if (string.includes('script error')) {
         msg = 'Build error, open your browser console to learn more.';
@@ -78,9 +79,9 @@ const createHeader = (id = mainPreviewId) => `
       while(element && element.nodeName !== 'A') {
         element = element.parentElement;
       }
-      if (element && element.nodeName === 'A' && new URL(element.href).hash === '') {
+      if (element && element.nodeName === 'A' && new URL({link}).hash === '') {
         e.preventDefault();
-        {AlertPanel(element.href)}
+        {AlertPanel(link)}
       }
       if (element) {
         const href = element.getAttribute('href');
@@ -241,6 +242,7 @@ function writeToFrame(content: string, frame: Document | null) {
 }
 
 const writeContentToFrame = (ctx: Context) => {
+  // createHeader(ctx.element.id , ctx.element.href)
   writeToFrame(createHeader(ctx.element.id) + ctx.build, ctx.document);
   return ctx;
 };
