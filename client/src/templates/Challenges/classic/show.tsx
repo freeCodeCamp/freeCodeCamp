@@ -478,6 +478,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
 
     return (
       <Hotkeys
+        challengeType={challengeType}
         editorRef={this.editorRef as React.RefObject<HTMLElement>}
         executeChallenge={executeChallenge}
         innerRef={this.containerRef}
