@@ -20,6 +20,10 @@ jobs:
               pull_number: context.issue.number
             });
             const creator = pull.data.user.login;
+            const excludedCreators = ["renovate[bot]", "camperbot", "github-actions[bot]"];
+            if (excludedCreators.includes(creator)) {
+              return;
+            }
             const repo = `${context.repo.owner}/${context.repo.repo}`;
             const pulls = await github.rest.search.issuesAndPullRequests({
               q: `repo:${repo}+author:${creator}+is:pr+is:merged`
