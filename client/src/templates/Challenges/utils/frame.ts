@@ -1,5 +1,5 @@
 import { toString, flow } from 'lodash-es';
-// import { TFunction, useTranslation } from 'react-i18next';
+// import { TFunction } from 'i18next';
 import { format } from '../../../utils/format';
 
 const utilsFormat: <T>(x: T) => string = format;
@@ -49,8 +49,7 @@ export const projectPreviewId = 'fcc-project-preview-frame';
 const DOCUMENT_NOT_FOUND_ERROR = 'document not found';
 
 // const AlertPanel = ( {externalLink} : AlertPanelProps )  => {
-//   const { t } = useTranslation();
-//   return `window.parent.window.alert('${t(misc.iframe-alert , externalLink)}')`
+//   return `window.parent.window.alert('${t(misc.iframe-alert , externalLink) as string}')`
 // }
 
 // base tag here will force relative links
@@ -81,7 +80,7 @@ const createHeader = (id = mainPreviewId) => `
       }
       if (element && element.nodeName === 'A' && new URL(element.href).hash === '') {
         e.preventDefault();
-        {AlertPanel(Element.href)}
+        {AlertPanel(element.href)}
       }
       if (element) {
         const href = element.getAttribute('href');
