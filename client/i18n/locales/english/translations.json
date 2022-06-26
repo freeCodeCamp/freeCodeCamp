@@ -451,7 +451,7 @@
     "change-theme": "Sign in to change theme.",
     "translation-pending": "Help us translate",
     "certification-project": "Certification Project",
-    "javascript-alert": "Normally this link would bring you to another website! It works This is a link to: "
+    "iframe-alert": "Normally this link would bring you to another website! It works This is a link to: {{externalLink}}"
   },
   "icons": {
     "gold-cup": "Gold Cup",
