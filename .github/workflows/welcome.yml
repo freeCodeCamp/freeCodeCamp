@@ -13,6 +13,7 @@ jobs:
         if: github.event.pull_request.merged == true
         uses: actions/github-script@7a5c598405937d486b0331594b5da2b14db670da # tag=v6
         with:
+          github-token: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
           script: |
             const pull = await github.rest.pulls.get({
               owner: context.repo.owner,
@@ -20,6 +21,10 @@ jobs:
               pull_number: context.issue.number
             });
             const creator = pull.data.user.login;
+            const excludedCreators = ["renovate[bot]", "camperbot", "github-actions[bot]"];
+            if (excludedCreators.includes(creator)) {
+              return;
+            }
             const repo = `${context.repo.owner}/${context.repo.repo}`;
             const pulls = await github.rest.search.issuesAndPullRequests({
               q: `repo:${repo}+author:${creator}+is:pr+is:merged`
