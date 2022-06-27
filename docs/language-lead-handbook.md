@@ -27,7 +27,7 @@ The `client.csv` file is for the Learn User Interface project, the `curriculum.c
 
 To update the Crowdin Glossaries you need to clone this repo locally. Open the `.csv` file with an appropriate program, for example Microsoft Excel.
 
-In the `.csv` file you will find that the English language occupies the first three columns, `Term:English` is the column for the English term, `Description:English` us the column for the English description, and `Part:English` is for the grammar role, or part of the sentence, of the term.
+In the `.csv` file you will find that the English language occupies the first three columns, `Term:English` is the column for the English term, `Description:English` is the column for the English description, and `Part:English` is for the grammar role, or part of the sentence, of the term.
 
 Then, each target language has two columns. If you translate to Dothraki, you will be interested in the columns `Term:Dothraki` and `Description:Dothraki`. The column `Term:Dothraki` is for the translation of the term in Dothraki, and the column `Description:Dothraki` is for a description of the term in Dothraki.
 

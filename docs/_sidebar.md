@@ -28,7 +28,7 @@
 
 - **Flight Manuals** (for Staff & Mods)
   - [Moderator Handbook](moderator-handbook.md)
-  - [Language Lead Handbook](language-lead-handbook-md)
+  - [Language Lead Handbook](language-lead-handbook.md)
   - [DevOps Handbook](devops.md)
   - [Courses VSCode Extension](courses-vscode-extension.md)
 
