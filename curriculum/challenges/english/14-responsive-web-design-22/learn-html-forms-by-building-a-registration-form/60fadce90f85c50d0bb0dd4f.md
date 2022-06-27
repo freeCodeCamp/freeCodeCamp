@@ -14,7 +14,7 @@ To give the `fieldset` elements a bit of separation, select them and give them a
 You should give the `fieldset` elements a `border-bottom` of `3px solid #3b3b4f`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('fieldset:not(:last-of-type)')?.borderBottom, '3px solid rgb(59, 59, 79)');
+assert.equal(new __helpers.CSSHelp(document).getStyle('fieldset')?.borderBottom, '3px solid rgb(59, 59, 79)');
 ```
 
 # --seed--
