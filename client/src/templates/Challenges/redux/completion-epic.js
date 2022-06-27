@@ -23,6 +23,7 @@ import {
 import postUpdate$ from '../utils/post-update';
 import { mapFilesToChallengeFiles } from '../../../utils/ajax';
 import { standardizeRequestBody } from '../../../utils/challenge-request-helpers';
+import { postChallengeCompletedEvent } from '../../../utils/iframe-message';
 import { actionTypes } from './action-types';
 import {
   projectFormValuesSelector,
@@ -185,7 +186,10 @@ export default function completionEpic(action$, state$) {
       return submitter(type, state).pipe(
         concat(closeChallengeModal),
         filter(Boolean),
-        finalize(async () => navigate(await pathToNavigateTo()))
+        finalize(async () => {
+          postChallengeCompletedEvent({ meta });
+          return navigate(await pathToNavigateTo());
+        })
       );
     })
   );
