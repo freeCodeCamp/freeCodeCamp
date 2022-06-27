@@ -74,8 +74,8 @@
     "click-start-project": "プロジェクトを開始",
     "change-language": "言語変更",
     "cancel-change": "変更キャンセル",
-    "resume-project": "Resume project",
-    "start-project": "Start project"
+    "resume-project": "プロジェクト再開",
+    "start-project": "プロジェクト開始"
   },
   "landing": {
     "big-heading-1": "プログラミングを無料で学ぶ。",
@@ -292,7 +292,7 @@
     "scrimba-tip": "ヒント: ミニブラウザがコードを覆ってしまう場合は、クリックとドラッグで移動させてください。また、いつでも遠慮なくビデオを停止させてコードを編集してください。",
     "chal-preview": "チャレンジのプレビュー",
     "cert-map-estimates": {
-      "certs": "{{title}} Certification"
+      "certs": "{{title}} 認定講座"
     },
     "editor-tabs": {
       "info": "詳細",
@@ -323,7 +323,7 @@
     "sorry-getting-there": "残念ながら、テストが通りませんでした。もう一息です。",
     "sorry-hang-in-there": "残念ながら、テストが通りませんでした。がんばりましょう。",
     "sorry-dont-giveup": "残念ながら、テストが通りませんでした。諦めないでください。",
-    "challenges-completed": "{{completedCount}} of {{totalChallenges}} challenges completed"
+    "challenges-completed": "{{totalChallenges}} 件中 {{completedCount}} 件完了"
   },
   "donate": {
     "title": "非営利団体を支援する",
@@ -459,9 +459,9 @@
     "donate": "PayPal で寄付する",
     "fail": "テスト失敗",
     "not-passed": "未完了",
-    "waiting": "Waiting",
-    "passed": "合格済み",
-    "failed": "Failed",
+    "waiting": "待機中",
+    "passed": "完了",
+    "failed": "失敗",
     "hint": "ヒント",
     "heart": "ハート",
     "initial": "初期状態",
@@ -485,9 +485,9 @@
     "breadcrumb-nav": "パンくずリスト",
     "submit": "提出するには Ctrl + Enter を押してください。",
     "running-tests": "テスト実行中",
-    "step": "Step",
-    "steps": "Steps",
-    "steps-for": "Steps for {{blockTitle}}"
+    "step": "ステップ",
+    "steps": "ステップ一覧",
+    "steps-for": "「{{blockTitle}}」のステップ一覧"
   },
   "flash": {
     "honest-first": "認定証を請求するには、まず学問的誠実性ポリシーに同意する必要があります。",
