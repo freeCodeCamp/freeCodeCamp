@@ -24,7 +24,7 @@ if (!bcrypt.compareSync(password, user.password)) {
 
 Questo è tutto quello che serve per implementare una delle caratteristiche di sicurezza più importanti quando si devono memorizzare le password!
 
-Invia la tua pagina quando pensi di averlo fatto correttamente. Se incontri degli errori, puoi controllare il progetto completato fino a questo punto [qui](https://gist.github.com/camperbot/dc16cca09daea4d4151a9c36a1fab564).
+Invia la tua pagina quando pensi di averlo fatto correttamente. Se incontri degli errori, puoi vedere <a href="https://gist.github.com/camperbot/dc16cca09daea4d4151a9c36a1fab564" target="_blank" rel="noopener noreferrer nofollow">il progetto completato fino a questo punto</a>.
 
 # --hints--
 

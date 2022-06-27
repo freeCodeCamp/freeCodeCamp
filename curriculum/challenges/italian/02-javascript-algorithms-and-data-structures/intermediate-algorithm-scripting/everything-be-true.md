@@ -54,7 +54,7 @@ assert.strictEqual(truthCheck(
   "role"), false);
 ```
 
-`truthCheck([{name: "Pikachu", number: 25, caught: 3}, {name: "Togepi", number: 175, caught: 1}], "number")` dovrebbe ritornare `true`.
+`truthCheck([{name: "Pikachu", number: 25, caught: 3}, {name: "Togepi", number: 175, caught: 1}], "number")` dovrebbe restituire `true`.
 
 ```js
 assert.strictEqual(truthCheck(

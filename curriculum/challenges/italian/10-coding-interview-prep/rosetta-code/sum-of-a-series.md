@@ -8,7 +8,7 @@ dashedName: sum-of-a-series
 
 # --description--
 
-Calcola il termine **n**<sup>mo</sup> di una [serie](https://en.wikipedia.org/wiki/Series (mathematics)), cioè la somma dei primi **n** termini della successione [corrispondente](https://en.wikipedia.org/wiki/sequence). In modo informale questo valore, o il suo limite quando **n** tende all'infinito, è anche chiamato la *somma della serie*, quindi il titolo di questo compito. Per questo compito, usa: $S_n = \displaystyle\sum_{k=1}^n \frac{1}{k^2}$.
+Calcola il termine **n**<sup>mo</sup> di una <em>serie</em>, cioè la somma dei primi **n** termini della successione <em>corrispondente</em>. In modo informale questo valore, o il suo limite quando **n** tende all'infinito, è anche chiamato la *somma della serie*, quindi il titolo di questo compito. Per questo compito, usa: $S_n = \displaystyle\sum_{k=1}^n \frac{1}{k^2}$.
 
 # --instructions--
 
