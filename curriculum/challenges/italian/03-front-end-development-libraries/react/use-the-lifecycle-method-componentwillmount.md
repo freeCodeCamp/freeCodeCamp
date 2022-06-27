@@ -10,7 +10,7 @@ dashedName: use-the-lifecycle-method-componentwillmount
 
 I componenti React hanno diversi metodi speciali che offrono l'opportunità di eseguire azioni in punti specifici del ciclo di vita di un componente. Questi sono chiamati metodi del ciclo di vita, o hooks (ganci) del ciclo di vita, e consentono di intercettare i componenti in determinati istanti. Ad esempio prima che sia fatto il render del componente, prima di aggiornarlo, prima di ricevere le prop, prima di smontarlo, e così via. Ecco un elenco di alcuni dei principali metodi del ciclo di vita: `componentWillMount()` `componentDidMount()` `shouldComponentUpdate()` `componentDidUpdate()` `componentWillUnmount()` Le prossime lezioni copriranno alcuni dei casi di base per questi metodi del ciclo di vita.
 
-**Nota:** Il metodo del ciclo di vita `componentWillMount` sarà deprecato in una versione futura di 16.X e rimosso nella versione 17. [(Fonte)](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html)
+**Nota:** Il metodo del ciclo di vita `componentWillMount` sarà deprecato in una versione futura di 16.X e rimosso nella versione 17. Impara di più in questo <a href="https://www.freecodecamp.org/news/how-to-safely-use-reacts-life-cycles-with-fiber-s-async-rendering-fd4469ebbd8f/" target="_blank" rel="noopener noreferrer nofollow">articolo</a>
 
 # --instructions--
 

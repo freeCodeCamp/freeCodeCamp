@@ -9,9 +9,7 @@ dashedName: word-blanks
 
 # --description--
 
-Ora useremo la nostra conoscenza sulle stringhe per costruire un gioco di parole in stile "[Mad Libs](https://en.wikipedia.org/wiki/Mad_Libs)", che chiameremo "Word Blanks". Creerai una frase in stile "Fill in the Blanks" (umoristica se vuoi).
-
-In un gioco "Mad Libs" ti vengono fornite frasi con alcune parole mancanti, come sostantivi, verbi, aggettivi e avverbi. Devi quindi riempire le parti mancanti con parole a tua scelta in modo che la frase completata abbia senso.
+Ti vengono date delle frasi con delle parole mancanti, come nomi, verbi, aggettivi e avverbi. Devi quindi riempire le parti mancanti con parole a tua scelta in modo che la frase completata abbia senso.
 
 Considera questa frase: It was really **\_\_\_\_**, and we **\_\_\_\_** ourselves **\_\_\_\_**. Questa frase ha tre parti mancanti - un aggettivo, un verbo e un avverbio, e possiamo aggiungere parole di nostra scelta per completarla. Possiamo quindi assegnare la frase completata a una variabile come segue:
 
@@ -46,7 +44,7 @@ assert(
 );
 ```
 
-Non dovresti usare direttamente i valori `dog`, `ran`, `big`, o`quickly` per creare `wordBlanks`.
+Non dovresti usare direttamente i valori `dog`, `ran`, `big` o`quickly` per creare `wordBlanks`.
 
 ```js
 const newCode = removeAssignments(code);
@@ -58,7 +56,7 @@ assert(
 );
 ```
 
-`wordBlanks` dovrebbe contenere tutte le parole assegnate alle variabili `myNoun`, `myVerb`, `myAdjective` e `myAdverb` separati da caratteri che non siano parole (e da eventuali parole aggiuntive nella tua madlib).
+`wordBlanks` dovrebbe contenere tutte le parole assegnate alle variabili `myNoun`, `myVerb`, `myAdjective` e `myAdverb` separate da caratteri che non siano parole (e da eventuali parole di tua scelta).
 
 ```js
 assert(

@@ -8,7 +8,32 @@ dashedName: cumulative-standard-deviation
 
 # --description--
 
-Scrivi una funzione che prende un array di numeri come parametro e restituisce la [deviazione standard](https://it.wikipedia.org/wiki/Scarto_quadratico_medio) della serie.
+Supponi che l'intera popolazione di interesse sia di otto studenti in una certa classe. Per un insieme finito di numeri, la deviazione standard della popolazione si trova prendendo la radice quadrata della media dei quadrati delle differenze tra i valori e il loro valore medio. I voti di una classe di otto studenti (cioè, la popolazione statistica) sono i seguenti otto valori:
+
+$2, 4, 4, 4, 5, 5, 7, 9$
+
+Questi otto valori hanno la media di 5:
+
+$$\mu ={\frac {2+4+4+4+5+5+7+9}{8}}={\frac {40}{8}}=5$$
+
+Prima, calcola le deviazioni di ogni dato dalla media e fai il quadrato del risultato di ognuno:
+
+| Deviazione di ogni dato | Quadrato del risultato |
+| ----------------------- | ---------------------- |
+| $(2-5)^{2}=(-3)^{2}=9$  | $(5-5)^{2}=0^{2}=0$    |
+| $(4-5)^{2}=(-1)^{2}=1$  | $(5-5)^{2}=0^{2}=0$    |
+| $(4-5)^{2}=(-1)^{2}=1$  | $(7-5)^{2}=2^{2}=4$    |
+| $(4-5)^{2}=(-1)^{2}=1$  | $(9-5)^{2}=4^{2}=16$   |
+
+La varianza è la media di questi valori:
+
+$$\sigma ^{2}={\frac {9+1+1+1+0+0+4+16}{8}}={\frac {32}{8}}=4$$
+
+e la deviazione standard della popolazione è uguale al quadrato della varianza:
+
+$$\sigma ={\sqrt {4}}=2$$
+
+Scrivi una funzione che prende un array di numeri come parametro e restituisce la deviazione standard della serie.
 
 # --hints--
 

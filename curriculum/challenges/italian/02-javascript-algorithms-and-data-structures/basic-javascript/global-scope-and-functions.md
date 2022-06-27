@@ -17,7 +17,7 @@ Le variabili che vengono dichiarate senza la parola chiave `let` o la parola chi
 
 Usando `let` o `const`, dichiara una variabile globale denominata `myGlobal` al di fuori di qualsiasi funzione. Inizializzala con un valore di `10`.
 
-All'interno della funzione `fun1`, assegna `5` a `oopsGlobal` ***senza*** utilizzare le parole chiave `let` o `const`.
+All'interno della funzione `fun1`, assegna `5` a `oopsGlobal` ***senza*** utilizzare le parole chiave `var`, `let` o `const`.
 
 # --hints--
 

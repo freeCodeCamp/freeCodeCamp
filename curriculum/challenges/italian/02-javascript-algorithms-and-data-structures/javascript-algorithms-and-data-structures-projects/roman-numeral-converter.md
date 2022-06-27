@@ -10,7 +10,23 @@ dashedName: roman-numeral-converter
 
 Converti il numero dato in un numero romano.
 
-Tutte le [cifre romane](http://www.mathsisfun.com/roman-numerals.html) fornite come risposta dovrebbero essere in maiuscolo.
+| Numeri romani | Numeri arabi |
+| ------------- | ------------ |
+| M             | 1000         |
+| CM            | 900          |
+| D             | 500          |
+| CD            | 400          |
+| C             | 100          |
+| XC            | 90           |
+| L             | 50           |
+| XL            | 40           |
+| X             | 10           |
+| IX            | 9            |
+| V             | 5            |
+| IV            | 4            |
+| I             | 1            |
+
+Tutti i numeri romani nei risultati dovrebbero essere in maiuscolo.
 
 # --hints--
 

@@ -16,8 +16,8 @@ dashedName: reading-data-introduction
 
 Додаткові ресурси:
 
--   [Блокноти на GitHub](https://github.com/krishnatray/RDP-Reading-Data-with-Python-and-Pandas)
--   [Як відкрити блокноти з GitHub використовуючи Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-  <a href="https://github.com/krishnatray/RDP-Reading-Data-with-Python-and-Pandas" target="_blank" rel="noopener noreferrer nofollow">Блокноти на GitHub</a>
+-  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">Як відкрити блокноти з GitHub використовуючи Google Colab.</a>
 
 # --question--
 
