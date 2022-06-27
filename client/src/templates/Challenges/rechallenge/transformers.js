@@ -221,7 +221,10 @@ export const embedFilesInHtml = async function (challengeFiles) {
       style.classList.add('fcc-injected-styles');
       style.innerHTML = stylesCss?.contents;
 
-      link.parentNode.replaceChild(style, link);
+      link.parentNode.appendChild(style);
+
+      link.removeAttribute('href');
+      link.dataset.href = 'styles.css';
     }
     if (script) {
       script.innerHTML = scriptJs?.contents;
