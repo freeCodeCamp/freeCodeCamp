@@ -21,7 +21,7 @@ The "Administrator" level is reserved for freeCodeCamp staff and Language Leads.
 
 The Crowdin Glossary is kept in the [crowdin-glossaries](https://github.com/freeCodeCamp/crowdin-glossaries) repository.
 
-In the `glossaries` folder there is various `*.csv` (comma separated values) files, one for each of the crowdin projects that have a glossary that can be updated from this workflow.
+In the `glossaries` folder there are various `*.csv` (comma separated values) files, one for each of the crowdin projects that have a glossary that can be updated from this workflow.
 
 The `client.csv` file is for the Learn User Interface project, the `curriculum.csv` file is for the Coding Curriculum project, the `docs.csv` file is for the Contributing Documentation project.
 
