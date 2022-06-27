@@ -108,7 +108,7 @@ fieldset {
 
 fieldset:not(:last-of-type) {
   border-bottom: none;
-  }
+}
 
 label {
   display: block;

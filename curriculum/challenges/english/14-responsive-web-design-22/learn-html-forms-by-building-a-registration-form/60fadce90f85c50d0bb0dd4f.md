@@ -91,13 +91,11 @@ form {
 	margin: 0 auto;
 }
 
+--fcc-editable-region--
 fieldset {
   border: none;
 	padding: 2rem 0;
 }
-
---fcc-editable-region--
-
 --fcc-editable-region--
 
 label {
