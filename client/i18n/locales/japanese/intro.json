@@ -70,8 +70,8 @@
     "title": "(新) レスポンシブウェブデザイン",
     "intro": [
       "このレスポンシブウェブデザイン認定講座では、開発者がウェブページを構築するために使用する言語について学びます。コンテンツには HTML (Hypertext Markup Language)、デザインには CSS (Cascading Style Sheets) を使用します。",
-      "First, you'll build a cat photo app to learn the basics of HTML and CSS. Later, you'll learn modern techniques like CSS variables by building a penguin, and best practices for accessibility by building a quiz site.",
-      "Finally, you'll learn how to make webpages that respond to different screen sizes by building a photo gallery with Flexbox, and a magazine article layout with CSS Grid."
+      "初めに、HTML と CSS の基礎を学ぶために、猫の写真アプリを作ります。その後、ペンギンの絵を作りながら CSS 変数等のモダンなテクニックを学びます。そしてクイズサイトを作りながらアクセシビリティのベストプラクティスを学びます。",
+      "最後に、フレックスボックスを使ったフォトギャラリーや、CSS グリッドを使った雑誌記事のレイアウトの作成を通じて、さまざまな画面サイズに応じて表示されるウェブページの作成方法を学びます。"
     ],
     "note": "注意: 広告ブロッカーやダークモード拡張などの、一部のブラウザ拡張機能がテストに干渉する可能性があります。問題が発生した場合、コース受講中はページのコンテンツやレイアウトを変更する拡張機能を無効にすることをお勧めします。",
     "blocks": {
@@ -149,7 +149,7 @@
         "title": "アクセシビリティの学習: クイズを作成する",
         "intro": [
           "アクセシビリティとは、障害のある人を含むすべての人々にとって、ウェブページを利用しやすくすることです。",
-          "このコースでは、クイズのウェブページを作成します。キーボードショートカット、ARIA 属性、デザインのベストプラクティスなど、アクセシビリティのツールについて学習します。"
+          "このコースでは、クイズ (小テスト) のウェブページを作成します。キーボードショートカット、ARIA 属性、デザインのベストプラクティスなど、アクセシビリティのツールについて学習します。"
         ]
       },
       "learn-intermediate-css-by-building-a-picasso-painting": {

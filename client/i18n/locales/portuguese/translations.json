@@ -292,7 +292,7 @@
     "scrimba-tip": "Dica: se o minibrowser estiver cobrindo o código, clique e arraste para movê-lo. Além disso, sinta-se à vontade para parar e editar o código no vídeo a qualquer momento.",
     "chal-preview": "Pré-visualização do desafio",
     "cert-map-estimates": {
-      "certs": "{{title}} Certification"
+      "certs": "Certificação {{title}}"
     },
     "editor-tabs": {
       "info": "Informações",
