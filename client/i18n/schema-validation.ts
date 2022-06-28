@@ -1,11 +1,13 @@
-const path = require('path');
-const { availableLangs } = require('../../config/i18n/all-langs');
-const introSchema = require('./locales/english/intro.json');
-const linksSchema = require('./locales/english/links.json');
-const metaTagsSchema = require('./locales/english/meta-tags.json');
-const motivationSchema = require('./locales/english/motivation.json');
-const translationsSchema = require('./locales/english/translations.json');
-const trendingSchema = require('./locales/english/trending.json');
+import path from 'path';
+import { availableLangs } from '../../config/i18n/all-langs';
+import introSchema from './locales/english/intro.json';
+import linksSchema from './locales/english/links.json';
+import metaTagsSchema from './locales/english/meta-tags.json';
+import motivationSchema from './locales/english/motivation.json';
+import translationsSchema from './locales/english/translations.json';
+import trendingSchema from './locales/english/trending.json';
+
+type MotivationalQuotes = { quote: string; author: string }[];
 
 /**
  * Flattens a nested object structure into a single
@@ -13,15 +15,21 @@ const trendingSchema = require('./locales/english/trending.json');
  * @param {Object} obj Object to flatten
  * @param {String} namespace Used for property chaining
  */
-const flattenAnObject = (obj, namespace = '') => {
-  const flattened = {};
+const flattenAnObject = (
+  obj: Record<string, object | string>,
+  namespace = ''
+) => {
+  const flattened: Record<string, object | string> = {};
   Object.keys(obj).forEach(key => {
     if (Array.isArray(obj[key])) {
       flattened[namespace ? `${namespace}.${key}` : key] = obj[key];
     } else if (typeof obj[key] === 'object') {
       Object.assign(
         flattened,
-        flattenAnObject(obj[key], namespace ? `${namespace}.${key}` : key)
+        flattenAnObject(
+          obj[key] as Record<string, object | string>,
+          namespace ? `${namespace}.${key}` : key
+        )
       );
     } else {
       flattened[namespace ? `${namespace}.${key}` : key] = obj[key];
@@ -37,7 +45,7 @@ const flattenAnObject = (obj, namespace = '') => {
  * @param {String[]} schema Array of matching schema's keys
  * @param {String} path string path to file
  */
-const findMissingKeys = (file, schema, path) => {
+const findMissingKeys = (file: string[], schema: string[], path: string) => {
   const missingKeys = [];
   for (const key of schema) {
     if (!file.includes(key)) {
@@ -58,7 +66,7 @@ const findMissingKeys = (file, schema, path) => {
  * @param {String[]} schema Array of matching schema's keys
  * @param {String} path string path to file
  */
-const findExtraneousKeys = (file, schema, path) => {
+const findExtraneousKeys = (file: string[], schema: string[], path: string) => {
   const extraKeys = [];
   for (const key of file) {
     if (!schema.includes(key)) {
@@ -80,16 +88,22 @@ const findExtraneousKeys = (file, schema, path) => {
  * @param {Object} obj The object to check the values of
  * @param {String} namespace String for tracking nested properties
  */
-const noEmptyObjectValues = (obj, namespace = '') => {
+const noEmptyObjectValues = (
+  obj: Record<string, object | string>,
+  namespace = ''
+): string[] => {
   const emptyKeys = [];
   for (const key of Object.keys(obj)) {
     if (Array.isArray(obj[key])) {
-      if (!obj[key].length) {
+      if (!(obj[key] as string[]).length) {
         emptyKeys.push(namespace ? `${namespace}.${key}` : key);
       }
     } else if (typeof obj[key] === 'object') {
       emptyKeys.push(
-        noEmptyObjectValues(obj[key], namespace ? `${namespace}.${key}` : key)
+        noEmptyObjectValues(
+          obj[key] as Record<string, object | string>,
+          namespace ? `${namespace}.${key}` : key
+        )
       );
     } else if (!obj[key]) {
       emptyKeys.push(namespace ? `${namespace}.${key}` : key);
@@ -114,13 +128,13 @@ const linksSchemaKeys = Object.keys(flattenAnObject(linksSchema));
  * for each available client language.
  * @param {String[]} languages List of languages to test
  */
-const translationSchemaValidation = languages => {
+const translationSchemaValidation = (languages: string[]) => {
   languages.forEach(language => {
     const filePath = path.join(
       __dirname,
       `/locales/${language}/translations.json`
     );
-    const fileJson = require(filePath);
+    const fileJson = getFileJson(filePath);
     const fileKeys = Object.keys(flattenAnObject(fileJson));
     findMissingKeys(
       fileKeys,
@@ -149,10 +163,10 @@ const translationSchemaValidation = languages => {
  * for each available client language.
  * @param {String[]} languages List of languages to test
  */
-const trendingSchemaValidation = languages => {
+const trendingSchemaValidation = (languages: string[]) => {
   languages.forEach(language => {
     const filePath = path.join(__dirname, `/locales/${language}/trending.json`);
-    const fileJson = require(filePath);
+    const fileJson = getFileJson(filePath);
     const fileKeys = Object.keys(flattenAnObject(fileJson));
     findMissingKeys(fileKeys, trendingSchemaKeys, `${language}/trending.json`);
     findExtraneousKeys(
@@ -172,13 +186,13 @@ const trendingSchemaValidation = languages => {
   });
 };
 
-const motivationSchemaValidation = languages => {
+const motivationSchemaValidation = (languages: string[]) => {
   languages.forEach(language => {
     const filePath = path.join(
       __dirname,
       `/locales/${language}/motivation.json`
     );
-    const fileJson = require(filePath);
+    const fileJson = getFileJson(filePath);
     const fileKeys = Object.keys(flattenAnObject(fileJson));
     findMissingKeys(
       fileKeys,
@@ -200,8 +214,8 @@ const motivationSchemaValidation = languages => {
     }
     // Special line to assert that objects in motivational quote are correct
     if (
-      !fileJson.motivationalQuotes.every(
-        object =>
+      !(fileJson.motivationalQuotes as MotivationalQuotes).every(
+        (object: object) =>
           Object.prototype.hasOwnProperty.call(object, 'quote') &&
           Object.prototype.hasOwnProperty.call(object, 'author')
       )
@@ -217,10 +231,10 @@ const motivationSchemaValidation = languages => {
  * for each available client language.
  * @param {String[]} languages List of languages to test
  */
-const introSchemaValidation = languages => {
+const introSchemaValidation = (languages: string[]) => {
   languages.forEach(language => {
     const filePath = path.join(__dirname, `/locales/${language}/intro.json`);
-    const fileJson = require(filePath);
+    const fileJson = getFileJson(filePath);
     const fileKeys = Object.keys(flattenAnObject(fileJson));
     findMissingKeys(fileKeys, introSchemaKeys, `${language}/intro.json`);
     findExtraneousKeys(fileKeys, introSchemaKeys, `${language}/intro.json`);
@@ -234,13 +248,13 @@ const introSchemaValidation = languages => {
   });
 };
 
-const metaTagsSchemaValidation = languages => {
+const metaTagsSchemaValidation = (languages: string[]) => {
   languages.forEach(language => {
     const filePath = path.join(
       __dirname,
       `/locales/${language}/meta-tags.json`
     );
-    const fileJson = require(filePath);
+    const fileJson = getFileJson(filePath);
     const fileKeys = Object.keys(flattenAnObject(fileJson));
     findMissingKeys(fileKeys, metaTagsSchemaKeys, `${language}/meta-tags.json`);
     findExtraneousKeys(
@@ -260,10 +274,10 @@ const metaTagsSchemaValidation = languages => {
   });
 };
 
-const linksSchemaValidation = languages => {
+const linksSchemaValidation = (languages: string[]) => {
   languages.forEach(language => {
     const filePath = path.join(__dirname, `/locales/${language}/links.json`);
-    const fileJson = require(filePath);
+    const fileJson = getFileJson(filePath);
     const fileKeys = Object.keys(flattenAnObject(fileJson));
     findMissingKeys(fileKeys, linksSchemaKeys, `${language}/links.json`);
     findExtraneousKeys(fileKeys, linksSchemaKeys, `${language}/links.json`);
@@ -276,6 +290,10 @@ const linksSchemaValidation = languages => {
     console.info(`${language} links.json validation complete`);
   });
 };
+
+const getFileJson = (filePath: string) =>
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  require(filePath) as Record<string, object | string>;
 
 const translatedLangs = availableLangs.client.filter(x => x !== 'english');
 
