@@ -42,7 +42,7 @@ Agora, tente carregar o aplicativo e autentique-se. Você deve ver no console do
 
 **Observação:** `io()` só funciona ao se conectar a um socket hospedado no mesmo url/servidor. Para se conectar a um socket externo hospedado em outro lugar, você usaria `io.connect('URL');`.
 
-Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto concluído até este momento em <a href="https://gist.github.com/camperbot/aae41cf59debc1a4755c9a00ee3859d1" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/aae41cf59debc1a4755c9a00ee3859d1</a>.
+Envie sua página quando você achar que ela está certa. Se você estiver encontrando erros, pode <a href="https://gist.github.com/camperbot/aae41cf59debc1a4755c9a00ee3859d1" target="_blank" rel="noopener noreferrer nofollow">conferir o projeto concluído até este ponto</a>.
 
 # --hints--
 

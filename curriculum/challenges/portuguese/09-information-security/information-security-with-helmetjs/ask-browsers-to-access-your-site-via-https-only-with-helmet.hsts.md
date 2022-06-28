@@ -8,7 +8,7 @@ dashedName: ask-browsers-to-access-your-site-via-https-only-with-helmet-hsts
 
 # --description--
 
-Lembrando que este projeto está sendo construído a partir do [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec), ou pode ser clonado no [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
+Lembrando que este projeto está sendo construído a partir do <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, ou pode ser clonado no <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 HTTP Strict Transport Security (HSTS) é uma política de segurança na web que ajuda a proteger sites contra ataques com protocolo rebaixado e sequestro de cookies. Se seu site puder ser acessado via HTTPS, você pode pedir aos navegadores do usuário que evitem o uso de HTTP não seguro. Ao definir o cabeçalho Strict-Transport-Security, você avisa aos navegadores para usar HTTPS para futuras solicitações em um período de tempo específico. Isso funcionará para as solicitações que chegarem após o pedido inicial.
 
