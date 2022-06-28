@@ -67,9 +67,14 @@ export default class JSHelp {
     return this.getNearestScope(node.parent);
   }
 
-  public getFunction(name: string) {
+  public getFunctions(name: string) {
     return this.body.find((item: Node) => {
       return item.type === 'FunctionDeclaration' && item.id?.name === name;
+    });
+  }
+  public getCalls(name: string) {
+    return this.body.find((item: Node) => {
+      return item.type === 'CallExpression' && item.callee?.name === name;
     });
   }
 }
