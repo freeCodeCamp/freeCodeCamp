@@ -8,7 +8,7 @@ dashedName: averagespythagorean-means
 
 # --description--
 
-Calcule as três [médias pitagóricas](https://en.wikipedia.org/wiki/Pythagorean means "wp: Pythagorean means") do conjunto de inteiros de $1$ a $10$ (inclusive).
+Calcule as três [ "wp: Pythagorean means"" target="_blank" rel="noopener noreferrer nofollow">médias pitagóricas](<https://en.wikipedia.org/wiki/Pythagorean means mark=) do conjunto de inteiros de $1$ a $10$ (inclusive).
 
 Exiba $A(x_1,\\ldots,x_n) \\geq G(x_1,\\ldots,x_n) \\geq H(x_1,\\ldots,x_n)$ para este conjunto de inteiros positivos.
 

@@ -8,7 +8,7 @@ dashedName: hash-and-compare-passwords-synchronously
 
 # --description--
 
-Lembrando que este projeto está sendo construído a partir do [Replit](https://replit.com/github/freeCodeCamp/boilerplate-bcrypt), ou pode ser clonado no [GitHub](https://github.com/freeCodeCamp/boilerplate-bcrypt/).
+Lembrando que este projeto está sendo construído a partir do <a href="https://replit.com/github/freeCodeCamp/boilerplate-bcrypt" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, ou pode ser clonado no <a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 Fazer o hashing de forma síncrona é muito fácil de fazer, mas pode causar lag ao usar o lado do servidor com um alto custo ou com o hashing sendo feito com muita frequência. Com este método, o hashing é tão fácil quanto fazer chamadas
 

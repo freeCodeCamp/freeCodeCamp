@@ -8,7 +8,7 @@ dashedName: fibonacci-word
 
 # --description--
 
-A palavra de Fibonacci pode ser criada de forma análoga à Sequência de Fibonacci, [conforme descrito aqui](https://hal.archives-ouvertes.fr/docs/00/36/79/72/PDF/The_Fibonacci_word_fractal.pdf):
+A sequência de palavra de Fibonacci pode ser criada de uma maneira análoga à sequência de Fibonacci, mas foca na iteração de concatenações.
 
 <pre>Defina a F_Word<sub>1</sub>  como  <strong>1</strong>
 Defina a  F_Word<sub>2</sub>  como  <strong>0</strong>
@@ -16,9 +16,11 @@ Forme a F_Word<sub>3</sub>  como  F_Word<sub>2</sub>   concatenada com a  F_Word
 Forme a F_Word<sub>n</sub>  como  F_Word<sub>n-1</sub>  concatenada com a  F_word <sub>n-2</sub>
 </pre>
 
+É necessário o cálculo de entropia neste desafio, <a href="https://www.freecodecamp.org/learn/coding-interview-prep/rosetta-code/entropy" target="_blank" rel="noopener noreferrer nofollow">como mostrado neste desafio do Rosetta Code</a>
+
 # --instructions--
 
-Escreva uma função para retornar as palavras de Fibonacci até `n`. `n` será fornecido como um parâmetro para a função. A função deve retornar um array de objetos. Os objetos devem estar na forma: `{ N: 1, Length: 1, Entropy: 0, Word: '1' }` (tamanho, entropia e palavra). `Entropy` é calculada para a string `Word` [conforme descrito aqui](https://en.wikipedia.org/wiki/Entropy_%28information_theory%29) e arredondada para 8 casas decimais de precisão.
+Escreva uma função que retorne as `n` primeiras palavras de Fibonacci. O número `n` será fornecido como um parâmetro para a função. A função deve retornar um array de objetos. Os objetos devem estar na forma: `{ N: 1, Length: 1, Entropy: 0, Word: '1' }` (tamanho, entropia e palavra). `Entropy` é calculada para a string `Word` e arredondada para 8 casas decimais de precisão. Observe que os índices dessa sequência começam em `1`.
 
 # --hints--
 

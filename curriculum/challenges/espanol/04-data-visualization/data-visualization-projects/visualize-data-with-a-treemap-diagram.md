@@ -8,7 +8,7 @@ dashedName: visualize-data-with-a-treemap-diagram
 
 # --description--
 
-**Objetivo:** Crear una aplicación que sea funcionalmente similar a <https://codepen.io/freeCodeCamp/full/KaNGNR>.
+**Objetivo:** Crear una aplicación que sea funcionalmente similar a <a href="https://codepen.io/freeCodeCamp/full/KaNGNR" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/KaNGNR</a>.
 
 Completa las historias de usuario a continuación y obtén todas las pruebas para aprobar. Utiliza cualquier librería o API que necesites. Dale tu propio estilo.
 
@@ -42,7 +42,7 @@ Para este proyecto puede utilizar cualquiera de los siguientes conjuntos de dato
 -   **Ventas de películas:** `https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/movie-data.json`
 -   **Ventas de videojuegos:** `https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/video-game-sales-data.json`
 
-Puedes construir tu proyecto con <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>usando esta plantilla CodePen</a> y haciendo clic en `Save` para crear tu propio pen. O puedes utilizar este enlace CDN para ejecutar las pruebas en cualquier entorno que desees: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+Puedes crear tu proyecto <a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow"> usando esta plantilla, </a>y haciendo clic en `Save` para crear tu propio proyecto en CodePen. O puedes utilizar este enlace CDN para ejecutar las pruebas en cualquier entorno que desees: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
 Una vez que hayas terminado, envía la URL de tu proyecto funcional con todas las pruebas pasadas.
 

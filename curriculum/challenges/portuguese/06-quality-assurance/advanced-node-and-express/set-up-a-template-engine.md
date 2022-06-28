@@ -28,7 +28,7 @@ Altere o argumento da declaração `res.render()` na rota `/` para que seja o ca
 
 Se tudo correu como planejado, sua página inicial vai parar de mostrar a mensagem "`Pug template is not defined.`" e agora exibirá uma mensagem indicando que você renderizou com sucesso o modelo do Pug!
 
-Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto concluído até este momento em <a href="https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791</a>.
+Envie sua página quando você achar que ela está certa. Se você estiver encontrando erros, pode <a href="https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791" target="_blank" rel="noopener noreferrer nofollow">conferir o projeto concluído até este ponto</a>.
 
 # --hints--
 

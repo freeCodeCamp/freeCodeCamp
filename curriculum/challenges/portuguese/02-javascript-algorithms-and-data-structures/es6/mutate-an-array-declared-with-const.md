@@ -8,7 +8,7 @@ dashedName: mutate-an-array-declared-with-const
 
 # --description--
 
-Se você não estiver familiarizado com `const`, confira [este desafio](/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-a-read-only-variable-with-the-const-keyword).
+Se você não estiver familiarizado com `const`, confira <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-a-read-only-variable-with-the-const-keyword" target="_blank" rel="noopener noreferrer nofollow">este desafio sobre a palavra-chave <code>const</code></a>.
 
 Variáveis declaradas com `const` têm muitos casos de uso no JavaScript moderno.
 

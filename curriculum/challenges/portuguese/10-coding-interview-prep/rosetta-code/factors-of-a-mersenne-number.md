@@ -12,7 +12,7 @@ Um número de Mersenne é um número na forma de <code>2<sup>P</sup>-1</code>.
 
 Se `P` for primo, o número de Mersenne pode ser primo de Mersenne. (Se `P` não for primo, o número de Mersenne também não será primo.)
 
-Na busca por números primos de Mersenne, é vantajoso eliminar expoentes, encontrando um pequeno fator antes de iniciar um [teste de Lucas-Lehmer](https://rosettacode.org/wiki/Lucas-Lehmer test "Lucas-Lehmer test"), potencialmente extenso.
+Na busca por números primos de Mersenne, é vantajoso eliminar expoentes, encontrando um pequeno fator antes de iniciar um <a href="https://rosettacode.org/wiki/Lucas-Lehmer test" target="_blank" rel="noopener noreferrer nofollow">teste de Lucas-Lehmer</a>, potencialmente extenso.
 
 Existem algoritmos muito eficientes para determinar se um número divide <code>2<sup>P</sup>-1</code> (ou, de modo equivalente, se <code>2<sup>P</sup> mod (o número) = 1</code>).
 
@@ -48,7 +48,7 @@ Outras propriedades dos números de Mersenne nos permitem refinar ainda mais o p
 
 Qualquer fator `q` de <code>2<sup>P</sup>-1</code> deve ser no formato `2kP+1`, `k`, sendo um inteiro positivo ou zero. Além disso, `q` deve ser `1` ou `7 mod 8`.
 
-Por fim, qualquer fator potencial `q` deve ser [primo](https://rosettacode.org/wiki/Primality by Trial Division "Primality by Trial Division").
+Por fim, qualquer fator potencial `q` deve ser [ "Primality by Trial Division"" target="_blank" rel="noopener noreferrer nofollow">primo](<https://rosettacode.org/wiki/Primality by Trial Division mark=).
 
 Como em outros algoritmos de divisão de teste, o algoritmo termina quando `2kP+1 > sqrt(N)`. Estes testes só funcionam em números de Mersenne, onde o `P` é primo. Por exemplo, <code>M<sub>4</sub>=15</code> não gera fatores usando essas técnicas, mas fator em 3 e 5, nenhum dos quais se ajusta a `2kP+1`.
 
