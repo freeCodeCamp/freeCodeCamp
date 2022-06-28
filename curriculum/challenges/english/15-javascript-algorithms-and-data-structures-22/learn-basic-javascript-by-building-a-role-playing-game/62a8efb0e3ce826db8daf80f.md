@@ -11,10 +11,16 @@ Finish the `defeatMonster` function by calling the `update` function with `locat
 
 # --hints--
 
-Test 1
+You should call the `update` function.
 
 ```js
+assert.match(defeatMonster.toString(), /update/);
+```
 
+You should pass `locations[4]` as the argument.
+
+```js
+assert.match(defeatMonster.toString(), /update\(locations\[4\]\)/);
 ```
 
 # --seed--
