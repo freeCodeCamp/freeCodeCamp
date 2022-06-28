@@ -48,7 +48,7 @@ Further properties of Mersenne numbers allow us to refine the process even more.
 
 Any factor `q` of <code>2<sup>P</sup>-1</code> must be of the form `2kP+1`, `k` being a positive integer or zero. Furthermore, `q` must be `1` or `7 mod 8`.
 
-Finally any potential factor `q` must be <a href="<https://rosettacode.org/wiki/Primality by Trial Division> "Primality by Trial Division"" target="_blank" rel="noopener noreferrer nofollow">prime</a>.
+Finally any potential factor `q` must be <a href="https://rosettacode.org/wiki/Primality_by_trial_division" target="_blank" rel="noopener noreferrer nofollow">prime</a>.
 
 As in other trial division algorithms, the algorithm stops when `2kP+1 > sqrt(N)`.These primarily tests only work on Mersenne numbers where `P` is prime. For example, <code>M<sub>4</sub>=15</code> yields no factors using these techniques, but factors into 3 and 5, neither of which fit `2kP+1`.
 

@@ -8,7 +8,7 @@ dashedName: s-expressions
 
 # --description--
 
-<a href="https://rosettacode.org/wiki/S-expressions " target="_blank" rel="noopener noreferrer nofollow">S-Expressions</a> are one convenient way to parse and store data.
+<a href="https://rosettacode.org/wiki/S-expressions" target="_blank" rel="noopener noreferrer nofollow">S-Expressions</a> are one convenient way to parse and store data.
 
 # --instructions--
 
