@@ -56,6 +56,29 @@ myFunc();
 */
 `;
 
+const jsString = `const a = 1;
+  let b = 2;
+  var c = 3;
+  console.log(a + b + c);
+  
+  function add(param1, param2) {
+    const tot = param1 + param2;
+    return tot;
+  }
+  
+  add(a, b);
+  
+  const complexType = {
+    a: 1,
+    b: [1, 2, '3'],
+    c: {
+      d: true,
+    },
+    e: () => {
+      const inner = 24;
+    }
+  }`;
+
 const testValues = {
   jsCodeWithSingleAndMultLineComments,
   jsCodeWithSingleAndMultLineCommentsRemoved,
@@ -64,7 +87,8 @@ const testValues = {
   jsCodeWithNoCall,
   jsCodeWithNoArgCall,
   jsCodeWithArgCall,
-  jsCodeWithCommentedCall
+  jsCodeWithCommentedCall,
+  jsString,
 };
 
 export default testValues;

@@ -33,6 +33,7 @@
     "validate-keys": "ts-node --project ../tsconfig.json ../tools/scripts/lint/validate-keys"
   },
   "dependencies": {
+    "@babel/parser": "^7.18.6",
     "@babel/plugin-proposal-export-default-from": "7.17.12",
     "@babel/plugin-proposal-function-bind": "7.16.7",
     "@babel/polyfill": "7.12.1",
@@ -129,7 +130,7 @@
     "validator": "13.7.0"
   },
   "devDependencies": {
-    "@babel/types": "7.18.4",
+    "@babel/types": "^7.18.4",
     "@codesee/babel-plugin-instrument": "0.299.0",
     "@codesee/tracker": "0.299.0",
     "@testing-library/jest-dom": "5.16.4",
