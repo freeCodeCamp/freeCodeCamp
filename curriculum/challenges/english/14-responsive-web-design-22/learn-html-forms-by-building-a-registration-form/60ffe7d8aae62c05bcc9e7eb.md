@@ -1,8 +1,8 @@
 ---
 id: 60ffe7d8aae62c05bcc9e7eb
-title: Step 51
+title: Step 52
 challengeType: 0
-dashedName: step-51
+dashedName: step-52
 ---
 
 # --description--
@@ -34,6 +34,7 @@ assert.isEmpty(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8">
     <title>Registration Form</title>
 	  <link rel="stylesheet" href="styles.css" />
   </head>

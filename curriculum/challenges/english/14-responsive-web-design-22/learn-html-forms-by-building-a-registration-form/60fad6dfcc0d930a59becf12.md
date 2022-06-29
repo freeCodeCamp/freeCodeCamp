@@ -1,8 +1,8 @@
 ---
 id: 60fad6dfcc0d930a59becf12
-title: Step 37
+title: Step 38
 challengeType: 0
-dashedName: step-37
+dashedName: step-38
 ---
 
 # --description--
@@ -39,6 +39,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.fontSize, '16px')
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8">
     <title>Registration Form</title>
 	  <link rel="stylesheet" href="styles.css" />
   </head>

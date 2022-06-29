@@ -1,8 +1,8 @@
 ---
 id: 60f85a62fb30c80bcea0cedb
-title: Step 22
+title: Step 23
 challengeType: 0
-dashedName: step-22
+dashedName: step-23
 ---
 
 # --description--
@@ -40,6 +40,7 @@ assert.equal(document.querySelectorAll('fieldset:nth-child(2) input[type="radio"
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8">
     <title>Registration Form</title>
 	  <link rel="stylesheet" href="styles.css" />
   </head>
