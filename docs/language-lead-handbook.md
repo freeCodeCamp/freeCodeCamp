@@ -29,7 +29,7 @@ With `link` being the link of the original article.
 ## How to update Crowdin Glossary
 
 > [!TIP]
-> An updated glossary helps in having an homogeneus translation of technical terms.
+> An updated glossary helps in having an homogeneous translation of technical terms.
 
 The Crowdin Glossary is kept in the [crowdin-glossaries](https://github.com/freeCodeCamp/crowdin-glossaries) repository.
 
@@ -44,6 +44,6 @@ In the `.csv` file you will find that the English language occupies the first th
 Then, each target language has two columns. If you translate to Dothraki, you will be interested in the columns `Term:Dothraki` and `Description:Dothraki`. The column `Term:Dothraki` is for the translation of the term in Dothraki, and the column `Description:Dothraki` is for a description of the term in Dothraki.
 
 > [!TIP]
-> In programs like Microsoft Excel you can hide the columns of the other languages to free screen real-estate and see the English columns and the target language columns near each other.
+> In programs like Microsoft Excel you can hide the columns of the other languages to free up screen real-estate and see the English columns and the target language columns near each other.
 
-After you have made the changes and saved the file, you will need to make a PR with the proposed changes. After the PR is accepted, the script to update the Crowdin Glossary. Your glossary changes will not have immediate effects, but they will come.
+After you have made the changes and saved the file, you will need to make a PR with the proposed changes. After the PR is accepted, you will need to run the GitHub Action workflow to update the Crowdin Glossary. Your glossary changes will not have immediate effects, but they will come.
