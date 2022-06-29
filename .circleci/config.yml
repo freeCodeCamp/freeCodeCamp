@@ -65,6 +65,7 @@ build_steps: &build_steps # Initialization.
   - run: *install_deploysuite
   - run: *build_configuration_fetch
   - run: *running_npm_build
+  - run : ls -lath
   - persist_to_workspace: *workspace_persist
 
 deploy_steps: &deploy_steps
