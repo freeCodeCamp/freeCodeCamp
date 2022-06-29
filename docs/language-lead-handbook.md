@@ -14,6 +14,18 @@ The "Editor" level allows the user to access all Drafts and publish them.
 
 The "Administrator" level is reserved for freeCodeCamp staff and Language Leads.
 
+## How to mention the original author of a translated article
+
+The original author and the original article are linked automatically adding this code to the Code Injection -> head section in the Draft Settings on ghost.
+
+```html
+<script>
+  const fccOriginalPost = 'link';
+</script>
+```
+
+With `link` being the link of the original article.
+
 ## How to update Crowdin Glossary
 
 > [!TIP]
@@ -35,15 +47,3 @@ Then, each target language has two columns. If you translate to Dothraki, you wi
 > In programs like Microsoft Excel you can hide the columns of the other languages to free screen real-estate and see the English columns and the target language columns near each other.
 
 After you have made the changes and saved the file, you will need to make a PR with the proposed changes. After the PR is accepted, the script to update the Crowdin Glossary. Your glossary changes will not have immediate effects, but they will come.
-
-## How to mention the original author of a translated article
-
-The original author and the original article are linked automatically adding this code to the Code Injection -> head section in the Draft Settings on ghost.
-
-```html
-<script>
-  const fccOriginalPost = 'link';
-</script>
-```
-
-With `link` being the link of the original article.
