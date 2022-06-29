@@ -70,8 +70,8 @@
     "title": "(Nuovo) Web Design Responsivo",
     "intro": [
       "In questo corso certificato di Web Design Responsivo imparerai i linguaggi che gli sviluppatori utilizzano per creare le pagine web. HTML (Hypertext Markup Language) per i contenuti e CSS (Cascading Style Sheets) per il design.",
-      "First, you'll build a cat photo app to learn the basics of HTML and CSS. Later, you'll learn modern techniques like CSS variables by building a penguin, and best practices for accessibility by building a quiz site.",
-      "Finally, you'll learn how to make webpages that respond to different screen sizes by building a photo gallery with Flexbox, and a magazine article layout with CSS Grid."
+      "Per prima cosa, costruirai un'app con foto di gatti per imparare le basi di HTML e CSS. Poi apprenderai tecniche più moderne come le variabili in CSS costruendo un pinguino, e le migliori pratiche per l'accessibilità costruendo un quiz.",
+      "Infine, imparerai come fare pagine web che rispondono a diverse dimensioni dello schermo costruendo una galleria di foto con Flexbox e il layout di un articolo di rivista con CSS Grid."
     ],
     "note": "Nota: Alcune estensioni del browser, come ad esempio gli ad-blocker e le estensioni per la modalità scura, possono interferire con i test. In caso di problemi, ti consigliamo di disabilitare le estensioni che modificano il contenuto o il layout delle pagine durante il corso.",
     "blocks": {
@@ -300,64 +300,64 @@
     }
   },
   "2022/javascript-algorithms-and-data-structures": {
-    "title": "JavaScript Algorithms and Data Structures (Beta)",
+    "title": "Algoritmi e Strutture Dati JavaScript (Beta)",
     "intro": [
-      "placeholder",
-      "placeholder"
+      "segnaposto",
+      "segnaposto"
     ],
     "note": "",
     "blocks": {
       "build-a-caesars-cipher-project": {
-        "title": "Build a Casears Cipher Project",
+        "title": "Crea un cifrario di Cesare",
         "intro": [
           "",
           ""
         ]
       },
       "build-a-cash-register-project": {
-        "title": "Build a Cash Register Project",
+        "title": "Crea un registro di cassa",
         "intro": [
           "",
           ""
         ]
       },
       "build-a-palindrome-checker-project": {
-        "title": "Build a Palindrome Checker Project",
+        "title": "Crea un verificatore di palindromi",
         "intro": [
           "",
           ""
         ]
       },
       "build-a-roman-numeral-converter-project": {
-        "title": "Build a Roman Numeral Converter Project",
+        "title": "Crea un convertitore di numeri romani",
         "intro": [
           "",
           ""
         ]
       },
       "build-a-telephone-number-validator-project": {
-        "title": "Build a Telephone Number Validator Project",
+        "title": "Crea un validatore di numeri telefonici",
         "intro": [
           "",
           ""
         ]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
-        "title": "Learn Basic JavaScript by Building a Role Playing Game",
+        "title": "Impara JavaScript Base creando un gioco di ruolo",
         "intro": [
           "",
           ""
         ]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
-        "title": "Learn Form Validation by Building a Calorie Counter",
+        "title": "Impara la validazione dei moduli creando un contatore di calorie",
         "intro": [
           "",
           ""
         ]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
-        "title": "Learn Functional Programming by Building a Spreadsheet",
+        "title": "Impara programmazione funzionale creando un foglio di calcolo",
         "intro": [
           "",
           ""
