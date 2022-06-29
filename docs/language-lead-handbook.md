@@ -6,11 +6,11 @@ This handbook will help you set up and use the tools for your localization effor
 
 Ghost allows you to set contributors with different levels of authorizations.
 
-Most of your invites will be for the "Contributor" level. This level allows the user to create drafts.
+Most of your invites will be for the "Contributor" level. This level allows the user to create drafts. Select this role when inviting a new translator.
 
 The "Author" level allows the user to create Drafts and publish them.
 
-The "Editor" level allows the user to access all Drafts and publish them.
+The "Editor" level allows the user to access all Drafts and publish them. Select this role when inviting a new proofreader.
 
 The "Administrator" level is reserved for freeCodeCamp staff and Language Leads.
 
