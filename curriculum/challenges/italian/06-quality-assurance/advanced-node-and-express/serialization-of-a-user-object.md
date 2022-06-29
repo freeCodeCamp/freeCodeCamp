@@ -28,7 +28,7 @@ passport.deserializeUser((id, done) => {
 
 NOTA: Questo `deserializeUser` genererà un errore fino a quando non imposteremo il DB nel passo successivo, quindi per ora commenta l'intero blocco e chiama `done(null, null)` nella funzione `deserializeUser`.
 
-Invia la tua pagina quando pensi di averlo fatto correttamente. Se incontri degli errori, puoi controllare il progetto completato fino a questo punto [qui](https://gist.github.com/camperbot/7068a0d09e61ec7424572b366751f048).
+Invia la tua pagina quando pensi di averlo fatto correttamente. Se stai avendo errori, puoi vedere <a href="https://gist.github.com/camperbot/7068a0d09e61ec7424572b366751f048" target="_blank" rel="noopener noreferrer nofollow">il progetto completato fino a questo punto</a>.
 
 # --hints--
 

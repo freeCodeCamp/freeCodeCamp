@@ -10,21 +10,21 @@ dashedName: execute-brain
 
 Scrivi una funzione per implementare un interprete Brain\*\*\*\*. La funzione dovrà prendere una stringa come parametro e restituire una stringa come output. Maggiori dettagli sono riportati di seguito:
 
-RCBF è un set di compilatori e interpreti [Brainf\*\*\*](https://rosettacode.org/wiki/Brainf*** "Brainf\*\*\*") scritti per Rosetta Code in una varietà di linguaggi.
+RCBF è un set di compilatori e interpreti <a href="https://rosettacode.org/wiki/Brainf***" target="_blank" rel="noopener noreferrer nofollow">Brainf\*\*\*</a> scritti per Rosetta Code in una varietà di linguaggi.
 
 Di seguito sono riportati i link a ciascuna delle versioni di RCBF.
 
 Un'implementazione deve solo attuare correttamente le seguenti istruzioni:
 
-| Comando                   | Descrizione                                                                                          |
-| ------------------------- | ---------------------------------------------------------------------------------------------------- |
-| <code>></code> | Sposta il puntatore a destra                                                                         |
-| <code>&lt;</code> | Sposta il puntatore a sinistra                                                                       |
-| <code>+</code> | Incrementa la cella di memoria al puntatore                                                          |
-| <code>-</code> | Decrementa la cella di memoria al puntatore                                                          |
-| <code>.</code> | Esegue l'output del carattere indicato dalla cella al puntatore                                      |
-| <code>,</code> | Inserisci un carattere e memorizzalo nella cella al puntatore                                        |
-| <code>\[</code> | Salta oltre la corrispondente <code>]</code> se la cella al puntatore è 0                   |
+| Comando                   | Descrizione                                                                                           |
+| ------------------------- | ----------------------------------------------------------------------------------------------------- |
+| <code>></code> | Sposta il puntatore a destra                                                                          |
+| <code>&lt;</code> | Sposta il puntatore a sinistra                                                                        |
+| <code>+</code> | Incrementa la cella di memoria al puntatore                                                           |
+| <code>-</code> | Decrementa la cella di memoria al puntatore                                                           |
+| <code>.</code> | Esegue l'output del carattere indicato dalla cella al puntatore                                       |
+| <code>,</code> | Inserisci un carattere e memorizzalo nella cella al puntatore                                         |
+| <code>\[</code> | Salta oltre la corrispondente <code>]</code> se la cella al puntatore è 0                    |
 | <code>]</code> | Torna indietro alla corrispondente <code>\[</code> se la cella sotto il puntatore non è zero |
 
 Qualsiasi dimensione della cella è consentita, il supporto EOF (*E*nd-*O*f-*F*ile) è opzionale, come se tu avessi una memoria limitata o illimitata.

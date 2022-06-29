@@ -8,16 +8,17 @@ dashedName: sailors-coconuts-and-a-monkey-problem
 
 # --description--
 
-Cinque marinai sono naufragati su un'isola e raccolgono un grande mucchio di noci di cocco durante il giorno. Quella notte il primo marinaio si sveglia e decide di prendere la sua prima parte presto, così cerca di dividere il mucchio di noci di cocco ugualmente in cinque pile, ma scopre che c'è un cocco rimasto, così lo lancia ad una scimmia e poi nasconde la "sua" pila di cocco, di pari dimensione, e spinge le altre quattro insieme per formare nuovamente un unico mucchio visibile di noci di cocco e va a letto. Per farla breve, ciascuno dei marinai a sua volta si alza una volta durante la notte ed esegue le stesse azioni di divisione del mucchio di cocco in cinque, scopre che un cocco è rimasto e da quel singolo cocco alla scimmia. Al mattino (dopo l'azione surrettizia e separata di ciascuno dei cinque marinai durante la notte), le noci di cocco restanti sono suddivise in cinque pile uguali per ciascuno dei marinai, dopodiché si scopre che il mucchio di noci di cocco si divide ugualmente tra i marinai senza resto. (Niente per la scimmia al mattino.)
+Cinque marinai sono naufragati su un'isola e raccolgono un grande mucchio di noci di cocco durante il giorno.
+
+Quella notte il primo marinaio si sveglia e decide di prendere la sua prima parte presto, così cerca di dividere il mucchio di noci di cocco ugualmente in cinque pile, ma scopre che c'è un cocco rimasto, così lo lancia ad una scimmia e poi nasconde la "sua" pila di cocco, di pari dimensione, e spinge le altre quattro insieme per formare nuovamente un unico mucchio visibile di noci di cocco e va a letto.
+
+Per farla breve, ogni marinaio a turno fa la stessa cosa di dividere la pila di noci di cocco in cinque, trovare che una noce di cocco è rimasta fuori dalla divisione, e dare quella noce di cocco restante alla scimmia, per poi rimettere assieme le altre quattro pile per formare una singola pila.
+
+Al mattino (dopo che ciascuno dei cinque marinai ha agito separatamente e di nascosto durante la notte), le noci di cocco restanti sono suddivise in cinque pile uguali per ciascuno dei marinai, dopodiché si scopre che il mucchio di noci di cocco si divide ugualmente tra i marinai senza resto. (Niente per la scimmia al mattino.)
 
 # --instructions--
 
-Crea una funzione che restituisca la dimensione minima possibile del mucchio iniziale di noci di cocco raccolto durante il giorno per `N` marinai. **Nota:** Naturalmente la storia è raccontata in un mondo in cui la raccolta di qualsiasi quantità di noci di cocco in un giorno e divisioni multiple del mucchio, ecc. possono verificarsi nel tempo della storia, in modo da non influenzare la matematica. **Confronta:**
-
-<ul>
-  <li><a href="https://www.youtube.com/watch?v=U9qU20VmvaU" target="_blank"> Monkeys and Coconuts - Numberphile</a> (Video) Analytical solution.</li>
-  <li><a href="https://oeis.org/A002021" target="_blank">A002021 Problema del mucchio di noci di cocco</a> L'Enciclopedia online delle sequenze di numeri interi. (Anche se alcuni dei suoi riferimenti possono utilizzare la forma alternativa del racconto).</li>
-</ul>
+Crea una funzione che restituisca la dimensione minima possibile del mucchio iniziale di noci di cocco raccolto durante il giorno per `N` marinai. **Nota:** ovviamente la storia è raccontata in un mondo dove la raccolta di qualsiasi numero di noci di cocco in un giorno e le divisioni multiple della pilla, ecc., possono avvenire nel tempo della storia, così da non avere effetto sulla matematica.
 
 # --hints--
 

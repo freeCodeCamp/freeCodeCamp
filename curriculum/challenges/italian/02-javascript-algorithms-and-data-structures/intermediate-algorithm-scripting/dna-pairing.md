@@ -8,11 +8,9 @@ dashedName: dna-pairing
 
 # --description--
 
-Al filamento di DNA manca l'elemento di accoppiamento. Prendi ogni carattere, ottieni la sua coppia e restituisci i risultati in un array 2d.
+Le coppie di filamenti di DNA sono formate da coppie di basi azotate. Coppie di basi sono rappresentate dai caratteri <em>AT</em> e <em>CG</em>, che formano i mattoncini di base della doppia elica del DNA.
 
-[Le coppie di basi del DNA](http://en.wikipedia.org/wiki/Base_pair) sono AT e CG. Abbina l'elemento mancante al carattere fornito.
-
-Restituisci il carattere fornito come il primo elemento in ogni array.
+Al filamento di DNA manca l'elemento da accoppiare. Scrivi una funzione che crea le coppie mancanti per il filamento di DNA dato. Per ogni carattere nella stringa data, trova il carattere della base azotata da accoppiare. Restituisci il risultato in un array 2d.
 
 Per esempio, per l'input `GCG`, restituisci `[["G", "C"], ["C","G"], ["G", "C"]]`
 

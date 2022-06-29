@@ -14,11 +14,11 @@ dashedName: networking-web-scraping-with-python
 
 Altre risorse:
 
-\- [Esercizio: socket1](https://www.youtube.com/watch?v=dWLdI143W-g)
+\- <a href="https://www.youtube.com/watch?v=dWLdI143W-g" target="_blank" rel="noopener noreferrer nofollow">Esercizio: socket1</a>
 
-\- [Esercizio: urllib](https://www.youtube.com/watch?v=8yis2DvbBkI)
+\- <a href="https://www.youtube.com/watch?v=8yis2DvbBkI" target="_blank" rel="noopener noreferrer nofollow">Esercizio: urllib</a>
 
-\- [Esercizio: urllinks](https://www.youtube.com/watch?v=g9flPDG9nnY)
+\- <a href="https://www.youtube.com/watch?v=g9flPDG9nnY" target="_blank" rel="noopener noreferrer nofollow">Esercizio: urllinks</a>
 
 # --question--
 
