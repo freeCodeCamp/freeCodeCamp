@@ -15,7 +15,7 @@
   - [Lavorare sulla app web in locale](how-to-work-on-localized-client-webapp.md)
   - [Lavora sui test Cypress ](how-to-add-cypress-tests.md)
   - [Lavorare sulle sfide video](how-to-help-with-video-challenges.md)
-  - [Work on documentation](how-to-work-on-the-docs-theme.md)
+  - [Lavorare sulla documentazione](how-to-work-on-the-docs-theme.md)
   - [Lavorare sulla libreria dei componenti](how-to-work-on-the-component-library.md)
 - **Guide aggiuntive**
   - [Testare traduzioni in locale](how-to-test-translations-locally.md)
