@@ -3,7 +3,7 @@ version: 2.1
 defaults: &defaults
   docker:
     - image: node:16.14
-  resource_class: xlarge
+  resource_class: large
 
 deploy_defaults: &deploy_defaults
   docker:
@@ -40,7 +40,7 @@ running_npm_build: &running_npm_build
   command: |
     # source buildenvvar
     sed "s/export\s//g" buildenvvar > .env
-    # git config --global url."https://git@".insteadOf git://
+    git config --global url."https://git@".insteadOf git://
     # rm -rf package-lock.json
     npm ci
     npm run build
@@ -124,8 +124,8 @@ workflows:
           context: org-global
           filters:
             branches:
-              ignore:
-                - main
+              only:
+                - test-circleci
 
       - build-prod:
           context: org-global
