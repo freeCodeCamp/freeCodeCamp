@@ -100,7 +100,8 @@
     "test-tools": "jest tools",
     "test-utils": "jest utils",
     "test-ui-components": "jest tools/ui-components",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "postinstall": "cd node_modules/@freecodecamp/loop-protect && npm ci && npm run build"
   },
   "dependencies": {
     "dotenv": "10.0.0",
