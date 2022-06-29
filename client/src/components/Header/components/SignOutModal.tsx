@@ -12,44 +12,39 @@
 //   isSignedOut?: boolean;
 // }
 
-// // constructor(){
-// //   this.handleMenuKeyDown = this.handleMenuKeyDown.bind(this);
-// //   this.handleBlur = this.handleBlur.bind(this);
-// // }
+// const SignOutModal: React.FunctionComponent<SignOutProps> = (blurArgument, menuKeyDownArgument ) =>  {
+//     const { t } = useTranslation();
+//     const [show, setShow] = useState(false);
 
-// class SignOutModal extends React.FunctionComponent<SignOutProps>  {
-// //     const { t } = useTranslation();
-// //     const [show, setShow] = useState(false);
-
-// //   return (
-// //     <li>
-// //      <button
-// //         className='nav-link nav-link-signout'
-// //         onClick={() => setShow(true)}
-// //       >
-// //         {t('buttons.sign-out')}
-// //       </button>
-// //     <Modal>
-// //       <Modal.Header closeButton />
-// //         <Modal.Body>
-// //           <p>
-// //             you will signout in 10 seconds
-// //           </p>
-// //           <a
-// //               className='nav-link nav-link-signout'
-// //               href={`${apiLocation}/signout`}
-// //               onBlur={this.handleBlur}
-// //               onKeyDown={this.handleMenuKeyDown}
-// //             >
-// //               {t('buttons.sign-out')}
-// //           </a>
-// //           <button>
-// //             Cansel Signing out
-// //           </button>
-// //        </Modal.Body>
-// //     </Modal>
-// //     </li>
-// //   );
+//   return (
+//     <li>
+//      <button
+//         className='nav-link nav-link-signout'
+//         onClick={() => setShow(true)}
+//       >
+//         {t('buttons.sign-out')}
+//       </button>
+//     <Modal>
+//       <Modal.Header closeButton />
+//         <Modal.Body>
+//           <p>
+//             you will signout in 10 seconds
+//           </p>
+//           <a
+//               className='nav-link nav-link-signout'
+//               href={`${apiLocation}/signout`}
+//               onBlur={blurArgument}
+//               onKeyDown={menuKeyDownArgument}
+//             >
+//               {t('buttons.sign-out')}
+//           </a>
+//           <button>
+//             Cansel Signing out
+//           </button>
+//        </Modal.Body>
+//     </Modal>
+//     </li>
+//   );
 // }
 
 // SignOutModal.displayName = 'SignOutModal';

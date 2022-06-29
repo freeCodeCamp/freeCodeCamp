@@ -28,6 +28,7 @@ import createLanguageRedirect from '../../create-language-redirect';
 import { Link } from '../../helpers';
 import { Themes } from '../../settings/theme';
 import LanguageGlobe from '../../../assets/icons/language-globe';
+// import SignOutModal from './SignOutModal';
 
 const { clientLocale, radioLocation, apiLocation } = envData;
 
@@ -69,6 +70,8 @@ export class NavLinks extends Component<NavLinksProps, {}> {
     this.handleLanguageButtonClick = this.handleLanguageButtonClick.bind(this);
     this.handleLanguageButtonKeyDown =
       this.handleLanguageButtonKeyDown.bind(this);
+    this.handleMenuKeyDown = this.handleMenuKeyDown.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
   }
 
   toggleTheme(currentTheme = Themes.Default, toggleNightMode: any) {
