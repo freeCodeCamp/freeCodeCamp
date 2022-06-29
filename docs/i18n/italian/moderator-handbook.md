@@ -315,7 +315,7 @@ If you think we did this in error, or once you're ready to come back and contrib
 
 ## Come funzionano le stanze dei contributori
 
-Anyone is welcome in the [Contributors room on our chat server](https://discord.gg/PRyKn3Vbay). È la chat room designata per i moderatori e per i camper che contribuiscono alla nostra comunità in altri modi, anche attraverso i gruppi di studio.
+Chiunque è il benvenuto nella [stanza dei contributori sul nostro server di chat](https://discord.gg/PRyKn3Vbay). È la chat room designata per i moderatori e per i camper che contribuiscono alla nostra comunità in altri modi, anche attraverso i gruppi di studio.
 
 Diamo per assodato che i contributori leggano qualunque messaggio in cui siano nominati direttamente con `@username`. Tutto il resto è opzionale, ma sentiti libero di leggere qualunque cosa venga postata da chiunque, e interagire.
 

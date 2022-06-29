@@ -197,7 +197,7 @@ Attualmente una versione beta test pubblica è disponibile al seguente indirizzo
 
 Il team di sviluppo fa un merge dei cambiamenti dal ramo `prod-staging` a `prod-current` quando rilascia dei cambiamenti. Il commit superiore dovrebbe essere quello che si vede live sul sito.
 
-È possibile identificare la versione esatta distribuita visitando i registri di compilazione e distribuzione disponibili nella sezione stato. Alternatively you can also ping us in the [contributors chat room](https://discord.gg/PRyKn3Vbay) for a confirmation.
+È possibile identificare la versione esatta distribuita visitando i registri di compilazione e distribuzione disponibili nella sezione stato. In alternativa puoi scriverci nella [chat room dei contributori](https://discord.gg/PRyKn3Vbay) per una conferma.
 
 ### Limitazioni note
 
