@@ -8,7 +8,7 @@ dashedName: gamma-function
 
 # --description--
 
-Implementa un algoritmo (o più) per calcolare la funzione [Gamma](https://en.wikipedia.org/wiki/Gamma function) ($\\Gamma$) (solo nel campo reale).
+Implementa un algoritmo (o più) per calcolare la funzione Gamma (solo nel campo reale).
 
 La funzione Gamma può essere definita come segue:
 

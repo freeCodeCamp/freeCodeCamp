@@ -47,7 +47,7 @@ app.route('/register')
   );
 ```
 
-Invia la tua pagina quando pensi di averlo fatto correttamente. Se incontri degli errori, puoi controllare il progetto completato fino a questo punto [qui](https://gist.github.com/camperbot/b230a5b3bbc89b1fa0ce32a2aa7b083e).
+Invia la tua pagina quando pensi di averlo fatto correttamente. Se stai avendo errori, puoi vedere <a href="https://gist.github.com/camperbot/b230a5b3bbc89b1fa0ce32a2aa7b083e" target="_blank" rel="noopener noreferrer nofollow">il progetto completato fino a questo punto</a>.
 
 **NOTA:** Da questo punto in poi, possono sorgere problemi relativi all'uso del browser *picture-in-picture*. Se stai utilizzando un IDE online che offre una preview dell'app nell'editor, è raccomandato aprire la preview in una nuova scheda.
 

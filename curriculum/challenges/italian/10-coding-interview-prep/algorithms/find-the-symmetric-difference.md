@@ -54,7 +54,7 @@ assert.sameMembers(sym([1, 2, 3], [5, 2, 1, 4, 5]), [3, 4, 5]);
 assert.equal(sym([1, 2, 3], [5, 2, 1, 4, 5]).length, 3);
 ```
 
-`sym([1, 2, 5], [2, 3, 5], [3, 4, 5])` dovrebbe restituire `[1, 4, 5]`
+`sym([1, 2, 5], [2, 3, 5], [3, 4, 5])` dovrebbe restituire `[1, 4, 5]`.
 
 ```js
 assert.sameMembers(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]), [1, 4, 5]);

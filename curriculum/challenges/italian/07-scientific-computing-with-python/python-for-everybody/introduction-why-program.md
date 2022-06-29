@@ -18,9 +18,9 @@ dashedName: introduction-why-program
 
 Altre risorse:
 
-\- [Installare Python su Windows](https://youtu.be/F7mtLrYzZP8)
+\- <a href="https://youtu.be/F7mtLrYzZP8" target="_blank" rel="noopener noreferrer nofollow">Installare Python su Windows</a>
 
-\- [Installare Python su MacOS](https://youtu.be/wfLnZP-4sZw)
+\- <a href="https://youtu.be/wfLnZP-4sZw" target="_blank" rel="noopener noreferrer nofollow">Installare Python su MacOS</a>
 
 # --question--
 

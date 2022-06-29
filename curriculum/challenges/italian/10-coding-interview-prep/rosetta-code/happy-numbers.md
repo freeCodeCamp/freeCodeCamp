@@ -8,7 +8,7 @@ dashedName: happy-numbers
 
 # --description--
 
-Un [numero felice](https://it.wikipedia.org/wiki/Numero_felice) è definito dal seguente processo:
+Un numero felice è definito con il seguente processo:
 
 A partire da un numero intero positivo, sostituisci il numero con la somma dei quadrati delle sue cifre, e ripeti il processo fino a quando il numero è uguale a `1` (dove resterà), o si ripete senza fine in un ciclo che non include `1`. Quei numeri per i quali questo processo termina in `1` sono numeri felici, mentre quelli che non terminano in `1` sono numeri infelici.
 
