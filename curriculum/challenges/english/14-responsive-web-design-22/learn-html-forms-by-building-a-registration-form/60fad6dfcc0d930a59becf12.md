@@ -37,7 +37,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.fontSize, '16px')
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Registration Form</title>
 	  <link rel="stylesheet" href="styles.css" />

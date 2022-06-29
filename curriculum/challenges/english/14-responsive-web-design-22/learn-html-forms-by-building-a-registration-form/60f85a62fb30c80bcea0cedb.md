@@ -38,7 +38,7 @@ assert.equal(document.querySelectorAll('fieldset:nth-child(2) input[type="radio"
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Registration Form</title>
 	  <link rel="stylesheet" href="styles.css" />
