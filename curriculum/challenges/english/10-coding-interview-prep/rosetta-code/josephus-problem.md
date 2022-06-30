@@ -26,7 +26,7 @@ Which number was he?
 
 # --instructions--
 
-Write a function that takes the initial number of prisoners and `k` as parameter and returns the number of the prisoner that survives.
+Write a function that takes the initial number of prisoners and `k` as parameters and returns the number of the prisoner that survives.
 
 # --hints--
 

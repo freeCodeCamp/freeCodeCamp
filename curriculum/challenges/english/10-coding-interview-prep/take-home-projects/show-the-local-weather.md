@@ -8,7 +8,7 @@ dashedName: show-the-local-weather
 
 # --description--
 
-**Objective:** Build a an app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/bELRjV>.
+**Objective:** Build an app that is functionally similar to this: <a href="https://codepen.io/freeCodeCamp/full/bELRjV" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/bELRjV</a>.
 
 **Rule #1:** Don't look at the example project's code. Figure it out for yourself.
 
