@@ -100,7 +100,7 @@ pipeline {
                     #!/bin/bash
                     node --version
                     npm --version
-                    sed "s/export\s//g" buildenvvar > .env
+                    sed "s/export\\s//g" buildenvvar > .env
                     git config --global url."https://git@".insteadOf git://
                     npm ci
                     npm run build
