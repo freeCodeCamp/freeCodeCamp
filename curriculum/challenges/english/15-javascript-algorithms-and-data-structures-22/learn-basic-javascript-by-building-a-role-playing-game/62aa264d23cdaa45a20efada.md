@@ -21,10 +21,16 @@ while (i < 5) {
 
 # --hints--
 
-Test 1
+Your `pick` function should have a `while` loop.
 
 ```js
+assert.match(pick.toString(), /while\s*\(/);
+```
 
+Your `while` loop should run while `numbers.length < 10`.
+
+```js
+assert.match(pick.toString(), /while\s*\(\s*numbers.length\s*<\s*10\s*\)/);
 ```
 
 # --seed--

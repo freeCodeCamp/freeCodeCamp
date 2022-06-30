@@ -17,10 +17,10 @@ for (let x = 1; x < 5; x++) {
 
 # --hints--
 
-Test 1
+You should copy the above loop into your `pick` function.
 
 ```js
-
+assert.match(pick.toString(), /for\s*\(\s*(let|var)\s*x\s*=\s*1\s*;\s*x\s*<\s*5\s*;\s*x\s*\+\+\s*\)/);
 ```
 
 # --seed--
