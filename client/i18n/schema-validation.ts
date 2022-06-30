@@ -1,4 +1,5 @@
 import path from 'path';
+import { readFile } from 'fs/promises';
 import { availableLangs } from '../../config/i18n/all-langs';
 import introSchema from './locales/english/intro.json';
 import linksSchema from './locales/english/links.json';
@@ -15,24 +16,22 @@ type MotivationalQuotes = { quote: string; author: string }[];
  * @param {Object} obj Object to flatten
  * @param {String} namespace Used for property chaining
  */
-const flattenAnObject = (
-  obj: Record<string, object | string>,
-  namespace = ''
-) => {
-  const flattened: Record<string, object | string> = {};
+const flattenAnObject = (obj: Record<string, unknown>, namespace = '') => {
+  const flattened: Record<string, unknown> = {};
   Object.keys(obj).forEach(key => {
-    if (Array.isArray(obj[key])) {
-      flattened[namespace ? `${namespace}.${key}` : key] = obj[key];
-    } else if (typeof obj[key] === 'object') {
+    const value = obj[key];
+    if (Array.isArray(value)) {
+      flattened[namespace ? `${namespace}.${key}` : key] = value;
+    } else if (typeof value === 'object') {
       Object.assign(
         flattened,
         flattenAnObject(
-          obj[key] as Record<string, object | string>,
+          value as Record<string, unknown>,
           namespace ? `${namespace}.${key}` : key
         )
       );
     } else {
-      flattened[namespace ? `${namespace}.${key}` : key] = obj[key];
+      flattened[namespace ? `${namespace}.${key}` : key] = value;
     }
   });
   return flattened;
@@ -89,23 +88,24 @@ const findExtraneousKeys = (file: string[], schema: string[], path: string) => {
  * @param {String} namespace String for tracking nested properties
  */
 const noEmptyObjectValues = (
-  obj: Record<string, object | string>,
+  obj: Record<string, unknown>,
   namespace = ''
 ): string[] => {
   const emptyKeys = [];
   for (const key of Object.keys(obj)) {
-    if (Array.isArray(obj[key])) {
-      if (!(obj[key] as string[]).length) {
+    const value = obj[key];
+    if (Array.isArray(value)) {
+      if (!value.length) {
         emptyKeys.push(namespace ? `${namespace}.${key}` : key);
       }
-    } else if (typeof obj[key] === 'object') {
+    } else if (typeof value === 'object') {
       emptyKeys.push(
         noEmptyObjectValues(
-          obj[key] as Record<string, object | string>,
+          value as Record<string, unknown>,
           namespace ? `${namespace}.${key}` : key
         )
       );
-    } else if (!obj[key]) {
+    } else if (!value) {
       emptyKeys.push(namespace ? `${namespace}.${key}` : key);
     }
   }
@@ -130,31 +130,14 @@ const linksSchemaKeys = Object.keys(flattenAnObject(linksSchema));
  */
 const translationSchemaValidation = (languages: string[]) => {
   languages.forEach(language => {
-    const filePath = path.join(
-      __dirname,
-      `/locales/${language}/translations.json`
-    );
-    const fileJson = getFileJson(filePath);
-    const fileKeys = Object.keys(flattenAnObject(fileJson));
-    findMissingKeys(
-      fileKeys,
-      translationSchemaKeys,
-      `${language}/translations.json`
-    );
-    findExtraneousKeys(
-      fileKeys,
-      translationSchemaKeys,
-      `${language}/translations.json`
-    );
-    const emptyKeys = noEmptyObjectValues(fileJson);
-    if (emptyKeys.length) {
-      console.warn(
-        `${language}/translations.json has these empty keys: ${emptyKeys.join(
-          ', '
-        )}`
+    void readJsonFile(language, 'translations').then(fileJson => {
+      schemaValidation(
+        language,
+        'translations',
+        fileJson,
+        translationSchemaKeys
       );
-    }
-    console.info(`${language} translations.json validation complete.`);
+    });
   });
 };
 
@@ -165,64 +148,22 @@ const translationSchemaValidation = (languages: string[]) => {
  */
 const trendingSchemaValidation = (languages: string[]) => {
   languages.forEach(language => {
-    const filePath = path.join(__dirname, `/locales/${language}/trending.json`);
-    const fileJson = getFileJson(filePath);
-    const fileKeys = Object.keys(flattenAnObject(fileJson));
-    findMissingKeys(fileKeys, trendingSchemaKeys, `${language}/trending.json`);
-    findExtraneousKeys(
-      fileKeys,
-      trendingSchemaKeys,
-      `${language}/trending.json`
-    );
-    const emptyKeys = noEmptyObjectValues(fileJson);
-    if (emptyKeys.length) {
-      console.warn(
-        `${language}/trending.json has these empty keys: ${emptyKeys.join(
-          ', '
-        )}`
-      );
-    }
-    console.info(`${language} trending.json validation complete`);
+    void readJsonFile(language, 'trending').then(fileJson => {
+      schemaValidation(language, 'trending', fileJson, trendingSchemaKeys);
+    });
   });
 };
 
+/**
+ * Function that checks the motivation.json file
+ * for each available client language.
+ * @param {String[]} languages List of languages to test
+ */
 const motivationSchemaValidation = (languages: string[]) => {
   languages.forEach(language => {
-    const filePath = path.join(
-      __dirname,
-      `/locales/${language}/motivation.json`
-    );
-    const fileJson = getFileJson(filePath);
-    const fileKeys = Object.keys(flattenAnObject(fileJson));
-    findMissingKeys(
-      fileKeys,
-      motivationSchemaKeys,
-      `${language}/motivation.json`
-    );
-    findExtraneousKeys(
-      fileKeys,
-      motivationSchemaKeys,
-      `${language}/motivation.json`
-    );
-    const emptyKeys = noEmptyObjectValues(fileJson);
-    if (emptyKeys.length) {
-      console.warn(
-        `${language}/motivation.json has these empty keys: ${emptyKeys.join(
-          ', '
-        )}`
-      );
-    }
-    // Special line to assert that objects in motivational quote are correct
-    if (
-      !(fileJson.motivationalQuotes as MotivationalQuotes).every(
-        (object: object) =>
-          Object.prototype.hasOwnProperty.call(object, 'quote') &&
-          Object.prototype.hasOwnProperty.call(object, 'author')
-      )
-    ) {
-      console.warn(`${language}/motivation.json has malformed quote objects.`);
-    }
-    console.info(`${language} motivation.json validation complete`);
+    void readJsonFile(language, 'motivation').then(fileJson => {
+      schemaValidation(language, 'motivation', fileJson, motivationSchemaKeys);
+    });
   });
 };
 
@@ -233,67 +174,85 @@ const motivationSchemaValidation = (languages: string[]) => {
  */
 const introSchemaValidation = (languages: string[]) => {
   languages.forEach(language => {
-    const filePath = path.join(__dirname, `/locales/${language}/intro.json`);
-    const fileJson = getFileJson(filePath);
-    const fileKeys = Object.keys(flattenAnObject(fileJson));
-    findMissingKeys(fileKeys, introSchemaKeys, `${language}/intro.json`);
-    findExtraneousKeys(fileKeys, introSchemaKeys, `${language}/intro.json`);
-    const emptyKeys = noEmptyObjectValues(fileJson);
-    if (emptyKeys.length) {
-      console.warn(
-        `${language}/intro.json has these empty keys: ${emptyKeys.join(', ')}`
-      );
-    }
-    console.info(`${language} intro.json validation complete`);
+    void readJsonFile(language, 'intro').then(fileJson => {
+      schemaValidation(language, 'intro', fileJson, introSchemaKeys);
+    });
   });
 };
 
+/**
+ * Function that checks the meta-tags.json file
+ * for each available client language.
+ * @param {String[]} languages List of languages to test
+ */
 const metaTagsSchemaValidation = (languages: string[]) => {
   languages.forEach(language => {
-    const filePath = path.join(
-      __dirname,
-      `/locales/${language}/meta-tags.json`
-    );
-    const fileJson = getFileJson(filePath);
-    const fileKeys = Object.keys(flattenAnObject(fileJson));
-    findMissingKeys(fileKeys, metaTagsSchemaKeys, `${language}/meta-tags.json`);
-    findExtraneousKeys(
-      fileKeys,
-      metaTagsSchemaKeys,
-      `${language}/metaTags.json`
-    );
-    const emptyKeys = noEmptyObjectValues(fileJson);
-    if (emptyKeys.length) {
-      console.warn(
-        `${language}/metaTags.json has these empty keys: ${emptyKeys.join(
-          ', '
-        )}`
-      );
-    }
-    console.info(`${language} metaTags.json validation complete`);
+    void readJsonFile(language, 'meta-tags').then(fileJson => {
+      schemaValidation(language, 'meta-tags', fileJson, metaTagsSchemaKeys);
+    });
   });
 };
 
+/**
+ * Function that checks the links.json file
+ * for each available client language.
+ * @param {String[]} languages List of languages to test
+ */
 const linksSchemaValidation = (languages: string[]) => {
   languages.forEach(language => {
-    const filePath = path.join(__dirname, `/locales/${language}/links.json`);
-    const fileJson = getFileJson(filePath);
-    const fileKeys = Object.keys(flattenAnObject(fileJson));
-    findMissingKeys(fileKeys, linksSchemaKeys, `${language}/links.json`);
-    findExtraneousKeys(fileKeys, linksSchemaKeys, `${language}/links.json`);
-    const emptyKeys = noEmptyObjectValues(fileJson);
-    if (emptyKeys.length) {
-      console.warn(
-        `${language}/links.json has these empty keys: ${emptyKeys.join(', ')}`
-      );
-    }
-    console.info(`${language} links.json validation complete`);
+    void readJsonFile(language, 'links').then(fileJson => {
+      schemaValidation(language, 'links', fileJson, linksSchemaKeys);
+    });
   });
 };
 
-const getFileJson = (filePath: string) =>
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  require(filePath) as Record<string, object | string>;
+/**
+ * Common Function that checks the json file
+ * @param {String} language the language to test
+ * @param {String} fileName the fileName of json file to test
+ * @param {Object} fileJson the fileJson got by readJsonFile
+ * @param {String[]} schemaKeys Array of matching schema's keys
+ */
+const schemaValidation = (
+  language: string,
+  fileName: string,
+  fileJson: Record<string, unknown>,
+  schemaKeys: string[]
+) => {
+  const fileKeys = Object.keys(flattenAnObject(fileJson));
+  findMissingKeys(fileKeys, schemaKeys, `${language}/${fileName}.json`);
+  findExtraneousKeys(fileKeys, schemaKeys, `${language}/${fileName}.json`);
+  const emptyKeys = noEmptyObjectValues(fileJson);
+  if (emptyKeys.length) {
+    console.warn(
+      `${language}/${fileName}.json has these empty keys: ${emptyKeys.join(
+        ', '
+      )}`
+    );
+  }
+  // Special line to assert that objects in motivational quote are correct
+  if (
+    fileName === 'motivation' &&
+    !(fileJson.motivationalQuotes as MotivationalQuotes).every(
+      (object: object) =>
+        Object.prototype.hasOwnProperty.call(object, 'quote') &&
+        Object.prototype.hasOwnProperty.call(object, 'author')
+    )
+  ) {
+    console.warn(`${language}/${fileName}.json has malformed quote objects.`);
+  }
+  console.info(`${language} ${fileName}.json validation complete`);
+};
+
+const readJsonFile = async (language: string, fileName: string) => {
+  const filePath = path.join(
+    __dirname,
+    `/locales/${language}/${fileName}.json`
+  );
+  const file = await readFile(filePath, 'utf8');
+  const fileJson = JSON.parse(file) as Record<string, unknown>;
+  return fileJson;
+};
 
 const translatedLangs = availableLangs.client.filter(x => x !== 'english');
 
