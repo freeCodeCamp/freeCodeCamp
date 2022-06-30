@@ -1,154 +1,17 @@
 version: 2.1
-
-defaults: &defaults
-  docker:
-    - image: node:16.14
-  resource_class: large
-
-deploy_defaults: &deploy_defaults
-  docker:
-    - image: cimg/python:3.10.2
-
-install_build_dependency: &install_build_dependency
-  name: Installation of build and deployment dependencies.
-  command: |
-    apt update
-    apt install jq -y
-    apt install python3-pip -y
-    pip3 install awscli --upgrade
-install_dependency: &install_dependency
-  name: Installation of build and deployment dependencies.
-  command: |
-    pip3 install awscli --upgrade
-install_deploysuite: &install_deploysuite
-  name: Installation of install_deploysuite.
-  command: |
-    git clone --branch v1.4.6 https://github.com/topcoder-platform/tc-deploy-scripts ../buildscript
-    cp ./../buildscript/master_deploy.sh .
-    cp ./../buildscript/buildenv.sh .
-    cp ./../buildscript/awsconfiguration.sh .
-restore_cache_settings_for_build: &restore_cache_settings_for_build
-  key: connect-node-modules-{{ checksum "package-lock.json" }}
-
-save_cache_settings: &save_cache_settings
-  key: connect-node-modules-{{ checksum "package-lock.json" }}
-  paths:
-    - node_modules
-
-running_npm_build: &running_npm_build
-  name: Running npm Build
-  command: |
-    # source buildenvvar
-    sed "s/export\s//g" buildenvvar > .env
-    git config --global url."https://git@".insteadOf git://
-    # rm -rf package-lock.json
-    npm ci
-    npm run build
-  no_output_timeout: 20m
-workspace_persist: &workspace_persist
-  root: .
-  paths:
-    - build
-
-workspace_attach: &workspace_attach
-  at: ./workspace
-
-build_configuration_fetch: &build_configuration_fetch
-  name: 'configuring environment'
-  command: |
-    ./awsconfiguration.sh $DEPLOY_ENV
-    ./buildenv.sh -e $DEPLOY_ENV -b ${LOGICAL_ENV}-${APPNAME}-buildvar
-build_steps: &build_steps # Initialization.
-  - checkout
-  - setup_remote_docker
-  - run: *install_build_dependency
-  - run: *install_deploysuite
-  - run: *build_configuration_fetch
-  - run: *running_npm_build
-  - run : ls -lath
-  - persist_to_workspace: *workspace_persist
-
-deploy_steps: &deploy_steps
-  - checkout
-  - attach_workspace: *workspace_attach
-  - run: *install_dependency
-  - run: *install_deploysuite
-  - deploy:
-      name: Running MasterScript
-      command: |
-        ./awsconfiguration.sh $DEPLOY_ENV
-        source awsenvconf
-        ./buildenv.sh -e $DEPLOY_ENV -b ${LOGICAL_ENV}-${APPNAME}-deployvar
-        source buildenvvar
-        ./master_deploy.sh -d CFRONT -e $DEPLOY_ENV -c $ENABLE_CACHE
+# Define the jobs we want to run for this project
 jobs:
-  build-dev:
-    <<: *defaults
-    environment:
-      DEPLOY_ENV: 'DEV'
-      LOGICAL_ENV: 'dev'
-      APPNAME: 'freecodecamp-mfe'
-    steps: *build_steps
-
-  build-prod:
-    <<: *defaults
-    environment:
-      DEPLOY_ENV: 'PROD'
-      LOGICAL_ENV: 'prod'
-      APPNAME: 'freecodecamp-mfe'
-    steps: *build_steps
-
-  # Just tests commited code.
-  deployDev:
-    <<: *deploy_defaults
-    environment:
-      DEPLOY_ENV: 'DEV'
-      LOGICAL_ENV: 'dev'
-      ENABLE_CACHE: false
-      APPNAME: 'freecodecamp-mfe'
-    steps: *deploy_steps
-
-  deployProd:
-    <<: *deploy_defaults
-    environment:
-      DEPLOY_ENV: 'PROD'
-      LOGICAL_ENV: 'prod'
-      ENABLE_CACHE: true
-      APPNAME: 'freecodecamp-mfe'
-    steps: *deploy_steps
-
-workflows:
-  version: 2
   build:
+    docker:
+      - image: node:16.14
+    steps:
+      - run: echo "this is the build job"
+# Orchestrate our job run sequence
+workflows:
+  build_and_test:
     jobs:
-      - build-dev:
-          context: org-global
+      - build:
           filters:
             branches:
               only:
-                - test-circleci
-
-      - build-prod:
-          context: org-global
-          filters:
-            branches:
-              only:
-                - main
-
-      # - deployDev:
-      #     context : org-global
-      #     requires:
-      #       - build-dev
-      #     filters:
-      #       branches:
-      #         only:
-      #           - dev
-
-      # - deployProd:
-      #     context : org-global
-      #     requires:
-      #       - build-prod
-      #     filters: &filters-prod
-      #       branches:
-      #         only:
-      #           - master
+                - free   
