@@ -50,8 +50,8 @@
     "reset-lesson": "重置課程",
     "run": "運行",
     "run-test": "運行測試（Ctrl + Enter）",
-    "check-code": "Check Your Code (Ctrl + Enter)",
-    "check-code-2": "Check Your Code",
+    "check-code": "檢查您的代碼 (Ctrl + Enter)",
+    "check-code-2": "檢查你的代碼",
     "reset": "重置",
     "reset-code": "重置所有代碼",
     "help": "幫助",
@@ -72,10 +72,10 @@
     "go-to-settings": "轉到設置以申請你的認證",
     "click-start-course": "開始課程",
     "click-start-project": "啓動項目",
-    "change-language": "Change Language",
-    "cancel-change": "Cancel Change",
-    "resume-project": "Resume project",
-    "start-project": "Start project"
+    "change-language": "修改語言",
+    "cancel-change": "撤銷修改",
+    "resume-project": "繼續項目",
+    "start-project": "開始項目"
   },
   "landing": {
     "big-heading-1": "免費學習編程",
@@ -106,7 +106,7 @@
   },
   "settings": {
     "share-projects": "分享你在 freeCodeCamp 之外做的項目，寫的文章或者在 GitHub 上被接受的 pull requests。",
-    "privacy": "The settings in this section enable you to control what is shown on your freeCodeCamp public portfolio. Press save to save your changes.",
+    "privacy": "你可以在本節的設置中管理哪些內容可以展示在 freeCodeCamp 公開作品集，點擊“保存”以存儲你的修改。",
     "data": "請點擊下面的 \"下載你的數據\" 按鈕，查看我們在你的賬號上保存的數據",
     "disabled": "如果設置爲僅自己可見，其他人將無法訪問你的認證。",
     "private-name": "如果你將姓名設置爲私密，你的證書上不會顯示你的姓名。",
@@ -149,7 +149,7 @@
       "my-donations": "我的捐款",
       "night-mode": "夜間模式",
       "sound-mode": "篝火模式",
-      "keyboard-shortcuts": "Enable Keyboard Shortcuts"
+      "keyboard-shortcuts": "啓用鍵盤快捷鍵"
     },
     "headings": {
       "certs": "認證",
@@ -275,7 +275,7 @@
     "solution-link": "解決方案鏈接",
     "github-link": "GitHub 鏈接",
     "submit-and-go": "提交併訪問下一個挑戰",
-    "congratulations": "Congratulations, your code passes. Submit your code to complete this step and move on to the next one.",
+    "congratulations": "恭喜，你的代碼通過測試。提交你的代碼來完成當前步驟，並繼續到下一步。",
     "i-completed": "我已經完成這個挑戰",
     "test-output": "你的測試輸出將在這裏顯示",
     "running-tests": "// 運行測試",
@@ -292,7 +292,7 @@
     "scrimba-tip": "注意：如果這個小瀏覽器窗口覆蓋了代碼，點擊拖動它。同時，你可以隨時暫停，在視頻中編輯代碼。",
     "chal-preview": "挑戰預覽",
     "cert-map-estimates": {
-      "certs": "{{title}} Certification"
+      "certs": "{{title}} 認證"
     },
     "editor-tabs": {
       "info": "信息",
@@ -301,7 +301,7 @@
       "restart": "重啓",
       "restart-step": "重啓步驟",
       "console": "控制檯",
-      "instructions": "Instructions",
+      "instructions": "說明",
       "notes": "注意",
       "preview": "預覽"
     },
@@ -314,16 +314,16 @@
     "submit-public-url": "當你完成項目後，將所有所需文件保存到公共倉庫並將 URL 填寫到下方。",
     "complete-both-steps": "完成下面的兩個步驟來完成這一挑戰。",
     "runs-in-vm": "該項目在虛擬機中運行，完成在那裏描述的用戶故事，獲取所有測試並通過它們以完成步驟 1。",
-    "completed": "Completed",
-    "not-started": "Not started",
-    "hint": "Hint",
-    "test": "Test",
-    "sorry-try-again": "Sorry, your code does not pass. Try again.",
-    "sorry-keep-trying": "Sorry, your code does not pass. Keep trying.",
-    "sorry-getting-there": "Sorry, your code does not pass. You're getting there.",
-    "sorry-hang-in-there": "Sorry, your code does not pass. Hang in there.",
-    "sorry-dont-giveup": "Sorry, your code does not pass. Don't give up.",
-    "challenges-completed": "{{completedCount}} of {{totalChallenges}} challenges completed"
+    "completed": "已完成",
+    "not-started": "未開始",
+    "hint": "提示",
+    "test": "測試",
+    "sorry-try-again": "抱歉，你的代碼未通過，再試一次。",
+    "sorry-keep-trying": "抱歉，你的代碼未通過，再試試看。",
+    "sorry-getting-there": "抱歉，你的代碼未通過，就快要成功了。",
+    "sorry-hang-in-there": "抱歉，你的代碼未通過，堅持一下。",
+    "sorry-dont-giveup": "抱歉，你的代碼未通過，不要放棄。",
+    "challenges-completed": "已完成 {{completedCount}}/{{totalChallenges}}"
   },
   "donate": {
     "title": "支持我們的非營利組織",
@@ -459,10 +459,10 @@
     "donate": "使用 PayPal 捐款",
     "fail": "測試失敗",
     "not-passed": "未通過",
-    "waiting": "Waiting",
+    "waiting": "等待中",
     "passed": "通過",
-    "failed": "Failed",
-    "hint": "Hint",
+    "failed": "失敗",
+    "hint": "提示",
     "heart": "愛心",
     "initial": "初始",
     "info": "介紹信息",
@@ -483,11 +483,11 @@
     "last-page": "訪問最後一頁",
     "primary-nav": "主要的",
     "breadcrumb-nav": "麪包屑導航",
-    "submit": "Use Ctrl + Enter to submit.",
-    "running-tests": "Running tests",
-    "step": "Step",
-    "steps": "Steps",
-    "steps-for": "Steps for {{blockTitle}}"
+    "submit": "按下 Ctrl + Enter 鍵提交。",
+    "running-tests": "正在運行測試",
+    "step": "步驟",
+    "steps": "步驟",
+    "steps-for": "{{blockTitle}} 的步驟"
   },
   "flash": {
     "honest-first": "申請認證之前，你必須先接受我們的《學術誠信條例》",
@@ -695,14 +695,14 @@
     "yes-please": "是的，我想刪除我的令牌"
   },
   "shortcuts": {
-    "title": "Keyboard shortcuts",
-    "table-header-action": "Action",
-    "table-header-key": "Key(s)",
-    "navigation-mode": "Navigation Mode",
-    "execute-challenge": "Execute Challenge",
-    "focus-editor": "Focus Editor",
-    "focus-instructions-panel": "Focus Instructions Panel",
-    "navigate-previous": "Navigate Previous Exercise",
-    "navigate-next": "Navigate Next Exercise"
+    "title": "鍵盤快捷鍵",
+    "table-header-action": "行動",
+    "table-header-key": "關鍵字",
+    "navigation-mode": "導航模式",
+    "execute-challenge": "開始挑戰",
+    "focus-editor": "聚焦編輯器",
+    "focus-instructions-panel": "聚焦指示面板",
+    "navigate-previous": "跳轉至上一個練習",
+    "navigate-next": "跳轉至下一個練習"
   }
 }

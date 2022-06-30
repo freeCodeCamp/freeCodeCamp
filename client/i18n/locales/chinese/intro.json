@@ -1,6 +1,6 @@
 {
   "responsive-web-design": {
-    "title": "Legacy Responsive Web Design",
+    "title": "（旧版）响应式网页设计",
     "intro": [
       "在响应式网页设计认证中，你将学习开发者用来编写网页的语言：HTML（超文本标记语言）用于创建内容，CSS（级联样式表）用于样式设计。",
       "首先，你将通过编写一个展示猫咪图片的应用，学习 HTML 和 CSS 的基本知识。 然后，通过画企鹅来学习像 CSS 变量这样的现代技术，以及通过构建网页表单来学习无障碍的最佳实践。",
@@ -67,11 +67,11 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "(New) Responsive Web Design",
+    "title": "（新版）响应式网页设计",
     "intro": [
       "在响应式网页设计的认证课程中，你将学习用于构建网页的语言： HTML（超文本标记语言）用于创建内容，CSS（级联样式表）用于样式设计。",
-      "First, you'll build a cat photo app to learn the basics of HTML and CSS. Later, you'll learn modern techniques like CSS variables by building a penguin, and best practices for accessibility by building a quiz site.",
-      "Finally, you'll learn how to make webpages that respond to different screen sizes by building a photo gallery with Flexbox, and a magazine article layout with CSS Grid."
+      "首先，你将通过编写一个展示猫咪图片的应用来学习 HTML 和 CSS 的基本知识。 然后，通过构建一只企鹅来学习像 CSS 变量这样的现代技术，并通过搭建网页表单来学习无障碍的最佳实践。",
+      "最后，你将通过编写一个 Twitter 卡片，学习如何使用 Flexbox 实现适应不同屏幕大小的网页 ，以及如何用 CSS Grid 实现一个复杂的博客布局。"
     ],
     "note": "注意：某些浏览器扩展程序（例如广告拦截器和深色模式）可能干扰测试。如果遇到问题，我们建议你在学习课程时禁用那些修改网页内容或布局的扩展程序。",
     "blocks": {
@@ -300,64 +300,64 @@
     }
   },
   "2022/javascript-algorithms-and-data-structures": {
-    "title": "JavaScript Algorithms and Data Structures (Beta)",
+    "title": "JavaScript 算法和数据结构项目（Beta 测试版本）",
     "intro": [
-      "placeholder",
-      "placeholder"
+      "占位符",
+      "占位符"
     ],
     "note": "",
     "blocks": {
       "build-a-caesars-cipher-project": {
-        "title": "Build a Casears Cipher Project",
+        "title": "构建一个凯撒密码项目",
         "intro": [
           "",
           ""
         ]
       },
       "build-a-cash-register-project": {
-        "title": "Build a Cash Register Project",
+        "title": "构建一个收银机项目",
         "intro": [
           "",
           ""
         ]
       },
       "build-a-palindrome-checker-project": {
-        "title": "Build a Palindrome Checker Project",
+        "title": "构建一个回文检测器项目",
         "intro": [
           "",
           ""
         ]
       },
       "build-a-roman-numeral-converter-project": {
-        "title": "Build a Roman Numeral Converter Project",
+        "title": "搭建一个罗马数字转换器项目",
         "intro": [
           "",
           ""
         ]
       },
       "build-a-telephone-number-validator-project": {
-        "title": "Build a Telephone Number Validator Project",
+        "title": "构建一个电话号码检验器项目",
         "intro": [
           "",
           ""
         ]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
-        "title": "Learn Basic JavaScript by Building a Role Playing Game",
+        "title": "通过构建角色扮演游戏来学习 JavaScript",
         "intro": [
           "",
           ""
         ]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
-        "title": "Learn Form Validation by Building a Calorie Counter",
+        "title": "通过构建卡路里计数器来学习表单验证",
         "intro": [
           "",
           ""
         ]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
-        "title": "Learn Functional Programming by Building a Spreadsheet",
+        "title": "通过构建电子表格学习函数式编程",
         "intro": [
           "",
           ""
@@ -825,9 +825,9 @@
     "collapse": "收起课程",
     "legacy-header": "旧版课程",
     "legacy-desc": "这些课程不再是认证路径的一部分，但仍可供你进一步学习。",
-    "legacy-go-back": "Go to the current version of the curriculum.",
-    "new-rwd-desc": "We have updated our Responsive Web Design Curriculum. If you were previously working on the RWD curriculum, your progress is still saved! You can find it under the Legacy Responsive Web Design section.",
-    "new-rwd-article": "We encourage you to read about the changes we made and consider exploring the updated curriculum.",
+    "legacy-go-back": "进入当前版本的课程。",
+    "new-rwd-desc": "我们更新了响应式网页设计课程。 如果你之前正在使用该课程，你的进度仍然可以保存！你可以在旧版响应式网页设计课程里找到你的进度。",
+    "new-rwd-article": "我们希望你阅读我们所作的修改，并能考虑探索新课程。",
     "viewing-upcoming-change": "你正在查看Beta页面。 ",
     "go-back-to-learn": "回到正式版课程",
     "read-database-cert-article": "请在继续之前阅读这个论坛帖子。",
