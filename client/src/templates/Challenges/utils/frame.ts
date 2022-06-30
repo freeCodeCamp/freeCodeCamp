@@ -46,8 +46,8 @@ export const projectPreviewId = 'fcc-project-preview-frame';
 
 const DOCUMENT_NOT_FOUND_ERROR = 'document not found';
 
-// const AlertPanel = ( {externalLink} : AlertPanelProps )  => {
-//   return `window.parent.window.alert('${i18next.t(misc.iframe-alert , {currentLink: externalLink})}')`
+// const AlertPanel  = (externalLink : string ):string => {
+//   return `window.parent.window.alert('${i18next.t(misc.iframe-alert : <string> , {currentLink: externalLink})}')`
 // }
 
 // base tag here will force relative links
