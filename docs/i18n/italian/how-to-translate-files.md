@@ -26,7 +26,7 @@ Chiediamo solo che tu comprenda i seguenti punti:
 
    Tradurre le risorse di freeCodeCamp è una delle esperienze più divertenti e gratificanti come contributore, e funziona meglio se coivolgi i tuoi amici e colleghi che parlano la tua stessa lingua.
 
-   We recommend joining [our community forum](https://forum.freecodecamp.org/c/contributors/3) and [contributors chat room](https://discord.gg/PRyKn3Vbay) with your friends and showing your interest before starting off with translations. Crowdin rende più facile contribuire alle traduzioni, ma richiede comunque un sacco di lavoro.
+   Raccomandiamo di unirti al [forum della community](https://forum.freecodecamp.org/c/contributors/3) e alla [chat room dei contributori](https://discord.gg/PRyKn3Vbay) con i tuoi amici e mostrare il tuo interesse prima di iniziare a tradurre. Crowdin rende più facile contribuire alle traduzioni, ma richiede comunque un sacco di lavoro.
 
    Vogliamo che ti diverta a contribuire e che tu non soffra di burnout o perda interesse.
 
@@ -56,7 +56,7 @@ Chiediamo solo che tu comprenda i seguenti punti:
 
 ## Iniziare
 
-First, make sure you come say "Hi" in our [contributors chat room](https://discord.gg/PRyKn3Vbay). Postiamo aggiornamenti regolari sulla traduzione delle risorse e rispondiamo a un sacco delle vostre domande lì.
+Come prima cosa, assicurati di venire a presentarti nella [chat room dei contributori](https://discord.gg/PRyKn3Vbay). Postiamo aggiornamenti regolari sulla traduzione delle risorse e rispondiamo a un sacco delle vostre domande lì.
 
 Poi, vai alla nostra [piattaforma di traduzione](https://translate.freecodecamp.org/) e fai login (se è la prima volta che contribuisci alle traduzioni, dovrai creare un account).
 
@@ -103,7 +103,7 @@ Crowdin separa un documento in "stringhe" (strings) da tradurre, in genere frasi
 9. Qui puoi vedere la finestra dei commenti. Se hai domande o dubbi su una particolare stringa, puoi lasciare un commento sulla stringa qui perché altri traduttori li vedano.
 10. Questi due pulsanti dei pannelli nasconderanno i pannelli a sinistra (documento) e a destra (commenti).
 
-> [!NOTE] If you see a hidden string that includes translations, please notify us in the [contributors chat room](https://discord.gg/PRyKn3Vbay) so we can remove the translation from memory.
+> [!NOTE] Se vedi una stringa nascosta (hidden string) che include una traduzione, per favore faccelo sapere usando la [chat room dei contributori](https://discord.gg/PRyKn3Vbay) così potremo rimuovere la traduzione dalla memoria.
 
 Quando hai finito la traduzione per una stringa, usa il pulsante `Save` per salvare la tua traduzione in Crowdin. Altri contributori potranno quindi votare la tua traduzione e i revisori potranno approvarla.
 
@@ -117,13 +117,13 @@ Tradurre la documentazione per contribuire è un processo simile alla traduzione
 
 > [!NOTE] La documentazione per contribuire è creata tramite `docsify`, e ci sono regole speciali per riquadri di messaggio come questo. Se vedi una stringa che inizia con `[!NOTE]`, `[!WARNING]`, o `[!TIP]`, queste parole non devono essere tradotte.
 
-### How to translate documentation with internal links
+### Come tradurre la documentazione con link interni
 
-When you work on translating contributing documentation, watch out for internal links targeting a different section of the documentation.
+Quando lavori a tradurre la documentazione per contribuire, fai attenzione alla presenza di link che puntano ad altre sezioni della documentazione.
 
-Make sure to replace the id of the target section (the part after `#`) with the id on the translated document. For example, it will look like this in Japanese:
+Assicurati di sostituire l'ide della sezione targe (la parte dopo `#`) con l'id della documentazione tradotta. Per esempio, in giapponese apparirà in questo modo:
 
-Before translation
+Prima della traduzione
 
 ```
 // in HTML
@@ -135,7 +135,7 @@ Before translation
 [Link text](#target-section-heading-id)
 ```
 
-After translation
+Dopo la traduzione
 
 ```
 // in HTML
@@ -147,15 +147,15 @@ After translation
 [翻訳後のリンクテキスト](#翻訳後の-id)
 ```
 
-The actual files in docs are written in Markdown, but they will appear as HTML tags on Crowdin.
+I file nella documentazione sono scritti in Markdown, ma appariranno come tag HTML in Crowdin.
 
-You can find out how `docsify` converts a string in your language into an id by looking into the translated pages. If the translation is not deployed yet, you can preview it by [running the docs site locally](how-to-work-on-the-docs-theme.md#serving-the-documentation-site-locally).
+Puoi trovare come `docsify` converte una stringa nella tua lingua in un id guardando alle pagine tradotte. Se la traduzione non è ancora live, puoi vederne la preview [eseguendo la documentazione in locale](how-to-work-on-the-docs-theme.md#serving-the-documentation-site-locally).
 
-You can learn more about [internal links in our docs here](how-to-work-on-the-docs-theme.md#how-to-create-an-internal-link).
+Puoi imparare di più a proposito di [link interni nella nostra documentazione qui](how-to-work-on-the-docs-theme.md#how-to-create-an-internal-link).
 
 ## Tradurre LearnToCode RPG
 
-The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated strings: (See [Ren'Py Text documentation](https://www.renpy.org/doc/html/text.html))
+LearnToCode RPG è creato con Ren'Py, che usa una sintassi speciale per le stringhe tradotte: (Vedi [la documentazione di Ren'Py sul testo](https://www.renpy.org/doc/html/text.html))
 
 - Le frasi da tradurre sono sempre tra virgolette `""`. Queste sono dialoghi o stringhe di UI. Le parole chiave che vengono prima o dopo i dialoghi sono parole chiave di controllo del game engine e saranno spiegate in regole seguenti. Nota che questa prima regola governa le seguenti regole elencate.
 - Nel caso di `new "..."`, non tradurre la parola chiave `new`.
@@ -165,7 +165,7 @@ The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated str
 - Non tradurre la parola chiave `nointeract` alla fine di una frase.
 - Se proviamo a usare parentesi a larghezza intera `（）` ci sarà un avviso QA. Per evitarlo, usa parentesi a mezza larghezza  `()`
 
-### Examples
+### Esempio
 
 ---
 
@@ -183,7 +183,7 @@ The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated str
 "[player_name]？好巧，我们的VIP队友{a=[vip_profile_url]}[player_name]{/a}会很高兴的。"
 ```
 
-Note: The `[]` and `{}` tags should be left intact.
+Nota: Le tag nelle parentesi `[]` e `{}` devono essere lasciate intatte.
 
 ---
 
@@ -201,7 +201,7 @@ old "{icon=icon-fast-forward} Skip"
 new "{icon=icon-fast-forward} 跳过"
 ```
 
-Note: Again, the `new` prefix and the `{icon=icon-fast-forward}` tag should be left intact.
+Nota: Di nuovo, il prefisso `new` e il tag `{icon=icon-fast-forward}` devono essere lasciati intatti.
 
 ---
 
@@ -239,71 +239,71 @@ player "也许这都是一场梦？" nointeract
 
 ---
 
-### A Note on How Crowdin Segments a Sentence
+### Una nota su come Crowdin segmenta una frase
 
-Pay attention to how Crowdin segments a line of dialogue wrapped between opening and closing quotes `""`. When we are translating the dialogue, we need to make sure to retain the opening and closing quotes, even if the quotes appear in different segments.
+Presta attenzione a come Crowdin segmenta una riga di dialogo racchiusa tra virgolette `""`. Quando traduciamo il dialogo, dobbiamo essere sicuri di mantenere le virgolette di apertura e chiusura anche se le virgolette appaiono in diversi segmenti.
 
-This is the line to be translated:
+Questa è la riga da tradurre:
 
 ```renpy
 player @ surprised "{b}Full-stack{/b}... What is that? I better take notes so I can learn more about it."
 ```
 
-Crowdin segments it into three parts like below:
+Crowdin la segmenta in tre parti come sotto:
 
 <img width="836" alt="Screen Shot 2022-01-23 at 10 36 43" src="https://user-images.githubusercontent.com/35674052/150693962-d3b091e5-2432-44d0-9d24-195ea7d7aeda.png" />
 
 ```renpy
-# original
+# originale
 player @ surprised "{b}Full-stack{/b}
-# translated, keeping the opening quotes `"`
+# tradotta, mantenendo le virgolette di apertura `"`
 player @ surprised "{b}全栈{/b}
 ```
 
 <img width="750" alt="Screen Shot 2022-01-23 at 10 36 49" src="https://user-images.githubusercontent.com/35674052/150693965-15411504-791a-4db3-8b14-bc9177be6375.png" />
 
 ```renpy
-# original
+# originale
 What is that?
-# translated, no quotes on either side
+# tradotta, nessuna virgoletta
 这是什么？
 ```
 
 <img width="857" alt="Screen Shot 2022-01-23 at 10 36 54" src="https://user-images.githubusercontent.com/35674052/150693969-062e3268-580f-4ad2-97db-cab6240b6095.png" />
 
 ```renpy
-# original
+# originale
 I better take notes so I can learn more about it."
-# translated, keeping the closing quotes `"`
+# tradotta, mantenendo le virgolette di chiusura `"`
 我最好做笔记，这样我可以学习更多东西。"
 ```
 
 ## Votare le traduzioni
 
-Crowdin allows you to rate the existing proposed translations. If you attempt to save a translation, you may see a message indicating that you cannot save a duplicate translation - this means another contributor has proposed that identical translation. If you agree with that translation, click the `+` button to "upvote" the translation.
+Crowdin ti permette di votare le proposte di traduzione esistenti. Se provi a salvare una traduzione, potresti vedere un messaggio che indica che non puoi salvare una traduzione duplicata: questo significa che un altro contributore ha proposto una traduzione identica. Se sei d'accordo con quella traduzione, usa il pulsante `+` per darle un voto positivo.
 
-If you see a translation that is inaccurate or does not provide the same clarity as the original string, click the `-` button to "downvote" the translation.
+Se vedi una traduzione che non è accurata o non è chiara come la stringa originale, usa il pulsante `-` per darle un voto negativo.
 
-Crowdin uses these votes to give a score to each proposed translation for a string, which helps the proofreading team determine which translation is the best fit for each string.
+Crowdin usa questi voti per dare un punteggio alle proposte di traduzione per una stringa, e questo aiuta il gruppo di revisione a determinare quale traduzione è la migliore per ogni stringa.
 
 ## Controlli di qualità
 
-We have enabled some quality assurance steps that will verify a translation is as accurate as possible - this helps our proofreaders review proposed translations.
+Abbiamo attivato alcuni step per il controllo di qualità che verificano che una traduzione sia per quanto possibile accurata: questo aiuta il team di revisione a revisionare le traduzioni proposte.
 
-When you attempt to save a translation, you may see a warning message appear with a notification regarding your proposed translation.
+Quando provi a salvare una traduzione, potresti vedere un messaggio di errore apparire relativamente alla tua proposta di traduzione.
 
-![Image - QA Warning Message](https://contribute.freecodecamp.org/images/crowdin/qa-message.png)
+![Immagine - Messaggio di errore del controllo qualità](https://contribute.freecodecamp.org/images/crowdin/qa-message.png)
 
-This message appears when Crowdin's QA system has identified a potential error in the proposed translation. In this example, we have modified the text of a `<code>` tag and Crowdin has caught that.
+Questo messaggio appare quando il sistema QA (Quality Assurance) di Crowdin identifica un potenziale errore nella traduzione proposta. In questo esempio, abbiamo modificato il testo di un tag `<code>` e Crowdin se ne è accorto.
 
 > [!WARNING] Hai la possibilità di salvare una traduzione anche se ci sono degli errori. Se lo fai usando il pulsante "Save Anyway" (Salva comunque), dovresti anche taggare un proofreader o un project managet e spiegare perché il messaggio QA dovrebbe essere ignorato in questo caso.
 
 ## Buone pratiche per le traduzioni
 
-Follow these guidelines to ensure our translations are as accurate as possible:
+Segui queste linee guida per assicurati che le nostre traduzioni siano il più possibile accurate:
 
 - Non tradurre il contenuto dei tag `<code>`. Questi tag indicano testo trovato nel codice e dovrebbero essere lasciati in inglese.
 - Non inserire contenuto aggiuntivo. Se pensi che una sfida richieda delle modifiche nel testo o informazioni aggiuntive dovresti proporre i cambiamenti tramite una issue su GitHub o una pull request che modifica i file inglesi.
 - Non cambiare l'ordine del contenuto.
 
-If you have any questions, feel free to reach out to us in our [contributors chat room](https://discord.gg/PRyKn3Vbay) and we will be happy to assist you.
+Se hai domande, scrivi nella [chat room per i contributori](https://discord.gg/PRyKn3Vbay) e saremo lieti di assisterti.

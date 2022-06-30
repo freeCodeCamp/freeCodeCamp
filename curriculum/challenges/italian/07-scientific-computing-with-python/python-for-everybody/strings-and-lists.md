@@ -14,7 +14,7 @@ dashedName: strings-and-lists
 
 Altre risorse:
 
-\- [Esercizio](https://www.youtube.com/watch?v=-9TfJF2dwHI)
+\- <a href="https://www.youtube.com/watch?v=-9TfJF2dwHI" target="_blank" rel="noopener noreferrer nofollow">Esercizio</a>
 
 # --question--
 
