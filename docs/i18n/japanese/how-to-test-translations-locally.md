@@ -13,13 +13,13 @@
 - `availableLangs`: `client` と `curriculum` 両方の配列で、言語のテキスト名を追加します。 これは `.env` ファイルで使用される値です。
 - `auditedCerts`: 言語のテキスト名を _key_ として追加し、`SuperBlocks.{cert}` 変数の配列を _value_ として追加します。 これは、クライアントにどの認定講座の翻訳が完了しているのかを伝えます。
 - `i18nextCodes`: これらは各言語の ISO の言語コードです。 有効にしようとしている言語に適切な ISO コードを追加する必要があります。 言語コードは、各言語に固有のものである必要があります。
-- `langDisplayNames`: これらはナビゲーションメニューの言語セレクターで使用する表示名です。
-- `langCodes`: これらは日付と数字の書式設定に使用する言語コードです。 ISO コードではなく、Unicode CLDR コードである必要があります。
+- `LangNames`: These are the display names for the language selector in the navigation menu.
+- `LangCodes`: These are the language codes used for formatting dates and numbers. ISO コードではなく、Unicode CLDR コードである必要があります。
 
 一例を挙げると、Dothraki という言語を有効にしたい場合、`all-langs.js` の各オブジェクトは次のようになります。
 
 ```js
-const availableLangs = {
+export const availableLangs = {
   client: ['english', 'espanol', 'chinese', 'chinese-traditional', 'dothraki'],
   curriculum: [
     'english',
@@ -69,7 +69,7 @@ export const auditedCerts = {
   ]
 };
 
-const i18nextCodes = {
+export const i18nextCodes = {
   english: 'en',
   espanol: 'es',
   chinese: 'zh',
@@ -77,7 +77,7 @@ const i18nextCodes = {
   dothraki: 'mis'
 };
 
-const langDisplayNames = {
+export enum LangNames = {
   english: 'English',
   espanol: 'Español',
   chinese: '中文（简体字）',
@@ -85,7 +85,7 @@ const langDisplayNames = {
   dothraki: 'Dothraki'
 };
 
-const langCodes = {
+export enum LangCodes = {
   english: 'en-US',
   espanol: 'es-419',
   chinese: 'zh',
@@ -96,7 +96,7 @@ const langCodes = {
 
 次に、`client/src/utils/algolia-locale-setup.ts` ファイルを開きます。 このデータは、`/news` 記事を読み込む検索バーに使用されます。 この機能をテストする可能性は低いですが、 言語のデータがないと、ローカルでコードベースを構築しようとする際にエラーが発生する可能性があります。
 
-`algoliaIndices` オブジェクトに言語のオブジェクトを追加します。 ローカルテスト用に `english` オブジェクトの値を使用する必要があります。`english` キーを、言語の `availableLangs` 値に置き換えます。
+`algoliaIndices` オブジェクトに言語のオブジェクトを追加します。 You should use the the same values as the `english` object for local testing, replacing the `english` key with your language's `availableLangs` value.
 
 > [!NOTE] 既に対象言語でニュースのインスタンスをデプロイしている場合は、値を更新してライブインスタンスを反映することができます。 それ以外の場合は、英語の値を使用します。
 
@@ -130,8 +130,8 @@ const algoliaIndices = {
 最後に、`.env` ファイルの中で、`CLIENT_LOCALE` と `CURRICULUM_LOCALE` を新しい言語 (`availableLangs` 値を使用) に設定します。
 
 ```txt
-CLIENT_LOCALE="dothraki"
-CURRICULUM_LOCALE="dothraki"
+CLIENT_LOCALE=dothraki
+CURRICULUM_LOCALE=dothraki
 ```
 
 ### Releasing a Superblock
