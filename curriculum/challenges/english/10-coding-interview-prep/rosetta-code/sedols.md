@@ -12,7 +12,7 @@ dashedName: sedols
 
 <abbr title="Stock Exchange Daily Official List">SEDOL</abbr>s serve as the National Securities Identifying Number for all securities issued in the United Kingdom and are therefore part of the security's <abbr title="International Securities Identification Number">ISIN</abbr> as well. The <abbr title="Stock Exchange Daily Official List">SEDOL</abbr> Masterfile provides reference data on millions of global multi-asset securities each uniquely identified at the market level using a universal <abbr title="Stock Exchange Daily Official List">SEDOL</abbr> code.
 
-For each number list of 6-digit SEDOLs, calculate and append the checksum digit. That is, given the input string on the left, your function should return the corresponding string on the right:
+For each number list of 6-digit SEDOLs, calculate and append the `checkSum` digit. That is, given the input string on the left, your function should return the corresponding string on the right:
 
 <pre>
 710889 => 7108899
@@ -68,8 +68,9 @@ assert(sedol('228276') === '2282765');
 
 ```js
 function sedol(input) {
-
-  return true;
+  const checkSum = 0
+  
+  return checkSum;
 }
 ```
 
@@ -94,7 +95,7 @@ function sedolCheckDigit(char6) {
   for (let i = 0; i < char6.length; i++) {
     sum += weight[i] * parseInt(char6.charAt(i), 36);
   }
-  const check = (10 - (sum % 10)) % 10;
-  return check.toString();
+  const checkSum = (10 - (sum % 10)) % 10;
+  return checkSum.toString();
 }
 ```
