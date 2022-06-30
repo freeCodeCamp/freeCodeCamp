@@ -18,7 +18,7 @@ if (env.BRANCH_NAME == 'test-jenkins' || env.BRANCH_NAME == 'dev-env') {
     DEPLOY_ENV = 'DEV'
     LOGICAL_ENV = 'dev'
     IS_BUILD = true
-    IS_DEPLOY = false
+    IS_DEPLOY = true
     ENABLE_CACHE = false
 }
 if (env.BRANCH_NAME == 'master-jenkins') {
@@ -31,7 +31,7 @@ if (env.BRANCH_NAME == 'master-jenkins') {
 
 pipeline {
     agent {
-        label 'tc-jenkins-ecs-agent'
+        label 'tc-jenkins-ecs-agent-large'
     }
     environment {
         CI_AUTH0_URL = credentials('CI_AUTH0_URL')
@@ -85,7 +85,7 @@ pipeline {
                 sh """
                 #!/bin/bash
                 ./awsconfiguration.sh ${DEPLOY_ENV}
-                ./buildenv.sh -e ${DEPLOY_ENV} -b ${LOGICAL_ENV}-${APPNAME}-buildvar,${LOGICAL_ENV}-${APPNAME}-deployvar
+                ./buildenv.sh -e ${DEPLOY_ENV} -b ${LOGICAL_ENV}-${APPNAME}-buildvar,${LOGICAL_ENV}-${APPNAME}-deployvarj
                 """
                 load 'awsenvconfg'
                 load 'buildenvvarg'
@@ -116,7 +116,7 @@ pipeline {
             steps {
                 //Doing Deployment
                 echo "Deploying application"
-                input(message: 'Hello World!', ok: 'Submit')
+                //input(message: 'Hello World!', ok: 'Submit')
                 sh """
                 #!/bin/bash
                 ./master_deploy.sh -d CFRONT -e $DEPLOY_ENV -c $ENABLE_CACHE
