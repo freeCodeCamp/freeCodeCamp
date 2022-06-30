@@ -4,46 +4,38 @@ Questo dettaglia le linee guida della manutenzione del repo [freeCodeCamp/course
 
 ## Pubblicazione dell'estensione
 
-Una azione GitHub pubblica l'estensione automagicamente su Visual Studio marketplace quando il branch `prod` viene aggiornato.
+Una GitHub Action pubblica automagicamente l'estensione nel Visual Studio Marketplace, al rilascio di un nuovo GitHub Release.
 
-Assicurati di essere sul branch `main`.
-
-```bash
-git checkout main
-```
-
-Aggiorna il repository locale con `upstream`, e ripristina `main`.
+1. Impacchetta una nuova versione dell'estensione:
 
 ```bash
-git fetch upstream
-git reset --hard upstream/main
+npm run pack -- <tag_type>
 ```
 
-Vai sul branch `prod`.
+Dove `<tag_type>` è uno dei seguenti: `major`, `minor`, `patch`.
+
+2. Fai il push della nuova versione a `main`:
 
 ```bash
-git checkout prod
+git commit -am "<tag_type>(<version>): <description>"
+git push
 ```
 
-Unisci i commit da distribuire in `prod`.
+Facoltativamente, puoi fare il push direttamente a `upstream/main`, ma aprire una PR è raccomandato per un sanity check.
 
-```bash
-git merge main
-```
+3. Crea una nuova GitHub Release usando la GitHub UI:
 
-Fai il push del ramo locale a `upstream`.
+- Implementa correttamente il numero di versione, quando crei una nuova tag.
+- Upload the `.vsix` file with the release.
+- Publish the release, and confirm the action succeeded.
 
-```bash
-git push upstream
-```
-
-> [!NOTE] Fare il push ad `upstream` richieste il permesso di scrittura al repo `freeCodeCamp/courses-vscode-extension`.
+> [!NOTE] Creating a release requires write access to the `freeCodeCamp/courses-vscode-extension` repository.
 
 ## Pubblicare l'estensione manualmente
 
-Un upload manuale a Visual Studio Code può essere fatto, seguendo questi step:
+A manual upload to the Visual Studio Marketplace can be achieved, by following these steps:
 
-1. Visita https://marketplace.visualstudio.com/ e fai l'accesso
-2. Naviga alla pagina [freeCodeCamp Publisher page](https://marketplace.visualstudio.com/manage/publishers/freecodecamp)
-3. Seleziona l'estensione rilevante, e seleziona `Update`
-4. Carica il file dal tuo file locale
+1. Visit https://marketplace.visualstudio.com/ and sign in
+2. Navigate to the [freeCodeCamp Publisher page](https://marketplace.visualstudio.com/manage/publishers/freecodecamp)
+3. Select the relevant extension, and select `Update`
+4. Upload the file from your local files

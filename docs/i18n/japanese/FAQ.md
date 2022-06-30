@@ -32,7 +32,7 @@ YouTube チャンネル用の動画講座を作成するには、[YouTube チャ
 
 ### セキュリティ問題はどのように報告すればいいですか？
 
-セキュリティ問題のために GitHub Issue を作成しないでください。 Instead, please [follow our security policy](https://contribute.freecodecamp.org/#/security).
+セキュリティ問題のために GitHub Issue を作成しないでください。 代わりに、[こちらのセキュリティポリシー](https://contribute.freecodecamp.org/#/security)に従ってください。
 
 ### 私は学生です。 単位取得を目的として、機能に関して貢献することはできますか？
 
@@ -92,7 +92,7 @@ YouTube チャンネル用の動画講座を作成するには、[YouTube チャ
 **以下に、お気軽にお問い合わせください。**
 
 - [コミュニティフォーラム](https://forum.freecodecamp.org/c/contributors) の `Contributors` カテゴリ
-- [チャットサーバー](https://chat.freecodecamp.org/channel/contributors) の `#Contributors`チャンネル
+- [チャットサーバーの ](https://discord.gg/PRyKn3Vbay) `#Contributors` チャンネル
 
 取り組みたいトピックに貢献するお手伝いをさせていただけることを嬉しく思います。 関連する問題のスレッドについて質問をいただいた場合は、喜んで明確にします。 新しい質問を投稿する前に、必ずその質問を検索してください。
 

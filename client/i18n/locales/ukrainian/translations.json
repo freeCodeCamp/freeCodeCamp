@@ -73,7 +73,9 @@
     "click-start-course": "Start the course",
     "click-start-project": "Start the project",
     "change-language": "Change Language",
-    "cancel-change": "Cancel Change"
+    "cancel-change": "Cancel Change",
+    "resume-project": "Resume project",
+    "start-project": "Start project"
   },
   "landing": {
     "big-heading-1": "Вчіться програмувати — це безкоштовно.",
@@ -273,7 +275,7 @@
     "solution-link": "Посилання на рішення",
     "github-link": "Посилання на GitHub",
     "submit-and-go": "Відправити та перейти до мого наступного завдання",
-    "congradulations": "Congratulations, your code passes. Submit your code to complete this step and move on to the next one.",
+    "congratulations": "Congratulations, your code passes. Submit your code to complete this step and move on to the next one.",
     "i-completed": "Я виконав це завдання",
     "test-output": "Результат вашого тесту буде доступний тут",
     "running-tests": "// запуск тестів",
@@ -290,8 +292,7 @@
     "scrimba-tip": "Порада: якщо мінібраузер закриває код, то натисніть та перетягніть його у сторону. Також не соромтеся зупинятися та редагувати код у відео у будь-який час.",
     "chal-preview": "Попередній перегляд завдання",
     "cert-map-estimates": {
-      "certs": "{{title}} Сертифікат (300 годин)",
-      "coding-prep": "{{title}} (Тисячі годин практики)"
+      "certs": "{{title}} Certification"
     },
     "editor-tabs": {
       "info": "Інформація",
@@ -321,7 +322,8 @@
     "sorry-keep-trying": "Sorry, your code does not pass. Keep trying.",
     "sorry-getting-there": "Sorry, your code does not pass. You're getting there.",
     "sorry-hang-in-there": "Sorry, your code does not pass. Hang in there.",
-    "sorry-dont-giveup": "Sorry, your code does not pass. Don't give up."
+    "sorry-dont-giveup": "Sorry, your code does not pass. Don't give up.",
+    "challenges-completed": "{{completedCount}} of {{totalChallenges}} challenges completed"
   },
   "donate": {
     "title": "Підтримати нашу некомерційну організацію",
@@ -457,7 +459,9 @@
     "donate": "Зробити внесок через PayPal",
     "fail": "Тест не пройдений",
     "not-passed": "Не пройдено",
+    "waiting": "Waiting",
     "passed": "Пройдено",
+    "failed": "Failed",
     "hint": "Hint",
     "heart": "Серце",
     "initial": "Початковий",
@@ -480,7 +484,10 @@
     "primary-nav": "primary",
     "breadcrumb-nav": "breadcrumb",
     "submit": "Use Ctrl + Enter to submit.",
-    "running-tests": "Running tests"
+    "running-tests": "Running tests",
+    "step": "Step",
+    "steps": "Steps",
+    "steps-for": "Steps for {{blockTitle}}"
   },
   "flash": {
     "honest-first": "Щоб отримати сертифікат, ви повинні спочатку прийняти нашу політику академічної доброчесності",

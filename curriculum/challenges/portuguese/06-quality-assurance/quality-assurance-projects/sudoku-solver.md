@@ -8,10 +8,10 @@ dashedName: sudoku-solver
 
 # --description--
 
-Crie um aplicativo full stack em JavaScript que seja funcionalmente semelhante a este: <https://sudoku-solver.freecodecamp.rocks/>. Trabalhar nesse projeto vai fazer com que você escreva seu código usando um dos seguintes métodos:
+Crie um aplicativo full stack em JavaScript que seja funcionalmente semelhante a este: <a href="https://sudoku-solver.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://sudoku-solver.freecodecamp.rocks/</a>. Trabalhar nesse projeto vai fazer com que você escreva seu código usando um dos seguintes métodos:
 
--   Clone [este repositório do GitHub](https://github.com/freecodecamp/boilerplate-project-sudoku-solver) e complete o projeto localmente.
--   Use [nosso projeto inicial do Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-sudoku-solver) para completar o projeto.
+-   Clone <a href="https://github.com/freecodecamp/boilerplate-project-sudoku-solver" target="_blank" rel="noopener noreferrer nofollow">este repositório do GitHub</a> e complete o projeto localmente.
+-   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-sudoku-solver" target="_blank" rel="noopener noreferrer nofollow">nosso projeto inicial do Replit</a> para completar o projeto.
 -   Use um construtor de site de sua escolha para completar o projeto. Certifique-se de incorporar todos os arquivos do nosso repositório no GitHub.
 
 Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Em seguida, envie o URL para ela no campo `Solution Link`. Como opção, envie também um link para o código-fonte do projeto no campo `GitHub Link`.
@@ -324,7 +324,7 @@ async (getUserInput) => {
 };
 ```
 
-Se o `value` enviado à `/api/check` não for um número entre 1 e 9, os valores retornados serão `{ error: 'Invalid value' }`
+Se o `value` enviado à `/api/check` não for um número entre 1 e 9, o valor retornado será `{ error: 'Invalid value' }`
 
 ```js
 async (getUserInput) => {
@@ -369,7 +369,7 @@ async (getUserInput) => {
 };
 ```
 
-Todos os 14 testes funcionais foram concluídos e deram aprovação. Veja `/tests/2_functional-tests.js` para o comportamento esperado para o qual você deve escrever os testes.
+Todos os 14 testes funcionais foram concluídos e deram aprovação. Veja `/tests/2_functional-tests.js` para a funcionalidade esperada para o qual você deve escrever os testes.
 
 ```js
 async (getUserInput) => {

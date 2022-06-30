@@ -73,7 +73,9 @@
     "click-start-course": "開始課程",
     "click-start-project": "啓動項目",
     "change-language": "Change Language",
-    "cancel-change": "Cancel Change"
+    "cancel-change": "Cancel Change",
+    "resume-project": "Resume project",
+    "start-project": "Start project"
   },
   "landing": {
     "big-heading-1": "免費學習編程",
@@ -273,7 +275,7 @@
     "solution-link": "解決方案鏈接",
     "github-link": "GitHub 鏈接",
     "submit-and-go": "提交併訪問下一個挑戰",
-    "congradulations": "Congratulations, your code passes. Submit your code to complete this step and move on to the next one.",
+    "congratulations": "Congratulations, your code passes. Submit your code to complete this step and move on to the next one.",
     "i-completed": "我已經完成這個挑戰",
     "test-output": "你的測試輸出將在這裏顯示",
     "running-tests": "// 運行測試",
@@ -290,8 +292,7 @@
     "scrimba-tip": "注意：如果這個小瀏覽器窗口覆蓋了代碼，點擊拖動它。同時，你可以隨時暫停，在視頻中編輯代碼。",
     "chal-preview": "挑戰預覽",
     "cert-map-estimates": {
-      "certs": "{{title}} 認證 (300小時)",
-      "coding-prep": "{{title}}（數千小時的挑戰）"
+      "certs": "{{title}} Certification"
     },
     "editor-tabs": {
       "info": "信息",
@@ -321,7 +322,8 @@
     "sorry-keep-trying": "Sorry, your code does not pass. Keep trying.",
     "sorry-getting-there": "Sorry, your code does not pass. You're getting there.",
     "sorry-hang-in-there": "Sorry, your code does not pass. Hang in there.",
-    "sorry-dont-giveup": "Sorry, your code does not pass. Don't give up."
+    "sorry-dont-giveup": "Sorry, your code does not pass. Don't give up.",
+    "challenges-completed": "{{completedCount}} of {{totalChallenges}} challenges completed"
   },
   "donate": {
     "title": "支持我們的非營利組織",
@@ -457,7 +459,9 @@
     "donate": "使用 PayPal 捐款",
     "fail": "測試失敗",
     "not-passed": "未通過",
+    "waiting": "Waiting",
     "passed": "通過",
+    "failed": "Failed",
     "hint": "Hint",
     "heart": "愛心",
     "initial": "初始",
@@ -480,7 +484,10 @@
     "primary-nav": "主要的",
     "breadcrumb-nav": "麪包屑導航",
     "submit": "Use Ctrl + Enter to submit.",
-    "running-tests": "Running tests"
+    "running-tests": "Running tests",
+    "step": "Step",
+    "steps": "Steps",
+    "steps-for": "Steps for {{blockTitle}}"
   },
   "flash": {
     "honest-first": "申請認證之前，你必須先接受我們的《學術誠信條例》",

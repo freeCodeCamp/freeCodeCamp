@@ -76,7 +76,7 @@ Alcuni esempi di buoni titoli PR sarebbero:
 
 I nostri moderatori ora daranno un'occhiata e ti lasceranno un feedback. Ti preghiamo di essere paziente con i colleghi moderatori e di rispettare il loro tempo. Tutte le pull request sono riviste a tempo debito.
 
-E come sempre, poni liberamente le tue domande nella [categoria 'Contributors' del nostro forum](https://forum.freecodecamp.org/c/contributors) o [nella chat room per i contributori](https://chat.freecodecamp.org/channel/contributors).
+E come sempre, poni liberamente le tue domande [nella categoria 'Contributors' sul nostro forum](https://forum.freecodecamp.org/c/contributors) o [nella chat room per i contributori](https://discord.gg/PRyKn3Vbay).
 
 > [!TIP] Se vuoi contribuire a più di una PR, ti raccomandiamo di leggere la [guida su fare modifiche e sincronizzare](how-to-setup-freecodecamp-locally.md#making-changes-locally) per evitare di dover cancellare il tuo fork.
 

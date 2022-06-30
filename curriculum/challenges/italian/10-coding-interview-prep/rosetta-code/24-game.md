@@ -8,7 +8,7 @@ dashedName: 24-game
 
 # --description--
 
-Il [gioco del 24](https://en.wikipedia.org/wiki/24_Game) mette alla prova l'abilità di una persona di fare calcoli a mente.
+Il gioco 24 testa l'aritmetica mentale di una persona.
 
 L'obbiettivo del gioco è di arrangiare quattro numeri in un modo tale che una volta calcolato il risultato sia 24
 

@@ -7,7 +7,7 @@ dashedName: step-47
 
 # --description--
 
-Posiziona gli elementi `.face` in modo che siano a `15%` dall'alto.
+Posiziona gli elementi `.face` in modo che siano al `15%` dall'alto.
 
 # --hints--
 
@@ -17,7 +17,7 @@ Dovresti assegnare a `.face` una proprietà `top`.
 assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.face')?.top);
 ```
 
-Dovresti dare a `.face` una proprietà `top` di `--fcc-expected--`, invece che di `--fcc-actual--`.
+Dovresti dare a `.face` una proprietà `top` con il valore `--fcc-expected--` invece di `--fcc-actual--`.
 
 ```js
 assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.top, '15%');
@@ -32,7 +32,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.top, '15%');
 <html>
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
     <title>Penguin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>

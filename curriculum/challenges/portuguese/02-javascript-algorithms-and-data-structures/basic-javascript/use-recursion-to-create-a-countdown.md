@@ -8,7 +8,7 @@ dashedName: use-recursion-to-create-a-countdown
 
 # --description--
 
-Em um [desafio anterior](/learn/javascript-algorithms-and-data-structures/basic-javascript/replace-loops-using-recursion), você aprendeu como usar recursão para substituir laços `for`. Agora, vamos analisar uma função mais complexa, a qual retorna um array de inteiros consecutivos começando com `1` até o número passado para a função.
+Em um <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/replace-loops-using-recursion" target="_blank" rel="noopener noreferrer nofollow">desafio anterior</a>, você aprendeu como usar recursão para substituir laços `for`. Agora, vamos analisar uma função mais complexa, a qual retorna um array de inteiros consecutivos começando com `1` até o número passado para a função.
 
 Como mencionado no desafio anterior, haverá um <dfn>caso de base</dfn>. O caso de base diz a função recursiva quando ela não precisa mais chamar a si. É um simples caso onde o valor de retorno já é conhecido. Também haverá uma <dfn>chamada recursiva</dfn>, a qual executa a função original com argumentos diferentes. Se a função for escrita corretamente, eventualmente o caso de base será alcançado.
 

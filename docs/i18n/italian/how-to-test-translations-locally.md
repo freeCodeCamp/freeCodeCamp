@@ -134,6 +134,29 @@ CLIENT_LOCALE="dothraki"
 CURRICULUM_LOCALE="dothraki"
 ```
 
+### RIlasciare un superblocco
+
+Dopo che un superblocco è stato completamente tradotto in una lingua, ci sono due step per rilasciarlo. Come prima cosa aggiungi il superblocco enum all'array `auditedCerts` di quella lingua. Quindi, se vuoi rilasciare il nuovo superblocco Web Design Responsivo per Dothraki, l'array dovrebbe essere così:
+
+```ts
+export const auditedCerts = {
+  // other languages
+  dothraki: [
+    SuperBlocks.RespWebDesignNew, // the newly translated superblock
+    SuperBlocks.RespWebDesign,
+    SuperBlocks.JsAlgoDataStruct,
+    SuperBlocks.FrontEndDevLibs
+  ]
+```
+
+Infine, l'array `languagesWithAuditedBetaReleases` dovrebbe essere aggiornato per includere la nuova lingua in questo modo:
+
+```ts
+export const languagesWithAuditedBetaReleases: ['english', 'dothraki'];
+```
+
+Questo sposterà il nuovo superblocco nel posto corretto nella mappa del curriculum su `/learn`.
+
 ## Attivare video localizzati
 
 Per le sfide video, devi cambiare alcune cose. Come prima cosa aggiungi la nuova lingua alla query per GraphQL nel file `client/src/templates/Challenges/video/Show.tsx`. Per esempio, in questo modo aggiungeresti Dothraki alla query:
@@ -190,7 +213,7 @@ videoLocaleIds: Joi.when('challengeType', {
 
 ## Caricare le traduzioni
 
-Poiché la lingua non è ancora stata approvata per la produzione, i nostri script ancora non scaricheranno automaticamente le traduzioni. Solo lo staff ha accesso al download diretto delle traduzioni - sei il benvenuto a rivolgerti a noi attraverso la [chat room per i contributori](https://chat.freecodecamp.org/channel/contributors), o puoi tradurre i file markdown inglesi per le esigenze di test.
+Poiché la lingua non è ancora stata approvata per la produzione, i nostri script ancora non scaricheranno automaticamente le traduzioni. Solo lo staff ha accesso al download diretto delle traduzioni - sei il benvenuto a rivolgerti a noi attraverso la [chat room per i contributori](https://discord.gg/PRyKn3Vbay), o puoi tradurre i file markdown inglesi per le esigenze di test.
 
 Una volta che avrai i file, li dovrai mettere nelle cartelle giuste. Per le sfide del curriculum, dovresti mettere le cartelle dei certificati (ad esempio `01-responsive-web-design`) nella cartella `curriculum/challenges/{lang}`. Per la nostra traduzione in Dothraki, questo sarebbe `curriculum/challenges/dothraki`. I file `.json` con le traduzioni del client vanno nella cartella `client/i18n/locales/{lang}`.
 

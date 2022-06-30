@@ -51,7 +51,7 @@
     "run": "Executar",
     "run-test": "Execute os testes (Ctrl + Enter)",
     "check-code": "Verifique seu código (Ctrl + Enter)",
-    "check-code-2": "Check Your Code",
+    "check-code-2": "Verifique seu código",
     "reset": "Redefinir",
     "reset-code": "Redefinir todo o código",
     "help": "Ajuda",
@@ -73,7 +73,9 @@
     "click-start-course": "Iniciar o curso",
     "click-start-project": "Iniciar o projeto",
     "change-language": "Alterar idioma",
-    "cancel-change": "Cancelar alteração"
+    "cancel-change": "Cancelar alteração",
+    "resume-project": "Retomar projeto",
+    "start-project": "Iniciar o projeto"
   },
   "landing": {
     "big-heading-1": "Aprenda a programar — de graça.",
@@ -273,7 +275,7 @@
     "solution-link": "Link da solução",
     "github-link": "Link do GitHub",
     "submit-and-go": "Enviar e ir para o meu próximo desafio",
-    "congradulations": "Parabéns, o seu código passa. Envie seu código para completar este passo e seguir para o próximo.",
+    "congratulations": "Parabéns, o seu código passa. Envie seu código para completar este passo e seguir para o próximo.",
     "i-completed": "Já completei este desafio",
     "test-output": "O resultado do seu código vai aparecer aqui",
     "running-tests": "// executando testes",
@@ -290,8 +292,7 @@
     "scrimba-tip": "Dica: se o minibrowser estiver cobrindo o código, clique e arraste para movê-lo. Além disso, sinta-se à vontade para parar e editar o código no vídeo a qualquer momento.",
     "chal-preview": "Pré-visualização do desafio",
     "cert-map-estimates": {
-      "certs": "Certificação {{title}} (300 horas)",
-      "coding-prep": "{{title}} (milhares de horas de desafios)"
+      "certs": "Certificação {{title}}"
     },
     "editor-tabs": {
       "info": "Informações",
@@ -321,7 +322,8 @@
     "sorry-keep-trying": "Desculpe, seu código não passou nos testes. Continue tentando.",
     "sorry-getting-there": "Desculpe, seu código não passou nos testes. Você está chegando lá.",
     "sorry-hang-in-there": "Desculpe, seu código não passou nos testes. Você está chegando lá.",
-    "sorry-dont-giveup": "Desculpe, seu código não passou nos testes. Não desista."
+    "sorry-dont-giveup": "Desculpe, seu código não passou nos testes. Não desista.",
+    "challenges-completed": "{{completedCount}} de {{totalChallenges}} desafios concluídos"
   },
   "donate": {
     "title": "Dê seu apoio à nossa organização sem fins lucrativos",
@@ -457,7 +459,9 @@
     "donate": "Doar com PayPal",
     "fail": "Exame não concluído com sucesso",
     "not-passed": "Não aprovado",
+    "waiting": "Aguardando",
     "passed": "Aprovado",
+    "failed": "Falhou",
     "hint": "Dica",
     "heart": "Coração",
     "initial": "Inicial",
@@ -480,7 +484,10 @@
     "primary-nav": "primário",
     "breadcrumb-nav": "breadcrumb",
     "submit": "Use Ctrl + Enter para enviar.",
-    "running-tests": "Executando testes"
+    "running-tests": "Executando testes",
+    "step": "Passo",
+    "steps": "Passos",
+    "steps-for": "Passos para {{blockTitle}}"
   },
   "flash": {
     "honest-first": "Para solicitar uma certificação, você precisa primeiro aceitar nossa política de honestidade acadêmica",

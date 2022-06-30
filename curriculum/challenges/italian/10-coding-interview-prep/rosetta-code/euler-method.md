@@ -8,7 +8,7 @@ dashedName: euler-method
 
 # --description--
 
-Il metodo di Eulero approssima numericamente le soluzioni di equazioni differenziali ordinarie di primo ordine (ordinary differential equations in inglese - ODEs) con un dato valore iniziale. Si tratta di un metodo esplicito per risolvere i problemi di valore iniziale (IVP), come descritto in [questo articolo](https://www.freecodecamp.org/news/eulers-method-explained-with-examples/ "news: Euler's Method Explained with Examples").
+Il metodo di Eulero approssima numericamente le soluzioni di equazioni differenziali ordinarie di primo ordine (ordinary differential equations in inglese - ODEs) con un dato valore iniziale. Si tratta di un metodo esplicito per risolvere i problemi di valore iniziale (IVP), come descritto in <a href="https://www.freecodecamp.org/news/eulers-method-explained-with-examples/" title="Euler's Method Explained with Examples" target="_blank" rel="noopener noreferrer nofollow">questo articolo</a>.
 
 L'ODE deve essere fornita nella seguente forma:
 

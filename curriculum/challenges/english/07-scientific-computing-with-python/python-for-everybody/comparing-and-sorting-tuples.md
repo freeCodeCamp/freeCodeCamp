@@ -14,7 +14,7 @@ dashedName: comparing-and-sorting-tuples
 
 More resources:
 
-\- [Exercise](https://www.youtube.com/watch?v=EhQxwzyT16E)
+\- <a href="https://www.youtube.com/watch?v=EhQxwzyT16E" target="_blank" rel="noopener noreferrer nofollow">Exercise</a>
 
 # --question--
 

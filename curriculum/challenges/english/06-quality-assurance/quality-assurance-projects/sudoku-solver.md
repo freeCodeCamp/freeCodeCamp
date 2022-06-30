@@ -8,10 +8,10 @@ dashedName: sudoku-solver
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <https://sudoku-solver.freecodecamp.rocks/>. Working on this project will involve you writing your code using one of the following methods:
+Build a full stack JavaScript app that is functionally similar to this: <a href="https://sudoku-solver.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://sudoku-solver.freecodecamp.rocks/</a>. Working on this project will involve you writing your code using one of the following methods:
 
--   Clone [this GitHub repo](https://github.com/freecodecamp/boilerplate-project-sudoku-solver) and complete your project locally.
--   Use [our Replit starter project](https://replit.com/github/freeCodeCamp/boilerplate-project-sudoku-solver) to complete your project.
+-   Clone <a href="https://github.com/freecodecamp/boilerplate-project-sudoku-solver" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete your project locally.
+-   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-sudoku-solver" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete your project.
 -   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
 
 When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
@@ -324,7 +324,7 @@ async (getUserInput) => {
 };
 ```
 
-If the `value` submitted to `/api/check` is not a number between 1 and 9, the returned values will be `{ error: 'Invalid value' }`
+If the `value` submitted to `/api/check` is not a number between 1 and 9, the returned value will be `{ error: 'Invalid value' }`
 
 ```js
 async (getUserInput) => {
@@ -369,7 +369,7 @@ async (getUserInput) => {
 };
 ```
 
-All 14 functional tests are complete and passing. See `/tests/2_functional-tests.js` for the functionality you should write tests for.
+All 14 functional tests are complete and passing. See `/tests/2_functional-tests.js` for the expected functionality you should write tests for.
 
 ```js
 async (getUserInput) => {

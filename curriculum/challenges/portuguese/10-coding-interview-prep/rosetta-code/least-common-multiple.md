@@ -8,7 +8,9 @@ dashedName: least-common-multiple
 
 # --description--
 
-O mínimo múltiplo comum de 12 e 18 é 36, porque 12 é um fator (12 × 3 = 36) e 18 é um fator (18 × 2 = 36). Além disso, não há nenhum inteiro positivo menor que 36 que tenha ambos os fatores. Por ser um caso especial, se *m* ou *n* for zero, o mínimo múltiplo comum é zero. Uma maneira de calcular o mínimo múltiplo comum é iterar todos os múltiplos de *m*, até encontrar um que também seja múltiplo de *n*. Se você já tiver o *gcd* para o [máximo divisor comum](https://rosettacode.org/wiki/greatest common divisor), esta fórmula calcula o *lcm*. ( \\operatorname{lcm}(m, n) = \\frac{|m \\times n|}{\\operatorname{gcd}(m, n)} )
+O mínimo múltiplo comum de 12 e 18 é 36, porque 12 é um fator (12 × 3 = 36) e 18 é um fator (18 × 2 = 36). Além disso, não há nenhum inteiro positivo menor que 36 que tenha ambos os fatores. Por ser um caso especial, se $m$ ou $n$ for zero, o mínimo múltiplo comum é zero. Uma maneira de calcular o mínimo múltiplo comum é iterar todos os múltiplos de $m$, até encontrar um que também seja múltiplo de $n$. Se você já tiver o $gcd$ para o <a href="https://rosettacode.org/wiki/greatest" target="_blank" rel="noopener noreferrer nofollow">máximo divisor comum</a>, esta fórmula calcula o $lcm$.
+
+$$ \\operatorname{lcm}(m, n) = \\frac{|m \\times n|}{\\operatorname{gcd}(m, n)} $$
 
 # --instructions--
 

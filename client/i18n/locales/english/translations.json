@@ -73,7 +73,9 @@
     "click-start-course": "Start the course",
     "click-start-project": "Start the project",
     "change-language": "Change Language",
-    "cancel-change": "Cancel Change"
+    "cancel-change": "Cancel Change",
+    "resume-project": "Resume project",
+    "start-project": "Start project"
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
@@ -273,7 +275,7 @@
     "solution-link": "Solution Link",
     "github-link": "GitHub Link",
     "submit-and-go": "Submit and go to my next challenge",
-    "congradulations": "Congratulations, your code passes. Submit your code to complete this step and move on to the next one.",
+    "congratulations": "Congratulations, your code passes. Submit your code to complete this step and move on to the next one.",
     "i-completed": "I've completed this challenge",
     "test-output": "Your test output will go here",
     "running-tests": "// running tests",
@@ -290,8 +292,7 @@
     "scrimba-tip": "Tip: If the mini-browser is covering the code, click and drag to move it. Also, feel free to stop and edit the code in the video at any time.",
     "chal-preview": "Challenge Preview",
     "cert-map-estimates": {
-      "certs": "{{title}} Certification (300\u00A0hours)",
-      "coding-prep": "{{title}} (Thousands of hours of challenges)"
+      "certs": "{{title}} Certification"
     },
     "editor-tabs": {
       "info": "Info",
@@ -321,7 +322,8 @@
     "sorry-keep-trying":"Sorry, your code does not pass. Keep trying.",
     "sorry-getting-there":"Sorry, your code does not pass. You're getting there.",
     "sorry-hang-in-there":"Sorry, your code does not pass. Hang in there.",
-    "sorry-dont-giveup":"Sorry, your code does not pass. Don't give up."
+    "sorry-dont-giveup":"Sorry, your code does not pass. Don't give up.",
+    "challenges-completed": "{{completedCount}} of {{totalChallenges}} challenges completed"
   },
   "donate": {
     "title": "Support our nonprofit",
@@ -457,7 +459,9 @@
     "donate": "Donate with PayPal",
     "fail": "Test Failed",
     "not-passed": "Not Passed",
+    "waiting": "Waiting",
     "passed": "Passed",
+    "failed": "Failed",
     "hint": "Hint",
     "heart": "Heart",
     "initial": "Initial",
@@ -480,7 +484,10 @@
     "primary-nav": "primary",
     "breadcrumb-nav": "breadcrumb",
     "submit": "Use Ctrl + Enter to submit.",
-    "running-tests": "Running tests"
+    "running-tests": "Running tests",
+    "step": "Step",
+    "steps": "Steps",
+    "steps-for": "Steps for {{blockTitle}}"
   },
   "flash": {
     "honest-first": "To claim a certification, you must first accept our academic honesty policy",

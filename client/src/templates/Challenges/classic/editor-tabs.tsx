@@ -44,6 +44,7 @@ class EditorTabs extends Component<EditorTabsProps> {
             <button
               aria-expanded={visibleEditors[challengeFile.fileKey] ?? 'false'}
               key={challengeFile.fileKey}
+              data-cy={`editor-tab-${challengeFile.fileKey}`}
               onClick={() => toggleVisibleEditor(challengeFile.fileKey)}
             >
               {`${challengeFile.name}.${challengeFile.ext}`}{' '}

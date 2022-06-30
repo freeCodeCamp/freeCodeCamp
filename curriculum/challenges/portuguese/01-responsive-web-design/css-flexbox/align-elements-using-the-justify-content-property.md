@@ -11,7 +11,7 @@ dashedName: align-elements-using-the-justify-content-property
 
 Às vezes, os flex items dentro de um flex container não preenchem todo o espaço no disponível no contêiner. É comum querer dizer ao CSS como alinhar e espaçar os flex items de uma certa maneira. Felizmente, a propriedade `justify-content` tem várias opções para fazer isso. Antes, no entanto, há uma terminologia importante para entender antes de aprender essas opções.
 
-[Para mais informações sobre as propriedades do flex-box](https://www.freecodecamp.org/news/flexbox-the-ultimate-css-flex-cheatsheet/)
+<a href="https://www.freecodecamp.org/news/flexbox-the-ultimate-css-flex-cheatsheet/" target="_blank" rel="noopener noreferrer nofollow">Para mais informações sobre as propriedades do flex-box, leia aqui</a>
 
 Lembre-se de que definir um flex container como uma linha coloca os flex items lado a lado da esquerda para a direita. Já um flex container como uma coluna coloca os flex items em uma pilha vertical de cima para baixo. Seja qual for a direção do flex container, a direção em que os flex items são posicionados é chamada de **eixo principal**. Para uma linha, o eixo principal é uma linha horizontal que passa através de cada item. E para uma coluna, o eixo principal é uma linha vertical que passa através de cada item.
 

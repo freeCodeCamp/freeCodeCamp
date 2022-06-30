@@ -15,7 +15,7 @@
   - [Ajudar na tradução da aplicação web](how-to-work-on-localized-client-webapp.md)
   - [Trabalhar em testes do Cypress](how-to-add-cypress-tests.md)
   - [Trabalhar nos desafios em vídeo](how-to-help-with-video-challenges.md)
-  - [Trabalhe no tema de documentação](how-to-work-on-the-docs-theme.md)
+  - [Trabalhar com a documentação](how-to-work-on-the-docs-theme.md)
   - [Trabalhar na biblioteca de componentes](how-to-work-on-the-component-library.md)
 - **Guias adicionais**
   - [Testar traduções localmente](how-to-test-translations-locally.md)
@@ -36,4 +36,4 @@
 - **Nossa comunidade**
   - [**GitHub**](https://github.com/freecodecamp/freecodecamp)
   - [**Fórum de discussão**](https://freecodecamp.org/forum/c/contributors)
-  - [**Servidor do chat**](https://chat.freecodecamp.org/home)
+  - [**Servidor do chat**](https://discord.gg/PRyKn3Vbay)

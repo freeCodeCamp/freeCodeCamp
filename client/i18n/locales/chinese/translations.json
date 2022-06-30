@@ -73,7 +73,9 @@
     "click-start-course": "开始课程",
     "click-start-project": "启动项目",
     "change-language": "Change Language",
-    "cancel-change": "Cancel Change"
+    "cancel-change": "Cancel Change",
+    "resume-project": "Resume project",
+    "start-project": "Start project"
   },
   "landing": {
     "big-heading-1": "免费学习编程",
@@ -273,7 +275,7 @@
     "solution-link": "解决方案链接",
     "github-link": "GitHub 链接",
     "submit-and-go": "提交并访问下一个挑战",
-    "congradulations": "Congratulations, your code passes. Submit your code to complete this step and move on to the next one.",
+    "congratulations": "Congratulations, your code passes. Submit your code to complete this step and move on to the next one.",
     "i-completed": "我已经完成这个挑战",
     "test-output": "你的测试输出将在这里显示",
     "running-tests": "// 运行测试",
@@ -290,8 +292,7 @@
     "scrimba-tip": "注意：如果这个小浏览器窗口覆盖了代码，点击拖动它。同时，你可以随时暂停，在视频中编辑代码。",
     "chal-preview": "挑战预览",
     "cert-map-estimates": {
-      "certs": "{{title}} 认证 (300小时)",
-      "coding-prep": "{{title}}（数千小时的挑战）"
+      "certs": "{{title}} Certification"
     },
     "editor-tabs": {
       "info": "信息",
@@ -321,7 +322,8 @@
     "sorry-keep-trying": "Sorry, your code does not pass. Keep trying.",
     "sorry-getting-there": "Sorry, your code does not pass. You're getting there.",
     "sorry-hang-in-there": "Sorry, your code does not pass. Hang in there.",
-    "sorry-dont-giveup": "Sorry, your code does not pass. Don't give up."
+    "sorry-dont-giveup": "Sorry, your code does not pass. Don't give up.",
+    "challenges-completed": "{{completedCount}} of {{totalChallenges}} challenges completed"
   },
   "donate": {
     "title": "支持我们的非营利组织",
@@ -457,7 +459,9 @@
     "donate": "使用 PayPal 捐款",
     "fail": "测试失败",
     "not-passed": "未通过",
+    "waiting": "Waiting",
     "passed": "通过",
+    "failed": "Failed",
     "hint": "Hint",
     "heart": "爱心",
     "initial": "初始",
@@ -480,7 +484,10 @@
     "primary-nav": "主要的",
     "breadcrumb-nav": "面包屑导航",
     "submit": "Use Ctrl + Enter to submit.",
-    "running-tests": "Running tests"
+    "running-tests": "Running tests",
+    "step": "Step",
+    "steps": "Steps",
+    "steps-for": "Steps for {{blockTitle}}"
   },
   "flash": {
     "honest-first": "申请认证之前，你必须先接受我们的《学术诚信条例》",

@@ -8,7 +8,7 @@ dashedName: build-a-survey-form
 
 # --description--
 
-**目標:** <a href="https://survey-form.freecodecamp.rocks" target="_blank">https://survey-form.freecodecamp.rocks</a> と同様の機能を持つアプリを構築します
+**目標:** <a href="https://survey-form.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://survey-form.freecodecamp.rocks</a> と似た機能を持つアプリを構築します
 
 **ユーザーストーリー:**
 
@@ -380,7 +380,7 @@ assert(!!el)
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Survey Form</title>
   </head>
   <body>

@@ -15,7 +15,7 @@
   - [Робота над локалізованим вебзастосунком](how-to-work-on-localized-client-webapp.md)
   - [Робота з Cypress тестами](how-to-add-cypress-tests.md)
   - [Робота над завданнями з відео](how-to-help-with-video-challenges.md)
-  - [Work on the docs theme](how-to-work-on-the-docs-theme.md)
+  - [Work on documentation](how-to-work-on-the-docs-theme.md)
   - [Work on the component library](how-to-work-on-the-component-library.md)
 - **Додаткові інструкції**
   - [Тестуйте переклади локально](how-to-test-translations-locally.md)
@@ -36,4 +36,4 @@
 - **Наша спільнота**
   - [**GitHub**](https://github.com/freecodecamp/freecodecamp)
   - [**Форум**](https://freecodecamp.org/forum/c/contributors)
-  - [**Чат**](https://chat.freecodecamp.org/home)
+  - [**Чат**](https://discord.gg/PRyKn3Vbay)

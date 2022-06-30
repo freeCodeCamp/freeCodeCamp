@@ -8,7 +8,7 @@ dashedName: test-if-a-value-is-of-a-specific-data-structure-type
 
 # --description--
 
-Lembrando que este projeto está sendo construído a partir do [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), ou pode ser clonado no [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Lembrando que este projeto está sendo construído a partir do <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, ou pode ser clonado no <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 `#typeOf` afirma que o tipo do valor é a string fornecida, conforme determinado pelo `Object.prototype.toString`.
 

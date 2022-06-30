@@ -30,6 +30,8 @@ dashedName: build-a-product-landing-page
 
 完成需求并通过下面的所有测试来完成这个项目。 赋予它你自己的个人风格。 编程愉快！
 
+**注意：** 请在你的 HTML 中添加 `<link rel="stylesheet" href="styles.css">` 以链接你的样式表并应用你的 CSS
+
 # --hints--
 
 你应该有一个 `id` 为 `header` 的 `header` 元素。
@@ -204,10 +206,41 @@ assert(!!el && el.name === 'email')
 你的 `#nav-bar` 元素应该始终位于视口的顶部。
 
 ```js
-const el = document.getElementById('nav-bar')
-const top1 = el?.offsetTop
-const top2 = el?.offsetTop
-assert(!!el && top1 >= -15 && top1 <= 15 && top2 >= -15 && top2 <= 15)
+(async () => {
+  const timeout = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
+
+  const header = document.getElementById('header');
+  const headerChildren = header.children;
+  const navbarCandidates = [header, ...headerChildren];
+
+  // Return smallest top position of all navbar candidates
+  const getNavbarPosition = (candidates = []) => {
+    return candidates.reduce(
+      (min, candidate) =>
+        Math.min(min, Math.abs(candidate?.getBoundingClientRect().top)),
+      Infinity
+    );
+  };
+  assert.approximately(
+    getNavbarPosition(navbarCandidates),
+    0,
+    15,
+    '#header or one of its children should be at the top of the viewport '
+  );
+
+  window.scroll(0, 500);
+  await timeout(1);
+
+  assert.approximately(
+    getNavbarPosition(navbarCandidates),
+    0,
+    15,
+    '#header or one of its children should be at the top of the ' +
+      'viewport even after scrolling '
+  );
+
+  window.scroll(0, 0);
+})();
 ```
 
 你的产品登陆页面至少要有一个媒体查询。

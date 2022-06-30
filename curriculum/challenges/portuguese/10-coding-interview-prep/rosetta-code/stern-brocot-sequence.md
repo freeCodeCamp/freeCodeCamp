@@ -8,7 +8,7 @@ dashedName: stern-brocot-sequence
 
 # --description--
 
-Para esta tarefa, a sequência Stern-Brocot deve ser gerada por um algoritmo semelhante ao empregado na geração da [sequência de Fibonacci](https://rosettacode.org/wiki/Fibonacci sequence).
+Para esta tarefa, a sequência Stern-Brocot deve ser gerada por um algoritmo semelhante ao empregado na geração da [" target="_blank" rel="noopener noreferrer nofollow">sequência de Fibonacci](<https://rosettacode.org/wiki/Fibonacci sequence mark=).
 
 <ol>
   <li>O primeiro e o segundo membros da sequência são ambos 1:</li>

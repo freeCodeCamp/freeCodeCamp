@@ -1,8 +1,5 @@
 {
-  "extends": [
-    "github>freecodecamp/renovate-config",
-    "helpers:pinGitHubActionDigests"
-  ],
+  "extends": ["github>freecodecamp/renovate-config"],
   "packageRules": [
     {
       "groupName": "Monaco Editor",
@@ -26,6 +23,10 @@
       "groupName": "CodeSee",
       "matchPackagePrefixes": ["@codesee/"],
       "automerge": true
+    },
+    {
+      "groupName": "Stripe",
+      "matchPackagePrefixes": ["@stripe/"]
     }
   ],
   "ignorePaths": ["api-server"]

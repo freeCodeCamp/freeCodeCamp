@@ -8,11 +8,11 @@ dashedName: build-a-tribute-page
 
 # --description--
 
-**Objetivo:** criar uma aplicação que funcione de modo semelhante a <a href="https://tribute-page.freecodecamp.rocks" target="_blank">https://tribute-page.freecodecamp.rocks</a>
+**Objetivo:** criar uma aplicação que funcione de modo semelhante a <a href="https://tribute-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://tribute-page.freecodecamp.rocks</a>
 
 **Histórias de usuário:**
 
-1. A página de homenagem deve ter um elemento com um `id="main"` que envolva todos os demais elementos
+1. A página de homenagem deve ter um elemento `main` com o `id` `main` correspondente, que envolva todos os demais elementos
 1. Deve haver um elemento com `id` `title`, que contenha uma string (ou seja, um texto) que descreva a pessoa a quem a página presta homenagem (por exemplo, "Dr. Norman Borlaug")
 1. Você deve ter um elemento `figure` ou um elemento `div` com o `id` `img-div`
 1. Dentro do elemento `#img-div`, deve haver um elemento `img` com um `id="image"` correspondente
@@ -207,14 +207,14 @@ assert(leftMargin - rightMargin < 6 && rightMargin - leftMargin < 6)
     <link
       href="https://fonts.googleapis.com/css?family=Pacifico"
       rel="stylesheet"
-      type="text/css"
+
     />
     <link
       href="https://fonts.googleapis.com/css?family=Lobster"
       rel="stylesheet"
-      type="text/css"
+
     />
-    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <link href="styles.css" rel="stylesheet" />
     <title>Tribute Page</title>
   </head>
   <body>

@@ -8,7 +8,7 @@ dashedName: euler-method
 
 # --description--
 
-Euler's method numerically approximates solutions of first-order ordinary differential equations (ODEs) with a given initial value. It is an explicit method for solving initial value problems (IVPs), as described in [this article](<https://www.freecodecamp.org/news/eulers-method-explained-with-examples/> "news: Euler's Method Explained with Examples").
+Euler's method numerically approximates solutions of first-order ordinary differential equations (ODEs) with a given initial value. It is an explicit method for solving initial value problems (IVPs), as described in <a href="https://www.freecodecamp.org/news/eulers-method-explained-with-examples/" title="Euler's Method Explained with Examples" target="_blank" rel="noopener noreferrer nofollow">this article</a>.
 
 The ODE has to be provided in the following form:
 
