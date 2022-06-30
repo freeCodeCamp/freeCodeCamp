@@ -48,7 +48,7 @@ Outras propriedades dos números de Mersenne nos permitem refinar ainda mais o p
 
 Qualquer fator `q` de <code>2<sup>P</sup>-1</code> deve ser no formato `2kP+1`, `k`, sendo um inteiro positivo ou zero. Além disso, `q` deve ser `1` ou `7 mod 8`.
 
-Por fim, qualquer fator potencial `q` deve ser [ "Primality by Trial Division"" target="_blank" rel="noopener noreferrer nofollow">primo](<https://rosettacode.org/wiki/Primality by Trial Division mark=).
+Por fim, qualquer fator potencial `q` deve ser <a href="https://rosettacode.org/wiki/Primality_by_trial_division" target="_blank" rel="noopener noreferrer nofollow">primo</a>.
 
 Como em outros algoritmos de divisão de teste, o algoritmo termina quando `2kP+1 > sqrt(N)`. Estes testes só funcionam em números de Mersenne, onde o `P` é primo. Por exemplo, <code>M<sub>4</sub>=15</code> não gera fatores usando essas técnicas, mas fator em 3 e 5, nenhum dos quais se ajusta a `2kP+1`.
 
