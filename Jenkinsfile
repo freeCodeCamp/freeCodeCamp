@@ -32,7 +32,7 @@ if (env.BRANCH_NAME == 'master-jenkins') {
 
 pipeline {
     agent {
-        label 'tc-jenkins-ecs-agent-large'
+        label 'tc-jenkins-ecs-agent'
     }
     environment {
         CI_AUTH0_URL = credentials('CI_AUTH0_URL')
