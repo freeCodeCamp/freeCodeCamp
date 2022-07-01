@@ -81,7 +81,8 @@ async function request<T>(
   };
 
   const response = await fetch(`${base}${path}`, options);
-  if (!response.ok) throw new Error((response as any)?.error?.message || 'some error happen')
+  if (!response.ok)
+    throw new Error((response as any)?.error?.message || 'some error happen');
   return combineDataWithResponse(response);
 }
 
