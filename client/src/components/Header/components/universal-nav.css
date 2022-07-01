@@ -496,42 +496,16 @@ button.nav-link[aria-disabled='true'] {
   outline: none;
 }
 
-#toggle-button-nav .menu-btn-text {
+#toggle-button-nav .menu-btn-text,
+#universal-nav .login-btn-text{
   display: inline-block;
 }
 
-#toggle-button-nav .menu-btn-icon {
+#toggle-button-nav .menu-btn-icon,
+ .login-btn-icon{
   display: none;
 }
 
-/*
-#toggle-button-nav .menu-btn-icon {
-  display: none;
-}
-.login-btn-text {
-  display: inline-block;
-}
-.login-btn-icon {
-  display: none;
-}
-.login-btn-icon svg {
-  min-height: 30px;
-  margin-top: 5px;
-}
-@media (max-width: 600px) {
-  #toggle-button-nav .menu-btn-text {
-    display: none;
-  }
-  #toggle-button-nav .menu-btn-icon {
-    display: inline-block;
-  }
-  .login-btn-text {
-    display: none;
-  }
-  .login-btn-icon {
-    display: inline-block;
-  }
-} */
 @media (max-width: 980px) {
   .universal-nav-middle {
     flex: none;
@@ -594,10 +568,16 @@ button.nav-link[aria-disabled='true'] {
   .universal-nav-right .fcc_searchBar .ais-Hits {
     width: calc(100% - 30px);
   }
-  #toggle-button-nav .menu-btn-text {
+  #universal-nav .signup-btn{
+    padding: 4px 6px;
+  }
+  #toggle-button-nav .menu-btn-text,
+  #universal-nav .login-btn-text{
     display: none;
   }
-  #toggle-button-nav .menu-btn-icon {
+  
+  #toggle-button-nav .menu-btn-icon,
+  #universal-nav .login-btn-icon{
     display: inline-block;
   }
   .toggle-button-nav {
@@ -615,15 +595,18 @@ button.nav-link[aria-disabled='true'] {
   .universal-nav {
     padding: 0 5px;
   }
-
   .universal-nav {
     padding: 0 5px;
   }
-
   .nav-link-sign-in {
     display: flex;
   }
-  
+  #universal-nav-logo {
+    left: 8px;
+  }
+}
+
+@media(max-width: 300px){
   #universal-nav-logo {
     max-width: none;
     left: -170px;
