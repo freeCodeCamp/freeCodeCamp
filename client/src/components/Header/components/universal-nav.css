@@ -195,6 +195,7 @@ button.nav-link[aria-disabled='true'] {
 }
 
 .nav-lang-menu {
+  --lang-menu-height: 22.5rem;
   display: none;
   padding: 0;
   color: var(--gray-90);
@@ -212,14 +213,24 @@ button.nav-link[aria-disabled='true'] {
   top: 0;
   overflow-y: auto;
   scrollbar-width: auto;
-  /* lang menu should always be full height */
-  height: 19.9rem;
+  /* Ensure lang menu scrolls if there is not enough height to display all of it (this ensures keyboard accessibility). 38px is the height of search form since it is inserted between header and main menu. */
+  height: min(
+    var(--lang-menu-height),
+    calc(100vh - 38px - var(--header-height))
+  );
+}
+
+@media (min-width: 601px) {
+  /* Search form is no longer between header and main menu. */
+  .nav-lang-menu {
+    height: min(var(--lang-menu-height), calc(100vh - var(--header-height)));
+  }
 }
 
 /* main menu must be at least as tall as lang menu (when displayed) 
    unless there isn't enough view port height */
 .nav-list.display-lang-menu {
-  min-height: min(19.9rem, calc(100vh - var(--header-height)));
+  min-height: min(var(--lang-menu-height), calc(100vh - var(--header-height)));
 }
 
 .nav-lang-menu > button:hover {
