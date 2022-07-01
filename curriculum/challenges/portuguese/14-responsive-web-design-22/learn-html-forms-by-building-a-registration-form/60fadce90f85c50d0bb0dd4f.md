@@ -7,20 +7,14 @@ dashedName: step-41
 
 # --description--
 
-Para dar aos elementos `fieldset` um pouco de separação, selecione todos exceto o último elemento `fieldset`, e dê a eles uma `border-bottom` inferior de `3px solid #3b3b4f`.
+Para dar aos elementos `fieldset` um pouco de separação, selecioná-los e dar a eles o atributo `border-bottom` de `3px solid #3b3b4f`.
 
 # --hints--
-
-Você pode usar a pseudoclasse `:not(:last-of-type)` para selecionar tudo menos o último elemento.
-
-```js
-assert.exists(new __helpers.CSSHelp(document).getStyle('fieldset:not(:last-of-type)'));
-```
 
 Você deve dar ao `fieldset` uma `border-bottom` de `3px solid #3b3b4f`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('fieldset:not(:last-of-type)')?.borderBottom, '3px solid rgb(59, 59, 79)');
+assert.equal(new __helpers.CSSHelp(document).getStyle('fieldset')?.borderBottom, '3px solid rgb(59, 59, 79)');
 ```
 
 # --seed--
@@ -97,13 +91,11 @@ form {
     margin: 0 auto;
 }
 
+--fcc-editable-region--
 fieldset {
   border: none;
     padding: 2rem 0;
 }
-
---fcc-editable-region--
-
 --fcc-editable-region--
 
 label {
