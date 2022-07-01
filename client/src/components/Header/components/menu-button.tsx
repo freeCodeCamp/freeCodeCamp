@@ -50,6 +50,7 @@ const MenuButton = ({
     >
       <span className='menu-btn-icon'>
         <FontAwesomeIcon icon={faBars} />
+        <span className='sr-only'>{t('buttons.menu')}</span>
       </span>
       <span className='menu-btn-text'>{t('buttons.menu')}</span>
     </button>
