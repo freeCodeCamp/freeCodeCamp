@@ -6,7 +6,7 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import { closeModal, isShortcutsModalOpenSelector } from '../redux';
-import { updateUserFlag } from '../../../redux/settings';
+import { updateMyKeyboardShortcuts } from '../../../redux/settings';
 import { userSelector } from '../../../redux';
 import { User } from '../../../redux/prop-types';
 import KeyboardShortcutsSettings from '../../../components/settings/keyboard-shortcuts';
@@ -31,7 +31,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     {
       closeShortcutsModal: () => closeModal('shortcuts'),
       toggleKeyboardShortcuts: (keyboardShortcuts: boolean) =>
-        updateUserFlag({ keyboardShortcuts })
+        updateMyKeyboardShortcuts({ keyboardShortcuts })
     },
     dispatch
   );

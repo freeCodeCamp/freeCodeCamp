@@ -84,6 +84,17 @@ export const updateMyThemeComplete = createAction(
 );
 export const updateMyThemeError = createAction(types.updateMyThemeError);
 
+export const updateMyKeyboardShortcuts = createAction(
+  types.updateMyKeyboardShortcuts
+);
+export const updateMyKeyboardShortcutsComplete = createAction(
+  types.updateMyKeyboardShortcutsComplete,
+  checkForSuccessPayload
+);
+export const updateMyKeyboardShortcutsError = createAction(
+  types.updateMyKeyboardShortcutsError
+);
+
 export const updateMyHonesty = createAction(types.updateMyHonesty);
 export const updateMyHonestyComplete = createAction(
   types.updateMyHonestyComplete,
