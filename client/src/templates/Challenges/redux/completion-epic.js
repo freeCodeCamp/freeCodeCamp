@@ -7,7 +7,6 @@ import {
   retry,
   catchError,
   concat,
-  tap,
   filter,
   finalize
 } from 'rxjs/operators';
@@ -145,7 +144,7 @@ function submitBackendChallenge(type, state) {
       };
       try {
         return postChallenge(update, username);
-      } catch(err) {
+      } catch (err) {
         return err;
       }
     }
