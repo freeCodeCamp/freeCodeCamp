@@ -1,6 +1,4 @@
 import { Button } from '@freecodecamp/react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import React, { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -38,10 +36,7 @@ const Login = ({
       data-test-label={dataTestLabel}
       href={href}
     >
-      <span className='login-btn-icon'>
-        <FontAwesomeIcon icon={faRightToBracket} />
-      </span>
-      <span className='login-btn-text'>{children || t('buttons.sign-in')}</span>
+      <span className='login-btn-icon'>{children || t('buttons.sign-in')}</span>
     </Button>
   );
 };
