@@ -1,6 +1,4 @@
-// TODO: figure out how to determine if the token is expired
-// PROD-2288
-// import { isBefore } from 'date-fns';
+import { isBefore } from 'date-fns';
 import jwt from 'jsonwebtoken';
 
 import { jwtSecret as _jwtSecret } from '../../../../config/secrets';
@@ -56,9 +54,9 @@ export function getAccessTokenFromRequest(req, jwtSecret = _jwtSecret) {
 
   let valid = false;
   try {
-    // TODO: figure out how to determine if the token is expired
-    // PROD-2288
-    valid = true; // isBefore(Date.now(), Date.parse(token.exp));
+    // TOPCODER: validate the token duration agaainst the token.exp
+    valid = isBefore(Date.now(), new Date(token.exp * 1000));
+    // const valid = isBefore(Date.now(), Date.parse(created) + ttl);
   } catch (ex) {
     valid = false;
   }
