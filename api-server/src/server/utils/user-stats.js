@@ -88,6 +88,32 @@ export function calcLongestStreak(cals, tz = 'UTC') {
 }
 
 // BEGIN TOPCODER:
+
+// we need to create a user and set its external ID if a valid token isn't found
+export function createUserByEmail(
+  email,
+  User = loopback.getModelByType('User')
+) {
+  return new Promise((resolve, reject) => {
+    return (
+      User.create$({ email })
+        .toPromise()
+        .then(user => resolve(user))
+        .catch(err => reject(err || 'error creating new user')),
+      (err, user) =>
+        err || !user ? reject(err || 'error creating new user') : resolve(user)
+    );
+  });
+}
+
+export function setExternalId(user, externalId) {
+  return new Promise((resolve, reject) =>
+    user.updateAttributes({ externalId }, err =>
+      err ? reject(err) : resolve()
+    )
+  );
+}
+
 // we need to use the external ID to get the user
 // instead of the internal ID
 export function getUserByExternalId(

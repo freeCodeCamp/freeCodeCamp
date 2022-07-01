@@ -10,10 +10,14 @@ import {
 } from '../utils/getSetAccessToken';
 import { getRedirectParams } from '../utils/redirection';
 // TOPCODER: we need to use the external ID (i.e. Auth0 ID)
-// to link w/the TC account
+// to link w/the TC account.
+// And if we don't find the user in the DB, we need to create
+// a new user and set its external ID
 import {
+  createUserByEmail as _createUserByEmail,
+  getUserByExternalId as _getUserByExternalId,
   /* getUserById as _getUserById */
-  getUserByExternalId as _getUserByExternalId
+  setExternalId as _setExternalId
 } from '../utils/user-stats';
 
 const authRE = /^\/auth\//;
@@ -57,9 +61,13 @@ export function isAllowedPath(path, pathsAllowedREs = _pathsAllowedREs) {
 export default function getRequestAuthorisation({
   jwtSecret = _jwtSecret,
   // TOPCODER: we need to use the external ID
-  // (i.e. Auth0 ID) to link w/the TC user
-  getUserByExternalId = _getUserByExternalId
+  // (i.e. Auth0 ID) to link w/the TC user.
+  // And if the user doesn't exist yet, we need
+  // to create it and set its external ID.
+  createUserByEmail = _createUserByEmail,
+  getUserByExternalId = _getUserByExternalId,
   // getUserById = _getUserById
+  setExternalId = _setExternalId
 } = {}) {
   return function requestAuthorisation(req, res, next) {
     const { origin } = getRedirectParams(req);
@@ -109,10 +117,31 @@ export default function getRequestAuthorisation({
               if (user) {
                 req.user = user;
               }
-              return;
+              return next();
             })
-            .then(next)
-            .catch(next)
+            .catch(err => {
+              // if the error is not the no user instance found error
+              // or if we don't have an access token with an email and
+              // external id, don't do any special error handling
+              if (
+                err !== 'No user instance found' ||
+                !accessToken?.email ||
+                !accessToken?.sub
+              ) {
+                return next();
+              }
+
+              // let's try to create the user
+              return createUserByEmail(accessToken.email)
+                .then(user => {
+                  if (!user) {
+                    return next();
+                  }
+                  req.user = user;
+                  return setExternalId(user, accessToken.sub).then(next);
+                })
+                .catch(next);
+            })
         );
       } else {
         return Promise.resolve(next());
