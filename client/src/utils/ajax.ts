@@ -324,6 +324,12 @@ export function putUpdateMyTheme(
   return put('/update-my-theme', update);
 }
 
+export function putUpdateMyKeyboardShortcuts(
+  update: Record<string, string>
+): Promise<ResponseWithData<void>> {
+  return put('/update-my-keyboard-shortcuts', update);
+}
+
 export function putUpdateMyHonesty(
   update: Record<string, string>
 ): Promise<ResponseWithData<void>> {
