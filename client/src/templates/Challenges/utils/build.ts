@@ -31,7 +31,6 @@ const _concatHtml = ({
 };
 
 interface SourceMap {
-  index: string;
   contents?: string;
   editableContents: string;
   original: { [key: string]: string };
@@ -88,11 +87,9 @@ const composeFunctions = (...fns: ComposeFunctionProps[]) =>
   fns.map(applyFunction).reduce((f, g) => x => f(x).then(g));
 
 function buildSourceMap(challengeFiles: ChallengeFiles): SourceMap | undefined {
-  // TODO: rename sources.index to sources.contents.
   const source: SourceMap | undefined = challengeFiles?.reduce(
     (sources, challengeFile) => {
-      sources.index += challengeFile.source || challengeFile.contents;
-      // sources.contents = sources.index;
+      sources.contents += challengeFile.source || challengeFile.contents;
       sources.original[challengeFile.history[0]] = challengeFile.source;
       sources.editableContents += challengeFile.editableContents || '';
       return sources;
@@ -165,7 +162,7 @@ function getJSTestRunner(
   { proxyLogger, removeComments }: TestRunnerConfig
 ) {
   const code = {
-    contents: sources.index,
+    contents: sources.contents,
     editableContents: sources.editableContents
   };
 
@@ -303,7 +300,7 @@ export function updateProjectPreview(
   ) {
     // Give iframe a title attribute for accessibility using the preview
     // document's <title>.
-    const titleMatch = buildData?.sources?.index?.match(
+    const titleMatch = buildData?.sources?.contents?.match(
       /<title>(.*?)<\/title>/
     );
     const frameTitle = titleMatch
