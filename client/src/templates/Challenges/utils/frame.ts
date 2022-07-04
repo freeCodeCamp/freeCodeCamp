@@ -75,7 +75,7 @@ const createHeader = (id = mainPreviewId) => `
       }
       if (element && element.nodeName === 'A' && new URL(element.herf).hash === '') {
         e.preventDefault();
-        AlertPanel(element.herf)
+        AlertPanel(element.href)
       }
       if (element) {
         const href = element.getAttribute('href');
