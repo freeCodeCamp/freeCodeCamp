@@ -14,15 +14,15 @@ dashedName: relational-databases-many-to-many-relationships
 
 Altre risorse:
 
-\- [Esercizio: Email](https://www.youtube.com/watch?v=uQ3Qv1z_Vao)
+\- <a href="https://www.youtube.com/watch?v=uQ3Qv1z_Vao" target="_blank" rel="noopener noreferrer nofollow">Esercizio: Email</a>
 
-\- [Esercizio: Roster](https://www.youtube.com/watch?v=qEkUEAz8j3o)
+\- <a href="https://www.youtube.com/watch?v=qEkUEAz8j3o" target="_blank" rel="noopener noreferrer nofollow">Esercizio: Roster</a>
 
-\- [Esercizio: Tracce](https://www.youtube.com/watch?v=I-E7avcPeSE)
+\- <a href="https://www.youtube.com/watch?v=I-E7avcPeSE" target="_blank" rel="noopener noreferrer nofollow">Esercizio: Tracce</a>
 
-\- [Esercizio: Twfriends](https://www.youtube.com/watch?v=RZRAoBFIH6A)
+\- <a href="https://www.youtube.com/watch?v=RZRAoBFIH6A" target="_blank" rel="noopener noreferrer nofollow">Esercizio: Twfriends</a>
 
-\- [Esercizio: Twspider](https://www.youtube.com/watch?v=xBaJddvJL4A)
+\- <a href="https://www.youtube.com/watch?v=xBaJddvJL4A" target="_blank" rel="noopener noreferrer nofollow">Esercizio: Twspider</a>
 
 # --question--
 

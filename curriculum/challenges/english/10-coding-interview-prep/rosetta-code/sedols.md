@@ -66,8 +66,9 @@ assert(sedol('228276') === '2282765');
 
 ```js
 function sedol(input) {
-
-  return true;
+  const checkSum = 0
+  
+  return checkSum;
 }
 ```
 
@@ -92,7 +93,7 @@ function sedolCheckDigit(char6) {
   for (let i = 0; i < char6.length; i++) {
     sum += weight[i] * parseInt(char6.charAt(i), 36);
   }
-  const check = (10 - (sum % 10)) % 10;
-  return check.toString();
+  const checkSum = (10 - (sum % 10)) % 10;
+  return checkSum.toString();
 }
 ```

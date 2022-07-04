@@ -8,7 +8,7 @@ dashedName: set-a-content-security-policy-with-helmet-contentsecuritypolicy
 
 # --description--
 
-Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza su [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec), o clonato da [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
+Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza su <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, o clonato da <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 Questa sfida mette in evidenza una promettente nuova difesa che può ridurre significativamente il rischio e l'impatto di molti tipi di attacchi nei browser moderni. Impostando e configurando una Content Security Policy (CSP - Politica di Sicurezza dei Contenuti) puoi impedire l'iniezione di cose indesiderate nella tua pagina. Questo proteggerà la tua app da vulnerabilità XSS, tracciamento indesiderato, frame dannosi e molto altro ancora. La CSP funziona definendo un elenco di sorgenti di contenuto attendibili. Puoi configurarlo per ogni tipo di risorsa di cui una pagina web potrebbe aver bisogno (script, fogli di stile, stili di caratteri, frame, media così via…). Ci sono più direttive disponibili, quindi il proprietario di un sito web può avere un controllo granulare. Vedi HTML 5 Rocks, KeyCDN per maggiori dettagli. Purtroppo CSP non è supportata dai vecchi browser.
 

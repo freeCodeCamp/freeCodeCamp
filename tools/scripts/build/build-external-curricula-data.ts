@@ -1,11 +1,9 @@
 import { mkdirSync, writeFileSync, readFileSync } from 'fs';
-import { resolve } from 'path';
+import { resolve, dirname } from 'path';
 import { SuperBlocks } from '../../../config/certification-settings';
 
 type Intro = { [keyValue in SuperBlocks]: IntroProps };
 export type Curriculum = { [keyValue in SuperBlocks]: CurriculumProps };
-type SuperBlockKeys = keyof typeof SuperBlocks;
-type SuperBlockValues = typeof SuperBlocks[SuperBlockKeys];
 
 interface IntroProps extends CurriculumProps {
   title: string;
@@ -23,21 +21,23 @@ interface Block {
   meta: Record<string, unknown>;
 }
 
-export const superBlockMobileAppOrder = [
-  { dashedName: '2022/responsive-web-design', public: false },
-  { dashedName: 'responsive-web-design', public: true },
-  { dashedName: 'javascript-algorithms-and-data-structures', public: true },
-  { dashedName: 'front-end-development-libraries', public: false },
-  { dashedName: 'data-visualization', public: false },
-  { dashedName: 'back-end-development-and-apis', public: false },
-  { dashedName: 'quality-assurance', public: false },
-  { dashedName: 'scientific-computing-with-python', public: false },
-  { dashedName: 'data-analysis-with-python', public: false },
-  { dashedName: 'information-security', public: false },
-  { dashedName: 'machine-learning-with-python', public: false },
-  { dashedName: 'coding-interview-prep', public: false },
-  { dashedName: 'relational-database', public: false }
+export const orderedSuperBlockInfo = [
+  { dashedName: SuperBlocks.RespWebDesignNew, public: false },
+  { dashedName: SuperBlocks.RespWebDesign, public: true },
+  { dashedName: SuperBlocks.JsAlgoDataStruct, public: true },
+  { dashedName: SuperBlocks.FrontEndDevLibs, public: false },
+  { dashedName: SuperBlocks.DataVis, public: false },
+  { dashedName: SuperBlocks.BackEndDevApis, public: false },
+  { dashedName: SuperBlocks.QualityAssurance, public: false },
+  { dashedName: SuperBlocks.SciCompPy, public: false },
+  { dashedName: SuperBlocks.DataAnalysisPy, public: false },
+  { dashedName: SuperBlocks.InfoSec, public: false },
+  { dashedName: SuperBlocks.MachineLearningPy, public: false },
+  { dashedName: SuperBlocks.CodingInterviewPrep, public: false },
+  { dashedName: SuperBlocks.RelationalDb, public: false }
 ];
+
+const dashedNames = orderedSuperBlockInfo.map(({ dashedName }) => dashedName);
 
 export function buildExtCurriculumData(
   ver: string,
@@ -55,21 +55,20 @@ export function buildExtCurriculumData(
   parseCurriculumData();
 
   function parseCurriculumData() {
-    const superBlockKeys = Object.values(SuperBlocks);
+    const superBlockKeys = Object.values(SuperBlocks).filter(x =>
+      dashedNames.includes(x)
+    );
 
     writeToFile('available-superblocks', {
-      superblocks: [
-        superBlockMobileAppOrder,
-        Object.values(SuperBlocks).map(superblock =>
-          getSuperBlockName(superblock)
-        )
-      ]
+      superblocks: orderedSuperBlockInfo.map(x => ({
+        ...x,
+        title: getSuperBlockTitle(x.dashedName)
+      }))
     });
 
-    for (let i = 0; i < superBlockKeys.length; i++) {
+    for (const superBlockKey of superBlockKeys) {
       const superBlock = <Curriculum>{};
-      const superBlockKey = Object.values(SuperBlocks)[i];
-      const blockNames = Object.keys(curriculum[superBlockKeys[i]].blocks);
+      const blockNames = Object.keys(curriculum[superBlockKey].blocks);
 
       if (blockNames.length === 0) continue;
 
@@ -86,20 +85,18 @@ export function buildExtCurriculumData(
           curriculum[superBlockKey]['blocks'][blockNames[j]]['meta'];
       }
 
-      writeToFile(superBlockKeys[i].replace(/\//, '-'), superBlock);
+      writeToFile(superBlockKey, superBlock);
     }
   }
 
   function writeToFile(fileName: string, data: Record<string, unknown>): void {
-    mkdirSync(versionPath, { recursive: true });
-
     const filePath = `${versionPath}/${fileName}.json`;
-
+    mkdirSync(dirname(filePath), { recursive: true });
     writeFileSync(filePath, JSON.stringify(data, null, 2));
   }
 
   function getBlockDescription(
-    superBlockKeys: SuperBlockValues,
+    superBlockKeys: SuperBlocks,
     blockKey: string
   ): string[] {
     const intros = JSON.parse(readFileSync(blockIntroPath, 'utf-8')) as Intro;
@@ -107,11 +104,11 @@ export function buildExtCurriculumData(
     return intros[superBlockKeys]['blocks'][blockKey]['intro'];
   }
 
-  function getSuperBlockName(superBlockKeys: SuperBlockValues): string {
+  function getSuperBlockTitle(superBlock: SuperBlocks): string {
     const superBlocks = JSON.parse(
       readFileSync(blockIntroPath, 'utf-8')
     ) as Intro;
 
-    return superBlocks[superBlockKeys].title;
+    return superBlocks[superBlock].title;
   }
 }

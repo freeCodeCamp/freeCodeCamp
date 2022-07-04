@@ -16,7 +16,7 @@ React fornece recursos úteis de checagem de tipos para verificar se os componen
 MyComponent.propTypes = { handleClick: PropTypes.func.isRequired }
 ```
 
-No exemplo acima, a parte `PropTypes.func` verifica se `handleClick` é uma função. Adicionar `isRequired` diz ao React que `handleClick` é uma propriedade necessária para esse componente. Você verá um aviso se essa propriedade não for fornecida. Também observe que `func` representa `function`. Entre os sete tipos primitivos de JavaScript, `function` e `boolean` (escrito como `bool`) são os únicos dois que usam ortografia incomum. Além dos tipos primitivos, existem outros tipos disponíveis. Por exemplo, você pode verificar que uma prop é um elemento React. Consulte a [documentação](https://reactjs.org/docs/typechecking-with-proptypes.html#proptypes) para ver todas as opções.
+No exemplo acima, a parte `PropTypes.func` verifica se `handleClick` é uma função. Adicionar `isRequired` diz ao React que `handleClick` é uma propriedade necessária para esse componente. Você verá um aviso se essa propriedade não for fornecida. Também observe que `func` representa `function`. Entre os sete tipos primitivos de JavaScript, `function` e `boolean` (escrito como `bool`) são os únicos dois que usam ortografia incomum. Além dos tipos primitivos, existem outros tipos disponíveis. Por exemplo, você pode verificar que uma prop é um elemento React. Consulte a <a href="https://reactjs.org/docs/typechecking-with-proptypes.html#proptypes" target="_blank" rel="noopener noreferrer nofollow">documentação</a> para ver todas as opções.
 
 **Observação:** a partir do React v15.5.0, `PropTypes` é importado independentemente do React, como: `import PropTypes from 'prop-types';`
 

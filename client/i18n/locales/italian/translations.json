@@ -73,7 +73,9 @@
     "click-start-course": "Inizia il corso",
     "click-start-project": "Inizia il progetto",
     "change-language": "Cambia lingua",
-    "cancel-change": "Annulla modifica"
+    "cancel-change": "Annulla modifica",
+    "resume-project": "Riprendi progetto",
+    "start-project": "Avvia il progetto"
   },
   "landing": {
     "big-heading-1": "Impara a programmare — gratis.",
@@ -290,8 +292,7 @@
     "scrimba-tip": "Suggerimento: Se il mini-browser copre il codice, fare clic e trascinalo per spostarlo. Inoltre, sentiti libero di fermare e modificare il codice nel video in qualsiasi momento.",
     "chal-preview": "Anteprima della sfida",
     "cert-map-estimates": {
-      "certs": "Certificazione {{title}} (300 ore)",
-      "coding-prep": "{{title}} (migliaia di ore di sfide)"
+      "certs": "Certificazione {{title}}"
     },
     "editor-tabs": {
       "info": "Informazioni",
@@ -321,7 +322,8 @@
     "sorry-keep-trying": "Il tuo codice non è corretto. Continua a provare.",
     "sorry-getting-there": "Il tuo codice non è corretto. Ci sei quasi.",
     "sorry-hang-in-there": "Il tuo codice non è corretto. Tieni duro.",
-    "sorry-dont-giveup": "Il tuo codice non è corretto. Non arrenderti."
+    "sorry-dont-giveup": "Il tuo codice non è corretto. Non arrenderti.",
+    "challenges-completed": "{{completedCount}} di {{totalChallenges}} sfide completate"
   },
   "donate": {
     "title": "Supporta il nostro no profit",
@@ -482,7 +484,10 @@
     "primary-nav": "primario",
     "breadcrumb-nav": "percorso",
     "submit": "Usa Ctrl + Invio per inviare.",
-    "running-tests": "Test in corso"
+    "running-tests": "Test in corso",
+    "step": "Step",
+    "steps": "Step",
+    "steps-for": "Step per {{blockTitle}}"
   },
   "flash": {
     "honest-first": "Per richiedere una certificazione, è necessario prima accettare la nostra politica di onestà accademica",

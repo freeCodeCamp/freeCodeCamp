@@ -8,7 +8,7 @@ dashedName: book-recommendation-engine-using-knn
 
 # --description--
 
-[Lavorerai su questo progetto con Google Colaboratory](https://colab.research.google.com/github/freeCodeCamp/boilerplate-book-recommendation-engine/blob/master/fcc_book_recommendation_knn.ipynb).
+<a href="https://colab.research.google.com/github/freeCodeCamp/boilerplate-book-recommendation-engine/blob/master/fcc_book_recommendation_knn.ipynb" target="_blank" rel="noopener noreferrer nofollow">Lavorerai su questo progetto con Google Colaboratory</a>.
 
 Dopo essere andato a quel collegamento, crea una copia del notebook nel tuo account o localmente. Una volta completato il progetto e superato il test (incluso a quel link), invia il link del progetto qui sotto. Se stai inviando un link di Google Colaboratory, assicurati di attivare la condivisione di link per "anyone with the link"
 
@@ -18,7 +18,7 @@ Stiamo ancora sviluppando il contenuto didattico interattivo per il programma di
 
 In questa sfida creerai un algoritmo per raccomandare libri usando **K-Nearest Neighbors**.
 
-Userai il [Book-Crossings dataset](http://www2.informatik.uni-freiburg.de/~cziegler/BX/). Questo set di dati contiene 1,1 milioni di valutazioni (scala 1-10) di 270.000 libri da 90.000 utenti.
+Userai il <a href="http://www2.informatik.uni-freiburg.de/~cziegler/BX/" target="_blank" rel="noopener noreferrer nofollow">Book-Crossings dataset</a>. Questo set di dati contiene 1,1 milioni di valutazioni (scala 1-10) di 270.000 libri da 90.000 utenti.
 
 Dopo aver importato e pulito i dati, usa `NearestNeighbors` da `sklearn.neighbors` per sviluppare un modello che mostra libri che sono simili a un dato libro. L'algoritmo Nearest Neighbors misura la distanza per determinare la "vicinanza" delle istanze.
 

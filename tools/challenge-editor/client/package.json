@@ -11,10 +11,10 @@
     "react-dom": "16.14.0",
     "react-router-dom": "6.3.0",
     "react-scripts": "5.0.1",
-    "typescript": "4.7.3"
+    "typescript": "4.7.4"
   },
   "scripts": {
-    "start": "PORT=3300 react-scripts start",
+    "start": "cross-env PORT=3300 react-scripts start",
     "lint": "eslint src",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "@types/codemirror": "5.60.5",
-    "eslint-plugin-react-hooks": "4.5.0"
+    "cross-env": "7.0.3",
+    "eslint-plugin-react-hooks": "4.6.0"
   }
 }

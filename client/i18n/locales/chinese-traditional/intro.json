@@ -1,6 +1,6 @@
 {
   "responsive-web-design": {
-    "title": "Legacy Responsive Web Design",
+    "title": "（舊版）響應式網頁設計",
     "intro": [
       "在響應式網頁設計認證中，你將學習開發者用來編寫網頁的語言：HTML（超文本標記語言）用於創建內容，CSS（級聯樣式表）用於樣式設計。",
       "首先，你將通過編寫一個展示貓咪圖片的應用，學習 HTML 和 CSS 的基本知識。 然後，通過畫企鵝來學習像 CSS 變量這樣的現代技術，以及通過構建網頁表單來學習無障礙的最佳實踐。",
@@ -67,11 +67,11 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "(New) Responsive Web Design",
+    "title": "（新版）響應式網頁設計",
     "intro": [
       "在響應式網頁設計的認證課程中，你將學習用於構建網頁的語言： HTML（超文本標記語言）用於創建內容，CSS（級聯樣式表）用於樣式設計。",
-      "首先，你將通過編寫一個貓咪相冊應用，學習 HTML 和 CSS 的基本知識。 然後，通過畫企鵝來學習像 CSS 變量這樣的現代技術，並通過編寫網頁表單來學習無障礙的最佳實踐。",
-      "最後，你將通過編寫一個 Twitter 卡片，學習如何使用 Flexbox 實現能夠適應不同屏幕大小的網頁 ，以及如何使用 CSS Grid 實現一個複雜的博客佈局。"
+      "首先，你將通過編寫一個展示貓咪圖片的應用來學習 HTML 和 CSS 的基本知識。 然後，通過構建一隻企鵝來學習像 CSS 變量這樣的現代技術，並通過搭建網頁表單來學習無障礙的最佳實踐。",
+      "最後，你將通過編寫一個 Twitter 卡片，學習如何使用 Flexbox 實現適應不同屏幕大小的網頁 ，以及如何用 CSS Grid 實現一個複雜的博客佈局。"
     ],
     "note": "注意：某些瀏覽器擴展程序（例如廣告攔截器和深色模式）可能干擾測試。如果遇到問題，我們建議你在學習課程時禁用那些修改網頁內容或佈局的擴展程序。",
     "blocks": {
@@ -300,64 +300,64 @@
     }
   },
   "2022/javascript-algorithms-and-data-structures": {
-    "title": "JavaScript Algorithms and Data Structures (Beta)",
+    "title": "JavaScript 算法和數據結構項目（Beta 測試版本）",
     "intro": [
-      "placeholder",
-      "placeholder"
+      "佔位符",
+      "佔位符"
     ],
     "note": "",
     "blocks": {
       "build-a-caesars-cipher-project": {
-        "title": "Build a Casears Cipher Project",
+        "title": "構建一個凱撒密碼項目",
         "intro": [
           "",
           ""
         ]
       },
       "build-a-cash-register-project": {
-        "title": "Build a Cash Register Project",
+        "title": "構建一個收銀機項目",
         "intro": [
           "",
           ""
         ]
       },
       "build-a-palindrome-checker-project": {
-        "title": "Build a Palindrome Checker Project",
+        "title": "構建一個迴文檢測器項目",
         "intro": [
           "",
           ""
         ]
       },
       "build-a-roman-numeral-converter-project": {
-        "title": "Build a Roman Numeral Converter Project",
+        "title": "搭建一個羅馬數字轉換器項目",
         "intro": [
           "",
           ""
         ]
       },
       "build-a-telephone-number-validator-project": {
-        "title": "Build a Telephone Number Validator Project",
+        "title": "構建一個電話號碼檢驗器項目",
         "intro": [
           "",
           ""
         ]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
-        "title": "Learn Basic JavaScript by Building a Role Playing Game",
+        "title": "通過構建角色扮演遊戲來學習 JavaScript",
         "intro": [
           "",
           ""
         ]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
-        "title": "Learn Form Validation by Building a Calorie Counter",
+        "title": "通過構建卡路里計數器來學習表單驗證",
         "intro": [
           "",
           ""
         ]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
-        "title": "Learn Functional Programming by Building a Spreadsheet",
+        "title": "通過構建電子表格學習函數式編程",
         "intro": [
           "",
           ""
@@ -825,9 +825,9 @@
     "collapse": "收起課程",
     "legacy-header": "舊版課程",
     "legacy-desc": "這些課程不再是認證路徑的一部分，但仍可供你進一步學習。",
-    "legacy-go-back": "Go to the current version of the curriculum.",
-    "new-rwd-desc": "We have updated our Responsive Web Design Curriculum. If you were previously working on the RWD curriculum, your progress is still saved! You can find it under the Legacy Responsive Web Design section.",
-    "new-rwd-article": "We encourage you to read about the changes we made and consider exploring the updated curriculum.",
+    "legacy-go-back": "進入當前版本的課程。",
+    "new-rwd-desc": "我們更新了響應式網頁設計課程。 如果你之前正在使用該課程，你的進度仍然可以保存！你可以在舊版響應式網頁設計課程裏找到你的進度。",
+    "new-rwd-article": "我們希望你閱讀我們所作的修改，並能考慮探索新課程。",
     "viewing-upcoming-change": "你正在查看Beta頁面。 ",
     "go-back-to-learn": "回到正式版課程",
     "read-database-cert-article": "請在繼續之前閱讀這個論壇帖子。",

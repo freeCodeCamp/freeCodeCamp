@@ -10,19 +10,23 @@ dashedName: install-and-set-up-mongoose
 
 Lavorare su queste sfide ti porterà a scrivere il tuo codice utilizzando uno dei seguenti metodi:
 
-- Clonare [questo repository GitHub](https://github.com/freeCodeCamp/boilerplate-mongomongoose/) e completare queste sfide localmente.
-- Usare [la nostra bozza di progetto su Replit](https://replit.com/github/freeCodeCamp/boilerplate-mongomongoose) per completare queste sfide.
+- Clonare <a href="https://github.com/freeCodeCamp/boilerplate-mongomongoose/" target="_blank" rel="noopener noreferrer nofollow">questo repository GitHub</a> e completare queste sfide localmente.
+- Usare <a href="https://replit.com/github/freeCodeCamp/boilerplate-mongomongoose" target="_blank" rel="noopener noreferrer nofollow">la nostra bozza di progetto su Replit</a> per completare queste sfide.
 - Usare un costruttore di siti di tua scelta per completare il progetto. Assicurati di incorporare tutti i file del nostro repository GitHub.
 
 Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo `Solution Link`.
 
 In questa sfida, imposterai un database MongoDB Atlas e importerai i pacchetti necessari per connetterti ad esso.
 
-Segui <a href='https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/' rel='noopener noreferrer' target='_blank'>questo tutorial</a> per impostare un database ospitato su MongoDB Atlas.
+Segui <a href='https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/' target="_blank" rel="noopener noreferrer nofollow">questo tutorial</a> per impostare un database ospitato su MongoDB Atlas.
 
 # --instructions--
 
-Aggiungi `mongodb@~3.6.0` e `mongoose@~5.4.0` al `package.json` del progetto. Poi, richiedi mongoose come `mongoose` in `myApp.js`. Crea un file `.env` e aggiungi una variabile `MONGO_URI` ad esso. Il suo valore dovrebbe essere l'URI del database MongoDB Atlas. Assicurati di racchiudere l'URI tra virgolette singole o doppie, e ricorda che non puoi usare spazi attorno al segno `=` nelle variabili d'ambiente. Ad esempio, `MONGO_URI='VALUE'`. Quando hai finito, connettiti al database usando la seguente sintassi:
+Aggiungi `mongodb@~3.6.0` e `mongoose@~5.4.0` al `package.json` del progetto. Poi, richiedi mongoose come `mongoose` in `myApp.js`. Crea un file `.env` e aggiungi una variabile `MONGO_URI` ad esso. Il suo valore dovrebbe essere l'URI del database MongoDB Atlas. Assicurati di racchiudere l'URI tra virgolette singole o doppie, e ricorda che non puoi usare spazi attorno al segno `=` nelle variabili d'ambiente. Ad esempio, `MONGO_URI='VALUE'`.
+
+**Nota:** Se stai usando Replit, non puoi creare un file `.env`. Utilizza invece la scheda <dfn>SECRETS</dfn> integrata per aggiungere la variabile. <em>Non</em> racchiudere i valori in virgolette quando usi la scheda <em>SECRETS</em>.
+
+Quando hai finito, connettiti al database usando la seguente sintassi:
 
 ```js
 mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -30,7 +34,7 @@ mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }
 
 # --hints--
 
-la dipendenza "mongodb" dovrebbe essere specificata in package.json
+La dipendenza "mongodb" dovrebbe essere specificata in package.json
 
 ```js
 (getUserInput) =>
@@ -45,7 +49,7 @@ la dipendenza "mongodb" dovrebbe essere specificata in package.json
   );
 ```
 
-la dipendenza "mongoose" dovrebbe essere specificata in package.json
+La dipendenza "mongoose" dovrebbe essere specificata in package.json
 
 ```js
 (getUserInput) =>

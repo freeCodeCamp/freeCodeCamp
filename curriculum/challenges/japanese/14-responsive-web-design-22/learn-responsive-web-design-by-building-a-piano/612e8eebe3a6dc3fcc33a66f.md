@@ -41,7 +41,7 @@ assert(new __helpers.CSSHelp(document).getStyle('#piano')?.height === '290px');
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>Piano</title>

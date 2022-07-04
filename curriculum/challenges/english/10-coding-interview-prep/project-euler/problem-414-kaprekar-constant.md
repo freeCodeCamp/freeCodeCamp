@@ -25,7 +25,9 @@ $$\begin{align}
 
 We can consider the Kaprekar routine for other bases and number of digits. Unfortunately, it is not guaranteed a Kaprekar constant exists in all cases; either the routine can end up in a cycle for some input numbers or the constant the routine arrives at can be different for different input numbers. However, it can be shown that for 5 digits and a base $b = 6t + 3 ≠ 9$, a Kaprekar constant exists.
 
-E.g. base 15: ${(10, 4, 14, 9, 5)}\_{15}$ base 21: $(14, 6, 20, 13, 7)_{21}$
+E.g.
+base 15: ${(10, 4, 14, 9, 5)}\_{15}$
+base 21: $(14, 6, 20, 13, 7)\_{21}$
 
 Define $C_b$ to be the Kaprekar constant in base $b$ for 5 digits. Define the function $sb(i)$ to be:
 

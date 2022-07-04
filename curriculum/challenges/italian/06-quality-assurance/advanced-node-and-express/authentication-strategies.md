@@ -8,7 +8,7 @@ dashedName: authentication-strategies
 
 # --description--
 
-Una strategia è un modo di autenticare un utente. Puoi utilizzare una strategia per permettere agli utenti di autenticarsi basandosi su informazioni salvate localmente (se li si fa prima registrare/iscrivere), o da una varietà di fornitori come Google o GitHub. Per questo progetto, imposteremo una strategia locale. Per vedere una lista delle centinaia di strategie, visita il sito Passport [qui](http://passportjs.org/).
+Una strategia è un modo di autenticare un utente. Puoi utilizzare una strategia per permettere agli utenti di autenticarsi basandosi su informazioni salvate localmente (se li si fa prima registrare/iscrivere), o da una varietà di fornitori come Google o GitHub. Per questo progetto, usiamo il middleware Passport. Passport fornisce un set di strategie completo che supporta l'autenticazione usando username e password, GitHub, Google, e altri.
 
 Aggiungi `passport-local@~1.0.0` come dipendenza ed aggiungilo al tuo server come segue: `const LocalStrategy = require('passport-local');`
 
@@ -34,7 +34,7 @@ Molte strategie vengono organizzate con impostazioni differenti, ma in genere so
 
 Nel passo successivo, imposteremo il modo in cui chiamare effettivamente la strategia di autenticazione per convalidare un utente sulla base dei dati del modulo!
 
-Invia la tua pagina quando pensi di averlo fatto correttamente. Se dovessi incontrare degli errori, puoi controllare il progetto completato fino a questo punto [qui](https://gist.github.com/camperbot/53b495c02b92adeee0aa1bd3f3be8a4b).
+Invia la tua pagina quando pensi di averlo fatto correttamente. Se stai avendo errori, puoi vedere <a href="https://gist.github.com/camperbot/53b495c02b92adeee0aa1bd3f3be8a4b" target="_blank" rel="noopener noreferrer nofollow">il progetto completato fino a questo punto</a>.
 
 # --hints--
 

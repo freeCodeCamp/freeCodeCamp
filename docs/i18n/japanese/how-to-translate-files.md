@@ -117,45 +117,45 @@ Crowdin はドキュメントを翻訳可能な文字列 (通常は文単位) �
 
 > [!NOTE] コントリビューションドキュメントは `docsify` によって提供されており、このようなメッセージボックス用に特別な構文解析機能があります。 `[!NOTE]`、`[!WARNING]` または `[!TIP]` などで始まる文字列を見かけたら、これらの単語は翻訳しないようにしてください。
 
-### How to translate documentation with internal links
+### 内部リンクのあるドキュメントを翻訳する
 
-When you work on translating contributing documentation, watch out for internal links targeting a different section of the documentation.
+コントリビューションドキュメントを翻訳する際には、ドキュメント内の別のセクションをリンク先とする内部リンクに注意してください。
 
-Make sure to replace the id of the target section (the part after `#`) with the id on the translated document. For example, it will look like this in Japanese:
+必ず、リンク先セクションの id (`#` 以降の部分) を翻訳後のドキュメントの id に置き換えてください。 例えば、日本語の場合は以下のようになります。
 
-Before translation
+翻訳前
 
 ```
-// in HTML
+// HTML の場合
 <a href="target-file-name.md#target-section-heading-id">Link text</a>
 <a href="#target-section-heading-id">Link text</a>
 
-// in Markdown
+// Markdown の場合
 [Link text](target-file-name.md#target-section-heading-id)
 [Link text](#target-section-heading-id)
 ```
 
-After translation
+翻訳後
 
 ```
-// in HTML
+// HTML の場合
 <a href="target-file-name.md#翻訳後の-id">翻訳後のリンクテキスト</a>
 <a href="#翻訳後の-id">翻訳後のリンクテキスト</a>
 
-// in Markdown
+// Markdown の場合
 [翻訳後のリンクテキスト](target-file-name.md#翻訳後の-id)
 [翻訳後のリンクテキスト](#翻訳後の-id)
 ```
 
-The actual files in docs are written in Markdown, but they will appear as HTML tags on Crowdin.
+ドキュメント内の実際のファイルは Markdown で書かれていますが、Crowdin では HTML タグとして表示されます。
 
-You can find out how `docsify` converts a string in your language into an id by looking into the translated pages. If the translation is not deployed yet, you can preview it by [running the docs site locally](how-to-work-on-the-docs-theme.md#serving-the-documentation-site-locally).
+`docsify` があなたの言語の文字列をどのような id へと変換するかは、翻訳後のページを見て確認してください。 翻訳がまだデプロイされていない場合は、[ドキュメントサイトをローカルで実行](how-to-work-on-the-docs-theme.md#ローカルでドキュメントサイトを提供する)してプレビューできます。
 
-You can learn more about [internal links in our docs here](how-to-work-on-the-docs-theme.md#how-to-create-an-internal-link).
+[ドキュメントの内部リンクについて詳しくはこちら](how-to-work-on-the-docs-theme.md#内部リンクを作成する)を参照してください。
 
 ## LearnToCode RPG の翻訳
 
-The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated strings: (See [Ren'Py Text documentation](https://www.renpy.org/doc/html/text.html))
+LearnToCode RPG は Ren'Py 上で動作します。Ren'Py では翻訳の際に独自の構文が使用されます ([Ren'Py の Text のドキュメント](https://www.renpy.org/doc/html/text.html) を参照してください)。
 
 - `""`で囲まれた文章が翻訳対象です。 ダイアログまたはUI (ユーザーインターフェース) 文字列です。 ダイアログの前後に表示されるキーワードは、ゲームエンジンを制御するキーワードです。詳細は後続のルールにて説明します。 このルールは、後続で説明する全ルールの基本であり、最も重要です。
 - `new "..."` のように表示される場合、接頭辞 `new` の部分はキーワードなので翻訳しないでください。
@@ -165,7 +165,7 @@ The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated str
 - 文末の `nointeract` キーワードは翻訳しないでください。
 - 全角括弧 `（）`を使用しようとすると、品質保証に関する警告が表示されます。 品質保証に関する警告を避けるためには、半角括弧 `()` を使用してください。
 
-### Examples
+### 例
 
 ---
 
@@ -173,7 +173,7 @@ The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated str
 
 ```renpy
 # "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
-"[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."  <--- this is the line that needs to be translated. see translation below
+"[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."  <--- こちらが翻訳を必要とする行です。 以下をご参照ください。
 ```
 
 #### 翻訳後
@@ -183,7 +183,7 @@ The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated str
 "[player_name]？好巧，我们的VIP队友{a=[vip_profile_url]}[player_name]{/a}会很高兴的。"
 ```
 
-Note: The `[]` and `{}` tags should be left intact.
+注: `[]` と `{}` のタグは半角のまま残す必要があります。
 
 ---
 
@@ -191,7 +191,7 @@ Note: The `[]` and `{}` tags should be left intact.
 
 ```renpy
 old "{icon=icon-fast-forward} Skip"
-new "{icon=icon-fast-forward} Skip" <-- translate this line, see below
+new "{icon=icon-fast-forward} Skip" <-- この行を翻訳します。以下をご参照ください。
 ```
 
 #### 翻訳後
@@ -201,7 +201,7 @@ old "{icon=icon-fast-forward} Skip"
 new "{icon=icon-fast-forward} 跳过"
 ```
 
-Note: Again, the `new` prefix and the `{icon=icon-fast-forward}` tag should be left intact.
+注: 接頭辞 `new` と `{icon=icon-fast}` タグはそのまま残す必要があります。
 
 ---
 
@@ -219,7 +219,7 @@ layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy
 layla @ neutral "哈哈，[player_name]，你真有趣。我相信你一定会喜欢你的开发者工作的。"
 ```
 
-Note: `layla @ neutral` and `[player_name]` are left unchanged.
+注: `layla @ neutral` と `[player_name]` はそのまま残します。
 
 ---
 
@@ -239,71 +239,71 @@ player "也许这都是一场梦？" nointeract
 
 ---
 
-### A Note on How Crowdin Segments a Sentence
+### Crowdin による文章の分割についての注意点
 
-Pay attention to how Crowdin segments a line of dialogue wrapped between opening and closing quotes `""`. When we are translating the dialogue, we need to make sure to retain the opening and closing quotes, even if the quotes appear in different segments.
+Crowdin は引用符 (`""`) で囲まれたダイアログ行を分割することがあるため注意してください。 ダイアログを翻訳する際は、引用符の開始・終了が変更されていないことを確認する必要があります。引用符が別のセグメントに表示されたとしてもです。
 
-This is the line to be translated:
+このような翻訳対象の行があったとします。
 
 ```renpy
 player @ surprised "{b}Full-stack{/b}... What is that? I better take notes so I can learn more about it."
 ```
 
-Crowdin segments it into three parts like below:
+Crowdin は以下のような 3 つのセグメントに分割します。
 
-<img width="836" alt="Screen Shot 2022-01-23 at 10 36 43" src="https://user-images.githubusercontent.com/35674052/150693962-d3b091e5-2432-44d0-9d24-195ea7d7aeda.png" />
+<img width="836" alt="スクリーンショット 2022-01-23 (10 36 43)" src="https://user-images.githubusercontent.com/35674052/150693962-d3b091e5-2432-44d0-9d24-195ea7d7aeda.png" />
 
 ```renpy
-# original
+# 原文
 player @ surprised "{b}Full-stack{/b}
-# translated, keeping the opening quotes `"`
+# 訳文。引用符の開始側 `"` はそのままにする
 player @ surprised "{b}全栈{/b}
 ```
 
-<img width="750" alt="Screen Shot 2022-01-23 at 10 36 49" src="https://user-images.githubusercontent.com/35674052/150693965-15411504-791a-4db3-8b14-bc9177be6375.png" />
+<img width="750" alt="スクリーンショット 2022-01-23 (10 36 49)" src="https://user-images.githubusercontent.com/35674052/150693965-15411504-791a-4db3-8b14-bc9177be6375.png" />
 
 ```renpy
-# original
+# 原文
 What is that?
-# translated, no quotes on either side
+# 訳文。引用符はなし
 这是什么？
 ```
 
-<img width="857" alt="Screen Shot 2022-01-23 at 10 36 54" src="https://user-images.githubusercontent.com/35674052/150693969-062e3268-580f-4ad2-97db-cab6240b6095.png" />
+<img width="857" alt="スクリーンショット 2022-01-23 (10 36 54)" src="https://user-images.githubusercontent.com/35674052/150693969-062e3268-580f-4ad2-97db-cab6240b6095.png" />
 
 ```renpy
-# original
+# 原文
 I better take notes so I can learn more about it."
-# translated, keeping the closing quotes `"`
+# 訳文。引用符の終了側 `"` はそのままにする
 我最好做笔记，这样我可以学习更多东西。"
 ```
 
 ## 翻訳を評価する
 
-Crowdin allows you to rate the existing proposed translations. If you attempt to save a translation, you may see a message indicating that you cannot save a duplicate translation - this means another contributor has proposed that identical translation. If you agree with that translation, click the `+` button to "upvote" the translation.
+Crowdin では投稿済みの翻訳案を評価することができます。 翻訳内容を保存しようとした際、同じ翻訳は保存できないというメッセージが表示されることがあるかもしれません。これは、他のコントリビューターがすでに全く同じ翻訳を提案していることを意味しています。 既存の翻訳に賛成であれば `+` ボタンをクリックして賛成票を投じてください。
 
-If you see a translation that is inaccurate or does not provide the same clarity as the original string, click the `-` button to "downvote" the translation.
+もし、翻訳が不正確であったり、原文の意味が正しく翻訳されていない翻訳を発見した場合は、`-` ボタンをクリックして反対票を投じて下さい。
 
-Crowdin uses these votes to give a score to each proposed translation for a string, which helps the proofreading team determine which translation is the best fit for each string.
+Crowdin はそれらの投票結果を元に各翻訳案の点数を算出します。この点数は校正チームが最適な翻訳文を選ぶための判断材料となります。
 
 ## 品質保証チェック
 
-We have enabled some quality assurance steps that will verify a translation is as accurate as possible - this helps our proofreaders review proposed translations.
+翻訳内容が可能な限り正確であることを確認し、校正チームによる翻訳文レビューに役立てるため、品質保証ステップを設けています。
 
-When you attempt to save a translation, you may see a warning message appear with a notification regarding your proposed translation.
+翻訳内容を保存しようとした際、内容に対する警告文が表示されることがあります。
 
-![Image - QA Warning Message](https://contribute.freecodecamp.org/images/crowdin/qa-message.png)
+![画像 - 品質保証用警告メッセージ](https://contribute.freecodecamp.org/images/crowdin/qa-message.png)
 
-This message appears when Crowdin's QA system has identified a potential error in the proposed translation. In this example, we have modified the text of a `<code>` tag and Crowdin has caught that.
+このメッセージは、Crowdin の品質保証システムが投稿内容に間違いが含まれている可能性があると判断した場合に表示されます。 上の例では `<code>` タグ内のテキストが変更されており、Crowdin がそれを検出しました。
 
 > [!WARNING] エラーが検出されても翻訳内容を保存することは可能です。 「Save Anyway」をクリックして保存できますが、その場合は校正者かプロジェクトマネージャー宛てにコメントし、なぜ品質保証メッセージを無視する必要があったかを説明するようにしてください。
 
 ## 翻訳のベストプラクティス
 
-Follow these guidelines to ensure our translations are as accurate as possible:
+翻訳をできる限り正確なものとするため、以下のガイドラインに従って下さい。
 
 - `<code>` タグの中身を翻訳しないでください。 これらのタグはコードの一部であり、英語のまま残しておかなければなりません。
 - コンテンツを追加しないで下さい。 チャレンジを翻訳する際、テキスト内容の変更や追加の情報が必要だと感じた場合は、GitHub Issue を通して提案するか、提案内容を反映した英語のファイルをプルリクエストして下さい。
 - コンテンツの順番を変えないで下さい。
 
-If you have any questions, feel free to reach out to us in our [contributors chat room](https://discord.gg/PRyKn3Vbay) and we will be happy to assist you.
+質問があれば、[コントリビューターチャットルーム](https://discord.gg/PRyKn3Vbay) にてお気軽にお尋ねください。喜んでサポートいたします。

@@ -42,12 +42,12 @@ assert(div.parentElement.tagName === 'BODY');
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cafe Menu</title>
-    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <link href="styles.css" rel="stylesheet"/>
   </head>
 --fcc-editable-region--
   <body>
@@ -62,7 +62,7 @@ assert(div.parentElement.tagName === 'BODY');
     </main>
   </body>
 --fcc-editable-region--
-<html>
+</html>
 ```
 
 ```css

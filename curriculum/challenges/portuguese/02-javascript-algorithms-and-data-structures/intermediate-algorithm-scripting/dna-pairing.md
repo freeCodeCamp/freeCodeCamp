@@ -8,7 +8,7 @@ dashedName: dna-pairing
 
 # --description--
 
-Os pares de fileiras de ADN são constituídos por pares de bases de proteínas. Os pares de bases são representados pelos caracteres <em>AT</em> and <em>CG</em>, que formam os blocos de construção da dupla hélice do ADN.
+Os pares de fileiras de ADN são constituídos por pares de bases nitrogenadas. Os pares de bases são representados pelos caracteres <em>AT</em> and <em>CG</em>, que formam os blocos de construção da dupla hélice do ADN.
 
 A fileira do ADN está sem o elemento de que faz par com ele. Escreva uma função que corresponda aos pares de base que faltam para a fileira de ADN fornecida. Para cada caractere na string fornecida, encontre o caractere de par de bases. Retorne os resultados em um array bidimensional.
 

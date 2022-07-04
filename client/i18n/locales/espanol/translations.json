@@ -73,7 +73,9 @@
     "click-start-course": "Comienza el curso",
     "click-start-project": "Comienza el proyecto",
     "change-language": "Cambiar Idioma",
-    "cancel-change": "Cancelar Cambio"
+    "cancel-change": "Cancelar Cambio",
+    "resume-project": "Resume project",
+    "start-project": "Start project"
   },
   "landing": {
     "big-heading-1": "Aprende a programar gratis.",
@@ -290,8 +292,7 @@
     "scrimba-tip": "Sugerencia: Si el mini-navegador cubre el código, haz clic y arrastra para moverlo. Además, siéntete libre de detener y editar el código en el video en cualquier momento.",
     "chal-preview": "Vista previa del desafío",
     "cert-map-estimates": {
-      "certs": "Certificación {{title}} (300 horas)",
-      "coding-prep": "{{title}} (Miles de horas de desafíos)"
+      "certs": "{{title}} Certification"
     },
     "editor-tabs": {
       "info": "Info",
@@ -321,7 +322,8 @@
     "sorry-keep-trying": "Lo sentimos, tu código no pasa. Continúa intentándolo.",
     "sorry-getting-there": "Lo sentimos, tu código no pasa. Casi lo consigues.",
     "sorry-hang-in-there": "Lo sentimos, su código no pasa. Aguanta ahí.",
-    "sorry-dont-giveup": "Lo sentimos, su código no pasa. No te rindas."
+    "sorry-dont-giveup": "Lo sentimos, su código no pasa. No te rindas.",
+    "challenges-completed": "{{completedCount}} of {{totalChallenges}} challenges completed"
   },
   "donate": {
     "title": "Apoya a nuestra organización sin fines de lucro",
@@ -482,7 +484,10 @@
     "primary-nav": "primario",
     "breadcrumb-nav": "migas de pan",
     "submit": "Utiliza Ctrl + Enter para enviar.",
-    "running-tests": "Ejecutando pruebas"
+    "running-tests": "Ejecutando pruebas",
+    "step": "Step",
+    "steps": "Steps",
+    "steps-for": "Steps for {{blockTitle}}"
   },
   "flash": {
     "honest-first": "Para reclamar una certificación, primero debes aceptar nuestra política de honestidad académica.",

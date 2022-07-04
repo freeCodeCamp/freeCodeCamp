@@ -8,7 +8,7 @@ dashedName: build-a-roguelike-dungeon-crawler-game
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/apLXEJ/>.
+**Objective:** Build an app that is functionally similar to this: <a href="https://codepen.io/freeCodeCamp/full/apLXEJ/" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/apLXEJ/</a>.
 
 Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
 
@@ -32,7 +32,7 @@ Fulfill the below user stories and get all of the tests to pass. Use whichever l
 
 When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
 
-You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
+You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 
 # --solutions--
 
