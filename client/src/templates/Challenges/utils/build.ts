@@ -171,14 +171,23 @@ function getJSTestRunner(
 
   const testWorker = createWorker(testEvaluator, { terminateWorker: true });
 
+  type CreateWorker = ReturnType<typeof createWorker>;
+
+  interface TestWorker extends CreateWorker {
+    on: (event: string, listener: (...args: string[]) => void) => void;
+    done: () => void;
+  }
+
   return (testString: string, testTimeout: number, firstTest = true) => {
     const result = testWorker.execute(
       { build, testString, code, sources, firstTest, removeComments },
       testTimeout
-    );
+    ) as TestWorker;
 
     result.on('LOG', proxyLogger);
     result.done;
+
+    return result;
   };
 }
 
