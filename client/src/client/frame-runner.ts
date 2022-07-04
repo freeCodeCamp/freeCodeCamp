@@ -1,10 +1,12 @@
 import '@babel/polyfill';
+import i18next, { i18n } from 'i18next';
 import jQuery from 'jquery';
 import curriculumHelpers from '../utils/curriculum-helpers';
 
 declare global {
   interface Window {
     $: JQueryStatic;
+    i18next: i18n;
   }
   interface Document {
     // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -19,6 +21,7 @@ declare global {
 }
 
 window.$ = jQuery;
+window.i18next = i18next;
 
 document.__initTestFrame = initTestFrame;
 

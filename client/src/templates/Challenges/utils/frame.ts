@@ -1,5 +1,5 @@
 import { toString, flow } from 'lodash-es';
-// import i18next from 'i18next';
+import i18next, { i18n } from 'i18next';
 import { format } from '../../../utils/format';
 
 const utilsFormat: <T>(x: T) => string = format;
@@ -9,8 +9,11 @@ declare global {
     console: {
       log: () => void;
     };
+    i18next: i18n;
   }
 }
+
+window.i18next = i18next;
 
 interface Context {
   window: Window;
@@ -42,10 +45,6 @@ export const projectPreviewId = 'fcc-project-preview-frame';
 
 const DOCUMENT_NOT_FOUND_ERROR = 'document not found';
 
-// const AlertPanel  = (externalLink : string ) => {
-//   return window.parent.window.alert(`${i18next.t(misc.iframe-alert : <string> , {currentLink: externalLink})}`)
-// }
-
 // base tag here will force relative links
 // within iframe to point to '' instead of
 // append to the current challenge url
@@ -75,7 +74,9 @@ const createHeader = (id = mainPreviewId) => `
       }
       if (element && element.nodeName === 'A' && new URL(element.href).hash === '') {
         e.preventDefault();
-        AlertPanel(element.href)
+        window.parent.window.alert(
+          i18next.t('misc.iframe-alert', { currentLink: element.href })
+        )
       }
       if (element) {
         const href = element.getAttribute('href');
@@ -115,6 +116,10 @@ const createFrame =
   (document: Document, id: string, title?: string) => (ctx: Context) => {
     const frame = document.createElement('iframe');
     frame.id = id;
+    if (frame.contentWindow) {
+      console.log('frame content', frame.contentWindow);
+      frame.contentWindow.i18next = i18next;
+    }
     if (typeof title === 'string') {
       frame.title = title;
     }
