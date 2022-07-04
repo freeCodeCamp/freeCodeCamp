@@ -11,16 +11,18 @@ declare global {
   }
 }
 
-interface Context {
+export interface Sources {
+  contents?: string;
+  editableContents: string;
+  original: { [key: string]: string };
+}
+
+export interface Context {
   window: Window;
   document: Document;
   element: HTMLIFrameElement;
   build: string;
-  sources: {
-    contents?: string;
-    editableContents?: string;
-    original?: { [id: string]: string };
-  };
+  sources: Sources;
   loadEnzyme?: () => void;
 }
 

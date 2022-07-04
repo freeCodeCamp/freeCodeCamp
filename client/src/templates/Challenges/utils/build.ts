@@ -13,7 +13,9 @@ import {
   createMainPreviewFramer,
   createProjectPreviewFramer,
   ProxyLogger,
-  TestRunnerConfig
+  TestRunnerConfig,
+  Context,
+  Sources
 } from './frame';
 import createWorker from './worker-executor';
 
@@ -35,25 +37,14 @@ interface ChallengeFile extends PropTypesChallengeFile {
   editableContents: string;
 }
 
-type ChallengeFiles = ChallengeFile[] | null;
+type ChallengeFiles = ChallengeFile[];
 
-interface SourceMap {
-  contents?: string;
-  editableContents: string;
-  original: { [key: string]: string };
-}
-
-interface ChallengeData {
-  window: Window;
-  document: Document;
-  element: HTMLIFrameElement;
+interface BuildChallengeData extends Context {
   challengeType: number;
   challengeFiles: ChallengeFiles;
   required: { src: string }[];
   template: string;
   url: string;
-  build: string;
-  sources: SourceMap;
 }
 
 interface BuildOptions {
@@ -71,9 +62,10 @@ const frameRunner = [
   }
 ];
 
+type ApplyFunctionProps = (file: ChallengeFile) => Promise<ChallengeFile>;
+
 const applyFunction =
-  (fn: (file: ChallengeFile) => Promise<ChallengeFile>) =>
-  async (file: ChallengeFile) => {
+  (fn: ApplyFunctionProps) => async (file: ChallengeFile) => {
     try {
       if (file.error) {
         return file;
@@ -88,25 +80,23 @@ const applyFunction =
     }
   };
 
-type ComposeFunctionProps = (file: ChallengeFile) => Promise<ChallengeFile>;
-
-const composeFunctions = (...fns: ComposeFunctionProps[]) =>
+const composeFunctions = (...fns: ApplyFunctionProps[]) =>
   fns.map(applyFunction).reduce((f, g) => x => f(x).then(g));
 
-function buildSourceMap(challengeFiles: ChallengeFiles): SourceMap | undefined {
-  const source: SourceMap | undefined = challengeFiles?.reduce(
+function buildSourceMap(challengeFiles: ChallengeFiles): Sources | undefined {
+  const source: Sources | undefined = challengeFiles?.reduce(
     (sources, challengeFile) => {
       sources.contents += challengeFile.source || challengeFile.contents;
       sources.original[challengeFile.history[0]] = challengeFile.source;
       sources.editableContents += challengeFile.editableContents || '';
       return sources;
     },
-    { index: '', editableContents: '', original: {} } as SourceMap
+    { index: '', editableContents: '', original: {} } as Sources
   );
   return source;
 }
 
-function checkFilesErrors(challengeFiles: ChallengeFile[]): ChallengeFile[] {
+function checkFilesErrors(challengeFiles: ChallengeFiles): ChallengeFiles {
   const errors = challengeFiles
     .filter(({ error }) => error)
     .map(({ error }) => error);
@@ -127,13 +117,13 @@ const buildFunctions = {
   [challengeTypes.multifileCertProject]: buildDOMChallenge
 };
 
-export function canBuildChallenge(challengeData: ChallengeData) {
+export function canBuildChallenge(challengeData: BuildChallengeData) {
   const { challengeType } = challengeData;
   return Object.prototype.hasOwnProperty.call(buildFunctions, challengeType);
 }
 
 export async function buildChallenge(
-  challengeData: ChallengeData,
+  challengeData: BuildChallengeData,
   options: BuildOptions
 ) {
   const { challengeType } = challengeData;
@@ -152,7 +142,7 @@ const testRunners = {
   [challengeTypes.multifileCertProject]: getDOMTestRunner
 };
 export function getTestRunner(
-  buildData: ChallengeData,
+  buildData: BuildChallengeData,
   runnerConfig: TestRunnerConfig,
   document: Document
 ) {
@@ -165,7 +155,7 @@ export function getTestRunner(
 }
 
 function getJSTestRunner(
-  { build, sources }: ChallengeData,
+  { build, sources }: BuildChallengeData,
   { proxyLogger, removeComments }: TestRunnerConfig
 ) {
   const code = {
@@ -196,7 +186,7 @@ function getJSTestRunner(
 }
 
 async function getDOMTestRunner(
-  buildData: ChallengeData,
+  buildData: BuildChallengeData,
   { proxyLogger }: TestRunnerConfig,
   document: Document
 ) {
@@ -208,7 +198,7 @@ async function getDOMTestRunner(
 }
 
 export function buildDOMChallenge(
-  { challengeFiles, required = [], template = '' }: ChallengeData,
+  { challengeFiles, required = [], template = '' }: BuildChallengeData,
   { usesTestRunner } = { usesTestRunner: false }
 ) {
   const finalRequires = [...required];
@@ -272,7 +262,7 @@ export function buildJSChallenge(
   }
 }
 
-export function buildBackendChallenge({ url }: ChallengeData) {
+export function buildBackendChallenge({ url }: BuildChallengeData) {
   return {
     challengeType: challengeTypes.backend,
     build: _concatHtml({ required: frameRunner }),
@@ -281,7 +271,7 @@ export function buildBackendChallenge({ url }: ChallengeData) {
 }
 
 export function updatePreview(
-  buildData: ChallengeData,
+  buildData: BuildChallengeData,
   document: Document,
   proxyLogger: ProxyLogger
 ) {
@@ -298,7 +288,7 @@ export function updatePreview(
 }
 
 export function updateProjectPreview(
-  buildData: ChallengeData,
+  buildData: BuildChallengeData,
   document: Document
 ) {
   if (
