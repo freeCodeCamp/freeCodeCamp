@@ -387,13 +387,16 @@ export type ChallengeFile = {
   name: string;
   editableRegionBoundaries?: number[];
   usesMultifileEditor?: boolean;
-  error: null | string;
+  error: null | string | unknown;
   head: string;
   tail: string;
   seed: string;
   contents: string;
   id: string;
   history: string[];
+  source: string;
+  index: string;
+  editableContents: string;
 };
 
 export type ChallengeFiles = ChallengeFile[] | null;
