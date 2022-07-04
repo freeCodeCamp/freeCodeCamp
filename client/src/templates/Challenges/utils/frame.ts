@@ -73,7 +73,7 @@ const createHeader = (id = mainPreviewId) => `
       while(element && element.nodeName !== 'A') {
         element = element.parentElement;
       }
-      if (element && element.nodeName === 'A' && new URL(element.herf).hash === '') {
+      if (element && element.nodeName === 'A' && new URL(element.href).hash === '') {
         e.preventDefault();
         AlertPanel(element.href)
       }
