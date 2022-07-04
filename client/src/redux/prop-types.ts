@@ -394,9 +394,6 @@ export type ChallengeFile = {
   contents: string;
   id: string;
   history: string[];
-  source: string;
-  index: string;
-  editableContents: string;
 };
 
 export type ChallengeFiles = ChallengeFile[] | null;

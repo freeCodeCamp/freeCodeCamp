@@ -2,8 +2,7 @@ import frameRunnerData from '../../../../../config/client/frame-runner.json';
 import testEvaluatorData from '../../../../../config/client/test-evaluator.json';
 import { challengeTypes } from '../../../../utils/challenge-types';
 import {
-  ChallengeFile,
-  ChallengeFiles,
+  ChallengeFile as PropTypesChallengeFile,
   ChallengeMeta
 } from '../../../redux/prop-types';
 import { concatHtml } from '../rechallenge/builders.js';
@@ -29,6 +28,14 @@ const _concatHtml = ({
 }): string => {
   return concatHtml({ required, template, contents });
 };
+
+interface ChallengeFile extends PropTypesChallengeFile {
+  source: string;
+  index: string;
+  editableContents: string;
+}
+
+type ChallengeFiles = ChallengeFile[] | null;
 
 interface SourceMap {
   contents?: string;
