@@ -28,8 +28,9 @@
 
 - **Manuais de Voo** (para Equipe & Moderadores)
   - [Manual do Moderador](moderator-handbook.md)
-  - [Manual do DevOps](devops.md)
-  - [Extensão do VSCode Courses](courses-vscode-extension.md)
+  - [Language Lead Handbook](language-lead-handbook.md)
+  - [DevOps Handbook](devops.md)
+  - [Courses VSCode Extension](courses-vscode-extension.md)
 
 ---
 
