@@ -10,9 +10,9 @@ dashedName: sorting-algorithmsstrand-sort
 
 A ordenação **Strand Sort** cria subconjuntos ordenados que são mesclados para criar o resultado final.
 
-Considere `unsortedArray = [3, 1, 4, 2]`. Escolha o primeiro elemento `3` e copie-o para um array separado. Procure por qualquer elemento maior após este elemento. Quando você encontrar um elemento maior, neste caso, `4`, copie-o para o array separado, `[3, 4]`, e compare os elementos a seguir com este novo valor, `4`.
+Considere `unsortedArray = [3, 1, 4, 2]`. Escolha o primeiro item `3` e copie-o para um array separado. Procure por qualquer item maior após este item. Quando você encontrar um item maior, neste caso, `4`, copie-o para o array separado, `[3, 4]`, e compare os itens a seguir com este novo valor, `4`.
 
-Após chegar ao fim do array, remova os elementos que você copiou, `[3, 4]`, e comece novamente com o primeiro elemento restante no `unsortedArray`, neste caso `1`.
+Após chegar ao fim do array, remova os itens que você copiou, `[3, 4]`, e comece novamente com o primeiro item restante no `unsortedArray`, neste caso `1`.
 
 Após este processo, teremos dois arrays ordenados, `[3, 4]` e `[1, 2]`. Mescle esses dois arrays para criar o `strandSortedArray`.
 

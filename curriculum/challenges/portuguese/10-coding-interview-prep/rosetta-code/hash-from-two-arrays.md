@@ -8,7 +8,7 @@ dashedName: hash-from-two-arrays
 
 # --description--
 
-Usando dois arrays de mesmo tamanho, crie um objeto hash onde os elementos de um array (as chaves) estejam ligados aos elementos do outro array (os valores).
+Dados dois arrays, crie um objeto hash onde os elementos de um array (as chaves) estejam ligados aos elementos do outro array (os valores).
 
 Exemplo:
 
