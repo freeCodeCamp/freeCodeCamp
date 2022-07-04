@@ -1,9 +1,11 @@
 // import React from 'react';
 // import { render, screen } from '@testing-library/react';
-// import userEvent from '@testing-library/user-event';
 
 // import { FormGroup } from '.';
 
 // describe('<FormGroup />', () => {
-//   it('should render correctly', () => {});
+//   it('should render correctly', () => {
+//     render(<FormGroup testId='test' />);
+//     expect(screen.getByTestId('test')).toBeInTheDocument();
+//   });
 // });

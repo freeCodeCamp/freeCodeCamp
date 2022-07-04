@@ -1,2 +1,2 @@
-export { FormGroup } from './form-group';
+// export { FormGroup } from './form-group';
 export type { FormGroupProps } from './types';

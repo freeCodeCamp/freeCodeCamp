@@ -2,6 +2,15 @@
 
 // import { FormGroupProps } from './types';
 
-// export const FormGroup = ({}: FormGroupProps) => {
-//   return <div>Hello, I am a FormGroup component</div>;
-// };
+// // need to change htmlInputElement
+// // formgroup should be label not input, as far as I know
+
+// const FormGroup =  React.forwardRef<HTMLLabelElement, FormGroupProps>(
+//         ({ className, htmlFor, validationState, bsSize, bsClass }): JSX.Element => {
+//           const classes = [className].join('');
+//           return <label htmlFor={htmlFor} validationState={validationState} bsSize={bsSize} className={classes} bsClass={bsClass} />;
+//         }
+//       );
+
+//       FormGroup.displayName = 'FormGroup';
+//       export { FormGroup };
