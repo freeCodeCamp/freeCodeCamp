@@ -23,6 +23,7 @@ import {
 import postUpdate$ from '../utils/post-update';
 import { mapFilesToChallengeFiles } from '../../../utils/ajax';
 import { standardizeRequestBody } from '../../../utils/challenge-request-helpers';
+import { actionTypes as submitActionTypes } from '../../../redux/action-types';
 import { actionTypes } from './action-types';
 import {
   projectFormValuesSelector,
@@ -184,12 +185,12 @@ export default function completionEpic(action$, state$) {
       let result = false;
       return submitter(type, state).pipe(
         tap(res => {
-          result = res.type !== 'app.updateFailed';
+          result = res.type !== submitActionTypes.updateFailed;
         }),
-        concat(closeChallengeModal),
-
         finalize(async () => {
-          result && navigate(pathToNavigateTo());
+          if (result) {
+            navigate(pathToNavigateTo());
+          }
         })
       );
     })
