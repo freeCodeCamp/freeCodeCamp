@@ -28,7 +28,8 @@
 
 - **飛行手冊**（針對員工  &  維護人員）
   - [維護人員手冊](moderator-handbook.md)
-  - [DevOps 手冊](devops.md)
+  - [Language Lead Handbook](language-lead-handbook.md)
+  - [DevOps Handbook](devops.md)
   - [Courses VSCode Extension](courses-vscode-extension.md)
 
 ---

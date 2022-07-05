@@ -28,8 +28,9 @@
 
 - **マニュアル** (スタッフ & モデレーター用)
   - [モデレーターハンドブック](moderator-handbook.md)
-  - [DevOps ハンドブック](devops.md)
-  - [VSCode 拡張機能「Courses」](courses-vscode-extension.md)
+  - [Language Lead Handbook](language-lead-handbook.md)
+  - [DevOps Handbook](devops.md)
+  - [Courses VSCode Extension](courses-vscode-extension.md)
 
 ---
 
