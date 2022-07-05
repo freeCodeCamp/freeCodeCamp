@@ -178,8 +178,8 @@ export default function completionEpic(action$, state$) {
         submitter = submitters[submitTypes[challengeType]];
       }
 
-      const pathToNavigateTo = async () => {
-        return await findPathToNavigateTo(nextChallengePath, superBlock);
+      const pathToNavigateTo = () => {
+        return findPathToNavigateTo(nextChallengePath, superBlock);
       };
       let result = false;
       return submitter(type, state).pipe(
@@ -189,14 +189,14 @@ export default function completionEpic(action$, state$) {
         concat(closeChallengeModal),
 
         finalize(async () => {
-          result && navigate(await pathToNavigateTo());
+          result && navigate(pathToNavigateTo());
         })
       );
     })
   );
 }
 
-async function findPathToNavigateTo(nextChallengePath, superBlock) {
+function findPathToNavigateTo(nextChallengePath, superBlock) {
   if (nextChallengePath.includes(superBlock)) {
     return nextChallengePath;
   } else {
