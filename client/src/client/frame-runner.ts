@@ -1,12 +1,10 @@
 import '@babel/polyfill';
-import i18next, { i18n } from 'i18next';
 import jQuery from 'jquery';
 import curriculumHelpers from '../utils/curriculum-helpers';
 
 declare global {
   interface Window {
     $: JQueryStatic;
-    i18next: i18n;
   }
   interface Document {
     // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -21,7 +19,6 @@ declare global {
 }
 
 window.$ = jQuery;
-window.i18next = i18next;
 
 document.__initTestFrame = initTestFrame;
 
@@ -86,7 +83,6 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
     return o;
   };
 
-  // eslint-disable-next-line no-inline-comments
   const { default: chai } = await import(/* webpackChunkName: "chai" */ 'chai');
   const assert = chai.assert;
   const __helpers = curriculumHelpers;
@@ -96,8 +92,6 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
   if (e.loadEnzyme) {
     /* eslint-disable prefer-const */
     let Adapter16;
-    /* eslint-disable no-inline-comments */
-
     [{ default: Enzyme }, { default: Adapter16 }] = await Promise.all([
       import(/* webpackChunkName: "enzyme" */ 'enzyme'),
       import(/* webpackChunkName: "enzyme-adapter" */ 'enzyme-adapter-react-16')
@@ -122,7 +116,6 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
         // document ready:
         $(() => {
           try {
-            // eslint-disable-next-line no-eval
             const test: unknown = eval(testString);
             resolve(test);
           } catch (err) {
