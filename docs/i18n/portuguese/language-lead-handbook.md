@@ -1,22 +1,22 @@
-# The Official freeCodeCamp Language Lead Handbook
+# O manual oficial para os líderes de cada idioma do freeCodeCamp
 
-This handbook will help you set up and use the tools for your localization efforts.
+Este manual o ajudará a configurar e utilizar as ferramentas para seus esforços de localização.
 
-## How to invite new contributors to Ghost
+## Como convidar novos colaboradores para o Ghost
 
-Ghost allows you to set contributors with different levels of authorizations.
+O Ghost permite que você defina colaboradores com diferentes níveis de autorização.
 
-Most of your invites will be for the "Contributor" level. This level allows the user to create drafts. Select this role when inviting a new translator.
+A maioria de seus convites será para o nível "Contributor" (Colaborador). Esse nível permite que o usuário crie rascunhos. Selecione esta função ao convidar um novo tradutor.
 
-The "Author" level allows the user to create Drafts and publish them.
+O nível "Author" (Autor) permite ao usuário criar rascunhos e publicá-los.
 
-The "Editor" level allows the user to access all Drafts and publish them. Select this role when inviting a new proofreader.
+O nível "Editor" permite ao usuário acessar todos os rascunhos e publicá-los. Selecione esta função ao convidar um novo revisor.
 
-The "Administrator" level is reserved for freeCodeCamp staff and Language Leads.
+O nível "Administrator" (Administrador) é reservado para funcionários e líderes de idiomas do freeCodeCamp.
 
-## How to mention the original author of a translated article
+## Como mencionar o autor original de um artigo traduzido
 
-The original author and the original article are linked automatically adding this code to the Code Injection -> head section in the Draft Settings on ghost.
+O autor original e o artigo original são vinculados automaticamente, adicionando este código à seção de cabeçalho Code Injection -> em Draft Setiings (Configurações de rascunho) no Ghost.
 
 ```html
 <script>
@@ -24,24 +24,24 @@ The original author and the original article are linked automatically adding thi
 </script>
 ```
 
-With `link` being the link of the original article.
+Sendo `link` o link do artigo original.
 
-## How to update Crowdin Glossary
+## Como atualizar o glossário do Crowdin
 
-> [!TIP] An updated glossary helps in having an homogeneous translation of technical terms.
+> [!TIP] Um glossário atualizado ajuda a ter uma tradução dos termos técnicos mais homogênea.
 
-The Crowdin Glossary is kept in the [crowdin-glossaries](https://github.com/freeCodeCamp/crowdin-glossaries) repository.
+O glossário do Crowdin é mantido no repositório [crowdin-glossaries](https://github.com/freeCodeCamp/crowdin-glossaries).
 
-In the `glossaries` folder there are various `*.csv` (comma separated values) files, one for each of the crowdin projects that have a glossary that can be updated from this workflow.
+Na pasta `glossaries` há vários arquivos `*.csv` (valores separados por vírgulas, um para cada um dos projetos no Crowdin que têm um glossário que pode ser atualizado a partir deste fluxo de trabalho.
 
-The `client.csv` file is for the Learn User Interface project, the `curriculum.csv` file is for the Coding Curriculum project, the `docs.csv` file is for the Contributing Documentation project.
+O arquivo `client.csv` é para o projeto "Learn User Interface" (Interface de aprendizagem do usuário), `curriculum.csv` é para o projeto "Coding Curriculum" (Currículo de programação) e o arquivo `docs.csv` é para o projeto "Contributing Documentation" (Documentação colaborativa).
 
-To update the Crowdin Glossaries you need to clone this repo locally. Open the `.csv` file with an appropriate program, for example Microsoft Excel.
+Para atualizar os glossários do Crowdin você precisa clonar este repositório localmente. Abra o arquivo `.csv` com um programa apropriado - por exemplo, o Microsoft Excel.
 
-In the `.csv` file you will find that the English language occupies the first three columns, `Term:English` is the column for the English term, `Description:English` is the column for the English description, and `Part:English` is for the part of speech (e.g., noun, verb etc.) of the term.
+No arquivo `.csv`, que você verá que a língua inglesa ocupa as primeiras três colunas, `Term:English` é a coluna para o termo em inglês, `Description:English` é a coluna para a descrição em inglês e `Part:English` é para a classe gramatical (por exemplo, substantivo, verbo etc.) do termo.
 
-Then, each target language has two columns. If you translate to Dothraki, you will be interested in the columns `Term:Dothraki` and `Description:Dothraki`. The column `Term:Dothraki` is for the translation of the term in Dothraki, and the column `Description:Dothraki` is for a description of the term in Dothraki.
+Depois delas, cada idioma-alvo tem duas colunas. Se você traduzir para o Dothraki, estará interessado nas colunas `Term:Dothraki` e `Description:Dothraki`. A coluna `Term:Dothraki` é para a tradução do termo em Dothraki, enquanto a coluna `Description:Dothraki` é para uma descrição do termo em Dothraki.
 
-> [!TIP] In programs like Microsoft Excel you can hide the columns of the other languages to free up screen real-estate and see the English columns and the target language columns near each other.
+> [!TIP] Em programas como o Microsoft Excel, você pode ocultar as colunas dos outros idiomas para liberar espaço em tela e ver as colunas em inglês e as colunas do idioma de destino ao lado umas das outras.
 
-After you have made the changes and saved the file, you will need to make a PR with the proposed changes. After the PR is accepted, you will need to run the GitHub Action workflow to update the Crowdin Glossary. Your glossary changes will not have immediate effects, but they will come.
+Após ter feito as alterações e salvo o arquivo, você precisará fazer um PR com as alterações propostas. Depois de o PR ter sido aceito, você precisará executar o fluxo de trabalho do GitHub Action para atualizar o glossário do Crowdin. Suas alterações no glossário não terão efeitos imediatos, mas aparecerão em breve.
