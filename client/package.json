@@ -42,7 +42,7 @@
     "@fortawesome/fontawesome-svg-core": "6.1.1",
     "@fortawesome/free-brands-svg-icons": "6.1.1",
     "@fortawesome/free-solid-svg-icons": "6.1.1",
-    "@fortawesome/react-fontawesome": "0.1.18",
+    "@fortawesome/react-fontawesome": "0.2.0",
     "@freecodecamp/loop-protect": "2.2.1",
     "@freecodecamp/react-bootstrap": "0.32.3",
     "@freecodecamp/react-calendar-heatmap": "1.0.0",
