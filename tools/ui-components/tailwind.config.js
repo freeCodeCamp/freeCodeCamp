@@ -93,6 +93,11 @@ module.exports = {
         2: '2'
       }
     }
+    // margin: {
+    //   margin-bottom: {
+    //   mb-3.5 : "0.875rem"  // 14px not 15px
+    //   }
+    // },
   },
   plugins: [
     plugin(({ addVariant }) => {
