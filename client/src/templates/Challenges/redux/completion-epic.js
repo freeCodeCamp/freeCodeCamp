@@ -7,8 +7,8 @@ import {
   retry,
   catchError,
   concat,
-  filter,
-  finalize
+  finalize,
+  tap
 } from 'rxjs/operators';
 
 import { challengeTypes, submitTypes } from '../../../../utils/challenge-types';
@@ -142,11 +142,7 @@ function submitBackendChallenge(type, state) {
         endpoint: '/backend-challenge-completed',
         payload: challengeInfo
       };
-      try {
-        return postChallenge(update, username);
-      } catch (err) {
-        return err;
-      }
+      return postChallenge(update, username);
     }
   }
   return empty();
@@ -185,11 +181,16 @@ export default function completionEpic(action$, state$) {
       const pathToNavigateTo = async () => {
         return await findPathToNavigateTo(nextChallengePath, superBlock);
       };
-
+      let result = false;
       return submitter(type, state).pipe(
+        tap(res => {
+          result = res.type !== 'app.updateFailed';
+        }),
         concat(closeChallengeModal),
-        filter(Boolean),
-        finalize(async () => navigate(await pathToNavigateTo()))
+
+        finalize(async () => {
+          result && navigate(await pathToNavigateTo());
+        })
       );
     })
   );
