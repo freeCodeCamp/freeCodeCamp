@@ -497,12 +497,12 @@ button.nav-link[aria-disabled='true'] {
 }
 
 #toggle-button-nav .menu-btn-text,
-#universal-nav .login-btn-text{
+#universal-nav .login-btn-text {
   display: inline-block;
 }
 
 #toggle-button-nav .menu-btn-icon,
- .login-btn-icon{
+.login-btn-icon {
   display: none;
 }
 
@@ -568,16 +568,16 @@ button.nav-link[aria-disabled='true'] {
   .universal-nav-right .fcc_searchBar .ais-Hits {
     width: calc(100% - 30px);
   }
-  #universal-nav .signup-btn{
+  #universal-nav .signup-btn {
     padding: 4px 6px;
   }
   #toggle-button-nav .menu-btn-text,
-  #universal-nav .login-btn-text{
+  #universal-nav .login-btn-text {
     display: none;
   }
-  
+
   #toggle-button-nav .menu-btn-icon,
-  #universal-nav .login-btn-icon{
+  #universal-nav .login-btn-icon {
     display: inline-block;
   }
   .toggle-button-nav {
@@ -606,7 +606,7 @@ button.nav-link[aria-disabled='true'] {
   }
 }
 
-@media(max-width: 300px){
+@media (max-width: 300px) {
   #universal-nav-logo {
     max-width: none;
     left: -170px;
@@ -618,5 +618,3 @@ button.nav-link[aria-disabled='true'] {
     margin: 7px 0;
   }
 }
-
-

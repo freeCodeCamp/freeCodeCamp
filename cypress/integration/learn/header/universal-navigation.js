@@ -109,8 +109,7 @@ const testLink = (item, selector = 'navigation-list', checkParent) => {
   if (checkParent) {
     return cy
       .get(selectors[selector])
-      .contains(item)
-      .parent()
+      .should('contain.text', item)
       .should('have.attr', 'href')
       .and('contain', links[item.replaceAll(' ', '-').toLowerCase()]);
   }
