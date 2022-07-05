@@ -7,6 +7,7 @@
   - [Work on proofreading translations](how-to-proofread-files.md)
 - **Code Contribution**
   - [Set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md)
+  - [Work on mobile app](how-to-setup-freecodecamp-mobile-app-locally.md)
   - [Follow coding best practices](codebase-best-practices.md)
   - [Open a pull request](how-to-open-a-pull-request.md)
   - [Work on coding challenges](how-to-work-on-coding-challenges.md)
