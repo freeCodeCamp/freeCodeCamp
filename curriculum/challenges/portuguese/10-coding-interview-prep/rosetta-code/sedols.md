@@ -12,7 +12,7 @@ A <abbr title="Stock Exchange Daily Official List">SEDOL</abbr> é uma lista de 
 
 A <abbr title="Stock Exchange Daily Official List">A SEDOL</abbr> funciona como o Número de Identificação dos Valores Mobiliários Nacionais para todos os valores mobiliários emitidos no Reino Unido e portanto também fazem parte da <abbr title="International Securities Identification Number">ISIN</abbr> de segurança. O Masterfile da <abbr title="Stock Exchange Daily Official List">SEDOL</abbr> fornece dados de referência a milhões de seguros multiativos globais, cada um identificado exclusivamente no nível de mercado usando um código universal do <abbr title="Stock Exchange Daily Official List">SEDOL</abbr>.
 
-Para cada lista de números de SEDOLs de 6 algarismos, calcule e anexe o algarismo da soma de verificação (checksum). Ou seja, dada a string de entrada à esquerda, a função deve retornar a string correspondente à direita:
+Para cada lista de números de SEDOLs de 6 algarismos, calcule e anexe o algarismo da soma de verificação (`checkSum`). Ou seja, dada a string de entrada à esquerda, a função deve retornar a string correspondente à direita:
 
 <pre>
 710889 => 7108899
@@ -68,8 +68,9 @@ assert(sedol('228276') === '2282765');
 
 ```js
 function sedol(input) {
+  const checkSum = 0
 
-  return true;
+  return checkSum;
 }
 ```
 
@@ -94,7 +95,7 @@ function sedolCheckDigit(char6) {
   for (let i = 0; i < char6.length; i++) {
     sum += weight[i] * parseInt(char6.charAt(i), 36);
   }
-  const check = (10 - (sum % 10)) % 10;
-  return check.toString();
+  const checkSum = (10 - (sum % 10)) % 10;
+  return checkSum.toString();
 }
 ```
