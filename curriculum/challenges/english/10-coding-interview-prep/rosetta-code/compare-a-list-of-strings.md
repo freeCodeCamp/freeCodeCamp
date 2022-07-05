@@ -8,7 +8,7 @@ dashedName: compare-a-list-of-strings
 
 # --description--
 
-A list is a unordered set of values that may contain duplicates. Here is an example:
+A list is a ordered set of values that may contain duplicates. Here is an example:
 
 ```js
 const list = [['AA',  'BB', 'CC'], ['AA', 'ACB', 'AA'], [], ['AA']];
