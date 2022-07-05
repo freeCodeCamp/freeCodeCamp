@@ -11,7 +11,8 @@ declare global {
   }
 }
 
-export interface Sources {
+export interface Source {
+  index: string;
   contents?: string;
   editableContents: string;
   original: { [key: string]: string };
@@ -22,7 +23,7 @@ export interface Context {
   document: Document;
   element: HTMLIFrameElement;
   build: string;
-  sources: Sources;
+  sources: Source;
   loadEnzyme?: () => void;
 }
 

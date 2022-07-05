@@ -15,7 +15,7 @@ import {
   ProxyLogger,
   TestRunnerConfig,
   Context,
-  Sources
+  Source
 } from './frame';
 import createWorker from './worker-executor';
 
@@ -83,15 +83,17 @@ const applyFunction =
 const composeFunctions = (...fns: ApplyFunctionProps[]) =>
   fns.map(applyFunction).reduce((f, g) => x => f(x).then(g));
 
-function buildSourceMap(challengeFiles: ChallengeFiles): Sources | undefined {
-  const source: Sources | undefined = challengeFiles?.reduce(
+function buildSourceMap(challengeFiles: ChallengeFiles): Source | undefined {
+  // TODO: rename sources.index to sources.contents.
+  const source: Source | undefined = challengeFiles?.reduce(
     (sources, challengeFile) => {
-      sources.contents += challengeFile.source || challengeFile.contents;
+      sources.index += challengeFile.source || challengeFile.contents;
+      sources.contents = sources.index;
       sources.original[challengeFile.history[0]] = challengeFile.source;
       sources.editableContents += challengeFile.editableContents || '';
       return sources;
     },
-    { index: '', editableContents: '', original: {} } as Sources
+    { index: '', editableContents: '', original: {} } as Source
   );
   return source;
 }
@@ -159,7 +161,7 @@ function getJSTestRunner(
   { proxyLogger, removeComments }: TestRunnerConfig
 ) {
   const code = {
-    contents: sources.contents,
+    contents: sources.index,
     editableContents: sources.editableContents
   };
 
@@ -179,9 +181,7 @@ function getJSTestRunner(
     ) as TestWorker;
 
     result.on('LOG', proxyLogger);
-    result.done;
-
-    return result;
+    return result.done;
   };
 }
 
@@ -297,7 +297,7 @@ export function updateProjectPreview(
   ) {
     // Give iframe a title attribute for accessibility using the preview
     // document's <title>.
-    const titleMatch = buildData?.sources?.contents?.match(
+    const titleMatch = buildData?.sources?.index?.match(
       /<title>(.*?)<\/title>/
     );
     const frameTitle = titleMatch
