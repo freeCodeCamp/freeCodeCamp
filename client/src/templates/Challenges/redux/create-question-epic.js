@@ -3,6 +3,7 @@ import i18next from 'i18next';
 import { ofType } from 'redux-observable';
 import { tap, mapTo } from 'rxjs/operators';
 import envData from '../../../../../config/env.json';
+import { userSelector } from '../../../redux';
 import {
   closeModal,
   challengeFilesSelector,
@@ -34,8 +35,12 @@ function createQuestionEpic(action$, state$, { window }) {
     tap(() => {
       const state = state$.value;
       const challengeFiles = challengeFilesSelector(state);
-      const { title: challengeTitle, helpCategory } =
-        challengeMetaSelector(state);
+      const {
+        title: challengeTitle,
+        superBlock,
+        helpCategory
+      } = challengeMetaSelector(state);
+      const user = userSelector(state);
       const {
         navigator: { userAgent },
         location: { pathname, origin }
@@ -83,6 +88,14 @@ function createQuestionEpic(action$, state$, { window }) {
         )}\n${i18next.t('forum-help.add-code-three')}\n\n\`\`\`\n${endingText}`
       );
 
+      const titleText = dedent(
+        i18next.t('forum-help.title-template', {
+          project: i18next.t(`intro:${superBlock}.title`),
+          title: challengeTitle,
+          username: user.name || user.email
+        })
+      );
+
       const category = window.encodeURIComponent(
         i18next.t('links:help.' + helpCategory || 'Help')
       );
@@ -90,7 +103,7 @@ function createQuestionEpic(action$, state$, { window }) {
       const studentCode = window.encodeURIComponent(textMessage);
       const altStudentCode = window.encodeURIComponent(altTextMessage);
 
-      const baseURI = `${forumLocation}/new-topic?category=${category}&title=&body=`;
+      const baseURI = `${forumLocation}/new-topic?category=${category}&title=${titleText}&body=`;
       const defaultURI = `${baseURI}${studentCode}`;
       const altURI = `${baseURI}${altStudentCode}`;
 
