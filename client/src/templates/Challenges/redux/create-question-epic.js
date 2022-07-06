@@ -88,9 +88,11 @@ function createQuestionEpic(action$, state$, { window }) {
         )}\n${i18next.t('forum-help.add-code-three')}\n\n\`\`\`\n${endingText}`
       );
 
+      const userText = user.name || user.username || '';
+
       const titleText = dedent(
         `${i18next.t(`intro:${superBlock}.title`)} - ${challengeTitle}${
-          user.name ? ` - ${user.name}` : ''
+          userText ? ` - ${userText}` : ''
         }`
       );
 
