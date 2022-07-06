@@ -89,8 +89,8 @@ function createQuestionEpic(action$, state$, { window }) {
       );
 
       const titleText = dedent(
-        `${i18next.t(`intro:${superBlock}.title`)} - ${challengeTitle} - ${
-          user.name || user.email
+        `${i18next.t(`intro:${superBlock}.title`)} - ${challengeTitle}${
+          user.name ? ` - ${user.name}` : ''
         }`
       );
 
