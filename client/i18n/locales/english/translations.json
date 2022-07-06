@@ -680,7 +680,6 @@
     "add-code-one": "Replace these two sentences with your copied code.",
     "add-code-two": "Please leave the ``` line above and the ``` line below,",
     "add-code-three": "because they allow your code to properly format in the post.",
-    "title-template": "{{project}} - {{title}} - {{username}}"
   },
   "user-token": {
     "title": "User Token",

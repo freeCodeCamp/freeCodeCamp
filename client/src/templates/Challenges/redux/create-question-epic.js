@@ -89,11 +89,9 @@ function createQuestionEpic(action$, state$, { window }) {
       );
 
       const titleText = dedent(
-        i18next.t('forum-help.title-template', {
-          project: i18next.t(`intro:${superBlock}.title`),
-          title: challengeTitle,
-          username: user.name || user.email
-        })
+        `${i18next.t(`intro:${superBlock}.title`)} - ${challengeTitle} - ${
+          user.name || user.email
+        }`
       );
 
       const category = window.encodeURIComponent(
