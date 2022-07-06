@@ -12,8 +12,7 @@ function* getShowCertSaga({ payload: { username, certSlug } }) {
       for (let i = 0; i < messages.length; i++) {
         yield put(createFlashMessage(messages[i]));
       }
-      // eslint-disable-next-line no-restricted-globals
-      history.go(-1);
+      yield call(navigate, '/');
       return;
     }
     yield put(showCertComplete(response));
