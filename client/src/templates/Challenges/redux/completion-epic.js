@@ -186,6 +186,7 @@ export default function completionEpic(action$, state$) {
         tap(res => {
           result = res.type !== submitActionTypes.updateFailed;
         }),
+        concat(of(closeModal('completion'))),
         finalize(async () => {
           if (result) {
             navigate(pathToNavigateTo());
