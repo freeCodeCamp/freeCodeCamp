@@ -9,13 +9,13 @@ dashedName: sha-1-password-cracker
 
 # --description--
 
-You will be [working on this project with our Replit starter code](https://replit.com/github/freeCodeCamp/boilerplate-SHA-1-password-cracker).
+You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-SHA-1-password-cracker" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Replit starter code</a>.
 
 We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
 
-- [Python for Everybody Video Course](https://www.freecodecamp.org/news/python-for-everybody/) (14 hours)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 hours)
 
-- [Learn Python Video Course](https://www.freecodecamp.org/news/learn-python-video-course/) (10 hours)
+- <a href="https://www.freecodecamp.org/news/learn-python-video-course/" target="_blank" rel="noopener noreferrer nofollow">Learn Python Video Course</a> (10 hours)
 
 # --instructions--
 
@@ -41,7 +41,7 @@ Here are some hashed passwords to test the function with when `use_salts` is set
 - `da5a4e8cf89539e66097acd2f8af128acae2f8ae` should return "q1w2e3r4t5"
 - `ea3f62d498e3b98557f9f9cd0d905028b3b019e1` should return "bubbles1"
 
-The `hashlib` library has been imported for you. You should condider using it in your code. [Learn more about "hashlib" here.](https://docs.python.org/3/library/hashlib.html)
+The `hashlib` library has been imported for you. You should condider using it in your code. <a href="https://docs.python.org/3/library/hashlib.html" target="_blank" rel="noopener noreferrer nofollow">Learn more about "hashlib" here</a>.
 
 ## Development
 

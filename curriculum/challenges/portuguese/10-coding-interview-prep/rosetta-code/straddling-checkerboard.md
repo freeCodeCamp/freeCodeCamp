@@ -8,7 +8,13 @@ dashedName: straddling-checkerboard
 
 # --description--
 
-Implemente funções para criptografar e descriptografar uma mensagem usando o método do [tabuleiro de damas escarranchado](https://en.wikipedia.org/wiki/Straddling_checkerboard). As funções receberão uma string e um array como parâmetros. O array tem 3 strings representando as 3 linhas do tabuleiro de damas. O resultado será uma série de dígitos decimais. Os números devem ser criptografados inserindo o caractere de escape antes de cada dígito e, em seguida, incluindo o dígito não criptografado. Isso deve ser revertido para descriptografia.
+Implemente funções para criptografar e descriptografar uma mensagem usando o método do **tabuleiro de damas escarranchado**.
+
+Cada função receberá dois argumentos, uma string de `message` e um array `alphabet`. O array `alphabet` conterá 3 strings representando as 3 linhas do tabuleiro de verificação.
+
+A saída da função `straddle()` deve ser uma série de algarismos decimais. Os números devem ser criptografados inserindo o caractere de escape antes de cada dígito e, em seguida, incluindo o dígito <em>não criptografado</em>.
+
+Isso deve ser revertido para descriptografar com a função `unstraddle()`.
 
 # --hints--
 

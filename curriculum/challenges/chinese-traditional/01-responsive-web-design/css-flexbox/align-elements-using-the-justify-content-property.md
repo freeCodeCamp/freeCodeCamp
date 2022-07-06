@@ -11,7 +11,7 @@ dashedName: align-elements-using-the-justify-content-property
 
 flex 子元素有時不能充滿整個 flex 容器， 所以我們經常需要告訴 CSS 以什麼方式排列 flex 子元素，以及調整它們的間距。 幸運的是，我們可以通過 `justify-content` 屬性的不同值來實現。 在介紹屬性的可選值之前，我們要先理解一些重要術語。
 
-[這張圖片的元素橫着排列，很好地描述了下面的概念。](https://www.w3.org/TR/css-flexbox-1/images/flex-direction-terms.svg)
+[這裏有一張來自 W3C 的有用的圖片，說明了下面關於“行” flex 容器的概念。](https://www.w3.org/TR/css-flexbox-1/images/flex-direction-terms.svg)
 
 回憶一下，如果把 flex 容器設爲一個行，它的子元素會從左到右逐個排列； 如果把 flex 容器設爲一個列，它的子元素會從上到下逐個排列。 子元素排列的方向被稱爲 **main axis（主軸）**。 對於行，主軸水平貫穿每一個項目； 對於列，主軸垂直貫穿每一個項目。
 

@@ -81,17 +81,18 @@ function ToolPanel({
       >
         {isMobile ? t('buttons.run') : t('buttons.run-test')}
       </Button>
-      {isSignedIn && challengeType === challengeTypes.multiFileCertProject && (
+      {isSignedIn && challengeType === challengeTypes.multifileCertProject && (
         <Button
           block={true}
           bsStyle='primary'
+          data-cy='save-code-to-database-btn'
           className='btn-invert'
           onClick={saveChallenge}
         >
           {isMobile ? t('buttons.save') : t('buttons.save-code')}
         </Button>
       )}
-      {challengeType !== challengeTypes.multiFileCertProject && (
+      {challengeType !== challengeTypes.multifileCertProject && (
         <Button
           block={true}
           bsStyle='primary'

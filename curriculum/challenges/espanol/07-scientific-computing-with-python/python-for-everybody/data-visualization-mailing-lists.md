@@ -32,7 +32,7 @@ Más recursos:
 
 ## --text--
 
-¿Cuál es una biblioteca de visualización de JavaScript común?
+¿Cuál es una librería de visualización de JavaScript común?
 
 ## --answers--
 

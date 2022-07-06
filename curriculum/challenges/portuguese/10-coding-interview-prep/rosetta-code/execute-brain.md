@@ -10,7 +10,7 @@ dashedName: execute-brain
 
 Escreva uma função para implementar um interpretador de Brain\*\*\*\*. A função receberá uma string como um parâmetro e deve retornar uma string como saída. Mais detalhes são fornecidos abaixo:
 
-RCBF é um conjunto de interpretadores e compiladores [Brainf\*\*\*](https://rosettacode.org/wiki/Brainf*** "Brainf\*\*\*") escritos pelo Rosetta Code em diversas linguagens.
+RCBF é um conjunto de interpretadores e compiladores <a href="https://rosettacode.org/wiki/Brainf***" target="_blank" rel="noopener noreferrer nofollow">Brainf\*\*\*</a> escritos pelo Rosetta Code em diversas linguagens.
 
 Abaixo, encontramos os links para cada uma das versões do RCBF.
 
@@ -25,7 +25,7 @@ Uma implementação só precisa implementar corretamente as seguintes instruçõ
 | <code>.</code> | Produza o caractere representado pela célula no ponteiro                                       |
 | <code>,</code> | Insira um caractere e armazene-o na célula do ponteiro                                         |
 | <code>\[</code> | Salte para além da correspondência de <code>]</code> se a célula sob o ponteiro for 0 |
-| <code>]</code> | Volte à célula correspondente <code>\[</code> se a célula sob o ponteiro não for zero  |
+| <code>]</code> | Volte à célula correspondente <code>\[</code> se a célula sob o ponteiro não for zero |
 
 Qualquer tamanho de célula é permitido, suporte a EOF (*E*nd-*O*f-*F*ile) é opcional, bem como ter memória limitada ou não limitada.
 

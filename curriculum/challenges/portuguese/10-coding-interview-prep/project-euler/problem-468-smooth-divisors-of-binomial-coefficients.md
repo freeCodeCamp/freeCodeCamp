@@ -14,13 +14,15 @@ Considere $SB(n)$ como o maior divisor harmonizado de B de $n$.
 
 Exemplos:
 
-$$\begin{align} & S_1(10) = 1 \\\\ & S_4(2.100) = 12 \\\\ & S_{17}(2.496.144) = 5.712 \end{align}$$
+$$\begin{align}   & S_1(10) = 1 \\\\
+  & S_4(2.100) = 12 \\\\ & S_{17}(2.496.144) = 5.712 \end{align}$$
 
 Defina $F(n) = \displaystyle\sum_{B = 1}^n \sum_{r = 0}^n S_B(\displaystyle\binom{n}{r})$. Aqui, $\displaystyle\binom{n}{r}$ denota o coeficiente binomial.
 
 Exemplos:
 
-$$\begin{align} & F(11) = 3132 \\\\ & F(1.111)\bmod 1.000.000.993 = 706.036.312 \\\\ & F(111.111)\bmod 1.000.000.993 = 22.156.169 \end{align}$$
+$$\begin{align}   & F(11) = 3132 \\\\
+  & F(1.111)\bmod 1.000.000.993 = 706.036.312 \\\\ & F(111.111)\bmod 1.000.000.993 = 22.156.169 \end{align}$$
 
 Encontre $F(11.111.111)\bmod 1.000.000.993$.
 

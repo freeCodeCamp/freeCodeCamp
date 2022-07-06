@@ -12,7 +12,9 @@ Considere $f(n)$ como o maior número inteiro positivo $x$ inferior a ${10}^9$, 
 
 Por exemplo:
 
-$$\begin{align} & f(4) = 411.728.896 (4^{411.728.896} = ...490\underline{411728896}) \\\\ & f(10) = 0 \\\\ & f(157) = 743.757 (157^{743.757} = ...567\underline{000743757}) \\\\ & Σf(n), 2 ≤ n ≤ 103 = 442.530.011.399 \end{align}$$
+$$\begin{align}   & f(4) = 411.728.896 (4^{411.728.896} = ...490\underline{411728896}) \\\\
+  & f(10) = 0 \\\\   & f(157) = 743.757 (157^{743.757} = ...567\underline{000743757}) \\\\
+  & Σf(n), 2 ≤ n ≤ 103 = 442.530.011.399 \end{align}$$
 
 Encontre $\sum f(n)$, $2 ≤ n ≤ {10}^6$.
 

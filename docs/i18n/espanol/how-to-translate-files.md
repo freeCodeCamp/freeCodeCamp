@@ -26,7 +26,7 @@ Solo te pedimos que entiendas lo siguiente:
 
    Traducir los recursos de freeCodeCamp es una de las experiencias más divertidas y gratificantes como colaborador, y funciona mejor si involucras a tus amigos y colegas que hablan el mismo idioma que tú.
 
-   Recomendamos que te unas al [foro de la comunidad](https://forum.freecodecamp.org/c/contributors/3) y al [chat de colaboradores](https://chat.freecodecamp.org/channel/contributors) con tus amigos y muestren su interés antes de comenzar a traducir. CrowdIn hace que sea fácil contribuir con traducciones, pero sigue siendo mucho trabajo.
+   We recommend joining [our community forum](https://forum.freecodecamp.org/c/contributors/3) and [contributors chat room](https://discord.gg/PRyKn3Vbay) with your friends and showing your interest before starting off with translations. CrowdIn hace que sea fácil contribuir con traducciones, pero sigue siendo mucho trabajo.
 
    Queremos que disfrutes contribuyendo y no te canses o pierdas interés.
 
@@ -56,7 +56,7 @@ Solo te pedimos que entiendas lo siguiente:
 
 ## Empezando
 
-Primero, asegura de decir "Hola" en nuestro [chat de colaboradores](https://chat.freecodecamp.org/channel/contributors). Publicamos actualizaciones regulares sobre los recursos de traducción y respondemos a muchas de tus consultas allí.
+First, make sure you come say "Hi" in our [contributors chat room](https://discord.gg/PRyKn3Vbay). Publicamos actualizaciones regulares sobre los recursos de traducción y respondemos a muchas de tus consultas allí.
 
 A continuación, dirígete a nuestro [plataforma de traducción](https://translate.freecodecamp.org/) e inicia sesión (si no has contribuido a traducciones anteriormente, deberás crear una cuenta).
 
@@ -103,7 +103,7 @@ Crowdin separa un documento en "cadenas" traducibles, normalmente oraciones. Cad
 9. Aquí puedes ver la ventana de comentarios. Si tienes preguntas o inquietudes sobre una cadena en particular, puedes dejar aquí un comentario sobre la cadena para que lo vean otros traductores.
 10. Estos dos botones de "panel" ocultarán las vistas izquierda (documento) y derecha (comentarios).
 
-> [!NOTE] Si observas una cadena oculta que incluye traducciones, por favor notifícanos en el [chat de colaboradores](https://chat.freecodecamp.org/channel/contributors) para que podemos eliminar esa traducción de la memoria.
+> [!NOTE] If you see a hidden string that includes translations, please notify us in the [contributors chat room](https://discord.gg/PRyKn3Vbay) so we can remove the translation from memory.
 
 Cuando hayas completado la traducción de una cadena, pulsa el botón `Save` (guardar) para almacenar tu traducción en Crowdin. Luego, otros contribuyentes podrán votar tu traducción y el equipo de revisores podrán aprobarla.
 
@@ -117,30 +117,66 @@ Traducir nuestra documentación de contribución es un proceso similar a traduci
 
 > [!NOTE] Nuestra documentación de contribución esta basada en `docsify`, y tenemos una  forma especial de procesar los cuadros de mensaje como este. Si ves cadenas que comiencen con `[!NOTE]`, `[!WARNING]` o ` [!TIP]`, estas palabras NO deben traducirse.
 
+### How to translate documentation with internal links
+
+When you work on translating contributing documentation, watch out for internal links targeting a different section of the documentation.
+
+Make sure to replace the id of the target section (the part after `#`) with the id on the translated document. For example, it will look like this in Japanese:
+
+Before translation
+
+```
+// in HTML
+<a href="target-file-name.md#target-section-heading-id">Link text</a>
+<a href="#target-section-heading-id">Link text</a>
+
+// in Markdown
+[Link text](target-file-name.md#target-section-heading-id)
+[Link text](#target-section-heading-id)
+```
+
+After translation
+
+```
+// in HTML
+<a href="target-file-name.md#翻訳後の-id">翻訳後のリンクテキスト</a>
+<a href="#翻訳後の-id">翻訳後のリンクテキスト</a>
+
+// in Markdown
+[翻訳後のリンクテキスト](target-file-name.md#翻訳後の-id)
+[翻訳後のリンクテキスト](#翻訳後の-id)
+```
+
+The actual files in docs are written in Markdown, but they will appear as HTML tags on Crowdin.
+
+You can find out how `docsify` converts a string in your language into an id by looking into the translated pages. If the translation is not deployed yet, you can preview it by [running the docs site locally](how-to-work-on-the-docs-theme.md#serving-the-documentation-site-locally).
+
+You can learn more about [internal links in our docs here](how-to-work-on-the-docs-theme.md#how-to-create-an-internal-link).
+
 ## Traduce el LearnToCode RPG
 
-El RPG LearnToCode se ejecuta en Ren'Py, que utiliza una sintaxis especial para las cadenas traducidas: (Ver [ documentación de texto Ren'Py](https://www.renpy.org/doc/html/text.html))
+The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated strings: (See [Ren'Py Text documentation](https://www.renpy.org/doc/html/text.html))
 
 - Las oraciones a traducir están siempre entre `""`. Estos son diálogos o cadenas de interfaz de usuario. Las palabras clave que vienen antes o después del diálogo son palabras clave de control del motor del juego y se explicarán en detalle en las reglas posteriores. Tenga en cuenta que esta primera regla rige todas las reglas posteriores enumeradas.
 - En el caso de `new "..."` No traduzcas la palabra clave `new`.
 - Prefijos como `player`, `annika`, `layla`, `marco` (o variantes como `player happy`, `player @ happy`) no deben traducirse. Estas son palabras clave de control para mostrar correctamente el sprite del personaje en el juego.
-- Postfixes like `nointeract` should not be translated.
-- Do not translate things between `[]` and `{}`. These are variable interpolations and text tags. These must remain halfwidth parentheses `[]` and `{}` instead of their fullwidth counterparts `【】` and `「」`
-- Do not translate the `nointeract` keyword at the end of the sentence.
-- If we try to use fullwidth parentheses `（）`, a QA warning will show. To avoid the QA warning, use halfwidth parentheses `()`
+- Postfixes como `nointeract` no deben ser traducidos.
+- No traduzca cosas entre `[]` y `{}`. Estas son interpolaciones variables y etiquetas de texto. Estos deben permanecer entre paréntesis de media anchura `[]` y `{}` en lugar de sus homólogos de ancho completo `【】` y `「」`
+- No traduzca la palabra clave `nointeract` al final de la oración.
+- Si intentamos usar paréntesis de ancho completo `()`, se mostrará una advertencia de QA. Para evitar la advertencia de QA, utilice paréntesis de ancho medio `()`
 
 ### Examples
 
 ---
 
-#### Before translation
+#### Antes de traducir
 
 ```renpy
 # "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
 "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."  <--- this is the line that needs to be translated. see translation below
 ```
 
-#### After translation
+#### Después de traducir
 
 ```renpy
 # "[player_name]? What a coincidence! Our VIP team member {a=[vip_profile_url]}[player_name]{/a} will be honored to hear that."
@@ -151,14 +187,14 @@ Note: The `[]` and `{}` tags should be left intact.
 
 ---
 
-#### Before translation
+#### Antes de traducir
 
 ```renpy
 old "{icon=icon-fast-forward} Skip"
 new "{icon=icon-fast-forward} Skip" <-- translate this line, see below
 ```
 
-#### After translation
+#### Después de traducir
 
 ```renpy
 old "{icon=icon-fast-forward} Skip"
@@ -169,14 +205,14 @@ Note: Again, the `new` prefix and the `{icon=icon-fast-forward}` tag should be l
 
 ---
 
-#### Before translation
+#### Antes de traducir
 
 ```renpy
 # layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy your work as a developer."
 layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy your work as a developer."
 ```
 
-#### After translation
+#### Después de traducir
 
 ```renpy
 # layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy your work as a developer."
@@ -187,14 +223,14 @@ Note: `layla @ neutral` and `[player_name]` are left unchanged.
 
 ---
 
-#### Before translation
+#### Antes de traducir
 
 ```renpy
 # player "Maybe this is all a dream?" nointeract
 player "Maybe this is all a dream?" nointeract
 ```
 
-#### After translation
+#### Después de traducir
 
 ```renpy
 # player "Maybe this is all a dream?" nointeract
@@ -242,7 +278,7 @@ I better take notes so I can learn more about it."
 我最好做笔记，这样我可以学习更多东西。"
 ```
 
-## Rate Translations
+## Calificar traducciones
 
 Crowdin allows you to rate the existing proposed translations. If you attempt to save a translation, you may see a message indicating that you cannot save a duplicate translation - this means another contributor has proposed that identical translation. If you agree with that translation, click the `+` button to "upvote" the translation.
 
@@ -250,7 +286,7 @@ If you see a translation that is inaccurate or does not provide the same clarity
 
 Crowdin uses these votes to give a score to each proposed translation for a string, which helps the proofreading team determine which translation is the best fit for each string.
 
-## Quality Assurance Checks
+## Comprobaciones de control de calidad
 
 We have enabled some quality assurance steps that will verify a translation is as accurate as possible - this helps our proofreaders review proposed translations.
 
@@ -262,12 +298,12 @@ This message appears when Crowdin's QA system has identified a potential error i
 
 > [!WARNING] Tienes la opción de guardar una traducción a pesar de los errores. Si lo haces, al hacer clic en "Save Anyway (Guardar de todos modos)", también debes etiquetar a un miembro del equipo de revisión o encargado del proyecto y explicar por qué el mensaje de control de calidad debe ignorarse en este caso.
 
-## Translation Best Practices
+## Mejores prácticas de traducción
 
 Follow these guidelines to ensure our translations are as accurate as possible:
 
-- Do not translate the content within `<code>` tags. These tags indicate text that is found in code and should be left in English.
-- Do not add additional content. If you feel a challenge requires changes in the text content or additional information, you should propose the changes through a GitHub issue or a pull request that modifies the English file.
-- Do not change the order of content.
+- No traduzca el contenido con etiquetas de `<code>`. Estas etiquetas indican texto que se encuentra en código y que debe dejarse en inglés.
+- No agregues contenido adicional. Si sientes que un desafío requiere cambios en el contenido de texto o información adicional, debería proponer los cambios a través de un problema de GitHub o una pull request que modifique el archivo en inglés.
+- No cambiar el orden del contenido.
 
-If you have any questions, feel free to reach out to us in our [contributors chat room](https://chat.freecodecamp.org/channel/contributors) and we will be happy to assist you.
+If you have any questions, feel free to reach out to us in our [contributors chat room](https://discord.gg/PRyKn3Vbay) and we will be happy to assist you.

@@ -16,7 +16,9 @@ Um movimento é indicado pela primeira letra maiúscula da direção (Left - Esq
 
 Para cada caminho, seu valor de verificação é calculado por (pseudocódigo):
 
-$$\begin{align} & \text{checksum} = 0 \\\\ & \text{checksum} = (\text{checksum} × 243 + m_1) \\; \text{mod} \\; 100\\,000\\,007 \\\\ & \text{checksum} = (\text{checksum} × 243 + m_2) \\; \text{mod} \\; 100\\,000\\,007 \\\\ & \ldots \\\\ & \text{checksum} = (\text{checksum} × 243 + m_n) \\; \text{mod} \\; 100\\,000\\,007 \end{align}$$
+$$\begin{align}   & \text{checksum} = 0 \\\\
+  & \text{checksum} = (\text{checksum} × 243 + m_1) \\; \text{mod} \\; 100\\,000\\,007 \\\\   & \text{checksum} = (\text{checksum} × 243 + m_2) \\; \text{mod} \\; 100\\,000\\,007 \\\\
+  & \ldots \\\\ & \text{checksum} = (\text{checksum} × 243 + m_n) \\; \text{mod} \\; 100\\,000\\,007 \end{align}$$
 
 onde $m_k$ é o valor ASCII da $k^{\text{a}}$ letra na sequência de movimento e os valores ASCII dos movimentos são:
 

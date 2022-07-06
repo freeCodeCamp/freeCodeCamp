@@ -27,19 +27,19 @@ dashedName: adjust-the-hue-of-a-color
 
 # --hints--
 
-應使用 `hsl()` 函數來設置顏色爲 `green`。
+你的代碼應該使用 `hsl()` 函數來聲明綠色。
 
 ```js
 assert(code.match(/\.green\s*?{\s*?background-color\s*:\s*?hsl/gi));
 ```
 
-應使用 `hsl()` 函數來設置顏色爲 `cyan`。
+你的代碼應該使用 `hsl()` 函數來聲明藍綠色。
 
 ```js
 assert(code.match(/\.cyan\s*?{\s*?background-color\s*:\s*?hsl/gi));
 ```
 
-應使用 `hsl()` 函數來設置顏色爲 `blue`。
+你的代碼應該使用 `hsl()` 函數來聲明藍色。
 
 ```js
 assert(code.match(/\.blue\s*?{\s*?background-color\s*:\s*?hsl/gi));

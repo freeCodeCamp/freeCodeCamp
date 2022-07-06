@@ -314,7 +314,7 @@ If you think we did this in error, or once you're ready to come back and contrib
 
 ## Wie unser Chatraum für Mitwirkende funktioniert
 
-Jeder ist in dem [Raum für Mitwirkende auf unserem Chat-Server](https://chat.freecodecamp.org/channel/contributors) willkommen. Er ist der Chatraum für Moderatoren und andere Teilnehmer, die auf verschiedene Weise zu unserer Community beitragen, z. B. durch Lerngruppen.
+Anyone is welcome in the [Contributors room on our chat server](https://discord.gg/PRyKn3Vbay). Er ist der Chatraum für Moderatoren und andere Teilnehmer, die auf verschiedene Weise zu unserer Community beitragen, z. B. durch Lerngruppen.
 
 Wir gehen davon aus, dass Mitwirkende alles in diesem Raum lesen, wo sie direkt mit einem `@Benutzername` erwähnt werden. Alles andere ist freiwillig, aber du kannst gerne alles lesen, was dort gepostet wird, und dich einbringen.
 
@@ -455,7 +455,7 @@ Thanks again! 😊
 
 ---
 
-If you have any questions, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://chat.freecodecamp.org/channel/contributors).
+If you have any questions, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
 ```
 
 ### Ungültige Pull-Requests schließen
@@ -531,7 +531,7 @@ List of files:
 2. ...
 3. ...
 
-Please make sure you read [our guidelines for contributing](https://contribute.freecodecamp.org/#/), we prioritize contributors following the instructions in our guides. Join us in [our chat room](https://chat.freecodecamp.org/channel/contributors) or [the forum](https://forum.freecodecamp.org/c/contributors/3) if you need help contributing, our moderators will guide you through this.
+Please make sure you read [our guidelines for contributing](https://contribute.freecodecamp.org/#/), we prioritize contributors following the instructions in our guides. Join us in [our chat room](https://discord.gg/PRyKn3Vbay) or [the forum](https://forum.freecodecamp.org/c/contributors/3) if you need help contributing, our moderators will guide you through this.
 
 Sometimes we may get more than one pull request. We typically accept the most quality contribution followed by the one that is made first.
 

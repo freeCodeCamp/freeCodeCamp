@@ -13,14 +13,26 @@ import {
   bodySizeFits,
   MAX_BODY_SIZE
 } from '../utils/challenge-request-helpers';
-import { saveChallengeComplete } from './';
+import { saveChallengeComplete, savedChallengesSelector } from './';
 
 export function* saveChallengeSaga() {
   const { id, challengeType } = yield select(challengeMetaSelector);
   const { challengeFiles } = yield select(challengeDataSelector);
+  const savedChallenges = yield select(savedChallengesSelector);
+  const savedChallenge = savedChallenges.find(challenge => challenge.id === id);
 
-  // only allow saving of multiFileCertProject's
-  if (challengeType === challengeTypes.multiFileCertProject) {
+  // don't let users save more than once every 5 seconds
+  if (Date.now() - savedChallenge?.lastSavedDate < 5000) {
+    return yield put(
+      createFlashMessage({
+        type: 'danger',
+        message: FlashMessages.CodeSaveLess
+      })
+    );
+  }
+
+  // only allow saving of multifileCertProject's
+  if (challengeType === challengeTypes.multifileCertProject) {
     const body = standardizeRequestBody({ id, challengeFiles, challengeType });
     const bodySizeInBytes = getStringSizeInBytes(body);
 
@@ -34,14 +46,14 @@ export function* saveChallengeSaga() {
       );
     } else {
       try {
-        const response = yield call(postSaveChallenge, body);
+        const { data } = yield call(postSaveChallenge, body);
 
-        if (response?.message) {
-          yield put(createFlashMessage(response));
-        } else if (response?.savedChallenges) {
+        if (data?.message) {
+          yield put(createFlashMessage(data));
+        } else if (data?.savedChallenges) {
           yield put(
             saveChallengeComplete(
-              mapFilesToChallengeFiles(response.savedChallenges)
+              mapFilesToChallengeFiles(data.savedChallenges)
             )
           );
           yield put(

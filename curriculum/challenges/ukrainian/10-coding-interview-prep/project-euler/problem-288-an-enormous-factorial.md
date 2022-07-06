@@ -10,7 +10,8 @@ dashedName: problem-288-an-enormous-factorial
 
 Для будь-якого цілого числа $p$ число $N(p,q)$ визначається за $N(p,q) = \sum_{n=0}^q T_n \times p^n$ з $T_n$, що створене генератором випадкових чисел:
 
-$$\begin{align} & S_0 = 290797 \\\\ & S_{n + 1} = {S_n}^2\bmod 50\\,515\\,093 \\\\ & T_n = S_n\bmod p \end{align}$$
+$$\begin{align}   & S_0 = 290797 \\\\
+  & S_{n + 1} = {S_n}^2\bmod 50\\,515\\,093 \\\\ & T_n = S_n\bmod p \end{align}$$
 
 Припустимо, $Nfac(p,q)$ – факторіал $N(p,q)$.
 

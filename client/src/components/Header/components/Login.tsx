@@ -7,8 +7,6 @@ import { createSelector } from 'reselect';
 import envData from '../../../../../config/env.json';
 import { isSignedInSelector } from '../../../redux';
 
-import './login.css';
-
 const { apiLocation, homeLocation } = envData;
 
 const mapStateToProps = createSelector(isSignedInSelector, isSignedIn => ({

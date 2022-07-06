@@ -10,7 +10,12 @@ dashedName: problem-417-reciprocal-cycles-ii
 
 Em uma fração unitária, o numerador é 1. A representação decimal das frações unitárias com denominadores de 2 a 10 é a seguinte:
 
-$$\begin{align} & \frac{1}{2}  = 0.5 \\\\ & \frac{1}{3}  = 0.(3) \\\\ & \frac{1}{4}  = 0.25 \\\\ & \frac{1}{5}  = 0.2 \\\\ & \frac{1}{6}  = 0.1(6) \\\\ & \frac{1}{7}  = 0.(142857) \\\\ & \frac{1}{8}  = 0.125 \\\\ & \frac{1}{9}  = 0.(1) \\\\ & \frac{1}{10} = 0.1 \\\\ \end{align}$$
+$$\begin{align}   & \frac{1}{2}  = 0.5 \\\\
+  & \frac{1}{3}  = 0.(3) \\\\   & \frac{1}{4}  = 0.25 \\\\
+  & \frac{1}{5}  = 0.2 \\\\   & \frac{1}{6}  = 0.1(6) \\\\
+  & \frac{1}{7}  = 0.(142857) \\\\   & \frac{1}{8}  = 0.125 \\\\
+  & \frac{1}{9}  = 0.(1) \\\\   & \frac{1}{10} = 0.1 \\\\
+\end{align}$$
 
 A expressão $0.1(6)$ significa $0.16666666\dots$, e tem um ciclo recorrente de 1 algarismo. Pode ser visto que $\frac{1}{7}$ tem um ciclo recorrente de 6 algarismos.
 

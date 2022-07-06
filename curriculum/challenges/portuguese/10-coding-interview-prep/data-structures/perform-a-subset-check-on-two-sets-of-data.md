@@ -25,7 +25,7 @@ assert(
 );
 ```
 
-O primeiro `Set` deve estar contido no segundo `Set`
+O primeiro `Set` deve estar contido no segundo `Set`.
 
 ```js
 assert(
@@ -43,7 +43,7 @@ assert(
 );
 ```
 
-`['a', 'b'].isSubsetOf(['a', 'b', 'c', 'd'])` deve retornar `true`
+`['a', 'b'].isSubsetOf(['a', 'b', 'c', 'd'])` deve retornar `true`.
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-`['a', 'b', 'c'].isSubsetOf(['a', 'b'])` deve retornar `false`
+`['a', 'b', 'c'].isSubsetOf(['a', 'b'])` deve retornar `false`.
 
 ```js
 assert(
@@ -80,7 +80,7 @@ assert(
 );
 ```
 
-`[].isSubsetOf([])` deve retornar `true`
+`[].isSubsetOf([])` deve retornar `true`.
 
 ```js
 assert(
@@ -93,7 +93,7 @@ assert(
 );
 ```
 
-`['a', 'b'].isSubsetOf(['c', 'd'])` deve retornar `false`
+`['a', 'b'].isSubsetOf(['c', 'd'])` deve retornar `false`.
 
 ```js
 assert(

@@ -14,7 +14,10 @@ dashedName: problem-451-modular-inverses
 
 Числа 1, 8, 4, 13, 2, 11, 7, 14 є оберненими за модулем 15, оскільки
 
-$$\begin{align} & 1  \times 1\bmod 15 = 1 \\\\ & 2  \times 8  = 16\bmod 15 = 1 \\\\ & 4  \times 4  = 16\bmod 15 = 1 \\\\ & 7  \times 13 = 91\bmod 15 = 1 \\\\ & 11 \times 11 = 121\bmod 15 = 1 \\\\ & 14 \times 14 = 196\bmod 15 = 1 \end{align}$$
+$$\begin{align}   & 1  \times 1\bmod 15 = 1 \\\\
+  & 2  \times 8  = 16\bmod 15 = 1 \\\\   & 4  \times 4  = 16\bmod 15 = 1 \\\\
+  & 7  \times 13 = 91\bmod 15 = 1 \\\\   & 11 \times 11 = 121\bmod 15 = 1 \\\\
+  & 14 \times 14 = 196\bmod 15 = 1 \end{align}$$
 
 Нехай $I(n)$ — це найбільше додатне число $m$, менше за $n - 1$, при якому обернене за модулем число $m$ з модулем $n$ дорівнює цьому ж числу $m$.
 

@@ -29,7 +29,7 @@ myFun();
 関数 `abTest` を変更して、`a` または `b` が `0` より小さい場合に関数が `undefined` の値を返して直ちに終了するようにしてください。
 
 **ヒント**  
-[`undefined` はキーワード](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables)であって、文字列ではないことに注意してください。
+<a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables" target="_blank" rel="noopener noreferrer nofollow">`undefined` はキーワードであって</a>、文字列ではないことに注意してください。
 
 # --hints--
 

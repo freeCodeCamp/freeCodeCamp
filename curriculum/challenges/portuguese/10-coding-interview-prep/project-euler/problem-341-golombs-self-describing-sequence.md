@@ -10,7 +10,8 @@ dashedName: problem-341-golombs-self-describing-sequence
 
 A sequência autodescritiva de Golomb ($G(n)$) é a única sequência não decrescente de números naturais, tal que $n$ aparece exatamente $G(n)$ vezes na sequência. Os valores de $G(n)$ para os primeiros $n$ são
 
-$$\begin{array}{c} n    & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & \ldots \\\\ G(n) & 1 & 2 & 2 & 3 & 3 & 4 & 4 & 4 & 5 & 5  &  5 &  6 &  6 &  6 &  6 & \ldots \end{array}$$
+$$\begin{array}{c}   n    & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & \ldots \\\\
+  G(n) & 1 & 2 & 2 & 3 & 3 & 4 & 4 & 4 & 5 & 5  &  5 &  6 &  6 &  6 &  6 & \ldots \end{array}$$
 
 Você é informado de que $G({10}^3) = 86$, $G({10}^6) = 6137$.
 

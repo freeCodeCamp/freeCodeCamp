@@ -24,6 +24,7 @@ const toneUrls = {
   [FlashMessages.ChallengeSubmitTooBig]: TRY_AGAIN,
   [FlashMessages.CodeSaved]: CHAL_COMP,
   [FlashMessages.CodeSaveError]: TRY_AGAIN,
+  [FlashMessages.CodeSaveLess]: TRY_AGAIN,
   [FlashMessages.CompleteProjectFirst]: TRY_AGAIN,
   [FlashMessages.DeleteTokenErr]: TRY_AGAIN,
   [FlashMessages.EmailValid]: CHAL_COMP,

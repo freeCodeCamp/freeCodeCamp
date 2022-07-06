@@ -2,7 +2,7 @@ import { ChallengeFiles } from '../redux/prop-types';
 
 /*
  * Express's body-parser has a default size limit of 102400 bytes for a request body.
- * These helper functions make sure the request body isn't too big when saving or submitting multiFile cert projects
+ * These helper functions make sure the request body isn't too big when saving or submitting multifile cert projects
  */
 
 export const MAX_BODY_SIZE = 102400;

@@ -32,7 +32,7 @@ JavaScript は 7 つのプリミティブな (イミュータブル) データ�
 2 つの `console.log()` ステートメントで `typeof` を使用して変数の型を確認する必要があります。
 
 ```js
-assert(code.match(/console\.log\(typeof[\( ].*\)?\)/g).length == 2);
+assert(code.match(/console\.log\s*\(typeof[\( ].*\)?\)/g).length == 2);
 ```
 
 `typeof` を使用して変数 `seven` の型を確認する必要があります。

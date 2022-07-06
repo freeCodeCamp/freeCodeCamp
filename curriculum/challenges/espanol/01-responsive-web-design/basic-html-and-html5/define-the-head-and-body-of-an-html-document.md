@@ -19,7 +19,8 @@ Aquí hay un ejemplo de la disposición de una página:
 <!DOCTYPE html>
 <html>
   <head>
-    <meta />
+   <meta charset="utf-8">
+   <title>Titulo De Ejemplo</title>
   </head>
   <body>
     <div>

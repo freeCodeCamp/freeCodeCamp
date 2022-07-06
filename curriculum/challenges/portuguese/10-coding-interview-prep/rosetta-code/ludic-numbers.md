@@ -8,7 +8,7 @@ dashedName: ludic-numbers
 
 # --description--
 
-[Números lúdicos](https://oeis.org/wiki/Ludic_numbers) têm a ver com números primos conforme eles são gerados por uma peneira, do mesmo modo como a [Peneira de Eratóstenes](https://rosettacode.org/wiki/Sieve_of_Eratosthenes) é usada para gerar números primos.
+Os números lúdicos estão relacionados aos números primos, pois são gerados por uma peneira semelhante à peneira de Eratóstenes, usada para gerar números primos.
 
 O primeiro número lúdico é 1.
 

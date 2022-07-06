@@ -4,7 +4,7 @@ import { I18nextProvider } from 'react-i18next';
 import { Provider } from 'react-redux';
 
 import { i18nextCodes } from '../../../config/i18n/all-langs';
-import i18nTestConfig from '../../i18n/configForTests';
+import i18nTestConfig from '../../i18n/config-for-tests';
 import { createStore } from '../redux/createStore';
 import AppMountNotifier from './app-mount-notifier';
 

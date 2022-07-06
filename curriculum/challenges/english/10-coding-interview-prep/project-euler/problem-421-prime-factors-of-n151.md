@@ -1,6 +1,6 @@
 ---
 id: 5900f5131000cf542c510024
-title: 'Problem 421: Prime factors of n15+1'
+title: 'Problem 421: Prime factors of n^15+1'
 challengeType: 5
 forumTopicId: 302091
 dashedName: problem-421-prime-factors-of-n151

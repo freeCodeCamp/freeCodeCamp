@@ -12,13 +12,13 @@ Il problema di della più lunga sottosequenza crescente è quello di trovare una
 
 Per il seguente array:
 
-$\\{3, 10, 2, 1, 20\\}$
+```js
+const array = [3, 10, 2, 1, 20];
+```
 
 La sequenza crescente più lunga è:
 
 $\\{3, 10, 20\\}$
-
-Per ulteriori informazioni su questo problema consulta [Wikipedia](https://en.wikipedia.org/wiki/Longest increasing subsequence).
 
 # --instructions--
 

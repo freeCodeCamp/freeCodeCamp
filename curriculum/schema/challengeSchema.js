@@ -23,7 +23,7 @@ const fileJoi = Joi.object().keys({
 
 const schema = Joi.object()
   .keys({
-    block: Joi.string().regex(slugRE),
+    block: Joi.string().regex(slugRE).required(),
     blockId: Joi.objectId(),
     challengeOrder: Joi.number(),
     removeComments: Joi.bool(),

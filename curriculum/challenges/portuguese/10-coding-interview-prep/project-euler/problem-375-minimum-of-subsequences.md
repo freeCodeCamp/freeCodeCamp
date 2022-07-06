@@ -10,7 +10,8 @@ dashedName: problem-375-minimum-of-subsequences
 
 Considere $S_n$ como uma sequência de números inteiros produzida com o seguinte gerador de números pseudoaleatórios:
 
-$$\begin{align} S_0 & = 290.797 \\\\ S_{n + 1} & = {S_n}^2\bmod 50.515.093 \end{align}$$
+$$\begin{align}         S_0 & = 290.797 \\\\
+  S_{n + 1} & = {S_n}^2\bmod 50.515.093 \end{align}$$
 
 Considere $A(i, j)$ como o mínimo dos números $S_i, S_{i + 1}, \ldots, S_j$ para $i ≤ j$. Considere $M(N) = \sum A(i, j)$ para $1 ≤ i ≤ j ≤ N$.
 

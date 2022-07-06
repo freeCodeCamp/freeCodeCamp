@@ -8,7 +8,13 @@ dashedName: compare-a-list-of-strings
 
 # --description--
 
-Dada uma [lista](https://en.wikipedia.org/wiki/List_(abstract_data_type) "wp: List\_(abstract_data_type)") de várias strings arbitrárias, implemente uma função para cada uma das seguintes condições:
+Uma lista ou sequência é um tipo de dados abstrato que representa um número finito de valores ordenados, onde o mesmo valor pode ocorrer mais de uma vez. Exemplo:
+
+```js
+const list = [['AA',  'BB', 'CC'], ['AA', 'ACB', 'AA'], [], ['AA']];
+```
+
+Dada uma lista de várias strings arbitrárias, implemente uma função para cada uma das seguintes condições:
 
 <ul>
   <li>testar se todas são lexicalmente iguais</li>

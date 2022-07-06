@@ -17,19 +17,19 @@ dashedName: understanding-uninitialized-variables
 
 # --hints--
 
-`a` 應該被定義，並且值爲 `6`。
+應該定義變量 `a`，且它的值爲 `6`。
 
 ```js
 assert(typeof a === 'number' && a === 6);
 ```
 
-`b` 應該被定義，並且值爲 `15`。
+應該定義變量 `b`，且它最終的值爲 `15`。
 
 ```js
 assert(typeof b === 'number' && b === 15);
 ```
 
-`c` 的值不能包含 `undefined`，應該爲字符串 `I am a String!`。
+變量 `c` 的值不能包含 `undefined`，應該爲字符串 `I am a String!`。
 
 ```js
 assert(!/undefined/.test(c) && c === 'I am a String!');

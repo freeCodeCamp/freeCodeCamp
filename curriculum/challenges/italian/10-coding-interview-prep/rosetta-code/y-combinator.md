@@ -8,15 +8,13 @@ dashedName: y-combinator
 
 # --description--
 
-In rigorosa [proframmazione funzionale](https://www.freecodecamp.org/news/the-principles-of-functional-programming/ "news: the principles of functional programming") e [calcolo lambda](https://en.wikipedia.org/wiki/lambda calculus "wp: lambda calculus"), le funzioni (espressioni lambda) non hanno stato e sono autorizzate solo a fare riferimento a argomenti di funzioni di chiusura. Questo esclude la definizione abituale di una funzione ricorsiva in cui una funzione è associata allo stato di una variabile e lo stato di questa variabile è usato nel corpo della funzione. Il combinatore [Y](https://mvanier.livejournal.com/2897.html) è di per sé una funzione apolide che, se applicata ad un'altra funzione senza stato, restituisce una versione ricorsiva della funzione. Il combinatore Y è il più semplice della classe di tali funzioni, chiamati [combinatori a punto fisso](https://en.wikipedia.org/wiki/Fixed-point combinator "wp: fixed-point combinator").
+In <a href="https://www.freecodecamp.org/news/the-principles-of-functional-programming/" target="_blank" rel="noopener noreferrer nofollow">programmazione funzionale</a> stretta e calcolo lambda, le funzioni (espressioni lambda) non hanno uno stato e possono solo fare riferimento agli argomenti di funzioni che le racchiudono. Questo esclude la definizione abituale di una funzione ricorsiva in cui una funzione è associata allo stato di una variabile e lo stato di questa variabile è usato nel corpo della funzione.
+
+Il combinatore Y è esso stesso una funzione senza stato che, quando applicata ad altre funzioni senza stato, restituisce una versione ricorsiva della funzione. Il combinatore Y è la più semplice delle classi di queste funzioni, chiamate combinatori a punto fisso.
 
 # --instructions--
 
-Definire la funzione di combinatore Y senza stato e usarla per calcolare il [fattoriale](https://en.wikipedia.org/wiki/Factorial "wp: factorial"). La funzione `factorial(N)` ti viene data. **Vedi anche:**
-
-<ul>
-  <li><a href="https://vimeo.com/45140590" target="_blank">Jim Weirich: Adventures in Functional Programming</a>.</li>
-</ul>
+Definisci la funzione combinatore senza stato Y e usala per calcolare i fattoriali. La funzione `factorial(N)` ti è già stata fornita.
 
 # --hints--
 

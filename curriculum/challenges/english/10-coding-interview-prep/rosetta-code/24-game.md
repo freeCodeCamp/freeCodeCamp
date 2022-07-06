@@ -8,7 +8,7 @@ dashedName: 24-game
 
 # --description--
 
-The [24 Game](https://en.wikipedia.org/wiki/24_Game) tests a person's mental arithmetic.
+The 24 Game tests a person's mental arithmetic.
 
 The aim of the game is to arrange four numbers in a way that when evaluated, the result is 24
 

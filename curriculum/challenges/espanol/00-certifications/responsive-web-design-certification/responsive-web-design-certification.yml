@@ -7,16 +7,16 @@ isPrivate: true
 tests:
   - 
     id: bd7158d8c442eddfaeb5bd18
-    title: Crea una página de tributo
+    title: Crea una página de homenaje
   - 
     id: 587d78af367417b2b2512b03
     title: Crea un formulario de encuesta
   - 
     id: 587d78af367417b2b2512b04
-    title: Crea una Página de Producto
+    title: Crea una página de producto
   - 
     id: 587d78b0367417b2b2512b05
     title: Construye una página de documentación técnica
   - 
     id: bd7158d8c242eddfaeb5bd13
-    title: Crea un Portafolio Personal
+    title: Crea un portafolio personal

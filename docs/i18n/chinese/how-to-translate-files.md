@@ -26,7 +26,7 @@
 
    翻译 freeCodeCamp 的资源是对贡献者来说最有趣和最有意义的经历之一。如果你邀请与你使用同一种语言的朋友和同事参与，那么效果最好。
 
-   我们建议你和你的朋友在开始翻译前一起加入[我们的社区论坛](https://chinese.freecodecamp.org/forum)和[贡献者聊天室](https://chat.freecodecamp.org/channel/contributors)来分享你们有兴趣参与翻译。 Crowdin 让翻译变得简单，但还是需要大量的工作。
+   We recommend joining [our community forum](https://forum.freecodecamp.org/c/contributors/3) and [contributors chat room](https://discord.gg/PRyKn3Vbay) with your friends and showing your interest before starting off with translations. Crowdin 让翻译变得简单，但还是需要大量的工作。
 
    我们希望你在贡献过程感到快乐，而不是感到疲惫，然后失去兴趣。
 
@@ -56,7 +56,7 @@
 
 ## 准备开始
 
-首先， 先确保你去我们的[贡献者聊天室](https://chat.freecodecamp.org/channel/contributors) 问好。 我们会在聊天室定期更新翻译的资源和回答很多问题。
+First, make sure you come say "Hi" in our [contributors chat room](https://discord.gg/PRyKn3Vbay). 我们会在聊天室定期更新翻译的资源和回答很多问题。
 
 其次，去我们的[翻译平台](https://translate.freecodecamp.org/)并且登陆（假如你以前没有贡献翻译过，你需要创建一个新账户）。
 
@@ -103,7 +103,7 @@ Crowdin 将文档分成可翻译的“字符串”，通常是句子。 每个�
 9. 这里是评论窗口。 如果你对某个字符串有疑问或疑虑，可以在此处对字符串发表评论，以便其他翻译人员查看。
 10. 点击这两个“窗格”按钮，可以隐藏左边的（文件）视图和右边的（评论）视图。
 
-> [!NOTE] 如果你看到一个被隐藏的（即灰色的）字符串有对应的译文，请在[译者交流群](https://chat.freecodecamp.org/channel/contributors)告诉我们，我们会移除翻译记忆中的译文。
+> [!NOTE] If you see a hidden string that includes translations, please notify us in the [contributors chat room](https://discord.gg/PRyKn3Vbay) so we can remove the translation from memory.
 
 当你翻译完一个字符串，请点击 `Save` 按钮，将你的译文保存在  Crowdin 中。 然后其他贡献者可以给你的译文投票，而校对者也将审核确认你的译文。
 
@@ -116,6 +116,42 @@ Crowdin 将文档分成可翻译的“字符串”，通常是句子。 每个�
 翻译贡献文档的流程和翻译课程文件的流程类似。
 
 > [!NOTE] 我们的贡献文档由 ` docsify ` 提供支持，并且我们对消息框（比如这份文档里的）进行了特殊的解析。 如果你看到以 `[!NOTE]`、`[!WARNING]` 或 `[!TIP]` 开头的字符串，请注意不要翻译这些单词。
+
+### How to translate documentation with internal links
+
+When you work on translating contributing documentation, watch out for internal links targeting a different section of the documentation.
+
+Make sure to replace the id of the target section (the part after `#`) with the id on the translated document. For example, it will look like this in Japanese:
+
+Before translation
+
+```
+// in HTML
+<a href="target-file-name.md#target-section-heading-id">Link text</a>
+<a href="#target-section-heading-id">Link text</a>
+
+// in Markdown
+[Link text](target-file-name.md#target-section-heading-id)
+[Link text](#target-section-heading-id)
+```
+
+After translation
+
+```
+// in HTML
+<a href="target-file-name.md#翻訳後の-id">翻訳後のリンクテキスト</a>
+<a href="#翻訳後の-id">翻訳後のリンクテキスト</a>
+
+// in Markdown
+[翻訳後のリンクテキスト](target-file-name.md#翻訳後の-id)
+[翻訳後のリンクテキスト](#翻訳後の-id)
+```
+
+The actual files in docs are written in Markdown, but they will appear as HTML tags on Crowdin.
+
+You can find out how `docsify` converts a string in your language into an id by looking into the translated pages. If the translation is not deployed yet, you can preview it by [running the docs site locally](how-to-work-on-the-docs-theme.md#serving-the-documentation-site-locally).
+
+You can learn more about [internal links in our docs here](how-to-work-on-the-docs-theme.md#how-to-create-an-internal-link).
 
 ## Translate the LearnToCode RPG
 
@@ -270,4 +306,4 @@ Follow these guidelines to ensure our translations are as accurate as possible:
 - Do not add additional content. If you feel a challenge requires changes in the text content or additional information, you should propose the changes through a GitHub issue or a pull request that modifies the English file.
 - Do not change the order of content.
 
-If you have any questions, feel free to reach out to us in our [contributors chat room](https://chat.freecodecamp.org/channel/contributors) and we will be happy to assist you.
+If you have any questions, feel free to reach out to us in our [contributors chat room](https://discord.gg/PRyKn3Vbay) and we will be happy to assist you.

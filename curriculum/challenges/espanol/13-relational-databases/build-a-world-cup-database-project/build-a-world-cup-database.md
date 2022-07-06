@@ -1,6 +1,6 @@
 ---
 id: 5f9771307d4d22b9d2b75a94
-title: Build a World Cup Database
+title: Construir una base de datos de la Copa Mundial
 challengeType: 13
 helpCategory: Backend Development
 url: https://github.com/freeCodeCamp/learn-world-cup-database
@@ -9,15 +9,15 @@ dashedName: build-a-world-cup-database
 
 # --description--
 
-This is one of the required projects to earn your certification. For this project, you will create a Bash script that enters information from World Cup games into PostgreSQL, then query the database for useful statistics.
+Este es uno de los proyectos necesarios para obtener su certificación. Para este proyecto, crearás un script Bash que ingrese información de los juegos de la Copa del Mundo en PostgreSQL, luego consultarás la base de datos para obtener estadísticas útiles.
 
 # --instructions--
 
-**Important:** After you pass all the project tests, save a dump of your database into a `worldcup.sql` file, as well as your `insert_data.sh` and `queries.sh` files, so you can complete step 2. There will be instructions how to do that within the virtual machine.
+**Importante:** Después de pasar todas las pruebas del proyecto, guarda un volcado de tu base de datos en un archivo `worldcup.sql`, así como su `insert_data.sh` y `queries.sh`, por lo que puede completar el paso 2. Habrá instrucciones sobre cómo hacerlo dentro de la máquina virtual.
 
 # --notes--
 
-Required files: `worldcup.sql`, `insert_data.sh`, `queries.sh`
+Archivos requeridos: `worldcup.sql`, `insert_data.sh`, `queries.sh`
 
 # --hints--
 

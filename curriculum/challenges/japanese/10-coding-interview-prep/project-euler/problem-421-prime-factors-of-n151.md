@@ -1,6 +1,6 @@
 ---
 id: 5900f5131000cf542c510024
-title: '問題 421: $n^{15}$ + 1 の素因数'
+title: '問題 421: n^15 + 1 の素因数'
 challengeType: 5
 forumTopicId: 302091
 dashedName: problem-421-prime-factors-of-n151

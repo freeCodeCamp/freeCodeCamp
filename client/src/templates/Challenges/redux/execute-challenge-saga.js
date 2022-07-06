@@ -59,8 +59,8 @@ export function* executeCancellableChallengeSaga(payload) {
   const { challengeType, id } = yield select(challengeMetaSelector);
   const { challengeFiles } = yield select(challengeDataSelector);
 
-  // if multiFileCertProject, see if body/code size is submittable
-  if (challengeType === challengeTypes.multiFileCertProject) {
+  // if multifileCertProject, see if body/code size is submittable
+  if (challengeType === challengeTypes.multifileCertProject) {
     const body = standardizeRequestBody({ id, challengeFiles, challengeType });
     const bodySizeInBytes = getStringSizeInBytes(body);
 

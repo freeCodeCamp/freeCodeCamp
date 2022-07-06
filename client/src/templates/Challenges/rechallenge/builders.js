@@ -1,65 +1,6 @@
-import {
-  cond,
-  flow,
-  identity,
-  matchesProperty,
-  partial,
-  stubTrue,
-  template as _template
-} from 'lodash-es';
+import { template as _template } from 'lodash-es';
 
-import {
-  compileHeadTail,
-  setExt,
-  transformContents
-} from '../../../../../utils/polyvinyl';
-
-const wrapInScript = partial(
-  transformContents,
-  content => `<script>${content}</script>`
-);
-const wrapInStyle = partial(
-  transformContents,
-  content => `<style>${content}</style>`
-);
-const setExtToHTML = partial(setExt, 'html');
-const concatHeadTail = partial(compileHeadTail, '');
-
-export const jsToHtml = cond([
-  [
-    matchesProperty('ext', 'js'),
-    flow(concatHeadTail, wrapInScript, setExtToHTML)
-  ],
-  [stubTrue, identity]
-]);
-
-export const cssToHtml = cond([
-  [
-    matchesProperty('ext', 'css'),
-    flow(concatHeadTail, wrapInStyle, setExtToHTML)
-  ],
-  [stubTrue, identity]
-]);
-
-export function findIndexHtml(challengeFiles) {
-  const filtered = challengeFiles.filter(challengeFile =>
-    wasHtmlFile(challengeFile)
-  );
-  if (filtered.length > 1) {
-    throw new Error('Too many html blocks in the challenge seed');
-  }
-  return filtered[0];
-}
-
-function wasHtmlFile(challengeFile) {
-  return challengeFile.history[0] === 'index.html';
-}
-
-export function concatHtml({
-  required = [],
-  template,
-  challengeFiles = []
-} = {}) {
+export function concatHtml({ required = [], template, contents } = {}) {
   const embedSource = template ? _template(template) : ({ source }) => source;
   const head = required
     .map(({ link, src }) => {
@@ -78,19 +19,5 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
     })
     .join('\n');
 
-  const indexHtml = findIndexHtml(challengeFiles);
-
-  const source = challengeFiles.reduce((source, challengeFile) => {
-    if (!indexHtml) return source.concat(challengeFile.contents);
-    if (
-      indexHtml.importedFiles.includes(challengeFile.history[0]) ||
-      wasHtmlFile(challengeFile)
-    ) {
-      return source.concat(challengeFile.contents);
-    } else {
-      return source;
-    }
-  }, '');
-
-  return `<head>${head}</head>${embedSource({ source })}`;
+  return `<head>${head}</head>${embedSource({ source: contents })}`;
 }

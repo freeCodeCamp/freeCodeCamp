@@ -22,7 +22,7 @@ Los objetos son creados y usados.
 
 ---
 
-Los objetos son bits de código y datos.
+Los objetos son fragmentos de código y datos.
 
 ---
 

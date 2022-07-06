@@ -50,6 +50,8 @@
     "reset-lesson": "Скинути цей урок",
     "run": "Запустити",
     "run-test": "Run the Tests (Ctrl + Enter)",
+    "check-code": "Check Your Code (Ctrl + Enter)",
+    "check-code-2": "Check Your Code",
     "reset": "Скинути",
     "reset-code": "Скинути весь код",
     "help": "Допомога",
@@ -68,8 +70,12 @@
     "ask-later": "Запитати пізніше",
     "start-coding": "Start coding!",
     "go-to-settings": "Go to settings to claim your certification",
-    "click-start-course": "Click here to start the course",
-    "click-start-project": "Click here to start the project"
+    "click-start-course": "Start the course",
+    "click-start-project": "Start the project",
+    "change-language": "Change Language",
+    "cancel-change": "Cancel Change",
+    "resume-project": "Resume project",
+    "start-project": "Start project"
   },
   "landing": {
     "big-heading-1": "Вчіться програмувати — це безкоштовно.",
@@ -100,7 +106,7 @@
   },
   "settings": {
     "share-projects": "Діліться своїми проєктами, статтями або прийнятими пул реквестами, які не відносяться до freeCodeCamp.",
-    "privacy": "Налаштування в цьому розділі дозволяють управляти тим, що відображається на публічному портфоліо freeCodeCamp.",
+    "privacy": "The settings in this section enable you to control what is shown on your freeCodeCamp public portfolio. Press save to save your changes.",
     "data": "Щоб побачити, які дані ми зберігаємо на вашому обліковому записі, натисніть кнопку \"Завантажити дані\" нижче",
     "disabled": "Ваші сертифікати будуть відключені, коли ввімкнено режим приватного перегляду.",
     "private-name": "Ваше ім'я не буде показуватися на ваших сертифікатах, коли ввімкнено режим приватного перегляду.",
@@ -142,7 +148,8 @@
       "my-timeline": "Моя хронологія",
       "my-donations": "Мої внески",
       "night-mode": "Нічний режим",
-      "sound-mode": "Режим багаття"
+      "sound-mode": "Режим багаття",
+      "keyboard-shortcuts": "Enable Keyboard Shortcuts"
     },
     "headings": {
       "certs": "Сертифікати",
@@ -268,6 +275,7 @@
     "solution-link": "Посилання на рішення",
     "github-link": "Посилання на GitHub",
     "submit-and-go": "Відправити та перейти до мого наступного завдання",
+    "congratulations": "Congratulations, your code passes. Submit your code to complete this step and move on to the next one.",
     "i-completed": "Я виконав це завдання",
     "test-output": "Результат вашого тесту буде доступний тут",
     "running-tests": "// запуск тестів",
@@ -284,8 +292,7 @@
     "scrimba-tip": "Порада: якщо мінібраузер закриває код, то натисніть та перетягніть його у сторону. Також не соромтеся зупинятися та редагувати код у відео у будь-який час.",
     "chal-preview": "Попередній перегляд завдання",
     "cert-map-estimates": {
-      "certs": "{{title}} Сертифікат (300 годин)",
-      "coding-prep": "{{title}} (Тисячі годин практики)"
+      "certs": "{{title}} Certification"
     },
     "editor-tabs": {
       "info": "Інформація",
@@ -294,6 +301,7 @@
       "restart": "Restart",
       "restart-step": "Restart Step",
       "console": "Console",
+      "instructions": "Instructions",
       "notes": "Notes",
       "preview": "Попередній перегляд"
     },
@@ -305,7 +313,17 @@
     "step-2": "Step 2: Submit your code",
     "submit-public-url": "When you have completed the project, save all the required files into a public repository and submit the URL to it below.",
     "complete-both-steps": "Complete both steps below to finish the challenge.",
-    "runs-in-vm": "The project runs in a virtual machine, complete the user stories described in there and get all the tests to pass to finish step 1."
+    "runs-in-vm": "The project runs in a virtual machine, complete the user stories described in there and get all the tests to pass to finish step 1.",
+    "completed": "Completed",
+    "not-started": "Not started",
+    "hint": "Hint",
+    "test": "Test",
+    "sorry-try-again": "Sorry, your code does not pass. Try again.",
+    "sorry-keep-trying": "Sorry, your code does not pass. Keep trying.",
+    "sorry-getting-there": "Sorry, your code does not pass. You're getting there.",
+    "sorry-hang-in-there": "Sorry, your code does not pass. Hang in there.",
+    "sorry-dont-giveup": "Sorry, your code does not pass. Don't give up.",
+    "challenges-completed": "{{completedCount}} of {{totalChallenges}} challenges completed"
   },
   "donate": {
     "title": "Підтримати нашу некомерційну організацію",
@@ -357,6 +375,7 @@
     "try-again": "Будь ласка, повторіть спробу.",
     "card-number": "Номер вашої картки:",
     "expiration": "Дата закінчення терміну дії:",
+    "secure-donation": "Secure donation",
     "faq": "Frequently asked questions",
     "only-you": "Only you can see this message. Congratulations on earning this certification. It's no easy task. Running freeCodeCamp isn't easy either. Nor is it cheap. Help us help you and many other people around the world. Make a tax-deductible supporting donation to our nonprofit today.",
     "get-help": "How can I get help with my donations?",
@@ -440,24 +459,15 @@
     "donate": "Зробити внесок через PayPal",
     "fail": "Тест не пройдений",
     "not-passed": "Не пройдено",
+    "waiting": "Waiting",
     "passed": "Пройдено",
+    "failed": "Failed",
+    "hint": "Hint",
     "heart": "Серце",
     "initial": "Початковий",
     "info": "Інформація",
     "spacer": "Роздільник",
     "toggle": "Перемкнути галочку",
-    "responsive-design": "Значок ноутбука та мобільного телефону",
-    "javascript": "Значок JavaScript",
-    "react": "Значок React",
-    "d3": "D3 значок",
-    "api": "Стек серверів",
-    "clipboard": "Буфер обміну з галочкою",
-    "python": "Python значок",
-    "analytics": "Гістограма і лінійний графік",
-    "shield": "Щит з галочкою",
-    "tensorflow": "Tensorflow значок",
-    "database": "Значок бази даних",
-    "algorithm": "Розгалужені вузли",
     "magnifier": "лупа"
   },
   "aria": {
@@ -472,7 +482,12 @@
     "next-page": "Перейти на наступну сторінку",
     "last-page": "Перейти на останню сторінку",
     "primary-nav": "primary",
-    "breadcrumb-nav": "breadcrumb"
+    "breadcrumb-nav": "breadcrumb",
+    "submit": "Use Ctrl + Enter to submit.",
+    "running-tests": "Running tests",
+    "step": "Step",
+    "steps": "Steps",
+    "steps-for": "Steps for {{blockTitle}}"
   },
   "flash": {
     "honest-first": "Щоб отримати сертифікат, ви повинні спочатку прийняти нашу політику академічної доброчесності",
@@ -533,8 +548,10 @@
     "local-code-saved": "Saved! Your code was saved to your browser's local storage.",
     "code-saved": "Your code was saved to the database. It will be here when you return.",
     "code-save-error": "An error occurred trying to save your code.",
+    "code-save-less": "Slow Down! Your code was not saved. Try again in a few seconds.",
     "challenge-save-too-big": "Sorry, you cannot save your code. Your code is {{user-size}} bytes. We allow a maximum of {{max-size}} bytes. Please make your code smaller and try again or request assistance on https://forum.freecodecamp.org",
-    "challenge-submit-too-big": "Sorry, you cannot submit your code. Your code is {{user-size}} bytes. We allow a maximum of {{max-size}} bytes. Please make your code smaller and try again or request assistance on https://forum.freecodecamp.org"
+    "challenge-submit-too-big": "Sorry, you cannot submit your code. Your code is {{user-size}} bytes. We allow a maximum of {{max-size}} bytes. Please make your code smaller and try again or request assistance on https://forum.freecodecamp.org",
+    "invalid-update-flag": "You are attempting to access forbidden resources. Please request assistance on https://forum.freecodecamp.org if this is a valid request."
   },
   "validation": {
     "max-characters": "Максимальний розмір — 288 символів, у вас залишилося {{charsLeft}}",
@@ -676,5 +693,16 @@
     "delete-p3": "You will need to create a new token to save future progress on the curriculum sections that use a virtual machine.",
     "no-thanks": "No thanks, I would like to keep my token",
     "yes-please": "Yes please, I would like to delete my token"
+  },
+  "shortcuts": {
+    "title": "Keyboard shortcuts",
+    "table-header-action": "Action",
+    "table-header-key": "Key(s)",
+    "navigation-mode": "Navigation Mode",
+    "execute-challenge": "Execute Challenge",
+    "focus-editor": "Focus Editor",
+    "focus-instructions-panel": "Focus Instructions Panel",
+    "navigate-previous": "Navigate Previous Exercise",
+    "navigate-next": "Navigate Next Exercise"
   }
 }

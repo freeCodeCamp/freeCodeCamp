@@ -14,11 +14,15 @@ $$1! + 4! + 5! = 1 + 24 + 120 = 145$$
 
 Talvez 169 seja menos conhecido. Esse número produz a maior cadeia de números que remonta a 169. Acontece que existem apenas três desses laços:
 
-$$\begin{align} &169 → 363601 → 1454 → 169\\\\ &871 → 45361 → 871\\\\ &872 → 45362 → 872\\\\ \end{align}$$
+$$\begin{align} &169 → 363601 → 1454 → 169\\\\
+&871 → 45361 → 871\\\\ &872 → 45362 → 872\\\\
+\end{align}$$
 
 Não é difícil provar que TODOS os números com que você iniciar ficarão presos em um ciclo. Por exemplo:
 
-$$\begin{align} &69 → 363600 → 1454 → 169 → 363601\\ (→ 1454)\\\\ &78 → 45360 → 871 → 45361\\ (→ 871)\\\\ &540 → 145\\ (→ 145)\\\\ \end{align}$$
+$$\begin{align} &69 → 363600 → 1454 → 169 → 363601\\ (→ 1454)\\\\
+&78 → 45360 → 871 → 45361\\ (→ 871)\\\\ &540 → 145\\ (→ 145)\\\\
+\end{align}$$
 
 O número 69 produz uma cadeia de cinco termos sem repetição. A cadeia de maior número sem repetição, iniciando com um número abaixo de um milhão, é de sessenta termos.
 

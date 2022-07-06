@@ -14,7 +14,7 @@ dashedName: strings-and-lists
 
 Mas recursos:
 
-\- [Ejercicios](https://www.youtube.com/watch?v=-9TfJF2dwHI)
+\- [Ejercicio](https://www.youtube.com/watch?v=-9TfJF2dwHI)
 
 # --question--
 

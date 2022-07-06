@@ -14,7 +14,9 @@ $${(k - m)}^2 + \ldots + k^2 = {(n + 1)}^2 + \ldots + {(n + m)}^2$$
 
 Alguns quadrados pivotais pequenos são
 
-$$\begin{align} & \mathbf{4}: 3^2 + \mathbf{4}^2 = 5^2 \\\\ & \mathbf{21}: {20}^2 + \mathbf{21}^2 = {29}^2 \\\\ & \mathbf{24}: {21}^2 + {22}^2 + {23}^2 + \mathbf{24}^2 = {25}^2 + {26}^2 + {27}^2 \\\\ & \mathbf{110}: {108}^2 + {109}^2 + \mathbf{110}^2 = {133}^2 + {134}^2 \\\\ \end{align}$$
+$$\begin{align}   & \mathbf{4}: 3^2 + \mathbf{4}^2 = 5^2 \\\\
+  & \mathbf{21}: {20}^2 + \mathbf{21}^2 = {29}^2 \\\\   & \mathbf{24}: {21}^2 + {22}^2 + {23}^2 + \mathbf{24}^2 = {25}^2 + {26}^2 + {27}^2 \\\\
+  & \mathbf{110}: {108}^2 + {109}^2 + \mathbf{110}^2 = {133}^2 + {134}^2 \\\\ \end{align}$$
 
 Encontre a soma de todos os quadrados pivotais distintos $≤ {10}^{10}$.
 

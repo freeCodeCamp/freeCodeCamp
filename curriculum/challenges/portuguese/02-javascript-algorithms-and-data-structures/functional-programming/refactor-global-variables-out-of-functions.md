@@ -28,6 +28,7 @@ Reescreva o código de forma que o array global `bookList` não seja alterado em
 
 ```js
 add(bookList, "Test");
+remove(bookList, "The Hound of the Baskervilles");
 assert(
   JSON.stringify(bookList) ===
     JSON.stringify([

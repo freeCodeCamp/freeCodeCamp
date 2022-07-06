@@ -1,6 +1,6 @@
 {
   "responsive-web-design": {
-    "title": "響應式網頁設計",
+    "title": "（舊版）響應式網頁設計",
     "intro": [
       "在響應式網頁設計認證中，你將學習開發者用來編寫網頁的語言：HTML（超文本標記語言）用於創建內容，CSS（級聯樣式表）用於樣式設計。",
       "首先，你將通過編寫一個展示貓咪圖片的應用，學習 HTML 和 CSS 的基本知識。 然後，通過畫企鵝來學習像 CSS 變量這樣的現代技術，以及通過構建網頁表單來學習無障礙的最佳實踐。",
@@ -67,11 +67,11 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "響應式網頁設計（Beta版）",
+    "title": "（新版）響應式網頁設計",
     "intro": [
       "在響應式網頁設計的認證課程中，你將學習用於構建網頁的語言： HTML（超文本標記語言）用於創建內容，CSS（級聯樣式表）用於樣式設計。",
-      "首先，你將通過編寫一個貓咪相冊應用，學習 HTML 和 CSS 的基本知識。 然後，通過畫企鵝來學習像 CSS 變量這樣的現代技術，並通過編寫網頁表單來學習無障礙的最佳實踐。",
-      "最後，你將通過編寫一個 Twitter 卡片，學習如何使用 Flexbox 實現能夠適應不同屏幕大小的網頁 ，以及如何使用 CSS Grid 實現一個複雜的博客佈局。"
+      "首先，你將通過編寫一個展示貓咪圖片的應用來學習 HTML 和 CSS 的基本知識。 然後，通過構建一隻企鵝來學習像 CSS 變量這樣的現代技術，並通過搭建網頁表單來學習無障礙的最佳實踐。",
+      "最後，你將通過編寫一個 Twitter 卡片，學習如何使用 Flexbox 實現適應不同屏幕大小的網頁 ，以及如何用 CSS Grid 實現一個複雜的博客佈局。"
     ],
     "note": "注意：某些瀏覽器擴展程序（例如廣告攔截器和深色模式）可能干擾測試。如果遇到問題，我們建議你在學習課程時禁用那些修改網頁內容或佈局的擴展程序。",
     "blocks": {
@@ -296,23 +296,68 @@
           "是時候用上你新學到的 JavaScript 技能了！接下來的項目和前面的算法挑戰很相近，但是難度會更高。",
           "完成這 5 個 JavaScript 項目，以獲得 JavaScript 算法和數據結構認證。"
         ]
-      },
-      "basic-javascript-rpg-game": {
-        "title": "基礎 JavaScript RPG 遊戲",
+      }
+    }
+  },
+  "2022/javascript-algorithms-and-data-structures": {
+    "title": "JavaScript 算法和數據結構項目（Beta 測試版本）",
+    "intro": [
+      "佔位符",
+      "佔位符"
+    ],
+    "note": "",
+    "blocks": {
+      "build-a-caesars-cipher-project": {
+        "title": "構建一個凱撒密碼項目",
         "intro": [
           "",
           ""
         ]
       },
-      "intermediate-javascript-calorie-counter": {
-        "title": "中級 JavaScript 卡路里計算器",
+      "build-a-cash-register-project": {
+        "title": "構建一個收銀機項目",
         "intro": [
           "",
           ""
         ]
       },
-      "functional-programming-spreadsheet": {
-        "title": "函數式編程電子表格",
+      "build-a-palindrome-checker-project": {
+        "title": "構建一個迴文檢測器項目",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "build-a-roman-numeral-converter-project": {
+        "title": "搭建一個羅馬數字轉換器項目",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "build-a-telephone-number-validator-project": {
+        "title": "構建一個電話號碼檢驗器項目",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "learn-basic-javascript-by-building-a-role-playing-game": {
+        "title": "通過構建角色扮演遊戲來學習 JavaScript",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "learn-form-validation-by-building-a-calorie-counter": {
+        "title": "通過構建卡路里計數器來學習表單驗證",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "learn-functional-programming-by-building-a-spreadsheet": {
+        "title": "通過構建電子表格學習函數式編程",
         "intro": [
           "",
           ""
@@ -554,7 +599,7 @@
         "intro": [
           "Node.js 是一個 JavaScript 運行時，它允許開發人員在 JavaScript 中寫入後端（服務器側）程序。Node.js 有幾個內置的模塊——小型、獨立的程序——來幫助實現這一點，一些核心模塊包括像服務器一樣運作的 HTTP 和文件系統，一個讀取和修改文件的模塊。",
           "在上一組課程中，你學到了怎麼從 npm下載和管理軟件包。這些軟件包是較小模塊的集合，可以幫助你構建更大更復雜的程序。",
-          "Express 是一個輕量級的網絡應用程序框架，是最受歡迎的 npm 軟件包之一。Express 使爲應用程序創建服務器和處理路由變得更容易。當用戶訪問某個端點例如 <pre>/blog</pre> 時，把人們引導到正確的頁面。",
+          "Express 是一個輕量級的 Web 應用程序框架，是 npm 上最流行的包之一。 Express 可以更輕鬆地爲你的應用程序創建服務器和處理路由，例如在人們訪問特定端點（如 <pre>/blog</pre>）時將人們引導到正確頁面。",
           "在這個課程中，你將學習 Node 和 Express 的基礎知識，包括如何創建服務器、處理不同的文件，以及處理不同的瀏覽器請求。"
         ]
       },
@@ -780,9 +825,13 @@
     "collapse": "收起課程",
     "legacy-header": "舊版課程",
     "legacy-desc": "這些課程不再是認證路徑的一部分，但仍可供你進一步學習。",
+    "legacy-go-back": "進入當前版本的課程。",
+    "new-rwd-desc": "我們更新了響應式網頁設計課程。 如果你之前正在使用該課程，你的進度仍然可以保存！你可以在舊版響應式網頁設計課程裏找到你的進度。",
+    "new-rwd-article": "我們希望你閱讀我們所作的修改，並能考慮探索新課程。",
     "viewing-upcoming-change": "你正在查看Beta頁面。 ",
     "go-back-to-learn": "回到正式版課程",
     "read-database-cert-article": "請在繼續之前閱讀這個論壇帖子。",
+    "enable-cookies": "你必須在開始之前啓用第三方 cookies。",
     "english-only": "本部分的課程只提供英文。我們目前只能翻譯標題和介紹，而不能翻譯課程本身。"
   }
 }

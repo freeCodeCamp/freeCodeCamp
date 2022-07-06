@@ -12,7 +12,11 @@ Considere $φ$ como sendo a função totiente de Euler, ou seja, para um número
 
 Ao iterar por $φ$, cada número inteiro positivo gera uma cadeia decrescente de números terminando em 1. Ex: se começarmos com 5 a sequência 5,4,2,1 é gerada. Aqui está uma lista de todas as cadeias com comprimento 4:
 
-$$\begin{align} 5,4,2,1 & \\\\ 7,6,2,1 & \\\\ 8,4,2,1 & \\\\ 9,6,2,1 & \\\\ 10,4,2,1 & \\\\ 12,4,2,1 & \\\\ 14,6,2,1 & \\\\ 18,6,2,1 & \end{align}$$
+$$\begin{align}    5,4,2,1 & \\\\
+   7,6,2,1 & \\\\    8,4,2,1 & \\\\
+   9,6,2,1 & \\\\   10,4,2,1 & \\\\
+  12,4,2,1 & \\\\   14,6,2,1 & \\\\
+  18,6,2,1 & \end{align}$$
 
 Apenas duas dessas cadeias começam com um número primo e sua soma é 12.
 

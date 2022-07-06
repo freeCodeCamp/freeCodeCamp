@@ -21,7 +21,7 @@ do {
 } while (i < 5);
 ```
 
-L'esempio sopra si comporta come altri tipi di cicli, e l'array risultante sarà `[0, 1, 2, 3, 4]`. Tuttavia, ciò che rende il `do...while` diverso da altri cicli è come si comporta quando la condizione fallisce al primo controllo. Vediamolo in azione: ecco un normale ciclo `while` che eseguirà il codice nel ciclo finché `i < 5`:
+L'esempio sopra si comporta come altri tipi di cicli, e l'array risultante sarà `[0, 1, 2, 3, 4]`. Tuttavia, ciò che rende il `do...while` diverso da altri cicli è come si comporta quando la condizione fallisce al primo controllo. Vediamolo in azione. Ecco un loop `while` regolare che esegue il codice nel loop finché `i < 5`:
 
 ```js
 const ourArray = []; 

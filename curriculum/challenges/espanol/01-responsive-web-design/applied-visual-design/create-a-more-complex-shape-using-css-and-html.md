@@ -36,7 +36,7 @@ Finalmente, en el selector `heart::before`, establece su propiedad `content` en 
 
 # --hints--
 
-La propiedad `background-color` del selector `heart::after` debe ser `pink`.
+La propiedad de `background-color` del selector `heart::after` debe ser `pink`.
 
 ```js
 const heartAfter = code.match(/\.heart::after\s*{[\s\S]+?[^\}]}/g)[0];
@@ -57,7 +57,7 @@ La propiedad `transform` para la clase `heart` debe usar una función `rotate()`
 assert(code.match(/transform\s*?:\s*?rotate\(\s*?-45deg\s*?\)/gi));
 ```
 
-El `content` del selector `heart::before` debe ser una cadena vacía.
+El `contenido` de `heart::before` debe ser una cadena vacía.
 
 ```js
 assert(code.match(/\.heart::before\s*?{\s*?content\s*?:\s*?("|')\1\s*?;/gi));

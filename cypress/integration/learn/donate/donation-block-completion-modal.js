@@ -10,17 +10,17 @@ describe('Donate page', () => {
   });
 
   const projects = [
-    'tribute-page',
-    'survey-form',
-    'product-landing-page',
-    'technical-documentation-page',
-    'personal-portfolio-webpage'
+    'random-quote-machine',
+    'markdown-previewer',
+    'drum-machine',
+    'javascript-calculator',
+    '25--5-clock'
   ];
 
   it('Should be able to submit projects', () => {
     const submitProject = str => {
       cy.visit(
-        `/learn/responsive-web-design/responsive-web-design-projects/build-a-${str}`
+        `/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-${str}`
       );
       cy.get('#dynamic-front-end-form')
         .get('#solution')
@@ -37,7 +37,7 @@ describe('Donate page', () => {
 
   it('Should have a pop up modal', () => {
     cy.contains(
-      'Nicely done. You just completed Responsive Web Design Projects.'
+      'Nicely done. You just completed Front End Development Libraries Projects.'
     );
   });
 });

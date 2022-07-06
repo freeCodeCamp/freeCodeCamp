@@ -3,7 +3,7 @@ ports:
   - port: 27017 # mongodb
     onOpen: ignore
   - port: 8000 # client
-    onOpen: open-browser
+    onOpen: notify
     visibility: public
   - port: 9228 # node debug
     onOpen: ignore

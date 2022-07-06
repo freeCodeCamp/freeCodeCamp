@@ -12,7 +12,9 @@ dashedName: problem-82-path-sum-three-ways
 
 A soma do caminho mínimo da matriz de 5 por 5 abaixo, iniciando em qualquer célula na coluna da esquerda e terminando em qualquer célula na coluna da direita, e apenas se movendo para cima, para baixo e para a direita, é indicado em vermelho e em negrito. A soma é igual a `994`.
 
-  $$\begin{pmatrix} 131 & 673 & \color{red}{234} & \color{red}{103} & \color{red}{18}\\\\ \color{red}{201} & \color{red}{96} & \color{red}{342} & 965 & 150\\\\ 630 & 803 & 746 & 422 & 111\\\\ 537 & 699 & 497 & 121 & 956\\\\ 805 & 732 & 524 & 37 & 331 \end{pmatrix}$$
+  $$\begin{pmatrix}   131 & 673 & \color{red}{234} & \color{red}{103} & \color{red}{18}\\\\
+  \color{red}{201} & \color{red}{96} & \color{red}{342} & 965 & 150\\\\   630 & 803 & 746 & 422 & 111\\\\
+  537 & 699 & 497 & 121 & 956\\\\ 805 & 732 & 524 & 37 & 331 \end{pmatrix}$$
 
 Encontre a soma do caminho mínimo, da coluna da esquerda para a coluna da direita, na `matrix`, um array bidimensional que representa uma matriz. O tamanho máximo da matriz utilizado nos testes será de 80 por 80.
 

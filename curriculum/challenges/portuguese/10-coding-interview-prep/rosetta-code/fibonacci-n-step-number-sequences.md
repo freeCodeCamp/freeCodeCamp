@@ -8,7 +8,7 @@ dashedName: fibonacci-n-step-number-sequences
 
 # --description--
 
-Essas séries numéricas são uma expansão da [Sequência de Fibonacci](https://rosettacode.org/wiki/Fibonacci sequence "Fibonacci sequence") comum, onde:
+Estas séries numéricas são uma expansão da sequência comum de Fibonacci, onde:
 
 <ol>
   <li>Para $n = 2$, temos a sequência de Fibonacci, com os valores iniciais $[1, 1]$ e $F_k^2 = F_{k-1}^2 + F_{k-2}^2$</li>
@@ -17,7 +17,7 @@ Essas séries numéricas são uma expansão da [Sequência de Fibonacci](https:/
   <li>Para a $n>2$ mais geral, temos a sequência de Fibonacci de $n$ passos - $F_k^n$, com os valores iniciais dos primeiros $n$ valores da $(n-1)$-ésima sequência de Fibonacci da $n$-ésima etapa $F_k^{n-1}$, e o $k$-ésimo valor dessa $n$-ésima sequência sendo $F_k^n = \sum_{i=1}^{(n)} {F_{k-i}^{(n)}}$</li>
 </ol>
 
-Para valores pequenos de $n$, [prefixos numéricos gregos](https://en.wikipedia.org/wiki/Number prefix#Greek_series "wp: Number prefix#Greek_series") são algumas vezes usados para nomear cada série individualmente.
+Para valores pequenos de $n$, algumas vezes os prefixos numéricos gregos são usados para nomear cada série individualmente.
 
 Sequências de $n$-ésimos passos de Fibonacci:
 
@@ -33,7 +33,7 @@ Sequências de $n$-ésimos passos de Fibonacci:
 | 9   | nonanacci     | 1 1 2 4 8 16 32 64 128 256 511 1021 2040 4076 8144 ... |
 | 10  | decanacci     | 1 1 2 4 8 16 32 64 128 256 512 1023 2045 4088 8172 ... |
 
-As sequências aliadas podem ser geradas onde os valores iniciais são alterados: A [série de Lucas](https://en.wikipedia.org/wiki/Lucas number "wp: Lucas number") soma os dois valores anteriores, como a série de fibonacci para $n=2$, mas usa $\[2, 1]$ como seus valores iniciais.
+As sequências aliadas podem ser geradas onde os valores iniciais são alterados: A série de Lucas soma os dois valores anteriores, como a série de fibonacci para $n=2$, mas usa $\[2, 1]$ como seus valores iniciais.
 
 # --instructions--
 

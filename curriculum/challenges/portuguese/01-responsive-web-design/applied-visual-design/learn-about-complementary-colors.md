@@ -17,7 +17,7 @@ Alguns exemplos de cores complementares, e seus códigos hexadecimais, são:
 
 <blockquote>vermelho (#FF0000) e ciano (#00FFFF)<br>verde (#00FF00) e magenta (#FF00FF)<br>azul (#0000FF) e amarelo (#FFFF00)</blockquote>
 
-Isso é diferente do modelo de cores RYB desatualizado que muitos de nós aprendemos na escola, que tem cores primárias e complementares diferentes. A teoria das cores moderna usa o modelo RGB aditivo (comum para telas) e o modelo CMY (K) subtrativo (comum na impressão). Você pode clicar [aqui](https://en.wikipedia.org/wiki/Color_model) para obter mais informações sobre este assunto.
+Isso é diferente do modelo de cores RYB desatualizado que muitos de nós aprendemos na escola, que tem cores primárias e complementares diferentes. A teoria das cores moderna usa o modelo RGB aditivo (comum para telas) e o modelo CMY (K) subtrativo (comum na impressão).
 
 Na Internet, existem muitas ferramentas de seleção de cores que oferecem a opção de encontrar o complemento de uma cor.
 

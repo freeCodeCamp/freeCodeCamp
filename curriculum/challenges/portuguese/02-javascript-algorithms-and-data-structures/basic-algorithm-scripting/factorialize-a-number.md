@@ -1,6 +1,6 @@
 ---
 id: a302f7aae1aa3152a5b413bc
-title: Fatorar um número
+title: Encontrar o fatorial de um número
 challengeType: 5
 forumTopicId: 16013
 dashedName: factorialize-a-number

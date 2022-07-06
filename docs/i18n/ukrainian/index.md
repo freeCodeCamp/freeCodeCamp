@@ -40,4 +40,4 @@ Broadly, we have a Node.js based API server, a set of React-based client applica
 
 Або ви можете...
 
-**[встановити freeCodeCamp локально](how-to-setup-freecodecamp-locally.md) на свій комп'ютер.**
+**[Set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md) on your machine.**

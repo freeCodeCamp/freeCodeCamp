@@ -8,7 +8,32 @@ dashedName: cumulative-standard-deviation
 
 # --description--
 
-Escreva uma função que recebe um array de números como parâmetro e retorna o [desvio padrão](https://pt.wikipedia.org/wiki/Desvio_padr%C3%A3o) da série.
+Suponha que a população de interesse sejam oito alunos em uma determinada sala de aula. Para um conjunto finito de números, o desvio-padrão da população é encontrado pegando a raiz quadrada da média dos desvios padrão ao quadrado dos valores subtraídos de seu valor médio. As notas de uma turma de oito alunos (ou seja, de uma população estatística) são os oito valores seguintes:
+
+$2, 4, 4, 4, 5, 5, 7, 9$
+
+Estes oito dados têm a média de 5:
+
+$$\mu ={\frac {2+4+4+4+5+5+7+9}{8}}={\frac {40}{8}}=5$$
+
+Primeiro, calcule os desvios de cada ponto de dados da média e calcule o quadrado do resultado de cada uma:
+
+| Desvios de cada ponto  | Quadrado do resultado |
+| ---------------------- | --------------------- |
+| $(2-5)^{2}=(-3)^{2}=9$ | $(5-5)^{2}=0^{2}=0$   |
+| $(4-5)^{2}=(-1)^{2}=1$ | $(5-5)^{2}=0^{2}=0$   |
+| $(4-5)^{2}=(-1)^{2}=1$ | $(7-5)^{2}=2^{2}=4$   |
+| $(4-5)^{2}=(-1)^{2}=1$ | $(9-5)^{2}=4^{2}=16$  |
+
+A variância é a média desses valores:
+
+$$\sigma ^{2}={\frac {9+1+1+1+0+0+4+16}{8}}={\frac {32}{8}}=4$$
+
+e o desvio-padrão da população é igual à raiz quadrada da variância:
+
+$$\sigma ={\sqrt {4}}=2$$
+
+Escreva uma função que receba um array de números como parâmetro e retorne o desvio padrão da série.
 
 # --hints--
 

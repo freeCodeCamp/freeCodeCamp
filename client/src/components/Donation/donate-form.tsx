@@ -24,7 +24,7 @@ import {
   userSelector,
   postChargeStripe,
   postChargeStripeCard,
-  isAVariantSelector
+  isVariantASelector
 } from '../../redux';
 import Spacer from '../helpers/spacer';
 import { Themes } from '../settings/theme';
@@ -80,7 +80,7 @@ type DonateFormProps = {
   ) => string;
   theme: Themes;
   updateDonationFormState: (state: AddDonationData) => unknown;
-  isAVariant: boolean;
+  isVariantA: boolean;
 };
 
 const mapStateToProps = createSelector(
@@ -89,14 +89,14 @@ const mapStateToProps = createSelector(
   isDonatingSelector,
   donationFormStateSelector,
   userSelector,
-  isAVariantSelector,
+  isVariantASelector,
   (
     showLoading: DonateFormProps['showLoading'],
     isSignedIn: DonateFormProps['isSignedIn'],
     isDonating: DonateFormProps['isDonating'],
     donationFormState: DonateFormState,
     { email, theme }: { email: string; theme: Themes },
-    isAVariant: boolean
+    isVariantA: boolean
   ) => ({
     isSignedIn,
     isDonating,
@@ -104,7 +104,7 @@ const mapStateToProps = createSelector(
     donationFormState,
     email,
     theme,
-    isAVariant
+    isVariantA
   })
 );
 
@@ -322,7 +322,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
       isMinimalForm,
       isSignedIn,
       isDonating,
-      isAVariant
+      isVariantA
     } = this.props;
     const priorityTheme = defaultTheme ? defaultTheme : theme;
     const isOneTime = donationDuration === 'onetime';
@@ -335,11 +335,15 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     return (
       <>
         <b className={isMinimalForm ? 'donation-label-modal' : ''}>
-          {isAVariant === false && <SecurityLockIcon />}
           {this.getDonationButtonLabel()}:
         </b>
         <Spacer />
-        <div className={'donate-btn-group'}>
+        <fieldset className={'donate-btn-group security-legend'}>
+          <legend>
+            <SecurityLockIcon />
+            {t('donate.secure-donation')}
+          </legend>
+
           {loading.stripe && loading.paypal && this.paymentButtonsLoader()}
           <WalletsWrapper
             amount={donationAmount}
@@ -374,11 +378,11 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
                 processing={processing}
                 t={t}
                 theme={priorityTheme}
-                isAVariant={isAVariant}
+                isVariantA={isVariantA}
               />
             </>
           )}
-        </div>
+        </fieldset>
       </>
     );
   }

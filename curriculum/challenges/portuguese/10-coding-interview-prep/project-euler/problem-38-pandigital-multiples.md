@@ -10,7 +10,9 @@ dashedName: problem-38-pandigital-multiples
 
 Pegue o número 192 e multiplique-o por cada um entre 1, 2 e 3:
 
-$$\begin{align} 192 × 1 = 192\\\\ 192 × 2 = 384\\\\ 192 × 3 = 576\\\\ \end{align}$$
+$$\begin{align}   192 × 1 = 192\\\\
+  192 × 2 = 384\\\\   192 × 3 = 576\\\\
+\end{align}$$
 
 Ao concatenar cada produto, chegamos ao total 192384576. Esse resultado possui 9 algarismos e usa todos os números de 1 a 9 pelo menos uma vez. Chamaremos 192384576 o produto concatenado de 192 e (1, 2, 3).
 

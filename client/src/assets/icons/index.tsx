@@ -17,6 +17,7 @@ const iconMap = {
   [SuperBlocks.RespWebDesignNew]: ResponsiveDesign,
   [SuperBlocks.RespWebDesign]: ResponsiveDesign,
   [SuperBlocks.JsAlgoDataStruct]: JavaScriptIcon,
+  [SuperBlocks.JsAlgoDataStructNew]: JavaScriptIcon,
   [SuperBlocks.FrontEndDevLibs]: ReactIcon,
   [SuperBlocks.DataVis]: D3Icon,
   [SuperBlocks.BackEndDevApis]: APIIcon,

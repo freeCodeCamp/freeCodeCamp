@@ -10,19 +10,13 @@ dashedName: sorting-algorithmscomb-sort
 
 Implemente uma *ordenação de pente*.
 
-A **ordenação de pente** é uma variante da [ordenação de bolha](https://rosettacode.org/wiki/Bubble Sort).
+A **ordenação de pente** (Comb Sort) é uma variante da ordenação de bolha (Bubble Sort).
 
-Como a [ordenação de concha](https://rosettacode.org/wiki/Shell sort), a ordenação de pente aumenta o intervalo usado nas comparações e trocas.
+Assim como ordenação Shell Sort, a Comb Sort aumenta a diferença usada nas comparações e trocas.
 
 Dividir a diferença por $(1-e^{-\\varphi})^{-1} \\approx 1,247330950103979$ funciona melhor, mas 1,3 pode ser mais prático.
 
 Algumas implementações usam a ordenação de inserção, já que a diferença é menor do que uma certa quantidade.
-
-**Veja também**
-
-<ul>
-  <li>o artigo da Wikipédia: <a href='https://pt.wikipedia.org/wiki/Comb_sort' target='_blank'>Comb sort</a>.</li>
-</ul>
 
 Variantes:
 

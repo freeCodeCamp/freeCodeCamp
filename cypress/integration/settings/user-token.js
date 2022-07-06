@@ -1,14 +1,15 @@
 describe('User token widget on settings page,', function () {
   describe('initially', function () {
-    before(() => {
+    beforeEach(() => {
       cy.exec('npm run seed');
       cy.login();
-      cy.visit('/settings');
     });
 
     it('should not render', function () {
+      cy.visit('/settings');
+      // make sure 'Danger Zone' is there so we know the page has rendered
       cy.contains('Danger Zone');
-      cy.get('.user-token').should('not.exist');
+      cy.get('[data-cy=user-token]').should('not.exist');
     });
   });
 
@@ -19,19 +20,19 @@ describe('User token widget on settings page,', function () {
       cy.visit(
         '/learn/relational-database/learn-bash-by-building-a-boilerplate/build-a-boilerplate'
       );
-      cy.contains('Click here to start the course').click();
-      cy.wait(2000);
+      cy.get('[data-cy=start-codeally]').click();
+      cy.get('[data-cy=codeally-frame]').should('be.visible');
+    });
+
+    it('should allow you to delete your token', () => {
       cy.visit('/settings');
-    });
-
-    it('should render', function () {
+      // make sure 'Danger Zone' is there so we know the page has rendered
       cy.contains('Danger Zone');
-      cy.get('.user-token').should('have.length', 1);
-    });
+      cy.get('[data-cy=user-token]').should('have.length', 1);
 
-    it('should allow you to delete your token', function () {
-      cy.contains('Delete my user token').click();
+      cy.get('[data-cy=delete-user-token]').click();
       cy.contains('Your user token has been deleted.');
+      cy.get('[data-cy=user-token]').should('not.exist');
     });
   });
 });

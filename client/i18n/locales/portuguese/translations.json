@@ -50,6 +50,8 @@
     "reset-lesson": "Reiniciar esta aula",
     "run": "Executar",
     "run-test": "Execute os testes (Ctrl + Enter)",
+    "check-code": "Verifique seu código (Ctrl + Enter)",
+    "check-code-2": "Verifique seu código",
     "reset": "Redefinir",
     "reset-code": "Redefinir todo o código",
     "help": "Ajuda",
@@ -58,7 +60,7 @@
     "resubscribe": "Você pode clicar aqui para reassinar",
     "click-here": "Clique aqui para fazer login",
     "save": "Salvar",
-    "save-code": "Save your Code",
+    "save-code": "Salve seu código",
     "no-thanks": "Não, obrigado",
     "yes-please": "Sim",
     "update-email": "Atualizar meu e-mail",
@@ -68,8 +70,12 @@
     "ask-later": "Pergunte-me depois",
     "start-coding": "Comece a programar!",
     "go-to-settings": "Vá para as configurações para solicitar sua certificação",
-    "click-start-course": "Clique aqui para iniciar o curso",
-    "click-start-project": "Clique aqui para iniciar o projeto"
+    "click-start-course": "Iniciar o curso",
+    "click-start-project": "Iniciar o projeto",
+    "change-language": "Alterar idioma",
+    "cancel-change": "Cancelar alteração",
+    "resume-project": "Retomar projeto",
+    "start-project": "Iniciar o projeto"
   },
   "landing": {
     "big-heading-1": "Aprenda a programar — de graça.",
@@ -100,7 +106,7 @@
   },
   "settings": {
     "share-projects": "Compartilhe seus projetos que não sejam do freeCodeCamp, artigos ou pull requests aceitas.",
-    "privacy": "As configurações nesta seção permitem que você controle o que é mostrado no seu portfólio público do freeCodeCamp.",
+    "privacy": "As configurações nesta seção permitem que você controle o que é mostrado no seu portfólio público do freeCodeCamp. Pressione Save para salvar suas alterações.",
     "data": "Para ver quais dados mantemos sobre sua conta, clique no botão \"Baixar seus dados\" abaixo",
     "disabled": "Suas certificações serão desabilitadas ao configurar como privado.",
     "private-name": "Seu nome não aparecerá nas certificações, se isto estiver definido como privado.",
@@ -142,7 +148,8 @@
       "my-timeline": "Minha linha do tempo",
       "my-donations": "Minhas doações",
       "night-mode": "Modo noturno",
-      "sound-mode": "Modo fogueira"
+      "sound-mode": "Modo fogueira",
+      "keyboard-shortcuts": "Habilitar teclas de atalho"
     },
     "headings": {
       "certs": "Certificações",
@@ -268,6 +275,7 @@
     "solution-link": "Link da solução",
     "github-link": "Link do GitHub",
     "submit-and-go": "Enviar e ir para o meu próximo desafio",
+    "congratulations": "Parabéns, o seu código passa. Envie seu código para completar este passo e seguir para o próximo.",
     "i-completed": "Já completei este desafio",
     "test-output": "O resultado do seu código vai aparecer aqui",
     "running-tests": "// executando testes",
@@ -284,8 +292,7 @@
     "scrimba-tip": "Dica: se o minibrowser estiver cobrindo o código, clique e arraste para movê-lo. Além disso, sinta-se à vontade para parar e editar o código no vídeo a qualquer momento.",
     "chal-preview": "Pré-visualização do desafio",
     "cert-map-estimates": {
-      "certs": "Certificação {{title}} (300 horas)",
-      "coding-prep": "{{title}} (milhares de horas de desafios)"
+      "certs": "Certificação {{title}}"
     },
     "editor-tabs": {
       "info": "Informações",
@@ -294,6 +301,7 @@
       "restart": "Reiniciar",
       "restart-step": "Reiniciar etapa",
       "console": "Console",
+      "instructions": "Instruções",
       "notes": "Observações",
       "preview": "Pré-visualizar"
     },
@@ -305,7 +313,17 @@
     "step-2": "Etapa 2: Envie seu código",
     "submit-public-url": "Quando você tiver concluído o projeto, salve todos os arquivos necessários em um repositório público e envie abaixo o URL que aponta para ele.",
     "complete-both-steps": "Complete as duas etapas abaixo para terminar o desafio.",
-    "runs-in-vm": "O projeto é executado em uma máquina virtual. Complete as histórias de usuários descritas lá e passe em todos os testes para concluir a etapa 1."
+    "runs-in-vm": "O projeto é executado em uma máquina virtual. Complete as histórias de usuários descritas lá e passe em todos os testes para concluir a etapa 1.",
+    "completed": "Concluído",
+    "not-started": "Não iniciado",
+    "hint": "Dica",
+    "test": "Teste",
+    "sorry-try-again": "Desculpe, seu código não passou nos testes. Tente novamente.",
+    "sorry-keep-trying": "Desculpe, seu código não passou nos testes. Continue tentando.",
+    "sorry-getting-there": "Desculpe, seu código não passou nos testes. Você está chegando lá.",
+    "sorry-hang-in-there": "Desculpe, seu código não passou nos testes. Você está chegando lá.",
+    "sorry-dont-giveup": "Desculpe, seu código não passou nos testes. Não desista.",
+    "challenges-completed": "{{completedCount}} de {{totalChallenges}} desafios concluídos"
   },
   "donate": {
     "title": "Dê seu apoio à nossa organização sem fins lucrativos",
@@ -357,6 +375,7 @@
     "try-again": "Tente novamente.",
     "card-number": "Número do seu cartão:",
     "expiration": "Data de validade:",
+    "secure-donation": "Doação segura",
     "faq": "Perguntas frequentes",
     "only-you": "Só você pode ver esta mensagem. Parabéns por ganhar este certificado. Não é uma tarefa fácil. Manter o freeCodeCamp também não é fácil. Nem é barato. Ajude-nos a ajudar você e muitas outras pessoas ao redor do mundo. Faça uma dedução de impostos doando para nossa organização sem fins lucrativos hoje.",
     "get-help": "Como posso obter ajuda com minhas doações?",
@@ -440,24 +459,15 @@
     "donate": "Doar com PayPal",
     "fail": "Exame não concluído com sucesso",
     "not-passed": "Não aprovado",
+    "waiting": "Aguardando",
     "passed": "Aprovado",
+    "failed": "Falhou",
+    "hint": "Dica",
     "heart": "Coração",
     "initial": "Inicial",
     "info": "Informações introdutórias",
     "spacer": "Espaçador",
     "toggle": "Alternar marcação",
-    "responsive-design": "Ícone de celular e notebook",
-    "javascript": "Ícone do JavaScript",
-    "react": "Ícone do React",
-    "d3": "Ícone do D3",
-    "api": "Uma pilha de servidores",
-    "clipboard": "Uma prancheta com marca de verificação",
-    "python": "Ícone do Python",
-    "analytics": "Um gráfico de barras e um gráfico de linhas",
-    "shield": "Um escudo com marca de verificação",
-    "tensorflow": "Ícone do Tensorflow",
-    "database": "Ícone do banco de dados",
-    "algorithm": "Nós ramificados",
     "magnifier": "lupa"
   },
   "aria": {
@@ -472,7 +482,12 @@
     "next-page": "Ir para a próxima página",
     "last-page": "Ir para a última página",
     "primary-nav": "primário",
-    "breadcrumb-nav": "breadcrumb"
+    "breadcrumb-nav": "breadcrumb",
+    "submit": "Use Ctrl + Enter para enviar.",
+    "running-tests": "Executando testes",
+    "step": "Passo",
+    "steps": "Passos",
+    "steps-for": "Passos para {{blockTitle}}"
   },
   "flash": {
     "honest-first": "Para solicitar uma certificação, você precisa primeiro aceitar nossa política de honestidade acadêmica",
@@ -531,10 +546,12 @@
     "complete-project-first": "Você precisa completar o projeto primeiro.",
     "local-code-save-error": "Opa, seu código não salvou, o armazenamento local do seu navegador pode estar cheio.",
     "local-code-saved": "Salvo! Seu código foi salvo no armazenamento local do seu navegador.",
-    "code-saved": "Your code was saved to the database. It will be here when you return.",
-    "code-save-error": "An error occurred trying to save your code.",
-    "challenge-save-too-big": "Sorry, you cannot save your code. Your code is {{user-size}} bytes. We allow a maximum of {{max-size}} bytes. Please make your code smaller and try again or request assistance on https://forum.freecodecamp.org",
-    "challenge-submit-too-big": "Sorry, you cannot submit your code. Your code is {{user-size}} bytes. We allow a maximum of {{max-size}} bytes. Please make your code smaller and try again or request assistance on https://forum.freecodecamp.org"
+    "code-saved": "Seu código foi salvo no banco de dados. Ele estará aqui quando você voltar.",
+    "code-save-error": "Ocorreu um erro ao tentar salvar seu código.",
+    "code-save-less": "Devagar! O código não foi salvo. Tente novamente em alguns segundos.",
+    "challenge-save-too-big": "Não foi possível salvar seu código. Seu código tem {{user-size}} bytes. A capacidade é de, no máximo, {{max-size}} bytes. Diminua o tamanho do seu código e tente novamente ou peça assistência em https://forum.freecodecamp.org",
+    "challenge-submit-too-big": "Não foi possível enviar seu código. Seu código tem {{user-size}} bytes. É possível enviar, no máximo, {{max-size}} bytes. Diminua o tamanho do seu código e tente novamente ou peça assistência em https://forum.freecodecamp.org",
+    "invalid-update-flag": "Você está tentando acessar recursos proibidos. Solicite assistência em https://forum.freecodecamp.org se sua solicitação for válida."
   },
   "validation": {
     "max-characters": "Há um limite máximo de 288 caracteres, você tem {{charsLeft}} restante(s)",
@@ -676,5 +693,16 @@
     "delete-p3": "Você precisa criar um novo token para salvar seu progresso futuro nas seções de currículo que usam uma máquina virtual.",
     "no-thanks": "Não, obrigado. Eu gostaria de manter meu token",
     "yes-please": "Sim, eu gostaria de excluir meu token"
+  },
+  "shortcuts": {
+    "title": "Atalhos do teclado",
+    "table-header-action": "Ação",
+    "table-header-key": "Tecla(s)",
+    "navigation-mode": "Modo de navegação",
+    "execute-challenge": "Executar desafio",
+    "focus-editor": "Foco no editor",
+    "focus-instructions-panel": "Foco no painel de instruções",
+    "navigate-previous": "Navegar para o exercício anterior",
+    "navigate-next": "Navegar para o próximo exercício"
   }
 }

@@ -43,7 +43,7 @@ Cada uno de tus comentarios debe cerrarse con `-->`.
 assert(code.match(/[^fc]-->/g).length > 1);
 ```
 
-No debes cambiar el orden de los elementos `h1` `h2` o `p` en el código.
+No debes cambiar el orden de los elementos `h1`, `h2` o `p` en el código.
 
 ```js
 assert(

@@ -104,13 +104,13 @@ ctx.onmessage = async (e: TestEvaluatorEvent) => {
     try {
       // Logging is proxyed after the build to catch console.log messages
       // generated during testing.
-      testResult = eval(`${
+      testResult = (await eval(`${
         e.data?.removeComments ? removeJSComments(e.data.build) : e.data.build
       }
 __utils.flushLogs();
 __userCodeWasExecuted = true;
 __utils.toggleProxyLogger(true);
-${e.data.testString}`) as unknown;
+${e.data.testString}`)) as unknown;
     } catch (err) {
       if (__userCodeWasExecuted) {
         // rethrow error, since test failed.

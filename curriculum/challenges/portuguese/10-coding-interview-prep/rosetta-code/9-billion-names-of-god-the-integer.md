@@ -8,7 +8,7 @@ dashedName: 9-billion-names-of-god-the-integer
 
 # --description--
 
-Esta tarefa é uma variação do [conto escrito por Arthur C. Clarke](https://en.wikipedia.org/wiki/The Nine Billion Names of God#Plot_summary "wp: The Nine Billion Names of God#Plot_summary").
+Esta tarefa é uma variação de um conto de Arthur C. Clarke.
 
 (Quem chegar à solução deve estar ciente das consequências de concluir esta tarefa.)
 

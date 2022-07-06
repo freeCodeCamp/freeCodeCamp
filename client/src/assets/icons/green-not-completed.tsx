@@ -1,20 +1,27 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-function GreenNotCompleted(
-  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
-): JSX.Element {
-  const { t } = useTranslation();
+interface GreenNotCompletedProps
+  extends JSX.IntrinsicAttributes,
+    React.SVGProps<SVGSVGElement> {
+  hushScreenReaderText?: boolean;
+}
 
+function GreenNotCompleted(props: GreenNotCompletedProps): JSX.Element {
+  const { t } = useTranslation();
+  const { hushScreenReaderText = false, ...rest } = props;
   return (
     <>
-      <span className='sr-only'>{t('icons.not-passed')}</span>
+      {!hushScreenReaderText && (
+        <span className='sr-only'>{t('icons.not-passed')}</span>
+      )}
       <svg
+        aria-hidden='true'
         height='50'
         viewBox='0 0 200 200'
         width='50'
         xmlns='http://www.w3.org/2000/svg'
-        {...props}
+        {...rest}
       >
         <g>
           <title>{t('icons.not-passed')}</title>

@@ -16,7 +16,9 @@ dashedName: problem-244-sliders
 
 Для кожного шляху його контрольна сума обчислюється так (псевдокод):
 
-$$\begin{align} & \text{checksum} = 0 \\\\ & \text{checksum} = (\text{checksum} × 243 + m_1) \\; \text{mod} \\; 100\\,000\\,007 \\\\ & \text{checksum} = (\text{checksum} × 243 + m_2) \\; \text{mod} \\; 100\\,000\\,007 \\\\ & \ldots \\\\ & \text{checksum} = (\text{checksum} × 243 + m_n) \\; \text{mod} \\; 100\\,000\\,007 \end{align}$$
+$$\begin{align}   & \text{checksum} = 0 \\\\
+  & \text{checksum} = (\text{checksum} × 243 + m_1) \\; \text{mod} \\; 100\\,000\\,007 \\\\   & \text{checksum} = (\text{checksum} × 243 + m_2) \\; \text{mod} \\; 100\\,000\\,007 \\\\
+  & \ldots \\\\ & \text{checksum} = (\text{checksum} × 243 + m_n) \\; \text{mod} \\; 100\\,000\\,007 \end{align}$$
 
 де $m_k$ — ASCII код букви $k^{\text{th}}$ в послідовності ходів. Ось ASCII коди для ходів:
 

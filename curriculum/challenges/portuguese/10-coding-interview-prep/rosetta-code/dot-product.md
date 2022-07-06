@@ -8,7 +8,7 @@ dashedName: dot-product
 
 # --description--
 
-Crie uma função, para calcular o **[Produto escalar](https://en.wikipedia.org/wiki/Dot product)**, também conhecido como **produto interno** entre dois vetores.
+Crie uma função, para calcular o **produto escalar**, também conhecido como **produto interno** entre dois vetores.
 
 # --hints--
 

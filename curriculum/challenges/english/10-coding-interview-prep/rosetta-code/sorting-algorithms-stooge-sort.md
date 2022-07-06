@@ -8,7 +8,7 @@ dashedName: sorting-algorithmsstooge-sort
 
 # --description--
 
-Write a function to perform [Stooge Sort](<https://en.wikipedia.org/wiki/Stooge sort>) on an array of integers. The function should return a sorted array.
+Write a function to perform Stooge Sort on an array of integers. The function should return a sorted array.
 
 The Stooge Sort algorithm is as follows:
 

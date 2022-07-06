@@ -1,4 +1,4 @@
-name: Node.js CI - Test Upcoming
+name: CI - Node.js Test Upcoming
 on:
   push:
     branches:
@@ -9,6 +9,10 @@ on:
     # run this Action every 14 days
     - cron: '0 * */14 * *'
   workflow_dispatch:
+
+permissions:
+  contents: read
+
 jobs:
   lint:
     name: Lint
@@ -21,10 +25,10 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@v3
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@eeb10cff27034e7acf239c5d29f62154018672fd # tag=v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
@@ -40,6 +44,8 @@ jobs:
         run: |
           npm ci
           npm run create:config
+          npm i --prefix=curriculum-server
+          npm i --prefix=web
           npm run build:curriculum
           npm run lint
 
@@ -55,13 +61,12 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@v3
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@eeb10cff27034e7acf239c5d29f62154018672fd # tag=v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: npm
 
       - name: Set Environment variables
         run: |

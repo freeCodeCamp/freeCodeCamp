@@ -88,8 +88,10 @@ describe('project submission', () => {
 
             solutions.forEach(files => {
               files.forEach(({ contents }) => {
-                cy.get(selectors.editor).as('editor');
-                cy.get('@editor').click().focused().type('{ctrl+a}{del}');
+                cy.get(selectors.editor, { timeout: 16000 })
+                  .click()
+                  .focused()
+                  .type('{ctrl+a}{del}');
                 // NOTE: clipboard operations are flaky in watch mode, because
                 // the document can lose focus
                 cy.window()
@@ -98,7 +100,7 @@ describe('project submission', () => {
                 cy.document().invoke('execCommand', 'paste');
                 cy.contains('Run the Tests').click();
                 cy.contains('Submit and go to next challenge', {
-                  timeout: 8000
+                  timeout: 16000
                 }).click();
                 cy.contains(textInNextPage[i]);
               });
@@ -118,8 +120,7 @@ describe('project submission', () => {
 
         // Claim and view solutions on certification page
 
-        cy.toggleAll();
-        cy.visit('/settings');
+        cy.setPrivacyTogglesToPublic();
         cy.get(
           `a[href="/certification/developmentuser/${projectsInOrder[0]?.superBlock}"]`
         ).click();
@@ -132,6 +133,54 @@ describe('project submission', () => {
           cy.contains('Solution for');
           cy.contains('Close').click();
         });
+      });
+    }
+  );
+
+  it(
+    'Ctrl + enter triggers the completion modal on multifile projects',
+    { browser: 'electron' },
+    () => {
+      cy.fixture('../../config/curriculum.json').then(curriculum => {
+        const targetBlock = 'build-a-personal-portfolio-webpage-project';
+        const portfolioBlock = Object.values(curriculum).filter(
+          ({ blocks }) => blocks[targetBlock]
+        )[0];
+        const { challenges, meta } = portfolioBlock.blocks[targetBlock];
+
+        const projectTitle = meta.challengeOrder[0][1];
+        const { block, superBlock, dashedName, solutions } = challenges.find(
+          ({ title }) => title === projectTitle
+        );
+
+        const url = `/learn/${superBlock}/${block}/${dashedName}`;
+        cy.visit(url);
+
+        solutions[0].forEach(({ contents, fileKey }) => {
+          const tabSelector = `[data-cy=editor-tab-${fileKey}]`;
+          if (fileKey !== 'indexhtml') {
+            cy.get(tabSelector).click();
+          }
+          const editorContainerSelector = `[data-cy=editor-container-${fileKey}]`;
+          cy.get(editorContainerSelector, { timeout: 16000 })
+            .find(selectors.editor, { timeout: 16000 })
+            .click()
+            .focused()
+            .type('{ctrl+a}{del}');
+          // NOTE: clipboard operations are flaky in watch mode, because
+          // the document can lose focus
+          cy.window().its('navigator.clipboard').invoke('writeText', contents);
+          cy.document().invoke('execCommand', 'paste');
+        });
+
+        cy.get('[data-cy=editor-container-indexhtml', { timeout: 16000 })
+          .find(selectors.editor, { timeout: 16000 })
+          .click()
+          .focused()
+          .type('{ctrl+enter}');
+        // check the modal exists
+        cy.contains('Submit and go to next challenge');
+        cy.contains('Download my solution');
       });
     }
   );

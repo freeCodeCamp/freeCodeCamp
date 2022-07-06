@@ -1,9 +1,7 @@
-import path from 'path';
-
 export function getProjectPath(): string {
-  return (process.env.CALLING_DIR || process.cwd()) + path.sep;
+  return (process.env.CALLING_DIR || process.cwd()) + '/';
 }
 
 export function getProjectName(): string {
-  return getProjectPath().split(path.sep).slice(-2)[0];
+  return getProjectPath().split('/').slice(-2)[0];
 }

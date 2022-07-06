@@ -24,7 +24,7 @@ if (val === 1) {
 これは次のように置き換えることができます。
 
 ```js
-switch(val) {
+switch (val) {
   case 1:
     answer = "a";
     break;
@@ -136,7 +136,7 @@ chainToSwitch(7);
 function chainToSwitch(val) {
   let answer = "";
 
-  switch(val) {
+  switch (val) {
     case "bob":
       answer = "Marley";
       break;

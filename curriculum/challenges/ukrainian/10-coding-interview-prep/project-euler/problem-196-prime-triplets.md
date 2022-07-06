@@ -10,7 +10,13 @@ dashedName: problem-196-prime-triplets
 
 Побудуйте трикутник з усіх додатних чисел наступним чином:
 
-$$\begin{array}{rrr} &  1 \\\\ &  \color{red}{2} &  \color{red}{3} \\\\ &  4 & \color{red}{5} &  6 \\\\ &  \color{red}{7} &  8 &  9 & 10 \\\\ & \color{red}{11} & 12 & \color{red}{13} & 14 & 15  \\\\ & 16 & \color{red}{17} & 18 & \color{red}{19} & 20 & 21 \\\\ & 22 & \color{red}{23} & 24 & 25 & 26 & 27 & 28 \\\\ & \color{red}{29} & 30 & \color{red}{31} & 32 & 33 & 34 & 35 & 36 \\\\ & \color{red}{37} & 38 & 39 & 40 & \color{red}{41} & 42 & \color{red}{43} & 44 & 45 \\\\ & 46 & \color{red}{47} & 48 & 49 & 50 & 51 & 52 & \color{red}{53} & 54 & 55 \\\\ & 56 & 57 & 58 & \color{red}{59} & 60 & \color{red}{61} & 62 & 63 & 64 & 65 & 66 \\\\ & \cdots \end{array}$$
+$$\begin{array}{rrr}   &  1 \\\\
+  &  \color{red}{2} &  \color{red}{3} \\\\   &  4 & \color{red}{5} &  6 \\\\
+  &  \color{red}{7} &  8 &  9 & 10 \\\\   & \color{red}{11} & 12 & \color{red}{13} & 14 & 15  \\\\
+  & 16 & \color{red}{17} & 18 & \color{red}{19} & 20 & 21 \\\\   & 22 & \color{red}{23} & 24 & 25 & 26 & 27 & 28 \\\\
+  & \color{red}{29} & 30 & \color{red}{31} & 32 & 33 & 34 & 35 & 36 \\\\   & \color{red}{37} & 38 & 39 & 40 & \color{red}{41} & 42 & \color{red}{43} & 44 & 45 \\\\
+  & 46 & \color{red}{47} & 48 & 49 & 50 & 51 & 52 & \color{red}{53} & 54 & 55 \\\\   & 56 & 57 & 58 & \color{red}{59} & 60 & \color{red}{61} & 62 & 63 & 64 & 65 & 66 \\\\
+  & \cdots \end{array}$$
 
 У трикутнику біля кожного додатного числа є ще до восьми чисел.
 

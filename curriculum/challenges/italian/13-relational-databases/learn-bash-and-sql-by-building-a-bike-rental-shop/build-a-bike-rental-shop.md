@@ -9,7 +9,7 @@ dashedName: build-a-bike-rental-shop
 
 # --description--
 
-In questo corso da 210 lezioni, costruirai un programma Bash interattivo che immagazzina informazioni per il tuo negozio di noleggio biciclette che usa PostgresSQL.
+In questo corso da 210 lezioni, costruirai un programma Bash interattivo che immagazzina informazioni per il tuo negozio di noleggio biciclette che usa PostgreSQL.
 
 # --instructions--
 

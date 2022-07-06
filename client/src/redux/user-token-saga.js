@@ -17,12 +17,9 @@ const message = {
 
 function* deleteUserTokenSaga() {
   try {
-    const response = yield call(deleteUserToken);
+    const { data } = yield call(deleteUserToken);
 
-    if (
-      response &&
-      Object.prototype.hasOwnProperty.call(response, 'userToken')
-    ) {
+    if (data && Object.prototype.hasOwnProperty.call(data, 'userToken')) {
       yield put(deleteUserTokenComplete());
       yield put(createFlashMessage(message.deleted));
     } else {

@@ -8,7 +8,13 @@ dashedName: discordian-date
 
 # --description--
 
-Converta uma data fornecida do [Calendário Gregoriano](https://en.wikipedia.org/wiki/Gregorian calendar "wp: Gregorian calendar") para o [Calendário Discordiano](https://en.wikipedia.org/wiki/Discordian calendar "wp: Discordian calendar").
+O calendário gregoriano é um calendário solar com 12 meses de 28 a 31 dias cada. O ano nos calendários consiste em 365 dias. com um dia a mais adicionado em fevereiro nos anos bissextos, à exceção de três anos que fecham um século a cada 400 anos.
+
+O calendário discordiano está alinhado ao calendário gregoriano e começa em 1º de janeiro. A sua semana consiste em cinco dias, com 73 semanas por ano. A cada quatro anos no calendário discordiano, um dia extra é inserido entre caos 59 e caos 60
+
+Observe que, no calendário discordiano 1º do caos de 3188 YOLD é equivalente a 1º de janeiro de 2022 no calendário gregoriano.
+
+Converta uma determinada data do calendário gregoriano para o calendário discordiano.
 
 # --hints--
 

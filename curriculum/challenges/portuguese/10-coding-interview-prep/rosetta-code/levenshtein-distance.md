@@ -8,7 +8,7 @@ dashedName: levenshtein-distance
 
 # --description--
 
-Em teoria da informação e em ciência da computação, a **distância de Levenshtein** é uma [medida](https://en.wikipedia.org/wiki/string metric) para estimar o valor da diferença entre duas sequências (ou seja, uma [distância de edição](https://en.wikipedia.org/wiki/edit distance)). A distância de Levenshtein entre duas strings é definida como o número mínimo de edições necessárias para transformar uma sequência de caracteres em outra, com as operações de edição permitidas sendo inserção, exclusão ou substituição de um único caractere.
+Em teoria da informação e em ciência da computação, a **distância de Levenshtein** é uma métrica para medir a quantidade de diferença entre duas sequências (ou seja, uma distância de edição). A distância de Levenshtein entre duas strings é definida como o número mínimo de edições necessárias para transformar uma sequência de caracteres em outra, com as operações de edição permitidas sendo inserção, exclusão ou substituição de um único caractere.
 
 Exemplo:
 

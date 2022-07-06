@@ -8,7 +8,7 @@ dashedName: sorting-algorithmsbogosort
 
 # --description--
 
-Faça o [Bogosort](https://en.wikipedia.org/wiki/Bogosort) de uma lista de números.
+Faça a ordenação Bogosort de uma lista de números.
 
 O Bogosort simplesmente embaralha uma coleção aleatoriamente até que ela fica ordenada.
 

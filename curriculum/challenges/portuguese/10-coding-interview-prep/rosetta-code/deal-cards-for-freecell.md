@@ -8,11 +8,11 @@ dashedName: deal-cards-for-freecell
 
 # --description--
 
-O *FreeCell* é o jogo de cartas de paciência que Paul Alfille introduziu no sistema PLATO, em 1978. Jim Horne, na Microsoft, mudou o nome para FreeCell e reimplementou o jogo para o [DOS](https://rosettacode.org/wiki/DOS "DOS") e, posteriormente, para o [Windows](https://rosettacode.org/wiki/Windows "Windows"). A versão do Windows apresentava 32 mil distribuições numeradas.
+O *FreeCell* é o jogo de cartas de paciência que Paul Alfille introduziu no sistema PLATO, em 1978. Jim Horne, da Microsoft, mudou o nome para FreeCell e implementou novamente o jogo no DOS e depois no Windows. A versão do Windows apresentava 32 mil distribuições numeradas.
 
 À medida que o jogo se tornou popular, Jim Horne revelou o algoritmo, e outras implementações do FreeCell começaram a reproduzir as distribuições de cartas da versão da Microsoft. Estas distribuições eram numeradas de 1 a 32000. As versões mais recentes da Microsoft têm 1 milhão de distribuições, numeradas de 1 a 1000000. Algumas implementações permitem números fora desse intervalo.
 
-O algoritmo usa este [gerador de congruência linear](https://rosettacode.org/wiki/linear congruential generator "linear congruential generator") de Microsoft C:
+O algoritmo usa o gerador de congruência linear do C da Microsoft:
 
 <ul>
   <li>$state_{n + 1} \equiv 214013 \times state_n + 2531011 \pmod{2^{31}}$</li>
@@ -24,7 +24,7 @@ Segue o algoritmo:
 
 <ol>
   <li>Faça o seed do RNG (intervalo) com o número da distribuição.
-  </li><li>Crie um <a href='https://rosettacode.org/wiki/array' title='array' target='_blank'>array</a> de 52 cartas: Ás de Paus, Ás de Ouro, Ás de Copas, Ás de Espadas, 2 de Paus, 2 de Ouro, e assim por diante: Ás, 2, 3, 4, 5, 6, 7, 8, 9, 10, Valete, Rainha, Rei. Os índices do array vão de 0 a 51, estando o Ás de Paus no índice 0 e o Rei de Espadas no índice 51.</li>
+  </li><li>Crie um array de 52 cartas: Ás de Paus, Ás de Ouro, Ás de Copas, Ás de Espadas, 2 de Paus, 2 de Ouro, e assim por diante: Ás, 2, 3, 4, 5, 6, 7, 8, 9, 10, Valete, Rainha, Rei. Os índices do array vão de 0 a 51, estando o Ás de Paus no índice 0 e o Rei de Espadas no índice 51.</li>
   <li>Até que o array esteja vazio:</li>
   <li>Escolha uma carta aleatória no índice ≡ próximo número aleatório (tamanho do array mod).</li>
     <ul>
@@ -78,8 +78,6 @@ Segue o algoritmo:
 # --instructions--
 
 Escreva uma função para receber um número de distribuição e distribuir as cartas na mesma ordem que se encontram neste algoritmo. A função deve retornar um array bidimensional representando a mesa de Freecell.
-
-As distribuições também podem ser verificadas comparando-as às [soluções do FreeCell para 1.000.000 de jogos](https://freecellgamesolutions.com/). (Chame uma das solução por vídeo e ela mostra a distribuição inicial.)
 
 # --hints--
 

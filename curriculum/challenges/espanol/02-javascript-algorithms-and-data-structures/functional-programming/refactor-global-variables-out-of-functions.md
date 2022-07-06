@@ -28,6 +28,7 @@ Reescribe el código para que el arreglo global `bookList` no sea cambiado dentr
 
 ```js
 add(bookList, "Test");
+remove(bookList, "The Hound of the Baskervilles");
 assert(
   JSON.stringify(bookList) ===
     JSON.stringify([

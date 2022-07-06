@@ -14,7 +14,8 @@ Um dado de 6 lados é lançado $n$ vezes. Considere $c$ como o número de pares 
 
 Por exemplo, se $n = 7$ e os valores dos lançamentos dos dados são (1, 1, 5, 6, 6, 6, 3), os seguintes pares de lançamentos consecutivos dão o mesmo valor:
 
-$$\begin{align} & (\underline{1}, \underline{1}, 5, 6, 6, 6, 3) \\\\ & (1, 1, 5, \underline{6}, \underline{6}, 6, 3) \\\\ & (1, 1, 5, 6, \underline{6}, \underline{6}, 3) \end{align}$$
+$$\begin{align}   & (\underline{1}, \underline{1}, 5, 6, 6, 6, 3) \\\\
+  & (1, 1, 5, \underline{6}, \underline{6}, 6, 3) \\\\ & (1, 1, 5, 6, \underline{6}, \underline{6}, 3) \end{align}$$
 
 Portanto, $c = 3$ para (1, 1, 5, 6, 6, 6, 3).
 

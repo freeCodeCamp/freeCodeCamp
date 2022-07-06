@@ -69,12 +69,18 @@ describe('getMetaData helper', () => {
   it('should throw if file is not found', () => {
     process.env.CALLING_DIR =
       'curriculum/challenges/english/superblock/mick-priject';
+
+    const errorPath = path.join(
+      'curriculum',
+      'challenges',
+      '_meta',
+      'mick-priject',
+      'meta.json'
+    );
     expect(() => {
       getMetaData();
     }).toThrowError(
-      new Error(
-        `ENOENT: no such file or directory, open 'curriculum/challenges/_meta/mick-priject/meta.json'`
-      )
+      new Error(`ENOENT: no such file or directory, open '${errorPath}'`)
     );
   });
 

@@ -10,7 +10,9 @@ dashedName: problem-376-nontransitive-sets-of-dice
 
 Considere o seguinte conjunto de dados com valores fora do padrão de 1 a 6:
 
-$$\begin{array}{} \text{Die A: } & 1 & 4 & 4 & 4 & 4 & 4 \\\\ \text{Die B: } & 2 & 2 & 2 & 5 & 5 & 5 \\\\ \text{Die C: } & 3 & 3 & 3 & 3 & 3 & 6 \\\\ \end{array}$$
+$$\begin{array}{}   \text{Die A: } & 1 & 4 & 4 & 4 & 4 & 4 \\\\
+  \text{Die B: } & 2 & 2 & 2 & 5 & 5 & 5 \\\\   \text{Die C: } & 3 & 3 & 3 & 3 & 3 & 6 \\\\
+\end{array}$$
 
 Um jogo é disputado por dois jogadores que escolhem um dado por vez e o rolam. O jogador que rolar nos dados o maior valor ganha.
 

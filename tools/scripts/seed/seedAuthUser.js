@@ -84,7 +84,8 @@ const authUser = {
   },
   isDonating: envVariables.includes('--donor'),
   emailAuthLinkTTL: null,
-  emailVerifyTTL: null
+  emailVerifyTTL: null,
+  keyboardShortcuts: false
 };
 
 const blankUser = {

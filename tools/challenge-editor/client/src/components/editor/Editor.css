@@ -1,0 +1,17 @@
+textarea {
+  display: block;
+  margin: auto;
+  width: 500px;
+  max-width: 100vw;
+  height: 500px;
+}
+
+.react-codemirror2 {
+  max-width: 80vw;
+  margin: auto;
+  text-align: left;
+}
+
+.CodeMirror {
+  height: 70vh;
+}

@@ -8,7 +8,7 @@ dashedName: count-the-coins
 
 # --description--
 
-There are four types of common coins in [US](https://en.wikipedia.org/wiki/United_States) currency:
+There are four types of common coins in US currency:
 
 <ul>
   <li>quarters (25 cents)</li>

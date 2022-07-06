@@ -19,7 +19,7 @@ export type FormOptions = {
   placeholders?: { [key: string]: string };
 };
 
-type FormProps = {
+export type FormProps = {
   buttonText?: string;
   enableSubmit?: boolean;
   formFields: { name: string; label: string }[];

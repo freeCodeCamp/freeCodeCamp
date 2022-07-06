@@ -10,11 +10,13 @@ dashedName: problem-330-eulers-number
 
 Uma sequência infinita de números reais $a(n)$ é definida para todos os números inteiros $n$ da seguinte forma:
 
-$$ a(n) = \begin{cases} 1                                                       & n < 0 \\\\ \displaystyle \sum_{i = 1}^{\infty} \frac{a(n - 1)}{i!} & n \ge 0 \end{cases} $$
+$$ a(n) = \begin{cases} 1                                                       & n < 0 \\\\
+\displaystyle \sum_{i = 1}^{\infty} \frac{a(n - 1)}{i!} & n \ge 0 \end{cases} $$
 
 Por exemplo:
 
-$$\begin{align} & a(0) = \frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \ldots = e − 1 \\\\ & a(1) = \frac{e − 1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \ldots = 2e − 3 \\\\ & a(2) = \frac{2e − 3}{1!} + \frac{e − 1}{2!} + \frac{1}{3!} + \ldots = \frac{7}{2} e − 6 \end{align}$$
+$$\begin{align}   & a(0) = \frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \ldots = e − 1 \\\\
+  & a(1) = \frac{e − 1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \ldots = 2e − 3 \\\\ & a(2) = \frac{2e − 3}{1!} + \frac{e − 1}{2!} + \frac{1}{3!} + \ldots = \frac{7}{2} e − 6 \end{align}$$
 
 com $e = 2.7182818\ldots$ sendo a constante de Euler.
 

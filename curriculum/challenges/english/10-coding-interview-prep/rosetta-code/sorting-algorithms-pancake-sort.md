@@ -8,7 +8,7 @@ dashedName: sorting-algorithmspancake-sort
 
 # --description--
 
-Write a function to sort an array of integers (of any convenient size) into ascending order using [Pancake sorting](<https://en.wikipedia.org/wiki/Pancake sorting>). The function should return the sorted array.
+Write a function to sort an array of integers (of any convenient size) into ascending order using Pancake sorting. The function should return the sorted array.
 
 In short, instead of individual elements being sorted, the only operation allowed is to "flip" one end of the list, like so:
 

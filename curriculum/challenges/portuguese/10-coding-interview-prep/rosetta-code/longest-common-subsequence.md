@@ -8,21 +8,15 @@ dashedName: longest-common-subsequence
 
 # --description--
 
-A **maior subsequência comum** (ou [**LCS**](http://en.wikipedia.org/wiki/Longest_common_subsequence_problem)) dos grupos A e B é o maior grupo de elementos de A e de B que são comuns entre os dois grupos e na mesma ordem em cada grupo. Por exemplo, as sequências "1234" e "1224533324" têm um LCS de "1234":
+A **maior subsequência comum** (ou **LCS**) dos grupos A e B é o maior grupo de elementos de A e de B que são comuns entre os dois grupos e na mesma ordem em cada grupo. Por exemplo, as sequências `1234` e `1224533324` têm um LCS de `1234`:<u>1234</u>
+<u>12</u>245<u>3</u>332<u>4</u>
 
-***1234***
+Para um exemplo em string, considere as sequências `thisisatest`e `testing123testing`. Um LCS seria `tsitest`:
+<u>t</u>hi<u>si</u>sa<u>test</u>
 
-***12***245***3***332***4***
-
-Para um exemplo em string, considere as sequências "thisisatest" e "testing123testing". Uma LCS seria "tsitest":
-
-***t***hi***si***sa***test***
-
-***t***e***s***t***i***ng123***test***ing.
+<u>t</u>e<u>s</u>t<u>i</u>ng123<u>test</u>ing.
 
 O código só precisa lidar com strings.
-
-Para obter mais informações sobre esse problema, consulte a [Wikipedia](https://en.wikipedia.org/wiki/Longest_common_subsequence_problem).
 
 # --instructions--
 

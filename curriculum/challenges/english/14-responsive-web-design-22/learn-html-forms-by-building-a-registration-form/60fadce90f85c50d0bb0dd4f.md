@@ -7,20 +7,14 @@ dashedName: step-41
 
 # --description--
 
-To give the `fieldset` elements a bit of separation, select all but the last `fieldset` element, and give them a `border-bottom` of `3px solid #3b3b4f`.
+To give the `fieldset` elements a bit of separation, select them and give them a `border-bottom` of `3px solid #3b3b4f`.
 
 # --hints--
-
-You can use the `:not(:last-of-type)` pseudo-class to select all but the last element.
-
-```js
-assert.exists(new __helpers.CSSHelp(document).getStyle('fieldset:not(:last-of-type)'));
-```
 
 You should give the `fieldset` elements a `border-bottom` of `3px solid #3b3b4f`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('fieldset:not(:last-of-type)')?.borderBottom, '3px solid rgb(59, 59, 79)');
+assert.equal(new __helpers.CSSHelp(document).getStyle('fieldset')?.borderBottom, '3px solid rgb(59, 59, 79)');
 ```
 
 # --seed--
@@ -32,12 +26,12 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('fieldset:not(:last-of-typ
 <html>
   <head>
     <title>Registration Form</title>
-	  <link rel="stylesheet" type="text/css" href="styles.css" />
+	  <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <h1>Registration Form</h1>
     <p>Please fill out this form with the required information</p>
-    <form action='https://fcc-registration-form.com'>
+    <form action='https://register-demo.freecodecamp.org'>
       <fieldset>
         <label>Enter Your First Name: <input type="text" name="first-name" required /></label>
         <label>Enter Your Last Name: <input type="text" name="last-name" required /></label>
@@ -97,13 +91,11 @@ form {
 	margin: 0 auto;
 }
 
+--fcc-editable-region--
 fieldset {
   border: none;
 	padding: 2rem 0;
 }
-
---fcc-editable-region--
-
 --fcc-editable-region--
 
 label {

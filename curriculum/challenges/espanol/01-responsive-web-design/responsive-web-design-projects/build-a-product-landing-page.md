@@ -1,55 +1,467 @@
 ---
 id: 587d78af367417b2b2512b04
 title: Construye una página de aterrizaje de producto
-challengeType: 3
+challengeType: 14
 forumTopicId: 301144
 dashedName: build-a-product-landing-page
 ---
 
 # --description--
 
-**Objetivo:** Construye una aplicación en [CodePen.io](https://codepen.io) que funcionalmente sea similar a esta: <https://codepen.io/freeCodeCamp/full/RKRbwL>.
+**Objetivo:** Construir una aplicación que su funcionamiento sea similar a <a href="https://product-landing-page.freecodecamp.rocks" target="_blank">ttps://product-landing-page.freecodecamp.rocks</a>
 
-Completa las siguientes [historias de usuario](https://es.wikipedia.org/wiki/Historias_de_usuario) y consigue aprobar todos los tests. Dale tu propio estilo personal.
+**Historias de usuario:**
 
-Puedes usar HTML, JavaScript y CSS para completar este proyecto. Se recomienda usar CSS puro porque eso es lo que las lecciones han cubierto hasta ahora y debes practicar un poco con él. Puedes usar Bootstrap o SASS si lo deseas. Tecnologías adicionales (por ejemplo, jQuery, React, Angular o Vue) no se recomiendan para este proyecto, y usarlas es bajo tu propio riesgo. Otros proyectos te darán la oportunidad de trabajar con diferentes stacks de tecnologías como React. Aceptaremos e intentaremos solucionar todos los informes de incidencias que utilicen el stack de tecnología sugerido para este proyecto. ¡Feliz día programando!
+1. Tu página de inicio del producto debe tener un elemento `header` con el correspondiente `id="header"`
+1. Puedes ver una imagen dentro del elemento `header` con el correspondiente `id="header-img"` (Un logotipo sería una buena imagen aquí)
+1. Dentro del elemento `#header` puedes ver un elemento `nav` con el correspondiente `id="nav-bar"`
+1. Puedes ver al menos tres elementos que se puede hacer clic dentro del elemento `nav`, cada uno con la clase `nav-link`
+1. Cuando haces clic en un botón `.nav-link` en el elemento `nav` se te llevará a la sección correspondiente de la página de inicio
+1. Puedes ver un vídeo de producto incrustado con `id="video"`
+1. Tu página de inicio tiene un elemento `form` con un `id="form"` correspondiente
+1. Dentro del formulario, hay un campo `input` con `id="email"`, donde puedes ingresar tu correo electrónico
+1. El campo de entrada `#email` debe tener un marcador de texto para que los usuarios sepan para qué sirve este campo
+1. El campo de entrada `#email` usa validación HTML5 para confirmar que el texto ingresado sea una dirección de email
+1. Dentro del formulario, hay un `input` de tipo submit (enviar) con su correspondiente `id="submit"`
+1. Cuando haces clic en el elemento `#submit`, el email es enviado a una página web (Utiliza esta URL de pruebas: `https://www.freecodecamp.com/email-submit`)
+1. La barra de navegación siempre debe estar en la parte superior del viewport
+1. Tu página de inicio de producto debe tener al menos una consulta de medios
+1. Tu página de inicio de producto debe utillizar el flexbox CSS al menos una vez
 
-**Historia de Usuario #1:** Mi página de aterrizaje de producto debería tener un elemento `header` con un respectivo `id="header"`.
+Completa las historias de usuario y pasa todas las pruebas a continuación para completar este proyecto. Dale tu propio estilo personal. ¡Feliz día programando!
 
-**Historia de Usuario #2:** Puedo ver una imagen dentro del elemento `header` con un respectivo `id="header-img"`. El logotipo de una empresa sería una buena opción de imagen aquí.
+**Nota:** Asegúrete de agregar `<link rel="stylesheet" href="styles.css">` en tu HTML para enlazar tu hoja de estilos y aplicar tu CSS
 
-**Historia de Usuario #3:** Dentro del elemento `#header` puedo ver un elemento `nav` con un respectivo `id="nav-bar"`.
+# --hints--
 
-**Historia de Usuario #4:** Puedo ver al menos tres elementos en los que se puede hacer click dentro del elemento `nav`, cada uno con la clase `nav-link`.
+Debes tener un elemento `header` con un `id` de `header`
 
-**Historia de Usuario #5:** Cuando hago clic en un botón `.nav-link` en el elemento `nav`, soy llevado a la sección correspondiente de la página de aterrizaje.
+```js
+const el = document.getElementById('header')
+assert(!!el && el.tagName === 'HEADER')
+```
 
-**Historia de Usuario #6:** Puedo ver un video de producto incrustado con `id="video"`.
+Debes tener un elemento `img` con un `id` de `header-img`
 
-**Historia de usuario #8:** Mi página de aterrizaje tiene un elemento `form` con un respectivo `id="form"`.
+```js
+const el = document.getElementById('header-img')
+assert(!!el && el.tagName === 'IMG')
+```
 
-**Historia de Usuario #8:** Dentro del formulario, hay un campo de entrada `input` con `id="email"` donde puedo introducir una dirección de correo electrónico.
+Tú `#header-img` debe ser un descendiente de `#header`
 
-**Historia de Usuario #9:** El campo de entrada `#email` debe tener un texto provisional para que el usuario sepa para qué sirve el campo.
+```js
+const els = document.querySelectorAll('#header #header-img')
+assert(els.length > 0)
+```
 
-**Historia de Usuario #10:** El campo de entrada `#email` utiliza la validación de HTML5 para confirmar que el texto introducido es una dirección de correo electrónico.
+Tú `#header-img` debe tener un atributo `src`
 
-**Historia de Usuario #11:** Dentro del formulario, hay un `input` de envío con un respectivo `id="submit"`.
+```js
+const el = document.getElementById('header-img')
+assert(!!el && !!el.src)
+```
 
-**Historia de Usuario #12:** Cuando hago clic en el elemento `#submit`, el correo electrónico se envía a una página estática (utiliza esta URL de pruebas: [https://www. reecodecamp.com/email-submit](https://www.freecodecamp.com/email-submit)).
+El valor de tú `#header-img` `src` debe ser una URL válida (comienza con `http`)
 
-**Historia de Usuario #13:** La barra de navegación debe estar siempre en la parte superior del viewport.
+```js
+const el = document.getElementById('header-img')
+assert(!!el && /^http/.test(el.src))
+```
 
-**Historia de Usuario #14:** Mi página de aterrizaje de producto debería tener al menos una media query.
+Debes tener un elemento `nav` con un `id` de `nav-bar`
 
-**Historia de Usuario #15:** Mi página de aterrizaje de producto debería utilizar CSS flexbox al menos una vez.
+```js
+const el = document.getElementById('nav-bar')
+assert(!!el && el.tagName === 'NAV')
+```
 
-Puedes construir tu proyecto usando <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>esta plantilla CodePen</a> y haciendo clic en `Save` para crear tu propio pen. O puedes utilizar este enlace CDN para ejecutar los tests en cualquier entorno que desees: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+Tú `#nav-bar` debe ser un descendiente de `#header`
 
-Una vez que hayas terminado, envía la URL de tu proyecto funcional con todos los tests aprobados.
+```js
+const els = document.querySelectorAll('#header #nav-bar')
+assert(els.length > 0)
+```
 
-# --solutions--
+Debes tener al menos tres elementos `.nav-link` dentro de el `#nav-bar`
+
+```js
+const els = document.querySelectorAll('#nav-bar .nav-link')
+assert(els.length >= 3)
+```
+
+Cada elemento `.nav-link` debe tener un atributo `href`
+
+```js
+const els = document.querySelectorAll('.nav-link')
+els.forEach(el => {
+  if (!el.href) assert(false)
+})
+assert(els.length > 0)
+```
+
+Cada elemento `.nav-link` debe enlazar a un elemento correspondiente en la página de inicio (tiene un `href` con un valor de id de otro elemento. ej. `#footer`)
+
+```js
+const els = document.querySelectorAll('.nav-link')
+els.forEach(el => {
+  const linkDestination = el.getAttribute('href').slice(1)
+  if (!document.getElementById(linkDestination)) assert(false)
+})
+assert(els.length > 0)
+```
+
+Debes tener un elemento `video` o un elemento `iframe` con un `id` de `video`
+
+```js
+const el = document.getElementById('video')
+assert(!!el && (el.tagName === 'VIDEO' || el.tagName === 'IFRAME'))
+```
+
+Tú `#video` debe tener un atributo `src`
+
+```js
+let el = document.getElementById('video')
+const sourceNode = el.children;
+let sourceElement = null;
+if (sourceNode.length) {
+  sourceElement = [...video.children].filter(el => el.localName === 'source')[0];
+}
+if (sourceElement) {
+  el = sourceElement;
+}
+assert(el.hasAttribute('src'));
+```
+
+Debes tener un elemento `form` con un `id` de `form`
+
+```js
+const el = document.getElementById('form')
+assert(!!el && el.tagName === 'FORM')
+```
+
+Debes tener un elemento `input` con un `id` de `email`
+
+```js
+const el = document.getElementById('email')
+assert(!!el && el.tagName === 'INPUT')
+```
+
+Tú `#email` debe ser un descendiente de `#form`
+
+```js
+const els = document.querySelectorAll('#form #email')
+assert(els.length > 0)
+```
+
+Tú `#email` debe tener el atributo `placeholder` con un marcador de texto
+
+```js
+const el = document.getElementById('email')
+assert(!!el && !!el.placeholder && el.placeholder.length > 0)
+```
+
+Tú `#email` debe usar la validación de HTML5 estableciendo su `type` a `email`
+
+```js
+const el = document.getElementById('email')
+assert(!!el && el.type === 'email')
+```
+
+Debes tener un elemento `input` con un `id` de `submit`
+
+```js
+const el = document.getElementById('submit')
+assert(!!el && el.tagName === 'INPUT')
+```
+
+Tú `#submit` debe ser un descendiente de `#form`
+
+```js
+const els = document.querySelectorAll('#form #submit')
+assert(els.length > 0)
+```
+
+Tú `#submit` debe tener un `type` de `submit`
+
+```js
+const el = document.getElementById('submit')
+assert(!!el && el.type === 'submit')
+```
+
+Tú `#form` debe tener un atributo `action` de `https://www.freecodecamp.com/email-submit`
+
+```js
+const el = document.getElementById('form')
+assert(!!el && el.action === 'https://www.freecodecamp.com/email-submit')
+```
+
+Tú `#email` debe tener un atributo `name` de `email`
+
+```js
+const el = document.getElementById('email')
+assert(!!el && el.name === 'email')
+```
+
+Tú `#nav-bar` siempre debe estar en la parte superior del viewport
+
+```js
+(async () => {
+  const timeout = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
+
+  const header = document.getElementById('header');
+  const headerChildren = header.children;
+  const navbarCandidates = [header, ...headerChildren];
+
+  // Return smallest top position of all navbar candidates
+  const getNavbarPosition = (candidates = []) => {
+    return candidates.reduce(
+      (min, candidate) =>
+        Math.min(min, Math.abs(candidate?.getBoundingClientRect().top)),
+      Infinity
+    );
+  };
+  assert.approximately(
+    getNavbarPosition(navbarCandidates),
+    0,
+    15,
+    '#header or one of its children should be at the top of the viewport '
+  );
+
+  window.scroll(0, 500);
+  await timeout(1);
+
+  assert.approximately(
+    getNavbarPosition(navbarCandidates),
+    0,
+    15,
+    '#header or one of its children should be at the top of the ' +
+      'viewport even after scrolling '
+  );
+
+  window.scroll(0, 0);
+})();
+```
+
+Tu página de inicio de producto debe tener al menos una consulta de medios
+
+```js
+const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
+const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
+assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
+```
+
+Tu página de inicio de producto debe utilizar al menos una vez flexbox CSS
+
+```js
+const stylesheet = new __helpers.CSSHelp(document).getStyleSheet()
+const cssRules = new __helpers.CSSHelp(document).styleSheetToCssRulesArray(stylesheet)
+const usesFlex = cssRules.find(rule => {
+  return rule.style?.display === 'flex' || rule.style?.display === 'inline-flex'
+})
+assert(usesFlex)
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
-// solution required
+
+```
+
+```css
+
+```
+
+## --solutions--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Product Landing Page</title>
+  </head>
+  <body>
+    <header id="header">
+      <nav id="nav-bar">
+        <img
+          id="header-img"
+          src="https://upload.wikimedia.org/wikipedia/commons/3/39/Pokeball.PNG"
+          max-height="50px"
+        />
+        <a href="#Features" class="nav-link">Features</a> |
+        <a href="#Video" class="nav-link">See our facility!</a> |
+        <a href="#Pricing" class="nav-link">Purchase</a>
+        <hr />
+      </nav>
+    </header>
+    <main>
+      <h1>
+        Pokemon Daycare Service
+      </h1>
+      <section id="Features">
+        <h2>What we offer</h2>
+        <div class="flex-here">
+          <div class="flex-left">
+            <img
+              id="bullet"
+              src="https://upload.wikimedia.org/wikipedia/commons/3/39/Pokeball.PNG"
+              max-height="25px"
+            />
+          </div>
+          <div class="flex-right">Guaranteed friendly and loving staff!</div>
+        </div>
+        <div class="flex-here">
+          <div class="flex-left">
+            <img
+              id="bullet"
+              src="https://upload.wikimedia.org/wikipedia/commons/3/39/Pokeball.PNG"
+              max-height="25px"
+            />
+          </div>
+          <div class="flex-right">
+            Comfortable environment for Pokemon to explore and play!
+          </div>
+        </div>
+        <div class="flex-here">
+          <div class="flex-left">
+            <img
+              id="bullet"
+              src="https://upload.wikimedia.org/wikipedia/commons/3/39/Pokeball.PNG"
+              max-height="25px"
+            />
+          </div>
+          <div class="flex-right">
+            Multiple membership plans to fit your lifestyle!
+          </div>
+        </div>
+      </section>
+      <section id="Video">
+        <h2>Check us out!</h2>
+        A sneak peek into our facility:
+        <br />
+        <iframe
+          id="video"
+          width="520"
+          height="347"
+          src="https://www.youtube.com/embed/Nw-ksH2r6AQ"
+          frameborder="0"
+          allowfullscreen
+          alt="A video tour of our facility"
+        >
+        </iframe>
+      </section>
+      <section id="Pricing">
+        <h2>Membership Plans</h2>
+        <div class="flex-mem">
+          <div class="flex-mem-box">
+            <font size="+2">Basic Membership</font><br />
+            <ul>
+              <li>One Pokemon</li>
+              <li>Food and berries provided</li>
+            </ul>
+            <em>$9.99/month</em>
+          </div>
+          <div class="flex-mem-box">
+            <font size="+2">Silver Membership</font><br />
+            <ul>
+              <li>Up to Three Pokemon</li>
+              <li>Food and berries provided</li>
+              <li>Grooming and accessories included</li>
+            </ul>
+            <em>$19.99/month</em>
+          </div>
+          <div class="flex-mem-box">
+            <font size="+2">Gold Membership</font><br />
+            <ul>
+              <li>Up to six Pokemon!</li>
+              <li>Food and berries provided</li>
+              <li>Grooming and accessories included</li>
+              <li>Personal training for each Pokemon</li>
+              <li>Breeding and egg hatching</li>
+            </ul>
+            <em>$29.99/month</em>
+          </div>
+        </div>
+      </section>
+      <form id="form" action="https://www.freecodecamp.com/email-submit">
+        <p>Sign up for our newsletter!</p>
+        <label for="email"><p>Email:</p><input name="email" id="email" type="email" placeholder="johnsmith@email.com" required></label>
+        <input type="submit" id="submit">
+      </form>
+      <footer>
+        <a href="../">Return to Project List</a> |
+        <a href="https://www.nhcarrigan.com">Return to HomePage</a>
+      </footer>
+    </main>
+  </body>
+</html>
+```
+
+```css
+body {
+  background-color: #3a3240;
+  color: white;
+}
+main {
+  max-width: 750px;
+  margin: 50px auto;
+}
+input {
+  background-color: #92869c;
+}
+a:not(.nav-link) {
+  color: white;
+}
+#header-img {
+  max-height: 25px;
+}
+#nav-bar {
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  top: 0%;
+  background-color: #92869c;
+}
+h1 {
+  text-align: center;
+}
+body {
+  text-align: center;
+}
+footer {
+  text-align: center;
+}
+#bullet {
+  max-height: 25px;
+}
+.flex-here {
+  display: flex;
+  justify-content: center;
+}
+.flex-left {
+  height: 25px;
+}
+.flex-mem {
+  display: flex;
+  justify-content: center;
+}
+.flex-mem-box {
+  background-color: #92869c;
+  border-color: black;
+  border-width: 5px;
+  border-style: solid;
+  margin: 10px;
+  padding: 10px;
+  color: black;
+}
+@media (max-width: 350px) {
+  #video {
+    width: 300;
+    height: 200;
+  }
+}
 ```

@@ -1,57 +1,518 @@
 ---
 id: 587d78af367417b2b2512b03
 title: Crea un formulario de encuesta
-challengeType: 3
+challengeType: 14
 forumTopicId: 301145
 dashedName: build-a-survey-form
 ---
 
 # --description--
 
-**Objetivo:** Construye una aplicación en [CodePen.io](https://codepen.io) que funcionalmente sea similar a esta: <https://codepen.io/freeCodeCamp/full/VPaoNP>.
+**Objetivo:** Crear una aplicación que sea funcionalmente similar a <a href="https://survey-form.freecodecamp.rocks" target="_blank">https://survey-form.freecodecamp.rocks</a>
 
-Completa las siguientes [historias de usuario](https://es.wikipedia.org/wiki/Historias_de_usuario) y consigue aprobar todos los tests. Dale tu propio estilo personal.
+**Historias de usuario:**
 
-Puedes usar HTML, JavaScript y CSS para completar este proyecto. Se recomienda usar CSS puro porque eso es lo que las lecciones han cubierto hasta ahora y debes practicar un poco con él. Puedes usar Bootstrap o SASS si lo deseas. Tecnologías adicionales (por ejemplo, jQuery, React, Angular o Vue) no se recomiendan para este proyecto, y usarlas es bajo tu propio riesgo. Otros proyectos te darán la oportunidad de trabajar con diferentes stacks de tecnologías como React. Aceptaremos e intentaremos solucionar todos los informes de incidencias que utilicen el stack de tecnología sugerido para este proyecto. ¡Feliz día programando!
+1. Debes tener un título de página en un elemento `h1` con un `id` de `title`
+1. Debes tener una pequeña explicación en un elemento `p` con un `id` de `description`
+1. Debes tener un elemento `form` con un `id` de `survey-form`
+1. Dentro del elemento form, debes ser **obligatorio** (required) ingresar tu nombre en un campo de `input` que tenga un `id` de `name` y un `type` de `text`
+1. Dentro del elemento form debe ser **obligatorio** (required) ingresar tu nombre en un campo de `input` que tenga un `id` de `email`
+1. Si introduces un correo electrónico que no tiene el formato correcto, tú debes ver una alerta de validación en THML5
+1. Dentro de tu form, tu puedes introducir un número en un campo `input` que tenga un `id` de `number`
+1. Si introduces un valor no numérico en la entrada de números, tú debes ver una alerta de validación en HTML5
+1. Si introduces un número fuera del rango de la entrada de números, los cuales están definidos por los atributos `min` y `max`, debes ver una alerta de validación en HTML5
+1. Para los campos de entrada de nombre, correo electrónico y número, podrás ver los correspondientes elementos `label` en el formulario, que describen el propósito de cada campo con los siguientes ids: `id="name-label"`, `id="email-label"`, y `id="number-label"`
+1. Para los campos de entrada de nombre, correo electrónico y número, podrás ver un texto provisional que da una descripción o instrucciones para cada campo
+1. Dentro del elemento de formulario, debes tener un elemento desplegable `select` con un `id` de `dropdown` con al menos dos opciones para elegir
+1. Dentro del elemento de formulario, puedes seleccionar una opción de un grupo de al menos dos botones de radio que son agrupados utilizando el atributo `name`
+1. Dentro del elemento de formulario, puedes seleccionar varios campos en una serie de casillas de verificación, cada una debe tener un atributo `value`
+1. Dentro del elemento de formulario, se te presenta un `textarea` para comentarios adicionales
+1. Dentro del elemento form, se te presenta un botón con un `id` de `submit` para enviar todas las entradas
 
-**Historia de Usuario #1:** Puedo ver un título con `id="title"` en texto tamaño H1.
+Completa las historias de usuario y pasa todas las pruebas a continuación para completar este proyecto. Dale tu propio estilo personal. ¡Que tengas una feliz programación!
 
-**Historia de Usuario #2:** Puedo ver una breve explicación con `id="description"` en texto tamaño P.
+**Nota:** Asegúrate de agregar `<link rel="stylesheet" href="styles.css">` en tu HTML para enlazar tu hoja de estilos y aplicar tu CSS
 
-**Historia de Usuario #3:** Puedo ver un elemento `form` con `id="survey-form"`.
+# --hints--
 
-**Historia de Usuario #4:** Dentro del elemento form, es requerido introducir mi nombre en un campo con `id="name"`.
+Debes tener un elemento `h1` con un `id` de `title`
 
-**Historia de Usuario #5:** Dentro del elemento form, es requerido introducir un correo electrónico en un campo con `id="email"`.
+```js
+const el = document.getElementById('title')
+assert(!!el && el.tagName === 'H1')
+```
 
-**Historia de Usuario #6:** Si introduzco un correo electrónico que no cuente con el formato correcto, veré un error de validación HTML5.
+Tú `#title` no debe estar vacío
 
-**Historia de Usuario #7:** Dentro del formulario, puedo introducir un número en un campo con `id="number"`.
+```js
+const el = document.getElementById('title')
+assert(!!el && el.innerText.length > 0)
+```
 
-**Historia de Usuario #8:** Si introduzco valores no numéricos en la entrada de números, veré un error de validación HTML5.
+Debes tener un elemento `p` con un `id` de `description`
 
-**Historia de Usuario #9:** Si introduzco números fuera del rango de la entrada de números, los cuales son definidos por los atributos `min` y `max`, veré un error de validación HTML5.
+```js
+const el = document.getElementById('description')
+assert(!!el && el.tagName === 'P')
+```
 
-**Historia de Usuario #10:** Para los campos nombre, correo, y número dentro del formulario puedo ver las etiquetas (labels) correspondientes que describen el propósito de cada campo con los siguientes ids: `id="name-label"`, `id="email-label"`, y `id="number-label"`.
+Tú `#description` no debe estar vacío
 
-**Historia de Usuario #11:** Para los campos nombre, correo y número, puedo ver el texto provisional que me da una descripción o instrucciones para cada campo.
+```js
+const el = document.getElementById('description')
+assert(!!el && el.innerText.length > 0)
+```
 
-**Historia de Usuario #12:** Dentro del elemento form, puedo seleccionar una opción de un menú desplegable que tiene el respectivo `id="dropdown"`.
+Debe tener un elemento `form` con un `id` de `survey-form`
 
-**Historia de Usuario #13:** Dentro del elemento form, puedo seleccionar un campo de uno o más grupos de botones de radio. Cada grupo debe agruparse utilizando el atributo `name`.
+```js
+const el = document.getElementById('survey-form')
+assert(!!el && el.tagName === 'FORM')
+```
 
-**Historia de Usuario #14:** Dentro del elemento form, puedo seleccionar varios campos en una serie de casillas de verificación, cada una de las cuales debe tener un atributo `value`.
+Debes tener un elemento `input` con un `id` de `name`
 
-**Historia de Usuario #15:** Dentro del elemento form, me es presentado un `textarea` final para hacer comentarios adicionales.
+```js
+const el = document.getElementById('name')
+assert(!!el && el.tagName === 'INPUT')
+```
 
-**Historia de Usuario #16:** Dentro del elemento form, me es presentado un botón con `id="submit"` para enviar todas mis entradas.
+Tú `#name` debe tener un `type` de `text`
 
-Puedes construir tu proyecto usando <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>esta plantilla CodePen</a> y haciendo clic en `Save` para crear tu propio pen. O puedes utilizar este enlace CDN para ejecutar los tests en cualquier entorno que desees: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+```js
+const el = document.getElementById('name')
+assert(!!el && el.type === 'text')
+```
 
-Una vez que hayas terminado, envía la URL de tu proyecto funcional con todos los tests aprobados.
+Tú `#name` debe requerir una entrada
 
-# --solutions--
+```js
+const el = document.getElementById('name')
+assert(!!el && el.required)
+```
+
+Tú `#name` debe ser un descendiente de `#survey-form`
+
+```js
+const el = document.querySelector('#survey-form #name')
+assert(!!el)
+```
+
+Debes tener un elemento `input` con un `id` de `email`
+
+```js
+const el = document.getElementById('email')
+assert(!!el && el.tagName === 'INPUT')
+```
+
+Tú `#email` debe tener un `type` de `email`
+
+```js
+const el = document.getElementById('email')
+assert(!!el && el.type === 'email')
+```
+
+Tú `#email` debe requerir una entrada
+
+```js
+const el = document.getElementById('email')
+assert(!!el && el.required)
+```
+
+Tú `#email` debe ser un descendiente de `#survey-form`
+
+```js
+const el = document.querySelector('#survey-form #email')
+assert(!!el)
+```
+
+Debes tener un elemento `input` con un `id` de `number`
+
+```js
+const el = document.getElementById('number')
+assert(!!el && el.tagName === 'INPUT')
+```
+
+Tú `#number` debe ser un descendiente de `#survey-form`
+
+```js
+const el = document.querySelector('#survey-form #number')
+assert(!!el)
+```
+
+Tú `#number` debe tener un `type` de `number`
+
+```js
+const el = document.getElementById('number')
+assert(!!el && el.type === 'number')
+```
+
+Tú `#number` debe tener un atributo `min` con un valor numérico
+
+```js
+const el = document.getElementById('number')
+assert(!!el && el.min && isFinite(el.min))
+```
+
+Tú `#number` debe tener un atributo `max` con un valor numérico
+
+```js
+const el = document.getElementById('number')
+assert(!!el && el.max && isFinite(el.max))
+```
+
+Debes tener un elemento `label` con un `id` de `name-label`
+
+```js
+const el = document.getElementById('name-label')
+assert(!!el && el.tagName === 'LABEL')
+```
+
+Debes tener un elemento `label` con un `id` de `email-label`
+
+```js
+const el = document.getElementById('email-label')
+assert(!!el && el.tagName === 'LABEL')
+```
+
+Debes tener un elemento `label` con un `id` de `name-label`
+
+```js
+const el = document.getElementById('number-label')
+assert(!!el && el.tagName === 'LABEL')
+```
+
+Tu`#name-label`no debe estar vacio
+
+```js
+const el = document.getElementById('name-label')
+assert(!!el && el.innerText.length > 0)
+```
+
+Tu`#name-label`no debe estar vacio
+
+```js
+const el = document.getElementById('email-label')
+assert(!!el && el.innerText.length > 0)
+```
+
+Tu`#name-label`no debe estar vacio
+
+```js
+const el = document.getElementById('number-label')
+assert(!!el && el.innerText.length > 0)
+```
+
+Tú `#name` debe ser una variante de `#survey-form`
+
+```js
+const el = document.querySelector('#survey-form #name-label')
+assert(!!el)
+```
+
+Tú `#name` debe ser una variante de `#survey-form`
+
+```js
+const el = document.querySelector('#survey-form #email-label')
+assert(!!el)
+```
+
+Tú `#name` debe ser una variante de `#survey-form`
+
+```js
+const el = document.querySelector('#survey-form #number-label')
+assert(!!el)
+```
+
+Tú `#email` debe tener el atributo `placeholder` con un marcador de texto
+
+```js
+const el = document.getElementById('name')
+assert(!!el && !!el.placeholder && el.placeholder.length > 0)
+```
+
+Tú `#email` debe tener el atributo `placeholder` y valor
+
+```js
+const el = document.getElementById('email')
+assert(!!el && !!el.placeholder && el.placeholder.length > 0)
+```
+
+Tú `#number` debe tener el atributo `placeholder` y valor
+
+```js
+const el = document.getElementById('number')
+assert(!!el && !!el.placeholder && el.placeholder.length > 0)
+```
+
+Debes tener un campo `select` con un `id` de `dropdown`
+
+```js
+const el = document.getElementById('dropdown')
+assert(!!el && el.tagName === 'SELECT')
+```
+
+Tú `#dropdown` debe tener al menos dos elementos seleccionables (no deshabilitado) `option`
+
+```js
+const els = document.querySelectorAll('#dropdown option:not([disabled])')
+assert(els.length >= 2)
+```
+
+Tú `#dropdown` debe ser un descendiente de `#survey-form`
+
+```js
+const el = document.querySelector('#survey-form #dropdown')
+assert(!!el)
+```
+
+Debes tener al menos dos elementos `input` con un `type` de `radio` (botones de radio)
+
+```js
+const els = document.querySelectorAll('input[type="radio"]')
+assert(els.length >= 2)
+```
+
+Debes tener al menos dos botones de radio que sean descendientes de `#survey-form`
+
+```js
+const els = document.querySelectorAll('#survey-form input[type="radio"]')
+assert(els.length >= 2)
+```
+
+Todos los botones de radio deben tener un atributo `value` y valor
+
+```js
+const els1 = document.querySelectorAll('input[type="radio"]')
+const els2 = document.querySelectorAll('input[type="radio"][value=""], input[type="radio"]:not([value])')
+assert(els1.length > 0 && els2.length === 0)
+```
+
+Todos los botones de radio deben tener un atributo `name` y valor
+
+```js
+const els1 = document.querySelectorAll('input[type="radio"]')
+const els2 = document.querySelectorAll('input[type="radio"][name=""], input[type="radio"]:not([name])')
+assert(els1.length > 0 && els2.length === 0)
+```
+
+Cada grupo de botones de radio deben tener al menos 2 botones de radio
+
+```js
+const radioButtons = document.querySelectorAll('input[type="radio"]');
+const groups = {}
+
+if (radioButtons) {
+  radioButtons.forEach(el => {
+    if (!groups[el.name]) groups[el.name] = []
+    groups[el.name].push(el)
+  })
+}
+
+const groupKeys = Object.keys(groups)
+
+groupKeys.forEach(key => {
+  if (groups[key].length < 2) assert(false)
+})
+
+assert(groupKeys.length > 0)
+```
+
+Debes tener al menos dos elementos `input` con un `type` de `checkbox` (casillas de verificación) que son descendientes de `#survey-form`
+
+```js
+const els = document.querySelectorAll('#survey-form input[type="checkbox"]');
+assert(els.length >= 2)
+```
+
+Todas las casillas de verificación dentro de `#survey-form` deben tener un atributo `value` y valor
+
+```js
+const els1 = document.querySelectorAll('#survey-form input[type="checkbox"]')
+const els2 = document.querySelectorAll('#survey-form input[type="checkbox"][value=""], #survey-form input[type="checkbox"]:not([value])')
+assert(els1.length > 0 && els2.length === 0)
+```
+
+Debes tener al menos un elemento de `textarea` que sea descendiente de `#survey-form`
+
+```js
+const el = document.querySelector('#survey-form textarea')
+assert(!!el)
+```
+
+Debes tener un elemento `input` o un elemento `button` con un `id` de `submit`
+
+```js
+const el = document.getElementById('submit')
+assert(!!el && (el.tagName === 'INPUT' || el.tagName === 'BUTTON'))
+```
+
+Tú `#submit` debe tener un `type` de `submit`
+
+```js
+const el = document.getElementById('submit')
+assert(!!el && el.type === 'submit')
+```
+
+Tú `#submit` debe ser un descendiente de `#survey-form`
+
+```js
+const el = document.querySelector('#survey-form #submit')
+assert(!!el)
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
-// solution required
+
+```
+
+```css
+
+```
+
+## --solutions--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Survey Form</title>
+  </head>
+  <body>
+    <h1>Survey Form</h1>
+    <p>The card below was built as a sample survey form for freeCodeCamp.</p>
+    <main id="main">
+      <h1 id="title">Join the Togepi Fan Club!</h1>
+      <p id="description">
+        Enter your information here to receive updates about club activities,
+        our monthly newsletter, and other email communications.
+      </p>
+      <form id="survey-form" action="#">
+        <label for="name" id="name-label"
+          ><p>Name:</p>
+          <input type="text" id="name" placeholder="e.g. John Smith" required />
+        </label>
+        <label for="email" id="email-label"
+          ><p>Email:</p>
+          <input
+            type="email"
+            id="email"
+            placeholder="e.g. john.smith@email.com"
+            required
+          />
+        </label>
+        <label for="age" id="number-label"
+          ><p>Age<em>(optional)</em>:</p>
+          <input
+            type="number"
+            id="number"
+            placeholder="e.g. 19"
+            min="18"
+            max="99"
+          />
+        </label>
+        <label for="interest" id="interest-label"
+          ><p>What are you most interested in?</p>
+          <select id="dropdown">
+            <option selected disabled hidden></option>
+            <option id="battles">Battling</option>
+            <option id="breeding">Breeding</option>
+            <option id="catching">Completing my Pokedex</option>
+            <option id="exploring">Exploring new regions</option>
+          </select>
+        </label>
+        <p>Who is your favourite Pokemon?</p>
+        <label for="togepi">
+          <input
+            id="togepi"
+            type="radio"
+            name="favorite"
+            value="togepi"
+          />Togepi!
+        </label>
+        <label for="pikachu">
+          <input
+            id="pikachu"
+            type="radio"
+            name="favorite"
+            value="pikachu"
+          />Pikachu
+        </label>
+        <label for="other">
+          <input id="other" type="radio" name="favorite" value="other" />Other
+        </label>
+        <p>Which communications do you want to receive?</p>
+        <label for="newsletter">
+          <input
+            id="newsletter"
+            type="checkbox"
+            name="communications"
+            value="newsletter"
+          />Newsletter
+        </label>
+        <label for="events">
+          <input
+            id="events"
+            type="checkbox"
+            name="communications"
+            value="events"
+          />Event updates
+        </label>
+        <label for="updates">
+          <input
+            id="updates"
+            type="checkbox"
+            name="communications"
+            value="updates"
+          />Club updates
+        </label>
+        <p>Any other information you would like to share?</p>
+        <textarea id="additional-information" rows="4" cols="50">
+You can provide comments, suggestions, or feedback here.</textarea
+        >
+        <p>
+          <em
+            >Please note: This form is a proof of concept. Submitting the form
+            will not actually transmit your data.</em
+          >
+        </p>
+        <button type="Submit" id="submit">Submit</button>
+      </form>
+    </main>
+  </body>
+  <footer>
+    <a href="../">Return to Project List</a> |
+    <a href="https://www.nhcarrigan.com">Return to HomePage</a>
+  </footer>
+</html>
+```
+
+```css
+main {
+  text-align: center;
+  background-color: #92869c;
+  background-blend-mode: lighten;
+  max-width: 500px;
+  margin: 20px auto;
+  border-radius: 50px;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.5);
+  color: black;
+}
+body {
+  text-align: center;
+  background: #3a3240;
+  color: white;
+}
+input, textarea, select, button {
+  background: #3a3240;
+  color: white;
+}
+a {
+  color: white;
+}
 ```

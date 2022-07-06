@@ -8,11 +8,14 @@ dashedName: state-name-puzzle
 
 # --description--
 
-Esta tarefa é inspirada na coluna "Wordplay", de Mark Nelson no DDJ e um dos desafios semanais de Will Shortz na edição de fim de semana da NPR [\[1\]](https://www.npr.org/templates/story/story.php?storyId=9264290), sendo originalmente atribuída a David Edelheit. O desafio era pegar os nomes de dois estados dos Estados Unidos, misturá-los e, então, reorganizar as letras para formar os nomes de dois estados *diferentes* (de modo que os quatro nomes de estados sejam diferentes entre eles). Que estados são esses? O problema foi publicado novamente na [Unicon Discussion Web](https://tapestry.tucson.az.us/twiki/bin/view/Main/StateNamesPuzzle), que inclui diversas soluções com a análise. Várias técnicas podem ser úteis caso você queira consultar, como: [a numeração de Gödel](https://en.wikipedia.org/wiki/Goedel_numbering), [as relações de equivalência](https://en.wikipedia.org/wiki/Equivalence_relation) e [as classes de equivalência](https://en.wikipedia.org/wiki/Equivalence_classes). Os méritos básicos destas técnicas foram discutidos na Unicon Discussion Web. Foi também apresentado um segundo desafio, sob a forma de um conjunto de novos estados fictícios.
+**Nome do estado** é um <em>jogo de palavras</em> em que pegamos as letras de dois nomes de estados dos Estados Unidos e as reorganizamos para formar os nomes de dois estados dos EUA diferentes.
+
 
 # --instructions--
 
-Escreva uma função para resolver o desafio para o array de nomes de estados fornecido. A função deve retornar um array. Cada elemento deve ser um objeto neste formato: `{"from":[],"to":[]}`. O array "from" deve conter os nomes originais e o array "to" deve conter os nomes resultantes.
+Escreva uma função para resolver o desafio para um array dado de nomes de estados dos EUA reais e para nomes de estados fictícios.
+
+A função deve retornar um array. Cada elemento deve ser um objeto neste formato: `{"from":[],"to":[]}`. O array `"from"` deve conter os nomes originais e o array `"to"` deve conter os nomes resultantes.
 
 # --hints--
 

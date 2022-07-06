@@ -8,12 +8,12 @@ dashedName: sea-level-predictor
 
 # --description--
 
-Você [trabalhará neste projeto com nosso código inicial do Replit](https://replit.com/github/freeCodeCamp/boilerplate-sea-level-predictor).
+Você <a href="https://replit.com/github/freeCodeCamp/boilerplate-sea-level-predictor" target="_blank" rel="noopener noreferrer nofollow">trabalhará neste projeto com nosso código inicial do Replit</a>.
 
 Ainda estamos desenvolvendo a parte instrucional interativa do currículo Python. Por enquanto, aqui estão alguns vídeos no canal do freeCodeCamp.org do YouTube que ensinarão tudo o que você precisa saber para completar este projeto:
 
-- [Curso de Python em vídeo para todos](https://www.freecodecamp.org/news/python-for-everybody/) (14 horas)
-- [Curso Aprenda Python em vídeo](https://www.freecodecamp.org/news/learn-python-video-course/) (10 horas)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Curso de Python em vídeo para todos</a> (14 horas)
+- <a href="https://www.freecodecamp.org/news/learn-python-video-course/" target="_blank" rel="noopener noreferrer nofollow">Curso por vídeo Aprenda Python</a>
 
 # --instructions--
 
@@ -22,10 +22,10 @@ Você analisará um dataset da mudança média do nível do mar global desde 188
 Use os dados para completar as seguintes tarefas:
 
 - Use o Pandas para importar os dados de `epa-sea-level.csv`.
-- Use a matplotlib para criar um diagrama de dispersão usando a coluna "Year" como eixo x e a coluna "CSIRO Adjusted Sea Level" (Nível do mar ajustado) como o eixo y.
+- Use a matplotlib para criar um diagrama de dispersão usando a coluna `Year` como eixo x e a coluna `CSIRO Adjusted Sea Level` (Nível do mar ajustado) como o eixo y.
 - Use a função `linregress` do `scipy.stats` para obter o coeficiente angular e o ponto de interceptação da linha de y do melhor ajuste. Trace a linha de melhor ajuste na parte superior do diagrama de dispersão. Faça a linha passar pelo ano 2050 para prever o aumento do nível do mar em 2050.
 - Trace uma nova linha do melhor ajuste utilizando apenas os dados do ano 2000 ao longo do último ano no dataset. Faça com que a linha passe também pelo ano 2050 para prever o aumento do nível do mar em 2050 se a taxa de crescimento continuar como está desde o ano 2000.
-- O rótulo de x deve ser "Year" e o rótulo de y deve ser "Sea Level (inches)" (Nível do mar, em polegadas), e o título deve ser "Rise in Sea Level" (Aumento do nível do mar).
+- O rótulo de x deve ser `Year` e o rótulo de y deve ser `Sea Level (inches)` (Nível do mar, em polegadas), e o título deve ser `Rise in Sea Level` (Aumento do nível do mar).
 
 Os testes unitários foram escritos para você no `test_module.py`.
 
@@ -44,7 +44,8 @@ Importamos os testes de `test_module.py` em `main.py` para a sua conveniência. 
 Copie o URL do seu projeto e envie-o para o freeCodeCamp.
 
 ## Fonte dos dados
-[Global Average Absolute Sea Level Change](https://datahub.io/core/sea-level-rise), 1880-2014 da Agência de Proteção Ambiental dos EUA, usando dados do CSIRO, 2015; NOAA, 2015.
+
+<a href="https://datahub.io/core/sea-level-rise" target="_blank" rel="noopener noreferrer nofollow">Global Average Absolute Sea Level Change</a>, 1880-2014 da Agência de Proteção Ambiental dos EUA, usando dados do CSIRO, 2015; NOAA, 2015.
 
 
 # --hints--

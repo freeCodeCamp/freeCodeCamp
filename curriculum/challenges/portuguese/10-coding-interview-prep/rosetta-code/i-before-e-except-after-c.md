@@ -8,7 +8,7 @@ dashedName: i-before-e-except-after-c
 
 # --description--
 
-A frase [ "I antes de E, exceto depois de C" ](https://en.wikipedia.org/wiki/I before E except after C) é um mnemônico amplamente conhecido que deve ajudar ao soletrar palavras em inglês.
+**"I antes de E, exceto depois de C"** é uma regra mnemônica para a ortografia em inglês. Quando não temos certeza se uma palavra é escrita com o dígrafo `ei` ou `ie`, a rima sugere que a ordem correta é `ie`, a menos que a letra anterior seja `c`, caso no qual ele deve ser `ei`.
 
 Usando as palavras fornecidas, verifique se as duas subcláusulas da frase são plausíveis individualmente:
 

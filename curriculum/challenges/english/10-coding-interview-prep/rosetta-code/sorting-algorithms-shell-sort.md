@@ -8,7 +8,7 @@ dashedName: sorting-algorithmsshell-sort
 
 # --description--
 
-Write a function to sort an array of elements using the [Shell sort](<https://en.wikipedia.org/wiki/Shell sort>) algorithm, a diminishing increment sort. The function should return the sorted array.
+Write a function to sort an array of elements using the Shell sort algorithm, a diminishing increment sort. The function should return the sorted array.
 
 The Shell sort (also known as Shellsort or Shell's method) is named after its inventor, Donald Shell, who published the algorithm in 1959.
 

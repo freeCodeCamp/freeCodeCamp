@@ -20,7 +20,9 @@ Como base, se nos fosse dado apenas o primeiro termo de sequência, seria mais s
 
 Assim, obtemos as seguintes OPs para a sequência cúbica:
 
-$$\begin{array}{ll} OP(1, n) = 1          & 1, {\color{red}1}, 1, 1, \ldots     \\\\ OP(2, n) = 7n−6       & 1, 8, {\color{red}{15}}, \ldots     \\\\ OP(3, n) = 6n^2−11n+6 & 1, 8, 27, {\color{red}{58}}, \ldots \\\\ OP(4, n) = n^3        & 1, 8, 27, 64, 125, \ldots \end{array}$$
+$$\begin{array}{ll}   OP(1, n) = 1          & 1, {\color{red}1}, 1, 1, \ldots     \\\\
+  OP(2, n) = 7n−6       & 1, 8, {\color{red}{15}}, \ldots     \\\\   OP(3, n) = 6n^2−11n+6 & 1, 8, 27, {\color{red}{58}}, \ldots \\\\
+  OP(4, n) = n^3        & 1, 8, 27, 64, 125, \ldots \end{array}$$
 
 Claramente não existem BOPs para k ≥ 4. Considerando a soma dos FITs gerados pelos BOPs (indicados em $\color{red}{red}$ acima), obtemos 1 + 15 + 58 = 74. Considere a seguinte função de geração de polinômios de décimo grau:
 

@@ -12,13 +12,13 @@ The longest increasing subsequence problem is to find a subsequence of a given s
 
 For the following array:
 
-$\\{3, 10, 2, 1, 20\\}$
+```js
+const array = [3, 10, 2, 1, 20];
+```
 
 Longest increasing sequence is:
 
 $\\{3, 10, 20\\}$
-
-For more information on this problem please see [Wikipedia](<https://en.wikipedia.org/wiki/Longest increasing subsequence>).
 
 # --instructions--
 

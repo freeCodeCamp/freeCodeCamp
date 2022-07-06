@@ -12,7 +12,10 @@ dashedName: problem-159-digital-root-sums-of-factorisations
 
 Наприклад, за виключенням множення на один, 24 можна факторизувати 7 різними способами:
 
-$$\begin{align} & 24 = 2 \times 2 \times 2 \times 3\\\\ & 24 = 2 \times 3 \times 4  \\\\ & 24 = 2 \times 2 \times 6  \\\\ & 24 = 4 \times 6    \\\\ & 24 = 3 \times 8    \\\\ & 24 = 2 \times 12   \\\\ & 24 = 24 \end{align}$$
+$$\begin{align}   & 24 = 2 \times 2 \times 2 \times 3\\\\
+  & 24 = 2 \times 3 \times 4  \\\\   & 24 = 2 \times 2 \times 6  \\\\
+  & 24 = 4 \times 6    \\\\   & 24 = 3 \times 8    \\\\
+  & 24 = 2 \times 12   \\\\ & 24 = 24 \end{align}$$
 
 Нагадаємо, що цифровий корінь числа в основі 10 знаходять додаванням цифр цього числа, повторюючи процес, поки число не буде менше ніж 10. Цифровий корінь 467 буде 8.
 

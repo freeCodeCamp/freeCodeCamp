@@ -14,7 +14,7 @@ dashedName: representing-relationships-in-a-relational-database
 
 ## --text--
 
-¿Qué es una foreign key?
+¿Qué es una clave foránea?
 
 ## --answers--
 
@@ -22,15 +22,15 @@ Una llave que no debería de estar ahí.
 
 ---
 
-Una llave que usa caracteres no latinos.
+Una clave que usa caracteres no latinos.
 
 ---
 
-Un numero que apunta a la primary key de una fila asociada en una tabla diferente.
+Un número que apunta a la clave primaria de una fila asociada en una tabla diferente.
 
 ---
 
-Una llave que el "mundo real" podría usar para buscar una fila.
+Una clave que el "mundo real" podría usar para buscar una fila.
 
 ## --video-solution--
 

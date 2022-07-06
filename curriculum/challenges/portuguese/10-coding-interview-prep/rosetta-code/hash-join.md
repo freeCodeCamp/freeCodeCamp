@@ -8,12 +8,12 @@ dashedName: hash-join
 
 # --description--
 
-Uma [inner join](https://www.freecodecamp.org/news/sql-join-types-inner-join-vs-outer-join-example/#how-to-use-an-inner-join-in-sql "news: SQL Join Types – Inner Join VS Outer Join Example#How to Use an INNER JOIN in SQL") (união interna) é uma operação que combina duas tabelas de dados em uma tabela, com base em valores de coluna correspondentes. A maneira mais simples de implementar essa operação é o algoritmo de [união de laços aninhados](https://en.wikipedia.org/wiki/Nested loop join "wp: Nested loop join"), mas uma alternativa mais escalável é o algoritmo de [união de hashes](https://en.wikipedia.org/wiki/hash join "wp: hash join").
+Um inner join é uma operação que combina duas tabelas de dados em uma tabela, com base na correspondência dos valores da coluna. A maneira mais simples de implementar esta operação é o algoritmo de junção de laço aninhado, mas uma alternativa mais escalável é o algoritmo de junção de hashes.
 
 O algoritmo de união de hashes (ou "hash join") consiste em duas etapas:
 
 <ol>
-  <li><strong>Fase de hash:</strong> criar um <a href='https://en.wikipedia.org/wiki/Multimap' title='wp: Multimap' target='_blank'>multimapa</a> de uma das tabelas, mapear a partir do valor de cada coluna de join para todas as linhas que a contêm.</li>
+  <li><strong>Fase de hash:</strong> crie um multimapa a partir de uma das duas tabelas, mapeando a partir de cada valor de coluna da junção para todas as linhas que a contêm.</li>
   <ul>
     <li>O multimapa deve suportar uma pesquisa baseada em hash, que seja melhor dimensionada do que uma simples pesquisa linear, pois esse é o sentido desse algoritmo.</li>
     <li>Idealmente, devemos criar o multimapa para a tabela menor, assim minimizando seu tempo de criação e o tamanho da memória.</li>

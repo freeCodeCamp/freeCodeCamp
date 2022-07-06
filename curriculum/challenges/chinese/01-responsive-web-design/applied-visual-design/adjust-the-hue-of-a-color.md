@@ -27,19 +27,19 @@ dashedName: adjust-the-hue-of-a-color
 
 # --hints--
 
-应使用 `hsl()` 函数来设置颜色为 `green`。
+你的代码应该使用 `hsl()` 函数来声明绿色。
 
 ```js
 assert(code.match(/\.green\s*?{\s*?background-color\s*:\s*?hsl/gi));
 ```
 
-应使用 `hsl()` 函数来设置颜色为 `cyan`。
+你的代码应该使用 `hsl()` 函数来声明蓝绿色。
 
 ```js
 assert(code.match(/\.cyan\s*?{\s*?background-color\s*:\s*?hsl/gi));
 ```
 
-应使用 `hsl()` 函数来设置颜色为 `blue`。
+你的代码应该使用 `hsl()` 函数来声明蓝色。
 
 ```js
 assert(code.match(/\.blue\s*?{\s*?background-color\s*:\s*?hsl/gi));

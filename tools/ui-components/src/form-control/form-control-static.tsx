@@ -7,8 +7,7 @@ export const FormControlStatic = ({
   children,
   testId
 }: FormControlVariationProps) => {
-  const defaultClasses =
-    'py-1.5 mb-0 min-h-43-px text-default-foreground-secondary';
+  const defaultClasses = 'py-1.5 mb-0 min-h-43-px text-foreground-secondary';
 
   const classes = [defaultClasses, className].join(' ');
   return (

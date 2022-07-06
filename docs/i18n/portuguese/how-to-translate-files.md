@@ -26,7 +26,7 @@ Pedimos apenas que entenda os seguintes pontos:
 
    A tradução dos recursos do freeCodeCamp é uma das mais divertidas e gratificantes como um contribuidor. Ela fica ainda melhor quando envolve amigos e colegas que falam o mesmo idioma que você.
 
-   Nós recomendamos que entre [em nosso fórum da comunidade](https://forum.freecodecamp.org/c/contributors/3) e na [sala de chat dos tradutores](https://chat.freecodecamp.org/channel/contributors) com seus amigos e mostre seu interesse antes de começar a traduzir. A ferramenta Crowdin facilita a contribuição com traduções, mas ainda há bastante trabalho.
+   Nós recomendamos que entre [em nosso fórum da comunidade](https://forum.freecodecamp.org/c/contributors/3) e na [sala de chat dos tradutores](https://discord.gg/PRyKn3Vbay) com seus amigos e mostre seu interesse antes de começar a traduzir. A ferramenta Crowdin facilita a contribuição com traduções, mas ainda há bastante trabalho.
 
    Nós esperamos que você goste de contribuir e não venha a se sentir esgotado ou perder o interesse.
 
@@ -56,7 +56,7 @@ Pedimos apenas que entenda os seguintes pontos:
 
 ## Primeiros passos
 
-Primeiro, não se esqueça de vir dar um "Oi" na nossa [sala de chat de tradutores](https://chat.freecodecamp.org/channel/contributors). Nós postamos atualizações regulares sobre recursos de tradução e respondemos a muitas de suas dúvidas lá.
+Primeiro, não se esqueça de vir dar um "Oi" na nossa [sala de chat de tradutores](https://discord.gg/PRyKn3Vbay). Nós postamos atualizações regulares sobre recursos de tradução e respondemos a muitas de suas dúvidas lá.
 
 Depois, vá para a nossa [plataforma de tradução](https://translate.freecodecamp.org/) e faça o login (se você não contribuiu com traduções anteriormente, você precisará criar uma conta).
 
@@ -103,7 +103,7 @@ O Crowdin separa o documento em "strings" traduzíveis, geralmente frases. Cada 
 9. Aqui você pode ver a janela de comentários. Se você tem perguntas ou preocupações acerca de uma string em particular, você pode comentar aqui para que outros tradutores vejam.
 10. Esses dois "botões de painel" esconderão o documento à esquerda e os comentários à direita.
 
-> [!NOTE] Se você encontrar uma string escondida que inclui traduções, notifique-a na [sala de chat dos tradutores](https://chat.freecodecamp.org/channel/contributors) para que possamos remover a tradução da memória.
+> [!NOTE] Se você encontrar uma string escondida que inclui traduções, notifique-a na [sala de chat dos tradutores](https://discord.gg/PRyKn3Vbay) para que possamos remover a tradução da memória.
 
 Quando tiver terminado de traduzir uma string, clique em `Save` para salvar sua tradução no Crowdin.  Outros contribuintes poderão votar em sua tradução e os revisores poderão aprová-la.
 
@@ -116,6 +116,42 @@ Fique à vontade para traduzir quantas strings quiser - não há nenhuma etapa a
 Traduzir nossa documentação de contribuição é similar a traduzir nossos arquivos de currículo.
 
 > [!NOTE] Nossa documentação de contribuição utiliza o `docsify`. Nós temos uma análise especial para caixas de mensagem como essa. Caso veja strings iniciadas com `[!NOTE]`, `[!WARNING]`, ou `[!TIP]`, essas palavras NÃO devem ser traduzidas.
+
+### Como traduzir a documentação com links internos
+
+Quando você trabalha na tradução da documentação de contribuição, fique atento aos links internos direcionados a uma seção diferente da documentação.
+
+Certifique-se de substituir o id da seção de destino (a parte depois de `#`) pelo id do documento traduzido. Por exemplo, essa será a aparência em português:
+
+Antes da tradução
+
+```
+// em HTML
+<a href="nome-do-arquivo-de-destino.md#id-do-cabeçalho-da-seção-de-destino">Link text</a>
+<a href="#id-do-cabeçalho-da-seção-de-destino">Link text</a>
+
+// em Markdown
+[Link text](nome-do-arquivo-de-destino.md#id-do-cabeçalho-da-seção-de-destino)
+[Link text](#id-do-cabeçalho-da-seção-de-destino)
+```
+
+Após a tradução
+
+```
+// em HTML
+<a href="nome-do-arquivo-de-destino.md#id-do-cabeçalho-da-seção-de-destino">Texto do link</a>
+<a href="#id-do-cabeçalho-da-seção-de-destino">Texto do link</a>
+
+// em Markdown
+[Texto do link](nome-do-arquivo-de-destino.md#id-do-cabeçalho-da-seção-de-destino)
+[Texto do link](#id-do-cabeçalho-da-seção-de-destino)
+```
+
+Os arquivos na documentação são escritos em markdown, mas eles aparecerão como tags HTML no Crowdin.
+
+Você pode descobrir como o `docsify` converte uma string em seu idioma em um ID, analisando as páginas traduzidas. Se a tradução ainda não  tiver sido implementada, você pode pré-visualizá-la [executando o site da documentação localmente](how-to-work-on-the-docs-theme.md#serving-the-documentation-site-locally).
+
+Você pode aprender mais sobre [links internos em nossa documentação aqui](how-to-work-on-the-docs-theme.md#how-to-create-an-internal-link).
 
 ## Traduzir o RPG LearnToCode
 
@@ -220,7 +256,7 @@ O Crowdin segmenta a string em três partes, como vemos abaixo:
 ```renpy
 # original
 player @ surprised "{b}Full-stack{/b}
-# translated, keeping the opening quotes `"`
+# traduzido, mantendo as aspas de abertura `"`
 player @ surprised "{b}Full-stack{/b}
 ```
 
@@ -244,11 +280,11 @@ I better take notes so I can learn more about it."
 
 ## Avaliar as traduções
 
-O Crowdin permite que você avalie propostas de tradução existentes. Se você tentar salvar uma tradução, você pode ver uma mensagem indicando que você não pode salvar a duplicata de uma tradução - isso significa que outro contribuinte já propôs uma tradução idêntica. Se você concorda com aquela tradução, clique em `+` para "aprová-la".
+Crowdin permite que você avalie propostas de tradução existentes. Se você tentar salvar uma tradução, você pode ver uma mensagem indicando que você não pode salvar a duplicata de uma tradução - isso significa que outro contribuinte já propôs uma tradução idêntica. Se você concorda com aquela tradução, clique em `+` para "aprová-la".
 
 Se você ver uma tradução que não possui a mesma clareza da string original, clique em `-` para "desaprová-la".
 
-O Crowdin usa esses votos para pontuar cada proposta de tradução de cada string, o que ajuda o time de revisão a determinar qual tradução é a melhor para cada string.
+Crowdin usa esses votos para pontuar cada proposta de tradução de cada string, o que ajuda o time de revisão a determinar qual tradução é a melhor para cada string.
 
 ## Verificações de qualidade
 
@@ -256,18 +292,18 @@ Nós disponibilizamos algumas verificações de qualidade para assegurar que as 
 
 Quando você tenta salvar uma tradução, talvez veja uma mensagem de aviso aparecer a respeito da sua tradução proposta.
 
-![Imagem - Mensagem de aviso de QA](https://contribute.freecodecamp.org/images/crowdin/qa-message.png)
+![Imagem - Mensagem de aviso](https://contribute.freecodecamp.org/images/crowdin/qa-message.png)
 
-Essa mensagem aparece quando o sistema QA (Verificação de Qualidade) do Crowdin identificou algum erro em potencial na tradução proposta. Nesse exemplo, nós modificamos o texto da tag `<code>` e o sistema viu isto.
+Essa mensagem aparece quando o sistema QA (Perguntas e Respostas) da Crowdin's identificou algum erro em potencial na tradução proposta. Nesse exemplo, nós modificamos o texto da tag `<code>` e o sistema viu isto.
 
 > [!WARNING] Você tem a opção de salvar uma tradução apesar dos erros. Se fizer isso, clicando em "Save Anyway", você também deve marcar um revisor ou gerenciador do projeto e explicar o motivo do aviso ter sido ignorado nesse caso.
 
 ## Boas práticas na tradução
 
-Siga essas diretrizes para se certificar de que nossas traduções estão o mais precisas possível:
+Siga essas diretrizes para certificar-se que nossas traduções estão o mais precisas possível:
 
 - Não traduza o conteúdo dentro de tags `<code>`. Essas tags indicam que o texto está formatado para o código e deve ser deixado em inglês.
 - Não adicione conteúdo extra. Se você acha que um desafio necessita de mudanças no texto e conteúdo adicional, você deve propor as mudanças através de uma issue no GitHub ou um pull request que modifique o arquivo em inglês.
 - Não mude a ordem do conteúdo.
 
-Se você tiver alguma dúvida, sinta-se à vontade para entrar em contato conosco através da [sala de chat dos tradutores](https://chat.freecodecamp.org/channel/contributors) e nós ficaremos felizes em ajudar você.
+Se você tiver alguma dúvida, sinta-se à vontade para entrar em contato conosco através da [sala de chat dos tradutores](https://discord.gg/PRyKn3Vbay) e nós ficaremos felizes em ajudar você.

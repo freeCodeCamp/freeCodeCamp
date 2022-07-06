@@ -8,7 +8,7 @@ dashedName: farey-sequence
 
 # --description--
 
-A [sequência de Farey](https://en.wikipedia.org/wiki/Farey sequence "wp: Farey sequence") <code>F<sub>n</sub></code> de ordem `n` é a sequência de frações completamente reduzida entre `0` e `1` que, quando em seus termos menores, tem denominadores menores que ou iguais a `n`, organizadas em ordem de tamanho crescente.
+A sequência de Farey <code>F<sub>n</sub></code> de ordem `n` é a sequência de frações completamente reduzida entre `0` e `1` que, quando em seus termos menores, tem denominadores menores que ou iguais a `n`, organizadas em ordem de tamanho crescente.
 
 A *sequência de Farey*, algumas vezes, é incorretamente chamada de *série de Farey*.
 

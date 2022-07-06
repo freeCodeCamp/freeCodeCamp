@@ -15,7 +15,9 @@ export function getSuperBlockSubPath(superBlock: SuperBlocks): string {
     [SuperBlocks.CodingInterviewPrep]: '10-coding-interview-prep',
     [SuperBlocks.MachineLearningPy]: '11-machine-learning-with-python',
     [SuperBlocks.RelationalDb]: '13-relational-databases',
-    [SuperBlocks.RespWebDesignNew]: '14-responsive-web-design-22'
+    [SuperBlocks.RespWebDesignNew]: '14-responsive-web-design-22',
+    [SuperBlocks.JsAlgoDataStructNew]:
+      '15-javascript-algorithms-and-data-structures-22'
   };
   return pathMap[superBlock];
 }

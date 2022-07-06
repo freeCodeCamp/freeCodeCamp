@@ -8,11 +8,11 @@ dashedName: knights-tour
 
 # --description--
 
-O problema do [Passeio do cavalo](https://en.wikipedia.org/wiki/Knight%27s_tour): você tem um tabuleiro de xadrez vazio de `w` \* `h`, exceto por um único cavalo em uma das posições. O cavalo deve realizar uma sequência de movimentos legais que resultem na visita de todas as posições do tabuleiro exatamente uma única vez. Observe que *não* é um requisito que o passeio seja "fechado". Em outras palavras, o cavalo não precisa terminar a um único movimento de sua posição inicial.
+O problema do passeio do cavalo: você tem um tabuleiro de xadrez vazio de `width` \* `height`, exceto por um único cavalo em uma das posições. O cavalo deve realizar uma sequência de movimentos legais que resultem na visita de todas as posições do tabuleiro exatamente uma única vez. Observe que *não* é um requisito que o passeio seja "fechado". Em outras palavras, o cavalo não precisa terminar a um único movimento de sua posição inicial.
 
 # --instructions--
 
-Escreva uma função que receba `w` e `h` como parâmetros e retorne o número de posições iniciais de onde é possível realizar a tarefa indicada acima.
+Escreva uma função que receba `width` e `height` como parâmetros e retorne o número de posições iniciais de onde é possível realizar a tarefa indicada acima.
 
 # --hints--
 
@@ -63,7 +63,7 @@ assert.equal(knightTour(8, 6), 48);
 ## --seed-contents--
 
 ```js
-function knightTour(w, h) {
+function knightTour(width, height) {
 
 }
 ```
@@ -71,7 +71,7 @@ function knightTour(w, h) {
 # --solutions--
 
 ```js
-function knightTour(w, h) {
+function knightTour(width, height) {
   function createBoards(rows, columns) {
     const board = [];
     const visited = [];
@@ -210,11 +210,11 @@ function knightTour(w, h) {
     [1, -2]
   ];
 
-  const [baseBoard, baseVisited] = createBoards(h, w);
+  const [baseBoard, baseVisited] = createBoards(height, width);
   fillAllowedMovesCounts(baseBoard);
   let solvedCount = 0;
-  for (let row = 0; row < h; row++) {
-    for (let column = 0; column < w; column++) {
+  for (let row = 0; row < height; row++) {
+    for (let column = 0; column < width; column++) {
       if (solveStart(baseBoard, baseVisited, row, column)) {
         solvedCount++;
       }

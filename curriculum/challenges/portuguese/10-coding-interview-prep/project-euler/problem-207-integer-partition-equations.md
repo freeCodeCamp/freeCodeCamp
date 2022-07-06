@@ -20,7 +20,11 @@ Assim, $P(6) = \frac{1}{2}$.
 
 Na tabela a seguir estão listados alguns valores de $P(m)$
 
-$$\begin{align} & P(5) = \frac{1}{1}    \\\\ & P(10) = \frac{1}{2}   \\\\ & P(15) = \frac{2}{3}   \\\\ & P(20) = \frac{1}{2}   \\\\ & P(25) = \frac{1}{2}   \\\\ & P(30) = \frac{2}{5}   \\\\ & \ldots                \\\\ & P(180) = \frac{1}{4}  \\\\ & P(185) = \frac{3}{13} \end{align}$$
+$$\begin{align}   & P(5) = \frac{1}{1}    \\\\
+  & P(10) = \frac{1}{2}   \\\\   & P(15) = \frac{2}{3}   \\\\
+  & P(20) = \frac{1}{2}   \\\\   & P(25) = \frac{1}{2}   \\\\
+  & P(30) = \frac{2}{5}   \\\\   & \ldots                \\\\
+  & P(180) = \frac{1}{4}  \\\\ & P(185) = \frac{3}{13} \end{align}$$
 
 Encontre o menor $m$ para o qual $P(m) &lt; \frac{1}{12.345}$
 

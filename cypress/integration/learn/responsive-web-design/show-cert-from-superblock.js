@@ -1,49 +1,50 @@
 import { SuperBlocks } from '../../../../config/certification-settings';
 
 const projects = {
-  superBlock: SuperBlocks.RespWebDesign,
-  block: 'responsive-web-design-projects',
+  superBlock: SuperBlocks.FrontEndDevLibs,
+  block: 'front-end-development-libraries-projects',
   challenges: [
     {
-      slug: 'build-a-tribute-page',
+      slug: 'build-a-random-quote-machine',
       solution: 'https://codepen.io/moT01/pen/ZpJpKp'
     },
     {
-      slug: 'build-a-survey-form',
+      slug: 'build-a-markdown-previewer',
       solution: 'https://codepen.io/moT01/pen/LrrjGz?editors=1010'
     },
     {
-      slug: 'build-a-product-landing-page',
+      slug: 'build-a-drum-machine',
       solution: 'https://codepen.io/moT01/full/qKyKYL/'
     },
     {
-      slug: 'build-a-technical-documentation-page',
+      slug: 'build-a-javascript-calculator',
       solution: 'https://codepen.io/moT01/full/JBvzNL/'
     },
     {
-      slug: 'build-a-personal-portfolio-webpage',
+      slug: 'build-a-25--5-clock',
       solution: 'https://codepen.io/moT01/pen/vgOaoJ'
     }
   ]
 };
 
-describe('Responsive Web Design Superblock', () => {
+describe('Front End Development Libraries Superblock', () => {
   before(() => {
     cy.exec('npm run seed');
     cy.login();
-    cy.visit('/learn/responsive-web-design');
+    cy.visit('/learn/front-end-development-libraries');
   });
   describe('Before submitting projects', () => {
     it('should navigate to "/settings#certification-settings" when clicking the "Go to settings to claim your certification" anchor', () => {
       cy.contains('Go to settings to claim your certification').click();
-      cy.url().should('include', '/settings#certification-settings');
+      cy.url().should('match', /\/settings\/?#certification-settings/);
     });
   });
   describe('After submitting all 5 projects', () => {
     before(() => {
       cy.exec('npm run seed');
       cy.login();
-      cy.toggleAll();
+      cy.visit('/settings');
+      cy.setPrivacyTogglesToPublic();
     });
 
     it('should be possible to view certifications from the settings page', () => {
@@ -51,12 +52,12 @@ describe('Responsive Web Design Superblock', () => {
       cy.visit(`/learn/${projects.superBlock}/`);
       cy.contains('Go to settings to claim your certification').click();
       cy.location().should(loc => {
-        expect(loc.pathname).to.eq(`/settings`);
+        expect(loc.pathname).to.include(`/settings`);
       });
-      cy.get('[data-cy=btn-for-responsive-web-design]').click();
+      cy.get('[data-cy=btn-for-front-end-development-libraries]').click();
       cy.contains('Show Certification').click();
       cy.location().should(loc => {
-        expect(loc.pathname).to.eq(
+        expect(loc.pathname).to.include(
           `/certification/developmentuser/${projects.superBlock}`
         );
       });
@@ -81,7 +82,7 @@ describe('Responsive Web Design Superblock', () => {
           .its('response.statusCode')
           .should('eq', 200);
         cy.location().should(loc => {
-          expect(loc.pathname).to.not.eq(url);
+          expect(loc.pathname).to.not.include(url);
         });
       });
     }

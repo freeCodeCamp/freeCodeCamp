@@ -4,7 +4,33 @@ import { FormControl, FormControlProps, FormControlVariationProps } from '.';
 
 const story = {
   title: 'Example/FormControl',
-  component: FormControl
+  component: FormControl,
+  parameters: {
+    controls: {
+      include: [
+        'className',
+        'id',
+        'onChange',
+        'value',
+        'componentClass',
+        'placeholder',
+        'required',
+        'type'
+      ]
+    }
+  },
+  argTypes: {
+    className: { control: { type: 'text' } },
+    id: { control: { type: 'text' } },
+    onChange: { action: 'changed' },
+    value: { control: { type: 'text' } },
+    componentClass: {
+      options: ['input', 'textarea']
+    },
+    placeholder: { control: { type: 'text' } },
+    required: { control: 'boolean' },
+    type: { options: ['text', 'email', 'url'] }
+  }
 };
 
 const DefaultTemplate: Story<FormControlProps> = args => {

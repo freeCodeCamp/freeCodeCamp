@@ -8,7 +8,7 @@ dashedName: sudoku
 
 # --description--
 
-Write a function to solve a partially filled-in normal 9x9 [Sudoku](https://en.wikipedia.org/wiki/Sudoku) grid and return the result. The blank fields are represented by `-1`. [Algorithmics of Sudoku](https://en.wikipedia.org/wiki/Algorithmics_of_sudoku) may help implement this.
+Write a function to solve a partially filled-in normal 9x9 Sudoku grid and return the result. The blank fields are represented by `-1`.
 
 # --hints--
 

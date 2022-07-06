@@ -28,10 +28,16 @@ Encontre o 2000º bloco desta sequência.
 
 # --hints--
 
-`hexagonalTile()` deve retornar `14516824220`.
+`hexagonalTile(10)` deve retornar `271`.
 
 ```js
-assert.strictEqual(hexagonalTile(), 14516824220);
+assert.strictEqual(hexagonalTile(10), 271);
+```
+
+`hexagonalTile(2000)` deve retornar `14516824220`.
+
+```js
+assert.strictEqual(hexagonalTile(2000), 14516824220);
 ```
 
 # --seed--
@@ -39,16 +45,62 @@ assert.strictEqual(hexagonalTile(), 14516824220);
 ## --seed-contents--
 
 ```js
-function hexagonalTile() {
+function hexagonalTile(tileIndex) {
 
   return true;
 }
 
-hexagonalTile();
+hexagonalTile(10);
 ```
 
 # --solutions--
 
 ```js
-// solution required
+const NUM_PRIMES = 840000;
+const PRIME_SEIVE = Array(Math.floor((NUM_PRIMES-1)/2)).fill(true);
+(function initPrimes(num) {
+  const upper = Math.floor((num - 1) / 2);
+  const sqrtUpper = Math.floor((Math.sqrt(num) - 1) / 2);
+  for (let i = 0; i <= sqrtUpper; i++) {
+    if (PRIME_SEIVE[i]) {
+      // Mark value in PRIMES array
+      const prime = 2 * i + 3;
+      // Mark all multiples of this number as false (not prime)
+      const primeSqaredIndex = 2 * i ** 2 + 6 * i + 3;
+      for (let j = primeSqaredIndex; j < upper; j += prime) {
+        PRIME_SEIVE[j] = false;
+      }
+    }
+  }
+})(NUM_PRIMES);
+
+function isPrime(num) {
+  if (num === 2) return true;
+  else if (num % 2 === 0) return false
+  else return PRIME_SEIVE[(num - 3) / 2];
+}
+
+function hexagonalTile(tileIndex) {
+  let count = 1;
+  let n = 1;
+  let number = 0;
+
+  while (count < tileIndex) {
+    if (isPrime(6*n - 1) &&
+        isPrime(6*n + 1) &&
+        isPrime(12*n + 5)) {
+      number = 3*n*n - 3*n + 2;
+      count++;
+      if (count >= tileIndex) break;
+    }
+    if (isPrime(6*n + 5) &&
+        isPrime(6*n - 1) &&
+        isPrime(12*n - 7) && n != 1) {
+      number = 3*n*n + 3*n + 1;
+      count++;
+    }
+    n++;
+  }
+  return number;
+}
 ```

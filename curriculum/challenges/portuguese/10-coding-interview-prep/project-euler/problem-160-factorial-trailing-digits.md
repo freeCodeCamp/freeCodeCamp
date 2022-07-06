@@ -12,7 +12,8 @@ Para qualquer $N$, considere $f(N)$ como os últimos cinco algarismos antes dos 
 
 Por exemplo:
 
-$$\begin{align} & 9! = 362880 \\; \text{so} \\; f(9) = 36288 \\\\ & 10! = 3628800 \\; \text{so} \\; f(10) = 36288 \\\\ & 20! = 2432902008176640000 \\; \text{so} \\; f(20) = 17664 \end{align}$$
+$$\begin{align}   & 9! = 362880 \\; \text{so} \\; f(9) = 36288 \\\\
+  & 10! = 3628800 \\; \text{so} \\; f(10) = 36288 \\\\ & 20! = 2432902008176640000 \\; \text{so} \\; f(20) = 17664 \end{align}$$
 
 Encontre $f(1.000.000.000.000)$
 

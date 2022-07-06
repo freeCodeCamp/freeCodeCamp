@@ -123,7 +123,7 @@ function getProjectPreviewConfig(challenge, allChallengeEdges) {
     showProjectPreview:
       challengeOrder === 0 &&
       usesMultifileEditor &&
-      challengeType !== challengeTypes.multiFileCertProject,
+      challengeType !== challengeTypes.multifileCertProject,
     challengeData: {
       challengeType: lastChallenge.challengeType,
       challengeFiles: projectPreviewChallengeFiles

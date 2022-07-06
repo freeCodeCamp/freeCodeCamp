@@ -8,15 +8,22 @@ dashedName: map-the-debris
 
 # --description--
 
+De acuerdo con la Tercera Ley de Kepler, el período orbital $T$ de dos puntos se orbitan mutuamente en una órbita circular o elíptica es:
+
+$$ T = 2 \pi \sqrt{\frac{a^{3}}{\mu}} $$
+
+- $a$ es el eje semi-mayor de la órbita
+- $μ = GM$ es el parámetro gravitatorio estándar
+- $G$ es la constante gravitatoria,
+- $M$ es la masa del cuerpo más masivo.
+
 Devuelve un nuevo arreglo que transforma la altitud media de los elementos en sus periodos orbitales (en segundos).
 
 El arreglo contendrá objetos en el formato `{name: 'name', avgAlt: avgAlt}`.
 
-Puedes leer sobre los períodos orbitales [en Wikipedia](https://es.wikipedia.org/wiki/Per%C3%Adodo_orbital).
-
 Los valores deben redondearse al número entero más cercano. El cuerpo orbitado es la Tierra.
 
-El radio de la tierra es de 6367.4447 kilómetros y el valor GM de la tierra es de 398600.4418 km<sup>3</sup>s<sup>-2</sup>.
+El radio de la tierra es de, 6367.4447 kilómetros y el valor GM de la tierra es de, 398600.4418 km<sup>3</sup>s<sup>-2</sup>.
 
 # --hints--
 

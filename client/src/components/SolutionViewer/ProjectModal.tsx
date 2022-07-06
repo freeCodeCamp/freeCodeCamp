@@ -26,6 +26,7 @@ const ProjectModal = ({
       bsSize='large'
       onHide={handleSolutionModalHide}
       show={isOpen}
+      size='lg'
     >
       <Modal.Header closeButton={true}>
         <Modal.Title id='solution-viewer-modal-title'>

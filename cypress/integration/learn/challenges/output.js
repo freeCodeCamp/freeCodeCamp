@@ -1,6 +1,6 @@
 const selectors = {
   defaultOutput: '.output-text',
-  editor: '.monaco-editor',
+  editor: 'div.monaco-editor textarea',
   hotkeys: '.default-layout > div',
   runTestsButton: 'button:contains("Run the Tests")'
 };
@@ -54,8 +54,7 @@ describe('Classic challenge', function () {
     // first wait for the editor to load
     cy.get(selectors.editor, {
       timeout: 15000
-    });
-    cy.get(selectors.hotkeys)
+    })
       .focus()
       .type('{ctrl}{enter}')
       .then(() => {

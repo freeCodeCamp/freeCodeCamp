@@ -7,7 +7,8 @@ const selectors = {
 };
 
 const certifications = [
-  'Responsive Web Design',
+  '(New) Responsive Web Design',
+  'Legacy Responsive Web Design',
   'JavaScript Algorithms and Data Structures',
   'Front End Development Libraries',
   'Data Visualization',
@@ -17,7 +18,6 @@ const certifications = [
   'Data Analysis with Python',
   'Information Security',
   'Machine Learning with Python',
-  'Responsive Web Design (Beta)',
   'Relational Database (Beta)'
 ];
 

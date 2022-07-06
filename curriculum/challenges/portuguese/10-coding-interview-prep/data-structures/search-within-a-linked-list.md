@@ -16,7 +16,7 @@ Vamos também implementar um método que faz o oposto: um método `elementAt`, q
 
 # --instructions--
 
-Escreva um método `isEmpty`, que verifique se a lista está vazia, um método `indexOf`, que retorna o `index` de um determinado elemento, e um método `elementAt`, que retorna um `element` em um dado `index.`
+Escreva um método `isEmpty`, que verifique se a lista está vazia, um método `indexOf`, que retorna o `index` de um determinado elemento, e um método `elementAt`, que retorna um `element` em um dado `index`.
 
 # --hints--
 

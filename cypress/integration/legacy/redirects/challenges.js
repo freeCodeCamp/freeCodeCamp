@@ -17,7 +17,7 @@ describe('challenges/superblock redirect', function () {
 
     cy.title().should(
       'eq',
-      'Responsive Web Design Certification | freeCodeCamp.org'
+      'Legacy Responsive Web Design Certification | freeCodeCamp.org'
     );
     cy.location().should(loc => {
       expect(loc.pathname).to.eq(locations.learnSuper);

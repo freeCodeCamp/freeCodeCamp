@@ -8,12 +8,12 @@ dashedName: iban
 
 # --description--
 
-O [Número de Conta Bancária Internacional (IBAN)](https://en.wikipedia.org/wiki/International_Bank_Account_Number) é uma maneira acordada internacionalmente para identificar contas bancárias através das fronteiras nacionais com um risco reduzido de propagação de [erros de transcrição](https://en.wikipedia.org/wiki/Transcription_error).
+O número internacional de conta bancária (IBAN) é um meio acordado internacionalmente para identificar as contas bancárias para além das fronteiras nacionais com um risco reduzido de propagação de erros de transcrição.
 
-O IBAN consiste em até 34 caracteres alfanuméricos:
+O <abbr title="International Bank Account Number">IBAN</abbr> consiste em até 34 caracteres alfanuméricos:
 
 <ul>
-  <li>primeiro o código de país ISO 3166-1 alpha-2 de duas letras</li>
+  <li>primeiro, o código de país de duas letras <abbr title="International Organization for Standardization">ISO</abbr> 3166-1 alpha-2</li>
   <li>depois dois dígitos de verificação, e</li>
   <li>finalmente, um número de conta bancária básica específico do país (BBAN).</li>
 </ul>

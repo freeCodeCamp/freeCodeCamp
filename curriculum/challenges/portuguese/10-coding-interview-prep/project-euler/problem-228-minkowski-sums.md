@@ -10,7 +10,8 @@ dashedName: problem-228-minkowski-sums
 
 Considere $S_n$ como o polígono – ou forma – regular de $n$ lados, cujos vértices $v_k (k = 1, 2, \ldots, n)$ têm as coordenadas:
 
-$$\begin{align} & x_k = cos(\frac{2k - 1}{n} × 180°) \\\\ & y_k = sin(\frac{2k - 1}{n} × 180°) \end{align}$$
+$$\begin{align}   & x_k = cos(\frac{2k - 1}{n} × 180°) \\\\
+  & y_k = sin(\frac{2k - 1}{n} × 180°) \end{align}$$
 
 Cada $S_n$ deve ser interpretado como uma forma preenchida que consiste em todos os pontos no perímetro e no interior.
 
