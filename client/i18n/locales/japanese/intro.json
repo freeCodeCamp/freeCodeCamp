@@ -804,7 +804,8 @@
         "title": "ロゼッタコード",
         "intro": [
           "由緒あるロゼッタコードライブラリから取られた以下の無料のプログラミングタスクで、クリエイティブな課題解決技能を向上させましょう。",
-          "これらの課題は困難かもしれませんが、あなたのアルゴリズムのロジックを新たな高みに押し上げます。"
+          "これらの課題は困難かもしれませんが、あなたのアルゴリズムのロジックを新たな高みに押し上げます。",
+          "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Attribute: Rosetta Code</a>"
         ]
       },
       "project-euler": {
