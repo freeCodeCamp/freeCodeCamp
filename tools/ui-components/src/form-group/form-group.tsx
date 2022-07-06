@@ -7,7 +7,8 @@
 
 // const FormGroup =  React.forwardRef<HTMLLabelElement, FormGroupProps>(
 //         ({ className, htmlFor, validationState, bsSize, bsClass }): JSX.Element => {
-//           const classes = [className].join('');
+//           const defaultClasses = 'mb-3.5'
+//           const classes = [defaultClasses, className].join('');
 //           return <label htmlFor={htmlFor} validationState={validationState} bsSize={bsSize} className={classes} bsClass={bsClass} />;
 //         }
 //       );
