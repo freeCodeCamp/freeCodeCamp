@@ -109,9 +109,12 @@ export const runTestInTestFrame = async function (
 };
 
 const createFrame =
-  (document: Document, id: string, title?: string) => (ctx: Context) => {
+  (document: Document, id: string, alertText: string, title?: string) =>
+  (ctx: Context) => {
     const frame = document.createElement('iframe');
     frame.id = id;
+    // what have I done? I have no idea
+
     if (frame.contentWindow) {
       console.log('frame content', frame.contentWindow);
     }
@@ -261,6 +264,7 @@ export const createProjectPreviewFramer = (
   createFramer(
     document,
     projectPreviewId,
+    iframeAlertText,
     initPreviewFrame,
     undefined,
     undefined,
@@ -271,18 +275,27 @@ export const createTestFramer = (
   document: Document,
   proxyLogger: ProxyLogger,
   frameReady: () => void
-) => createFramer(document, testId, initTestFrame, proxyLogger, frameReady);
+) =>
+  createFramer(
+    document,
+    testId,
+    iframeAlertText,
+    initTestFrame,
+    proxyLogger,
+    frameReady
+  );
 
 const createFramer = (
   document: Document,
   id: string,
+  alertText: string,
   init: InitFrame,
   proxyLogger?: ProxyLogger,
   frameReady?: () => void,
   frameTitle?: string
 ) =>
   flow(
-    createFrame(document, id, frameTitle),
+    createFrame(document, id, alertText, frameTitle),
     mountFrame(document, id),
     buildProxyConsole(proxyLogger),
     writeContentToFrame,
