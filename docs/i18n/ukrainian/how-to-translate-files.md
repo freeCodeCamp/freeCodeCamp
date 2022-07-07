@@ -1,19 +1,5 @@
 # How to Translate freeCodeCamp's resources
 
-It's our dream to provide you with the resources to learn, no matter the world language you speak. To help us with this massive effort, we have integrated our open-source code-base & curriculum with [Crowdin](https://crowdin.com/) - A tool to help us localize our code-base.
-
-The translation workflow is split into two main activities:
-
-- **Translating** curriculum files, documentation and UI elements like buttons, labels, etc.:
-
-  As a translator you can sign up on [our translation platform](https://translate.freecodecamp.org) and contribute translations in any of the 30+ languages enabled in there.
-
-- **Proofreading** the translations for all of the above.
-
-  Proofreaders verify that the community contributed translations are uniform in tone and free of common issues like typos, etc. In short, they ensure that the quality of translations is high. Note that we do not use machine translations for a reason.
-
-> [!WARNING] We are no longer using GitHub to translate files directly, if you are a returning contributor head to our [translation platform](https://translate.freecodecamp.org/) instead.
-
 ## Prepare yourself for contributions
 
 > The freeCodeCamp Localization Roadmap – There Are No Speed Limits
@@ -26,7 +12,7 @@ We just ask that you understand the following:
 
    Translating freeCodeCamp's resources is one of the most fun and rewarding experiences as a contributor, and it works best if you involve your friends and colleagues who speak the same world language as you.
 
-   We recommend joining [our community forum](https://forum.freecodecamp.org/c/contributors/3) and [contributors chat room](https://discord.gg/PRyKn3Vbay) with your friends and showing your interest before starting off with translations. Crowdin makes it easy to contribute translations, but it's still a lot of work.
+   You can start by reading [this announcement](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/). We recommend joining [our community forum](https://forum.freecodecamp.org/c/contributors/3) and [Discord chat server](https://discord.gg/PRyKn3Vbay) with your friends and showing your interest before starting off with translations. Crowdin and other tools make it easy to contribute translations, but it's still a lot of work.
 
    We want you to enjoy contributing and not burn out or lose interest.
 
@@ -38,7 +24,7 @@ We just ask that you understand the following:
 
    freeCodeCamp.org is committed to providing these for free as always, however we need to prioritize resources for those who need them the most. The last thing we want is to shutdown servers for a language if the translation activity dies off & things become outdated.
 
-   Once a language reaches at least a few certifications on the curriculum we can begin deploying the language live on [`/learn`](https://www.freecodecamp.org/learn), while you continue to translate the remaining certifications.
+   For translating the curriculum, once a language reaches at least a few certifications we can begin deploying the language live on [`/learn`](https://www.freecodecamp.org/learn), while you continue to translate the remaining certifications.
 
    For example, we would want to deploy at least the entire front-end certifications suite when we ship a new world language for the first time.
 
@@ -54,9 +40,27 @@ We just ask that you understand the following:
 
    Once you have a small group of people (at least 4-5) interested and committed, we can hop on a call. We will explain all the details and walk you through some of the tools and processes.
 
+## Overview of Crowdin
+
+It's our dream to provide you with the resources to learn, no matter the world language you speak. To help us with this massive effort, we have integrated our open-source code-base & curriculum with [Crowdin](https://crowdin.com/) - A tool to help us localize our code-base.
+
+> [!NOTE] We use a different tool and workflow for translating [news articles](https://www.freecodecamp.org/news). If you are interested in translating articles, read [this announcement](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) and reach out to your Language Lead.
+
+The translation workflow is split into two main activities:
+
+- **Translating** curriculum files, documentation and UI elements like buttons, labels, etc.:
+
+  As a translator you can sign up on [our translation platform](https://translate.freecodecamp.org) and contribute translations in any of the 30+ languages enabled in there.
+
+- **Proofreading** the translations for all of the above.
+
+  Proofreaders verify that the community contributed translations are uniform in tone and free of common issues like typos, etc. In short, they ensure that the quality of translations is high. Note that we do not use machine translations for a reason.
+
+> [!WARNING] We are no longer using GitHub to translate files directly, if you are a returning contributor head to our [translation platform](https://translate.freecodecamp.org/) instead.
+
 ## Getting started
 
-First, make sure you come say "Hi" in our [contributors chat room](https://discord.gg/PRyKn3Vbay). We post regular updates about translating resources and answer a lot of your queries in there.
+First, make sure you come say "Hi" in our [Discord](https://discord.gg/PRyKn3Vbay). We post regular updates about translating resources and answer a lot of your queries in there.
 
 Next, head to our [translation platform](https://translate.freecodecamp.org/) and login (if you have not contributed to translations before, you will need to create an account).
 
@@ -103,7 +107,7 @@ Crowdin separates a document into translatable "strings", usually sentences. Eac
 9. Here you can see the comments window. If you have questions or concerns about a particular string, you can leave a comment on the string here for other translators to see.
 10. These two "pane" buttons will hide the left (document) and right (comments) views.
 
-> [!NOTE] If you see a hidden string that includes translations, please notify us in the [contributors chat room](https://discord.gg/PRyKn3Vbay) so we can remove the translation from memory.
+> [!NOTE] If you see a hidden string that includes translations, please notify us in the [Discord](https://discord.gg/PRyKn3Vbay) so we can remove the translation from memory.
 
 When you have completed a translation for a string, select the `Save` button to store your translation on Crowdin. Other contributors will then be able to vote on your translation and proofreaders will be able to approve it.
 
@@ -306,4 +310,4 @@ Follow these guidelines to ensure our translations are as accurate as possible:
 - Do not add additional content. If you feel a challenge requires changes in the text content or additional information, you should propose the changes through a GitHub issue or a pull request that modifies the English file.
 - Do not change the order of content.
 
-If you have any questions, feel free to reach out to us in our [contributors chat room](https://discord.gg/PRyKn3Vbay) and we will be happy to assist you.
+If you have any questions, feel free to reach out to us in our [Discord](https://discord.gg/PRyKn3Vbay) and we will be happy to assist you.

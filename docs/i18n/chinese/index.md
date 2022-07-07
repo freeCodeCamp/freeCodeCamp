@@ -22,7 +22,16 @@ Happy contributing.
 
 We are localizing freeCodeCamp.org to major world languages.
 
-Certifications are already live in some major world languages like [Chinese (中文)](https://chinese.freecodecamp.org/learn), [Spanish (Español)](https://www.freecodecamp.org/espanol/learn), [Italian (Italiano)](https://www.freecodecamp.org/italian/learn), [Portuguese (Português)](https://www.freecodecamp.org/portuguese/learn). We encourage you to read the [announcement here](https://www.freecodecamp.org/news/world-language-translation-effort) and share it with your friends to get them excited about this.
+Certifications are already live in some major world languages like below:
+
+- [Chinese (中文)](https://chinese.freecodecamp.org/learn)
+- [Spanish (Español)](https://www.freecodecamp.org/espanol/learn)
+- [Italian (Italiano)](https://www.freecodecamp.org/italian/learn)
+- [Portuguese (Português)](https://www.freecodecamp.org/portuguese/learn)
+- [Ukrainian (Українська)](https://www.freecodecamp.org/ukrainian/learn)
+- [Japanese (日本語)](https://www.freecodecamp.org/japanese/learn)
+
+We encourage you to read the [announcement here](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) and share it with your friends to get them excited about this.
 
 **If you're interested in translating, here's [how to translate freeCodeCamp's resources](how-to-translate-files.md).**
 
@@ -32,12 +41,12 @@ Our learning platform runs on a modern JavaScript stack. It has various componen
 
 Broadly, we have a Node.js based API server, a set of React-based client applications, testing scripts to evaluate camper-submitted curriculum projects, and more. If you want to productively contribute to the learning platform, we recommend some familiarity with these tools.
 
-如果你想帮助我们改进我们的基础代码的话……
+If you want to help us improve our codebase...
 
-**你可以使用 Gitpod，一个免费的在线开发环境，在你的浏览器中为 freeCodeCamp 启动一个准备好的代码开发环境。**
+**you can either use Gitpod, a free online dev environment that starts a ready-to-code dev environment for freeCodeCamp in your browser.**
 
-[![在 Gitpod 中打开](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-或者，你也可以……
+Or you can...
 
 **[Set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md) on your machine.**
