@@ -33,7 +33,7 @@ and the population standard deviation is equal to the square root of the varianc
 
 $$\sigma ={\sqrt {4}}=2$$
 
-Write a function that takes an array of numbers as parameter and returns the standard deviation of the series.
+Write a function that takes an array of numbers as parameter and returns the <a href="https://rosettacode.org/wiki/Standard_deviation" target="_blank" rel="noopener noreferrer nofollow">standard deviation</a> of the series.
 
 # --hints--
 

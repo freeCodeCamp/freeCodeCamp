@@ -8,9 +8,13 @@ dashedName: cramers-rule
 
 # --description--
 
-Na álgebra linear, a regra de Cramer é uma fórmula explícita para a solução de um sistema de equações lineares com tantas equações quanto variáveis, sendo válido sempre que o sistema tiver uma solução única. Ela exprime a solução em termos dos determinantes da matriz do coeficiente (quadrada) e de matrizes obtidas a partir dela substituindo uma coluna pelo vetor da direita das equações.
+<a href="https://rosettacode.org/wiki/Cramer%27s_rule" target="_blank" rel="noopener noreferrer nofollow">A regra de Cramer</a> é uma fórmula para resolver um sistema de equações lineares usando os determinantes das matrizes formadas a partir de subconjuntos dos valores dos coeficientes e dos valores do lado direito.
 
-Dado
+O determinante de uma matriz com 2 linhas e duas colunas é dado por:
+
+$\begin{aligned}|A|={\begin{vmatrix}a&b\\\c&d\end{vmatrix}}=ad-bc.\end{aligned}$
+
+Dado um sistema de equações lineares:
 
 $\\left\\{\\begin{matrix}a_1x + b_1y + c_1z&= {\\color{red}d_1}\\\\a_2x + b_2y + c_2z&= {\\color{red}d_2}\\\\a_3x + b_3y + c_3z&= {\\color{red}d_3}\\end{matrix}\\right.$
 

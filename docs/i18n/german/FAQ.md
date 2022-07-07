@@ -10,7 +10,7 @@ freeCodeCamp läuft auf einem modernen JavaScript-Stack. Wenn du daran interessi
 
 Ja - du kannst zu jeder der über 30 Sprachen beitragen, die wir auf unserer Übersetzungsplattform aktiviert haben.
 
-In einigen Sprachen haben wir von Nutzern erstellte Übersetzungen online. Wir haben vor, das freeCodeCamp in mehrere wichtige Weltsprachen zu lokalisieren. Du kannst alles darüber in unserer [Ankündigung ](https://www.freecodecamp.org/news/world-language-translation-effort) lesen.
+In einigen Sprachen haben wir von Nutzern erstellte Übersetzungen online. Wir haben vor, das freeCodeCamp in mehrere wichtige Weltsprachen zu lokalisieren. You can read all about this in our [announcement here](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/).
 
 Wenn du daran interessiert bist, zu Übersetzungen beizutragen, stelle bitte sicher, dass du [diesen Leitfaden](how-to-translate-files.md) zuerst gelesen hast.
 

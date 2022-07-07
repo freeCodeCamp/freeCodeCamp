@@ -33,7 +33,7 @@ e o desvio-padrão da população é igual à raiz quadrada da variância:
 
 $$\sigma ={\sqrt {4}}=2$$
 
-Escreva uma função que receba um array de números como parâmetro e retorne o desvio padrão da série.
+Escreva uma função que recebe um array de números como parâmetro e retorna o <a href="https://rosettacode.org/wiki/Standard_deviation" target="_blank" rel="noopener noreferrer nofollow">desvio padrão</a> da série.
 
 # --hints--
 

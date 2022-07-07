@@ -26,16 +26,16 @@ Facoltativamente, puoi fare il push direttamente a `upstream/main`, ma aprire un
 3. Crea una nuova GitHub Release usando la GitHub UI:
 
 - Implementa correttamente il numero di versione, quando crei una nuova tag.
-- Upload the `.vsix` file with the release.
-- Publish the release, and confirm the action succeeded.
+- Fai l'upload del file `.vsix` con la nuova release.
+- Pubblica la release, e conferma che l'azione ha avuto successo.
 
-> [!NOTE] Creating a release requires write access to the `freeCodeCamp/courses-vscode-extension` repository.
+> [!NOTE] Creare una release richiede permessi di scrittura sul repository `freeCodeCamp/courses-vscode-extension`.
 
 ## Pubblicare l'estensione manualmente
 
-A manual upload to the Visual Studio Marketplace can be achieved, by following these steps:
+Un upload manuale al Visual Studio Marketplace può essere fatto, seguendo questi step:
 
-1. Visit https://marketplace.visualstudio.com/ and sign in
-2. Navigate to the [freeCodeCamp Publisher page](https://marketplace.visualstudio.com/manage/publishers/freecodecamp)
-3. Select the relevant extension, and select `Update`
-4. Upload the file from your local files
+1. Visita https://marketplace.visualstudio.com/ e fai log in
+2. Naviga alla [pagina freeCodeCamp Publisher](https://marketplace.visualstudio.com/manage/publishers/freecodecamp)
+3. Seleziona l'estensione rilevante, e seleziona `Update`
+4. Carica il file dai tuoi file locali
