@@ -2,14 +2,7 @@ import { navigate } from 'gatsby';
 import { omit } from 'lodash-es';
 import { ofType } from 'redux-observable';
 import { of, empty } from 'rxjs';
-import {
-  switchMap,
-  retry,
-  catchError,
-  concat,
-  finalize,
-  tap
-} from 'rxjs/operators';
+import { switchMap, retry, catchError, concat, map } from 'rxjs/operators';
 
 import { challengeTypes, submitTypes } from '../../../../utils/challenge-types';
 import {
@@ -181,17 +174,15 @@ export default function completionEpic(action$, state$) {
       const pathToNavigateTo = () => {
         return findPathToNavigateTo(nextChallengePath, superBlock);
       };
-      let result = false;
+
       return submitter(type, state).pipe(
-        tap(res => {
-          result = res.type !== submitActionTypes.updateFailed;
-        }),
-        concat(of(closeModal('completion'))),
-        finalize(async () => {
-          if (result) {
-            navigate(pathToNavigateTo());
+        map(res => {
+          if (res.type !== submitActionTypes.updateFailed) {
+            setTimeout(() => navigate(pathToNavigateTo()), 1);
           }
-        })
+          return res;
+        }),
+        concat(of(closeModal('completion')))
       );
     })
   );
