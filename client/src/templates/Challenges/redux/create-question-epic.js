@@ -2,8 +2,8 @@ import dedent from 'dedent';
 import i18next from 'i18next';
 import { ofType } from 'redux-observable';
 import { tap, mapTo } from 'rxjs/operators';
+import { nanoid } from 'nanoid';
 import envData from '../../../../../config/env.json';
-import { userSelector } from '../../../redux';
 import {
   closeModal,
   challengeFilesSelector,
@@ -38,9 +38,9 @@ function createQuestionEpic(action$, state$, { window }) {
       const {
         title: challengeTitle,
         superBlock,
+        block,
         helpCategory
       } = challengeMetaSelector(state);
-      const user = userSelector(state);
       const {
         navigator: { userAgent },
         location: { pathname, origin }
@@ -88,12 +88,10 @@ function createQuestionEpic(action$, state$, { window }) {
         )}\n${i18next.t('forum-help.add-code-three')}\n\n\`\`\`\n${endingText}`
       );
 
-      const userText = user.name || user.username || '';
-
       const titleText = dedent(
-        `${i18next.t(`intro:${superBlock}.title`)} - ${challengeTitle}${
-          userText ? ` - ${userText}` : ''
-        }`
+        `${i18next.t(
+          `intro:${superBlock}.blocks.${block}.title`
+        )} - ${challengeTitle} - ${nanoid()}`
       );
 
       const category = window.encodeURIComponent(
