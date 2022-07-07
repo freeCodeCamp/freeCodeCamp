@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { mainPreviewId, iframeAlertText } from '../utils/frame';
+import { mainPreviewId } from '../utils/frame';
 
 import './preview.css';
 
@@ -10,14 +10,12 @@ interface PreviewProps {
   disableIframe?: boolean;
   previewMounted: () => void;
   previewId?: string;
-  previewAlertText?: string;
 }
 
 function Preview({
   disableIframe,
   previewMounted,
-  previewId,
-  previewAlertText
+  previewId
 }: PreviewProps): JSX.Element {
   const { t } = useTranslation();
   const [iframeStatus, setIframeStatus] = useState<boolean | undefined>(false);
@@ -33,7 +31,6 @@ function Preview({
 
   // TODO: remove type assertion once frame.js has been migrated.
   const id = previewId ?? mainPreviewId;
-  const alertText = previewAlertText ?? iframeAlertText;
 
   return (
     <div className={`notranslate challenge-preview ${iframeToggle}-iframe`}>
