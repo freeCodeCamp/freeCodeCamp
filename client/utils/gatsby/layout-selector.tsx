@@ -2,7 +2,7 @@ import React from 'react';
 
 import {
   CertificationLayout,
-  DefaultLayout
+  TcIntegrationLayout
 } from '../../src/components/layouts';
 import FourOhFourPage from '../../src/pages/404';
 import { isChallenge } from '../../src/utils/path-parsers';
@@ -21,9 +21,9 @@ export default function layoutSelector({
 
   if (element.type === FourOhFourPage) {
     return (
-      <DefaultLayout pathname={pathname} showFooter={true}>
+      <TcIntegrationLayout pathname={pathname} showFooter={true}>
         {element}
-      </DefaultLayout>
+      </TcIntegrationLayout>
     );
   } else if (/\/certification\//.test(pathname)) {
     return (
@@ -31,15 +31,15 @@ export default function layoutSelector({
     );
   } else if (isChallenge(pathname)) {
     return (
-      <DefaultLayout pathname={pathname} showFooter={false}>
+      <TcIntegrationLayout pathname={pathname} showFooter={false}>
         {element}
-      </DefaultLayout>
+      </TcIntegrationLayout>
     );
   } else {
     return (
-      <DefaultLayout pathname={pathname} showFooter={true}>
+      <TcIntegrationLayout pathname={pathname} showFooter={true}>
         {element}
-      </DefaultLayout>
+      </TcIntegrationLayout>
     );
   }
 }

@@ -66,3 +66,85 @@
   font-style: normal;
   font-display: fallback;
 }
+
+/* roboto */
+@font-face {
+  font-family: 'Roboto';
+  src: url('../../../static/fonts/roboto/Roboto-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../../../static/fonts/roboto/Roboto-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../../../static/fonts/roboto/Roboto-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../../../static/fonts/roboto/Roboto-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../../../static/fonts/roboto/Roboto-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../../../static/fonts/roboto/Roboto-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: fallback;
+}
+
+/* barlow */
+@font-face {
+  font-family: 'Barlow';
+  src: url('../../../static/fonts/barlow/Barlow-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Barlow';
+  src: url('../../../static/fonts/barlow/Barlow-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Barlow';
+  src: url('../../../static/fonts/barlow/Barlow-Semibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Barlow';
+  src: url('../../../static/fonts/barlow/Barlow-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: fallback;
+}

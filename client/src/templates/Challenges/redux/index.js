@@ -10,6 +10,8 @@ import codeLockEpic from './code-lock-epic';
 import codeStorageEpic from './code-storage-epic';
 import completionEpic from './completion-epic';
 import createQuestionEpic from './create-question-epic';
+import ifrMessageChannelEpic from './ifr-message-channel-epic';
+import incomingIframeMessagesEpic from './incoming-iframe-messages-epic';
 import { createCurrentChallengeSaga } from './current-challenge-saga';
 import { createExecuteChallengeSaga } from './execute-challenge-saga';
 
@@ -49,7 +51,9 @@ export const epics = [
   codeLockEpic,
   completionEpic,
   createQuestionEpic,
-  codeStorageEpic
+  codeStorageEpic,
+  ifrMessageChannelEpic,
+  incomingIframeMessagesEpic
 ];
 
 export const sagas = [

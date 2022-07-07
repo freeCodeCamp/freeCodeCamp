@@ -8,10 +8,16 @@ import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { debounce } from 'lodash';
 import { challengeTypes } from '../../../../utils/challenge-types';
 
 import './tool-panel.css';
-import { openModal, executeChallenge, challengeMetaSelector } from '../redux';
+import {
+  openModal,
+  executeChallenge,
+  challengeMetaSelector,
+  submitChallenge
+} from '../redux';
 
 import { saveChallenge, isSignedInSelector } from '../../../redux';
 
@@ -29,6 +35,7 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
+      submitChallenge,
       executeChallenge,
       openHelpModal: () => openModal('help'),
       openVideoModal: () => openModal('video'),
@@ -41,6 +48,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 interface ToolPanelProps {
   challengeType: number;
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
+  submitChallenge: () => void;
   saveChallenge: () => void;
   isMobile?: boolean;
   isSignedIn: boolean;
@@ -49,6 +57,7 @@ interface ToolPanelProps {
   openResetModal: () => void;
   guideUrl: string;
   videoUrl: string;
+  challengeIsCompleted?: boolean;
 }
 
 function ToolPanel({
@@ -61,30 +70,42 @@ function ToolPanel({
   openVideoModal,
   openResetModal,
   guideUrl,
-  videoUrl
+  videoUrl,
+  challengeIsCompleted,
+  submitChallenge
 }: ToolPanelProps) {
   const handleRunTests = () => {
-    executeChallenge({ showCompletionModal: true });
+    executeChallenge({ showCompletionModal: false });
   };
+
   const { t } = useTranslation();
+
+  const tryToSubmitChallenge = debounce(submitChallenge, 2000);
+
   return (
     <div
       className={`tool-panel-group button-group ${
         isMobile ? 'tool-panel-group-mobile' : ''
       }`}
     >
-      <Button
-        aria-label='Run the tests use shortcut Ctrl+enter'
-        block={true}
-        bsStyle='primary'
-        onClick={handleRunTests}
-      >
-        {isMobile ? t('buttons.run') : t('buttons.run-test')}
-      </Button>
+      {!challengeIsCompleted && (
+        <Button
+          aria-label='Run the tests use shortcut Ctrl+enter'
+          bsStyle='primary'
+          onClick={handleRunTests}
+        >
+          {isMobile ? t('buttons.run') : t('buttons.run-test')}
+        </Button>
+      )}
+      {challengeIsCompleted && (
+        <Button bsStyle='primary' onClick={tryToSubmitChallenge}>
+          {t('buttons.submit-and-go')}
+        </Button>
+      )}
+
       {isSignedIn && challengeType === challengeTypes.multifileCertProject && (
         <Button
-          block={true}
-          bsStyle='primary'
+          bsStyle='link'
           data-cy='save-code-to-database-btn'
           className='btn-invert'
           onClick={saveChallenge}
@@ -93,18 +114,13 @@ function ToolPanel({
         </Button>
       )}
       {challengeType !== challengeTypes.multifileCertProject && (
-        <Button
-          block={true}
-          bsStyle='primary'
-          className='btn-invert'
-          onClick={openResetModal}
-        >
+        <Button bsStyle='link' className='btn-invert' onClick={openResetModal}>
           {isMobile ? t('buttons.reset') : t('buttons.reset-code')}
         </Button>
       )}
       <DropdownButton
-        block={true}
-        bsStyle='primary'
+        bsStyle='link'
+        block={false}
         className='btn-invert'
         id='get-help-dropdown'
         title={isMobile ? t('buttons.help') : t('buttons.get-help')}
