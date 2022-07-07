@@ -39,7 +39,7 @@ const testId = 'fcc-test-frame';
 // the project preview frame demos the finished project
 export const projectPreviewId = 'fcc-project-preview-frame';
 
-const iframeAlertText = 'misc.iframe-alert';
+export const iframeAlertText = 'misc.iframe-alert';
 
 const DOCUMENT_NOT_FOUND_ERROR = 'document not found';
 
