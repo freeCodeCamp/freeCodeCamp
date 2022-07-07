@@ -5,5 +5,5 @@ export const handleRequest = (makeRequest: () => Promise<Response>) => () => {
     .catch(err => console.error(err));
 };
 
-export const API_LOCATION =
-  process.env.REACT_APP_GITPOD_API_LOCATION || 'http://localhost:3200';
+export const API_LOCATION = process.env
+  .REACT_APP_CHALLENGE_EDITOR_API_LOCATION as string;
