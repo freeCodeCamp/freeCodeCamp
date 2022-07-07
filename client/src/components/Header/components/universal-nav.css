@@ -132,8 +132,9 @@
   outline: none !important;
 }
 
-.nav-link-signout:not([aria-disabled='true']):hover,
-.nav-link-signout:not([aria-disabled='true']):focus {
+/* increased the selector specificity */
+li > button.nav-link-signout:not([aria-disabled='true']):hover,
+li > button.nav-link-signout:not([aria-disabled='true']):focus {
   background-color: hsl(16, 100%, 67%);
 }
 
@@ -254,7 +255,7 @@ button.nav-link[aria-disabled='true'] {
 }
 
 .nav-lang-menu .nav-link:hover {
-  background-color: var(--gray-10) !important;
+  background-color: var(--gray-10);
 }
 
 .nav-lang-button {

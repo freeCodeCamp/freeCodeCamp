@@ -13,6 +13,7 @@ import {
   faExternalLinkAlt
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Modal } from '@freecodecamp/react-bootstrap';
 import React, { Component, Fragment, createRef, Ref } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -28,7 +29,6 @@ import createLanguageRedirect from '../../create-language-redirect';
 import { Link } from '../../helpers';
 import { Themes } from '../../settings/theme';
 import LanguageGlobe from '../../../assets/icons/language-globe';
-// import SignOutModal from './SignOutModal';
 
 const { clientLocale, radioLocation, apiLocation } = envData;
 
@@ -451,7 +451,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
         </li>
         {username && (
           <Fragment key='signout-frag'>
-            <li className='nav-line' key='sign-out'>
+            {/* <li className='nav-line' key='sign-out'>
               <a
                 className='nav-link nav-link-signout'
                 href={`${apiLocation}/signout`}
@@ -460,6 +460,29 @@ export class NavLinks extends Component<NavLinksProps, {}> {
               >
                 {t('buttons.sign-out')}
               </a>
+            </li> */}
+            <li>
+              <button
+                className='nav-link nav-link-signout'
+                onClick={() => true}
+              >
+                {t('buttons.sign-out')}
+              </button>
+              <Modal>
+                <Modal.Header closeButton />
+                <Modal.Body>
+                  <p>you will signout in 10 seconds</p>
+                  <a
+                    className='nav-link nav-link-signout'
+                    href={`${apiLocation}/signout`}
+                    onBlur={this.handleBlur}
+                    onKeyDown={this.handleMenuKeyDown}
+                  >
+                    {t('buttons.sign-out')}
+                  </a>
+                  <button>Cansel Signing out</button>
+                </Modal.Body>
+              </Modal>
             </li>
           </Fragment>
         )}
