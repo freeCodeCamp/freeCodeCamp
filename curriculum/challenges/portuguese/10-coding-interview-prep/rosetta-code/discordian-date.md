@@ -10,11 +10,23 @@ dashedName: discordian-date
 
 O calendário gregoriano é um calendário solar com 12 meses de 28 a 31 dias cada. O ano nos calendários consiste em 365 dias. com um dia a mais adicionado em fevereiro nos anos bissextos, à exceção de três anos que fecham um século a cada 400 anos.
 
-O calendário discordiano está alinhado ao calendário gregoriano e começa em 1º de janeiro. A sua semana consiste em cinco dias, com 73 semanas por ano. A cada quatro anos no calendário discordiano, um dia extra é inserido entre caos 59 e caos 60
+O <a href="http://www.rosettacode.org/wiki/Discordian_date" target="_blank" rel="noopener noreferrer nofollow">calendário discordiano</a> está alinhado ao calendário gregoriano e começa em 1º de janeiro. A sua semana consiste em cinco dias, com 73 semanas por ano. A cada quatro anos no calendário discordiano, um dia extra é inserido entre caos 59 e caos 60.
 
-Observe que, no calendário discordiano 1º do caos de 3188 YOLD é equivalente a 1º de janeiro de 2022 no calendário gregoriano.
+Os meses, dias de semana e eventos no calendário discordiano são fornecidos assim:
+
+Estações: `'Chaos', 'Discord', 'Confusion', 'Bureaucracy', 'The Aftermath'`.
+
+Dias da semana: `'Sweetmorn', 'Boomtime', 'Pungenday', 'Prickle-Prickle', 'Setting Orange'`.
+
+Apóstolos: `'Mungday', 'Mojoday', 'Syaday', 'Zaraday', 'Maladay'`.
+
+Feriados: `'Chaoflux', 'Discoflux', 'Confuflux', 'Bureflux', 'Afflux'`.
+
+# --instructions--
 
 Converta uma determinada data do calendário gregoriano para o calendário discordiano.
+
+Observe que, no calendário discordiano, (1º do caos de 3188 YOLD) é equivalente a (1º de janeiro de 2022) no calendário gregoriano.
 
 # --hints--
 

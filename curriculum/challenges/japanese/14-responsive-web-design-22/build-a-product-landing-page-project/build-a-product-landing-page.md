@@ -20,7 +20,7 @@ dashedName: build-a-product-landing-page
 1. `id="video"` を持つ、プロダクトの埋め込み動画を見ることができます
 1. プロダクトランディングページには `id="form"` を持つ `form` 要素が必要です
 1. フォーム内には、E メールアドレスが入力可能な `id="email"` を持つ `input` 欄が必要です
-1. `#email` 入力欄には、その用途をユーザーに知らせるためのプレイスホルダ―テキストが必要です
+1. `#email` 入力欄には、その用途をユーザーに知らせるためのプレイスホルダーテキストが必要です
 1. `#email` 入力欄は、入力されたテキストがメールアドレスであるか確認するために HTML5 のバリデーションを使用します
 1. フォーム内には、`id="submit"` を持つ送信ボタンの `input` が必要です
 1. `#submit` 要素をクリックすると、email の情報が静的ページに送信されます (このモック URL を使用してください: `https://www.freecodecamp.com/email-submit`)
@@ -154,7 +154,7 @@ const els = document.querySelectorAll('#form #email')
 assert(els.length > 0)
 ```
 
-`#email` は、プレイスホルダ―テキストが設定された `placeholder` 属性を持つ必要があります。
+`#email` は、プレイスホルダーテキストが設定された `placeholder` 属性を持つ必要があります。
 
 ```js
 const el = document.getElementById('email')

@@ -34,14 +34,14 @@ dashedName: build-a-product-landing-page
 
 # --hints--
 
-Ви повинні мати елемент `header` з `header` `id`.
+Ви повинні мати елемент `header` з `id` зі значенням `header`.
 
 ```js
 const el = document.getElementById('header')
 assert(!!el && el.tagName === 'HEADER')
 ```
 
-Ви повинні мати елемент `img` з `header-img` `id`.
+Ви повинні мати елемент `img` з `id` зі значенням `header-img`.
 
 ```js
 const el = document.getElementById('header-img')
@@ -62,14 +62,14 @@ const el = document.getElementById('header-img')
 assert(!!el && !!el.src)
 ```
 
-Значення `src` `#header-img` повинне бути активним URL (починається з `http`).
+Значення `src` вашого `#header-img` повинне бути активним URL (починається з `http`).
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && /^http/.test(el.src))
 ```
 
-Ви повинні мати елемент `nav` з `nav-bar` `id`.
+Ви повинні мати елемент `nav` з `id` зі значенням `nav-bar`.
 
 ```js
 const el = document.getElementById('nav-bar')
@@ -111,7 +111,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-Ви повинні мати елемент `video` або `iframe` з `video` `id`.
+Ви повинні мати елемент `video` або `iframe` з `id` зі значенням `video`.
 
 ```js
 const el = document.getElementById('video')
@@ -133,14 +133,14 @@ if (sourceElement) {
 assert(el.hasAttribute('src'));
 ```
 
-Ви повинні мати елемент `form` з `form` `id`.
+Ви повинні мати елемент `form` з `id` зі значенням `form`.
 
 ```js
 const el = document.getElementById('form')
 assert(!!el && el.tagName === 'FORM')
 ```
 
-Ви повинні мати елемент `input` з `email` `id`.
+Ви повинні мати елемент `input` з `id` зі значенням `email`.
 
 ```js
 const el = document.getElementById('email')
@@ -161,14 +161,14 @@ const el = document.getElementById('email')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-Ваш `#email` повинен використовувати перевірку HTML5, встановивши `email` `type`.
+Ваш `#email` повинен використовувати перевірку HTML5, встановивши `type` зі значенням `email`.
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.type === 'email')
 ```
 
-Ви повинні мати елемент `input` з `submit` `id`.
+Ви повинні мати елемент `input` з `id` зі значенням `submit`.
 
 ```js
 const el = document.getElementById('submit')
@@ -182,21 +182,21 @@ const els = document.querySelectorAll('#form #submit')
 assert(els.length > 0)
 ```
 
-Ваш `#submit` повинен мати `submit` `type`.
+Ваш `#submit` повинен мати `type` зі значенням `submit`.
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && el.type === 'submit')
 ```
 
-Ваше `#form` повинне мати атрибут `action` для `https://www.freecodecamp.com/email-submit`.
+Ваш `#form` повинен мати атрибут `action` зі значенням `https://www.freecodecamp.com/email-submit`.
 
 ```js
 const el = document.getElementById('form')
 assert(!!el && el.action === 'https://www.freecodecamp.com/email-submit')
 ```
 
-Ваш `#email` повинен мати атрибут `name` для `email`.
+Ваш `#email` повинен мати атрибут `name` зі значенням `email`.
 
 ```js
 const el = document.getElementById('email')
