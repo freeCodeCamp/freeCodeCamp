@@ -8,7 +8,7 @@ dashedName: compare-a-list-of-strings
 
 # --description--
 
-Uma lista ou sequência é um tipo de dados abstrato que representa um número finito de valores ordenados, onde o mesmo valor pode ocorrer mais de uma vez. Exemplo:
+Uma lista é um conjunto ordenado de valores que pode conter duplicatas. Exemplo:
 
 ```js
 const list = [['AA',  'BB', 'CC'], ['AA', 'ACB', 'AA'], [], ['AA']];

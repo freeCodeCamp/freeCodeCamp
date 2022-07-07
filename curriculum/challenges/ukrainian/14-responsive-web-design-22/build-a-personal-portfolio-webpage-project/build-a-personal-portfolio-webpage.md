@@ -12,12 +12,12 @@ dashedName: build-a-personal-portfolio-webpage
 
 **Історія користувача:**
 
-1. Портфоліо повинне містити вітальну секцію з `welcome-section` `id`
+1. Портфоліо повинне містити вітальну секцію з `id` зі значенням `welcome-section`
 1. Вітальна секція повинна містити елемент `h1` з текстом
-1. Портфоліо повинне містити секцію проєктів з `projects` `id`
-1. Секція проєктів повинна містити щонайменше один елемент з `project-tile` `class` для виконання проєкту
+1. Портфоліо повинне містити секцію проєктів з `id` зі значенням `projects`
+1. Секція проєктів повинна містити щонайменше один елемент з `class` зі значенням `project-tile` для виконання проєкту
 1. Секція проєктів повинна містити щонайменше одне посилання на проєкт
-1. Портфоліо повинне містити навігаційну панель з ідентифікатором `navbar`
+1. Портфоліо повинне містити навігаційну панель з id зі значенням `navbar`
 1. Навігаційна панель повинна містити щонайменше одне посилання, завдяки якому можна перейти на інші секції сторінки
 1. Портфоліо повинне містити посилання з ідентифікатором `profile-link`, що відкриває ваш профіль GitHub або freeCodeCamp у новій вкладці
 1. Портфоліо повинне містити щонайменше один медіазапит
@@ -30,7 +30,7 @@ dashedName: build-a-personal-portfolio-webpage
 
 # --hints--
 
-Портфоліо повинне містити секцію «Вітання» з `welcome-section` `id`.
+Портфоліо повинне містити секцію «Вітання» з `id` зі значенням `welcome-section`.
 
 ```js
 const el = document.getElementById('welcome-section')
@@ -58,14 +58,14 @@ assert.isAbove(
 );
 ```
 
-Ви повинні мати секцію «Проєкти» з `projects` `id`.
+Ви повинні мати секцію «Проєкти» з `id` зі значенням `projects`.
 
 ```js
 const el = document.getElementById('projects')
 assert(!!el);
 ```
 
-Портфоліо повинне містити щонайменше один елемент з класом `project-tile`.
+Портфоліо повинне містити щонайменше один елемент класу `project-tile`.
 
 ```js
 assert.isAbove(
@@ -80,7 +80,7 @@ assert.isAbove(
 assert.isAbove(document.querySelectorAll('#projects a').length, 0);
 ```
 
-Портфоліо повинне містити навігаційну панель з `navbar` `id`.
+Портфоліо повинне містити навігаційну панель з `id` зі значенням `navbar`.
 
 ```js
 const el = document.getElementById('navbar');
@@ -101,14 +101,14 @@ assert.isAbove(
 );
 ```
 
-Портфоліо повинне містити елемент `a` з `profile-link` `id`.
+Портфоліо повинне містити елемент `a` з `id` зі значенням `profile-link`.
 
 ```js
 const el = document.getElementById('profile-link');
 assert(!!el && el.tagName === 'A')
 ```
 
-Елемент `#profile-link` повинен містити атрибут `target` для `_blank`.
+Елемент `#profile-link` повинен містити атрибут `target` зі значенням `_blank`.
 
 ```js
 const el = document.getElementById('profile-link');
