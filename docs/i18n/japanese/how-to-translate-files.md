@@ -1,32 +1,18 @@
 # freeCodeCamp のリソースを翻訳する方法
 
-あなたの言語に関わらず、学習リソースを提供することが私達の夢です。 この大規模な取り組みを支援するため、私達のオープンソースのコードベースとカリキュラムをローカライズ支援ツール [Crowdin](https://crowdin.com/) と統合しました。
-
-翻訳のワークフローは大きく二つに分かれています。
-
-- カリキュラム、ドキュメント、UI 要素 (ボタン、ラベル等) の**翻訳**
-
-  [私達の翻訳プラットフォーム](https://translate.freecodecamp.org)にサインアップすると、翻訳者として 30 種類以上の言語の翻訳に貢献することができるようになります。
-
-- 上記全ての翻訳の**校正**
-
-  校正者は、コミュニティによって提供された翻訳のトーンが統一されていること、誤字脱字等の一般的な問題がないことを確認します。 要するに、翻訳が高品質であることを保証します。 理由があって私達は機械翻訳を使用していません。
-
-> [!WARNING] 現在、GitHub を使用してファイルを直接翻訳することはなくなりました。以前コントリビューターだった方は、代わりに[翻訳プラットフォーム](https://translate.freecodecamp.org/)を使用してください。
-
 ## コントリビューションの心構え
 
-> freeCodeCamp ローカリゼーションロードマップ – スピード制限はありません。
+> The freeCodeCamp Localization Roadmap – There Are No Speed Limits
 
-あなたはいつでも、好きなだけ翻訳することができます。 問題となるのは、あなたがボランティアの翻訳者としてどれだけの時間とエネルギーを費やしても構わないと考えているかだけです。
+You can translate as much as you want, when you want. It's only a matter of how much time and energy you are willing to invest as a volunteer translator.
 
-以下のことをご了承ください:
+We just ask that you understand the following:
 
 1. **翻訳はチームでの活動です。**
 
    freeCodeCamp のリソースの翻訳は、コントリビューターとして最も楽しくやりがいのある経験の一つであり、あなたと同じ言語を話す友人や同僚を巻き込むとよりうまくいくでしょう。
 
-   実際の翻訳作業を始める前に、[コミュニティフォーラム](https://forum.freecodecamp.org/c/contributors/3)や [コントリビューターチャット](https://discord.gg/PRyKn3Vbay)に参加して、翻訳に参加したいことを仲間の翻訳者たちに伝えることをお勧めします。 翻訳は Crowdin によって貢献しやすくなっていますが、それでも大変な作業です。
+   You can start by reading [this announcement](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/). We recommend joining [our community forum](https://forum.freecodecamp.org/c/contributors/3) and [Discord chat server](https://discord.gg/PRyKn3Vbay) with your friends and showing your interest before starting off with translations. Crowdin and other tools make it easy to contribute translations, but it's still a lot of work.
 
    私達はあなたが楽しんで貢献できて、燃え尽きたり興味を失ったりしないよう望んでいます。
 
@@ -38,7 +24,7 @@
 
    freeCodeCamp.org はいつも通りこれらを無料で提供することをお約束しますが、最も必要としている人々に優先的にリソースを割り当てる必要があります。 私達が最も避けたいのは、翻訳の活動が停止して内容が古くなってしまい、その言語のサーバーをシャットダウンしなければならなくなることです。
 
-   ある言語でカリキュラムの少なくとも 2、3 の認定講座の翻訳が完了すると、私達はその言語を [`/learn`](https://www.freecodecamp.org/learn) にデプロイする作業を始めることができます。同時に残りの認定講座の翻訳を続けることができます。
+   For translating the curriculum, once a language reaches at least a few certifications we can begin deploying the language live on [`/learn`](https://www.freecodecamp.org/learn), while you continue to translate the remaining certifications.
 
    例えば、新しい言語を初めて公開するときには、少なくとも全てのフロントエンドの認定講座を揃えてデプロイしたいと考えています。
 
@@ -54,9 +40,27 @@
 
    興味を持ってコミットできる少人数 (最低 4、5 人) のグループが集まったら、電話会議でお話させていただきます。 そこで詳細と、いくつかのツールやプロセスについてご説明します。
 
-## 翻訳を始めるには
+## Overview of Crowdin
 
-まず、[コントリビューターチャット](https://discord.gg/PRyKn3Vbay)で挨拶をしましょう。 私達はここでリソースの翻訳に関する最新情報を投稿したり、多くの質問に答えたりしています。
+It's our dream to provide you with the resources to learn, no matter the world language you speak. To help us with this massive effort, we have integrated our open-source code-base & curriculum with [Crowdin](https://crowdin.com/) - A tool to help us localize our code-base.
+
+> [!NOTE] We use a different tool and workflow for translating [news articles](https://www.freecodecamp.org/news). If you are interested in translating articles, read [this announcement](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) and reach out to your Language Lead.
+
+The translation workflow is split into two main activities:
+
+- カリキュラム、ドキュメント、UI 要素 (ボタン、ラベル等) の**翻訳**
+
+  [私達の翻訳プラットフォーム](https://translate.freecodecamp.org)にサインアップすると、翻訳者として 30 種類以上の言語の翻訳に貢献することができるようになります。
+
+- 上記全ての翻訳の**校正**
+
+  校正者は、コミュニティによって提供された翻訳のトーンが統一されていること、誤字脱字等の一般的な問題がないことを確認します。 要するに、翻訳が高品質であることを保証します。 理由があって私達は機械翻訳を使用していません。
+
+> [!WARNING] We are no longer using GitHub to translate files directly, if you are a returning contributor head to our [translation platform](https://translate.freecodecamp.org/) instead.
+
+## Getting started
+
+First, make sure you come say "Hi" in our [Discord](https://discord.gg/PRyKn3Vbay). 私達はここでリソースの翻訳に関する最新情報を投稿したり、多くの質問に答えたりしています。
 
 次に、私達の[翻訳プラットフォーム](https://translate.freecodecamp.org/)にアクセスし、ログインしてください (初めての場合、アカウントを作成する必要があります)。
 
@@ -64,7 +68,7 @@
 
 それでは翻訳をお楽しみください！
 
-## プロジェクトとファイルを選択する
+## Select a Project and File
 
 翻訳プラットフォームにアクセスすると、翻訳可能な「プロジェクト」が複数表示されます。
 
@@ -84,9 +88,9 @@
 
 作業するファイルを選択すると、Crowdin のエディター画面が表示されます。
 
-> [!NOTE] エディター画面を開いた後、設定アイコン (歯車のアイコン) をクリックし、「HTML tags displaying」の設定を「SHOW」に変更する必要があります。 これで、`<0></0>` ではなく `<code></code>` などのタグが表示されるようになります。
+> [!NOTE] When the editor view opens, you will need to click the settings icon (shown as a gear) and switch the 'HTML tags displaying' setting to 'SHOW'. This will ensure you can see tags such as `<code></code>` instead of `<0></0>`.
 
-## カリキュラムを翻訳する
+## Translate Curriculum
 
 ![画像 - 編集画面](https://contribute.freecodecamp.org/images/crowdin/editor.png)
 
@@ -103,19 +107,19 @@ Crowdin はドキュメントを翻訳可能な文字列 (通常は文単位) �
 9. こちらはコメントウィンドウです。 もし特定の文字列に対し疑問や懸念があれば、ここにコメントを残して他の翻訳者に見てもらうことができます。
 10. この 2 つのボタンで左側 (ドキュメント部分) と右側 (コメント部分) を隠すことができます。
 
-> [!NOTE] もし翻訳が含まれている隠し文字列を見つけたら [「contributors」チャットルーム](https://discord.gg/PRyKn3Vbay)にてお知らせください。該当箇所をメモリーから削除します。
+> [!NOTE] If you see a hidden string that includes translations, please notify us in the [Discord](https://discord.gg/PRyKn3Vbay) so we can remove the translation from memory.
 
 文字列の翻訳が終わったら、`Save` ボタンを押して翻訳を Crowdin に保存してください。 これで他のコントリビューターが翻訳内容に対し投票したり、校正者が承認したりできるようになります。
 
 翻訳を行う文字列の数に制限はありません。1 つのファイルをすべて翻訳し終わったあとや、新しい翻訳を提案する際に追加で必要になる手順もありません。 `Save` ボタンをクリックするだけで、翻訳を保存できます。
 
-> [!NOTE] もし英語の原文ファイルの中に不正確な内容を見つけた場合、翻訳の中で修正することはお控えください。 代わりに、不正確な点があることをその文字列に対するコメントでお知らせいただくか、GitHub issue を作成してください。
+> [!NOTE] If you see something in the English source file that is inaccurate or incorrect, please do not fix it through the translation flow. Instead, leave a comment on the string to notify us that there is a discrepancy, or create a GitHub issue.
 
-## ドキュメントを翻訳する
+## Translate Documentation
 
 コントリビューションドキュメントの翻訳も、カリキュラムのファイルの翻訳と同じような流れです。
 
-> [!NOTE] コントリビューションドキュメントは `docsify` によって提供されており、このようなメッセージボックス用に特別な構文解析機能があります。 `[!NOTE]`、`[!WARNING]` または `[!TIP]` などで始まる文字列を見かけたら、これらの単語は翻訳しないようにしてください。
+> [!NOTE] Our contributing documentation is powered by `docsify`, and we have special parsing for message boxes like this one. If you see strings that start with `[!NOTE]`, `[!WARNING]`, or `[!TIP]`, these words should NOT be translated.
 
 ### 内部リンクのあるドキュメントを翻訳する
 
@@ -153,7 +157,7 @@ Crowdin はドキュメントを翻訳可能な文字列 (通常は文単位) �
 
 [ドキュメントの内部リンクについて詳しくはこちら](how-to-work-on-the-docs-theme.md#内部リンクを作成する)を参照してください。
 
-## LearnToCode RPG の翻訳
+## Translate the LearnToCode RPG
 
 LearnToCode RPG は Ren'Py 上で動作します。Ren'Py では翻訳の際に独自の構文が使用されます ([Ren'Py の Text のドキュメント](https://www.renpy.org/doc/html/text.html) を参照してください)。
 
@@ -278,7 +282,7 @@ I better take notes so I can learn more about it."
 我最好做笔记，这样我可以学习更多东西。"
 ```
 
-## 翻訳を評価する
+## Rate Translations
 
 Crowdin では投稿済みの翻訳案を評価することができます。 翻訳内容を保存しようとした際、同じ翻訳は保存できないというメッセージが表示されることがあるかもしれません。これは、他のコントリビューターがすでに全く同じ翻訳を提案していることを意味しています。 既存の翻訳に賛成であれば `+` ボタンをクリックして賛成票を投じてください。
 
@@ -286,7 +290,7 @@ Crowdin では投稿済みの翻訳案を評価することができます。 �
 
 Crowdin はそれらの投票結果を元に各翻訳案の点数を算出します。この点数は校正チームが最適な翻訳文を選ぶための判断材料となります。
 
-## 品質保証チェック
+## Quality Assurance Checks
 
 翻訳内容が可能な限り正確であることを確認し、校正チームによる翻訳文レビューに役立てるため、品質保証ステップを設けています。
 
@@ -296,9 +300,9 @@ Crowdin はそれらの投票結果を元に各翻訳案の点数を算出しま
 
 このメッセージは、Crowdin の品質保証システムが投稿内容に間違いが含まれている可能性があると判断した場合に表示されます。 上の例では `<code>` タグ内のテキストが変更されており、Crowdin がそれを検出しました。
 
-> [!WARNING] エラーが検出されても翻訳内容を保存することは可能です。 「Save Anyway」をクリックして保存できますが、その場合は校正者かプロジェクトマネージャー宛てにコメントし、なぜ品質保証メッセージを無視する必要があったかを説明するようにしてください。
+> [!WARNING] You have the option to save a translation in spite of errors. If you do, by clicking "Save Anyway", you should also tag a proofreader or project manager and explain why the QA message needs to be ignored in this case.
 
-## 翻訳のベストプラクティス
+## Translation Best Practices
 
 翻訳をできる限り正確なものとするため、以下のガイドラインに従って下さい。
 
@@ -306,4 +310,4 @@ Crowdin はそれらの投票結果を元に各翻訳案の点数を算出しま
 - コンテンツを追加しないで下さい。 チャレンジを翻訳する際、テキスト内容の変更や追加の情報が必要だと感じた場合は、GitHub Issue を通して提案するか、提案内容を反映した英語のファイルをプルリクエストして下さい。
 - コンテンツの順番を変えないで下さい。
 
-質問があれば、[コントリビューターチャットルーム](https://discord.gg/PRyKn3Vbay) にてお気軽にお尋ねください。喜んでサポートいたします。
+If you have any questions, feel free to reach out to us in our [Discord](https://discord.gg/PRyKn3Vbay) and we will be happy to assist you.

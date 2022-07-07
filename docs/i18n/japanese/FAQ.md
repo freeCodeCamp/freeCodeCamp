@@ -10,7 +10,7 @@ freeCodeCamp は、モダンな JavaScript スタック上で動作します。 
 
 はい。翻訳プラットフォームで有効になっている 30 以上の言語を貢献できます。
 
-ユーザーが行った翻訳が既に存在する言語もあります。 freeCodeCamp を世界の主要な言語にローカライズしていく予定です。 詳細については、[お知らせ](https://www.freecodecamp.org/news/world-language-translation-effort) をご覧ください。
+ユーザーが行った翻訳が既に存在する言語もあります。 freeCodeCamp を世界の主要な言語にローカライズしていく予定です。 You can read all about this in our [announcement here](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/).
 
 翻訳への貢献にご興味がありましたら、まず [ガイド](how-to-translate-files.md) をお読みください。
 

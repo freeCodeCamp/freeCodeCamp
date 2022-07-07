@@ -1,32 +1,18 @@
 # 如何翻译 freeCodeCamp 的资源
 
-我们梦想为使用不同语言的用户提供学习资源。 为了实现这一梦想，我们将代码开源的课程整合到了 [Crowdin](https://crowdin.com/) 中——这是一个帮助我们本地化代码库的工具。
-
-翻译流程主要包括两部分：
-
-- **翻译**课程文件、文档和 UI 元素（如按钮、标签）：
-
-  译者可以在[我们的翻译平台](https://translate.freecodecamp.org)注册，然后从 30+ 种语言版本中选择要参与贡献的版本，进行翻译。
-
-- **校对**上述翻译。
-
-  校对者确认社区成员贡献的译文语调一致，没有错别字等常见问题。 简而言之，校对者需要确保译文是高质量的。 注意，我们不使用任何机器翻译。
-
-> [!WARNING] 我们不再使用 GitHub 直接翻译文件。如果你曾经在 GitHub 参与翻译，现在请在我们的[翻译平台](https://translate.freecodecamp.org/)参与。
-
 ## 贡献前的准备
 
-> freeCodeCamp 本地化路线图 —— 没有速度限制
+> The freeCodeCamp Localization Roadmap – There Are No Speed Limits
 
-你可以自由安排参与翻译的时间，自由选择翻译的内容。 问题只在于你愿意花多少时间和精力作为志愿者参与翻译。
+You can translate as much as you want, when you want. It's only a matter of how much time and energy you are willing to invest as a volunteer translator.
 
-我们希望你理解：
+We just ask that you understand the following:
 
 1. **翻译是一件团队协作的事情。**
 
    翻译 freeCodeCamp 的资源是对贡献者来说最有趣和最有意义的经历之一。如果你邀请与你使用同一种语言的朋友和同事参与，那么效果最好。
 
-   We recommend joining [our community forum](https://forum.freecodecamp.org/c/contributors/3) and [contributors chat room](https://discord.gg/PRyKn3Vbay) with your friends and showing your interest before starting off with translations. Crowdin 让翻译变得简单，但还是需要大量的工作。
+   You can start by reading [this announcement](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/). We recommend joining [our community forum](https://forum.freecodecamp.org/c/contributors/3) and [Discord chat server](https://discord.gg/PRyKn3Vbay) with your friends and showing your interest before starting off with translations. Crowdin and other tools make it easy to contribute translations, but it's still a lot of work.
 
    我们希望你在贡献过程感到快乐，而不是感到疲惫，然后失去兴趣。
 
@@ -38,7 +24,7 @@
 
    freeCodeCamp.org is committed to providing these for free as always, however we need to prioritize resources for those who need them the most. 我们非常不想看到某种语言的翻译活动结束了，并且内容过时了，然后我们不得不关闭相应的服务器。
 
-   当某种语言的翻译团队完成了几个认证， 我们就可以开始将这种语言版本在[`/learn`](https://www.freecodecamp.org/learn)上线，然后你们可以继续翻译剩余的认证。
+   For translating the curriculum, once a language reaches at least a few certifications we can begin deploying the language live on [`/learn`](https://www.freecodecamp.org/learn), while you continue to translate the remaining certifications.
 
    举个例子， 当我们正式上线一个新的语言版本的时候，我们希望至少上线整个前端认证的内容。
 
@@ -54,9 +40,27 @@
 
    如果你们有一个组的人（至少四到五人）对某一种语言感兴趣，并且承诺翻译这种语言， 那么我们可以在翻译平台上增加这种语言。 我们会解释一切的细节，并且帮助你掌握这些翻译工具和理解这些翻译的过程。
 
-## 准备开始
+## Overview of Crowdin
 
-First, make sure you come say "Hi" in our [contributors chat room](https://discord.gg/PRyKn3Vbay). 我们会在聊天室定期更新翻译的资源和回答很多问题。
+It's our dream to provide you with the resources to learn, no matter the world language you speak. To help us with this massive effort, we have integrated our open-source code-base & curriculum with [Crowdin](https://crowdin.com/) - A tool to help us localize our code-base.
+
+> [!NOTE] We use a different tool and workflow for translating [news articles](https://www.freecodecamp.org/news). If you are interested in translating articles, read [this announcement](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) and reach out to your Language Lead.
+
+The translation workflow is split into two main activities:
+
+- **翻译**课程文件、文档和 UI 元素（如按钮、标签）：
+
+  译者可以在[我们的翻译平台](https://translate.freecodecamp.org)注册，然后从 30+ 种语言版本中选择要参与贡献的版本，进行翻译。
+
+- **校对**上述翻译。
+
+  校对者确认社区成员贡献的译文语调一致，没有错别字等常见问题。 简而言之，校对者需要确保译文是高质量的。 注意，我们不使用任何机器翻译。
+
+> [!WARNING] We are no longer using GitHub to translate files directly, if you are a returning contributor head to our [translation platform](https://translate.freecodecamp.org/) instead.
+
+## Getting started
+
+First, make sure you come say "Hi" in our [Discord](https://discord.gg/PRyKn3Vbay). 我们会在聊天室定期更新翻译的资源和回答很多问题。
 
 其次，去我们的[翻译平台](https://translate.freecodecamp.org/)并且登陆（假如你以前没有贡献翻译过，你需要创建一个新账户）。
 
@@ -64,7 +68,7 @@ First, make sure you come say "Hi" in our [contributors chat room](https://disco
 
 祝你在翻译过程中感到快乐哦！
 
-## 选择一个项目和文件
+## Select a Project and File
 
 当你访问翻译平台，你应该可以看到很多不同的等待翻译的项目：
 
@@ -84,9 +88,9 @@ First, make sure you come say "Hi" in our [contributors chat room](https://disco
 
 选择你想翻译的文件，然后 Crowdin 会打开编辑界面。
 
-> [!NOTE] 打开编辑界面后，你需要点击设置图标（右上角的齿轮状图标），将 “HTML tags displaying” 设置为 “SHOW”。 这样，文件中会显示 `<code></code>` 标签，而不是 `<0></0>` 标签。
+> [!NOTE] When the editor view opens, you will need to click the settings icon (shown as a gear) and switch the 'HTML tags displaying' setting to 'SHOW'. This will ensure you can see tags such as `<code></code>` instead of `<0></0>`.
 
-## 翻译课程
+## Translate Curriculum
 
 ![图片 - 编辑界面](https://contribute.freecodecamp.org/images/crowdin/editor.png)
 
@@ -103,19 +107,19 @@ Crowdin 将文档分成可翻译的“字符串”，通常是句子。 每个�
 9. 这里是评论窗口。 如果你对某个字符串有疑问或疑虑，可以在此处对字符串发表评论，以便其他翻译人员查看。
 10. 点击这两个“窗格”按钮，可以隐藏左边的（文件）视图和右边的（评论）视图。
 
-> [!NOTE] If you see a hidden string that includes translations, please notify us in the [contributors chat room](https://discord.gg/PRyKn3Vbay) so we can remove the translation from memory.
+> [!NOTE] If you see a hidden string that includes translations, please notify us in the [Discord](https://discord.gg/PRyKn3Vbay) so we can remove the translation from memory.
 
 当你翻译完一个字符串，请点击 `Save` 按钮，将你的译文保存在  Crowdin 中。 然后其他贡献者可以给你的译文投票，而校对者也将审核确认你的译文。
 
 你想翻译多少字符串，都可以，我们非常欢迎你贡献！当你翻译完某个文件或某个字符串之后，你不需要采取其他步骤。 你只需要点击 `Save` 按钮，就能保存你的译文了。
 
-> [!NOTE] 如果你发现在英语源文件中有不正确的内容，请不要在翻译流程中对其进行修改。 请在字符串上留下评论，通知我们有什么问题，或者在 GitHub 创建 issue。
+> [!NOTE] If you see something in the English source file that is inaccurate or incorrect, please do not fix it through the translation flow. Instead, leave a comment on the string to notify us that there is a discrepancy, or create a GitHub issue.
 
-## 翻译文档
+## Translate Documentation
 
 翻译贡献文档的流程和翻译课程文件的流程类似。
 
-> [!NOTE] 我们的贡献文档由 ` docsify ` 提供支持，并且我们对消息框（比如这份文档里的）进行了特殊的解析。 如果你看到以 `[!NOTE]`、`[!WARNING]` 或 `[!TIP]` 开头的字符串，请注意不要翻译这些单词。
+> [!NOTE] Our contributing documentation is powered by `docsify`, and we have special parsing for message boxes like this one. If you see strings that start with `[!NOTE]`, `[!WARNING]`, or `[!TIP]`, these words should NOT be translated.
 
 ### How to translate documentation with internal links
 
@@ -296,7 +300,7 @@ When you attempt to save a translation, you may see a warning message appear wit
 
 This message appears when Crowdin's QA system has identified a potential error in the proposed translation. In this example, we have modified the text of a `<code>` tag and Crowdin has caught that.
 
-> [!WARNING] 即使 Crowdin 提示有错误，你也可以选择保存译文。 如果你仍要通过点击 “Save Anyway” 保存译文，那么你应该标记（@）校对人员或项目经理，说明为什么需要忽略质量检查消息。
+> [!WARNING] You have the option to save a translation in spite of errors. If you do, by clicking "Save Anyway", you should also tag a proofreader or project manager and explain why the QA message needs to be ignored in this case.
 
 ## Translation Best Practices
 
@@ -306,4 +310,4 @@ Follow these guidelines to ensure our translations are as accurate as possible:
 - Do not add additional content. If you feel a challenge requires changes in the text content or additional information, you should propose the changes through a GitHub issue or a pull request that modifies the English file.
 - Do not change the order of content.
 
-If you have any questions, feel free to reach out to us in our [contributors chat room](https://discord.gg/PRyKn3Vbay) and we will be happy to assist you.
+If you have any questions, feel free to reach out to us in our [Discord](https://discord.gg/PRyKn3Vbay) and we will be happy to assist you.
