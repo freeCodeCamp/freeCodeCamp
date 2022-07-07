@@ -135,7 +135,11 @@ export default function initializeUserIdent(UserIdent) {
                 email: email,
                 emailVerified: true,
                 emailAuthLinkTTL: null,
-                emailVerifyTTL: null
+                emailVerifyTTL: null,
+                // TOPCODER: set the external id to the Auth0 string
+                // NOTE: this workflow only gets hit when running FCC
+                // as a standalone app
+                externalId: auth0IdString
               },
               err => {
                 if (err) {
