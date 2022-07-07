@@ -2,7 +2,7 @@ import { navigate } from 'gatsby';
 import { omit } from 'lodash-es';
 import { ofType } from 'redux-observable';
 import { of, empty } from 'rxjs';
-import { switchMap, retry, catchError, concat, map } from 'rxjs/operators';
+import { switchMap, retry, catchError, concat, tap } from 'rxjs/operators';
 
 import { challengeTypes, submitTypes } from '../../../../utils/challenge-types';
 import {
@@ -176,11 +176,10 @@ export default function completionEpic(action$, state$) {
       };
 
       return submitter(type, state).pipe(
-        map(res => {
+        tap(res => {
           if (res.type !== submitActionTypes.updateFailed) {
-            setTimeout(() => navigate(pathToNavigateTo()), 1);
+            navigate(pathToNavigateTo());
           }
-          return res;
         }),
         concat(of(closeModal('completion')))
       );
