@@ -11,7 +11,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: 'http://localhost:3300'
+    origin: process.env.GITPOD_CLIENT_LOCATION || 'http://localhost:3300'
   })
 );
 

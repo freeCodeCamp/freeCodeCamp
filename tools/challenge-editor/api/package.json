@@ -4,7 +4,7 @@
   "private": true,
   "description": "Editor to help with new challenge structure",
   "scripts": {
-    "start": "ts-node server.ts"
+    "start": "GITPOD_CLIENT_LOCATION=$(gp url 3300) ts-node server.ts"
   },
   "author": "freeCodeCamp",
   "license": "BSD-3-Clause",
