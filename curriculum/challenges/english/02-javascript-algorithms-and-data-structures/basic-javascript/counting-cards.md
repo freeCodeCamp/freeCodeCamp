@@ -26,6 +26,40 @@ Do NOT include quotes (single or double) in the output.
 
 # --hints--
 
+Your function should return a value for count and the text (`Bet` or `Hold`) with one space character between them.
+
+```js
+assert(//
+  (function () {
+    count = 0;
+    cc(2);
+    cc(2);
+    let out = cc(10);
+    const hasSpace = /-?\d+ Bet/.test('' + out);
+    return hasSpace;
+  })()
+);
+```
+
+Cards Sequence 3, 2, A, 10, K should return the string `-1 Hold`
+
+```js
+assert(
+  (function () {
+    count = 0;
+    cc(3);
+    cc(2);
+    cc('A');
+    cc(10);
+    var out = cc('K');
+    if (out === '-1 Hold') {
+      return true;
+    }
+    return false;
+  })()
+);
+```
+
 Cards Sequence 2, 3, 4, 5, 6 should return the string `5 Bet`
 
 ```js
