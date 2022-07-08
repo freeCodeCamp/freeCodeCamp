@@ -58,6 +58,10 @@ pipeline {
                     env.TC_GIT_COMMIT_MSG = sh (script: 'git log -1 --pretty=%B ${GIT_COMMIT}', returnStdout: true).trim()
                     env.TC_GIT_AUTHOR = sh (script: 'git log -1 --pretty=%an ${GIT_COMMIT}', returnStdout: true).trim()
                     env.TC_GIT_HASH = sh (script: 'git log -1 --pretty=%h ${GIT_COMMIT}', returnStdout: true).trim()
+                    if (sh(script: "git log -1 --pretty=%B | fgrep -ie '[skip ci]' -e '[ci skip]'", returnStatus: true) == 0) {
+                        currentBuild.result = 'NOT_BUILT'
+                        error 'Aborting because commit message contains [skip ci]'
+                    }                  
                 }
             }
 
@@ -138,7 +142,7 @@ pipeline {
             steps {
                 //Doing Deployment
                 echo "Deploying Api"
-                input(message: 'Hello World!', ok: 'Submit')
+                //input(message: 'Hello World!', ok: 'Submit')
                 sh """
                 #!/bin/bash
                 sed -i '/node_modules/d' ./.dockerignore
