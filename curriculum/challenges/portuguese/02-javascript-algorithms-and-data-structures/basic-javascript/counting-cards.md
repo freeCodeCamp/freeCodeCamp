@@ -25,7 +25,41 @@ Não inclua aspas (simples ou duplas) na saída.
 
 # --hints--
 
-Sequência de cartas 2, 3, 4, 5, 6 deve retornar a string `5 Bet`
+A função deve retornar um valor para a contagem e o texto (`Bet` ou `Hold`) com um caractere de espaço entre eles.
+
+```js
+assert(//
+  (function () {
+    count = 0;
+    cc(2);
+    cc(2);
+    let out = cc(10);
+    const hasSpace = /-?\d+ Bet/.test('' + out);
+    return hasSpace;
+  })()
+);
+```
+
+A sequência de cartas 3, 2, A, 10, K deve retornar a string `-1 Hold`
+
+```js
+assert(
+  (function () {
+    count = 0;
+    cc(3);
+    cc(2);
+    cc('A');
+    cc(10);
+    var out = cc('K');
+    if (out === '-1 Hold') {
+      return true;
+    }
+    return false;
+  })()
+);
+```
+
+A sequência de cartas 2, 3, 4, 5, 6 deve retornar a string `5 Bet`
 
 ```js
 assert(
@@ -44,7 +78,7 @@ assert(
 );
 ```
 
-Sequência de cartas 7, 8, 9 deve retornar a string `0 Hold`
+A sequência de cartas 7, 8, 9 deve retornar a string `0 Hold`
 
 ```js
 assert(
@@ -61,7 +95,7 @@ assert(
 );
 ```
 
-Sequência de cartas 10, J, Q, K, A deve retornar a string `-5 Hold`
+A sequência de cartas 10, J, Q, K, A deve retornar a string `-5 Hold`
 
 ```js
 assert(
@@ -80,7 +114,7 @@ assert(
 );
 ```
 
-Sequência de cartas 3, 7, Q, 8, A deve retornar a string `-1 Hold`
+A sequência de cartas 3, 7, Q, 8, A deve retornar a string `-1 Hold`
 
 ```js
 assert(
@@ -99,7 +133,7 @@ assert(
 );
 ```
 
-Sequência de cartas 2, J, 9, 2, 7 deve retornar a string `1 Bet`
+A sequência de cartas 2, J, 9, 2, 7 deve retornar a string `1 Bet`
 
 ```js
 assert(
@@ -118,7 +152,7 @@ assert(
 );
 ```
 
-Sequência de cartas 2, 2, 10 deve retornar a string `1 Bet`
+A sequência de cartas 2, 2, 10 deve retornar a string `1 Bet`
 
 ```js
 assert(
@@ -135,7 +169,7 @@ assert(
 );
 ```
 
-Sequência de cartas 3, 2, A, 10, K deve retornar a string `-1 Hold`
+A sequência de cartas 3, 2, A, 10, K deve retornar a string `-1 Hold`
 
 ```js
 assert(

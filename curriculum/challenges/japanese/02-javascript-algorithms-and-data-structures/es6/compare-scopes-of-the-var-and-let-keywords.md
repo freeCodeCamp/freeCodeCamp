@@ -8,7 +8,7 @@ dashedName: compare-scopes-of-the-var-and-let-keywords
 
 # --description--
 
-`let` に慣れていない方は、[こちらのチャレンジ](/learn/javascript-algorithms-and-data-structures/basic-javascript/explore-differences-between-the-var-and-let-keywords)をご覧ください。
+`let` に慣れていない方は、<a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/explore-differences-between-the-var-and-let-keywords" target="_blank" rel="noopener noreferrer nofollow"><code>let</code> と <code>var</code> の違いに関するこちらのチャレンジ</a>をご覧ください。
 
 `var` キーワードを付けて変数を宣言すると、グローバルに宣言されるか、または関数内で宣言された場合はローカルに宣言されます。
 
