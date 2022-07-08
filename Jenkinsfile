@@ -19,10 +19,11 @@ if (env.BRANCH_NAME == 'test-jenkins' || env.BRANCH_NAME == 'dev-env') {
     LOGICAL_ENV = 'dev'
     IS_BUILD = true
     IS_DEPLOY = true
-    IS_APP_DEPLOY=false
-    IS_API_DEPLOY=true
+    IS_APP_DEPLOY = false
+    IS_API_DEPLOY = true
     ENABLE_CACHE = false
 }
+
 if (env.BRANCH_NAME == 'master-jenkins') {
     DEPLOY_ENV = 'PROD'
     LOGICAL_ENV = 'prod'
@@ -31,11 +32,11 @@ if (env.BRANCH_NAME == 'master-jenkins') {
     ENABLE_CACHE = true   
 }
 
-
 pipeline {
     agent {
         label 'tc-ecs-agent-large'
     }
+    
     environment {
         CI_AUTH0_URL = credentials('CI_AUTH0_URL')
         CI_AUTH0_CLIENTID = credentials('CI_AUTH0_CLIENTID')
@@ -47,7 +48,6 @@ pipeline {
 
     stages
     {
-
         stage('checkout')
         {
             steps {
