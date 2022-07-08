@@ -5,8 +5,7 @@ const MongoStore = MongoStoreFactory(session);
 const sessionSecret = process.env.SESSION_SECRET;
 const url = process.env.MONGODB || process.env.MONGOHQ_URL;
 
-console.log('** session.js, url', url);
-console.log('** session.js, process.env', process.env);
+console.log('** session.js, mongodb url', url);
 
 export default function sessionsMiddleware() {
   return session({
