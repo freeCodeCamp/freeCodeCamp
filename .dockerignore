@@ -1,6 +1,5 @@
 client/.cache
 client/public
-.env
 .git
 .gitignore
 .dockerignore
