@@ -8,7 +8,7 @@ dashedName: use-recursion-to-create-a-countdown
 
 # --description--
 
-[以前のチャレンジ](/learn/javascript-algorithms-and-data-structures/basic-javascript/replace-loops-using-recursion)で、再帰関数を利用して `for` ループを置き換える方法について学びました。 今回はもっと複雑な例として、`1` から関数に渡された数値までの連続した整数の配列を返す関数を考えてみましょう。
+<a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/replace-loops-using-recursion" target="_blank" rel="noopener noreferrer nofollow">以前のチャレンジ</a>で、再帰関数を利用して `for` ループを置き換える方法について学びました。 今回はもっと複雑な例として、`1` から関数に渡された数値までの連続した整数の配列を返す関数を考えてみましょう。
 
 以前のチャレンジで触れたように、<dfn>基準ケース</dfn>を記述します。 基準ケースは、再帰をいつ止めるかを再帰関数に指示します。 これは戻り値があらかじめわかっている単純なケースです。 別の引数を付けて元の関数を実行する<dfn>再帰呼び出し</dfn>もあります。 関数が適切に記述されていれば、最終的には基準ケースに到達します。
 
