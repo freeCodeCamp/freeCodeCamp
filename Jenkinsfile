@@ -86,9 +86,15 @@ pipeline {
                 sh """
                 #!/bin/bash
                 ./awsconfiguration.sh ${DEPLOY_ENV}
-                ./buildenv.sh -e ${DEPLOY_ENV} -b ${LOGICAL_ENV}-${APPNAME}-buildvar,${LOGICAL_ENV}-${APPNAME}-deployvarj
+                echo "Fetching deployvar"
+                ./buildenv.sh -e ${DEPLOY_ENV} -b ${LOGICAL_ENV}-${APPNAME}-deployvarj
+                mv buildenvvar deployenvvar
+                mv buildenvvarg deployenvvarg
+                echo "Fetching Buildvar"
+                ./buildenv.sh -e ${DEPLOY_ENV} -b ${LOGICAL_ENV}-${APPNAME}-buildvar
                 """
                 load 'awsenvconfg'
+                load 'deployenvvarg'
                 load 'buildenvvarg'
             }
         }
@@ -110,7 +116,7 @@ pipeline {
                 """
             }
         }
-        stage('deploy')    
+        stage('appdeploy')    
         {
             //Deploying app
             when { expression { IS_DEPLOY } }
@@ -124,6 +130,20 @@ pipeline {
                 """         
             }
         }
+        stage('apideploy')    
+        {
+            //Deploying app
+            when { expression { IS_DEPLOY } }
+            steps {
+                //Doing Deployment
+                echo "Deploying application"
+                input(message: 'Hello World!', ok: 'Submit')
+                // sh """
+                // #!/bin/bash
+                // ./master_deploy.sh -d CFRONT -e $DEPLOY_ENV -c $ENABLE_CACHE
+                // """         
+            }
+        }      
     }
 
 }
