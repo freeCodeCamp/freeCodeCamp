@@ -6,6 +6,8 @@ const dotenv = require('dotenv');
 const filePath = path.resolve('..', '.env');
 const env = dotenv.parse(fs.readFileSync(filePath));
 
+console.log('** in ecosystem.config.js, env', env);
+
 module.exports = {
   apps: [
     {
