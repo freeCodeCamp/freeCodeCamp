@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ChallengeData } from '../../../interfaces/ChallengeData';
+import { API_LOCATION } from '../../utils/handleRequest';
 import './Block.css';
 
 const Block = () => {
@@ -16,7 +17,7 @@ const Block = () => {
 
   const fetchData = () => {
     setLoading(true);
-    fetch(`http://localhost:3200/${params.superblock}/${params.block}`)
+    fetch(`${API_LOCATION}/${params.superblock}/${params.block}`)
       .then(res => res.json() as Promise<ChallengeData[]>)
       .then(
         superblocks => {
