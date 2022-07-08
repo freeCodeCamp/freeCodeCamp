@@ -34,14 +34,19 @@ mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }
 
 # --hints--
 
-La dipendenza "mongodb" dovrebbe essere specificata in package.json
+La dipendenza "mongodb version ~3.6.0" dovrebbe essere in package.json
 
 ```js
 (getUserInput) =>
   $.get(getUserInput('url') + '/_api/file/package.json').then(
     (data) => {
       var packJson = JSON.parse(data);
-      assert.property(packJson.dependencies, 'mongodb');
+      assert.property(packJson.dependencies, 'mongodb')
+      assert.match(
+        packJson.dependencies.mongodb,
+        /^\~3\.6\.0/,
+        'Wrong version of "mongodb". It should be ~3.6.0'
+      );
     },
     (xhr) => {
       throw new Error(xhr.responseText);
@@ -49,7 +54,7 @@ La dipendenza "mongodb" dovrebbe essere specificata in package.json
   );
 ```
 
-La dipendenza "mongoose" dovrebbe essere specificata in package.json
+La dipendenza "mongoose version ~5.4.0" dovrebbe essere in package.json
 
 ```js
 (getUserInput) =>
@@ -57,6 +62,11 @@ La dipendenza "mongoose" dovrebbe essere specificata in package.json
     (data) => {
       var packJson = JSON.parse(data);
       assert.property(packJson.dependencies, 'mongoose');
+      assert.match(
+        packJson.dependencies.mongoose,
+        /^\~5\.4\.0/,
+        'Wrong version of "mongoose". It should be ~5.4.0'
+      );
     },
     (xhr) => {
       throw new Error(xhr.responseText);
