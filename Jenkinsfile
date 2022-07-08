@@ -142,7 +142,7 @@ pipeline {
             steps {
                 //Doing Deployment
                 echo "Deploying Api"
-                //input(message: 'Hello World!', ok: 'Submit')
+                // input(message: 'Hello World!', ok: 'Submit')
                 sh """
                 #!/bin/bash
                 sed -i '/node_modules/d' ./.dockerignore
