@@ -54,9 +54,9 @@ function createQuestionEpic(action$, state$, { window }) {
         `${i18next.t('forum-help.browser-info')}\n\n${i18next.t(
           'forum-help.user-agent',
           { userAgent }
-        )}\n\n${i18next.t(
-          'forum-help.challenge'
-        )} ${challengeTitle}\n\n${i18next.t(
+        )}\n\n${i18next.t('forum-help.challenge')} ${i18next.t(
+          `intro:${superBlock}.blocks.${block}.title`
+        )} - ${challengeTitle}\n\n${i18next.t(
           'forum-help.challenge-link'
         )}\n${challengeUrl}`
       );
