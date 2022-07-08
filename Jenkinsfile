@@ -45,6 +45,7 @@ pipeline {
 
     stages
     {
+
         stage('checkout')
         {
             steps {
@@ -136,12 +137,14 @@ pipeline {
             when { expression { IS_DEPLOY } }
             steps {
                 //Doing Deployment
-                echo "Deploying application"
+                echo "Deploying Api"
                 input(message: 'Hello World!', ok: 'Submit')
-                // sh """
-                // #!/bin/bash
-                // ./master_deploy.sh -d CFRONT -e $DEPLOY_ENV -c $ENABLE_CACHE
-                // """         
+                sh """
+                #!/bin/bash
+                sed -i '/node_modules/d' ./.dockerignore
+                docker build -f docker/api/ECSDockerfile -t $APP_NAME-api:latest .
+                ./master_deploy.sh -d ECS -e $DEPLOY_ENV -t latest -s ${LOGICAL_ENV}-${APPNAME}-appvar -i ${APPNAME}-api                
+                """         
             }
         }      
     }

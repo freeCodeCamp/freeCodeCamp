@@ -1,0 +1,10 @@
+FROM node:16-alpine
+RUN npm i -g pm2@4
+WORKDIR /home/node/api
+COPY api-server/lib/ api-server/lib/
+COPY utils/ utils/
+COPY config/ config/
+COPY api-server/node_modules/ api-server/node_modules/
+COPY node_modules/ node_modules/
+WORKDIR /home/node/api/api-server
+CMD ["pm2-runtime", "./lib/production-start.js"]
