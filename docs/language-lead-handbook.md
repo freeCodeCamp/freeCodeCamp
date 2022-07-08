@@ -28,7 +28,7 @@ With `link` being the link of the original article.
 
 ## How to update trending articles
 
-> ![TIP]
+> [!TIP]
 > Changing the articles in the footer at least once a month means giving a boost to the linked articles on google results.
 
 There two places in which to change the trending articles.
@@ -120,7 +120,7 @@ The `compliments` array is an array of strings, so for example you would write:
 }
 ```
 
-> ![TIP]
+> [!TIP]
 > You should start with at least a dozen compliments to have some variety when users complete challenges.
 
 The motivational quotes are the quotes that appear at https://freecodecamp.org/learn.
