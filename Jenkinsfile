@@ -19,6 +19,8 @@ if (env.BRANCH_NAME == 'test-jenkins' || env.BRANCH_NAME == 'dev-env') {
     LOGICAL_ENV = 'dev'
     IS_BUILD = true
     IS_DEPLOY = true
+    IS_APP_DEPLOY=false
+    IS_API_DEPLOY=true
     ENABLE_CACHE = false
 }
 if (env.BRANCH_NAME == 'master-jenkins') {
@@ -124,7 +126,7 @@ pipeline {
         stage('appdeploy')    
         {
             //Deploying app
-            when { expression { IS_DEPLOY } }
+            when { expression { IS_APP_DEPLOY } }
             steps {
                 //Doing Deployment
                 echo "Deploying application"
@@ -138,7 +140,7 @@ pipeline {
         stage('apideploy')    
         {
             //Deploying app
-            when { expression { IS_DEPLOY } }
+            when { expression { IS_API_DEPLOY } }
             steps {
                 //Doing Deployment
                 echo "Deploying Api"
