@@ -1,4 +1,5 @@
 import { toString, flow } from 'lodash-es';
+import i18next, { i18n } from 'i18next';
 import { format } from '../../../utils/format';
 
 const utilsFormat: <T>(x: T) => string = format;
@@ -8,6 +9,7 @@ declare global {
     console: {
       log: () => void;
     };
+    i18next: i18n;
   }
 }
 
@@ -39,7 +41,7 @@ const testId = 'fcc-test-frame';
 // the project preview frame demos the finished project
 export const projectPreviewId = 'fcc-project-preview-frame';
 
-const iframeAlertText = 'misc.iframe-alert';
+const iframeAlertText = i18next.t('misc.iframe-alert');
 
 const DOCUMENT_NOT_FOUND_ERROR = 'document not found';
 
@@ -57,7 +59,6 @@ const createHeader = (id = mainPreviewId, alertText = iframeAlertText) => `
   <base href='' />
   <script>
     window.__frameId = '${id}';
-    window.__alertText= '${alertText}'
     window.onerror = function(msg) {
       const string = msg.toLowerCase();
       if (string.includes('script error')) {
@@ -73,7 +74,7 @@ const createHeader = (id = mainPreviewId, alertText = iframeAlertText) => `
       }
       if (element && element.nodeName === 'A' && new URL(element.href).hash === '') {
         e.preventDefault();
-        window.parent.window.alert("alertText" + "(" + element.href + ")");
+        window.parent.window.alert("${alertText}" + "(" + element.href + ")");
       }
       if (element) {
         const href = element.getAttribute('href');
