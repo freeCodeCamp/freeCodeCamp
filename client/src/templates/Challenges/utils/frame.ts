@@ -115,8 +115,6 @@ const createFrame =
   (ctx: Context) => {
     const frame = document.createElement('iframe');
     frame.id = id;
-    // what have I done? I have no idea
-
     if (frame.contentWindow) {
       console.log('frame content', frame.contentWindow);
     }

@@ -29,7 +29,6 @@ function Preview({
     setIframeStatus(disableIframe);
   }, [disableIframe]);
 
-  // TODO: remove type assertion once frame.js has been migrated.
   const id = previewId ?? mainPreviewId;
 
   return (
