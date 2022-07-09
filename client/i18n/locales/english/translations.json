@@ -450,7 +450,8 @@
     "and": "and",
     "change-theme": "Sign in to change theme.",
     "translation-pending": "Help us translate",
-    "certification-project": "Certification Project"
+    "certification-project": "Certification Project",
+    "sign-out": "You will sign out in 10 seconds"
   },
   "icons": {
     "gold-cup": "Gold Cup",

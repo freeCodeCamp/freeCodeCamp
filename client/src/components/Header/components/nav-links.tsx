@@ -17,6 +17,7 @@ import { Modal } from '@freecodecamp/react-bootstrap';
 import React, { Component, Fragment, createRef, Ref } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
+// import { Dispatch } from 'redux';
 import envData from '../../../../../config/env.json';
 import {
   availableLangs,
@@ -37,15 +38,18 @@ const locales = availableLangs.client;
 export interface NavLinksProps {
   displayMenu?: boolean;
   isLanguageMenuDisplayed?: boolean;
+  showSignoutModal?: boolean;
   fetchState?: { pending: boolean };
   i18n: Object;
   t: TFunction;
+  signOutAttribute: (attributes: {}) => void;
   hideMenu: () => void;
   toggleNightMode: (x: any) => any;
   user?: Record<string, unknown>;
   navigate?: (location: string) => void;
   showLanguageMenu?: (elementToFocus: HTMLButtonElement) => void;
   hideLanguageMenu?: () => void;
+  isClose: () => void;
   menuButtonRef: Ref<HTMLButtonElement>;
 }
 
@@ -53,6 +57,34 @@ const mapDispatchToProps = {
   navigate,
   toggleNightMode: (theme: Themes) => updateUserFlag({ theme })
 };
+
+// add Signout function later
+
+// const mapDispatchToProps = (dispatch: Dispatch) =>
+//   bindActionCreators(
+//     { showSignOutModal: () => closeModal('signOut'), signOutAttribute },
+//     dispatch
+// );
+
+// export function SignoutModal({
+//   isClose,
+//   executeGA,
+//   showSignoutModal,
+//   t,
+//   SignoutUrl
+// }: SignoutModalProps): JSX.Element {
+//   if (showSignoutModal) {
+//     signOutAttribute({  });
+//   }
+//   return (
+//     <Modal onHide={isClose} show={showSignoutModal}>
+//         <Modal.Title >
+//         </Modal.Title>
+//       </Modal.Header>
+
+//     </Modal>
+//   );
+// }
 
 export class NavLinks extends Component<NavLinksProps, {}> {
   static displayName: string;
@@ -464,14 +496,17 @@ export class NavLinks extends Component<NavLinksProps, {}> {
             <li>
               <button
                 className='nav-link nav-link-signout'
-                onClick={() => true}
+                onClick={() => (showSignoutModal = !showSignoutModal)}
               >
                 {t('buttons.sign-out')}
               </button>
-              <Modal>
-                <Modal.Header closeButton />
-                <Modal.Body>
-                  <p>you will signout in 10 seconds</p>
+              <Modal dialogClassName='Signout-modal'>
+                <Modal.Header
+                  className='Signout-modal-header fcc-modal'
+                  closeButton={true}
+                />
+                <Modal.Body className='Signout-modal-body text-center'>
+                  <p>{t('misc.sign-out')}</p>
                   <a
                     className='nav-link nav-link-signout'
                     href={`${apiLocation}/signout`}
