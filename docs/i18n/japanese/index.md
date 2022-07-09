@@ -22,22 +22,31 @@
 
 私たちは freeCodeCamp.org を世界中の主要言語へローカライズしています。
 
-[中国語 (中文)](https://chinese.freecodecamp.org/learn)、[スペイン語 (Español)](https://www.freecodecamp.org/espanol/learn)、[イタリア語 (Italiano)](https://www.freecodecamp.org/italian/learn)、[ポルトガル語 (Português)](https://www.freecodecamp.org/portuguese/learn) のような世界の主要言語の認定講座が既に公開されています。 [こちらのお知らせ](https://www.freecodecamp.org/news/world-language-translation-effort)を読んで、ぜひ周囲の人にも共有してください。
+Certifications are already live in some major world languages like below:
 
-**翻訳にご興味があれば、[freeCodeCamp リソースを翻訳する方法](how-to-translate-files.md) をご覧ください。**
+- [Chinese (中文)](https://chinese.freecodecamp.org/learn)
+- [Spanish (Español)](https://www.freecodecamp.org/espanol/learn)
+- [Italian (Italiano)](https://www.freecodecamp.org/italian/learn)
+- [Portuguese (Português)](https://www.freecodecamp.org/portuguese/learn)
+- [Ukrainian (Українська)](https://www.freecodecamp.org/ukrainian/learn)
+- [Japanese (日本語)](https://www.freecodecamp.org/japanese/learn)
+
+We encourage you to read the [announcement here](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) and share it with your friends to get them excited about this.
+
+**If you're interested in translating, here's [how to translate freeCodeCamp's resources](how-to-translate-files.md).**
 
 ## 学習プラットフォーム
 
-学習プラットフォームは、最新の JavaScript スタックで動作しています。 様々なコンポーネント、ツール、ライブラリがあります。 Node.js、MongoDB、OAuth 2.0、React、Gatsby、Webpackなどが含まれています。
+Our learning platform runs on a modern JavaScript stack. It has various components, tools, and libraries. These include Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack, and more.
 
-Node.js ベースの API サーバー、React ベースのクライアントアプリケーションのセット、キャンパーが提出したカリキュラムプロジェクトを評価するためのスクリプトテストなどがあります。 学習プラットフォームに生産的に貢献したい場合は、これらのツールを熟知している方が良いでしょう。
+Broadly, we have a Node.js based API server, a set of React-based client applications, testing scripts to evaluate camper-submitted curriculum projects, and more. If you want to productively contribute to the learning platform, we recommend some familiarity with these tools.
 
-コードベースの改善にご協力いただけますか？
+If you want to help us improve our codebase...
 
-**無料のオンライン開発環境である Gitpod を使用して、ブラウザで freeCodeCamp 用のコード対応開発環境を開始することができます。**
+**you can either use Gitpod, a free online dev environment that starts a ready-to-code dev environment for freeCodeCamp in your browser.**
 
-[![Gitpod で開く](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-あるいは
+Or you can...
 
-**[ローカルマシンに freeCodeCamp の開発環境を構築](how-to-setup-freecodecamp-locally.md)することができます。**
+**[Set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md) on your machine.**

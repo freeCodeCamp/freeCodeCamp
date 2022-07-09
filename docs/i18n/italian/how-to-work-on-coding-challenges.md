@@ -10,7 +10,7 @@ Nota che per la versione 7.0 del curriculum freeCodeCamp, ci stiamo muovendo ver
 
 La creazione di queste sfide richiede un'immensa creatività e attenzione ai dettagli. C'è un sacco di aiuto disponibile. Avrai il supporto di un intero team di collaboratori a cui puoi rimbalzare le idee e mostrare le tue sfide.
 
-And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
+E come sempre, poni liberamente le tue domande [nella categoria 'Contributors' sul nostro forum](https://forum.freecodecamp.org/c/contributors) o [nella chat room per i contributori](https://discord.gg/PRyKn3Vbay).
 
 Con il tuo aiuto possiamo creare un curriculum interattivo di programmazione che aiuterà milioni di persone a imparare a programmare per gli anni a venire.
 

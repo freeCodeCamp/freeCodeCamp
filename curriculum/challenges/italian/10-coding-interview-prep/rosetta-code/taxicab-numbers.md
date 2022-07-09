@@ -8,7 +8,7 @@ dashedName: taxicab-numbers
 
 # --description--
 
-Un [numero taxicab](https://en.wikipedia.org/wiki/Hardy–Ramanujan number "wp: Hardy–Ramanujan number") (la definizione che viene utilizzata qui) è un intero positivo che può essere espresso come la somma di due cubi positivi in più di un modo.
+Un numero taxicab (la definizione che sta venendo usata qui) è un numero intero positivo che può essere espresso come somma di due cubi positivi in più di un modo.
 
 Il primo numero di taxi è `1729`, che è:
 
@@ -28,13 +28,6 @@ I numeri dei taxi sono anche conosciuti come:
 # --instructions--
 
 Scrivi una funzione che restituisce i numeri di taxi più bassi `n`. Per ciascuno dei numeri taxicab indica il numero e i suoi cubi costituenti.
-
-**Vedi anche:**
-
-<ul>
-  <li><a href='https://oeis.org/A001235' target='_blank'>A001235 numeri taxicab</a> su Enciclopedia On-Line di sequenze di numeri interi.</li>
-  <li><a href='https://en.wikipedia.org/wiki/Taxicab_number' target='_blank'>numero di taxi</a> su Wikipedia.</li>
-</ul>
 
 # --hints--
 

@@ -8,11 +8,11 @@ dashedName: deal-cards-for-freecell
 
 # --description--
 
-*FreeCell* è il gioco di carte solitario che Paul Alfille ha introdotto nel sistema PLATO nel 1978. Jim Horne, in Microsoft, ha cambiato il nome del gioco a FreeCell e lo ha reimplementato per [DOS](https://rosettacode.org/wiki/DOS "DOS"), e poi per [Windows](https://rosettacode.org/wiki/Windows "Windows"). Questa versione ha introdotto 32000 mani numerate.
+*FreeCell* è il gioco di carte solitario che Paul Alfille ha introdotto nel sistema PLATO nel 1978. Jim Horne, a Microsoft, cambiò il nome a FreeCell e ha reimplementato il gioco per DOS e poi per Windows. Questa versione ha introdotto 32000 mani numerate.
 
 Come il gioco è diventato più popolare, Jim Horne ha rivelato l'algoritmo, e altre implementazioni di FreeCell hanno iniziato a riprodutte le mani di Microsoft. Queste mani sono numerate da 1 a 32000. Versioni più nuove da Microsoft hanno 1 milione di mani, numerate da 1 a 1000000; alcune implementazioni permettono numeri al di fuori di quel range.
 
-L'algoritmo usa questo [generatore congruenziale lineare](https://rosettacode.org/wiki/linear congruential generator "linear congruential generator") da Microsoft C:
+L'algoritmo usa questo generatore congruenziale lineare da Microsoft C:
 
 <ul>
   <li>$state_{n + 1} \equiv 214013 \times state_n + 2531011 \pmod{2^{31}}$</li>
@@ -24,7 +24,7 @@ L'algoritmo segue:
 
 <ol>
   <li>Fai il seed del RNG con il numero della mano.
-  </li><li>Crea un <a href='https://rosettacode.org/wiki/array' title='array' target='_blank'>array</a> di 52 carte: asso di fiori, asso di denari, asso di cuori, asso di picche, 2 di fiori, 2 di denari e così via attraverso i semi: asso, 2, 3, 4, 5, 6, 7, 8, 9, 10, Fante, Regina, Re. Gli indici dell'array sono da 0 a 51, con l'asso di fiori a 0, e Re di picche a 51.</li>
+  </li><li>Crea un array di 52 carte: Asso di Fiori, Asso di Quadri, Asso di Cuori, Asso di Picche, 2 di Fiori, 2 di Quadri, e così via tra i semi: Asso, 2, 3, 4, 5, 6, 7, 8, 9, 10, Fante, Regina, Re. Gli indici dell'array sono da 0 a 51, con l'asso di fiori a 0, e Re di picche a 51.</li>
   <li>Fino a quando l'array non è vuoto:</li>
   <li>Scegli una carta casuale dall'indice ≡ prossimo numero casuale (modulo lunghezza dell'array).</li>
     <ul>
@@ -78,8 +78,6 @@ L'algoritmo segue:
 # --instructions--
 
 Scrivi una funzione che prende un numero di mano e distribuisce le carte nello stesso ordine di questo algoritmo. La funzione deve restituire un array bidimensionale rappresentante il tavolo di FreeCell.
-
-Le mani possono anche essere confrontante con [le soluzioni di FreeCell per 1000000 di partite](https://freecellgamesolutions.com/). (Guarda la soluzione video, e mostra la mano iniziale.)
 
 # --hints--
 

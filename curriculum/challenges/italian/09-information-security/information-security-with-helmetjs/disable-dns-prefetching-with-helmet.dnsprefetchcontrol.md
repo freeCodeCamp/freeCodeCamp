@@ -8,7 +8,7 @@ dashedName: disable-dns-prefetching-with-helmet-dnsprefetchcontrol
 
 # --description--
 
-Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza su [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec), o clonato da [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
+Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza su <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, o clonato da <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 Per migliorare le prestazioni, la maggior parte dei browser precarica i record DNS per i link in una pagina. In questo modo l'ip di destinazione è già noto quando l'utente fa clic su un link. Questo può portare ad un uso eccessivo del servizio DNS (se possedete un grande sito web, visitato da milioni di persone…), problemi di privacy (un origliatore potrebbe dedurre che sei su una determinata pagina), o un'alterazione delle statistiche di pagina (alcuni link possono apparire visitati anche se non lo sono). Se hai esigenze di sicurezza elevata, è possibile disabilitare il precaricamento DNS, al costo di una perdita di prestazioni.
 

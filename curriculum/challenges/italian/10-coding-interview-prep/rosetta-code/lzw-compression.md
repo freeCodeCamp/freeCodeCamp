@@ -10,8 +10,6 @@ dashedName: lzw-compression
 
 L'algoritmo Lempel-Ziv-Welch (LZW) fornisce compressione di dati senza perdite.
 
-Puoi leggerne una descrizione completa nell'articolo [Wikipedia](https://en.wikipedia.org/wiki/Lempel-Ziv-Welch) sull'argomento.
-
 # --instructions--
 
 Scrivi una funzione che prende due parametri. Il primo parametro è un booleano dove `true` indica compressione e `false` indica decompressione. Il secondo parametro è una stringa o un array da elaborare. Se si tratta di una stringa da comprimere, restituisce un array di numeri. Se si tratta di un array di numeri da decomprimere restituisce una stringa.

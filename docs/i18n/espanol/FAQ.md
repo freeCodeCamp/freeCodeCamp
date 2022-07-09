@@ -10,7 +10,7 @@ freeCodeCamp se ejecuta en una moderna plataforma de JavaScript. Si estás inter
 
 Sí - Puedes contribuir cualquiera de los más de 30 idiomas que hemos habilitado en nuestra plataforma de traducción.
 
-Tenemos traducciones hechas por usuarios nativos en algunos idiomas. Tenemos la intención de traducir freeCodeCamp a los principales idiomas del mundo. Puedes leer todo acerca de esto en nuestro [anuncio aquí](https://www.freecodecamp.org/news/world-language-translation-effort).
+Tenemos traducciones hechas por usuarios nativos en algunos idiomas. Tenemos la intención de traducir freeCodeCamp a los principales idiomas del mundo. You can read all about this in our [announcement here](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/).
 
 Si estás interesado en ayudar a traducir, por favor asegúrate de [leer esta guía](how-to-translate-files.md) primero.
 

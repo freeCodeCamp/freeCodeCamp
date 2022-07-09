@@ -10,8 +10,8 @@ dashedName: set-up-a-template-engine
 
 Lavorare su queste sfide ti porterà a scrivere il tuo codice utilizzando uno dei seguenti metodi:
 
-- Clonare [questo repository GitHub](https://github.com/freeCodeCamp/boilerplate-advancednode/) e completare queste sfide localmente.
-- Usare [la nostra bozza di progetto su Replit](https://replit.com/github/freeCodeCamp/boilerplate-advancednode) per completare queste sfide.
+- Clonare <a href="https://github.com/freeCodeCamp/boilerplate-advancednode/" target="_blank" rel="noopener noreferrer nofollow">questo repository GitHub</a> e completare queste sfide localmente.
+- Usare <a href="https://replit.com/github/freeCodeCamp/boilerplate-advancednode" target="_blank" rel="noopener noreferrer nofollow">la nostra bozza di progetto su Replit</a> per completare queste sfide.
 - Usare un costruttore di siti di tua scelta per completare il progetto. Assicurati di incorporare tutti i file della nostra repository GitHub.
 
 Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata da qualche parte di pubblico. Quindi invia l'URL nel campo `Solution Link`.
@@ -28,7 +28,7 @@ Modifica l’argomento della dichiarazione `res.render()` nella rotta `/` in mod
 
 Se tutto è andato come previsto, la tua home page dell'app smetterà di mostrare il messaggio "`Pug template is not defined.`" e ora mostrerà un messaggio che indica che hai reso con successo il modello Pug!
 
-Invia la tua pagina quando pensi che sia corretto. Se incontri degli errori, puoi controllare il progetto completato fino a questo punto [qui](https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791).
+Invia la tua pagina quando pensi che sia corretto. Se stai avendo errori, puoi vedere <a href="https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791" target="_blank" rel="noopener noreferrer nofollow">il progetto completato fino a questo punto</a>.
 
 # --hints--
 

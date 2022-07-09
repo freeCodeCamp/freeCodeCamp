@@ -15,6 +15,7 @@ import {
   openModal
 } from '../redux';
 import './hotkeys.css';
+import { isProject } from '../../../../utils/challenge-types';
 
 const mapStateToProps = createSelector(
   canFocusEditorSelector,
@@ -53,6 +54,7 @@ const keyMap = {
 interface HotkeysProps {
   canFocusEditor: boolean;
   challengeFiles: ChallengeFiles;
+  challengeType?: number;
   children: React.ReactElement;
   editorRef?: React.RefObject<HTMLElement>;
   executeChallenge?: (options?: { showCompletionModal: boolean }) => void;
@@ -70,6 +72,7 @@ interface HotkeysProps {
 
 function Hotkeys({
   canFocusEditor,
+  challengeType,
   children,
   instructionsPanelRef,
   editorRef,
@@ -96,7 +99,11 @@ function Hotkeys({
 
       const testsArePassing = tests.every(test => test.pass && !test.err);
 
-      if (usesMultifileEditor) {
+      if (
+        usesMultifileEditor &&
+        typeof challengeType == 'number' &&
+        !isProject(challengeType)
+      ) {
         if (testsArePassing) {
           submitChallenge();
         } else {

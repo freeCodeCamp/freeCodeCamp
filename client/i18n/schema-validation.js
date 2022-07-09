@@ -135,12 +135,12 @@ const translationSchemaValidation = languages => {
     const emptyKeys = noEmptyObjectValues(fileJson);
     if (emptyKeys.length) {
       console.warn(
-        `${language}/translation.json has these empty keys: ${emptyKeys.join(
+        `${language}/translations.json has these empty keys: ${emptyKeys.join(
           ', '
         )}`
       );
     }
-    console.info(`${language} translation.json validation complete.`);
+    console.info(`${language} translations.json validation complete.`);
   });
 };
 

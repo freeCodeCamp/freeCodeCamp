@@ -12,7 +12,7 @@ Nella sfida precedente, hai visto come ottenere i dati JSON dall'API Cat Photo d
 
 Ora daremo un'occhiata più da vicino ai dati restituiti per comprendere meglio il formato JSON. Ricorda alcune notazioni in JavaScript:
 
-<blockquote>[ ] -> Le parentesi quadre rappresentano un array<br>{ } -> Le parentesi graffe rappresentano un oggetto<br>" " -> Le virgolette doppie rappresentano una stringa. Vengono utilizzati anche per i nomi delle chiavi in JSON</blockquote>
+<blockquote>[ ] -> Le parentesi quadre rappresentano un array.<br>{ } -> Le parentesi graffe rappresentano un oggetto.<br>" " -> Le virgolette doppie rappresentano una stringa. Vengono utilizzati anche per i nomi delle chiavi in JSON.</blockquote>
 
 Capire la struttura dei dati che un'API restituisce è importante perché influisce su come recuperare i valori di cui hai bisogno.
 

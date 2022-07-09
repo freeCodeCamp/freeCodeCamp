@@ -47,7 +47,6 @@ freeCodeCamp をクローンする
 
 ```console
 git clone https://github.com/freeCodeCamp/freeCodeCamp.git
-docsify serve docs
 ```
 
 `docsify` をインストールする

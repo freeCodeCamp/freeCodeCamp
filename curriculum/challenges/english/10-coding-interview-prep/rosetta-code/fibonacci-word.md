@@ -16,7 +16,7 @@ Form   F_Word<sub>3</sub>  as  F_Word<sub>2</sub>   concatenated with  F_Word<su
 Form   F_Word<sub>n</sub>  as  F_Word<sub>n-1</sub>  concatenated with  F_word<sub>n-2</sub>
 </pre>
 
-Entropy calculation is required in this challenge, [as shown in this Rosetta Code challenge](https://www.freecodecamp.org/learn/coding-interview-prep/rosetta-code/entropy)
+Entropy calculation is required in this challenge, <a href="https://www.freecodecamp.org/learn/coding-interview-prep/rosetta-code/entropy" target="_blank" rel="noopener noreferrer nofollow">as shown in this Rosetta Code challenge</a>
 
 # --instructions--
 
