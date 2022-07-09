@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc8046
 title: Symmetric difference
-challengeType: 5
+challengeType: 1
 forumTopicId: 16086
 dashedName: symmetric-difference
 ---
