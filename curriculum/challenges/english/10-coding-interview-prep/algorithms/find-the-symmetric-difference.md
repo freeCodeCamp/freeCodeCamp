@@ -1,7 +1,7 @@
 ---
 id: a3f503de51cf954ede28891d
 title: Find the Symmetric Difference
-challengeType: 5
+challengeType: 1
 forumTopicId: 301611
 dashedName: find-the-symmetric-difference
 ---
