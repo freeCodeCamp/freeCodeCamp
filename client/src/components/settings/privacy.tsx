@@ -8,7 +8,7 @@ import { createSelector } from 'reselect';
 
 import { userSelector } from '../../redux';
 import type { ProfileUI } from '../../redux/prop-types';
-import { submitProfileUI } from '../../redux/settings';
+import { submitProfileUI } from '../../redux/settings/settings-sagas';
 
 import FullWidthRow from '../helpers/full-width-row';
 import Spacer from '../helpers/spacer';

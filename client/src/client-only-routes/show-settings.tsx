@@ -36,7 +36,7 @@ import {
   updateMyKeyboardShortcuts,
   updateUserFlag,
   verifyCert
-} from '../redux/settings';
+} from '../redux/settings/settings-sagas';
 
 const { apiLocation } = envData;
 
