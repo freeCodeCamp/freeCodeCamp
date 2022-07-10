@@ -49,7 +49,6 @@ export interface NavLinksProps {
   navigate?: (location: string) => void;
   showLanguageMenu?: (elementToFocus: HTMLButtonElement) => void;
   hideLanguageMenu?: () => void;
-  isClose: () => void;
   menuButtonRef: Ref<HTMLButtonElement>;
 }
 
@@ -77,7 +76,7 @@ const mapDispatchToProps = {
 //     signOutAttribute({  });
 //   }
 //   return (
-//     <Modal onHide={isClose} show={showSignoutModal}>
+//     <Modal >
 //         <Modal.Title >
 //         </Modal.Title>
 //       </Modal.Header>
@@ -496,11 +495,11 @@ export class NavLinks extends Component<NavLinksProps, {}> {
             <li>
               <button
                 className='nav-link nav-link-signout'
-                onClick={() => (showSignoutModal = !showSignoutModal)}
+                onClick={this.handleLanguageChange}
               >
                 {t('buttons.sign-out')}
               </button>
-              <Modal dialogClassName='Signout-modal'>
+              <Modal dialogClassName='Signout-modal' onHide={this.handleBlur}>
                 <Modal.Header
                   className='Signout-modal-header fcc-modal'
                   closeButton={true}
