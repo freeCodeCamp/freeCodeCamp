@@ -20,7 +20,7 @@ Redux の `store` は、アプリケーションの `state` を保持して管�
 
 `store` 変数を宣言し、それを `createStore()` メソッドに割り当て、引数として `reducer` を渡してください。
 
-**注:** エディターのコードでは、ES6 のデフォルト引数の構文を使用して、`5` という値を保持するようにこの state を初期化しています。 デフォルト引数に慣れていない場合は、このトピックについて説明している[カリキュラムの ES6 セクション](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/set-default-parameters-for-your-functions)を参照してください。
+**注:** エディターのコードでは、ES6 のデフォルト引数の構文を使用して、`5` という値を保持するようにこの state を初期化しています。 デフォルト引数に慣れていない場合は、このトピックについて説明している<a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/set-default-parameters-for-your-functions" target="_blank" rel="noopener noreferrer nofollow">カリキュラムの ES6 セクション</a>を参照してください。
 
 # --hints--
 

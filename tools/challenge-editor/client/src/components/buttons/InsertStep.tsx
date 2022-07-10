@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { BlockRequiredProps } from '../../../interfaces/PropTypes';
-import { handleRequest } from '../../utils/handleRequest';
+import { API_LOCATION, handleRequest } from '../../utils/handleRequest';
 
 const InsertStep = ({ superblock, block }: BlockRequiredProps) => {
   const [num, setNum] = useState(0);
 
   const click = handleRequest(() =>
-    fetch(`http://localhost:3200/${superblock}/${block}/_tools/insert-step`, {
+    fetch(`${API_LOCATION}/${superblock}/${block}/_tools/insert-step`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

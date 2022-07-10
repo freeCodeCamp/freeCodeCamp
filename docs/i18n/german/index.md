@@ -22,22 +22,31 @@ Du kannst helfen, den Studienplan zu erweitern und zu verbessern. Du kannst auch
 
 Wir lokalisieren freeCodeCamp.org in die wichtigsten Sprachen der Welt.
 
-Zertifizierungen gibt es bereits in einigen wichtigen Weltsprachen wie [Chinesisch (中文)](https://chinese.freecodecamp.org/learn), [Spanisch (Español)](https://www.freecodecamp.org/espanol/learn), [Italienisch (Italiano)](https://www.freecodecamp.org/italian/learn), [Portugiesisch (Português)](https://www.freecodecamp.org/portuguese/learn). Wir ermutigen dich, die [Ankündigung ](https://www.freecodecamp.org/news/world-language-translation-effort) zu lesen und sie mit deinen Freunden zu teilen, um sie dafür zu begeistern.
+Certifications are already live in some major world languages like below:
 
-**Wenn du daran interessiert bist, zu übersetzen, findest du hier [eine Anleitung zum Übersetzen der freeCodeCamp-Ressourcen](how-to-translate-files.md).**
+- [Chinese (中文)](https://chinese.freecodecamp.org/learn)
+- [Spanish (Español)](https://www.freecodecamp.org/espanol/learn)
+- [Italian (Italiano)](https://www.freecodecamp.org/italian/learn)
+- [Portuguese (Português)](https://www.freecodecamp.org/portuguese/learn)
+- [Ukrainian (Українська)](https://www.freecodecamp.org/ukrainian/learn)
+- [Japanese (日本語)](https://www.freecodecamp.org/japanese/learn)
+
+We encourage you to read the [announcement here](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) and share it with your friends to get them excited about this.
+
+**If you're interested in translating, here's [how to translate freeCodeCamp's resources](how-to-translate-files.md).**
 
 ## Lernplattform
 
-Unsere Lernplattform läuft auf einem modernen JavaScript-Stack. Sie verwendet verschiedene Komponenten, Tools und Bibliotheken. Dazu gehören Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack und mehr.
+Our learning platform runs on a modern JavaScript stack. It has various components, tools, and libraries. These include Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack, and more.
 
-Im Großen und Ganzen haben wir einen Node.js-basierten API-Server, eine Reihe von React-basierten Client-Anwendungen, Testskripte, um die von Teilnehmer/innen eingereichten Studienplanprojekten zu bewerten, und einiges mehr. Wenn du einen produktiven Beitrag zur Lernplattform leisten willst, empfehlen wir dir, dich mit diesen Tools vertraut zu machen.
+Broadly, we have a Node.js based API server, a set of React-based client applications, testing scripts to evaluate camper-submitted curriculum projects, and more. If you want to productively contribute to the learning platform, we recommend some familiarity with these tools.
 
-Wenn du uns helfen willst, unsere Codebasis zu verbessern...
+If you want to help us improve our codebase...
 
-**kannst du entweder Gitpod verwenden, eine kostenlose Online-Entwicklungsumgebung, die eine fertige Entwicklungsumgebung für das freeCodeCamp in deinem Browser startet.**
+**you can either use Gitpod, a free online dev environment that starts a ready-to-code dev environment for freeCodeCamp in your browser.**
 
-[![In Gitpod öffnen](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-Oder du kannst...
+Or you can...
 
 **[Set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md) on your machine.**

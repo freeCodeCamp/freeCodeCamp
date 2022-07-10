@@ -18,7 +18,8 @@
     "lint": "eslint src",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postinstall": "cp ./sample.env ./.env"
   },
   "browserslist": {
     "production": [

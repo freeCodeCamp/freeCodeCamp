@@ -12,7 +12,7 @@ dashedName: build-a-tribute-page
 
 **User story:**
 
-1. La pagina tributo dovrebbe avere un elemento con un corrispondente `id="main"` che contiene tutti gli altri elementi
+1. La tua Tribute Page dovrebbe avere un elemento `main` con un corrispondente `id` di `main`, che contiene tutti gli altri elementi
 1. Dovresti vedere un elemento con un attributo `id` del valore `title`, che contiene una stringa (cioè del testo) che descrive il soggetto della pagina tributo (per esempio "Dr. Normal Borlaug")
 1. Dovresti vedere o un elemento `figure` o un elemento `div` con un attributo `id` del valore `img-div`
 1. Dentro l'elemento `#img-div`, dovresti vedere un elemento `img` con un corrispondente `id="image"`
@@ -207,14 +207,14 @@ assert(leftMargin - rightMargin < 6 && rightMargin - leftMargin < 6)
     <link
       href="https://fonts.googleapis.com/css?family=Pacifico"
       rel="stylesheet"
-      type="text/css"
+
     />
     <link
       href="https://fonts.googleapis.com/css?family=Lobster"
       rel="stylesheet"
-      type="text/css"
+
     />
-    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <link href="styles.css" rel="stylesheet" />
     <title>Tribute Page</title>
   </head>
   <body>

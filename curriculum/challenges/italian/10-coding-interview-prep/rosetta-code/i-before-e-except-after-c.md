@@ -8,7 +8,7 @@ dashedName: i-before-e-except-after-c
 
 # --description--
 
-["I before E, except after C"](https://en.wikipedia.org/wiki/I before E except after C) è una frase mnemonica che dovrebbe aiutare con la scrittura delle parole inglesi.
+**"I prima di E, tranne dopo C"** è una regoletta mnemonica per lo spelling inglese. Se non si è sicuri se una parola si scrive con `ei` o con `ie`, la regoletta suggerisce che l'ordine corretto è `ie` a meno che la lettera precedente sia una `c`, in tal caso potrebbe essere `ei`.
 
 Utilizzando le parole fornite, verificare se le due sotto-clausole della frase sono plausibili singolarmente:
 

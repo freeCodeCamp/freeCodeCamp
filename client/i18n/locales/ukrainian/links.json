@@ -13,7 +13,10 @@
     "copyright-url": "https://www.freecodecamp.org/news/copyright-policy/"
   },
   "donate": {
-    "other-ways-url": "https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp"
+    "other-ways-url": "https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp",
+    "download-irs-url": "https://s3.amazonaws.com/freecodecamp/Free+Code+Camp+Inc+IRS+Determination+Letter.pdf",
+    "download-990-url": "https://freecodecamp.s3.amazonaws.com/freeCodeCamp+2019+f990.pdf",
+    "one-time-url": "https://paypal.me/freecodecamp"
   },
   "nav": {
     "forum": "https://forum.freecodecamp.org/",
@@ -23,6 +26,6 @@
     "HTML-CSS": "HTML-CSS",
     "JavaScript": "JavaScript",
     "Python": "Python",
-    "Relational Databases": "Relational Databases"
+    "Backend Development": "Backend Development"
   }
 }

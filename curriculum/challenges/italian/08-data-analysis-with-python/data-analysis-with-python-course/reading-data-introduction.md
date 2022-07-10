@@ -16,8 +16,8 @@ dashedName: reading-data-introduction
 
 Altre risorse:
 
--   [Notebook su GitHub](https://github.com/krishnatray/RDP-Reading-Data-with-Python-and-Pandas)
--   [Come aprire Notebooks da GitHub usando Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+-  <a href="https://github.com/krishnatray/RDP-Reading-Data-with-Python-and-Pandas" target="_blank" rel="noopener noreferrer nofollow">Notebook su GitHub</a>
+-  <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer nofollow">Come aprire Notebooks da GitHub usando Google Colab.</a>
 
 # --question--
 

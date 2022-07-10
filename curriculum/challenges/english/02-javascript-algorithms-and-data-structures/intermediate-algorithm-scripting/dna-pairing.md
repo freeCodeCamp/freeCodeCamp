@@ -8,7 +8,7 @@ dashedName: dna-pairing
 
 # --description--
 
-Pairs of DNA strands consist of protein base pairs. Base pairs are represented by the characters <em>AT</em> and <em>CG</em>, which form building blocks of the DNA double helix.
+Pairs of DNA strands consist of nucleobase pairs. Base pairs are represented by the characters <em>AT</em> and <em>CG</em>, which form building blocks of the DNA double helix.
 
 The DNA strand is missing the pairing element. Write a function to match the missing base pairs for the provided DNA strand. For each character in the provided string, find the base pair character. Return the results as a 2d array.
 

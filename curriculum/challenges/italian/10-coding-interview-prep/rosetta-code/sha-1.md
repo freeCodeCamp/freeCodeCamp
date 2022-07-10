@@ -16,7 +16,7 @@ BitTorrent utilizza SHA-1 per verificare i download.
 
 Git e Mercurial usano i digest SHA-1 per identificare i commit.
 
-Uno standard governativo US, [FIPS 180-1](https://rosettacode.org/wiki/SHA-1/FIPS-180-1), definisce SHA-1.
+Uno standard governativo US, <a href="https://rosettacode.org/wiki/SHA-1/FIPS-180-1" target="_blank" rel="noopener noreferrer nofollow">FIPS 180-1</a>, definisce SHA-1.
 
 # --instructions--
 

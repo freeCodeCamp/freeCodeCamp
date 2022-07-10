@@ -10,7 +10,7 @@ freeCodeCamp è basata su uno stack JavaScript moderno. Se hai interesse a contr
 
 Sì, puoi contribuire a ognuna delle oltre 30 lingue abilitate sulla nostra piattaforma di traduzione.
 
-Abbiamo le traduzioni fatte dagli utenti live in alcune lingue. Abbiamo intenzione di localizzare freeCodeCamp nelle lingue più usate nel mondo. Puoi leggere tutto su questo argomento nel nostro [annuncio](https://www.freecodecamp.org/news/world-language-translation-effort).
+Abbiamo le traduzioni fatte dagli utenti live in alcune lingue. Abbiamo intenzione di localizzare freeCodeCamp nelle lingue più usate nel mondo. You can read all about this in our [announcement here](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/).
 
 Se sei interessato a contribuire alla traduzione per favore assicurati di [leggere questa guida](how-to-translate-files.md) come prima cosa.
 
@@ -92,7 +92,7 @@ Dai un'occhiata al [Manuale per moderatori](moderator-handbook.md) per una lista
 **Se hai bisogno chiedi liberamente aiuto in:**
 
 - La categoria `Contributors` del [forum della nostra community](https://forum.freecodecamp.org/c/contributors).
-- The `#Contributors` channel on [our chat server](https://discord.gg/PRyKn3Vbay).
+- Il canale `#Contributors` sul nostro [chat server](https://discord.gg/PRyKn3Vbay).
 
 Siamo entusiasti di aiutarti a contribuire in ognuno degli ambiti su cui vorresti lavorare. Se fai domande sul relativo thread di un'issue, saremo lieti di rispondere. Assicurati di fare una ricerca per la tua domanda prima di porne una nuova.
 

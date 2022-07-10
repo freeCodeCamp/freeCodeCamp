@@ -8,7 +8,7 @@ dashedName: sort-stability
 
 # --description--
 
-Ao ordenar registros em uma tabela por uma coluna ou campo específico, uma [ordenação estável](https://www.freecodecamp.org/news/stability-in-sorting-algorithms-a-treatment-of-equality-fa3140a5a539/) sempre manterá a ordem relativa dos registros que têm a mesma chave.
+Ao ordenar registros em uma tabela por uma coluna ou campo específico, uma <a href="https://www.freecodecamp.org/news/stability-in-sorting-algorithms-a-treatment-of-equality-fa3140a5a539/" target="_blank" rel="noopener noreferrer nofollow">ordenação estável</a> sempre manterá a ordem relativa dos registros que têm a mesma chave.
 
 Por exemplo, nesta tabela de países e cidades, uma organização estável na **segunda** coluna, a das cidades, manteria US Birmingham acima de UK Birmingham. (Embora uma ordenação instável *possa*, neste caso, colocar US Birmingham acima de UK Birmingham, uma ordenação estável *garantiria* que isso ocorresse).
 

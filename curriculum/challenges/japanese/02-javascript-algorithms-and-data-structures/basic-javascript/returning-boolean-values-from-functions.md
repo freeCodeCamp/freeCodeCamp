@@ -9,7 +9,7 @@ dashedName: returning-boolean-values-from-functions
 
 # --description--
 
-[等価演算子による比較](/learn/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator)で説明しましたが、比較演算子はすべて、ブール値の `true` または `false` を返します。
+<a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator" target="_blank" rel="noopener noreferrer nofollow">「等価演算子による比較」</a>で説明した通り、比較演算子はすべて、ブール値の `true` または `false` を返します。
 
 次のように `if/else` ステートメントを使用して比較を行うこともできます。
 
