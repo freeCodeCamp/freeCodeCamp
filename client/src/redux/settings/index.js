@@ -52,10 +52,6 @@ export const submitProfileUIComplete = createAction(
 );
 export const submitProfileUIError = createAction(types.submitProfileUIError);
 
-export const updateMyEmail = createAction(types.updateMyEmail);
-export const updateMyEmailComplete = createAction(types.updateMyEmailComplete);
-export const updateMyEmailError = createAction(types.updateMyEmailError);
-
 export const updateUserFlag = createAction(types.updateUserFlag);
 export const updateUserFlagComplete = createAction(
   types.updateUserFlagComplete,
