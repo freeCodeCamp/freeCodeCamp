@@ -133,12 +133,6 @@ export const verifyCertComplete = createAction(
 );
 export const verifyCertError = createAction(types.verifyCertError);
 
-export const resetProgress = createAction(types.resetProgress);
-export const resetProgressError = createAction(types.resetProgressError);
-
-export const deleteAccount = createAction(types.deleteAccount);
-export const deleteAccountError = createAction(types.deleteAccountError);
-
 export const usernameValidationSelector = state => state[ns].usernameValidation;
 
 export const reducer = handleActions(
