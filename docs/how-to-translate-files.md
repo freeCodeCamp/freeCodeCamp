@@ -123,6 +123,29 @@ You are welcome to translate as many strings as you like - there are no addition
 > [!NOTE]
 > If you see something in the English source file that is inaccurate or incorrect, please do not fix it through the translation flow. Instead, leave a comment on the string to notify us that there is a discrepancy, or create a GitHub issue.
 
+## Translate the Learn Interface
+
+Our `/learn` interface relies on JSON files loaded into an i18n plugin to generate translated text. This translation effort is split across both Crowdin and GitHub.
+
+### On GitHub
+
+The `links.json`, `meta-tags.json`, `motivation.json`, and `trending.json` files contain information that needs to be updated to reflect your language. However, we cannot load these into Crowdin, as the content isn't something that would be a one-to-one translation.
+
+These files will most likely be maintained by your language lead but you are welcome to [read about how to translate them](/language-lead-handbook.md).
+
+### On Crowdin
+
+> [!DANGER]
+> Do not edit the following files through a GitHub PR.
+
+The `intro.json` and `translations.json` files are both translated on Crowdin, in the Learn User Interface project. Translating these can be a bit tricky, as each individual JSON value appears as its own string and sometimes the context is missing.
+
+However, the `Context` information provided in Crowdin can help understand where the string fits in to the larger structure.
+
+![Image with an arrow pointing to Crowdin's context information](https://contribute.freecodecamp.org/images/crowdin/context.png)
+
+If you have any questions about where a string fits in to the prose, reach out to us in our [contributor chat](https://discord.gg/PRyKn3Vbay).
+
 ## Translate Documentation
 
 Translating our contributing documentation is a similar flow to translating our curriculum files.
