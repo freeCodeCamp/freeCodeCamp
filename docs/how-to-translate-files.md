@@ -4,6 +4,9 @@
 
 > The freeCodeCamp Localization Roadmap – There Are No Speed Limits
 
+> [!TIP]
+> You can start by reading [this announcement](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/). We recommend joining [our community forum](https://forum.freecodecamp.org/c/contributors/3) and [Discord chat server](https://discord.gg/PRyKn3Vbay).
+
 You can translate as much as you want, when you want. It's only a matter of how much time and energy you are willing to invest as a volunteer translator.
 
 We just ask that you understand the following:
