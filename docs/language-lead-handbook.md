@@ -146,6 +146,22 @@ The `motivationalQuotes` array is an array of objects, these objects should incl
 > [!TIP]
 > You should start with at least a dozen quotes, to have some variety. A new quote is shown every time the user reload the page.
 
+## How to update the common links
+
+We maintain a file of common links used throughout our [curriculum site](https://github.com/freecodecamp/freecodecamp) in the `/client/i18n/locales/<language>/links.json` file.
+
+Some of these links will not change - but you should update the `/news` article links to point to your language's translated version of that article when it is published.
+
+You should also update the `help` categories to point to your language's subforum (usually `language/category`, like `Italiano/HTML-CSS`). This will allow campers to create "help posts" in the correct forum location.
+
+## How to update the site meta-data
+
+The site meta-data is in the `/client/i18n/locales/<language>/meta-tags.json` file. This file has five keys: `title`, `description`, `social-description`, `keywords`, and `youre-unsubscribed`.
+
+The `youre-unsubscribed` value should be directly translated. The other values will need to be translated as closely as possible, while also considering common search terms and phrases used in your language.
+
+If you need help with this, reach out to us in the [contributor chat](https://discord.gg/PRyKn3Vbay)
+
 ## Pre-Translate Workflow on Crowdin
 
 The Pre-Translate workflow can be used to apply translations from the Translation Memory to strings.
