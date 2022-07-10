@@ -49,6 +49,7 @@ export interface NavLinksProps {
   navigate?: (location: string) => void;
   showLanguageMenu?: (elementToFocus: HTMLButtonElement) => void;
   hideLanguageMenu?: () => void;
+  isClose: () => void;
   menuButtonRef: Ref<HTMLButtonElement>;
 }
 
@@ -57,33 +58,10 @@ const mapDispatchToProps = {
   toggleNightMode: (theme: Themes) => updateUserFlag({ theme })
 };
 
-// add Signout function later
-
-// const mapDispatchToProps = (dispatch: Dispatch) =>
-//   bindActionCreators(
-//     { showSignOutModal: () => closeModal('signOut'), signOutAttribute },
-//     dispatch
-// );
-
-// export function SignoutModal({
-//   isClose,
-//   executeGA,
-//   showSignoutModal,
-//   t,
-//   SignoutUrl
-// }: SignoutModalProps): JSX.Element {
-//   if (showSignoutModal) {
-//     signOutAttribute({  });
-//   }
-//   return (
-//     <Modal >
-//         <Modal.Title >
-//         </Modal.Title>
-//       </Modal.Header>
-
-//     </Modal>
-//   );
-// }
+/*ToDo 
+create ability to focus on the button when closing the model
+show the signout modal
+*/
 
 export class NavLinks extends Component<NavLinksProps, {}> {
   static displayName: string;
@@ -103,6 +81,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
       this.handleLanguageButtonKeyDown.bind(this);
     this.handleMenuKeyDown = this.handleMenuKeyDown.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
+    this.handleSignOutModal = this.handleSignOutModal.bind(this);
   }
 
   toggleTheme(currentTheme = Themes.Default, toggleNightMode: any) {
@@ -118,12 +97,28 @@ export class NavLinks extends Component<NavLinksProps, {}> {
     return previousSibling?.querySelector('a, button') ?? menuButtonRef.current;
   }
 
+  handleSignOutModal = (event: React.MouseEvent<HTMLButtonElement>): void => {
+    event.preventDefault();
+    // const { isClose, showSignoutModal} = this.props;
+    const { isClose } = this.props;
+
+    const SignOutParagraph = event.target.dataset.value as string;
+    // If user selected cancel then close menu and put focus on button
+    if (SignOutParagraph === 'exit-lang-menu') {
+      // Set focus to Sign button first so we don't lose focus
+      // for screen readers.
+      this.showSignoutModal.current.focus();
+      isClose();
+      return;
+    }
+  };
+
   handleLanguageChange = (event: React.MouseEvent<HTMLButtonElement>): void => {
     event.preventDefault();
     const { hideMenu, hideLanguageMenu, menuButtonRef, navigate } = this.props;
     const newLanguage = event.target.dataset.value as string;
     // If user selected cancel then close menu and put focus on button
-    if (newLanguage === 'exit-lang-menu') {
+    if (newLanguage === 'misc.sign-out') {
       // Set focus to language button first so we don't lose focus
       // for screen readers.
       this.langButtonRef.current.focus();
@@ -495,11 +490,12 @@ export class NavLinks extends Component<NavLinksProps, {}> {
             <li>
               <button
                 className='nav-link nav-link-signout'
-                onClick={this.handleLanguageChange}
+                onClick={() => (showSignoutModal = !showSignoutModal)}
               >
                 {t('buttons.sign-out')}
               </button>
-              <Modal dialogClassName='Signout-modal' onHide={this.handleBlur}>
+              {/*<Modal dialogClassName='Signout-modal' onHide={isClose} show={showSignoutModal}>  */}
+              <Modal dialogClassName='Signout-modal'>
                 <Modal.Header
                   className='Signout-modal-header fcc-modal'
                   closeButton={true}
