@@ -12,11 +12,11 @@ import { ButtonSpacer, Spacer, Loader } from '../components/helpers';
 import { apiLocation } from '../../../config/env.json';
 
 import {
-  acceptTerms,
   userSelector,
   isSignedInSelector,
   signInLoadingSelector
 } from '../redux';
+import { acceptTerms } from '../redux/accept-terms-saga';
 
 import './email-sign-up.css';
 interface AcceptPrivacyTermsProps {
