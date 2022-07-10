@@ -23,9 +23,9 @@
     "news": "https://chinese.freecodecamp.org/news/"
   },
   "help": {
-    "HTML-CSS": "front-end",
-    "JavaScript": "front-end",
-    "Python": "curriculum",
-    "Backend Development": "curriculum"
+    "HTML-CSS": "chinese/html-css",
+    "JavaScript": "chinese/javascript",
+    "Python": "chinese/python",
+    "Backend Development": "chinese/programming-help"
   }
 }
