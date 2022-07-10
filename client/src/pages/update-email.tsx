@@ -22,7 +22,7 @@ import isEmail from 'validator/lib/isEmail';
 
 import { Spacer } from '../components/helpers';
 import './update-email.css';
-import { userSelector } from '../redux';
+import { userSelector } from '../redux/codeally-saga';
 import { updateMyEmail } from '../redux/settings/update-email-saga';
 import { maybeEmailRE } from '../utils';
 

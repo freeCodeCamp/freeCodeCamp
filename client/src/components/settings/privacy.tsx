@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
-import { userSelector } from '../../redux';
+import { userSelector } from '../../redux/codeally-saga';
 import type { ProfileUI } from '../../redux/prop-types';
 import { submitProfileUI } from '../../redux/settings/settings-sagas';
 

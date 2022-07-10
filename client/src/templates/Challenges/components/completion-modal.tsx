@@ -12,11 +12,8 @@ import { createSelector } from 'reselect';
 import { dasherize } from '../../../../../utils/slugs';
 import { isProject } from '../../../../utils/challenge-types';
 import Login from '../../../components/Header/components/Login';
-import {
-  isSignedInSelector,
-  executeGA,
-  allowBlockDonationRequests
-} from '../../../redux';
+import { executeGA, allowBlockDonationRequests } from '../../../redux';
+import { isSignedInSelector } from '../../../redux/codeally-saga';
 import { AllChallengeNode, ChallengeFiles } from '../../../redux/prop-types';
 
 import {

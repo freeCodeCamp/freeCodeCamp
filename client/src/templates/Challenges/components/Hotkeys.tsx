@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { ChallengeFiles, Test, User } from '../../../redux/prop-types';
 
-import { userSelector } from '../../../redux';
+import { userSelector } from '../../../redux/codeally-saga';
 import {
   canFocusEditorSelector,
   setEditorFocusability,

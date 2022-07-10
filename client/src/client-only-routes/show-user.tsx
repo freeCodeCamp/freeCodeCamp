@@ -16,12 +16,8 @@ import { createSelector } from 'reselect';
 import Login from '../components/Header/components/Login';
 
 import { Spacer, Loader, FullWidthRow } from '../components/helpers';
-import {
-  isSignedInSelector,
-  userFetchStateSelector,
-  userSelector,
-  reportUser
-} from '../redux';
+import { userFetchStateSelector, reportUser } from '../redux';
+import { isSignedInSelector, userSelector } from '../redux/codeally-saga';
 import { UserFetchState } from '../redux/prop-types';
 
 interface ShowUserProps {

@@ -10,8 +10,8 @@ import {
   userByNameSelector,
   userProfileFetchStateSelector,
   fetchProfileForUser,
-  usernameSelector
 } from '../redux';
+import { usernameSelector } from '../redux/codeally-saga';
 import { User } from '../redux/prop-types';
 
 interface ShowProfileOrFourOhFourProps {

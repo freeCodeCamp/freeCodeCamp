@@ -3,12 +3,8 @@ import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Loader } from '../../components/helpers';
-import {
-  userSelector,
-  userFetchStateSelector,
-  isSignedInSelector,
-  tryToShowDonationModal
-} from '../../redux';
+import { userFetchStateSelector, tryToShowDonationModal } from '../../redux';
+import { isSignedInSelector, userSelector } from '../../redux/codeally-saga';
 import DonateModal from '../Donation/donation-modal';
 import createRedirect from '../create-redirect';
 

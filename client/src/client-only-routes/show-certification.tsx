@@ -20,12 +20,12 @@ import {
   showCertFetchStateSelector,
   showCert,
   userFetchStateSelector,
-  usernameSelector,
   isDonatingSelector,
   executeGA,
   userByNameSelector,
   fetchProfileForUser
 } from '../redux';
+import { usernameSelector } from '../redux/codeally-saga';
 import { UserFetchState, User } from '../redux/prop-types';
 import { certMap } from '../resources/cert-and-project-map';
 import certificateMissingMessage from '../utils/certificate-missing-message';

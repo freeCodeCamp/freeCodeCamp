@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { ReflexContainer, ReflexElement, ReflexSplitter } from 'react-reflex';
 import { createSelector } from 'reselect';
 import { editor } from 'monaco-editor';
-import { isDonationModalOpenSelector, userSelector } from '../../../redux';
+import { isDonationModalOpenSelector } from '../../../redux';
+import { userSelector } from '../../../redux/codeally-saga';
 import {
   canFocusEditorSelector,
   consoleOutputSelector,

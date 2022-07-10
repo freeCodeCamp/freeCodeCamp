@@ -9,7 +9,8 @@ import { connect } from 'react-redux';
 import Spinner from 'react-spinkit';
 import { createSelector } from 'reselect';
 
-import { isSignedInSelector, userFetchStateSelector } from '../../../redux';
+import { userFetchStateSelector } from '../../../redux';
+import { isSignedInSelector } from '../../../redux/codeally-saga';
 import Login from './Login';
 
 const mapStateToProps = createSelector(

@@ -24,12 +24,8 @@ import { debounce } from 'lodash-es';
 import { useTranslation } from 'react-i18next';
 import { Loader } from '../../../components/helpers';
 import { Themes } from '../../../components/settings/theme';
-import {
-  userSelector,
-  saveChallenge,
-  isDonationModalOpenSelector,
-  isSignedInSelector
-} from '../../../redux';
+import { saveChallenge, isDonationModalOpenSelector } from '../../../redux';
+import { isSignedInSelector, userSelector } from '../../../redux/codeally-saga';
 import {
   ChallengeFiles,
   Dimensions,

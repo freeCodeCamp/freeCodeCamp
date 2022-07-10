@@ -3,7 +3,8 @@ import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 
 import { createSelector } from 'reselect';
-import { fetchUser, isSignedInSelector, executeGA } from '../../redux';
+import { fetchUser, executeGA } from '../../redux';
+import { isSignedInSelector } from '../../redux/codeally-saga';
 
 interface CertificationProps {
   children?: React.ReactNode;

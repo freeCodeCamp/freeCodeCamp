@@ -19,10 +19,9 @@ import {
   currentChallengeIdSelector,
   userFetchStateSelector,
   signInLoadingSelector,
-  isSignedInSelector,
-  tryToShowDonationModal,
-  userSelector
+  tryToShowDonationModal
 } from '../../redux';
+import { isSignedInSelector, userSelector } from '../../redux/codeally-saga';
 import { MarkdownRemark, AllChallengeNode, User } from '../../redux/prop-types';
 import Block from './components/block';
 import CertChallenge from './components/cert-challenge';

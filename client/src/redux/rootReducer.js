@@ -15,7 +15,8 @@ import {
 } from '../templates/Introduction/redux';
 import { reducer as settings, ns as settingsNameSpace } from './settings';
 import { FlashApp as flashNameSpace } from './types';
-import { reducer as app, MainApp as appNameSpace } from './';
+import { ns as appNameSpace} from './action-types';
+import { reducer as app } from './';
 
 export default combineReducers({
   [appNameSpace]: app,

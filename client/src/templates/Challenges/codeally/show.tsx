@@ -21,13 +21,15 @@ import HelpModal from '../components/help-modal';
 import Hotkeys from '../components/Hotkeys';
 import {
   completedChallengesSelector,
+  partiallyCompletedChallengesSelector,
+  showCodeAllySelector
+} from '../../../redux';
+import {
   isSignedInSelector,
   hideCodeAlly,
-  partiallyCompletedChallengesSelector,
-  showCodeAllySelector,
   tryToShowCodeAlly,
   userTokenSelector
-} from '../../../redux';
+} from '../../../redux/codeally-saga';
 import {
   challengeMounted,
   isChallengeCompletedSelector,

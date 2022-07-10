@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
 import envData from '../../../../../config/env.json';
-import { isSignedInSelector } from '../../../redux';
+import { isSignedInSelector } from '../../../redux/codeally-saga';
 
 const { apiLocation, homeLocation } = envData;
 

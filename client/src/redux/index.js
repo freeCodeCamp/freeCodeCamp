@@ -9,9 +9,9 @@ import {
 } from '../templates/Challenges/redux/action-types';
 import { emailToABVariant } from '../utils/A-B-tester';
 import { createAcceptTermsSaga } from './accept-terms-saga';
-import { actionTypes } from './action-types';
+import { actionTypes , ns as MainApp} from './action-types';
 import { createAppMountSaga } from './app-mount-saga';
-import { createCodeAllySaga } from './codeally-saga';
+import { createCodeAllySaga , userSelector } from './codeally-saga';
 import { createDonationSaga } from './donation-saga';
 import failedUpdatesEpic from './failed-updates-epic';
 import { createFetchUserSaga } from './fetch-user-saga';
@@ -24,8 +24,6 @@ import { createShowCertSaga } from './show-cert-saga';
 import updateCompleteEpic from './update-complete-epic';
 import { createUserTokenSaga } from './user-token-saga';
 import { createSaveChallengeSaga } from './save-challenge-saga';
-
-export const MainApp = 'app';
 
 export const defaultFetchState = {
   pending: true,
@@ -175,15 +173,10 @@ export const showCert = createAction(actionTypes.showCert);
 export const showCertComplete = createAction(actionTypes.showCertComplete);
 export const showCertError = createAction(actionTypes.showCertError);
 
-export const updateUserToken = createAction(actionTypes.updateUserToken);
 export const deleteUserToken = createAction(actionTypes.deleteUserToken);
 export const deleteUserTokenComplete = createAction(
   actionTypes.deleteUserTokenComplete
 );
-
-export const hideCodeAlly = createAction(actionTypes.hideCodeAlly);
-export const showCodeAlly = createAction(actionTypes.showCodeAlly);
-export const tryToShowCodeAlly = createAction(actionTypes.tryToShowCodeAlly);
 
 export const updateCurrentChallengeId = createAction(
   actionTypes.updateCurrentChallengeId
@@ -210,7 +203,6 @@ export const isVariantASelector = state => {
 export const isDonatingSelector = state => userSelector(state).isDonating;
 export const isOnlineSelector = state => state[MainApp].isOnline;
 export const isServerOnlineSelector = state => state[MainApp].isServerOnline;
-export const isSignedInSelector = state => !!state[MainApp].appUsername;
 export const isDonationModalOpenSelector = state =>
   state[MainApp].showDonationModal;
 export const recentlyClaimedBlockSelector = state =>
@@ -247,10 +239,6 @@ export const shouldRequestDonationSelector = state => {
   // this will mean we have completed 3 or more challenges this browser session
   // and enough challenges overall to not be new
   return completionCount >= 3;
-};
-
-export const userTokenSelector = state => {
-  return userSelector(state).userToken;
 };
 
 export const showCodeAllySelector = state => {
@@ -395,12 +383,6 @@ export const certificatesByNameSelector = username => state => {
 export const userFetchStateSelector = state => state[MainApp].userFetchState;
 export const userProfileFetchStateSelector = state =>
   state[MainApp].userProfileFetchState;
-export const usernameSelector = state => state[MainApp].appUsername;
-export const userSelector = state => {
-  const username = usernameSelector(state);
-
-  return state[MainApp].user[username] || {};
-};
 
 export const sessionMetaSelector = state => state[MainApp].sessionMeta;
 

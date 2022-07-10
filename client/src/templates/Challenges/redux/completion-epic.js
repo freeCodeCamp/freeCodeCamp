@@ -13,12 +13,11 @@ import {
 
 import { challengeTypes, submitTypes } from '../../../../utils/challenge-types';
 import {
-  userSelector,
-  isSignedInSelector,
   submitComplete,
   updateComplete,
   updateFailed
 } from '../../../redux';
+import { isSignedInSelector, userSelector } from '../../../redux/codeally-saga';
 
 import postUpdate$ from '../utils/post-update';
 import { mapFilesToChallengeFiles } from '../../../utils/ajax';

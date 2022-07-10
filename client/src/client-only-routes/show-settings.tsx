@@ -20,11 +20,13 @@ import { Themes } from '../components/settings/theme';
 import UserToken from '../components/settings/user-token';
 import {
   signInLoadingSelector,
+  hardGoTo as navigate,
+} from '../redux';
+import {
   userSelector,
   isSignedInSelector,
-  hardGoTo as navigate,
   userTokenSelector
-} from '../redux';
+} from '../redux/codeally-saga';
 import { User } from '../redux/prop-types';
 import {
   submitNewAbout,
