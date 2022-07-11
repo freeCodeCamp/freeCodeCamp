@@ -19,7 +19,7 @@ if (env.BRANCH_NAME == 'dev') {
     LOGICAL_ENV = 'dev'
     IS_BUILD = true
     IS_DEPLOY = true
-    IS_APP_DEPLOY = false
+    IS_APP_DEPLOY = true
     IS_API_DEPLOY = true
     ENABLE_CACHE = false
 }
