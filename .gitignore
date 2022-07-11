@@ -149,6 +149,7 @@ jspm_packages/
 # dotenv environment variables file
 .env
 .env.test
+chris.env
 
 # gatsby files
 .cache/
