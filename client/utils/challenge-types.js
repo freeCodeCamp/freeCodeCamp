@@ -4,7 +4,7 @@ const backend = 2;
 const zipline = 3;
 const frontEndProject = 3;
 const backEndProject = 4;
-const bonfire = 5;
+const jsProject = 5;
 const modern = 6;
 const step = 7;
 const quiz = 8;
@@ -30,7 +30,7 @@ exports.challengeTypes = {
   frontEndProject,
   backEndProject,
   pythonProject,
-  bonfire,
+  jsProject,
   modern,
   step,
   quiz,
@@ -57,13 +57,13 @@ exports.isProject = challengeType => {
 exports.pathsMap = {
   [html]: 'html',
   [js]: 'js',
-  [bonfire]: 'js'
+  [jsProject]: 'js'
 };
 // determine the component to view for each challenge
 exports.viewTypes = {
   [html]: 'classic',
   [js]: 'classic',
-  [bonfire]: 'classic',
+  [jsProject]: 'classic',
   [frontEndProject]: 'frontend',
   [backEndProject]: 'backend',
   [pythonProject]: 'frontend',
@@ -81,7 +81,7 @@ exports.viewTypes = {
 exports.submitTypes = {
   [html]: 'tests',
   [js]: 'tests',
-  [bonfire]: 'tests',
+  [jsProject]: 'tests',
   // requires just a single url
   // like codepen.com/my-project
   [frontEndProject]: 'project.frontEnd',
