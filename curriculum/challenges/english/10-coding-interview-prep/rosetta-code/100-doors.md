@@ -1,7 +1,7 @@
 ---
 id: 594810f028c0303b75339acb
 title: 100 doors
-challengeType: 5
+challengeType: 1
 forumTopicId: 302217
 dashedName: 100-doors
 ---

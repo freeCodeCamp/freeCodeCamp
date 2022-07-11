@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7ec5
 title: Josephus problem
-challengeType: 5
+challengeType: 1
 forumTopicId: 302294
 dashedName: josephus-problem
 ---
