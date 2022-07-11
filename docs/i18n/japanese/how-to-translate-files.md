@@ -4,6 +4,8 @@
 
 > The freeCodeCamp Localization Roadmap – There Are No Speed Limits
 
+> [!TIP] You can start by reading [this announcement](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/). We recommend joining [our community forum](https://forum.freecodecamp.org/c/contributors/3) and [Discord chat server](https://discord.gg/PRyKn3Vbay).
+
 You can translate as much as you want, when you want. It's only a matter of how much time and energy you are willing to invest as a volunteer translator.
 
 We just ask that you understand the following:
@@ -115,19 +117,41 @@ Crowdin はドキュメントを翻訳可能な文字列 (通常は文単位) �
 
 > [!NOTE] If you see something in the English source file that is inaccurate or incorrect, please do not fix it through the translation flow. Instead, leave a comment on the string to notify us that there is a discrepancy, or create a GitHub issue.
 
+## Translate the Learn Interface
+
+Our `/learn` interface relies on JSON files loaded into an i18n plugin to generate translated text. This translation effort is split across both Crowdin and GitHub.
+
+### On GitHub
+
+The `links.json`, `meta-tags.json`, `motivation.json`, and `trending.json` files contain information that needs to be updated to reflect your language. However, we cannot load these into Crowdin, as the content isn't something that would be a one-to-one translation.
+
+These files will most likely be maintained by your language lead but you are welcome to [read about how to translate them](/language-lead-handbook.md).
+
+### On Crowdin
+
+> [!DANGER] Do not edit the following files through a GitHub PR.
+
+The `intro.json` and `translations.json` files are both translated on Crowdin, in the Learn User Interface project. Translating these can be a bit tricky, as each individual JSON value appears as its own string and sometimes the context is missing.
+
+However, the `Context` information provided in Crowdin can help understand where the string fits in to the larger structure.
+
+![Image with an arrow pointing to Crowdin's context information](https://contribute.freecodecamp.org/images/crowdin/context.png)
+
+If you have any questions about where a string fits in to the prose, reach out to us in our [contributor chat](https://discord.gg/PRyKn3Vbay).
+
 ## Translate Documentation
 
-コントリビューションドキュメントの翻訳も、カリキュラムのファイルの翻訳と同じような流れです。
+Translating our contributing documentation is a similar flow to translating our curriculum files.
 
 > [!NOTE] Our contributing documentation is powered by `docsify`, and we have special parsing for message boxes like this one. If you see strings that start with `[!NOTE]`, `[!WARNING]`, or `[!TIP]`, these words should NOT be translated.
 
-### 内部リンクのあるドキュメントを翻訳する
+### How to translate documentation with internal links
 
-コントリビューションドキュメントを翻訳する際には、ドキュメント内の別のセクションをリンク先とする内部リンクに注意してください。
+When you work on translating contributing documentation, watch out for internal links targeting a different section of the documentation.
 
-必ず、リンク先セクションの id (`#` 以降の部分) を翻訳後のドキュメントの id に置き換えてください。 例えば、日本語の場合は以下のようになります。
+Make sure to replace the id of the target section (the part after `#`) with the id on the translated document. For example, it will look like this in Japanese:
 
-翻訳前
+Before translation
 
 ```
 // HTML の場合
@@ -139,7 +163,7 @@ Crowdin はドキュメントを翻訳可能な文字列 (通常は文単位) �
 [Link text](#target-section-heading-id)
 ```
 
-翻訳後
+After translation
 
 ```
 // HTML の場合
@@ -151,15 +175,15 @@ Crowdin はドキュメントを翻訳可能な文字列 (通常は文単位) �
 [翻訳後のリンクテキスト](#翻訳後の-id)
 ```
 
-ドキュメント内の実際のファイルは Markdown で書かれていますが、Crowdin では HTML タグとして表示されます。
+The actual files in docs are written in Markdown, but they will appear as HTML tags on Crowdin.
 
-`docsify` があなたの言語の文字列をどのような id へと変換するかは、翻訳後のページを見て確認してください。 翻訳がまだデプロイされていない場合は、[ドキュメントサイトをローカルで実行](how-to-work-on-the-docs-theme.md#ローカルでドキュメントサイトを提供する)してプレビューできます。
+You can find out how `docsify` converts a string in your language into an id by looking into the translated pages. If the translation is not deployed yet, you can preview it by [running the docs site locally](how-to-work-on-the-docs-theme.md#serving-the-documentation-site-locally).
 
-[ドキュメントの内部リンクについて詳しくはこちら](how-to-work-on-the-docs-theme.md#内部リンクを作成する)を参照してください。
+You can learn more about [internal links in our docs here](how-to-work-on-the-docs-theme.md#how-to-create-an-internal-link).
 
 ## Translate the LearnToCode RPG
 
-LearnToCode RPG は Ren'Py 上で動作します。Ren'Py では翻訳の際に独自の構文が使用されます ([Ren'Py の Text のドキュメント](https://www.renpy.org/doc/html/text.html) を参照してください)。
+The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated strings: (See [Ren'Py Text documentation](https://www.renpy.org/doc/html/text.html))
 
 - `""`で囲まれた文章が翻訳対象です。 ダイアログまたはUI (ユーザーインターフェース) 文字列です。 ダイアログの前後に表示されるキーワードは、ゲームエンジンを制御するキーワードです。詳細は後続のルールにて説明します。 このルールは、後続で説明する全ルールの基本であり、最も重要です。
 - `new "..."` のように表示される場合、接頭辞 `new` の部分はキーワードなので翻訳しないでください。
@@ -169,7 +193,7 @@ LearnToCode RPG は Ren'Py 上で動作します。Ren'Py では翻訳の際に�
 - 文末の `nointeract` キーワードは翻訳しないでください。
 - 全角括弧 `（）`を使用しようとすると、品質保証に関する警告が表示されます。 品質保証に関する警告を避けるためには、半角括弧 `()` を使用してください。
 
-### 例
+### Examples
 
 ---
 
@@ -187,7 +211,7 @@ LearnToCode RPG は Ren'Py 上で動作します。Ren'Py では翻訳の際に�
 "[player_name]？好巧，我们的VIP队友{a=[vip_profile_url]}[player_name]{/a}会很高兴的。"
 ```
 
-注: `[]` と `{}` のタグは半角のまま残す必要があります。
+Note: The `[]` and `{}` tags should be left intact.
 
 ---
 
@@ -205,7 +229,7 @@ old "{icon=icon-fast-forward} Skip"
 new "{icon=icon-fast-forward} 跳过"
 ```
 
-注: 接頭辞 `new` と `{icon=icon-fast}` タグはそのまま残す必要があります。
+Note: Again, the `new` prefix and the `{icon=icon-fast-forward}` tag should be left intact.
 
 ---
 
@@ -223,7 +247,7 @@ layla @ neutral "Hehe, [player_name], you are a fun one. I'm sure you will enjoy
 layla @ neutral "哈哈，[player_name]，你真有趣。我相信你一定会喜欢你的开发者工作的。"
 ```
 
-注: `layla @ neutral` と `[player_name]` はそのまま残します。
+Note: `layla @ neutral` and `[player_name]` are left unchanged.
 
 ---
 
@@ -243,19 +267,19 @@ player "也许这都是一场梦？" nointeract
 
 ---
 
-### Crowdin による文章の分割についての注意点
+### A Note on How Crowdin Segments a Sentence
 
-Crowdin は引用符 (`""`) で囲まれたダイアログ行を分割することがあるため注意してください。 ダイアログを翻訳する際は、引用符の開始・終了が変更されていないことを確認する必要があります。引用符が別のセグメントに表示されたとしてもです。
+Pay attention to how Crowdin segments a line of dialogue wrapped between opening and closing quotes `""`. When we are translating the dialogue, we need to make sure to retain the opening and closing quotes, even if the quotes appear in different segments.
 
-このような翻訳対象の行があったとします。
+This is the line to be translated:
 
 ```renpy
 player @ surprised "{b}Full-stack{/b}... What is that? I better take notes so I can learn more about it."
 ```
 
-Crowdin は以下のような 3 つのセグメントに分割します。
+Crowdin segments it into three parts like below:
 
-<img width="836" alt="スクリーンショット 2022-01-23 (10 36 43)" src="https://user-images.githubusercontent.com/35674052/150693962-d3b091e5-2432-44d0-9d24-195ea7d7aeda.png" />
+<img width="836" alt="Screen Shot 2022-01-23 at 10 36 43" src="https://user-images.githubusercontent.com/35674052/150693962-d3b091e5-2432-44d0-9d24-195ea7d7aeda.png" />
 
 ```renpy
 # 原文
@@ -264,7 +288,7 @@ player @ surprised "{b}Full-stack{/b}
 player @ surprised "{b}全栈{/b}
 ```
 
-<img width="750" alt="スクリーンショット 2022-01-23 (10 36 49)" src="https://user-images.githubusercontent.com/35674052/150693965-15411504-791a-4db3-8b14-bc9177be6375.png" />
+<img width="750" alt="Screen Shot 2022-01-23 at 10 36 49" src="https://user-images.githubusercontent.com/35674052/150693965-15411504-791a-4db3-8b14-bc9177be6375.png" />
 
 ```renpy
 # 原文
@@ -273,7 +297,7 @@ What is that?
 这是什么？
 ```
 
-<img width="857" alt="スクリーンショット 2022-01-23 (10 36 54)" src="https://user-images.githubusercontent.com/35674052/150693969-062e3268-580f-4ad2-97db-cab6240b6095.png" />
+<img width="857" alt="Screen Shot 2022-01-23 at 10 36 54" src="https://user-images.githubusercontent.com/35674052/150693969-062e3268-580f-4ad2-97db-cab6240b6095.png" />
 
 ```renpy
 # 原文
@@ -284,27 +308,27 @@ I better take notes so I can learn more about it."
 
 ## Rate Translations
 
-Crowdin では投稿済みの翻訳案を評価することができます。 翻訳内容を保存しようとした際、同じ翻訳は保存できないというメッセージが表示されることがあるかもしれません。これは、他のコントリビューターがすでに全く同じ翻訳を提案していることを意味しています。 既存の翻訳に賛成であれば `+` ボタンをクリックして賛成票を投じてください。
+Crowdin allows you to rate the existing proposed translations. If you attempt to save a translation, you may see a message indicating that you cannot save a duplicate translation - this means another contributor has proposed that identical translation. If you agree with that translation, click the `+` button to "upvote" the translation.
 
-もし、翻訳が不正確であったり、原文の意味が正しく翻訳されていない翻訳を発見した場合は、`-` ボタンをクリックして反対票を投じて下さい。
+If you see a translation that is inaccurate or does not provide the same clarity as the original string, click the `-` button to "downvote" the translation.
 
-Crowdin はそれらの投票結果を元に各翻訳案の点数を算出します。この点数は校正チームが最適な翻訳文を選ぶための判断材料となります。
+Crowdin uses these votes to give a score to each proposed translation for a string, which helps the proofreading team determine which translation is the best fit for each string.
 
 ## Quality Assurance Checks
 
-翻訳内容が可能な限り正確であることを確認し、校正チームによる翻訳文レビューに役立てるため、品質保証ステップを設けています。
+We have enabled some quality assurance steps that will verify a translation is as accurate as possible - this helps our proofreaders review proposed translations.
 
-翻訳内容を保存しようとした際、内容に対する警告文が表示されることがあります。
+When you attempt to save a translation, you may see a warning message appear with a notification regarding your proposed translation.
 
-![画像 - 品質保証用警告メッセージ](https://contribute.freecodecamp.org/images/crowdin/qa-message.png)
+![Image - QA Warning Message](https://contribute.freecodecamp.org/images/crowdin/qa-message.png)
 
-このメッセージは、Crowdin の品質保証システムが投稿内容に間違いが含まれている可能性があると判断した場合に表示されます。 上の例では `<code>` タグ内のテキストが変更されており、Crowdin がそれを検出しました。
+This message appears when Crowdin's QA system has identified a potential error in the proposed translation. In this example, we have modified the text of a `<code>` tag and Crowdin has caught that.
 
 > [!WARNING] You have the option to save a translation in spite of errors. If you do, by clicking "Save Anyway", you should also tag a proofreader or project manager and explain why the QA message needs to be ignored in this case.
 
 ## Translation Best Practices
 
-翻訳をできる限り正確なものとするため、以下のガイドラインに従って下さい。
+Follow these guidelines to ensure our translations are as accurate as possible:
 
 - `<code>` タグの中身を翻訳しないでください。 これらのタグはコードの一部であり、英語のまま残しておかなければなりません。
 - コンテンツを追加しないで下さい。 チャレンジを翻訳する際、テキスト内容の変更や追加の情報が必要だと感じた場合は、GitHub Issue を通して提案するか、提案内容を反映した英語のファイルをプルリクエストして下さい。
