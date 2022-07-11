@@ -9,7 +9,7 @@ import Profile from '../components/profile/profile';
 import {
   userByNameSelector,
   userProfileFetchStateSelector,
-  fetchProfileForUser,
+  fetchProfileForUser
 } from '../redux';
 import { usernameSelector } from '../redux/codeally-saga';
 import { User } from '../redux/prop-types';

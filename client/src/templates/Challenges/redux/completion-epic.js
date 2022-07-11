@@ -12,11 +12,7 @@ import {
 } from 'rxjs/operators';
 
 import { challengeTypes, submitTypes } from '../../../../utils/challenge-types';
-import {
-  submitComplete,
-  updateComplete,
-  updateFailed
-} from '../../../redux';
+import { submitComplete, updateComplete, updateFailed } from '../../../redux';
 import { isSignedInSelector, userSelector } from '../../../redux/codeally-saga';
 
 import postUpdate$ from '../utils/post-update';

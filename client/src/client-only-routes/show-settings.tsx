@@ -18,10 +18,7 @@ import Portfolio from '../components/settings/portfolio';
 import Privacy from '../components/settings/privacy';
 import { Themes } from '../components/settings/theme';
 import UserToken from '../components/settings/user-token';
-import {
-  signInLoadingSelector,
-  hardGoTo as navigate,
-} from '../redux';
+import { signInLoadingSelector, hardGoTo as navigate } from '../redux';
 import {
   userSelector,
   isSignedInSelector,

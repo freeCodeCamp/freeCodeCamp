@@ -9,9 +9,9 @@ import {
 } from '../templates/Challenges/redux/action-types';
 import { emailToABVariant } from '../utils/A-B-tester';
 import { createAcceptTermsSaga } from './accept-terms-saga';
-import { actionTypes , ns as MainApp} from './action-types';
+import { actionTypes, ns as MainApp } from './action-types';
 import { createAppMountSaga } from './app-mount-saga';
-import { createCodeAllySaga , userSelector } from './codeally-saga';
+import { createCodeAllySaga, userSelector } from './codeally-saga';
 import { createDonationSaga } from './donation-saga';
 import failedUpdatesEpic from './failed-updates-epic';
 import { createFetchUserSaga } from './fetch-user-saga';

@@ -16,10 +16,7 @@ import { isGoodXHRStatus } from '../templates/Challenges/utils';
 import postUpdate$ from '../templates/Challenges/utils/post-update';
 import { actionTypes } from './action-types';
 import { isSignedInSelector } from './codeally-saga';
-import {
-  serverStatusChange,
-  isServerOnlineSelector,
-} from './';
+import { serverStatusChange, isServerOnlineSelector } from './';
 
 const key = 'fcc-failed-updates';
 
