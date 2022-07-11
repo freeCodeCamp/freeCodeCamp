@@ -1,5 +1,5 @@
 {
-  "restApiRoot": "/api",
+  "restApiRoot": "/freecodecamp",
   "host": "127.0.0.1",
   "port": 3000,
   "legacyExplorer": false,
