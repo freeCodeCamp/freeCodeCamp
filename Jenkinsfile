@@ -3,7 +3,7 @@ def APPNAME = "freecodecamp-mfe"
 
 // Define which branch build and deploy need to run in the below array
 
-def branchfilter = ['dev','main']
+def branchfilter = ['dev']
 
 if (!branchfilter.contains(env.BRANCH_NAME)) {
     println 'Now is not the time to run the pipeline.'
@@ -24,6 +24,7 @@ if (env.BRANCH_NAME == 'dev') {
     ENABLE_CACHE = false
 }
 
+// NOTE: main/prod is not supported yet
 if (env.BRANCH_NAME == 'main') {
     DEPLOY_ENV = 'PROD'
     LOGICAL_ENV = 'prod'
