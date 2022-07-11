@@ -19,7 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "postinstall": "cp ./sample.env ./.env"
+    "postinstall": "shx cp ./sample.env ./.env"
   },
   "browserslist": {
     "production": [
@@ -36,6 +36,7 @@
   "devDependencies": {
     "@types/codemirror": "5.60.5",
     "cross-env": "7.0.3",
-    "eslint-plugin-react-hooks": "4.6.0"
+    "eslint-plugin-react-hooks": "4.6.0",
+    "shx": "0.3.4"
   }
 }
