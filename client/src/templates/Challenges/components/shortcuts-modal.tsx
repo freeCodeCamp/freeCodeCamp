@@ -5,7 +5,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
-import { closeModal, isShortcutsModalOpenSelector } from '../redux';
+import { closeModal } from '../redux/actions';
+import { isShortcutsModalOpenSelector } from '../redux/selectors';
 import { updateMyKeyboardShortcuts } from '../../../redux/settings/settings-sagas';
 import { userSelector } from '../../../redux/codeally-saga';
 import { User } from '../../../redux/prop-types';

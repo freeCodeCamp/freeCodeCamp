@@ -32,11 +32,11 @@ import {
 } from '../../../redux/codeally-saga';
 import {
   challengeMounted,
-  isChallengeCompletedSelector,
   updateChallengeMeta,
   openModal,
   updateSolutionFormValues
-} from '../redux';
+} from '../redux/actions';
+import { isChallengeCompletedSelector } from '../redux/selectors';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import {
   ChallengeNode,

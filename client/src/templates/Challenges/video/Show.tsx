@@ -22,12 +22,12 @@ import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
 import PrismFormatted from '../components/prism-formatted';
 import {
-  isChallengeCompletedSelector,
   challengeMounted,
   updateChallengeMeta,
   openModal,
   updateSolutionFormValues
-} from '../redux';
+} from '../redux/actions';
+import { isChallengeCompletedSelector } from '../redux/selectors';
 
 // Styles
 import './show.css';

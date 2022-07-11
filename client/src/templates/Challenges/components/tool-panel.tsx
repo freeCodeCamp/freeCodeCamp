@@ -11,7 +11,8 @@ import { createSelector } from 'reselect';
 import { challengeTypes } from '../../../../utils/challenge-types';
 
 import './tool-panel.css';
-import { openModal, executeChallenge, challengeMetaSelector } from '../redux';
+import { openModal, executeChallenge } from '../redux/actions';
+import { challengeMetaSelector } from '../redux/selectors';
 
 import { saveChallenge } from '../../../redux';
 import { isSignedInSelector } from '../../../redux/codeally-saga';

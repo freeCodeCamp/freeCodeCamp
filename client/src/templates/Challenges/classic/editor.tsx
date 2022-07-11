@@ -38,22 +38,24 @@ import { editorToneOptions } from '../../../utils/tone/editor-config';
 import { editorNotes } from '../../../utils/tone/editor-notes';
 import { challengeTypes, isProject } from '../../../../utils/challenge-types';
 import {
-  canFocusEditorSelector,
-  challengeMetaSelector,
-  consoleOutputSelector,
   executeChallenge,
   saveEditorContent,
   setEditorFocusability,
   updateFile,
-  challengeTestsSelector,
   submitChallenge,
   initTests,
-  isResettingSelector,
   stopResetting,
+  openModal
+} from '../redux/actions';
+import {
+  canFocusEditorSelector,
+  challengeMetaSelector,
+  consoleOutputSelector,
+  challengeTestsSelector,
+  isResettingSelector,
   isProjectPreviewModalOpenSelector,
-  openModal,
   isChallengeCompletedSelector
-} from '../redux';
+} from '../redux/selectors';
 import GreenPass from '../../../assets/icons/green-pass';
 import LowerJaw from './lower-jaw';
 

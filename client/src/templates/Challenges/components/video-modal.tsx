@@ -5,7 +5,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 
 import { executeGA } from '../../../redux';
-import { closeModal, isVideoModalOpenSelector } from '../redux';
+import { closeModal } from '../redux/actions';
+import { isVideoModalOpenSelector } from '../redux/selectors';
 
 import './video-modal.css';
 

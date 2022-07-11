@@ -27,15 +27,17 @@ import Output from '../../components/output';
 import TestSuite from '../../components/test-suite';
 import {
   challengeMounted,
-  challengeTestsSelector,
-  consoleOutputSelector,
   executeChallenge,
   initConsole,
   initTests,
-  isChallengeCompletedSelector,
   updateChallengeMeta,
   updateSolutionFormValues
-} from '../../redux';
+} from '../../redux/actions';
+import {
+  challengeTestsSelector,
+  consoleOutputSelector,
+  isChallengeCompletedSelector
+} from '../../redux/selectors';
 import { getGuideUrl } from '../../utils';
 import SolutionForm from '../solution-form';
 import ProjectToolPanel from '../tool-panel';

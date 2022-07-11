@@ -3,7 +3,7 @@ import { postSaveChallenge, mapFilesToChallengeFiles } from '../utils/ajax';
 import {
   challengeDataSelector,
   challengeMetaSelector
-} from '../templates/Challenges/redux';
+} from '../templates/Challenges/redux/selectors';
 import { createFlashMessage } from '../components/Flash/redux';
 import { challengeTypes } from '../../utils/challenge-types';
 import { FlashMessages } from '../components/Flash/redux/flash-messages';

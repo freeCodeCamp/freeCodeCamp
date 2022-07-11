@@ -38,20 +38,22 @@ import SidePanel from '../components/side-panel';
 import VideoModal from '../components/video-modal';
 import {
   cancelTests,
-  challengeFilesSelector,
   challengeMounted,
-  challengeTestsSelector,
-  consoleOutputSelector,
   createFiles,
   executeChallenge,
   initConsole,
   initTests,
-  isChallengeCompletedSelector,
   previewMounted,
   updateChallengeMeta,
   openModal,
   setEditorFocusability
-} from '../redux';
+} from '../redux/actions';
+import {
+  challengeFilesSelector,
+  challengeTestsSelector,
+  consoleOutputSelector,
+  isChallengeCompletedSelector
+} from '../redux/selectors';
 import { savedChallengesSelector } from '../../../redux';
 import { getGuideUrl } from '../utils';
 import MultifileEditor from './multifile-editor';

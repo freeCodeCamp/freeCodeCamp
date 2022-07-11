@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 
 import { regeneratePathAndHistory } from '../../../../utils/polyvinyl';
 import ProjectPreviewModal from '../../templates/Challenges/components/project-preview-modal';
-import { openModal } from '../../templates/Challenges/redux';
+import { openModal } from '../../templates/Challenges/redux/actions';
 import {
   projectMap,
   legacyProjectMap

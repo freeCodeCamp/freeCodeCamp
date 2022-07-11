@@ -16,15 +16,14 @@ import { executeGA, allowBlockDonationRequests } from '../../../redux';
 import { isSignedInSelector } from '../../../redux/codeally-saga';
 import { AllChallengeNode, ChallengeFiles } from '../../../redux/prop-types';
 
+import { closeModal, submitChallenge } from '../redux/actions';
 import {
-  closeModal,
-  submitChallenge,
   completedChallengesIds,
   isCompletionModalOpenSelector,
   successMessageSelector,
   challengeFilesSelector,
   challengeMetaSelector
-} from '../redux';
+} from '../redux/selectors';
 import CompletionModalBody from './completion-modal-body';
 
 import './completion-modal.css';

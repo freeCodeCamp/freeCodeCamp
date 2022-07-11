@@ -9,7 +9,7 @@ import {
   canFocusEditorSelector,
   consoleOutputSelector,
   visibleEditorsSelector
-} from '../redux';
+} from '../redux/selectors';
 import { getTargetEditor } from '../utils/get-target-editor';
 import './editor.css';
 import {

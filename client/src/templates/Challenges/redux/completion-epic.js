@@ -1,33 +1,33 @@
 import { navigate } from 'gatsby';
 import { omit } from 'lodash-es';
 import { ofType } from 'redux-observable';
-import { of, empty } from 'rxjs';
+import { empty, of } from 'rxjs';
 import {
-  switchMap,
-  retry,
   catchError,
   concat,
   filter,
-  finalize
+  finalize,
+  retry,
+  switchMap
 } from 'rxjs/operators';
 
 import { challengeTypes, submitTypes } from '../../../../utils/challenge-types';
 import { submitComplete } from '../../../redux';
+// TODO: change these 2 imports to common selectors file in respective dir
 import { isSignedInSelector, userSelector } from '../../../redux/codeally-saga';
-
-import postUpdate$ from '../utils/post-update';
 import { mapFilesToChallengeFiles } from '../../../utils/ajax';
 import { standardizeRequestBody } from '../../../utils/challenge-request-helpers';
+import postUpdate$ from '../utils/post-update';
 import { actionTypes } from './action-types';
+import { closeModal, updateSolutionFormValues } from './actions';
+// TODO: change these 2 imports to common actions file in respective dir
 import { updateComplete, updateFailed } from './current-challenge-saga';
 import {
-  projectFormValuesSelector,
+  challengeFilesSelector,
   challengeMetaSelector,
   challengeTestsSelector,
-  closeModal,
-  challengeFilesSelector,
-  updateSolutionFormValues
-} from './';
+  projectFormValuesSelector
+} from './selectors';
 
 function postChallenge(update, username) {
   const saveChallenge = postUpdate$(update).pipe(

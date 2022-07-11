@@ -7,13 +7,15 @@ import { ChallengeFiles, Test, User } from '../../../redux/prop-types';
 
 import { userSelector } from '../../../redux/codeally-saga';
 import {
-  canFocusEditorSelector,
   setEditorFocusability,
-  challengeFilesSelector,
   submitChallenge,
-  challengeTestsSelector,
   openModal
-} from '../redux';
+} from '../redux/actions';
+import {
+  canFocusEditorSelector,
+  challengeFilesSelector,
+  challengeTestsSelector
+} from '../redux/selectors';
 import './hotkeys.css';
 import { isProject } from '../../../../utils/challenge-types';
 
