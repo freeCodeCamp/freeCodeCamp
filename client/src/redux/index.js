@@ -118,8 +118,6 @@ export const serverStatusChange = createAction(actionTypes.serverStatusChange);
 export const hardGoTo = createAction(actionTypes.hardGoTo);
 
 export const submitComplete = createAction(actionTypes.submitComplete);
-export const updateComplete = createAction(actionTypes.updateComplete);
-export const updateFailed = createAction(actionTypes.updateFailed);
 
 export const saveChallenge = createAction(actionTypes.saveChallenge);
 export const saveChallengeComplete = createAction(

@@ -90,9 +90,6 @@ export const updateJSEnabled = createAction(actionTypes.updateJSEnabled);
 export const updateSolutionFormValues = createAction(
   actionTypes.updateSolutionFormValues
 );
-export const updateSuccessMessage = createAction(
-  actionTypes.updateSuccessMessage
-);
 
 export const logsToConsole = createAction(actionTypes.logsToConsole);
 

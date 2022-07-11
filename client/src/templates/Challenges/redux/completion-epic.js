@@ -12,13 +12,14 @@ import {
 } from 'rxjs/operators';
 
 import { challengeTypes, submitTypes } from '../../../../utils/challenge-types';
-import { submitComplete, updateComplete, updateFailed } from '../../../redux';
+import { submitComplete } from '../../../redux';
 import { isSignedInSelector, userSelector } from '../../../redux/codeally-saga';
 
 import postUpdate$ from '../utils/post-update';
 import { mapFilesToChallengeFiles } from '../../../utils/ajax';
 import { standardizeRequestBody } from '../../../utils/challenge-request-helpers';
 import { actionTypes } from './action-types';
+import { updateComplete, updateFailed } from './current-challenge-saga';
 import {
   projectFormValuesSelector,
   challengeMetaSelector,

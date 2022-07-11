@@ -1,9 +1,9 @@
 import { put, takeEvery } from 'redux-saga/effects';
 import store from 'store';
+import { createAction } from 'redux-actions';
 
 import { randomCompliment } from '../../../utils/get-words';
-import { CURRENT_CHALLENGE_KEY } from './action-types';
-import { updateSuccessMessage } from './';
+import { CURRENT_CHALLENGE_KEY, actionTypes } from './action-types';
 
 export function* currentChallengeSaga({ payload: id }) {
   yield store.set(CURRENT_CHALLENGE_KEY, id);
@@ -29,6 +29,13 @@ export function* currentChallengeSaga({ payload: id }) {
 export function* updateSuccessMessageSaga() {
   yield put(updateSuccessMessage(randomCompliment()));
 }
+
+export const updateComplete = createAction(actionTypes.updateComplete);
+export const updateFailed = createAction(actionTypes.updateFailed);
+
+export const updateSuccessMessage = createAction(
+  actionTypes.updateSuccessMessage
+);
 
 export function createCurrentChallengeSaga(types) {
   return [
