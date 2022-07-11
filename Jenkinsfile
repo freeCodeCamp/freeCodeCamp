@@ -3,7 +3,7 @@ def APPNAME = "freecodecamp-mfe"
 
 // Define which branch build and deploy need to run in the below array
 
-def branchfilter = ['test-jenkins']
+def branchfilter = ['dev']
 
 if (!branchfilter.contains(env.BRANCH_NAME)) {
     println 'Now is not the time to run the pipeline.'
@@ -14,7 +14,7 @@ if (!branchfilter.contains(env.BRANCH_NAME)) {
 }
 
 //Define branch specific var
-if (env.BRANCH_NAME == 'test-jenkins' || env.BRANCH_NAME == 'dev-env') {
+if (env.BRANCH_NAME == 'dev') {
     DEPLOY_ENV = 'DEV'
     LOGICAL_ENV = 'dev'
     IS_BUILD = true
@@ -24,7 +24,7 @@ if (env.BRANCH_NAME == 'test-jenkins' || env.BRANCH_NAME == 'dev-env') {
     ENABLE_CACHE = false
 }
 
-if (env.BRANCH_NAME == 'master-jenkins') {
+if (env.BRANCH_NAME == 'main') {
     DEPLOY_ENV = 'PROD'
     LOGICAL_ENV = 'prod'
     IS_BUILD = true
