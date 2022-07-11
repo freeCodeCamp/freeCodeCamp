@@ -1,8 +1,8 @@
 ---
 id: 60fadce90f85c50d0bb0dd4f
-title: Step 41
+title: Step 42
 challengeType: 0
-dashedName: step-41
+dashedName: step-42
 ---
 
 # --description--
@@ -23,8 +23,9 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('fieldset')?.borderBottom,
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8">
     <title>Registration Form</title>
 	  <link rel="stylesheet" href="styles.css" />
   </head>
