@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import Fail from '../../../assets/icons/fail';
-import LightBulb from '../../../assets/icons/lightbulb';
-import GreenPass from '../../../assets/icons/green-pass';
+import TestFail from '../../../assets/icons/test-fail';
+import TestHint from '../../../assets/icons/test-hint';
+import TestPass from '../../../assets/icons/test-pass';
 
 interface LowerJawProps {
   hint?: string;
@@ -88,7 +88,7 @@ const LowerJaw = ({
     if (attemptsNumber === 0) {
       return '';
     } else if (runningTests) {
-      return <span className='sr-only'>{t('aria.running-tests')}</span>;
+      return '';
     } else if (challengeIsCompleted) {
       const submitKeyboardInstructions = isEditorInFocus ? (
         <span className='sr-only'>{t('aria.submit')}</span>
@@ -99,11 +99,10 @@ const LowerJaw = ({
         <div className='test-status fade-in' aria-hidden={isFeedbackHidden}>
           <div className='status-icon' aria-hidden='true'>
             <span>
-              <GreenPass />
+              <TestPass />
             </span>
           </div>
           <div className='test-status-description'>
-            <h2>{t('learn.test')}</h2>
             <p className='status'>
               {t('learn.congradulations')}
               {submitKeyboardInstructions}
@@ -122,18 +121,17 @@ const LowerJaw = ({
           <div className='test-status fade-in' aria-hidden={isFeedbackHidden}>
             <div className='status-icon' aria-hidden='true'>
               <span>
-                <Fail />
+                <TestFail />
               </span>
             </div>
             <div className='test-status-description'>
-              <h2>{t('learn.test')}</h2>
               <p>{t(sentencePicker())}</p>
             </div>
           </div>
           <div className='hint-status fade-in' aria-hidden={isFeedbackHidden}>
             <div className='hint-icon' aria-hidden='true'>
               <span>
-                <LightBulb />
+                <TestHint />
               </span>
             </div>
             <div
@@ -180,7 +178,7 @@ const LowerJaw = ({
       <>
         <button
           id='test-button'
-          className={`btn-block btn ${challengeIsCompleted ? 'sr-only' : ''}`}
+          className={`btn btn-primary ${challengeIsCompleted ? 'sr-only' : ''}`}
           aria-hidden={testBtnariaHidden}
           onClick={tryToExecuteChallenge}
         >
@@ -190,7 +188,7 @@ const LowerJaw = ({
           <button
             id='submit-button'
             aria-hidden={!challengeIsCompleted}
-            className='btn-block btn'
+            className='btn btn-primary'
             onClick={tryToSubmitChallenge}
             ref={submitButtonRef}
           >
@@ -202,18 +200,22 @@ const LowerJaw = ({
     );
   };
 
+  const feedbackContent = renderTestFeedbackContainer();
+
   return (
     <div className='action-row-container'>
+      {feedbackContent && (
+        <div
+          style={runningTests ? { height: `${testFeedbackheight}px` } : {}}
+          className={`test-feedback`}
+          id='test-feedback'
+          aria-live='assertive'
+          ref={testFeedbackRef}
+        >
+          {feedbackContent}
+        </div>
+      )}
       {renderButtons()}
-      <div
-        style={runningTests ? { height: `${testFeedbackheight}px` } : {}}
-        className={`test-feedback`}
-        id='test-feedback'
-        aria-live='assertive'
-        ref={testFeedbackRef}
-      >
-        {renderTestFeedbackContainer()}
-      </div>
     </div>
   );
 };

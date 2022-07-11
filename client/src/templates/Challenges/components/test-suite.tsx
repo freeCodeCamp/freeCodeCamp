@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Fail from '../../../assets/icons/fail';
-import GreenPass from '../../../assets/icons/green-pass';
-import Initial from '../../../assets/icons/initial';
+import Fail from '../../../assets/icons/test-fail';
+import GreenPass from '../../../assets/icons/test-pass';
+import Initial from '../../../assets/icons/test-initial';
 
 import './test-suite.css';
 import { ChallengeTest, Test } from '../../../redux/prop-types';

@@ -25,13 +25,11 @@ import { isContained } from '../../../utils/is-contained';
 import ChallengeDescription from '../components/Challenge-Description';
 import Hotkeys from '../components/Hotkeys';
 import ResetModal from '../components/ResetModal';
-import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
 import Notes from '../components/notes';
 import Output from '../components/output';
 import Preview from '../components/preview';
-import ProjectPreviewModal from '../components/project-preview-modal';
 import SidePanel from '../components/side-panel';
 import VideoModal from '../components/video-modal';
 import {
@@ -322,19 +320,9 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   }
 
   renderInstructionsPanel({ showToolPanel }: { showToolPanel: boolean }) {
-    const {
-      block,
-      challengeType,
-      description,
-      forumTopicId,
-      instructions,
-      superBlock,
-      title,
-      translationPending
-    } = this.getChallenge();
+    const { block, description, forumTopicId, instructions, title } =
+      this.getChallenge();
 
-    const showBreadCrumbs =
-      challengeType !== challengeTypes.multifileCertProject;
     return (
       <SidePanel
         block={block}
@@ -344,17 +332,6 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
             description={description}
             instructions={instructions}
           />
-        }
-        challengeTitle={
-          <ChallengeTitle
-            block={block}
-            isCompleted={this.props.isChallengeCompleted}
-            showBreadCrumbs={showBreadCrumbs}
-            superBlock={superBlock}
-            translationPending={translationPending}
-          >
-            {title}
-          </ChallengeTitle>
         }
         guideUrl={getGuideUrl({ forumTopicId, title })}
         instructionsPanelRef={this.instructionsPanelRef}
@@ -444,8 +421,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     const {
       executeChallenge,
       pageContext: {
-        challengeMeta: { nextChallengePath, prevChallengePath },
-        projectPreview: { challengeData, showProjectPreview }
+        challengeMeta: { nextChallengePath, prevChallengePath }
       },
       challengeFiles,
       t
@@ -509,12 +485,13 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           <HelpModal />
           <VideoModal videoUrl={this.getVideoUrl()} />
           <ResetModal />
-          <ProjectPreviewModal
+          {/* TODO: Decide if this is still needed */}
+          {/* <ProjectPreviewModal
             challengeData={challengeData}
             closeText={t('buttons.start-coding')}
             previewTitle={t('learn.project-preview-title')}
             showProjectPreview={showProjectPreview}
-          />
+          /> */}
         </LearnLayout>
       </Hotkeys>
     );

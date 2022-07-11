@@ -9,7 +9,7 @@
   justify-content: space-around;
   font-size: 16px;
   height: fit-content;
-  margin: 20px 0px 15px;
+  margin: 22px 0px 16px;
 }
 
 .challenge-title-breadcrumbs {
@@ -100,22 +100,25 @@
   text-decoration: none;
   min-width: 25px;
   display: inline-block;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
   text-overflow: ellipsis;
   max-height: fit-content;
   white-space: pre-line;
   flex-grow: 1;
   flex-shrink: 1;
-  padding: 0px 3px;
+  padding: 0px 0 16px;
+  text-align: left;
+
+  border-bottom: 2px solid var(--tc-black-10);
 }
 
 .title-text h1 {
-  font-size: inherit;
-  line-height: 1.42857143;
+  font-size: 1.889rem;
+  line-height: 1.889rem;
   margin: 0;
   display: inline;
+
+  font-family: 'Barlow';
 }
 
 .title-translation-cta {
