@@ -1,7 +1,7 @@
 ---
 id: 5900f5201000cf542c510032
 title: '問題 435: フィボナッチ数の多項式'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302106
 dashedName: problem-435-polynomials-of-fibonacci-numbers
 ---

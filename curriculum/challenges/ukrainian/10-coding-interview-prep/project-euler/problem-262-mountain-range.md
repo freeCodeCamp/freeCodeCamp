@@ -1,7 +1,7 @@
 ---
 id: 5900f4731000cf542c50ff85
 title: 'Завдання 262: Гірський хребет'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301911
 dashedName: problem-262-mountain-range
 ---

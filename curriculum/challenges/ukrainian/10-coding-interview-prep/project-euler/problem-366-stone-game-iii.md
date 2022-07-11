@@ -1,7 +1,7 @@
 ---
 id: 5900f4da1000cf542c50ffed
 title: 'Задача 366: Гра в камені III'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302027
 dashedName: problem-366-stone-game-iii
 ---

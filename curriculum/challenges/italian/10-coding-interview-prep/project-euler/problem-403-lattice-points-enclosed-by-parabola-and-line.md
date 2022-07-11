@@ -1,7 +1,7 @@
 ---
 id: 5900f5001000cf542c510013
 title: 'Problema 403: punti del reticolo delimitati da parabola e linea'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302071
 dashedName: problem-403-lattice-points-enclosed-by-parabola-and-line
 ---

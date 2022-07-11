@@ -1,7 +1,7 @@
 ---
 id: 5900f43f1000cf542c50ff52
 title: '問題 211: 約数の平方和'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301853
 dashedName: problem-211-divisor-square-sum
 ---

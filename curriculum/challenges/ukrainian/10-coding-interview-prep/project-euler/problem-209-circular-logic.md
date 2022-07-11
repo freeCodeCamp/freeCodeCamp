@@ -1,7 +1,7 @@
 ---
 id: 5900f43e1000cf542c50ff4f
 title: 'Завданя 209: Кругова логіка'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301850
 dashedName: problem-209-circular-logic
 ---

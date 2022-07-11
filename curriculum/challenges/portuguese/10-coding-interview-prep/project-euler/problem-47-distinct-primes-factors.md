@@ -1,7 +1,7 @@
 ---
 id: 5900f39c1000cf542c50feae
 title: 'Problema 47: Fatores primos distintos'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302145
 dashedName: problem-47-distinct-primes-factors
 ---

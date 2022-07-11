@@ -1,7 +1,7 @@
 ---
 id: 5900f3ff1000cf542c50ff12
 title: 'Завдання 147: Прямокутники у перехресних сітках'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301776
 dashedName: problem-147-rectangles-in-cross-hatched-grids
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5900f3e21000cf542c50fef4
 title: '問題 117: 赤タイル・緑タイル・青タイルの組み合わせ'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301743
 dashedName: problem-117-red-green-and-blue-tiles
 ---

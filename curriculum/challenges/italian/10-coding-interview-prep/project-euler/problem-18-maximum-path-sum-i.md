@@ -1,7 +1,7 @@
 ---
 id: 5900f37e1000cf542c50fe91
 title: 'Problema 18: Somma massima del percorso I'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301815
 dashedName: problem-18-maximum-path-sum-i
 ---

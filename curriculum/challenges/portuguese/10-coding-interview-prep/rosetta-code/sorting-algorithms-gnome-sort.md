@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc8007
 title: Algoritmos de ordenação/ordenação do gnomo
-challengeType: 5
+challengeType: 1
 forumTopicId: 302314
 dashedName: sorting-algorithmsgnome-sort
 ---

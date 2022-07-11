@@ -1,7 +1,7 @@
 ---
 id: 5900f4ae1000cf542c50ffbf
 title: 'Завдання 320: Факторіали, що діляться на велике ціле число'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301977
 dashedName: problem-320-factorials-divisible-by-a-huge-integer
 ---

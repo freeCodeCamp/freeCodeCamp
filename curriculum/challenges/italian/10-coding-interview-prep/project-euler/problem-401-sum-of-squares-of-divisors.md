@@ -1,7 +1,7 @@
 ---
 id: 5900f4fd1000cf542c51000f
 title: 'Problema 401: Somma di quadrati di divisori'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302069
 dashedName: problem-401-sum-of-squares-of-divisors
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc8005
 title: Algoritmos de ordenação/ordenação do pente
-challengeType: 5
+challengeType: 1
 forumTopicId: 302313
 dashedName: sorting-algorithmscomb-sort
 ---

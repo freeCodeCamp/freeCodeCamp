@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7eca
 title: Números de Kaprekar
-challengeType: 5
+challengeType: 1
 forumTopicId: 302296
 dashedName: kaprekar-numbers
 ---

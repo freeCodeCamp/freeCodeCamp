@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7e03
 title: Deviazione cumulativa standard
-challengeType: 5
+challengeType: 1
 forumTopicId: 302240
 dashedName: cumulative-standard-deviation
 ---
@@ -33,7 +33,7 @@ e la deviazione standard della popolazione è uguale al quadrato della varianza:
 
 $$\sigma ={\sqrt {4}}=2$$
 
-Scrivi una funzione che prende un array di numeri come parametro e restituisce la deviazione standard della serie.
+Scrivi una funzione che prende un array di numeri come parametro e restituisce la <a href="https://rosettacode.org/wiki/Standard_deviation" target="_blank" rel="noopener noreferrer nofollow">deviazione standard</a> della serie.
 
 # --hints--
 

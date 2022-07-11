@@ -1,7 +1,7 @@
 ---
 id: 5900f4ba1000cf542c50ffcd
 title: 'Problema 334: Derramando feijões'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301992
 dashedName: problem-334-spilling-the-beans
 ---

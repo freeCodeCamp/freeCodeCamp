@@ -1,7 +1,7 @@
 ---
 id: 5900f3ef1000cf542c50ff01
 title: '问题 129：纯元数可分性'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301756
 dashedName: problem-129-repunit-divisibility
 ---

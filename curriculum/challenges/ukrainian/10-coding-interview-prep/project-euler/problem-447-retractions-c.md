@@ -1,7 +1,7 @@
 ---
 id: 5900f52c1000cf542c51003e
 title: 'Завдання 447: Скорочення С'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302119
 dashedName: problem-447-retractions-c
 ---

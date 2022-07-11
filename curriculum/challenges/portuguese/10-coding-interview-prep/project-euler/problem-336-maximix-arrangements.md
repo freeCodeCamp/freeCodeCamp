@@ -1,7 +1,7 @@
 ---
 id: 5900f4bd1000cf542c50ffcf
 title: 'Problema 336: Arranjos maximix'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301994
 dashedName: problem-336-maximix-arrangements
 ---

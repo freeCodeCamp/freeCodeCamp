@@ -1,7 +1,7 @@
 ---
 id: 5900f43a1000cf542c50ff4d
 title: 'Завдання 206: Прихований квадрат'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301847
 dashedName: problem-206-concealed-square
 ---

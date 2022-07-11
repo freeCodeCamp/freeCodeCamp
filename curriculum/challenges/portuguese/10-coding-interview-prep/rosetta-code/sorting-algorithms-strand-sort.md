@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc8013
 title: Algoritmos de ordenação/ordenação strand
-challengeType: 5
+challengeType: 1
 forumTopicId: 302319
 dashedName: sorting-algorithmsstrand-sort
 ---

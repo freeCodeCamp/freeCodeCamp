@@ -1,7 +1,7 @@
 ---
 id: 5900f4fe1000cf542c510010
 title: 'Problema 400: Jogo da árvore de Fibonacci'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302067
 dashedName: problem-400-fibonacci-tree-game
 ---

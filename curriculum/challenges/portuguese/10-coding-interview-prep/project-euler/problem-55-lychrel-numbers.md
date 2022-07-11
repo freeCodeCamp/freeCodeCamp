@@ -1,7 +1,7 @@
 ---
 id: 5900f3a31000cf542c50feb6
 title: 'Problema 55: Números de Lychrel'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302166
 dashedName: problem-55-lychrel-numbers
 ---

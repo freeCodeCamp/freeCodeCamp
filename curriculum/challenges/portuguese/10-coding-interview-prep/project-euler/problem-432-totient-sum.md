@@ -1,7 +1,7 @@
 ---
 id: 5900f51e1000cf542c510030
 title: 'Problema 432: Soma de totientes'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302103
 dashedName: problem-432-totient-sum
 ---

@@ -8,7 +8,7 @@ dashedName: introducing-inline-styles
 
 # --description--
 
-他にも、React のコードに強力な機能を追加する複雑な概念があります。 しかし、もっと単純な問題として、React で作成した JSX 要素のスタイルをどのように設定するのでしょうか？ <a href="/learn/front-end-development-libraries/react/define-an-html-class-in-jsx" target="_blank" rel="noopener noreferrer nofollow">JSX 要素にクラスを適用する方法</a>を思い出すと、HTML の場合とまったく同じではないことが予想できるかと思います。
+他にも、React のコードに強力な機能を追加する複雑な概念があります。 しかし、もっと単純な問題として、React で作成した JSX 要素のスタイルをどのように設定するのでしょうか？ <a href="/japanese/learn/front-end-development-libraries/react/define-an-html-class-in-jsx" target="_blank" rel="noopener noreferrer nofollow">JSX 要素にクラスを適用する方法</a>を思い出すと、HTML の場合とまったく同じではないことが予想できるかと思います。
 
 スタイルシートからスタイルをインポートする場合は、それほど違いはありません。 `className` 属性を使用して JSX 要素にクラスを適用し、スタイルシートでクラスにスタイルを適用します。 もう一つの方法として、ReactJS の開発でごく一般的なインラインスタイルの適用があります。
 

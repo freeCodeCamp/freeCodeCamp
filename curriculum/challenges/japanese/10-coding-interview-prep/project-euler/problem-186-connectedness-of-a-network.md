@@ -1,7 +1,7 @@
 ---
 id: 5900f4281000cf542c50ff39
 title: '問題 186: ネットワークのつながり'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301822
 dashedName: problem-186-connectedness-of-a-network
 ---

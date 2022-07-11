@@ -1,7 +1,7 @@
 ---
 id: a10d2431ad0c6a099a4b8b52
 title: Tutto sia vero
-challengeType: 5
+challengeType: 1
 forumTopicId: 16011
 dashedName: everything-be-true
 ---

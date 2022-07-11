@@ -1,7 +1,7 @@
 ---
 id: 5900f5141000cf542c510026
 title: 'Проблема 424: Какуро'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302094
 dashedName: problem-424-kakuro
 ---
