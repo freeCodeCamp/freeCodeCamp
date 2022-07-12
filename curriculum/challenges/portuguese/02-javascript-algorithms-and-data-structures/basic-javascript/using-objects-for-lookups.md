@@ -25,14 +25,14 @@ const alpha = {
   26:"A"
 };
 
-alpha[2];
-alpha[24];
+const thirdLetter = alpha[2];
+const lastLetter = alpha[24];
 
 const value = 2;
-alpha[value];
+const valueLookup = alpha[value];
 ```
 
-`alpha[2]` é a string `Y`, `alpha[24]` é a string `C` e `alpha[value]` é a string `Y`.
+`thirdLetter` é a string `Y`, `lastLetter` é a string `C` e `valueLookup` é a string `Y`.
 
 # --instructions--
 
