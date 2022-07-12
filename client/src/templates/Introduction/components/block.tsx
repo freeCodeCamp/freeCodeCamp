@@ -120,10 +120,7 @@ export class Block extends Component<BlockProps> {
     });
 
     const isProjectBlock = challenges.some(({ challenge }) => {
-      const isJsProject =
-        [3, 6, 10, 14, 17].includes(challenge.order) &&
-        challenge.challengeType === 5 &&
-        blockDashedName !== 'rosetta-code';
+      const isJsProject = challenge.challengeType === 5;
 
       const isOtherProject =
         challenge.challengeType === 3 ||
@@ -135,10 +132,7 @@ export class Block extends Component<BlockProps> {
 
       const isTakeHomeProject = blockDashedName === 'take-home-projects';
 
-      return (
-        (isJsProject && !isTakeHomeProject) ||
-        (isOtherProject && !isTakeHomeProject)
-      );
+      return isJsProject || (isOtherProject && !isTakeHomeProject);
     });
 
     const blockIntroObj: { title?: string; intro: string[] } = t(
