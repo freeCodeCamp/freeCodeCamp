@@ -1,3 +1,4 @@
+// TODO: check if this comment is still required
 /* eslint-disable-next-line  max-len */
 import { createStore as reduxCreateStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension/logOnlyInProduction';
