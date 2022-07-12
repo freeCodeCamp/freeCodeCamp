@@ -64,7 +64,7 @@ A função retornará a conversão correta se os problemas fornecidos forem form
   - Cada número (operando) deve conter apenas algarismos. Caso contrário, a função retornará: `Error: Numbers must only contain digits.`
   - Cada operando (ou seja, o número de cada lado do operador) tem, no máximo, quatro algarismos. Do contrário, a string de erro retornada será: `Error: Numbers cannot be more than four digits.`
 - Se o usuário forneceu o formato correto dos problemas, a conversão retornada seguirá estas regras:
-  - Deve haver um único espaço entre o operador e o maior entre os dois operandos. O operador estará na mesma linha do segundo operando. Ambos os operadores estarão na mesma ordem fornecida - o primeiro será o de cima e o segundo será o de baixo.
+  - Deve haver um único espaço entre o operador e o maior entre os dois operandos. O operador estará na mesma linha do segundo operando. Ambos os operadores estarão na mesma ordem fornecida - o primeiro será o de cima e o segundo será o de baixo).
   - Os números devem estar alinhados à direita.
   - Deve haver quatro espaços entre cada problema.
   - Deve haver travessões abaixo de cada problema. Os travessões devem compreender todo o tamanho de cada problema individualmente. (O exemplo acima mostra como deve ser a aparência do resultado.)
