@@ -46,34 +46,34 @@ describe('The hotkeys should work correctly', () => {
     cy.visit(links.classic1);
     cy.focused().type('{esc}');
     cy.focused().type('n');
-    cy.url().should('include', links.classic2);
+    cy.url({ timeout: 10000 }).should('include', links.classic2);
     cy.contains(titles.classic2);
     cy.focused().type('p');
-    cy.url().should('include', links.classic1);
+    cy.url({ timeout: 10000 }).should('include', links.classic1);
     cy.visit(links.frontEnd1);
     cy.focused().type('{esc}').type('n');
-    cy.url().should('include', links.frontEnd2);
+    cy.url({ timeout: 10000 }).should('include', links.frontEnd2);
     cy.contains(titles.frontEnd2);
     cy.focused().type('p');
-    cy.url().should('include', links.frontEnd1);
+    cy.url({ timeout: 10000 }).should('include', links.frontEnd1);
   });
 
   it('should be possible to navigate to the next (and previous) video', () => {
     cy.visit(links.video1);
     cy.focused().type('{esc}').type('n');
-    cy.url().should('include', links.video2);
+    cy.url({ timeout: 10000 }).should('include', links.video2);
     cy.contains(titles.video2);
     cy.focused().type('p');
-    cy.url().should('include', links.video1);
+    cy.url({ timeout: 10000 }).should('include', links.video1);
   });
 
   it('should be possible to navigate to the next (and previous) backend project', () => {
     cy.visit(links.backEnd1);
     cy.focused().type('{esc}').type('n');
-    cy.url().should('include', links.backEnd2);
+    cy.url({ timeout: 10000 }).should('include', links.backEnd2);
     cy.contains(titles.backEnd2);
     cy.focused().type('p');
-    cy.url().should('include', links.backEnd1);
+    cy.url({ timeout: 10000 }).should('include', links.backEnd1);
   });
 
   it('should be possible to focus on the editor with pressing "e"', () => {
@@ -81,19 +81,19 @@ describe('The hotkeys should work correctly', () => {
     cy.get(selectors.editorContainer).click();
     cy.focused().as('editor').type('{esc}');
     cy.get(selectors.instructions).click().type('e');
-    cy.get('@editor').should('have.focus');
+    cy.get('@editor', { timeout: 10000 }).should('have.focus');
   });
 
   it('should be possible to press ctrl enter to run the test', () => {
     cy.visit(links.classic1);
     cy.get(selectors.instructions).click().type('{ctrl}{enter}');
-    cy.get(selectors.console).contains('// running tests');
+    cy.get(selectors.console).contains('// running tests', { timeout: 10000 });
   });
 
   it('should be possible to go to navigation view by pressing escape', () => {
     cy.visit(links.classic1);
     cy.get(selectors.editorContainer).click();
-    cy.focused().as('editor').type('{esc}');
+    cy.focused({ timeout: 10000 }).as('editor').type('{esc}');
     cy.get('@editor').should('not.have.focus');
   });
 
@@ -101,6 +101,8 @@ describe('The hotkeys should work correctly', () => {
     cy.visit(links.classic1);
     cy.get(selectors.editorContainer).type('{esc}');
     cy.get(selectors.console).click().type('r');
-    cy.get(selectors.instructionsPanel).should('have.focus');
+    cy.get(selectors.instructionsPanel, { timeout: 10000 }).should(
+      'have.focus'
+    );
   });
 });

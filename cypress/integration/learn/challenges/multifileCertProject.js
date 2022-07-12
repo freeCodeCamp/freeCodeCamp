@@ -26,7 +26,7 @@ describe('multifileCertProjects', function () {
     cy.contains('Your code was saved to the database.');
     // load saved code on a hard refresh
     cy.reload();
-    cy.contains(save1text);
+    cy.contains(save1text, { timeout: 10000 });
   });
 
   it('should save to using ctrl+s hotkey and persist through navigation', function () {
@@ -45,7 +45,7 @@ describe('multifileCertProjects', function () {
     cy.contains('Responsive Web Design Projects').click();
     cy.contains('In this Responsive Web Design Certification');
     cy.contains('Build a Tribute Page').click();
-    cy.contains(save2text);
+    cy.contains(save2text, { timeout: 10000 });
     // trigger the warning about saving too quickly
     cy.get(selectors.saveCodeBtn).click().click();
     cy.contains('Your code was not saved.');

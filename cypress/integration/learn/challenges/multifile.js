@@ -31,7 +31,10 @@ describe('Challenge with multifile editor', () => {
   // tests make sure it is above this one
   it('prompts unauthenticated user to sign in to save progress', () => {
     cy.focused().type('{end}{enter}<meta charset="UTF-8" />{ctrl+enter}');
-    cy.get(selectors.signInButton).contains(translations.learn['sign-in-save']);
+    cy.get(selectors.signInButton).contains(
+      translations.learn['sign-in-save'],
+      { timeout: 10000 }
+    );
     cy.get(selectors.signInButton).click();
     cy.go('back');
     cy.get(selectors.signInButton).should('not.exist');
