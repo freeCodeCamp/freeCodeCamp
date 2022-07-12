@@ -120,9 +120,11 @@ export class Block extends Component<BlockProps> {
       return { ...challenge, isCompleted };
     });
 
-    const isProjectBlock = challenges.some(({ challenge }) =>
-      isProject(challenge.challengeType)
-    );
+    const isProjectBlock = challenges.some(({ challenge }) => {
+      const isTakeHomeProject = blockDashedName === 'take-home-projects';
+
+      return isProject(challenge.challengeType) && !isTakeHomeProject;
+    });
 
     const blockIntroObj: { title?: string; intro: string[] } = t(
       `intro:${superBlock}.blocks.${blockDashedName}`
