@@ -26,8 +26,6 @@ export const sagas = [
   ...createDangerZoneSaga(types)
 ];
 
-export const usernameValidationSelector = state => state[ns].usernameValidation;
-
 export const reducer = handleActions(
   {
     [types.submitNewUsernameComplete]: state => ({

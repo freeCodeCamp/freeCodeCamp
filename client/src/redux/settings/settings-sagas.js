@@ -1,38 +1,64 @@
 import { omit } from 'lodash-es';
 import {
   call,
+  debounce,
   put,
   select,
-  takeLatest,
   takeEvery,
-  debounce
+  takeLatest
 } from 'redux-saga/effects';
 import store from 'store';
-import { createAction } from 'redux-actions';
 
+import {
+  certTypeIdMap,
+  certTypes
+} from '../../../../config/certification-settings';
 import { createFlashMessage } from '../../components/Flash/redux';
+import { certMap } from '../../resources/cert-and-project-map';
 import {
   getUsernameExists,
   putUpdateMyAbout,
+  putUpdateMyHonesty,
+  putUpdateMyKeyboardShortcuts,
+  putUpdateMyPortfolio,
   putUpdateMyProfileUI,
+  putUpdateMyQuincyEmail,
+  putUpdateMySocials,
+  putUpdateMySound,
+  putUpdateMyTheme,
   putUpdateMyUsername,
   putUpdateUserFlag,
-  putUpdateMySocials,
-  putUpdateMyHonesty,
-  putUpdateMyQuincyEmail,
-  putVerifyCert,
-  putUpdateMyPortfolio,
-  putUpdateMyTheme,
-  putUpdateMySound,
-  putUpdateMyKeyboardShortcuts
+  putVerifyCert
 } from '../../utils/ajax';
-import { certMap } from '../../resources/cert-and-project-map';
-import { completedChallengesSelector } from '..';
+import { completedChallengesSelector } from '../selectors';
 import {
-  certTypes,
-  certTypeIdMap
-} from '../../../../config/certification-settings';
-import { actionTypes as types } from './action-types';
+  submitNewAboutComplete,
+  submitNewAboutError,
+  submitNewUsernameComplete,
+  submitNewUsernameError,
+  submitProfileUIComplete,
+  submitProfileUIError,
+  updateMyHonestyComplete,
+  updateMyHonestyError,
+  updateMyKeyboardShortcutsComplete,
+  updateMyKeyboardShortcutsError,
+  updateMyPortfolioComplete,
+  updateMyPortfolioError,
+  updateMyQuincyEmailComplete,
+  updateMyQuincyEmailError,
+  updateMySocialsComplete,
+  updateMySocialsError,
+  updateMySoundComplete,
+  updateMySoundError,
+  updateMyThemeComplete,
+  updateMyThemeError,
+  updateUserFlagComplete,
+  updateUserFlagError,
+  validateUsernameComplete,
+  validateUsernameError,
+  verifyCertComplete,
+  verifyCertError
+} from './actions';
 
 function* submitNewAboutSaga({ payload }) {
   try {
@@ -206,109 +232,6 @@ function* verifyCertificationSaga({ payload }) {
     yield put(verifyCertError(e));
   }
 }
-
-const checkForSuccessPayload = ({ type, payload }) =>
-  type === 'success' ? payload : null;
-
-export const submitNewAbout = createAction(types.submitNewAbout);
-export const submitNewAboutComplete = createAction(
-  types.submitNewAboutComplete,
-  checkForSuccessPayload
-);
-export const submitNewAboutError = createAction(types.submitNewAboutError);
-
-export const submitNewUsername = createAction(types.submitNewUsername);
-export const submitNewUsernameComplete = createAction(
-  types.submitNewUsernameComplete,
-  ({ type, username }) => (type === 'success' ? username : null)
-);
-export const submitNewUsernameError = createAction(
-  types.submitNewUsernameError
-);
-
-export const submitProfileUI = createAction(types.submitProfileUI);
-export const submitProfileUIComplete = createAction(
-  types.submitProfileUIComplete,
-  checkForSuccessPayload
-);
-export const submitProfileUIError = createAction(types.submitProfileUIError);
-
-export const updateUserFlag = createAction(types.updateUserFlag);
-export const updateUserFlagComplete = createAction(
-  types.updateUserFlagComplete,
-  checkForSuccessPayload
-);
-export const updateUserFlagError = createAction(types.updateUserFlagError);
-
-export const updateMySocials = createAction(types.updateMySocials);
-export const updateMySocialsComplete = createAction(
-  types.updateMySocialsComplete,
-  checkForSuccessPayload
-);
-export const updateMySocialsError = createAction(types.updateMySocialsError);
-
-export const updateMySound = createAction(types.updateMySound);
-export const updateMySoundComplete = createAction(
-  types.updateMySoundComplete,
-  checkForSuccessPayload
-);
-export const updateMySoundError = createAction(types.updateMySoundError);
-
-export const updateMyTheme = createAction(types.updateMyTheme);
-export const updateMyThemeComplete = createAction(
-  types.updateMyThemeComplete,
-  checkForSuccessPayload
-);
-export const updateMyThemeError = createAction(types.updateMyThemeError);
-
-export const updateMyKeyboardShortcuts = createAction(
-  types.updateMyKeyboardShortcuts
-);
-export const updateMyKeyboardShortcutsComplete = createAction(
-  types.updateMyKeyboardShortcutsComplete,
-  checkForSuccessPayload
-);
-export const updateMyKeyboardShortcutsError = createAction(
-  types.updateMyKeyboardShortcutsError
-);
-
-export const updateMyHonesty = createAction(types.updateMyHonesty);
-export const updateMyHonestyComplete = createAction(
-  types.updateMyHonestyComplete,
-  checkForSuccessPayload
-);
-export const updateMyHonestyError = createAction(types.updateMyHonestyError);
-
-export const updateMyQuincyEmail = createAction(types.updateMyQuincyEmail);
-export const updateMyQuincyEmailComplete = createAction(
-  types.updateMyQuincyEmailComplete,
-  checkForSuccessPayload
-);
-export const updateMyQuincyEmailError = createAction(
-  types.updateMyQuincyEmailError
-);
-
-export const updateMyPortfolio = createAction(types.updateMyPortfolio);
-export const updateMyPortfolioComplete = createAction(
-  types.updateMyPortfolioComplete,
-  checkForSuccessPayload
-);
-export const updateMyPortfolioError = createAction(
-  types.updateMyPortfolioError
-);
-
-export const validateUsername = createAction(types.validateUsername);
-export const validateUsernameComplete = createAction(
-  types.validateUsernameComplete
-);
-export const validateUsernameError = createAction(types.validateUsernameError);
-
-export const verifyCert = createAction(types.verifyCert);
-export const verifyCertComplete = createAction(
-  types.verifyCertComplete,
-  checkForSuccessPayload
-);
-export const verifyCertError = createAction(types.verifyCertError);
 
 export function createSettingsSagas(types) {
   return [

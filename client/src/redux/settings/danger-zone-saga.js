@@ -1,12 +1,12 @@
 import { navigate } from 'gatsby';
-import { call, put, takeEvery, take } from 'redux-saga/effects';
-import { createAction } from 'redux-actions';
+import { call, put, take, takeEvery } from 'redux-saga/effects';
 
-import { resetUserData, fetchUser } from '../';
 import { createFlashMessage } from '../../components/Flash/redux';
 import { FlashMessages } from '../../components/Flash/redux/flash-messages';
-import { postResetProgress, postDeleteAccount } from '../../utils/ajax';
+import { postDeleteAccount, postResetProgress } from '../../utils/ajax';
 import { actionTypes as appTypes } from '../action-types';
+import { fetchUser, resetUserData } from '../actions';
+import { deleteAccountError, resetProgressError } from './actions';
 
 function* deleteAccountSaga() {
   try {
@@ -44,12 +44,6 @@ function* resetProgressSaga() {
     yield put(resetProgressError(e));
   }
 }
-
-export const deleteAccount = createAction(appTypes.deleteAccount);
-export const deleteAccountError = createAction(appTypes.deleteAccountError);
-
-export const resetProgress = createAction(appTypes.resetProgress);
-export const resetProgressError = createAction(appTypes.resetProgressError);
 
 export function createDangerZoneSaga(types) {
   return [
