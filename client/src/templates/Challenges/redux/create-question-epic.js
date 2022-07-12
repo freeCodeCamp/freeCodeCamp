@@ -2,7 +2,6 @@ import dedent from 'dedent';
 import i18next from 'i18next';
 import { ofType } from 'redux-observable';
 import { tap, mapTo } from 'rxjs/operators';
-import { nanoid } from 'nanoid';
 import envData from '../../../../../config/env.json';
 import {
   closeModal,
@@ -91,7 +90,7 @@ function createQuestionEpic(action$, state$, { window }) {
       const titleText = dedent(
         `${i18next.t(
           `intro:${superBlock}.blocks.${block}.title`
-        )} - ${challengeTitle} - ${nanoid()}`
+        )} - ${challengeTitle}`
       );
 
       const category = window.encodeURIComponent(
