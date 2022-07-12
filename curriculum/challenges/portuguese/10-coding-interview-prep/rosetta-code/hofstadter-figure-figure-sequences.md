@@ -1,7 +1,7 @@
 ---
 id: 59622f89e4e137560018a40e
 title: Sequências de Figura-Figura de Hofstadter
-challengeType: 5
+challengeType: 1
 forumTopicId: 302286
 dashedName: hofstadter-figure-figure-sequences
 ---

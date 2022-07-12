@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc8004
 title: Algoritmos de ordenação/ordenação de coquetel
-challengeType: 5
+challengeType: 1
 forumTopicId: 302312
 dashedName: sorting-algorithmscocktail-sort
 ---

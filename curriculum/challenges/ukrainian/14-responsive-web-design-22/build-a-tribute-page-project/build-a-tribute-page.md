@@ -12,9 +12,9 @@ dashedName: build-a-tribute-page
 
 **Історія користувача:**
 
-1. Ваша пам'ятна сторінка має містити елемент `main` з відповідним `main` `id`, який містить всі інші елементи
-1. Ви повинні бачити елемент з `title` `id`, який містить ряд (текст), що описує предмет пам'ятної сторінки (наприклад, «Доктор Норман Борлаґ»)
-1. Ви повинні побачити елемент `figure` або `div` з `img-div` `id`
+1. Ваша пам'ятна сторінка має містити елемент `main` з відповідним `id` зі значенням `main`, який містить всі інші елементи
+1. Ви повинні бачити елемент з `id` зі значенням `title`, який містить ряд (текст), що описує предмет пам'ятної сторінки (наприклад, «Доктор Норман Борлаґ»)
+1. Ви повинні побачити елемент `figure` або `div` з `id` зі значенням `img-div`
 1. В межах елемента `#img-div` ви маєте бачити елемент `img` з відповідним `id="image"`
 1. В межах елемента `#img-div` ви маєте бачити елемент з відповідним `id="img-caption"`, який містить текст, що описує зображення, показане у `#img-div`
 1. Ви маєте бачити елемент з відповідним `id="tribute-info"`, який містить текст, що описує предмет пам'ятної сторінки
@@ -28,7 +28,7 @@ dashedName: build-a-tribute-page
 
 # --hints--
 
-Ви повинні мати елемент `main` з `main` `id`.
+Ви повинні мати елемент `main` з `id` зі значенням `main`.
 
 ```js
 const el = document.getElementById('main')
@@ -46,7 +46,7 @@ const el5 = document.querySelector('#main #tribute-link')
 assert(!!el1 & !!el2 && !!el3 && !!el4 && !!el5)
 ```
 
-Ви повинні мати елемент з `title` `id`.
+Ви повинні мати елемент з `id` зі значенням `title`.
 
 ```js
 const el = document.getElementById('title')
@@ -61,14 +61,14 @@ assert(!!el && el.innerText.length > 0)
 
 ```
 
-Ви повинні мати елемент `figure` або `div` з `img-div` `id`.
+Ви повинні мати елемент `figure` або `div` з `id` зі значенням `img-div`.
 
 ```js
 const el = document.getElementById('img-div')
 assert(!!el && (el.tagName === 'DIV' || el.tagName === 'FIGURE'))
 ```
 
-Ви повинні мати елемент `img` з `image` `id`.
+Ви повинні мати елемент `img` з `id` зі значенням `image`.
 
 ```js
 const el = document.getElementById('image')
@@ -82,7 +82,7 @@ const el = document.querySelector('#img-div #image')
 assert(!!el)
 ```
 
-Ви повинні мати елемент `figcaption` або `div` з `img-caption` `id`.
+Ви повинні мати елемент `figcaption` або `div` з `id` зі значенням `img-caption`.
 
 ```js
 const el = document.getElementById('img-caption')
@@ -103,7 +103,7 @@ const el = document.getElementById('img-caption')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Ви повинні мати елемент з `tribute-info` `id`.
+Ви повинні мати елемент з `id` зі значенням `tribute-info`.
 
 ```js
 const el = document.getElementById('tribute-info')
@@ -117,7 +117,7 @@ const el = document.getElementById('tribute-info')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Ви повинні мати елемент `a` з `tribute-link` `id`.
+Ви повинні мати елемент `a` з `id` зі значенням `tribute-link`.
 
 ```js
 const el = document.getElementById('tribute-link')
@@ -138,7 +138,7 @@ const el = document.getElementById('tribute-link')
 assert(!!el && el.target === '_blank')
 ```
 
-Ваш елемент `img` повинен мати `block` `display`.
+Ваш елемент `img` повинен мати `display` зі значенням `block`.
 
 ```js
 const img = document.getElementById('image');
@@ -147,7 +147,7 @@ const style = imgStyle?.getPropertyValue('display')
 assert(style === 'block')
 ```
 
-Ваш `#image` повинен мати `100%` `max-width`.
+Ваш `#image` повинен мати `max-width` зі значенням `100%`.
 
 ```js
 const img = document.getElementById('image');
@@ -156,7 +156,7 @@ const style = imgStyle?.getPropertyValue('max-width')
 assert(style === '100%')
 ```
 
-Ваш `#image` повинен мати `auto` `height`.
+Ваш `#image` повинен мати `height` зі значенням `auto`.
 
 ```js
 // taken from the testable-projects repo

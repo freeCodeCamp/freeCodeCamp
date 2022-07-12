@@ -2,7 +2,7 @@
 id: 5900f4161000cf542c50ff29
 title: >-
   問題 170: 積を連結して作られる 0 ～ 9 のパンデジタル数の最大値を求める
-challengeType: 5
+challengeType: 1
 forumTopicId: 301805
 dashedName: >-
   problem-170-find-the-largest-0-to-9-pandigital-that-can-be-formed-by-concatenating-products

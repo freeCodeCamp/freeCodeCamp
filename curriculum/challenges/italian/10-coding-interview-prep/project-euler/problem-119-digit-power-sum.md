@@ -1,7 +1,7 @@
 ---
 id: 5900f3e41000cf542c50fef6
 title: 'Problema 119: Somma delle potenze delle cifre'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301745
 dashedName: problem-119-digit-power-sum
 ---

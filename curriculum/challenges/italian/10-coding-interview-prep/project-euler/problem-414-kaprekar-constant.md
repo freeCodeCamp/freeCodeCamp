@@ -1,7 +1,7 @@
 ---
 id: 5900f50b1000cf542c51001d
 title: 'Problema 414: Costante di Kaprekar'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302083
 dashedName: problem-414-kaprekar-constant
 ---
@@ -23,7 +23,7 @@ $$\begin{align}   & 8730 - 0378 = 8352 \\\\
 
 Possiamo considerare la routine di Kaprekar per altre basi e numeri di cifre. Purtroppo, non è garantito che una costante di Kaprekar esista in tutti i casi; inoltre la routine può finire in un ciclo per alcuni numeri di ingresso o la costante a cui la routine arriva può essere diversa per numeri di input diversi. Tuttavia, può essere dimostrato che per 5 cifre e una base $b = 6t + 3 ≠ 9$, esiste una costante di Kaprekar.
 
-Ad es. base 15: ${(10, 4, 14, 9, 5)}\_{15}$ base 21: $(14, 6, 20, 13, 7)_{21}$
+Ad es. base 15: ${(10, 4, 14, 9, 5)}\_{15}$ base 21: $(14, 6, 20, 13, 7)\_{21}$
 
 Definisci $C_b$ in modo tale che sia la costante di Kaprekar nella base $b$ per 5 cifre. Definisci la funzione $sb(i)$ in modo tale che:
 

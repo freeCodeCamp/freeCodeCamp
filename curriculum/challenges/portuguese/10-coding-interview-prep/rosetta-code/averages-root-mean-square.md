@@ -1,7 +1,7 @@
 ---
 id: 594da033de4190850b893874
 title: Média/Valor eficaz
-challengeType: 5
+challengeType: 1
 forumTopicId: 302228
 dashedName: averagesroot-mean-square
 ---

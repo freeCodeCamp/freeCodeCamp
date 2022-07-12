@@ -1,7 +1,7 @@
 ---
 id: 59d9c6bc214c613ba73ff012
 title: SEDOLs
-challengeType: 5
+challengeType: 1
 forumTopicId: 302305
 dashedName: sedols
 ---

@@ -1,7 +1,7 @@
 ---
 id: a97fd23d9b809dac9921074f
 title: Argomenti facoltativi
-challengeType: 5
+challengeType: 1
 forumTopicId: 14271
 dashedName: arguments-optional
 ---

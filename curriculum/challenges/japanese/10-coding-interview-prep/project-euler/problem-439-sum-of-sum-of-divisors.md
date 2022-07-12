@@ -1,7 +1,7 @@
 ---
 id: 5900f5231000cf542c510035
 title: '問題 439: 約数の和の和'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302110
 dashedName: problem-439-sum-of-sum-of-divisors
 ---

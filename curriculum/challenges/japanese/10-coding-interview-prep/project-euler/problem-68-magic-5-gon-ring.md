@@ -1,7 +1,7 @@
 ---
 id: 5900f3b01000cf542c50fec3
 title: '問題 68: 魔法の五角リング'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302180
 dashedName: problem-68-magic-5-gon-ring
 ---

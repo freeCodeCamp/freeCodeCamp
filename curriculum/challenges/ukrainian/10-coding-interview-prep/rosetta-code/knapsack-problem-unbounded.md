@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7ed4
 title: Задача пакування рюкзака/Необмежена
-challengeType: 5
+challengeType: 1
 forumTopicId: 323655
 dashedName: knapsack-problemunbounded
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5900f4a71000cf542c50ffba
 title: 'Проблема 315: Годинники коренів чисел'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301971
 dashedName: problem-315-digital-root-clocks
 ---

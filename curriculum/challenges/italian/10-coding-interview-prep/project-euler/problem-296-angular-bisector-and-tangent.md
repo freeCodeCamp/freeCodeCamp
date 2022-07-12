@@ -1,7 +1,7 @@
 ---
 id: 5900f4941000cf542c50ffa7
 title: 'Problema 296: Bisettrice angolare e tangente'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301948
 dashedName: problem-296-angular-bisector-and-tangent
 ---

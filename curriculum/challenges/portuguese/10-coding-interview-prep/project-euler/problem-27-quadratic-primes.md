@@ -1,7 +1,7 @@
 ---
 id: 5900f3871000cf542c50fe9a
 title: 'Problema 27: Primos quadráticos'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301919
 dashedName: problem-27-quadratic-primes
 ---

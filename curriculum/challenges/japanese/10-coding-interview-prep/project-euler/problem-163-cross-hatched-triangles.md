@@ -1,7 +1,7 @@
 ---
 id: 5900f40f1000cf542c50ff22
 title: '問題 163: 斜交平行三角形'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301797
 dashedName: problem-163-cross-hatched-triangles
 ---

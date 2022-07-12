@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc8012
 title: Algoritmos de ordenação/ordenação fantoche
-challengeType: 5
+challengeType: 1
 forumTopicId: 302318
 dashedName: sorting-algorithmsstooge-sort
 ---

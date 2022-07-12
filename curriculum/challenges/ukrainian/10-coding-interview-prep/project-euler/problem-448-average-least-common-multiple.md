@@ -1,7 +1,7 @@
 ---
 id: 5900f52c1000cf542c51003f
 title: 'Завдання 448: Найменше спільне кратне'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302120
 dashedName: problem-448-average-least-common-multiple
 ---

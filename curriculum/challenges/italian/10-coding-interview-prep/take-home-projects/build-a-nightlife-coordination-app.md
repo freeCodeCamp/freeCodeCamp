@@ -8,7 +8,7 @@ dashedName: build-a-nightlife-coordination-app
 
 # --description--
 
-Costruisci un'app JavaScript full-stack che sia funzionalmente simile a questa: [herokuapp.com/](https://yoyo44.herokuapp.com/). Usare un costruttore di siti di tua scelta per completare il progetto.
+Costruisci un'app JavaScript full-stack che sia funzionalmente simile a questa: <a href="https://yoyo44.herokuapp.com/" target="_blank" rel="noopener noreferrer nofollow">herokuapp.com/</a>. Usare un costruttore di siti di tua scelta per completare il progetto.
 
 Ecco le specifiche user story da implementare per questo progetto:
 
@@ -20,7 +20,7 @@ Ecco le specifiche user story da implementare per questo progetto:
 
 **User Story:** Come utente non autenticato, quando fai login non devi effettuare di nuovo la ricerca.
 
-**Suggerimento:** Prova a usare [l'API di Yelp](https://www.yelp.com/developers/documentation/v3) per trovare locali nelle città cercate dai tuoi utenti. Se usi l'API di Yelp, assicurati di menzionarla nella tua app.
+**Suggerimento:** Prova a usare la API di Yelp per trovare locali nella città in cui il tuo utente cerca. Se usi l'API di Yelp, assicurati di menzionarla nella tua app.
 
 Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata in qualche percorso pubblico. Quindi invia l'URL nel campo `Solution Link`. Facoltativamente, invia anche un link al codice sorgente del tuo progetto nel campo `GitHub Link`.
 

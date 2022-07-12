@@ -1,7 +1,7 @@
 ---
 id: 5900f44b1000cf542c50ff5e
 title: '問題 223: ほぼ直角三角形 (1)'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301866
 dashedName: problem-223-almost-right-angled-triangles-i
 ---

@@ -51,13 +51,13 @@ O elemento `div` com a classe `green` deve ter apropriedade `background-color` c
 assert($('.green').css('background-color') == 'rgb(0, 255, 0)');
 ```
 
-O elemento `div` com a classe `cyan` deve ter apropriedade `background-color` com o valor cyan (ciano).
+O elemento `div` com a classe `cyan` deve ter a propriedade `background-color` com o valor cyan (ciano).
 
 ```js
 assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)');
 ```
 
-O elemento `div` com a classe `blue` deve ter apropriedade `background-color` com o valor blue (azul).
+O elemento `div` com a classe `blue` deve ter a propriedade `background-color` com o valor blue (azul).
 
 ```js
 assert($('.blue').css('background-color') == 'rgb(0, 0, 255)');
