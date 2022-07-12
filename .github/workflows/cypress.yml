@@ -98,6 +98,14 @@ jobs:
           tar -xf client-artifact.tar
           rm client-artifact.tar
 
+      - name: Downgrade Firefox
+        run: |
+          curl https://ftp.mozilla.org/pub/firefox/releases/101.0/linux-x86_64/en-US/firefox-101.0.tar.bz2 --output firefox-101.0.tar.bz2
+          tar -xjf firefox-101.0.tar.bz2
+          sudo mv firefox /opt/
+          sudo mv /usr/bin/firefox /usr/bin/firefox_old
+          sudo ln -s /opt/firefox/firefox /usr/bin/firefox
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@eeb10cff27034e7acf239c5d29f62154018672fd # tag=v3
         with:
