@@ -1,7 +1,7 @@
 ---
 id: a3f503de51cfab748ff001aa
 title: A coppie
-challengeType: 5
+challengeType: 1
 forumTopicId: 301617
 dashedName: pairwise
 ---

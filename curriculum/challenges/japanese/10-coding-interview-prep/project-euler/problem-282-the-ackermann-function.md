@@ -1,7 +1,7 @@
 ---
 id: 5900f4861000cf542c50ff99
 title: '問題 282: アッカーマン関数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301933
 dashedName: problem-282-the-ackermann-function
 ---

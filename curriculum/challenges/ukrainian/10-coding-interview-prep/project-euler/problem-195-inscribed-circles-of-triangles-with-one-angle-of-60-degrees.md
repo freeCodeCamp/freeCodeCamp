@@ -1,7 +1,7 @@
 ---
 id: 5900f4311000cf542c50ff43
 title: 'Завдання 195: Кола, вписані в трикутники, один з кутів яких становить 60 градусів'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301833
 dashedName: problem-195-inscribed-circles-of-triangles-with-one-angle-of-60-degrees
 ---

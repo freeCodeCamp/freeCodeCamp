@@ -1,7 +1,7 @@
 ---
 id: 594810f028c0303b75339ace
 title: Fábrica de acumuladores
-challengeType: 5
+challengeType: 1
 forumTopicId: 302222
 dashedName: accumulator-factory
 ---

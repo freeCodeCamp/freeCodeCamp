@@ -1,7 +1,7 @@
 ---
 id: 5900f3e81000cf542c50fefb
 title: '問題 124: 順序付き累乗根'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301751
 dashedName: problem-124-ordered-radicals
 ---

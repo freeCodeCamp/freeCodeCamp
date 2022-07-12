@@ -1,7 +1,7 @@
 ---
 id: aa7697ea2477d1316795783b
 title: Pig Latin (Latin de los cerdos)
-challengeType: 5
+challengeType: 1
 forumTopicId: 16039
 dashedName: pig-latin
 ---

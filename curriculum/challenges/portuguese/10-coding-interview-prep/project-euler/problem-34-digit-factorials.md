@@ -1,7 +1,7 @@
 ---
 id: 5900f38e1000cf542c50fea1
 title: 'Problema 34: Algarismos dos fatoriais'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301998
 dashedName: problem-34-digit-factorials
 ---

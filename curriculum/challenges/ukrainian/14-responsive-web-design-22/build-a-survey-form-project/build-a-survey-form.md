@@ -12,22 +12,22 @@ dashedName: build-a-survey-form
 
 **Історія користувача:**
 
-1. Ви повинні мати заголовок сторінки в елементі `h1` з `title` `id`
-1. Ви повинні мати коротке роз'яснення в елементі `p` з `description` `id`
-1. Ви повинні мати елемент `form` з `survey-form` `id`
-1. В елементі форми вам **потрібно** ввести своє ім'я в полі `input`, яке має `name` `id` та `text` `type`
-1. В елементі форми вам **потрібно** ввести свою електронну пошту в полі `input`, яке має `email` `id`
+1. Ви повинні мати заголовок сторінки в елементі `h1` з `id` зі значенням `title`
+1. Ви повинні мати коротке роз'яснення в елементі `p` з `id` зі значенням `description`
+1. Ви повинні мати елемент `form` з `id` зі значенням `survey-form`
+1. В елементі форми вам **потрібно** ввести своє ім'я в полі `input`, яке має `id` зі значенням `name` та `type` зі значенням `text`
+1. В елементі форми вам **потрібно** ввести свою електронну пошту в полі `input`, яке має `id` зі значенням `email`
 1. Якщо ви введете неправильно сформовану електронну адресу, то побачите помилку перевірки HTML5
-1. В формі ви можете ввести число в поле `input`, яке має `number` `id`
+1. В формі ви можете ввести число в поле `input`, яке має `id` зі значенням `number`
 1. Якщо в полі введення чисел ви введете не число, то побачите помилку перевірки HTML5
 1. Якщо ви введете число поза межами діапазону чисел, що визначено атрибутами `min` та `max`, то побачите помилку перевірки HTML5
 1. Для імені, електронної пошти та полів введення чисел можна побачити відповідні елементи `label` в формі, що описує мету кожного поля відповідними ідентифікаторами: `id="name-label"`, `id="email-label"` та `id="number-label"`
 1. Для імені, електронної пошти та полів введення чисел можна побачити текст заповнювача з описом або інструкцією до кожного поля
-1. В елементі форми ви повинні мати випадний елемент `select` з `dropdown` `id` та принаймні два варіанти вибору
+1. В елементі форми ви повинні мати випадний елемент `select` з `id` зі значенням `dropdown` та принаймні два варіанти вибору
 1. В елементі форми ви можете вибрати опцію з групи принаймні двох радіокнопок, які згруповані з використанням атрибуту `name`
 1. В елементі форми ви можете вибрати декілька полів з низки прапорців, кожен з яких повинен мати атрибут `value`
 1. В елементі форми представлено `textarea` для додаткових коментарів
-1. В елементі форми представлено кнопку з `submit` `id` для надсилання всіх введень
+1. В елементі форми представлено кнопку з `id` зі значенням `submit` для відправки всіх inputs
 
 Виконайте розповідь користувача та пройдіть тести, наведені нижче, щоб завершити цей проєкт. Оформте за власним стилем. Щасливого кодування!
 
@@ -35,7 +35,7 @@ dashedName: build-a-survey-form
 
 # --hints--
 
-Ви повинні мати елемент `h1` з `title` `id`.
+Ви повинні мати елемент `h1` з `id` зі значенням `title`.
 
 ```js
 const el = document.getElementById('title')
@@ -49,7 +49,7 @@ const el = document.getElementById('title')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Ви повинні мати елемент `p` з `description` `id`.
+Ви повинні мати елемент `p` з `id` зі значенням `description`.
 
 ```js
 const el = document.getElementById('description')
@@ -63,21 +63,21 @@ const el = document.getElementById('description')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Ви повинні мати елемент `form` з `survey-form` `id`.
+Ви повинні мати елемент `form` з `id` зі значенням `survey-form`.
 
 ```js
 const el = document.getElementById('survey-form')
 assert(!!el && el.tagName === 'FORM')
 ```
 
-Ви повинні мати елемент `input` з `name` `id`.
+Ви повинні мати елемент `input` з `id` зі значенням `name`.
 
 ```js
 const el = document.getElementById('name')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Ваш `#name` повинен мати `text` `type`.
+Ваш `#name` повинен мати `type` зі значенням `text`.
 
 ```js
 const el = document.getElementById('name')
@@ -98,14 +98,14 @@ const el = document.querySelector('#survey-form #name')
 assert(!!el)
 ```
 
-Ви повинні мати елемент `input` з `email` `id`.
+Ви повинні мати елемент `input` з `id` зі значенням `email`.
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Ваш `#email` повинен мати `email` `type`.
+Ваш `#email` повинен мати `type` зі значенням `email`.
 
 ```js
 const el = document.getElementById('email')
@@ -126,7 +126,7 @@ const el = document.querySelector('#survey-form #email')
 assert(!!el)
 ```
 
-Ви повинні мати елемент `input` з `number` `id`.
+Ви повинні мати елемент `input` з `id` зі значенням `number`.
 
 ```js
 const el = document.getElementById('number')
@@ -140,7 +140,7 @@ const el = document.querySelector('#survey-form #number')
 assert(!!el)
 ```
 
-Ваш `#number` повинен мати `number` `type`.
+Ваш `#number` повинен мати `type` зі значенням `number`.
 
 ```js
 const el = document.getElementById('number')
@@ -161,21 +161,21 @@ const el = document.getElementById('number')
 assert(!!el && el.max && isFinite(el.max))
 ```
 
-Ви повинні мати елемент `label` з `name-label` `id`.
+Ви повинні мати елемент `label` з `id` зі значенням `name-label`.
 
 ```js
 const el = document.getElementById('name-label')
 assert(!!el && el.tagName === 'LABEL')
 ```
 
-Ви повинні мати елемент `label` з `email-label` `id`.
+Ви повинні мати елемент `label` з `id` зі значенням `email-label`.
 
 ```js
 const el = document.getElementById('email-label')
 assert(!!el && el.tagName === 'LABEL')
 ```
 
-Ви повинні мати елемент `label` з `number-label` `id`.
+Ви повинні мати елемент `label` з `id` зі значенням `number-label`.
 
 ```js
 const el = document.getElementById('number-label')
@@ -245,7 +245,7 @@ const el = document.getElementById('number')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-Ви повинні мати поле `select` з `dropdown` `id`.
+Ви повинні мати поле `select` з `id` зі значенням `dropdown`.
 
 ```js
 const el = document.getElementById('dropdown')
@@ -266,7 +266,7 @@ const el = document.querySelector('#survey-form #dropdown')
 assert(!!el)
 ```
 
-Ви повинні мати щонайменше два елементи `input` з `radio` `type` (радіокнопки).
+Ви повинні мати щонайменше два елементи `input` з `type` зі значенням `radio` (радіокнопки).
 
 ```js
 const els = document.querySelectorAll('input[type="radio"]')
@@ -318,7 +318,7 @@ groupKeys.forEach(key => {
 assert(groupKeys.length > 0)
 ```
 
-Ви повинні мати щонайменше два елементи `input` з `checkbox` `type` (прапорцями), що наслідують `#survey-form`.
+Ви повинні мати щонайменше два елементи `input` з `type` зі значенням `checkbox` (прапорцями), що наслідують `#survey-form`.
 
 ```js
 const els = document.querySelectorAll('#survey-form input[type="checkbox"]');
@@ -340,14 +340,14 @@ const el = document.querySelector('#survey-form textarea')
 assert(!!el)
 ```
 
-Ви повинні мати елемент `input` або `button` з `submit` `id`.
+Ви повинні мати елемент `input` або `button` з `id` зі значенням `submit`.
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && (el.tagName === 'INPUT' || el.tagName === 'BUTTON'))
 ```
 
-Ваш `#submit` повинен мати `submit` `type`.
+Ваш `#submit` повинен мати `type` зі значенням `submit`.
 
 ```js
 const el = document.getElementById('submit')

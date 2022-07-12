@@ -2,7 +2,7 @@
 id: 5900f4791000cf542c50ff8b
 title: >-
   Задача 268: Підрахунок чисел із щонайменше чотирма різними простими множниками, що менше 100
-challengeType: 5
+challengeType: 1
 forumTopicId: 301917
 dashedName: >-
   problem-268-counting-numbers-with-at-least-four-distinct-prime-factors-less-than-100

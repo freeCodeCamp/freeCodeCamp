@@ -1,7 +1,7 @@
 ---
 id: 5900f4e61000cf542c50fff9
 title: 'Problema 378: Trios de triângulos'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302040
 dashedName: problem-378-triangle-triples
 ---

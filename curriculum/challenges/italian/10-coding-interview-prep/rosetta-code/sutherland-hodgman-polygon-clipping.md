@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8045
 title: Taglio di un poligono di Sutherland-Hodgman
-challengeType: 5
+challengeType: 1
 forumTopicId: 302336
 dashedName: sutherland-hodgman-polygon-clipping
 ---
 
 # --description--
 
-L'algoritmo [di ritaglio Sutherland-Hodgman](https://en.wikipedia.org/wiki/Sutherland-Hodgman clipping algorithm) trova il poligono che è l'intersezione tra un poligono arbitrario (il "poligono soggetto") e un poligono convesso (il "poligono di taglio"). Viene utilizzato nella grafica informatica (in particolare nella grafica 2D) per ridurre la complessità di una scena che viene visualizzata eliminando parti di un poligono che non hanno bisogno di essere visualizzate. Prende il poligono chiuso definito dai punti:
+L'algoritmo di ritaglio Sutherland-Hodgman trova il poligono che è l'intersezione tra un poligono arbitrario (il "poligono soggetto") e un poligono convesso (il "poligono di ritaglio"). Viene utilizzato nella grafica informatica (in particolare nella grafica 2D) per ridurre la complessità di una scena che viene visualizzata eliminando parti di un poligono che non hanno bisogno di essere visualizzate. Prende il poligono chiuso definito dai punti:
 
 <pre>[(50, 150), (200, 50), (350, 150), (350, 300), (250, 300), (200, 250), (150, 350), (100, 250), (100, 200)]</pre>
 

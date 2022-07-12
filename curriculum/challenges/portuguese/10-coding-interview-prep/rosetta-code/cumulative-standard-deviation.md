@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7e03
 title: Desvio padrão acumulado
-challengeType: 5
+challengeType: 1
 forumTopicId: 302240
 dashedName: cumulative-standard-deviation
 ---

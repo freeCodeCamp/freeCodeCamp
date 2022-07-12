@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7e78
 title: FizzBuzz generico
-challengeType: 5
+challengeType: 1
 forumTopicId: 302273
 dashedName: general-fizzbuzz
 ---

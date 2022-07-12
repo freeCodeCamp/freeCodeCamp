@@ -1,7 +1,7 @@
 ---
 id: 59667989bf71cf555dd5d2ff
 title: Expressões S
-challengeType: 5
+challengeType: 1
 forumTopicId: 302303
 dashedName: s-expressions
 ---

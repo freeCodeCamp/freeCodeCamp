@@ -1,7 +1,7 @@
 ---
 id: 5900f4021000cf542c50ff14
 title: 'Problema 148: Esplorare il triangolo di Pascal'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301777
 dashedName: problem-148-exploring-pascals-triangle
 ---

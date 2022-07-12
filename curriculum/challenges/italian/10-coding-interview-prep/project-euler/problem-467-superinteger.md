@@ -1,7 +1,7 @@
 ---
 id: 5900f5411000cf542c510052
 title: 'Problema 467: Superinteri'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302142
 dashedName: problem-467-superinteger
 ---

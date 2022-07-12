@@ -1,7 +1,7 @@
 ---
 id: 5900f3a61000cf542c50feb9
 title: '問題 58: らせん素数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302169
 dashedName: problem-58-spiral-primes
 ---

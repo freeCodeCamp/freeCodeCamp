@@ -1,7 +1,7 @@
 ---
 id: 5900f50b1000cf542c51001d
 title: 'Problema 414: Constante de Kaprekar'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302083
 dashedName: problem-414-kaprekar-constant
 ---

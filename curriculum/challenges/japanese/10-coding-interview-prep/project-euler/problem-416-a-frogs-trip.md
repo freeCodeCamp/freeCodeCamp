@@ -1,7 +1,7 @@
 ---
 id: 5900f50e1000cf542c510020
 title: '問題 416: カエルの旅'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302085
 dashedName: problem-416-a-frogs-trip
 ---

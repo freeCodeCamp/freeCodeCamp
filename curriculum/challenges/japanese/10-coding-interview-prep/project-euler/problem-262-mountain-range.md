@@ -1,7 +1,7 @@
 ---
 id: 5900f4731000cf542c50ff85
 title: '問題 262: 山脈'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301911
 dashedName: problem-262-mountain-range
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5900f4521000cf542c50ff64
 title: 'Problema 229: Quatro representações usando quadrados'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301872
 dashedName: problem-229-four-representations-using-squares
 ---

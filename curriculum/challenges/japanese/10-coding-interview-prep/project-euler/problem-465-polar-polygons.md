@@ -1,7 +1,7 @@
 ---
 id: 5900f53d1000cf542c510050
 title: '問題 465: 極の多角形'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302140
 dashedName: problem-465-polar-polygons
 ---

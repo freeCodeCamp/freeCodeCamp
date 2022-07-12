@@ -1,7 +1,7 @@
 ---
 id: 595671d4d2cdc305f0d5b36f
 title: Hash de dois arrays
-challengeType: 5
+challengeType: 1
 forumTopicId: 302283
 dashedName: hash-from-two-arrays
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5900f47c1000cf542c50ff8e
 title: 'Завдання 270: Незмінні квадрати'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301920
 dashedName: problem-270-cutting-squares
 ---

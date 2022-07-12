@@ -8,7 +8,7 @@ dashedName: mutate-an-array-declared-with-const
 
 # --description--
 
-`const` に慣れていない方は、<a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-a-read-only-variable-with-the-const-keyword" target="_blank" rel="noopener noreferrer nofollow"><code>const</code> キーワードに関するこちらのチャレンジ</a>をご覧ください。
+`const` に不慣れな場合は、<a href="/japanese/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-a-read-only-variable-with-the-const-keyword" target="_blank" rel="noopener noreferrer nofollow"><code>const</code> キーワードに関するこちらのチャレンジ</a>をご覧ください。
 
 `const` 宣言は、現在の JavaScript では多くの用法があります。
 

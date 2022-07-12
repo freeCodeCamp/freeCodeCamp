@@ -1,7 +1,7 @@
 ---
 id: 5eb3e4b5f629b9a07429a5d2
 title: SHA-1
-challengeType: 5
+challengeType: 1
 forumTopicId: 385326
 dashedName: sha-1
 ---

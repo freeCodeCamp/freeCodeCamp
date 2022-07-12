@@ -13,7 +13,7 @@ dashedName: generate-random-fractions-with-javascript
 
 JavaScript には、`0` (含む) から `1` (含まない) の間の小数の乱数を生成する `Math.random()` 関数があります。 つまり、`Math.random()` は `0` を返すことはありますが、`1` を返すことは決してありません。
 
-**注意:** <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank" rel="noopener noreferrer nofollow">代入演算子による値の格納</a>の場合と同様に、すべての関数呼び出しは `return` が実行される前に解決されるため、`Math.random()` 関数の値を `return` することができます。
+**注意:** <a href="/japanese/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank" rel="noopener noreferrer nofollow">代入演算子による値の格納</a>の場合と同様に、すべての関数呼び出しは `return` が実行される前に解決されるため、`Math.random()` 関数の値を `return` することができます。
 
 # --instructions--
 

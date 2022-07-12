@@ -1,7 +1,7 @@
 ---
 id: 5900f5191000cf542c51002c
 title: '問題 429: 単約数の平方和'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302099
 dashedName: problem-429-sum-of-squares-of-unitary-divisors
 ---

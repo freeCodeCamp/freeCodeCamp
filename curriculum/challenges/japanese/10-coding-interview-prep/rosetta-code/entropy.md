@@ -1,7 +1,7 @@
 ---
 id: 599d15309e88c813a40baf58
 title: エントロピー
-challengeType: 5
+challengeType: 1
 forumTopicId: 302254
 dashedName: entropy
 ---

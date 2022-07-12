@@ -20,7 +20,7 @@ No arquivo `RPS.py`, é fornecida uma função chamada `player`. A função rece
 
 Uma função player receberá uma string vazia como um argumento para o primeiro jogo em uma partida, já que não há nenhuma jogada anterior.
 
-O arquivo `RPS.py` mostra uma função de exemplo que você precisará atualizar. A função de exemplo é definida com dois argumentos (`player(prev_play, opponent_history = [])`. A função nunca é chamada com um segundo argumento, então um deles é completamente opcional. A razão pela qual a função de exemplo contém um segundo argumento (`opponent_history = []`) é porque essa é a única maneira de salvar o estado entre as chamadas consecutivas da função `player`. Você só precisa do argumento `opponent_history` se você quiser manter o controle de opponent_history.
+O arquivo `RPS.py` mostra uma função de exemplo que você precisará atualizar. A função de exemplo é definida com dois argumentos (`player(prev_play, opponent_history = [])`). A função nunca é chamada com um segundo argumento, então um deles é completamente opcional. A razão pela qual a função de exemplo contém um segundo argumento (`opponent_history = []`) é porque essa é a única maneira de salvar o estado entre as chamadas consecutivas da função `player`. Você só precisa do argumento `opponent_history` se você quiser manter o controle de opponent_history.
 
 *Dica: para derrotar os quatro oponentes, seu programa pode precisar ter múltiplas estratégias que mudam dependendo das jogadas do adversário.*
 

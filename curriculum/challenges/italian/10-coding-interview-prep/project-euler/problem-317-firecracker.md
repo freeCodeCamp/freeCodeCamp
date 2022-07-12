@@ -1,7 +1,7 @@
 ---
 id: 5900f4aa1000cf542c50ffbc
 title: 'Problema 317: Petardo'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301973
 dashedName: problem-317-firecracker
 ---
