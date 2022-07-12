@@ -26,77 +26,77 @@ O autor original e o artigo original são vinculados automaticamente, adicionand
 
 Sendo `link` o link do artigo original.
 
-## How to update trending articles
+## Como atualizar os artigos em destaque
 
-> [!TIP] Changing the articles in the footer at least once a month means giving a boost to the linked articles on google results.
+> [!TIP] Alterar os artigos no rodapé pelo menos uma vez por mês significa dar um impulso aos artigos vinculados nos resultados do Google.
 
-There two places in which to change the trending articles.
+Mudamos os artigos em destaque em dois lugares diferentes.
 
-- [The curriculum repository](https://github.com/freeCodeCamp/freeCodeCamp/)
-- [The CDN repository](https://github.com/freeCodeCamp/cdn)
+- [O repositório do currículo](https://github.com/freeCodeCamp/freeCodeCamp/)
+- [O repositório do CDN](https://github.com/freeCodeCamp/cdn)
 
-For each article you will need to create a shorter title to use in the footer.
+Para cada artigo, você precisará criar um título menor para usar no rodapé.
 
-### Change trending articles in the curriculum
+### Alterar artigos em destaque no currículo
 
-The trending articles in the curriculum footer can be changed by editing the file at `client/i18n/locales/<language>/trending.json`.
+Os artigos em destaque no rodapé do currículo podem ser alterados, editando o arquivo em `client/i18n/locales/<language>/trending.json`.
 
-This file is a `*.json` file that has the shape of an object with property keys in the shape `article0title` and `article0link`.
+Esse é um arquivo `*.json`, que tem a forma de um objeto com chaves de propriedade na forma `article0title` e `article0link`.
 
-Each number rapresents one of the 30 articles in the footer. Make sure to match the title and the link correctly.
+Cada número apresenta um dos 30 artigos do rodapé. Veriifique se a correspondência entre o título e o link está correta.
 
-This is an example of how part of the `trending.json` file has to look.
+Este é um exemplo de como deve ser a aparência de parte do arquivo `trending.json`.
 
 ```json
 {
-  "article0title": "Unire CSV con Python",
-  "article0link": "https://www.freecodecamp.org/italian/news/come-combinare-file-multipli-in-formato-csv-con-8-righe-di-codice/",
-  "article1title": "Il comando Git push",
-  "article1link": "https://www.freecodecamp.org/italian/news/il-comando-git-push-spiegato/",
-  "article2title": "Centrare immagini in CSS",
-  "article2link": "https://www.freecodecamp.org/italian/news/come-centrare-un-immagine-usando/",
-  "article3title": "I codici Alt",
-  "article3link": "https://www.freecodecamp.org/italian/news/codici-alt/",
-  "article4title": "Tenere a bada il footer",
-  "article4link": "https://www.freecodecamp.org/italian/news/come-mantenere-il-footer-al-suo-posto/",
-  "article5title": "Cosa è un'API?",
-  "article5link": "https://www.freecodecamp.org/italian/news/cose-un-api-in-italiano-per-favore/",
+  "article0title":"Nova aba em HTML",
+  "article0link":"https://www.freecodecamp.org/portuguese/news/como-usar-o-html-para-abrir-um-link-em-uma-nova-aba/",
+  "article1title":"Máscaras de sub-rede",
+  "article1link":"https://www.freecodecamp.org/portuguese/news/ficha-informativa-de-sub-redes-mascara-de-sub-rede-24-30-26-27-29/",
+  "article2title":"40 projetos em JavaScript",
+  "article2link":"https://www.freecodecamp.org/portuguese/news/40-projetos-em-javascript-para-iniciantes-ideias-simples-para-comecar-a-programar-em-js/",
+  "article3title":"Tutorial de button onClick",
+  "article3link":"https://www.freecodecamp.org/portuguese/news/tutorial-sobre-button-onclick-em-html-e-evento-de-clique-em-javascript/",
+  "article4title":"Bot do Discord",
+  "article4link":"https://www.freecodecamp.org/portuguese/news/tutorial-de-criacao-de-bot-para-o-discord-em-python/",
+  "article5title":"Centralizar em CSS",
+  "article5link":"https://www.freecodecamp.org/portuguese/news/como-centralizar-tudo-com-css/",
   ...
 }
 ```
 
-You will want to [build the translated client locally](how-to-test-translations-locally.md) to see if the titles have the right length. Each title must stay on a single line and not go to a new line.
+Você vai querer [fazer a build do client traduzido localmente](how-to-test-translations-locally.md) para ver se os títulos têm o comprimento correto. Cada título deve permanecer em uma única linha e não deve ir para uma nova linha.
 
-### How to update the trending articles in the cdn
+### Como atualizar os artigos em destaque no cdn
 
-The file in the cdn repository is the file `universal/trending/<language>.yaml`.
+O arquivo no repositório cdn é o arquivo `universal/trending/<language>.yaml`.
 
-This file is shaped differently, for example here the file content for the first 6 articles:
+Este arquivo é formatado de modo diferente. Por exemplo, aqui vemos o conteúdo do arquivo para os primeiros 6 artigos:
 
 ```yaml
-article0title: 'Unire CSV con Python'
-article0link: 'https://www.freecodecamp.org/italian/news/come-combinare-file-multipli-in-formato-csv-con-8-righe-di-codice/'
-article1title: 'Il comando Git push'
-article1link: 'https://www.freecodecamp.org/italian/news/il-comando-git-push-spiegato/'
-article2title: 'Centrare immagini in CSS'
-article2link: 'https://www.freecodecamp.org/italian/news/come-centrare-un-immagine-usando/'
-article3title: 'I codici Alt'
-article3link: 'https://www.freecodecamp.org/italian/news/codici-alt/'
-article4title: 'Tenere a bada il footer'
-article4link: 'https://www.freecodecamp.org/italian/news/come-mantenere-il-footer-al-suo-posto/'
-article5title: 'Cosa è API?'
-article5link: 'https://www.freecodecamp.org/italian/news/cose-un-api-in-italiano-per-favore/'
+article0title: 'Nova aba em HTML'
+article0link: 'https://www.freecodecamp.org/portuguese/news/como-usar-o-html-para-abrir-um-link-em-uma-nova-aba/'
+article1title:'Máscaras de sub-rede'
+article1link: 'https://www.freecodecamp.org/portuguese/news/ficha-informativa-de-sub-redes-mascara-de-sub-rede-24-30-26-27-29/'
+article2title: '40 projetos em JavaScript'
+article2link: 'https://www.freecodecamp.org/portuguese/news/40-projetos-em-javascript-para-iniciantes-ideias-simples-para-comecar-a-programar-em-js/'
+article3title: 'Tutorial de button onClick'
+article3link: 'https://www.freecodecamp.org/portuguese/news/tutorial-sobre-button-onclick-em-html-e-evento-de-clique-em-javascript/'
+article4title: 'Bot do Discord'
+article4link: 'https://www.freecodecamp.org/portuguese/news/tutorial-de-criacao-de-bot-para-o-discord-em-python/'
+article5title: 'Centralizar em CSS'
+article5link: 'https://www.freecodecamp.org/portuguese/news/como-centralizar-tudo-com-css/'
 ```
 
-You can convert from one format to the other carefully changing it manually. Or you can use [the script in this repl](https://replit.com/@Ieahleen/convert-json-to-yaml).
+Você pode converter de um formato para o outro cuidadosamente, alterando-o manualmente. Ou você pode usar [o script neste repl](https://replit.com/@Ieahleen/convert-json-to-yaml).
 
-> [!TIP] A new workflow is being worked on, there will be only one place to change in the future.
+> [!TIP] Um novo fluxo de trabalho está sendo trabalhado. Será preciso alterar em apenas um lugar no futuro.
 
-## How to translate the motivational quotes
+## Como traduzir as citações motivacionais
 
-The motivational quotes can be found in the [curriculum repository](https://github.com/freeCodeCamp/freeCodeCamp/) in the `/client/i18n/locales/<language>/motivation.json` file.
+As citações motivacionais podem ser encontradas no [repositório de currículos](https://github.com/freeCodeCamp/freeCodeCamp/), no arquivo `/client/i18n/locales/<language>/motivation.json`.
 
-This file has a general structure of:
+Esse arquivo tem a seguinte estrutura geral:
 
 ```json
 {
@@ -105,82 +105,81 @@ This file has a general structure of:
 }
 ```
 
-The compliments are the short sentences that appear at the completion of a challenge.
+Os elogios são as frases curtas que aparecem na conclusão de um desafio.
 
-You don't need to directly translate the sentences used in English, you can write a set of short sentences that are appropriate to show at the completion of a challenge.
+Você não precisa traduzir diretamente as frases usadas em inglês. Você pode escrever um conjunto de frases curtas que sejam apropriadas para mostrar na conclusão de um desafio.
 
-The `compliments` array is an array of strings, so for example you would write:
+O array `compliments` (de elogios) é um array de strings. Então, por exemplo, você escreveria:
 
 ```json
 {
-  "compliments": ["A tutta birra!", "Pikachu, scelgo te!"],
+  "compliments": ["Top de linha!",  "Agora não para mais!"],
   "motivationalQuotes": []
 }
 ```
 
-> [!TIP] You should start with at least a dozen compliments to have some variety when users complete challenges.
+> [!TIP] Você deve começar com pelo menos uma dúzia de elogios para ter alguma variedade quando os usuários completarem os desafios.
 
-The motivational quotes are the quotes that appear at https://freecodecamp.org/learn.
+As citações motivacionais são as citações que aparecem em https://freecodecamp.org/learn.
 
-The `motivationalQuotes` array is an array of objects, these objects should include a `quote` property and an `author` property. like this:
+O array `motivationalQuotes` é um array de objetos. Esses objetos devem incluir uma propriedade `quote` e uma propriedade`author`. assim:
 
 ```json
 {
   "compliments": [],
   "motivationalQuotes": [
     {
-      "quote": "Se i costruttori costruissero come i programmatori programmano, il primo picchio che passa potrebbe distruggere la civiltà.",
-      "author": "Artur Bloch, Seconda legge di Weinberg"
+      "quote": "Seja lá o que você fizer, seja bom nisso.",
+      "author": "Abraham Lincoln"
     },
     {
-      "quote": "I bravi programmatori sanno cosa scrivere. I migliori sanno cosa riscrivere.",
-      "author": "Eric Steven Raymond"
+      "quote": "Uma mudança de perspectiva já faz subir 80 pontos de QI.",       "author": "Alan Kay"
     }
   ]
 }
 ```
 
-> [!TIP] You should start with at least a dozen quotes, to have some variety. A new quote is shown every time the user reload the page.
+> [!TIP] Você deve começar com pelo menos uma dúzia de citações para ter alguma variedade. Uma nova citação é mostrada toda vez que o usuário recarrega a página.
 
-## How to update the common links
+## Como atualizar os links comuns
 
-We maintain a file of common links used throughout our [curriculum site](https://github.com/freecodecamp/freecodecamp) in the `/client/i18n/locales/<language>/links.json` file.
+Mantemos um arquivo de links comuns usados por todo o nosso [site do currículo](https://github.com/freecodecamp/freecodecamp) no arquivo `/client/i18n/locales/<language>/links.json`.
 
-Some of these links will not change - but you should update the `/news` article links to point to your language's translated version of that article when it is published.
+Alguns desses links não mudarão - mas você deve atualizar os links dos artigos `/news` para que apontem para a versão traduzida do seu idioma quando ele é publicado.
 
-You should also update the `help` categories to point to your language's subforum (usually `language/category`, like `Italiano/HTML-CSS`). This will allow campers to create "help posts" in the correct forum location.
+Você também deve atualizar as categorias de `help` para que apontem para o sub-fórum do seu idioma (geralmente `language/category`, como, por exemplo, `portuguese/HTML-CSS`). Isto permitirá que os campers criem "posts de ajuda" no local correto do fórum.
 
-## How to update the site meta-data
+## Como atualizar os metadados do site
 
-The site meta-data is in the `/client/i18n/locales/<language>/meta-tags.json` file. This file has five keys: `title`, `description`, `social-description`, `keywords`, and `youre-unsubscribed`.
+Os metadados do site estão no arquivo `/client/i18n/locales/<language>/meta-tags.json`. Este arquivo tem cinco chaves: `title`, `description`, `social-description`, `keywords` e `youre-unsubscribed`.
 
-The `youre-unsubscribed` value should be directly translated. The other values will need to be translated as closely as possible, while also considering common search terms and phrases used in your language.
+O valor de `youre-unsubscribed` deve ser traduzido diretamente. Os outros valores precisarão ser traduzidos o mais próximo possível, considerando também termos e frases de busca comuns usados em seu idioma.
 
-If you need help with this, reach out to us in the [contributor chat](https://discord.gg/PRyKn3Vbay)
+Se você precisar de ajuda com isso, entre em contato conosco no [chat dos colaboradores](https://discord.gg/PRyKn3Vbay)
 
-## Pre-Translate Workflow on Crowdin
+## Fluxo de trabalho de pré-tradução no Crowdin
 
-The Pre-Translate workflow can be used to apply translations from the Translation Memory to strings.
+O fluxo de trabalho de pré-tradução pode ser usado para aplicar traduções da memória de tradução às frases.
 
-> [!TIP] Really useful to restore a lot of translations from the Translation Memory in bulk when a lot of files have been updated.
+> [!TIP] É bastante útil restaurar muitas traduções da memória de tradução ao mesmo tempo quando muitos arquivos foram atualizados.
 
-You can find the Pre-Translation workflow at the top of the page in the console of a project. If you see "Go to console" in the upper right corner, click there first.
+Você pode encontrar o fluxo de trabalho de pré-tradução no topo da página no console de um projeto. Se você ver "Go to console", no canto superior direito, clique lá primeiro.
 
-![go to console button](./images/crowdin/pre-translate2.png)
+![botão go to console](./images/crowdin/pre-translate2.png)
 
-![pre-translate workflow](./images/crowdin/pre-translate1.png)
+![fluxo de trabalho de pré-tradução](./images/crowdin/pre-translate1.png)
 
-You can choose "From Machine Translation" or "From Translation Memory". Choose "Translation Memory" to recover translations from memory.
+Você pode escolher "From Machine Translation" (da tradução de máquina) ou "From Translation Memory" (da memória de tradução). Selecione "Translation Memory" para recuperar as traduções da memória.
 
-Then there are three steps to complete:
+Depois, há três etapas a concluir:
 
-1. Files. Choose which files to translate, you can do all the project, or specific folders or files.
-2. Languages. Set your language here.
-3. Existing Translations. The best combination here is "100% match" and "Apply to untranslated strings only". Do not approve automatically, as it's always best to have a human eye on things.
+1. Arquivos. Escolha quais arquivos traduzir. Você pode fazer todo o projeto, pastas ou arquivos específicos.
+2. Idiomas. Defina o seu idioma aqui.
+3. Traduções existentes. A melhor combinação aqui é "100% match" (100% correspondente) e "Apply to untranslated strings only" (aplicar apenas a frases não traduzidas). Não aprove automaticamente, já que é sempre melhor que um olho humano revise tudo.
 
-![pre-translate existing translations](./images/crowdin/pre-translate3.png)
+![pré-traduzir as traduções existentes](./images/crowdin/pre-translate3.png)
 
-When you have finished settngs this, press the Pre-Translate button, and wait. It will alert you once it has finished. It will take more or less time depending on how many untranslated strings are present in the files you have choosen.
+Quando você tiver terminado essas configurações, pressione o botão de Pre-Translate e aguarde. Ele alertará você quando terminar. Levará algum tempo, dependendo de quantas frases não traduzidas estão presentes nos arquivos que você escolheu.
 
 ## Como atualizar o glossário do Crowdin
 
