@@ -45,11 +45,18 @@ export function getAccessTokenFromRequest(req, jwtSecret = _jwtSecret) {
       error: errorTypes.noTokenFound
     };
   }
+
+  console.log('######### maybeToken', maybeToken);
+
   let token;
   try {
     token = jwt.verify(maybeToken, jwtSecret);
   } catch (err) {
-    return { accessToken: null, error: errorTypes.invalidToken };
+    console.log('######### verification error', err);
+    return {
+      accessToken: null,
+      error: errorTypes.invalidToken
+    };
   }
 
   let valid = false;
