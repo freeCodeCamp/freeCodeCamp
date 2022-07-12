@@ -73,9 +73,11 @@ export default function getRequestAuthorisation({
     const { origin } = getRedirectParams(req);
     const { path } = req;
 
-    console.log('######### jwtSecret - 1', jwtSecret?.substring(0, 50));
+    console.log('######### multi-line test', 'line 1\nline 2');
+    console.log('######### jwtSecret length', jwtSecret?.length);
+    console.log('######### jwtSecret - start', jwtSecret?.substring(0, 50));
     console.log(
-      '######### jwtSecret - 2',
+      '######### jwtSecret - end',
       jwtSecret?.substring(jwtSecret?.length - 50)
     );
     if (!isAllowedPath(path)) {

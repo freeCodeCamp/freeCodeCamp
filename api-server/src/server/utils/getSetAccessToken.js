@@ -39,14 +39,14 @@ export function getAccessTokenFromRequest(req, jwtSecret = _jwtSecret) {
     // TOPCODER: the jwt cookie is in the cookies var instead
     // of the cookie string
     req.cookies?.[jwtCookieNS];
+  console.log('######### maybeToken', maybeToken);
   if (!maybeToken) {
+    console.log('######### NO maybeToken req', req);
     return {
       accessToken: null,
       error: errorTypes.noTokenFound
     };
   }
-
-  console.log('######### maybeToken', maybeToken);
 
   let token;
   try {
