@@ -100,6 +100,7 @@ pipeline {
                 mv buildenvvarg deployenvvarg
                 echo "Fetching Buildvar"
                 ./buildenv.sh -e ${DEPLOY_ENV} -b ${LOGICAL_ENV}-${APPNAME}-buildvar
+                aws s3 cp s3://tc-platform-${DEPLOY_ENV}/securitymanager/${DEPLOY_ENV}-freecodecamp.env ./.env
                 """
                 load 'awsenvconfg'
                 load 'deployenvvarg'
@@ -116,7 +117,6 @@ pipeline {
                     #!/bin/bash
                     node --version
                     npm --version
-                    sed "s/export\\s//g" buildenvvar > .env
                     cat .env
                     git config --global url."https://git@".insteadOf git://
                     npm ci
