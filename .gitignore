@@ -150,6 +150,7 @@ jspm_packages/
 .env
 .env.test
 chris.env
+dev-freecodecamp.env
 
 # gatsby files
 .cache/

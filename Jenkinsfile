@@ -100,8 +100,6 @@ pipeline {
                 mv buildenvvarg deployenvvarg
                 echo "Fetching Buildvar"
                 ./buildenv.sh -e ${DEPLOY_ENV} -b ${LOGICAL_ENV}-${APPNAME}-buildvar
-                echo "DEPLOY_ENV" ${DEPLOY_ENV}
-                echo "LOGICAL_ENV" ${LOGICAL_ENV}
                 aws s3 cp s3://tc-platform-${LOGICAL_ENV}/securitymanager/${LOGICAL_ENV}-freecodecamp.env ./.env
                 """
                 load 'awsenvconfg'
