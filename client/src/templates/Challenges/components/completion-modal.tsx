@@ -284,7 +284,7 @@ export class CompletionModalInner extends Component<
 }
 
 interface Options {
-  isCertificationBlock: boolean;
+  isFinalProjectBlock: boolean;
 }
 
 interface CertificateNode {
@@ -348,9 +348,7 @@ const useCurrentBlockIds = (
     .filter(edge => edge.node.challenge.block === block)
     .map(edge => edge.node.challenge.id);
 
-  return options?.isCertificationBlock
-    ? currentCertificateIds
-    : currentBlockIds;
+  return options?.isFinalProjectBlock ? currentCertificateIds : currentBlockIds;
 };
 
 const CompletionModal = (props: CompletionModalsProps) => {
