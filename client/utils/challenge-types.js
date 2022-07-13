@@ -54,6 +54,12 @@ exports.isFinalProject = challengeType => {
   );
 };
 
+exports.isCodeAllyPractice = challengeType => {
+  if (typeof challengeType !== 'number')
+    throw Error('challengeType must be a number');
+  return challengeType === codeAllyPractice;
+};
+
 // turn challengeType to file ext
 exports.pathsMap = {
   [html]: 'html',
