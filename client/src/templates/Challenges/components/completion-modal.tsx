@@ -358,7 +358,7 @@ const CompletionModal = (props: CompletionModalsProps) => {
     props.block || '',
     props.certification || '',
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-    { isCertificationBlock: isFinalProject(props.challengeType) }
+    { isFinalProjectBlock: isFinalProject(props.challengeType) }
   );
   return <CompletionModalInner currentBlockIds={currentBlockIds} {...props} />;
 };
