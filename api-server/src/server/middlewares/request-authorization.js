@@ -74,6 +74,7 @@ export default function getRequestAuthorisation({
     const { path } = req;
     console.log('######## requesting auth', path, isAllowedPath(path));
     if (!isAllowedPath(path)) {
+      console.log('##### path:', path);
       console.log('##### getting access token');
       const { accessToken, error, jwt } = getAccessTokenFromRequest(
         req,
