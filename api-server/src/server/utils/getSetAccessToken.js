@@ -39,7 +39,9 @@ export function getAccessTokenFromRequest(req, jwtSecret = _jwtSecret) {
     // TOPCODER: the jwt cookie is in the cookies var instead
     // of the cookie string
     req.cookies?.[jwtCookieNS];
+  console.log('######### maybeToken', maybeToken);
   if (!maybeToken) {
+    console.log('######### NO maybeToken req', req);
     return {
       accessToken: null,
       error: errorTypes.noTokenFound
@@ -50,6 +52,7 @@ export function getAccessTokenFromRequest(req, jwtSecret = _jwtSecret) {
   try {
     token = jwt.verify(maybeToken, jwtSecret);
   } catch (err) {
+    console.log('######### verification error', err);
     return {
       accessToken: null,
       error: errorTypes.invalidToken
