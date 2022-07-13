@@ -49,7 +49,6 @@ exports.isFinalProject = challengeType => {
     challengeType === backEndProject ||
     challengeType === jsProject ||
     challengeType === pythonProject ||
-    challengeType === codeAllyPractice ||
     challengeType === codeAllyCert ||
     challengeType === multifileCertProject
   );
