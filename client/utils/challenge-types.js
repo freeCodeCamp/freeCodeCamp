@@ -41,7 +41,7 @@ exports.challengeTypes = {
   multifileCertProject
 };
 
-exports.isProject = challengeType => {
+exports.isFinalProject = challengeType => {
   if (typeof challengeType !== 'number')
     throw Error('challengeType must be a number');
   return (

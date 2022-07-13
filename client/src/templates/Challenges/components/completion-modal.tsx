@@ -10,7 +10,7 @@ import { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import { dasherize } from '../../../../../utils/slugs';
-import { isProject } from '../../../../utils/challenge-types';
+import { isFinalProject } from '../../../../utils/challenge-types';
 import Login from '../../../components/Header/components/Login';
 import {
   isSignedInSelector,
@@ -358,7 +358,7 @@ const CompletionModal = (props: CompletionModalsProps) => {
     props.block || '',
     props.certification || '',
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-    { isCertificationBlock: isProject(props.challengeType) }
+    { isCertificationBlock: isFinalProject(props.challengeType) }
   );
   return <CompletionModalInner currentBlockIds={currentBlockIds} {...props} />;
 };

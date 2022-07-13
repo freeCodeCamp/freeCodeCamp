@@ -40,7 +40,10 @@ import {
 } from '../../../redux/prop-types';
 import { editorToneOptions } from '../../../utils/tone/editor-config';
 import { editorNotes } from '../../../utils/tone/editor-notes';
-import { challengeTypes, isProject } from '../../../../utils/challenge-types';
+import {
+  challengeTypes,
+  isFinalProject
+} from '../../../../utils/challenge-types';
 import {
   canFocusEditorSelector,
   challengeMetaSelector,
@@ -430,7 +433,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       /* eslint-disable no-bitwise */
       keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter],
       run: () => {
-        if (props.usesMultifileEditor && !isProject(props.challengeType)) {
+        if (props.usesMultifileEditor && !isFinalProject(props.challengeType)) {
           if (challengeIsComplete()) {
             tryToSubmitChallenge();
           } else {

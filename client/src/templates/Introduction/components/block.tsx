@@ -18,7 +18,7 @@ import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
 import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import { isNewJsCert, isNewRespCert } from '../../../utils/is-a-cert';
-import { isProject } from '../../../../utils/challenge-types';
+import { isFinalProject } from '../../../../utils/challenge-types';
 import Challenges from './challenges';
 import '../intro.css';
 
@@ -123,7 +123,7 @@ export class Block extends Component<BlockProps> {
     const isProjectBlock = challenges.some(({ challenge }) => {
       const isTakeHomeProject = blockDashedName === 'take-home-projects';
 
-      return isProject(challenge.challengeType) && !isTakeHomeProject;
+      return isFinalProject(challenge.challengeType) && !isTakeHomeProject;
     });
 
     const blockIntroObj: { title?: string; intro: string[] } = t(
