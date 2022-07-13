@@ -1,7 +1,7 @@
 ---
 id: 5900f49a1000cf542c50ffac
 title: 'Problema 300: Folding delle proteine'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301954
 dashedName: problem-300-protein-folding
 ---

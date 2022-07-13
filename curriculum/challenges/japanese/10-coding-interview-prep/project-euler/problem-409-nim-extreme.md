@@ -1,7 +1,7 @@
 ---
 id: 5900f5061000cf542c510017
 title: '問題 409: 極端なニム (石取りゲーム)'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302077
 dashedName: problem-409-nim-extreme
 ---

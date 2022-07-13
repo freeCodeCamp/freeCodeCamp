@@ -20,7 +20,7 @@ The Redux `store` is an object which holds and manages application `state`. Ther
 
 Declare a `store` variable and assign it to the `createStore()` method, passing in the `reducer` as an argument.
 
-**Note:** The code in the editor uses ES6 default argument syntax to initialize this state to hold a value of `5`. If you're not familiar with default arguments, you can refer to the <a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/set-default-parameters-for-your-functions" target="_blank" rel="noopener noreferrer nofollow">ES6 section in the Curriculum</a> which covers this topic.
+**Note:** The code in the editor uses ES6 default argument syntax to initialize this state to hold a value of `5`. If you're not familiar with default arguments, you can refer to the <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/es6/set-default-parameters-for-your-functions" target="_blank" rel="noopener noreferrer nofollow">ES6 section in the Curriculum</a> which covers this topic.
 
 # --hints--
 

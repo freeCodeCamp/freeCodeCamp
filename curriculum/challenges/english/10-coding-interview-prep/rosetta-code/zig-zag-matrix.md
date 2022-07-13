@@ -1,7 +1,7 @@
 ---
 id: 594810f028c0303b75339ad8
 title: Zig-zag matrix
-challengeType: 5
+challengeType: 1
 forumTopicId: 302348
 dashedName: zig-zag-matrix
 ---

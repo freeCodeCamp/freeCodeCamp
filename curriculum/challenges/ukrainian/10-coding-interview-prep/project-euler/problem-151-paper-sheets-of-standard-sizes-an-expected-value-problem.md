@@ -1,7 +1,7 @@
 ---
 id: 5900f4031000cf542c50ff16
 title: 'Завдання 151. Аркуші стандартних розмірів: середня очікувана кількість'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301782
 dashedName: problem-151-paper-sheets-of-standard-sizes-an-expected-value-problem
 ---

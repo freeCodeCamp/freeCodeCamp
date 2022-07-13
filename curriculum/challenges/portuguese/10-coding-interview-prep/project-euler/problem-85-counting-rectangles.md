@@ -1,7 +1,7 @@
 ---
 id: 5900f3c11000cf542c50fed4
 title: 'Problema 85: Contagem de retângulos'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302199
 dashedName: problem-85-counting-rectangles
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5900f45f1000cf542c50ff71
 title: 'Problem 242: Odd Triplets'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301889
 dashedName: problem-242-odd-triplets
 ---

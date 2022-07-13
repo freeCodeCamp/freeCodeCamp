@@ -804,7 +804,8 @@
         "title": "Rosetta Code",
         "intro": [
           "Розвиньте свої навички творчого підходу до розв'язання проблем за допомогою завдань з базової бібліотеки Rosetta Code.",
-          "Ці завдання можуть виявитися важкими, але вони підштовхнуть ваше логічне мислення до нових висот."
+          "Ці завдання можуть виявитися важкими, але вони підштовхнуть ваше логічне мислення до нових висот.",
+          "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Attribute: Rosetta Code</a>"
         ]
       },
       "project-euler": {

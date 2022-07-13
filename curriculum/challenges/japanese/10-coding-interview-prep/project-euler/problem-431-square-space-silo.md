@@ -1,7 +1,7 @@
 ---
 id: 5900f51b1000cf542c51002e
 title: '問題 431: 空間が平方数であるサイロ'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302102
 dashedName: problem-431-square-space-silo
 ---

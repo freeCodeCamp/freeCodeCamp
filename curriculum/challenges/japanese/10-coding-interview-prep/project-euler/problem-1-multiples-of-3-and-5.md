@@ -1,7 +1,7 @@
 ---
 id: 5900f36e1000cf542c50fe80
 title: '問題 1: 3 と 5 の倍数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301722
 dashedName: problem-1-multiples-of-3-and-5
 ---

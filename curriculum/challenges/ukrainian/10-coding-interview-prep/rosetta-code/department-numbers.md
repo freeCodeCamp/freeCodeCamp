@@ -1,7 +1,7 @@
 ---
 id: 59f40b17e79dbf1ab720ed7a
 title: Номери відділів
-challengeType: 5
+challengeType: 1
 forumTopicId: 302249
 dashedName: department-numbers
 ---

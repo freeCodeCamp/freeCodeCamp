@@ -1,7 +1,7 @@
 ---
 id: 59e09e6d412c5939baa02d16
 title: Executar um algoritmo de Markov
-challengeType: 5
+challengeType: 1
 forumTopicId: 302260
 dashedName: execute-a-markov-algorithm
 ---

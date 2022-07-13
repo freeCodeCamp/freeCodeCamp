@@ -1,7 +1,7 @@
 ---
 id: 5900f3e51000cf542c50fef8
 title: 'Завдання 121: Призовий фонд гри з дисками'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301748
 dashedName: problem-121-disc-game-prize-fund
 ---

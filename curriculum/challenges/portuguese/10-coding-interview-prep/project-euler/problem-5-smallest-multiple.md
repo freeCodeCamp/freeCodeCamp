@@ -1,7 +1,7 @@
 ---
 id: 5900f3711000cf542c50fe84
 title: 'Problema 5: Menor múltiplo'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302160
 dashedName: problem-5-smallest-multiple
 ---

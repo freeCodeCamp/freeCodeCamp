@@ -1,7 +1,7 @@
 ---
 id: 5900f4531000cf542c50ff66
 title: 'Завдання 231: Розклад біномальних коефіцієнтів на прості множники'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301875
 dashedName: problem-231-the-prime-factorisation-of-binomial-coefficients
 ---

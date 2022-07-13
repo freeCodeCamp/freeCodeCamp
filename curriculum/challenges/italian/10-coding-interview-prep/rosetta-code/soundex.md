@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc8017
 title: Soundex
-challengeType: 5
+challengeType: 1
 forumTopicId: 302320
 dashedName: soundex
 ---

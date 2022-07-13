@@ -270,7 +270,7 @@ async (getUserInput) => {
 };
 ```
 
-Se all'oggetto sottoposto a `/api/check` manca `puzzle`, `coordinate` o `value`, il valore restituito sarà `{ error: Required field(s) missing }`
+Se all'oggetto sottoposto a `/api/check` manca `puzzle`, `coordinate` o `value`, il valore restituito sarà `{ error: 'Required field(s) missing' }`
 
 ```js
 async (getUserInput) => {

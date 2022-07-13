@@ -1,7 +1,7 @@
 ---
 id: 5900f3901000cf542c50fea3
 title: '問題 36: 2 種類の基数の回文'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302020
 dashedName: problem-36-double-base-palindromes
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5900f54a1000cf542c51005c
 title: 'Problema 477: Gioco della sequenza dei numeri'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302154
 dashedName: problem-477-number-sequence-game
 ---

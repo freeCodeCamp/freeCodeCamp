@@ -1,7 +1,7 @@
 ---
 id: 5900f4ab1000cf542c50ffbe
 title: 'Problema 319: Sequências limitadas'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301975
 dashedName: problem-319-bounded-sequences
 ---

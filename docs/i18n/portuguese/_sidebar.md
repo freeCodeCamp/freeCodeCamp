@@ -7,6 +7,7 @@
   - [Ajude na revisão de traduções](how-to-proofread-files.md)
 - **Contribuição de código**
   - [Configure o freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md)
+  - [Trabalhar na aplicação para dispositivos móveis](how-to-setup-freecodecamp-mobile-app-locally.md)
   - [Seguir as melhores práticas de programação](codebase-best-practices.md)
   - [Abrir um pull request](how-to-open-a-pull-request.md)
   - [Trabalhar em desafios de programação](how-to-work-on-coding-challenges.md)
@@ -28,9 +29,9 @@
 
 - **Manuais de Voo** (para Equipe & Moderadores)
   - [Manual do Moderador](moderator-handbook.md)
-  - [Language Lead Handbook](language-lead-handbook.md)
-  - [DevOps Handbook](devops.md)
-  - [Courses VSCode Extension](courses-vscode-extension.md)
+  - [Manual do líder do idioma](language-lead-handbook.md)
+  - [Manual do DevOps](devops.md)
+  - [Extensão do VSCode Courses](courses-vscode-extension.md)
 
 ---
 

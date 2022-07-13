@@ -1,7 +1,7 @@
 ---
 id: 59e0a8df964e4540d5abe599
 title: Esegui Brain****
-challengeType: 5
+challengeType: 1
 forumTopicId: 302261
 dashedName: execute-brain
 ---

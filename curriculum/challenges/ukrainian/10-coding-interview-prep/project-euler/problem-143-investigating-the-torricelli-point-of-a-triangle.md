@@ -1,7 +1,7 @@
 ---
 id: 5900f3fc1000cf542c50ff0e
 title: 'Завдання 143: Дослідження точок Торрічеллі'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301772
 dashedName: problem-143-investigating-the-torricelli-point-of-a-triangle
 ---

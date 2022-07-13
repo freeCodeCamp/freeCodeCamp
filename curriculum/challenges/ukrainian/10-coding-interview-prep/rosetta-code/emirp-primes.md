@@ -1,7 +1,7 @@
 ---
 id: 599d0ba974141b0f508b37d5
 title: Emirp primes (Прості числа Емірпа)
-challengeType: 5
+challengeType: 1
 forumTopicId: 302253
 dashedName: emirp-primes
 ---

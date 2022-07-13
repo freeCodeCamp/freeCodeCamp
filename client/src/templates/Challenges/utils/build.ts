@@ -110,7 +110,7 @@ function checkFilesErrors(challengeFiles: ChallengeFiles): ChallengeFiles {
 
 const buildFunctions = {
   [challengeTypes.js]: buildJSChallenge,
-  [challengeTypes.bonfire]: buildJSChallenge,
+  [challengeTypes.jsProject]: buildJSChallenge,
   [challengeTypes.html]: buildDOMChallenge,
   [challengeTypes.modern]: buildDOMChallenge,
   [challengeTypes.backend]: buildBackendChallenge,
@@ -322,7 +322,7 @@ export function challengeHasPreview({ challengeType }: ChallengeMeta) {
 export function isJavaScriptChallenge({ challengeType }: ChallengeMeta) {
   return (
     challengeType === challengeTypes.js ||
-    challengeType === challengeTypes.bonfire
+    challengeType === challengeTypes.jsProject
   );
 }
 

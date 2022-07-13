@@ -1,7 +1,7 @@
 ---
 id: 595608ff8bcd7a50bd490181
 title: Hailstone sequence
-challengeType: 5
+challengeType: 1
 forumTopicId: 302279
 dashedName: hailstone-sequence
 ---
