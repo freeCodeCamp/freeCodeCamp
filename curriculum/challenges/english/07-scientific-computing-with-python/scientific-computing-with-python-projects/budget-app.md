@@ -41,7 +41,7 @@ Besides the `Category` class, create a function (outside of the class) called `c
 
 The chart should show the percentage spent in each category passed in to the function. The percentage spent should be calculated only with withdrawals and not with deposits. Down the left side of the chart should be labels 0 - 100. The "bars" in the bar chart should be made out of the "o" character. The height of each bar should be rounded down to the nearest 10. The horizontal line below the bars should go two spaces past the final bar. Each category name should be written vertically below the bar. There should be a title at the top that says "Percentage spent by category".
 
-This function will be tested with up to four categories.
+This function will be tested with three categories.
 
 Look at the example output below very closely and make sure the spacing of the output matches the example exactly.
 
