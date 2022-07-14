@@ -73,6 +73,8 @@ export default function getRequestAuthorisation({
     const { origin } = getRedirectParams(req);
     const { path } = req;
     if (!isAllowedPath(path)) {
+      console.log('##### path:', path);
+      console.log('##### getting access token');
       const { accessToken, error, jwt } = getAccessTokenFromRequest(
         req,
         jwtSecret

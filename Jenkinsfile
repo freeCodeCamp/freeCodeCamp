@@ -117,7 +117,6 @@ pipeline {
                     #!/bin/bash
                     node --version
                     npm --version
-                    cat .env
                     git config --global url."https://git@".insteadOf git://
                     npm ci
                     npm run build
