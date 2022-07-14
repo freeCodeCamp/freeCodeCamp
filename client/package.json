@@ -27,7 +27,7 @@
     "develop": "cross-env NODE_OPTIONS=\"--max-old-space-size=5000\" gatsby develop --inspect=9230",
     "lint": "node ./i18n/schema-validation.js",
     "serve": "gatsby serve -p 8000",
-    "serve-ci": "serve -l 8000 -c ../serve.json public",
+    "serve-ci": "serve -l 8000 -c ./public/serve.json",
     "prestand-alone": "npm run prebuild",
     "stand-alone": "gatsby develop",
     "validate-keys": "ts-node --project ../tsconfig.json ../tools/scripts/lint/validate-keys"
