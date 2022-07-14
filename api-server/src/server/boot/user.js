@@ -105,7 +105,7 @@ function createReadSessionUser(app) {
       userId: queryUser.id
     });
 
-    console.log('########## userTokenArr', userToken);
+    console.log('########## userTokenArr', userTokenArr);
 
     const userToken = userTokenArr[0]?.id;
     let encodedUserToken;
