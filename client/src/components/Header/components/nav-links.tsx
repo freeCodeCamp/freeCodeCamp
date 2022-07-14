@@ -25,8 +25,8 @@ import {
   LangNames,
   LangCodes
 } from '../../../../../config/i18n/all-langs';
-import { hardGoTo as navigate } from '../../../redux';
-import { updateUserFlag } from '../../../redux/settings/settings-sagas';
+import { hardGoTo as navigate } from '../../../redux/actions';
+import { updateUserFlag } from '../../../redux/settings/actions';
 import createLanguageRedirect from '../../create-language-redirect';
 import { Link } from '../../helpers';
 import { Themes } from '../../settings/theme';

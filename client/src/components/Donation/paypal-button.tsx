@@ -8,8 +8,7 @@ import {
   defaultDonation
 } from '../../../../config/donation-settings';
 import envData from '../../../../config/env.json';
-import { signInLoadingSelector } from '../../redux';
-import { userSelector } from '../../redux/codeally-saga';
+import { userSelector, signInLoadingSelector } from '../../redux/selectors';
 import { Themes } from '../settings/theme';
 import PayPalButtonScriptLoader from './paypal-button-script-loader';
 

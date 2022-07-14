@@ -12,16 +12,17 @@ import {
 } from 'rxjs/operators';
 
 import { challengeTypes, submitTypes } from '../../../../utils/challenge-types';
-import { submitComplete } from '../../../redux';
-// TODO: change these 2 imports to common selectors file in respective dir
-import { isSignedInSelector, userSelector } from '../../../redux/codeally-saga';
+import {
+  submitComplete,
+  updateComplete,
+  updateFailed
+} from '../../../redux/actions';
+import { isSignedInSelector, userSelector } from '../../../redux/selectors';
 import { mapFilesToChallengeFiles } from '../../../utils/ajax';
 import { standardizeRequestBody } from '../../../utils/challenge-request-helpers';
 import postUpdate$ from '../utils/post-update';
 import { actionTypes } from './action-types';
 import { closeModal, updateSolutionFormValues } from './actions';
-// TODO: change these 2 imports to common actions file in respective dir
-import { updateComplete, updateFailed } from './current-challenge-saga';
 import {
   challengeFilesSelector,
   challengeMetaSelector,

@@ -18,12 +18,13 @@ import Portfolio from '../components/settings/portfolio';
 import Privacy from '../components/settings/privacy';
 import { Themes } from '../components/settings/theme';
 import UserToken from '../components/settings/user-token';
-import { signInLoadingSelector, hardGoTo as navigate } from '../redux';
+import { hardGoTo as navigate } from '../redux/actions';
 import {
+  signInLoadingSelector,
   userSelector,
   isSignedInSelector,
   userTokenSelector
-} from '../redux/codeally-saga';
+} from '../redux/selectors';
 import { User } from '../redux/prop-types';
 import {
   submitNewAbout,
@@ -35,7 +36,7 @@ import {
   updateMyKeyboardShortcuts,
   updateUserFlag,
   verifyCert
-} from '../redux/settings/settings-sagas';
+} from '../redux/settings/actions';
 
 const { apiLocation } = envData;
 

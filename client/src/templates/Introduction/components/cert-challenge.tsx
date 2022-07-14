@@ -11,10 +11,13 @@ import {
 } from '../../../../../config/certification-settings';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
-import { userFetchStateSelector, currentCertsSelector } from '../../../redux';
-import { isSignedInSelector } from '../../../redux/codeally-saga';
+import {
+  isSignedInSelector,
+  userFetchStateSelector,
+  currentCertsSelector
+} from '../../../redux/selectors';
 import { User, Steps } from '../../../redux/prop-types';
-import { verifyCert } from '../../../redux/settings/settings-sagas';
+import { verifyCert } from '../../../redux/settings/actions';
 import { certMap } from '../../../resources/cert-and-project-map';
 
 interface CertChallengeProps {

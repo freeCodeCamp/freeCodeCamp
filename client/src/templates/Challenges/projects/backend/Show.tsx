@@ -12,7 +12,7 @@ import { createSelector } from 'reselect';
 
 import Spacer from '../../../../components/helpers/spacer';
 import LearnLayout from '../../../../components/layouts/learn';
-import { isSignedInSelector } from '../../../../redux/codeally-saga';
+import { isSignedInSelector } from '../../../../redux/selectors';
 import {
   ChallengeMeta,
   ChallengeNode,

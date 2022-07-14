@@ -19,17 +19,14 @@ import CompletionModal from '../components/completion-modal';
 import GreenPass from '../../../assets/icons/green-pass';
 import HelpModal from '../components/help-modal';
 import Hotkeys from '../components/Hotkeys';
+import { hideCodeAlly, tryToShowCodeAlly } from '../../../redux/actions';
 import {
   completedChallengesSelector,
   partiallyCompletedChallengesSelector,
-  showCodeAllySelector
-} from '../../../redux';
-import {
+  showCodeAllySelector,
   isSignedInSelector,
-  hideCodeAlly,
-  tryToShowCodeAlly,
   userTokenSelector
-} from '../../../redux/codeally-saga';
+} from '../../../redux/selectors';
 import {
   challengeMounted,
   updateChallengeMeta,

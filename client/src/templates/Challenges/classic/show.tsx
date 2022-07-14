@@ -54,7 +54,7 @@ import {
   consoleOutputSelector,
   isChallengeCompletedSelector
 } from '../redux/selectors';
-import { savedChallengesSelector } from '../../../redux';
+import { savedChallengesSelector } from '../../../redux/selectors';
 import { getGuideUrl } from '../utils';
 import MultifileEditor from './multifile-editor';
 import DesktopLayout from './desktop-layout';

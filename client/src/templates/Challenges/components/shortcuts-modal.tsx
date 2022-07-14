@@ -7,8 +7,8 @@ import { createSelector } from 'reselect';
 
 import { closeModal } from '../redux/actions';
 import { isShortcutsModalOpenSelector } from '../redux/selectors';
-import { updateMyKeyboardShortcuts } from '../../../redux/settings/settings-sagas';
-import { userSelector } from '../../../redux/codeally-saga';
+import { updateMyKeyboardShortcuts } from '../../../redux/settings/actions';
+import { userSelector } from '../../../redux/selectors';
 import { User } from '../../../redux/prop-types';
 import KeyboardShortcutsSettings from '../../../components/settings/keyboard-shortcuts';
 

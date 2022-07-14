@@ -1,6 +1,5 @@
 import { challengeTypes } from '../../../../utils/challenge-types';
-// TODO: check if this selector can be moved here
-import { completedChallengesSelector } from '../../../redux';
+import { completedChallengesSelector } from '../../../redux/selectors';
 import { ns } from './action-types';
 
 export const currentTabSelector = state => state[ns].currentTab;

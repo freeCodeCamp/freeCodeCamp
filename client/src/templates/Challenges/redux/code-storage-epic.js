@@ -6,7 +6,7 @@ import store from 'store';
 import { isPoly, setContent } from '../../../../../utils/polyvinyl';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
-import { savedChallengesSelector } from '../../../redux';
+import { savedChallengesSelector } from '../../../redux/selectors';
 import { actionTypes as appTypes } from '../../../redux/action-types';
 import { actionTypes } from './action-types';
 import { noStoredCodeFound, storedCodeFound } from './actions';

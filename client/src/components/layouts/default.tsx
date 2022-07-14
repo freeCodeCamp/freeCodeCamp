@@ -16,12 +16,15 @@ import {
   fetchUser,
   onlineStatusChange,
   serverStatusChange,
+  executeGA
+} from '../../redux/actions';
+import {
+  isSignedInSelector,
+  userSelector,
   isOnlineSelector,
   isServerOnlineSelector,
-  userFetchStateSelector,
-  executeGA
-} from '../../redux';
-import { isSignedInSelector, userSelector } from '../../redux/codeally-saga';
+  userFetchStateSelector
+} from '../../redux/selectors';
 import { UserFetchState, User } from '../../redux/prop-types';
 import Flash from '../Flash';
 import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';

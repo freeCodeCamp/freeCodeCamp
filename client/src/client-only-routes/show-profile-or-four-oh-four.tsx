@@ -6,12 +6,12 @@ import { isBrowser } from '../../utils/index';
 import FourOhFour from '../components/FourOhFour';
 import Loader from '../components/helpers/loader';
 import Profile from '../components/profile/profile';
+import { fetchProfileForUser } from '../redux/actions';
 import {
+  usernameSelector,
   userByNameSelector,
-  userProfileFetchStateSelector,
-  fetchProfileForUser
-} from '../redux';
-import { usernameSelector } from '../redux/codeally-saga';
+  userProfileFetchStateSelector
+} from '../redux/selectors';
 import { User } from '../redux/prop-types';
 
 interface ShowProfileOrFourOhFourProps {

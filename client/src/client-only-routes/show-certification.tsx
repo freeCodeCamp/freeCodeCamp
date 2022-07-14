@@ -15,17 +15,15 @@ import { createFlashMessage } from '../components/Flash/redux';
 import { Loader, Spacer } from '../components/helpers';
 import RedirectHome from '../components/redirect-home';
 import { Themes } from '../components/settings/theme';
+import { showCert, executeGA, fetchProfileForUser } from '../redux/actions';
 import {
   showCertSelector,
   showCertFetchStateSelector,
-  showCert,
   userFetchStateSelector,
   isDonatingSelector,
-  executeGA,
   userByNameSelector,
-  fetchProfileForUser
-} from '../redux';
-import { usernameSelector } from '../redux/codeally-saga';
+  usernameSelector
+} from '../redux/selectors';
 import { UserFetchState, User } from '../redux/prop-types';
 import { certMap } from '../resources/cert-and-project-map';
 import certificateMissingMessage from '../utils/certificate-missing-message';

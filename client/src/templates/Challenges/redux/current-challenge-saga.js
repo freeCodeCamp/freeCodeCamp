@@ -1,9 +1,8 @@
-import { createAction } from 'redux-actions';
 import { put, takeEvery } from 'redux-saga/effects';
 import store from 'store';
 
 import { randomCompliment } from '../../../utils/get-words';
-import { actionTypes, CURRENT_CHALLENGE_KEY } from './action-types';
+import { CURRENT_CHALLENGE_KEY } from './action-types';
 import { updateSuccessMessage } from './actions';
 
 export function* currentChallengeSaga({ payload: id }) {
@@ -30,10 +29,6 @@ export function* currentChallengeSaga({ payload: id }) {
 export function* updateSuccessMessageSaga() {
   yield put(updateSuccessMessage(randomCompliment()));
 }
-
-// TODO: change these 2 to common actions file in respective dir
-export const updateComplete = createAction(actionTypes.updateComplete);
-export const updateFailed = createAction(actionTypes.updateFailed);
 
 export function createCurrentChallengeSaga(types) {
   return [

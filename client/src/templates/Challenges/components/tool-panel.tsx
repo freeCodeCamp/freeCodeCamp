@@ -14,8 +14,8 @@ import './tool-panel.css';
 import { openModal, executeChallenge } from '../redux/actions';
 import { challengeMetaSelector } from '../redux/selectors';
 
-import { saveChallenge } from '../../../redux';
-import { isSignedInSelector } from '../../../redux/codeally-saga';
+import { saveChallenge } from '../../../redux/actions';
+import { isSignedInSelector } from '../../../redux/selectors';
 
 const mapStateToProps = createSelector(
   challengeMetaSelector,

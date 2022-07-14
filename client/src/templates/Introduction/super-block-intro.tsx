@@ -15,13 +15,14 @@ import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/Login';
 import Map from '../../components/Map';
 import { Spacer } from '../../components/helpers';
+import { tryToShowDonationModal } from '../../redux/actions';
 import {
+  isSignedInSelector,
+  userSelector,
   currentChallengeIdSelector,
   userFetchStateSelector,
-  signInLoadingSelector,
-  tryToShowDonationModal
-} from '../../redux';
-import { isSignedInSelector, userSelector } from '../../redux/codeally-saga';
+  signInLoadingSelector
+} from '../../redux/selectors';
 import { MarkdownRemark, AllChallengeNode, User } from '../../redux/prop-types';
 import Block from './components/block';
 import CertChallenge from './components/cert-challenge';

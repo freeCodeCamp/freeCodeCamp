@@ -10,8 +10,11 @@ import Intro from '../components/Intro';
 import Map from '../components/Map';
 import { Spacer } from '../components/helpers';
 import LearnLayout from '../components/layouts/learn';
-import { userFetchStateSelector } from '../redux';
-import { isSignedInSelector, userSelector } from '../redux/codeally-saga';
+import {
+  isSignedInSelector,
+  userSelector,
+  userFetchStateSelector
+} from '../redux/selectors';
 
 interface FetchState {
   pending: boolean;

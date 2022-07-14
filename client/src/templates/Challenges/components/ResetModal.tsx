@@ -7,7 +7,7 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 // Local Utilities
-import { executeGA } from '../../../redux';
+import { executeGA } from '../../../redux/actions';
 import { closeModal, resetChallenge } from '../redux/actions';
 import { isResetModalOpenSelector } from '../redux/selectors';
 

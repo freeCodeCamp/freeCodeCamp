@@ -6,9 +6,9 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
-import { userSelector } from '../../redux/codeally-saga';
+import { userSelector } from '../../redux/selectors';
 import type { ProfileUI } from '../../redux/prop-types';
-import { submitProfileUI } from '../../redux/settings/settings-sagas';
+import { submitProfileUI } from '../../redux/settings/actions';
 
 import FullWidthRow from '../helpers/full-width-row';
 import Spacer from '../helpers/spacer';
