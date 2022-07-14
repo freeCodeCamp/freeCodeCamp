@@ -1,7 +1,7 @@
 ---
 id: 5900f4b71000cf542c50ffca
 title: 'Problem 331: Cross flips'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301989
 dashedName: problem-331-cross-flips
 ---

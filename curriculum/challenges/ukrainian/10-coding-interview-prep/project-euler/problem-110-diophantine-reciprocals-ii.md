@@ -1,7 +1,7 @@
 ---
 id: 5900f3db1000cf542c50feed
 title: 'Задача 110: Діофантові обернені числа. Частина 2'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301735
 dashedName: problem-110-diophantine-reciprocals-ii
 ---

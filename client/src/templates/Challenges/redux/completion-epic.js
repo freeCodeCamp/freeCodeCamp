@@ -2,16 +2,10 @@ import { navigate } from 'gatsby';
 import { omit } from 'lodash-es';
 import { ofType } from 'redux-observable';
 import { empty, of } from 'rxjs';
-import {
-  catchError,
-  concat,
-  filter,
-  finalize,
-  retry,
-  switchMap
-} from 'rxjs/operators';
+import { catchError, concat, retry, switchMap, tap } from 'rxjs/operators';
 
 import { challengeTypes, submitTypes } from '../../../../utils/challenge-types';
+import { actionTypes as submitActionTypes } from '../../../redux/action-types';
 import {
   submitComplete,
   updateComplete,
@@ -159,7 +153,6 @@ export default function completionEpic(action$, state$) {
       const state = state$.value;
       const meta = challengeMetaSelector(state);
       const { nextChallengePath, challengeType, superBlock } = meta;
-      const closeChallengeModal = of(closeModal('completion'));
 
       let submitter = () => of({ type: 'no-user-signed-in' });
       if (
@@ -175,20 +168,23 @@ export default function completionEpic(action$, state$) {
         submitter = submitters[submitTypes[challengeType]];
       }
 
-      const pathToNavigateTo = async () => {
-        return await findPathToNavigateTo(nextChallengePath, superBlock);
+      const pathToNavigateTo = () => {
+        return findPathToNavigateTo(nextChallengePath, superBlock);
       };
 
       return submitter(type, state).pipe(
-        concat(closeChallengeModal),
-        filter(Boolean),
-        finalize(async () => navigate(await pathToNavigateTo()))
+        tap(res => {
+          if (res.type !== submitActionTypes.updateFailed) {
+            navigate(pathToNavigateTo());
+          }
+        }),
+        concat(of(closeModal('completion')))
       );
     })
   );
 }
 
-async function findPathToNavigateTo(nextChallengePath, superBlock) {
+function findPathToNavigateTo(nextChallengePath, superBlock) {
   if (nextChallengePath.includes(superBlock)) {
     return nextChallengePath;
   } else {

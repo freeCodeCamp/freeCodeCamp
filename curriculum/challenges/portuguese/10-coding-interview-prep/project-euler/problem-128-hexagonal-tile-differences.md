@@ -1,7 +1,7 @@
 ---
 id: 5900f3ec1000cf542c50feff
 title: 'Problema 128: Diferenças de blocos hexagonais'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301755
 dashedName: problem-128-hexagonal-tile-differences
 ---

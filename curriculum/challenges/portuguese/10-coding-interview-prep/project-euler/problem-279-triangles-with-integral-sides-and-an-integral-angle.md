@@ -1,7 +1,7 @@
 ---
 id: 5900f4841000cf542c50ff96
 title: 'Problema 279: Triângulos com lados e ângulo em números inteiros'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301929
 dashedName: problem-279-triangles-with-integral-sides-and-an-integral-angle
 ---

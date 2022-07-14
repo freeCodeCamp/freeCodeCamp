@@ -31,30 +31,9 @@ A função deve retornar um valor para a contagem e o texto (`Bet` ou `Hold`) co
 assert(//
   (function () {
     count = 0;
-    cc(2);
-    cc(2);
     let out = cc(10);
-    const hasSpace = /-?\d+ Bet/.test('' + out);
+    const hasSpace = /-?\d+ (Bet|Hold)/.test('' + out);
     return hasSpace;
-  })()
-);
-```
-
-A sequência de cartas 3, 2, A, 10, K deve retornar a string `-1 Hold`
-
-```js
-assert(
-  (function () {
-    count = 0;
-    cc(3);
-    cc(2);
-    cc('A');
-    cc(10);
-    var out = cc('K');
-    if (out === '-1 Hold') {
-      return true;
-    }
-    return false;
   })()
 );
 ```

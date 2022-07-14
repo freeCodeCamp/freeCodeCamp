@@ -10,7 +10,7 @@ dashedName: manage-a-book-trading-club
 
 **Objetivo:** criar uma aplicação que funcione de modo semelhante ao que vemos em: <a href="https://manage-a-book-trading-club.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://manage-a-book-trading-club.freecodecamp.rocks/</a>.
 
-Atenda às histórias de usuário abaixo e faça com que todos os testes passem. Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
+Atenda às histórias de usuário abaixo e faça com que todos os testes passem. Use quaisquer bibliotecas ou APIs de que você precisar. Dê ao projeto o seu próprio estilo pessoal.
 
 **História de usuário:** eu posso ver todos os livros publicados por todos os usuários.
 

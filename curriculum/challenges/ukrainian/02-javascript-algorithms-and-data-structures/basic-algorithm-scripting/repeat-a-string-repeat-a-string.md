@@ -1,7 +1,7 @@
 ---
 id: afcc8d540bea9ea2669306b6
 title: Повторіть рядок Повторення рядка
-challengeType: 5
+challengeType: 1
 forumTopicId: 16041
 dashedName: repeat-a-string-repeat-a-string
 ---

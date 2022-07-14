@@ -5,7 +5,7 @@
   "description": "Editor to help with new challenge structure",
   "scripts": {
     "start": "ts-node server.ts",
-    "postinstall": "cp ./sample.env ./.env"
+    "postinstall": "shx cp ./sample.env ./.env"
   },
   "author": "freeCodeCamp",
   "license": "BSD-3-Clause",
@@ -18,6 +18,7 @@
   "devDependencies": {
     "@types/express": "4.17.13",
     "dotenv": "16.0.1",
+    "shx": "0.3.4",
     "typescript": "4.7.4"
   }
 }

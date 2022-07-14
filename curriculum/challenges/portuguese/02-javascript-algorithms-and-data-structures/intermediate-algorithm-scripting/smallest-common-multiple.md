@@ -1,7 +1,7 @@
 ---
 id: ae9defd7acaf69703ab432ea
 title: Encontrar o menor múltiplo comum
-challengeType: 5
+challengeType: 1
 forumTopicId: 16075
 dashedName: smallest-common-multiple
 ---

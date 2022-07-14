@@ -1,7 +1,7 @@
 ---
 id: 5900f4cf1000cf542c50ffe1
 title: 'Problem 354: Distances in a bee''s honeycomb'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302014
 dashedName: problem-354-distances-in-a-bees-honeycomb
 ---

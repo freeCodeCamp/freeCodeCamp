@@ -1,7 +1,7 @@
 ---
 id: 5900f4931000cf542c50ffa5
 title: 'Problema 294: Somma delle cifre - esperienza #23'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301946
 dashedName: problem-294-sum-of-digits---experience-23
 ---

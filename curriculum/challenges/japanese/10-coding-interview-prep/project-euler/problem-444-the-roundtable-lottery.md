@@ -1,7 +1,7 @@
 ---
 id: 5900f52a1000cf542c51003b
 title: '問題 444: 円卓宝くじ'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302116
 dashedName: problem-444-the-roundtable-lottery
 ---

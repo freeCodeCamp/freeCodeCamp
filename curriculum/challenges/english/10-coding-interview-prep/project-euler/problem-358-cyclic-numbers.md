@@ -1,7 +1,7 @@
 ---
 id: 5900f4d21000cf542c50ffe5
 title: 'Problem 358: Cyclic numbers'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302018
 dashedName: problem-358-cyclic-numbers
 ---

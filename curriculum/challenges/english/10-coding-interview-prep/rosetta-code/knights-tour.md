@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7ed5
 title: Knight's tour
-challengeType: 5
+challengeType: 1
 forumTopicId: 302297
 dashedName: knights-tour
 ---

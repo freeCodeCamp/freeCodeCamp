@@ -1,7 +1,7 @@
 ---
 id: 5900f3d61000cf542c50fee7
 title: 'Problema 103: Somme speciali dei sottoinsiemi: ottimali'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301727
 dashedName: problem-103-special-subset-sums-optimum
 ---

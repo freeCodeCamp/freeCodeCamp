@@ -1,7 +1,7 @@
 ---
 id: 5900f5351000cf542c510047
 title: 'Problema 456: Triángulos que contienen el origen II'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302130
 dashedName: problem-456-triangles-containing-the-origin-ii
 ---

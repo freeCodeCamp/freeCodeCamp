@@ -1,7 +1,7 @@
 ---
 id: 5900f5171000cf542c510029
 title: 'Problema 426: sistema scatola palla'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302096
 dashedName: problem-426-box-ball-system
 ---

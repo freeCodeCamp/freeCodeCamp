@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7ede
 title: うるう年
-challengeType: 5
+challengeType: 1
 forumTopicId: 302300
 dashedName: leap-year
 ---

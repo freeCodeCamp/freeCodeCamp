@@ -1,7 +1,7 @@
 ---
 id: 5900f53b1000cf542c51004d
 title: '問題 462: 3-smooth 数の順列'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302137
 dashedName: problem-462-permutation-of-3-smooth-numbers
 ---

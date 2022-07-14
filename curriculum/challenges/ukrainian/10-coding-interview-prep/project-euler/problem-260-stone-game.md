@@ -1,7 +1,7 @@
 ---
 id: 5900f4701000cf542c50ff83
 title: 'Завдання 260: Гра в камені'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301909
 dashedName: problem-260-stone-game
 ---

@@ -9,7 +9,7 @@ dashedName: assignment-with-a-returned-value
 
 # --description--
 
-<a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank" rel="noopener noreferrer nofollow">「代入演算子を使用して値を格納する」</a>で説明したように、等号の右側の部分はすべて、値が代入される前に解決されます。 つまり、関数の戻り値を受け取って変数に代入することができます。
+<a href="/japanese/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank" rel="noopener noreferrer nofollow">「代入演算子を使用して値を格納する」</a>で説明したように、等号の右側の部分はすべて、値が代入される前に解決されます。 つまり、関数の戻り値を受け取って変数に代入することができます。
 
 2 つの数値を足し算する関数 `sum` があらかじめ定義されているとします。次の
 

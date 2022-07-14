@@ -1,7 +1,7 @@
 ---
 id: 5966f99c45e8976909a85575
 title: Giorno della settimana
-challengeType: 5
+challengeType: 1
 forumTopicId: 302245
 dashedName: day-of-the-week
 ---

@@ -12,7 +12,7 @@ dashedName: build-a-light-bright-app
 
 **Regra nº 1:** não olhe o código do projeto de exemplo. Descubra por conta própria.
 
-**Regra nº 2:** preencha as histórias de usuários abaixo e faça com que todos os testes passem. Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
+**Regra nº 2:** preencha as histórias de usuários abaixo e faça com que todos os testes passem. Use quaisquer bibliotecas ou APIs de que você precisar. Dê ao projeto o seu próprio estilo pessoal.
 
 **História de usuário:** posso clicar ou arrastar o cursor do mouse para colorir os círculos.
 

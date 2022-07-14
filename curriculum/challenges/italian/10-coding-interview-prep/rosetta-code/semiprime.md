@@ -1,7 +1,7 @@
 ---
 id: 5eb3e4aa847216613aa81983
 title: Semiprimi
-challengeType: 5
+challengeType: 1
 forumTopicId: 385318
 dashedName: semiprime
 ---

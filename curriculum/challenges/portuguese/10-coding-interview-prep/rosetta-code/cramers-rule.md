@@ -1,7 +1,7 @@
 ---
 id: 59713da0a428c1a62d7db430
 title: A regra de Cramer
-challengeType: 5
+challengeType: 1
 forumTopicId: 302239
 dashedName: cramers-rule
 ---

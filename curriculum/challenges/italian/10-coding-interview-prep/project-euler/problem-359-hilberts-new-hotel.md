@@ -1,7 +1,7 @@
 ---
 id: 5900f4d31000cf542c50ffe6
 title: 'Problema 359: Il nuovo Hotel di Hilbert'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302019
 dashedName: problem-359-hilberts-new-hotel
 ---

@@ -1,7 +1,7 @@
 ---
 id: afd15382cdfb22c9efe8b7de
 title: Parear DNA
-challengeType: 5
+challengeType: 1
 forumTopicId: 16009
 dashedName: dna-pairing
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5900f5171000cf542c510029
 title: '問題 426: 箱玉系'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302096
 dashedName: problem-426-box-ball-system
 ---

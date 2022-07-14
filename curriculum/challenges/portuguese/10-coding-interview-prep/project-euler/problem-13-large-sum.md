@@ -1,14 +1,14 @@
 ---
 id: 5900f37a1000cf542c50fe8c
 title: 'Problema 13: Soma grande'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301757
 dashedName: problem-13-large-sum
 ---
 
 # --description--
 
-Abaixo está um número de 150 algarismos. Após somar este número, retorne os 10 primeiros algarismos.
+Descubra os 10 primeiros algarismos da soma dos 100 números de 50 algarismos a seguir.
 
 <div style='padding-left: 4em;'>
   37107287533902102798797998220837590246510135740250<br>

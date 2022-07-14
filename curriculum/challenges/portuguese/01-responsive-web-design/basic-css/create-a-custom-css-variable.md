@@ -23,7 +23,7 @@ Na classe `penguin`, crie uma variável chamada `--penguin-skin` e atribua a ela
 
 # --hints--
 
-A classe `penguin` deve declarar a variável `--penguin-skin` e atribuí-la o valor de `gray`.
+A classe `penguin` deve declarar a variável `--penguin-skin` e atribuir a ela o valor `gray` (cinza).
 
 ```js
 assert(

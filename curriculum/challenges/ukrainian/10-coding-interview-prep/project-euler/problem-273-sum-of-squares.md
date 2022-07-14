@@ -1,7 +1,7 @@
 ---
 id: 5900f47e1000cf542c50ff90
 title: 'Завдання 273: Сума квадратів'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301923
 dashedName: problem-273-sum-of-squares
 ---

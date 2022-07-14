@@ -1,7 +1,7 @@
 ---
 id: 59694356a6e7011f7f1c5f4e
 title: Distribuir as cartas no Freecell
-challengeType: 5
+challengeType: 1
 forumTopicId: 302246
 dashedName: deal-cards-for-freecell
 ---
