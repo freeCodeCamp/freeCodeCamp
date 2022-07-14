@@ -72,7 +72,6 @@ export default function getRequestAuthorisation({
   return function requestAuthorisation(req, res, next) {
     const { origin } = getRedirectParams(req);
     const { path } = req;
-    console.log('######## requesting auth', path, isAllowedPath(path));
     if (!isAllowedPath(path)) {
       console.log('##### path:', path);
       console.log('##### getting access token');
@@ -80,7 +79,8 @@ export default function getRequestAuthorisation({
         req,
         jwtSecret
       );
-      console.log('##### get access token', accessToken, error);
+      console.log('##### access token ERROR', error);
+      console.log('##### got access token', accessToken);
       if (!accessToken && error === errorTypes.noTokenFound) {
         throw wrapHandledError(
           new Error('Access token is required for this request'),

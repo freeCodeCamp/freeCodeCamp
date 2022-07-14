@@ -96,11 +96,16 @@ function createReadSessionUser(app) {
   const { Donation } = app.models;
 
   return async function getSessionUser(req, res, next) {
+    console.log('########## getting user session');
     const queryUser = req.user;
+
+    console.log('########## req.user', req.user);
 
     const userTokenArr = await queryUser.userTokens({
       userId: queryUser.id
     });
+
+    console.log('########## userTokenArr', userToken);
 
     const userToken = userTokenArr[0]?.id;
     let encodedUserToken;
@@ -143,20 +148,24 @@ function createReadSessionUser(app) {
             partiallyCompletedChallenges,
             progress,
             savedChallenges
-          }) => ({
-            user: {
-              ...queryUser.toJSON(),
-              ...progress,
-              completedChallenges: completedChallenges.map(
-                fixCompletedChallengeItem
-              ),
-              partiallyCompletedChallenges: partiallyCompletedChallenges.map(
-                fixPartiallyCompletedChallengeItem
-              ),
-              savedChallenges: savedChallenges.map(fixSavedChallengeItem)
-            },
-            sessionMeta: { activeDonations }
-          })
+          }) => {
+            console.debug('######## retrieved user', queryUser);
+            console.debug('######## retrieved progress', progress);
+            return {
+              user: {
+                ...queryUser.toJSON(),
+                ...progress,
+                completedChallenges: completedChallenges.map(
+                  fixCompletedChallengeItem
+                ),
+                partiallyCompletedChallenges: partiallyCompletedChallenges.map(
+                  fixPartiallyCompletedChallengeItem
+                ),
+                savedChallenges: savedChallenges.map(fixSavedChallengeItem)
+              },
+              sessionMeta: { activeDonations }
+            };
+          }
         )
         .map(({ user, sessionMeta }) => ({
           user: {
