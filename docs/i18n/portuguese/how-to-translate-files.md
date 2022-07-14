@@ -125,7 +125,7 @@ Nossa interface `/learn` depende de arquivos JSON carregados em um plugin i18n p
 
 Os arquivos `links.json`, `meta-tags.json`, `motivation.json` e `trending.json` contêm informações que precisam ser atualizadas para refletirem em seu idioma. No entanto, não podemos carregá-los no Crowdin, já que seu conteúdo não seria uma tradução direta.
 
-These files will most likely be maintained by your language lead but you are welcome to [read about how to translate them](language-lead-handbook.md).
+Esses arquivos provavelmente serão atualizados pelo líder do seu idioma, mas fique à vontade para [ler sobre como os traduzimos](language-lead-handbook.md).
 
 ### No Crowdin
 

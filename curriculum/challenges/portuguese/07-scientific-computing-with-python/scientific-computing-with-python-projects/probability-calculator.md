@@ -37,7 +37,7 @@ Em seguida, crie uma função`experiment`em `prob_calculator.py` (não dentro da
 
 A função `experiment` deve retornar uma probabilidade.
 
-Por exemplo, digamos que você quer determinar a probabilidade de obter pelo menos 2 bolas vermelhas e 1 bola verde ao retirar 5 bolas de um chapéu contendo 6 bolas pretas, 4 vermelhas, e 3 verdes. Para fazer isso, realizamos `N` experimentos, contamos quantas vezes `M` nós obtivemos pelo menos 2 bolas vermelhas e 1 bola verde, e estimamos a probabilidade como `M/N`. Cada experimento consiste em começar com um chapéu contendo as bolas especificadas, retirar várias bolas e verificar se retiramos as bolas que estávamos tentando retirar.
+Por exemplo, se você quer determinar a probabilidade de obter pelo menos duas bolas vermelhas e uma bola verde ao retirar cinco bolas de um chapéu contendo seis bolas pretas, quatro vermelhas e três verdes. Para fazer isso, você realiza `N` experimentos, conta quantas vezes `M` você obtém pelo menos duas bolas vermelhas e uma bola verde e estima a probabilidade como `M/N`. Cada experimento consiste em começar com um chapéu contendo as bolas especificadas, retirar várias bolas e verificar se retirou as bolas que estava tentando retirar.
 
 Veja como você chamaria a função `experiment` com base no exemplo acima de 2.000 experimentos:
 

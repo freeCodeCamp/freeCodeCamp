@@ -41,16 +41,23 @@ exports.challengeTypes = {
   multifileCertProject
 };
 
-exports.isProject = challengeType => {
+exports.isFinalProject = challengeType => {
   if (typeof challengeType !== 'number')
     throw Error('challengeType must be a number');
   return (
     challengeType === frontEndProject ||
     challengeType === backEndProject ||
+    challengeType === jsProject ||
     challengeType === pythonProject ||
     challengeType === codeAllyCert ||
     challengeType === multifileCertProject
   );
+};
+
+exports.isCodeAllyPractice = challengeType => {
+  if (typeof challengeType !== 'number')
+    throw Error('challengeType must be a number');
+  return challengeType === codeAllyPractice;
 };
 
 // turn challengeType to file ext
