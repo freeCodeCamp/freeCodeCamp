@@ -36,6 +36,8 @@ const {
   SHOW_NEW_CURRICULUM: showNewCurriculum
 } = process.env;
 
+console.log('** apiLocation', apiLocation);
+
 const locations = {
   homeLocation,
   apiLocation,
