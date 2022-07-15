@@ -1,5 +1,6 @@
 declare module '@freecodecamp/react-bootstrap';
 declare module '@freecodecamp/loop-protect';
+declare module '@freecodecamp/curriculum-helpers';
 declare module '@freecodecamp/strip-comments';
 declare module '@types/react-redux';
 declare module '@types/validator';
