@@ -25,7 +25,7 @@ jobs:
           path: client-config
 
       - name: Use Node.js 16.x
-        uses: actions/setup-node@eeb10cff27034e7acf239c5d29f62154018672fd # tag=v3
+        uses: actions/setup-node@2fddd8803e2f5c9604345a0b591c3020ee971a93 # tag=v3
         with:
           node-version: 16.x
           cache: 'npm'
@@ -107,7 +107,7 @@ jobs:
           sudo ln -s /opt/firefox/firefox /usr/bin/firefox
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@eeb10cff27034e7acf239c5d29f62154018672fd # tag=v3
+        uses: actions/setup-node@2fddd8803e2f5c9604345a0b591c3020ee971a93 # tag=v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
