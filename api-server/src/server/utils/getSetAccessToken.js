@@ -50,7 +50,6 @@ export function getAccessTokenFromRequest(req, jwtSecret = _jwtSecret) {
   try {
     token = jwt.verify(maybeToken, jwtSecret);
   } catch (err) {
-    // console.log('######### verification error', err);
     return {
       accessToken: null,
       error: errorTypes.invalidToken

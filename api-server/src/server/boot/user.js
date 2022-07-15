@@ -96,16 +96,11 @@ function createReadSessionUser(app) {
   const { Donation } = app.models;
 
   return async function getSessionUser(req, res, next) {
-    console.log('########## getting user session');
     const queryUser = req.user;
-
-    console.log('########## req.user', req.user);
 
     const userTokenArr = await queryUser.userTokens({
       userId: queryUser.id
     });
-
-    console.log('########## userTokenArr', userTokenArr);
 
     const userToken = userTokenArr[0]?.id;
     let encodedUserToken;
@@ -149,8 +144,6 @@ function createReadSessionUser(app) {
             progress,
             savedChallenges
           }) => {
-            console.debug('######## retrieved user', queryUser);
-            console.debug('######## retrieved progress', progress);
             return {
               user: {
                 ...queryUser.toJSON(),
