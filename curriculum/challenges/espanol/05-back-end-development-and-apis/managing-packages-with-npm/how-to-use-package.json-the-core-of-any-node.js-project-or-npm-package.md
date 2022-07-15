@@ -14,7 +14,7 @@ Trabajar en estos desafíos implica escribir tu código usando uno de los siguie
 - Usa [nuestro proyecto modelo de Replit](https://replit.com/github/freeCodeCamp/boilerplate-npm) para completar estos retos.
 - Utiliza un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio de GitHub.
 
-Cuando hayas terminado, asegúrate de que un demo funcional de tu proyecto esté alojado en algún lugar público. Luego, envía la URL en el campo `Solution Link`. Opcionalmente, también envía un enlace al código fuente de tu proyecto en el campo `GitHub Link`.
+Cuando hayas terminado, asegúrate de que un demo funcional de tu proyecto esté alojado en algún lugar público. Luego, envía la URL en el campo `Solution Link`.
 
 El archivo `package.json` es el centro de cualquier proyecto Node.js o paquete npm. Almacena información sobre tu proyecto, similar a cómo la sección &lt;head> de un documento HTML describe el contenido de una página web. Consiste en un único objeto JSON donde la información se almacena en pares clave-valor. Sólo hay dos campos obligatorios; "name" y "version", pero es una buena práctica proporcionar información adicional sobre tu proyecto que podría ser útil para futuros usuarios o mantenedores.
 
