@@ -29,7 +29,9 @@ if (env.BRANCH_NAME == 'main') {
     DEPLOY_ENV = 'PROD'
     LOGICAL_ENV = 'prod'
     IS_BUILD = true
-    IS_DEPLOY = false 
+    IS_DEPLOY = true 
+    IS_APP_DEPLOY = true
+    IS_API_DEPLOY = true  
     ENABLE_CACHE = true   
 }
 
