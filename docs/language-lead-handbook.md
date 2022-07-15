@@ -141,7 +141,7 @@ flexibleAlerts: {
 }
 ```
 
-Inside the object of the label property, before the `'/'` property, you would add a new property for your language, like `/i18n/<langauge>/`.
+Inside the object of the label property, before the `'/'` property, you would add a new property for your language, like `/i18n/<language>/`.
 
 For example, adding the translations for Portuguese would appear like this:
 
