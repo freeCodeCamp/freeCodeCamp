@@ -10,7 +10,6 @@ import {
   tryToShowDonationModal
 } from '../../redux';
 import DonateModal from '../Donation/donation-modal';
-import createRedirect from '../create-redirect';
 
 import './prism.css';
 import './prism-night.css';
@@ -42,8 +41,6 @@ const mapDispatchToProps = {
   tryToShowDonationModal
 };
 
-const RedirectEmailSignUp = createRedirect('/email-sign-up');
-
 type LearnLayoutProps = {
   isSignedIn?: boolean;
   fetchState: FetchState;
@@ -53,9 +50,7 @@ type LearnLayoutProps = {
 };
 
 function LearnLayout({
-  isSignedIn,
   fetchState,
-  user,
   tryToShowDonationModal,
   children
 }: LearnLayoutProps): JSX.Element {
@@ -75,10 +70,6 @@ function LearnLayout({
 
   if (fetchState.pending && !fetchState.complete) {
     return <Loader fullScreen={true} />;
-  }
-
-  if (isSignedIn && !user.acceptedPrivacyTerms) {
-    return <RedirectEmailSignUp />;
   }
 
   return (
