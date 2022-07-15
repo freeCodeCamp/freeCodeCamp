@@ -103,7 +103,6 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@freecodecamp/curriculum-helpers": "^1.0.1",
     "dotenv": "10.0.0",
     "invariant": "2.2.4"
   },
