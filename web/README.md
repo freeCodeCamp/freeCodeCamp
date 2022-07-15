@@ -26,7 +26,7 @@ http://localhost:3000/responsive-web-design
 
 is the curriculum data that is currently being used.
 
-## Things to Note : 
+## Things of Note
 
 Incremental static regeneration is working quite nicely. You can modify the curriculum data (in /curriculum-server/data/curriculum.json), refresh/reload your browser and the changes will be reflected.
 
