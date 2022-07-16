@@ -179,7 +179,8 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
 
   const i18nSuperBlock = t(`intro:${superBlock}.title`);
   const i18nTitle =
-    superBlock === SuperBlocks.CodingInterviewPrep
+    superBlock === SuperBlocks.CodingInterviewPrep ||
+    superBlock === SuperBlocks.Python
       ? i18nSuperBlock
       : t(`intro:misc-text.certification`, {
           cert: i18nSuperBlock
@@ -216,16 +217,17 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
                     />
                   </Fragment>
                 ))}
-                {superBlock !== SuperBlocks.CodingInterviewPrep && (
-                  <div>
-                    <CertChallenge
-                      certification={certification}
-                      superBlock={superBlock}
-                      title={title}
-                      user={user}
-                    />
-                  </div>
-                )}
+                {superBlock !== SuperBlocks.CodingInterviewPrep &&
+                  superBlock !== SuperBlocks.Python && (
+                    <div>
+                      <CertChallenge
+                        certification={certification}
+                        superBlock={superBlock}
+                        title={title}
+                        user={user}
+                      />
+                    </div>
+                  )}
               </div>
               {!isSignedIn && !signInLoading && (
                 <div>

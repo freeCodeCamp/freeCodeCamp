@@ -756,6 +756,22 @@
       }
     }
   },
+  "python": {
+    "title": "Python",
+    "intro": [
+      "freeCodeCamp has interactive Python?",
+      "PyScript"
+    ],
+    "note": "",
+    "blocks": {
+      "learn-python": {
+        "title": "Learn Python",
+        "intro": [
+          "Python python ipsum..."
+        ]
+      }
+    }
+  },
   "coding-interview-prep": {
     "title": "Coding Interview Prep",
     "intro": [

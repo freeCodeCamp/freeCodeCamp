@@ -27,7 +27,8 @@ const iconMap = {
   [SuperBlocks.DataAnalysisPy]: Analytics,
   [SuperBlocks.InfoSec]: Shield,
   [SuperBlocks.MachineLearningPy]: TensorflowIcon,
-  [SuperBlocks.CodingInterviewPrep]: Algorithm
+  [SuperBlocks.CodingInterviewPrep]: Algorithm,
+  [SuperBlocks.Python]: PythonIcon
 };
 
 const generateIconComponent = (

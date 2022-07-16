@@ -31,6 +31,7 @@ export enum SuperBlocks {
   DataAnalysisPy = 'data-analysis-with-python',
   InfoSec = 'information-security',
   MachineLearningPy = 'machine-learning-with-python',
+  Python = 'python',
   CodingInterviewPrep = 'coding-interview-prep'
 }
 

@@ -36,7 +36,8 @@ const superBlockToOrder = {
   'machine-learning-with-python': 9,
   'coding-interview-prep': 10,
   'responsive-web-design': 11,
-  'relational-database': 12
+  'relational-database': 12,
+  python: 13
 };
 
 /**
@@ -57,7 +58,8 @@ const superBlockNonAuditedOrder = {
   'machine-learning-with-python': 9,
   'coding-interview-prep': 10,
   '2022/responsive-web-design': 11,
-  'relational-database': 12
+  'relational-database': 12,
+  python: 13
 };
 
 const superBlockToNewOrder = {
@@ -103,7 +105,8 @@ const directoryToSuperblock = {
   '13-relational-databases': 'relational-database',
   '14-responsive-web-design-22': '2022/responsive-web-design',
   '15-javascript-algorithms-and-data-structures-22':
-    '2022/javascript-algorithms-and-data-structures'
+    '2022/javascript-algorithms-and-data-structures',
+  '16-python': 'python'
 };
 
 function getSuperBlockFromDir(dir) {

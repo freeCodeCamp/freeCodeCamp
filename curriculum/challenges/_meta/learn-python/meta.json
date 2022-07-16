@@ -1,0 +1,16 @@
+{
+  "name": "Learn Python",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "learn-python",
+  "order": 0,
+  "time": "",
+  "template": "",
+  "required": [],
+  "superBlock": "python",
+  "challengeOrder": [
+    [
+      "5d79353297c0ebb149ea9fed",
+      "Step 1"
+    ]
+  ]}

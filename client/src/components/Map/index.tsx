@@ -27,7 +27,7 @@ interface MapData {
 
 function createSuperBlockTitle(superBlock: SuperBlocks) {
   const superBlockTitle = i18next.t(`intro:${superBlock}.title`);
-  return superBlock === 'coding-interview-prep'
+  return superBlock === 'coding-interview-prep' || superBlock === 'python'
     ? superBlockTitle
     : i18next.t('learn.cert-map-estimates.certs', {
         title: superBlockTitle

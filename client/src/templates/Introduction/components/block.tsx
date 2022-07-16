@@ -91,7 +91,7 @@ export class Block extends Component<BlockProps> {
   renderBlockIntros(arr: string[]): JSX.Element {
     return (
       <div className='block-description'>
-        {arr.map((str, i) => (
+        {arr?.map((str, i) => (
           <p dangerouslySetInnerHTML={{ __html: str }} key={i} />
         ))}
       </div>
