@@ -146,7 +146,7 @@
     "redux-mock-store": "1.5.4",
     "redux-saga-test-plan": "4.0.5",
     "serve": "13.0.4",
-    "ts-node": "10.8.2",
+    "ts-node": "10.9.1",
     "webpack": "5.73.0",
     "webpack-cli": "4.10.0"
   }

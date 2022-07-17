@@ -13,7 +13,7 @@
     "cors": "2.8.5",
     "express": "4.18.1",
     "gray-matter": "4.0.3",
-    "ts-node": "10.8.2"
+    "ts-node": "10.9.1"
   },
   "devDependencies": {
     "@types/express": "4.17.13",
