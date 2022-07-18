@@ -127,9 +127,9 @@ export class Block extends Component<BlockProps> {
       const isTakeHomeProject = blockDashedName === 'take-home-projects';
 
       return (
-        isFinalProject(challenge.challengeType) &&
-        !isTakeHomeProject &&
-        isCodeAllyPractice(challenge.challengeType)
+        (isFinalProject(challenge.challengeType) ||
+          isCodeAllyPractice(challenge.challengeType)) &&
+        !isTakeHomeProject
       );
     });
 
