@@ -70,7 +70,7 @@ exports.createChallengePages = function (createPage) {
     } = challenge;
     // TODO: challengeType === 7 and isPrivate are the same, right? If so, we
     // should remove one of them.
-
+    console.debug('########## slug', slug);
     createPage({
       path: slug,
       component: getTemplateComponent(challengeType),
