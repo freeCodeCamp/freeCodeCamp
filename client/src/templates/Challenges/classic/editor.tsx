@@ -59,12 +59,14 @@ import {
 } from '../redux';
 import GreenPass from '../../../assets/icons/green-pass';
 import Code from '../../../assets/icons/code';
+import ExternalLink from '../../../assets/icons/link-external';
 import LowerJaw from './lower-jaw';
 
 import './editor.css';
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
+const currentYear = new Date().getFullYear();
 
 interface EditorProps {
   canFocus: boolean;
@@ -1111,7 +1113,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   const editorTheme = theme === Themes.Night ? 'vs-dark-custom' : 'vs-custom';
   return (
     <Suspense fallback={<Loader timeout={600} />}>
-      <span className='notranslate'>
+      <span className='notranslate editor-monaco-wrap'>
         <MonacoEditor
           editorDidMount={editorDidMount}
           editorWillMount={editorWillMount}
@@ -1120,6 +1122,16 @@ const Editor = (props: EditorProps): JSX.Element => {
           theme={editorTheme}
         />
       </span>
+      <div className='all-rights-link'>
+        <a
+          href='https://www.freecodecamp.org/'
+          target='_blank'
+          rel='noreferrer'
+        >
+          © {currentYear}, freeCodeCamp. All rights reserved.
+          <ExternalLink />
+        </a>
+      </div>
     </Suspense>
   );
 };
