@@ -28,7 +28,13 @@ Costruisci `myStr` su diverse righe concatenando queste due stringhe: `This is t
 
 # --hints--
 
-`myStr` dovrebbe avere un valore stringa `This is the first sentence. This is the second sentence.`
+`myStr` dovrebbe avere un singolo spazio tra le due stringhe.
+
+```js
+assert(/sentence\. This/.test(myStr));
+```
+
+Il valore di `myStr` dovrebbe essere la stringa `This is the first sentence. This is the second sentence.`
 
 ```js
 assert(myStr === 'This is the first sentence. This is the second sentence.');

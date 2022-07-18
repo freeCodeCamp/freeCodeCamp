@@ -8,17 +8,17 @@ dashedName: build-a-tribute-page
 
 # --description--
 
-**目标:** 构建一个应用，它在功能上类似于 <a href="https://tribute-page.freecodecamp.rocks" target="_blank">https://tribute-page.freecodecamp.rocks</a>
+**目标:** 构建一个功能类似于 <a href="https://tribute-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://tribute-page.freecodecamp.rocks</a> 的应用程序
 
 **用户需求:**
 
-1. 你的致敬页应该包含一个含有 `id="main"`的元素, 它应该包含所有其他元素
+1. 你的致敬页应该包含一个 `id` 为 `main` 的 `main` 元素，它应该包含所有其他元素
 1. 你的页面应该包含一个元素，它的属性 `id` 值为`title`,，元素中包含一个字符串（例如 text）描述致敬页的主题（例如 "Dr. Norman Borlaug"）
 1. 你应该有一个 `id` 为 `img-div` 的 `figure` 或 `div` 元素
 1. 在 `#img-div` 元素中，你应该看到一个 `id="image"` 的 `img` 元素
 1. 在`#img-div`元素内，你应该看到一个 `id="img-caption"` 的元素，其中包含对 `#img-div` 中图像的文本描述
 1. 你应该看到一个 `id="tribute-info"` 的元素，其中包含描述致敬页主题的文本内容
-1. 你应该看到一个 `id="tribute-link"` 的元素，它链接到一个包含有关致敬页主题额外信息的外部网页。 提示：你必须为元素提供 `target` 属性，并设置其为 `_blank`，以便可以在新选项卡中打开链接。
+1. 你应该看到一个 `id="tribute-link"` 的 `a` 元素，它链接到一个包含有关致敬页主题额外信息的外部网页。 提示：你必须为元素提供 `target` 属性，并设置其为 `_blank`，以便可以在新选项卡中打开链接。
 1. 你的 `#image` 应该使用 `max-width` 和 `height` 属性来响应式调整大小，相对于其父元素的宽度，但不超过其原始大小
 1. 你的 `img` 元素应该在其父元素内居中
 
@@ -207,14 +207,14 @@ assert(leftMargin - rightMargin < 6 && rightMargin - leftMargin < 6)
     <link
       href="https://fonts.googleapis.com/css?family=Pacifico"
       rel="stylesheet"
-      type="text/css"
+
     />
     <link
       href="https://fonts.googleapis.com/css?family=Lobster"
       rel="stylesheet"
-      type="text/css"
+
     />
-    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <link href="styles.css" rel="stylesheet" />
     <title>Tribute Page</title>
   </head>
   <body>

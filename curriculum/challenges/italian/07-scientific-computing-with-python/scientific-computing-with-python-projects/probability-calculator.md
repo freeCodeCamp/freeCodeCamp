@@ -37,7 +37,7 @@ Successivamente, crea una funzione `experiment` in `prob_calculator.py` (non all
 
 La funzione `experiment` dovrebbe restituire una probabilità.
 
-Ad esempio, diciamo che si vuole determinare la probabilità di ottenere almeno 2 palline rosse e 1 pallina verde quando si pescano 5 palline da un cappello contenente 6 nere, 4 rosse e 3 verdi. Per farlo, eseguiamo `N` esperimenti, contiamo quante volte `M` riceviamo almeno 2 palline rosse e 1 pallina verde, e stimiamo la probabilità come `M/N`. Ogni esperimento consiste nell'iniziare con un cappello contenente le palline specificate, pascare un certo numero di palline, e controllare se abbiamo ottenuto le palline che stavamo tentando di pescare.
+Per esempio, se vuoi determinare la probabilità di ottenere almeno due palline rosse e una verde quando estrai cinque palline da un cappello contenente sei palline nere, quattro rosse, e tre verdi. Per fare ciò, esegui `N` esperimenti, conti il numero `M` di estrazioni in cui ottieni almeno due palline rosse e una verde, e stimi la probabilità come `M/N`. Ogni esperimento consiste nell'iniziare con un cappello che contiene le palle specificate, estraendo svariate palline, e controllando se hai ottenuto le palle che stati cercando di ottenere.
 
 Ecco come verrebbe chiamata la funzione `experiment` basata sull'esempio sopra con 2000 esperimenti:
 
