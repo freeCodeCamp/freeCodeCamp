@@ -1084,7 +1084,10 @@ const Editor = (props: EditorProps): JSX.Element => {
       focusIfTargetEditor();
     }
 
-    if (props.initialTests) initTests(props.initialTests);
+    // Once a challenge has been completed, we don't want changes to the content
+    // to reset the tests since the user is already done with the challenge.
+    if (props.initialTests && !challengeIsComplete())
+      initTests(props.initialTests);
 
     if (hasEditableRegion() && editor) {
       if (props.isResetting) {
