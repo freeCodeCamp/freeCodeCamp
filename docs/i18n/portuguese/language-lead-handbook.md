@@ -92,6 +92,82 @@ Você pode converter de um formato para o outro cuidadosamente, alterando-o manu
 
 > [!TIP] Um novo fluxo de trabalho está sendo trabalhado. Será preciso alterar em apenas um lugar no futuro.
 
+## How to translate the info boxes headers in the documentation
+
+You can find these boxes all around the documentation:
+
+> [!NOTE] I am a note box
+
+> [!TIP] I am a tip box
+
+> [!WARNING] I am a warning box
+
+> [!ATTENTION] I am an attention box
+
+By default, their headers appear in English even in the translated docs.
+
+You can have the headers translated in the docs in your language by changing the file `docs/index.html`, in this way:
+
+Inside the `script` element there is an object, find the `flexibleAlerts` property, which has this shape:
+
+```js
+flexibleAlerts: {
+  note: {
+    label: {
+      '/': 'Note'
+    }
+  },
+  tip: {
+    label: {
+      '/': 'Tip'
+    }
+  },
+  warning: {
+    label: {
+      '/': 'Warning'
+    }
+  },
+  attention: {
+    label: {
+      '/': 'Attention'
+    }
+  }
+}
+```
+
+Inside the object of the label property, before the `'/'` property, you would add a new property for your language, like `/i18n/<language>/`.
+
+For example, adding the translations for Portuguese would appear like this:
+
+```js
+flexibleAlerts: {
+  note: {
+    label: {
+      '/i18n/portuguese/': 'Observação',
+      '/': 'Note'
+    }
+  },
+  tip: {
+    label: {
+      '/i18n/portuguese/': 'Dica',
+      '/': 'Tip'
+    }
+  },
+  warning: {
+    label: {
+      '/i18n/portuguese/': 'Aviso',
+      '/': 'Warning'
+    }
+  },
+  attention: {
+    label: {
+      '/i18n/portuguese/': 'Atenção',
+      '/': 'Attention'
+    }
+  }
+}
+```
+
 ## Como traduzir as citações motivacionais
 
 As citações motivacionais podem ser encontradas no [repositório de currículos](https://github.com/freeCodeCamp/freeCodeCamp/), no arquivo `/client/i18n/locales/<language>/motivation.json`.
