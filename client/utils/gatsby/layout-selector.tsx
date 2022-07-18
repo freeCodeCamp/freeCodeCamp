@@ -18,7 +18,7 @@ export default function layoutSelector({
   const {
     location: { pathname }
   } = props;
-  console.debug('############ Layout Selector location', location);
+  console.debug('############ Layout Selector props', props);
   console.debug('############ Layout Selector element', element);
   if (element.type === FourOhFourPage) {
     return (
