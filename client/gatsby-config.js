@@ -123,6 +123,14 @@ module.exports = {
         icon: 'src/assets/images/square_puck.png'
       }
     },
-    'gatsby-plugin-remove-serviceworker'
+    'gatsby-plugin-remove-serviceworker',
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: 'freecodecamp-mfe.topcoder-dev.com',
+        hostname: 'freecodecamp-mfe.topcoder-dev.com',
+        protocol: 'https'
+      }
+    }
   ]
 };

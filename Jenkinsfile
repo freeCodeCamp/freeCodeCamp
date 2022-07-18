@@ -136,7 +136,8 @@ pipeline {
                 //input(message: 'Hello World!', ok: 'Submit')
                 sh """
                 #!/bin/bash
-                ./master_deploy.sh -d CFRONT -e $DEPLOY_ENV -c $ENABLE_CACHE
+                #./master_deploy.sh -d CFRONT -e $DEPLOY_ENV -c $ENABLE_CACHE
+                gatsby-plugin-s3 deploy
                 """         
             }
         }
