@@ -38,7 +38,7 @@ Crie `myStr` a partir das strings `This is the start.` e `This is the end.` usan
 assert(/start\. This/.test(myStr));
 ```
 
-`myStr` deve ter o valor da string `This is the start. This is the end.`
+`myStr` deve ter como valor a string `This is the start. This is the end.`
 
 ```js
 assert(myStr === 'This is the start. This is the end.');

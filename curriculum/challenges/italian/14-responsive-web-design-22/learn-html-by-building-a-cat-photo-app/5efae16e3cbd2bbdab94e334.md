@@ -66,7 +66,7 @@ assert(
 );
 ```
 
-L'elemento `figcaption` dovrebbe avere il testo `Cats hate other cats.` Hai omesso una parola o hai refuso.
+Il testo dell'elemento `figcaption` dovrebbe essere `Cats hate other cats.` Hai omesso una parola o hai un refuso.
 
 ```js
 assert(
