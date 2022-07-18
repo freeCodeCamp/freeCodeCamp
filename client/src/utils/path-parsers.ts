@@ -6,7 +6,6 @@ const splitPath = (pathname: string): string[] =>
 
 export const isChallenge = (pathname: string): boolean => {
   const pathArray = splitPath(pathname);
-  console.debug('########## Path PArsers pathARray', pathArray);
   return (
     // learn/<superBlock>/<block>/<challenge>
     (pathArray.length === 4 && pathArray[0] === 'learn') ||
