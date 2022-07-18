@@ -122,25 +122,25 @@ pipeline {
                     git config --global url."https://git@".insteadOf git://
                     npm ci
                     npm run build
+                    npx --yes gatsby-plugin-s3 deploy
                     ls -lath
                 """
             }
         }
-        stage('appdeploy')    
-        {
-            //Deploying app
-            when { expression { IS_APP_DEPLOY } }
-            steps {
-                //Doing Deployment
-                echo "Deploying application"
-                //input(message: 'Hello World!', ok: 'Submit')
-                sh """
-                #!/bin/bash
-                #./master_deploy.sh -d CFRONT -e $DEPLOY_ENV -c $ENABLE_CACHE
-                npx --yes gatsby-plugin-s3 deploy
-                """         
-            }
-        }
+        // stage('appdeploy')    
+        // {
+        //     //Deploying app
+        //     when { expression { IS_APP_DEPLOY } }
+        //     steps {
+        //         //Doing Deployment
+        //         echo "Deploying application"
+        //         //input(message: 'Hello World!', ok: 'Submit')
+        //         sh """
+        //         #!/bin/bash
+        //         ./master_deploy.sh -d CFRONT -e $DEPLOY_ENV -c $ENABLE_CACHE
+        //         """         
+        //     }
+        // }
         stage('apideploy')    
         {
             //Deploying app

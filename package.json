@@ -102,8 +102,7 @@
     "test-tools": "jest tools",
     "test-utils": "jest utils",
     "test-ui-components": "jest tools/ui-components",
-    "prepare": "husky install",
-    "deploy": "gatsby-plugin-s3 deploy"
+    "prepare": "husky install"
   },
   "dependencies": {
     "dotenv": "10.0.0",
