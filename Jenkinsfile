@@ -137,7 +137,7 @@ pipeline {
                 sh """
                 #!/bin/bash
                 #./master_deploy.sh -d CFRONT -e $DEPLOY_ENV -c $ENABLE_CACHE
-                gatsby-plugin-s3 deploy
+                npx --yes gatsby-plugin-s3 deploy
                 """         
             }
         }
