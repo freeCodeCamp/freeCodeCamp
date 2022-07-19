@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import { toString, flow } from 'lodash-es';
 import i18next, { i18n } from 'i18next';
 import { format } from '../../../utils/format';
@@ -29,10 +30,10 @@ interface Context {
 type ProxyLogger = (msg: string) => void;
 
 type InitFrame = (
+  frameAlertText: () => string,
   frameInitiateDocument?: () => unknown,
-  frameLogDocument?: ProxyLogger,
+  frameLogDocument?: ProxyLogger
   // change alertText to function ()=> string
-  frameAlertText?: string
 ) => (frameContext: Context) => Context;
 
 // we use two different frames to make them all essentially pure functions
@@ -44,7 +45,9 @@ const testId = 'fcc-test-frame';
 export const projectPreviewId = 'fcc-project-preview-frame';
 
 // turn this into a function
-const iframeAlertText = i18next.t('misc.iframe-alert');
+const iframeAlertText = () => {
+  return i18next.t('misc.iframe-alert');
+};
 
 const DOCUMENT_NOT_FOUND_ERROR = 'document not found';
 
@@ -77,7 +80,9 @@ const createHeader = (id = mainPreviewId, alertText = iframeAlertText) => `
       }
       if (element && element.nodeName === 'A' && new URL(element.href).hash === '') {
         e.preventDefault();
-        window.parent.window.alert("${alertText}" + "(" + element.href + ")");
+        window.parent.window.alert("${
+          alertText || 'hello'
+        }" + "(" + element.href + ")");
       }
       if (element) {
         const href = element.getAttribute('href');
@@ -300,7 +305,7 @@ export const createTestFramer = (
 const createFramer = (
   document: Document,
   id: string,
-  alertText: string,
+  alertText: () => string,
   init: InitFrame,
   proxyLogger?: ProxyLogger,
   frameReady?: () => void,
@@ -311,5 +316,5 @@ const createFramer = (
     mountFrame(document, id),
     buildProxyConsole(proxyLogger),
     writeContentToFrame,
-    init(frameReady, proxyLogger, alertText)
+    init(alertText, frameReady, proxyLogger)
   );
