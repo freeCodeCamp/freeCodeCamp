@@ -3,23 +3,23 @@
 // // import { FormGroup, FormGroupProps } from '.';
 // import { FormGroup, FormGroupProps } from '.';
 
+// //  removed htmlfor because in newer version it isn't included
+
 // const story = {
 //   title: 'Example/FormGroup',
-// //   component: FormGroup,
+//   component: FormGroup,
 //   parameters: {
 //     controls: {
 //      include:{
-//         // 'htmlFor',
-//         // 'validationState',
-//         // 'bsSize',
-//         // 'className',
-//         // 'bsClass'
+//        'validationState',
+//         'bsSize',
+//         'className',
+//         'bsClass'
 //       }
 //     }
 //   },
 //   argTypes: {
 //     className: { control: { type: 'text' } },
-//     htmlFor: { control: { type: 'text' } },
 //     validationState: { action: ['success', 'warning', 'error', null] },
 //     bsClass: { control: { type: 'text' } },
 //     bsSize: { control: { type: ['lg', 'large', 'sm', 'small'] } },
@@ -32,7 +32,7 @@
 
 // export const Default = Template.bind({});
 // Default.args = {
-//   // default props go here
+//   children: 'FormGroup'
 // };
 
 // export default story;
