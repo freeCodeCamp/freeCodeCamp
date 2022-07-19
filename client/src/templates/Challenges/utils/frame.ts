@@ -31,6 +31,7 @@ type ProxyLogger = (msg: string) => void;
 type InitFrame = (
   frameInitiateDocument?: () => unknown,
   frameLogDocument?: ProxyLogger,
+  // change alertText to function ()=> string
   frameAlertText?: string
 ) => (frameContext: Context) => Context;
 
@@ -42,6 +43,7 @@ const testId = 'fcc-test-frame';
 // the project preview frame demos the finished project
 export const projectPreviewId = 'fcc-project-preview-frame';
 
+// turn this into a function
 const iframeAlertText = i18next.t('misc.iframe-alert');
 
 const DOCUMENT_NOT_FOUND_ERROR = 'document not found';
