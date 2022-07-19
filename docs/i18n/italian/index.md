@@ -12,7 +12,7 @@ Happy contributing.
 
 ## Curriculum
 
-Il nostro curriculum è curato dalla comunità globale freeCodeCamp. In questo modo, siamo in grado di incorporare conoscenze esperte da volontari come te.
+Il nostro curriculum è curato dalla comunità globale freeCodeCamp. This way, we are able to incorporate expert knowledge from volunteers like you.
 
 Puoi aiutare ad espandere e migliorare il curriculum. Puoi anche aggiornare le user story del progetto per spiegare meglio i concetti. E puoi migliorare i nostri test automatici in modo da poter testare più accuratamente il codice degli studenti.
 

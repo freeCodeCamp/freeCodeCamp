@@ -7,8 +7,8 @@
   - [Lavorare a correggere le risorse](how-to-proofread-files.md)
 - **Contribuire al codice**
   - [Imposta freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md)
-  - [Work on mobile app](how-to-setup-freecodecamp-mobile-app-locally.md)
-  - [Follow coding best practices](codebase-best-practices.md)
+  - [Lavorare sull'app mobile](how-to-setup-freecodecamp-mobile-app-locally.md)
+  - [Seguire le migliori pratiche di programmazione](codebase-best-practices.md)
   - [Open a pull request](how-to-open-a-pull-request.md)
   - [Work on coding challenges](how-to-work-on-coding-challenges.md)
   - [Work on practice projects](how-to-work-on-practice-projects.md)
