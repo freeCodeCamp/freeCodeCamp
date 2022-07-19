@@ -275,7 +275,7 @@
     "solution-link": "解決方案鏈接",
     "github-link": "GitHub 鏈接",
     "submit-and-go": "提交併訪問下一個挑戰",
-    "congratulations": "恭喜，你的代碼通過測試。提交你的代碼來完成當前步驟，並繼續到下一步。",
+    "congratulations": "Congratulations, your code passes. Submit your code to continue.",
     "i-completed": "我已經完成這個挑戰",
     "test-output": "你的測試輸出將在這裏顯示",
     "running-tests": "// 運行測試",

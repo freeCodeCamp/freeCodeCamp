@@ -275,7 +275,7 @@
     "solution-link": "Link alla soluzione",
     "github-link": "Link GitHub",
     "submit-and-go": "Invia e vai alla prossima sfida",
-    "congratulations": "Congratulazioni, il tuo codice è corretto. Invia il codice per completare questo step e passare quello successivo.",
+    "congratulations": "Congratulations, your code passes. Submit your code to continue.",
     "i-completed": "Ho completato questa sfida",
     "test-output": "Il risultato del tuo test andrà qui",
     "running-tests": "// test in corso",
