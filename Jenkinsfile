@@ -120,30 +120,27 @@ pipeline {
                     node --version
                     npm --version
                     git config --global url."https://git@".insteadOf git://
-                    pwd
-                    ls
                     npm ci
                     npm run build
-                    npx --yes gatsby-plugin-s3 deploy
                     ls -lath
                 """
             }
         }
-        // stage('appdeploy')    
-        // {
-        //     //Deploying app
-        //     when { expression { IS_APP_DEPLOY } }
-        //     steps {
-        //         //Doing Deployment
-        //         echo "Deploying application"
-        //         //input(message: 'Hello World!', ok: 'Submit')
-        //         sh """
-        //         #!/bin/bash
-        //         ./master_deploy.sh -d CFRONT -e $DEPLOY_ENV -c $ENABLE_CACHE
-        //         """         
-        //     }
-        // }
-        stage('apideploy')    
+        stage('appdeploy')
+        {
+            //Deploying app
+            when { expression { IS_APP_DEPLOY } }
+            steps {
+                //Doing Deployment
+                echo "Deploying application"
+                //input(message: 'Hello World!', ok: 'Submit')
+                sh """
+                #!/bin/bash
+                ./master_deploy.sh -d CFRONT -e $DEPLOY_ENV -c $ENABLE_CACHE
+                """
+            }
+        }
+        stage('apideploy')
         {
             //Deploying app
             when { expression { IS_API_DEPLOY } }
@@ -156,7 +153,7 @@ pipeline {
                 sed -i '/node_modules/d' ./.dockerignore
                 docker build -f docker/api/ECSDockerfile -t $APPNAME-api:latest .
                 ./master_deploy.sh -d ECS -e $DEPLOY_ENV -t latest -s ${LOGICAL_ENV}-${APPNAME}-appvar -i ${APPNAME}-api                
-                """         
+                """
             }
         }      
     }
