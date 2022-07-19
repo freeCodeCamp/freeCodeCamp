@@ -29,9 +29,9 @@ interface Context {
 type ProxyLogger = (msg: string) => void;
 
 type InitFrame = (
-  arg1?: () => unknown,
-  arg2?: ProxyLogger
-) => (ctx: Context) => Context;
+  frameInitiateDocument?: () => unknown,
+  frameLogDocument?: ProxyLogger
+) => (frameContext: Context) => Context;
 
 // we use two different frames to make them all essentially pure functions
 // main iframe is responsible rendering the preview and is where we proxy the
@@ -112,7 +112,7 @@ export const runTestInTestFrame = async function (
 
 const createFrame =
   (document: Document, id: string, alertText: string, title?: string) =>
-  (ctx: Context) => {
+  (frameContext: Context) => {
     const frame = document.createElement('iframe');
     frame.id = id;
     if (frame.contentWindow) {
@@ -122,53 +122,59 @@ const createFrame =
       frame.title = title;
     }
     return {
-      ...ctx,
+      ...frameContext,
       element: frame
     };
   };
 
 const hiddenFrameClassName = 'hide-test-frame';
-const mountFrame = (document: Document, id: string) => (ctx: Context) => {
-  const { element }: { element: HTMLIFrameElement } = ctx;
-  const oldFrame = document.getElementById(element.id) as HTMLIFrameElement;
-  if (oldFrame) {
-    element.className = oldFrame.className || hiddenFrameClassName;
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    oldFrame.parentNode!.replaceChild(element, oldFrame);
-    // only test frames can be added (and hidden) here, other frames must be
-    // added by react
-  } else if (id === testId) {
-    element.className = hiddenFrameClassName;
-    document.body.appendChild(element);
-  }
-  return {
-    ...ctx,
-    element,
-    document: element.contentDocument,
-    window: element.contentWindow
-  };
-};
-
-const buildProxyConsole = (proxyLogger?: ProxyLogger) => (ctx: Context) => {
-  // window does not exist if the preview is hidden, so we have to check.
-  if (proxyLogger && ctx?.window) {
-    const oldLog = ctx.window.console.log.bind(ctx.window.console);
-    ctx.window.console.log = function proxyConsole(...args: string[]) {
-      proxyLogger(args.map((arg: string) => utilsFormat(arg)).join(' '));
-      return oldLog(...(args as []));
+const mountFrame =
+  (document: Document, id: string) => (frameContext: Context) => {
+    const { element }: { element: HTMLIFrameElement } = frameContext;
+    const oldFrame = document.getElementById(element.id) as HTMLIFrameElement;
+    if (oldFrame) {
+      element.className = oldFrame.className || hiddenFrameClassName;
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      oldFrame.parentNode!.replaceChild(element, oldFrame);
+      // only test frames can be added (and hidden) here, other frames must be
+      // added by react
+    } else if (id === testId) {
+      element.className = hiddenFrameClassName;
+      document.body.appendChild(element);
+    }
+    return {
+      ...frameContext,
+      element,
+      document: element.contentDocument,
+      window: element.contentWindow
     };
-  }
-  return ctx;
-};
+  };
 
-const initTestFrame = (frameReady?: () => void) => (ctx: Context) => {
-  waitForFrame(ctx)
+const buildProxyConsole =
+  (proxyLogger?: ProxyLogger) => (frameContext: Context) => {
+    // window does not exist if the preview is hidden, so we have to check.
+    if (proxyLogger && frameContext?.window) {
+      const oldLog = frameContext.window.console.log.bind(
+        frameContext.window.console
+      );
+      frameContext.window.console.log = function proxyConsole(
+        ...args: string[]
+      ) {
+        proxyLogger(args.map((arg: string) => utilsFormat(arg)).join(' '));
+        return oldLog(...(args as []));
+      };
+    }
+    return frameContext;
+  };
+
+const initTestFrame = (frameReady?: () => void) => (frameContext: Context) => {
+  waitForFrame(frameContext)
     .then(async () => {
-      const { sources, loadEnzyme } = ctx;
+      const { sources, loadEnzyme } = frameContext;
       // provide the file name and get the original source
       const getUserInput = (fileName: string) =>
         toString(sources[fileName as keyof typeof sources]);
-      await ctx.document.__initTestFrame({
+      await frameContext.document.__initTestFrame({
         code: sources,
         getUserInput,
         loadEnzyme
@@ -178,18 +184,18 @@ const initTestFrame = (frameReady?: () => void) => (ctx: Context) => {
       }
     })
     .catch(handleDocumentNotFound);
-  return ctx;
+  return frameContext;
 };
 
 const initMainFrame =
-  (_: unknown, proxyLogger?: ProxyLogger) => (ctx: Context) => {
-    waitForFrame(ctx)
+  (_: unknown, proxyLogger?: ProxyLogger) => (frameContext: Context) => {
+    waitForFrame(frameContext)
       .then(() => {
         // Overwriting the onerror added by createHeader to catch any errors thrown
         // after the frame is ready. It has to be overwritten, as proxyLogger cannot
         // be added as part of createHeader.
 
-        ctx.window.onerror = function (msg) {
+        frameContext.window.onerror = function (msg) {
           if (typeof msg === 'string') {
             const string = msg.toLowerCase();
             if (string.includes('script error')) {
@@ -205,7 +211,7 @@ const initMainFrame =
         };
       })
       .catch(handleDocumentNotFound);
-    return ctx;
+    return frameContext;
   };
 
 function handleDocumentNotFound(err: string) {
@@ -214,14 +220,14 @@ function handleDocumentNotFound(err: string) {
   }
 }
 
-const initPreviewFrame = () => (ctx: Context) => ctx;
+const initPreviewFrame = () => (frameContext: Context) => frameContext;
 
-const waitForFrame = (ctx: Context) => {
+const waitForFrame = (frameContext: Context) => {
   return new Promise((resolve, reject) => {
-    if (!ctx.document) {
+    if (!frameContext.document) {
       reject(DOCUMENT_NOT_FOUND_ERROR);
-    } else if (ctx.document.readyState === 'loading') {
-      ctx.document.addEventListener('DOMContentLoaded', resolve);
+    } else if (frameContext.document.readyState === 'loading') {
+      frameContext.document.addEventListener('DOMContentLoaded', resolve);
     } else {
       resolve(null);
     }
@@ -238,9 +244,12 @@ function writeToFrame(content: string, frame: Document | null) {
   }
 }
 
-const writeContentToFrame = (ctx: Context) => {
-  writeToFrame(createHeader(ctx.element.id) + ctx.build, ctx.document);
-  return ctx;
+const writeContentToFrame = (frameContext: Context) => {
+  writeToFrame(
+    createHeader(frameContext.element.id) + frameContext.build,
+    frameContext.document
+  );
+  return frameContext;
 };
 
 export const createMainPreviewFramer = (
