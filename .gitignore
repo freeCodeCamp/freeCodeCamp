@@ -152,7 +152,7 @@ jspm_packages/
 chris.env
 
 # gatsby files
-#.cache/
+.cache/
 
 ### Netlify ###
 .netlify

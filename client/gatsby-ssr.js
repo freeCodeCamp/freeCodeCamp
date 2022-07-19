@@ -29,7 +29,6 @@ export const onRenderBody = ({
   setHeadComponents,
   setPostBodyComponents
 }) => {
-  console.debug('on render body', pathname);
   setHeadComponents(getheadTagComponents());
   setPostBodyComponents(getPostBodyComponents(pathname));
 };
