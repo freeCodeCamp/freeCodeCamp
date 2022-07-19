@@ -18,7 +18,7 @@ dashedName: build-a-tribute-page
 1. Dentro l'elemento `img-div`, dovresti vedere un elemento `img` con un corrispondente `id="image"`
 1. Dentro l'elemento `img-div`, dovresti vedere un elemento con un corrispondente attributo `id="img-caption"` che contiene contenuto testuale che descrive l'immagine mostrata in `img-div`
 1. Dovresti vedere un elemento con un corrispondente attributo `id="tribute-info"` che contiene contenuto testuale descrivente il soggetto della pagina tributo
-1. Dovresti vedere un elemento con un corrispondente attributo `id="tribute-link"` che linka ad un sito esterno che contiene informazioni aggiuntive sul soggetto della pagina tributo. Suggerimento: Devi dare al tuo elemento un attributo `target` e impostarlo a `_blank` per far si che il link apra in una scheda nuova
+1. Dovresti vedere un elemento `a` con un corrispondente attributo `id="tribute-link"` che linka a un sito esterno che contiene informazioni aggiuntive sul soggetto della pagina tributo. Suggerimento: Devi dare al tuo elemento un attributo `target` e impostarlo a `_blank` per far si che il link apra in una scheda nuova
 1. Il tio elemento `#image` dovrebbe usare le proprietà `max-width` e `height` per ridimensionarsi in maniera responsiva, relativa alla larghezza dell'elemento genitore senza eccedere la dimensione originale
 1. Il tuo elemento `img` dovrebbe essere centrato dentro il suo elemento genitore
 
