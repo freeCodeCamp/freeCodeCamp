@@ -12,7 +12,7 @@ As a reminder, this project is being built upon the following starter project on
 
 # --instructions--
 
-Within `tests/2_functional-tests.js`, in the `'Submit the surname "Vespucci" in the HTML form'` test (`// #5`), automate the following:
+Within `tests/2_functional-tests.js`, in the `'Submit the surname "Vespucci" in the HTML form'` test (`// #6`), automate the following:
 
 1.  Fill in the form with the surname `Vespucci`
 2.  Press the submit button
