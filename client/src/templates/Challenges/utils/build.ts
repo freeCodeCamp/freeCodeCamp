@@ -1,15 +1,57 @@
 import frameRunnerData from '../../../../../config/client/frame-runner.json';
 import testEvaluatorData from '../../../../../config/client/test-evaluator.json';
 import { challengeTypes } from '../../../../utils/challenge-types';
+import {
+  ChallengeFile as PropTypesChallengeFile,
+  ChallengeMeta
+} from '../../../redux/prop-types';
 import { concatHtml } from '../rechallenge/builders.js';
 import { getTransformers, embedFilesInHtml } from '../rechallenge/transformers';
 import {
   createTestFramer,
   runTestInTestFrame,
   createMainPreviewFramer,
-  createProjectPreviewFramer
+  createProjectPreviewFramer,
+  ProxyLogger,
+  TestRunnerConfig,
+  Context,
+  Source
 } from './frame';
 import createWorker from './worker-executor';
+
+const _concatHtml = ({
+  required,
+  template,
+  contents
+}: {
+  required: { src: string }[];
+  template?: string;
+  contents?: string;
+}): string => {
+  return concatHtml({ required, template, contents });
+};
+
+interface ChallengeFile extends PropTypesChallengeFile {
+  source: string;
+  index: string;
+  editableContents: string;
+}
+
+type ChallengeFiles = ChallengeFile[];
+
+interface BuildChallengeData extends Context {
+  challengeType: number;
+  challengeFiles: ChallengeFiles;
+  required: { src: string }[];
+  template: string;
+  url: string;
+}
+
+interface BuildOptions {
+  preview: boolean;
+  protect: boolean;
+  usesTestRunner: boolean;
+}
 
 const { filename: runner } = frameRunnerData;
 const { filename: testEvaluator } = testEvaluatorData;
@@ -20,8 +62,10 @@ const frameRunner = [
   }
 ];
 
-const applyFunction = fn =>
-  async function (file) {
+type ApplyFunctionProps = (file: ChallengeFile) => Promise<ChallengeFile>;
+
+const applyFunction =
+  (fn: ApplyFunctionProps) => async (file: ChallengeFile) => {
     try {
       if (file.error) {
         return file;
@@ -36,12 +80,12 @@ const applyFunction = fn =>
     }
   };
 
-const composeFunctions = (...fns) =>
+const composeFunctions = (...fns: ApplyFunctionProps[]) =>
   fns.map(applyFunction).reduce((f, g) => x => f(x).then(g));
 
-function buildSourceMap(challengeFiles) {
+function buildSourceMap(challengeFiles: ChallengeFiles): Source | undefined {
   // TODO: rename sources.index to sources.contents.
-  const source = challengeFiles.reduce(
+  const source: Source | undefined = challengeFiles?.reduce(
     (sources, challengeFile) => {
       sources.index += challengeFile.source || challengeFile.contents;
       sources.contents = sources.index;
@@ -49,12 +93,12 @@ function buildSourceMap(challengeFiles) {
       sources.editableContents += challengeFile.editableContents || '';
       return sources;
     },
-    { index: '', editableContents: '', original: {} }
+    { index: '', editableContents: '', original: {} } as Source
   );
   return source;
 }
 
-function checkFilesErrors(challengeFiles) {
+function checkFilesErrors(challengeFiles: ChallengeFiles): ChallengeFiles {
   const errors = challengeFiles
     .filter(({ error }) => error)
     .map(({ error }) => error);
@@ -75,14 +119,17 @@ const buildFunctions = {
   [challengeTypes.multifileCertProject]: buildDOMChallenge
 };
 
-export function canBuildChallenge(challengeData) {
+export function canBuildChallenge(challengeData: BuildChallengeData) {
   const { challengeType } = challengeData;
   return Object.prototype.hasOwnProperty.call(buildFunctions, challengeType);
 }
 
-export async function buildChallenge(challengeData, options) {
+export async function buildChallenge(
+  challengeData: BuildChallengeData,
+  options: BuildOptions
+) {
   const { challengeType } = challengeData;
-  let build = buildFunctions[challengeType];
+  const build = buildFunctions[challengeType];
   if (build) {
     return build(challengeData, options);
   }
@@ -96,7 +143,11 @@ const testRunners = {
   [challengeTypes.pythonProject]: getDOMTestRunner,
   [challengeTypes.multifileCertProject]: getDOMTestRunner
 };
-export function getTestRunner(buildData, runnerConfig, document) {
+export function getTestRunner(
+  buildData: BuildChallengeData,
+  runnerConfig: TestRunnerConfig,
+  document: Document
+) {
   const { challengeType } = buildData;
   const testRunner = testRunners[challengeType];
   if (testRunner) {
@@ -105,7 +156,10 @@ export function getTestRunner(buildData, runnerConfig, document) {
   throw new Error(`Cannot get test runner for challenge type ${challengeType}`);
 }
 
-function getJSTestRunner({ build, sources }, { proxyLogger, removeComments }) {
+function getJSTestRunner(
+  { build, sources }: BuildChallengeData,
+  { proxyLogger, removeComments }: TestRunnerConfig
+) {
   const code = {
     contents: sources.index,
     editableContents: sources.editableContents
@@ -113,86 +167,114 @@ function getJSTestRunner({ build, sources }, { proxyLogger, removeComments }) {
 
   const testWorker = createWorker(testEvaluator, { terminateWorker: true });
 
-  return (testString, testTimeout, firstTest = true) => {
-    return testWorker
-      .execute(
-        { build, testString, code, sources, firstTest, removeComments },
-        testTimeout
-      )
-      .on('LOG', proxyLogger).done;
+  type CreateWorker = ReturnType<typeof createWorker>;
+
+  interface TestWorker extends CreateWorker {
+    on: (event: string, listener: (...args: string[]) => void) => void;
+    done: () => void;
+  }
+
+  return (testString: string, testTimeout: number, firstTest = true) => {
+    const result = testWorker.execute(
+      { build, testString, code, sources, firstTest, removeComments },
+      testTimeout
+    ) as TestWorker;
+
+    result.on('LOG', proxyLogger);
+    return result.done;
   };
 }
 
-async function getDOMTestRunner(buildData, { proxyLogger }, document) {
-  await new Promise(resolve =>
+async function getDOMTestRunner(
+  buildData: BuildChallengeData,
+  { proxyLogger }: TestRunnerConfig,
+  document: Document
+) {
+  await new Promise<void>(resolve =>
     createTestFramer(document, proxyLogger, resolve)(buildData)
   );
-  return (testString, testTimeout) =>
+  return (testString: string, testTimeout: number) =>
     runTestInTestFrame(document, testString, testTimeout);
 }
 
 export function buildDOMChallenge(
-  { challengeFiles, required = [], template = '' },
+  { challengeFiles, required = [], template = '' }: BuildChallengeData,
   { usesTestRunner } = { usesTestRunner: false }
 ) {
   const finalRequires = [...required];
   if (usesTestRunner) finalRequires.push(...frameRunner);
 
-  const loadEnzyme = challengeFiles.some(
+  const loadEnzyme = challengeFiles?.some(
     challengeFile => challengeFile.ext === 'jsx'
   );
+
   const pipeLine = composeFunctions(...getTransformers());
-  const finalFiles = challengeFiles.map(pipeLine);
-  return Promise.all(finalFiles)
-    .then(checkFilesErrors)
-    .then(embedFilesInHtml)
-    .then(([challengeFiles, contents]) => {
-      return {
-        challengeType:
-          challengeTypes.html || challengeTypes.multifileCertProject,
-        build: concatHtml({
-          required: finalRequires,
-          template,
-          contents
-        }),
-        sources: buildSourceMap(challengeFiles),
-        loadEnzyme
-      };
-    });
+  const finalFiles = challengeFiles?.map(pipeLine);
+
+  if (finalFiles) {
+    return Promise.all(finalFiles)
+      .then(checkFilesErrors)
+      .then(embedFilesInHtml)
+      .then(([_challengeFiles, _contents]) => {
+        const challengeFiles = _challengeFiles as ChallengeFiles;
+        const contents = _contents as string;
+
+        return {
+          challengeType:
+            challengeTypes.html || challengeTypes.multifileCertProject,
+          build: _concatHtml({
+            required: finalRequires,
+            template,
+            contents
+          }),
+          sources: buildSourceMap(challengeFiles),
+          loadEnzyme
+        };
+      });
+  }
 }
 
-export function buildJSChallenge({ challengeFiles }, options) {
+export function buildJSChallenge(
+  { challengeFiles }: { challengeFiles: ChallengeFiles },
+  options: BuildOptions
+) {
   const pipeLine = composeFunctions(...getTransformers(options));
 
-  const finalFiles = challengeFiles.map(pipeLine);
-  return Promise.all(finalFiles)
-    .then(checkFilesErrors)
-    .then(challengeFiles => ({
-      challengeType: challengeTypes.js,
-      build: challengeFiles
-        .reduce(
-          (body, challengeFile) => [
-            ...body,
-            challengeFile.head,
-            challengeFile.contents,
-            challengeFile.tail
-          ],
-          []
-        )
-        .join('\n'),
-      sources: buildSourceMap(challengeFiles)
-    }));
+  const finalFiles = challengeFiles?.map(pipeLine);
+  if (finalFiles) {
+    return Promise.all(finalFiles)
+      .then(checkFilesErrors)
+      .then(challengeFiles => ({
+        challengeType: challengeTypes.js,
+        build: challengeFiles
+          .reduce(
+            (body, challengeFile) => [
+              ...body,
+              challengeFile.head,
+              challengeFile.contents,
+              challengeFile.tail
+            ],
+            [] as string[]
+          )
+          .join('\n'),
+        sources: buildSourceMap(challengeFiles)
+      }));
+  }
 }
 
-export function buildBackendChallenge({ url }) {
+export function buildBackendChallenge({ url }: BuildChallengeData) {
   return {
     challengeType: challengeTypes.backend,
-    build: concatHtml({ required: frameRunner }),
+    build: _concatHtml({ required: frameRunner }),
     sources: { url }
   };
 }
 
-export function updatePreview(buildData, document, proxyLogger) {
+export function updatePreview(
+  buildData: BuildChallengeData,
+  document: Document,
+  proxyLogger: ProxyLogger
+) {
   if (
     buildData.challengeType === challengeTypes.html ||
     buildData.challengeType === challengeTypes.multifileCertProject
@@ -205,7 +287,10 @@ export function updatePreview(buildData, document, proxyLogger) {
   }
 }
 
-export function updateProjectPreview(buildData, document) {
+export function updateProjectPreview(
+  buildData: BuildChallengeData,
+  document: Document
+) {
   if (
     buildData.challengeType === challengeTypes.html ||
     buildData.challengeType === challengeTypes.multifileCertProject
@@ -226,7 +311,7 @@ export function updateProjectPreview(buildData, document) {
   }
 }
 
-export function challengeHasPreview({ challengeType }) {
+export function challengeHasPreview({ challengeType }: ChallengeMeta) {
   return (
     challengeType === challengeTypes.html ||
     challengeType === challengeTypes.modern ||
@@ -234,13 +319,13 @@ export function challengeHasPreview({ challengeType }) {
   );
 }
 
-export function isJavaScriptChallenge({ challengeType }) {
+export function isJavaScriptChallenge({ challengeType }: ChallengeMeta) {
   return (
     challengeType === challengeTypes.js ||
     challengeType === challengeTypes.jsProject
   );
 }
 
-export function isLoopProtected(challengeMeta) {
-  return challengeMeta.superBlock !== 'Coding Interview Prep';
+export function isLoopProtected(challengeMeta: ChallengeMeta) {
+  return challengeMeta.superBlock !== 'coding-interview-prep';
 }
