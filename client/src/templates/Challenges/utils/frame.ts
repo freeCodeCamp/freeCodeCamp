@@ -30,7 +30,8 @@ type ProxyLogger = (msg: string) => void;
 
 type InitFrame = (
   frameInitiateDocument?: () => unknown,
-  frameLogDocument?: ProxyLogger
+  frameLogDocument?: ProxyLogger,
+  frameAlertText?: string
 ) => (frameContext: Context) => Context;
 
 // we use two different frames to make them all essentially pure functions
@@ -111,7 +112,7 @@ export const runTestInTestFrame = async function (
 };
 
 const createFrame =
-  (document: Document, id: string, alertText: string, title?: string) =>
+  (document: Document, id: string, title?: string) =>
   (frameContext: Context) => {
     const frame = document.createElement('iframe');
     frame.id = id;
@@ -304,9 +305,9 @@ const createFramer = (
   frameTitle?: string
 ) =>
   flow(
-    createFrame(document, id, alertText, frameTitle),
+    createFrame(document, id, frameTitle),
     mountFrame(document, id),
     buildProxyConsole(proxyLogger),
     writeContentToFrame,
-    init(frameReady, proxyLogger)
+    init(frameReady, proxyLogger, alertText)
   );
