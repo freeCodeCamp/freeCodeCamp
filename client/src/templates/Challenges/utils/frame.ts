@@ -83,8 +83,8 @@ const createHeader = (
         element = element.parentElement;
       }
       if (element && element.nodeName === 'A' && new URL(element.href).hash === '') {
-        ${linkText} = '(' + element.href + ')'
         e.preventDefault();
+        linkText = '(' + element.href + ')'
         window.parent.window.alert("${alertText(linkText)}" );
       }
       if (element) {
