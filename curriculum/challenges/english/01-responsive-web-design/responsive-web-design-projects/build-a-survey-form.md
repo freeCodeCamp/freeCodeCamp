@@ -35,84 +35,84 @@ Fulfill the user stories and pass all the tests below to complete this project. 
 
 # --hints--
 
-You should have an `h1` element with an `id` of `title`
+You should have an `h1` element with an `id` of `title`.
 
 ```js
 const el = document.getElementById('title')
 assert(!!el && el.tagName === 'H1')
 ```
 
-Your `#title` should not be empty
+Your `#title` should not be empty.
 
 ```js
 const el = document.getElementById('title')
 assert(!!el && el.innerText.length > 0)
 ```
 
-You should have a `p` element with an `id` of `description`
+You should have a `p` element with an `id` of `description`.
 
 ```js
 const el = document.getElementById('description')
 assert(!!el && el.tagName === 'P')
 ```
 
-Your `#description` should not be empty
+Your `#description` should not be empty.
 
 ```js
 const el = document.getElementById('description')
 assert(!!el && el.innerText.length > 0)
 ```
 
-You should have a `form` element with an `id` of `survey-form`
+You should have a `form` element with an `id` of `survey-form`.
 
 ```js
 const el = document.getElementById('survey-form')
 assert(!!el && el.tagName === 'FORM')
 ```
 
-You should have an `input` element with an `id` of `name`
+You should have an `input` element with an `id` of `name`.
 
 ```js
 const el = document.getElementById('name')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Your `#name` should have a `type` of `text`
+Your `#name` should have a `type` of `text`.
 
 ```js
 const el = document.getElementById('name')
 assert(!!el && el.type === 'text')
 ```
 
-Your `#name` should require input
+Your `#name` should require input.
 
 ```js
 const el = document.getElementById('name')
 assert(!!el && el.required)
 ```
 
-Your `#name` should be a descedant of `#survey-form`
+Your `#name` should be a descedant of `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #name')
 assert(!!el)
 ```
 
-You should have an `input` element with an `id` of `email`
+You should have an `input` element with an `id` of `email`.
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Your `#email` should have a `type` of `email`
+Your `#email` should have a `type` of `email`.
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.type === 'email')
 ```
 
-Your `#email` should require input
+Your `#email` should require input.
 
 ```js
 const el = document.getElementById('email')
@@ -126,56 +126,56 @@ const el = document.querySelector('#survey-form #email')
 assert(!!el)
 ```
 
-You should have an `input` element with an `id` of `number`
+You should have an `input` element with an `id` of `number`.
 
 ```js
 const el = document.getElementById('number')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Your `#number` should be a descedant of `#survey-form`
+Your `#number` should be a descedant of `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #number')
 assert(!!el)
 ```
 
-Your `#number` should have a `type` of `number`
+Your `#number` should have a `type` of `number`.
 
 ```js
 const el = document.getElementById('number')
 assert(!!el && el.type === 'number')
 ```
 
-Your `#number` should have a `min` attribute with a numeric value
+Your `#number` should have a `min` attribute with a numeric value.
 
 ```js
 const el = document.getElementById('number')
 assert(!!el && el.min && isFinite(el.min))
 ```
 
-Your `#number` should have a `max` attribute with a numeric value
+Your `#number` should have a `max` attribute with a numeric value.
 
 ```js
 const el = document.getElementById('number')
 assert(!!el && el.max && isFinite(el.max))
 ```
 
-You should have a `label` element with an `id` of `name-label`
+You should have a `label` element with an `id` of `name-label`.
 
 ```js
 const el = document.getElementById('name-label')
 assert(!!el && el.tagName === 'LABEL')
 ```
 
-You should have a `label` element with an `id` of `email-label`
+You should have a `label` element with an `id` of `email-label`.
 
 ```js
 const el = document.getElementById('email-label')
 assert(!!el && el.tagName === 'LABEL')
 ```
 
-You should have a `label` element with an `id` of `number-label`
+You should have a `label` element with an `id` of `number-label`.
 
 ```js
 const el = document.getElementById('number-label')
@@ -203,84 +203,84 @@ const el = document.getElementById('number-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Your `#name-label` should be a descedant of `#survey-form`
+Your `#name-label` should be a descedant of `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #name-label')
 assert(!!el)
 ```
 
-Your `#email-label` should be a descedant of `#survey-form`
+Your `#email-label` should be a descedant of `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #email-label')
 assert(!!el)
 ```
 
-Your `#number-label` should be a descedant of `#survey-form`
+Your `#number-label` should be a descedant of `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #number-label')
 assert(!!el)
 ```
 
-Your `#name` should have a `placeholder` attribute and value
+Your `#name` should have a `placeholder` attribute and value.
 
 ```js
 const el = document.getElementById('name')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-Your `#email` should have a `placeholder` attribute and value
+Your `#email` should have a `placeholder` attribute and value.
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-Your `#number` should have a `placeholder` attribute and value
+Your `#number` should have a `placeholder` attribute and value.
 
 ```js
 const el = document.getElementById('number')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-You should have a `select` field with an `id` of `dropdown`
+You should have a `select` field with an `id` of `dropdown`.
 
 ```js
 const el = document.getElementById('dropdown')
 assert(!!el && el.tagName === 'SELECT')
 ```
 
-Your `#dropdown` should have at least two selectable (not disabled) `option` elements
+Your `#dropdown` should have at least two selectable (not disabled) `option` elements.
 
 ```js
 const els = document.querySelectorAll('#dropdown option:not([disabled])')
 assert(els.length >= 2)
 ```
 
-Your `#dropdown` should be a descendant of `#survey-form`
+Your `#dropdown` should be a descendant of `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #dropdown')
 assert(!!el)
 ```
 
-You should have at least two `input` elements with a `type` of `radio` (radio buttons)
+You should have at least two `input` elements with a `type` of `radio` (radio buttons).
 
 ```js
 const els = document.querySelectorAll('input[type="radio"]')
 assert(els.length >= 2)
 ```
 
-You should have at least two radio buttons that are descendants of `#survey-form`
+You should have at least two radio buttons that are descendants of `#survey-form`.
 
 ```js
 const els = document.querySelectorAll('#survey-form input[type="radio"]')
 assert(els.length >= 2)
 ```
 
-All your radio buttons should have a `value` attribute and value
+All your radio buttons should have a `value` attribute and value.
 
 ```js
 const els1 = document.querySelectorAll('input[type="radio"]')
@@ -288,7 +288,7 @@ const els2 = document.querySelectorAll('input[type="radio"][value=""], input[typ
 assert(els1.length > 0 && els2.length === 0)
 ```
 
-All your radio buttons should have a `name` attribute and value
+All your radio buttons should have a `name` attribute and value.
 
 ```js
 const els1 = document.querySelectorAll('input[type="radio"]')
@@ -296,7 +296,7 @@ const els2 = document.querySelectorAll('input[type="radio"][name=""], input[type
 assert(els1.length > 0 && els2.length === 0)
 ```
 
-Every radio button group should have at least 2 radio buttons
+Every radio button group should have at least 2 radio buttons.
 
 ```js
 const radioButtons = document.querySelectorAll('input[type="radio"]');
@@ -318,14 +318,14 @@ groupKeys.forEach(key => {
 assert(groupKeys.length > 0)
 ```
 
-You should have at least two `input` elements with a `type` of `checkbox` (checkboxes) that are descendants of `#survey-form`
+You should have at least two `input` elements with a `type` of `checkbox` (checkboxes) that are descendants of `#survey-form`.
 
 ```js
 const els = document.querySelectorAll('#survey-form input[type="checkbox"]');
 assert(els.length >= 2)
 ```
 
-All your checkboxes inside `#survey-form` should have a `value` attribute and value
+All your checkboxes inside `#survey-form` should have a `value` attribute and value.
 
 ```js
 const els1 = document.querySelectorAll('#survey-form input[type="checkbox"]')
@@ -333,28 +333,28 @@ const els2 = document.querySelectorAll('#survey-form input[type="checkbox"][valu
 assert(els1.length > 0 && els2.length === 0)
 ```
 
-You should have at least one `textarea` element that is a descendant of `#survey-form`
+You should have at least one `textarea` element that is a descendant of `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form textarea')
 assert(!!el)
 ```
 
-You should have an `input` or `button` element with an `id` of `submit`
+You should have an `input` or `button` element with an `id` of `submit`.
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && (el.tagName === 'INPUT' || el.tagName === 'BUTTON'))
 ```
 
-Your `#submit` should have a `type` of `submit`
+Your `#submit` should have a `type` of `submit`.
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && el.type === 'submit')
 ```
 
-Your `#submit` should be a descendant of `#survey-form`
+Your `#submit` should be a descendant of `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #submit')
@@ -380,7 +380,7 @@ assert(!!el)
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Survey Form</title>
   </head>
   <body>
