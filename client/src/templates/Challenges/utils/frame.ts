@@ -59,11 +59,12 @@ const DOCUMENT_NOT_FOUND_ERROR = 'document not found';
 // window.onerror is added here to report any errors thrown during the building
 // of the frame.  React dom errors already appear in the console, so onerror
 // does not need to pass them on to the default error handler.
+const linkCater = '';
 
 const createHeader = (
   id = mainPreviewId,
   alertText = iframeAlertText,
-  linkText = ''
+  linkText = linkCater
 ) => `
   <base href='' />
   <script>
