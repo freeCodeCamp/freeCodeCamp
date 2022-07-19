@@ -78,8 +78,10 @@ const createHeader = (id = mainPreviewId, alertText = iframeAlertText) => `
         element = element.parentElement;
       }
       if (element && element.nodeName === 'A' && new URL(element.href).hash === '') {
+        linkText = '(' + element.href + ')'
+        const alert = (text) => '${alertText('')} ' + text;
         e.preventDefault();
-        window.parent.window.alert("${alertText('element.href')}" );
+        window.parent.window.alert("alertText(linkText)" );
       }
       if (element) {
         const href = element.getAttribute('href');
