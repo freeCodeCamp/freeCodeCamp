@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import { toString, flow } from 'lodash-es';
 import i18next, { i18n } from 'i18next';
 import { format } from '../../../utils/format';
@@ -30,9 +29,9 @@ interface Context {
 type ProxyLogger = (msg: string) => void;
 
 type InitFrame = (
-  frameAlertText: () => string,
   frameInitiateDocument?: () => unknown,
-  frameLogDocument?: ProxyLogger
+  frameLogDocument?: ProxyLogger,
+  frameAlertText?: (currentLink: string) => string
   // change alertText to function ()=> string
 ) => (frameContext: Context) => Context;
 
@@ -45,8 +44,8 @@ const testId = 'fcc-test-frame';
 export const projectPreviewId = 'fcc-project-preview-frame';
 
 // turn this into a function
-const iframeAlertText = () => {
-  return i18next.t('misc.iframe-alert');
+const iframeAlertText = (currentLink: string) => {
+  return i18next.t('misc.iframe-alert', { externalLink: currentLink });
 };
 
 const DOCUMENT_NOT_FOUND_ERROR = 'document not found';
@@ -61,7 +60,11 @@ const DOCUMENT_NOT_FOUND_ERROR = 'document not found';
 // of the frame.  React dom errors already appear in the console, so onerror
 // does not need to pass them on to the default error handler.
 
-const createHeader = (id = mainPreviewId, alertText = iframeAlertText) => `
+const createHeader = (
+  id = mainPreviewId,
+  alertText = iframeAlertText,
+  linkText = ''
+) => `
   <base href='' />
   <script>
     window.__frameId = '${id}';
@@ -79,10 +82,9 @@ const createHeader = (id = mainPreviewId, alertText = iframeAlertText) => `
         element = element.parentElement;
       }
       if (element && element.nodeName === 'A' && new URL(element.href).hash === '') {
+        ${linkText} = '(' + element.href + ')'
         e.preventDefault();
-        window.parent.window.alert("${
-          alertText || 'hello'
-        }" + "(" + element.href + ")");
+        window.parent.window.alert("${alertText(linkText)}" );
       }
       if (element) {
         const href = element.getAttribute('href');
@@ -305,7 +307,7 @@ export const createTestFramer = (
 const createFramer = (
   document: Document,
   id: string,
-  alertText: () => string,
+  alertText: (currentLink: string) => string,
   init: InitFrame,
   proxyLogger?: ProxyLogger,
   frameReady?: () => void,
@@ -316,5 +318,5 @@ const createFramer = (
     mountFrame(document, id),
     buildProxyConsole(proxyLogger),
     writeContentToFrame,
-    init(alertText, frameReady, proxyLogger)
+    init(frameReady, proxyLogger, alertText)
   );
