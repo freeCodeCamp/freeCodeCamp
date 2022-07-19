@@ -120,6 +120,8 @@ pipeline {
                     node --version
                     npm --version
                     git config --global url."https://git@".insteadOf git://
+                    pwd
+                    ls
                     npm ci
                     npm run build
                     npx --yes gatsby-plugin-s3 deploy
