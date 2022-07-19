@@ -275,7 +275,7 @@
     "solution-link": "回答のリンク",
     "github-link": "GitHub のリンク",
     "submit-and-go": "提出して次のチャレンジに進む",
-    "congratulations": "おめでとうございます、コードは合格です。このステップを完了して次に進むにはコードを提出してください。",
+    "congratulations": "Congratulations, your code passes. Submit your code to continue.",
     "i-completed": "このチャレンジを完了しました",
     "test-output": "テストの結果はこちらに表示されます",
     "running-tests": "// テストを実行中です",
