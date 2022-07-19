@@ -37,9 +37,12 @@
   --tc-link-blue-light: #5fb7ee;
   --tc-black: #000;
   --tc-black-100: #2a2a2a;
+  --tc-black-20: #d4d4d4;
   --tc-black-10: #e9e9e9;
   --tc-black-5: #f4f4f4;
   --tc-blue-140: #16679a;
+  --tc-blue-25: #bae1f9;
+  --tc-blue-10: #eaf6fd;
 }
 
 .dark-palette {

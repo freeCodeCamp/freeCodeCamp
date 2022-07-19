@@ -17,6 +17,7 @@
 .tool-panel-group-mobile {
   display: flex;
   flex-direction: row-reverse;
+  padding: 0 16px;
 }
 
 .tool-panel-group .btn-group {
@@ -36,7 +37,6 @@
 
 .tool-panel-group-mobile .btn-group {
   display: block;
-  width: 100%;
   margin: 0 2px;
 }
 
@@ -50,7 +50,8 @@
   width: calc(100% + 2px);
   text-align: center;
   min-width: 240px;
-  left: -1px;
+  left: auto;
+  right: -1px;
 }
 
 .tool-panel-group .dropdown-menu a {

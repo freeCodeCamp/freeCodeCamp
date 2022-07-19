@@ -1,9 +1,7 @@
-import { TabPane, Tabs } from '@freecodecamp/react-bootstrap';
-import i18next from 'i18next';
 import React, { Component, ReactElement } from 'react';
 
 import ToolPanel from '../components/tool-panel';
-import EditorTabs from './editor-tabs';
+import MobilePaneSelector, { Tab } from './mobile-pane-selector';
 
 interface MobileLayoutProps {
   editor: JSX.Element | null;
@@ -17,14 +15,6 @@ interface MobileLayoutProps {
   testOutput: JSX.Element;
   videoUrl: string;
   usesMultifileEditor: boolean;
-}
-
-enum Tab {
-  Editor = 'editor',
-  Preview = 'preview',
-  Console = 'console',
-  Notes = 'notes',
-  Instructions = 'instructions'
 }
 
 interface MobileLayoutState {
@@ -60,64 +50,28 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       usesMultifileEditor
     } = this.props;
 
-    const editorTabPaneProps = {
-      mountOnEnter: true,
-      unmountOnExit: true
-    };
-
     // Unlike the desktop layout the mobile version does not have an ActionRow,
     // but still needs a way to switch between the different tabs.
 
     return (
-      <>
-        <Tabs
-          activeKey={currentTab}
-          defaultActiveKey={currentTab}
-          id='challenge-page-tabs'
-          onSelect={this.switchTab}
-        >
-          {!hasEditableBoundaries && (
-            <TabPane
-              eventKey={Tab.Instructions}
-              title={i18next.t('learn.editor-tabs.info')}
-            >
-              {instructions}
-            </TabPane>
-          )}
-          <TabPane
-            eventKey={Tab.Editor}
-            title={i18next.t('learn.editor-tabs.code')}
-            {...editorTabPaneProps}
-          >
-            {usesMultifileEditor && <EditorTabs />}
-            {editor}
-          </TabPane>
-          <TabPane
-            eventKey={Tab.Console}
-            title={i18next.t('learn.editor-tabs.tests')}
-            {...editorTabPaneProps}
-          >
-            {testOutput}
-          </TabPane>
-          {hasNotes && usesMultifileEditor && (
-            <TabPane
-              eventKey={Tab.Notes}
-              title={i18next.t('learn.editor-tabs.notes')}
-            >
-              {notes}
-            </TabPane>
-          )}
-          {hasPreview && (
-            <TabPane
-              eventKey={Tab.Preview}
-              title={i18next.t('learn.editor-tabs.preview')}
-            >
-              {preview}
-            </TabPane>
-          )}
-        </Tabs>
+      <div id='challenge-page-tabs'>
+        <MobilePaneSelector
+          activePane={currentTab}
+          togglePane={this.switchTab}
+          hasEditableBoundaries={hasEditableBoundaries}
+          hasPreview={hasPreview}
+          hasNotes={hasNotes}
+          usesMultifileEditor={usesMultifileEditor}
+        />
+        <div className='tab-content'>
+          {currentTab === Tab.Editor && editor}
+          {currentTab === Tab.Instructions && instructions}
+          {currentTab === Tab.Console && testOutput}
+          {currentTab === Tab.Notes && notes}
+          {currentTab === Tab.Preview && preview}
+        </div>
         <ToolPanel guideUrl={guideUrl} isMobile={true} videoUrl={videoUrl} />
-      </>
+      </div>
     );
   }
 }
