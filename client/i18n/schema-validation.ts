@@ -20,18 +20,16 @@ const flattenAnObject = (obj: Record<string, unknown>, namespace = '') => {
   const flattened: Record<string, unknown> = {};
   Object.keys(obj).forEach(key => {
     const value = obj[key];
+    const field = namespace ? `${namespace}.${key}` : key;
     if (Array.isArray(value)) {
-      flattened[namespace ? `${namespace}.${key}` : key] = value;
+      flattened[field] = value;
     } else if (typeof value === 'object') {
       Object.assign(
         flattened,
-        flattenAnObject(
-          value as Record<string, unknown>,
-          namespace ? `${namespace}.${key}` : key
-        )
+        flattenAnObject(value as Record<string, unknown>, field)
       );
     } else {
-      flattened[namespace ? `${namespace}.${key}` : key] = value;
+      flattened[field] = value;
     }
   });
   return flattened;
@@ -94,19 +92,17 @@ const noEmptyObjectValues = (
   const emptyKeys = [];
   for (const key of Object.keys(obj)) {
     const value = obj[key];
+    const field = namespace ? `${namespace}.${key}` : key;
     if (Array.isArray(value)) {
       if (!value.length) {
-        emptyKeys.push(namespace ? `${namespace}.${key}` : key);
+        emptyKeys.push(field);
       }
     } else if (typeof value === 'object') {
       emptyKeys.push(
-        noEmptyObjectValues(
-          value as Record<string, unknown>,
-          namespace ? `${namespace}.${key}` : key
-        )
+        noEmptyObjectValues(value as Record<string, unknown>, field)
       );
     } else if (!value) {
-      emptyKeys.push(namespace ? `${namespace}.${key}` : key);
+      emptyKeys.push(field);
     }
   }
   return emptyKeys.flat();
