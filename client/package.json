@@ -25,7 +25,7 @@
     "clean": "gatsby clean",
     "predevelop": "npm --prefix ../ run create:config && npm run build:workers -- --env development",
     "develop": "cross-env NODE_OPTIONS=\"--max-old-space-size=5000\" gatsby develop --inspect=9230",
-    "lint": "node ./i18n/schema-validation.js",
+    "lint": "ts-node ./i18n/schema-validation.ts",
     "serve": "gatsby serve -p 8000",
     "serve-ci": "serve -l 8000 -c serve.json public",
     "prestand-alone": "npm run prebuild",
