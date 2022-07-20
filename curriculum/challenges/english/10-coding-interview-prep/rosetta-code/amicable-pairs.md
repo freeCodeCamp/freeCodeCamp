@@ -1,7 +1,7 @@
 ---
 id: 5949b579404977fbaefcd737
 title: Amicable pairs
-challengeType: 5
+challengeType: 1
 forumTopicId: 302225
 dashedName: amicable-pairs
 ---
@@ -19,7 +19,7 @@ Two integers $N$ and $M$ are said to be amicable pairs if $N \\neq M$ and the su
   <li>1, 2, 5, 10, 11, 22, 55, 110, 121, 242, 605 respectively.</li>
 </ul>
 
-The sum of the divisors for the first value, **1184**, is **1210** and the sum of the divisors for the second value, **1210**', is **1184**.
+The sum of the divisors for the first value, **1184**, is **1210** and the sum of the divisors for the second value, **1210**, is **1184**.
 
 # --instructions--
 

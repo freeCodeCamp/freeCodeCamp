@@ -1,7 +1,7 @@
 ---
 id: 5900f3ee1000cf542c50ff00
 title: 'Завдання 130: Складні числа з властивостями простих реп''юнітів'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301758
 dashedName: problem-130-composites-with-prime-repunit-property
 ---

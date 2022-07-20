@@ -1,7 +1,7 @@
 ---
 id: 594810f028c0303b75339ad7
 title: Алгоритм проріджування Чжан-Суна
-challengeType: 5
+challengeType: 1
 forumTopicId: 302347
 dashedName: zhang-suen-thinning-algorithm
 ---

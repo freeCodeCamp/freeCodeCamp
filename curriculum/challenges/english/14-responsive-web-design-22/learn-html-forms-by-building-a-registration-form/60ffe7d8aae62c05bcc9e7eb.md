@@ -1,8 +1,8 @@
 ---
 id: 60ffe7d8aae62c05bcc9e7eb
-title: Step 51
+title: Step 52
 challengeType: 0
-dashedName: step-51
+dashedName: step-52
 ---
 
 # --description--
@@ -35,7 +35,7 @@ assert.isEmpty(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?
 <html>
   <head>
     <title>Registration Form</title>
-	  <link rel="stylesheet" type="text/css" href="styles.css" />
+	  <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <h1>Registration Form</h1>
@@ -102,11 +102,12 @@ form {
 
 fieldset {
   border: none;
-	padding: 2rem 0;
+  padding: 2rem 0;
+  border-bottom: 3px solid #3b3b4f;
 }
 
-fieldset:not(:last-of-type) {
-  border-bottom: 3px solid #3b3b4f;
+fieldset:last-of-type {
+  border-bottom: none;
 }
 
 label {

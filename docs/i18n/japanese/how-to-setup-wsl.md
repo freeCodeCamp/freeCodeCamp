@@ -1,4 +1,4 @@
-# Linux 用の Windows サブシステム (WSL) で freeCodeCamp を設定する
+# Windows Subsystem for Linux (WSL) で freeCodeCamp 開発環境を構築する
 
 > [!NOTE] これらの指示に従う前に、システムが要件を満たしていることを確認してください。
 > 

@@ -16,7 +16,7 @@ for (let user in users) {
 }
 ```
 
-Questo scriverebbe `Alan`, `Jeff`, `Sarah` e `Ryan` sulla console - ogni valore sulla propria linea.
+Che scriverebbe `Alan`, `Jeff` e `Sarah` sulla console - ogni valore sulla propria riga.
 
 In questa dichiarazione abbiamo definito una variabile `user`, e come puoi vedere, mentre l'iterazione prosegue attraverso l'oggetto, ad ogni ripetizione la variabile viene reimpostata a ciascuna delle chiavi, risultando nella stampa del nome di ogni utente sulla console.
 

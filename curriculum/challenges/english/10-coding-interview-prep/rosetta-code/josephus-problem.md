@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7ec5
 title: Josephus problem
-challengeType: 5
+challengeType: 1
 forumTopicId: 302294
 dashedName: josephus-problem
 ---
@@ -26,7 +26,7 @@ Which number was he?
 
 # --instructions--
 
-Write a function that takes the initial number of prisoners and `k` as parameter and returns the number of the prisoner that survives.
+Write a function that takes the initial number of prisoners and `k` as parameters and returns the number of the prisoner that survives.
 
 # --hints--
 

@@ -1,7 +1,7 @@
 ---
 id: 5900f39c1000cf542c50feae
 title: '問題 47: 相異なる素因数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302145
 dashedName: problem-47-distinct-primes-factors
 ---

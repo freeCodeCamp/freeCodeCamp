@@ -1,7 +1,7 @@
 ---
 id: a3bfc1673c0526e06d3ac698
 title: すべての素数を合計する
-challengeType: 5
+challengeType: 1
 forumTopicId: 16085
 dashedName: sum-all-primes
 ---

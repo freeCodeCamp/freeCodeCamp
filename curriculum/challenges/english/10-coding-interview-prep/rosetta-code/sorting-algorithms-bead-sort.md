@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc8001
 title: Sorting algorithms/Bead sort
-challengeType: 5
+challengeType: 1
 forumTopicId: 302310
 dashedName: sorting-algorithmsbead-sort
 ---

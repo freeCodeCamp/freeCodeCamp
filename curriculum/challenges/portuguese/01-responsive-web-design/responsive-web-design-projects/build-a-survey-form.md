@@ -182,21 +182,21 @@ const el = document.getElementById('number-label')
 assert(!!el && el.tagName === 'LABEL')
 ```
 
-O elemento `#name-label` não deve estar vazio
+`#name-label` deve conter um texto que descreva a entrada.
 
 ```js
 const el = document.getElementById('name-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-O elemento `#email-label` não deve estar vazio
+`#email-label` deve conter um texto que descreva a entrada.
 
 ```js
 const el = document.getElementById('email-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-O elemento `#number-label` não deve estar vazio
+`#number-label` deve conter um texto que descreva a entrada.
 
 ```js
 const el = document.getElementById('number-label')

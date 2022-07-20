@@ -1,7 +1,7 @@
 ---
 id: 5900f42c1000cf542c50ff3f
 title: '問題 192: 最良近似'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301830
 dashedName: problem-192-best-approximations
 ---

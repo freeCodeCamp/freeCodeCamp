@@ -8,7 +8,7 @@ dashedName: chart-the-stock-market
 
 # --description--
 
-Costruisci un'app JavaScript full-stack che sia funzionalmente simile a questa: <https://chart-the-stock-market.freecodecamp.rocks/>. Usa un costruttore di siti di tua scelta per completare il progetto.
+Costruisci un'app JavaScript full-stack che sia funzionalmente simile a questa: <a href="https://chart-the-stock-market.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://chart-the-stock-market.freecodecamp.rocks/</a>. Usa un costruttore di siti di tua scelta per completare il progetto.
 
 Ecco le specifiche user story da implementare per questo progetto:
 

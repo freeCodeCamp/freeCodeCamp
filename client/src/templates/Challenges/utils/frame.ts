@@ -11,20 +11,28 @@ declare global {
   }
 }
 
-interface Context {
+export interface Source {
+  index: string;
+  contents?: string;
+  editableContents: string;
+  original: { [key: string]: string };
+}
+
+export interface Context {
   window: Window;
   document: Document;
   element: HTMLIFrameElement;
   build: string;
-  sources: {
-    contents?: string;
-    editableContents?: string;
-    original?: { [id: string]: string };
-  };
+  sources: Source;
   loadEnzyme?: () => void;
 }
 
-type ProxyLogger = (msg: string) => void;
+export interface TestRunnerConfig {
+  proxyLogger: ProxyLogger;
+  removeComments?: boolean;
+}
+
+export type ProxyLogger = (msg: string) => void;
 
 type InitFrame = (
   arg1?: () => unknown,
@@ -280,4 +288,4 @@ const createFramer = (
     buildProxyConsole(proxyLogger),
     writeContentToFrame,
     init(frameReady, proxyLogger)
-  );
+  ) as (args: Context) => void;

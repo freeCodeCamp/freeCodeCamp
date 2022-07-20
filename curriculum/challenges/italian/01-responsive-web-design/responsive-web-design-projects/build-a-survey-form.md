@@ -8,7 +8,7 @@ dashedName: build-a-survey-form
 
 # --description--
 
-**Obbiettivo:** Crea un'app funzionalmente simile a <a href="https://survey-form.freecodecamp.rocks" target="_blank">https://survey-form.freecodecamp.rocks</a>
+**Obiettivo:** crea un'app funzionalmente simile a <a href="https://survey-form.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://survey-form.freecodecamp.rocks</a>
 
 **User story:**
 
@@ -182,21 +182,21 @@ const el = document.getElementById('number-label')
 assert(!!el && el.tagName === 'LABEL')
 ```
 
-L'elemento `#name-label` non dovrebbe essere vuoto
+Il tuo elemento `#name-label` dovrebbe contenere del testo che descrive l'input.
 
 ```js
 const el = document.getElementById('name-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-L'elemento `#email-label` non dovrebbe essere vuoto
+Il tuo elemento `#email-label` dovrebbe contenere del testo che descrive l'input.
 
 ```js
 const el = document.getElementById('email-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-L'elemento `#number-label` non dovrebbe essere vuoto
+Il tuo elemento `#number-label` dovrebbe contenere del testo che descrive l'input.
 
 ```js
 const el = document.getElementById('number-label')

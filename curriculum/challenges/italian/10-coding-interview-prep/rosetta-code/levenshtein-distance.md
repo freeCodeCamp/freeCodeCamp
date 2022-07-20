@@ -1,14 +1,14 @@
 ---
 id: 5e4ce2eaac708cc68c1df260
 title: Distanza di Levenshtein
-challengeType: 5
+challengeType: 1
 forumTopicId: 385264
 dashedName: levenshtein-distance
 ---
 
 # --description--
 
-Nella teoria dell'informazione e nell'informatica, la **distanza di Levenshtein** è una [metrica](https://en.wikipedia.org/wiki/string metric) per misurare la quantità di differenza tra due sequenze (cioè una [edit distance](https://en.wikipedia.org/wiki/edit distance)). La distanza Levenshtein tra due stringhe è definita come il numero minimo di modifiche necessarie per trasformare una stringa nell'altra, dove le operazioni di modifica consentite sono inserimento, cancellazione o sostituzione di un singolo carattere.
+Nella teoria delle informazioni e in scienza dei computer, la **distanza di Levenshtein** è una metrica per misurare la distanza tra due sequenze (cioè una distanza di modifica). La distanza Levenshtein tra due stringhe è definita come il numero minimo di modifiche necessarie per trasformare una stringa nell'altra, dove le operazioni di modifica consentite sono inserimento, cancellazione o sostituzione di un singolo carattere.
 
 Esempio:
 

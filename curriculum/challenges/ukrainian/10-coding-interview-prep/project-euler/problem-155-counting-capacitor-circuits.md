@@ -1,7 +1,7 @@
 ---
 id: 5900f4081000cf542c50ff1a
 title: 'Завдання 155: підрахунок кількості конденсаторів в електричних схемах'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301786
 dashedName: problem-155-counting-capacitor-circuits
 ---

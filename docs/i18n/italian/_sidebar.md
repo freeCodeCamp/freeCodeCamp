@@ -7,16 +7,17 @@
   - [Lavorare a correggere le risorse](how-to-proofread-files.md)
 - **Contribuire al codice**
   - [Imposta freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md)
-  - [Segui le migliori pratiche di programmazione](codebase-best-practices.md)
-  - [Aprire una pull request](how-to-open-a-pull-request.md)
-  - [Lavorare sulle sfide di programmazione](how-to-work-on-coding-challenges.md)
-  - [Lavorare sui progetti di pratica](how-to-work-on-practice-projects.md)
-  - [Lavora sui tutorial con CodeRoad](how-to-work-on-tutorials-that-use-coderoad.md)
-  - [Lavorare sulla app web in locale](how-to-work-on-localized-client-webapp.md)
-  - [Lavora sui test Cypress ](how-to-add-cypress-tests.md)
-  - [Lavorare sulle sfide video](how-to-help-with-video-challenges.md)
+  - [Lavorare sull'app mobile](how-to-setup-freecodecamp-mobile-app-locally.md)
+  - [Seguire le migliori pratiche di programmazione](codebase-best-practices.md)
+  - [Open a pull request](how-to-open-a-pull-request.md)
+  - [Work on coding challenges](how-to-work-on-coding-challenges.md)
+  - [Work on practice projects](how-to-work-on-practice-projects.md)
+  - [Work on tutorials with CodeRoad](how-to-work-on-tutorials-that-use-coderoad.md)
+  - [Work on localized client web app](how-to-work-on-localized-client-webapp.md)
+  - [Work on Cypress tests](how-to-add-cypress-tests.md)
+  - [Work on video challenges](how-to-help-with-video-challenges.md)
   - [Work on documentation](how-to-work-on-the-docs-theme.md)
-  - [Lavorare sulla libreria dei componenti](how-to-work-on-the-component-library.md)
+  - [Work on the component library](how-to-work-on-the-component-library.md)
 - **Guide aggiuntive**
   - [Testare traduzioni in locale](how-to-test-translations-locally.md)
   - [Capire la struttura dei file del curriculum](curriculum-file-structure.md)
@@ -28,8 +29,9 @@
 
 - **Manuali di volo** (per membri dello staff & moderatori)
   - [Manuale del moderatore](moderator-handbook.md)
-  - [Manuale DevOps](devops.md)
-  - [Estensione VSCode per i corsi](courses-vscode-extension.md)
+  - [Language Lead Handbook](language-lead-handbook.md)
+  - [DevOps Handbook](devops.md)
+  - [Courses VSCode Extension](courses-vscode-extension.md)
 
 ---
 

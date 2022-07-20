@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7eaf
 title: IBAN
-challengeType: 5
+challengeType: 1
 forumTopicId: 302289
 dashedName: iban
 ---

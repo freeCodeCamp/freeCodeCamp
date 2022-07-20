@@ -1,7 +1,7 @@
 ---
 id: 5900f4411000cf542c50ff54
 title: 'Problema 213: Circo de pulgas'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301855
 dashedName: problem-213-flea-circus
 ---

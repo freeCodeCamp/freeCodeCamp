@@ -1,7 +1,7 @@
 ---
 id: 5900f41f1000cf542c50ff32
 title: '問題 179: 連続する正の約数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301814
 dashedName: problem-179-consecutive-positive-divisors
 ---

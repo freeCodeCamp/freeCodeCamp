@@ -1,7 +1,7 @@
 ---
 id: 5900f3e91000cf542c50fefc
 title: '問題 125: 回文数の和'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301752
 dashedName: problem-125-palindromic-sums
 ---

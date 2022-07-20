@@ -270,7 +270,7 @@ async (getUserInput) => {
 };
 ```
 
-If the object submitted to `/api/check` is missing `puzzle`, `coordinate` or `value`, the returned value will be `{ error: Required field(s) missing }`
+If the object submitted to `/api/check` is missing `puzzle`, `coordinate` or `value`, the returned value will be `{ error: 'Required field(s) missing' }`
 
 ```js
 async (getUserInput) => {
@@ -324,7 +324,7 @@ async (getUserInput) => {
 };
 ```
 
-If the `value` submitted to `/api/check` is not a number between 1 and 9, the returned values will be `{ error: 'Invalid value' }`
+If the `value` submitted to `/api/check` is not a number between 1 and 9, the returned value will be `{ error: 'Invalid value' }`
 
 ```js
 async (getUserInput) => {
@@ -353,9 +353,11 @@ async (getUserInput) => {
   try {
     const getTests = await $.get(getUserInput('url') + '/_api/get-tests');
     assert.isArray(getTests);
-    const units = getTests.filter((el) => el.context.includes('UnitTests'));
-    assert.isAtLeast(units.length, 12, 'At least 12 tests passed');
-    units.forEach((test) => {
+    const unitTests = getTests.filter((test) => {
+      return !!test.context.match(/Unit\s*Tests/gi);
+    });
+    assert.isAtLeast(unitTests.length, 12, 'At least 12 tests passed');
+    unitTests.forEach((test) => {
       assert.equal(test.state, 'passed', 'Test in Passed State');
       assert.isAtLeast(
         test.assertions.length,
@@ -369,18 +371,18 @@ async (getUserInput) => {
 };
 ```
 
-All 14 functional tests are complete and passing. See `/tests/2_functional-tests.js` for the functionality you should write tests for.
+All 14 functional tests are complete and passing. See `/tests/2_functional-tests.js` for the expected functionality you should write tests for.
 
 ```js
 async (getUserInput) => {
   try {
     const getTests = await $.get(getUserInput('url') + '/_api/get-tests');
     assert.isArray(getTests);
-    const funcs = getTests.filter((el) =>
-      el.context.includes('Functional Tests')
-    );
-    assert.isAtLeast(funcs.length, 14, 'At least 14 tests passed');
-    funcs.forEach((test) => {
+    const functTests = getTests.filter((test) => {
+      return !!test.context.match(/Functional\s*Tests/gi);
+    });
+    assert.isAtLeast(functTests.length, 14, 'At least 14 tests passed');
+    functTests.forEach((test) => {
       assert.equal(test.state, 'passed', 'Test in Passed State');
       assert.isAtLeast(
         test.assertions.length,

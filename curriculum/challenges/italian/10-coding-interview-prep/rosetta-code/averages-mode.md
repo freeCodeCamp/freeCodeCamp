@@ -1,14 +1,14 @@
 ---
 id: 594d8d0ab97724821379b1e6
 title: Medie/Moda
-challengeType: 5
+challengeType: 1
 forumTopicId: 302226
 dashedName: averagesmode
 ---
 
 # --description--
 
-Scrivi un programma per trovare il valore [moda](https://it.wikipedia.org/wiki/Moda_(statistica) "Moda (statistica)") di una collezione.
+Scrivi una funzione `mode` per trovare il valore che appare più spesso in un array.
 
 Il caso in cui una collezione è vuota può essere ignorato. Devi fare attenzione per gestire il caso dove la moda non è unica.
 

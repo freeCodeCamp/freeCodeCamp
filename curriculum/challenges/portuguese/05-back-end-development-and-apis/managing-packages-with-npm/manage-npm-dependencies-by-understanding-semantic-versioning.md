@@ -43,7 +43,7 @@ As "dependencies" devem incluir o "moment"
   );
 ```
 
-A versão do "moment" deve ser a "2.14.0"
+A versão do "moment" deve ser a "2.10.2"
 
 ```js
 (getUserInput) =>

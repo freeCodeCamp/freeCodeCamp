@@ -1,7 +1,7 @@
 ---
 id: 5900f42b1000cf542c50ff3e
 title: 'Problem 191: Prize Strings'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301829
 dashedName: problem-191-prize-strings
 ---

@@ -2,7 +2,7 @@
 id: 5900f4181000cf542c50ff2a
 title: >-
   Problema 171: Encontrar números para os quais a soma dos quadrados dos algarismos é um quadrado
-challengeType: 5
+challengeType: 1
 forumTopicId: 301806
 dashedName: >-
   problem-171-finding-numbers-for-which-the-sum-of-the-squares-of-the-digits-is-a-square

@@ -221,12 +221,15 @@ export const embedFilesInHtml = async function (challengeFiles) {
       style.classList.add('fcc-injected-styles');
       style.innerHTML = stylesCss?.contents;
 
-      link.parentNode.replaceChild(style, link);
+      link.parentNode.appendChild(style);
+
+      link.removeAttribute('href');
+      link.dataset.href = 'styles.css';
     }
     if (script) {
-      const script = (contentDocument.createElement('script').innerHTML =
-        scriptJs?.contents);
-      link.parentNode.replaceChild(script, link);
+      script.innerHTML = scriptJs?.contents;
+      script.removeAttribute('src');
+      script.setAttribute('data-src', 'script.js');
     }
     return {
       contents: documentElement.innerHTML

@@ -1,7 +1,7 @@
 ---
 id: 5900f37a1000cf542c50fe8c
 title: 'Problema 13: Grande somma'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301757
 dashedName: problem-13-large-sum
 ---

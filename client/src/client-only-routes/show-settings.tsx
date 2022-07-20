@@ -33,6 +33,7 @@ import {
   updateMyQuincyEmail,
   updateMySound,
   updateMyTheme,
+  updateMyKeyboardShortcuts,
   updateUserFlag,
   verifyCert
 } from '../redux/settings';
@@ -79,7 +80,7 @@ const mapDispatchToProps = {
   toggleNightMode: (theme: Themes) => updateMyTheme({ theme }),
   toggleSoundMode: (sound: boolean) => updateMySound({ sound }),
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) =>
-    updateUserFlag({ keyboardShortcuts }),
+    updateMyKeyboardShortcuts({ keyboardShortcuts }),
   updateInternetSettings: updateUserFlag,
   updateIsHonest: updateMyHonesty,
   updatePortfolio: updateMyPortfolio,

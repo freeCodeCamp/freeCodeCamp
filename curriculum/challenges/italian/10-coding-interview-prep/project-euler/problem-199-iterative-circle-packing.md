@@ -1,7 +1,7 @@
 ---
 id: 5900f4341000cf542c50ff46
 title: 'Problema 199: Impacchettamento iterativo dei cerchi'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301837
 dashedName: problem-199-iterative-circle-packing
 ---

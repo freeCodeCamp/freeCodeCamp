@@ -13,13 +13,13 @@ First, visit the `config/i18n/all-langs.ts` file to add the language to the avai
 - `availableLangs`: For both the `client` and `curriculum` arrays, add the text name of the language. This is the value that will be used in the `.env` file later.
 - `auditedCerts`: Add the text name of the language as the _key_, and add an array of `SuperBlocks.{cert}` variables as the _value_. This tells the client which certifications are fully translated.
 - `i18nextCodes`: These are the ISO language codes for each language. You will need to add the appropriate ISO code for the language you are enabling. These do need to be unique for each language.
-- `langDisplayNames`: These are the display names for the language selector in the navigation menu.
-- `langCodes`: These are the language codes used for formatting dates and numbers. These should be Unicode CLDR codes instead of ISO codes.
+- `LangNames`: These are the display names for the language selector in the navigation menu.
+- `LangCodes`: These are the language codes used for formatting dates and numbers. These should be Unicode CLDR codes instead of ISO codes.
 
 As an example, if you wanted to enable Dothraki as a language, your `all-langs.js` objects should look like this:
 
 ```js
-const availableLangs = {
+export const availableLangs = {
   client: ['english', 'espanol', 'chinese', 'chinese-traditional', 'dothraki'],
   curriculum: [
     'english',
@@ -69,7 +69,7 @@ export const auditedCerts = {
   ]
 };
 
-const i18nextCodes = {
+export const i18nextCodes = {
   english: 'en',
   espanol: 'es',
   chinese: 'zh',
@@ -77,7 +77,7 @@ const i18nextCodes = {
   dothraki: 'mis'
 };
 
-const langDisplayNames = {
+export enum LangNames = {
   english: 'English',
   espanol: 'Español',
   chinese: '中文（簡體字）',
@@ -85,7 +85,7 @@ const langDisplayNames = {
   dothraki: 'Dothraki'
 };
 
-const langCodes = {
+export enum LangCodes = {
   english: 'en-US',
   espanol: 'es-419',
   chinese: 'zh',
@@ -96,7 +96,7 @@ const langCodes = {
 
 Next, open the `client/src/utils/algolia-locale-setup.ts` file. This data is used for the search bar that loads `/news` articles. While it is unlikely that you are going to test this functionality, missing the data for your language can lead to errors when attempting to build the codebase locally.
 
-Add an object for your language to the `algoliaIndices` object. You should use the values for the `english` object for local testing, replacing the `english` key with your language's `availableLangs` value.
+Add an object for your language to the `algoliaIndices` object. You should use the the same values as the `english` object for local testing, replacing the `english` key with your language's `availableLangs` value.
 
 > [!NOTE] If we have already deployed an instance of news in your target language, you can update the values to reflect the live instance. Otherwise, use the English values.
 
@@ -130,8 +130,8 @@ const algoliaIndices = {
 Finally, in your `.env` file, set `CLIENT_LOCALE` and `CURRICULUM_LOCALE` to your new language (use the `availableLangs` value.)
 
 ```txt
-CLIENT_LOCALE="dothraki"
-CURRICULUM_LOCALE="dothraki"
+CLIENT_LOCALE=dothraki
+CURRICULUM_LOCALE=dothraki
 ```
 
 ### Releasing a Superblock

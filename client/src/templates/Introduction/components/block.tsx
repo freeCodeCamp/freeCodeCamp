@@ -18,6 +18,10 @@ import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
 import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import { isNewJsCert, isNewRespCert } from '../../../utils/is-a-cert';
+import {
+  isCodeAllyPractice,
+  isFinalProject
+} from '../../../../utils/challenge-types';
 import Challenges from './challenges';
 import '../intro.css';
 
@@ -120,23 +124,12 @@ export class Block extends Component<BlockProps> {
     });
 
     const isProjectBlock = challenges.some(({ challenge }) => {
-      const isJsProject =
-        [3, 6, 10, 14, 17].includes(challenge.order) &&
-        challenge.challengeType === 5;
-
-      const isOtherProject =
-        challenge.challengeType === 3 ||
-        challenge.challengeType === 4 ||
-        challenge.challengeType === 10 ||
-        challenge.challengeType === 12 ||
-        challenge.challengeType === 13 ||
-        challenge.challengeType === 14;
-
       const isTakeHomeProject = blockDashedName === 'take-home-projects';
 
       return (
-        (isJsProject && !isTakeHomeProject) ||
-        (isOtherProject && !isTakeHomeProject)
+        (isFinalProject(challenge.challengeType) ||
+          isCodeAllyPractice(challenge.challengeType)) &&
+        !isTakeHomeProject
       );
     });
 

@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc7ec5
 title: Problema di Josephus
-challengeType: 5
+challengeType: 1
 forumTopicId: 302294
 dashedName: josephus-problem
 ---
 
 # --description--
 
-[Il problema di Josephus](https://en.wikipedia.org/wiki/Josephus problem) è un puzzle matematico con una descrizione truce: $n$ prigionieri sono in piedi su un cerchio, numerato in sequenza da $0$ a $n-1$.
+Il problema di Josephus è un puzzle matematico con una descrizione grama: $n$ i prigionieri stanno su un cerchio, numerati in sequenza da $0$ a $n-1$.
 
 Un boia cammina lungo il cerchio, iniziando dal prigioniero $0$, rimuovendo ogni $k$-mo prigioniero e uccidendolo.
 
@@ -26,7 +26,7 @@ A che numero corrisponde lui?
 
 # --instructions--
 
-Scrvi una funzione che prende il numero iniziale dei prigionieri e 'k' come parametro e ritorna il numero del prigioniero che è sopravvissuto.
+Scrivi una funzione che prende il numero iniziare di prigionieri e `k` come parametri e restituisce il numero del prigioniero che sopravvive.
 
 # --hints--
 

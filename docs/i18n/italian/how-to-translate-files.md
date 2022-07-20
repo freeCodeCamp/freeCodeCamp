@@ -1,32 +1,20 @@
 # Come tradurre le risorse di freeCodeCamp
 
-Abbiamo il sogno di offrirti le risorse per imparare, non importa in che lingua del mondo tu parli. Per aiutarci con questo enorme sforzo, abbiamo integrato il nostro codebase open-source e il nostro curriculum con [Crowdin](https://crowdin.com/), uno strumento per aiutarci nella localizzazzione (cioè la traduzione nei vari "locale") del codebase.
-
-Il workflow della traduzione è diviso in due attività principali:
-
-- **Tradurre** i file del curriculum, la documentazione ed elementi dell'interfaccia come pulsanti, etichette, ecc.:
-
-  Come traduttore puoi iscriverti alla [nostra piattaforma di traduzione](https://translate.freecodecamp.org) e contribuire a tradurre in una qualsiasi delle oltre 30 lingue disponibili sulla piattaforma.
-
-- **Revisionare** (Proofread) le traduzioni per gli elementi nominati in precedenza.
-
-  I revisori verificano che le traduzioni contribuite dalla community abbiano un tono uniforme e non abbiano problemi comuni come errori di spelling, ecc. In breve, si occupano di assicurare un'alta qualità della traduzione. Nota che non usiamo traduzioni automatiche per una ragione.
-
-> [!WARNING] Non stiamo più usando GitHub per tradurre i file direttamente, se sei un contributore di vecchia data dirigiti invece alla [piattaforma di traduzione](https://translate.freecodecamp.org/).
-
 ## Preparati a contribuire
 
-> La mappa per la localizzazione di freeCodeCamp – Non ci sono limiti di velocità
+> The freeCodeCamp Localization Roadmap – There Are No Speed Limits
 
-Puoi tradurre quanto vuoi, quando vuoi. È solo una questione di quanto tempo ed energie vuoi investire come traduttore volontario.
+> [!TIP] You can start by reading [this announcement](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/). We recommend joining [our community forum](https://forum.freecodecamp.org/c/contributors/3) and [Discord chat server](https://discord.gg/PRyKn3Vbay).
 
-Chiediamo solo che tu comprenda i seguenti punti:
+You can translate as much as you want, when you want. It's only a matter of how much time and energy you are willing to invest as a volunteer translator.
+
+We just ask that you understand the following:
 
 1. **Le traduzioni sono uno sforzo di gruppo.**
 
    Tradurre le risorse di freeCodeCamp è una delle esperienze più divertenti e gratificanti come contributore, e funziona meglio se coivolgi i tuoi amici e colleghi che parlano la tua stessa lingua.
 
-   We recommend joining [our community forum](https://forum.freecodecamp.org/c/contributors/3) and [contributors chat room](https://discord.gg/PRyKn3Vbay) with your friends and showing your interest before starting off with translations. Crowdin rende più facile contribuire alle traduzioni, ma richiede comunque un sacco di lavoro.
+   You can start by reading [this announcement](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/). We recommend joining [our community forum](https://forum.freecodecamp.org/c/contributors/3) and [Discord chat server](https://discord.gg/PRyKn3Vbay) with your friends and showing your interest before starting off with translations. Crowdin and other tools make it easy to contribute translations, but it's still a lot of work.
 
    Vogliamo che ti diverta a contribuire e che tu non soffra di burnout o perda interesse.
 
@@ -38,7 +26,7 @@ Chiediamo solo che tu comprenda i seguenti punti:
 
    freeCodeCamp.org si impegna a offrire queste cose gratuitamente come sempre, ma dobbiamo dare priorità alle risorse per chi ne ha più bisogno. L'ultima cosa che vogliamo è dover disattivare i server per una lingua se l'attività di traduzione si ferma e il materiale diventa obsoleto.
 
-   Una volta che una lingua raggiunge almeno alcune certificazioni del curriculum possiamo iniziare a mettere la lingua live su [`/learn`](https://www.freecodecamp.org/learn), mentre continuate a tradurre le restanti certificazioni.
+   For translating the curriculum, once a language reaches at least a few certifications we can begin deploying the language live on [`/learn`](https://www.freecodecamp.org/learn), while you continue to translate the remaining certifications.
 
    Per esempio, vorremmo fare il deploy almeno di tutte le certificazioni front-ent quando attiviamo una nuova lingua per la prima volta.
 
@@ -54,9 +42,27 @@ Chiediamo solo che tu comprenda i seguenti punti:
 
    Una volta che avrai un piccolo gruppo di persone (almeno 4-5) interessate e volenterose a impegnarsi, potremo fare una videochiamata. Spiegheremo tutti i dettagli e vi guideremo nell'uso degli strumenti e sui processi.
 
-## Iniziare
+## Overview of Crowdin
 
-First, make sure you come say "Hi" in our [contributors chat room](https://discord.gg/PRyKn3Vbay). Postiamo aggiornamenti regolari sulla traduzione delle risorse e rispondiamo a un sacco delle vostre domande lì.
+It's our dream to provide you with the resources to learn, no matter the world language you speak. To help us with this massive effort, we have integrated our open-source code-base & curriculum with [Crowdin](https://crowdin.com/) - A tool to help us localize our code-base.
+
+> [!NOTE] We use a different tool and workflow for translating [news articles](https://www.freecodecamp.org/news). If you are interested in translating articles, read [this announcement](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) and reach out to your Language Lead.
+
+The translation workflow is split into two main activities:
+
+- **Tradurre** i file del curriculum, la documentazione ed elementi dell'interfaccia come pulsanti, etichette, ecc.:
+
+  Come traduttore puoi iscriverti alla [nostra piattaforma di traduzione](https://translate.freecodecamp.org) e contribuire a tradurre in una qualsiasi delle oltre 30 lingue disponibili sulla piattaforma.
+
+- **Revisionare** (Proofread) le traduzioni per gli elementi nominati in precedenza.
+
+  I revisori verificano che le traduzioni contribuite dalla community abbiano un tono uniforme e non abbiano problemi comuni come errori di spelling, ecc. In breve, si occupano di assicurare un'alta qualità della traduzione. Nota che non usiamo traduzioni automatiche per una ragione.
+
+> [!WARNING] We are no longer using GitHub to translate files directly, if you are a returning contributor head to our [translation platform](https://translate.freecodecamp.org/) instead.
+
+## Getting started
+
+First, make sure you come say "Hi" in our [Discord](https://discord.gg/PRyKn3Vbay). Postiamo aggiornamenti regolari sulla traduzione delle risorse e rispondiamo a un sacco delle vostre domande lì.
 
 Poi, vai alla nostra [piattaforma di traduzione](https://translate.freecodecamp.org/) e fai login (se è la prima volta che contribuisci alle traduzioni, dovrai creare un account).
 
@@ -64,7 +70,7 @@ Infine, segui la guida dettagliata qua sotto per capire come funzionano gli stru
 
 Buona traduzione.
 
-## Selezionare un progetto e un file
+## Select a Project and File
 
 Quando visiti la piattaforma di traduzione, dovresti vedere vari °progetti° disponibili per la traduzione:
 
@@ -84,9 +90,9 @@ Ogni file e cartella mostrerà una barra di avanzamento. La parte **blu** della 
 
 Seleziona un file su cui lavorare e Crowdin aprirà l'editor.
 
-> [!NOTE] Quando l'editor si apre, dovrai cliccare sull'icona delle impostazioni (ha la forma di un ingranaggio) e mettere l'opzione 'HTML tags displaying' (mostrare i tag HTML) su 'SHOW' (mostra). Questo fa in modo che tu possa vedere i tag come `<code></code>` invece di `<0></0>`.
+> [!NOTE] When the editor view opens, you will need to click the settings icon (shown as a gear) and switch the 'HTML tags displaying' setting to 'SHOW'. This will ensure you can see tags such as `<code></code>` instead of `<0></0>`.
 
-## Tradurre il curriculum
+## Translate Curriculum
 
 ![Immagine - Editor View](https://contribute.freecodecamp.org/images/crowdin/editor.png)
 
@@ -103,19 +109,41 @@ Crowdin separa un documento in "stringhe" (strings) da tradurre, in genere frasi
 9. Qui puoi vedere la finestra dei commenti. Se hai domande o dubbi su una particolare stringa, puoi lasciare un commento sulla stringa qui perché altri traduttori li vedano.
 10. Questi due pulsanti dei pannelli nasconderanno i pannelli a sinistra (documento) e a destra (commenti).
 
-> [!NOTE] If you see a hidden string that includes translations, please notify us in the [contributors chat room](https://discord.gg/PRyKn3Vbay) so we can remove the translation from memory.
+> [!NOTE] If you see a hidden string that includes translations, please notify us in the [Discord](https://discord.gg/PRyKn3Vbay) so we can remove the translation from memory.
 
 Quando hai finito la traduzione per una stringa, usa il pulsante `Save` per salvare la tua traduzione in Crowdin. Altri contributori potranno quindi votare la tua traduzione e i revisori potranno approvarla.
 
 Sentiti libero di tradurre quante stringhe vuoi, non ci sono step additionali richiesti quando completi un intero file o proponi una nuova traduzione. Usare il pulsante `Save` è tutto quello che serve per memorizzare una traduzione.
 
-> [!NOTE] Se vedi qualcosa nel file originale inglese che è inaccurato o non corretto, per favore non aggiustarlo con il processo di traduzione. Invece lascia un commento sulla stringa per farci sapere che c'è una discrepanza o crea una issue su GitHub.
+> [!NOTE] If you see something in the English source file that is inaccurate or incorrect, please do not fix it through the translation flow. Instead, leave a comment on the string to notify us that there is a discrepancy, or create a GitHub issue.
 
-## Tradurre la Documentazione
+## Translate the Learn Interface
 
-Tradurre la documentazione per contribuire è un processo simile alla traduzione dei file del curriculum.
+Our `/learn` interface relies on JSON files loaded into an i18n plugin to generate translated text. This translation effort is split across both Crowdin and GitHub.
 
-> [!NOTE] La documentazione per contribuire è creata tramite `docsify`, e ci sono regole speciali per riquadri di messaggio come questo. Se vedi una stringa che inizia con `[!NOTE]`, `[!WARNING]`, o `[!TIP]`, queste parole non devono essere tradotte.
+### On GitHub
+
+The `links.json`, `meta-tags.json`, `motivation.json`, and `trending.json` files contain information that needs to be updated to reflect your language. However, we cannot load these into Crowdin, as the content isn't something that would be a one-to-one translation.
+
+These files will most likely be maintained by your language lead but you are welcome to [read about how to translate them](language-lead-handbook.md).
+
+### On Crowdin
+
+> [!DANGER] Do not edit the following files through a GitHub PR.
+
+The `intro.json` and `translations.json` files are both translated on Crowdin, in the Learn User Interface project. Translating these can be a bit tricky, as each individual JSON value appears as its own string and sometimes the context is missing.
+
+However, the `Context` information provided in Crowdin can help understand where the string fits in to the larger structure.
+
+![Image with an arrow pointing to Crowdin's context information](https://contribute.freecodecamp.org/images/crowdin/context.png)
+
+If you have any questions about where a string fits in to the prose, reach out to us in our [contributor chat](https://discord.gg/PRyKn3Vbay).
+
+## Translate Documentation
+
+Translating our contributing documentation is a similar flow to translating our curriculum files.
+
+> [!NOTE] Our contributing documentation is powered by `docsify`, and we have special parsing for message boxes like this one. If you see strings that start with `[!NOTE]`, `[!WARNING]`, or `[!TIP]`, these words should NOT be translated.
 
 ### How to translate documentation with internal links
 
@@ -153,7 +181,7 @@ You can find out how `docsify` converts a string in your language into an id by 
 
 You can learn more about [internal links in our docs here](how-to-work-on-the-docs-theme.md#how-to-create-an-internal-link).
 
-## Tradurre LearnToCode RPG
+## Translate the LearnToCode RPG
 
 The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated strings: (See [Ren'Py Text documentation](https://www.renpy.org/doc/html/text.html))
 
@@ -254,31 +282,31 @@ Crowdin segments it into three parts like below:
 <img width="836" alt="Screen Shot 2022-01-23 at 10 36 43" src="https://user-images.githubusercontent.com/35674052/150693962-d3b091e5-2432-44d0-9d24-195ea7d7aeda.png" />
 
 ```renpy
-# original
+# originale
 player @ surprised "{b}Full-stack{/b}
-# translated, keeping the opening quotes `"`
+# tradotta, mantenendo le virgolette di apertura `"`
 player @ surprised "{b}全栈{/b}
 ```
 
 <img width="750" alt="Screen Shot 2022-01-23 at 10 36 49" src="https://user-images.githubusercontent.com/35674052/150693965-15411504-791a-4db3-8b14-bc9177be6375.png" />
 
 ```renpy
-# original
+# originale
 What is that?
-# translated, no quotes on either side
+# tradotta, nessuna virgoletta
 这是什么？
 ```
 
 <img width="857" alt="Screen Shot 2022-01-23 at 10 36 54" src="https://user-images.githubusercontent.com/35674052/150693969-062e3268-580f-4ad2-97db-cab6240b6095.png" />
 
 ```renpy
-# original
+# originale
 I better take notes so I can learn more about it."
-# translated, keeping the closing quotes `"`
+# tradotta, mantenendo le virgolette di chiusura `"`
 我最好做笔记，这样我可以学习更多东西。"
 ```
 
-## Votare le traduzioni
+## Rate Translations
 
 Crowdin allows you to rate the existing proposed translations. If you attempt to save a translation, you may see a message indicating that you cannot save a duplicate translation - this means another contributor has proposed that identical translation. If you agree with that translation, click the `+` button to "upvote" the translation.
 
@@ -286,7 +314,7 @@ If you see a translation that is inaccurate or does not provide the same clarity
 
 Crowdin uses these votes to give a score to each proposed translation for a string, which helps the proofreading team determine which translation is the best fit for each string.
 
-## Controlli di qualità
+## Quality Assurance Checks
 
 We have enabled some quality assurance steps that will verify a translation is as accurate as possible - this helps our proofreaders review proposed translations.
 
@@ -296,9 +324,9 @@ When you attempt to save a translation, you may see a warning message appear wit
 
 This message appears when Crowdin's QA system has identified a potential error in the proposed translation. In this example, we have modified the text of a `<code>` tag and Crowdin has caught that.
 
-> [!WARNING] Hai la possibilità di salvare una traduzione anche se ci sono degli errori. Se lo fai usando il pulsante "Save Anyway" (Salva comunque), dovresti anche taggare un proofreader o un project managet e spiegare perché il messaggio QA dovrebbe essere ignorato in questo caso.
+> [!WARNING] You have the option to save a translation in spite of errors. If you do, by clicking "Save Anyway", you should also tag a proofreader or project manager and explain why the QA message needs to be ignored in this case.
 
-## Buone pratiche per le traduzioni
+## Translation Best Practices
 
 Follow these guidelines to ensure our translations are as accurate as possible:
 
@@ -306,4 +334,4 @@ Follow these guidelines to ensure our translations are as accurate as possible:
 - Non inserire contenuto aggiuntivo. Se pensi che una sfida richieda delle modifiche nel testo o informazioni aggiuntive dovresti proporre i cambiamenti tramite una issue su GitHub o una pull request che modifica i file inglesi.
 - Non cambiare l'ordine del contenuto.
 
-If you have any questions, feel free to reach out to us in our [contributors chat room](https://discord.gg/PRyKn3Vbay) and we will be happy to assist you.
+If you have any questions, feel free to reach out to us in our [Discord](https://discord.gg/PRyKn3Vbay) and we will be happy to assist you.

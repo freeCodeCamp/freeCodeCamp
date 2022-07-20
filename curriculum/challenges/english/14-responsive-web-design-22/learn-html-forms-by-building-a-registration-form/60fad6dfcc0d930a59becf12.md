@@ -40,7 +40,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.fontSize, '16px')
 <html>
   <head>
     <title>Registration Form</title>
-	  <link rel="stylesheet" type="text/css" href="styles.css" />
+	  <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <h1>Registration Form</h1>

@@ -1,22 +1,10 @@
 # Como traduzir arquivos do freeCodeCamp
 
-É nosso sonho fornecer recursos para você aprender, não importando qual idioma fala. Para nos ajudar com isso, integramos nossa base de código open-source e nosso currículo com o [Crowdin](https://crowdin.com/), uma ferramenta que nos ajuda a traduzir nosso código.
-
-O fluxo de tradução é dividido em duas principais atividades:
-
-- **Traduzir** arquivos do currículo, documentação e elementos da interface como botões, rótulos e etc.:
-
-  Como um tradutor, você pode se cadastrar em [nossa plataforma de tradução](https://translate.freecodecamp.org) e contribuir com traduções em mais de 30 idiomas disponíveis.
-
-- **Revisar** as traduções de todo conteúdo.
-
-  Os revisores verificam se as traduções da comunidade têm um tom uniforme e não contêm problemas como erros de digitação, entre outros. Resumidamente, eles garantem a alta qualidade das traduções. Note que nós não usamos tradução automática por um motivo.
-
-> [!WARNING] Não usamos mais o GitHub para traduzir arquivos diretamente. Se você está voltando a contribuir, vá para nossa [plataforma de tradução](https://translate.freecodecamp.org/).
-
 ## Prepare-se para as contribuições
 
-> O roadmap de localização da freeCodeCamp - não há limites
+> O roadmap de localização do freeCodeCamp - não há limites de velocidade
+
+> [!TIP] Você pode começar lendo [este anúncio](https://www.freecodecamp.org/portuguese/news/como-ajudar-a-traduzir-o-freecodecamp-para-seu-idioma/). Recomendamos que entre [em nosso fórum da comunidade](https://forum.freecodecamp.org/c/contributors/3) e [no servidor de chat do Discord](https://discord.gg/PRyKn3Vbay).
 
 Você pode traduzir o quanto você quiser e quando você puder. O que realmente importa é o quanto de tempo e energia você estará disposto a investir como um voluntário de tradução.
 
@@ -26,7 +14,7 @@ Pedimos apenas que entenda os seguintes pontos:
 
    A tradução dos recursos do freeCodeCamp é uma das mais divertidas e gratificantes como um contribuidor. Ela fica ainda melhor quando envolve amigos e colegas que falam o mesmo idioma que você.
 
-   Nós recomendamos que entre [em nosso fórum da comunidade](https://forum.freecodecamp.org/c/contributors/3) e na [sala de chat dos tradutores](https://discord.gg/PRyKn3Vbay) com seus amigos e mostre seu interesse antes de começar a traduzir. A ferramenta Crowdin facilita a contribuição com traduções, mas ainda há bastante trabalho.
+   Você pode começar lendo [este anúncio](https://www.freecodecamp.org/portuguese/news/como-ajudar-a-traduzir-o-freecodecamp-para-seu-idioma/). Recomendamos que entre [em nosso fórum da comunidade](https://forum.freecodecamp.org/c/contributors/3) e no [servidor de chat do Discord](https://discord.gg/PRyKn3Vbay) com seus amigos e mostre seu interesse antes de começar a traduzir. O Crowdin, assim como outras ferramentas, facilita a contribuição com traduções, mas ainda há bastante trabalho.
 
    Nós esperamos que você goste de contribuir e não venha a se sentir esgotado ou perder o interesse.
 
@@ -38,7 +26,7 @@ Pedimos apenas que entenda os seguintes pontos:
 
    O freeCodeCamp.org comprometeu-se em providenciar de forma gratuita como sempre. No entanto, precisamos priorizar os recursos para os que mais necessitam deles. A última coisa que queremos é desligar os servidores para uma linguagem se a atividade de tradução encerrar e se tornar desatualizada.
 
-   Quando cada linguagem alcançar pelo menos algumas certificações no currículo, nós podemos começar a implantar a linguagem no [`/learn`](https://www.freecodecamp.org/learn) enquanto você continua a traduzir o restante das certificações.
+   Para traduzir o currículo, quando cada idioma alcançar pelo menos algumas certificações no currículo, podemos começar a implantar o idioma no [`/learn`](https://www.freecodecamp.org/learn) enquanto você continua a traduzir o restante das certificações.
 
    Por exemplo, gostaríamos de implantar pelo menos todo o conjunto de certificações de front-end quando entregarmos uma nova linguagem pela primeira vez.
 
@@ -54,9 +42,27 @@ Pedimos apenas que entenda os seguintes pontos:
 
    Quando você tiver um pequeno grupo de pessoas (pelo menos 4-5) interessadas e comprometidas, nós poderemos entrar em contato. Explicaremos todos os detalhes e orientaremos você em algumas das ferramentas e processos.
 
+## Visão geral do Crowdin
+
+É nosso sonho fornecer recursos para você aprender, não importando qual idioma fala. Para nos ajudar com isso, integramos nossa base de código open-source e nosso currículo com o [Crowdin](https://crowdin.com/), uma ferramenta que nos ajuda a traduzir nosso código.
+
+> [!NOTE] Usamos uma ferramenta e um fluxo de trabalho diferentes para traduzir os [artigos do editorial](https://www.freecodecamp.org/news). Se você estiver interessado em traduzir artigos, leia <a https://www.freecodecamp.org/portuguese/news/como-ajudar-a-traduzir-o-freecodecamp-para-seu-idioma/">este anúncio</a> e entre em contato com o líder das traduções para o seu idioma.
+
+O fluxo de tradução é dividido em duas atividades principais:
+
+- **Traduzir** arquivos do currículo, documentação e elementos da interface como botões, rótulos e etc.:
+
+  Como um tradutor, você pode se cadastrar em [nossa plataforma de tradução](https://translate.freecodecamp.org) e contribuir com traduções em mais de 30 idiomas disponíveis.
+
+- **Revisar** as traduções de todo conteúdo.
+
+  Os revisores verificam se as traduções da comunidade têm um tom uniforme e não contêm problemas como erros de digitação, entre outros. Resumidamente, eles garantem a alta qualidade das traduções. Note que nós não usamos tradução automática por um motivo.
+
+> [!WARNING] Não usamos mais o GitHub para traduzir arquivos diretamente. Se você está voltando a contribuir, vá para nossa [plataforma de tradução](https://translate.freecodecamp.org/).
+
 ## Primeiros passos
 
-Primeiro, não se esqueça de vir dar um "Oi" na nossa [sala de chat de tradutores](https://discord.gg/PRyKn3Vbay). Nós postamos atualizações regulares sobre recursos de tradução e respondemos a muitas de suas dúvidas lá.
+Primeiro, não se esqueça de vir dar um "Oi" no nosso [servidor do Discord](https://discord.gg/PRyKn3Vbay). Nós postamos atualizações regulares sobre recursos de tradução e respondemos a muitas de suas dúvidas lá.
 
 Depois, vá para a nossa [plataforma de tradução](https://translate.freecodecamp.org/) e faça o login (se você não contribuiu com traduções anteriormente, você precisará criar uma conta).
 
@@ -84,7 +90,7 @@ Cada arquivo e pasta aparecerá na barra de progresso. A porção **azul** da ba
 
 Selecione um arquivo para traduzir e o Crowdin vai abrir o editor.
 
-> [!NOTE] Quando o editor abrir, você precisará clicar no ícone de configurações (mostrado como uma engrenagem) e mudar a configuração 'HTML tags displaying' para 'SHOW'. Isso garantirá que você veja as tags como `<code></code>` ao invés de `<0></0>`.
+> [!NOTE] Quando o editor abrir, você precisará clicar no ícone de configurações (mostrado como uma engrenagem) e mudar a configuração 'HTML tags displaying' para 'SHOW'. Isso garantirá que você verá tags como `<code></code>` ao invés de `<0></0>`.
 
 ## Traduzir o currículo
 
@@ -103,19 +109,41 @@ O Crowdin separa o documento em "strings" traduzíveis, geralmente frases. Cada 
 9. Aqui você pode ver a janela de comentários. Se você tem perguntas ou preocupações acerca de uma string em particular, você pode comentar aqui para que outros tradutores vejam.
 10. Esses dois "botões de painel" esconderão o documento à esquerda e os comentários à direita.
 
-> [!NOTE] Se você encontrar uma string escondida que inclui traduções, notifique-a na [sala de chat dos tradutores](https://discord.gg/PRyKn3Vbay) para que possamos remover a tradução da memória.
+> [!NOTE] Se você encontrar uma string escondida que inclui traduções, notifique-a no [servidor do Discord](https://discord.gg/PRyKn3Vbay) para que possamos remover a tradução da memória.
 
 Quando tiver terminado de traduzir uma string, clique em `Save` para salvar sua tradução no Crowdin.  Outros contribuintes poderão votar em sua tradução e os revisores poderão aprová-la.
 
 Fique à vontade para traduzir quantas strings quiser - não há nenhuma etapa adicional requerida quando você completar um arquivo inteiro ou propor uma nova tradução. Clicar em `Save` é tudo de que você precisa para salvar sua tradução.
 
-> [!NOTE] Se você ver algo no arquivo fonte em inglês que esteja impreciso ou incorreto, não conserte pelo mecanismo de tradução. Em vez disso, deixe um comentário na string para nos notificar de uma discrepância ou crie uma issue no GitHub.
+> [!NOTE] Se você ver algo no arquivo fonte em Inglês que esteja impreciso ou incorreto, por favor não conserte-o pelo mecanismo de tradução. No lugar, deixe um comentário na string para nos notificar de uma discrepância ou crie uma "GitHub issue".
+
+## Traduzir a interface de aprendizagem
+
+Nossa interface `/learn` depende de arquivos JSON carregados em um plugin i18n para gerar o texto traduzido. Esse esforço de tradução está dividido entre o Crowdin e o GitHub.
+
+### No GitHub
+
+Os arquivos `links.json`, `meta-tags.json`, `motivation.json` e `trending.json` contêm informações que precisam ser atualizadas para refletirem em seu idioma. No entanto, não podemos carregá-los no Crowdin, já que seu conteúdo não seria uma tradução direta.
+
+Esses arquivos provavelmente serão atualizados pelo líder do seu idioma, mas fique à vontade para [ler sobre como os traduzimos](language-lead-handbook.md).
+
+### No Crowdin
+
+> [!DANGER] Não edite os seguintes arquivos através de um PR no GitHub.
+
+Os arquivos `intro.json` e `translations.json` são traduzidos no Crowdin, no projeto Learn User Interface (Learn UI). A tradução dessas traduções pode ser um pouco complicada, já que cada valor JSON individual tem sua própria sequência de caracteres e, às vezes, o contexto não é suficiente.
+
+Porém, as informações de `Context` fornecidas no Crowdin podem ajudar a entender onde a string se encaixa em uma estrutura maior.
+
+![Imagem com uma seta apontando para as informações de contexto do Crowdin](https://contribute.freecodecamp.org/images/crowdin/context.png)
+
+Se tiver perguntas sobre onde uma string se encaixa em seu contexto, fale conosco no [chat dos colaboradores](https://discord.gg/PRyKn3Vbay).
 
 ## Traduzir a documentação
 
 Traduzir nossa documentação de contribuição é similar a traduzir nossos arquivos de currículo.
 
-> [!NOTE] Nossa documentação de contribuição utiliza o `docsify`. Nós temos uma análise especial para caixas de mensagem como essa. Caso veja strings iniciadas com `[!NOTE]`, `[!WARNING]`, ou `[!TIP]`, essas palavras NÃO devem ser traduzidas.
+> [!NOTE] Nossa documentação de contribuição utiliza`docsify`, e nós temos  uma análise especial para caixas de mensagem como essa.  Caso veja strings iniciadas com `[!NOTE]`, `[!WARNING]`, ou `[!TIP]`, essas palavras NÃO devem ser traduzidas.
 
 ### Como traduzir a documentação com links internos
 
@@ -278,7 +306,7 @@ I better take notes so I can learn more about it."
 É melhor eu anotar para saber mais a respeito."
 ```
 
-## Avaliar as traduções
+## Avaliar Traduções
 
 Crowdin permite que você avalie propostas de tradução existentes. Se você tentar salvar uma tradução, você pode ver uma mensagem indicando que você não pode salvar a duplicata de uma tradução - isso significa que outro contribuinte já propôs uma tradução idêntica. Se você concorda com aquela tradução, clique em `+` para "aprová-la".
 
@@ -292,18 +320,18 @@ Nós disponibilizamos algumas verificações de qualidade para assegurar que as 
 
 Quando você tenta salvar uma tradução, talvez veja uma mensagem de aviso aparecer a respeito da sua tradução proposta.
 
-![Imagem - Mensagem de aviso](https://contribute.freecodecamp.org/images/crowdin/qa-message.png)
+![Imagem - Mensagem de aviso de QA](https://contribute.freecodecamp.org/images/crowdin/qa-message.png)
 
-Essa mensagem aparece quando o sistema QA (Perguntas e Respostas) da Crowdin's identificou algum erro em potencial na tradução proposta. Nesse exemplo, nós modificamos o texto da tag `<code>` e o sistema viu isto.
+Essa mensagem aparece quando o sistema QA (Verificação de Qualidade) do Crowdin identificou algum erro em potencial na tradução proposta. Nesse exemplo, nós modificamos o texto da tag `<code>` e o sistema viu isto.
 
 > [!WARNING] Você tem a opção de salvar uma tradução apesar dos erros. Se fizer isso, clicando em "Save Anyway", você também deve marcar um revisor ou gerenciador do projeto e explicar o motivo do aviso ter sido ignorado nesse caso.
 
 ## Boas práticas na tradução
 
-Siga essas diretrizes para certificar-se que nossas traduções estão o mais precisas possível:
+Siga essas diretrizes para se certificar de que nossas traduções estão o mais precisas possível:
 
 - Não traduza o conteúdo dentro de tags `<code>`. Essas tags indicam que o texto está formatado para o código e deve ser deixado em inglês.
 - Não adicione conteúdo extra. Se você acha que um desafio necessita de mudanças no texto e conteúdo adicional, você deve propor as mudanças através de uma issue no GitHub ou um pull request que modifique o arquivo em inglês.
 - Não mude a ordem do conteúdo.
 
-Se você tiver alguma dúvida, sinta-se à vontade para entrar em contato conosco através da [sala de chat dos tradutores](https://discord.gg/PRyKn3Vbay) e nós ficaremos felizes em ajudar você.
+Se você tiver alguma dúvida, sinta-se à vontade para entrar em contato conosco através do [servidor do Discord](https://discord.gg/PRyKn3Vbay) e nós ficaremos felizes em ajudar você.
