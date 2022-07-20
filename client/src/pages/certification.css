@@ -160,7 +160,7 @@
 }
 
 /*mobile media queries*/
-@media screen and (max-width: 675px) {
+@media (max-width: 675px) {
   .certification-namespaces.issue-date {
     padding: 0;
     border: 0;
@@ -184,7 +184,7 @@
   }
 }
 
-@media screen and (max-width: 992px) {
+@media (max-width: 992px) {
   .certification-namespace header {
     height: 160px;
   }
@@ -233,7 +233,7 @@
   }
 }
 
-@media screen and (max-width: 675px) {
+@media (max-width: 675px) {
   .certification-namespaces.issue-date {
     padding: 0;
     border: 0;
@@ -254,6 +254,21 @@
   .certification-namespace h4 {
     font-size: 15px;
     margin-top: 20px;
+  }
+}
+
+@media print {
+  .certificate-outer-wrapper header {
+    background-color: var(--theme-color) !important;
+  }
+
+  .certification-namespace .issue-date,
+  .certification-namespace .issue-date strong {
+    color: var(--gray-00) !important;
+  }
+
+  .certification-namespace .signatures img {
+    max-width: 300px !important;
   }
 }
 
