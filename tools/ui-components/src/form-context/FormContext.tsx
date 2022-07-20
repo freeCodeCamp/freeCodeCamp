@@ -4,6 +4,4 @@ interface FormContextProps {
   controlId?: HTMLElement;
 }
 
-const FormContext = React.createContext<FormContextProps>({});
-
-export default FormContext;
+export const FormContext = React.createContext<FormContextProps>({});

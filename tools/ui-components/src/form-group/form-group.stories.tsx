@@ -1,3 +1,4 @@
+// /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 // import React from 'react';
 // import { Story } from '@storybook/react';
 // // import { FormGroup, FormGroupProps } from '.';
@@ -11,10 +12,7 @@
 //   parameters: {
 //     controls: {
 //      include:{
-//        'validationState',
-//         'bsSize',
-//         'className',
-//         'bsClass'
+
 //       }
 //     }
 //   },
