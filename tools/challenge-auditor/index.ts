@@ -1,6 +1,5 @@
 import { access, readdir } from 'fs/promises';
 import { join } from 'path';
-import { SuperBlocks } from '../../config/certification-settings';
 
 import { availableLangs, auditedCerts } from '../../config/i18n/all-langs';
 
@@ -57,7 +56,7 @@ void (async () => {
   for (const lang of langsToCheck) {
     let languageIsFailing = false;
     console.log(`\n=== ${lang} ===`);
-    const certs = auditedCerts[lang] as SuperBlocks[];
+    const certs = auditedCerts[lang as keyof typeof auditedCerts];
     const langCurriculumDirectory = join(
       process.cwd(),
       'curriculum',
