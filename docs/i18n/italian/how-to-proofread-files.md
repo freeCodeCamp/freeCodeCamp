@@ -4,9 +4,9 @@ Il nostro team di revisione è responsabile di controllare che le traduzioni rif
 
 Tutte le nostre traduzioni sono fatte a mano, da veri esseri umani. La revisione assicura che ci sia un tono consistente su tutte le nostre risorse tradotte, come ad esempio il curriculum.
 
-Per iniziare a revisione visita [la nostra piattaforma di traduzione](https://translate.freecodecamp.org) e fai il login. Seleziona °Go to console° nella barra di navigazione in alto per cambiare dalla public view alla workspace view.
+Per iniziare a revisionare visita [la nostra piattaforma di traduzione](https://translate.freecodecamp.org) e fai il login. Seleziona "Go to console" nella barra di navigazione in alto per passare da public view a workspace view.
 
-## Seleziona un file
+## Selezionare un file
 
 Dovresti vedere la lista di progetti a cui ti è stato dato accesso. Seleziona il progetto che vorresti revisionare, poi seleziona la lingua.
 
@@ -14,7 +14,7 @@ Dovresti vedere la lista di progetti a cui ti è stato dato accesso. Seleziona i
 
 Ora dovresti vedere la lista dei file disponibili. Scegli il file selezionando il pulsante `Proofread` a destra del file, e scegliendo quindi `Proofreading` dal menu che compare.
 
-> [!NOTE] Se sei in workspace view, ma vuoi larorare sulla [traduzione di un file](how-to-translate-files.md) invece di revisionare, puoi selezionare `Crowdsourcing` dal menu.
+> [!NOTE] Se sei in workspace view, ma vuoi lavorare sulla [traduzione di un file](how-to-translate-files.md) invece di revisionare, puoi selezionare `Crowdsourcing` dal menu.
 
 ## Revisionare le traduzioni
 
@@ -29,10 +29,10 @@ Anche se puoi vedere _tutte_ le traduzioni proposte per una certa stringa, il pu
 1. Questa è la stringa originale (in inglese).
 2. Questa è la corrispondente stringa tradotta. La proposta di traduzione più popolare, basata su voti positivi e negativi, sarà mostrata qui.
 3. Cliccando il pulsante di spunta approverai la traduzione.
-4. Crowdin mostrerà lo stato di ogni stringa. `Done` significa che una traduzione è stata approvata e sarà scaricata nel prossimo aggiornamento delle traduzioni. `Todo` significa che la stringa non è stata revisionata. `Hidden`significa che la stringa e bloccata e _non deve essere tradotta_. `Comment` significa che la stringa ha un relativo commento.
+4. Crowdin mostrerà lo stato di ogni stringa. `Done` significa che una traduzione è stata approvata e sarà scaricata nel prossimo aggiornamento delle traduzioni. `Todo` significa che la stringa non è stata revisionata. `Hidden` significa che la stringa è bloccata e _non deve essere tradotta_. `Comment` significa che la stringa è relativa a un commento.
 5. Le traduzioni possono essere selezionate con i checkbox e approvate in un'azione cumulativa.
-6. Qui puoi vedere le traduzioni proposte dalla comunità, i punteggi di popolarità, e le traduzioni suggerite da Crowdin.
-7. Questo pulsante mostra/nasconde la scheda a destra, dove puoi vedere traduzioni, commenti, traduzioni in memoria, e termini del glossario.
+6. Qui puoi vedere le traduzioni proposte dalla comunità, i punteggi di popolarità e le traduzioni suggerite da Crowdin.
+7. Questo pulsante mostra/nasconde la scheda a destra, dove puoi vedere traduzioni, commenti, traduzioni in memoria e termini del glossario.
 8. Crowdin mostra qui i messaggi di errore dai controlli di qualità. In altre parole, se qualcosa non sembra corretto nella traduzione, Crowdin te lo dirà. Queste traduzioni devono essere approvate con attenzione.
 
 Non sono necessarie altre azioni una volta che un file è stato revisionato.
