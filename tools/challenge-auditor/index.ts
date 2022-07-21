@@ -22,6 +22,8 @@ const superBlockFolderMap = {
     '15-javascript-algorithms-and-data-structures-22'
 };
 
+// These blocks are in the incorrect superblock. They should be moved but, for
+// the audit, we just ignore them.
 const blocksThatNeedToMove = ['d3-dashboard'];
 
 void (async () => {
