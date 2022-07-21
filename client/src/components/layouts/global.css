@@ -304,6 +304,7 @@ input[type='submit']:hover,
 .btn-primary.focus {
   background-color: var(--tc-turq-140);
   outline: 0 none;
+  color: var(--tc-white);
 }
 
 .btn-tab-primary:focus,
