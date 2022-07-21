@@ -1,4 +1,4 @@
-name: i18n Build Validation
+name: i18n - Build Validation
 on:
   push:
     branches:
