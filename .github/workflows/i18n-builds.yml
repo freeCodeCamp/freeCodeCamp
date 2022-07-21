@@ -1,0 +1,29 @@
+name: i18n Build Validation
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ci:
+    name: Validate i18n Builds
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@v3
+
+      - name: Use Node.js v${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Validate Challenge Files
+        run: npm run audit-challenges
