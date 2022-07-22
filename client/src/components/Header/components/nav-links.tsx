@@ -81,6 +81,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
       this.handleLanguageButtonKeyDown.bind(this);
     this.handleMenuKeyDown = this.handleMenuKeyDown.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
+    this.closeSignOutModal = this.closeSignOutModal.bind(this);
     this.handleSignOutModal = this.handleSignOutModal.bind(this);
   }
 
@@ -99,18 +100,21 @@ export class NavLinks extends Component<NavLinksProps, {}> {
 
   handleSignOutModal = (event: React.MouseEvent<HTMLButtonElement>): void => {
     event.preventDefault();
-    // const { isClose, showSignoutModal} = this.props;
     const { isClose } = this.props;
+    isClose();
+  };
 
-    const SignOutParagraph = event.target.dataset.value as string;
-    // If user selected cancel then close menu and put focus on button
-    if (SignOutParagraph === 'exit-lang-menu') {
-      // Set focus to Sign button first so we don't lose focus
-      // for screen readers.
-      this.showSignoutModal.current.focus();
-      isClose();
-      return;
-    }
+  closeSignOutModal = (event: React.MouseEvent<HTMLButtonElement>): void => {
+    event.preventDefault();
+    const { isClose } = this.props;
+    isClose();
+  };
+
+  closeSignOutModal = (event: React.MouseEvent<HTMLButtonElement>): void => {
+    event.preventDefault();
+    // this is a nonsense but it's a nonsense that please typescript
+    const { isClose } = this.props;
+    isClose();
   };
 
   handleLanguageChange = (event: React.MouseEvent<HTMLButtonElement>): void => {
@@ -341,6 +345,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
           </Fragment>
         )}
         <li key='forum' className='nav-line'>
+          s
           <Link
             className='nav-link nav-link-flex'
             external={true}
@@ -494,8 +499,12 @@ export class NavLinks extends Component<NavLinksProps, {}> {
               >
                 {t('buttons.sign-out')}
               </button>
-              {/*<Modal dialogClassName='Signout-modal' onHide={isClose} show={showSignoutModal}>  */}
-              <Modal dialogClassName='Signout-modal'>
+              {/*<Modal dialogClassName='Signout-modal' onHide={this.closeSignOutModal} show={this.handleSignOutModal}>  */}
+              <Modal
+                dialogClassName='Signout-modal'
+                onHide={this.closeSignOutModal}
+                show={this.handleSignOutModal}
+              >
                 <Modal.Header
                   className='Signout-modal-header fcc-modal'
                   closeButton={true}
