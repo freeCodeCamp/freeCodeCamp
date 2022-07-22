@@ -16,13 +16,13 @@ This same method applies to removing other fields in your package.json as well
 
 # --instructions--
 
-Remove the freecodecamp package from your dependencies.
+Remove the @freecodecamp/example package from your dependencies.
 
 **Note:** Make sure you have the right amount of commas after removing it.
 
 # --hints--
 
-"dependencies" should not include "freecodecamp"
+"dependencies" should not include "@freecodecamp/example"
 
 ```js
 (getUserInput) =>
@@ -31,8 +31,8 @@ Remove the freecodecamp package from your dependencies.
       var packJson = JSON.parse(data);
       assert.notProperty(
         packJson.dependencies,
-        'freecodecamp',
-        '"dependencies" still includes "freecodecamp"'
+        '@freecodecamp/example',
+        '"dependencies" still includes "@freecodecamp/example"'
       );
     },
     (xhr) => {
