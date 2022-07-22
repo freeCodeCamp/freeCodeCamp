@@ -333,7 +333,6 @@ const certMap = [
       }
     ]
   },
-
   {
     id: 'aaaaaaaaaaaaaaaaaaaaaaaa',
     title: 'Responsive Web Design QA',
@@ -343,12 +342,13 @@ const certMap = [
       {
         id: 'bbbbbbbbbbbbbbbbbbbbbbbb',
         title: 'Build a Personal Portfolio Webpage QA',
-        link: getResponsiveWebDesignPathQA('build-a-personal-portfolio-webpage-qa'),
+        link: getResponsiveWebDesignPathQA(
+          'build-a-personal-portfolio-webpage-qa'
+        ),
         certSlug: SuperBlocks.RespWebDesignQA
       }
     ]
   },
-
   {
     id: '561abd10cb81ac38a17513bc',
     title: 'JavaScript Algorithms and Data Structures',

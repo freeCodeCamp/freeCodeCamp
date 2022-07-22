@@ -9,15 +9,10 @@ const gray = require('gray-matter');
  * node tools/challenge-helper-scripts/rename-challenge-files.js
  */
 (async () => {
-
-  function handleRename(blockName) {
-
+  async function handleRename(blockName) {
     const asyncExec = promisify(exec);
     const blocks = await readdir(
-      join(
-        process.cwd(),
-        `curriculum/challenges/english/${blockName}`
-      )
+      join(process.cwd(), `curriculum/challenges/english/${blockName}`)
     );
     for (const block of blocks) {
       const files = await readdir(
@@ -41,9 +36,7 @@ const gray = require('gray-matter');
     }
   }
 
-  const renames =[
-    '14-responsive-web-design-22',
-    '14-responsive-web-design-22-qa',
-  ].forEach(rename => handleRename(rename))
-
+  ['14-responsive-web-design-22', '14-responsive-web-design-22-qa'].forEach(
+    rename => handleRename(rename)
+  );
 })();
