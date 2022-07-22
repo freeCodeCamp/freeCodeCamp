@@ -73,7 +73,7 @@ If you think you've found a bug, first read the ["How to Report a Bug"](https://
 
 コミュニティモデレーターは、私たちのヒーローです。 モデレーターの自発的な貢献により、freeCodeCamp は安全で快適なコミュニティになっています。
 
-何よりもまず、コミュニティの積極的な参加者となり、[行動規範](https://www.freecodecamp.org/news/code-of-conduct/) を強制するだけでなくその規範に従って行動する必要があります。
+何よりもまず、コミュニティの積極的な参加者となり、[行動規範](https://www.freecodecamp.org/japanese/news/code-of-conduct/) を強制するだけでなくその規範に従って行動する必要があります。
 
 いくつかのプラットフォームで推奨されるパスを以下に示します。
 
