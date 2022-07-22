@@ -47,7 +47,8 @@ import {
   updateTests,
   openModal,
   isBuildEnabledSelector,
-  disableBuildOnError
+  disableBuildOnError,
+  updateTestsRunning
 } from './';
 
 // How long before bailing out of a preview.
@@ -101,6 +102,7 @@ export function* executeChallengeSaga({ payload }) {
   try {
     yield put(initLogs());
     yield put(initConsole(i18next.t('learn.running-tests')));
+    yield put(updateTestsRunning(true));
     // reset tests to initial state
     const tests = (yield select(challengeTestsSelector)).map(
       ({ text, testString }) => ({ text, testString })
@@ -139,6 +141,7 @@ export function* executeChallengeSaga({ payload }) {
     }
     yield put(updateConsole(i18next.t('learn.tests-completed')));
     yield put(logsToConsole(i18next.t('learn.console-output')));
+    yield put(updateTestsRunning(false));
   } catch (e) {
     yield put(updateConsole(e));
   } finally {

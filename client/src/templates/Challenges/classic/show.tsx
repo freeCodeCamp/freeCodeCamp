@@ -46,7 +46,8 @@ import {
   previewMounted,
   updateChallengeMeta,
   openModal,
-  setEditorFocusability
+  setEditorFocusability,
+  testsRunningSelector
 } from '../redux';
 import { savedChallengesSelector } from '../../../redux';
 import { getGuideUrl } from '../utils';
@@ -61,6 +62,7 @@ import '../components/test-frame.css';
 const mapStateToProps = createStructuredSelector({
   challengeFiles: challengeFilesSelector,
   tests: challengeTestsSelector,
+  testsRunning: testsRunningSelector,
   output: consoleOutputSelector,
   isChallengeCompleted: isChallengeCompletedSelector,
   savedChallenges: savedChallengesSelector
@@ -104,6 +106,7 @@ interface ShowClassicProps {
   };
   t: TFunction;
   tests: Test[];
+  testsRunning: boolean;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   openModal: (modal: string) => void;
   setEditorFocusability: (canFocus: boolean) => void;
@@ -337,6 +340,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
         instructionsPanelRef={this.instructionsPanelRef}
         showToolPanel={showToolPanel}
         videoUrl={this.getVideoUrl()}
+        testsRunning={this.props.testsRunning}
       />
     );
   }

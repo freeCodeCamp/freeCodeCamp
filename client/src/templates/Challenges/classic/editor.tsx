@@ -55,7 +55,8 @@ import {
   stopResetting,
   isProjectPreviewModalOpenSelector,
   openModal,
-  isChallengeCompletedSelector
+  isChallengeCompletedSelector,
+  testsRunningSelector
 } from '../redux';
 import GreenPass from '../../../assets/icons/green-pass';
 import Code from '../../../assets/icons/code';
@@ -107,6 +108,7 @@ interface EditorProps {
   }) => void;
   usesMultifileEditor: boolean;
   isChallengeCompleted: boolean;
+  testsRunning: boolean;
 }
 
 // TODO: this is grab bag of unrelated properties.  There's no need for them to
@@ -136,6 +138,7 @@ const mapStateToProps = createSelector(
   userSelector,
   challengeTestsSelector,
   isChallengeCompletedSelector,
+  testsRunningSelector,
   (
     canFocus: boolean,
     { challengeType }: { challengeType: number },
@@ -146,7 +149,8 @@ const mapStateToProps = createSelector(
     isSignedIn: boolean,
     { theme = Themes.Default }: { theme: Themes },
     tests: [{ text: string; testString: string }],
-    isChallengeCompleted: boolean
+    isChallengeCompleted: boolean,
+    testsRunning: boolean
   ) => ({
     canFocus: open ? false : canFocus,
     challengeType,
@@ -156,7 +160,8 @@ const mapStateToProps = createSelector(
     output,
     theme,
     tests,
-    isChallengeCompleted
+    isChallengeCompleted,
+    testsRunning
   })
 );
 
@@ -584,6 +589,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         challengeHasErrors={challengeHasErrors()}
         tryToSubmitChallenge={tryToSubmitChallenge}
         isEditorInFocus={isEditorInFocus}
+        isRunningTests={props.testsRunning}
       />,
       outputNode,
       callback
@@ -1089,7 +1095,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     dataRef.current.outputNode = lowerJawElement;
     updateOutputZone();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props.tests]);
+  }, [props.tests, props.testsRunning]);
 
   useEffect(() => {
     const editor = dataRef.current.editor;

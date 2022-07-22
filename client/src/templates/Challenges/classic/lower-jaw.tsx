@@ -1,4 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, {
+  useState,
+  useEffect,
+  useMemo,
+  useCallback,
+  useRef
+} from 'react';
 import { useTranslation } from 'react-i18next';
 
 import TestFail from '../../../assets/icons/test-fail';
@@ -16,18 +22,18 @@ interface LowerJawProps {
   challengeHasErrors?: boolean;
   testsLength?: number;
   attemptsNumber?: number;
+  isRunningTests?: boolean;
 }
 
 const LowerJaw = ({
-  openHelpModal,
   challengeIsCompleted,
   challengeHasErrors,
   hint,
   tryToExecuteChallenge,
   tryToSubmitChallenge,
   attemptsNumber,
-  testsLength,
-  isEditorInFocus
+  isEditorInFocus,
+  isRunningTests
 }: LowerJawProps): JSX.Element => {
   const [previousHint, setpreviousHint] = useState('');
   const [runningTests, setRunningTests] = useState(false);
@@ -37,6 +43,14 @@ const LowerJaw = ({
   const { t } = useTranslation();
   const submitButtonRef = React.createRef<HTMLButtonElement>();
   const testFeedbackRef = React.createRef<HTMLDivElement>();
+  const challengeHasBeenCompletedRef = useRef(false);
+
+  // if a challenge was ever completed keep the state as completed
+  if (challengeIsCompleted) {
+    challengeHasBeenCompletedRef.current = true;
+  }
+  // keep the value of the reference.current as a separate value for convenience
+  const challengeHasBeenCompleted = challengeHasBeenCompletedRef.current;
 
   useEffect(() => {
     if (attemptsNumber && attemptsNumber > 0) {
@@ -67,7 +81,7 @@ const LowerJaw = ({
   }, [challengeHasErrors, hint]);
 
   useEffect(() => {
-    if (challengeIsCompleted && submitButtonRef?.current) {
+    if (challengeHasBeenCompleted && submitButtonRef?.current) {
       submitButtonRef.current.focus();
       setTimeout(() => {
         setTestBtnariaHidden(true);
@@ -75,7 +89,7 @@ const LowerJaw = ({
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [challengeIsCompleted]);
+  }, [challengeHasBeenCompleted]);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
@@ -84,12 +98,23 @@ const LowerJaw = ({
     }
   });
 
-  const renderTestFeedbackContainer = () => {
+  const sentencePicker = useCallback(() => {
+    const sentenceArray = [
+      'learn.sorry-try-again',
+      'learn.sorry-keep-trying',
+      'learn.sorry-getting-there',
+      'learn.sorry-hang-in-there',
+      'learn.sorry-dont-giveup'
+    ];
+    return attemptsNumber
+      ? sentenceArray[attemptsNumber % sentenceArray.length]
+      : sentenceArray[0];
+  }, [attemptsNumber]);
+
+  const feedbackContent = useMemo(() => {
     if (attemptsNumber === 0) {
       return '';
-    } else if (runningTests) {
-      return '';
-    } else if (challengeIsCompleted) {
+    } else if (challengeHasBeenCompleted) {
       const submitKeyboardInstructions = isEditorInFocus ? (
         <span className='sr-only'>{t('aria.submit')}</span>
       ) : (
@@ -142,69 +167,49 @@ const LowerJaw = ({
         </>
       );
     }
-  };
-
-  const sentencePicker = () => {
-    const sentenceArray = [
-      'learn.sorry-try-again',
-      'learn.sorry-keep-trying',
-      'learn.sorry-getting-there',
-      'learn.sorry-hang-in-there',
-      'learn.sorry-dont-giveup'
-    ];
-    return attemptsNumber
-      ? sentenceArray[attemptsNumber % sentenceArray.length]
-      : sentenceArray[0];
-  };
-
-  const renderHelpButton = () => {
-    const isAtteptsLargerThanTest =
-      attemptsNumber && testsLength && attemptsNumber >= testsLength;
-
-    if (isAtteptsLargerThanTest && !challengeIsCompleted)
-      return (
-        <button
-          className='btn-block btn fade-in'
-          id='help-button'
-          onClick={openHelpModal}
-        >
-          {t('buttons.ask-for-help')}
-        </button>
-      );
-  };
+  }, [
+    attemptsNumber,
+    challengeHasBeenCompleted,
+    hint,
+    isEditorInFocus,
+    isFeedbackHidden,
+    previousHint,
+    sentencePicker,
+    t
+  ]);
 
   const renderButtons = () => {
     return (
       <>
         <button
           id='test-button'
-          className={`btn btn-primary ${challengeIsCompleted ? 'sr-only' : ''}`}
+          className={`btn btn-primary ${
+            challengeHasBeenCompleted ? 'sr-only' : ''
+          }`}
           aria-hidden={testBtnariaHidden}
           onClick={tryToExecuteChallenge}
         >
           {t('buttons.check-code')}
+          {isRunningTests && '...'}
         </button>
         <div id='action-buttons-container'>
           <button
             id='submit-button'
-            aria-hidden={!challengeIsCompleted}
+            aria-hidden={!challengeHasBeenCompleted}
             className='btn btn-primary'
             onClick={tryToSubmitChallenge}
             ref={submitButtonRef}
           >
             {t('buttons.submit-and-go')}
           </button>
-          {renderHelpButton()}
         </div>
       </>
     );
   };
 
-  const feedbackContent = renderTestFeedbackContainer();
-
   return (
     <div className='action-row-container'>
-      {feedbackContent && (
+      {!isRunningTests && feedbackContent && (
         <div
           style={runningTests ? { height: `${testFeedbackheight}px` } : {}}
           className={`test-feedback`}
