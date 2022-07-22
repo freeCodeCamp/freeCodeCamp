@@ -266,7 +266,7 @@ Then there are three steps to complete:
 
 ![pre-translate existing translations](./images/crowdin/pre-translate3.png)
 
-When you have finished settings this, press the Pre-Translate button, and wait. It will alert you once it has finished. It will take more or less time depending on how many untranslated strings are present in the files you have choosen.
+When you have finished setting this, press the Pre-Translate button and wait. It will alert you once it has finished. The time it takes depends on how many untranslated strings are in the chosen files.
 
 ## How to update Crowdin Glossary
 
