@@ -34,63 +34,63 @@ Soddisfa le storie utente e passa tutti i test qua sotto per completare il proge
 
 # --hints--
 
-Dovresti avere un elemento `header` con un `id` di `header`
+Dovresti avere un elemento `header` con un `id` del valore `header`.
 
 ```js
 const el = document.getElementById('header')
 assert(!!el && el.tagName === 'HEADER')
 ```
 
-Dovresti avere un elemento `img` con un attributo `id` di `header-img`
+Dovresti avere un elemento `img` con un attributo `id` del valore `header-img`.
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && el.tagName === 'IMG')
 ```
 
-L'elemento `#header-img` dovrebbe essere un discendente di `#header`
+L'elemento `#header-img` dovrebbe essere un discendente di `#header`.
 
 ```js
 const els = document.querySelectorAll('#header #header-img')
 assert(els.length > 0)
 ```
 
-L'elemento `#header-img` dovrebbe avere un attributo `src`
+L'elemento `#header-img` dovrebbe avere un attributo `src`.
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && !!el.src)
 ```
 
-L'attributo `src` dell'elemento `#header-img` dovrebbe essere un URL valido (inizia con `http`)
+L'attributo `src` dell'elemento `#header-img` dovrebbe essere un URL valido (inizia con `http`).
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && /^http/.test(el.src))
 ```
 
-Dovresti avere un elemento `nav` con un `id` di `nav-bar`
+Dovresti avere un elemento `nav` con un `id` del valore `nav-bar`.
 
 ```js
 const el = document.getElementById('nav-bar')
 assert(!!el && el.tagName === 'NAV')
 ```
 
-Il tuo elemento `#nav-bar` dovrebbe essere un discendente dell'elemento `#header`
+L'elemento `#nav-bar` dovrebbe essere un discendente dell'elemento `#header`.
 
 ```js
 const els = document.querySelectorAll('#header #nav-bar')
 assert(els.length > 0)
 ```
 
-Dovresti avere almeno 3 elementi `.nav-link` dentro `#nav-bar`
+Dovresti avere almeno 3 elementi `.nav-link` dentro `#nav-bar`.
 
 ```js
 const els = document.querySelectorAll('#nav-bar .nav-link')
 assert(els.length >= 3)
 ```
 
-Ogni elemento `.nav-link` dovrebbe avere un attributo `href`
+Ogni elemento `.nav-link` dovrebbe avere un attributo `href`.
 
 ```js
 const els = document.querySelectorAll('.nav-link')
@@ -100,7 +100,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-Ogni elemento `.nav-link` dovrebbe essere un collegamento ad un elemento corrispondente nella pagina (cioè ha un attributo `href` con il valore dell'id di un altro elemento, ad esempio `#footer`)
+Ogni elemento `.nav-link` dovrebbe linkare a un elemento corrispondente nella pagina (quindi dovrebbe avere un attributo `href` con il valore dell'id di un altro elemento, ad esempio `#footer`).
 
 ```js
 const els = document.querySelectorAll('.nav-link')
@@ -111,14 +111,14 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-Dovresti avere un elemento `video` o `iframe` con un `id` di `video`
+Dovresti avere un elemento `video` o `iframe` con un `id` del valore `video`.
 
 ```js
 const el = document.getElementById('video')
 assert(!!el && (el.tagName === 'VIDEO' || el.tagName === 'IFRAME'))
 ```
 
-L'elemento `#video` dovrebbe avere un attributo `src`
+L'elemento `#video` dovrebbe avere un attributo `src`.
 
 ```js
 let el = document.getElementById('video')
@@ -133,77 +133,77 @@ if (sourceElement) {
 assert(el.hasAttribute('src'));
 ```
 
-Dovresti avere un elemento `form` con un attributo `id` di `form`
+Dovresti avere un elemento `form` con un attributo `id` del valore `form`.
 
 ```js
 const el = document.getElementById('form')
 assert(!!el && el.tagName === 'FORM')
 ```
 
-Dovresti avere un elemento `input` con un `id` di `email`
+Dovresti avere un elemento `input` con un `id` del valore `email`.
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-L'elemento `#email` dovrebbe essere un discendente di `#form`
+L'elemento `#email` dovrebbe essere un discendente di `#form`.
 
 ```js
 const els = document.querySelectorAll('#form #email')
 assert(els.length > 0)
 ```
 
-L'elemento `#email`dovrebbe avere un attributo `placeholder` con del testo segnaposto
+L'elemento `#email`dovrebbe avere un attributo `placeholder` con del testo segnaposto.
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-L'elemento `#email` dovrebbe usare la validazione HTML5 impostando l'attributo `type` a `email`
+L'elemento `#email` dovrebbe usare la validazione HTML5 impostando l'attributo `type` su `email`.
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.type === 'email')
 ```
 
-Dovresti avere un elemento `input` con un `id` di `submit`
+Dovresti avere un elemento `input` con un `id` del valore `submit`.
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-L'elemento `#submit` dovrebbe essere un discendente di `#form`
+L'elemento `#submit` dovrebbe essere un discendente di `#form`.
 
 ```js
 const els = document.querySelectorAll('#form #submit')
 assert(els.length > 0)
 ```
 
-L'elemento `#submit` dovrebbe avere un attributo `type` con valore di `submit`
+L'elemento `#submit` dovrebbe avere un attributo `type` con il valore `submit`.
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && el.type === 'submit')
 ```
 
-L'elemento `#form` dovrebbe avere un attributo `action` con valore di `https://www.freecodecamp.com/email-submit`
+L'elemento `#form` dovrebbe avere un attributo `action` con il valore `https://www.freecodecamp.com/email-submit`.
 
 ```js
 const el = document.getElementById('form')
 assert(!!el && el.action === 'https://www.freecodecamp.com/email-submit')
 ```
 
-L'elemento `#email` dovrebbe avere un attributo `name` con valore di `email`
+L'elemento `#email` dovrebbe avere un attributo `name` con il valore `email`.
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.name === 'email')
 ```
 
-L'elemento `#nav-bar` dovrebbe sempre essere in cima al viewport
+L'elemento `#nav-bar` dovrebbe sempre essere in cima al viewport.
 
 ```js
 (async () => {
@@ -243,7 +243,7 @@ L'elemento `#nav-bar` dovrebbe sempre essere in cima al viewport
 })();
 ```
 
-La pagina dovrebbe avere almeno un media query
+La pagina dovrebbe avere almeno un media query.
 
 ```js
 const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
@@ -251,7 +251,7 @@ const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
 assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 ```
 
-La tua pagina dovrebbe usare CSS Flexbox almeno una volta
+La tua pagina dovrebbe usare CSS Flexbox almeno una volta.
 
 ```js
 const stylesheet = new __helpers.CSSHelp(document).getStyleSheet()
@@ -281,7 +281,7 @@ assert(usesFlex)
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Product Landing Page</title>
   </head>
   <body>
