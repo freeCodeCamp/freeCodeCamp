@@ -2,7 +2,7 @@
 
 ## Preparati a contribuire
 
-> The freeCodeCamp Localization Roadmap – There Are No Speed Limits
+> Il piano d'azione per la localizzazione di freeCodeCamp – Non ci sono limiti di velocità
 
 > [!TIP] You can start by reading [this announcement](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/). We recommend joining [our community forum](https://forum.freecodecamp.org/c/contributors/3) and [Discord chat server](https://discord.gg/PRyKn3Vbay).
 
@@ -12,17 +12,17 @@ We just ask that you understand the following:
 
 1. **Le traduzioni sono uno sforzo di gruppo.**
 
-   Tradurre le risorse di freeCodeCamp è una delle esperienze più divertenti e gratificanti come contributore, e funziona meglio se coivolgi i tuoi amici e colleghi che parlano la tua stessa lingua.
+   Translating freeCodeCamp's resources is one of the most fun and rewarding experiences as a contributor, and it works best if you involve your friends and colleagues who speak the same world language as you.
 
    You can start by reading [this announcement](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/). We recommend joining [our community forum](https://forum.freecodecamp.org/c/contributors/3) and [Discord chat server](https://discord.gg/PRyKn3Vbay) with your friends and showing your interest before starting off with translations. Crowdin and other tools make it easy to contribute translations, but it's still a lot of work.
 
-   Vogliamo che ti diverta a contribuire e che tu non soffra di burnout o perda interesse.
+   We want you to enjoy contributing and not burn out or lose interest.
 
-   Un piccolo gruppo di 4-5 persone è una buona dimensione per iniziare la nicchia per la tua lingua. Puoi quindi reclutare ancora più amici perché si uniscano alla squadra.
+   Un piccolo gruppo di 4-5 persone è una buona dimensione per iniziare la nicchia per la tua lingua. You can then recruit even more friends to join the team.
 
 2. **Costa un sacco creare i server per ogni lingua.**
 
-   In superficie lo stack tecnico può non sembrare complicato, ma costa un sacco tenere i motori in funzione. Questo include mettere in piedi server aggiuntivi e dedicare personale a controllarli.
+   In superficie lo stack tecnico può non sembrare complicato, ma costa un sacco tenere i motori in funzione. This includes provisioning additional servers and dedicating staff to look after them.
 
    freeCodeCamp.org si impegna a offrire queste cose gratuitamente come sempre, ma dobbiamo dare priorità alle risorse per chi ne ha più bisogno. L'ultima cosa che vogliamo è dover disattivare i server per una lingua se l'attività di traduzione si ferma e il materiale diventa obsoleto.
 
@@ -36,7 +36,7 @@ We just ask that you understand the following:
 
    Sfortunatamente, la lista non include centinaia di lingue esistenti. Abbiamo dozzine di richieste da contributori come te ogni giorno che vogliono aiutare a tradurre il sito in una lingua che parlano.
 
-   Vogliamo decisamente aggiungere più lingue alla lista, ma come puoi già indovinare, questo è fattibile soltanto se raggiungiamo un sufficiente momento per una certa lingua.
+   We are definitely looking forward to adding more languages to the list, but as you may already guess, it would only be feasible if we get enough momentum around a world language.
 
    Se vuoi includere una nuova lingua, ti raccomandiamo di entusiasmare i tuoi amici.
 
@@ -50,19 +50,19 @@ It's our dream to provide you with the resources to learn, no matter the world l
 
 The translation workflow is split into two main activities:
 
-- **Tradurre** i file del curriculum, la documentazione ed elementi dell'interfaccia come pulsanti, etichette, ecc.:
+- **Translating** curriculum files, documentation and UI elements like buttons, labels, etc.:
 
   Come traduttore puoi iscriverti alla [nostra piattaforma di traduzione](https://translate.freecodecamp.org) e contribuire a tradurre in una qualsiasi delle oltre 30 lingue disponibili sulla piattaforma.
 
 - **Revisionare** (Proofread) le traduzioni per gli elementi nominati in precedenza.
 
-  I revisori verificano che le traduzioni contribuite dalla community abbiano un tono uniforme e non abbiano problemi comuni come errori di spelling, ecc. In breve, si occupano di assicurare un'alta qualità della traduzione. Nota che non usiamo traduzioni automatiche per una ragione.
+  Proofreaders verify that the community contributed translations are uniform in tone and free of common issues like typos, etc. In breve, si occupano di assicurare un'alta qualità della traduzione. Nota che non usiamo traduzioni automatiche per una ragione.
 
 > [!WARNING] We are no longer using GitHub to translate files directly, if you are a returning contributor head to our [translation platform](https://translate.freecodecamp.org/) instead.
 
 ## Getting started
 
-First, make sure you come say "Hi" in our [Discord](https://discord.gg/PRyKn3Vbay). Postiamo aggiornamenti regolari sulla traduzione delle risorse e rispondiamo a un sacco delle vostre domande lì.
+First, make sure you come say "Hi" in our [Discord](https://discord.gg/PRyKn3Vbay). We post regular updates about translating resources and answer a lot of your queries in there.
 
 Poi, vai alla nostra [piattaforma di traduzione](https://translate.freecodecamp.org/) e fai login (se è la prima volta che contribuisci alle traduzioni, dovrai creare un account).
 
@@ -72,7 +72,7 @@ Buona traduzione.
 
 ## Select a Project and File
 
-Quando visiti la piattaforma di traduzione, dovresti vedere vari °progetti° disponibili per la traduzione:
+Once you visit the translation platform, you should see multiple "projects" available for translation:
 
 1. Il progetto della [documentazione per contribuire (Contributing documentation)](https://translate.freecodecamp.org/contributing-docs) che contiene i file per questo sito di documentazione.
 2. Il progetto del [Coding Curriculum](https://translate.freecodecamp.org/curriculum), che contiene i file delle sfide del curriculum per programmatori.
@@ -101,11 +101,11 @@ Crowdin separa un documento in "stringhe" (strings) da tradurre, in genere frasi
 1. Una stringa evidenziata in verde ha già una traduzione proposta.
 2. Una stringa evidenziata in rosso _non_ ha una traduzione proposta.
 3. Una stringa con testo in grigio non è traducibile. Questo è il caso per blocchi di codice e altro contenuto che non deve essere tradotto. Non sarai in grado di selezionare queste stringhe nell'editor.
-4. Se un contributore ha già proposto una traduzione ad una stringa, Crowdin mostrerà qui queste proposte. Non sarai in grado di salvare una traduzione identica, invece se una traduzione è accurata dovresti usare l'icona `+` per darle un voto positivo. Una traduzione che è inaccurata può ricevere un voto negativo con l'icona `-`.
-5. Crowdin proporrà delle traduzioni basate su Memoria di Traduzione (Translation Memory - TM) e Traduzioni Automatiche (Machine Translation - MT). La Memoria di Traduzione si riferisce a stringhe simili o identiche che sono state tradotte/approvate in altri file. Le Traduzioni Automatiche si riferiscono a traduzioni raccomandate dalla loro libreria integrata.
+4. If a contributor has proposed a translation to a string, Crowdin will display those proposals here. Non sarai in grado di salvare una traduzione identica, invece se una traduzione è accurata dovresti usare l'icona `+` per darle un voto positivo. An inaccurate translation can be "downvoted" with the `-` icon.
+5. Crowdin will recommend translations based on Translation Memory (TM) or Machine Translation (MT). La Memoria di Traduzione si riferisce a stringhe simili o identiche che sono state tradotte/approvate in altri file. Le Traduzioni Automatiche si riferiscono a traduzioni raccomandate dalla loro libreria integrata.
 6. Questo è il pannello di modifica, dove puoi scrivere la tua proposta di traduzione per la stringa selezionata.
 7. La stringa attualmente selezionata nell'editor è evidenziata in giallo.
-8. Qui vedrai dei tag indicanti lo stato della stringa. `Done` significa che la stringa ha almento una traduzione proposta. `Todo` significa che la stringa non ha alcuna proposta di traduzione.
+8. Qui vedrai dei tag indicanti lo stato della stringa. `Done` means the string has at least one proposed translation. `Todo` significa che la stringa non ha alcuna proposta di traduzione.
 9. Qui puoi vedere la finestra dei commenti. Se hai domande o dubbi su una particolare stringa, puoi lasciare un commento sulla stringa qui perché altri traduttori li vedano.
 10. Questi due pulsanti dei pannelli nasconderanno i pannelli a sinistra (documento) e a destra (commenti).
 
@@ -113,7 +113,7 @@ Crowdin separa un documento in "stringhe" (strings) da tradurre, in genere frasi
 
 Quando hai finito la traduzione per una stringa, usa il pulsante `Save` per salvare la tua traduzione in Crowdin. Altri contributori potranno quindi votare la tua traduzione e i revisori potranno approvarla.
 
-Sentiti libero di tradurre quante stringhe vuoi, non ci sono step additionali richiesti quando completi un intero file o proponi una nuova traduzione. Usare il pulsante `Save` è tutto quello che serve per memorizzare una traduzione.
+You are welcome to translate as many strings as you like - there are no additional steps required when you complete a full file or propose a new translation. Usare il pulsante `Save` è tutto quello che serve per memorizzare una traduzione.
 
 > [!NOTE] If you see something in the English source file that is inaccurate or incorrect, please do not fix it through the translation flow. Instead, leave a comment on the string to notify us that there is a discrepancy, or create a GitHub issue.
 
@@ -177,9 +177,9 @@ After translation
 
 The actual files in docs are written in Markdown, but they will appear as HTML tags on Crowdin.
 
-You can find out how `docsify` converts a string in your language into an id by looking into the translated pages. If the translation is not deployed yet, you can preview it by [running the docs site locally](how-to-work-on-the-docs-theme.md#serving-the-documentation-site-locally).
+You can find out how `docsify` converts a string in your language into an id by looking into the translated pages. Se la traduzione non è stata ancora distribuita, puoi avere una preview [eseguendo il la il sito della documentazione in locale](how-to-work-on-the-docs-theme.md#sservire-localmente-il-sito-di-documentazione).
 
-You can learn more about [internal links in our docs here](how-to-work-on-the-docs-theme.md#how-to-create-an-internal-link).
+Puoi avere più informazioni sui  [link esterni in docs qui](how-to-work-on-the-docs-theme.md#howcome-creare-un-link-interno).
 
 ## Translate the LearnToCode RPG
 
@@ -188,7 +188,7 @@ The LearnToCode RPG runs on Ren'Py, which uses special syntax for translated str
 - Le frasi da tradurre sono sempre tra virgolette `""`. Queste sono dialoghi o stringhe di UI. Le parole chiave che vengono prima o dopo i dialoghi sono parole chiave di controllo del game engine e saranno spiegate in regole seguenti. Nota che questa prima regola governa le seguenti regole elencate.
 - Nel caso di `new "..."`, non tradurre la parola chiave `new`.
 - Prefissi come `player`, `annika`, `layla`, `marco` (o varianti come `player happy`, `player @ happy`) non devono essere tradotti. Questi sono le parole chiave per visualizzare correttamente gli sprite dei personaggi nel gioco.
-- Postfissi come `nointeract` non devono essere tradotti.
+- Postfixes like `nointeract` should not be translated.
 - Non tradurre stringhe tra `[]` e `{}`. Queste sono variabili interpolate e tag di testo. Queste devono rimanere parentesi a mezza larghezza `[]` e `{}` invece delle loro controparti a larghezza intera  `【】` e `「」`
 - Non tradurre la parola chiave `nointeract` alla fine di una frase.
 - Se proviamo a usare parentesi a larghezza intera `（）` ci sarà un avviso QA. Per evitarlo, usa parentesi a mezza larghezza  `()`

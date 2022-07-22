@@ -24,7 +24,7 @@ Para nos ajudar a fazer vídeos educacionais para nosso canal do YouTube, você 
 
 ### Como posso relatar um novo erro?
 
-Se você acha que encontrou um erro, primeiro leia o artigo ["Socorro, encontrei um erro"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) e siga suas instruções.
+Se você acha que encontrou um erro, primeiro leia o artigo ["Como relatar um erro"](https://www.freecodecamp.org/news/how-to-report-a-bug-to-freecodecamp/) e siga suas instruções.
 
 Se você está confiante de que é um novo erro, vá em frente e crie uma nova issue no GitHub. Certifique-se de incluir o máximo de informações possível para que possamos reproduzir o erro. Temos um modelo predefinido de issue para ajudar você.
 
