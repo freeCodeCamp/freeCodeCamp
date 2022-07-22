@@ -52,6 +52,7 @@ interface ToolPanelProps {
   saveChallenge: () => void;
   isMobile?: boolean;
   isSignedIn: boolean;
+  isRunningTests?: boolean;
   openHelpModal: () => void;
   openVideoModal: () => void;
   openResetModal: () => void;
@@ -66,6 +67,7 @@ function ToolPanel({
   saveChallenge,
   isMobile,
   isSignedIn,
+  isRunningTests,
   openHelpModal,
   openVideoModal,
   openResetModal,
@@ -95,6 +97,7 @@ function ToolPanel({
           onClick={handleRunTests}
         >
           {isMobile ? t('buttons.run') : t('buttons.run-test')}
+          {isRunningTests && ' ...'}
         </Button>
       )}
       {challengeIsCompleted && (

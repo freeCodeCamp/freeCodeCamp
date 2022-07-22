@@ -27,6 +27,7 @@ interface SidePanelProps {
   instructionsPanelRef: React.RefObject<HTMLDivElement>;
   showToolPanel: boolean;
   tests: Test[];
+  testsRunning: boolean;
   videoUrl: string;
 }
 
@@ -38,6 +39,7 @@ export function SidePanel({
   instructionsPanelRef,
   showToolPanel = false,
   tests,
+  testsRunning,
   videoUrl
 }: SidePanelProps): JSX.Element {
   const isChallengeComplete = tests.every(test => test.pass && !test.err);
@@ -85,6 +87,7 @@ export function SidePanel({
             guideUrl={guideUrl}
             videoUrl={videoUrl}
             challengeIsCompleted={isChallengeComplete}
+            isRunningTests={testsRunning}
           />
         )}
         <TestSuite tests={tests} />
@@ -93,6 +96,7 @@ export function SidePanel({
             guideUrl={guideUrl}
             videoUrl={videoUrl}
             challengeIsCompleted={isChallengeComplete}
+            isRunningTests={testsRunning}
           />
         )}
       </div>
