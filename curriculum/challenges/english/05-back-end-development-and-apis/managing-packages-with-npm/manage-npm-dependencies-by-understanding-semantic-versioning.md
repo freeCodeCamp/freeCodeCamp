@@ -20,11 +20,11 @@ The MAJOR version should increment when you make incompatible API changes. The M
 
 # --instructions--
 
-In the dependencies section of your package.json file, change the `version` of @freecodecamp/example to match MAJOR version 1, MINOR version 2 and PATCH version 13
+In the dependencies section of your `package.json` file, change the version of `@freecodecamp/example` to match MAJOR version 1, MINOR version 2 and PATCH version 13
 
 # --hints--
 
-"dependencies" should include "@freecodecamp/example"
+`"dependencies"` should include `"@freecodecamp/example"`.
 
 ```js
 (getUserInput) =>
@@ -43,7 +43,7 @@ In the dependencies section of your package.json file, change the `version` of @
   );
 ```
 
-"@freecodecamp/example" version should be "1.2.13"
+`"@freecodecamp/example"` version should be `"1.2.13"`.
 
 ```js
 (getUserInput) =>

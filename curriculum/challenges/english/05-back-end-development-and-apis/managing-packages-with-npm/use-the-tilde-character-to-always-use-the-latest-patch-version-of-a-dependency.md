@@ -18,15 +18,15 @@ To allow an npm dependency to update to the latest PATCH version, you can prefix
 
 # --instructions--
 
-In the package.json file, your current rule for how npm may upgrade @freecodecamp/example is to use a specific version (1.2.13). But now, you want to allow the latest 1.2.x version.
+In the package.json file, your current rule for how npm may upgrade `@freecodecamp/example` is to use a specific version (1.2.13). But now, you want to allow the latest 1.2.x version.
 
-Use the tilde (`~`) character to prefix the version of @freecodecamp/example in your dependencies, and allow npm to update it to any new PATCH release.
+Use the tilde (`~`) character to prefix the version of `@freecodecamp/example` in your dependencies, and allow npm to update it to any new _patch_ release.
 
 **Note:** The version numbers themselves should not be changed.
 
 # --hints--
 
-"dependencies" should include "@freecodecamp/example"
+`"dependencies"` should include `"@freecodecamp/example"`.
 
 ```js
 (getUserInput) =>
@@ -45,7 +45,7 @@ Use the tilde (`~`) character to prefix the version of @freecodecamp/example in 
   );
 ```
 
-"@freecodecamp/example" version should match "~1.2.13"
+`"@freecodecamp/example"` version should match `"~1.2.13"`.
 
 ```js
 (getUserInput) =>

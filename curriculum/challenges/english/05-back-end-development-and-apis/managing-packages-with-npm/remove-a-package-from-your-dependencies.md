@@ -16,13 +16,13 @@ This same method applies to removing other fields in your package.json as well
 
 # --instructions--
 
-Remove the @freecodecamp/example package from your dependencies.
+Remove the `@freecodecamp/example` package from your dependencies.
 
 **Note:** Make sure you have the right amount of commas after removing it.
 
 # --hints--
 
-"dependencies" should not include "@freecodecamp/example"
+`"dependencies"` should not include `"@freecodecamp/example"`.
 
 ```js
 (getUserInput) =>
