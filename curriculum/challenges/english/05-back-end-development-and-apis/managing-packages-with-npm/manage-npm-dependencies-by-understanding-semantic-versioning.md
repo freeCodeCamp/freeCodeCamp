@@ -20,11 +20,11 @@ The MAJOR version should increment when you make incompatible API changes. The M
 
 # --instructions--
 
-In the dependencies section of your package.json file, change the `version` of freecodecamp to match MAJOR version 1, MINOR version 0 and PATCH version 0
+In the dependencies section of your package.json file, change the `version` of @freecodecamp/example to match MAJOR version 1, MINOR version 2 and PATCH version 13
 
 # --hints--
 
-"dependencies" should include "freecodecamp"
+"dependencies" should include "@freecodecamp/example"
 
 ```js
 (getUserInput) =>
@@ -33,8 +33,8 @@ In the dependencies section of your package.json file, change the `version` of f
       var packJson = JSON.parse(data);
       assert.property(
         packJson.dependencies,
-        'freecodecamp',
-        '"dependencies" does not include "freecodecamp"'
+        '@freecodecamp/example',
+        '"dependencies" does not include "@freecodecamp/example"'
       );
     },
     (xhr) => {
@@ -43,7 +43,7 @@ In the dependencies section of your package.json file, change the `version` of f
   );
 ```
 
-"freecodecamp" version should be "1.0.0"
+"@freecodecamp/example" version should be "1.2.13"
 
 ```js
 (getUserInput) =>
@@ -51,9 +51,9 @@ In the dependencies section of your package.json file, change the `version` of f
     (data) => {
       var packJson = JSON.parse(data);
       assert.equal(
-        packJson.dependencies.freecodecamp,
-        '1.0.0',
-        'Wrong version of "freecodecamp". It should be 1.0.0'
+        packJson.dependencies["@freecodecamp/example"],
+        '1.2.13',
+        'Wrong version of "@freecodecamp/example". It should be 1.2.13'
       );
     },
     (xhr) => {
