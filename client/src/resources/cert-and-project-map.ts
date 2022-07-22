@@ -6,6 +6,7 @@ const { showUpcomingChanges } = config;
 const responsiveWebBase =
   '/learn/responsive-web-design/responsive-web-design-projects';
 const responsiveWeb22Base = '/learn/2022/responsive-web-design';
+const responsiveWeb22BaseQA = '/learn/2022/responsive-web-design-qa';
 const jsAlgoBase =
   '/learn/javascript-algorithms-and-data-structures/' +
   'javascript-algorithms-and-data-structures-projects';
@@ -332,7 +333,22 @@ const certMap = [
       }
     ]
   },
-
+  {
+    id: 'aaaaaaaaaaaaaaaaaaaaaaaa',
+    title: 'Responsive Web Design QA',
+    certSlug: SuperBlocks.RespWebDesignQA,
+    flag: 'isRespWebDesignQACert',
+    projects: [
+      {
+        id: 'bbbbbbbbbbbbbbbbbbbbbbbb',
+        title: 'Build a Personal Portfolio Webpage QA',
+        link: getResponsiveWebDesignPathQA(
+          'build-a-personal-portfolio-webpage-qa'
+        ),
+        certSlug: SuperBlocks.RespWebDesignQA
+      }
+    ]
+  },
   {
     id: '561abd10cb81ac38a17513bc',
     title: 'JavaScript Algorithms and Data Structures',
@@ -718,6 +734,10 @@ const certMap = [
 
 function getResponsiveWebDesignPath(project: string) {
   return `${responsiveWeb22Base}/${project}-project/${project}`;
+}
+
+function getResponsiveWebDesignPathQA(project: string) {
+  return `${responsiveWeb22BaseQA}/${project}-project/${project}`;
 }
 
 function getJavaScriptAlgoPath(project: string) {

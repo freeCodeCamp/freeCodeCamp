@@ -3,6 +3,7 @@ export const certTypes = {
   backEnd: 'isBackEndCert',
   dataVis: 'isDataVisCert',
   respWebDesign: 'isRespWebDesignCert',
+  respWebDesignQA: 'isRespWebDesignQACert',
   frontEndDevLibs: 'isFrontEndLibsCert',
   dataVis2018: 'is2018DataVisCert',
   jsAlgoDataStruct: 'isJsAlgoDataStructCert',
@@ -19,6 +20,7 @@ export const certTypes = {
 
 export enum SuperBlocks {
   RespWebDesignNew = '2022/responsive-web-design',
+  RespWebDesignQA = '2022/responsive-web-design-qa',
   RespWebDesign = 'responsive-web-design',
   JsAlgoDataStruct = 'javascript-algorithms-and-data-structures',
   JsAlgoDataStructNew = '2022/javascript-algorithms-and-data-structures',
@@ -41,6 +43,7 @@ export const certIds = {
   legacyInfosecQaId: '561add10cb82ac38a17213bc',
   legacyFullStackId: '561add10cb82ac38a17213bd',
   respWebDesignId: '561add10cb82ac38a17513bc',
+  respWebDesignQAId: 'aaaaaaaaaaaaaaaaaaaaaaaa',
   frontEndDevLibsId: '561acd10cb82ac38a17513bc',
   dataVis2018Id: '5a553ca864b52e1d8bceea14',
   jsAlgoDataStructId: '561abd10cb81ac38a17513bc',
@@ -60,6 +63,7 @@ export const completionHours = {
   [certTypes.infosecQa]: 300,
   [certTypes.fullStack]: 1800,
   [certTypes.respWebDesign]: 300,
+  [certTypes.respWebDesignQA]: 1,
   [certTypes.frontEndDevLibs]: 300,
   [certTypes.jsAlgoDataStruct]: 300,
   [certTypes.dataVis2018]: 300,
@@ -84,7 +88,7 @@ export const certSlugTypeMap = {
 
   // modern
   [SuperBlocks.RespWebDesign]: certTypes.respWebDesign,
-  [SuperBlocks.RespWebDesignNew]: certTypes.respWebDesign,
+  [SuperBlocks.RespWebDesignNew]: certTypes.respWebDesignQA,
   [SuperBlocks.JsAlgoDataStruct]: certTypes.jsAlgoDataStruct,
   [SuperBlocks.JsAlgoDataStructNew]: certTypes.jsAlgoDataStruct,
   [SuperBlocks.FrontEndDevLibs]: certTypes.frontEndDevLibs,
@@ -122,6 +126,7 @@ export const superBlockCertTypeMap = {
   // post-modern
   // TODO: use enum
   [SuperBlocks.RespWebDesignNew]: certTypes.respWebDesign,
+  [SuperBlocks.RespWebDesignQA]: certTypes.respWebDesignQA,
   [SuperBlocks.JsAlgoDataStructNew]: certTypes.jsAlgoDataStruct
 };
 
@@ -132,6 +137,7 @@ export const certTypeIdMap = {
   [certTypes.infosecQa]: certIds.legacyInfosecQaId,
   [certTypes.fullStack]: certIds.legacyFullStackId,
   [certTypes.respWebDesign]: certIds.respWebDesignId,
+  [certTypes.respWebDesignQA]: certIds.respWebDesignQAId,
   [certTypes.frontEndDevLibs]: certIds.frontEndDevLibsId,
   [certTypes.jsAlgoDataStruct]: certIds.jsAlgoDataStructId,
   [certTypes.dataVis2018]: certIds.dataVis2018Id,
@@ -151,6 +157,7 @@ export const certTypeTitleMap = {
   [certTypes.infosecQa]: 'Legacy Information Security and Quality Assurance',
   [certTypes.fullStack]: 'Legacy Full Stack',
   [certTypes.respWebDesign]: 'Responsive Web Design',
+  [certTypes.respWebDesignQA]: 'Responsive Web Design QA',
   [certTypes.frontEndDevLibs]: 'Front End Development Libraries',
   [certTypes.jsAlgoDataStruct]: 'JavaScript Algorithms and Data Structures',
   [certTypes.dataVis2018]: 'Data Visualization',
