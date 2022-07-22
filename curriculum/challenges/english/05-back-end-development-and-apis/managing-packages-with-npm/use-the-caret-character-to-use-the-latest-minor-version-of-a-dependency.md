@@ -10,7 +10,7 @@ dashedName: use-the-caret-character-to-use-the-latest-minor-version-of-a-depende
 
 Similar to how the tilde we learned about in the last challenge allows npm to install the latest PATCH for a dependency, the caret (`^`) allows npm to install future updates as well. The difference is that the caret will allow both MINOR updates and PATCHes.
 
-Your current version of freecodecamp should be "~2.10.2" which allows npm to install to the latest 2.10.x version. If you were to use the caret (^) as a version prefix instead, npm would be allowed to update to any 2.x.x version.
+Your current version of @freecodecamp/example should be "~1.2.13" which allows npm to install to the latest 1.2.x version. If you were to use the caret (^) as a version prefix instead, npm would be allowed to update to any 1.x.x version.
 
 ```json
 "package": "^1.3.8"
@@ -20,13 +20,13 @@ This would allow updates to any 1.x.x version of the package.
 
 # --instructions--
 
-Use the caret (`^`) to prefix the version of freecodecamp in your dependencies and allow npm to update it to any new MINOR release.
+Use the caret (`^`) to prefix the version of @freecodecamp/example in your dependencies and allow npm to update it to any new MINOR release.
 
 **Note:** The version numbers themselves should not be changed.
 
 # --hints--
 
-"dependencies" should include "freecodecamp"
+"dependencies" should include "@freecodecamp/example"
 
 ```js
 (getUserInput) =>
@@ -35,8 +35,8 @@ Use the caret (`^`) to prefix the version of freecodecamp in your dependencies a
       var packJson = JSON.parse(data);
       assert.property(
         packJson.dependencies,
-        'freecodecamp',
-        '"dependencies" does not include "freecodecamp"'
+        '@freecodecamp/example',
+        '"dependencies" does not include "@freecodecamp/example"'
       );
     },
     (xhr) => {
@@ -45,7 +45,7 @@ Use the caret (`^`) to prefix the version of freecodecamp in your dependencies a
   );
 ```
 
-"freecodecamp" version should match "^1.x.x"
+"@freecodecamp/example" version should match "^1.x.x"
 
 ```js
 (getUserInput) =>
@@ -53,9 +53,9 @@ Use the caret (`^`) to prefix the version of freecodecamp in your dependencies a
     (data) => {
       var packJson = JSON.parse(data);
       assert.match(
-        packJson.dependencies.freecodecamp,
+        packJson.dependencies["@freecodecamp/example"],
         /^\^1\./,
-        'Wrong version of "freecodecamp". It should be ^1.0.0'
+        'Wrong version of "@freecodecamp/example". It should be ^1.2.13'
       );
     },
     (xhr) => {
