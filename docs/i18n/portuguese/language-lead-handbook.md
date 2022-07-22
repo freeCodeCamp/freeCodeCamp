@@ -92,23 +92,23 @@ Você pode converter de um formato para o outro cuidadosamente, alterando-o manu
 
 > [!TIP] Um novo fluxo de trabalho está sendo trabalhado. Será preciso alterar em apenas um lugar no futuro.
 
-## How to translate the info boxes headers in the documentation
+## Como traduzir os cabeçalhos das caixas informativas na documentação
 
-You can find these boxes all around the documentation:
+Você pode encontrar essas caixas por toda a documentação:
 
-> [!NOTE] I am a note box
+> [!NOTE] Eu sou uma caixa de notificação
 
-> [!TIP] I am a tip box
+> [!TIP] Eu sou uma caixa de dica
 
-> [!WARNING] I am a warning box
+> [!WARNING] Eu sou uma caixa de advertência
 
-> [!ATTENTION] I am an attention box
+> [!ATTENTION] Eu sou uma caixa de atenção
 
-By default, their headers appear in English even in the translated docs.
+Por padrão, os cabeçalhos deles aparecem em inglês, mesmo na documentação traduzida.
 
-You can have the headers translated in the docs in your language by changing the file `docs/index.html`, in this way:
+É possível traduzir os cabeçalhos para a documentação para o seu idioma alterando o arquivo `docs/index.html`, desta forma:
 
-Inside the `script` element there is an object, find the `flexibleAlerts` property, which has this shape:
+Dentro do elemento `script` existe um objeto. Nele, você encontra a propriedade `flexibleAlerts`, que tem esta forma:
 
 ```js
 flexibleAlerts: {
@@ -135,9 +135,9 @@ flexibleAlerts: {
 }
 ```
 
-Inside the object of the label property, before the `'/'` property, you would add a new property for your language, like `/i18n/<language>/`.
+Dentro do objeto da propriedade label, antes da propriedade `'/'`, você adiciona uma nova propriedade para o seu idioma, assim: `/i18n/<language>/`.
 
-For example, adding the translations for Portuguese would appear like this:
+Por exemplo, ao adicionar as traduções para o português, você terá algo assim:
 
 ```js
 flexibleAlerts: {

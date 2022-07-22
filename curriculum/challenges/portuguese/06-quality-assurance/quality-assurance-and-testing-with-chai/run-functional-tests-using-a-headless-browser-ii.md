@@ -12,7 +12,7 @@ Lembrando que este projeto está sendo construído a partir do <a href="https://
 
 # --instructions--
 
-Em `tests/2_functional-tests.js`, no teste `'Submit the surname "Vespucci" in the HTML form'` (`// #5`), automatize o seguinte:
+Em `tests/2_functional-tests.js`, no teste `'Submit the surname "Vespucci" in the HTML form'` (`// #6`), automatize o seguinte:
 
 1.  Preencha o formulário com o surname `Vespucci`
 2.  Pressione o botão Submit
