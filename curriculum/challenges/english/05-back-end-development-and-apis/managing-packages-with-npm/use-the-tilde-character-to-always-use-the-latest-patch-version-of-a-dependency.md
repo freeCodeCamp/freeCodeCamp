@@ -18,15 +18,15 @@ To allow an npm dependency to update to the latest PATCH version, you can prefix
 
 # --instructions--
 
-In the package.json file, your current rule for how npm may upgrade freecodecamp is to use a specific version (1.0.0). But now, you want to allow the latest 1.0.x version.
+In the package.json file, your current rule for how npm may upgrade @freecodecamp/example is to use a specific version (1.2.13). But now, you want to allow the latest 1.2.x version.
 
-Use the tilde (`~`) character to prefix the version of freecodecamp in your dependencies, and allow npm to update it to any new PATCH release.
+Use the tilde (`~`) character to prefix the version of @freecodecamp/example in your dependencies, and allow npm to update it to any new PATCH release.
 
 **Note:** The version numbers themselves should not be changed.
 
 # --hints--
 
-"dependencies" should include "freecodecamp"
+"dependencies" should include "@freecodecamp/example"
 
 ```js
 (getUserInput) =>
@@ -35,8 +35,8 @@ Use the tilde (`~`) character to prefix the version of freecodecamp in your depe
       var packJson = JSON.parse(data);
       assert.property(
         packJson.dependencies,
-        'freecodecamp',
-        '"dependencies" does not include "freecodecamp"'
+        '@freecodecamp/example',
+        '"dependencies" does not include "@freecodecamp/example"'
       );
     },
     (xhr) => {
@@ -45,7 +45,7 @@ Use the tilde (`~`) character to prefix the version of freecodecamp in your depe
   );
 ```
 
-"freecodecamp" version should match "~1.0.0"
+"@freecodecamp/example" version should match "~1.2.13"
 
 ```js
 (getUserInput) =>
@@ -53,9 +53,9 @@ Use the tilde (`~`) character to prefix the version of freecodecamp in your depe
     (data) => {
       var packJson = JSON.parse(data);
       assert.match(
-        packJson.dependencies.freecodecamp,
-        /^\~1\.0\.0/,
-        'Wrong version of "freecodecamp". It should be ~1.0.0'
+        packJson.dependencies["@freecodecamp/example"],
+        /^\~1\.2\.13/,
+        'Wrong version of "@freecodecamp/example". It should be ~1.2.13'
       );
     },
     (xhr) => {
