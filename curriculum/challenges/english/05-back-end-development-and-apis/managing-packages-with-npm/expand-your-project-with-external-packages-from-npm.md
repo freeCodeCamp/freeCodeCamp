@@ -22,13 +22,13 @@ In this section, packages your project requires are stored using the following f
 
 # --instructions--
 
-Add version "1.0.0" of the "freecodecamp" package to the `dependencies` field of your package.json file.
+Add version "1.1.0" of the "@freecodecamp/example" package to the `dependencies` field of your package.json file.
 
-**Note:** freecodecamp is a faux package used as a learning tool.
+**Note:** @freecodecamp/example is a faux package used as a learning tool.
 
 # --hints--
 
-"dependencies" should include "freecodecamp"
+"dependencies" should include "@freecodecamp/example"
 
 ```js
 (getUserInput) =>
@@ -37,8 +37,8 @@ Add version "1.0.0" of the "freecodecamp" package to the `dependencies` field of
       var packJson = JSON.parse(data);
       assert.property(
         packJson.dependencies,
-        'freecodecamp',
-        '"dependencies" does not include "freecodecamp"'
+        '@freecodecamp/example',
+        '"dependencies" does not include "@freecodecamp/example"'
       );
     },
     (xhr) => {
@@ -47,7 +47,7 @@ Add version "1.0.0" of the "freecodecamp" package to the `dependencies` field of
   );
 ```
 
-"freecodecamp" version should be "1.0.0"
+"@freecodecamp/example" version should be "1.1.0"
 
 ```js
 (getUserInput) =>
@@ -55,9 +55,9 @@ Add version "1.0.0" of the "freecodecamp" package to the `dependencies` field of
     (data) => {
       var packJson = JSON.parse(data);
       assert.match(
-        packJson.dependencies.freecodecamp,
-        /^[\^\~]?1\.0\.0/,
-        'Wrong version of "freecodecamp" installed. It should be 1.0.0'
+        packJson.dependencies["@freecodecamp/example"],
+        /^[\^\~]?1\.1\.0/,
+        'Wrong version of "@freecodecamp/example" installed. It should be 1.1.0'
       );
     },
     (xhr) => {
