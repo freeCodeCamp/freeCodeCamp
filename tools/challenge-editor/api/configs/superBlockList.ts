@@ -52,6 +52,10 @@ export const superBlockList = [
     path: '14-responsive-web-design-22'
   },
   {
+    name: 'Responsive Web Design QA',
+    path: '14-responsive-web-design-22-qa'
+  },
+  {
     name: 'JavaScript Algorithms and Data Structures (Beta)',
     path: '15-javascript-algorithms-and-data-structures-22'
   }

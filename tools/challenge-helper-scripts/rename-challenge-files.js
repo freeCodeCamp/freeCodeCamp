@@ -9,31 +9,41 @@ const gray = require('gray-matter');
  * node tools/challenge-helper-scripts/rename-challenge-files.js
  */
 (async () => {
-  const asyncExec = promisify(exec);
-  const blocks = await readdir(
-    join(
-      process.cwd(),
-      'curriculum/challenges/english/14-responsive-web-design-22'
-    )
-  );
-  for (const block of blocks) {
-    const files = await readdir(
+
+  function handleRename(blockName) {
+
+    const asyncExec = promisify(exec);
+    const blocks = await readdir(
       join(
         process.cwd(),
-        `curriculum/challenges/english/14-responsive-web-design-22/${block}`
+        `curriculum/challenges/english/${blockName}`
       )
     );
-    for (const file of files) {
-      const fileData = await readFile(
+    for (const block of blocks) {
+      const files = await readdir(
         join(
           process.cwd(),
-          `curriculum/challenges/english/14-responsive-web-design-22/${block}/${file}`
+          `curriculum/challenges/english/${blockName}/${block}`
         )
       );
-      const challengeId = await gray(fileData).data.id;
-      await asyncExec(
-        `git mv curriculum/challenges/english/14-responsive-web-design-22/${block}/${file} curriculum/challenges/english/14-responsive-web-design-22/${block}/${challengeId}.md`
-      );
+      for (const file of files) {
+        const fileData = await readFile(
+          join(
+            process.cwd(),
+            `curriculum/challenges/english/${blockName}/${block}/${file}`
+          )
+        );
+        const challengeId = await gray(fileData).data.id;
+        await asyncExec(
+          `git mv curriculum/challenges/english/${blockName}/${block}/${file} curriculum/challenges/english/${blockName}/${block}/${challengeId}.md`
+        );
+      }
     }
   }
+
+  const renames =[
+    '14-responsive-web-design-22',
+    '14-responsive-web-design-22-qa',
+  ].forEach(rename => handleRename(rename))
+
 })();
