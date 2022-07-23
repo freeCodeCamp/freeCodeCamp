@@ -49,7 +49,6 @@ export interface NavLinksProps {
   navigate?: (location: string) => void;
   showLanguageMenu?: (elementToFocus: HTMLButtonElement) => void;
   hideLanguageMenu?: () => void;
-  isClose: () => void;
   menuButtonRef: Ref<HTMLButtonElement>;
 }
 
@@ -81,7 +80,6 @@ export class NavLinks extends Component<NavLinksProps, {}> {
       this.handleLanguageButtonKeyDown.bind(this);
     this.handleMenuKeyDown = this.handleMenuKeyDown.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
-    this.closeSignOutModal = this.closeSignOutModal.bind(this);
     this.handleSignOutModal = this.handleSignOutModal.bind(this);
   }
 
@@ -98,16 +96,9 @@ export class NavLinks extends Component<NavLinksProps, {}> {
     return previousSibling?.querySelector('a, button') ?? menuButtonRef.current;
   }
 
-  handleSignOutModal = (event: React.MouseEvent<HTMLButtonElement>): void => {
-    event.preventDefault();
-    const { isClose } = this.props;
-    isClose();
-  };
-
-  closeSignOutModal = (event: React.MouseEvent<HTMLButtonElement>): void => {
-    event.preventDefault();
-    const { isClose } = this.props;
-    isClose();
+  handleSignOutModal = (): void => {
+    console.log(showSignoutModal);
+    this.setState({ showSignoutModal: !showSignoutModal });
   };
 
   closeSignOutModal = (event: React.MouseEvent<HTMLButtonElement>): void => {
@@ -278,6 +269,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
       fetchState,
       t,
       toggleNightMode,
+      showSignoutModal,
       user: { isDonating = false, username, theme }
     }: NavLinksProps = this.props;
 
@@ -502,12 +494,12 @@ export class NavLinks extends Component<NavLinksProps, {}> {
               {/*<Modal dialogClassName='Signout-modal' onHide={this.closeSignOutModal} show={this.handleSignOutModal}>  */}
               <Modal
                 dialogClassName='Signout-modal'
-                onHide={this.closeSignOutModal}
-                show={this.handleSignOutModal}
+                onHide={this.handleSignOutModal}
+                show={showSignoutModal}
               >
                 <Modal.Header
                   className='Signout-modal-header fcc-modal'
-                  closeButton={true}
+                  closeButton={this.handleSignOutModal}
                 />
                 <Modal.Body className='Signout-modal-body text-center'>
                   <p>{t('misc.sign-out')}</p>
