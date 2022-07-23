@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 interface FormContextProps {
-  controlId?: HTMLElement;
+  controlId?: string;
 }
 
 export const FormContext = React.createContext<FormContextProps>({});
