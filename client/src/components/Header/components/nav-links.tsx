@@ -336,7 +336,6 @@ export class NavLinks extends Component<NavLinksProps, {}> {
           </Fragment>
         )}
         <li key='forum' className='nav-line'>
-          s
           <Link
             className='nav-link nav-link-flex'
             external={true}
