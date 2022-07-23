@@ -89,8 +89,6 @@ The `authReducer` function should handle multiple action types with a switch sta
 const noWhiteSpace = __helpers.removeWhiteSpace(code);
 assert(LOGIN === 'LOGIN' && LOGOUT === 'LOGOUT')
 assert(noWhiteSpace.includes('const'))
-assert.isNotOk(noWhiteSpace.includes('let'))
-assert.isNotOk(noWhiteSpace.includes('var'))
 ```
 
 The action creators and the reducer should reference the `LOGIN` and `LOGOUT` constants.
