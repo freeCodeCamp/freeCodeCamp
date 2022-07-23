@@ -112,7 +112,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
     const { hideMenu, hideLanguageMenu, menuButtonRef, navigate } = this.props;
     const newLanguage = event.target.dataset.value as string;
     // If user selected cancel then close menu and put focus on button
-    if (newLanguage === 'misc.sign-out') {
+    if (newLanguage === 'exit-lang-menu') {
       // Set focus to language button first so we don't lose focus
       // for screen readers.
       this.langButtonRef.current.focus();
