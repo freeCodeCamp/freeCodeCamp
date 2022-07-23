@@ -485,7 +485,9 @@ export class NavLinks extends Component<NavLinksProps, {}> {
             <li>
               <button
                 className='nav-link nav-link-signout'
-                onClick={() => (showSignoutModal = !showSignoutModal)}
+                onClick={() =>
+                  (this.handleSignOutModal = !this.handleSignOutModal)
+                }
               >
                 {t('buttons.sign-out')}
               </button>
