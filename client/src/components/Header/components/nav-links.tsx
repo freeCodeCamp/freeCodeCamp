@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/ban-types */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
@@ -40,11 +39,11 @@ export interface NavLinksProps {
   isLanguageMenuDisplayed?: boolean;
   showSignoutModal?: boolean;
   fetchState?: { pending: boolean };
-  i18n: Object;
+  i18n: Record<string, unknown>;
   t: TFunction;
-  signOutAttribute: (attributes: {}) => void;
+  signOutAttribute: (attributes: Record<string, unknown>) => void;
   hideMenu: () => void;
-  toggleNightMode: (x: any) => any;
+  toggleNightMode: (theme: Themes) => Theme;
   user?: Record<string, unknown>;
   navigate?: (location: string) => void;
   showLanguageMenu?: (elementToFocus: HTMLButtonElement) => void;
@@ -83,7 +82,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
     this.handleSignOutModal = this.handleSignOutModal.bind(this);
   }
 
-  toggleTheme(currentTheme = Themes.Default, toggleNightMode: any) {
+  toggleTheme(currentTheme = Themes.Default, toggleNightMode: Themes.Night) {
     toggleNightMode(
       currentTheme === Themes.Night ? Themes.Default : Themes.Night
     );
