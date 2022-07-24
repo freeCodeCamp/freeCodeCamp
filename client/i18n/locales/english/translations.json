@@ -323,7 +323,8 @@
     "sorry-getting-there":"Sorry, your code does not pass. You're getting there.",
     "sorry-hang-in-there":"Sorry, your code does not pass. Hang in there.",
     "sorry-dont-giveup":"Sorry, your code does not pass. Don't give up.",
-    "challenges-completed": "{{completedCount}} of {{totalChallenges}} challenges completed"
+    "challenges-completed": "{{completedCount}} of {{totalChallenges}} challenges completed",
+    "project-completed": "Completed {{totalCompletedProjects}} challenges"
   },
   "donate": {
     "title": "Support our nonprofit",

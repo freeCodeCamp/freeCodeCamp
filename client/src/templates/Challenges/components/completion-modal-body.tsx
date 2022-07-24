@@ -6,6 +6,7 @@ import GreenPass from '../../../assets/icons/green-pass';
 interface CompletionModalBodyProps {
   block: string;
   completedPercent: number;
+  completedProjects: string;
   superBlock: string;
   t: TFunction;
 }

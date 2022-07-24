@@ -96,6 +96,22 @@ export function getCompletedPercent(
   return completedPercent > 100 ? 100 : completedPercent;
 }
 
+export function getCompletedProjects(
+  completedChallengesIds: string[] = [],
+  currentBlockIds: string[] = [],
+  currentChallengeId: string
+): string {
+  completedChallengesIds = completedChallengesIds.includes(currentChallengeId)
+    ? completedChallengesIds
+    : [...completedChallengesIds, currentChallengeId];
+
+  const completedChallengesInBlock = completedChallengesIds.filter(id => {
+    return currentBlockIds.includes(id);
+  });
+
+  return `${completedChallengesInBlock.length} of ${currentBlockIds.length}`;
+}
+
 interface CompletionModalsProps {
   allowBlockDonationRequests: (arg0: string) => void;
   block: string;
@@ -120,6 +136,8 @@ interface CompletionModalsProps {
 interface CompletionModalInnerState {
   downloadURL: null | string;
   completedPercent: number;
+  completedProjects: string;
+
 }
 
 export class CompletionModalInner extends Component<
@@ -133,7 +151,8 @@ export class CompletionModalInner extends Component<
 
     this.state = {
       downloadURL: null,
-      completedPercent: 0
+      completedPercent: 0,
+      completedProjects: "",
     };
   }
 
@@ -143,7 +162,7 @@ export class CompletionModalInner extends Component<
   ): CompletionModalInnerState {
     const { challengeFiles, isOpen } = props;
     if (!isOpen) {
-      return { downloadURL: null, completedPercent: 0 };
+      return { downloadURL: null, completedPercent: 0,  completedProjects: ""};
     }
     const { downloadURL } = state;
     if (downloadURL) {
@@ -172,7 +191,11 @@ export class CompletionModalInner extends Component<
     const completedPercent = isSignedIn
       ? getCompletedPercent(completedChallengesIds, currentBlockIds, id)
       : 0;
-    return { downloadURL: newURL, completedPercent: completedPercent };
+    
+    const completedProjects = getCompletedProjects(completedChallengesIds, currentBlockIds, id);
+
+    return { downloadURL: newURL, completedPercent: completedPercent, completedProjects: completedProjects };
+
   }
 
   handleKeypress(e: React.KeyboardEvent): void {
@@ -220,6 +243,9 @@ export class CompletionModalInner extends Component<
     } = this.props;
 
     const { completedPercent } = this.state;
+    const { completedProjects } = this.state;
+
+
 
     if (isOpen) {
       executeGA({ type: 'modal', data: '/completion-modal' });
@@ -249,6 +275,7 @@ export class CompletionModalInner extends Component<
           <CompletionModalBody
             block={block}
             completedPercent={completedPercent}
+            completedProjects={t('learn.projects-completed', { totalCompletedProjects:  completedProjects})}
             superBlock={superBlock}
           />
         </Modal.Body>
