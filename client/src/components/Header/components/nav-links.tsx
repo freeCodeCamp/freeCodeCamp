@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable @typescript-eslint/ban-types */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
@@ -13,7 +12,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Modal } from '@freecodecamp/react-bootstrap';
-import React, { Component, Fragment, createRef, Ref } from 'react';
+import React, { Component, Fragment, createRef } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 // import { Dispatch } from 'redux';
@@ -48,7 +47,7 @@ export interface NavLinksProps {
   navigate?: (location: string) => void;
   showLanguageMenu?: (elementToFocus: HTMLButtonElement) => void;
   hideLanguageMenu?: () => void;
-  menuButtonRef: Ref<HTMLButtonElement>;
+  menuButtonRef: React.RefObject<HTMLButtonElement>;
 }
 
 const mapDispatchToProps = {
@@ -100,16 +99,21 @@ export class NavLinks extends Component<NavLinksProps, {}> {
     this.setState({ showSignoutModal: !showSignoutModal });
   };
 
-  closeSignOutModal = (event: React.MouseEvent<HTMLButtonElement>): void => {
-    event.preventDefault();
-    // this is a nonsense but it's a nonsense that please typescript
-    const { isClose } = this.props;
-    isClose();
-  };
-
   handleLanguageChange = (event: React.MouseEvent<HTMLButtonElement>): void => {
     event.preventDefault();
-    const { hideMenu, hideLanguageMenu, menuButtonRef, navigate } = this.props;
+    interface LanguageChange {
+      hideMenu: () => void;
+      hideLanguageMenu: () => void;
+      menuButtonRef: React.RefObject<HTMLButtonElement>;
+      navigate: Component;
+    }
+
+    const {
+      hideMenu,
+      hideLanguageMenu,
+      menuButtonRef,
+      navigate
+    }: LanguageChange = this.props;
     const newLanguage = event.target.dataset.value as string;
     // If user selected cancel then close menu and put focus on button
     if (newLanguage === 'exit-lang-menu') {
@@ -158,23 +162,22 @@ export class NavLinks extends Component<NavLinksProps, {}> {
     event: React.KeyboardEvent<HTMLButtonElement>
   ): void => {
     const { menuButtonRef, showLanguageMenu, hideMenu } = this.props;
-    /* eslint-disable @typescript-eslint/naming-convention */
     const doKeyPress = {
-      Escape: () => {
+      escape: () => {
         menuButtonRef.current.focus();
         hideMenu();
         event.preventDefault();
       },
-      ArrowDown: () => {
+      arrowDown: () => {
         showLanguageMenu(this.firstLangOptionRef.current);
         event.preventDefault();
       },
-      ArrowUp: () => {
+      arrowUp: () => {
         showLanguageMenu(this.lastLangOptionRef.current);
         event.preventDefault();
       }
     };
-    /* eslint-enable @typescript-eslint/naming-convention */
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     doKeyPress[event.key]?.();
   };
 
@@ -245,6 +248,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
       PageDown: focusLastLanguageMenuItem
     };
     /* eslint-enable @typescript-eslint/naming-convention */
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     doKeyPress[event.key]?.();
   };
 
@@ -485,9 +489,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
             <li>
               <button
                 className='nav-link nav-link-signout'
-                onClick={() =>
-                this.setState({showModal: true})
-                }
+                onClick={() => this.setState({ showModal: true })}
               >
                 {t('buttons.sign-out')}
               </button>
