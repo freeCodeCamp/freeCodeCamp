@@ -1,11 +1,32 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
+import { FormControl } from '../form-control/.';
+import { ControlLabel } from '../control-label/.';
 import { FormGroup } from '.';
 
 describe('<FormGroup />', () => {
   it('should render correctly', () => {
-    render(<FormGroup />);
-    expect(screen.getByTestId('test')).toBeInTheDocument();
-  });
+    render(
+      <FormGroup data-testid='test-id'>
+        <span className='child1' />
+        <span className='child2' />
+      </FormGroup>
+    );
+  }),
+    it('provided controlId to label and control', () => {
+      render(
+        <FormGroup data-testid='test-id'>
+          <div>
+            <ControlLabel htmlFor={''} srOnly={false} bsClass={''}>
+              label
+            </ControlLabel>
+            <FormControl />
+          </div>
+        </FormGroup>
+      );
+    }),
+    it('Should have div as default component', () => {
+      render(<FormGroup data-testid='test-id' />);
+    });
 });
