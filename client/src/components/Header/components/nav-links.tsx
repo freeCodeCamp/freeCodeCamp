@@ -486,7 +486,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
               <button
                 className='nav-link nav-link-signout'
                 onClick={() =>
-                  (this.handleSignOutModal = !this.handleSignOutModal)
+                this.setState({showModal: true})
                 }
               >
                 {t('buttons.sign-out')}
