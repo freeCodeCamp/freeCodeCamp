@@ -24,7 +24,7 @@ Per aiutarci a fare video educativi sul nostro canale YouTube, puoi seguire la [
 
 ### Come posso segnalare un nuovo bug?
 
-If you think you've found a bug, first read the ["How to Report a Bug"](https://www.freecodecamp.org/news/how-to-report-a-bug-to-freecodecamp/) article and follow its instructions.
+Se pensi di avere trovato un bug, prima leggi l'articolo ["How to report a bug"](https://www.freecodecamp.org/news/how-to-report-a-bug-to-freecodecamp/) e segui le istruzioni.
 
 Se sei certo che sia un nuovo bug, vai avanti e crea una issue su GitHub. Assicurati di includere quante più informazioni possibili in modo che sia possibile riprodurre il bug. Abbiamo un modello predefinito per aiutarti con la creazione di un'issue.
 
