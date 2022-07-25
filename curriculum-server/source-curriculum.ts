@@ -6,8 +6,9 @@ interface Curriculum {
   [key: string]: unknown;
 }
 
-const curriculumList: Array<Curriculum> = Object.keys(curriculum as Curriculum)
-.map(key => {
+const curriculumList: Array<Curriculum> = Object.keys(
+  curriculum as Curriculum
+).map(key => {
   if (key === '2022/responsive-web-design') {
     return { '2022-responsive-web-design': (curriculum as Curriculum)[key] };
   } else if (key === '2022/responsive-web-design-qa') {
@@ -17,10 +18,9 @@ const curriculumList: Array<Curriculum> = Object.keys(curriculum as Curriculum)
   }
 });
 
-const patchedCurriculum = curriculumList
-  .reduce((prev, curr) => {
-    return { ...prev, ...curr };
-  }, {});
+const patchedCurriculum = curriculumList.reduce((prev, curr) => {
+  return { ...prev, ...curr };
+}, {});
 
 void fs
   .mkdir('data', { recursive: true })

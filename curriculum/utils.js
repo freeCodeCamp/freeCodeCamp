@@ -37,7 +37,7 @@ const superBlockToOrder = {
   'coding-interview-prep': 10,
   'responsive-web-design': 11,
   'relational-database': 12,
-  '2022/responsive-web-design-qa': 13,
+  '2022/responsive-web-design-qa': 13
 };
 
 /**
@@ -59,7 +59,7 @@ const superBlockNonAuditedOrder = {
   'coding-interview-prep': 10,
   '2022/responsive-web-design': 11,
   'relational-database': 12,
-  '2022/responsive-web-design-qa': 13,
+  '2022/responsive-web-design-qa': 13
 };
 
 const superBlockToNewOrder = {
