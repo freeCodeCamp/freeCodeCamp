@@ -204,7 +204,6 @@ export default function completionEpic(action$, state$) {
 }
 
 async function findPathToNavigateTo(nextChallengePath, superBlock) {
-  console.log(nextChallengePath, superBlock);
   if (nextChallengePath.includes(superBlock)) {
     return nextChallengePath;
   }
