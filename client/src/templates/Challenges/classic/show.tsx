@@ -134,7 +134,7 @@ const BASE_LAYOUT = {
   codePane: { flex: 1 },
   editorPane: { flex: 1 },
   instructionPane: { flex: 1 },
-  previewPane: { flex: 0.7 },
+  previewPane: { flex: 1 },
   notesPane: { flex: 0.7 },
   testsPane: { flex: 0.3 }
 };
