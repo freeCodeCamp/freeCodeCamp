@@ -249,7 +249,6 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
       End: focusLastLanguageMenuItem,
       PageDown: focusLastLanguageMenuItem
     };
-    /* eslint-enable @typescript-eslint/naming-convention */
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     doKeyPress[event.key]?.();
   };
