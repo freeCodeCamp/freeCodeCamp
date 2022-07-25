@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
 // @ts-nocheck
 import {
   faCheckSquare,
@@ -46,7 +45,7 @@ export interface NavLinksProps {
   signOutAttribute: (attributes: Record<string, unknown>) => void;
   hideMenu: () => void;
   toggleNightMode: (theme: Themes) => Theme;
-  user?: Record<string, unknown>;
+  user?: { isDonating: boolean; username: string; theme: Themes };
   navigate?: (location: string) => void;
   showLanguageMenu?: (elementToFocus: HTMLButtonElement) => void;
   hideLanguageMenu?: () => void;
@@ -325,6 +324,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
                 className='nav-link'
                 onKeyDown={this.handleMenuKeyDown}
                 sameTab={false}
+                // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
                 to={`/${username}`}
               >
                 {t('buttons.profile')}
