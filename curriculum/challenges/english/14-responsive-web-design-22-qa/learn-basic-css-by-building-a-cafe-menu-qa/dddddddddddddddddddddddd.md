@@ -1,34 +1,51 @@
 ---
 id: dddddddddddddddddddddddd
-title: Step 1
+title: Step 2
 challengeType: 0
-dashedName: step-1
+dashedName: step-2
+order: 2
 ---
 
 # --description--
 
-As you learned in the last few steps of the Cat Photo App, there is a basic structure needed to start building your web page.
-
-Add the `<!DOCTYPE html>` tag, and an `html` element.
+Add a `head` element within the `html` element, so you can add a `title` element. The `title` element's text should be `Cafe Menu`.
 
 # --hints--
 
-You should have the `DOCTYPE` declaration.
+You should have an opening `<head>` tag.
 
 ```js
-assert(code.match(/<!DOCTYPE html>/i));
+assert(code.match(/<head>/i));
 ```
 
-You should have an opening `<html>` tag.
+You should have a closing `</head>` tag.
 
 ```js
-assert(code.match(/<html>/i));
+assert(code.match(/<head>/i));
 ```
 
-You should have a closing `<html>` tag. Remember that closing tags have a `/` following the opening `<` bracket.
+You should have an opening `<title>` tag.
 
 ```js
-assert(code.match(/<\/html>/i));
+assert(code.match(/<title>/i));
+```
+
+You should have a closing `</title>` tag.
+
+```js
+assert(code.match(/<\/title>/i));
+```
+
+Your `title` element should be nested in your `head` element.
+
+```js
+assert(code.match(/<head>\s*<title>.*<\/title>\s*<\/head>/si));
+```
+
+Your `title` element should have the text `Cafe Menu`. You may need to check your spelling.
+
+```js
+assert.match(document.querySelector('title')?.innerText, /Cafe Menu/i);
 ```
 
 # --seed--
@@ -36,8 +53,10 @@ assert(code.match(/<\/html>/i));
 ## --seed-contents--
 
 ```html
+<!DOCTYPE html>
+<html>
 --fcc-editable-region--
 
 --fcc-editable-region--
-
+</html>
 ```

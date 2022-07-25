@@ -2,6 +2,8 @@
 id: eeeeeeeeeeeeeeeeeeeeeeee
 challengeType: 0
 dashedName: step-1
+title: Step 1
+order: 1
 ---
 
 # --description--

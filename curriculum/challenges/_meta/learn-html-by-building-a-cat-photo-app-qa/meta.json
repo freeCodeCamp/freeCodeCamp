@@ -1,5 +1,5 @@
 {
-  "name": "Learn HTML by Building a Cat Photo App",
+  "name": "Learn HTML by Building a Cat Photo App QA",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
@@ -11,11 +11,11 @@
   "superBlock": "2022/responsive-web-design-qa",
   "challengeOrder": [
     [
-      "dddddddddddddddddddddddd",
+      "cccccccccccccccccccccccc",
       "Step 1"
     ],
     [
-      "cccccccccccccccccccccccc",
+      "dddddddddddddddddddddddd",
       "Step 2"
     ]
   ]}
