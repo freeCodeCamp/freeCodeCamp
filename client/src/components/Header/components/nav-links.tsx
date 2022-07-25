@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable @typescript-eslint/ban-types */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 // @ts-nocheck
@@ -33,6 +32,10 @@ const { clientLocale, radioLocation, apiLocation } = envData;
 
 const locales = availableLangs.client;
 
+interface NavlinkArgProp {
+  arg: Record<string, unknown>;
+}
+
 export interface NavLinksProps {
   displayMenu?: boolean;
   isLanguageMenuDisplayed?: boolean;
@@ -60,7 +63,7 @@ create ability to focus on the button when closing the model
 show the signout modal
 */
 
-export class NavLinks extends Component<NavLinksProps, {}> {
+export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
   static displayName: string;
   langButtonRef: React.RefObject<HTMLButtonElement>;
   firstLangOptionRef: React.RefObject<HTMLElement>;
