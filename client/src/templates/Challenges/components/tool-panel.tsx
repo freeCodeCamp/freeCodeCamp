@@ -1,7 +1,5 @@
 import {
   Button,
-  DropdownButton,
-  MenuItem
 } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
@@ -68,11 +66,7 @@ function ToolPanel({
   isMobile,
   isSignedIn,
   isRunningTests,
-  openHelpModal,
-  openVideoModal,
   openResetModal,
-  guideUrl,
-  videoUrl,
   challengeIsCompleted,
   submitChallenge
 }: ToolPanelProps) {
@@ -121,40 +115,6 @@ function ToolPanel({
           {isMobile ? t('buttons.reset') : t('buttons.reset-code')}
         </Button>
       )}
-      <DropdownButton
-        bsStyle='link'
-        block={false}
-        className='btn-invert'
-        id='get-help-dropdown'
-        title={isMobile ? t('buttons.help') : t('buttons.get-help')}
-      >
-        {guideUrl ? (
-          <MenuItem
-            bsStyle='primary'
-            className='btn-invert'
-            href={guideUrl}
-            target='_blank'
-          >
-            {t('buttons.get-hint')}
-          </MenuItem>
-        ) : null}
-        {videoUrl ? (
-          <MenuItem
-            bsStyle='primary'
-            className='btn-invert'
-            onClick={openVideoModal}
-          >
-            {t('buttons.watch-video')}
-          </MenuItem>
-        ) : null}
-        <MenuItem
-          bsStyle='primary'
-          className='btn-invert'
-          onClick={openHelpModal}
-        >
-          {t('buttons.ask-for-help')}
-        </MenuItem>
-      </DropdownButton>
     </div>
   );
 }
