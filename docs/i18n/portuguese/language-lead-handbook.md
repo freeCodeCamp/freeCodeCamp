@@ -30,7 +30,7 @@ Sendo `link` o link do artigo original.
 
 > [!TIP] Alterar os artigos no rodapé pelo menos uma vez por mês significa dar um impulso aos artigos vinculados nos resultados do Google.
 
-Mudamos os artigos em destaque em dois lugares diferentes.
+There are two places in which to change the trending articles.
 
 - [O repositório do currículo](https://github.com/freeCodeCamp/freeCodeCamp/)
 - [O repositório do CDN](https://github.com/freeCodeCamp/cdn)
@@ -255,7 +255,7 @@ Depois, há três etapas a concluir:
 
 ![pré-traduzir as traduções existentes](./images/crowdin/pre-translate3.png)
 
-Quando você tiver terminado essas configurações, pressione o botão de Pre-Translate e aguarde. Ele alertará você quando terminar. Levará algum tempo, dependendo de quantas frases não traduzidas estão presentes nos arquivos que você escolheu.
+When you have finished setting this, press the Pre-Translate button and wait. Ele alertará você quando terminar. The time it takes depends on how many untranslated strings are in the chosen files.
 
 ## Como atualizar o glossário do Crowdin
 

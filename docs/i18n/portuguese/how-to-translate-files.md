@@ -46,7 +46,7 @@ Pedimos apenas que entenda os seguintes pontos:
 
 É nosso sonho fornecer recursos para você aprender, não importando qual idioma fala. Para nos ajudar com isso, integramos nossa base de código open-source e nosso currículo com o [Crowdin](https://crowdin.com/), uma ferramenta que nos ajuda a traduzir nosso código.
 
-> [!NOTE] Usamos uma ferramenta e um fluxo de trabalho diferentes para traduzir os [artigos do editorial](https://www.freecodecamp.org/news). Se você estiver interessado em traduzir artigos, leia <a https://www.freecodecamp.org/portuguese/news/como-ajudar-a-traduzir-o-freecodecamp-para-seu-idioma/">este anúncio</a> e entre em contato com o líder das traduções para o seu idioma.
+> [!NOTE] Usamos uma ferramenta e um fluxo de trabalho diferentes para traduzir os [artigos do editorial](https://www.freecodecamp.org/news). Se você estiver interessado em traduzir artigos, leia [este anúncio](https://www.freecodecamp.org/portuguese/news/como-ajudar-a-traduzir-o-freecodecamp-para-seu-idioma/) e entre em contato com o líder das traduções para o seu idioma.
 
 O fluxo de tradução é dividido em duas atividades principais:
 
@@ -129,7 +129,7 @@ Esses arquivos provavelmente serão atualizados pelo líder do seu idioma, mas f
 
 ### No Crowdin
 
-> [!DANGER] Não edite os seguintes arquivos através de um PR no GitHub.
+> [!ATTENTION] Do not edit the following files through a GitHub PR.
 
 Os arquivos `intro.json` e `translations.json` são traduzidos no Crowdin, no projeto Learn User Interface (Learn UI). A tradução dessas traduções pode ser um pouco complicada, já que cada valor JSON individual tem sua própria sequência de caracteres e, às vezes, o contexto não é suficiente.
 
