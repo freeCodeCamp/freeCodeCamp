@@ -143,7 +143,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
 
   handleMenuKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>): void => {
     const { menuButtonRef, hideMenu } = this.props;
-    if (event.key === 'Escape') {
+    if (event.key === 'escape') {
       menuButtonRef.current.focus();
       hideMenu();
       event.preventDefault();
@@ -220,7 +220,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
         hideLanguageMenu();
         event.preventDefault();
       },
-      ArrowUp: () => {
+      arrowUp: () => {
         const arrowUpItemToFocus =
           event.target === this.firstLangOptionRef.current
             ? this.lastLangOptionRef.current
@@ -229,7 +229,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
         arrowUpItemToFocus.focus();
         event.preventDefault();
       },
-      ArrowDown: () => {
+      arrowDown: () => {
         const arrowDownItemToFocus =
           event.target === this.lastLangOptionRef.current
             ? this.firstLangOptionRef.current
@@ -237,7 +237,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
         arrowDownItemToFocus.focus();
         event.preventDefault();
       },
-      Escape: () => {
+      escape: () => {
         // Set focus to language button first so we don't lose focus
         // for screen readers.
         this.langButtonRef.current.focus();
