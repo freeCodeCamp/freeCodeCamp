@@ -165,7 +165,7 @@ Note that once you are a moderator on the forum, you will start to see blue mode
 
 These are opportunities for you to welcome them and make them feel extra special. You never know which person who's marginally involved may become our next super-helper, helping many other people in their coding journey. Even the slightest kindness may trigger a cascade of good deeds.
 
-### Deleting forum posts
+### Deleting Forum Posts
 
 Forum moderators can delete users' posts. You should only do this for the following instances:
 
