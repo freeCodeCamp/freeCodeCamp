@@ -43,7 +43,7 @@ Please pay special attention to the labels `"help wanted"` and `"first timers on
 
 A `"first timers only"` label should be applied to a trivial issue (ie a typo fix) and should include additional information. You can use this [reply template](moderator-handbook.md#first-timer-only-issues) for triage.
 
-#### Closing stale, outdated, inactive issues, and pull requests
+#### Closing Stale, Outdated, Inactive Issues and Pull Requests
 
 - Stale issues or PRs are those that have not seen any activity from the author for 21 days (3 weeks from the last activity), but only after a moderator has requested more information/changes.
 
