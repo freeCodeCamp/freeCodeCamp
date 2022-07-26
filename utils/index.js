@@ -9,7 +9,7 @@ const idToTitle = new Map(
     '5e6021435ac9d0ecd8b94b00': 'Information Security',
     '561abd10cb81ac38a17513bc': 'JavaScript Algorithms and Data Structures',
     '561add10cb82ac38a17513bc': 'Responsive Web Design',
-    'aaaaaaaaaaaaaaaaaaaaaaaa': 'Responsive Web Design QA',
+    aaaaaaaaaaaaaaaaaaaaaaaa: 'Responsive Web Design QA',
     '660add10cb82ac38a17513be': 'Legacy Back End',
     '561add10cb82ac39a17513bc': 'Legacy Data Visualization',
     '561add10cb82ac38a17513be': 'Legacy Front End',
