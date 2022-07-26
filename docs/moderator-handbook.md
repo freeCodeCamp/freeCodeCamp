@@ -15,7 +15,7 @@ As a moderator, temperament is more important than technical skill.
 
 Listen. Be helpful. Don't abuse your power.
 
-FreeCodeCamp is an inclusive community, and we need to keep it that way.
+freeCodeCamp is an inclusive community, and we need to keep it that way.
 
 We have a single [Code of Conduct](https://code-of-conduct.freecodecamp.org) that governs our entire community. The fewer the rules, the easier they are to remember. You can read those rules and commit them to memory [here](https://code-of-conduct.freecodecamp.org).
 
