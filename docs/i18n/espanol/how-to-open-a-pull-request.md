@@ -38,7 +38,7 @@ Algunos ejemplos de buenos títulos de PR serían:
 - `fix(a11y): contraste mejorado en la barra de búsqueda`
 - `feat: se agregan más test a los retos de HTML y CSS`
 - `fix(api,client): evitar errores CORS en el envío de formularios`
-- `docs(i18n): Traducción al chino de la configuración local`
+- `docs(i18n): fix links to be relative instead of absolute`
 
 ## Proponer una Pull Request
 
