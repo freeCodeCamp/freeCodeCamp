@@ -1,6 +1,6 @@
 # How to Work on Practice Projects
 
-Our practice projects use a step-based approach to teach concepts to campers. A project will consist of multiple files, which we refer to as "steps". These files are named by the challenge ID, to avoid issues with the translation flow. Unfortunately, this makes it difficult to find the file associated with "step 3", for example.
+Our practice projects use a step-based approach to teach concepts to campers. A project will consist of multiple files, which we refer to as **"steps"**. These files are named by the challenge ID, to avoid issues with the translation flow. Unfortunately, this makes it difficult to find the file associated with a specific step.
 
 We've built a challenge editor tool that helps remedy this. This tool allows you to navigate the available projects, and the steps for each project (in order). There's also an embedded code editor you can use to work on the files directly.
 
