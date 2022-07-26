@@ -465,7 +465,7 @@ Thanks again! 😊
 If you have any questions, feel free to ask questions on the ["Contributors" category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
 ```
 
-### Closing invalid pull requests
+### Closing Invalid Pull Requests
 
 > When PR is invalid.
 
