@@ -1,6 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 // @ts-nocheck
 import {
   faCheckSquare,
@@ -116,7 +116,11 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
       menuButtonRef,
       navigate
     }: LanguageChange = this.props;
-    const newLanguage = event.target.dataset.value as string;
+    interface ProperlyTyped {
+      target: { dataset: { value: string } };
+    }
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    const newLanguage = event.target.dataset.value as ProperlyTyped;
     // If user selected cancel then close menu and put focus on button
     if (newLanguage === 'exit-lang-menu') {
       // Set focus to language button first so we don't lose focus
