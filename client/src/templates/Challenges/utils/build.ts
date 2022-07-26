@@ -87,7 +87,7 @@ function buildSourceMap(challengeFiles: ChallengeFiles): Source | undefined {
   // TODO: rename sources.index to sources.contents.
   const source: Source | undefined = challengeFiles?.reduce(
     (sources, challengeFile) => {
-      sources.index += challengeFile.source || challengeFile.contents;
+      sources.index += challengeFile.source || '';
       sources.contents = sources.index;
       sources.original[challengeFile.history[0]] = challengeFile.source;
       sources.editableContents += challengeFile.editableContents || '';

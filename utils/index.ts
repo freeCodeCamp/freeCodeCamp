@@ -21,11 +21,11 @@ const idToTitle = new Map(
   })
 );
 
-const idToPath = new Map();
+const idToPath = new Map<string, string>();
 
 // Keep the timeline slugs the same so
 // we don't break existing links
-const specialPaths = {
+const specialPaths: Record<string, string> = {
   'Legacy Full Stack': 'Full Stack',
   'Legacy Information Security and Quality Assurance':
     'Information Security and Quality Assurance',
@@ -45,5 +45,5 @@ for (const [id, title] of idToTitle) {
 }
 
 export const getCertIds = () => idToPath.keys();
-export const getPathFromID = id => idToPath.get(id);
-export const getTitleFromId = id => idToTitle.get(id);
+export const getPathFromID = (id: string) => idToPath.get(id);
+export const getTitleFromId = (id: string) => idToTitle.get(id);
