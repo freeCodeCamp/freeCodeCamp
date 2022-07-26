@@ -33,7 +33,7 @@ Moderators have two primary responsibilities on GitHub:
 
 We use our main [`freeCodeCamp/freeCodeCamp`](https://github.com/freeCodeCamp/freeCodeCamp/issues) repository as a common issue tracker for all of our repositories. We get new issues every day, all of which need to be triaged, labeled, and addressed. This is also a great place to start helping with open-source codebase contributions.
 
-#### Issue triage
+#### Issue Triage
 
 [Triaging](https://en.wikipedia.org/wiki/Triage) is a process of prioritizing attention to each new issue report. We have an extensive list of labels that we use to mark each issue's priority, category, status, and scope.
 
