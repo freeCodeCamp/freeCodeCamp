@@ -7,7 +7,7 @@ This handbook will help you moderate different places in our community. This cov
 
 You can serve as a moderator on any of the platforms that are of the most interest to you. Some moderators just help out on GitHub, while others just help out on the forum. Some moderators are active everywhere.
 
-The bottom line is that we want you to enjoy being a moderator, and invest your free time in places that are of interest to you.
+The bottom line is that we want you to enjoy being a moderator, and invest your scarce time in places that are of interest to you.
 
 > "With great power comes great responsibility." - Uncle Ben
 
