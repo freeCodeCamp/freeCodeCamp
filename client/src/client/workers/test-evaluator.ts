@@ -103,7 +103,9 @@ ctx.onmessage = async (e: TestEvaluatorEvent) => {
       // Logging is proxyed after the build to catch console.log messages
       // generated during testing.
       testResult = (await eval(`${
-        e.data?.removeComments ? helpers.removeJSComments(e.data.build) : e.data.build
+        e.data?.removeComments
+          ? helpers.removeJSComments(e.data.build)
+          : e.data.build
       }
 __utils.flushLogs();
 __userCodeWasExecuted = true;
