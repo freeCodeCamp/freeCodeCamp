@@ -58,7 +58,6 @@
     "assert": "2.0.0",
     "babel-plugin-preval": "5.1.0",
     "babel-plugin-prismjs": "2.1.0",
-    "babel-preset-es2015": "^6.24.1",
     "bezier-easing": "2.1.0",
     "browser-cookies": "1.2.0",
     "buffer": "6.0.3",
