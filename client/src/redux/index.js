@@ -10,7 +10,6 @@ import { createAcceptTermsSaga } from './accept-terms-saga';
 import { actionTypes } from './action-types';
 import { createAppMountSaga } from './app-mount-saga';
 import { createCodeAllySaga } from './codeally-saga';
-import { createDonationSaga } from './donation-saga';
 import failedUpdatesEpic from './failed-updates-epic';
 import { createFetchUserSaga } from './fetch-user-saga';
 import { createGaSaga } from './ga-saga';
@@ -76,7 +75,6 @@ export const sagas = [
   ...createAcceptTermsSaga(actionTypes),
   ...createAppMountSaga(actionTypes),
   ...createCodeAllySaga(actionTypes),
-  ...createDonationSaga(actionTypes),
   ...createGaSaga(actionTypes),
   ...createFetchUserSaga(actionTypes),
   ...createShowCertSaga(actionTypes),
@@ -87,15 +85,8 @@ export const sagas = [
 
 export const appMount = createAction(actionTypes.appMount);
 
-export const tryToShowDonationModal = createAction(
-  actionTypes.tryToShowDonationModal
-);
-
 export const executeGA = createAction(actionTypes.executeGA);
 
-export const allowBlockDonationRequests = createAction(
-  actionTypes.allowBlockDonationRequests
-);
 export const closeDonationModal = createAction(actionTypes.closeDonationModal);
 export const openDonationModal = createAction(actionTypes.openDonationModal);
 export const preventBlockDonationRequests = createAction(
@@ -442,12 +433,6 @@ export const reducer = handleActions(
                 : payload
           }
         }
-      };
-    },
-    [actionTypes.allowBlockDonationRequests]: (state, { payload }) => {
-      return {
-        ...state,
-        recentlyClaimedBlock: payload
       };
     },
     [actionTypes.updateDonationFormState]: (state, { payload }) => ({

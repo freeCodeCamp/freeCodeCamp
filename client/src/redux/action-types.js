@@ -6,7 +6,6 @@ export const actionTypes = createTypes(
   [
     'appMount',
     'hardGoTo',
-    'allowBlockDonationRequests',
     'closeDonationModal',
     'hideCodeAlly',
     'preventBlockDonationRequests',
@@ -16,7 +15,6 @@ export const actionTypes = createTypes(
     'serverStatusChange',
     'resetUserData',
     'tryToShowCodeAlly',
-    'tryToShowDonationModal',
     'executeGA',
     'showCodeAlly',
     'submitComplete',

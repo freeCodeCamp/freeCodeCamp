@@ -12,11 +12,7 @@ import { createSelector } from 'reselect';
 import { dasherize } from '../../../../../utils/slugs';
 import { isProject } from '../../../../utils/challenge-types';
 import Login from '../../../components/Header/components/Login';
-import {
-  isSignedInSelector,
-  executeGA,
-  allowBlockDonationRequests
-} from '../../../redux';
+import { isSignedInSelector, executeGA } from '../../../redux';
 import { AllChallengeNode, ChallengeFiles } from '../../../redux/prop-types';
 
 import {
@@ -68,9 +64,6 @@ const mapDispatchToProps = function (dispatch: Dispatch) {
     submitChallenge: () => {
       dispatch(submitChallenge());
     },
-    allowBlockDonationRequests: (block: string) => {
-      dispatch(allowBlockDonationRequests(block));
-    },
     executeGA
   };
   return () => dispatchers;
@@ -97,7 +90,6 @@ export function getCompletedPercent(
 }
 
 interface CompletionModalsProps {
-  allowBlockDonationRequests: (arg0: string) => void;
   block: string;
   blockName: string;
   certification: string;
@@ -187,17 +179,6 @@ export class CompletionModalInner extends Component<
 
   handleSubmit(): void {
     this.props.submitChallenge();
-    this.checkBlockCompletion();
-  }
-
-  // check block completion for donation
-  checkBlockCompletion(): void {
-    if (
-      this.state.completedPercent === 100 &&
-      !this.props.completedChallengesIds.includes(this.props.id)
-    ) {
-      this.props.allowBlockDonationRequests(this.props.blockName);
-    }
   }
 
   componentWillUnmount(): void {
