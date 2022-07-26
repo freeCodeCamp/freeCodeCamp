@@ -119,7 +119,6 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
     interface ProperlyTyped {
       target: { dataset: { value: string } };
     }
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     const newLanguage = event.target.dataset.value as ProperlyTyped;
     // If user selected cancel then close menu and put focus on button
     if (newLanguage === 'exit-lang-menu') {
@@ -327,8 +326,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
                 className='nav-link'
                 onKeyDown={this.handleMenuKeyDown}
                 sameTab={false}
-                // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-                to={`/${username}`}
+                to={`/${username as string}`}
               >
                 {t('buttons.profile')}
               </Link>
