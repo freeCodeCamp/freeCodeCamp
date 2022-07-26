@@ -523,7 +523,7 @@ This is a standard message notifying you that the problem you mentioned here is 
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
-### First-timer only issues
+### `first timer only` Issues
 
 > When an issue is deemed to be eligible for first-time code contributors.
 
