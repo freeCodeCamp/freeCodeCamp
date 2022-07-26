@@ -345,7 +345,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     );
   }
 
-  renderEditor() {
+  renderEditor(hasEditableBoundaries?: boolean) {
     const {
       pageContext: {
         projectPreview: { showProjectPreview }
@@ -376,6 +376,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           title={title}
           usesMultifileEditor={usesMultifileEditor}
           showProjectPreview={showProjectPreview}
+          showRightsReserved={hasEditableBoundaries}
         />
       )
     );
@@ -465,7 +466,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
               block={block}
               challengeFiles={challengeFiles}
               challengeType={challengeType}
-              editor={this.renderEditor()}
+              editor={this.renderEditor(hasEditableBoundaries)}
               hasEditableBoundaries={hasEditableBoundaries}
               hasNotes={!!notes}
               hasPreview={this.hasPreview()}

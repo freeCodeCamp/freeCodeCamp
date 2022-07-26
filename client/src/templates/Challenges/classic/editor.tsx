@@ -109,6 +109,7 @@ interface EditorProps {
   usesMultifileEditor: boolean;
   isChallengeCompleted: boolean;
   testsRunning: boolean;
+  showRightsReserved?: boolean;
 }
 
 // TODO: this is grab bag of unrelated properties.  There's no need for them to
@@ -1128,16 +1129,18 @@ const Editor = (props: EditorProps): JSX.Element => {
           theme={editorTheme}
         />
       </span>
-      <div className='all-rights-link'>
-        <a
-          href='https://www.freecodecamp.org/'
-          target='_blank'
-          rel='noreferrer'
-        >
-          © {currentYear}, freeCodeCamp. All rights reserved.
-          <ExternalLink />
-        </a>
-      </div>
+      {props.showRightsReserved && (
+        <div className='all-rights-link'>
+          <a
+            href='https://www.freecodecamp.org/'
+            target='_blank'
+            rel='noreferrer'
+          >
+            © {currentYear}, freeCodeCamp. All rights reserved.
+            <ExternalLink />
+          </a>
+        </div>
+      )}
     </Suspense>
   );
 };
