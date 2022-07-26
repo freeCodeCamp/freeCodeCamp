@@ -185,7 +185,7 @@ Posts or topics that seem to be in the wrong place can be recategorized or renam
 
 In exceptional circumstances, it may be appropriate for a moderator to fork a discussion into multiple threads.
 
-Again, if you have any problems or questions, make a post with your actions in the staff category, and tag another moderator if you want them to review your moderating actions.
+Again, if you have any problems or questions, make a post with your actions in the `"Staff"` category, and tag another moderator if you want them to review your moderating actions.
 
 ### Underage users
 
