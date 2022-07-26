@@ -58,7 +58,7 @@ A `"first timers only"` label should be applied to a trivial issue (ie a typo fi
 
 Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's repository. We must perform Quality Assurance (QA) on pull requests before we decide whether to merge them, request changes, or close them.
 
-#### Types of pull requests
+#### Types of Pull Requests
 
 1. **Challenge instruction edits**
 
