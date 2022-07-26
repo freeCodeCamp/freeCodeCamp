@@ -489,7 +489,7 @@ We are closing this pull request. Please suggest links and other details to add 
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
-### Closing invalid issues
+### Closing Invalid Issues
 
 > When an issue relates to the camper's code.
 
