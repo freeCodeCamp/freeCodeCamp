@@ -11,7 +11,6 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import { SuperBlocks } from '../../../../config/certification-settings';
-import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/Login';
 import Map from '../../components/Map';
 import { Spacer } from '../../components/helpers';
@@ -20,7 +19,6 @@ import {
   userFetchStateSelector,
   signInLoadingSelector,
   isSignedInSelector,
-  tryToShowDonationModal,
   userSelector
 } from '../../redux';
 import { MarkdownRemark, AllChallengeNode, User } from '../../redux/prop-types';
@@ -54,7 +52,6 @@ type SuperBlockProp = {
   resetExpansion: () => void;
   t: TFunction;
   toggleBlock: (arg0: string) => void;
-  tryToShowDonationModal: () => void;
   user: User;
 };
 
@@ -86,7 +83,6 @@ const mapStateToProps = (state: Record<string, unknown>) => {
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
-      tryToShowDonationModal,
       resetExpansion,
       toggleBlock: b => toggleBlock(b)
     },
@@ -96,7 +92,6 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
   useEffect(() => {
     initializeExpandedState();
-    props.tryToShowDonationModal();
 
     setTimeout(() => {
       configureAnchors({ offset: -40, scrollDuration: 400 });
@@ -245,7 +240,6 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
           </Col>
         </Row>
       </Grid>
-      <DonateModal location={props.location} />
     </>
   );
 };
