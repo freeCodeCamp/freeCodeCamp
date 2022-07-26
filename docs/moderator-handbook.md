@@ -39,7 +39,7 @@ We use our main [`freeCodeCamp/freeCodeCamp`](https://github.com/freeCodeCamp/fr
 
 You can help us organize and triage the issue reports by applying labels from [this list](https://github.com/freeCodeCamp/freeCodeCamp/labels). Usually, a description is available alongside the label explaining its meaning.
 
-Please pay special attention to the labels `"help wanted"` and `"first-timers only"`. These are to be added to threads that you think can be opened up to potential contributors for making a pull request.
+Please pay special attention to the labels `"help wanted"` and `"first timers only"`. These are to be added to threads that you think can be opened up to potential contributors for making a pull request.
 
 A `"first-timer only"` label should be applied to a trivial issue (ie a typo fix) and should include additional information. You can use this [reply template](moderator-handbook.md#first-timer-only-issues) for triage.
 
