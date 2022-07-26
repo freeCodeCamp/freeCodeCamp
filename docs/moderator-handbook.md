@@ -54,7 +54,7 @@ A `"first timers only"` label should be applied to a trivial issue (ie a typo fi
 > [!TIP]
 > We recommend you use this list of standard [reply templates](moderator-handbook.md#reply-templates) while triaging issues.
 
-### Moderating pull requests
+### Moderating Pull Requests
 
 Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's repository. We must perform Quality Assurance (QA) on pull requests before we decide whether to merge them, request changes, or close them.
 
