@@ -427,7 +427,7 @@ Once you sync your fork and pass the build, we will be able to review your PR an
 Feel free to reference the ["Syncing a fork"](https://help.github.com/articles/syncing-a-fork/) article on GitHub for more insight on how to keep your fork up-to-date with the upstream repository. 🔄
 ````
 
-### Merge conflicts
+### Merge Conflicts
 
 > When PR has merge conflicts that need to be resolved.¹
 
