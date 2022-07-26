@@ -508,7 +508,7 @@ Thank you and happy coding.
 ```markdown
 Thank you for reporting this issue.
 
-This is a standard message notifying you that this issue appears to be very similar to issue <#number>, so we are closing it as a duplicate.
+This is a standard message notifying you that this issue appears to be very similar to issue #XXXXX, so we are closing it as a duplicate.
 
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
