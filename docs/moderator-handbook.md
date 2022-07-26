@@ -235,7 +235,7 @@ Here's how moderators deal with violations of our [Code of Conduct](https://code
 
    - Call the `!fcc private username` command, where `username` is the camper's chat username.
    - The bot will create a new channel, and add the mentioned camper and all moderators with the `Your Friendly Moderator` role. While all moderators are added to the channel for transparency, the moderator who calls this command should be the only one to interact with the camper unless they request assistance.
-   - When the conversation is complete, call the `!fcc close` command _in the private channel_ to have the bot close and delete that channel.
+   - When the conversation is complete, click the `❌ Close` button _on the first message in the private channel_ to have the bot close and delete that channel.
 
 4. **Deleting messages**
 
