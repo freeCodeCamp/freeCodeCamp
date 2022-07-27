@@ -27,7 +27,14 @@ import { Link } from '../../helpers';
 import { Themes } from '../../settings/theme';
 import LanguageGlobe from '../../../assets/icons/language-globe';
 
-const { clientLocale, radioLocation, apiLocation } = envData;
+interface NavigationLocationApi {
+  clientLocale: string;
+  radioLocation: string;
+  apiLocation: string;
+}
+
+const { clientLocale, radioLocation, apiLocation }: NavigationLocationApi =
+  envData as FormData;
 
 const locales = availableLangs.client;
 
