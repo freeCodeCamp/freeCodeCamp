@@ -31,8 +31,8 @@ interface NavigationLocationApi {
   apiLocation: string;
 }
 
-const { clientLocale, radioLocation, apiLocation }: NavigationLocationApi =
-  envData as FormData;
+const { clientLocale, radioLocation, apiLocation } =
+  envData as NavigationLocationApi;
 
 const locales = availableLangs.client;
 
@@ -49,8 +49,12 @@ export interface NavLinksProps {
   t: TFunction;
   signOutAttribute: (attributes: Record<string, unknown>) => void;
   hideMenu: () => void;
-  toggleNightMode: (theme: Themes) => Theme;
-  user?: { isDonating: boolean; username: string; theme: Themes };
+  toggleNightMode: (theme: Themes) => Themes;
+  user?: {
+    isDonating: boolean;
+    username: string;
+    theme: Themes;
+  };
   navigate?: (location: string) => void;
   showLanguageMenu?: (elementToFocus: HTMLButtonElement) => void;
   hideLanguageMenu?: () => void;
@@ -94,23 +98,22 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
     );
   }
 
-  getPreviousMenuItem(target: HTMLElement): HTMLElement {
+  getPreviousMenuItem(target: HTMLElement | null): HTMLElement | null {
     const { menuButtonRef } = this.props;
     const previousSibling =
-      target.closest('.nav-list > li')?.previousElementSibling;
+      target?.closest('.nav-list > li')?.previousElementSibling;
     return previousSibling?.querySelector('a, button') ?? menuButtonRef.current;
   }
 
   handleSignOutModal = (): void => {
-    console.log(showSignoutModal);
     this.setState({ showSignoutModal: !showSignoutModal });
   };
 
   handleLanguageChange = (event: React.MouseEvent<HTMLButtonElement>): void => {
     event.preventDefault();
     interface LanguageChange {
-      hideMenu: () => void;
-      hideLanguageMenu: () => void;
+      hideMenu: (() => void) | undefined;
+      hideLanguageMenu: (() => void) | undefined;
       menuButtonRef: React.RefObject<HTMLButtonElement>;
       navigate: Component;
     }
@@ -127,13 +130,13 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
     if (newLanguage === 'exit-lang-menu') {
       // Set focus to language button first so we don't lose focus
       // for screen readers.
-      this.langButtonRef.current.focus();
+      this.langButtonRef.current?.focus();
       hideLanguageMenu();
       return;
     }
     // Put focus on menu button first so we don't lose focus
     // for screen readers.
-    menuButtonRef.current.focus();
+    menuButtonRef.current?.focus();
     hideMenu();
     // If user selected the current language then we just close the menu
     if (newLanguage === clientLocale) {
@@ -144,13 +147,13 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
       lang: newLanguage
     });
 
-    return navigate(path) as string;
+    return navigate(path) as void;
   };
 
   handleMenuKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>): void => {
     const { menuButtonRef, hideMenu } = this.props;
     if (event.key === 'escape') {
-      menuButtonRef.current.focus();
+      menuButtonRef.current?.focus();
       hideMenu();
       event.preventDefault();
     }
@@ -172,7 +175,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
     const { menuButtonRef, showLanguageMenu, hideMenu } = this.props;
     const doKeyPress = {
       escape: () => {
-        menuButtonRef.current.focus();
+        menuButtonRef.current?.focus();
         hideMenu();
         event.preventDefault();
       },
@@ -194,11 +197,11 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
   ): void => {
     const { hideLanguageMenu, hideMenu } = this.props;
     const focusFirstLanguageMenuItem = () => {
-      this.firstLangOptionRef.current.focus();
+      this.firstLangOptionRef.current?.focus();
       event.preventDefault();
     };
     const focusLastLanguageMenuItem = () => {
-      this.lastLangOptionRef.current.focus();
+      this.lastLangOptionRef.current?.focus();
       event.preventDefault();
     };
     /* eslint-disable @typescript-eslint/naming-convention */
@@ -230,24 +233,24 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
         const arrowUpItemToFocus =
           event.target === this.firstLangOptionRef.current
             ? this.lastLangOptionRef.current
-            : (event.currentTarget.parentNode.previousSibling
-                .firstChild as HTMLElement);
-        arrowUpItemToFocus.focus();
+            : (event.currentTarget.parentNode?.previousSibling
+                ?.firstChild as HTMLElement | null);
+        arrowUpItemToFocus?.focus();
         event.preventDefault();
       },
       arrowDown: () => {
         const arrowDownItemToFocus =
           event.target === this.lastLangOptionRef.current
             ? this.firstLangOptionRef.current
-            : (event.currentTarget.parentNode.nextSibling
-                .firstChild as HTMLElement);
-        arrowDownItemToFocus.focus();
+            : (event.currentTarget.parentNode?.nextSibling
+                ?.firstChild as HTMLElement);
+        arrowDownItemToFocus?.focus();
         event.preventDefault();
       },
       escape: () => {
         // Set focus to language button first so we don't lose focus
         // for screen readers.
-        this.langButtonRef.current.focus();
+        this.langButtonRef.current?.focus();
         hideLanguageMenu();
         event.preventDefault();
       },
