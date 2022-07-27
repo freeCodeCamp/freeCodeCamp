@@ -24,7 +24,7 @@ Para ayudarnos a crear vídeos educacionales para nuestro canal de YouTube, pued
 
 ### Cómo puedo reportar un nuevo error?
 
-Si crees que has encontrado un error, primero lee el artículo ["Ayuda, he encontrado un bug"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) y sigue sus instrucciones.
+If you think you've found a bug, first read the ["How to Report a Bug"](https://www.freecodecamp.org/news/how-to-report-a-bug-to-freecodecamp/) article and follow its instructions.
 
 Si estás seguro de que es un error nuevo, crea un tema de GitHub nuevo.  Asegúrate de incluir tanta información como sea posible para que podamos reproducir el error.  Tenemos una plantilla de informe predefinida para ayudarte con esto.
 

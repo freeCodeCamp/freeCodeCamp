@@ -11,6 +11,7 @@ client/i18n/**/*.json
 docs/i18n
 utils/slugs.js
 utils/slugs.test.js
+utils/index.js
 **/package-lock.json
 web/.next
 curriculum-server/data/curriculum.json

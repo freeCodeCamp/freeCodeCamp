@@ -40,7 +40,7 @@ Once you have the prerequisites installed, you need to prepare your development 
 
 5. Install a code editor of your choice.
 
-   We highly recommend using [Visual Studio Code](https://code.visualstudio.com/) or Android Studio. We also recommend installing the official [extensions](https://docs.flutter.dev/get-started/editor?tab=vscode)
+   We highly recommend using [Visual Studio Code](https://code.visualstudio.com/) or Android Studio. We also recommend installing the official [extensions](https://docs.flutter.dev/get-started/editor?tab=vscode).
 
 ## Fork the repository on GitHub
 

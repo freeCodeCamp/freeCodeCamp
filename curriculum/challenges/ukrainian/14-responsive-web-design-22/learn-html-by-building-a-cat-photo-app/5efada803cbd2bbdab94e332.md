@@ -23,7 +23,7 @@ assert(document.querySelectorAll('figure').length >= 2);
 assert(code.match(/<\/figure>/g).length >= 2);
 ```
 
-Прямо над кінцевим тегом другого елемента `section` повинен бути другий елемент `figure`. Вони знаходяться в неправильному порядку.
+Прямо над кінцевим теґом другого елемента `section` повинен бути другий елемент `figure`. Вони знаходяться в неправильному порядку.
 
 ```js
 assert($('main > section')[1].lastElementChild.nodeName === 'FIGURE');
