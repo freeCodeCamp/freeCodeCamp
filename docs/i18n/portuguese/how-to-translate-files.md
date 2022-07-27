@@ -129,7 +129,7 @@ Esses arquivos provavelmente serão atualizados pelo líder do seu idioma, mas f
 
 ### No Crowdin
 
-> [!ATTENTION] Do not edit the following files through a GitHub PR.
+> [!ATTENTION] Não edite o seguintes arquivos por meio de um PR no GitHub.
 
 Os arquivos `intro.json` e `translations.json` são traduzidos no Crowdin, no projeto Learn User Interface (Learn UI). A tradução dessas traduções pode ser um pouco complicada, já que cada valor JSON individual tem sua própria sequência de caracteres e, às vezes, o contexto não é suficiente.
 

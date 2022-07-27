@@ -38,7 +38,7 @@ Alcuni esempi di buoni titoli PR sarebbero:
 - `fix(a11y): improved search bar contrast`
 - `feat: add more tests to HTML and CSS challenges`
 - `fix(api,client): prevent CORS errors on form submission`
-- `docs(i18n): Chinese translation of local setup`
+- `docs(i18n): fix links to be relative instead of absolute`
 
 ## Proporre una Pull Request
 
