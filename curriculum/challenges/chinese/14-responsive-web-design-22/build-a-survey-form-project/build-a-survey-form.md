@@ -8,7 +8,7 @@ dashedName: build-a-survey-form
 
 # --description--
 
-**目标：** 构建一个功能类似于 <a href="https://survey-form.freecodecamp.rocks" target="_blank">https://survey-form.freecodecamp.rocks</a> 的应用程序
+**目标：** 构建一个功能类似于 <a href="https://survey-form.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://survey-form.freecodecamp.rocks</a> 的应用程序
 
 **需求：**
 
@@ -182,21 +182,21 @@ const el = document.getElementById('number-label')
 assert(!!el && el.tagName === 'LABEL')
 ```
 
-你的 `#name-label` 不应为空。
+你的 `#name-label` 应包含描述输入的文本。
 
 ```js
 const el = document.getElementById('name-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-你的 `#email-label` 不应为空。
+你的 `#email-label` 应包含描述输入的文本。
 
 ```js
 const el = document.getElementById('email-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-你的 `#number-label` 不应为空。
+你的 `#number-label` 应该包含描述输入的文本。
 
 ```js
 const el = document.getElementById('number-label')
@@ -380,7 +380,7 @@ assert(!!el)
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Survey Form</title>
   </head>
   <body>

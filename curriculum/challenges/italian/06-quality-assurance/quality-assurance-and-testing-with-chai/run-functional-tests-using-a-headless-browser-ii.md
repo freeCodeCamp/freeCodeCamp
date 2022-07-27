@@ -12,7 +12,7 @@ Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza
 
 # --instructions--
 
-All'interno di `tests/2_functional-tests.js`, nel `'Submit the surname "Vespucci" in the HTML form'` test (`// #5`), automatizza quanto segue:
+All'interno di `tests/2_functional-tests.js`, nel test `'Submit the surname "Vespucci" in the HTML form'` (`// #6`), automatizza quanto segue:
 
 1.  Compila il modulo con il cognome `Vespucci`
 2.  Premi il pulsante submit

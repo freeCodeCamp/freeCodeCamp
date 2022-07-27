@@ -7,7 +7,7 @@ dashedName: step-22
 
 # --description--
 
-Users will be allowed to chose either a `Personal Account` or `Business Account`.
+Users will be allowed to choose either a `Personal Account` or `Business Account`.
 
 To do this, within each of the first two `label` elements, add one `input` element with `type="radio"`.
 

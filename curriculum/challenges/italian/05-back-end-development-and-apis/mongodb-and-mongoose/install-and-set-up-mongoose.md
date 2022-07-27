@@ -22,7 +22,7 @@ Segui <a href='https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/
 
 # --instructions--
 
-Aggiungi `mongodb@~3.6.0` e `mongoose@~5.4.0` al `package.json` del progetto. Poi, richiedi mongoose come `mongoose` in `myApp.js`. Crea un file `.env` e aggiungi una variabile `MONGO_URI` ad esso. Il suo valore dovrebbe essere l'URI del database MongoDB Atlas. Assicurati di racchiudere l'URI tra virgolette singole o doppie, e ricorda che non puoi usare spazi attorno al segno `=` nelle variabili d'ambiente. Ad esempio, `MONGO_URI='VALUE'`.
+`mongodb@~3.6.0` e `mongoose@~5.4.0` sono stati aggiunti al file `package.json` del tuo progetto. Come prima cosa, richiedi mongoose come `mongoose` in `myApp.js`. Poi, crea un file `.env` e aggiungi una variabile `MONGO_URI` ad esso. Il suo valore dovrebbe essere l'URI del database MongoDB Atlas. Assicurati di racchiudere l'URI tra virgolette singole o doppie, e ricorda che non puoi usare spazi attorno al segno `=` nelle variabili d'ambiente. Ad esempio, `MONGO_URI='VALUE'`.
 
 **Nota:** Se stai usando Replit, non puoi creare un file `.env`. Utilizza invece la scheda <dfn>SECRETS</dfn> integrata per aggiungere la variabile. <em>Non</em> racchiudere i valori in virgolette quando usi la scheda <em>SECRETS</em>.
 

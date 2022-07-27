@@ -97,6 +97,15 @@ assert.deepEqual(
 );
 ```
 
+`whatIsInAName([{"a": 1, "b": 2, "c": 3, "d": 9999}], {"a": 1, "b": 9999, "c": 3})` は `[]` を返す必要があります。
+
+```js
+assert.deepEqual(
+  whatIsInAName([{ a: 1, b: 2, c: 3, d: 9999 }], { a: 1, b: 9999, c: 3 }),
+  []
+);
+```
+
 # --seed--
 
 ## --seed-contents--
