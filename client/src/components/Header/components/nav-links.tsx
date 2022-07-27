@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
 // @ts-nocheck
 import {
   faCheckSquare,
@@ -145,7 +144,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
       lang: newLanguage
     });
 
-    return navigate(path);
+    return navigate(path) as string;
   };
 
   handleMenuKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>): void => {
