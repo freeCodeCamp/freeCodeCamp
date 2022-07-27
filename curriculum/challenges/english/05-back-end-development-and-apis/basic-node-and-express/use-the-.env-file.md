@@ -18,7 +18,7 @@ Let's add an environment variable as a configuration option.
 
 Create a `.env` file in the root of your project directory, and store the variable `MESSAGE_STYLE=uppercase` in it.
 
-Then, in the `/json` GET route handler you created in the last challenge, transform the response object's message to uppercase if `process.env.MESSAGE_STYLE` equals `uppercase`. The response object should either be `{"message": "Hello json"}` or `{"message": "HELLO JSON"}`, depending on the `MESSAGE_STYLE` value.
+Then, in the `/json` GET route handler you created in the last challenge access `process.env.MESSAGE_STYLE` and transform the response object's `message` to uppercase if the variable equals `uppercase`. The response object should either be `{"message": "Hello json"}` or `{"message": "HELLO JSON"}`, depending on the `MESSAGE_STYLE` value.
 
 **Note:** If you are using Replit, you cannot create a `.env` file. Instead, use the built-in <dfn>SECRETS</dfn> tab to add the variable.
 

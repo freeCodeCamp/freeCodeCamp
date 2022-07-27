@@ -129,7 +129,7 @@ Crowdin はドキュメントを翻訳可能な文字列 (通常は文単位) �
 
 ### Crowdin 上の作業
 
-> [!DANGER] 以下のファイルは GitHub のプルリクエストで変更しないでください。
+> [!ATTENTION] Do not edit the following files through a GitHub PR.
 
 `intro.json` と `translations.json` のファイルはどちらもCrowdin 上の Learn User Interface プロジェクトで翻訳します。 この作業では JSON の個々の値がその部分だけで文字列として表示され、文脈が分からないことが多いため、翻訳が難しい場合があります。
 

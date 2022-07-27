@@ -1,6 +1,6 @@
 import '@babel/polyfill';
 import jQuery from 'jquery';
-import curriculumHelpers from '../utils/curriculum-helpers';
+import * as helpers from '@freecodecamp/curriculum-helpers';
 
 declare global {
   interface Window {
@@ -86,7 +86,7 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
   // eslint-disable-next-line no-inline-comments
   const { default: chai } = await import(/* webpackChunkName: "chai" */ 'chai');
   const assert = chai.assert;
-  const __helpers = curriculumHelpers;
+  const __helpers = helpers;
   /* eslint-enable @typescript-eslint/no-unused-vars */
 
   let Enzyme;

@@ -63,7 +63,7 @@ curriculum/
 スーパーブロック名は共有されており、スーパーブロック名を変更する際、認定講座名と `{superBlock}-projects` ブロック名を変更することも検討するでしょう。 以下は、スーパーブロック名のみを変更するための手順です。
 
 1. スーパーブロックのフォルダ名を `curriculum/challenges/english` ディレクトリに変更します。
-1. _他の_すべての `curriculum/challenges/{language}` ディレクトリのスーパーブロックフォルダ名を変更します。
+1. _他の_ すべての `curriculum/challenges/{language}` ディレクトリのスーパーブロックフォルダ名を変更します。
 1. スーパーブロック内の各ブロックについて、`meta.json` ファイル内の `superBlock` の値をその dashedName に更新します。 ここでは、フォルダ名を変更する必要はありません。 ブロック名変更時に、フォルダ名を変更します。
 1. `client/src/pages/learn` 内のスーパーブロックのフォルダ名を変更します。
 1. 上記フォルダの `index.md` ファイルを更新し、`title` と `superBlock` の値を新しい名前に変更します。

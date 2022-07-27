@@ -1,9 +1,7 @@
 import chai from 'chai';
 import '@babel/polyfill';
 import { toString as __toString } from 'lodash-es';
-import curriculumHelpers, {
-  removeJSComments
-} from '../../utils/curriculum-helpers';
+import * as helpers from '@freecodecamp/curriculum-helpers';
 import { format as __format } from '../../utils/format';
 
 const ctx: Worker & typeof globalThis = self as unknown as Worker &
@@ -80,14 +78,14 @@ interface TestEvaluatorEvent extends MessageEvent {
 ctx.onmessage = async (e: TestEvaluatorEvent) => {
   /* eslint-disable @typescript-eslint/no-unused-vars */
   let code = (e.data?.code?.contents || '').slice();
-  code = e.data?.removeComments ? removeJSComments(code) : code;
+  code = e.data?.removeComments ? helpers.removeJSComments(code) : code;
   let editableContents = (e.data?.code?.editableContents || '').slice();
   editableContents = e.data?.removeComments
-    ? removeJSComments(editableContents)
+    ? helpers.removeJSComments(editableContents)
     : editableContents;
 
   const assert = chai.assert;
-  const __helpers = curriculumHelpers;
+  const __helpers = helpers;
   // Fake Deep Equal dependency
   const DeepEqual = (a: unknown, b: unknown) =>
     JSON.stringify(a) === JSON.stringify(b);
@@ -105,7 +103,9 @@ ctx.onmessage = async (e: TestEvaluatorEvent) => {
       // Logging is proxyed after the build to catch console.log messages
       // generated during testing.
       testResult = (await eval(`${
-        e.data?.removeComments ? removeJSComments(e.data.build) : e.data.build
+        e.data?.removeComments
+          ? helpers.removeJSComments(e.data.build)
+          : e.data.build
       }
 __utils.flushLogs();
 __userCodeWasExecuted = true;
