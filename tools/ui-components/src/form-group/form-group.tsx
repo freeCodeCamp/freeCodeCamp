@@ -1,13 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 
 import { FormContext } from '../form-context/index';
 import { ControlLabel } from '../control-label/index';
 import { FormGroupProps } from './types';
-
-// need to change htmlInputElement
-// formgroup should be label not input, as far as I know
-// in react-bootstrap formgroup treated more like fieldset element without legend element
 
 const FormGroup = React.forwardRef<HTMLLabelElement, FormGroupProps>(
   ({ className, validationState, bsSize, bsClass }): JSX.Element => {
@@ -17,7 +12,12 @@ const FormGroup = React.forwardRef<HTMLLabelElement, FormGroupProps>(
 
     return (
       <FormContext.Provider>
-        <FormGroup>
+        <FormGroup
+          className={classes}
+          validationState={validationState}
+          bsClass={bsClass}
+          bsSize={bsSize}
+        >
           <ControlLabel htmlFor={''} srOnly={false} bsClass={''}></ControlLabel>
         </FormGroup>
       </FormContext.Provider>

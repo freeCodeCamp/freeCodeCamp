@@ -93,11 +93,6 @@ module.exports = {
         2: '2'
       }
     }
-    // margin: {
-    //   margin-bottom: {
-    //   mb-3.5 : "0.875rem"  // 14px not 15px in tailwind but it's rem, I need to findout what default margin value in fcc
-    //   }
-    // },
   },
   plugins: [
     plugin(({ addVariant }) => {

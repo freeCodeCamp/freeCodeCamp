@@ -17,12 +17,10 @@ describe('<FormGroup />', () => {
     it('provided controlId to label and control', () => {
       render(
         <FormGroup data-testid='test-id'>
-          <div>
-            <ControlLabel htmlFor={''} srOnly={false} bsClass={''}>
-              label
-            </ControlLabel>
-            <FormControl />
-          </div>
+          <ControlLabel htmlFor='test-id' srOnly={false} bsClass={''}>
+            label
+          </ControlLabel>
+          <FormControl />
         </FormGroup>
       );
     }),
