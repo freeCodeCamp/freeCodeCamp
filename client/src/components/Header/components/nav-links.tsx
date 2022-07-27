@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 // @ts-nocheck
@@ -123,10 +122,8 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
       menuButtonRef,
       navigate
     }: LanguageChange = this.props;
-    interface ProperlyTyped {
-      target: { dataset: { value: string } };
-    }
-    const newLanguage = event.target.dataset.value as ProperlyTyped;
+
+    const newLanguage = event.currentTarget.dataset.value as string;
     // If user selected cancel then close menu and put focus on button
     if (newLanguage === 'exit-lang-menu') {
       // Set focus to language button first so we don't lose focus
@@ -234,7 +231,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
         const arrowUpItemToFocus =
           event.target === this.firstLangOptionRef.current
             ? this.lastLangOptionRef.current
-            : (event.target.parentNode.previousSibling
+            : (event.currentTarget.parentNode.previousSibling
                 .firstChild as HTMLElement);
         arrowUpItemToFocus.focus();
         event.preventDefault();
@@ -243,7 +240,8 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
         const arrowDownItemToFocus =
           event.target === this.lastLangOptionRef.current
             ? this.firstLangOptionRef.current
-            : (event.target.parentNode.nextSibling.firstChild as HTMLElement);
+            : (event.currentTarget.parentNode.nextSibling
+                .firstChild as HTMLElement);
         arrowDownItemToFocus.focus();
         event.preventDefault();
       },
