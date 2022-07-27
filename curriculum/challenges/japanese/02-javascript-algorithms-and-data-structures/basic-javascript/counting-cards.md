@@ -31,30 +31,9 @@ dashedName: counting-cards
 assert(//
   (function () {
     count = 0;
-    cc(2);
-    cc(2);
     let out = cc(10);
-    const hasSpace = /-?\d+ Bet/.test('' + out);
+    const hasSpace = /-?\d+ (Bet|Hold)/.test('' + out);
     return hasSpace;
-  })()
-);
-```
-
-カードの並びが 3、2、A、10、K の場合は文字列 `-1 Hold` を返す必要があります。
-
-```js
-assert(
-  (function () {
-    count = 0;
-    cc(3);
-    cc(2);
-    cc('A');
-    cc(10);
-    var out = cc('K');
-    if (out === '-1 Hold') {
-      return true;
-    }
-    return false;
   })()
 );
 ```

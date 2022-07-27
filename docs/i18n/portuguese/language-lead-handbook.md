@@ -255,7 +255,7 @@ Depois, há três etapas a concluir:
 
 ![pré-traduzir as traduções existentes](./images/crowdin/pre-translate3.png)
 
-Quando você tiver terminado essas configurações, pressione o botão de Pre-Translate e aguarde. Ele alertará você quando terminar. Levará algum tempo, dependendo de quantas frases não traduzidas estão presentes nos arquivos que você escolheu.
+Quando você tiver terminado de fazer essa configuração, pressione o botão Pre-Translate e aguarde. Ele alertará você quando terminar. O tempo que leva depende de quantas frases não traduzidas existem nos arquivos escolhidos.
 
 ## Como atualizar o glossário do Crowdin
 

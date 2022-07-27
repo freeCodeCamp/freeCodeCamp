@@ -38,7 +38,7 @@ Alguns exemplos de bons títulos de PRs seriam:
 - `fix(a11y): contraste melhorado da barra de pesquisa`
 - `feat: adicionar mais testes aos desafios de HTML e CSS`
 - `fix(api,cliente): prevenir erros CORS no envio do formulário`
-- `docs(i18n): tradução para chinês da configuração local`
+- `docs(i18n): fix links to be relative instead of absolute`
 
 ## Propondo um Pull Request
 
