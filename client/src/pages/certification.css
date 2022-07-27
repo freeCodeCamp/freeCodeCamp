@@ -259,7 +259,18 @@
 
 @media print {
   .certificate-outer-wrapper header {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
     background-color: var(--theme-color) !important;
+  }
+
+  .certification-namespace {
+    border-color: var(--theme-color) !important;
+  }
+
+  .share-section,
+  .donation-section {
+    display: none;
   }
 
   .certification-namespace .issue-date,

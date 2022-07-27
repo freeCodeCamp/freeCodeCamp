@@ -283,7 +283,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
   );
 
   const shareCertBtns = (
-    <Row className='text-center'>
+    <Row className='text-center share-section'>
       <Col xs={12}>
         <Button
           block={true}
