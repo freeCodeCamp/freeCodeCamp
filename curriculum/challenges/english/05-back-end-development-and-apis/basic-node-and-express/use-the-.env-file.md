@@ -22,7 +22,7 @@ Then, in the `/json` GET route handler you created in the last challenge access 
 
 **Note:** If you are using Replit, you cannot create a `.env` file. Instead, use the built-in <dfn>SECRETS</dfn> tab to add the variable.
 
-If you are working locally, you will need the `dotenv` package. It loads environment variables from your `.env` file into `process.env`. Install it with `npm install dotenv`. Then, at the top of your `myApp.js` file, import and load the variables with `require('dotenv').config()`.
+If you are working locally, you will need the `dotenv` package. It loads environment variables from your `.env` file into `process.env`. The `dotenv` package has already been installed, and is in your project's `package.json` file. At the top of your `myApp.js` file, import and load the variables with `require('dotenv').config()`.
 
 # --hints--
 

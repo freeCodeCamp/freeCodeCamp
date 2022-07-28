@@ -11,8 +11,7 @@ import './404.css';
 
 const FourOhFour = (): JSX.Element => {
   const { t } = useTranslation();
-  // TODO: Remove this type coercion when get-words.js is migrated
-  const quote = randomQuote() as { quote: string; author: string };
+  const quote = randomQuote();
   return (
     <div className='notfound-page-wrapper'>
       <Helmet title={t('404.page-not-found') + '| freeCodeCamp'} />
