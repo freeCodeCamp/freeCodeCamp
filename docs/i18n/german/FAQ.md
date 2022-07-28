@@ -24,7 +24,7 @@ Um uns zu helfen, Lehrvideos für unseren YouTube-Kanal zu erstellen, kannst du 
 
 ### Wie kann ich einen neuen Fehler melden?
 
-Wenn du glaubst, dass du einen Fehler gefunden hast, lies zuerst den ["Hilfe, ich habe einen Fehler gefunden"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) Artikel und folge den Anweisungen darin.
+If you think you've found a bug, first read the ["How to Report a Bug"](https://www.freecodecamp.org/news/how-to-report-a-bug-to-freecodecamp/) article and follow its instructions.
 
 Wenn du sicher bist, dass es sich um einen neuen Fehler handelt, kannst du einen neuen Issue auf GitHub erstellen. Gib so viele Informationen wie möglich an, damit wir den Fehler reproduzieren können. Wir haben eine vorgefertigte Issue-Vorlage, die dir dabei hilft.
 

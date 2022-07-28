@@ -18,16 +18,16 @@ dashedName: build-a-survey-form
 1. All'interno dell'elemento form, devi inserire obbligatoriamente (**required**) il nome in un campo di `input` che ha un `id` con il valore `name` e un `type` con il valore `text`
 1. All'interno dell'elemento form, devi inserire obbligatoriamente (**required**) l'email in un campo di `input` che ha un `id` con il valore `email`
 1. Se inserisci una email che non è formattata correttamente, vedrai un errore di validazione HTML5
-1. All'interno del modulo, puoi inserire un numero in un campo di `input` con un `id` del valore `number`
+1. All'interno del modulo, puoi inserire un numero in un campo di `input` con un `id` del valore di `number`
 1. Se inserisci valori non numerici nell'input del numero, vedrai un errore di validazione HTML5
 1. Se immetti un numero al di fuori del range del campo del numero, che hai definito con gli attributi `min` e `max`, vedrai un errore di validazione HTML5
 1. Per le caselle di input per il nome, l'email e il numero, puoi vedere gli elementi `label` corrispondenti nel modulo che descrivono lo scopo di ogni campo con i seguenti attributi id: `id="name-label"`, `id="email-label"` e `id="number-label"`
 1. Per i campi di input di nome, e-mail e numero, puoi vedere il testo del placeholder che fornisce una descrizione o delle istruzioni per ogni campo
-1. Dentro l'elemento form, dovresti avere un elemento `select` a tendina con un `id` del valore `dropdown` e almeno due opzioni tra cui scegliere
+1. Dentro l'elemento form, dovresti avere un elemento `select` a tendina con un `id` del valore di `dropdown` e almeno due opzioni tra cui scegliere
 1. Dentro l'elemento form, puoi selezionare una opzione da un gruppo di almeno due pulsanti di opzione che sono raggruppati con l'attributo `name`
 1. All'interno dell'elemento form, puoi selezionare diversi campi da una serie di caselle di spunta, ciascuno dei quali deve avere un attributo `value`
 1. All'interno dell'elemento form, deve essere un elemento `textarea` per commenti aggiuntivi
-1. All'interno dell'elemento form, deve essere presente un pulsante con un `id` del valore `submit` per inviare tutti gli input
+1. All'interno dell'elemento form, deve essere presente un pulsante con un `id` del valore di `submit` per inviare tutti gli input
 
 Soddisfa le user story e passa tutti i test per completare questo progetto. Usa il tuo stile personale. Buon divertimento!
 

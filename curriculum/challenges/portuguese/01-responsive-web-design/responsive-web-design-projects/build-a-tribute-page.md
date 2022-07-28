@@ -12,11 +12,11 @@ dashedName: build-a-tribute-page
 
 **Histórias de usuário:**
 
-1. A página de homenagem deve ter um elemento com um `id="main"` que envolva todos os demais elementos
+1. A página de homenagem deve ter um elemento `main` com o `id` `main` correspondente, que envolva todos os demais elementos
 1. Deve haver um elemento com `id` `title`, que contenha uma string (ou seja, um texto) que descreva a pessoa a quem a página presta homenagem (por exemplo, "Dr. Norman Borlaug")
 1. Você deve ter um elemento `figure` ou um elemento `div` com o `id` `img-div`
-1. Dentro do elemento `img-div`, deve haver um elemento `img` com um `id="image"` correspondente
-1. Dentro do elemento `img-div`, deve haver um elemento com um `id="img-caption"` correspondente que contenha um conteúdo textual descrevendo a imagem mostrada em `img-div`
+1. Dentro do elemento `#img-div`, deve haver um elemento `img` com um `id="image"` correspondente
+1. Dentro do elemento `#img-div`, deve haver um elemento com um `id="img-caption"` correspondente que contenha um conteúdo textual descrevendo a imagem mostrada em `#img-div`
 1. Deve haver um elemento com `id="tribute-info"`, que contenha conteúdo textual descrevendo a pessoa a quem a página presta homenagem
 1. Deve haver um elemento `a` com um `id="tribute-link"`, que leve a um site externo que contenha informações adicionais sobre a pessoa a quem a página presta homenagem. DICA: você deve dar ao seu elemento um atributo `target` e definir o valor para `_blank` para que seu link possa ser aberto em uma nova aba
 1. O elemento `#image` deve usar `max-width` e `height` para redimensionar de forma responsiva, em relação à largura de seu elemento pai, sem exceder seu tamanho original
@@ -28,14 +28,14 @@ Atenda às histórias de usuário e passe em todos os testes abaixo para conclui
 
 # --hints--
 
-Você deve ter um elemento `main` com o `id` `main`
+Você deve ter um elemento `main` com o `id` `main`.
 
 ```js
 const el = document.getElementById('main')
 assert(!!el && el.tagName === 'MAIN')
 ```
 
-Os elementos `#img-div`, `#image`, `#img-caption`, `#tribute-info` e `#tribute-link` devem estar aninhados dentro de `#main`
+Os elementos `#img-div`, `#image`, `#img-caption`, `#tribute-info` e `#tribute-link` devem estar aninhados dentro de `#main`.
 
 ```js
 const el1 = document.querySelector('#main #img-div')
@@ -46,14 +46,14 @@ const el5 = document.querySelector('#main #tribute-link')
 assert(!!el1 & !!el2 && !!el3 && !!el4 && !!el5)
 ```
 
-Você deve ter um elemento com o `id` `title`
+Você deve ter um elemento com o `id` `title`.
 
 ```js
 const el = document.getElementById('title')
 assert(!!el)
 ```
 
-O elemento `#title` não deve estar vazio
+O elemento `#title` não deve estar vazio.
 
 ```js
 const el = document.getElementById('title')
@@ -61,84 +61,84 @@ assert(!!el && el.innerText.length > 0)
 
 ```
 
-Você deve ter um elemento `figure` ou um elemento `div` com o `id` `img-div`
+Você deve ter um elemento `figure` ou um elemento `div` com o `id` `img-div`.
 
 ```js
 const el = document.getElementById('img-div')
 assert(!!el && (el.tagName === 'DIV' || el.tagName === 'FIGURE'))
 ```
 
-Você deve ter um elemento `img` com o `id` `image`
+Você deve ter um elemento `img` com o `id` `image`.
 
 ```js
 const el = document.getElementById('image')
 assert(!!el && el.tagName === 'IMG')
 ```
 
-O elemento `#image` deve estar aninhado dentro de `#img-div`
+O elemento `#image` deve estar aninhado dentro de `#img-div`.
 
 ```js
 const el = document.querySelector('#img-div #image')
 assert(!!el)
 ```
 
-Você deve ter um elemento `figcaption` ou um elemento `div` com o `id` `img-caption`
+Você deve ter um elemento `figcaption` ou um elemento `div` com o `id` `img-caption`.
 
 ```js
 const el = document.getElementById('img-caption')
 assert(!!el && (el.tagName === 'DIV' || el.tagName === 'FIGCAPTION'))
 ```
 
-O elemento `#img-caption` deve estar aninhado dentro de `#img-div`
+O elemento `#img-caption` deve estar aninhado dentro de `#img-div`.
 
 ```js
 const el = document.querySelector('#img-div #img-caption')
 assert(!!el)
 ```
 
-O elemento `#img-caption` não deve estar vazio
+O elemento `#img-caption` não deve estar vazio.
 
 ```js
 const el = document.getElementById('img-caption')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Você deve ter um elemento com o `id` `tribute-info`
+Você deve ter um elemento com o `id` `tribute-info`.
 
 ```js
 const el = document.getElementById('tribute-info')
 assert(!!el)
 ```
 
-O elemento `#tribute-info` não deve estar vazio
+O elemento `#tribute-info` não deve estar vazio.
 
 ```js
 const el = document.getElementById('tribute-info')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Você deve ter um elemento `a` com o `id` `tribute-link`
+Você deve ter um elemento `a` com o `id` `tribute-link`.
 
 ```js
 const el = document.getElementById('tribute-link')
 assert(!!el && el.tagName === 'A')
 ```
 
-O elemento `#tribute-link` deve ter o atributo `href` e um valor
+O elemento `#tribute-link` deve ter o atributo `href` e um valor.
 
 ```js
 const el = document.getElementById('tribute-link')
 assert(!!el && !!el.href && el.href.length > 0)
 ```
 
-O elemento `#tribute-link` deve ter um atributo `target` definido como `_blank`
+O elemento `#tribute-link` deve ter um atributo `target` definido como `_blank`.
 
 ```js
 const el = document.getElementById('tribute-link')
 assert(!!el && el.target === '_blank')
 ```
 
-O elemento `img` deve ter o atributo `display` com o valor `block`
+O elemento `img` deve ter o atributo `display` com o valor `block`.
 
 ```js
 const img = document.getElementById('image');
@@ -147,7 +147,7 @@ const style = imgStyle?.getPropertyValue('display')
 assert(style === 'block')
 ```
 
-O elemento `#image` deve ter o atributo `max-width` com o valor `100%`
+O elemento `#image` deve ter o atributo `max-width` com o valor `100%`.
 
 ```js
 const img = document.getElementById('image');
@@ -156,7 +156,7 @@ const style = imgStyle?.getPropertyValue('max-width')
 assert(style === '100%')
 ```
 
-O elemento `#image` deve ter o atributo `height` com o valor `auto`
+O elemento `#image` deve ter o atributo `height` com o valor `auto`.
 
 ```js
 // taken from the testable-projects repo
@@ -170,7 +170,7 @@ img?.style.setProperty('display', oldDisplayValue, oldDisplayPriority);
 assert(heightValue === 'auto')
 ```
 
-O elemento `#image` deve ser centralizado dentro de seu elemento pai
+O elemento `#image` deve ser centralizado dentro de seu elemento pai.
 
 ```js
 // taken from the testable-projects repo
@@ -207,14 +207,14 @@ assert(leftMargin - rightMargin < 6 && rightMargin - leftMargin < 6)
     <link
       href="https://fonts.googleapis.com/css?family=Pacifico"
       rel="stylesheet"
-      type="text/css"
+
     />
     <link
       href="https://fonts.googleapis.com/css?family=Lobster"
       rel="stylesheet"
-      type="text/css"
+
     />
-    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <link href="styles.css" rel="stylesheet" />
     <title>Tribute Page</title>
   </head>
   <body>

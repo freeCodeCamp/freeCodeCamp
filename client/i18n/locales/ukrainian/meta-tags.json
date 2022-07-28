@@ -1,21 +1,21 @@
 {
-  "title": "Learn to Code — For Free — Coding Courses for Busy People",
-  "description": "Learn to Code — For Free",
-  "social-description": "Learn to Code — For Free",
+  "title": "Навчіться кодувати безкоштовно: курси кодування для зайнятих людей",
+  "description": "Навчіться кодувати безкоштовно. Створюйте проєкти. Отримуйте сертифікати. З 2014 року, понад 40 000 випускників freeCodeCamp.org отримали роботу в найбільших технологічних компаніях, як-от Apple, Google та Amazon.",
+  "social-description": "Навчіться кодувати БЕЗКОШТОВНО",
   "keywords": [
     "python",
     "javascript",
     "js",
     "git",
     "github",
-    "website",
-    "web",
-    "development",
+    "вебсайт",
+    "веб",
+    "розробка",
     "free",
     "code",
     "camp",
-    "course",
-    "courses",
+    "курс",
+    "курси",
     "html",
     "css",
     "react",
@@ -24,9 +24,10 @@
     "front",
     "back",
     "end",
-    "learn",
-    "tutorial",
-    "programming"
+    "навчитись",
+    "вивчити",
+    "туторіал",
+    "програмування"
   ],
-  "youre-unsubscribed": "You have been unsubscribed"
+  "youre-unsubscribed": "Вашу підписку скасовано"
 }

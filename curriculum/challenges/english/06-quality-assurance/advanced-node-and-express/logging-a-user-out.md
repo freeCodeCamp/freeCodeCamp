@@ -34,7 +34,7 @@ Submit your page when you think you've got it right. If you're running into erro
 
 # --hints--
 
-`req.Logout` should be called in your `/logout` route.
+`req.logout()` should be called in your `/logout` route.
 
 ```js
 (getUserInput) =>

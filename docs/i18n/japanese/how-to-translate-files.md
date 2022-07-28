@@ -4,7 +4,7 @@
 
 > freeCodeCamp ローカリゼーションのロードマップ – 進められるだけ進めてください。
 
-> [!TIP] まず[こちらのお知らせ](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/)をお読みください。 [freeCodeCamp コミュニティのフォーラム](https://forum.freecodecamp.org/c/contributors/3)や [Discord チャットサーバー](https://discord.gg/PRyKn3Vbay) にも参加することをおすすめします。
+> [!TIP] まず[こちらのお知らせ](https://www.freecodecamp.org/japanese/news/help-translate-freecodecamp-language/)をお読みください。 [freeCodeCamp コミュニティのフォーラム](https://forum.freecodecamp.org/c/contributors/3)や [Discord チャットサーバー](https://discord.gg/PRyKn3Vbay) にも参加することをおすすめします。
 
 あなたはいつでも好きな時に、好きなだけ翻訳することができます。 あなたがボランティアの翻訳者として使える時間と労力がどれだけあるかだけの問題です。
 
@@ -14,7 +14,7 @@
 
    freeCodeCamp のリソースの翻訳は、コントリビューターとして最も楽しくやりがいのある経験の一つであり、あなたと同じ言語を話す友人や同僚を巻き込むとよりうまくいくでしょう。
 
-   まず[こちらのお知らせ](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/)をお読みください。 実際の翻訳作業に入る前に、[freeCodeCamp コミュニティのフォーラム](https://forum.freecodecamp.org/c/contributors/3)や [Discord チャットサーバー](https://discord.gg/PRyKn3Vbay)に参加して、翻訳に参加したいことを仲間の翻訳者たちに伝えることを推奨します。 Crowdin などのツールによって貢献しやすくなっていますが、それでも翻訳は大変な作業です。
+   まず[こちらのお知らせ](https://www.freecodecamp.org/japanese/news/help-translate-freecodecamp-language/)をお読みください。 実際の翻訳作業に入る前に、[freeCodeCamp コミュニティのフォーラム](https://forum.freecodecamp.org/c/contributors/3)や [Discord チャットサーバー](https://discord.gg/PRyKn3Vbay)に参加して、翻訳に参加したいことを仲間の翻訳者たちに伝えることを推奨します。 Crowdin などのツールによって貢献しやすくなっていますが、それでも翻訳は大変な作業です。
 
    私達はあなたが楽しんで貢献できること、燃え尽きたり興味を失ったりしないことを望んでいます。
 
@@ -129,7 +129,7 @@ Crowdin はドキュメントを翻訳可能な文字列 (通常は文単位) �
 
 ### Crowdin 上の作業
 
-> [!DANGER] 以下のファイルは GitHub のプルリクエストで変更しないでください。
+> [!ATTENTION] Do not edit the following files through a GitHub PR.
 
 `intro.json` と `translations.json` のファイルはどちらもCrowdin 上の Learn User Interface プロジェクトで翻訳します。 この作業では JSON の個々の値がその部分だけで文字列として表示され、文脈が分からないことが多いため、翻訳が難しい場合があります。
 

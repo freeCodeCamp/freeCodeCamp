@@ -34,6 +34,7 @@
     "tools/ui-components"
   ],
   "scripts": {
+    "audit-challenges": "ts-node tools/challenge-auditor/index.ts",
     "analyze-bundle": "webpack-bundle-analyzer",
     "prebuild": "npm-run-all create:*",
     "build": "npm-run-all -p build:*",
@@ -107,9 +108,9 @@
     "invariant": "2.2.4"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.18.2",
-    "@babel/plugin-proposal-function-bind": "7.18.8",
-    "@babel/preset-env": "7.18.6",
+    "@babel/eslint-parser": "7.18.9",
+    "@babel/plugin-proposal-function-bind": "7.18.9",
+    "@babel/preset-env": "7.18.9",
     "@babel/preset-react": "7.18.6",
     "@babel/preset-typescript": "7.18.6",
     "@testing-library/cypress": "8.0.3",
@@ -145,8 +146,8 @@
     "@types/sanitize-html": "2.6.2",
     "@types/store": "2.0.2",
     "@types/validator": "13.7.4",
-    "@typescript-eslint/eslint-plugin": "5.30.6",
-    "@typescript-eslint/parser": "5.30.6",
+    "@typescript-eslint/eslint-plugin": "5.30.7",
+    "@typescript-eslint/parser": "5.30.7",
     "babel-eslint": "10.1.0",
     "babel-plugin-transform-imports": "2.0.0",
     "cross-env": "7.0.3",
@@ -156,7 +157,7 @@
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-jest-dom": "3.9.4",
-    "eslint-plugin-jsx-a11y": "6.6.0",
+    "eslint-plugin-jsx-a11y": "6.6.1",
     "eslint-plugin-no-only-tests": "^2.6.0",
     "eslint-plugin-prefer-object-spread": "1.2.1",
     "eslint-plugin-react": "7.30.1",

@@ -19,7 +19,7 @@ Your `figure` element should have an opening tag. Opening tags have this syntax:
 assert(document.querySelectorAll('figure').length === 2);
 ```
 
-Your `ol` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+Your `figure` element should have a closing tag. Closing tags have a `/` just after the `<` character.
 
 ```js
 assert(code.match(/<\/figure>/g).length === 2);
