@@ -19,7 +19,7 @@ dashedName: step-29
 assert(document.querySelectorAll('figure').length === 2);
 ```
 
-Ваш елемент `ol` повинен мати кінцевий теґ. Кінцеві теґи мають `/` відразу після символу `<`.
+Ваш елемент `figure` повинен мати кінцевий теґ. Кінцеві теґи мають `/` відразу після символу `<`.
 
 ```js
 assert(code.match(/<\/figure>/g).length === 2);

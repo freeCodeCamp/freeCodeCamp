@@ -8,7 +8,7 @@ dashedName: build-a-product-landing-page
 
 # --description--
 
-**Objetivo:** Construir una aplicación que su funcionamiento sea similar a <a href="https://product-landing-page.freecodecamp.rocks" target="_blank">ttps://product-landing-page.freecodecamp.rocks</a>
+**Objetivo:** Crea una aplicación que su funcionamiento sea similar a <a href="https://product-landing-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://product-landing-page.freecodecamp.rocks</a>
 
 **Historias de usuario:**
 
@@ -30,67 +30,67 @@ dashedName: build-a-product-landing-page
 
 Completa las historias de usuario y pasa todas las pruebas a continuación para completar este proyecto. Dale tu propio estilo personal. ¡Feliz día programando!
 
-**Nota:** Asegúrete de agregar `<link rel="stylesheet" href="styles.css">` en tu HTML para enlazar tu hoja de estilos y aplicar tu CSS
+**Nota:** Asegúrate de agregar `<link rel="stylesheet" href="styles.css">` en tu HTML para enlazar tu hoja de estilos y aplicar tu CSS
 
 # --hints--
 
-Debes tener un elemento `header` con un `id` de `header`
+Debes tener un elemento `header` con un `id` de `header`.
 
 ```js
 const el = document.getElementById('header')
 assert(!!el && el.tagName === 'HEADER')
 ```
 
-Debes tener un elemento `img` con un `id` de `header-img`
+Debes tener un elemento `img` con un `id` de `header-img`.
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && el.tagName === 'IMG')
 ```
 
-Tú `#header-img` debe ser un descendiente de `#header`
+Tu `#header-img` debe ser descendiente de `#header`.
 
 ```js
 const els = document.querySelectorAll('#header #header-img')
 assert(els.length > 0)
 ```
 
-Tú `#header-img` debe tener un atributo `src`
+Tu `#header-img` debe tener un atributo `src`.
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && !!el.src)
 ```
 
-El valor de tú `#header-img` `src` debe ser una URL válida (comienza con `http`)
+El valor de `src` de `#header-img` debe ser una URL válida(inicia con `http`).
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && /^http/.test(el.src))
 ```
 
-Debes tener un elemento `nav` con un `id` de `nav-bar`
+Debes tener un elemento `nav` con un `id` de `nav-bar`.
 
 ```js
 const el = document.getElementById('nav-bar')
 assert(!!el && el.tagName === 'NAV')
 ```
 
-Tú `#nav-bar` debe ser un descendiente de `#header`
+Tu `#nav-bar` debe ser descendiente de `#header`.
 
 ```js
 const els = document.querySelectorAll('#header #nav-bar')
 assert(els.length > 0)
 ```
 
-Debes tener al menos tres elementos `.nav-link` dentro de el `#nav-bar`
+Debes tener al menos 3 elementos `.nav-link` dentro del `#nav-bar`.
 
 ```js
 const els = document.querySelectorAll('#nav-bar .nav-link')
 assert(els.length >= 3)
 ```
 
-Cada elemento `.nav-link` debe tener un atributo `href`
+Cada elemento `.nav-link` debe tener un atributo `href`.
 
 ```js
 const els = document.querySelectorAll('.nav-link')
@@ -100,7 +100,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-Cada elemento `.nav-link` debe enlazar a un elemento correspondiente en la página de inicio (tiene un `href` con un valor de id de otro elemento. ej. `#footer`)
+Cada elemento `.nav-link` debe estar enlazado a su elemento correspondiente en la página de inicio (el valor que tiene el `href` es el id de otro elemento, por ejemplo, `#footer`).
 
 ```js
 const els = document.querySelectorAll('.nav-link')
@@ -111,14 +111,14 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-Debes tener un elemento `video` o un elemento `iframe` con un `id` de `video`
+Debes tener un elemento `video` o `iframe` con un `id` de `video`.
 
 ```js
 const el = document.getElementById('video')
 assert(!!el && (el.tagName === 'VIDEO' || el.tagName === 'IFRAME'))
 ```
 
-Tú `#video` debe tener un atributo `src`
+Tu `#video` debe tener un atributo `src`.
 
 ```js
 let el = document.getElementById('video')
@@ -133,77 +133,77 @@ if (sourceElement) {
 assert(el.hasAttribute('src'));
 ```
 
-Debes tener un elemento `form` con un `id` de `form`
+Debes tener un elemento `form` con un `id` de `form`.
 
 ```js
 const el = document.getElementById('form')
 assert(!!el && el.tagName === 'FORM')
 ```
 
-Debes tener un elemento `input` con un `id` de `email`
+Debes tener un elemento `input` con un `id` de `email`.
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Tú `#email` debe ser un descendiente de `#form`
+Tu `#email` debe ser descendiente de `#form`.
 
 ```js
 const els = document.querySelectorAll('#form #email')
 assert(els.length > 0)
 ```
 
-Tú `#email` debe tener el atributo `placeholder` con un marcador de texto
+Tu `#email` debe tener el atributo `placeholder` con un texto marcador de posición.
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-Tú `#email` debe usar la validación de HTML5 estableciendo su `type` a `email`
+Tu `#email` debe usar la validación HTML5 estableciendo su `type` a `email`.
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.type === 'email')
 ```
 
-Debes tener un elemento `input` con un `id` de `submit`
+Debes tener un elemento `input` con un `id` de `submit`.
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Tú `#submit` debe ser un descendiente de `#form`
+Tu `#submit` debe ser descendiente de `#form`.
 
 ```js
 const els = document.querySelectorAll('#form #submit')
 assert(els.length > 0)
 ```
 
-Tú `#submit` debe tener un `type` de `submit`
+Tu `#submit` debe tener un `type` de `submit`.
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && el.type === 'submit')
 ```
 
-Tú `#form` debe tener un atributo `action` de `https://www.freecodecamp.com/email-submit`
+Tu `#form` debe tener un atributo `action` de `https://www.freecodecamp.com/email-submit`.
 
 ```js
 const el = document.getElementById('form')
 assert(!!el && el.action === 'https://www.freecodecamp.com/email-submit')
 ```
 
-Tú `#email` debe tener un atributo `name` de `email`
+Tu `#email` debe tener un atributo `name` de `email`.
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.name === 'email')
 ```
 
-Tú `#nav-bar` siempre debe estar en la parte superior del viewport
+Tu `#nav-bar` siempre debe estar en la parte superior del viewport.
 
 ```js
 (async () => {
@@ -243,7 +243,7 @@ Tú `#nav-bar` siempre debe estar en la parte superior del viewport
 })();
 ```
 
-Tu página de inicio de producto debe tener al menos una consulta de medios
+Tu página de inicio de producto debe usar por lo menos una consulta de medios.
 
 ```js
 const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
@@ -251,7 +251,7 @@ const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
 assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 ```
 
-Tu página de inicio de producto debe utilizar al menos una vez flexbox CSS
+Tu página de inicio de producto debe usar CSS Flexbox por lo menos una vez.
 
 ```js
 const stylesheet = new __helpers.CSSHelp(document).getStyleSheet()
@@ -281,7 +281,7 @@ assert(usesFlex)
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Product Landing Page</title>
   </head>
   <body>
