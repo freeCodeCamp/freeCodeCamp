@@ -159,8 +159,12 @@
   background-color: var(--gray-05);
 }
 
+.certificate-outer-wrapper {
+  margin-top: calc(-1 * var(--header-height));
+}
+
 /*mobile media queries*/
-@media (max-width: 675px) {
+@media screen and (max-width: 675px) {
   .certification-namespaces.issue-date {
     padding: 0;
     border: 0;
@@ -184,7 +188,7 @@
   }
 }
 
-@media (max-width: 992px) {
+@media screen and (max-width: 992px) {
   .certification-namespace header {
     height: 160px;
   }
@@ -233,7 +237,7 @@
   }
 }
 
-@media (max-width: 675px) {
+@media screen and (max-width: 675px) {
   .certification-namespaces.issue-date {
     padding: 0;
     border: 0;
@@ -258,19 +262,27 @@
 }
 
 @media print {
-  .certificate-outer-wrapper header {
-    -webkit-print-color-adjust: exact !important;
-    color-adjust: exact !important;
-    background-color: var(--theme-color) !important;
+  body {
+    height: 210mm;
+    width: 297mm;
+  }
+
+  .certificate-outer-wrapper {
+    width: 100%;
+    margin: 0;
   }
 
   .certification-namespace {
     border-color: var(--theme-color) !important;
   }
 
-  .share-section,
-  .donation-section {
-    display: none;
+  .certificate-outer-wrapper header {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    background-color: var(--theme-color) !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
   }
 
   .certification-namespace .issue-date,
@@ -278,11 +290,16 @@
     color: var(--gray-00) !important;
   }
 
+  .row.certificate-links,
+  .donation-section {
+    display: none;
+  }
+
+  .certification-namespace .information {
+    height: 310px;
+  }
+
   .certification-namespace .signatures img {
     max-width: 300px !important;
   }
-}
-
-.certificate-outer-wrapper {
-  margin-top: calc(-1 * var(--header-height));
 }
