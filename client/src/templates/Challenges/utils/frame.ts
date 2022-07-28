@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
 import { toString, flow } from 'lodash-es';
 import i18next, { i18n } from 'i18next';
 import { format } from '../../../utils/format';
@@ -31,7 +34,7 @@ type ProxyLogger = (msg: string) => void;
 type InitFrame = (
   frameInitiateDocument?: () => unknown,
   frameLogDocument?: ProxyLogger,
-  frameAlertText?: (currentLink: string) => string
+  frameAlertText?: (arg: string) => string
   // change alertText to function ()=> string
 ) => (frameContext: Context) => Context;
 
@@ -51,6 +54,14 @@ const iframeAlertText = (currentLink: string) => {
   return i18next.t('misc.iframe-alert', { externalLink: currentLink });
 };
 
+const frameAttribute = document.querySelector('[data-lt-installed]');
+const config = { attributes: true, childList: true, characterData: true };
+
+const observer = new MutationObserver(iframeAlertText).observe(
+  frameAttribute,
+  config
+);
+
 const DOCUMENT_NOT_FOUND_ERROR = 'document not found';
 
 // base tag here will force relative links
@@ -63,7 +74,7 @@ const DOCUMENT_NOT_FOUND_ERROR = 'document not found';
 // of the frame.  React dom errors already appear in the console, so onerror
 // does not need to pass them on to the default error handler.
 
-const createHeader = (id = mainPreviewId, alertText = iframeAlertText) => `
+const createHeader = (id = mainPreviewId, alertText = observer) => `
   <base href='' />
   <script>
     window.__frameId = '${id}';
@@ -305,7 +316,7 @@ export const createTestFramer = (
 const createFramer = (
   document: Document,
   id: string,
-  alertText: (currentLink: string) => string,
+  alertText: (arg: string) => string,
   init: InitFrame,
   proxyLogger?: ProxyLogger,
   frameReady?: () => void,
