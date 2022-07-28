@@ -34,7 +34,7 @@ Envie sua página quando você achar que ela está certa. Se você estiver encon
 
 # --hints--
 
-`req.Logout` deve ser chamado na rota `/logout`.
+`req.logout()` deve ser chamado na rota `/logout`.
 
 ```js
 (getUserInput) =>
