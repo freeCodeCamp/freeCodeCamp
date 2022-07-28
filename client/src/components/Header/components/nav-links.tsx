@@ -43,7 +43,7 @@ interface NavlinkArgProp {
 export interface NavLinksProps {
   displayMenu?: boolean;
   isLanguageMenuDisplayed?: boolean;
-  showSignoutModal?: boolean;
+  showSignoutModal: boolean;
   fetchState?: { pending: boolean };
   i18n: Record<string, unknown>;
   t: TFunction;
@@ -98,16 +98,12 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
     );
   }
 
-  getPreviousMenuItem(target: HTMLElement | null): HTMLElement | null {
+  getPreviousMenuItem(target: HTMLElement): HTMLElement | null {
     const { menuButtonRef } = this.props;
     const previousSibling =
       target?.closest('.nav-list > li')?.previousElementSibling;
     return previousSibling?.querySelector('a, button') ?? menuButtonRef.current;
   }
-
-  handleSignOutModal = (): void => {
-    this.setState({ showSignoutModal: !showSignoutModal });
-  };
 
   handleLanguageChange = (event: React.MouseEvent<HTMLButtonElement>): void => {
     event.preventDefault();
@@ -274,6 +270,10 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
     ) {
       hideMenu();
     }
+  };
+  [showSignoutModal, setShow];
+  handleSignOutModal = () => {
+    this.setState({ setShow = !setShow });
   };
 
   render() {
@@ -504,7 +504,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
               >
                 {t('buttons.sign-out')}
               </button>
-              {/*<Modal dialogClassName='Signout-modal' onHide={this.closeSignOutModal} show={this.handleSignOutModal}>  */}
+              {/*<Modal dialogClassName='Signout-modal' onHide={this.closeSignOutModal} show={show}>  */}
               <Modal
                 dialogClassName='Signout-modal'
                 onHide={this.handleSignOutModal}
