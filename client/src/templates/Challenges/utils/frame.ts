@@ -44,7 +44,7 @@ const testId = 'fcc-test-frame';
 export const projectPreviewId = 'fcc-project-preview-frame';
 
 // use https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver API
-// observer data-lt-installed attribute and see if it's true
+// observer data-lt-installed attribute and see if it's true https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver/observe
 // if it's true we can run the current function
 // this hopefully will make them run in the same scope
 const iframeAlertText = (currentLink: string) => {
