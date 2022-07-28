@@ -43,7 +43,10 @@ const testId = 'fcc-test-frame';
 // the project preview frame demos the finished project
 export const projectPreviewId = 'fcc-project-preview-frame';
 
-// turn this into a function
+// use https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver API
+// observer data-lt-installed attribute and see if it's true
+// if it's true we can run the current function
+// this hopefully will make them run in the same scope
 const iframeAlertText = (currentLink: string) => {
   return i18next.t('misc.iframe-alert', { externalLink: currentLink });
 };
@@ -78,10 +81,8 @@ const createHeader = (id = mainPreviewId, alertText = iframeAlertText) => `
         element = element.parentElement;
       }
       if (element && element.nodeName === 'A' && new URL(element.href).hash === '') {
-        linkText = '(' + element.href + ')'
-        const alert = (text) => '${alertText('')} ' + text;
         e.preventDefault();
-        window.parent.window.alert("alertText(linkText)" );
+        window.parent.window.alert("${alertText('element.href')}" );
       }
       if (element) {
         const href = element.getAttribute('href');
