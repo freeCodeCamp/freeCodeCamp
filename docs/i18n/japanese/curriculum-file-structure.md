@@ -7,9 +7,9 @@
 カリキュラム内容を説明する際に使用する用語がいくつかあります。
 
 - `certification`: この場合、ユーザーが求める実際の認定講座を意味します。 これは、スーパーブロック名とは別のものです。
-- `superBlock`: スーパーブロックは、チャレンジの最上位レベルのコレクションです。 各スーパーブロックは、カリキュラム内の各認定講座に相当します (例:  レスポンシブ Web デザイン)。
-- `block`: ブロックは、スーパーブロック内のセクションです。 ブロックは、特定の認定講座のチャレンジグループに相当します (例: HTML と HTML5 の基礎)。
-- `challenge`: チャレンジは、カリキュラム内の単一のレッスンです (例:  はじめての HTML 要素)
+- `superBlock`: スーパーブロックは、チャレンジの最上位レベルのコレクションです。 Each superblock corresponds to a certification in the curriculum (e.g. Responsive Web Design).
+- `block`: ブロックは、スーパーブロック内のセクションです。 A block corresponds to a group of challenges in a given certification (e.g. Basic HTML and HTML5)
+- `challenge` : A challenge is a single lesson within the curriculum (e.g. Say Hello to HTML Elements)
 
 ## ファイルツリー
 

@@ -7,9 +7,9 @@ Il nostro contenuto educativo centrale è situato nella cartella chiamata conven
 Questi sono alcuni termini che usiamo quando discutiamo il contenuto del nostro curriculum.
 
 - `certification` : Quando riferito a una certificazione in questa istanza, sta parlando del certificato che gli utenti richiedono. Che è separato dal nome del superBlock.
-- `superBlock` : Un superblock è il raggruppamento superiore di sfide. Ogni superblock corrisponde a una certificazione nel curriculum (per esempio Web Design Responsivo).
-- `block` : Un block è una sezione in un superblock. Un blocco corrisponde a un gruppo di sfide in una certa certificazione (per esempio HTML Base e HTML5)
-- `challenge` : Una sfida è una singola lezione nel curriculum (per esempio Fare conoscenza con gli elementi HTML)
+- `superBlock` : Un superblock è il raggruppamento superiore di sfide. Each superblock corresponds to a certification in the curriculum (e.g. Responsive Web Design).
+- `block` : Un block è una sezione in un superblock. A block corresponds to a group of challenges in a given certification (e.g. Basic HTML and HTML5)
+- `challenge` : A challenge is a single lesson within the curriculum (e.g. Say Hello to HTML Elements)
 
 ## Albero dei file
 

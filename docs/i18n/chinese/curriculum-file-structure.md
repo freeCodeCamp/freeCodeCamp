@@ -7,9 +7,9 @@ Our core instructional content is located within the conveniently named `curricu
 There are a few terms we use when discussing our curriculum content.
 
 - `certification` : When referring to a certification in this instance, it is talking about the actual certificate that users claim. Which is separate from the name of the superBlock.
-- `superBlock` : A superblock is the top level collection of challenges. Each superblock corresponds to a certification in the curriculum (i.e. Responsive Web Design).
-- `block` : A block is a section within a superblock. A block corresponds to a group of challenges in a given certification (i.e. Basic HTML and HTML5)
-- `challenge` : A challenge is a single lesson within the curriculum (i.e. Say Hello to HTML Elements)
+- `superBlock` : A superblock is the top level collection of challenges. Each superblock corresponds to a certification in the curriculum (e.g. Responsive Web Design).
+- `block` : A block is a section within a superblock. A block corresponds to a group of challenges in a given certification (e.g. Basic HTML and HTML5)
+- `challenge` : A challenge is a single lesson within the curriculum (e.g. Say Hello to HTML Elements)
 
 ## File Tree
 
