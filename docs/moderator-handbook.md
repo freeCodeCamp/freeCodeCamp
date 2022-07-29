@@ -263,7 +263,6 @@ Here's how moderators deal with violations of our [Code of Conduct](https://code
 6. **Don’t threaten to take action**
 
    If a camper breaks the [Code of Conduct](https://code-of-conduct.freecodecamp.org), don’t threaten to take moderator action, and never warn them in public. Instead, talk to them privately using the bot's `private` command. No one else in that channel needs to know that you banned/suspended the person. If a violation was clearly unintended and doesn't warrant a suspension or private conversation, make the offending camper aware of his / her actions without making it come across as a warning.
-   
    For example:
 
    - Camper posts a wall of code to request help:
