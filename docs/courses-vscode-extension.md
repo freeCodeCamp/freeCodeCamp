@@ -12,7 +12,7 @@ A GitHub Action automagically publishes the extension to the Visual Studio Marke
 npm run pack -- <tag_type>
 ```
 
-Where `<tag_type>` is one of: `major`, `minor`, `patch`.
+Where `<tag_type>` is one of: `major`, `minor`, and `patch`.
 
 2. Push the new version to `main`:
 
