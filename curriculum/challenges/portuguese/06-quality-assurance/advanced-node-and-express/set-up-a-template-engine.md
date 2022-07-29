@@ -18,7 +18,7 @@ Quando terminar, certifique-se de que uma demonstração funcional do seu projet
 
 Um mecanismo de templates (template engine) permite o uso de arquivos de modelo estáticos (como aqueles escritos no *Pug*) na aplicação. Em tempo de execução, o mecanismo de modelos substitui variáveis em um arquivo de modelo por valores reais que podem ser fornecidos pelo servidor. Em seguida, ele transforma o modelo em um arquivo HTML estático, que é enviado ao client. Esta abordagem torna mais fácil projetar uma página HTML e permite exibir variáveis na página sem precisar fazer uma chamada de API do client.
 
-Adicione `pug@~3.0.0` como uma dependência no arquivo `package.json`.
+`pug@~3.0.0` já foi instalado e está listado como uma dependência no arquivo `package.json`.
 
 O Express precisa saber qual mecanismo de modelos você está usando. Usaremos o método `set` para atribuir `pug` como o valor da propriedade `view engine`: `app.set('view engine', 'pug')`
 
