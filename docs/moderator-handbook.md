@@ -288,7 +288,7 @@ Here's how moderators deal with violations of our [Code of Conduct](https://code
 
    If you disagree with a moderator's action, talk with them in private or bring it up in the #mod-chat channel. Never override a moderator's action, and never contradict the other moderator(s) publicly. Instead, have a cool-headed discussion in `#mod-chat` and convince the moderator that they themselves should reverse their ban or change their PoV (Point of View).
 
-   *Remember: We’re all on the same team. We want to dignify the role of moderators and present a unified front.**
+   *Remember: We’re all on the same team. We want to dignify the role of moderators and present a unified front.*
 
 9. **Talk with other moderators**
 
