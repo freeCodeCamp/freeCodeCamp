@@ -34,8 +34,7 @@ type ProxyLogger = (msg: string) => void;
 type InitFrame = (
   frameInitiateDocument?: () => unknown,
   frameLogDocument?: ProxyLogger,
-  frameAlertText?: (arg: string) => string
-  // change alertText to function ()=> string
+  frameAlertText?: void
 ) => (frameContext: Context) => Context;
 
 // we use two different frames to make them all essentially pure functions
@@ -46,10 +45,6 @@ const testId = 'fcc-test-frame';
 // the project preview frame demos the finished project
 export const projectPreviewId = 'fcc-project-preview-frame';
 
-// use https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver API
-// observer data-lt-installed attribute and see if it's true https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver/observe
-// if it's true we can run the current function
-// this hopefully will make them run in the same scope
 const iframeAlertText = (currentLink: string) => {
   return i18next.t('misc.iframe-alert', { externalLink: currentLink });
 };
@@ -278,7 +273,7 @@ export const createMainPreviewFramer = (
   createFramer(
     document,
     mainPreviewId,
-    iframeAlertText,
+    observer,
     initMainFrame,
     proxyLogger,
     undefined,
@@ -292,7 +287,7 @@ export const createProjectPreviewFramer = (
   createFramer(
     document,
     projectPreviewId,
-    iframeAlertText,
+    observer,
     initPreviewFrame,
     undefined,
     undefined,
@@ -307,7 +302,7 @@ export const createTestFramer = (
   createFramer(
     document,
     testId,
-    iframeAlertText,
+    observer,
     initTestFrame,
     proxyLogger,
     frameReady
@@ -316,7 +311,7 @@ export const createTestFramer = (
 const createFramer = (
   document: Document,
   id: string,
-  alertText: (arg: string) => string,
+  alertText: void,
   init: InitFrame,
   proxyLogger?: ProxyLogger,
   frameReady?: () => void,
