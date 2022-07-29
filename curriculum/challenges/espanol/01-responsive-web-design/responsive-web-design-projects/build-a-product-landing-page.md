@@ -1,6 +1,6 @@
 ---
 id: 587d78af367417b2b2512b04
-title: Construye una página de aterrizaje de producto
+title: Construye una página de inicio de producto
 challengeType: 14
 forumTopicId: 301144
 dashedName: build-a-product-landing-page

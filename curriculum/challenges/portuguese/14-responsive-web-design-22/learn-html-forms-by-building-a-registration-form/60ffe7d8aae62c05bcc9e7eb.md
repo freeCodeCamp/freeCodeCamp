@@ -1,8 +1,8 @@
 ---
 id: 60ffe7d8aae62c05bcc9e7eb
-title: Passo 52
+title: Passo 53
 challengeType: 0
-dashedName: step-52
+dashedName: step-53
 ---
 
 # --description--
@@ -32,10 +32,11 @@ assert.isEmpty(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8">
     <title>Registration Form</title>
-      <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <h1>Registration Form</h1>
@@ -52,12 +53,12 @@ assert.isEmpty(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?
         <label><input type="radio" name="account-type" class="inline" /> Business Account</label>
         <label>
           <input type="checkbox" name="terms" class="inline" required /> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
-              </label>
+        </label>
       </fieldset>
       <fieldset>
         <label>Upload a profile picture: <input type="file" name="file" /></label>
         <label>Input your age (years): <input type="number" name="age" min="13" max="120" />
-              </label>
+        </label>
         <label>How did you hear about us?
           <select name="referrer">
             <option value="">(select one)</option>
@@ -69,7 +70,7 @@ assert.isEmpty(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?
         </label>
         <label>Provide a bio:
           <textarea name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea>
-              </label>
+        </label>
       </fieldset>
       <input type="submit" value="Submit" />
     </form>
@@ -83,9 +84,9 @@ body {
   height: 100vh;
   margin: 0;
   background-color: #1b1b32;
-    color: #f5f6f7;
+  color: #f5f6f7;
   font-family: Tahoma;
-    font-size: 16px;
+  font-size: 16px;
 }
 
 h1, p {
@@ -95,9 +96,9 @@ h1, p {
 
 form {
   width: 60vw;
-    max-width: 500px;
-    min-width: 300px;
-    margin: 0 auto;
+  max-width: 500px;
+  min-width: 300px;
+  margin: 0 auto;
 }
 
 fieldset {
@@ -112,14 +113,14 @@ fieldset:last-of-type {
 
 label {
   display: block;
-    margin: 0.5rem 0;
+  margin: 0.5rem 0;
 }
 
 input,
 textarea,
 select {
   margin: 10px 0 0 0;
-    width: 100%;
+  width: 100%;
   min-height: 2em;
 }
 

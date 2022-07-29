@@ -16,9 +16,9 @@ Os hashes do BCrypt terão sempre essa aparência: `$2a$13$ZyprE5MRw2Q3WpNOGZWGb
 
 # --instructions--
 
-Para começar a usar o BCrypt, adicione-o como uma dependência em seu projeto e solicite como 'bcrypt' no seu servidor.
-
 Adicione todo o código para estas aulas no arquivo `server.js` entre o código que fornecemos para você começar. Não altere nem exclua o código que adicionamos para você.
+
+O BCrypt já foi adicionado como uma dependência, então solicite-o como `bcrypt` em seu servidor.
 
 Envie sua página quando você achar que ela está certa.
 
