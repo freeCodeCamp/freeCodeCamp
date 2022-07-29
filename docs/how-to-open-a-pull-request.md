@@ -17,16 +17,13 @@ We recommend using [conventional title and messages](https://www.conventionalcom
 
 When opening a Pull Request(PR), you can use the below to determine the type, scope (optional), and description.
 
-## Provide context
+## Methods
 
-Providing context is an important first step in guiding the reviewer. Use this as an opportunity to explain why you are making this change. This can be as simple as referring to the bug/defect/issue number, and as detailed as necessary to describe your change.
+There are two methods of creating a Pull for Free Code Camp:
 
-## Make it as small as possible, but not any smaller
-
-Everyone agrees that smaller PRs are easier to review. Sometimes it’s just not possible to make a very small change, so here’s some practical advice: don’t do more than necessary. If you need to stray from the core of the change you are making, separate it. Here’s an example – imagine you are adding a path through the code to handle a new requirement. Along the way you realize that some of the variables and functions could use better names, but changing those means that you now need to update a bunch of files in another area of the code. STOP! Don’t make that change! Or at least, don’t bunch it together with your other changes. Instead, make the rename change in its own commit, and probably in its own Pull Request too. In the PR you can explain why you are making the change and how it simplifies the real change you want to make easier.
-
-This same strategy should be applied to most whitespace and refactorings you want to do during the course of implementing a new feature or resolving a defect. Be considerate of the reviewer’s time. There is nothing more frustrating than hunting through all the changes looking for the actual change and bumping into whitespace and renamings spread across many files
-
+     1.Editing files via the GitHub Interface
+     2.Editing files on a local clone
+     
 **Type:**
 
 | Type  | When to select                                                                   |
