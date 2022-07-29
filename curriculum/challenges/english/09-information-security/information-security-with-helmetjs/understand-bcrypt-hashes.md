@@ -18,7 +18,7 @@ BCrypt hashes will always looks like `$2a$13$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.
 
 Add all your code for these lessons in the `server.js` file between the code we have started you off with. Do not change or delete the code we have added for you.
 
-BCrypt has already been added as a dependency, so require it ad `bcrypt` in your server.
+BCrypt has already been added as a dependency, so require it as `bcrypt` in your server.
 
 Submit your page when you think you've got it right.
 
