@@ -15,7 +15,7 @@ We recommend using [conventional title and messages](https://www.conventionalcom
 >
 > `fix(learn): tests for the do...while loop challenge`
 
-When opening a Pull Request(PR), you can use the below to determine the type, scope (optional), and description.
+Whenever you open a Pull Request(PR), you can use the below to determine the type, scope (optional), and description.
 
 **Type:**
 
@@ -32,7 +32,7 @@ You can select a scope from [this list of labels](https://github.com/freeCodeCam
 
 **Description:**
 
-Keep it short (less than 30 characters) and simple, you can add more information in the PR description box and comments.
+Keep it short (less than 30 characters) and simple; you can add more information in the PR description box and comments.
 
 Some examples of good PR titles would be:
 
@@ -55,7 +55,7 @@ Some examples of good PR titles would be:
 
 3. Submit the pull request from your branch to freeCodeCamp's `main` branch.
 
-4. In the body of your PR include a more detailed summary of the changes you made and why.
+4. Include a more detailed summary of the changes you made and how your changes are helpful in the body of your PR.
 
    - You will be presented with a pull request template. This is a checklist that you should have followed before opening the pull request.
 
