@@ -15,7 +15,7 @@ We recommend using [conventional title and messages](https://www.conventionalcom
 >
 > `fix(learn): tests for the do...while loop challenge`
 
-Whenever you opening a Pull Request(PR), you can use the below to determine the type, scope (optional), and description.
+Whenever you open a Pull Request(PR), you can use the below to determine the type, scope (optional), and description.
 
 **Type:**
 
