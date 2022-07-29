@@ -32,7 +32,7 @@ You can select a scope from [this list of labels](https://github.com/freeCodeCam
 
 **Description:**
 
-Keep it short (less than 30 characters), to the point and simple, you can add more information in the PR description box and comments.
+Keep it short (less than 30 characters) and simple; you can add more information in the PR description box and comments.
 
 Some examples of good PR titles would be:
 
