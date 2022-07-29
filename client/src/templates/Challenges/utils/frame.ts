@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-nocheck
 import { toString, flow } from 'lodash-es';
 import i18next, { i18n } from 'i18next';
 import { format } from '../../../utils/format';
@@ -33,8 +30,7 @@ type ProxyLogger = (msg: string) => void;
 
 type InitFrame = (
   frameInitiateDocument?: () => unknown,
-  frameLogDocument?: ProxyLogger,
-  frameAlertText?: void
+  frameLogDocument?: ProxyLogger
 ) => (frameContext: Context) => Context;
 
 // we use two different frames to make them all essentially pure functions
@@ -44,18 +40,6 @@ export const mainPreviewId = 'fcc-main-frame';
 const testId = 'fcc-test-frame';
 // the project preview frame demos the finished project
 export const projectPreviewId = 'fcc-project-preview-frame';
-
-const iframeAlertText = (currentLink: string) => {
-  return i18next.t('misc.iframe-alert', { externalLink: currentLink });
-};
-
-const frameAttribute = document.querySelector('[data-lt-installed]');
-const config = { attributes: true, childList: true, characterData: true };
-
-const observer = new MutationObserver(iframeAlertText).observe(
-  frameAttribute,
-  config
-);
 
 const DOCUMENT_NOT_FOUND_ERROR = 'document not found';
 
@@ -69,7 +53,7 @@ const DOCUMENT_NOT_FOUND_ERROR = 'document not found';
 // of the frame.  React dom errors already appear in the console, so onerror
 // does not need to pass them on to the default error handler.
 
-const createHeader = (id = mainPreviewId, alertText = observer) => `
+const createHeader = (id = mainPreviewId) => `
   <base href='' />
   <script>
     window.__frameId = '${id}';
@@ -88,7 +72,6 @@ const createHeader = (id = mainPreviewId, alertText = observer) => `
       }
       if (element && element.nodeName === 'A' && new URL(element.href).hash === '') {
         e.preventDefault();
-        window.parent.window.alert("${alertText('element.href')}" );
       }
       if (element) {
         const href = element.getAttribute('href');
@@ -176,6 +159,12 @@ const buildProxyConsole =
       ) {
         proxyLogger(args.map((arg: string) => utilsFormat(arg)).join(' '));
         return oldLog(...(args as []));
+      };
+
+      frameContext.window.i18next = function proxyAlertText(
+        currentLink: string
+      ) {
+        return i18next.t('misc.iframe-alert', { externalLink: currentLink });
       };
     }
     return frameContext;
@@ -273,7 +262,6 @@ export const createMainPreviewFramer = (
   createFramer(
     document,
     mainPreviewId,
-    observer,
     initMainFrame,
     proxyLogger,
     undefined,
@@ -287,7 +275,6 @@ export const createProjectPreviewFramer = (
   createFramer(
     document,
     projectPreviewId,
-    observer,
     initPreviewFrame,
     undefined,
     undefined,
@@ -298,20 +285,11 @@ export const createTestFramer = (
   document: Document,
   proxyLogger: ProxyLogger,
   frameReady: () => void
-) =>
-  createFramer(
-    document,
-    testId,
-    observer,
-    initTestFrame,
-    proxyLogger,
-    frameReady
-  );
+) => createFramer(document, testId, initTestFrame, proxyLogger, frameReady);
 
 const createFramer = (
   document: Document,
   id: string,
-  alertText: void,
   init: InitFrame,
   proxyLogger?: ProxyLogger,
   frameReady?: () => void,
@@ -322,5 +300,5 @@ const createFramer = (
     mountFrame(document, id),
     buildProxyConsole(proxyLogger),
     writeContentToFrame,
-    init(frameReady, proxyLogger, alertText)
+    init(frameReady, proxyLogger)
   );
