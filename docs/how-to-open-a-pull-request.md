@@ -55,7 +55,7 @@ Some examples of good PR titles would be:
 
 3. Submit the pull request from your branch to freeCodeCamp's `main` branch.
 
-4. In the body of your PR include a more detailed summary of the changes you made and why you changed.
+4. In the body of your PR, include a more detailed summary of the changes you made and how your changes are helpful.
 
    - You will be presented with a pull request template. This is a checklist that you should have followed before opening the pull request.
 
