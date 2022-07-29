@@ -1,5 +1,5 @@
 import { toString, flow } from 'lodash-es';
-import i18next from 'i18next';
+import i18next, { i18n } from 'i18next';
 import { format } from '../../../utils/format';
 
 const utilsFormat: <T>(x: T) => string = format;
@@ -9,7 +9,7 @@ declare global {
     console: {
       log: () => void;
     };
-    i18next: (currentLink: string) => string;
+    i18next: i18n;
   }
 }
 
@@ -73,7 +73,7 @@ const createHeader = (id = mainPreviewId) => `
       if (element && element.nodeName === 'A' && new URL(element.href).hash === '') {
         e.preventDefault();
         window.parent.window.alert(
-          window.i18next.t('misc.iframe-alert', { currentLink: element.href })
+          i18next.t('misc.iframe-alert', { externalLink: element.href })
         )
       }
       if (element) {
@@ -164,11 +164,7 @@ const buildProxyConsole =
         return oldLog(...(args as []));
       };
 
-      frameContext.window.i18next = function proxyAlertText(
-        currentLink: string
-      ) {
-        return i18next.t('misc.iframe-alert', { externalLink: currentLink });
-      };
+      frameContext.window.i18next = i18next;
     }
     return frameContext;
   };
