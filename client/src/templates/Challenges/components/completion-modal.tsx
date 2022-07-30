@@ -137,7 +137,6 @@ interface CompletionModalInnerState {
   downloadURL: null | string;
   completedPercent: number;
   completedProjects: string;
-
 }
 
 export class CompletionModalInner extends Component<
@@ -152,7 +151,7 @@ export class CompletionModalInner extends Component<
     this.state = {
       downloadURL: null,
       completedPercent: 0,
-      completedProjects: "",
+      completedProjects: ''
     };
   }
 
@@ -162,7 +161,7 @@ export class CompletionModalInner extends Component<
   ): CompletionModalInnerState {
     const { challengeFiles, isOpen } = props;
     if (!isOpen) {
-      return { downloadURL: null, completedPercent: 0,  completedProjects: ""};
+      return { downloadURL: null, completedPercent: 0, completedProjects: '' };
     }
     const { downloadURL } = state;
     if (downloadURL) {
@@ -191,11 +190,18 @@ export class CompletionModalInner extends Component<
     const completedPercent = isSignedIn
       ? getCompletedPercent(completedChallengesIds, currentBlockIds, id)
       : 0;
-    
-    const completedProjects = getCompletedProjects(completedChallengesIds, currentBlockIds, id);
 
-    return { downloadURL: newURL, completedPercent: completedPercent, completedProjects: completedProjects };
+    const completedProjects = getCompletedProjects(
+      completedChallengesIds,
+      currentBlockIds,
+      id
+    );
 
+    return {
+      downloadURL: newURL,
+      completedPercent: completedPercent,
+      completedProjects: completedProjects
+    };
   }
 
   handleKeypress(e: React.KeyboardEvent): void {
@@ -245,8 +251,6 @@ export class CompletionModalInner extends Component<
     const { completedPercent } = this.state;
     const { completedProjects } = this.state;
 
-
-
     if (isOpen) {
       executeGA({ type: 'modal', data: '/completion-modal' });
     }
@@ -275,7 +279,9 @@ export class CompletionModalInner extends Component<
           <CompletionModalBody
             block={block}
             completedPercent={completedPercent}
-            completedProjects={t('learn.projects-completed', { totalCompletedProjects:  completedProjects})}
+            completedProjects={t('learn.projects-completed', {
+              totalCompletedProjects: completedProjects
+            })}
             superBlock={superBlock}
           />
         </Modal.Body>
