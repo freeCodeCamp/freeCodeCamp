@@ -24,7 +24,7 @@ dashedName: build-a-technical-documentation-page
 1. さらに、ナビゲーションバーには `nav-link` のクラスを持つリンク (`a`) 要素が含まれている必要があります。 これはクラス `main-section` の各要素に対応して 1 つずつ存在する必要があります
 1. `#navbar` 内の `header` 要素は、ナビゲーションバーのどのリンク (`a`) 要素よりも前に置かれなければなりません
 1. `nav-link` クラスの各要素には、各 `section` 内の `header` テキストに対応するテキストが含まれていなければなりません (例えば、もし "Hello world" セクション / ヘッダーがあるならば、ナビゲーションバーには "Hello world" というテキストを含む要素が必要です)
-1. ナビゲーションバーの要素をクリックしたとき、ページは `main-doc` 要素の対応するセクションに移動しなければなりません (例えば、"Hello world" のテキストを含む `nav-link` 要素をクリックしたならば、その id を持ち、対応するヘッダーを含む `section` 要素に移動しなければなりません)
+1. ナビゲーションバーの要素をクリックしたとき、ページは `#main-doc` 要素の、対応するセクションに移動しなければなりません (例えば、"Hello world" のテキストを含む `.nav-link` 要素をクリックしたならば、その id を持ち、対応するヘッダーを含む `section` 要素に移動しなければなりません)
 1. 通常サイズのデバイス上 (ラップトップ、デスクトップ) では、`id="navbar"` を持つ要素は画面の左側に表示され、常にユーザーから見える状態にしなければなりません
 1. 技術ドキュメントに、少なくとも 1 つのメディアクエリが使われている必要があります
 
@@ -34,21 +34,21 @@ dashedName: build-a-technical-documentation-page
 
 # --hints--
 
-`id` の値が `main-doc` に設定されている `main` 要素が 1 つ必要です
+`id` の値が `main-doc` に設定されている `main` 要素が 1 つ必要です。
 
 ```js
 const el = document.getElementById('main-doc')
 assert(!!el)
 ```
 
-クラスが `main-section` である `section` 要素が少なくとも 5 つ必要です
+クラスが `main-section` である `section` 要素が少なくとも 5 つ必要です。
 
 ```js
 const els = document.querySelectorAll('#main-doc section')
 assert(els.length >= 5)
 ```
 
-`.main-section` の要素はすべて `section` 要素である必要があります
+`.main-section` の要素はすべて `section` 要素である必要があります。
 
 ```js
 const els = document.querySelectorAll('.main-section')
@@ -58,14 +58,14 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-`#main-doc` の子孫要素として、少なくとも 5 つの `.main-section` 要素が必要です
+`#main-doc` の子孫要素として、少なくとも 5 つの `.main-section` 要素が必要です。
 
 ```js
 const els = document.querySelectorAll('#main-doc .main-section')
 assert(els.length >= 5)
 ```
 
-各 `.main-section` の最初の子要素は `header` 要素である必要があります
+各 `.main-section` の最初の子要素は `header` 要素である必要があります。
 
 ```js
 const els = document.querySelectorAll('.main-section')
@@ -75,7 +75,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-どの `header` 要素も空でないようにしてください
+どの `header` 要素も空でないようにしてください。
 
 ```js
 const els = document.querySelectorAll('header')
@@ -85,7 +85,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-すべての `.main-section` 要素が `id` を持つようにしてください
+すべての `.main-section` 要素が `id` を持つようにしてください。
 
 ```js
 const els = document.querySelectorAll('.main-section')
@@ -106,21 +106,21 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-`.main-section` の要素内に、(合計で) 少なくとも 10 個の `p` 要素が必要です
+`.main-section` の要素内に、(合計で) 少なくとも 10 個の `p` 要素が必要です。
 
 ```js
 const els = document.querySelectorAll('.main-section p')
 assert(els.length >= 10)
 ```
 
-`.main-section` の子孫要素として、(合計で) 少なくとも 5 個の `code` 要素が必要です
+`.main-section` の子孫要素として、(合計で) 少なくとも 5 個の `code` 要素が必要です。
 
 ```js
 const els = document.querySelectorAll('.main-section code')
 assert(els.length >= 5)
 ```
 
-`.main-section` の子孫要素として、(合計で) 少なくとも 5 個の `li` 要素が必要です
+`.main-section` の子孫要素として、(合計で) 少なくとも 5 個の `li` 要素が必要です。
 
 ```js
 const els = document.querySelectorAll('.main-section li')
@@ -134,21 +134,21 @@ const el = document.getElementById('navbar')
 assert(!!el && el.tagName === 'NAV')
 ```
 
-`#navbar` 内に `header` 要素が 1 つだけあるようにしてください
+`#navbar` 内に `header` 要素が 1 つだけあるようにしてください。
 
 ```js
 const els = document.querySelectorAll('#navbar header')
 assert(els.length === 1)
 ```
 
-クラスが `nav-link` である `a` 要素が少なくとも 1 つ必要です
+クラスが `nav-link` である `a` 要素が少なくとも 1 つ必要です。
 
 ```js
 const els = document.querySelectorAll('a.nav-link')
 assert(els.length >= 1)
 ```
 
-`.nav-link` の要素はすべてアンカー (`a`) 要素である必要があります
+`.nav-link` の要素はすべてアンカー (`a`) 要素である必要があります。
 
 ```js
 const els = document.querySelectorAll('.nav-link')
@@ -158,7 +158,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-`.nav-link` の要素はすべて `#navbar` の中にある必要があります
+`.nav-link` の要素はすべて `#navbar` の中にある必要があります。
 
 ```js
 const els1 = document.querySelectorAll('.nav-link')
@@ -166,7 +166,7 @@ const els2 = document.querySelectorAll('#navbar .nav-link')
 assert(els2.length > 0 && els1.length === els2.length)
 ```
 
-`.nav-link` の要素と `.main-section` の要素の数が同じである必要があります
+`.nav-link` の要素と `.main-section` の要素の数が同じである必要があります。
 
 ```js
 const els1 = document.querySelectorAll('.main-section')
@@ -174,7 +174,7 @@ const els2 = document.querySelectorAll('.nav-link')
 assert(els1.length > 0 && els2.length > 0 && els1.length === els2.length)
 ```
 
-`#navbar` 内の `header` 要素は、同じく `#navbar` 内にあるどのリンク (`a`) 要素よりも前に置かれなければなりません
+`#navbar` 内の `header` 要素は、同じく `#navbar` 内にあるどのリンク (`a`) 要素よりも前に置かれなければなりません。
 
 ```js
 const navLinks = document.querySelectorAll('#navbar a.nav-link');
@@ -190,7 +190,7 @@ navLinks.forEach((navLink) => {
 assert(!!header)
 ```
 
-各 `.nav-link` には、関連する `section` の `header` テキストと対応するテキストが必要です (例えば、もし "Hello world" セクション / ヘッダーがあるならば、`#navbar` には "Hello world" というテキストを含む `.nav-link` が必要です)
+各 `.nav-link` には、関連する `section` の `header` テキストに対応するテキストが必要です (例えば、もし "Hello world" セクション / ヘッダーがあるならば、`#navbar` には "Hello world" というテキストを含む `.nav-link` が必要です)。
 
 ```js
 const headerText = Array.from(document.querySelectorAll('.main-section')).map(el =>
@@ -203,7 +203,7 @@ const remainder = headerText.filter(str => linkText.indexOf(str) === -1)
 assert(headerText.length > 0 && headerText.length > 0 && remainder.length === 0)
 ```
 
-各 `.nav-link` には、対応する `.main-section` へとリンクする `href` 属性が必要です (例えば、"Hello world" のテキストを含む `.nav-link` 要素をクリックしたならば、その id を持つ `section` 要素に移動しなければなりません)
+各 `.nav-link` には、対応する `.main-section` へとリンクする `href` 属性が必要です (例えば、"Hello world" のテキストを含む `.nav-link` 要素をクリックしたならば、その id を持つ `section` 要素に移動しなければなりません)。
 
 ```js
 const hrefValues = Array.from(document.querySelectorAll('.nav-link')).map(el => el.getAttribute('href'))
@@ -212,7 +212,7 @@ const missingHrefValues = mainSectionIDs.filter(str => hrefValues.indexOf('#' + 
 assert(hrefValues.length > 0 && mainSectionIDs.length > 0 && missingHrefValues.length === 0)
 ```
 
-`#navbar` は常にウィンドウの左端にある必要があります
+`#navbar` は常にウィンドウの左端にある必要があります。
 
 ```js
 const el = document.getElementById('navbar')
@@ -221,7 +221,7 @@ const left2 = el?.offsetLeft
 assert(!!el && left1 >= -15 && left1 <= 15 && left2 >= -15 && left2 <= 15)
 ```
 
-技術ドキュメントのプロジェクトに、少なくとも 1 つのメディアクエリが使われている必要があります
+技術ドキュメントのプロジェクトに、少なくとも 1 つのメディアクエリが使われている必要があります。
 
 ```js
 const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
@@ -248,7 +248,7 @@ assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Technical Documentation Page</title>
   </head>
   <body>

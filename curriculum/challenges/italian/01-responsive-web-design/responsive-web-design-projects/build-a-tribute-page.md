@@ -28,7 +28,7 @@ Soddisfa le user story e passa tutti i test qua sotto per complerare questo prog
 
 # --hints--
 
-Dovrebbe esserci un elemento `main` con un `id` del valore `main`.
+Dovrebbe esserci un elemento `main` con un `id` del valore di `main`.
 
 ```js
 const el = document.getElementById('main')
@@ -46,7 +46,7 @@ const el5 = document.querySelector('#main #tribute-link')
 assert(!!el1 & !!el2 && !!el3 && !!el4 && !!el5)
 ```
 
-Dovresti avere un elemento con un attributo `id` del valore `title`.
+Dovresti avere un elemento con un attributo `id` del valore di `title`.
 
 ```js
 const el = document.getElementById('title')
@@ -61,14 +61,14 @@ assert(!!el && el.innerText.length > 0)
 
 ```
 
-Dovrebbe esserci o un elemento `figure` o un elemento `div` con un attributo `id` del valore `img-div`.
+Dovrebbe esserci o un elemento `figure` o un elemento `div` con un attributo `id` del valore di `img-div`.
 
 ```js
 const el = document.getElementById('img-div')
 assert(!!el && (el.tagName === 'DIV' || el.tagName === 'FIGURE'))
 ```
 
-Dovrebbe esserci un elemento `img` con un `id` del valore `image`.
+Dovrebbe esserci un elemento `img` con un `id` del valore di `image`.
 
 ```js
 const el = document.getElementById('image')
@@ -103,7 +103,7 @@ const el = document.getElementById('img-caption')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Dovrebbe esserci un elemento con un attributo `id` del valore `tribute-info`.
+Dovrebbe esserci un elemento con un attributo `id` del valore di `tribute-info`.
 
 ```js
 const el = document.getElementById('tribute-info')
@@ -117,7 +117,7 @@ const el = document.getElementById('tribute-info')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Dovrebbe esserci un elemento `a` con un `id` del valore `tribute-link`.
+Dovrebbe esserci un elemento `a` con un `id` del valore di `tribute-link`.
 
 ```js
 const el = document.getElementById('tribute-link')

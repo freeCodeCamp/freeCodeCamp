@@ -219,4 +219,4 @@ Once you have the files, you will need to place them in the correct directory. F
 
 Once these are in place, you should be able to run `npm run develop` to view your translated version of freeCodeCamp.
 
-> [!ATTENTION] テスト目的でローカルで翻訳を実行することもできますが、翻訳は GitHub を介して送信 _するのではなく_、Crowdin を介してのみ送信する必要があることをご承知おきください。 テストが終了したら、必ずローカルコードベースをリセットしてください。
+> [!ATTENTION] テスト目的でローカルで翻訳を実行することもできますが、翻訳は GitHub を介して送信 _するのではなく_ 、Crowdin を介してのみ送信する必要があることをご承知おきください。 テストが終了したら、必ずローカルコードベースをリセットしてください。
