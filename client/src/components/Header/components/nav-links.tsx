@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
 import {
@@ -89,7 +90,8 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
       this.handleLanguageButtonKeyDown.bind(this);
     this.handleMenuKeyDown = this.handleMenuKeyDown.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
-    this.handleSignOutModal = this.handleSignOutModal.bind(this);
+    this.handleSignoutShow = this.handleSignoutShow.bind(this);
+    this.handleSignoutClose = this.handleSignoutClose.bind(this);
   }
 
   toggleTheme(currentTheme = Themes.Default, toggleNightMode: Themes.Night) {
@@ -143,7 +145,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
       lang: newLanguage
     });
 
-    return navigate(path) as void;
+    return navigate(path);
   };
 
   handleMenuKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>): void => {
@@ -271,9 +273,13 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
       hideMenu();
     }
   };
-  [showSignoutModal, setShow];
-  handleSignOutModal = () => {
-    this.setState({ setShow = !setShow });
+
+  handleSignoutClose = () => {
+    this.setState({ showSignoutModal: false });
+  };
+
+  handleSignoutShow = () => {
+    this.setState({ showSignoutModal: true });
   };
 
   render() {
@@ -507,12 +513,12 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
               {/*<Modal dialogClassName='Signout-modal' onHide={this.closeSignOutModal} show={show}>  */}
               <Modal
                 dialogClassName='Signout-modal'
-                onHide={this.handleSignOutModal}
+                onHide={this.handleSignoutShow}
                 show={showSignoutModal}
               >
                 <Modal.Header
                   className='Signout-modal-header fcc-modal'
-                  closeButton={this.handleSignOutModal}
+                  closeButton={this.handleSignoutClose}
                 />
                 <Modal.Body className='Signout-modal-body text-center'>
                   <p>{t('misc.sign-out')}</p>
