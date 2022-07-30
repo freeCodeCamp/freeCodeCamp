@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
 import {
@@ -42,10 +42,10 @@ interface NavlinkArgProp {
 }
 
 export interface NavLinksProps {
-  displayMenu?: boolean;
-  isLanguageMenuDisplayed?: boolean;
+  displayMenu: boolean;
+  isLanguageMenuDisplayed: boolean;
   showSignoutModal: boolean;
-  fetchState?: { pending: boolean };
+  fetchState: { pending: boolean };
   i18n: Record<string, unknown>;
   t: TFunction;
   signOutAttribute: (attributes: Record<string, unknown>) => void;
@@ -57,8 +57,8 @@ export interface NavLinksProps {
     theme: Themes;
   };
   navigate?: (location: string) => void;
-  showLanguageMenu?: (elementToFocus: HTMLButtonElement) => void;
-  hideLanguageMenu?: () => void;
+  showLanguageMenu: (elementToFocus: HTMLButtonElement) => void;
+  hideLanguageMenu: () => void;
   menuButtonRef: React.RefObject<HTMLButtonElement>;
 }
 
@@ -75,8 +75,8 @@ show the signout modal
 export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
   static displayName: string;
   langButtonRef: React.RefObject<HTMLButtonElement>;
-  firstLangOptionRef: React.RefObject<HTMLElement>;
-  lastLangOptionRef: React.RefObject<HTMLElement>;
+  firstLangOptionRef: React.RefObject<HTMLButtonElement>;
+  lastLangOptionRef: React.RefObject<HTMLButtonElement>;
 
   constructor(props: NavLinksProps) {
     super(props);
@@ -94,13 +94,16 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
     this.handleSignoutClose = this.handleSignoutClose.bind(this);
   }
 
-  toggleTheme(currentTheme = Themes.Default, toggleNightMode: Themes.Night) {
+  toggleTheme(
+    currentTheme = Themes.Default,
+    toggleNightMode: (theme: Themes) => Themes
+  ) {
     toggleNightMode(
       currentTheme === Themes.Night ? Themes.Default : Themes.Night
     );
   }
 
-  getPreviousMenuItem(target: HTMLElement): HTMLElement | null {
+  getPreviousMenuItem(target: HTMLButtonElement): HTMLButtonElement {
     const { menuButtonRef } = this.props;
     const previousSibling =
       target?.closest('.nav-list > li')?.previousElementSibling;
@@ -113,7 +116,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
       hideMenu: (() => void) | undefined;
       hideLanguageMenu: (() => void) | undefined;
       menuButtonRef: React.RefObject<HTMLButtonElement>;
-      navigate: Component;
+      navigate?: (pathProp: string) => void;
     }
 
     const {
@@ -144,8 +147,9 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
       clientLocale,
       lang: newLanguage
     });
-
-    return navigate(path);
+    if (typeof navigate !== 'undefined') {
+      return navigate(path);
+    }
   };
 
   handleMenuKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>): void => {
@@ -171,7 +175,14 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
     event: React.KeyboardEvent<HTMLButtonElement>
   ): void => {
     const { menuButtonRef, showLanguageMenu, hideMenu } = this.props;
-    const doKeyPress = {
+
+    interface DoKeyPressProp {
+      escape: () => void;
+      arrowDown: () => void;
+      arrowUp: () => void;
+    }
+
+    const doKeyPress: DoKeyPressProp = {
       escape: () => {
         menuButtonRef.current?.focus();
         hideMenu();
@@ -186,7 +197,6 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
         event.preventDefault();
       }
     };
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     doKeyPress[event.key]?.();
   };
 
@@ -202,11 +212,10 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
       this.lastLangOptionRef.current?.focus();
       event.preventDefault();
     };
-    /* eslint-disable @typescript-eslint/naming-convention */
     const doKeyPress = {
-      Tab: () => {
+      tab: () => {
         if (!event.shiftKey) {
-          // Let the Tab work as normal.
+          // Let the tab work as normal.
           hideLanguageMenu();
           // Close the menu if focus is now outside of the menu. This will
           // happen when there is no Sign Out menu item.
@@ -232,7 +241,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
           event.target === this.firstLangOptionRef.current
             ? this.lastLangOptionRef.current
             : (event.currentTarget.parentNode?.previousSibling
-                ?.firstChild as HTMLElement | null);
+                ?.firstChild as HTMLElement);
         arrowUpItemToFocus?.focus();
         event.preventDefault();
       },
@@ -257,7 +266,6 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
       End: focusLastLanguageMenuItem,
       PageDown: focusLastLanguageMenuItem
     };
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     doKeyPress[event.key]?.();
   };
 
@@ -402,7 +410,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
             }
             onClick={() => {
               if (username) {
-                this.toggleTheme(String(theme), toggleNightMode);
+                this.toggleTheme(String(theme) as Themes, toggleNightMode);
               }
             }}
             onKeyDown={this.handleMenuKeyDown}
