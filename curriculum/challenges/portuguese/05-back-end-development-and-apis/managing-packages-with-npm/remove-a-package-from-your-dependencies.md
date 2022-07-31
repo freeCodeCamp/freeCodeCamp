@@ -16,13 +16,13 @@ Este mesmo método também se aplica à remoção de outros campos no seu packag
 
 # --instructions--
 
-Remover o pacote do moment de suas dependências.
+Remova o pacote `@freecodecamp/example` das dependências.
 
 **Observação:** certifique-se de que você tem a quantidade certa de vírgulas depois de removê-lo.
 
 # --hints--
 
-As "dependencies" não devem incluir o "moment"
+`"dependencies"` não deve incluir `"@freecodecamp/example"`.
 
 ```js
 (getUserInput) =>
@@ -31,8 +31,8 @@ As "dependencies" não devem incluir o "moment"
       var packJson = JSON.parse(data);
       assert.notProperty(
         packJson.dependencies,
-        'moment',
-        '"dependencies" still includes "moment"'
+        '@freecodecamp/example',
+        '"dependencies" still includes "@freecodecamp/example"'
       );
     },
     (xhr) => {

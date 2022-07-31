@@ -18,7 +18,7 @@ When you are done, make sure a working demo of your project is hosted somewhere 
 
 A template engine enables you to use static template files (such as those written in *Pug*) in your app. At runtime, the template engine replaces variables in a template file with actual values which can be supplied by your server. Then it transforms the template into a static HTML file that is sent to the client. This approach makes it easier to design an HTML page and allows for displaying variables on the page without needing to make an API call from the client.
 
-Add `pug@~3.0.0` as a dependency in your `package.json` file.
+`pug@~3.0.0` has already been installed, and is listed as a dependency in your `package.json` file.
 
 Express needs to know which template engine you are using. We will use the `set` method to assign `pug` as the `view engine` property's value: `app.set('view engine', 'pug')`
 

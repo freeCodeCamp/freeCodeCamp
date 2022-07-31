@@ -21,13 +21,13 @@ dashedName: build-a-survey-form
 1. В формі ви можете ввести число в поле `input`, яке має `id` зі значенням `number`
 1. Якщо в полі введення чисел ви введете не число, то побачите помилку перевірки HTML5
 1. Якщо ви введете число поза межами діапазону чисел, що визначено атрибутами `min` та `max`, то побачите помилку перевірки HTML5
-1. Для імені, електронної пошти та полів введення чисел можна побачити відповідні елементи `label` в формі, що описує мету кожного поля відповідними ідентифікаторами: `id="name-label"`, `id="email-label"` та `id="number-label"`
+1. Для імені, електронної пошти та полів введення чисел можна побачити відповідні елементи `label` в формі, що описують мету кожного поля відповідними ідентифікаторами: `id="name-label"`, `id="email-label"` та `id="number-label"`
 1. Для імені, електронної пошти та полів введення чисел можна побачити текст заповнювача з описом або інструкцією до кожного поля
 1. В елементі форми ви повинні мати випадний елемент `select` з `id` зі значенням `dropdown` та принаймні два варіанти вибору
 1. В елементі форми ви можете вибрати опцію з групи принаймні двох радіокнопок, які згруповані з використанням атрибуту `name`
 1. В елементі форми ви можете вибрати декілька полів з низки прапорців, кожен з яких повинен мати атрибут `value`
 1. В елементі форми представлено `textarea` для додаткових коментарів
-1. В елементі форми представлено кнопку з `id` зі значенням `submit` для відправки всіх inputs
+1. В елементі форми представлено кнопку з `id` зі значенням `submit` для відправки всіх введень
 
 Виконайте розповідь користувача та пройдіть тести, наведені нижче, щоб завершити цей проєкт. Оформте за власним стилем. Щасливого кодування!
 
@@ -42,7 +42,7 @@ const el = document.getElementById('title')
 assert(!!el && el.tagName === 'H1')
 ```
 
-Ваш `#title` не має бути порожнім.
+Ваш `#title` не повинен бути порожнім.
 
 ```js
 const el = document.getElementById('title')
@@ -56,7 +56,7 @@ const el = document.getElementById('description')
 assert(!!el && el.tagName === 'P')
 ```
 
-Ваш `#description` не має бути порожнім.
+Ваш `#description` не повинен бути порожнім.
 
 ```js
 const el = document.getElementById('description')
@@ -91,7 +91,7 @@ const el = document.getElementById('name')
 assert(!!el && el.required)
 ```
 
-Ваш `#name` повинен наслідувати `#survey-form`.
+Ваш `#name` повинен бути нащадком `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #name')
@@ -119,7 +119,7 @@ const el = document.getElementById('email')
 assert(!!el && el.required)
 ```
 
-Ваш `#email` повинен наслідувати `#survey-form`
+Ваш `#email` повинен бути нащадком `#survey-form`
 
 ```js
 const el = document.querySelector('#survey-form #email')
@@ -133,7 +133,7 @@ const el = document.getElementById('number')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Ваш `#number` повинен наслідувати `#survey-form`.
+Ваш `#number` повинен бути нащадком `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #number')
@@ -182,42 +182,42 @@ const el = document.getElementById('number-label')
 assert(!!el && el.tagName === 'LABEL')
 ```
 
-Ваш `#name-label` не має бути порожнім.
+Ваш `#name-label` повинен містити текст, який описує введені дані.
 
 ```js
 const el = document.getElementById('name-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Ваш `#email-label` не має бути порожнім.
+Ваш `#email-label` повинен містити текст, який описує введені дані.
 
 ```js
 const el = document.getElementById('email-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Ваш `#number-label` не має бути порожнім.
+Ваш `#number-label` повинен містити текст, який описує введені дані.
 
 ```js
 const el = document.getElementById('number-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Ваш `#name-label` повинен наслідувати `#survey-form`.
+Ваш `#name-label` повинен бути нащадком `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #name-label')
 assert(!!el)
 ```
 
-Ваш `#email-label` повинен наслідувати `#survey-form`.
+Ваш `#email-label` повинен бути нащадком `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #email-label')
 assert(!!el)
 ```
 
-Ваш `#number-label` повинен наслідувати `#survey-form`.
+Ваш `#number-label` повинен бути нащадком `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #number-label')
@@ -259,7 +259,7 @@ const els = document.querySelectorAll('#dropdown option:not([disabled])')
 assert(els.length >= 2)
 ```
 
-Ваш `#dropdown` повинен наслідувати `#survey-form`.
+Ваш `#dropdown` повинен бути нащадком `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #dropdown')
@@ -273,7 +273,7 @@ const els = document.querySelectorAll('input[type="radio"]')
 assert(els.length >= 2)
 ```
 
-Ви повинні мати щонайменше дві радіокнопки, що наслідують `#survey-form`.
+Ви повинні мати щонайменше дві радіокнопки, які є нащадками `#survey-form`.
 
 ```js
 const els = document.querySelectorAll('#survey-form input[type="radio"]')
@@ -318,7 +318,7 @@ groupKeys.forEach(key => {
 assert(groupKeys.length > 0)
 ```
 
-Ви повинні мати щонайменше два елементи `input` з `type` зі значенням `checkbox` (прапорцями), що наслідують `#survey-form`.
+Ви повинні мати щонайменше два елементи `input` з `type` зі значенням `checkbox` (прапорцями), що є нащадками `#survey-form`.
 
 ```js
 const els = document.querySelectorAll('#survey-form input[type="checkbox"]');
@@ -333,7 +333,7 @@ const els2 = document.querySelectorAll('#survey-form input[type="checkbox"][valu
 assert(els1.length > 0 && els2.length === 0)
 ```
 
-Ви повинні мати щонайменше один елемент `textarea`, що наслідує `#survey-form`.
+Ви повинні мати щонайменше один елемент `textarea`, що є нащадком `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form textarea')
@@ -354,7 +354,7 @@ const el = document.getElementById('submit')
 assert(!!el && el.type === 'submit')
 ```
 
-Ваш `#submit` повинен наслідувати `#survey-form`.
+Ваш `#submit` повинен бути нащадком `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #submit')

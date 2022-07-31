@@ -12,17 +12,17 @@ dashedName: build-a-product-landing-page
 
 **Історія користувача:**
 
-1. Ваша посадкова сторінка продукту повинна містити елемент `header` з відповідним `id="header"`
+1. Ваша посадкова сторінка продукту повинна мати елемент `header` з відповідним `id="header"`
 1. Можна побачити зображення в межах елемента `header` з відповідним `id="header-img"` (на місце зображення чудово підійде логотип)
 1. В межах елемента `#header` видно елемент `nav` з відповідним `id="nav-bar"`
 1. Можна побачити щонайменше три активні елементи всередині елемента `nav`, кожен класу `nav-link`
 1. Якщо натиснути на кнопку `.nav-link` в елементі `nav`, ви перейдете на відповідну секцію посадкової сторінки
-1. Вмонтоване відео можна переглянути з `id="video"`
+1. Ви можете переглянути вмонтоване відео з `id="video"`
 1. Посадкова сторінка має елемент `form` з відповідним `id="form"`
-1. В межах форми наявне поле `input` з `id="email"`, де можна ввести електронну адресу
-1. Поле введення `#email` повинне містити текст наповнювача, щоб користувач розумів його призначення
+1. В межах форми є поле `input` з `id="email"`, де можна ввести електронну адресу
+1. Поле введення `#email` повинне мати текст наповнювача, щоб користувач розумів його призначення
 1. Поле введення `#email` використовує перевірку HTML5, щоб переконатись, що введений текст є електронною адресою
-1. В межах форми наявна кнопка `input` для надсилання з відповідним `id="submit"`
+1. В межах форми є кнопка `input` для відправки з відповідним `id="submit"`
 1. Якщо натиснути на елемент `#submit`, електронну пошту надіслано на статистичну сторінку (використовуйте альтернативу URL: `https://www.freecodecamp.com/email-submit`)
 1. Навігаційна панель завжди повинна знаходитись у верхній частині вюпорту
 1. Посадкова сторінка продукту повинна містити щонайменше один медіазапит
@@ -48,7 +48,7 @@ const el = document.getElementById('header-img')
 assert(!!el && el.tagName === 'IMG')
 ```
 
-Ваш `#header-img` повинен наслідувати `#header`.
+Ваш `#header-img` повинен бути нащадком `#header`.
 
 ```js
 const els = document.querySelectorAll('#header #header-img')
@@ -76,7 +76,7 @@ const el = document.getElementById('nav-bar')
 assert(!!el && el.tagName === 'NAV')
 ```
 
-Ваш `#nav-bar` повинен наслідувати `#header`.
+Ваш `#nav-bar` повинен бути нащадком `#header`.
 
 ```js
 const els = document.querySelectorAll('#header #nav-bar')
@@ -100,7 +100,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-Кожен елемент `.nav-link` повинен посилати на відповідний елемент посадкової сторінки (має `href` зі значенням іншого ідентифікатора, наприклад `#footer`).
+Кожен елемент `.nav-link` повинен посилати на відповідний елемент посадкової сторінки (має `href` зі значенням ідентифікатора іншого елемента, наприклад `#footer`).
 
 ```js
 const els = document.querySelectorAll('.nav-link')
@@ -118,7 +118,7 @@ const el = document.getElementById('video')
 assert(!!el && (el.tagName === 'VIDEO' || el.tagName === 'IFRAME'))
 ```
 
-Ваше `#video` повинне мати атрибут `src`.
+Ваш `#video` повинен мати атрибут `src`.
 
 ```js
 let el = document.getElementById('video')
@@ -147,7 +147,7 @@ const el = document.getElementById('email')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Ваш `#email` повинен наслідувати `#form`.
+Ваш `#email` повинен бути нащадком `#form`.
 
 ```js
 const els = document.querySelectorAll('#form #email')
@@ -161,7 +161,7 @@ const el = document.getElementById('email')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-Ваш `#email` повинен використовувати перевірку HTML5, встановивши `type` зі значенням `email`.
+Ваш `#email` повинен використовувати перевірку HTML5, встановивши `type` на `email`.
 
 ```js
 const el = document.getElementById('email')
@@ -175,7 +175,7 @@ const el = document.getElementById('submit')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Ваш `#submit` повинен наслідувати `#form`.
+Ваш `#submit` повинен бути нащадком `#form`.
 
 ```js
 const els = document.querySelectorAll('#form #submit')

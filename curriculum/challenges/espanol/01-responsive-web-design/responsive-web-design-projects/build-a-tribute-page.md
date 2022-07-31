@@ -8,17 +8,17 @@ dashedName: build-a-tribute-page
 
 # --description--
 
-**Objetivo:** Crear una aplicación que sea funcionalmente similar a <a href="https://tribute-page.freecodecamp.rocks" target="_blank">https://tribute-page.freecodecamp.rocks</a>
+**Objetivo:** Crea una aplicación que sea funcionalmente similar a <a href="https://tribute-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://tribute-page.freecodecamp.rocks</a>
 
 **Historias de usuario:**
 
-1. Tu página de tributo debe tener un elemento con un correspondiente `id="main"`, el cual contiene todos los demás elementos
+1. Tu página de tributo debe tener un elemento `main` con su correspondiente `id` de `main`, que contiene todos los otros elementos
 1. Debes ver un elemento con un `id` de `title` que contiene una cadena (por ejemplo, texto), que describa el tema de la página de tributo (por ejemplo, "Dr. Norman Borlaug")
 1. Debes ver ya sea un elemento `figure` o un elemento `div` con un `id` de `img-div`
-1. Dentro del elemento `img-div`, debes ver un elemento `img` con un correspondiente `id="image"`
-1. Dentro del elemento `img-div`, debes ver un elemento con un correspondiente `id="img-caption"` que contiene contenido textual que describe la imagen mostrada en `img-div`
+1. Dentro del elemento `#img-div` debes ver un elemento `img` con su correspondiente `id="image"`
+1. Dentro del elemento `#img-div`, debes ver un elemento con un `id="img-caption"` correspondiente que contiene contenido textual describiendo la imagen mostrada en `#img-div`
 1. Debes ver un elemento con un correspondiente `id="tribute-info"`, que contiene contenido textual que describe el tema de la página de tributo
-1. Debes ver un elemento con un correspondiente `id="tribute-link"`, que enlaza a un sitio externo que contiene información adicional sobre el tema de la página de tributo. CONSEJO: Debes dar a tu elemento un atributo de `target` y establecerlo a `_blank` para que tu enlace se abra en una nueva pestaña
+1. Debes ver un elemento `a` con su `id="tribute-link"` correspondiente, que enlaza con un sitio externo, que contiene información adicional sobre el tema de la página de tributo. CONSEJO: Debes dar a tu elemento un atributo de `target` y establecerlo a `_blank` para que tu enlace se abra en una nueva pestaña
 1. Tu `#image` debe usar las propiedades `max-width` y `height` para redimensionar, de forma responsiva, relativo al ancho de su elemento padre, sin exceder su tamaño original
 1. Tu elemento `img` debe estar centrado dentro de su elemento padre
 
@@ -28,14 +28,14 @@ Completa las historias de usuario y pasa todas las pruebas a continuación para 
 
 # --hints--
 
-Debes tener un elemento `main` con un `id` de `main`
+Debes tener un elemento `main` con un `id` de `main`.
 
 ```js
 const el = document.getElementById('main')
 assert(!!el && el.tagName === 'MAIN')
 ```
 
-Tus `#img-div`, `#image`, `#img-caption`, `#tribute-info`, y `#tribute-link` deben ser descendientes de `#main`
+Tu `#img-div`, `#image`, `#img-caption`, `#tribute-info`, y `#tribute-link` deben ser descendientes de `#main`.
 
 ```js
 const el1 = document.querySelector('#main #img-div')
@@ -46,14 +46,14 @@ const el5 = document.querySelector('#main #tribute-link')
 assert(!!el1 & !!el2 && !!el3 && !!el4 && !!el5)
 ```
 
-Debes tener un elemento con un `id` de `title`
+Debes tener un elemento con un `id` de `title`.
 
 ```js
 const el = document.getElementById('title')
 assert(!!el)
 ```
 
-Tu `#title` no debe estar vacío
+Tu `#title` no debe estar vacío.
 
 ```js
 const el = document.getElementById('title')
@@ -61,84 +61,84 @@ assert(!!el && el.innerText.length > 0)
 
 ```
 
-Debes tener un elemento `figure` o `div` con un `id` de `img-div`
+Debes tener un elemento `figure` o `div` con un `id` de `img-div`.
 
 ```js
 const el = document.getElementById('img-div')
 assert(!!el && (el.tagName === 'DIV' || el.tagName === 'FIGURE'))
 ```
 
-Debes tener un elemento `img` con un `id` de `image`
+Debes tener un elemento `img` con un `id` de `image`.
 
 ```js
 const el = document.getElementById('image')
 assert(!!el && el.tagName === 'IMG')
 ```
 
-Tu `#image` debe ser descendiente de `#img-div`
+Tu `#image` debe ser descendiente de `#img-div`.
 
 ```js
 const el = document.querySelector('#img-div #image')
 assert(!!el)
 ```
 
-Debes tener un elemento `figcaption` o `div` con un `id` de `img-caption`
+Debes tener un elemento `figcaption` o `div` con un `id` de `img-caption`.
 
 ```js
 const el = document.getElementById('img-caption')
 assert(!!el && (el.tagName === 'DIV' || el.tagName === 'FIGCAPTION'))
 ```
 
-Tu `#img-caption` debe ser descendiente de `#img-div`
+Tu `#img-caption` debe ser descendiente de `#img-div`.
 
 ```js
 const el = document.querySelector('#img-div #img-caption')
 assert(!!el)
 ```
 
-Tu `#img-caption` no debe estar vacío
+Tu `#img-caption` no debe estar vacío.
 
 ```js
 const el = document.getElementById('img-caption')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Debes tener un elemento con un `id` de `tribute-info`
+Debes tener un elemento con un `id` de `tribute-info`.
 
 ```js
 const el = document.getElementById('tribute-info')
 assert(!!el)
 ```
 
-Tu `#tribute-info` no debe estar vacío
+Tu `#tribute-info` no debe estar vacío.
 
 ```js
 const el = document.getElementById('tribute-info')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Debes tener un elemento `a` con un `id` de `tribute-link`
+Debes tener un elemento `a` con un `id` de `tribute-link`.
 
 ```js
 const el = document.getElementById('tribute-link')
 assert(!!el && el.tagName === 'A')
 ```
 
-Tu `#tribute-link` debe tener un atributo `href` y un valor
+Tu `#tribute-link` debe tener un atributo `href` y un valor.
 
 ```js
 const el = document.getElementById('tribute-link')
 assert(!!el && !!el.href && el.href.length > 0)
 ```
 
-Tu `#tribute-link` debe tener un atributo `target` establecido en `_blank`
+Tu `#tribute-link` debe tener un atributo `target` establecido en `_blank`.
 
 ```js
 const el = document.getElementById('tribute-link')
 assert(!!el && el.target === '_blank')
 ```
 
-Tu elemento `img` debe tener un `display` de `block`
+Tu elemento `img` debe tener un `display` de `block`.
 
 ```js
 const img = document.getElementById('image');
@@ -147,7 +147,7 @@ const style = imgStyle?.getPropertyValue('display')
 assert(style === 'block')
 ```
 
-Tu `#image` debe tener un `max-width` de `100%`
+Tu `#image` debe tener un `max-width` de `100%`.
 
 ```js
 const img = document.getElementById('image');
@@ -156,7 +156,7 @@ const style = imgStyle?.getPropertyValue('max-width')
 assert(style === '100%')
 ```
 
-Tu `#image` debe tener un `height` de `auto`
+Tu `#image` debe tener un `height` de `auto`.
 
 ```js
 // taken from the testable-projects repo
@@ -170,7 +170,7 @@ img?.style.setProperty('display', oldDisplayValue, oldDisplayPriority);
 assert(heightValue === 'auto')
 ```
 
-Tu `#image` debe estar centrado dentro de su padre
+Tu `#image` debe estar centrado dentro de su padre.
 
 ```js
 // taken from the testable-projects repo
@@ -207,14 +207,14 @@ assert(leftMargin - rightMargin < 6 && rightMargin - leftMargin < 6)
     <link
       href="https://fonts.googleapis.com/css?family=Pacifico"
       rel="stylesheet"
-      type="text/css"
+
     />
     <link
       href="https://fonts.googleapis.com/css?family=Lobster"
       rel="stylesheet"
-      type="text/css"
+
     />
-    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <link href="styles.css" rel="stylesheet" />
     <title>Tribute Page</title>
   </head>
   <body>

@@ -8,7 +8,7 @@ dashedName: visualize-data-with-a-heat-map
 
 # --description--
 
-**Objetivo:** Crear una aplicación que sea funcionalmente similar a <a href="https://codepen.io/freeCodeCamp/full/JEXgeY" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/JEXgeY</a>.
+**Objetivo:** Crea una aplicación que sea funcionalmente similar a <a href="https://codepen.io/freeCodeCamp/full/JEXgeY" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/JEXgeY</a>.
 
 Completa las historias de usuario a continuación y obtén todas las pruebas para aprobar. Utiliza cualquier librería o API que necesites. Dale tu propio estilo.
 

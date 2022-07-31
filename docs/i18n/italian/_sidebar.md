@@ -9,19 +9,19 @@
   - [Imposta freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md)
   - [Lavorare sull'app mobile](how-to-setup-freecodecamp-mobile-app-locally.md)
   - [Seguire le migliori pratiche di programmazione](codebase-best-practices.md)
-  - [Open a pull request](how-to-open-a-pull-request.md)
-  - [Work on coding challenges](how-to-work-on-coding-challenges.md)
-  - [Work on practice projects](how-to-work-on-practice-projects.md)
-  - [Work on tutorials with CodeRoad](how-to-work-on-tutorials-that-use-coderoad.md)
-  - [Work on localized client web app](how-to-work-on-localized-client-webapp.md)
-  - [Work on Cypress tests](how-to-add-cypress-tests.md)
-  - [Work on video challenges](how-to-help-with-video-challenges.md)
-  - [Work on documentation](how-to-work-on-the-docs-theme.md)
-  - [Work on the component library](how-to-work-on-the-component-library.md)
+  - [Aprire una pull request](how-to-open-a-pull-request.md)
+  - [Lavorare sulle sfide del curriculum](how-to-work-on-coding-challenges.md)
+  - [Lavorare sui progetti di pratica](how-to-work-on-practice-projects.md)
+  - [Lavorare sui tutorial con CodeRoad](how-to-work-on-tutorials-that-use-coderoad.md)
+  - [Lavorare sul client tradotto](how-to-work-on-localized-client-webapp.md)
+  - [Lavorare sui test Cypress ](how-to-add-cypress-tests.md)
+  - [Lavorare sulle sfide video](how-to-help-with-video-challenges.md)
+  - [Lavorare sulla documentazione](how-to-work-on-the-docs-theme.md)
+  - [Lavorare sulla libreria dei componenti](how-to-work-on-the-component-library.md)
 - **Guide aggiuntive**
   - [Testare traduzioni in locale](how-to-test-translations-locally.md)
   - [Capire la struttura dei file del curriculum](curriculum-file-structure.md)
-  - [Debug outgoing emails locally](how-to-catch-outgoing-emails-locally.md)
+  - [Fare il debug delle email in uscita localmente](how-to-catch-outgoing-emails-locally.md)
   - [Settare freeCodeCamp su Windows (WSL)](how-to-setup-wsl.md)
   - [Workflow con il Token Utente](user-token-workflow.md)
 
@@ -29,9 +29,9 @@
 
 - **Manuali di volo** (per membri dello staff & moderatori)
   - [Manuale del moderatore](moderator-handbook.md)
-  - [Language Lead Handbook](language-lead-handbook.md)
-  - [DevOps Handbook](devops.md)
-  - [Courses VSCode Extension](courses-vscode-extension.md)
+  - [Manuale del Leader di lingua](language-lead-handbook.md)
+  - [Manuale di DevOps](devops.md)
+  - [Estensione di VSCode per i corsi](courses-vscode-extension.md)
 
 ---
 

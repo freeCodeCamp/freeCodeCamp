@@ -196,6 +196,7 @@ export class CompletionModalInner extends Component<
       currentBlockIds,
       id
     );
+
     return {
       downloadURL: newURL,
       completedPercent: completedPercent,
