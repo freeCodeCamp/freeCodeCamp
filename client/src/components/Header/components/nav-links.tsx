@@ -37,14 +37,15 @@ const { clientLocale, radioLocation, apiLocation } =
 
 const locales = availableLangs.client;
 
-interface NavlinkArgProp {
+interface NavlinkStates {
   arg: Record<string, unknown>;
+  showSignoutModal: boolean;
 }
 
 export interface NavLinksProps {
   displayMenu: boolean;
   isLanguageMenuDisplayed: boolean;
-  showSignoutModal: boolean;
+  isSignoutModalShown: boolean;
   fetchState: { pending: boolean };
   i18n: Record<string, unknown>;
   t: TFunction;
@@ -67,12 +68,7 @@ const mapDispatchToProps = {
   toggleNightMode: (theme: Themes) => updateUserFlag({ theme })
 };
 
-/*ToDo 
-create ability to focus on the button when closing the model
-show the signout modal
-*/
-
-export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
+export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
   static displayName: string;
   langButtonRef: React.RefObject<HTMLButtonElement>;
   firstLangOptionRef: React.RefObject<HTMLButtonElement>;
@@ -297,7 +293,6 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
       fetchState,
       t,
       toggleNightMode,
-      showSignoutModal,
       user: { isDonating = false, username, theme }
     }: NavLinksProps = this.props;
 
@@ -514,22 +509,30 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
             <li>
               <button
                 className='nav-link nav-link-signout'
-                onClick={() => this.setState({ showModal: true })}
+                onClick={isSignoutModalShown =>
+                  this.setState({ showSignoutModal: isSignoutModalShown })
+                }
               >
                 {t('buttons.sign-out')}
               </button>
               {/*<Modal dialogClassName='Signout-modal' onHide={this.closeSignOutModal} show={show}>  */}
               <Modal
-                dialogClassName='Signout-modal'
+                dialogClassName='signout-modal'
                 onHide={this.handleSignoutShow}
-                show={showSignoutModal}
+                // why did it become undefined when it entered modal
+                show={(isSignoutModalShown = true) as boolean}
               >
                 <Modal.Header
-                  className='Signout-modal-header fcc-modal'
+                  className='signout-modal-header fcc-modal'
                   closeButton={this.handleSignoutClose}
-                />
-                <Modal.Body className='Signout-modal-body text-center'>
-                  <p>{t('misc.sign-out')}</p>
+                >
+                  <Modal.Title class='signout-modal-title'>
+                    {t('buttons.sign-out')}
+                  </Modal.Title>
+                </Modal.Header>
+
+                <Modal.Body className='signout-modal-body text-center'>
+                  <p>{t('misc.warning-signout')}</p>
                   <a
                     className='nav-link nav-link-signout'
                     href={`${apiLocation}/signout`}
@@ -538,7 +541,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkArgProp> {
                   >
                     {t('buttons.sign-out')}
                   </a>
-                  <button>Cansel Signing out</button>
+                  <button>{t('buttons.cancel-signout')}</button>
                 </Modal.Body>
               </Modal>
             </li>

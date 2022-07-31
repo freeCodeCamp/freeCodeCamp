@@ -135,7 +135,23 @@
 /* increased the selector specificity */
 li > button.nav-link-signout:not([aria-disabled='true']):hover,
 li > button.nav-link-signout:not([aria-disabled='true']):focus {
-  background-color: hsl(16, 100%, 67%);
+  background-color: hsl(16, 100%, 59%);
+}
+
+.signout-modal {
+  max-width: 20em;
+}
+
+.signout-modal-body {
+  background-color: hsl(24, 60%, 90%);
+  display: grid;
+  gap: 1em;
+}
+
+.signout-modal-body p {
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5em;
 }
 
 .nav-link-header,
