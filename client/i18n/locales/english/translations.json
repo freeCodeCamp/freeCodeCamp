@@ -284,6 +284,7 @@
     "sign-in-save": "Sign in to save your progress",
     "download-solution": "Download my solution",
     "percent-complete": "{{percent}}% complete",
+    "project-complete": "Completed {{xOutOfYChallenges}} challenges",
     "tried-rsa": "If you've already tried the <0>Read-Search-Ask</0> method, then you can ask for help on the freeCodeCamp forum.",
     "rsa": "Read, search, ask",
     "reset": "Reset this lesson?",
@@ -323,8 +324,7 @@
     "sorry-getting-there":"Sorry, your code does not pass. You're getting there.",
     "sorry-hang-in-there":"Sorry, your code does not pass. Hang in there.",
     "sorry-dont-giveup":"Sorry, your code does not pass. Don't give up.",
-    "challenges-completed": "{{completedCount}} of {{totalChallenges}} challenges completed",
-    "project-completed": "Completed {{totalCompletedProjects}} challenges"
+    "challenges-completed": "{{completedCount}} of {{totalChallenges}} challenges completed"
   },
   "donate": {
     "title": "Support our nonprofit",

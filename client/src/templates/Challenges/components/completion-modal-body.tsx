@@ -71,7 +71,8 @@ export class CompletionModalBody extends PureComponent<
   }
 
   render(): JSX.Element {
-    const { block, completedPercent, superBlock, t } = this.props;
+    const { block, completedPercent, completedProjects, superBlock, t } =
+      this.props;
     const blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
 
     return (
@@ -112,6 +113,13 @@ export class CompletionModalBody extends PureComponent<
                 })}
               </div>
             </div>
+          </div>
+          <div>
+            <h3>
+              {t('learn.project-complete', {
+                xOutOfYChallenges: completedProjects
+              })}
+            </h3>
           </div>
         </div>
       </>
