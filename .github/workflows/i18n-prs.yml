@@ -10,8 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     # run only on PRs that camperbot opens with title that matches the curriculum sync
     if: |
-      ${{ github.event.pull_request.user.login == "camperbot" && github.event.pull_request.title == "chore(i18n,learn): processed translations" }}
-
+      ${{ github.event.pull_request.user.login == 'camperbot' && github.event.pull_request.title == 'chore(i18n,learn): processed translations' }}
     strategy:
       matrix:
         node-version: [16.x]
@@ -34,14 +33,14 @@ jobs:
 
       - name: Create Comment
         # Run if the validate challenge files step fails, specifically.
-        if: ${{ steps.validate.conclusion == "failure" }}
+        if: ${{ steps.validate.conclusion == 'failure' }}
         uses: actions/github-script@7a5c598405937d486b0331594b5da2b14db670da # tag=v6
         with:
           github-token: ${{secrets.CAMPERBOT_NO_TRANSLATE}}
-        script: |
-          github.rest.issues.createComment({
-            issue_number: context.issue.number,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            body: "Hey @freeCodeCamp/i18n, it looks like we have new English curriculum files that need to be translated."
-          })
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+                body: "Hey @freeCodeCamp/i18n, it looks like we have new English curriculum files that need to be translated."
+              })
