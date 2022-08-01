@@ -125,17 +125,17 @@
 }
 
 .nav-link:not([aria-disabled='true']):hover {
-  color: var(--theme-color) !important;
+  /* had to remove important so the color can change on hover */
+  color: var(--theme-color);
   text-decoration: none;
   background-color: var(--gray-10);
   cursor: pointer;
   outline: none !important;
 }
 
-/* increased the selector specificity */
 a.nav-link-signout:not([aria-disabled='true']):hover,
 a.nav-link-signout:not([aria-disabled='true']):focus {
-  background-color: hsl(16, 100%, 59%);
+  background-color: hsl(16, 100%, 57%);
   color: var(--gray-00);
 }
 
