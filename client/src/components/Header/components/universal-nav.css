@@ -143,7 +143,6 @@ li > button.nav-link-signout:not([aria-disabled='true']):focus {
 }
 
 .signout-modal-body {
-  background-color: hsl(24, 60%, 90%);
   display: grid;
   gap: 1em;
 }
@@ -152,6 +151,19 @@ li > button.nav-link-signout:not([aria-disabled='true']):focus {
   font-weight: 600;
   letter-spacing: 0.1em;
   margin-bottom: 0.5em;
+}
+
+/*  */
+
+.signout-modal .signout-modal-body a {
+  width: 35%;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  justify-content: center;
+}
+
+.signout-modal .signout-modal-body a:where(:hover, :focus) {
+  background-color: hsl(16, 100%, 59%);
 }
 
 .nav-link-header,
