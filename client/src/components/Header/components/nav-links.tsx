@@ -42,11 +42,9 @@ interface NavlinkStates {
 export interface NavLinksProps {
   displayMenu: boolean;
   isLanguageMenuDisplayed: boolean;
-  isSignoutModalShown: boolean;
   fetchState: { pending: boolean };
   i18n: Record<string, unknown>;
   t: TFunction;
-  signOutAttribute: (attributes: Record<string, unknown>) => void;
   hideMenu: () => void;
   toggleNightMode: (theme: Themes) => Themes;
   user?: {
@@ -298,7 +296,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
           <li key='donate'>
             <div className='nav-link nav-link-flex nav-link-header'>
               <span>{t('donate.thanks')}</span>
-              <FontAwesomeIcon icon={faHeart as string} />
+              <FontAwesomeIcon icon={faHeart} />
             </div>
           </li>
         ) : (
@@ -355,7 +353,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
             to={t('links:nav.forum')}
           >
             <span>{t('buttons.forum')}</span>
-            <FontAwesomeIcon icon={faExternalLinkAlt as string} />
+            <FontAwesomeIcon icon={faExternalLinkAlt} />
           </Link>
         </li>
         <li key='news'>
@@ -367,7 +365,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
             to={t('links:nav.news')}
           >
             <span>{t('buttons.news')}</span>
-            <FontAwesomeIcon icon={faExternalLinkAlt as string} />
+            <FontAwesomeIcon icon={faExternalLinkAlt} />
           </Link>
         </li>
         <li key='radio'>
@@ -379,7 +377,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
             to={radioLocation}
           >
             <span>{t('buttons.radio')}</span>
-            <FontAwesomeIcon icon={faExternalLinkAlt as string} />
+            <FontAwesomeIcon icon={faExternalLinkAlt} />
           </Link>
         </li>
         <li className='nav-line' key='theme'>
@@ -401,9 +399,9 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
               <>
                 <span>{t('settings.labels.night-mode')}</span>
                 {theme === Themes.Night ? (
-                  <FontAwesomeIcon icon={faCheckSquare as string} />
+                  <FontAwesomeIcon icon={faCheckSquare} />
                 ) : (
-                  <FontAwesomeIcon icon={faSquare as string} />
+                  <FontAwesomeIcon icon={faSquare} />
                 )}
               </>
             ) : (
