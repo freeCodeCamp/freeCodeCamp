@@ -446,7 +446,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           <Helmet title={`${this.getBlockNameTitle(t)} | freeCodeCamp.org`} />
           <Media maxWidth={MAX_MOBILE_WIDTH}>
             <MobileLayout
-              editor={this.renderEditor()}
+              editor={this.renderEditor(hasEditableBoundaries)}
               guideUrl={getGuideUrl({ forumTopicId, title })}
               hasEditableBoundaries={hasEditableBoundaries}
               hasNotes={!!notes}
@@ -459,6 +459,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
               testOutput={this.renderTestOutput()}
               usesMultifileEditor={usesMultifileEditor}
               videoUrl={this.getVideoUrl()}
+              testsRunning={this.props.testsRunning}
             />
           </Media>
           <Media minWidth={MAX_MOBILE_WIDTH + 1}>

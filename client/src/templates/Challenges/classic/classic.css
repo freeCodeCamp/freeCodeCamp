@@ -40,6 +40,13 @@
   padding-bottom: 16px;
 }
 
+#challenge-page-tabs .tab-content.no-toolpanel {
+  height: calc(
+    100vh - var(--header-height, 0px) - var(--flash-message-height, 0px) - 24px -
+      16px
+  );
+}
+
 #challenge-page-tabs .tab-pane {
   height: 100%;
   overflow: hidden;

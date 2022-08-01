@@ -52,8 +52,8 @@ interface ToolPanelProps {
   openHelpModal: () => void;
   openVideoModal: () => void;
   openResetModal: () => void;
-  guideUrl: string;
-  videoUrl: string;
+  guideUrl?: string;
+  videoUrl?: string;
   challengeIsCompleted?: boolean;
 }
 
