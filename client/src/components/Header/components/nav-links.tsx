@@ -74,6 +74,10 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
   firstLangOptionRef: React.RefObject<HTMLButtonElement>;
   lastLangOptionRef: React.RefObject<HTMLButtonElement>;
 
+  state = {
+    isSignoutModalShown: false
+  };
+
   constructor(props: NavLinksProps) {
     super(props);
     this.langButtonRef = createRef();
@@ -86,8 +90,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
       this.handleLanguageButtonKeyDown.bind(this);
     this.handleMenuKeyDown = this.handleMenuKeyDown.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
-    this.handleSignoutShow = this.handleSignoutShow.bind(this);
-    this.handleSignoutClose = this.handleSignoutClose.bind(this);
+    this.handleSignoutToggle = this.handleSignoutToggle.bind(this);
   }
 
   toggleTheme(
@@ -278,12 +281,8 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
     }
   };
 
-  handleSignoutClose = () => {
-    this.setState({ showSignoutModal: false });
-  };
-
-  handleSignoutShow = () => {
-    this.setState({ showSignoutModal: true });
+  handleSignoutToggle = () => {
+    this.setState({ isSignoutModalShown: !this.state.isSignoutModalShown });
   };
 
   render() {
@@ -509,22 +508,20 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
             <li>
               <button
                 className='nav-link nav-link-signout'
-                onClick={isSignoutModalShown =>
-                  this.setState({ showSignoutModal: isSignoutModalShown })
-                }
+                onBlur={this.handleBlur}
+                onKeyDown={this.handleMenuKeyDown}
+                onClick={this.handleSignoutToggle}
               >
                 {t('buttons.sign-out')}
               </button>
-              {/*<Modal dialogClassName='Signout-modal' onHide={this.closeSignOutModal} show={show}>  */}
               <Modal
                 dialogClassName='signout-modal'
-                onHide={this.handleSignoutShow}
-                // why did it become undefined when it entered modal
-                show={(isSignoutModalShown = true) as boolean}
+                onHide={this.handleSignoutToggle}
+                show={this.state.isSignoutModalShown}
               >
                 <Modal.Header
                   className='signout-modal-header fcc-modal'
-                  closeButton={this.handleSignoutClose}
+                  closeButton={this.state.isSignoutModalShown}
                 >
                   <Modal.Title class='signout-modal-title'>
                     {t('buttons.sign-out')}
