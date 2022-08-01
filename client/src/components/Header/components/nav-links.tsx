@@ -8,11 +8,9 @@ import {
   faExternalLinkAlt
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Modal } from '@freecodecamp/react-bootstrap';
 import React, { Component, Fragment, createRef } from 'react';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-// import { Dispatch } from 'redux';
 import envData from '../../../../../config/env.json';
 import {
   availableLangs,
@@ -39,7 +37,6 @@ const locales = availableLangs.client;
 
 interface NavlinkStates {
   arg: Record<string, unknown>;
-  showSignoutModal: boolean;
 }
 
 export interface NavLinksProps {
@@ -74,10 +71,6 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
   firstLangOptionRef: React.RefObject<HTMLButtonElement>;
   lastLangOptionRef: React.RefObject<HTMLButtonElement>;
 
-  state = {
-    isSignoutModalShown: false
-  };
-
   constructor(props: NavLinksProps) {
     super(props);
     this.langButtonRef = createRef();
@@ -90,7 +83,6 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
       this.handleLanguageButtonKeyDown.bind(this);
     this.handleMenuKeyDown = this.handleMenuKeyDown.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
-    this.handleSignoutToggle = this.handleSignoutToggle.bind(this);
   }
 
   toggleTheme(
@@ -279,10 +271,6 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
     ) {
       hideMenu();
     }
-  };
-
-  handleSignoutToggle = () => {
-    this.setState({ isSignoutModalShown: !this.state.isSignoutModalShown });
   };
 
   render() {
@@ -495,7 +483,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
         </li>
         {username && (
           <Fragment key='signout-frag'>
-            {/* <li className='nav-line' key='sign-out'>
+            <li className='nav-line' key='sign-out'>
               <a
                 className='nav-link nav-link-signout'
                 href={`${apiLocation}/signout`}
@@ -504,43 +492,6 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
               >
                 {t('buttons.sign-out')}
               </a>
-            </li> */}
-            <li>
-              <button
-                className='nav-link nav-link-signout'
-                onBlur={this.handleBlur}
-                onKeyDown={this.handleMenuKeyDown}
-                onClick={this.handleSignoutToggle}
-              >
-                {t('buttons.sign-out')}
-              </button>
-              <Modal
-                dialogClassName='signout-modal'
-                onHide={this.handleSignoutToggle}
-                show={this.state.isSignoutModalShown}
-              >
-                <Modal.Header
-                  className='signout-modal-header fcc-modal'
-                  closeButton={this.state.isSignoutModalShown}
-                >
-                  <Modal.Title class='signout-modal-title'>
-                    {t('buttons.sign-out')}
-                  </Modal.Title>
-                </Modal.Header>
-
-                <Modal.Body className='signout-modal-body text-center'>
-                  <p>{t('misc.warning-signout')}</p>
-                  <a
-                    className='nav-link nav-link-signout'
-                    href={`${apiLocation}/signout`}
-                    onBlur={this.handleBlur}
-                    onKeyDown={this.handleMenuKeyDown}
-                  >
-                    {t('buttons.sign-out')}
-                  </a>
-                  <button>{t('buttons.cancel-signout')}</button>
-                </Modal.Body>
-              </Modal>
             </li>
           </Fragment>
         )}

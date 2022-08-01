@@ -133,37 +133,10 @@
 }
 
 /* increased the selector specificity */
-li > button.nav-link-signout:not([aria-disabled='true']):hover,
-li > button.nav-link-signout:not([aria-disabled='true']):focus {
+a.nav-link-signout:not([aria-disabled='true']):hover,
+a.nav-link-signout:not([aria-disabled='true']):focus {
   background-color: hsl(16, 100%, 59%);
-}
-
-.signout-modal {
-  max-width: 20em;
-}
-
-.signout-modal-body {
-  display: grid;
-  gap: 1em;
-}
-
-.signout-modal-body p {
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  margin-bottom: 0.5em;
-}
-
-/*  */
-
-.signout-modal .signout-modal-body a {
-  width: 35%;
-  text-transform: uppercase;
-  font-size: 0.85em;
-  justify-content: center;
-}
-
-.signout-modal .signout-modal-body a:where(:hover, :focus) {
-  background-color: hsl(16, 100%, 59%);
+  color: var(--gray-00);
 }
 
 .nav-link-header,
