@@ -1,8 +1,18 @@
 import React, { Component, ReactElement } from 'react';
+import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
 
+import { Test } from '../../../redux/prop-types';
 import ToolPanel from '../components/tool-panel';
+import { challengeTestsSelector } from '../redux';
 import MobilePaneSelector, { Tab } from './mobile-pane-selector';
 
+const mapStateToProps = createSelector(
+  challengeTestsSelector,
+  (tests: Test[]) => ({
+    tests
+  })
+);
 interface MobileLayoutProps {
   editor: JSX.Element | null;
   guideUrl: string;
@@ -15,6 +25,8 @@ interface MobileLayoutProps {
   testOutput: JSX.Element;
   videoUrl: string;
   usesMultifileEditor: boolean;
+  testsRunning: boolean;
+  tests: Test[];
 }
 
 interface MobileLayoutState {
@@ -45,10 +57,12 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       hasPreview,
       notes,
       preview,
-      guideUrl,
-      videoUrl,
+      tests,
+      testsRunning,
       usesMultifileEditor
     } = this.props;
+
+    const isChallengeComplete = tests.every(test => test.pass && !test.err);
 
     // Unlike the desktop layout the mobile version does not have an ActionRow,
     // but still needs a way to switch between the different tabs.
@@ -63,14 +77,24 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
           hasNotes={hasNotes}
           usesMultifileEditor={usesMultifileEditor}
         />
-        <div className='tab-content'>
+        <div
+          className={`tab-content ${
+            hasEditableBoundaries ? 'no-toolpanel' : ''
+          }`}
+        >
           {currentTab === Tab.Editor && editor}
           {currentTab === Tab.Instructions && instructions}
           {currentTab === Tab.Console && testOutput}
           {currentTab === Tab.Notes && notes}
           {currentTab === Tab.Preview && preview}
         </div>
-        <ToolPanel guideUrl={guideUrl} isMobile={true} videoUrl={videoUrl} />
+        {!hasEditableBoundaries && (
+          <ToolPanel
+            isMobile={true}
+            isRunningTests={testsRunning}
+            challengeIsCompleted={isChallengeComplete}
+          />
+        )}
       </div>
     );
   }
@@ -78,4 +102,4 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
 
 MobileLayout.displayName = 'MobileLayout';
 
-export default MobileLayout;
+export default connect(mapStateToProps)(MobileLayout);
