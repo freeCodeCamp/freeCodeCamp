@@ -11,7 +11,7 @@ dashedName: step-62
 
 # --hints--
 
-Ви повинні встановити клас `class` елемента `p` для `established`.
+Ви повинні встановити клас `class` елемента `p` на `established`.
 
 ```js
 assert(code.match(/<p class=('|")established\1>/i));

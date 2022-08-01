@@ -66,6 +66,12 @@ assert.isUndefined(addTogether(2)([3]));
 assert.isUndefined(addTogether('2', 3));
 ```
 
+`addTogether(5, undefined)` は `undefined` を返す必要があります。
+
+```js
+assert.isUndefined(addTogether(5, undefined));
+```
+
 # --seed--
 
 ## --seed-contents--
