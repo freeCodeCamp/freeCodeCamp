@@ -18,7 +18,7 @@ Fulfill the below user stories and get all of the tests to pass. Use whichever l
 
 **User Story:** I can click the status output and be sent directly to the freeCodeCamp's Twitch.tv channel.
 
-**User Story:** if a Twitch user is currently streaming, I can see additional details about what they are streaming.
+**User Story:** If a Twitch user is currently streaming, I can see additional details about what they are streaming.
 
 **Hint:** Here's an array of the Twitch.tv usernames of people who regularly stream: `["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"]`
 
