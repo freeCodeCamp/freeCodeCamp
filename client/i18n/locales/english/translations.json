@@ -36,7 +36,6 @@
     "donate": "Donate",
     "update-settings": "Update my account settings",
     "sign-me-out": "Sign me out of freeCodeCamp",
-    "cancel-signout": "Cancel Signing out",
     "flag-user": "Flag This User's Account for Abuse",
     "current-challenge": "Go to current challenge",
     "try-again": "Try again",
@@ -451,9 +450,8 @@
     "and": "and",
     "change-theme": "Sign in to change theme.",
     "translation-pending": "Help us translate",
-    "certification-project": "Certification Project",
-    "warning-signout": "You will sign out in 10 seconds"
-    },
+    "certification-project": "Certification Project"
+  },
   "icons": {
     "gold-cup": "Gold Cup",
     "avatar": "Default Avatar",
