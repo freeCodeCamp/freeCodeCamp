@@ -1,7 +1,7 @@
 ---
 id: 5900f4311000cf542c50ff44
 title: 'Problem 197: Investigating the behaviour of a recursively defined sequence'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301835
 dashedName: problem-197-investigating-the-behaviour-of-a-recursively-defined-sequence
 ---

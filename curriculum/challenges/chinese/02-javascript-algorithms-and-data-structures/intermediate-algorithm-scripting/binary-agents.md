@@ -1,7 +1,7 @@
 ---
 id: a8d97bd4c764e91f9d2bda01
 title: 翻译二进制字符串
-challengeType: 5
+challengeType: 1
 forumTopicId: 14273
 dashedName: binary-agents
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5900f4911000cf542c50ffa3
 title: 'Problem 292: Pythagorean Polygons'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301944
 dashedName: problem-292-pythagorean-polygons
 ---

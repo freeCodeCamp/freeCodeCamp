@@ -8,7 +8,7 @@ dashedName: arithmetic-formatter
 
 # --description--
 
-Lavorerari a [questo progetto con il nostro codice d'inizio su Replit](https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter).
+Lavorerai a <a href="https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter" target="_blank" rel="noopener noreferrer nofollow">questo progetto con il nostro codice d'inizio su Replit</a>.
 
 # --instructions--
 
@@ -64,7 +64,7 @@ La funzione restituirà la conversione corretta se i problemi dati sono corretta
   - Ogni numero (operando) deve contenere solo cifre. Altrimenti, la funzione deve restituire: `Error: Numbers must only contain digits.`
   - Ogni operando (numero da ogni lato dell'operatore) ha una lunghezza di massimo 4 cirre. Altrimenti, la funzione deve restituire: `Error: Numbers cannot be more than four digits.`
 - Se l'utente ha dato i problemi nel formato corretto, la conversione che restituisci deve seguire le seguenti regole:
-  - Ci deve essere un singolo spazio tra l'operatore e il più lungo dei due operandi, l'operatore deve essere sulla stessa riga del secondo operando, entrambi gli operandi devono essere nell'ordine dato (il primo in alto, il secondo in basso.
+  - Ci deve essere un singolo spazio tra l'operatore e il più lungo dei due operandi, l'operatore deve essere sulla stessa riga del secondo operando, entrambi gli operandi devono essere nell'ordine dato (il primo in alto, il secondo in basso).
   - I numeri devono essere allineati a destra.
   - Devono esserci quattro spazi tra ogni problema.
   - Ci devono essere dei trattini sotto ogni problema. I trattini devono avere la stessa larghezza del singolo problema. (L'esempio sopra mostra come deve apparire.)

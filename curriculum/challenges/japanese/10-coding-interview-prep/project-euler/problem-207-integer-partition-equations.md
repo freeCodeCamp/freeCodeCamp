@@ -1,7 +1,7 @@
 ---
 id: 5900f43c1000cf542c50ff4e
 title: '問題 207: 整数分割式'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301848
 dashedName: problem-207-integer-partition-equations
 ---

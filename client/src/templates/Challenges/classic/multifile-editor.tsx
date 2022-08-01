@@ -129,7 +129,12 @@ const MultifileEditor = (props: MultifileEditorProps) => {
               );
             } else {
               return (
-                <ReflexElement {...reflexProps} {...resizeProps} key={key}>
+                <ReflexElement
+                  data-cy={`editor-container-${key}`}
+                  {...reflexProps}
+                  {...resizeProps}
+                  key={key}
+                >
                   <Editor
                     canFocusOnMountRef={canFocusOnMountRef}
                     challengeFiles={challengeFiles}

@@ -1,7 +1,7 @@
 ---
 id: 5949b579404977fbaefcd737
 title: Amicable pairs
-challengeType: 5
+challengeType: 1
 forumTopicId: 302225
 dashedName: amicable-pairs
 ---

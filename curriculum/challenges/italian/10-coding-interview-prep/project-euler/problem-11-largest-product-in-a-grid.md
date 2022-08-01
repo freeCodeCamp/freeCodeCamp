@@ -1,7 +1,7 @@
 ---
 id: 5900f3781000cf542c50fe8a
 title: 'Problema 11: Prodotto più grande nella griglia'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301734
 dashedName: problem-11-largest-product-in-a-grid
 ---

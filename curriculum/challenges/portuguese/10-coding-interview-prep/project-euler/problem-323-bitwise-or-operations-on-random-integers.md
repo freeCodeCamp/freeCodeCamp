@@ -1,7 +1,7 @@
 ---
 id: 5900f4b01000cf542c50ffc2
 title: 'Problema 323: Operações bitwise-OR em números inteiros aleatórios'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301980
 dashedName: problem-323-bitwise-or-operations-on-random-integers
 ---

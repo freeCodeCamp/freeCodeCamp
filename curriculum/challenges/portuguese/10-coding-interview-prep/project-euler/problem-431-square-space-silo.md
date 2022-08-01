@@ -1,7 +1,7 @@
 ---
 id: 5900f51b1000cf542c51002e
 title: 'Problema 431: Silo de espaço quadrado'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302102
 dashedName: problem-431-square-space-silo
 ---

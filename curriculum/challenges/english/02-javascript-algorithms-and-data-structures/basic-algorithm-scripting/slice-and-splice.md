@@ -1,7 +1,7 @@
 ---
 id: 579e2a2c335b9d72dd32e05c
 title: Slice and Splice
-challengeType: 5
+challengeType: 1
 forumTopicId: 301148
 dashedName: slice-and-splice
 ---

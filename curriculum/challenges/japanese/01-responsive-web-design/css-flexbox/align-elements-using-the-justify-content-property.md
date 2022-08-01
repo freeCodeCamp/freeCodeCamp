@@ -11,7 +11,7 @@ dashedName: align-elements-using-the-justify-content-property
 
 フレックスコンテナ内のフレックスアイテムがコンテナ内のすべてのスペースを埋めないことがあります。 この場合、フレックスのアイテムをどのように整列・空白の配置を行うかを CSS に指示したいと思うのが当然でしょう。 幸いなことに、`justify-content` プロパティにはこれを実現するためのオプションがいくつかあります。 しかしまず最初に、これらのオプションを検討する前に理解すべき重要な用語がいくつかあります。
 
-[フレックスボックスのプロパティに関する詳細はこちら](https://www.freecodecamp.org/news/flexbox-the-ultimate-css-flex-cheatsheet/)
+<a href="https://www.freecodecamp.org/news/flexbox-the-ultimate-css-flex-cheatsheet/" target="_blank" rel="noopener noreferrer nofollow">フレックスボックスのプロパティについて詳しくはこちらを参照してください。</a>
 
 フレックスコンテナを行 (row) として設定すると、フレックスアイテムが左から右に並んで配置されたことを思い出してください。 列 (column) として設定されたフレックスコンテナは、フレックスアイテムを上から下へ垂直に積み重ねて配置します。 それぞれ、フレックスアイテムが配置される方向を**主軸** (main axis) と呼びます。 行の場合、これは各アイテムを横切る水平方向の線です。 そして列の場合、主軸はアイテムを貫く垂直方向の線です。
 
@@ -23,8 +23,8 @@ dashedName: align-elements-using-the-justify-content-property
 
 このプロパティの動作は例を見ると分かりやすいでしょう。 CSS プロパティ `justify-content` を `#box-container` 要素に追加し、値を `center` に設定してください。
 
-**Bonus**  
-コードエディタ上で `justify-content` プロパティの他のオプションを試してみて、違いを確認してみましょう。 ただし `center` がこのチャレンジをパスする唯一の値であることに注意してください。
+**追加の学習**  
+コードエディタ上で `justify-content` プロパティの他のオプションを試し、違いを確認してみましょう。 ただし、このチャレンジをパスできる唯一の値は `center` であることに注意してください。
 
 # --hints--
 

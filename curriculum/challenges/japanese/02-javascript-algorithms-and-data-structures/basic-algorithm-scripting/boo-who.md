@@ -1,7 +1,7 @@
 ---
 id: a77dbc43c33f39daa4429b4f
 title: ブール型の確認
-challengeType: 5
+challengeType: 1
 forumTopicId: 16000
 dashedName: boo-who
 ---

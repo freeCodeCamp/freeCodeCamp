@@ -18,6 +18,17 @@ Quando terminar, certifique-se de que uma demonstração funcional do seu projet
 
 # --instructions--
 
+Crie um jogo multijogador seguro no qual cada jogador pode mover seu avatar, há pelo menos um item colecionável e a classificação dos jogadores é calculada com base na pontuação de cada um.
+
+Para obter detalhes, consulte os testes abaixo.
+
+Certifique-se de que o jogo é seguro! Incluir estas medidas de segurança:
+
+- O client não deve ser capaz de adivinhar/descobrir o tipo de MIME
+- Evitar ataques XSS
+- Não faça o cache de nada que seja do site da web no client
+- Os cabeçalhos dizem que o site é alimentado por `PHP 7.4.3`
+
 **Observação**: `helmet@^3.21.3` é necessário para as histórias de usuários. Isto significa que você precisará usar a versão anterior da documentação do Helmet, para obter informações sobre como obter as histórias de usuários.
 
 # --hints--

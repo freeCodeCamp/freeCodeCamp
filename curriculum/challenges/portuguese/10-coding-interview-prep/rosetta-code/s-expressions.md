@@ -1,14 +1,14 @@
 ---
 id: 59667989bf71cf555dd5d2ff
 title: Expressões S
-challengeType: 5
+challengeType: 1
 forumTopicId: 302303
 dashedName: s-expressions
 ---
 
 # --description--
 
-<a href="https://rosettacode.org/wiki/S-expressions" target="_blank" rel="noopener noreferrer nofollow">Expressões S</a> apresentam dados como uma estrutura de árvore binária, tornando possível a referência de parte dos dados facilmente. Isto também torna conveniente analisar e armazenar dados.
+<a href="https://rosettacode.org/wiki/S-expressions" target="_blank" rel="noopener noreferrer nofollow">Expressões S</a> são uma maneira conveniente de analisar e armazenar dados.
 
 # --instructions--
 

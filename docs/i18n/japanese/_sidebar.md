@@ -7,6 +7,7 @@
   - [翻訳を校正する](how-to-proofread-files.md)
 - **コードのコントリビューション**
   - [freeCodeCamp のローカル環境を構築する](how-to-setup-freecodecamp-locally.md)
+  - [モバイルアプリに貢献する](how-to-setup-freecodecamp-mobile-app-locally.md)
   - [コードベースのベストプラクティス](codebase-best-practices.md)
   - [プルリクエストをオープンする](how-to-open-a-pull-request.md)
   - [コーディングチャレンジに貢献する](how-to-work-on-coding-challenges.md)
@@ -28,6 +29,7 @@
 
 - **マニュアル** (スタッフ & モデレーター用)
   - [モデレーターハンドブック](moderator-handbook.md)
+  - [ランゲージリードハンドブック](language-lead-handbook.md)
   - [DevOps ハンドブック](devops.md)
   - [VSCode 拡張機能「Courses」](courses-vscode-extension.md)
 

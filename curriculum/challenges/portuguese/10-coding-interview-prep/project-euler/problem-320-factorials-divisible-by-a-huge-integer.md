@@ -1,7 +1,7 @@
 ---
 id: 5900f4ae1000cf542c50ffbf
 title: 'Problema 320: Fatoriais divisíveis por um número inteiro muito grande'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301977
 dashedName: problem-320-factorials-divisible-by-a-huge-integer
 ---

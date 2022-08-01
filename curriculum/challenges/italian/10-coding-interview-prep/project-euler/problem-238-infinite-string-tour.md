@@ -1,7 +1,7 @@
 ---
 id: 5900f45b1000cf542c50ff6d
 title: 'Problema 238: viaggio della stringa infinita'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301883
 dashedName: problem-238-infinite-string-tour
 ---

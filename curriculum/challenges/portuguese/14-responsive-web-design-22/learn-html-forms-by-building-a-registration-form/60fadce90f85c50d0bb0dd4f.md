@@ -1,26 +1,20 @@
 ---
 id: 60fadce90f85c50d0bb0dd4f
-title: Passo 41
+title: Passo 42
 challengeType: 0
-dashedName: step-41
+dashedName: step-42
 ---
 
 # --description--
 
-Para dar aos elementos `fieldset` um pouco de separação, selecione todos exceto o último elemento `fieldset`, e dê a eles uma `border-bottom` inferior de `3px solid #3b3b4f`.
+Para dar aos elementos `fieldset` um pouco de separação, selecioná-los e dar a eles o atributo `border-bottom` de `3px solid #3b3b4f`.
 
 # --hints--
-
-Você pode usar a pseudoclasse `:not(:last-of-type)` para selecionar tudo menos o último elemento.
-
-```js
-assert.exists(new __helpers.CSSHelp(document).getStyle('fieldset:not(:last-of-type)'));
-```
 
 Você deve dar ao `fieldset` uma `border-bottom` de `3px solid #3b3b4f`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('fieldset:not(:last-of-type)')?.borderBottom, '3px solid rgb(59, 59, 79)');
+assert.equal(new __helpers.CSSHelp(document).getStyle('fieldset')?.borderBottom, '3px solid rgb(59, 59, 79)');
 ```
 
 # --seed--
@@ -29,10 +23,11 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('fieldset:not(:last-of-typ
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8">
     <title>Registration Form</title>
-      <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <h1>Registration Form</h1>
@@ -49,12 +44,12 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('fieldset:not(:last-of-typ
         <label><input type="radio" name="account-type" /> Business Account</label>
         <label>
           <input type="checkbox" name="terms" required /> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
-              </label>
+        </label>
       </fieldset>
       <fieldset>
         <label>Upload a profile picture: <input type="file" name="file" /></label>
         <label>Input your age (years): <input type="number" name="age" min="13" max="120" />
-              </label>
+        </label>
         <label>How did you hear about us?
           <select name="referrer">
             <option value="">(select one)</option>
@@ -66,7 +61,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('fieldset:not(:last-of-typ
         </label>
         <label>Provide a bio:
           <textarea name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea>
-              </label>
+        </label>
       </fieldset>
       <input type="submit" value="Submit" />
     </form>
@@ -80,9 +75,9 @@ body {
   height: 100vh;
   margin: 0;
   background-color: #1b1b32;
-    color: #f5f6f7;
+  color: #f5f6f7;
   font-family: Tahoma;
-    font-size: 16px;
+  font-size: 16px;
 }
 
 h1, p {
@@ -92,23 +87,21 @@ h1, p {
 
 form {
   width: 60vw;
-    max-width: 500px;
-    min-width: 300px;
-    margin: 0 auto;
-}
-
-fieldset {
-  border: none;
-    padding: 2rem 0;
+  max-width: 500px;
+  min-width: 300px;
+  margin: 0 auto;
 }
 
 --fcc-editable-region--
-
+fieldset {
+  border: none;
+  padding: 2rem 0;
+}
 --fcc-editable-region--
 
 label {
-    display: block;
-    margin: 0.5rem 0;
+  display: block;
+  margin: 0.5rem 0;
 }
 
 ```

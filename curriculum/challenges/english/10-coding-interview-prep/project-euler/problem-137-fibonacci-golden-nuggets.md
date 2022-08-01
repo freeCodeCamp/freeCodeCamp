@@ -1,7 +1,7 @@
 ---
 id: 5900f3f51000cf542c50ff08
 title: 'Problem 137: Fibonacci golden nuggets'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301765
 dashedName: problem-137-fibonacci-golden-nuggets
 ---

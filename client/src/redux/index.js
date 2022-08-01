@@ -19,7 +19,6 @@ import hardGoToEpic from './hard-go-to-epic';
 import { createReportUserSaga } from './report-user-saga';
 import { actionTypes as settingsTypes } from './settings/action-types';
 import { createShowCertSaga } from './show-cert-saga';
-import { createKeyboardShortcuts } from './keyboard-shortcuts-mode-saga';
 import updateCompleteEpic from './update-complete-epic';
 import { createUserTokenSaga } from './user-token-saga';
 import { createSaveChallengeSaga } from './save-challenge-saga';
@@ -82,7 +81,6 @@ export const sagas = [
   ...createFetchUserSaga(actionTypes),
   ...createShowCertSaga(actionTypes),
   ...createReportUserSaga(actionTypes),
-  ...createKeyboardShortcuts({ ...actionTypes, ...settingsTypes }),
   ...createUserTokenSaga(actionTypes),
   ...createSaveChallengeSaga(actionTypes)
 ];
@@ -751,6 +749,8 @@ export const reducer = handleActions(
     [settingsTypes.updateMySoundComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.updateMyThemeComplete]: (state, { payload }) =>
+      payload ? spreadThePayloadOnUser(state, payload) : state,
+    [settingsTypes.updateMyKeyboardShortcutsComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.updateMyHonestyComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,

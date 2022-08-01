@@ -1,7 +1,7 @@
 ---
 id: a6b0bb188d873cb2c8729495
 title: Перетворення позначення символів HTML
-challengeType: 5
+challengeType: 1
 forumTopicId: 16007
 dashedName: convert-html-entities
 ---

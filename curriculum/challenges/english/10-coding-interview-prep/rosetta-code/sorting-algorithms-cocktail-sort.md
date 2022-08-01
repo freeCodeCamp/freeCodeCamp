@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8004
 title: Sorting algorithms/Cocktail sort
-challengeType: 5
+challengeType: 1
 forumTopicId: 302312
 dashedName: sorting-algorithmscocktail-sort
 ---
 
 # --description--
 
-The [cocktail shaker](https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort) sort is an improvement on the Bubble Sort. Given an array of numbers, the cocktail shaker sort will traverse the array from start to finish, moving the largest number to the end. Then, it will traverse the array backwards and move the smallest number to the start. It repeats these two passes, moving the next largest/smallest number to its correct position in the array until it is sorted.
+The <a href="https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort" target="_blank" rel="noopener noreferrer nofollow">cocktail sort</a> is an improvement on the Bubble Sort. Given an array of numbers, the cocktail sort will traverse the array from start to finish, moving the largest number to the end. Then, it will traverse the array backwards and move the smallest number to the start. It repeats these two passes, moving the next largest/smallest number to its correct position in the array until it is sorted.
 
 # --instructions--
 

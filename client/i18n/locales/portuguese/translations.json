@@ -275,7 +275,7 @@
     "solution-link": "Link da solução",
     "github-link": "Link do GitHub",
     "submit-and-go": "Enviar e ir para o meu próximo desafio",
-    "congratulations": "Parabéns, o seu código passa. Envie seu código para completar este passo e seguir para o próximo.",
+    "congratulations": "Parabéns, o código passou. Envie o código para continuar.",
     "i-completed": "Já completei este desafio",
     "test-output": "O resultado do seu código vai aparecer aqui",
     "running-tests": "// executando testes",
@@ -292,8 +292,7 @@
     "scrimba-tip": "Dica: se o minibrowser estiver cobrindo o código, clique e arraste para movê-lo. Além disso, sinta-se à vontade para parar e editar o código no vídeo a qualquer momento.",
     "chal-preview": "Pré-visualização do desafio",
     "cert-map-estimates": {
-      "certs": "Certificação {{title}} (300 horas)",
-      "coding-prep": "{{title}} (milhares de horas de desafios)"
+      "certs": "Certificação {{title}}"
     },
     "editor-tabs": {
       "info": "Informações",
@@ -332,7 +331,6 @@
     "redirecting": "Redirecionando...",
     "thanks": "Agradecemos por sua doação",
     "thank-you": "Obrigado pelo seu apoio.",
-    "thank-you-2": "Obrigado por apoiar o freeCodeCamp. Você tem uma doação recorrente registrada.",
     "additional": "Você pode fazer uma doação adicional de qualquer valor usando este link: <0>{{url}}</0>",
     "help-more": "Ajude-nos a fazer mais",
     "error": "Algo deu errado com a sua doação.",

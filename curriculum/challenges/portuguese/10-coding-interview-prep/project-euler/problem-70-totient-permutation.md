@@ -1,7 +1,7 @@
 ---
 id: 5900f3b21000cf542c50fec5
 title: 'Problema 70: Permutações de totientes'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302183
 dashedName: problem-70-totient-permutation
 ---

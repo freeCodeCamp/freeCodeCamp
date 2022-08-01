@@ -1,13 +1,13 @@
 ---
 id: 60f85a62fb30c80bcea0cedb
-title: Step 22
+title: Step 23
 challengeType: 0
-dashedName: step-22
+dashedName: step-23
 ---
 
 # --description--
 
-Users will be allowed to chose either a `Personal Account` or `Business Account`.
+Users will be allowed to choose either a `Personal Account` or `Business Account`.
 
 To do this, within each of the first two `label` elements, add one `input` element with `type="radio"`.
 
@@ -38,10 +38,11 @@ assert.equal(document.querySelectorAll('fieldset:nth-child(2) input[type="radio"
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8">
     <title>Registration Form</title>
-	  <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <h1>Registration Form</h1>
@@ -73,12 +74,12 @@ body {
   height: 100vh;
   margin: 0;
   background-color: #1b1b32;
-	color: #f5f6f7;
+  color: #f5f6f7;
 }
 
 label {
-	display: block;
-	margin: 0.5rem 0;
+  display: block;
+  margin: 0.5rem 0;
 }
 
 ```

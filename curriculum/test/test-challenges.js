@@ -435,7 +435,7 @@ ${inspect(commentMap)}
           if (
             challengeType !== challengeTypes.html &&
             challengeType !== challengeTypes.js &&
-            challengeType !== challengeTypes.bonfire &&
+            challengeType !== challengeTypes.jsProject &&
             challengeType !== challengeTypes.modern &&
             challengeType !== challengeTypes.backend
           ) {
@@ -464,7 +464,7 @@ ${inspect(commentMap)}
 
           const buildChallenge =
             challengeType === challengeTypes.js ||
-            challengeType === challengeTypes.bonfire
+            challengeType === challengeTypes.jsProject
               ? buildJSChallenge
               : buildDOMChallenge;
 

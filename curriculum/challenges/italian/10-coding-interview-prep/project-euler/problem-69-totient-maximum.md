@@ -1,7 +1,7 @@
 ---
 id: 5900f3b11000cf542c50fec4
 title: 'Problema 69: Toziente massimo'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302181
 dashedName: problem-69-totient-maximum
 ---

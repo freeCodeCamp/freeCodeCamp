@@ -1,7 +1,7 @@
 ---
 id: 5900f46b1000cf542c50ff7d
 title: 'Завдання 254: Суми факторіалів цифр'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301902
 dashedName: problem-254-sums-of-digit-factorials
 ---

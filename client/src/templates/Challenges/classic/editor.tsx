@@ -40,7 +40,10 @@ import {
 } from '../../../redux/prop-types';
 import { editorToneOptions } from '../../../utils/tone/editor-config';
 import { editorNotes } from '../../../utils/tone/editor-notes';
-import { challengeTypes } from '../../../../utils/challenge-types';
+import {
+  challengeTypes,
+  isFinalProject
+} from '../../../../utils/challenge-types';
 import {
   canFocusEditorSelector,
   challengeMetaSelector,
@@ -430,7 +433,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       /* eslint-disable no-bitwise */
       keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter],
       run: () => {
-        if (props.usesMultifileEditor) {
+        if (props.usesMultifileEditor && !isFinalProject(props.challengeType)) {
           if (challengeIsComplete()) {
             tryToSubmitChallenge();
           } else {
@@ -1081,7 +1084,10 @@ const Editor = (props: EditorProps): JSX.Element => {
       focusIfTargetEditor();
     }
 
-    if (props.initialTests) initTests(props.initialTests);
+    // Once a challenge has been completed, we don't want changes to the content
+    // to reset the tests since the user is already done with the challenge.
+    if (props.initialTests && !challengeIsComplete())
+      initTests(props.initialTests);
 
     if (hasEditableRegion() && editor) {
       if (props.isResetting) {

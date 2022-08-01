@@ -35,7 +35,7 @@ assert($('h2')[1].innerText.match(/Desserts/i));
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -74,7 +74,7 @@ assert($('h2')[1].innerText.match(/Desserts/i));
       </main>
     </div>
   </body>
-<html>
+</html>
 ```
 
 ```css

@@ -48,7 +48,6 @@ Clone freeCodeCamp:
 
 ```console
 git clone https://github.com/freeCodeCamp/freeCodeCamp.git
-docsify serve docs
 ```
 
 Install `docsify`:

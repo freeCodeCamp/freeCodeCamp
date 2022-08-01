@@ -1,7 +1,7 @@
 ---
 id: 5900f4a81000cf542c50ffbb
 title: 'Завдання 316: Числа в десяткових розширеннях'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301972
 dashedName: problem-316-numbers-in-decimal-expansions
 ---
