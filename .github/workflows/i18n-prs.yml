@@ -32,8 +32,8 @@ jobs:
         run: npm run audit-challenges
 
       - name: Create Comment
-        # Run if the validate challenge files step fails, specifically.
-        if: ${{ steps.validate.conclusion == 'failure' }}
+        # Run if the validate challenge files step fails, specifically. Note that we need the failure() call for this step to trigger if the action fails.
+        if: ${{ failure() && steps.validate.conclusion == 'failure' }}
         uses: actions/github-script@7a5c598405937d486b0331594b5da2b14db670da # tag=v6
         with:
           github-token: ${{secrets.CAMPERBOT_NO_TRANSLATE}}
@@ -42,5 +42,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-                body: "Hey @freeCodeCamp/i18n, it looks like we have new English curriculum files that need to be translated."
-              })
+              body: "Hey @freecodecamp/i18n, it looks like we have new English curriculum files that need to be translated."
+            })
