@@ -310,7 +310,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
           <li key='donate'>
             <div className='nav-link nav-link-flex nav-link-header'>
               <span>{t('donate.thanks')}</span>
-              <FontAwesomeIcon icon={faHeart} />
+              <FontAwesomeIcon icon={faHeart as string} />
             </div>
           </li>
         ) : (
@@ -367,7 +367,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
             to={t('links:nav.forum')}
           >
             <span>{t('buttons.forum')}</span>
-            <FontAwesomeIcon icon={faExternalLinkAlt} />
+            <FontAwesomeIcon icon={faExternalLinkAlt as string} />
           </Link>
         </li>
         <li key='news'>
@@ -379,7 +379,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
             to={t('links:nav.news')}
           >
             <span>{t('buttons.news')}</span>
-            <FontAwesomeIcon icon={faExternalLinkAlt} />
+            <FontAwesomeIcon icon={faExternalLinkAlt as string} />
           </Link>
         </li>
         <li key='radio'>
@@ -391,7 +391,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
             to={radioLocation}
           >
             <span>{t('buttons.radio')}</span>
-            <FontAwesomeIcon icon={faExternalLinkAlt} />
+            <FontAwesomeIcon icon={faExternalLinkAlt as string} />
           </Link>
         </li>
         <li className='nav-line' key='theme'>
@@ -413,9 +413,9 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
               <>
                 <span>{t('settings.labels.night-mode')}</span>
                 {theme === Themes.Night ? (
-                  <FontAwesomeIcon icon={faCheckSquare} />
+                  <FontAwesomeIcon icon={faCheckSquare as string} />
                 ) : (
-                  <FontAwesomeIcon icon={faSquare} />
+                  <FontAwesomeIcon icon={faSquare as string} />
                 )}
               </>
             ) : (
