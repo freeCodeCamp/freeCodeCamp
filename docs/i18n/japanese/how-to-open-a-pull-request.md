@@ -14,7 +14,7 @@
 > 
 > `fix(learn): tests for the do...while loop challenge`
 
-プルリクエスト (PR) をオープンする際、以下を使用して、その種類、スコープ (任意)、説明を決定することができます。
+Whenever you open a Pull Request(PR), you can use the below to determine the type, scope (optional), and description.
 
 **種類:**
 
@@ -31,7 +31,7 @@
 
 **説明:**
 
-簡潔に (30文字未満) 記述します。PR の説明欄やコメントに詳細情報を追加できます。
+Keep it short (less than 30 characters) and simple; you can add more information in the PR description box and comments.
 
 良い PR のタイトルの例としては、次のようなものがあります。
 
@@ -54,7 +54,7 @@
 
 3. ブランチから freeCodeCamp の `main` ブランチへ、プルリクエストを送信します。
 
-4. PR の本文には、行った変更とその理由の詳細情報を記述してください。
+4. Include a more detailed summary of the changes you made and how your changes are helpful in the body of your PR.
 
    - プルリクエストテンプレートが表示されます。 これはプルリクエストを開く前に行うべきチェックリストです。
 

@@ -14,7 +14,7 @@ Si consiglia di utilizzare [Titolo convenzionale e messaggi](https://www.convent
 > 
 > `fix(learn): tests for the do...while loop challenge`
 
-Quando apri una Pull Request (PR), puoi usare la seguente lista per determinare il tipo (type), l'ambito (scope) (opzionale), e la descrizione.
+Whenever you open a Pull Request(PR), you can use the below to determine the type, scope (optional), and description.
 
 **Tipo:**
 
@@ -31,7 +31,7 @@ Puoi selezionare un ambito da [questo elenco di etichette](https://github.com/fr
 
 **Descrizione:**
 
-Scrivila breve (meno di 30 caratteri) e semplice: puoi aggiungere ulteriori informazioni nella casella di descrizione PR e nei commenti.
+Keep it short (less than 30 characters) and simple; you can add more information in the PR description box and comments.
 
 Alcuni esempi di buoni titoli PR sarebbero:
 
@@ -54,7 +54,7 @@ Alcuni esempi di buoni titoli PR sarebbero:
 
 3. Fai la pull request dal tuo ramo al ramo `main` di freeCodeCamp.
 
-4. Nel corpo della tua PR includi un riepilogo più dettagliato delle modifiche apportate e perché.
+4. Include a more detailed summary of the changes you made and how your changes are helpful in the body of your PR.
 
    - Ti sarà presentato un modello di pull request. Questa è una lista di controllo che avresti dovuto seguire prima di aprire la pull request.
 
