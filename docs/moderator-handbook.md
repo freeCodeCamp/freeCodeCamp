@@ -352,9 +352,9 @@ http://suicide.org/international-suicide-hotlines.html
 
 Sometimes people will defend something offensive or incendiary that they said as "free speech."
 
-This XKCD comic summarizes perfectly most communities' thoughts on free speech. So if someone defends something in the name of "free speech", feel free to send it to them.
+This XKCD comic summarizes perfectly most communities' thoughts on free speech.
 
-<div align="center"><img src='https://imgs.xkcd.com/comics/free_speech.png' width="400" height="400" /></div>
+<div align="center"><img src='./images/github/xkcd-free-speech.png' width="400" height="400" /></div>
 
 Thanks for reading this, and thanks for helping the developer community!
 
