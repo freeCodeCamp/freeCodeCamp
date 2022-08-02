@@ -46,7 +46,8 @@ import {
   previewMounted,
   updateChallengeMeta,
   openModal,
-  setEditorFocusability
+  setEditorFocusability,
+  testsRunningSelector
 } from '../redux';
 import { savedChallengesSelector } from '../../../redux';
 import { getGuideUrl } from '../utils';
@@ -61,6 +62,7 @@ import '../components/test-frame.css';
 const mapStateToProps = createStructuredSelector({
   challengeFiles: challengeFilesSelector,
   tests: challengeTestsSelector,
+  testsRunning: testsRunningSelector,
   output: consoleOutputSelector,
   isChallengeCompleted: isChallengeCompletedSelector,
   savedChallenges: savedChallengesSelector
@@ -104,6 +106,7 @@ interface ShowClassicProps {
   };
   t: TFunction;
   tests: Test[];
+  testsRunning: boolean;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   openModal: (modal: string) => void;
   setEditorFocusability: (canFocus: boolean) => void;
@@ -131,7 +134,7 @@ const BASE_LAYOUT = {
   codePane: { flex: 1 },
   editorPane: { flex: 1 },
   instructionPane: { flex: 1 },
-  previewPane: { flex: 0.7 },
+  previewPane: { flex: 1 },
   notesPane: { flex: 0.7 },
   testsPane: { flex: 0.3 }
 };
@@ -337,11 +340,12 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
         instructionsPanelRef={this.instructionsPanelRef}
         showToolPanel={showToolPanel}
         videoUrl={this.getVideoUrl()}
+        testsRunning={this.props.testsRunning}
       />
     );
   }
 
-  renderEditor() {
+  renderEditor(hasEditableBoundaries?: boolean) {
     const {
       pageContext: {
         projectPreview: { showProjectPreview }
@@ -372,6 +376,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           title={title}
           usesMultifileEditor={usesMultifileEditor}
           showProjectPreview={showProjectPreview}
+          showRightsReserved={hasEditableBoundaries}
         />
       )
     );
@@ -441,7 +446,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           <Helmet title={`${this.getBlockNameTitle(t)} | freeCodeCamp.org`} />
           <Media maxWidth={MAX_MOBILE_WIDTH}>
             <MobileLayout
-              editor={this.renderEditor()}
+              editor={this.renderEditor(hasEditableBoundaries)}
               guideUrl={getGuideUrl({ forumTopicId, title })}
               hasEditableBoundaries={hasEditableBoundaries}
               hasNotes={!!notes}
@@ -454,6 +459,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
               testOutput={this.renderTestOutput()}
               usesMultifileEditor={usesMultifileEditor}
               videoUrl={this.getVideoUrl()}
+              testsRunning={this.props.testsRunning}
             />
           </Media>
           <Media minWidth={MAX_MOBILE_WIDTH + 1}>
@@ -461,7 +467,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
               block={block}
               challengeFiles={challengeFiles}
               challengeType={challengeType}
-              editor={this.renderEditor()}
+              editor={this.renderEditor(hasEditableBoundaries)}
               hasEditableBoundaries={hasEditableBoundaries}
               hasNotes={!!notes}
               hasPreview={this.hasPreview()}

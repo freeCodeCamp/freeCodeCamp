@@ -18,7 +18,6 @@ export default function layoutSelector({
   const {
     location: { pathname }
   } = props;
-
   if (element.type === FourOhFourPage) {
     return (
       <TcIntegrationLayout pathname={pathname} showFooter={true}>

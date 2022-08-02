@@ -18,6 +18,7 @@ export const actionTypes = createTypes(
     'updateTests',
     'updateLogs',
     'cancelTests',
+    'updateTestsRunning',
 
     'logsToConsole',
 

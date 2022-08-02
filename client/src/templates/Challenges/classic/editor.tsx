@@ -55,16 +55,19 @@ import {
   stopResetting,
   isProjectPreviewModalOpenSelector,
   openModal,
-  isChallengeCompletedSelector
+  isChallengeCompletedSelector,
+  testsRunningSelector
 } from '../redux';
 import GreenPass from '../../../assets/icons/green-pass';
 import Code from '../../../assets/icons/code';
+import ExternalLink from '../../../assets/icons/link-external';
 import LowerJaw from './lower-jaw';
 
 import './editor.css';
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
+const currentYear = new Date().getFullYear();
 
 interface EditorProps {
   canFocus: boolean;
@@ -105,6 +108,8 @@ interface EditorProps {
   }) => void;
   usesMultifileEditor: boolean;
   isChallengeCompleted: boolean;
+  testsRunning: boolean;
+  showRightsReserved?: boolean;
 }
 
 // TODO: this is grab bag of unrelated properties.  There's no need for them to
@@ -134,6 +139,7 @@ const mapStateToProps = createSelector(
   userSelector,
   challengeTestsSelector,
   isChallengeCompletedSelector,
+  testsRunningSelector,
   (
     canFocus: boolean,
     { challengeType }: { challengeType: number },
@@ -144,7 +150,8 @@ const mapStateToProps = createSelector(
     isSignedIn: boolean,
     { theme = Themes.Default }: { theme: Themes },
     tests: [{ text: string; testString: string }],
-    isChallengeCompleted: boolean
+    isChallengeCompleted: boolean,
+    testsRunning: boolean
   ) => ({
     canFocus: open ? false : canFocus,
     challengeType,
@@ -154,7 +161,8 @@ const mapStateToProps = createSelector(
     output,
     theme,
     tests,
-    isChallengeCompleted
+    isChallengeCompleted,
+    testsRunning
   })
 );
 
@@ -582,6 +590,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         challengeHasErrors={challengeHasErrors()}
         tryToSubmitChallenge={tryToSubmitChallenge}
         isEditorInFocus={isEditorInFocus}
+        isRunningTests={props.testsRunning}
       />,
       outputNode,
       callback
@@ -644,7 +653,7 @@ const Editor = (props: EditorProps): JSX.Element => {
           style={{
             height: '15px',
             width: '15px',
-            marginLeft: '7px'
+            margin: '0 0 4px 7px'
           }}
         />
       );
@@ -1045,7 +1054,11 @@ const Editor = (props: EditorProps): JSX.Element => {
       focusIfTargetEditor();
     }
 
-    if (props.initialTests) initTests(props.initialTests);
+    // Once a challenge has been completed, we don't want changes to the content
+    // to reset the tests since the user is already done with the challenge.
+    if (props.initialTests && !challengeIsComplete()) {
+      initTests(props.initialTests);
+    }
 
     if (hasEditableRegion() && editor) {
       if (props.isResetting) {
@@ -1087,7 +1100,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     dataRef.current.outputNode = lowerJawElement;
     updateOutputZone();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props.tests]);
+  }, [props.tests, props.testsRunning]);
 
   useEffect(() => {
     const editor = dataRef.current.editor;
@@ -1111,7 +1124,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   const editorTheme = theme === Themes.Night ? 'vs-dark-custom' : 'vs-custom';
   return (
     <Suspense fallback={<Loader timeout={600} />}>
-      <span className='notranslate'>
+      <span className='notranslate editor-monaco-wrap'>
         <MonacoEditor
           editorDidMount={editorDidMount}
           editorWillMount={editorWillMount}
@@ -1120,6 +1133,18 @@ const Editor = (props: EditorProps): JSX.Element => {
           theme={editorTheme}
         />
       </span>
+      {props.showRightsReserved && (
+        <div className='all-rights-link'>
+          <a
+            href='https://www.freecodecamp.org/'
+            target='_blank'
+            rel='noreferrer'
+          >
+            © {currentYear}, freeCodeCamp. All rights reserved.
+            <ExternalLink />
+          </a>
+        </div>
+      )}
     </Suspense>
   );
 };

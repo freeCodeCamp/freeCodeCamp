@@ -42,6 +42,7 @@ interface MultifileEditorProps {
   resizeProps: ResizeProps;
   title: string;
   showProjectPreview: boolean;
+  showRightsReserved?: boolean;
   usesMultifileEditor: boolean;
   visibleEditors: {
     indexhtml?: boolean;
@@ -121,7 +122,7 @@ const MultifileEditor = (props: MultifileEditorProps) => {
     >
       <ReflexElement flex={10} {...reflexProps} {...resizeProps}>
         <ReflexContainer orientation='vertical'>
-          {editorAndSplitterKeys.map(key => {
+          {editorAndSplitterKeys.map((key, i) => {
             const isSplitter = key.endsWith('-splitter');
             if (isSplitter) {
               return (
@@ -147,6 +148,7 @@ const MultifileEditor = (props: MultifileEditorProps) => {
                     title={title}
                     usesMultifileEditor={usesMultifileEditor}
                     showProjectPreview={showProjectPreview}
+                    showRightsReserved={props.showRightsReserved && !i}
                   />
                 </ReflexElement>
               );

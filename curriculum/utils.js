@@ -36,7 +36,8 @@ const superBlockToOrder = {
   'machine-learning-with-python': 9,
   'coding-interview-prep': 10,
   'responsive-web-design': 11,
-  'relational-database': 12
+  'relational-database': 12,
+  '2022/responsive-web-design-qa': 13
 };
 
 /**
@@ -57,7 +58,8 @@ const superBlockNonAuditedOrder = {
   'machine-learning-with-python': 9,
   'coding-interview-prep': 10,
   '2022/responsive-web-design': 11,
-  'relational-database': 12
+  'relational-database': 12,
+  '2022/responsive-web-design-qa': 13
 };
 
 const superBlockToNewOrder = {
@@ -102,6 +104,7 @@ const directoryToSuperblock = {
   '11-machine-learning-with-python': 'machine-learning-with-python',
   '13-relational-databases': 'relational-database',
   '14-responsive-web-design-22': '2022/responsive-web-design',
+  '14-responsive-web-design-22-qa': '2022/responsive-web-design-qa',
   '15-javascript-algorithms-and-data-structures-22':
     '2022/javascript-algorithms-and-data-structures'
 };

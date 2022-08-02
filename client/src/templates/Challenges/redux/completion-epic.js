@@ -23,7 +23,10 @@ import {
 import postUpdate$ from '../utils/post-update';
 import { mapFilesToChallengeFiles } from '../../../utils/ajax';
 import { standardizeRequestBody } from '../../../utils/challenge-request-helpers';
-import { postChallengeCompletedEvent } from '../../../utils/iframe-message';
+import {
+  postChallengeCompletedEvent,
+  postNavigationLastChallengeEvent
+} from '../../../utils/iframe-message';
 import { actionTypes } from './action-types';
 import {
   projectFormValuesSelector,
@@ -188,7 +191,12 @@ export default function completionEpic(action$, state$) {
         filter(Boolean),
         finalize(async () => {
           postChallengeCompletedEvent({ meta });
-          return navigate(await pathToNavigateTo());
+          const nextNavigatePath = await pathToNavigateTo();
+          if (nextNavigatePath) {
+            return navigate(nextNavigatePath);
+          } else {
+            postNavigationLastChallengeEvent({ meta });
+          }
         })
       );
     })
@@ -198,7 +206,5 @@ export default function completionEpic(action$, state$) {
 async function findPathToNavigateTo(nextChallengePath, superBlock) {
   if (nextChallengePath.includes(superBlock)) {
     return nextChallengePath;
-  } else {
-    return `/learn/${superBlock}/#${superBlock}-projects`;
   }
 }

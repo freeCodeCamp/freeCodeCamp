@@ -36,6 +36,7 @@ const initialState = {
   isBuildEnabled: true,
   isResetting: false,
   logsOut: [],
+  testsRunning: false,
   modal: {
     completion: false,
     help: false,
@@ -80,6 +81,7 @@ export const createQuestion = createAction(actionTypes.createQuestion);
 export const initTests = createAction(actionTypes.initTests);
 export const updateTests = createAction(actionTypes.updateTests);
 export const cancelTests = createAction(actionTypes.cancelTests);
+export const updateTestsRunning = createAction(actionTypes.updateTestsRunning);
 
 export const initConsole = createAction(actionTypes.initConsole);
 export const initLogs = createAction(actionTypes.initLogs);
@@ -134,6 +136,7 @@ export const challengeFilesSelector = state => state[ns].challengeFiles;
 export const challengeMetaSelector = state => state[ns].challengeMeta;
 export const challengeTestsSelector = state => state[ns].challengeTests;
 export const consoleOutputSelector = state => state[ns].consoleOut;
+export const testsRunningSelector = state => state[ns].testsRunning;
 export const completedChallengesIds = state =>
   completedChallengesSelector(state).map(node => node.id);
 export const isChallengeCompletedSelector = state => {
@@ -260,6 +263,10 @@ export const reducer = handleActions(
     [actionTypes.updateConsole]: (state, { payload }) => ({
       ...state,
       consoleOut: state.consoleOut.concat(payload)
+    }),
+    [actionTypes.updateTestsRunning]: (state, { payload }) => ({
+      ...state,
+      testsRunning: payload
     }),
     [actionTypes.initLogs]: state => ({
       ...state,

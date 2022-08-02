@@ -1,0 +1,21 @@
+{
+  "name": "Learn HTML by Building a Cat Photo App QA",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-html-by-building-a-cat-photo-app-qa",
+  "order": 0,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "2022/responsive-web-design-qa",
+  "challengeOrder": [
+    [
+      "cccccccccccccccccccccccc",
+      "Step 1"
+    ],
+    [
+      "dddddddddddddddddddddddd",
+      "Step 2"
+    ]
+  ]}

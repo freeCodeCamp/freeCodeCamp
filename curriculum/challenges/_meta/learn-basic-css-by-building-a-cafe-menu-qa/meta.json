@@ -1,0 +1,21 @@
+{
+  "name": "Learn Basic CSS by Building a Cafe Menu QA",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-basic-css-by-building-a-cafe-menu-qa",
+  "order": 1,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "2022/responsive-web-design-qa",
+  "challengeOrder": [
+    [
+      "eeeeeeeeeeeeeeeeeeeeeeee",
+      "Step 1"
+    ],
+    [
+      "ffffffffffffffffffffffff",
+      "Step 2"
+    ]
+  ]}

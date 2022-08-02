@@ -1,8 +1,7 @@
 // Define Application name
-def APPNAME = "freecodecamp-mfe"
+def APPNAME = "freecodecamp"
 
 // Define which branch build and deploy need to run in the below array
-
 def branchfilter = ['dev', 'prod']
 
 if (!branchfilter.contains(env.BRANCH_NAME)) {
@@ -13,7 +12,7 @@ if (!branchfilter.contains(env.BRANCH_NAME)) {
     return
 }
 
-//Define branch specific var
+// Define branch specific vars
 if (env.BRANCH_NAME == 'dev') {
     DEPLOY_ENV = 'DEV'
     LOGICAL_ENV = 'dev'
@@ -24,7 +23,6 @@ if (env.BRANCH_NAME == 'dev') {
     ENABLE_CACHE = false
 }
 
-// NOTE: main/prod is not supported yet
 if (env.BRANCH_NAME == 'prod') {
     DEPLOY_ENV = 'PROD'
     LOGICAL_ENV = 'prod'
@@ -126,7 +124,7 @@ pipeline {
                 """
             }
         }
-        stage('appdeploy')    
+        stage('appdeploy')
         {
             //Deploying app
             when { expression { IS_APP_DEPLOY } }
@@ -137,10 +135,10 @@ pipeline {
                 sh """
                 #!/bin/bash
                 ./master_deploy.sh -d CFRONT -e $DEPLOY_ENV -c $ENABLE_CACHE
-                """         
+                """
             }
         }
-        stage('apideploy')    
+        stage('apideploy')
         {
             //Deploying app
             when { expression { IS_API_DEPLOY } }
@@ -153,7 +151,7 @@ pipeline {
                 sed -i '/node_modules/d' ./.dockerignore
                 docker build -f docker/api/ECSDockerfile -t $APPNAME-api:latest .
                 ./master_deploy.sh -d ECS -e $DEPLOY_ENV -t latest -s ${LOGICAL_ENV}-${APPNAME}-appvar -i ${APPNAME}-api                
-                """         
+                """
             }
         }      
     }

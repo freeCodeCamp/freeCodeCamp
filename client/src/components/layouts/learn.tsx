@@ -6,11 +6,8 @@ import { Loader } from '../../components/helpers';
 import {
   userSelector,
   userFetchStateSelector,
-  isSignedInSelector,
-  tryToShowDonationModal
+  isSignedInSelector
 } from '../../redux';
-import DonateModal from '../Donation/donation-modal';
-import createRedirect from '../create-redirect';
 
 import './prism.css';
 import './prism-night.css';
@@ -38,32 +35,16 @@ const mapStateToProps = createSelector(
   })
 );
 
-const mapDispatchToProps = {
-  tryToShowDonationModal
-};
-
-const RedirectEmailSignUp = createRedirect('/email-sign-up');
+const mapDispatchToProps = {};
 
 type LearnLayoutProps = {
   isSignedIn?: boolean;
   fetchState: FetchState;
   user: User;
-  tryToShowDonationModal: () => void;
   children?: React.ReactNode;
 };
 
-function LearnLayout({
-  isSignedIn,
-  fetchState,
-  user,
-  tryToShowDonationModal,
-  children
-}: LearnLayoutProps): JSX.Element {
-  useEffect(() => {
-    tryToShowDonationModal();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
+function LearnLayout({ fetchState, children }: LearnLayoutProps): JSX.Element {
   useEffect(() => {
     return () => {
       const metaTag = document.querySelector(`meta[name="robots"]`);
@@ -77,19 +58,12 @@ function LearnLayout({
     return <Loader fullScreen={true} />;
   }
 
-  if (isSignedIn && !user.acceptedPrivacyTerms) {
-    return <RedirectEmailSignUp />;
-  }
-
   return (
     <>
       <Helmet>
         <meta content='noindex' name='robots' />
       </Helmet>
       <main id='learn-app-wrapper'>{children}</main>
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
-      /* @ts-ignore  */}
-      <DonateModal />
     </>
   );
 }

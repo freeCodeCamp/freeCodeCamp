@@ -106,6 +106,7 @@
   },
   "dependencies": {
     "dotenv": "10.0.0",
+    "gatsby-plugin-s3": "^0.3.8",
     "invariant": "2.2.4"
   },
   "devDependencies": {

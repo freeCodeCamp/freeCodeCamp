@@ -1,10 +1,18 @@
-import { TabPane, Tabs } from '@freecodecamp/react-bootstrap';
-import i18next from 'i18next';
 import React, { Component, ReactElement } from 'react';
+import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
 
+import { Test } from '../../../redux/prop-types';
 import ToolPanel from '../components/tool-panel';
-import EditorTabs from './editor-tabs';
+import { challengeTestsSelector } from '../redux';
+import MobilePaneSelector, { Tab } from './mobile-pane-selector';
 
+const mapStateToProps = createSelector(
+  challengeTestsSelector,
+  (tests: Test[]) => ({
+    tests
+  })
+);
 interface MobileLayoutProps {
   editor: JSX.Element | null;
   guideUrl: string;
@@ -17,14 +25,8 @@ interface MobileLayoutProps {
   testOutput: JSX.Element;
   videoUrl: string;
   usesMultifileEditor: boolean;
-}
-
-enum Tab {
-  Editor = 'editor',
-  Preview = 'preview',
-  Console = 'console',
-  Notes = 'notes',
-  Instructions = 'instructions'
+  testsRunning: boolean;
+  tests: Test[];
 }
 
 interface MobileLayoutState {
@@ -55,73 +57,49 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       hasPreview,
       notes,
       preview,
-      guideUrl,
-      videoUrl,
+      tests,
+      testsRunning,
       usesMultifileEditor
     } = this.props;
 
-    const editorTabPaneProps = {
-      mountOnEnter: true,
-      unmountOnExit: true
-    };
+    const isChallengeComplete = tests.every(test => test.pass && !test.err);
 
     // Unlike the desktop layout the mobile version does not have an ActionRow,
     // but still needs a way to switch between the different tabs.
 
     return (
-      <>
-        <Tabs
-          activeKey={currentTab}
-          defaultActiveKey={currentTab}
-          id='challenge-page-tabs'
-          onSelect={this.switchTab}
+      <div id='challenge-page-tabs'>
+        <MobilePaneSelector
+          activePane={currentTab}
+          togglePane={this.switchTab}
+          hasEditableBoundaries={hasEditableBoundaries}
+          hasPreview={hasPreview}
+          hasNotes={hasNotes}
+          usesMultifileEditor={usesMultifileEditor}
+        />
+        <div
+          className={`tab-content ${
+            hasEditableBoundaries ? 'no-toolpanel' : ''
+          }`}
         >
-          {!hasEditableBoundaries && (
-            <TabPane
-              eventKey={Tab.Instructions}
-              title={i18next.t('learn.editor-tabs.info')}
-            >
-              {instructions}
-            </TabPane>
-          )}
-          <TabPane
-            eventKey={Tab.Editor}
-            title={i18next.t('learn.editor-tabs.code')}
-            {...editorTabPaneProps}
-          >
-            {usesMultifileEditor && <EditorTabs />}
-            {editor}
-          </TabPane>
-          <TabPane
-            eventKey={Tab.Console}
-            title={i18next.t('learn.editor-tabs.tests')}
-            {...editorTabPaneProps}
-          >
-            {testOutput}
-          </TabPane>
-          {hasNotes && usesMultifileEditor && (
-            <TabPane
-              eventKey={Tab.Notes}
-              title={i18next.t('learn.editor-tabs.notes')}
-            >
-              {notes}
-            </TabPane>
-          )}
-          {hasPreview && (
-            <TabPane
-              eventKey={Tab.Preview}
-              title={i18next.t('learn.editor-tabs.preview')}
-            >
-              {preview}
-            </TabPane>
-          )}
-        </Tabs>
-        <ToolPanel guideUrl={guideUrl} isMobile={true} videoUrl={videoUrl} />
-      </>
+          {currentTab === Tab.Editor && editor}
+          {currentTab === Tab.Instructions && instructions}
+          {currentTab === Tab.Console && testOutput}
+          {currentTab === Tab.Notes && notes}
+          {currentTab === Tab.Preview && preview}
+        </div>
+        {!hasEditableBoundaries && (
+          <ToolPanel
+            isMobile={true}
+            isRunningTests={testsRunning}
+            challengeIsCompleted={isChallengeComplete}
+          />
+        )}
+      </div>
     );
   }
 }
 
 MobileLayout.displayName = 'MobileLayout';
 
-export default MobileLayout;
+export default connect(mapStateToProps)(MobileLayout);

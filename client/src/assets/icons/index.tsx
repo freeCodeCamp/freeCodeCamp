@@ -35,7 +35,9 @@ const generateIconComponent = (
   className: string
 ): JSX.Element => {
   // fallback in case super block doesn't exist and for tests
-  const Icon = iconMap[superBlock] ? iconMap[superBlock] : ResponsiveDesign;
+  const Icon = iconMap[superBlock as keyof typeof iconMap]
+    ? iconMap[superBlock as keyof typeof iconMap]
+    : ResponsiveDesign;
 
   return <Icon className={className} />;
 };
