@@ -40,7 +40,11 @@ const valueLookup = reverseAlphabet[value];
 
 # --instructions--
 
-Convert the switch statement into an object called `lookup`. Use it to look up `val` and assign the associated string to the `result` variable.
+Instead of using a bulky `switch` statement, let's swap this code for a more lightweight object to perform our lookup operation.
+
+Convert the switch statement into an object called `lookup` – which will store coded words from the [The International Radiotelephony Spelling Alphabet](https://en.wikipedia.org/wiki/NATO_phonetic_alphabet). 
+
+Then, use it to look up `val` and assign the associated string to the `result` variable.
 
 # --hints--
 
