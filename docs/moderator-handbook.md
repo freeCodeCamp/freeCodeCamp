@@ -109,7 +109,7 @@ Before merging any pull request, make sure that GitHub is reporting all checks t
 > [!WARNING]
 > Merging a PR that fails CI/CD checks can cause difficulties for all stakeholders, including the dev-team and contributors.
 
-##### Handling merge conflicts:
+##### Handling Merge Conflicts:
 
 Sometimes there will be a merge conflict.
 
