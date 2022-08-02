@@ -32,7 +32,7 @@ const reverseAlphabet = {
 const thirdLetter = reverseAlphabet[2];
 const lastLetter = reverseAlphabet[25];
 
-const value = 2;
+let value = 2;
 const valueLookup = reverseAlphabet[value];
 ```
 
