@@ -1,0 +1,45 @@
+name: i18n - Curriculum PR Validation
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  ci:
+    name: Validate i18n Builds
+    runs-on: ubuntu-latest
+    # run only on PRs that camperbot opens with title that matches the curriculum sync
+    if: ${{ github.event.pull_request.user.login == 'camperbot' && contains(github.event.pull_request.title, 'chore(i18n,learn)') }}
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@v3
+
+      - name: Use Node.js v${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Validate Challenge Files
+        id: validate
+        run: npm run audit-challenges
+
+      - name: Create Comment
+        # Run if the validate challenge files step fails, specifically. Note that we need the failure() call for this step to trigger if the action fails.
+        if: ${{ failure() && steps.validate.conclusion == 'failure' }}
+        uses: actions/github-script@7a5c598405937d486b0331594b5da2b14db670da # tag=v6
+        with:
+          github-token: ${{secrets.CAMPERBOT_NO_TRANSLATE}}
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: "Hey @freecodecamp/i18n, it looks like we have new English curriculum files that need to be translated."
+            })
