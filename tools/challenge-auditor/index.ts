@@ -28,7 +28,6 @@ const blocksThatNeedToMove = ['d3-dashboard'];
 
 void (async () => {
   let actionShouldFail = false;
-  const languagesFailing: string[] = [];
   const englishCurriculumDirectory = join(
     process.cwd(),
     'curriculum',
@@ -56,7 +55,6 @@ void (async () => {
     lang => lang !== 'english'
   );
   for (const lang of langsToCheck) {
-    let languageIsFailing = false;
     console.log(`\n=== ${lang} ===`);
     const certs = auditedCerts[lang as keyof typeof auditedCerts];
     const langCurriculumDirectory = join(
@@ -68,25 +66,35 @@ void (async () => {
     const auditedFiles = englishFilePaths.filter(file =>
       certs.some(cert => file.startsWith(superBlockFolderMap[cert]))
     );
-    for (const file of auditedFiles) {
-      if (blocksThatNeedToMove.some(block => file.includes(`/${block}/`))) {
-        continue;
-      }
-      const filePath = join(langCurriculumDirectory, file);
-      const fileExists = await access(filePath)
-        .then(() => true)
-        .catch(() => false);
-      if (!fileExists) {
-        console.log(`${filePath} does not exist.`);
-        languageIsFailing = true;
-      }
-    }
-    if (languageIsFailing) {
-      languagesFailing.push(lang);
-      actionShouldFail = true;
-    } else {
+    const auditPassed = await auditChallengeFiles(auditedFiles, {
+      langCurriculumDirectory
+    });
+    if (auditPassed) {
       console.log(`All expected files found.`);
+    } else {
+      actionShouldFail = true;
     }
   }
   actionShouldFail ? process.exit(1) : process.exit(0);
 })();
+
+async function auditChallengeFiles(
+  auditedFiles: string[],
+  { langCurriculumDirectory }: { langCurriculumDirectory: string }
+) {
+  let auditPassed = true;
+  for (const file of auditedFiles) {
+    if (blocksThatNeedToMove.some(block => file.includes(`/${block}/`))) {
+      continue;
+    }
+    const filePath = join(langCurriculumDirectory, file);
+    const fileExists = await access(filePath)
+      .then(() => true)
+      .catch(() => false);
+    if (!fileExists) {
+      console.log(`${filePath} does not exist.`);
+      auditPassed = false;
+    }
+  }
+  return auditPassed;
+}
