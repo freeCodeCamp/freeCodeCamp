@@ -188,7 +188,7 @@ const LowerJaw = ({
     const isAttemptsLargerThanTest =
       attemptsNumber &&
       testsLength &&
-      (attemptsNumber >= testsLength || attemptsNumber > 3);
+      (attemptsNumber >= testsLength || attemptsNumber >= 1);
 
     if (isAttemptsLargerThanTest && !earliestAvailableCompletion)
       return (
