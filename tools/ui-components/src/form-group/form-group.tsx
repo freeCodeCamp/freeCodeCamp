@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { FormContext } from '../form-context/index';
 import { ControlLabel } from '../control-label/index';
+import { FormControl } from '../form-control/index';
 import { FormGroupProps } from './types';
 
 const FormGroup = React.forwardRef<HTMLLabelElement, FormGroupProps>(
@@ -11,16 +11,17 @@ const FormGroup = React.forwardRef<HTMLLabelElement, FormGroupProps>(
     const classes = [defaultClasses, className].join('');
 
     return (
-      <FormContext.Provider>
-        <FormGroup
-          className={classes}
-          validationState={validationState}
-          bsClass={bsClass}
-          bsSize={bsSize}
-        >
-          <ControlLabel htmlFor={''} srOnly={false} bsClass={''}></ControlLabel>
-        </FormGroup>
-      </FormContext.Provider>
+      <FormGroup
+        className={classes}
+        validationState={validationState}
+        bsClass={bsClass}
+        bsSize={bsSize}
+      >
+        <ControlLabel htmlFor={''} srOnly={false} bsClass={''}>
+          label
+        </ControlLabel>
+        <FormControl></FormControl>
+      </FormGroup>
     );
   }
 );
@@ -30,8 +31,7 @@ export { FormGroup };
 
 //  How it's implemented
 
-{
-  /*
+/*
 
  <FormGroup>
     {type === 'hidden' ? null : (
@@ -57,4 +57,15 @@ export { FormGroup };
 </FormGroup>
 
 */
-}
+
+// <FormGroup controlId='new-email' validationState={newEmailValidation}>
+// <ControlLabel>{t('settings.email.new')}</ControlLabel>
+// <FormControl
+//   onChange={createHandleEmailFormChange('newEmail')}
+//   type='email'
+//   value={newEmail}
+// />
+// {newEmailValidationMessage ? (
+//   <HelpBlock>{newEmailValidationMessage}</HelpBlock>
+// ) : null}
+// </FormGroup>
