@@ -173,13 +173,13 @@ Forum moderators can delete users' posts. You should only do this for the follow
 2. Someone has posted a link or code that is malicious in nature and could harm other campers who click on it.
 3. Someone has flooded a thread with a lot of spam messages.
 
-### Dealing with spam
+### Dealing with Spam
 
 For the first spam post of a user, send them a message explaining the problem, and remove the link or post as appropriate. Leave a note on the user's profile explaining the action you have taken. If the problem persists, then quietly block the user from posting (using the silence option on the User Admin panel). Send the user a warning with the [Code of Conduct](https://code-of-conduct.freecodecamp.org). Check the box in the private message indicating that your message is a "formal warning."
 
 As a moderator, you can ask questions and report incidents in the [staff forum section](https://forum.freecodecamp.org/c/mod-team/4).
 
-### Dealing with off-topic conversations
+### Dealing with Off-Topic Conversations
 
 Posts or topics that seem to be in the wrong place can be recategorized or renamed to whatever would be appropriate.
 
@@ -324,13 +324,13 @@ Anyone is welcome in the [contributors room on our chat server](https://discord.
 
 We assume contributors will read anything in this room that directly mentions them with an **@username**. Everything else is optional, but feel free to read anything anyone posts in there and interact.
 
-## Dealing with solicitors
+## Dealing with Solicitors
 
 You may be approached by organizations who want to partner or co-brand with freeCodeCamp somehow. Once you realize that this is what they're after, **please stop talking to them** and tell them to email `team[at]freecodecamp.org`.
 
 We get proposals like this all the time, and the staff are in the best position to judge whether such a relationship will be worth it for our community (and it rarely is).
 
-## Dealing with (mental) health inquiries
+## Dealing with (Mental) Health Inquiries
 
 You may come across situations where users seek medical advice or are dealing with mental health issues and are looking for support.
 
