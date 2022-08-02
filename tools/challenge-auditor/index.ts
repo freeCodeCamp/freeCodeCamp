@@ -105,11 +105,11 @@ void (async () => {
           file.startsWith(superBlockFolderMap[cert])
       )
     );
-    const auditPassed = await auditChallengeFiles(auditedFiles, {
+    const noMissingFiles = await auditChallengeFiles(auditedFiles, {
       langCurriculumDirectory
     });
-    const slugAuditPassed = await auditSlugs(lang, certs);
-    if (auditPassed && slugAuditPassed) {
+    const noDuplicateSlugs = await auditSlugs(lang, certs);
+    if (noMissingFiles && noDuplicateSlugs) {
       console.log(`All challenges pass.`);
     } else {
       actionShouldFail = true;
