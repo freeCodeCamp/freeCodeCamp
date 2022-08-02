@@ -64,7 +64,7 @@ The `plotImages` function will be used a few times to plot images. It takes an a
 
 Recreate the `train_image_generator` using `ImageDataGenerator`. 
 
-Since there are a small number of training examples there is a risk of overfitting. One way to fix this problem is by creating more training data from existing training examples by using random transformations.
+Since there are a small number of training examples, there is a risk of overfitting. One way to fix this problem is by creating more training data from existing training examples by using random transformations.
 
 Add 4-6 random transformations as arguments to `ImageDataGenerator`. Make sure to rescale the same as before.
 
