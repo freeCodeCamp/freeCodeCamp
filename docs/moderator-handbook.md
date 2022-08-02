@@ -147,7 +147,7 @@ There are also situations where the contributor is trying to add a link to their
 
 You can close these invalid pull requests and reply to them with these [reply templates](moderator-handbook.md#closing-invalid-pull-requests).
 
-#### Other guidelines for moderators on GitHub
+#### Other Guidelines for Moderators on GitHub
 
 Though you will have write access to freeCodeCamp's repository, **you should never push code directly to freeCodeCamp repositories**. All code should enter freeCodeCamp's codebase in the form of a pull request from a fork of the repository.
 
