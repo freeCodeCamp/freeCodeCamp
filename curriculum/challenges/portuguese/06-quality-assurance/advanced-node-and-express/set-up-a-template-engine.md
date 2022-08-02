@@ -22,11 +22,11 @@ Um mecanismo de templates (template engine) permite o uso de arquivos de modelo 
 
 O Express precisa saber qual mecanismo de modelos você está usando. Usaremos o método `set` para atribuir `pug` como o valor da propriedade `view engine`: `app.set('view engine', 'pug')`
 
-A página não será carregada até que você renderize corretamente o arquivo de índice no diretório `views/pug`.
+A página estará vazia até que você renderize corretamente o arquivo de índice no diretório `views/pug`.
 
-Altere o argumento da declaração `res.render()` na rota `/` para que seja o caminho de arquivo para o diretório `views/pug`. O caminho pode ser um caminho relativo (relativo às visualizações) ou um caminho absoluto e não necessita de uma extensão de arquivo.
+Para renderizar o template do `pug`, você precisa usar `res.render()` na rota `/`. Passe o caminho do arquivo para o diretório `views/pug` como argumento para o método. O caminho pode ser um caminho relativo (relativo às visualizações) ou um caminho absoluto e não necessita de uma extensão de arquivo.
 
-Se tudo correu como planejado, sua página inicial vai parar de mostrar a mensagem "`Pug template is not defined.`" e agora exibirá uma mensagem indicando que você renderizou com sucesso o modelo do Pug!
+Se tudo correu como planejado, a página inicial da aplicação não vai mais estar vazia e exibirá uma mensagem indicando que você renderizou o template do Pug com sucesso!
 
 Envie sua página quando você achar que ela está certa. Se você estiver encontrando erros, pode <a href="https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791" target="_blank" rel="noopener noreferrer nofollow">conferir o projeto concluído até este ponto</a>.
 

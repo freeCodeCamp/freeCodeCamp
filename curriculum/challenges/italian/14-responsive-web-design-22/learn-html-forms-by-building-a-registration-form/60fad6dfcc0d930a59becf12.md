@@ -1,8 +1,8 @@
 ---
 id: 60fad6dfcc0d930a59becf12
-title: Step 37
+title: Step 38
 challengeType: 0
-dashedName: step-37
+dashedName: step-38
 ---
 
 # --description--
@@ -37,10 +37,11 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.fontSize, '16px')
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8">
     <title>Registration Form</title>
-      <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <h1>Registration Form</h1>
@@ -57,12 +58,12 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.fontSize, '16px')
         <label><input type="radio" name="account-type" /> Business Account</label>
         <label>
           <input type="checkbox" name="terms" required /> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
-              </label>
+        </label>
       </fieldset>
       <fieldset>
         <label>Upload a profile picture: <input type="file" name="file" /></label>
         <label>Input your age (years): <input type="number" name="age" min="13" max="120" />
-              </label>
+        </label>
         <label>How did you hear about us?
           <select name="referrer">
             <option value="">(select one)</option>
@@ -74,7 +75,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.fontSize, '16px')
         </label>
         <label>Provide a bio:
           <textarea name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea>
-              </label>
+        </label>
       </fieldset>
       <input type="submit" value="Submit" />
     </form>
@@ -89,14 +90,14 @@ body {
   height: 100vh;
   margin: 0;
   background-color: #1b1b32;
-    color: #f5f6f7;
+  color: #f5f6f7;
 
 }
 --fcc-editable-region--
 
 label {
-    display: block;
-    margin: 0.5rem 0;
+  display: block;
+  margin: 0.5rem 0;
 }
 
 ```
