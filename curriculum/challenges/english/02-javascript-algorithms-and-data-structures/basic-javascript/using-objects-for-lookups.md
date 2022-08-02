@@ -9,12 +9,16 @@ dashedName: using-objects-for-lookups
 
 # --description--
 
-Objects can be thought of as a key/value storage, like a dictionary. If you have tabular data — or data that can be organized into columns (keys) and rows (values) – then using an object and its properties to "lookup" values that correspond to the property can be more efficient than a chain of `if/else` or a multiple-case `switch` statement. This is most useful when you know that your input data is limited to a certain range.
+Objects can be thought of as a key/value storage, like a dictionary. If you have tabular data — or data that can be organized into columns (keys) and rows (values) – then using an object and its properties to "lookup" values that correspond to the property can be more efficient than a chain of `if/else` or a multiple-case `switch` statement. 
 
-Here is an example of a simple reverse alphabet lookup:
+Using objects as a dictionary to lookup values is most useful when input data is limited to a certain range — in the following example, for instance, we will look up the numeric order of letters in the English alphabet – in reverse order.
+
+Here is an example of using an object to perform a simple reverse alphabet lookup:
+Since Z is the last letter of the alphabet, we will place it at number 1 in our reversed alphabet;
+Y is the second to last letter of the alphabet, we will place it at number 2, and so on.
 
 ```js
-const alpha = {
+const reverseAlphabet = {
   1:"Z",
   2:"Y",
   3:"X",
@@ -25,11 +29,11 @@ const alpha = {
   26:"A"
 };
 
-const thirdLetter = alpha[2];
-const lastLetter = alpha[24];
+const thirdLetter = reverseAlphabet[2];
+const lastLetter = reverseAlphabet[24];
 
 const value = 2;
-const valueLookup = alpha[value];
+const valueLookup = reverseAlphabet[value];
 ```
 
 `thirdLetter` is the string `Y`, `lastLetter` is the string `C`, and `valueLookup` is the string `Y`.
