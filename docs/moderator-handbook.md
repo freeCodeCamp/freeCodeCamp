@@ -155,7 +155,7 @@ Also, you should never accept your own PRs. They must be reviewed by another mod
 
 If you notice anyone breaking the [Code of Conduct](https://code-of-conduct.freecodecamp.org) on GitHub issues, or opening pull requests with malicious content or code, email `support[at]freecodecamp.org` with a link to the offending pull request, and we can consider banning them from freeCodeCamp's GitHub organization entirely.
 
-## Moderating the forum
+## Moderating the Forum
 
 As a moderator, you help keep our community an enjoyable place for anyone to learn and get help. You will deal with flagged posts and handle spam, off-topic, and other inappropriate conversations.
 
@@ -187,7 +187,7 @@ In exceptional circumstances, it may be appropriate for a moderator to fork a di
 
 Again, if you have any problems or questions, make a post with your actions in the `"Staff"` category, and tag another moderator if you want them to review your moderating actions.
 
-### Underage users
+### Underage Users
 
 Our [Terms of Service](https://freecodecamp.org/terms) require that freeCodeCamp users be at least 13 years of age. If a user reveals that they are under the age of 13, send them the below message and delete their forum account (if deletion is not available, suspending the account is sufficient).
 
@@ -211,7 +211,7 @@ Sometimes people will post things that they think are funny. They don't realize 
 
 But if it is an egregious offense that can't reasonably be attributed to a cultural difference or a misunderstanding of the English language. In that case, you should strongly consider blocking the member from the Facebook group.
 
-## Moderating chat
+## Moderating Chat
 
 Here's how moderators deal with violations of our [Code of Conduct](https://code-of-conduct.freecodecamp.org/) on our chat server:
 
@@ -297,7 +297,7 @@ Here's how moderators deal with violations of our [Code of Conduct](https://code
 
     If you're not going to be active as a Moderator for a while due to vacation, illness, or any other reason, make sure to let the others know in the `#mod-chat` channel. This is so we know if we can count on you to be regularly active on the server or not.
 
-## How to become a moderator
+## How to Become a Moderator
 
 Suppose you are helping people in the community consistently over time. In that case, our moderator team will eventually take notice, and one of them will mention you as a possible moderator to [our staff](https://forum.freecodecamp.org/g/Team). There are no shortcuts to becoming a moderator.
 
@@ -308,7 +308,7 @@ If you are approved, we will add you to our moderator teams on [GitHub](https://
 >
 > This is required for us to be able to give you write access to some of our repositories.
 
-## How we retire inactive moderators
+## How We Retire Inactive Moderators
 
 Please note that we will frequently remove moderators whom we think are inactive. When we do this, we will send the following message:
 
@@ -318,7 +318,7 @@ This is a standard message notifying you that, since you don't seem to have been
 If you think we did this in error, or once you're ready to come back and contribute more, just reply to this message letting us know.
 ```
 
-## How our contributors room works
+## How Our Contributors Room Works
 
 Anyone is welcome in the [contributors room on our chat server](https://discord.gg/PRyKn3Vbay). It is the designated chat room for moderators and other campers who contribute to our community in any number of ways, including through study groups.
 
@@ -348,7 +348,7 @@ Helpful URLs:
 
 http://suicide.org/international-suicide-hotlines.html
 
-## A note on free speech
+## A Note on Free Speech
 
 Sometimes people will defend something offensive or incendiary that they said as "free speech."
 
@@ -358,13 +358,13 @@ This XKCD comic summarizes perfectly most communities' thoughts on free speech.
 
 Thanks for reading this, and thanks for helping the developer community!
 
-## Reply templates
+## Reply Templates
 
 These are some of the standard reply templates that you may use while reviewing pull requests and triaging issues/pull requests.
 
 > You can make your own saved replies with GitHub's built-in [saved replies](https://github.com/settings/replies/) feature or use the ones below.
 
-### Thank you
+### Thank You
 
 ```markdown
 Thank you for your contribution to the page! 👍
@@ -382,7 +382,7 @@ Thank you for your contribution to the page! 👍
 We are happy to accept these changes and look forward to future contributions. 📝
 ```
 
-### Build error
+### Build Error
 
 ```markdown
 Hey @username
@@ -396,7 +396,7 @@ Once you resolve these issues, we will be able to review your PR and merge it. �
 Feel free to reference the [contributing guidelines](how-to-work-on-coding-challenges.md#testing-challenges) for instructions on running the CI build locally. ✅
 ```
 
-### Syncing fork
+### Syncing Fork
 
 > When PR is not up to date with the `main` branch.
 
