@@ -30,7 +30,7 @@ const reverseAlphabet = {
 };
 
 const thirdLetter = reverseAlphabet[2];
-const lastLetter = reverseAlphabet[24];
+const lastLetter = reverseAlphabet[25];
 
 const value = 2;
 const valueLookup = reverseAlphabet[value];
