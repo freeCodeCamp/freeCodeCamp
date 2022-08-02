@@ -139,7 +139,7 @@ If the pull request doesn't look ready to merge, you can politely reply telling 
 
 If you need a second opinion on a pull request, go ahead and leave your comments on the pull request, then add the "discussing" label to the pull request.
 
-##### Closing an invalid pull request:
+##### Closing an Invalid Pull Request:
 
 Often, a pull request will be low effort. You can usually tell this immediately when the contributor didn't bother checking the checkboxes in the Pull Request Template or used a generic pull request title like "Made changes" or "Update index.md".
 
