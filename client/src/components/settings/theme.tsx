@@ -27,6 +27,7 @@ export default function ThemeSettings({
     >
       <ToggleSetting
         action={t('settings.labels.night-mode')}
+        explain={t('Want to be dark?')}
         flag={currentTheme === Themes.Night}
         flagName='currentTheme'
         offLabel={t('buttons.off')}

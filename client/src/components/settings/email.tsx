@@ -180,6 +180,7 @@ function EmailSettings({
             <FormControl
               onChange={createHandleEmailFormChange('newEmail')}
               type='email'
+              placeholder='username@bar.com'
               value={newEmail}
             />
             {newEmailValidationMessage ? (
@@ -194,6 +195,7 @@ function EmailSettings({
             <FormControl
               onChange={createHandleEmailFormChange('confirmNewEmail')}
               type='email'
+              placeholder='username@bar.com'
               value={confirmNewEmail}
             />
             {confirmEmailValidationMessage ? (

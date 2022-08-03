@@ -63,7 +63,6 @@ function PrivacySettings({
         <Form inline={true} onSubmit={submitNewProfileSettings}>
           <ToggleSetting
             action={t('settings.labels.my-profile')}
-            explain={t('settings.disabled')}
             flag={privacyValues['isLocked']}
             flagName='isLocked'
             offLabel={t('buttons.public')}
@@ -81,6 +80,7 @@ function PrivacySettings({
           />
           <ToggleSetting
             action={t('settings.labels.my-location')}
+            explain={t('Your location will be hidden, if set to private.')}
             flag={!privacyValues['showLocation']}
             flagName='showLocation'
             offLabel={t('buttons.public')}
@@ -97,6 +97,7 @@ function PrivacySettings({
           />
           <ToggleSetting
             action={t('settings.labels.my-points')}
+            explain={t('Your earned points will be hidden, if set to private.')}
             flag={!privacyValues['showPoints']}
             flagName='showPoints'
             offLabel={t('buttons.public')}
@@ -138,6 +139,9 @@ function PrivacySettings({
           />
           <ToggleSetting
             action={t('settings.labels.my-donations')}
+            explain={t(
+              'Your donations to the server will be hidden, if set to private.'
+            )}
             flag={!privacyValues['showDonation']}
             flagName='showPortfolio'
             offLabel={t('buttons.public')}

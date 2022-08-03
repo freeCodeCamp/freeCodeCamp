@@ -220,6 +220,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
               </ControlLabel>
               <FormControl
                 onChange={this.handleNameChange}
+                placeholder='Your Full Name'
                 type='text'
                 value={name}
               />
@@ -230,6 +231,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
               </ControlLabel>
               <FormControl
                 onChange={this.handleLocationChange}
+                placeholder='Your Location'
                 type='text'
                 value={location}
               />
@@ -240,6 +242,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
               </ControlLabel>
               <FormControl
                 onChange={this.handlePictureChange}
+                placeholder='Put URL of Your Picture here!'
                 type='url'
                 value={picture}
               />
@@ -251,6 +254,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
               </ControlLabel>
               <FormControl
                 componentClass='textarea'
+                placeholder='Share About Yourselves!'
                 onChange={this.handleAboutChange}
                 value={about}
               />
