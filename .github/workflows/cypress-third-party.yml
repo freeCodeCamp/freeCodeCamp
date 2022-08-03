@@ -1,13 +1,8 @@
 name: CI - Cypress (e2e) 3rd party donation tests
 on:
   push:
-    paths-ignore:
-      - 'docs/**'
-    branches-ignore:
-      - 'renovate/**'
-  pull_request:
-    paths-ignore:
-      - 'docs/**'
+    branches:
+      - fix/third-party-cypress-action
 
 jobs:
   build-client:
@@ -69,7 +64,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        browsers: [chrome, firefox, electron]
+        browsers: [chrome, electron]
         node-version: [16.x]
         include:
           - browsers: electron
@@ -102,14 +97,6 @@ jobs:
         run: |
           tar -xf client-artifact.tar
           rm client-artifact.tar
-
-      - name: Downgrade Firefox
-        run: |
-          curl https://ftp.mozilla.org/pub/firefox/releases/101.0/linux-x86_64/en-US/firefox-101.0.tar.bz2 --output firefox-101.0.tar.bz2
-          tar -xjf firefox-101.0.tar.bz2
-          sudo mv firefox /opt/
-          sudo mv /usr/bin/firefox /usr/bin/firefox_old
-          sudo ln -s /opt/firefox/firefox /usr/bin/firefox
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@2fddd8803e2f5c9604345a0b591c3020ee971a93 # tag=v3
