@@ -45,7 +45,7 @@ mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }
       assert.match(
         packJson.dependencies.mongoose,
         /^\^5\.11\.15/,
-        'Wrong version of "mongoose". It should be ~5.11.15'
+        'Wrong version of "mongoose". It should be ^5.11.15'
       );
     },
     (xhr) => {
