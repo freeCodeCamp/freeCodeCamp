@@ -177,7 +177,7 @@ Forum moderators can delete users' posts. You should only do this for the follow
 
 For the first spam post of a user, send them a message explaining the problem, and remove the link or post as appropriate. Leave a note on the user's profile explaining the action you have taken. If the problem persists, then quietly block the user from posting (using the silence option on the User Admin panel). Send the user a warning with the [Code of Conduct](https://code-of-conduct.freecodecamp.org). Check the box in the private message indicating that your message is a "formal warning."
 
-As a moderator, you can ask questions and report incidents in the [staff forum section](https://forum.freecodecamp.org/c/mod-team/4).
+As a moderator, you can ask questions and report incidents in the [mod-team forum section](https://forum.freecodecamp.org/c/mod-team/4).
 
 ### Dealing with Off-Topic Conversations
 
@@ -287,7 +287,7 @@ Here's how moderators deal with violations of our [Code of Conduct](https://code
 
    If you disagree with a moderator's action, talk with them in private or bring it up in the #mod-chat channel. Never override a moderator's action, and never contradict the other moderator(s) publicly. Instead, have a cool-headed discussion in `#mod-chat` and convince the moderator that they themselves should reverse their ban or change their PoV (Point of View).
 
-   *Remember: We’re all on the same team. We want to dignify the role of moderators and present a unified front.*
+   _Remember: We’re all on the same team. We want to dignify the role of moderators and present a unified front._
 
 9. **Talk with other moderators**
 
