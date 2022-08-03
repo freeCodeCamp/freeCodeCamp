@@ -25,6 +25,6 @@ describe('<FormGroup />', () => {
       );
     }),
     it('Should have div as default component', () => {
-      render(<FormGroup data-testid='test-id' />);
+      render(<FormGroup />);
     });
 });

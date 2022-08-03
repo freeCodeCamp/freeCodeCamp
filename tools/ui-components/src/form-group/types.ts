@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { AsProp } from '../helpers';
 
 export interface FormGroupProps
   extends React.HTMLAttributes<HTMLElement>,
     AsProp {
-  children: React.ReactChild;
+  children?: ReactNode;
   className?: string;
   validationState?: ['success', 'warning', 'error', null];
   bsSize?: ['lg', 'large', 'sm', 'small'];
