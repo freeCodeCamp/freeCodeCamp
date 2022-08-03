@@ -1,34 +1,34 @@
 ---
-id: 60fadfa2b540b70dcfa8b771
-title: Крок 45
+id: 60fad6dfcc0d930a59becf12
+title: Крок 38
 challengeType: 0
-dashedName: step-45
+dashedName: step-38
 ---
 
 # --description--
 
-Для другого `fieldset` потрібно, щоб текст `input` та `label` з’являвся в одному рядку.
+HTML для реєстраційної форми завершено. Тепер ви можете його трохи прикрасити.
 
-Почніть з надання елементам `input` в другому `fieldset` класу `inline`.
+Почніть зі зміни шрифту на `Tahoma` та розміру шрифту на `16px` в `body`.
 
 # --hints--
 
-Надайте першому `input` клас `inline`.
+Ви повинні використати властивість `font-family`, щоб змінити шрифт.
 
 ```js
-assert(document.querySelectorAll('fieldset:nth-child(2) input')?.[0]?.classList?.contains('inline'));
+assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('body')?.fontFamily);
 ```
 
-Надайте другому `input` клас `inline`.
+Ви повинні встановити властивість `font-family` на `Tahoma`.
 
 ```js
-assert(document.querySelectorAll('fieldset:nth-child(2) input')?.[1]?.classList?.contains('inline'));
+assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.fontFamily, 'Tahoma');
 ```
 
-Надайте третьому `input` клас `inline`.
+Ви повинні встановити властивість `font-size` на `16px`.
 
 ```js
-assert(document.querySelectorAll('fieldset:nth-child(2) input')?.[2]?.classList?.contains('inline'));
+assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.fontSize, '16px');
 ```
 
 # --seed--
@@ -53,7 +53,6 @@ assert(document.querySelectorAll('fieldset:nth-child(2) input')?.[2]?.classList?
         <label>Enter Your Email: <input type="email" name="email" required /></label>
         <label>Create a New Password: <input type="password" name="password" pattern="[a-z0-5]{8,}" required /></label>
       </fieldset>
---fcc-editable-region--
       <fieldset>
         <label><input type="radio" name="account-type" /> Personal Account</label>
         <label><input type="radio" name="account-type" /> Business Account</label>
@@ -61,7 +60,6 @@ assert(document.querySelectorAll('fieldset:nth-child(2) input')?.[2]?.classList?
           <input type="checkbox" name="terms" required /> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
         </label>
       </fieldset>
---fcc-editable-region--
       <fieldset>
         <label>Upload a profile picture: <input type="file" name="file" /></label>
         <label>Input your age (years): <input type="number" name="age" min="13" max="120" />
@@ -86,48 +84,20 @@ assert(document.querySelectorAll('fieldset:nth-child(2) input')?.[2]?.classList?
 ```
 
 ```css
+--fcc-editable-region--
 body {
   width: 100%;
   height: 100vh;
   margin: 0;
   background-color: #1b1b32;
   color: #f5f6f7;
-  font-family: Tahoma;
-  font-size: 16px;
-}
 
-h1, p {
-  margin: 1em auto;
-  text-align: center;
 }
-
-form {
-  width: 60vw;
-  max-width: 500px;
-  min-width: 300px;
-  margin: 0 auto;
-}
-
-fieldset {
-  border: none;
-  padding: 2rem 0;
-  border-bottom: 3px solid #3b3b4f;
-}
-
-fieldset:last-of-type {
-  border-bottom: none;
-}
+--fcc-editable-region--
 
 label {
   display: block;
   margin: 0.5rem 0;
-}
-
-input,
-textarea,
-select {
-  margin: 10px 0 0 0;
-  width: 100%;
 }
 
 ```
