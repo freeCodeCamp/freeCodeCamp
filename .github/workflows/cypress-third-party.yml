@@ -2,7 +2,7 @@ name: CI - Cypress (e2e) 3rd party donation tests
 on:
   push:
     branches:
-      - fix/third-party-cypress-action
+      - main
 
 jobs:
   build-client:
