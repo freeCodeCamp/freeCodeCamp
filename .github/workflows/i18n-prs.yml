@@ -23,10 +23,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install Dependencies and Build Config
-        run: |
-          npm ci
-          npm run create:config
+      - name: Install Dependencies
+        run: npm ci
 
       - name: Validate Challenge Files
         id: validate
