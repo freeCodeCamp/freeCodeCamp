@@ -34,7 +34,7 @@
     "tools/ui-components"
   ],
   "scripts": {
-    "audit-challenges": "ts-node tools/challenge-auditor/index.ts",
+    "audit-challenges": "npm run create:config && ts-node tools/challenge-auditor/index.ts",
     "analyze-bundle": "webpack-bundle-analyzer",
     "prebuild": "npm-run-all create:*",
     "build": "npm-run-all -p build:*",
