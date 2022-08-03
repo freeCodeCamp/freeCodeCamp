@@ -147,4 +147,4 @@ jobs:
           headless: true
           spec: |
             ${{ matrix.spec }}
-            spec: cypress/integration/third-party/**/*.js
+            cypress/integration/third-party/*.js
