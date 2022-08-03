@@ -22,6 +22,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Set freeCodeCamp Environment Variables
+        run: cp sample.env .env
+
       - name: Install Dependencies
         run: npm ci
 
