@@ -1,34 +1,29 @@
 ---
-id: 60fadfa2b540b70dcfa8b771
-title: Крок 45
+id: 60ffe7d8aae62c05bcc9e7eb
+title: Крок 53
 challengeType: 0
-dashedName: step-45
+dashedName: step-53
 ---
 
 # --description--
 
-Для другого `fieldset` потрібно, щоб текст `input` та `label` з’являвся в одному рядку.
+Завдяки `display` зі значенням `block` кнопка надсилання розташована на одному рівні з лівим краєм свого батьківського елемента.
 
-Почніть з надання елементам `input` в другому `fieldset` класу `inline`.
+Використайте таку ж саму техніку, що й для центрування `form`, щоб зцентрувати кнопку відправки.
 
 # --hints--
 
-Надайте першому `input` клас `inline`.
+Ви повинні надати кнопці відправки `margin` зі значенням `0 auto`.
 
 ```js
-assert(document.querySelectorAll('fieldset:nth-child(2) input')?.[0]?.classList?.contains('inline'));
+assert.equal(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?.margin, '0px auto');
 ```
 
-Надайте другому `input` клас `inline`.
+Ви не повинні надавати кнопці відправки `min-width` або `max-width`.
 
 ```js
-assert(document.querySelectorAll('fieldset:nth-child(2) input')?.[1]?.classList?.contains('inline'));
-```
-
-Надайте третьому `input` клас `inline`.
-
-```js
-assert(document.querySelectorAll('fieldset:nth-child(2) input')?.[2]?.classList?.contains('inline'));
+assert.isEmpty(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?.minWidth);
+assert.isEmpty(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?.maxWidth);
 ```
 
 # --seed--
@@ -53,15 +48,13 @@ assert(document.querySelectorAll('fieldset:nth-child(2) input')?.[2]?.classList?
         <label>Enter Your Email: <input type="email" name="email" required /></label>
         <label>Create a New Password: <input type="password" name="password" pattern="[a-z0-5]{8,}" required /></label>
       </fieldset>
---fcc-editable-region--
       <fieldset>
-        <label><input type="radio" name="account-type" /> Personal Account</label>
-        <label><input type="radio" name="account-type" /> Business Account</label>
+        <label><input type="radio" name="account-type" class="inline" /> Personal Account</label>
+        <label><input type="radio" name="account-type" class="inline" /> Business Account</label>
         <label>
-          <input type="checkbox" name="terms" required /> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
+          <input type="checkbox" name="terms" class="inline" required /> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
         </label>
       </fieldset>
---fcc-editable-region--
       <fieldset>
         <label>Upload a profile picture: <input type="file" name="file" /></label>
         <label>Input your age (years): <input type="number" name="age" min="13" max="120" />
@@ -128,6 +121,27 @@ textarea,
 select {
   margin: 10px 0 0 0;
   width: 100%;
+  min-height: 2em;
 }
+
+input, textarea {
+  background-color: #0a0a23;
+  border: 1px solid #0a0a23;
+  color: #ffffff;
+}
+
+.inline {
+  width: unset;
+  margin: 0 0.5em 0 0;
+  vertical-align: middle;
+}
+
+--fcc-editable-region--
+input[type="submit"] {
+  display: block;
+  width: 60%;
+
+}
+--fcc-editable-region--
 
 ```

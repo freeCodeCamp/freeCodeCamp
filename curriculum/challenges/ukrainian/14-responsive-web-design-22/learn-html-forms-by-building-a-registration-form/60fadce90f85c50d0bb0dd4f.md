@@ -1,34 +1,20 @@
 ---
-id: 60fadfa2b540b70dcfa8b771
-title: Крок 45
+id: 60fadce90f85c50d0bb0dd4f
+title: Крок 42
 challengeType: 0
-dashedName: step-45
+dashedName: step-42
 ---
 
 # --description--
 
-Для другого `fieldset` потрібно, щоб текст `input` та `label` з’являвся в одному рядку.
-
-Почніть з надання елементам `input` в другому `fieldset` класу `inline`.
+Щоб трохи відокремити елементи `fieldset`, виберіть їх та надайте `border-bottom` зі значенням `3px solid #3b3b4f`.
 
 # --hints--
 
-Надайте першому `input` клас `inline`.
+Ви повинні надати елементам `fieldset` властивість `border-bottom` зі значенням `3px solid #3b3b4f`.
 
 ```js
-assert(document.querySelectorAll('fieldset:nth-child(2) input')?.[0]?.classList?.contains('inline'));
-```
-
-Надайте другому `input` клас `inline`.
-
-```js
-assert(document.querySelectorAll('fieldset:nth-child(2) input')?.[1]?.classList?.contains('inline'));
-```
-
-Надайте третьому `input` клас `inline`.
-
-```js
-assert(document.querySelectorAll('fieldset:nth-child(2) input')?.[2]?.classList?.contains('inline'));
+assert.equal(new __helpers.CSSHelp(document).getStyle('fieldset')?.borderBottom, '3px solid rgb(59, 59, 79)');
 ```
 
 # --seed--
@@ -53,7 +39,6 @@ assert(document.querySelectorAll('fieldset:nth-child(2) input')?.[2]?.classList?
         <label>Enter Your Email: <input type="email" name="email" required /></label>
         <label>Create a New Password: <input type="password" name="password" pattern="[a-z0-5]{8,}" required /></label>
       </fieldset>
---fcc-editable-region--
       <fieldset>
         <label><input type="radio" name="account-type" /> Personal Account</label>
         <label><input type="radio" name="account-type" /> Business Account</label>
@@ -61,7 +46,6 @@ assert(document.querySelectorAll('fieldset:nth-child(2) input')?.[2]?.classList?
           <input type="checkbox" name="terms" required /> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
         </label>
       </fieldset>
---fcc-editable-region--
       <fieldset>
         <label>Upload a profile picture: <input type="file" name="file" /></label>
         <label>Input your age (years): <input type="number" name="age" min="13" max="120" />
@@ -108,26 +92,16 @@ form {
   margin: 0 auto;
 }
 
+--fcc-editable-region--
 fieldset {
   border: none;
   padding: 2rem 0;
-  border-bottom: 3px solid #3b3b4f;
 }
-
-fieldset:last-of-type {
-  border-bottom: none;
-}
+--fcc-editable-region--
 
 label {
   display: block;
   margin: 0.5rem 0;
-}
-
-input,
-textarea,
-select {
-  margin: 10px 0 0 0;
-  width: 100%;
 }
 
 ```
