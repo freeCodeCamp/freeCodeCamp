@@ -66,9 +66,6 @@ jobs:
       matrix:
         browsers: [chrome, electron]
         node-version: [16.x]
-        include:
-          - browsers: electron
-            spec: cypress/integration/learn/challenges/projects.js
     services:
       mongodb:
         image: mongo:4
@@ -132,6 +129,4 @@ jobs:
           config: baseUrl=http://localhost:8000
           browser: ${{ matrix.browsers }}
           headless: true
-          spec: |
-            ${{ matrix.spec }}
-            cypress/integration/third-party/*.js
+          spec: cypress/integration/third-party/*.js
