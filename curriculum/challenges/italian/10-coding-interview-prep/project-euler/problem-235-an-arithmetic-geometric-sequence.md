@@ -1,7 +1,7 @@
 ---
 id: 5900f4571000cf542c50ff6a
 title: 'Problema 235: Sequenza geometrica aritmetica'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301879
 dashedName: problem-235-an-arithmetic-geometric-sequence
 ---

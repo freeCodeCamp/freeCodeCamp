@@ -1,7 +1,7 @@
 ---
 id: 5900f39f1000cf542c50feb2
 title: 'Problema 51: sostituzioni di cifre nei primi'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302162
 dashedName: problem-51-prime-digit-replacements
 ---

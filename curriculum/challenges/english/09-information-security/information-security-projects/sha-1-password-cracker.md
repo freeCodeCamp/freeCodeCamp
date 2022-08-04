@@ -41,7 +41,7 @@ Here are some hashed passwords to test the function with when `use_salts` is set
 - `da5a4e8cf89539e66097acd2f8af128acae2f8ae` should return "q1w2e3r4t5"
 - `ea3f62d498e3b98557f9f9cd0d905028b3b019e1` should return "bubbles1"
 
-The `hashlib` library has been imported for you. You should condider using it in your code. <a href="https://docs.python.org/3/library/hashlib.html" target="_blank" rel="noopener noreferrer nofollow">Learn more about "hashlib" here</a>.
+The `hashlib` library has been imported for you. You should consider using it in your code. <a href="https://docs.python.org/3/library/hashlib.html" target="_blank" rel="noopener noreferrer nofollow">Learn more about "hashlib" here</a>.
 
 ## Development
 

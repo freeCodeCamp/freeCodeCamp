@@ -1,7 +1,7 @@
 ---
 id: 5900f3761000cf542c50fe89
 title: '問題 10: 素数の和'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301723
 dashedName: problem-10-summation-of-primes
 ---

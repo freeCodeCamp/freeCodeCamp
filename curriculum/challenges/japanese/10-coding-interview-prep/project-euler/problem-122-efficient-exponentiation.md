@@ -1,7 +1,7 @@
 ---
 id: 5900f3e61000cf542c50fef9
 title: '問題 122: 効率的な累乗法'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301749
 dashedName: problem-122-efficient-exponentiation
 ---

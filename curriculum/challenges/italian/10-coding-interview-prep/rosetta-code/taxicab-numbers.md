@@ -1,7 +1,7 @@
 ---
 id: 594ecc0d9a8cf816e3340187
 title: Numeri dei taxi
-challengeType: 5
+challengeType: 1
 forumTopicId: 302337
 dashedName: taxicab-numbers
 ---

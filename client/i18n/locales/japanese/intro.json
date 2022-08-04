@@ -128,7 +128,7 @@
         "title": "CSS ボックスモデルの学習: ロスコの絵画を作成する",
         "intro": [
           "すべての HTML 要素は間隔と境界を伴ったボックスそのものです。これはボックスモデルと呼ばれています。",
-          "このコースでは、CSS とボックスモデルを使ってロスコ風の長方形アート作品を作成します。"
+          "このコースでは、CSS とボックスモデルを使ってマーク・ロスコ風の長方形アート作品を作成します。"
         ]
       },
       "learn-css-variables-by-building-a-city-skyline": {
@@ -302,13 +302,13 @@
   "2022/javascript-algorithms-and-data-structures": {
     "title": "JavaScript アルゴリズムとデータ構造 (ベータ版)",
     "intro": [
-      "プレイスホルダ―",
-      "プレイスホルダ―"
+      "プレイスホルダー",
+      "プレイスホルダー"
     ],
     "note": "",
     "blocks": {
       "build-a-caesars-cipher-project": {
-        "title": "Build a Caesars Cipher Project",
+        "title": "シーザー暗号解析器作成プロジェクト",
         "intro": [
           "",
           ""
@@ -804,7 +804,8 @@
         "title": "ロゼッタコード",
         "intro": [
           "由緒あるロゼッタコードライブラリから取られた以下の無料のプログラミングタスクで、クリエイティブな課題解決技能を向上させましょう。",
-          "これらの課題は困難かもしれませんが、あなたのアルゴリズムのロジックを新たな高みに押し上げます。"
+          "これらの課題は困難かもしれませんが、あなたのアルゴリズムのロジックを新たな高みに押し上げます。",
+          "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>作: Rosetta Code</a>"
         ]
       },
       "project-euler": {

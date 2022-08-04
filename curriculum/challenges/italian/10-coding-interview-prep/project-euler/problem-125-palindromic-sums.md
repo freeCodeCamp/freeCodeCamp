@@ -1,7 +1,7 @@
 ---
 id: 5900f3e91000cf542c50fefc
 title: 'Problema 125: somme palindrome'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301752
 dashedName: problem-125-palindromic-sums
 ---

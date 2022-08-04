@@ -8,8 +8,8 @@ Existem alguns termos que usamos quando discutimos o conteúdo do nosso currícu
 
 - `certification` : Quando nos referimos a uma certificação neste caso, estamos falando de um certificado factual que os usuários podem solicitar. Não estamos falando do nome do superBlock específico.
 - `superBlock` : Um superbloco é a coleção de desafios em nível superior. Cada superbloco corresponde a uma certificação no currículo (por exemplo, Design responsivo para a web).
-- `block` : Um bloco é uma seção dentro de um superbloco. Um bloco corresponde a um grupo de desafios em uma certificação determinada (por exemplo, HTML e HTML5 básicos)
-- `challenge` : Um desafio é uma lição única dentro do currículo (por exemplo, Conhecer os elementos HTML)
+- `block` : Um bloco é uma seção dentro de um superbloco. Um bloco corresponde a um grupo de desafios em uma certificação determinada (por exemplo, HTML e HTML5 básico)
+- `challenge` : um desafio é uma lição única dentro do currículo (por exemplo, Conhecer os elementos HTML)
 
 ## Árvore de arquivos
 

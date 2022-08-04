@@ -1,7 +1,7 @@
 ---
 id: 594d966a1467eb84194f0086
 title: Média/Médias pitagóricas
-challengeType: 5
+challengeType: 1
 forumTopicId: 302227
 dashedName: averagespythagorean-means
 ---

@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import { navigate } from 'gatsby';
 
 const createRedirect =

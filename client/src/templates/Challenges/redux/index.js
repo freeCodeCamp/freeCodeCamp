@@ -160,7 +160,7 @@ export const challengeDataSelector = state => {
   let challengeData = { challengeType };
   if (
     challengeType === challengeTypes.js ||
-    challengeType === challengeTypes.bonfire
+    challengeType === challengeTypes.jsProject
   ) {
     challengeData = {
       ...challengeData,

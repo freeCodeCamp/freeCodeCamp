@@ -2,7 +2,7 @@
 id: 5900f4151000cf542c50ff28
 title: >-
   Problema 169: Explorar o número de maneiras diferentes pelas quais um número pode ser expresso como uma soma de potências de 2
-challengeType: 5
+challengeType: 1
 forumTopicId: 301803
 dashedName: >-
   problem-169-exploring-the-number-of-different-ways-a-number-can-be-expressed-as-a-sum-of-powers-of-2

@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc8014
 title: Stabilità dell'ordinamento
-challengeType: 5
+challengeType: 1
 forumTopicId: 302308
 dashedName: sort-stability
 ---

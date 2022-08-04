@@ -1,7 +1,7 @@
 ---
 id: 5900f5261000cf542c510038
 title: 'Problema 441: A soma inversa de pares de coprimos'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302113
 dashedName: problem-441-the-inverse-summation-of-coprime-couples
 ---

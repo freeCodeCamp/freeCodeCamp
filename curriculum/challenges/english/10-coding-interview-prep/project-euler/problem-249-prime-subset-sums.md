@@ -1,7 +1,7 @@
 ---
 id: 5900f4671000cf542c50ff79
 title: 'Problem 249: Prime Subset Sums'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301896
 dashedName: problem-249-prime-subset-sums
 ---

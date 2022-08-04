@@ -7,9 +7,9 @@
 При обговоренні навчальної програми важливо знати декілька термінів.
 
 - `certification` : Коли йдеться про сертифікацію, мається на увазі сертифікати, які отримують користувачі. Це не те саме, що й superBlock.
-- `superBlock` : superBlock — це збірка найскладніших завдань. Кожен суперблок відповідає сертифікату в навчальній програмі (наприклад, Адаптивний вебдизайн).
-- `block` : Блок — це розділ у межах superblock. Блок відповідає групі завдань у даній сертифікації (наприклад, Базовий HTML та HTML5)
-- `challenge` : Завдання — це окремий урок у навчальній програмі (наприклад, Ознайомтесь з HTML елементами)
+- `superBlock` : superBlock — це збірка найскладніших завдань. Each superblock corresponds to a certification in the curriculum (e.g. Responsive Web Design).
+- `block` : Блок — це розділ у межах superblock. A block corresponds to a group of challenges in a given certification (e.g. Basic HTML and HTML5)
+- `challenge` : A challenge is a single lesson within the curriculum (e.g. Say Hello to HTML Elements)
 
 ## Дерево файлів
 

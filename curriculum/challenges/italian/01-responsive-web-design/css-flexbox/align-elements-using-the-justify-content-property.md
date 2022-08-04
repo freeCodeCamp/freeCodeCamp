@@ -11,7 +11,7 @@ dashedName: align-elements-using-the-justify-content-property
 
 Certe volte gli oggetti flex all'interno di un contenitore flex non riempiono tutto lo spazio del contenitore. È comune voler dire a CSS di allineare e spaziare gli elementi flex in una certa maniera. Fortunatamente, la proprietà `justify-content` ha diverse opzioni per farlo. Ma prima, c'è un po' di terminologia importante da capire prima di rivedere queste opzioni.
 
-<a href="https://www.freecodecamp.org/news/flexbox-the-ultimate-css-flex-cheatsheet/" target="_blank" rel="noopener noreferrer nofollow">Per maggiori informazioni sulle proprietà flex-box, leggi qui</a>
+<a href="https://www.freecodecamp.org/italian/news/css-flexbox-un-compendio-con-diagrammi-animati/" target="_blank" rel="noopener noreferrer nofollow">Per maggiori informazioni sulle proprietà flex-box, leggi qui</a>
 
 Ricorda che l'impostazione di un contenitore flex come riga posiziona gli elementi flex fianco a fianco da sinistra a destra. Un contenitore flex impostato come colonna piazza gli oggetti flex in una pila verticale dall'alto verso il basso. Per ognuno, la direzione in cui sono disposti gli elementi flex è chiamata **asse principale**. Per una riga, si tratta di una linea orizzontale che taglia ogni elemento. E per una colonna, l'asse principale è una linea verticale che attraversa gli elementi.
 

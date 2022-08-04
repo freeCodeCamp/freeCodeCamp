@@ -73,6 +73,7 @@ assert(code.match(/\/\*\s*FOOTER\s*\*\//i));
         </section>
       </main>
       <hr class="bottom-line">
+      <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>

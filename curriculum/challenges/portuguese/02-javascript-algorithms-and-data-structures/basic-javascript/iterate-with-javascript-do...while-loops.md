@@ -21,7 +21,7 @@ do {
 } while (i < 5);
 ```
 
-O exemplo acima se comporta de forma similar a outros tipos de laços, e o array resultante se parecerá com `[0,1,2,3,4]`. No entanto, o que torna o laço `do...while` diferente de outros laços é como ele se comporta quando uma condição falha na primeira verificação. Vamos ver isso na prática. Aqui está um laço comum `while` que rodará o código no laço enquanto `i < 5`:
+O exemplo acima se comporta de forma similar a outros tipos de laços, e o array resultante se parecerá com `[0, 1, 2, 3, 4]`. No entanto, o que torna o laço `do...while` diferente de outros laços é como ele se comporta quando uma condição falha na primeira verificação. Vamos ver isso na prática. Aqui está um laço comum `while` que rodará o código no laço enquanto `i < 5`:
 
 ```js
 const ourArray = []; 

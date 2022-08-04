@@ -1,7 +1,7 @@
 ---
 id: 5900f38f1000cf542c50fea2
 title: 'Problema 35: Primi circolari'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302009
 dashedName: problem-35-circular-primes
 ---

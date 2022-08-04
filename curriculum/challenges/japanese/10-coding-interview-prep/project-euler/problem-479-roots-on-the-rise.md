@@ -1,7 +1,7 @@
 ---
 id: 5900f54b1000cf542c51005d
 title: '問題 479: 根の増大'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302156
 dashedName: problem-479-roots-on-the-rise
 ---

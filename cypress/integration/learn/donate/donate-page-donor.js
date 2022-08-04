@@ -11,7 +11,7 @@ describe('Donate page', () => {
 
     cy.get('[data-cy="donate.thank-you"]').should(
       'have.text',
-      'Thank you for being a supporter of freeCodeCamp. You currently have a recurring donation.'
+      'Thank you for being a supporter.'
     );
     cy.get('[data-cy="donate.bigger-donation"]').should(
       'have.text',

@@ -1,7 +1,7 @@
 ---
 id: 595b98f8b5a2245e243aa831
 title: Triângulos Heronianos
-challengeType: 5
+challengeType: 1
 forumTopicId: 302285
 dashedName: heronian-triangles
 ---

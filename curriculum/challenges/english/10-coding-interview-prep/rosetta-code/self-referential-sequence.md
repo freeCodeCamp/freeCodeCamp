@@ -1,7 +1,7 @@
 ---
 id: 5eb3e4a21f462f409d656c73
 title: Self-referential sequence
-challengeType: 5
+challengeType: 1
 forumTopicId: 385317
 dashedName: self-referential-sequence
 ---

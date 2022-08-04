@@ -27,11 +27,11 @@
   },
   "dependencies": {
     "@monaco-editor/react": "4.4.5",
-    "next": "12.2.0",
+    "next": "12.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "concurrently": "7.2.2"
+    "concurrently": "7.3.0"
   }
 }

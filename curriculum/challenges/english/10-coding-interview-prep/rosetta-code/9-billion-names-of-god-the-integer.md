@@ -1,7 +1,7 @@
 ---
 id: 5949b579404977fbaefcd736
 title: 9 billion names of God the integer
-challengeType: 5
+challengeType: 1
 forumTopicId: 302219
 dashedName: 9-billion-names-of-god-the-integer
 ---

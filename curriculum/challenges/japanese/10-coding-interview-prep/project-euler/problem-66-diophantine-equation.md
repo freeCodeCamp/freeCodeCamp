@@ -1,7 +1,7 @@
 ---
 id: 5900f3ae1000cf542c50fec1
 title: '問題 66: ディオファントス方程式'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302178
 dashedName: problem-66-diophantine-equation
 ---

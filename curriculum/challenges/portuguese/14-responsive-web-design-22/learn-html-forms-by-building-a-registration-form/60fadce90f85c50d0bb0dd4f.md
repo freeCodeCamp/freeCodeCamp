@@ -1,8 +1,8 @@
 ---
 id: 60fadce90f85c50d0bb0dd4f
-title: Passo 41
+title: Passo 42
 challengeType: 0
-dashedName: step-41
+dashedName: step-42
 ---
 
 # --description--
@@ -23,10 +23,11 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('fieldset')?.borderBottom,
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8">
     <title>Registration Form</title>
-      <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <h1>Registration Form</h1>
@@ -43,12 +44,12 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('fieldset')?.borderBottom,
         <label><input type="radio" name="account-type" /> Business Account</label>
         <label>
           <input type="checkbox" name="terms" required /> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
-              </label>
+        </label>
       </fieldset>
       <fieldset>
         <label>Upload a profile picture: <input type="file" name="file" /></label>
         <label>Input your age (years): <input type="number" name="age" min="13" max="120" />
-              </label>
+        </label>
         <label>How did you hear about us?
           <select name="referrer">
             <option value="">(select one)</option>
@@ -60,7 +61,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('fieldset')?.borderBottom,
         </label>
         <label>Provide a bio:
           <textarea name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea>
-              </label>
+        </label>
       </fieldset>
       <input type="submit" value="Submit" />
     </form>
@@ -74,9 +75,9 @@ body {
   height: 100vh;
   margin: 0;
   background-color: #1b1b32;
-    color: #f5f6f7;
+  color: #f5f6f7;
   font-family: Tahoma;
-    font-size: 16px;
+  font-size: 16px;
 }
 
 h1, p {
@@ -86,21 +87,21 @@ h1, p {
 
 form {
   width: 60vw;
-    max-width: 500px;
-    min-width: 300px;
-    margin: 0 auto;
+  max-width: 500px;
+  min-width: 300px;
+  margin: 0 auto;
 }
 
 --fcc-editable-region--
 fieldset {
   border: none;
-    padding: 2rem 0;
+  padding: 2rem 0;
 }
 --fcc-editable-region--
 
 label {
-    display: block;
-    margin: 0.5rem 0;
+  display: block;
+  margin: 0.5rem 0;
 }
 
 ```

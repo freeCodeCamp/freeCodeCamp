@@ -15,7 +15,7 @@ import {
   openModal
 } from '../redux';
 import './hotkeys.css';
-import { isProject } from '../../../../utils/challenge-types';
+import { isFinalProject } from '../../../../utils/challenge-types';
 
 const mapStateToProps = createSelector(
   canFocusEditorSelector,
@@ -102,7 +102,7 @@ function Hotkeys({
       if (
         usesMultifileEditor &&
         typeof challengeType == 'number' &&
-        !isProject(challengeType)
+        !isFinalProject(challengeType)
       ) {
         if (testsArePassing) {
           submitChallenge();

@@ -804,7 +804,8 @@
         "title": "Rosetta Code",
         "intro": [
           "Sube tu nivel de habilidad de resolución creativa de problemas con estas tareas de programación gratis de la clásica librería de Rosetta Code.",
-          "Estos desafíos pueden resultar difíciles, pero empujarán tu lógica de algoritmos a nuevas alturas."
+          "Estos desafíos pueden resultar difíciles, pero empujarán tu lógica de algoritmos a nuevas alturas.",
+          "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Attribute: Rosetta Code</a>"
         ]
       },
       "project-euler": {

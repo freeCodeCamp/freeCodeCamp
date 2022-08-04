@@ -1,7 +1,7 @@
 ---
 id: a26cbbe9ad8655a977e1ceb5
 title: Знайдіть найдовше слово в рядку
-challengeType: 5
+challengeType: 1
 forumTopicId: 16015
 dashedName: find-the-longest-word-in-a-string
 ---

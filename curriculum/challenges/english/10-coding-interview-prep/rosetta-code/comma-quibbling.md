@@ -1,7 +1,7 @@
 ---
 id: 596e414344c3b2872167f0fe
 title: Comma quibbling
-challengeType: 5
+challengeType: 1
 forumTopicId: 302234
 dashedName: comma-quibbling
 ---

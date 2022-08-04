@@ -1,7 +1,7 @@
 ---
 id: 5900f3ec1000cf542c50fefe
 title: 'Завдання 127: abc-збіги'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301754
 dashedName: problem-127-abc-hits
 ---

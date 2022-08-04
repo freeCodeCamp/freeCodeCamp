@@ -1,7 +1,7 @@
 ---
 id: 5900f3ca1000cf542c50fedd
 title: '問題 94: ほぼ正三角形'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302211
 dashedName: problem-94-almost-equilateral-triangles
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5e9ddb06ec35240f39657419
 title: FizzBuzz 問題
-challengeType: 5
+challengeType: 1
 forumTopicId: 385370
 dashedName: fizzbuzz
 ---

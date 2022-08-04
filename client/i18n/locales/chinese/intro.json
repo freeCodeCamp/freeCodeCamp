@@ -804,7 +804,8 @@
         "title": "罗塞塔代码",
         "intro": [
           "通过完成经典的罗塞塔代码库中的这些免费编程任务来提升你的创造性问题解决能力。",
-          "这些挑战可能很困难，但是它们会将进一步提升你的算法逻辑。"
+          "这些挑战可能很困难，但是它们会将进一步提升你的算法逻辑。",
+          "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Attribute: Rosetta Code</a>"
         ]
       },
       "project-euler": {

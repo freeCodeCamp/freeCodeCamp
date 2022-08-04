@@ -1,7 +1,7 @@
 ---
 id: 5951e88f64ebf159166a1176
 title: Il gioco del 24
-challengeType: 5
+challengeType: 1
 forumTopicId: 302218
 dashedName: 24-game
 ---

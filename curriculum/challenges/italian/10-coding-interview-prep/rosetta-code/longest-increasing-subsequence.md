@@ -1,7 +1,7 @@
 ---
 id: 5e6dd139859c290b6ab80292
 title: Più lunga sottosequenza crescente
-challengeType: 5
+challengeType: 1
 forumTopicId: 385272
 dashedName: longest-increasing-subsequence
 ---

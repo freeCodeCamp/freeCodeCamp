@@ -10,7 +10,7 @@ freeCodeCamp は、モダンな JavaScript スタック上で動作します。 
 
 はい。翻訳プラットフォームで有効になっている 30 以上の言語を貢献できます。
 
-ユーザーが行った翻訳が既に存在する言語もあります。 freeCodeCamp を世界の主要な言語にローカライズしていく予定です。 詳細については、[お知らせ](https://www.freecodecamp.org/news/world-language-translation-effort) をご覧ください。
+ユーザーが行った翻訳が既に存在する言語もあります。 freeCodeCamp を世界の主要な言語にローカライズしていく予定です。 You can read all about this in our [announcement here](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/).
 
 翻訳への貢献にご興味がありましたら、まず [ガイド](how-to-translate-files.md) をお読みください。
 
@@ -24,7 +24,7 @@ YouTube チャンネル用の動画講座を作成するには、[YouTube チャ
 
 ### 新しいバグはどのように報告すればいいですか？
 
-バグを発見した場合は、最初に [「ヘルプ: バグを発見しました」](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) の記事を読んで、その指示に従ってください。
+If you think you've found a bug, first read the ["How to Report a Bug"](https://www.freecodecamp.org/news/how-to-report-a-bug-to-freecodecamp/) article and follow its instructions.
 
 新しいバグだという確信がある場合は、GitHub Issue を作成してください。 バグを再現できるように、できるだけ多くの情報を含めるようにしてください。 これをサポートするために、事前に定義された Issue 用テンプレートがあります。
 
@@ -73,7 +73,7 @@ YouTube チャンネル用の動画講座を作成するには、[YouTube チャ
 
 コミュニティモデレーターは、私たちのヒーローです。 モデレーターの自発的な貢献により、freeCodeCamp は安全で快適なコミュニティになっています。
 
-何よりもまず、コミュニティの積極的な参加者となり、[行動規範](https://www.freecodecamp.org/news/code-of-conduct/) を強制するだけでなくその規範に従って行動する必要があります。
+何よりもまず、コミュニティの積極的な参加者となり、[行動規範](https://www.freecodecamp.org/japanese/news/code-of-conduct/) を強制するだけでなくその規範に従って行動する必要があります。
 
 いくつかのプラットフォームで推奨されるパスを以下に示します。
 

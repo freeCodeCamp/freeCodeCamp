@@ -1,7 +1,7 @@
 ---
 id: 5900f37f1000cf542c50fe92
 title: 'Problema 19: Contando domingos'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301827
 dashedName: problem-19-counting-sundays
 ---

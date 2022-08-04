@@ -10,7 +10,7 @@ freeCodeCamp runs on a modern JavaScript stack. If you're interested in contribu
 
 Yes - You can contribute to any of the 30+ languages we have enabled on our translation platform.
 
-We have user-contributed translations live in some languages. We intend to localize freeCodeCamp into several major world languages. You can read all about this in our [announcement here](https://www.freecodecamp.org/news/world-language-translation-effort).
+We have user-contributed translations live in some languages. We intend to localize freeCodeCamp into several major world languages. You can read all about this in our [announcement here](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/).
 
 If you are interested in contributing to translations please makes sure you [read this guide](how-to-translate-files.md) first.
 
@@ -24,7 +24,7 @@ To help us make educational videos for our YouTube channel, you can follow the [
 
 ### How can I report a new bug?
 
-If you think you've found a bug, first read the ["Help I've Found a Bug"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
+If you think you've found a bug, first read the ["How to Report a Bug"](https://www.freecodecamp.org/news/how-to-report-a-bug-to-freecodecamp/) article and follow its instructions.
 
 If you're confident it's a new bug, go ahead and create a new GitHub issue. Be sure to include as much information as possible so that we can reproduce the bug. We have a pre-defined issue template to help you through this.
 

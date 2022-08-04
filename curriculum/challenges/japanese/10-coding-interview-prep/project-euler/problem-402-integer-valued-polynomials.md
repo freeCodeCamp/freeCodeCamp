@@ -1,7 +1,7 @@
 ---
 id: 5900f4ff1000cf542c510011
 title: '問題 402: 整数値多項式'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302070
 dashedName: problem-402-integer-valued-polynomials
 ---
