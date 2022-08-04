@@ -5,6 +5,4 @@ export interface FormGroupProps extends React.HTMLAttributes<HTMLElement> {
   className?: string;
   controlId?: string;
   validationState?: ['success', 'warning', 'error', null];
-  bsSize?: ['lg', 'large', 'sm', 'small'];
-  bsClass?: string;
 }

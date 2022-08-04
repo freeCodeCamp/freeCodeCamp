@@ -2,16 +2,14 @@ import React from 'react';
 import { Story } from '@storybook/react';
 import { FormGroup, FormGroupProps } from '.';
 
-//  removed htmlfor because in newer version it isn't included
-
 const story = {
   title: 'Example/FormGroup',
   component: FormGroup,
   argTypes: {
+    children: { control: { type: 'object' } },
     className: { control: { type: 'text' } },
-    validationState: { action: ['success', 'warning', 'error', null] },
-    bsClass: { control: { type: 'text' } },
-    bsSize: { control: { type: ['lg', 'large', 'sm', 'small'] } }
+    controlId: { control: { type: 'text' } },
+    validationState: { action: ['success', 'warning', 'error', null] }
   }
 };
 

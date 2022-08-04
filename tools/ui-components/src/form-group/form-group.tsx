@@ -3,14 +3,17 @@ import React from 'react';
 import { FormGroupProps } from './types';
 
 const FormGroup = React.forwardRef<HTMLLabelElement, FormGroupProps>(
-  ({ className, validationState, bsSize, controlId }): JSX.Element => {
-    // it isn't giving me error even though, I didn't assign mb-3.5 in tailwind
+  ({ children, className, validationState, controlId }): JSX.Element => {
     const defaultClasses = 'mb-3.5';
-    const classes = [defaultClasses, className, validationState, bsSize].join(
-      ''
-    );
+    // ToDo: validationState should change when more Form components added.
+    // It should account for input value and add class to formgroup, depending on formgroup state
+    const classes = [defaultClasses, className, validationState].join(' ');
 
-    return <div className={classes} id={controlId}></div>;
+    return (
+      <div className={classes} id={controlId}>
+        {children}
+      </div>
+    );
   }
 );
 

@@ -2,7 +2,6 @@ import React from 'react';
 import { render } from '@testing-library/react';
 
 import { FormControl } from '../form-control/.';
-import { ControlLabel } from '../control-label/.';
 import { FormGroup } from '.';
 
 describe('<FormGroup />', () => {
@@ -16,10 +15,9 @@ describe('<FormGroup />', () => {
   }),
     it('provided controlId to label and control', () => {
       render(
+        // add form-label to the test when form-label is created
         <FormGroup data-testid='test-id'>
-          <ControlLabel htmlFor='test-id' srOnly={false} bsClass={''}>
-            label
-          </ControlLabel>
+          <label htmlFor='test-id'>label</label>
           <FormControl />
         </FormGroup>
       );
