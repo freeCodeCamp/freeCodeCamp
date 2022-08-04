@@ -606,8 +606,8 @@
       "mongodb-and-mongoose": {
         "title": "MongoDB і Mongoose",
         "intro": [
-          "MongoDB це програма бази даних, яка зберігає JSON документи(чи записи), які ви можете використати у своєму застосунку. На відміну від SQL, іншого типу бази даних, Mongo це нереляційна, або \"NoSQL\" база даних. Це означає, що Mongo зберігає усі збірні дані в межах одного запису, замість того, щоб тримати їх у багатьох попередньо налаштованих таблицях, як у базі даних SQL.",
-          "Moongoose це популярний пакет npm, який часто встановлюють разом із Mongo. З Moongoose ви можете використовувати прості об'єкти JavaScript замість JSON, що полегшує роботу із Mongo. Він також дозволяє створити нарис документів під назвою \"схеми\", щоб ви ненароком не зберегли хибний тип даних та потім не спричинили помилок.",
+          "MongoDB is a database application that stores JSON documents (or records) that you can use in your application. Unlike SQL, another type of database, MongoDB is a non-relational or \"NoSQL\" database. This means MongoDB stores all associated data within one record, instead of storing it across many preset tables as in a SQL database.",
+          "Mongoose is a popular npm package for interacting with MongoDB. With Mongoose, you can use plain JavaScript objects instead of JSON, which makes it easier to work with MongoDB. Also, it allows you to create blueprints for your documents called schemas, so you don't accidentally save the wrong type of data and cause bugs later.",
           "На курсах MongoDB та Mongoose, ви вивчите основи роботи із постійними даними, враховуючи налаштування моделі, збереження, видалення та пошук документів у базі даних."
         ]
       },
