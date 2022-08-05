@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c165
-title: Introduzir o Python
+title: Introdução ao Python
 challengeType: 11
 videoId: PrQV9JkLhb4
 bilibiliIds:
