@@ -606,8 +606,8 @@
       "mongodb-and-mongoose": {
         "title": "MongoDB と Mongoose",
         "intro": [
-          "MongoDB はアプリケーションで使用できる JSON ドキュメント (またはレコード) を保管するデータベースアプリケーションです。別の種類のデータベースである SQL とは異なり、Mongo は非リレーショナル、または \"NoSQL\" データベースです。これは、SQL データベースがあらかじめ定義した多くのテーブルにデータを保管するのと異なり、Mongo はすべての関連データを一つのレコードの中に保管することを意味します。",
-          "Mongoose は、よく Mongo と一緒にインストールされる一般的な npm パッケージです。Mongoose を使用することで、JSON ではなく素の JavaScript オブジェクトを使用することができるようになり、Mongo が使いやすくなります。また、スキーマと呼ばれるドキュメントの設計図を作成することを可能にし、間違った型のデータを保存してしまい後にバグを発生させることを防ぎます。",
+          "MongoDB is a database application that stores JSON documents (or records) that you can use in your application. Unlike SQL, another type of database, MongoDB is a non-relational or \"NoSQL\" database. This means MongoDB stores all associated data within one record, instead of storing it across many preset tables as in a SQL database.",
+          "Mongoose is a popular npm package for interacting with MongoDB. With Mongoose, you can use plain JavaScript objects instead of JSON, which makes it easier to work with MongoDB. Also, it allows you to create blueprints for your documents called schemas, so you don't accidentally save the wrong type of data and cause bugs later.",
           "MongoDB と Mongoose コースでは、モデルを設定する方法や、データベース内のドキュメントを保存、削除、検索する方法など、永続的なデータを扱うことの基本を学習します。"
         ]
       },

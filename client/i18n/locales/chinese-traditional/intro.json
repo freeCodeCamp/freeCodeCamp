@@ -606,8 +606,8 @@
       "mongodb-and-mongoose": {
         "title": "MongoDB 和 Mongoose",
         "intro": [
-          "MongoDB 是一個存儲你可以在應用程序中使用的 JSON 文件（或記錄）的數據庫應用程序。不同於SQL，另一種類型的數據庫。Mongo 是一個非關係型或 “NoSQL” 數據庫。這意味着 Mongo 將所有相關數據存儲在一個記錄中，而不是像 SQL 數據庫中那樣在許多預設表中存儲數據。",
-          "Mongoose 是一個廣泛使用的 npm 包，通常和 Mongo 一起安裝。通過 Mongoose，你可以使用 JavaScript 對象而不是 JSON ，這樣就更容易與 Mongo 配合使用。此外，它允許你創建文件架構，即 schema，所以你不會意外地保存錯誤的數據類型並出現 bug。",
+          "MongoDB is a database application that stores JSON documents (or records) that you can use in your application. Unlike SQL, another type of database, MongoDB is a non-relational or \"NoSQL\" database. This means MongoDB stores all associated data within one record, instead of storing it across many preset tables as in a SQL database.",
+          "Mongoose is a popular npm package for interacting with MongoDB. With Mongoose, you can use plain JavaScript objects instead of JSON, which makes it easier to work with MongoDB. Also, it allows you to create blueprints for your documents called schemas, so you don't accidentally save the wrong type of data and cause bugs later.",
           "在 MongoDB 和 Mongoose 課程中，你將學習處理數據的基本知識，包括如何建立模型，保存、刪除並在數據庫中查找文檔。"
         ]
       },
