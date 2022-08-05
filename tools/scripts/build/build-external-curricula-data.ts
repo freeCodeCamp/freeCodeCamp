@@ -110,7 +110,7 @@ export function buildExtCurriculumData(
   function getSuperBlockDescription(superBlockKey: SuperBlocks): string[] {
     const superBlockIntro = JSON.parse(
       readFileSync(blockIntroPath, 'utf-8')
-    ) as Curriculum;
+    ) as Intro;
     return superBlockIntro[superBlockKey]['intro'];
   }
 
