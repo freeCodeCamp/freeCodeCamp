@@ -133,7 +133,7 @@
     "@babel/types": "7.18.10",
     "@codesee/babel-plugin-instrument": "0.334.0",
     "@codesee/tracker": "0.334.0",
-    "@testing-library/jest-dom": "5.16.4",
+    "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "12.1.5",
     "autoprefixer": "10.4.8",
     "babel-plugin-transform-imports": "2.0.0",
