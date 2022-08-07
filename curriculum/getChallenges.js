@@ -58,13 +58,14 @@ function createCommentMap(dictionariesDir) {
     {}
   );
 
-  // get the english dicts
+  // get the english dictionaries for comments to translate
   const COMMENTS_TO_TRANSLATE = require(path.resolve(
     dictionariesDir,
     'english',
     'comments.json'
   ));
 
+  // get the english dictionaries for comments to not translate
   const COMMENTS_TO_NOT_TRANSLATE = require(path.resolve(
     dictionariesDir,
     'english',
