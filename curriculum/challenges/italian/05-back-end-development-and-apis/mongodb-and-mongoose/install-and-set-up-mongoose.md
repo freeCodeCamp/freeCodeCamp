@@ -22,7 +22,7 @@ Segui <a href='https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/
 
 # --instructions--
 
-`mongodb@~3.6.0` e `mongoose@~5.4.0` sono stati aggiunti al file `package.json` del tuo progetto. Come prima cosa, richiedi mongoose come `mongoose` in `myApp.js`. Poi, crea un file `.env` e aggiungi una variabile `MONGO_URI` ad esso. Il suo valore dovrebbe essere l'URI del database MongoDB Atlas. Assicurati di racchiudere l'URI tra virgolette singole o doppie, e ricorda che non puoi usare spazi attorno al segno `=` nelle variabili d'ambiente. Ad esempio, `MONGO_URI='VALUE'`.
+`mongoose@^5.11.15` è stato aggiunto al file `package.json` del tuo progetto. Come prima cosa, richiedi mongoose come `mongoose` in `myApp.js`. Poi, crea un file `.env` e aggiungi una variabile `MONGO_URI` ad esso. Il suo valore dovrebbe essere l'URI del database MongoDB Atlas. Assicurati di racchiudere l'URI tra virgolette singole o doppie, e ricorda che non puoi usare spazi attorno al segno `=` nelle variabili d'ambiente. Ad esempio, `MONGO_URI='VALUE'`.
 
 **Nota:** Se stai usando Replit, non puoi creare un file `.env`. Utilizza invece la scheda <dfn>SECRETS</dfn> integrata per aggiungere la variabile. <em>Non</em> racchiudere i valori in virgolette quando usi la scheda <em>SECRETS</em>.
 
@@ -34,27 +34,7 @@ mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }
 
 # --hints--
 
-La dipendenza "mongodb version ~3.6.0" dovrebbe essere in package.json
-
-```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/file/package.json').then(
-    (data) => {
-      var packJson = JSON.parse(data);
-      assert.property(packJson.dependencies, 'mongodb')
-      assert.match(
-        packJson.dependencies.mongodb,
-        /^\~3\.6\.0/,
-        'Wrong version of "mongodb". It should be ~3.6.0'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
-```
-
-La dipendenza "mongoose version ~5.4.0" dovrebbe essere in package.json
+La dipendenza "mongoose version ^5.11.15" dovrebbe essere in package.json
 
 ```js
 (getUserInput) =>
@@ -64,8 +44,8 @@ La dipendenza "mongoose version ~5.4.0" dovrebbe essere in package.json
       assert.property(packJson.dependencies, 'mongoose');
       assert.match(
         packJson.dependencies.mongoose,
-        /^\~5\.4\.0/,
-        'Wrong version of "mongoose". It should be ~5.4.0'
+        /^\^5\.11\.15/,
+        'Wrong version of "mongoose". It should be ^5.11.15'
       );
     },
     (xhr) => {
