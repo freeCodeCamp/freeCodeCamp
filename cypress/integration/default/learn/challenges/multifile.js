@@ -1,4 +1,4 @@
-import translations from '../../../../client/i18n/locales/english/translations.json';
+import translations from '../../../../../client/i18n/locales/english/translations.json';
 const location =
   '/learn/2022/responsive-web-design/learn-accessibility-by-building-a-quiz/step-2';
 const selectors = {

@@ -1,5 +1,8 @@
-import { availableLangs, LangNames } from '../../../../config/i18n/all-langs';
-import envData from '../../../../config/env.json';
+import {
+  availableLangs,
+  LangNames
+} from '../../../../../config/i18n/all-langs';
+import envData from '../../../../../config/env.json';
 
 const { clientLocale } = envData;
 
