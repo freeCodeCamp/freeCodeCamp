@@ -41,7 +41,7 @@ const testId = 'fcc-test-frame';
 // the project preview frame demos the finished project
 export const projectPreviewId = 'fcc-project-preview-frame';
 
-const DOCUMENT_NOT_FOUND_ERROR = 'document not found';
+const DOCUMENT_NOT_FOUND_ERROR = 'misc.document-notfound';
 
 // base tag here will force relative links
 // within iframe to point to '' instead of
