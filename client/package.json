@@ -52,7 +52,7 @@
     "@reach/router": "1.3.4",
     "@sentry/gatsby": "6.19.7",
     "@stripe/react-stripe-js": "1.10.0",
-    "@stripe/stripe-js": "1.34.0",
+    "@stripe/stripe-js": "1.35.0",
     "@types/react-scrollable-anchor": "0.6.1",
     "algoliasearch": "4.14.2",
     "assert": "2.0.0",
