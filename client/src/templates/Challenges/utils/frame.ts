@@ -30,7 +30,7 @@ type ProxyLogger = (msg: string) => void;
 
 type InitFrame = (
   frameInitiateDocument?: () => unknown,
-  frameLogDocument?: ProxyLogger
+  frameConsoleLogger?: ProxyLogger
 ) => (frameContext: Context) => Context;
 
 // we use two different frames to make them all essentially pure functions
@@ -147,7 +147,7 @@ const mountFrame =
     };
   };
 
-const buildProxyConsole =
+const updateProxyConsole =
   (proxyLogger?: ProxyLogger) => (frameContext: Context) => {
     // window does not exist if the preview is hidden, so we have to check.
     if (proxyLogger && frameContext?.window) {
@@ -162,10 +162,16 @@ const buildProxyConsole =
       };
     }
 
-    frameContext.window.i18nContent = i18next;
-
     return frameContext;
   };
+
+const updateWindowI18next = () => (frameContext: Context) => {
+  // window does not exist if the preview is hidden, so we have to check.
+  if (frameContext?.window) {
+    frameContext.window.i18nContent = i18next;
+  }
+  return frameContext;
+};
 
 const initTestFrame = (frameReady?: () => void) => (frameContext: Context) => {
   waitForFrame(frameContext)
@@ -295,7 +301,8 @@ const createFramer = (
   flow(
     createFrame(document, id, frameTitle),
     mountFrame(document, id),
-    buildProxyConsole(proxyLogger),
+    updateProxyConsole(proxyLogger),
+    updateWindowI18next(),
     writeContentToFrame,
     init(frameReady, proxyLogger)
   );
