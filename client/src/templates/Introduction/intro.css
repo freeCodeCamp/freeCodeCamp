@@ -267,10 +267,12 @@ button.map-title {
 }
 
 .map-challenges-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 3.4rem);
+  grid-gap: 3px;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: calc(100% - 50px);
 }
 .map-challenge-title-grid {
   flex: 0 1 60px;
