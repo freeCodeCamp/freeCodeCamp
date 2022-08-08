@@ -9,7 +9,7 @@ declare global {
     console: {
       log: () => void;
     };
-    i18next: i18n;
+    i18nContent: i18n;
   }
 }
 
@@ -73,7 +73,7 @@ const createHeader = (id = mainPreviewId) => `
       if (element && element.nodeName === 'A' && new URL(element.href).hash === '') {
         e.preventDefault();
         window.parent.window.alert(
-          i18next.t('misc.iframe-alert', { externalLink: element.href })
+          i18nContent.t('misc.iframe-alert', { externalLink: element.href })
         )
       }
       if (element) {
@@ -160,9 +160,10 @@ const buildProxyConsole =
         proxyLogger(args.map((arg: string) => utilsFormat(arg)).join(' '));
         return oldLog(...(args as []));
       };
-
-      frameContext.window.i18next = i18next;
     }
+
+    frameContext.window.i18nContent = i18next;
+
     return frameContext;
   };
 
