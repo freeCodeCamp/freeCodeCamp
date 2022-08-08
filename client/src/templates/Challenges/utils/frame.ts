@@ -115,9 +115,6 @@ const createFrame =
   (frameContext: Context) => {
     const frame = document.createElement('iframe');
     frame.id = id;
-    if (frame.contentWindow) {
-      console.log('frame content', frame.contentWindow);
-    }
     if (typeof title === 'string') {
       frame.title = title;
     }
