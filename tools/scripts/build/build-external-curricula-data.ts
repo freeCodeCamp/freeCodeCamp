@@ -11,6 +11,7 @@ interface IntroProps extends CurriculumProps {
 }
 
 interface CurriculumProps {
+  intro: string[];
   blocks: Record<string, Block>;
 }
 
@@ -73,6 +74,8 @@ export function buildExtCurriculumData(
       if (blockNames.length === 0) continue;
 
       superBlock[superBlockKey] = <CurriculumProps>{};
+      superBlock[superBlockKey]['intro'] =
+        getSuperBlockDescription(superBlockKey);
       superBlock[superBlockKey]['blocks'] = {};
 
       for (let j = 0; j < blockNames.length; j++) {
@@ -102,6 +105,13 @@ export function buildExtCurriculumData(
     const intros = JSON.parse(readFileSync(blockIntroPath, 'utf-8')) as Intro;
 
     return intros[superBlockKeys]['blocks'][blockKey]['intro'];
+  }
+
+  function getSuperBlockDescription(superBlockKey: SuperBlocks): string[] {
+    const superBlockIntro = JSON.parse(
+      readFileSync(blockIntroPath, 'utf-8')
+    ) as Intro;
+    return superBlockIntro[superBlockKey]['intro'];
   }
 
   function getSuperBlockTitle(superBlock: SuperBlocks): string {

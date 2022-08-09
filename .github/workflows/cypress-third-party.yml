@@ -1,0 +1,67 @@
+name: CI - Cypress (e2e) 3rd party donation tests
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  do-everything:
+    name: Build
+    runs-on: ubuntu-20.04
+    strategy:
+      fail-fast: false
+    services:
+      mongodb:
+        image: mongo:4
+        ports:
+          - 27017:27017
+      # We need mailhog to catch any emails the api tries to send.
+      mailhog:
+        image: mailhog/mailhog
+        ports:
+          - 1025:1025
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
+
+      - name: Checkout client-config
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
+        with:
+          repository: freeCodeCamp/client-config
+          path: client-config
+
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@eeb10cff27034e7acf239c5d29f62154018672fd # tag=v3
+        with:
+          node-version: 16.x
+          cache: 'npm'
+
+      - name: Set freeCodeCamp Environment Variables
+        run: |
+          sed '/STRIPE/d; /PAYPAL/d;' sample.env > .env
+          echo 'STRIPE_PUBLIC_KEY=${{ secrets.STRIPE_PUBLIC_KEY }}' >> .env
+          echo 'STRIPE_SECRET_KEY=${{ secrets.STRIPE_SECRET_KEY }}' >> .env
+          echo 'PAYPAL_CLIENT_ID=${{ secrets.PAYPAL_CLIENT_ID }}' >> .env
+          echo 'PAYPAL_SECRET=${{ secrets.PAYPAL_SECRET }}' >> .env
+
+      - name: Install and Build
+        run: |
+          npm ci
+          npm run build
+      - name: Seed Database
+        run: npm run seed
+      - name: Move serve.json to Public Folder
+        run: cp client-config/serve.json client/public/serve.json
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          record: ${{ env.CYPRESS_RECORD_KEY != 0 }}
+          start: npm run start-ci
+          wait-on: http://localhost:8000
+          wait-on-timeout: 1200
+          config: baseUrl=http://localhost:8000
+          browser: chrome
+          headless: true
+          spec: cypress/integration/third-party/*.js

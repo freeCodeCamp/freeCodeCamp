@@ -56,19 +56,19 @@ You should not have to use this tool unless you've manually deleted or added ste
 
 If you want to work on the steps manually, in your local IDE, you can run the step management scripts directly.
 
-The `tools/challenge-helper-scripts` folder contains tools to help facilitate the creation and maintenance of the freeCodeCamp project-based curriculum.
+La cartella `tools/challenge-helper-scripts` contiene strumenti per aiutare a facilitare la creazione e il mantenimento del curriculum basato su progetti di freeCodeCamp.
 
-### Create a new project
+### Creare un nuovo progetto
 
-Run `npm run create-project` from the root directory. This opens up a command line ui that guides you through the process. Once that has finished, there should be a new challenge in the English curriculum that you can use for the first step of the project. For example, if you created a project called `test-project` in the Responsive Web Design certification, it would be in `curriculum/challenges/english/01-responsive-web-design/test-project`.
+Run `npm run create-project` from the root directory. Questo apre un'interfaccia utente a linea di comando che ti guida attraverso il processo. Una volta finito, dovrebbe esserci una nuova sfida nel curriculum inglese che puoi usare come primo passo del progetto. Ad esempio, se hai creato un progetto chiamato `test-project` nella certificazione Web Design Responsivo, sarebbe in `curriculum/challenges/english/01-responsive-web-design/test-project`.
 
-If you want to create new steps, the following tools simplify that process.
+Se vuoi creare nuovi step, i seguenti strumenti semplificano il processo.
 
 ### create-next-step
 
-A one-off script that will automatically add the next step based on the last step in the project. The challenge seed code will use the previous step's challenge seed code.
+Uno script una tantum che aggiungerà automaticamente lo step successivo in base all'ultimo step del progetto. Il codice seed della sfida userà il codice seed di quella precedente.
 
-#### How to run script:
+#### Come eseguire lo script:
 
 1. Vai alla directory del progetto.
 2. Esegui il seguente comando npm:
@@ -79,11 +79,11 @@ npm run create-next-step
 
 ### create-empty-steps
 
-A one-off script that automatically adds a specified number of steps. The challenge seed code for all steps created will be empty.
+Uno script eseguito una sola volta che aggiunge automaticamente un determinato numero di step. Il codice seed della sfida per tutti gli step creati sarà vuoto.
 
-**Note:** This script also runs [update-step-titles](#update-step-titles).
+**Nota:** Questo script esegue anche [update-step-titles](#update-step-titles).
 
-#### How to run script:
+#### Come eseguire lo script:
 
 1. Vai alla directory del progetto.
 2. Esegui il seguente comando npm:

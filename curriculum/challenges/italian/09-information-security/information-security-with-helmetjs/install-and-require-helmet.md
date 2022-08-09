@@ -22,7 +22,7 @@ Helmet ti aiuta a proteggere le tue app Express impostando varie intestazioni HT
 
 Tutto il tuo codice per queste lezioni va nel file `myApp.js` tra le righe di codice con cui ti abbiamo avviato. Non modificare o eliminare il codice che abbiamo aggiunto per te.
 
-Installa la versione di Helmet `3.21.3`, poi richiedila. È possibile installare una versione specifica di un pacchetto con `npm install --save-exact package@version`, o aggiungendolo al tuo `package.json` direttamente.
+Helmet versione `3.21.3` è già stato installato, quindi richiedilo come `helmet` in `myApp.js`.
 
 # --hints--
 
