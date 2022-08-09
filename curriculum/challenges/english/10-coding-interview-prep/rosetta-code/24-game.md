@@ -48,19 +48,19 @@ assert(isValidSolution_(solve24(testCases_[0])));
 `solve24("1234")` should return `1*2*3*4` or a similar valid string
 
 ```js
-assert(isValidSolution_(testCases_[1])));
+assert(isValidSolution_(solve24(testCases_[1])));
 ```
 
 `solve24("6789")` should return `(6*8)/(9-7)`. `(8*6)/(9-7)`, or a similar valid string
 
 ```js
-assert(isValidSolution_(testCases_[2])));
+assert(isValidSolution_(solve24(testCases_[2])));
 ```
 
 `solve24("1127")` should return `(1+7)*(1+2)` or a similar valid string
 
 ```js
-assert(isValidSolution_(testCases_[3])));
+assert(isValidSolution_(solve24(testCases_[3])));
 ```
 
 # --seed--
