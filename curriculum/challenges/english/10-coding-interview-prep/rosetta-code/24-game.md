@@ -114,7 +114,7 @@ function evaluate_(expression) {
       case "*":
       case "/":
         while (stack.length &&
-               PRECIDENCE_[c] < PRECIDENCE_[stack[stack.length-1]]) {
+               PRECIDENCE_[c] <= PRECIDENCE_[stack[stack.length-1]]) {
           postfix += stack.pop();
         }
         stack.push(c);
