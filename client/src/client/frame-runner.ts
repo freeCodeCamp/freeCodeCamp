@@ -83,7 +83,6 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
     return o;
   };
 
-  // eslint-disable-next-line no-inline-comments
   const { default: chai } = await import(/* webpackChunkName: "chai" */ 'chai');
   const assert = chai.assert;
   const __helpers = helpers;
@@ -93,7 +92,6 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
   if (e.loadEnzyme) {
     /* eslint-disable prefer-const */
     let Adapter16;
-    /* eslint-disable no-inline-comments */
 
     [{ default: Enzyme }, { default: Adapter16 }] = await Promise.all([
       import(/* webpackChunkName: "enzyme" */ 'enzyme'),
@@ -119,7 +117,6 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
         // document ready:
         $(() => {
           try {
-            // eslint-disable-next-line no-eval
             const test: unknown = eval(testString);
             resolve(test);
           } catch (err) {
