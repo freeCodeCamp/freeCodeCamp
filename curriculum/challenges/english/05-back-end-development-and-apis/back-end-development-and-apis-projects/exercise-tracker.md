@@ -229,7 +229,7 @@ async (getUserInput) => {
 };
 ```
 
-You can make a `GET` request to `/api/users/:id/logs` to retrieve a full exercise log of any user.
+You can make a `GET` request to `/api/users/:_id/logs` to retrieve a full exercise log of any user.
 
 ```js
 async (getUserInput) => {
@@ -309,7 +309,7 @@ async (getUserInput) => {
 };
 ```
 
-A `GET` request to `/api/users/:id/logs` will return the user object with a `log` array of all the exercises added.
+A `GET` request to `/api/users/:_id/logs` will return the user object with a `log` array of all the exercises added.
 
 ```js
 async(getUserInput) => {
@@ -353,7 +353,7 @@ async(getUserInput) => {
 };
 ```
 
-Each item in the `log` array that is returned from `GET /api/users/:id/logs` is an object that should have a `description`, `duration`, and `date` properties.
+Each item in the `log` array that is returned from `GET /api/users/:_id/logs` is an object that should have a `description`, `duration`, and `date` properties.
 
 ```js
 async(getUserInput) => {
@@ -400,7 +400,7 @@ async(getUserInput) => {
 };
 ```
 
-The `description` property of any object in the `log` array that is returned from `GET /api/users/:id/logs` should be a string.
+The `description` property of any object in the `log` array that is returned from `GET /api/users/:_id/logs` should be a string.
 
 ```js
 async(getUserInput) => {
@@ -447,7 +447,7 @@ async(getUserInput) => {
 };
 ```
 
-The `duration` property of any object in the `log` array that is returned from `GET /api/users/:id/logs` should be a number.
+The `duration` property of any object in the `log` array that is returned from `GET /api/users/:_id/logs` should be a number.
 
 ```js
 async(getUserInput) => {
@@ -494,7 +494,7 @@ async(getUserInput) => {
 };
 ```
 
-The `date` property of any object in the `log` array that is returned from `GET /api/users/:id/logs` should be a string. Use the `dateString` format of the `Date` API.
+The `date` property of any object in the `log` array that is returned from `GET /api/users/:_id/logs` should be a string. Use the `dateString` format of the `Date` API.
 
 ```js
 async(getUserInput) => {
@@ -541,7 +541,7 @@ async(getUserInput) => {
 };
 ```
 
-You can add `from`, `to` and `limit` parameters to a `GET /api/users/:id/logs` request to retrieve part of the log of any user. `from` and `to` are dates in `yyyy-mm-dd` format. `limit` is an integer of how many logs to send back.
+You can add `from`, `to` and `limit` parameters to a `GET /api/users/:_id/logs` request to retrieve part of the log of any user. `from` and `to` are dates in `yyyy-mm-dd` format. `limit` is an integer of how many logs to send back.
 
 ```js
 async (getUserInput) => {
