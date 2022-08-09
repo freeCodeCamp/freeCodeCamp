@@ -98,5 +98,6 @@ module.exports = {
     plugin(({ addVariant }) => {
       addVariant('aria-disabled', '&[aria-disabled="true"]');
     })
-  ]
+  ],
+  corePlugins: ['accessibility']
 };
