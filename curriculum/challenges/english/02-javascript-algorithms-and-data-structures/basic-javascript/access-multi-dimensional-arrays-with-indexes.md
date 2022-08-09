@@ -21,10 +21,13 @@ const arr = [
   [[10, 11, 12], 13, 14]
 ];
 
-arr[3]; // [[10, 11, 12], 13, 14]
-arr[3][0]; // [10, 11, 12]
-arr[3][0][1]; // 11
+const subarray_3 = arr[3];
+const subarray_3_0 = arr[3][0];
+const entry_3_0_1 = arr[3][0][1];
 ```
+
+In this example, `subarray_3` has the value `[[10, 11, 12], 13, 14]`,
+`subarray_3_0` has the value `[10, 11, 12]`,   and `entry_3_0_1` has the value `11` .
 
 **Note:** There shouldn't be any spaces between the array name and the square brackets, like `array [0][0]` and even this `array [0] [0]` is not allowed. Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.
 
