@@ -1,13 +1,15 @@
 import React from 'react';
-import { Meta } from '@storybook/react';
-import { Flex } from '../flex';
+import { Flex } from '.';
 
-const meta: Meta = {
-  title: 'Flex',
-  component: Flex
+const story = {
+  title: 'Example/Flex',
+  component: Flex,
+  parameters: {
+    controls: {
+      include: ['children', 'direction', 'wrap', 'justify', 'align']
+    }
+  }
 };
-
-export default meta;
 
 export const Vertical = () => (
   <Flex direction='column'>
@@ -26,7 +28,7 @@ export const Horizontal = () => (
 );
 
 export const Wrap = () => (
-  <Flex flexWrap='wrap'>
+  <Flex wrap='wrap'>
     <p>
       It is a long established fact that a reader will be distracted by the
       readable content of a page when looking at its layout.
@@ -37,7 +39,7 @@ export const Wrap = () => (
 );
 
 export const NoWrap = () => (
-  <Flex flexWrap='nowrap'>
+  <Flex wrap='nowrap'>
     <p>
       It is a long established fact that a reader will be distracted by the
       readable content of a page when looking at its layout.
@@ -48,7 +50,7 @@ export const NoWrap = () => (
 );
 
 export const WrapReverse = () => (
-  <Flex flexWrap='wrap-reverse'>
+  <Flex wrap='wrap-reverse'>
     <p>
       It is a long established fact that a reader will be distracted by the
       readable content of a page when looking at its layout.
@@ -145,3 +147,5 @@ export const itemsStretch = () => (
     <div className='bg-yellow-500 h-20'>3</div>
   </Flex>
 );
+
+export default story;

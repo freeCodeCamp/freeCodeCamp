@@ -1,111 +1,101 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { FlexProps } from './types';
 
-// const defaultClassNames = [
-//     'column',
-//     'row',
-//   ];
+const defaultClassNames = ['flex'];
+
+const computeClassNames = ({
+  direction,
+  wrap,
+  justify,
+  align
+}: {
+  direction?: string;
+  wrap?: string;
+  justify?: string;
+  align?: string;
+}) => {
+  const classNames = [...defaultClassNames];
+
+  switch (direction) {
+    case 'column':
+      classNames.push('flex-col');
+      break;
+    case 'row-reverse':
+      classNames.push('row-reverse');
+      break;
+    case 'column-reverse':
+      classNames.push('column-reverse');
+      break;
+    default:
+      classNames.push('flex-row');
+  }
+
+  switch (wrap) {
+    case 'wrap':
+      classNames.push('flex-wrap');
+      break;
+    case 'wrap-reverse':
+      classNames.push('wrap-reverse');
+      break;
+    default:
+      classNames.push('flex-nowrap');
+  }
+
+  switch (justify) {
+    case 'end':
+      classNames.push('justify-end');
+      break;
+    case 'center':
+      classNames.push('justify-center');
+      break;
+    case 'space-between':
+      classNames.push('justify-between');
+      break;
+    case 'space-around':
+      classNames.push('justify-around');
+      break;
+    case 'space-evenly':
+      classNames.push('justify-evenly');
+      break;
+    default:
+      classNames.push('justify-start');
+  }
+
+  switch (align) {
+    case 'end':
+      classNames.push('items-end');
+      break;
+    case 'center':
+      classNames.push('items-center');
+      break;
+    case 'stretch':
+      classNames.push('items-stretch');
+      break;
+    case 'baseline':
+      classNames.push('items-baseline');
+      break;
+    default:
+      classNames.push('items-start');
+  }
+
+  return classNames.join(' ');
+};
 
 export const Flex: React.FC<FlexProps> = ({
   children,
   direction,
-  flexWrap,
+  wrap,
   justify,
   align,
   ...props
 }: FlexProps) => {
-  if ('row' === direction) {
-    return <div className='flex flex-row ...'>{children}</div>;
-  } else if ('column' === direction) {
-    return (
-      <div {...props} className='flex flex-col ...'>
-        {children}
-      </div>
-    );
-  } else if ('wrap' === flexWrap) {
-    return (
-      <div {...props} className='flex flex-wrap'>
-        {children}
-      </div>
-    );
-  } else if ('nowrap' === flexWrap) {
-    return (
-      <div {...props} className='flex flex-nowrap'>
-        {children}
-      </div>
-    );
-  } else if ('wrap-reverse' === flexWrap) {
-    return (
-      <div {...props} className='flex flex-wrap-reverse'>
-        {children}
-      </div>
-    );
-  } else if ('justify-start' === justify) {
-    return (
-      <div {...props} className='flex justify-start ...'>
-        {children}
-      </div>
-    );
-  } else if ('justify-end' === justify) {
-    return (
-      <div {...props} className='flex justify-end ...'>
-        {children}
-      </div>
-    );
-  } else if ('justify-center' === justify) {
-    return (
-      <div {...props} className='flex justify-center ...'>
-        {children}
-      </div>
-    );
-  } else if ('justify-between' === justify) {
-    return (
-      <div {...props} className='flex justify-between ...'>
-        {children}
-      </div>
-    );
-  } else if ('justify-around' === justify) {
-    return (
-      <div {...props} className='flex justify-around ...'>
-        {children}
-      </div>
-    );
-  } else if ('justify-evenly' === justify) {
-    return (
-      <div {...props} className='flex justify-evenly ...'>
-        {children}
-      </div>
-    );
-  } else if ('items-start' === align) {
-    return (
-      <div {...props} className='flex items-start ...'>
-        {children}
-      </div>
-    );
-  } else if ('items-end' === align) {
-    return (
-      <div {...props} className='flex items-end ...'>
-        {children}
-      </div>
-    );
-  } else if ('items-center' === align) {
-    return (
-      <div {...props} className='flex items-center ...'>
-        {children}
-      </div>
-    );
-  } else if ('items-baseline' === align) {
-    return (
-      <div {...props} className='flex items-baseline ...'>
-        {children}
-      </div>
-    );
-  } else if ('items-stretch' === align) {
-    return (
-      <div {...props} className='flex items-stretch ...'>
-        {children}
-      </div>
-    );
-  }
-  return null;
+  const classes = useMemo(
+    () => computeClassNames({ direction, wrap, justify, align }),
+    [direction, wrap, justify, align]
+  );
+  return (
+    <div {...props} className={classes}>
+      {children}
+    </div>
+  );
 };

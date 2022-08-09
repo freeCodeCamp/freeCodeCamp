@@ -3,5 +3,5 @@ export interface FlexProps {
   align?: string;
   justify?: string;
   direction?: string;
-  flexWrap?: string;
+  wrap?: string;
 }

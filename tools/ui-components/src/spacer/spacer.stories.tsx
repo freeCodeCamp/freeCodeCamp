@@ -1,13 +1,10 @@
-import { Meta } from '@storybook/react';
 import React from 'react';
-import { Spacer } from './spacer';
+import { Spacer } from '.';
 
-const meta: Meta = {
-  title: 'Spacer',
+const story = {
+  title: 'Example/Spacer',
   component: Spacer
 };
-
-export default meta;
 
 export const Test = () => (
   <div className='flex ... w-50'>
@@ -18,3 +15,5 @@ export const Test = () => (
     <div className='bg-yellow-500 '>03</div>
   </div>
 );
+
+export default story;
