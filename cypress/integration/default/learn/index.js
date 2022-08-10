@@ -12,14 +12,14 @@ const superBlockNames = [
   'JavaScript Algorithms and Data Structures Certification',
   'Front End Development Libraries Certification',
   'Data Visualization Certification',
+  'Relational Database (Beta) Certification',
   'Back End Development and APIs Certification',
   'Quality Assurance Certification',
   'Scientific Computing with Python Certification',
   'Data Analysis with Python Certification',
   'Information Security Certification',
   'Machine Learning with Python Certification',
-  'Coding Interview Prep',
-  'Relational Database (Beta) Certification'
+  'Coding Interview Prep'
 ];
 
 describe('Learn Landing page (not logged in)', () => {

@@ -15,7 +15,9 @@ We are still developing the interactive instructional part of the Python curricu
 
 - <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 hours)
 
-- <a href="https://www.freecodecamp.org/news/learn-python-video-course/" target="_blank" rel="noopener noreferrer nofollow">Learn Python Video Course</a> (10 hours)
+- <a href="https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/" target="_blank" rel="noopener noreferrer nofollow">Learn Python Basics in Depth</a> (4 hours)
+
+- <a href="https://www.freecodecamp.org/news/intermediate-python-course/" target="_blank" rel="noopener noreferrer nofollow">Intermediate Python Course</a> (6 hours)
 
 # --instructions--
 

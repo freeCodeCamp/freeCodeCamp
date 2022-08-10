@@ -449,7 +449,9 @@
     "and": "和",
     "change-theme": "登录以更改主题。",
     "translation-pending": "帮我们翻译",
-    "certification-project": "认证项目"
+    "certification-project": "认证项目",
+    "iframe-alert": "Normally this link would bring you to another website! It works. This is a link to: {{externalLink}}",
+    "document-notfound": "document not found"
   },
   "icons": {
     "gold-cup": "金奖杯",

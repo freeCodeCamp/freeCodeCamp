@@ -180,10 +180,10 @@
         ]
       },
       "learn-typography-by-building-a-nutrition-label": {
-        "title": "タイポグラフィの学習: 栄養ラベルを作成する",
+        "title": "タイポグラフィの学習: 栄養成分表示ラベルを作成する",
         "intro": [
-          "タイポグラフィはテキストを読み易く、また目的に合うようにスタイリングする技術です。",
-          "このコースでは、タイポグラフィを用いて栄養ラベルのウェブページを作成します。CSS を用いてテキストを整え、行の高さを調節し、テキストを配置することを学習します。"
+          "タイポグラフィとは、テキストを読み易く、また目的に合うようにスタイリングする技術です。",
+          "このコースでは、タイポグラフィを用いて栄養成分表示ラベルのウェブページを作成します。CSS を用いてテキストを整え、行の高さを調節し、テキストを配置することを学習します。"
         ]
       },
       "learn-css-transforms-by-building-a-penguin": {
@@ -201,10 +201,10 @@
         ]
       },
       "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": {
-        "title": "CSS 疑似セレクターの学習: 貸借対照表を作成する",
+        "title": "CSS 疑似セレクターの学習: バランスシートを作成する",
         "intro": [
           "CSS の疑似セレクターを用いて、特定の HTML 要素を変化させることができます。",
-          "このコースでは、疑似セレクターを用いて貸借対照表を作成します。ウェブページ上でマウスポインタを要素の上に合わせた時に要素のスタイルを変更する方法や、他のイベントを起こす方法を学習します。"
+          "このコースでは、疑似セレクターを用いてバランスシート (貸借対照表) を作成します。ウェブページ上でマウスポインタを要素の上に合わせた時に要素のスタイルを変更する方法や、他のイベントを起こす方法を学習します。"
         ]
       },
       "learn-css-colors-by-building-a-set-of-colored-markers": {
@@ -606,8 +606,8 @@
       "mongodb-and-mongoose": {
         "title": "MongoDB と Mongoose",
         "intro": [
-          "MongoDB is a database application that stores JSON documents (or records) that you can use in your application. Unlike SQL, another type of database, MongoDB is a non-relational or \"NoSQL\" database. This means MongoDB stores all associated data within one record, instead of storing it across many preset tables as in a SQL database.",
-          "Mongoose is a popular npm package for interacting with MongoDB. With Mongoose, you can use plain JavaScript objects instead of JSON, which makes it easier to work with MongoDB. Also, it allows you to create blueprints for your documents called schemas, so you don't accidentally save the wrong type of data and cause bugs later.",
+          "MongoDB はアプリケーションで使用できる JSON ドキュメント (またはレコード) を保管するデータベースアプリケーションです。別の種類のデータベースである SQL とは異なり、MongoDB は非リレーショナル、または \"NoSQL\" データベースです。これは、SQL データベースがあらかじめ定義した多くのテーブルにデータを保管するのと異なり、MongoDB はすべての関連データを一つのレコードの中に保管することを意味します。",
+          "Mongoose は MongoDB とやり取りするためによく使われる npm パッケージです。Mongoose を利用することで、JSON ではなく素の JavaScript オブジェクトを使用できるようになり、MongoDB が使いやすくなります。また、スキーマと呼ばれるドキュメントの設計図を作成することを可能にし、間違った型のデータを保存してしまい後にバグを発生させることを防ぎます。",
           "MongoDB と Mongoose コースでは、モデルを設定する方法や、データベース内のドキュメントを保存、削除、検索する方法など、永続的なデータを扱うことの基本を学習します。"
         ]
       },

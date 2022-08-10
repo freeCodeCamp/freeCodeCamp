@@ -449,7 +449,9 @@
     "and": "і",
     "change-theme": "Увійдіть, щоб змінити тему.",
     "translation-pending": "Допоможіть нам з перекладом",
-    "certification-project": "Certification Project"
+    "certification-project": "Certification Project",
+    "iframe-alert": "Normally this link would bring you to another website! It works. This is a link to: {{externalLink}}",
+    "document-notfound": "document not found"
   },
   "icons": {
     "gold-cup": "Золотий кубок",
