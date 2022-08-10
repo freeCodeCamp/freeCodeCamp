@@ -1,10 +1,12 @@
 import { Component, ReactElement } from 'react';
 import ReactDOM from 'react-dom';
+import { TFunction, withTranslation } from 'react-i18next';
 
 interface PreviewPortalProps {
   children: ReactElement | null;
   togglePane: (pane: string) => void;
   windowTitle: string;
+  t: TFunction;
 }
 
 class PreviewPortal extends Component<PreviewPortalProps> {
@@ -22,7 +24,11 @@ class PreviewPortal extends Component<PreviewPortalProps> {
   }
 
   componentDidMount() {
-    this.titleEl.innerText = this.props.windowTitle;
+    const { t, windowTitle } = this.props;
+
+    this.titleEl.innerText = `${t(
+      'learn.editor-tabs.preview'
+    )} | ${windowTitle}`;
     this.externalWindow = window.open(
       '',
       '',
@@ -50,4 +56,4 @@ class PreviewPortal extends Component<PreviewPortalProps> {
 
 PreviewPortal.displayName = 'PreviewPortal';
 
-export default PreviewPortal;
+export default withTranslation()(PreviewPortal);
