@@ -39,6 +39,7 @@ interface DesktopLayoutProps {
   resizeProps: ResizeProps;
   superBlock: string;
   testOutput: ReactElement;
+  windowTitle: string;
 }
 
 const reflexProps = {
@@ -106,7 +107,8 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     notes,
     preview,
     hasEditableBoundaries,
-    superBlock
+    superBlock,
+    windowTitle
   } = props;
 
   const challengeFile = getChallengeFile();
@@ -198,7 +200,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         )}
       </ReflexContainer>
       {displayPreviewPortal && (
-        <PreviewPortal togglePane={togglePane}>
+        <PreviewPortal togglePane={togglePane} windowTitle={windowTitle}>
           <iframe
             title='fcc-preview-portal-frame'
             id='fcc-preview-portal-frame'
