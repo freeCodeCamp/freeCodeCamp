@@ -159,19 +159,11 @@ const babelTransformer = loopProtectOptions => {
 };
 
 function getBabelOptions(optionPresets, { preview = false, protect = true }) {
-  let options = optionPresets;
   // we always protect the preview, since it evaluates as the user types and
   // they may briefly have infinite looping code accidentally
-  if (protect) {
-    options = preview
-      ? { ...optionPresets, plugins: ['loopProtection'] }
-      : { ...optionPresets, plugins: ['testLoopProtection'] };
-  } else {
-    options = preview
-      ? { ...optionPresets, plugins: ['loopProtection'] }
-      : options;
-  }
-  return options;
+  if (preview) return { ...optionPresets, plugins: ['loopProtection'] };
+  if (protect) return { ...optionPresets, plugins: ['testLoopProtection'] };
+  return optionPresets;
 }
 
 const sassWorker = createWorker(sassCompile);
