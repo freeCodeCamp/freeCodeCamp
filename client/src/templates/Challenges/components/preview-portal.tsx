@@ -10,13 +10,11 @@ class PreviewPortal extends Component<PreviewPortalProps> {
   static displayName = 'PreviewPortal';
   externalWindow: Window | null = null;
   containerEl;
-  bodyEl: HTMLBodyElement | null;
 
   constructor(props: PreviewPortalProps) {
     super(props);
     this.externalWindow = null;
     this.containerEl = document.createElement('div');
-    this.bodyEl = null;
   }
 
   componentDidMount() {
