@@ -298,9 +298,9 @@ const htmlTransformer = cond([
   [stubTrue, identity]
 ]);
 
-export const getTransformers = options => [
+export const getTransformers = loopProtectOptions => [
   replaceNBSP,
-  babelTransformer(options ? options : {}),
+  babelTransformer(loopProtectOptions),
   partial(compileHeadTail, ''),
   htmlTransformer
 ];
