@@ -172,30 +172,6 @@
 }
 
 /*mobile media queries*/
-@media screen and (max-width: 675px) {
-  .certification-namespaces.issue-date {
-    padding: 0;
-    border: 0;
-  }
-
-  .certification-namespace header {
-    height: 190px;
-  }
-
-  .certification-namespace h3 {
-    font-size: 15px;
-  }
-
-  .certification-namespace h1 {
-    font-size: 17px;
-  }
-
-  .certification-namespace h4 {
-    font-size: 15px;
-    margin-top: 20px;
-  }
-}
-
 @media screen and (max-width: 1200px) {
   .qr-code {
     top: calc(100% - 350px);
