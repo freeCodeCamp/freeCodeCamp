@@ -130,7 +130,10 @@ const babelTransformer = loopProtectOptions => {
       async code => {
         await loadBabel();
         await loadPresetEnv();
-        const babelOptions = getBabelOptions(loopProtectOptions);
+        const babelOptions = getBabelOptions(
+          optionPresetsJS,
+          loopProtectOptions
+        );
         return partial(
           transformHeadTailAndContents,
           tryTransform(babelTransformCode(babelOptions))
@@ -155,17 +158,17 @@ const babelTransformer = loopProtectOptions => {
   ]);
 };
 
-function getBabelOptions({ preview = false, protect = true }) {
-  let options = optionPresetsJS;
+function getBabelOptions(optionPresets, { preview = false, protect = true }) {
+  let options = optionPresets;
   // we always protect the preview, since it evaluates as the user types and
   // they may briefly have infinite looping code accidentally
   if (protect) {
     options = preview
-      ? { ...optionPresetsJS, plugins: ['loopProtection'] }
-      : { ...optionPresetsJS, plugins: ['testLoopProtection'] };
+      ? { ...optionPresets, plugins: ['loopProtection'] }
+      : { ...optionPresets, plugins: ['testLoopProtection'] };
   } else {
     options = preview
-      ? { ...optionPresetsJS, plugins: ['loopProtection'] }
+      ? { ...optionPresets, plugins: ['loopProtection'] }
       : options;
   }
   return options;
