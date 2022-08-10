@@ -163,6 +163,14 @@
   margin-top: calc(-1 * var(--header-height));
 }
 
+.qr-code {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  left: calc(100% - 50px);
+  top: calc(100% - 315px);
+}
+
 /*mobile media queries*/
 @media screen and (max-width: 675px) {
   .certification-namespaces.issue-date {
@@ -185,6 +193,12 @@
   .certification-namespace h4 {
     font-size: 15px;
     margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .qr-code {
+    top: calc(100% - 350px);
   }
 }
 
@@ -235,6 +249,12 @@
   .certification-namespace h1 {
     font-size: 28px;
   }
+
+  .qr-code {
+    width: 100px;
+    left: calc(100% - 85px);
+    top: calc(100% - 300px);
+  }
 }
 
 @media screen and (max-width: 675px) {
@@ -258,6 +278,10 @@
   .certification-namespace h4 {
     font-size: 15px;
     margin-top: 20px;
+  }
+
+  .qr-code {
+    display: none;
   }
 }
 

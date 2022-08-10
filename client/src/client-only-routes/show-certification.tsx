@@ -1,5 +1,6 @@
 import { Grid, Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
 import { isEmpty } from 'lodash-es';
+import { QRCodeSVG } from 'qrcode.react';
 import React, { useEffect, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -339,6 +340,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
 
         <main className='information'>
           <div className='information-container'>
+            <QRCodeSVG className='qr-code' value={certURL} />
             <Trans i18nKey='certification.fulltext' title={certTitle}>
               <h3>placeholder</h3>
               <h1>
