@@ -15,7 +15,7 @@ dashedName: build-a-personal-portfolio-webpage
 1. Your portfolio should have a welcome section with an `id` of `welcome-section`
 1. The welcome section should have an `h1` element that contains text
 1. Your portfolio should have a projects section with an `id` of `projects`
-1. The projects section should contain at least one element with a `class` of `project-tile` to hold a project
+1. The projects section should contain at least one element with a `class` of `project-title` to hold a project
 1. The projects section should contain at least one link to a project
 1. Your portfolio should have a navbar with an id of `navbar`
 1. The navbar should contain at least one link that you can click on to navigate to different sections of the page
@@ -65,7 +65,7 @@ const el = document.getElementById('projects')
 assert(!!el);
 ```
 
-Your portfolio should contain at least one element with a class of `project-tile`.
+Your portfolio should contain at least one element with a class of `project-title`.
 
 ```js
 assert.isAbove(
