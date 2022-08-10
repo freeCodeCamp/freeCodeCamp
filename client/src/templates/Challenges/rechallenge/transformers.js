@@ -42,7 +42,7 @@ function testLoopProtectCB(line) {
 
 let Babel;
 let presetEnv, presetReact;
-let babelOptionsJSBase, babelOptionsJS, babelOptionsJSX, babelOptionsJSPreview;
+let optionPresetsJS, optionPresetsJSX;
 
 async function loadBabel() {
   if (Babel) return;
@@ -69,16 +69,8 @@ async function loadPresetEnv() {
     );
   /* eslint-enable no-inline-comments */
 
-  babelOptionsJSBase = {
+  optionPresetsJS = {
     presets: [presetEnv]
-  };
-  babelOptionsJS = {
-    ...babelOptionsJSBase,
-    plugins: ['testLoopProtection']
-  };
-  babelOptionsJSPreview = {
-    ...babelOptionsJSBase,
-    plugins: ['loopProtection']
   };
 }
 
@@ -93,8 +85,7 @@ async function loadPresetReact() {
       /* webpackChunkName: "@babel/preset-env" */ '@babel/preset-env'
     );
   /* eslint-enable no-inline-comments */
-  babelOptionsJSX = {
-    plugins: ['loopProtection'],
+  optionPresetsJSX = {
     presets: [presetEnv, presetReact]
   };
 }
@@ -132,14 +123,14 @@ function tryTransform(wrap = identity) {
   };
 }
 
-const babelTransformer = options => {
+const babelTransformer = loopProtectOptions => {
   return cond([
     [
       testJS,
       async code => {
         await loadBabel();
         await loadPresetEnv();
-        const babelOptions = getBabelOptions(options);
+        const babelOptions = getBabelOptions(loopProtectOptions);
         return partial(
           transformHeadTailAndContents,
           tryTransform(babelTransformCode(babelOptions))
@@ -154,7 +145,7 @@ const babelTransformer = options => {
         return flow(
           partial(
             transformHeadTailAndContents,
-            tryTransform(babelTransformCode(babelOptionsJSX))
+            tryTransform(babelTransformCode(optionPresetsJSX))
           ),
           partial(setExt, 'js')
         )(code);
@@ -165,13 +156,17 @@ const babelTransformer = options => {
 };
 
 function getBabelOptions({ preview = false, protect = true }) {
-  let options = babelOptionsJSBase;
+  let options = optionPresetsJS;
   // we always protect the preview, since it evaluates as the user types and
   // they may briefly have infinite looping code accidentally
   if (protect) {
-    options = preview ? babelOptionsJSPreview : babelOptionsJS;
+    options = preview
+      ? { ...optionPresetsJS, plugins: ['loopProtection'] }
+      : { ...optionPresetsJS, plugins: ['testLoopProtection'] };
   } else {
-    options = preview ? babelOptionsJSPreview : options;
+    options = preview
+      ? { ...optionPresetsJS, plugins: ['loopProtection'] }
+      : options;
   }
   return options;
 }
@@ -197,9 +192,13 @@ async function transformScript(documentElement) {
   await loadPresetEnv();
   const scriptTags = documentElement.querySelectorAll('script');
   scriptTags.forEach(script => {
-    script.innerHTML = tryTransform(babelTransformCode(babelOptionsJS))(
-      script.innerHTML
-    );
+    // TODO: use getBabelOptions once it accepts presets as an arg
+    script.innerHTML = tryTransform(
+      babelTransformCode({
+        ...optionPresetsJS,
+        plugins: ['testLoopProtection']
+      })
+    )(script.innerHTML);
   });
 }
 
