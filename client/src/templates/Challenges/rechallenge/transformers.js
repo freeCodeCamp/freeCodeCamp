@@ -38,7 +38,7 @@ function testLoopProtectCB(line) {
   );
 }
 
-// hold Babel, presets and options so we don't try to import them multiple times
+// hold Babel and presets so we don't try to import them multiple times
 
 let Babel;
 let presetEnv, presetReact;
