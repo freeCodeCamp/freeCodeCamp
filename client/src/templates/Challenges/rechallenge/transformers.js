@@ -42,7 +42,7 @@ function testLoopProtectCB(line) {
 
 let Babel;
 let presetEnv, presetReact;
-let optionPresetsJS, optionPresetsJSX;
+let presetsJS, presetsJSX;
 
 async function loadBabel() {
   if (Babel) return;
@@ -69,7 +69,7 @@ async function loadPresetEnv() {
     );
   /* eslint-enable no-inline-comments */
 
-  optionPresetsJS = {
+  presetsJS = {
     presets: [presetEnv]
   };
 }
@@ -85,7 +85,7 @@ async function loadPresetReact() {
       /* webpackChunkName: "@babel/preset-env" */ '@babel/preset-env'
     );
   /* eslint-enable no-inline-comments */
-  optionPresetsJSX = {
+  presetsJSX = {
     presets: [presetEnv, presetReact]
   };
 }
@@ -130,10 +130,7 @@ const babelTransformer = loopProtectOptions => {
       async code => {
         await loadBabel();
         await loadPresetEnv();
-        const babelOptions = getBabelOptions(
-          optionPresetsJS,
-          loopProtectOptions
-        );
+        const babelOptions = getBabelOptions(presetsJS, loopProtectOptions);
         return partial(
           transformHeadTailAndContents,
           tryTransform(babelTransformCode(babelOptions))
@@ -145,10 +142,7 @@ const babelTransformer = loopProtectOptions => {
       async code => {
         await loadBabel();
         await loadPresetReact();
-        const babelOptions = getBabelOptions(
-          optionPresetsJSX,
-          loopProtectOptions
-        );
+        const babelOptions = getBabelOptions(presetsJSX, loopProtectOptions);
         return flow(
           partial(
             transformHeadTailAndContents,
@@ -162,12 +156,12 @@ const babelTransformer = loopProtectOptions => {
   ]);
 };
 
-function getBabelOptions(optionPresets, { preview = false, protect = true }) {
+function getBabelOptions(presets, { preview = false, protect = true }) {
   // we always protect the preview, since it evaluates as the user types and
   // they may briefly have infinite looping code accidentally
-  if (preview) return { ...optionPresets, plugins: ['loopProtection'] };
-  if (protect) return { ...optionPresets, plugins: ['testLoopProtection'] };
-  return optionPresets;
+  if (preview) return { ...presets, plugins: ['loopProtection'] };
+  if (protect) return { ...presets, plugins: ['testLoopProtection'] };
+  return presets;
 }
 
 const sassWorker = createWorker(sassCompile);
@@ -192,7 +186,7 @@ async function transformScript(documentElement) {
   const scriptTags = documentElement.querySelectorAll('script');
   scriptTags.forEach(script => {
     script.innerHTML = tryTransform(
-      babelTransformCode(getBabelOptions(optionPresetsJS))
+      babelTransformCode(getBabelOptions(presetsJS))
     )(script.innerHTML);
   });
 }
