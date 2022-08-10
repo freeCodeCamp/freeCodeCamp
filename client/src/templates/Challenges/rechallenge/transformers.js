@@ -145,10 +145,14 @@ const babelTransformer = loopProtectOptions => {
       async code => {
         await loadBabel();
         await loadPresetReact();
+        const babelOptions = getBabelOptions(
+          optionPresetsJSX,
+          loopProtectOptions
+        );
         return flow(
           partial(
             transformHeadTailAndContents,
-            tryTransform(babelTransformCode(optionPresetsJSX))
+            tryTransform(babelTransformCode(babelOptions))
           ),
           partial(setExt, 'js')
         )(code);
@@ -187,12 +191,8 @@ async function transformScript(documentElement) {
   await loadPresetEnv();
   const scriptTags = documentElement.querySelectorAll('script');
   scriptTags.forEach(script => {
-    // TODO: use getBabelOptions once it accepts presets as an arg
     script.innerHTML = tryTransform(
-      babelTransformCode({
-        ...optionPresetsJS,
-        plugins: ['testLoopProtection']
-      })
+      babelTransformCode(getBabelOptions(optionPresetsJS))
     )(script.innerHTML);
   });
 }
