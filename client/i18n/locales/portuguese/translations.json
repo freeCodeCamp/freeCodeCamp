@@ -450,8 +450,8 @@
     "change-theme": "Faça login para mudar o tema.",
     "translation-pending": "Ajude-nos a traduzir",
     "certification-project": "Projeto de certificação",
-    "iframe-alert": "Normally this link would bring you to another website! It works. This is a link to: {{externalLink}}",
-    "document-notfound": "document not found"
+    "iframe-alert": "Normalmente, este link levaria você para outro site da web! Funciona. Esse é um link para: {{externalLink}}",
+    "document-notfound": "documento não encontrado"
   },
   "icons": {
     "gold-cup": "Taça de ouro",
