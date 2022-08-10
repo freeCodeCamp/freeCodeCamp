@@ -156,7 +156,10 @@ const babelTransformer = loopProtectOptions => {
   ]);
 };
 
-function getBabelOptions(presets, { preview = false, protect = true }) {
+function getBabelOptions(
+  presets,
+  { preview, protect } = { preview: false, protect: true }
+) {
   // we always protect the preview, since it evaluates as the user types and
   // they may briefly have infinite looping code accidentally
   if (preview) return { ...presets, plugins: ['loopProtection'] };
