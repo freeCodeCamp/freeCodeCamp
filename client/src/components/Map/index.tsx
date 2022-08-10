@@ -168,8 +168,8 @@ export function Map({
   const nodes = data.allChallengeNode.nodes;
   const temp = [
     nodes[0],
-    nodes[11],
-    ...nodes.filter((_, i) => i !== 0 && i !== 11)
+    nodes[12],
+    ...nodes.filter((_, i) => i !== 0 && i !== 12)
   ];
 
   return (
