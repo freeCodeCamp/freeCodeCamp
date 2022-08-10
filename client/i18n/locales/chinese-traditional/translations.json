@@ -449,7 +449,9 @@
     "and": "和",
     "change-theme": "登錄以更改主題。",
     "translation-pending": "幫我們翻譯",
-    "certification-project": "認證項目"
+    "certification-project": "認證項目",
+    "iframe-alert": "Normally this link would bring you to another website! It works. This is a link to: {{externalLink}}",
+    "document-notfound": "document not found"
   },
   "icons": {
     "gold-cup": "金獎盃",

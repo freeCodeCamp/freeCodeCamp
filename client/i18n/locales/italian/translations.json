@@ -449,7 +449,9 @@
     "and": "e",
     "change-theme": "Accedi per modificare il tema.",
     "translation-pending": "Aiutaci a tradurlo",
-    "certification-project": "Progetto della certificazione"
+    "certification-project": "Progetto della certificazione",
+    "iframe-alert": "Normally this link would bring you to another website! It works. This is a link to: {{externalLink}}",
+    "document-notfound": "document not found"
   },
   "icons": {
     "gold-cup": "Coppa d'Oro",
