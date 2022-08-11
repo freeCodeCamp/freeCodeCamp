@@ -20,6 +20,10 @@ export default function SoundSettings({
   const { t } = useTranslation();
   const [volumeDisplay, setVolumeDisplay] = useState(100);
 
+  const soundInterval = setTimeout(() => {
+    void playTone('tests-completed');
+  }, 200);
+
   function handleVolumeChange(event: ChangeEvent<HTMLInputElement>) {
     const inputValue = Number(event.target.value);
 
@@ -27,8 +31,8 @@ export default function SoundSettings({
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     setVolumeDisplay(store.get('soundVolume') ?? 0);
-
-    void playTone('tests-completed');
+    clearTimeout(soundInterval);
+    soundInterval;
   }
 
   useEffect(() => {
@@ -55,7 +59,7 @@ export default function SoundSettings({
         max='100'
         defaultValue={store.get('soundVolume') as number}
         className='soundbar'
-        onChange={handleVolumeChange}
+        onInput={handleVolumeChange}
       />
       <div>
         {t('settings.sound-volume')} {volumeDisplay}
