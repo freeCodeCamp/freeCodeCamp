@@ -7,6 +7,21 @@
     @apply underline;
   }
 }
+@layer components {
+  /* Table component */
+  .bordered > thead > tr > th,
+  .bordered > tbody > tr > th,
+  .bordered > tfoot > tr > th,
+  .bordered > thead > tr > td,
+  .bordered > tbody > tr > td,
+  .bordered > tfoot > tr > td {
+    border: 1px solid #ddd;
+  }
+  .table-hover > tbody > tr:hover {
+    background-color: #f5f5f5;
+    /* color: black; -- Used for storybook use case only */
+  }
+}
 
 @tailwind components;
 @tailwind utilities;
