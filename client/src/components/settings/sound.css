@@ -1,0 +1,39 @@
+.soundbar {
+  margin: 1em 0 2em 0;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: var(--tertiary-color);
+}
+
+input[type='range']:focus {
+  outline: none;
+}
+
+/* Special styling for WebKit/Blink */
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 2px solid var(--secondary-color);
+  height: 46px;
+  width: 16px;
+  background: var(--gray-15);
+  cursor: pointer;
+}
+
+/* All the same stuff for Firefox */
+input[type='range']::-moz-range-thumb {
+  border: 2px solid var(--secondary-color);
+  height: 46px;
+  width: 16px;
+  background: var(--gray-15);
+  cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type='range']::-ms-thumb {
+  border: 2px solid var(--secondary-color);
+  height: 46px;
+  width: 16px;
+  background: var(--gray-15);
+  cursor: pointer;
+}
