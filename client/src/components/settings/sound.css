@@ -16,17 +16,23 @@ input[type='range']::-webkit-slider-thumb {
   border: 2px solid var(--secondary-color);
   height: 46px;
   width: 16px;
-  background: var(--gray-15);
+  background: var(--quaternary-background);
   cursor: pointer;
 }
 
 /* All the same stuff for Firefox */
 input[type='range']::-moz-range-thumb {
   border: 2px solid var(--secondary-color);
+  border-radius: 0;
   height: 46px;
   width: 16px;
-  background: var(--gray-15);
+  background: var(--quaternary-background);
   cursor: pointer;
+}
+
+input[type='range']::-moz-range-progress {
+  background: var(--gray-90);
+  height: 25px;
 }
 
 /* All the same stuff for IE */
