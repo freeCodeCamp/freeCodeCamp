@@ -34,12 +34,3 @@ input[type='range']::-moz-range-progress {
   background: var(--gray-90);
   height: 25px;
 }
-
-/* All the same stuff for IE */
-input[type='range']::-ms-thumb {
-  border: 2px solid var(--secondary-color);
-  height: 46px;
-  width: 16px;
-  background: var(--gray-15);
-  cursor: pointer;
-}
