@@ -29,15 +29,13 @@ export default function SoundSettings({
 
     store.set('soundVolume', inputValue);
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-    setVolumeDisplay(store.get('soundVolume') ?? 0);
+    setVolumeDisplay((store.get('soundVolume') as number) ?? 50);
     clearTimeout(soundInterval);
     soundInterval;
   }
 
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-    setVolumeDisplay(store.get('soundVolume') ?? 0);
+    setVolumeDisplay((store.get('soundVolume') as number) ?? 50);
   }, []);
 
   return (
