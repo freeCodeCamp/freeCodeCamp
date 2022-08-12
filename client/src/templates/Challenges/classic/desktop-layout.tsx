@@ -34,6 +34,7 @@ interface DesktopLayoutProps {
   resizeProps: ResizeProps;
   superBlock: string;
   testOutput: ReactElement;
+  visibleEditors: { [key: string]: boolean };
 }
 
 const reflexProps = {
@@ -85,20 +86,20 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     notes,
     preview,
     hasEditableBoundaries,
-    superBlock
+    superBlock,
+    visibleEditors
   } = props;
 
   const challengeFile = getChallengeFile();
   const projectBasedChallenge = hasEditableBoundaries;
   const isMultifileCertProject =
     challengeType === challengeTypes.multifileCertProject;
-  const displayPreview =
-    projectBasedChallenge || isMultifileCertProject
-      ? showPreview && hasPreview
-      : hasPreview;
+  const displayPreview = showPreview && hasPreview;
   const displayNotes = projectBasedChallenge ? showNotes && hasNotes : false;
-  const displayConsole =
-    projectBasedChallenge || isMultifileCertProject ? showConsole : true;
+  const displayConsole = showConsole;
+  const displayEditor = Object.entries(visibleEditors).some(
+    ([, visible]) => visible
+  );
   const {
     codePane,
     editorPane,
@@ -110,20 +111,19 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
   return (
     <div className='desktop-layout'>
-      {(projectBasedChallenge || isMultifileCertProject) && (
-        <ActionRow
-          block={block}
-          hasNotes={hasNotes}
-          isMultifileCertProject={isMultifileCertProject}
-          showConsole={showConsole}
-          showNotes={showNotes}
-          showInstructions={showInstructions}
-          showPreview={showPreview}
-          superBlock={superBlock}
-          showBreadcrumbs={false}
-          togglePane={togglePane}
-        />
-      )}
+      <ActionRow
+        block={block}
+        hasNotes={hasNotes}
+        isMultifileCertProject={isMultifileCertProject}
+        showConsole={showConsole}
+        showNotes={showNotes}
+        showInstructions={showInstructions}
+        hasPreview={hasPreview}
+        showPreview={showPreview}
+        superBlock={superBlock}
+        showBreadcrumbs={false}
+        togglePane={togglePane}
+      />
       <div className='editor-row'>
         <ReflexContainer orientation='vertical'>
           {!projectBasedChallenge && showInstructions && (
@@ -131,12 +131,12 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
               {instructions}
             </ReflexElement>
           )}
-          {!projectBasedChallenge && (
+          {!projectBasedChallenge && displayEditor && (
             <ReflexSplitter propagate={true} {...resizeProps} />
           )}
 
-          <ReflexElement flex={editorPane.flex} {...resizeProps}>
-            {challengeFile && (
+          {challengeFile && displayEditor && (
+            <ReflexElement flex={editorPane.flex} {...resizeProps}>
               <ReflexContainer
                 key={challengeFile.fileKey}
                 orientation='horizontal'
@@ -157,8 +157,8 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
                   </ReflexElement>
                 )}
               </ReflexContainer>
-            )}
-          </ReflexElement>
+            </ReflexElement>
+          )}
 
           {(displayPreview || displayConsole) && (
             <ReflexSplitter propagate={true} {...resizeProps} />

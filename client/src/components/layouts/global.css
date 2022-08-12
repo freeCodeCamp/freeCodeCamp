@@ -491,7 +491,10 @@ fieldset[disabled] .btn-primary.focus {
   }
 }
 
-.button-group .btn:not(:last-child) {
+.button-group {
+  margin-bottom: -10px;
+}
+.button-group .btn {
   margin-bottom: 10px;
 }
 strong {
