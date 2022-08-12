@@ -2,6 +2,7 @@ import React from 'react';
 
 import { TabPaneProps } from './types';
 
+// 使用 useCallback 和 useMemo 切换
 export const TabPane = React.forwardRef<HTMLDivElement, TabPaneProps>(
   (props, ref) => {
     const { activeKey, eventKey, ...rest } = props;
