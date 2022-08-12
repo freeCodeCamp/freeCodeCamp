@@ -6,6 +6,9 @@ import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
+import { SuperBlocks } from '../../../config/certification-settings';
+import envData from '../../../config/env.json';
+import { isAuditedCert } from '../../../utils/is-audited';
 import Intro from '../components/Intro';
 import Map from '../components/Map';
 import { Spacer } from '../components/helpers';
@@ -15,6 +18,8 @@ import {
   isSignedInSelector,
   userSelector
 } from '../redux';
+
+const { curriculumLocale } = envData;
 
 interface FetchState {
   pending: boolean;
@@ -83,7 +88,11 @@ function LearnPage({
               isSignedIn={isSignedIn}
               name={name}
               pending={pending}
-              slug={slug}
+              slug={
+                isAuditedCert(curriculumLocale, SuperBlocks.RespWebDesignNew)
+                  ? slug
+                  : '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements'
+              }
             />
             <Map />
             <Spacer size={2} />
@@ -100,7 +109,13 @@ export default connect(mapStateToProps, null)(LearnPage);
 
 export const query = graphql`
   query FirstChallenge {
-    challengeNode(challenge: { order: { eq: 0 }, challengeOrder: { eq: 0 } }) {
+    challengeNode(
+      challenge: {
+        superBlock: { eq: "2022/responsive-web-design" }
+        challengeOrder: { eq: 0 }
+        order: { eq: 0 }
+      }
+    ) {
       challenge {
         fields {
           slug
