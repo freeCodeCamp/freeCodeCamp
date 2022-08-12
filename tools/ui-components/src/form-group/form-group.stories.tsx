@@ -9,7 +9,7 @@ const story = {
     children: { control: { type: 'object' } },
     className: { control: { type: 'text' } },
     controlId: { control: { type: 'text' } },
-    validationState: { action: ['success', 'warning', 'error', null] }
+    validationState: { options: ['success', 'warning', 'error', null] }
   }
 };
 
