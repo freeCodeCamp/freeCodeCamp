@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 function BlockSaveButton(props?: Record<string, unknown>): JSX.Element {
   const { t } = useTranslation();
   return (
-    <Button block={true} bsStyle='primary' {...props} type='submit'>
+    <Button bsStyle='primary' {...props} type='submit'>
       {props?.children || t('buttons.save')}
     </Button>
   );

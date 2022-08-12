@@ -501,6 +501,33 @@ strong {
   color: var(--secondary-color);
 }
 
+.form-group.embedded {
+  border: 1px solid var(--tc-black-40);
+  padding: 8px 10px 2px;
+  border-radius: 4px;
+  position: relative;
+  max-width: 320px;
+}
+
+.form-group.embedded .control-label {
+  display: block;
+  font-size: 11px;
+  font-family: 'Roboto';
+  line-height: 10px;
+  color: var(--tc-turq-160);
+  margin-bottom: 4px;
+}
+
+.form-group.embedded .form-control {
+  border: 0 none;
+  padding: 0;
+  height: 22px;
+  font-size: 14px;
+  line-height: 22px;
+  font-family: 'Roboto';
+  color: var(--tc-black-100);
+}
+
 .form-control {
   color: var(--primary-color);
   outline: none;

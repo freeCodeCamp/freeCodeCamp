@@ -1,6 +1,5 @@
 import {
   Alert,
-  Col,
   ControlLabel,
   FormControl,
   FormGroup,
@@ -72,7 +71,7 @@ function FormFields(props: FormFieldsProps): JSX.Element {
     ) : null;
   };
   return (
-    <div>
+    <>
       {formFields
         .filter(formField => !ignored.includes(formField.name))
         .map(({ name, label }) => (
@@ -85,35 +84,33 @@ function FormFields(props: FormFieldsProps): JSX.Element {
                 name in placeholders ? placeholders[name] : '';
               const isURL = types[name] === 'url';
               return (
-                <Col key={key} xs={12}>
-                  <FormGroup>
-                    {type === 'hidden' ? null : (
-                      <ControlLabel htmlFor={key}>{label}</ControlLabel>
-                    )}
-                    <FormControl
-                      componentClass={type === 'textarea' ? type : 'input'}
-                      id={key}
-                      name={name}
-                      onChange={onChange}
-                      placeholder={placeholder}
-                      required={required.includes(name)}
-                      rows={4}
-                      type={type}
-                      value={value as string}
-                    />
-                    {nullOrWarning(
-                      value as string,
-                      !pristine && error,
-                      isURL,
-                      name
-                    )}
-                  </FormGroup>
-                </Col>
+                <FormGroup key={key} className="embedded">
+                  {type === 'hidden' ? null : (
+                    <ControlLabel htmlFor={key}>{label}</ControlLabel>
+                  )}
+                  <FormControl
+                    componentClass={type === 'textarea' ? type : 'input'}
+                    id={key}
+                    name={name}
+                    onChange={onChange}
+                    placeholder={placeholder}
+                    required={required.includes(name)}
+                    rows={4}
+                    type={type}
+                    value={value as string}
+                  />
+                  {nullOrWarning(
+                    value as string,
+                    !pristine && error,
+                    isURL,
+                    name
+                  )}
+                </FormGroup>
               );
             }}
           </Field>
         ))}
-    </div>
+    </>
   );
 }
 

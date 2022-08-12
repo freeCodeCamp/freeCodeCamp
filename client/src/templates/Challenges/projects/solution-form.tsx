@@ -12,7 +12,7 @@ import {
 import { Form, ValidatedValues } from '../../../components/formHelpers';
 
 interface SubmitProps {
-  showCompletionModal: boolean;
+  completed: boolean;
 }
 
 interface FormProps extends WithTranslation {
@@ -38,9 +38,9 @@ export class SolutionForm extends Component<FormProps> {
       // updates values on store
       this.props.updateSolutionForm(validatedValues.values);
       if (validatedValues.invalidValues.length === 0) {
-        this.props.onSubmit({ showCompletionModal: true });
+        this.props.onSubmit({ completed: true });
       } else {
-        this.props.onSubmit({ showCompletionModal: false });
+        this.props.onSubmit({ completed: false });
       }
     }
   };
@@ -57,7 +57,7 @@ export class SolutionForm extends Component<FormProps> {
       { name: 'githubLink', label: t('learn.github-link') }
     ];
 
-    const buttonCopy = t('learn.i-completed');
+    const buttonCopy = t('learn.submit-and-go');
 
     const options = {
       types: {

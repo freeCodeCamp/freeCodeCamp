@@ -6,7 +6,6 @@ import {
   ValidatedValues,
   FormFields,
   BlockSaveButton,
-  BlockSaveWrapper,
   formatUrlValues
 } from '../formHelpers/index';
 
@@ -54,15 +53,13 @@ function DynamicForm({
           style={{ width: '100%' }}
         >
           <FormFields formFields={formFields} options={options} />
-          <BlockSaveWrapper>
-            {hideButton ? null : (
-              <BlockSaveButton
-                disabled={(pristine && !enableSubmit) || (error as boolean)}
-              >
-                {buttonText ? buttonText : null}
-              </BlockSaveButton>
-            )}
-          </BlockSaveWrapper>
+          {!hideButton && (
+            <BlockSaveButton
+              disabled={(pristine && !enableSubmit) || (error as boolean)}
+            >
+              {buttonText ? buttonText : null}
+            </BlockSaveButton>
+          )}
         </form>
       )}
     </Form>
