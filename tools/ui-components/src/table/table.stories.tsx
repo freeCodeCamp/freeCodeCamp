@@ -61,16 +61,14 @@ const story = {
     },
     borderless: {
       options: [true, false],
-      control: { type: 'radio'}, 
+      control: { type: 'radio' },
       // Used to avoid conflict with borders
-      if: {arg: 'bordered', truthy: false} 
+      if: { arg: 'bordered', truthy: false }
     },
     size: {
       options: ['small', 'medium', 'large']
     }
-    
   }
-  
 };
 
 const Template: Story<TableProps> = args => (

@@ -1,8 +1,9 @@
-import React from "react";
+import React from 'react';
 
 export type TableVariant = 'light' | 'dark';
 
-export interface TableProps extends React.TableHTMLAttributes<HTMLTableElement> {
+export interface TableProps
+  extends React.TableHTMLAttributes<HTMLTableElement> {
   bordered?: boolean;
   borderless?: boolean;
   className?: string;
