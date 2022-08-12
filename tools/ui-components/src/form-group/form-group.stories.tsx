@@ -22,4 +22,9 @@ Default.args = {
   children: 'FormGroup'
 };
 
+//ToDo:
+// create a story that has `feedback` class that works as `control-label`
+// create a function that change the `valdiationState` depend on the `feedback`
+// that story should show how `feedback` change `valdiationState` in the formGroup
+
 export default story;
