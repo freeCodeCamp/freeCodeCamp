@@ -337,9 +337,13 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     if (player.current.shouldPlay && !player.current.sampler) {
       void import('tone').then(tone => {
-        player.current.sampler = new tone.Sampler(
-          editorToneOptions
-        ).toDestination();
+        const newSound = new tone.Sampler(editorToneOptions).toDestination();
+        player.current.sampler = newSound;
+
+        const storedVolume = (store.get('soundVolume') as number) ?? 50;
+        const calculateDecibel = -60 * (1 - storedVolume / 100);
+
+        newSound.volume.value = calculateDecibel;
       });
     }
 
