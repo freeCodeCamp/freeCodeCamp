@@ -315,10 +315,6 @@ export const reducer = handleActions(
       ...state,
       isResetting: false
     }),
-    [actionTypes.updateHtmlForPortal]: (state, { payload }) => ({
-      ...state,
-      htmlForPortal: payload
-    }),
     [actionTypes.updateSolutionFormValues]: (state, { payload }) => ({
       ...state,
       projectFormValues: payload

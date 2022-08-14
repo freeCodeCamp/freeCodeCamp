@@ -298,8 +298,6 @@ export const createTestFramer = (
   frameReady: () => void
 ) => createFramer(document, testId, initTestFrame, proxyLogger, frameReady);
 
-// createPortalFramer maybe
-
 const createFramer = (
   document: Document,
   id: string,
