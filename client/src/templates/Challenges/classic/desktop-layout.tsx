@@ -110,7 +110,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     superBlock,
     windowTitle
   } = props;
-
+  console.log(htmlForPortal);
   const challengeFile = getChallengeFile();
   const projectBasedChallenge = hasEditableBoundaries;
   const isMultifileCertProject =
@@ -201,7 +201,9 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
       </ReflexContainer>
       {displayPreviewPortal && (
         <PreviewPortal togglePane={togglePane} windowTitle={windowTitle}>
-          <iframe
+          <>{preview}</>
+
+          {/*<iframe
             title='fcc-preview-portal-frame'
             id='fcc-preview-portal-frame'
             width='100%'
@@ -212,7 +214,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
               padding: '0'
             }}
             srcDoc={htmlForPortal}
-          ></iframe>
+          >{preview}</iframe>*/}
         </PreviewPortal>
       )}
     </div>

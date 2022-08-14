@@ -1,11 +1,11 @@
 .challenge-preview,
 .challenge-preview-frame {
-  height: 100%;
+  height: 100% !important;
   min-height: 70vh;
-  width: 100%;
+  width: 100% !important;
   padding: 0;
   margin: 0;
-  border: none;
+  border: none !important;
   background-color: white;
 }
 

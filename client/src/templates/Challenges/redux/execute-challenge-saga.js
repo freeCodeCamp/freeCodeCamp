@@ -38,6 +38,7 @@ import {
 import { actionTypes } from './action-types';
 import {
   updateHtmlForPortal,
+  portalDocumentSelector,
   challengeDataSelector,
   challengeMetaSelector,
   challengeTestsSelector,
@@ -246,11 +247,19 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
       if (challengeHasPreview(challengeData)) {
         const document = yield getContext('document');
 
+        const portalDocument = yield select(portalDocumentSelector);
+
+        // if portal, get doc from redux
+        console.log(portalDocument);
+
+        const finalDocument = portalDocument ? portalDocument : document;
+
+        // probably won't need this then
         const htmlString =
           createHeader('fcc-preview-portal-frame') + buildData.build;
         yield put(updateHtmlForPortal(htmlString));
 
-        yield call(updatePreview, buildData, document, proxyLogger);
+        yield call(updatePreview, buildData, finalDocument, proxyLogger);
       } else if (isJavaScriptChallenge(challengeData)) {
         const runUserCode = getTestRunner(buildData, {
           proxyLogger,

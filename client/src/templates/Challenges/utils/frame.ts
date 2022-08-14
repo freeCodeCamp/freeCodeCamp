@@ -135,8 +135,10 @@ const createFrame =
 const hiddenFrameClassName = 'hide-test-frame';
 const mountFrame =
   (document: Document, id: string) => (frameContext: Context) => {
+    //console.log(frameContext);
     const { element }: { element: HTMLIFrameElement } = frameContext;
     const oldFrame = document.getElementById(element.id) as HTMLIFrameElement;
+    //console.log(oldFrame);
     if (oldFrame) {
       element.className = oldFrame.className || hiddenFrameClassName;
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -297,6 +299,8 @@ export const createTestFramer = (
   proxyLogger: ProxyLogger,
   frameReady: () => void
 ) => createFramer(document, testId, initTestFrame, proxyLogger, frameReady);
+
+// createPortalFramer maybe
 
 const createFramer = (
   document: Document,
