@@ -61,7 +61,7 @@ const DOCUMENT_NOT_FOUND_ERROR = 'misc.document-notfound';
 // of the frame.  React dom errors already appear in the console, so onerror
 // does not need to pass them on to the default error handler.
 
-export const createHeader = (id = mainPreviewId) => `
+const createHeader = (id = mainPreviewId) => `
   <base href='' />
   <script>
     window.__frameId = '${id}';
@@ -135,10 +135,8 @@ const createFrame =
 const hiddenFrameClassName = 'hide-test-frame';
 const mountFrame =
   (document: Document, id: string) => (frameContext: Context) => {
-    //console.log(frameContext);
     const { element }: { element: HTMLIFrameElement } = frameContext;
     const oldFrame = document.getElementById(element.id) as HTMLIFrameElement;
-    //console.log(oldFrame);
     if (oldFrame) {
       element.className = oldFrame.className || hiddenFrameClassName;
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion

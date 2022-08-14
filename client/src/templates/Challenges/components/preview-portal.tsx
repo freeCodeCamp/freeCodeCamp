@@ -20,8 +20,8 @@ const mapDispatchToProps = {
 
 class PreviewPortal extends Component<PreviewPortalProps> {
   static displayName = 'PreviewPortal';
+  mainWindow: Window;
   externalWindow: Window | null = null;
-  internalWindow: Window;
   containerEl;
   titleEl;
   styleEl;
@@ -29,11 +29,11 @@ class PreviewPortal extends Component<PreviewPortalProps> {
   constructor(props: PreviewPortalProps) {
     super(props);
 
+    this.mainWindow = window;
     this.externalWindow = null;
     this.containerEl = document.createElement('div');
     this.titleEl = document.createElement('title');
     this.styleEl = document.createElement('style');
-    this.internalWindow = window;
   }
 
   componentDidMount() {
@@ -59,15 +59,12 @@ class PreviewPortal extends Component<PreviewPortalProps> {
 
     this.externalWindow?.document.head.appendChild(this.titleEl);
     this.externalWindow?.document.head.appendChild(this.styleEl);
-
     this.externalWindow?.document.body.setAttribute(
       'style',
       `
         margin: 0px;
         padding: 0px;
         overflow: hidden;
-        width: 100%;
-        height: 100%;
       `
     );
     this.externalWindow?.document.body.appendChild(this.containerEl);
@@ -75,17 +72,9 @@ class PreviewPortal extends Component<PreviewPortalProps> {
       this.props.togglePane('showPreviewPortal');
     });
 
-    // put document in redux
-    console.log(this.externalWindow?.document);
     this.props.storePortalDocument(this.externalWindow?.document);
-    /*const iframeEl = this.externalWindow?.document.getElementById('fcc-main-frame');
-    //console.log(iframeEl);
-    //iframeEl?.setAttribute(
-      'style',
-      'width:100%;height:100%;border:none;'
-    );*/
 
-    this.internalWindow?.addEventListener('beforeunload', () => {
+    this.mainWindow?.addEventListener('beforeunload', () => {
       this.externalWindow?.close();
     });
   }

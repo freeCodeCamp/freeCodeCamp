@@ -279,8 +279,6 @@ export function updatePreview(
     buildData.challengeType === challengeTypes.html ||
     buildData.challengeType === challengeTypes.multifileCertProject
   ) {
-    console.log('updating preview');
-    console.log(document);
     createMainPreviewFramer(document, proxyLogger)(buildData);
   } else {
     throw new Error(
@@ -297,7 +295,6 @@ export function updateProjectPreview(
     buildData.challengeType === challengeTypes.html ||
     buildData.challengeType === challengeTypes.multifileCertProject
   ) {
-    console.log('updating project preview');
     // Give iframe a title attribute for accessibility using the preview
     // document's <title>.
     const titleMatch = buildData?.sources?.index?.match(

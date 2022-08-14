@@ -30,7 +30,6 @@ const initialState = {
   challengeTests: [],
   consoleOut: [],
   hasCompletedBlock: false,
-  htmlForPortal: '',
   isCodeLocked: false,
   isBuildEnabled: true,
   isResetting: false,
@@ -89,9 +88,6 @@ export const updateFile = createAction(actionTypes.updateFile);
 export const updateConsole = createAction(actionTypes.updateConsole);
 export const updateLogs = createAction(actionTypes.updateLogs);
 export const updateJSEnabled = createAction(actionTypes.updateJSEnabled);
-export const updateHtmlForPortal = createAction(
-  actionTypes.updateHtmlForPortal
-);
 export const updateSolutionFormValues = createAction(
   actionTypes.updateSolutionFormValues
 );
@@ -168,7 +164,6 @@ export const successMessageSelector = state => state[ns].successMessage;
 export const projectFormValuesSelector = state =>
   state[ns].projectFormValues || {};
 
-export const htmlForPortalSelector = state => state[ns].htmlForPortal;
 export const portalDocumentSelector = state => state[ns].portalDocument;
 
 export const challengeDataSelector = state => {

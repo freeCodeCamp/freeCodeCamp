@@ -1,11 +1,8 @@
 import { first } from 'lodash-es';
 import React, { useState, ReactElement } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
-import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
 import { sortChallengeFiles } from '../../../../../utils/sort-challengefiles';
 import { challengeTypes } from '../../../../utils/challenge-types';
-import { htmlForPortalSelector } from '../redux';
 import {
   ChallengeFile,
   ChallengeFiles,
@@ -35,7 +32,6 @@ interface DesktopLayoutProps {
   };
   notes: ReactElement;
   preview: ReactElement;
-  htmlForPortal: string;
   resizeProps: ResizeProps;
   superBlock: string;
   testOutput: ReactElement;
@@ -45,13 +41,6 @@ interface DesktopLayoutProps {
 const reflexProps = {
   propagateDimensions: true
 };
-
-const mapStateToProps = createSelector(
-  htmlForPortalSelector,
-  (htmlForPortal: string) => ({
-    htmlForPortal
-  })
-);
 
 const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   const [showNotes, setShowNotes] = useState(false);
@@ -99,7 +88,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     resizeProps,
     instructions,
     editor,
-    htmlForPortal,
     testOutput,
     hasNotes,
     hasPreview,
@@ -110,7 +98,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     superBlock,
     windowTitle
   } = props;
-  console.log(htmlForPortal);
+
   const challengeFile = getChallengeFile();
   const projectBasedChallenge = hasEditableBoundaries;
   const isMultifileCertProject =
@@ -201,20 +189,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
       </ReflexContainer>
       {displayPreviewPortal && (
         <PreviewPortal togglePane={togglePane} windowTitle={windowTitle}>
-          <>{preview}</>
-
-          {/*<iframe
-            title='fcc-preview-portal-frame'
-            id='fcc-preview-portal-frame'
-            width='100%'
-            height='100%'
-            style={{
-              border: 'none',
-              margin: '0',
-              padding: '0'
-            }}
-            srcDoc={htmlForPortal}
-          >{preview}</iframe>*/}
+          {preview}
         </PreviewPortal>
       )}
     </div>
@@ -223,4 +198,4 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
 DesktopLayout.displayName = 'DesktopLayout';
 
-export default connect(mapStateToProps, null)(DesktopLayout);
+export default DesktopLayout;

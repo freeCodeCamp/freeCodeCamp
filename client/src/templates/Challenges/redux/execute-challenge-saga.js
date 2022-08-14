@@ -25,7 +25,6 @@ import {
   isJavaScriptChallenge,
   isLoopProtected
 } from '../utils/build';
-import { createHeader } from '../utils/frame';
 import { challengeTypes } from '../../../../utils/challenge-types';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
@@ -37,7 +36,6 @@ import {
 } from '../../../utils/challenge-request-helpers';
 import { actionTypes } from './action-types';
 import {
-  updateHtmlForPortal,
   portalDocumentSelector,
   challengeDataSelector,
   challengeMetaSelector,
@@ -246,18 +244,8 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
       // evaluate the user code in the preview frame or in the worker
       if (challengeHasPreview(challengeData)) {
         const document = yield getContext('document');
-
         const portalDocument = yield select(portalDocumentSelector);
-
-        // if portal, get doc from redux
-        console.log(portalDocument);
-
-        const finalDocument = portalDocument ? portalDocument : document;
-
-        // probably won't need this then
-        const htmlString =
-          createHeader('fcc-preview-portal-frame') + buildData.build;
-        yield put(updateHtmlForPortal(htmlString));
+        const finalDocument = portalDocument || document;
 
         yield call(updatePreview, buildData, finalDocument, proxyLogger);
       } else if (isJavaScriptChallenge(challengeData)) {
