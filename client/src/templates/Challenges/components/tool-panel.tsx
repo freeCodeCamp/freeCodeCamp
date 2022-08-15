@@ -74,7 +74,9 @@ function ToolPanel({
 
   const { t } = useTranslation();
 
-  const tryToSubmitChallenge = debounce(submitChallenge, 2000, {leading: true});
+  const tryToSubmitChallenge = debounce(submitChallenge, 2000, {
+    leading: true
+  });
 
   return (
     <div

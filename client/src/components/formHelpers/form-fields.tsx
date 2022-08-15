@@ -84,7 +84,7 @@ function FormFields(props: FormFieldsProps): JSX.Element {
                 name in placeholders ? placeholders[name] : '';
               const isURL = types[name] === 'url';
               return (
-                <FormGroup key={key} className="embedded">
+                <FormGroup key={key} className='embedded'>
                   {type === 'hidden' ? null : (
                     <ControlLabel htmlFor={key}>{label}</ControlLabel>
                   )}

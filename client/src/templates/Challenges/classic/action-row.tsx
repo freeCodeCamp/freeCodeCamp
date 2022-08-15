@@ -30,7 +30,6 @@ const ActionRow = ({
   togglePane,
   showNotes,
   showPreview,
-  isMultifileCertProject,
   showInstructions,
   showConsole,
   superBlock,

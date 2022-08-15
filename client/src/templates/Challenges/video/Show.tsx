@@ -46,7 +46,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       submitChallenge,
       updateChallengeMeta,
       challengeMounted,
-      updateSolutionFormValues,
+      updateSolutionFormValues
     },
     dispatch
   );
@@ -185,7 +185,6 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
             superBlock,
             certification,
             block,
-            translationPending,
             videoId,
             videoLocaleIds,
             bilibiliIds,
@@ -197,8 +196,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
         challengeMeta: { nextChallengePath, prevChallengePath }
       },
       t,
-      submitChallenge,
-      isChallengeCompleted
+      submitChallenge
     } = this.props;
 
     const blockNameTitle = `${t(
@@ -236,13 +234,21 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
               </Col>
 
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <h3 className="video-section-label">
-                    Question
-                </h3>
+                <h3 className='video-section-label'>Question</h3>
               </Col>
-              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12} className="video-description">
+              <Col
+                md={8}
+                mdOffset={2}
+                sm={10}
+                smOffset={1}
+                xs={12}
+                className='video-description'
+              >
                 <ChallengeDescription description={description} />
-                <PrismFormatted className={'dark-palette line-numbers'} text={text} />
+                <PrismFormatted
+                  className={'dark-palette line-numbers'}
+                  text={text}
+                />
                 <Spacer />
                 <ObserveKeys>
                   <div className='video-quiz-options'>

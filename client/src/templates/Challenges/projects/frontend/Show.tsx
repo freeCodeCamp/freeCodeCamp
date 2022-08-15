@@ -1,4 +1,4 @@
-import { Button, Grid, Col, Row } from '@freecodecamp/react-bootstrap';
+import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
@@ -37,7 +37,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       submitChallenge,
       updateChallengeMeta,
       challengeMounted,
-      updateSolutionFormValues,
+      updateSolutionFormValues
     },
     dispatch
   );
@@ -71,7 +71,7 @@ class Project extends Component<ProjectProps, ProjectState> {
 
     this.state = {
       completed: false,
-      hasErrors: false,
+      hasErrors: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -126,12 +126,8 @@ class Project extends Component<ProjectProps, ProjectState> {
     }
   }
 
-  handleSubmit({
-    completed
-  }: {
-    completed: boolean;
-  }): void {
-    this.setState({completed, hasErrors: !completed});
+  handleSubmit({ completed }: { completed: boolean }): void {
+    this.setState({ completed, hasErrors: !completed });
 
     const { submitChallenge } = this.props;
     if (completed) {
