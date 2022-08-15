@@ -1,5 +1,6 @@
 import { mkdirSync, writeFileSync, readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
+import { submitTypes } from '../../../client/utils/challenge-types';
 import { SuperBlocks } from '../../../config/certification-settings';
 
 type Intro = { [keyValue in SuperBlocks]: IntroProps };
@@ -54,6 +55,7 @@ export function buildExtCurriculumData(
   mkdirSync(versionPath, { recursive: true });
 
   parseCurriculumData();
+  getSubmitTypes();
 
   function parseCurriculumData() {
     const superBlockKeys = Object.values(SuperBlocks).filter(x =>
@@ -120,5 +122,12 @@ export function buildExtCurriculumData(
     ) as Intro;
 
     return superBlocks[superBlock].title;
+  }
+
+  function getSubmitTypes() {
+    writeFileSync(
+      `${versionPath}/types.json`,
+      JSON.stringify(submitTypes, null, 2)
+    );
   }
 }

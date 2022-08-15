@@ -66,7 +66,7 @@ exports.pathsMap = {
   [js]: 'js',
   [jsProject]: 'js'
 };
-// determine the component to view for each challenge
+// determine the component view for each challenge
 exports.viewTypes = {
   [html]: 'classic',
   [js]: 'classic',
