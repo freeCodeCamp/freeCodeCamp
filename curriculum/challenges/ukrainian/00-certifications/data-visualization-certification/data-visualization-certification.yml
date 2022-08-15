@@ -1,16 +1,16 @@
 ---
 id: 5a553ca864b52e1d8bceea14
-title: Сертифікація Візуалізації Даних
+title: Сертифікація «Унаочнювання даних»
 certification: data-visualization
 challengeType: 7
 isPrivate: true
 tests:
   - 
     id: bd7168d8c242eddfaeb5bd13
-    title: Візуалізуйте дані за допомогою гістограми
+    title: Візуалізуйте дані з допомогою стовпчикової діаграми
   - 
     id: bd7178d8c242eddfaeb5bd13
-    title: Відобразити дані за допомогою діаграми розсіювання
+    title: Візуалізуйте дані з допомогою точкової діаграми
   - 
     id: bd7188d8c242eddfaeb5bd13
     title: Візуалізувати дані за допомогою теплокарти
