@@ -159,6 +159,10 @@
   background-color: var(--gray-05);
 }
 
+.certificate-outer-wrapper {
+  margin-top: calc(-1 * var(--header-height));
+}
+
 /*mobile media queries*/
 @media screen and (max-width: 675px) {
   .certification-namespaces.issue-date {
@@ -257,6 +261,55 @@
   }
 }
 
-.certificate-outer-wrapper {
-  margin-top: calc(-1 * var(--header-height));
+/* print media queries */
+@media print {
+  body {
+    height: 210mm;
+    width: 297mm;
+  }
+
+  .certificate-outer-wrapper {
+    width: 100%;
+    margin: 0;
+    justify-content: center;
+  }
+
+  .certification-namespace {
+    border-color: var(--theme-color) !important;
+  }
+
+  .certificate-outer-wrapper header {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    background-color: var(--theme-color) !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .certification-namespace h3 {
+    font-size: 25px;
+  }
+
+  .certification-namespace h1 {
+    font-size: 28px;
+  }
+
+  .certification-namespace .issue-date,
+  .certification-namespace .issue-date strong {
+    color: var(--gray-00) !important;
+  }
+
+  .certification-namespace .information {
+    height: 300px;
+  }
+
+  .certification-namespace .signatures img {
+    max-width: 300px !important;
+  }
+
+  .row.certificate-links,
+  .donation-section {
+    display: none;
+  }
 }
