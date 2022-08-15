@@ -31,7 +31,7 @@ if (envData.clientLocale == 'english' && !envData.showUpcomingChanges) {
 
     test('there should be an endpoint to request submit types from', () => {
       fs.existsSync(
-        `${clientStaticPath}/curriculum-data/${VERSION}/types.json`
+        `${clientStaticPath}/curriculum-data/${VERSION}/submit-types.json`
       );
     });
 
