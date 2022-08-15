@@ -33,6 +33,8 @@ You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. R
 **User Story #9:** My heat map should have cells that align with the corresponding month on the y-axis.
 
 **User Story #10:** My heat map should have cells that align with the corresponding year on the x-axis.
+**Hint:** You will need to create a seperate scale for the axis, you can use `.padding()` on you scale to adjust the start/end ticks.
+
 
 **User Story #11:** My heat map should have multiple tick labels on the y-axis with the full month name.
 
