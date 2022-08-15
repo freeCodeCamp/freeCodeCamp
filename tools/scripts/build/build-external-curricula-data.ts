@@ -46,13 +46,13 @@ export function buildExtCurriculumData(
   curriculum: Curriculum
 ): void {
   const staticFolderPath = resolve(__dirname, '../../../client/static');
-  const versionPath = `${staticFolderPath}/curriculum-data/${ver}`;
+  const dataPath = `${staticFolderPath}/curriculum-data/`;
   const blockIntroPath = resolve(
     __dirname,
     '../../../client/i18n/locales/english/intro.json'
   );
 
-  mkdirSync(versionPath, { recursive: true });
+  mkdirSync(dataPath, { recursive: true });
 
   parseCurriculumData();
   getSubmitTypes();
@@ -95,7 +95,7 @@ export function buildExtCurriculumData(
   }
 
   function writeToFile(fileName: string, data: Record<string, unknown>): void {
-    const filePath = `${versionPath}/${fileName}.json`;
+    const filePath = `${dataPath}/${ver}/${fileName}.json`;
     mkdirSync(dirname(filePath), { recursive: true });
     writeFileSync(filePath, JSON.stringify(data, null, 2));
   }
@@ -126,7 +126,7 @@ export function buildExtCurriculumData(
 
   function getSubmitTypes() {
     writeFileSync(
-      `${versionPath}/submit-types.json`,
+      `${dataPath}/submit-types.json`,
       JSON.stringify(submitTypes, null, 2)
     );
   }
