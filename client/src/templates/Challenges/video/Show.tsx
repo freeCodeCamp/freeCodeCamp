@@ -11,6 +11,8 @@ import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 // Local Utilities
+import Fail from '../../../assets/icons/test-fail';
+import GreenPass from '../../../assets/icons/test-pass';
 import Loader from '../../../components/helpers/loader';
 import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
@@ -18,14 +20,13 @@ import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
 import ChallengeDescription from '../components/Challenge-Description';
 import Hotkeys from '../components/Hotkeys';
 import VideoPlayer from '../components/VideoPlayer';
-import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
 import PrismFormatted from '../components/prism-formatted';
 import {
   isChallengeCompletedSelector,
   challengeMounted,
   updateChallengeMeta,
-  openModal,
+  submitChallenge,
   updateSolutionFormValues
 } from '../redux';
 
@@ -42,10 +43,10 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
+      submitChallenge,
       updateChallengeMeta,
       challengeMounted,
-      updateSolutionFormValues,
-      openCompletionModal: () => openModal('completion')
+      updateSolutionFormValues
     },
     dispatch
   );
@@ -56,16 +57,17 @@ interface ShowVideoProps {
   data: { challengeNode: ChallengeNode };
   description: string;
   isChallengeCompleted: boolean;
-  openCompletionModal: () => void;
   pageContext: {
     challengeMeta: ChallengeMeta;
   };
+  submitChallenge: () => void;
   t: TFunction;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   updateSolutionFormValues: () => void;
 }
 
 interface ShowVideoState {
+  completed: boolean;
   subtitles: string;
   downloadURL: string | null;
   selectedOption: number | null;
@@ -87,7 +89,8 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
       selectedOption: null,
       answer: 1,
       showWrong: false,
-      videoIsLoaded: false
+      videoIsLoaded: false,
+      completed: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -143,12 +146,12 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
     }
   }
 
-  handleSubmit(solution: number, openCompletionModal: () => void) {
+  handleSubmit(solution: number) {
     if (solution - 1 === this.state.selectedOption) {
       this.setState({
+        completed: true,
         showWrong: false
       });
-      openCompletionModal();
     } else {
       this.setState({
         showWrong: true
@@ -182,7 +185,6 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
             superBlock,
             certification,
             block,
-            translationPending,
             videoId,
             videoLocaleIds,
             bilibiliIds,
@@ -190,12 +192,11 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
           }
         }
       },
-      openCompletionModal,
       pageContext: {
         challengeMeta: { nextChallengePath, prevChallengePath }
       },
       t,
-      isChallengeCompleted
+      submitChallenge
     } = this.props;
 
     const blockNameTitle = `${t(
@@ -203,9 +204,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
     )} - ${title}`;
     return (
       <Hotkeys
-        executeChallenge={() => {
-          this.handleSubmit(solution, openCompletionModal);
-        }}
+        executeChallenge={() => this.handleSubmit(solution)}
         innerRef={(c: HTMLElement | null) => (this._container = c)}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
@@ -216,16 +215,6 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
           />
           <Grid>
             <Row>
-              <Spacer />
-              <ChallengeTitle
-                block={block}
-                isCompleted={isChallengeCompleted}
-                superBlock={superBlock}
-                translationPending={translationPending}
-              >
-                {title}
-              </ChallengeTitle>
-
               <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
                 <div className='video-wrapper'>
                   {!this.state.videoIsLoaded ? (
@@ -243,9 +232,23 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                   />
                 </div>
               </Col>
+
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+                <h3 className='video-section-label'>Question</h3>
+              </Col>
+              <Col
+                md={8}
+                mdOffset={2}
+                sm={10}
+                smOffset={1}
+                xs={12}
+                className='video-description'
+              >
                 <ChallengeDescription description={description} />
-                <PrismFormatted className={'line-numbers'} text={text} />
+                <PrismFormatted
+                  className={'dark-palette line-numbers'}
+                  text={text}
+                />
                 <Spacer />
                 <ObserveKeys>
                   <div className='video-quiz-options'>
@@ -276,28 +279,41 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                   </div>
                 </ObserveKeys>
                 <Spacer />
-                <div
-                  style={{
-                    textAlign: 'center'
-                  }}
-                >
-                  {this.state.showWrong ? (
-                    <span>{t('learn.wrong-answer')}</span>
-                  ) : (
+                <div className='video-quiz-cta-text'>
+                  {this.state.showWrong && (
+                    <span>
+                      <Fail />
+                      {t('learn.wrong-answer')}
+                    </span>
+                  )}
+                  {this.state.completed && (
+                    <span>
+                      <GreenPass />
+                      Great Job!
+                    </span>
+                  )}
+
+                  {!this.state.completed && !this.state.showWrong && (
                     <span>{t('learn.check-answer')}</span>
                   )}
                 </div>
-                <Spacer />
-                <Button
-                  block={true}
-                  bsSize='large'
-                  bsStyle='primary'
-                  onClick={() =>
-                    this.handleSubmit(solution, openCompletionModal)
-                  }
-                >
-                  {t('buttons.check-answer')}
-                </Button>
+                {this.state.completed ? (
+                  <Button
+                    bsSize='large'
+                    bsStyle='primary'
+                    onClick={submitChallenge}
+                  >
+                    {t('buttons.submit-and-go')}
+                  </Button>
+                ) : (
+                  <Button
+                    bsSize='large'
+                    bsStyle='primary'
+                    onClick={() => this.handleSubmit(solution)}
+                  >
+                    {t('buttons.check-answer')}
+                  </Button>
+                )}
                 <Spacer size={2} />
               </Col>
               <CompletionModal

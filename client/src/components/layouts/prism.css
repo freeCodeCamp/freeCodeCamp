@@ -1,3 +1,9 @@
+pre[class*='language-'].line-numbers.line-numbers {
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 22px;
+}
+
 code .token.operator {
   background: none;
 }
@@ -5,6 +11,10 @@ code .token.operator {
 :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
   background: var(--primary-background);
+}
+
+.line-numbers > p {
+  color: var(--tc-black-100);
 }
 
 .default pre[class*='language-']::selection,

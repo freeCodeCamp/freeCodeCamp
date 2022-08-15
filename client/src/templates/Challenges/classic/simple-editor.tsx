@@ -513,7 +513,9 @@ const SimpleEditor = (props: EditorProps): JSX.Element => {
     attemptRef.current.attempts++;
   }
 
-  const tryToSubmitChallenge = debounce(props.submitChallenge, 2000);
+  const tryToSubmitChallenge = debounce(props.submitChallenge, 2000, {
+    leading: true
+  });
 
   function resetMarginDecorations() {
     const { model, insideEditDecId } = dataRef.current;
