@@ -1,15 +1,15 @@
 import React from 'react';
 
-export type TableVariant = 'light' | 'dark';
 
 export interface TableProps
   extends React.TableHTMLAttributes<HTMLTableElement> {
   bordered?: boolean;
   borderless?: boolean;
   className?: string;
+  variant?: 'light' | 'dark';
+  condensed?: boolean;
   hover?: boolean;
   size?: string;
-  striped?: boolean | string;
-  variant?: TableVariant;
+  striped?: boolean;
   responsive?: boolean;
 }

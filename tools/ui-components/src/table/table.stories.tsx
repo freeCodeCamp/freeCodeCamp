@@ -40,18 +40,23 @@ const story = {
   component: Table,
   parameters: {
     controls: {
-      include: ['variant', 'size', 'bordered', 'borderless', 'hover', 'striped']
+      include: ['variant', 'size', 'bordered', 'borderless', 'hover', 'striped', 'condensed']
     }
   },
   argTypes: {
     variant: {
-      options: ['light', 'dark']
+      options: ['light', 'dark'],
+      control: { type: 'radio' }
     },
     bordered: {
       options: [true, false],
       control: { type: 'radio' }
     },
     striped: {
+      options: [true, false],
+      control: { type: 'radio' }
+    },
+    condensed: {
       options: [true, false],
       control: { type: 'radio' }
     },
@@ -79,7 +84,9 @@ Default.args = {
   // default props go here
   bordered: true,
   size: 'medium',
-  variant: 'light'
+  variant: 'light',
+  condensed: false,
+  striped: false
 };
 
 export default story;

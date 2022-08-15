@@ -15,42 +15,66 @@ const MAX_MOBILE_WIDTH = 767;
 
 const computeWindowSize = window.innerWidth <= MAX_MOBILE_WIDTH;
 
-// const variantClasses: Record<TableVariant, string> = {
-//   light: 'bg-light-theme-background',
-//   dark: 'bg-dark-theme-background text-gray-0'
-// }
+const variantClasses: Record<string, string> = {
+  light: 'table-children:bg-light-theme-background',
+  dark: 'table-children:bg-dark-theme-background text-gray-0'
+};
 
-const computeClassNames = (size: string) => {
+const computeSizeName = (size: string) => {
   switch (size) {
     case 'large':
-      return 'text-lg';
+      return 'table-children:text-lg';
     case 'small':
-      return 'text-sm';
+      return 'table-children:text-sm';
     // default is medium
     default:
-      return 'text-md';
+      return 'table-children:text-md';
   }
+};
+
+    // TODO: Handle hover colors for striped in light and dark mode
+const stripedClass = (hover: boolean, striped: boolean, variant: string) => {
+  if (hover && striped && variant == 'light')
+    return 'table-striped:bg-gray-100';
+  else if (hover && striped && variant == 'dark')
+    return 'table-striped:bg-gray-150';
+  else return striped ? 'table-striped:bg-gray-450' : '';
 };
 
 export const Table = React.forwardRef<HTMLTableElement, TableProps>(
   (
-    { borderless, bordered, hover, striped, responsive, size, ...props },
+    {
+      borderless,
+      bordered,
+      hover,
+      striped,
+      responsive,
+      size,
+      condensed,
+      variant,
+      ...props
+    },
     ref
   ) => {
-    props.cellPadding = 10; // Default cell padding for visual clarity in Storybook
-
     if (borderless && bordered) bordered = false;
 
-    const borderClass = bordered ? 'bordered' : '';
-    const stripedClass = striped ? 'table-striped' : '';
-    const hoverClass = hover ? 'table-hover' : '';
+    const borderClass = bordered ? 'table-children:border-1' : '';
+    const hoverClass =
+      hover && variant == 'dark'
+        ? 'table-hover:bg-gray-450'
+        : hover && variant == 'light'
+        ? 'table-hover:bg-gray-150'
+        : '';
+    const condensedClass = condensed ? 'table-children:p-1.5' : 'table-children:p-2.5';
 
     const classes = [
       ...defaultClassNames,
       borderClass,
-      stripedClass,
-      computeClassNames(size || ''),
-      hoverClass
+      condensedClass,
+      stripedClass(hover || false, striped || false, variant || ''),
+      computeSizeName(size || ''),
+      hoverClass,
+      variantClasses[variant || '']
     ].join(' ');
 
     const table = <table {...props} ref={ref} className={classes} />;
@@ -59,12 +83,6 @@ export const Table = React.forwardRef<HTMLTableElement, TableProps>(
       const responsiveClass = computeWindowSize ? 'sm' : 'lg';
       return <div className={responsiveClass}>{table}</div>;
     }
-
-    // For storybook use cases. Table should remain transparent to the background color add @param of 'variant'
-
-    // if (variant == 'light') {
-    //   return <div className={variantClasses[variant]}>{table}</div>
-    // } else return <div className={variantClasses[variant]}>{table}</div>
 
     return table;
   }
