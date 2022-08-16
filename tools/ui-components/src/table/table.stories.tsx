@@ -40,7 +40,7 @@ const story = {
   component: Table,
   parameters: {
     controls: {
-      include: ['variant', 'size', 'bordered', 'borderless', 'hover', 'striped', 'condensed']
+      include: ['variant', 'size', 'bordered', 'borderless', 'hover', 'striped', 'condensed', 'responsive']
     }
   },
   argTypes: {
@@ -61,6 +61,10 @@ const story = {
       control: { type: 'radio' }
     },
     hover: {
+      options: [true, false],
+      control: { type: 'radio' }
+    },
+    responsive: {
       options: [true, false],
       control: { type: 'radio' }
     },

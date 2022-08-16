@@ -32,7 +32,7 @@ const computeSizeName = (size: string) => {
   }
 };
 
-    // TODO: Handle hover colors for striped in light and dark mode
+// TODO: Handle hover colors for striped in light and dark mode
 const stripedClass = (hover: boolean, striped: boolean, variant: string) => {
   if (hover && striped && variant == 'light')
     return 'table-striped:bg-gray-100';
@@ -56,16 +56,21 @@ export const Table = React.forwardRef<HTMLTableElement, TableProps>(
     },
     ref
   ) => {
+    const hoverVariantDark = hover && variant == 'dark';
+    const hoverVariantLight = hover && variant == 'light';
+
     if (borderless && bordered) bordered = false;
 
     const borderClass = bordered ? 'table-children:border-1' : '';
-    const hoverClass =
-      hover && variant == 'dark'
-        ? 'table-hover:bg-gray-450'
-        : hover && variant == 'light'
-        ? 'table-hover:bg-gray-150'
-        : '';
-    const condensedClass = condensed ? 'table-children:p-1.5' : 'table-children:p-2.5';
+
+    const hoverClass = hoverVariantDark
+      ? 'table-hover:bg-gray-450'
+      : hoverVariantLight
+      ? 'table-hover:bg-gray-150'
+      : '';
+    const condensedClass = condensed
+      ? 'table-children:p-1.5'
+      : 'table-children:p-2.5';
 
     const classes = [
       ...defaultClassNames,
@@ -80,7 +85,10 @@ export const Table = React.forwardRef<HTMLTableElement, TableProps>(
     const table = <table {...props} ref={ref} className={classes} />;
 
     if (responsive) {
-      const responsiveClass = computeWindowSize ? 'sm' : 'lg';
+      let responsiveClass = computeWindowSize ? 'sm:block' : 'lg:flex-auto';
+      if (typeof responsive === 'string') {
+        responsiveClass = `${responsiveClass}-${responsive}`;
+      }
       return <div className={responsiveClass}>{table}</div>;
     }
 

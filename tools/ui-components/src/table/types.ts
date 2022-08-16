@@ -11,5 +11,5 @@ export interface TableProps
   hover?: boolean;
   size?: string;
   striped?: boolean;
-  responsive?: boolean;
+  responsive?: boolean | string;
 }
