@@ -606,8 +606,8 @@
       "mongodb-and-mongoose": {
         "title": "MongoDB e Mongoose",
         "intro": [
-          "MongoDB is a database application that stores JSON documents (or records) that you can use in your application. Unlike SQL, another type of database, MongoDB is a non-relational or \"NoSQL\" database. This means MongoDB stores all associated data within one record, instead of storing it across many preset tables as in a SQL database.",
-          "Mongoose is a popular npm package for interacting with MongoDB. With Mongoose, you can use plain JavaScript objects instead of JSON, which makes it easier to work with MongoDB. Also, it allows you to create blueprints for your documents called schemas, so you don't accidentally save the wrong type of data and cause bugs later.",
+          "MongoDB è un'applicazione di databse che memorizza documenti JSON (o record) che puoi usare nella tua applicazione. A differenza di SQL, un altro tipo di database, MongoDB è un database non relazionale o un database \"NoSQL\". Questo significa che MongoDB memorizza tutti i dati associati in un record al posto di memorizzarli in varie tabelle preimpostate come in un database SQL.",
+          "Mongoose è un popolare pacchetto npm che interagisce con MongoDB. Con Mongoose puoi utilizzare dei semplici oggetti JavaScript al posto di JSON, ciò rende più facile lavorare con MongoDB. Inoltre, ti permette di creare schemi per i tuoi documenti chiamati schemas, così da non salvare il tipo di dato sbagliato e causare bug in seguito.",
           "Nei corsi di MongoDB e Mongoose, imparerai i fondamenti di come si lavora con dati persistenti, incluso come impostare un modello, e salvare, cancellare e trovare documenti nel database."
         ]
       },
