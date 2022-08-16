@@ -60,14 +60,13 @@ $RECYCLE.BIN/
 .AppleDouble
 .LSOverride
 
-# Icon must end with two \r
+# Icon must end with two \rs
 Icon
-
 
 # Thumbnails
 ._*
 
-# Files that might appear in the root of a volume
+# Files that may appear in the root of a volume
 .DocumentRevisions-V100
 .fseventsd
 .Spotlight-V100
