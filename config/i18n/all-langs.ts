@@ -104,6 +104,7 @@ export const auditedCerts = {
     SuperBlocks.RelationalDb
   ],
   ukrainian: [
+    SuperBlocks.RespWebDesignNew,
     SuperBlocks.RespWebDesign,
     SuperBlocks.JsAlgoDataStruct,
     SuperBlocks.FrontEndDevLibs,
@@ -140,7 +141,8 @@ export const auditedCerts = {
 export const languagesWithAuditedBetaReleases = [
   'english',
   'portuguese',
-  'italian'
+  'italian',
+  'ukrainian'
 ];
 
 // ---------------------------------------------------------------------------
