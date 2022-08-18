@@ -1,13 +1,13 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import { Tabs } from '.';
 
 describe('<Tabs />', () => {
-  it('should render correctly', () => {
+  it('should render tabs component correctly', () => {
     render(
       <Tabs id={'uncontrolled-tab-example'} defaultActiveKey={'Test'}></Tabs>
     );
-    // TODO: add test
+    expect(screen.getByRole('navigation')).toBeInTheDocument();
   });
 });
