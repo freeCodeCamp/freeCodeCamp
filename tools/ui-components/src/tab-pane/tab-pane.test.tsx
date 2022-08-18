@@ -5,6 +5,6 @@ import { TabPane } from '.';
 
 describe('<TabPane />', () => {
   it('should render correctly', () => {
-    render(<TabPane></TabPane>);
+    render(<TabPane eventKey='test'></TabPane>);
   });
 });

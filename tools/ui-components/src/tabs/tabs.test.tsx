@@ -6,7 +6,7 @@ import { Tabs } from '.';
 describe('<Tabs />', () => {
   it('should render correctly', () => {
     render(
-      <Tabs id={'uncontrolled-tab-example'} defaultActiveKey={'Code'}></Tabs>
+      <Tabs id={'uncontrolled-tab-example'} defaultActiveKey={'Test'}></Tabs>
     );
     // TODO: add test
   });

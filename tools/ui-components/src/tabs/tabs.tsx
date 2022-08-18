@@ -1,49 +1,47 @@
 import React, { useState } from 'react';
-import { TabPane } from '../tab-pane';
+import { TabPane, TabPaneProps } from '../tab-pane';
 import { TabsProps } from './types';
 
-// TODO: remove it
-interface ChildProps {
-  title?: string;
-  eventKey: string | number;
-}
-
-const defaultLiClassNames = ['flex', 'flex-1'];
 const defaultButtonClassNames = [
   'flex-1',
+  'mr-0.5',
   'px-2.5',
   'py-[5px]',
-  'mr-0.5',
-  'border',
+  'border-1',
+  'border-transparent',
   'text-sm',
-  'text-gray-750'
+  'text-foreground-secondary'
 ];
-const computeLiClassNames = (
+
+const computeClassNames = (
   activeKey: string | number,
   eventKey: string | number
 ) => {
-  const classNames = [...defaultLiClassNames];
+  const classNames = [...defaultButtonClassNames];
   if (activeKey === eventKey) {
-    classNames.push('bg-background-quaternary');
+    classNames.push(
+      'border-x-[#ddd]',
+      'border-t-[#ddd]',
+      'bg-background-quaternary'
+    );
   }
   return classNames.join(' ');
 };
 
-// TODO: useCallback 和 useMemo 切换 bg-background-quaternary
 export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
   ({ children, defaultActiveKey }, ref) => {
     const [activeKey, setActiveKey] = useState(defaultActiveKey);
 
     const renderTab = (child: React.ReactNode) => {
-      const { title, eventKey } = (child as { props: ChildProps }).props;
-      const buttonClasses = defaultButtonClassNames.join(' ');
+      const { title, eventKey } = (child as { props: TabPaneProps }).props;
       if (title == null) {
         return null;
       }
       return (
-        <li className={computeLiClassNames(activeKey, eventKey)}>
+        <li className='flex flex-1 -mb-px'>
+          {/* https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/bb84abc793435a25398160242c5f2870b83b72ca/docs/rules/anchor-is-valid.md */}
           <button
-            className={buttonClasses}
+            className={computeClassNames(activeKey, eventKey)}
             onClick={() => {
               setActiveKey(eventKey);
             }}
@@ -56,7 +54,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
 
     const renderTabPane = (child: React.ReactNode) => {
       const childProps = {
-        ...(child as { props: ChildProps }).props,
+        ...(child as { props: TabPaneProps }).props,
         activeKey
       };
       return <TabPane {...childProps} />;
@@ -65,7 +63,9 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
     return (
       <div ref={ref}>
         <nav>
-          <ul className='flex'>{React.Children.map(children, renderTab)}</ul>
+          <ul className='flex border-1 border-transparent border-b-[#ddd]'>
+            {React.Children.map(children, renderTab)}
+          </ul>
         </nav>
         <div>{React.Children.map(children, renderTabPane)}</div>
       </div>

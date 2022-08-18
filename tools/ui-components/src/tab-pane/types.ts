@@ -1,5 +1,5 @@
-export interface TabPaneProps extends React.HTMLAttributes<HTMLElement> {
+export interface TabPaneProps extends React.PropsWithChildren<unknown> {
+  eventKey: string | number;
   title?: string;
-  eventKey?: string | number;
   activeKey?: string | number;
 }
