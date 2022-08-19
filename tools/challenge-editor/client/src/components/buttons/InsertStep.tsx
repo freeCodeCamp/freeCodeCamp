@@ -22,7 +22,7 @@ const InsertStep = ({ superblock, block }: BlockRequiredProps) => {
   return (
     <div>
       <label htmlFor='num'>
-        Step to insert AFTER:
+        Step Number:
         <input id='num' type='number' onChange={changeNum} />
       </label>
       <button onClick={click}>Insert Step</button>
