@@ -18,7 +18,9 @@ export default function SoundSettings({
   toggleSoundMode
 }: SoundProps): JSX.Element {
   const { t } = useTranslation();
-  const [volumeDisplay, setVolumeDisplay] = useState(100);
+  const [volumeDisplay, setVolumeDisplay] = useState(
+    store.get('soundVolume') as number
+  );
 
   const soundInterval = setTimeout(() => {
     void playTone('tests-completed');
@@ -55,8 +57,9 @@ export default function SoundSettings({
         type='range'
         min='10'
         max='100'
-        defaultValue={store.get('soundVolume') as number}
+        defaultValue={volumeDisplay}
         className='soundbar'
+        aria-label={`${t('settings.sound-volume')} ${volumeDisplay}`}
         onInput={handleVolumeChange}
       />
       <div>
