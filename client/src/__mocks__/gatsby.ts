@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-vars */
-const React = require('react');
+import React from 'react';
+import { GatsbyLinkProps } from 'gatsby';
+const gatsby: NodeModule = jest.requireActual('gatsby');
 
-const gatsby = jest.requireActual('gatsby');
-
-const envData = require('../../../config/env.json');
+import envData from '../../../config/env.json';
 
 const { clientLocale } = envData;
 
@@ -13,23 +13,13 @@ module.exports = {
   graphql: jest.fn(),
   Link: jest.fn().mockImplementation(
     // these props are invalid for an `a` tag
-    ({
-      activeClassName,
-      activeStyle,
-      getProps,
-      innerRef,
-      partiallyActive,
-      ref,
-      replace,
-      to,
-      ...rest
-    }) =>
+    ({ to, ...rest }: GatsbyLinkProps<undefined | boolean>) =>
       React.createElement('a', {
         ...rest,
         href: to
       })
   ),
-  withPrefix: jest.fn().mockImplementation(path => {
+  withPrefix: jest.fn().mockImplementation((path: string) => {
     const pathPrefix =
       clientLocale === 'english' || clientLocale === 'chinese'
         ? ''
