@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { LinkProps } from '@reach/router';
+import { GatsbyLinkProps } from 'gatsby';
 import React from 'react';
 
 const gatsby: NodeModule = jest.requireActual('gatsby');
@@ -14,7 +14,7 @@ module.exports = {
   graphql: jest.fn(),
   Link: jest.fn().mockImplementation(
     // these props are invalid for an `a` tag
-    ({ to, ...rest }: LinkProps<boolean | undefined>) =>
+    ({ to, ...rest }: GatsbyLinkProps<boolean | undefined>) =>
       React.createElement('a', {
         ...rest,
         href: to
