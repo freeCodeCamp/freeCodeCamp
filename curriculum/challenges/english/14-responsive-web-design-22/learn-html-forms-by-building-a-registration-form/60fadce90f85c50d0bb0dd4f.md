@@ -61,8 +61,8 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('fieldset')?.borderBottom,
           </select>
         </label>
         <label for="bio">Provide a bio:
-				  <textarea id="bio" name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea>
-			  </label>
+          <textarea id="bio" name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea>
+        </label>
       </fieldset>
       <input type="submit" value="Submit" />
     </form>
