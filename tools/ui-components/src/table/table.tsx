@@ -32,15 +32,6 @@ const computeSizeName = (size: string) => {
   }
 };
 
-// TODO: Handle hover colors for striped in light and dark mode
-const stripedClass = (hover: boolean, striped: boolean, variant: string) => {
-  if (hover && striped && variant == 'light')
-    return 'table-striped:bg-gray-100';
-  else if (hover && striped && variant == 'dark')
-    return 'table-striped:bg-gray-150';
-  else return striped ? 'table-striped:bg-gray-450' : '';
-};
-
 export const Table = React.forwardRef<HTMLTableElement, TableProps>(
   (
     {
@@ -56,33 +47,34 @@ export const Table = React.forwardRef<HTMLTableElement, TableProps>(
     },
     ref
   ) => {
+    const classNames = [...defaultClassNames, variantClasses[variant || ''], computeSizeName(size || '')];
     const hoverVariantDark = hover && variant == 'dark';
     const hoverVariantLight = hover && variant == 'light';
 
     if (borderless && bordered) bordered = false;
 
-    const borderClass = bordered ? 'table-children:border-1' : '';
+    if (bordered) classNames.push('table-children:border-1');
 
-    const hoverClass = hoverVariantDark
-      ? 'table-hover:bg-gray-450'
-      : hoverVariantLight
-      ? 'table-hover:bg-gray-150'
-      : '';
-    const condensedClass = condensed
-      ? 'table-children:p-1.5'
-      : 'table-children:p-2.5';
+    if (condensed) classNames.push('table-children:p-1.5');
+    else classNames.push('table-children:p-2.5');
 
-    const classes = [
-      ...defaultClassNames,
-      borderClass,
-      condensedClass,
-      stripedClass(hover || false, striped || false, variant || ''),
-      computeSizeName(size || ''),
-      hoverClass,
-      variantClasses[variant || '']
-    ].join(' ');
+    if (hoverVariantDark) classNames.push('table-hover:bg-gray-450');
+    else if (hoverVariantLight) classNames.push('table-hover:bg-gray-150');
 
-    const table = <table {...props} ref={ref} className={classes} />;
+    // TODO: Handle hover colors for striped in light and dark mode
+    if (hover && striped && variant == 'light')
+      classNames.push('table-striped:bg-gray-100');
+    else if (hover && striped && variant == 'dark')
+      classNames.push('table-striped:bg-gray-150');
+    else
+      striped
+        ? classNames.push('table-striped:bg-gray-450')
+        : classNames.push('');
+
+
+    const table = (
+      <table {...props} ref={ref} className={classNames.join(' ')} />
+    );
 
     if (responsive) {
       let responsiveClass = computeWindowSize ? 'sm:block' : 'lg:flex-auto';
