@@ -29,7 +29,7 @@ const computeClassNames = (
 };
 
 export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
-  ({ children, defaultActiveKey }, ref) => {
+  ({ id, children, defaultActiveKey, onSelect }, ref) => {
     const [activeKey, setActiveKey] = useState(defaultActiveKey);
 
     const renderTab = (child: React.ReactNode) => {
@@ -44,6 +44,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
             className={computeClassNames(activeKey, eventKey)}
             onClick={() => {
               setActiveKey(eventKey);
+              onSelect && onSelect();
             }}
           >
             {title}
@@ -61,7 +62,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
     };
 
     return (
-      <div ref={ref}>
+      <div id={id} onSelect={onSelect} ref={ref}>
         <nav>
           <ul className='flex border-1 border-transparent border-b-[#ddd]'>
             {React.Children.map(children, renderTab)}

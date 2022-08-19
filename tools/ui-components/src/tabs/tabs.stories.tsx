@@ -26,9 +26,11 @@ const Template: Story<TabsProps> = args => {
 
 export const Default = Template.bind({});
 Default.args = {
-  // default props go here
   id: 'uncontrolled-tab-example',
-  defaultActiveKey: 'Tests'
+  defaultActiveKey: 'Tests',
+  onSelect: () => {
+    console.log('onSelect');
+  }
 };
 
 export default story;
