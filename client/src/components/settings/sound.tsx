@@ -1,5 +1,5 @@
 import { Form } from '@freecodecamp/react-bootstrap';
-import React, { ChangeEvent, useEffect, useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import store from 'store';
 import { useTranslation } from 'react-i18next';
 import { Spacer } from '../helpers';
@@ -19,7 +19,7 @@ export default function SoundSettings({
 }: SoundProps): JSX.Element {
   const { t } = useTranslation();
   const [volumeDisplay, setVolumeDisplay] = useState(
-    store.get('soundVolume') as number
+    (store.get('soundVolume') as number) ?? 50
   );
 
   const soundInterval = setTimeout(() => {
@@ -35,10 +35,6 @@ export default function SoundSettings({
     clearTimeout(soundInterval);
     soundInterval;
   }
-
-  useEffect(() => {
-    setVolumeDisplay((store.get('soundVolume') as number) ?? 50);
-  }, []);
 
   return (
     <Form inline={true} onSubmit={(e: React.FormEvent) => e.preventDefault()}>
