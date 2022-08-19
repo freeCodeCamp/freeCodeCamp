@@ -21,7 +21,7 @@ module.exports = {
       })
   ),
   withPrefix: jest.fn().mockImplementation((path: string) => {
-    const pathPrefix: string =
+    const pathPrefix =
       clientLocale === 'english' || clientLocale === 'chinese'
         ? ''
         : '/' + clientLocale;
