@@ -1,4 +1,4 @@
-# Довідник з DevOps
+# Довідник DevOps
 
 This guide will help you understand our infrastructure stack and how we maintain our platforms. While this guide does not have exhaustive details for all operations, it could be used as a reference for your understanding of the systems.
 

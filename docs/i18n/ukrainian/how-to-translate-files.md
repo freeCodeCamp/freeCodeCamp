@@ -60,7 +60,7 @@ The translation workflow is split into two main activities:
 
 > [!WARNING] We are no longer using GitHub to translate files directly, if you are a returning contributor head to our [translation platform](https://translate.freecodecamp.org/) instead.
 
-## Getting started
+## Початок роботи
 
 First, make sure you come say "Hi" in our [Discord](https://discord.gg/PRyKn3Vbay). We post regular updates about translating resources and answer a lot of your queries in there.
 
