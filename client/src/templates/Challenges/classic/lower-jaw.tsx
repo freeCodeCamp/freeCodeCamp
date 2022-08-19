@@ -84,9 +84,7 @@ const LowerJaw = ({
     }
 
     if (!challengeHasBeenCompleted) {
-      setTimeout(() => {
-        setTestBtnariaHidden(false);
-      }, 500);
+      setTestBtnariaHidden(false);
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
