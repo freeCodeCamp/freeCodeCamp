@@ -1,7 +1,7 @@
 ---
 id: 5900f50a1000cf542c51001c
 title: '問題 413: 一人っ子数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302082
 dashedName: problem-413-one-child-numbers
 ---

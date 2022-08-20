@@ -13,11 +13,11 @@ Este é um dos projetos necessários para obter sua certificação. Para este pr
 
 # --instructions--
 
-**Importante:** depois de passar em todos os testes do projeto, salve um dump (cópia) do seu banco de dados em um arquivo `elements.sql`, bem como toda a sua pasta `periodic_table` para poder concluir a etapa 2. Haverá instruções sobre como fazer isso dentro da máquina virtual.
+**Importante:** depois de passar em todos os testes do projeto, salve um dump (cópia) do seu banco de dados no arquivo `periodic_table.sql` bem como seu arquivo `element.sh` para poder completar a etapa 2. Haverá instruções sobre como fazer isso dentro da máquina virtual.
 
 # --notes--
 
-Arquivos necessários: `elements.sql` e toda a pasta `periodic_table`
+Arquivos necessários: `periodic_table.sql`, `element.sh`
 
 # --hints--
 

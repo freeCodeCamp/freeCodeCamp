@@ -9,7 +9,7 @@ dashedName: use-the-css-transform-scale-property-to-scale-an-element-on-hover
 
 # --description--
 
-La propiedad `transform` tiene una variedad de funciones que el permiten escalar, mover, rotar, sesgar, etc., sus elementos. Cuando se usa con pseudo-classes como `:hover` que especifican un cierto estado de un elemento, la propiedad `transform` puede agregar fácilmente interactividad a sus elementos.
+La propiedad `transform` tiene una variedad de funciones que te permiten escalar, mover, rotar, sesgar, etc., sus elementos. Cuando se usa con pseudo-classes como `:hover` que especifican un cierto estado de un elemento, la propiedad `transform` puede agregar fácilmente interactividad a sus elementos.
 
 Aquí hay un ejemplo para escalar los elementos de párrafo a 2.1 veces su tamaño original:
 

@@ -47,7 +47,7 @@ assert(!code.match(/90deg/gi));
 assert(code.match(/yellow\s+?0(px)?/gi));
 ```
 
-40px 處的一個漸變顏色應該是 `yellow`。
+40 像素處的第一個色標應該是 `yellow`。
 
 ```js
 assert(code.match(/yellow\s+?40px/gi));

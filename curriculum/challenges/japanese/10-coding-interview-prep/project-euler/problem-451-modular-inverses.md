@@ -1,7 +1,7 @@
 ---
 id: 5900f5311000cf542c510042
 title: '問題 451: モジュラ逆数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302124
 dashedName: problem-451-modular-inverses
 ---
@@ -14,7 +14,10 @@ dashedName: problem-451-modular-inverses
 
 それらの数の 15 を法とするモジュラ逆数は、1, 8, 4, 13, 2, 11, 7, 14 です。理由は次のとおりです。
 
-$$\begin{align} & 1  \times 1\bmod 15 = 1 \\\\ & 2  \times 8  = 16\bmod 15 = 1 \\\\ & 4  \times 4  = 16\bmod 15 = 1 \\\\ & 7  \times 13 = 91\bmod 15 = 1 \\\\ & 11 \times 11 = 121\bmod 15 = 1 \\\\ & 14 \times 14 = 196\bmod 15 = 1 \end{align}$$
+$$\begin{align}   & 1  \times 1\bmod 15 = 1 \\\\
+  & 2  \times 8  = 16\bmod 15 = 1 \\\\   & 4  \times 4  = 16\bmod 15 = 1 \\\\
+  & 7  \times 13 = 91\bmod 15 = 1 \\\\   & 11 \times 11 = 121\bmod 15 = 1 \\\\
+  & 14 \times 14 = 196\bmod 15 = 1 \end{align}$$
 
 $m$ の $n$ を法とするモジュラ逆数が $m$ 自体に等しくなるような、$n - 1$ 未満の最大の正の数 $m$ を $I(n)$ とします。
 

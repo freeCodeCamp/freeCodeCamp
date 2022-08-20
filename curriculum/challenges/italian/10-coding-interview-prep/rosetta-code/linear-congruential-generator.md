@@ -1,14 +1,14 @@
 ---
 id: 5e4ce2f5ac708cc68c1df261
 title: Generatore lineare congruenziale
-challengeType: 5
+challengeType: 1
 forumTopicId: 385266
 dashedName: linear-congruential-generator
 ---
 
 # --description--
 
-Il generatore [lineare congruenziale](https://en.wikipedia.org/wiki/linear congruential generator) è un esempio molto semplice di un [generatore di numeri casuali](http://rosettacode.org/wiki/random number generator). Tutti i generatori congruenziali lineari utilizzano questa formula:
+Un generatole contruenziale lineare (LCG) è un <em>algoritmo</em>che genera una sequenza di numeri pseudo-randomizzati calcolati con una equazione lineare discontinua a tratti. Tutti i generatori congruenziali lineari utilizzano questa formula:
 
 $$r_{n + 1} = (a \times r_n + c) \bmod m$$
 
@@ -22,7 +22,7 @@ Dove:
 
 Se si scelgono i valori di $a$, $c$ e $m$ con cura, il generatore produce una distribuzione uniforme di interi da $0$ a $m - 1$.
 
-I numeri LCG hanno una scarsa qualità. $r_n$ e $r\_{n + 1}$ non sono indipendenti, come i veri numeri casuali. Chiunque sappia $r_n$ può prevedere $r\_{n + 1}$, quindi LCG non è crittograficamente sicuro. L'LCG è ancora abbastanza buono per semplici attività come [test di primalità Miller-Rabin](http://rosettacode.org/wiki/Miller-Rabin primality test), o [mani di FreeCell](http://rosettacode.org/wiki/deal cards for FreeCell). Uno dei benefici del GCL è che si può facilmente riprodurre una sequenza di numeri dallo stesso $r_0$. Si può anche riprodurre tale sequenza con un linguaggio di programmazione diverso, perché la formula è molto semplice.
+I numeri <abbr title="linear congruential generator">LCG</abbr> sono di bassa qualità. $r_n$ e $r\_{n + 1}$ non sono indipendenti, come i veri numeri casuali. Chiunque conosce $r_n$ può predire $r\_{n + 1}$, quindi <abbr title="linear congruential generator">LCG</abbr> non è crittograficamente sicuro. <abbr title="linear congruential generator">LCG</abbr> è abbastanza buono per semplici task come un test di primalità Miller-Rabin, o dare le carte in FreeCell. Uno dei benefici del <abbr title="generatore lineare congruenziale">LCG</abbr>, è che si può facilmente riprodurre una sequenza di numeri partendo dallo stesso $r_0$. Si può anche riprodurre tale sequenza con un linguaggio di programmazione diverso, perché la formula è molto semplice.
 
 # --instructions--
 

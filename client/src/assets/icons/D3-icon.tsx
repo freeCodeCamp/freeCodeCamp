@@ -1,15 +1,12 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 
 function D3Icon(
   props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
 ): JSX.Element {
-  const { t } = useTranslation();
-
   return (
     <>
-      <span className='sr-only'>{t('icons.d3')}</span>
       <svg
+        aria-hidden='true'
         viewBox='-10 -10 116 111'
         xmlns='http://www.w3.org/2000/svg'
         {...props}

@@ -39,7 +39,8 @@ const initialState = {
     help: false,
     video: false,
     reset: false,
-    projectPreview: false
+    projectPreview: false,
+    shortcuts: false
   },
   projectFormValues: {},
   successMessage: 'Happy Coding!'
@@ -68,7 +69,7 @@ export const createFiles = createAction(
         challengeFile.editableRegionBoundaries
       ),
       seedEditableRegionBoundaries:
-        challengeFile.editableRegionBoundaries.slice()
+        challengeFile.editableRegionBoundaries?.slice()
     }))
 );
 
@@ -145,6 +146,7 @@ export const isVideoModalOpenSelector = state => state[ns].modal.video;
 export const isResetModalOpenSelector = state => state[ns].modal.reset;
 export const isProjectPreviewModalOpenSelector = state =>
   state[ns].modal.projectPreview;
+export const isShortcutsModalOpenSelector = state => state[ns].modal.shortcuts;
 export const isResettingSelector = state => state[ns].isResetting;
 
 export const isBuildEnabledSelector = state => state[ns].isBuildEnabled;
@@ -158,7 +160,7 @@ export const challengeDataSelector = state => {
   let challengeData = { challengeType };
   if (
     challengeType === challengeTypes.js ||
-    challengeType === challengeTypes.bonfire
+    challengeType === challengeTypes.jsProject
   ) {
     challengeData = {
       ...challengeData,
@@ -189,7 +191,7 @@ export const challengeDataSelector = state => {
   } else if (
     challengeType === challengeTypes.html ||
     challengeType === challengeTypes.modern ||
-    challengeType === challengeTypes.multiFileCertProject
+    challengeType === challengeTypes.multifileCertProject
   ) {
     const { required = [], template = '' } = challengeMetaSelector(state);
     challengeData = {

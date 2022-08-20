@@ -11,14 +11,14 @@ dashedName: add-a-box-shadow-to-a-card-like-element
 
 `box-shadow` プロパティは要素に 1 つ以上の影をつけます。
 
-`box-shadow` プロパティは以下の値をとります。
+`box-shadow` プロパティは以下の値をこの順で取ります。
 
 <ul>
-  <li><code>offset-x</code> (要素から水平方向に影を押しやる距離),</li>
-  <li><code>offset-y</code> (要素から垂直方向に影を押しやる距離),</li>
-  <li><code>blur-radius</code> (ぼかしの半径),</li>
-  <li><code>spread-radius</code> (影の広がりの半径) と</li>
-  <li><code>color</code> を、この順で。</li>
+  <li><code>offset-x</code> (要素から水平方向に影を押しやる距離)</li>
+  <li><code>offset-y</code> (要素から垂直方向に影を押しやる距離)</li>
+  <li><code>blur-radius</code></li>
+  <li><code>spread-radius</code></li>
+  <li><code>color</code></li>
 </ul>
 
 `blur-radius` と `spread-radius` の値は省略可能です。
@@ -33,7 +33,7 @@ box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 
 # --instructions--
 
-要素に `thumbnail` の ID が追加されました。 このセレクターと、上記で例示した CSS の値を使用して、カードに `box-shadow` を追加してください。
+要素に `thumbnail` の id が追加されました。 このセレクターと、上記で例示した CSS の値を使用して、カードに `box-shadow` を追加してください。
 
 # --hints--
 

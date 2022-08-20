@@ -11,7 +11,7 @@ dashedName: use-a-bezier-curve-to-move-a-graphic
 
 A previous challenge discussed the `ease-out` keyword that describes an animation change that speeds up first and then slows down at the end of the animation. On the right, the difference between the `ease-out` keyword (for the blue element) and `linear` keyword (for the red element) is demonstrated. Similar animation progressions to the `ease-out` keyword can be achieved by using a custom cubic Bezier curve function.
 
-In general, changing the `p1` and `p2` anchor points drives the creation of different Bezier curves, which controls how the animation progresses through time. Here's an example of a Bezier curve using values to mimic the ease-out style:
+In general, changing the `p1` and `p2` anchor points drives the creation of different Bezier curves, which controls how the animation progresses through time. Here's an example of a Bezier curve using values to mimic the `ease-out` style:
 
 ```css
 animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
@@ -21,7 +21,7 @@ Remember that all `cubic-bezier` functions start with `p0` at (0, 0) and end wit
 
 # --instructions--
 
-To see the effect of this Bezier curve in action, change the `animation-timing-function` of the element with id of `red` to a `cubic-bezier` function with x1, y1, x2, y2 values set respectively to 0, 0, 0.58, 1. This will make both elements progress through the animation similarly.
+To see the effect of this Bezier curve in action, change the `animation-timing-function` of the element with id of `red` to a `cubic-bezier` function with x1, y1, x2, y2 set respectively to `0, 0, 0.58, 1` as the values. This will make both elements progress through the animation similarly.
 
 # --hints--
 

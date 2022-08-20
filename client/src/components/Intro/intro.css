@@ -43,4 +43,5 @@
 }
 .quote-author {
   font-style: normal;
+  color: var(--secondary-color);
 }

@@ -9,7 +9,7 @@ dashedName: build-a-boilerplate
 
 # --description--
 
-Neste curso de 170 aulas, você aprenderá comandos básicos criando o boilerplate de um site usando apenas a linha de comando.
+Neste curso de 170 aulas, você aprenderá comandos do terminal criando o boilerplate de um site usando apenas a linha de comando.
 
 # --instructions--
 

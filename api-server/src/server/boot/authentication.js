@@ -16,6 +16,7 @@ import { wrapHandledError } from '../utils/create-handled-error.js';
 import { removeCookies } from '../utils/getSetAccessToken';
 import { ifUserRedirectTo, ifNoUserRedirectHome } from '../utils/middleware';
 import { getRedirectParams } from '../utils/redirection';
+import { createDeleteUserToken } from '../middlewares/user-token';
 
 const passwordlessGetValidators = [
   check('email')
@@ -38,6 +39,7 @@ module.exports = function enableAuthentication(app) {
   const devSaveAuthCookies = devSaveResponseAuthCookies();
   const devLoginSuccessRedirect = devLoginRedirect();
   const api = app.loopback.Router();
+  const deleteUserToken = createDeleteUserToken(app);
 
   // Use a local mock strategy for signing in if we are in dev mode.
   // Otherwise we use auth0 login. We use a string for 'true' because values
@@ -62,7 +64,7 @@ module.exports = function enableAuthentication(app) {
     );
   }
 
-  api.get('/signout', (req, res) => {
+  api.get('/signout', deleteUserToken, (req, res) => {
     const { origin, returnTo } = getRedirectParams(req);
     req.logout();
     req.session.destroy(err => {

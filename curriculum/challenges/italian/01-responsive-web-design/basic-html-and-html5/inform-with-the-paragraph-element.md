@@ -9,7 +9,7 @@ dashedName: inform-with-the-paragraph-element
 
 # --description--
 
-Gli elementi `p` sono i preferiti per i paragrafi di testo nei siti web. `p` è l'abbreviazione per "paragrafo".
+L'elemento `p` è preferibile per i paragrafi di testo nei siti web. `p` è l'abbreviazione per "paragrafo".
 
 Puoi creare un elemento paragrafo in questo modo:
 

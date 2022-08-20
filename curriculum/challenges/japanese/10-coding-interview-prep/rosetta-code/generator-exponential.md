@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7e7b
 title: ジェネレータ／指数関数
-challengeType: 5
+challengeType: 1
 forumTopicId: 302275
 dashedName: generatorexponential
 ---

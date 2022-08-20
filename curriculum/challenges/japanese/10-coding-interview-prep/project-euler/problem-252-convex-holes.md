@@ -1,7 +1,7 @@
 ---
 id: 5900f4691000cf542c50ff7b
 title: '問題 252: 凸状の穴'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301900
 dashedName: problem-252-convex-holes
 ---
@@ -16,7 +16,8 @@ dashedName: problem-252-convex-holes
 
 この例では、次の擬似乱数法によって生成された最初の 20 個の点 ($T_{2k − 1}$, $T_{2k}$) (ここで $k = 1, 2, \ldots, 20$) を使用しました。
 
-$$\begin{align} S_0 & = 290\\,797 \\\\ S_{n+1} & = {S_n}^2 \\; \text{mod} \\; 50\\,515\\,093 \\\\ T_n & = (S_n \\; \text{mod} \\; 2000) − 1000 \end{align}$$
+$$\begin{align}   S_0 & = 290\\,797 \\\\
+  S_{n+1} & = {S_n}^2 \\; \text{mod} \\; 50\\,515\\,093 \\\\ T_n & = (S_n \\; \text{mod} \\; 2000) − 1000 \end{align}$$
 
 すなわち、(527, 144), (−488, 732), (−454, −947), …です。
 

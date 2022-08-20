@@ -1,0 +1,626 @@
+{
+  "name": "Learn Basic JavaScript By Building a Role Playing Game",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-basic-javascript-by-building-a-role-playing-game",
+  "order": 0,
+  "time": "2 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "2022/javascript-algorithms-and-data-structures",
+  "isBeta": true,
+  "challengeOrder": [
+    [
+      "5d5a813321b9e3db6c106a46",
+      "Step 1"
+    ],
+    [
+      "5d5a8dd907f328a948d398ce",
+      "Step 2"
+    ],
+    [
+      "5d5a8f1c07f328a948d398cf",
+      "Step 3"
+    ],
+    [
+      "5d5a903507f328a948d398d0",
+      "Step 4"
+    ],
+    [
+      "5d5aaa5807f328a948d398d1",
+      "Step 5"
+    ],
+    [
+      "5d5aab5d07f328a948d398d2",
+      "Step 6"
+    ],
+    [
+      "5d5aac9c07f328a948d398d3",
+      "Step 7"
+    ],
+    [
+      "5d5aad2307f328a948d398d4",
+      "Step 8"
+    ],
+    [
+      "5d5aae1207f328a948d398d5",
+      "Step 9"
+    ],
+    [
+      "5d5ab57f07f328a948d398d6",
+      "Step 10"
+    ],
+    [
+      "5d5b66ce07f328a948d398d7",
+      "Step 11"
+    ],
+    [
+      "5d64cf8f853b56a21cd16319",
+      "Step 12"
+    ],
+    [
+      "5d651ee1ee291f75bbd738ee",
+      "Step 13"
+    ],
+    [
+      "5d652e5a6e6bf7a6a27aa80a",
+      "Step 14"
+    ],
+    [
+      "5d653b2d6e6bf7a6a27aa80b",
+      "Step 15"
+    ],
+    [
+      "5d653c4d6e6bf7a6a27aa80c",
+      "Step 16"
+    ],
+    [
+      "5d6542826e6bf7a6a27aa80d",
+      "Step 17"
+    ],
+    [
+      "5d65f2c62012114c7d7c57eb",
+      "Step 18"
+    ],
+    [
+      "5d65f4cd2012114c7d7c57ec",
+      "Step 19"
+    ],
+    [
+      "5d65f6392012114c7d7c57ed",
+      "Step 20"
+    ],
+    [
+      "5d6606634bab337fbb433884",
+      "Step 21"
+    ],
+    [
+      "5d66093c4bab337fbb433885",
+      "Step 22"
+    ],
+    [
+      "5d660a32e0696bdec46938d5",
+      "Step 23"
+    ],
+    [
+      "5d6616d8e0696bdec46938d6",
+      "Step 24"
+    ],
+    [
+      "5d661814e0696bdec46938d7",
+      "Step 25"
+    ],
+    [
+      "5d66198de0696bdec46938d8",
+      "Step 26"
+    ],
+    [
+      "5d661bc6e0696bdec46938d9",
+      "Step 27"
+    ],
+    [
+      "5d6653d5e0696bdec46938da",
+      "Step 28"
+    ],
+    [
+      "5d665983e0696bdec46938dc",
+      "Step 29"
+    ],
+    [
+      "5d674fd9e0696bdec46938dd",
+      "Step 30"
+    ],
+    [
+      "5d6752e3e0696bdec46938de",
+      "Step 31"
+    ],
+    [
+      "5d6755fce0696bdec46938df",
+      "Step 32"
+    ],
+    [
+      "5d675726e0696bdec46938e0",
+      "Step 33"
+    ],
+    [
+      "5d678366e0696bdec46938e1",
+      "Step 34"
+    ],
+    [
+      "5d67845ee0696bdec46938e2",
+      "Step 35"
+    ],
+    [
+      "5d67880ee0696bdec46938e3",
+      "Step 36"
+    ],
+    [
+      "5d67ad3de0696bdec46938e4",
+      "Step 37"
+    ],
+    [
+      "5d67ae95e0696bdec46938e5",
+      "Step 38"
+    ],
+    [
+      "5d67b284e0696bdec46938e6",
+      "Step 39"
+    ],
+    [
+      "5d67b945e0696bdec46938e7",
+      "Step 40"
+    ],
+    [
+      "5d68c3b1e0696bdec46938e8",
+      "Step 41"
+    ],
+    [
+      "5d68c51ee0696bdec46938e9",
+      "Step 42"
+    ],
+    [
+      "5d68c5efe0696bdec46938ea",
+      "Step 43"
+    ],
+    [
+      "5d68c758e0696bdec46938eb",
+      "Step 44"
+    ],
+    [
+      "5d68c947e0696bdec46938ec",
+      "Step 45"
+    ],
+    [
+      "5d68ca40e0696bdec46938ed",
+      "Step 46"
+    ],
+    [
+      "5d68d3f7e0696bdec46938ee",
+      "Step 47"
+    ],
+    [
+      "5d68d4fde0696bdec46938ef",
+      "Step 48"
+    ],
+    [
+      "5d68d631e0696bdec46938f0",
+      "Step 49"
+    ],
+    [
+      "5d68dbf7e0696bdec46938f1",
+      "Step 50"
+    ],
+    [
+      "5d6904b6e0696bdec46938f2",
+      "Step 51"
+    ],
+    [
+      "5d6905ace0696bdec46938f3",
+      "Step 52"
+    ],
+    [
+      "5d6f6bfc7c812010bf3327cc",
+      "Step 53"
+    ],
+    [
+      "5d6f6e3c7c812010bf3327cd",
+      "Step 54"
+    ],
+    [
+      "5d6f6f747c812010bf3327ce",
+      "Step 55"
+    ],
+    [
+      "5d6f70937c812010bf3327cf",
+      "Step 56"
+    ],
+    [
+      "5d6f72657c812010bf3327d0",
+      "Step 57"
+    ],
+    [
+      "5d6f736b7c812010bf3327d2",
+      "Step 58"
+    ],
+    [
+      "5d6f776c7c812010bf3327d3",
+      "Step 59"
+    ],
+    [
+      "5d6f785f7c812010bf3327d4",
+      "Step 60"
+    ],
+    [
+      "5d6f79667c812010bf3327d6",
+      "Step 61"
+    ],
+    [
+      "5d6f7b917c812010bf3327d7",
+      "Step 62"
+    ],
+    [
+      "5d6f82da7c812010bf3327d8",
+      "Step 63"
+    ],
+    [
+      "5d6f919f7c812010bf3327d9",
+      "Step 64"
+    ],
+    [
+      "5d6f94347c812010bf3327da",
+      "Step 65"
+    ],
+    [
+      "5d6f96747c812010bf3327db",
+      "Step 66"
+    ],
+    [
+      "5d6f98247c812010bf3327dc",
+      "Step 67"
+    ],
+    [
+      "5d6f9a4c7c812010bf3327dd",
+      "Step 68"
+    ],
+    [
+      "5d70850e066dac7142a6d797",
+      "Step 69"
+    ],
+    [
+      "5d70862e066dac7142a6d798",
+      "Step 70"
+    ],
+    [
+      "5d7086d4066dac7142a6d799",
+      "Step 71"
+    ],
+    [
+      "5d7088d2066dac7142a6d79a",
+      "Step 72"
+    ],
+    [
+      "5d708ab5066dac7142a6d79b",
+      "Step 73"
+    ],
+    [
+      "5d708be9066dac7142a6d79c",
+      "Step 74"
+    ],
+    [
+      "5d708c9a066dac7142a6d79d",
+      "Step 75"
+    ],
+    [
+      "5d708dd7066dac7142a6d79e",
+      "Step 76"
+    ],
+    [
+      "5d708fae066dac7142a6d79f",
+      "Step 77"
+    ],
+    [
+      "5d709664066dac7142a6d7a0",
+      "Step 78"
+    ],
+    [
+      "5d709bbc066dac7142a6d7a2",
+      "Step 79"
+    ],
+    [
+      "5d71b58b848f6914ab89897d",
+      "Step 80"
+    ],
+    [
+      "5d71bdca848f6914ab89897e",
+      "Step 81"
+    ],
+    [
+      "5d71bfdf848f6914ab89897f",
+      "Step 82"
+    ],
+    [
+      "5d71c20f848f6914ab898980",
+      "Step 83"
+    ],
+    [
+      "5d71c80e848f6914ab898981",
+      "Step 84"
+    ],
+    [
+      "5d71cab4f27e5122af9f1178",
+      "Step 85"
+    ],
+    [
+      "5d71ea30f27e5122af9f1179",
+      "Step 86"
+    ],
+    [
+      "5d71eb0bf27e5122af9f117a",
+      "Step 87"
+    ],
+    [
+      "5d71f787e39bedcf8f0998ff",
+      "Step 88"
+    ],
+    [
+      "5d71ed88f27e5122af9f117b",
+      "Step 89"
+    ],
+    [
+      "5d71f217e39bedcf8f0998fd",
+      "Step 90"
+    ],
+    [
+      "5d71f669e39bedcf8f0998fe",
+      "Step 91"
+    ],
+    [
+      "5d72027ce39bedcf8f099900",
+      "Step 92"
+    ],
+    [
+      "5d721925e39bedcf8f099901",
+      "Step 93"
+    ],
+    [
+      "5d7dea508360d21c6826a9af",
+      "Step 94"
+    ],
+    [
+      "5d7deecc8360d21c6826a9b0",
+      "Step 95"
+    ],
+    [
+      "5d7df0458360d21c6826a9b1",
+      "Step 96"
+    ],
+    [
+      "5d7df2a68360d21c6826a9b2",
+      "Step 97"
+    ],
+    [
+      "5d7df41a8360d21c6826a9b3",
+      "Step 98"
+    ],
+    [
+      "5d7df75a8360d21c6826a9b4",
+      "Step 99"
+    ],
+    [
+      "5d7dfb908360d21c6826a9b5",
+      "Step 100"
+    ],
+    [
+      "5d7e02c88360d21c6826a9b7",
+      "Step 101"
+    ],
+    [
+      "5d7e06728360d21c6826a9b8",
+      "Step 102"
+    ],
+    [
+      "5d7e077e8360d21c6826a9b9",
+      "Step 103"
+    ],
+    [
+      "5d7e13798360d21c6826a9bb",
+      "Step 104"
+    ],
+    [
+      "5d7f3b6c7c4263f469c36b17",
+      "Step 105"
+    ],
+    [
+      "5d7f405c7c4263f469c36b18",
+      "Step 106"
+    ],
+    [
+      "5d7f410b7c4263f469c36b19",
+      "Step 107"
+    ],
+    [
+      "5d7f41fa7c4263f469c36b1a",
+      "Step 108"
+    ],
+    [
+      "5d7f43947c4263f469c36b1b",
+      "Step 109"
+    ],
+    [
+      "5d7f44ac7c4263f469c36b1c",
+      "Step 110"
+    ],
+    [
+      "5d7f459421b11cdaa3f6b15f",
+      "Step 111"
+    ],
+    [
+      "5d7f4d9421b11cdaa3f6b160",
+      "Step 112"
+    ],
+    [
+      "5d80c1d821b11cdaa3f6b164",
+      "Step 113"
+    ],
+    [
+      "5d80c3c021b11cdaa3f6b165",
+      "Step 114"
+    ],
+    [
+      "5d80d20d21b11cdaa3f6b166",
+      "Step 115"
+    ],
+    [
+      "5d80d67021b11cdaa3f6b167",
+      "Step 116"
+    ],
+    [
+      "5d80da7521b11cdaa3f6b168",
+      "Step 117"
+    ],
+    [
+      "5dbab6d36ef5fe3a704f848c",
+      "Step 118"
+    ],
+    [
+      "5dbabb746ef5fe3a704f848d",
+      "Step 119"
+    ],
+    [
+      "5dbac08e6ef5fe3a704f848f",
+      "Step 120"
+    ],
+    [
+      "5dbac0c86ef5fe3a704f8490",
+      "Step 121"
+    ],
+    [
+      "5dbac1f16ef5fe3a704f8491",
+      "Step 122"
+    ],
+    [
+      "5dbac2b06ef5fe3a704f8492",
+      "Step 123"
+    ],
+    [
+      "5dbbb5076ef5fe3a704f849d",
+      "Step 124"
+    ],
+    [
+      "5dbac6176ef5fe3a704f8493",
+      "Step 125"
+    ],
+    [
+      "5dbaca566ef5fe3a704f8494",
+      "Step 126"
+    ],
+    [
+      "5dbae0446ef5fe3a704f8495",
+      "Step 127"
+    ],
+    [
+      "5dbae1f66ef5fe3a704f8496",
+      "Step 128"
+    ],
+    [
+      "5dbba5716ef5fe3a704f8497",
+      "Step 129"
+    ],
+    [
+      "5dbba70e6ef5fe3a704f8498",
+      "Step 130"
+    ],
+    [
+      "5dbba89e6ef5fe3a704f8499",
+      "Step 131"
+    ],
+    [
+      "5dbbaeb56ef5fe3a704f849a",
+      "Step 132"
+    ],
+    [
+      "5dbbb00e6ef5fe3a704f849b",
+      "Step 133"
+    ],
+    [
+      "5dbbb1466ef5fe3a704f849c",
+      "Step 134"
+    ],
+    [
+      "5dbbf3796ef5fe3a704f849e",
+      "Step 135"
+    ],
+    [
+      "5dbbf8d86ef5fe3a704f849f",
+      "Step 136"
+    ],
+    [
+      "5dbc23a66ef5fe3a704f84a0",
+      "Step 137"
+    ],
+    [
+      "5dbc2c506ef5fe3a704f84a1",
+      "Step 138"
+    ],
+    [
+      "5dbc2d056ef5fe3a704f84a2",
+      "Step 139"
+    ],
+    [
+      "5dbc2f2d6ef5fe3a704f84a3",
+      "Step 140"
+    ],
+    [
+      "5dbc33956ef5fe3a704f84a4",
+      "Step 141"
+    ],
+    [
+      "5dbc35326ef5fe3a704f84a5",
+      "Step 142"
+    ],
+    [
+      "5dbfced07736e5ee7d235544",
+      "Step 143"
+    ],
+    [
+      "5dbfd4837736e5ee7d235545",
+      "Step 144"
+    ],
+    [
+      "5dbfdb737736e5ee7d235546",
+      "Step 145"
+    ],
+    [
+      "5dbfdc377736e5ee7d235547",
+      "Step 146"
+    ],
+    [
+      "5dbfe2f37736e5ee7d235548",
+      "Step 147"
+    ],
+    [
+      "5dbfeffe7736e5ee7d235549",
+      "Step 148"
+    ],
+    [
+      "5dbff18d7736e5ee7d23554a",
+      "Step 149"
+    ],
+    [
+      "5dbff2d07736e5ee7d23554b",
+      "Step 150"
+    ],
+    [
+      "5dbffd907736e5ee7d23554c",
+      "Step 151"
+    ],
+    [
+      "5dbffe887736e5ee7d23554d",
+      "Step 152"
+    ],
+    [
+      "5dc01a727736e5ee7d23554f",
+      "Step 153"
+    ]
+  ]}

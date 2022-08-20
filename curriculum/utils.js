@@ -1,8 +1,11 @@
 const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
-const { curriculum: curriculumLangs } =
-  require('../config/i18n/all-langs').availableLangs;
+const {
+  availableLangs,
+  languagesWithAuditedBetaReleases
+} = require('../config/i18n/all-langs');
+const curriculumLangs = availableLangs.curriculum;
 
 exports.testedLang = function testedLang() {
   if (process.env.CURRICULUM_LOCALE) {
@@ -21,6 +24,27 @@ exports.testedLang = function testedLang() {
 // config/certification-settings.ts
 
 const superBlockToOrder = {
+  '2022/responsive-web-design': 0,
+  'javascript-algorithms-and-data-structures': 1,
+  'front-end-development-libraries': 2,
+  'data-visualization': 3,
+  'relational-database': 4,
+  'back-end-development-and-apis': 5,
+  'quality-assurance': 6,
+  'scientific-computing-with-python': 7,
+  'data-analysis-with-python': 8,
+  'information-security': 9,
+  'machine-learning-with-python': 10,
+  'coding-interview-prep': 11,
+  'responsive-web-design': 12
+};
+
+/**
+ * This order is used for i18n instances where a new certification is released
+ * from beta but is not audited, so cannot be reordered (due to the way we
+ * split the map)
+ */
+const superBlockNonAuditedOrder = {
   'responsive-web-design': 0,
   'javascript-algorithms-and-data-structures': 1,
   'front-end-development-libraries': 2,
@@ -32,19 +56,28 @@ const superBlockToOrder = {
   'data-analysis-with-python': 8,
   'information-security': 9,
   'machine-learning-with-python': 10,
-  'coding-interview-prep': 11
+  'coding-interview-prep': 11,
+  '2022/responsive-web-design': 12
 };
 
 const superBlockToNewOrder = {
   ...superBlockToOrder,
-  '2022/responsive-web-design': 12
+  '2022/javascript-algorithms-and-data-structures': 13
 };
 
 function getSuperOrder(
   superblock,
   { showNewCurriculum } = { showNewCurriculum: false }
 ) {
-  const orderMap = showNewCurriculum ? superBlockToNewOrder : superBlockToOrder;
+  let orderMap = superBlockToOrder;
+  if (showNewCurriculum) {
+    orderMap = superBlockToNewOrder;
+  }
+  if (
+    !languagesWithAuditedBetaReleases.includes(process.env.CURRICULUM_LOCALE)
+  ) {
+    orderMap = superBlockNonAuditedOrder;
+  }
   if (typeof superblock !== 'string')
     throw Error('superblock must be a string');
   const order = orderMap[superblock];
@@ -53,4 +86,31 @@ function getSuperOrder(
   return order;
 }
 
+const directoryToSuperblock = {
+  '00-certifications': 'certifications', // treating certifications as a superblock for simplicity
+  '01-responsive-web-design': 'responsive-web-design',
+  '02-javascript-algorithms-and-data-structures':
+    'javascript-algorithms-and-data-structures',
+  '03-front-end-development-libraries': 'front-end-development-libraries',
+  '04-data-visualization': 'data-visualization',
+  '05-back-end-development-and-apis': 'back-end-development-and-apis',
+  '06-quality-assurance': 'quality-assurance',
+  '07-scientific-computing-with-python': 'scientific-computing-with-python',
+  '08-data-analysis-with-python': 'data-analysis-with-python',
+  '09-information-security': 'information-security',
+  '10-coding-interview-prep': 'coding-interview-prep',
+  '11-machine-learning-with-python': 'machine-learning-with-python',
+  '13-relational-databases': 'relational-database',
+  '14-responsive-web-design-22': '2022/responsive-web-design',
+  '15-javascript-algorithms-and-data-structures-22':
+    '2022/javascript-algorithms-and-data-structures'
+};
+
+function getSuperBlockFromDir(dir) {
+  const superBlock = directoryToSuperblock[dir];
+  if (!superBlock) throw Error(`${dir} does not map to a superblock`);
+  return directoryToSuperblock[dir];
+}
+
 exports.getSuperOrder = getSuperOrder;
+exports.getSuperBlockFromDir = getSuperBlockFromDir;

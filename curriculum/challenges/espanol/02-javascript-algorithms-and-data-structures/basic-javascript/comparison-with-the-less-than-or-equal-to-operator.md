@@ -14,14 +14,12 @@ El operador menor o igual que (`<=`) compara el valor de dos números. Si el nú
 **Ejemplos**
 
 ```js
-4   <= 5
-'7' <= 7
-5   <= 5
-3   <= 2
-'8' <= 4
+4   <= 5 // true
+'7' <= 7 // true
+5   <= 5 // true
+3   <= 2 // false
+'8' <= 4 // false
 ```
-
-En orden, estas expresiones se evaluarían como `true`, `true`, `true`, `false` y `false`.
 
 # --instructions--
 

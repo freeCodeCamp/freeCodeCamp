@@ -20,33 +20,33 @@ dashedName: comparison-with-the-strict-equality-operator
 3 === '3' // false
 ```
 
-In the second example, `3` is a `Number` type and `'3'` is a `String` type.
+2 番目の例では、 `3` は `Number` 型で、 `'3'` は `String` 型です。
 
 # --instructions--
 
-Use the strict equality operator in the `if` statement so the function will return the string `Equal` when `val` is strictly equal to `7`.
+`if` ステートメントで厳密等価演算子を使用して、`val` が `7` と厳密に等しい場合に関数が文字列 `Equal` を返すようにしてください。
 
 # --hints--
 
-`testStrict(10)` should return the string `Not Equal`
+`testStrict(10)` は文字列 `Not Equal` を返す必要があります。
 
 ```js
 assert(testStrict(10) === 'Not Equal');
 ```
 
-`testStrict(7)` should return the string `Equal`
+`testStrict(7)` は文字列 `Equal` を返す必要があります。
 
 ```js
 assert(testStrict(7) === 'Equal');
 ```
 
-`testStrict("7")` should return the string `Not Equal`
+`testStrict("7")` は文字列 `Not Equal` を返す必要があります。
 
 ```js
 assert(testStrict('7') === 'Not Equal');
 ```
 
-You should use the `===` operator
+`===` 演算子を使用してください
 
 ```js
 assert(code.match(/(val\s*===\s*\d+)|(\d+\s*===\s*val)/g).length > 0);

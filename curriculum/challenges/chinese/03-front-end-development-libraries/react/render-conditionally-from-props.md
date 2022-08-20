@@ -8,7 +8,7 @@ dashedName: render-conditionally-from-props
 
 # --description--
 
-到目前为止，已经看到了如何使用 `if/else`、`&&`和三元运算符（`condition ? expressionIfTrue : expressionIfFalse`）对渲染什么和何时渲染做出有条件的判定。 然而，还有一个重要的话题需要讨论，将这些概念中的任何一个或所有概念与另一个强大的 React 功能 props 结合起来。 使用 props 有条件地渲染代码在 React 开发人员中很常见——也就是说：他们使用给定 prop 的值来自动决定渲染什么。
+到目前为止，你已经了解了如何使用 `if/else`、`&&` 和三元运算符（`condition ? expressionIfTrue : expressionIfFalse`）来决定渲染什么和何时渲染。 然而，还有一个重要的话题需要讨论，它可以让你将这些概念中的一个或所有与另一个强大的 React 特性结合起来：props。 使用 props 有条件地渲染代码对于 React 开发人员来说非常常见——也就是说，他们使用给定 props 的值来自动决定要渲染什么。
 
 在这个挑战中，将设置一个子组件来根据 props 做出渲染决定。 可以使用三元运算符，但是可以看到过去几个挑战中涵盖的其他几个概念在这种情况下可能同样有用。
 

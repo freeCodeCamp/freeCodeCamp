@@ -1,8 +1,12 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d99
-title: 'Convolutional Neural Networks: Evaluating the Model'
+title: 'Redes Neurales Convolucionales: Evaluando el Modelo'
 challengeType: 11
 videoId: eCATNvwraXg
+bilibiliIds:
+  aid: 933030136
+  bvid: BV1hM4y1g7Bx
+  cid: 409132265
 dashedName: convolutional-neural-networks-evaluating-the-model
 ---
 
@@ -10,19 +14,19 @@ dashedName: convolutional-neural-networks-evaluating-the-model
 
 ## --text--
 
-What is **not** a good way to increase the accuracy of a convolutional neural network?
+¿Qué **no** es una buena manera de incrementar la precisión de una red neuronal convolucional?
 
 ## --answers--
 
-Augmenting the data you already have.
+Aumentando los datos que ya tiene.
 
 ---
 
-Using a pre-trained model.
+Usando un model pre-entrenado.
 
 ---
 
-Using your test data to retrain the model.
+Usando tus datos de prueba para re entrenar el modelo.
 
 ## --video-solution--
 

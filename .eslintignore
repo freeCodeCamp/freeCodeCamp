@@ -5,3 +5,4 @@ api-server/src/public/**
 api-server/lib/**
 config/i18n/all-langs.js
 config/certification-settings.js
+web/**

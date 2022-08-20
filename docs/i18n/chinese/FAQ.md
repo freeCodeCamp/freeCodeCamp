@@ -10,7 +10,7 @@ freeCodeCamp runs on a modern JavaScript stack. If you're interested in contribu
 
 Yes - You can contribute to any of the 30+ languages we have enabled on our translation platform.
 
-We have user-contributed translations live in some languages. We intend to localize freeCodeCamp into several major world languages. You can read all about this in our [announcement here](https://www.freecodecamp.org/news/world-language-translation-effort).
+We have user-contributed translations live in some languages. We intend to localize freeCodeCamp into several major world languages. You can read all about this in our [announcement here](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/).
 
 If you are interested in contributing to translations please makes sure you [read this guide](how-to-translate-files.md) first.
 
@@ -24,7 +24,7 @@ To help us make educational videos for our YouTube channel, you can follow the [
 
 ### How can I report a new bug?
 
-If you think you've found a bug, first read the ["Help I've Found a Bug"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
+If you think you've found a bug, first read the ["How to Report a Bug"](https://www.freecodecamp.org/news/how-to-report-a-bug-to-freecodecamp/) article and follow its instructions.
 
 If you're confident it's a new bug, go ahead and create a new GitHub issue. Be sure to include as much information as possible so that we can reproduce the bug. We have a pre-defined issue template to help you through this.
 
@@ -32,7 +32,7 @@ Please note that these GitHub issues are for codebase-related issues and discuss
 
 ### How can I report a security issue?
 
-Please don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
+Please don't create GitHub issues for security issues. Instead, please [follow our security policy](https://contribute.freecodecamp.org/#/security).
 
 ### I am a student. Can I work on a feature for academic credits?
 
@@ -92,7 +92,7 @@ Take a look at our [Moderator Handbook](moderator-handbook.md) for a more exhaus
 **Feel free to ask for help in:**
 
 - The `Contributors` category of [our community forum](https://forum.freecodecamp.org/c/contributors).
-- The `#Contributors` channel on [our chat server](https://chat.freecodecamp.org/channel/contributors).
+- The `#Contributors` channel on [our chat server](https://discord.gg/PRyKn3Vbay).
 
 We are excited to help you contribute to any of the topics that you would like to work on. If you ask us questions on the related issue threads, we will be glad to clarify. Be sure to search for your question before posting a new one.
 

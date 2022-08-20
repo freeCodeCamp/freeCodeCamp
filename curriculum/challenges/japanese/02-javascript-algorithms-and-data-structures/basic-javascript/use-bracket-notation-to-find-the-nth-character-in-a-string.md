@@ -39,7 +39,7 @@ assert(thirdLetterOfLastName === 'v');
 ブラケット記法を使用してください。
 
 ```js
-assert(code.match(/thirdLetterOfLastName\s*?=\s*?lastName\[.*?\]/));
+assert(code.match(/thirdLetterOfLastName\s*=\s*lastName\s*\[\s*\d\s*\]/));
 ```
 
 # --seed--

@@ -1,7 +1,7 @@
 ---
 id: 5900f4691000cf542c50ff7b
 title: 'Завдання 252: Опуклі отвори'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301900
 dashedName: problem-252-convex-holes
 ---
@@ -16,7 +16,8 @@ dashedName: problem-252-convex-holes
 
 Наприклад, ми використали перші 20 точок ($T_{2k − 1}$, $T_{2k}$), для $k = 1, 2, \ldots, 20$, отриманих за допомогою генератора псевдовипадкових чисел:
 
-$$\begin{align} S_0 & = 290\\,797 \\\\ S_{n+1} & = {S_n}^2 \\; \text{mod} \\; 50\\,515\\,093 \\\\ T_n & = (S_n \\; \text{mod} \\; 2000) − 1000 \end{align}$$
+$$\begin{align}   S_0 & = 290\\,797 \\\\
+  S_{n+1} & = {S_n}^2 \\; \text{mod} \\; 50\\,515\\,093 \\\\ T_n & = (S_n \\; \text{mod} \\; 2000) − 1000 \end{align}$$
 
 тобто (527, 144), (−488, 732), (−454, −947), …
 

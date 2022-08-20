@@ -18,11 +18,11 @@ const reqLogFormat = ':date[iso] :status :method :response-time ms - :url';
 // this may be brittle
 log.enabled = true;
 
-if (sentry.dns === 'dsn_from_sentry_dashboard') {
+if (sentry.dsn === 'dsn_from_sentry_dashboard') {
   log('Sentry reporting disabled unless DSN is provided.');
 } else {
   Sentry.init({
-    dsn: sentry.dns
+    dsn: sentry.dsn
   });
   log('Sentry initialized');
 }

@@ -9,7 +9,7 @@ dashedName: inform-with-the-paragraph-element
 
 # --description--
 
-`p` elements are the preferred element for paragraph text on websites. `p` is short for "paragraph".
+The `p` element is the preferred element for paragraph text on websites. `p` is short for "paragraph".
 
 You can create a paragraph element like this:
 

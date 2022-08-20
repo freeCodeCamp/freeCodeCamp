@@ -8,9 +8,9 @@ dashedName: build-a-25--5-clock
 
 # --description--
 
-**目標:** <https://codepen.io/freeCodeCamp/full/XpKrrW> と同様の機能を持つ [CodePen.io](https://codepen.io) アプリを作成します。
+**目標:** こちらと似た機能を持つアプリを構築してください: <a href="https://codepen.io/freeCodeCamp/full/XpKrrW" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/XpKrrW</a>
 
-以下の[ユーザーストーリー](https://en.wikipedia.org/wiki/User_story)を達成して、すべてのテストに合格してください。 アプリにはあなた独自のスタイルを設定してください。
+下記のユーザーストーリーを満たして、すべてのテストに合格してください。 必要に応じて、どのようなライブラリあるいは API を使用してもかまいません。 あなた独自のスタイルを加えましょう。
 
 このプロジェクトを完了するために、HTML、JavaScript、CSS、Bootstrap、SASS、React、Redux、および jQuery を自在に組み合わせて利用することができます。 このセクションはフロントエンドフレームワークの学習を目的としていますので、React などのフロントエンドフレームワークを使用してください。 上記以外の他のテクノロジーは推奨されません。使用する場合は自己責任で行ってください。 Angular や Vue などの他のフロントエンドフレームワークのサポートを検討していますが、現時点ではサポートされていません。 このプロジェクトで推奨される一連のテクノロジーを使用している場合の不具合報告については、freeCodeCamp にて報告を受け入れ、修正するよう努めます。 コーディングの成功を祈ります！
 
@@ -70,7 +70,7 @@ dashedName: build-a-25--5-clock
 
 **ユーザーストーリー 28:** ID が `reset` の要素がクリックされたとき、ID が `beep` の audio 要素の再生を停止して、最初まで巻き戻す必要があります。
 
-独自のペンを作成するために、<a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>こちらの CodePen テンプレート</a>を使用し、`Save` をクリックして独自のプロジェクトを構築することができます。 または、下記の CDN リンクを使用して、使い慣れている環境でテストを実行することもできます: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+<a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel="noopener noreferrer nofollow">この CodePen テンプレートを使用して</a> あなたのプロジェクトを構築することができます。`Save` をクリックすると、あなた用の pen を作成することができます。 または、下記の CDN リンクを使用して、使い慣れている環境でテストを実行することもできます: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
 完了したら、すべてのテストに合格した作業中のプロジェクトの URL を送信してください。
 

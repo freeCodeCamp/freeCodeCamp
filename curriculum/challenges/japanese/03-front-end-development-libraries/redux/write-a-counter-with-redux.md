@@ -31,7 +31,7 @@ assert(decAction().type === DECREMENT);
 Redux ストアを、`state` を 0 として初期化します。
 
 ```js
-assert(store.getState() === 0);
+assert(_store.getState() === 0);
 ```
 
 Redux ストアでの `incAction` のディスパッチで、`state` を 1 だけ増やします。
@@ -39,9 +39,9 @@ Redux ストアでの `incAction` のディスパッチで、`state` を 1 だ�
 ```js
 assert(
   (function () {
-    const initialState = store.getState();
-    store.dispatch(incAction());
-    const incState = store.getState();
+    const initialState = _store.getState();
+    _store.dispatch(incAction());
+    const incState = _store.getState();
     return initialState + 1 === incState;
   })()
 );
@@ -52,9 +52,9 @@ Redux ストアでの `decAction` のディスパッチで、`state` を 1 だ�
 ```js
 assert(
   (function () {
-    const initialState = store.getState();
-    store.dispatch(decAction());
-    const decState = store.getState();
+    const initialState = _store.getState();
+    _store.dispatch(decAction());
+    const decState = _store.getState();
     return initialState - 1 === decState;
   })()
 );
@@ -81,6 +81,12 @@ const incAction = null; // Define an action creator for incrementing
 const decAction = null; // Define an action creator for decrementing
 
 const store = null; // Define the Redux store here, passing in your reducers
+```
+
+## --after-user-code--
+
+```js
+const _store = Redux.createStore(counterReducer)
 ```
 
 # --solutions--

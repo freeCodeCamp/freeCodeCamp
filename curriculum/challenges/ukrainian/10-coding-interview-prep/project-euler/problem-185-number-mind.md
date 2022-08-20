@@ -1,7 +1,7 @@
 ---
 id: 5900f4251000cf542c50ff38
 title: 'Завдання 185: Number Mind'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301821
 dashedName: problem-185-number-mind
 ---
@@ -14,7 +14,10 @@ dashedName: problem-185-number-mind
 
 Наприклад, для секретної послідовності 5 цифр,
 
-$$\begin{align} & 90342 ;2\\;\text{correct}\\\\ & 70794 ;0\\;\text{correct}\\\\ & 39458 ;2\\;\text{correct}\\\\ & 34109 ;1\\;\text{correct}\\\\ & 51545 ;2\\;\text{correct}\\\\ & 12531 ;1\\;\text{correct} \end{align}$$
+$$\begin{align}   & 90342 ;2\\;\text{correct}\\\\
+  & 70794 ;0\\;\text{correct}\\\\   & 39458 ;2\\;\text{correct}\\\\
+  & 34109 ;1\\;\text{correct}\\\\   & 51545 ;2\\;\text{correct}\\\\
+  & 12531 ;1\\;\text{correct} \end{align}$$
 
 Правильна послідовність 39542 унікальна.
 

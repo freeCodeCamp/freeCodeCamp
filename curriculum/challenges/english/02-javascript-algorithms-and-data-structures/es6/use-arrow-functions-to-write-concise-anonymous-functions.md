@@ -45,13 +45,13 @@ Rewrite the function assigned to the variable `magic` which returns a `new Date(
 You should replace the `var` keyword.
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/var/g));
+assert.notMatch(code, /var/g)
 ```
 
 `magic` should be a constant variable (by using `const`).
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/const\s+magic/g));
+assert.match(code, /const\s+magic/g)
 ```
 
 `magic` should be a `function`.
@@ -69,7 +69,7 @@ assert(magic().setHours(0, 0, 0, 0) === new Date().setHours(0, 0, 0, 0));
 The `function` keyword should not be used.
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/function/g));
+assert.notMatch(code, /function/g)
 ```
 
 # --seed--

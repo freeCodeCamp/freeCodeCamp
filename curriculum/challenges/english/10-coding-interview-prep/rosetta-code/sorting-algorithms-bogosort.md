@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8002
 title: Sorting algorithms/Bogosort
-challengeType: 5
+challengeType: 1
 forumTopicId: 302311
 dashedName: sorting-algorithmsbogosort
 ---
 
 # --description--
 
-[Bogosort](https://en.wikipedia.org/wiki/Bogosort) a list of numbers.
+Bogosort a list of numbers.
 
 Bogosort simply shuffles a collection randomly until it is sorted.
 

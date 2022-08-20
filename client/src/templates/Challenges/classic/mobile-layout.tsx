@@ -73,7 +73,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
         <Tabs
           activeKey={currentTab}
           defaultActiveKey={currentTab}
-          id='challenge-page-tabs'
+          id='mobile-layout'
           onSelect={this.switchTab}
         >
           {!hasEditableBoundaries && (

@@ -16,17 +16,15 @@ Come l'operatore di uguaglianza, l'operatore di maggioranza convertirà i tipi d
 **Esempi**
 
 ```js
-5   >  3
-7   > '3'
-2   >  3
-'1' >  9
+5   >  3  // true
+7   > '3' // true
+2   >  3  // false
+'1' >  9  // false
 ```
-
-Nell'ordine, queste espressioni saranno valutate come `true`, `true`, `false`, e `false`.
 
 # --instructions--
 
-Aggiungi l'operatore di maggioranza alle linee indicate in modo che istruzioni return abbiano senso.
+Aggiungi l'operatore di maggioranza alle linee indicate in modo che le istruzioni return abbiano senso.
 
 # --hints--
 
@@ -54,7 +52,7 @@ assert(testGreaterThan(11) === 'Over 10');
 assert(testGreaterThan(99) === 'Over 10');
 ```
 
-`testGreaterThan(100)` deve restituire la stringa `Over 10`
+`testGreaterThan(100)` dovrebbe restituire la stringa `Over 10`
 
 ```js
 assert(testGreaterThan(100) === 'Over 10');

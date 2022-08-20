@@ -11,7 +11,7 @@ dashedName: check-radio-buttons-and-checkboxes-by-default
 
 `checked` 属性を使用して、チェックボックスやラジオボタンをデフォルトで選択された状態にすることができます。
 
-そのためには、`checked` という単語を input 要素の内部に追加します。 例:
+そのためには、`checked` という単語を `input` 要素の内部に追加します。 例:
 
 ```html
 <input type="radio" name="test-name" checked>

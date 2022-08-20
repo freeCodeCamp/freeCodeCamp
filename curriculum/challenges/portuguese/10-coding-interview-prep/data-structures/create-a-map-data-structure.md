@@ -26,7 +26,7 @@ Vamos praticar um pouco criando nosso próprio mapa. Como objetos JavaScript for
 
 # --hints--
 
-A estrutura de dados Map deve existir.
+A estrutura de dados `Map` deve existir.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-O objeto Map deve ter os seguintes métodos: add, remove, get, has, values, clear e size.
+O objeto `Map` deve ter os seguintes métodos: `add`, `remove`, `get`, `has`, `values`, `clear` e `size`.
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-O método add deve adicionar itens ao mapa.
+O método `add` deve adicionar itens ao mapa.
 
 ```js
 assert(
@@ -79,7 +79,7 @@ assert(
 );
 ```
 
-O método has deve retornar true para itens adicionados e false para itens ausentes.
+O método `has` deve retornar `true` para os itens adicionados e `false` para itens ausentes.
 
 ```js
 assert(
@@ -94,7 +94,7 @@ assert(
 );
 ```
 
-O método get deve aceitar chaves como entrada e deve retornar os valores associados.
+O método `get` deve aceitar chaves como entrada e deve retornar os valores associados.
 
 ```js
 assert(
@@ -109,7 +109,7 @@ assert(
 );
 ```
 
-O método values deve retornar todos os valores armazenados no mapa como strings em um array.
+O método `values` deve retornar todos os valores armazenados no mapa como strings em um array.
 
 ```js
 assert(
@@ -131,7 +131,7 @@ assert(
 );
 ```
 
-O método clear deve esvaziar o mapa e o método size deve retornar o número de itens presentes no mapa.
+O método `clear` deve esvaziar o mapa e o método `size` deve retornar o número de itens presentes no mapa.
 
 ```js
 assert(

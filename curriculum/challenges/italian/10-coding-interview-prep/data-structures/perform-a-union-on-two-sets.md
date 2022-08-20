@@ -25,7 +25,7 @@ assert(
 );
 ```
 
-L'unione di un insieme contenente valori ["a", "b", "c"] e un insieme contenente valori ["c", "d"] dovrebbe restituire un nuovo Set contenente valori ["a", "b", "c", "d"].
+L'unione di un `Set` contenente valori `["a", "b", "c"]` e un `Set` contenente valori `["c", "d"]` dovrebbe restituire un nuovo `Set` contenente valori `["a", "b", "c", "d"]`.
 
 ```js
 assert(

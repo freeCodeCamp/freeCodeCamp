@@ -1,7 +1,7 @@
 ---
 id: 5900f4ae1000cf542c50ffc0
 title: 'Problema 321: Trocando contadores'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301978
 dashedName: problem-321-swapping-counters
 ---

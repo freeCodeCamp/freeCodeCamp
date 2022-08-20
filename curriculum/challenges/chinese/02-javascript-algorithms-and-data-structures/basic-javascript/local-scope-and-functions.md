@@ -23,7 +23,7 @@ myTest();
 console.log(loc);
 ```
 
-`myTest()` 函数调用将在控制台中显示字符串 `foo`。 `console.log(loc)` 行会产生一个错误，因为 `loc` 没有定义在函数之外。
+`myTest()` 函数调用将在控制台中显示字符串 `foo`。 `console.log(loc)` 行（在 `myTest` 函数之外）将抛出错误，因为 `loc` 未在函数之外定义。
 
 # --instructions--
 

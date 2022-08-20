@@ -14,14 +14,12 @@ L'operatore di minoranza o uguaglianza (`<=`) confronta i valori di due numeri. 
 **Esempi**
 
 ```js
-4   <= 5
-'7' <= 7
-5   <= 5
-3   <= 2
-'8' <= 4
+4   <= 5 // true
+'7' <= 7 // true
+5   <= 5 // true
+3   <= 2 // false
+'8' <= 4 // false
 ```
-
-Nell'ordine, queste espressioni saranno valutate `true`, `true`, `true`, `false` e `false`.
 
 # --instructions--
 
@@ -59,7 +57,7 @@ assert(testLessOrEqual(23) === 'Smaller Than or Equal to 24');
 assert(testLessOrEqual(24) === 'Smaller Than or Equal to 24');
 ```
 
-`testLessOrEqual(25)` dovrebbe restituire la stringa `more than 24`
+`testLessOrEqual(25)` dovrebbe restituire la stringa `More Than 24`
 
 ```js
 assert(testLessOrEqual(25) === 'More Than 24');

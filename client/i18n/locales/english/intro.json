@@ -1,6 +1,6 @@
 {
   "responsive-web-design": {
-    "title": "Responsive Web Design",
+    "title": "Legacy Responsive Web Design",
     "intro": [
       "In this Responsive Web Design Certification, you'll learn the languages that developers use to build webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design.",
       "First, you'll build a cat photo app to learn the basics of HTML and CSS. Later, you'll learn modern techniques like CSS variables by building a penguin, and best practices for accessibility by building a web form.",
@@ -67,11 +67,11 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "Responsive Web Design (Beta)",
+    "title": "(New) Responsive Web Design",
     "intro": [
       "In this Responsive Web Design Certification, you'll learn the languages that developers use to build webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design.",
-      "First, you'll build a cat photo app to learn the basics of HTML and CSS. Later, you'll learn modern techniques like CSS variables by building a penguin, and best practices for accessibility by building a web form.",
-      "Finally, you'll learn how to make webpages that respond to different screen sizes by building a Twitter card with Flexbox, and a complex blog layout with CSS Grid."
+      "First, you'll build a cat photo app to learn the basics of HTML and CSS. Later, you'll learn modern techniques like CSS variables by building a penguin, and best practices for accessibility by building a quiz site.",
+      "Finally, you'll learn how to make webpages that respond to different screen sizes by building a photo gallery with Flexbox, and a magazine article layout with CSS Grid."
     ],
     "note": "Note: Some browser extensions, such as ad-blockers and dark mode extensions can interfere with the tests. If you face issues, we recommend disabling extensions that modify the content or layout of pages, while taking the course.",
     "blocks": {
@@ -150,7 +150,7 @@
       "learn-intermediate-css-by-building-a-picasso-painting": {
         "title": "Learn Intermediate CSS by Building a Picasso Painting",
         "intro": [
-          "In this course, you'll use learn some intermediate CSS techniques by coding your own Picasso painting webpage. You'll learn about SVG icons, CSS positioning, and review other CSS skills you've learned."
+          "In this course, you'll learn how to use some intermediate CSS techniques by coding your own Picasso painting webpage. You'll learn about SVG icons, CSS positioning, and review other CSS skills you've learned."
         ]
       },
       "learn-responsive-web-design-by-building-a-piano": {
@@ -281,23 +281,68 @@
           "This is it — time to put your new JavaScript skills to work. These projects are similar to the algorithm scripting challenges you've done before – just much more difficult.",
           "Complete these 5 JavaScript projects to earn the JavaScript Algorithms and Data Structures certification."
         ]
-      },
-      "basic-javascript-rpg-game": {
-        "title": "Basic JavaScript RPG Game",
+      }
+    }
+  },
+  "2022/javascript-algorithms-and-data-structures": {
+    "title": "JavaScript Algorithms and Data Structures (Beta)",
+    "intro": [
+      "placeholder",
+      "placeholder"
+    ],
+    "note": "",
+    "blocks": {
+      "build-a-caesars-cipher-project": {
+        "title": "Build a Caesars Cipher Project",
         "intro": [
           "",
           ""
         ]
       },
-      "intermediate-javascript-calorie-counter": {
-        "title": "Intermediate JavaScript Calorie Counter",
+      "build-a-cash-register-project": {
+        "title": "Build a Cash Register Project",
         "intro": [
           "",
           ""
         ]
       },
-      "functional-programming-spreadsheet": {
-        "title": "Functional Programming Spreadsheet",
+      "build-a-palindrome-checker-project": {
+        "title": "Build a Palindrome Checker Project",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "build-a-roman-numeral-converter-project": {
+        "title": "Build a Roman Numeral Converter Project",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "build-a-telephone-number-validator-project": {
+        "title": "Build a Telephone Number Validator Project",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "learn-basic-javascript-by-building-a-role-playing-game": {
+        "title": "Learn Basic JavaScript by Building a Role Playing Game",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "learn-form-validation-by-building-a-calorie-counter": {
+        "title": "Learn Form Validation by Building a Calorie Counter",
+        "intro": [
+          "",
+          ""
+        ]
+      },
+      "learn-functional-programming-by-building-a-spreadsheet": {
+        "title": "Learn Functional Programming by Building a Spreadsheet",
         "intro": [
           "",
           ""
@@ -411,7 +456,7 @@
     }
   },
   "relational-database": {
-    "title": "Relational Database",
+    "title": "Relational Database (Beta)",
     "intro": [
       "For these courses, you will use real developer tools and software including VS Code, PostgreSQL, and the Linux / Unix command line to complete interactive tutorials and build projects.",
       "These courses start off with basic Bash commands. Using the terminal, you will learn everything from navigating and manipulating a file system, scripting in Bash, all the way to advanced usage.",
@@ -458,62 +503,62 @@
         "title": "Learn Advanced Bash by Building a Kitty Ipsum Translator",
         "intro": [
           "There's more to Bash commands than you might think.",
-          "In this 140 lesson course, you will learn some more complex commands, and the details of how commands work."
+          "In this 140-lesson course, you will learn some more complex commands, and the details of how commands work."
         ]
       },
       "learn-bash-and-sql-by-building-a-bike-rental-shop": {
         "title": "Learn Bash and SQL by Building a Bike Rental Shop",
         "intro": [
-          "In this 210 lesson course, you will build an interactive Bash program that stores rental information for your bike rental shop using PostgreSQL."
+          "In this 210-lesson course, you will build an interactive Bash program that stores rental information for your bike rental shop using PostgreSQL."
         ]
       },
       "learn-bash-by-building-a-boilerplate": {
         "title": "Learn Bash by Building a Boilerplate",
         "intro": [
           "The terminal allows you to send text commands to your computer that can manipulate the file system, run programs, automate tasks, and much more.",
-          "In this 170 lesson course, you will learn basic commands by creating a website boilerplate using only the command line."
+          "In this 170-lesson course, you will learn terminal commands by creating a website boilerplate using only the command line."
         ]
       },
       "learn-bash-scripting-by-building-five-programs": {
         "title": "Learn Bash Scripting by Building Five Programs",
         "intro": [
           "Bash scripts combine terminal commands and logic into programs that can execute or automate tasks, and much more.",
-          "In this 220 lesson course, you will learn more terminal commands and how to use them within Bash scripts by creating five small programs."
+          "In this 220-lesson course, you will learn more terminal commands and how to use them within Bash scripts by creating five small programs."
         ]
       },
       "learn-git-by-building-an-sql-reference-object": {
         "title": "Learn Git by Building an SQL Reference Object",
         "intro": [
           "Git is a version control system that keeps track of all the changes you make to your codebase.",
-          "In this 240 lesson course, you will learn how Git keeps track of your code by creating an object containing commonly used SQL commands."
+          "In this 240-lesson course, you will learn how Git keeps track of your code by creating an object containing commonly used SQL commands."
         ]
       },
       "learn-nano-by-building-a-castle": {
         "title": "Learn Nano by Building a Castle",
         "intro": [
           "Nano is a program that allows you to edit files right in the terminal.",
-          "In this 40 lesson course, you will learn how to edit files in the terminal with Nano while building a castle."
+          "In this 40-lesson course, you will learn how to edit files in the terminal with Nano while building a castle."
         ]
       },
       "learn-relational-databases-by-building-a-mario-database": {
         "title": "Learn Relational Databases by Building a Mario Database",
         "intro": [
           "A relational database organizes data into tables that are linked together through relationships.",
-          "In this 165 lesson course, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
+          "In this 165-lesson course, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
         ]
       },
       "learn-sql-by-building-a-student-database-part-1": {
         "title": "Learn SQL by Building a Student Database: Part 1",
         "intro": [
           "SQL, or Structured Query Language, is the language for communicating with a relational database.",
-          "In this 140 lesson course, you will create a Bash script that uses SQL to enter information about your computer science students into PostgreSQL."
+          "In this 140-lesson course, you will create a Bash script that uses SQL to enter information about your computer science students into PostgreSQL."
         ]
       },
       "learn-sql-by-building-a-student-database-part-2": {
         "title": "Learn SQL by Building a Student Database: Part 2",
         "intro": [
           "SQL join commands are used to combine information from multiple tables in a relational database",
-          "In this 140 lesson course, you will complete your student database while diving deeper into SQL commands."
+          "In this 140-lesson course, you will complete your student database while diving deeper into SQL commands."
         ]
       }
     }
@@ -539,15 +584,15 @@
         "intro": [
           "Node.js is a JavaScript runtime that allows developers to write backend (server-side) programs in JavaScript. Node.js comes with a handful of built-in modules — small, independent programs — that help with this. Some of the core modules include HTTP, which acts like a server, and File System, a module to read and modify files.",
           "In the last set of courses you learned to install and manage packages from npm, which are collections of smaller modules. These packages can help you build larger, more complex applications.",
-          "Express is a lightweight web application framework, and is one of the most popular packages on npm. Express makes it much easier to create a server and handle routing for your application, which handles things like direct people to the correct page when they visit a certain endpoint like <pre>/blog</pre>.",
+          "Express is a lightweight web application framework, and is one of the most popular packages on npm. Express makes it much easier to create a server and handle routing for your application, which handles things like directing people to the correct page when they visit a certain endpoint like <pre>/blog</pre>.",
           "In this course, you'll learn the basics of Node and Express including how to create a server, serve different files, and handle different requests from the browser."
         ]
       },
       "mongodb-and-mongoose": {
         "title": "MongoDB and Mongoose",
         "intro": [
-          "MongoDB is a database application that stores JSON documents (or records) that you can use in your application. Unlike SQL, another type of database, Mongo is a non-relational or \"NoSQL\" database. This means Mongo stores all associated data within one record, instead of storing it across many preset tables as in a SQL database.",
-          "Mongoose is a popular npm package that is often installed alongside Mongo. With Mongoose, you can use plain JavaScript objects instead of JSON, which makes it easier to work with Mongo. Also, it allows you to create blueprints for your documents called schemas, so you don't accidentally save the wrong type of data and cause bugs later.",
+          "MongoDB is a database application that stores JSON documents (or records) that you can use in your application. Unlike SQL, another type of database, MongoDB is a non-relational or \"NoSQL\" database. This means MongoDB stores all associated data within one record, instead of storing it across many preset tables as in a SQL database.",
+          "Mongoose is a popular npm package for interacting with MongoDB. With Mongoose, you can use plain JavaScript objects instead of JSON, which makes it easier to work with MongoDB. Also, it allows you to create blueprints for your documents called schemas, so you don't accidentally save the wrong type of data and cause bugs later.",
           "In the MongoDB and Mongoose courses, you'll learn the fundamentals of working with persistent data including how to set up a model, and save, delete, and find documents in the database."
         ]
       },
@@ -744,7 +789,8 @@
         "title": "Rosetta Code",
         "intro": [
           "Level up your creative problem solving skills with these free programming tasks from the classic Rosetta Code library.",
-          "These challenges can prove to be difficult, but they will push your algorithm logic to new heights."
+          "These challenges can prove to be difficult, but they will push your algorithm logic to new heights.",
+          "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Attribute: Rosetta Code</a>"
         ]
       },
       "project-euler": {
@@ -765,7 +811,13 @@
     "collapse": "Collapse course",
     "legacy-header": "Legacy Courses",
     "legacy-desc": "These courses are no longer part of the certification path, but are still available for you to further your learning.",
+    "legacy-go-back": "Go to the current version of the curriculum.",
+    "new-rwd-desc": "We have updated our Responsive Web Design Curriculum. If you were previously working on the RWD curriculum, your progress is still saved! You can find it under the Legacy Responsive Web Design section.",
+    "new-rwd-article": "We encourage you to read about the changes we made and consider exploring the updated curriculum.",
     "viewing-upcoming-change": "You are looking at a beta page. ",
-    "go-back-to-learn": "Go back to the stable version of the curriculum."
+    "go-back-to-learn": "Go back to the stable version of the curriculum.",
+    "read-database-cert-article": "Please read this forum post before proceeding.",
+    "enable-cookies": "You must enable third-party cookies before starting.",
+    "english-only": "The courses in this section are only available in English. We are only able to translate the titles and introductions at the moment, not the lessons themselves."
   }
 }

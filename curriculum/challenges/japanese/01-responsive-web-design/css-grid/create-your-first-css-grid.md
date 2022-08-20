@@ -9,7 +9,7 @@ dashedName: create-your-first-css-grid
 
 # --description--
 
-`display` プロパティを `grid` に設定することで、任意の HTML 要素をグリッドコンテナに変換します。 これにより、CSS グリッドに関連する他のすべてのプロパティを使用することができます。
+`display` プロパティを `grid` に設定することで、任意の HTML 要素をグリッドコンテナーに変換します。 これにより、CSS グリッドに関連する他のすべてのプロパティを使用することができます。
 
 **注:** CSS グリッドでは、親要素を <dfn>container</dfn>、子要素を <dfn>items</dfn> と呼びます。
 

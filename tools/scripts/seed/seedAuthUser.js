@@ -84,7 +84,8 @@ const authUser = {
   },
   isDonating: envVariables.includes('--donor'),
   emailAuthLinkTTL: null,
-  emailVerifyTTL: null
+  emailVerifyTTL: null,
+  keyboardShortcuts: true
 };
 
 const blankUser = {
@@ -153,7 +154,20 @@ MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, (err, client) => {
   const db = client.db('freecodecamp');
   const user = db.collection('user');
 
+  const dropUserTokens = async function () {
+    await db.collection('UserToken').deleteMany({
+      userId: {
+        $in: [
+          ObjectId('5fa2db00a25c1c1fa49ce067'),
+          ObjectId('5bd30e0f1caf6ac3ddddddb5'),
+          ObjectId('5bd30e0f1caf6ac3ddddddb9')
+        ]
+      }
+    });
+  };
+
   if (process.argv[2] === 'certUser') {
+    dropUserTokens();
     user.deleteMany(
       {
         _id: {
@@ -179,6 +193,7 @@ MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, (err, client) => {
       }
     );
   } else {
+    dropUserTokens();
     user.deleteMany(
       {
         _id: {

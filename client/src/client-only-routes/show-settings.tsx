@@ -1,5 +1,5 @@
 import { Grid } from '@freecodecamp/react-bootstrap';
-import React from 'react';
+import React, { useRef } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -17,17 +17,28 @@ import Internet from '../components/settings/internet';
 import Portfolio from '../components/settings/portfolio';
 import Privacy from '../components/settings/privacy';
 import { Themes } from '../components/settings/theme';
-import WebhookToken from '../components/settings/webhook-token';
+import UserToken from '../components/settings/user-token';
 import {
   signInLoadingSelector,
   userSelector,
   isSignedInSelector,
-  hardGoTo as navigate
+  hardGoTo as navigate,
+  userTokenSelector
 } from '../redux';
 import { User } from '../redux/prop-types';
-import { submitNewAbout, updateUserFlag, verifyCert } from '../redux/settings';
+import {
+  submitNewAbout,
+  updateMyHonesty,
+  updateMyPortfolio,
+  updateMyQuincyEmail,
+  updateMySound,
+  updateMyTheme,
+  updateMyKeyboardShortcuts,
+  updateUserFlag,
+  verifyCert
+} from '../redux/settings';
 
-const { apiLocation, deploymentEnv } = envData;
+const { apiLocation } = envData;
 
 // TODO: update types for actions
 interface ShowSettingsProps {
@@ -38,6 +49,7 @@ interface ShowSettingsProps {
   submitNewAbout: () => void;
   toggleNightMode: (theme: Themes) => void;
   toggleSoundMode: (sound: boolean) => void;
+  toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
   updateInternetSettings: () => void;
   updateIsHonest: () => void;
   updatePortfolio: () => void;
@@ -45,16 +57,19 @@ interface ShowSettingsProps {
   user: User;
   verifyCert: () => void;
   path?: string;
+  userToken: string | null;
 }
 
 const mapStateToProps = createSelector(
   signInLoadingSelector,
   userSelector,
   isSignedInSelector,
-  (showLoading: boolean, user: User, isSignedIn) => ({
+  userTokenSelector,
+  (showLoading: boolean, user: User, isSignedIn, userToken: string | null) => ({
     showLoading,
     user,
-    isSignedIn
+    isSignedIn,
+    userToken
   })
 );
 
@@ -62,13 +77,15 @@ const mapDispatchToProps = {
   createFlashMessage,
   navigate,
   submitNewAbout,
-  toggleNightMode: (theme: Themes) => updateUserFlag({ theme }),
-  toggleSoundMode: (sound: boolean) => updateUserFlag({ sound }),
+  toggleNightMode: (theme: Themes) => updateMyTheme({ theme }),
+  toggleSoundMode: (sound: boolean) => updateMySound({ sound }),
+  toggleKeyboardShortcuts: (keyboardShortcuts: boolean) =>
+    updateMyKeyboardShortcuts({ keyboardShortcuts }),
   updateInternetSettings: updateUserFlag,
-  updateIsHonest: updateUserFlag,
-  updatePortfolio: updateUserFlag,
+  updateIsHonest: updateMyHonesty,
+  updatePortfolio: updateMyPortfolio,
   updateQuincyEmail: (sendQuincyEmail: boolean) =>
-    updateUserFlag({ sendQuincyEmail }),
+    updateMyQuincyEmail({ sendQuincyEmail }),
   verifyCert
 };
 
@@ -80,6 +97,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     submitNewAbout,
     toggleNightMode,
     toggleSoundMode,
+    toggleKeyboardShortcuts,
     user: {
       completedChallenges,
       email,
@@ -108,6 +126,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       points,
       theme,
       sound,
+      keyboardShortcuts,
       location,
       name,
       githubProfile,
@@ -122,14 +141,16 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     updateInternetSettings,
     updatePortfolio,
     updateIsHonest,
-    verifyCert
+    verifyCert,
+    userToken
   } = props;
+  const isSignedInRef = useRef(isSignedIn);
 
   if (showLoading) {
     return <Loader fullScreen={true} />;
   }
 
-  if (!isSignedIn) {
+  if (!isSignedInRef.current) {
     navigate(`${apiLocation}/signin`);
     return <Loader fullScreen={true} />;
   }
@@ -151,9 +172,11 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             picture={picture}
             points={points}
             sound={sound}
+            keyboardShortcuts={keyboardShortcuts}
             submitNewAbout={submitNewAbout}
             toggleNightMode={toggleNightMode}
             toggleSoundMode={toggleSoundMode}
+            toggleKeyboardShortcuts={toggleKeyboardShortcuts}
             username={username}
           />
           <Spacer />
@@ -202,8 +225,12 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             username={username}
             verifyCert={verifyCert}
           />
-          {deploymentEnv == 'staging' && <Spacer />}
-          {deploymentEnv == 'staging' && <WebhookToken />}
+          {userToken && (
+            <>
+              <Spacer />
+              <UserToken />
+            </>
+          )}
           <Spacer />
           <DangerZone />
         </main>

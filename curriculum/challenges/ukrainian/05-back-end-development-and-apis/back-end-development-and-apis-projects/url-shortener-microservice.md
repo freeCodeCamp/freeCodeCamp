@@ -96,7 +96,7 @@ async (getUserInput) => {
   const res = await fetch(url + '/api/shorturl', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `url=ftp:/john-doe.org`
+    body: `url=ftp:/john-doe.invalidTLD`
   });
   if (res.ok) {
     const { error } = await res.json();

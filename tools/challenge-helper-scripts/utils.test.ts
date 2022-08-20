@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import fs from 'fs';
 import ObjectID from 'bson-objectid';
 import glob from 'glob';
+import * as matter from 'gray-matter';
 import mock from 'mock-fs';
 
 // NOTE:
@@ -18,39 +20,9 @@ jest.mock('./helpers/get-step-template', () => {
   };
 });
 
-jest.mock('./helpers/get-project-meta-path', () => {
-  return {
-    getProjectMetaPath: jest.fn(() => '_meta/project/meta.json')
-  };
-});
-
-jest.mock('./helpers/get-project-path', () => {
-  return {
-    getProjectPath: jest.fn(() => 'project/')
-  };
-});
-
-jest.mock('gray-matter', () => {
-  return {
-    read: jest.fn(() => ({
-      data: { id: mockChallengeId }
-    })),
-    stringify: jest.fn(() => 'Lorem ipsum...')
-  };
-});
-
-jest.mock(
-  '../challenge-helper-scripts/helpers/get-project-path-metadata',
-  () => ({
-    getMetaData: jest.fn(() => ({
-      id: 'mock-id'
-    }))
-  })
-);
-
 const mockChallengeId = '60d35cf3fe32df2ce8e31b03';
 import { getStepTemplate } from './helpers/get-step-template';
-import { createStepFile, reorderSteps } from './utils';
+import { createStepFile, insertStepIntoMeta, updateStepTitles } from './utils';
 
 describe('Challenge utils helper scripts', () => {
   describe('createStepFile util', () => {
@@ -78,61 +50,111 @@ describe('Challenge utils helper scripts', () => {
       const files = glob.sync(`project/*.md`);
 
       expect(files).toEqual([
+        `project/${mockChallengeId}.md`,
         `project/step-001.md`,
-        `project/step-002.md`,
-        `project/step-003.md`
+        `project/step-002.md`
       ]);
     });
   });
 
-  describe('reorderSteps util', () => {
-    it('should sort files found in given path', () => {
+  describe('insertStepIntoMeta util', () => {
+    it('should update the meta with a new file id and name', () => {
       mock({
         '_meta/project/': {
-          'meta.json': 'Lorem ipsum meta content...'
+          'meta.json': `{"id": "mock-id",
+          "challengeOrder": [
+            [
+              "id-1",
+              "Step 1"
+            ],
+            [
+              "id-2",
+              "Step 2"
+            ],
+            [
+              "id-3",
+              "Step 3"
+            ]
+          ]}`
+        }
+      });
+      process.env.CALLING_DIR = 'english/superblock/project';
+
+      insertStepIntoMeta({ stepNum: 3, stepId: new ObjectID(mockChallengeId) });
+
+      const meta = JSON.parse(
+        fs.readFileSync('_meta/project/meta.json', 'utf8')
+      );
+      expect(meta).toEqual({
+        id: 'mock-id',
+        challengeOrder: [
+          ['id-1', 'Step 1'],
+          ['id-2', 'Step 2'],
+          [mockChallengeId, 'Step 3'],
+          ['id-3', 'Step 4']
+        ]
+      });
+    });
+  });
+
+  describe('updateStepTitles util', () => {
+    it('should apply meta.challengeOrder to step files', () => {
+      mock({
+        '_meta/project/': {
+          'meta.json':
+            '{"id": "mock-id", "challengeOrder": [["id-1", "Step 1"], ["id-3", "Step 2"], ["id-2", "Step 3"]]}'
         },
-        'project/': {
-          'step-001.md': 'Lorem ipsum 1...',
-          'step-002.md': 'Lorem ipsum 2...',
-          'step-002b.md': 'Lorem ipsum 3...'
+        'english/superblock/project/': {
+          'id-1.md': `---
+id: id-1
+title: Step 2
+challengeType: a
+dashedName: step-2
+---
+`,
+          'id-2.md': `---
+id: id-2
+title: Step 1
+challengeType: b
+dashedName: step-1
+---
+`,
+          'id-3.md': `---
+id: id-3
+title: Step 3
+challengeType: c
+dashedName: step-3
+---
+`
         }
       });
 
-      reorderSteps();
+      process.env.CALLING_DIR = 'english/superblock/project';
 
-      // - Should write a file with a given name and template
-      const files = glob.sync(`project/*.md`);
+      updateStepTitles();
 
-      expect(files).toEqual([
-        'project/step-001.md',
-        'project/step-002.md',
-        'project/step-003.md'
-      ]);
-
-      const result = fs.readFileSync('_meta/project/meta.json', 'utf8');
-
-      const expectedResult = `{
-  "id": "mock-id",
-  "challengeOrder": [
-    [
-      "60d35cf3fe32df2ce8e31b03",
-      "Step 1"
-    ],
-    [
-      "60d35cf3fe32df2ce8e31b03",
-      "Step 2"
-    ],
-    [
-      "60d35cf3fe32df2ce8e31b03",
-      "Step 3"
-    ]
-  ]
-}`;
-
-      expect(result).toEqual(expectedResult);
+      expect(matter.read('english/superblock/project/id-1.md').data).toEqual({
+        id: 'id-1',
+        title: 'Step 1',
+        challengeType: 'a',
+        dashedName: 'step-1'
+      });
+      expect(matter.read('english/superblock/project/id-2.md').data).toEqual({
+        id: 'id-2',
+        title: 'Step 3',
+        challengeType: 'b',
+        dashedName: 'step-3'
+      });
+      expect(matter.read('english/superblock/project/id-3.md').data).toEqual({
+        id: 'id-3',
+        title: 'Step 2',
+        challengeType: 'c',
+        dashedName: 'step-2'
+      });
     });
   });
   afterEach(() => {
     mock.restore();
+    delete process.env.CALLING_DIR;
   });
 });

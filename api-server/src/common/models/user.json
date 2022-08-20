@@ -120,6 +120,17 @@
       "description": "Camper has signed academic honesty policy",
       "default": false
     },
+    "needsModeration": {
+      "type": "boolean",
+      "description": "Camper has challenges needing to be moderated",
+      "default": false,
+      "index": {
+        "mongodb": {
+          "unique": true,
+          "background": true
+        }
+      }
+    },
     "isFrontEndCert": {
       "type": "boolean",
       "description": "Camper is front end certified",
@@ -250,6 +261,39 @@
       ],
       "default": []
     },
+    "savedChallenges": {
+      "type": [
+        {
+          "lastSavedDate": "number",
+          "id": "string",
+          "challengeType": "number",
+          "files": {
+            "type": [
+              {
+                "contents": {
+                  "type": "string",
+                  "default": ""
+                },
+                "ext": {
+                  "type": "string"
+                },
+                "path": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "key": {
+                  "type": "string"
+                }
+              }
+            ],
+            "default": []
+          }
+        }
+      ],
+      "default": []
+    },
     "portfolio": {
       "type": "array",
       "default": []
@@ -270,6 +314,10 @@
       "default": "default"
     },
     "sound": {
+      "type": "boolean",
+      "default": false
+    },
+    "keyboardShortcuts": {
       "type": "boolean",
       "default": false
     },
@@ -341,9 +389,9 @@
       "model": "article",
       "foreignKey": "externalId"
     },
-    "webhookTokens": {
+    "userTokens": {
       "type": "hasMany",
-      "model": "WebhookToken",
+      "model": "UserToken",
       "foreignKey": "userId"
     }
   },

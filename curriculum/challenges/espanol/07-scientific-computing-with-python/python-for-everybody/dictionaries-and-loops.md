@@ -1,22 +1,26 @@
 ---
 id: 5e7b9f0a0b6c005b0e76f069
-title: Dictionaries and Loops
+title: Diccionarios y bucles
 challengeType: 11
 videoId: EEmekKiKG70
+bilibiliIds:
+  aid: 589401038
+  bvid: BV1eq4y1X7xU
+  cid: 376387132
 dashedName: dictionaries-and-loops
 ---
 
 # --description--
 
-More resources:
+Más recursos:
 
-\- [Exercise](https://www.youtube.com/watch?v=PrhZ9qwBDD8)
+\- [Ejercicio](https://www.youtube.com/watch?v=PrhZ9qwBDD8)
 
 # --question--
 
 ## --text--
 
-What will the following code print?:
+¿Qué imprimirá el siguiente código?:
 
 ```python
 counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}

@@ -1,7 +1,7 @@
 ---
 id: 5900f4381000cf542c50ff4a
 title: 'Problema 203: Coeficientes binomiais livres de quadrados'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301844
 dashedName: problem-203-squarefree-binomial-coefficients
 ---
@@ -10,7 +10,11 @@ dashedName: problem-203-squarefree-binomial-coefficients
 
 Os coeficientes binomiais $\displaystyle\binom{n}{k}$ podem ser organizados em forma triangular, no triângulo de Pascal, assim:
 
-$$\begin{array}{ccccccccccccccc} &   &   &   &    &    &    &  1 &    &    &    &   &   &   &   \\\\ &   &   &   &    &    &  1 &    & 1  &    &    &   &   &   &   \\\\ &   &   &   &    &  1 &    &  2 &    &  1 &    &   &   &   &   \\\\ &   &   &   &  1 &    &  3 &    &  3 &    &  1 &   &   &   &   \\\\ &   &   & 1 &    &  4 &    &  6 &    &  4 &    & 1 &   &   &   \\\\ &   & 1 &   &  5 &    & 10 &    & 10 &    &  5 &   & 1 &   &   \\\\ & 1 &   & 6 &    & 15 &    & 20 &    & 15 &    & 6 &   & 1 &   \\\\ 1 &   & 7 &   & 21 &    & 35 &    & 35 &    & 21 &   & 7 &   & 1 \\\\ &   &   &   &    &    &    & \ldots \end{array}$$
+$$\begin{array}{ccccccccccccccc}    &   &   &   &    &    &    &  1 &    &    &    &   &   &   &   \\\\
+   &   &   &   &    &    &  1 &    & 1  &    &    &   &   &   &   \\\\    &   &   &   &    &  1 &    &  2 &    &  1 &    &   &   &   &   \\\\
+   &   &   &   &  1 &    &  3 &    &  3 &    &  1 &   &   &   &   \\\\    &   &   & 1 &    &  4 &    &  6 &    &  4 &    & 1 &   &   &   \\\\
+   &   & 1 &   &  5 &    & 10 &    & 10 &    &  5 &   & 1 &   &   \\\\    & 1 &   & 6 &    & 15 &    & 20 &    & 15 &    & 6 &   & 1 &   \\\\
+ 1 &   & 7 &   & 21 &    & 35 &    & 35 &    & 21 &   & 7 &   & 1 \\\\ &   &   &   &    &    &    & \ldots \end{array}$$
 
 Podemos ver que as primeiras oito linhas do triângulo de Pascal contêm doze números distintos: 1, 2, 3, 4, 5, 6, 7, 10, 15, 20, 21 e 35.
 

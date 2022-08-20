@@ -1,7 +1,7 @@
 ---
 id: 5900f4e51000cf542c50fff7
 title: 'Задача 376: Нетранзитивні набори кубиків'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302038
 dashedName: problem-376-nontransitive-sets-of-dice
 ---
@@ -10,7 +10,9 @@ dashedName: problem-376-nontransitive-sets-of-dice
 
 Розглянемо такий набір кубиків з нетиповою розміткою:
 
-$$\begin{array}{} \text{Die A: } & 1 & 4 & 4 & 4 & 4 & 4 \\\\ \text{Die B: } & 2 & 2 & 2 & 5 & 5 & 5 \\\\ \text{Die C: } & 3 & 3 & 3 & 3 & 3 & 6 \\\\ \end{array}$$
+$$\begin{array}{}   \text{Die A: } & 1 & 4 & 4 & 4 & 4 & 4 \\\\
+  \text{Die B: } & 2 & 2 & 2 & 5 & 5 & 5 \\\\   \text{Die C: } & 3 & 3 & 3 & 3 & 3 & 6 \\\\
+\end{array}$$
 
 За правилами гри, двоє гравців по черзі підкидують гральний кубик. Переможцем стає той, чий кубик показав найвище значення.
 

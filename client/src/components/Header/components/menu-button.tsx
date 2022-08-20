@@ -1,39 +1,59 @@
 import React, { RefObject } from 'react';
 import { useTranslation } from 'react-i18next';
-import AuthOrProfile from './auth-or-profile';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 export interface MenuButtonProps {
   className?: string;
   displayMenu?: boolean;
   innerRef?: RefObject<HTMLButtonElement>;
-  onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
-  user?: Record<string, unknown>;
+  showMenu: () => void;
+  hideMenu: () => void;
 }
 
 const MenuButton = ({
   displayMenu,
   innerRef,
-  onClick,
-  user
+  showMenu,
+  hideMenu
 }: MenuButtonProps): JSX.Element => {
   const { t } = useTranslation();
 
+  // Will close the menu if the user Shift+Tabs from the menu button.
+  const handleBlur = (event: React.FocusEvent<HTMLButtonElement>): void => {
+    if (
+      event.relatedTarget &&
+      !event.relatedTarget.closest('.universal-nav-right') &&
+      displayMenu
+    ) {
+      hideMenu();
+    }
+  };
+
+  const handleClick = (): void => {
+    if (displayMenu) {
+      hideMenu();
+      return;
+    }
+    showMenu();
+  };
+
   return (
-    <>
-      <button
-        aria-expanded={displayMenu}
-        className={
-          'toggle-button-nav' + (displayMenu ? ' reverse-toggle-color' : '')
-        }
-        onClick={onClick}
-        ref={innerRef}
-      >
-        {t('buttons.menu')}
-      </button>
-      <span className='navatar'>
-        <AuthOrProfile user={user} />
+    <button
+      aria-expanded={displayMenu}
+      className={`toggle-button-nav${
+        displayMenu ? ' reverse-toggle-color' : ''
+      }`}
+      id='toggle-button-nav'
+      onBlur={handleBlur}
+      onClick={handleClick}
+      ref={innerRef}
+    >
+      <span className='menu-btn-icon'>
+        <FontAwesomeIcon icon={faBars} />
+        <span className='sr-only'>{t('buttons.menu')}</span>
       </span>
-    </>
+      <span className='menu-btn-text'>{t('buttons.menu')}</span>
+    </button>
   );
 };
 

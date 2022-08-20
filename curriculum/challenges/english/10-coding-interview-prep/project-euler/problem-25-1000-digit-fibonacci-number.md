@@ -1,7 +1,7 @@
 ---
 id: 5900f3851000cf542c50fe98
 title: 'Problem 25: 1000-digit Fibonacci number'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301897
 dashedName: problem-25-1000-digit-fibonacci-number
 ---

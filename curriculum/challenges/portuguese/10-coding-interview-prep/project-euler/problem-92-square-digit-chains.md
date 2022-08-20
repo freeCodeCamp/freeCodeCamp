@@ -1,7 +1,7 @@
 ---
 id: 5900f3c81000cf542c50fedb
 title: 'Problema 92: Cadeias de algarismos quadrados'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302209
 dashedName: problem-92-square-digit-chains
 ---
@@ -12,7 +12,8 @@ Uma cadeia de números é criada adicionando continuamente o quadrado dos algari
 
 Por exemplo:
 
-$$\begin{align} & 44 → 32 → 13 → 10 → \boldsymbol{1} → \boldsymbol{1}\\\\ & 85 → \boldsymbol{89} → 145 → 42 → 20 → 4 → 16 → 37 → 58 → \boldsymbol{89}\\\\ \end{align}$$
+$$\begin{align}   & 44 → 32 → 13 → 10 → \boldsymbol{1} → \boldsymbol{1}\\\\
+  & 85 → \boldsymbol{89} → 145 → 42 → 20 → 4 → 16 → 37 → 58 → \boldsymbol{89}\\\\ \end{align}$$
 
 Portanto, qualquer corrente que chegue a 1 ou 89 ficará presa numa repetição infinita. O que é mais incrível é que TODO número inicial eventualmente chegará a 1 ou 89.
 

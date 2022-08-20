@@ -4711,6 +4711,7 @@ module.exports = {
   yearsTopContributor: ['2019'],
   rand: 0.6126749173148205,
   theme: 'default',
+  keyboardShortcuts: false,
   profileUI: {
     isLocked: false,
     showAbout: true,

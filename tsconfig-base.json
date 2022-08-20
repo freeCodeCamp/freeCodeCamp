@@ -7,6 +7,7 @@
     "allowJs": true,
     "jsx": "react",
     "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,

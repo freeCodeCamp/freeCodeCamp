@@ -85,7 +85,9 @@ export class PaypalButton extends Component<
     this.handleApproval = this.handleApproval.bind(this);
   }
 
-  static getDerivedStateFromProps(props: PaypalButtonProps): PaypalButtonState {
+  static getDerivedStateFromProps(
+    props: Readonly<PaypalButtonProps>
+  ): PaypalButtonState {
     const { donationAmount, donationDuration } = props;
     const configurationObj: {
       amount: number;

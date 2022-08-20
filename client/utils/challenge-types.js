@@ -4,7 +4,7 @@ const backend = 2;
 const zipline = 3;
 const frontEndProject = 3;
 const backEndProject = 4;
-const bonfire = 5;
+const jsProject = 5;
 const modern = 6;
 const step = 7;
 const quiz = 8;
@@ -13,13 +13,14 @@ const pythonProject = 10;
 const video = 11;
 const codeAllyPractice = 12;
 const codeAllyCert = 13;
-const multiFileCertProject = 14;
+const multifileCertProject = 14;
 
 // individual exports
 exports.backend = backend;
 exports.frontEndProject = frontEndProject;
 exports.backEndProject = backEndProject;
 exports.pythonProject = pythonProject;
+exports.codeAllyCert = codeAllyCert;
 
 exports.challengeTypes = {
   html,
@@ -29,7 +30,7 @@ exports.challengeTypes = {
   frontEndProject,
   backEndProject,
   pythonProject,
-  bonfire,
+  jsProject,
   modern,
   step,
   quiz,
@@ -37,32 +38,39 @@ exports.challengeTypes = {
   video,
   codeAllyPractice,
   codeAllyCert,
-  multiFileCertProject
+  multifileCertProject
 };
 
-// (Oliver) I don't think we need this for codeally projects, so they're ignored
-// here
-exports.isProject = challengeType => {
+exports.isFinalProject = challengeType => {
   if (typeof challengeType !== 'number')
     throw Error('challengeType must be a number');
   return (
     challengeType === frontEndProject ||
     challengeType === backEndProject ||
-    challengeType === pythonProject
+    challengeType === jsProject ||
+    challengeType === pythonProject ||
+    challengeType === codeAllyCert ||
+    challengeType === multifileCertProject
   );
+};
+
+exports.isCodeAllyPractice = challengeType => {
+  if (typeof challengeType !== 'number')
+    throw Error('challengeType must be a number');
+  return challengeType === codeAllyPractice;
 };
 
 // turn challengeType to file ext
 exports.pathsMap = {
   [html]: 'html',
   [js]: 'js',
-  [bonfire]: 'js'
+  [jsProject]: 'js'
 };
-// determine the component to view for each challenge
+// determine the component view for each challenge
 exports.viewTypes = {
   [html]: 'classic',
   [js]: 'classic',
-  [bonfire]: 'classic',
+  [jsProject]: 'classic',
   [frontEndProject]: 'frontend',
   [backEndProject]: 'backend',
   [pythonProject]: 'frontend',
@@ -73,14 +81,14 @@ exports.viewTypes = {
   [video]: 'video',
   [codeAllyPractice]: 'codeAlly',
   [codeAllyCert]: 'codeAlly',
-  [multiFileCertProject]: 'classic'
+  [multifileCertProject]: 'classic'
 };
 
 // determine the type of submit function to use for the challenge on completion
 exports.submitTypes = {
   [html]: 'tests',
   [js]: 'tests',
-  [bonfire]: 'tests',
+  [jsProject]: 'tests',
   // requires just a single url
   // like codepen.com/my-project
   [frontEndProject]: 'project.frontEnd',
@@ -95,7 +103,7 @@ exports.submitTypes = {
   [modern]: 'tests',
   [video]: 'tests',
   [codeAllyCert]: 'project.frontEnd',
-  [multiFileCertProject]: 'tests'
+  [multifileCertProject]: 'tests'
 };
 
 // determine which help forum questions should be posted to

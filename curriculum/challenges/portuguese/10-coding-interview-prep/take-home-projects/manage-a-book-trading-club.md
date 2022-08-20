@@ -8,9 +8,9 @@ dashedName: manage-a-book-trading-club
 
 # --description--
 
-**Objetivo:** criar uma aplicação no [Replit](https://replit.com/) que tenha função semelhante a esta: <https://manage-a-book-trading-club.freecodecamp.rocks/>.
+**Objetivo:** criar uma aplicação que funcione de modo semelhante ao que vemos em: <a href="https://manage-a-book-trading-club.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://manage-a-book-trading-club.freecodecamp.rocks/</a>.
 
-Atenda às [histórias de usuário](https://pt.wikipedia.org/wiki/Hist%C3%B3ria_de_usu%C3%A1rio) abaixo. Use quaisquer bibliotecas ou APIs de que você precisar. Dê a ele o seu próprio estilo pessoal.
+Atenda às histórias de usuário abaixo e faça com que todos os testes passem. Use quaisquer bibliotecas ou APIs de que você precisar. Dê ao projeto o seu próprio estilo pessoal.
 
 **História de usuário:** eu posso ver todos os livros publicados por todos os usuários.
 
@@ -22,7 +22,7 @@ Atenda às [histórias de usuário](https://pt.wikipedia.org/wiki/Hist%C3%B3ria_
 
 Depois de terminar de implementar essas histórias de usuários, digite o URL para sua aplicação ao vivo e, como opção, seu repositório do GitHub. Então, clique no botão "Eu completei este desafio".
 
-Você pode obter feedback sobre o seu projeto compartilhando-o no [fórum freeCodeCamp](https://forum.freecodecamp.org/c/project-feedback/409).
+Você pode obter feedback sobre o seu projeto compartilhando-o no <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">fórum freeCodeCamp</a>.
 
 # --solutions--
 

@@ -1,7 +1,7 @@
 ---
 id: 5900f45b1000cf542c50ff6d
 title: 'Problema 238: Passeio por uma string infinita'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301883
 dashedName: problem-238-infinite-string-tour
 ---
@@ -10,7 +10,8 @@ dashedName: problem-238-infinite-string-tour
 
 Crie uma sequência de números usando o gerador de números pseudoaleatório "Blum Blum Shub":
 
-$$ s_0 = 14025256 \\\\ s_{n + 1} = {s_n}^2 \\; mod \\; 20.300.713 $$
+$$ s_0 = 14025256 \\\\
+s_{n + 1} = {s_n}^2 \\; mod \\; 20.300.713 $$
 
 Concatene esses números $s_0s_1s_2\ldots$ para criar uma string $w$ de comprimento infinito. Assim, $w = 14025256741014958470038053646\ldots$
 

@@ -1,7 +1,7 @@
 ---
 id: 5900f4c81000cf542c50ffdb
 title: 'Problema 348: Soma de um quadrado e de um cubo'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302007
 dashedName: problem-348-sum-of-a-square-and-a-cube
 ---
@@ -14,7 +14,9 @@ Considere os números palíndromos que podem ser expressos como a soma de um qua
 
 Por exemplo, 5229225 é um número palíndromo e pode ser expresso de exatamente 4 formas diferentes:
 
-$$\begin{align} & {2285}^2 + {20}^3 \\\\ & {2223}^2 + {66}^3 \\\\ & {1810}^2 + {125}^3 \\\\ & {1197}^2 + {156}^3 \end{align}$$
+$$\begin{align}   & {2285}^2 + {20}^3 \\\\
+  & {2223}^2 + {66}^3 \\\\   & {1810}^2 + {125}^3 \\\\
+  & {1197}^2 + {156}^3 \end{align}$$
 
 Encontre a soma dos cinco menores números palíndromos deste tipo.
 

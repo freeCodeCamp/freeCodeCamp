@@ -10,7 +10,7 @@ dashedName: match-beginning-string-patterns
 
 回顾一下之前的挑战，正则表达式可以用于查找多项匹配。 还可以查询字符串中符合指定匹配模式的字符。
 
-在之前的挑战中，使用字符集中前插入符号（`^`）来创建一个否定字符集，形如 `[^thingsThatWillNotBeMatched]`。 除了在字符集中使用之外，脱字符还用于匹配字符串的开始位置。
+在之前的挑战中，使用字符集中前插入符号（`^`）来创建一个否定字符集，形如 `[^thingsThatWillNotBeMatched]`。 除了在字符集中使用之外，插入符号（^）用于匹配文本是否在字符串的开始位置
 
 ```js
 let firstString = "Ricky is first and can be found.";

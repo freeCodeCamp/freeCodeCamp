@@ -2,7 +2,7 @@
 id: 5900f4151000cf542c50ff28
 title: >-
   Задача 169: Дослідження кількості різноманітних способів, якими можна записати число як суму степенів 2
-challengeType: 5
+challengeType: 1
 forumTopicId: 301803
 dashedName: >-
   problem-169-exploring-the-number-of-different-ways-a-number-can-be-expressed-as-a-sum-of-powers-of-2
@@ -14,7 +14,9 @@ dashedName: >-
 
 Наприклад: $f(10)=5$, оскільки існує 5 різних способів виразити 10:
 
-$$\begin{align} & 1 + 1 + 8 \\\\ & 1 + 1 + 4 + 4 \\\\ & 1 + 1 + 2 + 2 + 4 \\\\ & 2 + 4 + 4 \\\\ & 2 + 8 \end{align}$$
+$$\begin{align}   & 1 + 1 + 8 \\\\
+  & 1 + 1 + 4 + 4 \\\\   & 1 + 1 + 2 + 2 + 4 \\\\
+  & 2 + 4 + 4 \\\\ & 2 + 8 \end{align}$$
 
 Що таке $f({10}^{25})$?
 

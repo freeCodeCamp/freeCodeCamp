@@ -7,6 +7,7 @@ import {
   call,
   take
 } from 'redux-saga/effects';
+import i18next from 'i18next';
 
 import {
   addDonation,
@@ -21,6 +22,7 @@ import {
   shouldRequestDonationSelector,
   preventProgressDonationRequests,
   recentlyClaimedBlockSelector,
+  isDonatingSelector,
   addDonationComplete,
   addDonationError,
   postChargeStripeComplete,
@@ -29,7 +31,7 @@ import {
   postChargeStripeCardError
 } from './';
 
-const defaultDonationErrorMessage = `Something is not right. Please contact donors@freecodecamp.org`;
+const defaultDonationErrorMessage = i18next.t('donate.error-2');
 
 function* showDonateModalSaga() {
   let shouldRequestDonation = yield select(shouldRequestDonationSelector);
@@ -50,6 +52,7 @@ function* addDonationSaga({ payload }) {
   try {
     yield call(addDonation, payload);
     yield put(addDonationComplete());
+    yield call(setDonationCookie);
   } catch (error) {
     const data =
       error.response && error.response.data
@@ -65,6 +68,7 @@ function* postChargeStripeSaga({ payload }) {
   try {
     yield call(postChargeStripe, payload);
     yield put(postChargeStripeComplete());
+    yield call(setDonationCookie);
   } catch (error) {
     const err =
       error.response && error.response.data
@@ -99,7 +103,9 @@ function* postChargeStripeCardSaga({
 }) {
   try {
     const optimizedPayload = { paymentMethodId, amount, duration };
-    const { error } = yield call(postChargeStripeCard, optimizedPayload);
+    const {
+      data: { error }
+    } = yield call(postChargeStripeCard, optimizedPayload);
     if (error) {
       yield stripeCardErrorHandler(
         error,
@@ -111,9 +117,22 @@ function* postChargeStripeCardSaga({
     }
     yield call(addDonation, optimizedPayload);
     yield put(postChargeStripeCardComplete());
+    yield call(setDonationCookie);
   } catch (error) {
     const errorMessage = error.message || defaultDonationErrorMessage;
     yield put(postChargeStripeCardError(errorMessage));
+  }
+}
+
+function* setDonationCookie() {
+  const isDonating = yield select(isDonatingSelector);
+  const isDonorCookieSet = document.cookie
+    .split(';')
+    .some(item => item.trim().startsWith('isDonor=true'));
+  if (isDonating) {
+    if (!isDonorCookieSet) {
+      document.cookie = 'isDonor=true';
+    }
   }
 }
 
@@ -122,6 +141,7 @@ export function createDonationSaga(types) {
     takeEvery(types.tryToShowDonationModal, showDonateModalSaga),
     takeEvery(types.addDonation, addDonationSaga),
     takeLeading(types.postChargeStripe, postChargeStripeSaga),
-    takeLeading(types.postChargeStripeCard, postChargeStripeCardSaga)
+    takeLeading(types.postChargeStripeCard, postChargeStripeCardSaga),
+    takeEvery(types.fetchUserComplete, setDonationCookie)
   ];
 }

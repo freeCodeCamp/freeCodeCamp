@@ -10,7 +10,7 @@ dashedName: remove-items-using-splice
 
 Pois bem. Aprendemos como remover elementos do início e do fim de arrays usando `shift()` e `pop()`, mas e se quisermos remover um elemento de algum lugar do meio? Ou remover mais de um elemento de uma vez? Bem, é aí que `splice()` pode ser útil. `splice()` nos permite fazer isso: **remover qualquer número de elementos consecutivos** de qualquer lugar no array.
 
-`splice` pode receber 3 parâmetros, mas por agora, nós focaremos apenas nos 2 primeiros. Os dois primeiros parâmetros de `splice()` são inteiros que representam índices, ou posições, do array do qual o método `splice()` está sendo chamado. Lembre-se: arrays são *indexados a zero*. Então, para indicar o primeiro elemento do array, usaríamos `0`. O primeiro parâmetro de `splice()` representa o índice no array do qual começar a remover elementos, enquanto o segundo parâmetro indica o número de elementos a serem removidos. Por exemplo:
+`splice` pode receber 3 parâmetros, mas por agora, nós focaremos apenas nos 2 primeiros. Os dois primeiros parâmetros de `splice()` são inteiros que representam índices, ou posições, dos itens no array para o qual o método `splice()` está sendo chamado. Lembre-se: arrays são *indexados a zero*. Então, para indicar o primeiro elemento do array, usaríamos `0`. O primeiro parâmetro de `splice()` representa o índice no array do qual começar a remover elementos, enquanto o segundo parâmetro indica o número de elementos a serem removidos. Por exemplo:
 
 ```js
 let array = ['today', 'was', 'not', 'so', 'great'];

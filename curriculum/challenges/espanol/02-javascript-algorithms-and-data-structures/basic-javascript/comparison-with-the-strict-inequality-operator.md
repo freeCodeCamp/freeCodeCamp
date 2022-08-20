@@ -14,12 +14,10 @@ El operador de estricta desigualdad `!==` es el opuesto lógico del operador de 
 **Ejemplos**
 
 ```js
-3 !==  3
-3 !== '3'
-4 !==  3
+3 !==  3  // false
+3 !== '3' // true
+4 !==  3  // true
 ```
-
-En orden, estas expresiones se evaluarían como `false`, `true` y `true`.
 
 # --instructions--
 

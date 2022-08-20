@@ -1,7 +1,7 @@
 ---
 id: 5900f46d1000cf542c50ff7f
 title: '問題 255: 丸め平方根'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301903
 dashedName: problem-255-rounded-square-roots
 ---
@@ -28,7 +28,8 @@ $x_{k + 1} = x_k$ になったら止めます。
 
 $n$ は 4 桁あるので、$x_0 = 7 × {10}^{\frac{4-2}{2}} = 70$ です。
 
-$$x_1 = \left\lfloor\frac{70 + \left\lceil\frac{4321}{70}\right\rceil}{2}\right\rfloor = 66 \\\\ x_2 = \left\lfloor\frac{66 + \left\lceil\frac{4321}{66}\right\rceil}{2}\right\rfloor = 66$$
+$$x_1 = \left\lfloor\frac{70 + \left\lceil\frac{4321}{70}\right\rceil}{2}\right\rfloor = 66 \\\\
+x_2 = \left\lfloor\frac{66 + \left\lceil\frac{4321}{66}\right\rceil}{2}\right\rfloor = 66$$
 
 $x_2 = x_1$ なので、ここで止めます。 したがって、ほんの 2 回繰り返すだけで、4321 の丸め平方根が 66 であることが分かりました (実際の平方根は65.7343137…)。
 

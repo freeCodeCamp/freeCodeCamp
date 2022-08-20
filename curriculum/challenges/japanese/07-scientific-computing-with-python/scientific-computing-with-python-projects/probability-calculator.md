@@ -10,19 +10,13 @@ dashedName: probability-calculator
 
 このプロジェクトは [Replit スターターコード](https://replit.com/github/freeCodeCamp/boilerplate-probability-calculator)を使用して作業を行います。
 
-Python カリキュラムの対話式教育コンテンツを引き続き開発中です。 現在、下記の freeCodeCamp.org YouTube チャンネルで、このプロジェクトの完了に必要なすべての知識について説明する動画をいくつか公開しています。
-
-- [「みんなで Python」ビデオコース](https://www.freecodecamp.org/news/python-for-everybody/) (14 時間)
-
-- [「Python を学ぶ」ビデオコース](https://www.freecodecamp.org/news/learn-python-video-course/) (10 時間)
-
 # --instructions--
 
-帽子があり、その中に青いボールが 5 個、赤いボールが 4 個、緑のボールが 2 個入っているとします。 4 個のボールを無作為に取り出す場合、赤のボールが 1 個以上、緑のボールが 2 個含まれる確率は、いくらになりますか？ 高度な数学を駆使して確率を計算することも可能ですが、多数の実験を実行しておおよその確率を推定するプログラムを記述する方が簡単です。
+Suppose there is a hat containing 5 blue balls, 4 red balls, and 2 green balls. What is the probability that a random draw of 4 balls will contain at least 1 red ball and 2 green balls? While it would be possible to calculate the probability using advanced mathematics, an easier way is to write a program to perform a large number of experiments to estimate an approximate probability.
 
-このプロジェクトでは、特定のボールを帽子から無作為に取り出す場合のおおよその確率を調べるプログラムを作成します。
+For this project, you will write a program to determine the approximate probability of drawing certain balls randomly from a hat.
 
-まず、`prob_calculator.py` で `Hat` クラスを作成してください。 このクラスは、帽子に入っている各色のボールの数を指定する可変個の引数を受け取る必要があります。 たとえば、次のどの方法でもクラスオブジェクトを作成することができます。
+First, create a `Hat` class in `prob_calculator.py`. The class should take a variable number of arguments that specify the number of balls of each color that are in the hat. For example, a class object could be created in any of these ways:
 
 ```py
 hat1 = Hat(yellow=3, blue=2, green=6)
@@ -30,22 +24,22 @@ hat2 = Hat(red=5, orange=4)
 hat3 = Hat(red=5, orange=4, black=1, blue=0, pink=2, striped=9)
 ```
 
-帽子は常に、少なくとも 1 個のボールが入った状態で作成されます。 作成時に帽子オブジェクトに渡された引数を、`contents` インスタンス変数に変換する必要があります。 `contents` は、帽子に入っているボールごとにアイテムを 1 つずつ含む文字列のリストである必要があります。 リスト内の各アイテムは、その色のボール 1 個分を表す色の名前である必要があります。 たとえば、帽子が `{"red": 2, "blue": 1}` の場合、`contents` は `["red", "red", "blue"]` になる必要があります。
+A hat will always be created with at least one ball. The arguments passed into the hat object upon creation should be converted to a `contents` instance variable. `contents` should be a list of strings containing one item for each ball in the hat. Each item in the list should be a color name representing a single ball of that color. For example, if your hat is `{"red": 2, "blue": 1}`, `contents` should be `["red", "red", "blue"]`.
 
-`Hat` クラスには `draw` メソッドが必要です。このメソッドは、帽子から取り出すボールの個数を示す引数を受け取ります。 draw メソッドは、`contents` からボールを無作為に取り除き、それらのボールを文字列のリストとして返す必要があります。 交換のできない壺の実験と同様に、取り出したボールは帽子に戻さないものとします。 取り出すボールの数が利用可能な数を超える場合は、すべてのボールを返してください。
+The `Hat` class should have a `draw` method that accepts an argument indicating the number of balls to draw from the hat. This method should remove balls at random from `contents` and return those balls as a list of strings. The balls should not go back into the hat during the draw, similar to an urn experiment without replacement. If the number of balls to draw exceeds the available quantity, return all the balls.
 
-次に、(`Hat` クラスの中ではなく) `prob_calculator.py` で `experiment` 関数を作成してください。 この関数は次の引数を受け取る必要があります。
+Next, create an `experiment` function in `prob_calculator.py` (not inside the `Hat` class). This function should accept the following arguments:
 
-- `hat`: 関数内でコピーする必要のあるボールを含む帽子オブジェクト。
-- `expected_balls`: 実験で帽子から取り出そうとするボールの正確なグループを示すオブジェクト。 たとえば、青のボール 2 個と赤のボール 1 個を帽子から取り出す確率を調べるには、`expected_balls` を `{"blue":2, "red":1}` に設定します。
-- `num_balls_drawn`: 各実験で帽子から取り出すボールの数。
-- `num_experiments`: 実行する実験の回数 (実験の回数が多いほど、おおよその確率の正確性が高まります)。
+- `hat`: A hat object containing balls that should be copied inside the function.
+- `expected_balls`: An object indicating the exact group of balls to attempt to draw from the hat for the experiment. For example, to determine the probability of drawing 2 blue balls and 1 red ball from the hat, set `expected_balls` to `{"blue":2, "red":1}`.
+- `num_balls_drawn`: The number of balls to draw out of the hat in each experiment.
+- `num_experiments`: The number of experiments to perform. (The more experiments performed, the more accurate the approximate probability will be.)
 
-`experiment` 関数は、確率を返す必要があります。
+The `experiment` function should return a probability.
 
-たとえば、黒を 6 個、赤を 4 個、緑を 3 個含む帽子から 5 個のボールを取り出す場合に、赤のボールが少なくとも 2 個、緑のボールが少なくとも 1 個含まれる確率を求めたいとしましょう。 それには、`N` 回の実験を行い、赤のボールが少なくとも 2 個、緑のボールが少なくとも 1 個になった回数 `M` を数え、確率を `M/N` として推定します。 実験ではそれぞれ、指定されたボールの入った帽子の状態から始め、いくつかのボールを取り出し、期待されるボールを取り出したかどうかを確認します。
+For example, let's say that you want to determine the probability of getting at least 2 red balls and 1 green ball when you draw 5 balls from a hat containing 6 black, 4 red, and 3 green. To do this, we perform `N` experiments, count how many times `M` we get at least 2 red balls and 1 green ball, and estimate the probability as `M/N`. Each experiment consists of starting with a hat containing the specified balls, drawing a number of balls, and checking if we got the balls we were attempting to draw.
 
-上記の例で 2000 回の実験を行う場合は、`experiment` 関数を次のように呼び出します。
+Here is how you would call the `experiment` function based on the example above with 2000 experiments:
 
 ```py
 hat = Hat(black=6, red=4, green=3)
@@ -55,27 +49,27 @@ probability = experiment(hat=hat,
                   num_experiments=2000)
 ```
 
-この方法は無作為抽出に基づいているため、コードが実行されるたびに確率が多少変わります。
+Since this is based on random draws, the probability will be slightly different each time the code is run.
 
-*ヒント: `prob_calculator.py` の先頭ですでにインポートされているモジュールを使用することを検討してください。 `prob_calculator.py` の中で乱数シードを初期化しないでください。*
+*Hint: Consider using the modules that are already imported at the top of `prob_calculator.py`. Do not initialize random seed within `prob_calculator.py`.*
 
 ## 開発
 
-`prob_calculator.py` でコードを記述してください。 開発には `main.py` を使用してコードをテストすることができます。 「実行」ボタンをクリックすると `main.py` が実行されます。
+Write your code in `prob_calculator.py`. For development, you can use `main.py` to test your code. Click the "run" button and `main.py` will run.
 
-ボイラープレートには `copy` モジュールと `random` モジュール用の `import` ステートメントが含まれています。 これらをプロジェクトで使用することを検討してください。
+The boilerplate includes `import` statements for the `copy` and `random` modules. Consider using those in your project.
 
 ## テスト
 
-このプロジェクトの単体テストは `test_module.py` にあります。 すでに `test_module.py` から `main.py` にテストをインポートしてあります。 「実行」ボタンを押すと自動的にテストが実行されます。
+The unit tests for this project are in `test_module.py`. We imported the tests from `test_module.py` to `main.py` for your convenience. The tests will run automatically whenever you hit the "run" button.
 
 ## 提出
 
-プロジェクトの URL をコピーし、freeCodeCamp に提出してください。
+Copy your project's URL and submit it to freeCodeCamp.
 
 # --hints--
 
-確率を正しく計算し、すべてのテストに合格する必要があります。
+It should correctly calculate probabilities and pass all tests.
 
 ```js
 

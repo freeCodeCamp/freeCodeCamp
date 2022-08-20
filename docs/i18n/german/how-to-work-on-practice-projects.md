@@ -1,20 +1,74 @@
 # Wie man an Praxisprojekten arbeitet
 
-Der Ordner `tools/challenge-helper-scripts` enthält Tools, die die Erstellung und Pflege des projektbasierten Studienplans von freeCodeCamp erleichtern.
+Our practice projects use a step-based approach to teach concepts to campers. A project will consist of multiple files, which we refer to as **"steps"**. These files are named by the challenge ID, to avoid issues with the translation flow. Unfortunately, this makes it difficult to find the file associated with a specific step.
 
-## Erstelle ein neues Projekt
+We've built a challenge editor tool that helps remedy this. This tool allows you to navigate the available projects, and the steps for each project (in order). There's also an embedded code editor you can use to work on the files directly.
 
-Führe `npm run create-project` aus. Dadurch öffnet sich eine Kommandozeilenoberfläche, die dich durch den Prozess führt. Wenn das erledigt ist, sollte es eine neue Aufgabe im englischen Studienplan geben, die du für den ersten Schritt des Projekts nutzen kannst. Wenn du zum Beispiel ein Projekt mit dem Namen `test-project` in der Responsive-Webdesign-Zertifizierung erstellt hast, befindet es sich in `curriculum/challenges/english/01-responsive-web-design/test-project`.
+## Using the Challenge Editor
 
-Wenn du neue Schritte erstellen willst, vereinfachen die folgenden Tools diesen Prozess.
+These instructions will tell you how to use our challenge editor tool to work on the practice projects.
 
-## Nächsten Schritt erstellen
+### Starting the Editor
 
-Ein einmaliges Skript, das automatisch den nächsten Schritt hinzufügt, basierend auf dem letzten Schritt, der als `step-xxx.md` nummeriert ist, wobei `xxx` die dreistellige Schrittnummer des letzten Schritts darstellt. Der Aufgaben-Seed-Code (initialer Startcode im Editor) verwendet den Aufgaben-Seed-Code des vorherigen Schritts, wobei die Editable Region Markers (ERMs) entfernt werden.
+To start the editor, make sure you are in the root freecodecamp directory. Then, run `npm run challenge-editor` to start both the client and the API that powers the editor.
 
-**Hinweis:** Dieses Skript führt auch [reorder-steps](#reorder-steps) aus.
+The client will run on port `3300`, so you can access it at `http://localhost:3300`. The API runs on port `3200`, to avoid conflicts with the learn client and server. This will allow you to run the freeCodeCamp application at the same time as the editor, so you can test your changes locally.
 
-### So führst du das Skript aus:
+### Navigating the Editor
+
+The default view will list the available `superblocks` - these are the certifications. Click on the certification link you want to work on.
+
+This will take you to the list of blocks. These are the practice projects. Click on the project link you want to work on.
+
+This will take you to a list of steps for the project. If you are working on an existing step, you can click on the step link to open the editor. If you are adding or removing steps, click the `Use the step tools` link to switch to the step tools for that challenge.
+
+### Editing Steps
+
+When you click on a step, you'll be taken to the editor. This is a basic text editor that offers syntax highlighting.
+
+After you have made your changes, click the `Save Changes` button to save your changes. You will get a browser alert letting you know that your changes are ready to commit. Note that you'll need to use `git` manually to stage and commit your files - this tool will not do that for you.
+
+### Step Tools
+
+When you click the `Use the step tools` link, you'll be taken to the step tools page. This allows you to add or remove steps from the project.
+
+#### Create Next Step
+
+Clicking this button will add a new step at the end of the project. This step will use the previous step's code as the seed.
+
+#### Create Empty Steps
+
+Enter the number of steps you want to add in the input. Then, clicking the button will create that many empty steps at the end of the project.
+
+#### Insert Step
+
+Enter the step number that you want to add a step _after_. For example, if you want to add a step after `step-12`, enter `12`. Then, click the `Insert Step` button to add the step. The following steps will be re-ordered.
+
+#### Delete Step
+
+Enter the step number you want to delete. Then click the `Delete Step` button to remove that step. This will automatically update the step numbers for the remaining steps.
+
+#### Update Step Titles
+
+You should not have to use this tool unless you've manually deleted or added steps. This tool will reorder the step numbers.
+
+## Using the Scripts Manually
+
+If you want to work on the steps manually, in your local IDE, you can run the step management scripts directly.
+
+The `tools/challenge-helper-scripts` folder contains tools to help facilitate the creation and maintenance of the freeCodeCamp project-based curriculum.
+
+### Create a new project
+
+Run `npm run create-project` from the root directory. This opens up a command line ui that guides you through the process. Once that has finished, there should be a new challenge in the English curriculum that you can use for the first step of the project. For example, if you created a project called `test-project` in the Responsive Web Design certification, it would be in `curriculum/challenges/english/01-responsive-web-design/test-project`.
+
+If you want to create new steps, the following tools simplify that process.
+
+### create-next-step
+
+A one-off script that will automatically add the next step based on the last step in the project. The challenge seed code will use the previous step's challenge seed code.
+
+#### How to run script:
 
 1. Wechsle in das Verzeichnis des Projekts.
 2. Führe den folgenden npm-Befehl aus:
@@ -23,101 +77,60 @@ Ein einmaliges Skript, das automatisch den nächsten Schritt hinzufügt, basiere
 npm run create-next-step
 ```
 
-## leere Schritte erstellen
+### create-empty-steps
 
-Ein einmaliges Skript, das automatisch eine bestimmte Anzahl von Schritten bei einer bestimmten Startschrittnummer hinzufügt. Der Aufgaben-Seed-Code für alle erstellten Schritte wird leer sein.
+A one-off script that automatically adds a specified number of steps. The challenge seed code for all steps created will be empty.
 
-**Hinweis:** Dieses Skript führt auch [reorder-steps](#reorder-steps) aus.
+**Note:** This script also runs [update-step-titles](#update-step-titles).
 
-### So führst du das Skript aus:
-
-1. Wechsle in das Verzeichnis des Projekts.
-2. Führe den folgenden npm-Befehl aus:
-
-```bash
-npm run create-empty-steps start=X num=Y # wobei X die Startschrittnummer und Y die Anzahl der zu erstellenden Schritte ist.
-```
-
-## Zwischenschritt erstellen
-
-Ein einmaliges Skript, das automatisch einen neuen Schritt zwischen zwei bestehenden, aufeinanderfolgenden Schritten einfügt. Der Aufgaben-Seed-Code verwendet den bestehenden Aufgaben-Seed-Code des Startschritts, wobei die ERMs (Editable Region Markers) entfernt werden.
-
-**Hinweis:** Dieses Skript führt auch [reorder-steps](#reorder-steps) aus.
-
-### So führst du das Skript aus:
+#### How to run script:
 
 1. Wechsle in das Verzeichnis des Projekts.
 2. Führe den folgenden npm-Befehl aus:
 
 ```bash
-npm run create-step-between start=X # wobei X die Nummer des Anfangsschritts ist
+npm run create-empty-steps X # wobei X die Anzahl der zu erstellenden Schritte ist.
 ```
 
-## Lösche eine Schritt
+### insert-step
 
-Ein einmaliges Skript, das einen bestehenden Schritt löscht und dann die verbleibenden Schrittdateien im Projektordner neu anordnet sowie das Eigenschaftsarray `challengeOrder` in der `meta.json` des Projekts mit der neuen Reihenfolge der Schritte aktualisiert.
+A one-off script that automatically adds a new step at a specified position, incrementing all subsequent steps (both their titles and in their meta.json). The challenge seed code will use the previous step's challenge seed code with the editable region markers (ERMs) removed.
 
-### So führst du das Skript aus
+**Note:** This script also runs [update-step-titles](#update-step-titles).
+
+#### How to run script:
 
 1. Wechsle in das Verzeichnis des Projekts.
 2. Führe den folgenden npm-Befehl aus:
 
 ```bash
-npm run delete-step num=x # wobei x die Schrittnummer ist, die gelöscht werden soll.
+npm run insert-step X # wobei X die Position ist, an der der neue Schritt eingefügt werden soll.
 ```
 
-## Schritte neu ordnen
+### delete-step
 
-Ein einmaliges Skript, das die Schrittdateien in den Markdown-Dateien eines Projekts automatisch anhand des Dateinamens neu anordnet. Außerdem wird das `challengeOrder` Eigenschaftsarray in der `meta.json` des Projekts mit der neuen Reihenfolge der Schritte aktualisiert.
+A one-off script that deletes an existing step, decrementing all subsequent steps (both their titles and in their meta.json)
 
-### Praxisbeispiel
+**Note:** This script also runs [update-step-titles](#update-step-titles).
 
-Nehmen wir an, du beginnst mit der folgenden Projektstruktur:
-
-```bash
-step-001.md
-step-002.md
-step-003.md
-step-004.md
-step-005.md
-step-006.md
-```
-
-Irgendwann entscheidest du, dass du `Schritt-002.md` löschen musst, weil du diesen Schritt nicht mehr brauchst. Außerdem entscheidest du dich, `Schritt-004.md` in drei Schritte aufzuteilen, statt nur in einen.
-
-Um diese Umstrukturierung zu erreichen, musst du `step-002.md` löschen und dann eine `step-004a.md` und eine `step-004b.md` hinzufügen. Die neue Ordnerstruktur würde wie folgt aussehen:
-
-```bash
-step-001.md
-step-003.md
-step-004.md
-step-004a.md
-step-004b.md
-step-005.md
-step-006.md
-```
-
-Die Dateinamen müssen jetzt `step-001.md` bis `step-007.md` lauten, denn du hast eine Datei entfernt, aber zwei weitere hinzugefügt, so dass die Differenz nur eine Datei beträgt. Außerdem muss das Frontmatter jeder Datei unterhalb eines gelöschten oder hinzugefügten Schritts geändert werden, indem der Schlüsselwert `title` an die neue Schrittnummer angepasst wird. Wenn du zum Beispiel `step-3.md` in `step-2.md` umbenannt hast, musst du den Titel von `step-2.md` von `Step 03` in `Step 02` ändern.
-
-Weiter unten findest du die erforderlichen Änderungen am Projektordner:
-
-```bash
-step-001.md
-step-003.md renamed to step-002.md and title changes to "Step 2"
-step-004.md renames to step-003.md and title changes to "Step 3"
-step-004a.md renames to step-004.md and title changes to "Step 4"
-step-004b.md renames to step-005.md and title changes to "Step 5"
-step-005.md renames to step-006.md and title changes to "Step 6"
-step-006.md renames to step-007.md and title changes to "Step 7"
-```
-
-Zusammen mit den oben genannten Änderungen muss der Schlüssel `challengeOrder` in der Datei `meta.json` des Projekts die neue Schrittreihenfolge widerspiegeln. Das ist notwendig, weil jeder Schritt, der gelöscht und/oder hinzugefügt wird, den `title` ändert, der mit jeder der betroffenen Schritt-Aufgabe `id` verbunden ist.
-
-### Wie man das Skript ausführt
+#### How to run script
 
 1. Wechsle in das Verzeichnis des Projekts.
 2. Führe den folgenden npm-Befehl aus:
 
 ```bash
-npm run reorder-steps
+npm run delete-step X # wobei X die Schrittnummer ist, die gelöscht werden soll.
+```
+
+### update-step-titles
+
+A one-off script that automatically updates the frontmatter in a project's markdown files so that they are consistent with the project's meta.json. It ensures that each step's title (and dashedName) match the meta's challengeOrder.
+
+#### How to run script
+
+1. Wechsle in das Verzeichnis des Projekts.
+2. Führe den folgenden npm-Befehl aus:
+
+```bash
+npm run update-step-titles
 ```

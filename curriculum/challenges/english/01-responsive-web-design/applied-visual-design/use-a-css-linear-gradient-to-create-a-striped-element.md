@@ -47,7 +47,7 @@ The color stop at 0 pixels should be `yellow`.
 assert(code.match(/yellow\s+?0(px)?/gi));
 ```
 
-One color stop at 40 pixels should be `yellow`.
+The first color stop at 40 pixels should be `yellow`.
 
 ```js
 assert(code.match(/yellow\s+?40px/gi));

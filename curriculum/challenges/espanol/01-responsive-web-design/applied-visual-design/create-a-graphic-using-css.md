@@ -15,11 +15,11 @@ Crearás un objeto redondo y transparente con una sombra nítida que está liger
 
 Para crear un objeto redondo, la propiedad `border-radius` se le debe asignar un valor de 50%.
 
-Puede que recuerdes de un desafío anterior que la propiedad `box-shadow` toma valores para `offset-x`, `offset-y`, `blur-radius`, `spread-radius` y un valor para el color, en ese orden. Los valores `blur-radius` y `spread-radius` son opcionales.
+Puede que recuerdes de un desafío anterior que la propiedad `box-shadow` toma valores para `offset-x`, `offset-y`, `blur-radius`, `spread-radius` y un valor para el `color`, en ese orden. Los valores `blur-radius` y `spread-radius` son opcionales.
 
 # --instructions--
 
-Manipula el elemento cuadrado en el editor para crear la figura de luna. Primero, cambia el `background-color` a `transparent`, luego establece la propiedad `border-radius` en 50% para hacer la forma circular. Finalmente, cambia la propiedad `box-shadow` para asignar `offset-x` a 25px, `offset-y` a 10px, `blur-radius` a 0, `spread-radius` a 0 y el color a `blue`.
+Manipula el elemento cuadrado en el editor para crear la figura de luna. Primero, cambia el `background-color` a `transparent`, luego establece la propiedad `border-radius` en 50% para hacer la forma circular. Finalmente, cambia la propiedad `box-shadow` para establecer el `offset-x` a 25px, el `offset-y` a 10px, `blur-radius` a 0, `spread-radius` a 0, y `color` a `blue`.
 
 # --hints--
 
@@ -35,7 +35,7 @@ El valor de la propiedad `border-radius` debe establecerse como `50%`.
 assert(code.match(/border-radius:\s*?50%;/gi));
 ```
 
-El valor de la propiedad `box-shadow` debe establecerse en 25px para `offset-x`, 10px para `offset-y`, 0 para `blur-radius`, 0 para `spread-radius` y finalmente `blue` para el color.
+El valor de la propiedad `box-shadow` debe ser fijado a 25px para `offset-x`, 10px para `offset-y`, 0 para `blur-radius`, 0 para `spread-radius`, y finalmente `blue` para el `color`.
 
 ```js
 assert(

@@ -1,7 +1,7 @@
 ---
 id: 5900f5241000cf542c510037
 title: 'Problema 440: Máximo divisor comum e ladrilhamento'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302112
 dashedName: problem-440-gcd-and-tiling
 ---
@@ -24,7 +24,8 @@ Considere $S(L)$ como a soma tripla $\sum_{a, b, c} gcd(T(c^a), T(c^b))$ para $1
 
 Por exemplo:
 
-$$\begin{align} & S(2) = 10.444 \\\\ & S(3) = 1.292.115.238.446.807.016.106.539.989 \\\\ & S(4)\bmod 987.898.789 = 670.616.280. \end{align}$$
+$$\begin{align}   & S(2) = 10.444 \\\\
+  & S(3) = 1.292.115.238.446.807.016.106.539.989 \\\\ & S(4)\bmod 987.898.789 = 670.616.280. \end{align}$$
 
 Encontre $S(2000)\bmod 987.898.789$.
 

@@ -1,7 +1,7 @@
 ---
 id: 5900f36e1000cf542c50fe81
 title: 'Problema 2: serie pari di Fibonacci'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301838
 dashedName: problem-2-even-fibonacci-numbers
 ---
@@ -22,7 +22,7 @@ Considerando i termini nella sequenza di Fibonacci i cui valori non superano `n`
 assert(typeof fiboEvenSum(10) === 'number');
 ```
 
-La tua funzione dovrebbe restituire un valore `pari`.
+La tua funzione dovrebbe restituire un valore pari.
 
 ```js
 assert.equal(fiboEvenSum(10) % 2 === 0, true);

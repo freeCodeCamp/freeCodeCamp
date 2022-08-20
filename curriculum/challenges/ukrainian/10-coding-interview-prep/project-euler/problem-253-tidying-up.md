@@ -1,7 +1,7 @@
 ---
 id: 5900f4691000cf542c50ff7c
 title: 'Завдання 253: Прибирання'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301901
 dashedName: problem-253-tidying-up
 ---

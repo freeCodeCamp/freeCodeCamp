@@ -1,14 +1,14 @@
 ---
 id: ae9defd7acaf69703ab432ea
 title: 找出數字範圍內的最小公倍數
-challengeType: 5
+challengeType: 1
 forumTopicId: 16075
 dashedName: smallest-common-multiple
 ---
 
 # --description--
 
-找到給定參數的最小公倍數，可以被這兩個參數整除，也可以被指定範圍內的所以整數整除。
+找到給定參數的最小公倍數，可以被這兩個參數整除，也可以被指定範圍內的所有整數整除。
 
 注意，較小數不一定總是出現在數組的第一個元素。
 

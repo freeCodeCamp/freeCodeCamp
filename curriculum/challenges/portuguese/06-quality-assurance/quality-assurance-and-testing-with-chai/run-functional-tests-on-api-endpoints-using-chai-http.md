@@ -8,7 +8,7 @@ dashedName: run-functional-tests-on-api-endpoints-using-chai-http
 
 # --description--
 
-Lembrando que este projeto está sendo construído a partir do [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), ou pose ser clonado no [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Lembrando que este projeto está sendo construído a partir do <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, ou pode ser clonado no <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 O Mocha permite que você teste operações assíncronas, como chamadas para endpoints de API, com um plugin chamado `chai-http`.
 
@@ -37,7 +37,7 @@ Além disso, observe o parâmetro `done` na função de callback do teste. Cham�
 
 # --instructions--
 
-Dentro de `tests/2_functional-tests.js`, altere o teste `'Test GET /hello with no name'` (`// #1`) para afirmar o `status` e o `text` da resposta para fazer o teste passar. Não altere os argumentos passados para as assertivas.
+Dentro de `tests/2_functional-tests.js`, altere o teste `'Test GET /hello with no name'` (`// #1`) para afirmar o `status` e o `text` da resposta para fazer o teste passar. Não altere os argumentos passados às afirmações.
 
 Não deve haver consulta de URL. Não deve haver consulta de name no URL. O endpoint responde com `hello Guest`.
 

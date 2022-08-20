@@ -10,7 +10,7 @@ dashedName: implement-the-serialization-of-a-passport-user
 
 Ahora mismo, no estamos cargando un objeto de usuario real ya que no hemos configurado nuestra base de datos. Esto puede hacerse de muchas maneras, pero para nuestro proyecto nos conectaremos a la base de datos una vez cuando iniciemos el servidor y mantendremos una conexión persistente durante todo el ciclo de vida de la aplicación. Para hacer esto, agrega la cadena de conexión de tu base de datos (por ejemplo: `mongodb+srv://:@cluster0-jvwxi.mongodb.net/?retryWrites=true&w=majority`) a la variable de entorno `MONGO_URI`. Esto se utiliza en el archivo `connection.js`.
 
-*Puedes configurar una base de datos gratuita en [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).*
+*Si tienes problemas para configurar una base de datos gratuita en MongoDB Atlas, consulta [tutorial](https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/).*
 
 Ahora queremos conectarnos a nuestra base de datos y empezar a escuchar las peticiones. El propósito de esto es no permitir peticiones antes de que nuestra base de datos esté conectada o si hay un error en la base de datos. Para lograr esto, querrás englobar tu serialización y las rutas de tu aplicación en el siguiente código:
 

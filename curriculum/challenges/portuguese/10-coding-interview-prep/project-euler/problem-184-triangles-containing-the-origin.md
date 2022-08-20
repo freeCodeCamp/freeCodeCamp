@@ -1,7 +1,7 @@
 ---
 id: 5900f4241000cf542c50ff37
 title: 'Problema 184: Triângulos contendo a origem'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301820
 dashedName: problem-184-triangles-containing-the-origin
 ---
@@ -20,10 +20,10 @@ Quantos triângulos há contendo a origem no interior e tendo todos os três vé
 
 # --hints--
 
-`trianglesConttainingOrigin()` deve retornar `1725323624056`.
+`trianglesContainingOrigin()` deve retornar `1725323624056`.
 
 ```js
-assert.strictEqual(trianglesConttainingOrigin(), 1725323624056);
+assert.strictEqual(trianglesContainingOrigin(), 1725323624056);
 ```
 
 # --seed--

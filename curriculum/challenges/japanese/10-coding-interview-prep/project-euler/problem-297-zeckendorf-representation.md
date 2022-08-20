@@ -1,7 +1,7 @@
 ---
 id: 5900f4951000cf542c50ffa8
 title: '問題 297: ゼッケンドルフ表現'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301949
 dashedName: problem-297-zeckendorf-representation
 ---

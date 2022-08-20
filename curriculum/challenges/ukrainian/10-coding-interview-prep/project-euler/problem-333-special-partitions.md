@@ -1,7 +1,7 @@
 ---
 id: 5900f4b91000cf542c50ffcc
 title: 'Задача 333: Спеціальні ділення'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301991
 dashedName: problem-333-special-partitions
 ---
@@ -14,7 +14,8 @@ dashedName: problem-333-special-partitions
 
 Для багатьох цілих чисел існує декілька варіантів допустимого поділу, починаючи з 11, котре має два шляхи ділення.
 
-$$\begin{align} & 11 = 2 + 9 = (2^1 \times 3^0 + 2^0 \times 3^2) \\\\ & 11 = 8 + 3 = (2^3 \times 3^0 + 2^0 \times 3^1) \end{align}$$
+$$\begin{align}   & 11 = 2 + 9 = (2^1 \times 3^0 + 2^0 \times 3^2) \\\\
+  & 11 = 8 + 3 = (2^3 \times 3^0 + 2^0 \times 3^1) \end{align}$$
 
 Визначимо $P(n)$ як сукупність правильних поділів $n$. Наприклад, $P(11) = 2$.
 

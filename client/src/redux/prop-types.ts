@@ -50,9 +50,16 @@ export const UserPropType = PropTypes.shape({
       description: PropTypes.string
     })
   ),
+  savedChallenges: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      challengeFiles: PropTypes.array
+    })
+  ),
   sendQuincyEmail: PropTypes.bool,
   sound: PropTypes.bool,
   theme: PropTypes.string,
+  keyboardShortcuts: PropTypes.bool,
   twitter: PropTypes.string,
   username: PropTypes.string,
   website: PropTypes.string
@@ -267,9 +274,11 @@ export type User = {
   portfolio: Portfolio[];
   profileUI: ProfileUI;
   progressTimestamps: Array<unknown>;
+  savedChallenges: SavedChallenges;
   sendQuincyEmail: boolean;
   sound: boolean;
   theme: Themes;
+  keyboardShortcuts: boolean;
   twitter: string;
   username: string;
   website: string;
@@ -310,17 +319,36 @@ export type ClaimedCertifications = {
   isMachineLearningPyCertV7: boolean;
 };
 
+export type SavedChallenges = SavedChallenge[];
+
+export type SavedChallenge = {
+  id: string;
+  challengeFiles: SavedChallengeFiles;
+};
+
+export type SavedChallengeFile = {
+  fileKey: string;
+  ext: Ext;
+  name: string;
+  history?: string[];
+  contents: string;
+};
+
+export type SavedChallengeFiles = SavedChallengeFile[];
+
 export type CompletedChallenge = {
   id: string;
   solution?: string | null;
   githubLink?: string;
   challengeType?: number;
   completedDate: number;
-  challengeFiles: ChallengeFiles;
+  challengeFiles:
+    | Pick<ChallengeFile, 'contents' | 'ext' | 'fileKey' | 'name'>[]
+    | null;
 };
 
 export type Ext = 'js' | 'html' | 'css' | 'jsx';
-export type FileKey = 'scriptjs' | 'indexhtml' | 'stylescss';
+export type FileKey = 'scriptjs' | 'indexhtml' | 'stylescss' | 'indexjsx';
 
 export type ChallengeMeta = {
   block: string;
@@ -357,9 +385,9 @@ export type ChallengeFile = {
   fileKey: string;
   ext: Ext;
   name: string;
-  editableRegionBoundaries: number[];
-  usesMultifileEditor: boolean;
-  error: null | string;
+  editableRegionBoundaries?: number[];
+  usesMultifileEditor?: boolean;
+  error: null | string | unknown;
   head: string;
   tail: string;
   seed: string;

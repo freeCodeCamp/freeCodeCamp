@@ -14,7 +14,7 @@ dashedName: files-as-a-sequence
 
 Mais recursos:
 
-\- [Exercício](https://www.youtube.com/watch?v=il1j4wkte2E)
+\- <a href="https://www.youtube.com/watch?v=il1j4wkte2E" target="_blank" rel="noopener noreferrer nofollow">Exercício</a>
 
 # --question--
 

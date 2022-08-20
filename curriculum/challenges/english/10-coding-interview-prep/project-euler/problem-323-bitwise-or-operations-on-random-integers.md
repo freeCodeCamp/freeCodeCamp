@@ -1,16 +1,14 @@
 ---
 id: 5900f4b01000cf542c50ffc2
 title: 'Problem 323: Bitwise-OR operations on random integers'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301980
 dashedName: problem-323-bitwise-or-operations-on-random-integers
 ---
 
 # --description--
 
-Let $y_0, y_1, y_2, \ldots$ be a sequence of random unsigned 32 bit integers
-
-(i.e. $0 ≤ y_i &lt; 2^{32}$, every value equally likely).
+Let $y_0, y_1, y_2, \ldots$ be a sequence of random unsigned 32 bit integers (i.e. $0 ≤ y_i &lt; 2^{32}$, every value equally likely).
 
 For the sequence $x_i$ the following recursion is given:
 

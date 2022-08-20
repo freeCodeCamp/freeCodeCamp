@@ -15,11 +15,11 @@ You will create a round, transparent object with a crisp shadow that is slightly
 
 In order to create a round object, the `border-radius` property should be set to a value of 50%.
 
-You may recall from an earlier challenge that the `box-shadow` property takes values for `offset-x`, `offset-y`, `blur-radius`, `spread-radius` and a color value in that order. The `blur-radius` and `spread-radius` values are optional.
+You may recall from an earlier challenge that the `box-shadow` property takes values for `offset-x`, `offset-y`, `blur-radius`, `spread-radius` and a `color` value in that order. The `blur-radius` and `spread-radius` values are optional.
 
 # --instructions--
 
-Manipulate the square element in the editor to create the moon shape. First, change the `background-color` to `transparent`, then set the `border-radius` property to 50% to make the circular shape. Finally, change the `box-shadow` property to set the `offset-x` to 25px, the `offset-y` to 10px, `blur-radius` to 0, `spread-radius` to 0, and color to `blue`.
+Manipulate the square element in the editor to create the moon shape. First, change the `background-color` to `transparent`, then set the `border-radius` property to 50% to make the circular shape. Finally, change the `box-shadow` property to set the `offset-x` to 25px, the `offset-y` to 10px, `blur-radius` to 0, `spread-radius` to 0, and `color` to `blue`.
 
 # --hints--
 
@@ -35,7 +35,7 @@ The value of the `border-radius` property should be set to `50%`.
 assert(code.match(/border-radius:\s*?50%;/gi));
 ```
 
-The value of the `box-shadow` property should be set to 25px for `offset-x`, 10px for `offset-y`, 0 for `blur-radius`, 0 for `spread-radius`, and finally `blue` for the color.
+The value of the `box-shadow` property should be set to 25px for `offset-x`, 10px for `offset-y`, 0 for `blur-radius`, 0 for `spread-radius`, and finally `blue` for the `color`.
 
 ```js
 assert(

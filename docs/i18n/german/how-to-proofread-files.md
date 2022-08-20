@@ -41,7 +41,7 @@ Nach dem Korrekturlesen einer Datei sind keine weiteren Aktionen erforderlich.
 
 ## Korrekturleser werden
 
-Wenn du Fragen hast oder daran interessiert bist, Korrekturleser zu werden, kannst du uns in unserem [Contributors Chat Room](https://chat.freecodecamp.org/channel/contributors) kontaktieren. In der Regel gewähren wir dir Zugang zum Korrekturlesen, wenn du schon eine Weile im freeCodeCamp mitarbeitest.
+If you have any questions, or are interested in becoming a proofreader, feel free to reach out to us in our [contributors chat room](https://discord.gg/PRyKn3Vbay). In der Regel gewähren wir dir Zugang zum Korrekturlesen, wenn du schon eine Weile im freeCodeCamp mitarbeitest.
 
 Unser Mitarbeiterteam und unsere Community-Moderatoren sind immer auf der Suche nach freundlichen Freiwilligen wie dir, die uns dabei helfen, der Welt qualitativ hochwertige Übersetzungen zur Verfügung zu stellen.
 
@@ -49,6 +49,6 @@ Unser Mitarbeiterteam und unsere Community-Moderatoren sind immer auf der Suche 
 
 ## Einen Kanal im Chat für eine Weltsprache erstellen
 
-In den meisten Fällen empfehlen wir dir, den [Contributors Chat](https://chat.freecodecamp.org/channel/contributors) für die gesamte Korrespondenz zu nutzen. Wenn jedoch das Team der freiwilligen Übersetzer für eine bestimmte Sprache wächst, können wir in Erwägung ziehen, einen zusätzlichen Break-Out-Channel für diese Sprache einzurichten.
+For the most part we encourage you to use the [contributors chat](https://discord.gg/PRyKn3Vbay) room for all correspondence. Wenn jedoch das Team der freiwilligen Übersetzer für eine bestimmte Sprache wächst, können wir in Erwägung ziehen, einen zusätzlichen Break-Out-Channel für diese Sprache einzurichten.
 
 Wenn du bereits Korrekturleser/in bist und Interesse an einem eigenen Kanal auf unseren Chatservern für eine bestimmte Sprache hast, [fülle dieses Formular aus](https://forms.gle/XU5CyutrYCgDYaVZA).

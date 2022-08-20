@@ -1,7 +1,7 @@
 ---
 id: 5900f3701000cf542c50fe83
 title: 'Problema 4: Prodotto palindromo più grande'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302065
 dashedName: problem-4-largest-palindrome-product
 ---

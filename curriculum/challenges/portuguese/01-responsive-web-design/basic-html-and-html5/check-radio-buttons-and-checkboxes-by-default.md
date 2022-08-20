@@ -11,7 +11,7 @@ dashedName: check-radio-buttons-and-checkboxes-by-default
 
 É possível deixar selecionada uma caixa ou um botão de seleção por padrão usando o atributo `checked`.
 
-Para fazer isso, basta adicionar a palavra `checked` dentro de um elemento input. Por exemplo:
+Para fazer isso, basta adicionar a palavra `checked` dentro de um elemento `input`. Por exemplo:
 
 ```html
 <input type="radio" name="test-name" checked>

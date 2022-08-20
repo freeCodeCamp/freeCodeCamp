@@ -2,120 +2,91 @@ import fs from 'fs';
 import path from 'path';
 import ObjectID from 'bson-objectid';
 import * as matter from 'gray-matter';
-import { getMetaData } from '../challenge-helper-scripts/helpers/get-project-path-metadata';
 import { parseMDSync } from '../challenge-parser/parser';
-import { getProjectMetaPath } from './helpers/get-project-meta-path';
-import { getProjectPath } from './helpers/get-project-path';
+import { getMetaData, updateMetaData } from './helpers/project-metadata';
+import { getProjectPath } from './helpers/get-project-info';
 import { ChallengeSeed, getStepTemplate } from './helpers/get-step-template';
-import { padWithLeadingZeros } from './helpers/pad-with-leading-zeros';
 
 interface Options {
-  projectPath: string;
   stepNum: number;
+  projectPath?: string;
   challengeSeeds?: Record<string, ChallengeSeed>;
-  stepBetween?: boolean;
 }
 
 const createStepFile = ({
-  projectPath,
   stepNum,
-  challengeSeeds = {},
-  stepBetween = false
+  projectPath = getProjectPath(),
+  challengeSeeds = {}
 }: Options) => {
   const challengeId = new ObjectID();
-
-  let finalStepNum = padWithLeadingZeros(stepNum);
-  finalStepNum += stepBetween ? 'a' : '';
 
   const template = getStepTemplate({
     challengeId,
     challengeSeeds,
-    stepBetween,
     stepNum
   });
 
-  fs.writeFileSync(`${projectPath}step-${finalStepNum}.md`, template);
+  fs.writeFileSync(`${projectPath}${challengeId.toString()}.md`, template);
 
   return challengeId;
 };
 
-const reorderSteps = () => {
-  const projectPath = getProjectPath();
+interface InsertOptions {
+  stepNum: number;
+  stepId: ObjectID;
+}
 
-  const projectName = process.env.CALLING_DIR
-    ? process.env.CALLING_DIR.split(path.sep).slice(-1).toString()
-    : process.cwd().split(path.sep).slice(-1).toString();
+function insertStepIntoMeta({ stepNum, stepId }: InsertOptions) {
+  const existingMeta = getMetaData();
+  const oldOrder = [...existingMeta.challengeOrder];
+  oldOrder.splice(stepNum - 1, 0, [stepId.toString()]);
+  // rename all the files in challengeOrder
+  const challengeOrder = oldOrder.map(([id], index) => [
+    id,
+    `Step ${index + 1}`
+  ]);
 
-  const curriculumPath = process.env.CALLING_DIR
-    ? ''
-    : path.join(__dirname, '../');
+  updateMetaData({ ...existingMeta, challengeOrder });
+}
 
-  const projectMetaPath = getProjectMetaPath(curriculumPath, projectName);
+function deleteStepFromMeta({ stepNum }: { stepNum: number }) {
+  const existingMeta = getMetaData();
+  const oldOrder = [...existingMeta.challengeOrder];
+  oldOrder.splice(stepNum - 1, 1);
+  // rename all the files in challengeOrder
+  const challengeOrder = oldOrder.map(([id], index) => [
+    id,
+    `Step ${index + 1}`
+  ]);
 
-  const parsedData = getMetaData(projectMetaPath);
+  updateMetaData({ ...existingMeta, challengeOrder });
+}
 
-  let foundFinal = false;
-  const filesArr = [];
-  fs.readdirSync(projectPath).forEach(fileName => {
+const updateStepTitles = () => {
+  const meta = getMetaData();
+
+  const fileNames: string[] = [];
+  fs.readdirSync(getProjectPath()).forEach(fileName => {
     if (path.extname(fileName).toLowerCase() === '.md') {
-      if (!fileName.endsWith('final.md')) {
-        filesArr.push(fileName);
-      } else {
-        foundFinal = true;
-      }
+      fileNames.push(fileName);
     }
   });
 
-  if (foundFinal) {
-    filesArr.push('final.md');
-  }
-
-  const filesToReorder = filesArr.map((fileName, i) => {
-    const newStepNum = i + 1;
-    const newFileName =
-      fileName !== 'final.md'
-        ? `step-${padWithLeadingZeros(newStepNum)}.md`
-        : 'final.md';
-    return {
-      oldFileName: fileName,
-      newFileName,
-      newStepNum
-    };
-  });
-
-  const challengeOrder: string[][] = [];
-
-  filesToReorder.forEach(({ oldFileName, newFileName, newStepNum }) => {
-    fs.renameSync(
-      `${projectPath}${oldFileName}`,
-      `${projectPath}${newFileName}.tmp`
-    );
-    const filePath = `${projectPath}${newFileName}.tmp`;
+  fileNames.forEach(fileName => {
+    const filePath = `${getProjectPath()}${fileName}`;
     const frontMatter = matter.read(filePath);
-    const challengeID =
-      (frontMatter.data.id as string) || new ObjectID().toString();
-    const title =
-      newFileName === 'final.md' ? 'Final Prototype' : `Step ${newStepNum}`;
+    const newStepNum =
+      meta.challengeOrder.findIndex(elem => elem[0] === frontMatter.data.id) +
+      1;
+    const title = `Step ${newStepNum}`;
     const dashedName = `step-${newStepNum}`;
-    challengeOrder.push(['' + challengeID, title]);
     const newData = {
       ...frontMatter.data,
-      id: challengeID,
       title,
       dashedName
     };
     fs.writeFileSync(filePath, matter.stringify(frontMatter.content, newData));
   });
-
-  filesToReorder.forEach(({ newFileName }) => {
-    fs.renameSync(
-      `${projectPath}${newFileName}.tmp`,
-      `${projectPath}${newFileName}`
-    );
-  });
-
-  const newMeta = { ...parsedData, challengeOrder };
-  fs.writeFileSync(projectMetaPath, JSON.stringify(newMeta, null, 2));
 };
 
 const getChallengeSeeds = (
@@ -125,4 +96,10 @@ const getChallengeSeeds = (
   return parseMDSync(challengeFilePath).challengeFiles;
 };
 
-export { createStepFile, reorderSteps, getChallengeSeeds };
+export {
+  createStepFile,
+  updateStepTitles,
+  getChallengeSeeds,
+  insertStepIntoMeta,
+  deleteStepFromMeta
+};

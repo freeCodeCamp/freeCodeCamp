@@ -38,9 +38,13 @@ assert(myVar === 10);
 应该修改 `myVar = myVar - 1;`。
 
 ```js
-assert(
-  /let\s*myVar\s*=\s*11;\s*\/*.*\s*([-]{2}\s*myVar|myVar\s*[-]{2});/.test(code)
-);
+assert(!code.match(/myVar\s*=\s*myVar\s*[-]\s*1.*?;?/));
+```
+
+你不应将 `10` 分配给 `myVar`。
+
+```js
+assert(!code.match(/myVar\s*=\s*10.*?;?/));
 ```
 
 应该对 `myVar` 使用 `--` 运算符。
@@ -49,7 +53,7 @@ assert(
 assert(/[-]{2}\s*myVar|myVar\s*[-]{2}/.test(code));
 ```
 
-不应修改注释上方的代码。
+你不应该修改注释上面的代码。
 
 ```js
 assert(/let myVar = 11;/.test(code));

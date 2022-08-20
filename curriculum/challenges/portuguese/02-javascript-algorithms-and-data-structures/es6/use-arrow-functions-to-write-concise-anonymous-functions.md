@@ -45,13 +45,13 @@ Rescreva a função atribuída à variável `magic` usando a sintaxe de arrow fu
 Você deve substituir a palavra-chave `var`.
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/var/g));
+assert.notMatch(code, /var/g)
 ```
 
 A variável `magic` deve ser uma constante (use `const`).
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/const\s+magic/g));
+assert.match(code, /const\s+magic/g)
 ```
 
 A variável `magic` deve ser uma `function`.
@@ -69,7 +69,7 @@ assert(magic().setHours(0, 0, 0, 0) === new Date().setHours(0, 0, 0, 0));
 A palavra-chave `function` não deve ser usada.
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/function/g));
+assert.notMatch(code, /function/g)
 ```
 
 # --seed--

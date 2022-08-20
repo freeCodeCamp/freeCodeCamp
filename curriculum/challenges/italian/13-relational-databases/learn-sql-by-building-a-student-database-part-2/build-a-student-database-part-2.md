@@ -1,6 +1,6 @@
 ---
 id: 618590adb0730ca724e37672
-title: "Build a Student Database: Part 2"
+title: "Costruisci un database degli studenti: parte 2"
 challengeType: 12
 helpCategory: Backend Development
 url: https://github.com/freeCodeCamp/learn-sql-by-building-a-student-database-part-2
@@ -9,7 +9,7 @@ dashedName: build-a-student-database-part-2
 
 # --description--
 
-In this 140 lesson course, you will complete your student database while diving deeper into SQL commands.
+In questo corso da 140 lezioni, completerai il tuo database degli studenti andando più a fondo nei comandi SQL.
 
 # --instructions--
 

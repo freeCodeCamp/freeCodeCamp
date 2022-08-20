@@ -1,24 +1,20 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { connect } from 'react-redux';
+
 import BreadCrumb from '../components/bread-crumb';
-import { resetChallenge } from '../redux';
 import EditorTabs from './editor-tabs';
 
 interface ActionRowProps {
   block: string;
   hasNotes: boolean;
+  isProjectBasedChallenge: boolean;
   showConsole: boolean;
   showNotes: boolean;
+  showInstructions: boolean;
   showPreview: boolean;
   superBlock: string;
   togglePane: (pane: string) => void;
-  resetChallenge: () => void;
 }
-
-const mapDispatchToProps = {
-  resetChallenge
-};
 
 const ActionRow = ({
   hasNotes,
@@ -26,9 +22,10 @@ const ActionRow = ({
   showNotes,
   showPreview,
   showConsole,
+  showInstructions,
+  isProjectBasedChallenge,
   superBlock,
-  block,
-  resetChallenge
+  block
 }: ActionRowProps): JSX.Element => {
   const { t } = useTranslation();
   return (
@@ -37,14 +34,18 @@ const ActionRow = ({
         <BreadCrumb block={block} superBlock={superBlock} />
       </div>
       <div className='tabs-row'>
+        {!isProjectBasedChallenge && (
+          <button
+            aria-expanded={showInstructions ? 'true' : 'false'}
+            onClick={() => togglePane('showInstructions')}
+          >
+            {t('learn.editor-tabs.instructions')}
+          </button>
+        )}
         <EditorTabs />
-        <button className='restart-step-tab' onClick={resetChallenge}>
-          {t('learn.editor-tabs.restart-step')}
-        </button>
         <div className='panel-display-tabs'>
           <button
             aria-expanded={showConsole ? 'true' : 'false'}
-            className={showConsole ? 'active-tab' : ''}
             onClick={() => togglePane('showConsole')}
           >
             {t('learn.editor-tabs.console')}
@@ -52,7 +53,6 @@ const ActionRow = ({
           {hasNotes && (
             <button
               aria-expanded={showNotes ? 'true' : 'false'}
-              className={showNotes ? 'active-tab' : ''}
               onClick={() => togglePane('showNotes')}
             >
               {t('learn.editor-tabs.notes')}
@@ -60,7 +60,6 @@ const ActionRow = ({
           )}
           <button
             aria-expanded={showPreview ? 'true' : 'false'}
-            className={showPreview ? 'active-tab' : ''}
             onClick={() => togglePane('showPreview')}
           >
             {t('learn.editor-tabs.preview')}
@@ -73,4 +72,4 @@ const ActionRow = ({
 
 ActionRow.displayName = 'ActionRow';
 
-export default connect(null, mapDispatchToProps)(ActionRow);
+export default ActionRow;

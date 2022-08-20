@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin');
+
 module.exports = {
   content: [
     './src/**/*.html',
@@ -11,14 +13,33 @@ module.exports = {
       transparent: 'transparent',
       'dark-theme-background': 'var(--gray90)',
       'light-theme-background': 'var(--gray00)',
-      'default-foreground-primary': 'var(--default-foreground-primary)',
-      'default-foreground-secondary': 'var(--default-foreground-secondary)',
-      'default-foreground-tertiary': 'var(--default-foreground-tertiary)',
-      'default-foreground-quaternary': 'var(--default-foreground-quaternary)',
-      'default-background-primary': 'var(--default-background-primary)',
-      'default-background-secondary': 'var(--default-background-secondary)',
-      'default-background-tertiary': 'var(--default-background-tertiary)',
-      'default-background-quaternary': 'var(--default-background-quaternary)',
+      // Foreground
+      'foreground-primary': 'var(--foreground-primary)',
+      'foreground-secondary': 'var(--foreground-secondary)',
+      'foreground-tertiary': 'var(--foreground-tertiary)',
+      'foreground-quaternary': 'var(--foreground-quaternary)',
+      'foreground-danger': 'var(--foreground-danger)',
+      'foreground-info': 'var(--foreground-info)',
+      // Background
+      'background-primary': 'var(--background-primary)',
+      'background-secondary': 'var(--background-secondary)',
+      'background-tertiary': 'var(--background-tertiary)',
+      'background-quaternary': 'var(--background-quaternary)',
+      'background-danger': 'var(--background-danger)',
+      'background-info': 'var(--background-info)',
+      // Focus outline
+      'focus-outline-color': 'var(--focus-outline-color)',
+      gray: {
+        0: 'var(--gray00)',
+        50: 'var(--gray05)',
+        100: 'var(--gray10)',
+        150: 'var(--gray15)',
+        450: 'var(--gray45)',
+        750: 'var(--gray75)',
+        800: 'var(--gray80)',
+        850: 'var(--gray85)',
+        900: 'var(--gray90)'
+      },
       green: {
         50: 'var(--green05)',
         100: 'var(--green10)',
@@ -52,7 +73,30 @@ module.exports = {
         800: 'var(--red80)',
         900: 'var(--red90)'
       }
+    },
+    borderWidth: {
+      1: '1px',
+      3: '3px'
+    },
+    fontSize: {
+      // https://tailwindcss.com/docs/font-size#providing-a-default-line-height
+      // [fontSize, lineHeight]
+      sm: ['16px', '1.5'],
+      md: ['18px', '1.42857143'],
+      lg: ['24px', '1.3333333']
+    },
+    minHeight: {
+      '43-px': '43px'
+    },
+    extend: {
+      zIndex: {
+        2: '2'
+      }
     }
   },
-  plugins: []
+  plugins: [
+    plugin(({ addVariant }) => {
+      addVariant('aria-disabled', '&[aria-disabled="true"]');
+    })
+  ]
 };

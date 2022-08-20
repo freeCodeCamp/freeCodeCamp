@@ -1,7 +1,7 @@
 ---
 id: 5900f3c81000cf542c50fedb
 title: 'Завдання 92: Послідовності квадратів цифр'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302209
 dashedName: problem-92-square-digit-chains
 ---
@@ -12,7 +12,8 @@ dashedName: problem-92-square-digit-chains
 
 Наприклад,
 
-$$\begin{align} & 44 → 32 → 13 → 10 → \boldsymbol{1} → \boldsymbol{1}\\\\ & 85 → \boldsymbol{89} → 145 → 42 → 20 → 4 → 16 → 37 → 58 → \boldsymbol{89}\\\\ \end{align}$$
+$$\begin{align}   & 44 → 32 → 13 → 10 → \boldsymbol{1} → \boldsymbol{1}\\\\
+  & 85 → \boldsymbol{89} → 145 → 42 → 20 → 4 → 16 → 37 → 58 → \boldsymbol{89}\\\\ \end{align}$$
 
 Таким чином, будь-яка послідовність, що призводить до отримання 1 або 89, замкнеться в нескінченний цикл. Найдивовижніше, що БУДЬ-ЯКЕ початкове число рано чи пізно дасть 1 або 89.
 

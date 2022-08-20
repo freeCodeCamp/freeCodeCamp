@@ -29,7 +29,7 @@ O elemento `h1` com o texto `I am red!` deve receber a propriedade `color` com o
 assert($('.red-text').css('color') === 'rgb(255, 0, 0)');
 ```
 
-O código hexadecimal (`hex code`) abreviado que representa a cor vermelha deve ser usado em vez do código hexadecimal `#FF0000`.
+O código hexadecimal (hex code) abreviado que representa a cor vermelha deve ser usado em vez do código hexadecimal `#FF0000`.
 
 ```js
 assert(code.match(/\.red-text\s*?{\s*?color\s*:\s*?#F00\s*?;?\s*?}/gi));
@@ -41,7 +41,7 @@ O elemento `h1` com o texto `I am green!` deve receber a propriedade `color` com
 assert($('.green-text').css('color') === 'rgb(0, 255, 0)');
 ```
 
-O código hexadecimal (`hex code`) abreviado que representa a cor verde deve ser usado em vez do código hexadecimal `#00FF00`.
+O código hexadecimal (hex code) abreviado que representa a cor verde deve ser usado em vez do código hexadecimal `#00FF00`.
 
 ```js
 assert(code.match(/\.green-text\s*?{\s*?color\s*:\s*?#0F0\s*?;?\s*?}/gi));
@@ -53,7 +53,7 @@ O elemento `h1` com o texto `I am cyan!` deve receber a propriedade `color` com 
 assert($('.cyan-text').css('color') === 'rgb(0, 255, 255)');
 ```
 
-O código hexadecimal (`hex code`) abreviado que representa a cor ciano deve ser usado em vez do código hexadecimal `#00FFFF`.
+O código hexadecimal (hex code) abreviado que representa a cor ciano deve ser usado em vez do código hexadecimal `#00FFFF`.
 
 ```js
 assert(code.match(/\.cyan-text\s*?{\s*?color\s*:\s*?#0FF\s*?;?\s*?}/gi));
@@ -65,7 +65,7 @@ O elemento `h1` com o texto `I am fuchsia!` deve receber a propriedade `color` c
 assert($('.fuchsia-text').css('color') === 'rgb(255, 0, 255)');
 ```
 
-O código hexadecimal (`hex code`) abreviado que representa a cor fúcsia deve ser usado em vez do código hexadecimal `#FF00FF`.
+O código hexadecimal (hex code) abreviado que representa a cor fúcsia deve ser usado em vez do código hexadecimal `#FF00FF`.
 
 ```js
 assert(code.match(/\.fuchsia-text\s*?{\s*?color\s*:\s*?#F0F\s*?;?\s*?}/gi));

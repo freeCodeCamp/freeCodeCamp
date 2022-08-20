@@ -77,7 +77,7 @@ assert(
 );
 ```
 
-Your `h1` element should inherit the color green from your `body` element.
+Your `h1` element should inherit the color `green` from your `body` element.
 
 ```js
 assert($('h1').length > 0 && $('h1').css('color') === 'rgb(0, 128, 0)');

@@ -2,14 +2,7 @@ import { navigate } from 'gatsby';
 import { omit } from 'lodash-es';
 import { ofType } from 'redux-observable';
 import { of, empty } from 'rxjs';
-import {
-  switchMap,
-  retry,
-  catchError,
-  concat,
-  filter,
-  finalize
-} from 'rxjs/operators';
+import { switchMap, retry, catchError, concat, tap } from 'rxjs/operators';
 
 import { challengeTypes, submitTypes } from '../../../../utils/challenge-types';
 import {
@@ -20,7 +13,10 @@ import {
   updateFailed
 } from '../../../redux';
 
-import postUpdate$ from '../utils/postUpdate$';
+import postUpdate$ from '../utils/post-update';
+import { mapFilesToChallengeFiles } from '../../../utils/ajax';
+import { standardizeRequestBody } from '../../../utils/challenge-request-helpers';
+import { actionTypes as submitActionTypes } from '../../../redux/action-types';
 import { actionTypes } from './action-types';
 import {
   projectFormValuesSelector,
@@ -34,16 +30,27 @@ import {
 function postChallenge(update, username) {
   const saveChallenge = postUpdate$(update).pipe(
     retry(3),
-    switchMap(({ points }) => {
+    switchMap(({ data }) => {
+      const { savedChallenges, points } = data;
       const payloadWithClientProperties = {
-        ...omit(update.payload, ['files']),
-        challengeFiles: update.payload.files ?? null
+        ...omit(update.payload, ['files'])
       };
+      if (update.payload.files) {
+        payloadWithClientProperties.challengeFiles = update.payload.files.map(
+          ({ key, ...rest }) => ({
+            ...rest,
+            fileKey: key
+          })
+        );
+      }
       return of(
         submitComplete({
-          username,
-          points,
-          ...payloadWithClientProperties
+          submittedChallenge: {
+            username,
+            points,
+            ...payloadWithClientProperties
+          },
+          savedChallenges: mapFilesToChallengeFiles(savedChallenges)
         }),
         updateComplete()
       );
@@ -68,24 +75,23 @@ function submitModern(type, state) {
       const { id, block } = challengeMetaSelector(state);
       const challengeFiles = challengeFilesSelector(state);
       const { username } = userSelector(state);
-      const challengeInfo = {
-        id,
-        challengeType
-      };
 
-      // Only send files to server, if it is a JS project or multiFile cert project
+      let body;
       if (
         block === 'javascript-algorithms-and-data-structures-projects' ||
-        challengeType === challengeTypes.multiFileCertProject
+        challengeType === challengeTypes.multifileCertProject
       ) {
-        challengeInfo.files = challengeFiles.reduce(
-          (acc, { fileKey, ...curr }) => [...acc, { ...curr, key: fileKey }],
-          []
-        );
+        body = standardizeRequestBody({ id, challengeType, challengeFiles });
+      } else {
+        body = {
+          id,
+          challengeType
+        };
       }
+
       const update = {
         endpoint: '/modern-challenge-completed',
-        payload: challengeInfo
+        payload: body
       };
       return postChallenge(update, username);
     }
@@ -150,7 +156,6 @@ export default function completionEpic(action$, state$) {
       const state = state$.value;
       const meta = challengeMetaSelector(state);
       const { nextChallengePath, challengeType, superBlock } = meta;
-      const closeChallengeModal = of(closeModal('completion'));
 
       let submitter = () => of({ type: 'no-user-signed-in' });
       if (
@@ -166,20 +171,23 @@ export default function completionEpic(action$, state$) {
         submitter = submitters[submitTypes[challengeType]];
       }
 
-      const pathToNavigateTo = async () => {
-        return await findPathToNavigateTo(nextChallengePath, superBlock);
+      const pathToNavigateTo = () => {
+        return findPathToNavigateTo(nextChallengePath, superBlock);
       };
 
       return submitter(type, state).pipe(
-        concat(closeChallengeModal),
-        filter(Boolean),
-        finalize(async () => navigate(await pathToNavigateTo()))
+        tap(res => {
+          if (res.type !== submitActionTypes.updateFailed) {
+            navigate(pathToNavigateTo());
+          }
+        }),
+        concat(of(closeModal('completion')))
       );
     })
   );
 }
 
-async function findPathToNavigateTo(nextChallengePath, superBlock) {
+function findPathToNavigateTo(nextChallengePath, superBlock) {
   if (nextChallengePath.includes(superBlock)) {
     return nextChallengePath;
   } else {

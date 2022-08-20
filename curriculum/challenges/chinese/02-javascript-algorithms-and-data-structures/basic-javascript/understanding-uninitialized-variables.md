@@ -9,7 +9,7 @@ dashedName: understanding-uninitialized-variables
 
 # --description--
 
-当 JavaScript 中的变量被声明的时候，程序内部会给它一个初始值 `undefined`。 当你对一个值为 `undefined` 的变量进行运算操作的时候，算出来的结果将会是 `NaN`，它的意思是 <dfn>"Not a Number"</dfn>。 当你用一个值是 `undefined` 的变量来做字符串拼接操作的时候，它会转换成字符串（<dfn>string</dfn>）`undefined`。
+当 JavaScript 中的变量被声明的时候，程序内部会给它一个初始值 `undefined`。 当你对一个值为 `undefined` 的变量进行运算操作的时候，算出来的结果将会是 `NaN`，它的意思是 <dfn>"Not a Number"</dfn>。 如果你用 `undefined` 变量连接一个字符串，你将得到一个 `undefined` 的 <dfn>字符串</dfn>。
 
 # --instructions--
 
@@ -17,19 +17,19 @@ dashedName: understanding-uninitialized-variables
 
 # --hints--
 
-`a` 应该被定义，并且值为 `6`。
+应该定义变量 `a`，且它的值为 `6`。
 
 ```js
 assert(typeof a === 'number' && a === 6);
 ```
 
-`b` 应该被定义，并且值为 `15`。
+应该定义变量 `b`，且它最终的值为 `15`。
 
 ```js
 assert(typeof b === 'number' && b === 15);
 ```
 
-`c` 的值不能包含 `undefined`，应该为字符串 `I am a String!`。
+变量 `c` 的值不能包含 `undefined`，应该为字符串 `I am a String!`。
 
 ```js
 assert(!/undefined/.test(c) && c === 'I am a String!');

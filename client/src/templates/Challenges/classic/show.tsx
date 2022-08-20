@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby';
-import React, { Component } from 'react';
+import React, { Component, MutableRefObject } from 'react';
 import Helmet from 'react-helmet';
 import { TFunction, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -8,15 +8,18 @@ import Media from 'react-responsive';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import store from 'store';
+import { editor } from 'monaco-editor';
 import { challengeTypes } from '../../../../utils/challenge-types';
 import LearnLayout from '../../../components/layouts/learn';
+import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 
 import {
-  ChallengeFile,
   ChallengeFiles,
   ChallengeMeta,
   ChallengeNode,
+  CompletedChallenge,
   ResizeProps,
+  SavedChallengeFiles,
   Test
 } from '../../../redux/prop-types';
 import { isContained } from '../../../utils/is-contained';
@@ -26,12 +29,11 @@ import ResetModal from '../components/ResetModal';
 import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
+import ShortcutsModal from '../components/shortcuts-modal';
 import Notes from '../components/notes';
 import Output from '../components/output';
 import Preview from '../components/preview';
-import ProjectPreviewModal, {
-  PreviewConfig
-} from '../components/project-preview-modal';
+import ProjectPreviewModal from '../components/project-preview-modal';
 import SidePanel from '../components/side-panel';
 import VideoModal from '../components/video-modal';
 import {
@@ -50,8 +52,9 @@ import {
   openModal,
   setEditorFocusability
 } from '../redux';
+import { savedChallengesSelector } from '../../../redux';
 import { getGuideUrl } from '../utils';
-import MultifileEditor from './MultifileEditor';
+import MultifileEditor from './multifile-editor';
 import DesktopLayout from './desktop-layout';
 import MobileLayout from './mobile-layout';
 
@@ -63,7 +66,8 @@ const mapStateToProps = createStructuredSelector({
   challengeFiles: challengeFilesSelector,
   tests: challengeTestsSelector,
   output: consoleOutputSelector,
-  isChallengeCompleted: isChallengeCompletedSelector
+  isChallengeCompleted: isChallengeCompletedSelector,
+  savedChallenges: savedChallengesSelector
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -87,7 +91,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 interface ShowClassicProps {
   cancelTests: () => void;
   challengeMounted: (arg0: string) => void;
-  createFiles: (arg0: ChallengeFile[]) => void;
+  createFiles: (arg0: ChallengeFiles | SavedChallengeFiles) => void;
   data: { challengeNode: ChallengeNode };
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
   challengeFiles: ChallengeFiles;
@@ -97,7 +101,10 @@ interface ShowClassicProps {
   output: string[];
   pageContext: {
     challengeMeta: ChallengeMeta;
-    projectPreview: PreviewConfig & { showProjectPreview: boolean };
+    projectPreview: {
+      challengeData: CompletedChallenge;
+      showProjectPreview: boolean;
+    };
   };
   t: TFunction;
   tests: Test[];
@@ -105,6 +112,7 @@ interface ShowClassicProps {
   openModal: (modal: string) => void;
   setEditorFocusability: (canFocus: boolean) => void;
   previewMounted: () => void;
+  savedChallenges: CompletedChallenge[];
 }
 
 interface ShowClassicState {
@@ -121,7 +129,6 @@ interface ReflexLayout {
   testsPane: { flex: number };
 }
 
-const MAX_MOBILE_WIDTH = 767;
 const REFLEX_LAYOUT = 'challenge-layout';
 const BASE_LAYOUT = {
   codePane: { flex: 1 },
@@ -132,11 +139,20 @@ const BASE_LAYOUT = {
   testsPane: { flex: 0.3 }
 };
 
+// Used to prevent monaco from stealing mouse/touch events on the upper jaw
+// content widget so they can trigger their default actions. (Issue #46166)
+const handleContentWidgetEvents = (e: MouseEvent | TouchEvent): void => {
+  const target = e.target as HTMLElement;
+  if (target?.closest('.editor-upper-jaw')) {
+    e.stopPropagation();
+  }
+};
+
 // Component
 class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   static displayName: string;
   containerRef: React.RefObject<HTMLElement>;
-  editorRef: React.RefObject<HTMLElement>;
+  editorRef: React.RefObject<editor.IStandaloneCodeEditor | HTMLElement>;
   instructionsPanelRef: React.RefObject<HTMLDivElement>;
   resizeProps: ResizeProps;
 
@@ -182,7 +198,6 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
   }
 
   onStopResize(event: HandlerProps) {
-    // @ts-expect-error TODO: Apparently, name does not exist on type
     const { name, flex } = event.component.props;
 
     // Only interested in tracking layout updates for ReflexElement's
@@ -218,6 +233,13 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       }
     } = this.props;
     this.initializeComponent(title);
+    // Bug fix for the monaco content widget and touch devices/right mouse
+    // click. (Issue #46166)
+    document.addEventListener('mousedown', handleContentWidgetEvents, true);
+    document.addEventListener('contextmenu', handleContentWidgetEvents, true);
+    document.addEventListener('touchstart', handleContentWidgetEvents, true);
+    document.addEventListener('touchmove', handleContentWidgetEvents, true);
+    document.addEventListener('touchend', handleContentWidgetEvents, true);
   }
 
   componentDidUpdate(prevProps: ShowClassicProps) {
@@ -254,6 +276,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       initTests,
       updateChallengeMeta,
       openModal,
+      savedChallenges,
       data: {
         challengeNode: {
           challenge: {
@@ -271,7 +294,13 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       }
     } = this.props;
     initConsole('');
-    createFiles(challengeFiles ?? []);
+
+    const savedChallenge = savedChallenges?.find(challenge => {
+      return challenge.id === challengeMeta.id;
+    });
+
+    createFiles(savedChallenge?.challengeFiles || challengeFiles || []);
+
     initTests(tests);
     if (showProjectPreview) openModal('projectPreview');
     updateChallengeMeta({
@@ -288,6 +317,15 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     const { createFiles, cancelTests } = this.props;
     createFiles([]);
     cancelTests();
+    document.removeEventListener('mousedown', handleContentWidgetEvents, true);
+    document.removeEventListener(
+      'contextmenu',
+      handleContentWidgetEvents,
+      true
+    );
+    document.removeEventListener('touchstart', handleContentWidgetEvents, true);
+    document.removeEventListener('touchmove', handleContentWidgetEvents, true);
+    document.removeEventListener('touchend', handleContentWidgetEvents, true);
   }
 
   getChallenge = () => this.props.data.challengeNode.challenge;
@@ -304,7 +342,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     return (
       challengeType === challengeTypes.html ||
       challengeType === challengeTypes.modern ||
-      challengeType === challengeTypes.multiFileCertProject
+      challengeType === challengeTypes.multifileCertProject
     );
   }
 
@@ -321,7 +359,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
     } = this.getChallenge();
 
     const showBreadCrumbs =
-      challengeType !== challengeTypes.multiFileCertProject;
+      challengeType !== challengeTypes.multifileCertProject;
     return (
       <SidePanel
         block={block}
@@ -367,14 +405,16 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       }
     } = this.props;
     const { description, title } = this.getChallenge();
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return (
       challengeFiles && (
         <MultifileEditor
           challengeFiles={challengeFiles}
           containerRef={this.containerRef}
           description={description}
-          editorRef={this.editorRef}
+          // Try to remove unknown
+          editorRef={
+            this.editorRef as MutableRefObject<editor.IStandaloneCodeEditor>
+          }
           initialTests={tests}
           resizeProps={this.resizeProps}
           title={title}
@@ -430,7 +470,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       executeChallenge,
       pageContext: {
         challengeMeta: { nextChallengePath, prevChallengePath },
-        projectPreview
+        projectPreview: { challengeData, showProjectPreview }
       },
       challengeFiles,
       t
@@ -438,7 +478,8 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
 
     return (
       <Hotkeys
-        editorRef={this.editorRef}
+        challengeType={challengeType}
+        editorRef={this.editorRef as React.RefObject<HTMLElement>}
         executeChallenge={executeChallenge}
         innerRef={this.containerRef}
         instructionsPanelRef={this.instructionsPanelRef}
@@ -494,7 +535,13 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
           <HelpModal />
           <VideoModal videoUrl={this.getVideoUrl()} />
           <ResetModal />
-          <ProjectPreviewModal previewConfig={projectPreview} />
+          <ProjectPreviewModal
+            challengeData={challengeData}
+            closeText={t('buttons.start-coding')}
+            previewTitle={t('learn.project-preview-title')}
+            showProjectPreview={showProjectPreview}
+          />
+          <ShortcutsModal />
         </LearnLayout>
       </Hotkeys>
     );
@@ -515,6 +562,7 @@ export const query = graphql`
         block
         title
         description
+        id
         hasEditableBoundaries
         instructions
         notes

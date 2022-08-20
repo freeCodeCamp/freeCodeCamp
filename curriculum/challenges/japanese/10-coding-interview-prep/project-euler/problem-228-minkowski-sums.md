@@ -1,7 +1,7 @@
 ---
 id: 5900f4511000cf542c50ff63
 title: '問題 228: ミンコフスキー和'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301871
 dashedName: problem-228-minkowski-sums
 ---
@@ -10,7 +10,8 @@ dashedName: problem-228-minkowski-sums
 
 各頂点 $v_k (k = 1, 2, \ldots, n)$ が次の座標であるような正 $n$ 角形を $S_n$ とします。
 
-$$\begin{align} & x_k = cos(\frac{2k - 1}{n} × 180°) \\\\ & y_k = sin(\frac{2k - 1}{n} × 180°) \end{align}$$
+$$\begin{align}   & x_k = cos(\frac{2k - 1}{n} × 180°) \\\\
+  & y_k = sin(\frac{2k - 1}{n} × 180°) \end{align}$$
 
 それぞれの $S_n$ は、周辺上と内部のすべての点からなる、塗りつぶされた図形として解釈されます。
 

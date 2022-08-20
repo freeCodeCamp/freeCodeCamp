@@ -25,7 +25,7 @@ assert(
 );
 ```
 
-The union of a Set containing values ["a", "b", "c"] and a Set containing values ["c", "d"] should return a new Set containing values ["a", "b", "c", "d"].
+The union of a `Set` containing values `["a", "b", "c"]` and a `Set` containing values `["c", "d"]` should return a new `Set` containing values `["a", "b", "c", "d"]`.
 
 ```js
 assert(

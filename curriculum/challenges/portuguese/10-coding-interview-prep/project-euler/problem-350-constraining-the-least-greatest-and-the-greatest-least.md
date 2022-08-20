@@ -1,7 +1,7 @@
 ---
 id: 5900f4cb1000cf542c50ffdd
 title: 'Problema 350: Restringindo o menor máximo e o maior mínimo'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302010
 dashedName: problem-350-constraining-the-least-greatest-and-the-greatest-least
 ---
@@ -16,7 +16,9 @@ O mínimo múltiplo comum, ou $lcm$, de uma lista é o menor número natural div
 
 Considere $f(G, L, N)$ como o número de listas de tamanho $N$ com $gcd ≥ G$ e $lcm ≤ L$. Por exemplo:
 
-$$\begin{align} & f(10, 100, 1) = 91 \\\\ & f(10, 100, 2) = 327 \\\\ & f(10, 100, 3) = 1135 \\\\ & f(10, 100, 1000)\bmod {101}^4 = 3.286.053 \end{align}$$
+$$\begin{align}   & f(10, 100, 1) = 91 \\\\
+  & f(10, 100, 2) = 327 \\\\   & f(10, 100, 3) = 1135 \\\\
+  & f(10, 100, 1000)\bmod {101}^4 = 3.286.053 \end{align}$$
 
 Encontre $f({10}^6, {10}^{12}, {10}^{18})\bmod {101}^4$.
 

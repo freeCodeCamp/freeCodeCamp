@@ -10,29 +10,23 @@ dashedName: budget-app
 
 このプロジェクトは [Replit スターターコード](https://replit.com/github/freeCodeCamp/boilerplate-budget-app)を使用して作業を行います。
 
-Python カリキュラムの対話式教育コンテンツを引き続き開発中です。 現在、下記の freeCodeCamp.org YouTube チャンネルで、このプロジェクトの完了に必要なすべての知識について説明する動画をいくつか公開しています。
-
-- [「みんなで Python」ビデオコース](https://www.freecodecamp.org/news/python-for-everybody/) (14 時間)
-
-- [「Python を学ぶ」ビデオコース](https://www.freecodecamp.org/news/learn-python-video-course/) (10 時間)
-
 # --instructions--
 
-`budget.py` の `Category` クラスを完成させてください。 *食費*、*服飾費*、*娯楽費*など、さまざまな予算のカテゴリに応じてオブジェクトをインスタンス化できるようにする必要があります。 オブジェクトを作成したら、カテゴリの名前をオブジェクトに渡します。 クラスには、リスト形式の帳簿となる `ledger` というインスタンス変数が必要です。 クラスには次のメソッドも含める必要があります。
+Complete the `Category` class in `budget.py`. It should be able to instantiate objects based on different budget categories like *food*, *clothing*, and *entertainment*. When objects are created, they are passed in the name of the category. The class should have an instance variable called `ledger` that is a list. The class should also contain the following methods:
 
-- `deposit` (預け入れ) メソッド。金額と説明を受け取ります。 説明がない場合は、デフォルトで空の文字列にします。 このメソッドでは、`{"amount": amount, "description": description}` という形式で帳簿リストの末尾にオブジェクトを追加する必要があります。
-- `withdraw` (引き出し) メソッド。`deposit` メソッドに似ていますが、渡された金額を負数として帳簿に保存する必要があります。 十分な資金がない場合は、帳簿に何も追加しないでください。 このメソッドは、引き出しが行われた場合は `True` を返し、それ以外の場合は `False` を返す必要があります。
-- `get_balance` (残高確認) メソッド。発生した入出金に基づいて予算カテゴリの現在の残高を返します。
-- `transfer` (送金) メソッド。引数として金額と別の予算カテゴリを受け取ります。 このメソッドでは、金額と "Transfer to [Destination Budget Category]" ([送金先の予算カテゴリ] への送金) という記述からなる出金を追加する必要があります。 このメソッドによって、金額と "Transfer to [Destination Budget Category]" という記述からなる入金額が他の予算カテゴリに追加されます。 十分な資金がない場合は、どちらの帳簿にも何も追加しないでください。 このメソッドは、送金が行われた場合は `True` を返し、それ以外の場合は `False` を返す必要があります。
-- `check_funds` (資金確認) メソッド。引数として金額を受け取ります。 金額が予算カテゴリの残高よりも大きい場合は `False` を返し、それ以外の場合は `True` を返します。 このメソッドは `withdraw` メソッドと `transfer` メソッドの両方で使用する必要があります。
+- A `deposit` method that accepts an amount and description. If no description is given, it should default to an empty string. The method should append an object to the ledger list in the form of `{"amount": amount, "description": description}`.
+- A `withdraw` method that is similar to the `deposit` method, but the amount passed in should be stored in the ledger as a negative number. If there are not enough funds, nothing should be added to the ledger. This method should return `True` if the withdrawal took place, and `False` otherwise.
+- A `get_balance` method that returns the current balance of the budget category based on the deposits and withdrawals that have occurred.
+- A `transfer` method that accepts an amount and another budget category as arguments. The method should add a withdrawal with the amount and the description "Transfer to [Destination Budget Category]". The method should then add a deposit to the other budget category with the amount and the description "Transfer from [Source Budget Category]". If there are not enough funds, nothing should be added to either ledgers. This method should return `True` if the transfer took place, and `False` otherwise.
+- A `check_funds` method that accepts an amount as an argument. It returns `False` if the amount is greater than the balance of the budget category and returns `True` otherwise. This method should be used by both the `withdraw` method and `transfer` method.
 
-予算オブジェクトを出力するときは次のように表示する必要があります。
+When the budget object is printed it should display:
 
-- 30 文字のタイトル行。`*` 文字を並べて 1 行とし、中央にカテゴリの名前を置きます。
-- 帳簿にある品目のリスト。 各行に説明と金額を表示します。 説明の最初の 23 文字を表示し、その後に金額を表示します。 金額は右揃えで、小数点以下 2 桁までを含み、最大 7 文字まで表示します。
-- カテゴリの合計を表示する行。
+- A title line of 30 characters where the name of the category is centered in a line of `*` characters.
+- A list of the items in the ledger. Each line should show the description and amount. The first 23 characters of the description should be displayed, then the amount. The amount should be right aligned, contain two decimal places, and display a maximum of 7 characters.
+- A line displaying the category total.
 
-出力の例を次に示します。
+Here is an example of the output:
 
 ```bash
 *************Food*************
@@ -43,13 +37,13 @@ Transfer to Clothing    -50.00
 Total: 923.96
 ```
 
-`Category` クラスの他に、カテゴリのリストを引数に取る `create_spend_chart` という関数を (クラスの外で) 作成してください。 この関数は棒グラフとなる文字列を返す必要があります。
+Besides the `Category` class, create a function (outside of the class) called `create_spend_chart` that takes a list of categories as an argument. It should return a string that is a bar chart.
 
-グラフでは、関数に渡された各カテゴリについて、その出費の割合を表示する必要があります。 出費の割合は、引き出し額でのみ計算する必要があり、預け入れ額では計算しません。 グラフの左下には 0 ～ 100 のラベルを付ける必要があります。 棒グラフの「棒」は文字 "o" を使用して作成する必要があります。 各棒の高さは最も近い 10 に切り下げる必要があります。 グラフの下の水平線は最後の棒からスペース 2 つ分だけ離す必要があります。 各カテゴリ名は棒の下に垂直に記述する必要があります。 一番上には "Percentage spent by category" (カテゴリ別の出費の割合) というタイトルを付ける必要があります。
+The chart should show the percentage spent in each category passed in to the function. The percentage spent should be calculated only with withdrawals and not with deposits. Down the left side of the chart should be labels 0 - 100. The "bars" in the bar chart should be made out of the "o" character. The height of each bar should be rounded down to the nearest 10. The horizontal line below the bars should go two spaces past the final bar. Each category name should be written vertically below the bar. There should be a title at the top that says "Percentage spent by category".
 
-この関数は最大 4 つのカテゴリでテストされます。
+This function will be tested with up to four categories.
 
-次の出力例を参考にして、出力の間隔を例と正確に合わせてください。
+Look at the example output below very closely and make sure the spacing of the output matches the example exactly.
 
 ```bash
 Percentage spent by category
@@ -75,23 +69,23 @@ Percentage spent by category
         g     
 ```
 
-このプロジェクトの単体テストは `test_module.py` にあります。
+The unit tests for this project are in `test_module.py`.
 
 ## 開発
 
-`budget.py` でコードを記述してください。 開発には `main.py` を使用して `Category` クラスをテストすることができます。 「実行」ボタンをクリックすると `main.py` が実行されます。
+Write your code in `budget.py`. For development, you can use `main.py` to test your `Category` class. Click the "run" button and `main.py` will run.
 
 ## テスト
 
-すでに `test_module.py` から `main.py` にテストをインポートしてあります。 「実行」ボタンを押すと自動的にテストが実行されます。
+We imported the tests from `test_module.py` to `main.py` for your convenience. The tests will run automatically whenever you hit the "run" button.
 
 ## 提出
 
-プロジェクトの URL をコピーし、freeCodeCamp に提出してください。
+Copy your project's URL and submit it to freeCodeCamp.
 
 # --hints--
 
-Category クラスを作成し、すべてのテストに合格する必要があります。
+It should create a Category class and pass all tests.
 
 ```js
 

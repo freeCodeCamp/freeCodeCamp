@@ -1,8 +1,12 @@
 ---
 id: 5e7b9f070b6c005b0e76f05d
-title: 'Iterations: Definite Loops'
+title: 'Iteraciones: Bucles definidos'
 challengeType: 11
 videoId: hiRTRAqNlpE
+bilibiliIds:
+  aid: 291987032
+  bvid: BV1ff4y157Q3
+  cid: 376385255
 dashedName: iterations-definite-loops
 ---
 
@@ -10,7 +14,7 @@ dashedName: iterations-definite-loops
 
 ## --text--
 
-How many lines will the following code print?:
+¿Cuántas líneas imprimirá el siguiente código?:
 
 ```python
 for i in [2,1,5]:

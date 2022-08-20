@@ -9,6 +9,7 @@ import { emailToABVariant } from '../utils/A-B-tester';
 import { createAcceptTermsSaga } from './accept-terms-saga';
 import { actionTypes } from './action-types';
 import { createAppMountSaga } from './app-mount-saga';
+import { createCodeAllySaga } from './codeally-saga';
 import { createDonationSaga } from './donation-saga';
 import failedUpdatesEpic from './failed-updates-epic';
 import { createFetchUserSaga } from './fetch-user-saga';
@@ -18,9 +19,9 @@ import hardGoToEpic from './hard-go-to-epic';
 import { createReportUserSaga } from './report-user-saga';
 import { actionTypes as settingsTypes } from './settings/action-types';
 import { createShowCertSaga } from './show-cert-saga';
-import { createSoundModeSaga } from './sound-mode-saga';
 import updateCompleteEpic from './update-complete-epic';
-import { createWebhookSaga } from './webhook-saga';
+import { createUserTokenSaga } from './user-token-saga';
+import { createSaveChallengeSaga } from './save-challenge-saga';
 
 export const MainApp = 'app';
 
@@ -52,6 +53,7 @@ const initialState = {
   showCertFetchState: {
     ...defaultFetchState
   },
+  showCodeAlly: false,
   user: {},
   userFetchState: {
     ...defaultFetchState
@@ -73,13 +75,14 @@ export const epics = [hardGoToEpic, failedUpdatesEpic, updateCompleteEpic];
 export const sagas = [
   ...createAcceptTermsSaga(actionTypes),
   ...createAppMountSaga(actionTypes),
+  ...createCodeAllySaga(actionTypes),
   ...createDonationSaga(actionTypes),
   ...createGaSaga(actionTypes),
   ...createFetchUserSaga(actionTypes),
   ...createShowCertSaga(actionTypes),
   ...createReportUserSaga(actionTypes),
-  ...createSoundModeSaga({ ...actionTypes, ...settingsTypes }),
-  ...createWebhookSaga(actionTypes)
+  ...createUserTokenSaga(actionTypes),
+  ...createSaveChallengeSaga(actionTypes)
 ];
 
 export const appMount = createAction(actionTypes.appMount);
@@ -117,6 +120,11 @@ export const hardGoTo = createAction(actionTypes.hardGoTo);
 export const submitComplete = createAction(actionTypes.submitComplete);
 export const updateComplete = createAction(actionTypes.updateComplete);
 export const updateFailed = createAction(actionTypes.updateFailed);
+
+export const saveChallenge = createAction(actionTypes.saveChallenge);
+export const saveChallengeComplete = createAction(
+  actionTypes.saveChallengeComplete
+);
 
 export const acceptTerms = createAction(actionTypes.acceptTerms);
 export const acceptTermsComplete = createAction(
@@ -171,19 +179,22 @@ export const showCert = createAction(actionTypes.showCert);
 export const showCertComplete = createAction(actionTypes.showCertComplete);
 export const showCertError = createAction(actionTypes.showCertError);
 
-export const postWebhookToken = createAction(actionTypes.postWebhookToken);
-export const postWebhookTokenComplete = createAction(
-  actionTypes.postWebhookTokenComplete
+export const updateUserToken = createAction(actionTypes.updateUserToken);
+export const deleteUserToken = createAction(actionTypes.deleteUserToken);
+export const deleteUserTokenComplete = createAction(
+  actionTypes.deleteUserTokenComplete
 );
-export const deleteWebhookToken = createAction(actionTypes.deleteWebhookToken);
-export const deleteWebhookTokenComplete = createAction(
-  actionTypes.deleteWebhookTokenComplete
-);
+
+export const hideCodeAlly = createAction(actionTypes.hideCodeAlly);
+export const showCodeAlly = createAction(actionTypes.showCodeAlly);
+export const tryToShowCodeAlly = createAction(actionTypes.tryToShowCodeAlly);
 
 export const updateCurrentChallengeId = createAction(
   actionTypes.updateCurrentChallengeId
 );
 
+export const savedChallengesSelector = state =>
+  userSelector(state).savedChallenges || [];
 export const completedChallengesSelector = state =>
   userSelector(state).completedChallenges || [];
 export const partiallyCompletedChallengesSelector = state =>
@@ -193,12 +204,12 @@ export const currentChallengeIdSelector = state =>
   state[MainApp].currentChallengeId;
 
 export const emailSelector = state => userSelector(state).email;
-export const isAVariantSelector = state => {
+export const isVariantASelector = state => {
   const email = emailSelector(state);
   // if the user is not signed in and the user info is not available.
   // always return A the control variant
   if (!email) return true;
-  return emailToABVariant(email).isAVariant;
+  return emailToABVariant(email).isVariantA;
 };
 export const isDonatingSelector = state => userSelector(state).isDonating;
 export const isOnlineSelector = state => state[MainApp].isOnline;
@@ -242,8 +253,12 @@ export const shouldRequestDonationSelector = state => {
   return completionCount >= 3;
 };
 
-export const webhookTokenSelector = state => {
-  return userSelector(state).webhookToken;
+export const userTokenSelector = state => {
+  return userSelector(state).userToken;
+};
+
+export const showCodeAllySelector = state => {
+  return state[MainApp].showCodeAlly;
 };
 
 export const userByNameSelector = username => state => {
@@ -629,9 +644,12 @@ export const reducer = handleActions(
       }
     }),
     [actionTypes.submitComplete]: (state, { payload }) => {
-      let submittedchallenges = [{ ...payload, completedDate: Date.now() }];
-      if (payload.challArray) {
-        submittedchallenges = payload.challArray;
+      const { submittedChallenge, savedChallenges } = payload;
+      let submittedchallenges = [
+        { ...submittedChallenge, completedDate: Date.now() }
+      ];
+      if (submittedChallenge.challArray) {
+        submittedchallenges = submittedChallenge.challArray;
       }
       const { appUsername } = state;
       return {
@@ -647,12 +665,14 @@ export const reducer = handleActions(
                 ...state.user[appUsername].completedChallenges
               ],
               'id'
-            )
+            ),
+            savedChallenges:
+              savedChallenges ?? savedChallengesSelector(state[MainApp])
           }
         }
       };
     },
-    [actionTypes.postWebhookTokenComplete]: (state, { payload }) => {
+    [actionTypes.updateUserToken]: (state, { payload }) => {
       const { appUsername } = state;
       return {
         ...state,
@@ -660,12 +680,12 @@ export const reducer = handleActions(
           ...state.user,
           [appUsername]: {
             ...state.user[appUsername],
-            webhookToken: payload
+            userToken: payload
           }
         }
       };
     },
-    [actionTypes.deleteWebhookTokenComplete]: state => {
+    [actionTypes.deleteUserTokenComplete]: state => {
       const { appUsername } = state;
       return {
         ...state,
@@ -673,15 +693,40 @@ export const reducer = handleActions(
           ...state.user,
           [appUsername]: {
             ...state.user[appUsername],
-            webhookToken: null
+            userToken: null
           }
         }
+      };
+    },
+    [actionTypes.hideCodeAlly]: state => {
+      return {
+        ...state,
+        showCodeAlly: false
+      };
+    },
+    [actionTypes.showCodeAlly]: state => {
+      return {
+        ...state,
+        showCodeAlly: true
       };
     },
     [challengeTypes.challengeMounted]: (state, { payload }) => ({
       ...state,
       currentChallengeId: payload
     }),
+    [actionTypes.saveChallengeComplete]: (state, { payload }) => {
+      const { appUsername } = state;
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          [appUsername]: {
+            ...state.user[appUsername],
+            savedChallenges: payload
+          }
+        }
+      };
+    },
     [settingsTypes.submitNewUsernameComplete]: (state, { payload }) =>
       payload
         ? {
@@ -698,6 +743,20 @@ export const reducer = handleActions(
     [settingsTypes.submitNewAboutComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.updateMyEmailComplete]: (state, { payload }) =>
+      payload ? spreadThePayloadOnUser(state, payload) : state,
+    [settingsTypes.updateMySocialsComplete]: (state, { payload }) =>
+      payload ? spreadThePayloadOnUser(state, payload) : state,
+    [settingsTypes.updateMySoundComplete]: (state, { payload }) =>
+      payload ? spreadThePayloadOnUser(state, payload) : state,
+    [settingsTypes.updateMyThemeComplete]: (state, { payload }) =>
+      payload ? spreadThePayloadOnUser(state, payload) : state,
+    [settingsTypes.updateMyKeyboardShortcutsComplete]: (state, { payload }) =>
+      payload ? spreadThePayloadOnUser(state, payload) : state,
+    [settingsTypes.updateMyHonestyComplete]: (state, { payload }) =>
+      payload ? spreadThePayloadOnUser(state, payload) : state,
+    [settingsTypes.updateMyQuincyEmailComplete]: (state, { payload }) =>
+      payload ? spreadThePayloadOnUser(state, payload) : state,
+    [settingsTypes.updateMyPortfolioComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.updateUserFlagComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,

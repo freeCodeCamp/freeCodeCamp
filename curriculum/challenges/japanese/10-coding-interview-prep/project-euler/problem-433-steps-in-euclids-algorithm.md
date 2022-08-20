@@ -1,7 +1,7 @@
 ---
 id: 5900f51d1000cf542c51002f
 title: '問題 433: ユークリッドの互除法のステップ数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302104
 dashedName: problem-433-steps-in-euclids-algorithm
 ---
@@ -10,7 +10,8 @@ dashedName: problem-433-steps-in-euclids-algorithm
 
 $x_0$ と $y_0$ の最大公約数をユークリッドの互除法によって決定するために必要なステップ数を、$E(x_0, y_0)$ とします。 より形式的に表すと、次のようになります。
 
-$$\begin{align} & x_1 = y_0, y_1 = x_0\bmod y_0 \\\\ & x_n = y_{n - 1}, y_n = x_{n - 1}\bmod y_{n - 1} \end{align}$$
+$$\begin{align}   & x_1 = y_0, y_1 = x_0\bmod y_0 \\\\
+  & x_n = y_{n - 1}, y_n = x_{n - 1}\bmod y_{n - 1} \end{align}$$
 
 $E(x_0, y_0)$ は $y_n = 0$ となるような最小の $n$ です。
 

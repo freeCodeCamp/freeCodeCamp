@@ -1,5 +1,5 @@
 import { getRedirectParams } from '../utils/redirection';
-import { deprecatedEndpoint } from '../utils/deprecatedEndpoint';
+import { deprecatedEndpoint } from '../utils/disabled-endpoints';
 
 module.exports = function (app) {
   const router = app.loopback.Router();

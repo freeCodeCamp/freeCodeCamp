@@ -1,7 +1,7 @@
 ---
 id: 5900f46d1000cf542c50ff7f
 title: 'Завдання 255: Округлені квадратні корені'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301903
 dashedName: problem-255-rounded-square-roots
 ---
@@ -28,7 +28,8 @@ $$x_{k + 1} = \left\lfloor\frac{x_k + \left\lceil\frac{n}{x_k}\right\rceil}{2}\r
 
 $n$ складається з 4 цифр, тож $x_0 = 7 × {10}^{\frac{4-2}{2}} = 70$.
 
-$$x_1 = \left\lfloor\frac{70 + \left\lceil\frac{4321}{70}\right\rceil}{2}\right\rfloor = 66 \\\\ x_2 = \left\lfloor\frac{66 + \left\lceil\frac{4321}{66}\right\rceil}{2}\right\rfloor = 66$$
+$$x_1 = \left\lfloor\frac{70 + \left\lceil\frac{4321}{70}\right\rceil}{2}\right\rfloor = 66 \\\\
+x_2 = \left\lfloor\frac{66 + \left\lceil\frac{4321}{66}\right\rceil}{2}\right\rfloor = 66$$
 
 Оскільки $x_2 = x_1$, тут зупиняємося. Таким чином, після всього двох ітерацій, ми виявили, що округлений квадратний корінь 4321 дорівнює 66 (точне значення квадратного кореня — 65,7343137...).
 

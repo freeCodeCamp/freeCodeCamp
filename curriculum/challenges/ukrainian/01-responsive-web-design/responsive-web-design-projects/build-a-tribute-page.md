@@ -1,43 +1,325 @@
 ---
 id: bd7158d8c442eddfaeb5bd18
 title: Створіть пам'ятну сторінку
-challengeType: 3
+challengeType: 14
 forumTopicId: 301147
 dashedName: build-a-tribute-page
 ---
 
 # --description--
 
-**Завдання:** Створіть [CodePen.io](https://codepen.io) застосунок, який схожий за функціями на:<https://codepen.io/freeCodeCamp/full/zNqgVx>.
+**Мета:** Створити застосунок, функціонально схожий до <a href="https://tribute-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://tribute-page.freecodecamp.rocks</a>
 
-Нижче заповніть [ історії користувачів ](https://en.wikipedia.org/wiki/User_story) і отримайте доступ до тестів, котрі потрібно пройти. Виконайте завдання у власному стилі.
+**Історія користувача:**
 
-Ви можете використати HTML, JavaScript, and CSS для завершення цього проєкту. Рекомендується використовувати звичайну CSS, тому що саме цю мову ви розглядали на уроках раніше і вам потрібно більше попрактикуватися. Якщо ви оберете Bootstrap або SASS, то можете користуватися ними. Не бажано використовувати додаткові технології (наприклад: jQuery, React, Angular або Vue), в іншому разі, це лише під вашу власну відповідальність. Під час роботи над іншими проєктами ви зможете попрацювати з різними технологічними стеками, як-от React. Ми візьмемо до уваги і спробуємо виправити всі звіти, що використовують запропонований технологічний стек у цьому проєкті. Вдалого програмування!
+1. Ваша пам'ятна сторінка повинна містити елемент `main` з відповідним `id` зі значенням `main`, який містить всі інші елементи
+1. Ви повинні бачити елемент з `id` зі значенням `title`, який містить рядок (наприклад, текст), що описує предмет пам'ятної сторінки (наприклад, «Доктор Норман Борлаґ»)
+1. Ви повинні побачити елемент `figure` або `div` з `id` зі значенням `img-div`
+1. В межах елемента `#img-div` ви маєте бачити елемент `img` з відповідним `id="image"`
+1. В межах елемента `#img-div` ви маєте бачити елемент з відповідним `id="img-caption"`, який містить текст, що описує зображення, показане в `#img-div`
+1. Ви маєте бачити елемент з відповідним `id="tribute-info"`, який містить текст, що описує предмет пам'ятної сторінки
+1. Ви маєте бачити елемент `a` з відповідним `id="tribute-link"`, який посилає на зовнішній сайт, що містить додаткову інформацію про предмет пам'ятної сторінки. ПІДКАЗКА: ви повинні надати своєму елементу атрибут `target` та встановити його на `_blank`, щоб ваше посилання відкривалося в новій вкладці
+1. Ваш `#image` повинен використовувати властивості `max-width` та `height`, щоб змінювати розмір відповідно до ширини батьківського елемента, не перевищуючи початковий розмір
+1. Ваш елемент `img` повинен бути зцентрованим відповідно до батьківського елемента
 
-** Історія користувача #1:** Моя пам'ятна сторінка повинна містити елемент з відповідним `id="main"`, котрий містить усі інші елементи.
+Виконайте історію користувача та пройдіть тести, наведені нижче, щоб завершити цей проєкт. Оформте за власним стилем. Щасливого кодування!
 
-** Історія користувача #2: ** Мені потрібно бачити елемент з відповідним `id="title"`, котрий містить рядок (наприклад текст) і описує тему пам'ятної сторінки. (наприклад "Лікар Норман Борлау").
+**Примітка:** переконайтеся, що додали `<link rel="stylesheet" href="styles.css">` до HTML для прив'язки з аркушем стилів та застосували CSS
 
-** Історія користувача #3:** Мені потрібно бачити або `figure`, або `div` елемент з відповідними `id="img-div"`.
+# --hints--
 
-**Історія користувача #4:** У межах `img-div` елементу, мені потрібно бачити `img` елемент з відповідним `id="image"`.
+Ви повинні мати елемент `main` з `id` зі значенням `main`.
 
-**Історія користувача #5:** У межах `img-div` елементу, мені потрібно бачити елемент з відповідним `id="img-caption"`, котрий містить текстовий контент, який описує зображення яке показується в `img-div`.
+```js
+const el = document.getElementById('main')
+assert(!!el && el.tagName === 'MAIN')
+```
 
-**Історія користувача #6:** Мені потрібно бачити елемент з відповідним `id="tribute-info"`, котрий містить текстовий контент, який описує пам'ятну сторінку.
+Ваші `#img-div`, `#image`, `#img-caption`, `#tribute-info` та `#tribute-link` повинні бути нащадками `#main`.
 
-**Історія користувача#7:** Мені потрібно бачити `a` елемент з відповідним `id="tribute-link"`, котрий дає посилання на зовнішній сайт, який містить додаткову інформацію про тему пам'ятної сторінки. ПІДКАЗКА: Ви повинні надати вашому елементу атрибут у формі `target` і налаштувати його до `_blank` для того щоб ваше посилання відкрилося у новій вкладці(т.к. `target="_blank"`).
+```js
+const el1 = document.querySelector('#main #img-div')
+const el2 = document.querySelector('#main #image')
+const el3 = document.querySelector('#main #img-caption')
+const el4 = document.querySelector('#main #tribute-info')
+const el5 = document.querySelector('#main #tribute-link')
+assert(!!el1 & !!el2 && !!el3 && !!el4 && !!el5)
+```
 
-**Історія користувача #8:**Елемент`img`повинен у відповідь змінити свій розмір, у зв'язку з шириною його початкового елементу, без перевищення його оригінального розміру.
+Ви повинні мати елемент з `id` зі значенням `title`.
 
-**Історія користувача#9:** Елемент `img` повинен знаходитись у центрі в межах його початкового елементу.
+```js
+const el = document.getElementById('title')
+assert(!!el)
+```
 
-Ви можете створити проєкт за допомогою <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>using this CodePen template</a> й натиснути `Save` для створення власного фрагмента. Або ж ви можете скористатися цим CDN посиланням для проходження тестів у будь-якому комфортному для вас середовищі:`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`.
+Ваш `#title` не повинен бути порожнім.
 
-Після того як ви завершили, прикріпіть URL до вашому проєкту, над яким ви працюєте, з усіма пройденими тестами.
+```js
+const el = document.getElementById('title')
+assert(!!el && el.innerText.length > 0)
 
-# --solutions--
+```
+
+Ви повинні мати елемент `figure` або `div` з `id` зі значенням `img-div`.
+
+```js
+const el = document.getElementById('img-div')
+assert(!!el && (el.tagName === 'DIV' || el.tagName === 'FIGURE'))
+```
+
+Ви повинні мати елемент `img` з `id` зі значенням `image`.
+
+```js
+const el = document.getElementById('image')
+assert(!!el && el.tagName === 'IMG')
+```
+
+Ваш `#image` повинен бути нащадком `#img-div`.
+
+```js
+const el = document.querySelector('#img-div #image')
+assert(!!el)
+```
+
+Ви повинні мати елемент `figcaption` або `div` з `id` зі значенням `img-caption`.
+
+```js
+const el = document.getElementById('img-caption')
+assert(!!el && (el.tagName === 'DIV' || el.tagName === 'FIGCAPTION'))
+```
+
+Ваш `#img-caption` повинен бути нащадком `#img-div`.
+
+```js
+const el = document.querySelector('#img-div #img-caption')
+assert(!!el)
+```
+
+Ваш `#img-caption` не повинен бути порожнім.
+
+```js
+const el = document.getElementById('img-caption')
+assert(!!el && el.innerText.length > 0)
+```
+
+Ви повинні мати елемент з `id` зі значенням `tribute-info`.
+
+```js
+const el = document.getElementById('tribute-info')
+assert(!!el)
+```
+
+Ваш `#tribute-info` не повинен бути порожнім.
+
+```js
+const el = document.getElementById('tribute-info')
+assert(!!el && el.innerText.length > 0)
+```
+
+Ви повинні мати елемент `a` з `id` зі значенням `tribute-link`.
+
+```js
+const el = document.getElementById('tribute-link')
+assert(!!el && el.tagName === 'A')
+```
+
+Ваш `#tribute-link` повинен мати атрибут `href` та значення.
+
+```js
+const el = document.getElementById('tribute-link')
+assert(!!el && !!el.href && el.href.length > 0)
+```
+
+Ваш `#tribute-link` повинен мати атрибут `target` зі значенням `_blank`.
+
+```js
+const el = document.getElementById('tribute-link')
+assert(!!el && el.target === '_blank')
+```
+
+Ваш елемент `img` повинен мати `display` зі значенням `block`.
+
+```js
+const img = document.getElementById('image');
+const imgStyle = window.getComputedStyle(img);
+const style = imgStyle?.getPropertyValue('display')
+assert(style === 'block')
+```
+
+Ваш `#image` повинен мати `max-width` зі значенням `100%`.
+
+```js
+const img = document.getElementById('image');
+const imgStyle = window.getComputedStyle(img);
+const style = imgStyle?.getPropertyValue('max-width')
+assert(style === '100%')
+```
+
+Ваш `#image` повинен мати `height` зі значенням `auto`.
+
+```js
+// taken from the testable-projects repo
+const img = document.getElementById('image');
+const imgStyle = window.getComputedStyle(img);
+const oldDisplayValue = imgStyle.getPropertyValue('display');
+const oldDisplayPriority = imgStyle.getPropertyPriority('display');
+img?.style.setProperty('display', 'none', 'important');
+const heightValue = imgStyle?.getPropertyValue('height')
+img?.style.setProperty('display', oldDisplayValue, oldDisplayPriority);
+assert(heightValue === 'auto')
+```
+
+Ваш `#image` повинен бути зцентрованим відповідно до батьківського елемента.
+
+```js
+// taken from the testable-projects repo
+const img = document.getElementById('image'),
+  imgParent = img?.parentElement,
+  imgLeft = img?.getBoundingClientRect().left,
+  imgRight = img?.getBoundingClientRect().right,
+  parentLeft = imgParent?.getBoundingClientRect().left,
+  parentRight = imgParent?.getBoundingClientRect().right,
+  leftMargin = imgLeft - parentLeft,
+  rightMargin = parentRight - imgRight;
+assert(leftMargin - rightMargin < 6 && rightMargin - leftMargin < 6)
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
-// solution required
+
+```
+
+```css
+
+```
+
+## --solutions--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico"
+      rel="stylesheet"
+
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lobster"
+      rel="stylesheet"
+
+    />
+    <link href="styles.css" rel="stylesheet" />
+    <title>Tribute Page</title>
+  </head>
+  <body>
+    <h1>Tribute Page</h1>
+    <p>The below card was designed as a tribute page for freeCodeCamp.</p>
+    <main id="main">
+      <div id="img-div">
+        <img
+          id="image"
+          class="border"
+          src="https://upload.wikimedia.org/wikipedia/en/5/53/Pok%C3%A9mon_Togepi_art.png"
+          alt="An image of Togepi"
+        />
+        <figcaption id="img-caption">Togepi, happy as always.</figcaption>
+      </div>
+      <h2 id="title">Togepi</h2>
+      <hr />
+      <div id="tribute-info">
+        <p>
+          Togepi was first discovered in the Johto region, when Ash Ketchum
+          discovered a mysterious egg. However, when the egg hatched, Togepi saw
+          Ash's friend Misty first and imprinted on her. Like many other
+          creatures, this imprinting process created a bond and Togepi views
+          Misty as his mother.
+        </p>
+        <p>
+          Togepi is a very childlike Pokemon, and is very emotionally
+          expressive. He demonstrates extreme levels of joy and sadness.
+        </p>
+        <hr />
+        <p><u>Battle Information</u></p>
+        <ul style="list-style-type: none">
+          <li>Type: Fairy</li>
+          <li>Evolutions: Togepi -> Togetic -> Togekiss</li>
+          <li>Moves: Growl, Pound, Sweet Kiss, Charm</li>
+          <li>Weaknesses: Poison, Steel</li>
+          <li>Resistances: Dragon</li>
+        </ul>
+        <p>
+          Check out this
+          <a
+            id="tribute-link"
+            href="https://bulbapedia.bulbagarden.net/wiki/Togepi_(Pok%C3%A9mon)"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Bulbapedia article on Togepi</a
+          >
+          for more information on this great Pokemon.
+        </p>
+      </div>
+    </main>
+  </body>
+  <footer>
+    <a href="../">Return to Project List</a> |
+    <a href="https://www.nhcarrigan.com">Return to HomePage</a>
+  </footer>
+</html>
+```
+
+```css
+body {
+  background-color: #3a3240;
+  color: white;
+}
+main {
+  background-color: #92869c;
+  font-family: Lobster;
+  max-width: 500px;
+  margin: 20px auto;
+  color: black;
+  border-radius: 50px;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.5);
+}
+h2 {
+  text-align: center;
+  font-size: 20pt;
+  font-family: Pacifico;
+}
+body {
+  text-align: center;
+  font-size: 12pt;
+}
+footer {
+  text-align: center;
+  font-size: 10pt;
+}
+.border {
+  border-color: black;
+  border-width: 5px;
+  border-style: solid;
+}
+#image {
+  height: auto;
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  border-radius: 50%;
+}
+#img-caption {
+  font-size: 10pt;
+}
+a:not(#tribute-link) {
+  color: white;
+}
+hr {
+  border-color: black;
+}
 ```

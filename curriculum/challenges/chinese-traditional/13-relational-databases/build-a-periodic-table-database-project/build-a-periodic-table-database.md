@@ -1,6 +1,6 @@
 ---
 id: 602d9ff222201c65d2a019f2
-title: Build a Periodic Table Database
+title: 構建一個元素週期表數據庫
 challengeType: 13
 helpCategory: Backend Development
 url: https://github.com/freeCodeCamp/learn-periodic-table-database
@@ -9,15 +9,15 @@ dashedName: build-a-periodic-table-database
 
 # --description--
 
-This is one of the required projects to earn your certification. For this project, you will create Bash a script to get information about chemical elements from a periodic table database.
+這是你獲得認證的必做項目之一。 對於此項目，你將創建 Bash 腳本以從元素週期表數據庫中獲取有關化學元素的信息。
 
 # --instructions--
 
-**Important:** After you pass all the project tests, save a dump of your database into a `elements.sql` file, as well as your whole `periodic_table` folder, so you can complete step 2. There will be instructions how to do that within the virtual machine.
+**重要：**在你通過所有項目測試後，將你的數據庫存放到一個 `periodic_table.sql` 文件中，和你的 `element.sh` 文件，以便你完成步驟 2。 你將看到如何在虛擬機中完成這一點的提示。
 
 # --notes--
 
-Required files: `elements.sql`, and the whole `periodic_table` folder
+需要的文件：`periodic_table.sql`，`element.sh`
 
 # --hints--
 

@@ -16,7 +16,7 @@ dashedName: anonymous-message-board
 -   使用 [我們的 Replit 啓動項目](https://replit.com/github/freeCodeCamp/boilerplate-project-messageboard)來完成你的項目。
 -   使用一個你喜歡的站點生成器來完成項目。 需要確定包含了我們 GitHub 倉庫的所有文件。
 
-完成本項目後，請將一個正常運行的 demo（項目演示）託管在可以公開訪問的平臺。 然後將 URL 提交到 `Solution Link` 中。 此外，還可以將項目的源碼提交到 `GitHub Link` 中。
+完成本項目後，請將一個正常運行的 demo（項目演示）託管在可以公開訪問的平臺。 然後將 URL 提交到 `Solution Link` 中。 此外，還可以提交一個指向項目源碼的 `GitHub Link`。
 
 # --instructions--
 
@@ -116,49 +116,270 @@ async (getUserInput) => {
 你可以向 `/api/replies/{board}` 發送一個 POST 請求，其中包括字段 `text`、`delete_password` & `thread_id`。 這將更新 `bumped_on` 日期到評論日期。 在主題的 `replies` 數組中，將保存一個對象，至少有 `_id`、`text`、`created_on`、`delete_password`、& `reported` 這些屬性。
 
 ```js
+async (getUserInput) => {
+  const url = getUserInput('url');
+  const body = await fetch(url + '/api/threads/fcc_test');
+  const thread = await body.json();
 
+  const date = new Date();
+  const text = `fcc_test_reply_${date}`;
+  const delete_password = 'delete_me';
+  const thread_id = thread[0]._id;
+  const replyCount = thread[0].replies.length;
+
+  const data = { text, delete_password, thread_id };
+  const res = await fetch(url + '/api/replies/fcc_test', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+  if (res.ok) {
+    const checkData = await fetch(`${url}/api/replies/fcc_test?thread_id=${thread_id}`);
+    const parsed = await checkData.json();
+    try {
+      assert.equal(parsed.replies.length, replyCount + 1);
+      assert.equal(parsed.replies[0].text, text);
+      assert.equal(parsed._id, thread_id);
+      assert.equal(parsed.bumped_on, parsed.replies[0].created_on);
+    } catch (err) {
+      throw new Error(err.responseText || err.message);
+    }
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  }
+};
 ```
 
 你可以向 `/api/threads/{board}` 發送一個 GET 請求。 返回的將是一個數組，包括論壇上最近的 10 個被回覆的主題，及每個主題最新的 3 個回帖。 `reported` 和 `delete_password` 字段將不會被髮送到客戶端。
 
 ```js
+async (getUserInput) => {
+  const url = getUserInput('url');
+  const res = await fetch(url + '/api/threads/fcc_test');
 
+  if (res.ok) {
+    const threads = await res.json();
+    try {
+      assert.equal(res.status, 200);
+      assert.isAtMost(threads.length, 10);
+      for (let i = 0; i < threads.length; i++) {
+        assert.containsAllKeys(threads[i], ["_id", "text", "created_on", "bumped_on", "replies"]);
+        assert.isAtMost(threads[i].replies.length, 3);
+        assert.notExists(threads[i].delete_password);
+        assert.notExists(threads[i].reported);
+        for (let j = 0; j < threads[i].replies.length; j++) {
+          assert.notExists(threads[i].replies[j].delete_password);
+          assert.notExists(threads[i].replies[j].reported);
+        }
+      }
+    } catch (err) {
+      throw new Error(err.responseText || err.message);
+    }
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  }
+};
 ```
 
 你可以向 `/api/replies/{board}?thread_id={thread_id}` 發送一個 GET 請求。 返回的將是帶有所有的回覆的整個主題，不包括與之前測試相同的客戶端字段。
 
 ```js
+async (getUserInput) => {
+  const url = getUserInput('url');
+  let res = await fetch(url + '/api/threads/fcc_test');
+  const threads = await res.json();
+  const thread_id = threads[0]._id;
+  res = await fetch(`${url}/api/replies/fcc_test?thread_id=${thread_id}`);
 
+  if (res.ok) {
+    const thread = await res.json();
+    try {
+      assert.equal(res.status, 200);
+      assert.isObject(thread);
+      assert.containsAllKeys(thread, ["_id", "text", "created_on", "bumped_on", "replies"]);
+      assert.isArray(thread.replies);
+      assert.notExists(thread.delete_password);
+      assert.notExists(thread.reported);
+      for (let i = 0; i < thread.replies.length; i++) {
+        assert.notExists(thread.replies[i].delete_password);
+        assert.notExists(thread.replies[i].reported);
+      }
+    } catch (err) {
+      throw new Error(err.responseText || err.message);
+    }
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  }
+};
 ```
 
 你可以向 `/api/threads/{board}` 發送一個 DELETE 請求，並傳遞 `thread_id` & `delete_password` 來刪除該線程。 返回的將是字符串 `incorrect password` 或 `success`。
 
 ```js
+async (getUserInput) => {
+  const url = getUserInput('url');
+  let res = await fetch(url + '/api/threads/fcc_test');
+  const threads = await res.json();
+  const thread_id = threads[0]._id;
+  let data = { thread_id, delete_password: "wrong_password" };
+  const res_invalid = await fetch(url + '/api/threads/fcc_test', {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+  data = { thread_id, delete_password: "delete_me" };
+  res = await fetch(url + '/api/threads/fcc_test', {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
 
+  if (res.ok) {
+    const deleted = await res.text();
+    const not_deleted = await res_invalid.text();
+    try {
+      assert.equal(res.status, 200);
+      assert.equal(deleted, "success");
+      assert.equal(not_deleted, "incorrect password");
+    } catch (err) {
+      throw new Error(err.responseText || err.message);
+    }
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  }
+};
 ```
 
 你可以向 `/api/replies/{board}` 發送一個 DELETE 請求，並傳遞 `thread_id`、`reply_id`、& `delete_password`。 返回的將是字符串 `incorrect password` 或 `success`。 成功後，`reply_id` 的文本將更改爲 `[deleted]`。
 
 ```js
+async (getUserInput) => {
+  const url = getUserInput('url');
 
+  const thread_data = {
+    text: "fcc_test_thread",
+    delete_password: "delete_me",
+  };
+  await fetch(`${url}/api/threads/fcc_test`, {
+    method: "POST",
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(thread_data)
+  });
+  let res = await fetch(`${url}/api/threads/fcc_test`);
+  let threads = await res.json();
+  const thread_id = threads[0]._id;
+
+  const reply_data = { thread_id, text: "fcc_test_reply", delete_password: "delete_me" };
+  await fetch(`${url}/api/replies/fcc_test`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(reply_data)
+  });
+  res = await fetch(`${url}/api/threads/fcc_test`);
+  threads = await res.json();
+  const reply_id = threads[0].replies[0]._id;
+
+  const data = { thread_id, reply_id, delete_password: "delete_me" };
+  res = await fetch(url + '/api/replies/fcc_test', {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+
+  if (res.ok) {
+    const deleted = await res.text();
+    try {
+      assert.equal(res.status, 200);
+      assert.equal(deleted, "success");
+      res = await fetch(`${url}/api/replies/fcc_test?thread_id=${thread_id}`);
+      const thread = await res.json();
+      assert.equal(thread._id, thread_id);
+      assert.equal(thread.replies[0]._id, reply_id);
+      assert.equal(thread.replies[0].text, "[deleted]");
+    } catch (err) {
+      throw new Error(err.responseText || err.message);
+    }
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  }
+};
 ```
 
-你可以向 `/api/threads/{board}` 發送一個 PUT 請求，並傳遞 `thread_id`。 返回的將是字符串 `success`。 `thread_id` 回覆的 `reported` 值將改爲 `true`。
+你可以向 `/api/threads/{board}` 發送一個 PUT 請求，並傳遞 `thread_id`。 返回的將是字符串 `reported`。 `thread_id` 回覆的 `reported` 值將改爲 `true`。
 
 ```js
+async (getUserInput) => {
+  const url = getUserInput('url');
 
+  let res = await fetch(`${url}/api/threads/fcc_test`);
+  const threads = await res.json();
+  const report_id = threads[0]._id;
+  const data = { report_id };
+
+  res = await fetch(`${url}/api/threads/fcc_test`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+
+  if (res.ok) {
+    const reported = await res.text();
+    try {
+      assert.equal(res.status, 200);
+      assert.equal(reported, "reported");
+    } catch (err) {
+      throw new Error(err.responseText || err.message);
+    }
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  }
+};
 ```
 
-你可以通過向 `/api/replies/{board}` 發送 PUT 請求並傳遞 `thread_id` & `reply_id`。 返回的將是字符串 `success`。 `reply_id` 的 `reported` 值將被改變爲 `true`。
+你可以通過向 `/api/replies/{board}` 發送 PUT 請求並傳遞 `thread_id` & `reply_id`。 返回的將是字符串 `reported`。 `reply_id` 的 `reported` 值將被改變爲 `true`。
 
 ```js
+async (getUserInput) => {
+  const url = getUserInput('url');
 
+  let res = await fetch(`${url}/api/threads/fcc_test`);
+  const threads = await res.json();
+  const thread_id = threads[0]._id;
+  const reply_id = threads[0].replies[0]._id;
+  const data = { thread_id, reply_id };
+
+  res = await fetch(`${url}/api/replies/fcc_test`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+
+  if (res.ok) {
+    const reported = await res.text();
+    try {
+      assert.equal(res.status, 200);
+      assert.equal(reported, "reported");
+    } catch (err) {
+      throw new Error(err.responseText || err.message);
+    }
+  } else {
+    throw new Error(`${res.status} ${res.statusText}`);
+  }
+};
 ```
 
 所有 10 項功能測試都已完成並通過。
 
 ```js
-
+async (getUserInput) => {
+  const tests = await fetch(getUserInput('url') + '/_api/get-tests');
+  const parsed = await tests.json();
+  assert.isTrue(parsed.length >= 10);
+  parsed.forEach((test) => {
+    assert.equal(test.state, 'passed');
+    assert.isAtLeast(test.assertions.length, 1);
+  });
+};
 ```
 
 # --solutions--

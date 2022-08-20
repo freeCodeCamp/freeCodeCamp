@@ -15,11 +15,11 @@ dashedName: create-a-graphic-using-css
 
 为了创建一个圆形的对象，`border-radius` 应该被设置成 50%。
 
-你应该还记得之前关卡的 `box-shadow` 属性以及它的依次取值 `offset-x`、`offset-y`、`blur-radius`、`spread-radius` 和颜色值。 其中 `blur-radius` 和 `spread-radius` 是可选的。
+你应该还记得之前关卡的 `box-shadow` 属性以及它的依次取值 `offset-x`、`offset-y`、`blur-radius`、`spread-radius` 和 `color` 值。 其中 `blur-radius` 和 `spread-radius` 是可选的。
 
 # --instructions--
 
-把编辑器里的正方形元素变成新月形状。 首先，把 `background-color` 改为 `transparent`，接着把 `border-radius` 属性设置成 50%，以创建一个圆形。 最后，更改 `box-shadow` 属性，使其 `offset-x` 为 25px，`offset-y` 为 10px，`blur-radius` 为 0，`spread-radius` 为 0，颜色为 `blue`。
+把编辑器里的正方形元素变成新月形状。 首先，把 `background-color` 改为 `transparent`，接着把 `border-radius` 属性设置成 50%，以创建一个圆形。 最后，更改 `box-shadow` 属性，使其 `offset-x` 为 25px，`offset-y` 为 10px，`blur-radius` 为 0，`spread-radius` 为 0，`color` 为 `blue`。
 
 # --hints--
 
@@ -35,7 +35,7 @@ assert(code.match(/background-color:\s*?transparent;/gi));
 assert(code.match(/border-radius:\s*?50%;/gi));
 ```
 
-更改 `box-shadow` 属性，使其 `offset-x` 为 25px，`offset-y` 为 10px，`blur-radius` 为 0，`spread-radius` 为 0，颜色为 `blue`。
+更改 `box-shadow` 属性，使其 `offset-x` 为 25px，`offset-y` 为 10px，`blur-radius` 为 0，`spread-radius` 为 0，`color` 为 `blue`。
 
 ```js
 assert(

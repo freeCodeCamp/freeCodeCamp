@@ -8,13 +8,7 @@ dashedName: probability-calculator
 
 # --description--
 
-Lavorerari a [questo progetto con il nostro codice d'inizio su Replit](https://replit.com/github/freeCodeCamp/boilerplate-probability-calculator).
-
-Stiamo ancora sviluppando la parte didattica interattiva del curriculum di Python. Per ora, ecco alcuni video sul canale YouTube di freeCodeCamp.org che ti insegneranno tutto quello che devi sapere per completare questo progetto:
-
-- [Video corso Python for Everybody](https://www.freecodecamp.org/news/python-for-everybody/) (14 ore)
-
-- [Video corso Learn Python](https://www.freecodecamp.org/news/learn-python-video-course/) (10 ore)
+Lavorerai a <a href="https://replit.com/github/freeCodeCamp/boilerplate-probability-calculator" target="_blank" rel="noopener noreferrer nofollow">questo progetto con il nostro codice d'inizio su Replit</a>.
 
 # --instructions--
 
@@ -43,7 +37,7 @@ Successivamente, crea una funzione `experiment` in `prob_calculator.py` (non all
 
 La funzione `experiment` dovrebbe restituire una probabilità.
 
-Ad esempio, diciamo che si vuole determinare la probabilità di ottenere almeno 2 palline rosse e 1 pallina verde quando si pescano 5 palline da un cappello contenente 6 nere, 4 rosse e 3 verdi. Per farlo, eseguiamo `N` esperimenti, contiamo quante volte `M` riceviamo almeno 2 palline rosse e 1 pallina verde, e stimiamo la probabilità come `M/N`. Ogni esperimento consiste nell'iniziare con un cappello contenente le palline specificate, pascare un certo numero di palline, e controllare se abbiamo ottenuto le palline che stavamo tentando di pescare.
+Per esempio, se vuoi determinare la probabilità di ottenere almeno due palline rosse e una verde quando estrai cinque palline da un cappello contenente sei palline nere, quattro rosse, e tre verdi. Per fare ciò, esegui `N` esperimenti, conti il numero `M` di estrazioni in cui ottieni almeno due palline rosse e una verde, e stimi la probabilità come `M/N`. Ogni esperimento consiste nell'iniziare con un cappello che contiene le palle specificate, estraendo svariate palline, e controllando se hai ottenuto le palle che stati cercando di ottenere.
 
 Ecco come verrebbe chiamata la funzione `experiment` basata sull'esempio sopra con 2000 esperimenti:
 
@@ -67,11 +61,11 @@ Il codice iniziale include le istruzioni di `import` per i moduli `copy` e `rand
 
 ## Test
 
-I test unitari per questo progetto sono in `test_module.py`. Abbiamo impotato i test da `test_module.py` in `main.py` per la tua convenienza. I test eseguiranno automaticamente quando usi il bottone "run".
+I test unitari per questo progetto sono in `test_module.py`. Abbiamo importato i test da `test_module.py` in `main.py` per tua comodità. I test saranno eseguiti automaticamente quando usi il bottone "run".
 
 ## Invio
 
-Copia l'URL del tuo progetto e consegnalo nell'input qua sotto.
+Copia l'URL del tuo progetto e invialo a freeCodeCamp.
 
 # --hints--
 

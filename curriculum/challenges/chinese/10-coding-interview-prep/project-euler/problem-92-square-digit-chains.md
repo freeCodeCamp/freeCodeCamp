@@ -1,7 +1,7 @@
 ---
 id: 5900f3c81000cf542c50fedb
 title: '问题 92：平方数链'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302209
 dashedName: problem-92-square-digit-chains
 ---
@@ -12,7 +12,8 @@ dashedName: problem-92-square-digit-chains
 
 举个例子：
 
-$$\begin{align} & 44 → 32 → 13 → 10 → \boldsymbol{1} → \boldsymbol{1}\\\\ & 85 → \boldsymbol{89} → 145 → 42 → 20 → 4 → 16 → 37 → 58 → \boldsymbol{89}\\\\ \end{align}$$
+$$\begin{align}   & 44 → 32 → 13 → 10 → \boldsymbol{1} → \boldsymbol{1}\\\\
+  & 85 → \boldsymbol{89} → 145 → 42 → 20 → 4 → 16 → 37 → 58 → \boldsymbol{89}\\\\ \end{align}$$
 
 可以发现，每条到达 1 或 89 的数链都会陷入循环。 最令人惊讶的是，从任意数字开始，数链最终都会到达 1 或 89。
 

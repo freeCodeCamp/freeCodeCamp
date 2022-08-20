@@ -7,9 +7,9 @@ Nuestro contenido instructivo principal se encuentra dentro del directorio conve
 Hay algunos términos que utilizamos cuando hablamos del contenido de nuestro currículo.
 
 - `certification` : Cuando se hace referencia a una certificación en este caso, se está hablando del certificado real que los usuarios reclaman.  Que es independiente del nombre del súper bloque.
-- `superBlock` : Un súper bloque es la colección de desafíos del nivel superior. Cada súper bloque corresponde a una certificación en el currículo (p. ej. Diseño Web Responsivo).
-- `block` : Un bloque es una sección dentro de un súper bloque. Un bloque corresponde a un grupo de desafíos en una certificación determinada (p. ej. HTML básico y HTML5)
-- `challenge` : Un desafío es una sola lección dentro del currículo (p. ej. Di hola a los elementos HTML)
+- `superBlock` : Un súper bloque es la colección de desafíos del nivel superior. Each superblock corresponds to a certification in the curriculum (e.g. Responsive Web Design).
+- `block` : Un bloque es una sección dentro de un súper bloque. A block corresponds to a group of challenges in a given certification (e.g. Basic HTML and HTML5)
+- `challenge` : A challenge is a single lesson within the curriculum (e.g. Say Hello to HTML Elements)
 
 ## Árbol de archivos
 
@@ -103,4 +103,4 @@ Al renombras un solo archivo de desafío, tienes que:
 
 ## La propiedad `dashedName`
 
-The `dashedName` property is used to generate the URL path for the superblock, block, or challenge. These should generally match what the `/utils/slugs.js` helper would output for the file name.
+La propiedad `dashedName` se usa para generar la ruta URL para el súper bloque, el bloque o el desafío. Por lo general, estos deberían coincidir con los nombres que generaría el asistente `/utils/slugs.js` para el nombre del archivo.

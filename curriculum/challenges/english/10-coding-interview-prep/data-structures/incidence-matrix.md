@@ -18,7 +18,7 @@ Each column will represent a unique edge. Also, each edge connects two nodes. To
 
 <blockquote>    1<br>   ---<br>1 | 1<br>2 | 0<br>3 | 1</blockquote>
 
-Here is an example of an `incidence matrix` with 4 edges and 4 nodes. Remember, the columns are the edges and rows are the nodes themselves.
+Here is an example of an incidence matrix with 4 edges and 4 nodes. Remember, the columns are the edges and rows are the nodes themselves.
 
 <blockquote>    1 2 3 4<br>   --------<br>1 | 0 1 1 1<br>2 | 1 1 0 0<br>3 | 1 0 0 1<br>4 | 0 0 1 0</blockquote>
 

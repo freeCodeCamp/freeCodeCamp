@@ -27,13 +27,13 @@ body {
 
 # --hints--
 
-`body` 元素的背景顏色應爲黑色。
+`body` 元素的 `background-color` 應爲黑色。
 
 ```js
 assert($('body').css('background-color') === 'rgb(0, 0, 0)');
 ```
 
-應使用 `hex code` 來替換 `black`。
+應該使用黑色的十六進制代碼，而不是 `black` 這個詞。
 
 ```js
 assert(

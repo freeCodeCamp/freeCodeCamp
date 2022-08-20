@@ -1,7 +1,7 @@
 ---
 id: 5900f51f1000cf542c510031
 title: 'Problema 434: Grafos rígidos'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302105
 dashedName: problem-434-rigid-graphs
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5900f3f51000cf542c50ff08
 title: '問題 137：斐波那契金塊'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301765
 dashedName: problem-137-fibonacci-golden-nuggets
 ---
@@ -14,7 +14,8 @@ dashedName: problem-137-fibonacci-golden-nuggets
 
 令人驚訝的是：
 
-$$\begin{align} A_F(\frac{1}{2}) & = (\frac{1}{2}) × 1 + {(\frac{1}{2})}^2 × 1 + {(\frac{1}{2})}^3 × 2 + {(\frac{1}{2})}^4 × 3 + {(\frac{1}{2})}^5 × 5 + \cdots \\\\ & = \frac{1}{2} + \frac{1}{4} + \frac{2}{8} + \frac{3}{16} + \frac{5}{32} + \cdots \\\\ & = 2 \end{align}$$
+$$\begin{align} A_F(\frac{1}{2}) & = (\frac{1}{2}) × 1 + {(\frac{1}{2})}^2 × 1 + {(\frac{1}{2})}^3 × 2 + {(\frac{1}{2})}^4 × 3 + {(\frac{1}{2})}^5 × 5 + \cdots \\\\
+                 & = \frac{1}{2} + \frac{1}{4} + \frac{2}{8} + \frac{3}{16} + \frac{5}{32} + \cdots \\\\ & = 2 \end{align}$$
 
 前五個對應的自然數 $x$ 如下。
 

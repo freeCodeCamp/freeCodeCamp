@@ -31,7 +31,7 @@ assert(decAction().type === DECREMENT);
 Lo store Redux dovrebbe essere inizializzato con uno `state` di 0.
 
 ```js
-assert(store.getState() === 0);
+assert(_store.getState() === 0);
 ```
 
 Effettuare il dispatch di `incAction` nello store Redux dovrebbe aumentare lo `state` di 1.
@@ -39,9 +39,9 @@ Effettuare il dispatch di `incAction` nello store Redux dovrebbe aumentare lo `s
 ```js
 assert(
   (function () {
-    const initialState = store.getState();
-    store.dispatch(incAction());
-    const incState = store.getState();
+    const initialState = _store.getState();
+    _store.dispatch(incAction());
+    const incState = _store.getState();
     return initialState + 1 === incState;
   })()
 );
@@ -52,9 +52,9 @@ Effettuare il dispatch di `decAction` nello store Redux dovrebbe decrementare lo
 ```js
 assert(
   (function () {
-    const initialState = store.getState();
-    store.dispatch(decAction());
-    const decState = store.getState();
+    const initialState = _store.getState();
+    _store.dispatch(decAction());
+    const decState = _store.getState();
     return initialState - 1 === decState;
   })()
 );
@@ -81,6 +81,12 @@ const incAction = null; // Define an action creator for incrementing
 const decAction = null; // Define an action creator for decrementing
 
 const store = null; // Define the Redux store here, passing in your reducers
+```
+
+## --after-user-code--
+
+```js
+const _store = Redux.createStore(counterReducer)
 ```
 
 # --solutions--

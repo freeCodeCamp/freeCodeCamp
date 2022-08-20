@@ -38,18 +38,19 @@
 
 .footer-container .col-header {
   flex: 0 0 100%;
-  padding-bottom: 15px;
   font-weight: 700;
   font-size: 16px;
   text-align: center;
   padding: 0 15px 15px;
+  margin-bottom: 0;
+  font-family: Lato, sans-serif;
 }
 
 .footer-row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 0px;
+  margin: 0;
 }
 
 .footer-col {
@@ -69,7 +70,7 @@
 }
 
 .footer-col a {
-  padding: 5px 0px;
+  padding: 5px 0;
 }
 
 .footer-desc-col {
@@ -151,7 +152,7 @@ p.footer-donation a:hover {
     flex-direction: column;
   }
   .footer-right {
-    padding-left: 0px;
+    padding-left: 0;
   }
   .footer-container .col-spacer {
     margin-top: 40px;

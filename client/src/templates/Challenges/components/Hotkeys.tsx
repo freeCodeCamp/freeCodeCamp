@@ -3,29 +3,43 @@ import React from 'react';
 import { HotKeys, GlobalHotKeys } from 'react-hotkeys';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { ChallengeFiles, Test } from '../../../redux/prop-types';
+import { ChallengeFiles, Test, User } from '../../../redux/prop-types';
 
+import { userSelector } from '../../../redux';
 import {
   canFocusEditorSelector,
   setEditorFocusability,
   challengeFilesSelector,
   submitChallenge,
-  challengeTestsSelector
+  challengeTestsSelector,
+  openModal
 } from '../redux';
 import './hotkeys.css';
+import { isFinalProject } from '../../../../utils/challenge-types';
 
 const mapStateToProps = createSelector(
   canFocusEditorSelector,
   challengeFilesSelector,
   challengeTestsSelector,
-  (canFocusEditor: boolean, challengeFiles: ChallengeFiles, tests: Test[]) => ({
+  userSelector,
+  (
+    canFocusEditor: boolean,
+    challengeFiles: ChallengeFiles,
+    tests: Test[],
+    user: User
+  ) => ({
     canFocusEditor,
     challengeFiles,
-    tests
+    tests,
+    user
   })
 );
 
-const mapDispatchToProps = { setEditorFocusability, submitChallenge };
+const mapDispatchToProps = {
+  setEditorFocusability,
+  submitChallenge,
+  openShortcutsModal: () => openModal('shortcuts')
+};
 
 const keyMap = {
   navigationMode: 'escape',
@@ -33,12 +47,14 @@ const keyMap = {
   focusEditor: 'e',
   focusInstructionsPanel: 'r',
   navigatePrev: ['p'],
-  navigateNext: ['n']
+  navigateNext: ['n'],
+  showShortcuts: 'shift+/'
 };
 
 interface HotkeysProps {
   canFocusEditor: boolean;
   challengeFiles: ChallengeFiles;
+  challengeType?: number;
   children: React.ReactElement;
   editorRef?: React.RefObject<HTMLElement>;
   executeChallenge?: (options?: { showCompletionModal: boolean }) => void;
@@ -50,10 +66,13 @@ interface HotkeysProps {
   setEditorFocusability: (arg0: boolean) => void;
   tests: Test[];
   usesMultifileEditor?: boolean;
+  openShortcutsModal: () => void;
+  user: User;
 }
 
 function Hotkeys({
   canFocusEditor,
+  challengeType,
   children,
   instructionsPanelRef,
   editorRef,
@@ -64,7 +83,9 @@ function Hotkeys({
   setEditorFocusability,
   submitChallenge,
   tests,
-  usesMultifileEditor
+  usesMultifileEditor,
+  openShortcutsModal,
+  user: { keyboardShortcuts }
 }: HotkeysProps): JSX.Element {
   const handlers = {
     executeChallenge: (e: React.KeyboardEvent<HTMLButtonElement>) => {
@@ -78,7 +99,11 @@ function Hotkeys({
 
       const testsArePassing = tests.every(test => test.pass && !test.err);
 
-      if (usesMultifileEditor) {
+      if (
+        usesMultifileEditor &&
+        typeof challengeType == 'number' &&
+        !isFinalProject(challengeType)
+      ) {
         if (testsArePassing) {
           submitChallenge();
         } else {
@@ -88,24 +113,33 @@ function Hotkeys({
         executeChallenge({ showCompletionModal: true });
       }
     },
-    focusEditor: (e: React.KeyboardEvent) => {
-      e.preventDefault();
-      if (editorRef && editorRef.current) {
-        editorRef.current.focus();
-      }
-    },
-    focusInstructionsPanel: () => {
-      if (instructionsPanelRef && instructionsPanelRef.current) {
-        instructionsPanelRef.current.focus();
-      }
-    },
-    navigationMode: () => setEditorFocusability(false),
-    navigatePrev: () => {
-      if (!canFocusEditor) void navigate(prevChallengePath);
-    },
-    navigateNext: () => {
-      if (!canFocusEditor) void navigate(nextChallengePath);
-    }
+    ...(keyboardShortcuts
+      ? {
+          focusEditor: (e: React.KeyboardEvent) => {
+            e.preventDefault();
+            if (editorRef && editorRef.current) {
+              editorRef.current.focus();
+            }
+          },
+          focusInstructionsPanel: () => {
+            if (instructionsPanelRef && instructionsPanelRef.current) {
+              instructionsPanelRef.current.focus();
+            }
+          },
+          navigationMode: () => setEditorFocusability(false),
+          navigatePrev: () => {
+            if (!canFocusEditor) void navigate(prevChallengePath);
+          },
+          navigateNext: () => {
+            if (!canFocusEditor) void navigate(nextChallengePath);
+          },
+          showShortcuts: (e: React.KeyboardEvent) => {
+            if (!canFocusEditor && e.shiftKey && e.key === '?') {
+              openShortcutsModal();
+            }
+          }
+        }
+      : {})
   };
   // GlobalHotKeys is always mounted and tracks all keypresses. Without it,
   // keyup events can be missed and react-hotkeys assumes that that key is still

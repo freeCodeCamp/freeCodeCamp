@@ -21,32 +21,28 @@ FAV_PET = "Dogs";
 
 你應該始終使用 `const` 關鍵字命名不想重新分配的變量。 這有助於避免給一個常量進行額外的再次賦值。
 
-命名常量的常見做法是全部使用大寫字母，單詞之間用下劃線分隔。
-
-**注意：** 對於不可變值，開發人員通常使用大寫變量標識符，對可變值（對象和數組）使用小寫或駝峯式標識符。 你將在後面的挑戰中瞭解有關對象、數組以及不可變和可變值的更多信息。 同樣在後面的挑戰中，你將看到大寫、小寫或駝峯式變量標識符的示例。
+**注意：** 通常，開發者會用大寫字母作爲常量標識符，用小寫字母或者駝峯命名作爲變量（對象或數組）標識符。 你將在後面的挑戰中瞭解有關對象、數組以及不可變和可變值的更多信息。 同樣在後面的挑戰中，你將看到大寫、小寫或駝峯式變量標識符的示例。
 
 # --instructions--
 
-更改代碼，以便使用 `let` 或 `const` 聲明所有變量。 當你希望變量改變時使用 `let`，而當你希望變量保持不變時使用 `const`。 此外，重命名用 `const` 聲明的變量以符合常見做法，這意味着常量應該全部大寫。
+更改代碼，以便使用 `let` 或 `const` 聲明所有變量。 當你想要改變變量時使用 `let`，當你想要變量保持不變時使用 `const`。 此外，重命名使用 `const` 聲明的變量以符合慣例。
 
 # --hints--
 
-`var` 不應存在於你的代碼中。
+代碼中不應有 `var`。
 
 ```js
-(getUserInput) => assert(!getUserInput('index').match(/var/g));
+assert.notMatch(code, /var/g);
 ```
 
 你應該將 `fCC` 更改爲全部大寫。
 
 ```js
-(getUserInput) => {
-  assert(getUserInput('index').match(/(FCC)/));
-  assert(!getUserInput('index').match(/fCC/));
-}
+assert.match(code, /(FCC)/);
+assert.notMatch(code, /(fCC)/);
 ```
 
-`FCC` 應該是一個用 `const` 聲明的常量變量。
+`FCC` 應該是一個用 `const` 聲明的常量。
 
 ```js
 assert.equal(FCC, 'freeCodeCamp');
@@ -56,14 +52,13 @@ assert.match(code, /const\s+FCC/);
 `fact` 應該用 `let` 聲明。
 
 ```js
-(getUserInput) => assert(getUserInput('index').match(/(let fact)/g));
+assert.match(code, /(let\s+fact)/g);
 ```
 
 `console.log` 應該更改爲打印 `FCC` 和 `fact` 變量。
 
 ```js
-(getUserInput) =>
-  assert(getUserInput('index').match(/console\.log\(\s*FCC\s*\,\s*fact\s*\)\s*;?/g));
+assert.match(code, /console\.log\(\s*FCC\s*\,\s*fact\s*\)\s*;?/g);
 ```
 
 # --seed--

@@ -19,7 +19,7 @@ Ambos devuelven `true`.
 
 # --instructions--
 
-Termina de escribir la función para que devuelva "true" sólo si el objeto pasado contiene los cuatro nombres, `Alan`, `Jeff`, `Sarah` y `Ryan`, y devuelve false de lo contrario.
+Termina de escribir la función para que devuelva `true` si el objeto pasado contiene los cuatro nombres, `Alan`, `Jeff`, `Sarah` and `Ryan` y devuelva `false` en caso contrario.
 
 # --hints--
 

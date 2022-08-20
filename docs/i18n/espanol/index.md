@@ -2,11 +2,11 @@ La comunidad [freeCodeCamp.org](https://freecodecamp.org) es posible gracias a m
 
 > [!NOTE] Antes de continuar, por favor tómate 2 minutos para leer nuestro [Código de Conducta](https://www.freecodecamp.org/code-of-conduct). Lo hacemos cumplir estrictamente en toda nuestra comunidad para que contribuir a freeCodeCamp.org sea una experiencia segura e inclusiva para todos.
 
-You are welcome to create, update and fix bugs in our [curriculum](#curriculum), help us fix bugs in freeCodeCamp.org's [learning platform](#learning-platform), or [help us translate](#translations) freeCodeCamp.org to world languages.
+Te invitamos a crear, actualizar y corregir errores en nuestro [plan curricular](#curriculum), ayúdanos a corregir errores en  la [plataforma de aprendizaje](#learning-platform) de freeCodeCamp, o [ayúdanos a traducir](#translations) freeCodeCamp.org a deferentes idiomas.
 
-We answer the most common questions about contributing [in our contributor FAQ](FAQ.md).
+Respondemos a las preguntas más comunes sobre cómo contribuir [nuestras FAQ del colaborador](FAQ.md).
 
-Happy contributing.
+Feliz contribución.
 
 ---
 
@@ -20,9 +20,18 @@ Puedes ayudar a ampliar y mejorar el plan de estudios. También puedes actualiza
 
 ## Traducciones
 
-We are localizing freeCodeCamp.org to major world languages.
+Estamos localizando freeCodeCamp.org a los principales idiomas del mundo.
 
-Certifications are already live in some major world languages like [Chinese (中文)](https://chinese.freecodecamp.org/learn), [Spanish (Español)](https://www.freecodecamp.org/espanol/learn/), [Italian (Italiano)](https://www.freecodecamp.org/espanol/learn/), [Portuguese (Português)](https://www.freecodecamp.org/espanol/learn/). We encourage you to read the [announcement here](https://www.freecodecamp.org/news/world-language-translation-effort) and share it with your friends to get them excited about this.
+Certifications are already live in some major world languages like below:
+
+- [Chinese (中文)](https://chinese.freecodecamp.org/learn)
+- [Spanish (Español)](https://www.freecodecamp.org/espanol/learn)
+- [Italian (Italiano)](https://www.freecodecamp.org/italian/learn)
+- [Portuguese (Português)](https://www.freecodecamp.org/portuguese/learn)
+- [Ukrainian (Українська)](https://www.freecodecamp.org/ukrainian/learn)
+- [Japanese (日本語)](https://www.freecodecamp.org/japanese/learn)
+
+We encourage you to read the [announcement here](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) and share it with your friends to get them excited about this.
 
 **If you're interested in translating, here's [how to translate freeCodeCamp's resources](how-to-translate-files.md).**
 
@@ -32,12 +41,12 @@ Our learning platform runs on a modern JavaScript stack. It has various componen
 
 Broadly, we have a Node.js based API server, a set of React-based client applications, testing scripts to evaluate camper-submitted curriculum projects, and more. If you want to productively contribute to the learning platform, we recommend some familiarity with these tools.
 
-Si quieres ayudarnos a mejorar nuestro código base...
+If you want to help us improve our codebase...
 
-**puedes optar por utilizar Gitpod, una herramienta de desarrollo en línea que crea entornos listos para escribir código para freeCodeCamp directamente en el navegador.**
+**you can either use Gitpod, a free online dev environment that starts a ready-to-code dev environment for freeCodeCamp in your browser.**
 
-[![Abrir en Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-O puedes...
+Or you can...
 
-**[configurar freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md) en tu máquina. **
+**[Set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md) on your machine.**

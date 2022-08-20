@@ -1,7 +1,7 @@
 ---
 id: 5900f40c1000cf542c50ff1e
 title: 'Problema 159: Somas das raízes dos algarismos de fatorações'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301790
 dashedName: problem-159-digital-root-sums-of-factorisations
 ---
@@ -12,7 +12,10 @@ Um número composto pode ser fatorado de várias maneiras.
 
 Por exemplo, não incluindo a multiplicação por um, 24 podem ser fatorado de 7 formas distintas:
 
-$$\begin{align} & 24 = 2 \times 2 \times 2 \times 3\\\\ & 24 = 2 \times 3 \times 4  \\\\ & 24 = 2 \times 2 \times 6  \\\\ & 24 = 4 \times 6    \\\\ & 24 = 3 \times 8    \\\\ & 24 = 2 \times 12   \\\\ & 24 = 24 \end{align}$$
+$$\begin{align}   & 24 = 2 \times 2 \times 2 \times 3\\\\
+  & 24 = 2 \times 3 \times 4  \\\\   & 24 = 2 \times 2 \times 6  \\\\
+  & 24 = 4 \times 6    \\\\   & 24 = 3 \times 8    \\\\
+  & 24 = 2 \times 12   \\\\ & 24 = 24 \end{align}$$
 
 Lembre-se de que a raiz de algarismos de um número, na base 10, é encontrada adicionando os algarismos daquele número e repetindo esse processo até que um número chegue a menos de 10. Assim, a raiz dos algarismos de 467 é 8.
 

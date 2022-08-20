@@ -47,7 +47,7 @@ A interrupção de cor em 0 pixels deve ser `yellow`.
 assert(code.match(/yellow\s+?0(px)?/gi));
 ```
 
-A interrupção de cor em 40 pixels deve ser `yellow`.
+A primeira interrupção de cor em 40 pixels deve ser `yellow`.
 
 ```js
 assert(code.match(/yellow\s+?40px/gi));

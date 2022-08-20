@@ -193,57 +193,59 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
         <title>{i18nTitle} | freeCodeCamp.org</title>
       </Helmet>
       <Grid>
-        <Row className='super-block-intro-page'>
-          <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-            <Spacer size={2} />
-            <LegacyLinks superBlock={superBlock} />
-            <SuperBlockIntro superBlock={superBlock} />
-            <Spacer size={2} />
-            <h2 className='text-center big-subheading'>
-              {t(`intro:misc-text.courses`)}
-            </h2>
-            <Spacer />
-            <div className='block-ui'>
-              {defaultCurriculumNames.map(blockDashedName => (
-                <Fragment key={blockDashedName}>
-                  <Block
-                    blockDashedName={blockDashedName}
-                    challenges={nodesForSuperBlock.filter(
-                      node => node.challenge.block === blockDashedName
-                    )}
-                    superBlock={superBlock}
-                  />
-                </Fragment>
-              ))}
-              {superBlock !== SuperBlocks.CodingInterviewPrep && (
+        <main>
+          <Row className='super-block-intro-page'>
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              <Spacer size={2} />
+              <LegacyLinks superBlock={superBlock} />
+              <SuperBlockIntro superBlock={superBlock} />
+              <Spacer size={2} />
+              <h2 className='text-center big-subheading'>
+                {t(`intro:misc-text.courses`)}
+              </h2>
+              <Spacer />
+              <div className='block-ui'>
+                {defaultCurriculumNames.map(blockDashedName => (
+                  <Fragment key={blockDashedName}>
+                    <Block
+                      blockDashedName={blockDashedName}
+                      challenges={nodesForSuperBlock.filter(
+                        node => node.challenge.block === blockDashedName
+                      )}
+                      superBlock={superBlock}
+                    />
+                  </Fragment>
+                ))}
+                {superBlock !== SuperBlocks.CodingInterviewPrep && (
+                  <div>
+                    <CertChallenge
+                      certification={certification}
+                      superBlock={superBlock}
+                      title={title}
+                      user={user}
+                    />
+                  </div>
+                )}
+              </div>
+              {!isSignedIn && !signInLoading && (
                 <div>
-                  <CertChallenge
-                    certification={certification}
-                    superBlock={superBlock}
-                    title={title}
-                    user={user}
-                  />
+                  <Spacer size={2} />
+                  <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
                 </div>
               )}
-            </div>
-            {!isSignedIn && !signInLoading && (
-              <div>
-                <Spacer size={2} />
-                <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
-              </div>
-            )}
-            <Spacer size={2} />
-            <h3
-              className='text-center big-block-title'
-              style={{ whiteSpace: 'pre-line' }}
-            >
-              {t(`intro:misc-text.browse-other`)}
-            </h3>
-            <Spacer />
-            <Map currentSuperBlock={superBlock} />
-            <Spacer size={2} />
-          </Col>
-        </Row>
+              <Spacer size={2} />
+              <h3
+                className='text-center big-block-title'
+                style={{ whiteSpace: 'pre-line' }}
+              >
+                {t(`intro:misc-text.browse-other`)}
+              </h3>
+              <Spacer />
+              <Map currentSuperBlock={superBlock} />
+              <Spacer size={2} />
+            </Col>
+          </Row>
+        </main>
       </Grid>
       <DonateModal location={props.location} />
     </>

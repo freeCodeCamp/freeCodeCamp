@@ -17,7 +17,7 @@ dashedName: place-items-in-grid-areas-using-the-grid-area-property
 }
 ```
 
-這樣，class 爲 `item1` 的網格項就被放到了 `header` 區域裏。 在這個示例中，網格項將佔用第一行整行，因爲這一整行都被命名爲標題區域。
+這樣，class 爲 `item1` 的網格項就被放到了 `header` 區域裏。 在這種情況下，該項目將使用整個頂行，因爲該整行被命名爲 `header` 區域。
 
 # --instructions--
 

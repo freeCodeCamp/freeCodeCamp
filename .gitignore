@@ -165,6 +165,10 @@ config/curriculum.json
 config/i18n/all-langs.js
 config/certification-settings.js
 
+### Generated utils files ###
+utils/slugs.js
+utils/slugs.test.js
+utils/index.js
 
 ### vim ###
 # Swap
@@ -201,6 +205,8 @@ api-server/lib/*
 curriculum/dist
 curriculum/build
 client/static/_redirects
+client/static/mobile
+client/static/curriculum-data
 
 ### UI Components ###
 tools/ui-components/dist

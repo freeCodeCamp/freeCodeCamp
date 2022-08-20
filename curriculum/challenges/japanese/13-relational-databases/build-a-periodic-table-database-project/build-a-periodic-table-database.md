@@ -1,6 +1,6 @@
 ---
 id: 602d9ff222201c65d2a019f2
-title: Build a Periodic Table Database
+title: 周期表データベースを構築する
 challengeType: 13
 helpCategory: Backend Development
 url: https://github.com/freeCodeCamp/learn-periodic-table-database
@@ -9,15 +9,15 @@ dashedName: build-a-periodic-table-database
 
 # --description--
 
-This is one of the required projects to earn your certification. For this project, you will create Bash a script to get information about chemical elements from a periodic table database.
+これは認定証を獲得するために必須のプロジェクトの 1 つです。 このプロジェクトでは、周期表データベースから化学元素の情報を取得する、Bash スクリプトを作成します。
 
 # --instructions--
 
-**Important:** After you pass all the project tests, save a dump of your database into a `elements.sql` file, as well as your whole `periodic_table` folder, so you can complete step 2. There will be instructions how to do that within the virtual machine.
+**重要:** プロジェクトのテストすべてに合格した後に、データベースのダンプを `elements.sql` ファイルに保存し、あわせて `periodic_table` フォルダー全体も保存することで、ステップ 2 を完了できます。 仮想マシン内にその方法についての説明があります。
 
 # --notes--
 
-Required files: `elements.sql`, and the whole `periodic_table` folder
+必須のファイル: `elements.sql` と `periodic_table` フォルダー全体
 
 # --hints--
 

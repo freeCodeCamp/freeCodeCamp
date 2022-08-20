@@ -19,7 +19,7 @@ A função `cubic-bezier` consiste em quatro pontos principais que ficam nesta g
 animation-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);
 ```
 
-No exemplo acima, os valores de x e y são equivalentes para cada ponto (x1 = 0,25 = y1 e x2 = 0. 5 = y2), que se você se lembrar da aula de geometria, resulta em uma linha que estende da origem ao ponto (1, 1). Esta animação é uma mudança linear de um elemento durante a reprodução de uma animação, e é o mesmo que usar a palavra-chave `linear`. Em outras palavras, a animação acontece a uma velocidade constante.
+No exemplo acima, os valores de x e y são equivalentes para cada ponto (x1 = 0,25 = y1 e x2 = 0.75 = y2), que se você se lembrar da aula de geometria, resulta em uma linha que estende da origem ao ponto (1, 1). Esta animação é uma mudança linear de um elemento durante a reprodução de uma animação, e é o mesmo que usar a palavra-chave `linear`. Em outras palavras, a animação acontece a uma velocidade constante.
 
 # --instructions--
 

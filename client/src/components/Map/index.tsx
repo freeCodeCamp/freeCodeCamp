@@ -28,10 +28,10 @@ interface MapData {
 function createSuperBlockTitle(superBlock: SuperBlocks) {
   const superBlockTitle = i18next.t(`intro:${superBlock}.title`);
   return superBlock === 'coding-interview-prep'
-    ? i18next.t('learn.cert-map-estimates.coding-prep', {
+    ? superBlockTitle
+    : i18next.t('learn.cert-map-estimates.certs', {
         title: superBlockTitle
-      })
-    : i18next.t('learn.cert-map-estimates.certs', { title: superBlockTitle });
+      });
 }
 
 const linkSpacingStyle = {
@@ -166,12 +166,17 @@ export function Map({
   `);
 
   const nodes = data.allChallengeNode.nodes;
+  const temp = [
+    nodes[0],
+    nodes[12],
+    ...nodes.filter((_, i) => i !== 0 && i !== 12)
+  ];
 
   return (
     <div className='map-ui' data-test-label='learn-curriculum-map'>
       {forLanding
-        ? renderLandingMap(nodes)
-        : renderLearnMap(nodes, currentSuperBlock)}
+        ? renderLandingMap(temp)
+        : renderLearnMap(temp, currentSuperBlock)}
     </div>
   );
 }

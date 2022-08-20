@@ -8,7 +8,7 @@ dashedName: mutate-an-array-declared-with-const
 
 # --description--
 
-Якщо ви ще не знаєте про `const`, то перегляньте [це завдання](/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-a-read-only-variable-with-the-const-keyword).
+Якщо ви ще не знаєте про `const`, див. <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-a-read-only-variable-with-the-const-keyword" target="_blank" rel="noopener noreferrer nofollow">це завдання про ключове слово <code>const</code></a>.
 
 Є багато значень змінної `const` у сучасній JavaScript.
 
@@ -25,7 +25,7 @@ console.log(s);
 
 `s = [1, 2, 3]` призведе до помилки. Виклик `console.log` відображає `[5, 6, 45]`.
 
-Як ви помітили, можна змінювати об'єкт `[5, 6, 7]`. Змінна `s` все ще вказуватиме на змінений масив `[5, 6, 45]</code. Як і усі масиви, елементи масиву в <code>s` є незмінними, бо було використано `const`. Ви не можете використовувати ідентифікатор змінної `s`, щоб вказувати на інший масив оператору призначення.
+Як ви помітили, можна змінювати об'єкт `[5, 6, 7]`. Змінна `s` все ще вказуватиме на змінений масив `[5, 6, 45]`. Як і усі масиви, елементи масиву в `s` є незмінними, бо було використано `const`. Ви не можете використовувати ідентифікатор змінної `s`, щоб вказувати на інший масив оператору призначення.
 
 # --instructions--
 

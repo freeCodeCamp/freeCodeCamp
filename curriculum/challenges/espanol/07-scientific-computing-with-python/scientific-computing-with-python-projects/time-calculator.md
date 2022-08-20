@@ -1,6 +1,6 @@
 ---
 id: 5e444136903586ffb414c94d
-title: Time Calculator
+title: Calculadora de tiempo
 challengeType: 10
 forumTopicId: 462360
 dashedName: time-calculator
@@ -8,24 +8,61 @@ dashedName: time-calculator
 
 # --description--
 
-Write a function named "add_time" that can add a duration to a start time and return the result.
+Estarás [trabajando en este proyecto con nuestro código inicial de Replit](https://replit.com/github/freeCodeCamp/boilerplate-time-calculator).
 
-You can access [the full project description and starter code on Replit](https://replit.com/github/freeCodeCamp/boilerplate-time-calculator). After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
+# --instructions--
 
-We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
+Escribe una función llamada `add_time` que tome dos parámetros requeridos y un parámetro opcional:
 
-<ul>
-  <li>
-    <a href='https://www.freecodecamp.org/news/python-for-everybody/'>Python for Everybody Video Course</a> (14 hours)
-  </li>
-  <li>
-    <a href='https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/'>Learn Python Video Course</a> (2 hours)
-  </li>
-</ul>
+- Una hora de incio en el formato de reloj de 12 horas (terminando en AM o PM)
+- Una duración que indica el número de horas y minutos
+- (opcional) Un día de inicio de la semana, sin distinción de mayúsculas
+
+La función debe agregar la duración a la hora de inicio y devolver el resultado.
+
+Si el resultado es el día siguiente, debería mostrar `(next day)` después de la hora. Si el resultado es más de un día después, debería mostrar `(n days later)` después del tiempo, donde "n" es el número de días más tarde.
+
+Si a la función se le da el parámetro opcional de día de la semana, entonces la salida debe mostrar el día de la semana del resultado. El día de la semana en la salida debe aparecer después de la hora y antes del número de días después.
+
+A continuación se muestran algunos ejemplos de casos diferentes que la función debe manejar. Preste atención a los espacios y la puntuación de los resultados.
+
+```py
+add_time("3:00 PM", "3:10")
+# Returns: 6:10 PM
+
+add_time("11:30 AM", "2:32", "Monday")
+# Returns: 2:02 PM, Monday
+
+add_time("11:43 AM", "00:20")
+# Returns: 12:03 PM
+
+add_time("10:10 PM", "3:30")
+# Returns: 1:40 AM (next day)
+
+add_time("11:43 PM", "24:20", "tueSday")
+# Returns: 12:03 AM, Thursday (2 days later)
+
+add_time("6:30 PM", "205:12")
+# Returns: 7:42 AM (9 days later)
+```
+
+No importes ninguna librería Python. Asume que las horas de inicio son horas válidas. Los minutos en el tiempo de duración serán un número entero inferior a 60, pero la hora puede ser cualquier número entero.
+
+## Desarrollo
+
+Escribe tu código en `time_calculator.py`. Para el desarrollo, puedes usar `main.py` para probar tu función `time_calculator()`. Haz clic en el botón "run" y se ejecutará `main.py`.
+
+## Pruebas
+
+Las pruebas unitarias para este proyecto están en `test_module.py`. Importamos las pruebas de `test_module.py` a `main.py` para tu comodidad. Las pruebas se ejecutarán automáticamente cada vez que presiones el botón "run".
+
+## Envío
+
+Copia el URL de tu proyecto y envíalo a freeCodeCamp.
 
 # --hints--
 
-It should correctly add times and pass all tests.
+Debe calcular correctamente las probabilidades y pasar todas las pruebas.
 
 ```js
 

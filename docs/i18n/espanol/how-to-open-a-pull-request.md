@@ -14,7 +14,7 @@ Recomendamos usar [titulos y mensajes convencionales](https://www.conventionalco
 > 
 > `fix(learn): tests for the do...while loop challenge`
 
-Al abrir una Pull Request(PR), puedes utilizar la siguiente guía para determinar el tipo, ámbito (opcional) y descripción de la PR.
+Whenever you open a Pull Request(PR), you can use the below to determine the type, scope (optional), and description.
 
 **Tipo:**
 
@@ -31,20 +31,20 @@ Puede seleccionar un ámbito de [esta lista de etiquetas](https://github.com/fre
 
 **Descripción:**
 
-Mantenlo corto (menos de 30 caracteres) y sencillo, puedes agregar más información en la caja de descripción del PR y comentarios.
+Keep it short (less than 30 characters) and simple; you can add more information in the PR description box and comments.
 
-Some examples of good PR titles would be:
+Algunos ejemplos de buenos títulos de PR serían:
 
 - `fix(a11y): contraste mejorado en la barra de búsqueda`
 - `feat: se agregan más test a los retos de HTML y CSS`
 - `fix(api,client): evitar errores CORS en el envío de formularios`
-- `docs(i18n): Traducción al chino de la configuración local`
+- `docs(i18n): fix links to be relative instead of absolute`
 
 ## Proponer una Pull Request
 
 1. Una vez que las ediciones hayan sido confirmadas, se le pedirá que cree un pull request en la página de GitHub de su fork.
 
-   ![Image - Compare & pull request prompt on GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
+   ![magen - Compare & pull request prompt en GitHub](https://contribute.freecodecamp.org/images/github/compare-pull-request-prompt.png)
 
 2. De manera predeterminada, todas las pull requests deben estar en contra de la rama freeCodeCamp main repo, `main`.
 
@@ -54,7 +54,7 @@ Some examples of good PR titles would be:
 
 3. Envía el pull request de tu rama a la rama `main` de freeCodeCamp.
 
-4. En el cuerpo de sus relaciones públicas incluya un resumen más detallado de los cambios realizados y por qué.
+4. Include a more detailed summary of the changes you made and how your changes are helpful in the body of your PR.
 
    - Se le presentará una plantilla de pull request. Esta es una lista de verificación que debería haber seguido antes de abrir la solicitud de pull request.
 
@@ -72,11 +72,11 @@ Some examples of good PR titles would be:
 
 ## Comentarios sobre pull requests
 
-> :tada: Congratulations on making a PR and thanks a lot for taking the time to contribute.
+> :tada: Enhorabuena por hacer una PR y muchas gracias por tomarse el tiempo para contribuir.
 
 Nuestros moderadores ahora echarán un vistazo y te dejarán tus comentarios. Por favor, sea paciente con los demás moderadores y respete su tiempo. Todos los pull requests son revisados a su debido tiempo.
 
-Y como siempre, siéntete libre de preguntar en la [categoría de 'Contribuidores' de nuestro foro](https://forum.freecodecamp.org/c/contributors) o [en la sala de chat de contribuidores](https://chat.freecodecamp.org/channel/contributors).
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
 
 > [!TIP] Si vas a contribuir con más PRs, te recomendamos que leas las directrices ["haciendo cambios y sincronizando"](how-to-setup-freecodecamp-locally.md#making-changes-locally) para evitar la necesidad de borrar tu bifurcación.
 

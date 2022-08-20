@@ -1,7 +1,7 @@
 ---
 id: 5900f5461000cf542c510058
 title: 'Problem 473: Phigital number base'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302150
 dashedName: problem-473-phigital-number-base
 ---
@@ -22,7 +22,7 @@ $2 = \varphi + \varphi^{-2}$ and $3 = \varphi^{2} + \varphi^{-2}$
 
 To represent this sum of powers of $\varphi$ we use a string of 0's and 1's with a point to indicate where the negative exponents start. We call this the representation in the phigital numberbase.
 
-So $1 = 1_{\varphi}$, $2 = 10.01_{\varphi}$, $3 = 100.01_{\varphi}$ and $14 = 100100.001001_{\varphi}$. The strings representing 1, 2 and 14 in the phigital number base are palindromic, while the string representing 3 is not. (the phigital point is not the middle character).
+So $1 = 1_{\varphi}$, $2 = 10.01_{\varphi}$, $3 = 100.01_{\varphi}$ and $14 = 100100.001001_{\varphi}$. The strings representing 1, 2 and 14 in the phigital number base are palindromic, while the string representing 3 is not (the phigital point is not the middle character).
 
 The sum of the positive integers not exceeding 1000 whose phigital representation is palindromic is 4345.
 

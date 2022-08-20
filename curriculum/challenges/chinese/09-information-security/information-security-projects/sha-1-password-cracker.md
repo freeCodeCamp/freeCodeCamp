@@ -9,22 +9,51 @@ dashedName: sha-1-password-cracker
 
 # --description--
 
+你将通过使用我们的 [Replit 入门代码](https://replit.com/github/freeCodeCamp/boilerplate-SHA-1-password-cracker) 来完成本项目。
+
+我们仍在开发 Python 课程的交互式教学部分。 目前，你可以在 YouTube 上通过 freeCodeCamp.org 上传的一些视频学习这个项目相关的知识。
+
+- [Python for Everybody 视频课程](https://www.freecodecamp.org/news/python-for-everybody/)（14 小时）
+
+- [Learn Python 视频课程](https://www.freecodecamp.org/news/learn-python-video-course/)（10 小时）
+
+# --instructions--
+
+密码不应以纯文本形式存储。 它们应该存储为哈希值，以防万一密码列表被泄露。 然而，并不是所有的哈希都是一样的。
+
 在这个项目中，你将通过创建一个密码破解器来找出使用 SHA-1 散列的密码，从而了解到良好安全的重要性。
 
-你可以访问 [Replit 上的完整项目描述和启动代码](https://replit.com/github/freeCodeCamp/boilerplate-SHA-1-password-cracker)。
+创建一个函数，该函数接受密码的 SHA-1 哈希值，如果它是使用的前 10,000 个密码之一，则返回该密码。 如果 SHA-1 哈希不是数据库中的密码，则返回“密码不在数据库中”。
 
-进入该链接后，fork 该项目。 一旦你根据 “README.md” 中的说明完成了项目，请在下面提交你的项目链接。
+该函数应该对 `top-10000-passwords.txt` 中的每个密码进行散列，并将其与传递给函数的散列进行比较。
 
-我们仍在开发 Python 课程的交互式教学部分。 目前，freeCodeCamp.org YouTube 频道上的一些视频可以教你这个项目所需的一些 Python 技能。
+该函数应采用名为 `use_salts` 的可选第二个参数。 如果设置为 true，则文件 `known-salts.txt` 中的每个 salt 字符串，都应该在散列之前，和将它与传递给函数的哈希值进行比较之前，添加到 `top-10000-passwords.txt` 中的每个密码的之前和之后。
 
-<ul>
-  <li>
-    <a href='https://www.freecodecamp.org/news/python-for-everybody/'>Python for Everybody 视频课程</a>（14 小时）
-  </li>
-  <li>
-    <a href='https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/'>Learn Python 视频课程</a>（2 小时）
-  </li>
-</ul>
+以下是一些用于测试该功能的散列密码：
+
+- `b305921a3723cd5d70a375cd21a61e60aabb84ec` 应该返回 “sammy123”
+- `c7ab388a5ebefbf4d550652f1eb4d833e5316e3e` 应该返回 “abacab”
+- `5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8` 应该返回 “password”
+
+以下是一些散列密码，用于在 `use_salts` 设置为 `True` 时测试该功能：
+
+- `53d8b3dc9d39f0184144674e310185e41a87ffd5` 应该返回 “superman”
+- `da5a4e8cf89539e66097acd2f8af128acae2f8ae` 应该返回 “q1w2e3r4t5”
+- `ea3f62d498e3b98557f9f9cd0d905028b3b019e1` 应该返回 “bubbles1”
+
+`hashlib` 库已经为你导入。 你应该在你的代码中使用它。 [在此了解更多关于 “hashlib” 的信息](https://docs.python.org/3/library/hashlib.html)
+
+## 开发
+
+在 `password_cracker.py` 中编写你的代码。 对于开发，你可以使用 `main.py` 来测试你的代码。 单击“运行”按钮，`main.py` 将运行。
+
+## 测试
+
+此项目的单元测试在 `test_module.py` 中。 为了你的方便，我们将测试从 `test_module.py` 导入到 `main.py`。 只要你点击“运行”按钮，测试就会自动运行。
+
+## 提交
+
+复制项目的 URL 并将其提交给 freeCodeCamp。
 
 # --hints--
 

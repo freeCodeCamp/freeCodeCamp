@@ -24,7 +24,7 @@ Não se esqueça de escrever seu código para levar em conta as colisões!
 
 # --hints--
 
-A estrutura de dados HashTable deve existir.
+A estrutura de dados `HashTable` deve existir.
 
 ```js
 assert(
@@ -38,7 +38,7 @@ assert(
 );
 ```
 
-A HashTable deve ter um método add.
+`HashTable` deve ter o método `add`.
 
 ```js
 assert(
@@ -52,7 +52,7 @@ assert(
 );
 ```
 
-A HashTable deve ter um método lookup.
+`HashTable` deve ter o método `lookup`.
 
 ```js
 assert(
@@ -66,7 +66,7 @@ assert(
 );
 ```
 
-A HashTable deve ter um método remove.
+`HashTable` deve ter o método `remove`.
 
 ```js
 assert(
@@ -80,7 +80,7 @@ assert(
 );
 ```
 
-O método add deve adicionar pares chave-valor e o método lookup deve retornar os valores associados a uma determinada chave.
+O método `add` deve adicionar pares chave-valor e o método `lookup` deve retornar os valores associados a uma determinada chave.
 
 ```js
 assert(
@@ -95,7 +95,7 @@ assert(
 );
 ```
 
-O método remove deve aceitar uma chave como entrada e deve remover o par chave-valor associado.
+O método `remove` deve aceitar uma chave como entrada e deve remover o par chave-valor associado.
 
 ```js
 assert(
@@ -113,7 +113,7 @@ assert(
 );
 ```
 
-O método remove só deve remover o par chave-valor correto.
+O método `remove` só deve remover o par chave-valor correto.
 
 ```js
 assert(

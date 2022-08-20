@@ -1,7 +1,7 @@
 ---
 id: 5900f46d1000cf542c50ff7f
 title: 'Problema 255: Raízes quadradas arredondadas'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301903
 dashedName: problem-255-rounded-square-roots
 ---
@@ -28,7 +28,8 @@ Como exemplo, vamos encontrar a raiz quadrada arredondada de $n = 4321$.
 
 $n$ tem 4 algarismos, então $x_0 = 7 × {10}^{\frac{4-2}{2}} = 70$.
 
-$$x_1 = \left\lfloor\frac{70 + \left\lceil\frac{4321}{70}\right\rceil}{2}\right\rfloor = 66 \\\\ x_2 = \left\lfloor\frac{66 + \left\lceil\frac{4321}{66}\right\rceil}{2}\right\rfloor = 66$$
+$$x_1 = \left\lfloor\frac{70 + \left\lceil\frac{4321}{70}\right\rceil}{2}\right\rfloor = 66 \\\\
+x_2 = \left\lfloor\frac{66 + \left\lceil\frac{4321}{66}\right\rceil}{2}\right\rfloor = 66$$
 
 Como $x_2 = x_1$, paramos aqui. Então, depois de apenas duas iterações, descobrimos que a raiz arredondada de 4321 é 66 (a raiz quadrada real é 65.7343137…).
 

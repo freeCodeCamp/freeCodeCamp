@@ -11,7 +11,7 @@ dashedName: use-a-bezier-curve-to-move-a-graphic
 
 Un desafío anterior discutió la palabra clave `ease-out` que describe un cambio de animación que se acelera primero y luego se ralentiza al final de la animación. A la derecha, se muestra la diferencia entre la palabra clave `ease-out` (para el elemento azul) y la palabra clave `linear` (para el elemento rojo). Se pueden lograr progresiones de animación similares a la palabra clave `ease-out` utilizando una función de curva Bezier cúbica personalizada.
 
-En general, el cambio de los puntos de anclaje `p1` y `p2` impulsa la creación de diferentes curvas Bezier, que controlan como la animación progresa a través del tiempo. Aquí hay un ejemplo de una curva de Bezier que usa valores para imitar el estilo de facilidad:
+En general, el cambio de los puntos de anclaje `p1` y `p2` impulsa la creación de diferentes curvas Bezier, que controlan como la animación progresa a través del tiempo. Aquí tienes un ejemplo de una curva Bezier usando valores para imitar el estilo de `ease-out`:
 
 ```css
 animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
@@ -21,7 +21,7 @@ Recuerda que todas las funciones `cubic-bezier` comienzan con `p0` en (0, 0) y t
 
 # --instructions--
 
-Para ver el efecto de esta curva Bezier en acción, cambia la `animation-timing-function` del elemento con id de `red` a una función `cubic-bezier` con valores x1, y1, x2, y2 establecidos respectivamente en 0, 0, 0.58, 1. Esto hará que ambos elementos progresen a través de la animación de manera similar.
+Para ver el efecto de esta curva de Bézier en acción, cambia el `animation-timing-function` del elemento con el id `red` a una función `cubic-bezier` con x1, y1, x2, y2 establecidos respectivamente como los valores `0, 0, 0.58, 1`. Esto hará que ambos elementos progresen a través de la animación de manera similar.
 
 # --hints--
 

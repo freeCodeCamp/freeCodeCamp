@@ -29,7 +29,7 @@ dashedName: use-abbreviated-hex-code
 assert($('.red-text').css('color') === 'rgb(255, 0, 0)');
 ```
 
-赤を指定するために、16 進数コード `#FF0000` の代わりに短縮形の `hex code` を使用してください。
+赤を指定するために、16 進数コード `#FF0000` の代わりに短縮形の 16 進数コードを使用してください。
 
 ```js
 assert(code.match(/\.red-text\s*?{\s*?color\s*:\s*?#F00\s*?;?\s*?}/gi));
@@ -41,7 +41,7 @@ assert(code.match(/\.red-text\s*?{\s*?color\s*:\s*?#F00\s*?;?\s*?}/gi));
 assert($('.green-text').css('color') === 'rgb(0, 255, 0)');
 ```
 
-緑を指定するために、16 進数コード `#00FF00` の代わりに短縮形の `hex code` を使用してください。
+緑を指定するために、16 進数コード `#00FF00` の代わりに短縮形の 16 進数コードを使用してください。
 
 ```js
 assert(code.match(/\.green-text\s*?{\s*?color\s*:\s*?#0F0\s*?;?\s*?}/gi));
@@ -53,7 +53,7 @@ assert(code.match(/\.green-text\s*?{\s*?color\s*:\s*?#0F0\s*?;?\s*?}/gi));
 assert($('.cyan-text').css('color') === 'rgb(0, 255, 255)');
 ```
 
-シアンを指定するために、16 進数コード `#00FFFF` の代わりに短縮形の `hex code` を使用してください。
+シアンを指定するために、16 進数コード `#00FFFF` の代わりに短縮形の 16 進数コードを使用してください。
 
 ```js
 assert(code.match(/\.cyan-text\s*?{\s*?color\s*:\s*?#0FF\s*?;?\s*?}/gi));
@@ -65,7 +65,7 @@ assert(code.match(/\.cyan-text\s*?{\s*?color\s*:\s*?#0FF\s*?;?\s*?}/gi));
 assert($('.fuchsia-text').css('color') === 'rgb(255, 0, 255)');
 ```
 
-フューシャを指定するために、16 進数コード `#FF00FF` の代わりに短縮形の `hex code` を使用してください。
+フューシャを指定するために、16 進数コード `#FF00FF` の代わりに短縮形の 16 進数コードを使用してください。
 
 ```js
 assert(code.match(/\.fuchsia-text\s*?{\s*?color\s*:\s*?#F0F\s*?;?\s*?}/gi));

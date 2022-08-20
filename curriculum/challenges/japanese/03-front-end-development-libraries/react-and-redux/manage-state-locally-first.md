@@ -39,15 +39,13 @@ assert(
 `DisplayMessages` コンポーネントで、`h2` 要素、`button` 要素、 `ul` 要素、および `li` 要素を子として含む `div` をレンダーします。
 
 ```js
-async () => {
+() => {
   const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages));
-  const waitForIt = (fn) =>
-    new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100));
   const state = () => {
     mockedComponent.setState({ messages: ['__TEST__MESSAGE'] });
-    return waitForIt(() => mockedComponent);
+    return mockedComponent;
   };
-  const updated = await state();
+  const updated = state();
   assert(
     updated.find('div').length === 1 &&
       updated.find('h2').length === 1 &&
@@ -67,18 +65,16 @@ assert(code.match(/this\.state\.messages\.map/g));
 `input` 要素で、ローカルの state にある `input` の値をレンダーします。
 
 ```js
-async () => {
+() => {
   const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages));
-  const waitForIt = (fn) =>
-    new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100));
   const causeChange = (c, v) =>
     c.find('input').simulate('change', { target: { value: v } });
   const testValue = '__TEST__EVENT__INPUT';
   const changed = () => {
     causeChange(mockedComponent, testValue);
-    return waitForIt(() => mockedComponent);
+    return mockedComponent;
   };
-  const updated = await changed();
+  const updated = changed();
   assert(updated.find('input').props().value === testValue);
 };
 ```
@@ -86,19 +82,17 @@ async () => {
 メソッド `handleChange` の呼び出しで、`input` の値を現在の入力に更新します。
 
 ```js
-async () => {
+() => {
   const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages));
-  const waitForIt = (fn) =>
-    new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100));
   const causeChange = (c, v) =>
     c.find('input').simulate('change', { target: { value: v } });
   const initialState = mockedComponent.state();
   const testMessage = '__TEST__EVENT__MESSAGE__';
   const changed = () => {
     causeChange(mockedComponent, testMessage);
-    return waitForIt(() => mockedComponent);
+    return mockedComponent;
   };
-  const afterInput = await changed();
+  const afterInput = changed();
   assert(
     initialState.input === '' &&
       afterInput.state().input === '__TEST__EVENT__MESSAGE__'
@@ -109,36 +103,34 @@ async () => {
 `Add message` ボタンのクリックで、メソッド `submitMessage` を呼び出します。このメソッドは、現在の `input` を state 内の `messages` 配列に追加します。
 
 ```js
-async () => {
+() => {
   const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages));
-  const waitForIt = (fn) =>
-    new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100));
   const causeChange = (c, v) =>
     c.find('input').simulate('change', { target: { value: v } });
   const initialState = mockedComponent.state();
   const testMessage_1 = '__FIRST__MESSAGE__';
   const firstChange = () => {
     causeChange(mockedComponent, testMessage_1);
-    return waitForIt(() => mockedComponent);
+    return mockedComponent;
   };
-  const firstResult = await firstChange();
+  const firstResult = firstChange();
   const firstSubmit = () => {
     mockedComponent.find('button').simulate('click');
-    return waitForIt(() => mockedComponent);
+    return mockedComponent;
   };
-  const afterSubmit_1 = await firstSubmit();
+  const afterSubmit_1 = firstSubmit();
   const submitState_1 = afterSubmit_1.state();
   const testMessage_2 = '__SECOND__MESSAGE__';
   const secondChange = () => {
     causeChange(mockedComponent, testMessage_2);
-    return waitForIt(() => mockedComponent);
+    return mockedComponent;
   };
-  const secondResult = await secondChange();
+  const secondResult = secondChange();
   const secondSubmit = () => {
     mockedComponent.find('button').simulate('click');
-    return waitForIt(() => mockedComponent);
+    return mockedComponent;
   };
-  const afterSubmit_2 = await secondSubmit();
+  const afterSubmit_2 = secondSubmit();
   const submitState_2 = afterSubmit_2.state();
   assert(
     initialState.messages.length === 0 &&
@@ -152,25 +144,23 @@ async () => {
 `submitMessage` メソッドで、現在の入力をクリアします。
 
 ```js
-async () => {
+() => {
   const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages));
-  const waitForIt = (fn) =>
-    new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100));
   const causeChange = (c, v) =>
     c.find('input').simulate('change', { target: { value: v } });
   const initialState = mockedComponent.state();
   const testMessage = '__FIRST__MESSAGE__';
   const firstChange = () => {
     causeChange(mockedComponent, testMessage);
-    return waitForIt(() => mockedComponent);
+    return mockedComponent;
   };
-  const firstResult = await firstChange();
+  const firstResult = firstChange();
   const firstState = firstResult.state();
   const firstSubmit = () => {
     mockedComponent.find('button').simulate('click');
-    return waitForIt(() => mockedComponent);
+    return mockedComponent;
   };
-  const afterSubmit = await firstSubmit();
+  const afterSubmit = firstSubmit();
   const submitState = afterSubmit.state();
   assert(firstState.input === testMessage && submitState.input === '');
 };

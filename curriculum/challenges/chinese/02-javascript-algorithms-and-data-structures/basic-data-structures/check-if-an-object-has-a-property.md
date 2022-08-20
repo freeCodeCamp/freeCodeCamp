@@ -19,7 +19,7 @@ users.hasOwnProperty('Alan');
 
 # --instructions--
 
-请完善这个函数，如果传递给它的对象包含四个名字 `Alan`、`Jeff`、`Sarah` 和 `Ryan`，函数返回 true，否则返回 false。
+请完善这个函数，如果传递给它的对象包含四个名字 `Alan`、`Jeff`、`Sarah` 和 `Ryan`，函数返回 `true`，否则返回 `false`。
 
 # --hints--
 

@@ -1,6 +1,6 @@
 ---
 id: 5e46f7e5ac417301a38fb928
-title: Mean-Variance-Standard Deviation Calculator
+title: Calculadora de varianza, desviación media, y estándar
 challengeType: 10
 forumTopicId: 462366
 dashedName: mean-variance-standard-deviation-calculator
@@ -8,17 +8,64 @@ dashedName: mean-variance-standard-deviation-calculator
 
 # --description--
 
-Create a function that uses Numpy to output the mean, variance, and standard deviation of the rows, columns, and elements in a 3 x 3 matrix.
+Estarás [trabajando en este proyecto con nuestro código inicial en Replit](https://replit.com/github/freeCodeCamp/boilerplate-mean-variance-standard-deviation-calculator).
 
-You can access [the full project description and starter code on Replit](https://replit.com/github/freeCodeCamp/boilerplate-mean-variance-standard-deviation-calculator).
+Todavía estamos desarrollando la parte interactiva del currículo de Python. Por ahora, aquí hay algunos videos en el canal de YouTube de freeCodeCamp.org que te enseñaran todo lo que necesitas saber para completar este proyecto:
 
-After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
+- [Python para todo el mundo Curso en Video](https://www.freecodecamp.org/news/python-for-everybody/) (14 horas)
+- [Aprende el Video Curso de Python](https://www.freecodecamp.org/news/learn-python-video-course/) (10 horas)
 
-We are still developing the interactive instructional part of the data analysis with Python curriculum. For now, you will have to use other resources to learn how to pass this challenge.
+# --instructions--
+
+Crea una función llamada `calculate()` en `mean_var_std.py` que usa Numpy para producir la media, varianza, desviación estándar, max, min, y suma de las filas, columnas y elementos en una matriz de 3 x 3.
+
+La entrada de la función debe ser una lista que contenga 9 dígitos. La función debe convertir la lista en una matriz numérica de 3 x 3, y luego devolver un diccionario que contenga la media, varianza, desviación estándar, max, min, y suma a lo largo de ambos ejes y para la matriz aplanada.
+
+El diccionario retornado debería seguir este formato:
+
+```py
+{
+  'mean': [axis1, axis2, flattened],
+  'variance': [axis1, axis2, flattened],
+  'standard deviation': [axis1, axis2, flattened],
+  'max': [axis1, axis2, flattened],
+  'min': [axis1, axis2, flattened],
+  'sum': [axis1, axis2, flattened]
+}
+```
+
+Si una lista que contiene menos de 9 elementos es pasada a la función, debería levantar una excepción de `ValueError` con el mensaje: "La lista debe contener nueve números". Los valores en el diccionario devuelto deben ser listas y no matrices Numpy.
+
+Por ejemplo, `calculate([0,1,2,3,4,5,6,7,8])` debe regresar:
+
+```py
+{
+  'mean': [[3.0, 4.0, 5.0], [1.0, 4.0, 7.0], 4.0],
+  'variance': [[6.0, 6.0, 6.0], [0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 6.666666666666667],
+  'standard deviation': [[2.449489742783178, 2.449489742783178, 2.449489742783178], [0.816496580927726, 0.816496580927726, 0.816496580927726], 2.581988897471611],
+  'max': [[6, 7, 8], [2, 5, 8], 8],
+  'min': [[0, 1, 2], [0, 3, 6], 0],
+  'sum': [[9, 12, 15], [3, 12, 21], 36]
+}
+```
+
+Las pruebas unitarias para este proyecto están en `test_module.py`.
+
+## Desarrollo
+
+Durante el desarrollo, puede usar `main.py` para probar su función `calculate()`. Haz clic en el botón "run" y se ejecutará `main.py`.
+
+## Pruebas
+
+Hemos importado las pruebas de `test_module.py` a `main.py` para tu conveniencia. Las pruebas se ejecutarán automáticamente cada vez que pulses el botón "run".
+
+## Envío
+
+Copia el enlace de tu proyecto y envíalo a freeCodeCamp.
 
 # --hints--
 
-It should pass all Python tests.
+Debería pasar todas las pruebas de Python.
 
 ```js
 

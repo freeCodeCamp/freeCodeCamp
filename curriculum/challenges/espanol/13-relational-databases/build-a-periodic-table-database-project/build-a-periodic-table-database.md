@@ -1,6 +1,6 @@
 ---
 id: 602d9ff222201c65d2a019f2
-title: Build a Periodic Table Database
+title: Construir una base de datos de tabla periodica
 challengeType: 13
 helpCategory: Backend Development
 url: https://github.com/freeCodeCamp/learn-periodic-table-database
@@ -9,15 +9,15 @@ dashedName: build-a-periodic-table-database
 
 # --description--
 
-This is one of the required projects to earn your certification. For this project, you will create Bash a script to get information about chemical elements from a periodic table database.
+Este es uno de los proyectos necesarios para obtener su certificación. Para este proyecto, creará Bash un script para obtener información sobre elementos químicos de una base de datos de tabla periódica.
 
 # --instructions--
 
-**Important:** After you pass all the project tests, save a dump of your database into a `elements.sql` file, as well as your whole `periodic_table` folder, so you can complete step 2. There will be instructions how to do that within the virtual machine.
+**Importante:** Después de pasar todas las pruebas del proyecto, guarde un volcado de su base de datos en un archivo `periodic_table.sql`, así como su archivo `element.sh`, para que pueda completar el paso 2. Habrá instrucciones sobre cómo hacer eso dentro de la máquina virtual.
 
 # --notes--
 
-Required files: `elements.sql`, and the whole `periodic_table` folder
+Archivos requeridos: `periodic_table.sql`, `element.sh`
 
 # --hints--
 

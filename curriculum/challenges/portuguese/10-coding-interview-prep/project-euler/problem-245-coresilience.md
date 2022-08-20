@@ -1,7 +1,7 @@
 ---
 id: 5900f4621000cf542c50ff74
 title: 'Problema 245: Corresiliência'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301892
 dashedName: problem-245-coresilience
 ---

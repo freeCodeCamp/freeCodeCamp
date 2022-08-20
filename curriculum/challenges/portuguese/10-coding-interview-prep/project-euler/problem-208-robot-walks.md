@@ -1,7 +1,7 @@
 ---
 id: 5900f43f1000cf542c50ff51
 title: 'Problema 208: Caminhadas robóticas'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301849
 dashedName: problem-208-robot-walks
 ---

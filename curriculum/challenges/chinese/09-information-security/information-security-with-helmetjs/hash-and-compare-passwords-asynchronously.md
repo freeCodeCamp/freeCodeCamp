@@ -20,7 +20,7 @@ bcrypt.hash(myPlaintextPassword, saltRounds, (err, hash) => {
 
 # --instructions--
 
-把这段哈希方法添加到你的服务器（我们已经定义好这个方法的变量给你直接使用了），然后你可以尝试在控制台输出。 之后，我们通常需要把哈希的结果保存到数据库。
+将该哈希函数添加到你的服务器上（我们已经定义了函数中使用的变量），并将其记录到控制台以便你查看！ 之后，我们通常需要把哈希的结果保存到数据库。
 
 当你需要对比用户输入的值是否和之前哈希过的值一样的时候，只需要调用对比函数：
 
@@ -30,7 +30,7 @@ bcrypt.compare(myPlaintextPassword, hash, (err, res) => {
 });
 ```
 
-当控制台输出生成的哈希并在对比的回调中输出结果后，我们就可以将其添加到现有的哈希函数中。 控制台中会首先输出一个哈希结果，然后输出 true。 如果将比较函数中的 “myPlaintextPassword” 更改为 “someOtherPlaintextPassword”，则比较的结果应显示 false。
+在你记录完成的哈希，并在比较中把 'res' 记录到控制台后，将此添加到你现有的哈希函数中（因为你需要等待哈希完成后再调用比较函数）。 控制台中会首先输出一个哈希结果，然后输出 true。 如果将比较函数中的 “myPlaintextPassword” 更改为 “someOtherPlaintextPassword”，则比较的结果应显示 false。
 
 ```js
 bcrypt.hash('passw0rd!', 13, (err, hash) => {

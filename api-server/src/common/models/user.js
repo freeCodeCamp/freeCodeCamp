@@ -994,6 +994,20 @@ export default function initializeUser(User) {
       return user.completedChallenges;
     });
   };
+  User.prototype.getSavedChallenges$ = function getSavedChallenges$() {
+    if (Array.isArray(this.savedChallenges) && this.savedChallenges.length) {
+      return Observable.of(this.savedChallenges);
+    }
+    const id = this.getId();
+    const filter = {
+      where: { id },
+      fields: { savedChallenges: true }
+    };
+    return this.constructor.findOne$(filter).map(user => {
+      this.savedChallenges = user.savedChallenges;
+      return user.savedChallenges;
+    });
+  };
 
   User.prototype.getPartiallyCompletedChallenges$ =
     function getPartiallyCompletedChallenges$() {

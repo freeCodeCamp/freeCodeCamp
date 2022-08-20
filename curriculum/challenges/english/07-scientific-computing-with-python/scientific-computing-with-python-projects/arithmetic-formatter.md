@@ -8,12 +8,7 @@ dashedName: arithmetic-formatter
 
 # --description--
 
-You will be [working on this project with our Replit starter code](https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter).
-
-We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
-
-- [Python for Everybody Video Course](https://www.freecodecamp.org/news/python-for-everybody/) (14 hours)
-- [Learn Python Video Course](https://www.freecodecamp.org/news/learn-python-video-course/) (10 hours)
+You will be <a href="https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter" target="_blank" rel="noopener noreferrer nofollow"> working on this project with our Replit starter code</a>.
 
 # --instructions--
 
@@ -73,7 +68,7 @@ The function will return the correct conversion if the supplied problems are pro
   - Each operand (aka number on each side of the operator) has a max of four digits in width. Otherwise, the error string returned will be:
     `Error: Numbers cannot be more than four digits.`
 - If the user supplied the correct format of problems, the conversion you return will follow these rules:
-  - There should be a single space between the operator and the longest of the two operands, the operator will be on the same line as the second operand, both operands will be in the same order as provided (the first will be the top one and the second will be the bottom.
+  - There should be a single space between the operator and the longest of the two operands, the operator will be on the same line as the second operand, both operands will be in the same order as provided (the first will be the top one and the second will be the bottom).
   - Numbers should be right-aligned.
   - There should be four spaces between each problem.
   - There should be dashes at the bottom of each problem. The dashes should run along the entire length of each problem individually. (The example above shows what this should look like.)

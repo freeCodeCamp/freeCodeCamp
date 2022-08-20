@@ -1,7 +1,7 @@
 ---
 id: a97fd23d9b809dac9921074f
 title: 可选参数
-challengeType: 5
+challengeType: 1
 forumTopicId: 14271
 dashedName: arguments-optional
 ---
@@ -58,6 +58,18 @@ assert.isUndefined(addTogether(2, '3'));
 
 ```js
 assert.isUndefined(addTogether(2)([3]));
+```
+
+`addTogether("2", 3)` 应该返回 `undefined`。
+
+```js
+assert.isUndefined(addTogether('2', 3));
+```
+
+`addTogether(5, undefined)` 应该返回 `undefined`。
+
+```js
+assert.isUndefined(addTogether(5, undefined));
 ```
 
 # --seed--

@@ -11,7 +11,7 @@ dashedName: change-a-variable-for-a-specific-area
 
 Quando crei le tue variabili in `:root` questo imposterà il loro valore per l'intera pagina.
 
-È quindi possibile sovrascrivere queste variabili impostandole di nuovo all'interno di un elemento specifico.
+È quindi possibile sovrascrivere queste variabili impostandole nuovamente all'interno di un selettore specifico.
 
 # --instructions--
 
@@ -27,7 +27,7 @@ assert(
 );
 ```
 
-La classe `penguin` non dovrebbe contenere la proprietà `background-color`
+La classe `penguin` non dovrebbe contenere la proprietà `background-color`.
 
 ```js
 assert(

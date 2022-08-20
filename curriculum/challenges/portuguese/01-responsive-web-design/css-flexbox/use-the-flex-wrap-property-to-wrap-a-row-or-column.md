@@ -9,7 +9,7 @@ dashedName: use-the-flex-wrap-property-to-wrap-a-row-or-column
 
 # --description--
 
-O CSS flexbox possui uma propriedade que permite dividir um flex container em várias linhas (ou colunas). Por padrão, um flex container manterá todos os flex items juntos. Por exemplo, todos os flex items estarão lado a lado na mesma linha.
+O CSS flexbox possui uma propriedade que permite dividir um contêiner flex em várias linhas (ou colunas). Por padrão, um flex container manterá todos os flex items juntos. Por exemplo, todos os flex items estarão lado a lado na mesma linha.
 
 No entanto, ao usar a propriedade `flex-wrap`, informamos ao CSS para quebrar essa linha. Isso significa que os itens adicionais serão movidos para uma nova linha ou coluna. O ponto onde essa quebra acontece depende do tamanho dos itens e do tamanho do flex conteiner.
 

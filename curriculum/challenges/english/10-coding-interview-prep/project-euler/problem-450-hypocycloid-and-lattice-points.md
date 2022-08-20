@@ -1,7 +1,7 @@
 ---
 id: 5900f52e1000cf542c510041
 title: 'Problem 450: Hypocycloid and Lattice points'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302123
 dashedName: problem-450-hypocycloid-and-lattice-points
 ---
@@ -30,7 +30,7 @@ $$\begin{align}
                   &(68, -504),(-1356, 1088), (-1356, -1088), (-1500, 1000), (-1500, -1000)\\}
 \end{align}$$
 
-**Note:** (-625, 0) is not an element of $C(2500, 1000)$ because $\sin(t)$ is not a rational number for the corresponding values of t.
+**Note:** (-625, 0) is not an element of $C(2500, 1000)$ because $\sin(t)$ is not a rational number for the corresponding values of $t$.
 
 $S(3, 1) = (|3| + |0|) + (|-1| + |2|) + (|-1| + |0|) + (|-1| + |-2|) = 10$
 

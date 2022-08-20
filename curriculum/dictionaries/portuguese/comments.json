@@ -53,7 +53,7 @@
   "iuccln": "Gera um array preenchido aleatoriamente",
   "bm2mop": "Obtém as abas após a aba",
   "kchz5k": "Obtém as abas antes da aba",
-  "bfd23c": "Dada uma função (representando o tipo de chá) e o número de xícaras necessárias, a função\na seguir retorna um array de strings (cada uma representa uma xícara de\nde um tipo específico de chá).",
+  "bfd23c": "Dada uma função (representando o tipo de chá) e o número de xícaras necessárias, a função\na seguir retorna um array de strings (cada uma representa uma xícara de um tipo específico de chá).",
   "ead98i": "Variável global de contagem:",
   "7zf0i2": "Junte-as",
   "5j2l88": "Vamos criar três janelas no navegador",
@@ -106,5 +106,7 @@
   "es69h6": "Quando você junta duas janelas em apenas uma",
   "fho5t5": "Quando você abre uma nova aba no final",
   "00kcrm": "retorna verdadeiro",
-  "sxpg2a": "Sua caixa de correio, unidade e outros locais de trabalho"
+  "sxpg2a": "Sua caixa de correio, unidade e outros locais de trabalho",
+  "4143lf": "inicializar botões",
+  "4143lg": "TODO: Adicionar link para as fotos de gatos"
 }

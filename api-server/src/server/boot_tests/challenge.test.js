@@ -1,4 +1,4 @@
-import { first, find } from 'lodash';
+import { find } from 'lodash';
 
 import {
   buildUserUpdate,
@@ -17,6 +17,7 @@ import {
   mockUser,
   mockGetFirstChallenge,
   mockCompletedChallenge,
+  mockCompletedChallengeNoFiles,
   mockCompletedChallenges
 } from './fixtures';
 
@@ -47,7 +48,7 @@ describe('boot/challenge', () => {
         mockCompletedChallenge,
         'UTC'
       );
-      expect(result).toHaveProperty('updateData.$set.completedChallenges');
+      expect(result).toHaveProperty('updateData.$push.completedChallenges');
     });
 
     // eslint-disable-next-line max-len
@@ -64,11 +65,9 @@ describe('boot/challenge', () => {
         completedChallenge,
         'UTC'
       );
-      const firstCompletedChallenge = first(
-        result.updateData.$set.completedChallenges
-      );
+      const newCompletedChallenge = result.updateData.$push.completedChallenges;
 
-      expect(firstCompletedChallenge).toEqual(completedChallenge);
+      expect(newCompletedChallenge).toEqual(completedChallenge);
     });
 
     it('preserves the original completed date of a challenge', () => {
@@ -89,11 +88,12 @@ describe('boot/challenge', () => {
         'UTC'
       );
 
-      const firstCompletedChallenge = first(
-        result.updateData.$set.completedChallenges
-      );
+      const updatedCompletedChallenge =
+        result.updateData.$set['completedChallenges.2'];
 
-      expect(firstCompletedChallenge.completedDate).toEqual(originalCompletion);
+      expect(updatedCompletedChallenge.completedDate).toEqual(
+        originalCompletion
+      );
     });
 
     // eslint-disable-next-line max-len
@@ -129,40 +129,19 @@ describe('boot/challenge', () => {
       expect(updateData.$push).toHaveProperty('progressTimestamps');
     });
 
-    it('removes repeat completions from the completedChallenges array', () => {
-      const completedChallengeId = 'aaa48de84e1ecc7c742e1124';
-      const completedChallenge = {
-        ...mockCompletedChallenge,
-        completedDate: Date.now(),
-        id: completedChallengeId
-      };
+    it('will $push newly completed challenges to the completedChallenges array', () => {
       const {
         updateData: {
-          $set: { completedChallenges }
+          $push: { completedChallenges }
         }
       } = buildUserUpdate(
         mockUser,
-        completedChallengeId,
-        completedChallenge,
+        '123abc',
+        mockCompletedChallengeNoFiles,
         'UTC'
       );
 
-      expect(completedChallenges.length).toEqual(
-        mockCompletedChallenges.length
-      );
-    });
-
-    // eslint-disable-next-line max-len
-    it('adds newly completed challenges to the completedChallenges array', () => {
-      const {
-        updateData: {
-          $set: { completedChallenges }
-        }
-      } = buildUserUpdate(mockUser, '123abc', mockCompletedChallenge, 'UTC');
-
-      expect(completedChallenges.length).toEqual(
-        mockCompletedChallenges.length + 1
-      );
+      expect(completedChallenges).toEqual(mockCompletedChallengeNoFiles);
     });
   });
 

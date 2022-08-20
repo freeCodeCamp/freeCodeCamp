@@ -23,7 +23,7 @@ myTest();
 console.log(loc);
 ```
 
-`myTest()` 函數調用將在控制檯中顯示字符串 `foo`。 `console.log(loc)` 行會產生一個錯誤，因爲 `loc` 沒有定義在函數之外。
+`myTest()` 函數調用將在控制檯中顯示字符串 `foo`。 `console.log(loc)` 行（在 `myTest` 函數之外）將拋出錯誤，因爲 `loc` 未在函數之外定義。
 
 # --instructions--
 

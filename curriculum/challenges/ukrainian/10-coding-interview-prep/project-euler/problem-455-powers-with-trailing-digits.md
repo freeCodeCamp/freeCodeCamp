@@ -1,7 +1,7 @@
 ---
 id: 5900f5331000cf542c510046
 title: 'Завдання 455: Степені з кінцевими цифрами'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302129
 dashedName: problem-455-powers-with-trailing-digits
 ---
@@ -12,7 +12,9 @@ dashedName: problem-455-powers-with-trailing-digits
 
 Наприклад:
 
-$$\begin{align} & f(4) = 411\\,728\\,896 (4^{411\\,728\\,896} = . ..490\underline{411728896}) \\\\ & f(10) = 0 \\\\ & f(157) = 743\\,757 (157^{743\\,757} = ...567\underline{000743757}) \\\\ & Σf(n), 2 ≤ n ≤ 103 = 442\\,530\\,011\\,399 \end{align}$$
+$$\begin{align} & f(4) = 411\\,728\\,896 (4^{411\\,728\\,896} = . ..490\underline{411728896}) \\\\
+  & f(10) = 0 \\\\   & f(157) = 743\\,757 (157^{743\\,757} = ...567\underline{000743757}) \\\\
+  & Σf(n), 2 ≤ n ≤ 103 = 442\\,530\\,011\\,399 \end{align}$$
 
 Знайдіть $\sum f(n)$, $2 ≤ n ≤ {10}^6$.
 

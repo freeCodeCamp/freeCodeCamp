@@ -263,47 +263,51 @@ function populateTestsForLang({ lang, challenges, meta }) {
   const challengeTitles = new ChallengeTitles();
   const validateChallenge = challengeSchemaValidator();
 
-  describe('Assert meta order', function () {
-    /** This array can be used to skip a superblock - we'll use this
-     * when we are working on the new project-based curriculum for
-     * a superblock (because keeping those challenges in order is
-     * tricky and needs cleaning up before deploying).
-     */
-    const superBlocksUnderDevelopment = ['responsive-web-design'];
-    const superBlocks = new Set([
-      ...Object.values(meta)
-        .map(el => el.superBlock)
-        .filter(el => !superBlocksUnderDevelopment.includes(el))
-    ]);
-    superBlocks.forEach(superBlock => {
-      const filteredMeta = Object.values(meta)
-        .filter(el => el.superBlock === superBlock)
-        .sort((a, b) => a.order - b.order);
-      if (!filteredMeta.length) {
-        return;
-      }
-      it(`${superBlock} should have the same order in every meta`, function () {
-        const firstOrder = getSuperOrder(filteredMeta[0].superBlock, {
-          showNewCurriculum: process.env.SHOW_NEW_CURRICULUM
+  if (!process.env.npm_config_block) {
+    describe('Assert meta order', function () {
+      /** This array can be used to skip a superblock - we'll use this
+       * when we are working on the new project-based curriculum for
+       * a superblock (because keeping those challenges in order is
+       * tricky and needs cleaning up before deploying).
+       */
+      const superBlocksUnderDevelopment = [
+        '2022/javascript-algorithms-and-data-structures'
+      ];
+      const superBlocks = new Set([
+        ...Object.values(meta)
+          .map(el => el.superBlock)
+          .filter(el => !superBlocksUnderDevelopment.includes(el))
+      ]);
+      superBlocks.forEach(superBlock => {
+        const filteredMeta = Object.values(meta)
+          .filter(el => el.superBlock === superBlock)
+          .sort((a, b) => a.order - b.order);
+        if (!filteredMeta.length) {
+          return;
+        }
+        it(`${superBlock} should have the same order in every meta`, function () {
+          const firstOrder = getSuperOrder(filteredMeta[0].superBlock, {
+            showNewCurriculum: process.env.SHOW_NEW_CURRICULUM
+          });
+          assert.isNumber(firstOrder);
+          assert.isTrue(
+            filteredMeta.every(
+              el =>
+                getSuperOrder(el.superBlock, {
+                  showNewCurriculum: process.env.SHOW_NEW_CURRICULUM
+                }) === firstOrder
+            ),
+            'The superOrder properties are mismatched.'
+          );
         });
-        assert.isNumber(firstOrder);
-        assert.isTrue(
-          filteredMeta.every(
-            el =>
-              getSuperOrder(el.superBlock, {
-                showNewCurriculum: process.env.SHOW_NEW_CURRICULUM
-              }) === firstOrder
-          ),
-          'The superOrder properties are mismatched.'
-        );
-      });
-      filteredMeta.forEach((meta, index) => {
-        it(`${meta.superBlock} ${meta.name} must be in order`, function () {
-          assert.equal(meta.order, index);
+        filteredMeta.forEach((meta, index) => {
+          it(`${meta.superBlock} ${meta.name} must be in order`, function () {
+            assert.equal(meta.order, index);
+          });
         });
       });
     });
-  });
+  }
 
   describe(`Check challenges (${lang})`, function () {
     this.timeout(5000);
@@ -317,13 +321,13 @@ function populateTestsForLang({ lang, challenges, meta }) {
           // Note: the title in meta.json are purely for human readability and
           // do not include translations, so we do not validate against them.
           it('Matches an ID in meta.json', function () {
-            const index = meta[dashedBlockName].challengeOrder.findIndex(
+            const index = meta[dashedBlockName]?.challengeOrder?.findIndex(
               arr => arr[0] === challenge.id
             );
 
             if (index < 0) {
               throw new AssertionError(
-                `Cannot find ID "${challenge.id}" in meta.json file`
+                `Cannot find ID "${challenge.id}" in meta.json file for block "${dashedBlockName}"`
               );
             }
           });
@@ -370,11 +374,14 @@ function populateTestsForLang({ lang, challenges, meta }) {
             //   currently have the text of a comment elsewhere. If that happens
             //   we can handle that challenge separately.
             TRANSLATABLE_COMMENTS.forEach(comment => {
+              const errorText = `English comment '${comment}' should be replaced with its translation`;
               challenge.challengeFiles.forEach(challengeFile => {
                 if (challengeFile.contents.includes(comment))
-                  throw Error(
-                    `English comment '${comment}' should be replaced with its translation`
-                  );
+                  if (process.env.SHOW_UPCOMING_CHANGES == 'true') {
+                    console.warn(errorText);
+                  } else {
+                    throw Error(errorText);
+                  }
               });
             });
 
@@ -414,7 +421,10 @@ function populateTestsForLang({ lang, challenges, meta }) {
               if (isEmpty(challenge.__commentCounts) && isEmpty(commentMap))
                 return;
 
-              if (!isEqual(commentMap, challenge.__commentCounts))
+              if (
+                process.env.SHOW_NEW_CURRICULUM !== 'true' &&
+                !isEqual(commentMap, challenge.__commentCounts)
+              )
                 throw Error(`Mismatch in ${challenge.title}. Replaced comments:
 ${inspect(challenge.__commentCounts)}
 Comments in translated text:
@@ -427,7 +437,7 @@ ${inspect(commentMap)}
           if (
             challengeType !== challengeTypes.html &&
             challengeType !== challengeTypes.js &&
-            challengeType !== challengeTypes.bonfire &&
+            challengeType !== challengeTypes.jsProject &&
             challengeType !== challengeTypes.modern &&
             challengeType !== challengeTypes.backend
           ) {
@@ -456,7 +466,7 @@ ${inspect(commentMap)}
 
           const buildChallenge =
             challengeType === challengeTypes.js ||
-            challengeType === challengeTypes.bonfire
+            challengeType === challengeTypes.jsProject
               ? buildJSChallenge
               : buildDOMChallenge;
 

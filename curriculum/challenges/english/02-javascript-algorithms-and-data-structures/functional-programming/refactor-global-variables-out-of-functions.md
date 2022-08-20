@@ -28,6 +28,7 @@ Rewrite the code so the global array `bookList` is not changed inside either fun
 
 ```js
 add(bookList, "Test");
+remove(bookList, "The Hound of the Baskervilles");
 assert(
   JSON.stringify(bookList) ===
     JSON.stringify([

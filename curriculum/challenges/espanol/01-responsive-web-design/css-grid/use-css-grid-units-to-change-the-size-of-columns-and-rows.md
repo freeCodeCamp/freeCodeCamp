@@ -31,7 +31,7 @@ Haz una cuadrícula con tres columnas que tengan las siguientes dimensiones de a
 
 # --hints--
 
-La clase `container` debe tener una propiedad `grid-template-columns` que tenga tres columnas con los siguientes anchos: `1fr, 100px, and 2fr`.
+Tu clase `container` debe tener una propiedad `grid-template-columns` que tenga tres columnas con los siguientes anchos: `1fr`, `100px`, y `2fr`.
 
 ```js
 assert(

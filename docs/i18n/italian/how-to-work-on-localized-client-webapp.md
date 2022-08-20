@@ -40,20 +40,20 @@ La maggior parte dei file per tradurre la piattaforma si trovano nella cartella 
   │   │   ├── translations.json
   │   │   └── trending.json
   ... ...
-  │   ├── english
-  │   │   ├── intro.json
-  │   │   ├── links.json
-  │   │   ├── meta-tags.json
-  │   │   ├── motivation.json
-  │   │   ├── translations.json
-  │   │   └── trending.json
-  │   └── espanol
-  │       ├── intro.json
-  │       ├── links.json
-  │       ├── meta-tags.json
-  │       ├── motivation.json
-  │       ├── translations.json
-  │       └── trending.json
+  │   ├── english
+  │   │   ├── intro.json
+  │   │   ├── links.json
+  │   │   ├── meta-tags.json
+  │   │   ├── motivation.json
+  │   │   ├── translations.json
+  │   │   └── trending.json
+  │   └── espanol
+  │       ├── intro.json
+  │       ├── links.json
+  │       ├── meta-tags.json
+  │       ├── motivation.json
+  │       ├── translations.json
+  │       └── trending.json
   ├── locales.test.js
   ├── schema-validation.js
   └── validate-keys.ts
@@ -77,7 +77,7 @@ Alcuni di questi file sono tradotti sulla nostra piattaforma di traduzione (Crow
 
 - Il file `meta-tags.json` contiene le informazioni per il meta tag del nostro sito.
 
-  I cambiamenti su questi file sono tipicamente fatti dallo staff. Se vedi qualcosa fuori dall'ordinario, ti raccomandiamo di metterti in contatto con noi sulla [chat dei contributori](https://chat.freecodecamp.org/channel/contributors).
+  I cambiamenti su questi file sono tipicamente fatti dallo staff. Se vedi qualcosa fuori dall'ordinario, ti raccomandiamo di metterti in contatto con noi sulla [chat dei contributori](https://discord.gg/PRyKn3Vbay).
 
 ## Testare la app client in una lingua internazionale
 

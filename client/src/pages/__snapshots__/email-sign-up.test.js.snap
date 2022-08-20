@@ -119,16 +119,8 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
       />
     </div>
     <div
-      className="col-md-4 col-md-offset-2 col-sm-5 col-sm-offset-1 col-xs-12"
+      className="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12"
     >
-      <button
-        className="big-cta-btn btn btn-lg btn-primary btn-block"
-        disabled={false}
-        onClick={[Function]}
-        type="button"
-      >
-        buttons.yes-please
-      </button>
       <div
         className="button-spacer"
         style={
@@ -137,18 +129,14 @@ exports[`<EmailSignUp /> Non-Authenticated user "not accepted terms and conditio
           }
         }
       />
-    </div>
-    <div
-      className="col-md-4 col-sm-5 col-xs-12"
-    >
-      <button
+      <a
         className="big-cta-btn btn btn-lg btn-primary btn-block"
-        disabled={false}
+        href="http://localhost:3000/signin"
         onClick={[Function]}
-        type="button"
+        onKeyDown={[Function]}
       >
-        buttons.no-thanks
-      </button>
+        buttons.sign-up-email-list
+      </a>
       <div
         className="button-spacer"
         style={

@@ -1,7 +1,7 @@
 ---
 id: 5900f48f1000cf542c50ffa1
 title: 'Problema 290: Assinatura digital'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301942
 dashedName: problem-290-digital-signature
 ---

@@ -27,7 +27,7 @@ class="class1 class2"
 
 **Note:** It doesn't matter which order the classes are listed in the HTML element.
 
-However, the order of the `class` declarations in the `<style>` section is what is important. The second declaration will always take precedence over the first. Because `.blue-text` is declared second, it overrides the attributes of `.pink-text`
+However, the order of the `class` declarations in the `<style>` section is what is important. The second declaration will always take precedence over the first. Because `.blue-text` is declared second, it overrides the attributes of `.pink-text`.
 
 # --hints--
 

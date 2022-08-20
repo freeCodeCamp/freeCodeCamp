@@ -1,7 +1,7 @@
 ---
 id: 5900f40f1000cf542c50ff22
 title: 'Задача 163: Трикутники з перехресним штрихуванням'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301797
 dashedName: problem-163-cross-hatched-triangles
 ---
@@ -18,7 +18,8 @@ dashedName: problem-163-cross-hatched-triangles
 
 Якщо позначити $T(n)$ як кількість трикутників, що містяться в трикутнику розміру $n$, тоді
 
-$$\begin{align} & T(1) = 16 \\\\ & T(2) = 104 \end{align}$$
+$$\begin{align}   & T(1) = 16 \\\\
+  & T(2) = 104 \end{align}$$
 
 Знайдіть $T(36)$.
 

@@ -41,7 +41,7 @@ assert(firstLetterOfLastName === 'L');
 应该使用方括号表示法。
 
 ```js
-assert(code.match(/firstLetterOfLastName\s*?=\s*?lastName\[.*?\]/));
+assert(code.match(/firstLetterOfLastName\s*=\s*lastName\s*\[\s*\d\s*\]/));
 ```
 
 # --seed--

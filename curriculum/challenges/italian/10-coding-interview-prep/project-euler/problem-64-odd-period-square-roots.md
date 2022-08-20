@@ -1,7 +1,7 @@
 ---
 id: 5900f3ac1000cf542c50febf
 title: 'Problema 64: radici quadrate con periodo dispari'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302176
 dashedName: problem-64-odd-period-square-roots
 ---
@@ -12,7 +12,7 @@ Tutte le radici quadrate sono periodiche quando sono scritte come frazioni conti
 
 $\\displaystyle \\quad \\quad \\sqrt{N}=a_0+\\frac 1 {a_1+\\frac 1 {a_2+ \\frac 1 {a3+ \\dots}}}$
 
-Per esempio, considera $\\sqrt{23}$:
+Per esempio, consideriamo $\\sqrt{23}$:
 
 $\\quad \\quad \\sqrt{23}=4+\\sqrt{23}-4=4+\\frac 1 {\\frac 1 {\\sqrt{23}-4}}=4+\\frac 1 {1+\\frac{\\sqrt{23}-3}7}$
 

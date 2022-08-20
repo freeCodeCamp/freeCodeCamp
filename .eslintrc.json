@@ -17,6 +17,7 @@
     "plugin:jsx-a11y/recommended",
     "prettier"
   ],
+  "plugins": ["no-only-tests"],
   "globals": {
     "Promise": true,
     "window": true,
@@ -31,10 +32,12 @@
     }
   },
   "rules": {
-    "import/named": 2,
-    "import/no-named-as-default": 0,
-    "import/no-named-as-default-member": 0,
-    "import/order": 2
+    "import/named": "error",
+    "import/no-named-as-default": "off",
+    "import/no-named-as-default-member": "off",
+    "import/order": "error",
+    "react/prop-types": "off",
+    "no-only-tests/no-only-tests": "error"
   },
   "overrides": [
     {
@@ -44,7 +47,10 @@
         "project": [
           "./tsconfig.json",
           "./config/tsconfig.json",
-          "./tools/ui-components/tsconfig.json"
+          "./tools/ui-components/tsconfig.json",
+          "./utils/tsconfig.json",
+          "./web/tsconfig.json",
+          "./curriculum-server/tsconfig.json"
         ]
       },
       "extends": [
@@ -62,7 +68,20 @@
             "leadingUnderscore": "allow",
             "trailingUnderscore": "allow"
           },
-
+          {
+            "selector": [
+              "classProperty",
+              "objectLiteralProperty",
+              "typeProperty",
+              "classMethod",
+              "objectLiteralMethod",
+              "typeMethod",
+              "accessor",
+              "enumMember"
+            ],
+            "format": null,
+            "modifiers": ["requiresQuotes"]
+          },
           {
             "selector": "variable",
             "format": ["camelCase", "UPPER_CASE", "PascalCase"],
@@ -114,6 +133,10 @@
         "cy": true,
         "Cypress": true
       }
+    },
+    {
+      "files": ["web/**/*.tsx"],
+      "extends": ["plugin:react/jsx-runtime"]
     }
   ]
 }

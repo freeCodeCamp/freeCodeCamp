@@ -1,7 +1,7 @@
 ---
 id: 5900f3a51000cf542c50feb8
 title: '問題 57: 平方根の収束数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302168
 dashedName: problem-57-square-root-convergents
 ---

@@ -25,7 +25,7 @@ dashedName: counting-cards
 
 # --hints--
 
-卡牌序列 2、3、4、5、6 應該返回 `5 Bet`
+卡片序列 2、3、4、5、6 應返回字符串 `5 Bet`
 
 ```js
 assert(

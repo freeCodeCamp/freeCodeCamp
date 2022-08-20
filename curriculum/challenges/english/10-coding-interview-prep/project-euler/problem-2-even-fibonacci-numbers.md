@@ -1,7 +1,7 @@
 ---
 id: 5900f36e1000cf542c50fe81
 title: 'Problem 2: Even Fibonacci Numbers'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301838
 dashedName: problem-2-even-fibonacci-numbers
 ---
@@ -22,7 +22,7 @@ By considering the terms in the Fibonacci sequence whose values do not exceed `n
 assert(typeof fiboEvenSum(10) === 'number');
 ```
 
-Your function should return an `even` value.
+Your function should return an even value.
 
 ```js
 assert.equal(fiboEvenSum(10) % 2 === 0, true);

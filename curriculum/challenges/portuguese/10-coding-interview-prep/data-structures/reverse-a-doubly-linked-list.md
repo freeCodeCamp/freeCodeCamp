@@ -12,7 +12,7 @@ Vamos criar mais um método para a nossa lista duplamente encadeada, chamado rev
 
 # --hints--
 
-A estrutura de dados DoublyLinkedList deve existir.
+A estrutura de dados `DoublyLinkedList` deve existir.
 
 ```js
 assert(
@@ -26,7 +26,7 @@ assert(
 );
 ```
 
-A DoublyLinkedList deve ter um método chamado reverse.
+`DoublyLinkedList` deve ter um método chamado `reverse`.
 
 ```js
 assert(
@@ -43,7 +43,7 @@ assert(
 );
 ```
 
-Inverter uma árvore vazia deve retornar null.
+Inverter uma lista vazia deve retornar `null`.
 
 ```js
 assert(
@@ -57,7 +57,7 @@ assert(
 );
 ```
 
-O método reverse deverá inverter a lista.
+O método `reverse` deverá inverter a lista.
 
 ```js
 assert(
@@ -77,7 +77,7 @@ assert(
 );
 ```
 
-As referências next e previous devem ser mantidas corretamente quando a lista é revertida.
+As referências `next` e `previous` devem ser mantidas corretamente quando a lista é revertida.
 
 ```js
 assert(

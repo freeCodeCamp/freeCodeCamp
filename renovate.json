@@ -1,24 +1,19 @@
 {
-  "labels": ["renovate"],
-  "extends": ["config:base"],
-  "branchConcurrentLimit": 20,
-  "dependencyDashboard": true,
-  "major": {
-    "dependencyDashboardApproval": true
-  },
+  "extends": ["github>freecodecamp/renovate-config"],
   "packageRules": [
-    {
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "matchCurrentVersion": "!/^0/",
-      "automerge": true
-    },
     {
       "groupName": "Monaco Editor",
       "matchPackageNames": [
         "monaco-editor",
         "monaco-editor-webpack-plugin",
         "react-monaco-editor"
-      ]
+      ],
+      "enabled": false
+    },
+    {
+      "groupName": "Cypress",
+      "matchPackageNames": ["@testing-library/cypress", "cypress"],
+      "automerge": true
     },
     {
       "matchPackageNames": ["normalize-url"],
@@ -28,6 +23,10 @@
       "groupName": "CodeSee",
       "matchPackagePrefixes": ["@codesee/"],
       "automerge": true
+    },
+    {
+      "groupName": "Stripe",
+      "matchPackagePrefixes": ["@stripe/"]
     }
   ],
   "ignorePaths": ["api-server"]

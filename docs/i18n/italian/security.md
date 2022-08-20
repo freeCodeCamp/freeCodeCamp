@@ -1,46 +1,54 @@
-# Security Policy
+# Politica di sicurezza di freeCodeCamp.org
 
-This document outlines our security policy for the codebases, platforms that we operate, and how to report vulnerabilities.
+Questo documento delinea la nostra politica di sicurezza per i codebase, le piattaforme su cui operiamo e come riportare delle vulnerabilità.
 
-## Reporting a Vulnerability
+## Segnalare una vulnerabilità
 
-If you think you have found a vulnerability, _please report responsibly_. Don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
+> [!NOTE] Se pensi di aver trovato una vulnerabilità, **per favore riportala responsabilmente**. Non creare una issue su GitHub per problemi di sicurezza. Invece, segui questa guida.
 
-Ensure that you are using the **latest**, **stable** and **updated** version of the Operating System and Web Browser available to you on your machine.
+### Linee guida
 
-We appreciate any responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users.
+Apprezziamo la notifica responsabile di vulnerabilità che possa impattare l'integrità delle nostre piattaforme e i nostri utenti. Nell'interesse di risparmiare il tempo di tutti, ti incoraggiamo a riportare vulnerabilità tenendo i seguenti punti a mente:
 
-Once you report a vulnerability, we will look into it and make sure that it is not a false positive. We will get back to you if we need to clarify any details. You can submit separate reports for each issue you find.
+1. Assicurati di star usando l'**ultima** versione **aggiornata** e **stabile** del tuo sistema operativo e del browser web che sono disponibili sulla tua macchina.
+2. Consideriamo l'ultilizzo di strumenti e utility online per riportare problemi con le configurazioni SPF & DKIM, o test SSL Server, nella categoria ["beg bounties"](https://www.troyhunt.com/beg-bounties) e non siamo in grado di rispondere a questi report.
+3. Anche se non offriamo ricompense al momento, saremo felici di aggiungere il tuo nome alla lista nella [Hall of Fame](security-hall-of-fame.md), sempre che i report siano validi.
 
-While we do not offer any bounties or swags at the moment, we'll be happy to list your name in our [Hall of Fame](security-hall-of-fame.md) list, provided the reports are not low-effort.
+### Segnalare
 
-We consider using tools & online utilities to report issues with SPF & DKIM configs, or SSL Server tests, etc. in the category of ["beg bounties"](https://www.troyhunt.com/beg-bounties/) and are unable to respond to these reports.
+Dopo aver confermato le linee guida di qui sopra, sentiti libero di mandare una mail a `possible-security-issue [at] freecodecamp.org`. Puoi anche mandare un messaggio crittografato PGP a `flowcrypt.com/me/freecodecamp`.
 
-## Platforms & Codebases
+Una volta che riporti una vulnerabilità, la investigheremo e ci assicureremo che non sia un falso positivo. Se abbiamo bisogno di chiarimenti e dettagli, ti ricontatteremo. Puoi fare segnalazioni separate per ogni problema che trovi. Per favore nota che non saremo in grado di rispondere a qualsiasi problema che pensiamo sia al di fuori delle linee guida.
 
-Here is a list of the platforms and codebases we are accepting reports for:
+## Piattaforme & Codebase
 
-### Learn Platform
+Ecco una lista delle piattaforme e codebase per cui accettiamo segnalazioni:
 
-| Version     | Branch         | Supported | Website active           |
-| ----------- | -------------- | --------- | ------------------------ |
-| production  | `prod-current` | Yes       | `freecodecamp.org/learn` |
-| staging     | `prod-staging` | Yes       | `freecodecamp.dev/learn` |
-| development | `main`         | No        |                          |
+### Piattaforma di apprendimento
 
-### Publication Platform
+| Versione   | Branch         | Supportata | Website attivo           |
+| ---------- | -------------- | ---------- | ------------------------ |
+| production | `prod-current` | Sì         | `freecodecamp.org/learn` |
+| staging    | `prod-staging` | Sì         | `freecodecamp.dev/learn` |
+| sviluppo   | `main`         | No         |                          |
 
-| Version    | Supported | Website active                           |
-| ---------- | --------- | ---------------------------------------- |
-| production | Yes       | `freecodecamp.org/news`                  |
-| localized  | Yes       | `freecodecamp.org/<language>/news` |
+### Piattaforma di pubblicazione
 
-### Mobile app
+| Versione    | Supportata | Website attivo                           |
+| ----------- | ---------- | ---------------------------------------- |
+| production  | Sì         | `freecodecamp.org/news`                  |
+| localizzata | Sì         | `freecodecamp.org/<language>/news` |
 
-| Version    | Supported | Website active                                                   |
-| ---------- | --------- | ---------------------------------------------------------------- |
-| production | Yes       | `https://play.google.com/store/apps/details?id=org.freecodecamp` |
+### App mobile
 
-Apart from the above, we are also accepting reports for repositories hosted on GitHub, under the freeCodeCamp organization.
+| Versione   | Supportata | Website attivo                                                   |
+| ---------- | ---------- | ---------------------------------------------------------------- |
+| production | Sì         | `https://play.google.com/store/apps/details?id=org.freecodecamp` |
 
-We self-host some of our platforms using open-source software like Ghost & Discourse. If you are reporting a vulnerability please ensure that it is not a bug in the upstream software.
+### Altre Piattaforme
+
+Oltre queste, accettiamo report per repository ospitate su GitHub sotto l'organizzazione freeCodeCamp.
+
+### Altre Applicazioni self-hosted
+
+Facciamo l'host noi stessi di alcune delle nostre piattaforme usando software open-source come Ghost & Discourse. Se stai riportando una vulnerabilità per favore assicurati che non sia un bug nel software a monte.

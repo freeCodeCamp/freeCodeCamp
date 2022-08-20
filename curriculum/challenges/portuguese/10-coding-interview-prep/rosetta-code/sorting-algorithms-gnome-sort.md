@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8007
 title: Algoritmos de ordenação/ordenação do gnomo
-challengeType: 5
+challengeType: 1
 forumTopicId: 302314
 dashedName: sorting-algorithmsgnome-sort
 ---
 
 # --description--
 
-A ordenação do gnomo é um algoritmo de ordenação semelhante à [ordenação de inserção](https://rosettacode.org/wiki/Insertion sort), exceto pelo fato de que mover um elemento para o lugar adequado é realizado por uma série de trocas, como na [ordenação de bolha](https://rosettacode.org/wiki/Bubble Sort).
+A ordenação do gnomo é um algoritmo de ordenação semelhante à <a href="https://rosettacode.org/wiki/Insertion_sort" target="_blank" rel="noopener noreferrer nofollow">ordenação de inserção</a>, exceto pelo fato de que mover um elemento para o lugar adequado é realizado por uma série de trocas, como na <a href="https://rosettacode.org/wiki/Bubble" target="_blank" rel="noopener noreferrer nofollow">ordenação de bolha</a>.
 
 O pseudocódigo para o algoritmo é:
 

@@ -1,7 +1,7 @@
 ---
 id: 5900f5141000cf542c510027
 title: '問題 423: 連続サイコロ投げ'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302093
 dashedName: problem-423-consecutive-die-throws
 ---
@@ -14,7 +14,8 @@ $n$ を正の整数とします。
 
 例えば、$n = 7$、サイコロの出目が (1, 1, 5, 6, 6, 6, 3) の場合、連続する同じ出目の対は次のとおりです。
 
-$$\begin{align} & (\underline{1}, \underline{1}, 5, 6, 6, 6, 3) \\\\ & (1, 1, 5, \underline{6}, \underline{6}, 6, 3) \\\\ & (1, 1, 5, 6, \underline{6}, \underline{6}, 3) \end{align}$$
+$$\begin{align}   & (\underline{1}, \underline{1}, 5, 6, 6, 6, 3) \\\\
+  & (1, 1, 5, \underline{6}, \underline{6}, 6, 3) \\\\ & (1, 1, 5, 6, \underline{6}, \underline{6}, 3) \end{align}$$
 
 したがって、(1, 1, 5, 6, 6, 6, 3) のとき、$c = 3$ になります。
 

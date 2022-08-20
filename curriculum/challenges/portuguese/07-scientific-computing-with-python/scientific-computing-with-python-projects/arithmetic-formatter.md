@@ -8,12 +8,7 @@ dashedName: arithmetic-formatter
 
 # --description--
 
-Você [trabalhará neste projeto com nosso código inicial do Replit](https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter).
-
-Ainda estamos desenvolvendo a parte instrucional interativa do currículo Python. Por enquanto, aqui estão alguns vídeos no canal do freeCodeCamp.org do YouTube que ensinarão tudo o que você precisa saber para completar este projeto:
-
-- [Curso de Python em vídeo para todos](https://www.freecodecamp.org/news/python-for-everybody/) (14 horas)
-- [Curso Aprenda Python em vídeo](https://www.freecodecamp.org/news/learn-python-video-course/) (10 horas)
+Você <a href="https://replit.com/github/freeCodeCamp/boilerplate-arithmetic-formatter" target="_blank" rel="noopener noreferrer nofollow"> trabalhará neste projeto com nosso código inicial do Replit</a>.
 
 # --instructions--
 
@@ -69,7 +64,7 @@ A função retornará a conversão correta se os problemas fornecidos forem form
   - Cada número (operando) deve conter apenas algarismos. Caso contrário, a função retornará: `Error: Numbers must only contain digits.`
   - Cada operando (ou seja, o número de cada lado do operador) tem, no máximo, quatro algarismos. Do contrário, a string de erro retornada será: `Error: Numbers cannot be more than four digits.`
 - Se o usuário forneceu o formato correto dos problemas, a conversão retornada seguirá estas regras:
-  - Deve haver um único espaço entre o operador e o maior entre os dois operandos. O operador estará na mesma linha do segundo operando. Ambos os operadores estarão na mesma ordem fornecida - o primeiro será o de cima e o segundo será o de baixo.
+  - Deve haver um único espaço entre o operador e o maior entre os dois operandos. O operador estará na mesma linha do segundo operando. Ambos os operadores estarão na mesma ordem fornecida - o primeiro será o de cima e o segundo será o de baixo).
   - Os números devem estar alinhados à direita.
   - Deve haver quatro espaços entre cada problema.
   - Deve haver travessões abaixo de cada problema. Os travessões devem compreender todo o tamanho de cada problema individualmente. (O exemplo acima mostra como deve ser a aparência do resultado.)
@@ -88,7 +83,7 @@ Copie o URL do seu projeto e envie-o abaixo.
 
 # --hints--
 
-O projeto deve formatar corretamente um problema aritmético e passar em todos os testes.
+O programa deve formatar corretamente um problema aritmético e passar em todos os testes.
 
 ```js
 

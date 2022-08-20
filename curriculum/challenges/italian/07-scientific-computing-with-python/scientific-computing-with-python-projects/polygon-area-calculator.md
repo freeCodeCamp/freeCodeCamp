@@ -8,13 +8,7 @@ dashedName: polygon-area-calculator
 
 # --description--
 
-Lavorerari a [questo progetto con il nostro codice d'inizio su Replit](https://replit.com/github/freeCodeCamp/boilerplate-polygon-area-calculator).
-
-Stiamo ancora sviluppando la parte didattica interattiva del curriculum di Python. Per ora, ecco alcuni video sul canale YouTube di freeCodeCamp.org che ti insegneranno tutto quello che devi sapere per completare questo progetto:
-
-- [Video corso Python for Everybody](https://www.freecodecamp.org/news/python-for-everybody/) (14 ore)
-
-- [Video corso Learn Python](https://www.freecodecamp.org/news/learn-python-video-course/) (10 ore)
+Lavorerai a <a href="https://replit.com/github/freeCodeCamp/boilerplate-polygon-area-calculator" target="_blank" rel="noopener noreferrer nofollow">questo progetto con il nostro codice d'inizio su Replit</a>.
 
 # --instructions--
 
@@ -89,11 +83,11 @@ I test unitari per questo progetto sono in `test_module.py`.
 
 ## Sviluppo
 
-Scrivi il tuo codice in `shape_calculator.py`. Per lo sviluppo, puoi usare `main.py` per testare la tua funzione `shape_calculator()`. Usa il bottone "run" e `main.py` eseguirà.
+Scrivi il tuo codice in `shape_calculator.py`. Per lo sviluppo, puoi usare `main.py` per testare la tua funzione `shape_calculator()`. Usa il bottone "run" e `main.py` sarà eseguito.
 
 ## Test
 
-Abbiamo importato i test da `test_module.py` in `main.py` per la tua convenienza. I test eseguiranno automaticamente quando usi il bottone "run".
+Abbiamo importato i test da `test_module.py` in `main.py` per tua convenienza. I test saranno eseguiti automaticamente quando usi il bottone "run".
 
 ## Invio
 

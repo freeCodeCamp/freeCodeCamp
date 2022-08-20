@@ -9,7 +9,7 @@ dashedName: understanding-uninitialized-variables
 
 # --description--
 
-When JavaScript variables are declared, they have an initial value of `undefined`. If you do a mathematical operation on an `undefined` variable your result will be `NaN` which means <dfn>"Not a Number"</dfn>. If you concatenate a string with an `undefined` variable, you will get a literal <dfn>string</dfn> of `undefined`.
+When JavaScript variables are declared, they have an initial value of `undefined`. If you do a mathematical operation on an `undefined` variable your result will be `NaN` which means <dfn>"Not a Number"</dfn>. If you concatenate a string with an `undefined` variable, you will get a <dfn>string</dfn> of `undefined`.
 
 # --instructions--
 
@@ -17,19 +17,19 @@ Initialize the three variables `a`, `b`, and `c` with `5`, `10`, and `"I am a"` 
 
 # --hints--
 
-`a` should be defined and evaluated to have the value of `6`.
+`a` should be defined and have a final value of `6`.
 
 ```js
 assert(typeof a === 'number' && a === 6);
 ```
 
-`b` should be defined and evaluated to have the value of `15`.
+`b` should be defined and have a final value of `15`.
 
 ```js
 assert(typeof b === 'number' && b === 15);
 ```
 
-`c` should not contain `undefined` and should have a value of the string `I am a String!`
+`c` should not contain `undefined` and should have a final value of the string `I am a String!`
 
 ```js
 assert(!/undefined/.test(c) && c === 'I am a String!');

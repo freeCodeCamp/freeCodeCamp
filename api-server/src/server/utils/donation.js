@@ -1,6 +1,7 @@
 /* eslint-disable camelcase */
 import axios from 'axios';
 import debug from 'debug';
+import isEmail from 'validator/lib/isEmail';
 import { donationSubscriptionConfig } from '../../../../config/donation-settings';
 import keys from '../../../../config/secrets';
 
@@ -133,6 +134,13 @@ export function createDonation(body, app) {
   let donation = createDonationObj(body);
 
   let email = email_address;
+  if (!email || !isEmail(email)) {
+    throw {
+      message: 'Paypal webhook email is not valid',
+      type: 'InvalidPaypalWebhookEmail'
+    };
+  }
+
   return User.findOne({ where: { email } }, (err, user) => {
     if (err) throw new Error(err);
     if (!user) {
@@ -142,7 +150,11 @@ export function createDonation(body, app) {
           createAsyncUserDonation(user, donation);
         })
         .catch(err => {
-          throw new Error(err);
+          throw {
+            message:
+              err.message || 'findOne Donation records with email failed',
+            type: err.name || 'FailedFindingOneDonationEmail'
+          };
         });
     }
     return createAsyncUserDonation(user, donation);
@@ -155,7 +167,17 @@ export async function cancelDonation(body, app) {
   } = body;
   const { Donation } = app.models;
   Donation.findOne({ where: { subscriptionId: id } }, (err, donation) => {
-    if (err || !donation) throw Error(err);
+    if (err)
+      throw {
+        message:
+          err.message || 'findOne Donation records with subscriptionId failed',
+        type: err.name || 'FailedFindingOneSubscriptionId'
+      };
+    if (!donation)
+      throw {
+        message: 'Donation record with provided subscription id is not found',
+        type: 'SubscriptionIdNotFound'
+      };
     log(`Updating donation record: ${donation.subscriptionId}`);
     donation.updateAttributes({
       endDate: new Date(status_update_time).toISOString()

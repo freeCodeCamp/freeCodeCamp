@@ -31,7 +31,7 @@ Crea una griglia con tre colonne le cui larghezze sono le seguenti: 1fr, 100px e
 
 # --hints--
 
-La classe `container` dovrebbe avere una proprietà `grid-template-columns` che ha tre colonne con le seguenti larghezze: `1fr, 100px, and 2fr`.
+La classe `container` dovrebbe avere una proprietà `grid-template-columns` che ha tre colonne con le seguenti larghezze: `1fr`, `100px`e `2fr`.
 
 ```js
 assert(

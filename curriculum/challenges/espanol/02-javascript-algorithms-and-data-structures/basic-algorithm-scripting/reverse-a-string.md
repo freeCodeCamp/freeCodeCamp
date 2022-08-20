@@ -1,7 +1,7 @@
 ---
 id: a202eed8fc186c8434cb6d61
 title: Invierte una cadena
-challengeType: 5
+challengeType: 1
 forumTopicId: 16043
 dashedName: reverse-a-string
 ---

@@ -30,7 +30,7 @@ dashedName: timestamp-microservice
 };
 ```
 
-對具有有效日期的 `/api/:date?` 的請求應返回一個帶有 `unix` 鍵的 JSON 對象，該鍵是輸入日期的 Unix 時間戳（以毫秒爲單位）
+一個對 `/api/:date?` 的有效日期的請求應該返回一個 JSON 對象，該對象的 `unix` 鍵是輸入日期的 Unix 時間戳，單位是毫秒（數字類型）。
 
 ```js
 (getUserInput) =>
