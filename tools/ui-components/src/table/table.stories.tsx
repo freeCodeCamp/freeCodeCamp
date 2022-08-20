@@ -1,7 +1,6 @@
 import React from 'react';
 import { Story } from '@storybook/react';
 import { Table, TableProps } from '.';
-
 const exampleTable = (
   <>
     <thead>
@@ -40,7 +39,16 @@ const story = {
   component: Table,
   parameters: {
     controls: {
-      include: ['variant', 'size', 'bordered', 'borderless', 'hover', 'striped', 'condensed', 'responsive']
+      include: [
+        'variant',
+        'size',
+        'bordered',
+        'borderless',
+        'hover',
+        'striped',
+        'condensed',
+        'responsive'
+      ]
     }
   },
   argTypes: {
@@ -81,16 +89,29 @@ const story = {
 };
 
 const Template: Story<TableProps> = args => (
-  <Table {...args}>{exampleTable}</Table>
+  <Table {...args} >{exampleTable}</Table>
 );
 export const Default = Template.bind({});
 Default.args = {
-  // default props go here
-  bordered: true,
   size: 'medium',
+};
+export const Large = Template.bind({});
+Large.args = {
+  size: 'large',
+};
+export const Dark = Template.bind({});
+Dark.args = {
+  variant: 'dark',
+  bordered: true
+};
+export const Light = Template.bind({});
+Light.args = {
   variant: 'light',
-  condensed: false,
-  striped: false
+  bordered: true
+};
+export const Hover = Template.bind({});
+Hover.args = {
+  hover: true
 };
 
 export default story;
