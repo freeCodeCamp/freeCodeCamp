@@ -57,14 +57,12 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.fontSize, '16px')
         <label for="personal-account"><input id="personal-account" type="radio" name="account-type" /> Personal Account</label>
         <label for="business-account"><input id="business-account" type="radio" name="account-type" /> Business Account</label>
         <label for="terms-and-conditions" name="terms-and-conditions">
-          <input id="terms-and-conditions" type="checkbox" required name="terms-and-conditions" /> I accept the
-				    <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
-			  </label>
+          <input id="terms-and-conditions" type="checkbox" required name="terms-and-conditions" /> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
+        </label>
       </fieldset>
       <fieldset>
         <label for="profile-picture">Upload a profile picture: <input id="profile-picture" type="file" name="file" /></label>
-        <label for="age">Input your age (years): <input id="age" type="number" name="age" min="13" max="120" />
-			  </label>
+        <label for="age">Input your age (years): <input id="age" type="number" name="age" min="13" max="120" /></label>
         <label for="referrer">How did you hear about us?
           <select id="referrer" name="referrer">
             <option value="">(select one)</option>
@@ -75,8 +73,8 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.fontSize, '16px')
           </select>
         </label>
         <label for="bio">Provide a bio:
-		  <textarea id="bio" name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea>
-		</label>
+          <textarea id="bio" name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea>
+        </label>
       </fieldset>
       <input type="submit" value="Submit" />
     </form>
