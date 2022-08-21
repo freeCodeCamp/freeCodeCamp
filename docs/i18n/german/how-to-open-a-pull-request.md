@@ -14,7 +14,7 @@ Wir empfehlen, [konventionelle Titel und Nachrichten](https://www.conventionalco
 > 
 > `fix(learn): tests for the do...while loop challenge`
 
-Wenn du einen Pull-Request (PR) öffnest, kannst du den Typ, den Geltungsbereich \[scope\] (optional) und die Beschreibung wie folgt festlegen.
+Whenever you open a Pull Request(PR), you can use the below to determine the type, scope (optional), and description.
 
 **Typ:**
 
@@ -31,7 +31,7 @@ Du kannst einen Geltungsbereich aus [dieser Liste von Labels](https://github.com
 
 **Beschreibung:**
 
-Halte sie kurz (weniger als 30 Zeichen) und einfach. Du kannst weitere Informationen im PR-Beschreibungsfeld und in den Kommentaren hinzufügen.
+Keep it short (less than 30 characters) and simple; you can add more information in the PR description box and comments.
 
 Einige Beispiele für gute PR-Titel wären:
 
@@ -54,7 +54,7 @@ Einige Beispiele für gute PR-Titel wären:
 
 3. Übermittle den Pull-Request von deinem Branch an den `main`-Branch von freeCodeCamp.
 
-4. Im Hauptteil deines PR fügst du eine ausführlichere Zusammenfassung der Änderungen ein, die du vorgenommen hast und warum.
+4. Include a more detailed summary of the changes you made and how your changes are helpful in the body of your PR.
 
    - Du erhältst eine Vorlage für einen Pull-Request. Dies ist eine Checkliste, die du befolgen solltest, bevor du den Pull-Request öffnest.
 

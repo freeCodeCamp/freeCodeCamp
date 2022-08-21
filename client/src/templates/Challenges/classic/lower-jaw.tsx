@@ -188,9 +188,9 @@ const LowerJaw = ({
     const isAttemptsLargerThanTest =
       attemptsNumber &&
       testsLength &&
-      (attemptsNumber >= testsLength || attemptsNumber > 3);
+      (attemptsNumber >= testsLength || attemptsNumber >= 3);
 
-    if (isAttemptsLargerThanTest && !earliestAvailableCompletion)
+    if (isAttemptsLargerThanTest && !earliestAvailableCompletion) {
       return (
         <div>
           <hr />
@@ -206,6 +206,16 @@ const LowerJaw = ({
           </button>
         </div>
       );
+    } else {
+      return (
+        <div>
+          <hr />
+          <button className='btn-block btn fade-in' onClick={openResetModal}>
+            {t('learn.editor-tabs.restart-step')}
+          </button>
+        </div>
+      );
+    }
   };
 
   const showDesktopButton = window.innerWidth > MAX_MOBILE_WIDTH;

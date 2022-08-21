@@ -257,6 +257,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
 
   const donationSection = (
     <div className='donation-section'>
+      <Spacer size={2} />
       {!isDonationSubmitted && (
         <Row>
           <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
@@ -316,7 +317,6 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
 
   return (
     <Grid className='certificate-outer-wrapper'>
-      <Spacer size={2} />
       {isDonationDisplayed && !isDonationClosed ? donationSection : ''}
       <Row className='certificate-wrapper certification-namespace'>
         <header>
@@ -375,11 +375,13 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           </Row>
         </footer>
       </Row>
-      <Spacer size={2} />
-      {signedInUserName === username ? shareCertBtns : ''}
-      <Spacer size={2} />
-      <ShowProjectLinks certName={certTitle} name={displayName} user={user} />
-      <Spacer size={2} />
+      <div className='row certificate-links'>
+        <Spacer size={2} />
+        {signedInUserName === username ? shareCertBtns : ''}
+        <Spacer size={2} />
+        <ShowProjectLinks certName={certTitle} name={displayName} user={user} />
+        <Spacer size={2} />
+      </div>
     </Grid>
   );
 };

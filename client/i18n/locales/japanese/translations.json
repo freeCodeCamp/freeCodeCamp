@@ -108,7 +108,7 @@
     "share-projects": "あなたの freeCodeCamp 以外のプロジェクトや記事、承認されたプルリクエストをシェアしましょう。",
     "privacy": "この設定セクションでは、あなたの freeCodeCamp 公開ポートフォリオに表示する項目を制御できます。変更を保存するには「保存」をクリックしてください。",
     "data": "アカウントに保存されているデータを確認するには、下の「データをダウンロード」ボタンをクリックしてください",
-    "disabled": "プライベートに設定されている場合、認定証は無効化されます。",
+    "disabled": "非公開に設定されている場合、認定証は無効化されます。",
     "private-name": "非公開に設定されている場合、あなたの名前は認定証に表示されません。",
     "claim-legacy": "以下の freeCodeCamp 認定証を取得すると、 {{cert}} を受け取ることができます。",
     "for": "{{username}} さんのアカウント設定",
@@ -307,7 +307,7 @@
     },
     "help-translate": "以下の認定講座は現在翻訳中です。",
     "help-translate-link": "翻訳にご協力ください。",
-    "project-preview-title": "これがあなたが作成するもののプレビューです。",
+    "project-preview-title": "これが今から作る物のプレビューです。",
     "github-required": "<0>GitHub</0> アカウントをお持ちでない場合は作成してください。 仮想 Linux サーバーマシンを作成する際に必要です。この処理には数分かかることがあります。",
     "step-1": "ステップ 1: プロジェクトを完成させる",
     "step-2": "ステップ 2: コードを提出する",
@@ -449,7 +449,9 @@
     "and": "および",
     "change-theme": "テーマを変更するにはサインインしてください。",
     "translation-pending": "翻訳にご協力ください。",
-    "certification-project": "認定プロジェクト"
+    "certification-project": "認定プロジェクト",
+    "iframe-alert": "Normally this link would bring you to another website! It works. This is a link to: {{externalLink}}",
+    "document-notfound": "document not found"
   },
   "icons": {
     "gold-cup": "ゴールドカップ",

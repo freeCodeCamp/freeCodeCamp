@@ -1,74 +1,74 @@
 # Como trabalhar em projetos práticos
 
-Our practice projects use a step-based approach to teach concepts to campers. A project will consist of multiple files, which we refer to as **"steps"**. These files are named by the challenge ID, to avoid issues with the translation flow. Unfortunately, this makes it difficult to find the file associated with a specific step.
+Nossos projetos práticos usam uma abordagem baseada em passos para ensinar conceitos aos campers. Um projeto será composto por vários arquivos, aos quais nos referimos como **"passos"**. Esses arquivos são nomeados pelo ID de desafio para evitar problemas com o fluxo de tradução. Infelizmente, isso torna difícil encontrar o arquivo associado a um passo específico.
 
-We've built a challenge editor tool that helps remedy this. This tool allows you to navigate the available projects, and the steps for each project (in order). There's also an embedded code editor you can use to work on the files directly.
+Criamos uma ferramenta de edição de desafios que ajuda a remediar isso. Essa ferramenta permite navegar pelos projetos disponíveis e pelas etapas para cada projeto (em ordem). Há também um editor de código embutido que você pode usar para trabalhar nos arquivos diretamente.
 
-## Using the Challenge Editor
+## Usando o editor de desafios
 
-These instructions will tell you how to use our challenge editor tool to work on the practice projects.
+Essas instruções informarão como usar a nossa ferramenta de edição de desafios para trabalhar nos projetos práticos.
 
-### Starting the Editor
+### Iniciando o editor
 
-To start the editor, make sure you are in the root freecodecamp directory. Then, run `npm run challenge-editor` to start both the client and the API that powers the editor.
+Para iniciar o editor, certifique-se de estar no diretório raiz do freecodecamp. Em seguida, execute `npm run challenge-editor` para iniciar tanto o client quanto a API que alimenta o editor.
 
-The client will run on port `3300`, so you can access it at `http://localhost:3300`. The API runs on port `3200`, to avoid conflicts with the learn client and server. This will allow you to run the freeCodeCamp application at the same time as the editor, so you can test your changes locally.
+O client será executado na porta `3300`, então você pode acessá-la em `http://localhost:3300`. A API é executada na porta `3200`, para evitar conflitos com o client de aprendizagem e com o servidor. Isso permitirá que você execute o aplicativo do freeCodeCamp ao mesmo tempo que o editor, para poder testar as alterações localmente.
 
-### Navigating the Editor
+### Navegando pelo editor
 
-The default view will list the available `superblocks` - these are the certifications. Click on the certification link you want to work on.
+A exibição padrão listará os `superblocks` disponíveis - eles são as certificações. Clique no link de certificação em que você deseja trabalhar.
 
-This will take you to the list of blocks. These are the practice projects. Click on the project link you want to work on.
+Isso levará você à lista de blocos. Esses são os projetos práticos. Clique no link do projeto em que você deseja trabalhar.
 
-This will take you to a list of steps for the project. If you are working on an existing step, you can click on the step link to open the editor. If you are adding or removing steps, click the `Use the step tools` link to switch to the step tools for that challenge.
+Isso levará você a uma lista de passos para o projeto. Se você estiver trabalhando em um passo existente, clique no link do passo para abrir o editor. Se você estiver adicionando ou removendo etapas, clique no link `Use the step tools` para alternar para as ferramentas de passos para esse desafio.
 
-### Editing Steps
+### Edição dos passos
 
-When you click on a step, you'll be taken to the editor. This is a basic text editor that offers syntax highlighting.
+Ao clicar em um passo, você será levado ao editor. Esse é um editor de texto básico, mas que oferece destaque de sintaxe.
 
-After you have made your changes, click the `Save Changes` button to save your changes. You will get a browser alert letting you know that your changes are ready to commit. Note that you'll need to use `git` manually to stage and commit your files - this tool will not do that for you.
+Após realizar as alterações, clique no botão `Save Changes` para salvar as alterações. Você receberá um alerta do navegador informando que as alterações estão prontas para o commit. Observe que você precisará usar o `git` manualmente para colocar as alterações em staging e para fazer o commit dos arquivos - essa ferramenta não fará isso por você.
 
-### Step Tools
+### Ferramentas de passo
 
-When you click the `Use the step tools` link, you'll be taken to the step tools page. This allows you to add or remove steps from the project.
+Ao clicar no link `Use the step tools`, você será levado à página step tools (Ferramentas de passo). Isso permitirá que você adicione ou remova passos do projeto.
 
-#### Create Next Step
+#### Criar o próximo passo (Create Next Step)
 
-Clicking this button will add a new step at the end of the project. This step will use the previous step's code as the seed.
+Clicar neste botão adicionará um novo passo ao final do projeto. Esse passo usará o código do passo anterior como seed (ou referência).
 
-#### Create Empty Steps
+#### Criar passos vazios (Create Empty Steps)
 
-Enter the number of steps you want to add in the input. Then, clicking the button will create that many empty steps at the end of the project.
+Insira o número de passos que você deseja adicionar na entrada. Depois, ao clicar no botão, você criará as diversas etapas vazias ao final do projeto.
 
-#### Insert Step
+#### Inserir passo (Insert Step)
 
-Enter the step number that you want to add a step _after_. For example, if you want to add a step after `step-12`, enter `12`. Then, click the `Insert Step` button to add the step. The following steps will be re-ordered.
+Digite o número do passo _após_ o qual você deseja adicionar um passo. Por exemplo, se você deseja adicionar uma etapa após o passo 12 (`step-12`), insira `12`. Em seguida, clique no botão `Insert Step` para adicionar o passo. Os passos posteriores serão reordenados.
 
-#### Delete Step
+#### Excluir passo (Delete Step)
 
-Enter the step number you want to delete. Then click the `Delete Step` button to remove that step. This will automatically update the step numbers for the remaining steps.
+Insira o número do passo que deseja excluir. Em seguida, clique no botão `Delete Step` para excluir o passo. Isto atualizará automaticamente os números dos passos posteriores.
 
-#### Update Step Titles
+#### Atualizar os títulos dos passos (Update Step Titles)
 
-You should not have to use this tool unless you've manually deleted or added steps. This tool will reorder the step numbers.
+Você não deve precisar usar essa ferramenta a menos que tenha excluído ou adicionado passos manualmente. Esta ferramenta reordenará os números dos passos.
 
-## Using the Scripts Manually
+## Usando os scripts manualmente
 
-If you want to work on the steps manually, in your local IDE, you can run the step management scripts directly.
+Se quiser trabalhar nos passos manualmente, em seu IDE local, você pode executar os scripts de gerenciamento de passos diretamente.
 
-The `tools/challenge-helper-scripts` folder contains tools to help facilitate the creation and maintenance of the freeCodeCamp project-based curriculum.
+A pasta `tools/challenge-helper-scripts` contém ferramentas para ajudar a facilitar a criação e a manutenção dos projetos baseados no currículo do freeCodeCamp.
 
-### Create a new project
+### Criando um projeto
 
-Run `npm run create-project` from the root directory. This opens up a command line ui that guides you through the process. Once that has finished, there should be a new challenge in the English curriculum that you can use for the first step of the project. For example, if you created a project called `test-project` in the Responsive Web Design certification, it would be in `curriculum/challenges/english/01-responsive-web-design/test-project`.
+Execute `npm run create-project` no diretório raiz. Esse comando abrirá uma interface de linha de comando que vai guiar você através do processo. Uma vez que tiver terminado, deverá aparecer um novo desafio no currículo em inglês que você pode usar para começar o projeto. Por exemplo, se você tiver criado um projeto chamado `test-project` na certificação de Design responsivo para a web, ele estará em `curriculum/challenges/english/01-responsive-web-design/test-project`.
 
-If you want to create new steps, the following tools simplify that process.
+Se você quer criar outros passos, as ferramentas a seguir vão simplificar o processo.
 
 ### create-next-step
 
-A one-off script that will automatically add the next step based on the last step in the project. The challenge seed code will use the previous step's challenge seed code.
+Um script único que adicionará automaticamente o próximo passo com base no último passo do projeto. O código seed do desafio usará o código do desafio do passo anterior.
 
-#### How to run script:
+#### Como executar esse script:
 
 1. Mude para o diretório do projeto.
 2. Execute o comando npm a seguir:
@@ -79,11 +79,11 @@ npm run create-next-step
 
 ### create-empty-steps
 
-A one-off script that automatically adds a specified number of steps. The challenge seed code for all steps created will be empty.
+Um script único que adiciona automaticamente um número específico de passos. O código seed de todos os passos criados estarão vazios.
 
-**Note:** This script also runs [update-step-titles](#update-step-titles).
+**Observação:** esse script também executa [update-step-titles](#update-step-titles).
 
-#### How to run script:
+#### Como executar esse script:
 
 1. Mude para o diretório do projeto.
 2. Execute o comando npm a seguir:
@@ -94,11 +94,11 @@ npm run create-empty-steps X #, onde X é o número de etapas a serem criadas.
 
 ### insert-step
 
-A one-off script that automatically adds a new step at a specified position, incrementing all subsequent steps (both their titles and in their meta.json). The challenge seed code will use the previous step's challenge seed code with the editable region markers (ERMs) removed.
+Um script único que adiciona automaticamente um novo passo em uma posição especificada, incrementando todos os passos subsequentes (seus títulos e em seu meta.json). O código inicial de desafio usará o código inicial de desafio do passo anterior com os marcadores de região editáveis ​​(ERMs) removidos.
 
-**Note:** This script also runs [update-step-titles](#update-step-titles).
+**Observação:** esse script também executa [update-step-titles](#update-step-titles).
 
-#### How to run script:
+#### Como executar esse script:
 
 1. Mude para o diretório do projeto.
 2. Execute o comando npm a seguir:
@@ -109,11 +109,11 @@ npm run insert-step X #, onde X é a posição para inserir a nova etapa.
 
 ### delete-step
 
-A one-off script that deletes an existing step, decrementing all subsequent steps (both their titles and in their meta.json)
+Um script único que exclui um passo existente e decrementa todos os passos posteriores (seus títulos e em seu meta.json)
 
-**Note:** This script also runs [update-step-titles](#update-step-titles).
+**Observação:** esse script também executa [update-step-titles](#update-step-titles).
 
-#### How to run script
+#### Como executar esse script
 
 1. Mude para o diretório do projeto.
 2. Execute o comando npm a seguir:
@@ -124,9 +124,9 @@ npm run delete-step X #, onde X é o número do passo a ser excluído.
 
 ### update-step-titles
 
-A one-off script that automatically updates the frontmatter in a project's markdown files so that they are consistent with the project's meta.json. It ensures that each step's title (and dashedName) match the meta's challengeOrder.
+Um script único que atualiza automaticamente a frontmatter nos arquivos markdown de um projeto para que eles sejam consistentes com o meta.json do projeto. Garante que o título de cada passo (e seu dashedName) correspondam ao challengeOrder do arquivo meta.
 
-#### How to run script
+#### Como executar esse script
 
 1. Mude para o diretório do projeto.
 2. Execute o comando npm a seguir:
