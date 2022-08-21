@@ -1,37 +1,37 @@
 - **Початок роботи**
   - [Вступ](index.md "Зробіть свій внесок у спільноту freeCodeCamp.org")
   - [Поширені питання](FAQ.md)
-  - [Reporting a Vulnerability](security.md)
-- **Внесок у переклад**
-  - [Робота над перекладом матеріалів](how-to-translate-files.md)
-  - [Робота над вичиткою перекладів](how-to-proofread-files.md)
-- **Як зробити внесок до коду**
-  - [Встановити freeCodeCamp локально](how-to-setup-freecodecamp-locally.md)
-  - [Work on mobile app](how-to-setup-freecodecamp-mobile-app-locally.md)
-  - [Follow coding best practices](codebase-best-practices.md)
-  - [Open a pull request](how-to-open-a-pull-request.md)
-  - [Work on coding challenges](how-to-work-on-coding-challenges.md)
-  - [Work on practice projects](how-to-work-on-practice-projects.md)
-  - [Work on tutorials with CodeRoad](how-to-work-on-tutorials-that-use-coderoad.md)
-  - [Work on localized client web app](how-to-work-on-localized-client-webapp.md)
-  - [Work on Cypress tests](how-to-add-cypress-tests.md)
-  - [Work on video challenges](how-to-help-with-video-challenges.md)
-  - [Work on documentation](how-to-work-on-the-docs-theme.md)
-  - [Work on the component library](how-to-work-on-the-component-library.md)
+  - [Повідомлення про вразливість](security.md)
+- **Внесок до перекладу**
+  - [Робота над перекладом ресурсів](how-to-translate-files.md)
+  - [Робота над редагуванням перекладів](how-to-proofread-files.md)
+- **Внесок до коду**
+  - [Встановіть freeCodeCamp локально](how-to-setup-freecodecamp-locally.md)
+  - [Працюйте над мобільним додатком](how-to-setup-freecodecamp-mobile-app-locally.md)
+  - [Дотримуйтесь передових практик написання коду](codebase-best-practices.md)
+  - [Відкрийте пул реквест](how-to-open-a-pull-request.md)
+  - [Працюйте над завданнями з кодом](how-to-work-on-coding-challenges.md)
+  - [Працюйте над практичними проєктами](how-to-work-on-practice-projects.md)
+  - [Працюйте над туторіалами з CodeRoad](how-to-work-on-tutorials-that-use-coderoad.md)
+  - [Працюйте над локалізованим вебзастосунком](how-to-work-on-localized-client-webapp.md)
+  - [Працюйте над тестами Cypress](how-to-add-cypress-tests.md)
+  - [Працюйте над завданнями з відео](how-to-help-with-video-challenges.md)
+  - [Працюйте над документацією](how-to-work-on-the-docs-theme.md)
+  - [Працюйте над компонентною бібліотекою](how-to-work-on-the-component-library.md)
 - **Додаткові інструкції**
-  - [Тестуйте переклади локально](how-to-test-translations-locally.md)
+  - [Тестування перекладів локально](how-to-test-translations-locally.md)
   - [Ознайомлення зі структурою файлів навчальної програми](curriculum-file-structure.md)
-  - [Налагоджуйте вихідні електронні листи локально](how-to-catch-outgoing-emails-locally.md)
-  - [Встановіть freeCodeCamp на Windows (WSL)](how-to-setup-wsl.md)
-  - [User Token Workflow](user-token-workflow.md)
+  - [Налагодження вихідних електронних листів локально](how-to-catch-outgoing-emails-locally.md)
+  - [Встановлення freeCodeCamp на Windows (WSL)](how-to-setup-wsl.md)
+  - [Робочий процес токенів користувача](user-token-workflow.md)
 
 ---
 
 - **Посібники** (для персоналу & модераторів)
   - [Довідник модератора](moderator-handbook.md)
-  - [Language Lead Handbook](language-lead-handbook.md)
-  - [DevOps Handbook](devops.md)
-  - [Courses VSCode Extension](courses-vscode-extension.md)
+  - [Довідник мовного керівника](language-lead-handbook.md)
+  - [Довідник DevOps](devops.md)
+  - [Розширення курсів VSCode](courses-vscode-extension.md)
 
 ---
 

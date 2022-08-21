@@ -1,6 +1,6 @@
 ---
 id: 602da04c22201c65d2a019f4
-title: Build a Number Guessing Game
+title: Створіть гру «Вгадай число»
 challengeType: 13
 helpCategory: Backend Development
 url: https://github.com/freeCodeCamp/learn-number-guessing-game
@@ -9,15 +9,15 @@ dashedName: build-a-number-guessing-game
 
 # --description--
 
-This is one of the required projects to earn your certification. For this project, you will use Bash scripting, PostgreSQL, and Git to create a number guessing game that runs in the terminal and saves user information.
+Це один з обов'язкових проєктів для отримання сертифікату. У цьому проєкті ви використовуватимете сценарії Bash, PostgreSQL та Git, щоб створити гру з вгадуванням чисел, яка запускається в терміналі та зберігає інформацію користувача.
 
 # --instructions--
 
-**Important:** After you pass all the project tests, save a dump of your database into a `number_guessers.sql` file, as well as your whole `number_guessing_game` folder, so you can complete step 2. There will be instructions how to do that within the virtual machine.
+**Важливо:** після проходження всіх тестів проєкту збережіть звалище своєї бази даних у файлі `number_guess.sql`, а також свій файл `number_guess.sh`, щоб ви могли виконати крок 2. Там будуть інструкції, як це зробити у віртуальній машині.
 
 # --notes--
 
-Required files: `number_guessers.sql`, and the whole `number_guessing_game` folder
+Необхідні файли: `number_guess.sql`, `number_guess.sh`
 
 # --hints--
 
