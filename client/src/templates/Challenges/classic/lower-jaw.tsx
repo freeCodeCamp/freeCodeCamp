@@ -81,7 +81,7 @@ const LowerJaw = ({
       }, 500);
     }
 
-      setTestBtnariaHidden(challengeIsCompleted);
+    setTestBtnariaHidden(challengeIsCompleted);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [challengeIsCompleted]);
@@ -225,9 +225,7 @@ const LowerJaw = ({
           ) : null}
           <button
             id='test-button'
-            className={`btn-block btn ${
-              challengeIsCompleted ? 'sr-only' : ''
-            }`}
+            className={`btn-block btn ${challengeIsCompleted ? 'sr-only' : ''}`}
             aria-hidden={testBtnariaHidden}
             onClick={tryToExecuteChallenge}
           >
