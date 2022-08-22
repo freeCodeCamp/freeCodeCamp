@@ -8,13 +8,13 @@ dashedName: announce-new-users
 
 # --description--
 
-Many chat rooms are able to announce when a user connects or disconnects and then display that to all of the connected users in the chat. Seeing as though you already are emitting an event on connect and disconnect, you will just have to modify this event to support such a feature. The most logical way of doing so is sending 3 pieces of data with the event: the name of the user who connected/disconnected, the current user count, and if that name connected or disconnected.
+Many chat rooms are able to announce when a user connects or disconnects and then display that to all of the connected users in the chat. Seeing as though you already are emitting an event on connect and disconnect, you will just have to modify this event to support such a feature. The most logical way of doing so is sending 3 pieces of data with the event: the username of the user who connected/disconnected, the current user count, and if that username connected or disconnected.
 
-Change the event name to `'user'`, and pass an object along containing the fields 'name', 'currentUsers', and 'connected' (to be `true` in case of connection, or `false` for disconnection of the user sent). Be sure to change both 'user count' events and set the disconnect one to send `false` for the field 'connected' instead of `true` like the event emitted on connect.
+Change the event username to `'user'`, and pass an object along containing the fields 'username', 'currentUsers', and 'connected' (to be `true` in case of connection, or `false` for disconnection of the user sent). Be sure to change both 'user count' events and set the disconnect one to send `false` for the field 'connected' instead of `true` like the event emitted on connect.
 
 ```js
 io.emit('user', {
-  name: socket.request.user.name,
+  username: socket.request.user.username,
   currentUsers,
   connected: true
 });
@@ -28,7 +28,7 @@ An implementation of this could look like the following:
 socket.on('user', data => {
   $('#num-users').text(data.currentUsers + ' users online');
   let message =
-    data.name +
+    data.username +
     (data.connected ? ' has joined the chat.' : ' has left the chat.');
   $('#messages').append($('<li>').html('<b>' + message + '</b>'));
 });

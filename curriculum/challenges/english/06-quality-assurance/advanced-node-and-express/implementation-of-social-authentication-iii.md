@@ -16,6 +16,7 @@ myDataBase.findOneAndUpdate(
   {
     $setOnInsert: {
       id: profile.id,
+      username: profile.username,
       name: profile.displayName || 'John Doe',
       photo: profile.photos[0].value || '',
       email: Array.isArray(profile.emails)

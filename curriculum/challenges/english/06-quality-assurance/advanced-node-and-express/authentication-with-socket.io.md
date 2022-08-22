@@ -60,7 +60,7 @@ function onAuthorizeFail(data, message, error, accept) {
 The user object is now accessible on your socket object as `socket.request.user`. For example, now you can add the following:
 
 ```js
-console.log('user ' + socket.request.user.name + ' connected');
+console.log('user ' + socket.request.user.username + ' connected');
 ```
 
 It will log to the server console who has connected!
