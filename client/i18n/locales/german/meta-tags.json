@@ -1,7 +1,7 @@
 {
-  "title": "Learn to Code — For Free — Coding Courses for Busy People",
-  "description": "Learn to Code — For Free",
-  "social-description": "Learn to Code — For Free",
+  "title": "Lerne Programmieren - kostenlos - Programmierkurse für vielbeschäftigte Menschen",
+  "description": "Lerne Programmieren - kostenlos",
+  "social-description": "Lerne Programmieren - kostenlos",
   "keywords": [
     "python",
     "javascript",
@@ -10,12 +10,12 @@
     "github",
     "website",
     "web",
-    "development",
+    "entwicklung",
     "free",
     "code",
     "camp",
-    "course",
-    "courses",
+    "kurs",
+    "kurse",
     "html",
     "css",
     "react",
@@ -24,9 +24,9 @@
     "front",
     "back",
     "end",
-    "learn",
+    "lernen",
     "tutorial",
-    "programming"
+    "programmierung"
   ],
-  "youre-unsubscribed": "You have been unsubscribed"
+  "youre-unsubscribed": "Du wurdest abgemeldet"
 }
