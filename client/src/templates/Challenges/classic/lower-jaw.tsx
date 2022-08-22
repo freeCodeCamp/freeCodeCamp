@@ -10,7 +10,7 @@ import { apiLocation } from '../../../../../config/env.json';
 
 interface LowerJawProps {
   hint?: string;
-  challengeIsCompleted?: boolean;
+  challengeIsCompleted: boolean;
   openHelpModal: () => void;
   tryToExecuteChallenge: () => void;
   tryToSubmitChallenge: () => void;
@@ -83,11 +83,19 @@ const LowerJaw = ({
       }, 500);
     }
 
+    if (!challengeHasBeenCompleted) {
+      setTestBtnariaHidden(false);
+    }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [challengeHasBeenCompleted]);
 
   useEffect(() => {
     if (!challengeHasBeenCompleted && challengeIsCompleted) {
+      setChallengeHasBeenCompleted(challengeIsCompleted);
+    }
+
+    if (challengeHasBeenCompleted && !challengeIsCompleted) {
       setChallengeHasBeenCompleted(challengeIsCompleted);
     }
 
