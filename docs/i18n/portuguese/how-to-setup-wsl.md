@@ -127,7 +127,7 @@ Agora que você instalou os pré-requisitos, siga [nosso guia de instalação lo
 
 ## Links Úteis
 
-- [A WSL2 Dev Setup with Ubuntu 20.04, Node.js, MongoDB, VS Code and Docker](https://hn.mrugesh.dev/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - an article by Mrugesh Mohapatra (Staff Developer at freeCodeCamp.org)
+- [Configuração de desenvolvimento do WSL2 com Ubuntu 20.04, Node.js, MongoDB, VS Code e Docker](https://hn.mrugesh.dev/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - um artigo de Mrugesh Mohapatra (desenvolvedor da equipe do freeCodeCamp.org)
 - Perguntas frequentes sobre:
   - [Subsistema Windows para Linux](https://docs.microsoft.com/en-us/windows/wsl/faq)
   - [Docker Desktop para Windows](https://docs.docker.com/docker-for-windows/faqs)
