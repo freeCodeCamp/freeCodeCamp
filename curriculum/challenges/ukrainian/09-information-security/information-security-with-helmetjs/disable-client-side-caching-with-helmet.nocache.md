@@ -8,7 +8,7 @@ dashedName: disable-client-side-caching-with-helmet-nocache
 
 # --description--
 
-Нагадуємо, що цей проект створюється на основі наступного початкового проекту [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec) або копіюється з [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
+Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 Якщо ви випускаєте оновлення для вашого веб-сайту і хочете, щоб користувачі завжди завантажували новішу версію, ви можете спробувати вимкнути кешування в їхньому браузері. Це може бути корисним також у розробці. Проте використовуйте таку опцію лише за необхідністю, адже з ним кешування не покращує продуктивність як зазвичай.
 
