@@ -1,11 +1,52 @@
-# How to Test Translations Locally
+# Deploying New Languages on `/learn`
 
-> [!NOTE]
-> This process is not required, but documented in case you would like to preview what your translations will look like.
+Before you can release a new language, you will need to allow the languages to download from Crowdin.
 
-If you would like to test your translations on a local instance of the freeCodeCamp `/learn` site, first ensure you have [set up the codebase](how-to-setup-freecodecamp-locally.md).
+## Updating Crowdin Settings
+
+In the `Curriculum` and `Learn UI` projects, you will need to select `Project Settings` from the sidebar. Then scroll down to `Language Mapping`, where you will see an option to add custom language codes. Add a new entry for the language you are releasing, selecting `language` as the `Placeholder` value, and entering a URL-friendly lower-case spelling of your language's name for the `Custom code`. If you aren't sure what to use, reach out in our contributor chat and we will assist you.
+
+## Updating Workflows
+
+You will need to add a step to the `crowdin-download.client-ui.yml` and `crowdin-download.curriculum.yml`. The step for these will be the same. For example, if you want to enable Dothraki downloads:
+
+```yml
+##### Download Dothraki #####
+- name: Crowdin Download Dothraki Translations
+  uses: crowdin/github-action@master
+  # options: https://github.com/crowdin/github-action/blob/master/action.yml
+  with:
+    # uploads
+    upload_sources: false
+    upload_translations: false
+    auto_approve_imported: false
+    import_eq_suggestions: false
+
+    # downloads
+    download_translations: true
+    download_language: mis
+    skip_untranslated_files: false
+    export_only_approved: true
+
+    push_translations: false
+
+    # pull-request
+    create_pull_request: false
+
+    # global options
+    config: './crowdin-config.yml'
+    base_url: ${{ secrets.CROWDIN_BASE_URL_FCC }}
+
+    # Uncomment below to debug
+    # dryrun_action: true
+```
+
+Note that the `download_language` key needs to be set to the language code displayed on Crowdin.
 
 ## Enabling a Language
+
+> [!NOTE]
+> The above section with updating the workflows should be completed before proceeding - these need to be done in separate steps or the builds will fail.
 
 There are a few steps to take in order to allow the codebase to build in your desired language.
 
@@ -149,9 +190,10 @@ export const auditedCerts = {
     SuperBlocks.JsAlgoDataStruct,
     SuperBlocks.FrontEndDevLibs
   ]
+};
 ```
 
-Finally, the `languagesWithAuditedBetaReleases` array should be updated to include the new language like this:
+Finally, if the superblock is in a "new" state (that is, replacing a legacy superblock), the `languagesWithAuditedBetaReleases` array should be updated to include the new language like this:
 
 ```ts
 export const languagesWithAuditedBetaReleases: ['english', 'dothraki'];
@@ -213,11 +255,28 @@ videoLocaleIds: Joi.when('challengeType', {
 }),
 ```
 
-## Loading Translations
+## Client UI
+
+You will need to take an additional step to handle the client UI translations.
+
+The Crowdin workflows will automatically pull down _some_ of the UI translations, but there are a couple of files that need to be moved manually.
+
+You will want to copy the following files from `/client/i18n/locales/english` to `/client/i18n/locales/<your-language>`, and apply translations as needed:
+
+- `links.json`
+- `meta-tags.json`
+- `motivation.json`
+- `trending.json`
+
+## Testing Translations Locally
+
+If you would like to test translations locally, before adding them to our main repository - skip the Crowdin workflow changes. Follow the steps for enabling a language, then download the translations from Crowdin and load them into your local code.
 
 Because the language has not been approved for production, our scripts are not automatically downloading the translations yet. Only staff have the access to directly download the translations - you are welcome to reach out to us in our [contributors chat room](https://discord.gg/PRyKn3Vbay), or you can translate the English markdown files locally for testing purposes.
 
 Once you have the files, you will need to place them in the correct directory. For the curriculum challenges, you should place the certification folders (i.e. `01-responsive-web-design`) within the `curriculum/challenges/{lang}` directory. For our Dothraki translations, this would be `curriculum/challenges/dothraki`. The client translation `.json` files will go in the `client/i18n/locales/{lang}` directory.
+
+Update your `.env` file to use your new language for `CLIENT_LOCALE` and `CURRICULUM_LOCALE`.
 
 Once these are in place, you should be able to run `npm run develop` to view your translated version of freeCodeCamp.
 
