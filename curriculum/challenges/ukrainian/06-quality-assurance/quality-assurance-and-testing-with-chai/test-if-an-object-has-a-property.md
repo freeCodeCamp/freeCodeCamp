@@ -8,7 +8,7 @@ dashedName: test-if-an-object-has-a-property
 
 # --description--
 
-Нагадуємо, що цей проєкт створено на основі наступного стартового проєкту [ Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai) або кальковано з [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 `property` стверджує, що певний об'єкт має задану властивість.
 

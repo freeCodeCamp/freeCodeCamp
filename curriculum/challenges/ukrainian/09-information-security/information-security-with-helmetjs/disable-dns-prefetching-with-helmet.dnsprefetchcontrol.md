@@ -8,7 +8,7 @@ dashedName: disable-dns-prefetching-with-helmet-dnsprefetchcontrol
 
 # --description--
 
-Нагадуємо, що цей проект створюється на основі наступного початкового проекту [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec) або копіюється з [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
+Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 Щоб покращити продуктивність, більшість браузерів оновлюють записи DNS на сторінці посилання. Таким способом Ip-адреса отримувача уже відома, коли користувач натискає на посилання. Це може призвести до надмірного використання DNS-служби (якщо у вас великий веб-сайт, який відвідують мільйони людей…), проблем конфіденційності (злочинець зможе встановити, що ви перебуваєте на певній сторінці) або зміни статистики сторінки (деякі посилання можуть відображатись як вже відвідані навіть якщо вони не є такими). Якщо рівень безпеки для вас важливий, ви можете вимкнути попереднє перетворення доменних імен (DNS), втративши продуктивність.
 
