@@ -17,8 +17,8 @@ export const availableLangs = {
     'italian',
     'portuguese',
     'ukrainian',
-    'japanese',
-    'german'
+    'japanese'
+    // 'german'
   ],
   curriculum: [
     'english',
@@ -28,8 +28,8 @@ export const availableLangs = {
     'italian',
     'portuguese',
     'ukrainian',
-    'japanese',
-    'german'
+    'japanese'
+    // 'german'
   ]
 };
 
@@ -132,12 +132,12 @@ export const auditedCerts = {
     SuperBlocks.MachineLearningPy,
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.RelationalDb
-  ],
-  german: [
-    SuperBlocks.RespWebDesign,
-    SuperBlocks.JsAlgoDataStruct,
-    SuperBlocks.FrontEndDevLibs
   ]
+  // german: [
+  //   SuperBlocks.RespWebDesign,
+  //   SuperBlocks.JsAlgoDataStruct,
+  //   SuperBlocks.FrontEndDevLibs
+  // ]
 };
 
 /**
@@ -168,8 +168,8 @@ export const i18nextCodes = {
   italian: 'it',
   portuguese: 'pt-BR',
   ukrainian: 'uk',
-  japanese: 'ja',
-  german: 'de'
+  japanese: 'ja'
+  // german: 'de'
 };
 
 // These are for the language selector dropdown menu in the footer
@@ -182,8 +182,8 @@ export enum LangNames {
   italian = 'Italiano',
   portuguese = 'Português',
   ukrainian = 'Українська',
-  japanese = '日本語',
-  german = 'Deutsch'
+  japanese = '日本語'
+  // german = 'Deutsch'
 }
 
 /* These are for formatting dates and numbers. Used with JS .toLocaleString().
@@ -198,8 +198,8 @@ export enum LangCodes {
   italian = 'it',
   portuguese = 'pt-BR',
   ukrainian = 'uk',
-  japanese = 'ja',
-  german = 'de'
+  japanese = 'ja'
+  // german = 'de'
 }
 /* eslint-enable @typescript-eslint/naming-convention */
 
