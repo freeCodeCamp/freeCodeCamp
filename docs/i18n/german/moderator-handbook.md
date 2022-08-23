@@ -208,63 +208,51 @@ Manchmal posten Menschen Dinge, die sie für lustig halten. Sie erkennen nicht, 
 
 Aber wenn es eine ungeheuerliche Beleidigung ist, welche nicht auf einen kulturellen Unterschied oder einem Missverständnis in der englischen Sprache zurückgeführt werden kann. Dann solltest du in diesem Fall ernsthaft in Erwägung ziehen, das Mitglied aus der Facebook-Gruppe zu sperren.
 
-## Chat moderieren
+## Moderating Discord
 
 Hier erfährst du, wie die Moderatoren mit Verstößen gegen unseren [Verhaltenskodex](https://code-of-conduct.freecodecamp.org/) auf unserem Chat-Server umgehen:
 
+> [!NOTE] Camperbot serves as our moderation bot, and all of the commands use Discord's native slash command interface. You can see a list of all of the commands by typing `/` in any channel.
+
 1. **Make sure the user intended to violate the [Code of Conduct](https://code-of-conduct.freecodecamp.org).**
 
-   Not all violations of the [Code of Conduct](https://code-of-conduct.freecodecamp.org) were intended as such. Ein neuer Teilnehmer könnte eine große Menge an Code posten und um Hilfe bitten, ohne zu wissen, dass dies als Spamming angesehen werden kann. In diesen Fällen kannst du sie einfach bitten, ihren Code mit Diensten wie CodePen oder Pastebin einzufügen.
+   Not all violations of the [Code of Conduct](https://code-of-conduct.freecodecamp.org) were intended as such. A new camper might post a large amount of code for help, unaware that this can be disruptive to conversation. In diesen Fällen kannst du sie einfach bitten, ihren Code mit Diensten wie CodePen oder Pastebin einzufügen.
 
 2. **If the camper clearly and intentionally violates the [Code of Conduct](https://code-of-conduct.freecodecamp.org), the moderator will proceed as follows:**
 
-   Wirf die beleidigende Person aus dem Chatraum oder schalte sie stumm. Um jemanden hinauszuwerfen oder stumm zu schalten, klickst du mit der linken Maustaste auf sein Profilbild, wählst die drei Punkte und wählst "Remove from room", um ihn hinauszuwerfen, oder "Mute user", um ihn am Senden von Nachrichten zu hindern. Dann berichte eine kurze Zusammenfassung des Ereignisses im Channel #mod-log. Hier ist ein Beispiel dafür, wie eine solche Zusammenfassung aussehen könnte:
+   For minor offences, a warning may be issued with the `/warn` command. For more egregious offences, you can remove the member from the server temporarily with the `/kick` command, or permanently with the `/ban` command. In some cases, a member may just need some time to cool off and collect their thoughts - the `/mute` command allows you to prevent them from engaging with our community for a set period of time. A muted member can see the conversation, but cannot post messages or add reactions.
 
-   ```
-   Kicked: _@username_
-   Reason(s): _Spamming, trolling_
-   Evidence: _One or more links to the offending message(s)_
-   ```
+   All moderation commands will take a `reason` parameter, which should be a short explanation of why the action was taken. Moderation actions done with the bot will be logged in `#mod-log`, which allows us all to stay on the same page. As such, we should avoid using Discord's built-in moderation tools, as they will not be logged.
+
+   > [!WARNING] The reason provided to a moderation command will also be included in the DM notification to the camper. Please remember to be professional here.
 
 3. **Creating a private discussion**
 
    Es kann Situationen geben, in denen du ein Anliegen mit einem Teilnehmer unter vier Augen besprechen musst. Dies sollte nicht über DMs geschehen, da dies zu Situationen führen kann, in denen du eine Sache behauptest und der Teilnehmer eine andere. Nutze stattdessen die Funktionen des Bots, um eine private Diskussion zu führen:
 
-   - Call the `!fcc private username` command, where `username` is the camper's chat username.
+   - Call the `/private` command, where `username` is the camper's chat username.
    - Der Bot erstellt einen neuen Channel und fügt den genannten Camper und alle Moderatoren mit der Rolle `Your Friendly Moderator` hinzu. Obwohl alle Moderatoren zur Transparenz in den Kanal aufgenommen werden, sollte der Moderator, der diesen Befehl aufruft, der einzige sein, der mit dem Teilnehmer interagiert, es sei denn, er bittet um Hilfe.
    - When the conversation is complete, click the `❌ Close` button _on the first message in the private channel_ to have the bot close and delete that channel.
 
 4. **Deleting messages**
 
-   Moderatoren können Nachrichten auf unserem Chat-Server löschen. Sie sollten diese Fähigkeit nur in vier ganz bestimmten Situationen nutzen:
+   Our moderation bot is configured to log deleted messages automatically in the `#mod-log` channel. If a message is not in line with our Code of Conduct, or otherwise not appropriate for our community, you are generally safe to delete it.
 
-   - Jemand hat ein pornografisches oder grafisch gewalttätiges Bild gepostet.
+   Note that if the message contains content that violates Discord's terms of service, you'll want to report it via https://dis.gd/report **prior to** deleting it.
 
-   - Jemand hat einen Link oder Code gepostet, der bösartig ist und anderen Teilnehmern, die darauf klicken, schaden könnte.
+5. **Don’t threaten to take action**
 
-   - Jemand hat den Chat mit so vielen Spam-Nachrichten überflutet (meist durch Bots), dass der Chat komplett unbrauchbar ist.
+   If a camper breaks the [Code of Conduct](https://code-of-conduct.freecodecamp.org), don’t threaten to take moderator action, and never warn them in public. Instead, talk to them privately using the bot's `/private` command, or use the bot's moderation commands.
 
-   - Jemand hat eine Werbung und/oder eine selbstdarstellende Nachricht/ein selbstdarstellendes Bild (soziale Medien) gepostet.
+   If a violation was clearly unintended and doesn't warrant moderation action or private conversation, make the offending camper aware of their actions without making it come across as a warning.
 
-   In all other situations - even situations where the [Code of Conduct](https://code-of-conduct.freecodecamp.org) is violated - moderators should not delete the messages as they are important historic records. Wenn du eine Nachricht löschst, solltest du vorher einen Screenshot davon machen! Der Screenshot kann im Channel #mod-log geloggt werden.
+   For example:
 
-   > [!NOTE] If the message contains material that would be illegal to take a screenshot of, copy the message link instead - provide that message link to **@raisedadead** to forward to Discord's Trust and Safety team.
-
-5. **Don’t use @all, @everyone, or @here**
-
-   Don’t use **@all**, **@everyone**, or **@here** under any circumstances! Jede einzelne Person in diesem Chatraum erhält eine Benachrichtigung. In some cases, tens of thousands of people.
-
-   Instead, if you want people to see an announcement, you can pin it to the channel to allow everyone to read it over time.
-
-6. **Droh nicht mit Maßnahmen**
-
-   If a camper breaks the [Code of Conduct](https://code-of-conduct.freecodecamp.org), don’t threaten to take moderator action, and never warn them in public. Sprich stattdessen privat mit ihnen, indem du den Befehl `private` des Bots benutzt. Niemand sonst in diesem Channel muss wissen, dass du die Person gebannt/suspendiert hast. Wenn ein Verstoß eindeutig unbeabsichtigt war und keine Suspendierung oder ein Gespräch unter vier Augen rechtfertigt, solltest du den/die betreffende/n Teilnehmer/in auf sein/ihr Verhalten aufmerksam machen, ohne dass es wie eine Verwarnung wirkt. Zum Beispiel:
-
-   - Der Teilnehmer postet viele Codezeilen und bittet um Hilfe:
+   - Camper posts a wall of code to request help:
 
      Moderator: **@username** Please use CodePen or Pastebin when posting large amounts of code.
 
-   - Oder wenn du wirklich erklären musst, warum:
+   - Or if you really have to explain why:
 
      Moderator: **@username** Please use CodePen or Pastebin when posting large amounts of code, because it disrupts the chat for everyone and could be considered spamming according to our [Code of Conduct](https://code-of-conduct.freecodecamp.org).
 
@@ -272,25 +260,25 @@ Hier erfährst du, wie die Moderatoren mit Verstößen gegen unseren [Verhaltens
 
      Moderator: This is a friendly reminder for everyone to follow the [Code of Conduct](https://code-of-conduct.freecodecamp.org): https://code-of-conduct.freecodecamp.org/
 
-7. **Gib nicht damit an, ein Moderator zu sein**
+6. **Don’t brag about being a moderator**
 
-   Sieh dich nicht als über der Community stehend an. **You are the community.** And the community has trusted you to help protect something rare that we all share - a _welcoming_ place for new developers.
+   Do not see yourself as above the community. **You are the community.** And the community has trusted you to help protect something rare that we all share - a _welcoming_ place for new developers.
 
-   Wenn du damit angibst, Moderator zu sein, fühlen sich die Leute in deiner Nähe vielleicht unwohl, so wie sich die Leute in der Nähe von Polizisten unwohl fühlen, auch wenn sie nichts Unrechtes tun. Das ist einfach die menschliche Natur.
+   If you brag about being a moderator, people may feel uneasy around you, in the same way that people may feel uneasy around a police officer, even if they’re doing nothing wrong. This is just human nature.
 
-8. **Widersprich nicht anderen Moderatoren**
+7. **Don’t contradict other moderators**
 
-   Wenn du mit der Handlung eines Moderators nicht einverstanden bist, sprich mit ihm unter vier Augen oder sprich es im #mod-chat-Kanal an. Setze dich niemals über die Entscheidung eines Moderators hinweg und widerspreche niemals öffentlich den anderen Moderatoren. Instead, have a cool-headed discussion in `#mod-chat` and convince the moderator that they themselves should reverse their ban or change their PoV (Point of View).
+   If you disagree with a moderator's action, talk with them in private or bring it up in the #mod-chat channel. Never override a moderator's action, and never contradict the other moderator(s) publicly. Instead, have a cool-headed discussion in `#mod-chat` and convince the moderator that they themselves should reverse their ban or change their PoV (Point of View).
 
    _Remember: We’re all on the same team. We want to dignify the role of moderators and present a unified front._
 
-9. **Sprich mit anderen Moderatoren**
+8. **Talk with other moderators**
 
-   Wir haben einen Raum nur für Moderatoren. Benutze ihn! Wenn du dich mit einer bestimmten Situation unwohl fühlst, bitte andere Moderatoren um Hilfe. Wenn du denkst, dass etwas diskutiert werden sollte, dann tu es. Du bist Teil des Teams, und wir schätzen den Beitrag jedes Teammitglieds! Even if you totally disagree with anything in these guidelines or the [Code of Conduct](https://code-of-conduct.freecodecamp.org)!
+   We have a `#mod-chat` room for moderators only. Use it! If you feel uncomfortable with handling a certain situation, ask other moderators for help. If you think something should be discussed, do it. You're part of the team, and we value every team member's input! Even if you totally disagree with anything in these guidelines or the [Code of Conduct](https://code-of-conduct.freecodecamp.org)!
 
-10. **Vorübergehend inaktiv**
+9. **Temporarily inactive**
 
-    Wenn du wegen Urlaub, Krankheit oder aus einem anderen Grund eine Weile nicht als Moderator aktiv sein wirst, lass es die anderen im `#mod-chat` Kanal wissen. So wissen wir, ob wir auf dich zählen können, dass du regelmäßig auf dem Server aktiv bist oder nicht.
+   If you're not going to be active as a Moderator for a while due to vacation, illness, or any other reason, make sure to let the others know in the `#mod-chat` channel. This is so we know if we can count on you to be regularly active on the server or not.
 
 ## How to Become a Moderator
 
@@ -298,9 +286,9 @@ Angenommen, du hilfst den Menschen in deiner Community über einen längeren Zei
 
 If you are approved, we will add you to our moderator teams on [GitHub](https://github.com/orgs/freeCodeCamp/teams/moderators), [forum](https://forum.freecodecamp.org/g/moderators), chat, etc.
 
-> [!NOTE] Für GitHub: Nachdem du als Moderator akzeptiert wurdest, erhältst du eine Einladung zum Github-Repository. You'll need to head over towards [freeCodeCamp GitHub Organization Invitation](https://github.com/orgs/freeCodeCamp/invitation) to be able to accept the invitation.
+> [!NOTE] For GitHub: After you've been accepted as a moderator, you will receive a Github repository invitation. You'll need to head over towards [freeCodeCamp GitHub Organization Invitation](https://github.com/orgs/freeCodeCamp/invitation) to be able to accept the invitation.
 > 
-> Dies ist erforderlich, damit wir dir Schreibzugriff auf einige unserer Repositories geben können.
+> This is required for us to be able to give you write access to some of our repositories.
 
 ## How We Retire Inactive Moderators
 
@@ -367,7 +355,7 @@ We are happy to accept these changes and look forward to future contributions. �
 
 ### Danke und herzlichen Glückwunsch
 
-> Für die Danksagung und Ermutigung von erstmalig Mitwirkenden.
+> For thanking and encouraging first-time contributors.
 
 ```markdown
 Hi @username. Congrats on your first pull request (PR)! 🎉
@@ -392,7 +380,7 @@ Feel free to reference the [contributing guidelines](how-to-work-on-coding-chall
 
 ### Fork synchronisieren
 
-> Wenn der PR nicht mit dem `main`-Branch auf dem neuesten Stand ist.
+> When PR is not up to date with the `main` branch.
 
 ````markdown
 Hey @username
@@ -442,7 +430,7 @@ Dit is ook goeie praktyk op GitHub om 'n kort beskrywing van jou veranderinge te
 
 ### Duplikat
 
-> Wenn eine PR sich wiederholt oder ein Duplikat ist.
+> When PR is repetitive or a duplicate.
 
 ```markdown
 Hey @username
@@ -460,7 +448,7 @@ If you have any questions, feel free to ask questions on the ["Contributors" cat
 
 ### Closing Invalid Pull Requests
 
-> Wenn PR ungültig ist.
+> When PR is invalid.
 
 ```markdown
 Hey @username
@@ -472,7 +460,7 @@ This is a standard message notifying you that we've reviewed your pull request a
 Thank you and happy coding.
 ```
 
-> Wenn ein PR Links zu externen Ressourcen hinzufügt.
+> When PR adds links to external resources.
 
 ```markdown
 Thank you for your pull request.
@@ -484,7 +472,7 @@ If you think we're wrong in closing this issue, please request for it to be reop
 
 ### Ungültige Issues schließen
 
-> Wenn sich ein Issue auf den Code des Teilnehmers bezieht.
+> When an issue relates to the camper's code.
 
 ```markdown
 Thank you for reporting this issue.
@@ -506,7 +494,7 @@ This is a standard message notifying you that this issue appears to be very simi
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
-> Wenn ein Problem während des Staging gelöst wird.
+> When an issue is fixed in staging.
 
 ```markdown
 Thank you for reporting this issue.

@@ -208,63 +208,51 @@ Thank you for understanding.
 
 しかし、それが文化的な違いや英語での誤解では説明できない酷い犯罪である場合もあります。 その場合、Facebook グループからメンバーをブロックすることを検討するべきです。
 
-## チャットをモデレートする
+## Moderating Discord
 
 モデレーターは、以下のように、チャットサーバー上の [行動規範](https://code-of-conduct.freecodecamp.org/) の違反に対処します。
 
+> [!NOTE] Camperbot serves as our moderation bot, and all of the commands use Discord's native slash command interface. You can see a list of all of the commands by typing `/` in any channel.
+
 1. **Make sure the user intended to violate the [Code of Conduct](https://code-of-conduct.freecodecamp.org).**
 
-   Not all violations of the [Code of Conduct](https://code-of-conduct.freecodecamp.org) were intended as such. 新しいキャンパーは、スパムであると気づかずに、支援のために大量のコードを投稿する場合もあります。 この場合、CodePen や Pastebin のようなサービスを使用してコードを貼り付けるようにキャンパーに依頼することができます。
+   Not all violations of the [Code of Conduct](https://code-of-conduct.freecodecamp.org) were intended as such. A new camper might post a large amount of code for help, unaware that this can be disruptive to conversation. この場合、CodePen や Pastebin のようなサービスを使用してコードを貼り付けるようにキャンパーに依頼することができます。
 
 2. **If the camper clearly and intentionally violates the [Code of Conduct](https://code-of-conduct.freecodecamp.org), the moderator will proceed as follows:**
 
-   チャットルームから問題のある人を退出させたり、ミュートしたりします。 誰かを退出させるまたはミュートするには、彼らのプロフィール画像上で左クリックして、3 つの点を選択します。 そして、「ルームから削除」を選択して退出させるか、「ユーザーをミュート」を選択してメッセージを送信できないようにします。 その後、#mod-log チャンネルでその概要を報告します。 以下は、そのような概要の例です。
+   For minor offences, a warning may be issued with the `/warn` command. For more egregious offences, you can remove the member from the server temporarily with the `/kick` command, or permanently with the `/ban` command. In some cases, a member may just need some time to cool off and collect their thoughts - the `/mute` command allows you to prevent them from engaging with our community for a set period of time. A muted member can see the conversation, but cannot post messages or add reactions.
 
-   ```
-   Kicked: _@username_
-   Reason(s): _Spamming, trolling_
-   Evidence: _One or more links to the offending message(s)_
-   ```
+   All moderation commands will take a `reason` parameter, which should be a short explanation of why the action was taken. Moderation actions done with the bot will be logged in `#mod-log`, which allows us all to stay on the same page. As such, we should avoid using Discord's built-in moderation tools, as they will not be logged.
+
+   > [!WARNING] The reason provided to a moderation command will also be included in the DM notification to the camper. Please remember to be professional here.
 
 3. **Creating a private discussion**
 
    キャンパーに関わる懸念事項に対して個人的に対処する必要のある場合があるかもしれません。 これは、DM を通じて行うべきではありません。あなたがあることを主張し、キャンパーがそれとは別のことを主張する状況につながる可能性があります。 代わりに、bot の機能を使用してプライベートディスカッションを作成してください。
 
-   - Call the `!fcc private username` command, where `username` is the camper's chat username.
+   - Call the `/private` command, where `username` is the camper's chat username.
    - bot は新しいチャンネルを作成し、上述のキャンパーと `Your Friendly Moderator` の役割を持つすべてのモデレーターをディスカッションに追加します。 透明性を保つため、すべてのモデレーターをチャンネルに追加しますが、支援を求めない限り、このコマンドを呼び出すモデレーターがキャンパーと接触する唯一の人であるべきです。
    - When the conversation is complete, click the `❌ Close` button _on the first message in the private channel_ to have the bot close and delete that channel.
 
 4. **Deleting messages**
 
-   モデレーターは、チャットサーバー上のメッセージを削除できます。 モデレーターは、以下 4 つの非常に特定の状況でのみこの機能を行使します。
+   Our moderation bot is configured to log deleted messages automatically in the `#mod-log` channel. If a message is not in line with our Code of Conduct, or otherwise not appropriate for our community, you are generally safe to delete it.
 
-   - ポルノやグラフィカルに暴力的な画像を投稿している
+   Note that if the message contains content that violates Discord's terms of service, you'll want to report it via https://dis.gd/report **prior to** deleting it.
 
-   - 本質的に悪意のあるリンクやコードを投稿し、それをクリックする他のキャンパーに害を与える可能性がある
+5. **Don’t threaten to take action**
 
-   - 非常に多くのスパムメッセージ (通常 bot も含む) を送ることでチャットを溢れさせ、チャットを完全に使用不能にしている
+   If a camper breaks the [Code of Conduct](https://code-of-conduct.freecodecamp.org), don’t threaten to take moderator action, and never warn them in public. Instead, talk to them privately using the bot's `/private` command, or use the bot's moderation commands.
 
-   - 広告や自己宣伝メッセージ / イメージ (ソーシャルメディア) を投稿している
+   If a violation was clearly unintended and doesn't warrant moderation action or private conversation, make the offending camper aware of their actions without making it come across as a warning.
 
-   In all other situations - even situations where the [Code of Conduct](https://code-of-conduct.freecodecamp.org) is violated - moderators should not delete the messages as they are important historic records. メッセージを削除する場合は、まずスクリーンショットを撮ってください！ スクリーンショットは #mod-log チャンネルに記録することができます。
+   For example:
 
-   > [!NOTE] If the message contains material that would be illegal to take a screenshot of, copy the message link instead - provide that message link to **@raisedadead** to forward to Discord's Trust and Safety team.
-
-5. **Don’t use @all, @everyone, or @here**
-
-   Don’t use **@all**, **@everyone**, or **@here** under any circumstances! チャットルームにいるすべての人に通知が届いてしまいます。 In some cases, tens of thousands of people.
-
-   Instead, if you want people to see an announcement, you can pin it to the channel to allow everyone to read it over time.
-
-6. **アクションを起こすと脅してはなりません。**
-
-   If a camper breaks the [Code of Conduct](https://code-of-conduct.freecodecamp.org), don’t threaten to take moderator action, and never warn them in public. 代わりに、bot の `private` コマンドを使用して彼らと非公開で話をします。 あなたがその人を利用禁止 / 一時利用停止したという事実は、そのチャンネルで誰も知る必要はありません。 明らかに意図された違反ではなく、一時利用停止や個人的な会話を行うことが当然であるとは言えない場合には、警告としての印象を与えずに、違反しているキャンパーにその行動が問題であることを認識させます。 例を示します。
-
-   - キャンパーが大量のコードを投稿して支援を要求する場合
+   - Camper posts a wall of code to request help:
 
      Moderator: **@username** Please use CodePen or Pastebin when posting large amounts of code.
 
-   - 上記対応の理由も説明する必要がある場合
+   - Or if you really have to explain why:
 
      Moderator: **@username** Please use CodePen or Pastebin when posting large amounts of code, because it disrupts the chat for everyone and could be considered spamming according to our [Code of Conduct](https://code-of-conduct.freecodecamp.org).
 
@@ -272,25 +260,25 @@ Thank you for understanding.
 
      Moderator: This is a friendly reminder for everyone to follow the [Code of Conduct](https://code-of-conduct.freecodecamp.org): https://code-of-conduct.freecodecamp.org/
 
-7. **モデレーターであることを自慢してはなりません。**
+6. **Don’t brag about being a moderator**
 
-   自分がコミュニティの上にいるとは思わないでください。 **You are the community.** And the community has trusted you to help protect something rare that we all share - a _welcoming_ place for new developers.
+   Do not see yourself as above the community. **You are the community.** And the community has trusted you to help protect something rare that we all share - a _welcoming_ place for new developers.
 
-   モデレーターであることを自慢すれば、周囲の人は不安を感じるかもしれません。何も悪いことをしていなくても、警察官の周りにいると不安を感じるのと同じです。 それが人間の本質なのです。
+   If you brag about being a moderator, people may feel uneasy around you, in the same way that people may feel uneasy around a police officer, even if they’re doing nothing wrong. This is just human nature.
 
-8. **他のモデレーターを批判してはなりません。**
+7. **Don’t contradict other moderators**
 
-   モデレーターのアクションに同意できない場合は、プライベートまたは #mod-chat チャンネルで相談してください。 モデレーターのアクションを無効にしないでください。他のモデレーターを公に批判してはいけません。 Instead, have a cool-headed discussion in `#mod-chat` and convince the moderator that they themselves should reverse their ban or change their PoV (Point of View).
+   If you disagree with a moderator's action, talk with them in private or bring it up in the #mod-chat channel. Never override a moderator's action, and never contradict the other moderator(s) publicly. Instead, have a cool-headed discussion in `#mod-chat` and convince the moderator that they themselves should reverse their ban or change their PoV (Point of View).
 
    _Remember: We’re all on the same team. We want to dignify the role of moderators and present a unified front._
 
-9. **他のモデレーターと話をします。**
+8. **Talk with other moderators**
 
-   モデレーター専用ルームがあります。 それを使ってみましょう！ 特定の状況を処理することを不快に感じる場合は、他のモデレーターに支援を求めてください。 議論されるべきことがあると思ったら、議論してください。 皆さんはチームの一員であり、私たちはすべてのチームメンバーからのインプットを大切にしています！ Even if you totally disagree with anything in these guidelines or the [Code of Conduct](https://code-of-conduct.freecodecamp.org)!
+   We have a `#mod-chat` room for moderators only. Use it! If you feel uncomfortable with handling a certain situation, ask other moderators for help. If you think something should be discussed, do it. You're part of the team, and we value every team member's input! Even if you totally disagree with anything in these guidelines or the [Code of Conduct](https://code-of-conduct.freecodecamp.org)!
 
-10. **一時的に非アクティブにします。**
+9. **Temporarily inactive**
 
-    休暇、病気、または他の理由により、しばらくモデレーターとして活動できない場合は、`#mod-chat` チャンネルで他の人に知らせるようにしてください。 そうすることで、皆さんがサーバー上で通常どおり活動しているかどうかを認識することができます。
+   If you're not going to be active as a Moderator for a while due to vacation, illness, or any other reason, make sure to let the others know in the `#mod-chat` channel. This is so we know if we can count on you to be regularly active on the server or not.
 
 ## How to Become a Moderator
 
@@ -298,9 +286,9 @@ Thank you for understanding.
 
 If you are approved, we will add you to our moderator teams on [GitHub](https://github.com/orgs/freeCodeCamp/teams/moderators), [forum](https://forum.freecodecamp.org/g/moderators), chat, etc.
 
-> [!NOTE] GitHub の場合: モデレーターとして承認されると、Github リポジトリへの招待が届きます。 You'll need to head over towards [freeCodeCamp GitHub Organization Invitation](https://github.com/orgs/freeCodeCamp/invitation) to be able to accept the invitation.
+> [!NOTE] For GitHub: After you've been accepted as a moderator, you will receive a Github repository invitation. You'll need to head over towards [freeCodeCamp GitHub Organization Invitation](https://github.com/orgs/freeCodeCamp/invitation) to be able to accept the invitation.
 > 
-> これは、一部のリポジトリへの書き込みアクセスを提供するために必要となります。
+> This is required for us to be able to give you write access to some of our repositories.
 
 ## How We Retire Inactive Moderators
 
@@ -367,7 +355,7 @@ We are happy to accept these changes and look forward to future contributions. �
 
 ### お礼と祝福
 
-> 新規コントリビューターへの感謝と励まし
+> For thanking and encouraging first-time contributors.
 
 ```markdown
 Hi @username. Congrats on your first pull request (PR)! 🎉
@@ -392,7 +380,7 @@ Feel free to reference the [contributing guidelines](how-to-work-on-coding-chall
 
 ### フォークの同期
 
-> PR が、最新の `main` ブランチで更新されていない場合
+> When PR is not up to date with the `main` branch.
 
 ````markdown
 Hey @username
@@ -442,7 +430,7 @@ Also, it's good practice on GitHub to write a brief description of your changes 
 
 ### 重複
 
-> PR が反復または重複している場合
+> When PR is repetitive or a duplicate.
 
 ```markdown
 Hey @username
@@ -460,7 +448,7 @@ If you have any questions, feel free to ask questions on the ["Contributors" cat
 
 ### Closing Invalid Pull Requests
 
-> PR が無効な場合
+> When PR is invalid.
 
 ```markdown
 Hey @username
@@ -472,7 +460,7 @@ This is a standard message notifying you that we've reviewed your pull request a
 Thank you and happy coding.
 ```
 
-> PR が外部リソースへのリンクを追加している場合
+> When PR adds links to external resources.
 
 ```markdown
 Thank you for your pull request.
@@ -484,7 +472,7 @@ If you think we're wrong in closing this issue, please request for it to be reop
 
 ### 無効な Issue をクローズする
 
-> Issue がキャンパーのコードに関連する場合
+> When an issue relates to the camper's code.
 
 ```markdown
 Thank you for reporting this issue.
@@ -506,7 +494,7 @@ This is a standard message notifying you that this issue appears to be very simi
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
-> Issue がステージングで修正された場合
+> When an issue is fixed in staging.
 
 ```markdown
 Thank you for reporting this issue.
