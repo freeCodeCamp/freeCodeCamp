@@ -208,89 +208,77 @@ Se você ver algo que pareça quebrar nosso [Código de Conduta](https://code-of
 
 Mas se é uma ofensa que não pode ser atribuída a uma diferença cultural ou um mal entendimento da língua inglesa. Nesse caso, você deve considerar bloquear o membro do grupo do Facebook.
 
-## Moderando o Chat
+## Moderating Discord
 
 Veja como os moderadores lidam com violações do nosso[Código de Conduta](https://code-of-conduct.freecodecamp.org/) no nosso servidor de chat:
 
+> [!NOTE] Camperbot serves as our moderation bot, and all of the commands use Discord's native slash command interface. You can see a list of all of the commands by typing `/` in any channel.
+
 1. **Certifique-se de que o usuário tentou violar o [Código de Conduta](https://code-of-conduct.freecodecamp.org).**
 
-   Nem todas as violações do [Código de Conduta](https://code-of-conduct.freecodecamp.org) têm esse propósito. Um novo usuário freeCodeCamp pode postar uma grande quantidade de códigos para ajudar, sem notar que isso pode ser considerado spam. Nesses casos, você pode simplesmente pedir para que eles coloquem seus códigos em serviços como Codepen ou Pastebin.
+   Nem todas as violações do [Código de Conduta](https://code-of-conduct.freecodecamp.org) têm esse propósito. A new camper might post a large amount of code for help, unaware that this can be disruptive to conversation. Nesses casos, você pode simplesmente pedir para que eles coloquem seus códigos em serviços como Codepen ou Pastebin.
 
 2. **Se o camper violar clara e intencionalmente o [Código de Conduta](https://code-of-conduct.freecodecamp.org), o moderador procederá da seguinte forma:**
 
-   Expulse ou mute a pessoa que está ofendendo da sala de chat. Para expulsar ou mutar alguém, clique com o botão direito na foto de perfil dele, selecione os três pontos, e selecione "Remove from room" para expulsar ou "Mute user" para evitar que envie mensagens. Depois, faça um breve resumo do caso no canal #mod-log. Segue um exemplo de como o resumo pode ser:
+   For minor offences, a warning may be issued with the `/warn` command. For more egregious offences, you can remove the member from the server temporarily with the `/kick` command, or permanently with the `/ban` command. In some cases, a member may just need some time to cool off and collect their thoughts - the `/mute` command allows you to prevent them from engaging with our community for a set period of time. A muted member can see the conversation, but cannot post messages or add reactions.
 
-   ```
-   Kicked: _@username_
-   Reason(s): _Spamming, trolling_
-   Evidence: _One or more links to the offending message(s)_
-   ```
+   All moderation commands will take a `reason` parameter, which should be a short explanation of why the action was taken. Moderation actions done with the bot will be logged in `#mod-log`, which allows us all to stay on the same page. As such, we should avoid using Discord's built-in moderation tools, as they will not be logged.
+
+   > [!WARNING] The reason provided to a moderation command will also be included in the DM notification to the camper. Please remember to be professional here.
 
 3. **Criando uma discussão privada**
 
    Há várias situações onde você deve abordar um problema com um usuário freeCodeCamp em privado. Isso não deve ser feito por DMs, já que isso pode levar a situações onde você diz uma coisa e o usuário freeCodeCamp diz outra. Em vez disso, use a funcionalidade do bot para criar uma discussão privada:
 
-   - Selecione o comando `!fcc private username`, onde `username` é o nome de usuário de chat do usuário do freeCodeCamp.
+   - Call the `/private` command, where `username` is the camper's chat username.
    - O bot vai criar um novo canal e adicionar o usuário do freeCodeCamp mencionado e todos os moderadores com a função `Your Friendly Moderator`. Enquanto todos os moderadores são adicionados ao canal para transparência, o moderador que der esse comando deve ser o único a interagir com o usuário freeCodeCamp a não ser que eles peçam assistência.
    - Quando a conversa estiver completa, clique no botão `❌ Close` _na primeira mensagem no canal privado_ para que o bot feche e exclua o canal.
 
 4. **Apagando mensagens**
 
-   Moderadores podem apagar mensagens em nosso servidor do chat. Eles devem exercer essa competência somente em quatro situações bem específicas:
+   Our moderation bot is configured to log deleted messages automatically in the `#mod-log` channel. If a message is not in line with our Code of Conduct, or otherwise not appropriate for our community, you are generally safe to delete it.
 
-   - Alguém postou uma imagem pornográfica ou graficamente violenta.
+   Note that if the message contains content that violates Discord's terms of service, you'll want to report it via https://dis.gd/report **prior to** deleting it.
 
-   - Alguém postou um link ou código de natureza maliciosa e que poderia causar danos a outros usuários freeCodeCamp que clicarem nele.
+5. **Don’t threaten to take action**
 
-   - Alguém encheu o chat com várias mensagens de spam de forma tão extrema (normalmente usando bots) para inviabilizar completamente o uso do chat.
+   If a camper breaks the [Code of Conduct](https://code-of-conduct.freecodecamp.org), don’t threaten to take moderator action, and never warn them in public. Instead, talk to them privately using the bot's `/private` command, or use the bot's moderation commands.
 
-   - Alguém postou um anúncio e/ou a uma mensagem/imagem se promovendo (rede social).
+   If a violation was clearly unintended and doesn't warrant moderation action or private conversation, make the offending camper aware of their actions without making it come across as a warning.
 
-   Em todas as outras situações (até mesmo quando o [Código de Conduta](https://code-of-conduct.freecodecamp.org) é violado), os moderadores não devem apagar as mensagens porque elas são registros históricos importantes.  Quando você apagar uma mensagem, não se esqueça de fazer uma captura de tela da mensagem antes! A captura de tela pode ser registrada no canal #mod-log.
+   For example:
 
-   > [!NOTE] Se a mensagem contém material que possa ser ilegal ao capturar a tela, copie o link dela e forneça-o para **@raisedadead** encaminhá-la para o time de Confiança e Segurança do Discord.
+   - Camper posts a wall of code to request help:
 
-5. **Não utilize @all, @all ou @here**
+     Moderator: **@username** Please use CodePen or Pastebin when posting large amounts of code.
 
-   Não use **@all**, **@everyone** ou **@here** sob qualquer circunstância! Cada pessoa na sala do chat vai receber uma notificação. Em alguns casos, dezenas de milhares de pessoas.
+   - Or if you really have to explain why:
 
-   Ao invés disso, se você deseja que as pessoas vejam seu aviso, você pode fixá-lo no canal e permitir que todos o leiam com o tempo.
+     Moderator: **@username** Please use CodePen or Pastebin when posting large amounts of code, because it disrupts the chat for everyone and could be considered spamming according to our [Code of Conduct](https://code-of-conduct.freecodecamp.org).
 
-6. **Não tenha medo de tomar uma ação**
+   - For mild and unintentional violations of the [Code of Conduct](https://code-of-conduct.freecodecamp.org):
 
-   Se um camper violar o [Código de Conduta](https://code-of-conduct.freecodecamp.org), não ameace realizar ações de moderação e nunca os avise em público. Ao invés disso, fale com ele em privado usando o comando `private` do bot. Ninguém mais no canal precisa saber que você baniu/suspendeu a pessoa. Se uma violação foi claramente sem intenção e não justifica uma suspenção ou conversa privada, deixe o(a) ofensor(a) ciente de sua ação sem que isso soe como uma advertência. Por exemplo:
+     Moderator: This is a friendly reminder for everyone to follow the [Code of Conduct](https://code-of-conduct.freecodecamp.org): https://code-of-conduct.freecodecamp.org/
 
-   - O usuário freeCodeCamp posta muitas linhas de código para pedir ajuda:
+6. **Don’t brag about being a moderator**
 
-     Moderador: **@username** Por favor, use o Codepen ou Pastebin ao postar uma grande quantidade de linhas de código.
+   Do not see yourself as above the community. **You are the community.** And the community has trusted you to help protect something rare that we all share - a _welcoming_ place for new developers.
 
-   - Ou se você realmente tem que explicar o motivo:
+   If you brag about being a moderator, people may feel uneasy around you, in the same way that people may feel uneasy around a police officer, even if they’re doing nothing wrong. This is just human nature.
 
-     Moderador: **@username** Por favor, use Codepen ou Pastebin ao postar uma grande quantidade de linhas de código, pois isso perturba o chat e pode ser considerado spam de acordo com o nosso [Código de Conduta](https://code-of-conduct.freecodecamp.org).
+7. **Don’t contradict other moderators**
 
-   - Para violações leves e não intencionais do [Código de Conduta](https://code-of-conduct.freecodecamp.org):
+   If you disagree with a moderator's action, talk with them in private or bring it up in the #mod-chat channel. Never override a moderator's action, and never contradict the other moderator(s) publicly. Instead, have a cool-headed discussion in `#mod-chat` and convince the moderator that they themselves should reverse their ban or change their PoV (Point of View).
 
-     Moderador: Este é um lembrete amigável para todos seguirem o [Código de Conduta](https://code-of-conduct.freecodecamp.org): https://code-of-conduct.freecodecamp.org/
+   _Remember: We’re all on the same team. We want to dignify the role of moderators and present a unified front._
 
-7. **Não se gabe por ser um moderador**
+8. **Talk with other moderators**
 
-   Não se veja como superior dentro da comunidade. **Vocês são a comunidade.** E a comunidade lhe tem confiado para ajudar a proteger algo raro que todos nós compartilhamos - um lugar _acolhedor_ para novos desenvolvedores.
+   We have a `#mod-chat` room for moderators only. Use it! If you feel uncomfortable with handling a certain situation, ask other moderators for help. If you think something should be discussed, do it. You're part of the team, and we value every team member's input! Even if you totally disagree with anything in these guidelines or the [Code of Conduct](https://code-of-conduct.freecodecamp.org)!
 
-   Se você se gabar por ser um moderador, as pessoas podem se sentir desconfortáveis perto de você, do mesmo modo que as pessoas podem se sentir desconfortáveis perto de um policial, mesmo que elas não estejam fazendo nada de errado. É apenas a natureza humana.
+9. **Temporarily inactive**
 
-8. **Não contrarie outros moderadores **
-
-   Se você não concorda com a ação de um moderador, fale com ele em privado ou no canal #mod-chat. Nunca passe por cima da ação de um moderador, e nunca contradiga outros moderadores publicamente.  Ao invés disso, tenha uma conversa tranquila no `#mod-chat` e convença o moderador de que ele deveria reverter o banimento e mudar seu ponto de vista.
-
-   _Lembre-se: estamos todos no mesmo time. Queremos dignificar o papel dos moderadores e apresentar uma frente unida._
-
-9. **Fale com outros moderadores**
-
-   Temos uma sala apenas para moderadores. Use-a! Se você se sentir desconfortável em como lidar com certa situação, peça ajuda a outros moderadores. Se você achar que algo deve ser discutido, faça-o. Você é parte do time e nós damos valor a cada opinião de cada membro do time! Mesmo se você discordar totalmente de algo nestas diretrizes ou do [Código de Conduta](https://code-of-conduct.freecodecamp.org)!
-
-10. **Temporariamente inativo**
-
-    Se você não for ficar ativo como Moderador por um tempo devido a motivo de viagem, doença ou qualquer outra razão, certifique-se de avisar aos outros no canal `#mod-chat`. Isso para sabermos se podemos contar contigo para ser regularmente ativo no servidor ou não.
+   If you're not going to be active as a Moderator for a while due to vacation, illness, or any other reason, make sure to let the others know in the `#mod-chat` channel. This is so we know if we can count on you to be regularly active on the server or not.
 
 ## Como se tornar um moderador
 
@@ -298,9 +286,9 @@ Suponha que você está ajudando pessoas na comunidade de modo consistente. Ness
 
 Se for aprovado, nós adicionaremos você ao nosso Time de Moderadores no [GitHub](https://github.com/orgs/freeCodeCamp/teams/moderators), [fórum](https://forum.freecodecamp.org/g/moderators), chat, etc.
 
-> [!NOTE] GitHub: Depois que foi aceito como moderador, você receberá um convite de repositório do GitHub. Você precisará visitar [freeCodeCamp GitHub Organization Invitation](https://github.com/orgs/freeCodeCamp/invitation) para poder aceitar o convite.
+> [!NOTE] For GitHub: After you've been accepted as a moderator, you will receive a Github repository invitation. You'll need to head over towards [freeCodeCamp GitHub Organization Invitation](https://github.com/orgs/freeCodeCamp/invitation) to be able to accept the invitation.
 > 
-> Isso é necessário para nós podermos dar a você acesso de escrita em alguns de nossos repositórios.
+> This is required for us to be able to give you write access to some of our repositories.
 
 ## Como nós retiramos moderadores inativos
 
@@ -334,9 +322,9 @@ Apesar de ser difícil às vezes, evite dar qualquer dica ou conselho que não s
 
 Se isso ocorrer no nosso servidor de chat: crie um canal privado para o usuário e o time de moderadores. Isso pode ser feito com o comando `private` do bot.
 
-- É garantida privacidade a esse usuário.
-- O chat público não será mais perturbado.
-- Outros membros do time podem contribuir caso você se sinta desconfortável ao lidar com a situação sozinho.
+- The user is guaranteed some privacy.
+- Public chat is no longer disrupted.
+- Other team members can pitch in, should you feel uncomfortable dealing with the situation yourself.
 
 Links úteis:
 
@@ -356,7 +344,7 @@ Obrigado por ler e obrigado por ajudar a desenvolver a comunidade!
 
 Esses são alguns dos modelos de resposta que você talvez use enquanto estiver cuidando de issues/pull requests.
 
-> Você pode fazer seu próprio modelo com a funcionalidade embutida do GitHub chamada [saved replies](https://github.com/settings/replies/) ou usar as citadas abaixo.
+> You can make your own saved replies with GitHub's built-in [saved replies](https://github.com/settings/replies/) feature or use the ones below.
 
 ### Obrigado(a)
 
@@ -367,7 +355,7 @@ We are happy to accept these changes and look forward to future contributions. �
 
 ### Thank you and congrats
 
-> Para agradecer e encorajar contribuidores de primeira viagem.
+> For thanking and encouraging first-time contributors.
 
 ```markdown
 Hi @username. Congrats on your first pull request (PR)! 🎉
@@ -392,7 +380,7 @@ Feel free to reference the [contributing guidelines](how-to-work-on-coding-chall
 
 ### Sincronização dos forks
 
-> Quando um PR não está atualizado com a branch `main`.
+> When PR is not up to date with the `main` branch.
 
 ````markdown
 Hey @username
@@ -442,7 +430,7 @@ Also, it's good practice on GitHub to write a brief description of your changes 
 
 ### Duplicado
 
-> Quando um PR é duplo ou repetitivo.
+> When PR is repetitive or a duplicate.
 
 ```markdown
 Hey @username
@@ -460,7 +448,7 @@ If you have any questions, feel free to ask questions on the ["Contributors" cat
 
 ### Fechando pull requests inválidos
 
-> Quando um PR é inválido.
+> When PR is invalid.
 
 ```markdown
 Hey @username
@@ -472,7 +460,7 @@ This is a standard message notifying you that we've reviewed your pull request a
 Thank you and happy coding.
 ```
 
-> Quando o PR adiciona links para recursos externos.
+> When PR adds links to external resources.
 
 ```markdown
 Thank you for your pull request.
@@ -484,7 +472,7 @@ If you think we're wrong in closing this issue, please request for it to be reop
 
 ### Fechando issues inválidas
 
-> Quando uma issue se refere ao código do usuário freeCodeCamp.
+> When an issue relates to the camper's code.
 
 ```markdown
 Thank you for reporting this issue.
@@ -496,7 +484,7 @@ If the forum members determine there is nothing wrong with your code, you can re
 Thank you and happy coding.
 ```
 
-> Quando uma issue é a mesma que uma issue anterior.
+> When an issue is duplicate of an earlier issue.
 
 ```markdown
 Thank you for reporting this issue.
@@ -506,7 +494,7 @@ This is a standard message notifying you that this issue appears to be very simi
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
-> Quando uma issue foi resolvida na fase de preparo.
+> When an issue is fixed in staging.
 
 ```markdown
 Thank you for reporting this issue.
@@ -518,7 +506,7 @@ If you think we're wrong in closing this issue, please request for it to be reop
 
 ### Issues de `first timer only`
 
-> Quando uma issue é considerada eligível pela primeira vez como contribuição ao código.
+> When an issue is deemed to be eligible for first-time code contributors.
 
 ```markdown
 Thanks for opening this issue.

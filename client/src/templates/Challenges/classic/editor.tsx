@@ -431,7 +431,10 @@ const Editor = (props: EditorProps): JSX.Element => {
       id: 'execute-challenge',
       label: 'Run tests',
       /* eslint-disable no-bitwise */
-      keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter],
+      keybindings: [
+        monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter,
+        monaco.KeyMod.WinCtrl | monaco.KeyCode.Enter
+      ],
       run: () => {
         if (props.usesMultifileEditor && !isFinalProject(props.challengeType)) {
           if (challengeIsComplete()) {
@@ -456,7 +459,10 @@ const Editor = (props: EditorProps): JSX.Element => {
     editor.addAction({
       id: 'save-editor-content',
       label: 'Save editor content',
-      keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S],
+      keybindings: [
+        monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S,
+        monaco.KeyMod.WinCtrl | monaco.KeyCode.KEY_S
+      ],
       run:
         props.challengeType === challengeTypes.multifileCertProject &&
         props.isSignedIn
@@ -468,7 +474,10 @@ const Editor = (props: EditorProps): JSX.Element => {
     editor.addAction({
       id: 'toggle-accessibility',
       label: 'Toggle Accessibility Mode',
-      keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_E],
+      keybindings: [
+        monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_E,
+        monaco.KeyMod.WinCtrl | monaco.KeyCode.KEY_E
+      ],
       run: () => {
         const currentAccessibility = storedAccessibilityMode();
 

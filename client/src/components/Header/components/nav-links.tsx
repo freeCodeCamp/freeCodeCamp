@@ -23,7 +23,8 @@ import envData from '../../../../../config/env.json';
 import {
   availableLangs,
   LangNames,
-  LangCodes
+  LangCodes,
+  hiddenLangs
 } from '../../../../../config/i18n/all-langs';
 import { hardGoTo as navigate } from '../../../redux';
 import { updateUserFlag } from '../../../redux/settings';
@@ -427,27 +428,29 @@ export class NavLinks extends Component<NavLinksProps, {}> {
                   {t('buttons.cancel-change')}
                 </button>
               </li>
-              {locales.map((lang, index) => (
-                <li key={'lang-' + lang} role='none'>
-                  <button
-                    {...(clientLocale === lang && { 'aria-current': true })}
-                    className='nav-link nav-lang-menu-option'
-                    data-value={lang}
-                    {...(LangCodes[lang] && {
-                      lang: LangCodes[lang] as string
-                    })}
-                    onClick={this.handleLanguageChange}
-                    onKeyDown={this.handleLanguageMenuKeyDown}
-                    {...(index === locales.length - 1 && {
-                      ref: this.lastLangOptionRef
-                    })}
-                    role='menuitem'
-                    tabIndex='-1'
-                  >
-                    {LangNames[lang]}
-                  </button>
-                </li>
-              ))}
+              {locales
+                .filter(lang => !hiddenLangs.includes(lang))
+                .map((lang, index) => (
+                  <li key={'lang-' + lang} role='none'>
+                    <button
+                      {...(clientLocale === lang && { 'aria-current': true })}
+                      className='nav-link nav-lang-menu-option'
+                      data-value={lang}
+                      {...(LangCodes[lang] && {
+                        lang: LangCodes[lang] as string
+                      })}
+                      onClick={this.handleLanguageChange}
+                      onKeyDown={this.handleLanguageMenuKeyDown}
+                      {...(index === locales.length - 1 && {
+                        ref: this.lastLangOptionRef
+                      })}
+                      role='menuitem'
+                      tabIndex='-1'
+                    >
+                      {LangNames[lang]}
+                    </button>
+                  </li>
+                ))}
             </ul>
           </div>
         </li>

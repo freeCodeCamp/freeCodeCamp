@@ -8,7 +8,7 @@ dashedName: show-national-contiguity-with-a-force-directed-graph
 
 # --description--
 
-**Objetivo:** criar uma aplicação que funcione de modo semelhante ao que vemos em: <https://codepen.io/freeCodeCamp/full/xVopBo>.
+**Objetivo:** criar uma aplicação que funcione de modo semelhante ao que vemos em: <https://codepen.io/moT01/full/EWmYPq>.
 
 Atenda às histórias de usuário abaixo e faça com que todos os testes passem. Use quaisquer bibliotecas ou APIs de que você precisar. Dê ao projeto o seu próprio estilo pessoal.
 

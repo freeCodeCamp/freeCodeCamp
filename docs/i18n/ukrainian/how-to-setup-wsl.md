@@ -117,7 +117,7 @@ Node.js comes bundled with `npm`, you can update to the latest versions of `npm`
 npm install -g npm@latest
 ```
 
-## Set up freeCodeCamp locally
+## Встановити freeCodeCamp локально
 
 Now that you have installed the pre-requisites, follow [our local setup guide](how-to-setup-freecodecamp-locally.md) to clone, install and setup freeCodeCamp locally on your machine.
 
@@ -127,7 +127,7 @@ Now that you have installed the pre-requisites, follow [our local setup guide](h
 
 ## Useful Links
 
-- [A WSL2 Dev Setup with Ubuntu 20.04, Node.js, MongoDB, VS Code and Docker](https://devlog.sh/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - an article by Mrugesh Mohapatra (Staff Developer at freeCodeCamp.org)
-- Frequently asked questions on:
+- [A WSL2 Dev Setup with Ubuntu 20.04, Node.js, MongoDB, VS Code and Docker](https://hn.mrugesh.dev/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - an article by Mrugesh Mohapatra (Staff Developer at freeCodeCamp.org)
+- Поширені питання щодо:
   - [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/faq)
   - [Docker Desktop for Windows](https://docs.docker.com/docker-for-windows/faqs)

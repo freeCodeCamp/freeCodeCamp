@@ -127,7 +127,7 @@ npm install -g npm@latest
 
 ## 有用なリンク
 
-- [Ubuntu 20.04, Node.js, MongoDB, VS Code and Docker を使用した WSL2 Dev セットアップ](https://devlog.sh/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - Mrugesh Mohapatra (freeCodeCamp.org のスタッフ開発者)
+- [A WSL2 Dev Setup with Ubuntu 20.04, Node.js, MongoDB, VS Code and Docker](https://hn.mrugesh.dev/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - an article by Mrugesh Mohapatra (Staff Developer at freeCodeCamp.org)
 - よくある質問:
   - [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/faq)
   - [Docker Desktop for Windows](https://docs.docker.com/docker-for-windows/faqs)
