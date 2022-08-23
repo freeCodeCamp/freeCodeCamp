@@ -198,8 +198,8 @@ export enum LangCodes {
   italian = 'it',
   portuguese = 'pt-BR',
   ukrainian = 'uk',
-  japanese = 'ja'
-  // german = 'de'
+  japanese = 'ja',
+  german = 'de'
 }
 /* eslint-enable @typescript-eslint/naming-convention */
 
