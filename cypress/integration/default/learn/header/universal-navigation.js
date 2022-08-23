@@ -1,5 +1,6 @@
 import {
   availableLangs,
+  hiddenLangs,
   LangNames
 } from '../../../../../config/i18n/all-langs';
 import envData from '../../../../../config/env.json';
@@ -42,10 +43,10 @@ describe('Default Navigation Menu', () => {
   });
 });
 
-describe('Lanuage menu', () => {
+describe('Language menu', () => {
   it('should render all used languages.', () => {
     cy.get(selectors['navigation-list']).contains('Change Language').click();
-    testAllLanuges();
+    testAllLanguages();
     cy.get(selectors['language-menu'])
       .should('be.visible')
       .contains('English')
@@ -101,8 +102,10 @@ describe('Donor Navigation Menu', () => {
   });
 });
 
-const testAllLanuges = () => {
-  const availableLangNames = availableLangs.client.map(lang => LangNames[lang]);
+const testAllLanguages = () => {
+  const availableLangNames = availableLangs.client
+    .filter(lang => !hiddenLangs.includes(lang))
+    .map(lang => LangNames[lang]);
   availableLangNames.forEach(langName =>
     cy.get(selectors['language-menu']).contains(langName)
   );
