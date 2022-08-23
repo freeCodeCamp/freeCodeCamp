@@ -42,7 +42,7 @@ Insira o número de passos que você deseja adicionar na entrada. Depois, ao cli
 
 #### Inserir passo (Insert Step)
 
-Enter the step number that you want to add. Then, click the `Insert Step` button to add the step. The following steps will be re-ordered.
+Insira o número do passo que deseja adicionar. Em seguida, clique no botão `Insert Step` para adicionar o passo. Os passos posteriores serão reordenados.
 
 #### Excluir passo (Delete Step)
 
