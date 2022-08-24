@@ -2,11 +2,6 @@ import { toString, flow } from 'lodash-es';
 import i18next, { i18n } from 'i18next';
 import { format } from '../../../utils/format';
 
-import envData from '../../../../../config/env.json';
-import { getLangCode } from '../../../../../config/i18n/all-langs';
-
-const { clientLocale } = envData;
-
 const utilsFormat: <T>(x: T) => string = format;
 
 declare global {
@@ -130,7 +125,7 @@ const createFrame =
     frame.id = id;
     if (typeof title === 'string') {
       frame.title = i18next.t('misc.iframe-preview', { title });
-      frame.lang = getLangCode(clientLocale);
+      frame.lang = 'en';
     }
     return {
       ...frameContext,

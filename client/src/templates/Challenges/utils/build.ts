@@ -300,9 +300,7 @@ export function updateProjectPreview(
     const titleMatch = buildData?.sources?.index?.match(
       /<title>(.*?)<\/title>/
     );
-    const frameTitle = titleMatch
-      ? titleMatch[1].trim() + ' preview'
-      : 'preview';
+    const frameTitle = titleMatch ? titleMatch[1].trim() : '';
     createProjectPreviewFramer(document, frameTitle)(buildData);
   } else {
     throw new Error(
