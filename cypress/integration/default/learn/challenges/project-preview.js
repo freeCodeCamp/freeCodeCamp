@@ -78,7 +78,7 @@ describe('project preview', () => {
       cy.get('[data-cy="project-preview-modal"]')
         .should('be.focused')
         .find('iframe')
-        .should('have.attr', 'title', title);
+        .should('have.attr', 'title', title + ' preview');
     });
   });
 
