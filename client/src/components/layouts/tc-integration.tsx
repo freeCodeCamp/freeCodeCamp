@@ -135,13 +135,13 @@ class TcIntegrationLayout extends Component<TcIntegrationLayoutProps> {
 
     // if this is a freecodecamp lesson, change its domain and path
     if (url.host === 'learn.freecodecamp.org') {
-      url.host = window.location.host;
+      url.host = new URL(document.referrer).host;
       // TODO: it would be nice to not require that the FCC
       // app knows about the paths in the platform UI, but
       // creating a way to share this info would be complex and
       // time consuming, so we can handle it when we get another
       // provider.
-      url.pathname = `learn/freecodecamp/${url.pathname}`;
+      url.pathname = `learn/freecodecamp${url.pathname}`;
     }
 
     // now open the url in a new tab
