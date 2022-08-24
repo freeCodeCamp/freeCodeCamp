@@ -1,4 +1,4 @@
-# The Official freeCodeCamp Language Lead Handbook
+# Офіційний довідник мовного керівника freeCodeCamp
 
 This handbook will help you set up and use the tools for your localization efforts.
 
@@ -14,9 +14,9 @@ The "Editor" level allows the user to access all Drafts and publish them. Select
 
 The "Administrator" level is reserved for freeCodeCamp staff and Language Leads.
 
-## How to mention the original author of a translated article
+## Як вказати автора перекладеної статті
 
-The original author and the original article are linked automatically adding this code to the Code Injection -> head section in the Draft Settings on ghost.
+Автор та оригінал статті прив'язуються автоматично, коли цей код додано до Code Injection -> головна секція в налаштуваннях чернеток на ghost.
 
 ```html
 <script>
@@ -24,7 +24,7 @@ The original author and the original article are linked automatically adding thi
 </script>
 ```
 
-With `link` being the link of the original article.
+Де `link` – посилання на оригінал статті.
 
 ## How to update trending articles
 
@@ -226,13 +226,13 @@ Some of these links will not change - but you should update the `/news` article 
 
 You should also update the `help` categories to point to your language's subforum (usually `language/category`, like `Italiano/HTML-CSS`). This will allow campers to create "help posts" in the correct forum location.
 
-## How to update the site meta-data
+## Як оновити метадані сайту
 
-The site meta-data is in the `/client/i18n/locales/<language>/meta-tags.json` file. This file has five keys: `title`, `description`, `social-description`, `keywords`, and `youre-unsubscribed`.
+Метадані сайту знаходяться в файлі `/client/i18n/locales/<language>/meta-tags.json`. Цей файл має п'ять ключів: `title`, `description`, `social-description`, `keywords` та `youre-unsubscribed`.
 
-The `youre-unsubscribed` value should be directly translated. The other values will need to be translated as closely as possible, while also considering common search terms and phrases used in your language.
+Значення `youre-unsubscribed` повинне бути перекладене прямо. Інші значення потрібно перекладати якомога ближче, зважаючи на поширені пошукові запити вашої мови.
 
-If you need help with this, reach out to us in the [contributor chat](https://discord.gg/PRyKn3Vbay)
+Якщо вам потрібна допомога, зв'яжіться з нами в [contributor chat](https://discord.gg/PRyKn3Vbay)
 
 ## Pre-Translate Workflow on Crowdin
 
