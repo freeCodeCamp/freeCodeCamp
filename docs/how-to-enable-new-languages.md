@@ -50,13 +50,14 @@ Note that the `download_language` key needs to be set to the language code displ
 
 There are a few steps to take in order to allow the codebase to build in your desired language.
 
-First, visit the `config/i18n/all-langs.ts` file to add the language to the available languages list and configure the values. There are four objects here.
+First, visit the `config/i18n/all-langs.ts` file to add the language to the available languages list and configure the values. There are several objects here.
 
 - `availableLangs`: For both the `client` and `curriculum` arrays, add the text name of the language. This is the value that will be used in the `.env` file later.
 - `auditedCerts`: Add the text name of the language as the _key_, and add an array of `SuperBlocks.{cert}` variables as the _value_. This tells the client which certifications are fully translated.
 - `i18nextCodes`: These are the ISO language codes for each language. You will need to add the appropriate ISO code for the language you are enabling. These do need to be unique for each language.
 - `LangNames`: These are the display names for the language selector in the navigation menu.
 - `LangCodes`: These are the language codes used for formatting dates and numbers. These should be Unicode CLDR codes instead of ISO codes.
+- `hiddenLangs`: These languages will not be displayed in the navigation menu. This is used for languages that are not yet ready for release.
 
 As an example, if you wanted to enable Dothraki as a language, your `all-langs.js` objects should look like this:
 
@@ -134,7 +135,12 @@ export enum LangCodes = {
   'chinese-traditional': 'zh-Hant',
   dothraki: 'mis'
 };
+
+export const hiddenLangs = ['dothraki'];
 ```
+
+> [!NOTE]
+> When a language has been set up in the deployment pipeline AND has a public `/news` instance live, it can be removed from the `hiddenLangs` array and be made available to the public.
 
 Next, open the `client/src/utils/algolia-locale-setup.ts` file. This data is used for the search bar that loads `/news` articles. While it is unlikely that you are going to test this functionality, missing the data for your language can lead to errors when attempting to build the codebase locally.
 
@@ -168,13 +174,6 @@ const algoliaIndices = {
     searchPage: 'https://www.freecodecamp.org/news/search/'
   }
 };
-```
-
-Finally, in your `.env` file, set `CLIENT_LOCALE` and `CURRICULUM_LOCALE` to your new language (use the `availableLangs` value.)
-
-```txt
-CLIENT_LOCALE=dothraki
-CURRICULUM_LOCALE=dothraki
 ```
 
 ### Releasing a Superblock
