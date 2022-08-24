@@ -114,7 +114,7 @@ class TcIntegrationLayout extends Component<TcIntegrationLayoutProps> {
   }
 
   externalLinkHandler = (event: MouseEvent) => {
-    // prettier sucks
+    // prettier is the worst
 
     // if we're not clicking an anchor tag, there's nothing to do
     const eventTarget = event.target as HTMLElement;
