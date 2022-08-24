@@ -129,7 +129,7 @@ const createFrame =
     const frame = document.createElement('iframe');
     frame.id = id;
     if (typeof title === 'string') {
-      frame.title = i18next.t('misc.iframe-preview');
+      frame.title = i18next.t('misc.iframe-preview', { title });
       frame.lang = getLangCode(clientLocale);
     }
     return {
