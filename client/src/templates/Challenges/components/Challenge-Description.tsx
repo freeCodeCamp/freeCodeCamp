@@ -7,6 +7,7 @@ type Challenge = {
   block?: string;
   description?: string;
   instructions?: string;
+  title?: string;
 };
 
 function ChallengeDescription(challenge: Challenge): JSX.Element {
@@ -16,6 +17,12 @@ function ChallengeDescription(challenge: Challenge): JSX.Element {
         challenge.block ? ' ' + challenge.block : ''
       }`}
     >
+      {challenge.title && (
+        <>
+          <PrismFormatted text={challenge.title} />
+          <hr />
+        </>
+      )}
       {challenge.description && <PrismFormatted text={challenge.description} />}
       {challenge.instructions && (
         <>
