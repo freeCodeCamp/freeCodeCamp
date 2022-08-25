@@ -269,7 +269,8 @@ const writeContentToFrame = (frameContext: Context) => {
 
 export const createMainPreviewFramer = (
   document: Document,
-  proxyLogger: ProxyLogger
+  proxyLogger: ProxyLogger,
+  frameTitle: string
 ) =>
   createFramer(
     document,
@@ -277,7 +278,7 @@ export const createMainPreviewFramer = (
     initMainFrame,
     proxyLogger,
     undefined,
-    'preview'
+    frameTitle
   );
 
 export const createProjectPreviewFramer = (
