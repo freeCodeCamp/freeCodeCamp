@@ -466,6 +466,7 @@ footer {
 }
 @media (max-width: 350px) {
   #video {
+    display: flex;
     width: 300;
     height: 200;
   }
