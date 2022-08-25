@@ -64,7 +64,7 @@ function ToolPanel({
   isMobile,
   isSignedIn,
   isRunningTests,
-  openResetModal,
+  // openResetModal,
   challengeIsCompleted,
   submitChallenge
 }: ToolPanelProps) {
@@ -110,11 +110,11 @@ function ToolPanel({
           {isMobile ? t('buttons.save') : t('buttons.save-code')}
         </Button>
       )}
-      {challengeType !== challengeTypes.multifileCertProject && (
+      {/* {challengeType !== challengeTypes.multifileCertProject && (
         <Button bsStyle='link' className='btn-invert' onClick={openResetModal}>
           {isMobile ? t('buttons.reset') : t('buttons.reset-code')}
         </Button>
-      )}
+      )} */}
     </div>
   );
 }
