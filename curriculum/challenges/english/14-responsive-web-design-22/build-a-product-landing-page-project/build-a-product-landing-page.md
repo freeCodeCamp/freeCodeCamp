@@ -251,15 +251,21 @@ const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
 assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 ```
 
-Your Product Landing Page should use CSS Flexbox at least once.
+Your media query should contain a `display` property with the value set to `flex` or `inline-flex`
 
 ```js
 const stylesheet = new __helpers.CSSHelp(document).getStyleSheet()
-const cssRules = new __helpers.CSSHelp(document).styleSheetToCssRulesArray(stylesheet)
-const usesFlex = cssRules.find(rule => {
-  return rule.style?.display === 'flex' || rule.style?.display === 'inline-flex'
-})
-assert(usesFlex)
+const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
+const checkArr = [];
+for(let i = 0; i < cssCheck.length; i++){
+  for(let j = 0; j < cssCheck[i].cssRules.length; j++){
+    if(cssCheck[i].cssRules[j].style.display == 'flex' || cssCheck[i].cssRules[j].style.display == 'inline-flex'){
+      checkArr.push(true);
+    }
+  }
+}
+
+assert(checkArr.length > 0);
 ```
 
 # --seed--
