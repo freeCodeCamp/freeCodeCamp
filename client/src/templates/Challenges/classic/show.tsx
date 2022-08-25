@@ -341,6 +341,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
             block={block}
             description={description}
             instructions={instructions}
+            title={title}
           />
         }
         guideUrl={getGuideUrl({ forumTopicId, title })}
