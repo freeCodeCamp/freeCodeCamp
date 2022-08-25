@@ -3,6 +3,7 @@ import React, { useState, ReactElement } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import { sortChallengeFiles } from '../../../../../utils/sort-challengefiles';
 import { challengeTypes } from '../../../../utils/challenge-types';
+import { Segment } from '../../../analytics/segment';
 import {
   ChallengeFile,
   ChallengeFiles,
@@ -110,86 +111,90 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   } = layoutState;
 
   return (
-    <div className='desktop-layout'>
-      <ActionRow
-        block={block}
-        hasNotes={hasNotes}
-        isMultifileCertProject={isMultifileCertProject}
-        showConsole={showConsole}
-        showNotes={showNotes}
-        showInstructions={showInstructions}
-        hasPreview={hasPreview}
-        showPreview={showPreview}
-        superBlock={superBlock}
-        showBreadcrumbs={false}
-        togglePane={togglePane}
-      />
-      <div className='editor-row'>
-        <ReflexContainer orientation='vertical'>
-          {!projectBasedChallenge && showInstructions && (
-            <ReflexElement flex={instructionPane.flex} {...resizeProps}>
-              {instructions}
-            </ReflexElement>
-          )}
-          {!projectBasedChallenge && displayEditor && (
-            <ReflexSplitter propagate={true} {...resizeProps} />
-          )}
+    <>
+      <div className='desktop-layout'>
+        <ActionRow
+          block={block}
+          hasNotes={hasNotes}
+          isMultifileCertProject={isMultifileCertProject}
+          showConsole={showConsole}
+          showNotes={showNotes}
+          showInstructions={showInstructions}
+          hasPreview={hasPreview}
+          showPreview={showPreview}
+          superBlock={superBlock}
+          showBreadcrumbs={false}
+          togglePane={togglePane}
+        />
+        <div className='editor-row'>
+          <ReflexContainer orientation='vertical'>
+            {!projectBasedChallenge && showInstructions && (
+              <ReflexElement flex={instructionPane.flex} {...resizeProps}>
+                {instructions}
+              </ReflexElement>
+            )}
+            {!projectBasedChallenge && displayEditor && (
+              <ReflexSplitter propagate={true} {...resizeProps} />
+            )}
 
-          {challengeFile && displayEditor && (
-            <ReflexElement flex={editorPane.flex} {...resizeProps}>
-              <ReflexContainer
-                key={challengeFile.fileKey}
-                orientation='horizontal'
-              >
-                <ReflexElement
-                  flex={codePane.flex}
-                  {...reflexProps}
-                  {...resizeProps}
+            {challengeFile && displayEditor && (
+              <ReflexElement flex={editorPane.flex} {...resizeProps}>
+                <ReflexContainer
+                  key={challengeFile.fileKey}
+                  orientation='horizontal'
                 >
-                  {editor}
-                </ReflexElement>
-                {displayNotes && (
-                  <ReflexSplitter propagate={true} {...resizeProps} />
-                )}
-                {displayNotes && (
-                  <ReflexElement flex={notesPane.flex} {...resizeProps}>
-                    {notes}
-                  </ReflexElement>
-                )}
-              </ReflexContainer>
-            </ReflexElement>
-          )}
-
-          {(displayPreview || displayConsole) && (
-            <ReflexSplitter propagate={true} {...resizeProps} />
-          )}
-
-          {(displayPreview || displayConsole) && (
-            <ReflexElement flex={1} {...resizeProps}>
-              <ReflexContainer orientation='horizontal'>
-                {displayPreview && (
-                  <ReflexElement flex={previewPane.flex} {...resizeProps}>
-                    {preview}
-                  </ReflexElement>
-                )}
-                {displayConsole && displayPreview && (
-                  <ReflexSplitter propagate={true} {...resizeProps} />
-                )}
-                {displayConsole && (
                   <ReflexElement
-                    flex={testsPane.flex}
+                    flex={codePane.flex}
                     {...reflexProps}
                     {...resizeProps}
                   >
-                    {testOutput}
+                    {editor}
                   </ReflexElement>
-                )}
-              </ReflexContainer>
-            </ReflexElement>
-          )}
-        </ReflexContainer>
+                  {displayNotes && (
+                    <ReflexSplitter propagate={true} {...resizeProps} />
+                  )}
+                  {displayNotes && (
+                    <ReflexElement flex={notesPane.flex} {...resizeProps}>
+                      {notes}
+                    </ReflexElement>
+                  )}
+                </ReflexContainer>
+              </ReflexElement>
+            )}
+
+            {(displayPreview || displayConsole) && (
+              <ReflexSplitter propagate={true} {...resizeProps} />
+            )}
+
+            {(displayPreview || displayConsole) && (
+              <ReflexElement flex={1} {...resizeProps}>
+                <ReflexContainer orientation='horizontal'>
+                  {displayPreview && (
+                    <ReflexElement flex={previewPane.flex} {...resizeProps}>
+                      {preview}
+                    </ReflexElement>
+                  )}
+                  {displayConsole && displayPreview && (
+                    <ReflexSplitter propagate={true} {...resizeProps} />
+                  )}
+                  {displayConsole && (
+                    <ReflexElement
+                      flex={testsPane.flex}
+                      {...reflexProps}
+                      {...resizeProps}
+                    >
+                      {testOutput}
+                    </ReflexElement>
+                  )}
+                </ReflexContainer>
+              </ReflexElement>
+            )}
+          </ReflexContainer>
+        </div>
       </div>
-    </div>
+
+      <Segment />
+    </>
   );
 };
 
