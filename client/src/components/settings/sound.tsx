@@ -49,18 +49,18 @@ export default function SoundSettings({
           toggleSoundMode(sound ? false : true);
         }}
       />
+      <label htmlFor='volumeslider'>
+        {t('settings.sound-volume')} {volumeDisplay}
+      </label>
       <input
         type='range'
         min='10'
         max='100'
+        id='volumeslider'
         defaultValue={volumeDisplay}
         className='soundbar'
-        aria-label={`${t('settings.sound-volume')} ${volumeDisplay}`}
         onInput={handleVolumeChange}
       />
-      <div>
-        {t('settings.sound-volume')} {volumeDisplay}
-      </div>
       <Spacer></Spacer>
     </Form>
   );
