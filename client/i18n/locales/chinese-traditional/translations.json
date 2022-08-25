@@ -275,7 +275,7 @@
     "solution-link": "解決方案鏈接",
     "github-link": "GitHub 鏈接",
     "submit-and-go": "提交併訪問下一個挑戰",
-    "congratulations": "Congratulations, your code passes. Submit your code to continue.",
+    "congratulations": "恭喜，你的代碼已通過。請提交你的代碼以繼續。",
     "i-completed": "我已經完成這個挑戰",
     "test-output": "你的測試輸出將在這裏顯示",
     "running-tests": "// 運行測試",
@@ -429,7 +429,7 @@
   },
   "search": {
     "label": "搜索",
-    "placeholder": "搜索 900+ 篇教程",
+    "placeholder": "搜索 1,000+ 篇教程",
     "see-results": "查看 {{searchQuery}} 的所有結果",
     "no-tutorials": "未找到教程",
     "try": "想要搜索信息？試試使用頁面上的搜索框。",
@@ -450,8 +450,8 @@
     "change-theme": "登錄以更改主題。",
     "translation-pending": "幫我們翻譯",
     "certification-project": "認證項目",
-    "iframe-alert": "Normally this link would bring you to another website! It works. This is a link to: {{externalLink}}",
-    "document-notfound": "document not found"
+    "iframe-alert": "通常，此鏈接會將你帶到另一個網站！一切正常，這個鏈接指向：{{externalLink}}。",
+    "document-notfound": "找不到文件"
   },
   "icons": {
     "gold-cup": "金獎盃",
