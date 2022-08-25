@@ -606,8 +606,8 @@
       "mongodb-and-mongoose": {
         "title": "MongoDB 和 Mongoose",
         "intro": [
-          "MongoDB is a database application that stores JSON documents (or records) that you can use in your application. Unlike SQL, another type of database, MongoDB is a non-relational or \"NoSQL\" database. This means MongoDB stores all associated data within one record, instead of storing it across many preset tables as in a SQL database.",
-          "Mongoose is a popular npm package for interacting with MongoDB. With Mongoose, you can use plain JavaScript objects instead of JSON, which makes it easier to work with MongoDB. Also, it allows you to create blueprints for your documents called schemas, so you don't accidentally save the wrong type of data and cause bugs later.",
+          "MongoDB 是一个存储 JSON 文件（或记录）的数据库程序，你可以在自己的程序中使用这些 JSON 文件。与 SQL——另一种类型的数据库——所不同的是，MongoDB 是一个非关系型数据库，也被称为 “NoSQL”。这意味着 MongoDB 将所有相关数据都存储在一个记录中，而不是像 SQL 数据库中那样把数据存储在许多预设表中。",
+          "Mongoose 是一个广泛使用的 npm 包，通常和 Mongo 一起安装。通过 Mongoose，你可以使用 JavaScript 对象而不是 JSON ，这样就更容易与 Mongo 配合使用。此外，它允许你创建文件架构，即 schema，所以你不会意外地保存错误的数据类型并出现 bug。",
           "在 MongoDB 和 Mongoose 课程中，你将学习处理数据的基本知识，包括如何建立模型，保存、删除并在数据库中查找文档。"
         ]
       },
@@ -805,7 +805,7 @@
         "intro": [
           "通过完成经典的罗塞塔代码库中的这些免费编程任务来提升你的创造性问题解决能力。",
           "这些挑战可能很困难，但是它们会将进一步提升你的算法逻辑。",
-          "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Attribute: Rosetta Code</a>"
+          "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>属性：Rosetta 代码</a>"
         ]
       },
       "project-euler": {
