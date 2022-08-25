@@ -3,6 +3,7 @@ import React, { useState, ReactElement } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import { sortChallengeFiles } from '../../../../../utils/sort-challengefiles';
 import { challengeTypes } from '../../../../utils/challenge-types';
+import { GoogleTagManager } from '../../../analytics/google-tag-manater';
 import { Segment } from '../../../analytics/segment';
 import {
   ChallengeFile,
@@ -194,6 +195,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
       </div>
 
       <Segment />
+      <GoogleTagManager />
     </>
   );
 };

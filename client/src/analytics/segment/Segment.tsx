@@ -14,7 +14,8 @@ interface SegmentModel {
 
 const segmentModel: SegmentModel = segment as unknown as SegmentModel;
 
-const Segment: FC<null> = () => {
+/* eslint-disable @typescript-eslint/ban-types */
+const Segment: FC<{}> = () => {
   // if we have a key for this environment, load it
   const segmentId =
     envData.deploymentEnv === 'staging' ? devSegmentId : prodSegmentId;

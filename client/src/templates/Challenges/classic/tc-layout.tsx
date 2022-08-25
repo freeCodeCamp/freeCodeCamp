@@ -3,6 +3,7 @@ import React, { ReactElement } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 
 import { sortChallengeFiles } from '../../../../../utils/sort-challengefiles';
+import { GoogleTagManager } from '../../../analytics/google-tag-manater';
 import Segment from '../../../analytics/segment/Segment';
 import {
   ChallengeFile,
@@ -132,6 +133,7 @@ const TcLayout = (props: TcLayoutProps): JSX.Element => {
       </div>
 
       <Segment />
+      <GoogleTagManager />
     </>
   );
 };
