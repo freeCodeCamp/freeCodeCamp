@@ -45,7 +45,7 @@ import {
   updateLogs,
   logsToConsole,
   updateTests,
-  openModal,
+  // openModal,
   isBuildEnabledSelector,
   disableBuildOnError,
   updateTestsRunning
@@ -137,7 +137,8 @@ export function* executeChallengeSaga({ payload }) {
       playTone('tests-failed');
     }
     if (challengeComplete && payload?.showCompletionModal) {
-      yield put(openModal('completion'));
+      // TOPCODER: do not open modal
+      // yield put(openModal('completion'));
     }
     yield put(updateConsole(i18next.t('learn.tests-completed')));
     yield put(logsToConsole(i18next.t('learn.console-output')));
