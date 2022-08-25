@@ -14,7 +14,7 @@ Wir empfehlen, [konventionelle Titel und Nachrichten](https://www.conventionalco
 > 
 > `fix(learn): tests for the do...while loop challenge`
 
-Whenever you open a Pull Request(PR), you can use the below to determine the type, scope (optional), and description.
+Wenn du einen Pull Request (PR) öffnest, kannst du den Typ, den Umfang (optional) und die Beschreibung festlegen.
 
 **Typ:**
 
@@ -31,7 +31,7 @@ Du kannst einen Geltungsbereich aus [dieser Liste von Labels](https://github.com
 
 **Beschreibung:**
 
-Keep it short (less than 30 characters) and simple; you can add more information in the PR description box and comments.
+Fasse dich kurz (weniger als 30 Zeichen) und einfach; du kannst weitere Informationen im PR-Beschreibungsfeld und in den Kommentaren hinzufügen.
 
 Einige Beispiele für gute PR-Titel wären:
 
@@ -54,7 +54,7 @@ Einige Beispiele für gute PR-Titel wären:
 
 3. Übermittle den Pull-Request von deinem Branch an den `main`-Branch von freeCodeCamp.
 
-4. Include a more detailed summary of the changes you made and how your changes are helpful in the body of your PR.
+4. Füge eine ausführlichere Zusammenfassung der von dir vorgenommenen Änderungen und deren Nutzen in den Hauptteil deines PR-Textes ein.
 
    - Du erhältst eine Vorlage für einen Pull-Request. Dies ist eine Checkliste, die du befolgen solltest, bevor du den Pull-Request öffnest.
 
@@ -76,7 +76,7 @@ Einige Beispiele für gute PR-Titel wären:
 
 Unsere Moderatoren werden jetzt einen Blick darauf werfen und dir ein Feedback hinterlassen. Bitte habe Geduld mit den anderen Moderatoren und respektiere ihre Zeit. Alle Pull-Requests werden zu gegebener Zeit überprüft.
 
-And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
+Und wie immer kannst du deine Fragen in der [Kategorie "Contributors" in unserem Forum](https://forum.freecodecamp.org/c/contributors) oder im ["Contributors" Chatraum](https://discord.gg/PRyKn3Vbay) stellen.
 
 > [!TIP] Wenn du mehr Pull-Requests beisteuern willst, empfehlen wir dir, die [Richtlinien für Änderungen und Synchronisierung](how-to-setup-freecodecamp-locally.md#making-changes-locally) zu lesen, damit du deinen Fork nicht löschen musst.
 

@@ -197,7 +197,7 @@ Derzeit ist eine öffentliche Beta-Testversion verfügbar:
 
 Das Entwicklerteam führt Änderungen aus dem `prod-staging`-Branch nach `prod-current` zusammen, wenn sie Änderungen veröffentlichen. Das oberste Commit sollte das sein, was du live auf der Website siehst.
 
-Du kannst die genaue Version, die eingesetzt wurde, in den Build- und Deployment-Protokollen im Statusbereich nachlesen. Alternatively you can also ping us in the [contributors chat room](https://discord.gg/PRyKn3Vbay) for a confirmation.
+Du kannst die genaue Version, die eingesetzt wurde, in den Build- und Deployment-Protokollen im Statusbereich nachlesen. Alternativ kannst du uns auch im ["contributers"-Chatraum](https://discord.gg/PRyKn3Vbay) anpingen, um eine Bestätigung zu erhalten.
 
 ### Bekannte Einschränkungen
 

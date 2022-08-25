@@ -7,9 +7,9 @@ Unsere wichtigsten Lehrinhalte befinden sich in dem Verzeichnis mit dem aussagek
 Es gibt ein paar Begriffe, die wir verwenden, wenn wir über unsere Studienplaninhalte sprechen.
 
 - `certification` : Wenn in diesem Fall von einer Zertifizierung die Rede ist, geht es um das eigentliche Zertifikat, das die Nutzer/innen beantragen. Das ist unabhängig vom Namen des SuperBlocks.
-- `superBlock` : Ein Superblock ist die oberste Ebene einer Sammlung von Aufgaben. Each superblock corresponds to a certification in the curriculum (e.g. Responsive Web Design).
-- `block` : Ein Block ist ein Abschnitt innerhalb eines Superblocks. A block corresponds to a group of challenges in a given certification (e.g. Basic HTML and HTML5)
-- `challenge` : A challenge is a single lesson within the curriculum (e.g. Say Hello to HTML Elements)
+- `superBlock` : Ein Superblock ist die oberste Ebene einer Sammlung von Aufgaben. Jeder Superblock entspricht einer Zertifizierung im Lehrplan (z.B. Responsive Web Design).
+- `block` : Ein Block ist ein Abschnitt innerhalb eines Superblocks. Ein Block entspricht einer Gruppe von Aufgaben in einer bestimmten Zertifizierung (z. B. Grundlegendes HTML und HTML5)
+- `challenge` : Eine Aufgabe ist eine einzelne Lektion innerhalb des Lehrplans (z.B. Sag Hallo zu HTML-Elementen)
 
 ## Dateibaum
 
