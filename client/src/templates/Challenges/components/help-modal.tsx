@@ -16,6 +16,8 @@ interface HelpModalProps {
   executeGA: (attributes: { type: string; data: string }) => void;
   isOpen?: boolean;
   t: (text: string) => string;
+  challengeTitle: string;
+  challengeBlock: string;
 }
 
 const { forumLocation } = envData;
@@ -31,12 +33,23 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 
 const RSA = forumLocation + '/t/19514';
 
+const generateSearchLink = (title: string, block: string) => {
+  console.table({ title, block });
+  const query = /^step\s*\d*$/i.test(title)
+    ? encodeURIComponent(`${block} - ${title}`)
+    : encodeURIComponent(title);
+  const search = `${forumLocation}/search?q=${query}`;
+  return search;
+};
+
 export function HelpModal({
   closeHelpModal,
   createQuestion,
   executeGA,
   isOpen,
-  t
+  t,
+  challengeBlock,
+  challengeTitle
 }: HelpModalProps): JSX.Element {
   if (isOpen) {
     executeGA({ type: 'modal', data: '/help-modal' });
@@ -61,6 +74,18 @@ export function HelpModal({
             </a>
           </Trans>
         </h3>
+        <p>
+          <Trans i18nKey='learn.search-link-text'>
+            <a
+              href={generateSearchLink(challengeTitle, challengeBlock)}
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              placeholder
+            </a>
+            placeholder
+          </Trans>
+        </p>
         <Button
           block={true}
           bsSize='lg'

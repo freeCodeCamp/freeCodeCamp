@@ -532,7 +532,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
             certification={certification}
             superBlock={superBlock}
           />
-          <HelpModal />
+          <HelpModal challengeTitle={title} challengeBlock={blockName} />
           <VideoModal videoUrl={this.getVideoUrl()} />
           <ResetModal />
           <ProjectPreviewModal
