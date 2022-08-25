@@ -24,6 +24,7 @@ interface Block {
 
 export const orderedSuperBlockInfo = [
   { dashedName: SuperBlocks.RespWebDesignNew, public: true },
+  { dashedName: SuperBlocks.RespWebDesign, public: true },
   { dashedName: SuperBlocks.JsAlgoDataStruct, public: false },
   { dashedName: SuperBlocks.FrontEndDevLibs, public: false },
   { dashedName: SuperBlocks.DataVis, public: false },
@@ -34,8 +35,7 @@ export const orderedSuperBlockInfo = [
   { dashedName: SuperBlocks.InfoSec, public: false },
   { dashedName: SuperBlocks.MachineLearningPy, public: false },
   { dashedName: SuperBlocks.CodingInterviewPrep, public: false },
-  { dashedName: SuperBlocks.RelationalDb, public: false },
-  { dashedName: SuperBlocks.RespWebDesign, public: true }
+  { dashedName: SuperBlocks.RelationalDb, public: false }
 ];
 
 const dashedNames = orderedSuperBlockInfo.map(({ dashedName }) => dashedName);
