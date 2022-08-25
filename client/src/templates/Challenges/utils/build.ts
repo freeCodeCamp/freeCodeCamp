@@ -297,11 +297,13 @@ export function updateProjectPreview(
   ) {
     // Give iframe a title attribute for accessibility using the preview
     // document's <title>.
-    const titleMatch = buildData?.sources?.index?.match(
-      /<title>(.*?)<\/title>/
-    );
-    const frameTitle = titleMatch ? titleMatch[1].trim() : '';
-    createProjectPreviewFramer(document, frameTitle)(buildData);
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(buildData?.sources?.index, 'text/html');
+    const title = doc.querySelector('title');
+    createProjectPreviewFramer(
+      document,
+      title?.innerText || 'challenge'
+    )(buildData);
   } else {
     throw new Error(
       `Cannot show preview for challenge type ${buildData.challengeType}`
