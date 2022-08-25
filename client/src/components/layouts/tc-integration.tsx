@@ -118,12 +118,13 @@ class TcIntegrationLayout extends Component<TcIntegrationLayoutProps> {
 
     // if we're not clicking an anchor tag, there's nothing to do
     const eventTarget = event.target as HTMLElement;
-    if (eventTarget?.localName !== 'a') {
+    const anchorTag = eventTarget.closest('a');
+    if (!anchorTag) {
       return;
     }
 
     // if the target of the click isn't external, there's nothing to do
-    const target = eventTarget as HTMLAnchorElement;
+    const target = anchorTag;
     const url = new URL(target.href);
     if (url.host === window.location.host) {
       return;
@@ -134,14 +135,31 @@ class TcIntegrationLayout extends Component<TcIntegrationLayoutProps> {
     event.preventDefault();
 
     // if this is a freecodecamp lesson, change its domain and path
-    if (url.host === 'learn.freecodecamp.org') {
-      url.host = new URL(document.referrer).host;
+    const fccHost = 'freecodecamp.org';
+    if (url.host.endsWith(fccHost)) {
       // TODO: it would be nice to not require that the FCC
       // app knows about the paths in the platform UI, but
       // creating a way to share this info would be complex and
       // time consuming, so we can handle it when we get another
       // provider.
-      url.pathname = `learn/freecodecamp${url.pathname}`;
+
+      // set the pathname for the 2 flavors of lesson URL
+      const platformPathPrefix = 'learn/freecodecamp';
+      const learnPrefix = '/learn/';
+      if (url.host === `learn.${fccHost}`) {
+        url.pathname = `${platformPathPrefix}${url.pathname}`;
+      } else if (
+        url.host === `www.${fccHost}` &&
+        url.pathname.startsWith(learnPrefix)
+      ) {
+        url.pathname = url.pathname.replace(
+          learnPrefix,
+          `/${platformPathPrefix}/`
+        );
+      }
+
+      // set the host to the iframe's parent domain
+      url.host = new URL(document.referrer).host;
     }
 
     // now open the url in a new tab
