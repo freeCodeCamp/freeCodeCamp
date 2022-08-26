@@ -34,7 +34,6 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 const RSA = forumLocation + '/t/19514';
 
 const generateSearchLink = (title: string, block: string) => {
-  console.table({ title, block });
   const query = /^step\s*\d*$/i.test(title)
     ? encodeURIComponent(`${block} - ${title}`)
     : encodeURIComponent(title);
