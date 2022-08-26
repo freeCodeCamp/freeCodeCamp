@@ -85,7 +85,7 @@ function Hotkeys({
           executeChallenge();
         }
       } else {
-        executeChallenge({ showCompletionModal: true });
+        executeChallenge();
       }
     },
     focusEditor: (e: React.KeyboardEvent) => {

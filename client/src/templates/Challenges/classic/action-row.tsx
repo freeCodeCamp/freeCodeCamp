@@ -8,6 +8,7 @@ import EditorTabs from './editor-tabs';
 interface ActionRowProps {
   block: string;
   hasNotes: boolean;
+  hasPreview: boolean;
   isMultifileCertProject: boolean;
   showInstructions: boolean;
   showConsole: boolean;
@@ -25,10 +26,10 @@ const mapDispatchToProps = {
 
 const ActionRow = ({
   hasNotes,
+  hasPreview,
   togglePane,
   showNotes,
   showPreview,
-  isMultifileCertProject,
   showInstructions,
   showConsole,
   superBlock,
@@ -44,17 +45,15 @@ const ActionRow = ({
         </div>
       )}
       <div className='tabs-row'>
-        {isMultifileCertProject && (
-          <button
-            aria-expanded={showInstructions ? 'true' : 'false'}
-            className={
-              showInstructions ? 'btn-tab-primary' : 'btn-tab-primary--outline'
-            }
-            onClick={() => togglePane('showInstructions')}
-          >
-            Instructions
-          </button>
-        )}
+        <button
+          aria-expanded={showInstructions ? 'true' : 'false'}
+          className={
+            showInstructions ? 'btn-tab-primary' : 'btn-tab-primary--outline'
+          }
+          onClick={() => togglePane('showInstructions')}
+        >
+          Instructions
+        </button>
         <EditorTabs />
         <button
           aria-expanded={showConsole ? 'true' : 'false'}
@@ -76,15 +75,17 @@ const ActionRow = ({
             {t('learn.editor-tabs.notes')}
           </button>
         )}
-        <button
-          aria-expanded={showPreview ? 'true' : 'false'}
-          className={
-            showPreview ? 'btn-tab-primary' : 'btn-tab-primary--outline'
-          }
-          onClick={() => togglePane('showPreview')}
-        >
-          {t('learn.editor-tabs.preview')}
-        </button>
+        {hasPreview && (
+          <button
+            aria-expanded={showPreview ? 'true' : 'false'}
+            className={
+              showPreview ? 'btn-tab-primary' : 'btn-tab-primary--outline'
+            }
+            onClick={() => togglePane('showPreview')}
+          >
+            {t('learn.editor-tabs.preview')}
+          </button>
+        )}
       </div>
     </div>
   );

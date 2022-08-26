@@ -33,6 +33,7 @@ import {
   isChallengeCompletedSelector,
   updateChallengeMeta,
   openModal,
+  submitChallenge,
   updateSolutionFormValues
 } from '../redux';
 import { createFlashMessage } from '../../../components/Flash/redux';
@@ -76,6 +77,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
       challengeMounted,
+      submitChallenge,
       createFlashMessage,
       hideCodeAlly,
       openCompletionModal: () => openModal('completion'),
@@ -93,6 +95,7 @@ interface ShowCodeAllyProps {
   createFlashMessage: typeof createFlashMessage;
   data: { challengeNode: ChallengeNode };
   hideCodeAlly: () => void;
+  submitChallenge: () => void;
   isChallengeCompleted: boolean;
   isSignedIn: boolean;
   openCompletionModal: () => void;
@@ -138,11 +141,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
     this.props.hideCodeAlly();
   }
 
-  handleSubmit = ({
-    showCompletionModal
-  }: {
-    showCompletionModal: boolean;
-  }) => {
+  handleSubmit = ({ completed }: { completed: boolean }) => {
     const {
       completedChallenges,
       createFlashMessage,
@@ -151,7 +150,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
           challenge: { id: challengeId }
         }
       },
-      openCompletionModal,
+      submitChallenge,
       partiallyCompletedChallenges
     } = this.props;
 
@@ -168,8 +167,8 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
         type: 'danger',
         message: FlashMessages.CompleteProjectFirst
       });
-    } else if (showCompletionModal) {
-      openCompletionModal();
+    } else if (completed) {
+      submitChallenge();
     }
   };
 

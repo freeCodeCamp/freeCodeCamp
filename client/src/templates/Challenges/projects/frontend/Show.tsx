@@ -14,18 +14,14 @@ import { ChallengeNode, ChallengeMeta } from '../../../../redux/prop-types';
 import ChallengeDescription from '../../components/Challenge-Description';
 import Hotkeys from '../../components/Hotkeys';
 import ChallengeTitle from '../../components/challenge-title';
-import CompletionModal from '../../components/completion-modal';
-import HelpModal from '../../components/help-modal';
 import {
   challengeMounted,
   isChallengeCompletedSelector,
+  submitChallenge,
   updateChallengeMeta,
-  openModal,
   updateSolutionFormValues
 } from '../../redux';
-import { getGuideUrl } from '../../utils';
 import SolutionForm from '../solution-form';
-import ProjectToolPanel from '../tool-panel';
 
 // Redux Setup
 const mapStateToProps = createSelector(
@@ -38,10 +34,10 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
+      submitChallenge,
       updateChallengeMeta,
       challengeMounted,
-      updateSolutionFormValues,
-      openCompletionModal: () => openModal('completion')
+      updateSolutionFormValues
     },
     dispatch
   );
@@ -51,7 +47,7 @@ interface ProjectProps {
   challengeMounted: (arg0: string) => void;
   data: { challengeNode: ChallengeNode };
   isChallengeCompleted: boolean;
-  openCompletionModal: () => void;
+  submitChallenge: () => void;
   pageContext: {
     challengeMeta: ChallengeMeta;
   };
@@ -60,13 +56,24 @@ interface ProjectProps {
   updateSolutionFormValues: () => void;
 }
 
+interface ProjectState {
+  completed: boolean;
+  hasErrors: boolean;
+}
+
 // Component
-class Project extends Component<ProjectProps> {
+class Project extends Component<ProjectProps, ProjectState> {
   static displayName: string;
   private _container: HTMLElement | null = null;
 
   constructor(props: ProjectProps) {
     super(props);
+
+    this.state = {
+      completed: false,
+      hasErrors: false
+    };
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentDidMount() {
@@ -119,13 +126,12 @@ class Project extends Component<ProjectProps> {
     }
   }
 
-  handleSubmit({
-    showCompletionModal
-  }: {
-    showCompletionModal: boolean;
-  }): void {
-    if (showCompletionModal) {
-      this.props.openCompletionModal();
+  handleSubmit({ completed }: { completed: boolean }): void {
+    this.setState({ completed, hasErrors: !completed });
+
+    const { submitChallenge } = this.props;
+    if (completed) {
+      submitChallenge();
     }
   }
 
@@ -135,13 +141,10 @@ class Project extends Component<ProjectProps> {
         challengeNode: {
           challenge: {
             challengeType,
-            fields: { blockName },
-            forumTopicId,
             title,
             description,
             instructions,
             superBlock,
-            certification,
             block,
             translationPending
           }
@@ -192,19 +195,8 @@ class Project extends Component<ProjectProps> {
                   onSubmit={this.handleSubmit}
                   updateSolutionForm={updateSolutionFormValues}
                 />
-                <ProjectToolPanel
-                  guideUrl={getGuideUrl({ forumTopicId, title })}
-                />
-                <br />
                 <Spacer />
               </Col>
-              <CompletionModal
-                block={block}
-                blockName={blockName}
-                certification={certification}
-                superBlock={superBlock}
-              />
-              <HelpModal />
             </Row>
           </Grid>
         </LearnLayout>
