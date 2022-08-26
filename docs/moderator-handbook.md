@@ -235,7 +235,7 @@ Here's how moderators deal with violations of our [Code of Conduct](https://code
 
    There may be situations where you need to address a concern with a camper privately. This should not be done through DMs, which can lead to situations where you claim one thing and the camper claims another. Instead, use the bot's functionality to create a private discussion:
 
-   - Call the `/private` command, where `username` is the camper's chat username.
+   - Call the `/private` command, where `target` is the camper you want to open a private channel with.
    - The bot will create a new channel, and add the mentioned camper and all moderators with the `Your Friendly Moderator` role. While all moderators are added to the channel for transparency, the moderator who calls this command should be the only one to interact with the camper unless they request assistance.
    - When the conversation is complete, click the `❌ Close` button _on the first message in the private channel_ to have the bot close and delete that channel.
 
