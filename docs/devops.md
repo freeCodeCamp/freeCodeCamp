@@ -583,11 +583,11 @@ Provisioning VMs with the Code
    > Todo: This setup needs to move to S3 or Azure Blob storage
 
    ```console
-   echo "serve -c '../serve.json' -p 50505 www" > client-start-primary.sh
+   echo "serve -c ../serve.json -p 50505 www" > client-start-primary.sh
    chmod +x client-start-primary.sh
    pm2 delete client-primary
    pm2 start  ./client-start-primary.sh --name client-primary
-   echo "serve -c '../serve.json' -p 52525 www" > client-start-secondary.sh
+   echo "serve -c ../serve.json -p 52525 www" > client-start-secondary.sh
    chmod +x client-start-secondary.sh
    pm2 delete client-secondary
    pm2 start  ./client-start-secondary.sh --name client-secondary
