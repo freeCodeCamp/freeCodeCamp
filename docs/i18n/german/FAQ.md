@@ -10,7 +10,7 @@ freeCodeCamp läuft auf einem modernen JavaScript-Stack. Wenn du daran interessi
 
 Ja - du kannst zu jeder der über 30 Sprachen beitragen, die wir auf unserer Übersetzungsplattform aktiviert haben.
 
-In einigen Sprachen haben wir von Nutzern erstellte Übersetzungen online. Wir haben vor, das freeCodeCamp in mehrere wichtige Weltsprachen zu lokalisieren. You can read all about this in our [announcement here](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/).
+In einigen Sprachen haben wir von Nutzern erstellte Übersetzungen online. Wir haben vor, das freeCodeCamp in mehrere wichtige Weltsprachen zu lokalisieren. Du kannst alles darüber in unserer [Ankündigung](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) lesen.
 
 Wenn du daran interessiert bist, zu Übersetzungen beizutragen, stelle bitte sicher, dass du [diesen Leitfaden](how-to-translate-files.md) zuerst gelesen hast.
 
@@ -24,7 +24,7 @@ Um uns zu helfen, Lehrvideos für unseren YouTube-Kanal zu erstellen, kannst du 
 
 ### Wie kann ich einen neuen Fehler melden?
 
-If you think you've found a bug, first read the ["How to Report a Bug"](https://www.freecodecamp.org/news/how-to-report-a-bug-to-freecodecamp/) article and follow its instructions.
+Wenn du glaubst, einen Fehler gefunden zu haben, lies zuerst den Artikel ["Wie melde ich einen Fehler"](https://www.freecodecamp.org/news/how-to-report-a-bug-to-freecodecamp/) und befolge die darin enthaltenen Anweisungen.
 
 Wenn du sicher bist, dass es sich um einen neuen Fehler handelt, kannst du einen neuen Issue auf GitHub erstellen. Gib so viele Informationen wie möglich an, damit wir den Fehler reproduzieren können. Wir haben eine vorgefertigte Issue-Vorlage, die dir dabei hilft.
 
@@ -32,7 +32,7 @@ Bitte beachte, dass diese GitHub Issues für Codebasis-bezogene Probleme und Dis
 
 ### Wie kann ich ein Sicherheitsproblem melden?
 
-Bitte erstelle keine GitHub Issues für Sicherheitsprobleme. Instead, please [follow our security policy](https://contribute.freecodecamp.org/#/security).
+Bitte erstelle keine GitHub Issues für Sicherheitsprobleme. Bitte beachte stattdessen [unsere Sicherheitsrichtlinien](https://contribute.freecodecamp.org/#/security).
 
 ### Ich bin ein Student. Kann ich für akademische Credits an einem Feature arbeiten?
 
@@ -91,8 +91,8 @@ In unserem [Moderatorenhandbuch](moderator-handbook.md) findest du eine ausführ
 
 **Frag einfach nach Hilfe in:**
 
-- Der `Contributors` Kategorie von [unserem Community Forum](https://forum.freecodecamp.org/c/contributors).
-- The `#Contributors` channel on [our chat server](https://discord.gg/PRyKn3Vbay).
+- der `Contributors` Kategorie von [unserem Community-Forum](https://forum.freecodecamp.org/c/contributors).
+- dem `#Contributors` Kanal auf [unserem Chatserver](https://discord.gg/PRyKn3Vbay).
 
 Wir freuen uns, dir dabei zu helfen, einen Beitrag zu den Themen zu leisten, an denen du gerne arbeiten möchtest. Wenn du uns in den entsprechenden Issue Threads Fragen stellst, helfen wir dir gerne weiter. Achte darauf, dass du nach deiner Frage suchst, bevor du eine neue stellst.
 
