@@ -1,3 +1,13 @@
+.help-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+}
+
+.fa-circle-exclamation {
+  font-size: 3rem;
+}
+
 @media screen and (max-width: 767px) {
   .help-modal .btn-lg {
     font-size: 16px;

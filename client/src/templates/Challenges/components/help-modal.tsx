@@ -1,3 +1,5 @@
+import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { Trans, withTranslation } from 'react-i18next';
@@ -73,18 +75,21 @@ export function HelpModal({
             </a>
           </Trans>
         </h3>
-        <p>
-          <Trans i18nKey='learn.search-link-text'>
-            <a
-              href={generateSearchLink(challengeTitle, challengeBlock)}
-              rel='noopener noreferrer'
-              target='_blank'
-            >
+        <div className='help-grid'>
+          <FontAwesomeIcon icon={faExclamationCircle} />
+          <p>
+            <Trans i18nKey='learn.search-link-text'>
+              <a
+                href={generateSearchLink(challengeTitle, challengeBlock)}
+                rel='noopener noreferrer'
+                target='_blank'
+              >
+                placeholder
+              </a>
               placeholder
-            </a>
-            placeholder
-          </Trans>
-        </p>
+            </Trans>
+          </p>
+        </div>
         <Button
           block={true}
           bsSize='lg'
