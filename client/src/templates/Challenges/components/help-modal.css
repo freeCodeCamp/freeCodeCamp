@@ -1,7 +1,5 @@
-.help-grid {
-  display: grid;
-  grid-template-columns: auto auto;
-  align-items: center;
+.alert > p > strong {
+  color: inherit;
 }
 
 .fa-circle-exclamation {

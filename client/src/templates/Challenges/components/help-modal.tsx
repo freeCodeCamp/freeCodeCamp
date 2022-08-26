@@ -75,10 +75,10 @@ export function HelpModal({
             </a>
           </Trans>
         </h3>
-        <div className='help-grid'>
+        <div className='alert alert-danger'>
           <FontAwesomeIcon icon={faExclamationCircle} />
           <p>
-            <Trans i18nKey='learn.search-link-text'>
+            <Trans i18nKey='learn.rsa-forum'>
               <a
                 href={generateSearchLink(challengeTitle, challengeBlock)}
                 rel='noopener noreferrer'
