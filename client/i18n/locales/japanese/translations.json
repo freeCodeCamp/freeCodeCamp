@@ -450,8 +450,8 @@
     "change-theme": "テーマを変更するにはサインインしてください。",
     "translation-pending": "翻訳にご協力ください。",
     "certification-project": "認定プロジェクト",
-    "iframe-alert": "Normally this link would bring you to another website! It works. This is a link to: {{externalLink}}",
-    "document-notfound": "document not found"
+    "iframe-alert": "このリンクは通常の環境では他のウェブサイトを開きます。正しく動作しています。これは {{externalLink}} へのリンクです。",
+    "document-notfound": "ドキュメントが見つかりませんでした"
   },
   "icons": {
     "gold-cup": "ゴールドカップ",
