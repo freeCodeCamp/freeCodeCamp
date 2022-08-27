@@ -38,7 +38,7 @@
     "@babel/polyfill": "7.12.1",
     "@babel/preset-env": "7.18.10",
     "@babel/preset-react": "7.18.6",
-    "@babel/standalone": "7.18.12",
+    "@babel/standalone": "7.18.13",
     "@fortawesome/fontawesome-svg-core": "6.1.2",
     "@fortawesome/free-brands-svg-icons": "6.1.2",
     "@fortawesome/free-solid-svg-icons": "6.1.2",
@@ -130,7 +130,7 @@
     "validator": "13.7.0"
   },
   "devDependencies": {
-    "@babel/types": "7.18.10",
+    "@babel/types": "7.18.13",
     "@codesee/babel-plugin-instrument": "0.351.0",
     "@codesee/tracker": "0.351.0",
     "@testing-library/jest-dom": "5.16.5",
