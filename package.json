@@ -182,6 +182,6 @@
     "start-server-and-test": "1.14.0",
     "ts-node": "10.9.1",
     "typescript": "4.7.4",
-    "webpack-bundle-analyzer": "4.6.0"
+    "webpack-bundle-analyzer": "4.6.1"
   }
 }
