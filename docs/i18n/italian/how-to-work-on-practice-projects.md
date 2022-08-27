@@ -42,7 +42,7 @@ Inserisci nell'input il numero di step che vuoi aggiungere. Poi, cliccando sul p
 
 #### Inserire uno step
 
-Enter the step number that you want to add. Then, click the `Insert Step` button to add the step. The following steps will be re-ordered.
+Inserisci il numero dello step che vuoi eliminare. Poi, clicca sul pulsante `Insert Step` per aggiungere lo step. Gli step successivi verranno riordinati.
 
 #### Eliminare uno step
 
