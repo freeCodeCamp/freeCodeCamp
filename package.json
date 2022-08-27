@@ -128,7 +128,7 @@
     "@types/jquery": "3.5.14",
     "@types/loadable__component": "5.13.4",
     "@types/lodash-es": "4.17.6",
-    "@types/node": "16.11.52",
+    "@types/node": "16.11.56",
     "@types/prismjs": "1.26.0",
     "@types/psl": "1.1.0",
     "@types/reach__router": "1.3.10",
