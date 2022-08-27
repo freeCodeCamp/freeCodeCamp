@@ -145,7 +145,7 @@
     "@types/redux-actions": "2.6.2",
     "@types/sanitize-html": "2.6.2",
     "@types/store": "2.0.2",
-    "@types/validator": "13.7.5",
+    "@types/validator": "13.7.6",
     "@typescript-eslint/eslint-plugin": "5.33.1",
     "@typescript-eslint/parser": "5.33.1",
     "babel-eslint": "10.1.0",
