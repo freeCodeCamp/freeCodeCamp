@@ -80,7 +80,7 @@
     "gatsby-source-filesystem": "3.14.0",
     "gatsby-transformer-remark": "4.11.0",
     "i18next": "20.6.1",
-    "jquery": "3.6.0",
+    "jquery": "3.6.1",
     "lodash": "4.17.21",
     "lodash-es": "4.17.21",
     "monaco-editor": "0.28.1",
