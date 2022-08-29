@@ -230,7 +230,7 @@ Ecco come i moderatori affrontano le violazioni al [Codice di Condotta](https://
 
    Potrebbero esserci situazioni in cui hai bisogno di rivolgerti a un camper in privato. Questo non dovrebbe essere fatto tramite messaggi diretti, che possono portare a situazioni in cui tu sostieni una cosa e il camper ne sostiene un'altra. Invece, usa la funzione del bot per creare una discussione privata:
 
-   - Call the `/private` command, where `username` is the camper's chat username.
+   - Call the `/private` command, where `target` is the camper you want to open a private channel with.
    - Il bot creerà un nuovo canale, e vi aggiungerà il camper menzionato e tutti i moderatori con il ruolo `Your Friendly Moderator`. Anche se vengono aggiunti al canale tutti i moderatori per trasparenza, il moderatore che ha chiamato il comando dovrebbe essere l'unico ad interagire con il camper a meno che non abbia bisogno di assistenza.
    - Quando la conversazione è completa, chiama il comando `!fCC close` _nel canale privato_ per fare in modo che il bot chiuda ed elimini quel canale.
 
