@@ -202,6 +202,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${block}.title`
     )} - ${title}`;
+
     return (
       <Hotkeys
         executeChallenge={() => this.handleSubmit(solution)}
@@ -245,10 +246,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                 className='video-description'
               >
                 <ChallengeDescription description={description} />
-                <PrismFormatted
-                  className={'dark-palette line-numbers'}
-                  text={text}
-                />
+                <PrismFormatted text={text} />
                 <Spacer />
                 <ObserveKeys>
                   <div className='video-quiz-options'>
