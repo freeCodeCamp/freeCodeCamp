@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c442eddfaeb5bd18
-title: Erstelle eine Tribute-Seite
+title: Erstelle eine Gedenkseite
 challengeType: 14
 forumTopicId: 301147
 dashedName: build-a-tribute-page
@@ -12,13 +12,13 @@ dashedName: build-a-tribute-page
 
 **User Stories:**
 
-1. Deine Tribute-Seite sollte über ein `main`-Element mit einer zugehörigen `id` von `main` verfügen, die alle anderen Elemente enthält
-1. Du solltest ein Element mit einer `id` von `title` sehen, das einen String (d.h. Text) enthält, der das Thema der Tribute-Seite beschreibt (z.B. „Dr. Norman Borlaug“)
+1. Deine Gedenkseite sollte über ein `main`-Element mit einer zugehörigen `id` von `main` verfügen, die alle anderen Elemente enthält
+1. Du solltest ein Element mit einer `id` von `title` sehen, das einen String (d.h. Text) enthält, der das Thema der Gedenkseite beschreibt (z.B. „Dr. Norman Borlaug“)
 1. Du solltest entweder ein `figure`- oder ein `div`-Element mit einer `id` von `img-div` sehen
 1. Du solltest innerhalb des `#img-div`-Elements ein `img`-Element mit zugehöriger `id="image"` sehen
 1. Du solltest innerhalb des `#img-div`-Elements ein Element mit zugehöriger `id="img-caption"` sehen, der einen Text enthält, der das in `#img-div` angezeigte Bild beschreibt.
-1. Du solltest ein Element mit zugehöriger `id="tribute-info"` sehen, das einen Text enthält und das Thema der Tribute-Seite beschreibt
-1. Du solltest ein `a`-Element mit zugehöriger `id="tribute-link"` sehen, welches auf eine externe Seite verweist, die zusätzliche Informationen über das Thema der Tribute-Seite enthält. TIPP: Du musst deinem Element ein Attribut von `target` zuweisen und es auf `_blank` setzen, damit der Link in einem neuen Tab geöffnet werden kann
+1. Du solltest ein Element mit zugehöriger `id="tribute-info"` sehen, welches das Thema der Gedenkseite beschreibenden Textinhalt enthält
+1. Du solltest ein `a`-Element mit zugehöriger `id="tribute-link"` sehen, welches auf eine externe Seite verweist, die zusätzliche Informationen über das Thema der Gedenkseite enthält. TIPP: Du musst deinem Element ein Attribut von `target` zuweisen und es auf `_blank` setzen, damit der Link in einem neuen Tab geöffnet werden kann
 1. Dein `#image` sollte die `max-width` und `height` Eigenschaften verwenden, um die Größenänderung responsiv zu gestalten, daher relativ zur Breite des übergeordneten Elements, ohne dessen Originalgröße zu überschreiten
 1. Dein `img`-Element sollte innerhalb des Elternelements zentriert werden
 
