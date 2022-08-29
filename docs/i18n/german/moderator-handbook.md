@@ -230,7 +230,7 @@ Hier erfährst du, wie die Moderatoren mit Verstößen gegen unseren [Verhaltens
 
    Es kann Situationen geben, in denen du ein Anliegen mit einem Teilnehmer unter vier Augen besprechen musst. Dies sollte nicht über DMs geschehen, da dies zu Situationen führen kann, in denen du eine Sache behauptest und der Teilnehmer eine andere. Nutze stattdessen die Funktionen des Bots, um eine private Diskussion zu führen:
 
-   - Call the `/private` command, where `username` is the camper's chat username.
+   - Call the `/private` command, where `target` is the camper you want to open a private channel with.
    - Der Bot erstellt einen neuen Channel und fügt den genannten Camper und alle Moderatoren mit der Rolle `Your Friendly Moderator` hinzu. Obwohl alle Moderatoren zur Transparenz in den Kanal aufgenommen werden, sollte der Moderator, der diesen Befehl aufruft, der einzige sein, der mit dem Teilnehmer interagiert, es sei denn, er bittet um Hilfe.
    - When the conversation is complete, click the `❌ Close` button _on the first message in the private channel_ to have the bot close and delete that channel.
 
