@@ -22,15 +22,15 @@
     "@babel/preset-typescript": "7.18.6",
     "react": "16.14.0",
     "react-dom": "16.14.0",
-    "typescript": "4.7.4"
+    "typescript": "4.8.2"
   },
   "devDependencies": {
-    "@babel/core": "7.18.10",
+    "@babel/core": "7.18.13",
     "@babel/preset-env": "7.18.10",
     "@rollup/plugin-babel": "5.3.1",
     "@rollup/plugin-commonjs": "19.0.2",
     "@rollup/plugin-node-resolve": "13.3.0",
-    "@rollup/plugin-typescript": "8.3.4",
+    "@rollup/plugin-typescript": "8.4.0",
     "@storybook/addon-a11y": "6.5.10",
     "@storybook/addon-actions": "6.5.10",
     "@storybook/addon-docs": "6.5.10",

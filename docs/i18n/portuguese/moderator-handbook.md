@@ -230,7 +230,7 @@ Veja como os moderadores lidam com violações do nosso[Código de Conduta](http
 
    Há várias situações onde você deve abordar um problema com um usuário freeCodeCamp em privado. Isso não deve ser feito por DMs, já que isso pode levar a situações onde você diz uma coisa e o usuário freeCodeCamp diz outra. Em vez disso, use a funcionalidade do bot para criar uma discussão privada:
 
-   - Selecione o comando `/private`, onde `username` é o nome de usuário de chat do usuário do freeCodeCamp.
+   - Call the `/private` command, where `target` is the camper you want to open a private channel with.
    - O bot vai criar um novo canal e adicionar o usuário do freeCodeCamp mencionado e todos os moderadores com a função `Your Friendly Moderator`. Enquanto todos os moderadores são adicionados ao canal para transparência, o moderador que der esse comando deve ser o único a interagir com o usuário freeCodeCamp a não ser que eles peçam assistência.
    - Quando a conversa estiver completa, clique no botão `❌ Close` _na primeira mensagem no canal privado_ para que o bot feche e exclua o canal.
 

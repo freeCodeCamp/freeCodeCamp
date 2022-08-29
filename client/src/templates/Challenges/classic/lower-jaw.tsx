@@ -44,8 +44,6 @@ const LowerJaw = ({
   const { t } = useTranslation();
   const submitButtonRef = React.createRef<HTMLButtonElement>();
   const testFeedbackRef = React.createRef<HTMLDivElement>();
-  const [challengeHasBeenCompleted, setChallengeHasBeenCompleted] =
-    useState(false);
 
   useEffect(() => {
     if (attemptsNumber && attemptsNumber > 0) {
@@ -76,28 +74,14 @@ const LowerJaw = ({
   }, [challengeHasErrors, hint]);
 
   useEffect(() => {
-    if (challengeHasBeenCompleted && submitButtonRef?.current) {
+    if (challengeIsCompleted && submitButtonRef?.current) {
       submitButtonRef.current.focus();
       setTimeout(() => {
         setTestBtnariaHidden(true);
       }, 500);
     }
 
-    if (!challengeHasBeenCompleted) {
-      setTestBtnariaHidden(false);
-    }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [challengeHasBeenCompleted]);
-
-  useEffect(() => {
-    if (!challengeHasBeenCompleted && challengeIsCompleted) {
-      setChallengeHasBeenCompleted(challengeIsCompleted);
-    }
-
-    if (challengeHasBeenCompleted && !challengeIsCompleted) {
-      setChallengeHasBeenCompleted(challengeIsCompleted);
-    }
+    setTestBtnariaHidden(challengeIsCompleted);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [challengeIsCompleted]);
@@ -115,8 +99,6 @@ const LowerJaw = ({
 
     For consistency, use the persisted version if the conditions has been met before.
   */
-  const earliestAvailableCompletion =
-    challengeHasBeenCompleted || challengeIsCompleted;
   const earliestAvailableHint = hint || previousHint;
 
   const renderTestFeedbackContainer = () => {
@@ -124,7 +106,7 @@ const LowerJaw = ({
       return '';
     } else if (runningTests) {
       return <span className='sr-only'>{t('aria.running-tests')}</span>;
-    } else if (earliestAvailableCompletion) {
+    } else if (challengeIsCompleted) {
       const submitKeyboardInstructions = isEditorInFocus ? (
         <span className='sr-only'>{t('aria.submit')}</span>
       ) : (
@@ -198,7 +180,7 @@ const LowerJaw = ({
       testsLength &&
       (attemptsNumber >= testsLength || attemptsNumber >= 3);
 
-    if (isAttemptsLargerThanTest && !earliestAvailableCompletion) {
+    if (isAttemptsLargerThanTest && !challengeIsCompleted) {
       return (
         <div>
           <hr />
@@ -232,7 +214,7 @@ const LowerJaw = ({
     return (
       <>
         <div id='action-buttons-container'>
-          {isSignedIn ? null : earliestAvailableCompletion ? (
+          {isSignedIn ? null : challengeIsCompleted ? (
             <Button
               block={true}
               href={`${apiLocation}/signin`}
@@ -243,9 +225,7 @@ const LowerJaw = ({
           ) : null}
           <button
             id='test-button'
-            className={`btn-block btn ${
-              earliestAvailableCompletion ? 'sr-only' : ''
-            }`}
+            className={`btn-block btn ${challengeIsCompleted ? 'sr-only' : ''}`}
             aria-hidden={testBtnariaHidden}
             onClick={tryToExecuteChallenge}
           >
@@ -255,7 +235,7 @@ const LowerJaw = ({
           </button>
           <button
             id='submit-button'
-            aria-hidden={!earliestAvailableCompletion}
+            aria-hidden={!challengeIsCompleted}
             className='btn-block btn'
             onClick={tryToSubmitChallenge}
             ref={submitButtonRef}

@@ -230,7 +230,7 @@ Thank you for understanding.
 
    キャンパーに関わる懸念事項に対して個人的に対処する必要のある場合があるかもしれません。 これは、DM を通じて行うべきではありません。あなたがあることを主張し、キャンパーがそれとは別のことを主張する状況につながる可能性があります。 代わりに、bot の機能を使用してプライベートディスカッションを作成してください。
 
-   - Call the `/private` command, where `username` is the camper's chat username.
+   - Call the `/private` command, where `target` is the camper you want to open a private channel with.
    - bot は新しいチャンネルを作成し、上述のキャンパーと `Your Friendly Moderator` の役割を持つすべてのモデレーターをディスカッションに追加します。 透明性を保つため、すべてのモデレーターをチャンネルに追加しますが、支援を求めない限り、このコマンドを呼び出すモデレーターがキャンパーと接触する唯一の人であるべきです。
    - When the conversation is complete, click the `❌ Close` button _on the first message in the private channel_ to have the bot close and delete that channel.
 

@@ -32,8 +32,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
       - name: Setup CodeQL
-        uses: github/codeql-action/init@af35bd33fba49f9d3fe1ceaf1bd88d9fb26d4fce # tag=v1
+        uses: github/codeql-action/init@d5cec099b513fccc2cfcc9247113ecc9edbdacc5 # tag=v1
         with:
           languages: ${{ matrix.language }}
       - name: Perform Analysis
-        uses: github/codeql-action/analyze@af35bd33fba49f9d3fe1ceaf1bd88d9fb26d4fce # tag=v1
+        uses: github/codeql-action/analyze@d5cec099b513fccc2cfcc9247113ecc9edbdacc5 # tag=v1
