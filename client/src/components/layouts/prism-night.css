@@ -6,7 +6,8 @@
  */
 
 .dark-palette code[class*='language-'],
-.dark-palette pre[class*='language-'] {
+.dark-palette code[class*='language-'],
+pre[class*='language-'].dark-palette {
   color: var(--secondary-color);
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   font-size: 1em;
@@ -28,11 +29,13 @@
   text-shadow: none;
 }
 
+pre[class*='language-'].dark-palette code[class*='language-'],
 .dark-palette pre[class*='language-'] code[class*='language-'] {
   color: var(--quaternary-color);
 }
 
 /* Code blocks */
+pre[class*='language-'].dark-palette,
 .dark-palette pre[class*='language-'] {
   padding: 1em;
   margin: 0.5em 0;
@@ -47,12 +50,15 @@ padding in night mode */
 }
 
 .dark-palette :not(pre) > code[class*='language-'],
+pre[class*='language-'].dark-palette,
 .dark-palette pre[class*='language-'] {
   background: var(--primary-background);
 }
 
 .dark-palette pre[class*='language-']::selection,
+pre[class*='language-'].dark-palette::selection,
 .dark-palette pre[class*='language-'] ::selection,
+pre[class*='language-'].dark-palette ::selection,
 .dark-palette code[class*='language-']::selection,
 .dark-palette code[class*='language-'] ::selection {
   background: var(--selection-color);
