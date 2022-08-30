@@ -12,7 +12,7 @@ if (!branchfilter.contains(env.BRANCH_NAME)) {
     return
 }
 
-// Define branch specific vars
+// Define dev-specific vars
 if (env.BRANCH_NAME == 'dev') {
     DEPLOY_ENV = 'DEV'
     LOGICAL_ENV = 'dev'
@@ -23,6 +23,7 @@ if (env.BRANCH_NAME == 'dev') {
     ENABLE_CACHE = false
 }
 
+// Define prod-specific vars
 if (env.BRANCH_NAME == 'prod') {
     DEPLOY_ENV = 'PROD'
     LOGICAL_ENV = 'prod'
