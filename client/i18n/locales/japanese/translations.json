@@ -286,6 +286,7 @@
     "percent-complete": "{{percent}}% 完了",
     "tried-rsa": "すでに <0>Read-Search-Ask (読む - 検索する - 質問する)</0> メソッドを試したなら、freeCodeCamp フォーラムで助けを求めることができます。",
     "rsa": "読む (Read)、検索する (Search)、質問する (Ask)",
+    "rsa-forum": "<strong>Before making a new post</strong> please see if your question has <0>already been answered on the forum</0>.",
     "reset": "このレッスンをリセットしますか？",
     "reset-warn": "本当にこのレッスンをリセットしてもよろしいですか？エディターとテストがリセットされます。",
     "reset-warn-2": "この操作は取り消すことが出来ません",

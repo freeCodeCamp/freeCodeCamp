@@ -286,6 +286,7 @@
     "percent-complete": "完成 {{percent}}%",
     "tried-rsa": "如果你已经尝试了 <0>Read-Search-Ask（阅读-搜索-提问）</0>方法，那么你可以在 freeCodeCamp 论坛请求帮助。",
     "rsa": "阅读，搜索，提问",
+    "rsa-forum": "<strong>Before making a new post</strong> please see if your question has <0>already been answered on the forum</0>.",
     "reset": "重置这一节课程？",
     "reset-warn": "你确定要重置这一节课程吗？编辑器和测试将被重置。",
     "reset-warn-2": "这个操作不可撤销",
