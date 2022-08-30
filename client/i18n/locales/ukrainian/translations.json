@@ -286,6 +286,7 @@
     "percent-complete": "{{percent}}% виконано",
     "tried-rsa": "Якщо ви вже спробували метод <0>читати-шукати-питати</0>, то ви можете звернутися за допомогою на форум freeCodeCamp.",
     "rsa": "Читати, шукати, питати",
+    "rsa-forum": "<strong>Before making a new post</strong> please see if your question has <0>already been answered on the forum</0>.",
     "reset": "Скинути цей урок?",
     "reset-warn": "Ви впевнені, що хочете скинути цей урок? Редактори та тести будуть скинуті.",
     "reset-warn-2": "Цю дію неможливо відмінити",

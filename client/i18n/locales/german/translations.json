@@ -286,6 +286,7 @@
     "percent-complete": "{{percent}}% abgeschlossen",
     "tried-rsa": "Wenn du die <0>Lesen-Suchen-Fragen</0> Methode bereits ausprobiert hast, kannst du im freeCodeCamp-Forum um Hilfe bitten.",
     "rsa": "Lesen, suchen, fragen",
+    "rsa-forum": "<strong>Before making a new post</strong> please see if your question has <0>already been answered on the forum</0>.",
     "reset": "Diese Lektion zurücksetzen?",
     "reset-warn": "Bist du dir sicher, dass du diese Lektion zurücksetzen möchtest? Die Editoren und Tests werden zurückgesetzt.",
     "reset-warn-2": "Dies kann nicht rückgängig gemacht werden",
