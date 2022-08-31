@@ -8,7 +8,7 @@ dashedName: build-a-personal-portfolio-webpage
 
 # --description--
 
-**目标：** 构建一个功能类似于 <a href="https://personal-portfolio.freecodecamp.rocks" target="_blank">https://personal-portfolio.freecodecamp.rocks</a> 的应用程序
+**目标：** 构建一个功能类似于 <a href="https://personal-portfolio.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://personal-portfolio.freecodecamp.rocks</a> 的应用程序
 
 **需求：**
 
@@ -25,6 +25,8 @@ dashedName: build-a-personal-portfolio-webpage
 1. 导航栏应该始终位于视口的顶部
 
 完成需求并通过下面的所有测试来完成这个项目。 赋予它你自己的个人风格。 编程愉快！
+
+**注意：** 请在你的 HTML 中添加 `<link rel="stylesheet" href="styles.css">` 以链接你的样式表并应用你的 CSS
 
 # --hints--
 
@@ -170,11 +172,11 @@ assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Personal Portfolio</title>
 </head>
 <body>
-    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 <!--Font Reference-->
 <nav id="navbar">
   <a href="#projects">Projects</a> |

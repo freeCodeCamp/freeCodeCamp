@@ -1,7 +1,7 @@
 ---
 id: 5900f4c21000cf542c50ffd4
 title: '問題 340: クレイジー関数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301999
 dashedName: problem-340-crazy-function
 ---

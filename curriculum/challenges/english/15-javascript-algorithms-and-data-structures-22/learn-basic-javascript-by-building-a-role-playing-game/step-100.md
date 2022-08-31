@@ -277,12 +277,14 @@ function goFight() {
   monsterHealthText.innerText = monsterHealth;
 }
 
+--fcc-editable-region--
 function attack() {
   text.innerText = "The " + monsters[fighting].name + " attacks.";
   text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
   health -= monsters[fighting].level;
   monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
 }
+--fcc-editable-region--
 
 function dodge() {
 }

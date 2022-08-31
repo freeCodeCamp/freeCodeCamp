@@ -3,6 +3,15 @@
   color: var(--primary-color);
 }
 
+.monaco-scrollable-element {
+  overflow: visible !important;
+}
+
+.monaco-editor-background {
+  overflow: visible !important;
+  contain: none !important;
+}
+
 .vs .monaco-scrollable-element > .scrollbar > .slider {
   z-index: 11;
 }

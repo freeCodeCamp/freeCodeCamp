@@ -1,18 +1,21 @@
 ---
 id: 5a23c84252665b21eecc8024
 title: Puzzle sui nomi degli Stati
-challengeType: 5
+challengeType: 1
 forumTopicId: 302323
 dashedName: state-name-puzzle
 ---
 
 # --description--
 
-Questo compito è ispirato dalla colonna DDJ di Mark Nelson "Wordplay" e una delle sfide del puzzle settimanale da Will Shortz sulla NPR Weekend Edition [\[1\]](https://www.npr.org/templates/story/story.php?storyId=9264290) e originariamente attribuito a David Edelheit. La sfida è di prendere i nomi di due stati dell'USA, mischiarli, poi riarrangiare le lettere per formare i nomi di due *diversi* stati dell'USA (così da avere 4 nomi di stati diversi). Quali sono questi Stati? Il problema è stato ristampato su [Unicon Discussion Web](https://tapestry.tucson.az.us/twiki/bin/view/Main/StateNamesPuzzle) che include diverse soluzioni con analisi. Diverse tecniche possono essere utili e potresti voler fare riferimento a [ Gödel numbering](https://en.wikipedia.org/wiki/Goedel_numbering), [relazioni di equivalenza](https://en.wikipedia.org/wiki/Equivalence_relation), e [classi di equivalenza](https://en.wikipedia.org/wiki/Equivalence_classes). I meriti fondamentali di questi sono stati discussi nell'Unicon Discussion Web. È stata presentata anche una seconda sfida sotto forma di una serie di nuovi Stati fittizi.
+**Nome degli stati** è <em>un puzzle di parole</em> in cui prendi le lettere da due stati US e riorganizzi le lettere per formare i nomi di altri due stati US.
+
 
 # --instructions--
 
-Scrivere una funzione per risolvere la sfida per la gamma data di nomi di Stati. La funzione dovrebbe restituire un array. Ogni elemento deve essere un oggetto in questa forma: `{"from":[],"to":[]}`. L'array "from" dovrebbe contenere i nomi originali e l'array "to" dovrebbe contenere i nomi risultanti.
+Scrivi una funzione per risolvere la sfida per un dato array di veri nomi di stati americani, e per nomi di stati fittizi.
+
+La funzione dovrebbe restituire un array. Ogni elemento deve essere un oggetto in questa forma: `{"from":[],"to":[]}`. L'array `"from"` dovrebbe contenere i nomi originali e l'array `"to"` dovrebbe contenere i nomi risultanti.
 
 # --hints--
 

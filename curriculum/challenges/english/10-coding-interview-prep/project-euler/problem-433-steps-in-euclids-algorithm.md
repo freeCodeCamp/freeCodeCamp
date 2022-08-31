@@ -1,7 +1,7 @@
 ---
 id: 5900f51d1000cf542c51002f
 title: 'Problem 433: Steps in Euclid''s algorithm'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302104
 dashedName: problem-433-steps-in-euclids-algorithm
 ---

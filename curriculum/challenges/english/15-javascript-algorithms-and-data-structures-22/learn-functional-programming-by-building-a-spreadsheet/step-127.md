@@ -80,7 +80,9 @@ const highPrecedence = str => {
 const isEven = num => num % 2 === 0;
 const sum = nums => nums.reduce((a, x) => a + x);
 const average = nums => sum(nums) / nums.length;
+--fcc-editable-region--
 
+--fcc-editable-region--
 const spreadsheetFunctions = {
   "": x => x,
   random: ([x, y]) => Math.floor(Math.random() * y + x),

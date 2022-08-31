@@ -96,7 +96,9 @@ const applyFn = str => {
   );
 };
 
+--fcc-editable-region--
 
+--fcc-editable-region--
 </script>
 ```
 

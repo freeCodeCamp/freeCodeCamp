@@ -1,7 +1,7 @@
 ---
 id: 5900f46c1000cf542c50ff7e
 title: 'Завдання 256: Кімнати без татамі'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301904
 dashedName: problem-256-tatami-free-rooms
 ---

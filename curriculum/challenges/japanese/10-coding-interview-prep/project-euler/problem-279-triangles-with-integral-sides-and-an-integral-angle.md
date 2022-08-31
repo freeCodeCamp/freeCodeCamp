@@ -1,7 +1,7 @@
 ---
 id: 5900f4841000cf542c50ff96
 title: '問題 279: 辺と角度が整数である三角形'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301929
 dashedName: problem-279-triangles-with-integral-sides-and-an-integral-angle
 ---

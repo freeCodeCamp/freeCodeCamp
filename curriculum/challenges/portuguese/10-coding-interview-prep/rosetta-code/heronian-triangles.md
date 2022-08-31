@@ -1,14 +1,14 @@
 ---
 id: 595b98f8b5a2245e243aa831
 title: Triângulos Heronianos
-challengeType: 5
+challengeType: 1
 forumTopicId: 302285
 dashedName: heronian-triangles
 ---
 
 # --description--
 
-A [fórmula de Heron](https://en.wikipedia.org/wiki/Heron's formula "wp: Heron's formula") para a área de um triângulo dado o comprimento de seus três lados `a`, `b`, e `c`, é dada por:
+A fórmula de Hero para a área de um triângulo dado o comprimento de seus três lados `a`, `b` e `c` é dada por:
 
 $A = \\sqrt{s(s-a)(s-b)(s-c)},$
 

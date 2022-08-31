@@ -1,7 +1,7 @@
 ---
 id: 5900f4131000cf542c50ff25
 title: 'Problema 166: Cruzamentos'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301800
 dashedName: problem-166-criss-cross
 ---

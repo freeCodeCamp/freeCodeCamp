@@ -98,10 +98,12 @@ assert(currentWeapon === 0);
 
 ```html
 <script>
+--fcc-editable-region--
 var xp = 0;
 var health = 100;
 var gold = 50;
 
+--fcc-editable-region--
 </script>
 ```
 

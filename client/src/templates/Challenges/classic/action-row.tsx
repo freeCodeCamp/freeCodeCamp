@@ -1,36 +1,30 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { connect } from 'react-redux';
+
 import BreadCrumb from '../components/bread-crumb';
-import { resetChallenge } from '../redux';
 import EditorTabs from './editor-tabs';
 
 interface ActionRowProps {
   block: string;
   hasNotes: boolean;
-  isMultifileCertProject: boolean;
-  showInstructions: boolean;
+  isProjectBasedChallenge: boolean;
   showConsole: boolean;
   showNotes: boolean;
+  showInstructions: boolean;
   showPreview: boolean;
   superBlock: string;
   togglePane: (pane: string) => void;
-  resetChallenge: () => void;
   showBreadcrumbs?: boolean;
 }
-
-const mapDispatchToProps = {
-  resetChallenge
-};
 
 const ActionRow = ({
   hasNotes,
   togglePane,
   showNotes,
   showPreview,
-  isMultifileCertProject,
-  showInstructions,
   showConsole,
+  showInstructions,
+  isProjectBasedChallenge,
   superBlock,
   showBreadcrumbs = true,
   block
@@ -44,7 +38,7 @@ const ActionRow = ({
         </div>
       )}
       <div className='tabs-row'>
-        {isMultifileCertProject && (
+        {!isProjectBasedChallenge && (
           <button
             aria-expanded={showInstructions ? 'true' : 'false'}
             className={
@@ -52,7 +46,7 @@ const ActionRow = ({
             }
             onClick={() => togglePane('showInstructions')}
           >
-            Instructions
+            {t('learn.editor-tabs.instructions')}
           </button>
         )}
         <EditorTabs />
@@ -92,4 +86,4 @@ const ActionRow = ({
 
 ActionRow.displayName = 'ActionRow';
 
-export default connect(null, mapDispatchToProps)(ActionRow);
+export default ActionRow;

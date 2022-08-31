@@ -34,7 +34,7 @@ socket.on('user', data => {
 });
 ```
 
-Invia la tua pagina quando pensi di averlo fatto bene. Se incontri degli errori, puoi controllare il progetto completato fino a questo punto [qui](https://gist.github.com/camperbot/bf95a0f74b756cf0771cd62c087b8286).
+Invia la tua pagina quando pensi di averlo fatto bene. Se stai avendo errori, puoi vedere <a href="https://gist.github.com/camperbot/bf95a0f74b756cf0771cd62c087b8286" target="_blank" rel="noopener noreferrer nofollow">il progetto completato fino a questo punto</a>.
 
 # --hints--
 

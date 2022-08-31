@@ -1,7 +1,7 @@
 ---
 id: 5900f52a1000cf542c51003c
 title: '問題 445: レトラクション A'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302117
 dashedName: problem-445-retractions-a
 ---

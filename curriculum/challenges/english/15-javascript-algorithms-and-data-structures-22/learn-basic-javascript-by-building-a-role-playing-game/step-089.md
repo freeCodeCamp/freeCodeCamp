@@ -162,6 +162,7 @@ const monsters = [
   }
 ];
 
+--fcc-editable-region--
 const locations = [
   {
     name: "town square",
@@ -182,6 +183,7 @@ const locations = [
     text: "You enter the cave. You see some monsters."
   }
 ];
+--fcc-editable-region--
 
 // initialize buttons
 button1.onclick = goStore;

@@ -1,7 +1,7 @@
 ---
 id: 5900f3e91000cf542c50fefc
 title: 'Задача 125: Сума цифр числа паліндром'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301752
 dashedName: problem-125-palindromic-sums
 ---

@@ -39,7 +39,7 @@ Você não deve usar o operador de atribuição.
 
 ```js
 assert(
-  /let\s*myVar\s*=\s*87;\s*\/*.*\s*([+]{2}\s*myVar|myVar\s*[+]{2});/.test(code)
+  /let\s*myVar\s*=\s*87;\s*\/*.*\s*([+]{2}\s*myVar|myVar\s*[+]{2})/.test(code)
 );
 ```
 

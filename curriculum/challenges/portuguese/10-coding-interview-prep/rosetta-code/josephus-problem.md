@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc7ec5
 title: O problema de Josephus
-challengeType: 5
+challengeType: 1
 forumTopicId: 302294
 dashedName: josephus-problem
 ---
 
 # --description--
 
-O [problema de Josephus](https://en.wikipedia.org/wiki/Josephus problem) é um desafio de matemática com uma descrição macabra: $n$ prisoneiros estão de pé, em círculo, sequencialmente numerados de $0$ a $n-1$.
+O problema de Josephus é um desafio de matemática com uma descrição macabra: $n$ prisoneiros estão de pé, em círculo, sequencialmente numerados de $0$ a $n-1$.
 
 Um carrasco caminha pelo círculo, começando pelo prisioneiro $0$, removendo cada $k$-ésimo prisioneiro e matando-o.
 
@@ -26,7 +26,7 @@ Qual era o número dele?
 
 # --instructions--
 
-Escreva uma função que recebe o número inicial de prisioneiros e 'k' como parâmetros, devolvendo o número do prisioneiro que sobrevive.
+Escreva uma função que recebe o número inicial de prisioneiros e `k` como parâmetros, devolvendo o número do prisioneiro que sobrevive.
 
 # --hints--
 

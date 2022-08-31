@@ -1,14 +1,14 @@
 ---
 id: 595b98f8b5a2245e243aa831
 title: Triangoli heroniani
-challengeType: 5
+challengeType: 1
 forumTopicId: 302285
 dashedName: heronian-triangles
 ---
 
 # --description--
 
-La [Formula di Herone](https://en.wikipedia.org/wiki/Heron's formula "wp: Heron's formula") per l'area di un triangolo data la lunghezza dei suoi tre lati `a` `b`, e `c` è data da:
+La formula di Erone per l'area di un triangolo data la lunghezza dei tre lati `a`, `b` e `c` è data da:
 
 $A = \\sqrt{s(s-a)(s-b)(s-c)},$
 

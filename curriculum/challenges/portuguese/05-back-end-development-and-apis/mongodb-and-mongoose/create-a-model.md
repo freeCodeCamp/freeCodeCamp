@@ -38,7 +38,7 @@ age :  number
 favoriteFoods : array of strings (*)
 ```
 
-Use os tipos de schemas básicos de Mongoose. Se você quiser, também pode adicionar mais campos, usar validadores simples, como required ou unique, e definir valores padrão. Veja a [documentação do Mongoose](http://mongoosejs.com/docs/guide.html).
+Use os tipos de schemas básicos de Mongoose. Se você quiser, também pode adicionar mais campos, usar validadores simples, como required ou unique, e definir valores padrão. Veja nosso <a href="https://www.freecodecamp.org/news/introduction-to-mongoose-for-mongodb-d2a7aa593c57/" target="_blank" rel="noopener noreferrer nofollow">artigo sobre o Mongoose</a>.
 
 Agora, crie um modelo chamado `Person` do `personSchema`.
 

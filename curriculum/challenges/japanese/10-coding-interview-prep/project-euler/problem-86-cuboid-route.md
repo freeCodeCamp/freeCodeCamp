@@ -1,7 +1,7 @@
 ---
 id: 5900f3c31000cf542c50fed5
 title: '問題 86: 直方体の経路'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302200
 dashedName: problem-86-cuboid-route
 ---

@@ -67,9 +67,11 @@ assert(code.replace(/\s/g, '').includes('constaddVar=(x,y)=>x+y'));
 ```html
 <script>
 
+--fcc-editable-region--
 const addVar = function(x, y) {
   return x + y;
 };
+--fcc-editable-region--
 
 const infixToFunction = {};
 

@@ -91,6 +91,7 @@ const highPrecedence = str => {
 
 const isEven = num => num % 2 === 0;
 
+--fcc-editable-region--
 const spreadsheetFunctions = {
   "": x => x,
   random: ([x, y]) => Math.floor(Math.random() * y + x),
@@ -99,6 +100,7 @@ const spreadsheetFunctions = {
   lasttwo: arr => arr.slice(-2),
   even: nums => nums.filter(isEven)
 };
+--fcc-editable-region--
 
 
 

@@ -14,13 +14,13 @@ dashedName: web-services-api-rate-limiting-and-security
 
 Mais recursos:
 
-\- [Exercício: GeoJSON](https://www.youtube.com/watch?v=TJGJN0T8tak)
+\- <a href="https://www.youtube.com/watch?v=TJGJN0T8tak" target="_blank" rel="noopener noreferrer nofollow">Exercício: GeoJSON</a>
 
-\- [Exercício: JSON](https://www.youtube.com/watch?v=vTmw5RtfGMY)
+\- <a href="https://www.youtube.com/watch?v=vTmw5RtfGMY" target="_blank" rel="noopener noreferrer nofollow">Exercício: JSON</a>
 
-\- [Exercício: Twitter](https://www.youtube.com/watch?v=2c7YwhvpCro)
+\- <a href="https://www.youtube.com/watch?v=2c7YwhvpCro" target="_blank" rel="noopener noreferrer nofollow">Exercício: Twitter</a>
 
-\- [Exercício: XML](https://www.youtube.com/watch?v=AopYOlDa-vY)
+\- <a href="https://www.youtube.com/watch?v=AopYOlDa-vY" target="_blank" rel="noopener noreferrer nofollow">Exercício: XML</a>
 
 # --question--
 

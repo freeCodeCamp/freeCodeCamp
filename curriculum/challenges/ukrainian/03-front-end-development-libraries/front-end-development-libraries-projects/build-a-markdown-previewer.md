@@ -8,9 +8,9 @@ dashedName: build-a-markdown-previewer
 
 # --description--
 
-**Мета:** Створити додаток [CodePen.io](https://codepen.io), який функціонально схожий до цього:<https://codepen.io/freeCodeCamp/full/GrZVVO>.
+**Мета:** Створити застосунок, функціонально схожий до цього: <a href="https://codepen.io/freeCodeCamp/full/GrZVVO" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/GrZVVO</a>.
 
-Заповніть нижче [user stories](https://en.wikipedia.org/wiki/User_story) та пройдіть усі тести. Виконайте завдання у власному стилі.
+Виконайте історію користувача та пройдіть тести. Використовуйте необхідні вам бібліотеки або API. Оформте за власним стилем.
 
 Ви можете використовувати різноманітні ресурси HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux та jQuery для того, щоб виконати цей проєкт. Слід використовувати frontend framework (наприклад, React), тому що цей розділ присвячений саме їх вивченню. Інші технології та ресурси, що не були вказані вище, не є рекомендованими до використання, але ви можете застосовувати і їх на свій страх і ризик. Ми розглядаємо варіант використання інших frontend frameworks для розробки інтерфейсу користувача таких, як Angular та Vue, проте наразі вони не підримуютьcя. Ми візьмемо до уваги і спробуємо виправити всі звіти, що використовують запропонований технологічний стек у цьому проєкті. Вдалого програмування!
 
@@ -28,7 +28,7 @@ dashedName: build-a-markdown-previewer
 
 **Необов'язковий бонус (вам не потрібно проходити цей тест):** Моя програма попереднього перегляду Markdown інтерпретує повернення каретки та відображає їх як `br` (розрив рядка) елементів.
 
-Ви можете створити свій проєкт <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>за допомогою цього шаблону CodePen</a> і натиснути `Зберегти`, щоб створити власний pen. Або ви можете використати це посилання CDN для запуску тестів у будь-якому середовищі, яке вам подобається: ` https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js `
+Ви можете створити свій проєкт, <a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">використовуючи цей шаблон CodePen</a> і натиснувши `Save`. Або ви можете використати це посилання CDN для запуску тестів у будь-якому середовищі, яке вам подобається: ` https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js `
 
 Після того, як ви закінчите, надішліть URL-адресу свого робочого проєкт з усіма його тестами.
 

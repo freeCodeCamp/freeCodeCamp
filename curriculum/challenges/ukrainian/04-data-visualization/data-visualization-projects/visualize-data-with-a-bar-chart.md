@@ -8,9 +8,9 @@ dashedName: visualize-data-with-a-bar-chart
 
 # --description--
 
-**Objective:** створити [CodePen.io](https://codepen.io) застосунок, функціонально схожий на цей: <https://codepen.io/freeCodeCamp/full/GrZVaM>.
+**Мета:** Створити застосунок, функціонально схожий до цього: <a href="https://codepen.io/freeCodeCamp/full/GrZVaM" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/GrZVaM</a>.
 
-Нижче заповніть [user stories](https://en.wikipedia.org/wiki/User_story) та проведіть усі тести. Зробіть це своїм власним способом.
+Виконайте історію користувача та пройдіть тести. Використовуйте необхідні вам бібліотеки або API. Оформте за власним стилем.
 
 Ви можете скористатися HTML, JavaScript, CSS та бібліотекою візуалізації, що базується на D3 svg. Для тестів потрібно згенерувати осі, використовуючи властивість осі D3, що автоматично створює відмітки вздовж осі. Ці відмітки потрібні для проходження D3 тестів, тому що їх положення використовуються для визначення вирівнювання зображених елементів. Ви можете знайти інформацію про генерування осей тут <https://github.com/d3/d3/blob/master/API.md#axes-d3-axis>. Необхідні (невіртуальні) DOM-елементи запитуються під час кожного тесту. Якщи ви використовуєте фронтенд-фреймворк (як-от, наприклад, Vue), результати тестів можуть бути неточними для динамічного контенту. Ми сподіваємося скоро їх налагодити, однак наразі ці фреймворки не підтримуються для проєктів D3.
 
@@ -42,7 +42,7 @@ dashedName: visualize-data-with-a-bar-chart
 
 Тут ви знайдете набір даних, необхідний для виконання цього проєкту: `https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json`
 
-Ви можете створити свій проєкт <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>using this CodePen template</a> і натиснувши `Save`, аби створити власний фрагмент. Або ж ви можете використати це CDN-посилання, щоб провести тести в будь-якому середовищі: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`.
+Ви можете створити свій проєкт, <a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">використовуючи цей шаблон CodePen</a> і натиснувши `Save`. Або ж ви можете використати це CDN-посилання, щоб провести тести в будь-якому середовищі: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`.
 
 Щойно впораєтеся, прикріпіть URL-адресу із пройденими тестами до проєкту, над яким працюєте.
 

@@ -87,9 +87,11 @@ const spreadsheetFunctions = {
   "": x => x
 };
 
+--fcc-editable-region--
 const applyFn = str => {
   const noHigh = highPrecedence(str);
 }
+--fcc-editable-region--
 
 
 </script>

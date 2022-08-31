@@ -1,7 +1,7 @@
 ---
 id: 5900f4381000cf542c50ff4a
 title: 'Problema 203: Coeficientes binomiais livres de quadrados'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301844
 dashedName: problem-203-squarefree-binomial-coefficients
 ---

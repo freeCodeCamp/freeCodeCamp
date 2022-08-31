@@ -9,7 +9,7 @@ dashedName: constructing-strings-with-variables
 
 # --description--
 
-[Mad Libs](https://en.wikipedia.org/wiki/Mad_Libs) 的に文字列を作成しなければならない場合があります。 連結演算子 (`+`) を使用して、作成する文字列に 1 つまたは複数の変数を挿入することができます。
+文字列を組み立てなければならない場合があります。 連結演算子 (`+`) を使用して、作成する文字列に 1 つまたは複数の変数を挿入することができます。
 
 例:
 

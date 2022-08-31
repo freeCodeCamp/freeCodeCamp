@@ -26,7 +26,7 @@ Continua ad aggiungere percorsi fino a quando non ci saranno più errori e il tu
 
 Ora fai la stessa cosa nel tuo file auth.js con tutte le cose relative all'autenticazione come la serializzazione e l'impostazione della strategia locale e cancellali dal file del server. Assicurati di aggiungere le dipendenze e invocare `auth(app, myDataBase)` nel server nello stesso punto.
 
-Invia la tua pagina quando pensi di averlo fatto correttamente. Se dovessi incontrare degli errori, puoi controllare il progetto completato [qui](https://gist.github.com/camperbot/2d06ac5c7d850d8cf073d2c2c794cc92).
+Invia la tua pagina quando pensi di averlo fatto correttamente. Se incontri errori, puoi <a href="https://gist.github.com/camperbot/2d06ac5c7d850d8cf073d2c2c794cc92" target="_blank" rel="noopener noreferrer nofollow">vedere un esempio del progetto completato qui</a>.
 
 # --hints--
 

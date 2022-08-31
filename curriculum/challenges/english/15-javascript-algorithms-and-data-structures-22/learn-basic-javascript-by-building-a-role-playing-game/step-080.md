@@ -221,12 +221,14 @@ function buyWeapon() {
   }
 }
 
+--fcc-editable-region--
 function sellWeapon() {
   if (inventory.length > 1) {
     gold += 15;
     goldText.innerText = gold;
   }
 }
+--fcc-editable-region--
 
 function fightSlime() {
 }

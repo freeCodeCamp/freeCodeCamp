@@ -203,6 +203,7 @@ function buyHealth() {
   }
 }
 
+--fcc-editable-region--
 function buyWeapon() {
   if (gold >= 30) {
     gold -= 30;
@@ -214,6 +215,7 @@ function buyWeapon() {
     text.innerText += " In your inventory you have: " + inventory;
   }
 }
+--fcc-editable-region--
 
 function fightSlime() {
 }

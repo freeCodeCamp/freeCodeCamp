@@ -12,7 +12,7 @@ La serializzazione e la deserializzazione sono concetti importanti per quanto ri
 
 Per configurarlo correttamente, dobbiamo avere una funzione di serializzazione e una funzione di deserializzazione. In Passport, li creiamo con `passport.serializeUser( OURFUNCTION )` e `passport.deserializeUser( OURFUNCTION )`
 
-`serializeUser` è chiamato con 2 argomenti, l'oggetto utente completo e una callback utilizzata da passport. Una chiave univoca per identificare quell'utente deve essere restituita nella callback, quello più semplice da usare è l'`_id` dell'utente nell'oggetto. Esso dovrebbe essere unico dato che è stato generato da MongoDB. Allo stesso modo, anche `deserializeUser` viene chiamato con quella chiave e una funzione callback per passport, ma questa volta dobbiamo prendere quella chiave e restituire l'intero oggetto utente alla callback. Per creare una query di ricerca per un `_id` Mongo, dovrai creare `const ObjectID = require('mongodb').ObjectID;`, e poi per usarlo invocare `new ObjectID(THE_ID)`. Assicurati di aggiungere `mongodb@~3.6.0` come dipendenza. Puoi vederlo negli esempi qui sotto:
+`serializeUser` è chiamato con 2 argomenti, l'oggetto utente completo e una callback utilizzata da passport. Una chiave univoca per identificare quell'utente deve essere restituita nella callback, quello più semplice da usare è l'`_id` dell'utente nell'oggetto. Esso dovrebbe essere unico dato che è stato generato da MongoDB. Allo stesso modo, anche `deserializeUser` viene chiamato con quella chiave e una funzione callback per passport, ma questa volta dobbiamo prendere quella chiave e restituire l'intero oggetto utente alla callback. Per creare una query di ricerca per un `_id` Mongo, dovrai creare `const ObjectID = require('mongodb').ObjectID;`, e poi per usarlo invocare `new ObjectID(THE_ID)`. `mongodb@~3.6.0` è già stato aggiunto come dipendenza. Puoi vederlo negli esempi qui sotto:
 
 ```js
 passport.serializeUser((user, done) => {
@@ -28,7 +28,7 @@ passport.deserializeUser((id, done) => {
 
 NOTA: Questo `deserializeUser` genererà un errore fino a quando non imposteremo il DB nel passo successivo, quindi per ora commenta l'intero blocco e chiama `done(null, null)` nella funzione `deserializeUser`.
 
-Invia la tua pagina quando pensi di averlo fatto correttamente. Se incontri degli errori, puoi controllare il progetto completato fino a questo punto [qui](https://gist.github.com/camperbot/7068a0d09e61ec7424572b366751f048).
+Invia la tua pagina quando pensi di averlo fatto correttamente. Se stai avendo errori, puoi vedere <a href="https://gist.github.com/camperbot/7068a0d09e61ec7424572b366751f048" target="_blank" rel="noopener noreferrer nofollow">il progetto completato fino a questo punto</a>.
 
 # --hints--
 

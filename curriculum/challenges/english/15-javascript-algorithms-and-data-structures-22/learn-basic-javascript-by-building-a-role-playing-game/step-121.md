@@ -310,9 +310,11 @@ function attack() {
   }
 }
 
+--fcc-editable-region--
 function getMonsterAttackValue(level) {
 
 }
+--fcc-editable-region--
 
 function dodge() {
   text.innerText = "You dodge the attack from the " + monsters[fighting].name + ".";

@@ -1,7 +1,7 @@
 ---
 id: ab306dbdcc907c7ddfc30830
 title: ローラーで押し潰せ！
-challengeType: 5
+challengeType: 1
 forumTopicId: 16079
 dashedName: steamroller
 ---

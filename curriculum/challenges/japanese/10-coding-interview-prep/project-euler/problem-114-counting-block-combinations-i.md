@@ -1,7 +1,7 @@
 ---
 id: 5900f3e01000cf542c50fef2
 title: '問題 114: ブロックの組み合わせを数え上げる (1)'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301740
 dashedName: problem-114-counting-block-combinations-i
 ---

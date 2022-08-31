@@ -8,7 +8,7 @@ dashedName: avoid-inferring-the-response-mime-type-with-helmet-nosniff
 
 # --description--
 
-Нагадуємо, що цей проект створюється на основі наступного початкового проекту на [ Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec) або копіюється з [ GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/). Браузери можуть використовувати вміст або MIME аналіз, щоб замінити запити заголовків `Content-Type` для передбачення та обробки даних, використовуючи неявний тип вмісту. Окрім того, що такий процес може бути зручним для певних сценаріїв, він також призводить до деяких небезпечних атак. Таке проміжне програмне забезпечення закріплює заголовок X-Content-Type-Options на `nosniff`, вказуючи браузеру не обходити наданий `Content-Type`.
+Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>. Браузери можуть використовувати вміст або MIME аналіз, щоб замінити запити заголовків `Content-Type` для передбачення та обробки даних, використовуючи неявний тип вмісту. Окрім того, що такий процес може бути зручним для певних сценаріїв, він також призводить до деяких небезпечних атак. Таке проміжне програмне забезпечення закріплює заголовок X-Content-Type-Options на `nosniff`, вказуючи браузеру не обходити наданий `Content-Type`.
 
 # --instructions--
 

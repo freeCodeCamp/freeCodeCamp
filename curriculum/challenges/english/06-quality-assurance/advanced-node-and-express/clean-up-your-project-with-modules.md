@@ -26,7 +26,7 @@ Keep adding them until no more errors exist, and your server file no longer has 
 
 Now do the same thing in your auth.js file with all of the things related to authentication such as the serialization and the setting up of the local strategy and erase them from your server file. Be sure to add the dependencies in and call `auth(app, myDataBase)` in the server in the same spot.
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out an example of the completed project [here](https://gist.github.com/camperbot/2d06ac5c7d850d8cf073d2c2c794cc92).
+Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://gist.github.com/camperbot/2d06ac5c7d850d8cf073d2c2c794cc92" target="_blank" rel="noopener noreferrer nofollow">check out an example of the completed project</a>.
 
 # --hints--
 

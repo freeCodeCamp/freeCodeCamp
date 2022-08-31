@@ -31,7 +31,7 @@ app
  });
 ```
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/ae49b8778cab87e93284a91343da0959).
+Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://gist.github.com/camperbot/ae49b8778cab87e93284a91343da0959" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 

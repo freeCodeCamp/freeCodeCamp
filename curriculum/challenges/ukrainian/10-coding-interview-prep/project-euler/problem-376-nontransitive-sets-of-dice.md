@@ -1,7 +1,7 @@
 ---
 id: 5900f4e51000cf542c50fff7
 title: 'Задача 376: Нетранзитивні набори кубиків'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302038
 dashedName: problem-376-nontransitive-sets-of-dice
 ---

@@ -96,9 +96,11 @@ assert(gold === 50);
 
 ```html
 <script>
+--fcc-editable-region--
 var xp = 0;
 var health = 100;
 
+--fcc-editable-region--
 </script>
 ```
 

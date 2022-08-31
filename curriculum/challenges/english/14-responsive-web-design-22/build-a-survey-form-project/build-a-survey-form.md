@@ -8,7 +8,7 @@ dashedName: build-a-survey-form
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to <a href="https://survey-form.freecodecamp.rocks" target="_blank">https://survey-form.freecodecamp.rocks</a>
+**Objective:** Build an app that is functionally similar to <a href="https://survey-form.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://survey-form.freecodecamp.rocks</a>
 
 **User Stories:**
 
@@ -182,21 +182,21 @@ const el = document.getElementById('number-label')
 assert(!!el && el.tagName === 'LABEL')
 ```
 
-Your `#name-label` should not be empty.
+Your `#name-label` should contain text that describes the input.
 
 ```js
 const el = document.getElementById('name-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Your `#email-label` should not be empty.
+Your `#email-label` should contain text that describes the input.
 
 ```js
 const el = document.getElementById('email-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Your `#number-label` should not be empty.
+Your `#number-label` should contain text that describes the input.
 
 ```js
 const el = document.getElementById('number-label')
@@ -380,7 +380,7 @@ assert(!!el)
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Survey Form</title>
   </head>
   <body>

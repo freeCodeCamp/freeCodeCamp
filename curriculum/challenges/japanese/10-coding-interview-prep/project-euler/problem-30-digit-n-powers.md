@@ -1,7 +1,7 @@
 ---
 id: 5900f38a1000cf542c50fe9d
 title: '問題 30: 各位の n 乗'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301953
 dashedName: problem-30-digit-n-powers
 ---

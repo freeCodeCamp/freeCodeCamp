@@ -264,10 +264,10 @@ export class CertificationSettings extends Component {
     return projectsMap[certName]
       .map(({ link, title, id }) => (
         <tr className='project-row' key={id}>
-          <td className='project-title col-sm-8'>
+          <td className='project-title col-sm-8 col-xs-8'>
             <Link to={link}>{title}</Link>
           </td>
-          <td className='project-solution col-sm-4'>
+          <td className='project-solution col-sm-4 col-xs-4'>
             {this.getProjectSolution(id, title)}
           </td>
         </tr>
@@ -278,6 +278,7 @@ export class CertificationSettings extends Component {
             <Button
               block={true}
               bsStyle='primary'
+              className={'col-xs-12'}
               href={certLocation}
               data-cy={`btn-for-${certSlug}`}
               onClick={createClickHandler(certSlug)}

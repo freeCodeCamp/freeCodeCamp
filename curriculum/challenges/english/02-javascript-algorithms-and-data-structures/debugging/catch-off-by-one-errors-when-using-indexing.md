@@ -49,7 +49,7 @@ assert(!code.match(/i\s?=\s*?1\s*?;/g));
 Your code should set the terminal condition of the loop so it stops at the last index.
 
 ```js
-assert(code.match(/i\s*?<\s*?len\s*?;/g).length == 1);
+assert(code.match(/i\s*<\s*len\s*;|i\s*<=\s*len\s*-\s*1\s*;/g).length == 1);
 ```
 
 Your code should fix the terminal condition of the loop so that it stops at 1 before the length.

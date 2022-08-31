@@ -14,9 +14,9 @@ dashedName: intermediate-expressions
 
 Altre risorse:
 
-\- [Esercizio 1](https://youtu.be/t_4DPwsaGDY)
+\- <a href="https://youtu.be/t_4DPwsaGDY" target="_blank" rel="noopener noreferrer nofollow">Esercizio 1</a>
 
-\- [Esercizio 2](https://youtu.be/wgkC8SxraAQ)
+\- <a href="https://youtu.be/wgkC8SxraAQ" target="_blank" rel="noopener noreferrer nofollow">Esercizio 2</a>
 
 # --question--
 

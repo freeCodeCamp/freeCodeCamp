@@ -1,7 +1,7 @@
 ---
 id: 5951a53863c8a34f02bf1bdc
 title: Задача про найближчу пару
-challengeType: 5
+challengeType: 1
 forumTopicId: 302232
 dashedName: closest-pair-problem
 ---

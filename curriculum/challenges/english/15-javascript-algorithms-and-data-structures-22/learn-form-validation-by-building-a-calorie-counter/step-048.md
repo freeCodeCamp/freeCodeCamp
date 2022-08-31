@@ -115,11 +115,13 @@ assert(
 
     const output = document.getElementById('output');
 
+--fcc-editable-region--
     const result = document.createElement('h3');
     //put your code here
     const resultText = document.createTextNode(
       `${Math.abs(difference)} Calorie ${surplusOrDeficit}`
     );
+--fcc-editable-region--
 
     result.appendChild(resultText);
     output.appendChild(result);

@@ -10,7 +10,7 @@ dashedName: set-up-the-environment
 
 Le seguenti sfide utilizzeranno il file `chat.pug`. Così, nel tuo file `routes.js`, aggiugi una rotta GET che punta a `/chat` che fa uso di `ensureAuthenticated`, e fa il rendering di `chat.pug`, con `{ user: req.user }` passato come argomento alla risposta. Adesso, modifica la rotta esistente `/auth/github/callback` per impostare il `req.session.user_id = req.user.id` e reindirizzare a `/chat`.
 
-Aggiungi `socket.io@~2.3.0` come dipendenza e richiedila/instanziala nel server definito come segue, con `http` (che è già integrato in Nodejs):
+`socket.io@~2.3.0` è già stato aggiunto come dipendenza, quindi richiedilo nel tuo server come segue con `http` (integrato in Nodejs):
 
 ```javascript
 const http = require('http').createServer(app);
@@ -42,7 +42,7 @@ Ora prova a caricare la tua app e ad autenticarti: dovresti vedere nella console
 
 **Nota:**`io()` funziona solo quando ci si connette a un socket ospitato sullo stesso url/server. Per connettersi ad un socket esterno ospitato altrove, si utilizzerebbe `io.connect('URL');`.
 
-Invia la tua pagina quando pensi di averlo fatto correttamente. Se dovessi incontrare degli errori, puoi controllare il progetto completato fino a questo punto [qui](https://gist.github.com/camperbot/aae41cf59debc1a4755c9a00ee3859d1).
+Invia la tua pagina quando pensi di averlo fatto correttamente. Se stai avendo errori, puoi vedere <a href="https://gist.github.com/camperbot/aae41cf59debc1a4755c9a00ee3859d1" target="_blank" rel="noopener noreferrer nofollow">il progetto completato fino a questo punto</a>.
 
 # --hints--
 

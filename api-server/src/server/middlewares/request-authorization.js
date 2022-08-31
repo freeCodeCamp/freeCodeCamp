@@ -5,8 +5,7 @@ import { jwtSecret as _jwtSecret } from '../../../../config/secrets';
 import { wrapHandledError } from '../utils/create-handled-error';
 import {
   getAccessTokenFromRequest,
-  errorTypes,
-  authHeaderNS
+  errorTypes
 } from '../utils/getSetAccessToken';
 import { getRedirectParams } from '../utils/redirection';
 // TOPCODER: we need to use the external ID (i.e. Auth0 ID)
@@ -73,10 +72,7 @@ export default function getRequestAuthorisation({
     const { origin } = getRedirectParams(req);
     const { path } = req;
     if (!isAllowedPath(path)) {
-      const { accessToken, error, jwt } = getAccessTokenFromRequest(
-        req,
-        jwtSecret
-      );
+      const { accessToken, error } = getAccessTokenFromRequest(req, jwtSecret);
       if (!accessToken && error === errorTypes.noTokenFound) {
         throw wrapHandledError(
           new Error('Access token is required for this request'),
@@ -104,7 +100,6 @@ export default function getRequestAuthorisation({
           status: 403
         });
       }
-      res.set(authHeaderNS, jwt);
       if (isEmpty(req.user)) {
         // TOPCODER: the accessToken.sub value is the Auth0 ID
         // (e.g. auth0|12345) that we use to link the

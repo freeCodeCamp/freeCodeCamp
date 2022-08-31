@@ -1,7 +1,7 @@
 ---
 id: 5900f4931000cf542c50ffa6
 title: 'Завдання 295: Лінзоподібні отвори'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301947
 dashedName: problem-295-lenticular-holes
 ---

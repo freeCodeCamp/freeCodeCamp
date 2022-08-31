@@ -1,7 +1,7 @@
 ---
 id: 5900f4ba1000cf542c50ffcd
 title: 'Задача 334: Розсипання бобів (Spilling the beans)'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301992
 dashedName: problem-334-spilling-the-beans
 ---

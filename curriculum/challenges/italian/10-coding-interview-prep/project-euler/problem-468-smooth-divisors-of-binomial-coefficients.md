@@ -1,7 +1,7 @@
 ---
 id: 5900f5411000cf542c510054
 title: 'Problema 468: Divisori lisci di coefficienti binomiali'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302143
 dashedName: problem-468-smooth-divisors-of-binomial-coefficients
 ---
