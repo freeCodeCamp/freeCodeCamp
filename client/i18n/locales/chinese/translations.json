@@ -451,6 +451,7 @@
     "change-theme": "登录以更改主题。",
     "translation-pending": "帮我们翻译",
     "certification-project": "认证项目",
+    "iframe-preview": "{{title}} preview",
     "iframe-alert": "通常，此链接会将你带到另一个网站！一切正常，这个链接指向：{{externalLink}}。",
     "document-notfound": "找不到文件"
   },
