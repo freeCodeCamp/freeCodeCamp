@@ -143,7 +143,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
 
   handleMenuKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>): void => {
     const { menuButtonRef, hideMenu } = this.props;
-    if (event.key === 'escape') {
+    if (event.key === 'Escape') {
       menuButtonRef.current?.focus();
       hideMenu();
       event.preventDefault();
@@ -166,27 +166,32 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
     const { menuButtonRef, showLanguageMenu, hideMenu } = this.props;
 
     interface DoKeyPressProp {
-      escape: () => void;
-      arrowDown: () => void;
-      arrowUp: () => void;
+      Escape: () => void;
+      ArrowDown: () => void;
+      ArrowUp: () => void;
     }
 
-    const doKeyPress: DoKeyPressProp = {
-      escape: () => {
+    // eslint naming convention should be ignored in key press function, because following the name convention harms accessiblity.
+
+    const DoKeyPress: DoKeyPressProp = {
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      Escape: () => {
         menuButtonRef.current?.focus();
         hideMenu();
         event.preventDefault();
       },
-      arrowDown: () => {
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      ArrowDown: () => {
         showLanguageMenu(this.firstLangOptionRef.current);
         event.preventDefault();
       },
-      arrowUp: () => {
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      ArrowUp: () => {
         showLanguageMenu(this.lastLangOptionRef.current);
         event.preventDefault();
       }
     };
-    doKeyPress[event.key]?.();
+    DoKeyPress[event.key]?.();
   };
 
   handleLanguageMenuKeyDown = (
@@ -201,10 +206,11 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
       this.lastLangOptionRef.current?.focus();
       event.preventDefault();
     };
-    const doKeyPress = {
-      tab: () => {
+    const DoKeyPress = {
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      Tab: () => {
         if (!event.shiftKey) {
-          // Let the tab work as normal.
+          // Let the Tab work as normal.
           hideLanguageMenu();
           // Close the menu if focus is now outside of the menu. This will
           // happen when there is no Sign Out menu item.
@@ -219,31 +225,34 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
           }, 200);
           return;
         }
-        // Because FF adds an extra tab stop to the lang menu (because it
+        // Because FF adds an extra Tab stop to the lang menu (because it
         // is scrollable) we need to manually focus the previous menu item.
         this.getPreviousMenuItem(this.langButtonRef.current).focus();
         hideLanguageMenu();
         event.preventDefault();
       },
-      arrowUp: () => {
-        const arrowUpItemToFocus =
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      ArrowUp: () => {
+        const ArrowUpItemToFocus =
           event.target === this.firstLangOptionRef.current
             ? this.lastLangOptionRef.current
             : (event.currentTarget.parentNode?.previousSibling
                 ?.firstChild as HTMLElement);
-        arrowUpItemToFocus?.focus();
+        ArrowUpItemToFocus?.focus();
         event.preventDefault();
       },
-      arrowDown: () => {
-        const arrowDownItemToFocus =
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      ArrowDown: () => {
+        const ArrowDownItemToFocus =
           event.target === this.lastLangOptionRef.current
             ? this.firstLangOptionRef.current
             : (event.currentTarget.parentNode?.nextSibling
                 ?.firstChild as HTMLElement);
-        arrowDownItemToFocus?.focus();
+        ArrowDownItemToFocus?.focus();
         event.preventDefault();
       },
-      escape: () => {
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      Escape: () => {
         // Set focus to language button first so we don't lose focus
         // for screen readers.
         this.langButtonRef.current?.focus();
@@ -255,7 +264,7 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
       End: focusLastLanguageMenuItem,
       PageDown: focusLastLanguageMenuItem
     };
-    doKeyPress[event.key]?.();
+    DoKeyPress[event.key]?.();
   };
 
   // Added to the last item in the nav menu. Will close the menu if
