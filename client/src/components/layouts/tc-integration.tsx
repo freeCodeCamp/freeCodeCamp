@@ -146,8 +146,10 @@ class TcIntegrationLayout extends Component<TcIntegrationLayoutProps> {
       // set the pathname for the 2 flavors of lesson URL
       const platformPathPrefix = 'learn/freecodecamp';
       const learnPrefix = '/learn/';
+      let updateHost = false;
       if (url.host === `learn.${fccHost}`) {
         url.pathname = `${platformPathPrefix}${url.pathname}`;
+        updateHost = true;
       } else if (
         url.host === `www.${fccHost}` &&
         url.pathname.startsWith(learnPrefix)
@@ -156,10 +158,13 @@ class TcIntegrationLayout extends Component<TcIntegrationLayoutProps> {
           learnPrefix,
           `/${platformPathPrefix}/`
         );
+        updateHost = true;
       }
 
       // set the host to the iframe's parent domain
-      url.host = new URL(document.referrer).host;
+      if (updateHost) {
+        url.host = new URL(document.referrer).host;
+      }
     }
 
     // now open the url in a new tab
