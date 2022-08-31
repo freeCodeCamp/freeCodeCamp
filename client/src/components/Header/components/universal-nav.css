@@ -125,7 +125,6 @@
 }
 
 .nav-link:not([aria-disabled='true']):hover {
-  /* had to remove important so the color can change on hover */
   color: var(--theme-color);
   text-decoration: none;
   background-color: var(--gray-10);
@@ -133,10 +132,9 @@
   outline: none !important;
 }
 
-a.nav-link-signout:not([aria-disabled='true']):hover,
-a.nav-link-signout:not([aria-disabled='true']):focus {
-  background-color: hsl(16, 100%, 57%);
-  color: var(--gray-00);
+a.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
+  background-color: var(--danger-background);
+  color: var(--danger-color);
 }
 
 .nav-link-header,
@@ -249,10 +247,6 @@ button.nav-link[aria-disabled='true'] {
   color: #000;
   background-color: var(--gray-10);
   outline: none;
-}
-
-.nav-lang-menu .nav-link:focus:not(:focus-visible) {
-  background-color: inherit;
 }
 
 .nav-lang-menu .nav-link:hover {
