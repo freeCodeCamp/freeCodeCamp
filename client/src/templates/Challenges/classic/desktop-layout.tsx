@@ -61,6 +61,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         setShowNotes(!showNotes);
         break;
       default:
+        setShowInstructions(false);
         setShowConsole(false);
         setShowPreview(false);
         setShowNotes(false);
@@ -110,20 +111,18 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
   return (
     <div className='desktop-layout'>
-      {(projectBasedChallenge || isMultifileCertProject) && (
-        <ActionRow
-          block={block}
-          hasNotes={hasNotes}
-          isMultifileCertProject={isMultifileCertProject}
-          showConsole={showConsole}
-          showNotes={showNotes}
-          showInstructions={showInstructions}
-          showPreview={showPreview}
-          superBlock={superBlock}
-          showBreadcrumbs={false}
-          togglePane={togglePane}
-        />
-      )}
+      <ActionRow
+        block={block}
+        hasNotes={hasNotes}
+        isProjectBasedChallenge={projectBasedChallenge}
+        showConsole={showConsole}
+        showNotes={showNotes}
+        showInstructions={showInstructions}
+        showPreview={showPreview}
+        superBlock={superBlock}
+        showBreadcrumbs={false}
+        togglePane={togglePane}
+      />
       <div className='editor-row'>
         <ReflexContainer orientation='vertical'>
           {!projectBasedChallenge && showInstructions && (

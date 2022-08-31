@@ -127,6 +127,7 @@ const evalFormula = x => {
     : evalFormula(functionExpanded);
 };
 
+--fcc-editable-region--
 window.onload = () => {
   const container = document.getElementById("container");
   const createLabel = name => {
@@ -144,7 +145,7 @@ window.onload = () => {
     });
   });
 };
-
+--fcc-editable-region--
 
 </script>
 ```

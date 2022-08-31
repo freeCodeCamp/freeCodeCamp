@@ -85,7 +85,9 @@ assert(code.replace(/\s/g, '').match(/console\.log\(document\)/));
 
 ```html
 <script>
+--fcc-editable-region--
 
+--fcc-editable-region--
 </script>
 ```
 

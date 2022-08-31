@@ -12,7 +12,7 @@ En el desafío anterior, vimos cómo obtener datos JSON de la API de foto del ga
 
 Ahora examinarás más de cerca los datos devueltos para comprender mejor el formato JSON. Recuerda algunas nociones en JavaScript:
 
-<blockquote>[ ] -> Los corchetes cuadrados representan un arreglo<br>{ } -> Los corchetes rizados representan un objeto<br>" -> Las comillas dobles representan una cadena. También se utilizan para nombres de claves en JSON</blockquote>
+<blockquote>[ ] -> Los corchetes cuadrados representan un arreglo<br>{ } -> Los corchetes rizados representan un objeto<br>" -> Las comillas dobles representan una cadena (String). También se utilizan para nombres de claves en JSON.</blockquote>
 
 Entender la estructura de los datos que devuelve una API es importante porque influye en cómo recuperar los valores que necesitas.
 

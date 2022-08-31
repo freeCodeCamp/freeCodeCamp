@@ -42,6 +42,8 @@
   font-size: 16px;
   text-align: center;
   padding: 0 15px 15px;
+  margin-bottom: 0;
+  font-family: Lato, sans-serif;
 }
 
 .footer-row {

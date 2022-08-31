@@ -1,7 +1,7 @@
 ---
 id: 5900f3fa1000cf542c50ff0d
 title: 'Problem 142: Perfect Square Collection'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301771
 dashedName: problem-142-perfect-square-collection
 ---

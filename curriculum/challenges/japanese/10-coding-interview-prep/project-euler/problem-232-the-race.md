@@ -1,7 +1,7 @@
 ---
 id: 5900f4551000cf542c50ff67
 title: '問題 232: レース'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301876
 dashedName: problem-232-the-race
 ---

@@ -1,7 +1,7 @@
 ---
 id: 596a8888ab7c01048de257d5
 title: ディープコピー
-challengeType: 5
+challengeType: 1
 forumTopicId: 302247
 dashedName: deepcopy
 ---

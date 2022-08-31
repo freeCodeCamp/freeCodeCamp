@@ -221,8 +221,10 @@ function buyWeapon() {
   }
 }
 
+--fcc-editable-region--
 function sellWeapon() {
 }
+--fcc-editable-region--
 
 function fightSlime() {
 }

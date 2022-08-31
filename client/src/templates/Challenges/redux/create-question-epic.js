@@ -21,10 +21,10 @@ function filesToMarkdown(challengeFiles = {}) {
       return fileString;
     }
     const fileName = moreThanOneFile
-      ? `\\ file: ${challengeFile.contents}`
+      ? `/* file: ${challengeFile.name}.${challengeFile.ext} */\n`
       : '';
     const fileType = challengeFile.ext;
-    return `${fileString}\`\`\`${fileType}\n${fileName}\n${challengeFile.contents}\n\`\`\`\n\n`;
+    return `${fileString}\`\`\`${fileType}\n${fileName}${challengeFile.contents}\n\`\`\`\n\n`;
   }, '\n');
 }
 
@@ -34,8 +34,12 @@ function createQuestionEpic(action$, state$, { window }) {
     tap(() => {
       const state = state$.value;
       const challengeFiles = challengeFilesSelector(state);
-      const { title: challengeTitle, helpCategory } =
-        challengeMetaSelector(state);
+      const {
+        title: challengeTitle,
+        superBlock,
+        block,
+        helpCategory
+      } = challengeMetaSelector(state);
       const {
         navigator: { userAgent },
         location: { pathname, origin }
@@ -49,9 +53,9 @@ function createQuestionEpic(action$, state$, { window }) {
         `${i18next.t('forum-help.browser-info')}\n\n${i18next.t(
           'forum-help.user-agent',
           { userAgent }
-        )}\n\n${i18next.t(
-          'forum-help.challenge'
-        )} ${challengeTitle}\n\n${i18next.t(
+        )}\n\n${i18next.t('forum-help.challenge')} ${i18next.t(
+          `intro:${superBlock}.blocks.${block}.title`
+        )} - ${challengeTitle}\n\n${i18next.t(
           'forum-help.challenge-link'
         )}\n${challengeUrl}`
       );
@@ -83,6 +87,12 @@ function createQuestionEpic(action$, state$, { window }) {
         )}\n${i18next.t('forum-help.add-code-three')}\n\n\`\`\`\n${endingText}`
       );
 
+      const titleText = dedent(
+        `${i18next.t(
+          `intro:${superBlock}.blocks.${block}.title`
+        )} - ${challengeTitle}`
+      );
+
       const category = window.encodeURIComponent(
         i18next.t('links:help.' + helpCategory || 'Help')
       );
@@ -90,7 +100,7 @@ function createQuestionEpic(action$, state$, { window }) {
       const studentCode = window.encodeURIComponent(textMessage);
       const altStudentCode = window.encodeURIComponent(altTextMessage);
 
-      const baseURI = `${forumLocation}/new-topic?category=${category}&title=&body=`;
+      const baseURI = `${forumLocation}/new-topic?category=${category}&title=${titleText}&body=`;
       const defaultURI = `${baseURI}${studentCode}`;
       const altURI = `${baseURI}${altStudentCode}`;
 

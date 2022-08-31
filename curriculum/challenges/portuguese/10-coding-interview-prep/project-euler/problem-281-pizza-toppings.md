@@ -1,7 +1,7 @@
 ---
 id: 5900f4861000cf542c50ff98
 title: 'Problema 281: Coberturas de pizza'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301932
 dashedName: problem-281-pizza-toppings
 ---

@@ -242,6 +242,7 @@ function sellWeapon() {
     text.innerText = "Don't sell your only weapon!";
   }
 }
+--fcc-editable-region--
 
 function fightSlime() {
 }
@@ -252,6 +253,8 @@ function fightBeast() {
 function fightDragon() {
   console.log("Fighting dragon.");
 }
+
+--fcc-editable-region--
 
 </script>
 ```

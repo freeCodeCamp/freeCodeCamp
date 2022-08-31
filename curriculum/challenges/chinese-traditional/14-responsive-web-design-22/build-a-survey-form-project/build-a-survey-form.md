@@ -8,7 +8,7 @@ dashedName: build-a-survey-form
 
 # --description--
 
-**目標：** 構建一個功能類似於 <a href="https://survey-form.freecodecamp.rocks" target="_blank">https://survey-form.freecodecamp.rocks</a> 的應用程序
+**目標：** 構建一個功能類似於 <a href="https://survey-form.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://survey-form.freecodecamp.rocks</a> 的應用程序
 
 **需求：**
 
@@ -31,6 +31,8 @@ dashedName: build-a-survey-form
 
 完成需求並通過下面的所有測試來完成這個項目。 賦予它你自己的個人風格。 編程愉快！
 
+**注意：** 請在你的 HTML 中添加 `<link rel="stylesheet" href="styles.css">` 以鏈接你的樣式表並應用你的 CSS
+
 # --hints--
 
 你應該有一個 `id` 爲 `title` 的 `h1` 元素。
@@ -40,7 +42,7 @@ const el = document.getElementById('title')
 assert(!!el && el.tagName === 'H1')
 ```
 
-你的 `#title` 不應爲空。
+你的 `#title` 元素不應爲空。
 
 ```js
 const el = document.getElementById('title')
@@ -180,21 +182,21 @@ const el = document.getElementById('number-label')
 assert(!!el && el.tagName === 'LABEL')
 ```
 
-你的 `#name-label` 不應爲空。
+你的 `#name-label` 應包含描述輸入的文本。
 
 ```js
 const el = document.getElementById('name-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-你的 `#email-label` 不應爲空。
+你的 `#email-label` 應包含描述輸入的文本。
 
 ```js
 const el = document.getElementById('email-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-你的 `#number-label` 不應爲空。
+你的 `#number-label` 應該包含描述輸入的文本。
 
 ```js
 const el = document.getElementById('number-label')
@@ -378,7 +380,7 @@ assert(!!el)
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Survey Form</title>
   </head>
   <body>

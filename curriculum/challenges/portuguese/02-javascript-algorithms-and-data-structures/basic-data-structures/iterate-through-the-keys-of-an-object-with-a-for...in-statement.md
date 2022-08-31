@@ -16,7 +16,7 @@ for (let user in users) {
 }
 ```
 
-Isso vai exibir no console `Alan`, `Jeff`, `Sarah` e `Ryan` - cada valor em sua própria linha.
+Isso vai exibir no console `Alan`, `Jeff` e `Sarah` - cada valor em sua própria linha.
 
 Nessa declaração, definimos uma variável `user` e, como você pode ver, essa variável é redefinida durante cada iteração para cada chave do objeto conforme o comando se repete através do objeto, resultando em cada nome de usuário sendo exibido no console.
 

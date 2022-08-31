@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { ofType } from 'redux-observable';
 import { merge, empty } from 'rxjs';
 import {
@@ -51,15 +50,14 @@ function failedUpdateEpic(action$, state$) {
     filter(() => store.get(key)),
     filter(() => isServerOnlineSelector(state$.value)),
     tap(() => {
-      let failures = store.get(key) || [];
+      let failures = store.get(key);
+      failures = Array.isArray(failures) ? failures : [];
 
       let submitableFailures = failures.filter(isSubmitable);
 
       // delete unsubmitable failed challenges
-      if (submitableFailures.length !== failures.length) {
-        store.set(key, submitableFailures);
-        failures = submitableFailures;
-      }
+      store.set(key, submitableFailures);
+      failures = submitableFailures;
 
       let delayTime = 100;
       const batch = failures.map((update, i) => {
@@ -77,11 +75,8 @@ function failedUpdateEpic(action$, state$) {
         return delay(delayTime, () =>
           postUpdate$(update)
             .pipe(
-              switchMap(response => {
-                if (
-                  response &&
-                  (response.message || isGoodXHRStatus(response.status))
-                ) {
+              switchMap(({ response, data }) => {
+                if (data?.message || isGoodXHRStatus(response?.status)) {
                   console.info(`${update.id} succeeded`);
                   // the request completed successfully
                   const failures = store.get(key) || [];
@@ -104,8 +99,7 @@ function failedUpdateEpic(action$, state$) {
     ignoreElements()
   );
 
-  return storeUpdates;
-  // return merge(storeUpdates, flushUpdates);
+  return merge(storeUpdates, flushUpdates);
 }
 
 export default failedUpdateEpic;

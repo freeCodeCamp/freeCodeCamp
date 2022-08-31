@@ -207,9 +207,21 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       userToken = null
     } = this.props;
 
+    // Initial CodeAlly login includes a tempToken in redirect URL
+    const queryParams = new URLSearchParams(window.location.search);
+    const codeAllyTempToken: string | null = queryParams.get('tempToken');
+
+    const tempToken = codeAllyTempToken ? `tempToken=${codeAllyTempToken}` : '';
+
+    // Include a unique param to avoid CodeAlly caching issues
+    const date = `date=${Date.now()}`;
+
+    // User token for submitting CodeRoad tutorials
     const envVariables = userToken
-      ? `&envVariables=CODEROAD_WEBHOOK_TOKEN=${userToken}`
+      ? `envVariables=CODEROAD_WEBHOOK_TOKEN=${userToken}`
       : '';
+
+    const goBackTo = `goBackTo=${window.location.href}`;
 
     const isPartiallyCompleted = partiallyCompletedChallenges.some(
       challenge => challenge.id === challengeId
@@ -224,9 +236,11 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
         <Helmet title={`${blockName}: ${title} | freeCodeCamp.org`} />
         <iframe
           className='codeally-frame'
+          data-cy='codeally-frame'
+          name={`codeAlly${Date.now()}`}
           // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
           sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
-          src={`https://codeally.io/embed/?repoUrl=${url}${envVariables}`}
+          src={`https://codeally.io/embed/?repoUrl=${url}&${goBackTo}&${envVariables}&${tempToken}&${date}`}
           title='Editor'
         />
       </LearnLayout>
@@ -354,7 +368,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                 certification={certification}
                 superBlock={superBlock}
               />
-              <HelpModal />
+              <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
           </Grid>
         </LearnLayout>

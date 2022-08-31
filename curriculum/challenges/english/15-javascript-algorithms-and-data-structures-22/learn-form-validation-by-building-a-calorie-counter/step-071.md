@@ -162,11 +162,13 @@ assert(code.replace(/\s/g, '').match(/foodInputs.forEach\(\)/));
     document.getElementById('output').classList.remove('bordered-class');
   };
 
+--fcc-editable-region--
   const clearForm = () => {
     const foodInputs = Array.from(
       document.getElementsByClassName('food-control')
     );
   };
+--fcc-editable-region--
 </script>
 ```
 

@@ -3,7 +3,6 @@ import jwt from 'jsonwebtoken';
 
 import { jwtSecret as _jwtSecret } from '../../../../config/secrets';
 
-export const authHeaderNS = 'X-fcc-access-token';
 // TOPCODER: we are using the name of the cookie created
 // by the TC Auth0 implementation
 export const jwtCookieNS = 'tcjwt';
@@ -33,7 +32,6 @@ export function setAccessTokenToResponse(
 
 export function getAccessTokenFromRequest(req, jwtSecret = _jwtSecret) {
   const maybeToken =
-    (req.headers && req.headers[authHeaderNS]) ||
     (req.signedCookies && req.signedCookies[jwtCookieNS]) ||
     (req.cookie && req.cookie[jwtCookieNS]) ||
     // TOPCODER: the jwt cookie is in the cookies var instead
@@ -74,10 +72,9 @@ export function getAccessTokenFromRequest(req, jwtSecret = _jwtSecret) {
   // token, so we just use the token itself.
   return {
     accessToken: token,
-    error: '',
-    jwt: maybeToken
+    error: ''
   };
-  // return { accessToken, error: '', jwt: maybeToken };
+  // return { accessToken, error: '' };
 }
 
 export function removeCookies(req, res) {

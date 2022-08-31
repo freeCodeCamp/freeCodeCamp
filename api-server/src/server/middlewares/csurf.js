@@ -8,7 +8,7 @@ export const csrfOptions = {
 
 export default function getCsurf() {
   const protection = csurf({
-    cookie: csrfOptions
+    cookie: { ...csrfOptions, httpOnly: true }
   });
   return function csrf(req, res, next) {
     const { path } = req;

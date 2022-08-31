@@ -277,9 +277,11 @@ function goFight() {
   monsterHealthText.innerText = monsterHealth;
 }
 
+--fcc-editable-region--
 function attack() {
   text.innerText = "The " + monsters[fighting].name + " attacks.";
 }
+--fcc-editable-region--
 
 function dodge() {
 }

@@ -8,7 +8,7 @@ dashedName: hash-and-compare-passwords-synchronously
 
 # --description--
 
-Нагадуємо, що цей проект створюється на основі наступного початкового проекту на [ Replit](https://replit.com/github/freeCodeCamp/boilerplate-bcrypt) або копіюється з [ GitHub](https://github.com/freeCodeCamp/boilerplate-bcrypt/).
+Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-bcrypt" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 Синхронне перетворення паролів на дані (хешування) легко виконати, однак це може спричинити затримку, якщо використовувати його на серверній стороні з високою вартістю або з хешуванням, яке проводиться дуже часто. Перетворення таким методом так само легко виконати як і ввести
 

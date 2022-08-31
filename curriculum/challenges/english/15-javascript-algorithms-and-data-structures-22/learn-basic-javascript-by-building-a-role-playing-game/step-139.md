@@ -26,13 +26,11 @@ while(i < 5) {
 See description above for instructions.
 
 ```js
-assert(
+assert.include(
   pick
     .toString()
-    .replace(/\s/g, '')
-    .includes(
-      'while(numbers.length<10){if(_LPC++%2000===0&&Date.now()-_LP>1500){'
-    )
+    .replace(/\s/g, ''),
+      'while(numbers.length<10){'
 );
 ```
 
@@ -394,9 +392,11 @@ function pickEight() {
   pick(8);
 }
 
+--fcc-editable-region--
 function pick(guess) {
   let numbers = [];
 }
+--fcc-editable-region--
 
 </script>
 ```

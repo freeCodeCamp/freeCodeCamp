@@ -1,7 +1,7 @@
 ---
 id: 5900f3961000cf542c50fea9
 title: '問題 42: 符号化された三角数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302089
 dashedName: problem-42-coded-triangle-numbers
 ---

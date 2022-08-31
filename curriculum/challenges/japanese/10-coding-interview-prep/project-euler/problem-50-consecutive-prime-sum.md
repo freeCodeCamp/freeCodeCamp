@@ -1,7 +1,7 @@
 ---
 id: 5900f39e1000cf542c50feb1
 title: '問題 50: 連続する素数の和'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302161
 dashedName: problem-50-consecutive-prime-sum
 ---

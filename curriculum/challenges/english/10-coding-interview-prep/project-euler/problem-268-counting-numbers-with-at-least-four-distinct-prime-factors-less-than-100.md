@@ -3,7 +3,7 @@ id: 5900f4791000cf542c50ff8b
 title: >-
   Problem 268: Counting numbers with at least four distinct prime factors less
   than 100
-challengeType: 5
+challengeType: 1
 forumTopicId: 301917
 dashedName: >-
   problem-268-counting-numbers-with-at-least-four-distinct-prime-factors-less-than-100

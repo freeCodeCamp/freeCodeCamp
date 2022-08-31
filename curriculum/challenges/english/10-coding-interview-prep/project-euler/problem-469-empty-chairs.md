@@ -1,7 +1,7 @@
 ---
 id: 5900f5411000cf542c510053
 title: 'Problem 469: Empty chairs'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302144
 dashedName: problem-469-empty-chairs
 ---

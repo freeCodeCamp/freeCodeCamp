@@ -106,6 +106,7 @@ assert(
 
 ```html
 <script>
+--fcc-editable-region--
   document.getElementById('calorie-form').onsubmit = calculate;
 
   function calculate(e) {
@@ -115,6 +116,7 @@ assert(
       .map(meal => Number(meal.value))
       .reduce();
   }
+--fcc-editable-region--
 </script>
 ```
 

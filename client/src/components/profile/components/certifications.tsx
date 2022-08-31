@@ -15,7 +15,7 @@ const mapStateToProps = (
   props: CertificationProps
 ) =>
   createSelector(
-    certificatesByNameSelector(props.username),
+    certificatesByNameSelector(props.username.toLowerCase()),
     ({
       hasModernCert,
       hasLegacyCert,
@@ -48,6 +48,7 @@ function renderCertShow(username: string, cert: CurrentCert): React.ReactNode {
           <Link
             className='btn btn-lg btn-primary btn-block'
             to={`/certification/${username}/${cert.certSlug}`}
+            data-cy='claimed-certification'
           >
             View {cert.title}
           </Link>

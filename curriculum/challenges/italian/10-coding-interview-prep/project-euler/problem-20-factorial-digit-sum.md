@@ -1,7 +1,7 @@
 ---
 id: 5900f3801000cf542c50fe93
 title: 'Problema 20: somma delle cifre del fattoriale'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301839
 dashedName: problem-20-factorial-digit-sum
 ---

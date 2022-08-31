@@ -92,9 +92,11 @@ assert(calculate.toString().match(/e\.preventDefault\(\s*\)/));
 
 ```html
 <script>
+--fcc-editable-region--
   document.getElementById('calorie-form').onsubmit = calculate;
 
   function calculate(e) {}
+--fcc-editable-region--
 </script>
 ```
 

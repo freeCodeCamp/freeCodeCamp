@@ -14,13 +14,13 @@ Dentro do elemento `figure` que você acabou de adicionar, coloque um elemento `
 O segundo elemento `figure` deve ter uma tag de abertura. As tags de abertura têm essa sintaxe: `<elementName>`.
 
 ```js
-assert(document.querySelectorAll('figure').length === 2);
+assert(document.querySelectorAll('figure').length >= 2);
 ```
 
 O segundo elemento `figure` deve ter uma tag de fechamento. As tags de fechamento têm um caractere `/` logo após o caractere `<`.
 
 ```js
-assert(code.match(/<\/figure>/g).length === 2);
+assert(code.match(/<\/figure>/g).length >= 2);
 ```
 
 O segundo elemento `figure` deve estar logo acima da tag de fechamento de fechamento do segundo elemento `section`. Eles estão na ordem errada.
@@ -34,8 +34,7 @@ Você deve adicionar um terceiro elemento `img` dentro do elemento `figure`.
 ```js
 const catsImg = document.querySelectorAll('figure > img')[1];
 assert(
-  catsImg &&
-    catsImg.getAttribute('src').toLowerCase() === 'https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg'
+  catsImg
 );
 ```
 

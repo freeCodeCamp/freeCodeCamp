@@ -98,11 +98,13 @@ assert(/let\s+fighting\s*;?/.test(code) && fighting === undefined);
 
 ```html
 <script>
+--fcc-editable-region--
 let xp = 0;
 let health = 100;
 let gold = 50;
 let currentWeapon = 0;
 
+--fcc-editable-region--
 </script>
 ```
 

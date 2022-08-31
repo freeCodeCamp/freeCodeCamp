@@ -1,7 +1,7 @@
 ---
 id: 5900f4f71000cf542c510009
 title: 'Завдання 394: Споживання пирога'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302059
 dashedName: problem-394-eating-pie
 ---

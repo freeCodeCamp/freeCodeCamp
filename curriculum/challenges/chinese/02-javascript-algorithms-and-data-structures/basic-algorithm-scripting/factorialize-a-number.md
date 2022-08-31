@@ -1,7 +1,7 @@
 ---
 id: a302f7aae1aa3152a5b413bc
 title: 计算整数的阶乘
-challengeType: 5
+challengeType: 1
 forumTopicId: 16013
 dashedName: factorialize-a-number
 ---

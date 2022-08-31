@@ -1,7 +1,7 @@
 ---
 id: adf08ec01beb4f99fc7a68f2
 title: Фільтрація помилкових значень масиву
-challengeType: 5
+challengeType: 1
 forumTopicId: 16014
 dashedName: falsy-bouncer
 ---

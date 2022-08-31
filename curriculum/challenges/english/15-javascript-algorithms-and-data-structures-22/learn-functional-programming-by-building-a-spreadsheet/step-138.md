@@ -126,7 +126,9 @@ const applyFn = str => {
   );
 };
 
+--fcc-editable-region--
 const range = (start, end) => start
+--fcc-editable-region--
 
 
 

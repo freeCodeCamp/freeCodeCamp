@@ -14,13 +14,13 @@ All'interno dell'elemento `figure` che hai appena aggiunto, annida un elemento `
 Il secondo elemento `figure` dovrebbe avere un tag di apertura. I tag di apertura hanno questa sintassi: `<nomeElemento>`.
 
 ```js
-assert(document.querySelectorAll('figure').length === 2);
+assert(document.querySelectorAll('figure').length >= 2);
 ```
 
 Il secondo elemento `figure` dovrebbe avere un tag di chiusura. I tag di chiusura hanno un carattere `/` subito dopo il carattere `<`.
 
 ```js
-assert(code.match(/<\/figure>/g).length === 2);
+assert(code.match(/<\/figure>/g).length >= 2);
 ```
 
 Ci dovrebbe essere un secondo elemento `figure` proprio sopra il tag di chiusura del secondo elemento `section`. Sono nell'ordine sbagliato.
@@ -34,8 +34,7 @@ Dovresti avere un terzo elemento `img` annidato nell'elemento `figure`.
 ```js
 const catsImg = document.querySelectorAll('figure > img')[1];
 assert(
-  catsImg &&
-    catsImg.getAttribute('src').toLowerCase() === 'https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg'
+  catsImg
 );
 ```
 

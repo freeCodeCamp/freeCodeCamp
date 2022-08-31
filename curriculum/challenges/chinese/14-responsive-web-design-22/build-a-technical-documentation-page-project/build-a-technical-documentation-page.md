@@ -8,7 +8,7 @@ dashedName: build-a-technical-documentation-page
 
 # --description--
 
-**目标：** 构建一个功能类似于 <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank">https://technical-documentation-page.freecodecamp.rocks</a> 的应用程序
+**目标：** 构建一个功能类似于 <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://technical-documentation-page.freecodecamp.rocks</a> 的应用程序
 
 **需求：**
 
@@ -29,6 +29,8 @@ dashedName: build-a-technical-documentation-page
 1. 你的技术文档应该使用至少一个媒体查询。
 
 完成需求并通过下面的所有测试来完成这个项目。 赋予它你自己的个人风格。 编程愉快！
+
+**注意：** 请在你的 HTML 中添加 `<link rel="stylesheet" href="styles.css">` 以链接你的样式表并应用你的 CSS
 
 # --hints--
 
@@ -142,7 +144,7 @@ assert(els.length === 1)
 你应该至少有一个 class 为 `nav-link` 的 `a` 元素。
 
 ```js
-const els = document.querySelectorAll('a[class="nav-link"]')
+const els = document.querySelectorAll('a.nav-link')
 assert(els.length >= 1)
 ```
 
@@ -246,7 +248,7 @@ assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Technical Documentation Page</title>
   </head>
   <body>

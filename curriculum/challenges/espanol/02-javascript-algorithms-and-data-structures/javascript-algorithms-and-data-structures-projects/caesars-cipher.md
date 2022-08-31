@@ -10,9 +10,9 @@ dashedName: caesars-cipher
 
 Uno de los <dfn>cifrados</dfn> más simples y conocidos es el <dfn>cifrado César</dfn>, también conocido como <dfn>cifrado por desplazamiento</dfn>. En un cifrado por desplazamiento los significados de las letras se desplazan por una cantidad determinada.
 
-Un uso moderno común es el cifrado [ROT13](https://en.wikipedia.org/wiki/ROT13), donde los valores de las letras son desplazados por 13 lugares. Así que `A ↔ N`, `B ↔ O` y así sucesivamente.
+Un uso moderno común es el cifrado [ROT13](https://www.freecodecamp.org/news/how-to-code-the-caesar-cipher-an-introduction-to-basic-encryption-3bf77b4e19f7/), donde los valores de las letras son desplazados por 13 lugares. Así que `A ↔ N`, `B ↔ O` y así sucesivamente.
 
-Escribe una función que reciba una cadena codificada en [ROT13](https://en.wikipedia.org/wiki/ROT13) como entrada y devuelva una cadena decodificada.
+Escribe una función que reciba una cadena codificada en [ROT13](https://www.freecodecamp.org/news/how-to-code-the-caesar-cipher-an-introduction-to-basic-encryption-3bf77b4e19f7/) como entrada y devuelva una cadena decodificada.
 
 Todas las letras estarán en mayúsculas. No transformes ningún carácter no alfabético (espacios, puntuación, por ejemplo), pero si transmítelos.
 

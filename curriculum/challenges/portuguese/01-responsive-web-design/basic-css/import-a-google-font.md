@@ -11,7 +11,7 @@ dashedName: import-a-google-font
 
 Além de definir tipografias comuns que são encontradas na maioria dos sistemas operacionais, podemos também definir tipografias não padronizadas e customizadas para serem usadas em nosso site. Na Internet, existem muitos lugares onde podemos encontrar tipografias. Neste desafio, vamos usar a biblioteca do Google Fonts.
 
-[Google Fonts](https://fonts.google.com/) é uma biblioteca gratuita de tipografias que você pode usar em seu CSS ao referenciar a URL da tipografia.
+Google Fonts é uma biblioteca gratuita de tipografias que você pode usar em seu CSS ao referenciar o URL da tipografia.
 
 Então, vamos importar e aplicar uma tipografia a partir do Google.
 

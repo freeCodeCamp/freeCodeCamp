@@ -9,7 +9,7 @@ dashedName: assignment-with-a-returned-value
 
 # --description--
 
-Se ricordi la nostra discussione sui [Memorizzare valori con l'operatore di assegnazione](/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator), l'espressione a destra del segno uguale viene risolta prima che il valore venga assegnato. Questo significa che possiamo prendere il valore restituito da una funzione e assegnarlo a una variabile.
+Se ricordi la nostra discussione su <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank" rel="noopener noreferrer nofollow">Memorizzare valori con l'operatore di assegnazione</a>, l'espressione a destra del segno uguale viene risolta prima che il valore venga assegnato. Questo significa che possiamo prendere il valore restituito da una funzione e assegnarlo a una variabile.
 
 Supponiamo di avere predefinito una funzione `sum` che somma due numeri, quindi:
 

@@ -10,7 +10,7 @@ Ten en cuenta que para la versión 7.0 del plan de estudios gratuito, estamos av
 
 La creación de estos desafíos requiere una inmensa creatividad y atención al detalle. Hay mucha ayuda disponible. Tendrás el apoyo de todo un equipo de colaboradores a los que podrás comentar tus ideas y demostrar tus desafíos.
 
-Y como siempre, siéntete libre de preguntar en la [ categoría de 'Contribuidores' de nuestro foro](https://forum.freecodecamp.org/c/contributors) o [en la sala de chat de contribuidores](https://chat.freecodecamp.org/channel/contributors).
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
 
 Con tu ayuda, podemos diseñar un currículo de código interactivo que ayudará a millones de personas a aprender a programar en los próximos años.
 

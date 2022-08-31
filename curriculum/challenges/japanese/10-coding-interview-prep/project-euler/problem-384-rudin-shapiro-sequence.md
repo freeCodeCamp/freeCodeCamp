@@ -1,7 +1,7 @@
 ---
 id: 5900f4ed1000cf542c50fffe
 title: '問題 384: ルーディン-シャピロ数列'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302048
 dashedName: problem-384-rudin-shapiro-sequence
 ---

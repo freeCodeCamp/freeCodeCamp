@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc7eb0
 title: I before E except after C
-challengeType: 5
+challengeType: 1
 forumTopicId: 302288
 dashedName: i-before-e-except-after-c
 ---
 
 # --description--
 
-The phrase ["I before E, except after C"](<https://en.wikipedia.org/wiki/I before E except after C>) is a widely known mnemonic which is supposed to help when spelling English words.
+**<a href="http://www.rosettacode.org/wiki/I_before_E_except_after_C" target="_blank" rel="noopener noreferrer nofollow">"I before E, except after C"</a>** is a general rule for English language spelling. If one is unsure whether a word is spelled with the digraph `ei` or `ie`, the rhyme suggests that the correct order is `ie` unless the preceding letter is `c`, in which case it may be `ei`.
 
 Using the words provided, check if the two sub-clauses of the phrase are plausible individually:
 

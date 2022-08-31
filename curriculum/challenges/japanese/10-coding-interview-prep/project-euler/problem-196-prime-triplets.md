@@ -1,7 +1,7 @@
 ---
 id: 5900f4301000cf542c50ff42
 title: '問題 196: 三つ子素数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301834
 dashedName: problem-196-prime-triplets
 ---

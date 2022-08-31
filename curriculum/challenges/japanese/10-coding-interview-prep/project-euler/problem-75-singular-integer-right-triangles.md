@@ -1,7 +1,7 @@
 ---
 id: 5900f3b71000cf542c50feca
 title: '問題 75: 単一の整数直角三角形'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302188
 dashedName: problem-75-singular-integer-right-triangles
 ---

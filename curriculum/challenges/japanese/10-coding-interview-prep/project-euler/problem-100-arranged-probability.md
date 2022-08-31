@@ -1,7 +1,7 @@
 ---
 id: 5900f3d01000cf542c50fee3
 title: '問題 100: 調整された確率'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301724
 dashedName: problem-100-arranged-probability
 ---

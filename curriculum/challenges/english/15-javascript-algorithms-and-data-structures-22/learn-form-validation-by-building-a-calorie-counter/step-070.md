@@ -170,7 +170,9 @@ assert(
     document.getElementById('output').classList.remove('bordered-class');
   };
 
+--fcc-editable-region--
   const clearForm = () => {};
+--fcc-editable-region--
 </script>
 ```
 

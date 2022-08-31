@@ -8,10 +8,10 @@ dashedName: issue-tracker
 
 # --description--
 
-Створіть повний пакет додатку JavaScript, який функціонально схожий до: <https://issue-tracker.freecodecamp.rocks/>. Робота над цим проєктом передбачає написання коду з використанням одного з наступних метод:
+Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://issue-tracker.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://issue-tracker.freecodecamp.rocks/</a>. Робота над цим проєктом передбачає написання коду з використанням одного з наступних метод:
 
--   Клонуйте цей [репозиторій GitHub ](https://github.com/freeCodeCamp/boilerplate-project-issuetracker/) і локально завершіть ваш проєкт.
--   Використати [наш стартовий проєкт Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-issuetracker), щоб завершити свій проєкт.
+-   Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-project-issuetracker/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте свій проєкт локально.
+-   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-issuetracker" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
 -   Для завершення проєкту, використайте вибраний вами розробник сайту. Переконайтеся, що зберегли усі файли з нашого репозиторію GitHub.
 
 Коли ви завершили, переконайтеся, що ця демоверсія вашого проєкту розміщена у відкритому доступі. Потім введіть URL-адресу в поле `Solution Link`. При необхідності, також введіть посилання на джерело коду вашого проєкту у полі`GitHub Link`.

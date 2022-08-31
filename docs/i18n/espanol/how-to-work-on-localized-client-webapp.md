@@ -77,7 +77,7 @@ Algunos de estos archivos son traducidos en nuestra plataforma de traducción (C
 
 - El archivo`meta-tags.json` contiene la información para nuestra informacion de la Meta etiqueta del sitio web.
 
-  Los cambios en estos archivos son usualmente realizados por nuestro personal. Si ves algo raro o fuera de lo normal, deberías comunicarte con nosotros en el [chat de colaboradores](https://chat.freecodecamp.org/channel/contributors).
+  Los cambios en estos archivos son usualmente realizados por nuestro personal. If you see something out of the ordinary we recommend you reach us in the [contributors chat room](https://discord.gg/PRyKn3Vbay).
 
 ## Probando la app cliente en un idioma mundial
 

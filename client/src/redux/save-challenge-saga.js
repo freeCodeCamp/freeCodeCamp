@@ -46,14 +46,14 @@ export function* saveChallengeSaga() {
       );
     } else {
       try {
-        const response = yield call(postSaveChallenge, body);
+        const { data } = yield call(postSaveChallenge, body);
 
-        if (response?.message) {
-          yield put(createFlashMessage(response));
-        } else if (response?.savedChallenges) {
+        if (data?.message) {
+          yield put(createFlashMessage(data));
+        } else if (data?.savedChallenges) {
           yield put(
             saveChallengeComplete(
-              mapFilesToChallengeFiles(response.savedChallenges)
+              mapFilesToChallengeFiles(data.savedChallenges)
             )
           );
           yield put(

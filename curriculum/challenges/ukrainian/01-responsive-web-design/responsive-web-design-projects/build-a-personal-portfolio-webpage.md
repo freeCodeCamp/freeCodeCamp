@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c242eddfaeb5bd13
-title: Build a Personal Portfolio Webpage
+title: Створіть вебсторінку персонального портфоліо
 challengeType: 14
 forumTopicId: 301143
 dashedName: build-a-personal-portfolio-webpage
@@ -8,34 +8,36 @@ dashedName: build-a-personal-portfolio-webpage
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to <a href="https://personal-portfolio.freecodecamp.rocks" target="_blank">https://personal-portfolio.freecodecamp.rocks</a>
+**Мета:** Створити застосунок, функціонально схожий до <a href="https://personal-portfolio.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://personal-portfolio.freecodecamp.rocks</a>
 
-**User Stories:**
+**Історія користувача:**
 
-1. Your portfolio should have a welcome section with an `id` of `welcome-section`
-1. The welcome section should have an `h1` element that contains text
-1. Your portfolio should have a projects section with an `id` of `projects`
-1. The projects section should contain at least one element with a `class` of `project-tile` to hold a project
-1. The projects section should contain at least one link to a project
-1. Your portfolio should have a navbar with an id of `navbar`
-1. The navbar should contain at least one link that you can click on to navigate to different sections of the page
-1. Your portfolio should have a link with an id of `profile-link`, which opens your GitHub or freeCodeCamp profile in a new tab
-1. Your portfolio should have at least one media query
-1. The height of the welcome section should be equal to the height of the viewport
-1. The navbar should always be at the top of the viewport
+1. Портфоліо повинне містити вітальну секцію з `id` зі значенням `welcome-section`
+1. Вітальна секція повинна мати елемент `h1`, що містить текст
+1. Портфоліо повинне мати секцію проєктів з `id` зі значенням `projects`
+1. Секція проєктів повинна містити щонайменше один елемент з `class` зі значенням `project-tile` для виконання проєкту
+1. Секція проєктів повинна містити щонайменше одне посилання на проєкт
+1. Портфоліо повинне містити навігаційну панель з ідентифікатором зі значенням `navbar`
+1. Навігаційна панель повинна містити щонайменше одне посилання, завдяки якому можна перейти на інші секції сторінки
+1. Портфоліо повинне містити посилання з ідентифікатором зі значенням `profile-link`, що відкриває ваш профіль GitHub або freeCodeCamp в новій вкладці
+1. Портфоліо повинне містити щонайменше один медіазапит
+1. Висота вітальної секції повинна дорівнювати висоті вюпорту
+1. Навігаційна панель завжди повинна знаходитись у верхній частині вюпорту
 
-Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
+Виконайте історію користувача та пройдіть тести, наведені нижче, щоб завершити цей проєкт. Оформте за власним стилем. Щасливого кодування!
+
+**Примітка:** переконайтеся, що додали `<link rel="stylesheet" href="styles.css">` до HTML для прив'язки з аркушем стилів та застосували CSS
 
 # --hints--
 
-Your portfolio should have a "Welcome" section with an `id` of `welcome-section`.
+Портфоліо повинне містити секцію «Вітання» з `id` зі значенням `welcome-section`.
 
 ```js
 const el = document.getElementById('welcome-section')
 assert(!!el);
 ```
 
-Your `#welcom-section` element should contain an `h1` element.
+Елемент `#welcome-section` повинен містити елемент `h1`.
 
 ```js
 assert.isAbove(
@@ -45,7 +47,7 @@ assert.isAbove(
 );
 ```
 
-You should not have any empty `h1` elements within `#welcome-section` element.
+Ви не повинні мати порожніх елементів `h1` в межах елемента `#welcome-section`.
 
 ```js
 assert.isAbove(
@@ -56,14 +58,14 @@ assert.isAbove(
 );
 ```
 
-You should have a "Projects" section with an `id` of `projects`.
+Ви повинні мати секцію «Проєкти» з `id` зі значенням `projects`.
 
 ```js
 const el = document.getElementById('projects')
 assert(!!el);
 ```
 
-Your portfolio should contain at least one elment with a class of `project-tile`.
+Портфоліо повинне містити хоча б один елемент з класом `project-tile`.
 
 ```js
 assert.isAbove(
@@ -72,20 +74,20 @@ assert.isAbove(
 );
 ```
 
-Your `#projects` element should contain at least one `a` element.
+Елемент `#projects` повинен містити хоча б один елемент `a`.
 
 ```js
 assert.isAbove(document.querySelectorAll('#projects a').length, 0);
 ```
 
-Your portfolio should have a navbar with an `id` of `navbar`.
+Портфоліо повинне мати навігаційну панель з `id` зі значенням `navbar`.
 
 ```js
 const el = document.getElementById('navbar');
 assert(!!el);
 ```
 
-Your `#navbar` element should contain at least one `a` element whose `href` attribute starts with `#`.
+Елемент `#navbar` повинен містити хоча б один елемент `a`, чий атрибут `href` починається з `#`.
 
 ```js
 const links = [...document.querySelectorAll('#navbar a')].filter(
@@ -99,27 +101,29 @@ assert.isAbove(
 );
 ```
 
-Your portfolio should have an `a` element with an `id` of `profile-link`.
+Портфоліо повинне мати елемент `a` з `id` зі значенням `profile-link`.
 
 ```js
 const el = document.getElementById('profile-link');
 assert(!!el && el.tagName === 'A')
 ```
 
-Your `#profile-link` element should have a `target` attribute of `_blank`.
+Елемент `#profile-link` повинен мати атрибут `target` зі значенням `_blank`.
 
 ```js
 const el = document.getElementById('profile-link');
 assert(!!el && el.target === '_blank')
 ```
 
-Your portfolio should use at least one media query.
+Портфоліо повинне містити щонайменше один медіазапит.
 
 ```js
-assert.isAtLeast(new __helpers.CSSHelp(document).getCSSRules('media')?.length, 1);
+const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
+const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
+assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 ```
 
-Your `#navbar` element should always be at the top of the viewport.
+Елемент `#navbar` завжди повинен знаходитись у верхній частині вюпорту.
 
 ```js
 (async () => {
@@ -168,11 +172,11 @@ Your `#navbar` element should always be at the top of the viewport.
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Personal Portfolio</title>
 </head>
 <body>
-    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 <!--Font Reference-->
 <nav id="navbar">
   <a href="#projects">Projects</a> |

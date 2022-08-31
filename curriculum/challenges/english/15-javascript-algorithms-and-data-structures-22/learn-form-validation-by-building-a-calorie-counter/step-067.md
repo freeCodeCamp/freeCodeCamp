@@ -166,9 +166,11 @@ assert(
     clearForm();
   };
 
+--fcc-editable-region--
   const clearOutput = () => {
     document.getElementById('output').innerHTML = '';
   };
+--fcc-editable-region--
 </script>
 ```
 

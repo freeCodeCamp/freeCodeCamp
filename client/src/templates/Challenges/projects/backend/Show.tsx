@@ -270,7 +270,7 @@ class BackEnd extends Component<BackEndProps> {
                 certification={certification}
                 superBlock={superBlock}
               />
-              <HelpModal />
+              <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
           </Grid>
         </LearnLayout>

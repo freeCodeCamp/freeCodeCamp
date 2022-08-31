@@ -8,9 +8,9 @@ dashedName: visualize-data-with-a-scatterplot-graph
 
 # --description--
 
-**目標:** <https://codepen.io/freeCodeCamp/full/bgpXyK> と同様の機能を持つ [CodePen.io](https://codepen.io) アプリを構築します。
+**目標:** こちらに示したものと同様の機能を持つアプリを構築してください: <https://codepen.io/freeCodeCamp/full/bgpXyK>
 
-以下の[ユーザーストーリー](https://en.wikipedia.org/wiki/User_story)を達成して、すべてのテストに合格してください。 あなたの独自のスタイルにしましょう。
+下記のユーザーストーリーを満たして、すべてのテストに合格してください。 必要に応じて、どのようなライブラリあるいは API を使用してもかまいません。 あなた独自のスタイルを加えましょう。
 
 HTML、JavaScript、CSS、および D3 の SVG ベースのビジュアライゼーションライブラリを使用できます。 テストでは、軸に沿って自動的にティックを生成する D3 軸プロパティを使用して軸を生成する必要があります。 これらのティックは、グラフ化された要素の配置を決定するために使用されるので、D3 テストに合格するために必要です。 軸の生成については <https://github.com/d3/d3/blob/master/API.md#axes-d3-axis> を参照してください。 必要な (非仮想) DOM 要素は、各テストの時にクエリされます。 フロントエンドフレームワーク (例えば Vue など) を使用した場合、動的なコンテンツではテスト結果が不正確になる可能性があります。 最終的には対応したいと考えていますが、現在の D3 プロジェクトではこれらのフレームワークはサポートされていません。
 

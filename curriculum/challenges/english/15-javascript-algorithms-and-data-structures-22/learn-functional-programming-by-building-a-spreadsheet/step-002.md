@@ -58,7 +58,9 @@ assert(code.replace(/\s/g, '').includes('functionadd(x,y){}'));
 
 ```html
 <script>
+--fcc-editable-region--
 
+--fcc-editable-region--
 const infixToFunction = {};
 
 

@@ -1,7 +1,7 @@
 ---
 id: af2170cad53daa0770fabdea
 title: Identificar mutações
-challengeType: 5
+challengeType: 1
 forumTopicId: 16025
 dashedName: mutations
 ---

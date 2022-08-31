@@ -96,12 +96,14 @@ assert(monsterHealth === undefined && inventory === undefined);
 
 ```html
 <script>
+--fcc-editable-region--
 let xp = 0;
 let health = 100;
 let gold = 50;
 let currentWeapon = 0;
 let fighting;
 
+--fcc-editable-region--
 </script>
 ```
 

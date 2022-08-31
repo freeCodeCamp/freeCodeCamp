@@ -169,6 +169,7 @@ config/certification-settings.js
 ### Generated utils files ###
 utils/slugs.js
 utils/slugs.test.js
+utils/index.js
 
 ### vim ###
 # Swap
@@ -206,6 +207,7 @@ curriculum/dist
 curriculum/build
 client/static/_redirects
 client/static/mobile
+client/static/curriculum-data
 
 ### UI Components ###
 tools/ui-components/dist

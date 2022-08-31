@@ -1,7 +1,7 @@
 ---
 id: 5900f4511000cf542c50ff62
 title: 'Problema 226: una pallina di Blancmange'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301869
 dashedName: problem-226-a-scoop-of-blancmange
 ---

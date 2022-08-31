@@ -10,7 +10,7 @@ dashedName: hashing-your-passwords
 
 Going back to the information security section, you may remember that storing plaintext passwords is *never* okay. Now it is time to implement BCrypt to solve this issue.
 
-Add `bcrypt@~5.0.0` as a dependency, and require it in your server. You will need to handle hashing in 2 key areas: where you handle registering/saving a new account, and when you check to see that a password is correct on login.
+`bcrypt@~5.0.0` has already been added as a dependency, so require it in your server. You will need to handle hashing in 2 key areas: where you handle registering/saving a new account, and when you check to see that a password is correct on login.
 
 Currently on our registration route, you insert a user's password into the database like so: `password: req.body.password`. An easy way to implement saving a hash instead is to add the following before your database logic `const hash = bcrypt.hashSync(req.body.password, 12);`, and replacing the `req.body.password` in the database saving with just `password: hash`.
 
@@ -24,7 +24,7 @@ if (!bcrypt.compareSync(password, user.password)) {
 
 That is all it takes to implement one of the most important security features when you have to store passwords!
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/dc16cca09daea4d4151a9c36a1fab564).
+Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://gist.github.com/camperbot/dc16cca09daea4d4151a9c36a1fab564" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 
 # --hints--
 

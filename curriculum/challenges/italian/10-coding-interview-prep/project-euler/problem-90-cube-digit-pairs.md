@@ -1,7 +1,7 @@
 ---
 id: 5900f3c61000cf542c50fed9
 title: 'Problema 90: coppie di cubi con le cifre'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302207
 dashedName: problem-90-cube-digit-pairs
 ---
