@@ -42,7 +42,7 @@ Enter the number of steps you want to add in the input. Then, clicking the butto
 
 #### Insert Step
 
-Enter the step number that you want to add a step _after_. For example, if you want to add a step after `step-12`, enter `12`. Then, click the `Insert Step` button to add the step. The following steps will be re-ordered.
+Enter the step number that you want to add. Then, click the `Insert Step` button to add the step. The following steps will be re-ordered.
 
 #### Delete Step
 

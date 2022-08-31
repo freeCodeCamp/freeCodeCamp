@@ -45,7 +45,7 @@ jobs:
           node-version: '16'
 
       - name: Configure Python 3.x
-        uses: actions/setup-python@c4e89fac7e8767b327bbad6cb4d859eda999cf08 # tag=v4
+        uses: actions/setup-python@b55428b1882923874294fa556849718a1d7f2ca5 # tag=v4
         if: ${{ fromJSON(steps.detect-languages.outputs.languages).python }}
         with:
           python-version: '3.x'

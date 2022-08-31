@@ -263,49 +263,51 @@ function populateTestsForLang({ lang, challenges, meta }) {
   const challengeTitles = new ChallengeTitles();
   const validateChallenge = challengeSchemaValidator();
 
-  describe('Assert meta order', function () {
-    /** This array can be used to skip a superblock - we'll use this
-     * when we are working on the new project-based curriculum for
-     * a superblock (because keeping those challenges in order is
-     * tricky and needs cleaning up before deploying).
-     */
-    const superBlocksUnderDevelopment = [
-      '2022/javascript-algorithms-and-data-structures'
-    ];
-    const superBlocks = new Set([
-      ...Object.values(meta)
-        .map(el => el.superBlock)
-        .filter(el => !superBlocksUnderDevelopment.includes(el))
-    ]);
-    superBlocks.forEach(superBlock => {
-      const filteredMeta = Object.values(meta)
-        .filter(el => el.superBlock === superBlock)
-        .sort((a, b) => a.order - b.order);
-      if (!filteredMeta.length) {
-        return;
-      }
-      it(`${superBlock} should have the same order in every meta`, function () {
-        const firstOrder = getSuperOrder(filteredMeta[0].superBlock, {
-          showNewCurriculum: process.env.SHOW_NEW_CURRICULUM
+  if (!process.env.npm_config_block) {
+    describe('Assert meta order', function () {
+      /** This array can be used to skip a superblock - we'll use this
+       * when we are working on the new project-based curriculum for
+       * a superblock (because keeping those challenges in order is
+       * tricky and needs cleaning up before deploying).
+       */
+      const superBlocksUnderDevelopment = [
+        '2022/javascript-algorithms-and-data-structures'
+      ];
+      const superBlocks = new Set([
+        ...Object.values(meta)
+          .map(el => el.superBlock)
+          .filter(el => !superBlocksUnderDevelopment.includes(el))
+      ]);
+      superBlocks.forEach(superBlock => {
+        const filteredMeta = Object.values(meta)
+          .filter(el => el.superBlock === superBlock)
+          .sort((a, b) => a.order - b.order);
+        if (!filteredMeta.length) {
+          return;
+        }
+        it(`${superBlock} should have the same order in every meta`, function () {
+          const firstOrder = getSuperOrder(filteredMeta[0].superBlock, {
+            showNewCurriculum: process.env.SHOW_NEW_CURRICULUM
+          });
+          assert.isNumber(firstOrder);
+          assert.isTrue(
+            filteredMeta.every(
+              el =>
+                getSuperOrder(el.superBlock, {
+                  showNewCurriculum: process.env.SHOW_NEW_CURRICULUM
+                }) === firstOrder
+            ),
+            'The superOrder properties are mismatched.'
+          );
         });
-        assert.isNumber(firstOrder);
-        assert.isTrue(
-          filteredMeta.every(
-            el =>
-              getSuperOrder(el.superBlock, {
-                showNewCurriculum: process.env.SHOW_NEW_CURRICULUM
-              }) === firstOrder
-          ),
-          'The superOrder properties are mismatched.'
-        );
-      });
-      filteredMeta.forEach((meta, index) => {
-        it(`${meta.superBlock} ${meta.name} must be in order`, function () {
-          assert.equal(meta.order, index);
+        filteredMeta.forEach((meta, index) => {
+          it(`${meta.superBlock} ${meta.name} must be in order`, function () {
+            assert.equal(meta.order, index);
+          });
         });
       });
     });
-  });
+  }
 
   describe(`Check challenges (${lang})`, function () {
     this.timeout(5000);

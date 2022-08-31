@@ -8,11 +8,9 @@ dashedName: set-up-passport
 
 # --description--
 
-È ora di configurare *Passport* così da permettere finalmente ad un utente di registrarsi od accedere ad un account! In aggiunta a Passport, useremo Express-session per gestire le sessioni. Usare questo middleware salva l'id di sessione come cookie nel client e permettere di accedere ai dati di sessione usando quell'id sul server. In questo modo teniamo informazioni personali dell'account al di fuori del cookie usato dal client per verificare con il server di essere autenticato e teniamo solo la *key* per accedere ai dati immagazzinati nel server.
+È ora di configurare *Passport* così da permettere finalmente ad un utente di registrarsi od accedere ad un account! In aggiunta a Passport, useremo Express-session per gestire le sessioni. Express-session ha un sacco di funzionalità avanzate che puoi usare ma per ora useremo solo le basi! Usare questo middleware salva l'id di sessione come cookie nel client e permette di accedere ai dati di sessione usando quell'id sul server. In questo modo teniamo informazioni personali dell'account al di fuori del cookie usato dal client per verificare con il server di essere autenticato e teniamo solo la *key* per accedere ai dati immagazzinati nel server.
 
-Per configurare Passport per usarlo nel tuo progetto dovrai prima aggiungerlo come dipendenza nel tuo package.json. `passport@~0.4.1`
-
-In aggiunta, aggiungi anche Express-session come dipendenza. Express-session ha un sacco di feature avanzate che puoi usare ma per ora useremo solo le basi! `express-session@~1.17.1`
+`passport@~0.4.1` e `express-session@~1.17.1` sono già installati e sono entrambi elencati come dipendenze nel tuo file `package.json`.
 
 Ora dovrai configurare le impostazioni della sessione e inizializzare Passport. Assicurati di creare prima le variabili 'session' e 'passport' per richiedere rispettivamente 'express-session' e 'passport'.
 
@@ -57,7 +55,7 @@ Passaport e Express-session dovrebbero essere dipendenze.
   );
 ```
 
-Le dipendenze dovrebbero essere correttamente richieste.
+Le dipendenze dovrebbero essere richieste correttamente.
 
 ```js
 (getUserInput) =>
@@ -103,7 +101,7 @@ Express app dovrebbe utilizzare nuove dipendenze.
   );
 ```
 
-La sessione e il segreto di sessione dovrebbero essere impostate correttamente.
+La sessione e il segreto di sessione dovrebbero essere impostati correttamente.
 
 ```js
 (getUserInput) =>

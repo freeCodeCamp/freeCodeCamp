@@ -286,6 +286,7 @@
     "percent-complete": "{{percent}}% complete",
     "tried-rsa": "If you've already tried the <0>Read-Search-Ask</0> method, then you can ask for help on the freeCodeCamp forum.",
     "rsa": "Read, search, ask",
+    "rsa-forum": "<strong>Before making a new post</strong> please see if your question has <0>already been answered on the forum</0>.",
     "reset": "Reset this lesson?",
     "reset-warn": "Are you sure you wish to reset this lesson? The editors and tests will be reset.",
     "reset-warn-2": "This cannot be undone",
@@ -449,7 +450,10 @@
     "and": "and",
     "change-theme": "Sign in to change theme.",
     "translation-pending": "Help us translate",
-    "certification-project": "Certification Project"
+    "certification-project": "Certification Project",
+    "iframe-preview": "{{title}} preview",
+    "iframe-alert": "Normally this link would bring you to another website! It works. This is a link to: {{externalLink}}",
+    "document-notfound": "document not found"
   },
   "icons": {
     "gold-cup": "Gold Cup",

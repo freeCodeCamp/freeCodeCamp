@@ -29,6 +29,12 @@ if (envData.clientLocale == 'english' && !envData.showUpcomingChanges) {
       ).toBeGreaterThan(0);
     });
 
+    test('there should be an endpoint to request submit types from', () => {
+      fs.existsSync(
+        `${clientStaticPath}/curriculum-data/${VERSION}/submit-types.json`
+      );
+    });
+
     test('the available-superblocks file should have the correct structure', async () => {
       const validateAvailableSuperBlocks = availableSuperBlocksValidator();
       const availableSuperblocks: unknown = JSON.parse(

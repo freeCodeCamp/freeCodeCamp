@@ -12,7 +12,7 @@ Você agora já testou algumas maneiras de gerenciar as dependências do seu pro
 
 Mas e se você quisesse remover um pacote externo do qual você não precisa mais? Você já deve ter adivinhado: apenas remova o par chave-valor correspondente a esse pacote das dependências.
 
-Este mesmo método também se aplica à remoção de outros campos no seu package.json
+Este mesmo método também se aplica à remoção de outros campos no seu package.json.
 
 # --instructions--
 

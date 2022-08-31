@@ -27,7 +27,7 @@ const Tools = () => {
       <CreateEmptySteps {...{ superblock, block }} />
       <h2>Insert Step</h2>
       <p>
-        This tool inserts a new step after the <code>nth</code> step.
+        This tool inserts a new step as the <code>nth</code> step.
       </p>
       <InsertStep {...{ superblock, block }} />
       <h2>Delete Step</h2>

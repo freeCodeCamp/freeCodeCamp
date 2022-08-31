@@ -182,21 +182,21 @@ const el = document.getElementById('number-label')
 assert(!!el && el.tagName === 'LABEL')
 ```
 
-`#name-label` が空でないようにしてください。
+`#name-label` には入力欄について説明するテキストを含める必要があります。
 
 ```js
 const el = document.getElementById('name-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-`#email-label` が空でないようにしてください。
+`#email-label` には入力欄について説明するテキストを含める必要があります。
 
 ```js
 const el = document.getElementById('email-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-`#number-label` が空でないようにしてください。
+`#number-label` には入力欄について説明するテキストを含める必要があります。
 
 ```js
 const el = document.getElementById('number-label')
