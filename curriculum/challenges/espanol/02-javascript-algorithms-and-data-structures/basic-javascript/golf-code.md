@@ -9,7 +9,7 @@ dashedName: golf-code
 
 # --description--
 
-En el juego de [golf](https://en.wikipedia.org/wiki/Golf) cada hoyo tiene un `par` que significa el número promedio de `strokes` (golpes) que se espera que haga un golfista para introducir la pelota en un hoyo para completar la jugada. Dependiendo de qué tan por encima o por debajo del `par` estén tus `strokes`, hay un nombre diferente.
+En el juego de Golf, cada agujero tiene un `par`, que significa, el número promedio de `strokes` que se espera que haga un golfista para hundir la pelota en el agujero para completar el juego. Dependiendo de qué tan por encima o por debajo del `par` estén tus `strokes`, hay un nombre diferente.
 
 Tu función recibirá los argumentos `par` y `strokes`. Devuelve la cadena correcta según esta tabla que muestra los golpes en orden de prioridad; superior (más alto) a inferior (más bajo):
 

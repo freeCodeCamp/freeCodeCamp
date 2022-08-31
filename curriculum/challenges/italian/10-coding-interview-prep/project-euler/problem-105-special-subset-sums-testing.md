@@ -1,7 +1,7 @@
 ---
 id: 5900f3d61000cf542c50fee8
 title: 'Problema 105: somme di subset speciali: testing'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301729
 dashedName: problem-105-special-subset-sums-testing
 ---

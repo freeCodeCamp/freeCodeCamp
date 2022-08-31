@@ -49,6 +49,7 @@ class EditorTabs extends Component<EditorTabsProps> {
                   : 'btn-tab-primary--outline'
               }
               key={challengeFile.fileKey}
+              data-cy={`editor-tab-${challengeFile.fileKey}`}
               onClick={() => toggleVisibleEditor(challengeFile.fileKey)}
             >
               {`${challengeFile.name}.${challengeFile.ext}`}{' '}

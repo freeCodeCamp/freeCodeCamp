@@ -10,7 +10,7 @@ dashedName: use-the-lifecycle-method-componentwillmount
 
 React コンポーネントには、コンポーネントのライフサイクル中に特定の時点でアクションを実行する機会を提供する、いくつかの特別なメソッドがあります。 これらはライフサイクルメソッドまたはライフサイクルフックと呼ばれ、特定の時点でコンポーネントをキャッチできます。 メソッドは、レンダー前、更新前、prop を受け取る前、アンマウント前などの時点で実行できます。 主なライフサイクルメソッドとしては、`componentWillMount()`、`componentDidMount()`、`shouldComponentUpdate()`、`componentDidUpdate()`、`componentWillUnmount()` があります。以降のレッスンでは、これらのライフサイクルメソッドの基本的な用例について説明します。
 
-**注:** ライフサイクルメソッド `componentWillMount` は、将来のバージョン 16.X で非推奨になり、バージョン 17 で削除される予定です [(情報元)](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html)。
+**注:** ライフサイクルメソッド `componentWillMount` は、将来のバージョン 16.X で非推奨になり、バージョン 17 で削除される予定です 詳しくは <a href="https://www.freecodecamp.org/news/how-to-safely-use-reacts-life-cycles-with-fiber-s-async-rendering-fd4469ebbd8f/" target="_blank" rel="noopener noreferrer nofollow">こちらの記事</a> を参照してください。
 
 # --instructions--
 

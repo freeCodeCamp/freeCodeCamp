@@ -10,7 +10,7 @@ freeCodeCamp カリキュラムのバージョン 7.0 では、[多くの繰り�
 
 これらのチャレンジを生み出すには、大きな創造性と細部へのこだわりが必要です。 たくさんの助けを得ることができます。 アイデアを出し合ったりチャレンジを実演したりできる貢献者チーム全体がサポートしてくれます。
 
-[フォーラムの 'Contributors' カテゴリ](https://forum.freecodecamp.org/c/contributors) または [Contributors チャットルーム](https://chat.freecodecamp.org/channel/contributors) へいつでもお気軽にお問合せください。
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
 
 皆さんのご支援により、今後何百万もの人々がコーディングを学ぶのに役立つインタラクティブなコーディングカリキュラムを設計することができます。
 

@@ -9,7 +9,7 @@ dashedName: use-the-flex-grow-property-to-expand-items
 
 # --description--
 
-`flex-shrink` の反対は `flex-grow` プロパティです。 `flex-shrink` はコンテナが縮小するときのアイテムのサイズを制御することを思い出してください。 `flex-grow` プロパティは、親コンテナが拡大されるときのアイテムのサイズを制御します。
+`flex-shrink` の反対は `flex-grow` プロパティです。 `flex-shrink` はコンテナーが縮小するときのアイテムのサイズを制御することを思い出してください。 `flex-grow` プロパティは、親コンテナーが拡大されるときのアイテムのサイズを制御します。
 
 前回のチャレンジと似たような例として、もしあるアイテムが `flex-grow` の値として `1` を持ち、他のアイテムが `flex-grow` の値として `3` を持つ場合、`3` の値を持つアイテムがもう一方に比べて三倍拡大します。
 

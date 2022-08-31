@@ -203,6 +203,7 @@ function buyHealth() {
   }
 }
 
+--fcc-editable-region--
 function buyWeapon() {
   if (currentWeapon < weapons.length) {
     if (gold >= 30) {
@@ -218,6 +219,7 @@ function buyWeapon() {
     }
   }
 }
+--fcc-editable-region--
 
 function fightSlime() {
 }

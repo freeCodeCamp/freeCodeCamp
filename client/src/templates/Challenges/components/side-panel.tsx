@@ -48,7 +48,9 @@ export function SidePanel({
     const MathJax = global.MathJax;
     const mathJaxMountPoint = document.querySelector('#mathjax');
     const mathJaxChallenge =
-      block === 'rosetta-code' || block === 'project-euler';
+      block === 'rosetta-code' ||
+      block === 'project-euler' ||
+      block === 'intermediate-algorithm-scripting';
     if (MathJax) {
       // Configure MathJax when it's loaded and
       // users navigate from another challenge
@@ -59,12 +61,14 @@ export function SidePanel({
             ['\\(', '\\)']
           ],
           processEscapes: true,
-          processClass: 'rosetta-code|project-euler'
+          processClass:
+            'rosetta-code|project-euler|intermediate-algorithm-scripting'
         }
       });
       MathJax.Hub.Queue([
         'Typeset',
         MathJax.Hub,
+        document.querySelector('.intermediate-algorithm-scripting'),
         document.querySelector('.rosetta-code'),
         document.querySelector('.project-euler')
       ]);

@@ -7,7 +7,7 @@ dashedName: simulate-actions-using-a-headless-browser
 
 # --description--
 
-Нагадуємо, що цей проєкт будується на основі наступного стартового проєкту на [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), або клонується з [ GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 У наступних завданнях ви зможете імітувати взаємодію людини зі сторінкою за допомогою браузера без графічного інтерфейсу.
 

@@ -1,14 +1,14 @@
 ---
 id: 5a7dad05be01840e1778a0d1
 title: Fractran
-challengeType: 5
+challengeType: 1
 forumTopicId: 302270
 dashedName: fractran
 ---
 
 # --description--
 
-[FRACTRAN](https://en.wikipedia.org/wiki/FRACTRAN "wp: FRACTRAN") é uma linguagem de programação esotérica completa de Turing inventada pelo matemático [John Horton Conway](https://en.wikipedia.org/wiki/John Horton Conway "wp: John Horton Conway").
+FRACTRAN é uma linguagem de programação esotérica, completa para testes Turing, inventada pelo matemático John Horton Conway.
 
 Um programa em FRACTRAN é uma lista ordenada de frações positivas $P = (f_1, f_2, \\ldots, f_m)$, juntamente com uma primeira entrada positiva inteira $n$.
 

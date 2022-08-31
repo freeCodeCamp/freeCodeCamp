@@ -9,7 +9,9 @@ dashedName: step-18
 
 L'aggiunta alla pagina un elemento d'intestazione di rango inferiore, denota l'inizio una nuova sottosezione.
 
-Dopo l'ultimo elemento `h2` del secondo elemento `section`, aggiungi un elemento `h3` con il testo `Things cats love:`.
+Dopo l'ultimo elemento `h2` del secondo elemento `section`, aggiungi un elemento `h3` con il testo:
+
+`Things cats love:`
 
 # --hints--
 

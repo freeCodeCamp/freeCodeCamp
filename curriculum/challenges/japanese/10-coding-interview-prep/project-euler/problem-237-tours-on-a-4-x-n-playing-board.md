@@ -1,7 +1,7 @@
 ---
 id: 5900f4591000cf542c50ff6c
 title: '問題 237: 4 × n のゲーム盤上の経路'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301882
 dashedName: problem-237-tours-on-a-4-x-n-playing-board
 ---

@@ -1,7 +1,7 @@
 ---
 id: 5900f53c1000cf542c51004e
 title: 'Problema 463: Uma relação de recorrência estranha'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302138
 dashedName: problem-463-a-weird-recurrence-relation
 ---

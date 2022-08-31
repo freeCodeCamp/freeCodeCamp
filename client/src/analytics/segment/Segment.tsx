@@ -17,8 +17,9 @@ const segmentModel: SegmentModel = segment as unknown as SegmentModel;
 /* eslint-disable @typescript-eslint/ban-types */
 const Segment: FC<{}> = () => {
   // if we have a key for this environment, load it
-  const segmentId =
-    envData.deploymentEnv === 'staging' ? devSegmentId : prodSegmentId;
+  const segmentId = (
+    envData.deploymentEnv === 'staging' ? devSegmentId : prodSegmentId
+  ) as string;
   if (segmentId) {
     segmentModel.load(segmentId);
     segmentModel.page();

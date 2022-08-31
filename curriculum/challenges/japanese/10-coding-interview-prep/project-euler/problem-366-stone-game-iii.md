@@ -1,7 +1,7 @@
 ---
 id: 5900f4da1000cf542c50ffed
 title: '問題 366: 石取りゲーム (3)'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302027
 dashedName: problem-366-stone-game-iii
 ---

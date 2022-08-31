@@ -25,7 +25,7 @@ Você sempre deve nomear variáveis que você não quer reatribuir, usando a pal
 
 # --instructions--
 
-Altere o código para que todas as variáveis sejam declaradas usando `let` ou `const`. Use `let` quando você quiser que a variável mude e `const` quando você quiser que a variável permaneça constante. Além disso, renomeie as variáveis declaradas com `const` para que estejam de acordo com as práticas comuns.
+Altere o código para que todas as variáveis sejam declaradas usando `let` ou `const`. Use `let` quando você quiser que a variável mude e `const` quando você quiser que a variável permaneça constante. Além disso, renomeie as variáveis declaradas com `const` para que estejam de acordo com as práticas comuns. Não altere as strings atribuídas às variáveis.
 
 # --hints--
 
@@ -45,8 +45,13 @@ assert.notMatch(code, /(fCC)/);
 `FCC` deve ser uma variável constante declarada com `const`.
 
 ```js
-assert.equal(FCC, 'freeCodeCamp');
 assert.match(code, /const\s+FCC/);
+```
+
+A string atribuída a `FCC` não deve ser alterada.
+
+```js
+assert.equal(FCC, 'freeCodeCamp');
 ```
 
 A variável `fact` deve ser declarada com `let`.

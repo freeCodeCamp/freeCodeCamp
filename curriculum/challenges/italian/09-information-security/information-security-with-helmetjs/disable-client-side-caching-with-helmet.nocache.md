@@ -8,7 +8,7 @@ dashedName: disable-client-side-caching-with-helmet-nocache
 
 # --description--
 
-Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza su [Replit](https://replit.com/github/freeCodeCamp/boilerplate-infosec), o clonato da [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
+Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza su <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, o clonato da <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 Se stai rilasciando un aggiornamento per il tuo sito web, e vuoi che gli utenti scarichino sempre la versione più recente, puoi (provare a) disabilitare la cache sul browser del client. Può essere utile anche in fase di sviluppo. Il caching ha benefici sulle prestazioni, che perderai, quindi usa questa opzione solo quando c'è una vera necessità.
 

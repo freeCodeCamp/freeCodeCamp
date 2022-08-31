@@ -1,7 +1,7 @@
 ---
 id: 5900f3851000cf542c50fe98
 title: '問題 25: 1000 桁のフィボナッチ数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301897
 dashedName: problem-25-1000-digit-fibonacci-number
 ---

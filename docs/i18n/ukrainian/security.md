@@ -2,7 +2,7 @@
 
 This document outlines our security policy for the codebases, platforms that we operate, and how to report vulnerabilities.
 
-## Reporting a Vulnerability
+## Повідомлення про вразливість
 
 > [!NOTE] If you think you have found a vulnerability, **please report it responsibly**. Do not create GitHub issues for security issues. Instead, follow this guide.
 

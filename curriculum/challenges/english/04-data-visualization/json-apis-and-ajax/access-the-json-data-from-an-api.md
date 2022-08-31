@@ -12,7 +12,7 @@ In the previous challenge, you saw how to get JSON data from the freeCodeCamp Ca
 
 Now you'll take a closer look at the returned data to better understand the JSON format. Recall some notation in JavaScript:
 
-<blockquote>[ ] -> Square brackets represent an array<br>{ } -> Curly brackets represent an object<br>" " -> Double quotes represent a string. They are also used for key names in JSON</blockquote>
+<blockquote>[ ] -> Square brackets represent an array.<br>{ } -> Curly brackets represent an object.<br>" " -> Double quotes represent a string. They are also used for key names in JSON.</blockquote>
 
 Understanding the structure of the data that an API returns is important because it influences how you retrieve the values you need.
 

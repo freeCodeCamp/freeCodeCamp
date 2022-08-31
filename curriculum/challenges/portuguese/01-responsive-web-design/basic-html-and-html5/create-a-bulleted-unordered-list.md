@@ -36,7 +36,7 @@ Crie um elemento `ul`.
 assert($('ul').length > 0);
 ```
 
-Você precisa de três elementos `li` dentro de seu elemento `ul`.
+Você precisa de três elementos `li` dentro do elemento `ul`.
 
 ```js
 assert($('ul li').length > 2);

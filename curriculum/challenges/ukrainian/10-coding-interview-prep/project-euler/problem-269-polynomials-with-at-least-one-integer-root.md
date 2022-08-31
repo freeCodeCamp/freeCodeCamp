@@ -1,7 +1,7 @@
 ---
 id: 5900f4791000cf542c50ff8c
 title: 'Приклад 269: Многочлени з щонайменше одним цілим коренем'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301918
 dashedName: problem-269-polynomials-with-at-least-one-integer-root
 ---

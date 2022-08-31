@@ -94,6 +94,7 @@ assert(/const\s*difference\s*\=\s*total\s*\-\s*maxCalories?/.test(code));
 <script>
   document.getElementById('calorie-form').onsubmit = calculate;
 
+--fcc-editable-region--
   function calculate(e) {
     e.preventDefault();
 
@@ -103,6 +104,7 @@ assert(/const\s*difference\s*\=\s*total\s*\-\s*maxCalories?/.test(code));
 
     const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
   }
+--fcc-editable-region--
 </script>
 ```
 

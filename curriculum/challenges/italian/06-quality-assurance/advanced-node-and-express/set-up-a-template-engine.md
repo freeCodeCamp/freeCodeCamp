@@ -10,25 +10,25 @@ dashedName: set-up-a-template-engine
 
 Lavorare su queste sfide ti porterà a scrivere il tuo codice utilizzando uno dei seguenti metodi:
 
-- Clonare [questo repository GitHub](https://github.com/freeCodeCamp/boilerplate-advancednode/) e completare queste sfide localmente.
-- Usare [la nostra bozza di progetto su Replit](https://replit.com/github/freeCodeCamp/boilerplate-advancednode) per completare queste sfide.
+- Clonare <a href="https://github.com/freeCodeCamp/boilerplate-advancednode/" target="_blank" rel="noopener noreferrer nofollow">questo repository GitHub</a> e completare queste sfide localmente.
+- Usare <a href="https://replit.com/github/freeCodeCamp/boilerplate-advancednode" target="_blank" rel="noopener noreferrer nofollow">la nostra bozza di progetto su Replit</a> per completare queste sfide.
 - Usare un costruttore di siti di tua scelta per completare il progetto. Assicurati di incorporare tutti i file della nostra repository GitHub.
 
 Quando hai finito, assicurati che una demo funzionante del tuo progetto sia ospitata da qualche parte di pubblico. Quindi invia l'URL nel campo `Solution Link`.
 
 Un modello di motore ti permette di utilizzare file di template statici (come quelli scritti in *Pug*) nella tua app. Al runtime, il template engine sostituisce le variabili in un file modello con valori effettivi che possono essere forniti dal tuo server. Quindi trasforma il template in un file HTML statico che viene inviato al client. Questo approccio facilita la progettazione di una pagina HTML e permette di visualizzare le variabili sulla pagina senza dover effettuare una chiamata API dal client.
 
-Aggiungi `pug@~3.0.0` come dipendenza nel tuo file `package.json`.
+`pug@~3.0.0` è già stato installato ed elencato come dipendenza nel file `package.json`.
 
 Express deve sapere quale templare engine si sta utilizzando. Utilizzeremo il metodo `set` per assegnare `pug` come valore di `view engine` della proprietà: `app.set('view engine', 'pug')`
 
-La tua pagina non verrà caricata finché non esegui correttamente il rendering del file index nella directory `views/pug`.
+La tua pagina sarà vuota finché non esegui correttamente il rendering del file index nella directory `views/pug`.
 
-Modifica l’argomento della dichiarazione `res.render()` nella rotta `/` in modo che sia il percorso di file per la directory `views/pug`. Il percorso può essere un percorso relativo (relativo alle viste), o un percorso assoluto, e non richiede un'estensione del file.
+Per renderizzare il modello `pug`, hai bisogno di usare `res.render()` nella rotta `/`. Passa il percorso del file alla directory `views/pug` come argomento del metodo. Il percorso può essere un percorso relativo (relativo a views), o un percorso assoluto, e non richiede un'estensione del file.
 
-Se tutto è andato come previsto, la tua home page dell'app smetterà di mostrare il messaggio "`Pug template is not defined.`" e ora mostrerà un messaggio che indica che hai reso con successo il modello Pug!
+Se tutto è andato come previsto, la tua home page dell'app non sarà più vuota e mostrerà un messaggio che indica che il rendering del modello Pug è avvenuto con successo!
 
-Invia la tua pagina quando pensi che sia corretto. Se incontri degli errori, puoi controllare il progetto completato fino a questo punto [qui](https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791).
+Invia la tua pagina quando pensi che sia corretto. Se stai avendo errori, puoi vedere <a href="https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791" target="_blank" rel="noopener noreferrer nofollow">il progetto completato fino a questo punto</a>.
 
 # --hints--
 

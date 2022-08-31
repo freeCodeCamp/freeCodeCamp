@@ -1,7 +1,7 @@
 ---
 id: 5900f5311000cf542c510043
 title: '問題 452: 長い積'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302125
 dashedName: problem-452-long-products
 ---

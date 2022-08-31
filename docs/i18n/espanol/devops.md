@@ -197,7 +197,7 @@ Actualmente una versión de prueba beta pública está disponible en:
 
 El equipo de desarrollo fusiona los cambios de la rama  `prod-staging` a `prod-current` cuando publican los cambios. El commit más reciente debe ser lo que ves en vivo en el sitio.
 
-Puedes identificar la versión exacta desplegada visitando los registros de compilación y despliegue disponibles en la sección de estado. Alternativamente, puedes enviarnos un ping en la [sala de chat de colaboradores](https://chat.freecodecamp.org/channel/contributors) para una confirmación.
+Puedes identificar la versión exacta desplegada visitando los registros de compilación y despliegue disponibles en la sección de estado. Alternatively you can also ping us in the [contributors chat room](https://discord.gg/PRyKn3Vbay) for a confirmation.
 
 ### Limitaciones Conocidas
 
@@ -466,7 +466,7 @@ Aprovisionamiento de MVs con el código
 
    ```console
    cd api-server
-   pm2 start "DEBUG=fcc* node lib/production-start.js"  -i max --max-memory-restart 600M --name org
+   pm2 reload ecosystem.config.js
    ```
 
 ### Registro de eventos y monitoreo

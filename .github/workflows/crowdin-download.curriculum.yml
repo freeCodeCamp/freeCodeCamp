@@ -1,4 +1,4 @@
-name: Crowdin Curriculum Download
+name: i18n - Download Curriculum
 on:
   workflow_dispatch:
   schedule:
@@ -18,7 +18,7 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@v3
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
         with:
           token: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
 
@@ -194,6 +194,35 @@ jobs:
           # downloads
           download_translations: true
           download_language: ja
+          skip_untranslated_files: true
+          export_only_approved: true
+
+          push_translations: false
+
+          # pull-request
+          create_pull_request: false
+
+          # global options
+          config: './crowdin-config.yml'
+          base_url: ${{ secrets.CROWDIN_BASE_URL_FCC }}
+
+          # Uncomment below to debug
+          # dryrun_action: true
+
+      ##### Download German #####
+      - name: Crowdin Download German Translations
+        uses: crowdin/github-action@master
+        # options: https://github.com/crowdin/github-action/blob/master/action.yml
+        with:
+          # uploads
+          upload_sources: false
+          upload_translations: false
+          auto_approve_imported: false
+          import_eq_suggestions: false
+
+          # downloads
+          download_translations: true
+          download_language: de
           skip_untranslated_files: true
           export_only_approved: true
 

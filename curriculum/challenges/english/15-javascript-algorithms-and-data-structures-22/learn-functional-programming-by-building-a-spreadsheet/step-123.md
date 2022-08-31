@@ -86,6 +86,7 @@ const highPrecedence = str => {
 };
 
 const isEven = num => num % 2 === 0;
+--fcc-editable-region--
 
 const spreadsheetFunctions = {
   "": x => x,
@@ -98,6 +99,7 @@ const spreadsheetFunctions = {
   has2: arr => arr.includes(2),
   nodups: arr => arr.reduce((a, x) => a.includes(x) ? a : a.concat(x), [])
 };
+--fcc-editable-region--
 
 
 

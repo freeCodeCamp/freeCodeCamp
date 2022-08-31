@@ -41,7 +41,7 @@ Nenhuma ação adicional é necessária quando o arquivo terminou de ser revisad
 
 ## Tornando-se um revisor
 
-Se você tiver qualquer dúvida, ou estiver interessado em se tornar um revisor, sinta-se a vontade em nos enviar uma mensagem no nosso [ chat de contribuidores](https://chat.freecodecamp.org/channel/contributors). Vamos te dar acesso se você já estiver contribuindo para freeCodeCamp por um tempo.
+Se você tiver qualquer dúvida, ou estiver interessado em se tornar um revisor, sinta-se a vontade em nos enviar uma mensagem no nosso [ chat de contribuidores](https://discord.gg/PRyKn3Vbay). Vamos te dar acesso se você já estiver contribuindo para freeCodeCamp por um tempo.
 
 Nosso time de desenvolvedores e times de moderadores da comunidade está sempre procurando por voluntários gentis como você, que nos ajuda a deixar traduções de alta qualidade disponíveis para o mundo.
 
@@ -49,6 +49,6 @@ Nosso time de desenvolvedores e times de moderadores da comunidade está sempre 
 
 ## Criando um canal no chat para um idioma
 
-Para a maior parte das mensagens, encorajamos você a usar o [chat de contribuidores](https://chat.freecodecamp.org/channel/contributors) para todas as interações. Entretanto, se o time de voluntários crescer para um idioma específico, nós consideramos criar um canal adicional para o idioma.
+Para a maior parte das mensagens, encorajamos você a usar o [chat de contribuidores](https://discord.gg/PRyKn3Vbay) para todas as interações. Entretanto, se o time de voluntários crescer para um idioma específico, nós consideramos criar um canal adicional para o idioma.
 
 Se você já é um revisor e está interessado em ter um canal dedicado a um idioma específico, [preencha nosso formulário](https://forms.gle/XU5CyutrYCgDYaVZA).

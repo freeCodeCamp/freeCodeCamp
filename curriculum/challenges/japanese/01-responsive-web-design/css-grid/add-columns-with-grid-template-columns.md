@@ -9,7 +9,7 @@ dashedName: add-columns-with-grid-template-columns
 
 # --description--
 
-グリッド要素を作成するだけでは、あまり違いはありません。 グリッド構造も定義する必要があります。 グリッドに列を追加するには、下記のようにグリッドコンテナに `grid-template-columns` プロパティを設定します:
+グリッド要素を作成するだけでは、あまり違いはありません。 グリッド構造も定義する必要があります。 グリッドに列を追加するには、下記のようにグリッドコンテナーに `grid-template-columns` プロパティを設定します:
 
 ```css
 .container {
@@ -22,7 +22,7 @@ dashedName: add-columns-with-grid-template-columns
 
 # --instructions--
 
-グリッドコンテナに、各幅 `100px` の列を 3 列作成してください。
+グリッドコンテナーに、各幅 `100px` の列を 3 列作成してください。
 
 # --hints--
 

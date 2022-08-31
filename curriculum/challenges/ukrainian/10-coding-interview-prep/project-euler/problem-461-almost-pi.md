@@ -1,7 +1,7 @@
 ---
 id: 5900f53a1000cf542c51004c
 title: 'Завдання 461: Майже число пі'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302136
 dashedName: problem-461-almost-pi
 ---

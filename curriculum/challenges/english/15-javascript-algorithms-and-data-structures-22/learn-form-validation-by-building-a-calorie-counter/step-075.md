@@ -176,9 +176,11 @@ assert(
     const calInputs = Array.from(
       document.getElementsByClassName('extra-cal-control')
     );
+--fcc-editable-region--
 
     calInputs.forEach(input => input.remove());
   };
+--fcc-editable-region--
 </script>
 ```
 

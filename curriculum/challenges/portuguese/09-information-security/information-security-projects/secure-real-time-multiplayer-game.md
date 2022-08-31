@@ -8,15 +8,26 @@ dashedName: secure-real-time-multiplayer-game
 
 # --description--
 
-Desenvolva um jogo multijogador em tempo real 2D usando a API do canvas do HTML e [Socket.io](https://socket.io/), que é funcionalmente similar ao seguinte: <https://secure-real-time-multiplayer-game.freecodecamp.rocks/>. Trabalhar nesse projeto vai fazer com que você escreva seu código usando um dos seguintes métodos:
+Desenvolva um jogo multijogador 2D em tempo real usando a API do Canvas do HTML e o Socket.io que seja funcionalmente similar a este: <a href="https://secure-real-time-multiplayer-game.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://secure-real-time-multiplayer-game.freecodecamp.rocks/</a>. Trabalhar nesse projeto vai fazer com que você escreva seu código usando um dos seguintes métodos:
 
--   Clone [este repositório do GitHub](https://github.com/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game/) e complete o projeto localmente.
--   Use [nosso projeto inicial do Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game) para completar o projeto.
+-   Clone <a href="https://github.com/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game/" target="_blank" rel="noopener noreferrer nofollow">este repositório do GitHub</a> e complete o projeto localmente.
+-   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game" target="_blank" rel="noopener noreferrer nofollow">nosso projeto inicial do Replit</a> para completar o projeto.
 -   Use um construtor de site de sua escolha para completar o projeto. Certifique-se de incorporar todos os arquivos do nosso repositório no GitHub.
 
 Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Em seguida, envie o URL para ela no campo `Solution Link`. Como opção, envie também um link para o código-fonte do projeto no campo `GitHub Link`.
 
 # --instructions--
+
+Crie um jogo multijogador seguro no qual cada jogador pode mover seu avatar, há pelo menos um item colecionável e a classificação dos jogadores é calculada com base na pontuação de cada um.
+
+Para obter detalhes, consulte os testes abaixo.
+
+Certifique-se de que o jogo é seguro! Incluir estas medidas de segurança:
+
+- O client não deve ser capaz de adivinhar/descobrir o tipo de MIME
+- Evitar ataques XSS
+- Não faça o cache de nada que seja do site da web no client
+- Os cabeçalhos dizem que o site é alimentado por `PHP 7.4.3`
 
 **Observação**: `helmet@^3.21.3` é necessário para as histórias de usuários. Isto significa que você precisará usar a versão anterior da documentação do Helmet, para obter informações sobre como obter as histórias de usuários.
 

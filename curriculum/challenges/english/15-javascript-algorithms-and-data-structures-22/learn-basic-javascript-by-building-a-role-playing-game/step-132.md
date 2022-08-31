@@ -298,6 +298,7 @@ function goFight() {
   monsterHealthText.innerText = monsterHealth;
 }
 
+--fcc-editable-region--
 function attack() {
   text.innerText = "The " + monsters[fighting].name + " attacks.";
   text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
@@ -320,6 +321,7 @@ function attack() {
     text.innerText += " Your " +  inventory.pop() + " breaks.";
   }
 }
+--fcc-editable-region--
 
 function getMonsterAttackValue(level) {
   const hit = (level * 5) - (Math.floor(Math.random() * xp));

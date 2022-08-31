@@ -8,7 +8,7 @@ dashedName: chain-middleware-to-create-a-time-server
 
 # --description--
 
-Middleware can be mounted at a specific route using `app.METHOD(path, middlewareFunction)`. Middleware can also be chained inside route definition.
+Middleware can be mounted at a specific route using `app.METHOD(path, middlewareFunction)`. Middleware can also be chained within a route definition.
 
 Look at the following example:
 
@@ -49,7 +49,7 @@ The /now endpoint should have mounted middleware
   );
 ```
 
-The /now endpoint should return a time that is +/- 20 secs from now
+The `/now` endpoint should return the current time.
 
 ```js
 (getUserInput) =>

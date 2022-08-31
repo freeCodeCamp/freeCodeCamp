@@ -164,9 +164,11 @@ function goStore() {
   update(locations[1]);
 }
 
+--fcc-editable-region--
 function goCave() {
   console.log("Going to cave.");
 }
+--fcc-editable-region--
 
 function fightDragon() {
   console.log("Fighting dragon.");

@@ -22,10 +22,10 @@ function* tryToShowCodeAllySaga() {
     yield put(showCodeAlly());
   } else {
     try {
-      const response = yield call(postUserToken);
+      const { data } = yield call(postUserToken);
 
-      if (response?.userToken) {
-        yield put(updateUserToken(response.userToken));
+      if (data?.userToken) {
+        yield put(updateUserToken(data.userToken));
         yield put(showCodeAlly());
       } else {
         yield put(createFlashMessage(startProjectErrMessage));

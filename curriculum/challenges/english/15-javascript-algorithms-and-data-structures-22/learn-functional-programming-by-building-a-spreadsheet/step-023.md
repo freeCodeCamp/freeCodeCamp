@@ -77,11 +77,13 @@ const infixEval = (str, regex) =>
     infixToFunction[fn](parseFloat(arg1), parseFloat(arg2))
   );
 
+--fcc-editable-region--
 const highPrecedence = str => {
   const regex = /([0-9.]+)([*\/])([0-9.]+)/;
   const str2 = infixEval(str, regex);
   return str === str2 ? str : "";
 };
+--fcc-editable-region--
 
 
 </script>

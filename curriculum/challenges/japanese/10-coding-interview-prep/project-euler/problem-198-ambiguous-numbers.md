@@ -1,7 +1,7 @@
 ---
 id: 5900f4331000cf542c50ff45
 title: '問題 198: 曖昧数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301836
 dashedName: problem-198-ambiguous-numbers
 ---

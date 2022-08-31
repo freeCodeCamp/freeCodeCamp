@@ -1,14 +1,14 @@
 ---
 id: 59713bd26bdeb8a594fb9413
 title: Contare le monete
-challengeType: 5
+challengeType: 1
 forumTopicId: 302238
 dashedName: count-the-coins
 ---
 
 # --description--
 
-Ci sono quattro tipi di monete comuni nella valuta degli [Stati Uniti d'America](https://it.wikipedia.org/wiki/Stati_Uniti_d%27America):
+Ci sono quattro tipi di monete comuni nel dollaro americano:
 
 <ul>
   <li>quarter (25 centesimi)</li>

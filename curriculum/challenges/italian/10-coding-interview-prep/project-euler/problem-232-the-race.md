@@ -1,7 +1,7 @@
 ---
 id: 5900f4551000cf542c50ff67
 title: 'Problema 232: La Gara'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301876
 dashedName: problem-232-the-race
 ---

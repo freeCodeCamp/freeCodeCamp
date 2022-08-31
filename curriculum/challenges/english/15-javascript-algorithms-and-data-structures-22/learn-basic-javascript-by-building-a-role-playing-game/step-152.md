@@ -162,6 +162,7 @@ const monsters = [
   }
 ];
 
+--fcc-editable-region--
 const locations = [
   {
     name: "town square",
@@ -212,6 +213,7 @@ const locations = [
     text: "You find a secret game. Pick a number above. Ten numbers will be randomly chosen between 0 and 10. If the number you choose matches one of the random numbers, you win!"
   }
 ];
+--fcc-editable-region--
 
 // initialize buttons
 button1.onclick = goStore;

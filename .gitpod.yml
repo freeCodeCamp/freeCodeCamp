@@ -14,6 +14,10 @@ ports:
     onOpen: ignore
   - port: 9230 # client node debug
     onOpen: ignore
+  - port: 3200 # challenge editor api
+    visibility: public
+  - port: 3300 # challenge editor client
+    visibility: public
 
 tasks:
   - before: |
@@ -22,6 +26,8 @@ tasks:
       export HOME_LOCATION=$(gp url 8000)
       export API_LOCATION=$(gp url 3000)
       export CYPRESS_BASE_URL=$(gp url 8000)
+      export REACT_APP_CHALLENGE_EDITOR_API_LOCATION=$(gp url 3200)
+      export CHALLENGE_EDITOR_CLIENT_LOCATION=$(gp url 3300)
       ' >> ~/.bashrc;
       exit;
 

@@ -317,6 +317,10 @@
       "type": "boolean",
       "default": false
     },
+    "keyboardShortcuts": {
+      "type": "boolean",
+      "default": false
+    },
     "profileUI": {
       "type": "object",
       "default": {

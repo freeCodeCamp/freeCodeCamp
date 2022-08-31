@@ -170,10 +170,12 @@ function fightDragon() {
   console.log("Fighting dragon.");
 }
 
+--fcc-editable-region--
 function buyHealth() {
   gold -= 10;
   health += 10;
 }
+--fcc-editable-region--
 
 function buyWeapon() {
 }

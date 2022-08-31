@@ -130,8 +130,10 @@ button1.onclick = goStore;
 button2.onclick = goCave;
 button3.onclick = fightDragon;
 
+--fcc-editable-region--
 function goStore() {
 }
+--fcc-editable-region--
 
 </script>
 ```

@@ -25,14 +25,14 @@ const alpha = {
   26:"A"
 };
 
-alpha[2];
-alpha[24];
+const thirdLetter = alpha[2];
+const lastLetter = alpha[24];
 
 const value = 2;
-alpha[value];
+const valueLookup = alpha[value];
 ```
 
-`alpha[2]` は文字列 `Y`、`alpha[24]` は文字列 `C`、`alpha[value]` は文字列 `Y` となります。
+`thirdLetter` は文字列 `Y`、`lastLetter` は文字列 `C`、`valueLookup` は文字列 `Y` となります。
 
 # --instructions--
 

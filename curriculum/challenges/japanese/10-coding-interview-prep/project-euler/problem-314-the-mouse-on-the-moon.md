@@ -1,7 +1,7 @@
 ---
 id: 5900f4a71000cf542c50ffb9
 title: '問題 314: 『小鼠 月世界を征服』'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301970
 dashedName: problem-314-the-mouse-on-the-moon
 ---

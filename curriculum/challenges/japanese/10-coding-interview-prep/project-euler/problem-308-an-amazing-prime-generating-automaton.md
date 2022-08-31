@@ -1,7 +1,7 @@
 ---
 id: 5900f4a11000cf542c50ffb3
 title: '問題 308: 驚くべき素数生成オートマトン'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301962
 dashedName: problem-308-an-amazing-prime-generating-automaton
 ---

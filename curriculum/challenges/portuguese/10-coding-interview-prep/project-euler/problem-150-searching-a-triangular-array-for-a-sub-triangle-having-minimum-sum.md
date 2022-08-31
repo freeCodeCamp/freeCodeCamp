@@ -2,7 +2,7 @@
 id: 5900f4031000cf542c50ff15
 title: >-
   Problema 150: Procura de uma matriz triangular para um subtriângulo com a soma mínima
-challengeType: 5
+challengeType: 1
 forumTopicId: 301781
 dashedName: problem-150-searching-a-triangular-array-for-a-sub-triangle-having-minimum-sum
 ---

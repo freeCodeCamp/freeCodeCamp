@@ -1,7 +1,7 @@
 ---
 id: 594810f028c0303b75339ad2
 title: Prodotto vettoriale
-challengeType: 5
+challengeType: 1
 forumTopicId: 302342
 dashedName: vector-cross-product
 ---

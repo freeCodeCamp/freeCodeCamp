@@ -58,10 +58,12 @@ export const DonationOptionsText = (): JSX.Element => {
 export const DonationOptionsAlertText = (): JSX.Element => {
   const { t } = useTranslation();
   return (
-    <p>
+    <p data-cy='donate.bigger-donation'>
       <Trans>donate.bigger-donation</Trans>{' '}
       <Trans i18nKey='donate.other-ways'>
-        <a href={t('links:donate.other-ways-url')}>placeholder</a>
+        <a data-cy='donate-link' href={t('links:donate.other-ways-url')}>
+          placeholder
+        </a>
       </Trans>
     </p>
   );

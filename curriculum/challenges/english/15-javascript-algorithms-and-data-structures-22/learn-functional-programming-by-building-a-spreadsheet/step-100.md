@@ -152,6 +152,7 @@ window.onload = () => {
   });
 };
 
+--fcc-editable-region--
 const update = event => {
   const element = event.target;
   const value = element.value.replace(/\s/g, "");
@@ -159,6 +160,7 @@ const update = event => {
     element.value = evalFormula(value.slice(1));
   }
 };
+--fcc-editable-region--
 
 // console.log(spreadsheetFunctions["random"](1, 1000) === spreadsheetFunctions["random"](1, 1000))
 

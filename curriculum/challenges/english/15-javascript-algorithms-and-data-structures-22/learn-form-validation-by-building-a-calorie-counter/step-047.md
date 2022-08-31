@@ -92,6 +92,7 @@ assert(code.replace(/\s/g, '').match(/output\.appendChild\(consumed\)/));
 <script>
   document.getElementById('calorie-form').onsubmit = calculate;
 
+--fcc-editable-region--
   function calculate(e) {
     e.preventDefault();
 
@@ -129,6 +130,7 @@ assert(code.replace(/\s/g, '').match(/output\.appendChild\(consumed\)/));
     const consumed = document.createElement('h4');
     consumed.innerHTML = `${total} Consumed Calories`;
   }
+--fcc-editable-region--
 </script>
 ```
 

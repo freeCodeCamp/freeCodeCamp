@@ -10,7 +10,7 @@ dashedName: authentication-with-socket-io
 
 Atualmente, você não pode determinar quem está conectado ao socket da web. Embora `req.user` contenha o objeto do usuário,isso só ocorre quando o usuário interage com o servidor web. Com sockets da web, você não tem `req` (solicitação) e, portanto, não tem dados do usuário. Uma maneira de resolver o problema de saber quem está conectando ao socket da web é analisar e decodificar o cookie que contém a sessão do Passport e desserializá-lo para obter o objeto do usuário. Por sorte, existe um pacote no NPM só para este efeito, que transforma uma tarefa que antes era complexa em algo simples!
 
-Adicione `passport.socketio@~3.7.0`, `connect-mongo@~3.2.0` e `cookie-parser@~1.4.5` como dependências e solicite-as como `passportSocketIo`, `MongoStore` e `cookieParser`, respectivamente. Além disso, precisamos inicializar uma nova store de memória, a partir do `express-session` que solicitamos anteriormente. Deve ficar assim:
+`passport.socketio@~3.7.0`, `connect-mongo@~3.2.0` e `cookie-parser@~1.4.5` já foram instalados como dependências. Solicite-os como `passportSocketIo`, `MongoStore` e `cookieParser`, respectivamente. Além disso, precisamos inicializar uma nova store de memória, a partir do `express-session` que solicitamos anteriormente. Deve ficar assim:
 
 ```js
 const MongoStore = require('connect-mongo')(session);
@@ -65,7 +65,7 @@ console.log('user ' + socket.request.user.name + ' connected');
 
 Ele vai logar no console do servidor que está conectado!
 
-Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto até este momento [aqui](https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254).
+Envie sua página quando você achar que ela está certa. Se você encontrar erros, pode conferir o projeto até este momento em <a href="https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254" target="_blank" rel="noopener noreferrer nofollow">https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254</a>.
 
 # --hints--
 

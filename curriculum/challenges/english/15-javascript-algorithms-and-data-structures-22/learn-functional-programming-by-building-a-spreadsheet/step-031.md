@@ -91,6 +91,7 @@ const spreadsheetFunctions = {
   "": x => x
 };
 
+--fcc-editable-region--
 const applyFn = str => {
   const noHigh = highPrecedence(str);
   const infix = /([0-9.]+)([+-])([0-9.]+)/;
@@ -98,6 +99,7 @@ const applyFn = str => {
   const regex = /([a-z]*)\(([0-9., ]*)\)(?!.*\()/i;
   const toNumberList = args => args.split(",");
 }
+--fcc-editable-region--
 
 
 </script>

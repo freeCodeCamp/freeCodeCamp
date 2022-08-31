@@ -28,6 +28,12 @@ Build `myStr` over several lines by concatenating these two strings: `This is th
 
 # --hints--
 
+`myStr` should have a single space character between the two strings.
+
+```js
+assert(/sentence\. This/.test(myStr));
+```
+
 `myStr` should have a value of the string `This is the first sentence. This is the second sentence.`
 
 ```js

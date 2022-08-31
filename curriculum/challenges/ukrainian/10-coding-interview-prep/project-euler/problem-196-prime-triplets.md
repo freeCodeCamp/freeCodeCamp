@@ -1,7 +1,7 @@
 ---
 id: 5900f4301000cf542c50ff42
 title: 'Завдання 196: Прості триплети'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301834
 dashedName: problem-196-prime-triplets
 ---

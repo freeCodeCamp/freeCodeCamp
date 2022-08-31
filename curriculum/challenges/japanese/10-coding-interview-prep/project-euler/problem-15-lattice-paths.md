@@ -1,7 +1,7 @@
 ---
 id: 5900f37b1000cf542c50fe8e
 title: '問題 15: 格子の経路'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301780
 dashedName: problem-15-lattice-paths
 ---

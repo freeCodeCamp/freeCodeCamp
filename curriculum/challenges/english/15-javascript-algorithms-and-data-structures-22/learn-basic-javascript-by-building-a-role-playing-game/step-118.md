@@ -157,6 +157,7 @@ const monsters = [
   }
 ];
 
+--fcc-editable-region--
 const locations = [
   {
     name: "town square",
@@ -195,6 +196,7 @@ const locations = [
     text: "You die. ☠️"
   }
 ];
+--fcc-editable-region--
 
 // initialize buttons
 button1.onclick = goStore;
