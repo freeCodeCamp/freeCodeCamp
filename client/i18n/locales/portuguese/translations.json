@@ -286,7 +286,7 @@
     "percent-complete": "{{percent}}% completo",
     "tried-rsa": "Se você já tentou usar o método de <0>ler, pesquisar e perguntar</0>, então pode pedir ajuda no fórum freeCodeCamp.",
     "rsa": "Leia, pesquise, pergunte",
-    "rsa-forum": "<strong>Before making a new post</strong> please see if your question has <0>already been answered on the forum</0>.",
+    "rsa-forum": "<strong>Antes de fazer uma nova publicação</strong>, certifique-se de que sua pergunta <0>ainda não foi respondida no fórum</0>.",
     "reset": "Reiniciar esta aula?",
     "reset-warn": "Tem certeza de que deseja reiniciar esta lição? Os editores e testes serão reiniciados.",
     "reset-warn-2": "Isto não pode ser desfeito",
@@ -451,6 +451,7 @@
     "change-theme": "Faça login para mudar o tema.",
     "translation-pending": "Ajude-nos a traduzir",
     "certification-project": "Projeto de certificação",
+    "iframe-preview": "{{title}} preview",
     "iframe-alert": "Normalmente, este link levaria você para outro site da web! Funciona. Esse é um link para: {{externalLink}}",
     "document-notfound": "documento não encontrado"
   },

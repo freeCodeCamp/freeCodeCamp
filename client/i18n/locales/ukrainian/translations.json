@@ -451,6 +451,7 @@
     "change-theme": "Увійдіть, щоб змінити тему.",
     "translation-pending": "Допоможіть нам з перекладом",
     "certification-project": "Сертифікаційний проєкт",
+    "iframe-preview": "{{title}} preview",
     "iframe-alert": "Зазвичай це посилання перенесло б вас на інший вебсайт! Воно працює. Це посилання на: {{externalLink}}",
     "document-notfound": "документ не знайдено"
   },
