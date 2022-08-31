@@ -251,12 +251,14 @@ function fightSlime() {
   goFight();
 }
 
+--fcc-editable-region--
 function fightBeast() {
 }
 
 function fightDragon() {
   console.log("Fighting dragon.");
 }
+--fcc-editable-region--
 
 function goFight() {
 }

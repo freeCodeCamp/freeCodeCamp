@@ -85,9 +85,11 @@ const spreadsheetFunctions = {
   "": x => x
 };
 
+--fcc-editable-region--
 const applyFn = str => {
 
 }
+--fcc-editable-region--
 
 
 </script>

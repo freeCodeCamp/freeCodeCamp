@@ -148,6 +148,7 @@ window.onload = () => {
   });
 };
 
+--fcc-editable-region--
 const update = event => {
   console.log(highPrecedence("2*2") === highPrecedence("2*2"));
   const element = event.target;
@@ -156,6 +157,7 @@ const update = event => {
     element.value = evalFormula(value.slice(1));
   }
 };
+--fcc-editable-region--
 
 
 </script>

@@ -1,7 +1,7 @@
 ---
 id: 5900f3f21000cf542c50ff05
 title: 'Problema 134: connessioni di coppie di numeri primi'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301762
 dashedName: problem-134-prime-pair-connection
 ---

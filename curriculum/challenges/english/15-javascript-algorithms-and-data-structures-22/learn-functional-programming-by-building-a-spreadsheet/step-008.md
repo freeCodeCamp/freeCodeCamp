@@ -61,7 +61,9 @@ assert(infixToFunction['+'].toString() === addVar.toString());
 
 const addVar = (x, y) => x + y;
 
+--fcc-editable-region--
 const infixToFunction = {};
+--fcc-editable-region--
 
 
 </script>

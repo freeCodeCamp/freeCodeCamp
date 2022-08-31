@@ -1,14 +1,14 @@
 ---
 id: 5eaf48389ee512d4d103684b
 title: Números autodescritivos
-challengeType: 5
+challengeType: 1
 forumTopicId: 385289
 dashedName: self-describing-numbers
 ---
 
 # --description--
 
-Há vários números inteiros chamados de ["autodescritivos"](https://en.wikipedia.org/wiki/Self-descriptive_number).
+Há vários inteiros chamados "autodescritivos" ou "de autodescrição".
 
 Diz-se que um número inteiro é "autodescritivo" quando ele tem uma propriedade que, quando as posições dos dígitos são rotuladas de 0 a N-1, o algarismo em cada posição é igual ao número de vezes em que o algarismo aparece no número.
 

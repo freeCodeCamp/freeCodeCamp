@@ -1,14 +1,14 @@
 ---
 id: 5e4ce2a1ac708cc68c1df25d
 title: Multiplicação de números grandes
-challengeType: 5
+challengeType: 1
 forumTopicId: 385269
 dashedName: long-multiplication
 ---
 
 # --description--
 
-Implemente explicitamente a [multiplicação de números grandes](https://en.wikipedia.org/wiki/long multiplication).
+Implemente explicitamente uma multiplicação longa.
 
 Esta é uma abordagem possível para a álgebra de números inteiros de precisão arbitrária.
 

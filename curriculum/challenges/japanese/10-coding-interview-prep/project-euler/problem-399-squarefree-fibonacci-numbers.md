@@ -1,7 +1,7 @@
 ---
 id: 5900f4fc1000cf542c51000e
 title: '問題 399: 無平方フィボナッチ数'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302064
 dashedName: problem-399-squarefree-fibonacci-numbers
 ---

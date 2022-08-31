@@ -1,14 +1,14 @@
 ---
 id: 5a23c84252665b21eecc8012
 title: Algoritmos de ordenação/ordenação fantoche
-challengeType: 5
+challengeType: 1
 forumTopicId: 302318
 dashedName: sorting-algorithmsstooge-sort
 ---
 
 # --description--
 
-Escreva uma função para executar a [ordenação fantoche](https://en.wikipedia.org/wiki/Stooge sort) em um array de números inteiros. A função deve retornar o array ordenado.
+Escreva uma função para executar ordenação Stooge Sort em um array de números inteiros. A função deve retornar o array ordenado.
 
 O algoritmo de ordenação fantoche é o seguinte:
 

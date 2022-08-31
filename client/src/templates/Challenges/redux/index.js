@@ -42,7 +42,8 @@ const initialState = {
     help: false,
     video: false,
     reset: false,
-    projectPreview: false
+    projectPreview: false,
+    shortcuts: false
   },
   projectFormValues: {},
   successMessage: 'Happy Coding!'
@@ -152,6 +153,7 @@ export const isVideoModalOpenSelector = state => state[ns].modal.video;
 export const isResetModalOpenSelector = state => state[ns].modal.reset;
 export const isProjectPreviewModalOpenSelector = state =>
   state[ns].modal.projectPreview;
+export const isShortcutsModalOpenSelector = state => state[ns].modal.shortcuts;
 export const isResettingSelector = state => state[ns].isResetting;
 
 export const isBuildEnabledSelector = state => state[ns].isBuildEnabled;
@@ -165,7 +167,7 @@ export const challengeDataSelector = state => {
   let challengeData = { challengeType };
   if (
     challengeType === challengeTypes.js ||
-    challengeType === challengeTypes.bonfire
+    challengeType === challengeTypes.jsProject
   ) {
     challengeData = {
       ...challengeData,

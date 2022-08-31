@@ -79,7 +79,9 @@ const infixEval = (str, regex) =>
   str.replace(regex, (_, arg1, fn, arg2) =>
     infixToFunction[fn](parseFloat(arg1), parseFloat(arg2)));
 
+--fcc-editable-region--
 const highPrecedence = str => str;
+--fcc-editable-region--
 
 
 </script>

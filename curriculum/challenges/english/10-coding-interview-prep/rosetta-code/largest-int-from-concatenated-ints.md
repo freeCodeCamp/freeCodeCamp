@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7edb
 title: Largest int from concatenated ints
-challengeType: 5
+challengeType: 1
 forumTopicId: 302298
 dashedName: largest-int-from-concatenated-ints
 ---

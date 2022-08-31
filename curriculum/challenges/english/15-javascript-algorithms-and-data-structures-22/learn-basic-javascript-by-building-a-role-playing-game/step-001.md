@@ -98,8 +98,10 @@ assert(health === 100);
 
 ```html
 <script>
+--fcc-editable-region--
 var xp = 0;
 
+--fcc-editable-region--
 </script>
 ```
 

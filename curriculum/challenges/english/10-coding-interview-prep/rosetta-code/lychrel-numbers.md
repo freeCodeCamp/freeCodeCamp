@@ -1,7 +1,7 @@
 ---
 id: 5ea2815a8640bcc6cb7dab3c
 title: Lychrel numbers
-challengeType: 5
+challengeType: 1
 forumTopicId: 385287
 dashedName: lychrel-numbers
 ---

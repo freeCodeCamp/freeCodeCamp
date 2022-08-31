@@ -1,7 +1,7 @@
 ---
 id: 5900f49b1000cf542c50ffae
 title: 'Завдання 303: Кратні числа з малими розрядами'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301957
 dashedName: problem-303-multiples-with-small-digits
 ---

@@ -94,12 +94,14 @@ assert(
 
 ```html
 <script>
+--fcc-editable-region--
   document.getElementById('calorie-form').onsubmit = calculate;
 
   function calculate(e) {
     e.preventDefault();
     document.getElementsByClassName('cal-control');
   }
+--fcc-editable-region--
 </script>
 ```
 

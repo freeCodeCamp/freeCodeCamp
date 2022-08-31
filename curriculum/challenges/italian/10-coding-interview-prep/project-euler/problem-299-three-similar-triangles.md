@@ -1,7 +1,7 @@
 ---
 id: 5900f4971000cf542c50ffaa
 title: 'Problema 299: Tre triangoli simili'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301951
 dashedName: problem-299-three-similar-triangles
 ---

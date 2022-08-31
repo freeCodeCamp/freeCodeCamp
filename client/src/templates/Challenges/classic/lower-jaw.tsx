@@ -10,10 +10,11 @@ import { useTranslation } from 'react-i18next';
 import TestFail from '../../../assets/icons/test-fail';
 import TestHint from '../../../assets/icons/test-hint';
 import TestPass from '../../../assets/icons/test-pass';
+import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
 
 interface LowerJawProps {
   hint?: string;
-  challengeIsCompleted?: boolean;
+  challengeIsCompleted: boolean;
   openHelpModal: () => void;
   tryToExecuteChallenge: () => void;
   tryToSubmitChallenge: () => void;
@@ -54,7 +55,7 @@ const LowerJaw = ({
 
   useEffect(() => {
     if (attemptsNumber && attemptsNumber > 0) {
-      //hide the feedback from SR untill the "Running tests" are displayed and removed.
+      //hide the feedback from SR until the "Running tests" are displayed and removed.
       setIsFeedbackHidden(true);
 
       //allow the lower jaw height to be picked up by the editor.
@@ -88,6 +89,8 @@ const LowerJaw = ({
       }, 500);
     }
 
+    setTestBtnariaHidden(challengeIsCompleted);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [challengeHasBeenCompleted]);
 
@@ -97,6 +100,14 @@ const LowerJaw = ({
       setTestFeedbackheight(testFeedbackRef.current.clientHeight);
     }
   });
+
+  /*
+    Return early in lifecycle based on the earliest available conditions to help the editor
+    calculate the correct editor gap for the lower jaw.
+
+    For consistency, use the persisted version if the conditions has been met before.
+  */
+  const earliestAvailableHint = hint || previousHint;
 
   const sentencePicker = useCallback(() => {
     const sentenceArray = [
@@ -129,18 +140,16 @@ const LowerJaw = ({
           </div>
           <div className='test-status-description'>
             <p className='status'>
-              {t('learn.congradulations')}
+              {t('learn.congratulations')}
               {submitKeyboardInstructions}
             </p>
           </div>
         </div>
       );
-
-      // show the hint if the previousHint is not set
-    } else if (hint || previousHint) {
-      const hintDiscription = `<h2 class="hint">${t('learn.hint')}</h2> ${
-        hint || previousHint
-      }`;
+    } else if (earliestAvailableHint) {
+      const hintDescription = `<h2 class="hint">${t(
+        'learn.hint'
+      )}</h2> ${earliestAvailableHint}`;
       return (
         <>
           <div className='test-status fade-in' aria-hidden={isFeedbackHidden}>
@@ -161,7 +170,7 @@ const LowerJaw = ({
             </div>
             <div
               className='hint-description'
-              dangerouslySetInnerHTML={{ __html: hintDiscription }}
+              dangerouslySetInnerHTML={{ __html: hintDescription }}
             />
           </div>
         </>
@@ -170,13 +179,14 @@ const LowerJaw = ({
   }, [
     attemptsNumber,
     challengeHasBeenCompleted,
-    hint,
+    earliestAvailableHint,
     isEditorInFocus,
     isFeedbackHidden,
-    previousHint,
     sentencePicker,
     t
   ]);
+
+  const showDesktopButton = window.innerWidth > MAX_MOBILE_WIDTH;
 
   const renderButtons = () => {
     return (
@@ -189,20 +199,20 @@ const LowerJaw = ({
           aria-hidden={testBtnariaHidden}
           onClick={tryToExecuteChallenge}
         >
-          {t('buttons.check-code')}
+          {showDesktopButton
+            ? t('buttons.check-code')
+            : t('buttons.check-code-2')}
           {isRunningTests && '...'}
         </button>
-        <div id='action-buttons-container'>
-          <button
-            id='submit-button'
-            aria-hidden={!challengeHasBeenCompleted}
-            className='btn btn-primary'
-            onClick={tryToSubmitChallenge}
-            ref={submitButtonRef}
-          >
-            {t('buttons.submit-and-go')}
-          </button>
-        </div>
+        <button
+          id='submit-button'
+          aria-hidden={!challengeHasBeenCompleted}
+          className='btn btn-primary'
+          onClick={tryToSubmitChallenge}
+          ref={submitButtonRef}
+        >
+          {t('buttons.submit-and-go')}
+        </button>
       </>
     );
   };

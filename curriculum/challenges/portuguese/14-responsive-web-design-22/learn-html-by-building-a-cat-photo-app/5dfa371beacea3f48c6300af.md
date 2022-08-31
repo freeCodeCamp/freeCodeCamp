@@ -9,7 +9,9 @@ dashedName: step-18
 
 Quando você adiciona um elemento de título menor à página, é implícito que você está iniciando uma nova subseção.
 
-Depois do último elemento `h2` do segundo elemento `section`, adicione um elemento `h3` com o texto `Things cats love:`.
+Depois do último elemento `h2` do segundo elemento `section`, adicione um elemento `h3` com este texto:
+
+`Things cats love:`
 
 # --hints--
 

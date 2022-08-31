@@ -23,12 +23,12 @@ assert(code.match(/\/\*\s*FOOTER\s*\*\//i));
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cafe Menu</title>
-    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <link href="styles.css" rel="stylesheet"/>
   </head>
   <body>
     <div class="menu">
@@ -73,6 +73,7 @@ assert(code.match(/\/\*\s*FOOTER\s*\*\//i));
         </section>
       </main>
       <hr class="bottom-line">
+      <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
@@ -80,7 +81,7 @@ assert(code.match(/\/\*\s*FOOTER\s*\*\//i));
       </footer>
     </div>
   </body>
-<html>
+</html>
 ```
 
 ```css

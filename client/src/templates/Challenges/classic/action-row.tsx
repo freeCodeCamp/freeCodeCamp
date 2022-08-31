@@ -1,28 +1,22 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { connect } from 'react-redux';
+
 import BreadCrumb from '../components/bread-crumb';
-import { resetChallenge } from '../redux';
 import EditorTabs from './editor-tabs';
 
 interface ActionRowProps {
   block: string;
   hasNotes: boolean;
   hasPreview: boolean;
-  isMultifileCertProject: boolean;
-  showInstructions: boolean;
+  isProjectBasedChallenge: boolean;
   showConsole: boolean;
   showNotes: boolean;
+  showInstructions: boolean;
   showPreview: boolean;
   superBlock: string;
   togglePane: (pane: string) => void;
-  resetChallenge: () => void;
   showBreadcrumbs?: boolean;
 }
-
-const mapDispatchToProps = {
-  resetChallenge
-};
 
 const ActionRow = ({
   hasNotes,
@@ -30,8 +24,9 @@ const ActionRow = ({
   togglePane,
   showNotes,
   showPreview,
-  showInstructions,
   showConsole,
+  showInstructions,
+  isProjectBasedChallenge,
   superBlock,
   showBreadcrumbs = true,
   block
@@ -45,15 +40,17 @@ const ActionRow = ({
         </div>
       )}
       <div className='tabs-row'>
-        <button
-          aria-expanded={showInstructions ? 'true' : 'false'}
-          className={
-            showInstructions ? 'btn-tab-primary' : 'btn-tab-primary--outline'
-          }
-          onClick={() => togglePane('showInstructions')}
-        >
-          Instructions
-        </button>
+        {!isProjectBasedChallenge && (
+          <button
+            aria-expanded={showInstructions ? 'true' : 'false'}
+            className={
+              showInstructions ? 'btn-tab-primary' : 'btn-tab-primary--outline'
+            }
+            onClick={() => togglePane('showInstructions')}
+          >
+            {t('learn.editor-tabs.instructions')}
+          </button>
+        )}
         <EditorTabs />
         <button
           aria-expanded={showConsole ? 'true' : 'false'}
@@ -93,4 +90,4 @@ const ActionRow = ({
 
 ActionRow.displayName = 'ActionRow';
 
-export default connect(null, mapDispatchToProps)(ActionRow);
+export default ActionRow;

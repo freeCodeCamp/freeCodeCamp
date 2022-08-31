@@ -41,7 +41,7 @@ O elemento `h1` deve ter a classe `blue-text`.
 assert($('h1').hasClass('blue-text'));
 ```
 
-O elemento `h1` deve ter o atributo `id` de valor `orange-text`.
+O elemento `h1` deve ter o `id` `orange-text`.
 
 ```js
 assert($('h1').attr('id') === 'orange-text');

@@ -1,7 +1,7 @@
 ---
 id: 5900f4eb1000cf542c50fffd
 title: 'Problem 382: Generating polygons'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302046
 dashedName: problem-382-generating-polygons
 ---

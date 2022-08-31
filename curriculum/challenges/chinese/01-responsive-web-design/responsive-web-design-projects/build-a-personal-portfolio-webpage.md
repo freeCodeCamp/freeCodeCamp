@@ -26,6 +26,8 @@ dashedName: build-a-personal-portfolio-webpage
 
 完成需求并通过下面的所有测试来完成这个项目。 赋予它你自己的个人风格。 编程愉快！
 
+**注意：** 请在你的 HTML 中添加 `<link rel="stylesheet" href="styles.css">` 以链接你的样式表并应用你的 CSS
+
 # --hints--
 
 你的作品集应该有一个 `id` 为 `welcome-section` 的欢迎部分。
@@ -35,7 +37,7 @@ const el = document.getElementById('welcome-section')
 assert(!!el);
 ```
 
-你的 `#welcom-section` 元素应该包含一个 `h1` 元素。
+你的 `#welcome-section` 元素应该包含一个 `h1` 元素。
 
 ```js
 assert.isAbove(
@@ -116,7 +118,9 @@ assert(!!el && el.target === '_blank')
 你的作品集应该至少有一个媒体查询。
 
 ```js
-assert.isAtLeast(new __helpers.CSSHelp(document).getCSSRules('media')?.length, 1);
+const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
+const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
+assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 ```
 
 你的 `#navbar` 元素应该始终位于视口的顶部。

@@ -1,7 +1,7 @@
 ---
 id: a2f1d72d9b908d0bd72bb9f6
 title: Creare una persona
-challengeType: 5
+challengeType: 1
 forumTopicId: 16020
 dashedName: make-a-person
 ---

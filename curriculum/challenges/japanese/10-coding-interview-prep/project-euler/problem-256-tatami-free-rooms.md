@@ -1,7 +1,7 @@
 ---
 id: 5900f46c1000cf542c50ff7e
 title: '問題 256: 畳を敷けない部屋'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301904
 dashedName: problem-256-tatami-free-rooms
 ---

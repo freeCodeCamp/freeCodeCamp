@@ -8,7 +8,7 @@ dashedName: compare-scopes-of-the-var-and-let-keywords
 
 # --description--
 
-Se non hai familiarità con `let`, guarda [questa sfida](/italian/learn/javascript-algorithms-and-data-structures/basic-javascript/explore-differences-between-the-var-and-let-keywords).
+Se non hai familiarità con `let`, vedi questa <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/explore-differences-between-the-var-and-let-keywords" target="_blank" rel="noopener noreferrer nofollow"> sfida sulle differenze tra <code>let</code> e <code>var</code></a>.
 
 Quando si dichiara una variabile con la parola chiave `var`, essa viene dichiarata globalmente, o localmente se dichiarata all'interno di una funzione.
 

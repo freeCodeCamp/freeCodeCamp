@@ -2,7 +2,6 @@ import { first } from 'lodash-es';
 import React, { useState, ReactElement } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import { sortChallengeFiles } from '../../../../../utils/sort-challengefiles';
-import { challengeTypes } from '../../../../utils/challenge-types';
 import { GoogleTagManager } from '../../../analytics/google-tag-manater';
 import { Segment } from '../../../analytics/segment';
 import {
@@ -64,6 +63,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         setShowNotes(!showNotes);
         break;
       default:
+        setShowInstructions(false);
         setShowConsole(false);
         setShowPreview(false);
         setShowNotes(false);
@@ -77,7 +77,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
   const {
     block,
-    challengeType,
     resizeProps,
     instructions,
     editor,
@@ -94,8 +93,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
   const challengeFile = getChallengeFile();
   const projectBasedChallenge = hasEditableBoundaries;
-  const isMultifileCertProject =
-    challengeType === challengeTypes.multifileCertProject;
   const displayPreview = showPreview && hasPreview;
   const displayNotes = projectBasedChallenge ? showNotes && hasNotes : false;
   const displayConsole = showConsole;
@@ -117,7 +114,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         <ActionRow
           block={block}
           hasNotes={hasNotes}
-          isMultifileCertProject={isMultifileCertProject}
+          isProjectBasedChallenge={projectBasedChallenge}
           showConsole={showConsole}
           showNotes={showNotes}
           showInstructions={showInstructions}

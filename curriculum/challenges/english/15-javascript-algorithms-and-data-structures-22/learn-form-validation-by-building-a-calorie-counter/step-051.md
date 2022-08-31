@@ -145,7 +145,10 @@ assert(
 
     output.setAttribute('class', 'bordered-class');
     output.style.backgroundColor = '#FFF9C4';
+--fcc-editable-region--
+
   }
+--fcc-editable-region--
 </script>
 ```
 

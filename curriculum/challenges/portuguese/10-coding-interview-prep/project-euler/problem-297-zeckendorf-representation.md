@@ -1,7 +1,7 @@
 ---
 id: 5900f4951000cf542c50ffa8
 title: 'Problema 297: Representação de Zeckendorf'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301949
 dashedName: problem-297-zeckendorf-representation
 ---

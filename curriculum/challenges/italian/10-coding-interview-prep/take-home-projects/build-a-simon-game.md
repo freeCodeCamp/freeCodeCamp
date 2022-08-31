@@ -8,9 +8,9 @@ dashedName: build-a-simon-game
 
 # --description--
 
-**Obiettivo:** Costruisci un'app [CodePen.io](https://codepen.io) funzionalmente simile a questa: [https://codepen.io/freeCodeCamp/full/obYBjE](https://codepen.io/freeCodeCamp/full/obYBjE).
+**Obiettivo:** crea un'app funzionalmente simile a questa: <a href="https://codepen.io/freeCodeCamp/full/obYBjE" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/obYBjE</a>.
 
-Soddisfa le seguenti [user story](https://en.wikipedia.org/wiki/User_story). Utilizza le librerie o le API di cui hai bisogno. Usa il tuo stile personale.
+Soddisfa le user story qui sotto e supera tutti i test. Utilizza le librerie o le API di cui hai bisogno. Usa il tuo stile personale.
 
 **User Story:** Mi viene presentata una serie casuale di pressione dei bottoni.
 
@@ -32,7 +32,7 @@ Soddisfa le seguenti [user story](https://en.wikipedia.org/wiki/User_story). Uti
 
 Quando hai finito, includi un link al tuo progetto su CodePen e clicca sul pulsante "Ho completato questa sfida".
 
-Puoi ottenere un feedback sul tuo progetto condividendolo sul forum [freeCodeCamp](https://forum.freecodecamp.org/c/project-feedback/409).
+Puoi ottenere un feedback sul tuo progetto condividendolo sul <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">forum di freeCodeCamp</a>.
 
 # --solutions--
 

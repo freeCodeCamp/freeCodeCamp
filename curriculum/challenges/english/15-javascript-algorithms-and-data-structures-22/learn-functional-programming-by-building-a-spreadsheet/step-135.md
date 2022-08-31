@@ -96,6 +96,7 @@ const median = nums => {
     : sorted[middle + 0.5];
 }; 
 
+--fcc-editable-region--
 const spreadsheetFunctions = {
   "": x => x,
   random: ([x, y]) => Math.floor(Math.random() * y + x),
@@ -110,6 +111,7 @@ const spreadsheetFunctions = {
   nodups: arr => arr.reduce((a, x) => a.includes(x) ? a : a.concat(x), []),
   range: arr => range(...arr)
 };
+--fcc-editable-region--
 
 
 

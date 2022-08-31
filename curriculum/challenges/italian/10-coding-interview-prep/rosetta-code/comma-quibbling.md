@@ -1,14 +1,14 @@
 ---
 id: 596e414344c3b2872167f0fe
 title: Cavillare
-challengeType: 5
+challengeType: 1
 forumTopicId: 302234
 dashedName: comma-quibbling
 ---
 
 # --description--
 
-Cavillare è un compito originariamente creato da Eric Lipper sul suo [blog](https://blogs.msdn.com/b/ericlippert/archive/2009/04/15/comma-quibbling.aspx).
+<a href="https://rosettacode.org/wiki/Comma_quibbling" target="_blank" rel="noopener noreferrer nofollow">Comma quibbling</a> è una sfida creata da Eric Lippert sul suo blog.
 
 # --instructions--
 
@@ -52,19 +52,19 @@ assert(typeof quibble(['ABC']) === 'string');
 assert.equal(quibble(testCases[0]), results[0]);
 ```
 
-`quibble(["ABC"])` dovrebbe restituire "{ABC}".
+`quibble(["ABC"])` dovrebbe restituire `"{ABC}"`.
 
 ```js
 assert.equal(quibble(testCases[1]), results[1]);
 ```
 
-`quibble(["ABC", "DEF"])` dovrebbe restituire "{ABC and DEF}".
+`quibble(["ABC", "DEF"])` dovrebbe restituire `"{ABC and DEF}"`.
 
 ```js
 assert.equal(quibble(testCases[2]), results[2]);
 ```
 
-`quibble(["ABC", "DEF", "G", "H"])` dovrebbe restituire "{ABC,DEF,G and H}".
+`quibble(["ABC", "DEF", "G", "H"])` dovrebbe restituire `"{ABC, DEF, G and H}"`.
 
 ```js
 assert.equal(quibble(testCases[3]), results[3]);
@@ -76,7 +76,7 @@ assert.equal(quibble(testCases[3]), results[3]);
 
 ```js
 const testCases = [[], ["ABC"], ["ABC", "DEF"], ["ABC", "DEF", "G", "H"]];
-const results = ["{}", "{ABC}", "{ABC and DEF}", "{ABC,DEF,G and H}"];
+const results = ["{}", "{ABC}", "{ABC and DEF}", "{ABC, DEF, G and H}"];
 ```
 
 ## --seed-contents--
@@ -93,7 +93,7 @@ function quibble(words) {
 ```js
 function quibble(words) {
   return "{" +
-    words.slice(0, words.length - 1).join(",") +
+    words.slice(0, words.length - 1).join(", ") +
    (words.length > 1 ? " and " : "") +
    (words[words.length - 1] || '') +
   "}";

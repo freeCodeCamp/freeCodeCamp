@@ -149,9 +149,11 @@ window.onload = () => {
   });
 };
 
+--fcc-editable-region--
 const update = event => {
   const element = event.target;
 };
+--fcc-editable-region--
 
 
 </script>

@@ -21,6 +21,7 @@ import { createSelector } from 'reselect';
 import store from 'store';
 
 import { debounce } from 'lodash-es';
+import { useTranslation } from 'react-i18next';
 import { Loader } from '../../../components/helpers';
 import { Themes } from '../../../components/settings/theme';
 import {
@@ -39,7 +40,10 @@ import {
 } from '../../../redux/prop-types';
 import { editorToneOptions } from '../../../utils/tone/editor-config';
 import { editorNotes } from '../../../utils/tone/editor-notes';
-import { challengeTypes } from '../../../../utils/challenge-types';
+import {
+  challengeTypes,
+  isFinalProject
+} from '../../../../utils/challenge-types';
 import {
   canFocusEditorSelector,
   challengeMetaSelector,
@@ -89,6 +93,7 @@ interface EditorProps {
   isResetting: boolean;
   isSignedIn: boolean;
   openHelpModal: () => void;
+  openResetModal: () => void;
   output: string[];
   resizeProps: ResizeProps;
   saveChallenge: () => void;
@@ -177,7 +182,8 @@ const mapDispatchToProps = {
   submitChallenge,
   initTests,
   stopResetting,
-  openHelpModal: () => openModal('help')
+  openHelpModal: () => openModal('help'),
+  openResetModal: () => openModal('reset')
 };
 
 const modeMap = {
@@ -234,6 +240,7 @@ const initialData: EditorProperties = {
 };
 
 const Editor = (props: EditorProps): JSX.Element => {
+  const { t } = useTranslation();
   const { editorRef, initTests } = props;
   // These refs are used during initialisation of the editor as well as by
   // callbacks.  Since they have to be initialised before editorWillMount and
@@ -244,6 +251,11 @@ const Editor = (props: EditorProps): JSX.Element => {
   const monacoRef: MutableRefObject<typeof monacoEditor | null> =
     useRef<typeof monacoEditor>(null);
   const dataRef = useRef<EditorProperties>({ ...initialData });
+
+  const submitChallengeDebounceRef = useRef(
+    debounce(props.submitChallenge, 1000, { leading: true, trailing: false })
+  );
+
   const player = useRef<{
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     sampler: any;
@@ -299,7 +311,8 @@ const Editor = (props: EditorProps): JSX.Element => {
       enabled: false
     },
     quickSuggestions: false,
-    suggestOnTriggerCharacters: false
+    suggestOnTriggerCharacters: false,
+    lineNumbersMinChars: 2
   };
 
   const getEditableRegionFromRedux = () => {
@@ -327,7 +340,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       dataRef.current.model ||
       monaco.editor.createModel(
         challengeFile?.contents ?? '',
-        modeMap[challengeFile?.ext ?? 'html']
+        modeMap[(challengeFile?.ext ?? 'html') as keyof typeof modeMap]
       );
     dataRef.current.model = model;
 
@@ -427,9 +440,12 @@ const Editor = (props: EditorProps): JSX.Element => {
       id: 'execute-challenge',
       label: 'Run tests',
       /* eslint-disable no-bitwise */
-      keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter],
+      keybindings: [
+        monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter,
+        monaco.KeyMod.WinCtrl | monaco.KeyCode.Enter
+      ],
       run: () => {
-        if (props.usesMultifileEditor) {
+        if (props.usesMultifileEditor && !isFinalProject(props.challengeType)) {
           if (challengeIsComplete()) {
             tryToSubmitChallenge();
           } else {
@@ -452,7 +468,10 @@ const Editor = (props: EditorProps): JSX.Element => {
     editor.addAction({
       id: 'save-editor-content',
       label: 'Save editor content',
-      keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S],
+      keybindings: [
+        monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S,
+        monaco.KeyMod.WinCtrl | monaco.KeyCode.KEY_S
+      ],
       run:
         props.challengeType === challengeTypes.multifileCertProject &&
         props.isSignedIn
@@ -464,7 +483,10 @@ const Editor = (props: EditorProps): JSX.Element => {
     editor.addAction({
       id: 'toggle-accessibility',
       label: 'Toggle Accessibility Mode',
-      keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_E],
+      keybindings: [
+        monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_E,
+        monaco.KeyMod.WinCtrl | monaco.KeyCode.KEY_E
+      ],
       run: () => {
         const currentAccessibility = storedAccessibilityMode();
 
@@ -492,6 +514,16 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (!getStoredAriaRoledescription()) {
       setAriaRoledescription(false);
     }
+
+    // Add invisible content widget over line numbers so touch users will
+    // always have a place to vertically scroll the editor.
+    const scrollGutterNode = createScrollGutterNode(editor);
+    const scrollGutterWidget = createWidget(
+      editor,
+      'scrollgutter.widget',
+      scrollGutterNode
+    );
+    editor.addContentWidget(scrollGutterWidget);
   };
 
   const toggleAriaRoledescription = () => {
@@ -573,9 +605,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     attemptRef.current.attempts++;
   }
 
-  const tryToSubmitChallenge = debounce(props.submitChallenge, 2000, {
-    leading: true
-  });
+  const tryToSubmitChallenge = submitChallengeDebounceRef.current;
 
   function createLowerJaw(outputNode: HTMLElement, callback?: () => void) {
     const { output } = props;
@@ -648,10 +678,13 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (isChallengeCompleted) {
       jawHeading.classList.add('challenge-description-header');
       const challengeTitle = document.createElement('h1');
-      challengeTitle.innerText = title;
+      challengeTitle.innerHTML = `${title} <span class='sr-only'>${t(
+        'icons.passed'
+      )}</span>`;
       jawHeading.appendChild(challengeTitle);
       const checkmark = ReactDOMServer.renderToStaticMarkup(
         <GreenPass
+          hushScreenReaderText
           style={{
             height: '15px',
             width: '15px',
@@ -705,6 +738,19 @@ const Editor = (props: EditorProps): JSX.Element => {
     outputNode.style.top = getOutputZoneTop();
     dataRef.current.outputNode = outputNode;
     return outputNode;
+  }
+
+  function createScrollGutterNode(
+    editor: editor.IStandaloneCodeEditor
+  ): HTMLDivElement {
+    const scrollGutterNode = document.createElement('div');
+    const lineGutterWidth = editor.getLayoutInfo().contentLeft;
+    scrollGutterNode.style.width = `${lineGutterWidth}px`;
+    scrollGutterNode.style.left = `-${lineGutterWidth}px`;
+    scrollGutterNode.style.top = '0';
+    scrollGutterNode.style.height = '10000px';
+    scrollGutterNode.style.background = 'transparent';
+    return scrollGutterNode;
   }
 
   function resetMarginDecorations() {
@@ -887,42 +933,49 @@ const Editor = (props: EditorProps): JSX.Element => {
     })[0];
   }
 
-  function addWidgetsToRegions(editor: editor.IStandaloneCodeEditor) {
-    const createWidget = (
-      id: string,
-      domNode: HTMLDivElement,
-      getTop: () => string
-    ) => {
-      const getId = () => id;
-      const getDomNode = () => domNode;
-      const getPosition = () => {
+  const createWidget = (
+    editor: editor.IStandaloneCodeEditor,
+    id: string,
+    domNode: HTMLDivElement,
+    // If getTop function is not provided then no positioning will be done here.
+    // This allows scroll gutter to do its positioning elsewhere.
+    getTop?: () => string
+  ) => {
+    const getId = () => id;
+    const getDomNode = () => domNode;
+    const getPosition = () => {
+      if (getTop) {
         domNode.style.width = `${editor.getLayoutInfo().contentWidth}px`;
         domNode.style.top = getTop();
-
-        // must return null, so that Monaco knows the widget will position
-        // itself.
-        return null;
-      };
-      // Only the description content widget uses this method but it
-      // is harmless to pass it to the overlay widget.
-      const afterRender = () => {
-        domNode.style.left = '0';
-        domNode.style.visibility = 'visible';
-      };
-      return {
-        getId,
-        getDomNode,
-        getPosition,
-        afterRender
-      };
+      }
+      // must return null, so that Monaco knows the widget will position
+      // itself.
+      return null;
     };
+    // Only the description content widget uses this method but it
+    // is harmless to pass it to the overlay widget.
+    const afterRender = () => {
+      if (getTop) {
+        domNode.style.left = '0';
+      }
+      domNode.style.visibility = 'visible';
+    };
+    return {
+      getId,
+      getDomNode,
+      getPosition,
+      afterRender
+    };
+  };
 
+  function addWidgetsToRegions(editor: editor.IStandaloneCodeEditor) {
     const descriptionNode = createDescription(editor);
 
     const outputNode = createOutputNode(editor);
 
     if (!dataRef.current.descriptionWidget) {
       dataRef.current.descriptionWidget = createWidget(
+        editor,
         'description.widget',
         descriptionNode,
         getDescriptionZoneTop
@@ -942,6 +995,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
     if (!dataRef.current.outputWidget) {
       dataRef.current.outputWidget = createWidget(
+        editor,
         'output.widget',
         outputNode,
         getOutputZoneTop

@@ -1,7 +1,7 @@
 ---
 id: 5a23c84252665b21eecc7e77
 title: Eliminazione Gaussiana
-challengeType: 5
+challengeType: 1
 forumTopicId: 302272
 dashedName: gaussian-elimination
 ---

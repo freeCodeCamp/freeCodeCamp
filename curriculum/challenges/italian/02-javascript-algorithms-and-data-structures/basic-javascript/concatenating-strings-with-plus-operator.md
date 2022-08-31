@@ -32,7 +32,13 @@ Costruisci `myStr` dalle stringhe `This is the start.` e `This is the end.` usan
 
 # --hints--
 
-`myStr` dovrebbe avere un valore stringa `This is the start. This is the end.`
+`myStr` dovrebbe avere un singolo spazio tra le due stringhe.
+
+```js
+assert(/start\. This/.test(myStr));
+```
+
+Il valore di `myStr` dovrebbe essere la stringa `This is the start. This is the end.`
 
 ```js
 assert(myStr === 'This is the start. This is the end.');

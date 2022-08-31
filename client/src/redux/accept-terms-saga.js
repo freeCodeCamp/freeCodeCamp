@@ -8,10 +8,10 @@ import { acceptTermsComplete, acceptTermsError } from './';
 
 function* acceptTermsSaga({ payload: quincyEmails }) {
   try {
-    const response = yield call(putUserAcceptsTerms, quincyEmails);
+    const { data } = yield call(putUserAcceptsTerms, quincyEmails);
 
     yield put(acceptTermsComplete(quincyEmails));
-    yield put(createFlashMessage(response));
+    yield put(createFlashMessage(data));
   } catch (e) {
     yield put(acceptTermsError(e));
   }

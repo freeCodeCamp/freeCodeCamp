@@ -1,7 +1,7 @@
 ---
 id: a5229172f011153519423690
 title: 求斐波那契數列中的奇數之和
-challengeType: 5
+challengeType: 1
 forumTopicId: 16084
 dashedName: sum-all-odd-fibonacci-numbers
 ---

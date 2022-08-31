@@ -15,13 +15,13 @@ dashedName: find-the-length-of-a-string
 console.log("Alan Peter".length);
 ```
 
-この例では値 `10` がコンソールに表示されます。
+コンソールに `10` の値が表示されます。 なお、"Alan" と "Peter" の間のスペースも文字としてカウントされます。
 
 たとえば、変数 `const firstName = "Ada"` を作成した場合、`firstName.length` プロパティを使用して文字列 `Ada` の長さを取得できます。
 
 # --instructions--
 
-`.length` プロパティを使用して、`lastName` 変数の文字数をカウントし、それを `lastNameLength` に代入してください。
+`.length` プロパティを使って、`lastNameLength` に `lastName` の文字数を設定します。
 
 # --hints--
 

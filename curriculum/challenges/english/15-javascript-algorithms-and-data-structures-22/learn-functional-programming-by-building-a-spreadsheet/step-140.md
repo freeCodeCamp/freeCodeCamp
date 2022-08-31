@@ -132,7 +132,9 @@ const applyFn = str => {
   );
 };
 
+--fcc-editable-region--
 const range = (start, end) => Array(end - start + 1).fill(start);
+--fcc-editable-region--
 
 
 

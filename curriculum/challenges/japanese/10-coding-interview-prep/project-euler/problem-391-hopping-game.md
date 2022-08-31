@@ -1,7 +1,7 @@
 ---
 id: 5900f4f31000cf542c510006
 title: '問題 391: ホッピングゲーム'
-challengeType: 5
+challengeType: 1
 forumTopicId: 302056
 dashedName: problem-391-hopping-game
 ---

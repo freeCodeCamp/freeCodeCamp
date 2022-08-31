@@ -2,7 +2,7 @@
 id: 5900f41c1000cf542c50ff2e
 title: >-
   Problema 175: Frazioni che implicano il numero di modi diversi in cui un numero può essere espresso come una somma di potenze di 2
-challengeType: 5
+challengeType: 1
 forumTopicId: 301810
 dashedName: >-
   problem-175-fractions-involving-the-number-of-different-ways-a-number-can-be-expressed-as-a-sum-of-powers-of-2

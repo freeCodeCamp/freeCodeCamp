@@ -50,6 +50,7 @@ const userProps = {
     savedChallenges: [],
     sendQuincyEmail: true,
     sound: true,
+    keyboardShortcuts: false,
     theme: Themes.Default,
     twitter: 'string',
     username: 'string',

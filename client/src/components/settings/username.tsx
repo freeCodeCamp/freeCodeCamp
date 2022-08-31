@@ -212,7 +212,11 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
     const { isValidUsername, t, validating } = this.props;
 
     return (
-      <form id='usernameSettings' onSubmit={this.handleSubmit}>
+      <form
+        id='usernameSettings'
+        onSubmit={this.handleSubmit}
+        data-cy='username-form'
+      >
         <FullWidthRow>
           <FormGroup>
             <ControlLabel htmlFor='username-settings'>
@@ -222,6 +226,7 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
               name='username-settings'
               onChange={this.handleChange}
               value={formValue}
+              data-cy='username-input'
             />
           </FormGroup>
         </FullWidthRow>

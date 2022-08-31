@@ -133,6 +133,7 @@ button1.onclick = goStore;
 button2.onclick = goCave;
 button3.onclick = fightDragon;
 
+--fcc-editable-region--
 function goStore() {
   button1.innerText = "Buy 10 health (10 gold)";
   button2.innerText = "Buy weapon (30 gold)";
@@ -159,6 +160,7 @@ function buyWeapon() {
 
 function goTown() {
 }
+--fcc-editable-region--
 
 </script>
 ```

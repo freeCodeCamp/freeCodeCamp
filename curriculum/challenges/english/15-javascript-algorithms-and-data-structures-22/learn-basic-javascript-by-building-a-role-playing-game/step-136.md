@@ -375,6 +375,9 @@ function easterEgg() {
   update(locations[7]);
 }
 
+--fcc-editable-region--
+
+--fcc-editable-region--
 </script>
 ```
 

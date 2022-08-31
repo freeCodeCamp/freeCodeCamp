@@ -1,7 +1,7 @@
 ---
 id: 5900f46d1000cf542c50ff7f
 title: 'Problem 255: Rounded Square Roots'
-challengeType: 5
+challengeType: 1
 forumTopicId: 301903
 dashedName: problem-255-rounded-square-roots
 ---

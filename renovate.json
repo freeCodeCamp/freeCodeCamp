@@ -7,7 +7,13 @@
         "monaco-editor",
         "monaco-editor-webpack-plugin",
         "react-monaco-editor"
-      ]
+      ],
+      "enabled": false
+    },
+    {
+      "groupName": "Cypress",
+      "matchPackageNames": ["@testing-library/cypress", "cypress"],
+      "automerge": true
     },
     {
       "matchPackageNames": ["normalize-url"],
@@ -17,6 +23,10 @@
       "groupName": "CodeSee",
       "matchPackagePrefixes": ["@codesee/"],
       "automerge": true
+    },
+    {
+      "groupName": "Stripe",
+      "matchPackagePrefixes": ["@stripe/"]
     }
   ],
   "ignorePaths": ["api-server"]

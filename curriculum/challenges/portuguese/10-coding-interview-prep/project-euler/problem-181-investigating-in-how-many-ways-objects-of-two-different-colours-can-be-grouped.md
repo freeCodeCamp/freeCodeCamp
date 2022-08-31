@@ -2,7 +2,7 @@
 id: 5900f4231000cf542c50ff34
 title: >-
   Problema 181: Investigação de em quantas maneiras objetos de duas cores diferentes podem ser agrupados
-challengeType: 5
+challengeType: 1
 forumTopicId: 301817
 dashedName: >-
   problem-181-investigating-in-how-many-ways-objects-of-two-different-colours-can-be-grouped

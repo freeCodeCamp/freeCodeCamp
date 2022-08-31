@@ -300,7 +300,10 @@ ${getFullPath('english', filePath)}
     if (missingAuditedChallenge)
       throw Error(`Missing ${lang} audited challenge for
 ${filePath}
-No audited challenges should fallback to English.
+
+Explanation:
+
+Challenges that have been already audited cannot fall back to their English versions. If you are seeing this, please update, and approve these Challenges on Crowdin first, followed by downloading them to the main branch using the GitHub workflows.
     `);
   }
 
