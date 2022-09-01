@@ -50,7 +50,7 @@ export default function SoundSettings({
         }}
       />
       <label htmlFor='volumeslider'>
-        {t('settings.sound-volume')} {volumeDisplay}
+        {t('settings.sound-volume')} <span aria-hidden='true'>{volumeDisplay}</span>
       </label>
       <input
         type='range'
