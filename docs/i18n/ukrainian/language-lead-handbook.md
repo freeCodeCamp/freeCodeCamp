@@ -65,7 +65,7 @@ This is an example of how part of the `trending.json` file has to look.
 }
 ```
 
-You will want to [build the translated client locally](how-to-test-translations-locally.md) to see if the titles have the right length. Each title must stay on a single line and not go to a new line.
+You will want to [build the translated client locally](how-to-enable-new-languages.md) to see if the titles have the right length. Each title must stay on a single line and not go to a new line.
 
 ### How to update the trending articles in the cdn
 
