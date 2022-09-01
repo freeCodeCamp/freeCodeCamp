@@ -451,7 +451,7 @@
     "change-theme": "Anmelden, um das Theme zu ändern.",
     "translation-pending": "Hilf uns, zu übersetzen",
     "certification-project": "Zertifizierungsprojekt",
-    "iframe-preview": "{{title}} preview",
+    "iframe-preview": "{{title}} Vorschau",
     "iframe-alert": "Normalerweise würde dieser Link dich auf eine andere Website führen! Er funktioniert. Dies ist ein Link zu: {{externalLink}}",
     "document-notfound": "Dokument wurde nicht gefunden"
   },
