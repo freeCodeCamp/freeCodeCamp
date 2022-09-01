@@ -340,7 +340,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       dataRef.current.model ||
       monaco.editor.createModel(
         challengeFile?.contents ?? '',
-        modeMap[challengeFile?.ext ?? 'html']
+        modeMap[(challengeFile?.ext ?? 'html') as keyof typeof modeMap]
       );
     dataRef.current.model = model;
 

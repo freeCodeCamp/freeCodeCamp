@@ -36,7 +36,7 @@
 /* remove bootstrap margin and center the radio buttons */
 .video-quiz-options > label {
   margin: 0;
-  align-items: center;
+  align-items: flex-start;
   overflow-x: auto;
   scrollbar-width: thin;
   scrollbar-color: var(--quaternary-background) var(--secondary-background);
@@ -54,22 +54,18 @@
 }
 
 .video-quiz-option-label {
-  padding: 20px;
+  padding: 10px 0;
   cursor: pointer;
   display: flex;
   font-weight: normal;
-  border-left: 4px solid var(--tertiary-background);
-  border-right: 4px solid var(--tertiary-background);
-  border-top: 2px solid var(--tertiary-background);
-  border-bottom: 2px solid var(--tertiary-background);
 }
 
 .video-quiz-option-label:first-child {
-  border-top: 4px solid var(--tertiary-background);
+  padding-top: 0;
 }
 
 .video-quiz-option-label:last-child {
-  border-bottom: 4px solid var(--tertiary-background);
+  padding-bottom: 0;
 }
 
 .video-quiz-input-hidden {
@@ -78,7 +74,7 @@
 }
 
 .video-quiz-input-visible {
-  margin-right: 15px;
+  margin-right: 8px;
   position: relative;
   top: 2px;
   display: inline-block;
@@ -87,8 +83,12 @@
   max-width: 20px;
   max-height: 20px;
   border-radius: 50%;
-  background-color: var(--secondary-background);
-  border: 2px solid var(--primary-color);
+  background-color: var(--tc-white);
+  border: 1px solid var(--tc-black-60);
+}
+
+.video-quiz-input-visible:not(:empty) {
+  border-color: var(--tc-turq-160);
 }
 
 .video-quiz-selected-input {
@@ -97,7 +97,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  background-color: var(--primary-color);
+  background-color: var(--tc-turq-160);
   border-radius: 50%;
   transform: translate(-50%, -50%);
 }
@@ -113,4 +113,48 @@
   margin: 0;
   /* remove default prism background */
   background: none;
+}
+
+.challenge-instructions {
+  color: var(--tc-black-100);
+}
+
+.challenge-instructions:not(:empty) {
+  margin-bottom: 18px;
+}
+
+.video-description .line-numbers > p:first-child {
+  font-family: 'Roboto';
+  font-weight: bold;
+  line-height: 26px;
+  font-size: 20px;
+  color: var(--tc-black-100);
+}
+
+.video-quiz-cta-text {
+  font-size: 16px;
+  line-height: 24px;
+  font-family: 'Roboto';
+  color: var(--tc-black-100);
+  margin-bottom: 24px;
+}
+
+.video-quiz-cta-text > span {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.video-section-label {
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Barlow', 'sans-serif';
+  line-height: 22px;
+  color: var(--tc-black-100);
+  text-transform: uppercase;
+
+  border-top: 1px solid var(--tc-black-10);
+  margin-top: 32px;
+  padding-top: 18px;
+  margin-bottom: 24px;
 }

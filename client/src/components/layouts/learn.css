@@ -24,3 +24,7 @@
 #learn-app-wrapper .reflex-container.horizontal > .reflex-splitter {
   height: 5px;
 }
+
+#learn-app-wrapper .reflex-container > .reflex-element:first-child:last-child {
+  flex: 1 1 auto !important;
+}

@@ -7,6 +7,7 @@ import EditorTabs from './editor-tabs';
 interface ActionRowProps {
   block: string;
   hasNotes: boolean;
+  hasPreview: boolean;
   isProjectBasedChallenge: boolean;
   showConsole: boolean;
   showNotes: boolean;
@@ -19,6 +20,7 @@ interface ActionRowProps {
 
 const ActionRow = ({
   hasNotes,
+  hasPreview,
   togglePane,
   showNotes,
   showPreview,
@@ -70,15 +72,17 @@ const ActionRow = ({
             {t('learn.editor-tabs.notes')}
           </button>
         )}
-        <button
-          aria-expanded={showPreview ? 'true' : 'false'}
-          className={
-            showPreview ? 'btn-tab-primary' : 'btn-tab-primary--outline'
-          }
-          onClick={() => togglePane('showPreview')}
-        >
-          {t('learn.editor-tabs.preview')}
-        </button>
+        {hasPreview && (
+          <button
+            aria-expanded={showPreview ? 'true' : 'false'}
+            className={
+              showPreview ? 'btn-tab-primary' : 'btn-tab-primary--outline'
+            }
+            onClick={() => togglePane('showPreview')}
+          >
+            {t('learn.editor-tabs.preview')}
+          </button>
+        )}
       </div>
     </div>
   );

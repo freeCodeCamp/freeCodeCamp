@@ -39,6 +39,7 @@ import {
   challengeMounted,
   challengeTestsSelector,
   consoleOutputSelector,
+  visibleEditorsSelector,
   createFiles,
   executeChallenge,
   initConsole,
@@ -59,6 +60,10 @@ import MobileLayout from './mobile-layout';
 import './classic.css';
 import '../components/test-frame.css';
 
+type VisibleEditors = {
+  [key: string]: boolean;
+};
+
 // Redux Setup
 const mapStateToProps = createStructuredSelector({
   challengeFiles: challengeFilesSelector,
@@ -66,7 +71,8 @@ const mapStateToProps = createStructuredSelector({
   testsRunning: testsRunningSelector,
   output: consoleOutputSelector,
   isChallengeCompleted: isChallengeCompletedSelector,
-  savedChallenges: savedChallengesSelector
+  savedChallenges: savedChallengesSelector,
+  visibleEditors: visibleEditorsSelector
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -113,6 +119,7 @@ interface ShowClassicProps {
   setEditorFocusability: (canFocus: boolean) => void;
   previewMounted: () => void;
   savedChallenges: CompletedChallenge[];
+  visibleEditors: VisibleEditors;
 }
 
 interface ShowClassicState {
@@ -358,6 +365,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
             block={block}
             description={description}
             instructions={instructions}
+            title={title}
           />
         }
         guideUrl={getGuideUrl({ forumTopicId, title })}
@@ -453,6 +461,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
         challengeMeta: { nextChallengePath, prevChallengePath }
       },
       challengeFiles,
+      visibleEditors,
       t
     } = this.props;
 
@@ -505,6 +514,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
               resizeProps={this.resizeProps}
               superBlock={superBlock}
               testOutput={this.renderTestOutput()}
+              visibleEditors={visibleEditors}
             />
           </Media>
           <CompletionModal

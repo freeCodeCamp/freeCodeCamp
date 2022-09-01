@@ -174,13 +174,9 @@ class BackEnd extends Component<BackEndProps> {
     challengeMounted(challengeMeta.id);
   }
 
-  handleSubmit({
-    showCompletionModal
-  }: {
-    showCompletionModal: boolean;
-  }): void {
+  handleSubmit(): void {
     this.props.executeChallenge({
-      showCompletionModal
+      showCompletionModal: false
     });
   }
 

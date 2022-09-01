@@ -29,7 +29,7 @@ function OfflineWarning({
       t('misc.offline')
     ) : (
       <Trans i18nKey='misc.server-offline'>
-        <a href={'mailto:support@freecodecamp.org'}>placeholder</a>
+        <a href={'mailto:support@topcoder.com'}>placeholder</a>
       </Trans>
     );
     timeout();

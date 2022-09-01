@@ -2,7 +2,6 @@ import i18next from 'i18next';
 import React from 'react';
 import GreenPass from '../../../assets/icons/green-pass';
 import { Link } from '../../../components/helpers/index';
-import BreadCrumb from './bread-crumb';
 
 import './challenge-title.css';
 
@@ -16,11 +15,8 @@ interface ChallengeTitleProps {
 }
 
 function ChallengeTitle({
-  block,
   children,
   isCompleted,
-  showBreadCrumbs = true,
-  superBlock,
   translationPending
 }: ChallengeTitleProps): JSX.Element {
   return (
@@ -36,7 +32,6 @@ function ChallengeTitle({
           </Link>
         </>
       )}
-      {showBreadCrumbs && <BreadCrumb block={block} superBlock={superBlock} />}
       <div className='challenge-title'>
         <div className='title-text'>
           <h1>{children}</h1>

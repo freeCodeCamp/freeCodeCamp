@@ -86,7 +86,7 @@ export function SidePanel({
       {challengeTitle}
       {challengeDescription}
       <div className='test-area-wrap'>
-        {showToolPanel && (
+        {showToolPanel && tests.length > 10 && (
           <ToolPanel
             guideUrl={guideUrl}
             videoUrl={videoUrl}
