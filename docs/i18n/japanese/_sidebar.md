@@ -19,11 +19,10 @@
   - [ドキュメントに貢献する](how-to-work-on-the-docs-theme.md)
   - [コンポーネントライブラリに貢献する](how-to-work-on-the-component-library.md)
 - **その他のガイド**
-  - [翻訳をローカルでテストする](how-to-test-translations-locally.md)
-  - [カリキュラムのファイル構造を理解する](curriculum-file-structure.md)
-  - [送信メールをローカルでデバッグする](how-to-catch-outgoing-emails-locally.md)
-  - [Windows (WSL) で freeCodeCamp 開発環境を構築する](how-to-setup-wsl.md)
-  - [ユーザートークンワークフロー](user-token-workflow.md)
+  - [Understand the curriculum file structure](curriculum-file-structure.md)
+  - [Debug outgoing emails locally](how-to-catch-outgoing-emails-locally.md)
+  - [Set up freeCodeCamp on Windows (WSL)](how-to-setup-wsl.md)
+  - [User Token Workflow](user-token-workflow.md)
 
 ---
 
@@ -32,6 +31,7 @@
   - [ランゲージリードハンドブック](language-lead-handbook.md)
   - [DevOps ハンドブック](devops.md)
   - [VSCode 拡張機能「Courses」](courses-vscode-extension.md)
+  - [Enable New Language](how-to-enable-new-languages.md)
 
 ---
 

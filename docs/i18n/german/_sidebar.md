@@ -19,10 +19,9 @@
   - [Arbeite an der Dokumentation](how-to-work-on-the-docs-theme.md)
   - [Arbeite an der Komponentenbibliothek](how-to-work-on-the-component-library.md)
 - **Zusätzliche Leitfäden**
-  - [Übersetzungen lokal testen](how-to-test-translations-locally.md)
-  - [Verstehe die Dateistruktur des Studienplans](curriculum-file-structure.md)
-  - [Ausgehende Emails lokal debuggen](how-to-catch-outgoing-emails-locally.md)
-  - [freeCodeCamp auf Windows einrichten (WSL)](how-to-setup-wsl.md)
+  - [Curriculum-Dateistruktur verstehen](curriculum-file-structure.md)
+  - [Ausgehende E-Mails lokal debuggen](how-to-catch-outgoing-emails-locally.md)
+  - [freeCodeCamp unter Windows einrichten (WSL)](how-to-setup-wsl.md)
   - [Benutzer-Token Workflow](user-token-workflow.md)
 
 ---
@@ -32,10 +31,11 @@
   - [Language Lead Handbuch](language-lead-handbook.md)
   - [DevOps-Handbuch](devops.md)
   - [Kurse VSCode Erweiterung](courses-vscode-extension.md)
+  - [Eine neue Sprache aktivieren](how-to-enable-new-languages.md)
 
 ---
 
 - **Unsere Community**
   - [**GitHub**](https://github.com/freecodecamp/freecodecamp)
-  - [**Discourse Forum**](https://freecodecamp.org/forum/c/contributors)
+  - [**Diskussionsforum**](https://freecodecamp.org/forum/c/contributors)
   - [**Chatserver**](https://discord.gg/PRyKn3Vbay)
