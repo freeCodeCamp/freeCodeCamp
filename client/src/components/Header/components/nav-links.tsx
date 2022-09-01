@@ -441,7 +441,7 @@ export class NavLinks extends Component<NavLinksProps, {}> {
                       })}
                       onClick={this.handleLanguageChange}
                       onKeyDown={this.handleLanguageMenuKeyDown}
-                      {...(index === locales.length - 1 && {
+                      {...(index === locales.length - 2 && {
                         ref: this.lastLangOptionRef
                       })}
                       role='menuitem'
