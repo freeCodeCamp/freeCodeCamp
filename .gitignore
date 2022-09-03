@@ -17,6 +17,7 @@ Thumbs.db:encryptable
 ehthumbs.db
 ehthumbs_vista.db
 
+
 # Dump file
 *.stackdump
 
@@ -25,6 +26,7 @@ ehthumbs_vista.db
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
+
 
 # Windows Installer files
 *.cab
@@ -170,6 +172,7 @@ utils/slugs.js
 utils/slugs.test.js
 utils/index.js
 
+
 ### vim ###
 # Swap
 [._]*.s[a-v][a-z]
@@ -191,6 +194,7 @@ tags
 # Persistent undo
 [._]*.un~
 
+
 ### Additional Files ###
 *.csv
 *.dat
@@ -199,6 +203,7 @@ tags
 curriculum/curricula.json
 client/static/js/frame-runner.js
 client/static/js/frame-runner.js.map
+
 
 ### Additional Folders ###
 api-server/lib/*
