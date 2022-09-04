@@ -42,6 +42,7 @@ const initialState = {
     projectPreview: false,
     shortcuts: false
   },
+  portalDocument: false,
   projectFormValues: {},
   successMessage: 'Happy Coding!'
 };
@@ -112,6 +113,14 @@ export const previewMounted = createAction(actionTypes.previewMounted);
 export const projectPreviewMounted = createAction(
   actionTypes.projectPreviewMounted
 );
+
+export const storePortalDocument = createAction(
+  actionTypes.storePortalDocument
+);
+export const removePortalDocument = createAction(
+  actionTypes.removePortalDocument
+);
+
 export const challengeMounted = createAction(actionTypes.challengeMounted);
 export const checkChallenge = createAction(actionTypes.checkChallenge);
 export const executeChallenge = createAction(actionTypes.executeChallenge);
@@ -154,6 +163,8 @@ export const successMessageSelector = state => state[ns].successMessage;
 
 export const projectFormValuesSelector = state =>
   state[ns].projectFormValues || {};
+
+export const portalDocumentSelector = state => state[ns].portalDocument;
 
 export const challengeDataSelector = state => {
   const { challengeType } = challengeMetaSelector(state);
@@ -322,7 +333,14 @@ export const reducer = handleActions(
       ...state,
       isBuildEnabled: false
     }),
-
+    [actionTypes.storePortalDocument]: (state, { payload }) => ({
+      ...state,
+      portalDocument: payload
+    }),
+    [actionTypes.removePortalDocument]: state => ({
+      ...state,
+      portalDocument: false
+    }),
     [actionTypes.updateSuccessMessage]: (state, { payload }) => ({
       ...state,
       successMessage: payload
