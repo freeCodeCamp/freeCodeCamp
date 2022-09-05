@@ -144,7 +144,7 @@ class TcIntegrationLayout extends Component<TcIntegrationLayoutProps> {
       // provider.
 
       // set the pathname for the 2 flavors of lesson URL
-      const platformPathPrefix = 'learn/freecodecamp';
+      const platformPathPrefix = 'learn/freeCodeCamp';
       const learnPrefix = '/learn/';
       let updateHost = false;
       if (url.host === `learn.${fccHost}`) {
