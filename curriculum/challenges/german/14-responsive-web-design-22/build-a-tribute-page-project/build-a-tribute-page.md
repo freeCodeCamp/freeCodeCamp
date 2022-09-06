@@ -16,7 +16,7 @@ dashedName: build-a-tribute-page
 1. Du solltest ein Element mit einer `id` von `title` sehen, das einen String (d.h. Text) enthält, der das Thema der Gedenkseite beschreibt (z.B. „Dr. Norman Borlaug“)
 1. Du solltest entweder ein `figure`- oder ein `div`-Element mit einer `id` von `img-div` sehen
 1. Du solltest innerhalb des `#img-div`-Elements ein `img`-Element mit zugehöriger `id="image"` sehen
-1. Du solltest innerhalb des `#img-div`-Elements ein Element mit zugehöriger `id="img-caption"` sehen, der einen Text enthält, der das in `#img-div` angezeigte Bild beschreibt.
+1. Du solltest innerhalb des `#img-div`-Elements ein Element mit zugehöriger `id="img-caption"` sehen, der einen Text enthält, der das in `#img-div` angezeigte Bild beschreibt
 1. Du solltest ein Element mit zugehöriger `id="tribute-info"` sehen, welches das Thema der Gedenkseite beschreibenden Textinhalt enthält
 1. Du solltest ein `a`-Element mit zugehöriger `id="tribute-link"` sehen, welches auf eine externe Seite verweist, die zusätzliche Informationen über das Thema der Gedenkseite enthält. TIPP: Du musst deinem Element ein Attribut von `target` zuweisen und es auf `_blank` setzen, damit der Link in einem neuen Tab geöffnet werden kann
 1. Dein `#image` sollte die `max-width`- und `height`-Eigenschaften verwenden, um die Größenänderung responsiv zu gestalten, d. h. relativ zur Breite des Elternelements, ohne dessen Originalgröße zu überschreiten
@@ -24,7 +24,7 @@ dashedName: build-a-tribute-page
 
 Erfülle die folgenden User Stories und bestehe alle Tests, um dieses Projekt abzuschließen. Gib dem Ganzen deinen persönlichen Stil. Viel Spaß beim Programmieren!
 
-**Hinweis:** Achte darauf, `<link rel="stylesheet" href="styles.css">` in deinen HTML-Code einzufügen, um dein Stylesheet zu verknüpfen und deinen CSS-Code anwenden zu können
+**Hinweis:** Füge unbedingt `<link rel="stylesheet" href="styles.css">` in dein HTML ein, um dein Stylesheet zu verlinken und dein CSS anzuwenden
 
 # --hints--
 
@@ -96,7 +96,7 @@ const el = document.querySelector('#img-div #img-caption')
 assert(!!el)
 ```
 
-Dein `#img-caption` sollte nicht leer sein.
+Dein `#img-caption` darf nicht leer sein.
 
 ```js
 const el = document.getElementById('img-caption')
@@ -110,7 +110,7 @@ const el = document.getElementById('tribute-info')
 assert(!!el)
 ```
 
-Dein `#tribute-info` sollte nicht leer sein.
+Dein `#tribute-info` darf nicht leer sein.
 
 ```js
 const el = document.getElementById('tribute-info')
@@ -124,7 +124,7 @@ const el = document.getElementById('tribute-link')
 assert(!!el && el.tagName === 'A')
 ```
 
-Dein `#tribute-link` sollte ein `href`-Attribut und einen -Wert haben.
+Dein `#tribute-link` sollte ein `href`-Attribut und -Wert haben.
 
 ```js
 const el = document.getElementById('tribute-link')

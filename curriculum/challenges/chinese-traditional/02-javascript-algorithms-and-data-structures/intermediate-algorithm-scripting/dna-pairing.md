@@ -1,22 +1,20 @@
 ---
 id: afd15382cdfb22c9efe8b7de
 title: DNA 配對
-challengeType: 5
+challengeType: 1
 forumTopicId: 16009
 dashedName: dna-pairing
 ---
 
 # --description--
 
-給出的 DNA 鏈上缺少配對元素。 請基於每個字符，獲取與其配對的元素，並將結果作爲二維數組返回。
+脫氧核糖核酸組由核酸對組成。 基本配對的字符是 <em>AT</em> and <em>CG</em>，這些字符形成了 DNA 雙螺旋的構件。
 
-DNA 的[鹼基對](http://en.wikipedia.org/wiki/Base_pair) 有兩種形式：一種是 A 與 T，一種是 C 與 G。 請爲參數中給出的每個字符配對相應的鹼基。
-
-注意，參數中給出的字符應作爲每個子數組中的第一個元素返回。
+DNA 鏈缺少配對元素。 寫一個函數來匹配缺失的 DNA 字符串。 對於提供的字符串中的每個字符，找出基本的配對字符。 返回二維數組的結果。
 
 例如，傳入 `GCG` 時，應返回 `[["G", "C"], ["C","G"], ["G", "C"]]`。
 
-字符和它的配對組成一個數組中，所有配對數組放在一個數組裏。
+字符和它的配對組成一個數組，所有配對數組放在一個數組裏。
 
 # --hints--
 

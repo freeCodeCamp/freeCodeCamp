@@ -8,7 +8,7 @@ dashedName: build-a-javascript-calculator
 
 # --description--
 
-**Objetivo:** Crear una aplicación que sea funcionalmente similar a <https://codepen.io/freeCodeCamp/full/wgGVVX>.
+**Objetivo:** Crea una aplicación que sea funcionalmente similar a esta: <a href="https://codepen.io/freeCodeCamp/full/wgGVVX" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/wgGVVX</a>.
 
 Completa las historias de usuario a continuación y obtén todas las pruebas para aprobar. Utiliza cualquier librería o API que necesites. Dale tu propio estilo.
 
@@ -51,7 +51,7 @@ Puedes utilizar cualquier combinación de HTML, JavaScript, CSS, Bootstrap, SASS
 -   **Lógica de ejecución inmediata:** `11.5`
 -   **Fórmula/Expresión lógica:** `32.5`
 
-Puedes construir tu proyecto con <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel='nofollow'>usando esta plantilla CodePen</a> y haciendo clic en `Save` para crear tu propio pen. O puedes utilizar este enlace CDN para ejecutar las pruebas en cualquier entorno que desees: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+Puedes construir tu proyecto utilizando <a href='https://codepen.io/pen?template=MJjpwO' target="_blank" rel="noopener noreferrer nofollow">esta plantilla CodePen</a> y haciendo clic en `Save` para crear tu propio bolígrafo. O puedes utilizar este enlace CDN para ejecutar las pruebas en cualquier entorno que desees: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
 Una vez que hayas terminado, envía la URL de tu proyecto funcional con todas las pruebas pasadas.
 
