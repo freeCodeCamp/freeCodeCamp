@@ -19,11 +19,10 @@
   - [Trabalhar com a documentação](how-to-work-on-the-docs-theme.md)
   - [Trabalhar na biblioteca de componentes](how-to-work-on-the-component-library.md)
 - **Guias adicionais**
-  - [Testar traduções localmente](how-to-test-translations-locally.md)
-  - [Compreender a estrutura do arquivo do currículo](curriculum-file-structure.md)
-  - [Depurar e-mails enviados localmente](how-to-catch-outgoing-emails-locally.md)
-  - [Configurar freeCodeCamp no Windows (WSL)](how-to-setup-wsl.md)
-  - [Fluxo de trabalho do token de usuário](user-token-workflow.md)
+  - [Understand the curriculum file structure](curriculum-file-structure.md)
+  - [Debug outgoing emails locally](how-to-catch-outgoing-emails-locally.md)
+  - [Set up freeCodeCamp on Windows (WSL)](how-to-setup-wsl.md)
+  - [User Token Workflow](user-token-workflow.md)
 
 ---
 
@@ -32,6 +31,7 @@
   - [Manual do líder do idioma](language-lead-handbook.md)
   - [Manual do DevOps](devops.md)
   - [Extensão do VSCode Courses](courses-vscode-extension.md)
+  - [Enable New Language](how-to-enable-new-languages.md)
 
 ---
 

@@ -65,7 +65,7 @@ Questo è un esempio di come deve essere una parte del file `trending.json`.
 }
 ```
 
-Dovrai [fare il build in locale del client tradotto](how-to-test-translations-locally.md) per vedere se i titoli hanno la giusta lunghezza. Ogni titolo deve rimanere su una sola riga e non andare sulla successiva.
+You will want to [build the translated client locally](how-to-enable-new-languages.md) to see if the titles have the right length. Ogni titolo deve rimanere su una sola riga e non andare sulla successiva.
 
 ### Come aggiornare gli articoli di tendenza nel cdn
 

@@ -451,6 +451,7 @@
     "change-theme": "Accedi per modificare il tema.",
     "translation-pending": "Aiutaci a tradurlo",
     "certification-project": "Progetto della certificazione",
+    "iframe-preview": "{{title}} preview",
     "iframe-alert": "Solitamente questo link ti porterebbe su un altro sito web! Funziona. Questo è un link per {{externalLink}}",
     "document-notfound": "documento non trovato"
   },

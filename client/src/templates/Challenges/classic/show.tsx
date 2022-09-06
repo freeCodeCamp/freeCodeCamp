@@ -476,6 +476,9 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
       t
     } = this.props;
 
+    const blockNameTitle = this.getBlockNameTitle(t);
+    const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
+
     return (
       <Hotkeys
         challengeType={challengeType}
@@ -488,7 +491,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
         usesMultifileEditor={usesMultifileEditor}
       >
         <LearnLayout>
-          <Helmet title={`${this.getBlockNameTitle(t)} | freeCodeCamp.org`} />
+          <Helmet title={windowTitle} />
           <Media maxWidth={MAX_MOBILE_WIDTH}>
             <MobileLayout
               editor={this.renderEditor()}
@@ -524,6 +527,7 @@ class ShowClassic extends Component<ShowClassicProps, ShowClassicState> {
               resizeProps={this.resizeProps}
               superBlock={superBlock}
               testOutput={this.renderTestOutput()}
+              windowTitle={windowTitle}
             />
           </Media>
           <CompletionModal

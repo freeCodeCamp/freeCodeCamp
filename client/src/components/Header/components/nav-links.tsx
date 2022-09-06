@@ -34,7 +34,9 @@ interface NavigationLocationApi {
 const { clientLocale, radioLocation, apiLocation } =
   envData as NavigationLocationApi;
 
-const locales = availableLangs.client;
+const locales = availableLangs.client.filter(
+  lang => !hiddenLangs.includes(lang)
+);
 
 interface NavlinkStates {
   arg: Record<string, unknown>;
@@ -465,29 +467,27 @@ export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
                   {t('buttons.cancel-change')}
                 </button>
               </li>
-              {locales
-                .filter(lang => !hiddenLangs.includes(lang))
-                .map((lang, index) => (
-                  <li key={'lang-' + lang} role='none'>
-                    <button
-                      {...(clientLocale === lang && { 'aria-current': true })}
-                      className='nav-link nav-lang-menu-option'
-                      data-value={lang}
-                      {...(LangCodes[lang] && {
-                        lang: LangCodes[lang] as string
-                      })}
-                      onClick={this.handleLanguageChange}
-                      onKeyDown={this.handleLanguageMenuKeyDown}
-                      {...(index === locales.length - 1 && {
-                        ref: this.lastLangOptionRef
-                      })}
-                      role='menuitem'
-                      tabIndex='-1'
-                    >
-                      {LangNames[lang]}
-                    </button>
-                  </li>
-                ))}
+              {locales.map((lang, index) => (
+                <li key={'lang-' + lang} role='none'>
+                  <button
+                    {...(clientLocale === lang && { 'aria-current': true })}
+                    className='nav-link nav-lang-menu-option'
+                    data-value={lang}
+                    {...(LangCodes[lang] && {
+                      lang: LangCodes[lang] as string
+                    })}
+                    onClick={this.handleLanguageChange}
+                    onKeyDown={this.handleLanguageMenuKeyDown}
+                    {...(index === locales.length - 1 && {
+                      ref: this.lastLangOptionRef
+                    })}
+                    role='menuitem'
+                    tabIndex='-1'
+                  >
+                    {LangNames[lang]}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
         </li>
