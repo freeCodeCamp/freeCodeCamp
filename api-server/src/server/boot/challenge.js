@@ -258,16 +258,24 @@ export function isValidChallengeCompletion(req, res, next) {
     message: 'That does not appear to be a valid challenge submission.'
   };
 
+  console.debug('console.debug');
+  console.info('console.info');
+  console.error('console.error');
+  console.log('console.log');
+
   if (!ObjectID.isValid(id)) {
     log('isObjectId', id, ObjectID.isValid(id));
+    console.debug('isObjectId', id, ObjectID.isValid(id));
     return res.status(403).json(isValidChallengeCompletionErrorMsg);
   }
   if ('challengeType' in req.body && !isNumeric(String(challengeType))) {
     log('challengeType', challengeType, isNumeric(challengeType));
+    console.debug('challengeType', challengeType, isNumeric(challengeType));
     return res.status(403).json(isValidChallengeCompletionErrorMsg);
   }
   if ('solution' in req.body && !isURL(solution)) {
-    log('isObjectId', id, ObjectID.isValid(id));
+    log('solution', solution, !isURL(solution));
+    console.debug('solution', solution, !isURL(solution));
     return res.status(403).json(isValidChallengeCompletionErrorMsg);
   }
   return next();
