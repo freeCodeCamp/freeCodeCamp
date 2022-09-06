@@ -18,7 +18,7 @@ let myStr = "Bob";
 myStr[0] = "J";
 ```
 
-Note that this does *not* mean that `myStr` could not be re-assigned.  The only way to change `myStr` would be to assign it with a new value, like this:
+Note that this does *not* mean that `myStr` could not be re-assigned. The only way to change `myStr` would be to assign it with a new value, like this:
 
 ```js
 let myStr = "Bob";
