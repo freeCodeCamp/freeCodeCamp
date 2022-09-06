@@ -488,6 +488,12 @@
     "breadcrumb-nav": "Breadcrumb",
     "submit": "Verwende Strg + Enter zum Absenden.",
     "running-tests": "Tests werden durchgeführt",
+    "hide-preview": "Vorschau ausblenden",
+    "move-preview-to-new-window": "Verschiebe die Vorschau in ein neues Fenster und fokussiere sie",
+    "move-preview-to-main-window": "Verschiebe die Vorschau in dieses Fenster und schließe das externe Vorschaufenster",
+    "close-external-preview-window": "Schließe das externe Vorschaufenster",
+    "show-preview": "Zeige die Vorschau in diesem Fenster",
+    "open-preview-in-new-window": "Öffne die Vorschau in einem neuen Fenster und fokussiere sie",
     "step": "Schritt",
     "steps": "Schritte",
     "steps-for": "Schritte für {{blockTitle}}"
