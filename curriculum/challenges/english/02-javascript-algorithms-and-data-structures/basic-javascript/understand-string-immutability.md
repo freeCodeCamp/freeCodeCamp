@@ -11,7 +11,7 @@ dashedName: understand-string-immutability
 
 In JavaScript, `String` values are <dfn>immutable</dfn>, which means that they cannot be altered once created.
 
-For example, the following code cannot change the first letter of the string `Bob` to a `J`:
+For example, the following code will produce an error because the letter `B` in the string `Bob` cannot be changed to the letter `J`:
 
 ```js
 let myStr = "Bob";
