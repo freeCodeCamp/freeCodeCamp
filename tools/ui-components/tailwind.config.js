@@ -98,8 +98,7 @@ module.exports = {
     plugin(({ addVariant }) => {
       addVariant('aria-disabled', '&[aria-disabled="true"]');
       addVariant('table-children', '& *');
-      addVariant('table-hover', '& > tbody > tr:hover > td');
-      addVariant('table-striped', '& > tbody > tr:nth-of-type(odd) > td');
+      addVariant('table-striped', '& > tbody > tr:nth-of-type(odd)');
     })
   ]
 };

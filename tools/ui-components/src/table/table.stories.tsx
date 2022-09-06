@@ -52,14 +52,6 @@ const story = {
     }
   },
   argTypes: {
-    variant: {
-      options: ['light', 'dark'],
-      control: { type: 'radio' }
-    },
-    bordered: {
-      options: [true, false],
-      control: { type: 'radio' }
-    },
     striped: {
       options: [true, false],
       control: { type: 'radio' }
@@ -67,51 +59,25 @@ const story = {
     condensed: {
       options: [true, false],
       control: { type: 'radio' }
-    },
-    hover: {
-      options: [true, false],
-      control: { type: 'radio' }
-    },
-    responsive: {
-      options: [true, false],
-      control: { type: 'radio' }
-    },
-    borderless: {
-      options: [true, false],
-      control: { type: 'radio' },
-      // Used to avoid conflict with borders
-      if: { arg: 'bordered', truthy: false }
-    },
-    size: {
-      options: ['small', 'medium', 'large']
     }
   }
 };
 
 const Template: Story<TableProps> = args => (
-  <Table {...args} >{exampleTable}</Table>
+  <Table {...args}>{exampleTable}</Table>
 );
 export const Default = Template.bind({});
 Default.args = {
-  size: 'medium',
+  condensed: false,
+  striped: false
 };
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
+export const Condensed = Template.bind({});
+Condensed.args = {
+  condensed: true
 };
-export const Dark = Template.bind({});
-Dark.args = {
-  variant: 'dark',
-  bordered: true
-};
-export const Light = Template.bind({});
-Light.args = {
-  variant: 'light',
-  bordered: true
-};
-export const Hover = Template.bind({});
-Hover.args = {
-  hover: true
+export const Striped = Template.bind({});
+Striped.args = {
+  striped: true
 };
 
 export default story;
