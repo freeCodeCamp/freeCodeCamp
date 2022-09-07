@@ -30,6 +30,12 @@ import {
 
 const log = debug('fcc:boot:challenges');
 
+console.debug('console.debug');
+console.info('console.info');
+console.error('console.error');
+console.log('console.log');
+log('log');
+
 export default async function bootChallenge(app, done) {
   const send200toNonUser = ifNoUserSend(true);
   const api = app.loopback.Router();
@@ -258,10 +264,11 @@ export function isValidChallengeCompletion(req, res, next) {
     message: 'That does not appear to be a valid challenge submission.'
   };
 
-  console.debug('console.debug');
-  console.info('console.info');
-  console.error('console.error');
-  console.log('console.log');
+  console.debug('console.debug', 'isValidChallengeCompletion');
+  console.info('console.info', 'isValidChallengeCompletion');
+  console.error('console.error', 'isValidChallengeCompletion');
+  console.log('console.log', 'isValidChallengeCompletion');
+  log('log isValidChallengeCompletion');
 
   if (!ObjectID.isValid(id)) {
     log('isObjectId', id, ObjectID.isValid(id));
