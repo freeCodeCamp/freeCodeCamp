@@ -488,6 +488,12 @@
     "breadcrumb-nav": "面包屑导航",
     "submit": "按下 Ctrl + Enter 键提交。",
     "running-tests": "正在运行测试",
+    "hide-preview": "Hide the preview",
+    "move-preview-to-new-window": "Move the preview to a new window and focus it",
+    "move-preview-to-main-window": "Move the preview to this window and close the external preview window",
+    "close-external-preview-window": "Close the external preview window",
+    "show-preview": "Show the preview in this window",
+    "open-preview-in-new-window": "Open the preview in a new window and focus it",
     "step": "步骤",
     "steps": "步骤",
     "steps-for": "{{blockTitle}} 的步骤"
