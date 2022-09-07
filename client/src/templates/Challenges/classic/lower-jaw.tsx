@@ -14,11 +14,10 @@ interface LowerJawProps {
   openHelpModal: () => void;
   tryToExecuteChallenge: () => void;
   tryToSubmitChallenge: () => void;
-  showFeedback?: boolean;
   isEditorInFocus?: boolean;
   challengeHasErrors?: boolean;
   testsLength?: number;
-  attemptsNumber?: number;
+  attemptsNumber: number;
   openResetModal: () => void;
   isSignedIn: boolean;
 }
@@ -36,7 +35,7 @@ const LowerJaw = ({
   openResetModal,
   isSignedIn
 }: LowerJawProps): JSX.Element => {
-  const [previousHint, setPreviousHint] = useState('');
+  const previousHintRef = React.useRef('');
   const [runningTests, setRunningTests] = useState(false);
   const [testFeedbackheight, setTestFeedbackHeight] = useState(0);
   const [isFeedbackHidden, setIsFeedbackHidden] = useState(false);
@@ -61,14 +60,6 @@ const LowerJaw = ({
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [attemptsNumber]);
-
-  useEffect(() => {
-    // only save error hints
-    if (challengeHasErrors && hint && previousHint !== hint) {
-      setPreviousHint(hint);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [challengeHasErrors, hint]);
 
   useEffect(() => {
     if (challengeIsCompleted && submitButtonRef?.current) {
@@ -96,7 +87,12 @@ const LowerJaw = ({
 
     For consistency, use the persisted version if the conditions has been met before.
   */
-  const earliestAvailableHint = hint || previousHint;
+  const earliestAvailableHint = hint || previousHintRef.current;
+
+  // only save error hints
+  if (challengeHasErrors) {
+    previousHintRef.current = earliestAvailableHint;
+  }
 
   const renderTestFeedbackContainer = () => {
     if (attemptsNumber === 0) {
@@ -166,9 +162,7 @@ const LowerJaw = ({
       'learn.sorry-hang-in-there',
       'learn.sorry-dont-giveup'
     ];
-    return attemptsNumber
-      ? sentenceArray[attemptsNumber % sentenceArray.length]
-      : sentenceArray[0];
+    return sentenceArray[attemptsNumber % sentenceArray.length];
   };
 
   const renderContextualActionRow = () => {
