@@ -13,7 +13,8 @@ Você <a href="https://replit.com/github/freeCodeCamp/boilerplate-mean-variance-
 Ainda estamos desenvolvendo a parte instrucional interativa do currículo Python. Por enquanto, aqui estão alguns vídeos no canal do freeCodeCamp.org do YouTube que ensinarão tudo o que você precisa saber para completar este projeto:
 
 - <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Curso de Python em vídeo para todos</a> (14 horas)
-- <a href="https://www.freecodecamp.org/news/learn-python-video-course/" target="_blank" rel="noopener noreferrer nofollow">Curso por vídeo Aprenda Python</a>
+
+- <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">Como analisar dados em Python com o Pandas</a> (10 hours)
 
 # --instructions--
 

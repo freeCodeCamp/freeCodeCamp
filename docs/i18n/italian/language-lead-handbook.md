@@ -30,7 +30,7 @@ L'autore e l'articolo originali vengono linkati automaticamente aggiungendo ques
 
 > [!TIP] Cambiare gli articoli nel footer almeno una volta al mese dà una spinta nei risultati di Google agli articoli linkati.
 
-There are two places in which to change the trending articles.
+Ci sono due posti in cui cambiare gli articoli di tendenza.
 
 - [Il repository del curriculum](https://github.com/freeCodeCamp/freeCodeCamp/)
 - [Il repository CDN](https://github.com/freeCodeCamp/cdn)
@@ -65,7 +65,7 @@ Questo è un esempio di come deve essere una parte del file `trending.json`.
 }
 ```
 
-Dovrai [fare il build in locale del client tradotto](how-to-test-translations-locally.md) per vedere se i titoli hanno la giusta lunghezza. Ogni titolo deve rimanere su una sola riga e non andare sulla successiva.
+Dovrai [fare il build in locale del client tradotto](how-to-enable-new-languages.md) per vedere se i titoli hanno la giusta lunghezza. Ogni titolo deve rimanere su una sola riga e non andare sulla successiva.
 
 ### Come aggiornare gli articoli di tendenza nel cdn
 
@@ -256,7 +256,7 @@ Poi ci sono tre passaggi da completare:
 
 ![pre-translate traduzioni esistenti](./images/crowdin/pre-translate3.png)
 
-When you have finished setting this, press the Pre-Translate button and wait. Ti avviserà al termine. The time it takes depends on how many untranslated strings are in the chosen files.
+Quando hai finito con le impostazioni, premi il pulsante Pre-Translate e attendi. Ti avviserà al termine. Può richiedere più o meno tempo a seconda di quante stringhe non tradotte sono presenti nei file scelti.
 
 ## Come aggiornare il glossario di Crowdin
 

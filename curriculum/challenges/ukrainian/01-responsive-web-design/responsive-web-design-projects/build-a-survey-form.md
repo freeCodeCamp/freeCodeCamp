@@ -1,6 +1,6 @@
 ---
 id: 587d78af367417b2b2512b03
-title: Build a Survey Form
+title: Створіть форму для опитування
 challengeType: 14
 forumTopicId: 301145
 dashedName: build-a-survey-form
@@ -8,277 +8,279 @@ dashedName: build-a-survey-form
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to <a href="https://survey-form.freecodecamp.rocks" target="_blank">https://survey-form.freecodecamp.rocks</a>
+**Мета:** Створити застосунок, функціонально схожий до <a href="https://survey-form.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://survey-form.freecodecamp.rocks</a>
 
-**User Stories:**
+**Історія користувача:**
 
-1. You should have a page title in an `h1` element with an `id` of `title`
-1. You should have a short explanation in a `p` element with an `id` of `description`
-1. You should have a `form` element with an `id` of `survey-form`
-1. Inside the form element, you are **required** to enter your name in an `input` field that has an `id` of `name` and a `type` of `text`
-1. Inside the form element, you are **required** to enter your email in an `input` field that has an `id` of `email`
-1. If you enter an email that is not formatted correctly, you will see an HTML5 validation error
-1. Inside the form, you can enter a number in an `input` field that has an `id` of `number`
-1. If you enter non-numbers in the number input, you will see an HTML5 validation error
-1. If you enter numbers outside the range of the number input, which are defined by the `min` and `max` attributes, you will see an HTML5 validation error
-1. For the name, email, and number input fields, you can see corresponding `label` elements in the form, that describe the purpose of each field with the following ids: `id="name-label"`, `id="email-label"`, and `id="number-label"`
-1. For the name, email, and number input fields, you can see placeholder text that gives a description or instructions for each field
-1. Inside the form element, you should have a `select` dropdown element with an `id` of `dropdown` and at least two options to choose from
-1. Inside the form element, you can select an option from a group of at least two radio buttons that are grouped using the `name` attribute
-1. Inside the form element, you can select several fields from a series of checkboxes, each of which must have a `value` attribute
-1. Inside the form element, you are presented with a `textarea` for additional comments
-1. Inside the form element, you are presented with a button with `id` of `submit` to submit all the inputs
+1. Ви повинні мати титул сторінки в елементі `h1` з `id` зі значенням `title`
+1. Ви повинні мати коротке роз'яснення в елементі `p` з `id` зі значенням `description`
+1. Ви повинні мати елемент `form` з `id` зі значенням `survey-form`
+1. В елементі форми вам **потрібно** ввести своє ім'я в полі `input`, яке має `id` зі значенням `name` та `type` зі значенням `text`
+1. В елементі форми вам **потрібно** ввести свою електронну пошту в полі `input`, яке має `id` зі значенням `email`
+1. Якщо ви введете неправильно сформовану електронну адресу, то побачите помилку перевірки HTML5
+1. В формі ви можете ввести число в поле `input`, яке має `id` зі значенням `number`
+1. Якщо в полі введення чисел ви введете не число, то побачите помилку перевірки HTML5
+1. Якщо ви введете число поза межами діапазону чисел, що визначено атрибутами `min` та `max`, то побачите помилку перевірки HTML5
+1. Для імені, електронної пошти та полів введення чисел можна побачити відповідні елементи `label` в формі, що описують мету кожного поля відповідними ідентифікаторами: `id="name-label"`, `id="email-label"` та `id="number-label"`
+1. Для імені, електронної пошти та полів введення чисел можна побачити текст заповнювача з описом або інструкцією до кожного поля
+1. В елементі форми ви повинні мати випадний елемент `select` з `id` зі значенням `dropdown` та принаймні два варіанти вибору
+1. В елементі форми ви можете вибрати опцію з групи принаймні двох радіокнопок, які згруповані з використанням атрибуту `name`
+1. В елементі форми ви можете вибрати декілька полів з серії прапорців, кожен з яких повинен мати атрибут `value`
+1. В елементі форми представлено `textarea` для додаткових коментарів
+1. В елементі форми представлено кнопку з `id` зі значенням `submit` для відправки всіх введень
 
-Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
+Виконайте історію користувача та пройдіть тести, наведені нижче, щоб завершити цей проєкт. Оформте за власним стилем. Щасливого кодування!
+
+**Примітка:** переконайтеся, що додали `<link rel="stylesheet" href="styles.css">` до HTML для прив'язки з аркушем стилів та застосували CSS
 
 # --hints--
 
-You should have an `h1` element with an `id` of `title`
+Ви повинні мати елемент `h1` з `id` зі значенням `title`.
 
 ```js
 const el = document.getElementById('title')
 assert(!!el && el.tagName === 'H1')
 ```
 
-Your `#title` should not be empty
+Ваш `#title` не повинен бути порожнім.
 
 ```js
 const el = document.getElementById('title')
 assert(!!el && el.innerText.length > 0)
 ```
 
-You should have a `p` element with an `id` of `description`
+Ви повинні мати елемент `p` з `id` зі значенням `description`.
 
 ```js
 const el = document.getElementById('description')
 assert(!!el && el.tagName === 'P')
 ```
 
-Your `#description` should not be empty
+Ваш `#description` не повинен бути порожнім.
 
 ```js
 const el = document.getElementById('description')
 assert(!!el && el.innerText.length > 0)
 ```
 
-You should have a `form` element with an `id` of `survey-form`
+Ви повинні мати елемент `form` з `id` зі значенням `survey-form`.
 
 ```js
 const el = document.getElementById('survey-form')
 assert(!!el && el.tagName === 'FORM')
 ```
 
-You should have an `input` element with an `id` of `name`
+Ви повинні мати елемент `input` з `id` зі значенням `name`.
 
 ```js
 const el = document.getElementById('name')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Your `#name` should have a `type` of `text`
+Ваш `#name` повинен мати `type` зі значенням `text`.
 
 ```js
 const el = document.getElementById('name')
 assert(!!el && el.type === 'text')
 ```
 
-Your `#name` should require input
+Ваш `#name` повинен вимагати введення.
 
 ```js
 const el = document.getElementById('name')
 assert(!!el && el.required)
 ```
 
-Your `#name` should be a descedant of `#survey-form`
+Ваш `#name` повинен бути нащадком `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #name')
 assert(!!el)
 ```
 
-You should have an `input` element with an `id` of `email`
+Ви повинні мати елемент `input` з `id` зі значенням `email`.
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Your `#email` should have a `type` of `email`
+Ваш `#email` повинен мати `type` зі значенням `email`.
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.type === 'email')
 ```
 
-Your `#email` should require input
+Ваш `#email` повинен вимагати введення.
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.required)
 ```
 
-Your `#email` should be a descedant of `#survey-form`
+Ваш `#email` повинен бути нащадком `#survey-form`
 
 ```js
 const el = document.querySelector('#survey-form #email')
 assert(!!el)
 ```
 
-You should have an `input` element with an `id` of `number`
+Ви повинні мати елемент `input` з `id` зі значенням `number`.
 
 ```js
 const el = document.getElementById('number')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Your `#number` should be a descedant of `#survey-form`
+Ваш `#number` повинен бути нащадком `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #number')
 assert(!!el)
 ```
 
-Your `#number` should have a `type` of `number`
+Ваш `#number` повинен мати `type` зі значенням `number`.
 
 ```js
 const el = document.getElementById('number')
 assert(!!el && el.type === 'number')
 ```
 
-Your `#number` should have a `min` attribute with a numeric value
+Ваш `#number` повинен мати атрибут `min` з числовим значенням.
 
 ```js
 const el = document.getElementById('number')
 assert(!!el && el.min && isFinite(el.min))
 ```
 
-Your `#number` should have a `max` attribute with a numeric value
+Ваш `#number` повинен мати атрибут `max` з числовим значенням.
 
 ```js
 const el = document.getElementById('number')
 assert(!!el && el.max && isFinite(el.max))
 ```
 
-You should have a `label` element with an `id` of `name-label`
+Ви повинні мати елемент `label` з `id` зі значенням `name-label`.
 
 ```js
 const el = document.getElementById('name-label')
 assert(!!el && el.tagName === 'LABEL')
 ```
 
-You should have a `label` element with an `id` of `email-label`
+Ви повинні мати елемент `label` з `id` зі значенням `email-label`.
 
 ```js
 const el = document.getElementById('email-label')
 assert(!!el && el.tagName === 'LABEL')
 ```
 
-You should have a `label` element with an `id` of `number-label`
+Ви повинні мати елемент `label` з `id` зі значенням `number-label`.
 
 ```js
 const el = document.getElementById('number-label')
 assert(!!el && el.tagName === 'LABEL')
 ```
 
-Your `#name-label` should not be empty
+Ваш `#name-label` повинен містити текст, який описує введені дані.
 
 ```js
 const el = document.getElementById('name-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Your `#email-label` should not be empty
+Ваш `#email-label` повинен містити текст, який описує введені дані.
 
 ```js
 const el = document.getElementById('email-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Your `#number-label` should not be empty
+Ваш `#number-label` повинен містити текст, який описує введені дані.
 
 ```js
 const el = document.getElementById('number-label')
 assert(!!el && el.innerText.length > 0)
 ```
 
-Your `#name-label` should be a descedant of `#survey-form`
+Ваш `#name-label` повинен бути нащадком `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #name-label')
 assert(!!el)
 ```
 
-Your `#email-label` should be a descedant of `#survey-form`
+Ваш `#email-label` повинен бути нащадком `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #email-label')
 assert(!!el)
 ```
 
-Your `#number-label` should be a descedant of `#survey-form`
+Ваш `#number-label` повинен бути нащадком `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #number-label')
 assert(!!el)
 ```
 
-Your `#name` should have a `placeholder` attribute and value
+Ваш `#name` повинен мати атрибут `placeholder` та значення.
 
 ```js
 const el = document.getElementById('name')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-Your `#email` should have a `placeholder` attribute and value
+Ваш `#email` повинен мати атрибут `placeholder` та значення.
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-Your `#number` should have a `placeholder` attribute and value
+Ваш `#number` повинен мати атрибут `placeholder` та значення.
 
 ```js
 const el = document.getElementById('number')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-You should have a `select` field with an `id` of `dropdown`
+Ви повинні мати поле `select` з `id` зі значенням `dropdown`.
 
 ```js
 const el = document.getElementById('dropdown')
 assert(!!el && el.tagName === 'SELECT')
 ```
 
-Your `#dropdown` should have at least two selectable (not disabled) `option` elements
+Ваш `#dropdown` повинен мати щонайменше два елементи `option` з можливістю вибору (не відключені).
 
 ```js
 const els = document.querySelectorAll('#dropdown option:not([disabled])')
 assert(els.length >= 2)
 ```
 
-Your `#dropdown` should be a descendant of `#survey-form`
+Ваш `#dropdown` повинен бути нащадком `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #dropdown')
 assert(!!el)
 ```
 
-You should have at least two `input` elements with a `type` of `radio` (radio buttons)
+Ви повинні мати щонайменше два елементи `input` з `type` зі значенням `radio` (радіокнопки).
 
 ```js
 const els = document.querySelectorAll('input[type="radio"]')
 assert(els.length >= 2)
 ```
 
-You should have at least two radio buttons that are descendants of `#survey-form`
+Ви повинні мати щонайменше дві радіокнопки, які є нащадками `#survey-form`.
 
 ```js
 const els = document.querySelectorAll('#survey-form input[type="radio"]')
 assert(els.length >= 2)
 ```
 
-All your radio buttons should have a `value` attribute and value
+Всі радіокнопки повинні мати атрибут `value` та значення.
 
 ```js
 const els1 = document.querySelectorAll('input[type="radio"]')
@@ -286,7 +288,7 @@ const els2 = document.querySelectorAll('input[type="radio"][value=""], input[typ
 assert(els1.length > 0 && els2.length === 0)
 ```
 
-All your radio buttons should have a `name` attribute and value
+Всі радіокнопки повинні мати атрибут `name` та значення.
 
 ```js
 const els1 = document.querySelectorAll('input[type="radio"]')
@@ -294,7 +296,7 @@ const els2 = document.querySelectorAll('input[type="radio"][name=""], input[type
 assert(els1.length > 0 && els2.length === 0)
 ```
 
-Every radio button group should have at least 2 radio buttons
+В кожній групі радіокнопок повинно бути щонайменше 2 радіокнопки.
 
 ```js
 const radioButtons = document.querySelectorAll('input[type="radio"]');
@@ -316,14 +318,14 @@ groupKeys.forEach(key => {
 assert(groupKeys.length > 0)
 ```
 
-You should have at least two `input` elements with a `type` of `checkbox` (checkboxes) that are descendants of `#survey-form`
+Ви повинні мати щонайменше два елементи `input` з `type` зі значенням `checkbox` (прапорцями), що є нащадками `#survey-form`.
 
 ```js
 const els = document.querySelectorAll('#survey-form input[type="checkbox"]');
 assert(els.length >= 2)
 ```
 
-All your checkboxes inside `#survey-form` should have a `value` attribute and value
+Всі прапорці всередині `#survey-form` повинні мати атрибут `value` та значення.
 
 ```js
 const els1 = document.querySelectorAll('#survey-form input[type="checkbox"]')
@@ -331,28 +333,28 @@ const els2 = document.querySelectorAll('#survey-form input[type="checkbox"][valu
 assert(els1.length > 0 && els2.length === 0)
 ```
 
-You should have at least one `textarea` element that is a descendant of `#survey-form`
+Ви повинні мати щонайменше один елемент `textarea`, що є нащадком `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form textarea')
 assert(!!el)
 ```
 
-You should have an `input` or `button` element with an `id` of `submit`
+Ви повинні мати елемент `input` або `button` з `id` зі значенням `submit`.
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && (el.tagName === 'INPUT' || el.tagName === 'BUTTON'))
 ```
 
-Your `#submit` should have a `type` of `submit`
+Ваш `#submit` повинен мати `type` зі значенням `submit`.
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && el.type === 'submit')
 ```
 
-Your `#submit` should be a descendant of `#survey-form`
+Ваш `#submit` повинен бути нащадком `#survey-form`.
 
 ```js
 const el = document.querySelector('#survey-form #submit')
@@ -378,7 +380,7 @@ assert(!!el)
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Survey Form</title>
   </head>
   <body>

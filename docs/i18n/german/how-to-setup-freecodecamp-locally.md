@@ -151,7 +151,7 @@ Jetzt, wo du eine lokale Kopie von freeCodeCamp besitzt, kannst du diese Anweisu
 
 Wenn du auf Probleme stößt, führe zuerst eine Websuche nach deinem Problem durch und schaue nach, ob es bereits beantwortet wurde. Wenn du keine Lösung findest, suche bitte auf unserer [GitHub issues](https://github.com/freeCodeCamp/freeCodeCamp/issues)-Seite nach einer Lösung und melde das Problem, falls es noch nicht gemeldet wurde.
 
-And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our chat server](https://discord.gg/PRyKn3Vbay).
+Und wie immer kannst du Fragen in der [Kategorie 'Contributors' in unserem Forum](https://forum.freecodecamp.org/c/contributors) oder [auf unserem Chat-Server](https://discord.gg/PRyKn3Vbay) stellen.
 
 > [!TIP] Du kannst darauf verzichten, freeCodeCamp lokal auszuführen, wenn du nur Dateien bearbeitest. Du kannst zum Beispiel ein `rebase` durchführen oder `merge`-Konflikte beheben.
 > 
@@ -222,7 +222,7 @@ mongod
 "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
 ```
 
-Make sure to replace `3.6` with the version you have installed
+Stelle sicher, dass du `3.6` durch die installierte Version ersetzt
 
   <!-- tabs:end -->
 
@@ -244,13 +244,13 @@ npm run develop
 
 Mit diesem einzigen Befehl werden alle Dienste gestartet, einschließlich des API-Servers und der Client-Anwendungen, an denen du arbeiten kannst.
 
-> [!NOTE] Sobald du bereit bist, öffne einen Webbrowser und **besuche <http://localhost:8000>**. If the app loads, sign in. Congratulations – you're all set! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
+> [!NOTE] Sobald du bereit bist, öffne einen Webbrowser und **besuche <http://localhost:8000>**. Wenn die App geladen wird, melde dich an. Herzlichen Glückwunsch - Du bist bereit! Du hast jetzt eine Kopie der gesamten Lernplattform von freeCodeCamp auf deinem lokalen Rechner laufen.
 
 > [!TIP] Der API-Server bedient APIs unter `http://localhost:3000`. Die Gatsby-App bedient die Client-Anwendung unter `http://localhost:8000`
 
-> While you are logged in, if you visit <http://localhost:3000/explorer> you should see the available APIs.
+> Wenn du eingeloggt bist und <http://localhost:3000/explorer> besuchst, solltest du die verfügbaren APIs sehen.
 
-> [!WARNING] Clearing your cookies or running `npm run seed:certified-user` will log you out, and you will have to sign in again.
+> [!WARNING] Wenn du deine Cookies löschst oder `npm run seed:certified-user` ausführst, wirst du ausgeloggt und musst dich neu anmelden.
 
 ## Mit einem lokalen Benutzer anmelden
 
@@ -498,7 +498,7 @@ Wenn du ein anderes Betriebssystem verwendest und/oder immer noch Probleme hast,
 
 > [!WARNING]
 > 
-> Please avoid creating GitHub issues for prerequisite issues. They are out of the scope of this project.
+> Bitte vermeide es, GitHub Issues für Issues mit Vorbedingungen zu erstellen. Sie liegen außerhalb des Rahmens dieses Projekts.
 
 ### Probleme mit der Benutzeroberfläche, Schriftarten, Build-Fehler usw.
 
@@ -568,10 +568,10 @@ Wenn du bei der Installation der Abhängigkeiten Fehler erhältst, vergewissere 
 
 Die Ersteinrichtung kann je nach Netzwerkbandbreite eine Weile dauern. Sei geduldig, und wenn du immer noch nicht weiterkommst, empfehlen wir dir, GitPod statt eines Offline-Setups zu verwenden.
 
-> [!NOTE] If you are using Apple Devices with M1 Chip to run the application locally, it is suggested to use Node v14.7 or above. You might run into issues with dependencies like Sharp otherwise.
+> [!NOTE] Wenn du Apple-Geräte mit M1-Chip verwendest, um die Anwendung lokal auszuführen, wird empfohlen, Node v14.7 oder höher zu verwenden. Andernfalls kann es zu Problemen mit Abhängigkeiten wie Sharp kommen.
 
 ## Hilfe erhalten
 
-If you are stuck and need help, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
+Wenn du nicht weiterkommst und Hilfe brauchst, kannst du deine Fragen in der [Kategorie "Contributors" in unserem Forum](https://forum.freecodecamp.org/c/contributors) oder im ["Contributors "Chatraum](https://discord.gg/PRyKn3Vbay) stellen.
 
 In der Konsole deines Browsers oder in der Bash / Terminal / Kommandozeile kann eine Fehlermeldung erscheinen, die dir hilft, das Problem zu identifizieren. Gib diese Fehlermeldung in deiner Problembeschreibung an, damit andere das Problem leichter identifizieren und dir bei der Suche nach einer Lösung helfen können.

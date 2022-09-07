@@ -8,7 +8,7 @@ dashedName: compare-scopes-of-the-var-and-let-keywords
 
 # --description--
 
-如果你不熟悉 `let`，請查看 [這個挑戰](/learn/javascript-algorithms-and-data-structures/basic-javascript/explore-differences-between-the-var-and-let-keywords)。
+如果你不熟悉 `let`的話, 請查看 <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/explore-differences-between-the-var-and-let-keywords" target="_blank" rel="noopener noreferrer nofollow">這個介紹 <code>let</code>和 <code>var</code> 關鍵字之間的差異的挑戰</a>
 
 使用 `var` 關鍵字聲明變量時，它是全局聲明的，如果在函數內部聲明則是局部聲明的。
 

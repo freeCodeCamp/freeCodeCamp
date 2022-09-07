@@ -23,7 +23,8 @@ import envData from '../../../../../config/env.json';
 import {
   availableLangs,
   LangNames,
-  LangCodes
+  LangCodes,
+  hiddenLangs
 } from '../../../../../config/i18n/all-langs';
 import { hardGoTo as navigate } from '../../../redux';
 import { updateUserFlag } from '../../../redux/settings';
@@ -34,7 +35,9 @@ import LanguageGlobe from '../../../assets/icons/language-globe';
 
 const { clientLocale, radioLocation, apiLocation } = envData;
 
-const locales = availableLangs.client;
+const locales = availableLangs.client.filter(
+  lang => !hiddenLangs.includes(lang)
+);
 
 export interface NavLinksProps {
   displayMenu?: boolean;

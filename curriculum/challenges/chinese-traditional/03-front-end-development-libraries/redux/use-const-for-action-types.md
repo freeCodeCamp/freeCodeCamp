@@ -87,12 +87,8 @@ assert(
 
 ```js
 const noWhiteSpace = __helpers.removeWhiteSpace(code);
-assert(
-  (/constLOGIN=(['"`])LOGIN\1/.test(noWhiteSpace) &&
-    /constLOGOUT=(['"`])LOGOUT\1/.test(noWhiteSpace)) ||
-      /const(LOGIN|LOGOUT)=(['"`])\1\2,(?!\1)(LOGIN|LOGOUT)=(['"`])\3\4/.test(noWhiteSpace) ||
-        /const\[(LOGIN|LOGOUT),(?!\1)(LOGIN|LOGOUT)\]=\[(['"`])\1\3,\3\2\3\]/.test(noWhiteSpace)
-);
+assert(LOGIN === 'LOGIN' && LOGOUT === 'LOGOUT')
+assert(noWhiteSpace.includes('const'))
 ```
 
 action creator 和 reducer 中應該引用 `LOGIN` 和 `LOGOUT` 常量。

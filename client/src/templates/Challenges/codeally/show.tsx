@@ -368,7 +368,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                 certification={certification}
                 superBlock={superBlock}
               />
-              <HelpModal />
+              <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
           </Grid>
         </LearnLayout>

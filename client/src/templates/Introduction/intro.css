@@ -251,7 +251,7 @@ button.map-title {
 
 .map-challenges-grid .map-challenge-title a {
   width: 3.4rem;
-  height: 2.75rem;
+  height: 3.4rem;
   min-width: 24px;
   min-height: 24px;
   padding: 0;
@@ -267,9 +267,12 @@ button.map-title {
 }
 
 .map-challenges-grid {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 3.4rem);
+  grid-gap: 3px;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: calc(100% - 50px);
 }
 .map-challenge-title-grid {
   flex: 0 1 60px;

@@ -1,5 +1,6 @@
 import { mkdirSync, writeFileSync, readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
+import { submitTypes } from '../../../client/utils/challenge-types';
 import { SuperBlocks } from '../../../config/certification-settings';
 
 type Intro = { [keyValue in SuperBlocks]: IntroProps };
@@ -11,6 +12,7 @@ interface IntroProps extends CurriculumProps {
 }
 
 interface CurriculumProps {
+  intro: string[];
   blocks: Record<string, Block>;
 }
 
@@ -22,9 +24,9 @@ interface Block {
 }
 
 export const orderedSuperBlockInfo = [
-  { dashedName: SuperBlocks.RespWebDesignNew, public: false },
+  { dashedName: SuperBlocks.RespWebDesignNew, public: true },
   { dashedName: SuperBlocks.RespWebDesign, public: true },
-  { dashedName: SuperBlocks.JsAlgoDataStruct, public: true },
+  { dashedName: SuperBlocks.JsAlgoDataStruct, public: false },
   { dashedName: SuperBlocks.FrontEndDevLibs, public: false },
   { dashedName: SuperBlocks.DataVis, public: false },
   { dashedName: SuperBlocks.BackEndDevApis, public: false },
@@ -44,15 +46,16 @@ export function buildExtCurriculumData(
   curriculum: Curriculum
 ): void {
   const staticFolderPath = resolve(__dirname, '../../../client/static');
-  const versionPath = `${staticFolderPath}/curriculum-data/${ver}`;
+  const dataPath = `${staticFolderPath}/curriculum-data/`;
   const blockIntroPath = resolve(
     __dirname,
     '../../../client/i18n/locales/english/intro.json'
   );
 
-  mkdirSync(versionPath, { recursive: true });
+  mkdirSync(dataPath, { recursive: true });
 
   parseCurriculumData();
+  getSubmitTypes();
 
   function parseCurriculumData() {
     const superBlockKeys = Object.values(SuperBlocks).filter(x =>
@@ -73,6 +76,8 @@ export function buildExtCurriculumData(
       if (blockNames.length === 0) continue;
 
       superBlock[superBlockKey] = <CurriculumProps>{};
+      superBlock[superBlockKey]['intro'] =
+        getSuperBlockDescription(superBlockKey);
       superBlock[superBlockKey]['blocks'] = {};
 
       for (let j = 0; j < blockNames.length; j++) {
@@ -90,7 +95,7 @@ export function buildExtCurriculumData(
   }
 
   function writeToFile(fileName: string, data: Record<string, unknown>): void {
-    const filePath = `${versionPath}/${fileName}.json`;
+    const filePath = `${dataPath}/${ver}/${fileName}.json`;
     mkdirSync(dirname(filePath), { recursive: true });
     writeFileSync(filePath, JSON.stringify(data, null, 2));
   }
@@ -104,11 +109,25 @@ export function buildExtCurriculumData(
     return intros[superBlockKeys]['blocks'][blockKey]['intro'];
   }
 
+  function getSuperBlockDescription(superBlockKey: SuperBlocks): string[] {
+    const superBlockIntro = JSON.parse(
+      readFileSync(blockIntroPath, 'utf-8')
+    ) as Intro;
+    return superBlockIntro[superBlockKey]['intro'];
+  }
+
   function getSuperBlockTitle(superBlock: SuperBlocks): string {
     const superBlocks = JSON.parse(
       readFileSync(blockIntroPath, 'utf-8')
     ) as Intro;
 
     return superBlocks[superBlock].title;
+  }
+
+  function getSubmitTypes() {
+    writeFileSync(
+      `${dataPath}/submit-types.json`,
+      JSON.stringify(submitTypes, null, 2)
+    );
   }
 }
