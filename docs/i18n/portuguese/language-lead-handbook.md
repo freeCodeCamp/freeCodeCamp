@@ -65,7 +65,7 @@ Este é um exemplo de como deve ser a aparência de parte do arquivo `trending.j
 }
 ```
 
-You will want to [build the translated client locally](how-to-enable-new-languages.md) to see if the titles have the right length. Cada título deve permanecer em uma única linha e não deve ir para uma nova linha.
+Você vai querer [fazer a build do client traduzido localmente](how-to-enable-new-languages.md) para ver se os títulos têm o comprimento correto. Cada título deve permanecer em uma única linha e não deve ir para uma nova linha.
 
 ### Como atualizar os artigos em destaque no cdn
 

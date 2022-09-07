@@ -1,14 +1,14 @@
-# Deploying New Languages on `/learn`
+# Implantar novos idiomas no `/learn`
 
-Before you can release a new language, you will need to allow the languages to download from Crowdin.
+Antes de lançar um novo idioma, você precisará permitir que os idiomas sejam baixados do Crowdin.
 
-## Updating Crowdin Settings
+## Atualizar as configurações do Crowdin
 
-In the `Curriculum` and `Learn UI` projects, you will need to select `Project Settings` from the sidebar. Then scroll down to `Language Mapping`, where you will see an option to add custom language codes. Add a new entry for the language you are releasing, selecting `language` as the `Placeholder` value, and entering a URL-friendly lower-case spelling of your language's name for the `Custom code`. If you aren't sure what to use, reach out in our contributor chat and we will assist you.
+Nos projetos `Curriculum` e `Learn UI`, você precisará selecionar `Projects Settings`, na barra lateral. Em seguida, desça até `Language Mapping`, onde você verá uma opção para adicionar códigos de idioma personalizados. Adicione uma nova entrada para o idioma que você está liberando, selecionando `language` como o valor de `Placeholder` e digitando um URL amigável em letras minúsculas do nome do seu idioma para o `Custom code`. Se você não tiver certeza do que usar, fale conosco pelo nosso chat de colaboradores e nós o ajudaremos.
 
-## Updating Workflows
+## Atualizar os fluxos de trabalho
 
-You will need to add a step to the `crowdin-download.client-ui.yml` and `crowdin-download.curriculum.yml`. The step for these will be the same. For example, if you want to enable Dothraki downloads:
+Você precisará adicionar um passo em `crowdin-download.client-ui.yml` e em `crowdin-download.curriculum.yml`. O passo para ambos será o mesmo. Por exemplo, se você quiser habilitar os downloads de Dothraki:
 
 ```yml
 ##### Download Dothraki #####
@@ -41,24 +41,24 @@ You will need to add a step to the `crowdin-download.client-ui.yml` and `crowdin
     # dryrun_action: true
 ```
 
-Note that the `download_language` key needs to be set to the language code displayed on Crowdin.
+Observe que a chave `download_language` precisa ser definida como código do idioma exibido no Crowdin.
 
-## Enabling a Language
+## Habilitar um idioma
 
-> [!NOTE] The above section with updating the workflows should be completed before proceeding - these need to be done in separate steps or the builds will fail.
+> [!NOTE] A seção acima com a atualização dos fluxos de trabalho deve ser concluída antes de prosseguir - isso precisa ser feito em etapas separadas. Caso contrário, as compilações falharão.
 
-There are a few steps to take in order to allow the codebase to build in your desired language.
+Existem algumas etapas a serem seguidas para permitir que a base de código seja compilada no idioma desejado.
 
-First, visit the `config/i18n/all-langs.ts` file to add the language to the available languages list and configure the values. There are several objects here.
+Primeiro, visite o arquivo `config/i18n/all-langs.ts` para adicionar o idioma à lista de idiomas disponíveis e configurar os valores. Existem vários objetos aqui.
 
-- `availableLangs`: For both the `client` and `curriculum` arrays, add the text name of the language. This is the value that will be used in the `.env` file later.
-- `auditedCerts`: Add the text name of the language as the _key_, and add an array of `SuperBlocks.{cert}` variables as the _value_. This tells the client which certifications are fully translated.
-- `i18nextCodes`: These are the ISO language codes for each language. You will need to add the appropriate ISO code for the language you are enabling. These do need to be unique for each language.
-- `LangNames`: These are the display names for the language selector in the navigation menu.
-- `LangCodes`: These are the language codes used for formatting dates and numbers. These should be Unicode CLDR codes instead of ISO codes.
-- `hiddenLangs`: These languages will not be displayed in the navigation menu. This is used for languages that are not yet ready for release.
+- `availableLangs`: tanto para o array `client` quanto para o array `curriculum`, adicione o nome do idioma. Esse valor é o que será usado no arquivo `.env` depois.
+- `auditedCerts`: adicione o nome do texto do idioma como a _chave_ e adicione um array de variáveis `SuperBlocks.{cert}` como o _valor_. Isto informa ao cliente quais certificações estão totalmente traduzidas.
+- `i18nextCodes`: esses são os códigos ISO de cada linguagem. Você vai precisar do código ISO apropriado para o idioma que você está habilitando. Eles precisam ser únicos para cada idioma.
+- `LangNames`: esses são os nomes dos idiomas que aparecerão para a seleção no menu de navegação.
+- `LangCodes`: esses são os códigos de idiomas usados para formatar datas e números. Esses deverão ser códigos Unicode CLDR ao invés de códigos ISO.
+- `hiddenLangs`: Esses idiomas não serão exibidos no menu de navegação. Isto é usado para idiomas que ainda não estão prontos para liberação.
 
-As an example, if you wanted to enable Dothraki as a language, your `all-langs.js` objects should look like this:
+Como um exemplo, se você tivesse que habilitar o idioma Dothraki como seu idioma, os objetos  `all-langs.js` devem ficar assim:
 
 ```js
 export const availableLangs = {
@@ -138,15 +138,15 @@ export enum LangCodes = {
 export const hiddenLangs = ['dothraki'];
 ```
 
-> [!NOTE] When a language has been set up in the deployment pipeline AND has a public `/news` instance live, it can be removed from the `hiddenLangs` array and be made available to the public.
+> [!NOTE] Quando um idioma for configurado no pipeline de implantação E tiver uma instância pública de `/news` ativa, ele pode ser removido da matriz `hiddenLangs` e ser disponibilizado ao público.
 
-Next, open the `client/src/utils/algolia-locale-setup.ts` file. This data is used for the search bar that loads `/news` articles. While it is unlikely that you are going to test this functionality, missing the data for your language can lead to errors when attempting to build the codebase locally.
+Agora, abra o arquivo `client/src/utils/algolia-locale-setup.ts`. Esse dado é usado para a barra de busca que carrega os artigos `/news`. Embora seja improvável que você venha a testar essa funcionalidade, não ter os dados para o seu idioma pode levar a erros quando tentar criar a base de código localmente.
 
-Add an object for your language to the `algoliaIndices` object. You should use the the same values as the `english` object for local testing, replacing the `english` key with your language's `availableLangs` value.
+Adicione um objeto para seu idioma no objeto `algoliaIndices`. Você deve usar os mesmos valores do objeto `english` para o teste local, substituindo a chave `english` pelo valor de `availableLangs` do seu idioma.
 
-> [!NOTE] If we have already deployed an instance of news in your target language, you can update the values to reflect the live instance. Otherwise, use the English values.
+> [!NOTE] Se nós já implantamos uma instância do editorial em sua língua-alvo, você pode atualizar os valores para refletir a instância que já está implantada. Do contrário, use os valores em inglês.
 
-If you were to add Dothraki:
+Se você fosse adicionar Dothraki:
 
 ```js
 const algoliaIndices = {
@@ -173,9 +173,9 @@ const algoliaIndices = {
 };
 ```
 
-### Releasing a Superblock
+### Liberar um superbloco
 
-After a superblock has been fully translated into a language, there are two steps to release it. First add the superblock enum to that language's `auditedCerts` array. So, if you want to release the new Responsive Web Design superblock for Dothraki, the array should look like this:
+Após um superbloco ter sido totalmente traduzido para um idioma, há duas etapas necessárias para seu lançamento. Primeiro, adicione o enum do superblock ao array `auditedCerts` do idioma. Assim, se você quiser liberar o novo superbloco de Design Responsivo para a Web para o dothraki, o array deverá ter essa aparência:
 
 ```ts
 export const auditedCerts = {
@@ -189,17 +189,17 @@ export const auditedCerts = {
 };
 ```
 
-Finally, if the superblock is in a "new" state (that is, replacing a legacy superblock), the `languagesWithAuditedBetaReleases` array should be updated to include the new language like this:
+Finalmente, se o superbloco estiver em um estado "new" (ou seja, substituindo um superbloco legado), o array de `languagesWithAuditedBetaReleases` deve ser atualizado para incluir o novo idioma, assim:
 
 ```ts
 export const languagesWithAuditedBetaReleases: ['english', 'dothraki'];
 ```
 
-This will move the new superblock to the correct place in the curriculum map on `/learn`.
+Isso moverá o novo superbloco para o lugar correto no mapa do currículo em `/learn`.
 
-## Enabling Localized Videos
+## Ativando vídeos localizados
 
-For the video challenges, you need to change a few things. First add the new locale to the GraphQL query in the `client/src/templates/Challenges/video/Show.tsx` file. For example, adding Dothraki to the query:
+Para os desafios em vídeo, você precisa fazer algumas alterações. Primeiro, adicione o novo idioma (locale) à consulta do GraphQL no arquivo `client/src/templates/Challenges/video/Show.tsx`. Por exemplo, para adicionar Dothraki à consulta:
 
 ```tsx
   query VideoChallenge($slug: String!) {
@@ -214,7 +214,7 @@ For the video challenges, you need to change a few things. First add the new loc
       ...
 ```
 
-Then add an id for the new language to any video challenge in an audited block. For example, if `auditedCerts` in `all-langs.ts` includes `scientific-computing-with-python` for `dothraki`, then you must add a `dothraki` entry in `videoLocaleIds`. The frontmatter should then look like this:
+Em seguida, adicione um id para o novo idioma para qualquer desafio em vídeo em um bloco auditado. Por exemplo, se `auditedCerts` em `all-langs.ts` inclui `scientific-computing-with-python` para `dothraki`, você deve adicionar uma entrada em `dothraki` em `videoLocaleIds`. O frontmatter dever ter essa aparência:
 
 ```yml
 videoLocaleIds:
@@ -222,11 +222,11 @@ videoLocaleIds:
   italian: hiRTRAqNlpE
   portuguese: AelGAcoMXbI
   dothraki: new-id-here
-dashedName: introduction-why-program
+nomeComTracos: introducao-por-que-programa
 ---
 ```
 
-Update the `VideoLocaleIds` interface in `client/src/redux/prop-types` to include the new language.
+Atualize a interface de `VideoLocaleIds` em `client/src/redux/prop-types` para que ela inclua o novo idioma.
 
 ```ts
 export interface VideoLocaleIds {
@@ -237,7 +237,7 @@ export interface VideoLocaleIds {
 }
 ```
 
-And finally update the challenge schema in `curriculum/schema/challengeSchema.js`.
+Por fim, atualize o schema de desafios em `curriculum/schema/challengeSchema.js`.
 
 ```js
 videoLocaleIds: Joi.when('challengeType', {
@@ -251,29 +251,29 @@ videoLocaleIds: Joi.when('challengeType', {
 }),
 ```
 
-## Client UI
+## Interface do client
 
-You will need to take an additional step to handle the client UI translations.
+Você precisará dar um passo adicional para lidar com as traduções da interface do client.
 
-The Crowdin workflows will automatically pull down _some_ of the UI translations, but there are a couple of files that need to be moved manually.
+Os fluxos de trabalho do Crowdin serão automaticamente puxados _algumas_ das traduções da UI, mas há alguns arquivos que precisam ser movidos manualmente.
 
-You will want to copy the following files from `/client/i18n/locales/english` to `/client/i18n/locales/<your-language>`, and apply translations as needed:
+Você vai querer copiar os seguintes arquivos de `/client/i18n/locales/english` para `/client/i18n/locales/<your-language>` e aplicar as traduções conforme necessário:
 
 - `links.json`
 - `meta-tags.json`
 - `motivation.json`
 - `trending.json`
 
-## Testing Translations Locally
+## Testar traduções localmente
 
-If you would like to test translations locally, before adding them to our main repository - skip the Crowdin workflow changes. Follow the steps for enabling a language, then download the translations from Crowdin and load them into your local code.
+Se quiser testar as traduções localmente, antes de adicioná-las ao nosso repositório principal - pule as alterações de fluxo de trabalho do Crowdin. Siga as etapas para habilitar um idioma e, em seguida, baixe as traduções do Crowdin e as carregue em seu código local.
 
-Because the language has not been approved for production, our scripts are not automatically downloading the translations yet. Only staff have the access to directly download the translations - you are welcome to reach out to us in our [contributors chat room](https://discord.gg/PRyKn3Vbay), or you can translate the English markdown files locally for testing purposes.
+Como o idioma ainda não foi aprovado para produção, nossos scripts ainda não estão baixando automaticamente as traduções. Somente membros da equipe têm acesso para baixar as traduções diretamente – entre em contato conosco quando quiser em nossa [sala de chat dos contribuidores](https://discord.gg/PRyKn3Vbay) ou traduza os arquivos de markdown em inglês localmente para fins de teste.
 
-Once you have the files, you will need to place them in the correct directory. For the curriculum challenges, you should place the certification folders (i.e. `01-responsive-web-design`) within the `curriculum/challenges/{lang}` directory. For our Dothraki translations, this would be `curriculum/challenges/dothraki`. The client translation `.json` files will go in the `client/i18n/locales/{lang}` directory.
+Quando tiver os arquivos em mãos, você precisará colocá-los no diretório correto. Para os desafios do currículo, você deve colocar as pastas de certificação (por exemplo, `01-responsive-web-design`) no diretório `curriculum/challenges/{lang}`. Para nossas traduções em Dothraki, esse diretório seria `curriculum/challenges/dothraki`. Os arquivos `.json` de tradução do client vão no diretório `client/i18n/locales/{lang}`.
 
-Update your `.env` file to use your new language for `CLIENT_LOCALE` and `CURRICULUM_LOCALE`.
+Atualize seu arquivo `.env` para usar seu novo idioma para `CLIENT_LOCALE` e `CURRICULUM_LOCALE`.
 
-Once these are in place, you should be able to run `npm run develop` to view your translated version of freeCodeCamp.
+Quando estes arquivos estiverem no local certo, você deve poder usar `npm run develop` para ver sua versão traduzida do freeCodeCamp.
 
-> [!ATTENTION] While you may perform translations locally for the purpose of testing, we remind everyone that translations should _not_ be submitted through GitHub and should only be done through Crowdin. Be sure to reset your local codebase after you are done testing.
+> [!ATTENTION] Embora você possa realizar as traduções localmente para fins de teste, lembramos a todos que as traduções _não_ devem ser enviadas pelo GitHub e devem ser feitas somente pelo Crowdin. Certifique-se de reiniciar sua base de código local após realizar os testes.
