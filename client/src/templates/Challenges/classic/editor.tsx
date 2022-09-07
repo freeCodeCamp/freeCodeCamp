@@ -59,7 +59,9 @@ import {
   stopResetting,
   isProjectPreviewModalOpenSelector,
   openModal,
-  isChallengeCompletedSelector
+  isChallengeCompletedSelector,
+  attemptsSelector,
+  resetAttempts
 } from '../redux';
 import GreenPass from '../../../assets/icons/green-pass';
 import LowerJaw from './lower-jaw';
@@ -70,6 +72,7 @@ import './editor.css';
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 
 interface EditorProps {
+  attempts: number;
   canFocus: boolean;
   challengeFiles: ChallengeFiles;
   challengeType: number;
@@ -97,6 +100,7 @@ interface EditorProps {
   setEditorFocusability: (isFocusable: boolean) => void;
   submitChallenge: () => void;
   stopResetting: () => void;
+  resetAttempts: () => void;
   tests: Test[];
   theme: Themes;
   title: string;
@@ -128,6 +132,7 @@ interface EditorProperties {
 }
 
 const mapStateToProps = createSelector(
+  attemptsSelector,
   canFocusEditorSelector,
   challengeMetaSelector,
   consoleOutputSelector,
@@ -139,6 +144,7 @@ const mapStateToProps = createSelector(
   challengeTestsSelector,
   isChallengeCompletedSelector,
   (
+    attempts: number,
     canFocus: boolean,
     { challengeType }: { challengeType: number },
     output: string[],
@@ -150,6 +156,7 @@ const mapStateToProps = createSelector(
     tests: [{ text: string; testString: string }],
     isChallengeCompleted: boolean
   ) => ({
+    attempts,
     canFocus: open ? false : canFocus,
     challengeType,
     previewOpen,
@@ -173,6 +180,7 @@ const mapDispatchToProps = {
   submitChallenge,
   initTests,
   stopResetting,
+  resetAttempts,
   openHelpModal: () => openModal('help'),
   openResetModal: () => openModal('reset')
 };
@@ -232,7 +240,7 @@ const initialData: EditorProperties = {
 
 const Editor = (props: EditorProps): JSX.Element => {
   const { t } = useTranslation();
-  const { editorRef, initTests } = props;
+  const { editorRef, initTests, resetAttempts } = props;
   // These refs are used during initialisation of the editor as well as by
   // callbacks.  Since they have to be initialised before editorWillMount and
   // editorDidMount are called, we cannot use useState.  Reason being that will
@@ -258,7 +266,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     noteIndex: 0,
     shouldPlay: store.get('fcc-sound') as boolean | undefined
   });
-  const attemptRef = useRef<{ attempts: number }>({ attempts: 0 });
 
   // since editorDidMount runs once with the initial props object, it keeps a
   // reference to *those* props. If we want it to use the latest props, we can
@@ -372,6 +379,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (hasEditableRegion()) {
       initializeDescriptionAndOutputWidgets();
       addContentChangeListener();
+      resetAttempts();
       showEditableRegion(editor);
     }
 
@@ -593,13 +601,12 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   function tryToExecuteChallenge() {
     props.executeChallenge();
-    attemptRef.current.attempts++;
   }
 
   const tryToSubmitChallenge = submitChallengeDebounceRef.current;
 
   function createLowerJaw(outputNode: HTMLElement, callback?: () => void) {
-    const { output } = props;
+    const { output, attempts } = props;
     const isChallengeComplete = challengeIsComplete();
     const isEditorInFocus = document.activeElement?.tagName === 'TEXTAREA';
     ReactDOM.render(
@@ -609,7 +616,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         tryToExecuteChallenge={tryToExecuteChallenge}
         hint={output[1]}
         testsLength={props.tests.length}
-        attemptsNumber={attemptRef.current.attempts}
+        attemptsNumber={attempts}
         challengeIsCompleted={isChallengeComplete}
         challengeHasErrors={challengeHasErrors()}
         tryToSubmitChallenge={tryToSubmitChallenge}
@@ -622,6 +629,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   }
 
   const updateOutputZone = () => {
+    console.log('updateOutputZone');
     const editor = dataRef.current.editor;
     if (!editor || !dataRef.current.outputNode) return;
 
@@ -1072,10 +1080,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     return tests.some(test => test.err);
   }
 
-  function resetAttampts() {
-    attemptRef.current.attempts = 0;
-  }
-
   // runs every update to the editor and when the challenge is reset
   useEffect(() => {
     // If a challenge is reset, it needs to communicate that change to the
@@ -1103,7 +1107,6 @@ const Editor = (props: EditorProps): JSX.Element => {
         initializeDescriptionAndOutputWidgets();
         updateDescriptionZone();
         showEditableRegion(editor);
-        resetAttampts();
         resetMarginDecorations();
       }
     }
