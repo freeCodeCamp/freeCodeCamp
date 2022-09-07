@@ -629,7 +629,6 @@ const Editor = (props: EditorProps): JSX.Element => {
   }
 
   const updateOutputZone = () => {
-    console.log('updateOutputZone');
     const editor = dataRef.current.editor;
     if (!editor || !dataRef.current.outputNode) return;
 
