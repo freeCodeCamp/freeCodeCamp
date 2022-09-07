@@ -49,11 +49,8 @@ const LowerJaw = ({
     if (attemptsNumber && attemptsNumber > 0) {
       //hide the feedback from SR until the "Running tests" are displayed and removed.
       setIsFeedbackHidden(true);
-
       //allow the lower jaw height to be picked up by the editor.
-      setTimeout(() => {
-        setRunningTests(true);
-      }, 200);
+      setRunningTests(true);
 
       //display the test feedback contents.
       setTimeout(() => {
