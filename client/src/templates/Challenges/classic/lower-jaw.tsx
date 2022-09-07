@@ -36,11 +36,11 @@ const LowerJaw = ({
   openResetModal,
   isSignedIn
 }: LowerJawProps): JSX.Element => {
-  const [previousHint, setpreviousHint] = useState('');
+  const [previousHint, setPreviousHint] = useState('');
   const [runningTests, setRunningTests] = useState(false);
-  const [testFeedbackheight, setTestFeedbackheight] = useState(0);
+  const [testFeedbackheight, setTestFeedbackHeight] = useState(0);
   const [isFeedbackHidden, setIsFeedbackHidden] = useState(false);
-  const [testBtnariaHidden, setTestBtnariaHidden] = useState(false);
+  const [testBtnariaHidden, setTestBtnAriaHidden] = useState(false);
   const { t } = useTranslation();
   const submitButtonRef = React.createRef<HTMLButtonElement>();
   const testFeedbackRef = React.createRef<HTMLDivElement>();
@@ -65,7 +65,7 @@ const LowerJaw = ({
   useEffect(() => {
     // only save error hints
     if (challengeHasErrors && hint && previousHint !== hint) {
-      setpreviousHint(hint);
+      setPreviousHint(hint);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [challengeHasErrors, hint]);
@@ -74,11 +74,11 @@ const LowerJaw = ({
     if (challengeIsCompleted && submitButtonRef?.current) {
       submitButtonRef.current.focus();
       setTimeout(() => {
-        setTestBtnariaHidden(true);
+        setTestBtnAriaHidden(true);
       }, 500);
     }
 
-    setTestBtnariaHidden(challengeIsCompleted);
+    setTestBtnAriaHidden(challengeIsCompleted);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [challengeIsCompleted]);
@@ -86,7 +86,7 @@ const LowerJaw = ({
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (testFeedbackRef.current) {
-      setTestFeedbackheight(testFeedbackRef.current.clientHeight);
+      setTestFeedbackHeight(testFeedbackRef.current.clientHeight);
     }
   });
 
