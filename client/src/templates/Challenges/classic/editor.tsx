@@ -272,11 +272,8 @@ const Editor = (props: EditorProps): JSX.Element => {
   // use a ref, since it will be updated on every render.
   const testRef = useRef<Test[]>([]);
   testRef.current = props.tests;
-
-  // TENATIVE PLAN: create a typical order [html/jsx, css, js], put the
-  // available files into that order.  i.e. if it's just one file it will
-  // automatically be first, but  if there's jsx and js (for some reason) it
-  //  will be [jsx, js].
+  const attemptsRef = useRef<number>(0);
+  attemptsRef.current = props.attempts;
 
   const options: editor.IStandaloneEditorConstructionOptions = {
     fontSize: 18,
@@ -606,7 +603,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   const tryToSubmitChallenge = submitChallengeDebounceRef.current;
 
   function createLowerJaw(outputNode: HTMLElement, callback?: () => void) {
-    const { output, attempts } = props;
+    const { output } = props;
     const isChallengeComplete = challengeIsComplete();
     const isEditorInFocus = document.activeElement?.tagName === 'TEXTAREA';
     ReactDOM.render(
@@ -616,7 +613,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         tryToExecuteChallenge={tryToExecuteChallenge}
         hint={output[1]}
         testsLength={props.tests.length}
-        attemptsNumber={attempts}
+        attemptsNumber={attemptsRef.current}
         challengeIsCompleted={isChallengeComplete}
         challengeHasErrors={challengeHasErrors()}
         tryToSubmitChallenge={tryToSubmitChallenge}
