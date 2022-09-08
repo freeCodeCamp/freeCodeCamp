@@ -602,10 +602,14 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   const tryToSubmitChallenge = submitChallengeDebounceRef.current;
 
-  function createLowerJaw(outputNode: HTMLElement, callback?: () => void) {
+  function createLowerJaw(
+    outputNode: HTMLDivElement,
+    editor: editor.IStandaloneCodeEditor
+  ) {
     const { output } = props;
     const isChallengeComplete = challengeIsComplete();
     const isEditorInFocus = document.activeElement?.tagName === 'TEXTAREA';
+
     ReactDOM.render(
       <LowerJaw
         openHelpModal={props.openHelpModal}
@@ -619,9 +623,9 @@ const Editor = (props: EditorProps): JSX.Element => {
         tryToSubmitChallenge={tryToSubmitChallenge}
         isEditorInFocus={isEditorInFocus}
         isSignedIn={props.isSignedIn}
+        updateContainer={() => updateOutputViewZone(outputNode, editor)}
       />,
-      outputNode,
-      callback
+      outputNode
     );
   }
 
@@ -630,13 +634,11 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (!editor || !dataRef.current.outputNode) return;
 
     const outputNode = dataRef.current.outputNode;
-    createLowerJaw(outputNode, () => {
-      if (dataRef.current.outputNode) {
-        updateOutputViewZone(outputNode, editor);
-      }
-    });
+    createLowerJaw(outputNode, editor);
   };
 
+  // TODO: there's a potential performance gain to be had by only updating when
+  // the outputViewZone has actually changed.
   const updateOutputViewZone = (
     outputNode: HTMLDivElement,
     editor: editor.IStandaloneCodeEditor

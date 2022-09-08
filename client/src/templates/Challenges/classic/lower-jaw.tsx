@@ -20,6 +20,7 @@ interface LowerJawProps {
   attemptsNumber: number;
   openResetModal: () => void;
   isSignedIn: boolean;
+  updateContainer: () => void;
 }
 
 const LowerJaw = ({
@@ -33,7 +34,8 @@ const LowerJaw = ({
   testsLength,
   isEditorInFocus,
   openResetModal,
-  isSignedIn
+  isSignedIn,
+  updateContainer
 }: LowerJawProps): JSX.Element => {
   const previousHintRef = React.useRef('');
   const [runningTests, setRunningTests] = useState(false);
@@ -45,10 +47,9 @@ const LowerJaw = ({
   const testFeedbackRef = React.createRef<HTMLDivElement>();
 
   useEffect(() => {
-    if (attemptsNumber && attemptsNumber > 0) {
+    if (attemptsNumber > 0) {
       //hide the feedback from SR until the "Running tests" are displayed and removed.
       setIsFeedbackHidden(true);
-      //allow the lower jaw height to be picked up by the editor.
       setRunningTests(true);
 
       //display the test feedback contents.
@@ -57,8 +58,6 @@ const LowerJaw = ({
         setIsFeedbackHidden(false);
       }, 300);
     }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [attemptsNumber]);
 
   useEffect(() => {
@@ -70,15 +69,16 @@ const LowerJaw = ({
     }
 
     setTestBtnAriaHidden(challengeIsCompleted);
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [challengeIsCompleted]);
+  }, [challengeIsCompleted, submitButtonRef]);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (testFeedbackRef.current) {
       setTestFeedbackHeight(testFeedbackRef.current.clientHeight);
     }
+    // Every render could change the shape of the jaw, so this effect will let
+    // monaco know it might need to resize
+    updateContainer();
   });
 
   /*
