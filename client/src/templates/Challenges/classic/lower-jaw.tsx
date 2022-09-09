@@ -40,6 +40,7 @@ const LowerJaw = ({
   const previousHintRef = React.useRef('');
   const [runningTests, setRunningTests] = useState(false);
   const [testFeedbackheight, setTestFeedbackHeight] = useState(0);
+  const [currentAttempts, setCurrentAttempts] = useState(attempts);
   const [isFeedbackHidden, setIsFeedbackHidden] = useState(false);
   const [testBtnariaHidden, setTestBtnAriaHidden] = useState(false);
   const { t } = useTranslation();
@@ -51,6 +52,11 @@ const LowerJaw = ({
       //hide the feedback from SR until the "Running tests" are displayed and removed.
       setIsFeedbackHidden(true);
       setRunningTests(true);
+      //to prevent the changing attempts value from immediately triggering a new
+      //render, the rendered component only depends on currentAttempts. Since
+      //currentAttempts is updated with when the feedback is hidden, the screen
+      //reader should only read out the new message.
+      setCurrentAttempts(attempts);
 
       //display the test feedback contents.
       setTimeout(() => {
@@ -95,7 +101,7 @@ const LowerJaw = ({
   }
 
   const renderTestFeedbackContainer = () => {
-    if (attempts === 0) {
+    if (currentAttempts === 0) {
       return '';
     } else if (runningTests) {
       return <span className='sr-only'>{t('aria.running-tests')}</span>;
@@ -162,12 +168,14 @@ const LowerJaw = ({
       'learn.sorry-hang-in-there',
       'learn.sorry-dont-giveup'
     ];
-    return sentenceArray[attempts % sentenceArray.length];
+    return sentenceArray[currentAttempts % sentenceArray.length];
   };
 
   const renderContextualActionRow = () => {
     const isAttemptsLargerThanTest =
-      attempts && testsLength && (attempts >= testsLength || attempts >= 3);
+      currentAttempts &&
+      testsLength &&
+      (currentAttempts >= testsLength || currentAttempts >= 3);
 
     if (isAttemptsLargerThanTest && !challengeIsCompleted) {
       return (
