@@ -286,6 +286,7 @@
     "percent-complete": "完成 {{percent}}%",
     "tried-rsa": "如果你已经尝试了 <0>Read-Search-Ask（阅读-搜索-提问）</0>方法，那么你可以在 freeCodeCamp 论坛请求帮助。",
     "rsa": "阅读，搜索，提问",
+    "rsa-forum": "<strong>Before making a new post</strong> please see if your question has <0>already been answered on the forum</0>.",
     "reset": "重置这一节课程？",
     "reset-warn": "你确定要重置这一节课程吗？编辑器和测试将被重置。",
     "reset-warn-2": "这个操作不可撤销",
@@ -450,6 +451,7 @@
     "change-theme": "登录以更改主题。",
     "translation-pending": "帮我们翻译",
     "certification-project": "认证项目",
+    "iframe-preview": "{{title}} preview",
     "iframe-alert": "通常，此链接会将你带到另一个网站！一切正常，这个链接指向：{{externalLink}}。",
     "document-notfound": "找不到文件"
   },
@@ -486,6 +488,12 @@
     "breadcrumb-nav": "面包屑导航",
     "submit": "按下 Ctrl + Enter 键提交。",
     "running-tests": "正在运行测试",
+    "hide-preview": "Hide the preview",
+    "move-preview-to-new-window": "Move the preview to a new window and focus it",
+    "move-preview-to-main-window": "Move the preview to this window and close the external preview window",
+    "close-external-preview-window": "Close the external preview window",
+    "show-preview": "Show the preview in this window",
+    "open-preview-in-new-window": "Open the preview in a new window and focus it",
     "step": "步骤",
     "steps": "步骤",
     "steps-for": "{{blockTitle}} 的步骤"
