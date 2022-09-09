@@ -39,10 +39,10 @@ const LowerJaw = ({
 }: LowerJawProps): JSX.Element => {
   const previousHintRef = React.useRef('');
   const [runningTests, setRunningTests] = useState(false);
-  const [testFeedbackheight, setTestFeedbackHeight] = useState(0);
+  const [testFeedbackHeight, setTestFeedbackHeight] = useState(0);
   const [currentAttempts, setCurrentAttempts] = useState(attempts);
   const [isFeedbackHidden, setIsFeedbackHidden] = useState(false);
-  const [testBtnariaHidden, setTestBtnAriaHidden] = useState(false);
+  const [testBtnAriaHidden, setTestBtnAriaHidden] = useState(false);
   const { t } = useTranslation();
   const submitButtonRef = React.createRef<HTMLButtonElement>();
   const testFeedbackRef = React.createRef<HTMLDivElement>();
@@ -223,7 +223,7 @@ const LowerJaw = ({
           <button
             id='test-button'
             className={`btn-block btn ${challengeIsCompleted ? 'sr-only' : ''}`}
-            aria-hidden={testBtnariaHidden}
+            aria-hidden={testBtnAriaHidden}
             onClick={tryToExecuteChallenge}
           >
             {showDesktopButton
@@ -248,7 +248,7 @@ const LowerJaw = ({
     <div className='action-row-container'>
       {renderButtons()}
       <div
-        style={runningTests ? { height: `${testFeedbackheight}px` } : {}}
+        style={runningTests ? { height: `${testFeedbackHeight}px` } : {}}
         className={`test-feedback`}
         id='test-feedback'
         aria-live='assertive'
