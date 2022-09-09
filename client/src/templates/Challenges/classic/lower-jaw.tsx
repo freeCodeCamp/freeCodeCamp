@@ -17,7 +17,7 @@ interface LowerJawProps {
   isEditorInFocus?: boolean;
   challengeHasErrors?: boolean;
   testsLength?: number;
-  attemptsNumber: number;
+  attempts: number;
   openResetModal: () => void;
   isSignedIn: boolean;
   updateContainer: () => void;
@@ -30,7 +30,7 @@ const LowerJaw = ({
   hint,
   tryToExecuteChallenge,
   tryToSubmitChallenge,
-  attemptsNumber,
+  attempts,
   testsLength,
   isEditorInFocus,
   openResetModal,
@@ -47,7 +47,7 @@ const LowerJaw = ({
   const testFeedbackRef = React.createRef<HTMLDivElement>();
 
   useEffect(() => {
-    if (attemptsNumber > 0) {
+    if (attempts > 0) {
       //hide the feedback from SR until the "Running tests" are displayed and removed.
       setIsFeedbackHidden(true);
       setRunningTests(true);
@@ -58,7 +58,7 @@ const LowerJaw = ({
         setIsFeedbackHidden(false);
       }, 300);
     }
-  }, [attemptsNumber]);
+  }, [attempts]);
 
   useEffect(() => {
     if (challengeIsCompleted && submitButtonRef?.current) {
@@ -95,7 +95,7 @@ const LowerJaw = ({
   }
 
   const renderTestFeedbackContainer = () => {
-    if (attemptsNumber === 0) {
+    if (attempts === 0) {
       return '';
     } else if (runningTests) {
       return <span className='sr-only'>{t('aria.running-tests')}</span>;
@@ -162,14 +162,12 @@ const LowerJaw = ({
       'learn.sorry-hang-in-there',
       'learn.sorry-dont-giveup'
     ];
-    return sentenceArray[attemptsNumber % sentenceArray.length];
+    return sentenceArray[attempts % sentenceArray.length];
   };
 
   const renderContextualActionRow = () => {
     const isAttemptsLargerThanTest =
-      attemptsNumber &&
-      testsLength &&
-      (attemptsNumber >= testsLength || attemptsNumber >= 3);
+      attempts && testsLength && (attempts >= testsLength || attempts >= 3);
 
     if (isAttemptsLargerThanTest && !challengeIsCompleted) {
       return (

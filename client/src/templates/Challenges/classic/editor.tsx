@@ -617,7 +617,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         tryToExecuteChallenge={tryToExecuteChallenge}
         hint={output[1]}
         testsLength={props.tests.length}
-        attemptsNumber={attemptsRef.current}
+        attempts={attemptsRef.current}
         challengeIsCompleted={isChallengeComplete}
         challengeHasErrors={challengeHasErrors()}
         tryToSubmitChallenge={tryToSubmitChallenge}
