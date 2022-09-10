@@ -145,7 +145,7 @@
     "monaco-editor-webpack-plugin": "4.2.0",
     "react-test-renderer": "16.14.0",
     "redux-mock-store": "1.5.4",
-    "redux-saga-test-plan": "4.0.5",
+    "redux-saga-test-plan": "4.0.6",
     "serve": "13.0.4",
     "ts-node": "10.9.1",
     "webpack": "5.74.0",
