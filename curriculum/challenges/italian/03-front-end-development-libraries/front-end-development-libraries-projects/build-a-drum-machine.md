@@ -28,9 +28,21 @@ Puoi utilizzare qualsiasi mix di HTML, JavaScript, CSS, Bootstrap, SASS, React, 
 
 **User Story #7:** Quando un `.drum-pad` viene attivato, viene visualizzata una stringa che descrive la clip audio associata come testo interno dell'elemento `#display` (ogni stringa deve essere unica).
 
+Ecco alcuni campioni audio che puoi usare per la tua batteria:
+
+- [Heater 1](https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3)
+- [Heater 2](https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3)
+- [Heater 3](https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3)
+- [Heater 4](https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3)
+- [Clap](https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3)
+- [Open-HH](https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3)
+- [Kick-n'-Hat](https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3)
+- [Kick](https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3)
+- [Closed-HH](https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3)
+
 Puoi costruire il tuo progetto <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel="noopener noreferrer nofollow">usando questo modello CodePen</a> e facendo click su `Save` per creare il tuo pen. Oppure puoi usare questo link CDN per eseguire i test in qualsiasi ambiente tu voglia: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
-Una volta fatto, invia l'URL del tuo progetto di lavoro con tutti i suoi test passati.
+Una volta fatto, invia l'URL del tuo progetto di lavoro con tutti i suoi test superati.
 
 # --solutions--
 

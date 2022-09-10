@@ -162,6 +162,10 @@ a.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
   cursor: pointer;
 }
 
+#nav-lang-menu li:first-child {
+  border-bottom: 0.1rem solid var(--gray-45) !important;
+}
+
 button.nav-link:focus {
   color: var(--tertiary-color);
   background-color: var(--tertiary-background);
@@ -213,6 +217,7 @@ button.nav-link[aria-disabled='true'] {
   top: 0;
   overflow-y: auto;
   scrollbar-width: auto;
+
   /* Ensure lang menu scrolls if there is not enough height to display all of it (this ensures keyboard accessibility). 38px is the height of search form since it is inserted between header and main menu. */
   height: min(
     var(--lang-menu-height),
@@ -251,6 +256,10 @@ button.nav-link[aria-disabled='true'] {
 
 .nav-lang-menu .nav-link:hover {
   background-color: var(--gray-10);
+}
+
+.nav-lang-menu li:first-child .nav-link:hover {
+  color: var(--love-dark) !important;
 }
 
 .nav-lang-button {

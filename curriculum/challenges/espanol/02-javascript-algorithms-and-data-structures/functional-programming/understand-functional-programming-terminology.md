@@ -18,7 +18,7 @@ Pero primero, cubramos alguna terminología de la programación funcional:
 
 Las funciones que pueden ser asignadas a una variable, pasadas a otra función o devueltas desde otra función como cualquier otro valor normal, se llaman funciones de <dfn>primera clase</dfn>. En JavaScript, todas las funciones son funciones de primera clase.
 
-Las funciones que toman una función como argumento o devuelven una función como valor de retorno se llaman <dfn>funciones de orden superior</dfn>.
+Las funciones que toman una función como argumento, o devuelven una función como valor de retorno, se denominan funciones <dfn>higher order</dfn>.
 
 Cuando las funciones se pasan o se devuelven desde otra función, las funciones que se pasaron o devolvieron se pueden llamar <dfn>lambda</dfn>.
 

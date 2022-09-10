@@ -9,7 +9,7 @@ dashedName: constructing-strings-with-variables
 
 # --description--
 
-有时候你需要创建一个类似 [Mad Libs](https://en.wikipedia.org/wiki/Mad_Libs)（填词游戏）风格的字符串。 通过使用连接运算符（`+`），你可以插入一个或多个变量来组成一个字符串。
+有时候你需要构建一个字符串。 通过使用连接运算符（`+`），你可以插入一个或多个变量来组成一个字符串。
 
 例如：
 

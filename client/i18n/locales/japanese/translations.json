@@ -488,6 +488,12 @@
     "breadcrumb-nav": "パンくずリスト",
     "submit": "提出するには Ctrl + Enter を押してください。",
     "running-tests": "テスト実行中",
+    "hide-preview": "Hide the preview",
+    "move-preview-to-new-window": "Move the preview to a new window and focus it",
+    "move-preview-to-main-window": "Move the preview to this window and close the external preview window",
+    "close-external-preview-window": "Close the external preview window",
+    "show-preview": "Show the preview in this window",
+    "open-preview-in-new-window": "Open the preview in a new window and focus it",
     "step": "ステップ",
     "steps": "ステップ一覧",
     "steps-for": "「{{blockTitle}}」のステップ一覧"
