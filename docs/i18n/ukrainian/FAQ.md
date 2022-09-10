@@ -1,6 +1,6 @@
 ### Я лише починаю ознайомлення з GitHub та відкритим вихідним кодом. З чого мені варто почати?
 
-Прочитайте нашу інструкцію ["Як зробити внесок до відкритого вихідного коду"](https://github.com/freeCodeCamp/how-to-contribute-to-open-source). Там є вичерпні вказівки для тих, хто вперше стикається з такими проєктами. Там також є багато порад для роботи з відкритим вихідним кодом.
+Прочитайте [«Як зробити внесок до відкритого вихідного коду»](https://github.com/freeCodeCamp/how-to-contribute-to-open-source). Там є вичерпні вказівки для тих, хто вперше стикається з такими проєктами. Там також є багато порад для роботи з відкритим вихідним кодом.
 
 ### What do I need to know to contribute to the codebase?
 
@@ -24,7 +24,7 @@ To help us make educational videos for our YouTube channel, you can follow the [
 
 ### How can I report a new bug?
 
-If you think you've found a bug, first read the ["Help I've Found a Bug"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
+If you think you've found a bug, first read the ["How to Report a Bug"](https://www.freecodecamp.org/news/how-to-report-a-bug-to-freecodecamp/) article and follow its instructions.
 
 If you're confident it's a new bug, go ahead and create a new GitHub issue. Be sure to include as much information as possible so that we can reproduce the bug. We have a pre-defined issue template to help you through this.
 

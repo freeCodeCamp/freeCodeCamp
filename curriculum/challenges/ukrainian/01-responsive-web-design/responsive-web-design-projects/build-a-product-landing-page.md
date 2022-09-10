@@ -1,6 +1,6 @@
 ---
 id: 587d78af367417b2b2512b04
-title: Build a Product Landing Page
+title: Створіть посадкову сторінку продукту
 challengeType: 14
 forumTopicId: 301144
 dashedName: build-a-product-landing-page
@@ -8,87 +8,89 @@ dashedName: build-a-product-landing-page
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to <a href="https://product-landing-page.freecodecamp.rocks" target="_blank">https://product-landing-page.freecodecamp.rocks</a>
+**Мета:** Створити застосунок, функціонально схожий до <a href="https://product-landing-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://product-landing-page.freecodecamp.rocks</a>
 
-**User Stories:**
+**Історія користувача:**
 
-1. Your product landing page should have a `header` element with a corresponding `id="header"`
-1. You can see an image within the `header` element with a corresponding `id="header-img"` (A logo would make a good image here)
-1. Within the `#header` element, you can see a `nav` element with a corresponding `id="nav-bar"`
-1. You can see at least three clickable elements inside the `nav` element, each with the class `nav-link`
-1. When you click a `.nav-link` button in the `nav` element, you are taken to the corresponding section of the landing page
-1. You can watch an embedded product video with `id="video"`
-1. Your landing page has a `form` element with a corresponding `id="form"`
-1. Within the form, there is an `input` field with `id="email"` where you can enter an email address
-1. The `#email` input field should have placeholder text to let users know what the field is for
-1. The `#email` input field uses HTML5 validation to confirm that the entered text is an email address
-1. Within the form, there is a submit `input` with a corresponding `id="submit"`
-1. When you click the `#submit` element, the email is submitted to a static page (use this mock URL: `https://www.freecodecamp.com/email-submit`)
-1. The navbar should always be at the top of the viewport
-1. Your product landing page should have at least one media query
-1. Your product landing page should utilize CSS flexbox at least once
+1. Ваша посадкова сторінка продукту повинна мати елемент `header` з відповідним `id="header"`
+1. Можна побачити зображення в межах елемента `header` з відповідним `id="header-img"` (на місце зображення чудово підійде логотип)
+1. В межах елемента `#header` видно елемент `nav` з відповідним `id="nav-bar"`
+1. Можна побачити принаймні три активні елементи всередині елемента `nav`, кожен з класом `nav-link`
+1. Якщо натиснути на кнопку `.nav-link` в елементі `nav`, ви перейдете на відповідну секцію посадкової сторінки
+1. Ви можете переглянути вмонтоване відео з `id="video"`
+1. Посадкова сторінка має елемент `form` з відповідним `id="form"`
+1. В межах форми наявне поле `input` з `id="email"`, де можна ввести електронну адресу
+1. Поле введення `#email` повинне мати текст наповнювача, щоб користувач розумів його призначення
+1. Поле введення `#email` використовує перевірку HTML5, щоб переконатись, що введений текст є електронною адресою
+1. В межах форми є кнопка `input` для відправки з відповідним `id="submit"`
+1. Якщо натиснути на елемент `#submit`, електронну пошту надіслано на статистичну сторінку (використовуйте альтернативу URL: `https://www.freecodecamp.com/email-submit`)
+1. Навігаційна панель завжди повинна знаходитись у верхній частині вюпорту
+1. Посадкова сторінка продукту повинна містити щонайменше один медіазапит
+1. Посадкова сторінка продукту повинна використовувати CSS flexbox хоча б раз
 
-Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
+Виконайте історію користувача та пройдіть тести, наведені нижче, щоб завершити цей проєкт. Оформте за власним стилем. Щасливого кодування!
+
+**Примітка:** переконайтеся, що додали `<link rel="stylesheet" href="styles.css">` до HTML для прив'язки з аркушем стилів та застосували CSS
 
 # --hints--
 
-You should have a `header` element with an `id` of `header`
+Ви повинні мати елемент `header` з `id` зі значенням `header`.
 
 ```js
 const el = document.getElementById('header')
 assert(!!el && el.tagName === 'HEADER')
 ```
 
-You should have an `img` element with an `id` of `header-img`
+Ви повинні мати елемент `img` з `id` зі значенням `header-img`.
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && el.tagName === 'IMG')
 ```
 
-Your `#header-img` should be a descendant of the `#header`
+Ваш `#header-img` повинен бути нащадком `#header`.
 
 ```js
 const els = document.querySelectorAll('#header #header-img')
 assert(els.length > 0)
 ```
 
-Your `#header-img` should have a `src` attribute
+Ваш `#header-img` повинен мати атрибут `src`.
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && !!el.src)
 ```
 
-Your `#header-img`’s `src` value should be a valid URL (starts with `http`)
+Значення `src` вашого `#header-img` повинне бути активним URL (починається з `http`).
 
 ```js
 const el = document.getElementById('header-img')
 assert(!!el && /^http/.test(el.src))
 ```
 
-You should have a `nav` element with an `id` of `nav-bar`
+Ви повинні мати елемент `nav` з `id` зі значенням `nav-bar`.
 
 ```js
 const el = document.getElementById('nav-bar')
 assert(!!el && el.tagName === 'NAV')
 ```
 
-Your `#nav-bar` should be a descendant of the `#header`
+Ваш `#nav-bar` повинен бути нащадком `#header`.
 
 ```js
 const els = document.querySelectorAll('#header #nav-bar')
 assert(els.length > 0)
 ```
 
-You should have at least 3 `.nav-link` elements within the `#nav-bar`
+Ви повинні мати щонайменше 3 елементи `.nav-link` в межах `#nav-bar`.
 
 ```js
 const els = document.querySelectorAll('#nav-bar .nav-link')
 assert(els.length >= 3)
 ```
 
-Each `.nav-link` element should have an `href` attribute
+Кожен елемент `.nav-link` повинен мати атрибут `href`.
 
 ```js
 const els = document.querySelectorAll('.nav-link')
@@ -98,7 +100,7 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-Each `.nav-link` element should link to a corresponding element on the landing page (has an `href` with a value of another element's id. e.g. `#footer`)
+Кожен елемент `.nav-link` повинен посилати на відповідний елемент посадкової сторінки (має `href` зі значенням ідентифікатора іншого елемента, наприклад `#footer`).
 
 ```js
 const els = document.querySelectorAll('.nav-link')
@@ -109,106 +111,147 @@ els.forEach(el => {
 assert(els.length > 0)
 ```
 
-You should have a `video` or `iframe` element with an `id` of `video`
+Ви повинні мати елемент `video` або `iframe` з `id` зі значенням `video`.
 
 ```js
 const el = document.getElementById('video')
 assert(!!el && (el.tagName === 'VIDEO' || el.tagName === 'IFRAME'))
 ```
 
-Your `#video` should have a `src` attribute
+Ваш `#video` повинен мати атрибут `src`.
 
 ```js
-const el = document.getElementById('video')
-assert(!!el && !!el.src)
+let el = document.getElementById('video')
+const sourceNode = el.children;
+let sourceElement = null;
+if (sourceNode.length) {
+  sourceElement = [...video.children].filter(el => el.localName === 'source')[0];
+}
+if (sourceElement) {
+  el = sourceElement;
+}
+assert(el.hasAttribute('src'));
 ```
 
-You should have a `form` element with an `id` of `form`
+Ви повинні мати елемент `form` з `id` зі значенням `form`.
 
 ```js
 const el = document.getElementById('form')
 assert(!!el && el.tagName === 'FORM')
 ```
 
-You should have an `input` element with an `id of `email`
+Ви повинні мати елемент `input` з `id` зі значенням `email`.
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Your `#email` should be a descendant of the `#form`
+Ваш `#email` повинен бути нащадком `#form`.
 
 ```js
 const els = document.querySelectorAll('#form #email')
 assert(els.length > 0)
 ```
 
-Your `#email` should have the `placeholder` attribute with placeholder text
+Ваш `#email` повинен мати атрибут `placeholder` з текстом заповнювача.
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && !!el.placeholder && el.placeholder.length > 0)
 ```
 
-Your `#email` should use HTML5 validation by setting its `type` to `email`
+Ваш `#email` повинен використовувати перевірку HTML5, встановивши `type` на `email`.
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.type === 'email')
 ```
 
-You should have an `input` element with an `id` of `submit`
+Ви повинні мати елемент `input` з `id` зі значенням `submit`.
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && el.tagName === 'INPUT')
 ```
 
-Your `#submit` should be a descendant of the `#form`
+Ваш `#submit` повинен бути нащадком `#form`.
 
 ```js
 const els = document.querySelectorAll('#form #submit')
 assert(els.length > 0)
 ```
 
-Your `#submit` should have a `type` of `submit`
+Ваш `#submit` повинен мати `type` зі значенням `submit`.
 
 ```js
 const el = document.getElementById('submit')
 assert(!!el && el.type === 'submit')
 ```
 
-Your `#form` should have an `action` attribute of `https://www.freecodecamp.com/email-submit`
+Ваш `#form` повинен мати атрибут `action` зі значенням `https://www.freecodecamp.com/email-submit`.
 
 ```js
 const el = document.getElementById('form')
 assert(!!el && el.action === 'https://www.freecodecamp.com/email-submit')
 ```
 
-Your `#email` should have a `name` attribute of `email`
+Ваш `#email` повинен мати атрибут `name` зі значенням `email`.
 
 ```js
 const el = document.getElementById('email')
 assert(!!el && el.name === 'email')
 ```
 
-Your `#nav-bar` should always be at the top of the viewport
+Ваш `#nav-bar` завжди повинен знаходитись у верхній частині вюпорту.
 
 ```js
-const el = document.getElementById('nav-bar')
-const top1 = el?.offsetTop
-const top2 = el?.offsetTop
-assert(!!el && top1 >= -15 && top1 <= 15 && top2 >= -15 && top2 <= 15)
+(async () => {
+  const timeout = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
+
+  const header = document.getElementById('header');
+  const headerChildren = header.children;
+  const navbarCandidates = [header, ...headerChildren];
+
+  // Return smallest top position of all navbar candidates
+  const getNavbarPosition = (candidates = []) => {
+    return candidates.reduce(
+      (min, candidate) =>
+        Math.min(min, Math.abs(candidate?.getBoundingClientRect().top)),
+      Infinity
+    );
+  };
+  assert.approximately(
+    getNavbarPosition(navbarCandidates),
+    0,
+    15,
+    '#header or one of its children should be at the top of the viewport '
+  );
+
+  window.scroll(0, 500);
+  await timeout(1);
+
+  assert.approximately(
+    getNavbarPosition(navbarCandidates),
+    0,
+    15,
+    '#header or one of its children should be at the top of the ' +
+      'viewport even after scrolling '
+  );
+
+  window.scroll(0, 0);
+})();
 ```
 
-Your Product Landing Page should use at least one media query
+Посадкова сторінка продукту повинна містити щонайменше один медіазапит.
 
 ```js
-assert.isAtLeast(new __helpers.CSSHelp(document).getCSSRules('media')?.length, 1);
+const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
+const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
+assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 ```
 
-Your Product Landing Page should use CSS Flexbox at least once
+Посадкова сторінка продукту повинна використовувати CSS flexbox хоча б раз.
 
 ```js
 const stylesheet = new __helpers.CSSHelp(document).getStyleSheet()
@@ -238,7 +281,7 @@ assert(usesFlex)
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Product Landing Page</title>
   </head>
   <body>

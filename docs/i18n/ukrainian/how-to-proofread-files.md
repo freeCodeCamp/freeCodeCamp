@@ -4,7 +4,7 @@
 
 Всі наші переклади зроблені від руки, живими людьми. Редагування гарантує, що всі матеріали, як от наша навчальна програма, перекладені систематично та коректно.
 
-Для того, щоб почати редагування, перейдіть на [нашу перекладацьку платформу](https://translate.freecodecamp.org) та зареєструйтеся.  Select "Go to console" in the top navigation bar to switch from the public view to the workspace view.
+Щоб почати редагувати, перейдіть на [нашу перекладацьку платформу](https://translate.freecodecamp.org) та зареєструйтеся.  Виберіть «Go to console» зверху на навігаційній панелі, щоб перемикнутися з публічного типу сторінки на робочий.
 
 ## Оберіть файл
 
@@ -12,43 +12,43 @@
 
 ![Зображення - Дерево файлів редагування](https://contribute.freecodecamp.org/images/crowdin/proof-file-tree.png)
 
-Тепер ви повинні побачити список доступних файлів. Виберіть ваш файл, натиснувши клавішу `Proofread` справа від файлу, тоді оберіть `Proofreading` з меню, що з'явилось.
+Тепер ви повинні побачити список доступних файлів. Виберіть файл, натиснувши клавішу `Proofread` справа від файлу, тоді виберіть `Proofreading` з меню, що з'явилось.
 
-> [!NOTE] Якщо ви у цьому робочому вікні, але хочете [перекладати файл](how-to-translate-files.md), а не редагувати, ви можете натомість обрати `Crowdsourcing` у запропонованому меню.
+> [!NOTE] Якщо ви перейшли на робочий тип сторінки, але хочете [перекладати](how-to-translate-files.md), а не редагувати, натомість виберіть `Crowdsourcing` у запропонованому меню.
 
 ## Редагуйте переклади
 
-![Image - Proofreading View](https://contribute.freecodecamp.org/images/crowdin/proofread.png)
+![Зображення - Тип редагування](https://contribute.freecodecamp.org/images/crowdin/proofread.png)
 
 <!--Add proofread/crowdsource button to the image-->
 
-Тут ви побачите список рядків у вибраному файлі разом з їхніми перекладами. Тут показано переклад, який отримав найвищий бал (між голосами за та проти) від спільноти перекладачів.
+Тут ви побачите список рядків у вибраному файлі разом з їхніми перекладами. Тут показано переклад, який отримав найвищий бал (між голосами «за» та «проти») від спільноти перекладачів.
 
-Поки ви можете переглядати _ all_ запропоновані переклади для цього речення, оцінки спільноти (між голосами за та проти) повинні бути взяті до уваги під час вибору перекладу для затвердження. Спільнота може розглядати запропоновані переклади та рекомендувати, який саме найбільш точний і зрозумілий.
+Поки ви можете переглядати _всі_ запропоновані переклади для цього рядка, оцінки спільноти (між голосами «за» та «проти») повинні бути взяті до уваги під час вибору перекладу для затвердження. Спільнота може розглядати запропоновані переклади та рекомендувати, який саме найбільш точний і зрозумілий.
 
 1. Це оригінальний рядок (англійською мовою).
-2. Це відповідний перекладений рядок. The most popular translation proposal, based on upvotes and downvotes, will be displayed here.
-3. Clicking this checkmark button will approve that translation.
-4. Crowdin will display the status of each string. `Done` means a translation has been approved and will be downloaded on our next Crowdin pull. `Todo` means the string has not been proofread. `Hidden` means the string is locked and _should not be translated_. `Comment` means the string has a related comment.
-5. Translations can be selected with the checkboxes and approved here in one bulk action.
-6. You can view the community proposed translations, their popularity scores, and Crowdin suggested translations here.
-7. This button shows/hides the right-hand side display pane, where you can view translations, comments, translation memory, and glossary terms.
-8. Crowdin displays error messages here from the quality assurance checks. In other words, if something does not seem correct in the translation, Crowdin will notify you. These translations should be approved with care.
+2. Це відповідний перекладений рядок. Найпопулярніший переклад, базований на голосах «за» та «проти», буде тут.
+3. Якщо натиснути на цю галочку, переклад буде затверджений.
+4. Crowdin показує статус кожного рядка. `Done` означає, що переклад затверджений і він буде завантажений в нашому наступному пулі Crowdin. `Todo` означає, що рядок ще не редагували. `Hidden` означає, що рядок заблокований і _його не потрібно перекладати_. `Comment` означає, що рядок має коментарі.
+5. Переклади можна виділяти та затверджувати однією дією.
+6. Ви можете переглядати переклади, запропоновані спільнотою, їхню оцінку та переклади, запропоновані Crowdin, тут.
+7. Ця кнопка показує/приховує праву панель вікна, де ви можете переглядати переклади, коментарі, збережені переклади та терміни з глосарію.
+8. Crowdin показує повідомлення про помилки з системи перевірки якості тут. Іншими словами, якщо щось видається неправильним у перекладі, Crowdin повідомить вас. Ці переклади мають затверджуватися з обережністю.
 
-No additional actions are required once a file has been proofread.
+Як тільки файл буде відредагований, він не підлягає ніяким додатковим діям.
 
-> [!NOTE] Approving a string in the proofreading view will mark it as complete and it will be downloaded in our next pull from Crowdin to GitHub.
+> [!NOTE] Затвердження рядку в робочому типі позначить його як завершений та його буде завантажено в наступному пулі від Crowdin на GitHub.
 
-## Becoming a proofreader
+## Як стати редактором
 
-If you have any questions, or are interested in becoming a proofreader, feel free to reach out to us in our [contributors chat room](https://discord.gg/PRyKn3Vbay). We will typically grant you proofreading access if you have been contributing to freeCodeCamp for a while.
+Якщо у вас є запитання, або ви хочете стати редактором, напишіть у [contributors chat](https://discord.gg/PRyKn3Vbay). Як правило, ми надамо вам доступ до редагування, якщо ви вже деякий час мали справу з freeCodeCamp.
 
-Our staff team and community moderators teams are always looking for kind volunteers like you who help us make high quality translations available to the world.
+Наша команда завжди шукає охочих волонтерів, які допоможуть зробити високоякісні переклади, доступні для світової спільноти.
 
-> [!NOTE] Crowdin will allow you to approve your translations. In general, it is best to allow another proofreader to review your proposed translations as extra safety to ensure there are no errors.
+> [!NOTE] Crowdin дозволить вам затверджувати свої переклади. Загалом, краще дозволити іншому редактору переглянути запропоновані вами переклади, щоб переконатися у відсутності помилок.
 
-## Creating a channel on Chat for a world language
+## Створення в чаті каналу для світової мови
 
-For the most part we encourage you to use the [contributors chat](https://discord.gg/PRyKn3Vbay) room for all correspondence. However if the team of volunteer translators grows for a certain language, we can consider creating additional break-out channel for the language.
+В основному, ми рекомендуємо використовувати [contributors chat](https://discord.gg/PRyKn3Vbay) для комунікації.  Проте, якщо команда волонтерів-перекладачів для однієї мови зростатиме, ми можемо розглянути питання про створення окремого каналу.
 
-If you are already a proofreader and are interested in having a dedicated channel on our chat servers for a specific language, [fill out this form](https://forms.gle/XU5CyutrYCgDYaVZA).
+Якщо ви вже є редактором та зацікавлені в окремому каналі нашого чату, створеному для конкретної мови, [заповніть цю форму](https://forms.gle/XU5CyutrYCgDYaVZA).

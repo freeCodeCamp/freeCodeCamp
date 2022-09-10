@@ -1,7 +1,7 @@
 ---
 id: a105e963526e7de52b219be9
 title: Сортування масиву
-challengeType: 5
+challengeType: 1
 forumTopicId: 16077
 dashedName: sorted-union
 ---
@@ -45,6 +45,18 @@ assert.deepEqual(uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]), [
 ]);
 ```
 
+`uniteUnique([1, 3, 2], [5, 4], [5, 6])` повинен повертати `[1, 3, 2, 5, 4, 6]`.
+
+```js
+assert.deepEqual(uniteUnique([1, 3, 2], [5, 4], [5, 6]), [1, 3, 2, 5, 4, 6]);
+```
+
+`uniteUnique([1, 3, 2, 3], [5, 2, 1, 4], [2, 1])` повинен повертати `[1, 3, 2, 5, 4]`.
+
+```js
+assert.deepEqual(uniteUnique([1, 3, 2, 3], [5, 2, 1, 4], [2, 1]), [1, 3, 2, 5, 4]);
+```
+
 # --seed--
 
 ## --seed-contents--
@@ -62,7 +74,11 @@ uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 ```js
 function uniteUnique(arr) {
   return [].slice.call(arguments).reduce(function(a, b) {
-    return [].concat(a, b.filter(function(e) {return a.indexOf(e) === -1;}));
+    return [].concat(
+      a, 
+      b.filter(function(e, currentIndex) {
+        return b.indexOf(e) === currentIndex && a.indexOf(e) === -1;
+      }));
   }, []);
 }
 ```

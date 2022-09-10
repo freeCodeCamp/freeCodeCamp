@@ -27,24 +27,6 @@ console.log(myBreed);
 
 A string `Doberman` seria exibida no console.
 
-Outra forma de você usar esse conceito é quando o nome da propriedade é coletado dinamicamente, durante a execução do programa, da seguinte forma:
-
-```js
-const someObj = {
-  propName: "John"
-};
-
-function propPrefix(str) {
-  const s = "prop";
-  return s + str;
-}
-
-const someProp = propPrefix("Name");
-console.log(someObj[someProp]);
-```
-
-`someProp` teria o valor da string `propName` e a string `John` seria exibida no console.
-
 Observe que *não* usamos aspas em torno do nome da variável ao usá-la para acessar a propriedade, porque estamos usando o *valor* da variável, e não o *nome*.
 
 # --instructions--

@@ -1,6 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c161
-title: Introduzir a leitura de dados
+title: Introdução à leitura de dados
 challengeType: 11
 videoId: cDnt02BcHng
 bilibiliIds:

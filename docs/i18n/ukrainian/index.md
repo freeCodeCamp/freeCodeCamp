@@ -2,11 +2,11 @@
 
 > [!NOTE] Перш ніж продовжити, прочитайте, будь ласка, наш короткий [Кодекс поведінки](https://www.freecodecamp.org/code-of-conduct). У нашій спільноті ми чітко керуємося цими правилами, щоб кожен міг вільно та безпечно долучитися до freeCodeCamp.org.
 
-You are welcome to create, update and fix bugs in our [curriculum](#curriculum), help us fix bugs in freeCodeCamp.org's [learning platform](#learning-platform), or [help us translate](#translations) freeCodeCamp.org to world languages.
+Ви можете створювати, оновлювати та виправляти помилки в нашій [навчальній програмі](#curriculum), допомагати нам виправляти помилки на [навчальній платформі](#learning-platform) freeCodeCamp.org або [перекладати](#translations) freeCodeCamp.org на інші мови.
 
-We answer the most common questions about contributing [in our contributor FAQ](FAQ.md).
+Ми відповідаємо на поширені питання [в нашому FAQ](FAQ.md).
 
-Happy contributing.
+Щасливої співпраці.
 
 ---
 
@@ -20,33 +20,33 @@ Happy contributing.
 
 ## Переклади
 
-We are localizing freeCodeCamp.org to major world languages.
+Ми локалізуємо freeCodeCamp.org найпоширенішими мовами світу.
 
-Certifications are already live in some major world languages like below:
+Сертифікації вже доступні деякими поширеними мовами світу:
 
-- [Chinese (中文)](https://chinese.freecodecamp.org/learn)
-- [Spanish (Español)](https://www.freecodecamp.org/espanol/learn)
-- [Italian (Italiano)](https://www.freecodecamp.org/italian/learn)
-- [Portuguese (Português)](https://www.freecodecamp.org/portuguese/learn)
-- [Ukrainian (Українська)](https://www.freecodecamp.org/ukrainian/learn)
-- [Japanese (日本語)](https://www.freecodecamp.org/japanese/learn)
+- [Китайська (中文)](https://chinese.freecodecamp.org/learn)
+- [Іспанська (Español)](https://www.freecodecamp.org/espanol/learn)
+- [Італійська (Italiano)](https://www.freecodecamp.org/italian/learn)
+- [Португальська (Português)](https://www.freecodecamp.org/portuguese/learn)
+- [Українська](https://www.freecodecamp.org/ukrainian/learn)
+- [Японська (日本語)](https://www.freecodecamp.org/japanese/learn)
 
-We encourage you to read the [announcement here](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) and share it with your friends to get them excited about this.
+Радимо вам прочитати [це оголошення](https://www.freecodecamp.org/news/help-translate-freecodecamp-language/) та поділитися ним зі своїми друзями, аби зацікавити ще і їх.
 
-**If you're interested in translating, here's [how to translate freeCodeCamp's resources](how-to-translate-files.md).**
+**Якщо ви хочете перекладати, див. [як перекладати ресурси freeCodeCamp](how-to-translate-files.md).**
 
 ## Навчальна платформа
 
-Our learning platform runs on a modern JavaScript stack. It has various components, tools, and libraries. These include Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack, and more.
+Наша навчальна платформа працює на сучасному стеку JavaScript. Він містить різноманітні компоненти, інструменти та бібліотеки. Сюди входять Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack та багато інших.
 
-Broadly, we have a Node.js based API server, a set of React-based client applications, testing scripts to evaluate camper-submitted curriculum projects, and more. If you want to productively contribute to the learning platform, we recommend some familiarity with these tools.
+В цілому ми маємо сервер API на основі Node.js, набір клієнтських додатків на основі React, тестові скрипти для оцінки проєктів кемперів та багато іншого. Якщо ви хочете здійснити внесок до навчальної платформи, ми радимо ознайомитися із цими інструментами.
 
-If you want to help us improve our codebase...
+Якщо ви хочете допомогти покращити нашу базу кодів...
 
-**you can either use Gitpod, a free online dev environment that starts a ready-to-code dev environment for freeCodeCamp in your browser.**
+**Ви можете використати Gitpod – безоплатне онлайн-середовище розробки, що запускає готове до кодування середовище для freeCodeCamp у вашому браузері.**
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+[![Відкрити у Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-Or you can...
+Або ви можете...
 
-**[Set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md) on your machine.**
+**[Встановити freeCodeCamp локально](how-to-setup-freecodecamp-locally.md) на свою машину.**

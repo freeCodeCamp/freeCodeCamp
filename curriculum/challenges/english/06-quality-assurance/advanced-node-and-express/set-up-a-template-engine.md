@@ -18,15 +18,15 @@ When you are done, make sure a working demo of your project is hosted somewhere 
 
 A template engine enables you to use static template files (such as those written in *Pug*) in your app. At runtime, the template engine replaces variables in a template file with actual values which can be supplied by your server. Then it transforms the template into a static HTML file that is sent to the client. This approach makes it easier to design an HTML page and allows for displaying variables on the page without needing to make an API call from the client.
 
-Add `pug@~3.0.0` as a dependency in your `package.json` file.
+`pug@~3.0.0` has already been installed, and is listed as a dependency in your `package.json` file.
 
 Express needs to know which template engine you are using. We will use the `set` method to assign `pug` as the `view engine` property's value: `app.set('view engine', 'pug')`
 
-Your page will not load until you correctly render the index file in the `views/pug` directory.
+Your page will be blank until you correctly render the index file in the `views/pug` directory.
 
-Change the argument of the `res.render()` declaration in the `/` route to be the file path to the `views/pug` directory. The path can be a relative path (relative to views), or an absolute path, and does not require a file extension.
+To render the `pug` template, you need to use `res.render()` in the `/` route. Pass the file path to the `views/pug` directory as the argument to the method. The path can be a relative path (relative to views), or an absolute path, and does not require a file extension.
 
-If all went as planned, your app home page will stop showing the message "`Pug template is not defined.`" and will now display a message indicating you've successfully rendered the Pug template!
+If all went as planned, your app home page will no longer be blank and will display a message indicating you've successfully rendered the Pug template!
 
 Submit your page when you think you've got it right. If you're running into errors, you can <a href="https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791" target="_blank" rel="noopener noreferrer nofollow">check out the project completed up to this point</a>.
 

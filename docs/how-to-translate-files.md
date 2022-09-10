@@ -135,7 +135,7 @@ These files will most likely be maintained by your language lead but you are wel
 
 ### On Crowdin
 
-> [!DANGER]
+> [!ATTENTION]
 > Do not edit the following files through a GitHub PR.
 
 The `intro.json` and `translations.json` files are both translated on Crowdin, in the Learn User Interface project. Translating these can be a bit tricky, as each individual JSON value appears as its own string and sometimes the context is missing.

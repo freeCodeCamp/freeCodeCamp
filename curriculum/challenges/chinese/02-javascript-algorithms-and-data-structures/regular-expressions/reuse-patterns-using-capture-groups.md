@@ -89,7 +89,7 @@ reRegex.lastIndex = 0;
 assert(!reRegex.test('1 2 3'));
 ```
 
-你的正则表达式不应匹配字符串 `10 10 10`。
+你的正则表达式应该匹配字符串 `10 10 10`。
 
 ```js
 reRegex.lastIndex = 0;

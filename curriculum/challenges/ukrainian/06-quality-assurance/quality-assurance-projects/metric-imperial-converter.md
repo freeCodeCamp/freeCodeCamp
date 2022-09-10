@@ -8,10 +8,10 @@ dashedName: metric-imperial-converter
 
 # --description--
 
-Використовуючи JavaScript, створіть повноцінний додаток, який функціонально буде подібним до цього: <https://metric-imperial-converter.freecodecamp.rocks/>. Робота над цим проєктом включатиме ваше написання коду одним із поданих методів:
+Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://metric-imperial-converter.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://metric-imperial-converter.freecodecamp.rocks/</a>. Робота над цим проєктом включатиме ваше написання коду одним із поданих методів:
 
-- Клонуйте цей [репозиторій GitHub ](https://github.com/freeCodeCamp/boilerplate-project-metricimpconverter/) і локально завершіть ваш проєкт.
-- Скористайтеся [ нашим проєктом для початківців на Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-metricimpconverter), щоб завершити ваш проєкт.
+- Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-project-metricimpconverter/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте свій проєкт локально.
+- Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-metricimpconverter" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
 - Використання будь-якого конструктора сайтів на свій власний вибір для виконання проєкту. Перевірте, що ви зберегли усі файли з нашого репозиторію GitHub.
 
 По завершенню, впевніться, що робоча демоверсія вашого проєкту знаходиться у відкритому доступі. Потім введіть URL адресу проєкту у поле `Solution Link`. За бажанням, також введіть покликання на вихідний код проєкту у полі `GitHub Link`.

@@ -65,7 +65,7 @@ Este é um exemplo de como deve ser a aparência de parte do arquivo `trending.j
 }
 ```
 
-Você vai querer [fazer a build do client traduzido localmente](how-to-test-translations-locally.md) para ver se os títulos têm o comprimento correto. Cada título deve permanecer em uma única linha e não deve ir para uma nova linha.
+Você vai querer [fazer a build do client traduzido localmente](how-to-enable-new-languages.md) para ver se os títulos têm o comprimento correto. Cada título deve permanecer em uma única linha e não deve ir para uma nova linha.
 
 ### Como atualizar os artigos em destaque no cdn
 
@@ -91,6 +91,82 @@ article5link: 'https://www.freecodecamp.org/portuguese/news/como-centralizar-tud
 Você pode converter de um formato para o outro cuidadosamente, alterando-o manualmente. Ou você pode usar [o script neste repl](https://replit.com/@Ieahleen/convert-json-to-yaml).
 
 > [!TIP] Um novo fluxo de trabalho está sendo trabalhado. Será preciso alterar em apenas um lugar no futuro.
+
+## Como traduzir os cabeçalhos das caixas informativas na documentação
+
+Você pode encontrar essas caixas por toda a documentação:
+
+> [!NOTE] Eu sou uma caixa de notificação
+
+> [!TIP] Eu sou uma caixa de dica
+
+> [!WARNING] Eu sou uma caixa de advertência
+
+> [!ATTENTION] Eu sou uma caixa de atenção
+
+Por padrão, os cabeçalhos deles aparecem em inglês, mesmo na documentação traduzida.
+
+É possível traduzir os cabeçalhos para a documentação para o seu idioma alterando o arquivo `docs/index.html`, desta forma:
+
+Dentro do elemento `script` existe um objeto. Nele, você encontra a propriedade `flexibleAlerts`, que tem esta forma:
+
+```js
+flexibleAlerts: {
+  note: {
+    label: {
+      '/': 'Note'
+    }
+  },
+  tip: {
+    label: {
+      '/': 'Tip'
+    }
+  },
+  warning: {
+    label: {
+      '/': 'Warning'
+    }
+  },
+  attention: {
+    label: {
+      '/': 'Attention'
+    }
+  }
+}
+```
+
+Dentro do objeto da propriedade label, antes da propriedade `'/'`, você adiciona uma nova propriedade para o seu idioma, assim: `/i18n/<language>/`.
+
+Por exemplo, ao adicionar as traduções para o português, você terá algo assim:
+
+```js
+flexibleAlerts: {
+  note: {
+    label: {
+      '/i18n/portuguese/': 'Observação',
+      '/': 'Note'
+    }
+  },
+  tip: {
+    label: {
+      '/i18n/portuguese/': 'Dica',
+      '/': 'Tip'
+    }
+  },
+  warning: {
+    label: {
+      '/i18n/portuguese/': 'Aviso',
+      '/': 'Warning'
+    }
+  },
+  attention: {
+    label: {
+      '/i18n/portuguese/': 'Atenção',
+      '/': 'Attention'
+    }
+  }
+}
+```
 
 ## Como traduzir as citações motivacionais
 
@@ -179,7 +255,7 @@ Depois, há três etapas a concluir:
 
 ![pré-traduzir as traduções existentes](./images/crowdin/pre-translate3.png)
 
-Quando você tiver terminado essas configurações, pressione o botão de Pre-Translate e aguarde. Ele alertará você quando terminar. Levará algum tempo, dependendo de quantas frases não traduzidas estão presentes nos arquivos que você escolheu.
+Quando você tiver terminado de fazer essa configuração, pressione o botão Pre-Translate e aguarde. Ele alertará você quando terminar. O tempo que leva depende de quantas frases não traduzidas existem nos arquivos escolhidos.
 
 ## Como atualizar o glossário do Crowdin
 

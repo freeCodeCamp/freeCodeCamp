@@ -32,13 +32,19 @@ const ourStr = "I come first. " + "I come second.";
 
 # --hints--
 
-`myStr` 的值應該是 `This is the start. This is the end.`
+`myStr` 應該在兩個字符串之間有一個空格字符。
+
+```js
+assert(/start\. This/.test(myStr));
+```
+
+`myStr` 的值應該是字符串 `This is the start. This is the end.`
 
 ```js
 assert(myStr === 'This is the start. This is the end.');
 ```
 
-應使用 `+` 操作符創建 `myStr`。
+應該使用 `+` 運算符來構建 `myStr`。
 
 ```js
 assert(code.match(/(["']).*\1\s*\+\s*(["']).*\2/g));
@@ -50,7 +56,7 @@ assert(code.match(/(["']).*\1\s*\+\s*(["']).*\2/g));
 assert(/const\s+myStr/.test(code));
 ```
 
-應把結果賦值給 `myStr` 變量。
+應該將結果分配給 `myStr` 變量。
 
 ```js
 assert(/myStr\s*=/.test(code));

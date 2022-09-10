@@ -1,6 +1,6 @@
 ---
 id: 5e46f8e3ac417301a38fb92f
-title: Motore per la raccomandazione di libri che utilizza KNN
+title: Motore per il suggerimento di libri che utilizza KNN
 challengeType: 10
 forumTopicId: 462378
 dashedName: book-recommendation-engine-using-knn
@@ -16,7 +16,7 @@ Stiamo ancora sviluppando il contenuto didattico interattivo per il programma di
 
 # --instructions--
 
-In questa sfida creerai un algoritmo per raccomandare libri usando **K-Nearest Neighbors**.
+In questa sfida creerai un algoritmo per suggerire dei libri usando **K-Nearest Neighbors**.
 
 Userai il <a href="http://www2.informatik.uni-freiburg.de/~cziegler/BX/" target="_blank" rel="noopener noreferrer nofollow">Book-Crossings dataset</a>. Questo set di dati contiene 1,1 milioni di valutazioni (scala 1-10) di 270.000 libri da 90.000 utenti.
 
@@ -45,7 +45,7 @@ dovrebbe restituire:
 ]
 ```
 
-Nota che i dati restituiti da `get_recommends()` è una lista. Il primo elemento nella lista è il titolo del libro passato nella funzione. Il secondo elemento nella lista è una lista di altre cinque liste. Ognuna delle cinque liste contiene un libro raccomandato e la distata dal libro raccomandato al libro passato nella funzione.
+Nota che i dati restituiti da `get_recommends()` è una lista. Il primo elemento nella lista è il titolo del libro passato nella funzione. Il secondo elemento nella lista è una lista di altre cinque liste. Ognuna delle cinque liste contiene un libro raccomandato e la distanza dal libro suggerito al libro passato nella funzione.
 
 Se grafichi il dataset (facoltativo), noterai che molti libri non sono votati frequentemente. Per assicurarti significanza statistica, rimuovi dal dataset utenti con meno di 200 voti e libri con meno di 100 voti.
 

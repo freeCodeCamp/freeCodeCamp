@@ -1,4 +1,4 @@
-# The Official freeCodeCamp Language Lead Handbook
+# Офіційний довідник мовного керівника freeCodeCamp
 
 This handbook will help you set up and use the tools for your localization efforts.
 
@@ -14,9 +14,9 @@ The "Editor" level allows the user to access all Drafts and publish them. Select
 
 The "Administrator" level is reserved for freeCodeCamp staff and Language Leads.
 
-## How to mention the original author of a translated article
+## Як вказати автора перекладеної статті
 
-The original author and the original article are linked automatically adding this code to the Code Injection -> head section in the Draft Settings on ghost.
+Автор та оригінал статті прив'язуються автоматично, коли цей код додано до Code Injection -> головна секція в налаштуваннях чернеток на ghost.
 
 ```html
 <script>
@@ -24,13 +24,13 @@ The original author and the original article are linked automatically adding thi
 </script>
 ```
 
-With `link` being the link of the original article.
+Де `link` – посилання на оригінал статті.
 
 ## How to update trending articles
 
 > [!TIP] Changing the articles in the footer at least once a month means giving a boost to the linked articles on google results.
 
-There two places in which to change the trending articles.
+There are two places in which to change the trending articles.
 
 - [The curriculum repository](https://github.com/freeCodeCamp/freeCodeCamp/)
 - [The CDN repository](https://github.com/freeCodeCamp/cdn)
@@ -65,7 +65,7 @@ This is an example of how part of the `trending.json` file has to look.
 }
 ```
 
-You will want to [build the translated client locally](how-to-test-translations-locally.md) to see if the titles have the right length. Each title must stay on a single line and not go to a new line.
+You will want to [build the translated client locally](how-to-enable-new-languages.md) to see if the titles have the right length. Each title must stay on a single line and not go to a new line.
 
 ### How to update the trending articles in the cdn
 
@@ -91,6 +91,82 @@ article5link: 'https://www.freecodecamp.org/italian/news/cose-un-api-in-italiano
 You can convert from one format to the other carefully changing it manually. Or you can use [the script in this repl](https://replit.com/@Ieahleen/convert-json-to-yaml).
 
 > [!TIP] A new workflow is being worked on, there will be only one place to change in the future.
+
+## How to translate the info boxes headers in the documentation
+
+You can find these boxes all around the documentation:
+
+> [!NOTE] I am a note box
+
+> [!TIP] I am a tip box
+
+> [!WARNING] I am a warning box
+
+> [!ATTENTION] I am an attention box
+
+By default, their headers appear in English even in the translated docs.
+
+You can have the headers translated in the docs in your language by changing the file `docs/index.html`, in this way:
+
+Inside the `script` element there is an object, find the `flexibleAlerts` property, which has this shape:
+
+```js
+flexibleAlerts: {
+  note: {
+    label: {
+      '/': 'Note'
+    }
+  },
+  tip: {
+    label: {
+      '/': 'Tip'
+    }
+  },
+  warning: {
+    label: {
+      '/': 'Warning'
+    }
+  },
+  attention: {
+    label: {
+      '/': 'Attention'
+    }
+  }
+}
+```
+
+Inside the object of the label property, before the `'/'` property, you would add a new property for your language, like `/i18n/<language>/`.
+
+For example, adding the translations for Portuguese would appear like this:
+
+```js
+flexibleAlerts: {
+  note: {
+    label: {
+      '/i18n/portuguese/': 'Observação',
+      '/': 'Note'
+    }
+  },
+  tip: {
+    label: {
+      '/i18n/portuguese/': 'Dica',
+      '/': 'Tip'
+    }
+  },
+  warning: {
+    label: {
+      '/i18n/portuguese/': 'Aviso',
+      '/': 'Warning'
+    }
+  },
+  attention: {
+    label: {
+      '/i18n/portuguese/': 'Atenção',
+      '/': 'Attention'
+    }
+  }
+}
+```
 
 ## How to translate the motivational quotes
 
@@ -150,13 +226,13 @@ Some of these links will not change - but you should update the `/news` article 
 
 You should also update the `help` categories to point to your language's subforum (usually `language/category`, like `Italiano/HTML-CSS`). This will allow campers to create "help posts" in the correct forum location.
 
-## How to update the site meta-data
+## Як оновити метадані сайту
 
-The site meta-data is in the `/client/i18n/locales/<language>/meta-tags.json` file. This file has five keys: `title`, `description`, `social-description`, `keywords`, and `youre-unsubscribed`.
+Метадані сайту знаходяться в файлі `/client/i18n/locales/<language>/meta-tags.json`. Цей файл має п'ять ключів: `title`, `description`, `social-description`, `keywords` та `youre-unsubscribed`.
 
-The `youre-unsubscribed` value should be directly translated. The other values will need to be translated as closely as possible, while also considering common search terms and phrases used in your language.
+Значення `youre-unsubscribed` повинне бути перекладене прямо. Інші значення потрібно перекладати якомога ближче, зважаючи на поширені пошукові запити вашої мови.
 
-If you need help with this, reach out to us in the [contributor chat](https://discord.gg/PRyKn3Vbay)
+Якщо вам потрібна допомога, зв'яжіться з нами в [contributor chat](https://discord.gg/PRyKn3Vbay)
 
 ## Pre-Translate Workflow on Crowdin
 
@@ -180,7 +256,7 @@ Then there are three steps to complete:
 
 ![pre-translate existing translations](./images/crowdin/pre-translate3.png)
 
-When you have finished settngs this, press the Pre-Translate button, and wait. It will alert you once it has finished. It will take more or less time depending on how many untranslated strings are present in the files you have choosen.
+When you have finished setting this, press the Pre-Translate button and wait. It will alert you once it has finished. The time it takes depends on how many untranslated strings are in the chosen files.
 
 ## How to update Crowdin Glossary
 

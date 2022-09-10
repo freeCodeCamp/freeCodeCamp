@@ -40,6 +40,7 @@ const initialState = {
     projectPreview: false,
     shortcuts: false
   },
+  portalDocument: false,
   projectFormValues: {},
   successMessage: 'Happy Coding!'
 };
@@ -171,7 +172,14 @@ export const reducer = handleActions(
       ...state,
       isBuildEnabled: false
     }),
-
+    [actionTypes.storePortalDocument]: (state, { payload }) => ({
+      ...state,
+      portalDocument: payload
+    }),
+    [actionTypes.removePortalDocument]: state => ({
+      ...state,
+      portalDocument: false
+    }),
     [actionTypes.updateSuccessMessage]: (state, { payload }) => ({
       ...state,
       successMessage: payload

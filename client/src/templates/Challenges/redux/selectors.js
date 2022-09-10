@@ -31,6 +31,8 @@ export const successMessageSelector = state => state[ns].successMessage;
 export const projectFormValuesSelector = state =>
   state[ns].projectFormValues || {};
 
+export const portalDocumentSelector = state => state[ns].portalDocument;
+
 export const challengeDataSelector = state => {
   const { challengeType } = challengeMetaSelector(state);
   let challengeData = { challengeType };

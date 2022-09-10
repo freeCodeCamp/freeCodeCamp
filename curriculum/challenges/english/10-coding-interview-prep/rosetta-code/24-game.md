@@ -39,28 +39,28 @@ Implement a function that takes a string of four digits as its argument, with ea
 assert(typeof solve24 === 'function');
 ```
 
-`solve24("4878")` should return `(7-8/8)*4` or `4*(7-8/8)`
+`solve24("4878")` should return `(7-8/8)*4`, `4*(7-8/8)`, or a similar valid string
 
 ```js
-assert(include(answers[0], removeParentheses(solve24(testCases[0]))));
+assert(isValidSolution_(solve24(testCases_[0])));
 ```
 
-`solve24("1234")` should return any arrangement of `1*2*3*4`
+`solve24("1234")` should return `1*2*3*4` or a similar valid string
 
 ```js
-assert(include(answers[1], removeParentheses(solve24(testCases[1]))));
+assert(isValidSolution_(solve24(testCases_[1])));
 ```
 
-`solve24("6789")` should return `(6*8)/(9-7)` or `(8*6)/(9-7)`
+`solve24("6789")` should return `(6*8)/(9-7)`. `(8*6)/(9-7)`, or a similar valid string
 
 ```js
-assert(include(answers[2], removeParentheses(solve24(testCases[2]))));
+assert(isValidSolution_(solve24(testCases_[2])));
 ```
 
-`solve24("1127")` should return a permutation of `(1+7)*(1+2)`
+`solve24("1127")` should return `(1+7)*(1+2)` or a similar valid string
 
 ```js
-assert(include(answers[3], removeParentheses(solve24(testCases[3]))));
+assert(isValidSolution_(solve24(testCases_[3])));
 ```
 
 # --seed--
@@ -68,56 +68,101 @@ assert(include(answers[3], removeParentheses(solve24(testCases[3]))));
 ## --after-user-code--
 
 ```js
-const testCases = [
+const testCases_ = [
   '4878',
   '1234',
   '6789',
   '1127'
 ];
 
-const answers = [
-  ['(7-8/8)*4', '4*(7-8/8)', '(4-8+7)*8', '(4+7-8)*8', '(7+4-8)*8', '(7-8+4)*8', '8*(4-8+7)', '8*(4+7-8)', '8*(7+4-8)', '8*(7-8+4)'],
-  ['1*2*3*4', '1*2*4*3', '1*3*2*4', '1*3*4*2', '1*4*2*3', '1*4*3*2', '2*1*3*4', '2*1*4*3', '2*3*1*4', '2*3*4*1', '2*4*3*1', '2*4*1*3', '3*1*2*4', '3*1*4*2', '3*2*1*4', '3*2*4*1', '3*4*1*2', '3*4*2*1', '4*1*2*3', '4*1*3*2', '4*2*1*3', '4*2*3*1', '4*3*1*2', '4*3*2*1', '(1+2+3)*4', '(1+3+2)*4', '(2+1+3)*4', '(2+3+1)*4', '(3+1+2)*4', '(3+2+1)*4', '4*(1+2+3)', '4*(2+1+3)', '4*(2+3+1)', '4*(3+1+2)', '4*(3+2+1)'],
-  ['(6*8)/(9-7)', '(8*6)/(9-7)', '6*8/(9-7)', '8*6/(9-7)'],
-  ['(1+7)*(2+1)', '(1+7)*(1+2)', '(1+2)*(1+7)', '(1+2)*(7+1)', '(2+1)*(1+7)', '(7+1)*(2+1)']
-];
-
-function include(ansArr, res) {
-  const index = ansArr.indexOf(res);
-  return index >= 0;
+const OPERATORS_ = {
+  "+": (a, b) => a + b,
+  "-": (a, b) => a - b,
+  "*": (a, b) => a * b,
+  "/": (a, b) => a / b,
 }
 
-//The main method for detecting single parentheses
-function removeParentheses(ans) {
-  for (let i = 0; i < ans.length; i++) {
-    if (!isNaN(ans[i])) {
-      ans = removeParenthesesHelper(ans, i);
+const PRECIDENCE_ = {
+  "+": 1,
+  "-": 1,
+  "*": 2,
+  "/": 2,
+}
+
+function evaluate_(expression) {
+  expression = expression.replace('/\s+/g', '');
+  const stack = [];
+  let postfix = "";
+
+  // Convert from infix to postfix
+  let head = 0;
+  while (head < expression.length) {
+    let c = expression[head];
+    switch (c) {
+      case "(":
+        stack.push(c);
+        break;
+      case ")":
+        let last = stack.pop();
+        while (last !== "(") {
+          postfix += last;
+          last = stack.pop();
+        }
+        break;
+      case "+":
+      case "-":
+      case "*":
+      case "/":
+        while (stack.length &&
+               PRECIDENCE_[c] <= PRECIDENCE_[stack[stack.length-1]]) {
+          postfix += stack.pop();
+        }
+        stack.push(c);
+        break;
+      case "0":
+      case "1":
+      case "2":
+      case "3":
+      case "4":
+      case "5":
+      case "6":
+      case "7":
+      case "8":
+      case "9":
+        postfix += c;
+        break;
+      default:
+        return false;
+    }
+    head++;
+  }
+
+  // Clear out stack
+  while (stack.length) {
+    postfix += stack.pop();
+  }
+
+  // Evaluate postfix
+  for (let c of postfix) {
+    switch (c) {
+      case "+":
+      case "-":
+      case "*":
+      case "/":
+        const b = +stack.pop();
+        const a = +stack.pop();
+        stack.push(OPERATORS_[c](a, b));
+        break;
+      default:
+        stack.push(c);
     }
   }
-  return ans;
+  return stack.pop();
 }
 
-//Helper to remove left and right parantheses
-function removeParenthesesHelper(ans, i) {
-  while (i > 0 && i < ans.length - 1) {
-    if (ans[i - 1] === '(' && ans[i + 1] === ')') {
-      //Paranthesis detected. Remove them.
-      ans = replaceChar(ans, '', i - 1);
-      ans = replaceChar(ans, '', i);
-      i--;
-    } else {
-      return ans;
-    }
-  }
-  return ans;
-}
-
-//Replace a character at a given index for the provided character
-function replaceChar(origString, replaceChar, index) {
-  let firstPart = origString.substr(0, index);
-  let lastPart = origString.substr(index + 1);
-  let newString = firstPart + replaceChar + lastPart;
-  return newString;
+// Check solution validity
+function isValidSolution_(userSolution) {
+  return evaluate_(userSolution) === 24;
 }
 ```
 

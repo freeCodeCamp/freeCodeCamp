@@ -21,6 +21,6 @@
   "devDependencies": {
     "debug": "4.3.2",
     "dotenv": "10.0.0",
-    "readdirp": "^3.6.0"
+    "readdirp": "3.6.0"
   }
 }

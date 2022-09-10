@@ -16,9 +16,9 @@ Gli hash BCrypt appariranno sempre come `$2a$13$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8
 
 # --instructions--
 
-Per iniziare a usare BCrypt, aggiungilo come dipendenza nel tuo progetto e richiederlo come 'bcrypt' nel tuo server.
+Aggiungi tutto il tuo codice per queste lezioni nel file `server.js` in mezzo al codice di partenza che ti abbiamo fornito. Non modificare o eliminare il codice che abbiamo aggiunto per te.
 
-Aggiungi tutto il tuo codice per queste lezioni nel file `server.js` in mezzo al codice con cui ti abbiamo avviato. Non modificare o eliminare il codice che abbiamo aggiunto per te.
+BCrypt è già stato aggiunto come dipendenza, quindi richiedilo come `bcrypt` nel tuo server.
 
 Invia la tua pagina quando pensi di averlo fatto correttamente.
 

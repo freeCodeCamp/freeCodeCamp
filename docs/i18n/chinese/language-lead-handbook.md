@@ -30,7 +30,7 @@ With `link` being the link of the original article.
 
 > [!TIP] Changing the articles in the footer at least once a month means giving a boost to the linked articles on google results.
 
-There two places in which to change the trending articles.
+There are two places in which to change the trending articles.
 
 - [The curriculum repository](https://github.com/freeCodeCamp/freeCodeCamp/)
 - [The CDN repository](https://github.com/freeCodeCamp/cdn)
@@ -65,7 +65,7 @@ This is an example of how part of the `trending.json` file has to look.
 }
 ```
 
-You will want to [build the translated client locally](how-to-test-translations-locally.md) to see if the titles have the right length. Each title must stay on a single line and not go to a new line.
+You will want to [build the translated client locally](how-to-enable-new-languages.md) to see if the titles have the right length. Each title must stay on a single line and not go to a new line.
 
 ### How to update the trending articles in the cdn
 
@@ -91,6 +91,82 @@ article5link: 'https://www.freecodecamp.org/italian/news/cose-un-api-in-italiano
 You can convert from one format to the other carefully changing it manually. Or you can use [the script in this repl](https://replit.com/@Ieahleen/convert-json-to-yaml).
 
 > [!TIP] A new workflow is being worked on, there will be only one place to change in the future.
+
+## How to translate the info boxes headers in the documentation
+
+You can find these boxes all around the documentation:
+
+> [!NOTE] I am a note box
+
+> [!TIP] I am a tip box
+
+> [!WARNING] I am a warning box
+
+> [!ATTENTION] I am an attention box
+
+By default, their headers appear in English even in the translated docs.
+
+You can have the headers translated in the docs in your language by changing the file `docs/index.html`, in this way:
+
+Inside the `script` element there is an object, find the `flexibleAlerts` property, which has this shape:
+
+```js
+flexibleAlerts: {
+  note: {
+    label: {
+      '/': 'Note'
+    }
+  },
+  tip: {
+    label: {
+      '/': 'Tip'
+    }
+  },
+  warning: {
+    label: {
+      '/': 'Warning'
+    }
+  },
+  attention: {
+    label: {
+      '/': 'Attention'
+    }
+  }
+}
+```
+
+Inside the object of the label property, before the `'/'` property, you would add a new property for your language, like `/i18n/<language>/`.
+
+For example, adding the translations for Portuguese would appear like this:
+
+```js
+flexibleAlerts: {
+  note: {
+    label: {
+      '/i18n/portuguese/': 'Observação',
+      '/': 'Note'
+    }
+  },
+  tip: {
+    label: {
+      '/i18n/portuguese/': 'Dica',
+      '/': 'Tip'
+    }
+  },
+  warning: {
+    label: {
+      '/i18n/portuguese/': 'Aviso',
+      '/': 'Warning'
+    }
+  },
+  attention: {
+    label: {
+      '/i18n/portuguese/': 'Atenção',
+      '/': 'Attention'
+    }
+  }
+}
+```
 
 ## How to translate the motivational quotes
 
@@ -180,7 +256,7 @@ Then there are three steps to complete:
 
 ![pre-translate existing translations](./images/crowdin/pre-translate3.png)
 
-When you have finished settngs this, press the Pre-Translate button, and wait. It will alert you once it has finished. It will take more or less time depending on how many untranslated strings are present in the files you have choosen.
+When you have finished setting this, press the Pre-Translate button and wait. It will alert you once it has finished. The time it takes depends on how many untranslated strings are in the chosen files.
 
 ## How to update Crowdin Glossary
 

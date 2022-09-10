@@ -35,6 +35,8 @@ export const actionTypes = createTypes(
 
     'previewMounted',
     'projectPreviewMounted',
+    'storePortalDocument',
+    'removePortalDocument',
     'challengeMounted',
     'checkChallenge',
     'executeChallenge',

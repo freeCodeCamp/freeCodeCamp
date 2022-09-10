@@ -64,7 +64,7 @@ La funzione `plotImages` sarà usata alcune volte per plottare le immagini. Pren
 
 Ricrea `train_image_generator` usando `ImageDataGenerator`.
 
-Visto che ci sono pochi esempi di addestramento c'è il rischio di overfitting. Un modo per aggiustare questo problema è creando più dati di addestramento dagli esempi di addestramento esistenti tramite trasformazioni casuali.
+Visto che ci sono pochi esempi di addestramento, c'è il rischio di overfitting. Un modo per aggiustare questo problema è creando più dati di addestramento dagli esempi di addestramento esistenti tramite trasformazioni casuali.
 
 Aggiungi 4-6 trasformazioni come argomenti di `ImageDataGenerator`. Assicurati di riscalare come hai fatto prima.
 
@@ -94,7 +94,7 @@ In questa cella, ottieni la probabilità che ogni immagine di prova (da `test_da
 
 Chiama la funzione `plotImages` e passagli le immagini di prova e le probabilità corrispondenti a ciascuna immagine di prova.
 
-Dopo l'esecuzione della cella, si dovresti vedere tutte le 50 immagini di prova con un'etichetta che mostra la percentuale di "sicurezza" che l'immagine sia un gatto o un cane. La precisione corrisponderà alla precisione mostrata nel grafico precedente (dopo aver eseguito la cella precedente). Più immagini di addestramento potrebbe portare ad una maggiore precisione.
+Dopo l'esecuzione della cella, dovresti vedere tutte le 50 immagini di prova con un'etichetta che mostra la percentuale di "sicurezza" che l'immagine sia un gatto o un cane. La precisione corrisponderà alla precisione mostrata nel grafico precedente (dopo aver eseguito la cella precedente). Più immagini di addestramento potrebbe portare ad una maggiore precisione.
 
 ## Cella 11
 

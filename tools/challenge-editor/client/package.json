@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "5.16.4",
+    "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "12.1.5",
     "@testing-library/user-event": "13.5.0",
     "react": "16.14.0",
@@ -11,7 +11,7 @@
     "react-dom": "16.14.0",
     "react-router-dom": "6.3.0",
     "react-scripts": "5.0.1",
-    "typescript": "4.7.4"
+    "typescript": "4.8.2"
   },
   "scripts": {
     "start": "cross-env PORT=3300 react-scripts start",

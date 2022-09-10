@@ -29,8 +29,7 @@ function Preview({
     setIframeStatus(disableIframe);
   }, [disableIframe]);
 
-  // TODO: remove type assertion once frame.js has been migrated.
-  const id: string = previewId ?? (mainPreviewId as string);
+  const id = previewId ?? mainPreviewId;
 
   return (
     <div className={`notranslate challenge-preview ${iframeToggle}-iframe`}>
