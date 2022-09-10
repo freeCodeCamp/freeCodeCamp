@@ -121,7 +121,7 @@
 
 .nav-link:focus:not(:focus-visible) {
   background-color: inherit;
-  color: inherit;
+  color: green;
 }
 
 .nav-link:not([aria-disabled='true']):hover {
@@ -245,20 +245,6 @@ button.nav-link[aria-disabled='true'] {
   color: #fff;
   background-color: inherit;
   padding-top: 0;
-}
-
-.nav-lang-menu .nav-link:focus {
-  color: #000;
-  background-color: var(--gray-10);
-  outline: none;
-}
-
-.nav-lang-menu .nav-link:hover {
-  background-color: var(--gray-10);
-}
-
-.nav-lang-menu li:first-child .nav-link:hover {
-  color: var(--love-dark) !important;
 }
 
 .nav-lang-button {
