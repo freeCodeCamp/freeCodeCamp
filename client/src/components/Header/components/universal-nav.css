@@ -199,7 +199,6 @@ button.nav-link[aria-disabled='true'] {
 }
 
 .nav-lang-menu {
-  --lang-menu-height: 22.5rem;
   display: none;
   padding: 0;
   color: var(--gray-90);
