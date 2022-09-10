@@ -1,7 +1,6 @@
 import { SuperBlocks } from '../../../config/certification-settings';
 import { emailToABVariant } from '../utils/A-B-tester';
 import { ns as MainApp } from './action-types';
-// import { initialState } from '.';
 
 export const savedChallengesSelector = state =>
   userSelector(state).savedChallenges || [];
@@ -76,7 +75,7 @@ export const userByNameSelector = username => state => {
   // return initial state empty user empty object instead of empty
   // object litteral to prevent components from re-rendering unnecessarily
   // TODO: confirm if "initialState" can be moved here or action-types.js
-  return user[username] ?? initialState.user;
+  return user[username] ?? {};
 };
 
 export const currentCertsSelector = state =>
