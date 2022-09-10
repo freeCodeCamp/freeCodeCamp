@@ -121,7 +121,7 @@
 
 .nav-link:focus:not(:focus-visible) {
   background-color: inherit;
-  color: inherit
+  color: inherit;
 }
 
 .nav-link:not([aria-disabled='true']):hover {
