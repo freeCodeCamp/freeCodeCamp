@@ -19,6 +19,6 @@
     "@types/express": "4.17.13",
     "dotenv": "16.0.1",
     "shx": "0.3.4",
-    "typescript": "4.8.2"
+    "typescript": "4.8.3"
   }
 }
