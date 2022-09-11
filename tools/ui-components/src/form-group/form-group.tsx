@@ -5,8 +5,29 @@ import { FormGroupProps } from './types';
 const FormGroup = React.forwardRef<HTMLLabelElement, FormGroupProps>(
   ({ children, className, validationState, controlId }): JSX.Element => {
     const defaultClasses = 'mb-3.5';
-    // ToDo: validationState should change when more Form components added.
-    // It should account for input value and add class to formgroup, depending on formgroup state
+
+    const formControlId: Node = document
+      .querySelector(children)
+      ?.getAttribute('htmlFor');
+
+    const config = {
+      attributes: true,
+      childList: true,
+      characterData: true
+    };
+
+    const callback = (mutations: MutationRecord[]) => {
+      mutations.forEach(mutation => {
+        if (mutation.type === 'childList') {
+          return null;
+        }
+      });
+    };
+
+    const observer = new MutationObserver(callback);
+
+    observer.observe(formControlId, config);
+
     const classes = [defaultClasses, className, validationState].join(' ');
 
     return (
