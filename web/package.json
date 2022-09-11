@@ -32,6 +32,6 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "concurrently": "7.3.0"
+    "concurrently": "7.4.0"
   }
 }
