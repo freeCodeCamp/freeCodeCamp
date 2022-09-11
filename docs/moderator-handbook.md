@@ -203,6 +203,13 @@ Please rejoin once you have reached at least 13 years of age.
 Thank you for understanding.
 ```
 
+### Moderating Via Cell-phone
+
+Moderating the forum is possible via a cell-phone but you may encounter some usage quirks. This is not an exhaustive list.
+- When trying to include a "Canned reply" in a response, if the menu doesn't open (after clicking on the gear), click on the text area first then try it again.
+- The moderator's 'wrench' is at the bottom of the view-port but if you click it and cannot see the "Select Posts" button because it has scrolled out of view, you may need to try to scroll to it, though sometimes that doesn't work in which case moving to a desktop/laptop monitor may be needed.
+- Sometimes clicking on the three-dot menu below a post can hide the reply icon. Reload the page to get it back.
+
 ## Moderating Facebook
 
 If you see anything that seems to break our [Code of Conduct](https://code-of-conduct.freecodecamp.org/), you should delete it immediately.
