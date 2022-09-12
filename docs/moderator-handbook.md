@@ -193,7 +193,7 @@ Again, if you have any problems or questions, make a post with your actions in t
 
 ### Dealing with Posted Solutions
 
-When a user posts an solution to any of the questions, Remove it and Kindly let them know that helping other users via hints and suggestion would be much more fruitful or use the **Solution Instead of Help** "Canned reply".
+When a user posts a solution to any of the questions, Remove it and kindly let them know that helping other users via hints and suggestions would be much more fruitful or use the **Solution Instead of Help** "Canned reply".
 
 ### Underage Users
 
