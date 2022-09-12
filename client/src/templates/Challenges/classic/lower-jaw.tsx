@@ -15,7 +15,6 @@ interface LowerJawProps {
   tryToExecuteChallenge: () => void;
   tryToSubmitChallenge: () => void;
   isEditorInFocus?: boolean;
-  challengeHasErrors?: boolean;
   testsLength?: number;
   attempts: number;
   openResetModal: () => void;
@@ -26,7 +25,6 @@ interface LowerJawProps {
 const LowerJaw = ({
   openHelpModal,
   challengeIsCompleted,
-  challengeHasErrors,
   hint,
   tryToExecuteChallenge,
   tryToSubmitChallenge,
@@ -37,7 +35,7 @@ const LowerJaw = ({
   isSignedIn,
   updateContainer
 }: LowerJawProps): JSX.Element => {
-  const previousHintRef = React.useRef('');
+  const hintRef = React.useRef('');
   const [runningTests, setRunningTests] = useState(false);
   const [testFeedbackHeight, setTestFeedbackHeight] = useState(0);
   const [currentAttempts, setCurrentAttempts] = useState(attempts);
@@ -48,7 +46,7 @@ const LowerJaw = ({
   const testFeedbackRef = React.createRef<HTMLDivElement>();
 
   useEffect(() => {
-    if (attempts > 0) {
+    if (attempts > 0 && hint) {
       //hide the feedback from SR until the "Running tests" are displayed and removed.
       setIsFeedbackHidden(true);
       setRunningTests(true);
@@ -57,6 +55,7 @@ const LowerJaw = ({
       //currentAttempts is updated with when the feedback is hidden, the screen
       //reader should only read out the new message.
       setCurrentAttempts(attempts);
+      hintRef.current = hint;
 
       //display the test feedback contents.
       setTimeout(() => {
@@ -64,7 +63,7 @@ const LowerJaw = ({
         setIsFeedbackHidden(false);
       }, 300);
     }
-  }, [attempts]);
+  }, [attempts, hint]);
 
   useEffect(() => {
     if (challengeIsCompleted && submitButtonRef?.current) {
@@ -86,19 +85,6 @@ const LowerJaw = ({
     // monaco know it might need to resize
     updateContainer();
   });
-
-  /*
-    Return early in lifecycle based on the earliest available conditions to help the editor
-    calculate the correct editor gap for the lower jaw.
-
-    For consistency, use the persisted version if the conditions has been met before.
-  */
-  const earliestAvailableHint = hint || previousHintRef.current;
-
-  // only save error hints
-  if (challengeHasErrors) {
-    previousHintRef.current = earliestAvailableHint;
-  }
 
   const renderTestFeedbackContainer = () => {
     if (currentAttempts === 0) {
@@ -127,10 +113,10 @@ const LowerJaw = ({
           </div>
         </div>
       );
-    } else if (earliestAvailableHint) {
-      const hintDescription = `<h2 class="hint">${t(
-        'learn.hint'
-      )}</h2> ${earliestAvailableHint}`;
+    } else if (hintRef.current) {
+      const hintDescription = `<h2 class="hint">${t('learn.hint')}</h2> ${
+        hintRef.current
+      }`;
       return (
         <>
           <div className='test-status fade-in' aria-hidden={isFeedbackHidden}>

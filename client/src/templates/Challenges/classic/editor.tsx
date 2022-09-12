@@ -619,7 +619,6 @@ const Editor = (props: EditorProps): JSX.Element => {
         testsLength={props.tests.length}
         attempts={attemptsRef.current}
         challengeIsCompleted={isChallengeComplete}
-        challengeHasErrors={challengeHasErrors()}
         tryToSubmitChallenge={tryToSubmitChallenge}
         isEditorInFocus={isEditorInFocus}
         isSignedIn={props.isSignedIn}
@@ -1073,10 +1072,11 @@ const Editor = (props: EditorProps): JSX.Element => {
     return tests.every(test => test.pass && !test.err);
   }
 
-  function challengeHasErrors() {
-    const tests = testRef.current;
-    return tests.some(test => test.err);
-  }
+  // We need to set initialize the tests, but only once
+  useEffect(() => {
+    initTests(props.initialTests);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // runs every update to the editor and when the challenge is reset
   useEffect(() => {
@@ -1094,11 +1094,6 @@ const Editor = (props: EditorProps): JSX.Element => {
       resetEditorValues();
       focusIfTargetEditor();
     }
-
-    // Once a challenge has been completed, we don't want changes to the content
-    // to reset the tests since the user is already done with the challenge.
-    if (props.initialTests && !challengeIsComplete())
-      initTests(props.initialTests);
 
     if (hasEditableRegion() && editor) {
       if (props.isResetting) {
