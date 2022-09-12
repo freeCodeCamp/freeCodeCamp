@@ -177,11 +177,17 @@ Forum moderators can delete users' posts. You should only do this for the follow
 
 For the first spam post of a user, send them a message explaining the problem, and remove the link or post as appropriate. Leave a note on the user's profile explaining the action you have taken. If the problem persists, then quietly block the user from posting (using the silence option on the User Admin panel). Send the user a warning with the [Code of Conduct](https://code-of-conduct.freecodecamp.org). Check the box in the private message indicating that your message is a "formal warning."
 
-1. FreeCodeCamp's spam filter requires a user to take a certain amount of time to ask their question, If they click on the "Create post" button before that, they might get flagged for review for being potential spam. In that case, It is the responsibility of the moderators to approve their post if they are a genuine user and need help.
+1. FreeCodeCamp's spam filter requires a user to take a certain amount of time to ask their question, If they click on the "Create post" button before that, they might get flagged for review for being potential spam. In that case, it is the responsibility of the moderators to approve their post if they are a genuine user and need help.
 
 2. If the user is an obvious spam bot, for example, their first and only post is a link to a malicious site minutes after signing up, delete their account.
 
 As a moderator, you can ask questions and report incidents in the [mod-team forum section](https://forum.freecodecamp.org/c/mod-team/4).
+
+### Dealing with Flagged Posts
+
+1. If a flag has been raised against a user who is posting spam, ??? (use a canned msg for the person flagging? then take actions outlined in the Dealing with Spam section?)
+2. If a flag has been raised against a user who is breaking the code of conduct in any way....???
+3. If a flag has been raised because a post is a duplicate made by the same user ...???
 
 ### Dealing with Off-Topic Conversations
 
@@ -199,7 +205,7 @@ When a user posts a solution to any of the questions, Remove it and kindly let t
 
 Our [Terms of Service](https://freecodecamp.org/terms) require that freeCodeCamp users be at least 13 years of age. If a user reveals that they are under the age of 13, send them the below message and delete their forum account (if deletion is not available, suspending the account is sufficient).
 
-**Email `support[at]freecodecamp.org` to delete the user's freeCodeCamp account as well.**
+**Email `support[at]freecodecamp.org` to delete the user's freeCodeCamp account as well (providing the email address and user id to support).**
 
 ```markdown
 SUBJECT: Users under 13 are not allowed to use the forum per our Terms of Service.
