@@ -46,6 +46,14 @@ const LowerJaw = ({
   const testFeedbackRef = React.createRef<HTMLDivElement>();
 
   useEffect(() => {
+    // Attempts should only be zero when the step is reset, so we should reset
+    // the state here.
+    if (attempts === 0) {
+      setCurrentAttempts(0);
+      setRunningTests(false);
+      setTestBtnAriaHidden(false);
+      setIsFeedbackHidden(false);
+    }
     if (attempts > 0 && hint) {
       //hide the feedback from SR until the "Running tests" are displayed and removed.
       setIsFeedbackHidden(true);
