@@ -77,7 +77,6 @@ const LowerJaw = ({
 
   useEffect(() => {
     if (challengeIsCompleted && submitButtonRef?.current) {
-      submitButtonRef.current.focus();
       setTimeout(() => {
         setTestBtnAriaHidden(true);
       }, 500);
