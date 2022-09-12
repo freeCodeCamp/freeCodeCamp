@@ -191,6 +191,10 @@ In exceptional circumstances, it may be appropriate for a moderator to fork a di
 
 Again, if you have any problems or questions, make a post with your actions in the `"Staff"` category, and tag another moderator if you want them to review your moderating actions.
 
+### Dealing with Posted Solutions
+
+When a user posts an solution to any of the questions, Remove it and Kindly let them know that helping other users via hints and suggestion would be much more fruitful or use the **Solution Instead of Help** "Canned reply".
+
 ### Underage Users
 
 Our [Terms of Service](https://freecodecamp.org/terms) require that freeCodeCamp users be at least 13 years of age. If a user reveals that they are under the age of 13, send them the below message and delete their forum account (if deletion is not available, suspending the account is sufficient).
