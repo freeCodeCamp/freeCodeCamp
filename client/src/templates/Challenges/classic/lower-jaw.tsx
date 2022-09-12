@@ -46,6 +46,8 @@ const LowerJaw = ({
   const testFeedbackRef = React.createRef<HTMLDivElement>();
 
   useEffect(() => {
+    // prevent unnecessary updates:
+    if (attempts === currentAttempts) return;
     // Attempts should only be zero when the step is reset, so we should reset
     // the state here.
     if (attempts === 0) {
@@ -53,8 +55,8 @@ const LowerJaw = ({
       setRunningTests(false);
       setTestBtnAriaHidden(false);
       setIsFeedbackHidden(false);
-    }
-    if (attempts > 0 && hint) {
+      hintRef.current = '';
+    } else if (attempts > 0 && hint) {
       //hide the feedback from SR until the "Running tests" are displayed and removed.
       setIsFeedbackHidden(true);
       setRunningTests(true);
@@ -71,7 +73,7 @@ const LowerJaw = ({
         setIsFeedbackHidden(false);
       }, 300);
     }
-  }, [attempts, hint]);
+  }, [attempts, hint, currentAttempts]);
 
   useEffect(() => {
     if (challengeIsCompleted && submitButtonRef?.current) {
@@ -82,7 +84,11 @@ const LowerJaw = ({
     }
 
     setTestBtnAriaHidden(challengeIsCompleted);
-  }, [challengeIsCompleted, submitButtonRef]);
+    // Since submitButtonRef changes every render, we have to ignore it here or,
+    // once the challenges is completed, every render (including ones triggered
+    // by typing in the editor) will focus the button.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [challengeIsCompleted]);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
@@ -95,9 +101,7 @@ const LowerJaw = ({
   });
 
   const renderTestFeedbackContainer = () => {
-    if (currentAttempts === 0) {
-      return '';
-    } else if (runningTests) {
+    if (runningTests) {
       return <span className='sr-only'>{t('aria.running-tests')}</span>;
     } else if (challengeIsCompleted) {
       const submitKeyboardInstructions = isEditorInFocus ? (
@@ -155,6 +159,8 @@ const LowerJaw = ({
           </div>
         </>
       );
+    } else {
+      return null;
     }
   };
 
