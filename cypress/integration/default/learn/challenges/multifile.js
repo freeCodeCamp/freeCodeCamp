@@ -27,6 +27,17 @@ describe('Challenge with multifile editor', () => {
       .contains('Check Your Code');
   });
 
+  it('resets the lower jaw when prompted', () => {
+    cy.get('[data-cy=failing-test-feedback]').should('not.exist');
+
+    cy.contains('Check Your Code').click();
+    cy.get('[data-cy=failing-test-feedback]').should('be.visible');
+    cy.contains('Restart Step').click();
+    cy.get('[data-cy=reset-modal-confirm').click();
+
+    cy.get('[data-cy=failing-test-feedback]').should('not.exist');
+  });
+
   // Page will change after this test. If your test requires page used in previous
   // tests make sure it is above this one
   it('prompts unauthenticated user to sign in to save progress', () => {

@@ -119,7 +119,11 @@ const LowerJaw = ({
       }`;
       return (
         <>
-          <div className='test-status fade-in' aria-hidden={isFeedbackHidden}>
+          <div
+            data-cy='failing-test-feedback'
+            className='test-status fade-in'
+            aria-hidden={isFeedbackHidden}
+          >
             <div className='status-icon' aria-hidden='true'>
               <span>
                 <Fail />
