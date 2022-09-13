@@ -1,14 +1,14 @@
-# freeCodeCamp.org's Security Policy
+# Політика безпеки freeCodeCamp.org
 
-This document outlines our security policy for the codebases, platforms that we operate, and how to report vulnerabilities.
+Цей документ визначає нашу політику безпеки для бази кодів, платформ, які ми використовуємо, та як повідомити про вразливість.
 
 ## Повідомлення про вразливість
 
-> [!NOTE] If you think you have found a vulnerability, **please report it responsibly**. Do not create GitHub issues for security issues. Instead, follow this guide.
+> [!NOTE] Якщо ви вважаєте, що знайшли вразливість, **будь ласка, повідомте про це**. Не створюйте обговорення на GitHub з питань безпеки. Натомість слідуйте цій інструкції.
 
-### Guidelines
+### Настанови
 
-We appreciate responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users. In the interest of saving everyone time, we encourage you to report vulnerabilities with these in mind:
+Ми цінуємо відповідальне розкриття інформації, що може вплинути на цілісність наших платформ та користувачів. В інтересах збереження часу ми просимо вас повідомити про вразливість, враховуючи наступне:
 
 1. Ensure that you are using the **latest**, **stable**, and **updated** versions of the Operating System and Web Browser(s) available to you on your machine.
 2. We consider using tools & online utilities to report issues with SPF & DKIM configs, SSL Server tests, etc., in the category of ["beg bounties"](https://www.troyhunt.com/beg-bounties) and are unable to respond to these reports.
