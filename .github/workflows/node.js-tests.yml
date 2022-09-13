@@ -162,4 +162,5 @@ jobs:
         env:
           CURRICULUM_LOCALE: ${{ matrix.locale }}
           CLIENT_LOCALE: ${{ matrix.locale }}
+          NODE_OPTIONS: '--max_old_space_size=6144'
         run: npm test

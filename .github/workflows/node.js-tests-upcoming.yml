@@ -82,4 +82,6 @@ jobs:
           npm run build:curriculum
 
       - name: Run Tests
+        env:
+          NODE_OPTIONS: '--max_old_space_size=6144'
         run: npm test
