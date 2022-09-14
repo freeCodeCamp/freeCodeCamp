@@ -225,6 +225,7 @@ const LowerJaw = ({
           ) : null}
           <button
             id='test-button'
+            data-cy='run-tests-button'
             className={`btn-block btn ${challengeIsCompleted ? 'sr-only' : ''}`}
             aria-hidden={testBtnAriaHidden}
             onClick={tryToExecuteChallenge}
@@ -235,6 +236,7 @@ const LowerJaw = ({
           </button>
           <button
             id='submit-button'
+            data-cy='submit-button'
             aria-hidden={!challengeIsCompleted}
             className='btn-block btn'
             onClick={tryToSubmitChallenge}

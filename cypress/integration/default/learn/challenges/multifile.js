@@ -2,9 +2,10 @@ import translations from '../../../../../client/i18n/locales/english/translation
 const location =
   '/learn/2022/responsive-web-design/learn-accessibility-by-building-a-quiz/step-2';
 const selectors = {
-  testButton: '#test-button',
+  testButton: '[data-cy=run-tests-button]',
   monacoTabs: '.monaco-editor-tabs',
-  signInButton: '#action-buttons-container a[href$="/signin"]'
+  signInButton: '#action-buttons-container a[href$="/signin"]',
+  submitButton: '[data-cy=submit-button]'
 };
 
 describe('Challenge with multifile editor', () => {
@@ -48,5 +49,13 @@ describe('Challenge with multifile editor', () => {
     cy.get(selectors.signInButton).click();
     cy.go('back');
     cy.get(selectors.signInButton).should('not.exist');
+  });
+
+  it('focuses the submit button after testing a valid solution', () => {
+    cy.visit(location);
+    cy.focused().type('{end}{enter}<meta charset="UTF-8" />');
+    cy.get(selectors.submitButton).should('not.be.focused');
+    cy.get(selectors.testButton).click();
+    cy.get(selectors.submitButton).should('be.focused');
   });
 });
