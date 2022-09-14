@@ -8,11 +8,11 @@ dashedName: run-functional-tests-using-a-headless-browser-ii
 
 # --description--
 
-注意点として、このプロジェクトは [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai) の始動プロジェクト、または [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/) からクローンされたプロジェクトに基づいて構築されています。
+注意点として、このプロジェクトは <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> にあるスタータープロジェクトをベースに構築されているか、または <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a> からクローンされています。
 
 # --instructions--
 
-`tests/2_functional-tests.js` 内の `'Submit the surname "Vespucci" in the HTML form'` テスト (`// #5`) で、以下を自動化してください。
+`tests/2_functional-tests.js` 内の `'Submit the surname "Vespucci" in the HTML form'` テスト (`// #6`) で、以下を自動化してください。
 
 1.  フォームに姓 `Vespucci` を入力します。
 2.  送信ボタンを押します。
