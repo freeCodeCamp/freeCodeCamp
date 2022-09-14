@@ -30,11 +30,11 @@ app.use((req, res, next) => {
 });
 ```
 
-正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを[こちら](https://gist.github.com/camperbot/c3eeb8a3ebf855e021fd0c044095a23b)で確認できます。
+正しいと思ったら、ページを送信してください。 エラーが発生している場合は、ここまでに完了したプロジェクトを<a href="https://gist.github.com/camperbot/c3eeb8a3ebf855e021fd0c044095a23b" target="_blank" rel="noopener noreferrer nofollow">こちら</a>で確認できます。
 
 # --hints--
 
-`req.Logout` を `/logout` ルートで呼び出す必要があります。
+`req.logout()` を `/logout` ルートで呼び出す必要があります。
 
 ```js
 (getUserInput) =>
