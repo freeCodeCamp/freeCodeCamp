@@ -16,6 +16,7 @@ interface SubmitProps {
 }
 
 interface FormProps extends WithTranslation {
+  buttonLabel?: string;
   challengeType: number;
   description?: string;
   onSubmit: (arg0: SubmitProps) => void;
@@ -46,7 +47,7 @@ export class SolutionForm extends Component<FormProps> {
   };
 
   render(): JSX.Element {
-    const { challengeType, description, t } = this.props;
+    const { buttonLabel, challengeType, description, t } = this.props;
 
     // back end challenges and front end projects use a single form field
     const solutionField = [
@@ -57,7 +58,7 @@ export class SolutionForm extends Component<FormProps> {
       { name: 'githubLink', label: t('learn.github-link') }
     ];
 
-    const buttonCopy = t('learn.submit-and-go');
+    const buttonCopy: string = buttonLabel ?? t('learn.submit-and-go');
 
     const options = {
       types: {
