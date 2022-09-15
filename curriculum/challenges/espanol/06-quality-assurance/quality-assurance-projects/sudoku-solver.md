@@ -8,10 +8,10 @@ dashedName: sudoku-solver
 
 # --description--
 
-Construye una aplicación full stack de JavaScript que sea funcionalmente similar a esta: <https://sudoku-solver.freecodecamp.rocks/>. Trabajar en este proyecto implicará escribir tu código utilizando uno de los siguientes métodos:
+Crea una aplicación full stack de JavaScript que sea funcionalmente similar a esta: <a href="https://sudoku-solver.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://sudoku-solver.freecodecamp.rocks/</a>. Trabajar en este proyecto implicará escribir tu código utilizando uno de los siguientes métodos:
 
--   Clona [este repositorio de GitHub](https://github.com/freecodecamp/boilerplate-project-sudoku-solver) y completa tu proyecto localmente.
--   Usa [nuestro proyecto inicial de Replit](https://replit.com/github/freeCodeCamp/boilerplate-project-sudoku-solver) para completar tu proyecto.
+-   Clone este repositorio de <a href="https://github.com/freecodecamp/boilerplate-project-sudoku-solver" target="_blank" rel="noopener noreferrer nofollow"> GitHub</a> y complete estos desafíos localmente.
+-   Usa este <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-sudoku-solver" target="_blank" rel="noopener noreferrer nofollow"> proyecto inicial de Replit</a> para completar tu proyecto.
 -   Usa un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio de GitHub.
 
 Cuando hayas terminado, asegúrate de que una demostración funcional de tu proyecto esté alojado en algún lugar público. Luego, envía la URL en el campo `Solution Link`. Opcionalmente, también envía un enlace al código fuente de tu proyecto en el campo `GitHub Link`.
@@ -270,7 +270,7 @@ async (getUserInput) => {
 };
 ```
 
-Si el objeto enviado a `/api/check` no existe `puzzle`,`coordinate` o `value`, el valor devuelto será `{ error: Required field(s) missing }`
+Si el objeto enviado a `/api/check` no existe `puzzle`,`coordinate` o `value`, el valor devuelto será `{ error: 'Required field(s) missing' }`
 
 ```js
 async (getUserInput) => {
@@ -353,9 +353,11 @@ async (getUserInput) => {
   try {
     const getTests = await $.get(getUserInput('url') + '/_api/get-tests');
     assert.isArray(getTests);
-    const units = getTests.filter((el) => el.context.includes('UnitTests'));
-    assert.isAtLeast(units.length, 12, 'At least 12 tests passed');
-    units.forEach((test) => {
+    const unitTests = getTests.filter((test) => {
+      return !!test.context.match(/Unit\s*Tests/gi);
+    });
+    assert.isAtLeast(unitTests.length, 12, 'At least 12 tests passed');
+    unitTests.forEach((test) => {
       assert.equal(test.state, 'passed', 'Test in Passed State');
       assert.isAtLeast(
         test.assertions.length,
@@ -369,18 +371,18 @@ async (getUserInput) => {
 };
 ```
 
-Las 14 pruebas funcionales están completas y pasan. Consulta `/tests/2_functional-tests.js` para la funcionalidad para la que debes escribir pruebas.
+Las 14 pruebas funcionales están completas y pasan. Consulta `/tests/2_functional-tests.js` para conocer la funcionalidad de la cual debes escribir pruebas.
 
 ```js
 async (getUserInput) => {
   try {
     const getTests = await $.get(getUserInput('url') + '/_api/get-tests');
     assert.isArray(getTests);
-    const funcs = getTests.filter((el) =>
-      el.context.includes('Functional Tests')
-    );
-    assert.isAtLeast(funcs.length, 14, 'At least 14 tests passed');
-    funcs.forEach((test) => {
+    const functTests = getTests.filter((test) => {
+      return !!test.context.match(/Functional\s*Tests/gi);
+    });
+    assert.isAtLeast(functTests.length, 14, 'At least 14 tests passed');
+    functTests.forEach((test) => {
       assert.equal(test.state, 'passed', 'Test in Passed State');
       assert.isAtLeast(
         test.assertions.length,
