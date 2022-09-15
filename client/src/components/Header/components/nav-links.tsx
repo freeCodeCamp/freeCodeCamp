@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 // @ts-nocheck
 import {
   faCheckSquare,
@@ -19,7 +19,7 @@ import {
   hiddenLangs
 } from '../../../../../config/i18n/all-langs';
 import { hardGoTo as navigate } from '../../../redux';
-import { updateUserFlag } from '../../../redux/settings';
+import { updateMyTheme } from '../../../redux/settings';
 import createLanguageRedirect from '../../create-language-redirect';
 import { Link } from '../../helpers';
 import { Themes } from '../../settings/theme';
@@ -49,7 +49,7 @@ export interface NavLinksProps {
   i18n: Record<string, unknown>;
   t: TFunction;
   hideMenu: () => void;
-  toggleNightMode: (theme: Themes) => Themes;
+  toggleNightMode: (theme: Themes) => void;
   user?: {
     isDonating: boolean;
     username: string;
@@ -63,7 +63,7 @@ export interface NavLinksProps {
 
 const mapDispatchToProps = {
   navigate,
-  toggleNightMode: (theme: Themes) => updateUserFlag({ theme })
+  toggleNightMode: (theme: Themes) => updateMyTheme({ theme })
 };
 
 export class NavLinks extends Component<NavLinksProps, NavlinkStates> {
