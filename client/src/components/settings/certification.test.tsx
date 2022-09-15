@@ -63,11 +63,10 @@ describe('<certification />', () => {
   it('Render button when only solution is present', () => {
     renderWithRedux(<CertificationSettings {...propsForOnlySolution} />);
 
-    expect(
-      screen.getByRole('link', {
-        name: 'buttons.show-solution'
-      })
-    ).toHaveAttribute('href', 'https://github.com/freeCodeCamp/freeCodeCamp');
+    expect(screen.getByTitle(/project link/i)).toHaveAttribute(
+      'href',
+      'https://github.com/freeCodeCamp/freeCodeCamp'
+    );
   });
 
   it('Render button when both githubLink and solution is present', () => {
@@ -88,7 +87,7 @@ describe('<certification />', () => {
   it('rendering the correct button when files is present', () => {
     renderWithRedux(<CertificationSettings {...propsForOnlySolution} />);
 
-    const button = screen.getByText('buttons.show-code');
+    const button = screen.getByTitle(/project link/i);
     expect(button).toBeInTheDocument();
   });
 });

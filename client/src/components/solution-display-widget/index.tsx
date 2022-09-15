@@ -4,7 +4,7 @@ import {
   MenuItem
 } from '@freecodecamp/react-bootstrap';
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import { CompletedChallenge } from '../../redux/prop-types';
 import { getSolutionDisplayType } from '../../utils/solution-display-type';
 
@@ -27,9 +27,13 @@ export function SolutionDisplayWidget({
   const { t } = useTranslation();
 
   const showOrViewText =
-    displayContext === 'settings'
-      ? t('buttons.show-solution')
-      : t('buttons.view');
+    displayContext === 'settings' ? (
+      <Trans i18nKey='buttons.view-solution'>
+        <span className='sr-only'>Solution</span>
+      </Trans>
+    ) : (
+      t('buttons.view')
+    );
 
   const ShowFilesSolutionForCertification = (
     <button
@@ -70,10 +74,13 @@ export function SolutionDisplayWidget({
       bsStyle='primary'
       className='btn-invert'
       data-cy={dataCy}
+      title='view code button'
       id={`btn-for-${id}`}
       onClick={showUserCode}
     >
-      {t('buttons.show-code')}
+      <Trans i18nKey='buttons.view-code'>
+        <span className='sr-only'>Code</span>
+      </Trans>
     </Button>
   );
   const ShowMultifileProjectSolution = (
@@ -86,10 +93,14 @@ export function SolutionDisplayWidget({
         title={t('buttons.view')}
       >
         <MenuItem bsStyle='primary' onClick={showUserCode}>
-          {t('buttons.show-code')}
+          <Trans i18nKey='buttons.view-code'>
+            <span className='sr-only'>Code</span>
+          </Trans>
         </MenuItem>
         <MenuItem bsStyle='primary' onClick={showProjectPreview}>
-          {t('buttons.show-project')}
+          <Trans i18nKey='buttons.view-project'>
+            <span className='sr-only'>Project</span>
+          </Trans>
         </MenuItem>
       </DropdownButton>
     </div>
@@ -131,6 +142,7 @@ export function SolutionDisplayWidget({
       href={solution}
       id={`btn-for-${id}`}
       rel='noopener noreferrer'
+      title='project link'
       target='_blank'
     >
       {showOrViewText}
