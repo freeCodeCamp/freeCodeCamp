@@ -47,11 +47,15 @@ function DynamicForm({
         submit(formatUrlValues(values, options), ...args);
       }}
       validate={(values: URLValues) => {
-        const hasMissingRequiredFields =  options.required?.some((field: string) => !values[field]);
+        const hasMissingRequiredFields = options.required?.some(
+          (field: string) => !values[field]
+        );
 
-        return hasMissingRequiredFields ? {
-          [FORM_ERROR]: hasMissingRequiredFields,
-        } : undefined
+        return hasMissingRequiredFields
+          ? {
+              [FORM_ERROR]: hasMissingRequiredFields
+            }
+          : undefined;
       }}
     >
       {({ handleSubmit, pristine, error }) => (
