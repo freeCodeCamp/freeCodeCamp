@@ -55,7 +55,6 @@ function DynamicForm({
       }}
     >
       {({ handleSubmit, pristine, error }) => (
-        console.log(error),
         <form
           id={`dynamic-${id}`}
           onSubmit={handleSubmit as (e: FormEvent) => void}
