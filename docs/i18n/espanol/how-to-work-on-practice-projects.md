@@ -1,16 +1,16 @@
 # Cómo Trabajar en Proyectos de Práctica
 
-Our practice projects use a step-based approach to teach concepts to campers. A project will consist of multiple files, which we refer to as **"steps"**. These files are named by the challenge ID, to avoid issues with the translation flow. Unfortunately, this makes it difficult to find the file associated with a specific step.
+Nuestros proyectos de práctica utilizan un enfoque basado en pasos para enseñar conceptos a los campistas. Un proyecto constará de múltiples archivos, a los que nos referimos como **"pasos"**. Estos archivos son nombrados por el ID de desafío, para evitar problemas con el flujo de traducción. Desafortunadamente, esto hace difícil encontrar el archivo asociado a un paso específico.
 
-We've built a challenge editor tool that helps remedy this. This tool allows you to navigate the available projects, and the steps for each project (in order). There's also an embedded code editor you can use to work on the files directly.
+Hemos creado una herramienta de edición de desafíos que ayuda a remediar eso. Esta herramienta permite navegar los proyectos disponibles y los pasos para cada proyecto (en orden). También hay un editor de código embebido que se puede utilizar para trabajar directamente sobre los archivos.
 
-## Using the Challenge Editor
+## Utilizando el editor de desafíos
 
-These instructions will tell you how to use our challenge editor tool to work on the practice projects.
+Estas instrucciones le indicarán cómo utilizar nuestra herramienta de edición de desafíos para trabajar en los proyectos de práctica.
 
-### Starting the Editor
+### Iniciar el Editor
 
-To start the editor, make sure you are in the root freecodecamp directory. Then, run `npm run challenge-editor` to start both the client and the API that powers the editor.
+Para iniciar el editor, asegúrese de estar en el directorio raíz de freecodecamp. Then, run `npm run challenge-editor` to start both the client and the API that powers the editor.
 
 The client will run on port `3300`, so you can access it at `http://localhost:3300`. The API runs on port `3200`, to avoid conflicts with the learn client and server. This will allow you to run the freeCodeCamp application at the same time as the editor, so you can test your changes locally.
 
