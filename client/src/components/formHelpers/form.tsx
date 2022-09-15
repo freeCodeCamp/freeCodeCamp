@@ -1,3 +1,4 @@
+import { FORM_ERROR } from 'final-form';
 import React, { FormEvent } from 'react';
 import { Form } from 'react-final-form';
 
@@ -45,8 +46,16 @@ function DynamicForm({
       onSubmit={(values: URLValues, ...args: unknown[]) => {
         submit(formatUrlValues(values, options), ...args);
       }}
+      validate={(values: URLValues) => {
+        const hasMissingRequiredFields =  options.required?.some((field: string) => !values[field]);
+
+        return {
+          [FORM_ERROR]: hasMissingRequiredFields,
+        }
+      }}
     >
       {({ handleSubmit, pristine, error }) => (
+        console.log(error),
         <form
           id={`dynamic-${id}`}
           onSubmit={handleSubmit as (e: FormEvent) => void}
