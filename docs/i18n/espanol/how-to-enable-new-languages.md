@@ -1,14 +1,14 @@
-# Deploying New Languages on `/learn`
+# Implementando nuevos idiomas en `/learn`
 
-Before you can release a new language, you will need to allow the languages to download from Crowdin.
+Antes de poder publicar un nuevo idioma, tendrás que permitir que los idiomas se descarguen de Crowdin.
 
-## Updating Crowdin Settings
+## Actualizando los ajustes de Crowdin
 
-In the `Curriculum` and `Learn UI` projects, you will need to select `Project Settings` from the sidebar. Then scroll down to `Language Mapping`, where you will see an option to add custom language codes. Add a new entry for the language you are releasing, selecting `language` as the `Placeholder` value, and entering a URL-friendly lower-case spelling of your language's name for the `Custom code`. If you aren't sure what to use, reach out in our contributor chat and we will assist you.
+En los proyectos `Curriculum` y `Learn UI`, necesitarás seleccionar `Project Settings` en la barra lateral. Luego, busca la opción `Language Mapping`, donde encontrarás la opción de añadir códigos personalizados para los idiomas. Añade una nueva entrada para el idioma que publicarás: seleccionando `language` como el valor de `Placeholder` e ingresando el nombre del idioma en minúsculas para el valor de `Custom code`. Si estás inseguro sobre qué nombre usar, contáctanos en nuestro chat para colaboradores y te ayudaremos.
 
-## Updating Workflows
+## Actualizando Workflows
 
-You will need to add a step to the `crowdin-download.client-ui.yml` and `crowdin-download.curriculum.yml`. The step for these will be the same. For example, if you want to enable Dothraki downloads:
+Necesitarás añadir una instrucción al documento `crowdin-download.client-ui.yml` y al documento `crowdin-download.curriculum.yml`.  Los pasos a seguir en los dos casos son iguales. Por ejemplo, si quisieras habilitar las descargas de Dothraki, la instrucción a añadir en los dos documentos sería:
 
 ```yml
 ##### Download Dothraki #####
@@ -41,24 +41,24 @@ You will need to add a step to the `crowdin-download.client-ui.yml` and `crowdin
     # dryrun_action: true
 ```
 
-Note that the `download_language` key needs to be set to the language code displayed on Crowdin.
+Ten en cuenta que la opción `download_language` deberá corresponder al código del idioma que aparece en Crowdin.
 
-## Enabling a Language
+## Habilitando un idioma
 
-> [!NOTE] The above section with updating the workflows should be completed before proceeding - these need to be done in separate steps or the builds will fail.
+> [!NOTA] La sección anterior con la actualización de los flujos de trabajo debería estar completos antes de continuar, estos deben hacerse en pasos separados o las compilaciones fallarán.
 
-There are a few steps to take in order to allow the codebase to build in your desired language.
+Hay algunos pasos a seguir para permitirle a la base de código compilarse a tu idioma de preferencia.
 
-First, visit the `config/i18n/all-langs.ts` file to add the language to the available languages list and configure the values. There are several objects here.
+Primero, visita el archivo `config/i18n/all-langs.ts` para añadir el idioma a la lista de idiomas disponibles y configurar los valores. Aquí hay varios objetos.
 
-- `availableLangs`: For both the `client` and `curriculum` arrays, add the text name of the language. This is the value that will be used in the `.env` file later.
-- `auditedCerts`: Add the text name of the language as the _key_, and add an array of `SuperBlocks.{cert}` variables as the _value_. This tells the client which certifications are fully translated.
-- `i18nextCodes`: These are the ISO language codes for each language. You will need to add the appropriate ISO code for the language you are enabling. These do need to be unique for each language.
-- `LangNames`: These are the display names for the language selector in the navigation menu.
-- `LangCodes`: These are the language codes used for formatting dates and numbers. These should be Unicode CLDR codes instead of ISO codes.
-- `hiddenLangs`: These languages will not be displayed in the navigation menu. This is used for languages that are not yet ready for release.
+- `availableLangs`: Tanto para el array `client` y `curriculum`, añade el nombre del idioma. Este es el valor que será utilizado en el archivo `.env` después.
+- `auditedCerts`: Añade el nombre del idioma como _key_ y añade un array de variables de `SuperBlocks.{cert}` como _value_. Esto le dice al cliente que certificaciones están traducidas completamente.
+- `i18nextCodes`: Estos son los códigos de idioma ISO para cada lenguaje. Necesitarás añadir el código ISO correspondiente para el idioma que estás activando. Estos deben ser únicos para cada lenguaje.
+- `LangNames`: Estos son los nombres mostrados para el selector de idiomas en el menú de navegación.
+- `LangCodes`: Estos son los códigos de idiomas usados para formatear fechas y números. Estos deben ser códigos Unicode CLDR en vez de los códigos ISO.
+- `hiddenLangs`: Estos idiomas no se mostrarán en el menú de navegación. Esto es usado para los idiomas que todavía no están listos para su lanzamiento.
 
-As an example, if you wanted to enable Dothraki as a language, your `all-langs.js` objects should look like this:
+Por ejemplo, si quisieras activar Dothraki como un idioma, tus objetos `all-langs.js` deberían verse así:
 
 ```js
 export const availableLangs = {
@@ -138,15 +138,15 @@ export enum LangCodes = {
 export const hiddenLangs = ['dothraki'];
 ```
 
-> [!NOTE] When a language has been set up in the deployment pipeline AND has a public `/news` instance live, it can be removed from the `hiddenLangs` array and be made available to the public.
+> [!NOTE] Cuando un lenguage ha sido configurado en el pipeline de despliegue Y se ha publicado como `/news`, puede ser quitado del arreglo `hiddenLangs` y puede ser disponible para el público.
 
-Next, open the `client/src/utils/algolia-locale-setup.ts` file. This data is used for the search bar that loads `/news` articles. While it is unlikely that you are going to test this functionality, missing the data for your language can lead to errors when attempting to build the codebase locally.
+A continuación, abre el archivo: `client/src/utils/algolia-locale-setup.ts`. Estos datos son utilizados por la barra de búsqueda que carga artículos de `/news`. Si bien es poco probable que vayas a probar esta funcionalidad, lea falta de datos para tu lenguaje puede llevarle a errores al intentar construir el código base localmente.
 
-Add an object for your language to the `algoliaIndices` object. You should use the the same values as the `english` object for local testing, replacing the `english` key with your language's `availableLangs` value.
+Agrega un objeto para al objeto `algoliaIndices`. Deberñias usar los mismos valores del objeto `english` para pruebas locales, remplazando la clave `english` con el valor `avalaibleLangs` para tu idioma.
 
-> [!NOTE] If we have already deployed an instance of news in your target language, you can update the values to reflect the live instance. Otherwise, use the English values.
+> [!NOTE] Si ya hemos desplegado una instancia de noticias en tu destino de idioma, puedes actualizar los valores para reflejar la instancia real. De lo contracio, use los valores del inglés.
 
-If you were to add Dothraki:
+Si tuvieras que añadir el idioma Dothraki:
 
 ```js
 const algoliaIndices = {
@@ -173,15 +173,15 @@ const algoliaIndices = {
 };
 ```
 
-### Releasing a Superblock
+### Liberando un Superblock
 
-After a superblock has been fully translated into a language, there are two steps to release it. First add the superblock enum to that language's `auditedCerts` array. So, if you want to release the new Responsive Web Design superblock for Dothraki, the array should look like this:
+Después de que un superbloque haya sido completamente traducido a un idioma, hay dos pasos para hacer si queremos liberarlo. Primero, añada el enum de superbloque al arreglo `auditedCerts` de ese idioma. Por lo tanto, si quisieras añadir el nuevo superbloque "Responsive Web Design" para Dothraki, el arreglo debería verse así:
 
 ```ts
 export const auditedCerts = {
-  // other languages
+  // otros lenguajes
   dothraki: [
-    SuperBlocks.RespWebDesignNew, // the newly translated superblock
+    SuperBlocks.RespWebDesignNew, // el superbloque recién traducido superblock
     SuperBlocks.RespWebDesign,
     SuperBlocks.JsAlgoDataStruct,
     SuperBlocks.FrontEndDevLibs
@@ -189,7 +189,7 @@ export const auditedCerts = {
 };
 ```
 
-Finally, if the superblock is in a "new" state (that is, replacing a legacy superblock), the `languagesWithAuditedBetaReleases` array should be updated to include the new language like this:
+Finalmente, si el superbloque está en un estado "nuevo" (es decir, reemplazando un superbloque heredado), el arreglo `languagesWitAuditedBetaReleases` deberia ser actualizado para incluir el nuevo lenguaje de la siguiente manera:
 
 ```ts
 export const languagesWithAuditedBetaReleases: ['english', 'dothraki'];

@@ -51,7 +51,7 @@
     "run": "Ejecutar",
     "run-test": "Ejecutar las Pruebas (Ctrl + Entrar)",
     "check-code": "Comprueba tu código (Ctrl + Enter)",
-    "check-code-2": "Check Your Code",
+    "check-code-2": "Comprueba tu código",
     "reset": "Restablecer",
     "reset-code": "Restablecer todo el código",
     "help": "Ayuda",
@@ -74,8 +74,8 @@
     "click-start-project": "Comienza el proyecto",
     "change-language": "Cambiar Idioma",
     "cancel-change": "Cancelar Cambio",
-    "resume-project": "Resume project",
-    "start-project": "Start project"
+    "resume-project": "Reanudar proyecto",
+    "start-project": "Iniciar proyecto"
   },
   "landing": {
     "big-heading-1": "Aprende a programar gratis.",
@@ -149,7 +149,7 @@
       "my-donations": "Mis donaciones",
       "night-mode": "Modo nocturno",
       "sound-mode": "Modo de fogata",
-      "keyboard-shortcuts": "Enable Keyboard Shortcuts"
+      "keyboard-shortcuts": "Habilitar atajos de teclado"
     },
     "headings": {
       "certs": "Certificaciones",
@@ -275,7 +275,7 @@
     "solution-link": "Enlace a la solución",
     "github-link": "Enlace de GitHub",
     "submit-and-go": "Enviar y pasar a mi siguiente desafío",
-    "congratulations": "Congratulations, your code passes. Submit your code to continue.",
+    "congratulations": "Felicidades, tu código ha sido aprobado. Envía tu código para continuar.",
     "i-completed": "He completado este desafío",
     "test-output": "El resultado de tu prueba irá aquí",
     "running-tests": "// ejecutando pruebas",
@@ -286,14 +286,14 @@
     "percent-complete": "{{percent}}% completo",
     "tried-rsa": "Si ya has probado el método <0>Leer-Buscar-Preguntar</0>, entonces puedes pedir ayuda en el foro de freeCodeCamp.",
     "rsa": "Leer, buscar, preguntar",
-    "rsa-forum": "<strong>Before making a new post</strong> please see if your question has <0>already been answered on the forum</0>.",
+    "rsa-forum": "<strong>Antes de hacer una nueva publicación</strong> por favor, comprueba si tu pregunta ya ha sido <0>respondida en el foro</0>.",
     "reset": "¿Restablecer esta lección?",
     "reset-warn": "¿Estás seguro de que deseas restablecer esta lección? Los editores y las pruebas se restablecerán.",
     "reset-warn-2": "Esto no se puede deshacer",
     "scrimba-tip": "Sugerencia: Si el mini-navegador cubre el código, haz clic y arrastra para moverlo. Además, siéntete libre de detener y editar el código en el video en cualquier momento.",
     "chal-preview": "Vista previa del desafío",
     "cert-map-estimates": {
-      "certs": "{{title}} Certification"
+      "certs": "Certificación {{title}}"
     },
     "editor-tabs": {
       "info": "Info",
@@ -324,7 +324,7 @@
     "sorry-getting-there": "Lo sentimos, tu código no pasa. Casi lo consigues.",
     "sorry-hang-in-there": "Lo sentimos, su código no pasa. Aguanta ahí.",
     "sorry-dont-giveup": "Lo sentimos, su código no pasa. No te rindas.",
-    "challenges-completed": "{{completedCount}} of {{totalChallenges}} challenges completed"
+    "challenges-completed": "{{completedCount}} de {{totalChallenges}} desafíos completados"
   },
   "donate": {
     "title": "Apoya a nuestra organización sin fines de lucro",
@@ -451,9 +451,9 @@
     "change-theme": "Entra para cambiar el tema.",
     "translation-pending": "Ayúdanos a traducir",
     "certification-project": "Proyecto de certificación",
-    "iframe-preview": "{{title}} preview",
-    "iframe-alert": "Normally this link would bring you to another website! It works. This is a link to: {{externalLink}}",
-    "document-notfound": "document not found"
+    "iframe-preview": "{{title}} Vista previa",
+    "iframe-alert": "¡Normalmente este link te llevaría a otro sitio web! Funciona. Este es un enlace a: {{externalLink}}",
+    "document-notfound": "documento no encontrado"
   },
   "icons": {
     "gold-cup": "Copa de Oro",
@@ -462,9 +462,9 @@
     "donate": "Dona con PayPal",
     "fail": "Prueba fallida",
     "not-passed": "Sin aprobar",
-    "waiting": "Waiting",
+    "waiting": "Esperando",
     "passed": "Aprobado",
-    "failed": "Failed",
+    "failed": "Falló",
     "hint": "Sugerencia",
     "heart": "Corazón",
     "initial": "Inicial",
@@ -488,15 +488,15 @@
     "breadcrumb-nav": "migas de pan",
     "submit": "Utiliza Ctrl + Enter para enviar.",
     "running-tests": "Ejecutando pruebas",
-    "hide-preview": "Hide the preview",
-    "move-preview-to-new-window": "Move the preview to a new window and focus it",
-    "move-preview-to-main-window": "Move the preview to this window and close the external preview window",
-    "close-external-preview-window": "Close the external preview window",
-    "show-preview": "Show the preview in this window",
-    "open-preview-in-new-window": "Open the preview in a new window and focus it",
-    "step": "Step",
-    "steps": "Steps",
-    "steps-for": "Steps for {{blockTitle}}"
+    "hide-preview": "Ocultar la vista previa",
+    "move-preview-to-new-window": "Mover la vista previa a una nueva ventana y enfocarla",
+    "move-preview-to-main-window": "Mueve la vista previa a esta ventana y cierra la ventana de vista previa externa",
+    "close-external-preview-window": "Cerrar la ventana de vista previa externa",
+    "show-preview": "Mostrar la vista previa en esta ventana",
+    "open-preview-in-new-window": "Abrir la vista previa en una nueva ventana y enfocarla",
+    "step": "Paso",
+    "steps": "Pasos",
+    "steps-for": "Pasos para {{blockTitle}}"
   },
   "flash": {
     "honest-first": "Para reclamar una certificación, primero debes aceptar nuestra política de honestidad académica.",
@@ -704,14 +704,14 @@
     "yes-please": "Si por favor, deseo borrar mi token"
   },
   "shortcuts": {
-    "title": "Keyboard shortcuts",
-    "table-header-action": "Action",
-    "table-header-key": "Key(s)",
-    "navigation-mode": "Navigation Mode",
-    "execute-challenge": "Execute Challenge",
-    "focus-editor": "Focus Editor",
-    "focus-instructions-panel": "Focus Instructions Panel",
-    "navigate-previous": "Navigate Previous Exercise",
-    "navigate-next": "Navigate Next Exercise"
+    "title": "Atajos de teclado",
+    "table-header-action": "Acción",
+    "table-header-key": "Clave(s)",
+    "navigation-mode": "Modo de Navegación",
+    "execute-challenge": "Ejecutar desafío",
+    "focus-editor": "Editor de enfoque",
+    "focus-instructions-panel": "Panel de Instrucciones de enfoque",
+    "navigate-previous": "Navegar al ejercicio anterior",
+    "navigate-next": "Navegar siguiente ejercicio"
   }
 }

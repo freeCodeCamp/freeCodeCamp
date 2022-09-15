@@ -1,20 +1,20 @@
-# The Official freeCodeCamp Language Lead Handbook
+# El manual oficial de liderazgo de idioma Freecodecamp
 
-This handbook will help you set up and use the tools for your localization efforts.
+Este manual lo ayudará a configurar y utilizar las herramientas para sus esfuerzos de localización.
 
-## How to invite new contributors to Ghost
+## Cómo invitar a los nuevos contribuyentes a Ghost
 
-Ghost allows you to set contributors with different levels of authorizations.
+Ghost le permite establecer contribuyentes con diferentes niveles de autorizaciones.
 
-Most of your invites will be for the "Contributor" level. This level allows the user to create drafts. Select this role when inviting a new translator.
+La mayoría de tus invitaciones serán para el nivel de "Colaborador". Este nivel permite al usuario crear borradores. Selecciona este rol cuando invitas a un nuevo traductor.
 
-The "Author" level allows the user to create Drafts and publish them.
+El nivel "autor" permite al usuario crear borradores y publicarlos.
 
-The "Editor" level allows the user to access all Drafts and publish them. Select this role when inviting a new proofreader.
+El nivel "Editor" permite al usuario acceder a todos los Borradores y publicarlos. Seleccione este rol al invitar a un nuevo revisor (proofreader).
 
-The "Administrator" level is reserved for freeCodeCamp staff and Language Leads.
+El nivel "Administrador" está reservado para el personal de freeCodeCamp y los líderes de idiomas.
 
-## How to mention the original author of a translated article
+## Cómo mencionar al autor original de un artículo traducido
 
 The original author and the original article are linked automatically adding this code to the Code Injection -> head section in the Draft Settings on ghost.
 
@@ -24,18 +24,18 @@ The original author and the original article are linked automatically adding thi
 </script>
 ```
 
-With `link` being the link of the original article.
+Con `link` siendo el enlace del artículo original.
 
 ## How to update trending articles
 
 > [!TIP] Changing the articles in the footer at least once a month means giving a boost to the linked articles on google results.
 
-There are two places in which to change the trending articles.
+Hay dos lugares en los que cambiar las tendencias de artículos.
 
-- [The curriculum repository](https://github.com/freeCodeCamp/freeCodeCamp/)
-- [The CDN repository](https://github.com/freeCodeCamp/cdn)
+- [El repositorio del currículo](https://github.com/freeCodeCamp/freeCodeCamp/)
+- [El repositorio CDN](https://github.com/freeCodeCamp/cdn)
 
-For each article you will need to create a shorter title to use in the footer.
+Para cada artículo necesitarás crear un título más corto para usar en el pie de página.
 
 ### Change trending articles in the curriculum
 
@@ -45,7 +45,7 @@ This file is a `*.json` file that has the shape of an object with property keys 
 
 Each number rapresents one of the 30 articles in the footer. Make sure to match the title and the link correctly.
 
-This is an example of how part of the `trending.json` file has to look.
+Este es un ejemplo de cómo tiene que verse parte del archivo `trending.json`.
 
 ```json
 {
@@ -67,7 +67,7 @@ This is an example of how part of the `trending.json` file has to look.
 
 You will want to [build the translated client locally](how-to-enable-new-languages.md) to see if the titles have the right length. Each title must stay on a single line and not go to a new line.
 
-### How to update the trending articles in the cdn
+### Cómo actualizar los artículos de tendencia en el cdn
 
 The file in the cdn repository is the file `universal/trending/<language>.yaml`.
 
@@ -168,11 +168,11 @@ flexibleAlerts: {
 }
 ```
 
-## How to translate the motivational quotes
+## Cómo traducir las citas motivacionales
 
 The motivational quotes can be found in the [curriculum repository](https://github.com/freeCodeCamp/freeCodeCamp/) in the `/client/i18n/locales/<language>/motivation.json` file.
 
-This file has a general structure of:
+Este archivo tiene una estructura general de:
 
 ```json
 {

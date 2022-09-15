@@ -1,110 +1,110 @@
-Follow this guide for setting up the freeCodeCamp mobile app locally on your system. This is highly recommended if you want to contribute regularly.
+Siga esta guía para establecer la aplicación móvil FreeCodeCamp en su sistema. Es altamente recomentado si se quiere contribuir regularmente.
 
-Some of the contribution workflows – like fixing bugs in the codebase – need you to run freeCodeCamp app locally.
+Algunos de los flujos de trabajo de contribución – como corregir errores en el código base – necesitan que ejecutes la app de freeCodeCamp localmente en tu ordenador.
 
-### How to prepare your local machine
+### Cómo preparar tu máquina local
 
-Start by installing the prerequisite software for your operating system.
+Empezar instalando el software requerido previamente para su sistema operativo.
 
-#### Prerequisites:
+#### Requisitos previos:
 
-| Prerequisite                      | Version | Notes                                    |
-| --------------------------------- | ------- | ---------------------------------------- |
-| [Flutter](https://flutter.dev/)   | `3.x`   | -                                        |
-| Dart (comes bundled with Flutter) | `2.x`   | We use the version bundled with Flutter. |
+| Requisito                       | Versión | Notas                                    |
+| ------------------------------- | ------- | ---------------------------------------- |
+| [Flutter](https://flutter.dev/) | `3.x`   | -                                        |
+| Dart (viene junto con Flutter)  | `2.x`   | Usamos la versión que viene con Flutter. |
 
-> [!ATTENTION] If you have a different version, please install the recommended version. We can only support installation issues for recommended versions.
+> [ATENCIÓN!] Si hay una versión diferente, por favor instalar la versión recomendada. Solo daremos soporte a problemas de instalación de versiones recomendadas.
 
-If Flutter is already installed on your machine, run the following commands to validate the versions:
+Si Flutter ya está instalado en su equipo, ejecute los siguientes comandos para verificar la versión:
 
 ```console
 flutter --version
 dart --version
 ```
 
-> [!TIP] We highly recommend updating to the latest stable releases of the software listed above.
+> [!TIP] Pedimos encarecidamente actualizar a la última version "stable" del siguiente software.
 
-Once you have the prerequisites installed, you need to prepare your development environment. This is common for many development workflows, and you will only need to do this once.
+Una vez que estén instalados los requisitos previos, hay que preparar el entorno de desarrollo. Es muy común para muchos equipos de trabajo, y solo hace falta hacerlo una vez.
 
-##### Follow these steps to get your development environment ready:
+##### Seguir estos pasos para tener listo el entorno de desrrollo:
 
-1. Install [Git](https://git-scm.com/) or your favorite Git client, if you haven't already. Update to the latest version; the version that came bundled with your OS may be outdated.
+1. Instalar [Git](https://git-scm.com/) u otro cliente Git, si todavía no hay ningumo. Acualizar a la versión más reciente. La que viene con el sistema operativo puede estar desactualizada.
 
-2. Setup [Android Studio](https://developer.android.com/studio) and [Android Emulators](https://developer.android.com/studio/run/managing-avds) with the latest released Android version. We recommend using the Pixel 3a XL and Nexus One(for emulating smaller screens).
+2. Configurar [Android Studio](https://developer.android.com/studio) y [Android Emulators](https://developer.android.com/studio/run/managing-avds) con la última versión liberada de Android. Recomendamos usar Pixel 3a XL y Nexus One(para emular pantallas más pequeñas).
 
-3. (Optional for MacOS) Setup Xcode and iOS Simulator with the latest released iOS version.
+3. (Opcional para MacOS) Configurar Xcode e iOS Simulator con la última versión liberada de iOS.
 
-4. (Optional but recommended) [Set up an SSH Key](https://help.github.com/articles/generating-an-ssh-key/) for GitHub.
+4. (Opcional pero recomendado) [Configurar una clave SSH](https://help.github.com/articles/generating-an-ssh-key/) para GitHub.
 
-5. Install a code editor of your choice.
+5. Instala un editor de código de tu elección.
 
-   We highly recommend using [Visual Studio Code](https://code.visualstudio.com/) or Android Studio. We also recommend installing the official [extensions](https://docs.flutter.dev/get-started/editor?tab=vscode).
+   Recomendamos utilizar [Visual Studio Code](https://code.visualstudio.com/) o Android Studio. También recomendamos instalar las [extensiones oficiales](https://docs.flutter.dev/get-started/editor?tab=vscode).
 
-## Fork the repository on GitHub
+## Fork del repositorio en GitHub
 
-[Forking](https://help.github.com/articles/about-forks/) is a step where you get your own copy of the repository (a.k.a _repo_) on GitHub.
+[Fork](https://help.github.com/articles/about-forks/) es un paso donde consigues tu propia copia del repositorio (conocido como _repo_) en GitHub.
 
-This is essential, as it allows you to work on your own copy of freeCodeCamp mobile app on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request (PR).
+Esto es esencial, te permite trabajar en tu propia copia de la app móvil de freeCodeCamp en GitHub, o descargar (clonar) tu repositorio para trabajar localmente.  Más adelant, podrás solicitar cambios para que se muestren en el repositorio principal de  tu "fork" (bifurcación) a través de una "pull request" (PR).
 
-> [!TIP] The main repository at `https://github.com/freeCodeCamp/mobile` is often referred to as the `upstream` repository.
+> [!TIP] El repositorio principal en `https://github.com/freeCodeCamp/mobile` es frecuentemente conocido como el repositorio `upstream`.
 > 
-> Your fork at `https://github.com/YOUR_USER_NAME/mobile` is often referred to as the `origin` repository. `YOUR_USER_NAME` would be replaced with your GitHub username.
+> Tu fork en `https://github.com/YOUR_USER_NAME/mobile` suele referirse como el repositorio `origin`. `YOUR_USER_NAME` será remplazado con tu nombre de usuario de GitHub.
 
-**Follow these steps to fork the `https://github.com/freeCodeCamp/mobile` repository:**
+**Sigue estos pasos para hacer un for del repositorio `https://github.com/freeCodeCamp/mobile`:**
 
-1. Go to the freeCodeCamp mobile repository on GitHub: <https://github.com/freeCodeCamp/mobile>
+1. Ve al repositorio freeCodeCamp móvil en GitHub: <https://github.com/freeCodeCamp/mobile>
 
-2. Click the "Fork" Button in the upper right-hand corner of the interface ([More Details Here](https://help.github.com/articles/fork-a-repo/))
+2. Haz clic en el botón "Fork" en la esquina superior derecha de la interfaz ([Más detalles aquí](https://help.github.com/articles/fork-a-repo/))
 
-3. After the repository has been forked, you will be taken to your copy of the repository at `https://github.com/YOUR_USER_NAME/mobile` (`YOUR_USER_NAME` would be replaced with your GitHub user name.)
+3. Después de haber hecho fork al repositorio, serás llevado a tu copia del repositorio en `https://github. om/NOMBRE_DE_USUARIO/mobile` (`OMBRE_DE_USUARIO` sería reemplazado con tu nombre de usuario de GitHub.)
 
-## Clone your fork from GitHub
+## Clonar tu fork desde GitHub
 
-[Cloning](https://help.github.com/articles/cloning-a-repository/) is where you **download** a copy of a repository from a `remote` location that is either owned by you or by someone else. In your case, this remote location is your `fork` of freeCodeCamp's repository that should be available at `https://github.com/YOUR_USER_NAME/mobile`. (`YOUR_USER_NAME` would be replaced with your GitHub user name.)
+"[Clonar](https://help.github.com/articles/cloning-a-repository/)" es donde tú  "**descargas**" una copia de un repositorio desde una localización "`remota`" que es propiedad tuya o de alguien más. En tu caso, esta localización remota es tu "`fork`" del repositorio de freeCodeCamp que debería estar disponible en `https://github.com/TU_NOMBRE_DE_USUARIO/mobile`. (`TU_NOMBRE_DE_USUARIO` debería ser reemplazado con tu nombre de usuario de GitHub.)
 
-Run these commands on your local machine:
+Ejecuta estos comandos en tu máquina local:
 
-1. Open a Terminal / Command Prompt / Shell in your projects directory
+1. Abre una Terminal / Símbolo del sistema / Shell en el directorio de proyectos
 
-   _i.e.: `/yourprojectsdirectory/`_
+   _ejemplo: `/directoriodetusproyectos/`_
 
-2. Clone your fork of freeCodeCamp, replacing `YOUR_USER_NAME` with your GitHub Username
+2. Clona tu fork de freeCodeCamp, reemplazando `TU_NOMBRE_DE_USUARIO` por tu nombre de usuario de GitHub
 
    ```console
-   git clone --depth=1 https://github.com/YOUR_USER_NAME/mobile.git
+   git clon --depth=1 https://github.com/TU_NOMBRE_DE_USUARIO/mobile.git
    ```
 
-This will download the entire freeCodeCamp mobile repository to your projects directory.
+Esto descargará el repositorio entero de freeCodeCamp móvil en tu directorio de proyectos.
 
-Note: `--depth=1` creates a shallow clone of your fork, with only the most recent history/commit.
+Nota: `--depth=1` crea un clon superficial de tu fork con solo la historia/commit más reciente.
 
-## Set up syncing from parent
+## Configurar sincronización desde el padre
 
-Now that you have downloaded a copy of your fork, you will need to set up an `upstream` remote to the parent repository.
+Ahora que has descargado una copia de tu fork, necesitarás configurar un `upstream` remoto en el repositorio padre.
 
-[As mentioned earlier](#fork-the-repository-on-github), the main repository is referred `upstream` repository. Your fork referred to as the `origin` repository.
+[Como se mencionó anteriormente](#fork-the-repository-on-github), el repositorio principal es referido repositorio `upstream`. Tu fork conocido como el repositorio de `origen`.
 
-You need a reference from your local clone to the `upstream` repository in addition to the `origin` repository. This is so that you can sync changes from the main repository without the requirement of forking and cloning repeatedly.
+Necesitas una referencia de tu clon local al repositorio `upstream` además del repositorio `origin`. Esto es para que puedas sincronizar los cambios desde el repositorio principal sin el requisito de hacer fork y clonar repetidamente.
 
-1. Change directory to the new `mobile` directory:
+1. Cambiar el directorio al nuevo directorio `móvil`:
 
    ```console
    cd mobile
    ```
 
-2. Add a remote reference to the main freeCodeCamp mobile repository:
+2. Añadir una referencia remota al repositorio principal de freeCodeCamp móvil:
 
    ```console
    git remote add upstream https://github.com/freeCodeCamp/mobile.git
    ```
 
-3. Ensure the configuration looks correct:
+3. Asegúrate de que la configuración se vea correcta:
 
    ```console
    git remote -v
    ```
 
-   The output should look something like below (replacing `YOUR_USER_NAME` with your GitHub username):
+   La salida debería verse parecida a como se muestra debajo (remplazando `TU_NOMBRE_DE_USUARIO` con tu usuario de GitHub):
 
    ```console
    origin    https://github.com/YOUR_USER_NAME/mobile.git (fetch)
@@ -113,25 +113,25 @@ You need a reference from your local clone to the `upstream` repository in addit
    upstream    https://github.com/freeCodeCamp/mobile.git (push)
    ```
 
-## Running freeCodeCamp mobile app locally
+## Ejecutar la app móvil  de freeCodeCamp localmente
 
-Now that you have a local copy of the mobile app, you can follow these instructions to run it locally.
+Ahora que tienes una copia local de la app móvil de freeCodeCamp, puedes seguir estas instrucciones para ejecutarla localmente.
 
-If you do run into issues, first perform a web search for your issue and see if it has already been answered. If you cannot find a solution, please search our [GitHub issues](https://github.com/freeCodeCamp/mobile/issues) page for a solution and report the issue if it has not yet been reported.
+Si tienes problemas, primero realiza una búsqueda web para tu problema y comprueba si ya ha sido respondida. Si no encuentras una solución, por favor busca en nuestra página [GitHub issues](https://github.com/freeCodeCamp/mobile/issues) para una solución y reporta el problema si aún no ha sido reportado.
 
-And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our chat server](https://discord.gg/PRyKn3Vbay).
+Y como siempre, siéntete libre de preguntar en la categoría ['Contribuyentes' en nuestro foro](https://forum.freecodecamp.org/c/contributors) o [nuestro servidor de chat](https://discord.gg/PRyKn3Vbay).
 
-> [!NOTE] The `mobile` directory contains two folders ie. `mobile-api` and `mobile-app`. `mobile-api` contains the API code used for serving the podcasts. `mobile-app` contains the Flutter app which is where you should be when you follow the below steps.
+> [!NOTE] El directorio `móvil` contiene dos carpetas, por ejemplo: `mobile-api` y `mobile-app`. `mobile-api` contiene el código API utilizado para ejecutar los podcasts. `mobile-app` contiene la aplicación Flutter que es donde deberías estar cuando siga los pasos siguientes.
 
-### Configuring dependencies
+### Configurar dependencias
 
-#### Step 1: Set up the environment variable file
+#### Paso 1: Configurar el archivo de variable de entorno
 
-The default API keys and environment variables are stored in the file `sample.env`. This file needs to be copied to a new file named `.env` that is accessed dynamically during the installation step. Remember to change the directory to `mobile-app` before running the following commands.
+Las claves de la API por defecto y las variables de entorno se almacenan en el archivo `sample.env`. El contenido de este archivo necesita ser copiado a un nuevo archivo llamado `.env` para que se acceda dinámicamente durante el paso de la instalación. Recuerda cambiar el directorio a `mobile-app` antes de ejecutar los siguientes comandos.
 
 ```console
-# Create a copy of the "sample.env" and name it ".env".
-# Populate it with the necessary API keys and secrets:
+# Crear una copia del "sample.env" y nombrarla ".env".
+# Llenarlo con las keys y secrets de la API necesarios:
 ```
 
 <!-- tabs:start -->
@@ -150,41 +150,41 @@ copy sample.env .env
 
 <!-- tabs:end -->
 
-The keys in the `.env` file are _not_ required to be changed to run the app locally. You can leave the default values copied over from `sample.env` as-is.
+Las claves dentro del archivo `.env`  _no_ requieren ser cambiadas para correr la aplicación de forma local. Puedes dejar los valores por defecto copiados desde `sample.env`.
 
-#### Step 2: Install dependencies
+#### Paso 2: Instalar dependencias
 
-This step will install the dependencies required for the application to run:
+Este paso instalará las dependencias necesarias para que la aplicación se ejecute:
 
 ```console
 flutter pub get
 ```
 
-#### Step 3: Start the freeCodeCamp mobile app
+#### Paso 3: Iniciar la app móvil de freeCodeCamp
 
-Start the emulator of your choice(Android or iOS) and wait for the bootup process to complete.
+Inicia el emulador de tu elección (Android o iOS) y espera a que se complete el proceso de arranque.
 
-You can now start the app by running the following command:
+Ahora puedes iniciar la aplicación ejecutando el siguiente comando:
 
 ```console
 flutter run
 ```
 
-> [!TIP] If you're using VSCode or Android Studio then you can easily start the app without having to execute any terminal commands. More information [here](https://docs.flutter.dev/get-started/test-drive).
+> [!TIP] Si estás utilizando VSCode o Android Studio entonces puedes iniciar fácilmente la aplicación sin tener que ejecutar ningún comando en la terminal. Más información [aquí](https://docs.flutter.dev/get-started/test-drive).
 
-## Making changes locally
+## Hacer cambios localmente
 
-You can now make changes to files and commit your changes to your local clone of your fork.
+Ahora puedes hacer cambios en archivos y hacer commit de los cambios en tu clon local de tu fork.
 
-Follow these steps:
+Sigue estos pasos:
 
-1. Validate that you are on the `main` branch:
+1. Valida que estás en la rama `main`:
 
    ```console
    git status
    ```
 
-   You should get an output like this:
+   Deberías obtener una salida como esta:
 
    ```console
    On branch main
@@ -193,59 +193,59 @@ Follow these steps:
    nothing to commit, working directory clean
    ```
 
-   If you are not on main or your working directory is not clean, resolve any outstanding files/commits and checkout `main`:
+   Si no estás en main o tu directorio de trabajo no está limpio, resuelve cualquier archivos/commits pendientes y comprueba `main`:
 
    ```console
    git checkout main
    ```
 
-2. Sync the latest changes from the upstream `main` branch to your local main branch:
+2. Sincroniza los últimos cambios desde la rama principal `main` a tu rama local main:
 
-   > [!WARNING] If you have any outstanding pull request that you made from the `main` branch of your fork, you will lose them at the end of this step.
+   > [!WARNING] Si tienes algún pull request pendiente que hayas hecho desde la rama `main` de tu fork, los perderás al final de este paso.
    > 
-   > You should ensure your pull request is merged by a moderator before performing this step. To avoid this scenario, you should **always** work on a branch other than the `main`.
+   > Deberías asegurarte de que tu pull request esté hecho merge por un moderador antes de realizar este proceso. Para evitar este escenario, deberías **siempre** trabajar en una rama que no sea `main`.
 
-   This step **will sync the latest changes** from the main repository of freeCodeCamp mobile. It is important that you rebase your branch on top of the latest `upstream/main` as often as possible to avoid conflicts later.
+   Este paso **sincronizará los últimos cambios** desde el repositorio móvil de freeCodeCamp. Es importante que hagas rebase de tu rama sobre la última `principal/main` tan a menudo como sea posible para evitar conflictos más tarde.
 
-   Update your local copy of the freeCodeCamp mobile upstream repository:
+   Actualiza tu copia local del repositorio de freeCodeCamp móvil:
 
    ```console
    git fetch upstream
    ```
 
-   Hard reset your main branch with the freeCodeCamp mobile main:
+   Restablece tu rama main con el main de freeCodeCamp móvil:
 
    ```console
    git reset --hard upstream/main
    ```
 
-   Push your main branch to your origin to have a clean history on your fork on GitHub:
+   Has push de tu rama main a tu origen para tener un historial limpio en tu fork en GitHub:
 
    ```console
    git push origin main --force
    ```
 
-   You can validate your current main matches the upstream/main by performing a diff:
+   Puedes validar que tu main actual concuerda con el upstream/main realizando un diff:
 
    ```console
    git diff upstream/main
    ```
 
-   The resulting output should be empty.
+   La salida resultante debería estar vacía.
 
-3. Create a fresh new branch:
+3. Crear una nueva rama:
 
-   Working on a separate branch for each issue helps you keep your local work copy clean. You should never work on the `main`. This will soil your copy of freeCodeCamp mobile and you may have to start over with a fresh clone or fork.
+   Trabajar en una rama separada para cada asunto te ayuda a mantener limpia tu copia de trabajo local. Nunca deberías trabajar en `main`. Esto sumergirá tu copia de freeCodeCamp móvil y puede que tengas que empezar otra vez con un clon o un fork nuevo.
 
-   Check that you are on `main` as explained previously, and branch off from there:
+   Comprueba que estás en `main` como se explicó anteriormente, y ramifica desde ahí:
 
    ```console
    git checkout -b fix/update-guide-for-xyz
    ```
 
-   Your branch name should start with a `fix/`, `feat/`, `docs/`, etc. Avoid using issue numbers in branches. Keep them short, meaningful and unique.
+   Tu nombre de rama debería comenzar con `fix/`, `feat/`, `docs/`, etc. Evita el uso de números de incidencia en las ramas. Manténlos cortos, significativos y únicos.
 
-   Some examples of good branch names are:
+   Algunos ejemplos de buenos nombres de ramas son:
 
    ```md
    fix/update-challenges-for-react
@@ -255,19 +255,19 @@ Follow these steps:
    translate/add-spanish-basic-html
    ```
 
-4. Edit pages and work on code in your favorite text editor.
+4. Edita páginas y trabaja en  el código en tu editor de texto favorito.
 
-5. Once you are happy with the changes you should optionally run the mobile app locally to preview the changes.
+5. Una vez que estés contento con los cambios, deberías ejecutar la aplicación móvil localmente para previsualizar los cambios (opcional).
 
-6. Make sure you fix any errors and check the formatting of your changes.
+6. Asegúrate de corregir los errores y comprobar el formato de tus cambios.
 
-7. Check and confirm the files you are updating:
+7. Comprueba y confirma los archivos que estás actualizando:
 
    ```console
    git status
    ```
 
-   This should show a list of `unstaged` files that you have edited.
+   Esto debería mostrar una lista de archivos `unstaged` que has editado.
 
    ```console
    On branch feat/documentation
@@ -282,27 +282,27 @@ Follow these steps:
    ...
    ```
 
-8. Stage the changes and make a commit:
+8. Organizar los cambios y hacer un commit:
 
-   In this step, you should only mark files that you have edited or added yourself. You can perform a reset and resolve files that you did not intend to change if needed.
+   En este paso, sólo deberías marcar los archivos que has editado o añadido tu mismo. Puede realizar un reset y resolver archivos que no tenías intención de cambiar si es necesario.
 
    ```console
-   git add path/to/my/changed/file.ext
+   git add ruta/al/archivo/editado.ext
    ```
 
-   Or you can add all the `unstaged` files to the staging area:
+   O puedes añadir todos los archivos que no estén `organizados` al área de staging:
 
    ```console
    git add .
    ```
 
-   Only the files that were moved to the staging area will be added when you make a commit.
+   Sólo los archivos que fueron movidos al área de staging serán añadidos cuando hagas un commit.
 
    ```console
    git status
    ```
 
-   Output:
+   Salida:
 
    ```console
    On branch feat/documentation
@@ -315,24 +315,24 @@ Follow these steps:
        modified:   mobile-app/lib/main.dart
    ```
 
-   Now, you can commit your changes with a short message like so:
+   Ahora, puedes hace commit de tus cambios con un mensaje corto, así:
 
    ```console
-   git commit -m "fix: my short commit message"
+   git commit -m "fix: mensaje corto"
    ```
 
-   Some examples:
+   Algunos ejemplos:
 
    ```md
    fix: update guide article for Java - for loop
    feat: add guide article for alexa skills
    ```
 
-   Optional:
+   Opcional:
 
-   We highly recommend making a conventional commit message. This is a good practice that you will see on some of the popular Open Source repositories. As a developer, this encourages you to follow standard practices.
+   Recomendamos encarecidamente hacer un mensaje de commit convencional. Esta es una buena práctica que verás en algunos de los repositorios de Código Abierto populares. Como desarrollador, esto te anima a seguir las prácticas estándar.
 
-   Some examples of conventional commit messages are:
+   Algunos ejemplos de mensajes de commits convencionales son:
 
    ```md
    fix: update HTML guide article
@@ -341,29 +341,29 @@ Follow these steps:
    docs: update contributing guidelines
    ```
 
-   Keep these short, not more than 50 characters. You can always add additional information in the description of the commit message.
+   Manténlos cortos, no más de 50 caracteres. Siempre puedes añadir información adicional en la descripción del mensaje del commit.
 
-   This does not take any additional time than an unconventional message like 'update file' or 'add index.md'
+   Esto no toma más tiempo que un mensaje no convencional como 'actualizar archivo' o 'añadir index.md'
 
-   You can learn more about why you should use conventional commits [here](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
+   Puedes aprender más sobre por qué debes usar commits convencionales [aquí](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
 
-9. If you realize that you need to edit a file or update the commit message after making a commit you can do so after editing the files with:
+9. Si te das cuenta de que necesitas editar un archivo o actualizar el mensaje de confirmación después de hacer un commit puedes hacerlo después de editar los archivos con:
 
    ```console
    git commit --amend
    ```
 
-   This will open up a default text editor like `nano` or `vi` where you can edit the commit message title and add/edit the description.
+   Esto abrirá un editor de texto predeterminado como `nano` o `vi` donde puedes editar el título del mensaje de commit y añadir/editar la descripción.
 
-10. Next, you can push your changes to your fork:
+10. A continuación, puedes enviar tus cambios a tu fork:
 
     ```console
-    git push origin branch/name-here
+    git push origin nombre/rama-aqui
     ```
 
-## Proposing a Pull Request (PR)
+## Proponer una Pull Request (PR)
 
-After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
+Después de que hayas hecho commit de tus cambios, consulta aquí [cómo abrir una Pull Request](how-to-open-a-pull-request.md).
 
 <!-- ## Quick commands reference - NEED TO DISCUSS ABOUT THIS
 
@@ -374,32 +374,32 @@ A quick reference to the commands that you will need when working locally.
 | `npm ci`                                                       | Installs / re-install all dependencies and bootstraps the different services.       |
 | `npm run seed`                                                 | Parses all the challenge markdown files and inserts them into MongoDB.              | -->
 
-## Troubleshooting
+## Solución de problemas
 
-### Issues with installing the recommended prerequisites
+### Problemas con la instalación de los prerrequisitos recomendados
 
-We regularly develop on the latest or most popular operating systems like macOS 10.15 or later, Ubuntu 18.04 or later, and Windows 10 (with WSL2).
+Regularmente desarrollamos en los últimos o sistemas operativos más populares como macOS 10.15 o posterior, Ubuntu 18.04 o posterior y Windows 10 (con WSL2).
 
-It is recommended to research your specific issue on resources such as Google, Stack Overflow, and Stack Exchange. There is a good chance that someone has faced the same issue and there is already an answer to your specific query.
+Se recomienda buscar tu problema específico en recursos como Google, Stack Overflow y Stack Exchange. Existe la posibilidad de que alguien haya tenido el mismo problema y ya exista una respuesta a tu pregunta específica.
 
-If you are on a different OS and/or are still running into issues, see [getting help](#getting-help).
+Si estás en un sistema operativo diferente y/o todavía tienes problemas, consulta [obtener ayuda](#getting-help).
 
-### Issues with the UI, build errors, etc.
+### Problemas con la interfaz de usuario, fuentes, errores de compilación, etc.
 
-If you face issues with the UI, or builds errors a cleanup can be useful:
+Si tienes problemas con la interfaz de usuario, o errores de compilación, una limpieza puede ser útil:
 
 ```console
 flutter clean
 ```
 
-### Issues installing dependencies
+### Problemas al instalar dependencias
 
-If you get errors while installing the dependencies, please make sure that you are not in a restricted network or your firewall settings do not prevent you from accessing resources.
+Si obtienes errores al instalar las dependencias, por favor asegúrate de que no estés en una red restringida o que tu configuración de firewall no te impida acceder a los recursos.
 
-Be patient as the first time setup can take a while depending on your network bandwidth.
+Se paciente ya que la primera configuración puede tomar un tiempo dependiendo del ancho de banda de tu red.
 
-## Getting Help
+## Obtener ayuda
 
-If you are stuck and need help, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [the contributors chat room](https://discord.gg/PRyKn3Vbay).
+Si estás atascado y necesitas ayuda, siéntete libre de hacer preguntas en la categoría de ['Contribuyentes' en nuestro foro](https://forum.freecodecamp.org/c/contributors) o en [la sala de chat de contribuyentes](https://discord.gg/PRyKn3Vbay).
 
-There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. Provide this error message in your problem description so others can more easily identify the issue and help you find a resolution.
+Puede haber un error en la consola de tu navegador o en Bash / Terminal / Línea de comandos que te ayudará a identificar el problema. Proporciona este mensaje de error en la descripción de tu problema para que otros puedan identificar el problema más fácilmente y ayudarte a encontrar una solución.
