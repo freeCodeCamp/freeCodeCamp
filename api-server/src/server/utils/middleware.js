@@ -24,9 +24,7 @@ export function ifNoUserRedirectHome(message, type = 'errors') {
 }
 
 export function ifNoUserSend(sendThis) {
-  console.debug('ifNoUserSend', sendThis);
   return function (req, res, next) {
-    console.debug('ifNoUserSend function', req.user);
     if (req.user) {
       return next();
     }
