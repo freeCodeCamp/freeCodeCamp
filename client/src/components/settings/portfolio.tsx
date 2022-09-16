@@ -16,8 +16,10 @@ import { hasProtocolRE } from '../../utils';
 import { FullWidthRow, ButtonSpacer, Spacer } from '../helpers';
 import BlockSaveButton from '../helpers/form/block-save-button';
 import SectionHeader from './section-header';
+import PreventableButton from './PreventableButton';
 
 type PortfolioValues = {
+  isSaved: boolean;
   id: string;
   description: string;
   image: string;
@@ -26,6 +28,7 @@ type PortfolioValues = {
 };
 
 type PortfolioProps = {
+  isSaved: boolean;
   picture?: string;
   portfolio: PortfolioValues[];
   t: TFunction;
@@ -43,7 +46,8 @@ function createEmptyPortfolio() {
     title: '',
     description: '',
     url: '',
-    image: ''
+    image: '',
+    isSaved: false
   };
 }
 
@@ -89,6 +93,15 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
 
   handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const target = e.target as HTMLInputElement;
+    const id = target?.id || undefined;
+    if (id) {
+      this.setState(state => ({
+        portfolio: state.portfolio.map(item =>
+          item.id === id ? { ...item, isSaved: true } : item
+        )
+      }));
+    }
     const { updatePortfolio } = this.props;
     const { portfolio } = this.state;
     return updatePortfolio({ portfolio });
@@ -213,11 +226,10 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     );
     const { state: descriptionState, message: descriptionMessage } =
       this.getDescriptionValidation(description);
-
     return (
       <div key={id}>
         <FullWidthRow>
-          <form onSubmit={this.handleSubmit}>
+          <form id={id} onSubmit={this.handleSubmit}>
             <FormGroup
               controlId={`${id}-title`}
               validationState={
@@ -325,15 +337,11 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
         </FullWidthRow>
         <FullWidthRow>
           <ButtonSpacer />
-          <Button
-            block={true}
-            bsSize='lg'
-            bsStyle='primary'
-            onClick={this.handleAdd}
-            type='button'
-          >
-            {t('buttons.add-portfolio')}
-          </Button>
+          <PreventableButton
+            handleAdd={this.handleAdd}
+            t={t}
+            portfolio={portfolio}
+          />
         </FullWidthRow>
         <Spacer size={2} />
         {portfolio.length ? portfolio.map(this.renderPortfolio) : null}
